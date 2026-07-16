@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Contact9 import Contact9
-from ._CountryCode import CountryCode
-from ._LEIIdentifier import LEIIdentifier
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
+from . import Contact9
+from . import CountryCode
+from . import LEIIdentifier
+from . import Max140Text
+from . import Max35Text
 
 class SecuritiesSettlementSystemIdentification2(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class SecuritiesSettlementSystemIdentification2(base_types._BaseFieldType):
 
 	@CSDLglNm.setter
 	def CSDLglNm(self, value):
-		self._CSDLglNm = value if type(value) != base_types.auto else self.make_default("CSDLglNm")
+		self._CSDLglNm = value if value is not None else base_types.UninitialisedField(self, 'CSDLglNm', Max140Text, False)
 
 	@CSDLglNm.deleter
 	def CSDLglNm(self):
 		del self._CSDLglNm
-		self._CSDLglNm = None
+		self._CSDLglNm = base_types.UninitialisedField(self, 'CSDLglNm', Max140Text, False)
 
 	@property
 	def CtryOfJursdctn(self):
@@ -30,12 +30,12 @@ class SecuritiesSettlementSystemIdentification2(base_types._BaseFieldType):
 
 	@CtryOfJursdctn.setter
 	def CtryOfJursdctn(self, value):
-		self._CtryOfJursdctn = value if type(value) != base_types.auto else self.make_default("CtryOfJursdctn")
+		self._CtryOfJursdctn = value if value is not None else base_types.UninitialisedField(self, 'CtryOfJursdctn', CountryCode, False)
 
 	@CtryOfJursdctn.deleter
 	def CtryOfJursdctn(self):
 		del self._CtryOfJursdctn
-		self._CtryOfJursdctn = None
+		self._CtryOfJursdctn = base_types.UninitialisedField(self, 'CtryOfJursdctn', CountryCode, False)
 
 	@property
 	def LEI(self):
@@ -43,12 +43,12 @@ class SecuritiesSettlementSystemIdentification2(base_types._BaseFieldType):
 
 	@LEI.setter
 	def LEI(self, value):
-		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
+		self._LEI = value if value is not None else base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	@LEI.deleter
 	def LEI(self):
 		del self._LEI
-		self._LEI = None
+		self._LEI = base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	@property
 	def RspnsblPty(self):
@@ -56,12 +56,12 @@ class SecuritiesSettlementSystemIdentification2(base_types._BaseFieldType):
 
 	@RspnsblPty.setter
 	def RspnsblPty(self, value):
-		self._RspnsblPty = value if type(value) != base_types.auto else self.make_default("RspnsblPty")
+		self._RspnsblPty = value if value is not None else base_types.UninitialisedField(self, 'RspnsblPty', Contact9, True)
 
 	@RspnsblPty.deleter
 	def RspnsblPty(self):
 		del self._RspnsblPty
-		self._RspnsblPty = None
+		self._RspnsblPty = base_types.UninitialisedField(self, 'RspnsblPty', Contact9, True)
 
 	@property
 	def SysId(self):
@@ -69,12 +69,12 @@ class SecuritiesSettlementSystemIdentification2(base_types._BaseFieldType):
 
 	@SysId.setter
 	def SysId(self, value):
-		self._SysId = value if type(value) != base_types.auto else self.make_default("SysId")
+		self._SysId = value if value is not None else base_types.UninitialisedField(self, 'SysId', Max35Text, False)
 
 	@SysId.deleter
 	def SysId(self):
 		del self._SysId
-		self._SysId = None
+		self._SysId = base_types.UninitialisedField(self, 'SysId', Max35Text, False)
 
 	@property
 	def SysNm(self):
@@ -82,12 +82,12 @@ class SecuritiesSettlementSystemIdentification2(base_types._BaseFieldType):
 
 	@SysNm.setter
 	def SysNm(self, value):
-		self._SysNm = value if type(value) != base_types.auto else self.make_default("SysNm")
+		self._SysNm = value if value is not None else base_types.UninitialisedField(self, 'SysNm', Max140Text, False)
 
 	@SysNm.deleter
 	def SysNm(self):
 		del self._SysNm
-		self._SysNm = None
+		self._SysNm = base_types.UninitialisedField(self, 'SysNm', Max140Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CSDLglNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),

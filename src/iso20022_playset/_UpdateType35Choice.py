@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecurityAttributes12 import SecurityAttributes12
+from . import SecurityAttributes12
 
 class UpdateType35Choice(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class UpdateType35Choice(base_types._BaseFieldType):
 
 	@Add.setter
 	def Add(self, value):
-		self._Add = value if type(value) != base_types.auto else self.make_default("Add")
+		self._Add = value if value is not None else base_types.UninitialisedField(self, 'Add', SecurityAttributes12, False)
 
 	@Add.deleter
 	def Add(self):
 		del self._Add
-		self._Add = None
+		self._Add = base_types.UninitialisedField(self, 'Add', SecurityAttributes12, False)
 
 	@property
 	def Del(self):
@@ -26,12 +26,12 @@ class UpdateType35Choice(base_types._BaseFieldType):
 
 	@Del.setter
 	def Del(self, value):
-		self._Del = value if type(value) != base_types.auto else self.make_default("Del")
+		self._Del = value if value is not None else base_types.UninitialisedField(self, 'Del', SecurityAttributes12, False)
 
 	@Del.deleter
 	def Del(self):
 		del self._Del
-		self._Del = None
+		self._Del = base_types.UninitialisedField(self, 'Del', SecurityAttributes12, False)
 
 	@property
 	def Modfy(self):
@@ -39,12 +39,12 @@ class UpdateType35Choice(base_types._BaseFieldType):
 
 	@Modfy.setter
 	def Modfy(self, value):
-		self._Modfy = value if type(value) != base_types.auto else self.make_default("Modfy")
+		self._Modfy = value if value is not None else base_types.UninitialisedField(self, 'Modfy', SecurityAttributes12, False)
 
 	@Modfy.deleter
 	def Modfy(self):
 		del self._Modfy
-		self._Modfy = None
+		self._Modfy = base_types.UninitialisedField(self, 'Modfy', SecurityAttributes12, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Add', type=SecurityAttributes12, min=0, max=1, mutex_group=1, array=False),

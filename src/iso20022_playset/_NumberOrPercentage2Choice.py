@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Number import Number
-from ._Percentage14Rate import Percentage14Rate
+from . import Number
+from . import Percentage14Rate
 
 class NumberOrPercentage2Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class NumberOrPercentage2Choice(base_types._BaseFieldType):
 
 	@ThrshldNb.setter
 	def ThrshldNb(self, value):
-		self._ThrshldNb = value if type(value) != base_types.auto else self.make_default("ThrshldNb")
+		self._ThrshldNb = value if value is not None else base_types.UninitialisedField(self, 'ThrshldNb', Number, False)
 
 	@ThrshldNb.deleter
 	def ThrshldNb(self):
 		del self._ThrshldNb
-		self._ThrshldNb = None
+		self._ThrshldNb = base_types.UninitialisedField(self, 'ThrshldNb', Number, False)
 
 	@property
 	def ThrshldPctg(self):
@@ -27,12 +27,12 @@ class NumberOrPercentage2Choice(base_types._BaseFieldType):
 
 	@ThrshldPctg.setter
 	def ThrshldPctg(self, value):
-		self._ThrshldPctg = value if type(value) != base_types.auto else self.make_default("ThrshldPctg")
+		self._ThrshldPctg = value if value is not None else base_types.UninitialisedField(self, 'ThrshldPctg', Percentage14Rate, False)
 
 	@ThrshldPctg.deleter
 	def ThrshldPctg(self):
 		del self._ThrshldPctg
-		self._ThrshldPctg = None
+		self._ThrshldPctg = base_types.UninitialisedField(self, 'ThrshldPctg', Percentage14Rate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ThrshldNb', type=Number, min=0, max=1, mutex_group=1, array=False),

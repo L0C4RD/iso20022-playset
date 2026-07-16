@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification4 import GenericIdentification4
-from ._ProductIdentifier2 import ProductIdentifier2
+from . import GenericIdentification4
+from . import ProductIdentifier2
 
 class ProductIdentifier2Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ProductIdentifier2Choice(base_types._BaseFieldType):
 
 	@OthrPdctIdr.setter
 	def OthrPdctIdr(self, value):
-		self._OthrPdctIdr = value if type(value) != base_types.auto else self.make_default("OthrPdctIdr")
+		self._OthrPdctIdr = value if value is not None else base_types.UninitialisedField(self, 'OthrPdctIdr', GenericIdentification4, False)
 
 	@OthrPdctIdr.deleter
 	def OthrPdctIdr(self):
 		del self._OthrPdctIdr
-		self._OthrPdctIdr = None
+		self._OthrPdctIdr = base_types.UninitialisedField(self, 'OthrPdctIdr', GenericIdentification4, False)
 
 	@property
 	def StrdPdctIdr(self):
@@ -27,12 +27,12 @@ class ProductIdentifier2Choice(base_types._BaseFieldType):
 
 	@StrdPdctIdr.setter
 	def StrdPdctIdr(self, value):
-		self._StrdPdctIdr = value if type(value) != base_types.auto else self.make_default("StrdPdctIdr")
+		self._StrdPdctIdr = value if value is not None else base_types.UninitialisedField(self, 'StrdPdctIdr', ProductIdentifier2, False)
 
 	@StrdPdctIdr.deleter
 	def StrdPdctIdr(self):
 		del self._StrdPdctIdr
-		self._StrdPdctIdr = None
+		self._StrdPdctIdr = base_types.UninitialisedField(self, 'StrdPdctIdr', ProductIdentifier2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OthrPdctIdr', type=GenericIdentification4, min=0, max=1, mutex_group=1, array=False),

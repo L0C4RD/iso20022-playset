@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
-from ._PartyIdentification135 import PartyIdentification135
+from . import BranchAndFinancialInstitutionIdentification6
+from . import PartyIdentification135
 
 class Party40Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Party40Choice(base_types._BaseFieldType):
 
 	@Agt.setter
 	def Agt(self, value):
-		self._Agt = value if type(value) != base_types.auto else self.make_default("Agt")
+		self._Agt = value if value is not None else base_types.UninitialisedField(self, 'Agt', BranchAndFinancialInstitutionIdentification6, False)
 
 	@Agt.deleter
 	def Agt(self):
 		del self._Agt
-		self._Agt = None
+		self._Agt = base_types.UninitialisedField(self, 'Agt', BranchAndFinancialInstitutionIdentification6, False)
 
 	@property
 	def Pty(self):
@@ -27,12 +27,12 @@ class Party40Choice(base_types._BaseFieldType):
 
 	@Pty.setter
 	def Pty(self, value):
-		self._Pty = value if type(value) != base_types.auto else self.make_default("Pty")
+		self._Pty = value if value is not None else base_types.UninitialisedField(self, 'Pty', PartyIdentification135, False)
 
 	@Pty.deleter
 	def Pty(self):
 		del self._Pty
-		self._Pty = None
+		self._Pty = base_types.UninitialisedField(self, 'Pty', PartyIdentification135, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Agt', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=1, array=False),

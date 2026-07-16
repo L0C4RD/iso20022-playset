@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ApplicationSpecifics1 import ApplicationSpecifics1
-from ._ManifestData2 import ManifestData2
-from ._Max256Text import Max256Text
-from ._PayloadData2 import PayloadData2
+from . import ApplicationSpecifics1
+from . import ManifestData2
+from . import Max256Text
+from . import PayloadData2
 
 class PayloadDescription2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class PayloadDescription2(base_types._BaseFieldType):
 
 	@ApplSpcfcs.setter
 	def ApplSpcfcs(self, value):
-		self._ApplSpcfcs = value if type(value) != base_types.auto else self.make_default("ApplSpcfcs")
+		self._ApplSpcfcs = value if value is not None else base_types.UninitialisedField(self, 'ApplSpcfcs', ApplicationSpecifics1, False)
 
 	@ApplSpcfcs.deleter
 	def ApplSpcfcs(self):
 		del self._ApplSpcfcs
-		self._ApplSpcfcs = None
+		self._ApplSpcfcs = base_types.UninitialisedField(self, 'ApplSpcfcs', ApplicationSpecifics1, False)
 
 	@property
 	def MnfstData(self):
@@ -29,12 +29,12 @@ class PayloadDescription2(base_types._BaseFieldType):
 
 	@MnfstData.setter
 	def MnfstData(self, value):
-		self._MnfstData = value if type(value) != base_types.auto else self.make_default("MnfstData")
+		self._MnfstData = value if value is not None else base_types.UninitialisedField(self, 'MnfstData', ManifestData2, True)
 
 	@MnfstData.deleter
 	def MnfstData(self):
 		del self._MnfstData
-		self._MnfstData = None
+		self._MnfstData = base_types.UninitialisedField(self, 'MnfstData', ManifestData2, True)
 
 	@property
 	def PyldData(self):
@@ -42,12 +42,12 @@ class PayloadDescription2(base_types._BaseFieldType):
 
 	@PyldData.setter
 	def PyldData(self, value):
-		self._PyldData = value if type(value) != base_types.auto else self.make_default("PyldData")
+		self._PyldData = value if value is not None else base_types.UninitialisedField(self, 'PyldData', PayloadData2, False)
 
 	@PyldData.deleter
 	def PyldData(self):
 		del self._PyldData
-		self._PyldData = None
+		self._PyldData = base_types.UninitialisedField(self, 'PyldData', PayloadData2, False)
 
 	@property
 	def PyldTp(self):
@@ -55,12 +55,12 @@ class PayloadDescription2(base_types._BaseFieldType):
 
 	@PyldTp.setter
 	def PyldTp(self, value):
-		self._PyldTp = value if type(value) != base_types.auto else self.make_default("PyldTp")
+		self._PyldTp = value if value is not None else base_types.UninitialisedField(self, 'PyldTp', Max256Text, False)
 
 	@PyldTp.deleter
 	def PyldTp(self):
 		del self._PyldTp
-		self._PyldTp = None
+		self._PyldTp = base_types.UninitialisedField(self, 'PyldTp', Max256Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ApplSpcfcs', type=ApplicationSpecifics1, min=0, max=1, mutex_group=None, array=False),

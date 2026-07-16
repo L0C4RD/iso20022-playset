@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._TransferOutConfirmationV10 import TransferOutConfirmationV10
+from . import TransferOutConfirmationV10
 
 class SESE_003_001_10():
 
@@ -18,12 +18,12 @@ class SESE_003_001_10():
 
 		@TrfOutConf.setter
 		def TrfOutConf(self, value):
-			self._TrfOutConf = value if type(value) != base_types.auto else self.make_default("TrfOutConf")
+			self._TrfOutConf = value if value is not None else base_types.UninitialisedField(self, 'TrfOutConf', TransferOutConfirmationV10, False)
 
 		@TrfOutConf.deleter
 		def TrfOutConf(self):
 			del self._TrfOutConf
-			self._TrfOutConf = None
+			self._TrfOutConf = base_types.UninitialisedField(self, 'TrfOutConf', TransferOutConfirmationV10, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='TrfOutConf', type=TransferOutConfirmationV10, min=1, max=1, mutex_group=None, array=False),

@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountForAction1 import AccountForAction1
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._OrganisationIdentification39 import OrganisationIdentification39
-from ._PartyAndSignature4 import PartyAndSignature4
-from ._References3 import References3
-from ._SupplementaryData1 import SupplementaryData1
+from . import AccountForAction1
+from . import BranchAndFinancialInstitutionIdentification8
+from . import OrganisationIdentification39
+from . import PartyAndSignature4
+from . import References3
+from . import SupplementaryData1
 
 class AccountAdditionalInformationRequestV04(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class AccountAdditionalInformationRequestV04(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', AccountForAction1, True)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', AccountForAction1, True)
 
 	@property
 	def AcctSvcrId(self):
@@ -31,12 +31,12 @@ class AccountAdditionalInformationRequestV04(base_types._BaseFieldType):
 
 	@AcctSvcrId.setter
 	def AcctSvcrId(self, value):
-		self._AcctSvcrId = value if type(value) != base_types.auto else self.make_default("AcctSvcrId")
+		self._AcctSvcrId = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcrId', BranchAndFinancialInstitutionIdentification8, False)
 
 	@AcctSvcrId.deleter
 	def AcctSvcrId(self):
 		del self._AcctSvcrId
-		self._AcctSvcrId = None
+		self._AcctSvcrId = base_types.UninitialisedField(self, 'AcctSvcrId', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def DgtlSgntr(self):
@@ -44,12 +44,12 @@ class AccountAdditionalInformationRequestV04(base_types._BaseFieldType):
 
 	@DgtlSgntr.setter
 	def DgtlSgntr(self, value):
-		self._DgtlSgntr = value if type(value) != base_types.auto else self.make_default("DgtlSgntr")
+		self._DgtlSgntr = value if value is not None else base_types.UninitialisedField(self, 'DgtlSgntr', PartyAndSignature4, True)
 
 	@DgtlSgntr.deleter
 	def DgtlSgntr(self):
 		del self._DgtlSgntr
-		self._DgtlSgntr = None
+		self._DgtlSgntr = base_types.UninitialisedField(self, 'DgtlSgntr', PartyAndSignature4, True)
 
 	@property
 	def Fr(self):
@@ -57,12 +57,12 @@ class AccountAdditionalInformationRequestV04(base_types._BaseFieldType):
 
 	@Fr.setter
 	def Fr(self, value):
-		self._Fr = value if type(value) != base_types.auto else self.make_default("Fr")
+		self._Fr = value if value is not None else base_types.UninitialisedField(self, 'Fr', OrganisationIdentification39, False)
 
 	@Fr.deleter
 	def Fr(self):
 		del self._Fr
-		self._Fr = None
+		self._Fr = base_types.UninitialisedField(self, 'Fr', OrganisationIdentification39, False)
 
 	@property
 	def OrgId(self):
@@ -70,12 +70,12 @@ class AccountAdditionalInformationRequestV04(base_types._BaseFieldType):
 
 	@OrgId.setter
 	def OrgId(self, value):
-		self._OrgId = value if type(value) != base_types.auto else self.make_default("OrgId")
+		self._OrgId = value if value is not None else base_types.UninitialisedField(self, 'OrgId', OrganisationIdentification39, False)
 
 	@OrgId.deleter
 	def OrgId(self):
 		del self._OrgId
-		self._OrgId = None
+		self._OrgId = base_types.UninitialisedField(self, 'OrgId', OrganisationIdentification39, False)
 
 	@property
 	def Refs(self):
@@ -83,12 +83,12 @@ class AccountAdditionalInformationRequestV04(base_types._BaseFieldType):
 
 	@Refs.setter
 	def Refs(self, value):
-		self._Refs = value if type(value) != base_types.auto else self.make_default("Refs")
+		self._Refs = value if value is not None else base_types.UninitialisedField(self, 'Refs', References3, False)
 
 	@Refs.deleter
 	def Refs(self):
 		del self._Refs
-		self._Refs = None
+		self._Refs = base_types.UninitialisedField(self, 'Refs', References3, False)
 
 	@property
 	def SplmtryData(self):
@@ -96,12 +96,12 @@ class AccountAdditionalInformationRequestV04(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=AccountForAction1, min=1, max=None, mutex_group=None, array=True),

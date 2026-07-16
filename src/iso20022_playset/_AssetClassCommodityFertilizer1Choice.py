@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FertilizerCommodityAmmonia1 import FertilizerCommodityAmmonia1
-from ._FertilizerCommodityDiammoniumPhosphate1 import FertilizerCommodityDiammoniumPhosphate1
-from ._FertilizerCommodityPotash1 import FertilizerCommodityPotash1
-from ._FertilizerCommoditySulphur1 import FertilizerCommoditySulphur1
-from ._FertilizerCommodityUrea1 import FertilizerCommodityUrea1
-from ._FertilizerCommodityUreaAndAmmoniumNitrate1 import FertilizerCommodityUreaAndAmmoniumNitrate1
+from . import FertilizerCommodityAmmonia1
+from . import FertilizerCommodityDiammoniumPhosphate1
+from . import FertilizerCommodityPotash1
+from . import FertilizerCommoditySulphur1
+from . import FertilizerCommodityUrea1
+from . import FertilizerCommodityUreaAndAmmoniumNitrate1
 
 class AssetClassCommodityFertilizer1Choice(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class AssetClassCommodityFertilizer1Choice(base_types._BaseFieldType):
 
 	@Ammn.setter
 	def Ammn(self, value):
-		self._Ammn = value if type(value) != base_types.auto else self.make_default("Ammn")
+		self._Ammn = value if value is not None else base_types.UninitialisedField(self, 'Ammn', FertilizerCommodityAmmonia1, False)
 
 	@Ammn.deleter
 	def Ammn(self):
 		del self._Ammn
-		self._Ammn = None
+		self._Ammn = base_types.UninitialisedField(self, 'Ammn', FertilizerCommodityAmmonia1, False)
 
 	@property
 	def DmmnmPhspht(self):
@@ -31,12 +31,12 @@ class AssetClassCommodityFertilizer1Choice(base_types._BaseFieldType):
 
 	@DmmnmPhspht.setter
 	def DmmnmPhspht(self, value):
-		self._DmmnmPhspht = value if type(value) != base_types.auto else self.make_default("DmmnmPhspht")
+		self._DmmnmPhspht = value if value is not None else base_types.UninitialisedField(self, 'DmmnmPhspht', FertilizerCommodityDiammoniumPhosphate1, False)
 
 	@DmmnmPhspht.deleter
 	def DmmnmPhspht(self):
 		del self._DmmnmPhspht
-		self._DmmnmPhspht = None
+		self._DmmnmPhspht = base_types.UninitialisedField(self, 'DmmnmPhspht', FertilizerCommodityDiammoniumPhosphate1, False)
 
 	@property
 	def Ptsh(self):
@@ -44,12 +44,12 @@ class AssetClassCommodityFertilizer1Choice(base_types._BaseFieldType):
 
 	@Ptsh.setter
 	def Ptsh(self, value):
-		self._Ptsh = value if type(value) != base_types.auto else self.make_default("Ptsh")
+		self._Ptsh = value if value is not None else base_types.UninitialisedField(self, 'Ptsh', FertilizerCommodityPotash1, False)
 
 	@Ptsh.deleter
 	def Ptsh(self):
 		del self._Ptsh
-		self._Ptsh = None
+		self._Ptsh = base_types.UninitialisedField(self, 'Ptsh', FertilizerCommodityPotash1, False)
 
 	@property
 	def Slphr(self):
@@ -57,12 +57,12 @@ class AssetClassCommodityFertilizer1Choice(base_types._BaseFieldType):
 
 	@Slphr.setter
 	def Slphr(self, value):
-		self._Slphr = value if type(value) != base_types.auto else self.make_default("Slphr")
+		self._Slphr = value if value is not None else base_types.UninitialisedField(self, 'Slphr', FertilizerCommoditySulphur1, False)
 
 	@Slphr.deleter
 	def Slphr(self):
 		del self._Slphr
-		self._Slphr = None
+		self._Slphr = base_types.UninitialisedField(self, 'Slphr', FertilizerCommoditySulphur1, False)
 
 	@property
 	def Urea(self):
@@ -70,12 +70,12 @@ class AssetClassCommodityFertilizer1Choice(base_types._BaseFieldType):
 
 	@Urea.setter
 	def Urea(self, value):
-		self._Urea = value if type(value) != base_types.auto else self.make_default("Urea")
+		self._Urea = value if value is not None else base_types.UninitialisedField(self, 'Urea', FertilizerCommodityUrea1, False)
 
 	@Urea.deleter
 	def Urea(self):
 		del self._Urea
-		self._Urea = None
+		self._Urea = base_types.UninitialisedField(self, 'Urea', FertilizerCommodityUrea1, False)
 
 	@property
 	def UreaAndAmmnmNtrt(self):
@@ -83,12 +83,12 @@ class AssetClassCommodityFertilizer1Choice(base_types._BaseFieldType):
 
 	@UreaAndAmmnmNtrt.setter
 	def UreaAndAmmnmNtrt(self, value):
-		self._UreaAndAmmnmNtrt = value if type(value) != base_types.auto else self.make_default("UreaAndAmmnmNtrt")
+		self._UreaAndAmmnmNtrt = value if value is not None else base_types.UninitialisedField(self, 'UreaAndAmmnmNtrt', FertilizerCommodityUreaAndAmmoniumNitrate1, False)
 
 	@UreaAndAmmnmNtrt.deleter
 	def UreaAndAmmnmNtrt(self):
 		del self._UreaAndAmmnmNtrt
-		self._UreaAndAmmnmNtrt = None
+		self._UreaAndAmmnmNtrt = base_types.UninitialisedField(self, 'UreaAndAmmnmNtrt', FertilizerCommodityUreaAndAmmoniumNitrate1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ammn', type=FertilizerCommodityAmmonia1, min=0, max=1, mutex_group=1, array=False),

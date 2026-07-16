@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesNonTradingDay1 import SecuritiesNonTradingDay1
-from ._TradingVenueIdentification1Choice import TradingVenueIdentification1Choice
+from . import SecuritiesNonTradingDay1
+from . import TradingVenueIdentification1Choice
 
 class SecuritiesNonTradingDayReport1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SecuritiesNonTradingDayReport1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', TradingVenueIdentification1Choice, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', TradingVenueIdentification1Choice, False)
 
 	@property
 	def NonWorkgDay(self):
@@ -27,12 +27,12 @@ class SecuritiesNonTradingDayReport1(base_types._BaseFieldType):
 
 	@NonWorkgDay.setter
 	def NonWorkgDay(self, value):
-		self._NonWorkgDay = value if type(value) != base_types.auto else self.make_default("NonWorkgDay")
+		self._NonWorkgDay = value if value is not None else base_types.UninitialisedField(self, 'NonWorkgDay', SecuritiesNonTradingDay1, True)
 
 	@NonWorkgDay.deleter
 	def NonWorkgDay(self):
 		del self._NonWorkgDay
-		self._NonWorkgDay = None
+		self._NonWorkgDay = base_types.UninitialisedField(self, 'NonWorkgDay', SecuritiesNonTradingDay1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=TradingVenueIdentification1Choice, min=1, max=1, mutex_group=None, array=False),

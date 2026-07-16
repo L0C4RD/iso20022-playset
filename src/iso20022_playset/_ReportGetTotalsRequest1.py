@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._TotalDetails1Code import TotalDetails1Code
-from ._TotalFilter1 import TotalFilter1
+from . import TotalDetails1Code
+from . import TotalFilter1
 
 class ReportGetTotalsRequest1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ReportGetTotalsRequest1(base_types._BaseFieldType):
 
 	@TtlDtls.setter
 	def TtlDtls(self, value):
-		self._TtlDtls = value if type(value) != base_types.auto else self.make_default("TtlDtls")
+		self._TtlDtls = value if value is not None else base_types.UninitialisedField(self, 'TtlDtls', TotalDetails1Code, False)
 
 	@TtlDtls.deleter
 	def TtlDtls(self):
 		del self._TtlDtls
-		self._TtlDtls = None
+		self._TtlDtls = base_types.UninitialisedField(self, 'TtlDtls', TotalDetails1Code, False)
 
 	@property
 	def TtlFltr(self):
@@ -27,12 +27,12 @@ class ReportGetTotalsRequest1(base_types._BaseFieldType):
 
 	@TtlFltr.setter
 	def TtlFltr(self, value):
-		self._TtlFltr = value if type(value) != base_types.auto else self.make_default("TtlFltr")
+		self._TtlFltr = value if value is not None else base_types.UninitialisedField(self, 'TtlFltr', TotalFilter1, False)
 
 	@TtlFltr.deleter
 	def TtlFltr(self):
 		del self._TtlFltr
-		self._TtlFltr = None
+		self._TtlFltr = base_types.UninitialisedField(self, 'TtlFltr', TotalFilter1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TtlDtls', type=TotalDetails1Code, min=0, max=1, mutex_group=None, array=False),

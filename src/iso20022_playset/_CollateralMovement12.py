@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._CollateralMovement6Choice import CollateralMovement6Choice
+from . import ActiveCurrencyAndAmount
+from . import CollateralMovement6Choice
 
 class CollateralMovement12(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CollateralMovement12(base_types._BaseFieldType):
 
 	@AgrdAmt.setter
 	def AgrdAmt(self, value):
-		self._AgrdAmt = value if type(value) != base_types.auto else self.make_default("AgrdAmt")
+		self._AgrdAmt = value if value is not None else base_types.UninitialisedField(self, 'AgrdAmt', ActiveCurrencyAndAmount, False)
 
 	@AgrdAmt.deleter
 	def AgrdAmt(self):
 		del self._AgrdAmt
-		self._AgrdAmt = None
+		self._AgrdAmt = base_types.UninitialisedField(self, 'AgrdAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def MvmntDrctn(self):
@@ -27,12 +27,12 @@ class CollateralMovement12(base_types._BaseFieldType):
 
 	@MvmntDrctn.setter
 	def MvmntDrctn(self, value):
-		self._MvmntDrctn = value if type(value) != base_types.auto else self.make_default("MvmntDrctn")
+		self._MvmntDrctn = value if value is not None else base_types.UninitialisedField(self, 'MvmntDrctn', CollateralMovement6Choice, True)
 
 	@MvmntDrctn.deleter
 	def MvmntDrctn(self):
 		del self._MvmntDrctn
-		self._MvmntDrctn = None
+		self._MvmntDrctn = base_types.UninitialisedField(self, 'MvmntDrctn', CollateralMovement6Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AgrdAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

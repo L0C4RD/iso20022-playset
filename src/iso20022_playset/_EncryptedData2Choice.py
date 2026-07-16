@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max100KBinary import Max100KBinary
-from ._Max9999HexBinaryText import Max9999HexBinaryText
+from . import Max100KBinary
+from . import Max9999HexBinaryText
 
 class EncryptedData2Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class EncryptedData2Choice(base_types._BaseFieldType):
 
 	@Binry.setter
 	def Binry(self, value):
-		self._Binry = value if type(value) != base_types.auto else self.make_default("Binry")
+		self._Binry = value if value is not None else base_types.UninitialisedField(self, 'Binry', Max100KBinary, False)
 
 	@Binry.deleter
 	def Binry(self):
 		del self._Binry
-		self._Binry = None
+		self._Binry = base_types.UninitialisedField(self, 'Binry', Max100KBinary, False)
 
 	@property
 	def HexBinry(self):
@@ -27,12 +27,12 @@ class EncryptedData2Choice(base_types._BaseFieldType):
 
 	@HexBinry.setter
 	def HexBinry(self, value):
-		self._HexBinry = value if type(value) != base_types.auto else self.make_default("HexBinry")
+		self._HexBinry = value if value is not None else base_types.UninitialisedField(self, 'HexBinry', Max9999HexBinaryText, False)
 
 	@HexBinry.deleter
 	def HexBinry(self):
 		del self._HexBinry
-		self._HexBinry = None
+		self._HexBinry = base_types.UninitialisedField(self, 'HexBinry', Max9999HexBinaryText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Binry', type=Max100KBinary, min=0, max=1, mutex_group=1, array=False),

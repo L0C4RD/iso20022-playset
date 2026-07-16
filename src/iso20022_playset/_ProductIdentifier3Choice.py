@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max12Text import Max12Text
-from ._UnderlyingProductIdentifier1Code import UnderlyingProductIdentifier1Code
+from . import Max12Text
+from . import UnderlyingProductIdentifier1Code
 
 class ProductIdentifier3Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ProductIdentifier3Choice(base_types._BaseFieldType):
 
 	@UndrlygPdctIdr.setter
 	def UndrlygPdctIdr(self, value):
-		self._UndrlygPdctIdr = value if type(value) != base_types.auto else self.make_default("UndrlygPdctIdr")
+		self._UndrlygPdctIdr = value if value is not None else base_types.UninitialisedField(self, 'UndrlygPdctIdr', UnderlyingProductIdentifier1Code, False)
 
 	@UndrlygPdctIdr.deleter
 	def UndrlygPdctIdr(self):
 		del self._UndrlygPdctIdr
-		self._UndrlygPdctIdr = None
+		self._UndrlygPdctIdr = base_types.UninitialisedField(self, 'UndrlygPdctIdr', UnderlyingProductIdentifier1Code, False)
 
 	@property
 	def UnqPdctIdr(self):
@@ -27,12 +27,12 @@ class ProductIdentifier3Choice(base_types._BaseFieldType):
 
 	@UnqPdctIdr.setter
 	def UnqPdctIdr(self, value):
-		self._UnqPdctIdr = value if type(value) != base_types.auto else self.make_default("UnqPdctIdr")
+		self._UnqPdctIdr = value if value is not None else base_types.UninitialisedField(self, 'UnqPdctIdr', Max12Text, False)
 
 	@UnqPdctIdr.deleter
 	def UnqPdctIdr(self):
 		del self._UnqPdctIdr
-		self._UnqPdctIdr = None
+		self._UnqPdctIdr = base_types.UninitialisedField(self, 'UnqPdctIdr', Max12Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='UndrlygPdctIdr', type=UnderlyingProductIdentifier1Code, min=0, max=1, mutex_group=1, array=False),

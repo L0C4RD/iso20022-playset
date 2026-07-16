@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._StatisticsPerCounterparty18Choice import StatisticsPerCounterparty18Choice
-from ._SupplementaryData1 import SupplementaryData1
+from . import StatisticsPerCounterparty18Choice
+from . import SupplementaryData1
 
 class DerivativesTradeRejectionStatisticalReportV04(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DerivativesTradeRejectionStatisticalReportV04(base_types._BaseFieldType):
 
 	@RjctnSttstcs.setter
 	def RjctnSttstcs(self, value):
-		self._RjctnSttstcs = value if type(value) != base_types.auto else self.make_default("RjctnSttstcs")
+		self._RjctnSttstcs = value if value is not None else base_types.UninitialisedField(self, 'RjctnSttstcs', StatisticsPerCounterparty18Choice, False)
 
 	@RjctnSttstcs.deleter
 	def RjctnSttstcs(self):
 		del self._RjctnSttstcs
-		self._RjctnSttstcs = None
+		self._RjctnSttstcs = base_types.UninitialisedField(self, 'RjctnSttstcs', StatisticsPerCounterparty18Choice, False)
 
 	@property
 	def SplmtryData(self):
@@ -27,12 +27,12 @@ class DerivativesTradeRejectionStatisticalReportV04(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RjctnSttstcs', type=StatisticsPerCounterparty18Choice, min=1, max=1, mutex_group=None, array=False),

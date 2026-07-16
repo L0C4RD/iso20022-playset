@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMCommand7Code import ATMCommand7Code
-from ._ATMCommandIdentification1 import ATMCommandIdentification1
-from ._ISODateTime import ISODateTime
-from ._Max140Text import Max140Text
-from ._TerminalManagementActionResult2Code import TerminalManagementActionResult2Code
+from . import ATMCommand7Code
+from . import ATMCommandIdentification1
+from . import ISODateTime
+from . import Max140Text
+from . import TerminalManagementActionResult2Code
 
 class ATMCommand15(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class ATMCommand15(base_types._BaseFieldType):
 
 	@AddtlErrInf.setter
 	def AddtlErrInf(self, value):
-		self._AddtlErrInf = value if type(value) != base_types.auto else self.make_default("AddtlErrInf")
+		self._AddtlErrInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlErrInf', Max140Text, False)
 
 	@AddtlErrInf.deleter
 	def AddtlErrInf(self):
 		del self._AddtlErrInf
-		self._AddtlErrInf = None
+		self._AddtlErrInf = base_types.UninitialisedField(self, 'AddtlErrInf', Max140Text, False)
 
 	@property
 	def CmdId(self):
@@ -30,12 +30,12 @@ class ATMCommand15(base_types._BaseFieldType):
 
 	@CmdId.setter
 	def CmdId(self, value):
-		self._CmdId = value if type(value) != base_types.auto else self.make_default("CmdId")
+		self._CmdId = value if value is not None else base_types.UninitialisedField(self, 'CmdId', ATMCommandIdentification1, False)
 
 	@CmdId.deleter
 	def CmdId(self):
 		del self._CmdId
-		self._CmdId = None
+		self._CmdId = base_types.UninitialisedField(self, 'CmdId', ATMCommandIdentification1, False)
 
 	@property
 	def PrcdDtTm(self):
@@ -43,12 +43,12 @@ class ATMCommand15(base_types._BaseFieldType):
 
 	@PrcdDtTm.setter
 	def PrcdDtTm(self, value):
-		self._PrcdDtTm = value if type(value) != base_types.auto else self.make_default("PrcdDtTm")
+		self._PrcdDtTm = value if value is not None else base_types.UninitialisedField(self, 'PrcdDtTm', ISODateTime, False)
 
 	@PrcdDtTm.deleter
 	def PrcdDtTm(self):
 		del self._PrcdDtTm
-		self._PrcdDtTm = None
+		self._PrcdDtTm = base_types.UninitialisedField(self, 'PrcdDtTm', ISODateTime, False)
 
 	@property
 	def ReqrdDtTm(self):
@@ -56,12 +56,12 @@ class ATMCommand15(base_types._BaseFieldType):
 
 	@ReqrdDtTm.setter
 	def ReqrdDtTm(self, value):
-		self._ReqrdDtTm = value if type(value) != base_types.auto else self.make_default("ReqrdDtTm")
+		self._ReqrdDtTm = value if value is not None else base_types.UninitialisedField(self, 'ReqrdDtTm', ISODateTime, False)
 
 	@ReqrdDtTm.deleter
 	def ReqrdDtTm(self):
 		del self._ReqrdDtTm
-		self._ReqrdDtTm = None
+		self._ReqrdDtTm = base_types.UninitialisedField(self, 'ReqrdDtTm', ISODateTime, False)
 
 	@property
 	def Rslt(self):
@@ -69,12 +69,12 @@ class ATMCommand15(base_types._BaseFieldType):
 
 	@Rslt.setter
 	def Rslt(self, value):
-		self._Rslt = value if type(value) != base_types.auto else self.make_default("Rslt")
+		self._Rslt = value if value is not None else base_types.UninitialisedField(self, 'Rslt', TerminalManagementActionResult2Code, False)
 
 	@Rslt.deleter
 	def Rslt(self):
 		del self._Rslt
-		self._Rslt = None
+		self._Rslt = base_types.UninitialisedField(self, 'Rslt', TerminalManagementActionResult2Code, False)
 
 	@property
 	def Tp(self):
@@ -82,12 +82,12 @@ class ATMCommand15(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', ATMCommand7Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', ATMCommand7Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlErrInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesAccountQueryV01 import SecuritiesAccountQueryV01
+from . import SecuritiesAccountQueryV01
 
 class REDA_019_001_01():
 
@@ -18,12 +18,12 @@ class REDA_019_001_01():
 
 		@SctiesAcctQry.setter
 		def SctiesAcctQry(self, value):
-			self._SctiesAcctQry = value if type(value) != base_types.auto else self.make_default("SctiesAcctQry")
+			self._SctiesAcctQry = value if value is not None else base_types.UninitialisedField(self, 'SctiesAcctQry', SecuritiesAccountQueryV01, False)
 
 		@SctiesAcctQry.deleter
 		def SctiesAcctQry(self):
 			del self._SctiesAcctQry
-			self._SctiesAcctQry = None
+			self._SctiesAcctQry = base_types.UninitialisedField(self, 'SctiesAcctQry', SecuritiesAccountQueryV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesAcctQry', type=SecuritiesAccountQueryV01, min=1, max=1, mutex_group=None, array=False),

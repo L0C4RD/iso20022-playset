@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PartyIdentificationAndAccount206 import PartyIdentificationAndAccount206
+from . import PartyIdentificationAndAccount206
 
 class Counterparty16Choice(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class Counterparty16Choice(base_types._BaseFieldType):
 
 	@Buyr.setter
 	def Buyr(self, value):
-		self._Buyr = value if type(value) != base_types.auto else self.make_default("Buyr")
+		self._Buyr = value if value is not None else base_types.UninitialisedField(self, 'Buyr', PartyIdentificationAndAccount206, False)
 
 	@Buyr.deleter
 	def Buyr(self):
 		del self._Buyr
-		self._Buyr = None
+		self._Buyr = base_types.UninitialisedField(self, 'Buyr', PartyIdentificationAndAccount206, False)
 
 	@property
 	def Sellr(self):
@@ -26,12 +26,12 @@ class Counterparty16Choice(base_types._BaseFieldType):
 
 	@Sellr.setter
 	def Sellr(self, value):
-		self._Sellr = value if type(value) != base_types.auto else self.make_default("Sellr")
+		self._Sellr = value if value is not None else base_types.UninitialisedField(self, 'Sellr', PartyIdentificationAndAccount206, False)
 
 	@Sellr.deleter
 	def Sellr(self):
 		del self._Sellr
-		self._Sellr = None
+		self._Sellr = base_types.UninitialisedField(self, 'Sellr', PartyIdentificationAndAccount206, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Buyr', type=PartyIdentificationAndAccount206, min=0, max=1, mutex_group=1, array=False),

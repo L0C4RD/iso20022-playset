@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AirportName1Choice import AirportName1Choice
-from ._CountryCode import CountryCode
-from ._Max70Text import Max70Text
+from . import AirportName1Choice
+from . import CountryCode
+from . import Max70Text
 
 class TransportByAir5(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TransportByAir5(base_types._BaseFieldType):
 
 	@AirCrrierCtry.setter
 	def AirCrrierCtry(self, value):
-		self._AirCrrierCtry = value if type(value) != base_types.auto else self.make_default("AirCrrierCtry")
+		self._AirCrrierCtry = value if value is not None else base_types.UninitialisedField(self, 'AirCrrierCtry', CountryCode, False)
 
 	@AirCrrierCtry.deleter
 	def AirCrrierCtry(self):
 		del self._AirCrrierCtry
-		self._AirCrrierCtry = None
+		self._AirCrrierCtry = base_types.UninitialisedField(self, 'AirCrrierCtry', CountryCode, False)
 
 	@property
 	def AirCrrierNm(self):
@@ -28,12 +28,12 @@ class TransportByAir5(base_types._BaseFieldType):
 
 	@AirCrrierNm.setter
 	def AirCrrierNm(self, value):
-		self._AirCrrierNm = value if type(value) != base_types.auto else self.make_default("AirCrrierNm")
+		self._AirCrrierNm = value if value is not None else base_types.UninitialisedField(self, 'AirCrrierNm', Max70Text, False)
 
 	@AirCrrierNm.deleter
 	def AirCrrierNm(self):
 		del self._AirCrrierNm
-		self._AirCrrierNm = None
+		self._AirCrrierNm = base_types.UninitialisedField(self, 'AirCrrierNm', Max70Text, False)
 
 	@property
 	def CrrierAgtCtry(self):
@@ -41,12 +41,12 @@ class TransportByAir5(base_types._BaseFieldType):
 
 	@CrrierAgtCtry.setter
 	def CrrierAgtCtry(self, value):
-		self._CrrierAgtCtry = value if type(value) != base_types.auto else self.make_default("CrrierAgtCtry")
+		self._CrrierAgtCtry = value if value is not None else base_types.UninitialisedField(self, 'CrrierAgtCtry', CountryCode, False)
 
 	@CrrierAgtCtry.deleter
 	def CrrierAgtCtry(self):
 		del self._CrrierAgtCtry
-		self._CrrierAgtCtry = None
+		self._CrrierAgtCtry = base_types.UninitialisedField(self, 'CrrierAgtCtry', CountryCode, False)
 
 	@property
 	def CrrierAgtNm(self):
@@ -54,12 +54,12 @@ class TransportByAir5(base_types._BaseFieldType):
 
 	@CrrierAgtNm.setter
 	def CrrierAgtNm(self, value):
-		self._CrrierAgtNm = value if type(value) != base_types.auto else self.make_default("CrrierAgtNm")
+		self._CrrierAgtNm = value if value is not None else base_types.UninitialisedField(self, 'CrrierAgtNm', Max70Text, False)
 
 	@CrrierAgtNm.deleter
 	def CrrierAgtNm(self):
 		del self._CrrierAgtNm
-		self._CrrierAgtNm = None
+		self._CrrierAgtNm = base_types.UninitialisedField(self, 'CrrierAgtNm', Max70Text, False)
 
 	@property
 	def DprtureAirprt(self):
@@ -67,12 +67,12 @@ class TransportByAir5(base_types._BaseFieldType):
 
 	@DprtureAirprt.setter
 	def DprtureAirprt(self, value):
-		self._DprtureAirprt = value if type(value) != base_types.auto else self.make_default("DprtureAirprt")
+		self._DprtureAirprt = value if value is not None else base_types.UninitialisedField(self, 'DprtureAirprt', AirportName1Choice, True)
 
 	@DprtureAirprt.deleter
 	def DprtureAirprt(self):
 		del self._DprtureAirprt
-		self._DprtureAirprt = None
+		self._DprtureAirprt = base_types.UninitialisedField(self, 'DprtureAirprt', AirportName1Choice, True)
 
 	@property
 	def DstnAirprt(self):
@@ -80,12 +80,12 @@ class TransportByAir5(base_types._BaseFieldType):
 
 	@DstnAirprt.setter
 	def DstnAirprt(self, value):
-		self._DstnAirprt = value if type(value) != base_types.auto else self.make_default("DstnAirprt")
+		self._DstnAirprt = value if value is not None else base_types.UninitialisedField(self, 'DstnAirprt', AirportName1Choice, True)
 
 	@DstnAirprt.deleter
 	def DstnAirprt(self):
 		del self._DstnAirprt
-		self._DstnAirprt = None
+		self._DstnAirprt = base_types.UninitialisedField(self, 'DstnAirprt', AirportName1Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AirCrrierCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),

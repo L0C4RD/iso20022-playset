@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentContractType2Code import FinancialInstrumentContractType2Code
-from ._ISINQueryCriteria1 import ISINQueryCriteria1
-from ._Operation3Code import Operation3Code
-from ._SecurityIdentificationQuery4Choice import SecurityIdentificationQuery4Choice
-from ._SecurityIdentificationQueryCriteria1 import SecurityIdentificationQueryCriteria1
-from ._UPIQueryCriteria1 import UPIQueryCriteria1
+from . import FinancialInstrumentContractType2Code
+from . import ISINQueryCriteria1
+from . import Operation3Code
+from . import SecurityIdentificationQuery4Choice
+from . import SecurityIdentificationQueryCriteria1
+from . import UPIQueryCriteria1
 
 class TradeSecurityIdentificationQueryCriteria3(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class TradeSecurityIdentificationQueryCriteria3(base_types._BaseFieldType):
 
 	@CtrctTp.setter
 	def CtrctTp(self, value):
-		self._CtrctTp = value if type(value) != base_types.auto else self.make_default("CtrctTp")
+		self._CtrctTp = value if value is not None else base_types.UninitialisedField(self, 'CtrctTp', FinancialInstrumentContractType2Code, True)
 
 	@CtrctTp.deleter
 	def CtrctTp(self):
 		del self._CtrctTp
-		self._CtrctTp = None
+		self._CtrctTp = base_types.UninitialisedField(self, 'CtrctTp', FinancialInstrumentContractType2Code, True)
 
 	@property
 	def ISIN(self):
@@ -31,12 +31,12 @@ class TradeSecurityIdentificationQueryCriteria3(base_types._BaseFieldType):
 
 	@ISIN.setter
 	def ISIN(self, value):
-		self._ISIN = value if type(value) != base_types.auto else self.make_default("ISIN")
+		self._ISIN = value if value is not None else base_types.UninitialisedField(self, 'ISIN', ISINQueryCriteria1, True)
 
 	@ISIN.deleter
 	def ISIN(self):
 		del self._ISIN
-		self._ISIN = None
+		self._ISIN = base_types.UninitialisedField(self, 'ISIN', ISINQueryCriteria1, True)
 
 	@property
 	def Id(self):
@@ -44,12 +44,12 @@ class TradeSecurityIdentificationQueryCriteria3(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', SecurityIdentificationQueryCriteria1, True)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', SecurityIdentificationQueryCriteria1, True)
 
 	@property
 	def Oprtr(self):
@@ -57,12 +57,12 @@ class TradeSecurityIdentificationQueryCriteria3(base_types._BaseFieldType):
 
 	@Oprtr.setter
 	def Oprtr(self, value):
-		self._Oprtr = value if type(value) != base_types.auto else self.make_default("Oprtr")
+		self._Oprtr = value if value is not None else base_types.UninitialisedField(self, 'Oprtr', Operation3Code, False)
 
 	@Oprtr.deleter
 	def Oprtr(self):
 		del self._Oprtr
-		self._Oprtr = None
+		self._Oprtr = base_types.UninitialisedField(self, 'Oprtr', Operation3Code, False)
 
 	@property
 	def UndrlygInstrmId(self):
@@ -70,12 +70,12 @@ class TradeSecurityIdentificationQueryCriteria3(base_types._BaseFieldType):
 
 	@UndrlygInstrmId.setter
 	def UndrlygInstrmId(self, value):
-		self._UndrlygInstrmId = value if type(value) != base_types.auto else self.make_default("UndrlygInstrmId")
+		self._UndrlygInstrmId = value if value is not None else base_types.UninitialisedField(self, 'UndrlygInstrmId', SecurityIdentificationQuery4Choice, True)
 
 	@UndrlygInstrmId.deleter
 	def UndrlygInstrmId(self):
 		del self._UndrlygInstrmId
-		self._UndrlygInstrmId = None
+		self._UndrlygInstrmId = base_types.UninitialisedField(self, 'UndrlygInstrmId', SecurityIdentificationQuery4Choice, True)
 
 	@property
 	def UnqPdctIdr(self):
@@ -83,12 +83,12 @@ class TradeSecurityIdentificationQueryCriteria3(base_types._BaseFieldType):
 
 	@UnqPdctIdr.setter
 	def UnqPdctIdr(self, value):
-		self._UnqPdctIdr = value if type(value) != base_types.auto else self.make_default("UnqPdctIdr")
+		self._UnqPdctIdr = value if value is not None else base_types.UninitialisedField(self, 'UnqPdctIdr', UPIQueryCriteria1, True)
 
 	@UnqPdctIdr.deleter
 	def UnqPdctIdr(self):
 		del self._UnqPdctIdr
-		self._UnqPdctIdr = None
+		self._UnqPdctIdr = base_types.UninitialisedField(self, 'UnqPdctIdr', UPIQueryCriteria1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrctTp', type=FinancialInstrumentContractType2Code, min=0, max=None, mutex_group=None, array=True),

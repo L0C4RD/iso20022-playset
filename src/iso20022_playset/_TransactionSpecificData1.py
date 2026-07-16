@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._FleetData7 import FleetData7
-from ._Invoice4 import Invoice4
-from ._Lodging5 import Lodging5
-from ._PassengerTransport4 import PassengerTransport4
-from ._Sale4 import Sale4
-from ._ShippingData4 import ShippingData4
-from ._TelecomServices4 import TelecomServices4
-from ._TemporaryServices4 import TemporaryServices4
-from ._TravelAgency5 import TravelAgency5
-from ._VehicleRentalService4 import VehicleRentalService4
+from . import ATICALaxProcessing
+from . import FleetData7
+from . import Invoice4
+from . import Lodging5
+from . import PassengerTransport4
+from . import Sale4
+from . import ShippingData4
+from . import TelecomServices4
+from . import TemporaryServices4
+from . import TravelAgency5
+from . import VehicleRentalService4
 
 class TransactionSpecificData1(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class TransactionSpecificData1(base_types._BaseFieldType):
 
 	@Fleet.setter
 	def Fleet(self, value):
-		self._Fleet = value if type(value) != base_types.auto else self.make_default("Fleet")
+		self._Fleet = value if value is not None else base_types.UninitialisedField(self, 'Fleet', FleetData7, False)
 
 	@Fleet.deleter
 	def Fleet(self):
 		del self._Fleet
-		self._Fleet = None
+		self._Fleet = base_types.UninitialisedField(self, 'Fleet', FleetData7, False)
 
 	@property
 	def Invc(self):
@@ -36,12 +36,12 @@ class TransactionSpecificData1(base_types._BaseFieldType):
 
 	@Invc.setter
 	def Invc(self, value):
-		self._Invc = value if type(value) != base_types.auto else self.make_default("Invc")
+		self._Invc = value if value is not None else base_types.UninitialisedField(self, 'Invc', Invoice4, False)
 
 	@Invc.deleter
 	def Invc(self):
 		del self._Invc
-		self._Invc = None
+		self._Invc = base_types.UninitialisedField(self, 'Invc', Invoice4, False)
 
 	@property
 	def Ldgg(self):
@@ -49,12 +49,12 @@ class TransactionSpecificData1(base_types._BaseFieldType):
 
 	@Ldgg.setter
 	def Ldgg(self, value):
-		self._Ldgg = value if type(value) != base_types.auto else self.make_default("Ldgg")
+		self._Ldgg = value if value is not None else base_types.UninitialisedField(self, 'Ldgg', Lodging5, True)
 
 	@Ldgg.deleter
 	def Ldgg(self):
 		del self._Ldgg
-		self._Ldgg = None
+		self._Ldgg = base_types.UninitialisedField(self, 'Ldgg', Lodging5, True)
 
 	@property
 	def NtlData(self):
@@ -62,12 +62,12 @@ class TransactionSpecificData1(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def PrvtData(self):
@@ -75,12 +75,12 @@ class TransactionSpecificData1(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def PssngrTrnsprt(self):
@@ -88,12 +88,12 @@ class TransactionSpecificData1(base_types._BaseFieldType):
 
 	@PssngrTrnsprt.setter
 	def PssngrTrnsprt(self, value):
-		self._PssngrTrnsprt = value if type(value) != base_types.auto else self.make_default("PssngrTrnsprt")
+		self._PssngrTrnsprt = value if value is not None else base_types.UninitialisedField(self, 'PssngrTrnsprt', PassengerTransport4, False)
 
 	@PssngrTrnsprt.deleter
 	def PssngrTrnsprt(self):
 		del self._PssngrTrnsprt
-		self._PssngrTrnsprt = None
+		self._PssngrTrnsprt = base_types.UninitialisedField(self, 'PssngrTrnsprt', PassengerTransport4, False)
 
 	@property
 	def Sale(self):
@@ -101,12 +101,12 @@ class TransactionSpecificData1(base_types._BaseFieldType):
 
 	@Sale.setter
 	def Sale(self, value):
-		self._Sale = value if type(value) != base_types.auto else self.make_default("Sale")
+		self._Sale = value if value is not None else base_types.UninitialisedField(self, 'Sale', Sale4, False)
 
 	@Sale.deleter
 	def Sale(self):
 		del self._Sale
-		self._Sale = None
+		self._Sale = base_types.UninitialisedField(self, 'Sale', Sale4, False)
 
 	@property
 	def ShppgData(self):
@@ -114,12 +114,12 @@ class TransactionSpecificData1(base_types._BaseFieldType):
 
 	@ShppgData.setter
 	def ShppgData(self, value):
-		self._ShppgData = value if type(value) != base_types.auto else self.make_default("ShppgData")
+		self._ShppgData = value if value is not None else base_types.UninitialisedField(self, 'ShppgData', ShippingData4, False)
 
 	@ShppgData.deleter
 	def ShppgData(self):
 		del self._ShppgData
-		self._ShppgData = None
+		self._ShppgData = base_types.UninitialisedField(self, 'ShppgData', ShippingData4, False)
 
 	@property
 	def TelecomSvcs(self):
@@ -127,12 +127,12 @@ class TransactionSpecificData1(base_types._BaseFieldType):
 
 	@TelecomSvcs.setter
 	def TelecomSvcs(self, value):
-		self._TelecomSvcs = value if type(value) != base_types.auto else self.make_default("TelecomSvcs")
+		self._TelecomSvcs = value if value is not None else base_types.UninitialisedField(self, 'TelecomSvcs', TelecomServices4, False)
 
 	@TelecomSvcs.deleter
 	def TelecomSvcs(self):
 		del self._TelecomSvcs
-		self._TelecomSvcs = None
+		self._TelecomSvcs = base_types.UninitialisedField(self, 'TelecomSvcs', TelecomServices4, False)
 
 	@property
 	def TempSvcs(self):
@@ -140,12 +140,12 @@ class TransactionSpecificData1(base_types._BaseFieldType):
 
 	@TempSvcs.setter
 	def TempSvcs(self, value):
-		self._TempSvcs = value if type(value) != base_types.auto else self.make_default("TempSvcs")
+		self._TempSvcs = value if value is not None else base_types.UninitialisedField(self, 'TempSvcs', TemporaryServices4, True)
 
 	@TempSvcs.deleter
 	def TempSvcs(self):
 		del self._TempSvcs
-		self._TempSvcs = None
+		self._TempSvcs = base_types.UninitialisedField(self, 'TempSvcs', TemporaryServices4, True)
 
 	@property
 	def TrvlAgcy(self):
@@ -153,12 +153,12 @@ class TransactionSpecificData1(base_types._BaseFieldType):
 
 	@TrvlAgcy.setter
 	def TrvlAgcy(self, value):
-		self._TrvlAgcy = value if type(value) != base_types.auto else self.make_default("TrvlAgcy")
+		self._TrvlAgcy = value if value is not None else base_types.UninitialisedField(self, 'TrvlAgcy', TravelAgency5, True)
 
 	@TrvlAgcy.deleter
 	def TrvlAgcy(self):
 		del self._TrvlAgcy
-		self._TrvlAgcy = None
+		self._TrvlAgcy = base_types.UninitialisedField(self, 'TrvlAgcy', TravelAgency5, True)
 
 	@property
 	def VhclRntl(self):
@@ -166,12 +166,12 @@ class TransactionSpecificData1(base_types._BaseFieldType):
 
 	@VhclRntl.setter
 	def VhclRntl(self, value):
-		self._VhclRntl = value if type(value) != base_types.auto else self.make_default("VhclRntl")
+		self._VhclRntl = value if value is not None else base_types.UninitialisedField(self, 'VhclRntl', VehicleRentalService4, True)
 
 	@VhclRntl.deleter
 	def VhclRntl(self):
 		del self._VhclRntl
-		self._VhclRntl = None
+		self._VhclRntl = base_types.UninitialisedField(self, 'VhclRntl', VehicleRentalService4, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Fleet', type=FleetData7, min=0, max=1, mutex_group=None, array=False),

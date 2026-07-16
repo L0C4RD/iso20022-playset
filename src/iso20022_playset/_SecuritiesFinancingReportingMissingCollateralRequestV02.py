@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._TradeTransactionIdentification18 import TradeTransactionIdentification18
+from . import SupplementaryData1
+from . import TradeTransactionIdentification18
 
 class SecuritiesFinancingReportingMissingCollateralRequestV02(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SecuritiesFinancingReportingMissingCollateralRequestV02(base_types._BaseFi
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TxId(self):
@@ -27,12 +27,12 @@ class SecuritiesFinancingReportingMissingCollateralRequestV02(base_types._BaseFi
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', TradeTransactionIdentification18, True)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', TradeTransactionIdentification18, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),

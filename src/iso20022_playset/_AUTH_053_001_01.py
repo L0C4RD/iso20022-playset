@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentReportingTradingVolumeCapResultReportV01 import FinancialInstrumentReportingTradingVolumeCapResultReportV01
+from . import FinancialInstrumentReportingTradingVolumeCapResultReportV01
 
 class AUTH_053_001_01():
 
@@ -18,12 +18,12 @@ class AUTH_053_001_01():
 
 		@FinInstrmRptgTradgVolCapRsltRpt.setter
 		def FinInstrmRptgTradgVolCapRsltRpt(self, value):
-			self._FinInstrmRptgTradgVolCapRsltRpt = value if type(value) != base_types.auto else self.make_default("FinInstrmRptgTradgVolCapRsltRpt")
+			self._FinInstrmRptgTradgVolCapRsltRpt = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmRptgTradgVolCapRsltRpt', FinancialInstrumentReportingTradingVolumeCapResultReportV01, False)
 
 		@FinInstrmRptgTradgVolCapRsltRpt.deleter
 		def FinInstrmRptgTradgVolCapRsltRpt(self):
 			del self._FinInstrmRptgTradgVolCapRsltRpt
-			self._FinInstrmRptgTradgVolCapRsltRpt = None
+			self._FinInstrmRptgTradgVolCapRsltRpt = base_types.UninitialisedField(self, 'FinInstrmRptgTradgVolCapRsltRpt', FinancialInstrumentReportingTradingVolumeCapResultReportV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='FinInstrmRptgTradgVolCapRsltRpt', type=FinancialInstrumentReportingTradingVolumeCapResultReportV01, min=1, max=1, mutex_group=None, array=False),

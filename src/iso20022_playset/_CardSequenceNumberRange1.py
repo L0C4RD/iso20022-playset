@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
+from . import Max35Text
 
 class CardSequenceNumberRange1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class CardSequenceNumberRange1(base_types._BaseFieldType):
 
 	@FrstTx.setter
 	def FrstTx(self, value):
-		self._FrstTx = value if type(value) != base_types.auto else self.make_default("FrstTx")
+		self._FrstTx = value if value is not None else base_types.UninitialisedField(self, 'FrstTx', Max35Text, False)
 
 	@FrstTx.deleter
 	def FrstTx(self):
 		del self._FrstTx
-		self._FrstTx = None
+		self._FrstTx = base_types.UninitialisedField(self, 'FrstTx', Max35Text, False)
 
 	@property
 	def LastTx(self):
@@ -26,12 +26,12 @@ class CardSequenceNumberRange1(base_types._BaseFieldType):
 
 	@LastTx.setter
 	def LastTx(self, value):
-		self._LastTx = value if type(value) != base_types.auto else self.make_default("LastTx")
+		self._LastTx = value if value is not None else base_types.UninitialisedField(self, 'LastTx', Max35Text, False)
 
 	@LastTx.deleter
 	def LastTx(self):
 		del self._LastTx
-		self._LastTx = None
+		self._LastTx = base_types.UninitialisedField(self, 'LastTx', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FrstTx', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

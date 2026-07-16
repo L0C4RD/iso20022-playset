@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification36 import GenericIdentification36
-from ._Max350Text import Max350Text
+from . import GenericIdentification36
+from . import Max350Text
 
 class InnovativeFinance1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class InnovativeFinance1(base_types._BaseFieldType):
 
 	@Inf.setter
 	def Inf(self, value):
-		self._Inf = value if type(value) != base_types.auto else self.make_default("Inf")
+		self._Inf = value if value is not None else base_types.UninitialisedField(self, 'Inf', Max350Text, False)
 
 	@Inf.deleter
 	def Inf(self):
 		del self._Inf
-		self._Inf = None
+		self._Inf = base_types.UninitialisedField(self, 'Inf', Max350Text, False)
 
 	@property
 	def Tp(self):
@@ -27,12 +27,12 @@ class InnovativeFinance1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', GenericIdentification36, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', GenericIdentification36, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Inf', type=Max350Text, min=1, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InterestComputationMethodFormat6Choice import InterestComputationMethodFormat6Choice
-from ._PercentageRate import PercentageRate
+from . import InterestComputationMethodFormat6Choice
+from . import PercentageRate
 
 class FixedRate11(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class FixedRate11(base_types._BaseFieldType):
 
 	@DayCntBsis.setter
 	def DayCntBsis(self, value):
-		self._DayCntBsis = value if type(value) != base_types.auto else self.make_default("DayCntBsis")
+		self._DayCntBsis = value if value is not None else base_types.UninitialisedField(self, 'DayCntBsis', InterestComputationMethodFormat6Choice, False)
 
 	@DayCntBsis.deleter
 	def DayCntBsis(self):
 		del self._DayCntBsis
-		self._DayCntBsis = None
+		self._DayCntBsis = base_types.UninitialisedField(self, 'DayCntBsis', InterestComputationMethodFormat6Choice, False)
 
 	@property
 	def Rate(self):
@@ -27,12 +27,12 @@ class FixedRate11(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+		self._Rate = value if value is not None else base_types.UninitialisedField(self, 'Rate', PercentageRate, False)
 
 	@Rate.deleter
 	def Rate(self):
 		del self._Rate
-		self._Rate = None
+		self._Rate = base_types.UninitialisedField(self, 'Rate', PercentageRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DayCntBsis', type=InterestComputationMethodFormat6Choice, min=0, max=1, mutex_group=None, array=False),

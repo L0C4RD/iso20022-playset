@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from . import RestrictedFINXMax16Text
 
 class TransactionIdentification7(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class TransactionIdentification7(base_types._BaseFieldType):
 
 	@AcctOwnrTxId.setter
 	def AcctOwnrTxId(self, value):
-		self._AcctOwnrTxId = value if type(value) != base_types.auto else self.make_default("AcctOwnrTxId")
+		self._AcctOwnrTxId = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnrTxId', RestrictedFINXMax16Text, False)
 
 	@AcctOwnrTxId.deleter
 	def AcctOwnrTxId(self):
 		del self._AcctOwnrTxId
-		self._AcctOwnrTxId = None
+		self._AcctOwnrTxId = base_types.UninitialisedField(self, 'AcctOwnrTxId', RestrictedFINXMax16Text, False)
 
 	@property
 	def AcctSvcrTxId(self):
@@ -26,12 +26,12 @@ class TransactionIdentification7(base_types._BaseFieldType):
 
 	@AcctSvcrTxId.setter
 	def AcctSvcrTxId(self, value):
-		self._AcctSvcrTxId = value if type(value) != base_types.auto else self.make_default("AcctSvcrTxId")
+		self._AcctSvcrTxId = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcrTxId', RestrictedFINXMax16Text, False)
 
 	@AcctSvcrTxId.deleter
 	def AcctSvcrTxId(self):
 		del self._AcctSvcrTxId
-		self._AcctSvcrTxId = None
+		self._AcctSvcrTxId = base_types.UninitialisedField(self, 'AcctSvcrTxId', RestrictedFINXMax16Text, False)
 
 	@property
 	def MktInfrstrctrTxId(self):
@@ -39,12 +39,12 @@ class TransactionIdentification7(base_types._BaseFieldType):
 
 	@MktInfrstrctrTxId.setter
 	def MktInfrstrctrTxId(self, value):
-		self._MktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("MktInfrstrctrTxId")
+		self._MktInfrstrctrTxId = value if value is not None else base_types.UninitialisedField(self, 'MktInfrstrctrTxId', RestrictedFINXMax16Text, False)
 
 	@MktInfrstrctrTxId.deleter
 	def MktInfrstrctrTxId(self):
 		del self._MktInfrstrctrTxId
-		self._MktInfrstrctrTxId = None
+		self._MktInfrstrctrTxId = base_types.UninitialisedField(self, 'MktInfrstrctrTxId', RestrictedFINXMax16Text, False)
 
 	@property
 	def PrcrTxId(self):
@@ -52,12 +52,12 @@ class TransactionIdentification7(base_types._BaseFieldType):
 
 	@PrcrTxId.setter
 	def PrcrTxId(self, value):
-		self._PrcrTxId = value if type(value) != base_types.auto else self.make_default("PrcrTxId")
+		self._PrcrTxId = value if value is not None else base_types.UninitialisedField(self, 'PrcrTxId', RestrictedFINXMax16Text, False)
 
 	@PrcrTxId.deleter
 	def PrcrTxId(self):
 		del self._PrcrTxId
-		self._PrcrTxId = None
+		self._PrcrTxId = base_types.UninitialisedField(self, 'PrcrTxId', RestrictedFINXMax16Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),

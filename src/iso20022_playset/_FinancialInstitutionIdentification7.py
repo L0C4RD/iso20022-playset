@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BICIdentifier import BICIdentifier
-from ._ClearingSystemMemberIdentification2 import ClearingSystemMemberIdentification2
-from ._GenericFinancialIdentification1 import GenericFinancialIdentification1
-from ._Max140Text import Max140Text
-from ._PostalAddress6 import PostalAddress6
+from . import BICIdentifier
+from . import ClearingSystemMemberIdentification2
+from . import GenericFinancialIdentification1
+from . import Max140Text
+from . import PostalAddress6
 
 class FinancialInstitutionIdentification7(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class FinancialInstitutionIdentification7(base_types._BaseFieldType):
 
 	@BIC.setter
 	def BIC(self, value):
-		self._BIC = value if type(value) != base_types.auto else self.make_default("BIC")
+		self._BIC = value if value is not None else base_types.UninitialisedField(self, 'BIC', BICIdentifier, False)
 
 	@BIC.deleter
 	def BIC(self):
 		del self._BIC
-		self._BIC = None
+		self._BIC = base_types.UninitialisedField(self, 'BIC', BICIdentifier, False)
 
 	@property
 	def ClrSysMmbId(self):
@@ -30,12 +30,12 @@ class FinancialInstitutionIdentification7(base_types._BaseFieldType):
 
 	@ClrSysMmbId.setter
 	def ClrSysMmbId(self, value):
-		self._ClrSysMmbId = value if type(value) != base_types.auto else self.make_default("ClrSysMmbId")
+		self._ClrSysMmbId = value if value is not None else base_types.UninitialisedField(self, 'ClrSysMmbId', ClearingSystemMemberIdentification2, False)
 
 	@ClrSysMmbId.deleter
 	def ClrSysMmbId(self):
 		del self._ClrSysMmbId
-		self._ClrSysMmbId = None
+		self._ClrSysMmbId = base_types.UninitialisedField(self, 'ClrSysMmbId', ClearingSystemMemberIdentification2, False)
 
 	@property
 	def Nm(self):
@@ -43,12 +43,12 @@ class FinancialInstitutionIdentification7(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max140Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max140Text, False)
 
 	@property
 	def Othr(self):
@@ -56,12 +56,12 @@ class FinancialInstitutionIdentification7(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', GenericFinancialIdentification1, False)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', GenericFinancialIdentification1, False)
 
 	@property
 	def PstlAdr(self):
@@ -69,12 +69,12 @@ class FinancialInstitutionIdentification7(base_types._BaseFieldType):
 
 	@PstlAdr.setter
 	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != base_types.auto else self.make_default("PstlAdr")
+		self._PstlAdr = value if value is not None else base_types.UninitialisedField(self, 'PstlAdr', PostalAddress6, False)
 
 	@PstlAdr.deleter
 	def PstlAdr(self):
 		del self._PstlAdr
-		self._PstlAdr = None
+		self._PstlAdr = base_types.UninitialisedField(self, 'PstlAdr', PostalAddress6, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BIC', type=BICIdentifier, min=0, max=1, mutex_group=None, array=False),

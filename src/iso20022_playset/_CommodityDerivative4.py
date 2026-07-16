@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._CommodityDerivative2Choice import CommodityDerivative2Choice
+from . import ActiveOrHistoricCurrencyCode
+from . import CommodityDerivative2Choice
 
 class CommodityDerivative4(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CommodityDerivative4(base_types._BaseFieldType):
 
 	@ClssSpcfc.setter
 	def ClssSpcfc(self, value):
-		self._ClssSpcfc = value if type(value) != base_types.auto else self.make_default("ClssSpcfc")
+		self._ClssSpcfc = value if value is not None else base_types.UninitialisedField(self, 'ClssSpcfc', CommodityDerivative2Choice, False)
 
 	@ClssSpcfc.deleter
 	def ClssSpcfc(self):
 		del self._ClssSpcfc
-		self._ClssSpcfc = None
+		self._ClssSpcfc = base_types.UninitialisedField(self, 'ClssSpcfc', CommodityDerivative2Choice, False)
 
 	@property
 	def NtnlCcy(self):
@@ -27,12 +27,12 @@ class CommodityDerivative4(base_types._BaseFieldType):
 
 	@NtnlCcy.setter
 	def NtnlCcy(self, value):
-		self._NtnlCcy = value if type(value) != base_types.auto else self.make_default("NtnlCcy")
+		self._NtnlCcy = value if value is not None else base_types.UninitialisedField(self, 'NtnlCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@NtnlCcy.deleter
 	def NtnlCcy(self):
 		del self._NtnlCcy
-		self._NtnlCcy = None
+		self._NtnlCcy = base_types.UninitialisedField(self, 'NtnlCcy', ActiveOrHistoricCurrencyCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClssSpcfc', type=CommodityDerivative2Choice, min=0, max=1, mutex_group=None, array=False),

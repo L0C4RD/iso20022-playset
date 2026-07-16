@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RequestedIndicator import RequestedIndicator
+from . import RequestedIndicator
 
 class InstructionStatusReturnCriteria1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class InstructionStatusReturnCriteria1(base_types._BaseFieldType):
 
 	@PmtInstrStsDtTmInd.setter
 	def PmtInstrStsDtTmInd(self, value):
-		self._PmtInstrStsDtTmInd = value if type(value) != base_types.auto else self.make_default("PmtInstrStsDtTmInd")
+		self._PmtInstrStsDtTmInd = value if value is not None else base_types.UninitialisedField(self, 'PmtInstrStsDtTmInd', RequestedIndicator, False)
 
 	@PmtInstrStsDtTmInd.deleter
 	def PmtInstrStsDtTmInd(self):
 		del self._PmtInstrStsDtTmInd
-		self._PmtInstrStsDtTmInd = None
+		self._PmtInstrStsDtTmInd = base_types.UninitialisedField(self, 'PmtInstrStsDtTmInd', RequestedIndicator, False)
 
 	@property
 	def PmtInstrStsInd(self):
@@ -26,12 +26,12 @@ class InstructionStatusReturnCriteria1(base_types._BaseFieldType):
 
 	@PmtInstrStsInd.setter
 	def PmtInstrStsInd(self, value):
-		self._PmtInstrStsInd = value if type(value) != base_types.auto else self.make_default("PmtInstrStsInd")
+		self._PmtInstrStsInd = value if value is not None else base_types.UninitialisedField(self, 'PmtInstrStsInd', RequestedIndicator, False)
 
 	@PmtInstrStsInd.deleter
 	def PmtInstrStsInd(self):
 		del self._PmtInstrStsInd
-		self._PmtInstrStsInd = None
+		self._PmtInstrStsInd = base_types.UninitialisedField(self, 'PmtInstrStsInd', RequestedIndicator, False)
 
 	@property
 	def PmtInstrStsRsnInd(self):
@@ -39,12 +39,12 @@ class InstructionStatusReturnCriteria1(base_types._BaseFieldType):
 
 	@PmtInstrStsRsnInd.setter
 	def PmtInstrStsRsnInd(self, value):
-		self._PmtInstrStsRsnInd = value if type(value) != base_types.auto else self.make_default("PmtInstrStsRsnInd")
+		self._PmtInstrStsRsnInd = value if value is not None else base_types.UninitialisedField(self, 'PmtInstrStsRsnInd', RequestedIndicator, False)
 
 	@PmtInstrStsRsnInd.deleter
 	def PmtInstrStsRsnInd(self):
 		del self._PmtInstrStsRsnInd
-		self._PmtInstrStsRsnInd = None
+		self._PmtInstrStsRsnInd = base_types.UninitialisedField(self, 'PmtInstrStsRsnInd', RequestedIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PmtInstrStsDtTmInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),

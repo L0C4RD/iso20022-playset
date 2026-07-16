@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountIdentification1 import AccountIdentification1
-from ._Exact4AlphaNumericText import Exact4AlphaNumericText
-from ._Max8Text import Max8Text
+from . import AccountIdentification1
+from . import Exact4AlphaNumericText
+from . import Max8Text
 
 class AccountIdentification3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AccountIdentification3(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', AccountIdentification1, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', AccountIdentification1, False)
 
 	@property
 	def Inf(self):
@@ -28,12 +28,12 @@ class AccountIdentification3(base_types._BaseFieldType):
 
 	@Inf.setter
 	def Inf(self, value):
-		self._Inf = value if type(value) != base_types.auto else self.make_default("Inf")
+		self._Inf = value if value is not None else base_types.UninitialisedField(self, 'Inf', Exact4AlphaNumericText, False)
 
 	@Inf.deleter
 	def Inf(self):
 		del self._Inf
-		self._Inf = None
+		self._Inf = base_types.UninitialisedField(self, 'Inf', Exact4AlphaNumericText, False)
 
 	@property
 	def Issr(self):
@@ -41,12 +41,12 @@ class AccountIdentification3(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+		self._Issr = value if value is not None else base_types.UninitialisedField(self, 'Issr', Max8Text, False)
 
 	@Issr.deleter
 	def Issr(self):
 		del self._Issr
-		self._Issr = None
+		self._Issr = base_types.UninitialisedField(self, 'Issr', Max8Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=AccountIdentification1, min=1, max=1, mutex_group=None, array=False),

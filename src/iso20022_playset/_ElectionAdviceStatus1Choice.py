@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionInstructionProcessingStatus1 import CorporateActionInstructionProcessingStatus1
-from ._CorporateActionInstructionRejectionStatus1 import CorporateActionInstructionRejectionStatus1
+from . import CorporateActionInstructionProcessingStatus1
+from . import CorporateActionInstructionRejectionStatus1
 
 class ElectionAdviceStatus1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ElectionAdviceStatus1Choice(base_types._BaseFieldType):
 
 	@PrcdSts.setter
 	def PrcdSts(self, value):
-		self._PrcdSts = value if type(value) != base_types.auto else self.make_default("PrcdSts")
+		self._PrcdSts = value if value is not None else base_types.UninitialisedField(self, 'PrcdSts', CorporateActionInstructionProcessingStatus1, False)
 
 	@PrcdSts.deleter
 	def PrcdSts(self):
 		del self._PrcdSts
-		self._PrcdSts = None
+		self._PrcdSts = base_types.UninitialisedField(self, 'PrcdSts', CorporateActionInstructionProcessingStatus1, False)
 
 	@property
 	def RjctdSts(self):
@@ -27,12 +27,12 @@ class ElectionAdviceStatus1Choice(base_types._BaseFieldType):
 
 	@RjctdSts.setter
 	def RjctdSts(self, value):
-		self._RjctdSts = value if type(value) != base_types.auto else self.make_default("RjctdSts")
+		self._RjctdSts = value if value is not None else base_types.UninitialisedField(self, 'RjctdSts', CorporateActionInstructionRejectionStatus1, False)
 
 	@RjctdSts.deleter
 	def RjctdSts(self):
 		del self._RjctdSts
-		self._RjctdSts = None
+		self._RjctdSts = base_types.UninitialisedField(self, 'RjctdSts', CorporateActionInstructionRejectionStatus1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrcdSts', type=CorporateActionInstructionProcessingStatus1, min=0, max=1, mutex_group=1, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MACData1 import MACData1
-from ._Max8HexBinaryText import Max8HexBinaryText
+from . import MACData1
+from . import Max8HexBinaryText
 
 class ContentInformationType41(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ContentInformationType41(base_types._BaseFieldType):
 
 	@MAC.setter
 	def MAC(self, value):
-		self._MAC = value if type(value) != base_types.auto else self.make_default("MAC")
+		self._MAC = value if value is not None else base_types.UninitialisedField(self, 'MAC', Max8HexBinaryText, False)
 
 	@MAC.deleter
 	def MAC(self):
 		del self._MAC
-		self._MAC = None
+		self._MAC = base_types.UninitialisedField(self, 'MAC', Max8HexBinaryText, False)
 
 	@property
 	def MACData(self):
@@ -27,12 +27,12 @@ class ContentInformationType41(base_types._BaseFieldType):
 
 	@MACData.setter
 	def MACData(self, value):
-		self._MACData = value if type(value) != base_types.auto else self.make_default("MACData")
+		self._MACData = value if value is not None else base_types.UninitialisedField(self, 'MACData', MACData1, False)
 
 	@MACData.deleter
 	def MACData(self):
 		del self._MACData
-		self._MACData = None
+		self._MACData = base_types.UninitialisedField(self, 'MACData', MACData1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MAC', type=Max8HexBinaryText, min=1, max=1, mutex_group=None, array=False),

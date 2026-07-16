@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._FinancialInstrument87 import FinancialInstrument87
-from ._PercentageRate import PercentageRate
+from . import ActiveCurrencyCode
+from . import FinancialInstrument87
+from . import PercentageRate
 
 class Reinvestment4(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Reinvestment4(base_types._BaseFieldType):
 
 	@FinInstrmDtls.setter
 	def FinInstrmDtls(self, value):
-		self._FinInstrmDtls = value if type(value) != base_types.auto else self.make_default("FinInstrmDtls")
+		self._FinInstrmDtls = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmDtls', FinancialInstrument87, False)
 
 	@FinInstrmDtls.deleter
 	def FinInstrmDtls(self):
 		del self._FinInstrmDtls
-		self._FinInstrmDtls = None
+		self._FinInstrmDtls = base_types.UninitialisedField(self, 'FinInstrmDtls', FinancialInstrument87, False)
 
 	@property
 	def ReqdNAVCcy(self):
@@ -28,12 +28,12 @@ class Reinvestment4(base_types._BaseFieldType):
 
 	@ReqdNAVCcy.setter
 	def ReqdNAVCcy(self, value):
-		self._ReqdNAVCcy = value if type(value) != base_types.auto else self.make_default("ReqdNAVCcy")
+		self._ReqdNAVCcy = value if value is not None else base_types.UninitialisedField(self, 'ReqdNAVCcy', ActiveCurrencyCode, False)
 
 	@ReqdNAVCcy.deleter
 	def ReqdNAVCcy(self):
 		del self._ReqdNAVCcy
-		self._ReqdNAVCcy = None
+		self._ReqdNAVCcy = base_types.UninitialisedField(self, 'ReqdNAVCcy', ActiveCurrencyCode, False)
 
 	@property
 	def RinvstmtPctg(self):
@@ -41,12 +41,12 @@ class Reinvestment4(base_types._BaseFieldType):
 
 	@RinvstmtPctg.setter
 	def RinvstmtPctg(self, value):
-		self._RinvstmtPctg = value if type(value) != base_types.auto else self.make_default("RinvstmtPctg")
+		self._RinvstmtPctg = value if value is not None else base_types.UninitialisedField(self, 'RinvstmtPctg', PercentageRate, False)
 
 	@RinvstmtPctg.deleter
 	def RinvstmtPctg(self):
 		del self._RinvstmtPctg
-		self._RinvstmtPctg = None
+		self._RinvstmtPctg = base_types.UninitialisedField(self, 'RinvstmtPctg', PercentageRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrument87, min=1, max=1, mutex_group=None, array=False),

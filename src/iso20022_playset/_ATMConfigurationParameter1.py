@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DataSetCategory7Code import DataSetCategory7Code
-from ._Max35Text import Max35Text
+from . import DataSetCategory7Code
+from . import Max35Text
 
 class ATMConfigurationParameter1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ATMConfigurationParameter1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', DataSetCategory7Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', DataSetCategory7Code, False)
 
 	@property
 	def Vrsn(self):
@@ -27,12 +27,12 @@ class ATMConfigurationParameter1(base_types._BaseFieldType):
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+		self._Vrsn = value if value is not None else base_types.UninitialisedField(self, 'Vrsn', Max35Text, False)
 
 	@Vrsn.deleter
 	def Vrsn(self):
 		del self._Vrsn
-		self._Vrsn = None
+		self._Vrsn = base_types.UninitialisedField(self, 'Vrsn', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Tp', type=DataSetCategory7Code, min=1, max=1, mutex_group=None, array=False),

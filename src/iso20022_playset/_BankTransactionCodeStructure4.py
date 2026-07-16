@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BankTransactionCodeStructure5 import BankTransactionCodeStructure5
-from ._ProprietaryBankTransactionCodeStructure1 import ProprietaryBankTransactionCodeStructure1
+from . import BankTransactionCodeStructure5
+from . import ProprietaryBankTransactionCodeStructure1
 
 class BankTransactionCodeStructure4(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class BankTransactionCodeStructure4(base_types._BaseFieldType):
 
 	@Domn.setter
 	def Domn(self, value):
-		self._Domn = value if type(value) != base_types.auto else self.make_default("Domn")
+		self._Domn = value if value is not None else base_types.UninitialisedField(self, 'Domn', BankTransactionCodeStructure5, False)
 
 	@Domn.deleter
 	def Domn(self):
 		del self._Domn
-		self._Domn = None
+		self._Domn = base_types.UninitialisedField(self, 'Domn', BankTransactionCodeStructure5, False)
 
 	@property
 	def Prtry(self):
@@ -27,12 +27,12 @@ class BankTransactionCodeStructure4(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+		self._Prtry = value if value is not None else base_types.UninitialisedField(self, 'Prtry', ProprietaryBankTransactionCodeStructure1, False)
 
 	@Prtry.deleter
 	def Prtry(self):
 		del self._Prtry
-		self._Prtry = None
+		self._Prtry = base_types.UninitialisedField(self, 'Prtry', ProprietaryBankTransactionCodeStructure1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Domn', type=BankTransactionCodeStructure5, min=0, max=1, mutex_group=None, array=False),

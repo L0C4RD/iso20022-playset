@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
-from ._FundBalance1 import FundBalance1
-from ._ISODate import ISODate
-from ._YesNoIndicator import YesNoIndicator
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import FinancialInstrumentQuantity1
+from . import FundBalance1
+from . import ISODate
+from . import YesNoIndicator
 
 class CashOutForecast6(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class CashOutForecast6(base_types._BaseFieldType):
 
 	@AddtlBal.setter
 	def AddtlBal(self, value):
-		self._AddtlBal = value if type(value) != base_types.auto else self.make_default("AddtlBal")
+		self._AddtlBal = value if value is not None else base_types.UninitialisedField(self, 'AddtlBal', FundBalance1, False)
 
 	@AddtlBal.deleter
 	def AddtlBal(self):
 		del self._AddtlBal
-		self._AddtlBal = None
+		self._AddtlBal = base_types.UninitialisedField(self, 'AddtlBal', FundBalance1, False)
 
 	@property
 	def CshSttlmDt(self):
@@ -30,12 +30,12 @@ class CashOutForecast6(base_types._BaseFieldType):
 
 	@CshSttlmDt.setter
 	def CshSttlmDt(self, value):
-		self._CshSttlmDt = value if type(value) != base_types.auto else self.make_default("CshSttlmDt")
+		self._CshSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'CshSttlmDt', ISODate, False)
 
 	@CshSttlmDt.deleter
 	def CshSttlmDt(self):
 		del self._CshSttlmDt
-		self._CshSttlmDt = None
+		self._CshSttlmDt = base_types.UninitialisedField(self, 'CshSttlmDt', ISODate, False)
 
 	@property
 	def SubTtlAmt(self):
@@ -43,12 +43,12 @@ class CashOutForecast6(base_types._BaseFieldType):
 
 	@SubTtlAmt.setter
 	def SubTtlAmt(self, value):
-		self._SubTtlAmt = value if type(value) != base_types.auto else self.make_default("SubTtlAmt")
+		self._SubTtlAmt = value if value is not None else base_types.UninitialisedField(self, 'SubTtlAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@SubTtlAmt.deleter
 	def SubTtlAmt(self):
 		del self._SubTtlAmt
-		self._SubTtlAmt = None
+		self._SubTtlAmt = base_types.UninitialisedField(self, 'SubTtlAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def SubTtlUnitsNb(self):
@@ -56,12 +56,12 @@ class CashOutForecast6(base_types._BaseFieldType):
 
 	@SubTtlUnitsNb.setter
 	def SubTtlUnitsNb(self, value):
-		self._SubTtlUnitsNb = value if type(value) != base_types.auto else self.make_default("SubTtlUnitsNb")
+		self._SubTtlUnitsNb = value if value is not None else base_types.UninitialisedField(self, 'SubTtlUnitsNb', FinancialInstrumentQuantity1, False)
 
 	@SubTtlUnitsNb.deleter
 	def SubTtlUnitsNb(self):
 		del self._SubTtlUnitsNb
-		self._SubTtlUnitsNb = None
+		self._SubTtlUnitsNb = base_types.UninitialisedField(self, 'SubTtlUnitsNb', FinancialInstrumentQuantity1, False)
 
 	@property
 	def XcptnlCshFlowInd(self):
@@ -69,12 +69,12 @@ class CashOutForecast6(base_types._BaseFieldType):
 
 	@XcptnlCshFlowInd.setter
 	def XcptnlCshFlowInd(self, value):
-		self._XcptnlCshFlowInd = value if type(value) != base_types.auto else self.make_default("XcptnlCshFlowInd")
+		self._XcptnlCshFlowInd = value if value is not None else base_types.UninitialisedField(self, 'XcptnlCshFlowInd', YesNoIndicator, False)
 
 	@XcptnlCshFlowInd.deleter
 	def XcptnlCshFlowInd(self):
 		del self._XcptnlCshFlowInd
-		self._XcptnlCshFlowInd = None
+		self._XcptnlCshFlowInd = base_types.UninitialisedField(self, 'XcptnlCshFlowInd', YesNoIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlBal', type=FundBalance1, min=0, max=1, mutex_group=None, array=False),

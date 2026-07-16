@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateType8Code import DateType8Code
-from ._ISODate import ISODate
+from . import DateType8Code
+from . import ISODate
 
 class DateFormat73Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DateFormat73Choice(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@property
 	def NotSpcfdDt(self):
@@ -27,12 +27,12 @@ class DateFormat73Choice(base_types._BaseFieldType):
 
 	@NotSpcfdDt.setter
 	def NotSpcfdDt(self, value):
-		self._NotSpcfdDt = value if type(value) != base_types.auto else self.make_default("NotSpcfdDt")
+		self._NotSpcfdDt = value if value is not None else base_types.UninitialisedField(self, 'NotSpcfdDt', DateType8Code, False)
 
 	@NotSpcfdDt.deleter
 	def NotSpcfdDt(self):
 		del self._NotSpcfdDt
-		self._NotSpcfdDt = None
+		self._NotSpcfdDt = base_types.UninitialisedField(self, 'NotSpcfdDt', DateType8Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=1, array=False),

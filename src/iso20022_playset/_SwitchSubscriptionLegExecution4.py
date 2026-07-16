@@ -2,24 +2,24 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._DateAndDateTimeChoice import DateAndDateTimeChoice
-from ._DecimalNumber import DecimalNumber
-from ._DeliveryParameters3 import DeliveryParameters3
-from ._Equalisation1 import Equalisation1
-from ._FinancialInstrument57 import FinancialInstrument57
-from ._FundSettlementParameters12 import FundSettlementParameters12
-from ._IncomePreference1Code import IncomePreference1Code
-from ._InformativeTax1 import InformativeTax1
-from ._InvestmentAccount58 import InvestmentAccount58
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
-from ._ProfitAndLoss2Choice import ProfitAndLoss2Choice
-from ._TotalFeesAndTaxes40 import TotalFeesAndTaxes40
-from ._UnitPrice22 import UnitPrice22
-from ._YesNoIndicator import YesNoIndicator
+from . import ActiveCurrencyAndAmount
+from . import ActiveCurrencyCode
+from . import ActiveOrHistoricCurrencyCode
+from . import DateAndDateTimeChoice
+from . import DecimalNumber
+from . import DeliveryParameters3
+from . import Equalisation1
+from . import FinancialInstrument57
+from . import FundSettlementParameters12
+from . import IncomePreference1Code
+from . import InformativeTax1
+from . import InvestmentAccount58
+from . import Max350Text
+from . import Max35Text
+from . import ProfitAndLoss2Choice
+from . import TotalFeesAndTaxes40
+from . import UnitPrice22
+from . import YesNoIndicator
 
 class SwitchSubscriptionLegExecution4(base_types._BaseFieldType):
 
@@ -30,12 +30,12 @@ class SwitchSubscriptionLegExecution4(base_types._BaseFieldType):
 
 	@CumDvddInd.setter
 	def CumDvddInd(self, value):
-		self._CumDvddInd = value if type(value) != base_types.auto else self.make_default("CumDvddInd")
+		self._CumDvddInd = value if value is not None else base_types.UninitialisedField(self, 'CumDvddInd', YesNoIndicator, False)
 
 	@CumDvddInd.deleter
 	def CumDvddInd(self):
 		del self._CumDvddInd
-		self._CumDvddInd = None
+		self._CumDvddInd = base_types.UninitialisedField(self, 'CumDvddInd', YesNoIndicator, False)
 
 	@property
 	def Equlstn(self):
@@ -43,12 +43,12 @@ class SwitchSubscriptionLegExecution4(base_types._BaseFieldType):
 
 	@Equlstn.setter
 	def Equlstn(self, value):
-		self._Equlstn = value if type(value) != base_types.auto else self.make_default("Equlstn")
+		self._Equlstn = value if value is not None else base_types.UninitialisedField(self, 'Equlstn', Equalisation1, False)
 
 	@Equlstn.deleter
 	def Equlstn(self):
 		del self._Equlstn
-		self._Equlstn = None
+		self._Equlstn = base_types.UninitialisedField(self, 'Equlstn', Equalisation1, False)
 
 	@property
 	def FinInstrmDtls(self):
@@ -56,12 +56,12 @@ class SwitchSubscriptionLegExecution4(base_types._BaseFieldType):
 
 	@FinInstrmDtls.setter
 	def FinInstrmDtls(self, value):
-		self._FinInstrmDtls = value if type(value) != base_types.auto else self.make_default("FinInstrmDtls")
+		self._FinInstrmDtls = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmDtls', FinancialInstrument57, False)
 
 	@FinInstrmDtls.deleter
 	def FinInstrmDtls(self):
 		del self._FinInstrmDtls
-		self._FinInstrmDtls = None
+		self._FinInstrmDtls = base_types.UninitialisedField(self, 'FinInstrmDtls', FinancialInstrument57, False)
 
 	@property
 	def GrssAmt(self):
@@ -69,12 +69,12 @@ class SwitchSubscriptionLegExecution4(base_types._BaseFieldType):
 
 	@GrssAmt.setter
 	def GrssAmt(self, value):
-		self._GrssAmt = value if type(value) != base_types.auto else self.make_default("GrssAmt")
+		self._GrssAmt = value if value is not None else base_types.UninitialisedField(self, 'GrssAmt', ActiveCurrencyAndAmount, False)
 
 	@GrssAmt.deleter
 	def GrssAmt(self):
 		del self._GrssAmt
-		self._GrssAmt = None
+		self._GrssAmt = base_types.UninitialisedField(self, 'GrssAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def IncmPref(self):
@@ -82,12 +82,12 @@ class SwitchSubscriptionLegExecution4(base_types._BaseFieldType):
 
 	@IncmPref.setter
 	def IncmPref(self, value):
-		self._IncmPref = value if type(value) != base_types.auto else self.make_default("IncmPref")
+		self._IncmPref = value if value is not None else base_types.UninitialisedField(self, 'IncmPref', IncomePreference1Code, False)
 
 	@IncmPref.deleter
 	def IncmPref(self):
 		del self._IncmPref
-		self._IncmPref = None
+		self._IncmPref = base_types.UninitialisedField(self, 'IncmPref', IncomePreference1Code, False)
 
 	@property
 	def InftvPricDtls(self):
@@ -95,12 +95,12 @@ class SwitchSubscriptionLegExecution4(base_types._BaseFieldType):
 
 	@InftvPricDtls.setter
 	def InftvPricDtls(self, value):
-		self._InftvPricDtls = value if type(value) != base_types.auto else self.make_default("InftvPricDtls")
+		self._InftvPricDtls = value if value is not None else base_types.UninitialisedField(self, 'InftvPricDtls', UnitPrice22, True)
 
 	@InftvPricDtls.deleter
 	def InftvPricDtls(self):
 		del self._InftvPricDtls
-		self._InftvPricDtls = None
+		self._InftvPricDtls = base_types.UninitialisedField(self, 'InftvPricDtls', UnitPrice22, True)
 
 	@property
 	def InftvTaxDtls(self):
@@ -108,12 +108,12 @@ class SwitchSubscriptionLegExecution4(base_types._BaseFieldType):
 
 	@InftvTaxDtls.setter
 	def InftvTaxDtls(self, value):
-		self._InftvTaxDtls = value if type(value) != base_types.auto else self.make_default("InftvTaxDtls")
+		self._InftvTaxDtls = value if value is not None else base_types.UninitialisedField(self, 'InftvTaxDtls', InformativeTax1, False)
 
 	@InftvTaxDtls.deleter
 	def InftvTaxDtls(self):
 		del self._InftvTaxDtls
-		self._InftvTaxDtls = None
+		self._InftvTaxDtls = base_types.UninitialisedField(self, 'InftvTaxDtls', InformativeTax1, False)
 
 	@property
 	def IntrmPrftAmt(self):
@@ -121,12 +121,12 @@ class SwitchSubscriptionLegExecution4(base_types._BaseFieldType):
 
 	@IntrmPrftAmt.setter
 	def IntrmPrftAmt(self, value):
-		self._IntrmPrftAmt = value if type(value) != base_types.auto else self.make_default("IntrmPrftAmt")
+		self._IntrmPrftAmt = value if value is not None else base_types.UninitialisedField(self, 'IntrmPrftAmt', ProfitAndLoss2Choice, False)
 
 	@IntrmPrftAmt.deleter
 	def IntrmPrftAmt(self):
 		del self._IntrmPrftAmt
-		self._IntrmPrftAmt = None
+		self._IntrmPrftAmt = base_types.UninitialisedField(self, 'IntrmPrftAmt', ProfitAndLoss2Choice, False)
 
 	@property
 	def InvstmtAcctDtls(self):
@@ -134,12 +134,12 @@ class SwitchSubscriptionLegExecution4(base_types._BaseFieldType):
 
 	@InvstmtAcctDtls.setter
 	def InvstmtAcctDtls(self, value):
-		self._InvstmtAcctDtls = value if type(value) != base_types.auto else self.make_default("InvstmtAcctDtls")
+		self._InvstmtAcctDtls = value if value is not None else base_types.UninitialisedField(self, 'InvstmtAcctDtls', InvestmentAccount58, False)
 
 	@InvstmtAcctDtls.deleter
 	def InvstmtAcctDtls(self):
 		del self._InvstmtAcctDtls
-		self._InvstmtAcctDtls = None
+		self._InvstmtAcctDtls = base_types.UninitialisedField(self, 'InvstmtAcctDtls', InvestmentAccount58, False)
 
 	@property
 	def LegExctnId(self):
@@ -147,12 +147,12 @@ class SwitchSubscriptionLegExecution4(base_types._BaseFieldType):
 
 	@LegExctnId.setter
 	def LegExctnId(self, value):
-		self._LegExctnId = value if type(value) != base_types.auto else self.make_default("LegExctnId")
+		self._LegExctnId = value if value is not None else base_types.UninitialisedField(self, 'LegExctnId', Max35Text, False)
 
 	@LegExctnId.deleter
 	def LegExctnId(self):
 		del self._LegExctnId
-		self._LegExctnId = None
+		self._LegExctnId = base_types.UninitialisedField(self, 'LegExctnId', Max35Text, False)
 
 	@property
 	def LegId(self):
@@ -160,12 +160,12 @@ class SwitchSubscriptionLegExecution4(base_types._BaseFieldType):
 
 	@LegId.setter
 	def LegId(self, value):
-		self._LegId = value if type(value) != base_types.auto else self.make_default("LegId")
+		self._LegId = value if value is not None else base_types.UninitialisedField(self, 'LegId', Max35Text, False)
 
 	@LegId.deleter
 	def LegId(self):
 		del self._LegId
-		self._LegId = None
+		self._LegId = base_types.UninitialisedField(self, 'LegId', Max35Text, False)
 
 	@property
 	def NetAmt(self):
@@ -173,12 +173,12 @@ class SwitchSubscriptionLegExecution4(base_types._BaseFieldType):
 
 	@NetAmt.setter
 	def NetAmt(self, value):
-		self._NetAmt = value if type(value) != base_types.auto else self.make_default("NetAmt")
+		self._NetAmt = value if value is not None else base_types.UninitialisedField(self, 'NetAmt', ActiveCurrencyAndAmount, False)
 
 	@NetAmt.deleter
 	def NetAmt(self):
 		del self._NetAmt
-		self._NetAmt = None
+		self._NetAmt = base_types.UninitialisedField(self, 'NetAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def NonStdSttlmInf(self):
@@ -186,12 +186,12 @@ class SwitchSubscriptionLegExecution4(base_types._BaseFieldType):
 
 	@NonStdSttlmInf.setter
 	def NonStdSttlmInf(self, value):
-		self._NonStdSttlmInf = value if type(value) != base_types.auto else self.make_default("NonStdSttlmInf")
+		self._NonStdSttlmInf = value if value is not None else base_types.UninitialisedField(self, 'NonStdSttlmInf', Max350Text, False)
 
 	@NonStdSttlmInf.deleter
 	def NonStdSttlmInf(self):
 		del self._NonStdSttlmInf
-		self._NonStdSttlmInf = None
+		self._NonStdSttlmInf = base_types.UninitialisedField(self, 'NonStdSttlmInf', Max350Text, False)
 
 	@property
 	def PhysDlvryDtls(self):
@@ -199,12 +199,12 @@ class SwitchSubscriptionLegExecution4(base_types._BaseFieldType):
 
 	@PhysDlvryDtls.setter
 	def PhysDlvryDtls(self, value):
-		self._PhysDlvryDtls = value if type(value) != base_types.auto else self.make_default("PhysDlvryDtls")
+		self._PhysDlvryDtls = value if value is not None else base_types.UninitialisedField(self, 'PhysDlvryDtls', DeliveryParameters3, False)
 
 	@PhysDlvryDtls.deleter
 	def PhysDlvryDtls(self):
 		del self._PhysDlvryDtls
-		self._PhysDlvryDtls = None
+		self._PhysDlvryDtls = base_types.UninitialisedField(self, 'PhysDlvryDtls', DeliveryParameters3, False)
 
 	@property
 	def PhysDlvryInd(self):
@@ -212,12 +212,12 @@ class SwitchSubscriptionLegExecution4(base_types._BaseFieldType):
 
 	@PhysDlvryInd.setter
 	def PhysDlvryInd(self, value):
-		self._PhysDlvryInd = value if type(value) != base_types.auto else self.make_default("PhysDlvryInd")
+		self._PhysDlvryInd = value if value is not None else base_types.UninitialisedField(self, 'PhysDlvryInd', YesNoIndicator, False)
 
 	@PhysDlvryInd.deleter
 	def PhysDlvryInd(self):
 		del self._PhysDlvryInd
-		self._PhysDlvryInd = None
+		self._PhysDlvryInd = base_types.UninitialisedField(self, 'PhysDlvryInd', YesNoIndicator, False)
 
 	@property
 	def PricDtls(self):
@@ -225,12 +225,12 @@ class SwitchSubscriptionLegExecution4(base_types._BaseFieldType):
 
 	@PricDtls.setter
 	def PricDtls(self, value):
-		self._PricDtls = value if type(value) != base_types.auto else self.make_default("PricDtls")
+		self._PricDtls = value if value is not None else base_types.UninitialisedField(self, 'PricDtls', UnitPrice22, False)
 
 	@PricDtls.deleter
 	def PricDtls(self):
 		del self._PricDtls
-		self._PricDtls = None
+		self._PricDtls = base_types.UninitialisedField(self, 'PricDtls', UnitPrice22, False)
 
 	@property
 	def ReqdNAVCcy(self):
@@ -238,12 +238,12 @@ class SwitchSubscriptionLegExecution4(base_types._BaseFieldType):
 
 	@ReqdNAVCcy.setter
 	def ReqdNAVCcy(self, value):
-		self._ReqdNAVCcy = value if type(value) != base_types.auto else self.make_default("ReqdNAVCcy")
+		self._ReqdNAVCcy = value if value is not None else base_types.UninitialisedField(self, 'ReqdNAVCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@ReqdNAVCcy.deleter
 	def ReqdNAVCcy(self):
 		del self._ReqdNAVCcy
-		self._ReqdNAVCcy = None
+		self._ReqdNAVCcy = base_types.UninitialisedField(self, 'ReqdNAVCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def ReqdSttlmCcy(self):
@@ -251,12 +251,12 @@ class SwitchSubscriptionLegExecution4(base_types._BaseFieldType):
 
 	@ReqdSttlmCcy.setter
 	def ReqdSttlmCcy(self, value):
-		self._ReqdSttlmCcy = value if type(value) != base_types.auto else self.make_default("ReqdSttlmCcy")
+		self._ReqdSttlmCcy = value if value is not None else base_types.UninitialisedField(self, 'ReqdSttlmCcy', ActiveCurrencyCode, False)
 
 	@ReqdSttlmCcy.deleter
 	def ReqdSttlmCcy(self):
 		del self._ReqdSttlmCcy
-		self._ReqdSttlmCcy = None
+		self._ReqdSttlmCcy = base_types.UninitialisedField(self, 'ReqdSttlmCcy', ActiveCurrencyCode, False)
 
 	@property
 	def SttlmAndCtdyDtls(self):
@@ -264,12 +264,12 @@ class SwitchSubscriptionLegExecution4(base_types._BaseFieldType):
 
 	@SttlmAndCtdyDtls.setter
 	def SttlmAndCtdyDtls(self, value):
-		self._SttlmAndCtdyDtls = value if type(value) != base_types.auto else self.make_default("SttlmAndCtdyDtls")
+		self._SttlmAndCtdyDtls = value if value is not None else base_types.UninitialisedField(self, 'SttlmAndCtdyDtls', FundSettlementParameters12, False)
 
 	@SttlmAndCtdyDtls.deleter
 	def SttlmAndCtdyDtls(self):
 		del self._SttlmAndCtdyDtls
-		self._SttlmAndCtdyDtls = None
+		self._SttlmAndCtdyDtls = base_types.UninitialisedField(self, 'SttlmAndCtdyDtls', FundSettlementParameters12, False)
 
 	@property
 	def TradDtTm(self):
@@ -277,12 +277,12 @@ class SwitchSubscriptionLegExecution4(base_types._BaseFieldType):
 
 	@TradDtTm.setter
 	def TradDtTm(self, value):
-		self._TradDtTm = value if type(value) != base_types.auto else self.make_default("TradDtTm")
+		self._TradDtTm = value if value is not None else base_types.UninitialisedField(self, 'TradDtTm', DateAndDateTimeChoice, False)
 
 	@TradDtTm.deleter
 	def TradDtTm(self):
 		del self._TradDtTm
-		self._TradDtTm = None
+		self._TradDtTm = base_types.UninitialisedField(self, 'TradDtTm', DateAndDateTimeChoice, False)
 
 	@property
 	def TxOvrhd(self):
@@ -290,12 +290,12 @@ class SwitchSubscriptionLegExecution4(base_types._BaseFieldType):
 
 	@TxOvrhd.setter
 	def TxOvrhd(self, value):
-		self._TxOvrhd = value if type(value) != base_types.auto else self.make_default("TxOvrhd")
+		self._TxOvrhd = value if value is not None else base_types.UninitialisedField(self, 'TxOvrhd', TotalFeesAndTaxes40, False)
 
 	@TxOvrhd.deleter
 	def TxOvrhd(self):
 		del self._TxOvrhd
-		self._TxOvrhd = None
+		self._TxOvrhd = base_types.UninitialisedField(self, 'TxOvrhd', TotalFeesAndTaxes40, False)
 
 	@property
 	def UnitsNb(self):
@@ -303,12 +303,12 @@ class SwitchSubscriptionLegExecution4(base_types._BaseFieldType):
 
 	@UnitsNb.setter
 	def UnitsNb(self, value):
-		self._UnitsNb = value if type(value) != base_types.auto else self.make_default("UnitsNb")
+		self._UnitsNb = value if value is not None else base_types.UninitialisedField(self, 'UnitsNb', DecimalNumber, False)
 
 	@UnitsNb.deleter
 	def UnitsNb(self):
 		del self._UnitsNb
-		self._UnitsNb = None
+		self._UnitsNb = base_types.UninitialisedField(self, 'UnitsNb', DecimalNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CumDvddInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),

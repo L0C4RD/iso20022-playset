@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountContract4 import AccountContract4
-from ._AccountForAction1 import AccountForAction1
-from ._AccountForAction2 import AccountForAction2
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._Organisation44 import Organisation44
-from ._OrganisationIdentification39 import OrganisationIdentification39
-from ._PartyAndSignature4 import PartyAndSignature4
-from ._References4 import References4
-from ._SupplementaryData1 import SupplementaryData1
+from . import AccountContract4
+from . import AccountForAction1
+from . import AccountForAction2
+from . import BranchAndFinancialInstitutionIdentification8
+from . import Organisation44
+from . import OrganisationIdentification39
+from . import PartyAndSignature4
+from . import References4
+from . import SupplementaryData1
 
 class AccountClosingRequestV04(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class AccountClosingRequestV04(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', AccountForAction2, False)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', AccountForAction2, False)
 
 	@property
 	def AcctSvcrId(self):
@@ -34,12 +34,12 @@ class AccountClosingRequestV04(base_types._BaseFieldType):
 
 	@AcctSvcrId.setter
 	def AcctSvcrId(self, value):
-		self._AcctSvcrId = value if type(value) != base_types.auto else self.make_default("AcctSvcrId")
+		self._AcctSvcrId = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcrId', BranchAndFinancialInstitutionIdentification8, False)
 
 	@AcctSvcrId.deleter
 	def AcctSvcrId(self):
 		del self._AcctSvcrId
-		self._AcctSvcrId = None
+		self._AcctSvcrId = base_types.UninitialisedField(self, 'AcctSvcrId', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def BalTrfAcct(self):
@@ -47,12 +47,12 @@ class AccountClosingRequestV04(base_types._BaseFieldType):
 
 	@BalTrfAcct.setter
 	def BalTrfAcct(self, value):
-		self._BalTrfAcct = value if type(value) != base_types.auto else self.make_default("BalTrfAcct")
+		self._BalTrfAcct = value if value is not None else base_types.UninitialisedField(self, 'BalTrfAcct', AccountForAction1, False)
 
 	@BalTrfAcct.deleter
 	def BalTrfAcct(self):
 		del self._BalTrfAcct
-		self._BalTrfAcct = None
+		self._BalTrfAcct = base_types.UninitialisedField(self, 'BalTrfAcct', AccountForAction1, False)
 
 	@property
 	def CtrctDts(self):
@@ -60,12 +60,12 @@ class AccountClosingRequestV04(base_types._BaseFieldType):
 
 	@CtrctDts.setter
 	def CtrctDts(self, value):
-		self._CtrctDts = value if type(value) != base_types.auto else self.make_default("CtrctDts")
+		self._CtrctDts = value if value is not None else base_types.UninitialisedField(self, 'CtrctDts', AccountContract4, False)
 
 	@CtrctDts.deleter
 	def CtrctDts(self):
 		del self._CtrctDts
-		self._CtrctDts = None
+		self._CtrctDts = base_types.UninitialisedField(self, 'CtrctDts', AccountContract4, False)
 
 	@property
 	def DgtlSgntr(self):
@@ -73,12 +73,12 @@ class AccountClosingRequestV04(base_types._BaseFieldType):
 
 	@DgtlSgntr.setter
 	def DgtlSgntr(self, value):
-		self._DgtlSgntr = value if type(value) != base_types.auto else self.make_default("DgtlSgntr")
+		self._DgtlSgntr = value if value is not None else base_types.UninitialisedField(self, 'DgtlSgntr', PartyAndSignature4, True)
 
 	@DgtlSgntr.deleter
 	def DgtlSgntr(self):
 		del self._DgtlSgntr
-		self._DgtlSgntr = None
+		self._DgtlSgntr = base_types.UninitialisedField(self, 'DgtlSgntr', PartyAndSignature4, True)
 
 	@property
 	def Fr(self):
@@ -86,12 +86,12 @@ class AccountClosingRequestV04(base_types._BaseFieldType):
 
 	@Fr.setter
 	def Fr(self, value):
-		self._Fr = value if type(value) != base_types.auto else self.make_default("Fr")
+		self._Fr = value if value is not None else base_types.UninitialisedField(self, 'Fr', OrganisationIdentification39, False)
 
 	@Fr.deleter
 	def Fr(self):
 		del self._Fr
-		self._Fr = None
+		self._Fr = base_types.UninitialisedField(self, 'Fr', OrganisationIdentification39, False)
 
 	@property
 	def OrgId(self):
@@ -99,12 +99,12 @@ class AccountClosingRequestV04(base_types._BaseFieldType):
 
 	@OrgId.setter
 	def OrgId(self, value):
-		self._OrgId = value if type(value) != base_types.auto else self.make_default("OrgId")
+		self._OrgId = value if value is not None else base_types.UninitialisedField(self, 'OrgId', Organisation44, False)
 
 	@OrgId.deleter
 	def OrgId(self):
 		del self._OrgId
-		self._OrgId = None
+		self._OrgId = base_types.UninitialisedField(self, 'OrgId', Organisation44, False)
 
 	@property
 	def Refs(self):
@@ -112,12 +112,12 @@ class AccountClosingRequestV04(base_types._BaseFieldType):
 
 	@Refs.setter
 	def Refs(self, value):
-		self._Refs = value if type(value) != base_types.auto else self.make_default("Refs")
+		self._Refs = value if value is not None else base_types.UninitialisedField(self, 'Refs', References4, False)
 
 	@Refs.deleter
 	def Refs(self):
 		del self._Refs
-		self._Refs = None
+		self._Refs = base_types.UninitialisedField(self, 'Refs', References4, False)
 
 	@property
 	def SplmtryData(self):
@@ -125,12 +125,12 @@ class AccountClosingRequestV04(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TrfAcctSvcrId(self):
@@ -138,12 +138,12 @@ class AccountClosingRequestV04(base_types._BaseFieldType):
 
 	@TrfAcctSvcrId.setter
 	def TrfAcctSvcrId(self, value):
-		self._TrfAcctSvcrId = value if type(value) != base_types.auto else self.make_default("TrfAcctSvcrId")
+		self._TrfAcctSvcrId = value if value is not None else base_types.UninitialisedField(self, 'TrfAcctSvcrId', BranchAndFinancialInstitutionIdentification8, False)
 
 	@TrfAcctSvcrId.deleter
 	def TrfAcctSvcrId(self):
 		del self._TrfAcctSvcrId
-		self._TrfAcctSvcrId = None
+		self._TrfAcctSvcrId = base_types.UninitialisedField(self, 'TrfAcctSvcrId', BranchAndFinancialInstitutionIdentification8, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=AccountForAction2, min=1, max=1, mutex_group=None, array=False),

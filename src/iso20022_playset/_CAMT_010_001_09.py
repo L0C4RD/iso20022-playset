@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ReturnLimitV09 import ReturnLimitV09
+from . import ReturnLimitV09
 
 class CAMT_010_001_09():
 
@@ -18,12 +18,12 @@ class CAMT_010_001_09():
 
 		@RtrLmt.setter
 		def RtrLmt(self, value):
-			self._RtrLmt = value if type(value) != base_types.auto else self.make_default("RtrLmt")
+			self._RtrLmt = value if value is not None else base_types.UninitialisedField(self, 'RtrLmt', ReturnLimitV09, False)
 
 		@RtrLmt.deleter
 		def RtrLmt(self):
 			del self._RtrLmt
-			self._RtrLmt = None
+			self._RtrLmt = base_types.UninitialisedField(self, 'RtrLmt', ReturnLimitV09, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='RtrLmt', type=ReturnLimitV09, min=1, max=1, mutex_group=None, array=False),

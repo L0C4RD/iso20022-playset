@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISOTime import ISOTime
+from . import ISOTime
 
 class TimePeriod3(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class TimePeriod3(base_types._BaseFieldType):
 
 	@FrTm.setter
 	def FrTm(self, value):
-		self._FrTm = value if type(value) != base_types.auto else self.make_default("FrTm")
+		self._FrTm = value if value is not None else base_types.UninitialisedField(self, 'FrTm', ISOTime, False)
 
 	@FrTm.deleter
 	def FrTm(self):
 		del self._FrTm
-		self._FrTm = None
+		self._FrTm = base_types.UninitialisedField(self, 'FrTm', ISOTime, False)
 
 	@property
 	def ToTm(self):
@@ -26,12 +26,12 @@ class TimePeriod3(base_types._BaseFieldType):
 
 	@ToTm.setter
 	def ToTm(self, value):
-		self._ToTm = value if type(value) != base_types.auto else self.make_default("ToTm")
+		self._ToTm = value if value is not None else base_types.UninitialisedField(self, 'ToTm', ISOTime, False)
 
 	@ToTm.deleter
 	def ToTm(self):
 		del self._ToTm
-		self._ToTm = None
+		self._ToTm = base_types.UninitialisedField(self, 'ToTm', ISOTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FrTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),

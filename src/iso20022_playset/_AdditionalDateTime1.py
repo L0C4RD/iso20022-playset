@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._ISODateTime import ISODateTime
+from . import ISODate
+from . import ISODateTime
 
 class AdditionalDateTime1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AdditionalDateTime1(base_types._BaseFieldType):
 
 	@AccptncDtTm.setter
 	def AccptncDtTm(self, value):
-		self._AccptncDtTm = value if type(value) != base_types.auto else self.make_default("AccptncDtTm")
+		self._AccptncDtTm = value if value is not None else base_types.UninitialisedField(self, 'AccptncDtTm', ISODateTime, False)
 
 	@AccptncDtTm.deleter
 	def AccptncDtTm(self):
 		del self._AccptncDtTm
-		self._AccptncDtTm = None
+		self._AccptncDtTm = base_types.UninitialisedField(self, 'AccptncDtTm', ISODateTime, False)
 
 	@property
 	def PoolgAdjstmntDt(self):
@@ -27,12 +27,12 @@ class AdditionalDateTime1(base_types._BaseFieldType):
 
 	@PoolgAdjstmntDt.setter
 	def PoolgAdjstmntDt(self, value):
-		self._PoolgAdjstmntDt = value if type(value) != base_types.auto else self.make_default("PoolgAdjstmntDt")
+		self._PoolgAdjstmntDt = value if value is not None else base_types.UninitialisedField(self, 'PoolgAdjstmntDt', ISODate, False)
 
 	@PoolgAdjstmntDt.deleter
 	def PoolgAdjstmntDt(self):
 		del self._PoolgAdjstmntDt
-		self._PoolgAdjstmntDt = None
+		self._PoolgAdjstmntDt = base_types.UninitialisedField(self, 'PoolgAdjstmntDt', ISODate, False)
 
 	@property
 	def XpryDtTm(self):
@@ -40,12 +40,12 @@ class AdditionalDateTime1(base_types._BaseFieldType):
 
 	@XpryDtTm.setter
 	def XpryDtTm(self, value):
-		self._XpryDtTm = value if type(value) != base_types.auto else self.make_default("XpryDtTm")
+		self._XpryDtTm = value if value is not None else base_types.UninitialisedField(self, 'XpryDtTm', ISODateTime, False)
 
 	@XpryDtTm.deleter
 	def XpryDtTm(self):
 		del self._XpryDtTm
-		self._XpryDtTm = None
+		self._XpryDtTm = base_types.UninitialisedField(self, 'XpryDtTm', ISODateTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AccptncDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),

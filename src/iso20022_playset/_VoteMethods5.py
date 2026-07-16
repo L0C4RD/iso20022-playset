@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CommunicationAddress12 import CommunicationAddress12
-from ._MailAddress1 import MailAddress1
-from ._Max35Text import Max35Text
-from ._VoteThroughNetwork1Choice import VoteThroughNetwork1Choice
+from . import CommunicationAddress12
+from . import MailAddress1
+from . import Max35Text
+from . import VoteThroughNetwork1Choice
 
 class VoteMethods5(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class VoteMethods5(base_types._BaseFieldType):
 
 	@ElctrncVote.setter
 	def ElctrncVote(self, value):
-		self._ElctrncVote = value if type(value) != base_types.auto else self.make_default("ElctrncVote")
+		self._ElctrncVote = value if value is not None else base_types.UninitialisedField(self, 'ElctrncVote', CommunicationAddress12, True)
 
 	@ElctrncVote.deleter
 	def ElctrncVote(self):
 		del self._ElctrncVote
-		self._ElctrncVote = None
+		self._ElctrncVote = base_types.UninitialisedField(self, 'ElctrncVote', CommunicationAddress12, True)
 
 	@property
 	def VoteByMail(self):
@@ -29,12 +29,12 @@ class VoteMethods5(base_types._BaseFieldType):
 
 	@VoteByMail.setter
 	def VoteByMail(self, value):
-		self._VoteByMail = value if type(value) != base_types.auto else self.make_default("VoteByMail")
+		self._VoteByMail = value if value is not None else base_types.UninitialisedField(self, 'VoteByMail', MailAddress1, False)
 
 	@VoteByMail.deleter
 	def VoteByMail(self):
 		del self._VoteByMail
-		self._VoteByMail = None
+		self._VoteByMail = base_types.UninitialisedField(self, 'VoteByMail', MailAddress1, False)
 
 	@property
 	def VoteByTel(self):
@@ -42,12 +42,12 @@ class VoteMethods5(base_types._BaseFieldType):
 
 	@VoteByTel.setter
 	def VoteByTel(self, value):
-		self._VoteByTel = value if type(value) != base_types.auto else self.make_default("VoteByTel")
+		self._VoteByTel = value if value is not None else base_types.UninitialisedField(self, 'VoteByTel', Max35Text, True)
 
 	@VoteByTel.deleter
 	def VoteByTel(self):
 		del self._VoteByTel
-		self._VoteByTel = None
+		self._VoteByTel = base_types.UninitialisedField(self, 'VoteByTel', Max35Text, True)
 
 	@property
 	def VoteThrghNtwk(self):
@@ -55,12 +55,12 @@ class VoteMethods5(base_types._BaseFieldType):
 
 	@VoteThrghNtwk.setter
 	def VoteThrghNtwk(self, value):
-		self._VoteThrghNtwk = value if type(value) != base_types.auto else self.make_default("VoteThrghNtwk")
+		self._VoteThrghNtwk = value if value is not None else base_types.UninitialisedField(self, 'VoteThrghNtwk', VoteThroughNetwork1Choice, False)
 
 	@VoteThrghNtwk.deleter
 	def VoteThrghNtwk(self):
 		del self._VoteThrghNtwk
-		self._VoteThrghNtwk = None
+		self._VoteThrghNtwk = base_types.UninitialisedField(self, 'VoteThrghNtwk', VoteThroughNetwork1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ElctrncVote', type=CommunicationAddress12, min=0, max=5, mutex_group=None, array=True),

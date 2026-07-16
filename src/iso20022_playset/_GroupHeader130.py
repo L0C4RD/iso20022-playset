@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CashAccount40 import CashAccount40
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
-from ._SettlementInstruction19 import SettlementInstruction19
-from ._TotalCharges7 import TotalCharges7
+from . import BranchAndFinancialInstitutionIdentification8
+from . import CashAccount40
+from . import ISODateTime
+from . import Max35Text
+from . import SettlementInstruction19
+from . import TotalCharges7
 
 class GroupHeader130(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class GroupHeader130(base_types._BaseFieldType):
 
 	@ChrgsAcctAgt.setter
 	def ChrgsAcctAgt(self, value):
-		self._ChrgsAcctAgt = value if type(value) != base_types.auto else self.make_default("ChrgsAcctAgt")
+		self._ChrgsAcctAgt = value if value is not None else base_types.UninitialisedField(self, 'ChrgsAcctAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@ChrgsAcctAgt.deleter
 	def ChrgsAcctAgt(self):
 		del self._ChrgsAcctAgt
-		self._ChrgsAcctAgt = None
+		self._ChrgsAcctAgt = base_types.UninitialisedField(self, 'ChrgsAcctAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def ChrgsAcctAgtAcct(self):
@@ -31,12 +31,12 @@ class GroupHeader130(base_types._BaseFieldType):
 
 	@ChrgsAcctAgtAcct.setter
 	def ChrgsAcctAgtAcct(self, value):
-		self._ChrgsAcctAgtAcct = value if type(value) != base_types.auto else self.make_default("ChrgsAcctAgtAcct")
+		self._ChrgsAcctAgtAcct = value if value is not None else base_types.UninitialisedField(self, 'ChrgsAcctAgtAcct', CashAccount40, False)
 
 	@ChrgsAcctAgtAcct.deleter
 	def ChrgsAcctAgtAcct(self):
 		del self._ChrgsAcctAgtAcct
-		self._ChrgsAcctAgtAcct = None
+		self._ChrgsAcctAgtAcct = base_types.UninitialisedField(self, 'ChrgsAcctAgtAcct', CashAccount40, False)
 
 	@property
 	def ChrgsRqstr(self):
@@ -44,12 +44,12 @@ class GroupHeader130(base_types._BaseFieldType):
 
 	@ChrgsRqstr.setter
 	def ChrgsRqstr(self, value):
-		self._ChrgsRqstr = value if type(value) != base_types.auto else self.make_default("ChrgsRqstr")
+		self._ChrgsRqstr = value if value is not None else base_types.UninitialisedField(self, 'ChrgsRqstr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@ChrgsRqstr.deleter
 	def ChrgsRqstr(self):
 		del self._ChrgsRqstr
-		self._ChrgsRqstr = None
+		self._ChrgsRqstr = base_types.UninitialisedField(self, 'ChrgsRqstr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def CreDtTm(self):
@@ -57,12 +57,12 @@ class GroupHeader130(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if value is not None else base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
 		del self._CreDtTm
-		self._CreDtTm = None
+		self._CreDtTm = base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@property
 	def MsgId(self):
@@ -70,12 +70,12 @@ class GroupHeader130(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@property
 	def SttlmInstr(self):
@@ -83,12 +83,12 @@ class GroupHeader130(base_types._BaseFieldType):
 
 	@SttlmInstr.setter
 	def SttlmInstr(self, value):
-		self._SttlmInstr = value if type(value) != base_types.auto else self.make_default("SttlmInstr")
+		self._SttlmInstr = value if value is not None else base_types.UninitialisedField(self, 'SttlmInstr', SettlementInstruction19, False)
 
 	@SttlmInstr.deleter
 	def SttlmInstr(self):
 		del self._SttlmInstr
-		self._SttlmInstr = None
+		self._SttlmInstr = base_types.UninitialisedField(self, 'SttlmInstr', SettlementInstruction19, False)
 
 	@property
 	def TtlChrgs(self):
@@ -96,12 +96,12 @@ class GroupHeader130(base_types._BaseFieldType):
 
 	@TtlChrgs.setter
 	def TtlChrgs(self, value):
-		self._TtlChrgs = value if type(value) != base_types.auto else self.make_default("TtlChrgs")
+		self._TtlChrgs = value if value is not None else base_types.UninitialisedField(self, 'TtlChrgs', TotalCharges7, False)
 
 	@TtlChrgs.deleter
 	def TtlChrgs(self):
 		del self._TtlChrgs
-		self._TtlChrgs = None
+		self._TtlChrgs = base_types.UninitialisedField(self, 'TtlChrgs', TotalCharges7, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ChrgsAcctAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._GenericIdentification1 import GenericIdentification1
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._SystemPartyIdentification2Choice import SystemPartyIdentification2Choice
+from . import ActiveOrHistoricCurrencyCode
+from . import GenericIdentification1
+from . import SecurityIdentification19
+from . import SystemPartyIdentification2Choice
 
 class EligibleSecurity5(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class EligibleSecurity5(base_types._BaseFieldType):
 
 	@CollstnCcy.setter
 	def CollstnCcy(self, value):
-		self._CollstnCcy = value if type(value) != base_types.auto else self.make_default("CollstnCcy")
+		self._CollstnCcy = value if value is not None else base_types.UninitialisedField(self, 'CollstnCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@CollstnCcy.deleter
 	def CollstnCcy(self):
 		del self._CollstnCcy
-		self._CollstnCcy = None
+		self._CollstnCcy = base_types.UninitialisedField(self, 'CollstnCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def ElgbltySetPrfl(self):
@@ -29,12 +29,12 @@ class EligibleSecurity5(base_types._BaseFieldType):
 
 	@ElgbltySetPrfl.setter
 	def ElgbltySetPrfl(self, value):
-		self._ElgbltySetPrfl = value if type(value) != base_types.auto else self.make_default("ElgbltySetPrfl")
+		self._ElgbltySetPrfl = value if value is not None else base_types.UninitialisedField(self, 'ElgbltySetPrfl', GenericIdentification1, False)
 
 	@ElgbltySetPrfl.deleter
 	def ElgbltySetPrfl(self):
 		del self._ElgbltySetPrfl
-		self._ElgbltySetPrfl = None
+		self._ElgbltySetPrfl = base_types.UninitialisedField(self, 'ElgbltySetPrfl', GenericIdentification1, False)
 
 	@property
 	def PtyId(self):
@@ -42,12 +42,12 @@ class EligibleSecurity5(base_types._BaseFieldType):
 
 	@PtyId.setter
 	def PtyId(self, value):
-		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
+		self._PtyId = value if value is not None else base_types.UninitialisedField(self, 'PtyId', SystemPartyIdentification2Choice, False)
 
 	@PtyId.deleter
 	def PtyId(self):
 		del self._PtyId
-		self._PtyId = None
+		self._PtyId = base_types.UninitialisedField(self, 'PtyId', SystemPartyIdentification2Choice, False)
 
 	@property
 	def SctyId(self):
@@ -55,12 +55,12 @@ class EligibleSecurity5(base_types._BaseFieldType):
 
 	@SctyId.setter
 	def SctyId(self, value):
-		self._SctyId = value if type(value) != base_types.auto else self.make_default("SctyId")
+		self._SctyId = value if value is not None else base_types.UninitialisedField(self, 'SctyId', SecurityIdentification19, True)
 
 	@SctyId.deleter
 	def SctyId(self):
 		del self._SctyId
-		self._SctyId = None
+		self._SctyId = base_types.UninitialisedField(self, 'SctyId', SecurityIdentification19, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollstnCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),

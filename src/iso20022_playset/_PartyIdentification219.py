@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContactIdentification2 import ContactIdentification2
-from ._PartyIdentification195Choice import PartyIdentification195Choice
-from ._PersonName2 import PersonName2
+from . import ContactIdentification2
+from . import PartyIdentification195Choice
+from . import PersonName2
 
 class PartyIdentification219(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PartyIdentification219(base_types._BaseFieldType):
 
 	@CtctPrsn.setter
 	def CtctPrsn(self, value):
-		self._CtctPrsn = value if type(value) != base_types.auto else self.make_default("CtctPrsn")
+		self._CtctPrsn = value if value is not None else base_types.UninitialisedField(self, 'CtctPrsn', ContactIdentification2, False)
 
 	@CtctPrsn.deleter
 	def CtctPrsn(self):
 		del self._CtctPrsn
-		self._CtctPrsn = None
+		self._CtctPrsn = base_types.UninitialisedField(self, 'CtctPrsn', ContactIdentification2, False)
 
 	@property
 	def Id(self):
@@ -28,12 +28,12 @@ class PartyIdentification219(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', PartyIdentification195Choice, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', PartyIdentification195Choice, False)
 
 	@property
 	def NmAndAdr(self):
@@ -41,12 +41,12 @@ class PartyIdentification219(base_types._BaseFieldType):
 
 	@NmAndAdr.setter
 	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
+		self._NmAndAdr = value if value is not None else base_types.UninitialisedField(self, 'NmAndAdr', PersonName2, False)
 
 	@NmAndAdr.deleter
 	def NmAndAdr(self):
 		del self._NmAndAdr
-		self._NmAndAdr = None
+		self._NmAndAdr = base_types.UninitialisedField(self, 'NmAndAdr', PersonName2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtctPrsn', type=ContactIdentification2, min=0, max=1, mutex_group=None, array=False),

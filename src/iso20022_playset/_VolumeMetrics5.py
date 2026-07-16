@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ExposureMetrics4 import ExposureMetrics4
-from ._Max15NumericText import Max15NumericText
+from . import ExposureMetrics4
+from . import Max15NumericText
 
 class VolumeMetrics5(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class VolumeMetrics5(base_types._BaseFieldType):
 
 	@NbOfTxs.setter
 	def NbOfTxs(self, value):
-		self._NbOfTxs = value if type(value) != base_types.auto else self.make_default("NbOfTxs")
+		self._NbOfTxs = value if value is not None else base_types.UninitialisedField(self, 'NbOfTxs', Max15NumericText, False)
 
 	@NbOfTxs.deleter
 	def NbOfTxs(self):
 		del self._NbOfTxs
-		self._NbOfTxs = None
+		self._NbOfTxs = base_types.UninitialisedField(self, 'NbOfTxs', Max15NumericText, False)
 
 	@property
 	def Xpsr(self):
@@ -27,12 +27,12 @@ class VolumeMetrics5(base_types._BaseFieldType):
 
 	@Xpsr.setter
 	def Xpsr(self, value):
-		self._Xpsr = value if type(value) != base_types.auto else self.make_default("Xpsr")
+		self._Xpsr = value if value is not None else base_types.UninitialisedField(self, 'Xpsr', ExposureMetrics4, False)
 
 	@Xpsr.deleter
 	def Xpsr(self):
 		del self._Xpsr
-		self._Xpsr = None
+		self._Xpsr = base_types.UninitialisedField(self, 'Xpsr', ExposureMetrics4, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NbOfTxs', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),

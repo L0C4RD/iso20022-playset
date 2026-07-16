@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection106 import AmountAndDirection106
-from ._BaseOneRate import BaseOneRate
-from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
-from ._PercentageRate import PercentageRate
-from ._SecuritiesTransactionPrice5 import SecuritiesTransactionPrice5
+from . import AmountAndDirection106
+from . import BaseOneRate
+from . import LongFraction19DecimalNumber
+from . import PercentageRate
+from . import SecuritiesTransactionPrice5
 
 class SecuritiesTransactionPrice23Choice(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class SecuritiesTransactionPrice23Choice(base_types._BaseFieldType):
 
 	@Dcml.setter
 	def Dcml(self, value):
-		self._Dcml = value if type(value) != base_types.auto else self.make_default("Dcml")
+		self._Dcml = value if value is not None else base_types.UninitialisedField(self, 'Dcml', BaseOneRate, False)
 
 	@Dcml.deleter
 	def Dcml(self):
 		del self._Dcml
-		self._Dcml = None
+		self._Dcml = base_types.UninitialisedField(self, 'Dcml', BaseOneRate, False)
 
 	@property
 	def MntryVal(self):
@@ -30,12 +30,12 @@ class SecuritiesTransactionPrice23Choice(base_types._BaseFieldType):
 
 	@MntryVal.setter
 	def MntryVal(self, value):
-		self._MntryVal = value if type(value) != base_types.auto else self.make_default("MntryVal")
+		self._MntryVal = value if value is not None else base_types.UninitialisedField(self, 'MntryVal', AmountAndDirection106, False)
 
 	@MntryVal.deleter
 	def MntryVal(self):
 		del self._MntryVal
-		self._MntryVal = None
+		self._MntryVal = base_types.UninitialisedField(self, 'MntryVal', AmountAndDirection106, False)
 
 	@property
 	def Othr(self):
@@ -43,12 +43,12 @@ class SecuritiesTransactionPrice23Choice(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', SecuritiesTransactionPrice5, False)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', SecuritiesTransactionPrice5, False)
 
 	@property
 	def Pctg(self):
@@ -56,12 +56,12 @@ class SecuritiesTransactionPrice23Choice(base_types._BaseFieldType):
 
 	@Pctg.setter
 	def Pctg(self, value):
-		self._Pctg = value if type(value) != base_types.auto else self.make_default("Pctg")
+		self._Pctg = value if value is not None else base_types.UninitialisedField(self, 'Pctg', PercentageRate, False)
 
 	@Pctg.deleter
 	def Pctg(self):
 		del self._Pctg
-		self._Pctg = None
+		self._Pctg = base_types.UninitialisedField(self, 'Pctg', PercentageRate, False)
 
 	@property
 	def Unit(self):
@@ -69,12 +69,12 @@ class SecuritiesTransactionPrice23Choice(base_types._BaseFieldType):
 
 	@Unit.setter
 	def Unit(self, value):
-		self._Unit = value if type(value) != base_types.auto else self.make_default("Unit")
+		self._Unit = value if value is not None else base_types.UninitialisedField(self, 'Unit', LongFraction19DecimalNumber, False)
 
 	@Unit.deleter
 	def Unit(self):
 		del self._Unit
-		self._Unit = None
+		self._Unit = base_types.UninitialisedField(self, 'Unit', LongFraction19DecimalNumber, False)
 
 	@property
 	def Yld(self):
@@ -82,12 +82,12 @@ class SecuritiesTransactionPrice23Choice(base_types._BaseFieldType):
 
 	@Yld.setter
 	def Yld(self, value):
-		self._Yld = value if type(value) != base_types.auto else self.make_default("Yld")
+		self._Yld = value if value is not None else base_types.UninitialisedField(self, 'Yld', PercentageRate, False)
 
 	@Yld.deleter
 	def Yld(self):
 		del self._Yld
-		self._Yld = None
+		self._Yld = base_types.UninitialisedField(self, 'Yld', PercentageRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dcml', type=BaseOneRate, min=0, max=1, mutex_group=1, array=False),

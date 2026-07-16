@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection34 import AmountAndDirection34
-from ._BillingMethod1Choice import BillingMethod1Choice
-from ._BillingPrice1 import BillingPrice1
-from ._BillingServiceParameters3 import BillingServiceParameters3
-from ._ServicePaymentMethod1Code import ServicePaymentMethod1Code
-from ._ServiceTaxDesignation1 import ServiceTaxDesignation1
+from . import AmountAndDirection34
+from . import BillingMethod1Choice
+from . import BillingPrice1
+from . import BillingServiceParameters3
+from . import ServicePaymentMethod1Code
+from . import ServiceTaxDesignation1
 
 class BillingService2(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class BillingService2(base_types._BaseFieldType):
 
 	@BalReqrdAcctAmt.setter
 	def BalReqrdAcctAmt(self, value):
-		self._BalReqrdAcctAmt = value if type(value) != base_types.auto else self.make_default("BalReqrdAcctAmt")
+		self._BalReqrdAcctAmt = value if value is not None else base_types.UninitialisedField(self, 'BalReqrdAcctAmt', AmountAndDirection34, False)
 
 	@BalReqrdAcctAmt.deleter
 	def BalReqrdAcctAmt(self):
 		del self._BalReqrdAcctAmt
-		self._BalReqrdAcctAmt = None
+		self._BalReqrdAcctAmt = base_types.UninitialisedField(self, 'BalReqrdAcctAmt', AmountAndDirection34, False)
 
 	@property
 	def OrgnlChrgPric(self):
@@ -31,12 +31,12 @@ class BillingService2(base_types._BaseFieldType):
 
 	@OrgnlChrgPric.setter
 	def OrgnlChrgPric(self, value):
-		self._OrgnlChrgPric = value if type(value) != base_types.auto else self.make_default("OrgnlChrgPric")
+		self._OrgnlChrgPric = value if value is not None else base_types.UninitialisedField(self, 'OrgnlChrgPric', AmountAndDirection34, False)
 
 	@OrgnlChrgPric.deleter
 	def OrgnlChrgPric(self):
 		del self._OrgnlChrgPric
-		self._OrgnlChrgPric = None
+		self._OrgnlChrgPric = base_types.UninitialisedField(self, 'OrgnlChrgPric', AmountAndDirection34, False)
 
 	@property
 	def OrgnlChrgSttlmAmt(self):
@@ -44,12 +44,12 @@ class BillingService2(base_types._BaseFieldType):
 
 	@OrgnlChrgSttlmAmt.setter
 	def OrgnlChrgSttlmAmt(self, value):
-		self._OrgnlChrgSttlmAmt = value if type(value) != base_types.auto else self.make_default("OrgnlChrgSttlmAmt")
+		self._OrgnlChrgSttlmAmt = value if value is not None else base_types.UninitialisedField(self, 'OrgnlChrgSttlmAmt', AmountAndDirection34, False)
 
 	@OrgnlChrgSttlmAmt.deleter
 	def OrgnlChrgSttlmAmt(self):
 		del self._OrgnlChrgSttlmAmt
-		self._OrgnlChrgSttlmAmt = None
+		self._OrgnlChrgSttlmAmt = base_types.UninitialisedField(self, 'OrgnlChrgSttlmAmt', AmountAndDirection34, False)
 
 	@property
 	def PmtMtd(self):
@@ -57,12 +57,12 @@ class BillingService2(base_types._BaseFieldType):
 
 	@PmtMtd.setter
 	def PmtMtd(self, value):
-		self._PmtMtd = value if type(value) != base_types.auto else self.make_default("PmtMtd")
+		self._PmtMtd = value if value is not None else base_types.UninitialisedField(self, 'PmtMtd', ServicePaymentMethod1Code, False)
 
 	@PmtMtd.deleter
 	def PmtMtd(self):
 		del self._PmtMtd
-		self._PmtMtd = None
+		self._PmtMtd = base_types.UninitialisedField(self, 'PmtMtd', ServicePaymentMethod1Code, False)
 
 	@property
 	def Pric(self):
@@ -70,12 +70,12 @@ class BillingService2(base_types._BaseFieldType):
 
 	@Pric.setter
 	def Pric(self, value):
-		self._Pric = value if type(value) != base_types.auto else self.make_default("Pric")
+		self._Pric = value if value is not None else base_types.UninitialisedField(self, 'Pric', BillingPrice1, False)
 
 	@Pric.deleter
 	def Pric(self):
 		del self._Pric
-		self._Pric = None
+		self._Pric = base_types.UninitialisedField(self, 'Pric', BillingPrice1, False)
 
 	@property
 	def SvcDtl(self):
@@ -83,12 +83,12 @@ class BillingService2(base_types._BaseFieldType):
 
 	@SvcDtl.setter
 	def SvcDtl(self, value):
-		self._SvcDtl = value if type(value) != base_types.auto else self.make_default("SvcDtl")
+		self._SvcDtl = value if value is not None else base_types.UninitialisedField(self, 'SvcDtl', BillingServiceParameters3, False)
 
 	@SvcDtl.deleter
 	def SvcDtl(self):
 		del self._SvcDtl
-		self._SvcDtl = None
+		self._SvcDtl = base_types.UninitialisedField(self, 'SvcDtl', BillingServiceParameters3, False)
 
 	@property
 	def TaxClctn(self):
@@ -96,12 +96,12 @@ class BillingService2(base_types._BaseFieldType):
 
 	@TaxClctn.setter
 	def TaxClctn(self, value):
-		self._TaxClctn = value if type(value) != base_types.auto else self.make_default("TaxClctn")
+		self._TaxClctn = value if value is not None else base_types.UninitialisedField(self, 'TaxClctn', BillingMethod1Choice, False)
 
 	@TaxClctn.deleter
 	def TaxClctn(self):
 		del self._TaxClctn
-		self._TaxClctn = None
+		self._TaxClctn = base_types.UninitialisedField(self, 'TaxClctn', BillingMethod1Choice, False)
 
 	@property
 	def TaxDsgnt(self):
@@ -109,12 +109,12 @@ class BillingService2(base_types._BaseFieldType):
 
 	@TaxDsgnt.setter
 	def TaxDsgnt(self, value):
-		self._TaxDsgnt = value if type(value) != base_types.auto else self.make_default("TaxDsgnt")
+		self._TaxDsgnt = value if value is not None else base_types.UninitialisedField(self, 'TaxDsgnt', ServiceTaxDesignation1, False)
 
 	@TaxDsgnt.deleter
 	def TaxDsgnt(self):
 		del self._TaxDsgnt
-		self._TaxDsgnt = None
+		self._TaxDsgnt = base_types.UninitialisedField(self, 'TaxDsgnt', ServiceTaxDesignation1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BalReqrdAcctAmt', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),

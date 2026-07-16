@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._QuantityBreakdown65 import QuantityBreakdown65
-from ._SecuritiesBalanceType8Choice import SecuritiesBalanceType8Choice
+from . import QuantityBreakdown65
+from . import SecuritiesBalanceType8Choice
 
 class SecuritiesSubBalanceTypeAndQuantityBreakdown6(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SecuritiesSubBalanceTypeAndQuantityBreakdown6(base_types._BaseFieldType):
 
 	@QtyBrkdwn.setter
 	def QtyBrkdwn(self, value):
-		self._QtyBrkdwn = value if type(value) != base_types.auto else self.make_default("QtyBrkdwn")
+		self._QtyBrkdwn = value if value is not None else base_types.UninitialisedField(self, 'QtyBrkdwn', QuantityBreakdown65, True)
 
 	@QtyBrkdwn.deleter
 	def QtyBrkdwn(self):
 		del self._QtyBrkdwn
-		self._QtyBrkdwn = None
+		self._QtyBrkdwn = base_types.UninitialisedField(self, 'QtyBrkdwn', QuantityBreakdown65, True)
 
 	@property
 	def Tp(self):
@@ -27,12 +27,12 @@ class SecuritiesSubBalanceTypeAndQuantityBreakdown6(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', SecuritiesBalanceType8Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', SecuritiesBalanceType8Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='QtyBrkdwn', type=QuantityBreakdown65, min=0, max=None, mutex_group=None, array=True),

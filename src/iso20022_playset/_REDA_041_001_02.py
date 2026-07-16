@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PartyActivityAdviceV02 import PartyActivityAdviceV02
+from . import PartyActivityAdviceV02
 
 class REDA_041_001_02():
 
@@ -18,12 +18,12 @@ class REDA_041_001_02():
 
 		@PtyActvtyAdvc.setter
 		def PtyActvtyAdvc(self, value):
-			self._PtyActvtyAdvc = value if type(value) != base_types.auto else self.make_default("PtyActvtyAdvc")
+			self._PtyActvtyAdvc = value if value is not None else base_types.UninitialisedField(self, 'PtyActvtyAdvc', PartyActivityAdviceV02, False)
 
 		@PtyActvtyAdvc.deleter
 		def PtyActvtyAdvc(self):
 			del self._PtyActvtyAdvc
-			self._PtyActvtyAdvc = None
+			self._PtyActvtyAdvc = base_types.UninitialisedField(self, 'PtyActvtyAdvc', PartyActivityAdviceV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='PtyActvtyAdvc', type=PartyActivityAdviceV02, min=1, max=1, mutex_group=None, array=False),

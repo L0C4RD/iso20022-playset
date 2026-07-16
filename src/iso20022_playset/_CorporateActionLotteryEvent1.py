@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LotteryFeatureType1Code import LotteryFeatureType1Code
-from ._LotteryTypeFormat4Choice import LotteryTypeFormat4Choice
+from . import LotteryFeatureType1Code
+from . import LotteryTypeFormat4Choice
 
 class CorporateActionLotteryEvent1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CorporateActionLotteryEvent1(base_types._BaseFieldType):
 
 	@FeatrTp.setter
 	def FeatrTp(self, value):
-		self._FeatrTp = value if type(value) != base_types.auto else self.make_default("FeatrTp")
+		self._FeatrTp = value if value is not None else base_types.UninitialisedField(self, 'FeatrTp', LotteryFeatureType1Code, False)
 
 	@FeatrTp.deleter
 	def FeatrTp(self):
 		del self._FeatrTp
-		self._FeatrTp = None
+		self._FeatrTp = base_types.UninitialisedField(self, 'FeatrTp', LotteryFeatureType1Code, False)
 
 	@property
 	def Tp(self):
@@ -27,12 +27,12 @@ class CorporateActionLotteryEvent1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', LotteryTypeFormat4Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', LotteryTypeFormat4Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FeatrTp', type=LotteryFeatureType1Code, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
-from ._Quantity55Choice import Quantity55Choice
+from . import FinancialInstrumentQuantity36Choice
+from . import Quantity55Choice
 
 class SecuritiesOption88(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SecuritiesOption88(base_types._BaseFieldType):
 
 	@AddtlRndUpQty.setter
 	def AddtlRndUpQty(self, value):
-		self._AddtlRndUpQty = value if type(value) != base_types.auto else self.make_default("AddtlRndUpQty")
+		self._AddtlRndUpQty = value if value is not None else base_types.UninitialisedField(self, 'AddtlRndUpQty', FinancialInstrumentQuantity36Choice, False)
 
 	@AddtlRndUpQty.deleter
 	def AddtlRndUpQty(self):
 		del self._AddtlRndUpQty
-		self._AddtlRndUpQty = None
+		self._AddtlRndUpQty = base_types.UninitialisedField(self, 'AddtlRndUpQty', FinancialInstrumentQuantity36Choice, False)
 
 	@property
 	def CondlQty(self):
@@ -27,12 +27,12 @@ class SecuritiesOption88(base_types._BaseFieldType):
 
 	@CondlQty.setter
 	def CondlQty(self, value):
-		self._CondlQty = value if type(value) != base_types.auto else self.make_default("CondlQty")
+		self._CondlQty = value if value is not None else base_types.UninitialisedField(self, 'CondlQty', FinancialInstrumentQuantity36Choice, False)
 
 	@CondlQty.deleter
 	def CondlQty(self):
 		del self._CondlQty
-		self._CondlQty = None
+		self._CondlQty = base_types.UninitialisedField(self, 'CondlQty', FinancialInstrumentQuantity36Choice, False)
 
 	@property
 	def InstdQty(self):
@@ -40,12 +40,12 @@ class SecuritiesOption88(base_types._BaseFieldType):
 
 	@InstdQty.setter
 	def InstdQty(self, value):
-		self._InstdQty = value if type(value) != base_types.auto else self.make_default("InstdQty")
+		self._InstdQty = value if value is not None else base_types.UninitialisedField(self, 'InstdQty', Quantity55Choice, False)
 
 	@InstdQty.deleter
 	def InstdQty(self):
 		del self._InstdQty
-		self._InstdQty = None
+		self._InstdQty = base_types.UninitialisedField(self, 'InstdQty', Quantity55Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlRndUpQty', type=FinancialInstrumentQuantity36Choice, min=0, max=1, mutex_group=None, array=False),

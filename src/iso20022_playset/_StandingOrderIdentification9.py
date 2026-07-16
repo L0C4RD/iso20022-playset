@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CashAccount40 import CashAccount40
+from . import BranchAndFinancialInstitutionIdentification8
+from . import CashAccount40
 
 class StandingOrderIdentification9(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class StandingOrderIdentification9(base_types._BaseFieldType):
 
 	@Acct.setter
 	def Acct(self, value):
-		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
+		self._Acct = value if value is not None else base_types.UninitialisedField(self, 'Acct', CashAccount40, False)
 
 	@Acct.deleter
 	def Acct(self):
 		del self._Acct
-		self._Acct = None
+		self._Acct = base_types.UninitialisedField(self, 'Acct', CashAccount40, False)
 
 	@property
 	def AcctOwnr(self):
@@ -27,12 +27,12 @@ class StandingOrderIdentification9(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', BranchAndFinancialInstitutionIdentification8, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acct', type=CashAccount40, min=1, max=1, mutex_group=None, array=False),

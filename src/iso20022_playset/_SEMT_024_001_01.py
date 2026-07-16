@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._TotalPortfolioValuationReportV01 import TotalPortfolioValuationReportV01
+from . import TotalPortfolioValuationReportV01
 
 class SEMT_024_001_01():
 
@@ -18,12 +18,12 @@ class SEMT_024_001_01():
 
 		@TtlPrtflValtnRpt.setter
 		def TtlPrtflValtnRpt(self, value):
-			self._TtlPrtflValtnRpt = value if type(value) != base_types.auto else self.make_default("TtlPrtflValtnRpt")
+			self._TtlPrtflValtnRpt = value if value is not None else base_types.UninitialisedField(self, 'TtlPrtflValtnRpt', TotalPortfolioValuationReportV01, False)
 
 		@TtlPrtflValtnRpt.deleter
 		def TtlPrtflValtnRpt(self):
 			del self._TtlPrtflValtnRpt
-			self._TtlPrtflValtnRpt = None
+			self._TtlPrtflValtnRpt = base_types.UninitialisedField(self, 'TtlPrtflValtnRpt', TotalPortfolioValuationReportV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='TtlPrtflValtnRpt', type=TotalPortfolioValuationReportV01, min=1, max=1, mutex_group=None, array=False),

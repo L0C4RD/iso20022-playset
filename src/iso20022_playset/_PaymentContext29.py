@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AttendanceContext1Code import AttendanceContext1Code
-from ._BusinessArea2Code import BusinessArea2Code
-from ._CardDataReading8Code import CardDataReading8Code
-from ._CardFallback1Code import CardFallback1Code
-from ._LanguageCode import LanguageCode
-from ._SupportedPaymentOption2Code import SupportedPaymentOption2Code
-from ._TransactionChannel5Code import TransactionChannel5Code
-from ._TransactionEnvironment1Code import TransactionEnvironment1Code
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import AttendanceContext1Code
+from . import BusinessArea2Code
+from . import CardDataReading8Code
+from . import CardFallback1Code
+from . import LanguageCode
+from . import SupportedPaymentOption2Code
+from . import TransactionChannel5Code
+from . import TransactionEnvironment1Code
+from . import TrueFalseIndicator
 
 class PaymentContext29(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class PaymentContext29(base_types._BaseFieldType):
 
 	@AttndncCntxt.setter
 	def AttndncCntxt(self, value):
-		self._AttndncCntxt = value if type(value) != base_types.auto else self.make_default("AttndncCntxt")
+		self._AttndncCntxt = value if value is not None else base_types.UninitialisedField(self, 'AttndncCntxt', AttendanceContext1Code, False)
 
 	@AttndncCntxt.deleter
 	def AttndncCntxt(self):
 		del self._AttndncCntxt
-		self._AttndncCntxt = None
+		self._AttndncCntxt = base_types.UninitialisedField(self, 'AttndncCntxt', AttendanceContext1Code, False)
 
 	@property
 	def AttndntLang(self):
@@ -34,12 +34,12 @@ class PaymentContext29(base_types._BaseFieldType):
 
 	@AttndntLang.setter
 	def AttndntLang(self, value):
-		self._AttndntLang = value if type(value) != base_types.auto else self.make_default("AttndntLang")
+		self._AttndntLang = value if value is not None else base_types.UninitialisedField(self, 'AttndntLang', LanguageCode, False)
 
 	@AttndntLang.deleter
 	def AttndntLang(self):
 		del self._AttndntLang
-		self._AttndntLang = None
+		self._AttndntLang = base_types.UninitialisedField(self, 'AttndntLang', LanguageCode, False)
 
 	@property
 	def AttndntMsgCpbl(self):
@@ -47,12 +47,12 @@ class PaymentContext29(base_types._BaseFieldType):
 
 	@AttndntMsgCpbl.setter
 	def AttndntMsgCpbl(self, value):
-		self._AttndntMsgCpbl = value if type(value) != base_types.auto else self.make_default("AttndntMsgCpbl")
+		self._AttndntMsgCpbl = value if value is not None else base_types.UninitialisedField(self, 'AttndntMsgCpbl', TrueFalseIndicator, False)
 
 	@AttndntMsgCpbl.deleter
 	def AttndntMsgCpbl(self):
 		del self._AttndntMsgCpbl
-		self._AttndntMsgCpbl = None
+		self._AttndntMsgCpbl = base_types.UninitialisedField(self, 'AttndntMsgCpbl', TrueFalseIndicator, False)
 
 	@property
 	def BizArea(self):
@@ -60,12 +60,12 @@ class PaymentContext29(base_types._BaseFieldType):
 
 	@BizArea.setter
 	def BizArea(self, value):
-		self._BizArea = value if type(value) != base_types.auto else self.make_default("BizArea")
+		self._BizArea = value if value is not None else base_types.UninitialisedField(self, 'BizArea', BusinessArea2Code, False)
 
 	@BizArea.deleter
 	def BizArea(self):
 		del self._BizArea
-		self._BizArea = None
+		self._BizArea = base_types.UninitialisedField(self, 'BizArea', BusinessArea2Code, False)
 
 	@property
 	def CardDataNtryMd(self):
@@ -73,12 +73,12 @@ class PaymentContext29(base_types._BaseFieldType):
 
 	@CardDataNtryMd.setter
 	def CardDataNtryMd(self, value):
-		self._CardDataNtryMd = value if type(value) != base_types.auto else self.make_default("CardDataNtryMd")
+		self._CardDataNtryMd = value if value is not None else base_types.UninitialisedField(self, 'CardDataNtryMd', CardDataReading8Code, False)
 
 	@CardDataNtryMd.deleter
 	def CardDataNtryMd(self):
 		del self._CardDataNtryMd
-		self._CardDataNtryMd = None
+		self._CardDataNtryMd = base_types.UninitialisedField(self, 'CardDataNtryMd', CardDataReading8Code, False)
 
 	@property
 	def CardPres(self):
@@ -86,12 +86,12 @@ class PaymentContext29(base_types._BaseFieldType):
 
 	@CardPres.setter
 	def CardPres(self, value):
-		self._CardPres = value if type(value) != base_types.auto else self.make_default("CardPres")
+		self._CardPres = value if value is not None else base_types.UninitialisedField(self, 'CardPres', TrueFalseIndicator, False)
 
 	@CardPres.deleter
 	def CardPres(self):
 		del self._CardPres
-		self._CardPres = None
+		self._CardPres = base_types.UninitialisedField(self, 'CardPres', TrueFalseIndicator, False)
 
 	@property
 	def CrdhldrPres(self):
@@ -99,12 +99,12 @@ class PaymentContext29(base_types._BaseFieldType):
 
 	@CrdhldrPres.setter
 	def CrdhldrPres(self, value):
-		self._CrdhldrPres = value if type(value) != base_types.auto else self.make_default("CrdhldrPres")
+		self._CrdhldrPres = value if value is not None else base_types.UninitialisedField(self, 'CrdhldrPres', TrueFalseIndicator, False)
 
 	@CrdhldrPres.deleter
 	def CrdhldrPres(self):
 		del self._CrdhldrPres
-		self._CrdhldrPres = None
+		self._CrdhldrPres = base_types.UninitialisedField(self, 'CrdhldrPres', TrueFalseIndicator, False)
 
 	@property
 	def FllbckInd(self):
@@ -112,12 +112,12 @@ class PaymentContext29(base_types._BaseFieldType):
 
 	@FllbckInd.setter
 	def FllbckInd(self, value):
-		self._FllbckInd = value if type(value) != base_types.auto else self.make_default("FllbckInd")
+		self._FllbckInd = value if value is not None else base_types.UninitialisedField(self, 'FllbckInd', CardFallback1Code, False)
 
 	@FllbckInd.deleter
 	def FllbckInd(self):
 		del self._FllbckInd
-		self._FllbckInd = None
+		self._FllbckInd = base_types.UninitialisedField(self, 'FllbckInd', CardFallback1Code, False)
 
 	@property
 	def OnLineCntxt(self):
@@ -125,12 +125,12 @@ class PaymentContext29(base_types._BaseFieldType):
 
 	@OnLineCntxt.setter
 	def OnLineCntxt(self, value):
-		self._OnLineCntxt = value if type(value) != base_types.auto else self.make_default("OnLineCntxt")
+		self._OnLineCntxt = value if value is not None else base_types.UninitialisedField(self, 'OnLineCntxt', TrueFalseIndicator, False)
 
 	@OnLineCntxt.deleter
 	def OnLineCntxt(self):
 		del self._OnLineCntxt
-		self._OnLineCntxt = None
+		self._OnLineCntxt = base_types.UninitialisedField(self, 'OnLineCntxt', TrueFalseIndicator, False)
 
 	@property
 	def SpprtdOptn(self):
@@ -138,12 +138,12 @@ class PaymentContext29(base_types._BaseFieldType):
 
 	@SpprtdOptn.setter
 	def SpprtdOptn(self, value):
-		self._SpprtdOptn = value if type(value) != base_types.auto else self.make_default("SpprtdOptn")
+		self._SpprtdOptn = value if value is not None else base_types.UninitialisedField(self, 'SpprtdOptn', SupportedPaymentOption2Code, True)
 
 	@SpprtdOptn.deleter
 	def SpprtdOptn(self):
 		del self._SpprtdOptn
-		self._SpprtdOptn = None
+		self._SpprtdOptn = base_types.UninitialisedField(self, 'SpprtdOptn', SupportedPaymentOption2Code, True)
 
 	@property
 	def TxChanl(self):
@@ -151,12 +151,12 @@ class PaymentContext29(base_types._BaseFieldType):
 
 	@TxChanl.setter
 	def TxChanl(self, value):
-		self._TxChanl = value if type(value) != base_types.auto else self.make_default("TxChanl")
+		self._TxChanl = value if value is not None else base_types.UninitialisedField(self, 'TxChanl', TransactionChannel5Code, False)
 
 	@TxChanl.deleter
 	def TxChanl(self):
 		del self._TxChanl
-		self._TxChanl = None
+		self._TxChanl = base_types.UninitialisedField(self, 'TxChanl', TransactionChannel5Code, False)
 
 	@property
 	def TxEnvt(self):
@@ -164,12 +164,12 @@ class PaymentContext29(base_types._BaseFieldType):
 
 	@TxEnvt.setter
 	def TxEnvt(self, value):
-		self._TxEnvt = value if type(value) != base_types.auto else self.make_default("TxEnvt")
+		self._TxEnvt = value if value is not None else base_types.UninitialisedField(self, 'TxEnvt', TransactionEnvironment1Code, False)
 
 	@TxEnvt.deleter
 	def TxEnvt(self):
 		del self._TxEnvt
-		self._TxEnvt = None
+		self._TxEnvt = base_types.UninitialisedField(self, 'TxEnvt', TransactionEnvironment1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AttndncCntxt', type=AttendanceContext1Code, min=0, max=1, mutex_group=None, array=False),

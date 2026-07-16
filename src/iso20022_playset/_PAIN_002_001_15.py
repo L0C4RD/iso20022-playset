@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CustomerPaymentStatusReportV15 import CustomerPaymentStatusReportV15
+from . import CustomerPaymentStatusReportV15
 
 class PAIN_002_001_15():
 
@@ -18,12 +18,12 @@ class PAIN_002_001_15():
 
 		@CstmrPmtStsRpt.setter
 		def CstmrPmtStsRpt(self, value):
-			self._CstmrPmtStsRpt = value if type(value) != base_types.auto else self.make_default("CstmrPmtStsRpt")
+			self._CstmrPmtStsRpt = value if value is not None else base_types.UninitialisedField(self, 'CstmrPmtStsRpt', CustomerPaymentStatusReportV15, False)
 
 		@CstmrPmtStsRpt.deleter
 		def CstmrPmtStsRpt(self):
 			del self._CstmrPmtStsRpt
-			self._CstmrPmtStsRpt = None
+			self._CstmrPmtStsRpt = base_types.UninitialisedField(self, 'CstmrPmtStsRpt', CustomerPaymentStatusReportV15, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CstmrPmtStsRpt', type=CustomerPaymentStatusReportV15, min=1, max=1, mutex_group=None, array=False),

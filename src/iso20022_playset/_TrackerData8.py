@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from . import ActiveCurrencyAndAmount
+from . import DateAndDateTime2Choice
 
 class TrackerData8(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TrackerData8(base_types._BaseFieldType):
 
 	@ConfdAmt.setter
 	def ConfdAmt(self, value):
-		self._ConfdAmt = value if type(value) != base_types.auto else self.make_default("ConfdAmt")
+		self._ConfdAmt = value if value is not None else base_types.UninitialisedField(self, 'ConfdAmt', ActiveCurrencyAndAmount, False)
 
 	@ConfdAmt.deleter
 	def ConfdAmt(self):
 		del self._ConfdAmt
-		self._ConfdAmt = None
+		self._ConfdAmt = base_types.UninitialisedField(self, 'ConfdAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def ConfdDt(self):
@@ -27,12 +27,12 @@ class TrackerData8(base_types._BaseFieldType):
 
 	@ConfdDt.setter
 	def ConfdDt(self, value):
-		self._ConfdDt = value if type(value) != base_types.auto else self.make_default("ConfdDt")
+		self._ConfdDt = value if value is not None else base_types.UninitialisedField(self, 'ConfdDt', DateAndDateTime2Choice, False)
 
 	@ConfdDt.deleter
 	def ConfdDt(self):
 		del self._ConfdDt
-		self._ConfdDt = None
+		self._ConfdDt = base_types.UninitialisedField(self, 'ConfdDt', DateAndDateTime2Choice, False)
 
 	@property
 	def PrevslyConfdAmt(self):
@@ -40,12 +40,12 @@ class TrackerData8(base_types._BaseFieldType):
 
 	@PrevslyConfdAmt.setter
 	def PrevslyConfdAmt(self, value):
-		self._PrevslyConfdAmt = value if type(value) != base_types.auto else self.make_default("PrevslyConfdAmt")
+		self._PrevslyConfdAmt = value if value is not None else base_types.UninitialisedField(self, 'PrevslyConfdAmt', ActiveCurrencyAndAmount, False)
 
 	@PrevslyConfdAmt.deleter
 	def PrevslyConfdAmt(self):
 		del self._PrevslyConfdAmt
-		self._PrevslyConfdAmt = None
+		self._PrevslyConfdAmt = base_types.UninitialisedField(self, 'PrevslyConfdAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def PrevslyConfdDt(self):
@@ -53,12 +53,12 @@ class TrackerData8(base_types._BaseFieldType):
 
 	@PrevslyConfdDt.setter
 	def PrevslyConfdDt(self, value):
-		self._PrevslyConfdDt = value if type(value) != base_types.auto else self.make_default("PrevslyConfdDt")
+		self._PrevslyConfdDt = value if value is not None else base_types.UninitialisedField(self, 'PrevslyConfdDt', DateAndDateTime2Choice, False)
 
 	@PrevslyConfdDt.deleter
 	def PrevslyConfdDt(self):
 		del self._PrevslyConfdDt
-		self._PrevslyConfdDt = None
+		self._PrevslyConfdDt = base_types.UninitialisedField(self, 'PrevslyConfdDt', DateAndDateTime2Choice, False)
 
 	@property
 	def RmngToBeConfdAmt(self):
@@ -66,12 +66,12 @@ class TrackerData8(base_types._BaseFieldType):
 
 	@RmngToBeConfdAmt.setter
 	def RmngToBeConfdAmt(self, value):
-		self._RmngToBeConfdAmt = value if type(value) != base_types.auto else self.make_default("RmngToBeConfdAmt")
+		self._RmngToBeConfdAmt = value if value is not None else base_types.UninitialisedField(self, 'RmngToBeConfdAmt', ActiveCurrencyAndAmount, False)
 
 	@RmngToBeConfdAmt.deleter
 	def RmngToBeConfdAmt(self):
 		del self._RmngToBeConfdAmt
-		self._RmngToBeConfdAmt = None
+		self._RmngToBeConfdAmt = base_types.UninitialisedField(self, 'RmngToBeConfdAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def RtrdConfdAmt(self):
@@ -79,12 +79,12 @@ class TrackerData8(base_types._BaseFieldType):
 
 	@RtrdConfdAmt.setter
 	def RtrdConfdAmt(self, value):
-		self._RtrdConfdAmt = value if type(value) != base_types.auto else self.make_default("RtrdConfdAmt")
+		self._RtrdConfdAmt = value if value is not None else base_types.UninitialisedField(self, 'RtrdConfdAmt', ActiveCurrencyAndAmount, False)
 
 	@RtrdConfdAmt.deleter
 	def RtrdConfdAmt(self):
 		del self._RtrdConfdAmt
-		self._RtrdConfdAmt = None
+		self._RtrdConfdAmt = base_types.UninitialisedField(self, 'RtrdConfdAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def RtrdConfdDt(self):
@@ -92,12 +92,12 @@ class TrackerData8(base_types._BaseFieldType):
 
 	@RtrdConfdDt.setter
 	def RtrdConfdDt(self, value):
-		self._RtrdConfdDt = value if type(value) != base_types.auto else self.make_default("RtrdConfdDt")
+		self._RtrdConfdDt = value if value is not None else base_types.UninitialisedField(self, 'RtrdConfdDt', DateAndDateTime2Choice, False)
 
 	@RtrdConfdDt.deleter
 	def RtrdConfdDt(self):
 		del self._RtrdConfdDt
-		self._RtrdConfdDt = None
+		self._RtrdConfdDt = base_types.UninitialisedField(self, 'RtrdConfdDt', DateAndDateTime2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ConfdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

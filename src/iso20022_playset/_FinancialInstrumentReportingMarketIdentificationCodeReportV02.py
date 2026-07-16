@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MarketIdentification95 import MarketIdentification95
-from ._SupplementaryData1 import SupplementaryData1
+from . import MarketIdentification95
+from . import SupplementaryData1
 
 class FinancialInstrumentReportingMarketIdentificationCodeReportV02(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class FinancialInstrumentReportingMarketIdentificationCodeReportV02(base_types._
 
 	@MktId.setter
 	def MktId(self, value):
-		self._MktId = value if type(value) != base_types.auto else self.make_default("MktId")
+		self._MktId = value if value is not None else base_types.UninitialisedField(self, 'MktId', MarketIdentification95, True)
 
 	@MktId.deleter
 	def MktId(self):
 		del self._MktId
-		self._MktId = None
+		self._MktId = base_types.UninitialisedField(self, 'MktId', MarketIdentification95, True)
 
 	@property
 	def SplmtryData(self):
@@ -27,12 +27,12 @@ class FinancialInstrumentReportingMarketIdentificationCodeReportV02(base_types._
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MktId', type=MarketIdentification95, min=1, max=None, mutex_group=None, array=True),

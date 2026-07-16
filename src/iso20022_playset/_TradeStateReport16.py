@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContractModification3 import ContractModification3
-from ._CounterpartyData88 import CounterpartyData88
-from ._Max140Text import Max140Text
-from ._ReconciliationFlag2 import ReconciliationFlag2
-from ._SupplementaryData1 import SupplementaryData1
-from ._TransactionCollateralData18Choice import TransactionCollateralData18Choice
-from ._TransactionLoanData31Choice import TransactionLoanData31Choice
+from . import ContractModification3
+from . import CounterpartyData88
+from . import Max140Text
+from . import ReconciliationFlag2
+from . import SupplementaryData1
+from . import TransactionCollateralData18Choice
+from . import TransactionLoanData31Choice
 
 class TradeStateReport16(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class TradeStateReport16(base_types._BaseFieldType):
 
 	@CollData.setter
 	def CollData(self, value):
-		self._CollData = value if type(value) != base_types.auto else self.make_default("CollData")
+		self._CollData = value if value is not None else base_types.UninitialisedField(self, 'CollData', TransactionCollateralData18Choice, False)
 
 	@CollData.deleter
 	def CollData(self):
 		del self._CollData
-		self._CollData = None
+		self._CollData = base_types.UninitialisedField(self, 'CollData', TransactionCollateralData18Choice, False)
 
 	@property
 	def CtrPtySpcfcData(self):
@@ -32,12 +32,12 @@ class TradeStateReport16(base_types._BaseFieldType):
 
 	@CtrPtySpcfcData.setter
 	def CtrPtySpcfcData(self, value):
-		self._CtrPtySpcfcData = value if type(value) != base_types.auto else self.make_default("CtrPtySpcfcData")
+		self._CtrPtySpcfcData = value if value is not None else base_types.UninitialisedField(self, 'CtrPtySpcfcData', CounterpartyData88, False)
 
 	@CtrPtySpcfcData.deleter
 	def CtrPtySpcfcData(self):
 		del self._CtrPtySpcfcData
-		self._CtrPtySpcfcData = None
+		self._CtrPtySpcfcData = base_types.UninitialisedField(self, 'CtrPtySpcfcData', CounterpartyData88, False)
 
 	@property
 	def CtrctMod(self):
@@ -45,12 +45,12 @@ class TradeStateReport16(base_types._BaseFieldType):
 
 	@CtrctMod.setter
 	def CtrctMod(self, value):
-		self._CtrctMod = value if type(value) != base_types.auto else self.make_default("CtrctMod")
+		self._CtrctMod = value if value is not None else base_types.UninitialisedField(self, 'CtrctMod', ContractModification3, False)
 
 	@CtrctMod.deleter
 	def CtrctMod(self):
 		del self._CtrctMod
-		self._CtrctMod = None
+		self._CtrctMod = base_types.UninitialisedField(self, 'CtrctMod', ContractModification3, False)
 
 	@property
 	def LnData(self):
@@ -58,12 +58,12 @@ class TradeStateReport16(base_types._BaseFieldType):
 
 	@LnData.setter
 	def LnData(self, value):
-		self._LnData = value if type(value) != base_types.auto else self.make_default("LnData")
+		self._LnData = value if value is not None else base_types.UninitialisedField(self, 'LnData', TransactionLoanData31Choice, False)
 
 	@LnData.deleter
 	def LnData(self):
 		del self._LnData
-		self._LnData = None
+		self._LnData = base_types.UninitialisedField(self, 'LnData', TransactionLoanData31Choice, False)
 
 	@property
 	def RcncltnFlg(self):
@@ -71,12 +71,12 @@ class TradeStateReport16(base_types._BaseFieldType):
 
 	@RcncltnFlg.setter
 	def RcncltnFlg(self, value):
-		self._RcncltnFlg = value if type(value) != base_types.auto else self.make_default("RcncltnFlg")
+		self._RcncltnFlg = value if value is not None else base_types.UninitialisedField(self, 'RcncltnFlg', ReconciliationFlag2, False)
 
 	@RcncltnFlg.deleter
 	def RcncltnFlg(self):
 		del self._RcncltnFlg
-		self._RcncltnFlg = None
+		self._RcncltnFlg = base_types.UninitialisedField(self, 'RcncltnFlg', ReconciliationFlag2, False)
 
 	@property
 	def SplmtryData(self):
@@ -84,12 +84,12 @@ class TradeStateReport16(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TechRcrdId(self):
@@ -97,12 +97,12 @@ class TradeStateReport16(base_types._BaseFieldType):
 
 	@TechRcrdId.setter
 	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
+		self._TechRcrdId = value if value is not None else base_types.UninitialisedField(self, 'TechRcrdId', Max140Text, False)
 
 	@TechRcrdId.deleter
 	def TechRcrdId(self):
 		del self._TechRcrdId
-		self._TechRcrdId = None
+		self._TechRcrdId = base_types.UninitialisedField(self, 'TechRcrdId', Max140Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollData', type=TransactionCollateralData18Choice, min=0, max=1, mutex_group=None, array=False),

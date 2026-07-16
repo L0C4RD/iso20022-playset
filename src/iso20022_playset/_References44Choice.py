@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericDocumentIdentification4 import GenericDocumentIdentification4
-from ._Max35Text import Max35Text
-from ._SettlementTypeAndIdentification18 import SettlementTypeAndIdentification18
+from . import GenericDocumentIdentification4
+from . import Max35Text
+from . import SettlementTypeAndIdentification18
 
 class References44Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class References44Choice(base_types._BaseFieldType):
 
 	@IntraPosMvmntId.setter
 	def IntraPosMvmntId(self, value):
-		self._IntraPosMvmntId = value if type(value) != base_types.auto else self.make_default("IntraPosMvmntId")
+		self._IntraPosMvmntId = value if value is not None else base_types.UninitialisedField(self, 'IntraPosMvmntId', Max35Text, False)
 
 	@IntraPosMvmntId.deleter
 	def IntraPosMvmntId(self):
 		del self._IntraPosMvmntId
-		self._IntraPosMvmntId = None
+		self._IntraPosMvmntId = base_types.UninitialisedField(self, 'IntraPosMvmntId', Max35Text, False)
 
 	@property
 	def OthrTxId(self):
@@ -28,12 +28,12 @@ class References44Choice(base_types._BaseFieldType):
 
 	@OthrTxId.setter
 	def OthrTxId(self, value):
-		self._OthrTxId = value if type(value) != base_types.auto else self.make_default("OthrTxId")
+		self._OthrTxId = value if value is not None else base_types.UninitialisedField(self, 'OthrTxId', GenericDocumentIdentification4, False)
 
 	@OthrTxId.deleter
 	def OthrTxId(self):
 		del self._OthrTxId
-		self._OthrTxId = None
+		self._OthrTxId = base_types.UninitialisedField(self, 'OthrTxId', GenericDocumentIdentification4, False)
 
 	@property
 	def SctiesFincgTxId(self):
@@ -41,12 +41,12 @@ class References44Choice(base_types._BaseFieldType):
 
 	@SctiesFincgTxId.setter
 	def SctiesFincgTxId(self, value):
-		self._SctiesFincgTxId = value if type(value) != base_types.auto else self.make_default("SctiesFincgTxId")
+		self._SctiesFincgTxId = value if value is not None else base_types.UninitialisedField(self, 'SctiesFincgTxId', SettlementTypeAndIdentification18, False)
 
 	@SctiesFincgTxId.deleter
 	def SctiesFincgTxId(self):
 		del self._SctiesFincgTxId
-		self._SctiesFincgTxId = None
+		self._SctiesFincgTxId = base_types.UninitialisedField(self, 'SctiesFincgTxId', SettlementTypeAndIdentification18, False)
 
 	@property
 	def SctiesSttlmTxId(self):
@@ -54,12 +54,12 @@ class References44Choice(base_types._BaseFieldType):
 
 	@SctiesSttlmTxId.setter
 	def SctiesSttlmTxId(self, value):
-		self._SctiesSttlmTxId = value if type(value) != base_types.auto else self.make_default("SctiesSttlmTxId")
+		self._SctiesSttlmTxId = value if value is not None else base_types.UninitialisedField(self, 'SctiesSttlmTxId', SettlementTypeAndIdentification18, False)
 
 	@SctiesSttlmTxId.deleter
 	def SctiesSttlmTxId(self):
 		del self._SctiesSttlmTxId
-		self._SctiesSttlmTxId = None
+		self._SctiesSttlmTxId = base_types.UninitialisedField(self, 'SctiesSttlmTxId', SettlementTypeAndIdentification18, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IntraPosMvmntId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),

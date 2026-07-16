@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
+from . import Max35Text
 
 class TransportByRoad2(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class TransportByRoad2(base_types._BaseFieldType):
 
 	@PlcOfDlvry.setter
 	def PlcOfDlvry(self, value):
-		self._PlcOfDlvry = value if type(value) != base_types.auto else self.make_default("PlcOfDlvry")
+		self._PlcOfDlvry = value if value is not None else base_types.UninitialisedField(self, 'PlcOfDlvry', Max35Text, False)
 
 	@PlcOfDlvry.deleter
 	def PlcOfDlvry(self):
 		del self._PlcOfDlvry
-		self._PlcOfDlvry = None
+		self._PlcOfDlvry = base_types.UninitialisedField(self, 'PlcOfDlvry', Max35Text, False)
 
 	@property
 	def PlcOfRct(self):
@@ -26,12 +26,12 @@ class TransportByRoad2(base_types._BaseFieldType):
 
 	@PlcOfRct.setter
 	def PlcOfRct(self, value):
-		self._PlcOfRct = value if type(value) != base_types.auto else self.make_default("PlcOfRct")
+		self._PlcOfRct = value if value is not None else base_types.UninitialisedField(self, 'PlcOfRct', Max35Text, False)
 
 	@PlcOfRct.deleter
 	def PlcOfRct(self):
 		del self._PlcOfRct
-		self._PlcOfRct = None
+		self._PlcOfRct = base_types.UninitialisedField(self, 'PlcOfRct', Max35Text, False)
 
 	@property
 	def RoadCrrierNm(self):
@@ -39,12 +39,12 @@ class TransportByRoad2(base_types._BaseFieldType):
 
 	@RoadCrrierNm.setter
 	def RoadCrrierNm(self, value):
-		self._RoadCrrierNm = value if type(value) != base_types.auto else self.make_default("RoadCrrierNm")
+		self._RoadCrrierNm = value if value is not None else base_types.UninitialisedField(self, 'RoadCrrierNm', Max35Text, False)
 
 	@RoadCrrierNm.deleter
 	def RoadCrrierNm(self):
 		del self._RoadCrrierNm
-		self._RoadCrrierNm = None
+		self._RoadCrrierNm = base_types.UninitialisedField(self, 'RoadCrrierNm', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PlcOfDlvry', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMReject2 import ATMReject2
-from ._Header33 import Header33
+from . import ATMReject2
+from . import Header33
 
 class ATMRejectV02(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ATMRejectV02(base_types._BaseFieldType):
 
 	@ATMRjct.setter
 	def ATMRjct(self, value):
-		self._ATMRjct = value if type(value) != base_types.auto else self.make_default("ATMRjct")
+		self._ATMRjct = value if value is not None else base_types.UninitialisedField(self, 'ATMRjct', ATMReject2, False)
 
 	@ATMRjct.deleter
 	def ATMRjct(self):
 		del self._ATMRjct
-		self._ATMRjct = None
+		self._ATMRjct = base_types.UninitialisedField(self, 'ATMRjct', ATMReject2, False)
 
 	@property
 	def Hdr(self):
@@ -27,12 +27,12 @@ class ATMRejectV02(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header33, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header33, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ATMRjct', type=ATMReject2, min=1, max=1, mutex_group=None, array=False),

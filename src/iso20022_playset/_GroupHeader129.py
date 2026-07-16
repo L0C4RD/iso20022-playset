@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
-from ._Party50Choice import Party50Choice
+from . import ISODateTime
+from . import Max35Text
+from . import Party50Choice
 
 class GroupHeader129(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class GroupHeader129(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if value is not None else base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
 		del self._CreDtTm
-		self._CreDtTm = None
+		self._CreDtTm = base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@property
 	def MsgId(self):
@@ -28,12 +28,12 @@ class GroupHeader129(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@property
 	def Rcvr(self):
@@ -41,12 +41,12 @@ class GroupHeader129(base_types._BaseFieldType):
 
 	@Rcvr.setter
 	def Rcvr(self, value):
-		self._Rcvr = value if type(value) != base_types.auto else self.make_default("Rcvr")
+		self._Rcvr = value if value is not None else base_types.UninitialisedField(self, 'Rcvr', Party50Choice, False)
 
 	@Rcvr.deleter
 	def Rcvr(self):
 		del self._Rcvr
-		self._Rcvr = None
+		self._Rcvr = base_types.UninitialisedField(self, 'Rcvr', Party50Choice, False)
 
 	@property
 	def Sndr(self):
@@ -54,12 +54,12 @@ class GroupHeader129(base_types._BaseFieldType):
 
 	@Sndr.setter
 	def Sndr(self, value):
-		self._Sndr = value if type(value) != base_types.auto else self.make_default("Sndr")
+		self._Sndr = value if value is not None else base_types.UninitialisedField(self, 'Sndr', Party50Choice, False)
 
 	@Sndr.deleter
 	def Sndr(self):
 		del self._Sndr
-		self._Sndr = None
+		self._Sndr = base_types.UninitialisedField(self, 'Sndr', Party50Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),

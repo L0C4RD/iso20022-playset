@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
+from . import Max35Text
 
 class TransactionIdentifications33(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class TransactionIdentifications33(base_types._BaseFieldType):
 
 	@AcctOwnrTxId.setter
 	def AcctOwnrTxId(self, value):
-		self._AcctOwnrTxId = value if type(value) != base_types.auto else self.make_default("AcctOwnrTxId")
+		self._AcctOwnrTxId = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnrTxId', Max35Text, False)
 
 	@AcctOwnrTxId.deleter
 	def AcctOwnrTxId(self):
 		del self._AcctOwnrTxId
-		self._AcctOwnrTxId = None
+		self._AcctOwnrTxId = base_types.UninitialisedField(self, 'AcctOwnrTxId', Max35Text, False)
 
 	@property
 	def AcctSvcrTxId(self):
@@ -26,12 +26,12 @@ class TransactionIdentifications33(base_types._BaseFieldType):
 
 	@AcctSvcrTxId.setter
 	def AcctSvcrTxId(self, value):
-		self._AcctSvcrTxId = value if type(value) != base_types.auto else self.make_default("AcctSvcrTxId")
+		self._AcctSvcrTxId = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcrTxId', Max35Text, False)
 
 	@AcctSvcrTxId.deleter
 	def AcctSvcrTxId(self):
 		del self._AcctSvcrTxId
-		self._AcctSvcrTxId = None
+		self._AcctSvcrTxId = base_types.UninitialisedField(self, 'AcctSvcrTxId', Max35Text, False)
 
 	@property
 	def MktInfrstrctrTxId(self):
@@ -39,12 +39,12 @@ class TransactionIdentifications33(base_types._BaseFieldType):
 
 	@MktInfrstrctrTxId.setter
 	def MktInfrstrctrTxId(self, value):
-		self._MktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("MktInfrstrctrTxId")
+		self._MktInfrstrctrTxId = value if value is not None else base_types.UninitialisedField(self, 'MktInfrstrctrTxId', Max35Text, False)
 
 	@MktInfrstrctrTxId.deleter
 	def MktInfrstrctrTxId(self):
 		del self._MktInfrstrctrTxId
-		self._MktInfrstrctrTxId = None
+		self._MktInfrstrctrTxId = base_types.UninitialisedField(self, 'MktInfrstrctrTxId', Max35Text, False)
 
 	@property
 	def OthrId(self):
@@ -52,12 +52,12 @@ class TransactionIdentifications33(base_types._BaseFieldType):
 
 	@OthrId.setter
 	def OthrId(self, value):
-		self._OthrId = value if type(value) != base_types.auto else self.make_default("OthrId")
+		self._OthrId = value if value is not None else base_types.UninitialisedField(self, 'OthrId', Max35Text, False)
 
 	@OthrId.deleter
 	def OthrId(self):
 		del self._OthrId
-		self._OthrId = None
+		self._OthrId = base_types.UninitialisedField(self, 'OthrId', Max35Text, False)
 
 	@property
 	def PrcrTxId(self):
@@ -65,12 +65,12 @@ class TransactionIdentifications33(base_types._BaseFieldType):
 
 	@PrcrTxId.setter
 	def PrcrTxId(self, value):
-		self._PrcrTxId = value if type(value) != base_types.auto else self.make_default("PrcrTxId")
+		self._PrcrTxId = value if value is not None else base_types.UninitialisedField(self, 'PrcrTxId', Max35Text, False)
 
 	@PrcrTxId.deleter
 	def PrcrTxId(self):
 		del self._PrcrTxId
-		self._PrcrTxId = None
+		self._PrcrTxId = base_types.UninitialisedField(self, 'PrcrTxId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

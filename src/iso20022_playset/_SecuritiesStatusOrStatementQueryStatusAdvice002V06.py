@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BlockChainAddressWallet7 import BlockChainAddressWallet7
-from ._DocumentIdentification55 import DocumentIdentification55
-from ._PartyIdentification156 import PartyIdentification156
-from ._ProcessingStatus95Choice import ProcessingStatus95Choice
-from ._SecuritiesAccount30 import SecuritiesAccount30
-from ._StatusOrStatement12Choice import StatusOrStatement12Choice
-from ._SupplementaryData1 import SupplementaryData1
+from . import BlockChainAddressWallet7
+from . import DocumentIdentification55
+from . import PartyIdentification156
+from . import ProcessingStatus95Choice
+from . import SecuritiesAccount30
+from . import StatusOrStatement12Choice
+from . import SupplementaryData1
 
 class SecuritiesStatusOrStatementQueryStatusAdvice002V06(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class SecuritiesStatusOrStatementQueryStatusAdvice002V06(base_types._BaseFieldTy
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification156, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification156, False)
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -32,12 +32,12 @@ class SecuritiesStatusOrStatementQueryStatusAdvice002V06(base_types._BaseFieldTy
 
 	@BlckChainAdrOrWllt.setter
 	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
+		self._BlckChainAdrOrWllt = value if value is not None else base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet7, False)
 
 	@BlckChainAdrOrWllt.deleter
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+		self._BlckChainAdrOrWllt = base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet7, False)
 
 	@property
 	def PrcgSts(self):
@@ -45,12 +45,12 @@ class SecuritiesStatusOrStatementQueryStatusAdvice002V06(base_types._BaseFieldTy
 
 	@PrcgSts.setter
 	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != base_types.auto else self.make_default("PrcgSts")
+		self._PrcgSts = value if value is not None else base_types.UninitialisedField(self, 'PrcgSts', ProcessingStatus95Choice, False)
 
 	@PrcgSts.deleter
 	def PrcgSts(self):
 		del self._PrcgSts
-		self._PrcgSts = None
+		self._PrcgSts = base_types.UninitialisedField(self, 'PrcgSts', ProcessingStatus95Choice, False)
 
 	@property
 	def QryDtls(self):
@@ -58,12 +58,12 @@ class SecuritiesStatusOrStatementQueryStatusAdvice002V06(base_types._BaseFieldTy
 
 	@QryDtls.setter
 	def QryDtls(self, value):
-		self._QryDtls = value if type(value) != base_types.auto else self.make_default("QryDtls")
+		self._QryDtls = value if value is not None else base_types.UninitialisedField(self, 'QryDtls', DocumentIdentification55, False)
 
 	@QryDtls.deleter
 	def QryDtls(self):
 		del self._QryDtls
-		self._QryDtls = None
+		self._QryDtls = base_types.UninitialisedField(self, 'QryDtls', DocumentIdentification55, False)
 
 	@property
 	def SfkpgAcct(self):
@@ -71,12 +71,12 @@ class SecuritiesStatusOrStatementQueryStatusAdvice002V06(base_types._BaseFieldTy
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount30, False)
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
-		self._SfkpgAcct = None
+		self._SfkpgAcct = base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount30, False)
 
 	@property
 	def SplmtryData(self):
@@ -84,12 +84,12 @@ class SecuritiesStatusOrStatementQueryStatusAdvice002V06(base_types._BaseFieldTy
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def StsOrStmtReqd(self):
@@ -97,12 +97,12 @@ class SecuritiesStatusOrStatementQueryStatusAdvice002V06(base_types._BaseFieldTy
 
 	@StsOrStmtReqd.setter
 	def StsOrStmtReqd(self, value):
-		self._StsOrStmtReqd = value if type(value) != base_types.auto else self.make_default("StsOrStmtReqd")
+		self._StsOrStmtReqd = value if value is not None else base_types.UninitialisedField(self, 'StsOrStmtReqd', StatusOrStatement12Choice, False)
 
 	@StsOrStmtReqd.deleter
 	def StsOrStmtReqd(self):
 		del self._StsOrStmtReqd
-		self._StsOrStmtReqd = None
+		self._StsOrStmtReqd = base_types.UninitialisedField(self, 'StsOrStmtReqd', StatusOrStatement12Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification156, min=0, max=1, mutex_group=None, array=False),

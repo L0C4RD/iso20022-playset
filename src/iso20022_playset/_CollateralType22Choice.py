@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GeneralCollateral4 import GeneralCollateral4
-from ._SpecificCollateral3 import SpecificCollateral3
+from . import GeneralCollateral4
+from . import SpecificCollateral3
 
 class CollateralType22Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CollateralType22Choice(base_types._BaseFieldType):
 
 	@GnlColl.setter
 	def GnlColl(self, value):
-		self._GnlColl = value if type(value) != base_types.auto else self.make_default("GnlColl")
+		self._GnlColl = value if value is not None else base_types.UninitialisedField(self, 'GnlColl', GeneralCollateral4, False)
 
 	@GnlColl.deleter
 	def GnlColl(self):
 		del self._GnlColl
-		self._GnlColl = None
+		self._GnlColl = base_types.UninitialisedField(self, 'GnlColl', GeneralCollateral4, False)
 
 	@property
 	def SpcfcColl(self):
@@ -27,12 +27,12 @@ class CollateralType22Choice(base_types._BaseFieldType):
 
 	@SpcfcColl.setter
 	def SpcfcColl(self, value):
-		self._SpcfcColl = value if type(value) != base_types.auto else self.make_default("SpcfcColl")
+		self._SpcfcColl = value if value is not None else base_types.UninitialisedField(self, 'SpcfcColl', SpecificCollateral3, False)
 
 	@SpcfcColl.deleter
 	def SpcfcColl(self):
 		del self._SpcfcColl
-		self._SpcfcColl = None
+		self._SpcfcColl = base_types.UninitialisedField(self, 'SpcfcColl', SpecificCollateral3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='GnlColl', type=GeneralCollateral4, min=0, max=1, mutex_group=1, array=False),

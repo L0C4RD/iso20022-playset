@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._StatusAndReason52 import StatusAndReason52
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
-from ._Transaction169 import Transaction169
+from . import SecuritiesAccount19
+from . import StatusAndReason52
+from . import SystemPartyIdentification8
+from . import Transaction169
 
 class SecuritiesSettlementTransactions6(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class SecuritiesSettlementTransactions6(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', SystemPartyIdentification8, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', SystemPartyIdentification8, False)
 
 	@property
 	def SfkpgAcct(self):
@@ -29,12 +29,12 @@ class SecuritiesSettlementTransactions6(base_types._BaseFieldType):
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
-		self._SfkpgAcct = None
+		self._SfkpgAcct = base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@property
 	def StsAndRsn(self):
@@ -42,12 +42,12 @@ class SecuritiesSettlementTransactions6(base_types._BaseFieldType):
 
 	@StsAndRsn.setter
 	def StsAndRsn(self, value):
-		self._StsAndRsn = value if type(value) != base_types.auto else self.make_default("StsAndRsn")
+		self._StsAndRsn = value if value is not None else base_types.UninitialisedField(self, 'StsAndRsn', StatusAndReason52, False)
 
 	@StsAndRsn.deleter
 	def StsAndRsn(self):
 		del self._StsAndRsn
-		self._StsAndRsn = None
+		self._StsAndRsn = base_types.UninitialisedField(self, 'StsAndRsn', StatusAndReason52, False)
 
 	@property
 	def Tx(self):
@@ -55,12 +55,12 @@ class SecuritiesSettlementTransactions6(base_types._BaseFieldType):
 
 	@Tx.setter
 	def Tx(self, value):
-		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
+		self._Tx = value if value is not None else base_types.UninitialisedField(self, 'Tx', Transaction169, True)
 
 	@Tx.deleter
 	def Tx(self):
 		del self._Tx
-		self._Tx = None
+		self._Tx = base_types.UninitialisedField(self, 'Tx', Transaction169, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import FinancialInstrumentQuantity1
 
 class FundBalance1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class FundBalance1(base_types._BaseFieldType):
 
 	@TtlCshFrCshOrdrs.setter
 	def TtlCshFrCshOrdrs(self, value):
-		self._TtlCshFrCshOrdrs = value if type(value) != base_types.auto else self.make_default("TtlCshFrCshOrdrs")
+		self._TtlCshFrCshOrdrs = value if value is not None else base_types.UninitialisedField(self, 'TtlCshFrCshOrdrs', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@TtlCshFrCshOrdrs.deleter
 	def TtlCshFrCshOrdrs(self):
 		del self._TtlCshFrCshOrdrs
-		self._TtlCshFrCshOrdrs = None
+		self._TtlCshFrCshOrdrs = base_types.UninitialisedField(self, 'TtlCshFrCshOrdrs', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def TtlCshFrUnitOrdrs(self):
@@ -27,12 +27,12 @@ class FundBalance1(base_types._BaseFieldType):
 
 	@TtlCshFrUnitOrdrs.setter
 	def TtlCshFrUnitOrdrs(self, value):
-		self._TtlCshFrUnitOrdrs = value if type(value) != base_types.auto else self.make_default("TtlCshFrUnitOrdrs")
+		self._TtlCshFrUnitOrdrs = value if value is not None else base_types.UninitialisedField(self, 'TtlCshFrUnitOrdrs', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@TtlCshFrUnitOrdrs.deleter
 	def TtlCshFrUnitOrdrs(self):
 		del self._TtlCshFrUnitOrdrs
-		self._TtlCshFrUnitOrdrs = None
+		self._TtlCshFrUnitOrdrs = base_types.UninitialisedField(self, 'TtlCshFrUnitOrdrs', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def TtlUnitsFrCshOrdrs(self):
@@ -40,12 +40,12 @@ class FundBalance1(base_types._BaseFieldType):
 
 	@TtlUnitsFrCshOrdrs.setter
 	def TtlUnitsFrCshOrdrs(self, value):
-		self._TtlUnitsFrCshOrdrs = value if type(value) != base_types.auto else self.make_default("TtlUnitsFrCshOrdrs")
+		self._TtlUnitsFrCshOrdrs = value if value is not None else base_types.UninitialisedField(self, 'TtlUnitsFrCshOrdrs', FinancialInstrumentQuantity1, False)
 
 	@TtlUnitsFrCshOrdrs.deleter
 	def TtlUnitsFrCshOrdrs(self):
 		del self._TtlUnitsFrCshOrdrs
-		self._TtlUnitsFrCshOrdrs = None
+		self._TtlUnitsFrCshOrdrs = base_types.UninitialisedField(self, 'TtlUnitsFrCshOrdrs', FinancialInstrumentQuantity1, False)
 
 	@property
 	def TtlUnitsFrUnitOrdrs(self):
@@ -53,12 +53,12 @@ class FundBalance1(base_types._BaseFieldType):
 
 	@TtlUnitsFrUnitOrdrs.setter
 	def TtlUnitsFrUnitOrdrs(self, value):
-		self._TtlUnitsFrUnitOrdrs = value if type(value) != base_types.auto else self.make_default("TtlUnitsFrUnitOrdrs")
+		self._TtlUnitsFrUnitOrdrs = value if value is not None else base_types.UninitialisedField(self, 'TtlUnitsFrUnitOrdrs', FinancialInstrumentQuantity1, False)
 
 	@TtlUnitsFrUnitOrdrs.deleter
 	def TtlUnitsFrUnitOrdrs(self):
 		del self._TtlUnitsFrUnitOrdrs
-		self._TtlUnitsFrUnitOrdrs = None
+		self._TtlUnitsFrUnitOrdrs = base_types.UninitialisedField(self, 'TtlUnitsFrUnitOrdrs', FinancialInstrumentQuantity1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TtlCshFrCshOrdrs', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

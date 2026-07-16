@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max2Fraction1NonNegativeNumber import Max2Fraction1NonNegativeNumber
-from ._SettlementFailureReason2 import SettlementFailureReason2
+from . import Max2Fraction1NonNegativeNumber
+from . import SettlementFailureReason2
 
 class SettlementFailureReason3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SettlementFailureReason3(base_types._BaseFieldType):
 
 	@AvrgDrtn.setter
 	def AvrgDrtn(self, value):
-		self._AvrgDrtn = value if type(value) != base_types.auto else self.make_default("AvrgDrtn")
+		self._AvrgDrtn = value if value is not None else base_types.UninitialisedField(self, 'AvrgDrtn', Max2Fraction1NonNegativeNumber, False)
 
 	@AvrgDrtn.deleter
 	def AvrgDrtn(self):
 		del self._AvrgDrtn
-		self._AvrgDrtn = None
+		self._AvrgDrtn = base_types.UninitialisedField(self, 'AvrgDrtn', Max2Fraction1NonNegativeNumber, False)
 
 	@property
 	def Desc(self):
@@ -27,12 +27,12 @@ class SettlementFailureReason3(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', SettlementFailureReason2, True)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', SettlementFailureReason2, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AvrgDrtn', type=Max2Fraction1NonNegativeNumber, min=0, max=1, mutex_group=None, array=False),

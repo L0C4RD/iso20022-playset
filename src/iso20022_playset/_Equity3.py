@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ISODateTime import ISODateTime
-from ._Number import Number
-from ._PreferenceToIncome5Choice import PreferenceToIncome5Choice
+from . import ActiveCurrencyAndAmount
+from . import ISODateTime
+from . import Number
+from . import PreferenceToIncome5Choice
 
 class Equity3(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class Equity3(base_types._BaseFieldType):
 
 	@MtrtyDt.setter
 	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != base_types.auto else self.make_default("MtrtyDt")
+		self._MtrtyDt = value if value is not None else base_types.UninitialisedField(self, 'MtrtyDt', ISODateTime, False)
 
 	@MtrtyDt.deleter
 	def MtrtyDt(self):
 		del self._MtrtyDt
-		self._MtrtyDt = None
+		self._MtrtyDt = base_types.UninitialisedField(self, 'MtrtyDt', ISODateTime, False)
 
 	@property
 	def NonPdAmt(self):
@@ -29,12 +29,12 @@ class Equity3(base_types._BaseFieldType):
 
 	@NonPdAmt.setter
 	def NonPdAmt(self, value):
-		self._NonPdAmt = value if type(value) != base_types.auto else self.make_default("NonPdAmt")
+		self._NonPdAmt = value if value is not None else base_types.UninitialisedField(self, 'NonPdAmt', ActiveCurrencyAndAmount, False)
 
 	@NonPdAmt.deleter
 	def NonPdAmt(self):
 		del self._NonPdAmt
-		self._NonPdAmt = None
+		self._NonPdAmt = base_types.UninitialisedField(self, 'NonPdAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def ParVal(self):
@@ -42,12 +42,12 @@ class Equity3(base_types._BaseFieldType):
 
 	@ParVal.setter
 	def ParVal(self, value):
-		self._ParVal = value if type(value) != base_types.auto else self.make_default("ParVal")
+		self._ParVal = value if value is not None else base_types.UninitialisedField(self, 'ParVal', ActiveCurrencyAndAmount, False)
 
 	@ParVal.deleter
 	def ParVal(self):
 		del self._ParVal
-		self._ParVal = None
+		self._ParVal = base_types.UninitialisedField(self, 'ParVal', ActiveCurrencyAndAmount, False)
 
 	@property
 	def PrefToIncm(self):
@@ -55,12 +55,12 @@ class Equity3(base_types._BaseFieldType):
 
 	@PrefToIncm.setter
 	def PrefToIncm(self, value):
-		self._PrefToIncm = value if type(value) != base_types.auto else self.make_default("PrefToIncm")
+		self._PrefToIncm = value if value is not None else base_types.UninitialisedField(self, 'PrefToIncm', PreferenceToIncome5Choice, False)
 
 	@PrefToIncm.deleter
 	def PrefToIncm(self):
 		del self._PrefToIncm
-		self._PrefToIncm = None
+		self._PrefToIncm = base_types.UninitialisedField(self, 'PrefToIncm', PreferenceToIncome5Choice, False)
 
 	@property
 	def VtngRghtsPerShr(self):
@@ -68,12 +68,12 @@ class Equity3(base_types._BaseFieldType):
 
 	@VtngRghtsPerShr.setter
 	def VtngRghtsPerShr(self, value):
-		self._VtngRghtsPerShr = value if type(value) != base_types.auto else self.make_default("VtngRghtsPerShr")
+		self._VtngRghtsPerShr = value if value is not None else base_types.UninitialisedField(self, 'VtngRghtsPerShr', Number, False)
 
 	@VtngRghtsPerShr.deleter
 	def VtngRghtsPerShr(self):
 		del self._VtngRghtsPerShr
-		self._VtngRghtsPerShr = None
+		self._VtngRghtsPerShr = base_types.UninitialisedField(self, 'VtngRghtsPerShr', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MtrtyDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),

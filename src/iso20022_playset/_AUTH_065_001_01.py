@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CCPBackTestingDefinitionReportV01 import CCPBackTestingDefinitionReportV01
+from . import CCPBackTestingDefinitionReportV01
 
 class AUTH_065_001_01():
 
@@ -18,12 +18,12 @@ class AUTH_065_001_01():
 
 		@CCPBckTstgDefRpt.setter
 		def CCPBckTstgDefRpt(self, value):
-			self._CCPBckTstgDefRpt = value if type(value) != base_types.auto else self.make_default("CCPBckTstgDefRpt")
+			self._CCPBckTstgDefRpt = value if value is not None else base_types.UninitialisedField(self, 'CCPBckTstgDefRpt', CCPBackTestingDefinitionReportV01, False)
 
 		@CCPBckTstgDefRpt.deleter
 		def CCPBckTstgDefRpt(self):
 			del self._CCPBckTstgDefRpt
-			self._CCPBckTstgDefRpt = None
+			self._CCPBckTstgDefRpt = base_types.UninitialisedField(self, 'CCPBckTstgDefRpt', CCPBackTestingDefinitionReportV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CCPBckTstgDefRpt', type=CCPBackTestingDefinitionReportV01, min=1, max=1, mutex_group=None, array=False),

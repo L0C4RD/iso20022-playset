@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max10NumberFraction2 import Max10NumberFraction2
-from ._Max12NumericText import Max12NumericText
-from ._Max35Text import Max35Text
-from ._Max3NumericText import Max3NumericText
-from ._Max4NumericText import Max4NumericText
-from ._Max5NumericText import Max5NumericText
-from ._Max6NumberFraction2 import Max6NumberFraction2
+from . import Max10NumberFraction2
+from . import Max12NumericText
+from . import Max35Text
+from . import Max3NumericText
+from . import Max4NumericText
+from . import Max5NumericText
+from . import Max6NumberFraction2
 
 class OnBoardDiagnostics1(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class OnBoardDiagnostics1(base_types._BaseFieldType):
 
 	@BttryVltg.setter
 	def BttryVltg(self, value):
-		self._BttryVltg = value if type(value) != base_types.auto else self.make_default("BttryVltg")
+		self._BttryVltg = value if value is not None else base_types.UninitialisedField(self, 'BttryVltg', Max4NumericText, False)
 
 	@BttryVltg.deleter
 	def BttryVltg(self):
 		del self._BttryVltg
-		self._BttryVltg = None
+		self._BttryVltg = base_types.UninitialisedField(self, 'BttryVltg', Max4NumericText, False)
 
 	@property
 	def ChckNgnWrngSts(self):
@@ -32,12 +32,12 @@ class OnBoardDiagnostics1(base_types._BaseFieldType):
 
 	@ChckNgnWrngSts.setter
 	def ChckNgnWrngSts(self, value):
-		self._ChckNgnWrngSts = value if type(value) != base_types.auto else self.make_default("ChckNgnWrngSts")
+		self._ChckNgnWrngSts = value if value is not None else base_types.UninitialisedField(self, 'ChckNgnWrngSts', Max35Text, False)
 
 	@ChckNgnWrngSts.deleter
 	def ChckNgnWrngSts(self):
 		del self._ChckNgnWrngSts
-		self._ChckNgnWrngSts = None
+		self._ChckNgnWrngSts = base_types.UninitialisedField(self, 'ChckNgnWrngSts', Max35Text, False)
 
 	@property
 	def CoolntTmprtr(self):
@@ -45,12 +45,12 @@ class OnBoardDiagnostics1(base_types._BaseFieldType):
 
 	@CoolntTmprtr.setter
 	def CoolntTmprtr(self, value):
-		self._CoolntTmprtr = value if type(value) != base_types.auto else self.make_default("CoolntTmprtr")
+		self._CoolntTmprtr = value if value is not None else base_types.UninitialisedField(self, 'CoolntTmprtr', Max6NumberFraction2, False)
 
 	@CoolntTmprtr.deleter
 	def CoolntTmprtr(self):
 		del self._CoolntTmprtr
-		self._CoolntTmprtr = None
+		self._CoolntTmprtr = base_types.UninitialisedField(self, 'CoolntTmprtr', Max6NumberFraction2, False)
 
 	@property
 	def FuelEcnmy(self):
@@ -58,12 +58,12 @@ class OnBoardDiagnostics1(base_types._BaseFieldType):
 
 	@FuelEcnmy.setter
 	def FuelEcnmy(self, value):
-		self._FuelEcnmy = value if type(value) != base_types.auto else self.make_default("FuelEcnmy")
+		self._FuelEcnmy = value if value is not None else base_types.UninitialisedField(self, 'FuelEcnmy', Max6NumberFraction2, False)
 
 	@FuelEcnmy.deleter
 	def FuelEcnmy(self):
 		del self._FuelEcnmy
-		self._FuelEcnmy = None
+		self._FuelEcnmy = base_types.UninitialisedField(self, 'FuelEcnmy', Max6NumberFraction2, False)
 
 	@property
 	def FuelGaugeLvl(self):
@@ -71,12 +71,12 @@ class OnBoardDiagnostics1(base_types._BaseFieldType):
 
 	@FuelGaugeLvl.setter
 	def FuelGaugeLvl(self, value):
-		self._FuelGaugeLvl = value if type(value) != base_types.auto else self.make_default("FuelGaugeLvl")
+		self._FuelGaugeLvl = value if value is not None else base_types.UninitialisedField(self, 'FuelGaugeLvl', Max4NumericText, False)
 
 	@FuelGaugeLvl.deleter
 	def FuelGaugeLvl(self):
 		del self._FuelGaugeLvl
-		self._FuelGaugeLvl = None
+		self._FuelGaugeLvl = base_types.UninitialisedField(self, 'FuelGaugeLvl', Max4NumericText, False)
 
 	@property
 	def FuelTankLvlStart(self):
@@ -84,12 +84,12 @@ class OnBoardDiagnostics1(base_types._BaseFieldType):
 
 	@FuelTankLvlStart.setter
 	def FuelTankLvlStart(self, value):
-		self._FuelTankLvlStart = value if type(value) != base_types.auto else self.make_default("FuelTankLvlStart")
+		self._FuelTankLvlStart = value if value is not None else base_types.UninitialisedField(self, 'FuelTankLvlStart', Max4NumericText, False)
 
 	@FuelTankLvlStart.deleter
 	def FuelTankLvlStart(self):
 		del self._FuelTankLvlStart
-		self._FuelTankLvlStart = None
+		self._FuelTankLvlStart = base_types.UninitialisedField(self, 'FuelTankLvlStart', Max4NumericText, False)
 
 	@property
 	def HardAcclrtn(self):
@@ -97,12 +97,12 @@ class OnBoardDiagnostics1(base_types._BaseFieldType):
 
 	@HardAcclrtn.setter
 	def HardAcclrtn(self, value):
-		self._HardAcclrtn = value if type(value) != base_types.auto else self.make_default("HardAcclrtn")
+		self._HardAcclrtn = value if value is not None else base_types.UninitialisedField(self, 'HardAcclrtn', Max4NumericText, False)
 
 	@HardAcclrtn.deleter
 	def HardAcclrtn(self):
 		del self._HardAcclrtn
-		self._HardAcclrtn = None
+		self._HardAcclrtn = base_types.UninitialisedField(self, 'HardAcclrtn', Max4NumericText, False)
 
 	@property
 	def HardBrakg(self):
@@ -110,12 +110,12 @@ class OnBoardDiagnostics1(base_types._BaseFieldType):
 
 	@HardBrakg.setter
 	def HardBrakg(self, value):
-		self._HardBrakg = value if type(value) != base_types.auto else self.make_default("HardBrakg")
+		self._HardBrakg = value if value is not None else base_types.UninitialisedField(self, 'HardBrakg', Max4NumericText, False)
 
 	@HardBrakg.deleter
 	def HardBrakg(self):
 		del self._HardBrakg
-		self._HardBrakg = None
+		self._HardBrakg = base_types.UninitialisedField(self, 'HardBrakg', Max4NumericText, False)
 
 	@property
 	def NgnHrs(self):
@@ -123,12 +123,12 @@ class OnBoardDiagnostics1(base_types._BaseFieldType):
 
 	@NgnHrs.setter
 	def NgnHrs(self, value):
-		self._NgnHrs = value if type(value) != base_types.auto else self.make_default("NgnHrs")
+		self._NgnHrs = value if value is not None else base_types.UninitialisedField(self, 'NgnHrs', Max10NumberFraction2, False)
 
 	@NgnHrs.deleter
 	def NgnHrs(self):
 		del self._NgnHrs
-		self._NgnHrs = None
+		self._NgnHrs = base_types.UninitialisedField(self, 'NgnHrs', Max10NumberFraction2, False)
 
 	@property
 	def NgnIdleTm(self):
@@ -136,12 +136,12 @@ class OnBoardDiagnostics1(base_types._BaseFieldType):
 
 	@NgnIdleTm.setter
 	def NgnIdleTm(self, value):
-		self._NgnIdleTm = value if type(value) != base_types.auto else self.make_default("NgnIdleTm")
+		self._NgnIdleTm = value if value is not None else base_types.UninitialisedField(self, 'NgnIdleTm', Max10NumberFraction2, False)
 
 	@NgnIdleTm.deleter
 	def NgnIdleTm(self):
 		del self._NgnIdleTm
-		self._NgnIdleTm = None
+		self._NgnIdleTm = base_types.UninitialisedField(self, 'NgnIdleTm', Max10NumberFraction2, False)
 
 	@property
 	def NgnLd(self):
@@ -149,12 +149,12 @@ class OnBoardDiagnostics1(base_types._BaseFieldType):
 
 	@NgnLd.setter
 	def NgnLd(self, value):
-		self._NgnLd = value if type(value) != base_types.auto else self.make_default("NgnLd")
+		self._NgnLd = value if value is not None else base_types.UninitialisedField(self, 'NgnLd', Max12NumericText, False)
 
 	@NgnLd.deleter
 	def NgnLd(self):
 		del self._NgnLd
-		self._NgnLd = None
+		self._NgnLd = base_types.UninitialisedField(self, 'NgnLd', Max12NumericText, False)
 
 	@property
 	def NgnOilLifeRmng(self):
@@ -162,12 +162,12 @@ class OnBoardDiagnostics1(base_types._BaseFieldType):
 
 	@NgnOilLifeRmng.setter
 	def NgnOilLifeRmng(self, value):
-		self._NgnOilLifeRmng = value if type(value) != base_types.auto else self.make_default("NgnOilLifeRmng")
+		self._NgnOilLifeRmng = value if value is not None else base_types.UninitialisedField(self, 'NgnOilLifeRmng', Max3NumericText, False)
 
 	@NgnOilLifeRmng.deleter
 	def NgnOilLifeRmng(self):
 		del self._NgnOilLifeRmng
-		self._NgnOilLifeRmng = None
+		self._NgnOilLifeRmng = base_types.UninitialisedField(self, 'NgnOilLifeRmng', Max3NumericText, False)
 
 	@property
 	def NgnOilPrssr(self):
@@ -175,12 +175,12 @@ class OnBoardDiagnostics1(base_types._BaseFieldType):
 
 	@NgnOilPrssr.setter
 	def NgnOilPrssr(self, value):
-		self._NgnOilPrssr = value if type(value) != base_types.auto else self.make_default("NgnOilPrssr")
+		self._NgnOilPrssr = value if value is not None else base_types.UninitialisedField(self, 'NgnOilPrssr', Max3NumericText, False)
 
 	@NgnOilPrssr.deleter
 	def NgnOilPrssr(self):
 		del self._NgnOilPrssr
-		self._NgnOilPrssr = None
+		self._NgnOilPrssr = base_types.UninitialisedField(self, 'NgnOilPrssr', Max3NumericText, False)
 
 	@property
 	def NgnOilTmprtr(self):
@@ -188,12 +188,12 @@ class OnBoardDiagnostics1(base_types._BaseFieldType):
 
 	@NgnOilTmprtr.setter
 	def NgnOilTmprtr(self, value):
-		self._NgnOilTmprtr = value if type(value) != base_types.auto else self.make_default("NgnOilTmprtr")
+		self._NgnOilTmprtr = value if value is not None else base_types.UninitialisedField(self, 'NgnOilTmprtr', Max6NumberFraction2, False)
 
 	@NgnOilTmprtr.deleter
 	def NgnOilTmprtr(self):
 		del self._NgnOilTmprtr
-		self._NgnOilTmprtr = None
+		self._NgnOilTmprtr = base_types.UninitialisedField(self, 'NgnOilTmprtr', Max6NumberFraction2, False)
 
 	@property
 	def NgnRPM(self):
@@ -201,12 +201,12 @@ class OnBoardDiagnostics1(base_types._BaseFieldType):
 
 	@NgnRPM.setter
 	def NgnRPM(self, value):
-		self._NgnRPM = value if type(value) != base_types.auto else self.make_default("NgnRPM")
+		self._NgnRPM = value if value is not None else base_types.UninitialisedField(self, 'NgnRPM', Max5NumericText, False)
 
 	@NgnRPM.deleter
 	def NgnRPM(self):
 		del self._NgnRPM
-		self._NgnRPM = None
+		self._NgnRPM = base_types.UninitialisedField(self, 'NgnRPM', Max5NumericText, False)
 
 	@property
 	def NgnTtlIdleTm(self):
@@ -214,12 +214,12 @@ class OnBoardDiagnostics1(base_types._BaseFieldType):
 
 	@NgnTtlIdleTm.setter
 	def NgnTtlIdleTm(self, value):
-		self._NgnTtlIdleTm = value if type(value) != base_types.auto else self.make_default("NgnTtlIdleTm")
+		self._NgnTtlIdleTm = value if value is not None else base_types.UninitialisedField(self, 'NgnTtlIdleTm', Max10NumberFraction2, False)
 
 	@NgnTtlIdleTm.deleter
 	def NgnTtlIdleTm(self):
 		del self._NgnTtlIdleTm
-		self._NgnTtlIdleTm = None
+		self._NgnTtlIdleTm = base_types.UninitialisedField(self, 'NgnTtlIdleTm', Max10NumberFraction2, False)
 
 	@property
 	def NgnTtlTm(self):
@@ -227,12 +227,12 @@ class OnBoardDiagnostics1(base_types._BaseFieldType):
 
 	@NgnTtlTm.setter
 	def NgnTtlTm(self, value):
-		self._NgnTtlTm = value if type(value) != base_types.auto else self.make_default("NgnTtlTm")
+		self._NgnTtlTm = value if value is not None else base_types.UninitialisedField(self, 'NgnTtlTm', Max6NumberFraction2, False)
 
 	@NgnTtlTm.deleter
 	def NgnTtlTm(self):
 		del self._NgnTtlTm
-		self._NgnTtlTm = None
+		self._NgnTtlTm = base_types.UninitialisedField(self, 'NgnTtlTm', Max6NumberFraction2, False)
 
 	@property
 	def RfrgrtnHrs(self):
@@ -240,12 +240,12 @@ class OnBoardDiagnostics1(base_types._BaseFieldType):
 
 	@RfrgrtnHrs.setter
 	def RfrgrtnHrs(self, value):
-		self._RfrgrtnHrs = value if type(value) != base_types.auto else self.make_default("RfrgrtnHrs")
+		self._RfrgrtnHrs = value if value is not None else base_types.UninitialisedField(self, 'RfrgrtnHrs', Max10NumberFraction2, False)
 
 	@RfrgrtnHrs.deleter
 	def RfrgrtnHrs(self):
 		del self._RfrgrtnHrs
-		self._RfrgrtnHrs = None
+		self._RfrgrtnHrs = base_types.UninitialisedField(self, 'RfrgrtnHrs', Max10NumberFraction2, False)
 
 	@property
 	def RfrgrtnTmprtr(self):
@@ -253,12 +253,12 @@ class OnBoardDiagnostics1(base_types._BaseFieldType):
 
 	@RfrgrtnTmprtr.setter
 	def RfrgrtnTmprtr(self, value):
-		self._RfrgrtnTmprtr = value if type(value) != base_types.auto else self.make_default("RfrgrtnTmprtr")
+		self._RfrgrtnTmprtr = value if value is not None else base_types.UninitialisedField(self, 'RfrgrtnTmprtr', Max6NumberFraction2, False)
 
 	@RfrgrtnTmprtr.deleter
 	def RfrgrtnTmprtr(self):
 		del self._RfrgrtnTmprtr
-		self._RfrgrtnTmprtr = None
+		self._RfrgrtnTmprtr = base_types.UninitialisedField(self, 'RfrgrtnTmprtr', Max6NumberFraction2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BttryVltg', type=Max4NumericText, min=0, max=1, mutex_group=None, array=False),

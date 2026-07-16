@@ -2,32 +2,32 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._AdditionalFee4 import AdditionalFee4
-from ._BatchManagementType3Code import BatchManagementType3Code
-from ._ContentInformationType41 import ContentInformationType41
-from ._CorrectionIdentification1 import CorrectionIdentification1
-from ._DestinationData1 import DestinationData1
-from ._EncryptedData2 import EncryptedData2
-from ._Exact12Text import Exact12Text
-from ._Exact15Text import Exact15Text
-from ._Header72 import Header72
-from ._ISO8583ResponseCode import ISO8583ResponseCode
-from ._ISODateTime import ISODateTime
-from ._Jurisdiction2 import Jurisdiction2
-from ._Max12NumericText import Max12NumericText
-from ._Max15NumericText import Max15NumericText
-from ._Max35Binary import Max35Binary
-from ._Max70Text import Max70Text
-from ._Number import Number
-from ._OriginatorData2 import OriginatorData2
-from ._ProcessingResult30 import ProcessingResult30
-from ._ProgrammeMode6 import ProgrammeMode6
-from ._ReceiverData1 import ReceiverData1
-from ._Reconciliation5 import Reconciliation5
-from ._SenderData1 import SenderData1
-from ._SettlementService7 import SettlementService7
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ATICALaxProcessing
+from . import AdditionalFee4
+from . import BatchManagementType3Code
+from . import ContentInformationType41
+from . import CorrectionIdentification1
+from . import DestinationData1
+from . import EncryptedData2
+from . import Exact12Text
+from . import Exact15Text
+from . import Header72
+from . import ISO8583ResponseCode
+from . import ISODateTime
+from . import Jurisdiction2
+from . import Max12NumericText
+from . import Max15NumericText
+from . import Max35Binary
+from . import Max70Text
+from . import Number
+from . import OriginatorData2
+from . import ProcessingResult30
+from . import ProgrammeMode6
+from . import ReceiverData1
+from . import Reconciliation5
+from . import SenderData1
+from . import SettlementService7
+from . import TrueFalseIndicator
 
 class BatchManagementResponseV04(base_types._BaseFieldType):
 
@@ -38,12 +38,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@AddtlFee.setter
 	def AddtlFee(self, value):
-		self._AddtlFee = value if type(value) != base_types.auto else self.make_default("AddtlFee")
+		self._AddtlFee = value if value is not None else base_types.UninitialisedField(self, 'AddtlFee', AdditionalFee4, True)
 
 	@AddtlFee.deleter
 	def AddtlFee(self):
 		del self._AddtlFee
-		self._AddtlFee = None
+		self._AddtlFee = base_types.UninitialisedField(self, 'AddtlFee', AdditionalFee4, True)
 
 	@property
 	def BtchChcksm(self):
@@ -51,12 +51,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@BtchChcksm.setter
 	def BtchChcksm(self, value):
-		self._BtchChcksm = value if type(value) != base_types.auto else self.make_default("BtchChcksm")
+		self._BtchChcksm = value if value is not None else base_types.UninitialisedField(self, 'BtchChcksm', Max35Binary, False)
 
 	@BtchChcksm.deleter
 	def BtchChcksm(self):
 		del self._BtchChcksm
-		self._BtchChcksm = None
+		self._BtchChcksm = base_types.UninitialisedField(self, 'BtchChcksm', Max35Binary, False)
 
 	@property
 	def BtchId(self):
@@ -64,12 +64,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@BtchId.setter
 	def BtchId(self, value):
-		self._BtchId = value if type(value) != base_types.auto else self.make_default("BtchId")
+		self._BtchId = value if value is not None else base_types.UninitialisedField(self, 'BtchId', Max70Text, False)
 
 	@BtchId.deleter
 	def BtchId(self):
 		del self._BtchId
-		self._BtchId = None
+		self._BtchId = base_types.UninitialisedField(self, 'BtchId', Max70Text, False)
 
 	@property
 	def BtchIdList(self):
@@ -77,12 +77,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@BtchIdList.setter
 	def BtchIdList(self, value):
-		self._BtchIdList = value if type(value) != base_types.auto else self.make_default("BtchIdList")
+		self._BtchIdList = value if value is not None else base_types.UninitialisedField(self, 'BtchIdList', Max70Text, True)
 
 	@BtchIdList.deleter
 	def BtchIdList(self):
 		del self._BtchIdList
-		self._BtchIdList = None
+		self._BtchIdList = base_types.UninitialisedField(self, 'BtchIdList', Max70Text, True)
 
 	@property
 	def BtchMgmtTp(self):
@@ -90,12 +90,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@BtchMgmtTp.setter
 	def BtchMgmtTp(self, value):
-		self._BtchMgmtTp = value if type(value) != base_types.auto else self.make_default("BtchMgmtTp")
+		self._BtchMgmtTp = value if value is not None else base_types.UninitialisedField(self, 'BtchMgmtTp', BatchManagementType3Code, False)
 
 	@BtchMgmtTp.deleter
 	def BtchMgmtTp(self):
 		del self._BtchMgmtTp
-		self._BtchMgmtTp = None
+		self._BtchMgmtTp = base_types.UninitialisedField(self, 'BtchMgmtTp', BatchManagementType3Code, False)
 
 	@property
 	def ChckptId(self):
@@ -103,12 +103,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@ChckptId.setter
 	def ChckptId(self, value):
-		self._ChckptId = value if type(value) != base_types.auto else self.make_default("ChckptId")
+		self._ChckptId = value if value is not None else base_types.UninitialisedField(self, 'ChckptId', Max70Text, False)
 
 	@ChckptId.deleter
 	def ChckptId(self):
 		del self._ChckptId
-		self._ChckptId = None
+		self._ChckptId = base_types.UninitialisedField(self, 'ChckptId', Max70Text, False)
 
 	@property
 	def ColltnChcksm(self):
@@ -116,12 +116,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@ColltnChcksm.setter
 	def ColltnChcksm(self, value):
-		self._ColltnChcksm = value if type(value) != base_types.auto else self.make_default("ColltnChcksm")
+		self._ColltnChcksm = value if value is not None else base_types.UninitialisedField(self, 'ColltnChcksm', Max35Binary, False)
 
 	@ColltnChcksm.deleter
 	def ColltnChcksm(self):
 		del self._ColltnChcksm
-		self._ColltnChcksm = None
+		self._ColltnChcksm = base_types.UninitialisedField(self, 'ColltnChcksm', Max35Binary, False)
 
 	@property
 	def ColltnId(self):
@@ -129,12 +129,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@ColltnId.setter
 	def ColltnId(self, value):
-		self._ColltnId = value if type(value) != base_types.auto else self.make_default("ColltnId")
+		self._ColltnId = value if value is not None else base_types.UninitialisedField(self, 'ColltnId', Max70Text, False)
 
 	@ColltnId.deleter
 	def ColltnId(self):
 		del self._ColltnId
-		self._ColltnId = None
+		self._ColltnId = base_types.UninitialisedField(self, 'ColltnId', Max70Text, False)
 
 	@property
 	def ColltnIdList(self):
@@ -142,12 +142,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@ColltnIdList.setter
 	def ColltnIdList(self, value):
-		self._ColltnIdList = value if type(value) != base_types.auto else self.make_default("ColltnIdList")
+		self._ColltnIdList = value if value is not None else base_types.UninitialisedField(self, 'ColltnIdList', Max70Text, True)
 
 	@ColltnIdList.deleter
 	def ColltnIdList(self):
 		del self._ColltnIdList
-		self._ColltnIdList = None
+		self._ColltnIdList = base_types.UninitialisedField(self, 'ColltnIdList', Max70Text, True)
 
 	@property
 	def ColltnSz(self):
@@ -155,12 +155,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@ColltnSz.setter
 	def ColltnSz(self, value):
-		self._ColltnSz = value if type(value) != base_types.auto else self.make_default("ColltnSz")
+		self._ColltnSz = value if value is not None else base_types.UninitialisedField(self, 'ColltnSz', Number, False)
 
 	@ColltnSz.deleter
 	def ColltnSz(self):
 		del self._ColltnSz
-		self._ColltnSz = None
+		self._ColltnSz = base_types.UninitialisedField(self, 'ColltnSz', Number, False)
 
 	@property
 	def Conttn(self):
@@ -168,12 +168,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@Conttn.setter
 	def Conttn(self, value):
-		self._Conttn = value if type(value) != base_types.auto else self.make_default("Conttn")
+		self._Conttn = value if value is not None else base_types.UninitialisedField(self, 'Conttn', TrueFalseIndicator, False)
 
 	@Conttn.deleter
 	def Conttn(self):
 		del self._Conttn
-		self._Conttn = None
+		self._Conttn = base_types.UninitialisedField(self, 'Conttn', TrueFalseIndicator, False)
 
 	@property
 	def Crrctn(self):
@@ -181,12 +181,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@Crrctn.setter
 	def Crrctn(self, value):
-		self._Crrctn = value if type(value) != base_types.auto else self.make_default("Crrctn")
+		self._Crrctn = value if value is not None else base_types.UninitialisedField(self, 'Crrctn', CorrectionIdentification1, False)
 
 	@Crrctn.deleter
 	def Crrctn(self):
 		del self._Crrctn
-		self._Crrctn = None
+		self._Crrctn = base_types.UninitialisedField(self, 'Crrctn', CorrectionIdentification1, False)
 
 	@property
 	def Dstn(self):
@@ -194,12 +194,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@Dstn.setter
 	def Dstn(self, value):
-		self._Dstn = value if type(value) != base_types.auto else self.make_default("Dstn")
+		self._Dstn = value if value is not None else base_types.UninitialisedField(self, 'Dstn', DestinationData1, False)
 
 	@Dstn.deleter
 	def Dstn(self):
 		del self._Dstn
-		self._Dstn = None
+		self._Dstn = base_types.UninitialisedField(self, 'Dstn', DestinationData1, False)
 
 	@property
 	def Hdr(self):
@@ -207,12 +207,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header72, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header72, False)
 
 	@property
 	def Jursdctn(self):
@@ -220,12 +220,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@Jursdctn.setter
 	def Jursdctn(self, value):
-		self._Jursdctn = value if type(value) != base_types.auto else self.make_default("Jursdctn")
+		self._Jursdctn = value if value is not None else base_types.UninitialisedField(self, 'Jursdctn', Jurisdiction2, False)
 
 	@Jursdctn.deleter
 	def Jursdctn(self):
 		del self._Jursdctn
-		self._Jursdctn = None
+		self._Jursdctn = base_types.UninitialisedField(self, 'Jursdctn', Jurisdiction2, False)
 
 	@property
 	def LifeCyclId(self):
@@ -233,12 +233,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@LifeCyclId.setter
 	def LifeCyclId(self, value):
-		self._LifeCyclId = value if type(value) != base_types.auto else self.make_default("LifeCyclId")
+		self._LifeCyclId = value if value is not None else base_types.UninitialisedField(self, 'LifeCyclId', Exact15Text, False)
 
 	@LifeCyclId.deleter
 	def LifeCyclId(self):
 		del self._LifeCyclId
-		self._LifeCyclId = None
+		self._LifeCyclId = base_types.UninitialisedField(self, 'LifeCyclId', Exact15Text, False)
 
 	@property
 	def MsgSeqNb(self):
@@ -246,12 +246,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@MsgSeqNb.setter
 	def MsgSeqNb(self, value):
-		self._MsgSeqNb = value if type(value) != base_types.auto else self.make_default("MsgSeqNb")
+		self._MsgSeqNb = value if value is not None else base_types.UninitialisedField(self, 'MsgSeqNb', Max15NumericText, False)
 
 	@MsgSeqNb.deleter
 	def MsgSeqNb(self):
 		del self._MsgSeqNb
-		self._MsgSeqNb = None
+		self._MsgSeqNb = base_types.UninitialisedField(self, 'MsgSeqNb', Max15NumericText, False)
 
 	@property
 	def MsgsBfrAck(self):
@@ -259,12 +259,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@MsgsBfrAck.setter
 	def MsgsBfrAck(self, value):
-		self._MsgsBfrAck = value if type(value) != base_types.auto else self.make_default("MsgsBfrAck")
+		self._MsgsBfrAck = value if value is not None else base_types.UninitialisedField(self, 'MsgsBfrAck', Number, False)
 
 	@MsgsBfrAck.deleter
 	def MsgsBfrAck(self):
 		del self._MsgsBfrAck
-		self._MsgsBfrAck = None
+		self._MsgsBfrAck = base_types.UninitialisedField(self, 'MsgsBfrAck', Number, False)
 
 	@property
 	def NbOfBtchsInColltn(self):
@@ -272,12 +272,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@NbOfBtchsInColltn.setter
 	def NbOfBtchsInColltn(self, value):
-		self._NbOfBtchsInColltn = value if type(value) != base_types.auto else self.make_default("NbOfBtchsInColltn")
+		self._NbOfBtchsInColltn = value if value is not None else base_types.UninitialisedField(self, 'NbOfBtchsInColltn', Number, False)
 
 	@NbOfBtchsInColltn.deleter
 	def NbOfBtchsInColltn(self):
 		del self._NbOfBtchsInColltn
-		self._NbOfBtchsInColltn = None
+		self._NbOfBtchsInColltn = base_types.UninitialisedField(self, 'NbOfBtchsInColltn', Number, False)
 
 	@property
 	def NbOfMsgs(self):
@@ -285,12 +285,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@NbOfMsgs.setter
 	def NbOfMsgs(self, value):
-		self._NbOfMsgs = value if type(value) != base_types.auto else self.make_default("NbOfMsgs")
+		self._NbOfMsgs = value if value is not None else base_types.UninitialisedField(self, 'NbOfMsgs', Number, False)
 
 	@NbOfMsgs.deleter
 	def NbOfMsgs(self):
 		del self._NbOfMsgs
-		self._NbOfMsgs = None
+		self._NbOfMsgs = base_types.UninitialisedField(self, 'NbOfMsgs', Number, False)
 
 	@property
 	def NtlData(self):
@@ -298,12 +298,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def OrgnlBtchId(self):
@@ -311,12 +311,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@OrgnlBtchId.setter
 	def OrgnlBtchId(self, value):
-		self._OrgnlBtchId = value if type(value) != base_types.auto else self.make_default("OrgnlBtchId")
+		self._OrgnlBtchId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlBtchId', Max70Text, False)
 
 	@OrgnlBtchId.deleter
 	def OrgnlBtchId(self):
 		del self._OrgnlBtchId
-		self._OrgnlBtchId = None
+		self._OrgnlBtchId = base_types.UninitialisedField(self, 'OrgnlBtchId', Max70Text, False)
 
 	@property
 	def OrgnlColltnId(self):
@@ -324,12 +324,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@OrgnlColltnId.setter
 	def OrgnlColltnId(self, value):
-		self._OrgnlColltnId = value if type(value) != base_types.auto else self.make_default("OrgnlColltnId")
+		self._OrgnlColltnId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlColltnId', Max70Text, False)
 
 	@OrgnlColltnId.deleter
 	def OrgnlColltnId(self):
 		del self._OrgnlColltnId
-		self._OrgnlColltnId = None
+		self._OrgnlColltnId = base_types.UninitialisedField(self, 'OrgnlColltnId', Max70Text, False)
 
 	@property
 	def OrgnlRspnCd(self):
@@ -337,12 +337,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@OrgnlRspnCd.setter
 	def OrgnlRspnCd(self, value):
-		self._OrgnlRspnCd = value if type(value) != base_types.auto else self.make_default("OrgnlRspnCd")
+		self._OrgnlRspnCd = value if value is not None else base_types.UninitialisedField(self, 'OrgnlRspnCd', ISO8583ResponseCode, False)
 
 	@OrgnlRspnCd.deleter
 	def OrgnlRspnCd(self):
 		del self._OrgnlRspnCd
-		self._OrgnlRspnCd = None
+		self._OrgnlRspnCd = base_types.UninitialisedField(self, 'OrgnlRspnCd', ISO8583ResponseCode, False)
 
 	@property
 	def Orgtr(self):
@@ -350,12 +350,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@Orgtr.setter
 	def Orgtr(self, value):
-		self._Orgtr = value if type(value) != base_types.auto else self.make_default("Orgtr")
+		self._Orgtr = value if value is not None else base_types.UninitialisedField(self, 'Orgtr', OriginatorData2, False)
 
 	@Orgtr.deleter
 	def Orgtr(self):
 		del self._Orgtr
-		self._Orgtr = None
+		self._Orgtr = base_types.UninitialisedField(self, 'Orgtr', OriginatorData2, False)
 
 	@property
 	def PostvAck(self):
@@ -363,12 +363,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@PostvAck.setter
 	def PostvAck(self, value):
-		self._PostvAck = value if type(value) != base_types.auto else self.make_default("PostvAck")
+		self._PostvAck = value if value is not None else base_types.UninitialisedField(self, 'PostvAck', TrueFalseIndicator, False)
 
 	@PostvAck.deleter
 	def PostvAck(self):
 		del self._PostvAck
-		self._PostvAck = None
+		self._PostvAck = base_types.UninitialisedField(self, 'PostvAck', TrueFalseIndicator, False)
 
 	@property
 	def PrcgRslt(self):
@@ -376,12 +376,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@PrcgRslt.setter
 	def PrcgRslt(self, value):
-		self._PrcgRslt = value if type(value) != base_types.auto else self.make_default("PrcgRslt")
+		self._PrcgRslt = value if value is not None else base_types.UninitialisedField(self, 'PrcgRslt', ProcessingResult30, False)
 
 	@PrcgRslt.deleter
 	def PrcgRslt(self):
 		del self._PrcgRslt
-		self._PrcgRslt = None
+		self._PrcgRslt = base_types.UninitialisedField(self, 'PrcgRslt', ProcessingResult30, False)
 
 	@property
 	def Prgrmm(self):
@@ -389,12 +389,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@Prgrmm.setter
 	def Prgrmm(self, value):
-		self._Prgrmm = value if type(value) != base_types.auto else self.make_default("Prgrmm")
+		self._Prgrmm = value if value is not None else base_types.UninitialisedField(self, 'Prgrmm', ProgrammeMode6, True)
 
 	@Prgrmm.deleter
 	def Prgrmm(self):
 		del self._Prgrmm
-		self._Prgrmm = None
+		self._Prgrmm = base_types.UninitialisedField(self, 'Prgrmm', ProgrammeMode6, True)
 
 	@property
 	def PrtctdData(self):
@@ -402,12 +402,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@PrtctdData.setter
 	def PrtctdData(self, value):
-		self._PrtctdData = value if type(value) != base_types.auto else self.make_default("PrtctdData")
+		self._PrtctdData = value if value is not None else base_types.UninitialisedField(self, 'PrtctdData', EncryptedData2, True)
 
 	@PrtctdData.deleter
 	def PrtctdData(self):
 		del self._PrtctdData
-		self._PrtctdData = None
+		self._PrtctdData = base_types.UninitialisedField(self, 'PrtctdData', EncryptedData2, True)
 
 	@property
 	def PrvtData(self):
@@ -415,12 +415,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def Rcncltn(self):
@@ -428,12 +428,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@Rcncltn.setter
 	def Rcncltn(self, value):
-		self._Rcncltn = value if type(value) != base_types.auto else self.make_default("Rcncltn")
+		self._Rcncltn = value if value is not None else base_types.UninitialisedField(self, 'Rcncltn', Reconciliation5, False)
 
 	@Rcncltn.deleter
 	def Rcncltn(self):
 		del self._Rcncltn
-		self._Rcncltn = None
+		self._Rcncltn = base_types.UninitialisedField(self, 'Rcncltn', Reconciliation5, False)
 
 	@property
 	def Rcvr(self):
@@ -441,12 +441,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@Rcvr.setter
 	def Rcvr(self, value):
-		self._Rcvr = value if type(value) != base_types.auto else self.make_default("Rcvr")
+		self._Rcvr = value if value is not None else base_types.UninitialisedField(self, 'Rcvr', ReceiverData1, False)
 
 	@Rcvr.deleter
 	def Rcvr(self):
 		del self._Rcvr
-		self._Rcvr = None
+		self._Rcvr = base_types.UninitialisedField(self, 'Rcvr', ReceiverData1, False)
 
 	@property
 	def ReqAck(self):
@@ -454,12 +454,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@ReqAck.setter
 	def ReqAck(self, value):
-		self._ReqAck = value if type(value) != base_types.auto else self.make_default("ReqAck")
+		self._ReqAck = value if value is not None else base_types.UninitialisedField(self, 'ReqAck', TrueFalseIndicator, False)
 
 	@ReqAck.deleter
 	def ReqAck(self):
 		del self._ReqAck
-		self._ReqAck = None
+		self._ReqAck = base_types.UninitialisedField(self, 'ReqAck', TrueFalseIndicator, False)
 
 	@property
 	def RmngMsgsInColltn(self):
@@ -467,12 +467,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@RmngMsgsInColltn.setter
 	def RmngMsgsInColltn(self, value):
-		self._RmngMsgsInColltn = value if type(value) != base_types.auto else self.make_default("RmngMsgsInColltn")
+		self._RmngMsgsInColltn = value if value is not None else base_types.UninitialisedField(self, 'RmngMsgsInColltn', Number, False)
 
 	@RmngMsgsInColltn.deleter
 	def RmngMsgsInColltn(self):
 		del self._RmngMsgsInColltn
-		self._RmngMsgsInColltn = None
+		self._RmngMsgsInColltn = base_types.UninitialisedField(self, 'RmngMsgsInColltn', Number, False)
 
 	@property
 	def RtrvlRefNb(self):
@@ -480,12 +480,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@RtrvlRefNb.setter
 	def RtrvlRefNb(self, value):
-		self._RtrvlRefNb = value if type(value) != base_types.auto else self.make_default("RtrvlRefNb")
+		self._RtrvlRefNb = value if value is not None else base_types.UninitialisedField(self, 'RtrvlRefNb', Exact12Text, False)
 
 	@RtrvlRefNb.deleter
 	def RtrvlRefNb(self):
 		del self._RtrvlRefNb
-		self._RtrvlRefNb = None
+		self._RtrvlRefNb = base_types.UninitialisedField(self, 'RtrvlRefNb', Exact12Text, False)
 
 	@property
 	def SctyTrlr(self):
@@ -493,12 +493,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType41, False)
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
 		del self._SctyTrlr
-		self._SctyTrlr = None
+		self._SctyTrlr = base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType41, False)
 
 	@property
 	def Sndr(self):
@@ -506,12 +506,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@Sndr.setter
 	def Sndr(self, value):
-		self._Sndr = value if type(value) != base_types.auto else self.make_default("Sndr")
+		self._Sndr = value if value is not None else base_types.UninitialisedField(self, 'Sndr', SenderData1, False)
 
 	@Sndr.deleter
 	def Sndr(self):
 		del self._Sndr
-		self._Sndr = None
+		self._Sndr = base_types.UninitialisedField(self, 'Sndr', SenderData1, False)
 
 	@property
 	def SttlmSvc(self):
@@ -519,12 +519,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@SttlmSvc.setter
 	def SttlmSvc(self, value):
-		self._SttlmSvc = value if type(value) != base_types.auto else self.make_default("SttlmSvc")
+		self._SttlmSvc = value if value is not None else base_types.UninitialisedField(self, 'SttlmSvc', SettlementService7, False)
 
 	@SttlmSvc.deleter
 	def SttlmSvc(self):
 		del self._SttlmSvc
-		self._SttlmSvc = None
+		self._SttlmSvc = base_types.UninitialisedField(self, 'SttlmSvc', SettlementService7, False)
 
 	@property
 	def SysTracAudtNb(self):
@@ -532,12 +532,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@SysTracAudtNb.setter
 	def SysTracAudtNb(self, value):
-		self._SysTracAudtNb = value if type(value) != base_types.auto else self.make_default("SysTracAudtNb")
+		self._SysTracAudtNb = value if value is not None else base_types.UninitialisedField(self, 'SysTracAudtNb', Max12NumericText, False)
 
 	@SysTracAudtNb.deleter
 	def SysTracAudtNb(self):
 		del self._SysTracAudtNb
-		self._SysTracAudtNb = None
+		self._SysTracAudtNb = base_types.UninitialisedField(self, 'SysTracAudtNb', Max12NumericText, False)
 
 	@property
 	def TrnsmssnDtTm(self):
@@ -545,12 +545,12 @@ class BatchManagementResponseV04(base_types._BaseFieldType):
 
 	@TrnsmssnDtTm.setter
 	def TrnsmssnDtTm(self, value):
-		self._TrnsmssnDtTm = value if type(value) != base_types.auto else self.make_default("TrnsmssnDtTm")
+		self._TrnsmssnDtTm = value if value is not None else base_types.UninitialisedField(self, 'TrnsmssnDtTm', ISODateTime, False)
 
 	@TrnsmssnDtTm.deleter
 	def TrnsmssnDtTm(self):
 		del self._TrnsmssnDtTm
-		self._TrnsmssnDtTm = None
+		self._TrnsmssnDtTm = base_types.UninitialisedField(self, 'TrnsmssnDtTm', ISODateTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlFee', type=AdditionalFee4, min=0, max=None, mutex_group=None, array=True),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentReportingCurrencyCodeReportV01 import FinancialInstrumentReportingCurrencyCodeReportV01
+from . import FinancialInstrumentReportingCurrencyCodeReportV01
 
 class AUTH_048_001_01():
 
@@ -18,12 +18,12 @@ class AUTH_048_001_01():
 
 		@FinInstrmRptgCcyCdRpt.setter
 		def FinInstrmRptgCcyCdRpt(self, value):
-			self._FinInstrmRptgCcyCdRpt = value if type(value) != base_types.auto else self.make_default("FinInstrmRptgCcyCdRpt")
+			self._FinInstrmRptgCcyCdRpt = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmRptgCcyCdRpt', FinancialInstrumentReportingCurrencyCodeReportV01, False)
 
 		@FinInstrmRptgCcyCdRpt.deleter
 		def FinInstrmRptgCcyCdRpt(self):
 			del self._FinInstrmRptgCcyCdRpt
-			self._FinInstrmRptgCcyCdRpt = None
+			self._FinInstrmRptgCcyCdRpt = base_types.UninitialisedField(self, 'FinInstrmRptgCcyCdRpt', FinancialInstrumentReportingCurrencyCodeReportV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='FinInstrmRptgCcyCdRpt', type=FinancialInstrumentReportingCurrencyCodeReportV01, min=1, max=1, mutex_group=None, array=False),

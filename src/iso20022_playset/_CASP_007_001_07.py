@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SaleToPOIAdministrativeRequestV07 import SaleToPOIAdministrativeRequestV07
+from . import SaleToPOIAdministrativeRequestV07
 
 class CASP_007_001_07():
 
@@ -18,12 +18,12 @@ class CASP_007_001_07():
 
 		@SaleToPOIAdmstvReq.setter
 		def SaleToPOIAdmstvReq(self, value):
-			self._SaleToPOIAdmstvReq = value if type(value) != base_types.auto else self.make_default("SaleToPOIAdmstvReq")
+			self._SaleToPOIAdmstvReq = value if value is not None else base_types.UninitialisedField(self, 'SaleToPOIAdmstvReq', SaleToPOIAdministrativeRequestV07, False)
 
 		@SaleToPOIAdmstvReq.deleter
 		def SaleToPOIAdmstvReq(self):
 			del self._SaleToPOIAdmstvReq
-			self._SaleToPOIAdmstvReq = None
+			self._SaleToPOIAdmstvReq = base_types.UninitialisedField(self, 'SaleToPOIAdmstvReq', SaleToPOIAdministrativeRequestV07, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SaleToPOIAdmstvReq', type=SaleToPOIAdministrativeRequestV07, min=1, max=1, mutex_group=None, array=False),

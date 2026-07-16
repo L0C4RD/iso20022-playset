@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Entry2Code import Entry2Code
-from ._Exact4AlphaNumericText import Exact4AlphaNumericText
-from ._ISODate import ISODate
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
+from . import Entry2Code
+from . import Exact4AlphaNumericText
+from . import ISODate
+from . import ISODateTime
+from . import Max35Text
 
 class ReportData4(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class ReportData4(base_types._BaseFieldType):
 
 	@DtAndTmStmp.setter
 	def DtAndTmStmp(self, value):
-		self._DtAndTmStmp = value if type(value) != base_types.auto else self.make_default("DtAndTmStmp")
+		self._DtAndTmStmp = value if value is not None else base_types.UninitialisedField(self, 'DtAndTmStmp', ISODateTime, False)
 
 	@DtAndTmStmp.deleter
 	def DtAndTmStmp(self):
 		del self._DtAndTmStmp
-		self._DtAndTmStmp = None
+		self._DtAndTmStmp = base_types.UninitialisedField(self, 'DtAndTmStmp', ISODateTime, False)
 
 	@property
 	def MsgId(self):
@@ -30,12 +30,12 @@ class ReportData4(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@property
 	def SchdlTp(self):
@@ -43,12 +43,12 @@ class ReportData4(base_types._BaseFieldType):
 
 	@SchdlTp.setter
 	def SchdlTp(self, value):
-		self._SchdlTp = value if type(value) != base_types.auto else self.make_default("SchdlTp")
+		self._SchdlTp = value if value is not None else base_types.UninitialisedField(self, 'SchdlTp', Exact4AlphaNumericText, False)
 
 	@SchdlTp.deleter
 	def SchdlTp(self):
 		del self._SchdlTp
-		self._SchdlTp = None
+		self._SchdlTp = base_types.UninitialisedField(self, 'SchdlTp', Exact4AlphaNumericText, False)
 
 	@property
 	def SttlmSsnIdr(self):
@@ -56,12 +56,12 @@ class ReportData4(base_types._BaseFieldType):
 
 	@SttlmSsnIdr.setter
 	def SttlmSsnIdr(self, value):
-		self._SttlmSsnIdr = value if type(value) != base_types.auto else self.make_default("SttlmSsnIdr")
+		self._SttlmSsnIdr = value if value is not None else base_types.UninitialisedField(self, 'SttlmSsnIdr', Exact4AlphaNumericText, False)
 
 	@SttlmSsnIdr.deleter
 	def SttlmSsnIdr(self):
 		del self._SttlmSsnIdr
-		self._SttlmSsnIdr = None
+		self._SttlmSsnIdr = base_types.UninitialisedField(self, 'SttlmSsnIdr', Exact4AlphaNumericText, False)
 
 	@property
 	def Tp(self):
@@ -69,12 +69,12 @@ class ReportData4(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', Entry2Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', Entry2Code, False)
 
 	@property
 	def ValDt(self):
@@ -82,12 +82,12 @@ class ReportData4(base_types._BaseFieldType):
 
 	@ValDt.setter
 	def ValDt(self, value):
-		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
+		self._ValDt = value if value is not None else base_types.UninitialisedField(self, 'ValDt', ISODate, False)
 
 	@ValDt.deleter
 	def ValDt(self):
 		del self._ValDt
-		self._ValDt = None
+		self._ValDt = base_types.UninitialisedField(self, 'ValDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DtAndTmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),

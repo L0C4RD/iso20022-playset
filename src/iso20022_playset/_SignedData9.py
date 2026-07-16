@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AlgorithmIdentification36 import AlgorithmIdentification36
-from ._EncapsulatedContent3 import EncapsulatedContent3
-from ._Max5000Binary import Max5000Binary
-from ._Number import Number
-from ._Signer8 import Signer8
+from . import AlgorithmIdentification36
+from . import EncapsulatedContent3
+from . import Max5000Binary
+from . import Number
+from . import Signer8
 
 class SignedData9(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class SignedData9(base_types._BaseFieldType):
 
 	@Cert.setter
 	def Cert(self, value):
-		self._Cert = value if type(value) != base_types.auto else self.make_default("Cert")
+		self._Cert = value if value is not None else base_types.UninitialisedField(self, 'Cert', Max5000Binary, True)
 
 	@Cert.deleter
 	def Cert(self):
 		del self._Cert
-		self._Cert = None
+		self._Cert = base_types.UninitialisedField(self, 'Cert', Max5000Binary, True)
 
 	@property
 	def DgstAlgo(self):
@@ -30,12 +30,12 @@ class SignedData9(base_types._BaseFieldType):
 
 	@DgstAlgo.setter
 	def DgstAlgo(self, value):
-		self._DgstAlgo = value if type(value) != base_types.auto else self.make_default("DgstAlgo")
+		self._DgstAlgo = value if value is not None else base_types.UninitialisedField(self, 'DgstAlgo', AlgorithmIdentification36, True)
 
 	@DgstAlgo.deleter
 	def DgstAlgo(self):
 		del self._DgstAlgo
-		self._DgstAlgo = None
+		self._DgstAlgo = base_types.UninitialisedField(self, 'DgstAlgo', AlgorithmIdentification36, True)
 
 	@property
 	def NcpsltdCntt(self):
@@ -43,12 +43,12 @@ class SignedData9(base_types._BaseFieldType):
 
 	@NcpsltdCntt.setter
 	def NcpsltdCntt(self, value):
-		self._NcpsltdCntt = value if type(value) != base_types.auto else self.make_default("NcpsltdCntt")
+		self._NcpsltdCntt = value if value is not None else base_types.UninitialisedField(self, 'NcpsltdCntt', EncapsulatedContent3, False)
 
 	@NcpsltdCntt.deleter
 	def NcpsltdCntt(self):
 		del self._NcpsltdCntt
-		self._NcpsltdCntt = None
+		self._NcpsltdCntt = base_types.UninitialisedField(self, 'NcpsltdCntt', EncapsulatedContent3, False)
 
 	@property
 	def Sgnr(self):
@@ -56,12 +56,12 @@ class SignedData9(base_types._BaseFieldType):
 
 	@Sgnr.setter
 	def Sgnr(self, value):
-		self._Sgnr = value if type(value) != base_types.auto else self.make_default("Sgnr")
+		self._Sgnr = value if value is not None else base_types.UninitialisedField(self, 'Sgnr', Signer8, True)
 
 	@Sgnr.deleter
 	def Sgnr(self):
 		del self._Sgnr
-		self._Sgnr = None
+		self._Sgnr = base_types.UninitialisedField(self, 'Sgnr', Signer8, True)
 
 	@property
 	def Vrsn(self):
@@ -69,12 +69,12 @@ class SignedData9(base_types._BaseFieldType):
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+		self._Vrsn = value if value is not None else base_types.UninitialisedField(self, 'Vrsn', Number, False)
 
 	@Vrsn.deleter
 	def Vrsn(self):
 		del self._Vrsn
-		self._Vrsn = None
+		self._Vrsn = base_types.UninitialisedField(self, 'Vrsn', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cert', type=Max5000Binary, min=0, max=None, mutex_group=None, array=True),

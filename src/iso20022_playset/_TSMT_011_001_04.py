@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BaselineReportV04 import BaselineReportV04
+from . import BaselineReportV04
 
 class TSMT_011_001_04():
 
@@ -18,12 +18,12 @@ class TSMT_011_001_04():
 
 		@BaselnRpt.setter
 		def BaselnRpt(self, value):
-			self._BaselnRpt = value if type(value) != base_types.auto else self.make_default("BaselnRpt")
+			self._BaselnRpt = value if value is not None else base_types.UninitialisedField(self, 'BaselnRpt', BaselineReportV04, False)
 
 		@BaselnRpt.deleter
 		def BaselnRpt(self):
 			del self._BaselnRpt
-			self._BaselnRpt = None
+			self._BaselnRpt = base_types.UninitialisedField(self, 'BaselnRpt', BaselineReportV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='BaselnRpt', type=BaselineReportV04, min=1, max=1, mutex_group=None, array=False),

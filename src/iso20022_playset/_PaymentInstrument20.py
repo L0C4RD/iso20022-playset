@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CreditTransfer11 import CreditTransfer11
-from ._Max35Text import Max35Text
+from . import CreditTransfer11
+from . import Max35Text
 
 class PaymentInstrument20(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PaymentInstrument20(base_types._BaseFieldType):
 
 	@CdtTrfDtls.setter
 	def CdtTrfDtls(self, value):
-		self._CdtTrfDtls = value if type(value) != base_types.auto else self.make_default("CdtTrfDtls")
+		self._CdtTrfDtls = value if value is not None else base_types.UninitialisedField(self, 'CdtTrfDtls', CreditTransfer11, False)
 
 	@CdtTrfDtls.deleter
 	def CdtTrfDtls(self):
 		del self._CdtTrfDtls
-		self._CdtTrfDtls = None
+		self._CdtTrfDtls = base_types.UninitialisedField(self, 'CdtTrfDtls', CreditTransfer11, False)
 
 	@property
 	def Ref(self):
@@ -27,12 +27,12 @@ class PaymentInstrument20(base_types._BaseFieldType):
 
 	@Ref.setter
 	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+		self._Ref = value if value is not None else base_types.UninitialisedField(self, 'Ref', Max35Text, False)
 
 	@Ref.deleter
 	def Ref(self):
 		del self._Ref
-		self._Ref = None
+		self._Ref = base_types.UninitialisedField(self, 'Ref', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtTrfDtls', type=CreditTransfer11, min=0, max=1, mutex_group=None, array=False),

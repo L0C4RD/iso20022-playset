@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AutoExtend1Choice import AutoExtend1Choice
-from ._ISODate import ISODate
-from ._NonExtension1 import NonExtension1
+from . import AutoExtend1Choice
+from . import ISODate
+from . import NonExtension1
 
 class AutoExtension1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AutoExtension1(base_types._BaseFieldType):
 
 	@FnlXpryDt.setter
 	def FnlXpryDt(self, value):
-		self._FnlXpryDt = value if type(value) != base_types.auto else self.make_default("FnlXpryDt")
+		self._FnlXpryDt = value if value is not None else base_types.UninitialisedField(self, 'FnlXpryDt', ISODate, False)
 
 	@FnlXpryDt.deleter
 	def FnlXpryDt(self):
 		del self._FnlXpryDt
-		self._FnlXpryDt = None
+		self._FnlXpryDt = base_types.UninitialisedField(self, 'FnlXpryDt', ISODate, False)
 
 	@property
 	def NonXtnsnNtfctn(self):
@@ -28,12 +28,12 @@ class AutoExtension1(base_types._BaseFieldType):
 
 	@NonXtnsnNtfctn.setter
 	def NonXtnsnNtfctn(self, value):
-		self._NonXtnsnNtfctn = value if type(value) != base_types.auto else self.make_default("NonXtnsnNtfctn")
+		self._NonXtnsnNtfctn = value if value is not None else base_types.UninitialisedField(self, 'NonXtnsnNtfctn', NonExtension1, True)
 
 	@NonXtnsnNtfctn.deleter
 	def NonXtnsnNtfctn(self):
 		del self._NonXtnsnNtfctn
-		self._NonXtnsnNtfctn = None
+		self._NonXtnsnNtfctn = base_types.UninitialisedField(self, 'NonXtnsnNtfctn', NonExtension1, True)
 
 	@property
 	def Prd(self):
@@ -41,12 +41,12 @@ class AutoExtension1(base_types._BaseFieldType):
 
 	@Prd.setter
 	def Prd(self, value):
-		self._Prd = value if type(value) != base_types.auto else self.make_default("Prd")
+		self._Prd = value if value is not None else base_types.UninitialisedField(self, 'Prd', AutoExtend1Choice, False)
 
 	@Prd.deleter
 	def Prd(self):
 		del self._Prd
-		self._Prd = None
+		self._Prd = base_types.UninitialisedField(self, 'Prd', AutoExtend1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FnlXpryDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),

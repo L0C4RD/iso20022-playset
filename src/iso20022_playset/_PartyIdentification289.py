@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContactIdentification1 import ContactIdentification1
-from ._PartyIdentification129Choice import PartyIdentification129Choice
-from ._PostalAddress1 import PostalAddress1
+from . import ContactIdentification1
+from . import PartyIdentification129Choice
+from . import PostalAddress1
 
 class PartyIdentification289(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PartyIdentification289(base_types._BaseFieldType):
 
 	@CtctPrsn.setter
 	def CtctPrsn(self, value):
-		self._CtctPrsn = value if type(value) != base_types.auto else self.make_default("CtctPrsn")
+		self._CtctPrsn = value if value is not None else base_types.UninitialisedField(self, 'CtctPrsn', ContactIdentification1, False)
 
 	@CtctPrsn.deleter
 	def CtctPrsn(self):
 		del self._CtctPrsn
-		self._CtctPrsn = None
+		self._CtctPrsn = base_types.UninitialisedField(self, 'CtctPrsn', ContactIdentification1, False)
 
 	@property
 	def CtctPrsnAdr(self):
@@ -28,12 +28,12 @@ class PartyIdentification289(base_types._BaseFieldType):
 
 	@CtctPrsnAdr.setter
 	def CtctPrsnAdr(self, value):
-		self._CtctPrsnAdr = value if type(value) != base_types.auto else self.make_default("CtctPrsnAdr")
+		self._CtctPrsnAdr = value if value is not None else base_types.UninitialisedField(self, 'CtctPrsnAdr', PostalAddress1, False)
 
 	@CtctPrsnAdr.deleter
 	def CtctPrsnAdr(self):
 		del self._CtctPrsnAdr
-		self._CtctPrsnAdr = None
+		self._CtctPrsnAdr = base_types.UninitialisedField(self, 'CtctPrsnAdr', PostalAddress1, False)
 
 	@property
 	def PtyId(self):
@@ -41,12 +41,12 @@ class PartyIdentification289(base_types._BaseFieldType):
 
 	@PtyId.setter
 	def PtyId(self, value):
-		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
+		self._PtyId = value if value is not None else base_types.UninitialisedField(self, 'PtyId', PartyIdentification129Choice, False)
 
 	@PtyId.deleter
 	def PtyId(self):
 		del self._PtyId
-		self._PtyId = None
+		self._PtyId = base_types.UninitialisedField(self, 'PtyId', PartyIdentification129Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtctPrsn', type=ContactIdentification1, min=0, max=1, mutex_group=None, array=False),

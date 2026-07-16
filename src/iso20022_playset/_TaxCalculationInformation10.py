@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._TaxBasis1Choice import TaxBasis1Choice
+from . import ActiveCurrencyAndAmount
+from . import TaxBasis1Choice
 
 class TaxCalculationInformation10(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TaxCalculationInformation10(base_types._BaseFieldType):
 
 	@Bsis.setter
 	def Bsis(self, value):
-		self._Bsis = value if type(value) != base_types.auto else self.make_default("Bsis")
+		self._Bsis = value if value is not None else base_types.UninitialisedField(self, 'Bsis', TaxBasis1Choice, False)
 
 	@Bsis.deleter
 	def Bsis(self):
 		del self._Bsis
-		self._Bsis = None
+		self._Bsis = base_types.UninitialisedField(self, 'Bsis', TaxBasis1Choice, False)
 
 	@property
 	def TaxblAmt(self):
@@ -27,12 +27,12 @@ class TaxCalculationInformation10(base_types._BaseFieldType):
 
 	@TaxblAmt.setter
 	def TaxblAmt(self, value):
-		self._TaxblAmt = value if type(value) != base_types.auto else self.make_default("TaxblAmt")
+		self._TaxblAmt = value if value is not None else base_types.UninitialisedField(self, 'TaxblAmt', ActiveCurrencyAndAmount, False)
 
 	@TaxblAmt.deleter
 	def TaxblAmt(self):
 		del self._TaxblAmt
-		self._TaxblAmt = None
+		self._TaxblAmt = base_types.UninitialisedField(self, 'TaxblAmt', ActiveCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Bsis', type=TaxBasis1Choice, min=0, max=1, mutex_group=None, array=False),

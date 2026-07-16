@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Exact2NumericText import Exact2NumericText
-from ._Frequency6Code import Frequency6Code
+from . import Exact2NumericText
+from . import Frequency6Code
 
 class FrequencyAndMoment1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class FrequencyAndMoment1(base_types._BaseFieldType):
 
 	@PtInTm.setter
 	def PtInTm(self, value):
-		self._PtInTm = value if type(value) != base_types.auto else self.make_default("PtInTm")
+		self._PtInTm = value if value is not None else base_types.UninitialisedField(self, 'PtInTm', Exact2NumericText, False)
 
 	@PtInTm.deleter
 	def PtInTm(self):
 		del self._PtInTm
-		self._PtInTm = None
+		self._PtInTm = base_types.UninitialisedField(self, 'PtInTm', Exact2NumericText, False)
 
 	@property
 	def Tp(self):
@@ -27,12 +27,12 @@ class FrequencyAndMoment1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', Frequency6Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', Frequency6Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PtInTm', type=Exact2NumericText, min=1, max=1, mutex_group=None, array=False),

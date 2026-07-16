@@ -2,14 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
+from . import ActiveCurrencyCode
 
 class ActiveCurrencyAndAmount(base_types._BaseDataType_Decimal):
 
-	attrib = {
-		"Ccy" : None,
-	}
-
+	attrib = None
 	_attrib_defs = frozenset((
 		base_types.AttributeEntry(name='Ccy', type=ActiveCurrencyCode, required=True),
 	))

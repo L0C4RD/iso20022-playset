@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InvestmentNeed2Choice import InvestmentNeed2Choice
-from ._OtherInvestmentNeed1 import OtherInvestmentNeed1
-from ._SustainabilityPreferences2Code import SustainabilityPreferences2Code
-from ._TargetMarket1Code import TargetMarket1Code
-from ._TimeHorizon2Choice import TimeHorizon2Choice
+from . import InvestmentNeed2Choice
+from . import OtherInvestmentNeed1
+from . import SustainabilityPreferences2Code
+from . import TargetMarket1Code
+from . import TimeHorizon2Choice
 
 class InvestorRequirements4(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class InvestorRequirements4(base_types._BaseFieldType):
 
 	@MinHldgPrd.setter
 	def MinHldgPrd(self, value):
-		self._MinHldgPrd = value if type(value) != base_types.auto else self.make_default("MinHldgPrd")
+		self._MinHldgPrd = value if value is not None else base_types.UninitialisedField(self, 'MinHldgPrd', TimeHorizon2Choice, False)
 
 	@MinHldgPrd.deleter
 	def MinHldgPrd(self):
 		del self._MinHldgPrd
-		self._MinHldgPrd = None
+		self._MinHldgPrd = base_types.UninitialisedField(self, 'MinHldgPrd', TimeHorizon2Choice, False)
 
 	@property
 	def OptnOrLvrgdRtrPrfl(self):
@@ -30,12 +30,12 @@ class InvestorRequirements4(base_types._BaseFieldType):
 
 	@OptnOrLvrgdRtrPrfl.setter
 	def OptnOrLvrgdRtrPrfl(self, value):
-		self._OptnOrLvrgdRtrPrfl = value if type(value) != base_types.auto else self.make_default("OptnOrLvrgdRtrPrfl")
+		self._OptnOrLvrgdRtrPrfl = value if value is not None else base_types.UninitialisedField(self, 'OptnOrLvrgdRtrPrfl', TargetMarket1Code, False)
 
 	@OptnOrLvrgdRtrPrfl.deleter
 	def OptnOrLvrgdRtrPrfl(self):
 		del self._OptnOrLvrgdRtrPrfl
-		self._OptnOrLvrgdRtrPrfl = None
+		self._OptnOrLvrgdRtrPrfl = base_types.UninitialisedField(self, 'OptnOrLvrgdRtrPrfl', TargetMarket1Code, False)
 
 	@property
 	def Othr(self):
@@ -43,12 +43,12 @@ class InvestorRequirements4(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', OtherInvestmentNeed1, True)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', OtherInvestmentNeed1, True)
 
 	@property
 	def OthrSpcfcInvstmtNeed(self):
@@ -56,12 +56,12 @@ class InvestorRequirements4(base_types._BaseFieldType):
 
 	@OthrSpcfcInvstmtNeed.setter
 	def OthrSpcfcInvstmtNeed(self, value):
-		self._OthrSpcfcInvstmtNeed = value if type(value) != base_types.auto else self.make_default("OthrSpcfcInvstmtNeed")
+		self._OthrSpcfcInvstmtNeed = value if value is not None else base_types.UninitialisedField(self, 'OthrSpcfcInvstmtNeed', InvestmentNeed2Choice, False)
 
 	@OthrSpcfcInvstmtNeed.deleter
 	def OthrSpcfcInvstmtNeed(self):
 		del self._OthrSpcfcInvstmtNeed
-		self._OthrSpcfcInvstmtNeed = None
+		self._OthrSpcfcInvstmtNeed = base_types.UninitialisedField(self, 'OthrSpcfcInvstmtNeed', InvestmentNeed2Choice, False)
 
 	@property
 	def RtrPrflGrwth(self):
@@ -69,12 +69,12 @@ class InvestorRequirements4(base_types._BaseFieldType):
 
 	@RtrPrflGrwth.setter
 	def RtrPrflGrwth(self, value):
-		self._RtrPrflGrwth = value if type(value) != base_types.auto else self.make_default("RtrPrflGrwth")
+		self._RtrPrflGrwth = value if value is not None else base_types.UninitialisedField(self, 'RtrPrflGrwth', TargetMarket1Code, False)
 
 	@RtrPrflGrwth.deleter
 	def RtrPrflGrwth(self):
 		del self._RtrPrflGrwth
-		self._RtrPrflGrwth = None
+		self._RtrPrflGrwth = base_types.UninitialisedField(self, 'RtrPrflGrwth', TargetMarket1Code, False)
 
 	@property
 	def RtrPrflHdgg(self):
@@ -82,12 +82,12 @@ class InvestorRequirements4(base_types._BaseFieldType):
 
 	@RtrPrflHdgg.setter
 	def RtrPrflHdgg(self, value):
-		self._RtrPrflHdgg = value if type(value) != base_types.auto else self.make_default("RtrPrflHdgg")
+		self._RtrPrflHdgg = value if value is not None else base_types.UninitialisedField(self, 'RtrPrflHdgg', TargetMarket1Code, False)
 
 	@RtrPrflHdgg.deleter
 	def RtrPrflHdgg(self):
 		del self._RtrPrflHdgg
-		self._RtrPrflHdgg = None
+		self._RtrPrflHdgg = base_types.UninitialisedField(self, 'RtrPrflHdgg', TargetMarket1Code, False)
 
 	@property
 	def RtrPrflIncm(self):
@@ -95,12 +95,12 @@ class InvestorRequirements4(base_types._BaseFieldType):
 
 	@RtrPrflIncm.setter
 	def RtrPrflIncm(self, value):
-		self._RtrPrflIncm = value if type(value) != base_types.auto else self.make_default("RtrPrflIncm")
+		self._RtrPrflIncm = value if value is not None else base_types.UninitialisedField(self, 'RtrPrflIncm', TargetMarket1Code, False)
 
 	@RtrPrflIncm.deleter
 	def RtrPrflIncm(self):
 		del self._RtrPrflIncm
-		self._RtrPrflIncm = None
+		self._RtrPrflIncm = base_types.UninitialisedField(self, 'RtrPrflIncm', TargetMarket1Code, False)
 
 	@property
 	def RtrPrflPnsnSchmeDE(self):
@@ -108,12 +108,12 @@ class InvestorRequirements4(base_types._BaseFieldType):
 
 	@RtrPrflPnsnSchmeDE.setter
 	def RtrPrflPnsnSchmeDE(self, value):
-		self._RtrPrflPnsnSchmeDE = value if type(value) != base_types.auto else self.make_default("RtrPrflPnsnSchmeDE")
+		self._RtrPrflPnsnSchmeDE = value if value is not None else base_types.UninitialisedField(self, 'RtrPrflPnsnSchmeDE', TargetMarket1Code, False)
 
 	@RtrPrflPnsnSchmeDE.deleter
 	def RtrPrflPnsnSchmeDE(self):
 		del self._RtrPrflPnsnSchmeDE
-		self._RtrPrflPnsnSchmeDE = None
+		self._RtrPrflPnsnSchmeDE = base_types.UninitialisedField(self, 'RtrPrflPnsnSchmeDE', TargetMarket1Code, False)
 
 	@property
 	def RtrPrflPrsrvtn(self):
@@ -121,12 +121,12 @@ class InvestorRequirements4(base_types._BaseFieldType):
 
 	@RtrPrflPrsrvtn.setter
 	def RtrPrflPrsrvtn(self, value):
-		self._RtrPrflPrsrvtn = value if type(value) != base_types.auto else self.make_default("RtrPrflPrsrvtn")
+		self._RtrPrflPrsrvtn = value if value is not None else base_types.UninitialisedField(self, 'RtrPrflPrsrvtn', TargetMarket1Code, False)
 
 	@RtrPrflPrsrvtn.deleter
 	def RtrPrflPrsrvtn(self):
 		del self._RtrPrflPrsrvtn
-		self._RtrPrflPrsrvtn = None
+		self._RtrPrflPrsrvtn = base_types.UninitialisedField(self, 'RtrPrflPrsrvtn', TargetMarket1Code, False)
 
 	@property
 	def SstnbltyPrefs(self):
@@ -134,12 +134,12 @@ class InvestorRequirements4(base_types._BaseFieldType):
 
 	@SstnbltyPrefs.setter
 	def SstnbltyPrefs(self, value):
-		self._SstnbltyPrefs = value if type(value) != base_types.auto else self.make_default("SstnbltyPrefs")
+		self._SstnbltyPrefs = value if value is not None else base_types.UninitialisedField(self, 'SstnbltyPrefs', SustainabilityPreferences2Code, False)
 
 	@SstnbltyPrefs.deleter
 	def SstnbltyPrefs(self):
 		del self._SstnbltyPrefs
-		self._SstnbltyPrefs = None
+		self._SstnbltyPrefs = base_types.UninitialisedField(self, 'SstnbltyPrefs', SustainabilityPreferences2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MinHldgPrd', type=TimeHorizon2Choice, min=0, max=1, mutex_group=None, array=False),

@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._EventFrequency6Code import EventFrequency6Code
-from ._Exact5NumericText import Exact5NumericText
-from ._Max35Text import Max35Text
-from ._StatementUpdateType1Code import StatementUpdateType1Code
-from ._YesNoIndicator import YesNoIndicator
+from . import DateAndDateTime2Choice
+from . import EventFrequency6Code
+from . import Exact5NumericText
+from . import Max35Text
+from . import StatementUpdateType1Code
+from . import YesNoIndicator
 
 class Statement86(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class Statement86(base_types._BaseFieldType):
 
 	@ActvtyInd.setter
 	def ActvtyInd(self, value):
-		self._ActvtyInd = value if type(value) != base_types.auto else self.make_default("ActvtyInd")
+		self._ActvtyInd = value if value is not None else base_types.UninitialisedField(self, 'ActvtyInd', YesNoIndicator, False)
 
 	@ActvtyInd.deleter
 	def ActvtyInd(self):
 		del self._ActvtyInd
-		self._ActvtyInd = None
+		self._ActvtyInd = base_types.UninitialisedField(self, 'ActvtyInd', YesNoIndicator, False)
 
 	@property
 	def Frqcy(self):
@@ -31,12 +31,12 @@ class Statement86(base_types._BaseFieldType):
 
 	@Frqcy.setter
 	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
+		self._Frqcy = value if value is not None else base_types.UninitialisedField(self, 'Frqcy', EventFrequency6Code, False)
 
 	@Frqcy.deleter
 	def Frqcy(self):
 		del self._Frqcy
-		self._Frqcy = None
+		self._Frqcy = base_types.UninitialisedField(self, 'Frqcy', EventFrequency6Code, False)
 
 	@property
 	def RptNb(self):
@@ -44,12 +44,12 @@ class Statement86(base_types._BaseFieldType):
 
 	@RptNb.setter
 	def RptNb(self, value):
-		self._RptNb = value if type(value) != base_types.auto else self.make_default("RptNb")
+		self._RptNb = value if value is not None else base_types.UninitialisedField(self, 'RptNb', Exact5NumericText, False)
 
 	@RptNb.deleter
 	def RptNb(self):
 		del self._RptNb
-		self._RptNb = None
+		self._RptNb = base_types.UninitialisedField(self, 'RptNb', Exact5NumericText, False)
 
 	@property
 	def StmtDtAndTm(self):
@@ -57,12 +57,12 @@ class Statement86(base_types._BaseFieldType):
 
 	@StmtDtAndTm.setter
 	def StmtDtAndTm(self, value):
-		self._StmtDtAndTm = value if type(value) != base_types.auto else self.make_default("StmtDtAndTm")
+		self._StmtDtAndTm = value if value is not None else base_types.UninitialisedField(self, 'StmtDtAndTm', DateAndDateTime2Choice, False)
 
 	@StmtDtAndTm.deleter
 	def StmtDtAndTm(self):
 		del self._StmtDtAndTm
-		self._StmtDtAndTm = None
+		self._StmtDtAndTm = base_types.UninitialisedField(self, 'StmtDtAndTm', DateAndDateTime2Choice, False)
 
 	@property
 	def StmtId(self):
@@ -70,12 +70,12 @@ class Statement86(base_types._BaseFieldType):
 
 	@StmtId.setter
 	def StmtId(self, value):
-		self._StmtId = value if type(value) != base_types.auto else self.make_default("StmtId")
+		self._StmtId = value if value is not None else base_types.UninitialisedField(self, 'StmtId', Max35Text, False)
 
 	@StmtId.deleter
 	def StmtId(self):
 		del self._StmtId
-		self._StmtId = None
+		self._StmtId = base_types.UninitialisedField(self, 'StmtId', Max35Text, False)
 
 	@property
 	def UpdTp(self):
@@ -83,12 +83,12 @@ class Statement86(base_types._BaseFieldType):
 
 	@UpdTp.setter
 	def UpdTp(self, value):
-		self._UpdTp = value if type(value) != base_types.auto else self.make_default("UpdTp")
+		self._UpdTp = value if value is not None else base_types.UninitialisedField(self, 'UpdTp', StatementUpdateType1Code, False)
 
 	@UpdTp.deleter
 	def UpdTp(self):
 		del self._UpdTp
-		self._UpdTp = None
+		self._UpdTp = base_types.UninitialisedField(self, 'UpdTp', StatementUpdateType1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),

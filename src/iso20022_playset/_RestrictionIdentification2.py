@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from ._RestrictionReference1Code import RestrictionReference1Code
+from . import RestrictedFINXMax16Text
+from . import RestrictionReference1Code
 
 class RestrictionIdentification2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class RestrictionIdentification2(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
+		self._Cd = value if value is not None else base_types.UninitialisedField(self, 'Cd', RestrictionReference1Code, False)
 
 	@Cd.deleter
 	def Cd(self):
 		del self._Cd
-		self._Cd = None
+		self._Cd = base_types.UninitialisedField(self, 'Cd', RestrictionReference1Code, False)
 
 	@property
 	def Id(self):
@@ -27,12 +27,12 @@ class RestrictionIdentification2(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', RestrictedFINXMax16Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', RestrictedFINXMax16Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cd', type=RestrictionReference1Code, min=1, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._HostStatus1 import HostStatus1
-from ._Max35Text import Max35Text
-from ._StatusReportContent15 import StatusReportContent15
+from . import HostStatus1
+from . import Max35Text
+from . import StatusReportContent15
 
 class DiagnosisResponse8(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class DiagnosisResponse8(base_types._BaseFieldType):
 
 	@HstSts.setter
 	def HstSts(self, value):
-		self._HstSts = value if type(value) != base_types.auto else self.make_default("HstSts")
+		self._HstSts = value if value is not None else base_types.UninitialisedField(self, 'HstSts', HostStatus1, True)
 
 	@HstSts.deleter
 	def HstSts(self):
 		del self._HstSts
-		self._HstSts = None
+		self._HstSts = base_types.UninitialisedField(self, 'HstSts', HostStatus1, True)
 
 	@property
 	def LggdSaleId(self):
@@ -28,12 +28,12 @@ class DiagnosisResponse8(base_types._BaseFieldType):
 
 	@LggdSaleId.setter
 	def LggdSaleId(self, value):
-		self._LggdSaleId = value if type(value) != base_types.auto else self.make_default("LggdSaleId")
+		self._LggdSaleId = value if value is not None else base_types.UninitialisedField(self, 'LggdSaleId', Max35Text, True)
 
 	@LggdSaleId.deleter
 	def LggdSaleId(self):
 		del self._LggdSaleId
-		self._LggdSaleId = None
+		self._LggdSaleId = base_types.UninitialisedField(self, 'LggdSaleId', Max35Text, True)
 
 	@property
 	def POISts(self):
@@ -41,12 +41,12 @@ class DiagnosisResponse8(base_types._BaseFieldType):
 
 	@POISts.setter
 	def POISts(self, value):
-		self._POISts = value if type(value) != base_types.auto else self.make_default("POISts")
+		self._POISts = value if value is not None else base_types.UninitialisedField(self, 'POISts', StatusReportContent15, False)
 
 	@POISts.deleter
 	def POISts(self):
 		del self._POISts
-		self._POISts = None
+		self._POISts = base_types.UninitialisedField(self, 'POISts', StatusReportContent15, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='HstSts', type=HostStatus1, min=0, max=None, mutex_group=None, array=True),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._ReportIndicator1Code import ReportIndicator1Code
-from ._TransactionReturnCriteria5 import TransactionReturnCriteria5
-from ._TransactionSearchCriteria11 import TransactionSearchCriteria11
+from . import Max35Text
+from . import ReportIndicator1Code
+from . import TransactionReturnCriteria5
+from . import TransactionSearchCriteria11
 
 class TransactionCriteria11(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class TransactionCriteria11(base_types._BaseFieldType):
 
 	@NewQryNm.setter
 	def NewQryNm(self, value):
-		self._NewQryNm = value if type(value) != base_types.auto else self.make_default("NewQryNm")
+		self._NewQryNm = value if value is not None else base_types.UninitialisedField(self, 'NewQryNm', Max35Text, False)
 
 	@NewQryNm.deleter
 	def NewQryNm(self):
 		del self._NewQryNm
-		self._NewQryNm = None
+		self._NewQryNm = base_types.UninitialisedField(self, 'NewQryNm', Max35Text, False)
 
 	@property
 	def RtrCrit(self):
@@ -29,12 +29,12 @@ class TransactionCriteria11(base_types._BaseFieldType):
 
 	@RtrCrit.setter
 	def RtrCrit(self, value):
-		self._RtrCrit = value if type(value) != base_types.auto else self.make_default("RtrCrit")
+		self._RtrCrit = value if value is not None else base_types.UninitialisedField(self, 'RtrCrit', TransactionReturnCriteria5, False)
 
 	@RtrCrit.deleter
 	def RtrCrit(self):
 		del self._RtrCrit
-		self._RtrCrit = None
+		self._RtrCrit = base_types.UninitialisedField(self, 'RtrCrit', TransactionReturnCriteria5, False)
 
 	@property
 	def SchCrit(self):
@@ -42,12 +42,12 @@ class TransactionCriteria11(base_types._BaseFieldType):
 
 	@SchCrit.setter
 	def SchCrit(self, value):
-		self._SchCrit = value if type(value) != base_types.auto else self.make_default("SchCrit")
+		self._SchCrit = value if value is not None else base_types.UninitialisedField(self, 'SchCrit', TransactionSearchCriteria11, True)
 
 	@SchCrit.deleter
 	def SchCrit(self):
 		del self._SchCrit
-		self._SchCrit = None
+		self._SchCrit = base_types.UninitialisedField(self, 'SchCrit', TransactionSearchCriteria11, True)
 
 	@property
 	def StmtRpt(self):
@@ -55,12 +55,12 @@ class TransactionCriteria11(base_types._BaseFieldType):
 
 	@StmtRpt.setter
 	def StmtRpt(self, value):
-		self._StmtRpt = value if type(value) != base_types.auto else self.make_default("StmtRpt")
+		self._StmtRpt = value if value is not None else base_types.UninitialisedField(self, 'StmtRpt', ReportIndicator1Code, False)
 
 	@StmtRpt.deleter
 	def StmtRpt(self):
 		del self._StmtRpt
-		self._StmtRpt = None
+		self._StmtRpt = base_types.UninitialisedField(self, 'StmtRpt', ReportIndicator1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NewQryNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

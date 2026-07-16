@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CompareAmountAndDirection1 import CompareAmountAndDirection1
-from ._CompareBenchmarkCurveName3 import CompareBenchmarkCurveName3
-from ._CompareDecimalNumber3 import CompareDecimalNumber3
-from ._CompareInterestComputationMethod3 import CompareInterestComputationMethod3
-from ._CompareNumber5 import CompareNumber5
-from ._CompareNumber6 import CompareNumber6
-from ._ComparePercentageRate3 import ComparePercentageRate3
-from ._CompareRateBasis3 import CompareRateBasis3
+from . import CompareAmountAndDirection1
+from . import CompareBenchmarkCurveName3
+from . import CompareDecimalNumber3
+from . import CompareInterestComputationMethod3
+from . import CompareNumber5
+from . import CompareNumber6
+from . import ComparePercentageRate3
+from . import CompareRateBasis3
 
 class CompareInterestRate1(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class CompareInterestRate1(base_types._BaseFieldType):
 
 	@BsisPtSprd.setter
 	def BsisPtSprd(self, value):
-		self._BsisPtSprd = value if type(value) != base_types.auto else self.make_default("BsisPtSprd")
+		self._BsisPtSprd = value if value is not None else base_types.UninitialisedField(self, 'BsisPtSprd', CompareDecimalNumber3, False)
 
 	@BsisPtSprd.deleter
 	def BsisPtSprd(self):
 		del self._BsisPtSprd
-		self._BsisPtSprd = None
+		self._BsisPtSprd = base_types.UninitialisedField(self, 'BsisPtSprd', CompareDecimalNumber3, False)
 
 	@property
 	def DayCntBsis(self):
@@ -33,12 +33,12 @@ class CompareInterestRate1(base_types._BaseFieldType):
 
 	@DayCntBsis.setter
 	def DayCntBsis(self, value):
-		self._DayCntBsis = value if type(value) != base_types.auto else self.make_default("DayCntBsis")
+		self._DayCntBsis = value if value is not None else base_types.UninitialisedField(self, 'DayCntBsis', CompareInterestComputationMethod3, False)
 
 	@DayCntBsis.deleter
 	def DayCntBsis(self):
 		del self._DayCntBsis
-		self._DayCntBsis = None
+		self._DayCntBsis = base_types.UninitialisedField(self, 'DayCntBsis', CompareInterestComputationMethod3, False)
 
 	@property
 	def FltgIntrstRatePmtFrqcyUnit(self):
@@ -46,12 +46,12 @@ class CompareInterestRate1(base_types._BaseFieldType):
 
 	@FltgIntrstRatePmtFrqcyUnit.setter
 	def FltgIntrstRatePmtFrqcyUnit(self, value):
-		self._FltgIntrstRatePmtFrqcyUnit = value if type(value) != base_types.auto else self.make_default("FltgIntrstRatePmtFrqcyUnit")
+		self._FltgIntrstRatePmtFrqcyUnit = value if value is not None else base_types.UninitialisedField(self, 'FltgIntrstRatePmtFrqcyUnit', CompareRateBasis3, False)
 
 	@FltgIntrstRatePmtFrqcyUnit.deleter
 	def FltgIntrstRatePmtFrqcyUnit(self):
 		del self._FltgIntrstRatePmtFrqcyUnit
-		self._FltgIntrstRatePmtFrqcyUnit = None
+		self._FltgIntrstRatePmtFrqcyUnit = base_types.UninitialisedField(self, 'FltgIntrstRatePmtFrqcyUnit', CompareRateBasis3, False)
 
 	@property
 	def FltgIntrstRatePmtFrqcyVal(self):
@@ -59,12 +59,12 @@ class CompareInterestRate1(base_types._BaseFieldType):
 
 	@FltgIntrstRatePmtFrqcyVal.setter
 	def FltgIntrstRatePmtFrqcyVal(self, value):
-		self._FltgIntrstRatePmtFrqcyVal = value if type(value) != base_types.auto else self.make_default("FltgIntrstRatePmtFrqcyVal")
+		self._FltgIntrstRatePmtFrqcyVal = value if value is not None else base_types.UninitialisedField(self, 'FltgIntrstRatePmtFrqcyVal', CompareNumber5, False)
 
 	@FltgIntrstRatePmtFrqcyVal.deleter
 	def FltgIntrstRatePmtFrqcyVal(self):
 		del self._FltgIntrstRatePmtFrqcyVal
-		self._FltgIntrstRatePmtFrqcyVal = None
+		self._FltgIntrstRatePmtFrqcyVal = base_types.UninitialisedField(self, 'FltgIntrstRatePmtFrqcyVal', CompareNumber5, False)
 
 	@property
 	def FltgIntrstRateRstFrqcyUnit(self):
@@ -72,12 +72,12 @@ class CompareInterestRate1(base_types._BaseFieldType):
 
 	@FltgIntrstRateRstFrqcyUnit.setter
 	def FltgIntrstRateRstFrqcyUnit(self, value):
-		self._FltgIntrstRateRstFrqcyUnit = value if type(value) != base_types.auto else self.make_default("FltgIntrstRateRstFrqcyUnit")
+		self._FltgIntrstRateRstFrqcyUnit = value if value is not None else base_types.UninitialisedField(self, 'FltgIntrstRateRstFrqcyUnit', CompareRateBasis3, False)
 
 	@FltgIntrstRateRstFrqcyUnit.deleter
 	def FltgIntrstRateRstFrqcyUnit(self):
 		del self._FltgIntrstRateRstFrqcyUnit
-		self._FltgIntrstRateRstFrqcyUnit = None
+		self._FltgIntrstRateRstFrqcyUnit = base_types.UninitialisedField(self, 'FltgIntrstRateRstFrqcyUnit', CompareRateBasis3, False)
 
 	@property
 	def FltgIntrstRateRstFrqcyVal(self):
@@ -85,12 +85,12 @@ class CompareInterestRate1(base_types._BaseFieldType):
 
 	@FltgIntrstRateRstFrqcyVal.setter
 	def FltgIntrstRateRstFrqcyVal(self, value):
-		self._FltgIntrstRateRstFrqcyVal = value if type(value) != base_types.auto else self.make_default("FltgIntrstRateRstFrqcyVal")
+		self._FltgIntrstRateRstFrqcyVal = value if value is not None else base_types.UninitialisedField(self, 'FltgIntrstRateRstFrqcyVal', CompareNumber6, False)
 
 	@FltgIntrstRateRstFrqcyVal.deleter
 	def FltgIntrstRateRstFrqcyVal(self):
 		del self._FltgIntrstRateRstFrqcyVal
-		self._FltgIntrstRateRstFrqcyVal = None
+		self._FltgIntrstRateRstFrqcyVal = base_types.UninitialisedField(self, 'FltgIntrstRateRstFrqcyVal', CompareNumber6, False)
 
 	@property
 	def FltgIntrstRateTermUnit(self):
@@ -98,12 +98,12 @@ class CompareInterestRate1(base_types._BaseFieldType):
 
 	@FltgIntrstRateTermUnit.setter
 	def FltgIntrstRateTermUnit(self, value):
-		self._FltgIntrstRateTermUnit = value if type(value) != base_types.auto else self.make_default("FltgIntrstRateTermUnit")
+		self._FltgIntrstRateTermUnit = value if value is not None else base_types.UninitialisedField(self, 'FltgIntrstRateTermUnit', CompareRateBasis3, False)
 
 	@FltgIntrstRateTermUnit.deleter
 	def FltgIntrstRateTermUnit(self):
 		del self._FltgIntrstRateTermUnit
-		self._FltgIntrstRateTermUnit = None
+		self._FltgIntrstRateTermUnit = base_types.UninitialisedField(self, 'FltgIntrstRateTermUnit', CompareRateBasis3, False)
 
 	@property
 	def FltgIntrstRateTermVal(self):
@@ -111,12 +111,12 @@ class CompareInterestRate1(base_types._BaseFieldType):
 
 	@FltgIntrstRateTermVal.setter
 	def FltgIntrstRateTermVal(self, value):
-		self._FltgIntrstRateTermVal = value if type(value) != base_types.auto else self.make_default("FltgIntrstRateTermVal")
+		self._FltgIntrstRateTermVal = value if value is not None else base_types.UninitialisedField(self, 'FltgIntrstRateTermVal', CompareNumber5, False)
 
 	@FltgIntrstRateTermVal.deleter
 	def FltgIntrstRateTermVal(self):
 		del self._FltgIntrstRateTermVal
-		self._FltgIntrstRateTermVal = None
+		self._FltgIntrstRateTermVal = base_types.UninitialisedField(self, 'FltgIntrstRateTermVal', CompareNumber5, False)
 
 	@property
 	def FltgIntrstRefRate(self):
@@ -124,12 +124,12 @@ class CompareInterestRate1(base_types._BaseFieldType):
 
 	@FltgIntrstRefRate.setter
 	def FltgIntrstRefRate(self, value):
-		self._FltgIntrstRefRate = value if type(value) != base_types.auto else self.make_default("FltgIntrstRefRate")
+		self._FltgIntrstRefRate = value if value is not None else base_types.UninitialisedField(self, 'FltgIntrstRefRate', CompareBenchmarkCurveName3, False)
 
 	@FltgIntrstRefRate.deleter
 	def FltgIntrstRefRate(self):
 		del self._FltgIntrstRefRate
-		self._FltgIntrstRefRate = None
+		self._FltgIntrstRefRate = base_types.UninitialisedField(self, 'FltgIntrstRefRate', CompareBenchmarkCurveName3, False)
 
 	@property
 	def FxdIntrstRate(self):
@@ -137,12 +137,12 @@ class CompareInterestRate1(base_types._BaseFieldType):
 
 	@FxdIntrstRate.setter
 	def FxdIntrstRate(self, value):
-		self._FxdIntrstRate = value if type(value) != base_types.auto else self.make_default("FxdIntrstRate")
+		self._FxdIntrstRate = value if value is not None else base_types.UninitialisedField(self, 'FxdIntrstRate', ComparePercentageRate3, False)
 
 	@FxdIntrstRate.deleter
 	def FxdIntrstRate(self):
 		del self._FxdIntrstRate
-		self._FxdIntrstRate = None
+		self._FxdIntrstRate = base_types.UninitialisedField(self, 'FxdIntrstRate', ComparePercentageRate3, False)
 
 	@property
 	def MrgnLnAmt(self):
@@ -150,12 +150,12 @@ class CompareInterestRate1(base_types._BaseFieldType):
 
 	@MrgnLnAmt.setter
 	def MrgnLnAmt(self, value):
-		self._MrgnLnAmt = value if type(value) != base_types.auto else self.make_default("MrgnLnAmt")
+		self._MrgnLnAmt = value if value is not None else base_types.UninitialisedField(self, 'MrgnLnAmt', CompareAmountAndDirection1, False)
 
 	@MrgnLnAmt.deleter
 	def MrgnLnAmt(self):
 		del self._MrgnLnAmt
-		self._MrgnLnAmt = None
+		self._MrgnLnAmt = base_types.UninitialisedField(self, 'MrgnLnAmt', CompareAmountAndDirection1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BsisPtSprd', type=CompareDecimalNumber3, min=0, max=1, mutex_group=None, array=False),

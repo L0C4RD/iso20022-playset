@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MeetingVoteExecutionConfirmationV12 import MeetingVoteExecutionConfirmationV12
+from . import MeetingVoteExecutionConfirmationV12
 
 class SEEV_007_001_12():
 
@@ -18,12 +18,12 @@ class SEEV_007_001_12():
 
 		@MtgVoteExctnConf.setter
 		def MtgVoteExctnConf(self, value):
-			self._MtgVoteExctnConf = value if type(value) != base_types.auto else self.make_default("MtgVoteExctnConf")
+			self._MtgVoteExctnConf = value if value is not None else base_types.UninitialisedField(self, 'MtgVoteExctnConf', MeetingVoteExecutionConfirmationV12, False)
 
 		@MtgVoteExctnConf.deleter
 		def MtgVoteExctnConf(self):
 			del self._MtgVoteExctnConf
-			self._MtgVoteExctnConf = None
+			self._MtgVoteExctnConf = base_types.UninitialisedField(self, 'MtgVoteExctnConf', MeetingVoteExecutionConfirmationV12, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='MtgVoteExctnConf', type=MeetingVoteExecutionConfirmationV12, min=1, max=1, mutex_group=None, array=False),

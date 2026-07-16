@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Amendment1 import Amendment1
-from ._Max2000Text import Max2000Text
-from ._PartyAndSignature2 import PartyAndSignature2
+from . import Amendment1
+from . import Max2000Text
+from . import PartyAndSignature2
 
 class UndertakingAmendmentV01(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class UndertakingAmendmentV01(base_types._BaseFieldType):
 
 	@BkToBkInf.setter
 	def BkToBkInf(self, value):
-		self._BkToBkInf = value if type(value) != base_types.auto else self.make_default("BkToBkInf")
+		self._BkToBkInf = value if value is not None else base_types.UninitialisedField(self, 'BkToBkInf', Max2000Text, True)
 
 	@BkToBkInf.deleter
 	def BkToBkInf(self):
 		del self._BkToBkInf
-		self._BkToBkInf = None
+		self._BkToBkInf = base_types.UninitialisedField(self, 'BkToBkInf', Max2000Text, True)
 
 	@property
 	def DgtlSgntr(self):
@@ -28,12 +28,12 @@ class UndertakingAmendmentV01(base_types._BaseFieldType):
 
 	@DgtlSgntr.setter
 	def DgtlSgntr(self, value):
-		self._DgtlSgntr = value if type(value) != base_types.auto else self.make_default("DgtlSgntr")
+		self._DgtlSgntr = value if value is not None else base_types.UninitialisedField(self, 'DgtlSgntr', PartyAndSignature2, True)
 
 	@DgtlSgntr.deleter
 	def DgtlSgntr(self):
 		del self._DgtlSgntr
-		self._DgtlSgntr = None
+		self._DgtlSgntr = base_types.UninitialisedField(self, 'DgtlSgntr', PartyAndSignature2, True)
 
 	@property
 	def UdrtkgAmdmntDtls(self):
@@ -41,12 +41,12 @@ class UndertakingAmendmentV01(base_types._BaseFieldType):
 
 	@UdrtkgAmdmntDtls.setter
 	def UdrtkgAmdmntDtls(self, value):
-		self._UdrtkgAmdmntDtls = value if type(value) != base_types.auto else self.make_default("UdrtkgAmdmntDtls")
+		self._UdrtkgAmdmntDtls = value if value is not None else base_types.UninitialisedField(self, 'UdrtkgAmdmntDtls', Amendment1, False)
 
 	@UdrtkgAmdmntDtls.deleter
 	def UdrtkgAmdmntDtls(self):
 		del self._UdrtkgAmdmntDtls
-		self._UdrtkgAmdmntDtls = None
+		self._UdrtkgAmdmntDtls = base_types.UninitialisedField(self, 'UdrtkgAmdmntDtls', Amendment1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BkToBkInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Branch6Choice import Branch6Choice
-from ._CountryCode import CountryCode
-from ._PartyIdentification236Choice import PartyIdentification236Choice
+from . import Branch6Choice
+from . import CountryCode
+from . import PartyIdentification236Choice
 
 class CounterpartyIdentification12(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CounterpartyIdentification12(base_types._BaseFieldType):
 
 	@Brnch.setter
 	def Brnch(self, value):
-		self._Brnch = value if type(value) != base_types.auto else self.make_default("Brnch")
+		self._Brnch = value if value is not None else base_types.UninitialisedField(self, 'Brnch', Branch6Choice, False)
 
 	@Brnch.deleter
 	def Brnch(self):
 		del self._Brnch
-		self._Brnch = None
+		self._Brnch = base_types.UninitialisedField(self, 'Brnch', Branch6Choice, False)
 
 	@property
 	def CtryCd(self):
@@ -28,12 +28,12 @@ class CounterpartyIdentification12(base_types._BaseFieldType):
 
 	@CtryCd.setter
 	def CtryCd(self, value):
-		self._CtryCd = value if type(value) != base_types.auto else self.make_default("CtryCd")
+		self._CtryCd = value if value is not None else base_types.UninitialisedField(self, 'CtryCd', CountryCode, False)
 
 	@CtryCd.deleter
 	def CtryCd(self):
 		del self._CtryCd
-		self._CtryCd = None
+		self._CtryCd = base_types.UninitialisedField(self, 'CtryCd', CountryCode, False)
 
 	@property
 	def Id(self):
@@ -41,12 +41,12 @@ class CounterpartyIdentification12(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', PartyIdentification236Choice, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', PartyIdentification236Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Brnch', type=Branch6Choice, min=0, max=1, mutex_group=None, array=False),

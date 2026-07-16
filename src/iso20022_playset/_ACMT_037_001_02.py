@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountSwitchTechnicalRejectionV02 import AccountSwitchTechnicalRejectionV02
+from . import AccountSwitchTechnicalRejectionV02
 
 class ACMT_037_001_02():
 
@@ -18,12 +18,12 @@ class ACMT_037_001_02():
 
 		@AcctSwtchTechRjctn.setter
 		def AcctSwtchTechRjctn(self, value):
-			self._AcctSwtchTechRjctn = value if type(value) != base_types.auto else self.make_default("AcctSwtchTechRjctn")
+			self._AcctSwtchTechRjctn = value if value is not None else base_types.UninitialisedField(self, 'AcctSwtchTechRjctn', AccountSwitchTechnicalRejectionV02, False)
 
 		@AcctSwtchTechRjctn.deleter
 		def AcctSwtchTechRjctn(self):
 			del self._AcctSwtchTechRjctn
-			self._AcctSwtchTechRjctn = None
+			self._AcctSwtchTechRjctn = base_types.UninitialisedField(self, 'AcctSwtchTechRjctn', AccountSwitchTechnicalRejectionV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AcctSwtchTechRjctn', type=AccountSwitchTechnicalRejectionV02, min=1, max=1, mutex_group=None, array=False),

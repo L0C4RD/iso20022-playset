@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._Max9NumericText import Max9NumericText
-from ._TimeUnit1Code import TimeUnit1Code
+from . import ISODateTime
+from . import Max9NumericText
+from . import TimeUnit1Code
 
 class ProcessTiming6(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ProcessTiming6(base_types._BaseFieldType):
 
 	@EndTm.setter
 	def EndTm(self, value):
-		self._EndTm = value if type(value) != base_types.auto else self.make_default("EndTm")
+		self._EndTm = value if value is not None else base_types.UninitialisedField(self, 'EndTm', ISODateTime, False)
 
 	@EndTm.deleter
 	def EndTm(self):
 		del self._EndTm
-		self._EndTm = None
+		self._EndTm = base_types.UninitialisedField(self, 'EndTm', ISODateTime, False)
 
 	@property
 	def Prd(self):
@@ -28,12 +28,12 @@ class ProcessTiming6(base_types._BaseFieldType):
 
 	@Prd.setter
 	def Prd(self, value):
-		self._Prd = value if type(value) != base_types.auto else self.make_default("Prd")
+		self._Prd = value if value is not None else base_types.UninitialisedField(self, 'Prd', Max9NumericText, False)
 
 	@Prd.deleter
 	def Prd(self):
 		del self._Prd
-		self._Prd = None
+		self._Prd = base_types.UninitialisedField(self, 'Prd', Max9NumericText, False)
 
 	@property
 	def StartTm(self):
@@ -41,12 +41,12 @@ class ProcessTiming6(base_types._BaseFieldType):
 
 	@StartTm.setter
 	def StartTm(self, value):
-		self._StartTm = value if type(value) != base_types.auto else self.make_default("StartTm")
+		self._StartTm = value if value is not None else base_types.UninitialisedField(self, 'StartTm', ISODateTime, False)
 
 	@StartTm.deleter
 	def StartTm(self):
 		del self._StartTm
-		self._StartTm = None
+		self._StartTm = base_types.UninitialisedField(self, 'StartTm', ISODateTime, False)
 
 	@property
 	def UnitOfTm(self):
@@ -54,12 +54,12 @@ class ProcessTiming6(base_types._BaseFieldType):
 
 	@UnitOfTm.setter
 	def UnitOfTm(self, value):
-		self._UnitOfTm = value if type(value) != base_types.auto else self.make_default("UnitOfTm")
+		self._UnitOfTm = value if value is not None else base_types.UninitialisedField(self, 'UnitOfTm', TimeUnit1Code, False)
 
 	@UnitOfTm.deleter
 	def UnitOfTm(self):
 		del self._UnitOfTm
-		self._UnitOfTm = None
+		self._UnitOfTm = base_types.UninitialisedField(self, 'UnitOfTm', TimeUnit1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EndTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AnyMIC1Code import AnyMIC1Code
-from ._MICIdentifier import MICIdentifier
+from . import AnyMIC1Code
+from . import MICIdentifier
 
 class SecuritiesTradeVenueCriteria1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SecuritiesTradeVenueCriteria1Choice(base_types._BaseFieldType):
 
 	@AnyMIC.setter
 	def AnyMIC(self, value):
-		self._AnyMIC = value if type(value) != base_types.auto else self.make_default("AnyMIC")
+		self._AnyMIC = value if value is not None else base_types.UninitialisedField(self, 'AnyMIC', AnyMIC1Code, False)
 
 	@AnyMIC.deleter
 	def AnyMIC(self):
 		del self._AnyMIC
-		self._AnyMIC = None
+		self._AnyMIC = base_types.UninitialisedField(self, 'AnyMIC', AnyMIC1Code, False)
 
 	@property
 	def MIC(self):
@@ -27,12 +27,12 @@ class SecuritiesTradeVenueCriteria1Choice(base_types._BaseFieldType):
 
 	@MIC.setter
 	def MIC(self, value):
-		self._MIC = value if type(value) != base_types.auto else self.make_default("MIC")
+		self._MIC = value if value is not None else base_types.UninitialisedField(self, 'MIC', MICIdentifier, True)
 
 	@MIC.deleter
 	def MIC(self):
 		del self._MIC
-		self._MIC = None
+		self._MIC = base_types.UninitialisedField(self, 'MIC', MICIdentifier, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AnyMIC', type=AnyMIC1Code, min=0, max=1, mutex_group=1, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._UndertakingAmendmentResponseMessage1 import UndertakingAmendmentResponseMessage1
+from . import UndertakingAmendmentResponseMessage1
 
 class Amendment9(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class Amendment9(base_types._BaseFieldType):
 
 	@UdrtkgAmdmntRspnMsg.setter
 	def UdrtkgAmdmntRspnMsg(self, value):
-		self._UdrtkgAmdmntRspnMsg = value if type(value) != base_types.auto else self.make_default("UdrtkgAmdmntRspnMsg")
+		self._UdrtkgAmdmntRspnMsg = value if value is not None else base_types.UninitialisedField(self, 'UdrtkgAmdmntRspnMsg', UndertakingAmendmentResponseMessage1, False)
 
 	@UdrtkgAmdmntRspnMsg.deleter
 	def UdrtkgAmdmntRspnMsg(self):
 		del self._UdrtkgAmdmntRspnMsg
-		self._UdrtkgAmdmntRspnMsg = None
+		self._UdrtkgAmdmntRspnMsg = base_types.UninitialisedField(self, 'UdrtkgAmdmntRspnMsg', UndertakingAmendmentResponseMessage1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='UdrtkgAmdmntRspnMsg', type=UndertakingAmendmentResponseMessage1, min=1, max=1, mutex_group=None, array=False),

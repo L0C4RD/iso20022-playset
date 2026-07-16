@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ShipmentDateRange1 import ShipmentDateRange1
-from ._ShipmentDateRange2 import ShipmentDateRange2
+from . import ShipmentDateRange1
+from . import ShipmentDateRange2
 
 class ShipmentSchedule2Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ShipmentSchedule2Choice(base_types._BaseFieldType):
 
 	@ShipmntDtRg.setter
 	def ShipmntDtRg(self, value):
-		self._ShipmntDtRg = value if type(value) != base_types.auto else self.make_default("ShipmntDtRg")
+		self._ShipmntDtRg = value if value is not None else base_types.UninitialisedField(self, 'ShipmntDtRg', ShipmentDateRange1, False)
 
 	@ShipmntDtRg.deleter
 	def ShipmntDtRg(self):
 		del self._ShipmntDtRg
-		self._ShipmntDtRg = None
+		self._ShipmntDtRg = base_types.UninitialisedField(self, 'ShipmntDtRg', ShipmentDateRange1, False)
 
 	@property
 	def ShipmntSubSchdl(self):
@@ -27,12 +27,12 @@ class ShipmentSchedule2Choice(base_types._BaseFieldType):
 
 	@ShipmntSubSchdl.setter
 	def ShipmntSubSchdl(self, value):
-		self._ShipmntSubSchdl = value if type(value) != base_types.auto else self.make_default("ShipmntSubSchdl")
+		self._ShipmntSubSchdl = value if value is not None else base_types.UninitialisedField(self, 'ShipmntSubSchdl', ShipmentDateRange2, True)
 
 	@ShipmntSubSchdl.deleter
 	def ShipmntSubSchdl(self):
 		del self._ShipmntSubSchdl
-		self._ShipmntSubSchdl = None
+		self._ShipmntSubSchdl = base_types.UninitialisedField(self, 'ShipmntSubSchdl', ShipmentDateRange2, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ShipmntDtRg', type=ShipmentDateRange1, min=0, max=1, mutex_group=1, array=False),

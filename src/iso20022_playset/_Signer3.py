@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AlgorithmIdentification16 import AlgorithmIdentification16
-from ._AlgorithmIdentification17 import AlgorithmIdentification17
-from ._Max3000Binary import Max3000Binary
-from ._Number import Number
-from ._Recipient5Choice import Recipient5Choice
+from . import AlgorithmIdentification16
+from . import AlgorithmIdentification17
+from . import Max3000Binary
+from . import Number
+from . import Recipient5Choice
 
 class Signer3(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class Signer3(base_types._BaseFieldType):
 
 	@DgstAlgo.setter
 	def DgstAlgo(self, value):
-		self._DgstAlgo = value if type(value) != base_types.auto else self.make_default("DgstAlgo")
+		self._DgstAlgo = value if value is not None else base_types.UninitialisedField(self, 'DgstAlgo', AlgorithmIdentification16, False)
 
 	@DgstAlgo.deleter
 	def DgstAlgo(self):
 		del self._DgstAlgo
-		self._DgstAlgo = None
+		self._DgstAlgo = base_types.UninitialisedField(self, 'DgstAlgo', AlgorithmIdentification16, False)
 
 	@property
 	def SgnrId(self):
@@ -30,12 +30,12 @@ class Signer3(base_types._BaseFieldType):
 
 	@SgnrId.setter
 	def SgnrId(self, value):
-		self._SgnrId = value if type(value) != base_types.auto else self.make_default("SgnrId")
+		self._SgnrId = value if value is not None else base_types.UninitialisedField(self, 'SgnrId', Recipient5Choice, False)
 
 	@SgnrId.deleter
 	def SgnrId(self):
 		del self._SgnrId
-		self._SgnrId = None
+		self._SgnrId = base_types.UninitialisedField(self, 'SgnrId', Recipient5Choice, False)
 
 	@property
 	def Sgntr(self):
@@ -43,12 +43,12 @@ class Signer3(base_types._BaseFieldType):
 
 	@Sgntr.setter
 	def Sgntr(self, value):
-		self._Sgntr = value if type(value) != base_types.auto else self.make_default("Sgntr")
+		self._Sgntr = value if value is not None else base_types.UninitialisedField(self, 'Sgntr', Max3000Binary, False)
 
 	@Sgntr.deleter
 	def Sgntr(self):
 		del self._Sgntr
-		self._Sgntr = None
+		self._Sgntr = base_types.UninitialisedField(self, 'Sgntr', Max3000Binary, False)
 
 	@property
 	def SgntrAlgo(self):
@@ -56,12 +56,12 @@ class Signer3(base_types._BaseFieldType):
 
 	@SgntrAlgo.setter
 	def SgntrAlgo(self, value):
-		self._SgntrAlgo = value if type(value) != base_types.auto else self.make_default("SgntrAlgo")
+		self._SgntrAlgo = value if value is not None else base_types.UninitialisedField(self, 'SgntrAlgo', AlgorithmIdentification17, False)
 
 	@SgntrAlgo.deleter
 	def SgntrAlgo(self):
 		del self._SgntrAlgo
-		self._SgntrAlgo = None
+		self._SgntrAlgo = base_types.UninitialisedField(self, 'SgntrAlgo', AlgorithmIdentification17, False)
 
 	@property
 	def Vrsn(self):
@@ -69,12 +69,12 @@ class Signer3(base_types._BaseFieldType):
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+		self._Vrsn = value if value is not None else base_types.UninitialisedField(self, 'Vrsn', Number, False)
 
 	@Vrsn.deleter
 	def Vrsn(self):
 		del self._Vrsn
-		self._Vrsn = None
+		self._Vrsn = base_types.UninitialisedField(self, 'Vrsn', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DgstAlgo', type=AlgorithmIdentification16, min=1, max=1, mutex_group=None, array=False),

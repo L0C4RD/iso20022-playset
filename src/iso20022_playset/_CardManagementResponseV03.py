@@ -2,37 +2,37 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalAmounts4 import AdditionalAmounts4
-from ._AdditionalData2 import AdditionalData2
-from ._AdditionalFee3 import AdditionalFee3
-from ._AdditionalService2 import AdditionalService2
-from ._CardData12 import CardData12
-from ._Cardholder22 import Cardholder22
-from ._ContentInformationType41 import ContentInformationType41
-from ._Context20 import Context20
-from ._CustomerDevice5 import CustomerDevice5
-from ._DateTime2 import DateTime2
-from ._Header71 import Header71
-from ._Jurisdiction2 import Jurisdiction2
-from ._Max10KHexBinaryText import Max10KHexBinaryText
-from ._OriginalDataElements4 import OriginalDataElements4
-from ._PartyIdentification285 import PartyIdentification285
-from ._PartyIdentification286 import PartyIdentification286
-from ._ProcessingResult22 import ProcessingResult22
-from ._ProgrammeMode5 import ProgrammeMode5
-from ._ProtectedData2 import ProtectedData2
-from ._Reconciliation4 import Reconciliation4
-from ._RiskContext3 import RiskContext3
-from ._SettlementService6 import SettlementService6
-from ._StrongCustomerAuthentication2 import StrongCustomerAuthentication2
-from ._SupplementaryData1 import SupplementaryData1
-from ._Terminal8 import Terminal8
-from ._Token2 import Token2
-from ._TransactionAmounts4 import TransactionAmounts4
-from ._TransactionCharacteristics2 import TransactionCharacteristics2
-from ._TransactionIdentification57 import TransactionIdentification57
-from ._Verification7 import Verification7
-from ._Wallet3 import Wallet3
+from . import AdditionalAmounts4
+from . import AdditionalData2
+from . import AdditionalFee3
+from . import AdditionalService2
+from . import CardData12
+from . import Cardholder22
+from . import ContentInformationType41
+from . import Context20
+from . import CustomerDevice5
+from . import DateTime2
+from . import Header71
+from . import Jurisdiction2
+from . import Max10KHexBinaryText
+from . import OriginalDataElements4
+from . import PartyIdentification285
+from . import PartyIdentification286
+from . import ProcessingResult22
+from . import ProgrammeMode5
+from . import ProtectedData2
+from . import Reconciliation4
+from . import RiskContext3
+from . import SettlementService6
+from . import StrongCustomerAuthentication2
+from . import SupplementaryData1
+from . import Terminal8
+from . import Token2
+from . import TransactionAmounts4
+from . import TransactionCharacteristics2
+from . import TransactionIdentification57
+from . import Verification7
+from . import Wallet3
 
 class CardManagementResponseV03(base_types._BaseFieldType):
 
@@ -43,12 +43,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@Accptr.setter
 	def Accptr(self, value):
-		self._Accptr = value if type(value) != base_types.auto else self.make_default("Accptr")
+		self._Accptr = value if value is not None else base_types.UninitialisedField(self, 'Accptr', PartyIdentification285, False)
 
 	@Accptr.deleter
 	def Accptr(self):
 		del self._Accptr
-		self._Accptr = None
+		self._Accptr = base_types.UninitialisedField(self, 'Accptr', PartyIdentification285, False)
 
 	@property
 	def Acqrr(self):
@@ -56,12 +56,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@Acqrr.setter
 	def Acqrr(self, value):
-		self._Acqrr = value if type(value) != base_types.auto else self.make_default("Acqrr")
+		self._Acqrr = value if value is not None else base_types.UninitialisedField(self, 'Acqrr', PartyIdentification286, False)
 
 	@Acqrr.deleter
 	def Acqrr(self):
 		del self._Acqrr
-		self._Acqrr = None
+		self._Acqrr = base_types.UninitialisedField(self, 'Acqrr', PartyIdentification286, False)
 
 	@property
 	def AddtlAmt(self):
@@ -69,12 +69,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@AddtlAmt.setter
 	def AddtlAmt(self, value):
-		self._AddtlAmt = value if type(value) != base_types.auto else self.make_default("AddtlAmt")
+		self._AddtlAmt = value if value is not None else base_types.UninitialisedField(self, 'AddtlAmt', AdditionalAmounts4, True)
 
 	@AddtlAmt.deleter
 	def AddtlAmt(self):
 		del self._AddtlAmt
-		self._AddtlAmt = None
+		self._AddtlAmt = base_types.UninitialisedField(self, 'AddtlAmt', AdditionalAmounts4, True)
 
 	@property
 	def AddtlData(self):
@@ -82,12 +82,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@AddtlData.setter
 	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+		self._AddtlData = value if value is not None else base_types.UninitialisedField(self, 'AddtlData', AdditionalData2, True)
 
 	@AddtlData.deleter
 	def AddtlData(self):
 		del self._AddtlData
-		self._AddtlData = None
+		self._AddtlData = base_types.UninitialisedField(self, 'AddtlData', AdditionalData2, True)
 
 	@property
 	def AddtlFee(self):
@@ -95,12 +95,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@AddtlFee.setter
 	def AddtlFee(self, value):
-		self._AddtlFee = value if type(value) != base_types.auto else self.make_default("AddtlFee")
+		self._AddtlFee = value if value is not None else base_types.UninitialisedField(self, 'AddtlFee', AdditionalFee3, True)
 
 	@AddtlFee.deleter
 	def AddtlFee(self):
 		del self._AddtlFee
-		self._AddtlFee = None
+		self._AddtlFee = base_types.UninitialisedField(self, 'AddtlFee', AdditionalFee3, True)
 
 	@property
 	def AddtlSvc(self):
@@ -108,12 +108,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@AddtlSvc.setter
 	def AddtlSvc(self, value):
-		self._AddtlSvc = value if type(value) != base_types.auto else self.make_default("AddtlSvc")
+		self._AddtlSvc = value if value is not None else base_types.UninitialisedField(self, 'AddtlSvc', AdditionalService2, True)
 
 	@AddtlSvc.deleter
 	def AddtlSvc(self):
 		del self._AddtlSvc
-		self._AddtlSvc = None
+		self._AddtlSvc = base_types.UninitialisedField(self, 'AddtlSvc', AdditionalService2, True)
 
 	@property
 	def Card(self):
@@ -121,12 +121,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@Card.setter
 	def Card(self, value):
-		self._Card = value if type(value) != base_types.auto else self.make_default("Card")
+		self._Card = value if value is not None else base_types.UninitialisedField(self, 'Card', CardData12, False)
 
 	@Card.deleter
 	def Card(self):
 		del self._Card
-		self._Card = None
+		self._Card = base_types.UninitialisedField(self, 'Card', CardData12, False)
 
 	@property
 	def Cntxt(self):
@@ -134,12 +134,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@Cntxt.setter
 	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != base_types.auto else self.make_default("Cntxt")
+		self._Cntxt = value if value is not None else base_types.UninitialisedField(self, 'Cntxt', Context20, False)
 
 	@Cntxt.deleter
 	def Cntxt(self):
 		del self._Cntxt
-		self._Cntxt = None
+		self._Cntxt = base_types.UninitialisedField(self, 'Cntxt', Context20, False)
 
 	@property
 	def ConvsDtTm(self):
@@ -147,12 +147,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@ConvsDtTm.setter
 	def ConvsDtTm(self, value):
-		self._ConvsDtTm = value if type(value) != base_types.auto else self.make_default("ConvsDtTm")
+		self._ConvsDtTm = value if value is not None else base_types.UninitialisedField(self, 'ConvsDtTm', DateTime2, False)
 
 	@ConvsDtTm.deleter
 	def ConvsDtTm(self):
 		del self._ConvsDtTm
-		self._ConvsDtTm = None
+		self._ConvsDtTm = base_types.UninitialisedField(self, 'ConvsDtTm', DateTime2, False)
 
 	@property
 	def Crdhldr(self):
@@ -160,12 +160,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@Crdhldr.setter
 	def Crdhldr(self, value):
-		self._Crdhldr = value if type(value) != base_types.auto else self.make_default("Crdhldr")
+		self._Crdhldr = value if value is not None else base_types.UninitialisedField(self, 'Crdhldr', Cardholder22, False)
 
 	@Crdhldr.deleter
 	def Crdhldr(self):
 		del self._Crdhldr
-		self._Crdhldr = None
+		self._Crdhldr = base_types.UninitialisedField(self, 'Crdhldr', Cardholder22, False)
 
 	@property
 	def CstmrDvc(self):
@@ -173,12 +173,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@CstmrDvc.setter
 	def CstmrDvc(self, value):
-		self._CstmrDvc = value if type(value) != base_types.auto else self.make_default("CstmrDvc")
+		self._CstmrDvc = value if value is not None else base_types.UninitialisedField(self, 'CstmrDvc', CustomerDevice5, False)
 
 	@CstmrDvc.deleter
 	def CstmrDvc(self):
 		del self._CstmrDvc
-		self._CstmrDvc = None
+		self._CstmrDvc = base_types.UninitialisedField(self, 'CstmrDvc', CustomerDevice5, False)
 
 	@property
 	def Dstn(self):
@@ -186,12 +186,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@Dstn.setter
 	def Dstn(self, value):
-		self._Dstn = value if type(value) != base_types.auto else self.make_default("Dstn")
+		self._Dstn = value if value is not None else base_types.UninitialisedField(self, 'Dstn', PartyIdentification286, False)
 
 	@Dstn.deleter
 	def Dstn(self):
 		del self._Dstn
-		self._Dstn = None
+		self._Dstn = base_types.UninitialisedField(self, 'Dstn', PartyIdentification286, False)
 
 	@property
 	def Hdr(self):
@@ -199,12 +199,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header71, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header71, False)
 
 	@property
 	def ICCRltdData(self):
@@ -212,12 +212,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@ICCRltdData.setter
 	def ICCRltdData(self, value):
-		self._ICCRltdData = value if type(value) != base_types.auto else self.make_default("ICCRltdData")
+		self._ICCRltdData = value if value is not None else base_types.UninitialisedField(self, 'ICCRltdData', Max10KHexBinaryText, False)
 
 	@ICCRltdData.deleter
 	def ICCRltdData(self):
 		del self._ICCRltdData
-		self._ICCRltdData = None
+		self._ICCRltdData = base_types.UninitialisedField(self, 'ICCRltdData', Max10KHexBinaryText, False)
 
 	@property
 	def Issr(self):
@@ -225,12 +225,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+		self._Issr = value if value is not None else base_types.UninitialisedField(self, 'Issr', PartyIdentification286, False)
 
 	@Issr.deleter
 	def Issr(self):
 		del self._Issr
-		self._Issr = None
+		self._Issr = base_types.UninitialisedField(self, 'Issr', PartyIdentification286, False)
 
 	@property
 	def Jursdctn(self):
@@ -238,12 +238,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@Jursdctn.setter
 	def Jursdctn(self, value):
-		self._Jursdctn = value if type(value) != base_types.auto else self.make_default("Jursdctn")
+		self._Jursdctn = value if value is not None else base_types.UninitialisedField(self, 'Jursdctn', Jurisdiction2, False)
 
 	@Jursdctn.deleter
 	def Jursdctn(self):
 		del self._Jursdctn
-		self._Jursdctn = None
+		self._Jursdctn = base_types.UninitialisedField(self, 'Jursdctn', Jurisdiction2, False)
 
 	@property
 	def OrgnlDataElmts(self):
@@ -251,12 +251,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@OrgnlDataElmts.setter
 	def OrgnlDataElmts(self, value):
-		self._OrgnlDataElmts = value if type(value) != base_types.auto else self.make_default("OrgnlDataElmts")
+		self._OrgnlDataElmts = value if value is not None else base_types.UninitialisedField(self, 'OrgnlDataElmts', OriginalDataElements4, False)
 
 	@OrgnlDataElmts.deleter
 	def OrgnlDataElmts(self):
 		del self._OrgnlDataElmts
-		self._OrgnlDataElmts = None
+		self._OrgnlDataElmts = base_types.UninitialisedField(self, 'OrgnlDataElmts', OriginalDataElements4, False)
 
 	@property
 	def Orgtr(self):
@@ -264,12 +264,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@Orgtr.setter
 	def Orgtr(self, value):
-		self._Orgtr = value if type(value) != base_types.auto else self.make_default("Orgtr")
+		self._Orgtr = value if value is not None else base_types.UninitialisedField(self, 'Orgtr', PartyIdentification286, False)
 
 	@Orgtr.deleter
 	def Orgtr(self):
 		del self._Orgtr
-		self._Orgtr = None
+		self._Orgtr = base_types.UninitialisedField(self, 'Orgtr', PartyIdentification286, False)
 
 	@property
 	def PrcgRslt(self):
@@ -277,12 +277,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@PrcgRslt.setter
 	def PrcgRslt(self, value):
-		self._PrcgRslt = value if type(value) != base_types.auto else self.make_default("PrcgRslt")
+		self._PrcgRslt = value if value is not None else base_types.UninitialisedField(self, 'PrcgRslt', ProcessingResult22, False)
 
 	@PrcgRslt.deleter
 	def PrcgRslt(self):
 		del self._PrcgRslt
-		self._PrcgRslt = None
+		self._PrcgRslt = base_types.UninitialisedField(self, 'PrcgRslt', ProcessingResult22, False)
 
 	@property
 	def Prgrmm(self):
@@ -290,12 +290,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@Prgrmm.setter
 	def Prgrmm(self, value):
-		self._Prgrmm = value if type(value) != base_types.auto else self.make_default("Prgrmm")
+		self._Prgrmm = value if value is not None else base_types.UninitialisedField(self, 'Prgrmm', ProgrammeMode5, True)
 
 	@Prgrmm.deleter
 	def Prgrmm(self):
 		del self._Prgrmm
-		self._Prgrmm = None
+		self._Prgrmm = base_types.UninitialisedField(self, 'Prgrmm', ProgrammeMode5, True)
 
 	@property
 	def PrtctdData(self):
@@ -303,12 +303,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@PrtctdData.setter
 	def PrtctdData(self, value):
-		self._PrtctdData = value if type(value) != base_types.auto else self.make_default("PrtctdData")
+		self._PrtctdData = value if value is not None else base_types.UninitialisedField(self, 'PrtctdData', ProtectedData2, True)
 
 	@PrtctdData.deleter
 	def PrtctdData(self):
 		del self._PrtctdData
-		self._PrtctdData = None
+		self._PrtctdData = base_types.UninitialisedField(self, 'PrtctdData', ProtectedData2, True)
 
 	@property
 	def Rcncltn(self):
@@ -316,12 +316,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@Rcncltn.setter
 	def Rcncltn(self, value):
-		self._Rcncltn = value if type(value) != base_types.auto else self.make_default("Rcncltn")
+		self._Rcncltn = value if value is not None else base_types.UninitialisedField(self, 'Rcncltn', Reconciliation4, False)
 
 	@Rcncltn.deleter
 	def Rcncltn(self):
 		del self._Rcncltn
-		self._Rcncltn = None
+		self._Rcncltn = base_types.UninitialisedField(self, 'Rcncltn', Reconciliation4, False)
 
 	@property
 	def Rcvr(self):
@@ -329,12 +329,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@Rcvr.setter
 	def Rcvr(self, value):
-		self._Rcvr = value if type(value) != base_types.auto else self.make_default("Rcvr")
+		self._Rcvr = value if value is not None else base_types.UninitialisedField(self, 'Rcvr', PartyIdentification286, False)
 
 	@Rcvr.deleter
 	def Rcvr(self):
 		del self._Rcvr
-		self._Rcvr = None
+		self._Rcvr = base_types.UninitialisedField(self, 'Rcvr', PartyIdentification286, False)
 
 	@property
 	def Rsk(self):
@@ -342,12 +342,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@Rsk.setter
 	def Rsk(self, value):
-		self._Rsk = value if type(value) != base_types.auto else self.make_default("Rsk")
+		self._Rsk = value if value is not None else base_types.UninitialisedField(self, 'Rsk', RiskContext3, True)
 
 	@Rsk.deleter
 	def Rsk(self):
 		del self._Rsk
-		self._Rsk = None
+		self._Rsk = base_types.UninitialisedField(self, 'Rsk', RiskContext3, True)
 
 	@property
 	def SctyTrlr(self):
@@ -355,12 +355,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType41, False)
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
 		del self._SctyTrlr
-		self._SctyTrlr = None
+		self._SctyTrlr = base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType41, False)
 
 	@property
 	def Sndr(self):
@@ -368,12 +368,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@Sndr.setter
 	def Sndr(self, value):
-		self._Sndr = value if type(value) != base_types.auto else self.make_default("Sndr")
+		self._Sndr = value if value is not None else base_types.UninitialisedField(self, 'Sndr', PartyIdentification286, False)
 
 	@Sndr.deleter
 	def Sndr(self):
 		del self._Sndr
-		self._Sndr = None
+		self._Sndr = base_types.UninitialisedField(self, 'Sndr', PartyIdentification286, False)
 
 	@property
 	def SplmtryData(self):
@@ -381,12 +381,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def StrngCstmrAuthntcn(self):
@@ -394,12 +394,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@StrngCstmrAuthntcn.setter
 	def StrngCstmrAuthntcn(self, value):
-		self._StrngCstmrAuthntcn = value if type(value) != base_types.auto else self.make_default("StrngCstmrAuthntcn")
+		self._StrngCstmrAuthntcn = value if value is not None else base_types.UninitialisedField(self, 'StrngCstmrAuthntcn', StrongCustomerAuthentication2, False)
 
 	@StrngCstmrAuthntcn.deleter
 	def StrngCstmrAuthntcn(self):
 		del self._StrngCstmrAuthntcn
-		self._StrngCstmrAuthntcn = None
+		self._StrngCstmrAuthntcn = base_types.UninitialisedField(self, 'StrngCstmrAuthntcn', StrongCustomerAuthentication2, False)
 
 	@property
 	def SttlmSvc(self):
@@ -407,12 +407,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@SttlmSvc.setter
 	def SttlmSvc(self, value):
-		self._SttlmSvc = value if type(value) != base_types.auto else self.make_default("SttlmSvc")
+		self._SttlmSvc = value if value is not None else base_types.UninitialisedField(self, 'SttlmSvc', SettlementService6, False)
 
 	@SttlmSvc.deleter
 	def SttlmSvc(self):
 		del self._SttlmSvc
-		self._SttlmSvc = None
+		self._SttlmSvc = base_types.UninitialisedField(self, 'SttlmSvc', SettlementService6, False)
 
 	@property
 	def Termnl(self):
@@ -420,12 +420,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@Termnl.setter
 	def Termnl(self, value):
-		self._Termnl = value if type(value) != base_types.auto else self.make_default("Termnl")
+		self._Termnl = value if value is not None else base_types.UninitialisedField(self, 'Termnl', Terminal8, False)
 
 	@Termnl.deleter
 	def Termnl(self):
 		del self._Termnl
-		self._Termnl = None
+		self._Termnl = base_types.UninitialisedField(self, 'Termnl', Terminal8, False)
 
 	@property
 	def Tkn(self):
@@ -433,12 +433,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@Tkn.setter
 	def Tkn(self, value):
-		self._Tkn = value if type(value) != base_types.auto else self.make_default("Tkn")
+		self._Tkn = value if value is not None else base_types.UninitialisedField(self, 'Tkn', Token2, False)
 
 	@Tkn.deleter
 	def Tkn(self):
 		del self._Tkn
-		self._Tkn = None
+		self._Tkn = base_types.UninitialisedField(self, 'Tkn', Token2, False)
 
 	@property
 	def TxAmts(self):
@@ -446,12 +446,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@TxAmts.setter
 	def TxAmts(self, value):
-		self._TxAmts = value if type(value) != base_types.auto else self.make_default("TxAmts")
+		self._TxAmts = value if value is not None else base_types.UninitialisedField(self, 'TxAmts', TransactionAmounts4, False)
 
 	@TxAmts.deleter
 	def TxAmts(self):
 		del self._TxAmts
-		self._TxAmts = None
+		self._TxAmts = base_types.UninitialisedField(self, 'TxAmts', TransactionAmounts4, False)
 
 	@property
 	def TxChrtcs(self):
@@ -459,12 +459,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@TxChrtcs.setter
 	def TxChrtcs(self, value):
-		self._TxChrtcs = value if type(value) != base_types.auto else self.make_default("TxChrtcs")
+		self._TxChrtcs = value if value is not None else base_types.UninitialisedField(self, 'TxChrtcs', TransactionCharacteristics2, False)
 
 	@TxChrtcs.deleter
 	def TxChrtcs(self):
 		del self._TxChrtcs
-		self._TxChrtcs = None
+		self._TxChrtcs = base_types.UninitialisedField(self, 'TxChrtcs', TransactionCharacteristics2, False)
 
 	@property
 	def TxId(self):
@@ -472,12 +472,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', TransactionIdentification57, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', TransactionIdentification57, False)
 
 	@property
 	def Vrfctn(self):
@@ -485,12 +485,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@Vrfctn.setter
 	def Vrfctn(self, value):
-		self._Vrfctn = value if type(value) != base_types.auto else self.make_default("Vrfctn")
+		self._Vrfctn = value if value is not None else base_types.UninitialisedField(self, 'Vrfctn', Verification7, True)
 
 	@Vrfctn.deleter
 	def Vrfctn(self):
 		del self._Vrfctn
-		self._Vrfctn = None
+		self._Vrfctn = base_types.UninitialisedField(self, 'Vrfctn', Verification7, True)
 
 	@property
 	def Wllt(self):
@@ -498,12 +498,12 @@ class CardManagementResponseV03(base_types._BaseFieldType):
 
 	@Wllt.setter
 	def Wllt(self, value):
-		self._Wllt = value if type(value) != base_types.auto else self.make_default("Wllt")
+		self._Wllt = value if value is not None else base_types.UninitialisedField(self, 'Wllt', Wallet3, False)
 
 	@Wllt.deleter
 	def Wllt(self):
 		del self._Wllt
-		self._Wllt = None
+		self._Wllt = base_types.UninitialisedField(self, 'Wllt', Wallet3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Accptr', type=PartyIdentification285, min=0, max=1, mutex_group=None, array=False),

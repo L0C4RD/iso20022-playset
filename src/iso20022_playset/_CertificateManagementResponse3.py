@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardPaymentServiceType10Code import CardPaymentServiceType10Code
-from ._GenericIdentification176 import GenericIdentification176
-from ._ISODateTime import ISODateTime
-from ._Max10KBinary import Max10KBinary
-from ._Max140Binary import Max140Binary
-from ._Max3000Binary import Max3000Binary
-from ._Max35Text import Max35Text
-from ._ResponseType6 import ResponseType6
+from . import CardPaymentServiceType10Code
+from . import GenericIdentification176
+from . import ISODateTime
+from . import Max10KBinary
+from . import Max140Binary
+from . import Max3000Binary
+from . import Max35Text
+from . import ResponseType6
 
 class CertificateManagementResponse3(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class CertificateManagementResponse3(base_types._BaseFieldType):
 
 	@CertSvc.setter
 	def CertSvc(self, value):
-		self._CertSvc = value if type(value) != base_types.auto else self.make_default("CertSvc")
+		self._CertSvc = value if value is not None else base_types.UninitialisedField(self, 'CertSvc', CardPaymentServiceType10Code, False)
 
 	@CertSvc.deleter
 	def CertSvc(self):
 		del self._CertSvc
-		self._CertSvc = None
+		self._CertSvc = base_types.UninitialisedField(self, 'CertSvc', CardPaymentServiceType10Code, False)
 
 	@property
 	def ClntCert(self):
@@ -33,12 +33,12 @@ class CertificateManagementResponse3(base_types._BaseFieldType):
 
 	@ClntCert.setter
 	def ClntCert(self, value):
-		self._ClntCert = value if type(value) != base_types.auto else self.make_default("ClntCert")
+		self._ClntCert = value if value is not None else base_types.UninitialisedField(self, 'ClntCert', Max3000Binary, False)
 
 	@ClntCert.deleter
 	def ClntCert(self):
 		del self._ClntCert
-		self._ClntCert = None
+		self._ClntCert = base_types.UninitialisedField(self, 'ClntCert', Max3000Binary, False)
 
 	@property
 	def ClntCertPth(self):
@@ -46,12 +46,12 @@ class CertificateManagementResponse3(base_types._BaseFieldType):
 
 	@ClntCertPth.setter
 	def ClntCertPth(self, value):
-		self._ClntCertPth = value if type(value) != base_types.auto else self.make_default("ClntCertPth")
+		self._ClntCertPth = value if value is not None else base_types.UninitialisedField(self, 'ClntCertPth', Max10KBinary, True)
 
 	@ClntCertPth.deleter
 	def ClntCertPth(self):
 		del self._ClntCertPth
-		self._ClntCertPth = None
+		self._ClntCertPth = base_types.UninitialisedField(self, 'ClntCertPth', Max10KBinary, True)
 
 	@property
 	def POIChllngVal(self):
@@ -59,12 +59,12 @@ class CertificateManagementResponse3(base_types._BaseFieldType):
 
 	@POIChllngVal.setter
 	def POIChllngVal(self, value):
-		self._POIChllngVal = value if type(value) != base_types.auto else self.make_default("POIChllngVal")
+		self._POIChllngVal = value if value is not None else base_types.UninitialisedField(self, 'POIChllngVal', Max140Binary, False)
 
 	@POIChllngVal.deleter
 	def POIChllngVal(self):
 		del self._POIChllngVal
-		self._POIChllngVal = None
+		self._POIChllngVal = base_types.UninitialisedField(self, 'POIChllngVal', Max140Binary, False)
 
 	@property
 	def POIId(self):
@@ -72,12 +72,12 @@ class CertificateManagementResponse3(base_types._BaseFieldType):
 
 	@POIId.setter
 	def POIId(self, value):
-		self._POIId = value if type(value) != base_types.auto else self.make_default("POIId")
+		self._POIId = value if value is not None else base_types.UninitialisedField(self, 'POIId', GenericIdentification176, False)
 
 	@POIId.deleter
 	def POIId(self):
 		del self._POIId
-		self._POIId = None
+		self._POIId = base_types.UninitialisedField(self, 'POIId', GenericIdentification176, False)
 
 	@property
 	def Rslt(self):
@@ -85,12 +85,12 @@ class CertificateManagementResponse3(base_types._BaseFieldType):
 
 	@Rslt.setter
 	def Rslt(self, value):
-		self._Rslt = value if type(value) != base_types.auto else self.make_default("Rslt")
+		self._Rslt = value if value is not None else base_types.UninitialisedField(self, 'Rslt', ResponseType6, False)
 
 	@Rslt.deleter
 	def Rslt(self):
 		del self._Rslt
-		self._Rslt = None
+		self._Rslt = base_types.UninitialisedField(self, 'Rslt', ResponseType6, False)
 
 	@property
 	def SctyPrfl(self):
@@ -98,12 +98,12 @@ class CertificateManagementResponse3(base_types._BaseFieldType):
 
 	@SctyPrfl.setter
 	def SctyPrfl(self, value):
-		self._SctyPrfl = value if type(value) != base_types.auto else self.make_default("SctyPrfl")
+		self._SctyPrfl = value if value is not None else base_types.UninitialisedField(self, 'SctyPrfl', Max35Text, False)
 
 	@SctyPrfl.deleter
 	def SctyPrfl(self):
 		del self._SctyPrfl
-		self._SctyPrfl = None
+		self._SctyPrfl = base_types.UninitialisedField(self, 'SctyPrfl', Max35Text, False)
 
 	@property
 	def SvrCertPth(self):
@@ -111,12 +111,12 @@ class CertificateManagementResponse3(base_types._BaseFieldType):
 
 	@SvrCertPth.setter
 	def SvrCertPth(self, value):
-		self._SvrCertPth = value if type(value) != base_types.auto else self.make_default("SvrCertPth")
+		self._SvrCertPth = value if value is not None else base_types.UninitialisedField(self, 'SvrCertPth', Max10KBinary, True)
 
 	@SvrCertPth.deleter
 	def SvrCertPth(self):
 		del self._SvrCertPth
-		self._SvrCertPth = None
+		self._SvrCertPth = base_types.UninitialisedField(self, 'SvrCertPth', Max10KBinary, True)
 
 	@property
 	def TMId(self):
@@ -124,12 +124,12 @@ class CertificateManagementResponse3(base_types._BaseFieldType):
 
 	@TMId.setter
 	def TMId(self, value):
-		self._TMId = value if type(value) != base_types.auto else self.make_default("TMId")
+		self._TMId = value if value is not None else base_types.UninitialisedField(self, 'TMId', GenericIdentification176, False)
 
 	@TMId.deleter
 	def TMId(self):
 		del self._TMId
-		self._TMId = None
+		self._TMId = base_types.UninitialisedField(self, 'TMId', GenericIdentification176, False)
 
 	@property
 	def TMSDtTm(self):
@@ -137,12 +137,12 @@ class CertificateManagementResponse3(base_types._BaseFieldType):
 
 	@TMSDtTm.setter
 	def TMSDtTm(self, value):
-		self._TMSDtTm = value if type(value) != base_types.auto else self.make_default("TMSDtTm")
+		self._TMSDtTm = value if value is not None else base_types.UninitialisedField(self, 'TMSDtTm', ISODateTime, False)
 
 	@TMSDtTm.deleter
 	def TMSDtTm(self):
 		del self._TMSDtTm
-		self._TMSDtTm = None
+		self._TMSDtTm = base_types.UninitialisedField(self, 'TMSDtTm', ISODateTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CertSvc', type=CardPaymentServiceType10Code, min=1, max=1, mutex_group=None, array=False),

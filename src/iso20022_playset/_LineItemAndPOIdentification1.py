@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DocumentIdentification7 import DocumentIdentification7
-from ._Max70Text import Max70Text
+from . import DocumentIdentification7
+from . import Max70Text
 
 class LineItemAndPOIdentification1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class LineItemAndPOIdentification1(base_types._BaseFieldType):
 
 	@LineItmId.setter
 	def LineItmId(self, value):
-		self._LineItmId = value if type(value) != base_types.auto else self.make_default("LineItmId")
+		self._LineItmId = value if value is not None else base_types.UninitialisedField(self, 'LineItmId', Max70Text, True)
 
 	@LineItmId.deleter
 	def LineItmId(self):
 		del self._LineItmId
-		self._LineItmId = None
+		self._LineItmId = base_types.UninitialisedField(self, 'LineItmId', Max70Text, True)
 
 	@property
 	def PurchsOrdrRef(self):
@@ -27,12 +27,12 @@ class LineItemAndPOIdentification1(base_types._BaseFieldType):
 
 	@PurchsOrdrRef.setter
 	def PurchsOrdrRef(self, value):
-		self._PurchsOrdrRef = value if type(value) != base_types.auto else self.make_default("PurchsOrdrRef")
+		self._PurchsOrdrRef = value if value is not None else base_types.UninitialisedField(self, 'PurchsOrdrRef', DocumentIdentification7, False)
 
 	@PurchsOrdrRef.deleter
 	def PurchsOrdrRef(self):
 		del self._PurchsOrdrRef
-		self._PurchsOrdrRef = None
+		self._PurchsOrdrRef = base_types.UninitialisedField(self, 'PurchsOrdrRef', DocumentIdentification7, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LineItmId', type=Max70Text, min=1, max=None, mutex_group=None, array=True),

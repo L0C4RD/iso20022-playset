@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BaseOne25Rate import BaseOne25Rate
-from ._DetailedAmount22 import DetailedAmount22
-from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._TypeOfAmount22Code import TypeOfAmount22Code
+from . import BaseOne25Rate
+from . import DetailedAmount22
+from . import ISO3NumericCurrencyCode
+from . import ImpliedCurrencyAndAmount
+from . import TypeOfAmount22Code
 
 class TransactionAmounts3(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class TransactionAmounts3(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ImpliedCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def AmtQlfr(self):
@@ -30,12 +30,12 @@ class TransactionAmounts3(base_types._BaseFieldType):
 
 	@AmtQlfr.setter
 	def AmtQlfr(self, value):
-		self._AmtQlfr = value if type(value) != base_types.auto else self.make_default("AmtQlfr")
+		self._AmtQlfr = value if value is not None else base_types.UninitialisedField(self, 'AmtQlfr', TypeOfAmount22Code, False)
 
 	@AmtQlfr.deleter
 	def AmtQlfr(self):
 		del self._AmtQlfr
-		self._AmtQlfr = None
+		self._AmtQlfr = base_types.UninitialisedField(self, 'AmtQlfr', TypeOfAmount22Code, False)
 
 	@property
 	def Ccy(self):
@@ -43,12 +43,12 @@ class TransactionAmounts3(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ISO3NumericCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ISO3NumericCurrencyCode, False)
 
 	@property
 	def CrdhldrBllgAmt(self):
@@ -56,12 +56,12 @@ class TransactionAmounts3(base_types._BaseFieldType):
 
 	@CrdhldrBllgAmt.setter
 	def CrdhldrBllgAmt(self, value):
-		self._CrdhldrBllgAmt = value if type(value) != base_types.auto else self.make_default("CrdhldrBllgAmt")
+		self._CrdhldrBllgAmt = value if value is not None else base_types.UninitialisedField(self, 'CrdhldrBllgAmt', ImpliedCurrencyAndAmount, False)
 
 	@CrdhldrBllgAmt.deleter
 	def CrdhldrBllgAmt(self):
 		del self._CrdhldrBllgAmt
-		self._CrdhldrBllgAmt = None
+		self._CrdhldrBllgAmt = base_types.UninitialisedField(self, 'CrdhldrBllgAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def CrdhldrBllgCcy(self):
@@ -69,12 +69,12 @@ class TransactionAmounts3(base_types._BaseFieldType):
 
 	@CrdhldrBllgCcy.setter
 	def CrdhldrBllgCcy(self, value):
-		self._CrdhldrBllgCcy = value if type(value) != base_types.auto else self.make_default("CrdhldrBllgCcy")
+		self._CrdhldrBllgCcy = value if value is not None else base_types.UninitialisedField(self, 'CrdhldrBllgCcy', ISO3NumericCurrencyCode, False)
 
 	@CrdhldrBllgCcy.deleter
 	def CrdhldrBllgCcy(self):
 		del self._CrdhldrBllgCcy
-		self._CrdhldrBllgCcy = None
+		self._CrdhldrBllgCcy = base_types.UninitialisedField(self, 'CrdhldrBllgCcy', ISO3NumericCurrencyCode, False)
 
 	@property
 	def CrdhldrBllgFctvXchgRate(self):
@@ -82,12 +82,12 @@ class TransactionAmounts3(base_types._BaseFieldType):
 
 	@CrdhldrBllgFctvXchgRate.setter
 	def CrdhldrBllgFctvXchgRate(self, value):
-		self._CrdhldrBllgFctvXchgRate = value if type(value) != base_types.auto else self.make_default("CrdhldrBllgFctvXchgRate")
+		self._CrdhldrBllgFctvXchgRate = value if value is not None else base_types.UninitialisedField(self, 'CrdhldrBllgFctvXchgRate', BaseOne25Rate, False)
 
 	@CrdhldrBllgFctvXchgRate.deleter
 	def CrdhldrBllgFctvXchgRate(self):
 		del self._CrdhldrBllgFctvXchgRate
-		self._CrdhldrBllgFctvXchgRate = None
+		self._CrdhldrBllgFctvXchgRate = base_types.UninitialisedField(self, 'CrdhldrBllgFctvXchgRate', BaseOne25Rate, False)
 
 	@property
 	def DtldAmt(self):
@@ -95,12 +95,12 @@ class TransactionAmounts3(base_types._BaseFieldType):
 
 	@DtldAmt.setter
 	def DtldAmt(self, value):
-		self._DtldAmt = value if type(value) != base_types.auto else self.make_default("DtldAmt")
+		self._DtldAmt = value if value is not None else base_types.UninitialisedField(self, 'DtldAmt', DetailedAmount22, True)
 
 	@DtldAmt.deleter
 	def DtldAmt(self):
 		del self._DtldAmt
-		self._DtldAmt = None
+		self._DtldAmt = base_types.UninitialisedField(self, 'DtldAmt', DetailedAmount22, True)
 
 	@property
 	def RcncltnAmt(self):
@@ -108,12 +108,12 @@ class TransactionAmounts3(base_types._BaseFieldType):
 
 	@RcncltnAmt.setter
 	def RcncltnAmt(self, value):
-		self._RcncltnAmt = value if type(value) != base_types.auto else self.make_default("RcncltnAmt")
+		self._RcncltnAmt = value if value is not None else base_types.UninitialisedField(self, 'RcncltnAmt', ImpliedCurrencyAndAmount, False)
 
 	@RcncltnAmt.deleter
 	def RcncltnAmt(self):
 		del self._RcncltnAmt
-		self._RcncltnAmt = None
+		self._RcncltnAmt = base_types.UninitialisedField(self, 'RcncltnAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def RcncltnCcy(self):
@@ -121,12 +121,12 @@ class TransactionAmounts3(base_types._BaseFieldType):
 
 	@RcncltnCcy.setter
 	def RcncltnCcy(self, value):
-		self._RcncltnCcy = value if type(value) != base_types.auto else self.make_default("RcncltnCcy")
+		self._RcncltnCcy = value if value is not None else base_types.UninitialisedField(self, 'RcncltnCcy', ISO3NumericCurrencyCode, False)
 
 	@RcncltnCcy.deleter
 	def RcncltnCcy(self):
 		del self._RcncltnCcy
-		self._RcncltnCcy = None
+		self._RcncltnCcy = base_types.UninitialisedField(self, 'RcncltnCcy', ISO3NumericCurrencyCode, False)
 
 	@property
 	def RcncltnFctvXchgRate(self):
@@ -134,12 +134,12 @@ class TransactionAmounts3(base_types._BaseFieldType):
 
 	@RcncltnFctvXchgRate.setter
 	def RcncltnFctvXchgRate(self, value):
-		self._RcncltnFctvXchgRate = value if type(value) != base_types.auto else self.make_default("RcncltnFctvXchgRate")
+		self._RcncltnFctvXchgRate = value if value is not None else base_types.UninitialisedField(self, 'RcncltnFctvXchgRate', BaseOne25Rate, False)
 
 	@RcncltnFctvXchgRate.deleter
 	def RcncltnFctvXchgRate(self):
 		del self._RcncltnFctvXchgRate
-		self._RcncltnFctvXchgRate = None
+		self._RcncltnFctvXchgRate = base_types.UninitialisedField(self, 'RcncltnFctvXchgRate', BaseOne25Rate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

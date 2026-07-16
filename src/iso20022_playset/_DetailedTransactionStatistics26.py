@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MissingMarginData2 import MissingMarginData2
-from ._Number import Number
+from . import MissingMarginData2
+from . import Number
 
 class DetailedTransactionStatistics26(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DetailedTransactionStatistics26(base_types._BaseFieldType):
 
 	@NbOfOutsdngDerivs.setter
 	def NbOfOutsdngDerivs(self, value):
-		self._NbOfOutsdngDerivs = value if type(value) != base_types.auto else self.make_default("NbOfOutsdngDerivs")
+		self._NbOfOutsdngDerivs = value if value is not None else base_types.UninitialisedField(self, 'NbOfOutsdngDerivs', Number, False)
 
 	@NbOfOutsdngDerivs.deleter
 	def NbOfOutsdngDerivs(self):
 		del self._NbOfOutsdngDerivs
-		self._NbOfOutsdngDerivs = None
+		self._NbOfOutsdngDerivs = base_types.UninitialisedField(self, 'NbOfOutsdngDerivs', Number, False)
 
 	@property
 	def NbOfOutsdngDerivsWthNoMrgnInf(self):
@@ -27,12 +27,12 @@ class DetailedTransactionStatistics26(base_types._BaseFieldType):
 
 	@NbOfOutsdngDerivsWthNoMrgnInf.setter
 	def NbOfOutsdngDerivsWthNoMrgnInf(self, value):
-		self._NbOfOutsdngDerivsWthNoMrgnInf = value if type(value) != base_types.auto else self.make_default("NbOfOutsdngDerivsWthNoMrgnInf")
+		self._NbOfOutsdngDerivsWthNoMrgnInf = value if value is not None else base_types.UninitialisedField(self, 'NbOfOutsdngDerivsWthNoMrgnInf', Number, False)
 
 	@NbOfOutsdngDerivsWthNoMrgnInf.deleter
 	def NbOfOutsdngDerivsWthNoMrgnInf(self):
 		del self._NbOfOutsdngDerivsWthNoMrgnInf
-		self._NbOfOutsdngDerivsWthNoMrgnInf = None
+		self._NbOfOutsdngDerivsWthNoMrgnInf = base_types.UninitialisedField(self, 'NbOfOutsdngDerivsWthNoMrgnInf', Number, False)
 
 	@property
 	def NbOfOutsdngDerivsWthOutdtdMrgnInf(self):
@@ -40,12 +40,12 @@ class DetailedTransactionStatistics26(base_types._BaseFieldType):
 
 	@NbOfOutsdngDerivsWthOutdtdMrgnInf.setter
 	def NbOfOutsdngDerivsWthOutdtdMrgnInf(self, value):
-		self._NbOfOutsdngDerivsWthOutdtdMrgnInf = value if type(value) != base_types.auto else self.make_default("NbOfOutsdngDerivsWthOutdtdMrgnInf")
+		self._NbOfOutsdngDerivsWthOutdtdMrgnInf = value if value is not None else base_types.UninitialisedField(self, 'NbOfOutsdngDerivsWthOutdtdMrgnInf', Number, False)
 
 	@NbOfOutsdngDerivsWthOutdtdMrgnInf.deleter
 	def NbOfOutsdngDerivsWthOutdtdMrgnInf(self):
 		del self._NbOfOutsdngDerivsWthOutdtdMrgnInf
-		self._NbOfOutsdngDerivsWthOutdtdMrgnInf = None
+		self._NbOfOutsdngDerivsWthOutdtdMrgnInf = base_types.UninitialisedField(self, 'NbOfOutsdngDerivsWthOutdtdMrgnInf', Number, False)
 
 	@property
 	def Wrnngs(self):
@@ -53,12 +53,12 @@ class DetailedTransactionStatistics26(base_types._BaseFieldType):
 
 	@Wrnngs.setter
 	def Wrnngs(self, value):
-		self._Wrnngs = value if type(value) != base_types.auto else self.make_default("Wrnngs")
+		self._Wrnngs = value if value is not None else base_types.UninitialisedField(self, 'Wrnngs', MissingMarginData2, True)
 
 	@Wrnngs.deleter
 	def Wrnngs(self):
 		del self._Wrnngs
-		self._Wrnngs = None
+		self._Wrnngs = base_types.UninitialisedField(self, 'Wrnngs', MissingMarginData2, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NbOfOutsdngDerivs', type=Number, min=1, max=1, mutex_group=None, array=False),

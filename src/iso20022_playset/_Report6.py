@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTime1Choice import DateAndDateTime1Choice
-from ._Frequency25Choice import Frequency25Choice
-from ._GenericIdentification30 import GenericIdentification30
-from ._Max35Text import Max35Text
-from ._Max5NumericText import Max5NumericText
-from ._QueryReference2 import QueryReference2
-from ._StatementUpdateTypeCodeAndDSSCode1Choice import StatementUpdateTypeCodeAndDSSCode1Choice
+from . import DateAndDateTime1Choice
+from . import Frequency25Choice
+from . import GenericIdentification30
+from . import Max35Text
+from . import Max5NumericText
+from . import QueryReference2
+from . import StatementUpdateTypeCodeAndDSSCode1Choice
 
 class Report6(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class Report6(base_types._BaseFieldType):
 
 	@Frqcy.setter
 	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
+		self._Frqcy = value if value is not None else base_types.UninitialisedField(self, 'Frqcy', Frequency25Choice, False)
 
 	@Frqcy.deleter
 	def Frqcy(self):
 		del self._Frqcy
-		self._Frqcy = None
+		self._Frqcy = base_types.UninitialisedField(self, 'Frqcy', Frequency25Choice, False)
 
 	@property
 	def NtceTp(self):
@@ -32,12 +32,12 @@ class Report6(base_types._BaseFieldType):
 
 	@NtceTp.setter
 	def NtceTp(self, value):
-		self._NtceTp = value if type(value) != base_types.auto else self.make_default("NtceTp")
+		self._NtceTp = value if value is not None else base_types.UninitialisedField(self, 'NtceTp', GenericIdentification30, False)
 
 	@NtceTp.deleter
 	def NtceTp(self):
 		del self._NtceTp
-		self._NtceTp = None
+		self._NtceTp = base_types.UninitialisedField(self, 'NtceTp', GenericIdentification30, False)
 
 	@property
 	def QryRef(self):
@@ -45,12 +45,12 @@ class Report6(base_types._BaseFieldType):
 
 	@QryRef.setter
 	def QryRef(self, value):
-		self._QryRef = value if type(value) != base_types.auto else self.make_default("QryRef")
+		self._QryRef = value if value is not None else base_types.UninitialisedField(self, 'QryRef', QueryReference2, False)
 
 	@QryRef.deleter
 	def QryRef(self):
 		del self._QryRef
-		self._QryRef = None
+		self._QryRef = base_types.UninitialisedField(self, 'QryRef', QueryReference2, False)
 
 	@property
 	def RptDtTm(self):
@@ -58,12 +58,12 @@ class Report6(base_types._BaseFieldType):
 
 	@RptDtTm.setter
 	def RptDtTm(self, value):
-		self._RptDtTm = value if type(value) != base_types.auto else self.make_default("RptDtTm")
+		self._RptDtTm = value if value is not None else base_types.UninitialisedField(self, 'RptDtTm', DateAndDateTime1Choice, False)
 
 	@RptDtTm.deleter
 	def RptDtTm(self):
 		del self._RptDtTm
-		self._RptDtTm = None
+		self._RptDtTm = base_types.UninitialisedField(self, 'RptDtTm', DateAndDateTime1Choice, False)
 
 	@property
 	def RptId(self):
@@ -71,12 +71,12 @@ class Report6(base_types._BaseFieldType):
 
 	@RptId.setter
 	def RptId(self, value):
-		self._RptId = value if type(value) != base_types.auto else self.make_default("RptId")
+		self._RptId = value if value is not None else base_types.UninitialisedField(self, 'RptId', Max35Text, False)
 
 	@RptId.deleter
 	def RptId(self):
 		del self._RptId
-		self._RptId = None
+		self._RptId = base_types.UninitialisedField(self, 'RptId', Max35Text, False)
 
 	@property
 	def RptNb(self):
@@ -84,12 +84,12 @@ class Report6(base_types._BaseFieldType):
 
 	@RptNb.setter
 	def RptNb(self, value):
-		self._RptNb = value if type(value) != base_types.auto else self.make_default("RptNb")
+		self._RptNb = value if value is not None else base_types.UninitialisedField(self, 'RptNb', Max5NumericText, False)
 
 	@RptNb.deleter
 	def RptNb(self):
 		del self._RptNb
-		self._RptNb = None
+		self._RptNb = base_types.UninitialisedField(self, 'RptNb', Max5NumericText, False)
 
 	@property
 	def UpdTp(self):
@@ -97,12 +97,12 @@ class Report6(base_types._BaseFieldType):
 
 	@UpdTp.setter
 	def UpdTp(self, value):
-		self._UpdTp = value if type(value) != base_types.auto else self.make_default("UpdTp")
+		self._UpdTp = value if value is not None else base_types.UninitialisedField(self, 'UpdTp', StatementUpdateTypeCodeAndDSSCode1Choice, False)
 
 	@UpdTp.deleter
 	def UpdTp(self):
 		del self._UpdTp
-		self._UpdTp = None
+		self._UpdTp = base_types.UninitialisedField(self, 'UpdTp', StatementUpdateTypeCodeAndDSSCode1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Frqcy', type=Frequency25Choice, min=0, max=1, mutex_group=None, array=False),

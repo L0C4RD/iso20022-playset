@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._ISODate import ISODate
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import ActiveOrHistoricCurrencyCode
+from . import ISODate
 
 class AmountsAndValueDate4(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AmountsAndValueDate4(base_types._BaseFieldType):
 
 	@CallAmt.setter
 	def CallAmt(self, value):
-		self._CallAmt = value if type(value) != base_types.auto else self.make_default("CallAmt")
+		self._CallAmt = value if value is not None else base_types.UninitialisedField(self, 'CallAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@CallAmt.deleter
 	def CallAmt(self):
 		del self._CallAmt
-		self._CallAmt = None
+		self._CallAmt = base_types.UninitialisedField(self, 'CallAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def FnlSttlmDt(self):
@@ -28,12 +28,12 @@ class AmountsAndValueDate4(base_types._BaseFieldType):
 
 	@FnlSttlmDt.setter
 	def FnlSttlmDt(self, value):
-		self._FnlSttlmDt = value if type(value) != base_types.auto else self.make_default("FnlSttlmDt")
+		self._FnlSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'FnlSttlmDt', ISODate, False)
 
 	@FnlSttlmDt.deleter
 	def FnlSttlmDt(self):
 		del self._FnlSttlmDt
-		self._FnlSttlmDt = None
+		self._FnlSttlmDt = base_types.UninitialisedField(self, 'FnlSttlmDt', ISODate, False)
 
 	@property
 	def OptnSttlmCcy(self):
@@ -41,12 +41,12 @@ class AmountsAndValueDate4(base_types._BaseFieldType):
 
 	@OptnSttlmCcy.setter
 	def OptnSttlmCcy(self, value):
-		self._OptnSttlmCcy = value if type(value) != base_types.auto else self.make_default("OptnSttlmCcy")
+		self._OptnSttlmCcy = value if value is not None else base_types.UninitialisedField(self, 'OptnSttlmCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@OptnSttlmCcy.deleter
 	def OptnSttlmCcy(self):
 		del self._OptnSttlmCcy
-		self._OptnSttlmCcy = None
+		self._OptnSttlmCcy = base_types.UninitialisedField(self, 'OptnSttlmCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def PutAmt(self):
@@ -54,12 +54,12 @@ class AmountsAndValueDate4(base_types._BaseFieldType):
 
 	@PutAmt.setter
 	def PutAmt(self, value):
-		self._PutAmt = value if type(value) != base_types.auto else self.make_default("PutAmt")
+		self._PutAmt = value if value is not None else base_types.UninitialisedField(self, 'PutAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@PutAmt.deleter
 	def PutAmt(self):
 		del self._PutAmt
-		self._PutAmt = None
+		self._PutAmt = base_types.UninitialisedField(self, 'PutAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CallAmt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

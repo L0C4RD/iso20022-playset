@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Agreement4 import Agreement4
-from ._InterestAmount3 import InterestAmount3
-from ._InterestResponse1 import InterestResponse1
-from ._Max35Text import Max35Text
-from ._Obligation9 import Obligation9
-from ._SupplementaryData1 import SupplementaryData1
+from . import Agreement4
+from . import InterestAmount3
+from . import InterestResponse1
+from . import Max35Text
+from . import Obligation9
+from . import SupplementaryData1
 
 class InterestPaymentResponseV05(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class InterestPaymentResponseV05(base_types._BaseFieldType):
 
 	@Agrmt.setter
 	def Agrmt(self, value):
-		self._Agrmt = value if type(value) != base_types.auto else self.make_default("Agrmt")
+		self._Agrmt = value if value is not None else base_types.UninitialisedField(self, 'Agrmt', Agreement4, False)
 
 	@Agrmt.deleter
 	def Agrmt(self):
 		del self._Agrmt
-		self._Agrmt = None
+		self._Agrmt = base_types.UninitialisedField(self, 'Agrmt', Agreement4, False)
 
 	@property
 	def IntrstDueToA(self):
@@ -31,12 +31,12 @@ class InterestPaymentResponseV05(base_types._BaseFieldType):
 
 	@IntrstDueToA.setter
 	def IntrstDueToA(self, value):
-		self._IntrstDueToA = value if type(value) != base_types.auto else self.make_default("IntrstDueToA")
+		self._IntrstDueToA = value if value is not None else base_types.UninitialisedField(self, 'IntrstDueToA', InterestAmount3, False)
 
 	@IntrstDueToA.deleter
 	def IntrstDueToA(self):
 		del self._IntrstDueToA
-		self._IntrstDueToA = None
+		self._IntrstDueToA = base_types.UninitialisedField(self, 'IntrstDueToA', InterestAmount3, False)
 
 	@property
 	def IntrstDueToB(self):
@@ -44,12 +44,12 @@ class InterestPaymentResponseV05(base_types._BaseFieldType):
 
 	@IntrstDueToB.setter
 	def IntrstDueToB(self, value):
-		self._IntrstDueToB = value if type(value) != base_types.auto else self.make_default("IntrstDueToB")
+		self._IntrstDueToB = value if value is not None else base_types.UninitialisedField(self, 'IntrstDueToB', InterestAmount3, False)
 
 	@IntrstDueToB.deleter
 	def IntrstDueToB(self):
 		del self._IntrstDueToB
-		self._IntrstDueToB = None
+		self._IntrstDueToB = base_types.UninitialisedField(self, 'IntrstDueToB', InterestAmount3, False)
 
 	@property
 	def IntrstRspn(self):
@@ -57,12 +57,12 @@ class InterestPaymentResponseV05(base_types._BaseFieldType):
 
 	@IntrstRspn.setter
 	def IntrstRspn(self, value):
-		self._IntrstRspn = value if type(value) != base_types.auto else self.make_default("IntrstRspn")
+		self._IntrstRspn = value if value is not None else base_types.UninitialisedField(self, 'IntrstRspn', InterestResponse1, False)
 
 	@IntrstRspn.deleter
 	def IntrstRspn(self):
 		del self._IntrstRspn
-		self._IntrstRspn = None
+		self._IntrstRspn = base_types.UninitialisedField(self, 'IntrstRspn', InterestResponse1, False)
 
 	@property
 	def Oblgtn(self):
@@ -70,12 +70,12 @@ class InterestPaymentResponseV05(base_types._BaseFieldType):
 
 	@Oblgtn.setter
 	def Oblgtn(self, value):
-		self._Oblgtn = value if type(value) != base_types.auto else self.make_default("Oblgtn")
+		self._Oblgtn = value if value is not None else base_types.UninitialisedField(self, 'Oblgtn', Obligation9, False)
 
 	@Oblgtn.deleter
 	def Oblgtn(self):
 		del self._Oblgtn
-		self._Oblgtn = None
+		self._Oblgtn = base_types.UninitialisedField(self, 'Oblgtn', Obligation9, False)
 
 	@property
 	def SplmtryData(self):
@@ -83,12 +83,12 @@ class InterestPaymentResponseV05(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TxId(self):
@@ -96,12 +96,12 @@ class InterestPaymentResponseV05(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Agrmt', type=Agreement4, min=1, max=1, mutex_group=None, array=False),

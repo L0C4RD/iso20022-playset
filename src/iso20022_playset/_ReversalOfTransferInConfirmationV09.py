@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalReference10 import AdditionalReference10
-from ._AdditionalReference11 import AdditionalReference11
-from ._CopyInformation5 import CopyInformation5
-from ._MarketPracticeVersion1 import MarketPracticeVersion1
-from ._Max35Text import Max35Text
-from ._MessageIdentification1 import MessageIdentification1
-from ._TransferInFunction2Code import TransferInFunction2Code
-from ._TransferReference16 import TransferReference16
+from . import AdditionalReference10
+from . import AdditionalReference11
+from . import CopyInformation5
+from . import MarketPracticeVersion1
+from . import Max35Text
+from . import MessageIdentification1
+from . import TransferInFunction2Code
+from . import TransferReference16
 
 class ReversalOfTransferInConfirmationV09(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class ReversalOfTransferInConfirmationV09(base_types._BaseFieldType):
 
 	@CpyDtls.setter
 	def CpyDtls(self, value):
-		self._CpyDtls = value if type(value) != base_types.auto else self.make_default("CpyDtls")
+		self._CpyDtls = value if value is not None else base_types.UninitialisedField(self, 'CpyDtls', CopyInformation5, False)
 
 	@CpyDtls.deleter
 	def CpyDtls(self):
 		del self._CpyDtls
-		self._CpyDtls = None
+		self._CpyDtls = base_types.UninitialisedField(self, 'CpyDtls', CopyInformation5, False)
 
 	@property
 	def Fctn(self):
@@ -33,12 +33,12 @@ class ReversalOfTransferInConfirmationV09(base_types._BaseFieldType):
 
 	@Fctn.setter
 	def Fctn(self, value):
-		self._Fctn = value if type(value) != base_types.auto else self.make_default("Fctn")
+		self._Fctn = value if value is not None else base_types.UninitialisedField(self, 'Fctn', TransferInFunction2Code, False)
 
 	@Fctn.deleter
 	def Fctn(self):
 		del self._Fctn
-		self._Fctn = None
+		self._Fctn = base_types.UninitialisedField(self, 'Fctn', TransferInFunction2Code, False)
 
 	@property
 	def MktPrctcVrsn(self):
@@ -46,12 +46,12 @@ class ReversalOfTransferInConfirmationV09(base_types._BaseFieldType):
 
 	@MktPrctcVrsn.setter
 	def MktPrctcVrsn(self, value):
-		self._MktPrctcVrsn = value if type(value) != base_types.auto else self.make_default("MktPrctcVrsn")
+		self._MktPrctcVrsn = value if value is not None else base_types.UninitialisedField(self, 'MktPrctcVrsn', MarketPracticeVersion1, False)
 
 	@MktPrctcVrsn.deleter
 	def MktPrctcVrsn(self):
 		del self._MktPrctcVrsn
-		self._MktPrctcVrsn = None
+		self._MktPrctcVrsn = base_types.UninitialisedField(self, 'MktPrctcVrsn', MarketPracticeVersion1, False)
 
 	@property
 	def MsgId(self):
@@ -59,12 +59,12 @@ class ReversalOfTransferInConfirmationV09(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@property
 	def MstrRef(self):
@@ -72,12 +72,12 @@ class ReversalOfTransferInConfirmationV09(base_types._BaseFieldType):
 
 	@MstrRef.setter
 	def MstrRef(self, value):
-		self._MstrRef = value if type(value) != base_types.auto else self.make_default("MstrRef")
+		self._MstrRef = value if value is not None else base_types.UninitialisedField(self, 'MstrRef', Max35Text, False)
 
 	@MstrRef.deleter
 	def MstrRef(self):
 		del self._MstrRef
-		self._MstrRef = None
+		self._MstrRef = base_types.UninitialisedField(self, 'MstrRef', Max35Text, False)
 
 	@property
 	def PoolRef(self):
@@ -85,12 +85,12 @@ class ReversalOfTransferInConfirmationV09(base_types._BaseFieldType):
 
 	@PoolRef.setter
 	def PoolRef(self, value):
-		self._PoolRef = value if type(value) != base_types.auto else self.make_default("PoolRef")
+		self._PoolRef = value if value is not None else base_types.UninitialisedField(self, 'PoolRef', AdditionalReference11, False)
 
 	@PoolRef.deleter
 	def PoolRef(self):
 		del self._PoolRef
-		self._PoolRef = None
+		self._PoolRef = base_types.UninitialisedField(self, 'PoolRef', AdditionalReference11, False)
 
 	@property
 	def PrvsRef(self):
@@ -98,12 +98,12 @@ class ReversalOfTransferInConfirmationV09(base_types._BaseFieldType):
 
 	@PrvsRef.setter
 	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
+		self._PrvsRef = value if value is not None else base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference10, False)
 
 	@PrvsRef.deleter
 	def PrvsRef(self):
 		del self._PrvsRef
-		self._PrvsRef = None
+		self._PrvsRef = base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference10, False)
 
 	@property
 	def RltdRef(self):
@@ -111,12 +111,12 @@ class ReversalOfTransferInConfirmationV09(base_types._BaseFieldType):
 
 	@RltdRef.setter
 	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
+		self._RltdRef = value if value is not None else base_types.UninitialisedField(self, 'RltdRef', AdditionalReference10, False)
 
 	@RltdRef.deleter
 	def RltdRef(self):
 		del self._RltdRef
-		self._RltdRef = None
+		self._RltdRef = base_types.UninitialisedField(self, 'RltdRef', AdditionalReference10, False)
 
 	@property
 	def RvslRefs(self):
@@ -124,12 +124,12 @@ class ReversalOfTransferInConfirmationV09(base_types._BaseFieldType):
 
 	@RvslRefs.setter
 	def RvslRefs(self, value):
-		self._RvslRefs = value if type(value) != base_types.auto else self.make_default("RvslRefs")
+		self._RvslRefs = value if value is not None else base_types.UninitialisedField(self, 'RvslRefs', TransferReference16, True)
 
 	@RvslRefs.deleter
 	def RvslRefs(self):
 		del self._RvslRefs
-		self._RvslRefs = None
+		self._RvslRefs = base_types.UninitialisedField(self, 'RvslRefs', TransferReference16, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CpyDtls', type=CopyInformation5, min=0, max=1, mutex_group=None, array=False),

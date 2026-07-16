@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CreditorReferenceInformation2 import CreditorReferenceInformation2
-from ._CurrencyAndAmount import CurrencyAndAmount
-from ._CurrencyReference3 import CurrencyReference3
-from ._EarlyPayment1 import EarlyPayment1
-from ._ISODate import ISODate
-from ._Max4Text import Max4Text
-from ._Max500Text import Max500Text
-from ._Period2 import Period2
-from ._SettlementSubTotalCalculatedTax2 import SettlementSubTotalCalculatedTax2
+from . import CreditorReferenceInformation2
+from . import CurrencyAndAmount
+from . import CurrencyReference3
+from . import EarlyPayment1
+from . import ISODate
+from . import Max4Text
+from . import Max500Text
+from . import Period2
+from . import SettlementSubTotalCalculatedTax2
 
 class TradeSettlement2(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class TradeSettlement2(base_types._BaseFieldType):
 
 	@BllgPrd.setter
 	def BllgPrd(self, value):
-		self._BllgPrd = value if type(value) != base_types.auto else self.make_default("BllgPrd")
+		self._BllgPrd = value if value is not None else base_types.UninitialisedField(self, 'BllgPrd', Period2, False)
 
 	@BllgPrd.deleter
 	def BllgPrd(self):
 		del self._BllgPrd
-		self._BllgPrd = None
+		self._BllgPrd = base_types.UninitialisedField(self, 'BllgPrd', Period2, False)
 
 	@property
 	def DlvryDt(self):
@@ -34,12 +34,12 @@ class TradeSettlement2(base_types._BaseFieldType):
 
 	@DlvryDt.setter
 	def DlvryDt(self, value):
-		self._DlvryDt = value if type(value) != base_types.auto else self.make_default("DlvryDt")
+		self._DlvryDt = value if value is not None else base_types.UninitialisedField(self, 'DlvryDt', ISODate, False)
 
 	@DlvryDt.deleter
 	def DlvryDt(self):
 		del self._DlvryDt
-		self._DlvryDt = None
+		self._DlvryDt = base_types.UninitialisedField(self, 'DlvryDt', ISODate, False)
 
 	@property
 	def DueDt(self):
@@ -47,12 +47,12 @@ class TradeSettlement2(base_types._BaseFieldType):
 
 	@DueDt.setter
 	def DueDt(self, value):
-		self._DueDt = value if type(value) != base_types.auto else self.make_default("DueDt")
+		self._DueDt = value if value is not None else base_types.UninitialisedField(self, 'DueDt', ISODate, False)
 
 	@DueDt.deleter
 	def DueDt(self):
 		del self._DueDt
-		self._DueDt = None
+		self._DueDt = base_types.UninitialisedField(self, 'DueDt', ISODate, False)
 
 	@property
 	def DuePyblAmt(self):
@@ -60,12 +60,12 @@ class TradeSettlement2(base_types._BaseFieldType):
 
 	@DuePyblAmt.setter
 	def DuePyblAmt(self, value):
-		self._DuePyblAmt = value if type(value) != base_types.auto else self.make_default("DuePyblAmt")
+		self._DuePyblAmt = value if value is not None else base_types.UninitialisedField(self, 'DuePyblAmt', CurrencyAndAmount, False)
 
 	@DuePyblAmt.deleter
 	def DuePyblAmt(self):
 		del self._DuePyblAmt
-		self._DuePyblAmt = None
+		self._DuePyblAmt = base_types.UninitialisedField(self, 'DuePyblAmt', CurrencyAndAmount, False)
 
 	@property
 	def EarlyPmts(self):
@@ -73,12 +73,12 @@ class TradeSettlement2(base_types._BaseFieldType):
 
 	@EarlyPmts.setter
 	def EarlyPmts(self, value):
-		self._EarlyPmts = value if type(value) != base_types.auto else self.make_default("EarlyPmts")
+		self._EarlyPmts = value if value is not None else base_types.UninitialisedField(self, 'EarlyPmts', EarlyPayment1, True)
 
 	@EarlyPmts.deleter
 	def EarlyPmts(self):
 		del self._EarlyPmts
-		self._EarlyPmts = None
+		self._EarlyPmts = base_types.UninitialisedField(self, 'EarlyPmts', EarlyPayment1, True)
 
 	@property
 	def InvcCcyXchg(self):
@@ -86,12 +86,12 @@ class TradeSettlement2(base_types._BaseFieldType):
 
 	@InvcCcyXchg.setter
 	def InvcCcyXchg(self, value):
-		self._InvcCcyXchg = value if type(value) != base_types.auto else self.make_default("InvcCcyXchg")
+		self._InvcCcyXchg = value if value is not None else base_types.UninitialisedField(self, 'InvcCcyXchg', CurrencyReference3, False)
 
 	@InvcCcyXchg.deleter
 	def InvcCcyXchg(self):
 		del self._InvcCcyXchg
-		self._InvcCcyXchg = None
+		self._InvcCcyXchg = base_types.UninitialisedField(self, 'InvcCcyXchg', CurrencyReference3, False)
 
 	@property
 	def PmtRef(self):
@@ -99,12 +99,12 @@ class TradeSettlement2(base_types._BaseFieldType):
 
 	@PmtRef.setter
 	def PmtRef(self, value):
-		self._PmtRef = value if type(value) != base_types.auto else self.make_default("PmtRef")
+		self._PmtRef = value if value is not None else base_types.UninitialisedField(self, 'PmtRef', CreditorReferenceInformation2, False)
 
 	@PmtRef.deleter
 	def PmtRef(self):
 		del self._PmtRef
-		self._PmtRef = None
+		self._PmtRef = base_types.UninitialisedField(self, 'PmtRef', CreditorReferenceInformation2, False)
 
 	@property
 	def SubTtlClctdTax(self):
@@ -112,12 +112,12 @@ class TradeSettlement2(base_types._BaseFieldType):
 
 	@SubTtlClctdTax.setter
 	def SubTtlClctdTax(self, value):
-		self._SubTtlClctdTax = value if type(value) != base_types.auto else self.make_default("SubTtlClctdTax")
+		self._SubTtlClctdTax = value if value is not None else base_types.UninitialisedField(self, 'SubTtlClctdTax', SettlementSubTotalCalculatedTax2, True)
 
 	@SubTtlClctdTax.deleter
 	def SubTtlClctdTax(self):
 		del self._SubTtlClctdTax
-		self._SubTtlClctdTax = None
+		self._SubTtlClctdTax = base_types.UninitialisedField(self, 'SubTtlClctdTax', SettlementSubTotalCalculatedTax2, True)
 
 	@property
 	def TaxTtlAmt(self):
@@ -125,12 +125,12 @@ class TradeSettlement2(base_types._BaseFieldType):
 
 	@TaxTtlAmt.setter
 	def TaxTtlAmt(self, value):
-		self._TaxTtlAmt = value if type(value) != base_types.auto else self.make_default("TaxTtlAmt")
+		self._TaxTtlAmt = value if value is not None else base_types.UninitialisedField(self, 'TaxTtlAmt', CurrencyAndAmount, False)
 
 	@TaxTtlAmt.deleter
 	def TaxTtlAmt(self):
 		del self._TaxTtlAmt
-		self._TaxTtlAmt = None
+		self._TaxTtlAmt = base_types.UninitialisedField(self, 'TaxTtlAmt', CurrencyAndAmount, False)
 
 	@property
 	def XmptnRsn(self):
@@ -138,12 +138,12 @@ class TradeSettlement2(base_types._BaseFieldType):
 
 	@XmptnRsn.setter
 	def XmptnRsn(self, value):
-		self._XmptnRsn = value if type(value) != base_types.auto else self.make_default("XmptnRsn")
+		self._XmptnRsn = value if value is not None else base_types.UninitialisedField(self, 'XmptnRsn', Max500Text, False)
 
 	@XmptnRsn.deleter
 	def XmptnRsn(self):
 		del self._XmptnRsn
-		self._XmptnRsn = None
+		self._XmptnRsn = base_types.UninitialisedField(self, 'XmptnRsn', Max500Text, False)
 
 	@property
 	def XmptnRsnCd(self):
@@ -151,12 +151,12 @@ class TradeSettlement2(base_types._BaseFieldType):
 
 	@XmptnRsnCd.setter
 	def XmptnRsnCd(self, value):
-		self._XmptnRsnCd = value if type(value) != base_types.auto else self.make_default("XmptnRsnCd")
+		self._XmptnRsnCd = value if value is not None else base_types.UninitialisedField(self, 'XmptnRsnCd', Max4Text, False)
 
 	@XmptnRsnCd.deleter
 	def XmptnRsnCd(self):
 		del self._XmptnRsnCd
-		self._XmptnRsnCd = None
+		self._XmptnRsnCd = base_types.UninitialisedField(self, 'XmptnRsnCd', Max4Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BllgPrd', type=Period2, min=0, max=1, mutex_group=None, array=False),

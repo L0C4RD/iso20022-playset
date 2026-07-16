@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max10000Binary import Max10000Binary
-from ._Max35Text import Max35Text
-from ._OnLinePIN5 import OnLinePIN5
-from ._TransactionIdentifier3 import TransactionIdentifier3
+from . import Max10000Binary
+from . import Max35Text
+from . import OnLinePIN5
+from . import TransactionIdentifier3
 
 class ATMTransaction43(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ATMTransaction43(base_types._BaseFieldType):
 
 	@CrdhldrNewPIN.setter
 	def CrdhldrNewPIN(self, value):
-		self._CrdhldrNewPIN = value if type(value) != base_types.auto else self.make_default("CrdhldrNewPIN")
+		self._CrdhldrNewPIN = value if value is not None else base_types.UninitialisedField(self, 'CrdhldrNewPIN', OnLinePIN5, False)
 
 	@CrdhldrNewPIN.deleter
 	def CrdhldrNewPIN(self):
 		del self._CrdhldrNewPIN
-		self._CrdhldrNewPIN = None
+		self._CrdhldrNewPIN = base_types.UninitialisedField(self, 'CrdhldrNewPIN', OnLinePIN5, False)
 
 	@property
 	def ICCRltdData(self):
@@ -29,12 +29,12 @@ class ATMTransaction43(base_types._BaseFieldType):
 
 	@ICCRltdData.setter
 	def ICCRltdData(self, value):
-		self._ICCRltdData = value if type(value) != base_types.auto else self.make_default("ICCRltdData")
+		self._ICCRltdData = value if value is not None else base_types.UninitialisedField(self, 'ICCRltdData', Max10000Binary, False)
 
 	@ICCRltdData.deleter
 	def ICCRltdData(self):
 		del self._ICCRltdData
-		self._ICCRltdData = None
+		self._ICCRltdData = base_types.UninitialisedField(self, 'ICCRltdData', Max10000Binary, False)
 
 	@property
 	def RcncltnId(self):
@@ -42,12 +42,12 @@ class ATMTransaction43(base_types._BaseFieldType):
 
 	@RcncltnId.setter
 	def RcncltnId(self, value):
-		self._RcncltnId = value if type(value) != base_types.auto else self.make_default("RcncltnId")
+		self._RcncltnId = value if value is not None else base_types.UninitialisedField(self, 'RcncltnId', Max35Text, False)
 
 	@RcncltnId.deleter
 	def RcncltnId(self):
 		del self._RcncltnId
-		self._RcncltnId = None
+		self._RcncltnId = base_types.UninitialisedField(self, 'RcncltnId', Max35Text, False)
 
 	@property
 	def TxId(self):
@@ -55,12 +55,12 @@ class ATMTransaction43(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', TransactionIdentifier3, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', TransactionIdentifier3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CrdhldrNewPIN', type=OnLinePIN5, min=0, max=1, mutex_group=None, array=False),

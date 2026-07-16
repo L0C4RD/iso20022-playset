@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max100KBinary import Max100KBinary
-from ._NetworkParameters7 import NetworkParameters7
-from ._Number import Number
+from . import Max100KBinary
+from . import NetworkParameters7
+from . import Number
 
 class DeviceTransmitMessageRequest2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class DeviceTransmitMessageRequest2(base_types._BaseFieldType):
 
 	@DstnAdr.setter
 	def DstnAdr(self, value):
-		self._DstnAdr = value if type(value) != base_types.auto else self.make_default("DstnAdr")
+		self._DstnAdr = value if value is not None else base_types.UninitialisedField(self, 'DstnAdr', NetworkParameters7, False)
 
 	@DstnAdr.deleter
 	def DstnAdr(self):
 		del self._DstnAdr
-		self._DstnAdr = None
+		self._DstnAdr = base_types.UninitialisedField(self, 'DstnAdr', NetworkParameters7, False)
 
 	@property
 	def MaxTrnsmssnTm(self):
@@ -28,12 +28,12 @@ class DeviceTransmitMessageRequest2(base_types._BaseFieldType):
 
 	@MaxTrnsmssnTm.setter
 	def MaxTrnsmssnTm(self, value):
-		self._MaxTrnsmssnTm = value if type(value) != base_types.auto else self.make_default("MaxTrnsmssnTm")
+		self._MaxTrnsmssnTm = value if value is not None else base_types.UninitialisedField(self, 'MaxTrnsmssnTm', Number, False)
 
 	@MaxTrnsmssnTm.deleter
 	def MaxTrnsmssnTm(self):
 		del self._MaxTrnsmssnTm
-		self._MaxTrnsmssnTm = None
+		self._MaxTrnsmssnTm = base_types.UninitialisedField(self, 'MaxTrnsmssnTm', Number, False)
 
 	@property
 	def MaxWtgTm(self):
@@ -41,12 +41,12 @@ class DeviceTransmitMessageRequest2(base_types._BaseFieldType):
 
 	@MaxWtgTm.setter
 	def MaxWtgTm(self, value):
-		self._MaxWtgTm = value if type(value) != base_types.auto else self.make_default("MaxWtgTm")
+		self._MaxWtgTm = value if value is not None else base_types.UninitialisedField(self, 'MaxWtgTm', Number, False)
 
 	@MaxWtgTm.deleter
 	def MaxWtgTm(self):
 		del self._MaxWtgTm
-		self._MaxWtgTm = None
+		self._MaxWtgTm = base_types.UninitialisedField(self, 'MaxWtgTm', Number, False)
 
 	@property
 	def MsgToSnd(self):
@@ -54,12 +54,12 @@ class DeviceTransmitMessageRequest2(base_types._BaseFieldType):
 
 	@MsgToSnd.setter
 	def MsgToSnd(self, value):
-		self._MsgToSnd = value if type(value) != base_types.auto else self.make_default("MsgToSnd")
+		self._MsgToSnd = value if value is not None else base_types.UninitialisedField(self, 'MsgToSnd', Max100KBinary, False)
 
 	@MsgToSnd.deleter
 	def MsgToSnd(self):
 		del self._MsgToSnd
-		self._MsgToSnd = None
+		self._MsgToSnd = base_types.UninitialisedField(self, 'MsgToSnd', Max100KBinary, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DstnAdr', type=NetworkParameters7, min=1, max=1, mutex_group=None, array=False),

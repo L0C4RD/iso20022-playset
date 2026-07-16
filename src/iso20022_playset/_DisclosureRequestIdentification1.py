@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateFormat46Choice import DateFormat46Choice
-from ._Max35Text import Max35Text
-from ._SecurityIdentification19 import SecurityIdentification19
+from . import DateFormat46Choice
+from . import Max35Text
+from . import SecurityIdentification19
 
 class DisclosureRequestIdentification1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class DisclosureRequestIdentification1(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
 		del self._FinInstrmId
-		self._FinInstrmId = None
+		self._FinInstrmId = base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@property
 	def IssrDsclsrReqId(self):
@@ -28,12 +28,12 @@ class DisclosureRequestIdentification1(base_types._BaseFieldType):
 
 	@IssrDsclsrReqId.setter
 	def IssrDsclsrReqId(self, value):
-		self._IssrDsclsrReqId = value if type(value) != base_types.auto else self.make_default("IssrDsclsrReqId")
+		self._IssrDsclsrReqId = value if value is not None else base_types.UninitialisedField(self, 'IssrDsclsrReqId', Max35Text, False)
 
 	@IssrDsclsrReqId.deleter
 	def IssrDsclsrReqId(self):
 		del self._IssrDsclsrReqId
-		self._IssrDsclsrReqId = None
+		self._IssrDsclsrReqId = base_types.UninitialisedField(self, 'IssrDsclsrReqId', Max35Text, False)
 
 	@property
 	def ShrhldrsDsclsrRcrdDt(self):
@@ -41,12 +41,12 @@ class DisclosureRequestIdentification1(base_types._BaseFieldType):
 
 	@ShrhldrsDsclsrRcrdDt.setter
 	def ShrhldrsDsclsrRcrdDt(self, value):
-		self._ShrhldrsDsclsrRcrdDt = value if type(value) != base_types.auto else self.make_default("ShrhldrsDsclsrRcrdDt")
+		self._ShrhldrsDsclsrRcrdDt = value if value is not None else base_types.UninitialisedField(self, 'ShrhldrsDsclsrRcrdDt', DateFormat46Choice, False)
 
 	@ShrhldrsDsclsrRcrdDt.deleter
 	def ShrhldrsDsclsrRcrdDt(self):
 		del self._ShrhldrsDsclsrRcrdDt
-		self._ShrhldrsDsclsrRcrdDt = None
+		self._ShrhldrsDsclsrRcrdDt = base_types.UninitialisedField(self, 'ShrhldrsDsclsrRcrdDt', DateFormat46Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max10KText import Max10KText
-from ._Max35Text import Max35Text
-from ._PartyType28Code import PartyType28Code
+from . import Max10KText
+from . import Max35Text
+from . import PartyType28Code
 
 class RiskInputData2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class RiskInputData2(base_types._BaseFieldType):
 
 	@NttyTp.setter
 	def NttyTp(self, value):
-		self._NttyTp = value if type(value) != base_types.auto else self.make_default("NttyTp")
+		self._NttyTp = value if value is not None else base_types.UninitialisedField(self, 'NttyTp', PartyType28Code, False)
 
 	@NttyTp.deleter
 	def NttyTp(self):
 		del self._NttyTp
-		self._NttyTp = None
+		self._NttyTp = base_types.UninitialisedField(self, 'NttyTp', PartyType28Code, False)
 
 	@property
 	def OthrNttyTp(self):
@@ -28,12 +28,12 @@ class RiskInputData2(base_types._BaseFieldType):
 
 	@OthrNttyTp.setter
 	def OthrNttyTp(self, value):
-		self._OthrNttyTp = value if type(value) != base_types.auto else self.make_default("OthrNttyTp")
+		self._OthrNttyTp = value if value is not None else base_types.UninitialisedField(self, 'OthrNttyTp', Max35Text, False)
 
 	@OthrNttyTp.deleter
 	def OthrNttyTp(self):
 		del self._OthrNttyTp
-		self._OthrNttyTp = None
+		self._OthrNttyTp = base_types.UninitialisedField(self, 'OthrNttyTp', Max35Text, False)
 
 	@property
 	def Tp(self):
@@ -41,12 +41,12 @@ class RiskInputData2(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', Max35Text, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', Max35Text, False)
 
 	@property
 	def Val(self):
@@ -54,12 +54,12 @@ class RiskInputData2(base_types._BaseFieldType):
 
 	@Val.setter
 	def Val(self, value):
-		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
+		self._Val = value if value is not None else base_types.UninitialisedField(self, 'Val', Max10KText, False)
 
 	@Val.deleter
 	def Val(self):
 		del self._Val
-		self._Val = None
+		self._Val = base_types.UninitialisedField(self, 'Val', Max10KText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NttyTp', type=PartyType28Code, min=0, max=1, mutex_group=None, array=False),

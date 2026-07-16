@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ReturnBusinessDayInformationV07 import ReturnBusinessDayInformationV07
+from . import ReturnBusinessDayInformationV07
 
 class CAMT_019_001_07():
 
@@ -18,12 +18,12 @@ class CAMT_019_001_07():
 
 		@RtrBizDayInf.setter
 		def RtrBizDayInf(self, value):
-			self._RtrBizDayInf = value if type(value) != base_types.auto else self.make_default("RtrBizDayInf")
+			self._RtrBizDayInf = value if value is not None else base_types.UninitialisedField(self, 'RtrBizDayInf', ReturnBusinessDayInformationV07, False)
 
 		@RtrBizDayInf.deleter
 		def RtrBizDayInf(self):
 			del self._RtrBizDayInf
-			self._RtrBizDayInf = None
+			self._RtrBizDayInf = base_types.UninitialisedField(self, 'RtrBizDayInf', ReturnBusinessDayInformationV07, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='RtrBizDayInf', type=ReturnBusinessDayInformationV07, min=1, max=1, mutex_group=None, array=False),

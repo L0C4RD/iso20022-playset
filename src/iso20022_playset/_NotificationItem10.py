@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CashAccount40 import CashAccount40
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
-from ._Party50Choice import Party50Choice
-from ._Purpose2Choice import Purpose2Choice
-from ._RemittanceInformation26 import RemittanceInformation26
-from ._RemittanceLocation8 import RemittanceLocation8
-from ._TransactionAllocation2 import TransactionAllocation2
-from ._UUIDv4Identifier import UUIDv4Identifier
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import BranchAndFinancialInstitutionIdentification8
+from . import CashAccount40
+from . import ISODate
+from . import Max35Text
+from . import Party50Choice
+from . import Purpose2Choice
+from . import RemittanceInformation26
+from . import RemittanceLocation8
+from . import TransactionAllocation2
+from . import UUIDv4Identifier
 
 class NotificationItem10(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class NotificationItem10(base_types._BaseFieldType):
 
 	@Acct.setter
 	def Acct(self, value):
-		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
+		self._Acct = value if value is not None else base_types.UninitialisedField(self, 'Acct', CashAccount40, False)
 
 	@Acct.deleter
 	def Acct(self):
 		del self._Acct
-		self._Acct = None
+		self._Acct = base_types.UninitialisedField(self, 'Acct', CashAccount40, False)
 
 	@property
 	def AcctOwnr(self):
@@ -36,12 +36,12 @@ class NotificationItem10(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', Party50Choice, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', Party50Choice, False)
 
 	@property
 	def AcctSvcr(self):
@@ -49,12 +49,12 @@ class NotificationItem10(base_types._BaseFieldType):
 
 	@AcctSvcr.setter
 	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
+		self._AcctSvcr = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@AcctSvcr.deleter
 	def AcctSvcr(self):
 		del self._AcctSvcr
-		self._AcctSvcr = None
+		self._AcctSvcr = base_types.UninitialisedField(self, 'AcctSvcr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def Amt(self):
@@ -62,12 +62,12 @@ class NotificationItem10(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def Dbtr(self):
@@ -75,12 +75,12 @@ class NotificationItem10(base_types._BaseFieldType):
 
 	@Dbtr.setter
 	def Dbtr(self, value):
-		self._Dbtr = value if type(value) != base_types.auto else self.make_default("Dbtr")
+		self._Dbtr = value if value is not None else base_types.UninitialisedField(self, 'Dbtr', Party50Choice, False)
 
 	@Dbtr.deleter
 	def Dbtr(self):
 		del self._Dbtr
-		self._Dbtr = None
+		self._Dbtr = base_types.UninitialisedField(self, 'Dbtr', Party50Choice, False)
 
 	@property
 	def DbtrAgt(self):
@@ -88,12 +88,12 @@ class NotificationItem10(base_types._BaseFieldType):
 
 	@DbtrAgt.setter
 	def DbtrAgt(self, value):
-		self._DbtrAgt = value if type(value) != base_types.auto else self.make_default("DbtrAgt")
+		self._DbtrAgt = value if value is not None else base_types.UninitialisedField(self, 'DbtrAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@DbtrAgt.deleter
 	def DbtrAgt(self):
 		del self._DbtrAgt
-		self._DbtrAgt = None
+		self._DbtrAgt = base_types.UninitialisedField(self, 'DbtrAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def EndToEndId(self):
@@ -101,12 +101,12 @@ class NotificationItem10(base_types._BaseFieldType):
 
 	@EndToEndId.setter
 	def EndToEndId(self, value):
-		self._EndToEndId = value if type(value) != base_types.auto else self.make_default("EndToEndId")
+		self._EndToEndId = value if value is not None else base_types.UninitialisedField(self, 'EndToEndId', Max35Text, False)
 
 	@EndToEndId.deleter
 	def EndToEndId(self):
 		del self._EndToEndId
-		self._EndToEndId = None
+		self._EndToEndId = base_types.UninitialisedField(self, 'EndToEndId', Max35Text, False)
 
 	@property
 	def Id(self):
@@ -114,12 +114,12 @@ class NotificationItem10(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def IntrmyAgt(self):
@@ -127,12 +127,12 @@ class NotificationItem10(base_types._BaseFieldType):
 
 	@IntrmyAgt.setter
 	def IntrmyAgt(self, value):
-		self._IntrmyAgt = value if type(value) != base_types.auto else self.make_default("IntrmyAgt")
+		self._IntrmyAgt = value if value is not None else base_types.UninitialisedField(self, 'IntrmyAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@IntrmyAgt.deleter
 	def IntrmyAgt(self):
 		del self._IntrmyAgt
-		self._IntrmyAgt = None
+		self._IntrmyAgt = base_types.UninitialisedField(self, 'IntrmyAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def Purp(self):
@@ -140,12 +140,12 @@ class NotificationItem10(base_types._BaseFieldType):
 
 	@Purp.setter
 	def Purp(self, value):
-		self._Purp = value if type(value) != base_types.auto else self.make_default("Purp")
+		self._Purp = value if value is not None else base_types.UninitialisedField(self, 'Purp', Purpose2Choice, False)
 
 	@Purp.deleter
 	def Purp(self):
 		del self._Purp
-		self._Purp = None
+		self._Purp = base_types.UninitialisedField(self, 'Purp', Purpose2Choice, False)
 
 	@property
 	def RltdAcct(self):
@@ -153,12 +153,12 @@ class NotificationItem10(base_types._BaseFieldType):
 
 	@RltdAcct.setter
 	def RltdAcct(self, value):
-		self._RltdAcct = value if type(value) != base_types.auto else self.make_default("RltdAcct")
+		self._RltdAcct = value if value is not None else base_types.UninitialisedField(self, 'RltdAcct', CashAccount40, False)
 
 	@RltdAcct.deleter
 	def RltdAcct(self):
 		del self._RltdAcct
-		self._RltdAcct = None
+		self._RltdAcct = base_types.UninitialisedField(self, 'RltdAcct', CashAccount40, False)
 
 	@property
 	def RltdRmtInf(self):
@@ -166,12 +166,12 @@ class NotificationItem10(base_types._BaseFieldType):
 
 	@RltdRmtInf.setter
 	def RltdRmtInf(self, value):
-		self._RltdRmtInf = value if type(value) != base_types.auto else self.make_default("RltdRmtInf")
+		self._RltdRmtInf = value if value is not None else base_types.UninitialisedField(self, 'RltdRmtInf', RemittanceLocation8, False)
 
 	@RltdRmtInf.deleter
 	def RltdRmtInf(self):
 		del self._RltdRmtInf
-		self._RltdRmtInf = None
+		self._RltdRmtInf = base_types.UninitialisedField(self, 'RltdRmtInf', RemittanceLocation8, False)
 
 	@property
 	def RmtInf(self):
@@ -179,12 +179,12 @@ class NotificationItem10(base_types._BaseFieldType):
 
 	@RmtInf.setter
 	def RmtInf(self, value):
-		self._RmtInf = value if type(value) != base_types.auto else self.make_default("RmtInf")
+		self._RmtInf = value if value is not None else base_types.UninitialisedField(self, 'RmtInf', RemittanceInformation26, False)
 
 	@RmtInf.deleter
 	def RmtInf(self):
 		del self._RmtInf
-		self._RmtInf = None
+		self._RmtInf = base_types.UninitialisedField(self, 'RmtInf', RemittanceInformation26, False)
 
 	@property
 	def UETR(self):
@@ -192,12 +192,12 @@ class NotificationItem10(base_types._BaseFieldType):
 
 	@UETR.setter
 	def UETR(self, value):
-		self._UETR = value if type(value) != base_types.auto else self.make_default("UETR")
+		self._UETR = value if value is not None else base_types.UninitialisedField(self, 'UETR', UUIDv4Identifier, False)
 
 	@UETR.deleter
 	def UETR(self):
 		del self._UETR
-		self._UETR = None
+		self._UETR = base_types.UninitialisedField(self, 'UETR', UUIDv4Identifier, False)
 
 	@property
 	def UndrlygAllcn(self):
@@ -205,12 +205,12 @@ class NotificationItem10(base_types._BaseFieldType):
 
 	@UndrlygAllcn.setter
 	def UndrlygAllcn(self, value):
-		self._UndrlygAllcn = value if type(value) != base_types.auto else self.make_default("UndrlygAllcn")
+		self._UndrlygAllcn = value if value is not None else base_types.UninitialisedField(self, 'UndrlygAllcn', TransactionAllocation2, True)
 
 	@UndrlygAllcn.deleter
 	def UndrlygAllcn(self):
 		del self._UndrlygAllcn
-		self._UndrlygAllcn = None
+		self._UndrlygAllcn = base_types.UninitialisedField(self, 'UndrlygAllcn', TransactionAllocation2, True)
 
 	@property
 	def XpctdValDt(self):
@@ -218,12 +218,12 @@ class NotificationItem10(base_types._BaseFieldType):
 
 	@XpctdValDt.setter
 	def XpctdValDt(self, value):
-		self._XpctdValDt = value if type(value) != base_types.auto else self.make_default("XpctdValDt")
+		self._XpctdValDt = value if value is not None else base_types.UninitialisedField(self, 'XpctdValDt', ISODate, False)
 
 	@XpctdValDt.deleter
 	def XpctdValDt(self):
 		del self._XpctdValDt
-		self._XpctdValDt = None
+		self._XpctdValDt = base_types.UninitialisedField(self, 'XpctdValDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),

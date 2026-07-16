@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._CashAccount18 import CashAccount18
-from ._DateAndDateTimeChoice import DateAndDateTimeChoice
-from ._ISODate import ISODate
+from . import ActiveCurrencyAndAmount
+from . import CashAccount18
+from . import DateAndDateTimeChoice
+from . import ISODate
 
 class CashMovement3(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CashMovement3(base_types._BaseFieldType):
 
 	@AcctDtls.setter
 	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != base_types.auto else self.make_default("AcctDtls")
+		self._AcctDtls = value if value is not None else base_types.UninitialisedField(self, 'AcctDtls', CashAccount18, False)
 
 	@AcctDtls.deleter
 	def AcctDtls(self):
 		del self._AcctDtls
-		self._AcctDtls = None
+		self._AcctDtls = base_types.UninitialisedField(self, 'AcctDtls', CashAccount18, False)
 
 	@property
 	def PstngAmt(self):
@@ -29,12 +29,12 @@ class CashMovement3(base_types._BaseFieldType):
 
 	@PstngAmt.setter
 	def PstngAmt(self, value):
-		self._PstngAmt = value if type(value) != base_types.auto else self.make_default("PstngAmt")
+		self._PstngAmt = value if value is not None else base_types.UninitialisedField(self, 'PstngAmt', ActiveCurrencyAndAmount, False)
 
 	@PstngAmt.deleter
 	def PstngAmt(self):
 		del self._PstngAmt
-		self._PstngAmt = None
+		self._PstngAmt = base_types.UninitialisedField(self, 'PstngAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def PstngDtTm(self):
@@ -42,12 +42,12 @@ class CashMovement3(base_types._BaseFieldType):
 
 	@PstngDtTm.setter
 	def PstngDtTm(self, value):
-		self._PstngDtTm = value if type(value) != base_types.auto else self.make_default("PstngDtTm")
+		self._PstngDtTm = value if value is not None else base_types.UninitialisedField(self, 'PstngDtTm', DateAndDateTimeChoice, False)
 
 	@PstngDtTm.deleter
 	def PstngDtTm(self):
 		del self._PstngDtTm
-		self._PstngDtTm = None
+		self._PstngDtTm = base_types.UninitialisedField(self, 'PstngDtTm', DateAndDateTimeChoice, False)
 
 	@property
 	def ValDt(self):
@@ -55,12 +55,12 @@ class CashMovement3(base_types._BaseFieldType):
 
 	@ValDt.setter
 	def ValDt(self, value):
-		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
+		self._ValDt = value if value is not None else base_types.UninitialisedField(self, 'ValDt', ISODate, False)
 
 	@ValDt.deleter
 	def ValDt(self):
 		del self._ValDt
-		self._ValDt = None
+		self._ValDt = base_types.UninitialisedField(self, 'ValDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctDtls', type=CashAccount18, min=1, max=2, mutex_group=None, array=False),

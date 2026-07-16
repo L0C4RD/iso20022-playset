@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalData1 import AdditionalData1
-from ._AdditionalRiskData1 import AdditionalRiskData1
-from ._ISO3NumericCountryCode import ISO3NumericCountryCode
-from ._Max35Text import Max35Text
-from ._PartyType18Code import PartyType18Code
-from ._PartyType28Code import PartyType28Code
-from ._RecommendationAction1 import RecommendationAction1
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import AdditionalData1
+from . import AdditionalRiskData1
+from . import ISO3NumericCountryCode
+from . import Max35Text
+from . import PartyType18Code
+from . import PartyType28Code
+from . import RecommendationAction1
+from . import TrueFalseIndicator
 
 class RiskAssessment3(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class RiskAssessment3(base_types._BaseFieldType):
 
 	@AddtlData.setter
 	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+		self._AddtlData = value if value is not None else base_types.UninitialisedField(self, 'AddtlData', AdditionalRiskData1, True)
 
 	@AddtlData.deleter
 	def AddtlData(self):
 		del self._AddtlData
-		self._AddtlData = None
+		self._AddtlData = base_types.UninitialisedField(self, 'AddtlData', AdditionalRiskData1, True)
 
 	@property
 	def Cond(self):
@@ -33,12 +33,12 @@ class RiskAssessment3(base_types._BaseFieldType):
 
 	@Cond.setter
 	def Cond(self, value):
-		self._Cond = value if type(value) != base_types.auto else self.make_default("Cond")
+		self._Cond = value if value is not None else base_types.UninitialisedField(self, 'Cond', AdditionalData1, True)
 
 	@Cond.deleter
 	def Cond(self):
 		del self._Cond
-		self._Cond = None
+		self._Cond = base_types.UninitialisedField(self, 'Cond', AdditionalData1, True)
 
 	@property
 	def HghRskTx(self):
@@ -46,12 +46,12 @@ class RiskAssessment3(base_types._BaseFieldType):
 
 	@HghRskTx.setter
 	def HghRskTx(self, value):
-		self._HghRskTx = value if type(value) != base_types.auto else self.make_default("HghRskTx")
+		self._HghRskTx = value if value is not None else base_types.UninitialisedField(self, 'HghRskTx', TrueFalseIndicator, False)
 
 	@HghRskTx.deleter
 	def HghRskTx(self):
 		del self._HghRskTx
-		self._HghRskTx = None
+		self._HghRskTx = base_types.UninitialisedField(self, 'HghRskTx', TrueFalseIndicator, False)
 
 	@property
 	def NttyAssgnr(self):
@@ -59,12 +59,12 @@ class RiskAssessment3(base_types._BaseFieldType):
 
 	@NttyAssgnr.setter
 	def NttyAssgnr(self, value):
-		self._NttyAssgnr = value if type(value) != base_types.auto else self.make_default("NttyAssgnr")
+		self._NttyAssgnr = value if value is not None else base_types.UninitialisedField(self, 'NttyAssgnr', PartyType18Code, False)
 
 	@NttyAssgnr.deleter
 	def NttyAssgnr(self):
 		del self._NttyAssgnr
-		self._NttyAssgnr = None
+		self._NttyAssgnr = base_types.UninitialisedField(self, 'NttyAssgnr', PartyType18Code, False)
 
 	@property
 	def NttyCtry(self):
@@ -72,12 +72,12 @@ class RiskAssessment3(base_types._BaseFieldType):
 
 	@NttyCtry.setter
 	def NttyCtry(self, value):
-		self._NttyCtry = value if type(value) != base_types.auto else self.make_default("NttyCtry")
+		self._NttyCtry = value if value is not None else base_types.UninitialisedField(self, 'NttyCtry', ISO3NumericCountryCode, False)
 
 	@NttyCtry.deleter
 	def NttyCtry(self):
 		del self._NttyCtry
-		self._NttyCtry = None
+		self._NttyCtry = base_types.UninitialisedField(self, 'NttyCtry', ISO3NumericCountryCode, False)
 
 	@property
 	def NttyId(self):
@@ -85,12 +85,12 @@ class RiskAssessment3(base_types._BaseFieldType):
 
 	@NttyId.setter
 	def NttyId(self, value):
-		self._NttyId = value if type(value) != base_types.auto else self.make_default("NttyId")
+		self._NttyId = value if value is not None else base_types.UninitialisedField(self, 'NttyId', Max35Text, False)
 
 	@NttyId.deleter
 	def NttyId(self):
 		del self._NttyId
-		self._NttyId = None
+		self._NttyId = base_types.UninitialisedField(self, 'NttyId', Max35Text, False)
 
 	@property
 	def NttyShrtNm(self):
@@ -98,12 +98,12 @@ class RiskAssessment3(base_types._BaseFieldType):
 
 	@NttyShrtNm.setter
 	def NttyShrtNm(self, value):
-		self._NttyShrtNm = value if type(value) != base_types.auto else self.make_default("NttyShrtNm")
+		self._NttyShrtNm = value if value is not None else base_types.UninitialisedField(self, 'NttyShrtNm', Max35Text, False)
 
 	@NttyShrtNm.deleter
 	def NttyShrtNm(self):
 		del self._NttyShrtNm
-		self._NttyShrtNm = None
+		self._NttyShrtNm = base_types.UninitialisedField(self, 'NttyShrtNm', Max35Text, False)
 
 	@property
 	def NttyTp(self):
@@ -111,12 +111,12 @@ class RiskAssessment3(base_types._BaseFieldType):
 
 	@NttyTp.setter
 	def NttyTp(self, value):
-		self._NttyTp = value if type(value) != base_types.auto else self.make_default("NttyTp")
+		self._NttyTp = value if value is not None else base_types.UninitialisedField(self, 'NttyTp', PartyType28Code, False)
 
 	@NttyTp.deleter
 	def NttyTp(self):
 		del self._NttyTp
-		self._NttyTp = None
+		self._NttyTp = base_types.UninitialisedField(self, 'NttyTp', PartyType28Code, False)
 
 	@property
 	def OthrNttyTp(self):
@@ -124,12 +124,12 @@ class RiskAssessment3(base_types._BaseFieldType):
 
 	@OthrNttyTp.setter
 	def OthrNttyTp(self, value):
-		self._OthrNttyTp = value if type(value) != base_types.auto else self.make_default("OthrNttyTp")
+		self._OthrNttyTp = value if value is not None else base_types.UninitialisedField(self, 'OthrNttyTp', Max35Text, False)
 
 	@OthrNttyTp.deleter
 	def OthrNttyTp(self):
 		del self._OthrNttyTp
-		self._OthrNttyTp = None
+		self._OthrNttyTp = base_types.UninitialisedField(self, 'OthrNttyTp', Max35Text, False)
 
 	@property
 	def Rcmmndtn(self):
@@ -137,12 +137,12 @@ class RiskAssessment3(base_types._BaseFieldType):
 
 	@Rcmmndtn.setter
 	def Rcmmndtn(self, value):
-		self._Rcmmndtn = value if type(value) != base_types.auto else self.make_default("Rcmmndtn")
+		self._Rcmmndtn = value if value is not None else base_types.UninitialisedField(self, 'Rcmmndtn', RecommendationAction1, True)
 
 	@Rcmmndtn.deleter
 	def Rcmmndtn(self):
 		del self._Rcmmndtn
-		self._Rcmmndtn = None
+		self._Rcmmndtn = base_types.UninitialisedField(self, 'Rcmmndtn', RecommendationAction1, True)
 
 	@property
 	def Rslt(self):
@@ -150,12 +150,12 @@ class RiskAssessment3(base_types._BaseFieldType):
 
 	@Rslt.setter
 	def Rslt(self, value):
-		self._Rslt = value if type(value) != base_types.auto else self.make_default("Rslt")
+		self._Rslt = value if value is not None else base_types.UninitialisedField(self, 'Rslt', Max35Text, False)
 
 	@Rslt.deleter
 	def Rslt(self):
 		del self._Rslt
-		self._Rslt = None
+		self._Rslt = base_types.UninitialisedField(self, 'Rslt', Max35Text, False)
 
 	@property
 	def Rsn(self):
@@ -163,12 +163,12 @@ class RiskAssessment3(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', Max35Text, True)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', Max35Text, True)
 
 	@property
 	def Tp(self):
@@ -176,12 +176,12 @@ class RiskAssessment3(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', Max35Text, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlData', type=AdditionalRiskData1, min=0, max=None, mutex_group=None, array=True),

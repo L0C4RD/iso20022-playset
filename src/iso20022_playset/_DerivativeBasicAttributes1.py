@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._YesNoIndicator import YesNoIndicator
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import YesNoIndicator
 
 class DerivativeBasicAttributes1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DerivativeBasicAttributes1(base_types._BaseFieldType):
 
 	@IntrstInclInPric.setter
 	def IntrstInclInPric(self, value):
-		self._IntrstInclInPric = value if type(value) != base_types.auto else self.make_default("IntrstInclInPric")
+		self._IntrstInclInPric = value if value is not None else base_types.UninitialisedField(self, 'IntrstInclInPric', YesNoIndicator, False)
 
 	@IntrstInclInPric.deleter
 	def IntrstInclInPric(self):
 		del self._IntrstInclInPric
-		self._IntrstInclInPric = None
+		self._IntrstInclInPric = base_types.UninitialisedField(self, 'IntrstInclInPric', YesNoIndicator, False)
 
 	@property
 	def NtnlCcyAndAmt(self):
@@ -27,12 +27,12 @@ class DerivativeBasicAttributes1(base_types._BaseFieldType):
 
 	@NtnlCcyAndAmt.setter
 	def NtnlCcyAndAmt(self, value):
-		self._NtnlCcyAndAmt = value if type(value) != base_types.auto else self.make_default("NtnlCcyAndAmt")
+		self._NtnlCcyAndAmt = value if value is not None else base_types.UninitialisedField(self, 'NtnlCcyAndAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@NtnlCcyAndAmt.deleter
 	def NtnlCcyAndAmt(self):
 		del self._NtnlCcyAndAmt
-		self._NtnlCcyAndAmt = None
+		self._NtnlCcyAndAmt = base_types.UninitialisedField(self, 'NtnlCcyAndAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IntrstInclInPric', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),

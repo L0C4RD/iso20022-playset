@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Direction2 import Direction2
-from ._OptionParty1Code import OptionParty1Code
+from . import Direction2
+from . import OptionParty1Code
 
 class Direction4Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Direction4Choice(base_types._BaseFieldType):
 
 	@CtrPtySd.setter
 	def CtrPtySd(self, value):
-		self._CtrPtySd = value if type(value) != base_types.auto else self.make_default("CtrPtySd")
+		self._CtrPtySd = value if value is not None else base_types.UninitialisedField(self, 'CtrPtySd', OptionParty1Code, False)
 
 	@CtrPtySd.deleter
 	def CtrPtySd(self):
 		del self._CtrPtySd
-		self._CtrPtySd = None
+		self._CtrPtySd = base_types.UninitialisedField(self, 'CtrPtySd', OptionParty1Code, False)
 
 	@property
 	def Drctn(self):
@@ -27,12 +27,12 @@ class Direction4Choice(base_types._BaseFieldType):
 
 	@Drctn.setter
 	def Drctn(self, value):
-		self._Drctn = value if type(value) != base_types.auto else self.make_default("Drctn")
+		self._Drctn = value if value is not None else base_types.UninitialisedField(self, 'Drctn', Direction2, False)
 
 	@Drctn.deleter
 	def Drctn(self):
 		del self._Drctn
-		self._Drctn = None
+		self._Drctn = base_types.UninitialisedField(self, 'Drctn', Direction2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrPtySd', type=OptionParty1Code, min=0, max=1, mutex_group=1, array=False),

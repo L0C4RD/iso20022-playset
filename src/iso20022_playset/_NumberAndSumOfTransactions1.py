@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DecimalNumber import DecimalNumber
-from ._Max15NumericText import Max15NumericText
+from . import DecimalNumber
+from . import Max15NumericText
 
 class NumberAndSumOfTransactions1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class NumberAndSumOfTransactions1(base_types._BaseFieldType):
 
 	@NbOfNtries.setter
 	def NbOfNtries(self, value):
-		self._NbOfNtries = value if type(value) != base_types.auto else self.make_default("NbOfNtries")
+		self._NbOfNtries = value if value is not None else base_types.UninitialisedField(self, 'NbOfNtries', Max15NumericText, False)
 
 	@NbOfNtries.deleter
 	def NbOfNtries(self):
 		del self._NbOfNtries
-		self._NbOfNtries = None
+		self._NbOfNtries = base_types.UninitialisedField(self, 'NbOfNtries', Max15NumericText, False)
 
 	@property
 	def Sum(self):
@@ -27,12 +27,12 @@ class NumberAndSumOfTransactions1(base_types._BaseFieldType):
 
 	@Sum.setter
 	def Sum(self, value):
-		self._Sum = value if type(value) != base_types.auto else self.make_default("Sum")
+		self._Sum = value if value is not None else base_types.UninitialisedField(self, 'Sum', DecimalNumber, False)
 
 	@Sum.deleter
 	def Sum(self):
 		del self._Sum
-		self._Sum = None
+		self._Sum = base_types.UninitialisedField(self, 'Sum', DecimalNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NbOfNtries', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),

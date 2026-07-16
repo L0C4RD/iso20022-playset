@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMStatus1Code import ATMStatus1Code
-from ._Max35Text import Max35Text
+from . import ATMStatus1Code
+from . import Max35Text
 
 class ATMStatus2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ATMStatus2(base_types._BaseFieldType):
 
 	@CurSts.setter
 	def CurSts(self, value):
-		self._CurSts = value if type(value) != base_types.auto else self.make_default("CurSts")
+		self._CurSts = value if value is not None else base_types.UninitialisedField(self, 'CurSts', ATMStatus1Code, False)
 
 	@CurSts.deleter
 	def CurSts(self):
 		del self._CurSts
-		self._CurSts = None
+		self._CurSts = base_types.UninitialisedField(self, 'CurSts', ATMStatus1Code, False)
 
 	@property
 	def CurStsRsn(self):
@@ -27,12 +27,12 @@ class ATMStatus2(base_types._BaseFieldType):
 
 	@CurStsRsn.setter
 	def CurStsRsn(self, value):
-		self._CurStsRsn = value if type(value) != base_types.auto else self.make_default("CurStsRsn")
+		self._CurStsRsn = value if value is not None else base_types.UninitialisedField(self, 'CurStsRsn', Max35Text, True)
 
 	@CurStsRsn.deleter
 	def CurStsRsn(self):
 		del self._CurStsRsn
-		self._CurStsRsn = None
+		self._CurStsRsn = base_types.UninitialisedField(self, 'CurStsRsn', Max35Text, True)
 
 	@property
 	def DmnddSts(self):
@@ -40,12 +40,12 @@ class ATMStatus2(base_types._BaseFieldType):
 
 	@DmnddSts.setter
 	def DmnddSts(self, value):
-		self._DmnddSts = value if type(value) != base_types.auto else self.make_default("DmnddSts")
+		self._DmnddSts = value if value is not None else base_types.UninitialisedField(self, 'DmnddSts', ATMStatus1Code, False)
 
 	@DmnddSts.deleter
 	def DmnddSts(self):
 		del self._DmnddSts
-		self._DmnddSts = None
+		self._DmnddSts = base_types.UninitialisedField(self, 'DmnddSts', ATMStatus1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CurSts', type=ATMStatus1Code, min=1, max=1, mutex_group=None, array=False),

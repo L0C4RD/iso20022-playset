@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification184 import GenericIdentification184
-from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._Max52Text import Max52Text
-from ._UniqueProductIdentifier1Choice import UniqueProductIdentifier1Choice
+from . import GenericIdentification184
+from . import ISINOct2015Identifier
+from . import Max52Text
+from . import UniqueProductIdentifier1Choice
 
 class InstrumentIdentification6Choice(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class InstrumentIdentification6Choice(base_types._BaseFieldType):
 
 	@AltrntvInstrmId.setter
 	def AltrntvInstrmId(self, value):
-		self._AltrntvInstrmId = value if type(value) != base_types.auto else self.make_default("AltrntvInstrmId")
+		self._AltrntvInstrmId = value if value is not None else base_types.UninitialisedField(self, 'AltrntvInstrmId', Max52Text, False)
 
 	@AltrntvInstrmId.deleter
 	def AltrntvInstrmId(self):
 		del self._AltrntvInstrmId
-		self._AltrntvInstrmId = None
+		self._AltrntvInstrmId = base_types.UninitialisedField(self, 'AltrntvInstrmId', Max52Text, False)
 
 	@property
 	def ISIN(self):
@@ -29,12 +29,12 @@ class InstrumentIdentification6Choice(base_types._BaseFieldType):
 
 	@ISIN.setter
 	def ISIN(self, value):
-		self._ISIN = value if type(value) != base_types.auto else self.make_default("ISIN")
+		self._ISIN = value if value is not None else base_types.UninitialisedField(self, 'ISIN', ISINOct2015Identifier, False)
 
 	@ISIN.deleter
 	def ISIN(self):
 		del self._ISIN
-		self._ISIN = None
+		self._ISIN = base_types.UninitialisedField(self, 'ISIN', ISINOct2015Identifier, False)
 
 	@property
 	def OthrId(self):
@@ -42,12 +42,12 @@ class InstrumentIdentification6Choice(base_types._BaseFieldType):
 
 	@OthrId.setter
 	def OthrId(self, value):
-		self._OthrId = value if type(value) != base_types.auto else self.make_default("OthrId")
+		self._OthrId = value if value is not None else base_types.UninitialisedField(self, 'OthrId', GenericIdentification184, False)
 
 	@OthrId.deleter
 	def OthrId(self):
 		del self._OthrId
-		self._OthrId = None
+		self._OthrId = base_types.UninitialisedField(self, 'OthrId', GenericIdentification184, False)
 
 	@property
 	def UnqPdctIdr(self):
@@ -55,12 +55,12 @@ class InstrumentIdentification6Choice(base_types._BaseFieldType):
 
 	@UnqPdctIdr.setter
 	def UnqPdctIdr(self, value):
-		self._UnqPdctIdr = value if type(value) != base_types.auto else self.make_default("UnqPdctIdr")
+		self._UnqPdctIdr = value if value is not None else base_types.UninitialisedField(self, 'UnqPdctIdr', UniqueProductIdentifier1Choice, False)
 
 	@UnqPdctIdr.deleter
 	def UnqPdctIdr(self):
 		del self._UnqPdctIdr
-		self._UnqPdctIdr = None
+		self._UnqPdctIdr = base_types.UninitialisedField(self, 'UnqPdctIdr', UniqueProductIdentifier1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AltrntvInstrmId', type=Max52Text, min=0, max=1, mutex_group=1, array=False),

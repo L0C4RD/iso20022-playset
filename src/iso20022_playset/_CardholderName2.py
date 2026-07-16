@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max140Text import Max140Text
-from ._Max70Text import Max70Text
+from . import Max140Text
+from . import Max70Text
 
 class CardholderName2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CardholderName2(base_types._BaseFieldType):
 
 	@GvnNm.setter
 	def GvnNm(self, value):
-		self._GvnNm = value if type(value) != base_types.auto else self.make_default("GvnNm")
+		self._GvnNm = value if value is not None else base_types.UninitialisedField(self, 'GvnNm', Max70Text, False)
 
 	@GvnNm.deleter
 	def GvnNm(self):
 		del self._GvnNm
-		self._GvnNm = None
+		self._GvnNm = base_types.UninitialisedField(self, 'GvnNm', Max70Text, False)
 
 	@property
 	def LastNm(self):
@@ -27,12 +27,12 @@ class CardholderName2(base_types._BaseFieldType):
 
 	@LastNm.setter
 	def LastNm(self, value):
-		self._LastNm = value if type(value) != base_types.auto else self.make_default("LastNm")
+		self._LastNm = value if value is not None else base_types.UninitialisedField(self, 'LastNm', Max70Text, False)
 
 	@LastNm.deleter
 	def LastNm(self):
 		del self._LastNm
-		self._LastNm = None
+		self._LastNm = base_types.UninitialisedField(self, 'LastNm', Max70Text, False)
 
 	@property
 	def MddlNm(self):
@@ -40,12 +40,12 @@ class CardholderName2(base_types._BaseFieldType):
 
 	@MddlNm.setter
 	def MddlNm(self, value):
-		self._MddlNm = value if type(value) != base_types.auto else self.make_default("MddlNm")
+		self._MddlNm = value if value is not None else base_types.UninitialisedField(self, 'MddlNm', Max70Text, False)
 
 	@MddlNm.deleter
 	def MddlNm(self):
 		del self._MddlNm
-		self._MddlNm = None
+		self._MddlNm = base_types.UninitialisedField(self, 'MddlNm', Max70Text, False)
 
 	@property
 	def Nm(self):
@@ -53,12 +53,12 @@ class CardholderName2(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max140Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max140Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='GvnNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),

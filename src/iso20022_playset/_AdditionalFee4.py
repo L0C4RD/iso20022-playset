@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICAPartyType1Code import ATICAPartyType1Code
-from ._BaseOne25Rate import BaseOne25Rate
-from ._BaseOneRate import BaseOneRate
-from ._CreditDebit3Code import CreditDebit3Code
-from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
-from ._ISO8583FeeTypeCode import ISO8583FeeTypeCode
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
+from . import ATICAPartyType1Code
+from . import BaseOne25Rate
+from . import BaseOneRate
+from . import CreditDebit3Code
+from . import ISO3NumericCurrencyCode
+from . import ISO8583FeeTypeCode
+from . import ImpliedCurrencyAndAmount
+from . import Max140Text
+from . import Max35Text
 
 class AdditionalFee4(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class AdditionalFee4(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ImpliedCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def Assgnr(self):
@@ -34,12 +34,12 @@ class AdditionalFee4(base_types._BaseFieldType):
 
 	@Assgnr.setter
 	def Assgnr(self, value):
-		self._Assgnr = value if type(value) != base_types.auto else self.make_default("Assgnr")
+		self._Assgnr = value if value is not None else base_types.UninitialisedField(self, 'Assgnr', ATICAPartyType1Code, False)
 
 	@Assgnr.deleter
 	def Assgnr(self):
 		del self._Assgnr
-		self._Assgnr = None
+		self._Assgnr = base_types.UninitialisedField(self, 'Assgnr', ATICAPartyType1Code, False)
 
 	@property
 	def Ccy(self):
@@ -47,12 +47,12 @@ class AdditionalFee4(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ISO3NumericCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ISO3NumericCurrencyCode, False)
 
 	@property
 	def CdtDbt(self):
@@ -60,12 +60,12 @@ class AdditionalFee4(base_types._BaseFieldType):
 
 	@CdtDbt.setter
 	def CdtDbt(self, value):
-		self._CdtDbt = value if type(value) != base_types.auto else self.make_default("CdtDbt")
+		self._CdtDbt = value if value is not None else base_types.UninitialisedField(self, 'CdtDbt', CreditDebit3Code, False)
 
 	@CdtDbt.deleter
 	def CdtDbt(self):
 		del self._CdtDbt
-		self._CdtDbt = None
+		self._CdtDbt = base_types.UninitialisedField(self, 'CdtDbt', CreditDebit3Code, False)
 
 	@property
 	def Desc(self):
@@ -73,12 +73,12 @@ class AdditionalFee4(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', Max140Text, False)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', Max140Text, False)
 
 	@property
 	def Dscrptr(self):
@@ -86,12 +86,12 @@ class AdditionalFee4(base_types._BaseFieldType):
 
 	@Dscrptr.setter
 	def Dscrptr(self, value):
-		self._Dscrptr = value if type(value) != base_types.auto else self.make_default("Dscrptr")
+		self._Dscrptr = value if value is not None else base_types.UninitialisedField(self, 'Dscrptr', Max35Text, False)
 
 	@Dscrptr.deleter
 	def Dscrptr(self):
 		del self._Dscrptr
-		self._Dscrptr = None
+		self._Dscrptr = base_types.UninitialisedField(self, 'Dscrptr', Max35Text, False)
 
 	@property
 	def Prgm(self):
@@ -99,12 +99,12 @@ class AdditionalFee4(base_types._BaseFieldType):
 
 	@Prgm.setter
 	def Prgm(self, value):
-		self._Prgm = value if type(value) != base_types.auto else self.make_default("Prgm")
+		self._Prgm = value if value is not None else base_types.UninitialisedField(self, 'Prgm', Max35Text, False)
 
 	@Prgm.deleter
 	def Prgm(self):
 		del self._Prgm
-		self._Prgm = None
+		self._Prgm = base_types.UninitialisedField(self, 'Prgm', Max35Text, False)
 
 	@property
 	def Rate(self):
@@ -112,12 +112,12 @@ class AdditionalFee4(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+		self._Rate = value if value is not None else base_types.UninitialisedField(self, 'Rate', BaseOneRate, False)
 
 	@Rate.deleter
 	def Rate(self):
 		del self._Rate
-		self._Rate = None
+		self._Rate = base_types.UninitialisedField(self, 'Rate', BaseOneRate, False)
 
 	@property
 	def RateFix(self):
@@ -125,12 +125,12 @@ class AdditionalFee4(base_types._BaseFieldType):
 
 	@RateFix.setter
 	def RateFix(self, value):
-		self._RateFix = value if type(value) != base_types.auto else self.make_default("RateFix")
+		self._RateFix = value if value is not None else base_types.UninitialisedField(self, 'RateFix', ImpliedCurrencyAndAmount, False)
 
 	@RateFix.deleter
 	def RateFix(self):
 		del self._RateFix
-		self._RateFix = None
+		self._RateFix = base_types.UninitialisedField(self, 'RateFix', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def RcncltnAmt(self):
@@ -138,12 +138,12 @@ class AdditionalFee4(base_types._BaseFieldType):
 
 	@RcncltnAmt.setter
 	def RcncltnAmt(self, value):
-		self._RcncltnAmt = value if type(value) != base_types.auto else self.make_default("RcncltnAmt")
+		self._RcncltnAmt = value if value is not None else base_types.UninitialisedField(self, 'RcncltnAmt', ImpliedCurrencyAndAmount, False)
 
 	@RcncltnAmt.deleter
 	def RcncltnAmt(self):
 		del self._RcncltnAmt
-		self._RcncltnAmt = None
+		self._RcncltnAmt = base_types.UninitialisedField(self, 'RcncltnAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def RcncltnCcy(self):
@@ -151,12 +151,12 @@ class AdditionalFee4(base_types._BaseFieldType):
 
 	@RcncltnCcy.setter
 	def RcncltnCcy(self, value):
-		self._RcncltnCcy = value if type(value) != base_types.auto else self.make_default("RcncltnCcy")
+		self._RcncltnCcy = value if value is not None else base_types.UninitialisedField(self, 'RcncltnCcy', ISO3NumericCurrencyCode, False)
 
 	@RcncltnCcy.deleter
 	def RcncltnCcy(self):
 		del self._RcncltnCcy
-		self._RcncltnCcy = None
+		self._RcncltnCcy = base_types.UninitialisedField(self, 'RcncltnCcy', ISO3NumericCurrencyCode, False)
 
 	@property
 	def RcncltnFctvXchgRate(self):
@@ -164,12 +164,12 @@ class AdditionalFee4(base_types._BaseFieldType):
 
 	@RcncltnFctvXchgRate.setter
 	def RcncltnFctvXchgRate(self, value):
-		self._RcncltnFctvXchgRate = value if type(value) != base_types.auto else self.make_default("RcncltnFctvXchgRate")
+		self._RcncltnFctvXchgRate = value if value is not None else base_types.UninitialisedField(self, 'RcncltnFctvXchgRate', BaseOne25Rate, False)
 
 	@RcncltnFctvXchgRate.deleter
 	def RcncltnFctvXchgRate(self):
 		del self._RcncltnFctvXchgRate
-		self._RcncltnFctvXchgRate = None
+		self._RcncltnFctvXchgRate = base_types.UninitialisedField(self, 'RcncltnFctvXchgRate', BaseOne25Rate, False)
 
 	@property
 	def Tp(self):
@@ -177,12 +177,12 @@ class AdditionalFee4(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', ISO8583FeeTypeCode, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', ISO8583FeeTypeCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

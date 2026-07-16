@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DeviceResponse8 import DeviceResponse8
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
-from ._TMSActionIdentification10 import TMSActionIdentification10
-from ._TerminalManagementActionResult5Code import TerminalManagementActionResult5Code
+from . import DeviceResponse8
+from . import ISODateTime
+from . import Max35Text
+from . import Max70Text
+from . import TMSActionIdentification10
+from . import TerminalManagementActionResult5Code
 
 class TMSEvent12(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class TMSEvent12(base_types._BaseFieldType):
 
 	@ActnId.setter
 	def ActnId(self, value):
-		self._ActnId = value if type(value) != base_types.auto else self.make_default("ActnId")
+		self._ActnId = value if value is not None else base_types.UninitialisedField(self, 'ActnId', TMSActionIdentification10, False)
 
 	@ActnId.deleter
 	def ActnId(self):
 		del self._ActnId
-		self._ActnId = None
+		self._ActnId = base_types.UninitialisedField(self, 'ActnId', TMSActionIdentification10, False)
 
 	@property
 	def AddtlErrInf(self):
@@ -31,12 +31,12 @@ class TMSEvent12(base_types._BaseFieldType):
 
 	@AddtlErrInf.setter
 	def AddtlErrInf(self, value):
-		self._AddtlErrInf = value if type(value) != base_types.auto else self.make_default("AddtlErrInf")
+		self._AddtlErrInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlErrInf', Max70Text, False)
 
 	@AddtlErrInf.deleter
 	def AddtlErrInf(self):
 		del self._AddtlErrInf
-		self._AddtlErrInf = None
+		self._AddtlErrInf = base_types.UninitialisedField(self, 'AddtlErrInf', Max70Text, False)
 
 	@property
 	def DvcRspn(self):
@@ -44,12 +44,12 @@ class TMSEvent12(base_types._BaseFieldType):
 
 	@DvcRspn.setter
 	def DvcRspn(self, value):
-		self._DvcRspn = value if type(value) != base_types.auto else self.make_default("DvcRspn")
+		self._DvcRspn = value if value is not None else base_types.UninitialisedField(self, 'DvcRspn', DeviceResponse8, False)
 
 	@DvcRspn.deleter
 	def DvcRspn(self):
 		del self._DvcRspn
-		self._DvcRspn = None
+		self._DvcRspn = base_types.UninitialisedField(self, 'DvcRspn', DeviceResponse8, False)
 
 	@property
 	def Rslt(self):
@@ -57,12 +57,12 @@ class TMSEvent12(base_types._BaseFieldType):
 
 	@Rslt.setter
 	def Rslt(self, value):
-		self._Rslt = value if type(value) != base_types.auto else self.make_default("Rslt")
+		self._Rslt = value if value is not None else base_types.UninitialisedField(self, 'Rslt', TerminalManagementActionResult5Code, False)
 
 	@Rslt.deleter
 	def Rslt(self):
 		del self._Rslt
-		self._Rslt = None
+		self._Rslt = base_types.UninitialisedField(self, 'Rslt', TerminalManagementActionResult5Code, False)
 
 	@property
 	def TermnlMgrId(self):
@@ -70,12 +70,12 @@ class TMSEvent12(base_types._BaseFieldType):
 
 	@TermnlMgrId.setter
 	def TermnlMgrId(self, value):
-		self._TermnlMgrId = value if type(value) != base_types.auto else self.make_default("TermnlMgrId")
+		self._TermnlMgrId = value if value is not None else base_types.UninitialisedField(self, 'TermnlMgrId', Max35Text, False)
 
 	@TermnlMgrId.deleter
 	def TermnlMgrId(self):
 		del self._TermnlMgrId
-		self._TermnlMgrId = None
+		self._TermnlMgrId = base_types.UninitialisedField(self, 'TermnlMgrId', Max35Text, False)
 
 	@property
 	def TmStmp(self):
@@ -83,12 +83,12 @@ class TMSEvent12(base_types._BaseFieldType):
 
 	@TmStmp.setter
 	def TmStmp(self, value):
-		self._TmStmp = value if type(value) != base_types.auto else self.make_default("TmStmp")
+		self._TmStmp = value if value is not None else base_types.UninitialisedField(self, 'TmStmp', ISODateTime, False)
 
 	@TmStmp.deleter
 	def TmStmp(self):
 		del self._TmStmp
-		self._TmStmp = None
+		self._TmStmp = base_types.UninitialisedField(self, 'TmStmp', ISODateTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActnId', type=TMSActionIdentification10, min=1, max=1, mutex_group=None, array=False),

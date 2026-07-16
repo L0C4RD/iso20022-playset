@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
-from ._CashAccount38 import CashAccount38
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._YesNoIndicator import YesNoIndicator
+from . import BlockChainAddressWallet3
+from . import CashAccount38
+from . import DateAndDateTime2Choice
+from . import SecuritiesAccount19
+from . import YesNoIndicator
 
 class AccountLink7(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class AccountLink7(base_types._BaseFieldType):
 
 	@BlckChainAdrOrWllt.setter
 	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
+		self._BlckChainAdrOrWllt = value if value is not None else base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet3, False)
 
 	@BlckChainAdrOrWllt.deleter
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+		self._BlckChainAdrOrWllt = base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet3, False)
 
 	@property
 	def CollstnInd(self):
@@ -30,12 +30,12 @@ class AccountLink7(base_types._BaseFieldType):
 
 	@CollstnInd.setter
 	def CollstnInd(self, value):
-		self._CollstnInd = value if type(value) != base_types.auto else self.make_default("CollstnInd")
+		self._CollstnInd = value if value is not None else base_types.UninitialisedField(self, 'CollstnInd', YesNoIndicator, False)
 
 	@CollstnInd.deleter
 	def CollstnInd(self):
 		del self._CollstnInd
-		self._CollstnInd = None
+		self._CollstnInd = base_types.UninitialisedField(self, 'CollstnInd', YesNoIndicator, False)
 
 	@property
 	def CshAcct(self):
@@ -43,12 +43,12 @@ class AccountLink7(base_types._BaseFieldType):
 
 	@CshAcct.setter
 	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != base_types.auto else self.make_default("CshAcct")
+		self._CshAcct = value if value is not None else base_types.UninitialisedField(self, 'CshAcct', CashAccount38, False)
 
 	@CshAcct.deleter
 	def CshAcct(self):
 		del self._CshAcct
-		self._CshAcct = None
+		self._CshAcct = base_types.UninitialisedField(self, 'CshAcct', CashAccount38, False)
 
 	@property
 	def CshSttlmInd(self):
@@ -56,12 +56,12 @@ class AccountLink7(base_types._BaseFieldType):
 
 	@CshSttlmInd.setter
 	def CshSttlmInd(self, value):
-		self._CshSttlmInd = value if type(value) != base_types.auto else self.make_default("CshSttlmInd")
+		self._CshSttlmInd = value if value is not None else base_types.UninitialisedField(self, 'CshSttlmInd', YesNoIndicator, False)
 
 	@CshSttlmInd.deleter
 	def CshSttlmInd(self):
 		del self._CshSttlmInd
-		self._CshSttlmInd = None
+		self._CshSttlmInd = base_types.UninitialisedField(self, 'CshSttlmInd', YesNoIndicator, False)
 
 	@property
 	def DfltInd(self):
@@ -69,12 +69,12 @@ class AccountLink7(base_types._BaseFieldType):
 
 	@DfltInd.setter
 	def DfltInd(self, value):
-		self._DfltInd = value if type(value) != base_types.auto else self.make_default("DfltInd")
+		self._DfltInd = value if value is not None else base_types.UninitialisedField(self, 'DfltInd', YesNoIndicator, False)
 
 	@DfltInd.deleter
 	def DfltInd(self):
 		del self._DfltInd
-		self._DfltInd = None
+		self._DfltInd = base_types.UninitialisedField(self, 'DfltInd', YesNoIndicator, False)
 
 	@property
 	def SctiesAcct(self):
@@ -82,12 +82,12 @@ class AccountLink7(base_types._BaseFieldType):
 
 	@SctiesAcct.setter
 	def SctiesAcct(self, value):
-		self._SctiesAcct = value if type(value) != base_types.auto else self.make_default("SctiesAcct")
+		self._SctiesAcct = value if value is not None else base_types.UninitialisedField(self, 'SctiesAcct', SecuritiesAccount19, False)
 
 	@SctiesAcct.deleter
 	def SctiesAcct(self):
 		del self._SctiesAcct
-		self._SctiesAcct = None
+		self._SctiesAcct = base_types.UninitialisedField(self, 'SctiesAcct', SecuritiesAccount19, False)
 
 	@property
 	def VldFr(self):
@@ -95,12 +95,12 @@ class AccountLink7(base_types._BaseFieldType):
 
 	@VldFr.setter
 	def VldFr(self, value):
-		self._VldFr = value if type(value) != base_types.auto else self.make_default("VldFr")
+		self._VldFr = value if value is not None else base_types.UninitialisedField(self, 'VldFr', DateAndDateTime2Choice, False)
 
 	@VldFr.deleter
 	def VldFr(self):
 		del self._VldFr
-		self._VldFr = None
+		self._VldFr = base_types.UninitialisedField(self, 'VldFr', DateAndDateTime2Choice, False)
 
 	@property
 	def VldTo(self):
@@ -108,12 +108,12 @@ class AccountLink7(base_types._BaseFieldType):
 
 	@VldTo.setter
 	def VldTo(self, value):
-		self._VldTo = value if type(value) != base_types.auto else self.make_default("VldTo")
+		self._VldTo = value if value is not None else base_types.UninitialisedField(self, 'VldTo', DateAndDateTime2Choice, False)
 
 	@VldTo.deleter
 	def VldTo(self):
 		del self._VldTo
-		self._VldTo = None
+		self._VldTo = base_types.UninitialisedField(self, 'VldTo', DateAndDateTime2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),

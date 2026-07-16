@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Amendment9 import Amendment9
-from ._Max2000Text import Max2000Text
-from ._PartyAndSignature2 import PartyAndSignature2
+from . import Amendment9
+from . import Max2000Text
+from . import PartyAndSignature2
 
 class UndertakingAmendmentResponseNotificationV01(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class UndertakingAmendmentResponseNotificationV01(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max2000Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max2000Text, False)
 
 	@property
 	def DgtlSgntr(self):
@@ -28,12 +28,12 @@ class UndertakingAmendmentResponseNotificationV01(base_types._BaseFieldType):
 
 	@DgtlSgntr.setter
 	def DgtlSgntr(self, value):
-		self._DgtlSgntr = value if type(value) != base_types.auto else self.make_default("DgtlSgntr")
+		self._DgtlSgntr = value if value is not None else base_types.UninitialisedField(self, 'DgtlSgntr', PartyAndSignature2, False)
 
 	@DgtlSgntr.deleter
 	def DgtlSgntr(self):
 		del self._DgtlSgntr
-		self._DgtlSgntr = None
+		self._DgtlSgntr = base_types.UninitialisedField(self, 'DgtlSgntr', PartyAndSignature2, False)
 
 	@property
 	def UdrtkgAmdmntRspnNtfctnDtls(self):
@@ -41,12 +41,12 @@ class UndertakingAmendmentResponseNotificationV01(base_types._BaseFieldType):
 
 	@UdrtkgAmdmntRspnNtfctnDtls.setter
 	def UdrtkgAmdmntRspnNtfctnDtls(self, value):
-		self._UdrtkgAmdmntRspnNtfctnDtls = value if type(value) != base_types.auto else self.make_default("UdrtkgAmdmntRspnNtfctnDtls")
+		self._UdrtkgAmdmntRspnNtfctnDtls = value if value is not None else base_types.UninitialisedField(self, 'UdrtkgAmdmntRspnNtfctnDtls', Amendment9, False)
 
 	@UdrtkgAmdmntRspnNtfctnDtls.deleter
 	def UdrtkgAmdmntRspnNtfctnDtls(self):
 		del self._UdrtkgAmdmntRspnNtfctnDtls
-		self._UdrtkgAmdmntRspnNtfctnDtls = None
+		self._UdrtkgAmdmntRspnNtfctnDtls = base_types.UninitialisedField(self, 'UdrtkgAmdmntRspnNtfctnDtls', Amendment9, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FixingConditions1 import FixingConditions1
-from ._OpeningConditions1 import OpeningConditions1
+from . import FixingConditions1
+from . import OpeningConditions1
 
 class NonDeliverableForwardConditions2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class NonDeliverableForwardConditions2(base_types._BaseFieldType):
 
 	@FxgConds.setter
 	def FxgConds(self, value):
-		self._FxgConds = value if type(value) != base_types.auto else self.make_default("FxgConds")
+		self._FxgConds = value if value is not None else base_types.UninitialisedField(self, 'FxgConds', FixingConditions1, False)
 
 	@FxgConds.deleter
 	def FxgConds(self):
 		del self._FxgConds
-		self._FxgConds = None
+		self._FxgConds = base_types.UninitialisedField(self, 'FxgConds', FixingConditions1, False)
 
 	@property
 	def OpngConds(self):
@@ -27,12 +27,12 @@ class NonDeliverableForwardConditions2(base_types._BaseFieldType):
 
 	@OpngConds.setter
 	def OpngConds(self, value):
-		self._OpngConds = value if type(value) != base_types.auto else self.make_default("OpngConds")
+		self._OpngConds = value if value is not None else base_types.UninitialisedField(self, 'OpngConds', OpeningConditions1, False)
 
 	@OpngConds.deleter
 	def OpngConds(self):
 		del self._OpngConds
-		self._OpngConds = None
+		self._OpngConds = base_types.UninitialisedField(self, 'OpngConds', OpeningConditions1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FxgConds', type=FixingConditions1, min=0, max=1, mutex_group=None, array=False),

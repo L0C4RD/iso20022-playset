@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PercentageRate import PercentageRate
-from ._YesNoIndicator import YesNoIndicator
+from . import PercentageRate
+from . import YesNoIndicator
 
 class DeMinimusApplicable1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DeMinimusApplicable1(base_types._BaseFieldType):
 
 	@NewIssePrmssn.setter
 	def NewIssePrmssn(self, value):
-		self._NewIssePrmssn = value if type(value) != base_types.auto else self.make_default("NewIssePrmssn")
+		self._NewIssePrmssn = value if value is not None else base_types.UninitialisedField(self, 'NewIssePrmssn', YesNoIndicator, False)
 
 	@NewIssePrmssn.deleter
 	def NewIssePrmssn(self):
 		del self._NewIssePrmssn
-		self._NewIssePrmssn = None
+		self._NewIssePrmssn = base_types.UninitialisedField(self, 'NewIssePrmssn', YesNoIndicator, False)
 
 	@property
 	def Pctg(self):
@@ -27,12 +27,12 @@ class DeMinimusApplicable1(base_types._BaseFieldType):
 
 	@Pctg.setter
 	def Pctg(self, value):
-		self._Pctg = value if type(value) != base_types.auto else self.make_default("Pctg")
+		self._Pctg = value if value is not None else base_types.UninitialisedField(self, 'Pctg', PercentageRate, False)
 
 	@Pctg.deleter
 	def Pctg(self):
 		del self._Pctg
-		self._Pctg = None
+		self._Pctg = base_types.UninitialisedField(self, 'Pctg', PercentageRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NewIssePrmssn', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),

@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Document9 import Document9
-from ._Max2000Text import Max2000Text
-from ._Max35Text import Max35Text
-from ._PartyIdentification43 import PartyIdentification43
-from ._PresentationMedium1Code import PresentationMedium1Code
-from ._UndertakingIssuanceMessage import UndertakingIssuanceMessage
+from . import Document9
+from . import Max2000Text
+from . import Max35Text
+from . import PartyIdentification43
+from . import PresentationMedium1Code
+from . import UndertakingIssuanceMessage
 
 class UndertakingAdvice2(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class UndertakingAdvice2(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max2000Text, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max2000Text, True)
 
 	@property
 	def ApplcntRefNb(self):
@@ -31,12 +31,12 @@ class UndertakingAdvice2(base_types._BaseFieldType):
 
 	@ApplcntRefNb.setter
 	def ApplcntRefNb(self, value):
-		self._ApplcntRefNb = value if type(value) != base_types.auto else self.make_default("ApplcntRefNb")
+		self._ApplcntRefNb = value if value is not None else base_types.UninitialisedField(self, 'ApplcntRefNb', Max35Text, False)
 
 	@ApplcntRefNb.deleter
 	def ApplcntRefNb(self):
 		del self._ApplcntRefNb
-		self._ApplcntRefNb = None
+		self._ApplcntRefNb = base_types.UninitialisedField(self, 'ApplcntRefNb', Max35Text, False)
 
 	@property
 	def NclsdFile(self):
@@ -44,12 +44,12 @@ class UndertakingAdvice2(base_types._BaseFieldType):
 
 	@NclsdFile.setter
 	def NclsdFile(self, value):
-		self._NclsdFile = value if type(value) != base_types.auto else self.make_default("NclsdFile")
+		self._NclsdFile = value if value is not None else base_types.UninitialisedField(self, 'NclsdFile', Document9, True)
 
 	@NclsdFile.deleter
 	def NclsdFile(self):
 		del self._NclsdFile
-		self._NclsdFile = None
+		self._NclsdFile = base_types.UninitialisedField(self, 'NclsdFile', Document9, True)
 
 	@property
 	def Oblgr(self):
@@ -57,12 +57,12 @@ class UndertakingAdvice2(base_types._BaseFieldType):
 
 	@Oblgr.setter
 	def Oblgr(self, value):
-		self._Oblgr = value if type(value) != base_types.auto else self.make_default("Oblgr")
+		self._Oblgr = value if value is not None else base_types.UninitialisedField(self, 'Oblgr', PartyIdentification43, False)
 
 	@Oblgr.deleter
 	def Oblgr(self):
 		del self._Oblgr
-		self._Oblgr = None
+		self._Oblgr = base_types.UninitialisedField(self, 'Oblgr', PartyIdentification43, False)
 
 	@property
 	def OrgnlIssdMdm(self):
@@ -70,12 +70,12 @@ class UndertakingAdvice2(base_types._BaseFieldType):
 
 	@OrgnlIssdMdm.setter
 	def OrgnlIssdMdm(self, value):
-		self._OrgnlIssdMdm = value if type(value) != base_types.auto else self.make_default("OrgnlIssdMdm")
+		self._OrgnlIssdMdm = value if value is not None else base_types.UninitialisedField(self, 'OrgnlIssdMdm', PresentationMedium1Code, False)
 
 	@OrgnlIssdMdm.deleter
 	def OrgnlIssdMdm(self):
 		del self._OrgnlIssdMdm
-		self._OrgnlIssdMdm = None
+		self._OrgnlIssdMdm = base_types.UninitialisedField(self, 'OrgnlIssdMdm', PresentationMedium1Code, False)
 
 	@property
 	def UdrtkgIssncMsg(self):
@@ -83,12 +83,12 @@ class UndertakingAdvice2(base_types._BaseFieldType):
 
 	@UdrtkgIssncMsg.setter
 	def UdrtkgIssncMsg(self, value):
-		self._UdrtkgIssncMsg = value if type(value) != base_types.auto else self.make_default("UdrtkgIssncMsg")
+		self._UdrtkgIssncMsg = value if value is not None else base_types.UninitialisedField(self, 'UdrtkgIssncMsg', UndertakingIssuanceMessage, False)
 
 	@UdrtkgIssncMsg.deleter
 	def UdrtkgIssncMsg(self):
 		del self._UdrtkgIssncMsg
-		self._UdrtkgIssncMsg = None
+		self._UdrtkgIssncMsg = base_types.UninitialisedField(self, 'UdrtkgIssncMsg', UndertakingIssuanceMessage, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),

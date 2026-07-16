@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max350Text import Max350Text
-from ._Max70Text import Max70Text
-from ._MessageIdentification1 import MessageIdentification1
-from ._UseCases1Code import UseCases1Code
+from . import Max350Text
+from . import Max70Text
+from . import MessageIdentification1
+from . import UseCases1Code
 
 class References6(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class References6(base_types._BaseFieldType):
 
 	@AttchdDocNm.setter
 	def AttchdDocNm(self, value):
-		self._AttchdDocNm = value if type(value) != base_types.auto else self.make_default("AttchdDocNm")
+		self._AttchdDocNm = value if value is not None else base_types.UninitialisedField(self, 'AttchdDocNm', Max70Text, True)
 
 	@AttchdDocNm.deleter
 	def AttchdDocNm(self):
 		del self._AttchdDocNm
-		self._AttchdDocNm = None
+		self._AttchdDocNm = base_types.UninitialisedField(self, 'AttchdDocNm', Max70Text, True)
 
 	@property
 	def MsgId(self):
@@ -29,12 +29,12 @@ class References6(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@property
 	def PrcId(self):
@@ -42,12 +42,12 @@ class References6(base_types._BaseFieldType):
 
 	@PrcId.setter
 	def PrcId(self, value):
-		self._PrcId = value if type(value) != base_types.auto else self.make_default("PrcId")
+		self._PrcId = value if value is not None else base_types.UninitialisedField(self, 'PrcId', MessageIdentification1, False)
 
 	@PrcId.deleter
 	def PrcId(self):
 		del self._PrcId
-		self._PrcId = None
+		self._PrcId = base_types.UninitialisedField(self, 'PrcId', MessageIdentification1, False)
 
 	@property
 	def RjctdReqId(self):
@@ -55,12 +55,12 @@ class References6(base_types._BaseFieldType):
 
 	@RjctdReqId.setter
 	def RjctdReqId(self, value):
-		self._RjctdReqId = value if type(value) != base_types.auto else self.make_default("RjctdReqId")
+		self._RjctdReqId = value if value is not None else base_types.UninitialisedField(self, 'RjctdReqId', MessageIdentification1, False)
 
 	@RjctdReqId.deleter
 	def RjctdReqId(self):
 		del self._RjctdReqId
-		self._RjctdReqId = None
+		self._RjctdReqId = base_types.UninitialisedField(self, 'RjctdReqId', MessageIdentification1, False)
 
 	@property
 	def RjctdReqTp(self):
@@ -68,12 +68,12 @@ class References6(base_types._BaseFieldType):
 
 	@RjctdReqTp.setter
 	def RjctdReqTp(self, value):
-		self._RjctdReqTp = value if type(value) != base_types.auto else self.make_default("RjctdReqTp")
+		self._RjctdReqTp = value if value is not None else base_types.UninitialisedField(self, 'RjctdReqTp', UseCases1Code, False)
 
 	@RjctdReqTp.deleter
 	def RjctdReqTp(self):
 		del self._RjctdReqTp
-		self._RjctdReqTp = None
+		self._RjctdReqTp = base_types.UninitialisedField(self, 'RjctdReqTp', UseCases1Code, False)
 
 	@property
 	def RjctnRsn(self):
@@ -81,12 +81,12 @@ class References6(base_types._BaseFieldType):
 
 	@RjctnRsn.setter
 	def RjctnRsn(self, value):
-		self._RjctnRsn = value if type(value) != base_types.auto else self.make_default("RjctnRsn")
+		self._RjctnRsn = value if value is not None else base_types.UninitialisedField(self, 'RjctnRsn', Max350Text, True)
 
 	@RjctnRsn.deleter
 	def RjctnRsn(self):
 		del self._RjctnRsn
-		self._RjctnRsn = None
+		self._RjctnRsn = base_types.UninitialisedField(self, 'RjctnRsn', Max350Text, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AttchdDocNm', type=Max70Text, min=0, max=None, mutex_group=None, array=True),

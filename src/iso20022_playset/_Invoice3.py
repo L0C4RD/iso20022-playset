@@ -2,19 +2,19 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalData1 import AdditionalData1
-from ._Address2 import Address2
-from ._ContactBusiness1 import ContactBusiness1
-from ._ISODate import ISODate
-from ._ISODateTime import ISODateTime
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._InvoiceLineItem3 import InvoiceLineItem3
-from ._Max1000Text import Max1000Text
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
-from ._PartyIdentification285 import PartyIdentification285
-from ._Tax41 import Tax41
-from ._TaxReclaimMethod1Code import TaxReclaimMethod1Code
+from . import AdditionalData1
+from . import Address2
+from . import ContactBusiness1
+from . import ISODate
+from . import ISODateTime
+from . import ImpliedCurrencyAndAmount
+from . import InvoiceLineItem3
+from . import Max1000Text
+from . import Max35Text
+from . import Max70Text
+from . import PartyIdentification285
+from . import Tax41
+from . import TaxReclaimMethod1Code
 
 class Invoice3(base_types._BaseFieldType):
 
@@ -25,12 +25,12 @@ class Invoice3(base_types._BaseFieldType):
 
 	@AddtlData.setter
 	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+		self._AddtlData = value if value is not None else base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@AddtlData.deleter
 	def AddtlData(self):
 		del self._AddtlData
-		self._AddtlData = None
+		self._AddtlData = base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@property
 	def BuyrAddtlInf(self):
@@ -38,12 +38,12 @@ class Invoice3(base_types._BaseFieldType):
 
 	@BuyrAddtlInf.setter
 	def BuyrAddtlInf(self, value):
-		self._BuyrAddtlInf = value if type(value) != base_types.auto else self.make_default("BuyrAddtlInf")
+		self._BuyrAddtlInf = value if value is not None else base_types.UninitialisedField(self, 'BuyrAddtlInf', Max1000Text, False)
 
 	@BuyrAddtlInf.deleter
 	def BuyrAddtlInf(self):
 		del self._BuyrAddtlInf
-		self._BuyrAddtlInf = None
+		self._BuyrAddtlInf = base_types.UninitialisedField(self, 'BuyrAddtlInf', Max1000Text, False)
 
 	@property
 	def BuyrAdr(self):
@@ -51,12 +51,12 @@ class Invoice3(base_types._BaseFieldType):
 
 	@BuyrAdr.setter
 	def BuyrAdr(self, value):
-		self._BuyrAdr = value if type(value) != base_types.auto else self.make_default("BuyrAdr")
+		self._BuyrAdr = value if value is not None else base_types.UninitialisedField(self, 'BuyrAdr', Address2, False)
 
 	@BuyrAdr.deleter
 	def BuyrAdr(self):
 		del self._BuyrAdr
-		self._BuyrAdr = None
+		self._BuyrAdr = base_types.UninitialisedField(self, 'BuyrAdr', Address2, False)
 
 	@property
 	def BuyrCtct(self):
@@ -64,12 +64,12 @@ class Invoice3(base_types._BaseFieldType):
 
 	@BuyrCtct.setter
 	def BuyrCtct(self, value):
-		self._BuyrCtct = value if type(value) != base_types.auto else self.make_default("BuyrCtct")
+		self._BuyrCtct = value if value is not None else base_types.UninitialisedField(self, 'BuyrCtct', ContactBusiness1, False)
 
 	@BuyrCtct.deleter
 	def BuyrCtct(self):
 		del self._BuyrCtct
-		self._BuyrCtct = None
+		self._BuyrCtct = base_types.UninitialisedField(self, 'BuyrCtct', ContactBusiness1, False)
 
 	@property
 	def BuyrId(self):
@@ -77,12 +77,12 @@ class Invoice3(base_types._BaseFieldType):
 
 	@BuyrId.setter
 	def BuyrId(self, value):
-		self._BuyrId = value if type(value) != base_types.auto else self.make_default("BuyrId")
+		self._BuyrId = value if value is not None else base_types.UninitialisedField(self, 'BuyrId', PartyIdentification285, False)
 
 	@BuyrId.deleter
 	def BuyrId(self):
 		del self._BuyrId
-		self._BuyrId = None
+		self._BuyrId = base_types.UninitialisedField(self, 'BuyrId', PartyIdentification285, False)
 
 	@property
 	def BuyrNm(self):
@@ -90,12 +90,12 @@ class Invoice3(base_types._BaseFieldType):
 
 	@BuyrNm.setter
 	def BuyrNm(self, value):
-		self._BuyrNm = value if type(value) != base_types.auto else self.make_default("BuyrNm")
+		self._BuyrNm = value if value is not None else base_types.UninitialisedField(self, 'BuyrNm', Max70Text, False)
 
 	@BuyrNm.deleter
 	def BuyrNm(self):
 		del self._BuyrNm
-		self._BuyrNm = None
+		self._BuyrNm = base_types.UninitialisedField(self, 'BuyrNm', Max70Text, False)
 
 	@property
 	def BuyrTaxRegnId(self):
@@ -103,12 +103,12 @@ class Invoice3(base_types._BaseFieldType):
 
 	@BuyrTaxRegnId.setter
 	def BuyrTaxRegnId(self, value):
-		self._BuyrTaxRegnId = value if type(value) != base_types.auto else self.make_default("BuyrTaxRegnId")
+		self._BuyrTaxRegnId = value if value is not None else base_types.UninitialisedField(self, 'BuyrTaxRegnId', Max70Text, False)
 
 	@BuyrTaxRegnId.deleter
 	def BuyrTaxRegnId(self):
 		del self._BuyrTaxRegnId
-		self._BuyrTaxRegnId = None
+		self._BuyrTaxRegnId = base_types.UninitialisedField(self, 'BuyrTaxRegnId', Max70Text, False)
 
 	@property
 	def CreDtTm(self):
@@ -116,12 +116,12 @@ class Invoice3(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if value is not None else base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
 		del self._CreDtTm
-		self._CreDtTm = None
+		self._CreDtTm = base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@property
 	def Dt(self):
@@ -129,12 +129,12 @@ class Invoice3(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@property
 	def FrghtAmt(self):
@@ -142,12 +142,12 @@ class Invoice3(base_types._BaseFieldType):
 
 	@FrghtAmt.setter
 	def FrghtAmt(self, value):
-		self._FrghtAmt = value if type(value) != base_types.auto else self.make_default("FrghtAmt")
+		self._FrghtAmt = value if value is not None else base_types.UninitialisedField(self, 'FrghtAmt', ImpliedCurrencyAndAmount, False)
 
 	@FrghtAmt.deleter
 	def FrghtAmt(self):
 		del self._FrghtAmt
-		self._FrghtAmt = None
+		self._FrghtAmt = base_types.UninitialisedField(self, 'FrghtAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def LineItm(self):
@@ -155,12 +155,12 @@ class Invoice3(base_types._BaseFieldType):
 
 	@LineItm.setter
 	def LineItm(self, value):
-		self._LineItm = value if type(value) != base_types.auto else self.make_default("LineItm")
+		self._LineItm = value if value is not None else base_types.UninitialisedField(self, 'LineItm', InvoiceLineItem3, True)
 
 	@LineItm.deleter
 	def LineItm(self):
 		del self._LineItm
-		self._LineItm = None
+		self._LineItm = base_types.UninitialisedField(self, 'LineItm', InvoiceLineItem3, True)
 
 	@property
 	def Nb(self):
@@ -168,12 +168,12 @@ class Invoice3(base_types._BaseFieldType):
 
 	@Nb.setter
 	def Nb(self, value):
-		self._Nb = value if type(value) != base_types.auto else self.make_default("Nb")
+		self._Nb = value if value is not None else base_types.UninitialisedField(self, 'Nb', Max70Text, False)
 
 	@Nb.deleter
 	def Nb(self):
 		del self._Nb
-		self._Nb = None
+		self._Nb = base_types.UninitialisedField(self, 'Nb', Max70Text, False)
 
 	@property
 	def SellrAddtlInf(self):
@@ -181,12 +181,12 @@ class Invoice3(base_types._BaseFieldType):
 
 	@SellrAddtlInf.setter
 	def SellrAddtlInf(self, value):
-		self._SellrAddtlInf = value if type(value) != base_types.auto else self.make_default("SellrAddtlInf")
+		self._SellrAddtlInf = value if value is not None else base_types.UninitialisedField(self, 'SellrAddtlInf', Max1000Text, False)
 
 	@SellrAddtlInf.deleter
 	def SellrAddtlInf(self):
 		del self._SellrAddtlInf
-		self._SellrAddtlInf = None
+		self._SellrAddtlInf = base_types.UninitialisedField(self, 'SellrAddtlInf', Max1000Text, False)
 
 	@property
 	def SellrAdr(self):
@@ -194,12 +194,12 @@ class Invoice3(base_types._BaseFieldType):
 
 	@SellrAdr.setter
 	def SellrAdr(self, value):
-		self._SellrAdr = value if type(value) != base_types.auto else self.make_default("SellrAdr")
+		self._SellrAdr = value if value is not None else base_types.UninitialisedField(self, 'SellrAdr', Address2, False)
 
 	@SellrAdr.deleter
 	def SellrAdr(self):
 		del self._SellrAdr
-		self._SellrAdr = None
+		self._SellrAdr = base_types.UninitialisedField(self, 'SellrAdr', Address2, False)
 
 	@property
 	def SellrCtct(self):
@@ -207,12 +207,12 @@ class Invoice3(base_types._BaseFieldType):
 
 	@SellrCtct.setter
 	def SellrCtct(self, value):
-		self._SellrCtct = value if type(value) != base_types.auto else self.make_default("SellrCtct")
+		self._SellrCtct = value if value is not None else base_types.UninitialisedField(self, 'SellrCtct', ContactBusiness1, False)
 
 	@SellrCtct.deleter
 	def SellrCtct(self):
 		del self._SellrCtct
-		self._SellrCtct = None
+		self._SellrCtct = base_types.UninitialisedField(self, 'SellrCtct', ContactBusiness1, False)
 
 	@property
 	def SellrId(self):
@@ -220,12 +220,12 @@ class Invoice3(base_types._BaseFieldType):
 
 	@SellrId.setter
 	def SellrId(self, value):
-		self._SellrId = value if type(value) != base_types.auto else self.make_default("SellrId")
+		self._SellrId = value if value is not None else base_types.UninitialisedField(self, 'SellrId', PartyIdentification285, False)
 
 	@SellrId.deleter
 	def SellrId(self):
 		del self._SellrId
-		self._SellrId = None
+		self._SellrId = base_types.UninitialisedField(self, 'SellrId', PartyIdentification285, False)
 
 	@property
 	def SellrNm(self):
@@ -233,12 +233,12 @@ class Invoice3(base_types._BaseFieldType):
 
 	@SellrNm.setter
 	def SellrNm(self, value):
-		self._SellrNm = value if type(value) != base_types.auto else self.make_default("SellrNm")
+		self._SellrNm = value if value is not None else base_types.UninitialisedField(self, 'SellrNm', Max70Text, False)
 
 	@SellrNm.deleter
 	def SellrNm(self):
 		del self._SellrNm
-		self._SellrNm = None
+		self._SellrNm = base_types.UninitialisedField(self, 'SellrNm', Max70Text, False)
 
 	@property
 	def SellrTaxRegnId(self):
@@ -246,12 +246,12 @@ class Invoice3(base_types._BaseFieldType):
 
 	@SellrTaxRegnId.setter
 	def SellrTaxRegnId(self, value):
-		self._SellrTaxRegnId = value if type(value) != base_types.auto else self.make_default("SellrTaxRegnId")
+		self._SellrTaxRegnId = value if value is not None else base_types.UninitialisedField(self, 'SellrTaxRegnId', Max70Text, False)
 
 	@SellrTaxRegnId.deleter
 	def SellrTaxRegnId(self):
 		del self._SellrTaxRegnId
-		self._SellrTaxRegnId = None
+		self._SellrTaxRegnId = base_types.UninitialisedField(self, 'SellrTaxRegnId', Max70Text, False)
 
 	@property
 	def SummryCmmdtyId(self):
@@ -259,12 +259,12 @@ class Invoice3(base_types._BaseFieldType):
 
 	@SummryCmmdtyId.setter
 	def SummryCmmdtyId(self, value):
-		self._SummryCmmdtyId = value if type(value) != base_types.auto else self.make_default("SummryCmmdtyId")
+		self._SummryCmmdtyId = value if value is not None else base_types.UninitialisedField(self, 'SummryCmmdtyId', Max35Text, False)
 
 	@SummryCmmdtyId.deleter
 	def SummryCmmdtyId(self):
 		del self._SummryCmmdtyId
-		self._SummryCmmdtyId = None
+		self._SummryCmmdtyId = base_types.UninitialisedField(self, 'SummryCmmdtyId', Max35Text, False)
 
 	@property
 	def TaxRclmMtd(self):
@@ -272,12 +272,12 @@ class Invoice3(base_types._BaseFieldType):
 
 	@TaxRclmMtd.setter
 	def TaxRclmMtd(self, value):
-		self._TaxRclmMtd = value if type(value) != base_types.auto else self.make_default("TaxRclmMtd")
+		self._TaxRclmMtd = value if value is not None else base_types.UninitialisedField(self, 'TaxRclmMtd', TaxReclaimMethod1Code, False)
 
 	@TaxRclmMtd.deleter
 	def TaxRclmMtd(self):
 		del self._TaxRclmMtd
-		self._TaxRclmMtd = None
+		self._TaxRclmMtd = base_types.UninitialisedField(self, 'TaxRclmMtd', TaxReclaimMethod1Code, False)
 
 	@property
 	def TaxTtl(self):
@@ -285,12 +285,12 @@ class Invoice3(base_types._BaseFieldType):
 
 	@TaxTtl.setter
 	def TaxTtl(self, value):
-		self._TaxTtl = value if type(value) != base_types.auto else self.make_default("TaxTtl")
+		self._TaxTtl = value if value is not None else base_types.UninitialisedField(self, 'TaxTtl', Tax41, True)
 
 	@TaxTtl.deleter
 	def TaxTtl(self):
 		del self._TaxTtl
-		self._TaxTtl = None
+		self._TaxTtl = base_types.UninitialisedField(self, 'TaxTtl', Tax41, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),

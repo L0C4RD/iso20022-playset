@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMDepositedMedia4 import ATMDepositedMedia4
-from ._CardAccount21 import CardAccount21
-from ._ContentInformationType10 import ContentInformationType10
-from ._DetailedAmount16 import DetailedAmount16
-from ._Max70Text import Max70Text
+from . import ATMDepositedMedia4
+from . import CardAccount21
+from . import ContentInformationType10
+from . import DetailedAmount16
+from . import Max70Text
 
 class ATMDepositComponent1(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class ATMDepositComponent1(base_types._BaseFieldType):
 
 	@AcctData.setter
 	def AcctData(self, value):
-		self._AcctData = value if type(value) != base_types.auto else self.make_default("AcctData")
+		self._AcctData = value if value is not None else base_types.UninitialisedField(self, 'AcctData', CardAccount21, True)
 
 	@AcctData.deleter
 	def AcctData(self):
 		del self._AcctData
-		self._AcctData = None
+		self._AcctData = base_types.UninitialisedField(self, 'AcctData', CardAccount21, True)
 
 	@property
 	def DpstdMdia(self):
@@ -30,12 +30,12 @@ class ATMDepositComponent1(base_types._BaseFieldType):
 
 	@DpstdMdia.setter
 	def DpstdMdia(self, value):
-		self._DpstdMdia = value if type(value) != base_types.auto else self.make_default("DpstdMdia")
+		self._DpstdMdia = value if value is not None else base_types.UninitialisedField(self, 'DpstdMdia', ATMDepositedMedia4, True)
 
 	@DpstdMdia.deleter
 	def DpstdMdia(self):
 		del self._DpstdMdia
-		self._DpstdMdia = None
+		self._DpstdMdia = base_types.UninitialisedField(self, 'DpstdMdia', ATMDepositedMedia4, True)
 
 	@property
 	def DtldReqdAmt(self):
@@ -43,12 +43,12 @@ class ATMDepositComponent1(base_types._BaseFieldType):
 
 	@DtldReqdAmt.setter
 	def DtldReqdAmt(self, value):
-		self._DtldReqdAmt = value if type(value) != base_types.auto else self.make_default("DtldReqdAmt")
+		self._DtldReqdAmt = value if value is not None else base_types.UninitialisedField(self, 'DtldReqdAmt', DetailedAmount16, True)
 
 	@DtldReqdAmt.deleter
 	def DtldReqdAmt(self):
 		del self._DtldReqdAmt
-		self._DtldReqdAmt = None
+		self._DtldReqdAmt = base_types.UninitialisedField(self, 'DtldReqdAmt', DetailedAmount16, True)
 
 	@property
 	def PrtctdAcctData(self):
@@ -56,12 +56,12 @@ class ATMDepositComponent1(base_types._BaseFieldType):
 
 	@PrtctdAcctData.setter
 	def PrtctdAcctData(self, value):
-		self._PrtctdAcctData = value if type(value) != base_types.auto else self.make_default("PrtctdAcctData")
+		self._PrtctdAcctData = value if value is not None else base_types.UninitialisedField(self, 'PrtctdAcctData', ContentInformationType10, True)
 
 	@PrtctdAcctData.deleter
 	def PrtctdAcctData(self):
 		del self._PrtctdAcctData
-		self._PrtctdAcctData = None
+		self._PrtctdAcctData = base_types.UninitialisedField(self, 'PrtctdAcctData', ContentInformationType10, True)
 
 	@property
 	def SubDpstId(self):
@@ -69,12 +69,12 @@ class ATMDepositComponent1(base_types._BaseFieldType):
 
 	@SubDpstId.setter
 	def SubDpstId(self, value):
-		self._SubDpstId = value if type(value) != base_types.auto else self.make_default("SubDpstId")
+		self._SubDpstId = value if value is not None else base_types.UninitialisedField(self, 'SubDpstId', Max70Text, False)
 
 	@SubDpstId.deleter
 	def SubDpstId(self):
 		del self._SubDpstId
-		self._SubDpstId = None
+		self._SubDpstId = base_types.UninitialisedField(self, 'SubDpstId', Max70Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctData', type=CardAccount21, min=0, max=None, mutex_group=None, array=True),

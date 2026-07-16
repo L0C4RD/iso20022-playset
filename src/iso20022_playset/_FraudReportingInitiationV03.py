@@ -2,27 +2,27 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalData2 import AdditionalData2
-from ._AdditionalFee3 import AdditionalFee3
-from ._AdditionalInformation22 import AdditionalInformation22
-from ._CardData15 import CardData15
-from ._CardNotReceivedDetails3 import CardNotReceivedDetails3
-from ._Cardholder22 import Cardholder22
-from ._CardholderName3 import CardholderName3
-from ._ContentInformationType41 import ContentInformationType41
-from ._FraudulentTransactionData3 import FraudulentTransactionData3
-from ._Header71 import Header71
-from ._Jurisdiction2 import Jurisdiction2
-from ._LocalData16 import LocalData16
-from ._Max70Text import Max70Text
-from ._PartyIdentification286 import PartyIdentification286
-from ._ProgrammeMode5 import ProgrammeMode5
-from ._ProtectedData2 import ProtectedData2
-from ._Reconciliation4 import Reconciliation4
-from ._ReportedFraud4 import ReportedFraud4
-from ._SettlementService6 import SettlementService6
-from ._SupplementaryData1 import SupplementaryData1
-from ._Token2 import Token2
+from . import AdditionalData2
+from . import AdditionalFee3
+from . import AdditionalInformation22
+from . import CardData15
+from . import CardNotReceivedDetails3
+from . import Cardholder22
+from . import CardholderName3
+from . import ContentInformationType41
+from . import FraudulentTransactionData3
+from . import Header71
+from . import Jurisdiction2
+from . import LocalData16
+from . import Max70Text
+from . import PartyIdentification286
+from . import ProgrammeMode5
+from . import ProtectedData2
+from . import Reconciliation4
+from . import ReportedFraud4
+from . import SettlementService6
+from . import SupplementaryData1
+from . import Token2
 
 class FraudReportingInitiationV03(base_types._BaseFieldType):
 
@@ -33,12 +33,12 @@ class FraudReportingInitiationV03(base_types._BaseFieldType):
 
 	@Acqrr.setter
 	def Acqrr(self, value):
-		self._Acqrr = value if type(value) != base_types.auto else self.make_default("Acqrr")
+		self._Acqrr = value if value is not None else base_types.UninitialisedField(self, 'Acqrr', PartyIdentification286, False)
 
 	@Acqrr.deleter
 	def Acqrr(self):
 		del self._Acqrr
-		self._Acqrr = None
+		self._Acqrr = base_types.UninitialisedField(self, 'Acqrr', PartyIdentification286, False)
 
 	@property
 	def AddtlData(self):
@@ -46,12 +46,12 @@ class FraudReportingInitiationV03(base_types._BaseFieldType):
 
 	@AddtlData.setter
 	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+		self._AddtlData = value if value is not None else base_types.UninitialisedField(self, 'AddtlData', AdditionalData2, True)
 
 	@AddtlData.deleter
 	def AddtlData(self):
 		del self._AddtlData
-		self._AddtlData = None
+		self._AddtlData = base_types.UninitialisedField(self, 'AddtlData', AdditionalData2, True)
 
 	@property
 	def AddtlFee(self):
@@ -59,12 +59,12 @@ class FraudReportingInitiationV03(base_types._BaseFieldType):
 
 	@AddtlFee.setter
 	def AddtlFee(self, value):
-		self._AddtlFee = value if type(value) != base_types.auto else self.make_default("AddtlFee")
+		self._AddtlFee = value if value is not None else base_types.UninitialisedField(self, 'AddtlFee', AdditionalFee3, True)
 
 	@AddtlFee.deleter
 	def AddtlFee(self):
 		del self._AddtlFee
-		self._AddtlFee = None
+		self._AddtlFee = base_types.UninitialisedField(self, 'AddtlFee', AdditionalFee3, True)
 
 	@property
 	def AddtlInf(self):
@@ -72,12 +72,12 @@ class FraudReportingInitiationV03(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation22, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation22, True)
 
 	@property
 	def Card(self):
@@ -85,12 +85,12 @@ class FraudReportingInitiationV03(base_types._BaseFieldType):
 
 	@Card.setter
 	def Card(self, value):
-		self._Card = value if type(value) != base_types.auto else self.make_default("Card")
+		self._Card = value if value is not None else base_types.UninitialisedField(self, 'Card', CardData15, False)
 
 	@Card.deleter
 	def Card(self):
 		del self._Card
-		self._Card = None
+		self._Card = base_types.UninitialisedField(self, 'Card', CardData15, False)
 
 	@property
 	def CardNotRcvdDtls(self):
@@ -98,12 +98,12 @@ class FraudReportingInitiationV03(base_types._BaseFieldType):
 
 	@CardNotRcvdDtls.setter
 	def CardNotRcvdDtls(self, value):
-		self._CardNotRcvdDtls = value if type(value) != base_types.auto else self.make_default("CardNotRcvdDtls")
+		self._CardNotRcvdDtls = value if value is not None else base_types.UninitialisedField(self, 'CardNotRcvdDtls', CardNotReceivedDetails3, False)
 
 	@CardNotRcvdDtls.deleter
 	def CardNotRcvdDtls(self):
 		del self._CardNotRcvdDtls
-		self._CardNotRcvdDtls = None
+		self._CardNotRcvdDtls = base_types.UninitialisedField(self, 'CardNotRcvdDtls', CardNotReceivedDetails3, False)
 
 	@property
 	def Crdhldr(self):
@@ -111,12 +111,12 @@ class FraudReportingInitiationV03(base_types._BaseFieldType):
 
 	@Crdhldr.setter
 	def Crdhldr(self, value):
-		self._Crdhldr = value if type(value) != base_types.auto else self.make_default("Crdhldr")
+		self._Crdhldr = value if value is not None else base_types.UninitialisedField(self, 'Crdhldr', Cardholder22, False)
 
 	@Crdhldr.deleter
 	def Crdhldr(self):
 		del self._Crdhldr
-		self._Crdhldr = None
+		self._Crdhldr = base_types.UninitialisedField(self, 'Crdhldr', Cardholder22, False)
 
 	@property
 	def Dstn(self):
@@ -124,12 +124,12 @@ class FraudReportingInitiationV03(base_types._BaseFieldType):
 
 	@Dstn.setter
 	def Dstn(self, value):
-		self._Dstn = value if type(value) != base_types.auto else self.make_default("Dstn")
+		self._Dstn = value if value is not None else base_types.UninitialisedField(self, 'Dstn', PartyIdentification286, False)
 
 	@Dstn.deleter
 	def Dstn(self):
 		del self._Dstn
-		self._Dstn = None
+		self._Dstn = base_types.UninitialisedField(self, 'Dstn', PartyIdentification286, False)
 
 	@property
 	def FrdTxId(self):
@@ -137,12 +137,12 @@ class FraudReportingInitiationV03(base_types._BaseFieldType):
 
 	@FrdTxId.setter
 	def FrdTxId(self, value):
-		self._FrdTxId = value if type(value) != base_types.auto else self.make_default("FrdTxId")
+		self._FrdTxId = value if value is not None else base_types.UninitialisedField(self, 'FrdTxId', Max70Text, False)
 
 	@FrdTxId.deleter
 	def FrdTxId(self):
 		del self._FrdTxId
-		self._FrdTxId = None
+		self._FrdTxId = base_types.UninitialisedField(self, 'FrdTxId', Max70Text, False)
 
 	@property
 	def FrdlntTxData(self):
@@ -150,12 +150,12 @@ class FraudReportingInitiationV03(base_types._BaseFieldType):
 
 	@FrdlntTxData.setter
 	def FrdlntTxData(self, value):
-		self._FrdlntTxData = value if type(value) != base_types.auto else self.make_default("FrdlntTxData")
+		self._FrdlntTxData = value if value is not None else base_types.UninitialisedField(self, 'FrdlntTxData', FraudulentTransactionData3, False)
 
 	@FrdlntTxData.deleter
 	def FrdlntTxData(self):
 		del self._FrdlntTxData
-		self._FrdlntTxData = None
+		self._FrdlntTxData = base_types.UninitialisedField(self, 'FrdlntTxData', FraudulentTransactionData3, False)
 
 	@property
 	def Hdr(self):
@@ -163,12 +163,12 @@ class FraudReportingInitiationV03(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header71, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header71, False)
 
 	@property
 	def Issr(self):
@@ -176,12 +176,12 @@ class FraudReportingInitiationV03(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+		self._Issr = value if value is not None else base_types.UninitialisedField(self, 'Issr', PartyIdentification286, False)
 
 	@Issr.deleter
 	def Issr(self):
 		del self._Issr
-		self._Issr = None
+		self._Issr = base_types.UninitialisedField(self, 'Issr', PartyIdentification286, False)
 
 	@property
 	def Jursdctn(self):
@@ -189,12 +189,12 @@ class FraudReportingInitiationV03(base_types._BaseFieldType):
 
 	@Jursdctn.setter
 	def Jursdctn(self, value):
-		self._Jursdctn = value if type(value) != base_types.auto else self.make_default("Jursdctn")
+		self._Jursdctn = value if value is not None else base_types.UninitialisedField(self, 'Jursdctn', Jurisdiction2, False)
 
 	@Jursdctn.deleter
 	def Jursdctn(self):
 		del self._Jursdctn
-		self._Jursdctn = None
+		self._Jursdctn = base_types.UninitialisedField(self, 'Jursdctn', Jurisdiction2, False)
 
 	@property
 	def LclData(self):
@@ -202,12 +202,12 @@ class FraudReportingInitiationV03(base_types._BaseFieldType):
 
 	@LclData.setter
 	def LclData(self, value):
-		self._LclData = value if type(value) != base_types.auto else self.make_default("LclData")
+		self._LclData = value if value is not None else base_types.UninitialisedField(self, 'LclData', LocalData16, False)
 
 	@LclData.deleter
 	def LclData(self):
 		del self._LclData
-		self._LclData = None
+		self._LclData = base_types.UninitialisedField(self, 'LclData', LocalData16, False)
 
 	@property
 	def Orgtr(self):
@@ -215,12 +215,12 @@ class FraudReportingInitiationV03(base_types._BaseFieldType):
 
 	@Orgtr.setter
 	def Orgtr(self, value):
-		self._Orgtr = value if type(value) != base_types.auto else self.make_default("Orgtr")
+		self._Orgtr = value if value is not None else base_types.UninitialisedField(self, 'Orgtr', PartyIdentification286, False)
 
 	@Orgtr.deleter
 	def Orgtr(self):
 		del self._Orgtr
-		self._Orgtr = None
+		self._Orgtr = base_types.UninitialisedField(self, 'Orgtr', PartyIdentification286, False)
 
 	@property
 	def Prgrmm(self):
@@ -228,12 +228,12 @@ class FraudReportingInitiationV03(base_types._BaseFieldType):
 
 	@Prgrmm.setter
 	def Prgrmm(self, value):
-		self._Prgrmm = value if type(value) != base_types.auto else self.make_default("Prgrmm")
+		self._Prgrmm = value if value is not None else base_types.UninitialisedField(self, 'Prgrmm', ProgrammeMode5, False)
 
 	@Prgrmm.deleter
 	def Prgrmm(self):
 		del self._Prgrmm
-		self._Prgrmm = None
+		self._Prgrmm = base_types.UninitialisedField(self, 'Prgrmm', ProgrammeMode5, False)
 
 	@property
 	def PrtctdData(self):
@@ -241,12 +241,12 @@ class FraudReportingInitiationV03(base_types._BaseFieldType):
 
 	@PrtctdData.setter
 	def PrtctdData(self, value):
-		self._PrtctdData = value if type(value) != base_types.auto else self.make_default("PrtctdData")
+		self._PrtctdData = value if value is not None else base_types.UninitialisedField(self, 'PrtctdData', ProtectedData2, True)
 
 	@PrtctdData.deleter
 	def PrtctdData(self):
 		del self._PrtctdData
-		self._PrtctdData = None
+		self._PrtctdData = base_types.UninitialisedField(self, 'PrtctdData', ProtectedData2, True)
 
 	@property
 	def Rcncltn(self):
@@ -254,12 +254,12 @@ class FraudReportingInitiationV03(base_types._BaseFieldType):
 
 	@Rcncltn.setter
 	def Rcncltn(self, value):
-		self._Rcncltn = value if type(value) != base_types.auto else self.make_default("Rcncltn")
+		self._Rcncltn = value if value is not None else base_types.UninitialisedField(self, 'Rcncltn', Reconciliation4, False)
 
 	@Rcncltn.deleter
 	def Rcncltn(self):
 		del self._Rcncltn
-		self._Rcncltn = None
+		self._Rcncltn = base_types.UninitialisedField(self, 'Rcncltn', Reconciliation4, False)
 
 	@property
 	def Rcvr(self):
@@ -267,12 +267,12 @@ class FraudReportingInitiationV03(base_types._BaseFieldType):
 
 	@Rcvr.setter
 	def Rcvr(self, value):
-		self._Rcvr = value if type(value) != base_types.auto else self.make_default("Rcvr")
+		self._Rcvr = value if value is not None else base_types.UninitialisedField(self, 'Rcvr', PartyIdentification286, False)
 
 	@Rcvr.deleter
 	def Rcvr(self):
 		del self._Rcvr
-		self._Rcvr = None
+		self._Rcvr = base_types.UninitialisedField(self, 'Rcvr', PartyIdentification286, False)
 
 	@property
 	def RptdFrd(self):
@@ -280,12 +280,12 @@ class FraudReportingInitiationV03(base_types._BaseFieldType):
 
 	@RptdFrd.setter
 	def RptdFrd(self, value):
-		self._RptdFrd = value if type(value) != base_types.auto else self.make_default("RptdFrd")
+		self._RptdFrd = value if value is not None else base_types.UninitialisedField(self, 'RptdFrd', ReportedFraud4, False)
 
 	@RptdFrd.deleter
 	def RptdFrd(self):
 		del self._RptdFrd
-		self._RptdFrd = None
+		self._RptdFrd = base_types.UninitialisedField(self, 'RptdFrd', ReportedFraud4, False)
 
 	@property
 	def SctyTrlr(self):
@@ -293,12 +293,12 @@ class FraudReportingInitiationV03(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType41, False)
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
 		del self._SctyTrlr
-		self._SctyTrlr = None
+		self._SctyTrlr = base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType41, False)
 
 	@property
 	def Sndr(self):
@@ -306,12 +306,12 @@ class FraudReportingInitiationV03(base_types._BaseFieldType):
 
 	@Sndr.setter
 	def Sndr(self, value):
-		self._Sndr = value if type(value) != base_types.auto else self.make_default("Sndr")
+		self._Sndr = value if value is not None else base_types.UninitialisedField(self, 'Sndr', PartyIdentification286, False)
 
 	@Sndr.deleter
 	def Sndr(self):
 		del self._Sndr
-		self._Sndr = None
+		self._Sndr = base_types.UninitialisedField(self, 'Sndr', PartyIdentification286, False)
 
 	@property
 	def SplmtryData(self):
@@ -319,12 +319,12 @@ class FraudReportingInitiationV03(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def SttlmSvc(self):
@@ -332,12 +332,12 @@ class FraudReportingInitiationV03(base_types._BaseFieldType):
 
 	@SttlmSvc.setter
 	def SttlmSvc(self, value):
-		self._SttlmSvc = value if type(value) != base_types.auto else self.make_default("SttlmSvc")
+		self._SttlmSvc = value if value is not None else base_types.UninitialisedField(self, 'SttlmSvc', SettlementService6, False)
 
 	@SttlmSvc.deleter
 	def SttlmSvc(self):
 		del self._SttlmSvc
-		self._SttlmSvc = None
+		self._SttlmSvc = base_types.UninitialisedField(self, 'SttlmSvc', SettlementService6, False)
 
 	@property
 	def Tkn(self):
@@ -345,12 +345,12 @@ class FraudReportingInitiationV03(base_types._BaseFieldType):
 
 	@Tkn.setter
 	def Tkn(self, value):
-		self._Tkn = value if type(value) != base_types.auto else self.make_default("Tkn")
+		self._Tkn = value if value is not None else base_types.UninitialisedField(self, 'Tkn', Token2, False)
 
 	@Tkn.deleter
 	def Tkn(self):
 		del self._Tkn
-		self._Tkn = None
+		self._Tkn = base_types.UninitialisedField(self, 'Tkn', Token2, False)
 
 	@property
 	def TxCrdhldrNm(self):
@@ -358,12 +358,12 @@ class FraudReportingInitiationV03(base_types._BaseFieldType):
 
 	@TxCrdhldrNm.setter
 	def TxCrdhldrNm(self, value):
-		self._TxCrdhldrNm = value if type(value) != base_types.auto else self.make_default("TxCrdhldrNm")
+		self._TxCrdhldrNm = value if value is not None else base_types.UninitialisedField(self, 'TxCrdhldrNm', CardholderName3, False)
 
 	@TxCrdhldrNm.deleter
 	def TxCrdhldrNm(self):
 		del self._TxCrdhldrNm
-		self._TxCrdhldrNm = None
+		self._TxCrdhldrNm = base_types.UninitialisedField(self, 'TxCrdhldrNm', CardholderName3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acqrr', type=PartyIdentification286, min=0, max=1, mutex_group=None, array=False),

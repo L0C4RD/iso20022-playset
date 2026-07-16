@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashAccountEntrySearch8 import CashAccountEntrySearch8
-from ._PaymentSearch10 import PaymentSearch10
-from ._SystemSearch5 import SystemSearch5
+from . import CashAccountEntrySearch8
+from . import PaymentSearch10
+from . import SystemSearch5
 
 class TransactionSearchCriteria11(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TransactionSearchCriteria11(base_types._BaseFieldType):
 
 	@AcctNtrySch.setter
 	def AcctNtrySch(self, value):
-		self._AcctNtrySch = value if type(value) != base_types.auto else self.make_default("AcctNtrySch")
+		self._AcctNtrySch = value if value is not None else base_types.UninitialisedField(self, 'AcctNtrySch', CashAccountEntrySearch8, False)
 
 	@AcctNtrySch.deleter
 	def AcctNtrySch(self):
 		del self._AcctNtrySch
-		self._AcctNtrySch = None
+		self._AcctNtrySch = base_types.UninitialisedField(self, 'AcctNtrySch', CashAccountEntrySearch8, False)
 
 	@property
 	def PmtFr(self):
@@ -28,12 +28,12 @@ class TransactionSearchCriteria11(base_types._BaseFieldType):
 
 	@PmtFr.setter
 	def PmtFr(self, value):
-		self._PmtFr = value if type(value) != base_types.auto else self.make_default("PmtFr")
+		self._PmtFr = value if value is not None else base_types.UninitialisedField(self, 'PmtFr', SystemSearch5, True)
 
 	@PmtFr.deleter
 	def PmtFr(self):
 		del self._PmtFr
-		self._PmtFr = None
+		self._PmtFr = base_types.UninitialisedField(self, 'PmtFr', SystemSearch5, True)
 
 	@property
 	def PmtSch(self):
@@ -41,12 +41,12 @@ class TransactionSearchCriteria11(base_types._BaseFieldType):
 
 	@PmtSch.setter
 	def PmtSch(self, value):
-		self._PmtSch = value if type(value) != base_types.auto else self.make_default("PmtSch")
+		self._PmtSch = value if value is not None else base_types.UninitialisedField(self, 'PmtSch', PaymentSearch10, False)
 
 	@PmtSch.deleter
 	def PmtSch(self):
 		del self._PmtSch
-		self._PmtSch = None
+		self._PmtSch = base_types.UninitialisedField(self, 'PmtSch', PaymentSearch10, False)
 
 	@property
 	def PmtTo(self):
@@ -54,12 +54,12 @@ class TransactionSearchCriteria11(base_types._BaseFieldType):
 
 	@PmtTo.setter
 	def PmtTo(self, value):
-		self._PmtTo = value if type(value) != base_types.auto else self.make_default("PmtTo")
+		self._PmtTo = value if value is not None else base_types.UninitialisedField(self, 'PmtTo', SystemSearch5, True)
 
 	@PmtTo.deleter
 	def PmtTo(self):
 		del self._PmtTo
-		self._PmtTo = None
+		self._PmtTo = base_types.UninitialisedField(self, 'PmtTo', SystemSearch5, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctNtrySch', type=CashAccountEntrySearch8, min=0, max=1, mutex_group=None, array=False),

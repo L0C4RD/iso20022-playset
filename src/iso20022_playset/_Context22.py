@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalData1 import AdditionalData1
-from ._ISO18245MerchantCategoryCode import ISO18245MerchantCategoryCode
-from ._Max35Text import Max35Text
-from ._TransactionInitiator1Code import TransactionInitiator1Code
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import AdditionalData1
+from . import ISO18245MerchantCategoryCode
+from . import Max35Text
+from . import TransactionInitiator1Code
+from . import TrueFalseIndicator
 
 class Context22(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class Context22(base_types._BaseFieldType):
 
 	@AddtlData.setter
 	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+		self._AddtlData = value if value is not None else base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@AddtlData.deleter
 	def AddtlData(self):
 		del self._AddtlData
-		self._AddtlData = None
+		self._AddtlData = base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@property
 	def DelydChrgs(self):
@@ -30,12 +30,12 @@ class Context22(base_types._BaseFieldType):
 
 	@DelydChrgs.setter
 	def DelydChrgs(self, value):
-		self._DelydChrgs = value if type(value) != base_types.auto else self.make_default("DelydChrgs")
+		self._DelydChrgs = value if value is not None else base_types.UninitialisedField(self, 'DelydChrgs', TrueFalseIndicator, False)
 
 	@DelydChrgs.deleter
 	def DelydChrgs(self):
 		del self._DelydChrgs
-		self._DelydChrgs = None
+		self._DelydChrgs = base_types.UninitialisedField(self, 'DelydChrgs', TrueFalseIndicator, False)
 
 	@property
 	def MrchntCtgyCd(self):
@@ -43,12 +43,12 @@ class Context22(base_types._BaseFieldType):
 
 	@MrchntCtgyCd.setter
 	def MrchntCtgyCd(self, value):
-		self._MrchntCtgyCd = value if type(value) != base_types.auto else self.make_default("MrchntCtgyCd")
+		self._MrchntCtgyCd = value if value is not None else base_types.UninitialisedField(self, 'MrchntCtgyCd', ISO18245MerchantCategoryCode, False)
 
 	@MrchntCtgyCd.deleter
 	def MrchntCtgyCd(self):
 		del self._MrchntCtgyCd
-		self._MrchntCtgyCd = None
+		self._MrchntCtgyCd = base_types.UninitialisedField(self, 'MrchntCtgyCd', ISO18245MerchantCategoryCode, False)
 
 	@property
 	def MrchntCtgySpcfcData(self):
@@ -56,12 +56,12 @@ class Context22(base_types._BaseFieldType):
 
 	@MrchntCtgySpcfcData.setter
 	def MrchntCtgySpcfcData(self, value):
-		self._MrchntCtgySpcfcData = value if type(value) != base_types.auto else self.make_default("MrchntCtgySpcfcData")
+		self._MrchntCtgySpcfcData = value if value is not None else base_types.UninitialisedField(self, 'MrchntCtgySpcfcData', Max35Text, False)
 
 	@MrchntCtgySpcfcData.deleter
 	def MrchntCtgySpcfcData(self):
 		del self._MrchntCtgySpcfcData
-		self._MrchntCtgySpcfcData = None
+		self._MrchntCtgySpcfcData = base_types.UninitialisedField(self, 'MrchntCtgySpcfcData', Max35Text, False)
 
 	@property
 	def NoShow(self):
@@ -69,12 +69,12 @@ class Context22(base_types._BaseFieldType):
 
 	@NoShow.setter
 	def NoShow(self, value):
-		self._NoShow = value if type(value) != base_types.auto else self.make_default("NoShow")
+		self._NoShow = value if value is not None else base_types.UninitialisedField(self, 'NoShow', TrueFalseIndicator, False)
 
 	@NoShow.deleter
 	def NoShow(self):
 		del self._NoShow
-		self._NoShow = None
+		self._NoShow = base_types.UninitialisedField(self, 'NoShow', TrueFalseIndicator, False)
 
 	@property
 	def OthrMrchntCtgy(self):
@@ -82,12 +82,12 @@ class Context22(base_types._BaseFieldType):
 
 	@OthrMrchntCtgy.setter
 	def OthrMrchntCtgy(self, value):
-		self._OthrMrchntCtgy = value if type(value) != base_types.auto else self.make_default("OthrMrchntCtgy")
+		self._OthrMrchntCtgy = value if value is not None else base_types.UninitialisedField(self, 'OthrMrchntCtgy', Max35Text, False)
 
 	@OthrMrchntCtgy.deleter
 	def OthrMrchntCtgy(self):
 		del self._OthrMrchntCtgy
-		self._OthrMrchntCtgy = None
+		self._OthrMrchntCtgy = base_types.UninitialisedField(self, 'OthrMrchntCtgy', Max35Text, False)
 
 	@property
 	def PrtlShipmnt(self):
@@ -95,12 +95,12 @@ class Context22(base_types._BaseFieldType):
 
 	@PrtlShipmnt.setter
 	def PrtlShipmnt(self, value):
-		self._PrtlShipmnt = value if type(value) != base_types.auto else self.make_default("PrtlShipmnt")
+		self._PrtlShipmnt = value if value is not None else base_types.UninitialisedField(self, 'PrtlShipmnt', TrueFalseIndicator, False)
 
 	@PrtlShipmnt.deleter
 	def PrtlShipmnt(self):
 		del self._PrtlShipmnt
-		self._PrtlShipmnt = None
+		self._PrtlShipmnt = base_types.UninitialisedField(self, 'PrtlShipmnt', TrueFalseIndicator, False)
 
 	@property
 	def ReSubmissn(self):
@@ -108,12 +108,12 @@ class Context22(base_types._BaseFieldType):
 
 	@ReSubmissn.setter
 	def ReSubmissn(self, value):
-		self._ReSubmissn = value if type(value) != base_types.auto else self.make_default("ReSubmissn")
+		self._ReSubmissn = value if value is not None else base_types.UninitialisedField(self, 'ReSubmissn', TrueFalseIndicator, False)
 
 	@ReSubmissn.deleter
 	def ReSubmissn(self):
 		del self._ReSubmissn
-		self._ReSubmissn = None
+		self._ReSubmissn = base_types.UninitialisedField(self, 'ReSubmissn', TrueFalseIndicator, False)
 
 	@property
 	def Reauthstn(self):
@@ -121,12 +121,12 @@ class Context22(base_types._BaseFieldType):
 
 	@Reauthstn.setter
 	def Reauthstn(self, value):
-		self._Reauthstn = value if type(value) != base_types.auto else self.make_default("Reauthstn")
+		self._Reauthstn = value if value is not None else base_types.UninitialisedField(self, 'Reauthstn', TrueFalseIndicator, False)
 
 	@Reauthstn.deleter
 	def Reauthstn(self):
 		del self._Reauthstn
-		self._Reauthstn = None
+		self._Reauthstn = base_types.UninitialisedField(self, 'Reauthstn', TrueFalseIndicator, False)
 
 	@property
 	def TxInitr(self):
@@ -134,12 +134,12 @@ class Context22(base_types._BaseFieldType):
 
 	@TxInitr.setter
 	def TxInitr(self, value):
-		self._TxInitr = value if type(value) != base_types.auto else self.make_default("TxInitr")
+		self._TxInitr = value if value is not None else base_types.UninitialisedField(self, 'TxInitr', TransactionInitiator1Code, False)
 
 	@TxInitr.deleter
 	def TxInitr(self):
 		del self._TxInitr
-		self._TxInitr = None
+		self._TxInitr = base_types.UninitialisedField(self, 'TxInitr', TransactionInitiator1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),

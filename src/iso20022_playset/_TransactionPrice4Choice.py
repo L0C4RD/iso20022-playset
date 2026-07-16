@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Price7 import Price7
-from ._ProprietaryPrice2 import ProprietaryPrice2
+from . import Price7
+from . import ProprietaryPrice2
 
 class TransactionPrice4Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TransactionPrice4Choice(base_types._BaseFieldType):
 
 	@DealPric.setter
 	def DealPric(self, value):
-		self._DealPric = value if type(value) != base_types.auto else self.make_default("DealPric")
+		self._DealPric = value if value is not None else base_types.UninitialisedField(self, 'DealPric', Price7, False)
 
 	@DealPric.deleter
 	def DealPric(self):
 		del self._DealPric
-		self._DealPric = None
+		self._DealPric = base_types.UninitialisedField(self, 'DealPric', Price7, False)
 
 	@property
 	def Prtry(self):
@@ -27,12 +27,12 @@ class TransactionPrice4Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+		self._Prtry = value if value is not None else base_types.UninitialisedField(self, 'Prtry', ProprietaryPrice2, True)
 
 	@Prtry.deleter
 	def Prtry(self):
 		del self._Prtry
-		self._Prtry = None
+		self._Prtry = base_types.UninitialisedField(self, 'Prtry', ProprietaryPrice2, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DealPric', type=Price7, min=0, max=1, mutex_group=1, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CollateralProposal6Choice import CollateralProposal6Choice
-from ._ProposalType1Code import ProposalType1Code
+from . import CollateralProposal6Choice
+from . import ProposalType1Code
 
 class Proposal6(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Proposal6(base_types._BaseFieldType):
 
 	@CollPrpsl.setter
 	def CollPrpsl(self, value):
-		self._CollPrpsl = value if type(value) != base_types.auto else self.make_default("CollPrpsl")
+		self._CollPrpsl = value if value is not None else base_types.UninitialisedField(self, 'CollPrpsl', CollateralProposal6Choice, False)
 
 	@CollPrpsl.deleter
 	def CollPrpsl(self):
 		del self._CollPrpsl
-		self._CollPrpsl = None
+		self._CollPrpsl = base_types.UninitialisedField(self, 'CollPrpsl', CollateralProposal6Choice, False)
 
 	@property
 	def CollPrpslTp(self):
@@ -27,12 +27,12 @@ class Proposal6(base_types._BaseFieldType):
 
 	@CollPrpslTp.setter
 	def CollPrpslTp(self, value):
-		self._CollPrpslTp = value if type(value) != base_types.auto else self.make_default("CollPrpslTp")
+		self._CollPrpslTp = value if value is not None else base_types.UninitialisedField(self, 'CollPrpslTp', ProposalType1Code, False)
 
 	@CollPrpslTp.deleter
 	def CollPrpslTp(self):
 		del self._CollPrpslTp
-		self._CollPrpslTp = None
+		self._CollPrpslTp = base_types.UninitialisedField(self, 'CollPrpslTp', ProposalType1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollPrpsl', type=CollateralProposal6Choice, min=1, max=1, mutex_group=None, array=False),

@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Agreement4 import Agreement4
-from ._ExpectedCollateral2Choice import ExpectedCollateral2Choice
-from ._MarginCall1 import MarginCall1
-from ._MarginCall3 import MarginCall3
-from ._MarginCallResult3 import MarginCallResult3
-from ._MarginRequirement1Choice import MarginRequirement1Choice
-from ._Max35Text import Max35Text
-from ._Obligation9 import Obligation9
-from ._SupplementaryData1 import SupplementaryData1
+from . import Agreement4
+from . import ExpectedCollateral2Choice
+from . import MarginCall1
+from . import MarginCall3
+from . import MarginCallResult3
+from . import MarginRequirement1Choice
+from . import Max35Text
+from . import Obligation9
+from . import SupplementaryData1
 
 class MarginCallRequestV05(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class MarginCallRequestV05(base_types._BaseFieldType):
 
 	@Agrmt.setter
 	def Agrmt(self, value):
-		self._Agrmt = value if type(value) != base_types.auto else self.make_default("Agrmt")
+		self._Agrmt = value if value is not None else base_types.UninitialisedField(self, 'Agrmt', Agreement4, False)
 
 	@Agrmt.deleter
 	def Agrmt(self):
 		del self._Agrmt
-		self._Agrmt = None
+		self._Agrmt = base_types.UninitialisedField(self, 'Agrmt', Agreement4, False)
 
 	@property
 	def MrgnCallDtls(self):
@@ -34,12 +34,12 @@ class MarginCallRequestV05(base_types._BaseFieldType):
 
 	@MrgnCallDtls.setter
 	def MrgnCallDtls(self, value):
-		self._MrgnCallDtls = value if type(value) != base_types.auto else self.make_default("MrgnCallDtls")
+		self._MrgnCallDtls = value if value is not None else base_types.UninitialisedField(self, 'MrgnCallDtls', MarginCall3, True)
 
 	@MrgnCallDtls.deleter
 	def MrgnCallDtls(self):
 		del self._MrgnCallDtls
-		self._MrgnCallDtls = None
+		self._MrgnCallDtls = base_types.UninitialisedField(self, 'MrgnCallDtls', MarginCall3, True)
 
 	@property
 	def MrgnCallRslt(self):
@@ -47,12 +47,12 @@ class MarginCallRequestV05(base_types._BaseFieldType):
 
 	@MrgnCallRslt.setter
 	def MrgnCallRslt(self, value):
-		self._MrgnCallRslt = value if type(value) != base_types.auto else self.make_default("MrgnCallRslt")
+		self._MrgnCallRslt = value if value is not None else base_types.UninitialisedField(self, 'MrgnCallRslt', MarginCallResult3, False)
 
 	@MrgnCallRslt.deleter
 	def MrgnCallRslt(self):
 		del self._MrgnCallRslt
-		self._MrgnCallRslt = None
+		self._MrgnCallRslt = base_types.UninitialisedField(self, 'MrgnCallRslt', MarginCallResult3, False)
 
 	@property
 	def MrgnDtlsDueToA(self):
@@ -60,12 +60,12 @@ class MarginCallRequestV05(base_types._BaseFieldType):
 
 	@MrgnDtlsDueToA.setter
 	def MrgnDtlsDueToA(self, value):
-		self._MrgnDtlsDueToA = value if type(value) != base_types.auto else self.make_default("MrgnDtlsDueToA")
+		self._MrgnDtlsDueToA = value if value is not None else base_types.UninitialisedField(self, 'MrgnDtlsDueToA', MarginCall1, False)
 
 	@MrgnDtlsDueToA.deleter
 	def MrgnDtlsDueToA(self):
 		del self._MrgnDtlsDueToA
-		self._MrgnDtlsDueToA = None
+		self._MrgnDtlsDueToA = base_types.UninitialisedField(self, 'MrgnDtlsDueToA', MarginCall1, False)
 
 	@property
 	def MrgnDtlsDueToB(self):
@@ -73,12 +73,12 @@ class MarginCallRequestV05(base_types._BaseFieldType):
 
 	@MrgnDtlsDueToB.setter
 	def MrgnDtlsDueToB(self, value):
-		self._MrgnDtlsDueToB = value if type(value) != base_types.auto else self.make_default("MrgnDtlsDueToB")
+		self._MrgnDtlsDueToB = value if value is not None else base_types.UninitialisedField(self, 'MrgnDtlsDueToB', MarginCall1, False)
 
 	@MrgnDtlsDueToB.deleter
 	def MrgnDtlsDueToB(self):
 		del self._MrgnDtlsDueToB
-		self._MrgnDtlsDueToB = None
+		self._MrgnDtlsDueToB = base_types.UninitialisedField(self, 'MrgnDtlsDueToB', MarginCall1, False)
 
 	@property
 	def Oblgtn(self):
@@ -86,12 +86,12 @@ class MarginCallRequestV05(base_types._BaseFieldType):
 
 	@Oblgtn.setter
 	def Oblgtn(self, value):
-		self._Oblgtn = value if type(value) != base_types.auto else self.make_default("Oblgtn")
+		self._Oblgtn = value if value is not None else base_types.UninitialisedField(self, 'Oblgtn', Obligation9, False)
 
 	@Oblgtn.deleter
 	def Oblgtn(self):
 		del self._Oblgtn
-		self._Oblgtn = None
+		self._Oblgtn = base_types.UninitialisedField(self, 'Oblgtn', Obligation9, False)
 
 	@property
 	def RqrmntDtlsDueToA(self):
@@ -99,12 +99,12 @@ class MarginCallRequestV05(base_types._BaseFieldType):
 
 	@RqrmntDtlsDueToA.setter
 	def RqrmntDtlsDueToA(self, value):
-		self._RqrmntDtlsDueToA = value if type(value) != base_types.auto else self.make_default("RqrmntDtlsDueToA")
+		self._RqrmntDtlsDueToA = value if value is not None else base_types.UninitialisedField(self, 'RqrmntDtlsDueToA', MarginRequirement1Choice, False)
 
 	@RqrmntDtlsDueToA.deleter
 	def RqrmntDtlsDueToA(self):
 		del self._RqrmntDtlsDueToA
-		self._RqrmntDtlsDueToA = None
+		self._RqrmntDtlsDueToA = base_types.UninitialisedField(self, 'RqrmntDtlsDueToA', MarginRequirement1Choice, False)
 
 	@property
 	def RqrmntDtlsDueToB(self):
@@ -112,12 +112,12 @@ class MarginCallRequestV05(base_types._BaseFieldType):
 
 	@RqrmntDtlsDueToB.setter
 	def RqrmntDtlsDueToB(self, value):
-		self._RqrmntDtlsDueToB = value if type(value) != base_types.auto else self.make_default("RqrmntDtlsDueToB")
+		self._RqrmntDtlsDueToB = value if value is not None else base_types.UninitialisedField(self, 'RqrmntDtlsDueToB', MarginRequirement1Choice, False)
 
 	@RqrmntDtlsDueToB.deleter
 	def RqrmntDtlsDueToB(self):
 		del self._RqrmntDtlsDueToB
-		self._RqrmntDtlsDueToB = None
+		self._RqrmntDtlsDueToB = base_types.UninitialisedField(self, 'RqrmntDtlsDueToB', MarginRequirement1Choice, False)
 
 	@property
 	def SplmtryData(self):
@@ -125,12 +125,12 @@ class MarginCallRequestV05(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TxId(self):
@@ -138,12 +138,12 @@ class MarginCallRequestV05(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	@property
 	def XpctdCollDueToA(self):
@@ -151,12 +151,12 @@ class MarginCallRequestV05(base_types._BaseFieldType):
 
 	@XpctdCollDueToA.setter
 	def XpctdCollDueToA(self, value):
-		self._XpctdCollDueToA = value if type(value) != base_types.auto else self.make_default("XpctdCollDueToA")
+		self._XpctdCollDueToA = value if value is not None else base_types.UninitialisedField(self, 'XpctdCollDueToA', ExpectedCollateral2Choice, False)
 
 	@XpctdCollDueToA.deleter
 	def XpctdCollDueToA(self):
 		del self._XpctdCollDueToA
-		self._XpctdCollDueToA = None
+		self._XpctdCollDueToA = base_types.UninitialisedField(self, 'XpctdCollDueToA', ExpectedCollateral2Choice, False)
 
 	@property
 	def XpctdCollDueToB(self):
@@ -164,12 +164,12 @@ class MarginCallRequestV05(base_types._BaseFieldType):
 
 	@XpctdCollDueToB.setter
 	def XpctdCollDueToB(self, value):
-		self._XpctdCollDueToB = value if type(value) != base_types.auto else self.make_default("XpctdCollDueToB")
+		self._XpctdCollDueToB = value if value is not None else base_types.UninitialisedField(self, 'XpctdCollDueToB', ExpectedCollateral2Choice, False)
 
 	@XpctdCollDueToB.deleter
 	def XpctdCollDueToB(self):
 		del self._XpctdCollDueToB
-		self._XpctdCollDueToB = None
+		self._XpctdCollDueToB = base_types.UninitialisedField(self, 'XpctdCollDueToB', ExpectedCollateral2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Agrmt', type=Agreement4, min=0, max=1, mutex_group=None, array=False),

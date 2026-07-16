@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CurrencyAndAmount import CurrencyAndAmount
-from ._DocumentIdentification7 import DocumentIdentification7
-from ._Max35Text import Max35Text
-from ._TransactionStatus4 import TransactionStatus4
+from . import CurrencyAndAmount
+from . import DocumentIdentification7
+from . import Max35Text
+from . import TransactionStatus4
 
 class ReportLine1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ReportLine1(base_types._BaseFieldType):
 
 	@AcmltdNetAmt.setter
 	def AcmltdNetAmt(self, value):
-		self._AcmltdNetAmt = value if type(value) != base_types.auto else self.make_default("AcmltdNetAmt")
+		self._AcmltdNetAmt = value if value is not None else base_types.UninitialisedField(self, 'AcmltdNetAmt', CurrencyAndAmount, False)
 
 	@AcmltdNetAmt.deleter
 	def AcmltdNetAmt(self):
 		del self._AcmltdNetAmt
-		self._AcmltdNetAmt = None
+		self._AcmltdNetAmt = base_types.UninitialisedField(self, 'AcmltdNetAmt', CurrencyAndAmount, False)
 
 	@property
 	def PurchsOrdrRef(self):
@@ -29,12 +29,12 @@ class ReportLine1(base_types._BaseFieldType):
 
 	@PurchsOrdrRef.setter
 	def PurchsOrdrRef(self, value):
-		self._PurchsOrdrRef = value if type(value) != base_types.auto else self.make_default("PurchsOrdrRef")
+		self._PurchsOrdrRef = value if value is not None else base_types.UninitialisedField(self, 'PurchsOrdrRef', DocumentIdentification7, False)
 
 	@PurchsOrdrRef.deleter
 	def PurchsOrdrRef(self):
 		del self._PurchsOrdrRef
-		self._PurchsOrdrRef = None
+		self._PurchsOrdrRef = base_types.UninitialisedField(self, 'PurchsOrdrRef', DocumentIdentification7, False)
 
 	@property
 	def PurchsOrdrTtlNetAmt(self):
@@ -42,12 +42,12 @@ class ReportLine1(base_types._BaseFieldType):
 
 	@PurchsOrdrTtlNetAmt.setter
 	def PurchsOrdrTtlNetAmt(self, value):
-		self._PurchsOrdrTtlNetAmt = value if type(value) != base_types.auto else self.make_default("PurchsOrdrTtlNetAmt")
+		self._PurchsOrdrTtlNetAmt = value if value is not None else base_types.UninitialisedField(self, 'PurchsOrdrTtlNetAmt', CurrencyAndAmount, False)
 
 	@PurchsOrdrTtlNetAmt.deleter
 	def PurchsOrdrTtlNetAmt(self):
 		del self._PurchsOrdrTtlNetAmt
-		self._PurchsOrdrTtlNetAmt = None
+		self._PurchsOrdrTtlNetAmt = base_types.UninitialisedField(self, 'PurchsOrdrTtlNetAmt', CurrencyAndAmount, False)
 
 	@property
 	def TxId(self):
@@ -55,12 +55,12 @@ class ReportLine1(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	@property
 	def TxSts(self):
@@ -68,12 +68,12 @@ class ReportLine1(base_types._BaseFieldType):
 
 	@TxSts.setter
 	def TxSts(self, value):
-		self._TxSts = value if type(value) != base_types.auto else self.make_default("TxSts")
+		self._TxSts = value if value is not None else base_types.UninitialisedField(self, 'TxSts', TransactionStatus4, False)
 
 	@TxSts.deleter
 	def TxSts(self):
 		del self._TxSts
-		self._TxSts = None
+		self._TxSts = base_types.UninitialisedField(self, 'TxSts', TransactionStatus4, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcmltdNetAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

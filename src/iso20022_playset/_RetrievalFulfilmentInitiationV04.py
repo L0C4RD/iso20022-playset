@@ -2,36 +2,36 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._AcceptorData2 import AcceptorData2
-from ._AcquirerData1 import AcquirerData1
-from ._AdditionalFee4 import AdditionalFee4
-from ._CardData17 import CardData17
-from ._ContentInformationType41 import ContentInformationType41
-from ._Context30 import Context30
-from ._DateTime2 import DateTime2
-from ._DestinationData1 import DestinationData1
-from ._DisputeData5 import DisputeData5
-from ._EncryptedData2 import EncryptedData2
-from ._Header72 import Header72
-from ._IssuerData1 import IssuerData1
-from ._Jurisdiction2 import Jurisdiction2
-from ._OriginalTransaction4 import OriginalTransaction4
-from ._OriginatorData2 import OriginatorData2
-from ._PayeeData1 import PayeeData1
-from ._PayerData1 import PayerData1
-from ._ProcessingResult31 import ProcessingResult31
-from ._ProgrammeMode6 import ProgrammeMode6
-from ._ReceiverData1 import ReceiverData1
-from ._Reconciliation5 import Reconciliation5
-from ._SenderData1 import SenderData1
-from ._SettlementService7 import SettlementService7
-from ._Terminal12 import Terminal12
-from ._Token5 import Token5
-from ._TransactionCharacteristics6 import TransactionCharacteristics6
-from ._TransactionIdentification60 import TransactionIdentification60
-from ._TransactorData1 import TransactorData1
-from ._Wallet4 import Wallet4
+from . import ATICALaxProcessing
+from . import AcceptorData2
+from . import AcquirerData1
+from . import AdditionalFee4
+from . import CardData17
+from . import ContentInformationType41
+from . import Context30
+from . import DateTime2
+from . import DestinationData1
+from . import DisputeData5
+from . import EncryptedData2
+from . import Header72
+from . import IssuerData1
+from . import Jurisdiction2
+from . import OriginalTransaction4
+from . import OriginatorData2
+from . import PayeeData1
+from . import PayerData1
+from . import ProcessingResult31
+from . import ProgrammeMode6
+from . import ReceiverData1
+from . import Reconciliation5
+from . import SenderData1
+from . import SettlementService7
+from . import Terminal12
+from . import Token5
+from . import TransactionCharacteristics6
+from . import TransactionIdentification60
+from . import TransactorData1
+from . import Wallet4
 
 class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
@@ -42,12 +42,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@Accptr.setter
 	def Accptr(self, value):
-		self._Accptr = value if type(value) != base_types.auto else self.make_default("Accptr")
+		self._Accptr = value if value is not None else base_types.UninitialisedField(self, 'Accptr', AcceptorData2, False)
 
 	@Accptr.deleter
 	def Accptr(self):
 		del self._Accptr
-		self._Accptr = None
+		self._Accptr = base_types.UninitialisedField(self, 'Accptr', AcceptorData2, False)
 
 	@property
 	def Acqrr(self):
@@ -55,12 +55,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@Acqrr.setter
 	def Acqrr(self, value):
-		self._Acqrr = value if type(value) != base_types.auto else self.make_default("Acqrr")
+		self._Acqrr = value if value is not None else base_types.UninitialisedField(self, 'Acqrr', AcquirerData1, False)
 
 	@Acqrr.deleter
 	def Acqrr(self):
 		del self._Acqrr
-		self._Acqrr = None
+		self._Acqrr = base_types.UninitialisedField(self, 'Acqrr', AcquirerData1, False)
 
 	@property
 	def AddtlFee(self):
@@ -68,12 +68,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@AddtlFee.setter
 	def AddtlFee(self, value):
-		self._AddtlFee = value if type(value) != base_types.auto else self.make_default("AddtlFee")
+		self._AddtlFee = value if value is not None else base_types.UninitialisedField(self, 'AddtlFee', AdditionalFee4, True)
 
 	@AddtlFee.deleter
 	def AddtlFee(self):
 		del self._AddtlFee
-		self._AddtlFee = None
+		self._AddtlFee = base_types.UninitialisedField(self, 'AddtlFee', AdditionalFee4, True)
 
 	@property
 	def Card(self):
@@ -81,12 +81,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@Card.setter
 	def Card(self, value):
-		self._Card = value if type(value) != base_types.auto else self.make_default("Card")
+		self._Card = value if value is not None else base_types.UninitialisedField(self, 'Card', CardData17, False)
 
 	@Card.deleter
 	def Card(self):
 		del self._Card
-		self._Card = None
+		self._Card = base_types.UninitialisedField(self, 'Card', CardData17, False)
 
 	@property
 	def Cntxt(self):
@@ -94,12 +94,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@Cntxt.setter
 	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != base_types.auto else self.make_default("Cntxt")
+		self._Cntxt = value if value is not None else base_types.UninitialisedField(self, 'Cntxt', Context30, False)
 
 	@Cntxt.deleter
 	def Cntxt(self):
 		del self._Cntxt
-		self._Cntxt = None
+		self._Cntxt = base_types.UninitialisedField(self, 'Cntxt', Context30, False)
 
 	@property
 	def ConvsDtTm(self):
@@ -107,12 +107,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@ConvsDtTm.setter
 	def ConvsDtTm(self, value):
-		self._ConvsDtTm = value if type(value) != base_types.auto else self.make_default("ConvsDtTm")
+		self._ConvsDtTm = value if value is not None else base_types.UninitialisedField(self, 'ConvsDtTm', DateTime2, False)
 
 	@ConvsDtTm.deleter
 	def ConvsDtTm(self):
 		del self._ConvsDtTm
-		self._ConvsDtTm = None
+		self._ConvsDtTm = base_types.UninitialisedField(self, 'ConvsDtTm', DateTime2, False)
 
 	@property
 	def DsptData(self):
@@ -120,12 +120,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@DsptData.setter
 	def DsptData(self, value):
-		self._DsptData = value if type(value) != base_types.auto else self.make_default("DsptData")
+		self._DsptData = value if value is not None else base_types.UninitialisedField(self, 'DsptData', DisputeData5, True)
 
 	@DsptData.deleter
 	def DsptData(self):
 		del self._DsptData
-		self._DsptData = None
+		self._DsptData = base_types.UninitialisedField(self, 'DsptData', DisputeData5, True)
 
 	@property
 	def Dstn(self):
@@ -133,12 +133,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@Dstn.setter
 	def Dstn(self, value):
-		self._Dstn = value if type(value) != base_types.auto else self.make_default("Dstn")
+		self._Dstn = value if value is not None else base_types.UninitialisedField(self, 'Dstn', DestinationData1, False)
 
 	@Dstn.deleter
 	def Dstn(self):
 		del self._Dstn
-		self._Dstn = None
+		self._Dstn = base_types.UninitialisedField(self, 'Dstn', DestinationData1, False)
 
 	@property
 	def Hdr(self):
@@ -146,12 +146,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header72, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header72, False)
 
 	@property
 	def Issr(self):
@@ -159,12 +159,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+		self._Issr = value if value is not None else base_types.UninitialisedField(self, 'Issr', IssuerData1, False)
 
 	@Issr.deleter
 	def Issr(self):
 		del self._Issr
-		self._Issr = None
+		self._Issr = base_types.UninitialisedField(self, 'Issr', IssuerData1, False)
 
 	@property
 	def Jursdctn(self):
@@ -172,12 +172,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@Jursdctn.setter
 	def Jursdctn(self, value):
-		self._Jursdctn = value if type(value) != base_types.auto else self.make_default("Jursdctn")
+		self._Jursdctn = value if value is not None else base_types.UninitialisedField(self, 'Jursdctn', Jurisdiction2, False)
 
 	@Jursdctn.deleter
 	def Jursdctn(self):
 		del self._Jursdctn
-		self._Jursdctn = None
+		self._Jursdctn = base_types.UninitialisedField(self, 'Jursdctn', Jurisdiction2, False)
 
 	@property
 	def NtlData(self):
@@ -185,12 +185,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def OrgnlTx(self):
@@ -198,12 +198,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@OrgnlTx.setter
 	def OrgnlTx(self, value):
-		self._OrgnlTx = value if type(value) != base_types.auto else self.make_default("OrgnlTx")
+		self._OrgnlTx = value if value is not None else base_types.UninitialisedField(self, 'OrgnlTx', OriginalTransaction4, False)
 
 	@OrgnlTx.deleter
 	def OrgnlTx(self):
 		del self._OrgnlTx
-		self._OrgnlTx = None
+		self._OrgnlTx = base_types.UninitialisedField(self, 'OrgnlTx', OriginalTransaction4, False)
 
 	@property
 	def Orgtr(self):
@@ -211,12 +211,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@Orgtr.setter
 	def Orgtr(self, value):
-		self._Orgtr = value if type(value) != base_types.auto else self.make_default("Orgtr")
+		self._Orgtr = value if value is not None else base_types.UninitialisedField(self, 'Orgtr', OriginatorData2, False)
 
 	@Orgtr.deleter
 	def Orgtr(self):
 		del self._Orgtr
-		self._Orgtr = None
+		self._Orgtr = base_types.UninitialisedField(self, 'Orgtr', OriginatorData2, False)
 
 	@property
 	def PrcgRslt(self):
@@ -224,12 +224,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@PrcgRslt.setter
 	def PrcgRslt(self, value):
-		self._PrcgRslt = value if type(value) != base_types.auto else self.make_default("PrcgRslt")
+		self._PrcgRslt = value if value is not None else base_types.UninitialisedField(self, 'PrcgRslt', ProcessingResult31, False)
 
 	@PrcgRslt.deleter
 	def PrcgRslt(self):
 		del self._PrcgRslt
-		self._PrcgRslt = None
+		self._PrcgRslt = base_types.UninitialisedField(self, 'PrcgRslt', ProcessingResult31, False)
 
 	@property
 	def Prgrmm(self):
@@ -237,12 +237,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@Prgrmm.setter
 	def Prgrmm(self, value):
-		self._Prgrmm = value if type(value) != base_types.auto else self.make_default("Prgrmm")
+		self._Prgrmm = value if value is not None else base_types.UninitialisedField(self, 'Prgrmm', ProgrammeMode6, True)
 
 	@Prgrmm.deleter
 	def Prgrmm(self):
 		del self._Prgrmm
-		self._Prgrmm = None
+		self._Prgrmm = base_types.UninitialisedField(self, 'Prgrmm', ProgrammeMode6, True)
 
 	@property
 	def PrtctdData(self):
@@ -250,12 +250,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@PrtctdData.setter
 	def PrtctdData(self, value):
-		self._PrtctdData = value if type(value) != base_types.auto else self.make_default("PrtctdData")
+		self._PrtctdData = value if value is not None else base_types.UninitialisedField(self, 'PrtctdData', EncryptedData2, True)
 
 	@PrtctdData.deleter
 	def PrtctdData(self):
 		del self._PrtctdData
-		self._PrtctdData = None
+		self._PrtctdData = base_types.UninitialisedField(self, 'PrtctdData', EncryptedData2, True)
 
 	@property
 	def PrvtData(self):
@@ -263,12 +263,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def Pyee(self):
@@ -276,12 +276,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@Pyee.setter
 	def Pyee(self, value):
-		self._Pyee = value if type(value) != base_types.auto else self.make_default("Pyee")
+		self._Pyee = value if value is not None else base_types.UninitialisedField(self, 'Pyee', PayeeData1, False)
 
 	@Pyee.deleter
 	def Pyee(self):
 		del self._Pyee
-		self._Pyee = None
+		self._Pyee = base_types.UninitialisedField(self, 'Pyee', PayeeData1, False)
 
 	@property
 	def Pyer(self):
@@ -289,12 +289,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@Pyer.setter
 	def Pyer(self, value):
-		self._Pyer = value if type(value) != base_types.auto else self.make_default("Pyer")
+		self._Pyer = value if value is not None else base_types.UninitialisedField(self, 'Pyer', PayerData1, False)
 
 	@Pyer.deleter
 	def Pyer(self):
 		del self._Pyer
-		self._Pyer = None
+		self._Pyer = base_types.UninitialisedField(self, 'Pyer', PayerData1, False)
 
 	@property
 	def Rcncltn(self):
@@ -302,12 +302,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@Rcncltn.setter
 	def Rcncltn(self, value):
-		self._Rcncltn = value if type(value) != base_types.auto else self.make_default("Rcncltn")
+		self._Rcncltn = value if value is not None else base_types.UninitialisedField(self, 'Rcncltn', Reconciliation5, False)
 
 	@Rcncltn.deleter
 	def Rcncltn(self):
 		del self._Rcncltn
-		self._Rcncltn = None
+		self._Rcncltn = base_types.UninitialisedField(self, 'Rcncltn', Reconciliation5, False)
 
 	@property
 	def Rcvr(self):
@@ -315,12 +315,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@Rcvr.setter
 	def Rcvr(self, value):
-		self._Rcvr = value if type(value) != base_types.auto else self.make_default("Rcvr")
+		self._Rcvr = value if value is not None else base_types.UninitialisedField(self, 'Rcvr', ReceiverData1, False)
 
 	@Rcvr.deleter
 	def Rcvr(self):
 		del self._Rcvr
-		self._Rcvr = None
+		self._Rcvr = base_types.UninitialisedField(self, 'Rcvr', ReceiverData1, False)
 
 	@property
 	def RtrvlFlfmtInstrs(self):
@@ -328,12 +328,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@RtrvlFlfmtInstrs.setter
 	def RtrvlFlfmtInstrs(self, value):
-		self._RtrvlFlfmtInstrs = value if type(value) != base_types.auto else self.make_default("RtrvlFlfmtInstrs")
+		self._RtrvlFlfmtInstrs = value if value is not None else base_types.UninitialisedField(self, 'RtrvlFlfmtInstrs', ATICALaxProcessing, True)
 
 	@RtrvlFlfmtInstrs.deleter
 	def RtrvlFlfmtInstrs(self):
 		del self._RtrvlFlfmtInstrs
-		self._RtrvlFlfmtInstrs = None
+		self._RtrvlFlfmtInstrs = base_types.UninitialisedField(self, 'RtrvlFlfmtInstrs', ATICALaxProcessing, True)
 
 	@property
 	def SctyTrlr(self):
@@ -341,12 +341,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType41, False)
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
 		del self._SctyTrlr
-		self._SctyTrlr = None
+		self._SctyTrlr = base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType41, False)
 
 	@property
 	def Sndr(self):
@@ -354,12 +354,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@Sndr.setter
 	def Sndr(self, value):
-		self._Sndr = value if type(value) != base_types.auto else self.make_default("Sndr")
+		self._Sndr = value if value is not None else base_types.UninitialisedField(self, 'Sndr', SenderData1, False)
 
 	@Sndr.deleter
 	def Sndr(self):
 		del self._Sndr
-		self._Sndr = None
+		self._Sndr = base_types.UninitialisedField(self, 'Sndr', SenderData1, False)
 
 	@property
 	def SpclPrgrmmQlfctn(self):
@@ -367,12 +367,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@SpclPrgrmmQlfctn.setter
 	def SpclPrgrmmQlfctn(self, value):
-		self._SpclPrgrmmQlfctn = value if type(value) != base_types.auto else self.make_default("SpclPrgrmmQlfctn")
+		self._SpclPrgrmmQlfctn = value if value is not None else base_types.UninitialisedField(self, 'SpclPrgrmmQlfctn', ATICALaxProcessing, True)
 
 	@SpclPrgrmmQlfctn.deleter
 	def SpclPrgrmmQlfctn(self):
 		del self._SpclPrgrmmQlfctn
-		self._SpclPrgrmmQlfctn = None
+		self._SpclPrgrmmQlfctn = base_types.UninitialisedField(self, 'SpclPrgrmmQlfctn', ATICALaxProcessing, True)
 
 	@property
 	def SttlmSvc(self):
@@ -380,12 +380,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@SttlmSvc.setter
 	def SttlmSvc(self, value):
-		self._SttlmSvc = value if type(value) != base_types.auto else self.make_default("SttlmSvc")
+		self._SttlmSvc = value if value is not None else base_types.UninitialisedField(self, 'SttlmSvc', SettlementService7, False)
 
 	@SttlmSvc.deleter
 	def SttlmSvc(self):
 		del self._SttlmSvc
-		self._SttlmSvc = None
+		self._SttlmSvc = base_types.UninitialisedField(self, 'SttlmSvc', SettlementService7, False)
 
 	@property
 	def Termnl(self):
@@ -393,12 +393,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@Termnl.setter
 	def Termnl(self, value):
-		self._Termnl = value if type(value) != base_types.auto else self.make_default("Termnl")
+		self._Termnl = value if value is not None else base_types.UninitialisedField(self, 'Termnl', Terminal12, False)
 
 	@Termnl.deleter
 	def Termnl(self):
 		del self._Termnl
-		self._Termnl = None
+		self._Termnl = base_types.UninitialisedField(self, 'Termnl', Terminal12, False)
 
 	@property
 	def Tkn(self):
@@ -406,12 +406,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@Tkn.setter
 	def Tkn(self, value):
-		self._Tkn = value if type(value) != base_types.auto else self.make_default("Tkn")
+		self._Tkn = value if value is not None else base_types.UninitialisedField(self, 'Tkn', Token5, False)
 
 	@Tkn.deleter
 	def Tkn(self):
 		del self._Tkn
-		self._Tkn = None
+		self._Tkn = base_types.UninitialisedField(self, 'Tkn', Token5, False)
 
 	@property
 	def TxChrtcs(self):
@@ -419,12 +419,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@TxChrtcs.setter
 	def TxChrtcs(self, value):
-		self._TxChrtcs = value if type(value) != base_types.auto else self.make_default("TxChrtcs")
+		self._TxChrtcs = value if value is not None else base_types.UninitialisedField(self, 'TxChrtcs', TransactionCharacteristics6, False)
 
 	@TxChrtcs.deleter
 	def TxChrtcs(self):
 		del self._TxChrtcs
-		self._TxChrtcs = None
+		self._TxChrtcs = base_types.UninitialisedField(self, 'TxChrtcs', TransactionCharacteristics6, False)
 
 	@property
 	def TxId(self):
@@ -432,12 +432,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', TransactionIdentification60, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', TransactionIdentification60, False)
 
 	@property
 	def Txtr(self):
@@ -445,12 +445,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@Txtr.setter
 	def Txtr(self, value):
-		self._Txtr = value if type(value) != base_types.auto else self.make_default("Txtr")
+		self._Txtr = value if value is not None else base_types.UninitialisedField(self, 'Txtr', TransactorData1, False)
 
 	@Txtr.deleter
 	def Txtr(self):
 		del self._Txtr
-		self._Txtr = None
+		self._Txtr = base_types.UninitialisedField(self, 'Txtr', TransactorData1, False)
 
 	@property
 	def Wllt(self):
@@ -458,12 +458,12 @@ class RetrievalFulfilmentInitiationV04(base_types._BaseFieldType):
 
 	@Wllt.setter
 	def Wllt(self, value):
-		self._Wllt = value if type(value) != base_types.auto else self.make_default("Wllt")
+		self._Wllt = value if value is not None else base_types.UninitialisedField(self, 'Wllt', Wallet4, False)
 
 	@Wllt.deleter
 	def Wllt(self):
 		del self._Wllt
-		self._Wllt = None
+		self._Wllt = base_types.UninitialisedField(self, 'Wllt', Wallet4, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Accptr', type=AcceptorData2, min=0, max=1, mutex_group=None, array=False),

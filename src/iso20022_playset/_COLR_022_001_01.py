@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._TripartyCollateralAndExposureReportV01 import TripartyCollateralAndExposureReportV01
+from . import TripartyCollateralAndExposureReportV01
 
 class COLR_022_001_01():
 
@@ -18,12 +18,12 @@ class COLR_022_001_01():
 
 		@TrptyCollAndXpsrRpt.setter
 		def TrptyCollAndXpsrRpt(self, value):
-			self._TrptyCollAndXpsrRpt = value if type(value) != base_types.auto else self.make_default("TrptyCollAndXpsrRpt")
+			self._TrptyCollAndXpsrRpt = value if value is not None else base_types.UninitialisedField(self, 'TrptyCollAndXpsrRpt', TripartyCollateralAndExposureReportV01, False)
 
 		@TrptyCollAndXpsrRpt.deleter
 		def TrptyCollAndXpsrRpt(self):
 			del self._TrptyCollAndXpsrRpt
-			self._TrptyCollAndXpsrRpt = None
+			self._TrptyCollAndXpsrRpt = base_types.UninitialisedField(self, 'TrptyCollAndXpsrRpt', TripartyCollateralAndExposureReportV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='TrptyCollAndXpsrRpt', type=TripartyCollateralAndExposureReportV01, min=1, max=1, mutex_group=None, array=False),

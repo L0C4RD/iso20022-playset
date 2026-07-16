@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DeltaReportV03 import DeltaReportV03
+from . import DeltaReportV03
 
 class TSMT_015_001_03():
 
@@ -18,12 +18,12 @@ class TSMT_015_001_03():
 
 		@DltaRpt.setter
 		def DltaRpt(self, value):
-			self._DltaRpt = value if type(value) != base_types.auto else self.make_default("DltaRpt")
+			self._DltaRpt = value if value is not None else base_types.UninitialisedField(self, 'DltaRpt', DeltaReportV03, False)
 
 		@DltaRpt.deleter
 		def DltaRpt(self):
 			del self._DltaRpt
-			self._DltaRpt = None
+			self._DltaRpt = base_types.UninitialisedField(self, 'DltaRpt', DeltaReportV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='DltaRpt', type=DeltaReportV03, min=1, max=1, mutex_group=None, array=False),

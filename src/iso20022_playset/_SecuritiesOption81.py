@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentQuantity34Choice import FinancialInstrumentQuantity34Choice
-from ._FinancialInstrumentQuantity35Choice import FinancialInstrumentQuantity35Choice
+from . import FinancialInstrumentQuantity34Choice
+from . import FinancialInstrumentQuantity35Choice
 
 class SecuritiesOption81(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SecuritiesOption81(base_types._BaseFieldType):
 
 	@BckEndOddLotQty.setter
 	def BckEndOddLotQty(self, value):
-		self._BckEndOddLotQty = value if type(value) != base_types.auto else self.make_default("BckEndOddLotQty")
+		self._BckEndOddLotQty = value if value is not None else base_types.UninitialisedField(self, 'BckEndOddLotQty', FinancialInstrumentQuantity35Choice, False)
 
 	@BckEndOddLotQty.deleter
 	def BckEndOddLotQty(self):
 		del self._BckEndOddLotQty
-		self._BckEndOddLotQty = None
+		self._BckEndOddLotQty = base_types.UninitialisedField(self, 'BckEndOddLotQty', FinancialInstrumentQuantity35Choice, False)
 
 	@property
 	def FrntEndOddLotQty(self):
@@ -27,12 +27,12 @@ class SecuritiesOption81(base_types._BaseFieldType):
 
 	@FrntEndOddLotQty.setter
 	def FrntEndOddLotQty(self, value):
-		self._FrntEndOddLotQty = value if type(value) != base_types.auto else self.make_default("FrntEndOddLotQty")
+		self._FrntEndOddLotQty = value if value is not None else base_types.UninitialisedField(self, 'FrntEndOddLotQty', FinancialInstrumentQuantity35Choice, False)
 
 	@FrntEndOddLotQty.deleter
 	def FrntEndOddLotQty(self):
 		del self._FrntEndOddLotQty
-		self._FrntEndOddLotQty = None
+		self._FrntEndOddLotQty = base_types.UninitialisedField(self, 'FrntEndOddLotQty', FinancialInstrumentQuantity35Choice, False)
 
 	@property
 	def MaxQtyToInst(self):
@@ -40,12 +40,12 @@ class SecuritiesOption81(base_types._BaseFieldType):
 
 	@MaxQtyToInst.setter
 	def MaxQtyToInst(self, value):
-		self._MaxQtyToInst = value if type(value) != base_types.auto else self.make_default("MaxQtyToInst")
+		self._MaxQtyToInst = value if value is not None else base_types.UninitialisedField(self, 'MaxQtyToInst', FinancialInstrumentQuantity34Choice, False)
 
 	@MaxQtyToInst.deleter
 	def MaxQtyToInst(self):
 		del self._MaxQtyToInst
-		self._MaxQtyToInst = None
+		self._MaxQtyToInst = base_types.UninitialisedField(self, 'MaxQtyToInst', FinancialInstrumentQuantity34Choice, False)
 
 	@property
 	def MinMltplQtyToInst(self):
@@ -53,12 +53,12 @@ class SecuritiesOption81(base_types._BaseFieldType):
 
 	@MinMltplQtyToInst.setter
 	def MinMltplQtyToInst(self, value):
-		self._MinMltplQtyToInst = value if type(value) != base_types.auto else self.make_default("MinMltplQtyToInst")
+		self._MinMltplQtyToInst = value if value is not None else base_types.UninitialisedField(self, 'MinMltplQtyToInst', FinancialInstrumentQuantity35Choice, False)
 
 	@MinMltplQtyToInst.deleter
 	def MinMltplQtyToInst(self):
 		del self._MinMltplQtyToInst
-		self._MinMltplQtyToInst = None
+		self._MinMltplQtyToInst = base_types.UninitialisedField(self, 'MinMltplQtyToInst', FinancialInstrumentQuantity35Choice, False)
 
 	@property
 	def MinQtyToInst(self):
@@ -66,12 +66,12 @@ class SecuritiesOption81(base_types._BaseFieldType):
 
 	@MinQtyToInst.setter
 	def MinQtyToInst(self, value):
-		self._MinQtyToInst = value if type(value) != base_types.auto else self.make_default("MinQtyToInst")
+		self._MinQtyToInst = value if value is not None else base_types.UninitialisedField(self, 'MinQtyToInst', FinancialInstrumentQuantity34Choice, False)
 
 	@MinQtyToInst.deleter
 	def MinQtyToInst(self):
 		del self._MinQtyToInst
-		self._MinQtyToInst = None
+		self._MinQtyToInst = base_types.UninitialisedField(self, 'MinQtyToInst', FinancialInstrumentQuantity34Choice, False)
 
 	@property
 	def NewBrdLotQty(self):
@@ -79,12 +79,12 @@ class SecuritiesOption81(base_types._BaseFieldType):
 
 	@NewBrdLotQty.setter
 	def NewBrdLotQty(self, value):
-		self._NewBrdLotQty = value if type(value) != base_types.auto else self.make_default("NewBrdLotQty")
+		self._NewBrdLotQty = value if value is not None else base_types.UninitialisedField(self, 'NewBrdLotQty', FinancialInstrumentQuantity35Choice, False)
 
 	@NewBrdLotQty.deleter
 	def NewBrdLotQty(self):
 		del self._NewBrdLotQty
-		self._NewBrdLotQty = None
+		self._NewBrdLotQty = base_types.UninitialisedField(self, 'NewBrdLotQty', FinancialInstrumentQuantity35Choice, False)
 
 	@property
 	def NewDnmtnQty(self):
@@ -92,12 +92,12 @@ class SecuritiesOption81(base_types._BaseFieldType):
 
 	@NewDnmtnQty.setter
 	def NewDnmtnQty(self, value):
-		self._NewDnmtnQty = value if type(value) != base_types.auto else self.make_default("NewDnmtnQty")
+		self._NewDnmtnQty = value if value is not None else base_types.UninitialisedField(self, 'NewDnmtnQty', FinancialInstrumentQuantity35Choice, False)
 
 	@NewDnmtnQty.deleter
 	def NewDnmtnQty(self):
 		del self._NewDnmtnQty
-		self._NewDnmtnQty = None
+		self._NewDnmtnQty = base_types.UninitialisedField(self, 'NewDnmtnQty', FinancialInstrumentQuantity35Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BckEndOddLotQty', type=FinancialInstrumentQuantity35Choice, min=0, max=1, mutex_group=None, array=False),

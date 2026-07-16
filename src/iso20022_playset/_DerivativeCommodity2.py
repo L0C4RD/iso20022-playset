@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AssetClassCommodity3Choice import AssetClassCommodity3Choice
-from ._AssetClassTransactionType1Code import AssetClassTransactionType1Code
-from ._AssetPriceType1Code import AssetPriceType1Code
+from . import AssetClassCommodity3Choice
+from . import AssetClassTransactionType1Code
+from . import AssetPriceType1Code
 
 class DerivativeCommodity2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class DerivativeCommodity2(base_types._BaseFieldType):
 
 	@FnlPricTp.setter
 	def FnlPricTp(self, value):
-		self._FnlPricTp = value if type(value) != base_types.auto else self.make_default("FnlPricTp")
+		self._FnlPricTp = value if value is not None else base_types.UninitialisedField(self, 'FnlPricTp', AssetPriceType1Code, False)
 
 	@FnlPricTp.deleter
 	def FnlPricTp(self):
 		del self._FnlPricTp
-		self._FnlPricTp = None
+		self._FnlPricTp = base_types.UninitialisedField(self, 'FnlPricTp', AssetPriceType1Code, False)
 
 	@property
 	def Pdct(self):
@@ -28,12 +28,12 @@ class DerivativeCommodity2(base_types._BaseFieldType):
 
 	@Pdct.setter
 	def Pdct(self, value):
-		self._Pdct = value if type(value) != base_types.auto else self.make_default("Pdct")
+		self._Pdct = value if value is not None else base_types.UninitialisedField(self, 'Pdct', AssetClassCommodity3Choice, False)
 
 	@Pdct.deleter
 	def Pdct(self):
 		del self._Pdct
-		self._Pdct = None
+		self._Pdct = base_types.UninitialisedField(self, 'Pdct', AssetClassCommodity3Choice, False)
 
 	@property
 	def TxTp(self):
@@ -41,12 +41,12 @@ class DerivativeCommodity2(base_types._BaseFieldType):
 
 	@TxTp.setter
 	def TxTp(self, value):
-		self._TxTp = value if type(value) != base_types.auto else self.make_default("TxTp")
+		self._TxTp = value if value is not None else base_types.UninitialisedField(self, 'TxTp', AssetClassTransactionType1Code, False)
 
 	@TxTp.deleter
 	def TxTp(self):
 		del self._TxTp
-		self._TxTp = None
+		self._TxTp = base_types.UninitialisedField(self, 'TxTp', AssetClassTransactionType1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FnlPricTp', type=AssetPriceType1Code, min=0, max=1, mutex_group=None, array=False),

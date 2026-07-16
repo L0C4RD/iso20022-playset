@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BuyIn3 import BuyIn3
-from ._Max35Text import Max35Text
-from ._SettlementObligation7 import SettlementObligation7
-from ._SupplementaryData1 import SupplementaryData1
+from . import BuyIn3
+from . import Max35Text
+from . import SettlementObligation7
+from . import SupplementaryData1
 
 class BuyInResponseV03(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class BuyInResponseV03(base_types._BaseFieldType):
 
 	@BuyInRspnDtls.setter
 	def BuyInRspnDtls(self, value):
-		self._BuyInRspnDtls = value if type(value) != base_types.auto else self.make_default("BuyInRspnDtls")
+		self._BuyInRspnDtls = value if value is not None else base_types.UninitialisedField(self, 'BuyInRspnDtls', BuyIn3, False)
 
 	@BuyInRspnDtls.deleter
 	def BuyInRspnDtls(self):
 		del self._BuyInRspnDtls
-		self._BuyInRspnDtls = None
+		self._BuyInRspnDtls = base_types.UninitialisedField(self, 'BuyInRspnDtls', BuyIn3, False)
 
 	@property
 	def OrgnlSttlmOblgtnDtls(self):
@@ -29,12 +29,12 @@ class BuyInResponseV03(base_types._BaseFieldType):
 
 	@OrgnlSttlmOblgtnDtls.setter
 	def OrgnlSttlmOblgtnDtls(self, value):
-		self._OrgnlSttlmOblgtnDtls = value if type(value) != base_types.auto else self.make_default("OrgnlSttlmOblgtnDtls")
+		self._OrgnlSttlmOblgtnDtls = value if value is not None else base_types.UninitialisedField(self, 'OrgnlSttlmOblgtnDtls', SettlementObligation7, False)
 
 	@OrgnlSttlmOblgtnDtls.deleter
 	def OrgnlSttlmOblgtnDtls(self):
 		del self._OrgnlSttlmOblgtnDtls
-		self._OrgnlSttlmOblgtnDtls = None
+		self._OrgnlSttlmOblgtnDtls = base_types.UninitialisedField(self, 'OrgnlSttlmOblgtnDtls', SettlementObligation7, False)
 
 	@property
 	def SplmtryData(self):
@@ -42,12 +42,12 @@ class BuyInResponseV03(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TxId(self):
@@ -55,12 +55,12 @@ class BuyInResponseV03(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BuyInRspnDtls', type=BuyIn3, min=1, max=1, mutex_group=None, array=False),

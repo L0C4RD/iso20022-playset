@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._AmountAndDirection102 import AmountAndDirection102
-from ._Flows1 import Flows1
-from ._Max10NumericText import Max10NumericText
+from . import ActiveCurrencyAndAmount
+from . import AmountAndDirection102
+from . import Flows1
+from . import Max10NumericText
 
 class ConcentrationAccount1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ConcentrationAccount1(base_types._BaseFieldType):
 
 	@EndOfDay.setter
 	def EndOfDay(self, value):
-		self._EndOfDay = value if type(value) != base_types.auto else self.make_default("EndOfDay")
+		self._EndOfDay = value if value is not None else base_types.UninitialisedField(self, 'EndOfDay', AmountAndDirection102, False)
 
 	@EndOfDay.deleter
 	def EndOfDay(self):
 		del self._EndOfDay
-		self._EndOfDay = None
+		self._EndOfDay = base_types.UninitialisedField(self, 'EndOfDay', AmountAndDirection102, False)
 
 	@property
 	def InFlow(self):
@@ -29,12 +29,12 @@ class ConcentrationAccount1(base_types._BaseFieldType):
 
 	@InFlow.setter
 	def InFlow(self, value):
-		self._InFlow = value if type(value) != base_types.auto else self.make_default("InFlow")
+		self._InFlow = value if value is not None else base_types.UninitialisedField(self, 'InFlow', Flows1, False)
 
 	@InFlow.deleter
 	def InFlow(self):
 		del self._InFlow
-		self._InFlow = None
+		self._InFlow = base_types.UninitialisedField(self, 'InFlow', Flows1, False)
 
 	@property
 	def LatePmtConf(self):
@@ -42,12 +42,12 @@ class ConcentrationAccount1(base_types._BaseFieldType):
 
 	@LatePmtConf.setter
 	def LatePmtConf(self, value):
-		self._LatePmtConf = value if type(value) != base_types.auto else self.make_default("LatePmtConf")
+		self._LatePmtConf = value if value is not None else base_types.UninitialisedField(self, 'LatePmtConf', Max10NumericText, False)
 
 	@LatePmtConf.deleter
 	def LatePmtConf(self):
 		del self._LatePmtConf
-		self._LatePmtConf = None
+		self._LatePmtConf = base_types.UninitialisedField(self, 'LatePmtConf', Max10NumericText, False)
 
 	@property
 	def OutFlow(self):
@@ -55,12 +55,12 @@ class ConcentrationAccount1(base_types._BaseFieldType):
 
 	@OutFlow.setter
 	def OutFlow(self, value):
-		self._OutFlow = value if type(value) != base_types.auto else self.make_default("OutFlow")
+		self._OutFlow = value if value is not None else base_types.UninitialisedField(self, 'OutFlow', Flows1, False)
 
 	@OutFlow.deleter
 	def OutFlow(self):
 		del self._OutFlow
-		self._OutFlow = None
+		self._OutFlow = base_types.UninitialisedField(self, 'OutFlow', Flows1, False)
 
 	@property
 	def PeakCdt(self):
@@ -68,12 +68,12 @@ class ConcentrationAccount1(base_types._BaseFieldType):
 
 	@PeakCdt.setter
 	def PeakCdt(self, value):
-		self._PeakCdt = value if type(value) != base_types.auto else self.make_default("PeakCdt")
+		self._PeakCdt = value if value is not None else base_types.UninitialisedField(self, 'PeakCdt', ActiveCurrencyAndAmount, False)
 
 	@PeakCdt.deleter
 	def PeakCdt(self):
 		del self._PeakCdt
-		self._PeakCdt = None
+		self._PeakCdt = base_types.UninitialisedField(self, 'PeakCdt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def PeakDbt(self):
@@ -81,12 +81,12 @@ class ConcentrationAccount1(base_types._BaseFieldType):
 
 	@PeakDbt.setter
 	def PeakDbt(self, value):
-		self._PeakDbt = value if type(value) != base_types.auto else self.make_default("PeakDbt")
+		self._PeakDbt = value if value is not None else base_types.UninitialisedField(self, 'PeakDbt', ActiveCurrencyAndAmount, False)
 
 	@PeakDbt.deleter
 	def PeakDbt(self):
 		del self._PeakDbt
-		self._PeakDbt = None
+		self._PeakDbt = base_types.UninitialisedField(self, 'PeakDbt', ActiveCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EndOfDay', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),

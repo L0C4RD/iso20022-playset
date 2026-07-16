@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmendmentInformationDetails14 import AmendmentInformationDetails14
-from ._Exact2NumericText import Exact2NumericText
-from ._Frequency36Choice import Frequency36Choice
-from ._ISODate import ISODate
-from ._MandateSetupReason1Choice import MandateSetupReason1Choice
-from ._Max1025Text import Max1025Text
-from ._Max35Text import Max35Text
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import AmendmentInformationDetails14
+from . import Exact2NumericText
+from . import Frequency36Choice
+from . import ISODate
+from . import MandateSetupReason1Choice
+from . import Max1025Text
+from . import Max35Text
+from . import TrueFalseIndicator
 
 class MandateRelatedInformation15(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class MandateRelatedInformation15(base_types._BaseFieldType):
 
 	@AmdmntInd.setter
 	def AmdmntInd(self, value):
-		self._AmdmntInd = value if type(value) != base_types.auto else self.make_default("AmdmntInd")
+		self._AmdmntInd = value if value is not None else base_types.UninitialisedField(self, 'AmdmntInd', TrueFalseIndicator, False)
 
 	@AmdmntInd.deleter
 	def AmdmntInd(self):
 		del self._AmdmntInd
-		self._AmdmntInd = None
+		self._AmdmntInd = base_types.UninitialisedField(self, 'AmdmntInd', TrueFalseIndicator, False)
 
 	@property
 	def AmdmntInfDtls(self):
@@ -33,12 +33,12 @@ class MandateRelatedInformation15(base_types._BaseFieldType):
 
 	@AmdmntInfDtls.setter
 	def AmdmntInfDtls(self, value):
-		self._AmdmntInfDtls = value if type(value) != base_types.auto else self.make_default("AmdmntInfDtls")
+		self._AmdmntInfDtls = value if value is not None else base_types.UninitialisedField(self, 'AmdmntInfDtls', AmendmentInformationDetails14, False)
 
 	@AmdmntInfDtls.deleter
 	def AmdmntInfDtls(self):
 		del self._AmdmntInfDtls
-		self._AmdmntInfDtls = None
+		self._AmdmntInfDtls = base_types.UninitialisedField(self, 'AmdmntInfDtls', AmendmentInformationDetails14, False)
 
 	@property
 	def DtOfSgntr(self):
@@ -46,12 +46,12 @@ class MandateRelatedInformation15(base_types._BaseFieldType):
 
 	@DtOfSgntr.setter
 	def DtOfSgntr(self, value):
-		self._DtOfSgntr = value if type(value) != base_types.auto else self.make_default("DtOfSgntr")
+		self._DtOfSgntr = value if value is not None else base_types.UninitialisedField(self, 'DtOfSgntr', ISODate, False)
 
 	@DtOfSgntr.deleter
 	def DtOfSgntr(self):
 		del self._DtOfSgntr
-		self._DtOfSgntr = None
+		self._DtOfSgntr = base_types.UninitialisedField(self, 'DtOfSgntr', ISODate, False)
 
 	@property
 	def ElctrncSgntr(self):
@@ -59,12 +59,12 @@ class MandateRelatedInformation15(base_types._BaseFieldType):
 
 	@ElctrncSgntr.setter
 	def ElctrncSgntr(self, value):
-		self._ElctrncSgntr = value if type(value) != base_types.auto else self.make_default("ElctrncSgntr")
+		self._ElctrncSgntr = value if value is not None else base_types.UninitialisedField(self, 'ElctrncSgntr', Max1025Text, False)
 
 	@ElctrncSgntr.deleter
 	def ElctrncSgntr(self):
 		del self._ElctrncSgntr
-		self._ElctrncSgntr = None
+		self._ElctrncSgntr = base_types.UninitialisedField(self, 'ElctrncSgntr', Max1025Text, False)
 
 	@property
 	def FnlColltnDt(self):
@@ -72,12 +72,12 @@ class MandateRelatedInformation15(base_types._BaseFieldType):
 
 	@FnlColltnDt.setter
 	def FnlColltnDt(self, value):
-		self._FnlColltnDt = value if type(value) != base_types.auto else self.make_default("FnlColltnDt")
+		self._FnlColltnDt = value if value is not None else base_types.UninitialisedField(self, 'FnlColltnDt', ISODate, False)
 
 	@FnlColltnDt.deleter
 	def FnlColltnDt(self):
 		del self._FnlColltnDt
-		self._FnlColltnDt = None
+		self._FnlColltnDt = base_types.UninitialisedField(self, 'FnlColltnDt', ISODate, False)
 
 	@property
 	def Frqcy(self):
@@ -85,12 +85,12 @@ class MandateRelatedInformation15(base_types._BaseFieldType):
 
 	@Frqcy.setter
 	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
+		self._Frqcy = value if value is not None else base_types.UninitialisedField(self, 'Frqcy', Frequency36Choice, False)
 
 	@Frqcy.deleter
 	def Frqcy(self):
 		del self._Frqcy
-		self._Frqcy = None
+		self._Frqcy = base_types.UninitialisedField(self, 'Frqcy', Frequency36Choice, False)
 
 	@property
 	def FrstColltnDt(self):
@@ -98,12 +98,12 @@ class MandateRelatedInformation15(base_types._BaseFieldType):
 
 	@FrstColltnDt.setter
 	def FrstColltnDt(self, value):
-		self._FrstColltnDt = value if type(value) != base_types.auto else self.make_default("FrstColltnDt")
+		self._FrstColltnDt = value if value is not None else base_types.UninitialisedField(self, 'FrstColltnDt', ISODate, False)
 
 	@FrstColltnDt.deleter
 	def FrstColltnDt(self):
 		del self._FrstColltnDt
-		self._FrstColltnDt = None
+		self._FrstColltnDt = base_types.UninitialisedField(self, 'FrstColltnDt', ISODate, False)
 
 	@property
 	def MndtId(self):
@@ -111,12 +111,12 @@ class MandateRelatedInformation15(base_types._BaseFieldType):
 
 	@MndtId.setter
 	def MndtId(self, value):
-		self._MndtId = value if type(value) != base_types.auto else self.make_default("MndtId")
+		self._MndtId = value if value is not None else base_types.UninitialisedField(self, 'MndtId', Max35Text, False)
 
 	@MndtId.deleter
 	def MndtId(self):
 		del self._MndtId
-		self._MndtId = None
+		self._MndtId = base_types.UninitialisedField(self, 'MndtId', Max35Text, False)
 
 	@property
 	def Rsn(self):
@@ -124,12 +124,12 @@ class MandateRelatedInformation15(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', MandateSetupReason1Choice, False)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', MandateSetupReason1Choice, False)
 
 	@property
 	def TrckgDays(self):
@@ -137,12 +137,12 @@ class MandateRelatedInformation15(base_types._BaseFieldType):
 
 	@TrckgDays.setter
 	def TrckgDays(self, value):
-		self._TrckgDays = value if type(value) != base_types.auto else self.make_default("TrckgDays")
+		self._TrckgDays = value if value is not None else base_types.UninitialisedField(self, 'TrckgDays', Exact2NumericText, False)
 
 	@TrckgDays.deleter
 	def TrckgDays(self):
 		del self._TrckgDays
-		self._TrckgDays = None
+		self._TrckgDays = base_types.UninitialisedField(self, 'TrckgDays', Exact2NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmdmntInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),

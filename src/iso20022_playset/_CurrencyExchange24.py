@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._BaseOneRate import BaseOneRate
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
-from ._PositiveNumber import PositiveNumber
+from . import ActiveOrHistoricCurrencyCode
+from . import BaseOneRate
+from . import ISODateTime
+from . import Max35Text
+from . import PositiveNumber
 
 class CurrencyExchange24(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class CurrencyExchange24(base_types._BaseFieldType):
 
 	@CtrctId.setter
 	def CtrctId(self, value):
-		self._CtrctId = value if type(value) != base_types.auto else self.make_default("CtrctId")
+		self._CtrctId = value if value is not None else base_types.UninitialisedField(self, 'CtrctId', Max35Text, False)
 
 	@CtrctId.deleter
 	def CtrctId(self):
 		del self._CtrctId
-		self._CtrctId = None
+		self._CtrctId = base_types.UninitialisedField(self, 'CtrctId', Max35Text, False)
 
 	@property
 	def QtnDt(self):
@@ -30,12 +30,12 @@ class CurrencyExchange24(base_types._BaseFieldType):
 
 	@QtnDt.setter
 	def QtnDt(self, value):
-		self._QtnDt = value if type(value) != base_types.auto else self.make_default("QtnDt")
+		self._QtnDt = value if value is not None else base_types.UninitialisedField(self, 'QtnDt', ISODateTime, False)
 
 	@QtnDt.deleter
 	def QtnDt(self):
 		del self._QtnDt
-		self._QtnDt = None
+		self._QtnDt = base_types.UninitialisedField(self, 'QtnDt', ISODateTime, False)
 
 	@property
 	def SrcCcy(self):
@@ -43,12 +43,12 @@ class CurrencyExchange24(base_types._BaseFieldType):
 
 	@SrcCcy.setter
 	def SrcCcy(self, value):
-		self._SrcCcy = value if type(value) != base_types.auto else self.make_default("SrcCcy")
+		self._SrcCcy = value if value is not None else base_types.UninitialisedField(self, 'SrcCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@SrcCcy.deleter
 	def SrcCcy(self):
 		del self._SrcCcy
-		self._SrcCcy = None
+		self._SrcCcy = base_types.UninitialisedField(self, 'SrcCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def TrgtCcy(self):
@@ -56,12 +56,12 @@ class CurrencyExchange24(base_types._BaseFieldType):
 
 	@TrgtCcy.setter
 	def TrgtCcy(self, value):
-		self._TrgtCcy = value if type(value) != base_types.auto else self.make_default("TrgtCcy")
+		self._TrgtCcy = value if value is not None else base_types.UninitialisedField(self, 'TrgtCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@TrgtCcy.deleter
 	def TrgtCcy(self):
 		del self._TrgtCcy
-		self._TrgtCcy = None
+		self._TrgtCcy = base_types.UninitialisedField(self, 'TrgtCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def UnitCcy(self):
@@ -69,12 +69,12 @@ class CurrencyExchange24(base_types._BaseFieldType):
 
 	@UnitCcy.setter
 	def UnitCcy(self, value):
-		self._UnitCcy = value if type(value) != base_types.auto else self.make_default("UnitCcy")
+		self._UnitCcy = value if value is not None else base_types.UninitialisedField(self, 'UnitCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@UnitCcy.deleter
 	def UnitCcy(self):
 		del self._UnitCcy
-		self._UnitCcy = None
+		self._UnitCcy = base_types.UninitialisedField(self, 'UnitCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def XchgRate(self):
@@ -82,12 +82,12 @@ class CurrencyExchange24(base_types._BaseFieldType):
 
 	@XchgRate.setter
 	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != base_types.auto else self.make_default("XchgRate")
+		self._XchgRate = value if value is not None else base_types.UninitialisedField(self, 'XchgRate', BaseOneRate, False)
 
 	@XchgRate.deleter
 	def XchgRate(self):
 		del self._XchgRate
-		self._XchgRate = None
+		self._XchgRate = base_types.UninitialisedField(self, 'XchgRate', BaseOneRate, False)
 
 	@property
 	def XchgRateBase(self):
@@ -95,12 +95,12 @@ class CurrencyExchange24(base_types._BaseFieldType):
 
 	@XchgRateBase.setter
 	def XchgRateBase(self, value):
-		self._XchgRateBase = value if type(value) != base_types.auto else self.make_default("XchgRateBase")
+		self._XchgRateBase = value if value is not None else base_types.UninitialisedField(self, 'XchgRateBase', PositiveNumber, False)
 
 	@XchgRateBase.deleter
 	def XchgRateBase(self):
 		del self._XchgRateBase
-		self._XchgRateBase = None
+		self._XchgRateBase = base_types.UninitialisedField(self, 'XchgRateBase', PositiveNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

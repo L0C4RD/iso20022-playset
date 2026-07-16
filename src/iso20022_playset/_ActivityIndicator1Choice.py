@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification36 import GenericIdentification36
-from ._ISICIdentifier import ISICIdentifier
+from . import GenericIdentification36
+from . import ISICIdentifier
 
 class ActivityIndicator1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ActivityIndicator1Choice(base_types._BaseFieldType):
 
 	@ISICIdr.setter
 	def ISICIdr(self, value):
-		self._ISICIdr = value if type(value) != base_types.auto else self.make_default("ISICIdr")
+		self._ISICIdr = value if value is not None else base_types.UninitialisedField(self, 'ISICIdr', ISICIdentifier, False)
 
 	@ISICIdr.deleter
 	def ISICIdr(self):
 		del self._ISICIdr
-		self._ISICIdr = None
+		self._ISICIdr = base_types.UninitialisedField(self, 'ISICIdr', ISICIdentifier, False)
 
 	@property
 	def PrtryInd(self):
@@ -27,12 +27,12 @@ class ActivityIndicator1Choice(base_types._BaseFieldType):
 
 	@PrtryInd.setter
 	def PrtryInd(self, value):
-		self._PrtryInd = value if type(value) != base_types.auto else self.make_default("PrtryInd")
+		self._PrtryInd = value if value is not None else base_types.UninitialisedField(self, 'PrtryInd', GenericIdentification36, False)
 
 	@PrtryInd.deleter
 	def PrtryInd(self):
 		del self._PrtryInd
-		self._PrtryInd = None
+		self._PrtryInd = base_types.UninitialisedField(self, 'PrtryInd', GenericIdentification36, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ISICIdr', type=ISICIdentifier, min=0, max=1, mutex_group=1, array=False),

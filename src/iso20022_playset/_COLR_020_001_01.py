@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._TripartyCollateralTransactionInstructionProcessingStatusAdviceV01 import TripartyCollateralTransactionInstructionProcessingStatusAdviceV01
+from . import TripartyCollateralTransactionInstructionProcessingStatusAdviceV01
 
 class COLR_020_001_01():
 
@@ -18,12 +18,12 @@ class COLR_020_001_01():
 
 		@TrptyCollTxInstrPrcgStsAdvc.setter
 		def TrptyCollTxInstrPrcgStsAdvc(self, value):
-			self._TrptyCollTxInstrPrcgStsAdvc = value if type(value) != base_types.auto else self.make_default("TrptyCollTxInstrPrcgStsAdvc")
+			self._TrptyCollTxInstrPrcgStsAdvc = value if value is not None else base_types.UninitialisedField(self, 'TrptyCollTxInstrPrcgStsAdvc', TripartyCollateralTransactionInstructionProcessingStatusAdviceV01, False)
 
 		@TrptyCollTxInstrPrcgStsAdvc.deleter
 		def TrptyCollTxInstrPrcgStsAdvc(self):
 			del self._TrptyCollTxInstrPrcgStsAdvc
-			self._TrptyCollTxInstrPrcgStsAdvc = None
+			self._TrptyCollTxInstrPrcgStsAdvc = base_types.UninitialisedField(self, 'TrptyCollTxInstrPrcgStsAdvc', TripartyCollateralTransactionInstructionProcessingStatusAdviceV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='TrptyCollTxInstrPrcgStsAdvc', type=TripartyCollateralTransactionInstructionProcessingStatusAdviceV01, min=1, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountIdentification10 import AccountIdentification10
-from ._AccountIdentification71 import AccountIdentification71
+from . import AccountIdentification10
+from . import AccountIdentification71
 
 class AccountIdentification72Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AccountIdentification72Choice(base_types._BaseFieldType):
 
 	@AcctsListAndBalDtls.setter
 	def AcctsListAndBalDtls(self, value):
-		self._AcctsListAndBalDtls = value if type(value) != base_types.auto else self.make_default("AcctsListAndBalDtls")
+		self._AcctsListAndBalDtls = value if value is not None else base_types.UninitialisedField(self, 'AcctsListAndBalDtls', AccountIdentification71, True)
 
 	@AcctsListAndBalDtls.deleter
 	def AcctsListAndBalDtls(self):
 		del self._AcctsListAndBalDtls
-		self._AcctsListAndBalDtls = None
+		self._AcctsListAndBalDtls = base_types.UninitialisedField(self, 'AcctsListAndBalDtls', AccountIdentification71, True)
 
 	@property
 	def ForAllAccts(self):
@@ -27,12 +27,12 @@ class AccountIdentification72Choice(base_types._BaseFieldType):
 
 	@ForAllAccts.setter
 	def ForAllAccts(self, value):
-		self._ForAllAccts = value if type(value) != base_types.auto else self.make_default("ForAllAccts")
+		self._ForAllAccts = value if value is not None else base_types.UninitialisedField(self, 'ForAllAccts', AccountIdentification10, False)
 
 	@ForAllAccts.deleter
 	def ForAllAccts(self):
 		del self._ForAllAccts
-		self._ForAllAccts = None
+		self._ForAllAccts = base_types.UninitialisedField(self, 'ForAllAccts', AccountIdentification10, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctsListAndBalDtls', type=AccountIdentification71, min=1, max=None, mutex_group=1, array=True),

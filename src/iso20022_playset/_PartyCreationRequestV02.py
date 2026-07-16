@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MessageHeader1 import MessageHeader1
-from ._SupplementaryData1 import SupplementaryData1
-from ._SystemParty7 import SystemParty7
+from . import MessageHeader1
+from . import SupplementaryData1
+from . import SystemParty7
 
 class PartyCreationRequestV02(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PartyCreationRequestV02(base_types._BaseFieldType):
 
 	@MsgHdr.setter
 	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
+		self._MsgHdr = value if value is not None else base_types.UninitialisedField(self, 'MsgHdr', MessageHeader1, False)
 
 	@MsgHdr.deleter
 	def MsgHdr(self):
 		del self._MsgHdr
-		self._MsgHdr = None
+		self._MsgHdr = base_types.UninitialisedField(self, 'MsgHdr', MessageHeader1, False)
 
 	@property
 	def Pty(self):
@@ -28,12 +28,12 @@ class PartyCreationRequestV02(base_types._BaseFieldType):
 
 	@Pty.setter
 	def Pty(self, value):
-		self._Pty = value if type(value) != base_types.auto else self.make_default("Pty")
+		self._Pty = value if value is not None else base_types.UninitialisedField(self, 'Pty', SystemParty7, False)
 
 	@Pty.deleter
 	def Pty(self):
 		del self._Pty
-		self._Pty = None
+		self._Pty = base_types.UninitialisedField(self, 'Pty', SystemParty7, False)
 
 	@property
 	def SplmtryData(self):
@@ -41,12 +41,12 @@ class PartyCreationRequestV02(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=0, max=1, mutex_group=None, array=False),

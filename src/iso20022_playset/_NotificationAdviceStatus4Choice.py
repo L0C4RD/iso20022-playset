@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NotificationAcceptedWithWarningStatus1 import NotificationAcceptedWithWarningStatus1
-from ._NotificationPendingStatus1 import NotificationPendingStatus1
-from ._NotificationProcessingStatus2 import NotificationProcessingStatus2
-from ._NotificationRejectionReason3 import NotificationRejectionReason3
+from . import NotificationAcceptedWithWarningStatus1
+from . import NotificationPendingStatus1
+from . import NotificationProcessingStatus2
+from . import NotificationRejectionReason3
 
 class NotificationAdviceStatus4Choice(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class NotificationAdviceStatus4Choice(base_types._BaseFieldType):
 
 	@AccptdWthWrngSts.setter
 	def AccptdWthWrngSts(self, value):
-		self._AccptdWthWrngSts = value if type(value) != base_types.auto else self.make_default("AccptdWthWrngSts")
+		self._AccptdWthWrngSts = value if value is not None else base_types.UninitialisedField(self, 'AccptdWthWrngSts', NotificationAcceptedWithWarningStatus1, False)
 
 	@AccptdWthWrngSts.deleter
 	def AccptdWthWrngSts(self):
 		del self._AccptdWthWrngSts
-		self._AccptdWthWrngSts = None
+		self._AccptdWthWrngSts = base_types.UninitialisedField(self, 'AccptdWthWrngSts', NotificationAcceptedWithWarningStatus1, False)
 
 	@property
 	def PdgSts(self):
@@ -29,12 +29,12 @@ class NotificationAdviceStatus4Choice(base_types._BaseFieldType):
 
 	@PdgSts.setter
 	def PdgSts(self, value):
-		self._PdgSts = value if type(value) != base_types.auto else self.make_default("PdgSts")
+		self._PdgSts = value if value is not None else base_types.UninitialisedField(self, 'PdgSts', NotificationPendingStatus1, False)
 
 	@PdgSts.deleter
 	def PdgSts(self):
 		del self._PdgSts
-		self._PdgSts = None
+		self._PdgSts = base_types.UninitialisedField(self, 'PdgSts', NotificationPendingStatus1, False)
 
 	@property
 	def PrcdSts(self):
@@ -42,12 +42,12 @@ class NotificationAdviceStatus4Choice(base_types._BaseFieldType):
 
 	@PrcdSts.setter
 	def PrcdSts(self, value):
-		self._PrcdSts = value if type(value) != base_types.auto else self.make_default("PrcdSts")
+		self._PrcdSts = value if value is not None else base_types.UninitialisedField(self, 'PrcdSts', NotificationProcessingStatus2, False)
 
 	@PrcdSts.deleter
 	def PrcdSts(self):
 		del self._PrcdSts
-		self._PrcdSts = None
+		self._PrcdSts = base_types.UninitialisedField(self, 'PrcdSts', NotificationProcessingStatus2, False)
 
 	@property
 	def RjctdSts(self):
@@ -55,12 +55,12 @@ class NotificationAdviceStatus4Choice(base_types._BaseFieldType):
 
 	@RjctdSts.setter
 	def RjctdSts(self, value):
-		self._RjctdSts = value if type(value) != base_types.auto else self.make_default("RjctdSts")
+		self._RjctdSts = value if value is not None else base_types.UninitialisedField(self, 'RjctdSts', NotificationRejectionReason3, False)
 
 	@RjctdSts.deleter
 	def RjctdSts(self):
 		del self._RjctdSts
-		self._RjctdSts = None
+		self._RjctdSts = base_types.UninitialisedField(self, 'RjctdSts', NotificationRejectionReason3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AccptdWthWrngSts', type=NotificationAcceptedWithWarningStatus1, min=0, max=1, mutex_group=1, array=False),

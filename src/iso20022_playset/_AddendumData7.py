@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalData2 import AdditionalData2
-from ._FleetLineItem6 import FleetLineItem6
+from . import AdditionalData2
+from . import FleetLineItem6
 
 class AddendumData7(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AddendumData7(base_types._BaseFieldType):
 
 	@AddtlData.setter
 	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+		self._AddtlData = value if value is not None else base_types.UninitialisedField(self, 'AddtlData', AdditionalData2, True)
 
 	@AddtlData.deleter
 	def AddtlData(self):
 		del self._AddtlData
-		self._AddtlData = None
+		self._AddtlData = base_types.UninitialisedField(self, 'AddtlData', AdditionalData2, True)
 
 	@property
 	def FleetLineItm(self):
@@ -27,12 +27,12 @@ class AddendumData7(base_types._BaseFieldType):
 
 	@FleetLineItm.setter
 	def FleetLineItm(self, value):
-		self._FleetLineItm = value if type(value) != base_types.auto else self.make_default("FleetLineItm")
+		self._FleetLineItm = value if value is not None else base_types.UninitialisedField(self, 'FleetLineItm', FleetLineItem6, True)
 
 	@FleetLineItm.deleter
 	def FleetLineItm(self):
 		del self._FleetLineItm
-		self._FleetLineItm = None
+		self._FleetLineItm = base_types.UninitialisedField(self, 'FleetLineItm', FleetLineItem6, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData2, min=0, max=None, mutex_group=None, array=True),

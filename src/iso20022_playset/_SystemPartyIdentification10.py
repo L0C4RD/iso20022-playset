@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._PartyIdentification136 import PartyIdentification136
+from . import ISODate
+from . import PartyIdentification136
 
 class SystemPartyIdentification10(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SystemPartyIdentification10(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', PartyIdentification136, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', PartyIdentification136, False)
 
 	@property
 	def VldFr(self):
@@ -27,12 +27,12 @@ class SystemPartyIdentification10(base_types._BaseFieldType):
 
 	@VldFr.setter
 	def VldFr(self, value):
-		self._VldFr = value if type(value) != base_types.auto else self.make_default("VldFr")
+		self._VldFr = value if value is not None else base_types.UninitialisedField(self, 'VldFr', ISODate, False)
 
 	@VldFr.deleter
 	def VldFr(self):
 		del self._VldFr
-		self._VldFr = None
+		self._VldFr = base_types.UninitialisedField(self, 'VldFr', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),

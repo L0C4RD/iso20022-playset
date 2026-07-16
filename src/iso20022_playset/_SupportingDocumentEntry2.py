@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._DocumentEntryAmendment1 import DocumentEntryAmendment1
-from ._DocumentGeneralInformation5 import DocumentGeneralInformation5
-from ._DocumentIdentification22 import DocumentIdentification22
-from ._Exact4AlphaNumericUnderscoreText import Exact4AlphaNumericUnderscoreText
-from ._Max35Text import Max35Text
-from ._Max500Text import Max500Text
-from ._ShipmentAttribute2 import ShipmentAttribute2
+from . import ActiveCurrencyAndAmount
+from . import DocumentEntryAmendment1
+from . import DocumentGeneralInformation5
+from . import DocumentIdentification22
+from . import Exact4AlphaNumericUnderscoreText
+from . import Max35Text
+from . import Max500Text
+from . import ShipmentAttribute2
 
 class SupportingDocumentEntry2(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class SupportingDocumentEntry2(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max500Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max500Text, False)
 
 	@property
 	def Attchmnt(self):
@@ -33,12 +33,12 @@ class SupportingDocumentEntry2(base_types._BaseFieldType):
 
 	@Attchmnt.setter
 	def Attchmnt(self, value):
-		self._Attchmnt = value if type(value) != base_types.auto else self.make_default("Attchmnt")
+		self._Attchmnt = value if value is not None else base_types.UninitialisedField(self, 'Attchmnt', DocumentGeneralInformation5, True)
 
 	@Attchmnt.deleter
 	def Attchmnt(self):
 		del self._Attchmnt
-		self._Attchmnt = None
+		self._Attchmnt = base_types.UninitialisedField(self, 'Attchmnt', DocumentGeneralInformation5, True)
 
 	@property
 	def DocTp(self):
@@ -46,12 +46,12 @@ class SupportingDocumentEntry2(base_types._BaseFieldType):
 
 	@DocTp.setter
 	def DocTp(self, value):
-		self._DocTp = value if type(value) != base_types.auto else self.make_default("DocTp")
+		self._DocTp = value if value is not None else base_types.UninitialisedField(self, 'DocTp', Exact4AlphaNumericUnderscoreText, False)
 
 	@DocTp.deleter
 	def DocTp(self):
 		del self._DocTp
-		self._DocTp = None
+		self._DocTp = base_types.UninitialisedField(self, 'DocTp', Exact4AlphaNumericUnderscoreText, False)
 
 	@property
 	def MtrtyData(self):
@@ -59,12 +59,12 @@ class SupportingDocumentEntry2(base_types._BaseFieldType):
 
 	@MtrtyData.setter
 	def MtrtyData(self, value):
-		self._MtrtyData = value if type(value) != base_types.auto else self.make_default("MtrtyData")
+		self._MtrtyData = value if value is not None else base_types.UninitialisedField(self, 'MtrtyData', Max35Text, False)
 
 	@MtrtyData.deleter
 	def MtrtyData(self):
 		del self._MtrtyData
-		self._MtrtyData = None
+		self._MtrtyData = base_types.UninitialisedField(self, 'MtrtyData', Max35Text, False)
 
 	@property
 	def NtryAmdmntId(self):
@@ -72,12 +72,12 @@ class SupportingDocumentEntry2(base_types._BaseFieldType):
 
 	@NtryAmdmntId.setter
 	def NtryAmdmntId(self, value):
-		self._NtryAmdmntId = value if type(value) != base_types.auto else self.make_default("NtryAmdmntId")
+		self._NtryAmdmntId = value if value is not None else base_types.UninitialisedField(self, 'NtryAmdmntId', DocumentEntryAmendment1, False)
 
 	@NtryAmdmntId.deleter
 	def NtryAmdmntId(self):
 		del self._NtryAmdmntId
-		self._NtryAmdmntId = None
+		self._NtryAmdmntId = base_types.UninitialisedField(self, 'NtryAmdmntId', DocumentEntryAmendment1, False)
 
 	@property
 	def NtryId(self):
@@ -85,12 +85,12 @@ class SupportingDocumentEntry2(base_types._BaseFieldType):
 
 	@NtryId.setter
 	def NtryId(self, value):
-		self._NtryId = value if type(value) != base_types.auto else self.make_default("NtryId")
+		self._NtryId = value if value is not None else base_types.UninitialisedField(self, 'NtryId', Max35Text, False)
 
 	@NtryId.deleter
 	def NtryId(self):
 		del self._NtryId
-		self._NtryId = None
+		self._NtryId = base_types.UninitialisedField(self, 'NtryId', Max35Text, False)
 
 	@property
 	def OrgnlDoc(self):
@@ -98,12 +98,12 @@ class SupportingDocumentEntry2(base_types._BaseFieldType):
 
 	@OrgnlDoc.setter
 	def OrgnlDoc(self, value):
-		self._OrgnlDoc = value if type(value) != base_types.auto else self.make_default("OrgnlDoc")
+		self._OrgnlDoc = value if value is not None else base_types.UninitialisedField(self, 'OrgnlDoc', DocumentIdentification22, False)
 
 	@OrgnlDoc.deleter
 	def OrgnlDoc(self):
 		del self._OrgnlDoc
-		self._OrgnlDoc = None
+		self._OrgnlDoc = base_types.UninitialisedField(self, 'OrgnlDoc', DocumentIdentification22, False)
 
 	@property
 	def ShipmntAttrbts(self):
@@ -111,12 +111,12 @@ class SupportingDocumentEntry2(base_types._BaseFieldType):
 
 	@ShipmntAttrbts.setter
 	def ShipmntAttrbts(self, value):
-		self._ShipmntAttrbts = value if type(value) != base_types.auto else self.make_default("ShipmntAttrbts")
+		self._ShipmntAttrbts = value if value is not None else base_types.UninitialisedField(self, 'ShipmntAttrbts', ShipmentAttribute2, False)
 
 	@ShipmntAttrbts.deleter
 	def ShipmntAttrbts(self):
 		del self._ShipmntAttrbts
-		self._ShipmntAttrbts = None
+		self._ShipmntAttrbts = base_types.UninitialisedField(self, 'ShipmntAttrbts', ShipmentAttribute2, False)
 
 	@property
 	def TtlAmt(self):
@@ -124,12 +124,12 @@ class SupportingDocumentEntry2(base_types._BaseFieldType):
 
 	@TtlAmt.setter
 	def TtlAmt(self, value):
-		self._TtlAmt = value if type(value) != base_types.auto else self.make_default("TtlAmt")
+		self._TtlAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlAmt', ActiveCurrencyAndAmount, False)
 
 	@TtlAmt.deleter
 	def TtlAmt(self):
 		del self._TtlAmt
-		self._TtlAmt = None
+		self._TtlAmt = base_types.UninitialisedField(self, 'TtlAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def TtlAmtAftrShipmnt(self):
@@ -137,12 +137,12 @@ class SupportingDocumentEntry2(base_types._BaseFieldType):
 
 	@TtlAmtAftrShipmnt.setter
 	def TtlAmtAftrShipmnt(self, value):
-		self._TtlAmtAftrShipmnt = value if type(value) != base_types.auto else self.make_default("TtlAmtAftrShipmnt")
+		self._TtlAmtAftrShipmnt = value if value is not None else base_types.UninitialisedField(self, 'TtlAmtAftrShipmnt', ActiveCurrencyAndAmount, False)
 
 	@TtlAmtAftrShipmnt.deleter
 	def TtlAmtAftrShipmnt(self):
 		del self._TtlAmtAftrShipmnt
-		self._TtlAmtAftrShipmnt = None
+		self._TtlAmtAftrShipmnt = base_types.UninitialisedField(self, 'TtlAmtAftrShipmnt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def TtlAmtAftrShipmntInCtrctCcy(self):
@@ -150,12 +150,12 @@ class SupportingDocumentEntry2(base_types._BaseFieldType):
 
 	@TtlAmtAftrShipmntInCtrctCcy.setter
 	def TtlAmtAftrShipmntInCtrctCcy(self, value):
-		self._TtlAmtAftrShipmntInCtrctCcy = value if type(value) != base_types.auto else self.make_default("TtlAmtAftrShipmntInCtrctCcy")
+		self._TtlAmtAftrShipmntInCtrctCcy = value if value is not None else base_types.UninitialisedField(self, 'TtlAmtAftrShipmntInCtrctCcy', ActiveCurrencyAndAmount, False)
 
 	@TtlAmtAftrShipmntInCtrctCcy.deleter
 	def TtlAmtAftrShipmntInCtrctCcy(self):
 		del self._TtlAmtAftrShipmntInCtrctCcy
-		self._TtlAmtAftrShipmntInCtrctCcy = None
+		self._TtlAmtAftrShipmntInCtrctCcy = base_types.UninitialisedField(self, 'TtlAmtAftrShipmntInCtrctCcy', ActiveCurrencyAndAmount, False)
 
 	@property
 	def TtlAmtInCtrctCcy(self):
@@ -163,12 +163,12 @@ class SupportingDocumentEntry2(base_types._BaseFieldType):
 
 	@TtlAmtInCtrctCcy.setter
 	def TtlAmtInCtrctCcy(self, value):
-		self._TtlAmtInCtrctCcy = value if type(value) != base_types.auto else self.make_default("TtlAmtInCtrctCcy")
+		self._TtlAmtInCtrctCcy = value if value is not None else base_types.UninitialisedField(self, 'TtlAmtInCtrctCcy', ActiveCurrencyAndAmount, False)
 
 	@TtlAmtInCtrctCcy.deleter
 	def TtlAmtInCtrctCcy(self):
 		del self._TtlAmtInCtrctCcy
-		self._TtlAmtInCtrctCcy = None
+		self._TtlAmtInCtrctCcy = base_types.UninitialisedField(self, 'TtlAmtInCtrctCcy', ActiveCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),

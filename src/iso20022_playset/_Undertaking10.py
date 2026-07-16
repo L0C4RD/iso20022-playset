@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ExpiryDetails1 import ExpiryDetails1
-from ._UndertakingAmount2 import UndertakingAmount2
+from . import ExpiryDetails1
+from . import UndertakingAmount2
 
 class Undertaking10(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Undertaking10(base_types._BaseFieldType):
 
 	@NewUdrtkgAmt.setter
 	def NewUdrtkgAmt(self, value):
-		self._NewUdrtkgAmt = value if type(value) != base_types.auto else self.make_default("NewUdrtkgAmt")
+		self._NewUdrtkgAmt = value if value is not None else base_types.UninitialisedField(self, 'NewUdrtkgAmt', UndertakingAmount2, False)
 
 	@NewUdrtkgAmt.deleter
 	def NewUdrtkgAmt(self):
 		del self._NewUdrtkgAmt
-		self._NewUdrtkgAmt = None
+		self._NewUdrtkgAmt = base_types.UninitialisedField(self, 'NewUdrtkgAmt', UndertakingAmount2, False)
 
 	@property
 	def NewXpryDtls(self):
@@ -27,12 +27,12 @@ class Undertaking10(base_types._BaseFieldType):
 
 	@NewXpryDtls.setter
 	def NewXpryDtls(self, value):
-		self._NewXpryDtls = value if type(value) != base_types.auto else self.make_default("NewXpryDtls")
+		self._NewXpryDtls = value if value is not None else base_types.UninitialisedField(self, 'NewXpryDtls', ExpiryDetails1, False)
 
 	@NewXpryDtls.deleter
 	def NewXpryDtls(self):
 		del self._NewXpryDtls
-		self._NewXpryDtls = None
+		self._NewXpryDtls = base_types.UninitialisedField(self, 'NewXpryDtls', ExpiryDetails1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NewUdrtkgAmt', type=UndertakingAmount2, min=0, max=1, mutex_group=None, array=False),

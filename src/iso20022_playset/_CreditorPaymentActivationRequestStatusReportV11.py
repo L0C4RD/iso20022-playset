@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GroupHeader111 import GroupHeader111
-from ._OriginalGroupInformation32 import OriginalGroupInformation32
-from ._OriginalPaymentInstruction47 import OriginalPaymentInstruction47
-from ._SupplementaryData1 import SupplementaryData1
+from . import GroupHeader111
+from . import OriginalGroupInformation32
+from . import OriginalPaymentInstruction47
+from . import SupplementaryData1
 
 class CreditorPaymentActivationRequestStatusReportV11(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CreditorPaymentActivationRequestStatusReportV11(base_types._BaseFieldType)
 
 	@GrpHdr.setter
 	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
+		self._GrpHdr = value if value is not None else base_types.UninitialisedField(self, 'GrpHdr', GroupHeader111, False)
 
 	@GrpHdr.deleter
 	def GrpHdr(self):
 		del self._GrpHdr
-		self._GrpHdr = None
+		self._GrpHdr = base_types.UninitialisedField(self, 'GrpHdr', GroupHeader111, False)
 
 	@property
 	def OrgnlGrpInfAndSts(self):
@@ -29,12 +29,12 @@ class CreditorPaymentActivationRequestStatusReportV11(base_types._BaseFieldType)
 
 	@OrgnlGrpInfAndSts.setter
 	def OrgnlGrpInfAndSts(self, value):
-		self._OrgnlGrpInfAndSts = value if type(value) != base_types.auto else self.make_default("OrgnlGrpInfAndSts")
+		self._OrgnlGrpInfAndSts = value if value is not None else base_types.UninitialisedField(self, 'OrgnlGrpInfAndSts', OriginalGroupInformation32, False)
 
 	@OrgnlGrpInfAndSts.deleter
 	def OrgnlGrpInfAndSts(self):
 		del self._OrgnlGrpInfAndSts
-		self._OrgnlGrpInfAndSts = None
+		self._OrgnlGrpInfAndSts = base_types.UninitialisedField(self, 'OrgnlGrpInfAndSts', OriginalGroupInformation32, False)
 
 	@property
 	def OrgnlPmtInfAndSts(self):
@@ -42,12 +42,12 @@ class CreditorPaymentActivationRequestStatusReportV11(base_types._BaseFieldType)
 
 	@OrgnlPmtInfAndSts.setter
 	def OrgnlPmtInfAndSts(self, value):
-		self._OrgnlPmtInfAndSts = value if type(value) != base_types.auto else self.make_default("OrgnlPmtInfAndSts")
+		self._OrgnlPmtInfAndSts = value if value is not None else base_types.UninitialisedField(self, 'OrgnlPmtInfAndSts', OriginalPaymentInstruction47, True)
 
 	@OrgnlPmtInfAndSts.deleter
 	def OrgnlPmtInfAndSts(self):
 		del self._OrgnlPmtInfAndSts
-		self._OrgnlPmtInfAndSts = None
+		self._OrgnlPmtInfAndSts = base_types.UninitialisedField(self, 'OrgnlPmtInfAndSts', OriginalPaymentInstruction47, True)
 
 	@property
 	def SplmtryData(self):
@@ -55,12 +55,12 @@ class CreditorPaymentActivationRequestStatusReportV11(base_types._BaseFieldType)
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='GrpHdr', type=GroupHeader111, min=1, max=1, mutex_group=None, array=False),

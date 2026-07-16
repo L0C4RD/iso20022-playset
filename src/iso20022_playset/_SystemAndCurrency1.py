@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._SystemIdentification2Choice import SystemIdentification2Choice
+from . import ActiveCurrencyCode
+from . import SystemIdentification2Choice
 
 class SystemAndCurrency1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SystemAndCurrency1(base_types._BaseFieldType):
 
 	@SysCcy.setter
 	def SysCcy(self, value):
-		self._SysCcy = value if type(value) != base_types.auto else self.make_default("SysCcy")
+		self._SysCcy = value if value is not None else base_types.UninitialisedField(self, 'SysCcy', ActiveCurrencyCode, False)
 
 	@SysCcy.deleter
 	def SysCcy(self):
 		del self._SysCcy
-		self._SysCcy = None
+		self._SysCcy = base_types.UninitialisedField(self, 'SysCcy', ActiveCurrencyCode, False)
 
 	@property
 	def SysId(self):
@@ -27,12 +27,12 @@ class SystemAndCurrency1(base_types._BaseFieldType):
 
 	@SysId.setter
 	def SysId(self, value):
-		self._SysId = value if type(value) != base_types.auto else self.make_default("SysId")
+		self._SysId = value if value is not None else base_types.UninitialisedField(self, 'SysId', SystemIdentification2Choice, False)
 
 	@SysId.deleter
 	def SysId(self):
 		del self._SysId
-		self._SysId = None
+		self._SysId = base_types.UninitialisedField(self, 'SysId', SystemIdentification2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SysCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),

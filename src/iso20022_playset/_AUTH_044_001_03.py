@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentReportingEquityTradingActivityResultV03 import FinancialInstrumentReportingEquityTradingActivityResultV03
+from . import FinancialInstrumentReportingEquityTradingActivityResultV03
 
 class AUTH_044_001_03():
 
@@ -18,12 +18,12 @@ class AUTH_044_001_03():
 
 		@FinInstrmRptgEqtyTradgActvtyRslt.setter
 		def FinInstrmRptgEqtyTradgActvtyRslt(self, value):
-			self._FinInstrmRptgEqtyTradgActvtyRslt = value if type(value) != base_types.auto else self.make_default("FinInstrmRptgEqtyTradgActvtyRslt")
+			self._FinInstrmRptgEqtyTradgActvtyRslt = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmRptgEqtyTradgActvtyRslt', FinancialInstrumentReportingEquityTradingActivityResultV03, False)
 
 		@FinInstrmRptgEqtyTradgActvtyRslt.deleter
 		def FinInstrmRptgEqtyTradgActvtyRslt(self):
 			del self._FinInstrmRptgEqtyTradgActvtyRslt
-			self._FinInstrmRptgEqtyTradgActvtyRslt = None
+			self._FinInstrmRptgEqtyTradgActvtyRslt = base_types.UninitialisedField(self, 'FinInstrmRptgEqtyTradgActvtyRslt', FinancialInstrumentReportingEquityTradingActivityResultV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='FinInstrmRptgEqtyTradgActvtyRslt', type=FinancialInstrumentReportingEquityTradingActivityResultV03, min=1, max=1, mutex_group=None, array=False),

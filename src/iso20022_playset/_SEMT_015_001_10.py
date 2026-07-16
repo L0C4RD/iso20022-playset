@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IntraPositionMovementConfirmationV10 import IntraPositionMovementConfirmationV10
+from . import IntraPositionMovementConfirmationV10
 
 class SEMT_015_001_10():
 
@@ -18,12 +18,12 @@ class SEMT_015_001_10():
 
 		@IntraPosMvmntConf.setter
 		def IntraPosMvmntConf(self, value):
-			self._IntraPosMvmntConf = value if type(value) != base_types.auto else self.make_default("IntraPosMvmntConf")
+			self._IntraPosMvmntConf = value if value is not None else base_types.UninitialisedField(self, 'IntraPosMvmntConf', IntraPositionMovementConfirmationV10, False)
 
 		@IntraPosMvmntConf.deleter
 		def IntraPosMvmntConf(self):
 			del self._IntraPosMvmntConf
-			self._IntraPosMvmntConf = None
+			self._IntraPosMvmntConf = base_types.UninitialisedField(self, 'IntraPosMvmntConf', IntraPositionMovementConfirmationV10, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='IntraPosMvmntConf', type=IntraPositionMovementConfirmationV10, min=1, max=1, mutex_group=None, array=False),

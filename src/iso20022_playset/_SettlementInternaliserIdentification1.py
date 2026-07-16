@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContactDetails4 import ContactDetails4
-from ._CountryCode import CountryCode
-from ._Exact2UpperCaseAlphaText import Exact2UpperCaseAlphaText
-from ._LEIIdentifier import LEIIdentifier
+from . import ContactDetails4
+from . import CountryCode
+from . import Exact2UpperCaseAlphaText
+from . import LEIIdentifier
 
 class SettlementInternaliserIdentification1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class SettlementInternaliserIdentification1(base_types._BaseFieldType):
 
 	@BrnchId.setter
 	def BrnchId(self, value):
-		self._BrnchId = value if type(value) != base_types.auto else self.make_default("BrnchId")
+		self._BrnchId = value if value is not None else base_types.UninitialisedField(self, 'BrnchId', Exact2UpperCaseAlphaText, False)
 
 	@BrnchId.deleter
 	def BrnchId(self):
 		del self._BrnchId
-		self._BrnchId = None
+		self._BrnchId = base_types.UninitialisedField(self, 'BrnchId', Exact2UpperCaseAlphaText, False)
 
 	@property
 	def Ctry(self):
@@ -29,12 +29,12 @@ class SettlementInternaliserIdentification1(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@property
 	def LEI(self):
@@ -42,12 +42,12 @@ class SettlementInternaliserIdentification1(base_types._BaseFieldType):
 
 	@LEI.setter
 	def LEI(self, value):
-		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
+		self._LEI = value if value is not None else base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	@LEI.deleter
 	def LEI(self):
 		del self._LEI
-		self._LEI = None
+		self._LEI = base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	@property
 	def RspnsblPrsn(self):
@@ -55,12 +55,12 @@ class SettlementInternaliserIdentification1(base_types._BaseFieldType):
 
 	@RspnsblPrsn.setter
 	def RspnsblPrsn(self, value):
-		self._RspnsblPrsn = value if type(value) != base_types.auto else self.make_default("RspnsblPrsn")
+		self._RspnsblPrsn = value if value is not None else base_types.UninitialisedField(self, 'RspnsblPrsn', ContactDetails4, False)
 
 	@RspnsblPrsn.deleter
 	def RspnsblPrsn(self):
 		del self._RspnsblPrsn
-		self._RspnsblPrsn = None
+		self._RspnsblPrsn = base_types.UninitialisedField(self, 'RspnsblPrsn', ContactDetails4, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BrnchId', type=Exact2UpperCaseAlphaText, min=0, max=1, mutex_group=None, array=False),

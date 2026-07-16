@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CounterpartyData92 import CounterpartyData92
-from ._DetailedReportStatistics7 import DetailedReportStatistics7
-from ._DetailedTransactionStatistics7Choice import DetailedTransactionStatistics7Choice
+from . import CounterpartyData92
+from . import DetailedReportStatistics7
+from . import DetailedTransactionStatistics7Choice
 
 class RejectionStatistics9(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class RejectionStatistics9(base_types._BaseFieldType):
 
 	@CtrPtyId.setter
 	def CtrPtyId(self, value):
-		self._CtrPtyId = value if type(value) != base_types.auto else self.make_default("CtrPtyId")
+		self._CtrPtyId = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyId', CounterpartyData92, False)
 
 	@CtrPtyId.deleter
 	def CtrPtyId(self):
 		del self._CtrPtyId
-		self._CtrPtyId = None
+		self._CtrPtyId = base_types.UninitialisedField(self, 'CtrPtyId', CounterpartyData92, False)
 
 	@property
 	def DerivSttstcs(self):
@@ -28,12 +28,12 @@ class RejectionStatistics9(base_types._BaseFieldType):
 
 	@DerivSttstcs.setter
 	def DerivSttstcs(self, value):
-		self._DerivSttstcs = value if type(value) != base_types.auto else self.make_default("DerivSttstcs")
+		self._DerivSttstcs = value if value is not None else base_types.UninitialisedField(self, 'DerivSttstcs', DetailedTransactionStatistics7Choice, False)
 
 	@DerivSttstcs.deleter
 	def DerivSttstcs(self):
 		del self._DerivSttstcs
-		self._DerivSttstcs = None
+		self._DerivSttstcs = base_types.UninitialisedField(self, 'DerivSttstcs', DetailedTransactionStatistics7Choice, False)
 
 	@property
 	def RptSttstcs(self):
@@ -41,12 +41,12 @@ class RejectionStatistics9(base_types._BaseFieldType):
 
 	@RptSttstcs.setter
 	def RptSttstcs(self, value):
-		self._RptSttstcs = value if type(value) != base_types.auto else self.make_default("RptSttstcs")
+		self._RptSttstcs = value if value is not None else base_types.UninitialisedField(self, 'RptSttstcs', DetailedReportStatistics7, False)
 
 	@RptSttstcs.deleter
 	def RptSttstcs(self):
 		del self._RptSttstcs
-		self._RptSttstcs = None
+		self._RptSttstcs = base_types.UninitialisedField(self, 'RptSttstcs', DetailedReportStatistics7, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrPtyId', type=CounterpartyData92, min=1, max=1, mutex_group=None, array=False),

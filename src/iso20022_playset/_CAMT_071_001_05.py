@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DeleteStandingOrderV05 import DeleteStandingOrderV05
+from . import DeleteStandingOrderV05
 
 class CAMT_071_001_05():
 
@@ -18,12 +18,12 @@ class CAMT_071_001_05():
 
 		@DelStgOrdr.setter
 		def DelStgOrdr(self, value):
-			self._DelStgOrdr = value if type(value) != base_types.auto else self.make_default("DelStgOrdr")
+			self._DelStgOrdr = value if value is not None else base_types.UninitialisedField(self, 'DelStgOrdr', DeleteStandingOrderV05, False)
 
 		@DelStgOrdr.deleter
 		def DelStgOrdr(self):
 			del self._DelStgOrdr
-			self._DelStgOrdr = None
+			self._DelStgOrdr = base_types.UninitialisedField(self, 'DelStgOrdr', DeleteStandingOrderV05, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='DelStgOrdr', type=DeleteStandingOrderV05, min=1, max=1, mutex_group=None, array=False),

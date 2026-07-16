@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AggregateBalanceInformation47 import AggregateBalanceInformation47
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._SubAccountIdentification75 import SubAccountIdentification75
-from ._TotalValueInPageAndStatement1 import TotalValueInPageAndStatement1
+from . import AggregateBalanceInformation47
+from . import SecuritiesAccount19
+from . import SubAccountIdentification75
+from . import TotalValueInPageAndStatement1
 
 class Balance30(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class Balance30(base_types._BaseFieldType):
 
 	@AcctBaseCcyTtlAmts.setter
 	def AcctBaseCcyTtlAmts(self, value):
-		self._AcctBaseCcyTtlAmts = value if type(value) != base_types.auto else self.make_default("AcctBaseCcyTtlAmts")
+		self._AcctBaseCcyTtlAmts = value if value is not None else base_types.UninitialisedField(self, 'AcctBaseCcyTtlAmts', TotalValueInPageAndStatement1, False)
 
 	@AcctBaseCcyTtlAmts.deleter
 	def AcctBaseCcyTtlAmts(self):
 		del self._AcctBaseCcyTtlAmts
-		self._AcctBaseCcyTtlAmts = None
+		self._AcctBaseCcyTtlAmts = base_types.UninitialisedField(self, 'AcctBaseCcyTtlAmts', TotalValueInPageAndStatement1, False)
 
 	@property
 	def BalForAcct(self):
@@ -29,12 +29,12 @@ class Balance30(base_types._BaseFieldType):
 
 	@BalForAcct.setter
 	def BalForAcct(self, value):
-		self._BalForAcct = value if type(value) != base_types.auto else self.make_default("BalForAcct")
+		self._BalForAcct = value if value is not None else base_types.UninitialisedField(self, 'BalForAcct', AggregateBalanceInformation47, True)
 
 	@BalForAcct.deleter
 	def BalForAcct(self):
 		del self._BalForAcct
-		self._BalForAcct = None
+		self._BalForAcct = base_types.UninitialisedField(self, 'BalForAcct', AggregateBalanceInformation47, True)
 
 	@property
 	def SfkpgAcct(self):
@@ -42,12 +42,12 @@ class Balance30(base_types._BaseFieldType):
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
-		self._SfkpgAcct = None
+		self._SfkpgAcct = base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@property
 	def SubAcctDtls(self):
@@ -55,12 +55,12 @@ class Balance30(base_types._BaseFieldType):
 
 	@SubAcctDtls.setter
 	def SubAcctDtls(self, value):
-		self._SubAcctDtls = value if type(value) != base_types.auto else self.make_default("SubAcctDtls")
+		self._SubAcctDtls = value if value is not None else base_types.UninitialisedField(self, 'SubAcctDtls', SubAccountIdentification75, True)
 
 	@SubAcctDtls.deleter
 	def SubAcctDtls(self):
 		del self._SubAcctDtls
-		self._SubAcctDtls = None
+		self._SubAcctDtls = base_types.UninitialisedField(self, 'SubAcctDtls', SubAccountIdentification75, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctBaseCcyTtlAmts', type=TotalValueInPageAndStatement1, min=0, max=1, mutex_group=None, array=False),

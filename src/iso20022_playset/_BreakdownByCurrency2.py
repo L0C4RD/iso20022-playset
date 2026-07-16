@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._CashInForecast5 import CashInForecast5
-from ._CashOutForecast5 import CashOutForecast5
-from ._NetCashForecast4 import NetCashForecast4
+from . import ActiveOrHistoricCurrencyCode
+from . import CashInForecast5
+from . import CashOutForecast5
+from . import NetCashForecast4
 
 class BreakdownByCurrency2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class BreakdownByCurrency2(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveOrHistoricCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def CshInFcst(self):
@@ -29,12 +29,12 @@ class BreakdownByCurrency2(base_types._BaseFieldType):
 
 	@CshInFcst.setter
 	def CshInFcst(self, value):
-		self._CshInFcst = value if type(value) != base_types.auto else self.make_default("CshInFcst")
+		self._CshInFcst = value if value is not None else base_types.UninitialisedField(self, 'CshInFcst', CashInForecast5, True)
 
 	@CshInFcst.deleter
 	def CshInFcst(self):
 		del self._CshInFcst
-		self._CshInFcst = None
+		self._CshInFcst = base_types.UninitialisedField(self, 'CshInFcst', CashInForecast5, True)
 
 	@property
 	def CshOutFcst(self):
@@ -42,12 +42,12 @@ class BreakdownByCurrency2(base_types._BaseFieldType):
 
 	@CshOutFcst.setter
 	def CshOutFcst(self, value):
-		self._CshOutFcst = value if type(value) != base_types.auto else self.make_default("CshOutFcst")
+		self._CshOutFcst = value if value is not None else base_types.UninitialisedField(self, 'CshOutFcst', CashOutForecast5, True)
 
 	@CshOutFcst.deleter
 	def CshOutFcst(self):
 		del self._CshOutFcst
-		self._CshOutFcst = None
+		self._CshOutFcst = base_types.UninitialisedField(self, 'CshOutFcst', CashOutForecast5, True)
 
 	@property
 	def NetCshFcst(self):
@@ -55,12 +55,12 @@ class BreakdownByCurrency2(base_types._BaseFieldType):
 
 	@NetCshFcst.setter
 	def NetCshFcst(self, value):
-		self._NetCshFcst = value if type(value) != base_types.auto else self.make_default("NetCshFcst")
+		self._NetCshFcst = value if value is not None else base_types.UninitialisedField(self, 'NetCshFcst', NetCashForecast4, True)
 
 	@NetCshFcst.deleter
 	def NetCshFcst(self):
 		del self._NetCshFcst
-		self._NetCshFcst = None
+		self._NetCshFcst = base_types.UninitialisedField(self, 'NetCshFcst', NetCashForecast4, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),

@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardPaymentEnvironment82 import CardPaymentEnvironment82
-from ._PaymentContext30 import PaymentContext30
-from ._ReportGetTotalsRequest1 import ReportGetTotalsRequest1
-from ._ReportTransactionRequest1 import ReportTransactionRequest1
-from ._RetailerService6Code import RetailerService6Code
-from ._SupplementaryData1 import SupplementaryData1
+from . import CardPaymentEnvironment82
+from . import PaymentContext30
+from . import ReportGetTotalsRequest1
+from . import ReportTransactionRequest1
+from . import RetailerService6Code
+from . import SupplementaryData1
 
 class ReportRequest9(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class ReportRequest9(base_types._BaseFieldType):
 
 	@Cntxt.setter
 	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != base_types.auto else self.make_default("Cntxt")
+		self._Cntxt = value if value is not None else base_types.UninitialisedField(self, 'Cntxt', PaymentContext30, False)
 
 	@Cntxt.deleter
 	def Cntxt(self):
 		del self._Cntxt
-		self._Cntxt = None
+		self._Cntxt = base_types.UninitialisedField(self, 'Cntxt', PaymentContext30, False)
 
 	@property
 	def Envt(self):
@@ -31,12 +31,12 @@ class ReportRequest9(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+		self._Envt = value if value is not None else base_types.UninitialisedField(self, 'Envt', CardPaymentEnvironment82, False)
 
 	@Envt.deleter
 	def Envt(self):
 		del self._Envt
-		self._Envt = None
+		self._Envt = base_types.UninitialisedField(self, 'Envt', CardPaymentEnvironment82, False)
 
 	@property
 	def RptGetTtlsReq(self):
@@ -44,12 +44,12 @@ class ReportRequest9(base_types._BaseFieldType):
 
 	@RptGetTtlsReq.setter
 	def RptGetTtlsReq(self, value):
-		self._RptGetTtlsReq = value if type(value) != base_types.auto else self.make_default("RptGetTtlsReq")
+		self._RptGetTtlsReq = value if value is not None else base_types.UninitialisedField(self, 'RptGetTtlsReq', ReportGetTotalsRequest1, False)
 
 	@RptGetTtlsReq.deleter
 	def RptGetTtlsReq(self):
 		del self._RptGetTtlsReq
-		self._RptGetTtlsReq = None
+		self._RptGetTtlsReq = base_types.UninitialisedField(self, 'RptGetTtlsReq', ReportGetTotalsRequest1, False)
 
 	@property
 	def RptTxReq(self):
@@ -57,12 +57,12 @@ class ReportRequest9(base_types._BaseFieldType):
 
 	@RptTxReq.setter
 	def RptTxReq(self, value):
-		self._RptTxReq = value if type(value) != base_types.auto else self.make_default("RptTxReq")
+		self._RptTxReq = value if value is not None else base_types.UninitialisedField(self, 'RptTxReq', ReportTransactionRequest1, False)
 
 	@RptTxReq.deleter
 	def RptTxReq(self):
 		del self._RptTxReq
-		self._RptTxReq = None
+		self._RptTxReq = base_types.UninitialisedField(self, 'RptTxReq', ReportTransactionRequest1, False)
 
 	@property
 	def SplmtryData(self):
@@ -70,12 +70,12 @@ class ReportRequest9(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def SvcCntt(self):
@@ -83,12 +83,12 @@ class ReportRequest9(base_types._BaseFieldType):
 
 	@SvcCntt.setter
 	def SvcCntt(self, value):
-		self._SvcCntt = value if type(value) != base_types.auto else self.make_default("SvcCntt")
+		self._SvcCntt = value if value is not None else base_types.UninitialisedField(self, 'SvcCntt', RetailerService6Code, False)
 
 	@SvcCntt.deleter
 	def SvcCntt(self):
 		del self._SvcCntt
-		self._SvcCntt = None
+		self._SvcCntt = base_types.UninitialisedField(self, 'SvcCntt', RetailerService6Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),

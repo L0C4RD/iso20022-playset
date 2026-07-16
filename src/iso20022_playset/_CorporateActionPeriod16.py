@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Period6Choice import Period6Choice
+from . import Period6Choice
 
 class CorporateActionPeriod16(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class CorporateActionPeriod16(base_types._BaseFieldType):
 
 	@BookClsrPrd.setter
 	def BookClsrPrd(self, value):
-		self._BookClsrPrd = value if type(value) != base_types.auto else self.make_default("BookClsrPrd")
+		self._BookClsrPrd = value if value is not None else base_types.UninitialisedField(self, 'BookClsrPrd', Period6Choice, False)
 
 	@BookClsrPrd.deleter
 	def BookClsrPrd(self):
 		del self._BookClsrPrd
-		self._BookClsrPrd = None
+		self._BookClsrPrd = base_types.UninitialisedField(self, 'BookClsrPrd', Period6Choice, False)
 
 	@property
 	def ClmPrd(self):
@@ -26,12 +26,12 @@ class CorporateActionPeriod16(base_types._BaseFieldType):
 
 	@ClmPrd.setter
 	def ClmPrd(self, value):
-		self._ClmPrd = value if type(value) != base_types.auto else self.make_default("ClmPrd")
+		self._ClmPrd = value if value is not None else base_types.UninitialisedField(self, 'ClmPrd', Period6Choice, False)
 
 	@ClmPrd.deleter
 	def ClmPrd(self):
 		del self._ClmPrd
-		self._ClmPrd = None
+		self._ClmPrd = base_types.UninitialisedField(self, 'ClmPrd', Period6Choice, False)
 
 	@property
 	def CmplsryPurchsPrd(self):
@@ -39,12 +39,12 @@ class CorporateActionPeriod16(base_types._BaseFieldType):
 
 	@CmplsryPurchsPrd.setter
 	def CmplsryPurchsPrd(self, value):
-		self._CmplsryPurchsPrd = value if type(value) != base_types.auto else self.make_default("CmplsryPurchsPrd")
+		self._CmplsryPurchsPrd = value if value is not None else base_types.UninitialisedField(self, 'CmplsryPurchsPrd', Period6Choice, False)
 
 	@CmplsryPurchsPrd.deleter
 	def CmplsryPurchsPrd(self):
 		del self._CmplsryPurchsPrd
-		self._CmplsryPurchsPrd = None
+		self._CmplsryPurchsPrd = base_types.UninitialisedField(self, 'CmplsryPurchsPrd', Period6Choice, False)
 
 	@property
 	def CoDpstriesSspnsnPrd(self):
@@ -52,12 +52,12 @@ class CorporateActionPeriod16(base_types._BaseFieldType):
 
 	@CoDpstriesSspnsnPrd.setter
 	def CoDpstriesSspnsnPrd(self, value):
-		self._CoDpstriesSspnsnPrd = value if type(value) != base_types.auto else self.make_default("CoDpstriesSspnsnPrd")
+		self._CoDpstriesSspnsnPrd = value if value is not None else base_types.UninitialisedField(self, 'CoDpstriesSspnsnPrd', Period6Choice, False)
 
 	@CoDpstriesSspnsnPrd.deleter
 	def CoDpstriesSspnsnPrd(self):
 		del self._CoDpstriesSspnsnPrd
-		self._CoDpstriesSspnsnPrd = None
+		self._CoDpstriesSspnsnPrd = base_types.UninitialisedField(self, 'CoDpstriesSspnsnPrd', Period6Choice, False)
 
 	@property
 	def DpstrySspnsnPrdForBookNtryTrf(self):
@@ -65,12 +65,12 @@ class CorporateActionPeriod16(base_types._BaseFieldType):
 
 	@DpstrySspnsnPrdForBookNtryTrf.setter
 	def DpstrySspnsnPrdForBookNtryTrf(self, value):
-		self._DpstrySspnsnPrdForBookNtryTrf = value if type(value) != base_types.auto else self.make_default("DpstrySspnsnPrdForBookNtryTrf")
+		self._DpstrySspnsnPrdForBookNtryTrf = value if value is not None else base_types.UninitialisedField(self, 'DpstrySspnsnPrdForBookNtryTrf', Period6Choice, False)
 
 	@DpstrySspnsnPrdForBookNtryTrf.deleter
 	def DpstrySspnsnPrdForBookNtryTrf(self):
 		del self._DpstrySspnsnPrdForBookNtryTrf
-		self._DpstrySspnsnPrdForBookNtryTrf = None
+		self._DpstrySspnsnPrdForBookNtryTrf = base_types.UninitialisedField(self, 'DpstrySspnsnPrdForBookNtryTrf', Period6Choice, False)
 
 	@property
 	def DpstrySspnsnPrdForDpst(self):
@@ -78,12 +78,12 @@ class CorporateActionPeriod16(base_types._BaseFieldType):
 
 	@DpstrySspnsnPrdForDpst.setter
 	def DpstrySspnsnPrdForDpst(self, value):
-		self._DpstrySspnsnPrdForDpst = value if type(value) != base_types.auto else self.make_default("DpstrySspnsnPrdForDpst")
+		self._DpstrySspnsnPrdForDpst = value if value is not None else base_types.UninitialisedField(self, 'DpstrySspnsnPrdForDpst', Period6Choice, False)
 
 	@DpstrySspnsnPrdForDpst.deleter
 	def DpstrySspnsnPrdForDpst(self):
 		del self._DpstrySspnsnPrdForDpst
-		self._DpstrySspnsnPrdForDpst = None
+		self._DpstrySspnsnPrdForDpst = base_types.UninitialisedField(self, 'DpstrySspnsnPrdForDpst', Period6Choice, False)
 
 	@property
 	def DpstrySspnsnPrdForDpstAtAgt(self):
@@ -91,12 +91,12 @@ class CorporateActionPeriod16(base_types._BaseFieldType):
 
 	@DpstrySspnsnPrdForDpstAtAgt.setter
 	def DpstrySspnsnPrdForDpstAtAgt(self, value):
-		self._DpstrySspnsnPrdForDpstAtAgt = value if type(value) != base_types.auto else self.make_default("DpstrySspnsnPrdForDpstAtAgt")
+		self._DpstrySspnsnPrdForDpstAtAgt = value if value is not None else base_types.UninitialisedField(self, 'DpstrySspnsnPrdForDpstAtAgt', Period6Choice, False)
 
 	@DpstrySspnsnPrdForDpstAtAgt.deleter
 	def DpstrySspnsnPrdForDpstAtAgt(self):
 		del self._DpstrySspnsnPrdForDpstAtAgt
-		self._DpstrySspnsnPrdForDpstAtAgt = None
+		self._DpstrySspnsnPrdForDpstAtAgt = base_types.UninitialisedField(self, 'DpstrySspnsnPrdForDpstAtAgt', Period6Choice, False)
 
 	@property
 	def DpstrySspnsnPrdForPldg(self):
@@ -104,12 +104,12 @@ class CorporateActionPeriod16(base_types._BaseFieldType):
 
 	@DpstrySspnsnPrdForPldg.setter
 	def DpstrySspnsnPrdForPldg(self, value):
-		self._DpstrySspnsnPrdForPldg = value if type(value) != base_types.auto else self.make_default("DpstrySspnsnPrdForPldg")
+		self._DpstrySspnsnPrdForPldg = value if value is not None else base_types.UninitialisedField(self, 'DpstrySspnsnPrdForPldg', Period6Choice, False)
 
 	@DpstrySspnsnPrdForPldg.deleter
 	def DpstrySspnsnPrdForPldg(self):
 		del self._DpstrySspnsnPrdForPldg
-		self._DpstrySspnsnPrdForPldg = None
+		self._DpstrySspnsnPrdForPldg = base_types.UninitialisedField(self, 'DpstrySspnsnPrdForPldg', Period6Choice, False)
 
 	@property
 	def DpstrySspnsnPrdForSgrtn(self):
@@ -117,12 +117,12 @@ class CorporateActionPeriod16(base_types._BaseFieldType):
 
 	@DpstrySspnsnPrdForSgrtn.setter
 	def DpstrySspnsnPrdForSgrtn(self, value):
-		self._DpstrySspnsnPrdForSgrtn = value if type(value) != base_types.auto else self.make_default("DpstrySspnsnPrdForSgrtn")
+		self._DpstrySspnsnPrdForSgrtn = value if value is not None else base_types.UninitialisedField(self, 'DpstrySspnsnPrdForSgrtn', Period6Choice, False)
 
 	@DpstrySspnsnPrdForSgrtn.deleter
 	def DpstrySspnsnPrdForSgrtn(self):
 		del self._DpstrySspnsnPrdForSgrtn
-		self._DpstrySspnsnPrdForSgrtn = None
+		self._DpstrySspnsnPrdForSgrtn = base_types.UninitialisedField(self, 'DpstrySspnsnPrdForSgrtn', Period6Choice, False)
 
 	@property
 	def DpstrySspnsnPrdForWdrwlAtAgt(self):
@@ -130,12 +130,12 @@ class CorporateActionPeriod16(base_types._BaseFieldType):
 
 	@DpstrySspnsnPrdForWdrwlAtAgt.setter
 	def DpstrySspnsnPrdForWdrwlAtAgt(self, value):
-		self._DpstrySspnsnPrdForWdrwlAtAgt = value if type(value) != base_types.auto else self.make_default("DpstrySspnsnPrdForWdrwlAtAgt")
+		self._DpstrySspnsnPrdForWdrwlAtAgt = value if value is not None else base_types.UninitialisedField(self, 'DpstrySspnsnPrdForWdrwlAtAgt', Period6Choice, False)
 
 	@DpstrySspnsnPrdForWdrwlAtAgt.deleter
 	def DpstrySspnsnPrdForWdrwlAtAgt(self):
 		del self._DpstrySspnsnPrdForWdrwlAtAgt
-		self._DpstrySspnsnPrdForWdrwlAtAgt = None
+		self._DpstrySspnsnPrdForWdrwlAtAgt = base_types.UninitialisedField(self, 'DpstrySspnsnPrdForWdrwlAtAgt', Period6Choice, False)
 
 	@property
 	def DpstrySspnsnPrdForWdrwlInNmneeNm(self):
@@ -143,12 +143,12 @@ class CorporateActionPeriod16(base_types._BaseFieldType):
 
 	@DpstrySspnsnPrdForWdrwlInNmneeNm.setter
 	def DpstrySspnsnPrdForWdrwlInNmneeNm(self, value):
-		self._DpstrySspnsnPrdForWdrwlInNmneeNm = value if type(value) != base_types.auto else self.make_default("DpstrySspnsnPrdForWdrwlInNmneeNm")
+		self._DpstrySspnsnPrdForWdrwlInNmneeNm = value if value is not None else base_types.UninitialisedField(self, 'DpstrySspnsnPrdForWdrwlInNmneeNm', Period6Choice, False)
 
 	@DpstrySspnsnPrdForWdrwlInNmneeNm.deleter
 	def DpstrySspnsnPrdForWdrwlInNmneeNm(self):
 		del self._DpstrySspnsnPrdForWdrwlInNmneeNm
-		self._DpstrySspnsnPrdForWdrwlInNmneeNm = None
+		self._DpstrySspnsnPrdForWdrwlInNmneeNm = base_types.UninitialisedField(self, 'DpstrySspnsnPrdForWdrwlInNmneeNm', Period6Choice, False)
 
 	@property
 	def DpstrySspnsnPrdForWdrwlInStrtNm(self):
@@ -156,12 +156,12 @@ class CorporateActionPeriod16(base_types._BaseFieldType):
 
 	@DpstrySspnsnPrdForWdrwlInStrtNm.setter
 	def DpstrySspnsnPrdForWdrwlInStrtNm(self, value):
-		self._DpstrySspnsnPrdForWdrwlInStrtNm = value if type(value) != base_types.auto else self.make_default("DpstrySspnsnPrdForWdrwlInStrtNm")
+		self._DpstrySspnsnPrdForWdrwlInStrtNm = value if value is not None else base_types.UninitialisedField(self, 'DpstrySspnsnPrdForWdrwlInStrtNm', Period6Choice, False)
 
 	@DpstrySspnsnPrdForWdrwlInStrtNm.deleter
 	def DpstrySspnsnPrdForWdrwlInStrtNm(self):
 		del self._DpstrySspnsnPrdForWdrwlInStrtNm
-		self._DpstrySspnsnPrdForWdrwlInStrtNm = None
+		self._DpstrySspnsnPrdForWdrwlInStrtNm = base_types.UninitialisedField(self, 'DpstrySspnsnPrdForWdrwlInStrtNm', Period6Choice, False)
 
 	@property
 	def FsclYrPrd(self):
@@ -169,12 +169,12 @@ class CorporateActionPeriod16(base_types._BaseFieldType):
 
 	@FsclYrPrd.setter
 	def FsclYrPrd(self, value):
-		self._FsclYrPrd = value if type(value) != base_types.auto else self.make_default("FsclYrPrd")
+		self._FsclYrPrd = value if value is not None else base_types.UninitialisedField(self, 'FsclYrPrd', Period6Choice, False)
 
 	@FsclYrPrd.deleter
 	def FsclYrPrd(self):
 		del self._FsclYrPrd
-		self._FsclYrPrd = None
+		self._FsclYrPrd = base_types.UninitialisedField(self, 'FsclYrPrd', Period6Choice, False)
 
 	@property
 	def IntrstPrd(self):
@@ -182,12 +182,12 @@ class CorporateActionPeriod16(base_types._BaseFieldType):
 
 	@IntrstPrd.setter
 	def IntrstPrd(self, value):
-		self._IntrstPrd = value if type(value) != base_types.auto else self.make_default("IntrstPrd")
+		self._IntrstPrd = value if value is not None else base_types.UninitialisedField(self, 'IntrstPrd', Period6Choice, False)
 
 	@IntrstPrd.deleter
 	def IntrstPrd(self):
 		del self._IntrstPrd
-		self._IntrstPrd = None
+		self._IntrstPrd = base_types.UninitialisedField(self, 'IntrstPrd', Period6Choice, False)
 
 	@property
 	def PricClctnPrd(self):
@@ -195,12 +195,12 @@ class CorporateActionPeriod16(base_types._BaseFieldType):
 
 	@PricClctnPrd.setter
 	def PricClctnPrd(self, value):
-		self._PricClctnPrd = value if type(value) != base_types.auto else self.make_default("PricClctnPrd")
+		self._PricClctnPrd = value if value is not None else base_types.UninitialisedField(self, 'PricClctnPrd', Period6Choice, False)
 
 	@PricClctnPrd.deleter
 	def PricClctnPrd(self):
 		del self._PricClctnPrd
-		self._PricClctnPrd = None
+		self._PricClctnPrd = base_types.UninitialisedField(self, 'PricClctnPrd', Period6Choice, False)
 
 	@property
 	def SpltPrd(self):
@@ -208,12 +208,12 @@ class CorporateActionPeriod16(base_types._BaseFieldType):
 
 	@SpltPrd.setter
 	def SpltPrd(self, value):
-		self._SpltPrd = value if type(value) != base_types.auto else self.make_default("SpltPrd")
+		self._SpltPrd = value if value is not None else base_types.UninitialisedField(self, 'SpltPrd', Period6Choice, False)
 
 	@SpltPrd.deleter
 	def SpltPrd(self):
 		del self._SpltPrd
-		self._SpltPrd = None
+		self._SpltPrd = base_types.UninitialisedField(self, 'SpltPrd', Period6Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BookClsrPrd', type=Period6Choice, min=0, max=1, mutex_group=None, array=False),

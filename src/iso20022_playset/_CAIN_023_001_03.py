@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardManagementInitiationV03 import CardManagementInitiationV03
+from . import CardManagementInitiationV03
 
 class CAIN_023_001_03():
 
@@ -18,12 +18,12 @@ class CAIN_023_001_03():
 
 		@CardMgmtInitn.setter
 		def CardMgmtInitn(self, value):
-			self._CardMgmtInitn = value if type(value) != base_types.auto else self.make_default("CardMgmtInitn")
+			self._CardMgmtInitn = value if value is not None else base_types.UninitialisedField(self, 'CardMgmtInitn', CardManagementInitiationV03, False)
 
 		@CardMgmtInitn.deleter
 		def CardMgmtInitn(self):
 			del self._CardMgmtInitn
-			self._CardMgmtInitn = None
+			self._CardMgmtInitn = base_types.UninitialisedField(self, 'CardMgmtInitn', CardManagementInitiationV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CardMgmtInitn', type=CardManagementInitiationV03, min=1, max=1, mutex_group=None, array=False),

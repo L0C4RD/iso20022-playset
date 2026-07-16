@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
-from ._Party50Choice import Party50Choice
+from . import ISODateTime
+from . import Max35Text
+from . import Party50Choice
 
 class CaseAssignment6(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CaseAssignment6(base_types._BaseFieldType):
 
 	@Assgne.setter
 	def Assgne(self, value):
-		self._Assgne = value if type(value) != base_types.auto else self.make_default("Assgne")
+		self._Assgne = value if value is not None else base_types.UninitialisedField(self, 'Assgne', Party50Choice, False)
 
 	@Assgne.deleter
 	def Assgne(self):
 		del self._Assgne
-		self._Assgne = None
+		self._Assgne = base_types.UninitialisedField(self, 'Assgne', Party50Choice, False)
 
 	@property
 	def Assgnr(self):
@@ -28,12 +28,12 @@ class CaseAssignment6(base_types._BaseFieldType):
 
 	@Assgnr.setter
 	def Assgnr(self, value):
-		self._Assgnr = value if type(value) != base_types.auto else self.make_default("Assgnr")
+		self._Assgnr = value if value is not None else base_types.UninitialisedField(self, 'Assgnr', Party50Choice, False)
 
 	@Assgnr.deleter
 	def Assgnr(self):
 		del self._Assgnr
-		self._Assgnr = None
+		self._Assgnr = base_types.UninitialisedField(self, 'Assgnr', Party50Choice, False)
 
 	@property
 	def CreDtTm(self):
@@ -41,12 +41,12 @@ class CaseAssignment6(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if value is not None else base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
 		del self._CreDtTm
-		self._CreDtTm = None
+		self._CreDtTm = base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@property
 	def Id(self):
@@ -54,12 +54,12 @@ class CaseAssignment6(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Assgne', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),

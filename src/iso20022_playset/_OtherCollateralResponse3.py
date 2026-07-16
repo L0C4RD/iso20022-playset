@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._RejectionReason68Code import RejectionReason68Code
-from ._Status4Code import Status4Code
+from . import Max35Text
+from . import RejectionReason68Code
+from . import Status4Code
 
 class OtherCollateralResponse3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class OtherCollateralResponse3(base_types._BaseFieldType):
 
 	@AsstNb.setter
 	def AsstNb(self, value):
-		self._AsstNb = value if type(value) != base_types.auto else self.make_default("AsstNb")
+		self._AsstNb = value if value is not None else base_types.UninitialisedField(self, 'AsstNb', Max35Text, False)
 
 	@AsstNb.deleter
 	def AsstNb(self):
 		del self._AsstNb
-		self._AsstNb = None
+		self._AsstNb = base_types.UninitialisedField(self, 'AsstNb', Max35Text, False)
 
 	@property
 	def CollId(self):
@@ -28,12 +28,12 @@ class OtherCollateralResponse3(base_types._BaseFieldType):
 
 	@CollId.setter
 	def CollId(self, value):
-		self._CollId = value if type(value) != base_types.auto else self.make_default("CollId")
+		self._CollId = value if value is not None else base_types.UninitialisedField(self, 'CollId', Max35Text, False)
 
 	@CollId.deleter
 	def CollId(self):
 		del self._CollId
-		self._CollId = None
+		self._CollId = base_types.UninitialisedField(self, 'CollId', Max35Text, False)
 
 	@property
 	def RjctnInf(self):
@@ -41,12 +41,12 @@ class OtherCollateralResponse3(base_types._BaseFieldType):
 
 	@RjctnInf.setter
 	def RjctnInf(self, value):
-		self._RjctnInf = value if type(value) != base_types.auto else self.make_default("RjctnInf")
+		self._RjctnInf = value if value is not None else base_types.UninitialisedField(self, 'RjctnInf', Max35Text, False)
 
 	@RjctnInf.deleter
 	def RjctnInf(self):
 		del self._RjctnInf
-		self._RjctnInf = None
+		self._RjctnInf = base_types.UninitialisedField(self, 'RjctnInf', Max35Text, False)
 
 	@property
 	def RjctnRsn(self):
@@ -54,12 +54,12 @@ class OtherCollateralResponse3(base_types._BaseFieldType):
 
 	@RjctnRsn.setter
 	def RjctnRsn(self, value):
-		self._RjctnRsn = value if type(value) != base_types.auto else self.make_default("RjctnRsn")
+		self._RjctnRsn = value if value is not None else base_types.UninitialisedField(self, 'RjctnRsn', RejectionReason68Code, False)
 
 	@RjctnRsn.deleter
 	def RjctnRsn(self):
 		del self._RjctnRsn
-		self._RjctnRsn = None
+		self._RjctnRsn = base_types.UninitialisedField(self, 'RjctnRsn', RejectionReason68Code, False)
 
 	@property
 	def RspnTp(self):
@@ -67,12 +67,12 @@ class OtherCollateralResponse3(base_types._BaseFieldType):
 
 	@RspnTp.setter
 	def RspnTp(self, value):
-		self._RspnTp = value if type(value) != base_types.auto else self.make_default("RspnTp")
+		self._RspnTp = value if value is not None else base_types.UninitialisedField(self, 'RspnTp', Status4Code, False)
 
 	@RspnTp.deleter
 	def RspnTp(self):
 		del self._RspnTp
-		self._RspnTp = None
+		self._RspnTp = base_types.UninitialisedField(self, 'RspnTp', Status4Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AsstNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

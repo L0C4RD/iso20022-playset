@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CashAccount40 import CashAccount40
-from ._ChequeCancellationStatus1 import ChequeCancellationStatus1
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
-from ._PartyIdentification272 import PartyIdentification272
+from . import ActiveCurrencyAndAmount
+from . import BranchAndFinancialInstitutionIdentification8
+from . import CashAccount40
+from . import ChequeCancellationStatus1
+from . import DateAndDateTime2Choice
+from . import ISODate
+from . import Max35Text
+from . import PartyIdentification272
 
 class Cheque18(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class Cheque18(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def ChqCxlOrStopSts(self):
@@ -33,12 +33,12 @@ class Cheque18(base_types._BaseFieldType):
 
 	@ChqCxlOrStopSts.setter
 	def ChqCxlOrStopSts(self, value):
-		self._ChqCxlOrStopSts = value if type(value) != base_types.auto else self.make_default("ChqCxlOrStopSts")
+		self._ChqCxlOrStopSts = value if value is not None else base_types.UninitialisedField(self, 'ChqCxlOrStopSts', ChequeCancellationStatus1, False)
 
 	@ChqCxlOrStopSts.deleter
 	def ChqCxlOrStopSts(self):
 		del self._ChqCxlOrStopSts
-		self._ChqCxlOrStopSts = None
+		self._ChqCxlOrStopSts = base_types.UninitialisedField(self, 'ChqCxlOrStopSts', ChequeCancellationStatus1, False)
 
 	@property
 	def ChqNb(self):
@@ -46,12 +46,12 @@ class Cheque18(base_types._BaseFieldType):
 
 	@ChqNb.setter
 	def ChqNb(self, value):
-		self._ChqNb = value if type(value) != base_types.auto else self.make_default("ChqNb")
+		self._ChqNb = value if value is not None else base_types.UninitialisedField(self, 'ChqNb', Max35Text, False)
 
 	@ChqNb.deleter
 	def ChqNb(self):
 		del self._ChqNb
-		self._ChqNb = None
+		self._ChqNb = base_types.UninitialisedField(self, 'ChqNb', Max35Text, False)
 
 	@property
 	def DrwrAgt(self):
@@ -59,12 +59,12 @@ class Cheque18(base_types._BaseFieldType):
 
 	@DrwrAgt.setter
 	def DrwrAgt(self, value):
-		self._DrwrAgt = value if type(value) != base_types.auto else self.make_default("DrwrAgt")
+		self._DrwrAgt = value if value is not None else base_types.UninitialisedField(self, 'DrwrAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@DrwrAgt.deleter
 	def DrwrAgt(self):
 		del self._DrwrAgt
-		self._DrwrAgt = None
+		self._DrwrAgt = base_types.UninitialisedField(self, 'DrwrAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def DrwrAgtAcct(self):
@@ -72,12 +72,12 @@ class Cheque18(base_types._BaseFieldType):
 
 	@DrwrAgtAcct.setter
 	def DrwrAgtAcct(self, value):
-		self._DrwrAgtAcct = value if type(value) != base_types.auto else self.make_default("DrwrAgtAcct")
+		self._DrwrAgtAcct = value if value is not None else base_types.UninitialisedField(self, 'DrwrAgtAcct', CashAccount40, False)
 
 	@DrwrAgtAcct.deleter
 	def DrwrAgtAcct(self):
 		del self._DrwrAgtAcct
-		self._DrwrAgtAcct = None
+		self._DrwrAgtAcct = base_types.UninitialisedField(self, 'DrwrAgtAcct', CashAccount40, False)
 
 	@property
 	def FctvDt(self):
@@ -85,12 +85,12 @@ class Cheque18(base_types._BaseFieldType):
 
 	@FctvDt.setter
 	def FctvDt(self, value):
-		self._FctvDt = value if type(value) != base_types.auto else self.make_default("FctvDt")
+		self._FctvDt = value if value is not None else base_types.UninitialisedField(self, 'FctvDt', DateAndDateTime2Choice, False)
 
 	@FctvDt.deleter
 	def FctvDt(self):
 		del self._FctvDt
-		self._FctvDt = None
+		self._FctvDt = base_types.UninitialisedField(self, 'FctvDt', DateAndDateTime2Choice, False)
 
 	@property
 	def InstrId(self):
@@ -98,12 +98,12 @@ class Cheque18(base_types._BaseFieldType):
 
 	@InstrId.setter
 	def InstrId(self, value):
-		self._InstrId = value if type(value) != base_types.auto else self.make_default("InstrId")
+		self._InstrId = value if value is not None else base_types.UninitialisedField(self, 'InstrId', Max35Text, False)
 
 	@InstrId.deleter
 	def InstrId(self):
 		del self._InstrId
-		self._InstrId = None
+		self._InstrId = base_types.UninitialisedField(self, 'InstrId', Max35Text, False)
 
 	@property
 	def IsseDt(self):
@@ -111,12 +111,12 @@ class Cheque18(base_types._BaseFieldType):
 
 	@IsseDt.setter
 	def IsseDt(self, value):
-		self._IsseDt = value if type(value) != base_types.auto else self.make_default("IsseDt")
+		self._IsseDt = value if value is not None else base_types.UninitialisedField(self, 'IsseDt', ISODate, False)
 
 	@IsseDt.deleter
 	def IsseDt(self):
 		del self._IsseDt
-		self._IsseDt = None
+		self._IsseDt = base_types.UninitialisedField(self, 'IsseDt', ISODate, False)
 
 	@property
 	def OrgnlInstrId(self):
@@ -124,12 +124,12 @@ class Cheque18(base_types._BaseFieldType):
 
 	@OrgnlInstrId.setter
 	def OrgnlInstrId(self, value):
-		self._OrgnlInstrId = value if type(value) != base_types.auto else self.make_default("OrgnlInstrId")
+		self._OrgnlInstrId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlInstrId', Max35Text, False)
 
 	@OrgnlInstrId.deleter
 	def OrgnlInstrId(self):
 		del self._OrgnlInstrId
-		self._OrgnlInstrId = None
+		self._OrgnlInstrId = base_types.UninitialisedField(self, 'OrgnlInstrId', Max35Text, False)
 
 	@property
 	def Pyee(self):
@@ -137,12 +137,12 @@ class Cheque18(base_types._BaseFieldType):
 
 	@Pyee.setter
 	def Pyee(self, value):
-		self._Pyee = value if type(value) != base_types.auto else self.make_default("Pyee")
+		self._Pyee = value if value is not None else base_types.UninitialisedField(self, 'Pyee', PartyIdentification272, False)
 
 	@Pyee.deleter
 	def Pyee(self):
 		del self._Pyee
-		self._Pyee = None
+		self._Pyee = base_types.UninitialisedField(self, 'Pyee', PartyIdentification272, False)
 
 	@property
 	def PyeeAcct(self):
@@ -150,12 +150,12 @@ class Cheque18(base_types._BaseFieldType):
 
 	@PyeeAcct.setter
 	def PyeeAcct(self, value):
-		self._PyeeAcct = value if type(value) != base_types.auto else self.make_default("PyeeAcct")
+		self._PyeeAcct = value if value is not None else base_types.UninitialisedField(self, 'PyeeAcct', CashAccount40, False)
 
 	@PyeeAcct.deleter
 	def PyeeAcct(self):
 		del self._PyeeAcct
-		self._PyeeAcct = None
+		self._PyeeAcct = base_types.UninitialisedField(self, 'PyeeAcct', CashAccount40, False)
 
 	@property
 	def StlDt(self):
@@ -163,12 +163,12 @@ class Cheque18(base_types._BaseFieldType):
 
 	@StlDt.setter
 	def StlDt(self, value):
-		self._StlDt = value if type(value) != base_types.auto else self.make_default("StlDt")
+		self._StlDt = value if value is not None else base_types.UninitialisedField(self, 'StlDt', ISODate, False)
 
 	@StlDt.deleter
 	def StlDt(self):
 		del self._StlDt
-		self._StlDt = None
+		self._StlDt = base_types.UninitialisedField(self, 'StlDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

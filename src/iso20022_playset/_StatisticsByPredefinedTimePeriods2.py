@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PriceValue5 import PriceValue5
-from ._PriceValueChange1 import PriceValueChange1
+from . import PriceValue5
+from . import PriceValueChange1
 
 class StatisticsByPredefinedTimePeriods2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class StatisticsByPredefinedTimePeriods2(base_types._BaseFieldType):
 
 	@FiveYrPricChng.setter
 	def FiveYrPricChng(self, value):
-		self._FiveYrPricChng = value if type(value) != base_types.auto else self.make_default("FiveYrPricChng")
+		self._FiveYrPricChng = value if value is not None else base_types.UninitialisedField(self, 'FiveYrPricChng', PriceValueChange1, False)
 
 	@FiveYrPricChng.deleter
 	def FiveYrPricChng(self):
 		del self._FiveYrPricChng
-		self._FiveYrPricChng = None
+		self._FiveYrPricChng = base_types.UninitialisedField(self, 'FiveYrPricChng', PriceValueChange1, False)
 
 	@property
 	def HghstPricVal12Mnths(self):
@@ -27,12 +27,12 @@ class StatisticsByPredefinedTimePeriods2(base_types._BaseFieldType):
 
 	@HghstPricVal12Mnths.setter
 	def HghstPricVal12Mnths(self, value):
-		self._HghstPricVal12Mnths = value if type(value) != base_types.auto else self.make_default("HghstPricVal12Mnths")
+		self._HghstPricVal12Mnths = value if value is not None else base_types.UninitialisedField(self, 'HghstPricVal12Mnths', PriceValue5, False)
 
 	@HghstPricVal12Mnths.deleter
 	def HghstPricVal12Mnths(self):
 		del self._HghstPricVal12Mnths
-		self._HghstPricVal12Mnths = None
+		self._HghstPricVal12Mnths = base_types.UninitialisedField(self, 'HghstPricVal12Mnths', PriceValue5, False)
 
 	@property
 	def LwstPricVal12Mnths(self):
@@ -40,12 +40,12 @@ class StatisticsByPredefinedTimePeriods2(base_types._BaseFieldType):
 
 	@LwstPricVal12Mnths.setter
 	def LwstPricVal12Mnths(self, value):
-		self._LwstPricVal12Mnths = value if type(value) != base_types.auto else self.make_default("LwstPricVal12Mnths")
+		self._LwstPricVal12Mnths = value if value is not None else base_types.UninitialisedField(self, 'LwstPricVal12Mnths', PriceValue5, False)
 
 	@LwstPricVal12Mnths.deleter
 	def LwstPricVal12Mnths(self):
 		del self._LwstPricVal12Mnths
-		self._LwstPricVal12Mnths = None
+		self._LwstPricVal12Mnths = base_types.UninitialisedField(self, 'LwstPricVal12Mnths', PriceValue5, False)
 
 	@property
 	def OneYrPricChng(self):
@@ -53,12 +53,12 @@ class StatisticsByPredefinedTimePeriods2(base_types._BaseFieldType):
 
 	@OneYrPricChng.setter
 	def OneYrPricChng(self, value):
-		self._OneYrPricChng = value if type(value) != base_types.auto else self.make_default("OneYrPricChng")
+		self._OneYrPricChng = value if value is not None else base_types.UninitialisedField(self, 'OneYrPricChng', PriceValueChange1, False)
 
 	@OneYrPricChng.deleter
 	def OneYrPricChng(self):
 		del self._OneYrPricChng
-		self._OneYrPricChng = None
+		self._OneYrPricChng = base_types.UninitialisedField(self, 'OneYrPricChng', PriceValueChange1, False)
 
 	@property
 	def ThreeYrPricChng(self):
@@ -66,12 +66,12 @@ class StatisticsByPredefinedTimePeriods2(base_types._BaseFieldType):
 
 	@ThreeYrPricChng.setter
 	def ThreeYrPricChng(self, value):
-		self._ThreeYrPricChng = value if type(value) != base_types.auto else self.make_default("ThreeYrPricChng")
+		self._ThreeYrPricChng = value if value is not None else base_types.UninitialisedField(self, 'ThreeYrPricChng', PriceValueChange1, False)
 
 	@ThreeYrPricChng.deleter
 	def ThreeYrPricChng(self):
 		del self._ThreeYrPricChng
-		self._ThreeYrPricChng = None
+		self._ThreeYrPricChng = base_types.UninitialisedField(self, 'ThreeYrPricChng', PriceValueChange1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FiveYrPricChng', type=PriceValueChange1, min=0, max=1, mutex_group=None, array=False),

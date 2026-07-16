@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SettlementTotalData1Choice import SettlementTotalData1Choice
+from . import SettlementTotalData1Choice
 
 class SettlementDailyFailureReason3(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class SettlementDailyFailureReason3(base_types._BaseFieldType):
 
 	@FaildCsh.setter
 	def FaildCsh(self, value):
-		self._FaildCsh = value if type(value) != base_types.auto else self.make_default("FaildCsh")
+		self._FaildCsh = value if value is not None else base_types.UninitialisedField(self, 'FaildCsh', SettlementTotalData1Choice, False)
 
 	@FaildCsh.deleter
 	def FaildCsh(self):
 		del self._FaildCsh
-		self._FaildCsh = None
+		self._FaildCsh = base_types.UninitialisedField(self, 'FaildCsh', SettlementTotalData1Choice, False)
 
 	@property
 	def FaildScties(self):
@@ -26,12 +26,12 @@ class SettlementDailyFailureReason3(base_types._BaseFieldType):
 
 	@FaildScties.setter
 	def FaildScties(self, value):
-		self._FaildScties = value if type(value) != base_types.auto else self.make_default("FaildScties")
+		self._FaildScties = value if value is not None else base_types.UninitialisedField(self, 'FaildScties', SettlementTotalData1Choice, False)
 
 	@FaildScties.deleter
 	def FaildScties(self):
 		del self._FaildScties
-		self._FaildScties = None
+		self._FaildScties = base_types.UninitialisedField(self, 'FaildScties', SettlementTotalData1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FaildCsh', type=SettlementTotalData1Choice, min=1, max=1, mutex_group=None, array=False),

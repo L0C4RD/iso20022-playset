@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardPaymentBatchTransferResponse12 import CardPaymentBatchTransferResponse12
-from ._ContentInformationType37 import ContentInformationType37
-from ._Header56 import Header56
+from . import CardPaymentBatchTransferResponse12
+from . import ContentInformationType37
+from . import Header56
 
 class AcceptorBatchTransferResponseV13(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AcceptorBatchTransferResponseV13(base_types._BaseFieldType):
 
 	@BtchTrfRspn.setter
 	def BtchTrfRspn(self, value):
-		self._BtchTrfRspn = value if type(value) != base_types.auto else self.make_default("BtchTrfRspn")
+		self._BtchTrfRspn = value if value is not None else base_types.UninitialisedField(self, 'BtchTrfRspn', CardPaymentBatchTransferResponse12, False)
 
 	@BtchTrfRspn.deleter
 	def BtchTrfRspn(self):
 		del self._BtchTrfRspn
-		self._BtchTrfRspn = None
+		self._BtchTrfRspn = base_types.UninitialisedField(self, 'BtchTrfRspn', CardPaymentBatchTransferResponse12, False)
 
 	@property
 	def Hdr(self):
@@ -28,12 +28,12 @@ class AcceptorBatchTransferResponseV13(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header56, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header56, False)
 
 	@property
 	def SctyTrlr(self):
@@ -41,12 +41,12 @@ class AcceptorBatchTransferResponseV13(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType37, False)
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
 		del self._SctyTrlr
-		self._SctyTrlr = None
+		self._SctyTrlr = base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType37, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BtchTrfRspn', type=CardPaymentBatchTransferResponse12, min=1, max=1, mutex_group=None, array=False),

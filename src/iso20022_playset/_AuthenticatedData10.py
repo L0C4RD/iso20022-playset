@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AlgorithmIdentification31 import AlgorithmIdentification31
-from ._EncapsulatedContent3 import EncapsulatedContent3
-from ._Max140Binary import Max140Binary
-from ._Number import Number
-from ._Recipient15Choice import Recipient15Choice
+from . import AlgorithmIdentification31
+from . import EncapsulatedContent3
+from . import Max140Binary
+from . import Number
+from . import Recipient15Choice
 
 class AuthenticatedData10(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class AuthenticatedData10(base_types._BaseFieldType):
 
 	@MAC.setter
 	def MAC(self, value):
-		self._MAC = value if type(value) != base_types.auto else self.make_default("MAC")
+		self._MAC = value if value is not None else base_types.UninitialisedField(self, 'MAC', Max140Binary, False)
 
 	@MAC.deleter
 	def MAC(self):
 		del self._MAC
-		self._MAC = None
+		self._MAC = base_types.UninitialisedField(self, 'MAC', Max140Binary, False)
 
 	@property
 	def MACAlgo(self):
@@ -30,12 +30,12 @@ class AuthenticatedData10(base_types._BaseFieldType):
 
 	@MACAlgo.setter
 	def MACAlgo(self, value):
-		self._MACAlgo = value if type(value) != base_types.auto else self.make_default("MACAlgo")
+		self._MACAlgo = value if value is not None else base_types.UninitialisedField(self, 'MACAlgo', AlgorithmIdentification31, False)
 
 	@MACAlgo.deleter
 	def MACAlgo(self):
 		del self._MACAlgo
-		self._MACAlgo = None
+		self._MACAlgo = base_types.UninitialisedField(self, 'MACAlgo', AlgorithmIdentification31, False)
 
 	@property
 	def NcpsltdCntt(self):
@@ -43,12 +43,12 @@ class AuthenticatedData10(base_types._BaseFieldType):
 
 	@NcpsltdCntt.setter
 	def NcpsltdCntt(self, value):
-		self._NcpsltdCntt = value if type(value) != base_types.auto else self.make_default("NcpsltdCntt")
+		self._NcpsltdCntt = value if value is not None else base_types.UninitialisedField(self, 'NcpsltdCntt', EncapsulatedContent3, False)
 
 	@NcpsltdCntt.deleter
 	def NcpsltdCntt(self):
 		del self._NcpsltdCntt
-		self._NcpsltdCntt = None
+		self._NcpsltdCntt = base_types.UninitialisedField(self, 'NcpsltdCntt', EncapsulatedContent3, False)
 
 	@property
 	def Rcpt(self):
@@ -56,12 +56,12 @@ class AuthenticatedData10(base_types._BaseFieldType):
 
 	@Rcpt.setter
 	def Rcpt(self, value):
-		self._Rcpt = value if type(value) != base_types.auto else self.make_default("Rcpt")
+		self._Rcpt = value if value is not None else base_types.UninitialisedField(self, 'Rcpt', Recipient15Choice, True)
 
 	@Rcpt.deleter
 	def Rcpt(self):
 		del self._Rcpt
-		self._Rcpt = None
+		self._Rcpt = base_types.UninitialisedField(self, 'Rcpt', Recipient15Choice, True)
 
 	@property
 	def Vrsn(self):
@@ -69,12 +69,12 @@ class AuthenticatedData10(base_types._BaseFieldType):
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+		self._Vrsn = value if value is not None else base_types.UninitialisedField(self, 'Vrsn', Number, False)
 
 	@Vrsn.deleter
 	def Vrsn(self):
 		del self._Vrsn
-		self._Vrsn = None
+		self._Vrsn = base_types.UninitialisedField(self, 'Vrsn', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MAC', type=Max140Binary, min=1, max=1, mutex_group=None, array=False),

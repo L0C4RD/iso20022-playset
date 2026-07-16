@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAnd19DecimalAmount import ActiveOrHistoricCurrencyAnd19DecimalAmount
-from ._EmbeddedType1Code import EmbeddedType1Code
-from ._ExerciseDate1Choice import ExerciseDate1Choice
-from ._ISODate import ISODate
-from ._OptionBarrierLevel1Choice import OptionBarrierLevel1Choice
-from ._OptionStyle6Code import OptionStyle6Code
-from ._OptionType2Code import OptionType2Code
-from ._Schedule4 import Schedule4
-from ._SecuritiesTransactionPrice17Choice import SecuritiesTransactionPrice17Choice
+from . import ActiveOrHistoricCurrencyAnd19DecimalAmount
+from . import EmbeddedType1Code
+from . import ExerciseDate1Choice
+from . import ISODate
+from . import OptionBarrierLevel1Choice
+from . import OptionStyle6Code
+from . import OptionType2Code
+from . import Schedule4
+from . import SecuritiesTransactionPrice17Choice
 
 class OptionOrSwaption11(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class OptionOrSwaption11(base_types._BaseFieldType):
 
 	@BrrrLvls.setter
 	def BrrrLvls(self, value):
-		self._BrrrLvls = value if type(value) != base_types.auto else self.make_default("BrrrLvls")
+		self._BrrrLvls = value if value is not None else base_types.UninitialisedField(self, 'BrrrLvls', OptionBarrierLevel1Choice, False)
 
 	@BrrrLvls.deleter
 	def BrrrLvls(self):
 		del self._BrrrLvls
-		self._BrrrLvls = None
+		self._BrrrLvls = base_types.UninitialisedField(self, 'BrrrLvls', OptionBarrierLevel1Choice, False)
 
 	@property
 	def CallAmt(self):
@@ -34,12 +34,12 @@ class OptionOrSwaption11(base_types._BaseFieldType):
 
 	@CallAmt.setter
 	def CallAmt(self, value):
-		self._CallAmt = value if type(value) != base_types.auto else self.make_default("CallAmt")
+		self._CallAmt = value if value is not None else base_types.UninitialisedField(self, 'CallAmt', ActiveOrHistoricCurrencyAnd19DecimalAmount, False)
 
 	@CallAmt.deleter
 	def CallAmt(self):
 		del self._CallAmt
-		self._CallAmt = None
+		self._CallAmt = base_types.UninitialisedField(self, 'CallAmt', ActiveOrHistoricCurrencyAnd19DecimalAmount, False)
 
 	@property
 	def ExrcDt(self):
@@ -47,12 +47,12 @@ class OptionOrSwaption11(base_types._BaseFieldType):
 
 	@ExrcDt.setter
 	def ExrcDt(self, value):
-		self._ExrcDt = value if type(value) != base_types.auto else self.make_default("ExrcDt")
+		self._ExrcDt = value if value is not None else base_types.UninitialisedField(self, 'ExrcDt', ExerciseDate1Choice, False)
 
 	@ExrcDt.deleter
 	def ExrcDt(self):
 		del self._ExrcDt
-		self._ExrcDt = None
+		self._ExrcDt = base_types.UninitialisedField(self, 'ExrcDt', ExerciseDate1Choice, False)
 
 	@property
 	def ExrcStyle(self):
@@ -60,12 +60,12 @@ class OptionOrSwaption11(base_types._BaseFieldType):
 
 	@ExrcStyle.setter
 	def ExrcStyle(self, value):
-		self._ExrcStyle = value if type(value) != base_types.auto else self.make_default("ExrcStyle")
+		self._ExrcStyle = value if value is not None else base_types.UninitialisedField(self, 'ExrcStyle', OptionStyle6Code, True)
 
 	@ExrcStyle.deleter
 	def ExrcStyle(self):
 		del self._ExrcStyle
-		self._ExrcStyle = None
+		self._ExrcStyle = base_types.UninitialisedField(self, 'ExrcStyle', OptionStyle6Code, True)
 
 	@property
 	def MbddTp(self):
@@ -73,12 +73,12 @@ class OptionOrSwaption11(base_types._BaseFieldType):
 
 	@MbddTp.setter
 	def MbddTp(self, value):
-		self._MbddTp = value if type(value) != base_types.auto else self.make_default("MbddTp")
+		self._MbddTp = value if value is not None else base_types.UninitialisedField(self, 'MbddTp', EmbeddedType1Code, False)
 
 	@MbddTp.deleter
 	def MbddTp(self):
 		del self._MbddTp
-		self._MbddTp = None
+		self._MbddTp = base_types.UninitialisedField(self, 'MbddTp', EmbeddedType1Code, False)
 
 	@property
 	def MtrtyDtOfUndrlyg(self):
@@ -86,12 +86,12 @@ class OptionOrSwaption11(base_types._BaseFieldType):
 
 	@MtrtyDtOfUndrlyg.setter
 	def MtrtyDtOfUndrlyg(self, value):
-		self._MtrtyDtOfUndrlyg = value if type(value) != base_types.auto else self.make_default("MtrtyDtOfUndrlyg")
+		self._MtrtyDtOfUndrlyg = value if value is not None else base_types.UninitialisedField(self, 'MtrtyDtOfUndrlyg', ISODate, False)
 
 	@MtrtyDtOfUndrlyg.deleter
 	def MtrtyDtOfUndrlyg(self):
 		del self._MtrtyDtOfUndrlyg
-		self._MtrtyDtOfUndrlyg = None
+		self._MtrtyDtOfUndrlyg = base_types.UninitialisedField(self, 'MtrtyDtOfUndrlyg', ISODate, False)
 
 	@property
 	def PrmAmt(self):
@@ -99,12 +99,12 @@ class OptionOrSwaption11(base_types._BaseFieldType):
 
 	@PrmAmt.setter
 	def PrmAmt(self, value):
-		self._PrmAmt = value if type(value) != base_types.auto else self.make_default("PrmAmt")
+		self._PrmAmt = value if value is not None else base_types.UninitialisedField(self, 'PrmAmt', ActiveOrHistoricCurrencyAnd19DecimalAmount, False)
 
 	@PrmAmt.deleter
 	def PrmAmt(self):
 		del self._PrmAmt
-		self._PrmAmt = None
+		self._PrmAmt = base_types.UninitialisedField(self, 'PrmAmt', ActiveOrHistoricCurrencyAnd19DecimalAmount, False)
 
 	@property
 	def PrmPmtDt(self):
@@ -112,12 +112,12 @@ class OptionOrSwaption11(base_types._BaseFieldType):
 
 	@PrmPmtDt.setter
 	def PrmPmtDt(self, value):
-		self._PrmPmtDt = value if type(value) != base_types.auto else self.make_default("PrmPmtDt")
+		self._PrmPmtDt = value if value is not None else base_types.UninitialisedField(self, 'PrmPmtDt', ISODate, False)
 
 	@PrmPmtDt.deleter
 	def PrmPmtDt(self):
 		del self._PrmPmtDt
-		self._PrmPmtDt = None
+		self._PrmPmtDt = base_types.UninitialisedField(self, 'PrmPmtDt', ISODate, False)
 
 	@property
 	def PutAmt(self):
@@ -125,12 +125,12 @@ class OptionOrSwaption11(base_types._BaseFieldType):
 
 	@PutAmt.setter
 	def PutAmt(self, value):
-		self._PutAmt = value if type(value) != base_types.auto else self.make_default("PutAmt")
+		self._PutAmt = value if value is not None else base_types.UninitialisedField(self, 'PutAmt', ActiveOrHistoricCurrencyAnd19DecimalAmount, False)
 
 	@PutAmt.deleter
 	def PutAmt(self):
 		del self._PutAmt
-		self._PutAmt = None
+		self._PutAmt = base_types.UninitialisedField(self, 'PutAmt', ActiveOrHistoricCurrencyAnd19DecimalAmount, False)
 
 	@property
 	def StrkPric(self):
@@ -138,12 +138,12 @@ class OptionOrSwaption11(base_types._BaseFieldType):
 
 	@StrkPric.setter
 	def StrkPric(self, value):
-		self._StrkPric = value if type(value) != base_types.auto else self.make_default("StrkPric")
+		self._StrkPric = value if value is not None else base_types.UninitialisedField(self, 'StrkPric', SecuritiesTransactionPrice17Choice, False)
 
 	@StrkPric.deleter
 	def StrkPric(self):
 		del self._StrkPric
-		self._StrkPric = None
+		self._StrkPric = base_types.UninitialisedField(self, 'StrkPric', SecuritiesTransactionPrice17Choice, False)
 
 	@property
 	def StrkPricSchdl(self):
@@ -151,12 +151,12 @@ class OptionOrSwaption11(base_types._BaseFieldType):
 
 	@StrkPricSchdl.setter
 	def StrkPricSchdl(self, value):
-		self._StrkPricSchdl = value if type(value) != base_types.auto else self.make_default("StrkPricSchdl")
+		self._StrkPricSchdl = value if value is not None else base_types.UninitialisedField(self, 'StrkPricSchdl', Schedule4, True)
 
 	@StrkPricSchdl.deleter
 	def StrkPricSchdl(self):
 		del self._StrkPricSchdl
-		self._StrkPricSchdl = None
+		self._StrkPricSchdl = base_types.UninitialisedField(self, 'StrkPricSchdl', Schedule4, True)
 
 	@property
 	def Tp(self):
@@ -164,12 +164,12 @@ class OptionOrSwaption11(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', OptionType2Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', OptionType2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BrrrLvls', type=OptionBarrierLevel1Choice, min=0, max=1, mutex_group=None, array=False),

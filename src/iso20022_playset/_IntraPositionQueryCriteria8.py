@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCode import CountryCode
-from ._DateAndDateTimeSearch5Choice import DateAndDateTimeSearch5Choice
-from ._GenericIdentification37 import GenericIdentification37
-from ._IntraPositionQueryStatus3 import IntraPositionQueryStatus3
-from ._IntraPositionType2 import IntraPositionType2
-from ._PriorityNumeric4Choice import PriorityNumeric4Choice
-from ._QuantitySearch2Choice import QuantitySearch2Choice
-from ._References82Choice import References82Choice
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
+from . import CountryCode
+from . import DateAndDateTimeSearch5Choice
+from . import GenericIdentification37
+from . import IntraPositionQueryStatus3
+from . import IntraPositionType2
+from . import PriorityNumeric4Choice
+from . import QuantitySearch2Choice
+from . import References82Choice
+from . import SecuritiesAccount19
+from . import SecurityIdentification19
+from . import SystemPartyIdentification8
 
 class IntraPositionQueryCriteria8(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class IntraPositionQueryCriteria8(base_types._BaseFieldType):
 
 	@BalTp.setter
 	def BalTp(self, value):
-		self._BalTp = value if type(value) != base_types.auto else self.make_default("BalTp")
+		self._BalTp = value if value is not None else base_types.UninitialisedField(self, 'BalTp', IntraPositionType2, True)
 
 	@BalTp.deleter
 	def BalTp(self):
 		del self._BalTp
-		self._BalTp = None
+		self._BalTp = base_types.UninitialisedField(self, 'BalTp', IntraPositionType2, True)
 
 	@property
 	def CreDtTm(self):
@@ -36,12 +36,12 @@ class IntraPositionQueryCriteria8(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if value is not None else base_types.UninitialisedField(self, 'CreDtTm', DateAndDateTimeSearch5Choice, False)
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
 		del self._CreDtTm
-		self._CreDtTm = None
+		self._CreDtTm = base_types.UninitialisedField(self, 'CreDtTm', DateAndDateTimeSearch5Choice, False)
 
 	@property
 	def CtryOfIsse(self):
@@ -49,12 +49,12 @@ class IntraPositionQueryCriteria8(base_types._BaseFieldType):
 
 	@CtryOfIsse.setter
 	def CtryOfIsse(self, value):
-		self._CtryOfIsse = value if type(value) != base_types.auto else self.make_default("CtryOfIsse")
+		self._CtryOfIsse = value if value is not None else base_types.UninitialisedField(self, 'CtryOfIsse', CountryCode, True)
 
 	@CtryOfIsse.deleter
 	def CtryOfIsse(self):
 		del self._CtryOfIsse
-		self._CtryOfIsse = None
+		self._CtryOfIsse = base_types.UninitialisedField(self, 'CtryOfIsse', CountryCode, True)
 
 	@property
 	def FctvSttlmDt(self):
@@ -62,12 +62,12 @@ class IntraPositionQueryCriteria8(base_types._BaseFieldType):
 
 	@FctvSttlmDt.setter
 	def FctvSttlmDt(self, value):
-		self._FctvSttlmDt = value if type(value) != base_types.auto else self.make_default("FctvSttlmDt")
+		self._FctvSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'FctvSttlmDt', DateAndDateTimeSearch5Choice, False)
 
 	@FctvSttlmDt.deleter
 	def FctvSttlmDt(self):
 		del self._FctvSttlmDt
-		self._FctvSttlmDt = None
+		self._FctvSttlmDt = base_types.UninitialisedField(self, 'FctvSttlmDt', DateAndDateTimeSearch5Choice, False)
 
 	@property
 	def FinInstrmId(self):
@@ -75,12 +75,12 @@ class IntraPositionQueryCriteria8(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, True)
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
 		del self._FinInstrmId
-		self._FinInstrmId = None
+		self._FinInstrmId = base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, True)
 
 	@property
 	def IntnddSttlmDt(self):
@@ -88,12 +88,12 @@ class IntraPositionQueryCriteria8(base_types._BaseFieldType):
 
 	@IntnddSttlmDt.setter
 	def IntnddSttlmDt(self, value):
-		self._IntnddSttlmDt = value if type(value) != base_types.auto else self.make_default("IntnddSttlmDt")
+		self._IntnddSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'IntnddSttlmDt', DateAndDateTimeSearch5Choice, False)
 
 	@IntnddSttlmDt.deleter
 	def IntnddSttlmDt(self):
 		del self._IntnddSttlmDt
-		self._IntnddSttlmDt = None
+		self._IntnddSttlmDt = base_types.UninitialisedField(self, 'IntnddSttlmDt', DateAndDateTimeSearch5Choice, False)
 
 	@property
 	def MsgOrgtr(self):
@@ -101,12 +101,12 @@ class IntraPositionQueryCriteria8(base_types._BaseFieldType):
 
 	@MsgOrgtr.setter
 	def MsgOrgtr(self, value):
-		self._MsgOrgtr = value if type(value) != base_types.auto else self.make_default("MsgOrgtr")
+		self._MsgOrgtr = value if value is not None else base_types.UninitialisedField(self, 'MsgOrgtr', SystemPartyIdentification8, True)
 
 	@MsgOrgtr.deleter
 	def MsgOrgtr(self):
 		del self._MsgOrgtr
-		self._MsgOrgtr = None
+		self._MsgOrgtr = base_types.UninitialisedField(self, 'MsgOrgtr', SystemPartyIdentification8, True)
 
 	@property
 	def Prty(self):
@@ -114,12 +114,12 @@ class IntraPositionQueryCriteria8(base_types._BaseFieldType):
 
 	@Prty.setter
 	def Prty(self, value):
-		self._Prty = value if type(value) != base_types.auto else self.make_default("Prty")
+		self._Prty = value if value is not None else base_types.UninitialisedField(self, 'Prty', PriorityNumeric4Choice, True)
 
 	@Prty.deleter
 	def Prty(self):
 		del self._Prty
-		self._Prty = None
+		self._Prty = base_types.UninitialisedField(self, 'Prty', PriorityNumeric4Choice, True)
 
 	@property
 	def Refs(self):
@@ -127,12 +127,12 @@ class IntraPositionQueryCriteria8(base_types._BaseFieldType):
 
 	@Refs.setter
 	def Refs(self, value):
-		self._Refs = value if type(value) != base_types.auto else self.make_default("Refs")
+		self._Refs = value if value is not None else base_types.UninitialisedField(self, 'Refs', References82Choice, True)
 
 	@Refs.deleter
 	def Refs(self):
 		del self._Refs
-		self._Refs = None
+		self._Refs = base_types.UninitialisedField(self, 'Refs', References82Choice, True)
 
 	@property
 	def SctiesSubBalId(self):
@@ -140,12 +140,12 @@ class IntraPositionQueryCriteria8(base_types._BaseFieldType):
 
 	@SctiesSubBalId.setter
 	def SctiesSubBalId(self, value):
-		self._SctiesSubBalId = value if type(value) != base_types.auto else self.make_default("SctiesSubBalId")
+		self._SctiesSubBalId = value if value is not None else base_types.UninitialisedField(self, 'SctiesSubBalId', GenericIdentification37, True)
 
 	@SctiesSubBalId.deleter
 	def SctiesSubBalId(self):
 		del self._SctiesSubBalId
-		self._SctiesSubBalId = None
+		self._SctiesSubBalId = base_types.UninitialisedField(self, 'SctiesSubBalId', GenericIdentification37, True)
 
 	@property
 	def SfkpgAcct(self):
@@ -153,12 +153,12 @@ class IntraPositionQueryCriteria8(base_types._BaseFieldType):
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, True)
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
-		self._SfkpgAcct = None
+		self._SfkpgAcct = base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, True)
 
 	@property
 	def SfkpgAcctOwnr(self):
@@ -166,12 +166,12 @@ class IntraPositionQueryCriteria8(base_types._BaseFieldType):
 
 	@SfkpgAcctOwnr.setter
 	def SfkpgAcctOwnr(self, value):
-		self._SfkpgAcctOwnr = value if type(value) != base_types.auto else self.make_default("SfkpgAcctOwnr")
+		self._SfkpgAcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcctOwnr', SystemPartyIdentification8, True)
 
 	@SfkpgAcctOwnr.deleter
 	def SfkpgAcctOwnr(self):
 		del self._SfkpgAcctOwnr
-		self._SfkpgAcctOwnr = None
+		self._SfkpgAcctOwnr = base_types.UninitialisedField(self, 'SfkpgAcctOwnr', SystemPartyIdentification8, True)
 
 	@property
 	def Sts(self):
@@ -179,12 +179,12 @@ class IntraPositionQueryCriteria8(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', IntraPositionQueryStatus3, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', IntraPositionQueryStatus3, False)
 
 	@property
 	def SttldQty(self):
@@ -192,12 +192,12 @@ class IntraPositionQueryCriteria8(base_types._BaseFieldType):
 
 	@SttldQty.setter
 	def SttldQty(self, value):
-		self._SttldQty = value if type(value) != base_types.auto else self.make_default("SttldQty")
+		self._SttldQty = value if value is not None else base_types.UninitialisedField(self, 'SttldQty', QuantitySearch2Choice, False)
 
 	@SttldQty.deleter
 	def SttldQty(self):
 		del self._SttldQty
-		self._SttldQty = None
+		self._SttldQty = base_types.UninitialisedField(self, 'SttldQty', QuantitySearch2Choice, False)
 
 	@property
 	def SttlmQty(self):
@@ -205,12 +205,12 @@ class IntraPositionQueryCriteria8(base_types._BaseFieldType):
 
 	@SttlmQty.setter
 	def SttlmQty(self, value):
-		self._SttlmQty = value if type(value) != base_types.auto else self.make_default("SttlmQty")
+		self._SttlmQty = value if value is not None else base_types.UninitialisedField(self, 'SttlmQty', QuantitySearch2Choice, False)
 
 	@SttlmQty.deleter
 	def SttlmQty(self):
 		del self._SttlmQty
-		self._SttlmQty = None
+		self._SttlmQty = base_types.UninitialisedField(self, 'SttlmQty', QuantitySearch2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BalTp', type=IntraPositionType2, min=0, max=None, mutex_group=None, array=True),

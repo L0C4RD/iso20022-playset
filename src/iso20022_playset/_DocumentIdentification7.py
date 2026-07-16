@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
+from . import ISODate
+from . import Max35Text
 
 class DocumentIdentification7(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DocumentIdentification7(base_types._BaseFieldType):
 
 	@DtOfIsse.setter
 	def DtOfIsse(self, value):
-		self._DtOfIsse = value if type(value) != base_types.auto else self.make_default("DtOfIsse")
+		self._DtOfIsse = value if value is not None else base_types.UninitialisedField(self, 'DtOfIsse', ISODate, False)
 
 	@DtOfIsse.deleter
 	def DtOfIsse(self):
 		del self._DtOfIsse
-		self._DtOfIsse = None
+		self._DtOfIsse = base_types.UninitialisedField(self, 'DtOfIsse', ISODate, False)
 
 	@property
 	def Id(self):
@@ -27,12 +27,12 @@ class DocumentIdentification7(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DtOfIsse', type=ISODate, min=1, max=1, mutex_group=None, array=False),

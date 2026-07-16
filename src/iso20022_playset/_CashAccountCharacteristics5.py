@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountIdentification4Choice import AccountIdentification4Choice
-from ._AccountLevel2Code import AccountLevel2Code
-from ._AccountTax1 import AccountTax1
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CashAccount40 import CashAccount40
-from ._CompensationMethod1Code import CompensationMethod1Code
-from ._Contact13 import Contact13
-from ._ISODate import ISODate
-from ._Max105Text import Max105Text
-from ._ParentCashAccount5 import ParentCashAccount5
+from . import AccountIdentification4Choice
+from . import AccountLevel2Code
+from . import AccountTax1
+from . import ActiveOrHistoricCurrencyCode
+from . import BranchAndFinancialInstitutionIdentification8
+from . import CashAccount40
+from . import CompensationMethod1Code
+from . import Contact13
+from . import ISODate
+from . import Max105Text
+from . import ParentCashAccount5
 
 class CashAccountCharacteristics5(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class CashAccountCharacteristics5(base_types._BaseFieldType):
 
 	@AcctBalCcyCd.setter
 	def AcctBalCcyCd(self, value):
-		self._AcctBalCcyCd = value if type(value) != base_types.auto else self.make_default("AcctBalCcyCd")
+		self._AcctBalCcyCd = value if value is not None else base_types.UninitialisedField(self, 'AcctBalCcyCd', ActiveOrHistoricCurrencyCode, False)
 
 	@AcctBalCcyCd.deleter
 	def AcctBalCcyCd(self):
 		del self._AcctBalCcyCd
-		self._AcctBalCcyCd = None
+		self._AcctBalCcyCd = base_types.UninitialisedField(self, 'AcctBalCcyCd', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def AcctLvl(self):
@@ -36,12 +36,12 @@ class CashAccountCharacteristics5(base_types._BaseFieldType):
 
 	@AcctLvl.setter
 	def AcctLvl(self, value):
-		self._AcctLvl = value if type(value) != base_types.auto else self.make_default("AcctLvl")
+		self._AcctLvl = value if value is not None else base_types.UninitialisedField(self, 'AcctLvl', AccountLevel2Code, False)
 
 	@AcctLvl.deleter
 	def AcctLvl(self):
 		del self._AcctLvl
-		self._AcctLvl = None
+		self._AcctLvl = base_types.UninitialisedField(self, 'AcctLvl', AccountLevel2Code, False)
 
 	@property
 	def AcctSvcr(self):
@@ -49,12 +49,12 @@ class CashAccountCharacteristics5(base_types._BaseFieldType):
 
 	@AcctSvcr.setter
 	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
+		self._AcctSvcr = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@AcctSvcr.deleter
 	def AcctSvcr(self):
 		del self._AcctSvcr
-		self._AcctSvcr = None
+		self._AcctSvcr = base_types.UninitialisedField(self, 'AcctSvcr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def AcctSvcrCtct(self):
@@ -62,12 +62,12 @@ class CashAccountCharacteristics5(base_types._BaseFieldType):
 
 	@AcctSvcrCtct.setter
 	def AcctSvcrCtct(self, value):
-		self._AcctSvcrCtct = value if type(value) != base_types.auto else self.make_default("AcctSvcrCtct")
+		self._AcctSvcrCtct = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcrCtct', Contact13, False)
 
 	@AcctSvcrCtct.deleter
 	def AcctSvcrCtct(self):
 		del self._AcctSvcrCtct
-		self._AcctSvcrCtct = None
+		self._AcctSvcrCtct = base_types.UninitialisedField(self, 'AcctSvcrCtct', Contact13, False)
 
 	@property
 	def CompstnMtd(self):
@@ -75,12 +75,12 @@ class CashAccountCharacteristics5(base_types._BaseFieldType):
 
 	@CompstnMtd.setter
 	def CompstnMtd(self, value):
-		self._CompstnMtd = value if type(value) != base_types.auto else self.make_default("CompstnMtd")
+		self._CompstnMtd = value if value is not None else base_types.UninitialisedField(self, 'CompstnMtd', CompensationMethod1Code, False)
 
 	@CompstnMtd.deleter
 	def CompstnMtd(self):
 		del self._CompstnMtd
-		self._CompstnMtd = None
+		self._CompstnMtd = base_types.UninitialisedField(self, 'CompstnMtd', CompensationMethod1Code, False)
 
 	@property
 	def CshAcct(self):
@@ -88,12 +88,12 @@ class CashAccountCharacteristics5(base_types._BaseFieldType):
 
 	@CshAcct.setter
 	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != base_types.auto else self.make_default("CshAcct")
+		self._CshAcct = value if value is not None else base_types.UninitialisedField(self, 'CshAcct', CashAccount40, False)
 
 	@CshAcct.deleter
 	def CshAcct(self):
 		del self._CshAcct
-		self._CshAcct = None
+		self._CshAcct = base_types.UninitialisedField(self, 'CshAcct', CashAccount40, False)
 
 	@property
 	def DbtAcct(self):
@@ -101,12 +101,12 @@ class CashAccountCharacteristics5(base_types._BaseFieldType):
 
 	@DbtAcct.setter
 	def DbtAcct(self, value):
-		self._DbtAcct = value if type(value) != base_types.auto else self.make_default("DbtAcct")
+		self._DbtAcct = value if value is not None else base_types.UninitialisedField(self, 'DbtAcct', AccountIdentification4Choice, False)
 
 	@DbtAcct.deleter
 	def DbtAcct(self):
 		del self._DbtAcct
-		self._DbtAcct = None
+		self._DbtAcct = base_types.UninitialisedField(self, 'DbtAcct', AccountIdentification4Choice, False)
 
 	@property
 	def DelydDbtDt(self):
@@ -114,12 +114,12 @@ class CashAccountCharacteristics5(base_types._BaseFieldType):
 
 	@DelydDbtDt.setter
 	def DelydDbtDt(self, value):
-		self._DelydDbtDt = value if type(value) != base_types.auto else self.make_default("DelydDbtDt")
+		self._DelydDbtDt = value if value is not None else base_types.UninitialisedField(self, 'DelydDbtDt', ISODate, False)
 
 	@DelydDbtDt.deleter
 	def DelydDbtDt(self):
 		del self._DelydDbtDt
-		self._DelydDbtDt = None
+		self._DelydDbtDt = base_types.UninitialisedField(self, 'DelydDbtDt', ISODate, False)
 
 	@property
 	def HstCcyCd(self):
@@ -127,12 +127,12 @@ class CashAccountCharacteristics5(base_types._BaseFieldType):
 
 	@HstCcyCd.setter
 	def HstCcyCd(self, value):
-		self._HstCcyCd = value if type(value) != base_types.auto else self.make_default("HstCcyCd")
+		self._HstCcyCd = value if value is not None else base_types.UninitialisedField(self, 'HstCcyCd', ActiveOrHistoricCurrencyCode, False)
 
 	@HstCcyCd.deleter
 	def HstCcyCd(self):
 		del self._HstCcyCd
-		self._HstCcyCd = None
+		self._HstCcyCd = base_types.UninitialisedField(self, 'HstCcyCd', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def PrntAcct(self):
@@ -140,12 +140,12 @@ class CashAccountCharacteristics5(base_types._BaseFieldType):
 
 	@PrntAcct.setter
 	def PrntAcct(self, value):
-		self._PrntAcct = value if type(value) != base_types.auto else self.make_default("PrntAcct")
+		self._PrntAcct = value if value is not None else base_types.UninitialisedField(self, 'PrntAcct', ParentCashAccount5, False)
 
 	@PrntAcct.deleter
 	def PrntAcct(self):
 		del self._PrntAcct
-		self._PrntAcct = None
+		self._PrntAcct = base_types.UninitialisedField(self, 'PrntAcct', ParentCashAccount5, False)
 
 	@property
 	def SttlmAdvc(self):
@@ -153,12 +153,12 @@ class CashAccountCharacteristics5(base_types._BaseFieldType):
 
 	@SttlmAdvc.setter
 	def SttlmAdvc(self, value):
-		self._SttlmAdvc = value if type(value) != base_types.auto else self.make_default("SttlmAdvc")
+		self._SttlmAdvc = value if value is not None else base_types.UninitialisedField(self, 'SttlmAdvc', Max105Text, False)
 
 	@SttlmAdvc.deleter
 	def SttlmAdvc(self):
 		del self._SttlmAdvc
-		self._SttlmAdvc = None
+		self._SttlmAdvc = base_types.UninitialisedField(self, 'SttlmAdvc', Max105Text, False)
 
 	@property
 	def SttlmCcyCd(self):
@@ -166,12 +166,12 @@ class CashAccountCharacteristics5(base_types._BaseFieldType):
 
 	@SttlmCcyCd.setter
 	def SttlmCcyCd(self, value):
-		self._SttlmCcyCd = value if type(value) != base_types.auto else self.make_default("SttlmCcyCd")
+		self._SttlmCcyCd = value if value is not None else base_types.UninitialisedField(self, 'SttlmCcyCd', ActiveOrHistoricCurrencyCode, False)
 
 	@SttlmCcyCd.deleter
 	def SttlmCcyCd(self):
 		del self._SttlmCcyCd
-		self._SttlmCcyCd = None
+		self._SttlmCcyCd = base_types.UninitialisedField(self, 'SttlmCcyCd', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def Tax(self):
@@ -179,12 +179,12 @@ class CashAccountCharacteristics5(base_types._BaseFieldType):
 
 	@Tax.setter
 	def Tax(self, value):
-		self._Tax = value if type(value) != base_types.auto else self.make_default("Tax")
+		self._Tax = value if value is not None else base_types.UninitialisedField(self, 'Tax', AccountTax1, False)
 
 	@Tax.deleter
 	def Tax(self):
 		del self._Tax
-		self._Tax = None
+		self._Tax = base_types.UninitialisedField(self, 'Tax', AccountTax1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctBalCcyCd', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),

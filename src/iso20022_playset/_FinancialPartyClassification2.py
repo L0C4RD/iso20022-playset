@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FundType2Code import FundType2Code
-from ._NACEDomainIdentifier import NACEDomainIdentifier
+from . import FundType2Code
+from . import NACEDomainIdentifier
 
 class FinancialPartyClassification2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class FinancialPartyClassification2(base_types._BaseFieldType):
 
 	@Clssfctn.setter
 	def Clssfctn(self, value):
-		self._Clssfctn = value if type(value) != base_types.auto else self.make_default("Clssfctn")
+		self._Clssfctn = value if value is not None else base_types.UninitialisedField(self, 'Clssfctn', NACEDomainIdentifier, True)
 
 	@Clssfctn.deleter
 	def Clssfctn(self):
 		del self._Clssfctn
-		self._Clssfctn = None
+		self._Clssfctn = base_types.UninitialisedField(self, 'Clssfctn', NACEDomainIdentifier, True)
 
 	@property
 	def InvstmtFndClssfctn(self):
@@ -27,12 +27,12 @@ class FinancialPartyClassification2(base_types._BaseFieldType):
 
 	@InvstmtFndClssfctn.setter
 	def InvstmtFndClssfctn(self, value):
-		self._InvstmtFndClssfctn = value if type(value) != base_types.auto else self.make_default("InvstmtFndClssfctn")
+		self._InvstmtFndClssfctn = value if value is not None else base_types.UninitialisedField(self, 'InvstmtFndClssfctn', FundType2Code, False)
 
 	@InvstmtFndClssfctn.deleter
 	def InvstmtFndClssfctn(self):
 		del self._InvstmtFndClssfctn
-		self._InvstmtFndClssfctn = None
+		self._InvstmtFndClssfctn = base_types.UninitialisedField(self, 'InvstmtFndClssfctn', FundType2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Clssfctn', type=NACEDomainIdentifier, min=1, max=None, mutex_group=None, array=True),

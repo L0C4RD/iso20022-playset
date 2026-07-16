@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountIdentificationSearchCriteria2Choice import AccountIdentificationSearchCriteria2Choice
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._DateAndDateTimeSearch5Choice import DateAndDateTimeSearch5Choice
-from ._Max35Text import Max35Text
-from ._ModificationProcessingStatus9Choice import ModificationProcessingStatus9Choice
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
+from . import AccountIdentificationSearchCriteria2Choice
+from . import BranchAndFinancialInstitutionIdentification8
+from . import DateAndDateTimeSearch5Choice
+from . import Max35Text
+from . import ModificationProcessingStatus9Choice
+from . import SystemPartyIdentification8
 
 class IntraBalanceQueryCriteria12(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class IntraBalanceQueryCriteria12(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if value is not None else base_types.UninitialisedField(self, 'CreDtTm', DateAndDateTimeSearch5Choice, False)
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
 		del self._CreDtTm
-		self._CreDtTm = None
+		self._CreDtTm = base_types.UninitialisedField(self, 'CreDtTm', DateAndDateTimeSearch5Choice, False)
 
 	@property
 	def CshAcct(self):
@@ -31,12 +31,12 @@ class IntraBalanceQueryCriteria12(base_types._BaseFieldType):
 
 	@CshAcct.setter
 	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != base_types.auto else self.make_default("CshAcct")
+		self._CshAcct = value if value is not None else base_types.UninitialisedField(self, 'CshAcct', AccountIdentificationSearchCriteria2Choice, True)
 
 	@CshAcct.deleter
 	def CshAcct(self):
 		del self._CshAcct
-		self._CshAcct = None
+		self._CshAcct = base_types.UninitialisedField(self, 'CshAcct', AccountIdentificationSearchCriteria2Choice, True)
 
 	@property
 	def CshAcctOwnr(self):
@@ -44,12 +44,12 @@ class IntraBalanceQueryCriteria12(base_types._BaseFieldType):
 
 	@CshAcctOwnr.setter
 	def CshAcctOwnr(self, value):
-		self._CshAcctOwnr = value if type(value) != base_types.auto else self.make_default("CshAcctOwnr")
+		self._CshAcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'CshAcctOwnr', SystemPartyIdentification8, True)
 
 	@CshAcctOwnr.deleter
 	def CshAcctOwnr(self):
 		del self._CshAcctOwnr
-		self._CshAcctOwnr = None
+		self._CshAcctOwnr = base_types.UninitialisedField(self, 'CshAcctOwnr', SystemPartyIdentification8, True)
 
 	@property
 	def CshAcctSvcr(self):
@@ -57,12 +57,12 @@ class IntraBalanceQueryCriteria12(base_types._BaseFieldType):
 
 	@CshAcctSvcr.setter
 	def CshAcctSvcr(self, value):
-		self._CshAcctSvcr = value if type(value) != base_types.auto else self.make_default("CshAcctSvcr")
+		self._CshAcctSvcr = value if value is not None else base_types.UninitialisedField(self, 'CshAcctSvcr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@CshAcctSvcr.deleter
 	def CshAcctSvcr(self):
 		del self._CshAcctSvcr
-		self._CshAcctSvcr = None
+		self._CshAcctSvcr = base_types.UninitialisedField(self, 'CshAcctSvcr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def ModReqId(self):
@@ -70,12 +70,12 @@ class IntraBalanceQueryCriteria12(base_types._BaseFieldType):
 
 	@ModReqId.setter
 	def ModReqId(self, value):
-		self._ModReqId = value if type(value) != base_types.auto else self.make_default("ModReqId")
+		self._ModReqId = value if value is not None else base_types.UninitialisedField(self, 'ModReqId', Max35Text, True)
 
 	@ModReqId.deleter
 	def ModReqId(self):
 		del self._ModReqId
-		self._ModReqId = None
+		self._ModReqId = base_types.UninitialisedField(self, 'ModReqId', Max35Text, True)
 
 	@property
 	def MsgOrgtr(self):
@@ -83,12 +83,12 @@ class IntraBalanceQueryCriteria12(base_types._BaseFieldType):
 
 	@MsgOrgtr.setter
 	def MsgOrgtr(self, value):
-		self._MsgOrgtr = value if type(value) != base_types.auto else self.make_default("MsgOrgtr")
+		self._MsgOrgtr = value if value is not None else base_types.UninitialisedField(self, 'MsgOrgtr', SystemPartyIdentification8, True)
 
 	@MsgOrgtr.deleter
 	def MsgOrgtr(self):
 		del self._MsgOrgtr
-		self._MsgOrgtr = None
+		self._MsgOrgtr = base_types.UninitialisedField(self, 'MsgOrgtr', SystemPartyIdentification8, True)
 
 	@property
 	def PrcgSts(self):
@@ -96,12 +96,12 @@ class IntraBalanceQueryCriteria12(base_types._BaseFieldType):
 
 	@PrcgSts.setter
 	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != base_types.auto else self.make_default("PrcgSts")
+		self._PrcgSts = value if value is not None else base_types.UninitialisedField(self, 'PrcgSts', ModificationProcessingStatus9Choice, True)
 
 	@PrcgSts.deleter
 	def PrcgSts(self):
 		del self._PrcgSts
-		self._PrcgSts = None
+		self._PrcgSts = base_types.UninitialisedField(self, 'PrcgSts', ModificationProcessingStatus9Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CreDtTm', type=DateAndDateTimeSearch5Choice, min=0, max=1, mutex_group=None, array=False),

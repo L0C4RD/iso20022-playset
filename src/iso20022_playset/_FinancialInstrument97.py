@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Debt5 import Debt5
-from ._Derivative4 import Derivative4
-from ._Equity3 import Equity3
-from ._Warrant4 import Warrant4
+from . import Debt5
+from . import Derivative4
+from . import Equity3
+from . import Warrant4
 
 class FinancialInstrument97(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class FinancialInstrument97(base_types._BaseFieldType):
 
 	@Debt.setter
 	def Debt(self, value):
-		self._Debt = value if type(value) != base_types.auto else self.make_default("Debt")
+		self._Debt = value if value is not None else base_types.UninitialisedField(self, 'Debt', Debt5, False)
 
 	@Debt.deleter
 	def Debt(self):
 		del self._Debt
-		self._Debt = None
+		self._Debt = base_types.UninitialisedField(self, 'Debt', Debt5, False)
 
 	@property
 	def Deriv(self):
@@ -29,12 +29,12 @@ class FinancialInstrument97(base_types._BaseFieldType):
 
 	@Deriv.setter
 	def Deriv(self, value):
-		self._Deriv = value if type(value) != base_types.auto else self.make_default("Deriv")
+		self._Deriv = value if value is not None else base_types.UninitialisedField(self, 'Deriv', Derivative4, False)
 
 	@Deriv.deleter
 	def Deriv(self):
 		del self._Deriv
-		self._Deriv = None
+		self._Deriv = base_types.UninitialisedField(self, 'Deriv', Derivative4, False)
 
 	@property
 	def Eqty(self):
@@ -42,12 +42,12 @@ class FinancialInstrument97(base_types._BaseFieldType):
 
 	@Eqty.setter
 	def Eqty(self, value):
-		self._Eqty = value if type(value) != base_types.auto else self.make_default("Eqty")
+		self._Eqty = value if value is not None else base_types.UninitialisedField(self, 'Eqty', Equity3, False)
 
 	@Eqty.deleter
 	def Eqty(self):
 		del self._Eqty
-		self._Eqty = None
+		self._Eqty = base_types.UninitialisedField(self, 'Eqty', Equity3, False)
 
 	@property
 	def Warrt(self):
@@ -55,12 +55,12 @@ class FinancialInstrument97(base_types._BaseFieldType):
 
 	@Warrt.setter
 	def Warrt(self, value):
-		self._Warrt = value if type(value) != base_types.auto else self.make_default("Warrt")
+		self._Warrt = value if value is not None else base_types.UninitialisedField(self, 'Warrt', Warrant4, False)
 
 	@Warrt.deleter
 	def Warrt(self):
 		del self._Warrt
-		self._Warrt = None
+		self._Warrt = base_types.UninitialisedField(self, 'Warrt', Warrant4, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Debt', type=Debt5, min=0, max=1, mutex_group=None, array=False),

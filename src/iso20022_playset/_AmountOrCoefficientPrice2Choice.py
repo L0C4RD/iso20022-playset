@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._DecimalNumber import DecimalNumber
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import DecimalNumber
+from . import ImpliedCurrencyAndAmount
 
 class AmountOrCoefficientPrice2Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AmountOrCoefficientPrice2Choice(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ImpliedCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def AmtWthCcy(self):
@@ -28,12 +28,12 @@ class AmountOrCoefficientPrice2Choice(base_types._BaseFieldType):
 
 	@AmtWthCcy.setter
 	def AmtWthCcy(self, value):
-		self._AmtWthCcy = value if type(value) != base_types.auto else self.make_default("AmtWthCcy")
+		self._AmtWthCcy = value if value is not None else base_types.UninitialisedField(self, 'AmtWthCcy', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@AmtWthCcy.deleter
 	def AmtWthCcy(self):
 		del self._AmtWthCcy
-		self._AmtWthCcy = None
+		self._AmtWthCcy = base_types.UninitialisedField(self, 'AmtWthCcy', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def Coeff(self):
@@ -41,12 +41,12 @@ class AmountOrCoefficientPrice2Choice(base_types._BaseFieldType):
 
 	@Coeff.setter
 	def Coeff(self, value):
-		self._Coeff = value if type(value) != base_types.auto else self.make_default("Coeff")
+		self._Coeff = value if value is not None else base_types.UninitialisedField(self, 'Coeff', DecimalNumber, False)
 
 	@Coeff.deleter
 	def Coeff(self):
 		del self._Coeff
-		self._Coeff = None
+		self._Coeff = base_types.UninitialisedField(self, 'Coeff', DecimalNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),

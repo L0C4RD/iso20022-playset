@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Number import Number
+from . import Number
 
 class ATMSecurityConfiguration2(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class ATMSecurityConfiguration2(base_types._BaseFieldType):
 
 	@MaxAsmmtrcKey.setter
 	def MaxAsmmtrcKey(self, value):
-		self._MaxAsmmtrcKey = value if type(value) != base_types.auto else self.make_default("MaxAsmmtrcKey")
+		self._MaxAsmmtrcKey = value if value is not None else base_types.UninitialisedField(self, 'MaxAsmmtrcKey', Number, False)
 
 	@MaxAsmmtrcKey.deleter
 	def MaxAsmmtrcKey(self):
 		del self._MaxAsmmtrcKey
-		self._MaxAsmmtrcKey = None
+		self._MaxAsmmtrcKey = base_types.UninitialisedField(self, 'MaxAsmmtrcKey', Number, False)
 
 	@property
 	def MaxRSAKeyLngth(self):
@@ -26,12 +26,12 @@ class ATMSecurityConfiguration2(base_types._BaseFieldType):
 
 	@MaxRSAKeyLngth.setter
 	def MaxRSAKeyLngth(self, value):
-		self._MaxRSAKeyLngth = value if type(value) != base_types.auto else self.make_default("MaxRSAKeyLngth")
+		self._MaxRSAKeyLngth = value if value is not None else base_types.UninitialisedField(self, 'MaxRSAKeyLngth', Number, False)
 
 	@MaxRSAKeyLngth.deleter
 	def MaxRSAKeyLngth(self):
 		del self._MaxRSAKeyLngth
-		self._MaxRSAKeyLngth = None
+		self._MaxRSAKeyLngth = base_types.UninitialisedField(self, 'MaxRSAKeyLngth', Number, False)
 
 	@property
 	def MaxRootKeyLngth(self):
@@ -39,12 +39,12 @@ class ATMSecurityConfiguration2(base_types._BaseFieldType):
 
 	@MaxRootKeyLngth.setter
 	def MaxRootKeyLngth(self, value):
-		self._MaxRootKeyLngth = value if type(value) != base_types.auto else self.make_default("MaxRootKeyLngth")
+		self._MaxRootKeyLngth = value if value is not None else base_types.UninitialisedField(self, 'MaxRootKeyLngth', Number, False)
 
 	@MaxRootKeyLngth.deleter
 	def MaxRootKeyLngth(self):
 		del self._MaxRootKeyLngth
-		self._MaxRootKeyLngth = None
+		self._MaxRootKeyLngth = base_types.UninitialisedField(self, 'MaxRootKeyLngth', Number, False)
 
 	@property
 	def MaxSmmtrcKey(self):
@@ -52,12 +52,12 @@ class ATMSecurityConfiguration2(base_types._BaseFieldType):
 
 	@MaxSmmtrcKey.setter
 	def MaxSmmtrcKey(self, value):
-		self._MaxSmmtrcKey = value if type(value) != base_types.auto else self.make_default("MaxSmmtrcKey")
+		self._MaxSmmtrcKey = value if value is not None else base_types.UninitialisedField(self, 'MaxSmmtrcKey', Number, False)
 
 	@MaxSmmtrcKey.deleter
 	def MaxSmmtrcKey(self):
 		del self._MaxSmmtrcKey
-		self._MaxSmmtrcKey = None
+		self._MaxSmmtrcKey = base_types.UninitialisedField(self, 'MaxSmmtrcKey', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MaxAsmmtrcKey', type=Number, min=0, max=1, mutex_group=None, array=False),

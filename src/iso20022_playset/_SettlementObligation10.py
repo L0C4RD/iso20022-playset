@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection27 import AmountAndDirection27
-from ._CurrencyCode import CurrencyCode
-from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
-from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
-from ._ObligationType1Choice import ObligationType1Choice
-from ._Price14 import Price14
-from ._ReceiveDelivery1Code import ReceiveDelivery1Code
-from ._Reference24 import Reference24
+from . import AmountAndDirection27
+from . import CurrencyCode
+from . import DeliveryReceiptType2Code
+from . import FinancialInstrumentQuantity1Choice
+from . import ISODate
+from . import Max35Text
+from . import ObligationType1Choice
+from . import Price14
+from . import ReceiveDelivery1Code
+from . import Reference24
 
 class SettlementObligation10(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class SettlementObligation10(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', Max35Text, False)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', Max35Text, False)
 
 	@property
 	def NetPosPric(self):
@@ -35,12 +35,12 @@ class SettlementObligation10(base_types._BaseFieldType):
 
 	@NetPosPric.setter
 	def NetPosPric(self, value):
-		self._NetPosPric = value if type(value) != base_types.auto else self.make_default("NetPosPric")
+		self._NetPosPric = value if value is not None else base_types.UninitialisedField(self, 'NetPosPric', Price14, False)
 
 	@NetPosPric.deleter
 	def NetPosPric(self):
 		del self._NetPosPric
-		self._NetPosPric = None
+		self._NetPosPric = base_types.UninitialisedField(self, 'NetPosPric', Price14, False)
 
 	@property
 	def OblgtnTp(self):
@@ -48,12 +48,12 @@ class SettlementObligation10(base_types._BaseFieldType):
 
 	@OblgtnTp.setter
 	def OblgtnTp(self, value):
-		self._OblgtnTp = value if type(value) != base_types.auto else self.make_default("OblgtnTp")
+		self._OblgtnTp = value if value is not None else base_types.UninitialisedField(self, 'OblgtnTp', ObligationType1Choice, False)
 
 	@OblgtnTp.deleter
 	def OblgtnTp(self):
 		del self._OblgtnTp
-		self._OblgtnTp = None
+		self._OblgtnTp = base_types.UninitialisedField(self, 'OblgtnTp', ObligationType1Choice, False)
 
 	@property
 	def Pmt(self):
@@ -61,12 +61,12 @@ class SettlementObligation10(base_types._BaseFieldType):
 
 	@Pmt.setter
 	def Pmt(self, value):
-		self._Pmt = value if type(value) != base_types.auto else self.make_default("Pmt")
+		self._Pmt = value if value is not None else base_types.UninitialisedField(self, 'Pmt', DeliveryReceiptType2Code, False)
 
 	@Pmt.deleter
 	def Pmt(self):
 		del self._Pmt
-		self._Pmt = None
+		self._Pmt = base_types.UninitialisedField(self, 'Pmt', DeliveryReceiptType2Code, False)
 
 	@property
 	def Qty(self):
@@ -74,12 +74,12 @@ class SettlementObligation10(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+		self._Qty = value if value is not None else base_types.UninitialisedField(self, 'Qty', FinancialInstrumentQuantity1Choice, False)
 
 	@Qty.deleter
 	def Qty(self):
 		del self._Qty
-		self._Qty = None
+		self._Qty = base_types.UninitialisedField(self, 'Qty', FinancialInstrumentQuantity1Choice, False)
 
 	@property
 	def Refs(self):
@@ -87,12 +87,12 @@ class SettlementObligation10(base_types._BaseFieldType):
 
 	@Refs.setter
 	def Refs(self, value):
-		self._Refs = value if type(value) != base_types.auto else self.make_default("Refs")
+		self._Refs = value if value is not None else base_types.UninitialisedField(self, 'Refs', Reference24, False)
 
 	@Refs.deleter
 	def Refs(self):
 		del self._Refs
-		self._Refs = None
+		self._Refs = base_types.UninitialisedField(self, 'Refs', Reference24, False)
 
 	@property
 	def RltdSttlmOblgtnId(self):
@@ -100,12 +100,12 @@ class SettlementObligation10(base_types._BaseFieldType):
 
 	@RltdSttlmOblgtnId.setter
 	def RltdSttlmOblgtnId(self, value):
-		self._RltdSttlmOblgtnId = value if type(value) != base_types.auto else self.make_default("RltdSttlmOblgtnId")
+		self._RltdSttlmOblgtnId = value if value is not None else base_types.UninitialisedField(self, 'RltdSttlmOblgtnId', Max35Text, False)
 
 	@RltdSttlmOblgtnId.deleter
 	def RltdSttlmOblgtnId(self):
 		del self._RltdSttlmOblgtnId
-		self._RltdSttlmOblgtnId = None
+		self._RltdSttlmOblgtnId = base_types.UninitialisedField(self, 'RltdSttlmOblgtnId', Max35Text, False)
 
 	@property
 	def SctiesMvmntTp(self):
@@ -113,12 +113,12 @@ class SettlementObligation10(base_types._BaseFieldType):
 
 	@SctiesMvmntTp.setter
 	def SctiesMvmntTp(self, value):
-		self._SctiesMvmntTp = value if type(value) != base_types.auto else self.make_default("SctiesMvmntTp")
+		self._SctiesMvmntTp = value if value is not None else base_types.UninitialisedField(self, 'SctiesMvmntTp', ReceiveDelivery1Code, False)
 
 	@SctiesMvmntTp.deleter
 	def SctiesMvmntTp(self):
 		del self._SctiesMvmntTp
-		self._SctiesMvmntTp = None
+		self._SctiesMvmntTp = base_types.UninitialisedField(self, 'SctiesMvmntTp', ReceiveDelivery1Code, False)
 
 	@property
 	def SttlmAmt(self):
@@ -126,12 +126,12 @@ class SettlementObligation10(base_types._BaseFieldType):
 
 	@SttlmAmt.setter
 	def SttlmAmt(self, value):
-		self._SttlmAmt = value if type(value) != base_types.auto else self.make_default("SttlmAmt")
+		self._SttlmAmt = value if value is not None else base_types.UninitialisedField(self, 'SttlmAmt', AmountAndDirection27, False)
 
 	@SttlmAmt.deleter
 	def SttlmAmt(self):
 		del self._SttlmAmt
-		self._SttlmAmt = None
+		self._SttlmAmt = base_types.UninitialisedField(self, 'SttlmAmt', AmountAndDirection27, False)
 
 	@property
 	def SttlmDt(self):
@@ -139,12 +139,12 @@ class SettlementObligation10(base_types._BaseFieldType):
 
 	@SttlmDt.setter
 	def SttlmDt(self, value):
-		self._SttlmDt = value if type(value) != base_types.auto else self.make_default("SttlmDt")
+		self._SttlmDt = value if value is not None else base_types.UninitialisedField(self, 'SttlmDt', ISODate, False)
 
 	@SttlmDt.deleter
 	def SttlmDt(self):
 		del self._SttlmDt
-		self._SttlmDt = None
+		self._SttlmDt = base_types.UninitialisedField(self, 'SttlmDt', ISODate, False)
 
 	@property
 	def TradDt(self):
@@ -152,12 +152,12 @@ class SettlementObligation10(base_types._BaseFieldType):
 
 	@TradDt.setter
 	def TradDt(self, value):
-		self._TradDt = value if type(value) != base_types.auto else self.make_default("TradDt")
+		self._TradDt = value if value is not None else base_types.UninitialisedField(self, 'TradDt', ISODate, False)
 
 	@TradDt.deleter
 	def TradDt(self):
 		del self._TradDt
-		self._TradDt = None
+		self._TradDt = base_types.UninitialisedField(self, 'TradDt', ISODate, False)
 
 	@property
 	def TradgCcy(self):
@@ -165,12 +165,12 @@ class SettlementObligation10(base_types._BaseFieldType):
 
 	@TradgCcy.setter
 	def TradgCcy(self, value):
-		self._TradgCcy = value if type(value) != base_types.auto else self.make_default("TradgCcy")
+		self._TradgCcy = value if value is not None else base_types.UninitialisedField(self, 'TradgCcy', CurrencyCode, False)
 
 	@TradgCcy.deleter
 	def TradgCcy(self):
 		del self._TradgCcy
-		self._TradgCcy = None
+		self._TradgCcy = base_types.UninitialisedField(self, 'TradgCcy', CurrencyCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Desc', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

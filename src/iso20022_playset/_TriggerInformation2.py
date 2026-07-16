@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ExchangePolicy2Code import ExchangePolicy2Code
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
-from ._PartyType5Code import PartyType5Code
+from . import ExchangePolicy2Code
+from . import Max35Text
+from . import Max70Text
+from . import PartyType5Code
 
 class TriggerInformation2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class TriggerInformation2(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max70Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max70Text, False)
 
 	@property
 	def SrcId(self):
@@ -29,12 +29,12 @@ class TriggerInformation2(base_types._BaseFieldType):
 
 	@SrcId.setter
 	def SrcId(self, value):
-		self._SrcId = value if type(value) != base_types.auto else self.make_default("SrcId")
+		self._SrcId = value if value is not None else base_types.UninitialisedField(self, 'SrcId', Max35Text, False)
 
 	@SrcId.deleter
 	def SrcId(self):
 		del self._SrcId
-		self._SrcId = None
+		self._SrcId = base_types.UninitialisedField(self, 'SrcId', Max35Text, False)
 
 	@property
 	def TrggrSrc(self):
@@ -42,12 +42,12 @@ class TriggerInformation2(base_types._BaseFieldType):
 
 	@TrggrSrc.setter
 	def TrggrSrc(self, value):
-		self._TrggrSrc = value if type(value) != base_types.auto else self.make_default("TrggrSrc")
+		self._TrggrSrc = value if value is not None else base_types.UninitialisedField(self, 'TrggrSrc', PartyType5Code, False)
 
 	@TrggrSrc.deleter
 	def TrggrSrc(self):
 		del self._TrggrSrc
-		self._TrggrSrc = None
+		self._TrggrSrc = base_types.UninitialisedField(self, 'TrggrSrc', PartyType5Code, False)
 
 	@property
 	def TrggrTp(self):
@@ -55,12 +55,12 @@ class TriggerInformation2(base_types._BaseFieldType):
 
 	@TrggrTp.setter
 	def TrggrTp(self, value):
-		self._TrggrTp = value if type(value) != base_types.auto else self.make_default("TrggrTp")
+		self._TrggrTp = value if value is not None else base_types.UninitialisedField(self, 'TrggrTp', ExchangePolicy2Code, False)
 
 	@TrggrTp.deleter
 	def TrggrTp(self):
 		del self._TrggrTp
-		self._TrggrTp = None
+		self._TrggrTp = base_types.UninitialisedField(self, 'TrggrTp', ExchangePolicy2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max70Text, min=0, max=1, mutex_group=None, array=False),

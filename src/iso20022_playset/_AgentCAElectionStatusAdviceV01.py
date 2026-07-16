@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionInformation1 import CorporateActionInformation1
-from ._DocumentIdentification8 import DocumentIdentification8
-from ._ElectionAdviceStatus1Choice import ElectionAdviceStatus1Choice
-from ._ElectionAmendmentStatus1Choice import ElectionAmendmentStatus1Choice
-from ._ElectionCancellationStatus1Choice import ElectionCancellationStatus1Choice
+from . import CorporateActionInformation1
+from . import DocumentIdentification8
+from . import ElectionAdviceStatus1Choice
+from . import ElectionAmendmentStatus1Choice
+from . import ElectionCancellationStatus1Choice
 
 class AgentCAElectionStatusAdviceV01(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class AgentCAElectionStatusAdviceV01(base_types._BaseFieldType):
 
 	@AgtCAElctnAdvcId.setter
 	def AgtCAElctnAdvcId(self, value):
-		self._AgtCAElctnAdvcId = value if type(value) != base_types.auto else self.make_default("AgtCAElctnAdvcId")
+		self._AgtCAElctnAdvcId = value if value is not None else base_types.UninitialisedField(self, 'AgtCAElctnAdvcId', DocumentIdentification8, False)
 
 	@AgtCAElctnAdvcId.deleter
 	def AgtCAElctnAdvcId(self):
 		del self._AgtCAElctnAdvcId
-		self._AgtCAElctnAdvcId = None
+		self._AgtCAElctnAdvcId = base_types.UninitialisedField(self, 'AgtCAElctnAdvcId', DocumentIdentification8, False)
 
 	@property
 	def AgtCAElctnAmdmntReqId(self):
@@ -30,12 +30,12 @@ class AgentCAElectionStatusAdviceV01(base_types._BaseFieldType):
 
 	@AgtCAElctnAmdmntReqId.setter
 	def AgtCAElctnAmdmntReqId(self, value):
-		self._AgtCAElctnAmdmntReqId = value if type(value) != base_types.auto else self.make_default("AgtCAElctnAmdmntReqId")
+		self._AgtCAElctnAmdmntReqId = value if value is not None else base_types.UninitialisedField(self, 'AgtCAElctnAmdmntReqId', DocumentIdentification8, False)
 
 	@AgtCAElctnAmdmntReqId.deleter
 	def AgtCAElctnAmdmntReqId(self):
 		del self._AgtCAElctnAmdmntReqId
-		self._AgtCAElctnAmdmntReqId = None
+		self._AgtCAElctnAmdmntReqId = base_types.UninitialisedField(self, 'AgtCAElctnAmdmntReqId', DocumentIdentification8, False)
 
 	@property
 	def AgtCAElctnCxlReqId(self):
@@ -43,12 +43,12 @@ class AgentCAElectionStatusAdviceV01(base_types._BaseFieldType):
 
 	@AgtCAElctnCxlReqId.setter
 	def AgtCAElctnCxlReqId(self, value):
-		self._AgtCAElctnCxlReqId = value if type(value) != base_types.auto else self.make_default("AgtCAElctnCxlReqId")
+		self._AgtCAElctnCxlReqId = value if value is not None else base_types.UninitialisedField(self, 'AgtCAElctnCxlReqId', DocumentIdentification8, False)
 
 	@AgtCAElctnCxlReqId.deleter
 	def AgtCAElctnCxlReqId(self):
 		del self._AgtCAElctnCxlReqId
-		self._AgtCAElctnCxlReqId = None
+		self._AgtCAElctnCxlReqId = base_types.UninitialisedField(self, 'AgtCAElctnCxlReqId', DocumentIdentification8, False)
 
 	@property
 	def CorpActnGnlInf(self):
@@ -56,12 +56,12 @@ class AgentCAElectionStatusAdviceV01(base_types._BaseFieldType):
 
 	@CorpActnGnlInf.setter
 	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != base_types.auto else self.make_default("CorpActnGnlInf")
+		self._CorpActnGnlInf = value if value is not None else base_types.UninitialisedField(self, 'CorpActnGnlInf', CorporateActionInformation1, False)
 
 	@CorpActnGnlInf.deleter
 	def CorpActnGnlInf(self):
 		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
+		self._CorpActnGnlInf = base_types.UninitialisedField(self, 'CorpActnGnlInf', CorporateActionInformation1, False)
 
 	@property
 	def ElctnAdvcSts(self):
@@ -69,12 +69,12 @@ class AgentCAElectionStatusAdviceV01(base_types._BaseFieldType):
 
 	@ElctnAdvcSts.setter
 	def ElctnAdvcSts(self, value):
-		self._ElctnAdvcSts = value if type(value) != base_types.auto else self.make_default("ElctnAdvcSts")
+		self._ElctnAdvcSts = value if value is not None else base_types.UninitialisedField(self, 'ElctnAdvcSts', ElectionAdviceStatus1Choice, False)
 
 	@ElctnAdvcSts.deleter
 	def ElctnAdvcSts(self):
 		del self._ElctnAdvcSts
-		self._ElctnAdvcSts = None
+		self._ElctnAdvcSts = base_types.UninitialisedField(self, 'ElctnAdvcSts', ElectionAdviceStatus1Choice, False)
 
 	@property
 	def ElctnAmdmntReqSts(self):
@@ -82,12 +82,12 @@ class AgentCAElectionStatusAdviceV01(base_types._BaseFieldType):
 
 	@ElctnAmdmntReqSts.setter
 	def ElctnAmdmntReqSts(self, value):
-		self._ElctnAmdmntReqSts = value if type(value) != base_types.auto else self.make_default("ElctnAmdmntReqSts")
+		self._ElctnAmdmntReqSts = value if value is not None else base_types.UninitialisedField(self, 'ElctnAmdmntReqSts', ElectionAmendmentStatus1Choice, False)
 
 	@ElctnAmdmntReqSts.deleter
 	def ElctnAmdmntReqSts(self):
 		del self._ElctnAmdmntReqSts
-		self._ElctnAmdmntReqSts = None
+		self._ElctnAmdmntReqSts = base_types.UninitialisedField(self, 'ElctnAmdmntReqSts', ElectionAmendmentStatus1Choice, False)
 
 	@property
 	def ElctnCxlReqSts(self):
@@ -95,12 +95,12 @@ class AgentCAElectionStatusAdviceV01(base_types._BaseFieldType):
 
 	@ElctnCxlReqSts.setter
 	def ElctnCxlReqSts(self, value):
-		self._ElctnCxlReqSts = value if type(value) != base_types.auto else self.make_default("ElctnCxlReqSts")
+		self._ElctnCxlReqSts = value if value is not None else base_types.UninitialisedField(self, 'ElctnCxlReqSts', ElectionCancellationStatus1Choice, False)
 
 	@ElctnCxlReqSts.deleter
 	def ElctnCxlReqSts(self):
 		del self._ElctnCxlReqSts
-		self._ElctnCxlReqSts = None
+		self._ElctnCxlReqSts = base_types.UninitialisedField(self, 'ElctnCxlReqSts', ElectionCancellationStatus1Choice, False)
 
 	@property
 	def Id(self):
@@ -108,12 +108,12 @@ class AgentCAElectionStatusAdviceV01(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', DocumentIdentification8, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', DocumentIdentification8, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AgtCAElctnAdvcId', type=DocumentIdentification8, min=0, max=1, mutex_group=1, array=False),

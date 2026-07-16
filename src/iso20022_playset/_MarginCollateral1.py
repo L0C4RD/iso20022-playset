@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from . import ActiveCurrencyAndAmount
 
 class MarginCollateral1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class MarginCollateral1(base_types._BaseFieldType):
 
 	@HeldByPtyA.setter
 	def HeldByPtyA(self, value):
-		self._HeldByPtyA = value if type(value) != base_types.auto else self.make_default("HeldByPtyA")
+		self._HeldByPtyA = value if value is not None else base_types.UninitialisedField(self, 'HeldByPtyA', ActiveCurrencyAndAmount, False)
 
 	@HeldByPtyA.deleter
 	def HeldByPtyA(self):
 		del self._HeldByPtyA
-		self._HeldByPtyA = None
+		self._HeldByPtyA = base_types.UninitialisedField(self, 'HeldByPtyA', ActiveCurrencyAndAmount, False)
 
 	@property
 	def HeldByPtyB(self):
@@ -26,12 +26,12 @@ class MarginCollateral1(base_types._BaseFieldType):
 
 	@HeldByPtyB.setter
 	def HeldByPtyB(self, value):
-		self._HeldByPtyB = value if type(value) != base_types.auto else self.make_default("HeldByPtyB")
+		self._HeldByPtyB = value if value is not None else base_types.UninitialisedField(self, 'HeldByPtyB', ActiveCurrencyAndAmount, False)
 
 	@HeldByPtyB.deleter
 	def HeldByPtyB(self):
 		del self._HeldByPtyB
-		self._HeldByPtyB = None
+		self._HeldByPtyB = base_types.UninitialisedField(self, 'HeldByPtyB', ActiveCurrencyAndAmount, False)
 
 	@property
 	def InTrnstToPtyA(self):
@@ -39,12 +39,12 @@ class MarginCollateral1(base_types._BaseFieldType):
 
 	@InTrnstToPtyA.setter
 	def InTrnstToPtyA(self, value):
-		self._InTrnstToPtyA = value if type(value) != base_types.auto else self.make_default("InTrnstToPtyA")
+		self._InTrnstToPtyA = value if value is not None else base_types.UninitialisedField(self, 'InTrnstToPtyA', ActiveCurrencyAndAmount, False)
 
 	@InTrnstToPtyA.deleter
 	def InTrnstToPtyA(self):
 		del self._InTrnstToPtyA
-		self._InTrnstToPtyA = None
+		self._InTrnstToPtyA = base_types.UninitialisedField(self, 'InTrnstToPtyA', ActiveCurrencyAndAmount, False)
 
 	@property
 	def InTrnstToPtyB(self):
@@ -52,12 +52,12 @@ class MarginCollateral1(base_types._BaseFieldType):
 
 	@InTrnstToPtyB.setter
 	def InTrnstToPtyB(self, value):
-		self._InTrnstToPtyB = value if type(value) != base_types.auto else self.make_default("InTrnstToPtyB")
+		self._InTrnstToPtyB = value if value is not None else base_types.UninitialisedField(self, 'InTrnstToPtyB', ActiveCurrencyAndAmount, False)
 
 	@InTrnstToPtyB.deleter
 	def InTrnstToPtyB(self):
 		del self._InTrnstToPtyB
-		self._InTrnstToPtyB = None
+		self._InTrnstToPtyB = base_types.UninitialisedField(self, 'InTrnstToPtyB', ActiveCurrencyAndAmount, False)
 
 	@property
 	def PrrAgrdToPtyA(self):
@@ -65,12 +65,12 @@ class MarginCollateral1(base_types._BaseFieldType):
 
 	@PrrAgrdToPtyA.setter
 	def PrrAgrdToPtyA(self, value):
-		self._PrrAgrdToPtyA = value if type(value) != base_types.auto else self.make_default("PrrAgrdToPtyA")
+		self._PrrAgrdToPtyA = value if value is not None else base_types.UninitialisedField(self, 'PrrAgrdToPtyA', ActiveCurrencyAndAmount, False)
 
 	@PrrAgrdToPtyA.deleter
 	def PrrAgrdToPtyA(self):
 		del self._PrrAgrdToPtyA
-		self._PrrAgrdToPtyA = None
+		self._PrrAgrdToPtyA = base_types.UninitialisedField(self, 'PrrAgrdToPtyA', ActiveCurrencyAndAmount, False)
 
 	@property
 	def PrrAgrdToPtyB(self):
@@ -78,12 +78,12 @@ class MarginCollateral1(base_types._BaseFieldType):
 
 	@PrrAgrdToPtyB.setter
 	def PrrAgrdToPtyB(self, value):
-		self._PrrAgrdToPtyB = value if type(value) != base_types.auto else self.make_default("PrrAgrdToPtyB")
+		self._PrrAgrdToPtyB = value if value is not None else base_types.UninitialisedField(self, 'PrrAgrdToPtyB', ActiveCurrencyAndAmount, False)
 
 	@PrrAgrdToPtyB.deleter
 	def PrrAgrdToPtyB(self):
 		del self._PrrAgrdToPtyB
-		self._PrrAgrdToPtyB = None
+		self._PrrAgrdToPtyB = base_types.UninitialisedField(self, 'PrrAgrdToPtyB', ActiveCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='HeldByPtyA', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

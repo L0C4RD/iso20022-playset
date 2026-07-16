@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
-from ._NonTradingDayReason1Code import NonTradingDayReason1Code
+from . import ISODate
+from . import Max35Text
+from . import NonTradingDayReason1Code
 
 class SecuritiesNonTradingDay1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SecuritiesNonTradingDay1(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@property
 	def Rsn(self):
@@ -28,12 +28,12 @@ class SecuritiesNonTradingDay1(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', NonTradingDayReason1Code, False)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', NonTradingDayReason1Code, False)
 
 	@property
 	def TechRcrdId(self):
@@ -41,12 +41,12 @@ class SecuritiesNonTradingDay1(base_types._BaseFieldType):
 
 	@TechRcrdId.setter
 	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
+		self._TechRcrdId = value if value is not None else base_types.UninitialisedField(self, 'TechRcrdId', Max35Text, False)
 
 	@TechRcrdId.deleter
 	def TechRcrdId(self):
 		del self._TechRcrdId
-		self._TechRcrdId = None
+		self._TechRcrdId = base_types.UninitialisedField(self, 'TechRcrdId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dt', type=ISODate, min=1, max=1, mutex_group=None, array=False),

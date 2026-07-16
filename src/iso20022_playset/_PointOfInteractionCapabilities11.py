@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardDataReading8Code import CardDataReading8Code
-from ._CardholderVerificationCapability4Code import CardholderVerificationCapability4Code
-from ._DisplayCapabilities7 import DisplayCapabilities7
-from ._OnLineCapability1Code import OnLineCapability1Code
-from ._PositiveNumber import PositiveNumber
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import CardDataReading8Code
+from . import CardholderVerificationCapability4Code
+from . import DisplayCapabilities7
+from . import OnLineCapability1Code
+from . import PositiveNumber
+from . import TrueFalseIndicator
 
 class PointOfInteractionCapabilities11(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class PointOfInteractionCapabilities11(base_types._BaseFieldType):
 
 	@ApprvlCdLngth.setter
 	def ApprvlCdLngth(self, value):
-		self._ApprvlCdLngth = value if type(value) != base_types.auto else self.make_default("ApprvlCdLngth")
+		self._ApprvlCdLngth = value if value is not None else base_types.UninitialisedField(self, 'ApprvlCdLngth', PositiveNumber, False)
 
 	@ApprvlCdLngth.deleter
 	def ApprvlCdLngth(self):
 		del self._ApprvlCdLngth
-		self._ApprvlCdLngth = None
+		self._ApprvlCdLngth = base_types.UninitialisedField(self, 'ApprvlCdLngth', PositiveNumber, False)
 
 	@property
 	def CardCaptrCpbl(self):
@@ -31,12 +31,12 @@ class PointOfInteractionCapabilities11(base_types._BaseFieldType):
 
 	@CardCaptrCpbl.setter
 	def CardCaptrCpbl(self, value):
-		self._CardCaptrCpbl = value if type(value) != base_types.auto else self.make_default("CardCaptrCpbl")
+		self._CardCaptrCpbl = value if value is not None else base_types.UninitialisedField(self, 'CardCaptrCpbl', TrueFalseIndicator, False)
 
 	@CardCaptrCpbl.deleter
 	def CardCaptrCpbl(self):
 		del self._CardCaptrCpbl
-		self._CardCaptrCpbl = None
+		self._CardCaptrCpbl = base_types.UninitialisedField(self, 'CardCaptrCpbl', TrueFalseIndicator, False)
 
 	@property
 	def CardRdngCpblties(self):
@@ -44,12 +44,12 @@ class PointOfInteractionCapabilities11(base_types._BaseFieldType):
 
 	@CardRdngCpblties.setter
 	def CardRdngCpblties(self, value):
-		self._CardRdngCpblties = value if type(value) != base_types.auto else self.make_default("CardRdngCpblties")
+		self._CardRdngCpblties = value if value is not None else base_types.UninitialisedField(self, 'CardRdngCpblties', CardDataReading8Code, True)
 
 	@CardRdngCpblties.deleter
 	def CardRdngCpblties(self):
 		del self._CardRdngCpblties
-		self._CardRdngCpblties = None
+		self._CardRdngCpblties = base_types.UninitialisedField(self, 'CardRdngCpblties', CardDataReading8Code, True)
 
 	@property
 	def CrdhldrVrfctnCpblties(self):
@@ -57,12 +57,12 @@ class PointOfInteractionCapabilities11(base_types._BaseFieldType):
 
 	@CrdhldrVrfctnCpblties.setter
 	def CrdhldrVrfctnCpblties(self, value):
-		self._CrdhldrVrfctnCpblties = value if type(value) != base_types.auto else self.make_default("CrdhldrVrfctnCpblties")
+		self._CrdhldrVrfctnCpblties = value if value is not None else base_types.UninitialisedField(self, 'CrdhldrVrfctnCpblties', CardholderVerificationCapability4Code, True)
 
 	@CrdhldrVrfctnCpblties.deleter
 	def CrdhldrVrfctnCpblties(self):
 		del self._CrdhldrVrfctnCpblties
-		self._CrdhldrVrfctnCpblties = None
+		self._CrdhldrVrfctnCpblties = base_types.UninitialisedField(self, 'CrdhldrVrfctnCpblties', CardholderVerificationCapability4Code, True)
 
 	@property
 	def MsgCpblties(self):
@@ -70,12 +70,12 @@ class PointOfInteractionCapabilities11(base_types._BaseFieldType):
 
 	@MsgCpblties.setter
 	def MsgCpblties(self, value):
-		self._MsgCpblties = value if type(value) != base_types.auto else self.make_default("MsgCpblties")
+		self._MsgCpblties = value if value is not None else base_types.UninitialisedField(self, 'MsgCpblties', DisplayCapabilities7, True)
 
 	@MsgCpblties.deleter
 	def MsgCpblties(self):
 		del self._MsgCpblties
-		self._MsgCpblties = None
+		self._MsgCpblties = base_types.UninitialisedField(self, 'MsgCpblties', DisplayCapabilities7, True)
 
 	@property
 	def MxScrptLngth(self):
@@ -83,12 +83,12 @@ class PointOfInteractionCapabilities11(base_types._BaseFieldType):
 
 	@MxScrptLngth.setter
 	def MxScrptLngth(self, value):
-		self._MxScrptLngth = value if type(value) != base_types.auto else self.make_default("MxScrptLngth")
+		self._MxScrptLngth = value if value is not None else base_types.UninitialisedField(self, 'MxScrptLngth', PositiveNumber, False)
 
 	@MxScrptLngth.deleter
 	def MxScrptLngth(self):
 		del self._MxScrptLngth
-		self._MxScrptLngth = None
+		self._MxScrptLngth = base_types.UninitialisedField(self, 'MxScrptLngth', PositiveNumber, False)
 
 	@property
 	def OnLineCpblties(self):
@@ -96,12 +96,12 @@ class PointOfInteractionCapabilities11(base_types._BaseFieldType):
 
 	@OnLineCpblties.setter
 	def OnLineCpblties(self, value):
-		self._OnLineCpblties = value if type(value) != base_types.auto else self.make_default("OnLineCpblties")
+		self._OnLineCpblties = value if value is not None else base_types.UninitialisedField(self, 'OnLineCpblties', OnLineCapability1Code, False)
 
 	@OnLineCpblties.deleter
 	def OnLineCpblties(self):
 		del self._OnLineCpblties
-		self._OnLineCpblties = None
+		self._OnLineCpblties = base_types.UninitialisedField(self, 'OnLineCpblties', OnLineCapability1Code, False)
 
 	@property
 	def PINLngthCpblties(self):
@@ -109,12 +109,12 @@ class PointOfInteractionCapabilities11(base_types._BaseFieldType):
 
 	@PINLngthCpblties.setter
 	def PINLngthCpblties(self, value):
-		self._PINLngthCpblties = value if type(value) != base_types.auto else self.make_default("PINLngthCpblties")
+		self._PINLngthCpblties = value if value is not None else base_types.UninitialisedField(self, 'PINLngthCpblties', PositiveNumber, False)
 
 	@PINLngthCpblties.deleter
 	def PINLngthCpblties(self):
 		del self._PINLngthCpblties
-		self._PINLngthCpblties = None
+		self._PINLngthCpblties = base_types.UninitialisedField(self, 'PINLngthCpblties', PositiveNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ApprvlCdLngth', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),

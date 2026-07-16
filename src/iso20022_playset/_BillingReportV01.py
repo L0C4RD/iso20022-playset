@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BillingReportOrError6Choice import BillingReportOrError6Choice
-from ._MessageHeader11 import MessageHeader11
-from ._SupplementaryData1 import SupplementaryData1
+from . import BillingReportOrError6Choice
+from . import MessageHeader11
+from . import SupplementaryData1
 
 class BillingReportV01(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class BillingReportV01(base_types._BaseFieldType):
 
 	@BllgRptOrErr.setter
 	def BllgRptOrErr(self, value):
-		self._BllgRptOrErr = value if type(value) != base_types.auto else self.make_default("BllgRptOrErr")
+		self._BllgRptOrErr = value if value is not None else base_types.UninitialisedField(self, 'BllgRptOrErr', BillingReportOrError6Choice, False)
 
 	@BllgRptOrErr.deleter
 	def BllgRptOrErr(self):
 		del self._BllgRptOrErr
-		self._BllgRptOrErr = None
+		self._BllgRptOrErr = base_types.UninitialisedField(self, 'BllgRptOrErr', BillingReportOrError6Choice, False)
 
 	@property
 	def MsgHdr(self):
@@ -28,12 +28,12 @@ class BillingReportV01(base_types._BaseFieldType):
 
 	@MsgHdr.setter
 	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
+		self._MsgHdr = value if value is not None else base_types.UninitialisedField(self, 'MsgHdr', MessageHeader11, False)
 
 	@MsgHdr.deleter
 	def MsgHdr(self):
 		del self._MsgHdr
-		self._MsgHdr = None
+		self._MsgHdr = base_types.UninitialisedField(self, 'MsgHdr', MessageHeader11, False)
 
 	@property
 	def SplmtryData(self):
@@ -41,12 +41,12 @@ class BillingReportV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BllgRptOrErr', type=BillingReportOrError6Choice, min=1, max=1, mutex_group=None, array=False),

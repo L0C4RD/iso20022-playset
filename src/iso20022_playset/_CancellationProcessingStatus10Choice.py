@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CancellationReason39Choice import CancellationReason39Choice
-from ._ProprietaryReason4 import ProprietaryReason4
-from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from . import CancellationReason39Choice
+from . import ProprietaryReason4
+from . import ProprietaryStatusAndReason6
 
 class CancellationProcessingStatus10Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CancellationProcessingStatus10Choice(base_types._BaseFieldType):
 
 	@CxlCmpltd.setter
 	def CxlCmpltd(self, value):
-		self._CxlCmpltd = value if type(value) != base_types.auto else self.make_default("CxlCmpltd")
+		self._CxlCmpltd = value if value is not None else base_types.UninitialisedField(self, 'CxlCmpltd', ProprietaryReason4, False)
 
 	@CxlCmpltd.deleter
 	def CxlCmpltd(self):
 		del self._CxlCmpltd
-		self._CxlCmpltd = None
+		self._CxlCmpltd = base_types.UninitialisedField(self, 'CxlCmpltd', ProprietaryReason4, False)
 
 	@property
 	def CxlPdg(self):
@@ -28,12 +28,12 @@ class CancellationProcessingStatus10Choice(base_types._BaseFieldType):
 
 	@CxlPdg.setter
 	def CxlPdg(self, value):
-		self._CxlPdg = value if type(value) != base_types.auto else self.make_default("CxlPdg")
+		self._CxlPdg = value if value is not None else base_types.UninitialisedField(self, 'CxlPdg', CancellationReason39Choice, False)
 
 	@CxlPdg.deleter
 	def CxlPdg(self):
 		del self._CxlPdg
-		self._CxlPdg = None
+		self._CxlPdg = base_types.UninitialisedField(self, 'CxlPdg', CancellationReason39Choice, False)
 
 	@property
 	def CxlReqd(self):
@@ -41,12 +41,12 @@ class CancellationProcessingStatus10Choice(base_types._BaseFieldType):
 
 	@CxlReqd.setter
 	def CxlReqd(self, value):
-		self._CxlReqd = value if type(value) != base_types.auto else self.make_default("CxlReqd")
+		self._CxlReqd = value if value is not None else base_types.UninitialisedField(self, 'CxlReqd', ProprietaryReason4, False)
 
 	@CxlReqd.deleter
 	def CxlReqd(self):
 		del self._CxlReqd
-		self._CxlReqd = None
+		self._CxlReqd = base_types.UninitialisedField(self, 'CxlReqd', ProprietaryReason4, False)
 
 	@property
 	def PrtrySts(self):
@@ -54,12 +54,12 @@ class CancellationProcessingStatus10Choice(base_types._BaseFieldType):
 
 	@PrtrySts.setter
 	def PrtrySts(self, value):
-		self._PrtrySts = value if type(value) != base_types.auto else self.make_default("PrtrySts")
+		self._PrtrySts = value if value is not None else base_types.UninitialisedField(self, 'PrtrySts', ProprietaryStatusAndReason6, False)
 
 	@PrtrySts.deleter
 	def PrtrySts(self):
 		del self._PrtrySts
-		self._PrtrySts = None
+		self._PrtrySts = base_types.UninitialisedField(self, 'PrtrySts', ProprietaryStatusAndReason6, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CxlCmpltd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),

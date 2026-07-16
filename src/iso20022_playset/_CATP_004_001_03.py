@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMWithdrawalCompletionAcknowledgementV03 import ATMWithdrawalCompletionAcknowledgementV03
+from . import ATMWithdrawalCompletionAcknowledgementV03
 
 class CATP_004_001_03():
 
@@ -18,12 +18,12 @@ class CATP_004_001_03():
 
 		@ATMWdrwlCmpltnAck.setter
 		def ATMWdrwlCmpltnAck(self, value):
-			self._ATMWdrwlCmpltnAck = value if type(value) != base_types.auto else self.make_default("ATMWdrwlCmpltnAck")
+			self._ATMWdrwlCmpltnAck = value if value is not None else base_types.UninitialisedField(self, 'ATMWdrwlCmpltnAck', ATMWithdrawalCompletionAcknowledgementV03, False)
 
 		@ATMWdrwlCmpltnAck.deleter
 		def ATMWdrwlCmpltnAck(self):
 			del self._ATMWdrwlCmpltnAck
-			self._ATMWdrwlCmpltnAck = None
+			self._ATMWdrwlCmpltnAck = base_types.UninitialisedField(self, 'ATMWdrwlCmpltnAck', ATMWithdrawalCompletionAcknowledgementV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ATMWdrwlCmpltnAck', type=ATMWithdrawalCompletionAcknowledgementV03, min=1, max=1, mutex_group=None, array=False),

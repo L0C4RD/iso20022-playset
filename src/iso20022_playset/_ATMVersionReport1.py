@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActivationStatus2Code import ActivationStatus2Code
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
+from . import ActivationStatus2Code
+from . import Max35Text
+from . import Max70Text
 
 class ATMVersionReport1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ATMVersionReport1(base_types._BaseFieldType):
 
 	@CfgtnSts.setter
 	def CfgtnSts(self, value):
-		self._CfgtnSts = value if type(value) != base_types.auto else self.make_default("CfgtnSts")
+		self._CfgtnSts = value if value is not None else base_types.UninitialisedField(self, 'CfgtnSts', ActivationStatus2Code, False)
 
 	@CfgtnSts.deleter
 	def CfgtnSts(self):
 		del self._CfgtnSts
-		self._CfgtnSts = None
+		self._CfgtnSts = base_types.UninitialisedField(self, 'CfgtnSts', ActivationStatus2Code, False)
 
 	@property
 	def CfgtnVrsn(self):
@@ -28,12 +28,12 @@ class ATMVersionReport1(base_types._BaseFieldType):
 
 	@CfgtnVrsn.setter
 	def CfgtnVrsn(self, value):
-		self._CfgtnVrsn = value if type(value) != base_types.auto else self.make_default("CfgtnVrsn")
+		self._CfgtnVrsn = value if value is not None else base_types.UninitialisedField(self, 'CfgtnVrsn', Max35Text, False)
 
 	@CfgtnVrsn.deleter
 	def CfgtnVrsn(self):
 		del self._CfgtnVrsn
-		self._CfgtnVrsn = None
+		self._CfgtnVrsn = base_types.UninitialisedField(self, 'CfgtnVrsn', Max35Text, False)
 
 	@property
 	def FailRsn(self):
@@ -41,12 +41,12 @@ class ATMVersionReport1(base_types._BaseFieldType):
 
 	@FailRsn.setter
 	def FailRsn(self, value):
-		self._FailRsn = value if type(value) != base_types.auto else self.make_default("FailRsn")
+		self._FailRsn = value if value is not None else base_types.UninitialisedField(self, 'FailRsn', Max70Text, False)
 
 	@FailRsn.deleter
 	def FailRsn(self):
 		del self._FailRsn
-		self._FailRsn = None
+		self._FailRsn = base_types.UninitialisedField(self, 'FailRsn', Max70Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CfgtnSts', type=ActivationStatus2Code, min=1, max=1, mutex_group=None, array=False),

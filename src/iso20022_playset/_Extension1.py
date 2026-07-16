@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max350Text import Max350Text
+from . import Max350Text
 
 class Extension1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class Extension1(base_types._BaseFieldType):
 
 	@PlcAndNm.setter
 	def PlcAndNm(self, value):
-		self._PlcAndNm = value if type(value) != base_types.auto else self.make_default("PlcAndNm")
+		self._PlcAndNm = value if value is not None else base_types.UninitialisedField(self, 'PlcAndNm', Max350Text, False)
 
 	@PlcAndNm.deleter
 	def PlcAndNm(self):
 		del self._PlcAndNm
-		self._PlcAndNm = None
+		self._PlcAndNm = base_types.UninitialisedField(self, 'PlcAndNm', Max350Text, False)
 
 	@property
 	def Txt(self):
@@ -26,12 +26,12 @@ class Extension1(base_types._BaseFieldType):
 
 	@Txt.setter
 	def Txt(self, value):
-		self._Txt = value if type(value) != base_types.auto else self.make_default("Txt")
+		self._Txt = value if value is not None else base_types.UninitialisedField(self, 'Txt', Max350Text, False)
 
 	@Txt.deleter
 	def Txt(self):
 		del self._Txt
-		self._Txt = None
+		self._Txt = base_types.UninitialisedField(self, 'Txt', Max350Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PlcAndNm', type=Max350Text, min=1, max=1, mutex_group=None, array=False),

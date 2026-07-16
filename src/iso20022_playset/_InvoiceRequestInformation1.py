@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._DocumentGeneralInformation1 import DocumentGeneralInformation1
-from ._FinancingRateOrAmountChoice import FinancingRateOrAmountChoice
-from ._Instalment1 import Instalment1
-from ._InvoiceTotals1 import InvoiceTotals1
-from ._PartyAndAccountIdentificationAndContactInformation1 import PartyAndAccountIdentificationAndContactInformation1
-from ._PartyIdentificationAndContactInformation1 import PartyIdentificationAndContactInformation1
-from ._PaymentInformation15 import PaymentInformation15
-from ._ReferredDocumentInformation2 import ReferredDocumentInformation2
+from . import ActiveCurrencyAndAmount
+from . import DocumentGeneralInformation1
+from . import FinancingRateOrAmountChoice
+from . import Instalment1
+from . import InvoiceTotals1
+from . import PartyAndAccountIdentificationAndContactInformation1
+from . import PartyIdentificationAndContactInformation1
+from . import PaymentInformation15
+from . import ReferredDocumentInformation2
 
 class InvoiceRequestInformation1(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class InvoiceRequestInformation1(base_types._BaseFieldType):
 
 	@Buyr.setter
 	def Buyr(self, value):
-		self._Buyr = value if type(value) != base_types.auto else self.make_default("Buyr")
+		self._Buyr = value if value is not None else base_types.UninitialisedField(self, 'Buyr', PartyIdentificationAndContactInformation1, False)
 
 	@Buyr.deleter
 	def Buyr(self):
 		del self._Buyr
-		self._Buyr = None
+		self._Buyr = base_types.UninitialisedField(self, 'Buyr', PartyIdentificationAndContactInformation1, False)
 
 	@property
 	def CdtDbtNoteAmt(self):
@@ -34,12 +34,12 @@ class InvoiceRequestInformation1(base_types._BaseFieldType):
 
 	@CdtDbtNoteAmt.setter
 	def CdtDbtNoteAmt(self, value):
-		self._CdtDbtNoteAmt = value if type(value) != base_types.auto else self.make_default("CdtDbtNoteAmt")
+		self._CdtDbtNoteAmt = value if value is not None else base_types.UninitialisedField(self, 'CdtDbtNoteAmt', ActiveCurrencyAndAmount, False)
 
 	@CdtDbtNoteAmt.deleter
 	def CdtDbtNoteAmt(self):
 		del self._CdtDbtNoteAmt
-		self._CdtDbtNoteAmt = None
+		self._CdtDbtNoteAmt = base_types.UninitialisedField(self, 'CdtDbtNoteAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def InstlmtInf(self):
@@ -47,12 +47,12 @@ class InvoiceRequestInformation1(base_types._BaseFieldType):
 
 	@InstlmtInf.setter
 	def InstlmtInf(self, value):
-		self._InstlmtInf = value if type(value) != base_types.auto else self.make_default("InstlmtInf")
+		self._InstlmtInf = value if value is not None else base_types.UninitialisedField(self, 'InstlmtInf', Instalment1, True)
 
 	@InstlmtInf.deleter
 	def InstlmtInf(self):
 		del self._InstlmtInf
-		self._InstlmtInf = None
+		self._InstlmtInf = base_types.UninitialisedField(self, 'InstlmtInf', Instalment1, True)
 
 	@property
 	def InvcGnlInf(self):
@@ -60,12 +60,12 @@ class InvoiceRequestInformation1(base_types._BaseFieldType):
 
 	@InvcGnlInf.setter
 	def InvcGnlInf(self, value):
-		self._InvcGnlInf = value if type(value) != base_types.auto else self.make_default("InvcGnlInf")
+		self._InvcGnlInf = value if value is not None else base_types.UninitialisedField(self, 'InvcGnlInf', DocumentGeneralInformation1, False)
 
 	@InvcGnlInf.deleter
 	def InvcGnlInf(self):
 		del self._InvcGnlInf
-		self._InvcGnlInf = None
+		self._InvcGnlInf = base_types.UninitialisedField(self, 'InvcGnlInf', DocumentGeneralInformation1, False)
 
 	@property
 	def InvcPmtInf(self):
@@ -73,12 +73,12 @@ class InvoiceRequestInformation1(base_types._BaseFieldType):
 
 	@InvcPmtInf.setter
 	def InvcPmtInf(self, value):
-		self._InvcPmtInf = value if type(value) != base_types.auto else self.make_default("InvcPmtInf")
+		self._InvcPmtInf = value if value is not None else base_types.UninitialisedField(self, 'InvcPmtInf', PaymentInformation15, False)
 
 	@InvcPmtInf.deleter
 	def InvcPmtInf(self):
 		del self._InvcPmtInf
-		self._InvcPmtInf = None
+		self._InvcPmtInf = base_types.UninitialisedField(self, 'InvcPmtInf', PaymentInformation15, False)
 
 	@property
 	def InvcTtlsInf(self):
@@ -86,12 +86,12 @@ class InvoiceRequestInformation1(base_types._BaseFieldType):
 
 	@InvcTtlsInf.setter
 	def InvcTtlsInf(self, value):
-		self._InvcTtlsInf = value if type(value) != base_types.auto else self.make_default("InvcTtlsInf")
+		self._InvcTtlsInf = value if value is not None else base_types.UninitialisedField(self, 'InvcTtlsInf', InvoiceTotals1, False)
 
 	@InvcTtlsInf.deleter
 	def InvcTtlsInf(self):
 		del self._InvcTtlsInf
-		self._InvcTtlsInf = None
+		self._InvcTtlsInf = base_types.UninitialisedField(self, 'InvcTtlsInf', InvoiceTotals1, False)
 
 	@property
 	def ReqdAmt(self):
@@ -99,12 +99,12 @@ class InvoiceRequestInformation1(base_types._BaseFieldType):
 
 	@ReqdAmt.setter
 	def ReqdAmt(self, value):
-		self._ReqdAmt = value if type(value) != base_types.auto else self.make_default("ReqdAmt")
+		self._ReqdAmt = value if value is not None else base_types.UninitialisedField(self, 'ReqdAmt', FinancingRateOrAmountChoice, False)
 
 	@ReqdAmt.deleter
 	def ReqdAmt(self):
 		del self._ReqdAmt
-		self._ReqdAmt = None
+		self._ReqdAmt = base_types.UninitialisedField(self, 'ReqdAmt', FinancingRateOrAmountChoice, False)
 
 	@property
 	def RfrdDoc(self):
@@ -112,12 +112,12 @@ class InvoiceRequestInformation1(base_types._BaseFieldType):
 
 	@RfrdDoc.setter
 	def RfrdDoc(self, value):
-		self._RfrdDoc = value if type(value) != base_types.auto else self.make_default("RfrdDoc")
+		self._RfrdDoc = value if value is not None else base_types.UninitialisedField(self, 'RfrdDoc', ReferredDocumentInformation2, True)
 
 	@RfrdDoc.deleter
 	def RfrdDoc(self):
 		del self._RfrdDoc
-		self._RfrdDoc = None
+		self._RfrdDoc = base_types.UninitialisedField(self, 'RfrdDoc', ReferredDocumentInformation2, True)
 
 	@property
 	def Spplr(self):
@@ -125,12 +125,12 @@ class InvoiceRequestInformation1(base_types._BaseFieldType):
 
 	@Spplr.setter
 	def Spplr(self, value):
-		self._Spplr = value if type(value) != base_types.auto else self.make_default("Spplr")
+		self._Spplr = value if value is not None else base_types.UninitialisedField(self, 'Spplr', PartyAndAccountIdentificationAndContactInformation1, False)
 
 	@Spplr.deleter
 	def Spplr(self):
 		del self._Spplr
-		self._Spplr = None
+		self._Spplr = base_types.UninitialisedField(self, 'Spplr', PartyAndAccountIdentificationAndContactInformation1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Buyr', type=PartyIdentificationAndContactInformation1, min=1, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ClearingPartyAndTime23 import ClearingPartyAndTime23
-from ._NoReasonCode import NoReasonCode
+from . import ClearingPartyAndTime23
+from . import NoReasonCode
 
 class ClearingPartyAndTime22Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ClearingPartyAndTime22Choice(base_types._BaseFieldType):
 
 	@Dtls.setter
 	def Dtls(self, value):
-		self._Dtls = value if type(value) != base_types.auto else self.make_default("Dtls")
+		self._Dtls = value if value is not None else base_types.UninitialisedField(self, 'Dtls', ClearingPartyAndTime23, False)
 
 	@Dtls.deleter
 	def Dtls(self):
 		del self._Dtls
-		self._Dtls = None
+		self._Dtls = base_types.UninitialisedField(self, 'Dtls', ClearingPartyAndTime23, False)
 
 	@property
 	def Rsn(self):
@@ -27,12 +27,12 @@ class ClearingPartyAndTime22Choice(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', NoReasonCode, False)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', NoReasonCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dtls', type=ClearingPartyAndTime23, min=0, max=1, mutex_group=1, array=False),

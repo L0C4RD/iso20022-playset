@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountIdentification26 import AccountIdentification26
-from ._EffectiveDate1 import EffectiveDate1
-from ._MarketIdentificationOrCashPurpose1Choice import MarketIdentificationOrCashPurpose1Choice
-from ._Max35Text import Max35Text
-from ._PartyOrCurrency1Choice import PartyOrCurrency1Choice
-from ._SupplementaryData1 import SupplementaryData1
+from . import AccountIdentification26
+from . import EffectiveDate1
+from . import MarketIdentificationOrCashPurpose1Choice
+from . import Max35Text
+from . import PartyOrCurrency1Choice
+from . import SupplementaryData1
 
 class StandingSettlementInstructionDeletionV01(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class StandingSettlementInstructionDeletionV01(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', AccountIdentification26, True)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', AccountIdentification26, True)
 
 	@property
 	def FctvDtDtls(self):
@@ -31,12 +31,12 @@ class StandingSettlementInstructionDeletionV01(base_types._BaseFieldType):
 
 	@FctvDtDtls.setter
 	def FctvDtDtls(self, value):
-		self._FctvDtDtls = value if type(value) != base_types.auto else self.make_default("FctvDtDtls")
+		self._FctvDtDtls = value if value is not None else base_types.UninitialisedField(self, 'FctvDtDtls', EffectiveDate1, False)
 
 	@FctvDtDtls.deleter
 	def FctvDtDtls(self):
 		del self._FctvDtDtls
-		self._FctvDtDtls = None
+		self._FctvDtDtls = base_types.UninitialisedField(self, 'FctvDtDtls', EffectiveDate1, False)
 
 	@property
 	def MktId(self):
@@ -44,12 +44,12 @@ class StandingSettlementInstructionDeletionV01(base_types._BaseFieldType):
 
 	@MktId.setter
 	def MktId(self, value):
-		self._MktId = value if type(value) != base_types.auto else self.make_default("MktId")
+		self._MktId = value if value is not None else base_types.UninitialisedField(self, 'MktId', MarketIdentificationOrCashPurpose1Choice, False)
 
 	@MktId.deleter
 	def MktId(self):
 		del self._MktId
-		self._MktId = None
+		self._MktId = base_types.UninitialisedField(self, 'MktId', MarketIdentificationOrCashPurpose1Choice, False)
 
 	@property
 	def MsgRefId(self):
@@ -57,12 +57,12 @@ class StandingSettlementInstructionDeletionV01(base_types._BaseFieldType):
 
 	@MsgRefId.setter
 	def MsgRefId(self, value):
-		self._MsgRefId = value if type(value) != base_types.auto else self.make_default("MsgRefId")
+		self._MsgRefId = value if value is not None else base_types.UninitialisedField(self, 'MsgRefId', Max35Text, False)
 
 	@MsgRefId.deleter
 	def MsgRefId(self):
 		del self._MsgRefId
-		self._MsgRefId = None
+		self._MsgRefId = base_types.UninitialisedField(self, 'MsgRefId', Max35Text, False)
 
 	@property
 	def SplmtryData(self):
@@ -70,12 +70,12 @@ class StandingSettlementInstructionDeletionV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def SttlmDtls(self):
@@ -83,12 +83,12 @@ class StandingSettlementInstructionDeletionV01(base_types._BaseFieldType):
 
 	@SttlmDtls.setter
 	def SttlmDtls(self, value):
-		self._SttlmDtls = value if type(value) != base_types.auto else self.make_default("SttlmDtls")
+		self._SttlmDtls = value if value is not None else base_types.UninitialisedField(self, 'SttlmDtls', PartyOrCurrency1Choice, False)
 
 	@SttlmDtls.deleter
 	def SttlmDtls(self):
 		del self._SttlmDtls
-		self._SttlmDtls = None
+		self._SttlmDtls = base_types.UninitialisedField(self, 'SttlmDtls', PartyOrCurrency1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=AccountIdentification26, min=1, max=None, mutex_group=None, array=True),

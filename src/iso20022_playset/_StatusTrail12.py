@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._MatchingStatus25Choice import MatchingStatus25Choice
-from ._Max35Text import Max35Text
-from ._ModificationProcessingStatus10Choice import ModificationProcessingStatus10Choice
-from ._OrganisationIdentification31 import OrganisationIdentification31
-from ._ProcessingStatus86Choice import ProcessingStatus86Choice
-from ._ProcessingStatus87Choice import ProcessingStatus87Choice
-from ._ProprietaryReason4 import ProprietaryReason4
-from ._SettlementStatus32Choice import SettlementStatus32Choice
-from ._SupplementaryData1 import SupplementaryData1
+from . import ISODateTime
+from . import MatchingStatus25Choice
+from . import Max35Text
+from . import ModificationProcessingStatus10Choice
+from . import OrganisationIdentification31
+from . import ProcessingStatus86Choice
+from . import ProcessingStatus87Choice
+from . import ProprietaryReason4
+from . import SettlementStatus32Choice
+from . import SupplementaryData1
 
 class StatusTrail12(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class StatusTrail12(base_types._BaseFieldType):
 
 	@CxlSts.setter
 	def CxlSts(self, value):
-		self._CxlSts = value if type(value) != base_types.auto else self.make_default("CxlSts")
+		self._CxlSts = value if value is not None else base_types.UninitialisedField(self, 'CxlSts', ProcessingStatus86Choice, False)
 
 	@CxlSts.deleter
 	def CxlSts(self):
 		del self._CxlSts
-		self._CxlSts = None
+		self._CxlSts = base_types.UninitialisedField(self, 'CxlSts', ProcessingStatus86Choice, False)
 
 	@property
 	def IfrrdMtchgSts(self):
@@ -35,12 +35,12 @@ class StatusTrail12(base_types._BaseFieldType):
 
 	@IfrrdMtchgSts.setter
 	def IfrrdMtchgSts(self, value):
-		self._IfrrdMtchgSts = value if type(value) != base_types.auto else self.make_default("IfrrdMtchgSts")
+		self._IfrrdMtchgSts = value if value is not None else base_types.UninitialisedField(self, 'IfrrdMtchgSts', MatchingStatus25Choice, False)
 
 	@IfrrdMtchgSts.deleter
 	def IfrrdMtchgSts(self):
 		del self._IfrrdMtchgSts
-		self._IfrrdMtchgSts = None
+		self._IfrrdMtchgSts = base_types.UninitialisedField(self, 'IfrrdMtchgSts', MatchingStatus25Choice, False)
 
 	@property
 	def ModPrcgSts(self):
@@ -48,12 +48,12 @@ class StatusTrail12(base_types._BaseFieldType):
 
 	@ModPrcgSts.setter
 	def ModPrcgSts(self, value):
-		self._ModPrcgSts = value if type(value) != base_types.auto else self.make_default("ModPrcgSts")
+		self._ModPrcgSts = value if value is not None else base_types.UninitialisedField(self, 'ModPrcgSts', ModificationProcessingStatus10Choice, False)
 
 	@ModPrcgSts.deleter
 	def ModPrcgSts(self):
 		del self._ModPrcgSts
-		self._ModPrcgSts = None
+		self._ModPrcgSts = base_types.UninitialisedField(self, 'ModPrcgSts', ModificationProcessingStatus10Choice, False)
 
 	@property
 	def MtchgSts(self):
@@ -61,12 +61,12 @@ class StatusTrail12(base_types._BaseFieldType):
 
 	@MtchgSts.setter
 	def MtchgSts(self, value):
-		self._MtchgSts = value if type(value) != base_types.auto else self.make_default("MtchgSts")
+		self._MtchgSts = value if value is not None else base_types.UninitialisedField(self, 'MtchgSts', MatchingStatus25Choice, False)
 
 	@MtchgSts.deleter
 	def MtchgSts(self):
 		del self._MtchgSts
-		self._MtchgSts = None
+		self._MtchgSts = base_types.UninitialisedField(self, 'MtchgSts', MatchingStatus25Choice, False)
 
 	@property
 	def PrcgSts(self):
@@ -74,12 +74,12 @@ class StatusTrail12(base_types._BaseFieldType):
 
 	@PrcgSts.setter
 	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != base_types.auto else self.make_default("PrcgSts")
+		self._PrcgSts = value if value is not None else base_types.UninitialisedField(self, 'PrcgSts', ProcessingStatus87Choice, False)
 
 	@PrcgSts.deleter
 	def PrcgSts(self):
 		del self._PrcgSts
-		self._PrcgSts = None
+		self._PrcgSts = base_types.UninitialisedField(self, 'PrcgSts', ProcessingStatus87Choice, False)
 
 	@property
 	def SndgOrgId(self):
@@ -87,12 +87,12 @@ class StatusTrail12(base_types._BaseFieldType):
 
 	@SndgOrgId.setter
 	def SndgOrgId(self, value):
-		self._SndgOrgId = value if type(value) != base_types.auto else self.make_default("SndgOrgId")
+		self._SndgOrgId = value if value is not None else base_types.UninitialisedField(self, 'SndgOrgId', OrganisationIdentification31, False)
 
 	@SndgOrgId.deleter
 	def SndgOrgId(self):
 		del self._SndgOrgId
-		self._SndgOrgId = None
+		self._SndgOrgId = base_types.UninitialisedField(self, 'SndgOrgId', OrganisationIdentification31, False)
 
 	@property
 	def SplmtryData(self):
@@ -100,12 +100,12 @@ class StatusTrail12(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def StsDt(self):
@@ -113,12 +113,12 @@ class StatusTrail12(base_types._BaseFieldType):
 
 	@StsDt.setter
 	def StsDt(self, value):
-		self._StsDt = value if type(value) != base_types.auto else self.make_default("StsDt")
+		self._StsDt = value if value is not None else base_types.UninitialisedField(self, 'StsDt', ISODateTime, False)
 
 	@StsDt.deleter
 	def StsDt(self):
 		del self._StsDt
-		self._StsDt = None
+		self._StsDt = base_types.UninitialisedField(self, 'StsDt', ISODateTime, False)
 
 	@property
 	def Sttld(self):
@@ -126,12 +126,12 @@ class StatusTrail12(base_types._BaseFieldType):
 
 	@Sttld.setter
 	def Sttld(self, value):
-		self._Sttld = value if type(value) != base_types.auto else self.make_default("Sttld")
+		self._Sttld = value if value is not None else base_types.UninitialisedField(self, 'Sttld', ProprietaryReason4, False)
 
 	@Sttld.deleter
 	def Sttld(self):
 		del self._Sttld
-		self._Sttld = None
+		self._Sttld = base_types.UninitialisedField(self, 'Sttld', ProprietaryReason4, False)
 
 	@property
 	def SttlmSts(self):
@@ -139,12 +139,12 @@ class StatusTrail12(base_types._BaseFieldType):
 
 	@SttlmSts.setter
 	def SttlmSts(self, value):
-		self._SttlmSts = value if type(value) != base_types.auto else self.make_default("SttlmSts")
+		self._SttlmSts = value if value is not None else base_types.UninitialisedField(self, 'SttlmSts', SettlementStatus32Choice, False)
 
 	@SttlmSts.deleter
 	def SttlmSts(self):
 		del self._SttlmSts
-		self._SttlmSts = None
+		self._SttlmSts = base_types.UninitialisedField(self, 'SttlmSts', SettlementStatus32Choice, False)
 
 	@property
 	def UsrId(self):
@@ -152,12 +152,12 @@ class StatusTrail12(base_types._BaseFieldType):
 
 	@UsrId.setter
 	def UsrId(self, value):
-		self._UsrId = value if type(value) != base_types.auto else self.make_default("UsrId")
+		self._UsrId = value if value is not None else base_types.UninitialisedField(self, 'UsrId', Max35Text, False)
 
 	@UsrId.deleter
 	def UsrId(self):
 		del self._UsrId
-		self._UsrId = None
+		self._UsrId = base_types.UninitialisedField(self, 'UsrId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CxlSts', type=ProcessingStatus86Choice, min=0, max=1, mutex_group=None, array=False),

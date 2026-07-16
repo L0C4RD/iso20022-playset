@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CancellationIndividualStatus1Code import CancellationIndividualStatus1Code
-from ._DecimalNumber import DecimalNumber
-from ._Max15NumericText import Max15NumericText
+from . import CancellationIndividualStatus1Code
+from . import DecimalNumber
+from . import Max15NumericText
 
 class NumberOfCancellationsPerStatus1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class NumberOfCancellationsPerStatus1(base_types._BaseFieldType):
 
 	@DtldCtrlSum.setter
 	def DtldCtrlSum(self, value):
-		self._DtldCtrlSum = value if type(value) != base_types.auto else self.make_default("DtldCtrlSum")
+		self._DtldCtrlSum = value if value is not None else base_types.UninitialisedField(self, 'DtldCtrlSum', DecimalNumber, False)
 
 	@DtldCtrlSum.deleter
 	def DtldCtrlSum(self):
 		del self._DtldCtrlSum
-		self._DtldCtrlSum = None
+		self._DtldCtrlSum = base_types.UninitialisedField(self, 'DtldCtrlSum', DecimalNumber, False)
 
 	@property
 	def DtldNbOfTxs(self):
@@ -28,12 +28,12 @@ class NumberOfCancellationsPerStatus1(base_types._BaseFieldType):
 
 	@DtldNbOfTxs.setter
 	def DtldNbOfTxs(self, value):
-		self._DtldNbOfTxs = value if type(value) != base_types.auto else self.make_default("DtldNbOfTxs")
+		self._DtldNbOfTxs = value if value is not None else base_types.UninitialisedField(self, 'DtldNbOfTxs', Max15NumericText, False)
 
 	@DtldNbOfTxs.deleter
 	def DtldNbOfTxs(self):
 		del self._DtldNbOfTxs
-		self._DtldNbOfTxs = None
+		self._DtldNbOfTxs = base_types.UninitialisedField(self, 'DtldNbOfTxs', Max15NumericText, False)
 
 	@property
 	def DtldSts(self):
@@ -41,12 +41,12 @@ class NumberOfCancellationsPerStatus1(base_types._BaseFieldType):
 
 	@DtldSts.setter
 	def DtldSts(self, value):
-		self._DtldSts = value if type(value) != base_types.auto else self.make_default("DtldSts")
+		self._DtldSts = value if value is not None else base_types.UninitialisedField(self, 'DtldSts', CancellationIndividualStatus1Code, False)
 
 	@DtldSts.deleter
 	def DtldSts(self):
 		del self._DtldSts
-		self._DtldSts = None
+		self._DtldSts = base_types.UninitialisedField(self, 'DtldSts', CancellationIndividualStatus1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DtldCtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),

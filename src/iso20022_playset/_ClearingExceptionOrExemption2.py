@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NonClearingReason2 import NonClearingReason2
+from . import NonClearingReason2
 
 class ClearingExceptionOrExemption2(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class ClearingExceptionOrExemption2(base_types._BaseFieldType):
 
 	@OthrCtrPty.setter
 	def OthrCtrPty(self, value):
-		self._OthrCtrPty = value if type(value) != base_types.auto else self.make_default("OthrCtrPty")
+		self._OthrCtrPty = value if value is not None else base_types.UninitialisedField(self, 'OthrCtrPty', NonClearingReason2, False)
 
 	@OthrCtrPty.deleter
 	def OthrCtrPty(self):
 		del self._OthrCtrPty
-		self._OthrCtrPty = None
+		self._OthrCtrPty = base_types.UninitialisedField(self, 'OthrCtrPty', NonClearingReason2, False)
 
 	@property
 	def RptgCtrPty(self):
@@ -26,12 +26,12 @@ class ClearingExceptionOrExemption2(base_types._BaseFieldType):
 
 	@RptgCtrPty.setter
 	def RptgCtrPty(self, value):
-		self._RptgCtrPty = value if type(value) != base_types.auto else self.make_default("RptgCtrPty")
+		self._RptgCtrPty = value if value is not None else base_types.UninitialisedField(self, 'RptgCtrPty', NonClearingReason2, False)
 
 	@RptgCtrPty.deleter
 	def RptgCtrPty(self):
 		del self._RptgCtrPty
-		self._RptgCtrPty = None
+		self._RptgCtrPty = base_types.UninitialisedField(self, 'RptgCtrPty', NonClearingReason2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OthrCtrPty', type=NonClearingReason2, min=0, max=1, mutex_group=None, array=False),

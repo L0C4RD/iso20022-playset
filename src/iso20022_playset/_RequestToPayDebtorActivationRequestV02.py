@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActivationHeader3 import ActivationHeader3
-from ._DebtorActivation5 import DebtorActivation5
-from ._ElectronicInvoice1 import ElectronicInvoice1
-from ._SupplementaryData1 import SupplementaryData1
+from . import ActivationHeader3
+from . import DebtorActivation5
+from . import ElectronicInvoice1
+from . import SupplementaryData1
 
 class RequestToPayDebtorActivationRequestV02(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class RequestToPayDebtorActivationRequestV02(base_types._BaseFieldType):
 
 	@DbtrActvtn.setter
 	def DbtrActvtn(self, value):
-		self._DbtrActvtn = value if type(value) != base_types.auto else self.make_default("DbtrActvtn")
+		self._DbtrActvtn = value if value is not None else base_types.UninitialisedField(self, 'DbtrActvtn', DebtorActivation5, True)
 
 	@DbtrActvtn.deleter
 	def DbtrActvtn(self):
 		del self._DbtrActvtn
-		self._DbtrActvtn = None
+		self._DbtrActvtn = base_types.UninitialisedField(self, 'DbtrActvtn', DebtorActivation5, True)
 
 	@property
 	def ElctrncInvcData(self):
@@ -29,12 +29,12 @@ class RequestToPayDebtorActivationRequestV02(base_types._BaseFieldType):
 
 	@ElctrncInvcData.setter
 	def ElctrncInvcData(self, value):
-		self._ElctrncInvcData = value if type(value) != base_types.auto else self.make_default("ElctrncInvcData")
+		self._ElctrncInvcData = value if value is not None else base_types.UninitialisedField(self, 'ElctrncInvcData', ElectronicInvoice1, False)
 
 	@ElctrncInvcData.deleter
 	def ElctrncInvcData(self):
 		del self._ElctrncInvcData
-		self._ElctrncInvcData = None
+		self._ElctrncInvcData = base_types.UninitialisedField(self, 'ElctrncInvcData', ElectronicInvoice1, False)
 
 	@property
 	def Hdr(self):
@@ -42,12 +42,12 @@ class RequestToPayDebtorActivationRequestV02(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', ActivationHeader3, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', ActivationHeader3, False)
 
 	@property
 	def SplmtryData(self):
@@ -55,12 +55,12 @@ class RequestToPayDebtorActivationRequestV02(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DbtrActvtn', type=DebtorActivation5, min=1, max=None, mutex_group=None, array=True),

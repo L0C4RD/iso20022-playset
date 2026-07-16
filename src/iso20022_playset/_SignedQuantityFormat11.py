@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Quantity48Choice import Quantity48Choice
-from ._ShortLong1Code import ShortLong1Code
+from . import Quantity48Choice
+from . import ShortLong1Code
 
 class SignedQuantityFormat11(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SignedQuantityFormat11(base_types._BaseFieldType):
 
 	@QtyChc.setter
 	def QtyChc(self, value):
-		self._QtyChc = value if type(value) != base_types.auto else self.make_default("QtyChc")
+		self._QtyChc = value if value is not None else base_types.UninitialisedField(self, 'QtyChc', Quantity48Choice, False)
 
 	@QtyChc.deleter
 	def QtyChc(self):
 		del self._QtyChc
-		self._QtyChc = None
+		self._QtyChc = base_types.UninitialisedField(self, 'QtyChc', Quantity48Choice, False)
 
 	@property
 	def ShrtLngPos(self):
@@ -27,12 +27,12 @@ class SignedQuantityFormat11(base_types._BaseFieldType):
 
 	@ShrtLngPos.setter
 	def ShrtLngPos(self, value):
-		self._ShrtLngPos = value if type(value) != base_types.auto else self.make_default("ShrtLngPos")
+		self._ShrtLngPos = value if value is not None else base_types.UninitialisedField(self, 'ShrtLngPos', ShortLong1Code, False)
 
 	@ShrtLngPos.deleter
 	def ShrtLngPos(self):
 		del self._ShrtLngPos
-		self._ShrtLngPos = None
+		self._ShrtLngPos = base_types.UninitialisedField(self, 'ShrtLngPos', ShortLong1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='QtyChc', type=Quantity48Choice, min=1, max=1, mutex_group=None, array=False),

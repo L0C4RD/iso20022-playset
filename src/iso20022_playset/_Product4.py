@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max70Text import Max70Text
+from . import Max70Text
 
 class Product4(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class Product4(base_types._BaseFieldType):
 
 	@AddtlPdctCd.setter
 	def AddtlPdctCd(self, value):
-		self._AddtlPdctCd = value if type(value) != base_types.auto else self.make_default("AddtlPdctCd")
+		self._AddtlPdctCd = value if value is not None else base_types.UninitialisedField(self, 'AddtlPdctCd', Max70Text, False)
 
 	@AddtlPdctCd.deleter
 	def AddtlPdctCd(self):
 		del self._AddtlPdctCd
-		self._AddtlPdctCd = None
+		self._AddtlPdctCd = base_types.UninitialisedField(self, 'AddtlPdctCd', Max70Text, False)
 
 	@property
 	def PdctCd(self):
@@ -26,12 +26,12 @@ class Product4(base_types._BaseFieldType):
 
 	@PdctCd.setter
 	def PdctCd(self, value):
-		self._PdctCd = value if type(value) != base_types.auto else self.make_default("PdctCd")
+		self._PdctCd = value if value is not None else base_types.UninitialisedField(self, 'PdctCd', Max70Text, False)
 
 	@PdctCd.deleter
 	def PdctCd(self):
 		del self._PdctCd
-		self._PdctCd = None
+		self._PdctCd = base_types.UninitialisedField(self, 'PdctCd', Max70Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlPdctCd', type=Max70Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Adjustment13 import Adjustment13
-from ._LoyaltyProgramme4 import LoyaltyProgramme4
-from ._Max35Text import Max35Text
-from ._SaleItem4 import SaleItem4
+from . import Adjustment13
+from . import LoyaltyProgramme4
+from . import Max35Text
+from . import SaleItem4
 
 class Sale3(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class Sale3(base_types._BaseFieldType):
 
 	@Adjstmnt.setter
 	def Adjstmnt(self, value):
-		self._Adjstmnt = value if type(value) != base_types.auto else self.make_default("Adjstmnt")
+		self._Adjstmnt = value if value is not None else base_types.UninitialisedField(self, 'Adjstmnt', Adjustment13, True)
 
 	@Adjstmnt.deleter
 	def Adjstmnt(self):
 		del self._Adjstmnt
-		self._Adjstmnt = None
+		self._Adjstmnt = base_types.UninitialisedField(self, 'Adjstmnt', Adjustment13, True)
 
 	@property
 	def LineItm(self):
@@ -29,12 +29,12 @@ class Sale3(base_types._BaseFieldType):
 
 	@LineItm.setter
 	def LineItm(self, value):
-		self._LineItm = value if type(value) != base_types.auto else self.make_default("LineItm")
+		self._LineItm = value if value is not None else base_types.UninitialisedField(self, 'LineItm', SaleItem4, True)
 
 	@LineItm.deleter
 	def LineItm(self):
 		del self._LineItm
-		self._LineItm = None
+		self._LineItm = base_types.UninitialisedField(self, 'LineItm', SaleItem4, True)
 
 	@property
 	def LltyPrgrmm(self):
@@ -42,12 +42,12 @@ class Sale3(base_types._BaseFieldType):
 
 	@LltyPrgrmm.setter
 	def LltyPrgrmm(self, value):
-		self._LltyPrgrmm = value if type(value) != base_types.auto else self.make_default("LltyPrgrmm")
+		self._LltyPrgrmm = value if value is not None else base_types.UninitialisedField(self, 'LltyPrgrmm', LoyaltyProgramme4, False)
 
 	@LltyPrgrmm.deleter
 	def LltyPrgrmm(self):
 		del self._LltyPrgrmm
-		self._LltyPrgrmm = None
+		self._LltyPrgrmm = base_types.UninitialisedField(self, 'LltyPrgrmm', LoyaltyProgramme4, False)
 
 	@property
 	def SummryCmmdtyId(self):
@@ -55,12 +55,12 @@ class Sale3(base_types._BaseFieldType):
 
 	@SummryCmmdtyId.setter
 	def SummryCmmdtyId(self, value):
-		self._SummryCmmdtyId = value if type(value) != base_types.auto else self.make_default("SummryCmmdtyId")
+		self._SummryCmmdtyId = value if value is not None else base_types.UninitialisedField(self, 'SummryCmmdtyId', Max35Text, False)
 
 	@SummryCmmdtyId.deleter
 	def SummryCmmdtyId(self):
 		del self._SummryCmmdtyId
-		self._SummryCmmdtyId = None
+		self._SummryCmmdtyId = base_types.UninitialisedField(self, 'SummryCmmdtyId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Adjstmnt', type=Adjustment13, min=0, max=None, mutex_group=None, array=True),

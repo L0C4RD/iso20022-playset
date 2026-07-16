@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActivityDetails1 import ActivityDetails1
-from ._BICIdentification1 import BICIdentification1
-from ._DocumentIdentification5 import DocumentIdentification5
-from ._Max35Text import Max35Text
-from ._PendingActivity2 import PendingActivity2
+from . import ActivityDetails1
+from . import BICIdentification1
+from . import DocumentIdentification5
+from . import Max35Text
+from . import PendingActivity2
 
 class ActivityReportItems3(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class ActivityReportItems3(base_types._BaseFieldType):
 
 	@PdgReqForActn.setter
 	def PdgReqForActn(self, value):
-		self._PdgReqForActn = value if type(value) != base_types.auto else self.make_default("PdgReqForActn")
+		self._PdgReqForActn = value if value is not None else base_types.UninitialisedField(self, 'PdgReqForActn', PendingActivity2, True)
 
 	@PdgReqForActn.deleter
 	def PdgReqForActn(self):
 		del self._PdgReqForActn
-		self._PdgReqForActn = None
+		self._PdgReqForActn = base_types.UninitialisedField(self, 'PdgReqForActn', PendingActivity2, True)
 
 	@property
 	def RptdItm(self):
@@ -30,12 +30,12 @@ class ActivityReportItems3(base_types._BaseFieldType):
 
 	@RptdItm.setter
 	def RptdItm(self, value):
-		self._RptdItm = value if type(value) != base_types.auto else self.make_default("RptdItm")
+		self._RptdItm = value if value is not None else base_types.UninitialisedField(self, 'RptdItm', ActivityDetails1, True)
 
 	@RptdItm.deleter
 	def RptdItm(self):
 		del self._RptdItm
-		self._RptdItm = None
+		self._RptdItm = base_types.UninitialisedField(self, 'RptdItm', ActivityDetails1, True)
 
 	@property
 	def RptdNtty(self):
@@ -43,12 +43,12 @@ class ActivityReportItems3(base_types._BaseFieldType):
 
 	@RptdNtty.setter
 	def RptdNtty(self, value):
-		self._RptdNtty = value if type(value) != base_types.auto else self.make_default("RptdNtty")
+		self._RptdNtty = value if value is not None else base_types.UninitialisedField(self, 'RptdNtty', BICIdentification1, True)
 
 	@RptdNtty.deleter
 	def RptdNtty(self):
 		del self._RptdNtty
-		self._RptdNtty = None
+		self._RptdNtty = base_types.UninitialisedField(self, 'RptdNtty', BICIdentification1, True)
 
 	@property
 	def TxId(self):
@@ -56,12 +56,12 @@ class ActivityReportItems3(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	@property
 	def UsrTxRef(self):
@@ -69,12 +69,12 @@ class ActivityReportItems3(base_types._BaseFieldType):
 
 	@UsrTxRef.setter
 	def UsrTxRef(self, value):
-		self._UsrTxRef = value if type(value) != base_types.auto else self.make_default("UsrTxRef")
+		self._UsrTxRef = value if value is not None else base_types.UninitialisedField(self, 'UsrTxRef', DocumentIdentification5, True)
 
 	@UsrTxRef.deleter
 	def UsrTxRef(self):
 		del self._UsrTxRef
-		self._UsrTxRef = None
+		self._UsrTxRef = base_types.UninitialisedField(self, 'UsrTxRef', DocumentIdentification5, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PdgReqForActn', type=PendingActivity2, min=0, max=None, mutex_group=None, array=True),

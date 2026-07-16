@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountIdentification4Choice import AccountIdentification4Choice
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._PartyIdentificationAndAccount31 import PartyIdentificationAndAccount31
+from . import AccountIdentification4Choice
+from . import ActiveCurrencyAndAmount
+from . import PartyIdentificationAndAccount31
 
 class Contribution1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Contribution1(base_types._BaseFieldType):
 
 	@Acct.setter
 	def Acct(self, value):
-		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
+		self._Acct = value if value is not None else base_types.UninitialisedField(self, 'Acct', AccountIdentification4Choice, False)
 
 	@Acct.deleter
 	def Acct(self):
 		del self._Acct
-		self._Acct = None
+		self._Acct = base_types.UninitialisedField(self, 'Acct', AccountIdentification4Choice, False)
 
 	@property
 	def IncrCvrgAmt(self):
@@ -28,12 +28,12 @@ class Contribution1(base_types._BaseFieldType):
 
 	@IncrCvrgAmt.setter
 	def IncrCvrgAmt(self, value):
-		self._IncrCvrgAmt = value if type(value) != base_types.auto else self.make_default("IncrCvrgAmt")
+		self._IncrCvrgAmt = value if value is not None else base_types.UninitialisedField(self, 'IncrCvrgAmt', ActiveCurrencyAndAmount, False)
 
 	@IncrCvrgAmt.deleter
 	def IncrCvrgAmt(self):
 		del self._IncrCvrgAmt
-		self._IncrCvrgAmt = None
+		self._IncrCvrgAmt = base_types.UninitialisedField(self, 'IncrCvrgAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def NonClrMmb(self):
@@ -41,12 +41,12 @@ class Contribution1(base_types._BaseFieldType):
 
 	@NonClrMmb.setter
 	def NonClrMmb(self, value):
-		self._NonClrMmb = value if type(value) != base_types.auto else self.make_default("NonClrMmb")
+		self._NonClrMmb = value if value is not None else base_types.UninitialisedField(self, 'NonClrMmb', PartyIdentificationAndAccount31, False)
 
 	@NonClrMmb.deleter
 	def NonClrMmb(self):
 		del self._NonClrMmb
-		self._NonClrMmb = None
+		self._NonClrMmb = base_types.UninitialisedField(self, 'NonClrMmb', PartyIdentificationAndAccount31, False)
 
 	@property
 	def ReqrdAmt(self):
@@ -54,12 +54,12 @@ class Contribution1(base_types._BaseFieldType):
 
 	@ReqrdAmt.setter
 	def ReqrdAmt(self, value):
-		self._ReqrdAmt = value if type(value) != base_types.auto else self.make_default("ReqrdAmt")
+		self._ReqrdAmt = value if value is not None else base_types.UninitialisedField(self, 'ReqrdAmt', ActiveCurrencyAndAmount, False)
 
 	@ReqrdAmt.deleter
 	def ReqrdAmt(self):
 		del self._ReqrdAmt
-		self._ReqrdAmt = None
+		self._ReqrdAmt = base_types.UninitialisedField(self, 'ReqrdAmt', ActiveCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acct', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),

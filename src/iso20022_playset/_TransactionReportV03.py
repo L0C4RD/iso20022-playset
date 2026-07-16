@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MessageIdentification1 import MessageIdentification1
-from ._TransactionReportItems3 import TransactionReportItems3
+from . import MessageIdentification1
+from . import TransactionReportItems3
 
 class TransactionReportV03(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TransactionReportV03(base_types._BaseFieldType):
 
 	@RltdMsgRef.setter
 	def RltdMsgRef(self, value):
-		self._RltdMsgRef = value if type(value) != base_types.auto else self.make_default("RltdMsgRef")
+		self._RltdMsgRef = value if value is not None else base_types.UninitialisedField(self, 'RltdMsgRef', MessageIdentification1, False)
 
 	@RltdMsgRef.deleter
 	def RltdMsgRef(self):
 		del self._RltdMsgRef
-		self._RltdMsgRef = None
+		self._RltdMsgRef = base_types.UninitialisedField(self, 'RltdMsgRef', MessageIdentification1, False)
 
 	@property
 	def RptId(self):
@@ -27,12 +27,12 @@ class TransactionReportV03(base_types._BaseFieldType):
 
 	@RptId.setter
 	def RptId(self, value):
-		self._RptId = value if type(value) != base_types.auto else self.make_default("RptId")
+		self._RptId = value if value is not None else base_types.UninitialisedField(self, 'RptId', MessageIdentification1, False)
 
 	@RptId.deleter
 	def RptId(self):
 		del self._RptId
-		self._RptId = None
+		self._RptId = base_types.UninitialisedField(self, 'RptId', MessageIdentification1, False)
 
 	@property
 	def RptdItms(self):
@@ -40,12 +40,12 @@ class TransactionReportV03(base_types._BaseFieldType):
 
 	@RptdItms.setter
 	def RptdItms(self, value):
-		self._RptdItms = value if type(value) != base_types.auto else self.make_default("RptdItms")
+		self._RptdItms = value if value is not None else base_types.UninitialisedField(self, 'RptdItms', TransactionReportItems3, True)
 
 	@RptdItms.deleter
 	def RptdItms(self):
 		del self._RptdItms
-		self._RptdItms = None
+		self._RptdItms = base_types.UninitialisedField(self, 'RptdItms', TransactionReportItems3, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RltdMsgRef', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),

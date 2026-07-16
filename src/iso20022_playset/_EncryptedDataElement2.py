@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._EncryptedData2Choice import EncryptedData2Choice
-from ._EncryptedDataFormat1Code import EncryptedDataFormat1Code
-from ._Max35Text import Max35Text
+from . import EncryptedData2Choice
+from . import EncryptedDataFormat1Code
+from . import Max35Text
 
 class EncryptedDataElement2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class EncryptedDataElement2(base_types._BaseFieldType):
 
 	@ClearTxtFrmt.setter
 	def ClearTxtFrmt(self, value):
-		self._ClearTxtFrmt = value if type(value) != base_types.auto else self.make_default("ClearTxtFrmt")
+		self._ClearTxtFrmt = value if value is not None else base_types.UninitialisedField(self, 'ClearTxtFrmt', EncryptedDataFormat1Code, False)
 
 	@ClearTxtFrmt.deleter
 	def ClearTxtFrmt(self):
 		del self._ClearTxtFrmt
-		self._ClearTxtFrmt = None
+		self._ClearTxtFrmt = base_types.UninitialisedField(self, 'ClearTxtFrmt', EncryptedDataFormat1Code, False)
 
 	@property
 	def Data(self):
@@ -28,12 +28,12 @@ class EncryptedDataElement2(base_types._BaseFieldType):
 
 	@Data.setter
 	def Data(self, value):
-		self._Data = value if type(value) != base_types.auto else self.make_default("Data")
+		self._Data = value if value is not None else base_types.UninitialisedField(self, 'Data', EncryptedData2Choice, False)
 
 	@Data.deleter
 	def Data(self):
 		del self._Data
-		self._Data = None
+		self._Data = base_types.UninitialisedField(self, 'Data', EncryptedData2Choice, False)
 
 	@property
 	def Id(self):
@@ -41,12 +41,12 @@ class EncryptedDataElement2(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def OthrClearTxtFrmt(self):
@@ -54,12 +54,12 @@ class EncryptedDataElement2(base_types._BaseFieldType):
 
 	@OthrClearTxtFrmt.setter
 	def OthrClearTxtFrmt(self, value):
-		self._OthrClearTxtFrmt = value if type(value) != base_types.auto else self.make_default("OthrClearTxtFrmt")
+		self._OthrClearTxtFrmt = value if value is not None else base_types.UninitialisedField(self, 'OthrClearTxtFrmt', Max35Text, False)
 
 	@OthrClearTxtFrmt.deleter
 	def OthrClearTxtFrmt(self):
 		del self._OthrClearTxtFrmt
-		self._OthrClearTxtFrmt = None
+		self._OthrClearTxtFrmt = base_types.UninitialisedField(self, 'OthrClearTxtFrmt', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClearTxtFrmt', type=EncryptedDataFormat1Code, min=0, max=1, mutex_group=None, array=False),

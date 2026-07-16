@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._GenericIdentification165 import GenericIdentification165
-from ._ISODateTime import ISODateTime
+from . import ActiveCurrencyAndAmount
+from . import GenericIdentification165
+from . import ISODateTime
 
 class IntraDayMarginCall1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class IntraDayMarginCall1(base_types._BaseFieldType):
 
 	@IntraDayCall.setter
 	def IntraDayCall(self, value):
-		self._IntraDayCall = value if type(value) != base_types.auto else self.make_default("IntraDayCall")
+		self._IntraDayCall = value if value is not None else base_types.UninitialisedField(self, 'IntraDayCall', ActiveCurrencyAndAmount, False)
 
 	@IntraDayCall.deleter
 	def IntraDayCall(self):
 		del self._IntraDayCall
-		self._IntraDayCall = None
+		self._IntraDayCall = base_types.UninitialisedField(self, 'IntraDayCall', ActiveCurrencyAndAmount, False)
 
 	@property
 	def MrgnAcctId(self):
@@ -28,12 +28,12 @@ class IntraDayMarginCall1(base_types._BaseFieldType):
 
 	@MrgnAcctId.setter
 	def MrgnAcctId(self, value):
-		self._MrgnAcctId = value if type(value) != base_types.auto else self.make_default("MrgnAcctId")
+		self._MrgnAcctId = value if value is not None else base_types.UninitialisedField(self, 'MrgnAcctId', GenericIdentification165, False)
 
 	@MrgnAcctId.deleter
 	def MrgnAcctId(self):
 		del self._MrgnAcctId
-		self._MrgnAcctId = None
+		self._MrgnAcctId = base_types.UninitialisedField(self, 'MrgnAcctId', GenericIdentification165, False)
 
 	@property
 	def TmStmp(self):
@@ -41,12 +41,12 @@ class IntraDayMarginCall1(base_types._BaseFieldType):
 
 	@TmStmp.setter
 	def TmStmp(self, value):
-		self._TmStmp = value if type(value) != base_types.auto else self.make_default("TmStmp")
+		self._TmStmp = value if value is not None else base_types.UninitialisedField(self, 'TmStmp', ISODateTime, False)
 
 	@TmStmp.deleter
 	def TmStmp(self):
 		del self._TmStmp
-		self._TmStmp = None
+		self._TmStmp = base_types.UninitialisedField(self, 'TmStmp', ISODateTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IntraDayCall', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

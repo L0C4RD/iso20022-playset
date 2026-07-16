@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._KEK6 import KEK6
-from ._KEKIdentifier6 import KEKIdentifier6
-from ._KeyTransport6 import KeyTransport6
+from . import KEK6
+from . import KEKIdentifier6
+from . import KeyTransport6
 
 class Recipient7Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Recipient7Choice(base_types._BaseFieldType):
 
 	@KEK.setter
 	def KEK(self, value):
-		self._KEK = value if type(value) != base_types.auto else self.make_default("KEK")
+		self._KEK = value if value is not None else base_types.UninitialisedField(self, 'KEK', KEK6, False)
 
 	@KEK.deleter
 	def KEK(self):
 		del self._KEK
-		self._KEK = None
+		self._KEK = base_types.UninitialisedField(self, 'KEK', KEK6, False)
 
 	@property
 	def KeyIdr(self):
@@ -28,12 +28,12 @@ class Recipient7Choice(base_types._BaseFieldType):
 
 	@KeyIdr.setter
 	def KeyIdr(self, value):
-		self._KeyIdr = value if type(value) != base_types.auto else self.make_default("KeyIdr")
+		self._KeyIdr = value if value is not None else base_types.UninitialisedField(self, 'KeyIdr', KEKIdentifier6, False)
 
 	@KeyIdr.deleter
 	def KeyIdr(self):
 		del self._KeyIdr
-		self._KeyIdr = None
+		self._KeyIdr = base_types.UninitialisedField(self, 'KeyIdr', KEKIdentifier6, False)
 
 	@property
 	def KeyTrnsprt(self):
@@ -41,12 +41,12 @@ class Recipient7Choice(base_types._BaseFieldType):
 
 	@KeyTrnsprt.setter
 	def KeyTrnsprt(self, value):
-		self._KeyTrnsprt = value if type(value) != base_types.auto else self.make_default("KeyTrnsprt")
+		self._KeyTrnsprt = value if value is not None else base_types.UninitialisedField(self, 'KeyTrnsprt', KeyTransport6, False)
 
 	@KeyTrnsprt.deleter
 	def KeyTrnsprt(self):
 		del self._KeyTrnsprt
-		self._KeyTrnsprt = None
+		self._KeyTrnsprt = base_types.UninitialisedField(self, 'KeyTrnsprt', KeyTransport6, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='KEK', type=KEK6, min=0, max=1, mutex_group=1, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecurityMaintenanceRequestV01 import SecurityMaintenanceRequestV01
+from . import SecurityMaintenanceRequestV01
 
 class REDA_007_001_01():
 
@@ -18,12 +18,12 @@ class REDA_007_001_01():
 
 		@SctyMntncReq.setter
 		def SctyMntncReq(self, value):
-			self._SctyMntncReq = value if type(value) != base_types.auto else self.make_default("SctyMntncReq")
+			self._SctyMntncReq = value if value is not None else base_types.UninitialisedField(self, 'SctyMntncReq', SecurityMaintenanceRequestV01, False)
 
 		@SctyMntncReq.deleter
 		def SctyMntncReq(self):
 			del self._SctyMntncReq
-			self._SctyMntncReq = None
+			self._SctyMntncReq = base_types.UninitialisedField(self, 'SctyMntncReq', SecurityMaintenanceRequestV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctyMntncReq', type=SecurityMaintenanceRequestV01, min=1, max=1, mutex_group=None, array=False),

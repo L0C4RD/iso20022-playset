@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCode import CountryCode
-from ._CurrencyDesignation1Code import CurrencyDesignation1Code
-from ._Max350Text import Max350Text
+from . import CountryCode
+from . import CurrencyDesignation1Code
+from . import Max350Text
 
 class CurrencyDesignation1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CurrencyDesignation1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max350Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max350Text, False)
 
 	@property
 	def CcyDsgnt(self):
@@ -28,12 +28,12 @@ class CurrencyDesignation1(base_types._BaseFieldType):
 
 	@CcyDsgnt.setter
 	def CcyDsgnt(self, value):
-		self._CcyDsgnt = value if type(value) != base_types.auto else self.make_default("CcyDsgnt")
+		self._CcyDsgnt = value if value is not None else base_types.UninitialisedField(self, 'CcyDsgnt', CurrencyDesignation1Code, False)
 
 	@CcyDsgnt.deleter
 	def CcyDsgnt(self):
 		del self._CcyDsgnt
-		self._CcyDsgnt = None
+		self._CcyDsgnt = base_types.UninitialisedField(self, 'CcyDsgnt', CurrencyDesignation1Code, False)
 
 	@property
 	def Lctn(self):
@@ -41,12 +41,12 @@ class CurrencyDesignation1(base_types._BaseFieldType):
 
 	@Lctn.setter
 	def Lctn(self, value):
-		self._Lctn = value if type(value) != base_types.auto else self.make_default("Lctn")
+		self._Lctn = value if value is not None else base_types.UninitialisedField(self, 'Lctn', CountryCode, False)
 
 	@Lctn.deleter
 	def Lctn(self):
 		del self._Lctn
-		self._Lctn = None
+		self._Lctn = base_types.UninitialisedField(self, 'Lctn', CountryCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max350Text, min=0, max=1, mutex_group=None, array=False),

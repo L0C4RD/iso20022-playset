@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BaseOneRate import BaseOneRate
-from ._PercentageRate import PercentageRate
+from . import BaseOneRate
+from . import PercentageRate
 
 class SecuritiesTransactionPrice14Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SecuritiesTransactionPrice14Choice(base_types._BaseFieldType):
 
 	@Dcml.setter
 	def Dcml(self, value):
-		self._Dcml = value if type(value) != base_types.auto else self.make_default("Dcml")
+		self._Dcml = value if value is not None else base_types.UninitialisedField(self, 'Dcml', BaseOneRate, False)
 
 	@Dcml.deleter
 	def Dcml(self):
 		del self._Dcml
-		self._Dcml = None
+		self._Dcml = base_types.UninitialisedField(self, 'Dcml', BaseOneRate, False)
 
 	@property
 	def Rate(self):
@@ -27,12 +27,12 @@ class SecuritiesTransactionPrice14Choice(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+		self._Rate = value if value is not None else base_types.UninitialisedField(self, 'Rate', PercentageRate, False)
 
 	@Rate.deleter
 	def Rate(self):
 		del self._Rate
-		self._Rate = None
+		self._Rate = base_types.UninitialisedField(self, 'Rate', PercentageRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dcml', type=BaseOneRate, min=0, max=1, mutex_group=1, array=False),

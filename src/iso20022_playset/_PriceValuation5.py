@@ -2,18 +2,18 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._EventFrequency1Code import EventFrequency1Code
-from ._FinancialInstrument106 import FinancialInstrument106
-from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
-from ._Max35Text import Max35Text
-from ._PartyIdentification125Choice import PartyIdentification125Choice
-from ._PerformanceFactors5 import PerformanceFactors5
-from ._UnitPrice24 import UnitPrice24
-from ._ValuationStatistics4 import ValuationStatistics4
-from ._ValuationTiming1Code import ValuationTiming1Code
-from ._YesNoIndicator import YesNoIndicator
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import DateAndDateTime2Choice
+from . import EventFrequency1Code
+from . import FinancialInstrument106
+from . import FinancialInstrumentQuantity1
+from . import Max35Text
+from . import PartyIdentification125Choice
+from . import PerformanceFactors5
+from . import UnitPrice24
+from . import ValuationStatistics4
+from . import ValuationTiming1Code
+from . import YesNoIndicator
 
 class PriceValuation5(base_types._BaseFieldType):
 
@@ -24,12 +24,12 @@ class PriceValuation5(base_types._BaseFieldType):
 
 	@FinInstrmDtls.setter
 	def FinInstrmDtls(self, value):
-		self._FinInstrmDtls = value if type(value) != base_types.auto else self.make_default("FinInstrmDtls")
+		self._FinInstrmDtls = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmDtls', FinancialInstrument106, False)
 
 	@FinInstrmDtls.deleter
 	def FinInstrmDtls(self):
 		del self._FinInstrmDtls
-		self._FinInstrmDtls = None
+		self._FinInstrmDtls = base_types.UninitialisedField(self, 'FinInstrmDtls', FinancialInstrument106, False)
 
 	@property
 	def FndMgmtCpny(self):
@@ -37,12 +37,12 @@ class PriceValuation5(base_types._BaseFieldType):
 
 	@FndMgmtCpny.setter
 	def FndMgmtCpny(self, value):
-		self._FndMgmtCpny = value if type(value) != base_types.auto else self.make_default("FndMgmtCpny")
+		self._FndMgmtCpny = value if value is not None else base_types.UninitialisedField(self, 'FndMgmtCpny', PartyIdentification125Choice, False)
 
 	@FndMgmtCpny.deleter
 	def FndMgmtCpny(self):
 		del self._FndMgmtCpny
-		self._FndMgmtCpny = None
+		self._FndMgmtCpny = base_types.UninitialisedField(self, 'FndMgmtCpny', PartyIdentification125Choice, False)
 
 	@property
 	def Id(self):
@@ -50,12 +50,12 @@ class PriceValuation5(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def NAVDtTm(self):
@@ -63,12 +63,12 @@ class PriceValuation5(base_types._BaseFieldType):
 
 	@NAVDtTm.setter
 	def NAVDtTm(self, value):
-		self._NAVDtTm = value if type(value) != base_types.auto else self.make_default("NAVDtTm")
+		self._NAVDtTm = value if value is not None else base_types.UninitialisedField(self, 'NAVDtTm', DateAndDateTime2Choice, False)
 
 	@NAVDtTm.deleter
 	def NAVDtTm(self):
 		del self._NAVDtTm
-		self._NAVDtTm = None
+		self._NAVDtTm = base_types.UninitialisedField(self, 'NAVDtTm', DateAndDateTime2Choice, False)
 
 	@property
 	def NxtValtnDtTm(self):
@@ -76,12 +76,12 @@ class PriceValuation5(base_types._BaseFieldType):
 
 	@NxtValtnDtTm.setter
 	def NxtValtnDtTm(self, value):
-		self._NxtValtnDtTm = value if type(value) != base_types.auto else self.make_default("NxtValtnDtTm")
+		self._NxtValtnDtTm = value if value is not None else base_types.UninitialisedField(self, 'NxtValtnDtTm', DateAndDateTime2Choice, False)
 
 	@NxtValtnDtTm.deleter
 	def NxtValtnDtTm(self):
 		del self._NxtValtnDtTm
-		self._NxtValtnDtTm = None
+		self._NxtValtnDtTm = base_types.UninitialisedField(self, 'NxtValtnDtTm', DateAndDateTime2Choice, False)
 
 	@property
 	def OffclValtnInd(self):
@@ -89,12 +89,12 @@ class PriceValuation5(base_types._BaseFieldType):
 
 	@OffclValtnInd.setter
 	def OffclValtnInd(self, value):
-		self._OffclValtnInd = value if type(value) != base_types.auto else self.make_default("OffclValtnInd")
+		self._OffclValtnInd = value if value is not None else base_types.UninitialisedField(self, 'OffclValtnInd', YesNoIndicator, False)
 
 	@OffclValtnInd.deleter
 	def OffclValtnInd(self):
 		del self._OffclValtnInd
-		self._OffclValtnInd = None
+		self._OffclValtnInd = base_types.UninitialisedField(self, 'OffclValtnInd', YesNoIndicator, False)
 
 	@property
 	def PrfrmncDtls(self):
@@ -102,12 +102,12 @@ class PriceValuation5(base_types._BaseFieldType):
 
 	@PrfrmncDtls.setter
 	def PrfrmncDtls(self, value):
-		self._PrfrmncDtls = value if type(value) != base_types.auto else self.make_default("PrfrmncDtls")
+		self._PrfrmncDtls = value if value is not None else base_types.UninitialisedField(self, 'PrfrmncDtls', PerformanceFactors5, False)
 
 	@PrfrmncDtls.deleter
 	def PrfrmncDtls(self):
 		del self._PrfrmncDtls
-		self._PrfrmncDtls = None
+		self._PrfrmncDtls = base_types.UninitialisedField(self, 'PrfrmncDtls', PerformanceFactors5, False)
 
 	@property
 	def PricDtls(self):
@@ -115,12 +115,12 @@ class PriceValuation5(base_types._BaseFieldType):
 
 	@PricDtls.setter
 	def PricDtls(self, value):
-		self._PricDtls = value if type(value) != base_types.auto else self.make_default("PricDtls")
+		self._PricDtls = value if value is not None else base_types.UninitialisedField(self, 'PricDtls', UnitPrice24, True)
 
 	@PricDtls.deleter
 	def PricDtls(self):
 		del self._PricDtls
-		self._PricDtls = None
+		self._PricDtls = base_types.UninitialisedField(self, 'PricDtls', UnitPrice24, True)
 
 	@property
 	def PrvsValtnDtTm(self):
@@ -128,12 +128,12 @@ class PriceValuation5(base_types._BaseFieldType):
 
 	@PrvsValtnDtTm.setter
 	def PrvsValtnDtTm(self, value):
-		self._PrvsValtnDtTm = value if type(value) != base_types.auto else self.make_default("PrvsValtnDtTm")
+		self._PrvsValtnDtTm = value if value is not None else base_types.UninitialisedField(self, 'PrvsValtnDtTm', DateAndDateTime2Choice, False)
 
 	@PrvsValtnDtTm.deleter
 	def PrvsValtnDtTm(self):
 		del self._PrvsValtnDtTm
-		self._PrvsValtnDtTm = None
+		self._PrvsValtnDtTm = base_types.UninitialisedField(self, 'PrvsValtnDtTm', DateAndDateTime2Choice, False)
 
 	@property
 	def SspdInd(self):
@@ -141,12 +141,12 @@ class PriceValuation5(base_types._BaseFieldType):
 
 	@SspdInd.setter
 	def SspdInd(self, value):
-		self._SspdInd = value if type(value) != base_types.auto else self.make_default("SspdInd")
+		self._SspdInd = value if value is not None else base_types.UninitialisedField(self, 'SspdInd', YesNoIndicator, False)
 
 	@SspdInd.deleter
 	def SspdInd(self):
 		del self._SspdInd
-		self._SspdInd = None
+		self._SspdInd = base_types.UninitialisedField(self, 'SspdInd', YesNoIndicator, False)
 
 	@property
 	def TtlNAV(self):
@@ -154,12 +154,12 @@ class PriceValuation5(base_types._BaseFieldType):
 
 	@TtlNAV.setter
 	def TtlNAV(self, value):
-		self._TtlNAV = value if type(value) != base_types.auto else self.make_default("TtlNAV")
+		self._TtlNAV = value if value is not None else base_types.UninitialisedField(self, 'TtlNAV', ActiveOrHistoricCurrencyAndAmount, True)
 
 	@TtlNAV.deleter
 	def TtlNAV(self):
 		del self._TtlNAV
-		self._TtlNAV = None
+		self._TtlNAV = base_types.UninitialisedField(self, 'TtlNAV', ActiveOrHistoricCurrencyAndAmount, True)
 
 	@property
 	def TtlUnitsNb(self):
@@ -167,12 +167,12 @@ class PriceValuation5(base_types._BaseFieldType):
 
 	@TtlUnitsNb.setter
 	def TtlUnitsNb(self, value):
-		self._TtlUnitsNb = value if type(value) != base_types.auto else self.make_default("TtlUnitsNb")
+		self._TtlUnitsNb = value if value is not None else base_types.UninitialisedField(self, 'TtlUnitsNb', FinancialInstrumentQuantity1, False)
 
 	@TtlUnitsNb.deleter
 	def TtlUnitsNb(self):
 		del self._TtlUnitsNb
-		self._TtlUnitsNb = None
+		self._TtlUnitsNb = base_types.UninitialisedField(self, 'TtlUnitsNb', FinancialInstrumentQuantity1, False)
 
 	@property
 	def ValtnDtTm(self):
@@ -180,12 +180,12 @@ class PriceValuation5(base_types._BaseFieldType):
 
 	@ValtnDtTm.setter
 	def ValtnDtTm(self, value):
-		self._ValtnDtTm = value if type(value) != base_types.auto else self.make_default("ValtnDtTm")
+		self._ValtnDtTm = value if value is not None else base_types.UninitialisedField(self, 'ValtnDtTm', DateAndDateTime2Choice, False)
 
 	@ValtnDtTm.deleter
 	def ValtnDtTm(self):
 		del self._ValtnDtTm
-		self._ValtnDtTm = None
+		self._ValtnDtTm = base_types.UninitialisedField(self, 'ValtnDtTm', DateAndDateTime2Choice, False)
 
 	@property
 	def ValtnFrqcy(self):
@@ -193,12 +193,12 @@ class PriceValuation5(base_types._BaseFieldType):
 
 	@ValtnFrqcy.setter
 	def ValtnFrqcy(self, value):
-		self._ValtnFrqcy = value if type(value) != base_types.auto else self.make_default("ValtnFrqcy")
+		self._ValtnFrqcy = value if value is not None else base_types.UninitialisedField(self, 'ValtnFrqcy', EventFrequency1Code, False)
 
 	@ValtnFrqcy.deleter
 	def ValtnFrqcy(self):
 		del self._ValtnFrqcy
-		self._ValtnFrqcy = None
+		self._ValtnFrqcy = base_types.UninitialisedField(self, 'ValtnFrqcy', EventFrequency1Code, False)
 
 	@property
 	def ValtnSttstcs(self):
@@ -206,12 +206,12 @@ class PriceValuation5(base_types._BaseFieldType):
 
 	@ValtnSttstcs.setter
 	def ValtnSttstcs(self, value):
-		self._ValtnSttstcs = value if type(value) != base_types.auto else self.make_default("ValtnSttstcs")
+		self._ValtnSttstcs = value if value is not None else base_types.UninitialisedField(self, 'ValtnSttstcs', ValuationStatistics4, True)
 
 	@ValtnSttstcs.deleter
 	def ValtnSttstcs(self):
 		del self._ValtnSttstcs
-		self._ValtnSttstcs = None
+		self._ValtnSttstcs = base_types.UninitialisedField(self, 'ValtnSttstcs', ValuationStatistics4, True)
 
 	@property
 	def ValtnTp(self):
@@ -219,12 +219,12 @@ class PriceValuation5(base_types._BaseFieldType):
 
 	@ValtnTp.setter
 	def ValtnTp(self, value):
-		self._ValtnTp = value if type(value) != base_types.auto else self.make_default("ValtnTp")
+		self._ValtnTp = value if value is not None else base_types.UninitialisedField(self, 'ValtnTp', ValuationTiming1Code, False)
 
 	@ValtnTp.deleter
 	def ValtnTp(self):
 		del self._ValtnTp
-		self._ValtnTp = None
+		self._ValtnTp = base_types.UninitialisedField(self, 'ValtnTp', ValuationTiming1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrument106, min=1, max=1, mutex_group=None, array=False),

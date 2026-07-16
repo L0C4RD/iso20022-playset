@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PartyReport1Choice import PartyReport1Choice
-from ._SupplementaryData1 import SupplementaryData1
+from . import PartyReport1Choice
+from . import SupplementaryData1
 
 class FinancialSupervisedPartyIdentityReportV01(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class FinancialSupervisedPartyIdentityReportV01(base_types._BaseFieldType):
 
 	@PtyData.setter
 	def PtyData(self, value):
-		self._PtyData = value if type(value) != base_types.auto else self.make_default("PtyData")
+		self._PtyData = value if value is not None else base_types.UninitialisedField(self, 'PtyData', PartyReport1Choice, True)
 
 	@PtyData.deleter
 	def PtyData(self):
 		del self._PtyData
-		self._PtyData = None
+		self._PtyData = base_types.UninitialisedField(self, 'PtyData', PartyReport1Choice, True)
 
 	@property
 	def SplmtryData(self):
@@ -27,12 +27,12 @@ class FinancialSupervisedPartyIdentityReportV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PtyData', type=PartyReport1Choice, min=1, max=None, mutex_group=None, array=True),

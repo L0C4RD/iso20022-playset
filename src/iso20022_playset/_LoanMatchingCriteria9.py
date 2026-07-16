@@ -2,30 +2,30 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CompareActiveOrHistoricCurrencyAndAmount3 import CompareActiveOrHistoricCurrencyAndAmount3
-from ._CompareAgreementType2 import CompareAgreementType2
-from ._CompareBenchmarkCurveName3 import CompareBenchmarkCurveName3
-from ._CompareClearingStatus3 import CompareClearingStatus3
-from ._CompareDate3 import CompareDate3
-from ._CompareDateTime3 import CompareDateTime3
-from ._CompareDecimalNumber3 import CompareDecimalNumber3
-from ._CompareDeliveryMethod3 import CompareDeliveryMethod3
-from ._CompareExposureType3 import CompareExposureType3
-from ._CompareInterestComputationMethod3 import CompareInterestComputationMethod3
-from ._CompareInterestRate1 import CompareInterestRate1
-from ._CompareMICIdentifier3 import CompareMICIdentifier3
-from ._CompareNumber5 import CompareNumber5
-from ._CompareNumber6 import CompareNumber6
-from ._CompareOrganisationIdentification6 import CompareOrganisationIdentification6
-from ._ComparePercentageRate3 import ComparePercentageRate3
-from ._CompareRateBasis3 import CompareRateBasis3
-from ._CompareReportingLevelType3 import CompareReportingLevelType3
-from ._CompareSpecialCollateral3 import CompareSpecialCollateral3
-from ._CompareTerminationOption3 import CompareTerminationOption3
-from ._CompareText2 import CompareText2
-from ._CompareTrueFalseIndicator3 import CompareTrueFalseIndicator3
-from ._CompareUnitOfMeasure3 import CompareUnitOfMeasure3
-from ._SecurityCommodity7Choice import SecurityCommodity7Choice
+from . import CompareActiveOrHistoricCurrencyAndAmount3
+from . import CompareAgreementType2
+from . import CompareBenchmarkCurveName3
+from . import CompareClearingStatus3
+from . import CompareDate3
+from . import CompareDateTime3
+from . import CompareDecimalNumber3
+from . import CompareDeliveryMethod3
+from . import CompareExposureType3
+from . import CompareInterestComputationMethod3
+from . import CompareInterestRate1
+from . import CompareMICIdentifier3
+from . import CompareNumber5
+from . import CompareNumber6
+from . import CompareOrganisationIdentification6
+from . import ComparePercentageRate3
+from . import CompareRateBasis3
+from . import CompareReportingLevelType3
+from . import CompareSpecialCollateral3
+from . import CompareTerminationOption3
+from . import CompareText2
+from . import CompareTrueFalseIndicator3
+from . import CompareUnitOfMeasure3
+from . import SecurityCommodity7Choice
 
 class LoanMatchingCriteria9(base_types._BaseFieldType):
 
@@ -36,12 +36,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@AsstTp.setter
 	def AsstTp(self, value):
-		self._AsstTp = value if type(value) != base_types.auto else self.make_default("AsstTp")
+		self._AsstTp = value if value is not None else base_types.UninitialisedField(self, 'AsstTp', SecurityCommodity7Choice, False)
 
 	@AsstTp.deleter
 	def AsstTp(self):
 		del self._AsstTp
-		self._AsstTp = None
+		self._AsstTp = base_types.UninitialisedField(self, 'AsstTp', SecurityCommodity7Choice, False)
 
 	@property
 	def BsisPtSprd(self):
@@ -49,12 +49,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@BsisPtSprd.setter
 	def BsisPtSprd(self, value):
-		self._BsisPtSprd = value if type(value) != base_types.auto else self.make_default("BsisPtSprd")
+		self._BsisPtSprd = value if value is not None else base_types.UninitialisedField(self, 'BsisPtSprd', CompareDecimalNumber3, False)
 
 	@BsisPtSprd.deleter
 	def BsisPtSprd(self):
 		del self._BsisPtSprd
-		self._BsisPtSprd = None
+		self._BsisPtSprd = base_types.UninitialisedField(self, 'BsisPtSprd', CompareDecimalNumber3, False)
 
 	@property
 	def CCP(self):
@@ -62,12 +62,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@CCP.setter
 	def CCP(self, value):
-		self._CCP = value if type(value) != base_types.auto else self.make_default("CCP")
+		self._CCP = value if value is not None else base_types.UninitialisedField(self, 'CCP', CompareOrganisationIdentification6, False)
 
 	@CCP.deleter
 	def CCP(self):
 		del self._CCP
-		self._CCP = None
+		self._CCP = base_types.UninitialisedField(self, 'CCP', CompareOrganisationIdentification6, False)
 
 	@property
 	def ClrDtTm(self):
@@ -75,12 +75,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@ClrDtTm.setter
 	def ClrDtTm(self, value):
-		self._ClrDtTm = value if type(value) != base_types.auto else self.make_default("ClrDtTm")
+		self._ClrDtTm = value if value is not None else base_types.UninitialisedField(self, 'ClrDtTm', CompareDateTime3, False)
 
 	@ClrDtTm.deleter
 	def ClrDtTm(self):
 		del self._ClrDtTm
-		self._ClrDtTm = None
+		self._ClrDtTm = base_types.UninitialisedField(self, 'ClrDtTm', CompareDateTime3, False)
 
 	@property
 	def ClrSts(self):
@@ -88,12 +88,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@ClrSts.setter
 	def ClrSts(self, value):
-		self._ClrSts = value if type(value) != base_types.auto else self.make_default("ClrSts")
+		self._ClrSts = value if value is not None else base_types.UninitialisedField(self, 'ClrSts', CompareClearingStatus3, False)
 
 	@ClrSts.deleter
 	def ClrSts(self):
 		del self._ClrSts
-		self._ClrSts = None
+		self._ClrSts = base_types.UninitialisedField(self, 'ClrSts', CompareClearingStatus3, False)
 
 	@property
 	def CollDlvryMtd(self):
@@ -101,12 +101,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@CollDlvryMtd.setter
 	def CollDlvryMtd(self, value):
-		self._CollDlvryMtd = value if type(value) != base_types.auto else self.make_default("CollDlvryMtd")
+		self._CollDlvryMtd = value if value is not None else base_types.UninitialisedField(self, 'CollDlvryMtd', CompareDeliveryMethod3, False)
 
 	@CollDlvryMtd.deleter
 	def CollDlvryMtd(self):
 		del self._CollDlvryMtd
-		self._CollDlvryMtd = None
+		self._CollDlvryMtd = base_types.UninitialisedField(self, 'CollDlvryMtd', CompareDeliveryMethod3, False)
 
 	@property
 	def CtrctTp(self):
@@ -114,12 +114,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@CtrctTp.setter
 	def CtrctTp(self, value):
-		self._CtrctTp = value if type(value) != base_types.auto else self.make_default("CtrctTp")
+		self._CtrctTp = value if value is not None else base_types.UninitialisedField(self, 'CtrctTp', CompareExposureType3, False)
 
 	@CtrctTp.deleter
 	def CtrctTp(self):
 		del self._CtrctTp
-		self._CtrctTp = None
+		self._CtrctTp = base_types.UninitialisedField(self, 'CtrctTp', CompareExposureType3, False)
 
 	@property
 	def DayCntBsis(self):
@@ -127,12 +127,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@DayCntBsis.setter
 	def DayCntBsis(self, value):
-		self._DayCntBsis = value if type(value) != base_types.auto else self.make_default("DayCntBsis")
+		self._DayCntBsis = value if value is not None else base_types.UninitialisedField(self, 'DayCntBsis', CompareInterestComputationMethod3, False)
 
 	@DayCntBsis.deleter
 	def DayCntBsis(self):
 		del self._DayCntBsis
-		self._DayCntBsis = None
+		self._DayCntBsis = base_types.UninitialisedField(self, 'DayCntBsis', CompareInterestComputationMethod3, False)
 
 	@property
 	def DlvryByVal(self):
@@ -140,12 +140,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@DlvryByVal.setter
 	def DlvryByVal(self, value):
-		self._DlvryByVal = value if type(value) != base_types.auto else self.make_default("DlvryByVal")
+		self._DlvryByVal = value if value is not None else base_types.UninitialisedField(self, 'DlvryByVal', CompareTrueFalseIndicator3, False)
 
 	@DlvryByVal.deleter
 	def DlvryByVal(self):
 		del self._DlvryByVal
-		self._DlvryByVal = None
+		self._DlvryByVal = base_types.UninitialisedField(self, 'DlvryByVal', CompareTrueFalseIndicator3, False)
 
 	@property
 	def EarlstCallBckDt(self):
@@ -153,12 +153,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@EarlstCallBckDt.setter
 	def EarlstCallBckDt(self, value):
-		self._EarlstCallBckDt = value if type(value) != base_types.auto else self.make_default("EarlstCallBckDt")
+		self._EarlstCallBckDt = value if value is not None else base_types.UninitialisedField(self, 'EarlstCallBckDt', CompareDate3, False)
 
 	@EarlstCallBckDt.deleter
 	def EarlstCallBckDt(self):
 		del self._EarlstCallBckDt
-		self._EarlstCallBckDt = None
+		self._EarlstCallBckDt = base_types.UninitialisedField(self, 'EarlstCallBckDt', CompareDate3, False)
 
 	@property
 	def ExctnDtTm(self):
@@ -166,12 +166,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@ExctnDtTm.setter
 	def ExctnDtTm(self, value):
-		self._ExctnDtTm = value if type(value) != base_types.auto else self.make_default("ExctnDtTm")
+		self._ExctnDtTm = value if value is not None else base_types.UninitialisedField(self, 'ExctnDtTm', CompareDateTime3, False)
 
 	@ExctnDtTm.deleter
 	def ExctnDtTm(self):
 		del self._ExctnDtTm
-		self._ExctnDtTm = None
+		self._ExctnDtTm = base_types.UninitialisedField(self, 'ExctnDtTm', CompareDateTime3, False)
 
 	@property
 	def FltgIntrstRatePmtFrqcyUnit(self):
@@ -179,12 +179,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@FltgIntrstRatePmtFrqcyUnit.setter
 	def FltgIntrstRatePmtFrqcyUnit(self, value):
-		self._FltgIntrstRatePmtFrqcyUnit = value if type(value) != base_types.auto else self.make_default("FltgIntrstRatePmtFrqcyUnit")
+		self._FltgIntrstRatePmtFrqcyUnit = value if value is not None else base_types.UninitialisedField(self, 'FltgIntrstRatePmtFrqcyUnit', CompareRateBasis3, False)
 
 	@FltgIntrstRatePmtFrqcyUnit.deleter
 	def FltgIntrstRatePmtFrqcyUnit(self):
 		del self._FltgIntrstRatePmtFrqcyUnit
-		self._FltgIntrstRatePmtFrqcyUnit = None
+		self._FltgIntrstRatePmtFrqcyUnit = base_types.UninitialisedField(self, 'FltgIntrstRatePmtFrqcyUnit', CompareRateBasis3, False)
 
 	@property
 	def FltgIntrstRatePmtFrqcyVal(self):
@@ -192,12 +192,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@FltgIntrstRatePmtFrqcyVal.setter
 	def FltgIntrstRatePmtFrqcyVal(self, value):
-		self._FltgIntrstRatePmtFrqcyVal = value if type(value) != base_types.auto else self.make_default("FltgIntrstRatePmtFrqcyVal")
+		self._FltgIntrstRatePmtFrqcyVal = value if value is not None else base_types.UninitialisedField(self, 'FltgIntrstRatePmtFrqcyVal', CompareNumber5, False)
 
 	@FltgIntrstRatePmtFrqcyVal.deleter
 	def FltgIntrstRatePmtFrqcyVal(self):
 		del self._FltgIntrstRatePmtFrqcyVal
-		self._FltgIntrstRatePmtFrqcyVal = None
+		self._FltgIntrstRatePmtFrqcyVal = base_types.UninitialisedField(self, 'FltgIntrstRatePmtFrqcyVal', CompareNumber5, False)
 
 	@property
 	def FltgIntrstRateRstFrqcyUnit(self):
@@ -205,12 +205,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@FltgIntrstRateRstFrqcyUnit.setter
 	def FltgIntrstRateRstFrqcyUnit(self, value):
-		self._FltgIntrstRateRstFrqcyUnit = value if type(value) != base_types.auto else self.make_default("FltgIntrstRateRstFrqcyUnit")
+		self._FltgIntrstRateRstFrqcyUnit = value if value is not None else base_types.UninitialisedField(self, 'FltgIntrstRateRstFrqcyUnit', CompareRateBasis3, False)
 
 	@FltgIntrstRateRstFrqcyUnit.deleter
 	def FltgIntrstRateRstFrqcyUnit(self):
 		del self._FltgIntrstRateRstFrqcyUnit
-		self._FltgIntrstRateRstFrqcyUnit = None
+		self._FltgIntrstRateRstFrqcyUnit = base_types.UninitialisedField(self, 'FltgIntrstRateRstFrqcyUnit', CompareRateBasis3, False)
 
 	@property
 	def FltgIntrstRateRstFrqcyVal(self):
@@ -218,12 +218,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@FltgIntrstRateRstFrqcyVal.setter
 	def FltgIntrstRateRstFrqcyVal(self, value):
-		self._FltgIntrstRateRstFrqcyVal = value if type(value) != base_types.auto else self.make_default("FltgIntrstRateRstFrqcyVal")
+		self._FltgIntrstRateRstFrqcyVal = value if value is not None else base_types.UninitialisedField(self, 'FltgIntrstRateRstFrqcyVal', CompareNumber6, False)
 
 	@FltgIntrstRateRstFrqcyVal.deleter
 	def FltgIntrstRateRstFrqcyVal(self):
 		del self._FltgIntrstRateRstFrqcyVal
-		self._FltgIntrstRateRstFrqcyVal = None
+		self._FltgIntrstRateRstFrqcyVal = base_types.UninitialisedField(self, 'FltgIntrstRateRstFrqcyVal', CompareNumber6, False)
 
 	@property
 	def FltgIntrstRateTermUnit(self):
@@ -231,12 +231,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@FltgIntrstRateTermUnit.setter
 	def FltgIntrstRateTermUnit(self, value):
-		self._FltgIntrstRateTermUnit = value if type(value) != base_types.auto else self.make_default("FltgIntrstRateTermUnit")
+		self._FltgIntrstRateTermUnit = value if value is not None else base_types.UninitialisedField(self, 'FltgIntrstRateTermUnit', CompareRateBasis3, False)
 
 	@FltgIntrstRateTermUnit.deleter
 	def FltgIntrstRateTermUnit(self):
 		del self._FltgIntrstRateTermUnit
-		self._FltgIntrstRateTermUnit = None
+		self._FltgIntrstRateTermUnit = base_types.UninitialisedField(self, 'FltgIntrstRateTermUnit', CompareRateBasis3, False)
 
 	@property
 	def FltgIntrstRateTermVal(self):
@@ -244,12 +244,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@FltgIntrstRateTermVal.setter
 	def FltgIntrstRateTermVal(self, value):
-		self._FltgIntrstRateTermVal = value if type(value) != base_types.auto else self.make_default("FltgIntrstRateTermVal")
+		self._FltgIntrstRateTermVal = value if value is not None else base_types.UninitialisedField(self, 'FltgIntrstRateTermVal', CompareNumber5, False)
 
 	@FltgIntrstRateTermVal.deleter
 	def FltgIntrstRateTermVal(self):
 		del self._FltgIntrstRateTermVal
-		self._FltgIntrstRateTermVal = None
+		self._FltgIntrstRateTermVal = base_types.UninitialisedField(self, 'FltgIntrstRateTermVal', CompareNumber5, False)
 
 	@property
 	def FltgIntrstRefRate(self):
@@ -257,12 +257,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@FltgIntrstRefRate.setter
 	def FltgIntrstRefRate(self, value):
-		self._FltgIntrstRefRate = value if type(value) != base_types.auto else self.make_default("FltgIntrstRefRate")
+		self._FltgIntrstRefRate = value if value is not None else base_types.UninitialisedField(self, 'FltgIntrstRefRate', CompareBenchmarkCurveName3, False)
 
 	@FltgIntrstRefRate.deleter
 	def FltgIntrstRefRate(self):
 		del self._FltgIntrstRefRate
-		self._FltgIntrstRefRate = None
+		self._FltgIntrstRefRate = base_types.UninitialisedField(self, 'FltgIntrstRefRate', CompareBenchmarkCurveName3, False)
 
 	@property
 	def FltgRateAdjstmnt(self):
@@ -270,12 +270,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@FltgRateAdjstmnt.setter
 	def FltgRateAdjstmnt(self, value):
-		self._FltgRateAdjstmnt = value if type(value) != base_types.auto else self.make_default("FltgRateAdjstmnt")
+		self._FltgRateAdjstmnt = value if value is not None else base_types.UninitialisedField(self, 'FltgRateAdjstmnt', ComparePercentageRate3, True)
 
 	@FltgRateAdjstmnt.deleter
 	def FltgRateAdjstmnt(self):
 		del self._FltgRateAdjstmnt
-		self._FltgRateAdjstmnt = None
+		self._FltgRateAdjstmnt = base_types.UninitialisedField(self, 'FltgRateAdjstmnt', ComparePercentageRate3, True)
 
 	@property
 	def FltgRateAdjstmntDt(self):
@@ -283,12 +283,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@FltgRateAdjstmntDt.setter
 	def FltgRateAdjstmntDt(self, value):
-		self._FltgRateAdjstmntDt = value if type(value) != base_types.auto else self.make_default("FltgRateAdjstmntDt")
+		self._FltgRateAdjstmntDt = value if value is not None else base_types.UninitialisedField(self, 'FltgRateAdjstmntDt', CompareDate3, True)
 
 	@FltgRateAdjstmntDt.deleter
 	def FltgRateAdjstmntDt(self):
 		del self._FltgRateAdjstmntDt
-		self._FltgRateAdjstmntDt = None
+		self._FltgRateAdjstmntDt = base_types.UninitialisedField(self, 'FltgRateAdjstmntDt', CompareDate3, True)
 
 	@property
 	def FltgRbtRatePmtFrqcyUnit(self):
@@ -296,12 +296,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@FltgRbtRatePmtFrqcyUnit.setter
 	def FltgRbtRatePmtFrqcyUnit(self, value):
-		self._FltgRbtRatePmtFrqcyUnit = value if type(value) != base_types.auto else self.make_default("FltgRbtRatePmtFrqcyUnit")
+		self._FltgRbtRatePmtFrqcyUnit = value if value is not None else base_types.UninitialisedField(self, 'FltgRbtRatePmtFrqcyUnit', CompareRateBasis3, False)
 
 	@FltgRbtRatePmtFrqcyUnit.deleter
 	def FltgRbtRatePmtFrqcyUnit(self):
 		del self._FltgRbtRatePmtFrqcyUnit
-		self._FltgRbtRatePmtFrqcyUnit = None
+		self._FltgRbtRatePmtFrqcyUnit = base_types.UninitialisedField(self, 'FltgRbtRatePmtFrqcyUnit', CompareRateBasis3, False)
 
 	@property
 	def FltgRbtRatePmtFrqcyVal(self):
@@ -309,12 +309,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@FltgRbtRatePmtFrqcyVal.setter
 	def FltgRbtRatePmtFrqcyVal(self, value):
-		self._FltgRbtRatePmtFrqcyVal = value if type(value) != base_types.auto else self.make_default("FltgRbtRatePmtFrqcyVal")
+		self._FltgRbtRatePmtFrqcyVal = value if value is not None else base_types.UninitialisedField(self, 'FltgRbtRatePmtFrqcyVal', CompareNumber6, False)
 
 	@FltgRbtRatePmtFrqcyVal.deleter
 	def FltgRbtRatePmtFrqcyVal(self):
 		del self._FltgRbtRatePmtFrqcyVal
-		self._FltgRbtRatePmtFrqcyVal = None
+		self._FltgRbtRatePmtFrqcyVal = base_types.UninitialisedField(self, 'FltgRbtRatePmtFrqcyVal', CompareNumber6, False)
 
 	@property
 	def FltgRbtRateRstFrqcyUnit(self):
@@ -322,12 +322,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@FltgRbtRateRstFrqcyUnit.setter
 	def FltgRbtRateRstFrqcyUnit(self, value):
-		self._FltgRbtRateRstFrqcyUnit = value if type(value) != base_types.auto else self.make_default("FltgRbtRateRstFrqcyUnit")
+		self._FltgRbtRateRstFrqcyUnit = value if value is not None else base_types.UninitialisedField(self, 'FltgRbtRateRstFrqcyUnit', CompareRateBasis3, False)
 
 	@FltgRbtRateRstFrqcyUnit.deleter
 	def FltgRbtRateRstFrqcyUnit(self):
 		del self._FltgRbtRateRstFrqcyUnit
-		self._FltgRbtRateRstFrqcyUnit = None
+		self._FltgRbtRateRstFrqcyUnit = base_types.UninitialisedField(self, 'FltgRbtRateRstFrqcyUnit', CompareRateBasis3, False)
 
 	@property
 	def FltgRbtRateRstFrqcyVal(self):
@@ -335,12 +335,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@FltgRbtRateRstFrqcyVal.setter
 	def FltgRbtRateRstFrqcyVal(self, value):
-		self._FltgRbtRateRstFrqcyVal = value if type(value) != base_types.auto else self.make_default("FltgRbtRateRstFrqcyVal")
+		self._FltgRbtRateRstFrqcyVal = value if value is not None else base_types.UninitialisedField(self, 'FltgRbtRateRstFrqcyVal', CompareNumber6, False)
 
 	@FltgRbtRateRstFrqcyVal.deleter
 	def FltgRbtRateRstFrqcyVal(self):
 		del self._FltgRbtRateRstFrqcyVal
-		self._FltgRbtRateRstFrqcyVal = None
+		self._FltgRbtRateRstFrqcyVal = base_types.UninitialisedField(self, 'FltgRbtRateRstFrqcyVal', CompareNumber6, False)
 
 	@property
 	def FltgRbtRateTermUnit(self):
@@ -348,12 +348,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@FltgRbtRateTermUnit.setter
 	def FltgRbtRateTermUnit(self, value):
-		self._FltgRbtRateTermUnit = value if type(value) != base_types.auto else self.make_default("FltgRbtRateTermUnit")
+		self._FltgRbtRateTermUnit = value if value is not None else base_types.UninitialisedField(self, 'FltgRbtRateTermUnit', CompareRateBasis3, False)
 
 	@FltgRbtRateTermUnit.deleter
 	def FltgRbtRateTermUnit(self):
 		del self._FltgRbtRateTermUnit
-		self._FltgRbtRateTermUnit = None
+		self._FltgRbtRateTermUnit = base_types.UninitialisedField(self, 'FltgRbtRateTermUnit', CompareRateBasis3, False)
 
 	@property
 	def FltgRbtRateTermVal(self):
@@ -361,12 +361,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@FltgRbtRateTermVal.setter
 	def FltgRbtRateTermVal(self, value):
-		self._FltgRbtRateTermVal = value if type(value) != base_types.auto else self.make_default("FltgRbtRateTermVal")
+		self._FltgRbtRateTermVal = value if value is not None else base_types.UninitialisedField(self, 'FltgRbtRateTermVal', CompareNumber6, False)
 
 	@FltgRbtRateTermVal.deleter
 	def FltgRbtRateTermVal(self):
 		del self._FltgRbtRateTermVal
-		self._FltgRbtRateTermVal = None
+		self._FltgRbtRateTermVal = base_types.UninitialisedField(self, 'FltgRbtRateTermVal', CompareNumber6, False)
 
 	@property
 	def FltgRbtRefRate(self):
@@ -374,12 +374,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@FltgRbtRefRate.setter
 	def FltgRbtRefRate(self, value):
-		self._FltgRbtRefRate = value if type(value) != base_types.auto else self.make_default("FltgRbtRefRate")
+		self._FltgRbtRefRate = value if value is not None else base_types.UninitialisedField(self, 'FltgRbtRefRate', CompareBenchmarkCurveName3, False)
 
 	@FltgRbtRefRate.deleter
 	def FltgRbtRefRate(self):
 		del self._FltgRbtRefRate
-		self._FltgRbtRefRate = None
+		self._FltgRbtRefRate = base_types.UninitialisedField(self, 'FltgRbtRefRate', CompareBenchmarkCurveName3, False)
 
 	@property
 	def FxdIntrstRate(self):
@@ -387,12 +387,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@FxdIntrstRate.setter
 	def FxdIntrstRate(self, value):
-		self._FxdIntrstRate = value if type(value) != base_types.auto else self.make_default("FxdIntrstRate")
+		self._FxdIntrstRate = value if value is not None else base_types.UninitialisedField(self, 'FxdIntrstRate', ComparePercentageRate3, False)
 
 	@FxdIntrstRate.deleter
 	def FxdIntrstRate(self):
 		del self._FxdIntrstRate
-		self._FxdIntrstRate = None
+		self._FxdIntrstRate = base_types.UninitialisedField(self, 'FxdIntrstRate', ComparePercentageRate3, False)
 
 	@property
 	def FxdRbtRefRate(self):
@@ -400,12 +400,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@FxdRbtRefRate.setter
 	def FxdRbtRefRate(self, value):
-		self._FxdRbtRefRate = value if type(value) != base_types.auto else self.make_default("FxdRbtRefRate")
+		self._FxdRbtRefRate = value if value is not None else base_types.UninitialisedField(self, 'FxdRbtRefRate', ComparePercentageRate3, False)
 
 	@FxdRbtRefRate.deleter
 	def FxdRbtRefRate(self):
 		del self._FxdRbtRefRate
-		self._FxdRbtRefRate = None
+		self._FxdRbtRefRate = base_types.UninitialisedField(self, 'FxdRbtRefRate', ComparePercentageRate3, False)
 
 	@property
 	def GnlColl(self):
@@ -413,12 +413,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@GnlColl.setter
 	def GnlColl(self, value):
-		self._GnlColl = value if type(value) != base_types.auto else self.make_default("GnlColl")
+		self._GnlColl = value if value is not None else base_types.UninitialisedField(self, 'GnlColl', CompareSpecialCollateral3, False)
 
 	@GnlColl.deleter
 	def GnlColl(self):
 		del self._GnlColl
-		self._GnlColl = None
+		self._GnlColl = base_types.UninitialisedField(self, 'GnlColl', CompareSpecialCollateral3, False)
 
 	@property
 	def LnVal(self):
@@ -426,12 +426,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@LnVal.setter
 	def LnVal(self, value):
-		self._LnVal = value if type(value) != base_types.auto else self.make_default("LnVal")
+		self._LnVal = value if value is not None else base_types.UninitialisedField(self, 'LnVal', CompareActiveOrHistoricCurrencyAndAmount3, False)
 
 	@LnVal.deleter
 	def LnVal(self):
 		del self._LnVal
-		self._LnVal = None
+		self._LnVal = base_types.UninitialisedField(self, 'LnVal', CompareActiveOrHistoricCurrencyAndAmount3, False)
 
 	@property
 	def LndgFee(self):
@@ -439,12 +439,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@LndgFee.setter
 	def LndgFee(self, value):
-		self._LndgFee = value if type(value) != base_types.auto else self.make_default("LndgFee")
+		self._LndgFee = value if value is not None else base_types.UninitialisedField(self, 'LndgFee', ComparePercentageRate3, False)
 
 	@LndgFee.deleter
 	def LndgFee(self):
 		del self._LndgFee
-		self._LndgFee = None
+		self._LndgFee = base_types.UninitialisedField(self, 'LndgFee', ComparePercentageRate3, False)
 
 	@property
 	def LvlTp(self):
@@ -452,12 +452,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@LvlTp.setter
 	def LvlTp(self, value):
-		self._LvlTp = value if type(value) != base_types.auto else self.make_default("LvlTp")
+		self._LvlTp = value if value is not None else base_types.UninitialisedField(self, 'LvlTp', CompareReportingLevelType3, False)
 
 	@LvlTp.deleter
 	def LvlTp(self):
 		del self._LvlTp
-		self._LvlTp = None
+		self._LvlTp = base_types.UninitialisedField(self, 'LvlTp', CompareReportingLevelType3, False)
 
 	@property
 	def MinNtcePrd(self):
@@ -465,12 +465,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@MinNtcePrd.setter
 	def MinNtcePrd(self, value):
-		self._MinNtcePrd = value if type(value) != base_types.auto else self.make_default("MinNtcePrd")
+		self._MinNtcePrd = value if value is not None else base_types.UninitialisedField(self, 'MinNtcePrd', CompareNumber5, False)
 
 	@MinNtcePrd.deleter
 	def MinNtcePrd(self):
 		del self._MinNtcePrd
-		self._MinNtcePrd = None
+		self._MinNtcePrd = base_types.UninitialisedField(self, 'MinNtcePrd', CompareNumber5, False)
 
 	@property
 	def MrgnLnAttr(self):
@@ -478,12 +478,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@MrgnLnAttr.setter
 	def MrgnLnAttr(self, value):
-		self._MrgnLnAttr = value if type(value) != base_types.auto else self.make_default("MrgnLnAttr")
+		self._MrgnLnAttr = value if value is not None else base_types.UninitialisedField(self, 'MrgnLnAttr', CompareInterestRate1, True)
 
 	@MrgnLnAttr.deleter
 	def MrgnLnAttr(self):
 		del self._MrgnLnAttr
-		self._MrgnLnAttr = None
+		self._MrgnLnAttr = base_types.UninitialisedField(self, 'MrgnLnAttr', CompareInterestRate1, True)
 
 	@property
 	def MstrAgrmtTp(self):
@@ -491,12 +491,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@MstrAgrmtTp.setter
 	def MstrAgrmtTp(self, value):
-		self._MstrAgrmtTp = value if type(value) != base_types.auto else self.make_default("MstrAgrmtTp")
+		self._MstrAgrmtTp = value if value is not None else base_types.UninitialisedField(self, 'MstrAgrmtTp', CompareAgreementType2, False)
 
 	@MstrAgrmtTp.deleter
 	def MstrAgrmtTp(self):
 		del self._MstrAgrmtTp
-		self._MstrAgrmtTp = None
+		self._MstrAgrmtTp = base_types.UninitialisedField(self, 'MstrAgrmtTp', CompareAgreementType2, False)
 
 	@property
 	def MtrtyDt(self):
@@ -504,12 +504,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@MtrtyDt.setter
 	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != base_types.auto else self.make_default("MtrtyDt")
+		self._MtrtyDt = value if value is not None else base_types.UninitialisedField(self, 'MtrtyDt', CompareDate3, False)
 
 	@MtrtyDt.deleter
 	def MtrtyDt(self):
 		del self._MtrtyDt
-		self._MtrtyDt = None
+		self._MtrtyDt = base_types.UninitialisedField(self, 'MtrtyDt', CompareDate3, False)
 
 	@property
 	def OpnTerm(self):
@@ -517,12 +517,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@OpnTerm.setter
 	def OpnTerm(self, value):
-		self._OpnTerm = value if type(value) != base_types.auto else self.make_default("OpnTerm")
+		self._OpnTerm = value if value is not None else base_types.UninitialisedField(self, 'OpnTerm', CompareTrueFalseIndicator3, False)
 
 	@OpnTerm.deleter
 	def OpnTerm(self):
 		del self._OpnTerm
-		self._OpnTerm = None
+		self._OpnTerm = base_types.UninitialisedField(self, 'OpnTerm', CompareTrueFalseIndicator3, False)
 
 	@property
 	def OutsdngMrgnLnAmt(self):
@@ -530,12 +530,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@OutsdngMrgnLnAmt.setter
 	def OutsdngMrgnLnAmt(self, value):
-		self._OutsdngMrgnLnAmt = value if type(value) != base_types.auto else self.make_default("OutsdngMrgnLnAmt")
+		self._OutsdngMrgnLnAmt = value if value is not None else base_types.UninitialisedField(self, 'OutsdngMrgnLnAmt', CompareActiveOrHistoricCurrencyAndAmount3, False)
 
 	@OutsdngMrgnLnAmt.deleter
 	def OutsdngMrgnLnAmt(self):
 		del self._OutsdngMrgnLnAmt
-		self._OutsdngMrgnLnAmt = None
+		self._OutsdngMrgnLnAmt = base_types.UninitialisedField(self, 'OutsdngMrgnLnAmt', CompareActiveOrHistoricCurrencyAndAmount3, False)
 
 	@property
 	def PrncplAmtMtrtyDtAmt(self):
@@ -543,12 +543,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@PrncplAmtMtrtyDtAmt.setter
 	def PrncplAmtMtrtyDtAmt(self, value):
-		self._PrncplAmtMtrtyDtAmt = value if type(value) != base_types.auto else self.make_default("PrncplAmtMtrtyDtAmt")
+		self._PrncplAmtMtrtyDtAmt = value if value is not None else base_types.UninitialisedField(self, 'PrncplAmtMtrtyDtAmt', CompareActiveOrHistoricCurrencyAndAmount3, False)
 
 	@PrncplAmtMtrtyDtAmt.deleter
 	def PrncplAmtMtrtyDtAmt(self):
 		del self._PrncplAmtMtrtyDtAmt
-		self._PrncplAmtMtrtyDtAmt = None
+		self._PrncplAmtMtrtyDtAmt = base_types.UninitialisedField(self, 'PrncplAmtMtrtyDtAmt', CompareActiveOrHistoricCurrencyAndAmount3, False)
 
 	@property
 	def PrncplAmtValDtAmt(self):
@@ -556,12 +556,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@PrncplAmtValDtAmt.setter
 	def PrncplAmtValDtAmt(self, value):
-		self._PrncplAmtValDtAmt = value if type(value) != base_types.auto else self.make_default("PrncplAmtValDtAmt")
+		self._PrncplAmtValDtAmt = value if value is not None else base_types.UninitialisedField(self, 'PrncplAmtValDtAmt', CompareActiveOrHistoricCurrencyAndAmount3, False)
 
 	@PrncplAmtValDtAmt.deleter
 	def PrncplAmtValDtAmt(self):
 		del self._PrncplAmtValDtAmt
-		self._PrncplAmtValDtAmt = None
+		self._PrncplAmtValDtAmt = base_types.UninitialisedField(self, 'PrncplAmtValDtAmt', CompareActiveOrHistoricCurrencyAndAmount3, False)
 
 	@property
 	def RbtRateBsisPtSprd(self):
@@ -569,12 +569,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@RbtRateBsisPtSprd.setter
 	def RbtRateBsisPtSprd(self, value):
-		self._RbtRateBsisPtSprd = value if type(value) != base_types.auto else self.make_default("RbtRateBsisPtSprd")
+		self._RbtRateBsisPtSprd = value if value is not None else base_types.UninitialisedField(self, 'RbtRateBsisPtSprd', CompareDecimalNumber3, False)
 
 	@RbtRateBsisPtSprd.deleter
 	def RbtRateBsisPtSprd(self):
 		del self._RbtRateBsisPtSprd
-		self._RbtRateBsisPtSprd = None
+		self._RbtRateBsisPtSprd = base_types.UninitialisedField(self, 'RbtRateBsisPtSprd', CompareDecimalNumber3, False)
 
 	@property
 	def ShrtMktValAmt(self):
@@ -582,12 +582,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@ShrtMktValAmt.setter
 	def ShrtMktValAmt(self, value):
-		self._ShrtMktValAmt = value if type(value) != base_types.auto else self.make_default("ShrtMktValAmt")
+		self._ShrtMktValAmt = value if value is not None else base_types.UninitialisedField(self, 'ShrtMktValAmt', CompareActiveOrHistoricCurrencyAndAmount3, False)
 
 	@ShrtMktValAmt.deleter
 	def ShrtMktValAmt(self):
 		del self._ShrtMktValAmt
-		self._ShrtMktValAmt = None
+		self._ShrtMktValAmt = base_types.UninitialisedField(self, 'ShrtMktValAmt', CompareActiveOrHistoricCurrencyAndAmount3, False)
 
 	@property
 	def TermntnDt(self):
@@ -595,12 +595,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@TermntnDt.setter
 	def TermntnDt(self, value):
-		self._TermntnDt = value if type(value) != base_types.auto else self.make_default("TermntnDt")
+		self._TermntnDt = value if value is not None else base_types.UninitialisedField(self, 'TermntnDt', CompareDate3, False)
 
 	@TermntnDt.deleter
 	def TermntnDt(self):
 		del self._TermntnDt
-		self._TermntnDt = None
+		self._TermntnDt = base_types.UninitialisedField(self, 'TermntnDt', CompareDate3, False)
 
 	@property
 	def TermntnOptn(self):
@@ -608,12 +608,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@TermntnOptn.setter
 	def TermntnOptn(self, value):
-		self._TermntnOptn = value if type(value) != base_types.auto else self.make_default("TermntnOptn")
+		self._TermntnOptn = value if value is not None else base_types.UninitialisedField(self, 'TermntnOptn', CompareTerminationOption3, False)
 
 	@TermntnOptn.deleter
 	def TermntnOptn(self):
 		del self._TermntnOptn
-		self._TermntnOptn = None
+		self._TermntnOptn = base_types.UninitialisedField(self, 'TermntnOptn', CompareTerminationOption3, False)
 
 	@property
 	def TradgVn(self):
@@ -621,12 +621,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@TradgVn.setter
 	def TradgVn(self, value):
-		self._TradgVn = value if type(value) != base_types.auto else self.make_default("TradgVn")
+		self._TradgVn = value if value is not None else base_types.UninitialisedField(self, 'TradgVn', CompareMICIdentifier3, False)
 
 	@TradgVn.deleter
 	def TradgVn(self):
 		del self._TradgVn
-		self._TradgVn = None
+		self._TradgVn = base_types.UninitialisedField(self, 'TradgVn', CompareMICIdentifier3, False)
 
 	@property
 	def UnitOfMeasr(self):
@@ -634,12 +634,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@UnitOfMeasr.setter
 	def UnitOfMeasr(self, value):
-		self._UnitOfMeasr = value if type(value) != base_types.auto else self.make_default("UnitOfMeasr")
+		self._UnitOfMeasr = value if value is not None else base_types.UninitialisedField(self, 'UnitOfMeasr', CompareUnitOfMeasure3, False)
 
 	@UnitOfMeasr.deleter
 	def UnitOfMeasr(self):
 		del self._UnitOfMeasr
-		self._UnitOfMeasr = None
+		self._UnitOfMeasr = base_types.UninitialisedField(self, 'UnitOfMeasr', CompareUnitOfMeasure3, False)
 
 	@property
 	def UnqTradIdr(self):
@@ -647,12 +647,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@UnqTradIdr.setter
 	def UnqTradIdr(self, value):
-		self._UnqTradIdr = value if type(value) != base_types.auto else self.make_default("UnqTradIdr")
+		self._UnqTradIdr = value if value is not None else base_types.UninitialisedField(self, 'UnqTradIdr', CompareText2, False)
 
 	@UnqTradIdr.deleter
 	def UnqTradIdr(self):
 		del self._UnqTradIdr
-		self._UnqTradIdr = None
+		self._UnqTradIdr = base_types.UninitialisedField(self, 'UnqTradIdr', CompareText2, False)
 
 	@property
 	def ValDt(self):
@@ -660,12 +660,12 @@ class LoanMatchingCriteria9(base_types._BaseFieldType):
 
 	@ValDt.setter
 	def ValDt(self, value):
-		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
+		self._ValDt = value if value is not None else base_types.UninitialisedField(self, 'ValDt', CompareDate3, False)
 
 	@ValDt.deleter
 	def ValDt(self):
 		del self._ValDt
-		self._ValDt = None
+		self._ValDt = base_types.UninitialisedField(self, 'ValDt', CompareDate3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AsstTp', type=SecurityCommodity7Choice, min=0, max=1, mutex_group=None, array=False),

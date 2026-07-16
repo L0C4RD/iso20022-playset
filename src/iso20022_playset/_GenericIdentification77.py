@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Min2Max3AlphaText import Min2Max3AlphaText
-from ._PartyType12Code import PartyType12Code
+from . import Max35Text
+from . import Min2Max3AlphaText
+from . import PartyType12Code
 
 class GenericIdentification77(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class GenericIdentification77(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', Min2Max3AlphaText, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', Min2Max3AlphaText, False)
 
 	@property
 	def Id(self):
@@ -28,12 +28,12 @@ class GenericIdentification77(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def Issr(self):
@@ -41,12 +41,12 @@ class GenericIdentification77(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+		self._Issr = value if value is not None else base_types.UninitialisedField(self, 'Issr', PartyType12Code, False)
 
 	@Issr.deleter
 	def Issr(self):
 		del self._Issr
-		self._Issr = None
+		self._Issr = base_types.UninitialisedField(self, 'Issr', PartyType12Code, False)
 
 	@property
 	def ShrtNm(self):
@@ -54,12 +54,12 @@ class GenericIdentification77(base_types._BaseFieldType):
 
 	@ShrtNm.setter
 	def ShrtNm(self, value):
-		self._ShrtNm = value if type(value) != base_types.auto else self.make_default("ShrtNm")
+		self._ShrtNm = value if value is not None else base_types.UninitialisedField(self, 'ShrtNm', Max35Text, False)
 
 	@ShrtNm.deleter
 	def ShrtNm(self):
 		del self._ShrtNm
-		self._ShrtNm = None
+		self._ShrtNm = base_types.UninitialisedField(self, 'ShrtNm', Max35Text, False)
 
 	@property
 	def Tp(self):
@@ -67,12 +67,12 @@ class GenericIdentification77(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', PartyType12Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', PartyType12Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ctry', type=Min2Max3AlphaText, min=0, max=1, mutex_group=None, array=False),

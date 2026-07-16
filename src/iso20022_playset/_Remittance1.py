@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max140Text import Max140Text
-from ._RemittanceLocation7 import RemittanceLocation7
-from ._StructuredRemittanceInformation16 import StructuredRemittanceInformation16
+from . import Max140Text
+from . import RemittanceLocation7
+from . import StructuredRemittanceInformation16
 
 class Remittance1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Remittance1(base_types._BaseFieldType):
 
 	@Rltd.setter
 	def Rltd(self, value):
-		self._Rltd = value if type(value) != base_types.auto else self.make_default("Rltd")
+		self._Rltd = value if value is not None else base_types.UninitialisedField(self, 'Rltd', RemittanceLocation7, True)
 
 	@Rltd.deleter
 	def Rltd(self):
 		del self._Rltd
-		self._Rltd = None
+		self._Rltd = base_types.UninitialisedField(self, 'Rltd', RemittanceLocation7, True)
 
 	@property
 	def Strd(self):
@@ -28,12 +28,12 @@ class Remittance1(base_types._BaseFieldType):
 
 	@Strd.setter
 	def Strd(self, value):
-		self._Strd = value if type(value) != base_types.auto else self.make_default("Strd")
+		self._Strd = value if value is not None else base_types.UninitialisedField(self, 'Strd', StructuredRemittanceInformation16, True)
 
 	@Strd.deleter
 	def Strd(self):
 		del self._Strd
-		self._Strd = None
+		self._Strd = base_types.UninitialisedField(self, 'Strd', StructuredRemittanceInformation16, True)
 
 	@property
 	def Ustrd(self):
@@ -41,12 +41,12 @@ class Remittance1(base_types._BaseFieldType):
 
 	@Ustrd.setter
 	def Ustrd(self, value):
-		self._Ustrd = value if type(value) != base_types.auto else self.make_default("Ustrd")
+		self._Ustrd = value if value is not None else base_types.UninitialisedField(self, 'Ustrd', Max140Text, True)
 
 	@Ustrd.deleter
 	def Ustrd(self):
 		del self._Ustrd
-		self._Ustrd = None
+		self._Ustrd = base_types.UninitialisedField(self, 'Ustrd', Max140Text, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Rltd', type=RemittanceLocation7, min=0, max=10, mutex_group=None, array=True),

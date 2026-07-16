@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._DecimalNumber import DecimalNumber
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import DecimalNumber
 
 class FinancialInstrumentQuantity27Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class FinancialInstrumentQuantity27Choice(base_types._BaseFieldType):
 
 	@GrssAmt.setter
 	def GrssAmt(self, value):
-		self._GrssAmt = value if type(value) != base_types.auto else self.make_default("GrssAmt")
+		self._GrssAmt = value if value is not None else base_types.UninitialisedField(self, 'GrssAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@GrssAmt.deleter
 	def GrssAmt(self):
 		del self._GrssAmt
-		self._GrssAmt = None
+		self._GrssAmt = base_types.UninitialisedField(self, 'GrssAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def NetAmt(self):
@@ -27,12 +27,12 @@ class FinancialInstrumentQuantity27Choice(base_types._BaseFieldType):
 
 	@NetAmt.setter
 	def NetAmt(self, value):
-		self._NetAmt = value if type(value) != base_types.auto else self.make_default("NetAmt")
+		self._NetAmt = value if value is not None else base_types.UninitialisedField(self, 'NetAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@NetAmt.deleter
 	def NetAmt(self):
 		del self._NetAmt
-		self._NetAmt = None
+		self._NetAmt = base_types.UninitialisedField(self, 'NetAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def UnitsNb(self):
@@ -40,12 +40,12 @@ class FinancialInstrumentQuantity27Choice(base_types._BaseFieldType):
 
 	@UnitsNb.setter
 	def UnitsNb(self, value):
-		self._UnitsNb = value if type(value) != base_types.auto else self.make_default("UnitsNb")
+		self._UnitsNb = value if value is not None else base_types.UninitialisedField(self, 'UnitsNb', DecimalNumber, False)
 
 	@UnitsNb.deleter
 	def UnitsNb(self):
 		del self._UnitsNb
-		self._UnitsNb = None
+		self._UnitsNb = base_types.UninitialisedField(self, 'UnitsNb', DecimalNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='GrssAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),

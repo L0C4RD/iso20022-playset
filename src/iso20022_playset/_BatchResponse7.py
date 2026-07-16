@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PerformedTransaction7 import PerformedTransaction7
-from ._TransactionIdentifier1 import TransactionIdentifier1
+from . import PerformedTransaction7
+from . import TransactionIdentifier1
 
 class BatchResponse7(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class BatchResponse7(base_types._BaseFieldType):
 
 	@POIBtchId.setter
 	def POIBtchId(self, value):
-		self._POIBtchId = value if type(value) != base_types.auto else self.make_default("POIBtchId")
+		self._POIBtchId = value if value is not None else base_types.UninitialisedField(self, 'POIBtchId', TransactionIdentifier1, False)
 
 	@POIBtchId.deleter
 	def POIBtchId(self):
 		del self._POIBtchId
-		self._POIBtchId = None
+		self._POIBtchId = base_types.UninitialisedField(self, 'POIBtchId', TransactionIdentifier1, False)
 
 	@property
 	def PrfrmdTx(self):
@@ -27,12 +27,12 @@ class BatchResponse7(base_types._BaseFieldType):
 
 	@PrfrmdTx.setter
 	def PrfrmdTx(self, value):
-		self._PrfrmdTx = value if type(value) != base_types.auto else self.make_default("PrfrmdTx")
+		self._PrfrmdTx = value if value is not None else base_types.UninitialisedField(self, 'PrfrmdTx', PerformedTransaction7, True)
 
 	@PrfrmdTx.deleter
 	def PrfrmdTx(self):
 		del self._PrfrmdTx
-		self._PrfrmdTx = None
+		self._PrfrmdTx = base_types.UninitialisedField(self, 'PrfrmdTx', PerformedTransaction7, True)
 
 	@property
 	def SaleBtchId(self):
@@ -40,12 +40,12 @@ class BatchResponse7(base_types._BaseFieldType):
 
 	@SaleBtchId.setter
 	def SaleBtchId(self, value):
-		self._SaleBtchId = value if type(value) != base_types.auto else self.make_default("SaleBtchId")
+		self._SaleBtchId = value if value is not None else base_types.UninitialisedField(self, 'SaleBtchId', TransactionIdentifier1, False)
 
 	@SaleBtchId.deleter
 	def SaleBtchId(self):
 		del self._SaleBtchId
-		self._SaleBtchId = None
+		self._SaleBtchId = base_types.UninitialisedField(self, 'SaleBtchId', TransactionIdentifier1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='POIBtchId', type=TransactionIdentifier1, min=0, max=1, mutex_group=None, array=False),

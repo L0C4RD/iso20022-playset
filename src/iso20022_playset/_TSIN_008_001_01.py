@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InvoiceAssignmentNotificationV01 import InvoiceAssignmentNotificationV01
+from . import InvoiceAssignmentNotificationV01
 
 class TSIN_008_001_01():
 
@@ -18,12 +18,12 @@ class TSIN_008_001_01():
 
 		@InvcAssgnmtNtfctn.setter
 		def InvcAssgnmtNtfctn(self, value):
-			self._InvcAssgnmtNtfctn = value if type(value) != base_types.auto else self.make_default("InvcAssgnmtNtfctn")
+			self._InvcAssgnmtNtfctn = value if value is not None else base_types.UninitialisedField(self, 'InvcAssgnmtNtfctn', InvoiceAssignmentNotificationV01, False)
 
 		@InvcAssgnmtNtfctn.deleter
 		def InvcAssgnmtNtfctn(self):
 			del self._InvcAssgnmtNtfctn
-			self._InvcAssgnmtNtfctn = None
+			self._InvcAssgnmtNtfctn = base_types.UninitialisedField(self, 'InvcAssgnmtNtfctn', InvoiceAssignmentNotificationV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='InvcAssgnmtNtfctn', type=InvoiceAssignmentNotificationV01, min=1, max=1, mutex_group=None, array=False),

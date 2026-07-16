@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MessageIdentification1 import MessageIdentification1
-from ._ReportSpecification4 import ReportSpecification4
+from . import MessageIdentification1
+from . import ReportSpecification4
 
 class TransactionReportRequestV03(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TransactionReportRequestV03(base_types._BaseFieldType):
 
 	@ReqId.setter
 	def ReqId(self, value):
-		self._ReqId = value if type(value) != base_types.auto else self.make_default("ReqId")
+		self._ReqId = value if value is not None else base_types.UninitialisedField(self, 'ReqId', MessageIdentification1, False)
 
 	@ReqId.deleter
 	def ReqId(self):
 		del self._ReqId
-		self._ReqId = None
+		self._ReqId = base_types.UninitialisedField(self, 'ReqId', MessageIdentification1, False)
 
 	@property
 	def RptSpcfctn(self):
@@ -27,12 +27,12 @@ class TransactionReportRequestV03(base_types._BaseFieldType):
 
 	@RptSpcfctn.setter
 	def RptSpcfctn(self, value):
-		self._RptSpcfctn = value if type(value) != base_types.auto else self.make_default("RptSpcfctn")
+		self._RptSpcfctn = value if value is not None else base_types.UninitialisedField(self, 'RptSpcfctn', ReportSpecification4, False)
 
 	@RptSpcfctn.deleter
 	def RptSpcfctn(self):
 		del self._RptSpcfctn
-		self._RptSpcfctn = None
+		self._RptSpcfctn = base_types.UninitialisedField(self, 'RptSpcfctn', ReportSpecification4, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ReqId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),

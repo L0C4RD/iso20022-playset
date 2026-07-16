@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CustomerType2Code import CustomerType2Code
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
-from ._PhoneNumber import PhoneNumber
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import CustomerType2Code
+from . import Max35Text
+from . import Max70Text
+from . import PhoneNumber
+from . import TrueFalseIndicator
 
 class Customer4(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class Customer4(base_types._BaseFieldType):
 
 	@AuthrsdCtctCpny.setter
 	def AuthrsdCtctCpny(self, value):
-		self._AuthrsdCtctCpny = value if type(value) != base_types.auto else self.make_default("AuthrsdCtctCpny")
+		self._AuthrsdCtctCpny = value if value is not None else base_types.UninitialisedField(self, 'AuthrsdCtctCpny', Max70Text, False)
 
 	@AuthrsdCtctCpny.deleter
 	def AuthrsdCtctCpny(self):
 		del self._AuthrsdCtctCpny
-		self._AuthrsdCtctCpny = None
+		self._AuthrsdCtctCpny = base_types.UninitialisedField(self, 'AuthrsdCtctCpny', Max70Text, False)
 
 	@property
 	def AuthrsdCtctNm(self):
@@ -30,12 +30,12 @@ class Customer4(base_types._BaseFieldType):
 
 	@AuthrsdCtctNm.setter
 	def AuthrsdCtctNm(self, value):
-		self._AuthrsdCtctNm = value if type(value) != base_types.auto else self.make_default("AuthrsdCtctNm")
+		self._AuthrsdCtctNm = value if value is not None else base_types.UninitialisedField(self, 'AuthrsdCtctNm', Max70Text, False)
 
 	@AuthrsdCtctNm.deleter
 	def AuthrsdCtctNm(self):
 		del self._AuthrsdCtctNm
-		self._AuthrsdCtctNm = None
+		self._AuthrsdCtctNm = base_types.UninitialisedField(self, 'AuthrsdCtctNm', Max70Text, False)
 
 	@property
 	def AuthrsdCtctPhneNb(self):
@@ -43,12 +43,12 @@ class Customer4(base_types._BaseFieldType):
 
 	@AuthrsdCtctPhneNb.setter
 	def AuthrsdCtctPhneNb(self, value):
-		self._AuthrsdCtctPhneNb = value if type(value) != base_types.auto else self.make_default("AuthrsdCtctPhneNb")
+		self._AuthrsdCtctPhneNb = value if value is not None else base_types.UninitialisedField(self, 'AuthrsdCtctPhneNb', PhoneNumber, False)
 
 	@AuthrsdCtctPhneNb.deleter
 	def AuthrsdCtctPhneNb(self):
 		del self._AuthrsdCtctPhneNb
-		self._AuthrsdCtctPhneNb = None
+		self._AuthrsdCtctPhneNb = base_types.UninitialisedField(self, 'AuthrsdCtctPhneNb', PhoneNumber, False)
 
 	@property
 	def CstmrRltsh(self):
@@ -56,12 +56,12 @@ class Customer4(base_types._BaseFieldType):
 
 	@CstmrRltsh.setter
 	def CstmrRltsh(self, value):
-		self._CstmrRltsh = value if type(value) != base_types.auto else self.make_default("CstmrRltsh")
+		self._CstmrRltsh = value if value is not None else base_types.UninitialisedField(self, 'CstmrRltsh', Max35Text, False)
 
 	@CstmrRltsh.deleter
 	def CstmrRltsh(self):
 		del self._CstmrRltsh
-		self._CstmrRltsh = None
+		self._CstmrRltsh = base_types.UninitialisedField(self, 'CstmrRltsh', Max35Text, False)
 
 	@property
 	def RefNb(self):
@@ -69,12 +69,12 @@ class Customer4(base_types._BaseFieldType):
 
 	@RefNb.setter
 	def RefNb(self, value):
-		self._RefNb = value if type(value) != base_types.auto else self.make_default("RefNb")
+		self._RefNb = value if value is not None else base_types.UninitialisedField(self, 'RefNb', Max35Text, False)
 
 	@RefNb.deleter
 	def RefNb(self):
 		del self._RefNb
-		self._RefNb = None
+		self._RefNb = base_types.UninitialisedField(self, 'RefNb', Max35Text, False)
 
 	@property
 	def TaxRegnId(self):
@@ -82,12 +82,12 @@ class Customer4(base_types._BaseFieldType):
 
 	@TaxRegnId.setter
 	def TaxRegnId(self, value):
-		self._TaxRegnId = value if type(value) != base_types.auto else self.make_default("TaxRegnId")
+		self._TaxRegnId = value if value is not None else base_types.UninitialisedField(self, 'TaxRegnId', Max70Text, True)
 
 	@TaxRegnId.deleter
 	def TaxRegnId(self):
 		del self._TaxRegnId
-		self._TaxRegnId = None
+		self._TaxRegnId = base_types.UninitialisedField(self, 'TaxRegnId', Max70Text, True)
 
 	@property
 	def Tp(self):
@@ -95,12 +95,12 @@ class Customer4(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', CustomerType2Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', CustomerType2Code, False)
 
 	@property
 	def VIPInd(self):
@@ -108,12 +108,12 @@ class Customer4(base_types._BaseFieldType):
 
 	@VIPInd.setter
 	def VIPInd(self, value):
-		self._VIPInd = value if type(value) != base_types.auto else self.make_default("VIPInd")
+		self._VIPInd = value if value is not None else base_types.UninitialisedField(self, 'VIPInd', TrueFalseIndicator, False)
 
 	@VIPInd.deleter
 	def VIPInd(self):
 		del self._VIPInd
-		self._VIPInd = None
+		self._VIPInd = base_types.UninitialisedField(self, 'VIPInd', TrueFalseIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AuthrsdCtctCpny', type=Max70Text, min=0, max=1, mutex_group=None, array=False),

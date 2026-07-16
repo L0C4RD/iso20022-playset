@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MoneyMarketForeignExchangeSwapsStatisticalReportV02 import MoneyMarketForeignExchangeSwapsStatisticalReportV02
+from . import MoneyMarketForeignExchangeSwapsStatisticalReportV02
 
 class AUTH_014_001_02():
 
@@ -18,12 +18,12 @@ class AUTH_014_001_02():
 
 		@MnyMktFXSwpsSttstclRpt.setter
 		def MnyMktFXSwpsSttstclRpt(self, value):
-			self._MnyMktFXSwpsSttstclRpt = value if type(value) != base_types.auto else self.make_default("MnyMktFXSwpsSttstclRpt")
+			self._MnyMktFXSwpsSttstclRpt = value if value is not None else base_types.UninitialisedField(self, 'MnyMktFXSwpsSttstclRpt', MoneyMarketForeignExchangeSwapsStatisticalReportV02, False)
 
 		@MnyMktFXSwpsSttstclRpt.deleter
 		def MnyMktFXSwpsSttstclRpt(self):
 			del self._MnyMktFXSwpsSttstclRpt
-			self._MnyMktFXSwpsSttstclRpt = None
+			self._MnyMktFXSwpsSttstclRpt = base_types.UninitialisedField(self, 'MnyMktFXSwpsSttstclRpt', MoneyMarketForeignExchangeSwapsStatisticalReportV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='MnyMktFXSwpsSttstclRpt', type=MoneyMarketForeignExchangeSwapsStatisticalReportV02, min=1, max=1, mutex_group=None, array=False),

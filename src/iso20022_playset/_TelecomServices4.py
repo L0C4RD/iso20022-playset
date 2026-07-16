@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._ISODate import ISODate
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max105Text import Max105Text
-from ._Max35Text import Max35Text
-from ._PhoneNumber import PhoneNumber
-from ._Tax44 import Tax44
-from ._TelecomBillingEventAmount1 import TelecomBillingEventAmount1
-from ._TelecomServicesLineItem4 import TelecomServicesLineItem4
+from . import ATICALaxProcessing
+from . import ISODate
+from . import ImpliedCurrencyAndAmount
+from . import Max105Text
+from . import Max35Text
+from . import PhoneNumber
+from . import Tax44
+from . import TelecomBillingEventAmount1
+from . import TelecomServicesLineItem4
 
 class TelecomServices4(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class TelecomServices4(base_types._BaseFieldType):
 
 	@BllgEnd.setter
 	def BllgEnd(self, value):
-		self._BllgEnd = value if type(value) != base_types.auto else self.make_default("BllgEnd")
+		self._BllgEnd = value if value is not None else base_types.UninitialisedField(self, 'BllgEnd', ISODate, False)
 
 	@BllgEnd.deleter
 	def BllgEnd(self):
 		del self._BllgEnd
-		self._BllgEnd = None
+		self._BllgEnd = base_types.UninitialisedField(self, 'BllgEnd', ISODate, False)
 
 	@property
 	def BllgEvt(self):
@@ -34,12 +34,12 @@ class TelecomServices4(base_types._BaseFieldType):
 
 	@BllgEvt.setter
 	def BllgEvt(self, value):
-		self._BllgEvt = value if type(value) != base_types.auto else self.make_default("BllgEvt")
+		self._BllgEvt = value if value is not None else base_types.UninitialisedField(self, 'BllgEvt', TelecomBillingEventAmount1, True)
 
 	@BllgEvt.deleter
 	def BllgEvt(self):
 		del self._BllgEvt
-		self._BllgEvt = None
+		self._BllgEvt = base_types.UninitialisedField(self, 'BllgEvt', TelecomBillingEventAmount1, True)
 
 	@property
 	def BllgStart(self):
@@ -47,12 +47,12 @@ class TelecomServices4(base_types._BaseFieldType):
 
 	@BllgStart.setter
 	def BllgStart(self, value):
-		self._BllgStart = value if type(value) != base_types.auto else self.make_default("BllgStart")
+		self._BllgStart = value if value is not None else base_types.UninitialisedField(self, 'BllgStart', ISODate, False)
 
 	@BllgStart.deleter
 	def BllgStart(self):
 		del self._BllgStart
-		self._BllgStart = None
+		self._BllgStart = base_types.UninitialisedField(self, 'BllgStart', ISODate, False)
 
 	@property
 	def CstmrAcctNb(self):
@@ -60,12 +60,12 @@ class TelecomServices4(base_types._BaseFieldType):
 
 	@CstmrAcctNb.setter
 	def CstmrAcctNb(self, value):
-		self._CstmrAcctNb = value if type(value) != base_types.auto else self.make_default("CstmrAcctNb")
+		self._CstmrAcctNb = value if value is not None else base_types.UninitialisedField(self, 'CstmrAcctNb', Max35Text, False)
 
 	@CstmrAcctNb.deleter
 	def CstmrAcctNb(self):
 		del self._CstmrAcctNb
-		self._CstmrAcctNb = None
+		self._CstmrAcctNb = base_types.UninitialisedField(self, 'CstmrAcctNb', Max35Text, False)
 
 	@property
 	def CstmrNm(self):
@@ -73,12 +73,12 @@ class TelecomServices4(base_types._BaseFieldType):
 
 	@CstmrNm.setter
 	def CstmrNm(self, value):
-		self._CstmrNm = value if type(value) != base_types.auto else self.make_default("CstmrNm")
+		self._CstmrNm = value if value is not None else base_types.UninitialisedField(self, 'CstmrNm', Max105Text, False)
 
 	@CstmrNm.deleter
 	def CstmrNm(self):
 		del self._CstmrNm
-		self._CstmrNm = None
+		self._CstmrNm = base_types.UninitialisedField(self, 'CstmrNm', Max105Text, False)
 
 	@property
 	def CstmrPhne(self):
@@ -86,12 +86,12 @@ class TelecomServices4(base_types._BaseFieldType):
 
 	@CstmrPhne.setter
 	def CstmrPhne(self, value):
-		self._CstmrPhne = value if type(value) != base_types.auto else self.make_default("CstmrPhne")
+		self._CstmrPhne = value if value is not None else base_types.UninitialisedField(self, 'CstmrPhne', PhoneNumber, False)
 
 	@CstmrPhne.deleter
 	def CstmrPhne(self):
 		del self._CstmrPhne
-		self._CstmrPhne = None
+		self._CstmrPhne = base_types.UninitialisedField(self, 'CstmrPhne', PhoneNumber, False)
 
 	@property
 	def LineItm(self):
@@ -99,12 +99,12 @@ class TelecomServices4(base_types._BaseFieldType):
 
 	@LineItm.setter
 	def LineItm(self, value):
-		self._LineItm = value if type(value) != base_types.auto else self.make_default("LineItm")
+		self._LineItm = value if value is not None else base_types.UninitialisedField(self, 'LineItm', TelecomServicesLineItem4, True)
 
 	@LineItm.deleter
 	def LineItm(self):
 		del self._LineItm
-		self._LineItm = None
+		self._LineItm = base_types.UninitialisedField(self, 'LineItm', TelecomServicesLineItem4, True)
 
 	@property
 	def NtlData(self):
@@ -112,12 +112,12 @@ class TelecomServices4(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def PrvtData(self):
@@ -125,12 +125,12 @@ class TelecomServices4(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def TtlAmt(self):
@@ -138,12 +138,12 @@ class TelecomServices4(base_types._BaseFieldType):
 
 	@TtlAmt.setter
 	def TtlAmt(self, value):
-		self._TtlAmt = value if type(value) != base_types.auto else self.make_default("TtlAmt")
+		self._TtlAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlAmt', ImpliedCurrencyAndAmount, False)
 
 	@TtlAmt.deleter
 	def TtlAmt(self):
 		del self._TtlAmt
-		self._TtlAmt = None
+		self._TtlAmt = base_types.UninitialisedField(self, 'TtlAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def TtlTax(self):
@@ -151,12 +151,12 @@ class TelecomServices4(base_types._BaseFieldType):
 
 	@TtlTax.setter
 	def TtlTax(self, value):
-		self._TtlTax = value if type(value) != base_types.auto else self.make_default("TtlTax")
+		self._TtlTax = value if value is not None else base_types.UninitialisedField(self, 'TtlTax', Tax44, True)
 
 	@TtlTax.deleter
 	def TtlTax(self):
 		del self._TtlTax
-		self._TtlTax = None
+		self._TtlTax = base_types.UninitialisedField(self, 'TtlTax', Tax44, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BllgEnd', type=ISODate, min=0, max=1, mutex_group=None, array=False),

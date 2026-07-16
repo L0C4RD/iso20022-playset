@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountIdentification4Choice import AccountIdentification4Choice
-from ._ActiveAmountRange3Choice import ActiveAmountRange3Choice
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._DateAndPeriod2Choice import DateAndPeriod2Choice
-from ._LimitType1Choice import LimitType1Choice
-from ._PercentageRange1Choice import PercentageRange1Choice
-from ._SystemIdentification2Choice import SystemIdentification2Choice
+from . import AccountIdentification4Choice
+from . import ActiveAmountRange3Choice
+from . import ActiveCurrencyCode
+from . import BranchAndFinancialInstitutionIdentification8
+from . import DateAndPeriod2Choice
+from . import LimitType1Choice
+from . import PercentageRange1Choice
+from . import SystemIdentification2Choice
 
 class LimitSearchCriteria7(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class LimitSearchCriteria7(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', AccountIdentification4Choice, False)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', AccountIdentification4Choice, False)
 
 	@property
 	def AcctOwnr(self):
@@ -33,12 +33,12 @@ class LimitSearchCriteria7(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def BilLmtCtrPtyId(self):
@@ -46,12 +46,12 @@ class LimitSearchCriteria7(base_types._BaseFieldType):
 
 	@BilLmtCtrPtyId.setter
 	def BilLmtCtrPtyId(self, value):
-		self._BilLmtCtrPtyId = value if type(value) != base_types.auto else self.make_default("BilLmtCtrPtyId")
+		self._BilLmtCtrPtyId = value if value is not None else base_types.UninitialisedField(self, 'BilLmtCtrPtyId', BranchAndFinancialInstitutionIdentification8, True)
 
 	@BilLmtCtrPtyId.deleter
 	def BilLmtCtrPtyId(self):
 		del self._BilLmtCtrPtyId
-		self._BilLmtCtrPtyId = None
+		self._BilLmtCtrPtyId = base_types.UninitialisedField(self, 'BilLmtCtrPtyId', BranchAndFinancialInstitutionIdentification8, True)
 
 	@property
 	def CurLmtTp(self):
@@ -59,12 +59,12 @@ class LimitSearchCriteria7(base_types._BaseFieldType):
 
 	@CurLmtTp.setter
 	def CurLmtTp(self, value):
-		self._CurLmtTp = value if type(value) != base_types.auto else self.make_default("CurLmtTp")
+		self._CurLmtTp = value if value is not None else base_types.UninitialisedField(self, 'CurLmtTp', LimitType1Choice, True)
 
 	@CurLmtTp.deleter
 	def CurLmtTp(self):
 		del self._CurLmtTp
-		self._CurLmtTp = None
+		self._CurLmtTp = base_types.UninitialisedField(self, 'CurLmtTp', LimitType1Choice, True)
 
 	@property
 	def DfltLmtTp(self):
@@ -72,12 +72,12 @@ class LimitSearchCriteria7(base_types._BaseFieldType):
 
 	@DfltLmtTp.setter
 	def DfltLmtTp(self, value):
-		self._DfltLmtTp = value if type(value) != base_types.auto else self.make_default("DfltLmtTp")
+		self._DfltLmtTp = value if value is not None else base_types.UninitialisedField(self, 'DfltLmtTp', LimitType1Choice, True)
 
 	@DfltLmtTp.deleter
 	def DfltLmtTp(self):
 		del self._DfltLmtTp
-		self._DfltLmtTp = None
+		self._DfltLmtTp = base_types.UninitialisedField(self, 'DfltLmtTp', LimitType1Choice, True)
 
 	@property
 	def LmtAmt(self):
@@ -85,12 +85,12 @@ class LimitSearchCriteria7(base_types._BaseFieldType):
 
 	@LmtAmt.setter
 	def LmtAmt(self, value):
-		self._LmtAmt = value if type(value) != base_types.auto else self.make_default("LmtAmt")
+		self._LmtAmt = value if value is not None else base_types.UninitialisedField(self, 'LmtAmt', ActiveAmountRange3Choice, False)
 
 	@LmtAmt.deleter
 	def LmtAmt(self):
 		del self._LmtAmt
-		self._LmtAmt = None
+		self._LmtAmt = base_types.UninitialisedField(self, 'LmtAmt', ActiveAmountRange3Choice, False)
 
 	@property
 	def LmtCcy(self):
@@ -98,12 +98,12 @@ class LimitSearchCriteria7(base_types._BaseFieldType):
 
 	@LmtCcy.setter
 	def LmtCcy(self, value):
-		self._LmtCcy = value if type(value) != base_types.auto else self.make_default("LmtCcy")
+		self._LmtCcy = value if value is not None else base_types.UninitialisedField(self, 'LmtCcy', ActiveCurrencyCode, False)
 
 	@LmtCcy.deleter
 	def LmtCcy(self):
 		del self._LmtCcy
-		self._LmtCcy = None
+		self._LmtCcy = base_types.UninitialisedField(self, 'LmtCcy', ActiveCurrencyCode, False)
 
 	@property
 	def LmtVldAsOfDt(self):
@@ -111,12 +111,12 @@ class LimitSearchCriteria7(base_types._BaseFieldType):
 
 	@LmtVldAsOfDt.setter
 	def LmtVldAsOfDt(self, value):
-		self._LmtVldAsOfDt = value if type(value) != base_types.auto else self.make_default("LmtVldAsOfDt")
+		self._LmtVldAsOfDt = value if value is not None else base_types.UninitialisedField(self, 'LmtVldAsOfDt', DateAndPeriod2Choice, False)
 
 	@LmtVldAsOfDt.deleter
 	def LmtVldAsOfDt(self):
 		del self._LmtVldAsOfDt
-		self._LmtVldAsOfDt = None
+		self._LmtVldAsOfDt = base_types.UninitialisedField(self, 'LmtVldAsOfDt', DateAndPeriod2Choice, False)
 
 	@property
 	def SysId(self):
@@ -124,12 +124,12 @@ class LimitSearchCriteria7(base_types._BaseFieldType):
 
 	@SysId.setter
 	def SysId(self, value):
-		self._SysId = value if type(value) != base_types.auto else self.make_default("SysId")
+		self._SysId = value if value is not None else base_types.UninitialisedField(self, 'SysId', SystemIdentification2Choice, False)
 
 	@SysId.deleter
 	def SysId(self):
 		del self._SysId
-		self._SysId = None
+		self._SysId = base_types.UninitialisedField(self, 'SysId', SystemIdentification2Choice, False)
 
 	@property
 	def UsdAmt(self):
@@ -137,12 +137,12 @@ class LimitSearchCriteria7(base_types._BaseFieldType):
 
 	@UsdAmt.setter
 	def UsdAmt(self, value):
-		self._UsdAmt = value if type(value) != base_types.auto else self.make_default("UsdAmt")
+		self._UsdAmt = value if value is not None else base_types.UninitialisedField(self, 'UsdAmt', ActiveAmountRange3Choice, False)
 
 	@UsdAmt.deleter
 	def UsdAmt(self):
 		del self._UsdAmt
-		self._UsdAmt = None
+		self._UsdAmt = base_types.UninitialisedField(self, 'UsdAmt', ActiveAmountRange3Choice, False)
 
 	@property
 	def UsdPctg(self):
@@ -150,12 +150,12 @@ class LimitSearchCriteria7(base_types._BaseFieldType):
 
 	@UsdPctg.setter
 	def UsdPctg(self, value):
-		self._UsdPctg = value if type(value) != base_types.auto else self.make_default("UsdPctg")
+		self._UsdPctg = value if value is not None else base_types.UninitialisedField(self, 'UsdPctg', PercentageRange1Choice, False)
 
 	@UsdPctg.deleter
 	def UsdPctg(self):
 		del self._UsdPctg
-		self._UsdPctg = None
+		self._UsdPctg = base_types.UninitialisedField(self, 'UsdPctg', PercentageRange1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),

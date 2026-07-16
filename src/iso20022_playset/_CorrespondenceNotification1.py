@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Document15 import Document15
-from ._Max2000Text import Max2000Text
-from ._Max35Text import Max35Text
-from ._NotificationSubType1Choice import NotificationSubType1Choice
-from ._NotificationType1Choice import NotificationType1Choice
-from ._RelatedNotificationData1 import RelatedNotificationData1
+from . import Document15
+from . import Max2000Text
+from . import Max35Text
+from . import NotificationSubType1Choice
+from . import NotificationType1Choice
+from . import RelatedNotificationData1
 
 class CorrespondenceNotification1(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class CorrespondenceNotification1(base_types._BaseFieldType):
 
 	@NclsdFile.setter
 	def NclsdFile(self, value):
-		self._NclsdFile = value if type(value) != base_types.auto else self.make_default("NclsdFile")
+		self._NclsdFile = value if value is not None else base_types.UninitialisedField(self, 'NclsdFile', Document15, True)
 
 	@NclsdFile.deleter
 	def NclsdFile(self):
 		del self._NclsdFile
-		self._NclsdFile = None
+		self._NclsdFile = base_types.UninitialisedField(self, 'NclsdFile', Document15, True)
 
 	@property
 	def NtfctnNrrtv(self):
@@ -31,12 +31,12 @@ class CorrespondenceNotification1(base_types._BaseFieldType):
 
 	@NtfctnNrrtv.setter
 	def NtfctnNrrtv(self, value):
-		self._NtfctnNrrtv = value if type(value) != base_types.auto else self.make_default("NtfctnNrrtv")
+		self._NtfctnNrrtv = value if value is not None else base_types.UninitialisedField(self, 'NtfctnNrrtv', Max2000Text, True)
 
 	@NtfctnNrrtv.deleter
 	def NtfctnNrrtv(self):
 		del self._NtfctnNrrtv
-		self._NtfctnNrrtv = None
+		self._NtfctnNrrtv = base_types.UninitialisedField(self, 'NtfctnNrrtv', Max2000Text, True)
 
 	@property
 	def NtfctnSubTp(self):
@@ -44,12 +44,12 @@ class CorrespondenceNotification1(base_types._BaseFieldType):
 
 	@NtfctnSubTp.setter
 	def NtfctnSubTp(self, value):
-		self._NtfctnSubTp = value if type(value) != base_types.auto else self.make_default("NtfctnSubTp")
+		self._NtfctnSubTp = value if value is not None else base_types.UninitialisedField(self, 'NtfctnSubTp', NotificationSubType1Choice, False)
 
 	@NtfctnSubTp.deleter
 	def NtfctnSubTp(self):
 		del self._NtfctnSubTp
-		self._NtfctnSubTp = None
+		self._NtfctnSubTp = base_types.UninitialisedField(self, 'NtfctnSubTp', NotificationSubType1Choice, False)
 
 	@property
 	def NtfctnTp(self):
@@ -57,12 +57,12 @@ class CorrespondenceNotification1(base_types._BaseFieldType):
 
 	@NtfctnTp.setter
 	def NtfctnTp(self, value):
-		self._NtfctnTp = value if type(value) != base_types.auto else self.make_default("NtfctnTp")
+		self._NtfctnTp = value if value is not None else base_types.UninitialisedField(self, 'NtfctnTp', NotificationType1Choice, False)
 
 	@NtfctnTp.deleter
 	def NtfctnTp(self):
 		del self._NtfctnTp
-		self._NtfctnTp = None
+		self._NtfctnTp = base_types.UninitialisedField(self, 'NtfctnTp', NotificationType1Choice, False)
 
 	@property
 	def RltdNtfctnData(self):
@@ -70,12 +70,12 @@ class CorrespondenceNotification1(base_types._BaseFieldType):
 
 	@RltdNtfctnData.setter
 	def RltdNtfctnData(self, value):
-		self._RltdNtfctnData = value if type(value) != base_types.auto else self.make_default("RltdNtfctnData")
+		self._RltdNtfctnData = value if value is not None else base_types.UninitialisedField(self, 'RltdNtfctnData', RelatedNotificationData1, True)
 
 	@RltdNtfctnData.deleter
 	def RltdNtfctnData(self):
 		del self._RltdNtfctnData
-		self._RltdNtfctnData = None
+		self._RltdNtfctnData = base_types.UninitialisedField(self, 'RltdNtfctnData', RelatedNotificationData1, True)
 
 	@property
 	def SndrNtfctnId(self):
@@ -83,12 +83,12 @@ class CorrespondenceNotification1(base_types._BaseFieldType):
 
 	@SndrNtfctnId.setter
 	def SndrNtfctnId(self, value):
-		self._SndrNtfctnId = value if type(value) != base_types.auto else self.make_default("SndrNtfctnId")
+		self._SndrNtfctnId = value if value is not None else base_types.UninitialisedField(self, 'SndrNtfctnId', Max35Text, False)
 
 	@SndrNtfctnId.deleter
 	def SndrNtfctnId(self):
 		del self._SndrNtfctnId
-		self._SndrNtfctnId = None
+		self._SndrNtfctnId = base_types.UninitialisedField(self, 'SndrNtfctnId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NclsdFile', type=Document15, min=0, max=None, mutex_group=None, array=True),

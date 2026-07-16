@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CollateralValueReturnCriteria1 import CollateralValueReturnCriteria1
-from ._CollateralValueSearchCriteria4 import CollateralValueSearchCriteria4
-from ._Max35Text import Max35Text
+from . import CollateralValueReturnCriteria1
+from . import CollateralValueSearchCriteria4
+from . import Max35Text
 
 class CollateralValueCriteria4(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CollateralValueCriteria4(base_types._BaseFieldType):
 
 	@QryNm.setter
 	def QryNm(self, value):
-		self._QryNm = value if type(value) != base_types.auto else self.make_default("QryNm")
+		self._QryNm = value if value is not None else base_types.UninitialisedField(self, 'QryNm', Max35Text, False)
 
 	@QryNm.deleter
 	def QryNm(self):
 		del self._QryNm
-		self._QryNm = None
+		self._QryNm = base_types.UninitialisedField(self, 'QryNm', Max35Text, False)
 
 	@property
 	def RtrCrit(self):
@@ -28,12 +28,12 @@ class CollateralValueCriteria4(base_types._BaseFieldType):
 
 	@RtrCrit.setter
 	def RtrCrit(self, value):
-		self._RtrCrit = value if type(value) != base_types.auto else self.make_default("RtrCrit")
+		self._RtrCrit = value if value is not None else base_types.UninitialisedField(self, 'RtrCrit', CollateralValueReturnCriteria1, False)
 
 	@RtrCrit.deleter
 	def RtrCrit(self):
 		del self._RtrCrit
-		self._RtrCrit = None
+		self._RtrCrit = base_types.UninitialisedField(self, 'RtrCrit', CollateralValueReturnCriteria1, False)
 
 	@property
 	def SchCrit(self):
@@ -41,12 +41,12 @@ class CollateralValueCriteria4(base_types._BaseFieldType):
 
 	@SchCrit.setter
 	def SchCrit(self, value):
-		self._SchCrit = value if type(value) != base_types.auto else self.make_default("SchCrit")
+		self._SchCrit = value if value is not None else base_types.UninitialisedField(self, 'SchCrit', CollateralValueSearchCriteria4, False)
 
 	@SchCrit.deleter
 	def SchCrit(self):
 		del self._SchCrit
-		self._SchCrit = None
+		self._SchCrit = base_types.UninitialisedField(self, 'SchCrit', CollateralValueSearchCriteria4, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='QryNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

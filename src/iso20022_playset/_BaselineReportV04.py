@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BICIdentification1 import BICIdentification1
-from ._DocumentIdentification5 import DocumentIdentification5
-from ._DocumentIdentification6 import DocumentIdentification6
-from ._LineItem14 import LineItem14
-from ._MessageIdentification1 import MessageIdentification1
-from ._PartyIdentification26 import PartyIdentification26
-from ._PendingActivity2 import PendingActivity2
-from ._ReportType2 import ReportType2
-from ._SimpleIdentificationInformation import SimpleIdentificationInformation
-from ._TransactionStatus4 import TransactionStatus4
+from . import BICIdentification1
+from . import DocumentIdentification5
+from . import DocumentIdentification6
+from . import LineItem14
+from . import MessageIdentification1
+from . import PartyIdentification26
+from . import PendingActivity2
+from . import ReportType2
+from . import SimpleIdentificationInformation
+from . import TransactionStatus4
 
 class BaselineReportV04(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class BaselineReportV04(base_types._BaseFieldType):
 
 	@Buyr.setter
 	def Buyr(self, value):
-		self._Buyr = value if type(value) != base_types.auto else self.make_default("Buyr")
+		self._Buyr = value if value is not None else base_types.UninitialisedField(self, 'Buyr', PartyIdentification26, False)
 
 	@Buyr.deleter
 	def Buyr(self):
 		del self._Buyr
-		self._Buyr = None
+		self._Buyr = base_types.UninitialisedField(self, 'Buyr', PartyIdentification26, False)
 
 	@property
 	def BuyrBk(self):
@@ -35,12 +35,12 @@ class BaselineReportV04(base_types._BaseFieldType):
 
 	@BuyrBk.setter
 	def BuyrBk(self, value):
-		self._BuyrBk = value if type(value) != base_types.auto else self.make_default("BuyrBk")
+		self._BuyrBk = value if value is not None else base_types.UninitialisedField(self, 'BuyrBk', BICIdentification1, False)
 
 	@BuyrBk.deleter
 	def BuyrBk(self):
 		del self._BuyrBk
-		self._BuyrBk = None
+		self._BuyrBk = base_types.UninitialisedField(self, 'BuyrBk', BICIdentification1, False)
 
 	@property
 	def EstblishdBaselnId(self):
@@ -48,12 +48,12 @@ class BaselineReportV04(base_types._BaseFieldType):
 
 	@EstblishdBaselnId.setter
 	def EstblishdBaselnId(self, value):
-		self._EstblishdBaselnId = value if type(value) != base_types.auto else self.make_default("EstblishdBaselnId")
+		self._EstblishdBaselnId = value if value is not None else base_types.UninitialisedField(self, 'EstblishdBaselnId', DocumentIdentification6, False)
 
 	@EstblishdBaselnId.deleter
 	def EstblishdBaselnId(self):
 		del self._EstblishdBaselnId
-		self._EstblishdBaselnId = None
+		self._EstblishdBaselnId = base_types.UninitialisedField(self, 'EstblishdBaselnId', DocumentIdentification6, False)
 
 	@property
 	def ReqForActn(self):
@@ -61,12 +61,12 @@ class BaselineReportV04(base_types._BaseFieldType):
 
 	@ReqForActn.setter
 	def ReqForActn(self, value):
-		self._ReqForActn = value if type(value) != base_types.auto else self.make_default("ReqForActn")
+		self._ReqForActn = value if value is not None else base_types.UninitialisedField(self, 'ReqForActn', PendingActivity2, False)
 
 	@ReqForActn.deleter
 	def ReqForActn(self):
 		del self._ReqForActn
-		self._ReqForActn = None
+		self._ReqForActn = base_types.UninitialisedField(self, 'ReqForActn', PendingActivity2, False)
 
 	@property
 	def RltdMsgRef(self):
@@ -74,12 +74,12 @@ class BaselineReportV04(base_types._BaseFieldType):
 
 	@RltdMsgRef.setter
 	def RltdMsgRef(self, value):
-		self._RltdMsgRef = value if type(value) != base_types.auto else self.make_default("RltdMsgRef")
+		self._RltdMsgRef = value if value is not None else base_types.UninitialisedField(self, 'RltdMsgRef', MessageIdentification1, False)
 
 	@RltdMsgRef.deleter
 	def RltdMsgRef(self):
 		del self._RltdMsgRef
-		self._RltdMsgRef = None
+		self._RltdMsgRef = base_types.UninitialisedField(self, 'RltdMsgRef', MessageIdentification1, False)
 
 	@property
 	def RptId(self):
@@ -87,12 +87,12 @@ class BaselineReportV04(base_types._BaseFieldType):
 
 	@RptId.setter
 	def RptId(self, value):
-		self._RptId = value if type(value) != base_types.auto else self.make_default("RptId")
+		self._RptId = value if value is not None else base_types.UninitialisedField(self, 'RptId', MessageIdentification1, False)
 
 	@RptId.deleter
 	def RptId(self):
 		del self._RptId
-		self._RptId = None
+		self._RptId = base_types.UninitialisedField(self, 'RptId', MessageIdentification1, False)
 
 	@property
 	def RptTp(self):
@@ -100,12 +100,12 @@ class BaselineReportV04(base_types._BaseFieldType):
 
 	@RptTp.setter
 	def RptTp(self, value):
-		self._RptTp = value if type(value) != base_types.auto else self.make_default("RptTp")
+		self._RptTp = value if value is not None else base_types.UninitialisedField(self, 'RptTp', ReportType2, False)
 
 	@RptTp.deleter
 	def RptTp(self):
 		del self._RptTp
-		self._RptTp = None
+		self._RptTp = base_types.UninitialisedField(self, 'RptTp', ReportType2, False)
 
 	@property
 	def RptdLineItm(self):
@@ -113,12 +113,12 @@ class BaselineReportV04(base_types._BaseFieldType):
 
 	@RptdLineItm.setter
 	def RptdLineItm(self, value):
-		self._RptdLineItm = value if type(value) != base_types.auto else self.make_default("RptdLineItm")
+		self._RptdLineItm = value if value is not None else base_types.UninitialisedField(self, 'RptdLineItm', LineItem14, False)
 
 	@RptdLineItm.deleter
 	def RptdLineItm(self):
 		del self._RptdLineItm
-		self._RptdLineItm = None
+		self._RptdLineItm = base_types.UninitialisedField(self, 'RptdLineItm', LineItem14, False)
 
 	@property
 	def Sellr(self):
@@ -126,12 +126,12 @@ class BaselineReportV04(base_types._BaseFieldType):
 
 	@Sellr.setter
 	def Sellr(self, value):
-		self._Sellr = value if type(value) != base_types.auto else self.make_default("Sellr")
+		self._Sellr = value if value is not None else base_types.UninitialisedField(self, 'Sellr', PartyIdentification26, False)
 
 	@Sellr.deleter
 	def Sellr(self):
 		del self._Sellr
-		self._Sellr = None
+		self._Sellr = base_types.UninitialisedField(self, 'Sellr', PartyIdentification26, False)
 
 	@property
 	def SellrBk(self):
@@ -139,12 +139,12 @@ class BaselineReportV04(base_types._BaseFieldType):
 
 	@SellrBk.setter
 	def SellrBk(self, value):
-		self._SellrBk = value if type(value) != base_types.auto else self.make_default("SellrBk")
+		self._SellrBk = value if value is not None else base_types.UninitialisedField(self, 'SellrBk', BICIdentification1, False)
 
 	@SellrBk.deleter
 	def SellrBk(self):
 		del self._SellrBk
-		self._SellrBk = None
+		self._SellrBk = base_types.UninitialisedField(self, 'SellrBk', BICIdentification1, False)
 
 	@property
 	def TxId(self):
@@ -152,12 +152,12 @@ class BaselineReportV04(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', SimpleIdentificationInformation, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', SimpleIdentificationInformation, False)
 
 	@property
 	def TxSts(self):
@@ -165,12 +165,12 @@ class BaselineReportV04(base_types._BaseFieldType):
 
 	@TxSts.setter
 	def TxSts(self, value):
-		self._TxSts = value if type(value) != base_types.auto else self.make_default("TxSts")
+		self._TxSts = value if value is not None else base_types.UninitialisedField(self, 'TxSts', TransactionStatus4, False)
 
 	@TxSts.deleter
 	def TxSts(self):
 		del self._TxSts
-		self._TxSts = None
+		self._TxSts = base_types.UninitialisedField(self, 'TxSts', TransactionStatus4, False)
 
 	@property
 	def UsrTxRef(self):
@@ -178,12 +178,12 @@ class BaselineReportV04(base_types._BaseFieldType):
 
 	@UsrTxRef.setter
 	def UsrTxRef(self, value):
-		self._UsrTxRef = value if type(value) != base_types.auto else self.make_default("UsrTxRef")
+		self._UsrTxRef = value if value is not None else base_types.UninitialisedField(self, 'UsrTxRef', DocumentIdentification5, True)
 
 	@UsrTxRef.deleter
 	def UsrTxRef(self):
 		del self._UsrTxRef
-		self._UsrTxRef = None
+		self._UsrTxRef = base_types.UninitialisedField(self, 'UsrTxRef', DocumentIdentification5, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Buyr', type=PartyIdentification26, min=1, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InvestigationResponseV02 import InvestigationResponseV02
+from . import InvestigationResponseV02
 
 class CAMT_111_001_02():
 
@@ -18,12 +18,12 @@ class CAMT_111_001_02():
 
 		@InvstgtnRspn.setter
 		def InvstgtnRspn(self, value):
-			self._InvstgtnRspn = value if type(value) != base_types.auto else self.make_default("InvstgtnRspn")
+			self._InvstgtnRspn = value if value is not None else base_types.UninitialisedField(self, 'InvstgtnRspn', InvestigationResponseV02, False)
 
 		@InvstgtnRspn.deleter
 		def InvstgtnRspn(self):
 			del self._InvstgtnRspn
-			self._InvstgtnRspn = None
+			self._InvstgtnRspn = base_types.UninitialisedField(self, 'InvstgtnRspn', InvestigationResponseV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='InvstgtnRspn', type=InvestigationResponseV02, min=1, max=1, mutex_group=None, array=False),

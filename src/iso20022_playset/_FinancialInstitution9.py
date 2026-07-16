@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalData1 import AdditionalData1
-from ._ISO3NumericCountryCode import ISO3NumericCountryCode
-from ._LocalData14 import LocalData14
-from ._Max35Text import Max35Text
-from ._Max99Text import Max99Text
+from . import AdditionalData1
+from . import ISO3NumericCountryCode
+from . import LocalData14
+from . import Max35Text
+from . import Max99Text
 
 class FinancialInstitution9(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class FinancialInstitution9(base_types._BaseFieldType):
 
 	@AcctNb.setter
 	def AcctNb(self, value):
-		self._AcctNb = value if type(value) != base_types.auto else self.make_default("AcctNb")
+		self._AcctNb = value if value is not None else base_types.UninitialisedField(self, 'AcctNb', Max35Text, False)
 
 	@AcctNb.deleter
 	def AcctNb(self):
 		del self._AcctNb
-		self._AcctNb = None
+		self._AcctNb = base_types.UninitialisedField(self, 'AcctNb', Max35Text, False)
 
 	@property
 	def AddtlId(self):
@@ -30,12 +30,12 @@ class FinancialInstitution9(base_types._BaseFieldType):
 
 	@AddtlId.setter
 	def AddtlId(self, value):
-		self._AddtlId = value if type(value) != base_types.auto else self.make_default("AddtlId")
+		self._AddtlId = value if value is not None else base_types.UninitialisedField(self, 'AddtlId', AdditionalData1, False)
 
 	@AddtlId.deleter
 	def AddtlId(self):
 		del self._AddtlId
-		self._AddtlId = None
+		self._AddtlId = base_types.UninitialisedField(self, 'AddtlId', AdditionalData1, False)
 
 	@property
 	def Assgnr(self):
@@ -43,12 +43,12 @@ class FinancialInstitution9(base_types._BaseFieldType):
 
 	@Assgnr.setter
 	def Assgnr(self, value):
-		self._Assgnr = value if type(value) != base_types.auto else self.make_default("Assgnr")
+		self._Assgnr = value if value is not None else base_types.UninitialisedField(self, 'Assgnr', Max35Text, False)
 
 	@Assgnr.deleter
 	def Assgnr(self):
 		del self._Assgnr
-		self._Assgnr = None
+		self._Assgnr = base_types.UninitialisedField(self, 'Assgnr', Max35Text, False)
 
 	@property
 	def Ctry(self):
@@ -56,12 +56,12 @@ class FinancialInstitution9(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', ISO3NumericCountryCode, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', ISO3NumericCountryCode, False)
 
 	@property
 	def Id(self):
@@ -69,12 +69,12 @@ class FinancialInstitution9(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def LclData(self):
@@ -82,12 +82,12 @@ class FinancialInstitution9(base_types._BaseFieldType):
 
 	@LclData.setter
 	def LclData(self, value):
-		self._LclData = value if type(value) != base_types.auto else self.make_default("LclData")
+		self._LclData = value if value is not None else base_types.UninitialisedField(self, 'LclData', LocalData14, False)
 
 	@LclData.deleter
 	def LclData(self):
 		del self._LclData
-		self._LclData = None
+		self._LclData = base_types.UninitialisedField(self, 'LclData', LocalData14, False)
 
 	@property
 	def LglCorpNm(self):
@@ -95,12 +95,12 @@ class FinancialInstitution9(base_types._BaseFieldType):
 
 	@LglCorpNm.setter
 	def LglCorpNm(self, value):
-		self._LglCorpNm = value if type(value) != base_types.auto else self.make_default("LglCorpNm")
+		self._LglCorpNm = value if value is not None else base_types.UninitialisedField(self, 'LglCorpNm', Max99Text, False)
 
 	@LglCorpNm.deleter
 	def LglCorpNm(self):
 		del self._LglCorpNm
-		self._LglCorpNm = None
+		self._LglCorpNm = base_types.UninitialisedField(self, 'LglCorpNm', Max99Text, False)
 
 	@property
 	def ShrtNm(self):
@@ -108,12 +108,12 @@ class FinancialInstitution9(base_types._BaseFieldType):
 
 	@ShrtNm.setter
 	def ShrtNm(self, value):
-		self._ShrtNm = value if type(value) != base_types.auto else self.make_default("ShrtNm")
+		self._ShrtNm = value if value is not None else base_types.UninitialisedField(self, 'ShrtNm', Max35Text, False)
 
 	@ShrtNm.deleter
 	def ShrtNm(self):
 		del self._ShrtNm
-		self._ShrtNm = None
+		self._ShrtNm = base_types.UninitialisedField(self, 'ShrtNm', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

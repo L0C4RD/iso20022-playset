@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IndividualPerson38 import IndividualPerson38
-from ._Organisation40 import Organisation40
+from . import IndividualPerson38
+from . import Organisation40
 
 class Party48Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Party48Choice(base_types._BaseFieldType):
 
 	@IndvPrsn.setter
 	def IndvPrsn(self, value):
-		self._IndvPrsn = value if type(value) != base_types.auto else self.make_default("IndvPrsn")
+		self._IndvPrsn = value if value is not None else base_types.UninitialisedField(self, 'IndvPrsn', IndividualPerson38, False)
 
 	@IndvPrsn.deleter
 	def IndvPrsn(self):
 		del self._IndvPrsn
-		self._IndvPrsn = None
+		self._IndvPrsn = base_types.UninitialisedField(self, 'IndvPrsn', IndividualPerson38, False)
 
 	@property
 	def Org(self):
@@ -27,12 +27,12 @@ class Party48Choice(base_types._BaseFieldType):
 
 	@Org.setter
 	def Org(self, value):
-		self._Org = value if type(value) != base_types.auto else self.make_default("Org")
+		self._Org = value if value is not None else base_types.UninitialisedField(self, 'Org', Organisation40, False)
 
 	@Org.deleter
 	def Org(self):
 		del self._Org
-		self._Org = None
+		self._Org = base_types.UninitialisedField(self, 'Org', Organisation40, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IndvPrsn', type=IndividualPerson38, min=0, max=1, mutex_group=1, array=False),

@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalData1 import AdditionalData1
-from ._Address2 import Address2
-from ._CardholderName3 import CardholderName3
-from ._ContactPersonal1 import ContactPersonal1
-from ._Credentials3 import Credentials3
-from ._ISODate import ISODate
-from ._LocalData13 import LocalData13
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import AdditionalData1
+from . import Address2
+from . import CardholderName3
+from . import ContactPersonal1
+from . import Credentials3
+from . import ISODate
+from . import LocalData13
+from . import TrueFalseIndicator
 
 class Cardholder22(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class Cardholder22(base_types._BaseFieldType):
 
 	@AddtlData.setter
 	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+		self._AddtlData = value if value is not None else base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@AddtlData.deleter
 	def AddtlData(self):
 		del self._AddtlData
-		self._AddtlData = None
+		self._AddtlData = base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@property
 	def Adr(self):
@@ -33,12 +33,12 @@ class Cardholder22(base_types._BaseFieldType):
 
 	@Adr.setter
 	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+		self._Adr = value if value is not None else base_types.UninitialisedField(self, 'Adr', Address2, False)
 
 	@Adr.deleter
 	def Adr(self):
 		del self._Adr
-		self._Adr = None
+		self._Adr = base_types.UninitialisedField(self, 'Adr', Address2, False)
 
 	@property
 	def CtctInf(self):
@@ -46,12 +46,12 @@ class Cardholder22(base_types._BaseFieldType):
 
 	@CtctInf.setter
 	def CtctInf(self, value):
-		self._CtctInf = value if type(value) != base_types.auto else self.make_default("CtctInf")
+		self._CtctInf = value if value is not None else base_types.UninitialisedField(self, 'CtctInf', ContactPersonal1, False)
 
 	@CtctInf.deleter
 	def CtctInf(self):
 		del self._CtctInf
-		self._CtctInf = None
+		self._CtctInf = base_types.UninitialisedField(self, 'CtctInf', ContactPersonal1, False)
 
 	@property
 	def DtOfBirth(self):
@@ -59,12 +59,12 @@ class Cardholder22(base_types._BaseFieldType):
 
 	@DtOfBirth.setter
 	def DtOfBirth(self, value):
-		self._DtOfBirth = value if type(value) != base_types.auto else self.make_default("DtOfBirth")
+		self._DtOfBirth = value if value is not None else base_types.UninitialisedField(self, 'DtOfBirth', ISODate, False)
 
 	@DtOfBirth.deleter
 	def DtOfBirth(self):
 		del self._DtOfBirth
-		self._DtOfBirth = None
+		self._DtOfBirth = base_types.UninitialisedField(self, 'DtOfBirth', ISODate, False)
 
 	@property
 	def HghVal(self):
@@ -72,12 +72,12 @@ class Cardholder22(base_types._BaseFieldType):
 
 	@HghVal.setter
 	def HghVal(self, value):
-		self._HghVal = value if type(value) != base_types.auto else self.make_default("HghVal")
+		self._HghVal = value if value is not None else base_types.UninitialisedField(self, 'HghVal', TrueFalseIndicator, False)
 
 	@HghVal.deleter
 	def HghVal(self):
 		del self._HghVal
-		self._HghVal = None
+		self._HghVal = base_types.UninitialisedField(self, 'HghVal', TrueFalseIndicator, False)
 
 	@property
 	def Id(self):
@@ -85,12 +85,12 @@ class Cardholder22(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Credentials3, True)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Credentials3, True)
 
 	@property
 	def LclData(self):
@@ -98,12 +98,12 @@ class Cardholder22(base_types._BaseFieldType):
 
 	@LclData.setter
 	def LclData(self, value):
-		self._LclData = value if type(value) != base_types.auto else self.make_default("LclData")
+		self._LclData = value if value is not None else base_types.UninitialisedField(self, 'LclData', LocalData13, False)
 
 	@LclData.deleter
 	def LclData(self):
 		del self._LclData
-		self._LclData = None
+		self._LclData = base_types.UninitialisedField(self, 'LclData', LocalData13, False)
 
 	@property
 	def Nm(self):
@@ -111,12 +111,12 @@ class Cardholder22(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', CardholderName3, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', CardholderName3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),

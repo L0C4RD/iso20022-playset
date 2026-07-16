@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AffirmationStatus10Choice import AffirmationStatus10Choice
-from ._Max210Text import Max210Text
-from ._UnaffirmedReason3Choice import UnaffirmedReason3Choice
+from . import AffirmationStatus10Choice
+from . import Max210Text
+from . import UnaffirmedReason3Choice
 
 class StatusAndReason46(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class StatusAndReason46(base_types._BaseFieldType):
 
 	@AddtlRsnInf.setter
 	def AddtlRsnInf(self, value):
-		self._AddtlRsnInf = value if type(value) != base_types.auto else self.make_default("AddtlRsnInf")
+		self._AddtlRsnInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlRsnInf', Max210Text, False)
 
 	@AddtlRsnInf.deleter
 	def AddtlRsnInf(self):
 		del self._AddtlRsnInf
-		self._AddtlRsnInf = None
+		self._AddtlRsnInf = base_types.UninitialisedField(self, 'AddtlRsnInf', Max210Text, False)
 
 	@property
 	def AffirmSts(self):
@@ -28,12 +28,12 @@ class StatusAndReason46(base_types._BaseFieldType):
 
 	@AffirmSts.setter
 	def AffirmSts(self, value):
-		self._AffirmSts = value if type(value) != base_types.auto else self.make_default("AffirmSts")
+		self._AffirmSts = value if value is not None else base_types.UninitialisedField(self, 'AffirmSts', AffirmationStatus10Choice, False)
 
 	@AffirmSts.deleter
 	def AffirmSts(self):
 		del self._AffirmSts
-		self._AffirmSts = None
+		self._AffirmSts = base_types.UninitialisedField(self, 'AffirmSts', AffirmationStatus10Choice, False)
 
 	@property
 	def UaffrmdRsn(self):
@@ -41,12 +41,12 @@ class StatusAndReason46(base_types._BaseFieldType):
 
 	@UaffrmdRsn.setter
 	def UaffrmdRsn(self, value):
-		self._UaffrmdRsn = value if type(value) != base_types.auto else self.make_default("UaffrmdRsn")
+		self._UaffrmdRsn = value if value is not None else base_types.UninitialisedField(self, 'UaffrmdRsn', UnaffirmedReason3Choice, False)
 
 	@UaffrmdRsn.deleter
 	def UaffrmdRsn(self):
 		del self._UaffrmdRsn
-		self._UaffrmdRsn = None
+		self._UaffrmdRsn = base_types.UninitialisedField(self, 'UaffrmdRsn', UnaffirmedReason3Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlRsnInf', type=Max210Text, min=0, max=1, mutex_group=None, array=False),

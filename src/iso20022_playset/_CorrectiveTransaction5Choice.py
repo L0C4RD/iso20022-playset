@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorrectiveInterbankTransaction3 import CorrectiveInterbankTransaction3
-from ._CorrectivePaymentInitiation5 import CorrectivePaymentInitiation5
+from . import CorrectiveInterbankTransaction3
+from . import CorrectivePaymentInitiation5
 
 class CorrectiveTransaction5Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CorrectiveTransaction5Choice(base_types._BaseFieldType):
 
 	@Initn.setter
 	def Initn(self, value):
-		self._Initn = value if type(value) != base_types.auto else self.make_default("Initn")
+		self._Initn = value if value is not None else base_types.UninitialisedField(self, 'Initn', CorrectivePaymentInitiation5, False)
 
 	@Initn.deleter
 	def Initn(self):
 		del self._Initn
-		self._Initn = None
+		self._Initn = base_types.UninitialisedField(self, 'Initn', CorrectivePaymentInitiation5, False)
 
 	@property
 	def IntrBk(self):
@@ -27,12 +27,12 @@ class CorrectiveTransaction5Choice(base_types._BaseFieldType):
 
 	@IntrBk.setter
 	def IntrBk(self, value):
-		self._IntrBk = value if type(value) != base_types.auto else self.make_default("IntrBk")
+		self._IntrBk = value if value is not None else base_types.UninitialisedField(self, 'IntrBk', CorrectiveInterbankTransaction3, False)
 
 	@IntrBk.deleter
 	def IntrBk(self):
 		del self._IntrBk
-		self._IntrBk = None
+		self._IntrBk = base_types.UninitialisedField(self, 'IntrBk', CorrectiveInterbankTransaction3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Initn', type=CorrectivePaymentInitiation5, min=0, max=1, mutex_group=1, array=False),

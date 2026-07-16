@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ISODate import ISODate
-from ._LEIIdentifier import LEIIdentifier
-from ._RepurchaseAgreementType3Choice import RepurchaseAgreementType3Choice
+from . import ActiveCurrencyAndAmount
+from . import ISODate
+from . import LEIIdentifier
+from . import RepurchaseAgreementType3Choice
 
 class RepurchaseAgreement2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class RepurchaseAgreement2(base_types._BaseFieldType):
 
 	@CollMktVal.setter
 	def CollMktVal(self, value):
-		self._CollMktVal = value if type(value) != base_types.auto else self.make_default("CollMktVal")
+		self._CollMktVal = value if value is not None else base_types.UninitialisedField(self, 'CollMktVal', ActiveCurrencyAndAmount, False)
 
 	@CollMktVal.deleter
 	def CollMktVal(self):
 		del self._CollMktVal
-		self._CollMktVal = None
+		self._CollMktVal = base_types.UninitialisedField(self, 'CollMktVal', ActiveCurrencyAndAmount, False)
 
 	@property
 	def CtrPty(self):
@@ -29,12 +29,12 @@ class RepurchaseAgreement2(base_types._BaseFieldType):
 
 	@CtrPty.setter
 	def CtrPty(self, value):
-		self._CtrPty = value if type(value) != base_types.auto else self.make_default("CtrPty")
+		self._CtrPty = value if value is not None else base_types.UninitialisedField(self, 'CtrPty', LEIIdentifier, False)
 
 	@CtrPty.deleter
 	def CtrPty(self):
 		del self._CtrPty
-		self._CtrPty = None
+		self._CtrPty = base_types.UninitialisedField(self, 'CtrPty', LEIIdentifier, False)
 
 	@property
 	def MtrtyDt(self):
@@ -42,12 +42,12 @@ class RepurchaseAgreement2(base_types._BaseFieldType):
 
 	@MtrtyDt.setter
 	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != base_types.auto else self.make_default("MtrtyDt")
+		self._MtrtyDt = value if value is not None else base_types.UninitialisedField(self, 'MtrtyDt', ISODate, False)
 
 	@MtrtyDt.deleter
 	def MtrtyDt(self):
 		del self._MtrtyDt
-		self._MtrtyDt = None
+		self._MtrtyDt = base_types.UninitialisedField(self, 'MtrtyDt', ISODate, False)
 
 	@property
 	def RpAgrmtTp(self):
@@ -55,12 +55,12 @@ class RepurchaseAgreement2(base_types._BaseFieldType):
 
 	@RpAgrmtTp.setter
 	def RpAgrmtTp(self, value):
-		self._RpAgrmtTp = value if type(value) != base_types.auto else self.make_default("RpAgrmtTp")
+		self._RpAgrmtTp = value if value is not None else base_types.UninitialisedField(self, 'RpAgrmtTp', RepurchaseAgreementType3Choice, False)
 
 	@RpAgrmtTp.deleter
 	def RpAgrmtTp(self):
 		del self._RpAgrmtTp
-		self._RpAgrmtTp = None
+		self._RpAgrmtTp = base_types.UninitialisedField(self, 'RpAgrmtTp', RepurchaseAgreementType3Choice, False)
 
 	@property
 	def ScndLegPric(self):
@@ -68,12 +68,12 @@ class RepurchaseAgreement2(base_types._BaseFieldType):
 
 	@ScndLegPric.setter
 	def ScndLegPric(self, value):
-		self._ScndLegPric = value if type(value) != base_types.auto else self.make_default("ScndLegPric")
+		self._ScndLegPric = value if value is not None else base_types.UninitialisedField(self, 'ScndLegPric', ActiveCurrencyAndAmount, False)
 
 	@ScndLegPric.deleter
 	def ScndLegPric(self):
 		del self._ScndLegPric
-		self._ScndLegPric = None
+		self._ScndLegPric = base_types.UninitialisedField(self, 'ScndLegPric', ActiveCurrencyAndAmount, False)
 
 	@property
 	def TrptyAgtId(self):
@@ -81,12 +81,12 @@ class RepurchaseAgreement2(base_types._BaseFieldType):
 
 	@TrptyAgtId.setter
 	def TrptyAgtId(self, value):
-		self._TrptyAgtId = value if type(value) != base_types.auto else self.make_default("TrptyAgtId")
+		self._TrptyAgtId = value if value is not None else base_types.UninitialisedField(self, 'TrptyAgtId', LEIIdentifier, False)
 
 	@TrptyAgtId.deleter
 	def TrptyAgtId(self):
 		del self._TrptyAgtId
-		self._TrptyAgtId = None
+		self._TrptyAgtId = base_types.UninitialisedField(self, 'TrptyAgtId', LEIIdentifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollMktVal', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

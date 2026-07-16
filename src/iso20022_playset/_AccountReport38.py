@@ -2,21 +2,21 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountInterest4 import AccountInterest4
-from ._CashAccount40 import CashAccount40
-from ._CashAccount43 import CashAccount43
-from ._CashBalance8 import CashBalance8
-from ._CopyDuplicate1Code import CopyDuplicate1Code
-from ._DateTimePeriod1 import DateTimePeriod1
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
-from ._Max500Text import Max500Text
-from ._Number import Number
-from ._Pagination1 import Pagination1
-from ._ReportEntry16 import ReportEntry16
-from ._ReportingSource1Choice import ReportingSource1Choice
-from ._SequenceRange1Choice import SequenceRange1Choice
-from ._TotalTransactions6 import TotalTransactions6
+from . import AccountInterest4
+from . import CashAccount40
+from . import CashAccount43
+from . import CashBalance8
+from . import CopyDuplicate1Code
+from . import DateTimePeriod1
+from . import ISODateTime
+from . import Max35Text
+from . import Max500Text
+from . import Number
+from . import Pagination1
+from . import ReportEntry16
+from . import ReportingSource1Choice
+from . import SequenceRange1Choice
+from . import TotalTransactions6
 
 class AccountReport38(base_types._BaseFieldType):
 
@@ -27,12 +27,12 @@ class AccountReport38(base_types._BaseFieldType):
 
 	@Acct.setter
 	def Acct(self, value):
-		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
+		self._Acct = value if value is not None else base_types.UninitialisedField(self, 'Acct', CashAccount43, False)
 
 	@Acct.deleter
 	def Acct(self):
 		del self._Acct
-		self._Acct = None
+		self._Acct = base_types.UninitialisedField(self, 'Acct', CashAccount43, False)
 
 	@property
 	def AddtlRptInf(self):
@@ -40,12 +40,12 @@ class AccountReport38(base_types._BaseFieldType):
 
 	@AddtlRptInf.setter
 	def AddtlRptInf(self, value):
-		self._AddtlRptInf = value if type(value) != base_types.auto else self.make_default("AddtlRptInf")
+		self._AddtlRptInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlRptInf', Max500Text, False)
 
 	@AddtlRptInf.deleter
 	def AddtlRptInf(self):
 		del self._AddtlRptInf
-		self._AddtlRptInf = None
+		self._AddtlRptInf = base_types.UninitialisedField(self, 'AddtlRptInf', Max500Text, False)
 
 	@property
 	def Bal(self):
@@ -53,12 +53,12 @@ class AccountReport38(base_types._BaseFieldType):
 
 	@Bal.setter
 	def Bal(self, value):
-		self._Bal = value if type(value) != base_types.auto else self.make_default("Bal")
+		self._Bal = value if value is not None else base_types.UninitialisedField(self, 'Bal', CashBalance8, True)
 
 	@Bal.deleter
 	def Bal(self):
 		del self._Bal
-		self._Bal = None
+		self._Bal = base_types.UninitialisedField(self, 'Bal', CashBalance8, True)
 
 	@property
 	def CpyDplctInd(self):
@@ -66,12 +66,12 @@ class AccountReport38(base_types._BaseFieldType):
 
 	@CpyDplctInd.setter
 	def CpyDplctInd(self, value):
-		self._CpyDplctInd = value if type(value) != base_types.auto else self.make_default("CpyDplctInd")
+		self._CpyDplctInd = value if value is not None else base_types.UninitialisedField(self, 'CpyDplctInd', CopyDuplicate1Code, False)
 
 	@CpyDplctInd.deleter
 	def CpyDplctInd(self):
 		del self._CpyDplctInd
-		self._CpyDplctInd = None
+		self._CpyDplctInd = base_types.UninitialisedField(self, 'CpyDplctInd', CopyDuplicate1Code, False)
 
 	@property
 	def CreDtTm(self):
@@ -79,12 +79,12 @@ class AccountReport38(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if value is not None else base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
 		del self._CreDtTm
-		self._CreDtTm = None
+		self._CreDtTm = base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@property
 	def ElctrncSeqNb(self):
@@ -92,12 +92,12 @@ class AccountReport38(base_types._BaseFieldType):
 
 	@ElctrncSeqNb.setter
 	def ElctrncSeqNb(self, value):
-		self._ElctrncSeqNb = value if type(value) != base_types.auto else self.make_default("ElctrncSeqNb")
+		self._ElctrncSeqNb = value if value is not None else base_types.UninitialisedField(self, 'ElctrncSeqNb', Number, False)
 
 	@ElctrncSeqNb.deleter
 	def ElctrncSeqNb(self):
 		del self._ElctrncSeqNb
-		self._ElctrncSeqNb = None
+		self._ElctrncSeqNb = base_types.UninitialisedField(self, 'ElctrncSeqNb', Number, False)
 
 	@property
 	def FrToDt(self):
@@ -105,12 +105,12 @@ class AccountReport38(base_types._BaseFieldType):
 
 	@FrToDt.setter
 	def FrToDt(self, value):
-		self._FrToDt = value if type(value) != base_types.auto else self.make_default("FrToDt")
+		self._FrToDt = value if value is not None else base_types.UninitialisedField(self, 'FrToDt', DateTimePeriod1, False)
 
 	@FrToDt.deleter
 	def FrToDt(self):
 		del self._FrToDt
-		self._FrToDt = None
+		self._FrToDt = base_types.UninitialisedField(self, 'FrToDt', DateTimePeriod1, False)
 
 	@property
 	def Id(self):
@@ -118,12 +118,12 @@ class AccountReport38(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def Intrst(self):
@@ -131,12 +131,12 @@ class AccountReport38(base_types._BaseFieldType):
 
 	@Intrst.setter
 	def Intrst(self, value):
-		self._Intrst = value if type(value) != base_types.auto else self.make_default("Intrst")
+		self._Intrst = value if value is not None else base_types.UninitialisedField(self, 'Intrst', AccountInterest4, True)
 
 	@Intrst.deleter
 	def Intrst(self):
 		del self._Intrst
-		self._Intrst = None
+		self._Intrst = base_types.UninitialisedField(self, 'Intrst', AccountInterest4, True)
 
 	@property
 	def LglSeqNb(self):
@@ -144,12 +144,12 @@ class AccountReport38(base_types._BaseFieldType):
 
 	@LglSeqNb.setter
 	def LglSeqNb(self, value):
-		self._LglSeqNb = value if type(value) != base_types.auto else self.make_default("LglSeqNb")
+		self._LglSeqNb = value if value is not None else base_types.UninitialisedField(self, 'LglSeqNb', Number, False)
 
 	@LglSeqNb.deleter
 	def LglSeqNb(self):
 		del self._LglSeqNb
-		self._LglSeqNb = None
+		self._LglSeqNb = base_types.UninitialisedField(self, 'LglSeqNb', Number, False)
 
 	@property
 	def Ntry(self):
@@ -157,12 +157,12 @@ class AccountReport38(base_types._BaseFieldType):
 
 	@Ntry.setter
 	def Ntry(self, value):
-		self._Ntry = value if type(value) != base_types.auto else self.make_default("Ntry")
+		self._Ntry = value if value is not None else base_types.UninitialisedField(self, 'Ntry', ReportEntry16, True)
 
 	@Ntry.deleter
 	def Ntry(self):
 		del self._Ntry
-		self._Ntry = None
+		self._Ntry = base_types.UninitialisedField(self, 'Ntry', ReportEntry16, True)
 
 	@property
 	def RltdAcct(self):
@@ -170,12 +170,12 @@ class AccountReport38(base_types._BaseFieldType):
 
 	@RltdAcct.setter
 	def RltdAcct(self, value):
-		self._RltdAcct = value if type(value) != base_types.auto else self.make_default("RltdAcct")
+		self._RltdAcct = value if value is not None else base_types.UninitialisedField(self, 'RltdAcct', CashAccount40, False)
 
 	@RltdAcct.deleter
 	def RltdAcct(self):
 		del self._RltdAcct
-		self._RltdAcct = None
+		self._RltdAcct = base_types.UninitialisedField(self, 'RltdAcct', CashAccount40, False)
 
 	@property
 	def RptPgntn(self):
@@ -183,12 +183,12 @@ class AccountReport38(base_types._BaseFieldType):
 
 	@RptPgntn.setter
 	def RptPgntn(self, value):
-		self._RptPgntn = value if type(value) != base_types.auto else self.make_default("RptPgntn")
+		self._RptPgntn = value if value is not None else base_types.UninitialisedField(self, 'RptPgntn', Pagination1, False)
 
 	@RptPgntn.deleter
 	def RptPgntn(self):
 		del self._RptPgntn
-		self._RptPgntn = None
+		self._RptPgntn = base_types.UninitialisedField(self, 'RptPgntn', Pagination1, False)
 
 	@property
 	def RptgSeq(self):
@@ -196,12 +196,12 @@ class AccountReport38(base_types._BaseFieldType):
 
 	@RptgSeq.setter
 	def RptgSeq(self, value):
-		self._RptgSeq = value if type(value) != base_types.auto else self.make_default("RptgSeq")
+		self._RptgSeq = value if value is not None else base_types.UninitialisedField(self, 'RptgSeq', SequenceRange1Choice, False)
 
 	@RptgSeq.deleter
 	def RptgSeq(self):
 		del self._RptgSeq
-		self._RptgSeq = None
+		self._RptgSeq = base_types.UninitialisedField(self, 'RptgSeq', SequenceRange1Choice, False)
 
 	@property
 	def RptgSrc(self):
@@ -209,12 +209,12 @@ class AccountReport38(base_types._BaseFieldType):
 
 	@RptgSrc.setter
 	def RptgSrc(self, value):
-		self._RptgSrc = value if type(value) != base_types.auto else self.make_default("RptgSrc")
+		self._RptgSrc = value if value is not None else base_types.UninitialisedField(self, 'RptgSrc', ReportingSource1Choice, False)
 
 	@RptgSrc.deleter
 	def RptgSrc(self):
 		del self._RptgSrc
-		self._RptgSrc = None
+		self._RptgSrc = base_types.UninitialisedField(self, 'RptgSrc', ReportingSource1Choice, False)
 
 	@property
 	def TxsSummry(self):
@@ -222,12 +222,12 @@ class AccountReport38(base_types._BaseFieldType):
 
 	@TxsSummry.setter
 	def TxsSummry(self, value):
-		self._TxsSummry = value if type(value) != base_types.auto else self.make_default("TxsSummry")
+		self._TxsSummry = value if value is not None else base_types.UninitialisedField(self, 'TxsSummry', TotalTransactions6, False)
 
 	@TxsSummry.deleter
 	def TxsSummry(self):
 		del self._TxsSummry
-		self._TxsSummry = None
+		self._TxsSummry = base_types.UninitialisedField(self, 'TxsSummry', TotalTransactions6, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acct', type=CashAccount43, min=1, max=1, mutex_group=None, array=False),

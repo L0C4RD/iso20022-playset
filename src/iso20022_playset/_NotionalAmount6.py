@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._AmountAndDirection106 import AmountAndDirection106
-from ._Schedule11 import Schedule11
+from . import ActiveOrHistoricCurrencyCode
+from . import AmountAndDirection106
+from . import Schedule11
 
 class NotionalAmount6(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class NotionalAmount6(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', AmountAndDirection106, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', AmountAndDirection106, False)
 
 	@property
 	def Ccy(self):
@@ -28,12 +28,12 @@ class NotionalAmount6(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveOrHistoricCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def SchdlPrd(self):
@@ -41,12 +41,12 @@ class NotionalAmount6(base_types._BaseFieldType):
 
 	@SchdlPrd.setter
 	def SchdlPrd(self, value):
-		self._SchdlPrd = value if type(value) != base_types.auto else self.make_default("SchdlPrd")
+		self._SchdlPrd = value if value is not None else base_types.UninitialisedField(self, 'SchdlPrd', Schedule11, True)
 
 	@SchdlPrd.deleter
 	def SchdlPrd(self):
 		del self._SchdlPrd
-		self._SchdlPrd = None
+		self._SchdlPrd = base_types.UninitialisedField(self, 'SchdlPrd', Schedule11, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=AmountAndDirection106, min=0, max=1, mutex_group=None, array=False),

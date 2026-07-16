@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContentInformationType39 import ContentInformationType39
-from ._CryptographicKeyType3Code import CryptographicKeyType3Code
-from ._GenericIdentification186 import GenericIdentification186
-from ._GenericInformation1 import GenericInformation1
-from ._ISODateTime import ISODateTime
-from ._KeyUsage1Code import KeyUsage1Code
-from ._Max256Text import Max256Text
-from ._Max350Text import Max350Text
-from ._Max35Binary import Max35Binary
-from ._Max35Text import Max35Text
+from . import ContentInformationType39
+from . import CryptographicKeyType3Code
+from . import GenericIdentification186
+from . import GenericInformation1
+from . import ISODateTime
+from . import KeyUsage1Code
+from . import Max256Text
+from . import Max350Text
+from . import Max35Binary
+from . import Max35Text
 
 class CryptographicKey18(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class CryptographicKey18(base_types._BaseFieldType):
 
 	@ActvtnDt.setter
 	def ActvtnDt(self, value):
-		self._ActvtnDt = value if type(value) != base_types.auto else self.make_default("ActvtnDt")
+		self._ActvtnDt = value if value is not None else base_types.UninitialisedField(self, 'ActvtnDt', ISODateTime, False)
 
 	@ActvtnDt.deleter
 	def ActvtnDt(self):
 		del self._ActvtnDt
-		self._ActvtnDt = None
+		self._ActvtnDt = base_types.UninitialisedField(self, 'ActvtnDt', ISODateTime, False)
 
 	@property
 	def AddtlId(self):
@@ -35,12 +35,12 @@ class CryptographicKey18(base_types._BaseFieldType):
 
 	@AddtlId.setter
 	def AddtlId(self, value):
-		self._AddtlId = value if type(value) != base_types.auto else self.make_default("AddtlId")
+		self._AddtlId = value if value is not None else base_types.UninitialisedField(self, 'AddtlId', Max35Binary, False)
 
 	@AddtlId.deleter
 	def AddtlId(self):
 		del self._AddtlId
-		self._AddtlId = None
+		self._AddtlId = base_types.UninitialisedField(self, 'AddtlId', Max35Binary, False)
 
 	@property
 	def AddtlMgmtInf(self):
@@ -48,12 +48,12 @@ class CryptographicKey18(base_types._BaseFieldType):
 
 	@AddtlMgmtInf.setter
 	def AddtlMgmtInf(self, value):
-		self._AddtlMgmtInf = value if type(value) != base_types.auto else self.make_default("AddtlMgmtInf")
+		self._AddtlMgmtInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlMgmtInf', GenericInformation1, True)
 
 	@AddtlMgmtInf.deleter
 	def AddtlMgmtInf(self):
 		del self._AddtlMgmtInf
-		self._AddtlMgmtInf = None
+		self._AddtlMgmtInf = base_types.UninitialisedField(self, 'AddtlMgmtInf', GenericInformation1, True)
 
 	@property
 	def CmpntWthAuthrsdAccs(self):
@@ -61,12 +61,12 @@ class CryptographicKey18(base_types._BaseFieldType):
 
 	@CmpntWthAuthrsdAccs.setter
 	def CmpntWthAuthrsdAccs(self, value):
-		self._CmpntWthAuthrsdAccs = value if type(value) != base_types.auto else self.make_default("CmpntWthAuthrsdAccs")
+		self._CmpntWthAuthrsdAccs = value if value is not None else base_types.UninitialisedField(self, 'CmpntWthAuthrsdAccs', GenericIdentification186, True)
 
 	@CmpntWthAuthrsdAccs.deleter
 	def CmpntWthAuthrsdAccs(self):
 		del self._CmpntWthAuthrsdAccs
-		self._CmpntWthAuthrsdAccs = None
+		self._CmpntWthAuthrsdAccs = base_types.UninitialisedField(self, 'CmpntWthAuthrsdAccs', GenericIdentification186, True)
 
 	@property
 	def DeactvtnDt(self):
@@ -74,12 +74,12 @@ class CryptographicKey18(base_types._BaseFieldType):
 
 	@DeactvtnDt.setter
 	def DeactvtnDt(self, value):
-		self._DeactvtnDt = value if type(value) != base_types.auto else self.make_default("DeactvtnDt")
+		self._DeactvtnDt = value if value is not None else base_types.UninitialisedField(self, 'DeactvtnDt', ISODateTime, False)
 
 	@DeactvtnDt.deleter
 	def DeactvtnDt(self):
 		del self._DeactvtnDt
-		self._DeactvtnDt = None
+		self._DeactvtnDt = base_types.UninitialisedField(self, 'DeactvtnDt', ISODateTime, False)
 
 	@property
 	def Fctn(self):
@@ -87,12 +87,12 @@ class CryptographicKey18(base_types._BaseFieldType):
 
 	@Fctn.setter
 	def Fctn(self, value):
-		self._Fctn = value if type(value) != base_types.auto else self.make_default("Fctn")
+		self._Fctn = value if value is not None else base_types.UninitialisedField(self, 'Fctn', KeyUsage1Code, True)
 
 	@Fctn.deleter
 	def Fctn(self):
 		del self._Fctn
-		self._Fctn = None
+		self._Fctn = base_types.UninitialisedField(self, 'Fctn', KeyUsage1Code, True)
 
 	@property
 	def Id(self):
@@ -100,12 +100,12 @@ class CryptographicKey18(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max350Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max350Text, False)
 
 	@property
 	def ItmNb(self):
@@ -113,12 +113,12 @@ class CryptographicKey18(base_types._BaseFieldType):
 
 	@ItmNb.setter
 	def ItmNb(self, value):
-		self._ItmNb = value if type(value) != base_types.auto else self.make_default("ItmNb")
+		self._ItmNb = value if value is not None else base_types.UninitialisedField(self, 'ItmNb', Max35Text, False)
 
 	@ItmNb.deleter
 	def ItmNb(self):
 		del self._ItmNb
-		self._ItmNb = None
+		self._ItmNb = base_types.UninitialisedField(self, 'ItmNb', Max35Text, False)
 
 	@property
 	def KeyChckVal(self):
@@ -126,12 +126,12 @@ class CryptographicKey18(base_types._BaseFieldType):
 
 	@KeyChckVal.setter
 	def KeyChckVal(self, value):
-		self._KeyChckVal = value if type(value) != base_types.auto else self.make_default("KeyChckVal")
+		self._KeyChckVal = value if value is not None else base_types.UninitialisedField(self, 'KeyChckVal', Max35Binary, False)
 
 	@KeyChckVal.deleter
 	def KeyChckVal(self):
 		del self._KeyChckVal
-		self._KeyChckVal = None
+		self._KeyChckVal = base_types.UninitialisedField(self, 'KeyChckVal', Max35Binary, False)
 
 	@property
 	def KeyVal(self):
@@ -139,12 +139,12 @@ class CryptographicKey18(base_types._BaseFieldType):
 
 	@KeyVal.setter
 	def KeyVal(self, value):
-		self._KeyVal = value if type(value) != base_types.auto else self.make_default("KeyVal")
+		self._KeyVal = value if value is not None else base_types.UninitialisedField(self, 'KeyVal', ContentInformationType39, False)
 
 	@KeyVal.deleter
 	def KeyVal(self):
 		del self._KeyVal
-		self._KeyVal = None
+		self._KeyVal = base_types.UninitialisedField(self, 'KeyVal', ContentInformationType39, False)
 
 	@property
 	def Nm(self):
@@ -152,12 +152,12 @@ class CryptographicKey18(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max256Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max256Text, False)
 
 	@property
 	def PrtctdCmpntWthAuthrsdAccs(self):
@@ -165,12 +165,12 @@ class CryptographicKey18(base_types._BaseFieldType):
 
 	@PrtctdCmpntWthAuthrsdAccs.setter
 	def PrtctdCmpntWthAuthrsdAccs(self, value):
-		self._PrtctdCmpntWthAuthrsdAccs = value if type(value) != base_types.auto else self.make_default("PrtctdCmpntWthAuthrsdAccs")
+		self._PrtctdCmpntWthAuthrsdAccs = value if value is not None else base_types.UninitialisedField(self, 'PrtctdCmpntWthAuthrsdAccs', ContentInformationType39, True)
 
 	@PrtctdCmpntWthAuthrsdAccs.deleter
 	def PrtctdCmpntWthAuthrsdAccs(self):
 		del self._PrtctdCmpntWthAuthrsdAccs
-		self._PrtctdCmpntWthAuthrsdAccs = None
+		self._PrtctdCmpntWthAuthrsdAccs = base_types.UninitialisedField(self, 'PrtctdCmpntWthAuthrsdAccs', ContentInformationType39, True)
 
 	@property
 	def SctyPrfl(self):
@@ -178,12 +178,12 @@ class CryptographicKey18(base_types._BaseFieldType):
 
 	@SctyPrfl.setter
 	def SctyPrfl(self, value):
-		self._SctyPrfl = value if type(value) != base_types.auto else self.make_default("SctyPrfl")
+		self._SctyPrfl = value if value is not None else base_types.UninitialisedField(self, 'SctyPrfl', Max35Text, False)
 
 	@SctyPrfl.deleter
 	def SctyPrfl(self):
 		del self._SctyPrfl
-		self._SctyPrfl = None
+		self._SctyPrfl = base_types.UninitialisedField(self, 'SctyPrfl', Max35Text, False)
 
 	@property
 	def Tp(self):
@@ -191,12 +191,12 @@ class CryptographicKey18(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', CryptographicKeyType3Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', CryptographicKeyType3Code, False)
 
 	@property
 	def Vrsn(self):
@@ -204,12 +204,12 @@ class CryptographicKey18(base_types._BaseFieldType):
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+		self._Vrsn = value if value is not None else base_types.UninitialisedField(self, 'Vrsn', Max256Text, False)
 
 	@Vrsn.deleter
 	def Vrsn(self):
 		del self._Vrsn
-		self._Vrsn = None
+		self._Vrsn = base_types.UninitialisedField(self, 'Vrsn', Max256Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActvtnDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PriceRateOrAmount3Choice import PriceRateOrAmount3Choice
-from ._YieldedOrValueType1Choice import YieldedOrValueType1Choice
+from . import PriceRateOrAmount3Choice
+from . import YieldedOrValueType1Choice
 
 class Price7(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Price7(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', YieldedOrValueType1Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', YieldedOrValueType1Choice, False)
 
 	@property
 	def Val(self):
@@ -27,12 +27,12 @@ class Price7(base_types._BaseFieldType):
 
 	@Val.setter
 	def Val(self, value):
-		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
+		self._Val = value if value is not None else base_types.UninitialisedField(self, 'Val', PriceRateOrAmount3Choice, False)
 
 	@Val.deleter
 	def Val(self):
 		del self._Val
-		self._Val = None
+		self._Val = base_types.UninitialisedField(self, 'Val', PriceRateOrAmount3Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Tp', type=YieldedOrValueType1Choice, min=1, max=1, mutex_group=None, array=False),

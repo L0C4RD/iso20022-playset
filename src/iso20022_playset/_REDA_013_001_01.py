@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecurityDeletionRequestV01 import SecurityDeletionRequestV01
+from . import SecurityDeletionRequestV01
 
 class REDA_013_001_01():
 
@@ -18,12 +18,12 @@ class REDA_013_001_01():
 
 		@SctyDeltnReq.setter
 		def SctyDeltnReq(self, value):
-			self._SctyDeltnReq = value if type(value) != base_types.auto else self.make_default("SctyDeltnReq")
+			self._SctyDeltnReq = value if value is not None else base_types.UninitialisedField(self, 'SctyDeltnReq', SecurityDeletionRequestV01, False)
 
 		@SctyDeltnReq.deleter
 		def SctyDeltnReq(self):
 			del self._SctyDeltnReq
-			self._SctyDeltnReq = None
+			self._SctyDeltnReq = base_types.UninitialisedField(self, 'SctyDeltnReq', SecurityDeletionRequestV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctyDeltnReq', type=SecurityDeletionRequestV01, min=1, max=1, mutex_group=None, array=False),

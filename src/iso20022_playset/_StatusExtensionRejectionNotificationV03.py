@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DocumentIdentification3 import DocumentIdentification3
-from ._DocumentIdentification5 import DocumentIdentification5
-from ._MessageIdentification1 import MessageIdentification1
-from ._PendingActivity2 import PendingActivity2
-from ._Reason2 import Reason2
-from ._SimpleIdentificationInformation import SimpleIdentificationInformation
-from ._TransactionStatus4 import TransactionStatus4
+from . import DocumentIdentification3
+from . import DocumentIdentification5
+from . import MessageIdentification1
+from . import PendingActivity2
+from . import Reason2
+from . import SimpleIdentificationInformation
+from . import TransactionStatus4
 
 class StatusExtensionRejectionNotificationV03(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class StatusExtensionRejectionNotificationV03(base_types._BaseFieldType):
 
 	@EstblishdBaselnId.setter
 	def EstblishdBaselnId(self, value):
-		self._EstblishdBaselnId = value if type(value) != base_types.auto else self.make_default("EstblishdBaselnId")
+		self._EstblishdBaselnId = value if value is not None else base_types.UninitialisedField(self, 'EstblishdBaselnId', DocumentIdentification3, False)
 
 	@EstblishdBaselnId.deleter
 	def EstblishdBaselnId(self):
 		del self._EstblishdBaselnId
-		self._EstblishdBaselnId = None
+		self._EstblishdBaselnId = base_types.UninitialisedField(self, 'EstblishdBaselnId', DocumentIdentification3, False)
 
 	@property
 	def NonXtndedSts(self):
@@ -32,12 +32,12 @@ class StatusExtensionRejectionNotificationV03(base_types._BaseFieldType):
 
 	@NonXtndedSts.setter
 	def NonXtndedSts(self, value):
-		self._NonXtndedSts = value if type(value) != base_types.auto else self.make_default("NonXtndedSts")
+		self._NonXtndedSts = value if value is not None else base_types.UninitialisedField(self, 'NonXtndedSts', TransactionStatus4, False)
 
 	@NonXtndedSts.deleter
 	def NonXtndedSts(self):
 		del self._NonXtndedSts
-		self._NonXtndedSts = None
+		self._NonXtndedSts = base_types.UninitialisedField(self, 'NonXtndedSts', TransactionStatus4, False)
 
 	@property
 	def NtfctnId(self):
@@ -45,12 +45,12 @@ class StatusExtensionRejectionNotificationV03(base_types._BaseFieldType):
 
 	@NtfctnId.setter
 	def NtfctnId(self, value):
-		self._NtfctnId = value if type(value) != base_types.auto else self.make_default("NtfctnId")
+		self._NtfctnId = value if value is not None else base_types.UninitialisedField(self, 'NtfctnId', MessageIdentification1, False)
 
 	@NtfctnId.deleter
 	def NtfctnId(self):
 		del self._NtfctnId
-		self._NtfctnId = None
+		self._NtfctnId = base_types.UninitialisedField(self, 'NtfctnId', MessageIdentification1, False)
 
 	@property
 	def ReqForActn(self):
@@ -58,12 +58,12 @@ class StatusExtensionRejectionNotificationV03(base_types._BaseFieldType):
 
 	@ReqForActn.setter
 	def ReqForActn(self, value):
-		self._ReqForActn = value if type(value) != base_types.auto else self.make_default("ReqForActn")
+		self._ReqForActn = value if value is not None else base_types.UninitialisedField(self, 'ReqForActn', PendingActivity2, False)
 
 	@ReqForActn.deleter
 	def ReqForActn(self):
 		del self._ReqForActn
-		self._ReqForActn = None
+		self._ReqForActn = base_types.UninitialisedField(self, 'ReqForActn', PendingActivity2, False)
 
 	@property
 	def RjctnRsn(self):
@@ -71,12 +71,12 @@ class StatusExtensionRejectionNotificationV03(base_types._BaseFieldType):
 
 	@RjctnRsn.setter
 	def RjctnRsn(self, value):
-		self._RjctnRsn = value if type(value) != base_types.auto else self.make_default("RjctnRsn")
+		self._RjctnRsn = value if value is not None else base_types.UninitialisedField(self, 'RjctnRsn', Reason2, False)
 
 	@RjctnRsn.deleter
 	def RjctnRsn(self):
 		del self._RjctnRsn
-		self._RjctnRsn = None
+		self._RjctnRsn = base_types.UninitialisedField(self, 'RjctnRsn', Reason2, False)
 
 	@property
 	def TxId(self):
@@ -84,12 +84,12 @@ class StatusExtensionRejectionNotificationV03(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', SimpleIdentificationInformation, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', SimpleIdentificationInformation, False)
 
 	@property
 	def UsrTxRef(self):
@@ -97,12 +97,12 @@ class StatusExtensionRejectionNotificationV03(base_types._BaseFieldType):
 
 	@UsrTxRef.setter
 	def UsrTxRef(self, value):
-		self._UsrTxRef = value if type(value) != base_types.auto else self.make_default("UsrTxRef")
+		self._UsrTxRef = value if value is not None else base_types.UninitialisedField(self, 'UsrTxRef', DocumentIdentification5, True)
 
 	@UsrTxRef.deleter
 	def UsrTxRef(self):
 		del self._UsrTxRef
-		self._UsrTxRef = None
+		self._UsrTxRef = base_types.UninitialisedField(self, 'UsrTxRef', DocumentIdentification5, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=0, max=1, mutex_group=None, array=False),

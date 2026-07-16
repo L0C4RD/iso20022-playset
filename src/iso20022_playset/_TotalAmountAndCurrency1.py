@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._CreditDebitCode import CreditDebitCode
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from . import ActiveCurrencyCode
+from . import CreditDebitCode
+from . import ImpliedCurrencyAndAmount
 
 class TotalAmountAndCurrency1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TotalAmountAndCurrency1(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@property
 	def CdtDbtInd(self):
@@ -28,12 +28,12 @@ class TotalAmountAndCurrency1(base_types._BaseFieldType):
 
 	@CdtDbtInd.setter
 	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+		self._CdtDbtInd = value if value is not None else base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@CdtDbtInd.deleter
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
-		self._CdtDbtInd = None
+		self._CdtDbtInd = base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@property
 	def TtlAmt(self):
@@ -41,12 +41,12 @@ class TotalAmountAndCurrency1(base_types._BaseFieldType):
 
 	@TtlAmt.setter
 	def TtlAmt(self, value):
-		self._TtlAmt = value if type(value) != base_types.auto else self.make_default("TtlAmt")
+		self._TtlAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlAmt', ImpliedCurrencyAndAmount, False)
 
 	@TtlAmt.deleter
 	def TtlAmt(self):
 		del self._TtlAmt
-		self._TtlAmt = None
+		self._TtlAmt = base_types.UninitialisedField(self, 'TtlAmt', ImpliedCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),

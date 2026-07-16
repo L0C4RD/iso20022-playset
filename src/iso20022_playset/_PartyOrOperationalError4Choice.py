@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ErrorHandling5 import ErrorHandling5
-from ._PartyReport4 import PartyReport4
+from . import ErrorHandling5
+from . import PartyReport4
 
 class PartyOrOperationalError4Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PartyOrOperationalError4Choice(base_types._BaseFieldType):
 
 	@OprlErr.setter
 	def OprlErr(self, value):
-		self._OprlErr = value if type(value) != base_types.auto else self.make_default("OprlErr")
+		self._OprlErr = value if value is not None else base_types.UninitialisedField(self, 'OprlErr', ErrorHandling5, True)
 
 	@OprlErr.deleter
 	def OprlErr(self):
 		del self._OprlErr
-		self._OprlErr = None
+		self._OprlErr = base_types.UninitialisedField(self, 'OprlErr', ErrorHandling5, True)
 
 	@property
 	def PtyRpt(self):
@@ -27,12 +27,12 @@ class PartyOrOperationalError4Choice(base_types._BaseFieldType):
 
 	@PtyRpt.setter
 	def PtyRpt(self, value):
-		self._PtyRpt = value if type(value) != base_types.auto else self.make_default("PtyRpt")
+		self._PtyRpt = value if value is not None else base_types.UninitialisedField(self, 'PtyRpt', PartyReport4, True)
 
 	@PtyRpt.deleter
 	def PtyRpt(self):
 		del self._PtyRpt
-		self._PtyRpt = None
+		self._PtyRpt = base_types.UninitialisedField(self, 'PtyRpt', PartyReport4, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OprlErr', type=ErrorHandling5, min=1, max=None, mutex_group=1, array=True),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
-from ._CashAccount38 import CashAccount38
-from ._Party40Choice import Party40Choice
+from . import BranchAndFinancialInstitutionIdentification6
+from . import CashAccount38
+from . import Party40Choice
 
 class TransactionParties8(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TransactionParties8(base_types._BaseFieldType):
 
 	@Cdtr.setter
 	def Cdtr(self, value):
-		self._Cdtr = value if type(value) != base_types.auto else self.make_default("Cdtr")
+		self._Cdtr = value if value is not None else base_types.UninitialisedField(self, 'Cdtr', Party40Choice, False)
 
 	@Cdtr.deleter
 	def Cdtr(self):
 		del self._Cdtr
-		self._Cdtr = None
+		self._Cdtr = base_types.UninitialisedField(self, 'Cdtr', Party40Choice, False)
 
 	@property
 	def CdtrAcct(self):
@@ -28,12 +28,12 @@ class TransactionParties8(base_types._BaseFieldType):
 
 	@CdtrAcct.setter
 	def CdtrAcct(self, value):
-		self._CdtrAcct = value if type(value) != base_types.auto else self.make_default("CdtrAcct")
+		self._CdtrAcct = value if value is not None else base_types.UninitialisedField(self, 'CdtrAcct', CashAccount38, False)
 
 	@CdtrAcct.deleter
 	def CdtrAcct(self):
 		del self._CdtrAcct
-		self._CdtrAcct = None
+		self._CdtrAcct = base_types.UninitialisedField(self, 'CdtrAcct', CashAccount38, False)
 
 	@property
 	def CdtrAgt(self):
@@ -41,12 +41,12 @@ class TransactionParties8(base_types._BaseFieldType):
 
 	@CdtrAgt.setter
 	def CdtrAgt(self, value):
-		self._CdtrAgt = value if type(value) != base_types.auto else self.make_default("CdtrAgt")
+		self._CdtrAgt = value if value is not None else base_types.UninitialisedField(self, 'CdtrAgt', BranchAndFinancialInstitutionIdentification6, False)
 
 	@CdtrAgt.deleter
 	def CdtrAgt(self):
 		del self._CdtrAgt
-		self._CdtrAgt = None
+		self._CdtrAgt = base_types.UninitialisedField(self, 'CdtrAgt', BranchAndFinancialInstitutionIdentification6, False)
 
 	@property
 	def CdtrAgtAcct(self):
@@ -54,12 +54,12 @@ class TransactionParties8(base_types._BaseFieldType):
 
 	@CdtrAgtAcct.setter
 	def CdtrAgtAcct(self, value):
-		self._CdtrAgtAcct = value if type(value) != base_types.auto else self.make_default("CdtrAgtAcct")
+		self._CdtrAgtAcct = value if value is not None else base_types.UninitialisedField(self, 'CdtrAgtAcct', CashAccount38, False)
 
 	@CdtrAgtAcct.deleter
 	def CdtrAgtAcct(self):
 		del self._CdtrAgtAcct
-		self._CdtrAgtAcct = None
+		self._CdtrAgtAcct = base_types.UninitialisedField(self, 'CdtrAgtAcct', CashAccount38, False)
 
 	@property
 	def Dbtr(self):
@@ -67,12 +67,12 @@ class TransactionParties8(base_types._BaseFieldType):
 
 	@Dbtr.setter
 	def Dbtr(self, value):
-		self._Dbtr = value if type(value) != base_types.auto else self.make_default("Dbtr")
+		self._Dbtr = value if value is not None else base_types.UninitialisedField(self, 'Dbtr', Party40Choice, False)
 
 	@Dbtr.deleter
 	def Dbtr(self):
 		del self._Dbtr
-		self._Dbtr = None
+		self._Dbtr = base_types.UninitialisedField(self, 'Dbtr', Party40Choice, False)
 
 	@property
 	def DbtrAcct(self):
@@ -80,12 +80,12 @@ class TransactionParties8(base_types._BaseFieldType):
 
 	@DbtrAcct.setter
 	def DbtrAcct(self, value):
-		self._DbtrAcct = value if type(value) != base_types.auto else self.make_default("DbtrAcct")
+		self._DbtrAcct = value if value is not None else base_types.UninitialisedField(self, 'DbtrAcct', CashAccount38, False)
 
 	@DbtrAcct.deleter
 	def DbtrAcct(self):
 		del self._DbtrAcct
-		self._DbtrAcct = None
+		self._DbtrAcct = base_types.UninitialisedField(self, 'DbtrAcct', CashAccount38, False)
 
 	@property
 	def DbtrAgt(self):
@@ -93,12 +93,12 @@ class TransactionParties8(base_types._BaseFieldType):
 
 	@DbtrAgt.setter
 	def DbtrAgt(self, value):
-		self._DbtrAgt = value if type(value) != base_types.auto else self.make_default("DbtrAgt")
+		self._DbtrAgt = value if value is not None else base_types.UninitialisedField(self, 'DbtrAgt', BranchAndFinancialInstitutionIdentification6, False)
 
 	@DbtrAgt.deleter
 	def DbtrAgt(self):
 		del self._DbtrAgt
-		self._DbtrAgt = None
+		self._DbtrAgt = base_types.UninitialisedField(self, 'DbtrAgt', BranchAndFinancialInstitutionIdentification6, False)
 
 	@property
 	def DbtrAgtAcct(self):
@@ -106,12 +106,12 @@ class TransactionParties8(base_types._BaseFieldType):
 
 	@DbtrAgtAcct.setter
 	def DbtrAgtAcct(self, value):
-		self._DbtrAgtAcct = value if type(value) != base_types.auto else self.make_default("DbtrAgtAcct")
+		self._DbtrAgtAcct = value if value is not None else base_types.UninitialisedField(self, 'DbtrAgtAcct', CashAccount38, False)
 
 	@DbtrAgtAcct.deleter
 	def DbtrAgtAcct(self):
 		del self._DbtrAgtAcct
-		self._DbtrAgtAcct = None
+		self._DbtrAgtAcct = base_types.UninitialisedField(self, 'DbtrAgtAcct', CashAccount38, False)
 
 	@property
 	def InitgPty(self):
@@ -119,12 +119,12 @@ class TransactionParties8(base_types._BaseFieldType):
 
 	@InitgPty.setter
 	def InitgPty(self, value):
-		self._InitgPty = value if type(value) != base_types.auto else self.make_default("InitgPty")
+		self._InitgPty = value if value is not None else base_types.UninitialisedField(self, 'InitgPty', Party40Choice, False)
 
 	@InitgPty.deleter
 	def InitgPty(self):
 		del self._InitgPty
-		self._InitgPty = None
+		self._InitgPty = base_types.UninitialisedField(self, 'InitgPty', Party40Choice, False)
 
 	@property
 	def IntrmyAgt1(self):
@@ -132,12 +132,12 @@ class TransactionParties8(base_types._BaseFieldType):
 
 	@IntrmyAgt1.setter
 	def IntrmyAgt1(self, value):
-		self._IntrmyAgt1 = value if type(value) != base_types.auto else self.make_default("IntrmyAgt1")
+		self._IntrmyAgt1 = value if value is not None else base_types.UninitialisedField(self, 'IntrmyAgt1', BranchAndFinancialInstitutionIdentification6, False)
 
 	@IntrmyAgt1.deleter
 	def IntrmyAgt1(self):
 		del self._IntrmyAgt1
-		self._IntrmyAgt1 = None
+		self._IntrmyAgt1 = base_types.UninitialisedField(self, 'IntrmyAgt1', BranchAndFinancialInstitutionIdentification6, False)
 
 	@property
 	def IntrmyAgt1Acct(self):
@@ -145,12 +145,12 @@ class TransactionParties8(base_types._BaseFieldType):
 
 	@IntrmyAgt1Acct.setter
 	def IntrmyAgt1Acct(self, value):
-		self._IntrmyAgt1Acct = value if type(value) != base_types.auto else self.make_default("IntrmyAgt1Acct")
+		self._IntrmyAgt1Acct = value if value is not None else base_types.UninitialisedField(self, 'IntrmyAgt1Acct', CashAccount38, False)
 
 	@IntrmyAgt1Acct.deleter
 	def IntrmyAgt1Acct(self):
 		del self._IntrmyAgt1Acct
-		self._IntrmyAgt1Acct = None
+		self._IntrmyAgt1Acct = base_types.UninitialisedField(self, 'IntrmyAgt1Acct', CashAccount38, False)
 
 	@property
 	def IntrmyAgt2(self):
@@ -158,12 +158,12 @@ class TransactionParties8(base_types._BaseFieldType):
 
 	@IntrmyAgt2.setter
 	def IntrmyAgt2(self, value):
-		self._IntrmyAgt2 = value if type(value) != base_types.auto else self.make_default("IntrmyAgt2")
+		self._IntrmyAgt2 = value if value is not None else base_types.UninitialisedField(self, 'IntrmyAgt2', BranchAndFinancialInstitutionIdentification6, False)
 
 	@IntrmyAgt2.deleter
 	def IntrmyAgt2(self):
 		del self._IntrmyAgt2
-		self._IntrmyAgt2 = None
+		self._IntrmyAgt2 = base_types.UninitialisedField(self, 'IntrmyAgt2', BranchAndFinancialInstitutionIdentification6, False)
 
 	@property
 	def IntrmyAgt2Acct(self):
@@ -171,12 +171,12 @@ class TransactionParties8(base_types._BaseFieldType):
 
 	@IntrmyAgt2Acct.setter
 	def IntrmyAgt2Acct(self, value):
-		self._IntrmyAgt2Acct = value if type(value) != base_types.auto else self.make_default("IntrmyAgt2Acct")
+		self._IntrmyAgt2Acct = value if value is not None else base_types.UninitialisedField(self, 'IntrmyAgt2Acct', CashAccount38, False)
 
 	@IntrmyAgt2Acct.deleter
 	def IntrmyAgt2Acct(self):
 		del self._IntrmyAgt2Acct
-		self._IntrmyAgt2Acct = None
+		self._IntrmyAgt2Acct = base_types.UninitialisedField(self, 'IntrmyAgt2Acct', CashAccount38, False)
 
 	@property
 	def IntrmyAgt3(self):
@@ -184,12 +184,12 @@ class TransactionParties8(base_types._BaseFieldType):
 
 	@IntrmyAgt3.setter
 	def IntrmyAgt3(self, value):
-		self._IntrmyAgt3 = value if type(value) != base_types.auto else self.make_default("IntrmyAgt3")
+		self._IntrmyAgt3 = value if value is not None else base_types.UninitialisedField(self, 'IntrmyAgt3', BranchAndFinancialInstitutionIdentification6, False)
 
 	@IntrmyAgt3.deleter
 	def IntrmyAgt3(self):
 		del self._IntrmyAgt3
-		self._IntrmyAgt3 = None
+		self._IntrmyAgt3 = base_types.UninitialisedField(self, 'IntrmyAgt3', BranchAndFinancialInstitutionIdentification6, False)
 
 	@property
 	def IntrmyAgt3Acct(self):
@@ -197,12 +197,12 @@ class TransactionParties8(base_types._BaseFieldType):
 
 	@IntrmyAgt3Acct.setter
 	def IntrmyAgt3Acct(self, value):
-		self._IntrmyAgt3Acct = value if type(value) != base_types.auto else self.make_default("IntrmyAgt3Acct")
+		self._IntrmyAgt3Acct = value if value is not None else base_types.UninitialisedField(self, 'IntrmyAgt3Acct', CashAccount38, False)
 
 	@IntrmyAgt3Acct.deleter
 	def IntrmyAgt3Acct(self):
 		del self._IntrmyAgt3Acct
-		self._IntrmyAgt3Acct = None
+		self._IntrmyAgt3Acct = base_types.UninitialisedField(self, 'IntrmyAgt3Acct', CashAccount38, False)
 
 	@property
 	def PrvsInstgAgt1(self):
@@ -210,12 +210,12 @@ class TransactionParties8(base_types._BaseFieldType):
 
 	@PrvsInstgAgt1.setter
 	def PrvsInstgAgt1(self, value):
-		self._PrvsInstgAgt1 = value if type(value) != base_types.auto else self.make_default("PrvsInstgAgt1")
+		self._PrvsInstgAgt1 = value if value is not None else base_types.UninitialisedField(self, 'PrvsInstgAgt1', BranchAndFinancialInstitutionIdentification6, False)
 
 	@PrvsInstgAgt1.deleter
 	def PrvsInstgAgt1(self):
 		del self._PrvsInstgAgt1
-		self._PrvsInstgAgt1 = None
+		self._PrvsInstgAgt1 = base_types.UninitialisedField(self, 'PrvsInstgAgt1', BranchAndFinancialInstitutionIdentification6, False)
 
 	@property
 	def PrvsInstgAgt1Acct(self):
@@ -223,12 +223,12 @@ class TransactionParties8(base_types._BaseFieldType):
 
 	@PrvsInstgAgt1Acct.setter
 	def PrvsInstgAgt1Acct(self, value):
-		self._PrvsInstgAgt1Acct = value if type(value) != base_types.auto else self.make_default("PrvsInstgAgt1Acct")
+		self._PrvsInstgAgt1Acct = value if value is not None else base_types.UninitialisedField(self, 'PrvsInstgAgt1Acct', CashAccount38, False)
 
 	@PrvsInstgAgt1Acct.deleter
 	def PrvsInstgAgt1Acct(self):
 		del self._PrvsInstgAgt1Acct
-		self._PrvsInstgAgt1Acct = None
+		self._PrvsInstgAgt1Acct = base_types.UninitialisedField(self, 'PrvsInstgAgt1Acct', CashAccount38, False)
 
 	@property
 	def PrvsInstgAgt2(self):
@@ -236,12 +236,12 @@ class TransactionParties8(base_types._BaseFieldType):
 
 	@PrvsInstgAgt2.setter
 	def PrvsInstgAgt2(self, value):
-		self._PrvsInstgAgt2 = value if type(value) != base_types.auto else self.make_default("PrvsInstgAgt2")
+		self._PrvsInstgAgt2 = value if value is not None else base_types.UninitialisedField(self, 'PrvsInstgAgt2', BranchAndFinancialInstitutionIdentification6, False)
 
 	@PrvsInstgAgt2.deleter
 	def PrvsInstgAgt2(self):
 		del self._PrvsInstgAgt2
-		self._PrvsInstgAgt2 = None
+		self._PrvsInstgAgt2 = base_types.UninitialisedField(self, 'PrvsInstgAgt2', BranchAndFinancialInstitutionIdentification6, False)
 
 	@property
 	def PrvsInstgAgt2Acct(self):
@@ -249,12 +249,12 @@ class TransactionParties8(base_types._BaseFieldType):
 
 	@PrvsInstgAgt2Acct.setter
 	def PrvsInstgAgt2Acct(self, value):
-		self._PrvsInstgAgt2Acct = value if type(value) != base_types.auto else self.make_default("PrvsInstgAgt2Acct")
+		self._PrvsInstgAgt2Acct = value if value is not None else base_types.UninitialisedField(self, 'PrvsInstgAgt2Acct', CashAccount38, False)
 
 	@PrvsInstgAgt2Acct.deleter
 	def PrvsInstgAgt2Acct(self):
 		del self._PrvsInstgAgt2Acct
-		self._PrvsInstgAgt2Acct = None
+		self._PrvsInstgAgt2Acct = base_types.UninitialisedField(self, 'PrvsInstgAgt2Acct', CashAccount38, False)
 
 	@property
 	def PrvsInstgAgt3(self):
@@ -262,12 +262,12 @@ class TransactionParties8(base_types._BaseFieldType):
 
 	@PrvsInstgAgt3.setter
 	def PrvsInstgAgt3(self, value):
-		self._PrvsInstgAgt3 = value if type(value) != base_types.auto else self.make_default("PrvsInstgAgt3")
+		self._PrvsInstgAgt3 = value if value is not None else base_types.UninitialisedField(self, 'PrvsInstgAgt3', BranchAndFinancialInstitutionIdentification6, False)
 
 	@PrvsInstgAgt3.deleter
 	def PrvsInstgAgt3(self):
 		del self._PrvsInstgAgt3
-		self._PrvsInstgAgt3 = None
+		self._PrvsInstgAgt3 = base_types.UninitialisedField(self, 'PrvsInstgAgt3', BranchAndFinancialInstitutionIdentification6, False)
 
 	@property
 	def PrvsInstgAgt3Acct(self):
@@ -275,12 +275,12 @@ class TransactionParties8(base_types._BaseFieldType):
 
 	@PrvsInstgAgt3Acct.setter
 	def PrvsInstgAgt3Acct(self, value):
-		self._PrvsInstgAgt3Acct = value if type(value) != base_types.auto else self.make_default("PrvsInstgAgt3Acct")
+		self._PrvsInstgAgt3Acct = value if value is not None else base_types.UninitialisedField(self, 'PrvsInstgAgt3Acct', CashAccount38, False)
 
 	@PrvsInstgAgt3Acct.deleter
 	def PrvsInstgAgt3Acct(self):
 		del self._PrvsInstgAgt3Acct
-		self._PrvsInstgAgt3Acct = None
+		self._PrvsInstgAgt3Acct = base_types.UninitialisedField(self, 'PrvsInstgAgt3Acct', CashAccount38, False)
 
 	@property
 	def UltmtCdtr(self):
@@ -288,12 +288,12 @@ class TransactionParties8(base_types._BaseFieldType):
 
 	@UltmtCdtr.setter
 	def UltmtCdtr(self, value):
-		self._UltmtCdtr = value if type(value) != base_types.auto else self.make_default("UltmtCdtr")
+		self._UltmtCdtr = value if value is not None else base_types.UninitialisedField(self, 'UltmtCdtr', Party40Choice, False)
 
 	@UltmtCdtr.deleter
 	def UltmtCdtr(self):
 		del self._UltmtCdtr
-		self._UltmtCdtr = None
+		self._UltmtCdtr = base_types.UninitialisedField(self, 'UltmtCdtr', Party40Choice, False)
 
 	@property
 	def UltmtDbtr(self):
@@ -301,12 +301,12 @@ class TransactionParties8(base_types._BaseFieldType):
 
 	@UltmtDbtr.setter
 	def UltmtDbtr(self, value):
-		self._UltmtDbtr = value if type(value) != base_types.auto else self.make_default("UltmtDbtr")
+		self._UltmtDbtr = value if value is not None else base_types.UninitialisedField(self, 'UltmtDbtr', Party40Choice, False)
 
 	@UltmtDbtr.deleter
 	def UltmtDbtr(self):
 		del self._UltmtDbtr
-		self._UltmtDbtr = None
+		self._UltmtDbtr = base_types.UninitialisedField(self, 'UltmtDbtr', Party40Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cdtr', type=Party40Choice, min=1, max=1, mutex_group=None, array=False),

@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateOrBlankQuery2Choice import DateOrBlankQuery2Choice
-from ._DatePeriod1 import DatePeriod1
-from ._DateTimeOrBlankQuery1Choice import DateTimeOrBlankQuery1Choice
-from ._DateTimePeriod1 import DateTimePeriod1
-from ._ISODate import ISODate
+from . import DateOrBlankQuery2Choice
+from . import DatePeriod1
+from . import DateTimeOrBlankQuery1Choice
+from . import DateTimePeriod1
+from . import ISODate
 
 class TradeDateTimeQueryCriteria6(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class TradeDateTimeQueryCriteria6(base_types._BaseFieldType):
 
 	@CollTmStmp.setter
 	def CollTmStmp(self, value):
-		self._CollTmStmp = value if type(value) != base_types.auto else self.make_default("CollTmStmp")
+		self._CollTmStmp = value if value is not None else base_types.UninitialisedField(self, 'CollTmStmp', DateTimeOrBlankQuery1Choice, False)
 
 	@CollTmStmp.deleter
 	def CollTmStmp(self):
 		del self._CollTmStmp
-		self._CollTmStmp = None
+		self._CollTmStmp = base_types.UninitialisedField(self, 'CollTmStmp', DateTimeOrBlankQuery1Choice, False)
 
 	@property
 	def EarlyTermntnDt(self):
@@ -30,12 +30,12 @@ class TradeDateTimeQueryCriteria6(base_types._BaseFieldType):
 
 	@EarlyTermntnDt.setter
 	def EarlyTermntnDt(self, value):
-		self._EarlyTermntnDt = value if type(value) != base_types.auto else self.make_default("EarlyTermntnDt")
+		self._EarlyTermntnDt = value if value is not None else base_types.UninitialisedField(self, 'EarlyTermntnDt', DatePeriod1, False)
 
 	@EarlyTermntnDt.deleter
 	def EarlyTermntnDt(self):
 		del self._EarlyTermntnDt
-		self._EarlyTermntnDt = None
+		self._EarlyTermntnDt = base_types.UninitialisedField(self, 'EarlyTermntnDt', DatePeriod1, False)
 
 	@property
 	def ExctnDtTm(self):
@@ -43,12 +43,12 @@ class TradeDateTimeQueryCriteria6(base_types._BaseFieldType):
 
 	@ExctnDtTm.setter
 	def ExctnDtTm(self, value):
-		self._ExctnDtTm = value if type(value) != base_types.auto else self.make_default("ExctnDtTm")
+		self._ExctnDtTm = value if value is not None else base_types.UninitialisedField(self, 'ExctnDtTm', DateTimePeriod1, False)
 
 	@ExctnDtTm.deleter
 	def ExctnDtTm(self):
 		del self._ExctnDtTm
-		self._ExctnDtTm = None
+		self._ExctnDtTm = base_types.UninitialisedField(self, 'ExctnDtTm', DateTimePeriod1, False)
 
 	@property
 	def FctvDt(self):
@@ -56,12 +56,12 @@ class TradeDateTimeQueryCriteria6(base_types._BaseFieldType):
 
 	@FctvDt.setter
 	def FctvDt(self, value):
-		self._FctvDt = value if type(value) != base_types.auto else self.make_default("FctvDt")
+		self._FctvDt = value if value is not None else base_types.UninitialisedField(self, 'FctvDt', DatePeriod1, False)
 
 	@FctvDt.deleter
 	def FctvDt(self):
 		del self._FctvDt
-		self._FctvDt = None
+		self._FctvDt = base_types.UninitialisedField(self, 'FctvDt', DatePeriod1, False)
 
 	@property
 	def HstrclAsOfDt(self):
@@ -69,12 +69,12 @@ class TradeDateTimeQueryCriteria6(base_types._BaseFieldType):
 
 	@HstrclAsOfDt.setter
 	def HstrclAsOfDt(self, value):
-		self._HstrclAsOfDt = value if type(value) != base_types.auto else self.make_default("HstrclAsOfDt")
+		self._HstrclAsOfDt = value if value is not None else base_types.UninitialisedField(self, 'HstrclAsOfDt', ISODate, False)
 
 	@HstrclAsOfDt.deleter
 	def HstrclAsOfDt(self):
 		del self._HstrclAsOfDt
-		self._HstrclAsOfDt = None
+		self._HstrclAsOfDt = base_types.UninitialisedField(self, 'HstrclAsOfDt', ISODate, False)
 
 	@property
 	def MtrtyDt(self):
@@ -82,12 +82,12 @@ class TradeDateTimeQueryCriteria6(base_types._BaseFieldType):
 
 	@MtrtyDt.setter
 	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != base_types.auto else self.make_default("MtrtyDt")
+		self._MtrtyDt = value if value is not None else base_types.UninitialisedField(self, 'MtrtyDt', DateOrBlankQuery2Choice, False)
 
 	@MtrtyDt.deleter
 	def MtrtyDt(self):
 		del self._MtrtyDt
-		self._MtrtyDt = None
+		self._MtrtyDt = base_types.UninitialisedField(self, 'MtrtyDt', DateOrBlankQuery2Choice, False)
 
 	@property
 	def RptgDtTm(self):
@@ -95,12 +95,12 @@ class TradeDateTimeQueryCriteria6(base_types._BaseFieldType):
 
 	@RptgDtTm.setter
 	def RptgDtTm(self, value):
-		self._RptgDtTm = value if type(value) != base_types.auto else self.make_default("RptgDtTm")
+		self._RptgDtTm = value if value is not None else base_types.UninitialisedField(self, 'RptgDtTm', DateTimePeriod1, False)
 
 	@RptgDtTm.deleter
 	def RptgDtTm(self):
 		del self._RptgDtTm
-		self._RptgDtTm = None
+		self._RptgDtTm = base_types.UninitialisedField(self, 'RptgDtTm', DateTimePeriod1, False)
 
 	@property
 	def ValtnDtTm(self):
@@ -108,12 +108,12 @@ class TradeDateTimeQueryCriteria6(base_types._BaseFieldType):
 
 	@ValtnDtTm.setter
 	def ValtnDtTm(self, value):
-		self._ValtnDtTm = value if type(value) != base_types.auto else self.make_default("ValtnDtTm")
+		self._ValtnDtTm = value if value is not None else base_types.UninitialisedField(self, 'ValtnDtTm', DateTimePeriod1, False)
 
 	@ValtnDtTm.deleter
 	def ValtnDtTm(self):
 		del self._ValtnDtTm
-		self._ValtnDtTm = None
+		self._ValtnDtTm = base_types.UninitialisedField(self, 'ValtnDtTm', DateTimePeriod1, False)
 
 	@property
 	def XprtnDt(self):
@@ -121,12 +121,12 @@ class TradeDateTimeQueryCriteria6(base_types._BaseFieldType):
 
 	@XprtnDt.setter
 	def XprtnDt(self, value):
-		self._XprtnDt = value if type(value) != base_types.auto else self.make_default("XprtnDt")
+		self._XprtnDt = value if value is not None else base_types.UninitialisedField(self, 'XprtnDt', DateOrBlankQuery2Choice, False)
 
 	@XprtnDt.deleter
 	def XprtnDt(self):
 		del self._XprtnDt
-		self._XprtnDt = None
+		self._XprtnDt = base_types.UninitialisedField(self, 'XprtnDt', DateOrBlankQuery2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollTmStmp', type=DateTimeOrBlankQuery1Choice, min=0, max=1, mutex_group=None, array=False),

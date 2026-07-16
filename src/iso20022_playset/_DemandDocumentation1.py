@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Document9 import Document9
-from ._Max20000Text import Max20000Text
-from ._Max2000Text import Max2000Text
-from ._YesNoIndicator import YesNoIndicator
+from . import Document9
+from . import Max20000Text
+from . import Max2000Text
+from . import YesNoIndicator
 
 class DemandDocumentation1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class DemandDocumentation1(base_types._BaseFieldType):
 
 	@CmpltInd.setter
 	def CmpltInd(self, value):
-		self._CmpltInd = value if type(value) != base_types.auto else self.make_default("CmpltInd")
+		self._CmpltInd = value if value is not None else base_types.UninitialisedField(self, 'CmpltInd', YesNoIndicator, False)
 
 	@CmpltInd.deleter
 	def CmpltInd(self):
 		del self._CmpltInd
-		self._CmpltInd = None
+		self._CmpltInd = base_types.UninitialisedField(self, 'CmpltInd', YesNoIndicator, False)
 
 	@property
 	def CmpltnInf(self):
@@ -29,12 +29,12 @@ class DemandDocumentation1(base_types._BaseFieldType):
 
 	@CmpltnInf.setter
 	def CmpltnInf(self, value):
-		self._CmpltnInf = value if type(value) != base_types.auto else self.make_default("CmpltnInf")
+		self._CmpltnInf = value if value is not None else base_types.UninitialisedField(self, 'CmpltnInf', Max2000Text, False)
 
 	@CmpltnInf.deleter
 	def CmpltnInf(self):
 		del self._CmpltnInf
-		self._CmpltnInf = None
+		self._CmpltnInf = base_types.UninitialisedField(self, 'CmpltnInf', Max2000Text, False)
 
 	@property
 	def DmndNrrtv(self):
@@ -42,12 +42,12 @@ class DemandDocumentation1(base_types._BaseFieldType):
 
 	@DmndNrrtv.setter
 	def DmndNrrtv(self, value):
-		self._DmndNrrtv = value if type(value) != base_types.auto else self.make_default("DmndNrrtv")
+		self._DmndNrrtv = value if value is not None else base_types.UninitialisedField(self, 'DmndNrrtv', Max20000Text, False)
 
 	@DmndNrrtv.deleter
 	def DmndNrrtv(self):
 		del self._DmndNrrtv
-		self._DmndNrrtv = None
+		self._DmndNrrtv = base_types.UninitialisedField(self, 'DmndNrrtv', Max20000Text, False)
 
 	@property
 	def NclsdFile(self):
@@ -55,12 +55,12 @@ class DemandDocumentation1(base_types._BaseFieldType):
 
 	@NclsdFile.setter
 	def NclsdFile(self, value):
-		self._NclsdFile = value if type(value) != base_types.auto else self.make_default("NclsdFile")
+		self._NclsdFile = value if value is not None else base_types.UninitialisedField(self, 'NclsdFile', Document9, True)
 
 	@NclsdFile.deleter
 	def NclsdFile(self):
 		del self._NclsdFile
-		self._NclsdFile = None
+		self._NclsdFile = base_types.UninitialisedField(self, 'NclsdFile', Document9, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CmpltInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),

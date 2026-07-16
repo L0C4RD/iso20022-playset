@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FIToFICustomerDirectDebitV12 import FIToFICustomerDirectDebitV12
+from . import FIToFICustomerDirectDebitV12
 
 class PACS_003_001_12():
 
@@ -18,12 +18,12 @@ class PACS_003_001_12():
 
 		@FIToFICstmrDrctDbt.setter
 		def FIToFICstmrDrctDbt(self, value):
-			self._FIToFICstmrDrctDbt = value if type(value) != base_types.auto else self.make_default("FIToFICstmrDrctDbt")
+			self._FIToFICstmrDrctDbt = value if value is not None else base_types.UninitialisedField(self, 'FIToFICstmrDrctDbt', FIToFICustomerDirectDebitV12, False)
 
 		@FIToFICstmrDrctDbt.deleter
 		def FIToFICstmrDrctDbt(self):
 			del self._FIToFICstmrDrctDbt
-			self._FIToFICstmrDrctDbt = None
+			self._FIToFICstmrDrctDbt = base_types.UninitialisedField(self, 'FIToFICstmrDrctDbt', FIToFICustomerDirectDebitV12, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='FIToFICstmrDrctDbt', type=FIToFICustomerDirectDebitV12, min=1, max=1, mutex_group=None, array=False),

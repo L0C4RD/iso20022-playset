@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContentInformationType40 import ContentInformationType40
-from ._Max100KBinary import Max100KBinary
-from ._Max256Text import Max256Text
-from ._Max35Text import Max35Text
-from ._Max8Text import Max8Text
-from ._PositiveNumber import PositiveNumber
-from ._TerminalManagementAction3Code import TerminalManagementAction3Code
+from . import ContentInformationType40
+from . import Max100KBinary
+from . import Max256Text
+from . import Max35Text
+from . import Max8Text
+from . import PositiveNumber
+from . import TerminalManagementAction3Code
 
 class ApplicationParameters13(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class ApplicationParameters13(base_types._BaseFieldType):
 
 	@ActnTp.setter
 	def ActnTp(self, value):
-		self._ActnTp = value if type(value) != base_types.auto else self.make_default("ActnTp")
+		self._ActnTp = value if value is not None else base_types.UninitialisedField(self, 'ActnTp', TerminalManagementAction3Code, False)
 
 	@ActnTp.deleter
 	def ActnTp(self):
 		del self._ActnTp
-		self._ActnTp = None
+		self._ActnTp = base_types.UninitialisedField(self, 'ActnTp', TerminalManagementAction3Code, False)
 
 	@property
 	def ApplId(self):
@@ -32,12 +32,12 @@ class ApplicationParameters13(base_types._BaseFieldType):
 
 	@ApplId.setter
 	def ApplId(self, value):
-		self._ApplId = value if type(value) != base_types.auto else self.make_default("ApplId")
+		self._ApplId = value if value is not None else base_types.UninitialisedField(self, 'ApplId', Max35Text, False)
 
 	@ApplId.deleter
 	def ApplId(self):
 		del self._ApplId
-		self._ApplId = None
+		self._ApplId = base_types.UninitialisedField(self, 'ApplId', Max35Text, False)
 
 	@property
 	def NcrptdParams(self):
@@ -45,12 +45,12 @@ class ApplicationParameters13(base_types._BaseFieldType):
 
 	@NcrptdParams.setter
 	def NcrptdParams(self, value):
-		self._NcrptdParams = value if type(value) != base_types.auto else self.make_default("NcrptdParams")
+		self._NcrptdParams = value if value is not None else base_types.UninitialisedField(self, 'NcrptdParams', ContentInformationType40, False)
 
 	@NcrptdParams.deleter
 	def NcrptdParams(self):
 		del self._NcrptdParams
-		self._NcrptdParams = None
+		self._NcrptdParams = base_types.UninitialisedField(self, 'NcrptdParams', ContentInformationType40, False)
 
 	@property
 	def OffsetEnd(self):
@@ -58,12 +58,12 @@ class ApplicationParameters13(base_types._BaseFieldType):
 
 	@OffsetEnd.setter
 	def OffsetEnd(self, value):
-		self._OffsetEnd = value if type(value) != base_types.auto else self.make_default("OffsetEnd")
+		self._OffsetEnd = value if value is not None else base_types.UninitialisedField(self, 'OffsetEnd', PositiveNumber, False)
 
 	@OffsetEnd.deleter
 	def OffsetEnd(self):
 		del self._OffsetEnd
-		self._OffsetEnd = None
+		self._OffsetEnd = base_types.UninitialisedField(self, 'OffsetEnd', PositiveNumber, False)
 
 	@property
 	def OffsetStart(self):
@@ -71,12 +71,12 @@ class ApplicationParameters13(base_types._BaseFieldType):
 
 	@OffsetStart.setter
 	def OffsetStart(self, value):
-		self._OffsetStart = value if type(value) != base_types.auto else self.make_default("OffsetStart")
+		self._OffsetStart = value if value is not None else base_types.UninitialisedField(self, 'OffsetStart', PositiveNumber, False)
 
 	@OffsetStart.deleter
 	def OffsetStart(self):
 		del self._OffsetStart
-		self._OffsetStart = None
+		self._OffsetStart = base_types.UninitialisedField(self, 'OffsetStart', PositiveNumber, False)
 
 	@property
 	def ParamFrmtIdr(self):
@@ -84,12 +84,12 @@ class ApplicationParameters13(base_types._BaseFieldType):
 
 	@ParamFrmtIdr.setter
 	def ParamFrmtIdr(self, value):
-		self._ParamFrmtIdr = value if type(value) != base_types.auto else self.make_default("ParamFrmtIdr")
+		self._ParamFrmtIdr = value if value is not None else base_types.UninitialisedField(self, 'ParamFrmtIdr', Max8Text, False)
 
 	@ParamFrmtIdr.deleter
 	def ParamFrmtIdr(self):
 		del self._ParamFrmtIdr
-		self._ParamFrmtIdr = None
+		self._ParamFrmtIdr = base_types.UninitialisedField(self, 'ParamFrmtIdr', Max8Text, False)
 
 	@property
 	def Params(self):
@@ -97,12 +97,12 @@ class ApplicationParameters13(base_types._BaseFieldType):
 
 	@Params.setter
 	def Params(self, value):
-		self._Params = value if type(value) != base_types.auto else self.make_default("Params")
+		self._Params = value if value is not None else base_types.UninitialisedField(self, 'Params', Max100KBinary, True)
 
 	@Params.deleter
 	def Params(self):
 		del self._Params
-		self._Params = None
+		self._Params = base_types.UninitialisedField(self, 'Params', Max100KBinary, True)
 
 	@property
 	def ParamsLngth(self):
@@ -110,12 +110,12 @@ class ApplicationParameters13(base_types._BaseFieldType):
 
 	@ParamsLngth.setter
 	def ParamsLngth(self, value):
-		self._ParamsLngth = value if type(value) != base_types.auto else self.make_default("ParamsLngth")
+		self._ParamsLngth = value if value is not None else base_types.UninitialisedField(self, 'ParamsLngth', PositiveNumber, False)
 
 	@ParamsLngth.deleter
 	def ParamsLngth(self):
 		del self._ParamsLngth
-		self._ParamsLngth = None
+		self._ParamsLngth = base_types.UninitialisedField(self, 'ParamsLngth', PositiveNumber, False)
 
 	@property
 	def Vrsn(self):
@@ -123,12 +123,12 @@ class ApplicationParameters13(base_types._BaseFieldType):
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+		self._Vrsn = value if value is not None else base_types.UninitialisedField(self, 'Vrsn', Max256Text, False)
 
 	@Vrsn.deleter
 	def Vrsn(self):
 		del self._Vrsn
-		self._Vrsn = None
+		self._Vrsn = base_types.UninitialisedField(self, 'Vrsn', Max256Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActnTp', type=TerminalManagementAction3Code, min=1, max=1, mutex_group=None, array=False),

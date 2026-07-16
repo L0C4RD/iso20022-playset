@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BenchmarkCurveName2Code import BenchmarkCurveName2Code
-from ._Max20000Text import Max20000Text
-from ._Max350Text import Max350Text
+from . import BenchmarkCurveName2Code
+from . import Max20000Text
+from . import Max350Text
 
 class BenchmarkDetail1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class BenchmarkDetail1(base_types._BaseFieldType):
 
 	@Cmnt.setter
 	def Cmnt(self, value):
-		self._Cmnt = value if type(value) != base_types.auto else self.make_default("Cmnt")
+		self._Cmnt = value if value is not None else base_types.UninitialisedField(self, 'Cmnt', Max20000Text, False)
 
 	@Cmnt.deleter
 	def Cmnt(self):
 		del self._Cmnt
-		self._Cmnt = None
+		self._Cmnt = base_types.UninitialisedField(self, 'Cmnt', Max20000Text, False)
 
 	@property
 	def FullNm(self):
@@ -28,12 +28,12 @@ class BenchmarkDetail1(base_types._BaseFieldType):
 
 	@FullNm.setter
 	def FullNm(self, value):
-		self._FullNm = value if type(value) != base_types.auto else self.make_default("FullNm")
+		self._FullNm = value if value is not None else base_types.UninitialisedField(self, 'FullNm', Max350Text, False)
 
 	@FullNm.deleter
 	def FullNm(self):
 		del self._FullNm
-		self._FullNm = None
+		self._FullNm = base_types.UninitialisedField(self, 'FullNm', Max350Text, False)
 
 	@property
 	def Indx(self):
@@ -41,12 +41,12 @@ class BenchmarkDetail1(base_types._BaseFieldType):
 
 	@Indx.setter
 	def Indx(self, value):
-		self._Indx = value if type(value) != base_types.auto else self.make_default("Indx")
+		self._Indx = value if value is not None else base_types.UninitialisedField(self, 'Indx', BenchmarkCurveName2Code, False)
 
 	@Indx.deleter
 	def Indx(self):
 		del self._Indx
-		self._Indx = None
+		self._Indx = base_types.UninitialisedField(self, 'Indx', BenchmarkCurveName2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cmnt', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),

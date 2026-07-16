@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Number import Number
+from . import ActiveCurrencyAndAmount
+from . import Number
 
 class InitialAmount1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class InitialAmount1Choice(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def InitlNbOfInstlmts(self):
@@ -27,12 +27,12 @@ class InitialAmount1Choice(base_types._BaseFieldType):
 
 	@InitlNbOfInstlmts.setter
 	def InitlNbOfInstlmts(self, value):
-		self._InitlNbOfInstlmts = value if type(value) != base_types.auto else self.make_default("InitlNbOfInstlmts")
+		self._InitlNbOfInstlmts = value if value is not None else base_types.UninitialisedField(self, 'InitlNbOfInstlmts', Number, False)
 
 	@InitlNbOfInstlmts.deleter
 	def InitlNbOfInstlmts(self):
 		del self._InitlNbOfInstlmts
-		self._InitlNbOfInstlmts = None
+		self._InitlNbOfInstlmts = base_types.UninitialisedField(self, 'InitlNbOfInstlmts', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),

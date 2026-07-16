@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._ISODate import ISODate
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
-from ._Number import Number
-from ._TaxParty1 import TaxParty1
-from ._TaxParty2 import TaxParty2
-from ._TaxRecord2 import TaxRecord2
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import ISODate
+from . import Max140Text
+from . import Max35Text
+from . import Number
+from . import TaxParty1
+from . import TaxParty2
+from . import TaxRecord2
 
 class TaxInformation7(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class TaxInformation7(base_types._BaseFieldType):
 
 	@AdmstnZone.setter
 	def AdmstnZone(self, value):
-		self._AdmstnZone = value if type(value) != base_types.auto else self.make_default("AdmstnZone")
+		self._AdmstnZone = value if value is not None else base_types.UninitialisedField(self, 'AdmstnZone', Max35Text, False)
 
 	@AdmstnZone.deleter
 	def AdmstnZone(self):
 		del self._AdmstnZone
-		self._AdmstnZone = None
+		self._AdmstnZone = base_types.UninitialisedField(self, 'AdmstnZone', Max35Text, False)
 
 	@property
 	def Cdtr(self):
@@ -33,12 +33,12 @@ class TaxInformation7(base_types._BaseFieldType):
 
 	@Cdtr.setter
 	def Cdtr(self, value):
-		self._Cdtr = value if type(value) != base_types.auto else self.make_default("Cdtr")
+		self._Cdtr = value if value is not None else base_types.UninitialisedField(self, 'Cdtr', TaxParty1, False)
 
 	@Cdtr.deleter
 	def Cdtr(self):
 		del self._Cdtr
-		self._Cdtr = None
+		self._Cdtr = base_types.UninitialisedField(self, 'Cdtr', TaxParty1, False)
 
 	@property
 	def Dbtr(self):
@@ -46,12 +46,12 @@ class TaxInformation7(base_types._BaseFieldType):
 
 	@Dbtr.setter
 	def Dbtr(self, value):
-		self._Dbtr = value if type(value) != base_types.auto else self.make_default("Dbtr")
+		self._Dbtr = value if value is not None else base_types.UninitialisedField(self, 'Dbtr', TaxParty2, False)
 
 	@Dbtr.deleter
 	def Dbtr(self):
 		del self._Dbtr
-		self._Dbtr = None
+		self._Dbtr = base_types.UninitialisedField(self, 'Dbtr', TaxParty2, False)
 
 	@property
 	def Dt(self):
@@ -59,12 +59,12 @@ class TaxInformation7(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@property
 	def Mtd(self):
@@ -72,12 +72,12 @@ class TaxInformation7(base_types._BaseFieldType):
 
 	@Mtd.setter
 	def Mtd(self, value):
-		self._Mtd = value if type(value) != base_types.auto else self.make_default("Mtd")
+		self._Mtd = value if value is not None else base_types.UninitialisedField(self, 'Mtd', Max35Text, False)
 
 	@Mtd.deleter
 	def Mtd(self):
 		del self._Mtd
-		self._Mtd = None
+		self._Mtd = base_types.UninitialisedField(self, 'Mtd', Max35Text, False)
 
 	@property
 	def Rcrd(self):
@@ -85,12 +85,12 @@ class TaxInformation7(base_types._BaseFieldType):
 
 	@Rcrd.setter
 	def Rcrd(self, value):
-		self._Rcrd = value if type(value) != base_types.auto else self.make_default("Rcrd")
+		self._Rcrd = value if value is not None else base_types.UninitialisedField(self, 'Rcrd', TaxRecord2, True)
 
 	@Rcrd.deleter
 	def Rcrd(self):
 		del self._Rcrd
-		self._Rcrd = None
+		self._Rcrd = base_types.UninitialisedField(self, 'Rcrd', TaxRecord2, True)
 
 	@property
 	def RefNb(self):
@@ -98,12 +98,12 @@ class TaxInformation7(base_types._BaseFieldType):
 
 	@RefNb.setter
 	def RefNb(self, value):
-		self._RefNb = value if type(value) != base_types.auto else self.make_default("RefNb")
+		self._RefNb = value if value is not None else base_types.UninitialisedField(self, 'RefNb', Max140Text, False)
 
 	@RefNb.deleter
 	def RefNb(self):
 		del self._RefNb
-		self._RefNb = None
+		self._RefNb = base_types.UninitialisedField(self, 'RefNb', Max140Text, False)
 
 	@property
 	def SeqNb(self):
@@ -111,12 +111,12 @@ class TaxInformation7(base_types._BaseFieldType):
 
 	@SeqNb.setter
 	def SeqNb(self, value):
-		self._SeqNb = value if type(value) != base_types.auto else self.make_default("SeqNb")
+		self._SeqNb = value if value is not None else base_types.UninitialisedField(self, 'SeqNb', Number, False)
 
 	@SeqNb.deleter
 	def SeqNb(self):
 		del self._SeqNb
-		self._SeqNb = None
+		self._SeqNb = base_types.UninitialisedField(self, 'SeqNb', Number, False)
 
 	@property
 	def TtlTaxAmt(self):
@@ -124,12 +124,12 @@ class TaxInformation7(base_types._BaseFieldType):
 
 	@TtlTaxAmt.setter
 	def TtlTaxAmt(self, value):
-		self._TtlTaxAmt = value if type(value) != base_types.auto else self.make_default("TtlTaxAmt")
+		self._TtlTaxAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlTaxAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@TtlTaxAmt.deleter
 	def TtlTaxAmt(self):
 		del self._TtlTaxAmt
-		self._TtlTaxAmt = None
+		self._TtlTaxAmt = base_types.UninitialisedField(self, 'TtlTaxAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def TtlTaxblBaseAmt(self):
@@ -137,12 +137,12 @@ class TaxInformation7(base_types._BaseFieldType):
 
 	@TtlTaxblBaseAmt.setter
 	def TtlTaxblBaseAmt(self, value):
-		self._TtlTaxblBaseAmt = value if type(value) != base_types.auto else self.make_default("TtlTaxblBaseAmt")
+		self._TtlTaxblBaseAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlTaxblBaseAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@TtlTaxblBaseAmt.deleter
 	def TtlTaxblBaseAmt(self):
 		del self._TtlTaxblBaseAmt
-		self._TtlTaxblBaseAmt = None
+		self._TtlTaxblBaseAmt = base_types.UninitialisedField(self, 'TtlTaxblBaseAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def UltmtDbtr(self):
@@ -150,12 +150,12 @@ class TaxInformation7(base_types._BaseFieldType):
 
 	@UltmtDbtr.setter
 	def UltmtDbtr(self, value):
-		self._UltmtDbtr = value if type(value) != base_types.auto else self.make_default("UltmtDbtr")
+		self._UltmtDbtr = value if value is not None else base_types.UninitialisedField(self, 'UltmtDbtr', TaxParty2, False)
 
 	@UltmtDbtr.deleter
 	def UltmtDbtr(self):
 		del self._UltmtDbtr
-		self._UltmtDbtr = None
+		self._UltmtDbtr = base_types.UninitialisedField(self, 'UltmtDbtr', TaxParty2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AdmstnZone', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

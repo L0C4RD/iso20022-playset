@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max350Text import Max350Text
-from ._PartyAddress1 import PartyAddress1
-from ._PartyIdentification203Choice import PartyIdentification203Choice
+from . import Max350Text
+from . import PartyAddress1
+from . import PartyIdentification203Choice
 
 class PartyIdentification214(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PartyIdentification214(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', PartyIdentification203Choice, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', PartyIdentification203Choice, False)
 
 	@property
 	def RcptNm(self):
@@ -28,12 +28,12 @@ class PartyIdentification214(base_types._BaseFieldType):
 
 	@RcptNm.setter
 	def RcptNm(self, value):
-		self._RcptNm = value if type(value) != base_types.auto else self.make_default("RcptNm")
+		self._RcptNm = value if value is not None else base_types.UninitialisedField(self, 'RcptNm', Max350Text, False)
 
 	@RcptNm.deleter
 	def RcptNm(self):
 		del self._RcptNm
-		self._RcptNm = None
+		self._RcptNm = base_types.UninitialisedField(self, 'RcptNm', Max350Text, False)
 
 	@property
 	def RspnRcptAdr(self):
@@ -41,12 +41,12 @@ class PartyIdentification214(base_types._BaseFieldType):
 
 	@RspnRcptAdr.setter
 	def RspnRcptAdr(self, value):
-		self._RspnRcptAdr = value if type(value) != base_types.auto else self.make_default("RspnRcptAdr")
+		self._RspnRcptAdr = value if value is not None else base_types.UninitialisedField(self, 'RspnRcptAdr', PartyAddress1, False)
 
 	@RspnRcptAdr.deleter
 	def RspnRcptAdr(self):
 		del self._RspnRcptAdr
-		self._RspnRcptAdr = None
+		self._RspnRcptAdr = base_types.UninitialisedField(self, 'RspnRcptAdr', PartyAddress1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=PartyIdentification203Choice, min=1, max=1, mutex_group=None, array=False),

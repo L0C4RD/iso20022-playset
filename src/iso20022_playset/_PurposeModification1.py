@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max140Text import Max140Text
-from ._Modification1Code import Modification1Code
+from . import Max140Text
+from . import Modification1Code
 
 class PurposeModification1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PurposeModification1(base_types._BaseFieldType):
 
 	@ModCd.setter
 	def ModCd(self, value):
-		self._ModCd = value if type(value) != base_types.auto else self.make_default("ModCd")
+		self._ModCd = value if value is not None else base_types.UninitialisedField(self, 'ModCd', Modification1Code, False)
 
 	@ModCd.deleter
 	def ModCd(self):
 		del self._ModCd
-		self._ModCd = None
+		self._ModCd = base_types.UninitialisedField(self, 'ModCd', Modification1Code, False)
 
 	@property
 	def Purp(self):
@@ -27,12 +27,12 @@ class PurposeModification1(base_types._BaseFieldType):
 
 	@Purp.setter
 	def Purp(self, value):
-		self._Purp = value if type(value) != base_types.auto else self.make_default("Purp")
+		self._Purp = value if value is not None else base_types.UninitialisedField(self, 'Purp', Max140Text, False)
 
 	@Purp.deleter
 	def Purp(self):
 		del self._Purp
-		self._Purp = None
+		self._Purp = base_types.UninitialisedField(self, 'Purp', Max140Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ModCd', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),

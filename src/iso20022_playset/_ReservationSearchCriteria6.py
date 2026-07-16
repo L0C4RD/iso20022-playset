@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountIdentification4Choice import AccountIdentification4Choice
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._DateTimeSearch2Choice import DateTimeSearch2Choice
-from ._ReservationType2Choice import ReservationType2Choice
-from ._SystemIdentification2Choice import SystemIdentification2Choice
+from . import AccountIdentification4Choice
+from . import BranchAndFinancialInstitutionIdentification8
+from . import DateTimeSearch2Choice
+from . import ReservationType2Choice
+from . import SystemIdentification2Choice
 
 class ReservationSearchCriteria6(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class ReservationSearchCriteria6(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', AccountIdentification4Choice, False)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', AccountIdentification4Choice, False)
 
 	@property
 	def AcctOwnr(self):
@@ -30,12 +30,12 @@ class ReservationSearchCriteria6(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def CurRsvatnTp(self):
@@ -43,12 +43,12 @@ class ReservationSearchCriteria6(base_types._BaseFieldType):
 
 	@CurRsvatnTp.setter
 	def CurRsvatnTp(self, value):
-		self._CurRsvatnTp = value if type(value) != base_types.auto else self.make_default("CurRsvatnTp")
+		self._CurRsvatnTp = value if value is not None else base_types.UninitialisedField(self, 'CurRsvatnTp', ReservationType2Choice, True)
 
 	@CurRsvatnTp.deleter
 	def CurRsvatnTp(self):
 		del self._CurRsvatnTp
-		self._CurRsvatnTp = None
+		self._CurRsvatnTp = base_types.UninitialisedField(self, 'CurRsvatnTp', ReservationType2Choice, True)
 
 	@property
 	def DfltRsvatnTp(self):
@@ -56,12 +56,12 @@ class ReservationSearchCriteria6(base_types._BaseFieldType):
 
 	@DfltRsvatnTp.setter
 	def DfltRsvatnTp(self, value):
-		self._DfltRsvatnTp = value if type(value) != base_types.auto else self.make_default("DfltRsvatnTp")
+		self._DfltRsvatnTp = value if value is not None else base_types.UninitialisedField(self, 'DfltRsvatnTp', ReservationType2Choice, True)
 
 	@DfltRsvatnTp.deleter
 	def DfltRsvatnTp(self):
 		del self._DfltRsvatnTp
-		self._DfltRsvatnTp = None
+		self._DfltRsvatnTp = base_types.UninitialisedField(self, 'DfltRsvatnTp', ReservationType2Choice, True)
 
 	@property
 	def DtTm(self):
@@ -69,12 +69,12 @@ class ReservationSearchCriteria6(base_types._BaseFieldType):
 
 	@DtTm.setter
 	def DtTm(self, value):
-		self._DtTm = value if type(value) != base_types.auto else self.make_default("DtTm")
+		self._DtTm = value if value is not None else base_types.UninitialisedField(self, 'DtTm', DateTimeSearch2Choice, False)
 
 	@DtTm.deleter
 	def DtTm(self):
 		del self._DtTm
-		self._DtTm = None
+		self._DtTm = base_types.UninitialisedField(self, 'DtTm', DateTimeSearch2Choice, False)
 
 	@property
 	def SysId(self):
@@ -82,12 +82,12 @@ class ReservationSearchCriteria6(base_types._BaseFieldType):
 
 	@SysId.setter
 	def SysId(self, value):
-		self._SysId = value if type(value) != base_types.auto else self.make_default("SysId")
+		self._SysId = value if value is not None else base_types.UninitialisedField(self, 'SysId', SystemIdentification2Choice, False)
 
 	@SysId.deleter
 	def SysId(self):
 		del self._SysId
-		self._SysId = None
+		self._SysId = base_types.UninitialisedField(self, 'SysId', SystemIdentification2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PartyIdentification43 import PartyIdentification43
-from ._PartyType1Choice import PartyType1Choice
+from . import PartyIdentification43
+from . import PartyType1Choice
 
 class PartyAndType1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PartyAndType1(base_types._BaseFieldType):
 
 	@Pty.setter
 	def Pty(self, value):
-		self._Pty = value if type(value) != base_types.auto else self.make_default("Pty")
+		self._Pty = value if value is not None else base_types.UninitialisedField(self, 'Pty', PartyIdentification43, False)
 
 	@Pty.deleter
 	def Pty(self):
 		del self._Pty
-		self._Pty = None
+		self._Pty = base_types.UninitialisedField(self, 'Pty', PartyIdentification43, False)
 
 	@property
 	def Tp(self):
@@ -27,12 +27,12 @@ class PartyAndType1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', PartyType1Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', PartyType1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Pty', type=PartyIdentification43, min=0, max=1, mutex_group=None, array=False),

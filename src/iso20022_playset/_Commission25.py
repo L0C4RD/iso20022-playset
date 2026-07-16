@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._AmountAndDirection29 import AmountAndDirection29
-from ._AmountOrRate2Choice import AmountOrRate2Choice
-from ._BaseOneRate import BaseOneRate
-from ._CommissionType6Choice import CommissionType6Choice
-from ._ISODate import ISODate
-from ._PartyIdentification267 import PartyIdentification267
+from . import ActiveCurrencyAndAmount
+from . import AmountAndDirection29
+from . import AmountOrRate2Choice
+from . import BaseOneRate
+from . import CommissionType6Choice
+from . import ISODate
+from . import PartyIdentification267
 
 class Commission25(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class Commission25(base_types._BaseFieldType):
 
 	@ClctnDt.setter
 	def ClctnDt(self, value):
-		self._ClctnDt = value if type(value) != base_types.auto else self.make_default("ClctnDt")
+		self._ClctnDt = value if value is not None else base_types.UninitialisedField(self, 'ClctnDt', ISODate, False)
 
 	@ClctnDt.deleter
 	def ClctnDt(self):
 		del self._ClctnDt
-		self._ClctnDt = None
+		self._ClctnDt = base_types.UninitialisedField(self, 'ClctnDt', ISODate, False)
 
 	@property
 	def Comssn(self):
@@ -32,12 +32,12 @@ class Commission25(base_types._BaseFieldType):
 
 	@Comssn.setter
 	def Comssn(self, value):
-		self._Comssn = value if type(value) != base_types.auto else self.make_default("Comssn")
+		self._Comssn = value if value is not None else base_types.UninitialisedField(self, 'Comssn', AmountOrRate2Choice, False)
 
 	@Comssn.deleter
 	def Comssn(self):
 		del self._Comssn
-		self._Comssn = None
+		self._Comssn = base_types.UninitialisedField(self, 'Comssn', AmountOrRate2Choice, False)
 
 	@property
 	def RcptId(self):
@@ -45,12 +45,12 @@ class Commission25(base_types._BaseFieldType):
 
 	@RcptId.setter
 	def RcptId(self, value):
-		self._RcptId = value if type(value) != base_types.auto else self.make_default("RcptId")
+		self._RcptId = value if value is not None else base_types.UninitialisedField(self, 'RcptId', PartyIdentification267, False)
 
 	@RcptId.deleter
 	def RcptId(self):
 		del self._RcptId
-		self._RcptId = None
+		self._RcptId = base_types.UninitialisedField(self, 'RcptId', PartyIdentification267, False)
 
 	@property
 	def Tp(self):
@@ -58,12 +58,12 @@ class Commission25(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', CommissionType6Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', CommissionType6Choice, False)
 
 	@property
 	def TtlComssn(self):
@@ -71,12 +71,12 @@ class Commission25(base_types._BaseFieldType):
 
 	@TtlComssn.setter
 	def TtlComssn(self, value):
-		self._TtlComssn = value if type(value) != base_types.auto else self.make_default("TtlComssn")
+		self._TtlComssn = value if value is not None else base_types.UninitialisedField(self, 'TtlComssn', AmountAndDirection29, False)
 
 	@TtlComssn.deleter
 	def TtlComssn(self):
 		del self._TtlComssn
-		self._TtlComssn = None
+		self._TtlComssn = base_types.UninitialisedField(self, 'TtlComssn', AmountAndDirection29, False)
 
 	@property
 	def TtlVATAmt(self):
@@ -84,12 +84,12 @@ class Commission25(base_types._BaseFieldType):
 
 	@TtlVATAmt.setter
 	def TtlVATAmt(self, value):
-		self._TtlVATAmt = value if type(value) != base_types.auto else self.make_default("TtlVATAmt")
+		self._TtlVATAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlVATAmt', ActiveCurrencyAndAmount, False)
 
 	@TtlVATAmt.deleter
 	def TtlVATAmt(self):
 		del self._TtlVATAmt
-		self._TtlVATAmt = None
+		self._TtlVATAmt = base_types.UninitialisedField(self, 'TtlVATAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def VATRate(self):
@@ -97,12 +97,12 @@ class Commission25(base_types._BaseFieldType):
 
 	@VATRate.setter
 	def VATRate(self, value):
-		self._VATRate = value if type(value) != base_types.auto else self.make_default("VATRate")
+		self._VATRate = value if value is not None else base_types.UninitialisedField(self, 'VATRate', BaseOneRate, False)
 
 	@VATRate.deleter
 	def VATRate(self):
 		del self._VATRate
-		self._VATRate = None
+		self._VATRate = base_types.UninitialisedField(self, 'VATRate', BaseOneRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClctnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),

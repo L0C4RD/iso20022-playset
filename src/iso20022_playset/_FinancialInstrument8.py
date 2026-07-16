@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._DistributionPolicy1Code import DistributionPolicy1Code
-from ._FormOfSecurity1Code import FormOfSecurity1Code
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
-from ._SecurityIdentification3Choice import SecurityIdentification3Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import ActiveOrHistoricCurrencyCode
+from . import DistributionPolicy1Code
+from . import FormOfSecurity1Code
+from . import Max350Text
+from . import Max35Text
+from . import SecurityIdentification3Choice
+from . import YesNoIndicator
 
 class FinancialInstrument8(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class FinancialInstrument8(base_types._BaseFieldType):
 
 	@ClssTp.setter
 	def ClssTp(self, value):
-		self._ClssTp = value if type(value) != base_types.auto else self.make_default("ClssTp")
+		self._ClssTp = value if value is not None else base_types.UninitialisedField(self, 'ClssTp', Max35Text, False)
 
 	@ClssTp.deleter
 	def ClssTp(self):
 		del self._ClssTp
-		self._ClssTp = None
+		self._ClssTp = base_types.UninitialisedField(self, 'ClssTp', Max35Text, False)
 
 	@property
 	def DnmtnCcy(self):
@@ -32,12 +32,12 @@ class FinancialInstrument8(base_types._BaseFieldType):
 
 	@DnmtnCcy.setter
 	def DnmtnCcy(self, value):
-		self._DnmtnCcy = value if type(value) != base_types.auto else self.make_default("DnmtnCcy")
+		self._DnmtnCcy = value if value is not None else base_types.UninitialisedField(self, 'DnmtnCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@DnmtnCcy.deleter
 	def DnmtnCcy(self):
 		del self._DnmtnCcy
-		self._DnmtnCcy = None
+		self._DnmtnCcy = base_types.UninitialisedField(self, 'DnmtnCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def DstrbtnPlcy(self):
@@ -45,12 +45,12 @@ class FinancialInstrument8(base_types._BaseFieldType):
 
 	@DstrbtnPlcy.setter
 	def DstrbtnPlcy(self, value):
-		self._DstrbtnPlcy = value if type(value) != base_types.auto else self.make_default("DstrbtnPlcy")
+		self._DstrbtnPlcy = value if value is not None else base_types.UninitialisedField(self, 'DstrbtnPlcy', DistributionPolicy1Code, False)
 
 	@DstrbtnPlcy.deleter
 	def DstrbtnPlcy(self):
 		del self._DstrbtnPlcy
-		self._DstrbtnPlcy = None
+		self._DstrbtnPlcy = base_types.UninitialisedField(self, 'DstrbtnPlcy', DistributionPolicy1Code, False)
 
 	@property
 	def DualFndInd(self):
@@ -58,12 +58,12 @@ class FinancialInstrument8(base_types._BaseFieldType):
 
 	@DualFndInd.setter
 	def DualFndInd(self, value):
-		self._DualFndInd = value if type(value) != base_types.auto else self.make_default("DualFndInd")
+		self._DualFndInd = value if value is not None else base_types.UninitialisedField(self, 'DualFndInd', YesNoIndicator, False)
 
 	@DualFndInd.deleter
 	def DualFndInd(self):
 		del self._DualFndInd
-		self._DualFndInd = None
+		self._DualFndInd = base_types.UninitialisedField(self, 'DualFndInd', YesNoIndicator, False)
 
 	@property
 	def Id(self):
@@ -71,12 +71,12 @@ class FinancialInstrument8(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', SecurityIdentification3Choice, True)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', SecurityIdentification3Choice, True)
 
 	@property
 	def Nm(self):
@@ -84,12 +84,12 @@ class FinancialInstrument8(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max350Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max350Text, False)
 
 	@property
 	def SctiesForm(self):
@@ -97,12 +97,12 @@ class FinancialInstrument8(base_types._BaseFieldType):
 
 	@SctiesForm.setter
 	def SctiesForm(self, value):
-		self._SctiesForm = value if type(value) != base_types.auto else self.make_default("SctiesForm")
+		self._SctiesForm = value if value is not None else base_types.UninitialisedField(self, 'SctiesForm', FormOfSecurity1Code, False)
 
 	@SctiesForm.deleter
 	def SctiesForm(self):
 		del self._SctiesForm
-		self._SctiesForm = None
+		self._SctiesForm = base_types.UninitialisedField(self, 'SctiesForm', FormOfSecurity1Code, False)
 
 	@property
 	def SplmtryId(self):
@@ -110,12 +110,12 @@ class FinancialInstrument8(base_types._BaseFieldType):
 
 	@SplmtryId.setter
 	def SplmtryId(self, value):
-		self._SplmtryId = value if type(value) != base_types.auto else self.make_default("SplmtryId")
+		self._SplmtryId = value if value is not None else base_types.UninitialisedField(self, 'SplmtryId', Max35Text, False)
 
 	@SplmtryId.deleter
 	def SplmtryId(self):
 		del self._SplmtryId
-		self._SplmtryId = None
+		self._SplmtryId = base_types.UninitialisedField(self, 'SplmtryId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClssTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

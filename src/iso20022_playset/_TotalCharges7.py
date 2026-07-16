@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._CreditDebitCode import CreditDebitCode
-from ._DecimalNumber import DecimalNumber
-from ._Max15NumericText import Max15NumericText
+from . import ActiveCurrencyAndAmount
+from . import CreditDebitCode
+from . import DecimalNumber
+from . import Max15NumericText
 
 class TotalCharges7(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class TotalCharges7(base_types._BaseFieldType):
 
 	@CdtDbtInd.setter
 	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+		self._CdtDbtInd = value if value is not None else base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@CdtDbtInd.deleter
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
-		self._CdtDbtInd = None
+		self._CdtDbtInd = base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@property
 	def CtrlSum(self):
@@ -29,12 +29,12 @@ class TotalCharges7(base_types._BaseFieldType):
 
 	@CtrlSum.setter
 	def CtrlSum(self, value):
-		self._CtrlSum = value if type(value) != base_types.auto else self.make_default("CtrlSum")
+		self._CtrlSum = value if value is not None else base_types.UninitialisedField(self, 'CtrlSum', DecimalNumber, False)
 
 	@CtrlSum.deleter
 	def CtrlSum(self):
 		del self._CtrlSum
-		self._CtrlSum = None
+		self._CtrlSum = base_types.UninitialisedField(self, 'CtrlSum', DecimalNumber, False)
 
 	@property
 	def NbOfChrgsRcrds(self):
@@ -42,12 +42,12 @@ class TotalCharges7(base_types._BaseFieldType):
 
 	@NbOfChrgsRcrds.setter
 	def NbOfChrgsRcrds(self, value):
-		self._NbOfChrgsRcrds = value if type(value) != base_types.auto else self.make_default("NbOfChrgsRcrds")
+		self._NbOfChrgsRcrds = value if value is not None else base_types.UninitialisedField(self, 'NbOfChrgsRcrds', Max15NumericText, False)
 
 	@NbOfChrgsRcrds.deleter
 	def NbOfChrgsRcrds(self):
 		del self._NbOfChrgsRcrds
-		self._NbOfChrgsRcrds = None
+		self._NbOfChrgsRcrds = base_types.UninitialisedField(self, 'NbOfChrgsRcrds', Max15NumericText, False)
 
 	@property
 	def TtlChrgsAmt(self):
@@ -55,12 +55,12 @@ class TotalCharges7(base_types._BaseFieldType):
 
 	@TtlChrgsAmt.setter
 	def TtlChrgsAmt(self, value):
-		self._TtlChrgsAmt = value if type(value) != base_types.auto else self.make_default("TtlChrgsAmt")
+		self._TtlChrgsAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlChrgsAmt', ActiveCurrencyAndAmount, False)
 
 	@TtlChrgsAmt.deleter
 	def TtlChrgsAmt(self):
 		del self._TtlChrgsAmt
-		self._TtlChrgsAmt = None
+		self._TtlChrgsAmt = base_types.UninitialisedField(self, 'TtlChrgsAmt', ActiveCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),

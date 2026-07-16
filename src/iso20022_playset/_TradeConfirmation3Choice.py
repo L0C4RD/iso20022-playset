@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._TradeConfirmation4 import TradeConfirmation4
-from ._TradeNonConfirmation1 import TradeNonConfirmation1
+from . import TradeConfirmation4
+from . import TradeNonConfirmation1
 
 class TradeConfirmation3Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TradeConfirmation3Choice(base_types._BaseFieldType):
 
 	@Confd.setter
 	def Confd(self, value):
-		self._Confd = value if type(value) != base_types.auto else self.make_default("Confd")
+		self._Confd = value if value is not None else base_types.UninitialisedField(self, 'Confd', TradeConfirmation4, False)
 
 	@Confd.deleter
 	def Confd(self):
 		del self._Confd
-		self._Confd = None
+		self._Confd = base_types.UninitialisedField(self, 'Confd', TradeConfirmation4, False)
 
 	@property
 	def NonConfd(self):
@@ -27,12 +27,12 @@ class TradeConfirmation3Choice(base_types._BaseFieldType):
 
 	@NonConfd.setter
 	def NonConfd(self, value):
-		self._NonConfd = value if type(value) != base_types.auto else self.make_default("NonConfd")
+		self._NonConfd = value if value is not None else base_types.UninitialisedField(self, 'NonConfd', TradeNonConfirmation1, False)
 
 	@NonConfd.deleter
 	def NonConfd(self):
 		del self._NonConfd
-		self._NonConfd = None
+		self._NonConfd = base_types.UninitialisedField(self, 'NonConfd', TradeNonConfirmation1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Confd', type=TradeConfirmation4, min=0, max=1, mutex_group=1, array=False),

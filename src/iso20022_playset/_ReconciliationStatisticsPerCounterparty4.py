@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._Number import Number
-from ._ReconciliationCounterpartyPairStatistics7 import ReconciliationCounterpartyPairStatistics7
-from ._ReportingRequirement3Choice import ReportingRequirement3Choice
+from . import ISODate
+from . import Number
+from . import ReconciliationCounterpartyPairStatistics7
+from . import ReportingRequirement3Choice
 
 class ReconciliationStatisticsPerCounterparty4(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ReconciliationStatisticsPerCounterparty4(base_types._BaseFieldType):
 
 	@RcncltnCtgrs.setter
 	def RcncltnCtgrs(self, value):
-		self._RcncltnCtgrs = value if type(value) != base_types.auto else self.make_default("RcncltnCtgrs")
+		self._RcncltnCtgrs = value if value is not None else base_types.UninitialisedField(self, 'RcncltnCtgrs', ReportingRequirement3Choice, False)
 
 	@RcncltnCtgrs.deleter
 	def RcncltnCtgrs(self):
 		del self._RcncltnCtgrs
-		self._RcncltnCtgrs = None
+		self._RcncltnCtgrs = base_types.UninitialisedField(self, 'RcncltnCtgrs', ReportingRequirement3Choice, False)
 
 	@property
 	def RefDt(self):
@@ -29,12 +29,12 @@ class ReconciliationStatisticsPerCounterparty4(base_types._BaseFieldType):
 
 	@RefDt.setter
 	def RefDt(self, value):
-		self._RefDt = value if type(value) != base_types.auto else self.make_default("RefDt")
+		self._RefDt = value if value is not None else base_types.UninitialisedField(self, 'RefDt', ISODate, False)
 
 	@RefDt.deleter
 	def RefDt(self):
 		del self._RefDt
-		self._RefDt = None
+		self._RefDt = base_types.UninitialisedField(self, 'RefDt', ISODate, False)
 
 	@property
 	def TtlNbOfTxs(self):
@@ -42,12 +42,12 @@ class ReconciliationStatisticsPerCounterparty4(base_types._BaseFieldType):
 
 	@TtlNbOfTxs.setter
 	def TtlNbOfTxs(self, value):
-		self._TtlNbOfTxs = value if type(value) != base_types.auto else self.make_default("TtlNbOfTxs")
+		self._TtlNbOfTxs = value if value is not None else base_types.UninitialisedField(self, 'TtlNbOfTxs', Number, False)
 
 	@TtlNbOfTxs.deleter
 	def TtlNbOfTxs(self):
 		del self._TtlNbOfTxs
-		self._TtlNbOfTxs = None
+		self._TtlNbOfTxs = base_types.UninitialisedField(self, 'TtlNbOfTxs', Number, False)
 
 	@property
 	def TxDtls(self):
@@ -55,12 +55,12 @@ class ReconciliationStatisticsPerCounterparty4(base_types._BaseFieldType):
 
 	@TxDtls.setter
 	def TxDtls(self, value):
-		self._TxDtls = value if type(value) != base_types.auto else self.make_default("TxDtls")
+		self._TxDtls = value if value is not None else base_types.UninitialisedField(self, 'TxDtls', ReconciliationCounterpartyPairStatistics7, True)
 
 	@TxDtls.deleter
 	def TxDtls(self):
 		del self._TxDtls
-		self._TxDtls = None
+		self._TxDtls = base_types.UninitialisedField(self, 'TxDtls', ReconciliationCounterpartyPairStatistics7, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RcncltnCtgrs', type=ReportingRequirement3Choice, min=1, max=1, mutex_group=None, array=False),

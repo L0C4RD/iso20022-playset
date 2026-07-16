@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Number import Number
-from ._YesNoIndicator import YesNoIndicator
+from . import Number
+from . import YesNoIndicator
 
 class TimeFrame7Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TimeFrame7Choice(base_types._BaseFieldType):
 
 	@Prepmt.setter
 	def Prepmt(self, value):
-		self._Prepmt = value if type(value) != base_types.auto else self.make_default("Prepmt")
+		self._Prepmt = value if value is not None else base_types.UninitialisedField(self, 'Prepmt', YesNoIndicator, False)
 
 	@Prepmt.deleter
 	def Prepmt(self):
 		del self._Prepmt
-		self._Prepmt = None
+		self._Prepmt = base_types.UninitialisedField(self, 'Prepmt', YesNoIndicator, False)
 
 	@property
 	def TPlus(self):
@@ -27,12 +27,12 @@ class TimeFrame7Choice(base_types._BaseFieldType):
 
 	@TPlus.setter
 	def TPlus(self, value):
-		self._TPlus = value if type(value) != base_types.auto else self.make_default("TPlus")
+		self._TPlus = value if value is not None else base_types.UninitialisedField(self, 'TPlus', Number, False)
 
 	@TPlus.deleter
 	def TPlus(self):
 		del self._TPlus
-		self._TPlus = None
+		self._TPlus = base_types.UninitialisedField(self, 'TPlus', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Prepmt', type=YesNoIndicator, min=0, max=1, mutex_group=1, array=False),

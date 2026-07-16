@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._OriginalAndCurrentQuantities6 import OriginalAndCurrentQuantities6
-from ._SignedQuantityFormat10 import SignedQuantityFormat10
+from . import OriginalAndCurrentQuantities6
+from . import SignedQuantityFormat10
 
 class Quantity50Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Quantity50Choice(base_types._BaseFieldType):
 
 	@OrgnlAndCurFaceAmt.setter
 	def OrgnlAndCurFaceAmt(self, value):
-		self._OrgnlAndCurFaceAmt = value if type(value) != base_types.auto else self.make_default("OrgnlAndCurFaceAmt")
+		self._OrgnlAndCurFaceAmt = value if value is not None else base_types.UninitialisedField(self, 'OrgnlAndCurFaceAmt', OriginalAndCurrentQuantities6, False)
 
 	@OrgnlAndCurFaceAmt.deleter
 	def OrgnlAndCurFaceAmt(self):
 		del self._OrgnlAndCurFaceAmt
-		self._OrgnlAndCurFaceAmt = None
+		self._OrgnlAndCurFaceAmt = base_types.UninitialisedField(self, 'OrgnlAndCurFaceAmt', OriginalAndCurrentQuantities6, False)
 
 	@property
 	def SgndQty(self):
@@ -27,12 +27,12 @@ class Quantity50Choice(base_types._BaseFieldType):
 
 	@SgndQty.setter
 	def SgndQty(self, value):
-		self._SgndQty = value if type(value) != base_types.auto else self.make_default("SgndQty")
+		self._SgndQty = value if value is not None else base_types.UninitialisedField(self, 'SgndQty', SignedQuantityFormat10, False)
 
 	@SgndQty.deleter
 	def SgndQty(self):
 		del self._SgndQty
-		self._SgndQty = None
+		self._SgndQty = base_types.UninitialisedField(self, 'SgndQty', SignedQuantityFormat10, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlAndCurFaceAmt', type=OriginalAndCurrentQuantities6, min=0, max=1, mutex_group=1, array=False),

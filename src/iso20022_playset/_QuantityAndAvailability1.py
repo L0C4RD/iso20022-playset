@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import FinancialInstrumentQuantity1Choice
+from . import YesNoIndicator
 
 class QuantityAndAvailability1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class QuantityAndAvailability1(base_types._BaseFieldType):
 
 	@AvlbtyInd.setter
 	def AvlbtyInd(self, value):
-		self._AvlbtyInd = value if type(value) != base_types.auto else self.make_default("AvlbtyInd")
+		self._AvlbtyInd = value if value is not None else base_types.UninitialisedField(self, 'AvlbtyInd', YesNoIndicator, False)
 
 	@AvlbtyInd.deleter
 	def AvlbtyInd(self):
 		del self._AvlbtyInd
-		self._AvlbtyInd = None
+		self._AvlbtyInd = base_types.UninitialisedField(self, 'AvlbtyInd', YesNoIndicator, False)
 
 	@property
 	def Qty(self):
@@ -27,12 +27,12 @@ class QuantityAndAvailability1(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+		self._Qty = value if value is not None else base_types.UninitialisedField(self, 'Qty', FinancialInstrumentQuantity1Choice, False)
 
 	@Qty.deleter
 	def Qty(self):
 		del self._Qty
-		self._Qty = None
+		self._Qty = base_types.UninitialisedField(self, 'Qty', FinancialInstrumentQuantity1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AvlbtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),

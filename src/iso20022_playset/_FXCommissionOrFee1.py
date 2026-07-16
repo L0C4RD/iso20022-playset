@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountOrRate4Choice import AmountOrRate4Choice
-from ._FXAmountType1Choice import FXAmountType1Choice
-from ._PlusOrMinusIndicator import PlusOrMinusIndicator
+from . import AmountOrRate4Choice
+from . import FXAmountType1Choice
+from . import PlusOrMinusIndicator
 
 class FXCommissionOrFee1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class FXCommissionOrFee1(base_types._BaseFieldType):
 
 	@AmtOrRate.setter
 	def AmtOrRate(self, value):
-		self._AmtOrRate = value if type(value) != base_types.auto else self.make_default("AmtOrRate")
+		self._AmtOrRate = value if value is not None else base_types.UninitialisedField(self, 'AmtOrRate', AmountOrRate4Choice, False)
 
 	@AmtOrRate.deleter
 	def AmtOrRate(self):
 		del self._AmtOrRate
-		self._AmtOrRate = None
+		self._AmtOrRate = base_types.UninitialisedField(self, 'AmtOrRate', AmountOrRate4Choice, False)
 
 	@property
 	def Sgn(self):
@@ -28,12 +28,12 @@ class FXCommissionOrFee1(base_types._BaseFieldType):
 
 	@Sgn.setter
 	def Sgn(self, value):
-		self._Sgn = value if type(value) != base_types.auto else self.make_default("Sgn")
+		self._Sgn = value if value is not None else base_types.UninitialisedField(self, 'Sgn', PlusOrMinusIndicator, False)
 
 	@Sgn.deleter
 	def Sgn(self):
 		del self._Sgn
-		self._Sgn = None
+		self._Sgn = base_types.UninitialisedField(self, 'Sgn', PlusOrMinusIndicator, False)
 
 	@property
 	def Tp(self):
@@ -41,12 +41,12 @@ class FXCommissionOrFee1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', FXAmountType1Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', FXAmountType1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmtOrRate', type=AmountOrRate4Choice, min=1, max=1, mutex_group=None, array=False),

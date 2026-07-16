@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RegulatoryAuthority2 import RegulatoryAuthority2
-from ._RegulatoryReportingType1Code import RegulatoryReportingType1Code
-from ._StructuredRegulatoryReporting3 import StructuredRegulatoryReporting3
+from . import RegulatoryAuthority2
+from . import RegulatoryReportingType1Code
+from . import StructuredRegulatoryReporting3
 
 class RegulatoryReporting3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class RegulatoryReporting3(base_types._BaseFieldType):
 
 	@Authrty.setter
 	def Authrty(self, value):
-		self._Authrty = value if type(value) != base_types.auto else self.make_default("Authrty")
+		self._Authrty = value if value is not None else base_types.UninitialisedField(self, 'Authrty', RegulatoryAuthority2, False)
 
 	@Authrty.deleter
 	def Authrty(self):
 		del self._Authrty
-		self._Authrty = None
+		self._Authrty = base_types.UninitialisedField(self, 'Authrty', RegulatoryAuthority2, False)
 
 	@property
 	def DbtCdtRptgInd(self):
@@ -28,12 +28,12 @@ class RegulatoryReporting3(base_types._BaseFieldType):
 
 	@DbtCdtRptgInd.setter
 	def DbtCdtRptgInd(self, value):
-		self._DbtCdtRptgInd = value if type(value) != base_types.auto else self.make_default("DbtCdtRptgInd")
+		self._DbtCdtRptgInd = value if value is not None else base_types.UninitialisedField(self, 'DbtCdtRptgInd', RegulatoryReportingType1Code, False)
 
 	@DbtCdtRptgInd.deleter
 	def DbtCdtRptgInd(self):
 		del self._DbtCdtRptgInd
-		self._DbtCdtRptgInd = None
+		self._DbtCdtRptgInd = base_types.UninitialisedField(self, 'DbtCdtRptgInd', RegulatoryReportingType1Code, False)
 
 	@property
 	def Dtls(self):
@@ -41,12 +41,12 @@ class RegulatoryReporting3(base_types._BaseFieldType):
 
 	@Dtls.setter
 	def Dtls(self, value):
-		self._Dtls = value if type(value) != base_types.auto else self.make_default("Dtls")
+		self._Dtls = value if value is not None else base_types.UninitialisedField(self, 'Dtls', StructuredRegulatoryReporting3, True)
 
 	@Dtls.deleter
 	def Dtls(self):
 		del self._Dtls
-		self._Dtls = None
+		self._Dtls = base_types.UninitialisedField(self, 'Dtls', StructuredRegulatoryReporting3, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Authrty', type=RegulatoryAuthority2, min=0, max=1, mutex_group=None, array=False),

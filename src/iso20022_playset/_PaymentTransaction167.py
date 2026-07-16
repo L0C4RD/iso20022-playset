@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PaymentInstrument28Choice import PaymentInstrument28Choice
+from . import PaymentInstrument28Choice
 
 class PaymentTransaction167(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class PaymentTransaction167(base_types._BaseFieldType):
 
 	@PmtInstrm.setter
 	def PmtInstrm(self, value):
-		self._PmtInstrm = value if type(value) != base_types.auto else self.make_default("PmtInstrm")
+		self._PmtInstrm = value if value is not None else base_types.UninitialisedField(self, 'PmtInstrm', PaymentInstrument28Choice, False)
 
 	@PmtInstrm.deleter
 	def PmtInstrm(self):
 		del self._PmtInstrm
-		self._PmtInstrm = None
+		self._PmtInstrm = base_types.UninitialisedField(self, 'PmtInstrm', PaymentInstrument28Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PmtInstrm', type=PaymentInstrument28Choice, min=1, max=1, mutex_group=None, array=False),

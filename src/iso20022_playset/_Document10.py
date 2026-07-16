@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Channel1Choice import Channel1Choice
-from ._DocumentFormat1Choice import DocumentFormat1Choice
-from ._UndertakingDocumentType2Choice import UndertakingDocumentType2Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import Channel1Choice
+from . import DocumentFormat1Choice
+from . import UndertakingDocumentType2Choice
+from . import YesNoIndicator
 
 class Document10(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class Document10(base_types._BaseFieldType):
 
 	@CpyInd.setter
 	def CpyInd(self, value):
-		self._CpyInd = value if type(value) != base_types.auto else self.make_default("CpyInd")
+		self._CpyInd = value if value is not None else base_types.UninitialisedField(self, 'CpyInd', YesNoIndicator, False)
 
 	@CpyInd.deleter
 	def CpyInd(self):
 		del self._CpyInd
-		self._CpyInd = None
+		self._CpyInd = base_types.UninitialisedField(self, 'CpyInd', YesNoIndicator, False)
 
 	@property
 	def DocFrmt(self):
@@ -29,12 +29,12 @@ class Document10(base_types._BaseFieldType):
 
 	@DocFrmt.setter
 	def DocFrmt(self, value):
-		self._DocFrmt = value if type(value) != base_types.auto else self.make_default("DocFrmt")
+		self._DocFrmt = value if value is not None else base_types.UninitialisedField(self, 'DocFrmt', DocumentFormat1Choice, False)
 
 	@DocFrmt.deleter
 	def DocFrmt(self):
 		del self._DocFrmt
-		self._DocFrmt = None
+		self._DocFrmt = base_types.UninitialisedField(self, 'DocFrmt', DocumentFormat1Choice, False)
 
 	@property
 	def DocTp(self):
@@ -42,12 +42,12 @@ class Document10(base_types._BaseFieldType):
 
 	@DocTp.setter
 	def DocTp(self, value):
-		self._DocTp = value if type(value) != base_types.auto else self.make_default("DocTp")
+		self._DocTp = value if value is not None else base_types.UninitialisedField(self, 'DocTp', UndertakingDocumentType2Choice, False)
 
 	@DocTp.deleter
 	def DocTp(self):
 		del self._DocTp
-		self._DocTp = None
+		self._DocTp = base_types.UninitialisedField(self, 'DocTp', UndertakingDocumentType2Choice, False)
 
 	@property
 	def PresntnChanl(self):
@@ -55,12 +55,12 @@ class Document10(base_types._BaseFieldType):
 
 	@PresntnChanl.setter
 	def PresntnChanl(self, value):
-		self._PresntnChanl = value if type(value) != base_types.auto else self.make_default("PresntnChanl")
+		self._PresntnChanl = value if value is not None else base_types.UninitialisedField(self, 'PresntnChanl', Channel1Choice, False)
 
 	@PresntnChanl.deleter
 	def PresntnChanl(self):
 		del self._PresntnChanl
-		self._PresntnChanl = None
+		self._PresntnChanl = base_types.UninitialisedField(self, 'PresntnChanl', Channel1Choice, False)
 
 	@property
 	def SgndInd(self):
@@ -68,12 +68,12 @@ class Document10(base_types._BaseFieldType):
 
 	@SgndInd.setter
 	def SgndInd(self, value):
-		self._SgndInd = value if type(value) != base_types.auto else self.make_default("SgndInd")
+		self._SgndInd = value if value is not None else base_types.UninitialisedField(self, 'SgndInd', YesNoIndicator, False)
 
 	@SgndInd.deleter
 	def SgndInd(self):
 		del self._SgndInd
-		self._SgndInd = None
+		self._SgndInd = base_types.UninitialisedField(self, 'SgndInd', YesNoIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CpyInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),

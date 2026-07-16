@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PriceMethod1Code import PriceMethod1Code
-from ._PriceValue1 import PriceValue1
-from ._UnitPriceType2Choice import UnitPriceType2Choice
+from . import PriceMethod1Code
+from . import PriceValue1
+from . import UnitPriceType2Choice
 
 class UnitPrice20(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class UnitPrice20(base_types._BaseFieldType):
 
 	@PricMtd.setter
 	def PricMtd(self, value):
-		self._PricMtd = value if type(value) != base_types.auto else self.make_default("PricMtd")
+		self._PricMtd = value if value is not None else base_types.UninitialisedField(self, 'PricMtd', PriceMethod1Code, False)
 
 	@PricMtd.deleter
 	def PricMtd(self):
 		del self._PricMtd
-		self._PricMtd = None
+		self._PricMtd = base_types.UninitialisedField(self, 'PricMtd', PriceMethod1Code, False)
 
 	@property
 	def PricTp(self):
@@ -28,12 +28,12 @@ class UnitPrice20(base_types._BaseFieldType):
 
 	@PricTp.setter
 	def PricTp(self, value):
-		self._PricTp = value if type(value) != base_types.auto else self.make_default("PricTp")
+		self._PricTp = value if value is not None else base_types.UninitialisedField(self, 'PricTp', UnitPriceType2Choice, False)
 
 	@PricTp.deleter
 	def PricTp(self):
 		del self._PricTp
-		self._PricTp = None
+		self._PricTp = base_types.UninitialisedField(self, 'PricTp', UnitPriceType2Choice, False)
 
 	@property
 	def Val(self):
@@ -41,12 +41,12 @@ class UnitPrice20(base_types._BaseFieldType):
 
 	@Val.setter
 	def Val(self, value):
-		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
+		self._Val = value if value is not None else base_types.UninitialisedField(self, 'Val', PriceValue1, False)
 
 	@Val.deleter
 	def Val(self):
 		del self._Val
-		self._Val = None
+		self._Val = base_types.UninitialisedField(self, 'Val', PriceValue1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PricMtd', type=PriceMethod1Code, min=0, max=1, mutex_group=None, array=False),

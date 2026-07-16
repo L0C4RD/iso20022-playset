@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActionMessage11 import ActionMessage11
-from ._CardDataReading8Code import CardDataReading8Code
-from ._Number import Number
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ActionMessage11
+from . import CardDataReading8Code
+from . import Number
+from . import TrueFalseIndicator
 
 class DeviceInitialisationCardReaderRequest6(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class DeviceInitialisationCardReaderRequest6(base_types._BaseFieldType):
 
 	@DispOutpt.setter
 	def DispOutpt(self, value):
-		self._DispOutpt = value if type(value) != base_types.auto else self.make_default("DispOutpt")
+		self._DispOutpt = value if value is not None else base_types.UninitialisedField(self, 'DispOutpt', ActionMessage11, False)
 
 	@DispOutpt.deleter
 	def DispOutpt(self):
 		del self._DispOutpt
-		self._DispOutpt = None
+		self._DispOutpt = base_types.UninitialisedField(self, 'DispOutpt', ActionMessage11, False)
 
 	@property
 	def ForceNtryMd(self):
@@ -29,12 +29,12 @@ class DeviceInitialisationCardReaderRequest6(base_types._BaseFieldType):
 
 	@ForceNtryMd.setter
 	def ForceNtryMd(self, value):
-		self._ForceNtryMd = value if type(value) != base_types.auto else self.make_default("ForceNtryMd")
+		self._ForceNtryMd = value if value is not None else base_types.UninitialisedField(self, 'ForceNtryMd', CardDataReading8Code, True)
 
 	@ForceNtryMd.deleter
 	def ForceNtryMd(self):
 		del self._ForceNtryMd
-		self._ForceNtryMd = None
+		self._ForceNtryMd = base_types.UninitialisedField(self, 'ForceNtryMd', CardDataReading8Code, True)
 
 	@property
 	def LeavCardFlg(self):
@@ -42,12 +42,12 @@ class DeviceInitialisationCardReaderRequest6(base_types._BaseFieldType):
 
 	@LeavCardFlg.setter
 	def LeavCardFlg(self, value):
-		self._LeavCardFlg = value if type(value) != base_types.auto else self.make_default("LeavCardFlg")
+		self._LeavCardFlg = value if value is not None else base_types.UninitialisedField(self, 'LeavCardFlg', TrueFalseIndicator, False)
 
 	@LeavCardFlg.deleter
 	def LeavCardFlg(self):
 		del self._LeavCardFlg
-		self._LeavCardFlg = None
+		self._LeavCardFlg = base_types.UninitialisedField(self, 'LeavCardFlg', TrueFalseIndicator, False)
 
 	@property
 	def MaxWtgTm(self):
@@ -55,12 +55,12 @@ class DeviceInitialisationCardReaderRequest6(base_types._BaseFieldType):
 
 	@MaxWtgTm.setter
 	def MaxWtgTm(self, value):
-		self._MaxWtgTm = value if type(value) != base_types.auto else self.make_default("MaxWtgTm")
+		self._MaxWtgTm = value if value is not None else base_types.UninitialisedField(self, 'MaxWtgTm', Number, False)
 
 	@MaxWtgTm.deleter
 	def MaxWtgTm(self):
 		del self._MaxWtgTm
-		self._MaxWtgTm = None
+		self._MaxWtgTm = base_types.UninitialisedField(self, 'MaxWtgTm', Number, False)
 
 	@property
 	def WarmRstFlg(self):
@@ -68,12 +68,12 @@ class DeviceInitialisationCardReaderRequest6(base_types._BaseFieldType):
 
 	@WarmRstFlg.setter
 	def WarmRstFlg(self, value):
-		self._WarmRstFlg = value if type(value) != base_types.auto else self.make_default("WarmRstFlg")
+		self._WarmRstFlg = value if value is not None else base_types.UninitialisedField(self, 'WarmRstFlg', TrueFalseIndicator, False)
 
 	@WarmRstFlg.deleter
 	def WarmRstFlg(self):
 		del self._WarmRstFlg
-		self._WarmRstFlg = None
+		self._WarmRstFlg = base_types.UninitialisedField(self, 'WarmRstFlg', TrueFalseIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DispOutpt', type=ActionMessage11, min=0, max=1, mutex_group=None, array=False),

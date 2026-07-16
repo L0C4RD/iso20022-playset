@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
+from . import Max140Text
+from . import Max35Text
 
 class ATMCommandIdentification1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ATMCommandIdentification1(base_types._BaseFieldType):
 
 	@Orgn.setter
 	def Orgn(self, value):
-		self._Orgn = value if type(value) != base_types.auto else self.make_default("Orgn")
+		self._Orgn = value if value is not None else base_types.UninitialisedField(self, 'Orgn', Max35Text, False)
 
 	@Orgn.deleter
 	def Orgn(self):
 		del self._Orgn
-		self._Orgn = None
+		self._Orgn = base_types.UninitialisedField(self, 'Orgn', Max35Text, False)
 
 	@property
 	def Prcr(self):
@@ -27,12 +27,12 @@ class ATMCommandIdentification1(base_types._BaseFieldType):
 
 	@Prcr.setter
 	def Prcr(self, value):
-		self._Prcr = value if type(value) != base_types.auto else self.make_default("Prcr")
+		self._Prcr = value if value is not None else base_types.UninitialisedField(self, 'Prcr', Max140Text, False)
 
 	@Prcr.deleter
 	def Prcr(self):
 		del self._Prcr
-		self._Prcr = None
+		self._Prcr = base_types.UninitialisedField(self, 'Prcr', Max140Text, False)
 
 	@property
 	def Ref(self):
@@ -40,12 +40,12 @@ class ATMCommandIdentification1(base_types._BaseFieldType):
 
 	@Ref.setter
 	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+		self._Ref = value if value is not None else base_types.UninitialisedField(self, 'Ref', Max35Text, False)
 
 	@Ref.deleter
 	def Ref(self):
 		del self._Ref
-		self._Ref = None
+		self._Ref = base_types.UninitialisedField(self, 'Ref', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Orgn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

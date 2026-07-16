@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AuctionData2 import AuctionData2
-from ._OrderData4 import OrderData4
-from ._OrderIdentification2 import OrderIdentification2
+from . import AuctionData2
+from . import OrderData4
+from . import OrderIdentification2
 
 class OrderData3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class OrderData3(base_types._BaseFieldType):
 
 	@AuctnData.setter
 	def AuctnData(self, value):
-		self._AuctnData = value if type(value) != base_types.auto else self.make_default("AuctnData")
+		self._AuctnData = value if value is not None else base_types.UninitialisedField(self, 'AuctnData', AuctionData2, False)
 
 	@AuctnData.deleter
 	def AuctnData(self):
 		del self._AuctnData
-		self._AuctnData = None
+		self._AuctnData = base_types.UninitialisedField(self, 'AuctnData', AuctionData2, False)
 
 	@property
 	def OrdrData(self):
@@ -28,12 +28,12 @@ class OrderData3(base_types._BaseFieldType):
 
 	@OrdrData.setter
 	def OrdrData(self, value):
-		self._OrdrData = value if type(value) != base_types.auto else self.make_default("OrdrData")
+		self._OrdrData = value if value is not None else base_types.UninitialisedField(self, 'OrdrData', OrderData4, False)
 
 	@OrdrData.deleter
 	def OrdrData(self):
 		del self._OrdrData
-		self._OrdrData = None
+		self._OrdrData = base_types.UninitialisedField(self, 'OrdrData', OrderData4, False)
 
 	@property
 	def OrdrIdData(self):
@@ -41,12 +41,12 @@ class OrderData3(base_types._BaseFieldType):
 
 	@OrdrIdData.setter
 	def OrdrIdData(self, value):
-		self._OrdrIdData = value if type(value) != base_types.auto else self.make_default("OrdrIdData")
+		self._OrdrIdData = value if value is not None else base_types.UninitialisedField(self, 'OrdrIdData', OrderIdentification2, False)
 
 	@OrdrIdData.deleter
 	def OrdrIdData(self):
 		del self._OrdrIdData
-		self._OrdrIdData = None
+		self._OrdrIdData = base_types.UninitialisedField(self, 'OrdrIdData', OrderIdentification2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AuctnData', type=AuctionData2, min=0, max=1, mutex_group=None, array=False),

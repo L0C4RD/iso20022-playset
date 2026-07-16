@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SkipPayload import SkipPayload
+from . import SkipPayload
 
 class ProprietaryData6(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class ProprietaryData6(base_types._BaseFieldType):
 
 	@Any.setter
 	def Any(self, value):
-		self._Any = value if type(value) != base_types.auto else self.make_default("Any")
+		self._Any = value if value is not None else base_types.UninitialisedField(self, 'Any', SkipPayload, False)
 
 	@Any.deleter
 	def Any(self):
 		del self._Any
-		self._Any = None
+		self._Any = base_types.UninitialisedField(self, 'Any', SkipPayload, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Any', type=SkipPayload, min=1, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max3NumericText import Max3NumericText
-from ._YesNoIndicator import YesNoIndicator
+from . import Max3NumericText
+from . import YesNoIndicator
 
 class CrystallisationDay1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CrystallisationDay1(base_types._BaseFieldType):
 
 	@Day.setter
 	def Day(self, value):
-		self._Day = value if type(value) != base_types.auto else self.make_default("Day")
+		self._Day = value if value is not None else base_types.UninitialisedField(self, 'Day', YesNoIndicator, False)
 
 	@Day.deleter
 	def Day(self):
 		del self._Day
-		self._Day = None
+		self._Day = base_types.UninitialisedField(self, 'Day', YesNoIndicator, False)
 
 	@property
 	def Prd(self):
@@ -27,12 +27,12 @@ class CrystallisationDay1(base_types._BaseFieldType):
 
 	@Prd.setter
 	def Prd(self, value):
-		self._Prd = value if type(value) != base_types.auto else self.make_default("Prd")
+		self._Prd = value if value is not None else base_types.UninitialisedField(self, 'Prd', Max3NumericText, False)
 
 	@Prd.deleter
 	def Prd(self):
 		del self._Prd
-		self._Prd = None
+		self._Prd = base_types.UninitialisedField(self, 'Prd', Max3NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Day', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),

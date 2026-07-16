@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Derivative3 import Derivative3
-from ._FinancialInstrument59 import FinancialInstrument59
-from ._RepurchaseAgreement3 import RepurchaseAgreement3
+from . import Derivative3
+from . import FinancialInstrument59
+from . import RepurchaseAgreement3
 
 class Product1Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Product1Choice(base_types._BaseFieldType):
 
 	@Deriv.setter
 	def Deriv(self, value):
-		self._Deriv = value if type(value) != base_types.auto else self.make_default("Deriv")
+		self._Deriv = value if value is not None else base_types.UninitialisedField(self, 'Deriv', Derivative3, False)
 
 	@Deriv.deleter
 	def Deriv(self):
 		del self._Deriv
-		self._Deriv = None
+		self._Deriv = base_types.UninitialisedField(self, 'Deriv', Derivative3, False)
 
 	@property
 	def SctiesFincgTx(self):
@@ -28,12 +28,12 @@ class Product1Choice(base_types._BaseFieldType):
 
 	@SctiesFincgTx.setter
 	def SctiesFincgTx(self, value):
-		self._SctiesFincgTx = value if type(value) != base_types.auto else self.make_default("SctiesFincgTx")
+		self._SctiesFincgTx = value if value is not None else base_types.UninitialisedField(self, 'SctiesFincgTx', RepurchaseAgreement3, False)
 
 	@SctiesFincgTx.deleter
 	def SctiesFincgTx(self):
 		del self._SctiesFincgTx
-		self._SctiesFincgTx = None
+		self._SctiesFincgTx = base_types.UninitialisedField(self, 'SctiesFincgTx', RepurchaseAgreement3, False)
 
 	@property
 	def Scty(self):
@@ -41,12 +41,12 @@ class Product1Choice(base_types._BaseFieldType):
 
 	@Scty.setter
 	def Scty(self, value):
-		self._Scty = value if type(value) != base_types.auto else self.make_default("Scty")
+		self._Scty = value if value is not None else base_types.UninitialisedField(self, 'Scty', FinancialInstrument59, False)
 
 	@Scty.deleter
 	def Scty(self):
 		del self._Scty
-		self._Scty = None
+		self._Scty = base_types.UninitialisedField(self, 'Scty', FinancialInstrument59, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Deriv', type=Derivative3, min=0, max=1, mutex_group=1, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._Max35Text import Max35Text
+from . import DateAndDateTime2Choice
+from . import Max35Text
 
 class TaxVoucher4(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TaxVoucher4(base_types._BaseFieldType):
 
 	@BrgnDt.setter
 	def BrgnDt(self, value):
-		self._BrgnDt = value if type(value) != base_types.auto else self.make_default("BrgnDt")
+		self._BrgnDt = value if value is not None else base_types.UninitialisedField(self, 'BrgnDt', DateAndDateTime2Choice, False)
 
 	@BrgnDt.deleter
 	def BrgnDt(self):
 		del self._BrgnDt
-		self._BrgnDt = None
+		self._BrgnDt = base_types.UninitialisedField(self, 'BrgnDt', DateAndDateTime2Choice, False)
 
 	@property
 	def BrgnSttlmDt(self):
@@ -27,12 +27,12 @@ class TaxVoucher4(base_types._BaseFieldType):
 
 	@BrgnSttlmDt.setter
 	def BrgnSttlmDt(self, value):
-		self._BrgnSttlmDt = value if type(value) != base_types.auto else self.make_default("BrgnSttlmDt")
+		self._BrgnSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'BrgnSttlmDt', DateAndDateTime2Choice, False)
 
 	@BrgnSttlmDt.deleter
 	def BrgnSttlmDt(self):
 		del self._BrgnSttlmDt
-		self._BrgnSttlmDt = None
+		self._BrgnSttlmDt = base_types.UninitialisedField(self, 'BrgnSttlmDt', DateAndDateTime2Choice, False)
 
 	@property
 	def Id(self):
@@ -40,12 +40,12 @@ class TaxVoucher4(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BrgnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),

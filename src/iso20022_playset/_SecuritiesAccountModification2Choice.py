@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MarketSpecificAttribute1 import MarketSpecificAttribute1
-from ._SystemRestriction1 import SystemRestriction1
-from ._SystemSecuritiesAccount5 import SystemSecuritiesAccount5
+from . import MarketSpecificAttribute1
+from . import SystemRestriction1
+from . import SystemSecuritiesAccount5
 
 class SecuritiesAccountModification2Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SecuritiesAccountModification2Choice(base_types._BaseFieldType):
 
 	@MktSpcfcAttr.setter
 	def MktSpcfcAttr(self, value):
-		self._MktSpcfcAttr = value if type(value) != base_types.auto else self.make_default("MktSpcfcAttr")
+		self._MktSpcfcAttr = value if value is not None else base_types.UninitialisedField(self, 'MktSpcfcAttr', MarketSpecificAttribute1, False)
 
 	@MktSpcfcAttr.deleter
 	def MktSpcfcAttr(self):
 		del self._MktSpcfcAttr
-		self._MktSpcfcAttr = None
+		self._MktSpcfcAttr = base_types.UninitialisedField(self, 'MktSpcfcAttr', MarketSpecificAttribute1, False)
 
 	@property
 	def SysRstrctn(self):
@@ -28,12 +28,12 @@ class SecuritiesAccountModification2Choice(base_types._BaseFieldType):
 
 	@SysRstrctn.setter
 	def SysRstrctn(self, value):
-		self._SysRstrctn = value if type(value) != base_types.auto else self.make_default("SysRstrctn")
+		self._SysRstrctn = value if value is not None else base_types.UninitialisedField(self, 'SysRstrctn', SystemRestriction1, False)
 
 	@SysRstrctn.deleter
 	def SysRstrctn(self):
 		del self._SysRstrctn
-		self._SysRstrctn = None
+		self._SysRstrctn = base_types.UninitialisedField(self, 'SysRstrctn', SystemRestriction1, False)
 
 	@property
 	def SysSctiesAcct(self):
@@ -41,12 +41,12 @@ class SecuritiesAccountModification2Choice(base_types._BaseFieldType):
 
 	@SysSctiesAcct.setter
 	def SysSctiesAcct(self, value):
-		self._SysSctiesAcct = value if type(value) != base_types.auto else self.make_default("SysSctiesAcct")
+		self._SysSctiesAcct = value if value is not None else base_types.UninitialisedField(self, 'SysSctiesAcct', SystemSecuritiesAccount5, False)
 
 	@SysSctiesAcct.deleter
 	def SysSctiesAcct(self):
 		del self._SysSctiesAcct
-		self._SysSctiesAcct = None
+		self._SysSctiesAcct = base_types.UninitialisedField(self, 'SysSctiesAcct', SystemSecuritiesAccount5, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MktSpcfcAttr', type=MarketSpecificAttribute1, min=0, max=1, mutex_group=1, array=False),

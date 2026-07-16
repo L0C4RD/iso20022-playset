@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InstrumentOrSubClassIdentification2Choice import InstrumentOrSubClassIdentification2Choice
-from ._MICIdentifier import MICIdentifier
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
-from ._Period4Choice import Period4Choice
-from ._StatisticsTransparency2 import StatisticsTransparency2
-from ._TonsOrCurrency2Choice import TonsOrCurrency2Choice
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import InstrumentOrSubClassIdentification2Choice
+from . import MICIdentifier
+from . import Max350Text
+from . import Max35Text
+from . import Period4Choice
+from . import StatisticsTransparency2
+from . import TonsOrCurrency2Choice
+from . import TrueFalseIndicator
 
 class TransparencyDataReport20(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class TransparencyDataReport20(base_types._BaseFieldType):
 
 	@FullNm.setter
 	def FullNm(self, value):
-		self._FullNm = value if type(value) != base_types.auto else self.make_default("FullNm")
+		self._FullNm = value if value is not None else base_types.UninitialisedField(self, 'FullNm', Max350Text, False)
 
 	@FullNm.deleter
 	def FullNm(self):
 		del self._FullNm
-		self._FullNm = None
+		self._FullNm = base_types.UninitialisedField(self, 'FullNm', Max350Text, False)
 
 	@property
 	def Id(self):
@@ -33,12 +33,12 @@ class TransparencyDataReport20(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', InstrumentOrSubClassIdentification2Choice, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', InstrumentOrSubClassIdentification2Choice, False)
 
 	@property
 	def Lqdty(self):
@@ -46,12 +46,12 @@ class TransparencyDataReport20(base_types._BaseFieldType):
 
 	@Lqdty.setter
 	def Lqdty(self, value):
-		self._Lqdty = value if type(value) != base_types.auto else self.make_default("Lqdty")
+		self._Lqdty = value if value is not None else base_types.UninitialisedField(self, 'Lqdty', TrueFalseIndicator, False)
 
 	@Lqdty.deleter
 	def Lqdty(self):
 		del self._Lqdty
-		self._Lqdty = None
+		self._Lqdty = base_types.UninitialisedField(self, 'Lqdty', TrueFalseIndicator, False)
 
 	@property
 	def PreTradInstrmSzSpcfcThrshld(self):
@@ -59,12 +59,12 @@ class TransparencyDataReport20(base_types._BaseFieldType):
 
 	@PreTradInstrmSzSpcfcThrshld.setter
 	def PreTradInstrmSzSpcfcThrshld(self, value):
-		self._PreTradInstrmSzSpcfcThrshld = value if type(value) != base_types.auto else self.make_default("PreTradInstrmSzSpcfcThrshld")
+		self._PreTradInstrmSzSpcfcThrshld = value if value is not None else base_types.UninitialisedField(self, 'PreTradInstrmSzSpcfcThrshld', TonsOrCurrency2Choice, False)
 
 	@PreTradInstrmSzSpcfcThrshld.deleter
 	def PreTradInstrmSzSpcfcThrshld(self):
 		del self._PreTradInstrmSzSpcfcThrshld
-		self._PreTradInstrmSzSpcfcThrshld = None
+		self._PreTradInstrmSzSpcfcThrshld = base_types.UninitialisedField(self, 'PreTradInstrmSzSpcfcThrshld', TonsOrCurrency2Choice, False)
 
 	@property
 	def PreTradLrgInScaleThrshld(self):
@@ -72,12 +72,12 @@ class TransparencyDataReport20(base_types._BaseFieldType):
 
 	@PreTradLrgInScaleThrshld.setter
 	def PreTradLrgInScaleThrshld(self, value):
-		self._PreTradLrgInScaleThrshld = value if type(value) != base_types.auto else self.make_default("PreTradLrgInScaleThrshld")
+		self._PreTradLrgInScaleThrshld = value if value is not None else base_types.UninitialisedField(self, 'PreTradLrgInScaleThrshld', TonsOrCurrency2Choice, False)
 
 	@PreTradLrgInScaleThrshld.deleter
 	def PreTradLrgInScaleThrshld(self):
 		del self._PreTradLrgInScaleThrshld
-		self._PreTradLrgInScaleThrshld = None
+		self._PreTradLrgInScaleThrshld = base_types.UninitialisedField(self, 'PreTradLrgInScaleThrshld', TonsOrCurrency2Choice, False)
 
 	@property
 	def PstTradInstrmSzSpcfcThrshld(self):
@@ -85,12 +85,12 @@ class TransparencyDataReport20(base_types._BaseFieldType):
 
 	@PstTradInstrmSzSpcfcThrshld.setter
 	def PstTradInstrmSzSpcfcThrshld(self, value):
-		self._PstTradInstrmSzSpcfcThrshld = value if type(value) != base_types.auto else self.make_default("PstTradInstrmSzSpcfcThrshld")
+		self._PstTradInstrmSzSpcfcThrshld = value if value is not None else base_types.UninitialisedField(self, 'PstTradInstrmSzSpcfcThrshld', TonsOrCurrency2Choice, False)
 
 	@PstTradInstrmSzSpcfcThrshld.deleter
 	def PstTradInstrmSzSpcfcThrshld(self):
 		del self._PstTradInstrmSzSpcfcThrshld
-		self._PstTradInstrmSzSpcfcThrshld = None
+		self._PstTradInstrmSzSpcfcThrshld = base_types.UninitialisedField(self, 'PstTradInstrmSzSpcfcThrshld', TonsOrCurrency2Choice, False)
 
 	@property
 	def PstTradLrgInScaleThrshld(self):
@@ -98,12 +98,12 @@ class TransparencyDataReport20(base_types._BaseFieldType):
 
 	@PstTradLrgInScaleThrshld.setter
 	def PstTradLrgInScaleThrshld(self, value):
-		self._PstTradLrgInScaleThrshld = value if type(value) != base_types.auto else self.make_default("PstTradLrgInScaleThrshld")
+		self._PstTradLrgInScaleThrshld = value if value is not None else base_types.UninitialisedField(self, 'PstTradLrgInScaleThrshld', TonsOrCurrency2Choice, False)
 
 	@PstTradLrgInScaleThrshld.deleter
 	def PstTradLrgInScaleThrshld(self):
 		del self._PstTradLrgInScaleThrshld
-		self._PstTradLrgInScaleThrshld = None
+		self._PstTradLrgInScaleThrshld = base_types.UninitialisedField(self, 'PstTradLrgInScaleThrshld', TonsOrCurrency2Choice, False)
 
 	@property
 	def RptgPrd(self):
@@ -111,12 +111,12 @@ class TransparencyDataReport20(base_types._BaseFieldType):
 
 	@RptgPrd.setter
 	def RptgPrd(self, value):
-		self._RptgPrd = value if type(value) != base_types.auto else self.make_default("RptgPrd")
+		self._RptgPrd = value if value is not None else base_types.UninitialisedField(self, 'RptgPrd', Period4Choice, False)
 
 	@RptgPrd.deleter
 	def RptgPrd(self):
 		del self._RptgPrd
-		self._RptgPrd = None
+		self._RptgPrd = base_types.UninitialisedField(self, 'RptgPrd', Period4Choice, False)
 
 	@property
 	def Sttstcs(self):
@@ -124,12 +124,12 @@ class TransparencyDataReport20(base_types._BaseFieldType):
 
 	@Sttstcs.setter
 	def Sttstcs(self, value):
-		self._Sttstcs = value if type(value) != base_types.auto else self.make_default("Sttstcs")
+		self._Sttstcs = value if value is not None else base_types.UninitialisedField(self, 'Sttstcs', StatisticsTransparency2, False)
 
 	@Sttstcs.deleter
 	def Sttstcs(self):
 		del self._Sttstcs
-		self._Sttstcs = None
+		self._Sttstcs = base_types.UninitialisedField(self, 'Sttstcs', StatisticsTransparency2, False)
 
 	@property
 	def TechRcrdId(self):
@@ -137,12 +137,12 @@ class TransparencyDataReport20(base_types._BaseFieldType):
 
 	@TechRcrdId.setter
 	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
+		self._TechRcrdId = value if value is not None else base_types.UninitialisedField(self, 'TechRcrdId', Max35Text, False)
 
 	@TechRcrdId.deleter
 	def TechRcrdId(self):
 		del self._TechRcrdId
-		self._TechRcrdId = None
+		self._TechRcrdId = base_types.UninitialisedField(self, 'TechRcrdId', Max35Text, False)
 
 	@property
 	def TradgVn(self):
@@ -150,12 +150,12 @@ class TransparencyDataReport20(base_types._BaseFieldType):
 
 	@TradgVn.setter
 	def TradgVn(self, value):
-		self._TradgVn = value if type(value) != base_types.auto else self.make_default("TradgVn")
+		self._TradgVn = value if value is not None else base_types.UninitialisedField(self, 'TradgVn', MICIdentifier, False)
 
 	@TradgVn.deleter
 	def TradgVn(self):
 		del self._TradgVn
-		self._TradgVn = None
+		self._TradgVn = base_types.UninitialisedField(self, 'TradgVn', MICIdentifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FullNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),

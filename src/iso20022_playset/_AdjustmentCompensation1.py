@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
-from ._CashAccount40 import CashAccount40
-from ._DatePeriod5 import DatePeriod5
-from ._Max140Text import Max140Text
-from ._PercentageRate import PercentageRate
+from . import ActiveCurrencyAndAmount
+from . import BranchAndFinancialInstitutionIdentification6
+from . import CashAccount40
+from . import DatePeriod5
+from . import Max140Text
+from . import PercentageRate
 
 class AdjustmentCompensation1(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class AdjustmentCompensation1(base_types._BaseFieldType):
 
 	@AmtDue.setter
 	def AmtDue(self, value):
-		self._AmtDue = value if type(value) != base_types.auto else self.make_default("AmtDue")
+		self._AmtDue = value if value is not None else base_types.UninitialisedField(self, 'AmtDue', ActiveCurrencyAndAmount, False)
 
 	@AmtDue.deleter
 	def AmtDue(self):
 		del self._AmtDue
-		self._AmtDue = None
+		self._AmtDue = base_types.UninitialisedField(self, 'AmtDue', ActiveCurrencyAndAmount, False)
 
 	@property
 	def CompstnAcct(self):
@@ -31,12 +31,12 @@ class AdjustmentCompensation1(base_types._BaseFieldType):
 
 	@CompstnAcct.setter
 	def CompstnAcct(self, value):
-		self._CompstnAcct = value if type(value) != base_types.auto else self.make_default("CompstnAcct")
+		self._CompstnAcct = value if value is not None else base_types.UninitialisedField(self, 'CompstnAcct', CashAccount40, False)
 
 	@CompstnAcct.deleter
 	def CompstnAcct(self):
 		del self._CompstnAcct
-		self._CompstnAcct = None
+		self._CompstnAcct = base_types.UninitialisedField(self, 'CompstnAcct', CashAccount40, False)
 
 	@property
 	def CompstnAgt(self):
@@ -44,12 +44,12 @@ class AdjustmentCompensation1(base_types._BaseFieldType):
 
 	@CompstnAgt.setter
 	def CompstnAgt(self, value):
-		self._CompstnAgt = value if type(value) != base_types.auto else self.make_default("CompstnAgt")
+		self._CompstnAgt = value if value is not None else base_types.UninitialisedField(self, 'CompstnAgt', BranchAndFinancialInstitutionIdentification6, False)
 
 	@CompstnAgt.deleter
 	def CompstnAgt(self):
 		del self._CompstnAgt
-		self._CompstnAgt = None
+		self._CompstnAgt = base_types.UninitialisedField(self, 'CompstnAgt', BranchAndFinancialInstitutionIdentification6, False)
 
 	@property
 	def DueChrgs(self):
@@ -57,12 +57,12 @@ class AdjustmentCompensation1(base_types._BaseFieldType):
 
 	@DueChrgs.setter
 	def DueChrgs(self, value):
-		self._DueChrgs = value if type(value) != base_types.auto else self.make_default("DueChrgs")
+		self._DueChrgs = value if value is not None else base_types.UninitialisedField(self, 'DueChrgs', ActiveCurrencyAndAmount, False)
 
 	@DueChrgs.deleter
 	def DueChrgs(self):
 		del self._DueChrgs
-		self._DueChrgs = None
+		self._DueChrgs = base_types.UninitialisedField(self, 'DueChrgs', ActiveCurrencyAndAmount, False)
 
 	@property
 	def InitlAmt(self):
@@ -70,12 +70,12 @@ class AdjustmentCompensation1(base_types._BaseFieldType):
 
 	@InitlAmt.setter
 	def InitlAmt(self, value):
-		self._InitlAmt = value if type(value) != base_types.auto else self.make_default("InitlAmt")
+		self._InitlAmt = value if value is not None else base_types.UninitialisedField(self, 'InitlAmt', ActiveCurrencyAndAmount, False)
 
 	@InitlAmt.deleter
 	def InitlAmt(self):
 		del self._InitlAmt
-		self._InitlAmt = None
+		self._InitlAmt = base_types.UninitialisedField(self, 'InitlAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def IntrstRate(self):
@@ -83,12 +83,12 @@ class AdjustmentCompensation1(base_types._BaseFieldType):
 
 	@IntrstRate.setter
 	def IntrstRate(self, value):
-		self._IntrstRate = value if type(value) != base_types.auto else self.make_default("IntrstRate")
+		self._IntrstRate = value if value is not None else base_types.UninitialisedField(self, 'IntrstRate', PercentageRate, False)
 
 	@IntrstRate.deleter
 	def IntrstRate(self):
 		del self._IntrstRate
-		self._IntrstRate = None
+		self._IntrstRate = base_types.UninitialisedField(self, 'IntrstRate', PercentageRate, False)
 
 	@property
 	def Prd(self):
@@ -96,12 +96,12 @@ class AdjustmentCompensation1(base_types._BaseFieldType):
 
 	@Prd.setter
 	def Prd(self, value):
-		self._Prd = value if type(value) != base_types.auto else self.make_default("Prd")
+		self._Prd = value if value is not None else base_types.UninitialisedField(self, 'Prd', DatePeriod5, False)
 
 	@Prd.deleter
 	def Prd(self):
 		del self._Prd
-		self._Prd = None
+		self._Prd = base_types.UninitialisedField(self, 'Prd', DatePeriod5, False)
 
 	@property
 	def Rsn(self):
@@ -109,12 +109,12 @@ class AdjustmentCompensation1(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', Max140Text, False)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', Max140Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmtDue', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AlgorithmIdentification11 import AlgorithmIdentification11
-from ._Max5000Binary import Max5000Binary
-from ._Number import Number
-from ._Recipient5Choice import Recipient5Choice
+from . import AlgorithmIdentification11
+from . import Max5000Binary
+from . import Number
+from . import Recipient5Choice
 
 class KeyTransport4(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class KeyTransport4(base_types._BaseFieldType):
 
 	@KeyNcrptnAlgo.setter
 	def KeyNcrptnAlgo(self, value):
-		self._KeyNcrptnAlgo = value if type(value) != base_types.auto else self.make_default("KeyNcrptnAlgo")
+		self._KeyNcrptnAlgo = value if value is not None else base_types.UninitialisedField(self, 'KeyNcrptnAlgo', AlgorithmIdentification11, False)
 
 	@KeyNcrptnAlgo.deleter
 	def KeyNcrptnAlgo(self):
 		del self._KeyNcrptnAlgo
-		self._KeyNcrptnAlgo = None
+		self._KeyNcrptnAlgo = base_types.UninitialisedField(self, 'KeyNcrptnAlgo', AlgorithmIdentification11, False)
 
 	@property
 	def NcrptdKey(self):
@@ -29,12 +29,12 @@ class KeyTransport4(base_types._BaseFieldType):
 
 	@NcrptdKey.setter
 	def NcrptdKey(self, value):
-		self._NcrptdKey = value if type(value) != base_types.auto else self.make_default("NcrptdKey")
+		self._NcrptdKey = value if value is not None else base_types.UninitialisedField(self, 'NcrptdKey', Max5000Binary, False)
 
 	@NcrptdKey.deleter
 	def NcrptdKey(self):
 		del self._NcrptdKey
-		self._NcrptdKey = None
+		self._NcrptdKey = base_types.UninitialisedField(self, 'NcrptdKey', Max5000Binary, False)
 
 	@property
 	def RcptId(self):
@@ -42,12 +42,12 @@ class KeyTransport4(base_types._BaseFieldType):
 
 	@RcptId.setter
 	def RcptId(self, value):
-		self._RcptId = value if type(value) != base_types.auto else self.make_default("RcptId")
+		self._RcptId = value if value is not None else base_types.UninitialisedField(self, 'RcptId', Recipient5Choice, False)
 
 	@RcptId.deleter
 	def RcptId(self):
 		del self._RcptId
-		self._RcptId = None
+		self._RcptId = base_types.UninitialisedField(self, 'RcptId', Recipient5Choice, False)
 
 	@property
 	def Vrsn(self):
@@ -55,12 +55,12 @@ class KeyTransport4(base_types._BaseFieldType):
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+		self._Vrsn = value if value is not None else base_types.UninitialisedField(self, 'Vrsn', Number, False)
 
 	@Vrsn.deleter
 	def Vrsn(self):
 		del self._Vrsn
-		self._Vrsn = None
+		self._Vrsn = base_types.UninitialisedField(self, 'Vrsn', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='KeyNcrptnAlgo', type=AlgorithmIdentification11, min=1, max=1, mutex_group=None, array=False),

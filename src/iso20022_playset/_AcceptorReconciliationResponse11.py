@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
-from ._ResponseType10 import ResponseType10
-from ._TransactionReconciliation5 import TransactionReconciliation5
+from . import CardPaymentEnvironment81
+from . import ResponseType10
+from . import TransactionReconciliation5
 
 class AcceptorReconciliationResponse11(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AcceptorReconciliationResponse11(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+		self._Envt = value if value is not None else base_types.UninitialisedField(self, 'Envt', CardPaymentEnvironment81, False)
 
 	@Envt.deleter
 	def Envt(self):
 		del self._Envt
-		self._Envt = None
+		self._Envt = base_types.UninitialisedField(self, 'Envt', CardPaymentEnvironment81, False)
 
 	@property
 	def Tx(self):
@@ -28,12 +28,12 @@ class AcceptorReconciliationResponse11(base_types._BaseFieldType):
 
 	@Tx.setter
 	def Tx(self, value):
-		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
+		self._Tx = value if value is not None else base_types.UninitialisedField(self, 'Tx', TransactionReconciliation5, False)
 
 	@Tx.deleter
 	def Tx(self):
 		del self._Tx
-		self._Tx = None
+		self._Tx = base_types.UninitialisedField(self, 'Tx', TransactionReconciliation5, False)
 
 	@property
 	def TxRspn(self):
@@ -41,12 +41,12 @@ class AcceptorReconciliationResponse11(base_types._BaseFieldType):
 
 	@TxRspn.setter
 	def TxRspn(self, value):
-		self._TxRspn = value if type(value) != base_types.auto else self.make_default("TxRspn")
+		self._TxRspn = value if value is not None else base_types.UninitialisedField(self, 'TxRspn', ResponseType10, False)
 
 	@TxRspn.deleter
 	def TxRspn(self):
 		del self._TxRspn
-		self._TxRspn = None
+		self._TxRspn = base_types.UninitialisedField(self, 'TxRspn', ResponseType10, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment81, min=1, max=1, mutex_group=None, array=False),

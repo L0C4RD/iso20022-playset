@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InvoiceTaxReportTransactionStatus1 import InvoiceTaxReportTransactionStatus1
-from ._InvoiceTaxStatusReportHeader1 import InvoiceTaxStatusReportHeader1
-from ._SupplementaryData1 import SupplementaryData1
+from . import InvoiceTaxReportTransactionStatus1
+from . import InvoiceTaxStatusReportHeader1
+from . import SupplementaryData1
 
 class InvoiceTaxReportStatusAdviceV01(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class InvoiceTaxReportStatusAdviceV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def StsRptHdr(self):
@@ -28,12 +28,12 @@ class InvoiceTaxReportStatusAdviceV01(base_types._BaseFieldType):
 
 	@StsRptHdr.setter
 	def StsRptHdr(self, value):
-		self._StsRptHdr = value if type(value) != base_types.auto else self.make_default("StsRptHdr")
+		self._StsRptHdr = value if value is not None else base_types.UninitialisedField(self, 'StsRptHdr', InvoiceTaxStatusReportHeader1, False)
 
 	@StsRptHdr.deleter
 	def StsRptHdr(self):
 		del self._StsRptHdr
-		self._StsRptHdr = None
+		self._StsRptHdr = base_types.UninitialisedField(self, 'StsRptHdr', InvoiceTaxStatusReportHeader1, False)
 
 	@property
 	def TxSts(self):
@@ -41,12 +41,12 @@ class InvoiceTaxReportStatusAdviceV01(base_types._BaseFieldType):
 
 	@TxSts.setter
 	def TxSts(self, value):
-		self._TxSts = value if type(value) != base_types.auto else self.make_default("TxSts")
+		self._TxSts = value if value is not None else base_types.UninitialisedField(self, 'TxSts', InvoiceTaxReportTransactionStatus1, True)
 
 	@TxSts.deleter
 	def TxSts(self):
 		del self._TxSts
-		self._TxSts = None
+		self._TxSts = base_types.UninitialisedField(self, 'TxSts', InvoiceTaxReportTransactionStatus1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),

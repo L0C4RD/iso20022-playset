@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._BilateralLimit4 import BilateralLimit4
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CashAccountType2Choice import CashAccountType2Choice
-from ._CashBalance13 import CashBalance13
-from ._Limit5 import Limit5
-from ._Max70Text import Max70Text
-from ._PartyIdentification272 import PartyIdentification272
-from ._ProxyAccountIdentification1 import ProxyAccountIdentification1
-from ._StandingOrder11 import StandingOrder11
+from . import ActiveOrHistoricCurrencyCode
+from . import BilateralLimit4
+from . import BranchAndFinancialInstitutionIdentification8
+from . import CashAccountType2Choice
+from . import CashBalance13
+from . import Limit5
+from . import Max70Text
+from . import PartyIdentification272
+from . import ProxyAccountIdentification1
+from . import StandingOrder11
 
 class CashAccountData1(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class CashAccountData1(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveOrHistoricCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def CurBilLmt(self):
@@ -35,12 +35,12 @@ class CashAccountData1(base_types._BaseFieldType):
 
 	@CurBilLmt.setter
 	def CurBilLmt(self, value):
-		self._CurBilLmt = value if type(value) != base_types.auto else self.make_default("CurBilLmt")
+		self._CurBilLmt = value if value is not None else base_types.UninitialisedField(self, 'CurBilLmt', BilateralLimit4, True)
 
 	@CurBilLmt.deleter
 	def CurBilLmt(self):
 		del self._CurBilLmt
-		self._CurBilLmt = None
+		self._CurBilLmt = base_types.UninitialisedField(self, 'CurBilLmt', BilateralLimit4, True)
 
 	@property
 	def CurMulLmt(self):
@@ -48,12 +48,12 @@ class CashAccountData1(base_types._BaseFieldType):
 
 	@CurMulLmt.setter
 	def CurMulLmt(self, value):
-		self._CurMulLmt = value if type(value) != base_types.auto else self.make_default("CurMulLmt")
+		self._CurMulLmt = value if value is not None else base_types.UninitialisedField(self, 'CurMulLmt', Limit5, False)
 
 	@CurMulLmt.deleter
 	def CurMulLmt(self):
 		del self._CurMulLmt
-		self._CurMulLmt = None
+		self._CurMulLmt = base_types.UninitialisedField(self, 'CurMulLmt', Limit5, False)
 
 	@property
 	def MulBal(self):
@@ -61,12 +61,12 @@ class CashAccountData1(base_types._BaseFieldType):
 
 	@MulBal.setter
 	def MulBal(self, value):
-		self._MulBal = value if type(value) != base_types.auto else self.make_default("MulBal")
+		self._MulBal = value if value is not None else base_types.UninitialisedField(self, 'MulBal', CashBalance13, True)
 
 	@MulBal.deleter
 	def MulBal(self):
 		del self._MulBal
-		self._MulBal = None
+		self._MulBal = base_types.UninitialisedField(self, 'MulBal', CashBalance13, True)
 
 	@property
 	def Nm(self):
@@ -74,12 +74,12 @@ class CashAccountData1(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max70Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max70Text, False)
 
 	@property
 	def Ownr(self):
@@ -87,12 +87,12 @@ class CashAccountData1(base_types._BaseFieldType):
 
 	@Ownr.setter
 	def Ownr(self, value):
-		self._Ownr = value if type(value) != base_types.auto else self.make_default("Ownr")
+		self._Ownr = value if value is not None else base_types.UninitialisedField(self, 'Ownr', PartyIdentification272, False)
 
 	@Ownr.deleter
 	def Ownr(self):
 		del self._Ownr
-		self._Ownr = None
+		self._Ownr = base_types.UninitialisedField(self, 'Ownr', PartyIdentification272, False)
 
 	@property
 	def Prxy(self):
@@ -100,12 +100,12 @@ class CashAccountData1(base_types._BaseFieldType):
 
 	@Prxy.setter
 	def Prxy(self, value):
-		self._Prxy = value if type(value) != base_types.auto else self.make_default("Prxy")
+		self._Prxy = value if value is not None else base_types.UninitialisedField(self, 'Prxy', ProxyAccountIdentification1, False)
 
 	@Prxy.deleter
 	def Prxy(self):
 		del self._Prxy
-		self._Prxy = None
+		self._Prxy = base_types.UninitialisedField(self, 'Prxy', ProxyAccountIdentification1, False)
 
 	@property
 	def StgOrdr(self):
@@ -113,12 +113,12 @@ class CashAccountData1(base_types._BaseFieldType):
 
 	@StgOrdr.setter
 	def StgOrdr(self, value):
-		self._StgOrdr = value if type(value) != base_types.auto else self.make_default("StgOrdr")
+		self._StgOrdr = value if value is not None else base_types.UninitialisedField(self, 'StgOrdr', StandingOrder11, True)
 
 	@StgOrdr.deleter
 	def StgOrdr(self):
 		del self._StgOrdr
-		self._StgOrdr = None
+		self._StgOrdr = base_types.UninitialisedField(self, 'StgOrdr', StandingOrder11, True)
 
 	@property
 	def Svcr(self):
@@ -126,12 +126,12 @@ class CashAccountData1(base_types._BaseFieldType):
 
 	@Svcr.setter
 	def Svcr(self, value):
-		self._Svcr = value if type(value) != base_types.auto else self.make_default("Svcr")
+		self._Svcr = value if value is not None else base_types.UninitialisedField(self, 'Svcr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@Svcr.deleter
 	def Svcr(self):
 		del self._Svcr
-		self._Svcr = None
+		self._Svcr = base_types.UninitialisedField(self, 'Svcr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def Tp(self):
@@ -139,12 +139,12 @@ class CashAccountData1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', CashAccountType2Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', CashAccountType2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),

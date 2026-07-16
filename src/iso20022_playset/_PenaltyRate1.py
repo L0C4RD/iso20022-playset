@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MarketIdentification1Choice import MarketIdentification1Choice
-from ._PercentageRate import PercentageRate
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import MarketIdentification1Choice
+from . import PercentageRate
+from . import TrueFalseIndicator
 
 class PenaltyRate1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PenaltyRate1(base_types._BaseFieldType):
 
 	@MktId.setter
 	def MktId(self, value):
-		self._MktId = value if type(value) != base_types.auto else self.make_default("MktId")
+		self._MktId = value if value is not None else base_types.UninitialisedField(self, 'MktId', MarketIdentification1Choice, False)
 
 	@MktId.deleter
 	def MktId(self):
 		del self._MktId
-		self._MktId = None
+		self._MktId = base_types.UninitialisedField(self, 'MktId', MarketIdentification1Choice, False)
 
 	@property
 	def Rate(self):
@@ -28,12 +28,12 @@ class PenaltyRate1(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+		self._Rate = value if value is not None else base_types.UninitialisedField(self, 'Rate', PercentageRate, False)
 
 	@Rate.deleter
 	def Rate(self):
 		del self._Rate
-		self._Rate = None
+		self._Rate = base_types.UninitialisedField(self, 'Rate', PercentageRate, False)
 
 	@property
 	def SMEGrwthMkt(self):
@@ -41,12 +41,12 @@ class PenaltyRate1(base_types._BaseFieldType):
 
 	@SMEGrwthMkt.setter
 	def SMEGrwthMkt(self, value):
-		self._SMEGrwthMkt = value if type(value) != base_types.auto else self.make_default("SMEGrwthMkt")
+		self._SMEGrwthMkt = value if value is not None else base_types.UninitialisedField(self, 'SMEGrwthMkt', TrueFalseIndicator, False)
 
 	@SMEGrwthMkt.deleter
 	def SMEGrwthMkt(self):
 		del self._SMEGrwthMkt
-		self._SMEGrwthMkt = None
+		self._SMEGrwthMkt = base_types.UninitialisedField(self, 'SMEGrwthMkt', TrueFalseIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MktId', type=MarketIdentification1Choice, min=0, max=1, mutex_group=None, array=False),

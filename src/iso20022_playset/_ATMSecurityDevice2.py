@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMEquipment2 import ATMEquipment2
-from ._ATMSecurityConfiguration1 import ATMSecurityConfiguration1
-from ._ATMStatus2Code import ATMStatus2Code
-from ._FailureReason5Code import FailureReason5Code
-from ._TR34Status1Code import TR34Status1Code
+from . import ATMEquipment2
+from . import ATMSecurityConfiguration1
+from . import ATMStatus2Code
+from . import FailureReason5Code
+from . import TR34Status1Code
 
 class ATMSecurityDevice2(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class ATMSecurityDevice2(base_types._BaseFieldType):
 
 	@BndgStat.setter
 	def BndgStat(self, value):
-		self._BndgStat = value if type(value) != base_types.auto else self.make_default("BndgStat")
+		self._BndgStat = value if value is not None else base_types.UninitialisedField(self, 'BndgStat', TR34Status1Code, False)
 
 	@BndgStat.deleter
 	def BndgStat(self):
 		del self._BndgStat
-		self._BndgStat = None
+		self._BndgStat = base_types.UninitialisedField(self, 'BndgStat', TR34Status1Code, False)
 
 	@property
 	def CurCfgtn(self):
@@ -30,12 +30,12 @@ class ATMSecurityDevice2(base_types._BaseFieldType):
 
 	@CurCfgtn.setter
 	def CurCfgtn(self, value):
-		self._CurCfgtn = value if type(value) != base_types.auto else self.make_default("CurCfgtn")
+		self._CurCfgtn = value if value is not None else base_types.UninitialisedField(self, 'CurCfgtn', ATMSecurityConfiguration1, False)
 
 	@CurCfgtn.deleter
 	def CurCfgtn(self):
 		del self._CurCfgtn
-		self._CurCfgtn = None
+		self._CurCfgtn = base_types.UninitialisedField(self, 'CurCfgtn', ATMSecurityConfiguration1, False)
 
 	@property
 	def CurSts(self):
@@ -43,12 +43,12 @@ class ATMSecurityDevice2(base_types._BaseFieldType):
 
 	@CurSts.setter
 	def CurSts(self, value):
-		self._CurSts = value if type(value) != base_types.auto else self.make_default("CurSts")
+		self._CurSts = value if value is not None else base_types.UninitialisedField(self, 'CurSts', ATMStatus2Code, False)
 
 	@CurSts.deleter
 	def CurSts(self):
 		del self._CurSts
-		self._CurSts = None
+		self._CurSts = base_types.UninitialisedField(self, 'CurSts', ATMStatus2Code, False)
 
 	@property
 	def DvcPrprty(self):
@@ -56,12 +56,12 @@ class ATMSecurityDevice2(base_types._BaseFieldType):
 
 	@DvcPrprty.setter
 	def DvcPrprty(self, value):
-		self._DvcPrprty = value if type(value) != base_types.auto else self.make_default("DvcPrprty")
+		self._DvcPrprty = value if value is not None else base_types.UninitialisedField(self, 'DvcPrprty', ATMEquipment2, False)
 
 	@DvcPrprty.deleter
 	def DvcPrprty(self):
 		del self._DvcPrprty
-		self._DvcPrprty = None
+		self._DvcPrprty = base_types.UninitialisedField(self, 'DvcPrprty', ATMEquipment2, False)
 
 	@property
 	def Incdnt(self):
@@ -69,12 +69,12 @@ class ATMSecurityDevice2(base_types._BaseFieldType):
 
 	@Incdnt.setter
 	def Incdnt(self, value):
-		self._Incdnt = value if type(value) != base_types.auto else self.make_default("Incdnt")
+		self._Incdnt = value if value is not None else base_types.UninitialisedField(self, 'Incdnt', FailureReason5Code, False)
 
 	@Incdnt.deleter
 	def Incdnt(self):
 		del self._Incdnt
-		self._Incdnt = None
+		self._Incdnt = base_types.UninitialisedField(self, 'Incdnt', FailureReason5Code, False)
 
 	@property
 	def SpprtdCfgtn(self):
@@ -82,12 +82,12 @@ class ATMSecurityDevice2(base_types._BaseFieldType):
 
 	@SpprtdCfgtn.setter
 	def SpprtdCfgtn(self, value):
-		self._SpprtdCfgtn = value if type(value) != base_types.auto else self.make_default("SpprtdCfgtn")
+		self._SpprtdCfgtn = value if value is not None else base_types.UninitialisedField(self, 'SpprtdCfgtn', ATMSecurityConfiguration1, False)
 
 	@SpprtdCfgtn.deleter
 	def SpprtdCfgtn(self):
 		del self._SpprtdCfgtn
-		self._SpprtdCfgtn = None
+		self._SpprtdCfgtn = base_types.UninitialisedField(self, 'SpprtdCfgtn', ATMSecurityConfiguration1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BndgStat', type=TR34Status1Code, min=0, max=1, mutex_group=None, array=False),

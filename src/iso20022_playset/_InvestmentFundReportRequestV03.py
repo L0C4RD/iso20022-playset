@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalReference10 import AdditionalReference10
-from ._FundParameters4Choice import FundParameters4Choice
-from ._MessageIdentification1 import MessageIdentification1
+from . import AdditionalReference10
+from . import FundParameters4Choice
+from . import MessageIdentification1
 
 class InvestmentFundReportRequestV03(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class InvestmentFundReportRequestV03(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@property
 	def PrvsRef(self):
@@ -28,12 +28,12 @@ class InvestmentFundReportRequestV03(base_types._BaseFieldType):
 
 	@PrvsRef.setter
 	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
+		self._PrvsRef = value if value is not None else base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference10, False)
 
 	@PrvsRef.deleter
 	def PrvsRef(self):
 		del self._PrvsRef
-		self._PrvsRef = None
+		self._PrvsRef = base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference10, False)
 
 	@property
 	def RltdRef(self):
@@ -41,12 +41,12 @@ class InvestmentFundReportRequestV03(base_types._BaseFieldType):
 
 	@RltdRef.setter
 	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
+		self._RltdRef = value if value is not None else base_types.UninitialisedField(self, 'RltdRef', AdditionalReference10, False)
 
 	@RltdRef.deleter
 	def RltdRef(self):
 		del self._RltdRef
-		self._RltdRef = None
+		self._RltdRef = base_types.UninitialisedField(self, 'RltdRef', AdditionalReference10, False)
 
 	@property
 	def RptReq(self):
@@ -54,12 +54,12 @@ class InvestmentFundReportRequestV03(base_types._BaseFieldType):
 
 	@RptReq.setter
 	def RptReq(self, value):
-		self._RptReq = value if type(value) != base_types.auto else self.make_default("RptReq")
+		self._RptReq = value if value is not None else base_types.UninitialisedField(self, 'RptReq', FundParameters4Choice, True)
 
 	@RptReq.deleter
 	def RptReq(self):
 		del self._RptReq
-		self._RptReq = None
+		self._RptReq = base_types.UninitialisedField(self, 'RptReq', FundParameters4Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),

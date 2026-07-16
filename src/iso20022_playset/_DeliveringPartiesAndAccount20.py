@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PartyIdentificationAndAccount222 import PartyIdentificationAndAccount222
+from . import PartyIdentificationAndAccount222
 
 class DeliveringPartiesAndAccount20(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class DeliveringPartiesAndAccount20(base_types._BaseFieldType):
 
 	@DlvrgAgtDtls.setter
 	def DlvrgAgtDtls(self, value):
-		self._DlvrgAgtDtls = value if type(value) != base_types.auto else self.make_default("DlvrgAgtDtls")
+		self._DlvrgAgtDtls = value if value is not None else base_types.UninitialisedField(self, 'DlvrgAgtDtls', PartyIdentificationAndAccount222, False)
 
 	@DlvrgAgtDtls.deleter
 	def DlvrgAgtDtls(self):
 		del self._DlvrgAgtDtls
-		self._DlvrgAgtDtls = None
+		self._DlvrgAgtDtls = base_types.UninitialisedField(self, 'DlvrgAgtDtls', PartyIdentificationAndAccount222, False)
 
 	@property
 	def DlvrrsCtdnDtls(self):
@@ -26,12 +26,12 @@ class DeliveringPartiesAndAccount20(base_types._BaseFieldType):
 
 	@DlvrrsCtdnDtls.setter
 	def DlvrrsCtdnDtls(self, value):
-		self._DlvrrsCtdnDtls = value if type(value) != base_types.auto else self.make_default("DlvrrsCtdnDtls")
+		self._DlvrrsCtdnDtls = value if value is not None else base_types.UninitialisedField(self, 'DlvrrsCtdnDtls', PartyIdentificationAndAccount222, False)
 
 	@DlvrrsCtdnDtls.deleter
 	def DlvrrsCtdnDtls(self):
 		del self._DlvrrsCtdnDtls
-		self._DlvrrsCtdnDtls = None
+		self._DlvrrsCtdnDtls = base_types.UninitialisedField(self, 'DlvrrsCtdnDtls', PartyIdentificationAndAccount222, False)
 
 	@property
 	def DlvrrsIntrmy1Dtls(self):
@@ -39,12 +39,12 @@ class DeliveringPartiesAndAccount20(base_types._BaseFieldType):
 
 	@DlvrrsIntrmy1Dtls.setter
 	def DlvrrsIntrmy1Dtls(self, value):
-		self._DlvrrsIntrmy1Dtls = value if type(value) != base_types.auto else self.make_default("DlvrrsIntrmy1Dtls")
+		self._DlvrrsIntrmy1Dtls = value if value is not None else base_types.UninitialisedField(self, 'DlvrrsIntrmy1Dtls', PartyIdentificationAndAccount222, False)
 
 	@DlvrrsIntrmy1Dtls.deleter
 	def DlvrrsIntrmy1Dtls(self):
 		del self._DlvrrsIntrmy1Dtls
-		self._DlvrrsIntrmy1Dtls = None
+		self._DlvrrsIntrmy1Dtls = base_types.UninitialisedField(self, 'DlvrrsIntrmy1Dtls', PartyIdentificationAndAccount222, False)
 
 	@property
 	def DlvrrsIntrmy2Dtls(self):
@@ -52,12 +52,12 @@ class DeliveringPartiesAndAccount20(base_types._BaseFieldType):
 
 	@DlvrrsIntrmy2Dtls.setter
 	def DlvrrsIntrmy2Dtls(self, value):
-		self._DlvrrsIntrmy2Dtls = value if type(value) != base_types.auto else self.make_default("DlvrrsIntrmy2Dtls")
+		self._DlvrrsIntrmy2Dtls = value if value is not None else base_types.UninitialisedField(self, 'DlvrrsIntrmy2Dtls', PartyIdentificationAndAccount222, False)
 
 	@DlvrrsIntrmy2Dtls.deleter
 	def DlvrrsIntrmy2Dtls(self):
 		del self._DlvrrsIntrmy2Dtls
-		self._DlvrrsIntrmy2Dtls = None
+		self._DlvrrsIntrmy2Dtls = base_types.UninitialisedField(self, 'DlvrrsIntrmy2Dtls', PartyIdentificationAndAccount222, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DlvrgAgtDtls', type=PartyIdentificationAndAccount222, min=1, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FIToFIPaymentCancellationRequestV12 import FIToFIPaymentCancellationRequestV12
+from . import FIToFIPaymentCancellationRequestV12
 
 class CAMT_056_001_12():
 
@@ -18,12 +18,12 @@ class CAMT_056_001_12():
 
 		@FIToFIPmtCxlReq.setter
 		def FIToFIPmtCxlReq(self, value):
-			self._FIToFIPmtCxlReq = value if type(value) != base_types.auto else self.make_default("FIToFIPmtCxlReq")
+			self._FIToFIPmtCxlReq = value if value is not None else base_types.UninitialisedField(self, 'FIToFIPmtCxlReq', FIToFIPaymentCancellationRequestV12, False)
 
 		@FIToFIPmtCxlReq.deleter
 		def FIToFIPmtCxlReq(self):
 			del self._FIToFIPmtCxlReq
-			self._FIToFIPmtCxlReq = None
+			self._FIToFIPmtCxlReq = base_types.UninitialisedField(self, 'FIToFIPmtCxlReq', FIToFIPaymentCancellationRequestV12, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='FIToFIPmtCxlReq', type=FIToFIPaymentCancellationRequestV12, min=1, max=1, mutex_group=None, array=False),

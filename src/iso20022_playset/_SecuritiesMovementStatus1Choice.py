@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ProprietaryReason4 import ProprietaryReason4
+from . import ProprietaryReason4
 
 class SecuritiesMovementStatus1Choice(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class SecuritiesMovementStatus1Choice(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ProprietaryReason4, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ProprietaryReason4, False)
 
 	@property
 	def Ccy(self):
@@ -26,12 +26,12 @@ class SecuritiesMovementStatus1Choice(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ProprietaryReason4, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ProprietaryReason4, False)
 
 	@property
 	def Csh(self):
@@ -39,12 +39,12 @@ class SecuritiesMovementStatus1Choice(base_types._BaseFieldType):
 
 	@Csh.setter
 	def Csh(self, value):
-		self._Csh = value if type(value) != base_types.auto else self.make_default("Csh")
+		self._Csh = value if value is not None else base_types.UninitialisedField(self, 'Csh', ProprietaryReason4, False)
 
 	@Csh.deleter
 	def Csh(self):
 		del self._Csh
-		self._Csh = None
+		self._Csh = base_types.UninitialisedField(self, 'Csh', ProprietaryReason4, False)
 
 	@property
 	def Elgblty(self):
@@ -52,12 +52,12 @@ class SecuritiesMovementStatus1Choice(base_types._BaseFieldType):
 
 	@Elgblty.setter
 	def Elgblty(self, value):
-		self._Elgblty = value if type(value) != base_types.auto else self.make_default("Elgblty")
+		self._Elgblty = value if value is not None else base_types.UninitialisedField(self, 'Elgblty', ProprietaryReason4, False)
 
 	@Elgblty.deleter
 	def Elgblty(self):
 		del self._Elgblty
-		self._Elgblty = None
+		self._Elgblty = base_types.UninitialisedField(self, 'Elgblty', ProprietaryReason4, False)
 
 	@property
 	def Excld(self):
@@ -65,12 +65,12 @@ class SecuritiesMovementStatus1Choice(base_types._BaseFieldType):
 
 	@Excld.setter
 	def Excld(self, value):
-		self._Excld = value if type(value) != base_types.auto else self.make_default("Excld")
+		self._Excld = value if value is not None else base_types.UninitialisedField(self, 'Excld', ProprietaryReason4, False)
 
 	@Excld.deleter
 	def Excld(self):
 		del self._Excld
-		self._Excld = None
+		self._Excld = base_types.UninitialisedField(self, 'Excld', ProprietaryReason4, False)
 
 	@property
 	def Futr(self):
@@ -78,12 +78,12 @@ class SecuritiesMovementStatus1Choice(base_types._BaseFieldType):
 
 	@Futr.setter
 	def Futr(self, value):
-		self._Futr = value if type(value) != base_types.auto else self.make_default("Futr")
+		self._Futr = value if value is not None else base_types.UninitialisedField(self, 'Futr', ProprietaryReason4, False)
 
 	@Futr.deleter
 	def Futr(self):
 		del self._Futr
-		self._Futr = None
+		self._Futr = base_types.UninitialisedField(self, 'Futr', ProprietaryReason4, False)
 
 	@property
 	def MnlyAccptd(self):
@@ -91,12 +91,12 @@ class SecuritiesMovementStatus1Choice(base_types._BaseFieldType):
 
 	@MnlyAccptd.setter
 	def MnlyAccptd(self, value):
-		self._MnlyAccptd = value if type(value) != base_types.auto else self.make_default("MnlyAccptd")
+		self._MnlyAccptd = value if value is not None else base_types.UninitialisedField(self, 'MnlyAccptd', ProprietaryReason4, False)
 
 	@MnlyAccptd.deleter
 	def MnlyAccptd(self):
 		del self._MnlyAccptd
-		self._MnlyAccptd = None
+		self._MnlyAccptd = base_types.UninitialisedField(self, 'MnlyAccptd', ProprietaryReason4, False)
 
 	@property
 	def Pdg(self):
@@ -104,12 +104,12 @@ class SecuritiesMovementStatus1Choice(base_types._BaseFieldType):
 
 	@Pdg.setter
 	def Pdg(self, value):
-		self._Pdg = value if type(value) != base_types.auto else self.make_default("Pdg")
+		self._Pdg = value if value is not None else base_types.UninitialisedField(self, 'Pdg', ProprietaryReason4, False)
 
 	@Pdg.deleter
 	def Pdg(self):
 		del self._Pdg
-		self._Pdg = None
+		self._Pdg = base_types.UninitialisedField(self, 'Pdg', ProprietaryReason4, False)
 
 	@property
 	def Tax(self):
@@ -117,12 +117,12 @@ class SecuritiesMovementStatus1Choice(base_types._BaseFieldType):
 
 	@Tax.setter
 	def Tax(self, value):
-		self._Tax = value if type(value) != base_types.auto else self.make_default("Tax")
+		self._Tax = value if value is not None else base_types.UninitialisedField(self, 'Tax', ProprietaryReason4, False)
 
 	@Tax.deleter
 	def Tax(self):
 		del self._Tax
-		self._Tax = None
+		self._Tax = base_types.UninitialisedField(self, 'Tax', ProprietaryReason4, False)
 
 	@property
 	def Wait(self):
@@ -130,12 +130,12 @@ class SecuritiesMovementStatus1Choice(base_types._BaseFieldType):
 
 	@Wait.setter
 	def Wait(self, value):
-		self._Wait = value if type(value) != base_types.auto else self.make_default("Wait")
+		self._Wait = value if value is not None else base_types.UninitialisedField(self, 'Wait', ProprietaryReason4, False)
 
 	@Wait.deleter
 	def Wait(self):
 		del self._Wait
-		self._Wait = None
+		self._Wait = base_types.UninitialisedField(self, 'Wait', ProprietaryReason4, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),

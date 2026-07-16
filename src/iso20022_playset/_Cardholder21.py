@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardholderAuthentication17 import CardholderAuthentication17
-from ._LanguageCode import LanguageCode
-from ._Max35Text import Max35Text
-from ._Max45Text import Max45Text
-from ._Max70Text import Max70Text
-from ._MobileData6 import MobileData6
-from ._PersonIdentification15 import PersonIdentification15
-from ._PostalAddress22 import PostalAddress22
-from ._TransactionVerificationResult4 import TransactionVerificationResult4
-from ._Vehicle1 import Vehicle1
+from . import CardholderAuthentication17
+from . import LanguageCode
+from . import Max35Text
+from . import Max45Text
+from . import Max70Text
+from . import MobileData6
+from . import PersonIdentification15
+from . import PostalAddress22
+from . import TransactionVerificationResult4
+from . import Vehicle1
 
 class Cardholder21(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class Cardholder21(base_types._BaseFieldType):
 
 	@Authntcn.setter
 	def Authntcn(self, value):
-		self._Authntcn = value if type(value) != base_types.auto else self.make_default("Authntcn")
+		self._Authntcn = value if value is not None else base_types.UninitialisedField(self, 'Authntcn', CardholderAuthentication17, True)
 
 	@Authntcn.deleter
 	def Authntcn(self):
 		del self._Authntcn
-		self._Authntcn = None
+		self._Authntcn = base_types.UninitialisedField(self, 'Authntcn', CardholderAuthentication17, True)
 
 	@property
 	def BllgAdr(self):
@@ -35,12 +35,12 @@ class Cardholder21(base_types._BaseFieldType):
 
 	@BllgAdr.setter
 	def BllgAdr(self, value):
-		self._BllgAdr = value if type(value) != base_types.auto else self.make_default("BllgAdr")
+		self._BllgAdr = value if value is not None else base_types.UninitialisedField(self, 'BllgAdr', PostalAddress22, False)
 
 	@BllgAdr.deleter
 	def BllgAdr(self):
 		del self._BllgAdr
-		self._BllgAdr = None
+		self._BllgAdr = base_types.UninitialisedField(self, 'BllgAdr', PostalAddress22, False)
 
 	@property
 	def Id(self):
@@ -48,12 +48,12 @@ class Cardholder21(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', PersonIdentification15, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', PersonIdentification15, False)
 
 	@property
 	def Lang(self):
@@ -61,12 +61,12 @@ class Cardholder21(base_types._BaseFieldType):
 
 	@Lang.setter
 	def Lang(self, value):
-		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
+		self._Lang = value if value is not None else base_types.UninitialisedField(self, 'Lang', LanguageCode, False)
 
 	@Lang.deleter
 	def Lang(self):
 		del self._Lang
-		self._Lang = None
+		self._Lang = base_types.UninitialisedField(self, 'Lang', LanguageCode, False)
 
 	@property
 	def MobData(self):
@@ -74,12 +74,12 @@ class Cardholder21(base_types._BaseFieldType):
 
 	@MobData.setter
 	def MobData(self, value):
-		self._MobData = value if type(value) != base_types.auto else self.make_default("MobData")
+		self._MobData = value if value is not None else base_types.UninitialisedField(self, 'MobData', MobileData6, True)
 
 	@MobData.deleter
 	def MobData(self):
 		del self._MobData
-		self._MobData = None
+		self._MobData = base_types.UninitialisedField(self, 'MobData', MobileData6, True)
 
 	@property
 	def Nm(self):
@@ -87,12 +87,12 @@ class Cardholder21(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max45Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max45Text, False)
 
 	@property
 	def PrsnlData(self):
@@ -100,12 +100,12 @@ class Cardholder21(base_types._BaseFieldType):
 
 	@PrsnlData.setter
 	def PrsnlData(self, value):
-		self._PrsnlData = value if type(value) != base_types.auto else self.make_default("PrsnlData")
+		self._PrsnlData = value if value is not None else base_types.UninitialisedField(self, 'PrsnlData', Max70Text, False)
 
 	@PrsnlData.deleter
 	def PrsnlData(self):
 		del self._PrsnlData
-		self._PrsnlData = None
+		self._PrsnlData = base_types.UninitialisedField(self, 'PrsnlData', Max70Text, False)
 
 	@property
 	def ShppgAdr(self):
@@ -113,12 +113,12 @@ class Cardholder21(base_types._BaseFieldType):
 
 	@ShppgAdr.setter
 	def ShppgAdr(self, value):
-		self._ShppgAdr = value if type(value) != base_types.auto else self.make_default("ShppgAdr")
+		self._ShppgAdr = value if value is not None else base_types.UninitialisedField(self, 'ShppgAdr', PostalAddress22, False)
 
 	@ShppgAdr.deleter
 	def ShppgAdr(self):
 		del self._ShppgAdr
-		self._ShppgAdr = None
+		self._ShppgAdr = base_types.UninitialisedField(self, 'ShppgAdr', PostalAddress22, False)
 
 	@property
 	def TripNb(self):
@@ -126,12 +126,12 @@ class Cardholder21(base_types._BaseFieldType):
 
 	@TripNb.setter
 	def TripNb(self, value):
-		self._TripNb = value if type(value) != base_types.auto else self.make_default("TripNb")
+		self._TripNb = value if value is not None else base_types.UninitialisedField(self, 'TripNb', Max35Text, False)
 
 	@TripNb.deleter
 	def TripNb(self):
 		del self._TripNb
-		self._TripNb = None
+		self._TripNb = base_types.UninitialisedField(self, 'TripNb', Max35Text, False)
 
 	@property
 	def TxVrfctnRslt(self):
@@ -139,12 +139,12 @@ class Cardholder21(base_types._BaseFieldType):
 
 	@TxVrfctnRslt.setter
 	def TxVrfctnRslt(self, value):
-		self._TxVrfctnRslt = value if type(value) != base_types.auto else self.make_default("TxVrfctnRslt")
+		self._TxVrfctnRslt = value if value is not None else base_types.UninitialisedField(self, 'TxVrfctnRslt', TransactionVerificationResult4, True)
 
 	@TxVrfctnRslt.deleter
 	def TxVrfctnRslt(self):
 		del self._TxVrfctnRslt
-		self._TxVrfctnRslt = None
+		self._TxVrfctnRslt = base_types.UninitialisedField(self, 'TxVrfctnRslt', TransactionVerificationResult4, True)
 
 	@property
 	def Vhcl(self):
@@ -152,12 +152,12 @@ class Cardholder21(base_types._BaseFieldType):
 
 	@Vhcl.setter
 	def Vhcl(self, value):
-		self._Vhcl = value if type(value) != base_types.auto else self.make_default("Vhcl")
+		self._Vhcl = value if value is not None else base_types.UninitialisedField(self, 'Vhcl', Vehicle1, False)
 
 	@Vhcl.deleter
 	def Vhcl(self):
 		del self._Vhcl
-		self._Vhcl = None
+		self._Vhcl = base_types.UninitialisedField(self, 'Vhcl', Vehicle1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Authntcn', type=CardholderAuthentication17, min=0, max=None, mutex_group=None, array=True),

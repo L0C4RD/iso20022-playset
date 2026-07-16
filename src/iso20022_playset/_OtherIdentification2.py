@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IdentificationSource4Choice import IdentificationSource4Choice
-from ._Max16Text import Max16Text
-from ._RestrictedFINXMax31Text import RestrictedFINXMax31Text
+from . import IdentificationSource4Choice
+from . import Max16Text
+from . import RestrictedFINXMax31Text
 
 class OtherIdentification2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class OtherIdentification2(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', RestrictedFINXMax31Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', RestrictedFINXMax31Text, False)
 
 	@property
 	def Sfx(self):
@@ -28,12 +28,12 @@ class OtherIdentification2(base_types._BaseFieldType):
 
 	@Sfx.setter
 	def Sfx(self, value):
-		self._Sfx = value if type(value) != base_types.auto else self.make_default("Sfx")
+		self._Sfx = value if value is not None else base_types.UninitialisedField(self, 'Sfx', Max16Text, False)
 
 	@Sfx.deleter
 	def Sfx(self):
 		del self._Sfx
-		self._Sfx = None
+		self._Sfx = base_types.UninitialisedField(self, 'Sfx', Max16Text, False)
 
 	@property
 	def Tp(self):
@@ -41,12 +41,12 @@ class OtherIdentification2(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', IdentificationSource4Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', IdentificationSource4Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=RestrictedFINXMax31Text, min=1, max=1, mutex_group=None, array=False),

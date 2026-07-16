@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MatchingStatus26Choice import MatchingStatus26Choice
-from ._ProcessingStatus102Choice import ProcessingStatus102Choice
-from ._RepoCallRequestStatus7Choice import RepoCallRequestStatus7Choice
-from ._SecuritiesFinancingTransactionDetails59 import SecuritiesFinancingTransactionDetails59
-from ._SettlementStatus18Choice import SettlementStatus18Choice
-from ._SupplementaryData1 import SupplementaryData1
-from ._TransactionIdentifications53 import TransactionIdentifications53
+from . import MatchingStatus26Choice
+from . import ProcessingStatus102Choice
+from . import RepoCallRequestStatus7Choice
+from . import SecuritiesFinancingTransactionDetails59
+from . import SettlementStatus18Choice
+from . import SupplementaryData1
+from . import TransactionIdentifications53
 
 class SecuritiesFinancingStatusAdviceV11(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class SecuritiesFinancingStatusAdviceV11(base_types._BaseFieldType):
 
 	@IfrrdMtchgSts.setter
 	def IfrrdMtchgSts(self, value):
-		self._IfrrdMtchgSts = value if type(value) != base_types.auto else self.make_default("IfrrdMtchgSts")
+		self._IfrrdMtchgSts = value if value is not None else base_types.UninitialisedField(self, 'IfrrdMtchgSts', MatchingStatus26Choice, False)
 
 	@IfrrdMtchgSts.deleter
 	def IfrrdMtchgSts(self):
 		del self._IfrrdMtchgSts
-		self._IfrrdMtchgSts = None
+		self._IfrrdMtchgSts = base_types.UninitialisedField(self, 'IfrrdMtchgSts', MatchingStatus26Choice, False)
 
 	@property
 	def MtchgSts(self):
@@ -32,12 +32,12 @@ class SecuritiesFinancingStatusAdviceV11(base_types._BaseFieldType):
 
 	@MtchgSts.setter
 	def MtchgSts(self, value):
-		self._MtchgSts = value if type(value) != base_types.auto else self.make_default("MtchgSts")
+		self._MtchgSts = value if value is not None else base_types.UninitialisedField(self, 'MtchgSts', MatchingStatus26Choice, False)
 
 	@MtchgSts.deleter
 	def MtchgSts(self):
 		del self._MtchgSts
-		self._MtchgSts = None
+		self._MtchgSts = base_types.UninitialisedField(self, 'MtchgSts', MatchingStatus26Choice, False)
 
 	@property
 	def PrcgSts(self):
@@ -45,12 +45,12 @@ class SecuritiesFinancingStatusAdviceV11(base_types._BaseFieldType):
 
 	@PrcgSts.setter
 	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != base_types.auto else self.make_default("PrcgSts")
+		self._PrcgSts = value if value is not None else base_types.UninitialisedField(self, 'PrcgSts', ProcessingStatus102Choice, False)
 
 	@PrcgSts.deleter
 	def PrcgSts(self):
 		del self._PrcgSts
-		self._PrcgSts = None
+		self._PrcgSts = base_types.UninitialisedField(self, 'PrcgSts', ProcessingStatus102Choice, False)
 
 	@property
 	def RepoCallReqSts(self):
@@ -58,12 +58,12 @@ class SecuritiesFinancingStatusAdviceV11(base_types._BaseFieldType):
 
 	@RepoCallReqSts.setter
 	def RepoCallReqSts(self, value):
-		self._RepoCallReqSts = value if type(value) != base_types.auto else self.make_default("RepoCallReqSts")
+		self._RepoCallReqSts = value if value is not None else base_types.UninitialisedField(self, 'RepoCallReqSts', RepoCallRequestStatus7Choice, False)
 
 	@RepoCallReqSts.deleter
 	def RepoCallReqSts(self):
 		del self._RepoCallReqSts
-		self._RepoCallReqSts = None
+		self._RepoCallReqSts = base_types.UninitialisedField(self, 'RepoCallReqSts', RepoCallRequestStatus7Choice, False)
 
 	@property
 	def SplmtryData(self):
@@ -71,12 +71,12 @@ class SecuritiesFinancingStatusAdviceV11(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def SttlmSts(self):
@@ -84,12 +84,12 @@ class SecuritiesFinancingStatusAdviceV11(base_types._BaseFieldType):
 
 	@SttlmSts.setter
 	def SttlmSts(self, value):
-		self._SttlmSts = value if type(value) != base_types.auto else self.make_default("SttlmSts")
+		self._SttlmSts = value if value is not None else base_types.UninitialisedField(self, 'SttlmSts', SettlementStatus18Choice, False)
 
 	@SttlmSts.deleter
 	def SttlmSts(self):
 		del self._SttlmSts
-		self._SttlmSts = None
+		self._SttlmSts = base_types.UninitialisedField(self, 'SttlmSts', SettlementStatus18Choice, False)
 
 	@property
 	def TxDtls(self):
@@ -97,12 +97,12 @@ class SecuritiesFinancingStatusAdviceV11(base_types._BaseFieldType):
 
 	@TxDtls.setter
 	def TxDtls(self, value):
-		self._TxDtls = value if type(value) != base_types.auto else self.make_default("TxDtls")
+		self._TxDtls = value if value is not None else base_types.UninitialisedField(self, 'TxDtls', SecuritiesFinancingTransactionDetails59, False)
 
 	@TxDtls.deleter
 	def TxDtls(self):
 		del self._TxDtls
-		self._TxDtls = None
+		self._TxDtls = base_types.UninitialisedField(self, 'TxDtls', SecuritiesFinancingTransactionDetails59, False)
 
 	@property
 	def TxId(self):
@@ -110,12 +110,12 @@ class SecuritiesFinancingStatusAdviceV11(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', TransactionIdentifications53, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', TransactionIdentifications53, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IfrrdMtchgSts', type=MatchingStatus26Choice, min=0, max=1, mutex_group=None, array=False),

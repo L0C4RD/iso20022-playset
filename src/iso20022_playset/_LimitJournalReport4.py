@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LimitIdentification7 import LimitIdentification7
-from ._LimitJournalReportOrError8Choice import LimitJournalReportOrError8Choice
+from . import LimitIdentification7
+from . import LimitJournalReportOrError8Choice
 
 class LimitJournalReport4(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class LimitJournalReport4(base_types._BaseFieldType):
 
 	@LmtId.setter
 	def LmtId(self, value):
-		self._LmtId = value if type(value) != base_types.auto else self.make_default("LmtId")
+		self._LmtId = value if value is not None else base_types.UninitialisedField(self, 'LmtId', LimitIdentification7, False)
 
 	@LmtId.deleter
 	def LmtId(self):
 		del self._LmtId
-		self._LmtId = None
+		self._LmtId = base_types.UninitialisedField(self, 'LmtId', LimitIdentification7, False)
 
 	@property
 	def LmtRpt(self):
@@ -27,12 +27,12 @@ class LimitJournalReport4(base_types._BaseFieldType):
 
 	@LmtRpt.setter
 	def LmtRpt(self, value):
-		self._LmtRpt = value if type(value) != base_types.auto else self.make_default("LmtRpt")
+		self._LmtRpt = value if value is not None else base_types.UninitialisedField(self, 'LmtRpt', LimitJournalReportOrError8Choice, False)
 
 	@LmtRpt.deleter
 	def LmtRpt(self):
 		del self._LmtRpt
-		self._LmtRpt = None
+		self._LmtRpt = base_types.UninitialisedField(self, 'LmtRpt', LimitJournalReportOrError8Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LmtId', type=LimitIdentification7, min=1, max=1, mutex_group=None, array=False),

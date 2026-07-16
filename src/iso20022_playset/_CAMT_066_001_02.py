@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IntraBalanceMovementInstructionV02 import IntraBalanceMovementInstructionV02
+from . import IntraBalanceMovementInstructionV02
 
 class CAMT_066_001_02():
 
@@ -18,12 +18,12 @@ class CAMT_066_001_02():
 
 		@IntraBalMvmntInstr.setter
 		def IntraBalMvmntInstr(self, value):
-			self._IntraBalMvmntInstr = value if type(value) != base_types.auto else self.make_default("IntraBalMvmntInstr")
+			self._IntraBalMvmntInstr = value if value is not None else base_types.UninitialisedField(self, 'IntraBalMvmntInstr', IntraBalanceMovementInstructionV02, False)
 
 		@IntraBalMvmntInstr.deleter
 		def IntraBalMvmntInstr(self):
 			del self._IntraBalMvmntInstr
-			self._IntraBalMvmntInstr = None
+			self._IntraBalMvmntInstr = base_types.UninitialisedField(self, 'IntraBalMvmntInstr', IntraBalanceMovementInstructionV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='IntraBalMvmntInstr', type=IntraBalanceMovementInstructionV02, min=1, max=1, mutex_group=None, array=False),

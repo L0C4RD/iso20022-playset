@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._EnergyCommodityCoal2 import EnergyCommodityCoal2
-from ._EnergyCommodityDistillates2 import EnergyCommodityDistillates2
-from ._EnergyCommodityElectricity2 import EnergyCommodityElectricity2
-from ._EnergyCommodityInterEnergy2 import EnergyCommodityInterEnergy2
-from ._EnergyCommodityLightEnd2 import EnergyCommodityLightEnd2
-from ._EnergyCommodityNaturalGas3 import EnergyCommodityNaturalGas3
-from ._EnergyCommodityOil3 import EnergyCommodityOil3
-from ._EnergyCommodityOther2 import EnergyCommodityOther2
-from ._EnergyCommodityRenewableEnergy2 import EnergyCommodityRenewableEnergy2
+from . import EnergyCommodityCoal2
+from . import EnergyCommodityDistillates2
+from . import EnergyCommodityElectricity2
+from . import EnergyCommodityInterEnergy2
+from . import EnergyCommodityLightEnd2
+from . import EnergyCommodityNaturalGas3
+from . import EnergyCommodityOil3
+from . import EnergyCommodityOther2
+from . import EnergyCommodityRenewableEnergy2
 
 class AssetClassCommodityEnergy3Choice(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class AssetClassCommodityEnergy3Choice(base_types._BaseFieldType):
 
 	@Coal.setter
 	def Coal(self, value):
-		self._Coal = value if type(value) != base_types.auto else self.make_default("Coal")
+		self._Coal = value if value is not None else base_types.UninitialisedField(self, 'Coal', EnergyCommodityCoal2, False)
 
 	@Coal.deleter
 	def Coal(self):
 		del self._Coal
-		self._Coal = None
+		self._Coal = base_types.UninitialisedField(self, 'Coal', EnergyCommodityCoal2, False)
 
 	@property
 	def Dstllts(self):
@@ -34,12 +34,12 @@ class AssetClassCommodityEnergy3Choice(base_types._BaseFieldType):
 
 	@Dstllts.setter
 	def Dstllts(self, value):
-		self._Dstllts = value if type(value) != base_types.auto else self.make_default("Dstllts")
+		self._Dstllts = value if value is not None else base_types.UninitialisedField(self, 'Dstllts', EnergyCommodityDistillates2, False)
 
 	@Dstllts.deleter
 	def Dstllts(self):
 		del self._Dstllts
-		self._Dstllts = None
+		self._Dstllts = base_types.UninitialisedField(self, 'Dstllts', EnergyCommodityDistillates2, False)
 
 	@property
 	def Elctrcty(self):
@@ -47,12 +47,12 @@ class AssetClassCommodityEnergy3Choice(base_types._BaseFieldType):
 
 	@Elctrcty.setter
 	def Elctrcty(self, value):
-		self._Elctrcty = value if type(value) != base_types.auto else self.make_default("Elctrcty")
+		self._Elctrcty = value if value is not None else base_types.UninitialisedField(self, 'Elctrcty', EnergyCommodityElectricity2, False)
 
 	@Elctrcty.deleter
 	def Elctrcty(self):
 		del self._Elctrcty
-		self._Elctrcty = None
+		self._Elctrcty = base_types.UninitialisedField(self, 'Elctrcty', EnergyCommodityElectricity2, False)
 
 	@property
 	def IntrNrgy(self):
@@ -60,12 +60,12 @@ class AssetClassCommodityEnergy3Choice(base_types._BaseFieldType):
 
 	@IntrNrgy.setter
 	def IntrNrgy(self, value):
-		self._IntrNrgy = value if type(value) != base_types.auto else self.make_default("IntrNrgy")
+		self._IntrNrgy = value if value is not None else base_types.UninitialisedField(self, 'IntrNrgy', EnergyCommodityInterEnergy2, False)
 
 	@IntrNrgy.deleter
 	def IntrNrgy(self):
 		del self._IntrNrgy
-		self._IntrNrgy = None
+		self._IntrNrgy = base_types.UninitialisedField(self, 'IntrNrgy', EnergyCommodityInterEnergy2, False)
 
 	@property
 	def LghtEnd(self):
@@ -73,12 +73,12 @@ class AssetClassCommodityEnergy3Choice(base_types._BaseFieldType):
 
 	@LghtEnd.setter
 	def LghtEnd(self, value):
-		self._LghtEnd = value if type(value) != base_types.auto else self.make_default("LghtEnd")
+		self._LghtEnd = value if value is not None else base_types.UninitialisedField(self, 'LghtEnd', EnergyCommodityLightEnd2, False)
 
 	@LghtEnd.deleter
 	def LghtEnd(self):
 		del self._LghtEnd
-		self._LghtEnd = None
+		self._LghtEnd = base_types.UninitialisedField(self, 'LghtEnd', EnergyCommodityLightEnd2, False)
 
 	@property
 	def NtrlGas(self):
@@ -86,12 +86,12 @@ class AssetClassCommodityEnergy3Choice(base_types._BaseFieldType):
 
 	@NtrlGas.setter
 	def NtrlGas(self, value):
-		self._NtrlGas = value if type(value) != base_types.auto else self.make_default("NtrlGas")
+		self._NtrlGas = value if value is not None else base_types.UninitialisedField(self, 'NtrlGas', EnergyCommodityNaturalGas3, False)
 
 	@NtrlGas.deleter
 	def NtrlGas(self):
 		del self._NtrlGas
-		self._NtrlGas = None
+		self._NtrlGas = base_types.UninitialisedField(self, 'NtrlGas', EnergyCommodityNaturalGas3, False)
 
 	@property
 	def Oil(self):
@@ -99,12 +99,12 @@ class AssetClassCommodityEnergy3Choice(base_types._BaseFieldType):
 
 	@Oil.setter
 	def Oil(self, value):
-		self._Oil = value if type(value) != base_types.auto else self.make_default("Oil")
+		self._Oil = value if value is not None else base_types.UninitialisedField(self, 'Oil', EnergyCommodityOil3, False)
 
 	@Oil.deleter
 	def Oil(self):
 		del self._Oil
-		self._Oil = None
+		self._Oil = base_types.UninitialisedField(self, 'Oil', EnergyCommodityOil3, False)
 
 	@property
 	def Othr(self):
@@ -112,12 +112,12 @@ class AssetClassCommodityEnergy3Choice(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', EnergyCommodityOther2, False)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', EnergyCommodityOther2, False)
 
 	@property
 	def RnwblNrgy(self):
@@ -125,12 +125,12 @@ class AssetClassCommodityEnergy3Choice(base_types._BaseFieldType):
 
 	@RnwblNrgy.setter
 	def RnwblNrgy(self, value):
-		self._RnwblNrgy = value if type(value) != base_types.auto else self.make_default("RnwblNrgy")
+		self._RnwblNrgy = value if value is not None else base_types.UninitialisedField(self, 'RnwblNrgy', EnergyCommodityRenewableEnergy2, False)
 
 	@RnwblNrgy.deleter
 	def RnwblNrgy(self):
 		del self._RnwblNrgy
-		self._RnwblNrgy = None
+		self._RnwblNrgy = base_types.UninitialisedField(self, 'RnwblNrgy', EnergyCommodityRenewableEnergy2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Coal', type=EnergyCommodityCoal2, min=0, max=1, mutex_group=1, array=False),

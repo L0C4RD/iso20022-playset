@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionEventType2FormatChoice import CorporateActionEventType2FormatChoice
-from ._FinancialInstrumentDescription3 import FinancialInstrumentDescription3
-from ._IncludedAccount1 import IncludedAccount1
-from ._Max35Text import Max35Text
-from ._PartyIdentification2Choice import PartyIdentification2Choice
-from ._StandingInstructionType1Code import StandingInstructionType1Code
+from . import CorporateActionEventType2FormatChoice
+from . import FinancialInstrumentDescription3
+from . import IncludedAccount1
+from . import Max35Text
+from . import PartyIdentification2Choice
+from . import StandingInstructionType1Code
 
 class CorporateActionStandingInstructionGeneralInformation1(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class CorporateActionStandingInstructionGeneralInformation1(base_types._BaseFiel
 
 	@AcctDtls.setter
 	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != base_types.auto else self.make_default("AcctDtls")
+		self._AcctDtls = value if value is not None else base_types.UninitialisedField(self, 'AcctDtls', IncludedAccount1, True)
 
 	@AcctDtls.deleter
 	def AcctDtls(self):
 		del self._AcctDtls
-		self._AcctDtls = None
+		self._AcctDtls = base_types.UninitialisedField(self, 'AcctDtls', IncludedAccount1, True)
 
 	@property
 	def ClntStgInstrId(self):
@@ -31,12 +31,12 @@ class CorporateActionStandingInstructionGeneralInformation1(base_types._BaseFiel
 
 	@ClntStgInstrId.setter
 	def ClntStgInstrId(self, value):
-		self._ClntStgInstrId = value if type(value) != base_types.auto else self.make_default("ClntStgInstrId")
+		self._ClntStgInstrId = value if value is not None else base_types.UninitialisedField(self, 'ClntStgInstrId', Max35Text, False)
 
 	@ClntStgInstrId.deleter
 	def ClntStgInstrId(self):
 		del self._ClntStgInstrId
-		self._ClntStgInstrId = None
+		self._ClntStgInstrId = base_types.UninitialisedField(self, 'ClntStgInstrId', Max35Text, False)
 
 	@property
 	def EvtTp(self):
@@ -44,12 +44,12 @@ class CorporateActionStandingInstructionGeneralInformation1(base_types._BaseFiel
 
 	@EvtTp.setter
 	def EvtTp(self, value):
-		self._EvtTp = value if type(value) != base_types.auto else self.make_default("EvtTp")
+		self._EvtTp = value if value is not None else base_types.UninitialisedField(self, 'EvtTp', CorporateActionEventType2FormatChoice, True)
 
 	@EvtTp.deleter
 	def EvtTp(self):
 		del self._EvtTp
-		self._EvtTp = None
+		self._EvtTp = base_types.UninitialisedField(self, 'EvtTp', CorporateActionEventType2FormatChoice, True)
 
 	@property
 	def InstgPtyId(self):
@@ -57,12 +57,12 @@ class CorporateActionStandingInstructionGeneralInformation1(base_types._BaseFiel
 
 	@InstgPtyId.setter
 	def InstgPtyId(self, value):
-		self._InstgPtyId = value if type(value) != base_types.auto else self.make_default("InstgPtyId")
+		self._InstgPtyId = value if value is not None else base_types.UninitialisedField(self, 'InstgPtyId', PartyIdentification2Choice, False)
 
 	@InstgPtyId.deleter
 	def InstgPtyId(self):
 		del self._InstgPtyId
-		self._InstgPtyId = None
+		self._InstgPtyId = base_types.UninitialisedField(self, 'InstgPtyId', PartyIdentification2Choice, False)
 
 	@property
 	def StgInstrTp(self):
@@ -70,12 +70,12 @@ class CorporateActionStandingInstructionGeneralInformation1(base_types._BaseFiel
 
 	@StgInstrTp.setter
 	def StgInstrTp(self, value):
-		self._StgInstrTp = value if type(value) != base_types.auto else self.make_default("StgInstrTp")
+		self._StgInstrTp = value if value is not None else base_types.UninitialisedField(self, 'StgInstrTp', StandingInstructionType1Code, False)
 
 	@StgInstrTp.deleter
 	def StgInstrTp(self):
 		del self._StgInstrTp
-		self._StgInstrTp = None
+		self._StgInstrTp = base_types.UninitialisedField(self, 'StgInstrTp', StandingInstructionType1Code, False)
 
 	@property
 	def UndrlygScty(self):
@@ -83,12 +83,12 @@ class CorporateActionStandingInstructionGeneralInformation1(base_types._BaseFiel
 
 	@UndrlygScty.setter
 	def UndrlygScty(self, value):
-		self._UndrlygScty = value if type(value) != base_types.auto else self.make_default("UndrlygScty")
+		self._UndrlygScty = value if value is not None else base_types.UninitialisedField(self, 'UndrlygScty', FinancialInstrumentDescription3, False)
 
 	@UndrlygScty.deleter
 	def UndrlygScty(self):
 		del self._UndrlygScty
-		self._UndrlygScty = None
+		self._UndrlygScty = base_types.UninitialisedField(self, 'UndrlygScty', FinancialInstrumentDescription3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctDtls', type=IncludedAccount1, min=0, max=None, mutex_group=None, array=True),

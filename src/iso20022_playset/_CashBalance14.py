@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BalanceCounterparty1Code import BalanceCounterparty1Code
-from ._BalanceType11Choice import BalanceType11Choice
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._DateAndDateTimeSearch4Choice import DateAndDateTimeSearch4Choice
+from . import BalanceCounterparty1Code
+from . import BalanceType11Choice
+from . import BranchAndFinancialInstitutionIdentification8
+from . import DateAndDateTimeSearch4Choice
 
 class CashBalance14(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CashBalance14(base_types._BaseFieldType):
 
 	@CtrPtyId.setter
 	def CtrPtyId(self, value):
-		self._CtrPtyId = value if type(value) != base_types.auto else self.make_default("CtrPtyId")
+		self._CtrPtyId = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyId', BranchAndFinancialInstitutionIdentification8, True)
 
 	@CtrPtyId.deleter
 	def CtrPtyId(self):
 		del self._CtrPtyId
-		self._CtrPtyId = None
+		self._CtrPtyId = base_types.UninitialisedField(self, 'CtrPtyId', BranchAndFinancialInstitutionIdentification8, True)
 
 	@property
 	def CtrPtyTp(self):
@@ -29,12 +29,12 @@ class CashBalance14(base_types._BaseFieldType):
 
 	@CtrPtyTp.setter
 	def CtrPtyTp(self, value):
-		self._CtrPtyTp = value if type(value) != base_types.auto else self.make_default("CtrPtyTp")
+		self._CtrPtyTp = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyTp', BalanceCounterparty1Code, False)
 
 	@CtrPtyTp.deleter
 	def CtrPtyTp(self):
 		del self._CtrPtyTp
-		self._CtrPtyTp = None
+		self._CtrPtyTp = base_types.UninitialisedField(self, 'CtrPtyTp', BalanceCounterparty1Code, False)
 
 	@property
 	def PrcgDt(self):
@@ -42,12 +42,12 @@ class CashBalance14(base_types._BaseFieldType):
 
 	@PrcgDt.setter
 	def PrcgDt(self, value):
-		self._PrcgDt = value if type(value) != base_types.auto else self.make_default("PrcgDt")
+		self._PrcgDt = value if value is not None else base_types.UninitialisedField(self, 'PrcgDt', DateAndDateTimeSearch4Choice, False)
 
 	@PrcgDt.deleter
 	def PrcgDt(self):
 		del self._PrcgDt
-		self._PrcgDt = None
+		self._PrcgDt = base_types.UninitialisedField(self, 'PrcgDt', DateAndDateTimeSearch4Choice, False)
 
 	@property
 	def Tp(self):
@@ -55,12 +55,12 @@ class CashBalance14(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', BalanceType11Choice, True)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', BalanceType11Choice, True)
 
 	@property
 	def ValDt(self):
@@ -68,12 +68,12 @@ class CashBalance14(base_types._BaseFieldType):
 
 	@ValDt.setter
 	def ValDt(self, value):
-		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
+		self._ValDt = value if value is not None else base_types.UninitialisedField(self, 'ValDt', DateAndDateTimeSearch4Choice, True)
 
 	@ValDt.deleter
 	def ValDt(self):
 		del self._ValDt
-		self._ValDt = None
+		self._ValDt = base_types.UninitialisedField(self, 'ValDt', DateAndDateTimeSearch4Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrPtyId', type=BranchAndFinancialInstitutionIdentification8, min=0, max=None, mutex_group=None, array=True),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._OrganisationType2 import OrganisationType2
-from ._PersonType2 import PersonType2
-from ._RequestedIndicator import RequestedIndicator
+from . import OrganisationType2
+from . import PersonType2
+from . import RequestedIndicator
 
 class CustomerTypeRequest2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CustomerTypeRequest2(base_types._BaseFieldType):
 
 	@OrgTp.setter
 	def OrgTp(self, value):
-		self._OrgTp = value if type(value) != base_types.auto else self.make_default("OrgTp")
+		self._OrgTp = value if value is not None else base_types.UninitialisedField(self, 'OrgTp', OrganisationType2, False)
 
 	@OrgTp.deleter
 	def OrgTp(self):
 		del self._OrgTp
-		self._OrgTp = None
+		self._OrgTp = base_types.UninitialisedField(self, 'OrgTp', OrganisationType2, False)
 
 	@property
 	def PrvtTp(self):
@@ -28,12 +28,12 @@ class CustomerTypeRequest2(base_types._BaseFieldType):
 
 	@PrvtTp.setter
 	def PrvtTp(self, value):
-		self._PrvtTp = value if type(value) != base_types.auto else self.make_default("PrvtTp")
+		self._PrvtTp = value if value is not None else base_types.UninitialisedField(self, 'PrvtTp', PersonType2, False)
 
 	@PrvtTp.deleter
 	def PrvtTp(self):
 		del self._PrvtTp
-		self._PrvtTp = None
+		self._PrvtTp = base_types.UninitialisedField(self, 'PrvtTp', PersonType2, False)
 
 	@property
 	def Reqd(self):
@@ -41,12 +41,12 @@ class CustomerTypeRequest2(base_types._BaseFieldType):
 
 	@Reqd.setter
 	def Reqd(self, value):
-		self._Reqd = value if type(value) != base_types.auto else self.make_default("Reqd")
+		self._Reqd = value if value is not None else base_types.UninitialisedField(self, 'Reqd', RequestedIndicator, False)
 
 	@Reqd.deleter
 	def Reqd(self):
 		del self._Reqd
-		self._Reqd = None
+		self._Reqd = base_types.UninitialisedField(self, 'Reqd', RequestedIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgTp', type=OrganisationType2, min=0, max=1, mutex_group=None, array=False),

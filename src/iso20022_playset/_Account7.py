@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountIdentification1 import AccountIdentification1
-from ._PartyIdentification2Choice import PartyIdentification2Choice
+from . import AccountIdentification1
+from . import PartyIdentification2Choice
 
 class Account7(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Account7(base_types._BaseFieldType):
 
 	@AcctSvcr.setter
 	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
+		self._AcctSvcr = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcr', PartyIdentification2Choice, False)
 
 	@AcctSvcr.deleter
 	def AcctSvcr(self):
 		del self._AcctSvcr
-		self._AcctSvcr = None
+		self._AcctSvcr = base_types.UninitialisedField(self, 'AcctSvcr', PartyIdentification2Choice, False)
 
 	@property
 	def Id(self):
@@ -27,12 +27,12 @@ class Account7(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', AccountIdentification1, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', AccountIdentification1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),

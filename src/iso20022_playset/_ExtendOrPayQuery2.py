@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Demand4 import Demand4
-from ._DemandStatus1Code import DemandStatus1Code
-from ._Undertaking9 import Undertaking9
+from . import Demand4
+from . import DemandStatus1Code
+from . import Undertaking9
 
 class ExtendOrPayQuery2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ExtendOrPayQuery2(base_types._BaseFieldType):
 
 	@DmndDtls.setter
 	def DmndDtls(self, value):
-		self._DmndDtls = value if type(value) != base_types.auto else self.make_default("DmndDtls")
+		self._DmndDtls = value if value is not None else base_types.UninitialisedField(self, 'DmndDtls', Demand4, False)
 
 	@DmndDtls.deleter
 	def DmndDtls(self):
 		del self._DmndDtls
-		self._DmndDtls = None
+		self._DmndDtls = base_types.UninitialisedField(self, 'DmndDtls', Demand4, False)
 
 	@property
 	def Sts(self):
@@ -28,12 +28,12 @@ class ExtendOrPayQuery2(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', DemandStatus1Code, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', DemandStatus1Code, False)
 
 	@property
 	def UdrtkgId(self):
@@ -41,12 +41,12 @@ class ExtendOrPayQuery2(base_types._BaseFieldType):
 
 	@UdrtkgId.setter
 	def UdrtkgId(self, value):
-		self._UdrtkgId = value if type(value) != base_types.auto else self.make_default("UdrtkgId")
+		self._UdrtkgId = value if value is not None else base_types.UninitialisedField(self, 'UdrtkgId', Undertaking9, False)
 
 	@UdrtkgId.deleter
 	def UdrtkgId(self):
 		del self._UdrtkgId
-		self._UdrtkgId = None
+		self._UdrtkgId = base_types.UninitialisedField(self, 'UdrtkgId', Undertaking9, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DmndDtls', type=Demand4, min=1, max=1, mutex_group=None, array=False),

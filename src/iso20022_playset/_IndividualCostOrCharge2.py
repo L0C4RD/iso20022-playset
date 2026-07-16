@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._ChargeType8Choice import ChargeType8Choice
-from ._IntendedOrActual2Code import IntendedOrActual2Code
-from ._PercentageRate import PercentageRate
-from ._Period15 import Period15
-from ._PlusOrMinusIndicator import PlusOrMinusIndicator
+from . import ActiveCurrencyAnd13DecimalAmount
+from . import AdditionalInformation15
+from . import ChargeType8Choice
+from . import IntendedOrActual2Code
+from . import PercentageRate
+from . import Period15
+from . import PlusOrMinusIndicator
 
 class IndividualCostOrCharge2(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class IndividualCostOrCharge2(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, False)
 
 	@property
 	def Amt(self):
@@ -32,12 +32,12 @@ class IndividualCostOrCharge2(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def CostTp(self):
@@ -45,12 +45,12 @@ class IndividualCostOrCharge2(base_types._BaseFieldType):
 
 	@CostTp.setter
 	def CostTp(self, value):
-		self._CostTp = value if type(value) != base_types.auto else self.make_default("CostTp")
+		self._CostTp = value if value is not None else base_types.UninitialisedField(self, 'CostTp', ChargeType8Choice, False)
 
 	@CostTp.deleter
 	def CostTp(self):
 		del self._CostTp
-		self._CostTp = None
+		self._CostTp = base_types.UninitialisedField(self, 'CostTp', ChargeType8Choice, False)
 
 	@property
 	def ExAnteOrExPst(self):
@@ -58,12 +58,12 @@ class IndividualCostOrCharge2(base_types._BaseFieldType):
 
 	@ExAnteOrExPst.setter
 	def ExAnteOrExPst(self, value):
-		self._ExAnteOrExPst = value if type(value) != base_types.auto else self.make_default("ExAnteOrExPst")
+		self._ExAnteOrExPst = value if value is not None else base_types.UninitialisedField(self, 'ExAnteOrExPst', IntendedOrActual2Code, False)
 
 	@ExAnteOrExPst.deleter
 	def ExAnteOrExPst(self):
 		del self._ExAnteOrExPst
-		self._ExAnteOrExPst = None
+		self._ExAnteOrExPst = base_types.UninitialisedField(self, 'ExAnteOrExPst', IntendedOrActual2Code, False)
 
 	@property
 	def Rate(self):
@@ -71,12 +71,12 @@ class IndividualCostOrCharge2(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+		self._Rate = value if value is not None else base_types.UninitialisedField(self, 'Rate', PercentageRate, False)
 
 	@Rate.deleter
 	def Rate(self):
 		del self._Rate
-		self._Rate = None
+		self._Rate = base_types.UninitialisedField(self, 'Rate', PercentageRate, False)
 
 	@property
 	def RefPrd(self):
@@ -84,12 +84,12 @@ class IndividualCostOrCharge2(base_types._BaseFieldType):
 
 	@RefPrd.setter
 	def RefPrd(self, value):
-		self._RefPrd = value if type(value) != base_types.auto else self.make_default("RefPrd")
+		self._RefPrd = value if value is not None else base_types.UninitialisedField(self, 'RefPrd', Period15, False)
 
 	@RefPrd.deleter
 	def RefPrd(self):
 		del self._RefPrd
-		self._RefPrd = None
+		self._RefPrd = base_types.UninitialisedField(self, 'RefPrd', Period15, False)
 
 	@property
 	def Sgn(self):
@@ -97,12 +97,12 @@ class IndividualCostOrCharge2(base_types._BaseFieldType):
 
 	@Sgn.setter
 	def Sgn(self, value):
-		self._Sgn = value if type(value) != base_types.auto else self.make_default("Sgn")
+		self._Sgn = value if value is not None else base_types.UninitialisedField(self, 'Sgn', PlusOrMinusIndicator, False)
 
 	@Sgn.deleter
 	def Sgn(self):
 		del self._Sgn
-		self._Sgn = None
+		self._Sgn = base_types.UninitialisedField(self, 'Sgn', PlusOrMinusIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),

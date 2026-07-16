@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CreditorEnrolmentCancellationReason3 import CreditorEnrolmentCancellationReason3
-from ._OriginalBusinessInstruction1 import OriginalBusinessInstruction1
-from ._OriginalEnrolment3Choice import OriginalEnrolment3Choice
-from ._SupplementaryData1 import SupplementaryData1
+from . import CreditorEnrolmentCancellationReason3
+from . import OriginalBusinessInstruction1
+from . import OriginalEnrolment3Choice
+from . import SupplementaryData1
 
 class CreditorEnrolmentCancellation3(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CreditorEnrolmentCancellation3(base_types._BaseFieldType):
 
 	@CxlRsn.setter
 	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != base_types.auto else self.make_default("CxlRsn")
+		self._CxlRsn = value if value is not None else base_types.UninitialisedField(self, 'CxlRsn', CreditorEnrolmentCancellationReason3, False)
 
 	@CxlRsn.deleter
 	def CxlRsn(self):
 		del self._CxlRsn
-		self._CxlRsn = None
+		self._CxlRsn = base_types.UninitialisedField(self, 'CxlRsn', CreditorEnrolmentCancellationReason3, False)
 
 	@property
 	def OrgnlBizInstr(self):
@@ -29,12 +29,12 @@ class CreditorEnrolmentCancellation3(base_types._BaseFieldType):
 
 	@OrgnlBizInstr.setter
 	def OrgnlBizInstr(self, value):
-		self._OrgnlBizInstr = value if type(value) != base_types.auto else self.make_default("OrgnlBizInstr")
+		self._OrgnlBizInstr = value if value is not None else base_types.UninitialisedField(self, 'OrgnlBizInstr', OriginalBusinessInstruction1, False)
 
 	@OrgnlBizInstr.deleter
 	def OrgnlBizInstr(self):
 		del self._OrgnlBizInstr
-		self._OrgnlBizInstr = None
+		self._OrgnlBizInstr = base_types.UninitialisedField(self, 'OrgnlBizInstr', OriginalBusinessInstruction1, False)
 
 	@property
 	def OrgnlEnrlmnt(self):
@@ -42,12 +42,12 @@ class CreditorEnrolmentCancellation3(base_types._BaseFieldType):
 
 	@OrgnlEnrlmnt.setter
 	def OrgnlEnrlmnt(self, value):
-		self._OrgnlEnrlmnt = value if type(value) != base_types.auto else self.make_default("OrgnlEnrlmnt")
+		self._OrgnlEnrlmnt = value if value is not None else base_types.UninitialisedField(self, 'OrgnlEnrlmnt', OriginalEnrolment3Choice, False)
 
 	@OrgnlEnrlmnt.deleter
 	def OrgnlEnrlmnt(self):
 		del self._OrgnlEnrlmnt
-		self._OrgnlEnrlmnt = None
+		self._OrgnlEnrlmnt = base_types.UninitialisedField(self, 'OrgnlEnrlmnt', OriginalEnrolment3Choice, False)
 
 	@property
 	def SplmtryData(self):
@@ -55,12 +55,12 @@ class CreditorEnrolmentCancellation3(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CxlRsn', type=CreditorEnrolmentCancellationReason3, min=0, max=1, mutex_group=None, array=False),

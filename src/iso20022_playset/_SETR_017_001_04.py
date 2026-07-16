@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._OrderCancellationStatusReportV04 import OrderCancellationStatusReportV04
+from . import OrderCancellationStatusReportV04
 
 class SETR_017_001_04():
 
@@ -18,12 +18,12 @@ class SETR_017_001_04():
 
 		@OrdrCxlStsRpt.setter
 		def OrdrCxlStsRpt(self, value):
-			self._OrdrCxlStsRpt = value if type(value) != base_types.auto else self.make_default("OrdrCxlStsRpt")
+			self._OrdrCxlStsRpt = value if value is not None else base_types.UninitialisedField(self, 'OrdrCxlStsRpt', OrderCancellationStatusReportV04, False)
 
 		@OrdrCxlStsRpt.deleter
 		def OrdrCxlStsRpt(self):
 			del self._OrdrCxlStsRpt
-			self._OrdrCxlStsRpt = None
+			self._OrdrCxlStsRpt = base_types.UninitialisedField(self, 'OrdrCxlStsRpt', OrderCancellationStatusReportV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='OrdrCxlStsRpt', type=OrderCancellationStatusReportV04, min=1, max=1, mutex_group=None, array=False),

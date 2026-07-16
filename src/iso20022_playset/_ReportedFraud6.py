@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICAPartyType1Code import ATICAPartyType1Code
-from ._AuthenticationMethod13Code import AuthenticationMethod13Code
-from ._FraudReportingAction2Code import FraudReportingAction2Code
-from ._FraudType2Code import FraudType2Code
-from ._ISODate import ISODate
-from ._Max256Text import Max256Text
-from ._Max35Text import Max35Text
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ATICAPartyType1Code
+from . import AuthenticationMethod13Code
+from . import FraudReportingAction2Code
+from . import FraudType2Code
+from . import ISODate
+from . import Max256Text
+from . import Max35Text
+from . import TrueFalseIndicator
 
 class ReportedFraud6(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class ReportedFraud6(base_types._BaseFieldType):
 
 	@Actn.setter
 	def Actn(self, value):
-		self._Actn = value if type(value) != base_types.auto else self.make_default("Actn")
+		self._Actn = value if value is not None else base_types.UninitialisedField(self, 'Actn', FraudReportingAction2Code, False)
 
 	@Actn.deleter
 	def Actn(self):
 		del self._Actn
-		self._Actn = None
+		self._Actn = base_types.UninitialisedField(self, 'Actn', FraudReportingAction2Code, False)
 
 	@property
 	def Arrst(self):
@@ -33,12 +33,12 @@ class ReportedFraud6(base_types._BaseFieldType):
 
 	@Arrst.setter
 	def Arrst(self, value):
-		self._Arrst = value if type(value) != base_types.auto else self.make_default("Arrst")
+		self._Arrst = value if value is not None else base_types.UninitialisedField(self, 'Arrst', TrueFalseIndicator, False)
 
 	@Arrst.deleter
 	def Arrst(self):
 		del self._Arrst
-		self._Arrst = None
+		self._Arrst = base_types.UninitialisedField(self, 'Arrst', TrueFalseIndicator, False)
 
 	@property
 	def CaseLctrNb(self):
@@ -46,12 +46,12 @@ class ReportedFraud6(base_types._BaseFieldType):
 
 	@CaseLctrNb.setter
 	def CaseLctrNb(self, value):
-		self._CaseLctrNb = value if type(value) != base_types.auto else self.make_default("CaseLctrNb")
+		self._CaseLctrNb = value if value is not None else base_types.UninitialisedField(self, 'CaseLctrNb', Max35Text, False)
 
 	@CaseLctrNb.deleter
 	def CaseLctrNb(self):
 		del self._CaseLctrNb
-		self._CaseLctrNb = None
+		self._CaseLctrNb = base_types.UninitialisedField(self, 'CaseLctrNb', Max35Text, False)
 
 	@property
 	def CaseRef(self):
@@ -59,12 +59,12 @@ class ReportedFraud6(base_types._BaseFieldType):
 
 	@CaseRef.setter
 	def CaseRef(self, value):
-		self._CaseRef = value if type(value) != base_types.auto else self.make_default("CaseRef")
+		self._CaseRef = value if value is not None else base_types.UninitialisedField(self, 'CaseRef', Max35Text, False)
 
 	@CaseRef.deleter
 	def CaseRef(self):
 		del self._CaseRef
-		self._CaseRef = None
+		self._CaseRef = base_types.UninitialisedField(self, 'CaseRef', Max35Text, False)
 
 	@property
 	def CmprmsdCrdntl(self):
@@ -72,12 +72,12 @@ class ReportedFraud6(base_types._BaseFieldType):
 
 	@CmprmsdCrdntl.setter
 	def CmprmsdCrdntl(self, value):
-		self._CmprmsdCrdntl = value if type(value) != base_types.auto else self.make_default("CmprmsdCrdntl")
+		self._CmprmsdCrdntl = value if value is not None else base_types.UninitialisedField(self, 'CmprmsdCrdntl', AuthenticationMethod13Code, True)
 
 	@CmprmsdCrdntl.deleter
 	def CmprmsdCrdntl(self):
 		del self._CmprmsdCrdntl
-		self._CmprmsdCrdntl = None
+		self._CmprmsdCrdntl = base_types.UninitialisedField(self, 'CmprmsdCrdntl', AuthenticationMethod13Code, True)
 
 	@property
 	def ConfRptgDt(self):
@@ -85,12 +85,12 @@ class ReportedFraud6(base_types._BaseFieldType):
 
 	@ConfRptgDt.setter
 	def ConfRptgDt(self, value):
-		self._ConfRptgDt = value if type(value) != base_types.auto else self.make_default("ConfRptgDt")
+		self._ConfRptgDt = value if value is not None else base_types.UninitialisedField(self, 'ConfRptgDt', ISODate, False)
 
 	@ConfRptgDt.deleter
 	def ConfRptgDt(self):
 		del self._ConfRptgDt
-		self._ConfRptgDt = None
+		self._ConfRptgDt = base_types.UninitialisedField(self, 'ConfRptgDt', ISODate, False)
 
 	@property
 	def CrdhldrRptgDt(self):
@@ -98,12 +98,12 @@ class ReportedFraud6(base_types._BaseFieldType):
 
 	@CrdhldrRptgDt.setter
 	def CrdhldrRptgDt(self, value):
-		self._CrdhldrRptgDt = value if type(value) != base_types.auto else self.make_default("CrdhldrRptgDt")
+		self._CrdhldrRptgDt = value if value is not None else base_types.UninitialisedField(self, 'CrdhldrRptgDt', ISODate, False)
 
 	@CrdhldrRptgDt.deleter
 	def CrdhldrRptgDt(self):
 		del self._CrdhldrRptgDt
-		self._CrdhldrRptgDt = None
+		self._CrdhldrRptgDt = base_types.UninitialisedField(self, 'CrdhldrRptgDt', ISODate, False)
 
 	@property
 	def InvstgtnSts(self):
@@ -111,12 +111,12 @@ class ReportedFraud6(base_types._BaseFieldType):
 
 	@InvstgtnSts.setter
 	def InvstgtnSts(self, value):
-		self._InvstgtnSts = value if type(value) != base_types.auto else self.make_default("InvstgtnSts")
+		self._InvstgtnSts = value if value is not None else base_types.UninitialisedField(self, 'InvstgtnSts', Max256Text, False)
 
 	@InvstgtnSts.deleter
 	def InvstgtnSts(self):
 		del self._InvstgtnSts
-		self._InvstgtnSts = None
+		self._InvstgtnSts = base_types.UninitialisedField(self, 'InvstgtnSts', Max256Text, False)
 
 	@property
 	def MktSgmt(self):
@@ -124,12 +124,12 @@ class ReportedFraud6(base_types._BaseFieldType):
 
 	@MktSgmt.setter
 	def MktSgmt(self, value):
-		self._MktSgmt = value if type(value) != base_types.auto else self.make_default("MktSgmt")
+		self._MktSgmt = value if value is not None else base_types.UninitialisedField(self, 'MktSgmt', Max35Text, False)
 
 	@MktSgmt.deleter
 	def MktSgmt(self):
 		del self._MktSgmt
-		self._MktSgmt = None
+		self._MktSgmt = base_types.UninitialisedField(self, 'MktSgmt', Max35Text, False)
 
 	@property
 	def RptgNtty(self):
@@ -137,12 +137,12 @@ class ReportedFraud6(base_types._BaseFieldType):
 
 	@RptgNtty.setter
 	def RptgNtty(self, value):
-		self._RptgNtty = value if type(value) != base_types.auto else self.make_default("RptgNtty")
+		self._RptgNtty = value if value is not None else base_types.UninitialisedField(self, 'RptgNtty', ATICAPartyType1Code, False)
 
 	@RptgNtty.deleter
 	def RptgNtty(self):
 		del self._RptgNtty
-		self._RptgNtty = None
+		self._RptgNtty = base_types.UninitialisedField(self, 'RptgNtty', ATICAPartyType1Code, False)
 
 	@property
 	def SubmitrCaseRef(self):
@@ -150,12 +150,12 @@ class ReportedFraud6(base_types._BaseFieldType):
 
 	@SubmitrCaseRef.setter
 	def SubmitrCaseRef(self, value):
-		self._SubmitrCaseRef = value if type(value) != base_types.auto else self.make_default("SubmitrCaseRef")
+		self._SubmitrCaseRef = value if value is not None else base_types.UninitialisedField(self, 'SubmitrCaseRef', Max35Text, False)
 
 	@SubmitrCaseRef.deleter
 	def SubmitrCaseRef(self):
 		del self._SubmitrCaseRef
-		self._SubmitrCaseRef = None
+		self._SubmitrCaseRef = base_types.UninitialisedField(self, 'SubmitrCaseRef', Max35Text, False)
 
 	@property
 	def Tp(self):
@@ -163,12 +163,12 @@ class ReportedFraud6(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', FraudType2Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', FraudType2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Actn', type=FraudReportingAction2Code, min=1, max=1, mutex_group=None, array=False),

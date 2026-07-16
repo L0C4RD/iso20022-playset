@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Pagination1 import Pagination1
-from ._SecuritiesReport2 import SecuritiesReport2
-from ._SecuritiesSettlementTransactions6 import SecuritiesSettlementTransactions6
+from . import Pagination1
+from . import SecuritiesReport2
+from . import SecuritiesSettlementTransactions6
 
 class SecuritiesSettlementTransactionQueryResponseV01(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SecuritiesSettlementTransactionQueryResponseV01(base_types._BaseFieldType)
 
 	@Pgntn.setter
 	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+		self._Pgntn = value if value is not None else base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@Pgntn.deleter
 	def Pgntn(self):
 		del self._Pgntn
-		self._Pgntn = None
+		self._Pgntn = base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@property
 	def RptGnlDtls(self):
@@ -28,12 +28,12 @@ class SecuritiesSettlementTransactionQueryResponseV01(base_types._BaseFieldType)
 
 	@RptGnlDtls.setter
 	def RptGnlDtls(self, value):
-		self._RptGnlDtls = value if type(value) != base_types.auto else self.make_default("RptGnlDtls")
+		self._RptGnlDtls = value if value is not None else base_types.UninitialisedField(self, 'RptGnlDtls', SecuritiesReport2, False)
 
 	@RptGnlDtls.deleter
 	def RptGnlDtls(self):
 		del self._RptGnlDtls
-		self._RptGnlDtls = None
+		self._RptGnlDtls = base_types.UninitialisedField(self, 'RptGnlDtls', SecuritiesReport2, False)
 
 	@property
 	def Txs(self):
@@ -41,12 +41,12 @@ class SecuritiesSettlementTransactionQueryResponseV01(base_types._BaseFieldType)
 
 	@Txs.setter
 	def Txs(self, value):
-		self._Txs = value if type(value) != base_types.auto else self.make_default("Txs")
+		self._Txs = value if value is not None else base_types.UninitialisedField(self, 'Txs', SecuritiesSettlementTransactions6, True)
 
 	@Txs.deleter
 	def Txs(self):
 		del self._Txs
-		self._Txs = None
+		self._Txs = base_types.UninitialisedField(self, 'Txs', SecuritiesSettlementTransactions6, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Pgntn', type=Pagination1, min=1, max=1, mutex_group=None, array=False),

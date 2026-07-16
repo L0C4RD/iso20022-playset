@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._UndertakingTerminationNotificationV01 import UndertakingTerminationNotificationV01
+from . import UndertakingTerminationNotificationV01
 
 class TSRV_012_001_01():
 
@@ -18,12 +18,12 @@ class TSRV_012_001_01():
 
 		@UdrtkgTermntnNtfctn.setter
 		def UdrtkgTermntnNtfctn(self, value):
-			self._UdrtkgTermntnNtfctn = value if type(value) != base_types.auto else self.make_default("UdrtkgTermntnNtfctn")
+			self._UdrtkgTermntnNtfctn = value if value is not None else base_types.UninitialisedField(self, 'UdrtkgTermntnNtfctn', UndertakingTerminationNotificationV01, False)
 
 		@UdrtkgTermntnNtfctn.deleter
 		def UdrtkgTermntnNtfctn(self):
 			del self._UdrtkgTermntnNtfctn
-			self._UdrtkgTermntnNtfctn = None
+			self._UdrtkgTermntnNtfctn = base_types.UninitialisedField(self, 'UdrtkgTermntnNtfctn', UndertakingTerminationNotificationV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='UdrtkgTermntnNtfctn', type=UndertakingTerminationNotificationV01, min=1, max=1, mutex_group=None, array=False),

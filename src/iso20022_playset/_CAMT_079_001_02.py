@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IntraBalanceMovementQueryResponseV02 import IntraBalanceMovementQueryResponseV02
+from . import IntraBalanceMovementQueryResponseV02
 
 class CAMT_079_001_02():
 
@@ -18,12 +18,12 @@ class CAMT_079_001_02():
 
 		@IntraBalMvmntQryRspn.setter
 		def IntraBalMvmntQryRspn(self, value):
-			self._IntraBalMvmntQryRspn = value if type(value) != base_types.auto else self.make_default("IntraBalMvmntQryRspn")
+			self._IntraBalMvmntQryRspn = value if value is not None else base_types.UninitialisedField(self, 'IntraBalMvmntQryRspn', IntraBalanceMovementQueryResponseV02, False)
 
 		@IntraBalMvmntQryRspn.deleter
 		def IntraBalMvmntQryRspn(self):
 			del self._IntraBalMvmntQryRspn
-			self._IntraBalMvmntQryRspn = None
+			self._IntraBalMvmntQryRspn = base_types.UninitialisedField(self, 'IntraBalMvmntQryRspn', IntraBalanceMovementQueryResponseV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='IntraBalMvmntQryRspn', type=IntraBalanceMovementQueryResponseV02, min=1, max=1, mutex_group=None, array=False),

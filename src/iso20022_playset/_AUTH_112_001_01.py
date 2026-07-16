@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CCPInteroperabilityReportV01 import CCPInteroperabilityReportV01
+from . import CCPInteroperabilityReportV01
 
 class AUTH_112_001_01():
 
@@ -18,12 +18,12 @@ class AUTH_112_001_01():
 
 		@CCPIntrprbltyRpt.setter
 		def CCPIntrprbltyRpt(self, value):
-			self._CCPIntrprbltyRpt = value if type(value) != base_types.auto else self.make_default("CCPIntrprbltyRpt")
+			self._CCPIntrprbltyRpt = value if value is not None else base_types.UninitialisedField(self, 'CCPIntrprbltyRpt', CCPInteroperabilityReportV01, False)
 
 		@CCPIntrprbltyRpt.deleter
 		def CCPIntrprbltyRpt(self):
 			del self._CCPIntrprbltyRpt
-			self._CCPIntrprbltyRpt = None
+			self._CCPIntrprbltyRpt = base_types.UninitialisedField(self, 'CCPIntrprbltyRpt', CCPInteroperabilityReportV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CCPIntrprbltyRpt', type=CCPInteroperabilityReportV01, min=1, max=1, mutex_group=None, array=False),

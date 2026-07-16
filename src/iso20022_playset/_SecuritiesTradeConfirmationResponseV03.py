@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Clearing6 import Clearing6
-from ._ConfirmationParties8 import ConfirmationParties8
-from ._Linkages76 import Linkages76
-from ._StatusAndReason46 import StatusAndReason46
-from ._SupplementaryData1 import SupplementaryData1
-from ._TransactiontIdentification4 import TransactiontIdentification4
+from . import Clearing6
+from . import ConfirmationParties8
+from . import Linkages76
+from . import StatusAndReason46
+from . import SupplementaryData1
+from . import TransactiontIdentification4
 
 class SecuritiesTradeConfirmationResponseV03(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class SecuritiesTradeConfirmationResponseV03(base_types._BaseFieldType):
 
 	@ClrDtls.setter
 	def ClrDtls(self, value):
-		self._ClrDtls = value if type(value) != base_types.auto else self.make_default("ClrDtls")
+		self._ClrDtls = value if value is not None else base_types.UninitialisedField(self, 'ClrDtls', Clearing6, False)
 
 	@ClrDtls.deleter
 	def ClrDtls(self):
 		del self._ClrDtls
-		self._ClrDtls = None
+		self._ClrDtls = base_types.UninitialisedField(self, 'ClrDtls', Clearing6, False)
 
 	@property
 	def ConfPties(self):
@@ -31,12 +31,12 @@ class SecuritiesTradeConfirmationResponseV03(base_types._BaseFieldType):
 
 	@ConfPties.setter
 	def ConfPties(self, value):
-		self._ConfPties = value if type(value) != base_types.auto else self.make_default("ConfPties")
+		self._ConfPties = value if value is not None else base_types.UninitialisedField(self, 'ConfPties', ConfirmationParties8, True)
 
 	@ConfPties.deleter
 	def ConfPties(self):
 		del self._ConfPties
-		self._ConfPties = None
+		self._ConfPties = base_types.UninitialisedField(self, 'ConfPties', ConfirmationParties8, True)
 
 	@property
 	def Id(self):
@@ -44,12 +44,12 @@ class SecuritiesTradeConfirmationResponseV03(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', TransactiontIdentification4, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', TransactiontIdentification4, False)
 
 	@property
 	def Refs(self):
@@ -57,12 +57,12 @@ class SecuritiesTradeConfirmationResponseV03(base_types._BaseFieldType):
 
 	@Refs.setter
 	def Refs(self, value):
-		self._Refs = value if type(value) != base_types.auto else self.make_default("Refs")
+		self._Refs = value if value is not None else base_types.UninitialisedField(self, 'Refs', Linkages76, True)
 
 	@Refs.deleter
 	def Refs(self):
 		del self._Refs
-		self._Refs = None
+		self._Refs = base_types.UninitialisedField(self, 'Refs', Linkages76, True)
 
 	@property
 	def SplmtryData(self):
@@ -70,12 +70,12 @@ class SecuritiesTradeConfirmationResponseV03(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def Sts(self):
@@ -83,12 +83,12 @@ class SecuritiesTradeConfirmationResponseV03(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', StatusAndReason46, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', StatusAndReason46, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClrDtls', type=Clearing6, min=0, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max4AlphaNumericText import Max4AlphaNumericText
-from ._Modification1Code import Modification1Code
-from ._PartyAndCertificate7 import PartyAndCertificate7
+from . import Max4AlphaNumericText
+from . import Modification1Code
+from . import PartyAndCertificate7
 
 class Group5(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Group5(base_types._BaseFieldType):
 
 	@GrpId.setter
 	def GrpId(self, value):
-		self._GrpId = value if type(value) != base_types.auto else self.make_default("GrpId")
+		self._GrpId = value if value is not None else base_types.UninitialisedField(self, 'GrpId', Max4AlphaNumericText, False)
 
 	@GrpId.deleter
 	def GrpId(self):
 		del self._GrpId
-		self._GrpId = None
+		self._GrpId = base_types.UninitialisedField(self, 'GrpId', Max4AlphaNumericText, False)
 
 	@property
 	def ModCd(self):
@@ -28,12 +28,12 @@ class Group5(base_types._BaseFieldType):
 
 	@ModCd.setter
 	def ModCd(self, value):
-		self._ModCd = value if type(value) != base_types.auto else self.make_default("ModCd")
+		self._ModCd = value if value is not None else base_types.UninitialisedField(self, 'ModCd', Modification1Code, False)
 
 	@ModCd.deleter
 	def ModCd(self):
 		del self._ModCd
-		self._ModCd = None
+		self._ModCd = base_types.UninitialisedField(self, 'ModCd', Modification1Code, False)
 
 	@property
 	def Pty(self):
@@ -41,12 +41,12 @@ class Group5(base_types._BaseFieldType):
 
 	@Pty.setter
 	def Pty(self, value):
-		self._Pty = value if type(value) != base_types.auto else self.make_default("Pty")
+		self._Pty = value if value is not None else base_types.UninitialisedField(self, 'Pty', PartyAndCertificate7, True)
 
 	@Pty.deleter
 	def Pty(self):
 		del self._Pty
-		self._Pty = None
+		self._Pty = base_types.UninitialisedField(self, 'Pty', PartyAndCertificate7, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='GrpId', type=Max4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),

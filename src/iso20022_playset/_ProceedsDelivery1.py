@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashAccountIdentification1Choice import CashAccountIdentification1Choice
-from ._Max35Text import Max35Text
-from ._PartyIdentification2Choice import PartyIdentification2Choice
+from . import CashAccountIdentification1Choice
+from . import Max35Text
+from . import PartyIdentification2Choice
 
 class ProceedsDelivery1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ProceedsDelivery1(base_types._BaseFieldType):
 
 	@AcctOwnrId.setter
 	def AcctOwnrId(self, value):
-		self._AcctOwnrId = value if type(value) != base_types.auto else self.make_default("AcctOwnrId")
+		self._AcctOwnrId = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnrId', PartyIdentification2Choice, False)
 
 	@AcctOwnrId.deleter
 	def AcctOwnrId(self):
 		del self._AcctOwnrId
-		self._AcctOwnrId = None
+		self._AcctOwnrId = base_types.UninitialisedField(self, 'AcctOwnrId', PartyIdentification2Choice, False)
 
 	@property
 	def AcctSvcrId(self):
@@ -28,12 +28,12 @@ class ProceedsDelivery1(base_types._BaseFieldType):
 
 	@AcctSvcrId.setter
 	def AcctSvcrId(self, value):
-		self._AcctSvcrId = value if type(value) != base_types.auto else self.make_default("AcctSvcrId")
+		self._AcctSvcrId = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcrId', PartyIdentification2Choice, False)
 
 	@AcctSvcrId.deleter
 	def AcctSvcrId(self):
 		del self._AcctSvcrId
-		self._AcctSvcrId = None
+		self._AcctSvcrId = base_types.UninitialisedField(self, 'AcctSvcrId', PartyIdentification2Choice, False)
 
 	@property
 	def CshAcctId(self):
@@ -41,12 +41,12 @@ class ProceedsDelivery1(base_types._BaseFieldType):
 
 	@CshAcctId.setter
 	def CshAcctId(self, value):
-		self._CshAcctId = value if type(value) != base_types.auto else self.make_default("CshAcctId")
+		self._CshAcctId = value if value is not None else base_types.UninitialisedField(self, 'CshAcctId', CashAccountIdentification1Choice, False)
 
 	@CshAcctId.deleter
 	def CshAcctId(self):
 		del self._CshAcctId
-		self._CshAcctId = None
+		self._CshAcctId = base_types.UninitialisedField(self, 'CshAcctId', CashAccountIdentification1Choice, False)
 
 	@property
 	def SctiesAcctId(self):
@@ -54,12 +54,12 @@ class ProceedsDelivery1(base_types._BaseFieldType):
 
 	@SctiesAcctId.setter
 	def SctiesAcctId(self, value):
-		self._SctiesAcctId = value if type(value) != base_types.auto else self.make_default("SctiesAcctId")
+		self._SctiesAcctId = value if value is not None else base_types.UninitialisedField(self, 'SctiesAcctId', Max35Text, False)
 
 	@SctiesAcctId.deleter
 	def SctiesAcctId(self):
 		del self._SctiesAcctId
-		self._SctiesAcctId = None
+		self._SctiesAcctId = base_types.UninitialisedField(self, 'SctiesAcctId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),

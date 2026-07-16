@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CallIn1Code import CallIn1Code
-from ._Exact4AlphaNumericText import Exact4AlphaNumericText
-from ._ISODate import ISODate
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
-from ._PayInCallItem import PayInCallItem
-from ._Value import Value
+from . import CallIn1Code
+from . import Exact4AlphaNumericText
+from . import ISODate
+from . import ISODateTime
+from . import Max35Text
+from . import PayInCallItem
+from . import Value
 
 class ReportData5(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class ReportData5(base_types._BaseFieldType):
 
 	@AcctVal.setter
 	def AcctVal(self, value):
-		self._AcctVal = value if type(value) != base_types.auto else self.make_default("AcctVal")
+		self._AcctVal = value if value is not None else base_types.UninitialisedField(self, 'AcctVal', Value, False)
 
 	@AcctVal.deleter
 	def AcctVal(self):
 		del self._AcctVal
-		self._AcctVal = None
+		self._AcctVal = base_types.UninitialisedField(self, 'AcctVal', Value, False)
 
 	@property
 	def DtAndTmStmp(self):
@@ -32,12 +32,12 @@ class ReportData5(base_types._BaseFieldType):
 
 	@DtAndTmStmp.setter
 	def DtAndTmStmp(self, value):
-		self._DtAndTmStmp = value if type(value) != base_types.auto else self.make_default("DtAndTmStmp")
+		self._DtAndTmStmp = value if value is not None else base_types.UninitialisedField(self, 'DtAndTmStmp', ISODateTime, False)
 
 	@DtAndTmStmp.deleter
 	def DtAndTmStmp(self):
 		del self._DtAndTmStmp
-		self._DtAndTmStmp = None
+		self._DtAndTmStmp = base_types.UninitialisedField(self, 'DtAndTmStmp', ISODateTime, False)
 
 	@property
 	def MsgId(self):
@@ -45,12 +45,12 @@ class ReportData5(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@property
 	def PayInCallAmt(self):
@@ -58,12 +58,12 @@ class ReportData5(base_types._BaseFieldType):
 
 	@PayInCallAmt.setter
 	def PayInCallAmt(self, value):
-		self._PayInCallAmt = value if type(value) != base_types.auto else self.make_default("PayInCallAmt")
+		self._PayInCallAmt = value if value is not None else base_types.UninitialisedField(self, 'PayInCallAmt', PayInCallItem, True)
 
 	@PayInCallAmt.deleter
 	def PayInCallAmt(self):
 		del self._PayInCallAmt
-		self._PayInCallAmt = None
+		self._PayInCallAmt = base_types.UninitialisedField(self, 'PayInCallAmt', PayInCallItem, True)
 
 	@property
 	def SttlmSsnIdr(self):
@@ -71,12 +71,12 @@ class ReportData5(base_types._BaseFieldType):
 
 	@SttlmSsnIdr.setter
 	def SttlmSsnIdr(self, value):
-		self._SttlmSsnIdr = value if type(value) != base_types.auto else self.make_default("SttlmSsnIdr")
+		self._SttlmSsnIdr = value if value is not None else base_types.UninitialisedField(self, 'SttlmSsnIdr', Exact4AlphaNumericText, False)
 
 	@SttlmSsnIdr.deleter
 	def SttlmSsnIdr(self):
 		del self._SttlmSsnIdr
-		self._SttlmSsnIdr = None
+		self._SttlmSsnIdr = base_types.UninitialisedField(self, 'SttlmSsnIdr', Exact4AlphaNumericText, False)
 
 	@property
 	def Tp(self):
@@ -84,12 +84,12 @@ class ReportData5(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', CallIn1Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', CallIn1Code, False)
 
 	@property
 	def ValDt(self):
@@ -97,12 +97,12 @@ class ReportData5(base_types._BaseFieldType):
 
 	@ValDt.setter
 	def ValDt(self, value):
-		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
+		self._ValDt = value if value is not None else base_types.UninitialisedField(self, 'ValDt', ISODate, False)
 
 	@ValDt.deleter
 	def ValDt(self):
 		del self._ValDt
-		self._ValDt = None
+		self._ValDt = base_types.UninitialisedField(self, 'ValDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctVal', type=Value, min=0, max=1, mutex_group=None, array=False),

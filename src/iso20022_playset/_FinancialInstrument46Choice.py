@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BenchmarkCurveName2Code import BenchmarkCurveName2Code
-from ._ISINOct2015Identifier import ISINOct2015Identifier
+from . import BenchmarkCurveName2Code
+from . import ISINOct2015Identifier
 
 class FinancialInstrument46Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class FinancialInstrument46Choice(base_types._BaseFieldType):
 
 	@ISIN.setter
 	def ISIN(self, value):
-		self._ISIN = value if type(value) != base_types.auto else self.make_default("ISIN")
+		self._ISIN = value if value is not None else base_types.UninitialisedField(self, 'ISIN', ISINOct2015Identifier, False)
 
 	@ISIN.deleter
 	def ISIN(self):
 		del self._ISIN
-		self._ISIN = None
+		self._ISIN = base_types.UninitialisedField(self, 'ISIN', ISINOct2015Identifier, False)
 
 	@property
 	def Indx(self):
@@ -27,12 +27,12 @@ class FinancialInstrument46Choice(base_types._BaseFieldType):
 
 	@Indx.setter
 	def Indx(self, value):
-		self._Indx = value if type(value) != base_types.auto else self.make_default("Indx")
+		self._Indx = value if value is not None else base_types.UninitialisedField(self, 'Indx', BenchmarkCurveName2Code, False)
 
 	@Indx.deleter
 	def Indx(self):
 		del self._Indx
-		self._Indx = None
+		self._Indx = base_types.UninitialisedField(self, 'Indx', BenchmarkCurveName2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=1, mutex_group=1, array=False),

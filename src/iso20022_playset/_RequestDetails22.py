@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ClearingChannel2Code import ClearingChannel2Code
-from ._GenericIdentification30 import GenericIdentification30
-from ._LinkageType3Choice import LinkageType3Choice
-from ._Linkages57 import Linkages57
-from ._PriorityNumeric4Choice import PriorityNumeric4Choice
-from ._References14 import References14
-from ._YesNoIndicator import YesNoIndicator
+from . import ClearingChannel2Code
+from . import GenericIdentification30
+from . import LinkageType3Choice
+from . import Linkages57
+from . import PriorityNumeric4Choice
+from . import References14
+from . import YesNoIndicator
 
 class RequestDetails22(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class RequestDetails22(base_types._BaseFieldType):
 
 	@ClrChanl.setter
 	def ClrChanl(self, value):
-		self._ClrChanl = value if type(value) != base_types.auto else self.make_default("ClrChanl")
+		self._ClrChanl = value if value is not None else base_types.UninitialisedField(self, 'ClrChanl', ClearingChannel2Code, False)
 
 	@ClrChanl.deleter
 	def ClrChanl(self):
 		del self._ClrChanl
-		self._ClrChanl = None
+		self._ClrChanl = base_types.UninitialisedField(self, 'ClrChanl', ClearingChannel2Code, False)
 
 	@property
 	def Lkg(self):
@@ -32,12 +32,12 @@ class RequestDetails22(base_types._BaseFieldType):
 
 	@Lkg.setter
 	def Lkg(self, value):
-		self._Lkg = value if type(value) != base_types.auto else self.make_default("Lkg")
+		self._Lkg = value if value is not None else base_types.UninitialisedField(self, 'Lkg', LinkageType3Choice, False)
 
 	@Lkg.deleter
 	def Lkg(self):
 		del self._Lkg
-		self._Lkg = None
+		self._Lkg = base_types.UninitialisedField(self, 'Lkg', LinkageType3Choice, False)
 
 	@property
 	def Lnkgs(self):
@@ -45,12 +45,12 @@ class RequestDetails22(base_types._BaseFieldType):
 
 	@Lnkgs.setter
 	def Lnkgs(self, value):
-		self._Lnkgs = value if type(value) != base_types.auto else self.make_default("Lnkgs")
+		self._Lnkgs = value if value is not None else base_types.UninitialisedField(self, 'Lnkgs', Linkages57, True)
 
 	@Lnkgs.deleter
 	def Lnkgs(self):
 		del self._Lnkgs
-		self._Lnkgs = None
+		self._Lnkgs = base_types.UninitialisedField(self, 'Lnkgs', Linkages57, True)
 
 	@property
 	def OthrPrcg(self):
@@ -58,12 +58,12 @@ class RequestDetails22(base_types._BaseFieldType):
 
 	@OthrPrcg.setter
 	def OthrPrcg(self, value):
-		self._OthrPrcg = value if type(value) != base_types.auto else self.make_default("OthrPrcg")
+		self._OthrPrcg = value if value is not None else base_types.UninitialisedField(self, 'OthrPrcg', GenericIdentification30, True)
 
 	@OthrPrcg.deleter
 	def OthrPrcg(self):
 		del self._OthrPrcg
-		self._OthrPrcg = None
+		self._OthrPrcg = base_types.UninitialisedField(self, 'OthrPrcg', GenericIdentification30, True)
 
 	@property
 	def PrtlSttlmInd(self):
@@ -71,12 +71,12 @@ class RequestDetails22(base_types._BaseFieldType):
 
 	@PrtlSttlmInd.setter
 	def PrtlSttlmInd(self, value):
-		self._PrtlSttlmInd = value if type(value) != base_types.auto else self.make_default("PrtlSttlmInd")
+		self._PrtlSttlmInd = value if value is not None else base_types.UninitialisedField(self, 'PrtlSttlmInd', YesNoIndicator, False)
 
 	@PrtlSttlmInd.deleter
 	def PrtlSttlmInd(self):
 		del self._PrtlSttlmInd
-		self._PrtlSttlmInd = None
+		self._PrtlSttlmInd = base_types.UninitialisedField(self, 'PrtlSttlmInd', YesNoIndicator, False)
 
 	@property
 	def Prty(self):
@@ -84,12 +84,12 @@ class RequestDetails22(base_types._BaseFieldType):
 
 	@Prty.setter
 	def Prty(self, value):
-		self._Prty = value if type(value) != base_types.auto else self.make_default("Prty")
+		self._Prty = value if value is not None else base_types.UninitialisedField(self, 'Prty', PriorityNumeric4Choice, False)
 
 	@Prty.deleter
 	def Prty(self):
 		del self._Prty
-		self._Prty = None
+		self._Prty = base_types.UninitialisedField(self, 'Prty', PriorityNumeric4Choice, False)
 
 	@property
 	def Ref(self):
@@ -97,12 +97,12 @@ class RequestDetails22(base_types._BaseFieldType):
 
 	@Ref.setter
 	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+		self._Ref = value if value is not None else base_types.UninitialisedField(self, 'Ref', References14, False)
 
 	@Ref.deleter
 	def Ref(self):
 		del self._Ref
-		self._Ref = None
+		self._Ref = base_types.UninitialisedField(self, 'Ref', References14, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClrChanl', type=ClearingChannel2Code, min=0, max=1, mutex_group=None, array=False),

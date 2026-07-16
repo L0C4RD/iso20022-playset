@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
-from ._SecurityIdentification19 import SecurityIdentification19
+from . import FinancialInstrumentQuantity1Choice
+from . import SecurityIdentification19
 
 class UnderlyingRatio2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class UnderlyingRatio2(base_types._BaseFieldType):
 
 	@RltdFinInstrmId.setter
 	def RltdFinInstrmId(self, value):
-		self._RltdFinInstrmId = value if type(value) != base_types.auto else self.make_default("RltdFinInstrmId")
+		self._RltdFinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'RltdFinInstrmId', SecurityIdentification19, True)
 
 	@RltdFinInstrmId.deleter
 	def RltdFinInstrmId(self):
 		del self._RltdFinInstrmId
-		self._RltdFinInstrmId = None
+		self._RltdFinInstrmId = base_types.UninitialisedField(self, 'RltdFinInstrmId', SecurityIdentification19, True)
 
 	@property
 	def UndrlygQtyDnmtr(self):
@@ -27,12 +27,12 @@ class UnderlyingRatio2(base_types._BaseFieldType):
 
 	@UndrlygQtyDnmtr.setter
 	def UndrlygQtyDnmtr(self, value):
-		self._UndrlygQtyDnmtr = value if type(value) != base_types.auto else self.make_default("UndrlygQtyDnmtr")
+		self._UndrlygQtyDnmtr = value if value is not None else base_types.UninitialisedField(self, 'UndrlygQtyDnmtr', FinancialInstrumentQuantity1Choice, False)
 
 	@UndrlygQtyDnmtr.deleter
 	def UndrlygQtyDnmtr(self):
 		del self._UndrlygQtyDnmtr
-		self._UndrlygQtyDnmtr = None
+		self._UndrlygQtyDnmtr = base_types.UninitialisedField(self, 'UndrlygQtyDnmtr', FinancialInstrumentQuantity1Choice, False)
 
 	@property
 	def UndrlygQtyNmrtr(self):
@@ -40,12 +40,12 @@ class UnderlyingRatio2(base_types._BaseFieldType):
 
 	@UndrlygQtyNmrtr.setter
 	def UndrlygQtyNmrtr(self, value):
-		self._UndrlygQtyNmrtr = value if type(value) != base_types.auto else self.make_default("UndrlygQtyNmrtr")
+		self._UndrlygQtyNmrtr = value if value is not None else base_types.UninitialisedField(self, 'UndrlygQtyNmrtr', FinancialInstrumentQuantity1Choice, False)
 
 	@UndrlygQtyNmrtr.deleter
 	def UndrlygQtyNmrtr(self):
 		del self._UndrlygQtyNmrtr
-		self._UndrlygQtyNmrtr = None
+		self._UndrlygQtyNmrtr = base_types.UninitialisedField(self, 'UndrlygQtyNmrtr', FinancialInstrumentQuantity1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RltdFinInstrmId', type=SecurityIdentification19, min=0, max=None, mutex_group=None, array=True),

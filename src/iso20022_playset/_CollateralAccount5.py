@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MarginAccount1 import MarginAccount1
-from ._PartyIdentification118Choice import PartyIdentification118Choice
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import MarginAccount1
+from . import PartyIdentification118Choice
+from . import TrueFalseIndicator
 
 class CollateralAccount5(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CollateralAccount5(base_types._BaseFieldType):
 
 	@CollSgrtnByVal.setter
 	def CollSgrtnByVal(self, value):
-		self._CollSgrtnByVal = value if type(value) != base_types.auto else self.make_default("CollSgrtnByVal")
+		self._CollSgrtnByVal = value if value is not None else base_types.UninitialisedField(self, 'CollSgrtnByVal', TrueFalseIndicator, False)
 
 	@CollSgrtnByVal.deleter
 	def CollSgrtnByVal(self):
 		del self._CollSgrtnByVal
-		self._CollSgrtnByVal = None
+		self._CollSgrtnByVal = base_types.UninitialisedField(self, 'CollSgrtnByVal', TrueFalseIndicator, False)
 
 	@property
 	def Id(self):
@@ -28,12 +28,12 @@ class CollateralAccount5(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', PartyIdentification118Choice, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', PartyIdentification118Choice, False)
 
 	@property
 	def RltdMrgnAcct(self):
@@ -41,12 +41,12 @@ class CollateralAccount5(base_types._BaseFieldType):
 
 	@RltdMrgnAcct.setter
 	def RltdMrgnAcct(self, value):
-		self._RltdMrgnAcct = value if type(value) != base_types.auto else self.make_default("RltdMrgnAcct")
+		self._RltdMrgnAcct = value if value is not None else base_types.UninitialisedField(self, 'RltdMrgnAcct', MarginAccount1, True)
 
 	@RltdMrgnAcct.deleter
 	def RltdMrgnAcct(self):
 		del self._RltdMrgnAcct
-		self._RltdMrgnAcct = None
+		self._RltdMrgnAcct = base_types.UninitialisedField(self, 'RltdMrgnAcct', MarginAccount1, True)
 
 	@property
 	def TitlTrfCollArrgmnt(self):
@@ -54,12 +54,12 @@ class CollateralAccount5(base_types._BaseFieldType):
 
 	@TitlTrfCollArrgmnt.setter
 	def TitlTrfCollArrgmnt(self, value):
-		self._TitlTrfCollArrgmnt = value if type(value) != base_types.auto else self.make_default("TitlTrfCollArrgmnt")
+		self._TitlTrfCollArrgmnt = value if value is not None else base_types.UninitialisedField(self, 'TitlTrfCollArrgmnt', TrueFalseIndicator, False)
 
 	@TitlTrfCollArrgmnt.deleter
 	def TitlTrfCollArrgmnt(self):
 		del self._TitlTrfCollArrgmnt
-		self._TitlTrfCollArrgmnt = None
+		self._TitlTrfCollArrgmnt = base_types.UninitialisedField(self, 'TitlTrfCollArrgmnt', TrueFalseIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollSgrtnByVal', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),

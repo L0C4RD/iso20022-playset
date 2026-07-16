@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from ._DeemedRateType1Choice import DeemedRateType1Choice
-from ._RateStatus3Choice import RateStatus3Choice
+from . import ActiveCurrencyAnd13DecimalAmount
+from . import DeemedRateType1Choice
+from . import RateStatus3Choice
 
 class RateTypeAndAmountAndStatus37(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class RateTypeAndAmountAndStatus37(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def RateSts(self):
@@ -28,12 +28,12 @@ class RateTypeAndAmountAndStatus37(base_types._BaseFieldType):
 
 	@RateSts.setter
 	def RateSts(self, value):
-		self._RateSts = value if type(value) != base_types.auto else self.make_default("RateSts")
+		self._RateSts = value if value is not None else base_types.UninitialisedField(self, 'RateSts', RateStatus3Choice, False)
 
 	@RateSts.deleter
 	def RateSts(self):
 		del self._RateSts
-		self._RateSts = None
+		self._RateSts = base_types.UninitialisedField(self, 'RateSts', RateStatus3Choice, False)
 
 	@property
 	def RateTp(self):
@@ -41,12 +41,12 @@ class RateTypeAndAmountAndStatus37(base_types._BaseFieldType):
 
 	@RateTp.setter
 	def RateTp(self, value):
-		self._RateTp = value if type(value) != base_types.auto else self.make_default("RateTp")
+		self._RateTp = value if value is not None else base_types.UninitialisedField(self, 'RateTp', DeemedRateType1Choice, False)
 
 	@RateTp.deleter
 	def RateTp(self):
 		del self._RateTp
-		self._RateTp = None
+		self._RateTp = base_types.UninitialisedField(self, 'RateTp', DeemedRateType1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),

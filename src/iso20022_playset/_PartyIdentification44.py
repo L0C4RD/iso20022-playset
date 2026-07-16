@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AnyBICIdentifier import AnyBICIdentifier
-from ._Max35Text import Max35Text
+from . import AnyBICIdentifier
+from . import Max35Text
 
 class PartyIdentification44(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PartyIdentification44(base_types._BaseFieldType):
 
 	@AltrntvIdr.setter
 	def AltrntvIdr(self, value):
-		self._AltrntvIdr = value if type(value) != base_types.auto else self.make_default("AltrntvIdr")
+		self._AltrntvIdr = value if value is not None else base_types.UninitialisedField(self, 'AltrntvIdr', Max35Text, True)
 
 	@AltrntvIdr.deleter
 	def AltrntvIdr(self):
 		del self._AltrntvIdr
-		self._AltrntvIdr = None
+		self._AltrntvIdr = base_types.UninitialisedField(self, 'AltrntvIdr', Max35Text, True)
 
 	@property
 	def AnyBIC(self):
@@ -27,12 +27,12 @@ class PartyIdentification44(base_types._BaseFieldType):
 
 	@AnyBIC.setter
 	def AnyBIC(self, value):
-		self._AnyBIC = value if type(value) != base_types.auto else self.make_default("AnyBIC")
+		self._AnyBIC = value if value is not None else base_types.UninitialisedField(self, 'AnyBIC', AnyBICIdentifier, False)
 
 	@AnyBIC.deleter
 	def AnyBIC(self):
 		del self._AnyBIC
-		self._AnyBIC = None
+		self._AnyBIC = base_types.UninitialisedField(self, 'AnyBIC', AnyBICIdentifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AltrntvIdr', type=Max35Text, min=0, max=10, mutex_group=None, array=True),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PercentageRate import PercentageRate
-from ._RateType12FormatChoice import RateType12FormatChoice
+from . import PercentageRate
+from . import RateType12FormatChoice
 
 class RateFormat1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class RateFormat1Choice(base_types._BaseFieldType):
 
 	@NotSpcfdRate.setter
 	def NotSpcfdRate(self, value):
-		self._NotSpcfdRate = value if type(value) != base_types.auto else self.make_default("NotSpcfdRate")
+		self._NotSpcfdRate = value if value is not None else base_types.UninitialisedField(self, 'NotSpcfdRate', RateType12FormatChoice, False)
 
 	@NotSpcfdRate.deleter
 	def NotSpcfdRate(self):
 		del self._NotSpcfdRate
-		self._NotSpcfdRate = None
+		self._NotSpcfdRate = base_types.UninitialisedField(self, 'NotSpcfdRate', RateType12FormatChoice, False)
 
 	@property
 	def Rate(self):
@@ -27,12 +27,12 @@ class RateFormat1Choice(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+		self._Rate = value if value is not None else base_types.UninitialisedField(self, 'Rate', PercentageRate, False)
 
 	@Rate.deleter
 	def Rate(self):
 		del self._Rate
-		self._Rate = None
+		self._Rate = base_types.UninitialisedField(self, 'Rate', PercentageRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NotSpcfdRate', type=RateType12FormatChoice, min=0, max=1, mutex_group=1, array=False),

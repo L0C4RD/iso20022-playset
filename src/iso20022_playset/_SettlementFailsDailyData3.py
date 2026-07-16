@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._SettlementFailsDailyInstrument3 import SettlementFailsDailyInstrument3
+from . import ISODate
+from . import SettlementFailsDailyInstrument3
 
 class SettlementFailsDailyData3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SettlementFailsDailyData3(base_types._BaseFieldType):
 
 	@DalyRcrd.setter
 	def DalyRcrd(self, value):
-		self._DalyRcrd = value if type(value) != base_types.auto else self.make_default("DalyRcrd")
+		self._DalyRcrd = value if value is not None else base_types.UninitialisedField(self, 'DalyRcrd', SettlementFailsDailyInstrument3, False)
 
 	@DalyRcrd.deleter
 	def DalyRcrd(self):
 		del self._DalyRcrd
-		self._DalyRcrd = None
+		self._DalyRcrd = base_types.UninitialisedField(self, 'DalyRcrd', SettlementFailsDailyInstrument3, False)
 
 	@property
 	def RptgDt(self):
@@ -27,12 +27,12 @@ class SettlementFailsDailyData3(base_types._BaseFieldType):
 
 	@RptgDt.setter
 	def RptgDt(self, value):
-		self._RptgDt = value if type(value) != base_types.auto else self.make_default("RptgDt")
+		self._RptgDt = value if value is not None else base_types.UninitialisedField(self, 'RptgDt', ISODate, False)
 
 	@RptgDt.deleter
 	def RptgDt(self):
 		del self._RptgDt
-		self._RptgDt = None
+		self._RptgDt = base_types.UninitialisedField(self, 'RptgDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DalyRcrd', type=SettlementFailsDailyInstrument3, min=1, max=1, mutex_group=None, array=False),

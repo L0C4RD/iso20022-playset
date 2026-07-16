@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Address2 import Address2
-from ._ContactPersonal1 import ContactPersonal1
-from ._ISOCountrySubDivisionCode import ISOCountrySubDivisionCode
-from ._ISODate import ISODate
-from ._ISOMax3ACountryCode import ISOMax3ACountryCode
-from ._LegalStructure1Code import LegalStructure1Code
-from ._Max16Text import Max16Text
-from ._Max2NumericText import Max2NumericText
-from ._Max70Text import Max70Text
-from ._PresentationMedium2Code import PresentationMedium2Code
-from ._TravelDocument2 import TravelDocument2
+from . import Address2
+from . import ContactPersonal1
+from . import ISOCountrySubDivisionCode
+from . import ISODate
+from . import ISOMax3ACountryCode
+from . import LegalStructure1Code
+from . import Max16Text
+from . import Max2NumericText
+from . import Max70Text
+from . import PresentationMedium2Code
+from . import TravelDocument2
 
 class DriverInParty3(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class DriverInParty3(base_types._BaseFieldType):
 
 	@Adr.setter
 	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+		self._Adr = value if value is not None else base_types.UninitialisedField(self, 'Adr', Address2, False)
 
 	@Adr.deleter
 	def Adr(self):
 		del self._Adr
-		self._Adr = None
+		self._Adr = base_types.UninitialisedField(self, 'Adr', Address2, False)
 
 	@property
 	def Age(self):
@@ -36,12 +36,12 @@ class DriverInParty3(base_types._BaseFieldType):
 
 	@Age.setter
 	def Age(self, value):
-		self._Age = value if type(value) != base_types.auto else self.make_default("Age")
+		self._Age = value if value is not None else base_types.UninitialisedField(self, 'Age', Max2NumericText, False)
 
 	@Age.deleter
 	def Age(self):
 		del self._Age
-		self._Age = None
+		self._Age = base_types.UninitialisedField(self, 'Age', Max2NumericText, False)
 
 	@property
 	def Ctct(self):
@@ -49,12 +49,12 @@ class DriverInParty3(base_types._BaseFieldType):
 
 	@Ctct.setter
 	def Ctct(self, value):
-		self._Ctct = value if type(value) != base_types.auto else self.make_default("Ctct")
+		self._Ctct = value if value is not None else base_types.UninitialisedField(self, 'Ctct', ContactPersonal1, False)
 
 	@Ctct.deleter
 	def Ctct(self):
 		del self._Ctct
-		self._Ctct = None
+		self._Ctct = base_types.UninitialisedField(self, 'Ctct', ContactPersonal1, False)
 
 	@property
 	def DrvrCrdntl(self):
@@ -62,12 +62,12 @@ class DriverInParty3(base_types._BaseFieldType):
 
 	@DrvrCrdntl.setter
 	def DrvrCrdntl(self, value):
-		self._DrvrCrdntl = value if type(value) != base_types.auto else self.make_default("DrvrCrdntl")
+		self._DrvrCrdntl = value if value is not None else base_types.UninitialisedField(self, 'DrvrCrdntl', TravelDocument2, True)
 
 	@DrvrCrdntl.deleter
 	def DrvrCrdntl(self):
 		del self._DrvrCrdntl
-		self._DrvrCrdntl = None
+		self._DrvrCrdntl = base_types.UninitialisedField(self, 'DrvrCrdntl', TravelDocument2, True)
 
 	@property
 	def DtOfBirth(self):
@@ -75,12 +75,12 @@ class DriverInParty3(base_types._BaseFieldType):
 
 	@DtOfBirth.setter
 	def DtOfBirth(self, value):
-		self._DtOfBirth = value if type(value) != base_types.auto else self.make_default("DtOfBirth")
+		self._DtOfBirth = value if value is not None else base_types.UninitialisedField(self, 'DtOfBirth', ISODate, False)
 
 	@DtOfBirth.deleter
 	def DtOfBirth(self):
 		del self._DtOfBirth
-		self._DtOfBirth = None
+		self._DtOfBirth = base_types.UninitialisedField(self, 'DtOfBirth', ISODate, False)
 
 	@property
 	def LicAssgnr(self):
@@ -88,12 +88,12 @@ class DriverInParty3(base_types._BaseFieldType):
 
 	@LicAssgnr.setter
 	def LicAssgnr(self, value):
-		self._LicAssgnr = value if type(value) != base_types.auto else self.make_default("LicAssgnr")
+		self._LicAssgnr = value if value is not None else base_types.UninitialisedField(self, 'LicAssgnr', LegalStructure1Code, False)
 
 	@LicAssgnr.deleter
 	def LicAssgnr(self):
 		del self._LicAssgnr
-		self._LicAssgnr = None
+		self._LicAssgnr = base_types.UninitialisedField(self, 'LicAssgnr', LegalStructure1Code, False)
 
 	@property
 	def LicCtry(self):
@@ -101,12 +101,12 @@ class DriverInParty3(base_types._BaseFieldType):
 
 	@LicCtry.setter
 	def LicCtry(self, value):
-		self._LicCtry = value if type(value) != base_types.auto else self.make_default("LicCtry")
+		self._LicCtry = value if value is not None else base_types.UninitialisedField(self, 'LicCtry', ISOMax3ACountryCode, False)
 
 	@LicCtry.deleter
 	def LicCtry(self):
 		del self._LicCtry
-		self._LicCtry = None
+		self._LicCtry = base_types.UninitialisedField(self, 'LicCtry', ISOMax3ACountryCode, False)
 
 	@property
 	def LicCtrySubDvsnMjr(self):
@@ -114,12 +114,12 @@ class DriverInParty3(base_types._BaseFieldType):
 
 	@LicCtrySubDvsnMjr.setter
 	def LicCtrySubDvsnMjr(self, value):
-		self._LicCtrySubDvsnMjr = value if type(value) != base_types.auto else self.make_default("LicCtrySubDvsnMjr")
+		self._LicCtrySubDvsnMjr = value if value is not None else base_types.UninitialisedField(self, 'LicCtrySubDvsnMjr', ISOCountrySubDivisionCode, False)
 
 	@LicCtrySubDvsnMjr.deleter
 	def LicCtrySubDvsnMjr(self):
 		del self._LicCtrySubDvsnMjr
-		self._LicCtrySubDvsnMjr = None
+		self._LicCtrySubDvsnMjr = base_types.UninitialisedField(self, 'LicCtrySubDvsnMjr', ISOCountrySubDivisionCode, False)
 
 	@property
 	def LicCtrySubDvsnMnr(self):
@@ -127,12 +127,12 @@ class DriverInParty3(base_types._BaseFieldType):
 
 	@LicCtrySubDvsnMnr.setter
 	def LicCtrySubDvsnMnr(self, value):
-		self._LicCtrySubDvsnMnr = value if type(value) != base_types.auto else self.make_default("LicCtrySubDvsnMnr")
+		self._LicCtrySubDvsnMnr = value if value is not None else base_types.UninitialisedField(self, 'LicCtrySubDvsnMnr', ISOCountrySubDivisionCode, False)
 
 	@LicCtrySubDvsnMnr.deleter
 	def LicCtrySubDvsnMnr(self):
 		del self._LicCtrySubDvsnMnr
-		self._LicCtrySubDvsnMnr = None
+		self._LicCtrySubDvsnMnr = base_types.UninitialisedField(self, 'LicCtrySubDvsnMnr', ISOCountrySubDivisionCode, False)
 
 	@property
 	def LicForm(self):
@@ -140,12 +140,12 @@ class DriverInParty3(base_types._BaseFieldType):
 
 	@LicForm.setter
 	def LicForm(self, value):
-		self._LicForm = value if type(value) != base_types.auto else self.make_default("LicForm")
+		self._LicForm = value if value is not None else base_types.UninitialisedField(self, 'LicForm', PresentationMedium2Code, False)
 
 	@LicForm.deleter
 	def LicForm(self):
 		del self._LicForm
-		self._LicForm = None
+		self._LicForm = base_types.UninitialisedField(self, 'LicForm', PresentationMedium2Code, False)
 
 	@property
 	def LicId(self):
@@ -153,12 +153,12 @@ class DriverInParty3(base_types._BaseFieldType):
 
 	@LicId.setter
 	def LicId(self, value):
-		self._LicId = value if type(value) != base_types.auto else self.make_default("LicId")
+		self._LicId = value if value is not None else base_types.UninitialisedField(self, 'LicId', Max70Text, False)
 
 	@LicId.deleter
 	def LicId(self):
 		del self._LicId
-		self._LicId = None
+		self._LicId = base_types.UninitialisedField(self, 'LicId', Max70Text, False)
 
 	@property
 	def LicIssncDt(self):
@@ -166,12 +166,12 @@ class DriverInParty3(base_types._BaseFieldType):
 
 	@LicIssncDt.setter
 	def LicIssncDt(self, value):
-		self._LicIssncDt = value if type(value) != base_types.auto else self.make_default("LicIssncDt")
+		self._LicIssncDt = value if value is not None else base_types.UninitialisedField(self, 'LicIssncDt', ISODate, False)
 
 	@LicIssncDt.deleter
 	def LicIssncDt(self):
 		del self._LicIssncDt
-		self._LicIssncDt = None
+		self._LicIssncDt = base_types.UninitialisedField(self, 'LicIssncDt', ISODate, False)
 
 	@property
 	def LicOthrAuthrty(self):
@@ -179,12 +179,12 @@ class DriverInParty3(base_types._BaseFieldType):
 
 	@LicOthrAuthrty.setter
 	def LicOthrAuthrty(self, value):
-		self._LicOthrAuthrty = value if type(value) != base_types.auto else self.make_default("LicOthrAuthrty")
+		self._LicOthrAuthrty = value if value is not None else base_types.UninitialisedField(self, 'LicOthrAuthrty', Max16Text, False)
 
 	@LicOthrAuthrty.deleter
 	def LicOthrAuthrty(self):
 		del self._LicOthrAuthrty
-		self._LicOthrAuthrty = None
+		self._LicOthrAuthrty = base_types.UninitialisedField(self, 'LicOthrAuthrty', Max16Text, False)
 
 	@property
 	def LicTp(self):
@@ -192,12 +192,12 @@ class DriverInParty3(base_types._BaseFieldType):
 
 	@LicTp.setter
 	def LicTp(self, value):
-		self._LicTp = value if type(value) != base_types.auto else self.make_default("LicTp")
+		self._LicTp = value if value is not None else base_types.UninitialisedField(self, 'LicTp', Max70Text, False)
 
 	@LicTp.deleter
 	def LicTp(self):
 		del self._LicTp
-		self._LicTp = None
+		self._LicTp = base_types.UninitialisedField(self, 'LicTp', Max70Text, False)
 
 	@property
 	def LicXprtnDt(self):
@@ -205,12 +205,12 @@ class DriverInParty3(base_types._BaseFieldType):
 
 	@LicXprtnDt.setter
 	def LicXprtnDt(self, value):
-		self._LicXprtnDt = value if type(value) != base_types.auto else self.make_default("LicXprtnDt")
+		self._LicXprtnDt = value if value is not None else base_types.UninitialisedField(self, 'LicXprtnDt', ISODate, False)
 
 	@LicXprtnDt.deleter
 	def LicXprtnDt(self):
 		del self._LicXprtnDt
-		self._LicXprtnDt = None
+		self._LicXprtnDt = base_types.UninitialisedField(self, 'LicXprtnDt', ISODate, False)
 
 	@property
 	def Nm(self):
@@ -218,12 +218,12 @@ class DriverInParty3(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max70Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max70Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Adr', type=Address2, min=0, max=1, mutex_group=None, array=False),

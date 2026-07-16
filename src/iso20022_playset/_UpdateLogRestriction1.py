@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Restriction1 import Restriction1
+from . import Restriction1
 
 class UpdateLogRestriction1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class UpdateLogRestriction1(base_types._BaseFieldType):
 
 	@New.setter
 	def New(self, value):
-		self._New = value if type(value) != base_types.auto else self.make_default("New")
+		self._New = value if value is not None else base_types.UninitialisedField(self, 'New', Restriction1, False)
 
 	@New.deleter
 	def New(self):
 		del self._New
-		self._New = None
+		self._New = base_types.UninitialisedField(self, 'New', Restriction1, False)
 
 	@property
 	def Od(self):
@@ -26,12 +26,12 @@ class UpdateLogRestriction1(base_types._BaseFieldType):
 
 	@Od.setter
 	def Od(self, value):
-		self._Od = value if type(value) != base_types.auto else self.make_default("Od")
+		self._Od = value if value is not None else base_types.UninitialisedField(self, 'Od', Restriction1, False)
 
 	@Od.deleter
 	def Od(self):
 		del self._Od
-		self._Od = None
+		self._Od = base_types.UninitialisedField(self, 'Od', Restriction1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='New', type=Restriction1, min=1, max=1, mutex_group=None, array=False),

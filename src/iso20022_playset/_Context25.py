@@ -2,18 +2,18 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._CardDataReading11Code import CardDataReading11Code
-from ._ISO18245MerchantCategoryCode import ISO18245MerchantCategoryCode
-from ._ISO8583POSConditionCode import ISO8583POSConditionCode
-from ._ISODate import ISODate
-from ._MOTO2Code import MOTO2Code
-from ._Max35NumericText import Max35NumericText
-from ._Max35Text import Max35Text
-from ._QRCodePresentmentMode2Code import QRCodePresentmentMode2Code
-from ._SecurityCharacteristics2Code import SecurityCharacteristics2Code
-from ._TransactionInitiator1Code import TransactionInitiator1Code
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ATICALaxProcessing
+from . import CardDataReading11Code
+from . import ISO18245MerchantCategoryCode
+from . import ISO8583POSConditionCode
+from . import ISODate
+from . import MOTO2Code
+from . import Max35NumericText
+from . import Max35Text
+from . import QRCodePresentmentMode2Code
+from . import SecurityCharacteristics2Code
+from . import TransactionInitiator1Code
+from . import TrueFalseIndicator
 
 class Context25(base_types._BaseFieldType):
 
@@ -24,12 +24,12 @@ class Context25(base_types._BaseFieldType):
 
 	@Attndd.setter
 	def Attndd(self, value):
-		self._Attndd = value if type(value) != base_types.auto else self.make_default("Attndd")
+		self._Attndd = value if value is not None else base_types.UninitialisedField(self, 'Attndd', TrueFalseIndicator, False)
 
 	@Attndd.deleter
 	def Attndd(self):
 		del self._Attndd
-		self._Attndd = None
+		self._Attndd = base_types.UninitialisedField(self, 'Attndd', TrueFalseIndicator, False)
 
 	@property
 	def AuthntcnOutg(self):
@@ -37,12 +37,12 @@ class Context25(base_types._BaseFieldType):
 
 	@AuthntcnOutg.setter
 	def AuthntcnOutg(self, value):
-		self._AuthntcnOutg = value if type(value) != base_types.auto else self.make_default("AuthntcnOutg")
+		self._AuthntcnOutg = value if value is not None else base_types.UninitialisedField(self, 'AuthntcnOutg', TrueFalseIndicator, False)
 
 	@AuthntcnOutg.deleter
 	def AuthntcnOutg(self):
 		del self._AuthntcnOutg
-		self._AuthntcnOutg = None
+		self._AuthntcnOutg = base_types.UninitialisedField(self, 'AuthntcnOutg', TrueFalseIndicator, False)
 
 	@property
 	def CaptrDt(self):
@@ -50,12 +50,12 @@ class Context25(base_types._BaseFieldType):
 
 	@CaptrDt.setter
 	def CaptrDt(self, value):
-		self._CaptrDt = value if type(value) != base_types.auto else self.make_default("CaptrDt")
+		self._CaptrDt = value if value is not None else base_types.UninitialisedField(self, 'CaptrDt', ISODate, False)
 
 	@CaptrDt.deleter
 	def CaptrDt(self):
 		del self._CaptrDt
-		self._CaptrDt = None
+		self._CaptrDt = base_types.UninitialisedField(self, 'CaptrDt', ISODate, False)
 
 	@property
 	def CardDataNtryMd(self):
@@ -63,12 +63,12 @@ class Context25(base_types._BaseFieldType):
 
 	@CardDataNtryMd.setter
 	def CardDataNtryMd(self, value):
-		self._CardDataNtryMd = value if type(value) != base_types.auto else self.make_default("CardDataNtryMd")
+		self._CardDataNtryMd = value if value is not None else base_types.UninitialisedField(self, 'CardDataNtryMd', CardDataReading11Code, False)
 
 	@CardDataNtryMd.deleter
 	def CardDataNtryMd(self):
 		del self._CardDataNtryMd
-		self._CardDataNtryMd = None
+		self._CardDataNtryMd = base_types.UninitialisedField(self, 'CardDataNtryMd', CardDataReading11Code, False)
 
 	@property
 	def CardPres(self):
@@ -76,12 +76,12 @@ class Context25(base_types._BaseFieldType):
 
 	@CardPres.setter
 	def CardPres(self, value):
-		self._CardPres = value if type(value) != base_types.auto else self.make_default("CardPres")
+		self._CardPres = value if value is not None else base_types.UninitialisedField(self, 'CardPres', TrueFalseIndicator, False)
 
 	@CardPres.deleter
 	def CardPres(self):
 		del self._CardPres
-		self._CardPres = None
+		self._CardPres = base_types.UninitialisedField(self, 'CardPres', TrueFalseIndicator, False)
 
 	@property
 	def CrdhldrActvtd(self):
@@ -89,12 +89,12 @@ class Context25(base_types._BaseFieldType):
 
 	@CrdhldrActvtd.setter
 	def CrdhldrActvtd(self, value):
-		self._CrdhldrActvtd = value if type(value) != base_types.auto else self.make_default("CrdhldrActvtd")
+		self._CrdhldrActvtd = value if value is not None else base_types.UninitialisedField(self, 'CrdhldrActvtd', TrueFalseIndicator, False)
 
 	@CrdhldrActvtd.deleter
 	def CrdhldrActvtd(self):
 		del self._CrdhldrActvtd
-		self._CrdhldrActvtd = None
+		self._CrdhldrActvtd = base_types.UninitialisedField(self, 'CrdhldrActvtd', TrueFalseIndicator, False)
 
 	@property
 	def CrdhldrPres(self):
@@ -102,12 +102,12 @@ class Context25(base_types._BaseFieldType):
 
 	@CrdhldrPres.setter
 	def CrdhldrPres(self, value):
-		self._CrdhldrPres = value if type(value) != base_types.auto else self.make_default("CrdhldrPres")
+		self._CrdhldrPres = value if value is not None else base_types.UninitialisedField(self, 'CrdhldrPres', TrueFalseIndicator, False)
 
 	@CrdhldrPres.deleter
 	def CrdhldrPres(self):
 		del self._CrdhldrPres
-		self._CrdhldrPres = None
+		self._CrdhldrPres = base_types.UninitialisedField(self, 'CrdhldrPres', TrueFalseIndicator, False)
 
 	@property
 	def DelydAuthstn(self):
@@ -115,12 +115,12 @@ class Context25(base_types._BaseFieldType):
 
 	@DelydAuthstn.setter
 	def DelydAuthstn(self, value):
-		self._DelydAuthstn = value if type(value) != base_types.auto else self.make_default("DelydAuthstn")
+		self._DelydAuthstn = value if value is not None else base_types.UninitialisedField(self, 'DelydAuthstn', TrueFalseIndicator, False)
 
 	@DelydAuthstn.deleter
 	def DelydAuthstn(self):
 		del self._DelydAuthstn
-		self._DelydAuthstn = None
+		self._DelydAuthstn = base_types.UninitialisedField(self, 'DelydAuthstn', TrueFalseIndicator, False)
 
 	@property
 	def DelydChrgs(self):
@@ -128,12 +128,12 @@ class Context25(base_types._BaseFieldType):
 
 	@DelydChrgs.setter
 	def DelydChrgs(self, value):
-		self._DelydChrgs = value if type(value) != base_types.auto else self.make_default("DelydChrgs")
+		self._DelydChrgs = value if value is not None else base_types.UninitialisedField(self, 'DelydChrgs', TrueFalseIndicator, False)
 
 	@DelydChrgs.deleter
 	def DelydChrgs(self):
 		del self._DelydChrgs
-		self._DelydChrgs = None
+		self._DelydChrgs = base_types.UninitialisedField(self, 'DelydChrgs', TrueFalseIndicator, False)
 
 	@property
 	def DfrrdDlvry(self):
@@ -141,12 +141,12 @@ class Context25(base_types._BaseFieldType):
 
 	@DfrrdDlvry.setter
 	def DfrrdDlvry(self, value):
-		self._DfrrdDlvry = value if type(value) != base_types.auto else self.make_default("DfrrdDlvry")
+		self._DfrrdDlvry = value if value is not None else base_types.UninitialisedField(self, 'DfrrdDlvry', TrueFalseIndicator, False)
 
 	@DfrrdDlvry.deleter
 	def DfrrdDlvry(self):
 		del self._DfrrdDlvry
-		self._DfrrdDlvry = None
+		self._DfrrdDlvry = base_types.UninitialisedField(self, 'DfrrdDlvry', TrueFalseIndicator, False)
 
 	@property
 	def DtAntcptd(self):
@@ -154,12 +154,12 @@ class Context25(base_types._BaseFieldType):
 
 	@DtAntcptd.setter
 	def DtAntcptd(self, value):
-		self._DtAntcptd = value if type(value) != base_types.auto else self.make_default("DtAntcptd")
+		self._DtAntcptd = value if value is not None else base_types.UninitialisedField(self, 'DtAntcptd', ISODate, False)
 
 	@DtAntcptd.deleter
 	def DtAntcptd(self):
 		del self._DtAntcptd
-		self._DtAntcptd = None
+		self._DtAntcptd = base_types.UninitialisedField(self, 'DtAntcptd', ISODate, False)
 
 	@property
 	def EComrc(self):
@@ -167,12 +167,12 @@ class Context25(base_types._BaseFieldType):
 
 	@EComrc.setter
 	def EComrc(self, value):
-		self._EComrc = value if type(value) != base_types.auto else self.make_default("EComrc")
+		self._EComrc = value if value is not None else base_types.UninitialisedField(self, 'EComrc', TrueFalseIndicator, False)
 
 	@EComrc.deleter
 	def EComrc(self):
 		del self._EComrc
-		self._EComrc = None
+		self._EComrc = base_types.UninitialisedField(self, 'EComrc', TrueFalseIndicator, False)
 
 	@property
 	def EComrcData(self):
@@ -180,12 +180,12 @@ class Context25(base_types._BaseFieldType):
 
 	@EComrcData.setter
 	def EComrcData(self, value):
-		self._EComrcData = value if type(value) != base_types.auto else self.make_default("EComrcData")
+		self._EComrcData = value if value is not None else base_types.UninitialisedField(self, 'EComrcData', ATICALaxProcessing, False)
 
 	@EComrcData.deleter
 	def EComrcData(self):
 		del self._EComrcData
-		self._EComrcData = None
+		self._EComrcData = base_types.UninitialisedField(self, 'EComrcData', ATICALaxProcessing, False)
 
 	@property
 	def EComrcIndApld(self):
@@ -193,12 +193,12 @@ class Context25(base_types._BaseFieldType):
 
 	@EComrcIndApld.setter
 	def EComrcIndApld(self, value):
-		self._EComrcIndApld = value if type(value) != base_types.auto else self.make_default("EComrcIndApld")
+		self._EComrcIndApld = value if value is not None else base_types.UninitialisedField(self, 'EComrcIndApld', Max35Text, False)
 
 	@EComrcIndApld.deleter
 	def EComrcIndApld(self):
 		del self._EComrcIndApld
-		self._EComrcIndApld = None
+		self._EComrcIndApld = base_types.UninitialisedField(self, 'EComrcIndApld', Max35Text, False)
 
 	@property
 	def ICCFllbck(self):
@@ -206,12 +206,12 @@ class Context25(base_types._BaseFieldType):
 
 	@ICCFllbck.setter
 	def ICCFllbck(self, value):
-		self._ICCFllbck = value if type(value) != base_types.auto else self.make_default("ICCFllbck")
+		self._ICCFllbck = value if value is not None else base_types.UninitialisedField(self, 'ICCFllbck', TrueFalseIndicator, False)
 
 	@ICCFllbck.deleter
 	def ICCFllbck(self):
 		del self._ICCFllbck
-		self._ICCFllbck = None
+		self._ICCFllbck = base_types.UninitialisedField(self, 'ICCFllbck', TrueFalseIndicator, False)
 
 	@property
 	def LatePresntmnt(self):
@@ -219,12 +219,12 @@ class Context25(base_types._BaseFieldType):
 
 	@LatePresntmnt.setter
 	def LatePresntmnt(self, value):
-		self._LatePresntmnt = value if type(value) != base_types.auto else self.make_default("LatePresntmnt")
+		self._LatePresntmnt = value if value is not None else base_types.UninitialisedField(self, 'LatePresntmnt', TrueFalseIndicator, False)
 
 	@LatePresntmnt.deleter
 	def LatePresntmnt(self):
 		del self._LatePresntmnt
-		self._LatePresntmnt = None
+		self._LatePresntmnt = base_types.UninitialisedField(self, 'LatePresntmnt', TrueFalseIndicator, False)
 
 	@property
 	def MOTOCd(self):
@@ -232,12 +232,12 @@ class Context25(base_types._BaseFieldType):
 
 	@MOTOCd.setter
 	def MOTOCd(self, value):
-		self._MOTOCd = value if type(value) != base_types.auto else self.make_default("MOTOCd")
+		self._MOTOCd = value if value is not None else base_types.UninitialisedField(self, 'MOTOCd', MOTO2Code, False)
 
 	@MOTOCd.deleter
 	def MOTOCd(self):
 		del self._MOTOCd
-		self._MOTOCd = None
+		self._MOTOCd = base_types.UninitialisedField(self, 'MOTOCd', MOTO2Code, False)
 
 	@property
 	def MrchntCtgyCd(self):
@@ -245,12 +245,12 @@ class Context25(base_types._BaseFieldType):
 
 	@MrchntCtgyCd.setter
 	def MrchntCtgyCd(self, value):
-		self._MrchntCtgyCd = value if type(value) != base_types.auto else self.make_default("MrchntCtgyCd")
+		self._MrchntCtgyCd = value if value is not None else base_types.UninitialisedField(self, 'MrchntCtgyCd', ISO18245MerchantCategoryCode, False)
 
 	@MrchntCtgyCd.deleter
 	def MrchntCtgyCd(self):
 		del self._MrchntCtgyCd
-		self._MrchntCtgyCd = None
+		self._MrchntCtgyCd = base_types.UninitialisedField(self, 'MrchntCtgyCd', ISO18245MerchantCategoryCode, False)
 
 	@property
 	def MrchntCtgySpcfcData(self):
@@ -258,12 +258,12 @@ class Context25(base_types._BaseFieldType):
 
 	@MrchntCtgySpcfcData.setter
 	def MrchntCtgySpcfcData(self, value):
-		self._MrchntCtgySpcfcData = value if type(value) != base_types.auto else self.make_default("MrchntCtgySpcfcData")
+		self._MrchntCtgySpcfcData = value if value is not None else base_types.UninitialisedField(self, 'MrchntCtgySpcfcData', Max35Text, False)
 
 	@MrchntCtgySpcfcData.deleter
 	def MrchntCtgySpcfcData(self):
 		del self._MrchntCtgySpcfcData
-		self._MrchntCtgySpcfcData = None
+		self._MrchntCtgySpcfcData = base_types.UninitialisedField(self, 'MrchntCtgySpcfcData', Max35Text, False)
 
 	@property
 	def NoShow(self):
@@ -271,12 +271,12 @@ class Context25(base_types._BaseFieldType):
 
 	@NoShow.setter
 	def NoShow(self, value):
-		self._NoShow = value if type(value) != base_types.auto else self.make_default("NoShow")
+		self._NoShow = value if value is not None else base_types.UninitialisedField(self, 'NoShow', TrueFalseIndicator, False)
 
 	@NoShow.deleter
 	def NoShow(self):
 		del self._NoShow
-		self._NoShow = None
+		self._NoShow = base_types.UninitialisedField(self, 'NoShow', TrueFalseIndicator, False)
 
 	@property
 	def NtlData(self):
@@ -284,12 +284,12 @@ class Context25(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def OthrCardDataNtryMd(self):
@@ -297,12 +297,12 @@ class Context25(base_types._BaseFieldType):
 
 	@OthrCardDataNtryMd.setter
 	def OthrCardDataNtryMd(self, value):
-		self._OthrCardDataNtryMd = value if type(value) != base_types.auto else self.make_default("OthrCardDataNtryMd")
+		self._OthrCardDataNtryMd = value if value is not None else base_types.UninitialisedField(self, 'OthrCardDataNtryMd', Max35Text, False)
 
 	@OthrCardDataNtryMd.deleter
 	def OthrCardDataNtryMd(self):
 		del self._OthrCardDataNtryMd
-		self._OthrCardDataNtryMd = None
+		self._OthrCardDataNtryMd = base_types.UninitialisedField(self, 'OthrCardDataNtryMd', Max35Text, False)
 
 	@property
 	def OthrMrchntCtgy(self):
@@ -310,12 +310,12 @@ class Context25(base_types._BaseFieldType):
 
 	@OthrMrchntCtgy.setter
 	def OthrMrchntCtgy(self, value):
-		self._OthrMrchntCtgy = value if type(value) != base_types.auto else self.make_default("OthrMrchntCtgy")
+		self._OthrMrchntCtgy = value if value is not None else base_types.UninitialisedField(self, 'OthrMrchntCtgy', Max35Text, False)
 
 	@OthrMrchntCtgy.deleter
 	def OthrMrchntCtgy(self):
 		del self._OthrMrchntCtgy
-		self._OthrMrchntCtgy = None
+		self._OthrMrchntCtgy = base_types.UninitialisedField(self, 'OthrMrchntCtgy', Max35Text, False)
 
 	@property
 	def POSCondCd(self):
@@ -323,12 +323,12 @@ class Context25(base_types._BaseFieldType):
 
 	@POSCondCd.setter
 	def POSCondCd(self, value):
-		self._POSCondCd = value if type(value) != base_types.auto else self.make_default("POSCondCd")
+		self._POSCondCd = value if value is not None else base_types.UninitialisedField(self, 'POSCondCd', ISO8583POSConditionCode, False)
 
 	@POSCondCd.deleter
 	def POSCondCd(self):
 		del self._POSCondCd
-		self._POSCondCd = None
+		self._POSCondCd = base_types.UninitialisedField(self, 'POSCondCd', ISO8583POSConditionCode, False)
 
 	@property
 	def PmtCrdntlMrchntRltsh(self):
@@ -336,12 +336,12 @@ class Context25(base_types._BaseFieldType):
 
 	@PmtCrdntlMrchntRltsh.setter
 	def PmtCrdntlMrchntRltsh(self, value):
-		self._PmtCrdntlMrchntRltsh = value if type(value) != base_types.auto else self.make_default("PmtCrdntlMrchntRltsh")
+		self._PmtCrdntlMrchntRltsh = value if value is not None else base_types.UninitialisedField(self, 'PmtCrdntlMrchntRltsh', TrueFalseIndicator, False)
 
 	@PmtCrdntlMrchntRltsh.deleter
 	def PmtCrdntlMrchntRltsh(self):
 		del self._PmtCrdntlMrchntRltsh
-		self._PmtCrdntlMrchntRltsh = None
+		self._PmtCrdntlMrchntRltsh = base_types.UninitialisedField(self, 'PmtCrdntlMrchntRltsh', TrueFalseIndicator, False)
 
 	@property
 	def PrtlApprvlSpprtd(self):
@@ -349,12 +349,12 @@ class Context25(base_types._BaseFieldType):
 
 	@PrtlApprvlSpprtd.setter
 	def PrtlApprvlSpprtd(self, value):
-		self._PrtlApprvlSpprtd = value if type(value) != base_types.auto else self.make_default("PrtlApprvlSpprtd")
+		self._PrtlApprvlSpprtd = value if value is not None else base_types.UninitialisedField(self, 'PrtlApprvlSpprtd', TrueFalseIndicator, False)
 
 	@PrtlApprvlSpprtd.deleter
 	def PrtlApprvlSpprtd(self):
 		del self._PrtlApprvlSpprtd
-		self._PrtlApprvlSpprtd = None
+		self._PrtlApprvlSpprtd = base_types.UninitialisedField(self, 'PrtlApprvlSpprtd', TrueFalseIndicator, False)
 
 	@property
 	def PrtlShipmnt(self):
@@ -362,12 +362,12 @@ class Context25(base_types._BaseFieldType):
 
 	@PrtlShipmnt.setter
 	def PrtlShipmnt(self, value):
-		self._PrtlShipmnt = value if type(value) != base_types.auto else self.make_default("PrtlShipmnt")
+		self._PrtlShipmnt = value if value is not None else base_types.UninitialisedField(self, 'PrtlShipmnt', TrueFalseIndicator, False)
 
 	@PrtlShipmnt.deleter
 	def PrtlShipmnt(self):
 		del self._PrtlShipmnt
-		self._PrtlShipmnt = None
+		self._PrtlShipmnt = base_types.UninitialisedField(self, 'PrtlShipmnt', TrueFalseIndicator, False)
 
 	@property
 	def PrvtData(self):
@@ -375,12 +375,12 @@ class Context25(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def QRCdPresntmntMd(self):
@@ -388,12 +388,12 @@ class Context25(base_types._BaseFieldType):
 
 	@QRCdPresntmntMd.setter
 	def QRCdPresntmntMd(self, value):
-		self._QRCdPresntmntMd = value if type(value) != base_types.auto else self.make_default("QRCdPresntmntMd")
+		self._QRCdPresntmntMd = value if value is not None else base_types.UninitialisedField(self, 'QRCdPresntmntMd', QRCodePresentmentMode2Code, False)
 
 	@QRCdPresntmntMd.deleter
 	def QRCdPresntmntMd(self):
 		del self._QRCdPresntmntMd
-		self._QRCdPresntmntMd = None
+		self._QRCdPresntmntMd = base_types.UninitialisedField(self, 'QRCdPresntmntMd', QRCodePresentmentMode2Code, False)
 
 	@property
 	def ReSubmissn(self):
@@ -401,12 +401,12 @@ class Context25(base_types._BaseFieldType):
 
 	@ReSubmissn.setter
 	def ReSubmissn(self, value):
-		self._ReSubmissn = value if type(value) != base_types.auto else self.make_default("ReSubmissn")
+		self._ReSubmissn = value if value is not None else base_types.UninitialisedField(self, 'ReSubmissn', TrueFalseIndicator, False)
 
 	@ReSubmissn.deleter
 	def ReSubmissn(self):
 		del self._ReSubmissn
-		self._ReSubmissn = None
+		self._ReSubmissn = base_types.UninitialisedField(self, 'ReSubmissn', TrueFalseIndicator, False)
 
 	@property
 	def Reauthstn(self):
@@ -414,12 +414,12 @@ class Context25(base_types._BaseFieldType):
 
 	@Reauthstn.setter
 	def Reauthstn(self, value):
-		self._Reauthstn = value if type(value) != base_types.auto else self.make_default("Reauthstn")
+		self._Reauthstn = value if value is not None else base_types.UninitialisedField(self, 'Reauthstn', TrueFalseIndicator, False)
 
 	@Reauthstn.deleter
 	def Reauthstn(self):
 		del self._Reauthstn
-		self._Reauthstn = None
+		self._Reauthstn = base_types.UninitialisedField(self, 'Reauthstn', TrueFalseIndicator, False)
 
 	@property
 	def SctyChrtcs(self):
@@ -427,12 +427,12 @@ class Context25(base_types._BaseFieldType):
 
 	@SctyChrtcs.setter
 	def SctyChrtcs(self, value):
-		self._SctyChrtcs = value if type(value) != base_types.auto else self.make_default("SctyChrtcs")
+		self._SctyChrtcs = value if value is not None else base_types.UninitialisedField(self, 'SctyChrtcs', SecurityCharacteristics2Code, True)
 
 	@SctyChrtcs.deleter
 	def SctyChrtcs(self):
 		del self._SctyChrtcs
-		self._SctyChrtcs = None
+		self._SctyChrtcs = base_types.UninitialisedField(self, 'SctyChrtcs', SecurityCharacteristics2Code, True)
 
 	@property
 	def SpltPmt(self):
@@ -440,12 +440,12 @@ class Context25(base_types._BaseFieldType):
 
 	@SpltPmt.setter
 	def SpltPmt(self, value):
-		self._SpltPmt = value if type(value) != base_types.auto else self.make_default("SpltPmt")
+		self._SpltPmt = value if value is not None else base_types.UninitialisedField(self, 'SpltPmt', TrueFalseIndicator, False)
 
 	@SpltPmt.deleter
 	def SpltPmt(self):
 		del self._SpltPmt
-		self._SpltPmt = None
+		self._SpltPmt = base_types.UninitialisedField(self, 'SpltPmt', TrueFalseIndicator, False)
 
 	@property
 	def StorgLctn(self):
@@ -453,12 +453,12 @@ class Context25(base_types._BaseFieldType):
 
 	@StorgLctn.setter
 	def StorgLctn(self, value):
-		self._StorgLctn = value if type(value) != base_types.auto else self.make_default("StorgLctn")
+		self._StorgLctn = value if value is not None else base_types.UninitialisedField(self, 'StorgLctn', Max35Text, False)
 
 	@StorgLctn.deleter
 	def StorgLctn(self):
 		del self._StorgLctn
-		self._StorgLctn = None
+		self._StorgLctn = base_types.UninitialisedField(self, 'StorgLctn', Max35Text, False)
 
 	@property
 	def TrnspndrInittd(self):
@@ -466,12 +466,12 @@ class Context25(base_types._BaseFieldType):
 
 	@TrnspndrInittd.setter
 	def TrnspndrInittd(self, value):
-		self._TrnspndrInittd = value if type(value) != base_types.auto else self.make_default("TrnspndrInittd")
+		self._TrnspndrInittd = value if value is not None else base_types.UninitialisedField(self, 'TrnspndrInittd', TrueFalseIndicator, False)
 
 	@TrnspndrInittd.deleter
 	def TrnspndrInittd(self):
 		del self._TrnspndrInittd
-		self._TrnspndrInittd = None
+		self._TrnspndrInittd = base_types.UninitialisedField(self, 'TrnspndrInittd', TrueFalseIndicator, False)
 
 	@property
 	def Trnst(self):
@@ -479,12 +479,12 @@ class Context25(base_types._BaseFieldType):
 
 	@Trnst.setter
 	def Trnst(self, value):
-		self._Trnst = value if type(value) != base_types.auto else self.make_default("Trnst")
+		self._Trnst = value if value is not None else base_types.UninitialisedField(self, 'Trnst', TrueFalseIndicator, False)
 
 	@Trnst.deleter
 	def Trnst(self):
 		del self._Trnst
-		self._Trnst = None
+		self._Trnst = base_types.UninitialisedField(self, 'Trnst', TrueFalseIndicator, False)
 
 	@property
 	def TxInitr(self):
@@ -492,12 +492,12 @@ class Context25(base_types._BaseFieldType):
 
 	@TxInitr.setter
 	def TxInitr(self, value):
-		self._TxInitr = value if type(value) != base_types.auto else self.make_default("TxInitr")
+		self._TxInitr = value if value is not None else base_types.UninitialisedField(self, 'TxInitr', TransactionInitiator1Code, False)
 
 	@TxInitr.deleter
 	def TxInitr(self):
 		del self._TxInitr
-		self._TxInitr = None
+		self._TxInitr = base_types.UninitialisedField(self, 'TxInitr', TransactionInitiator1Code, False)
 
 	@property
 	def UattnddLvlCtgy(self):
@@ -505,12 +505,12 @@ class Context25(base_types._BaseFieldType):
 
 	@UattnddLvlCtgy.setter
 	def UattnddLvlCtgy(self, value):
-		self._UattnddLvlCtgy = value if type(value) != base_types.auto else self.make_default("UattnddLvlCtgy")
+		self._UattnddLvlCtgy = value if value is not None else base_types.UninitialisedField(self, 'UattnddLvlCtgy', Max35NumericText, False)
 
 	@UattnddLvlCtgy.deleter
 	def UattnddLvlCtgy(self):
 		del self._UattnddLvlCtgy
-		self._UattnddLvlCtgy = None
+		self._UattnddLvlCtgy = base_types.UninitialisedField(self, 'UattnddLvlCtgy', Max35NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Attndd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),

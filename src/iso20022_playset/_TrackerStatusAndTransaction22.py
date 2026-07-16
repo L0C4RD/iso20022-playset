@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._TrackerPaymentTransaction15 import TrackerPaymentTransaction15
-from ._TrackerStatus1 import TrackerStatus1
+from . import TrackerPaymentTransaction15
+from . import TrackerStatus1
 
 class TrackerStatusAndTransaction22(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TrackerStatusAndTransaction22(base_types._BaseFieldType):
 
 	@Tx.setter
 	def Tx(self, value):
-		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
+		self._Tx = value if value is not None else base_types.UninitialisedField(self, 'Tx', TrackerPaymentTransaction15, True)
 
 	@Tx.deleter
 	def Tx(self):
 		del self._Tx
-		self._Tx = None
+		self._Tx = base_types.UninitialisedField(self, 'Tx', TrackerPaymentTransaction15, True)
 
 	@property
 	def TxSts(self):
@@ -27,12 +27,12 @@ class TrackerStatusAndTransaction22(base_types._BaseFieldType):
 
 	@TxSts.setter
 	def TxSts(self, value):
-		self._TxSts = value if type(value) != base_types.auto else self.make_default("TxSts")
+		self._TxSts = value if value is not None else base_types.UninitialisedField(self, 'TxSts', TrackerStatus1, False)
 
 	@TxSts.deleter
 	def TxSts(self):
 		del self._TxSts
-		self._TxSts = None
+		self._TxSts = base_types.UninitialisedField(self, 'TxSts', TrackerStatus1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Tx', type=TrackerPaymentTransaction15, min=1, max=None, mutex_group=None, array=True),

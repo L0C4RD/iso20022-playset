@@ -2,37 +2,37 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalData2 import AdditionalData2
-from ._AdditionalFee3 import AdditionalFee3
-from ._CardData15 import CardData15
-from ._Cardholder22 import Cardholder22
-from ._ContentInformationType41 import ContentInformationType41
-from ._CorrectionIdentification1 import CorrectionIdentification1
-from ._CustomerDevice5 import CustomerDevice5
-from ._DataRecord1Choice import DataRecord1Choice
-from ._Exact12Text import Exact12Text
-from ._Exact15Text import Exact15Text
-from ._Header71 import Header71
-from ._ISO8583ResponseCode import ISO8583ResponseCode
-from ._ISODate import ISODate
-from ._ISODateTime import ISODateTime
-from ._Jurisdiction2 import Jurisdiction2
-from ._Max12NumericText import Max12NumericText
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
-from ._OutputFormat5Code import OutputFormat5Code
-from ._PartyIdentification284 import PartyIdentification284
-from ._PartyIdentification286 import PartyIdentification286
-from ._PartyIdentification287 import PartyIdentification287
-from ._PointOfInteractionComponent16 import PointOfInteractionComponent16
-from ._ProgrammeMode5 import ProgrammeMode5
-from ._ProtectedData2 import ProtectedData2
-from ._Reconciliation4 import Reconciliation4
-from ._SettlementService6 import SettlementService6
-from ._SupplementaryData1 import SupplementaryData1
-from ._Terminal7 import Terminal7
-from ._Token2 import Token2
-from ._Wallet3 import Wallet3
+from . import AdditionalData2
+from . import AdditionalFee3
+from . import CardData15
+from . import Cardholder22
+from . import ContentInformationType41
+from . import CorrectionIdentification1
+from . import CustomerDevice5
+from . import DataRecord1Choice
+from . import Exact12Text
+from . import Exact15Text
+from . import Header71
+from . import ISO8583ResponseCode
+from . import ISODate
+from . import ISODateTime
+from . import Jurisdiction2
+from . import Max12NumericText
+from . import Max140Text
+from . import Max35Text
+from . import OutputFormat5Code
+from . import PartyIdentification284
+from . import PartyIdentification286
+from . import PartyIdentification287
+from . import PointOfInteractionComponent16
+from . import ProgrammeMode5
+from . import ProtectedData2
+from . import Reconciliation4
+from . import SettlementService6
+from . import SupplementaryData1
+from . import Terminal7
+from . import Token2
+from . import Wallet3
 
 class FileActionResponseV03(base_types._BaseFieldType):
 
@@ -43,12 +43,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@Accptr.setter
 	def Accptr(self, value):
-		self._Accptr = value if type(value) != base_types.auto else self.make_default("Accptr")
+		self._Accptr = value if value is not None else base_types.UninitialisedField(self, 'Accptr', PartyIdentification284, False)
 
 	@Accptr.deleter
 	def Accptr(self):
 		del self._Accptr
-		self._Accptr = None
+		self._Accptr = base_types.UninitialisedField(self, 'Accptr', PartyIdentification284, False)
 
 	@property
 	def Acqrr(self):
@@ -56,12 +56,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@Acqrr.setter
 	def Acqrr(self, value):
-		self._Acqrr = value if type(value) != base_types.auto else self.make_default("Acqrr")
+		self._Acqrr = value if value is not None else base_types.UninitialisedField(self, 'Acqrr', PartyIdentification286, False)
 
 	@Acqrr.deleter
 	def Acqrr(self):
 		del self._Acqrr
-		self._Acqrr = None
+		self._Acqrr = base_types.UninitialisedField(self, 'Acqrr', PartyIdentification286, False)
 
 	@property
 	def ActnDt(self):
@@ -69,12 +69,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@ActnDt.setter
 	def ActnDt(self, value):
-		self._ActnDt = value if type(value) != base_types.auto else self.make_default("ActnDt")
+		self._ActnDt = value if value is not None else base_types.UninitialisedField(self, 'ActnDt', ISODate, False)
 
 	@ActnDt.deleter
 	def ActnDt(self):
 		del self._ActnDt
-		self._ActnDt = None
+		self._ActnDt = base_types.UninitialisedField(self, 'ActnDt', ISODate, False)
 
 	@property
 	def AddtlData(self):
@@ -82,12 +82,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@AddtlData.setter
 	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+		self._AddtlData = value if value is not None else base_types.UninitialisedField(self, 'AddtlData', AdditionalData2, True)
 
 	@AddtlData.deleter
 	def AddtlData(self):
 		del self._AddtlData
-		self._AddtlData = None
+		self._AddtlData = base_types.UninitialisedField(self, 'AddtlData', AdditionalData2, True)
 
 	@property
 	def AddtlFee(self):
@@ -95,12 +95,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@AddtlFee.setter
 	def AddtlFee(self, value):
-		self._AddtlFee = value if type(value) != base_types.auto else self.make_default("AddtlFee")
+		self._AddtlFee = value if value is not None else base_types.UninitialisedField(self, 'AddtlFee', AdditionalFee3, True)
 
 	@AddtlFee.deleter
 	def AddtlFee(self):
 		del self._AddtlFee
-		self._AddtlFee = None
+		self._AddtlFee = base_types.UninitialisedField(self, 'AddtlFee', AdditionalFee3, True)
 
 	@property
 	def Card(self):
@@ -108,12 +108,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@Card.setter
 	def Card(self, value):
-		self._Card = value if type(value) != base_types.auto else self.make_default("Card")
+		self._Card = value if value is not None else base_types.UninitialisedField(self, 'Card', CardData15, False)
 
 	@Card.deleter
 	def Card(self):
 		del self._Card
-		self._Card = None
+		self._Card = base_types.UninitialisedField(self, 'Card', CardData15, False)
 
 	@property
 	def Crdhldr(self):
@@ -121,12 +121,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@Crdhldr.setter
 	def Crdhldr(self, value):
-		self._Crdhldr = value if type(value) != base_types.auto else self.make_default("Crdhldr")
+		self._Crdhldr = value if value is not None else base_types.UninitialisedField(self, 'Crdhldr', Cardholder22, False)
 
 	@Crdhldr.deleter
 	def Crdhldr(self):
 		del self._Crdhldr
-		self._Crdhldr = None
+		self._Crdhldr = base_types.UninitialisedField(self, 'Crdhldr', Cardholder22, False)
 
 	@property
 	def Crrctn(self):
@@ -134,12 +134,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@Crrctn.setter
 	def Crrctn(self, value):
-		self._Crrctn = value if type(value) != base_types.auto else self.make_default("Crrctn")
+		self._Crrctn = value if value is not None else base_types.UninitialisedField(self, 'Crrctn', CorrectionIdentification1, False)
 
 	@Crrctn.deleter
 	def Crrctn(self):
 		del self._Crrctn
-		self._Crrctn = None
+		self._Crrctn = base_types.UninitialisedField(self, 'Crrctn', CorrectionIdentification1, False)
 
 	@property
 	def CstmrDvc(self):
@@ -147,12 +147,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@CstmrDvc.setter
 	def CstmrDvc(self, value):
-		self._CstmrDvc = value if type(value) != base_types.auto else self.make_default("CstmrDvc")
+		self._CstmrDvc = value if value is not None else base_types.UninitialisedField(self, 'CstmrDvc', CustomerDevice5, False)
 
 	@CstmrDvc.deleter
 	def CstmrDvc(self):
 		del self._CstmrDvc
-		self._CstmrDvc = None
+		self._CstmrDvc = base_types.UninitialisedField(self, 'CstmrDvc', CustomerDevice5, False)
 
 	@property
 	def DataRcrd(self):
@@ -160,12 +160,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@DataRcrd.setter
 	def DataRcrd(self, value):
-		self._DataRcrd = value if type(value) != base_types.auto else self.make_default("DataRcrd")
+		self._DataRcrd = value if value is not None else base_types.UninitialisedField(self, 'DataRcrd', DataRecord1Choice, False)
 
 	@DataRcrd.deleter
 	def DataRcrd(self):
 		del self._DataRcrd
-		self._DataRcrd = None
+		self._DataRcrd = base_types.UninitialisedField(self, 'DataRcrd', DataRecord1Choice, False)
 
 	@property
 	def Dstn(self):
@@ -173,12 +173,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@Dstn.setter
 	def Dstn(self, value):
-		self._Dstn = value if type(value) != base_types.auto else self.make_default("Dstn")
+		self._Dstn = value if value is not None else base_types.UninitialisedField(self, 'Dstn', PartyIdentification286, False)
 
 	@Dstn.deleter
 	def Dstn(self):
 		del self._Dstn
-		self._Dstn = None
+		self._Dstn = base_types.UninitialisedField(self, 'Dstn', PartyIdentification286, False)
 
 	@property
 	def FileNm(self):
@@ -186,12 +186,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@FileNm.setter
 	def FileNm(self, value):
-		self._FileNm = value if type(value) != base_types.auto else self.make_default("FileNm")
+		self._FileNm = value if value is not None else base_types.UninitialisedField(self, 'FileNm', Max140Text, False)
 
 	@FileNm.deleter
 	def FileNm(self):
 		del self._FileNm
-		self._FileNm = None
+		self._FileNm = base_types.UninitialisedField(self, 'FileNm', Max140Text, False)
 
 	@property
 	def FileSctyCd(self):
@@ -199,12 +199,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@FileSctyCd.setter
 	def FileSctyCd(self, value):
-		self._FileSctyCd = value if type(value) != base_types.auto else self.make_default("FileSctyCd")
+		self._FileSctyCd = value if value is not None else base_types.UninitialisedField(self, 'FileSctyCd', Max35Text, False)
 
 	@FileSctyCd.deleter
 	def FileSctyCd(self):
 		del self._FileSctyCd
-		self._FileSctyCd = None
+		self._FileSctyCd = base_types.UninitialisedField(self, 'FileSctyCd', Max35Text, False)
 
 	@property
 	def Frmt(self):
@@ -212,12 +212,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@Frmt.setter
 	def Frmt(self, value):
-		self._Frmt = value if type(value) != base_types.auto else self.make_default("Frmt")
+		self._Frmt = value if value is not None else base_types.UninitialisedField(self, 'Frmt', OutputFormat5Code, False)
 
 	@Frmt.deleter
 	def Frmt(self):
 		del self._Frmt
-		self._Frmt = None
+		self._Frmt = base_types.UninitialisedField(self, 'Frmt', OutputFormat5Code, False)
 
 	@property
 	def Hdr(self):
@@ -225,12 +225,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header71, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header71, False)
 
 	@property
 	def Issr(self):
@@ -238,12 +238,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+		self._Issr = value if value is not None else base_types.UninitialisedField(self, 'Issr', PartyIdentification286, False)
 
 	@Issr.deleter
 	def Issr(self):
 		del self._Issr
-		self._Issr = None
+		self._Issr = base_types.UninitialisedField(self, 'Issr', PartyIdentification286, False)
 
 	@property
 	def Jursdctn(self):
@@ -251,12 +251,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@Jursdctn.setter
 	def Jursdctn(self, value):
-		self._Jursdctn = value if type(value) != base_types.auto else self.make_default("Jursdctn")
+		self._Jursdctn = value if value is not None else base_types.UninitialisedField(self, 'Jursdctn', Jurisdiction2, False)
 
 	@Jursdctn.deleter
 	def Jursdctn(self):
 		del self._Jursdctn
-		self._Jursdctn = None
+		self._Jursdctn = base_types.UninitialisedField(self, 'Jursdctn', Jurisdiction2, False)
 
 	@property
 	def LifeCyclId(self):
@@ -264,12 +264,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@LifeCyclId.setter
 	def LifeCyclId(self, value):
-		self._LifeCyclId = value if type(value) != base_types.auto else self.make_default("LifeCyclId")
+		self._LifeCyclId = value if value is not None else base_types.UninitialisedField(self, 'LifeCyclId', Exact15Text, False)
 
 	@LifeCyclId.deleter
 	def LifeCyclId(self):
 		del self._LifeCyclId
-		self._LifeCyclId = None
+		self._LifeCyclId = base_types.UninitialisedField(self, 'LifeCyclId', Exact15Text, False)
 
 	@property
 	def Orgtr(self):
@@ -277,12 +277,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@Orgtr.setter
 	def Orgtr(self, value):
-		self._Orgtr = value if type(value) != base_types.auto else self.make_default("Orgtr")
+		self._Orgtr = value if value is not None else base_types.UninitialisedField(self, 'Orgtr', PartyIdentification286, False)
 
 	@Orgtr.deleter
 	def Orgtr(self):
 		del self._Orgtr
-		self._Orgtr = None
+		self._Orgtr = base_types.UninitialisedField(self, 'Orgtr', PartyIdentification286, False)
 
 	@property
 	def POICmpnt(self):
@@ -290,12 +290,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@POICmpnt.setter
 	def POICmpnt(self, value):
-		self._POICmpnt = value if type(value) != base_types.auto else self.make_default("POICmpnt")
+		self._POICmpnt = value if value is not None else base_types.UninitialisedField(self, 'POICmpnt', PointOfInteractionComponent16, True)
 
 	@POICmpnt.deleter
 	def POICmpnt(self):
 		del self._POICmpnt
-		self._POICmpnt = None
+		self._POICmpnt = base_types.UninitialisedField(self, 'POICmpnt', PointOfInteractionComponent16, True)
 
 	@property
 	def Prgrmm(self):
@@ -303,12 +303,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@Prgrmm.setter
 	def Prgrmm(self, value):
-		self._Prgrmm = value if type(value) != base_types.auto else self.make_default("Prgrmm")
+		self._Prgrmm = value if value is not None else base_types.UninitialisedField(self, 'Prgrmm', ProgrammeMode5, False)
 
 	@Prgrmm.deleter
 	def Prgrmm(self):
 		del self._Prgrmm
-		self._Prgrmm = None
+		self._Prgrmm = base_types.UninitialisedField(self, 'Prgrmm', ProgrammeMode5, False)
 
 	@property
 	def PrtctdData(self):
@@ -316,12 +316,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@PrtctdData.setter
 	def PrtctdData(self, value):
-		self._PrtctdData = value if type(value) != base_types.auto else self.make_default("PrtctdData")
+		self._PrtctdData = value if value is not None else base_types.UninitialisedField(self, 'PrtctdData', ProtectedData2, True)
 
 	@PrtctdData.deleter
 	def PrtctdData(self):
 		del self._PrtctdData
-		self._PrtctdData = None
+		self._PrtctdData = base_types.UninitialisedField(self, 'PrtctdData', ProtectedData2, True)
 
 	@property
 	def Pyee(self):
@@ -329,12 +329,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@Pyee.setter
 	def Pyee(self, value):
-		self._Pyee = value if type(value) != base_types.auto else self.make_default("Pyee")
+		self._Pyee = value if value is not None else base_types.UninitialisedField(self, 'Pyee', PartyIdentification287, False)
 
 	@Pyee.deleter
 	def Pyee(self):
 		del self._Pyee
-		self._Pyee = None
+		self._Pyee = base_types.UninitialisedField(self, 'Pyee', PartyIdentification287, False)
 
 	@property
 	def Pyer(self):
@@ -342,12 +342,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@Pyer.setter
 	def Pyer(self, value):
-		self._Pyer = value if type(value) != base_types.auto else self.make_default("Pyer")
+		self._Pyer = value if value is not None else base_types.UninitialisedField(self, 'Pyer', PartyIdentification287, False)
 
 	@Pyer.deleter
 	def Pyer(self):
 		del self._Pyer
-		self._Pyer = None
+		self._Pyer = base_types.UninitialisedField(self, 'Pyer', PartyIdentification287, False)
 
 	@property
 	def Rcncltn(self):
@@ -355,12 +355,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@Rcncltn.setter
 	def Rcncltn(self, value):
-		self._Rcncltn = value if type(value) != base_types.auto else self.make_default("Rcncltn")
+		self._Rcncltn = value if value is not None else base_types.UninitialisedField(self, 'Rcncltn', Reconciliation4, False)
 
 	@Rcncltn.deleter
 	def Rcncltn(self):
 		del self._Rcncltn
-		self._Rcncltn = None
+		self._Rcncltn = base_types.UninitialisedField(self, 'Rcncltn', Reconciliation4, False)
 
 	@property
 	def Rcvr(self):
@@ -368,12 +368,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@Rcvr.setter
 	def Rcvr(self, value):
-		self._Rcvr = value if type(value) != base_types.auto else self.make_default("Rcvr")
+		self._Rcvr = value if value is not None else base_types.UninitialisedField(self, 'Rcvr', PartyIdentification286, False)
 
 	@Rcvr.deleter
 	def Rcvr(self):
 		del self._Rcvr
-		self._Rcvr = None
+		self._Rcvr = base_types.UninitialisedField(self, 'Rcvr', PartyIdentification286, False)
 
 	@property
 	def RspnCd(self):
@@ -381,12 +381,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@RspnCd.setter
 	def RspnCd(self, value):
-		self._RspnCd = value if type(value) != base_types.auto else self.make_default("RspnCd")
+		self._RspnCd = value if value is not None else base_types.UninitialisedField(self, 'RspnCd', ISO8583ResponseCode, False)
 
 	@RspnCd.deleter
 	def RspnCd(self):
 		del self._RspnCd
-		self._RspnCd = None
+		self._RspnCd = base_types.UninitialisedField(self, 'RspnCd', ISO8583ResponseCode, False)
 
 	@property
 	def RtrvlRefNb(self):
@@ -394,12 +394,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@RtrvlRefNb.setter
 	def RtrvlRefNb(self, value):
-		self._RtrvlRefNb = value if type(value) != base_types.auto else self.make_default("RtrvlRefNb")
+		self._RtrvlRefNb = value if value is not None else base_types.UninitialisedField(self, 'RtrvlRefNb', Exact12Text, False)
 
 	@RtrvlRefNb.deleter
 	def RtrvlRefNb(self):
 		del self._RtrvlRefNb
-		self._RtrvlRefNb = None
+		self._RtrvlRefNb = base_types.UninitialisedField(self, 'RtrvlRefNb', Exact12Text, False)
 
 	@property
 	def SctyTrlr(self):
@@ -407,12 +407,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType41, False)
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
 		del self._SctyTrlr
-		self._SctyTrlr = None
+		self._SctyTrlr = base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType41, False)
 
 	@property
 	def Sndr(self):
@@ -420,12 +420,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@Sndr.setter
 	def Sndr(self, value):
-		self._Sndr = value if type(value) != base_types.auto else self.make_default("Sndr")
+		self._Sndr = value if value is not None else base_types.UninitialisedField(self, 'Sndr', PartyIdentification286, False)
 
 	@Sndr.deleter
 	def Sndr(self):
 		del self._Sndr
-		self._Sndr = None
+		self._Sndr = base_types.UninitialisedField(self, 'Sndr', PartyIdentification286, False)
 
 	@property
 	def SplmtryData(self):
@@ -433,12 +433,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def SttlmSvc(self):
@@ -446,12 +446,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@SttlmSvc.setter
 	def SttlmSvc(self, value):
-		self._SttlmSvc = value if type(value) != base_types.auto else self.make_default("SttlmSvc")
+		self._SttlmSvc = value if value is not None else base_types.UninitialisedField(self, 'SttlmSvc', SettlementService6, False)
 
 	@SttlmSvc.deleter
 	def SttlmSvc(self):
 		del self._SttlmSvc
-		self._SttlmSvc = None
+		self._SttlmSvc = base_types.UninitialisedField(self, 'SttlmSvc', SettlementService6, False)
 
 	@property
 	def SysTracAudtNb(self):
@@ -459,12 +459,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@SysTracAudtNb.setter
 	def SysTracAudtNb(self, value):
-		self._SysTracAudtNb = value if type(value) != base_types.auto else self.make_default("SysTracAudtNb")
+		self._SysTracAudtNb = value if value is not None else base_types.UninitialisedField(self, 'SysTracAudtNb', Max12NumericText, False)
 
 	@SysTracAudtNb.deleter
 	def SysTracAudtNb(self):
 		del self._SysTracAudtNb
-		self._SysTracAudtNb = None
+		self._SysTracAudtNb = base_types.UninitialisedField(self, 'SysTracAudtNb', Max12NumericText, False)
 
 	@property
 	def Termnl(self):
@@ -472,12 +472,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@Termnl.setter
 	def Termnl(self, value):
-		self._Termnl = value if type(value) != base_types.auto else self.make_default("Termnl")
+		self._Termnl = value if value is not None else base_types.UninitialisedField(self, 'Termnl', Terminal7, False)
 
 	@Termnl.deleter
 	def Termnl(self):
 		del self._Termnl
-		self._Termnl = None
+		self._Termnl = base_types.UninitialisedField(self, 'Termnl', Terminal7, False)
 
 	@property
 	def Tkn(self):
@@ -485,12 +485,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@Tkn.setter
 	def Tkn(self, value):
-		self._Tkn = value if type(value) != base_types.auto else self.make_default("Tkn")
+		self._Tkn = value if value is not None else base_types.UninitialisedField(self, 'Tkn', Token2, False)
 
 	@Tkn.deleter
 	def Tkn(self):
 		del self._Tkn
-		self._Tkn = None
+		self._Tkn = base_types.UninitialisedField(self, 'Tkn', Token2, False)
 
 	@property
 	def TrnsmssnDtTm(self):
@@ -498,12 +498,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@TrnsmssnDtTm.setter
 	def TrnsmssnDtTm(self, value):
-		self._TrnsmssnDtTm = value if type(value) != base_types.auto else self.make_default("TrnsmssnDtTm")
+		self._TrnsmssnDtTm = value if value is not None else base_types.UninitialisedField(self, 'TrnsmssnDtTm', ISODateTime, False)
 
 	@TrnsmssnDtTm.deleter
 	def TrnsmssnDtTm(self):
 		del self._TrnsmssnDtTm
-		self._TrnsmssnDtTm = None
+		self._TrnsmssnDtTm = base_types.UninitialisedField(self, 'TrnsmssnDtTm', ISODateTime, False)
 
 	@property
 	def Wllt(self):
@@ -511,12 +511,12 @@ class FileActionResponseV03(base_types._BaseFieldType):
 
 	@Wllt.setter
 	def Wllt(self, value):
-		self._Wllt = value if type(value) != base_types.auto else self.make_default("Wllt")
+		self._Wllt = value if value is not None else base_types.UninitialisedField(self, 'Wllt', Wallet3, False)
 
 	@Wllt.deleter
 	def Wllt(self):
 		del self._Wllt
-		self._Wllt = None
+		self._Wllt = base_types.UninitialisedField(self, 'Wllt', Wallet3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Accptr', type=PartyIdentification284, min=0, max=1, mutex_group=None, array=False),

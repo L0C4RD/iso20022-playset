@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BenchmarkCurveName3Code import BenchmarkCurveName3Code
-from ._Max350Text import Max350Text
+from . import BenchmarkCurveName3Code
+from . import Max350Text
 
 class BenchmarkCurveName10Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class BenchmarkCurveName10Choice(base_types._BaseFieldType):
 
 	@Indx.setter
 	def Indx(self, value):
-		self._Indx = value if type(value) != base_types.auto else self.make_default("Indx")
+		self._Indx = value if value is not None else base_types.UninitialisedField(self, 'Indx', BenchmarkCurveName3Code, False)
 
 	@Indx.deleter
 	def Indx(self):
 		del self._Indx
-		self._Indx = None
+		self._Indx = base_types.UninitialisedField(self, 'Indx', BenchmarkCurveName3Code, False)
 
 	@property
 	def Nm(self):
@@ -27,12 +27,12 @@ class BenchmarkCurveName10Choice(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max350Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max350Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Indx', type=BenchmarkCurveName3Code, min=0, max=1, mutex_group=1, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._Number import Number
+from . import ISODate
+from . import Number
 
 class OptionDateOrPeriod1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class OptionDateOrPeriod1Choice(base_types._BaseFieldType):
 
 	@EarlstExrcDt.setter
 	def EarlstExrcDt(self, value):
-		self._EarlstExrcDt = value if type(value) != base_types.auto else self.make_default("EarlstExrcDt")
+		self._EarlstExrcDt = value if value is not None else base_types.UninitialisedField(self, 'EarlstExrcDt', ISODate, False)
 
 	@EarlstExrcDt.deleter
 	def EarlstExrcDt(self):
 		del self._EarlstExrcDt
-		self._EarlstExrcDt = None
+		self._EarlstExrcDt = base_types.UninitialisedField(self, 'EarlstExrcDt', ISODate, False)
 
 	@property
 	def NtcePrd(self):
@@ -27,12 +27,12 @@ class OptionDateOrPeriod1Choice(base_types._BaseFieldType):
 
 	@NtcePrd.setter
 	def NtcePrd(self, value):
-		self._NtcePrd = value if type(value) != base_types.auto else self.make_default("NtcePrd")
+		self._NtcePrd = value if value is not None else base_types.UninitialisedField(self, 'NtcePrd', Number, False)
 
 	@NtcePrd.deleter
 	def NtcePrd(self):
 		del self._NtcePrd
-		self._NtcePrd = None
+		self._NtcePrd = base_types.UninitialisedField(self, 'NtcePrd', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EarlstExrcDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),

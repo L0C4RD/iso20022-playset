@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RiskFactor1 import RiskFactor1
-from ._Strategy1 import Strategy1
-from ._StressedProduct1 import StressedProduct1
+from . import RiskFactor1
+from . import Strategy1
+from . import StressedProduct1
 
 class StressItem1Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class StressItem1Choice(base_types._BaseFieldType):
 
 	@Pdct.setter
 	def Pdct(self, value):
-		self._Pdct = value if type(value) != base_types.auto else self.make_default("Pdct")
+		self._Pdct = value if value is not None else base_types.UninitialisedField(self, 'Pdct', StressedProduct1, False)
 
 	@Pdct.deleter
 	def Pdct(self):
 		del self._Pdct
-		self._Pdct = None
+		self._Pdct = base_types.UninitialisedField(self, 'Pdct', StressedProduct1, False)
 
 	@property
 	def RskFctr(self):
@@ -28,12 +28,12 @@ class StressItem1Choice(base_types._BaseFieldType):
 
 	@RskFctr.setter
 	def RskFctr(self, value):
-		self._RskFctr = value if type(value) != base_types.auto else self.make_default("RskFctr")
+		self._RskFctr = value if value is not None else base_types.UninitialisedField(self, 'RskFctr', RiskFactor1, False)
 
 	@RskFctr.deleter
 	def RskFctr(self):
 		del self._RskFctr
-		self._RskFctr = None
+		self._RskFctr = base_types.UninitialisedField(self, 'RskFctr', RiskFactor1, False)
 
 	@property
 	def Strtgy(self):
@@ -41,12 +41,12 @@ class StressItem1Choice(base_types._BaseFieldType):
 
 	@Strtgy.setter
 	def Strtgy(self, value):
-		self._Strtgy = value if type(value) != base_types.auto else self.make_default("Strtgy")
+		self._Strtgy = value if value is not None else base_types.UninitialisedField(self, 'Strtgy', Strategy1, False)
 
 	@Strtgy.deleter
 	def Strtgy(self):
 		del self._Strtgy
-		self._Strtgy = None
+		self._Strtgy = base_types.UninitialisedField(self, 'Strtgy', Strategy1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Pdct', type=StressedProduct1, min=0, max=1, mutex_group=1, array=False),

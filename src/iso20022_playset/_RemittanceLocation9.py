@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max2048Text import Max2048Text
-from ._Max35Text import Max35Text
-from ._NameAndAddress18 import NameAndAddress18
-from ._RemittanceLocationMethod2Code import RemittanceLocationMethod2Code
+from . import Max2048Text
+from . import Max35Text
+from . import NameAndAddress18
+from . import RemittanceLocationMethod2Code
 
 class RemittanceLocation9(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class RemittanceLocation9(base_types._BaseFieldType):
 
 	@RmtId.setter
 	def RmtId(self, value):
-		self._RmtId = value if type(value) != base_types.auto else self.make_default("RmtId")
+		self._RmtId = value if value is not None else base_types.UninitialisedField(self, 'RmtId', Max35Text, False)
 
 	@RmtId.deleter
 	def RmtId(self):
 		del self._RmtId
-		self._RmtId = None
+		self._RmtId = base_types.UninitialisedField(self, 'RmtId', Max35Text, False)
 
 	@property
 	def RmtLctnElctrncAdr(self):
@@ -29,12 +29,12 @@ class RemittanceLocation9(base_types._BaseFieldType):
 
 	@RmtLctnElctrncAdr.setter
 	def RmtLctnElctrncAdr(self, value):
-		self._RmtLctnElctrncAdr = value if type(value) != base_types.auto else self.make_default("RmtLctnElctrncAdr")
+		self._RmtLctnElctrncAdr = value if value is not None else base_types.UninitialisedField(self, 'RmtLctnElctrncAdr', Max2048Text, False)
 
 	@RmtLctnElctrncAdr.deleter
 	def RmtLctnElctrncAdr(self):
 		del self._RmtLctnElctrncAdr
-		self._RmtLctnElctrncAdr = None
+		self._RmtLctnElctrncAdr = base_types.UninitialisedField(self, 'RmtLctnElctrncAdr', Max2048Text, False)
 
 	@property
 	def RmtLctnMtd(self):
@@ -42,12 +42,12 @@ class RemittanceLocation9(base_types._BaseFieldType):
 
 	@RmtLctnMtd.setter
 	def RmtLctnMtd(self, value):
-		self._RmtLctnMtd = value if type(value) != base_types.auto else self.make_default("RmtLctnMtd")
+		self._RmtLctnMtd = value if value is not None else base_types.UninitialisedField(self, 'RmtLctnMtd', RemittanceLocationMethod2Code, False)
 
 	@RmtLctnMtd.deleter
 	def RmtLctnMtd(self):
 		del self._RmtLctnMtd
-		self._RmtLctnMtd = None
+		self._RmtLctnMtd = base_types.UninitialisedField(self, 'RmtLctnMtd', RemittanceLocationMethod2Code, False)
 
 	@property
 	def RmtLctnPstlAdr(self):
@@ -55,12 +55,12 @@ class RemittanceLocation9(base_types._BaseFieldType):
 
 	@RmtLctnPstlAdr.setter
 	def RmtLctnPstlAdr(self, value):
-		self._RmtLctnPstlAdr = value if type(value) != base_types.auto else self.make_default("RmtLctnPstlAdr")
+		self._RmtLctnPstlAdr = value if value is not None else base_types.UninitialisedField(self, 'RmtLctnPstlAdr', NameAndAddress18, False)
 
 	@RmtLctnPstlAdr.deleter
 	def RmtLctnPstlAdr(self):
 		del self._RmtLctnPstlAdr
-		self._RmtLctnPstlAdr = None
+		self._RmtLctnPstlAdr = base_types.UninitialisedField(self, 'RmtLctnPstlAdr', NameAndAddress18, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RmtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

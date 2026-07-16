@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection59 import AmountAndDirection59
-from ._Exact3NumericText import Exact3NumericText
-from ._LegalFramework4Choice import LegalFramework4Choice
-from ._Rate2 import Rate2
-from ._RateName2 import RateName2
-from ._RateType67Choice import RateType67Choice
-from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from ._RestrictedFINXMax52Text import RestrictedFINXMax52Text
-from ._TerminationDate7Choice import TerminationDate7Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import AmountAndDirection59
+from . import Exact3NumericText
+from . import LegalFramework4Choice
+from . import Rate2
+from . import RateName2
+from . import RateType67Choice
+from . import RestrictedFINXMax140Text
+from . import RestrictedFINXMax16Text
+from . import RestrictedFINXMax52Text
+from . import TerminationDate7Choice
+from . import YesNoIndicator
 
 class SecuritiesFinancingTransactionDetails50(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class SecuritiesFinancingTransactionDetails50(base_types._BaseFieldType):
 
 	@AcrdIntrstAmt.setter
 	def AcrdIntrstAmt(self, value):
-		self._AcrdIntrstAmt = value if type(value) != base_types.auto else self.make_default("AcrdIntrstAmt")
+		self._AcrdIntrstAmt = value if value is not None else base_types.UninitialisedField(self, 'AcrdIntrstAmt', AmountAndDirection59, False)
 
 	@AcrdIntrstAmt.deleter
 	def AcrdIntrstAmt(self):
 		del self._AcrdIntrstAmt
-		self._AcrdIntrstAmt = None
+		self._AcrdIntrstAmt = base_types.UninitialisedField(self, 'AcrdIntrstAmt', AmountAndDirection59, False)
 
 	@property
 	def ClsgLegId(self):
@@ -36,12 +36,12 @@ class SecuritiesFinancingTransactionDetails50(base_types._BaseFieldType):
 
 	@ClsgLegId.setter
 	def ClsgLegId(self, value):
-		self._ClsgLegId = value if type(value) != base_types.auto else self.make_default("ClsgLegId")
+		self._ClsgLegId = value if value is not None else base_types.UninitialisedField(self, 'ClsgLegId', RestrictedFINXMax16Text, False)
 
 	@ClsgLegId.deleter
 	def ClsgLegId(self):
 		del self._ClsgLegId
-		self._ClsgLegId = None
+		self._ClsgLegId = base_types.UninitialisedField(self, 'ClsgLegId', RestrictedFINXMax16Text, False)
 
 	@property
 	def IntrstPmt(self):
@@ -49,12 +49,12 @@ class SecuritiesFinancingTransactionDetails50(base_types._BaseFieldType):
 
 	@IntrstPmt.setter
 	def IntrstPmt(self, value):
-		self._IntrstPmt = value if type(value) != base_types.auto else self.make_default("IntrstPmt")
+		self._IntrstPmt = value if value is not None else base_types.UninitialisedField(self, 'IntrstPmt', YesNoIndicator, False)
 
 	@IntrstPmt.deleter
 	def IntrstPmt(self):
 		del self._IntrstPmt
-		self._IntrstPmt = None
+		self._IntrstPmt = base_types.UninitialisedField(self, 'IntrstPmt', YesNoIndicator, False)
 
 	@property
 	def LglFrmwk(self):
@@ -62,12 +62,12 @@ class SecuritiesFinancingTransactionDetails50(base_types._BaseFieldType):
 
 	@LglFrmwk.setter
 	def LglFrmwk(self, value):
-		self._LglFrmwk = value if type(value) != base_types.auto else self.make_default("LglFrmwk")
+		self._LglFrmwk = value if value is not None else base_types.UninitialisedField(self, 'LglFrmwk', LegalFramework4Choice, False)
 
 	@LglFrmwk.deleter
 	def LglFrmwk(self):
 		del self._LglFrmwk
-		self._LglFrmwk = None
+		self._LglFrmwk = base_types.UninitialisedField(self, 'LglFrmwk', LegalFramework4Choice, False)
 
 	@property
 	def MtrtyDtMod(self):
@@ -75,12 +75,12 @@ class SecuritiesFinancingTransactionDetails50(base_types._BaseFieldType):
 
 	@MtrtyDtMod.setter
 	def MtrtyDtMod(self, value):
-		self._MtrtyDtMod = value if type(value) != base_types.auto else self.make_default("MtrtyDtMod")
+		self._MtrtyDtMod = value if value is not None else base_types.UninitialisedField(self, 'MtrtyDtMod', YesNoIndicator, False)
 
 	@MtrtyDtMod.deleter
 	def MtrtyDtMod(self):
 		del self._MtrtyDtMod
-		self._MtrtyDtMod = None
+		self._MtrtyDtMod = base_types.UninitialisedField(self, 'MtrtyDtMod', YesNoIndicator, False)
 
 	@property
 	def RateTp(self):
@@ -88,12 +88,12 @@ class SecuritiesFinancingTransactionDetails50(base_types._BaseFieldType):
 
 	@RateTp.setter
 	def RateTp(self, value):
-		self._RateTp = value if type(value) != base_types.auto else self.make_default("RateTp")
+		self._RateTp = value if value is not None else base_types.UninitialisedField(self, 'RateTp', RateType67Choice, False)
 
 	@RateTp.deleter
 	def RateTp(self):
 		del self._RateTp
-		self._RateTp = None
+		self._RateTp = base_types.UninitialisedField(self, 'RateTp', RateType67Choice, False)
 
 	@property
 	def RpRate(self):
@@ -101,12 +101,12 @@ class SecuritiesFinancingTransactionDetails50(base_types._BaseFieldType):
 
 	@RpRate.setter
 	def RpRate(self, value):
-		self._RpRate = value if type(value) != base_types.auto else self.make_default("RpRate")
+		self._RpRate = value if value is not None else base_types.UninitialisedField(self, 'RpRate', Rate2, False)
 
 	@RpRate.deleter
 	def RpRate(self):
 		del self._RpRate
-		self._RpRate = None
+		self._RpRate = base_types.UninitialisedField(self, 'RpRate', Rate2, False)
 
 	@property
 	def ScndLegNrrtv(self):
@@ -114,12 +114,12 @@ class SecuritiesFinancingTransactionDetails50(base_types._BaseFieldType):
 
 	@ScndLegNrrtv.setter
 	def ScndLegNrrtv(self, value):
-		self._ScndLegNrrtv = value if type(value) != base_types.auto else self.make_default("ScndLegNrrtv")
+		self._ScndLegNrrtv = value if value is not None else base_types.UninitialisedField(self, 'ScndLegNrrtv', RestrictedFINXMax140Text, False)
 
 	@ScndLegNrrtv.deleter
 	def ScndLegNrrtv(self):
 		del self._ScndLegNrrtv
-		self._ScndLegNrrtv = None
+		self._ScndLegNrrtv = base_types.UninitialisedField(self, 'ScndLegNrrtv', RestrictedFINXMax140Text, False)
 
 	@property
 	def SctiesFincgTradId(self):
@@ -127,12 +127,12 @@ class SecuritiesFinancingTransactionDetails50(base_types._BaseFieldType):
 
 	@SctiesFincgTradId.setter
 	def SctiesFincgTradId(self, value):
-		self._SctiesFincgTradId = value if type(value) != base_types.auto else self.make_default("SctiesFincgTradId")
+		self._SctiesFincgTradId = value if value is not None else base_types.UninitialisedField(self, 'SctiesFincgTradId', RestrictedFINXMax52Text, False)
 
 	@SctiesFincgTradId.deleter
 	def SctiesFincgTradId(self):
 		del self._SctiesFincgTradId
-		self._SctiesFincgTradId = None
+		self._SctiesFincgTradId = base_types.UninitialisedField(self, 'SctiesFincgTradId', RestrictedFINXMax52Text, False)
 
 	@property
 	def TermntnDt(self):
@@ -140,12 +140,12 @@ class SecuritiesFinancingTransactionDetails50(base_types._BaseFieldType):
 
 	@TermntnDt.setter
 	def TermntnDt(self, value):
-		self._TermntnDt = value if type(value) != base_types.auto else self.make_default("TermntnDt")
+		self._TermntnDt = value if value is not None else base_types.UninitialisedField(self, 'TermntnDt', TerminationDate7Choice, False)
 
 	@TermntnDt.deleter
 	def TermntnDt(self):
 		del self._TermntnDt
-		self._TermntnDt = None
+		self._TermntnDt = base_types.UninitialisedField(self, 'TermntnDt', TerminationDate7Choice, False)
 
 	@property
 	def TermntnTxAmt(self):
@@ -153,12 +153,12 @@ class SecuritiesFinancingTransactionDetails50(base_types._BaseFieldType):
 
 	@TermntnTxAmt.setter
 	def TermntnTxAmt(self, value):
-		self._TermntnTxAmt = value if type(value) != base_types.auto else self.make_default("TermntnTxAmt")
+		self._TermntnTxAmt = value if value is not None else base_types.UninitialisedField(self, 'TermntnTxAmt', AmountAndDirection59, False)
 
 	@TermntnTxAmt.deleter
 	def TermntnTxAmt(self):
 		del self._TermntnTxAmt
-		self._TermntnTxAmt = None
+		self._TermntnTxAmt = base_types.UninitialisedField(self, 'TermntnTxAmt', AmountAndDirection59, False)
 
 	@property
 	def TxCallDely(self):
@@ -166,12 +166,12 @@ class SecuritiesFinancingTransactionDetails50(base_types._BaseFieldType):
 
 	@TxCallDely.setter
 	def TxCallDely(self, value):
-		self._TxCallDely = value if type(value) != base_types.auto else self.make_default("TxCallDely")
+		self._TxCallDely = value if value is not None else base_types.UninitialisedField(self, 'TxCallDely', Exact3NumericText, False)
 
 	@TxCallDely.deleter
 	def TxCallDely(self):
 		del self._TxCallDely
-		self._TxCallDely = None
+		self._TxCallDely = base_types.UninitialisedField(self, 'TxCallDely', Exact3NumericText, False)
 
 	@property
 	def VarblRateSpprt(self):
@@ -179,12 +179,12 @@ class SecuritiesFinancingTransactionDetails50(base_types._BaseFieldType):
 
 	@VarblRateSpprt.setter
 	def VarblRateSpprt(self, value):
-		self._VarblRateSpprt = value if type(value) != base_types.auto else self.make_default("VarblRateSpprt")
+		self._VarblRateSpprt = value if value is not None else base_types.UninitialisedField(self, 'VarblRateSpprt', RateName2, False)
 
 	@VarblRateSpprt.deleter
 	def VarblRateSpprt(self):
 		del self._VarblRateSpprt
-		self._VarblRateSpprt = None
+		self._VarblRateSpprt = base_types.UninitialisedField(self, 'VarblRateSpprt', RateName2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcrdIntrstAmt', type=AmountAndDirection59, min=0, max=1, mutex_group=None, array=False),

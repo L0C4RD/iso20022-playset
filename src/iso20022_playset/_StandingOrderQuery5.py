@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._QueryType2Code import QueryType2Code
-from ._StandingOrderCriteria5Choice import StandingOrderCriteria5Choice
+from . import QueryType2Code
+from . import StandingOrderCriteria5Choice
 
 class StandingOrderQuery5(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class StandingOrderQuery5(base_types._BaseFieldType):
 
 	@QryTp.setter
 	def QryTp(self, value):
-		self._QryTp = value if type(value) != base_types.auto else self.make_default("QryTp")
+		self._QryTp = value if value is not None else base_types.UninitialisedField(self, 'QryTp', QueryType2Code, False)
 
 	@QryTp.deleter
 	def QryTp(self):
 		del self._QryTp
-		self._QryTp = None
+		self._QryTp = base_types.UninitialisedField(self, 'QryTp', QueryType2Code, False)
 
 	@property
 	def StgOrdrCrit(self):
@@ -27,12 +27,12 @@ class StandingOrderQuery5(base_types._BaseFieldType):
 
 	@StgOrdrCrit.setter
 	def StgOrdrCrit(self, value):
-		self._StgOrdrCrit = value if type(value) != base_types.auto else self.make_default("StgOrdrCrit")
+		self._StgOrdrCrit = value if value is not None else base_types.UninitialisedField(self, 'StgOrdrCrit', StandingOrderCriteria5Choice, False)
 
 	@StgOrdrCrit.deleter
 	def StgOrdrCrit(self):
 		del self._StgOrdrCrit
-		self._StgOrdrCrit = None
+		self._StgOrdrCrit = base_types.UninitialisedField(self, 'StgOrdrCrit', StandingOrderCriteria5Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='QryTp', type=QueryType2Code, min=0, max=1, mutex_group=None, array=False),

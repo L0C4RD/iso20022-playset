@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CompareAmountAndDirection3 import CompareAmountAndDirection3
-from ._CompareValuationType1 import CompareValuationType1
+from . import CompareAmountAndDirection3
+from . import CompareValuationType1
 
 class ValuationMatchingCriteria1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ValuationMatchingCriteria1(base_types._BaseFieldType):
 
 	@CtrctVal.setter
 	def CtrctVal(self, value):
-		self._CtrctVal = value if type(value) != base_types.auto else self.make_default("CtrctVal")
+		self._CtrctVal = value if value is not None else base_types.UninitialisedField(self, 'CtrctVal', CompareAmountAndDirection3, False)
 
 	@CtrctVal.deleter
 	def CtrctVal(self):
 		del self._CtrctVal
-		self._CtrctVal = None
+		self._CtrctVal = base_types.UninitialisedField(self, 'CtrctVal', CompareAmountAndDirection3, False)
 
 	@property
 	def Tp(self):
@@ -27,12 +27,12 @@ class ValuationMatchingCriteria1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', CompareValuationType1, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', CompareValuationType1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrctVal', type=CompareAmountAndDirection3, min=0, max=1, mutex_group=None, array=False),

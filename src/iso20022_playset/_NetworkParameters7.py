@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max10KBinary import Max10KBinary
-from ._Max140Binary import Max140Binary
-from ._Max35Binary import Max35Binary
-from ._Max35Text import Max35Text
-from ._NetworkParameters9 import NetworkParameters9
+from . import Max10KBinary
+from . import Max140Binary
+from . import Max35Binary
+from . import Max35Text
+from . import NetworkParameters9
 
 class NetworkParameters7(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class NetworkParameters7(base_types._BaseFieldType):
 
 	@AccsCd.setter
 	def AccsCd(self, value):
-		self._AccsCd = value if type(value) != base_types.auto else self.make_default("AccsCd")
+		self._AccsCd = value if value is not None else base_types.UninitialisedField(self, 'AccsCd', Max35Binary, False)
 
 	@AccsCd.deleter
 	def AccsCd(self):
 		del self._AccsCd
-		self._AccsCd = None
+		self._AccsCd = base_types.UninitialisedField(self, 'AccsCd', Max35Binary, False)
 
 	@property
 	def Adr(self):
@@ -30,12 +30,12 @@ class NetworkParameters7(base_types._BaseFieldType):
 
 	@Adr.setter
 	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+		self._Adr = value if value is not None else base_types.UninitialisedField(self, 'Adr', NetworkParameters9, True)
 
 	@Adr.deleter
 	def Adr(self):
 		del self._Adr
-		self._Adr = None
+		self._Adr = base_types.UninitialisedField(self, 'Adr', NetworkParameters9, True)
 
 	@property
 	def ClntCert(self):
@@ -43,12 +43,12 @@ class NetworkParameters7(base_types._BaseFieldType):
 
 	@ClntCert.setter
 	def ClntCert(self, value):
-		self._ClntCert = value if type(value) != base_types.auto else self.make_default("ClntCert")
+		self._ClntCert = value if value is not None else base_types.UninitialisedField(self, 'ClntCert', Max10KBinary, True)
 
 	@ClntCert.deleter
 	def ClntCert(self):
 		del self._ClntCert
-		self._ClntCert = None
+		self._ClntCert = base_types.UninitialisedField(self, 'ClntCert', Max10KBinary, True)
 
 	@property
 	def SctyPrfl(self):
@@ -56,12 +56,12 @@ class NetworkParameters7(base_types._BaseFieldType):
 
 	@SctyPrfl.setter
 	def SctyPrfl(self, value):
-		self._SctyPrfl = value if type(value) != base_types.auto else self.make_default("SctyPrfl")
+		self._SctyPrfl = value if value is not None else base_types.UninitialisedField(self, 'SctyPrfl', Max35Text, False)
 
 	@SctyPrfl.deleter
 	def SctyPrfl(self):
 		del self._SctyPrfl
-		self._SctyPrfl = None
+		self._SctyPrfl = base_types.UninitialisedField(self, 'SctyPrfl', Max35Text, False)
 
 	@property
 	def SvrCert(self):
@@ -69,12 +69,12 @@ class NetworkParameters7(base_types._BaseFieldType):
 
 	@SvrCert.setter
 	def SvrCert(self, value):
-		self._SvrCert = value if type(value) != base_types.auto else self.make_default("SvrCert")
+		self._SvrCert = value if value is not None else base_types.UninitialisedField(self, 'SvrCert', Max10KBinary, True)
 
 	@SvrCert.deleter
 	def SvrCert(self):
 		del self._SvrCert
-		self._SvrCert = None
+		self._SvrCert = base_types.UninitialisedField(self, 'SvrCert', Max10KBinary, True)
 
 	@property
 	def SvrCertIdr(self):
@@ -82,12 +82,12 @@ class NetworkParameters7(base_types._BaseFieldType):
 
 	@SvrCertIdr.setter
 	def SvrCertIdr(self, value):
-		self._SvrCertIdr = value if type(value) != base_types.auto else self.make_default("SvrCertIdr")
+		self._SvrCertIdr = value if value is not None else base_types.UninitialisedField(self, 'SvrCertIdr', Max140Binary, True)
 
 	@SvrCertIdr.deleter
 	def SvrCertIdr(self):
 		del self._SvrCertIdr
-		self._SvrCertIdr = None
+		self._SvrCertIdr = base_types.UninitialisedField(self, 'SvrCertIdr', Max140Binary, True)
 
 	@property
 	def UsrNm(self):
@@ -95,12 +95,12 @@ class NetworkParameters7(base_types._BaseFieldType):
 
 	@UsrNm.setter
 	def UsrNm(self, value):
-		self._UsrNm = value if type(value) != base_types.auto else self.make_default("UsrNm")
+		self._UsrNm = value if value is not None else base_types.UninitialisedField(self, 'UsrNm', Max35Text, False)
 
 	@UsrNm.deleter
 	def UsrNm(self):
 		del self._UsrNm
-		self._UsrNm = None
+		self._UsrNm = base_types.UninitialisedField(self, 'UsrNm', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AccsCd', type=Max35Binary, min=0, max=1, mutex_group=None, array=False),

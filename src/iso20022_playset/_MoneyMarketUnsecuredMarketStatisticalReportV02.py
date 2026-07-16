@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MoneyMarketReportHeader1 import MoneyMarketReportHeader1
-from ._SupplementaryData1 import SupplementaryData1
-from ._UnsecuredMarketReport4Choice import UnsecuredMarketReport4Choice
+from . import MoneyMarketReportHeader1
+from . import SupplementaryData1
+from . import UnsecuredMarketReport4Choice
 
 class MoneyMarketUnsecuredMarketStatisticalReportV02(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class MoneyMarketUnsecuredMarketStatisticalReportV02(base_types._BaseFieldType):
 
 	@RptHdr.setter
 	def RptHdr(self, value):
-		self._RptHdr = value if type(value) != base_types.auto else self.make_default("RptHdr")
+		self._RptHdr = value if value is not None else base_types.UninitialisedField(self, 'RptHdr', MoneyMarketReportHeader1, False)
 
 	@RptHdr.deleter
 	def RptHdr(self):
 		del self._RptHdr
-		self._RptHdr = None
+		self._RptHdr = base_types.UninitialisedField(self, 'RptHdr', MoneyMarketReportHeader1, False)
 
 	@property
 	def SplmtryData(self):
@@ -28,12 +28,12 @@ class MoneyMarketUnsecuredMarketStatisticalReportV02(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def UscrdMktRpt(self):
@@ -41,12 +41,12 @@ class MoneyMarketUnsecuredMarketStatisticalReportV02(base_types._BaseFieldType):
 
 	@UscrdMktRpt.setter
 	def UscrdMktRpt(self, value):
-		self._UscrdMktRpt = value if type(value) != base_types.auto else self.make_default("UscrdMktRpt")
+		self._UscrdMktRpt = value if value is not None else base_types.UninitialisedField(self, 'UscrdMktRpt', UnsecuredMarketReport4Choice, False)
 
 	@UscrdMktRpt.deleter
 	def UscrdMktRpt(self):
 		del self._UscrdMktRpt
-		self._UscrdMktRpt = None
+		self._UscrdMktRpt = base_types.UninitialisedField(self, 'UscrdMktRpt', UnsecuredMarketReport4Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RptHdr', type=MoneyMarketReportHeader1, min=1, max=1, mutex_group=None, array=False),

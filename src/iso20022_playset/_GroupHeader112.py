@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._DecimalNumber import DecimalNumber
-from ._ISODateTime import ISODateTime
-from ._Max15NumericText import Max15NumericText
-from ._Max35Text import Max35Text
-from ._PartyIdentification272 import PartyIdentification272
+from . import BranchAndFinancialInstitutionIdentification8
+from . import DecimalNumber
+from . import ISODateTime
+from . import Max15NumericText
+from . import Max35Text
+from . import PartyIdentification272
 
 class GroupHeader112(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class GroupHeader112(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if value is not None else base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
 		del self._CreDtTm
-		self._CreDtTm = None
+		self._CreDtTm = base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@property
 	def CtrlSum(self):
@@ -31,12 +31,12 @@ class GroupHeader112(base_types._BaseFieldType):
 
 	@CtrlSum.setter
 	def CtrlSum(self, value):
-		self._CtrlSum = value if type(value) != base_types.auto else self.make_default("CtrlSum")
+		self._CtrlSum = value if value is not None else base_types.UninitialisedField(self, 'CtrlSum', DecimalNumber, False)
 
 	@CtrlSum.deleter
 	def CtrlSum(self):
 		del self._CtrlSum
-		self._CtrlSum = None
+		self._CtrlSum = base_types.UninitialisedField(self, 'CtrlSum', DecimalNumber, False)
 
 	@property
 	def FwdgAgt(self):
@@ -44,12 +44,12 @@ class GroupHeader112(base_types._BaseFieldType):
 
 	@FwdgAgt.setter
 	def FwdgAgt(self, value):
-		self._FwdgAgt = value if type(value) != base_types.auto else self.make_default("FwdgAgt")
+		self._FwdgAgt = value if value is not None else base_types.UninitialisedField(self, 'FwdgAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@FwdgAgt.deleter
 	def FwdgAgt(self):
 		del self._FwdgAgt
-		self._FwdgAgt = None
+		self._FwdgAgt = base_types.UninitialisedField(self, 'FwdgAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def InitgPty(self):
@@ -57,12 +57,12 @@ class GroupHeader112(base_types._BaseFieldType):
 
 	@InitgPty.setter
 	def InitgPty(self, value):
-		self._InitgPty = value if type(value) != base_types.auto else self.make_default("InitgPty")
+		self._InitgPty = value if value is not None else base_types.UninitialisedField(self, 'InitgPty', PartyIdentification272, False)
 
 	@InitgPty.deleter
 	def InitgPty(self):
 		del self._InitgPty
-		self._InitgPty = None
+		self._InitgPty = base_types.UninitialisedField(self, 'InitgPty', PartyIdentification272, False)
 
 	@property
 	def MsgId(self):
@@ -70,12 +70,12 @@ class GroupHeader112(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@property
 	def NbOfTxs(self):
@@ -83,12 +83,12 @@ class GroupHeader112(base_types._BaseFieldType):
 
 	@NbOfTxs.setter
 	def NbOfTxs(self, value):
-		self._NbOfTxs = value if type(value) != base_types.auto else self.make_default("NbOfTxs")
+		self._NbOfTxs = value if value is not None else base_types.UninitialisedField(self, 'NbOfTxs', Max15NumericText, False)
 
 	@NbOfTxs.deleter
 	def NbOfTxs(self):
 		del self._NbOfTxs
-		self._NbOfTxs = None
+		self._NbOfTxs = base_types.UninitialisedField(self, 'NbOfTxs', Max15NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),

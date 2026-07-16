@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericPersonIdentification1 import GenericPersonIdentification1
-from ._ISODate import ISODate
-from ._Max140Text import Max140Text
+from . import GenericPersonIdentification1
+from . import ISODate
+from . import Max140Text
 
 class PersonIdentification10(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PersonIdentification10(base_types._BaseFieldType):
 
 	@BirthDt.setter
 	def BirthDt(self, value):
-		self._BirthDt = value if type(value) != base_types.auto else self.make_default("BirthDt")
+		self._BirthDt = value if value is not None else base_types.UninitialisedField(self, 'BirthDt', ISODate, False)
 
 	@BirthDt.deleter
 	def BirthDt(self):
 		del self._BirthDt
-		self._BirthDt = None
+		self._BirthDt = base_types.UninitialisedField(self, 'BirthDt', ISODate, False)
 
 	@property
 	def FrstNm(self):
@@ -28,12 +28,12 @@ class PersonIdentification10(base_types._BaseFieldType):
 
 	@FrstNm.setter
 	def FrstNm(self, value):
-		self._FrstNm = value if type(value) != base_types.auto else self.make_default("FrstNm")
+		self._FrstNm = value if value is not None else base_types.UninitialisedField(self, 'FrstNm', Max140Text, False)
 
 	@FrstNm.deleter
 	def FrstNm(self):
 		del self._FrstNm
-		self._FrstNm = None
+		self._FrstNm = base_types.UninitialisedField(self, 'FrstNm', Max140Text, False)
 
 	@property
 	def Nm(self):
@@ -41,12 +41,12 @@ class PersonIdentification10(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max140Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max140Text, False)
 
 	@property
 	def Othr(self):
@@ -54,12 +54,12 @@ class PersonIdentification10(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', GenericPersonIdentification1, False)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', GenericPersonIdentification1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BirthDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),

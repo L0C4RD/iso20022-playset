@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Case6 import Case6
-from ._CaseAssignment6 import CaseAssignment6
-from ._SupplementaryData1 import SupplementaryData1
-from ._UnableToApplyJustification4Choice import UnableToApplyJustification4Choice
-from ._UnderlyingTransaction8Choice import UnderlyingTransaction8Choice
+from . import Case6
+from . import CaseAssignment6
+from . import SupplementaryData1
+from . import UnableToApplyJustification4Choice
+from . import UnderlyingTransaction8Choice
 
 class UnableToApplyV10(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class UnableToApplyV10(base_types._BaseFieldType):
 
 	@Assgnmt.setter
 	def Assgnmt(self, value):
-		self._Assgnmt = value if type(value) != base_types.auto else self.make_default("Assgnmt")
+		self._Assgnmt = value if value is not None else base_types.UninitialisedField(self, 'Assgnmt', CaseAssignment6, False)
 
 	@Assgnmt.deleter
 	def Assgnmt(self):
 		del self._Assgnmt
-		self._Assgnmt = None
+		self._Assgnmt = base_types.UninitialisedField(self, 'Assgnmt', CaseAssignment6, False)
 
 	@property
 	def Case(self):
@@ -30,12 +30,12 @@ class UnableToApplyV10(base_types._BaseFieldType):
 
 	@Case.setter
 	def Case(self, value):
-		self._Case = value if type(value) != base_types.auto else self.make_default("Case")
+		self._Case = value if value is not None else base_types.UninitialisedField(self, 'Case', Case6, False)
 
 	@Case.deleter
 	def Case(self):
 		del self._Case
-		self._Case = None
+		self._Case = base_types.UninitialisedField(self, 'Case', Case6, False)
 
 	@property
 	def Justfn(self):
@@ -43,12 +43,12 @@ class UnableToApplyV10(base_types._BaseFieldType):
 
 	@Justfn.setter
 	def Justfn(self, value):
-		self._Justfn = value if type(value) != base_types.auto else self.make_default("Justfn")
+		self._Justfn = value if value is not None else base_types.UninitialisedField(self, 'Justfn', UnableToApplyJustification4Choice, False)
 
 	@Justfn.deleter
 	def Justfn(self):
 		del self._Justfn
-		self._Justfn = None
+		self._Justfn = base_types.UninitialisedField(self, 'Justfn', UnableToApplyJustification4Choice, False)
 
 	@property
 	def SplmtryData(self):
@@ -56,12 +56,12 @@ class UnableToApplyV10(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def Undrlyg(self):
@@ -69,12 +69,12 @@ class UnableToApplyV10(base_types._BaseFieldType):
 
 	@Undrlyg.setter
 	def Undrlyg(self, value):
-		self._Undrlyg = value if type(value) != base_types.auto else self.make_default("Undrlyg")
+		self._Undrlyg = value if value is not None else base_types.UninitialisedField(self, 'Undrlyg', UnderlyingTransaction8Choice, False)
 
 	@Undrlyg.deleter
 	def Undrlyg(self):
 		del self._Undrlyg
-		self._Undrlyg = None
+		self._Undrlyg = base_types.UninitialisedField(self, 'Undrlyg', UnderlyingTransaction8Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),

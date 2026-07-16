@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Amount2Choice import Amount2Choice
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CashBalance11 import CashBalance11
-from ._CreditDebitCode import CreditDebitCode
+from . import Amount2Choice
+from . import BranchAndFinancialInstitutionIdentification8
+from . import CashBalance11
+from . import CreditDebitCode
 
 class BilateralLimit4(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class BilateralLimit4(base_types._BaseFieldType):
 
 	@BilBal.setter
 	def BilBal(self, value):
-		self._BilBal = value if type(value) != base_types.auto else self.make_default("BilBal")
+		self._BilBal = value if value is not None else base_types.UninitialisedField(self, 'BilBal', CashBalance11, True)
 
 	@BilBal.deleter
 	def BilBal(self):
 		del self._BilBal
-		self._BilBal = None
+		self._BilBal = base_types.UninitialisedField(self, 'BilBal', CashBalance11, True)
 
 	@property
 	def CdtDbtInd(self):
@@ -29,12 +29,12 @@ class BilateralLimit4(base_types._BaseFieldType):
 
 	@CdtDbtInd.setter
 	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+		self._CdtDbtInd = value if value is not None else base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@CdtDbtInd.deleter
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
-		self._CdtDbtInd = None
+		self._CdtDbtInd = base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@property
 	def CtrPtyId(self):
@@ -42,12 +42,12 @@ class BilateralLimit4(base_types._BaseFieldType):
 
 	@CtrPtyId.setter
 	def CtrPtyId(self, value):
-		self._CtrPtyId = value if type(value) != base_types.auto else self.make_default("CtrPtyId")
+		self._CtrPtyId = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyId', BranchAndFinancialInstitutionIdentification8, False)
 
 	@CtrPtyId.deleter
 	def CtrPtyId(self):
 		del self._CtrPtyId
-		self._CtrPtyId = None
+		self._CtrPtyId = base_types.UninitialisedField(self, 'CtrPtyId', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def LmtAmt(self):
@@ -55,12 +55,12 @@ class BilateralLimit4(base_types._BaseFieldType):
 
 	@LmtAmt.setter
 	def LmtAmt(self, value):
-		self._LmtAmt = value if type(value) != base_types.auto else self.make_default("LmtAmt")
+		self._LmtAmt = value if value is not None else base_types.UninitialisedField(self, 'LmtAmt', Amount2Choice, False)
 
 	@LmtAmt.deleter
 	def LmtAmt(self):
 		del self._LmtAmt
-		self._LmtAmt = None
+		self._LmtAmt = base_types.UninitialisedField(self, 'LmtAmt', Amount2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BilBal', type=CashBalance11, min=0, max=None, mutex_group=None, array=True),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BankTransactionCodeStructure4 import BankTransactionCodeStructure4
-from ._Max105Text import Max105Text
-from ._PartyIdentification272 import PartyIdentification272
-from ._ReturnReason5Choice import ReturnReason5Choice
+from . import BankTransactionCodeStructure4
+from . import Max105Text
+from . import PartyIdentification272
+from . import ReturnReason5Choice
 
 class PaymentReturnReason8(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class PaymentReturnReason8(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max105Text, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max105Text, True)
 
 	@property
 	def OrgnlBkTxCd(self):
@@ -29,12 +29,12 @@ class PaymentReturnReason8(base_types._BaseFieldType):
 
 	@OrgnlBkTxCd.setter
 	def OrgnlBkTxCd(self, value):
-		self._OrgnlBkTxCd = value if type(value) != base_types.auto else self.make_default("OrgnlBkTxCd")
+		self._OrgnlBkTxCd = value if value is not None else base_types.UninitialisedField(self, 'OrgnlBkTxCd', BankTransactionCodeStructure4, False)
 
 	@OrgnlBkTxCd.deleter
 	def OrgnlBkTxCd(self):
 		del self._OrgnlBkTxCd
-		self._OrgnlBkTxCd = None
+		self._OrgnlBkTxCd = base_types.UninitialisedField(self, 'OrgnlBkTxCd', BankTransactionCodeStructure4, False)
 
 	@property
 	def Orgtr(self):
@@ -42,12 +42,12 @@ class PaymentReturnReason8(base_types._BaseFieldType):
 
 	@Orgtr.setter
 	def Orgtr(self, value):
-		self._Orgtr = value if type(value) != base_types.auto else self.make_default("Orgtr")
+		self._Orgtr = value if value is not None else base_types.UninitialisedField(self, 'Orgtr', PartyIdentification272, False)
 
 	@Orgtr.deleter
 	def Orgtr(self):
 		del self._Orgtr
-		self._Orgtr = None
+		self._Orgtr = base_types.UninitialisedField(self, 'Orgtr', PartyIdentification272, False)
 
 	@property
 	def Rsn(self):
@@ -55,12 +55,12 @@ class PaymentReturnReason8(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', ReturnReason5Choice, False)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', ReturnReason5Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max105Text, min=0, max=None, mutex_group=None, array=True),

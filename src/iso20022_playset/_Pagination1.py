@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max5NumericText import Max5NumericText
-from ._YesNoIndicator import YesNoIndicator
+from . import Max5NumericText
+from . import YesNoIndicator
 
 class Pagination1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Pagination1(base_types._BaseFieldType):
 
 	@LastPgInd.setter
 	def LastPgInd(self, value):
-		self._LastPgInd = value if type(value) != base_types.auto else self.make_default("LastPgInd")
+		self._LastPgInd = value if value is not None else base_types.UninitialisedField(self, 'LastPgInd', YesNoIndicator, False)
 
 	@LastPgInd.deleter
 	def LastPgInd(self):
 		del self._LastPgInd
-		self._LastPgInd = None
+		self._LastPgInd = base_types.UninitialisedField(self, 'LastPgInd', YesNoIndicator, False)
 
 	@property
 	def PgNb(self):
@@ -27,12 +27,12 @@ class Pagination1(base_types._BaseFieldType):
 
 	@PgNb.setter
 	def PgNb(self, value):
-		self._PgNb = value if type(value) != base_types.auto else self.make_default("PgNb")
+		self._PgNb = value if value is not None else base_types.UninitialisedField(self, 'PgNb', Max5NumericText, False)
 
 	@PgNb.deleter
 	def PgNb(self):
 		del self._PgNb
-		self._PgNb = None
+		self._PgNb = base_types.UninitialisedField(self, 'PgNb', Max5NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LastPgInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),

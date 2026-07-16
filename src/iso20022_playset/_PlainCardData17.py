@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardDataReading5Code import CardDataReading5Code
-from ._Max104Text import Max104Text
-from ._Max35Text import Max35Text
-from ._Max37Text import Max37Text
-from ._Max76Text import Max76Text
-from ._Min8Max28NumericText import Min8Max28NumericText
+from . import CardDataReading5Code
+from . import Max104Text
+from . import Max35Text
+from . import Max37Text
+from . import Max76Text
+from . import Min8Max28NumericText
 
 class PlainCardData17(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class PlainCardData17(base_types._BaseFieldType):
 
 	@AddtlCardData.setter
 	def AddtlCardData(self, value):
-		self._AddtlCardData = value if type(value) != base_types.auto else self.make_default("AddtlCardData")
+		self._AddtlCardData = value if value is not None else base_types.UninitialisedField(self, 'AddtlCardData', Max35Text, True)
 
 	@AddtlCardData.deleter
 	def AddtlCardData(self):
 		del self._AddtlCardData
-		self._AddtlCardData = None
+		self._AddtlCardData = base_types.UninitialisedField(self, 'AddtlCardData', Max35Text, True)
 
 	@property
 	def NtryMd(self):
@@ -31,12 +31,12 @@ class PlainCardData17(base_types._BaseFieldType):
 
 	@NtryMd.setter
 	def NtryMd(self, value):
-		self._NtryMd = value if type(value) != base_types.auto else self.make_default("NtryMd")
+		self._NtryMd = value if value is not None else base_types.UninitialisedField(self, 'NtryMd', CardDataReading5Code, False)
 
 	@NtryMd.deleter
 	def NtryMd(self):
 		del self._NtryMd
-		self._NtryMd = None
+		self._NtryMd = base_types.UninitialisedField(self, 'NtryMd', CardDataReading5Code, False)
 
 	@property
 	def PAN(self):
@@ -44,12 +44,12 @@ class PlainCardData17(base_types._BaseFieldType):
 
 	@PAN.setter
 	def PAN(self, value):
-		self._PAN = value if type(value) != base_types.auto else self.make_default("PAN")
+		self._PAN = value if value is not None else base_types.UninitialisedField(self, 'PAN', Min8Max28NumericText, False)
 
 	@PAN.deleter
 	def PAN(self):
 		del self._PAN
-		self._PAN = None
+		self._PAN = base_types.UninitialisedField(self, 'PAN', Min8Max28NumericText, False)
 
 	@property
 	def Trck1(self):
@@ -57,12 +57,12 @@ class PlainCardData17(base_types._BaseFieldType):
 
 	@Trck1.setter
 	def Trck1(self, value):
-		self._Trck1 = value if type(value) != base_types.auto else self.make_default("Trck1")
+		self._Trck1 = value if value is not None else base_types.UninitialisedField(self, 'Trck1', Max76Text, False)
 
 	@Trck1.deleter
 	def Trck1(self):
 		del self._Trck1
-		self._Trck1 = None
+		self._Trck1 = base_types.UninitialisedField(self, 'Trck1', Max76Text, False)
 
 	@property
 	def Trck2(self):
@@ -70,12 +70,12 @@ class PlainCardData17(base_types._BaseFieldType):
 
 	@Trck2.setter
 	def Trck2(self, value):
-		self._Trck2 = value if type(value) != base_types.auto else self.make_default("Trck2")
+		self._Trck2 = value if value is not None else base_types.UninitialisedField(self, 'Trck2', Max37Text, False)
 
 	@Trck2.deleter
 	def Trck2(self):
 		del self._Trck2
-		self._Trck2 = None
+		self._Trck2 = base_types.UninitialisedField(self, 'Trck2', Max37Text, False)
 
 	@property
 	def Trck3(self):
@@ -83,12 +83,12 @@ class PlainCardData17(base_types._BaseFieldType):
 
 	@Trck3.setter
 	def Trck3(self, value):
-		self._Trck3 = value if type(value) != base_types.auto else self.make_default("Trck3")
+		self._Trck3 = value if value is not None else base_types.UninitialisedField(self, 'Trck3', Max104Text, False)
 
 	@Trck3.deleter
 	def Trck3(self):
 		del self._Trck3
-		self._Trck3 = None
+		self._Trck3 = base_types.UninitialisedField(self, 'Trck3', Max104Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlCardData', type=Max35Text, min=0, max=None, mutex_group=None, array=True),

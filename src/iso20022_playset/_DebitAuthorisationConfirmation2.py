@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ISODate import ISODate
-from ._Max140Text import Max140Text
-from ._YesNoIndicator import YesNoIndicator
+from . import ActiveCurrencyAndAmount
+from . import ISODate
+from . import Max140Text
+from . import YesNoIndicator
 
 class DebitAuthorisationConfirmation2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class DebitAuthorisationConfirmation2(base_types._BaseFieldType):
 
 	@AmtToDbt.setter
 	def AmtToDbt(self, value):
-		self._AmtToDbt = value if type(value) != base_types.auto else self.make_default("AmtToDbt")
+		self._AmtToDbt = value if value is not None else base_types.UninitialisedField(self, 'AmtToDbt', ActiveCurrencyAndAmount, False)
 
 	@AmtToDbt.deleter
 	def AmtToDbt(self):
 		del self._AmtToDbt
-		self._AmtToDbt = None
+		self._AmtToDbt = base_types.UninitialisedField(self, 'AmtToDbt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def DbtAuthstn(self):
@@ -29,12 +29,12 @@ class DebitAuthorisationConfirmation2(base_types._BaseFieldType):
 
 	@DbtAuthstn.setter
 	def DbtAuthstn(self, value):
-		self._DbtAuthstn = value if type(value) != base_types.auto else self.make_default("DbtAuthstn")
+		self._DbtAuthstn = value if value is not None else base_types.UninitialisedField(self, 'DbtAuthstn', YesNoIndicator, False)
 
 	@DbtAuthstn.deleter
 	def DbtAuthstn(self):
 		del self._DbtAuthstn
-		self._DbtAuthstn = None
+		self._DbtAuthstn = base_types.UninitialisedField(self, 'DbtAuthstn', YesNoIndicator, False)
 
 	@property
 	def Rsn(self):
@@ -42,12 +42,12 @@ class DebitAuthorisationConfirmation2(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', Max140Text, False)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', Max140Text, False)
 
 	@property
 	def ValDtToDbt(self):
@@ -55,12 +55,12 @@ class DebitAuthorisationConfirmation2(base_types._BaseFieldType):
 
 	@ValDtToDbt.setter
 	def ValDtToDbt(self, value):
-		self._ValDtToDbt = value if type(value) != base_types.auto else self.make_default("ValDtToDbt")
+		self._ValDtToDbt = value if value is not None else base_types.UninitialisedField(self, 'ValDtToDbt', ISODate, False)
 
 	@ValDtToDbt.deleter
 	def ValDtToDbt(self):
 		del self._ValDtToDbt
-		self._ValDtToDbt = None
+		self._ValDtToDbt = base_types.UninitialisedField(self, 'ValDtToDbt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmtToDbt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

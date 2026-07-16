@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountOrRate1Choice import AmountOrRate1Choice
-from ._PlusOrMinusIndicator import PlusOrMinusIndicator
+from . import AmountOrRate1Choice
+from . import PlusOrMinusIndicator
 
 class SpreadRate1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SpreadRate1(base_types._BaseFieldType):
 
 	@RateOrAmt.setter
 	def RateOrAmt(self, value):
-		self._RateOrAmt = value if type(value) != base_types.auto else self.make_default("RateOrAmt")
+		self._RateOrAmt = value if value is not None else base_types.UninitialisedField(self, 'RateOrAmt', AmountOrRate1Choice, False)
 
 	@RateOrAmt.deleter
 	def RateOrAmt(self):
 		del self._RateOrAmt
-		self._RateOrAmt = None
+		self._RateOrAmt = base_types.UninitialisedField(self, 'RateOrAmt', AmountOrRate1Choice, False)
 
 	@property
 	def Sgn(self):
@@ -27,12 +27,12 @@ class SpreadRate1(base_types._BaseFieldType):
 
 	@Sgn.setter
 	def Sgn(self, value):
-		self._Sgn = value if type(value) != base_types.auto else self.make_default("Sgn")
+		self._Sgn = value if value is not None else base_types.UninitialisedField(self, 'Sgn', PlusOrMinusIndicator, False)
 
 	@Sgn.deleter
 	def Sgn(self):
 		del self._Sgn
-		self._Sgn = None
+		self._Sgn = base_types.UninitialisedField(self, 'Sgn', PlusOrMinusIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RateOrAmt', type=AmountOrRate1Choice, min=1, max=1, mutex_group=None, array=False),

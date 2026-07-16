@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._Max15PlusSignedNumericText import Max15PlusSignedNumericText
+from . import ISODate
+from . import Max15PlusSignedNumericText
 
 class CashAvailabilityDate1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CashAvailabilityDate1Choice(base_types._BaseFieldType):
 
 	@ActlDt.setter
 	def ActlDt(self, value):
-		self._ActlDt = value if type(value) != base_types.auto else self.make_default("ActlDt")
+		self._ActlDt = value if value is not None else base_types.UninitialisedField(self, 'ActlDt', ISODate, False)
 
 	@ActlDt.deleter
 	def ActlDt(self):
 		del self._ActlDt
-		self._ActlDt = None
+		self._ActlDt = base_types.UninitialisedField(self, 'ActlDt', ISODate, False)
 
 	@property
 	def NbOfDays(self):
@@ -27,12 +27,12 @@ class CashAvailabilityDate1Choice(base_types._BaseFieldType):
 
 	@NbOfDays.setter
 	def NbOfDays(self, value):
-		self._NbOfDays = value if type(value) != base_types.auto else self.make_default("NbOfDays")
+		self._NbOfDays = value if value is not None else base_types.UninitialisedField(self, 'NbOfDays', Max15PlusSignedNumericText, False)
 
 	@NbOfDays.deleter
 	def NbOfDays(self):
 		del self._NbOfDays
-		self._NbOfDays = None
+		self._NbOfDays = base_types.UninitialisedField(self, 'NbOfDays', Max15PlusSignedNumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActlDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),

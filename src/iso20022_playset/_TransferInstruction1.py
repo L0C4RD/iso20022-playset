@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._ISODateTime import ISODateTime
-from ._Max256Text import Max256Text
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
-from ._YesNoIndicator import YesNoIndicator
+from . import ISODate
+from . import ISODateTime
+from . import Max256Text
+from . import Max350Text
+from . import Max35Text
+from . import YesNoIndicator
 
 class TransferInstruction1(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class TransferInstruction1(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
+		self._Cd = value if value is not None else base_types.UninitialisedField(self, 'Cd', Max35Text, False)
 
 	@Cd.deleter
 	def Cd(self):
 		del self._Cd
-		self._Cd = None
+		self._Cd = base_types.UninitialisedField(self, 'Cd', Max35Text, False)
 
 	@property
 	def Desc(self):
@@ -31,12 +31,12 @@ class TransferInstruction1(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', Max350Text, False)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', Max350Text, False)
 
 	@property
 	def Prtry(self):
@@ -44,12 +44,12 @@ class TransferInstruction1(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+		self._Prtry = value if value is not None else base_types.UninitialisedField(self, 'Prtry', Max256Text, False)
 
 	@Prtry.deleter
 	def Prtry(self):
 		del self._Prtry
-		self._Prtry = None
+		self._Prtry = base_types.UninitialisedField(self, 'Prtry', Max256Text, False)
 
 	@property
 	def StartDt(self):
@@ -57,12 +57,12 @@ class TransferInstruction1(base_types._BaseFieldType):
 
 	@StartDt.setter
 	def StartDt(self, value):
-		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
+		self._StartDt = value if value is not None else base_types.UninitialisedField(self, 'StartDt', ISODate, False)
 
 	@StartDt.deleter
 	def StartDt(self):
 		del self._StartDt
-		self._StartDt = None
+		self._StartDt = base_types.UninitialisedField(self, 'StartDt', ISODate, False)
 
 	@property
 	def StartDtTm(self):
@@ -70,12 +70,12 @@ class TransferInstruction1(base_types._BaseFieldType):
 
 	@StartDtTm.setter
 	def StartDtTm(self, value):
-		self._StartDtTm = value if type(value) != base_types.auto else self.make_default("StartDtTm")
+		self._StartDtTm = value if value is not None else base_types.UninitialisedField(self, 'StartDtTm', ISODateTime, False)
 
 	@StartDtTm.deleter
 	def StartDtTm(self):
 		del self._StartDtTm
-		self._StartDtTm = None
+		self._StartDtTm = base_types.UninitialisedField(self, 'StartDtTm', ISODateTime, False)
 
 	@property
 	def TrfInd(self):
@@ -83,12 +83,12 @@ class TransferInstruction1(base_types._BaseFieldType):
 
 	@TrfInd.setter
 	def TrfInd(self, value):
-		self._TrfInd = value if type(value) != base_types.auto else self.make_default("TrfInd")
+		self._TrfInd = value if value is not None else base_types.UninitialisedField(self, 'TrfInd', YesNoIndicator, False)
 
 	@TrfInd.deleter
 	def TrfInd(self):
 		del self._TrfInd
-		self._TrfInd = None
+		self._TrfInd = base_types.UninitialisedField(self, 'TrfInd', YesNoIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cd', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

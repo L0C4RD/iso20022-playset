@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DatePeriod2 import DatePeriod2
-from ._DateTimePeriod1 import DateTimePeriod1
+from . import DatePeriod2
+from . import DateTimePeriod1
 
 class DateOrDateTimePeriod4Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DateOrDateTimePeriod4Choice(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', DatePeriod2, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', DatePeriod2, False)
 
 	@property
 	def DtTm(self):
@@ -27,12 +27,12 @@ class DateOrDateTimePeriod4Choice(base_types._BaseFieldType):
 
 	@DtTm.setter
 	def DtTm(self, value):
-		self._DtTm = value if type(value) != base_types.auto else self.make_default("DtTm")
+		self._DtTm = value if value is not None else base_types.UninitialisedField(self, 'DtTm', DateTimePeriod1, False)
 
 	@DtTm.deleter
 	def DtTm(self):
 		del self._DtTm
-		self._DtTm = None
+		self._DtTm = base_types.UninitialisedField(self, 'DtTm', DateTimePeriod1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dt', type=DatePeriod2, min=0, max=1, mutex_group=1, array=False),

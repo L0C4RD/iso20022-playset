@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DefaultFundRequirement1 import DefaultFundRequirement1
-from ._EndOfDayRequirement2 import EndOfDayRequirement2
-from ._IntraDayMarginCall1 import IntraDayMarginCall1
-from ._IntraDayRequirement1 import IntraDayRequirement1
-from ._SupplementaryData1 import SupplementaryData1
+from . import DefaultFundRequirement1
+from . import EndOfDayRequirement2
+from . import IntraDayMarginCall1
+from . import IntraDayRequirement1
+from . import SupplementaryData1
 
 class CCPMemberRequirementsReportV01(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class CCPMemberRequirementsReportV01(base_types._BaseFieldType):
 
 	@DfltFndRqrmnt.setter
 	def DfltFndRqrmnt(self, value):
-		self._DfltFndRqrmnt = value if type(value) != base_types.auto else self.make_default("DfltFndRqrmnt")
+		self._DfltFndRqrmnt = value if value is not None else base_types.UninitialisedField(self, 'DfltFndRqrmnt', DefaultFundRequirement1, True)
 
 	@DfltFndRqrmnt.deleter
 	def DfltFndRqrmnt(self):
 		del self._DfltFndRqrmnt
-		self._DfltFndRqrmnt = None
+		self._DfltFndRqrmnt = base_types.UninitialisedField(self, 'DfltFndRqrmnt', DefaultFundRequirement1, True)
 
 	@property
 	def EndOfDayRqrmnt(self):
@@ -30,12 +30,12 @@ class CCPMemberRequirementsReportV01(base_types._BaseFieldType):
 
 	@EndOfDayRqrmnt.setter
 	def EndOfDayRqrmnt(self, value):
-		self._EndOfDayRqrmnt = value if type(value) != base_types.auto else self.make_default("EndOfDayRqrmnt")
+		self._EndOfDayRqrmnt = value if value is not None else base_types.UninitialisedField(self, 'EndOfDayRqrmnt', EndOfDayRequirement2, True)
 
 	@EndOfDayRqrmnt.deleter
 	def EndOfDayRqrmnt(self):
 		del self._EndOfDayRqrmnt
-		self._EndOfDayRqrmnt = None
+		self._EndOfDayRqrmnt = base_types.UninitialisedField(self, 'EndOfDayRqrmnt', EndOfDayRequirement2, True)
 
 	@property
 	def IntraDayMrgnCall(self):
@@ -43,12 +43,12 @@ class CCPMemberRequirementsReportV01(base_types._BaseFieldType):
 
 	@IntraDayMrgnCall.setter
 	def IntraDayMrgnCall(self, value):
-		self._IntraDayMrgnCall = value if type(value) != base_types.auto else self.make_default("IntraDayMrgnCall")
+		self._IntraDayMrgnCall = value if value is not None else base_types.UninitialisedField(self, 'IntraDayMrgnCall', IntraDayMarginCall1, True)
 
 	@IntraDayMrgnCall.deleter
 	def IntraDayMrgnCall(self):
 		del self._IntraDayMrgnCall
-		self._IntraDayMrgnCall = None
+		self._IntraDayMrgnCall = base_types.UninitialisedField(self, 'IntraDayMrgnCall', IntraDayMarginCall1, True)
 
 	@property
 	def IntraDayRqrmntAmt(self):
@@ -56,12 +56,12 @@ class CCPMemberRequirementsReportV01(base_types._BaseFieldType):
 
 	@IntraDayRqrmntAmt.setter
 	def IntraDayRqrmntAmt(self, value):
-		self._IntraDayRqrmntAmt = value if type(value) != base_types.auto else self.make_default("IntraDayRqrmntAmt")
+		self._IntraDayRqrmntAmt = value if value is not None else base_types.UninitialisedField(self, 'IntraDayRqrmntAmt', IntraDayRequirement1, True)
 
 	@IntraDayRqrmntAmt.deleter
 	def IntraDayRqrmntAmt(self):
 		del self._IntraDayRqrmntAmt
-		self._IntraDayRqrmntAmt = None
+		self._IntraDayRqrmntAmt = base_types.UninitialisedField(self, 'IntraDayRqrmntAmt', IntraDayRequirement1, True)
 
 	@property
 	def SplmtryData(self):
@@ -69,12 +69,12 @@ class CCPMemberRequirementsReportV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DfltFndRqrmnt', type=DefaultFundRequirement1, min=1, max=None, mutex_group=None, array=True),

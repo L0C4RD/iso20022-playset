@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._ISODate import ISODate
+from . import DateAndDateTime2Choice
+from . import ISODate
 
 class CorporateActionDate99(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CorporateActionDate99(base_types._BaseFieldType):
 
 	@EarlstPmtDt.setter
 	def EarlstPmtDt(self, value):
-		self._EarlstPmtDt = value if type(value) != base_types.auto else self.make_default("EarlstPmtDt")
+		self._EarlstPmtDt = value if value is not None else base_types.UninitialisedField(self, 'EarlstPmtDt', ISODate, False)
 
 	@EarlstPmtDt.deleter
 	def EarlstPmtDt(self):
 		del self._EarlstPmtDt
-		self._EarlstPmtDt = None
+		self._EarlstPmtDt = base_types.UninitialisedField(self, 'EarlstPmtDt', ISODate, False)
 
 	@property
 	def FXRateFxgDt(self):
@@ -27,12 +27,12 @@ class CorporateActionDate99(base_types._BaseFieldType):
 
 	@FXRateFxgDt.setter
 	def FXRateFxgDt(self, value):
-		self._FXRateFxgDt = value if type(value) != base_types.auto else self.make_default("FXRateFxgDt")
+		self._FXRateFxgDt = value if value is not None else base_types.UninitialisedField(self, 'FXRateFxgDt', DateAndDateTime2Choice, False)
 
 	@FXRateFxgDt.deleter
 	def FXRateFxgDt(self):
 		del self._FXRateFxgDt
-		self._FXRateFxgDt = None
+		self._FXRateFxgDt = base_types.UninitialisedField(self, 'FXRateFxgDt', DateAndDateTime2Choice, False)
 
 	@property
 	def PmtDt(self):
@@ -40,12 +40,12 @@ class CorporateActionDate99(base_types._BaseFieldType):
 
 	@PmtDt.setter
 	def PmtDt(self, value):
-		self._PmtDt = value if type(value) != base_types.auto else self.make_default("PmtDt")
+		self._PmtDt = value if value is not None else base_types.UninitialisedField(self, 'PmtDt', ISODate, False)
 
 	@PmtDt.deleter
 	def PmtDt(self):
 		del self._PmtDt
-		self._PmtDt = None
+		self._PmtDt = base_types.UninitialisedField(self, 'PmtDt', ISODate, False)
 
 	@property
 	def PstngDt(self):
@@ -53,12 +53,12 @@ class CorporateActionDate99(base_types._BaseFieldType):
 
 	@PstngDt.setter
 	def PstngDt(self, value):
-		self._PstngDt = value if type(value) != base_types.auto else self.make_default("PstngDt")
+		self._PstngDt = value if value is not None else base_types.UninitialisedField(self, 'PstngDt', DateAndDateTime2Choice, False)
 
 	@PstngDt.deleter
 	def PstngDt(self):
 		del self._PstngDt
-		self._PstngDt = None
+		self._PstngDt = base_types.UninitialisedField(self, 'PstngDt', DateAndDateTime2Choice, False)
 
 	@property
 	def ValDt(self):
@@ -66,12 +66,12 @@ class CorporateActionDate99(base_types._BaseFieldType):
 
 	@ValDt.setter
 	def ValDt(self, value):
-		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
+		self._ValDt = value if value is not None else base_types.UninitialisedField(self, 'ValDt', ISODate, False)
 
 	@ValDt.deleter
 	def ValDt(self):
 		del self._ValDt
-		self._ValDt = None
+		self._ValDt = base_types.UninitialisedField(self, 'ValDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EarlstPmtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),

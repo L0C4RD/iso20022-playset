@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CancellationStatus32Choice import CancellationStatus32Choice
-from ._Max35Text import Max35Text
+from . import CancellationStatus32Choice
+from . import Max35Text
 
 class DetailedInstructionCancellationStatus15(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DetailedInstructionCancellationStatus15(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', Max35Text, False)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', Max35Text, False)
 
 	@property
 	def InstrCxlSts(self):
@@ -27,12 +27,12 @@ class DetailedInstructionCancellationStatus15(base_types._BaseFieldType):
 
 	@InstrCxlSts.setter
 	def InstrCxlSts(self, value):
-		self._InstrCxlSts = value if type(value) != base_types.auto else self.make_default("InstrCxlSts")
+		self._InstrCxlSts = value if value is not None else base_types.UninitialisedField(self, 'InstrCxlSts', CancellationStatus32Choice, False)
 
 	@InstrCxlSts.deleter
 	def InstrCxlSts(self):
 		del self._InstrCxlSts
-		self._InstrCxlSts = None
+		self._InstrCxlSts = base_types.UninitialisedField(self, 'InstrCxlSts', CancellationStatus32Choice, False)
 
 	@property
 	def SnglInstrCxlId(self):
@@ -40,12 +40,12 @@ class DetailedInstructionCancellationStatus15(base_types._BaseFieldType):
 
 	@SnglInstrCxlId.setter
 	def SnglInstrCxlId(self, value):
-		self._SnglInstrCxlId = value if type(value) != base_types.auto else self.make_default("SnglInstrCxlId")
+		self._SnglInstrCxlId = value if value is not None else base_types.UninitialisedField(self, 'SnglInstrCxlId', Max35Text, False)
 
 	@SnglInstrCxlId.deleter
 	def SnglInstrCxlId(self):
 		del self._SnglInstrCxlId
-		self._SnglInstrCxlId = None
+		self._SnglInstrCxlId = base_types.UninitialisedField(self, 'SnglInstrCxlId', Max35Text, False)
 
 	@property
 	def SubAcctId(self):
@@ -53,12 +53,12 @@ class DetailedInstructionCancellationStatus15(base_types._BaseFieldType):
 
 	@SubAcctId.setter
 	def SubAcctId(self, value):
-		self._SubAcctId = value if type(value) != base_types.auto else self.make_default("SubAcctId")
+		self._SubAcctId = value if value is not None else base_types.UninitialisedField(self, 'SubAcctId', Max35Text, False)
 
 	@SubAcctId.deleter
 	def SubAcctId(self):
 		del self._SubAcctId
-		self._SubAcctId = None
+		self._SubAcctId = base_types.UninitialisedField(self, 'SubAcctId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

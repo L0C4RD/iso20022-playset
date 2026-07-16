@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._YesNoIndicator import YesNoIndicator
+from . import BlockChainAddressWallet3
+from . import SecuritiesAccount19
+from . import YesNoIndicator
 
 class IssuanceAccount3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class IssuanceAccount3(base_types._BaseFieldType):
 
 	@IssncAcct.setter
 	def IssncAcct(self, value):
-		self._IssncAcct = value if type(value) != base_types.auto else self.make_default("IssncAcct")
+		self._IssncAcct = value if value is not None else base_types.UninitialisedField(self, 'IssncAcct', SecuritiesAccount19, False)
 
 	@IssncAcct.deleter
 	def IssncAcct(self):
 		del self._IssncAcct
-		self._IssncAcct = None
+		self._IssncAcct = base_types.UninitialisedField(self, 'IssncAcct', SecuritiesAccount19, False)
 
 	@property
 	def IssncBlckChainAdrOrWllt(self):
@@ -28,12 +28,12 @@ class IssuanceAccount3(base_types._BaseFieldType):
 
 	@IssncBlckChainAdrOrWllt.setter
 	def IssncBlckChainAdrOrWllt(self, value):
-		self._IssncBlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("IssncBlckChainAdrOrWllt")
+		self._IssncBlckChainAdrOrWllt = value if value is not None else base_types.UninitialisedField(self, 'IssncBlckChainAdrOrWllt', BlockChainAddressWallet3, False)
 
 	@IssncBlckChainAdrOrWllt.deleter
 	def IssncBlckChainAdrOrWllt(self):
 		del self._IssncBlckChainAdrOrWllt
-		self._IssncBlckChainAdrOrWllt = None
+		self._IssncBlckChainAdrOrWllt = base_types.UninitialisedField(self, 'IssncBlckChainAdrOrWllt', BlockChainAddressWallet3, False)
 
 	@property
 	def PmryAcctInd(self):
@@ -41,12 +41,12 @@ class IssuanceAccount3(base_types._BaseFieldType):
 
 	@PmryAcctInd.setter
 	def PmryAcctInd(self, value):
-		self._PmryAcctInd = value if type(value) != base_types.auto else self.make_default("PmryAcctInd")
+		self._PmryAcctInd = value if value is not None else base_types.UninitialisedField(self, 'PmryAcctInd', YesNoIndicator, False)
 
 	@PmryAcctInd.deleter
 	def PmryAcctInd(self):
 		del self._PmryAcctInd
-		self._PmryAcctInd = None
+		self._PmryAcctInd = base_types.UninitialisedField(self, 'PmryAcctInd', YesNoIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IssncAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),

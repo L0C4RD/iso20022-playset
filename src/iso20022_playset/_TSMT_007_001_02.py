@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmendmentRejectionV02 import AmendmentRejectionV02
+from . import AmendmentRejectionV02
 
 class TSMT_007_001_02():
 
@@ -18,12 +18,12 @@ class TSMT_007_001_02():
 
 		@AmdmntRjctn.setter
 		def AmdmntRjctn(self, value):
-			self._AmdmntRjctn = value if type(value) != base_types.auto else self.make_default("AmdmntRjctn")
+			self._AmdmntRjctn = value if value is not None else base_types.UninitialisedField(self, 'AmdmntRjctn', AmendmentRejectionV02, False)
 
 		@AmdmntRjctn.deleter
 		def AmdmntRjctn(self):
 			del self._AmdmntRjctn
-			self._AmdmntRjctn = None
+			self._AmdmntRjctn = base_types.UninitialisedField(self, 'AmdmntRjctn', AmendmentRejectionV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AmdmntRjctn', type=AmendmentRejectionV02, min=1, max=1, mutex_group=None, array=False),

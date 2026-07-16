@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ErrorHandling3 import ErrorHandling3
-from ._Member7 import Member7
+from . import ErrorHandling3
+from . import Member7
 
 class MemberReportOrError8Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class MemberReportOrError8Choice(base_types._BaseFieldType):
 
 	@BizErr.setter
 	def BizErr(self, value):
-		self._BizErr = value if type(value) != base_types.auto else self.make_default("BizErr")
+		self._BizErr = value if value is not None else base_types.UninitialisedField(self, 'BizErr', ErrorHandling3, False)
 
 	@BizErr.deleter
 	def BizErr(self):
 		del self._BizErr
-		self._BizErr = None
+		self._BizErr = base_types.UninitialisedField(self, 'BizErr', ErrorHandling3, False)
 
 	@property
 	def Mmb(self):
@@ -27,12 +27,12 @@ class MemberReportOrError8Choice(base_types._BaseFieldType):
 
 	@Mmb.setter
 	def Mmb(self, value):
-		self._Mmb = value if type(value) != base_types.auto else self.make_default("Mmb")
+		self._Mmb = value if value is not None else base_types.UninitialisedField(self, 'Mmb', Member7, False)
 
 	@Mmb.deleter
 	def Mmb(self):
 		del self._Mmb
-		self._Mmb = None
+		self._Mmb = base_types.UninitialisedField(self, 'Mmb', Member7, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BizErr', type=ErrorHandling3, min=0, max=1, mutex_group=1, array=False),

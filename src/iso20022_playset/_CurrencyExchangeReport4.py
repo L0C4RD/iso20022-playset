@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CurrencySourceTarget1 import CurrencySourceTarget1
-from ._ExchangeRateReportOrError4Choice import ExchangeRateReportOrError4Choice
+from . import CurrencySourceTarget1
+from . import ExchangeRateReportOrError4Choice
 
 class CurrencyExchangeReport4(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CurrencyExchangeReport4(base_types._BaseFieldType):
 
 	@CcyRef.setter
 	def CcyRef(self, value):
-		self._CcyRef = value if type(value) != base_types.auto else self.make_default("CcyRef")
+		self._CcyRef = value if value is not None else base_types.UninitialisedField(self, 'CcyRef', CurrencySourceTarget1, False)
 
 	@CcyRef.deleter
 	def CcyRef(self):
 		del self._CcyRef
-		self._CcyRef = None
+		self._CcyRef = base_types.UninitialisedField(self, 'CcyRef', CurrencySourceTarget1, False)
 
 	@property
 	def CcyXchgOrErr(self):
@@ -27,12 +27,12 @@ class CurrencyExchangeReport4(base_types._BaseFieldType):
 
 	@CcyXchgOrErr.setter
 	def CcyXchgOrErr(self, value):
-		self._CcyXchgOrErr = value if type(value) != base_types.auto else self.make_default("CcyXchgOrErr")
+		self._CcyXchgOrErr = value if value is not None else base_types.UninitialisedField(self, 'CcyXchgOrErr', ExchangeRateReportOrError4Choice, False)
 
 	@CcyXchgOrErr.deleter
 	def CcyXchgOrErr(self):
 		del self._CcyXchgOrErr
-		self._CcyXchgOrErr = None
+		self._CcyXchgOrErr = base_types.UninitialisedField(self, 'CcyXchgOrErr', ExchangeRateReportOrError4Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CcyRef', type=CurrencySourceTarget1, min=1, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._EligibleSecuritiesDeletionRequestV01 import EligibleSecuritiesDeletionRequestV01
+from . import EligibleSecuritiesDeletionRequestV01
 
 class REDA_075_001_01():
 
@@ -18,12 +18,12 @@ class REDA_075_001_01():
 
 		@ElgblSctiesDeltnReq.setter
 		def ElgblSctiesDeltnReq(self, value):
-			self._ElgblSctiesDeltnReq = value if type(value) != base_types.auto else self.make_default("ElgblSctiesDeltnReq")
+			self._ElgblSctiesDeltnReq = value if value is not None else base_types.UninitialisedField(self, 'ElgblSctiesDeltnReq', EligibleSecuritiesDeletionRequestV01, False)
 
 		@ElgblSctiesDeltnReq.deleter
 		def ElgblSctiesDeltnReq(self):
 			del self._ElgblSctiesDeltnReq
-			self._ElgblSctiesDeltnReq = None
+			self._ElgblSctiesDeltnReq = base_types.UninitialisedField(self, 'ElgblSctiesDeltnReq', EligibleSecuritiesDeletionRequestV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ElgblSctiesDeltnReq', type=EligibleSecuritiesDeletionRequestV01, min=1, max=1, mutex_group=None, array=False),

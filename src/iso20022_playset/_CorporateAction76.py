@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionDate89 import CorporateActionDate89
-from ._CorporateActionEventStageFormat15Choice import CorporateActionEventStageFormat15Choice
-from ._LotteryTypeFormat5Choice import LotteryTypeFormat5Choice
+from . import CorporateActionDate89
+from . import CorporateActionEventStageFormat15Choice
+from . import LotteryTypeFormat5Choice
 
 class CorporateAction76(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CorporateAction76(base_types._BaseFieldType):
 
 	@DtDtls.setter
 	def DtDtls(self, value):
-		self._DtDtls = value if type(value) != base_types.auto else self.make_default("DtDtls")
+		self._DtDtls = value if value is not None else base_types.UninitialisedField(self, 'DtDtls', CorporateActionDate89, False)
 
 	@DtDtls.deleter
 	def DtDtls(self):
 		del self._DtDtls
-		self._DtDtls = None
+		self._DtDtls = base_types.UninitialisedField(self, 'DtDtls', CorporateActionDate89, False)
 
 	@property
 	def EvtStag(self):
@@ -28,12 +28,12 @@ class CorporateAction76(base_types._BaseFieldType):
 
 	@EvtStag.setter
 	def EvtStag(self, value):
-		self._EvtStag = value if type(value) != base_types.auto else self.make_default("EvtStag")
+		self._EvtStag = value if value is not None else base_types.UninitialisedField(self, 'EvtStag', CorporateActionEventStageFormat15Choice, False)
 
 	@EvtStag.deleter
 	def EvtStag(self):
 		del self._EvtStag
-		self._EvtStag = None
+		self._EvtStag = base_types.UninitialisedField(self, 'EvtStag', CorporateActionEventStageFormat15Choice, False)
 
 	@property
 	def LtryTp(self):
@@ -41,12 +41,12 @@ class CorporateAction76(base_types._BaseFieldType):
 
 	@LtryTp.setter
 	def LtryTp(self, value):
-		self._LtryTp = value if type(value) != base_types.auto else self.make_default("LtryTp")
+		self._LtryTp = value if value is not None else base_types.UninitialisedField(self, 'LtryTp', LotteryTypeFormat5Choice, False)
 
 	@LtryTp.deleter
 	def LtryTp(self):
 		del self._LtryTp
-		self._LtryTp = None
+		self._LtryTp = base_types.UninitialisedField(self, 'LtryTp', LotteryTypeFormat5Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DtDtls', type=CorporateActionDate89, min=0, max=1, mutex_group=None, array=False),

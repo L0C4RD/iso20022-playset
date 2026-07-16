@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GroupHeader110 import GroupHeader110
-from ._Mandate23 import Mandate23
-from ._SupplementaryData1 import SupplementaryData1
+from . import GroupHeader110
+from . import Mandate23
+from . import SupplementaryData1
 
 class MandateInitiationRequestV08(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class MandateInitiationRequestV08(base_types._BaseFieldType):
 
 	@GrpHdr.setter
 	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
+		self._GrpHdr = value if value is not None else base_types.UninitialisedField(self, 'GrpHdr', GroupHeader110, False)
 
 	@GrpHdr.deleter
 	def GrpHdr(self):
 		del self._GrpHdr
-		self._GrpHdr = None
+		self._GrpHdr = base_types.UninitialisedField(self, 'GrpHdr', GroupHeader110, False)
 
 	@property
 	def Mndt(self):
@@ -28,12 +28,12 @@ class MandateInitiationRequestV08(base_types._BaseFieldType):
 
 	@Mndt.setter
 	def Mndt(self, value):
-		self._Mndt = value if type(value) != base_types.auto else self.make_default("Mndt")
+		self._Mndt = value if value is not None else base_types.UninitialisedField(self, 'Mndt', Mandate23, True)
 
 	@Mndt.deleter
 	def Mndt(self):
 		del self._Mndt
-		self._Mndt = None
+		self._Mndt = base_types.UninitialisedField(self, 'Mndt', Mandate23, True)
 
 	@property
 	def SplmtryData(self):
@@ -41,12 +41,12 @@ class MandateInitiationRequestV08(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='GrpHdr', type=GroupHeader110, min=1, max=1, mutex_group=None, array=False),

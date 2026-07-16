@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateFormat58Choice import DateFormat58Choice
-from ._Max350Text import Max350Text
-from ._Proxy11 import Proxy11
+from . import DateFormat58Choice
+from . import Max350Text
+from . import Proxy11
 
 class ProxyAppointmentInformation6(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ProxyAppointmentInformation6(base_types._BaseFieldType):
 
 	@AuthrsdPrxy.setter
 	def AuthrsdPrxy(self, value):
-		self._AuthrsdPrxy = value if type(value) != base_types.auto else self.make_default("AuthrsdPrxy")
+		self._AuthrsdPrxy = value if value is not None else base_types.UninitialisedField(self, 'AuthrsdPrxy', Proxy11, True)
 
 	@AuthrsdPrxy.deleter
 	def AuthrsdPrxy(self):
 		del self._AuthrsdPrxy
-		self._AuthrsdPrxy = None
+		self._AuthrsdPrxy = base_types.UninitialisedField(self, 'AuthrsdPrxy', Proxy11, True)
 
 	@property
 	def Ddln(self):
@@ -28,12 +28,12 @@ class ProxyAppointmentInformation6(base_types._BaseFieldType):
 
 	@Ddln.setter
 	def Ddln(self, value):
-		self._Ddln = value if type(value) != base_types.auto else self.make_default("Ddln")
+		self._Ddln = value if value is not None else base_types.UninitialisedField(self, 'Ddln', DateFormat58Choice, False)
 
 	@Ddln.deleter
 	def Ddln(self):
 		del self._Ddln
-		self._Ddln = None
+		self._Ddln = base_types.UninitialisedField(self, 'Ddln', DateFormat58Choice, False)
 
 	@property
 	def MktDdln(self):
@@ -41,12 +41,12 @@ class ProxyAppointmentInformation6(base_types._BaseFieldType):
 
 	@MktDdln.setter
 	def MktDdln(self, value):
-		self._MktDdln = value if type(value) != base_types.auto else self.make_default("MktDdln")
+		self._MktDdln = value if value is not None else base_types.UninitialisedField(self, 'MktDdln', DateFormat58Choice, False)
 
 	@MktDdln.deleter
 	def MktDdln(self):
 		del self._MktDdln
-		self._MktDdln = None
+		self._MktDdln = base_types.UninitialisedField(self, 'MktDdln', DateFormat58Choice, False)
 
 	@property
 	def RegnMtd(self):
@@ -54,12 +54,12 @@ class ProxyAppointmentInformation6(base_types._BaseFieldType):
 
 	@RegnMtd.setter
 	def RegnMtd(self, value):
-		self._RegnMtd = value if type(value) != base_types.auto else self.make_default("RegnMtd")
+		self._RegnMtd = value if value is not None else base_types.UninitialisedField(self, 'RegnMtd', Max350Text, False)
 
 	@RegnMtd.deleter
 	def RegnMtd(self):
 		del self._RegnMtd
-		self._RegnMtd = None
+		self._RegnMtd = base_types.UninitialisedField(self, 'RegnMtd', Max350Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AuthrsdPrxy', type=Proxy11, min=0, max=10, mutex_group=None, array=True),

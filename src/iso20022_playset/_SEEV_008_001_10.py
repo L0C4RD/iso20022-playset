@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MeetingResultDisseminationV10 import MeetingResultDisseminationV10
+from . import MeetingResultDisseminationV10
 
 class SEEV_008_001_10():
 
@@ -18,12 +18,12 @@ class SEEV_008_001_10():
 
 		@MtgRsltDssmntn.setter
 		def MtgRsltDssmntn(self, value):
-			self._MtgRsltDssmntn = value if type(value) != base_types.auto else self.make_default("MtgRsltDssmntn")
+			self._MtgRsltDssmntn = value if value is not None else base_types.UninitialisedField(self, 'MtgRsltDssmntn', MeetingResultDisseminationV10, False)
 
 		@MtgRsltDssmntn.deleter
 		def MtgRsltDssmntn(self):
 			del self._MtgRsltDssmntn
-			self._MtgRsltDssmntn = None
+			self._MtgRsltDssmntn = base_types.UninitialisedField(self, 'MtgRsltDssmntn', MeetingResultDisseminationV10, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='MtgRsltDssmntn', type=MeetingResultDisseminationV10, min=1, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from . import ActiveOrHistoricCurrencyAndAmount
 
 class PostedMarginOrCollateral4(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class PostedMarginOrCollateral4(base_types._BaseFieldType):
 
 	@InitlMrgnPstd.setter
 	def InitlMrgnPstd(self, value):
-		self._InitlMrgnPstd = value if type(value) != base_types.auto else self.make_default("InitlMrgnPstd")
+		self._InitlMrgnPstd = value if value is not None else base_types.UninitialisedField(self, 'InitlMrgnPstd', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@InitlMrgnPstd.deleter
 	def InitlMrgnPstd(self):
 		del self._InitlMrgnPstd
-		self._InitlMrgnPstd = None
+		self._InitlMrgnPstd = base_types.UninitialisedField(self, 'InitlMrgnPstd', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def VartnMrgnPstd(self):
@@ -26,12 +26,12 @@ class PostedMarginOrCollateral4(base_types._BaseFieldType):
 
 	@VartnMrgnPstd.setter
 	def VartnMrgnPstd(self, value):
-		self._VartnMrgnPstd = value if type(value) != base_types.auto else self.make_default("VartnMrgnPstd")
+		self._VartnMrgnPstd = value if value is not None else base_types.UninitialisedField(self, 'VartnMrgnPstd', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@VartnMrgnPstd.deleter
 	def VartnMrgnPstd(self):
 		del self._VartnMrgnPstd
-		self._VartnMrgnPstd = None
+		self._VartnMrgnPstd = base_types.UninitialisedField(self, 'VartnMrgnPstd', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def XcssCollPstd(self):
@@ -39,12 +39,12 @@ class PostedMarginOrCollateral4(base_types._BaseFieldType):
 
 	@XcssCollPstd.setter
 	def XcssCollPstd(self, value):
-		self._XcssCollPstd = value if type(value) != base_types.auto else self.make_default("XcssCollPstd")
+		self._XcssCollPstd = value if value is not None else base_types.UninitialisedField(self, 'XcssCollPstd', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@XcssCollPstd.deleter
 	def XcssCollPstd(self):
 		del self._XcssCollPstd
-		self._XcssCollPstd = None
+		self._XcssCollPstd = base_types.UninitialisedField(self, 'XcssCollPstd', ActiveOrHistoricCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InitlMrgnPstd', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

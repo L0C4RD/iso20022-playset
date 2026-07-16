@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ClosingBalance3Choice import ClosingBalance3Choice
-from ._OpeningBalance3Choice import OpeningBalance3Choice
+from . import ClosingBalance3Choice
+from . import OpeningBalance3Choice
 
 class PaginationBalance2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PaginationBalance2(base_types._BaseFieldType):
 
 	@ClsgBal.setter
 	def ClsgBal(self, value):
-		self._ClsgBal = value if type(value) != base_types.auto else self.make_default("ClsgBal")
+		self._ClsgBal = value if value is not None else base_types.UninitialisedField(self, 'ClsgBal', ClosingBalance3Choice, False)
 
 	@ClsgBal.deleter
 	def ClsgBal(self):
 		del self._ClsgBal
-		self._ClsgBal = None
+		self._ClsgBal = base_types.UninitialisedField(self, 'ClsgBal', ClosingBalance3Choice, False)
 
 	@property
 	def OpngBal(self):
@@ -27,12 +27,12 @@ class PaginationBalance2(base_types._BaseFieldType):
 
 	@OpngBal.setter
 	def OpngBal(self, value):
-		self._OpngBal = value if type(value) != base_types.auto else self.make_default("OpngBal")
+		self._OpngBal = value if value is not None else base_types.UninitialisedField(self, 'OpngBal', OpeningBalance3Choice, False)
 
 	@OpngBal.deleter
 	def OpngBal(self):
 		del self._OpngBal
-		self._OpngBal = None
+		self._OpngBal = base_types.UninitialisedField(self, 'OpngBal', OpeningBalance3Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClsgBal', type=ClosingBalance3Choice, min=0, max=1, mutex_group=None, array=False),

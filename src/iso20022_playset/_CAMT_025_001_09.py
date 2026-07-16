@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ReceiptV09 import ReceiptV09
+from . import ReceiptV09
 
 class CAMT_025_001_09():
 
@@ -18,12 +18,12 @@ class CAMT_025_001_09():
 
 		@Rct.setter
 		def Rct(self, value):
-			self._Rct = value if type(value) != base_types.auto else self.make_default("Rct")
+			self._Rct = value if value is not None else base_types.UninitialisedField(self, 'Rct', ReceiptV09, False)
 
 		@Rct.deleter
 		def Rct(self):
 			del self._Rct
-			self._Rct = None
+			self._Rct = base_types.UninitialisedField(self, 'Rct', ReceiptV09, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='Rct', type=ReceiptV09, min=1, max=1, mutex_group=None, array=False),

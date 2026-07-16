@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashMovement8 import CashMovement8
-from ._CollateralDate2 import CollateralDate2
-from ._CollateralParameters10 import CollateralParameters10
-from ._CollateralParties10 import CollateralParties10
-from ._DealTransactionDetails5 import DealTransactionDetails5
-from ._Linkages58 import Linkages58
-from ._OtherParties38 import OtherParties38
-from ._Pagination1 import Pagination1
-from ._SecuritiesMovement9 import SecuritiesMovement9
-from ._SupplementaryData1 import SupplementaryData1
-from ._TransactionIdentifications45 import TransactionIdentifications45
+from . import CashMovement8
+from . import CollateralDate2
+from . import CollateralParameters10
+from . import CollateralParties10
+from . import DealTransactionDetails5
+from . import Linkages58
+from . import OtherParties38
+from . import Pagination1
+from . import SecuritiesMovement9
+from . import SupplementaryData1
+from . import TransactionIdentifications45
 
 class TripartyCollateralTransactionInstructionV01(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class TripartyCollateralTransactionInstructionV01(base_types._BaseFieldType):
 
 	@CollPties.setter
 	def CollPties(self, value):
-		self._CollPties = value if type(value) != base_types.auto else self.make_default("CollPties")
+		self._CollPties = value if value is not None else base_types.UninitialisedField(self, 'CollPties', CollateralParties10, False)
 
 	@CollPties.deleter
 	def CollPties(self):
 		del self._CollPties
-		self._CollPties = None
+		self._CollPties = base_types.UninitialisedField(self, 'CollPties', CollateralParties10, False)
 
 	@property
 	def CshMvmnt(self):
@@ -36,12 +36,12 @@ class TripartyCollateralTransactionInstructionV01(base_types._BaseFieldType):
 
 	@CshMvmnt.setter
 	def CshMvmnt(self, value):
-		self._CshMvmnt = value if type(value) != base_types.auto else self.make_default("CshMvmnt")
+		self._CshMvmnt = value if value is not None else base_types.UninitialisedField(self, 'CshMvmnt', CashMovement8, True)
 
 	@CshMvmnt.deleter
 	def CshMvmnt(self):
 		del self._CshMvmnt
-		self._CshMvmnt = None
+		self._CshMvmnt = base_types.UninitialisedField(self, 'CshMvmnt', CashMovement8, True)
 
 	@property
 	def DealTxDt(self):
@@ -49,12 +49,12 @@ class TripartyCollateralTransactionInstructionV01(base_types._BaseFieldType):
 
 	@DealTxDt.setter
 	def DealTxDt(self, value):
-		self._DealTxDt = value if type(value) != base_types.auto else self.make_default("DealTxDt")
+		self._DealTxDt = value if value is not None else base_types.UninitialisedField(self, 'DealTxDt', CollateralDate2, False)
 
 	@DealTxDt.deleter
 	def DealTxDt(self):
 		del self._DealTxDt
-		self._DealTxDt = None
+		self._DealTxDt = base_types.UninitialisedField(self, 'DealTxDt', CollateralDate2, False)
 
 	@property
 	def DealTxDtls(self):
@@ -62,12 +62,12 @@ class TripartyCollateralTransactionInstructionV01(base_types._BaseFieldType):
 
 	@DealTxDtls.setter
 	def DealTxDtls(self, value):
-		self._DealTxDtls = value if type(value) != base_types.auto else self.make_default("DealTxDtls")
+		self._DealTxDtls = value if value is not None else base_types.UninitialisedField(self, 'DealTxDtls', DealTransactionDetails5, False)
 
 	@DealTxDtls.deleter
 	def DealTxDtls(self):
 		del self._DealTxDtls
-		self._DealTxDtls = None
+		self._DealTxDtls = base_types.UninitialisedField(self, 'DealTxDtls', DealTransactionDetails5, False)
 
 	@property
 	def GnlParams(self):
@@ -75,12 +75,12 @@ class TripartyCollateralTransactionInstructionV01(base_types._BaseFieldType):
 
 	@GnlParams.setter
 	def GnlParams(self, value):
-		self._GnlParams = value if type(value) != base_types.auto else self.make_default("GnlParams")
+		self._GnlParams = value if value is not None else base_types.UninitialisedField(self, 'GnlParams', CollateralParameters10, False)
 
 	@GnlParams.deleter
 	def GnlParams(self):
 		del self._GnlParams
-		self._GnlParams = None
+		self._GnlParams = base_types.UninitialisedField(self, 'GnlParams', CollateralParameters10, False)
 
 	@property
 	def Lnkgs(self):
@@ -88,12 +88,12 @@ class TripartyCollateralTransactionInstructionV01(base_types._BaseFieldType):
 
 	@Lnkgs.setter
 	def Lnkgs(self, value):
-		self._Lnkgs = value if type(value) != base_types.auto else self.make_default("Lnkgs")
+		self._Lnkgs = value if value is not None else base_types.UninitialisedField(self, 'Lnkgs', Linkages58, True)
 
 	@Lnkgs.deleter
 	def Lnkgs(self):
 		del self._Lnkgs
-		self._Lnkgs = None
+		self._Lnkgs = base_types.UninitialisedField(self, 'Lnkgs', Linkages58, True)
 
 	@property
 	def OthrPties(self):
@@ -101,12 +101,12 @@ class TripartyCollateralTransactionInstructionV01(base_types._BaseFieldType):
 
 	@OthrPties.setter
 	def OthrPties(self, value):
-		self._OthrPties = value if type(value) != base_types.auto else self.make_default("OthrPties")
+		self._OthrPties = value if value is not None else base_types.UninitialisedField(self, 'OthrPties', OtherParties38, False)
 
 	@OthrPties.deleter
 	def OthrPties(self):
 		del self._OthrPties
-		self._OthrPties = None
+		self._OthrPties = base_types.UninitialisedField(self, 'OthrPties', OtherParties38, False)
 
 	@property
 	def Pgntn(self):
@@ -114,12 +114,12 @@ class TripartyCollateralTransactionInstructionV01(base_types._BaseFieldType):
 
 	@Pgntn.setter
 	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+		self._Pgntn = value if value is not None else base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@Pgntn.deleter
 	def Pgntn(self):
 		del self._Pgntn
-		self._Pgntn = None
+		self._Pgntn = base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@property
 	def SctiesMvmnt(self):
@@ -127,12 +127,12 @@ class TripartyCollateralTransactionInstructionV01(base_types._BaseFieldType):
 
 	@SctiesMvmnt.setter
 	def SctiesMvmnt(self, value):
-		self._SctiesMvmnt = value if type(value) != base_types.auto else self.make_default("SctiesMvmnt")
+		self._SctiesMvmnt = value if value is not None else base_types.UninitialisedField(self, 'SctiesMvmnt', SecuritiesMovement9, True)
 
 	@SctiesMvmnt.deleter
 	def SctiesMvmnt(self):
 		del self._SctiesMvmnt
-		self._SctiesMvmnt = None
+		self._SctiesMvmnt = base_types.UninitialisedField(self, 'SctiesMvmnt', SecuritiesMovement9, True)
 
 	@property
 	def SplmtryData(self):
@@ -140,12 +140,12 @@ class TripartyCollateralTransactionInstructionV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TxInstrId(self):
@@ -153,12 +153,12 @@ class TripartyCollateralTransactionInstructionV01(base_types._BaseFieldType):
 
 	@TxInstrId.setter
 	def TxInstrId(self, value):
-		self._TxInstrId = value if type(value) != base_types.auto else self.make_default("TxInstrId")
+		self._TxInstrId = value if value is not None else base_types.UninitialisedField(self, 'TxInstrId', TransactionIdentifications45, False)
 
 	@TxInstrId.deleter
 	def TxInstrId(self):
 		del self._TxInstrId
-		self._TxInstrId = None
+		self._TxInstrId = base_types.UninitialisedField(self, 'TxInstrId', TransactionIdentifications45, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollPties', type=CollateralParties10, min=1, max=1, mutex_group=None, array=False),

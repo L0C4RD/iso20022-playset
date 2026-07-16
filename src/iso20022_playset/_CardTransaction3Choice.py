@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardAggregated2 import CardAggregated2
-from ._CardIndividualTransaction2 import CardIndividualTransaction2
+from . import CardAggregated2
+from . import CardIndividualTransaction2
 
 class CardTransaction3Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CardTransaction3Choice(base_types._BaseFieldType):
 
 	@Aggtd.setter
 	def Aggtd(self, value):
-		self._Aggtd = value if type(value) != base_types.auto else self.make_default("Aggtd")
+		self._Aggtd = value if value is not None else base_types.UninitialisedField(self, 'Aggtd', CardAggregated2, False)
 
 	@Aggtd.deleter
 	def Aggtd(self):
 		del self._Aggtd
-		self._Aggtd = None
+		self._Aggtd = base_types.UninitialisedField(self, 'Aggtd', CardAggregated2, False)
 
 	@property
 	def Indv(self):
@@ -27,12 +27,12 @@ class CardTransaction3Choice(base_types._BaseFieldType):
 
 	@Indv.setter
 	def Indv(self, value):
-		self._Indv = value if type(value) != base_types.auto else self.make_default("Indv")
+		self._Indv = value if value is not None else base_types.UninitialisedField(self, 'Indv', CardIndividualTransaction2, False)
 
 	@Indv.deleter
 	def Indv(self):
 		del self._Indv
-		self._Indv = None
+		self._Indv = base_types.UninitialisedField(self, 'Indv', CardIndividualTransaction2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Aggtd', type=CardAggregated2, min=0, max=1, mutex_group=1, array=False),

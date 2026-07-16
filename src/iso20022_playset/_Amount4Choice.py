@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Amount2Choice import Amount2Choice
+from . import Amount2Choice
 
 class Amount4Choice(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class Amount4Choice(base_types._BaseFieldType):
 
 	@DcrAmt.setter
 	def DcrAmt(self, value):
-		self._DcrAmt = value if type(value) != base_types.auto else self.make_default("DcrAmt")
+		self._DcrAmt = value if value is not None else base_types.UninitialisedField(self, 'DcrAmt', Amount2Choice, False)
 
 	@DcrAmt.deleter
 	def DcrAmt(self):
 		del self._DcrAmt
-		self._DcrAmt = None
+		self._DcrAmt = base_types.UninitialisedField(self, 'DcrAmt', Amount2Choice, False)
 
 	@property
 	def IncrAmt(self):
@@ -26,12 +26,12 @@ class Amount4Choice(base_types._BaseFieldType):
 
 	@IncrAmt.setter
 	def IncrAmt(self, value):
-		self._IncrAmt = value if type(value) != base_types.auto else self.make_default("IncrAmt")
+		self._IncrAmt = value if value is not None else base_types.UninitialisedField(self, 'IncrAmt', Amount2Choice, False)
 
 	@IncrAmt.deleter
 	def IncrAmt(self):
 		del self._IncrAmt
-		self._IncrAmt = None
+		self._IncrAmt = base_types.UninitialisedField(self, 'IncrAmt', Amount2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DcrAmt', type=Amount2Choice, min=0, max=1, mutex_group=1, array=False),

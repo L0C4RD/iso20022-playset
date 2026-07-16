@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcceptorDiagnosticRequestV13 import AcceptorDiagnosticRequestV13
+from . import AcceptorDiagnosticRequestV13
 
 class CAAA_013_001_13():
 
@@ -18,12 +18,12 @@ class CAAA_013_001_13():
 
 		@AccptrDgnstcReq.setter
 		def AccptrDgnstcReq(self, value):
-			self._AccptrDgnstcReq = value if type(value) != base_types.auto else self.make_default("AccptrDgnstcReq")
+			self._AccptrDgnstcReq = value if value is not None else base_types.UninitialisedField(self, 'AccptrDgnstcReq', AcceptorDiagnosticRequestV13, False)
 
 		@AccptrDgnstcReq.deleter
 		def AccptrDgnstcReq(self):
 			del self._AccptrDgnstcReq
-			self._AccptrDgnstcReq = None
+			self._AccptrDgnstcReq = base_types.UninitialisedField(self, 'AccptrDgnstcReq', AcceptorDiagnosticRequestV13, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AccptrDgnstcReq', type=AcceptorDiagnosticRequestV13, min=1, max=1, mutex_group=None, array=False),

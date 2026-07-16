@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max350Text import Max350Text
-from ._OrderWaiverReason3Choice import OrderWaiverReason3Choice
+from . import Max350Text
+from . import OrderWaiverReason3Choice
 
 class OrderWaiver1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class OrderWaiver1(base_types._BaseFieldType):
 
 	@InfVal.setter
 	def InfVal(self, value):
-		self._InfVal = value if type(value) != base_types.auto else self.make_default("InfVal")
+		self._InfVal = value if value is not None else base_types.UninitialisedField(self, 'InfVal', Max350Text, False)
 
 	@InfVal.deleter
 	def InfVal(self):
 		del self._InfVal
-		self._InfVal = None
+		self._InfVal = base_types.UninitialisedField(self, 'InfVal', Max350Text, False)
 
 	@property
 	def OrdrWvrRsn(self):
@@ -27,12 +27,12 @@ class OrderWaiver1(base_types._BaseFieldType):
 
 	@OrdrWvrRsn.setter
 	def OrdrWvrRsn(self, value):
-		self._OrdrWvrRsn = value if type(value) != base_types.auto else self.make_default("OrdrWvrRsn")
+		self._OrdrWvrRsn = value if value is not None else base_types.UninitialisedField(self, 'OrdrWvrRsn', OrderWaiverReason3Choice, True)
 
 	@OrdrWvrRsn.deleter
 	def OrdrWvrRsn(self):
 		del self._OrdrWvrRsn
-		self._OrdrWvrRsn = None
+		self._OrdrWvrRsn = base_types.UninitialisedField(self, 'OrdrWvrRsn', OrderWaiverReason3Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InfVal', type=Max350Text, min=0, max=1, mutex_group=None, array=False),

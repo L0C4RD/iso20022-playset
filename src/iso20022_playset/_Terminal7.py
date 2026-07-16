@@ -2,22 +2,22 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalData1 import AdditionalData1
-from ._CardReadingCapabilities1 import CardReadingCapabilities1
-from ._CardWritingCapabilities1 import CardWritingCapabilities1
-from ._CardholderVerificationCapabilities1 import CardholderVerificationCapabilities1
-from ._DisplayCapabilities6 import DisplayCapabilities6
-from ._GeographicPointInDecimalDegrees import GeographicPointInDecimalDegrees
-from ._Max16Text import Max16Text
-from ._Max256Text import Max256Text
-from ._Max35Text import Max35Text
-from ._Number import Number
-from ._OnLineCapability2Code import OnLineCapability2Code
-from ._PINEntrySecurityCharacteristic1Code import PINEntrySecurityCharacteristic1Code
-from ._Software1 import Software1
-from ._TerminalIntegrationCategory1Code import TerminalIntegrationCategory1Code
-from ._TerminalType1Code import TerminalType1Code
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import AdditionalData1
+from . import CardReadingCapabilities1
+from . import CardWritingCapabilities1
+from . import CardholderVerificationCapabilities1
+from . import DisplayCapabilities6
+from . import GeographicPointInDecimalDegrees
+from . import Max16Text
+from . import Max256Text
+from . import Max35Text
+from . import Number
+from . import OnLineCapability2Code
+from . import PINEntrySecurityCharacteristic1Code
+from . import Software1
+from . import TerminalIntegrationCategory1Code
+from . import TerminalType1Code
+from . import TrueFalseIndicator
 
 class Terminal7(base_types._BaseFieldType):
 
@@ -28,12 +28,12 @@ class Terminal7(base_types._BaseFieldType):
 
 	@AddtlId.setter
 	def AddtlId(self, value):
-		self._AddtlId = value if type(value) != base_types.auto else self.make_default("AddtlId")
+		self._AddtlId = value if value is not None else base_types.UninitialisedField(self, 'AddtlId', AdditionalData1, True)
 
 	@AddtlId.deleter
 	def AddtlId(self):
 		del self._AddtlId
-		self._AddtlId = None
+		self._AddtlId = base_types.UninitialisedField(self, 'AddtlId', AdditionalData1, True)
 
 	@property
 	def ApprvlCdLngth(self):
@@ -41,12 +41,12 @@ class Terminal7(base_types._BaseFieldType):
 
 	@ApprvlCdLngth.setter
 	def ApprvlCdLngth(self, value):
-		self._ApprvlCdLngth = value if type(value) != base_types.auto else self.make_default("ApprvlCdLngth")
+		self._ApprvlCdLngth = value if value is not None else base_types.UninitialisedField(self, 'ApprvlCdLngth', Number, False)
 
 	@ApprvlCdLngth.deleter
 	def ApprvlCdLngth(self):
 		del self._ApprvlCdLngth
-		self._ApprvlCdLngth = None
+		self._ApprvlCdLngth = base_types.UninitialisedField(self, 'ApprvlCdLngth', Number, False)
 
 	@property
 	def CardCaptrCpbl(self):
@@ -54,12 +54,12 @@ class Terminal7(base_types._BaseFieldType):
 
 	@CardCaptrCpbl.setter
 	def CardCaptrCpbl(self, value):
-		self._CardCaptrCpbl = value if type(value) != base_types.auto else self.make_default("CardCaptrCpbl")
+		self._CardCaptrCpbl = value if value is not None else base_types.UninitialisedField(self, 'CardCaptrCpbl', TrueFalseIndicator, False)
 
 	@CardCaptrCpbl.deleter
 	def CardCaptrCpbl(self):
 		del self._CardCaptrCpbl
-		self._CardCaptrCpbl = None
+		self._CardCaptrCpbl = base_types.UninitialisedField(self, 'CardCaptrCpbl', TrueFalseIndicator, False)
 
 	@property
 	def CertfctnId(self):
@@ -67,12 +67,12 @@ class Terminal7(base_types._BaseFieldType):
 
 	@CertfctnId.setter
 	def CertfctnId(self, value):
-		self._CertfctnId = value if type(value) != base_types.auto else self.make_default("CertfctnId")
+		self._CertfctnId = value if value is not None else base_types.UninitialisedField(self, 'CertfctnId', Max256Text, False)
 
 	@CertfctnId.deleter
 	def CertfctnId(self):
 		del self._CertfctnId
-		self._CertfctnId = None
+		self._CertfctnId = base_types.UninitialisedField(self, 'CertfctnId', Max256Text, False)
 
 	@property
 	def CrdhldrVrfctnCpblty(self):
@@ -80,12 +80,12 @@ class Terminal7(base_types._BaseFieldType):
 
 	@CrdhldrVrfctnCpblty.setter
 	def CrdhldrVrfctnCpblty(self, value):
-		self._CrdhldrVrfctnCpblty = value if type(value) != base_types.auto else self.make_default("CrdhldrVrfctnCpblty")
+		self._CrdhldrVrfctnCpblty = value if value is not None else base_types.UninitialisedField(self, 'CrdhldrVrfctnCpblty', CardholderVerificationCapabilities1, True)
 
 	@CrdhldrVrfctnCpblty.deleter
 	def CrdhldrVrfctnCpblty(self):
 		del self._CrdhldrVrfctnCpblty
-		self._CrdhldrVrfctnCpblty = None
+		self._CrdhldrVrfctnCpblty = base_types.UninitialisedField(self, 'CrdhldrVrfctnCpblty', CardholderVerificationCapabilities1, True)
 
 	@property
 	def GeogcLctn(self):
@@ -93,12 +93,12 @@ class Terminal7(base_types._BaseFieldType):
 
 	@GeogcLctn.setter
 	def GeogcLctn(self, value):
-		self._GeogcLctn = value if type(value) != base_types.auto else self.make_default("GeogcLctn")
+		self._GeogcLctn = value if value is not None else base_types.UninitialisedField(self, 'GeogcLctn', GeographicPointInDecimalDegrees, False)
 
 	@GeogcLctn.deleter
 	def GeogcLctn(self):
 		del self._GeogcLctn
-		self._GeogcLctn = None
+		self._GeogcLctn = base_types.UninitialisedField(self, 'GeogcLctn', GeographicPointInDecimalDegrees, False)
 
 	@property
 	def Id(self):
@@ -106,12 +106,12 @@ class Terminal7(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max16Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max16Text, False)
 
 	@property
 	def IntgtnTp(self):
@@ -119,12 +119,12 @@ class Terminal7(base_types._BaseFieldType):
 
 	@IntgtnTp.setter
 	def IntgtnTp(self, value):
-		self._IntgtnTp = value if type(value) != base_types.auto else self.make_default("IntgtnTp")
+		self._IntgtnTp = value if value is not None else base_types.UninitialisedField(self, 'IntgtnTp', TerminalIntegrationCategory1Code, False)
 
 	@IntgtnTp.deleter
 	def IntgtnTp(self):
 		del self._IntgtnTp
-		self._IntgtnTp = None
+		self._IntgtnTp = base_types.UninitialisedField(self, 'IntgtnTp', TerminalIntegrationCategory1Code, False)
 
 	@property
 	def MsgCpblty(self):
@@ -132,12 +132,12 @@ class Terminal7(base_types._BaseFieldType):
 
 	@MsgCpblty.setter
 	def MsgCpblty(self, value):
-		self._MsgCpblty = value if type(value) != base_types.auto else self.make_default("MsgCpblty")
+		self._MsgCpblty = value if value is not None else base_types.UninitialisedField(self, 'MsgCpblty', DisplayCapabilities6, True)
 
 	@MsgCpblty.deleter
 	def MsgCpblty(self):
 		del self._MsgCpblty
-		self._MsgCpblty = None
+		self._MsgCpblty = base_types.UninitialisedField(self, 'MsgCpblty', DisplayCapabilities6, True)
 
 	@property
 	def MxScrptLngth(self):
@@ -145,12 +145,12 @@ class Terminal7(base_types._BaseFieldType):
 
 	@MxScrptLngth.setter
 	def MxScrptLngth(self, value):
-		self._MxScrptLngth = value if type(value) != base_types.auto else self.make_default("MxScrptLngth")
+		self._MxScrptLngth = value if value is not None else base_types.UninitialisedField(self, 'MxScrptLngth', Number, False)
 
 	@MxScrptLngth.deleter
 	def MxScrptLngth(self):
 		del self._MxScrptLngth
-		self._MxScrptLngth = None
+		self._MxScrptLngth = base_types.UninitialisedField(self, 'MxScrptLngth', Number, False)
 
 	@property
 	def OffPrmiss(self):
@@ -158,12 +158,12 @@ class Terminal7(base_types._BaseFieldType):
 
 	@OffPrmiss.setter
 	def OffPrmiss(self, value):
-		self._OffPrmiss = value if type(value) != base_types.auto else self.make_default("OffPrmiss")
+		self._OffPrmiss = value if value is not None else base_types.UninitialisedField(self, 'OffPrmiss', TrueFalseIndicator, False)
 
 	@OffPrmiss.deleter
 	def OffPrmiss(self):
 		del self._OffPrmiss
-		self._OffPrmiss = None
+		self._OffPrmiss = base_types.UninitialisedField(self, 'OffPrmiss', TrueFalseIndicator, False)
 
 	@property
 	def OnBrd(self):
@@ -171,12 +171,12 @@ class Terminal7(base_types._BaseFieldType):
 
 	@OnBrd.setter
 	def OnBrd(self, value):
-		self._OnBrd = value if type(value) != base_types.auto else self.make_default("OnBrd")
+		self._OnBrd = value if value is not None else base_types.UninitialisedField(self, 'OnBrd', TrueFalseIndicator, False)
 
 	@OnBrd.deleter
 	def OnBrd(self):
 		del self._OnBrd
-		self._OnBrd = None
+		self._OnBrd = base_types.UninitialisedField(self, 'OnBrd', TrueFalseIndicator, False)
 
 	@property
 	def OnLineCpblty(self):
@@ -184,12 +184,12 @@ class Terminal7(base_types._BaseFieldType):
 
 	@OnLineCpblty.setter
 	def OnLineCpblty(self, value):
-		self._OnLineCpblty = value if type(value) != base_types.auto else self.make_default("OnLineCpblty")
+		self._OnLineCpblty = value if value is not None else base_types.UninitialisedField(self, 'OnLineCpblty', OnLineCapability2Code, False)
 
 	@OnLineCpblty.deleter
 	def OnLineCpblty(self):
 		del self._OnLineCpblty
-		self._OnLineCpblty = None
+		self._OnLineCpblty = base_types.UninitialisedField(self, 'OnLineCpblty', OnLineCapability2Code, False)
 
 	@property
 	def OthrPINNtrySctyChrtc(self):
@@ -197,12 +197,12 @@ class Terminal7(base_types._BaseFieldType):
 
 	@OthrPINNtrySctyChrtc.setter
 	def OthrPINNtrySctyChrtc(self, value):
-		self._OthrPINNtrySctyChrtc = value if type(value) != base_types.auto else self.make_default("OthrPINNtrySctyChrtc")
+		self._OthrPINNtrySctyChrtc = value if value is not None else base_types.UninitialisedField(self, 'OthrPINNtrySctyChrtc', Max35Text, False)
 
 	@OthrPINNtrySctyChrtc.deleter
 	def OthrPINNtrySctyChrtc(self):
 		del self._OthrPINNtrySctyChrtc
-		self._OthrPINNtrySctyChrtc = None
+		self._OthrPINNtrySctyChrtc = base_types.UninitialisedField(self, 'OthrPINNtrySctyChrtc', Max35Text, False)
 
 	@property
 	def OthrTp(self):
@@ -210,12 +210,12 @@ class Terminal7(base_types._BaseFieldType):
 
 	@OthrTp.setter
 	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != base_types.auto else self.make_default("OthrTp")
+		self._OthrTp = value if value is not None else base_types.UninitialisedField(self, 'OthrTp', Max35Text, False)
 
 	@OthrTp.deleter
 	def OthrTp(self):
 		del self._OthrTp
-		self._OthrTp = None
+		self._OthrTp = base_types.UninitialisedField(self, 'OthrTp', Max35Text, False)
 
 	@property
 	def Outdr(self):
@@ -223,12 +223,12 @@ class Terminal7(base_types._BaseFieldType):
 
 	@Outdr.setter
 	def Outdr(self, value):
-		self._Outdr = value if type(value) != base_types.auto else self.make_default("Outdr")
+		self._Outdr = value if value is not None else base_types.UninitialisedField(self, 'Outdr', TrueFalseIndicator, False)
 
 	@Outdr.deleter
 	def Outdr(self):
 		del self._Outdr
-		self._Outdr = None
+		self._Outdr = base_types.UninitialisedField(self, 'Outdr', TrueFalseIndicator, False)
 
 	@property
 	def PINLngthCpblty(self):
@@ -236,12 +236,12 @@ class Terminal7(base_types._BaseFieldType):
 
 	@PINLngthCpblty.setter
 	def PINLngthCpblty(self, value):
-		self._PINLngthCpblty = value if type(value) != base_types.auto else self.make_default("PINLngthCpblty")
+		self._PINLngthCpblty = value if value is not None else base_types.UninitialisedField(self, 'PINLngthCpblty', Number, False)
 
 	@PINLngthCpblty.deleter
 	def PINLngthCpblty(self):
 		del self._PINLngthCpblty
-		self._PINLngthCpblty = None
+		self._PINLngthCpblty = base_types.UninitialisedField(self, 'PINLngthCpblty', Number, False)
 
 	@property
 	def PINNtrySctyChrtc(self):
@@ -249,12 +249,12 @@ class Terminal7(base_types._BaseFieldType):
 
 	@PINNtrySctyChrtc.setter
 	def PINNtrySctyChrtc(self, value):
-		self._PINNtrySctyChrtc = value if type(value) != base_types.auto else self.make_default("PINNtrySctyChrtc")
+		self._PINNtrySctyChrtc = value if value is not None else base_types.UninitialisedField(self, 'PINNtrySctyChrtc', PINEntrySecurityCharacteristic1Code, False)
 
 	@PINNtrySctyChrtc.deleter
 	def PINNtrySctyChrtc(self):
 		del self._PINNtrySctyChrtc
-		self._PINNtrySctyChrtc = None
+		self._PINNtrySctyChrtc = base_types.UninitialisedField(self, 'PINNtrySctyChrtc', PINEntrySecurityCharacteristic1Code, False)
 
 	@property
 	def RdngCpblty(self):
@@ -262,12 +262,12 @@ class Terminal7(base_types._BaseFieldType):
 
 	@RdngCpblty.setter
 	def RdngCpblty(self, value):
-		self._RdngCpblty = value if type(value) != base_types.auto else self.make_default("RdngCpblty")
+		self._RdngCpblty = value if value is not None else base_types.UninitialisedField(self, 'RdngCpblty', CardReadingCapabilities1, True)
 
 	@RdngCpblty.deleter
 	def RdngCpblty(self):
 		del self._RdngCpblty
-		self._RdngCpblty = None
+		self._RdngCpblty = base_types.UninitialisedField(self, 'RdngCpblty', CardReadingCapabilities1, True)
 
 	@property
 	def Sftwr(self):
@@ -275,12 +275,12 @@ class Terminal7(base_types._BaseFieldType):
 
 	@Sftwr.setter
 	def Sftwr(self, value):
-		self._Sftwr = value if type(value) != base_types.auto else self.make_default("Sftwr")
+		self._Sftwr = value if value is not None else base_types.UninitialisedField(self, 'Sftwr', Software1, True)
 
 	@Sftwr.deleter
 	def Sftwr(self):
 		del self._Sftwr
-		self._Sftwr = None
+		self._Sftwr = base_types.UninitialisedField(self, 'Sftwr', Software1, True)
 
 	@property
 	def SrlNb(self):
@@ -288,12 +288,12 @@ class Terminal7(base_types._BaseFieldType):
 
 	@SrlNb.setter
 	def SrlNb(self, value):
-		self._SrlNb = value if type(value) != base_types.auto else self.make_default("SrlNb")
+		self._SrlNb = value if value is not None else base_types.UninitialisedField(self, 'SrlNb', Max35Text, False)
 
 	@SrlNb.deleter
 	def SrlNb(self):
 		del self._SrlNb
-		self._SrlNb = None
+		self._SrlNb = base_types.UninitialisedField(self, 'SrlNb', Max35Text, False)
 
 	@property
 	def TempScrStorg(self):
@@ -301,12 +301,12 @@ class Terminal7(base_types._BaseFieldType):
 
 	@TempScrStorg.setter
 	def TempScrStorg(self, value):
-		self._TempScrStorg = value if type(value) != base_types.auto else self.make_default("TempScrStorg")
+		self._TempScrStorg = value if value is not None else base_types.UninitialisedField(self, 'TempScrStorg', TrueFalseIndicator, False)
 
 	@TempScrStorg.deleter
 	def TempScrStorg(self):
 		del self._TempScrStorg
-		self._TempScrStorg = None
+		self._TempScrStorg = base_types.UninitialisedField(self, 'TempScrStorg', TrueFalseIndicator, False)
 
 	@property
 	def Tp(self):
@@ -314,12 +314,12 @@ class Terminal7(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', TerminalType1Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', TerminalType1Code, False)
 
 	@property
 	def WrtgCpblty(self):
@@ -327,12 +327,12 @@ class Terminal7(base_types._BaseFieldType):
 
 	@WrtgCpblty.setter
 	def WrtgCpblty(self, value):
-		self._WrtgCpblty = value if type(value) != base_types.auto else self.make_default("WrtgCpblty")
+		self._WrtgCpblty = value if value is not None else base_types.UninitialisedField(self, 'WrtgCpblty', CardWritingCapabilities1, True)
 
 	@WrtgCpblty.deleter
 	def WrtgCpblty(self):
 		del self._WrtgCpblty
-		self._WrtgCpblty = None
+		self._WrtgCpblty = base_types.UninitialisedField(self, 'WrtgCpblty', CardWritingCapabilities1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlId', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),

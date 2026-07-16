@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._EUCapitalGain3Choice import EUCapitalGain3Choice
-from ._EUDividendStatusType2Choice import EUDividendStatusType2Choice
-from ._PercentageRate import PercentageRate
-from ._Tax32 import Tax32
+from . import ActiveCurrencyAndAmount
+from . import EUCapitalGain3Choice
+from . import EUDividendStatusType2Choice
+from . import PercentageRate
+from . import Tax32
 
 class InformativeTax1(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class InformativeTax1(base_types._BaseFieldType):
 
 	@EUCptlGn.setter
 	def EUCptlGn(self, value):
-		self._EUCptlGn = value if type(value) != base_types.auto else self.make_default("EUCptlGn")
+		self._EUCptlGn = value if value is not None else base_types.UninitialisedField(self, 'EUCptlGn', EUCapitalGain3Choice, False)
 
 	@EUCptlGn.deleter
 	def EUCptlGn(self):
 		del self._EUCptlGn
-		self._EUCptlGn = None
+		self._EUCptlGn = base_types.UninitialisedField(self, 'EUCptlGn', EUCapitalGain3Choice, False)
 
 	@property
 	def EUDvddSts(self):
@@ -30,12 +30,12 @@ class InformativeTax1(base_types._BaseFieldType):
 
 	@EUDvddSts.setter
 	def EUDvddSts(self, value):
-		self._EUDvddSts = value if type(value) != base_types.auto else self.make_default("EUDvddSts")
+		self._EUDvddSts = value if value is not None else base_types.UninitialisedField(self, 'EUDvddSts', EUDividendStatusType2Choice, False)
 
 	@EUDvddSts.deleter
 	def EUDvddSts(self):
 		del self._EUDvddSts
-		self._EUDvddSts = None
+		self._EUDvddSts = base_types.UninitialisedField(self, 'EUDvddSts', EUDividendStatusType2Choice, False)
 
 	@property
 	def IndvTax(self):
@@ -43,12 +43,12 @@ class InformativeTax1(base_types._BaseFieldType):
 
 	@IndvTax.setter
 	def IndvTax(self, value):
-		self._IndvTax = value if type(value) != base_types.auto else self.make_default("IndvTax")
+		self._IndvTax = value if value is not None else base_types.UninitialisedField(self, 'IndvTax', Tax32, True)
 
 	@IndvTax.deleter
 	def IndvTax(self):
 		del self._IndvTax
-		self._IndvTax = None
+		self._IndvTax = base_types.UninitialisedField(self, 'IndvTax', Tax32, True)
 
 	@property
 	def PctgOfDebtClm(self):
@@ -56,12 +56,12 @@ class InformativeTax1(base_types._BaseFieldType):
 
 	@PctgOfDebtClm.setter
 	def PctgOfDebtClm(self, value):
-		self._PctgOfDebtClm = value if type(value) != base_types.auto else self.make_default("PctgOfDebtClm")
+		self._PctgOfDebtClm = value if value is not None else base_types.UninitialisedField(self, 'PctgOfDebtClm', PercentageRate, False)
 
 	@PctgOfDebtClm.deleter
 	def PctgOfDebtClm(self):
 		del self._PctgOfDebtClm
-		self._PctgOfDebtClm = None
+		self._PctgOfDebtClm = base_types.UninitialisedField(self, 'PctgOfDebtClm', PercentageRate, False)
 
 	@property
 	def TaxblIncmPerDvdd(self):
@@ -69,12 +69,12 @@ class InformativeTax1(base_types._BaseFieldType):
 
 	@TaxblIncmPerDvdd.setter
 	def TaxblIncmPerDvdd(self, value):
-		self._TaxblIncmPerDvdd = value if type(value) != base_types.auto else self.make_default("TaxblIncmPerDvdd")
+		self._TaxblIncmPerDvdd = value if value is not None else base_types.UninitialisedField(self, 'TaxblIncmPerDvdd', ActiveCurrencyAndAmount, False)
 
 	@TaxblIncmPerDvdd.deleter
 	def TaxblIncmPerDvdd(self):
 		del self._TaxblIncmPerDvdd
-		self._TaxblIncmPerDvdd = None
+		self._TaxblIncmPerDvdd = base_types.UninitialisedField(self, 'TaxblIncmPerDvdd', ActiveCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EUCptlGn', type=EUCapitalGain3Choice, min=0, max=1, mutex_group=None, array=False),

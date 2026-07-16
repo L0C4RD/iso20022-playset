@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._YesNoIndicator import YesNoIndicator
+from . import Max35Text
+from . import YesNoIndicator
 
 class SettlementTypeAndAdditionalParameters13(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SettlementTypeAndAdditionalParameters13(base_types._BaseFieldType):
 
 	@CmonId.setter
 	def CmonId(self, value):
-		self._CmonId = value if type(value) != base_types.auto else self.make_default("CmonId")
+		self._CmonId = value if value is not None else base_types.UninitialisedField(self, 'CmonId', Max35Text, False)
 
 	@CmonId.deleter
 	def CmonId(self):
 		del self._CmonId
-		self._CmonId = None
+		self._CmonId = base_types.UninitialisedField(self, 'CmonId', Max35Text, False)
 
 	@property
 	def CorpActnEvtId(self):
@@ -27,12 +27,12 @@ class SettlementTypeAndAdditionalParameters13(base_types._BaseFieldType):
 
 	@CorpActnEvtId.setter
 	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
+		self._CorpActnEvtId = value if value is not None else base_types.UninitialisedField(self, 'CorpActnEvtId', Max35Text, False)
 
 	@CorpActnEvtId.deleter
 	def CorpActnEvtId(self):
 		del self._CorpActnEvtId
-		self._CorpActnEvtId = None
+		self._CorpActnEvtId = base_types.UninitialisedField(self, 'CorpActnEvtId', Max35Text, False)
 
 	@property
 	def RcncltnInd(self):
@@ -40,12 +40,12 @@ class SettlementTypeAndAdditionalParameters13(base_types._BaseFieldType):
 
 	@RcncltnInd.setter
 	def RcncltnInd(self, value):
-		self._RcncltnInd = value if type(value) != base_types.auto else self.make_default("RcncltnInd")
+		self._RcncltnInd = value if value is not None else base_types.UninitialisedField(self, 'RcncltnInd', YesNoIndicator, False)
 
 	@RcncltnInd.deleter
 	def RcncltnInd(self):
 		del self._RcncltnInd
-		self._RcncltnInd = None
+		self._RcncltnInd = base_types.UninitialisedField(self, 'RcncltnInd', YesNoIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CmonId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

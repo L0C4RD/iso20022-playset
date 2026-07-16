@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardAccountType3Code import CardAccountType3Code
-from ._CustomerOrder1 import CustomerOrder1
-from ._Max35Text import Max35Text
+from . import CardAccountType3Code
+from . import CustomerOrder1
+from . import Max35Text
 
 class PaymentAccountRequest1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PaymentAccountRequest1(base_types._BaseFieldType):
 
 	@AcctRef.setter
 	def AcctRef(self, value):
-		self._AcctRef = value if type(value) != base_types.auto else self.make_default("AcctRef")
+		self._AcctRef = value if value is not None else base_types.UninitialisedField(self, 'AcctRef', Max35Text, False)
 
 	@AcctRef.deleter
 	def AcctRef(self):
 		del self._AcctRef
-		self._AcctRef = None
+		self._AcctRef = base_types.UninitialisedField(self, 'AcctRef', Max35Text, False)
 
 	@property
 	def AcctTp(self):
@@ -28,12 +28,12 @@ class PaymentAccountRequest1(base_types._BaseFieldType):
 
 	@AcctTp.setter
 	def AcctTp(self, value):
-		self._AcctTp = value if type(value) != base_types.auto else self.make_default("AcctTp")
+		self._AcctTp = value if value is not None else base_types.UninitialisedField(self, 'AcctTp', CardAccountType3Code, False)
 
 	@AcctTp.deleter
 	def AcctTp(self):
 		del self._AcctTp
-		self._AcctTp = None
+		self._AcctTp = base_types.UninitialisedField(self, 'AcctTp', CardAccountType3Code, False)
 
 	@property
 	def CstmrOrdr(self):
@@ -41,12 +41,12 @@ class PaymentAccountRequest1(base_types._BaseFieldType):
 
 	@CstmrOrdr.setter
 	def CstmrOrdr(self, value):
-		self._CstmrOrdr = value if type(value) != base_types.auto else self.make_default("CstmrOrdr")
+		self._CstmrOrdr = value if value is not None else base_types.UninitialisedField(self, 'CstmrOrdr', CustomerOrder1, False)
 
 	@CstmrOrdr.deleter
 	def CstmrOrdr(self):
 		del self._CstmrOrdr
-		self._CstmrOrdr = None
+		self._CstmrOrdr = base_types.UninitialisedField(self, 'CstmrOrdr', CustomerOrder1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._AmountUnit1Code import AmountUnit1Code
-from ._ISODateTime import ISODateTime
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max1025Text import Max1025Text
-from ._Max35Text import Max35Text
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ActiveCurrencyCode
+from . import AmountUnit1Code
+from . import ISODateTime
+from . import ImpliedCurrencyAndAmount
+from . import Max1025Text
+from . import Max35Text
+from . import TrueFalseIndicator
 
 class CustomerOrder1(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class CustomerOrder1(base_types._BaseFieldType):
 
 	@AccsdBy.setter
 	def AccsdBy(self, value):
-		self._AccsdBy = value if type(value) != base_types.auto else self.make_default("AccsdBy")
+		self._AccsdBy = value if value is not None else base_types.UninitialisedField(self, 'AccsdBy', Max35Text, False)
 
 	@AccsdBy.deleter
 	def AccsdBy(self):
 		del self._AccsdBy
-		self._AccsdBy = None
+		self._AccsdBy = base_types.UninitialisedField(self, 'AccsdBy', Max35Text, False)
 
 	@property
 	def AddtlInf(self):
@@ -32,12 +32,12 @@ class CustomerOrder1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max1025Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max1025Text, False)
 
 	@property
 	def Ccy(self):
@@ -45,12 +45,12 @@ class CustomerOrder1(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@property
 	def CstmrOrdrId(self):
@@ -58,12 +58,12 @@ class CustomerOrder1(base_types._BaseFieldType):
 
 	@CstmrOrdrId.setter
 	def CstmrOrdrId(self, value):
-		self._CstmrOrdrId = value if type(value) != base_types.auto else self.make_default("CstmrOrdrId")
+		self._CstmrOrdrId = value if value is not None else base_types.UninitialisedField(self, 'CstmrOrdrId', Max35Text, False)
 
 	@CstmrOrdrId.deleter
 	def CstmrOrdrId(self):
 		del self._CstmrOrdrId
-		self._CstmrOrdrId = None
+		self._CstmrOrdrId = base_types.UninitialisedField(self, 'CstmrOrdrId', Max35Text, False)
 
 	@property
 	def CurAmt(self):
@@ -71,12 +71,12 @@ class CustomerOrder1(base_types._BaseFieldType):
 
 	@CurAmt.setter
 	def CurAmt(self, value):
-		self._CurAmt = value if type(value) != base_types.auto else self.make_default("CurAmt")
+		self._CurAmt = value if value is not None else base_types.UninitialisedField(self, 'CurAmt', ImpliedCurrencyAndAmount, False)
 
 	@CurAmt.deleter
 	def CurAmt(self):
 		del self._CurAmt
-		self._CurAmt = None
+		self._CurAmt = base_types.UninitialisedField(self, 'CurAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def EndDt(self):
@@ -84,12 +84,12 @@ class CustomerOrder1(base_types._BaseFieldType):
 
 	@EndDt.setter
 	def EndDt(self, value):
-		self._EndDt = value if type(value) != base_types.auto else self.make_default("EndDt")
+		self._EndDt = value if value is not None else base_types.UninitialisedField(self, 'EndDt', ISODateTime, False)
 
 	@EndDt.deleter
 	def EndDt(self):
 		del self._EndDt
-		self._EndDt = None
+		self._EndDt = base_types.UninitialisedField(self, 'EndDt', ISODateTime, False)
 
 	@property
 	def FrcstdAmt(self):
@@ -97,12 +97,12 @@ class CustomerOrder1(base_types._BaseFieldType):
 
 	@FrcstdAmt.setter
 	def FrcstdAmt(self, value):
-		self._FrcstdAmt = value if type(value) != base_types.auto else self.make_default("FrcstdAmt")
+		self._FrcstdAmt = value if value is not None else base_types.UninitialisedField(self, 'FrcstdAmt', ImpliedCurrencyAndAmount, False)
 
 	@FrcstdAmt.deleter
 	def FrcstdAmt(self):
 		del self._FrcstdAmt
-		self._FrcstdAmt = None
+		self._FrcstdAmt = base_types.UninitialisedField(self, 'FrcstdAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def OpnOrdrStat(self):
@@ -110,12 +110,12 @@ class CustomerOrder1(base_types._BaseFieldType):
 
 	@OpnOrdrStat.setter
 	def OpnOrdrStat(self, value):
-		self._OpnOrdrStat = value if type(value) != base_types.auto else self.make_default("OpnOrdrStat")
+		self._OpnOrdrStat = value if value is not None else base_types.UninitialisedField(self, 'OpnOrdrStat', TrueFalseIndicator, False)
 
 	@OpnOrdrStat.deleter
 	def OpnOrdrStat(self):
 		del self._OpnOrdrStat
-		self._OpnOrdrStat = None
+		self._OpnOrdrStat = base_types.UninitialisedField(self, 'OpnOrdrStat', TrueFalseIndicator, False)
 
 	@property
 	def SaleRefId(self):
@@ -123,12 +123,12 @@ class CustomerOrder1(base_types._BaseFieldType):
 
 	@SaleRefId.setter
 	def SaleRefId(self, value):
-		self._SaleRefId = value if type(value) != base_types.auto else self.make_default("SaleRefId")
+		self._SaleRefId = value if value is not None else base_types.UninitialisedField(self, 'SaleRefId', Max35Text, False)
 
 	@SaleRefId.deleter
 	def SaleRefId(self):
 		del self._SaleRefId
-		self._SaleRefId = None
+		self._SaleRefId = base_types.UninitialisedField(self, 'SaleRefId', Max35Text, False)
 
 	@property
 	def StartDt(self):
@@ -136,12 +136,12 @@ class CustomerOrder1(base_types._BaseFieldType):
 
 	@StartDt.setter
 	def StartDt(self, value):
-		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
+		self._StartDt = value if value is not None else base_types.UninitialisedField(self, 'StartDt', ISODateTime, False)
 
 	@StartDt.deleter
 	def StartDt(self):
 		del self._StartDt
-		self._StartDt = None
+		self._StartDt = base_types.UninitialisedField(self, 'StartDt', ISODateTime, False)
 
 	@property
 	def Unit(self):
@@ -149,12 +149,12 @@ class CustomerOrder1(base_types._BaseFieldType):
 
 	@Unit.setter
 	def Unit(self, value):
-		self._Unit = value if type(value) != base_types.auto else self.make_default("Unit")
+		self._Unit = value if value is not None else base_types.UninitialisedField(self, 'Unit', AmountUnit1Code, False)
 
 	@Unit.deleter
 	def Unit(self):
 		del self._Unit
-		self._Unit = None
+		self._Unit = base_types.UninitialisedField(self, 'Unit', AmountUnit1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AccsdBy', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

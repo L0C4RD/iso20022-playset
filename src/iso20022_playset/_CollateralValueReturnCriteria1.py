@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RequestedIndicator import RequestedIndicator
+from . import RequestedIndicator
 
 class CollateralValueReturnCriteria1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class CollateralValueReturnCriteria1(base_types._BaseFieldType):
 
 	@CshAcctOwnrInd.setter
 	def CshAcctOwnrInd(self, value):
-		self._CshAcctOwnrInd = value if type(value) != base_types.auto else self.make_default("CshAcctOwnrInd")
+		self._CshAcctOwnrInd = value if value is not None else base_types.UninitialisedField(self, 'CshAcctOwnrInd', RequestedIndicator, False)
 
 	@CshAcctOwnrInd.deleter
 	def CshAcctOwnrInd(self):
 		del self._CshAcctOwnrInd
-		self._CshAcctOwnrInd = None
+		self._CshAcctOwnrInd = base_types.UninitialisedField(self, 'CshAcctOwnrInd', RequestedIndicator, False)
 
 	@property
 	def CshAcctSvcrInd(self):
@@ -26,12 +26,12 @@ class CollateralValueReturnCriteria1(base_types._BaseFieldType):
 
 	@CshAcctSvcrInd.setter
 	def CshAcctSvcrInd(self, value):
-		self._CshAcctSvcrInd = value if type(value) != base_types.auto else self.make_default("CshAcctSvcrInd")
+		self._CshAcctSvcrInd = value if value is not None else base_types.UninitialisedField(self, 'CshAcctSvcrInd', RequestedIndicator, False)
 
 	@CshAcctSvcrInd.deleter
 	def CshAcctSvcrInd(self):
 		del self._CshAcctSvcrInd
-		self._CshAcctSvcrInd = None
+		self._CshAcctSvcrInd = base_types.UninitialisedField(self, 'CshAcctSvcrInd', RequestedIndicator, False)
 
 	@property
 	def Scties(self):
@@ -39,12 +39,12 @@ class CollateralValueReturnCriteria1(base_types._BaseFieldType):
 
 	@Scties.setter
 	def Scties(self, value):
-		self._Scties = value if type(value) != base_types.auto else self.make_default("Scties")
+		self._Scties = value if value is not None else base_types.UninitialisedField(self, 'Scties', RequestedIndicator, False)
 
 	@Scties.deleter
 	def Scties(self):
 		del self._Scties
-		self._Scties = None
+		self._Scties = base_types.UninitialisedField(self, 'Scties', RequestedIndicator, False)
 
 	@property
 	def SctiesAcctInd(self):
@@ -52,12 +52,12 @@ class CollateralValueReturnCriteria1(base_types._BaseFieldType):
 
 	@SctiesAcctInd.setter
 	def SctiesAcctInd(self, value):
-		self._SctiesAcctInd = value if type(value) != base_types.auto else self.make_default("SctiesAcctInd")
+		self._SctiesAcctInd = value if value is not None else base_types.UninitialisedField(self, 'SctiesAcctInd', RequestedIndicator, False)
 
 	@SctiesAcctInd.deleter
 	def SctiesAcctInd(self):
 		del self._SctiesAcctInd
-		self._SctiesAcctInd = None
+		self._SctiesAcctInd = base_types.UninitialisedField(self, 'SctiesAcctInd', RequestedIndicator, False)
 
 	@property
 	def SctiesAcctOwnrInd(self):
@@ -65,12 +65,12 @@ class CollateralValueReturnCriteria1(base_types._BaseFieldType):
 
 	@SctiesAcctOwnrInd.setter
 	def SctiesAcctOwnrInd(self, value):
-		self._SctiesAcctOwnrInd = value if type(value) != base_types.auto else self.make_default("SctiesAcctOwnrInd")
+		self._SctiesAcctOwnrInd = value if value is not None else base_types.UninitialisedField(self, 'SctiesAcctOwnrInd', RequestedIndicator, False)
 
 	@SctiesAcctOwnrInd.deleter
 	def SctiesAcctOwnrInd(self):
 		del self._SctiesAcctOwnrInd
-		self._SctiesAcctOwnrInd = None
+		self._SctiesAcctOwnrInd = base_types.UninitialisedField(self, 'SctiesAcctOwnrInd', RequestedIndicator, False)
 
 	@property
 	def SctiesAcctSvcrInd(self):
@@ -78,12 +78,12 @@ class CollateralValueReturnCriteria1(base_types._BaseFieldType):
 
 	@SctiesAcctSvcrInd.setter
 	def SctiesAcctSvcrInd(self, value):
-		self._SctiesAcctSvcrInd = value if type(value) != base_types.auto else self.make_default("SctiesAcctSvcrInd")
+		self._SctiesAcctSvcrInd = value if value is not None else base_types.UninitialisedField(self, 'SctiesAcctSvcrInd', RequestedIndicator, False)
 
 	@SctiesAcctSvcrInd.deleter
 	def SctiesAcctSvcrInd(self):
 		del self._SctiesAcctSvcrInd
-		self._SctiesAcctSvcrInd = None
+		self._SctiesAcctSvcrInd = base_types.UninitialisedField(self, 'SctiesAcctSvcrInd', RequestedIndicator, False)
 
 	@property
 	def TtlCollValtnInd(self):
@@ -91,12 +91,12 @@ class CollateralValueReturnCriteria1(base_types._BaseFieldType):
 
 	@TtlCollValtnInd.setter
 	def TtlCollValtnInd(self, value):
-		self._TtlCollValtnInd = value if type(value) != base_types.auto else self.make_default("TtlCollValtnInd")
+		self._TtlCollValtnInd = value if value is not None else base_types.UninitialisedField(self, 'TtlCollValtnInd', RequestedIndicator, False)
 
 	@TtlCollValtnInd.deleter
 	def TtlCollValtnInd(self):
 		del self._TtlCollValtnInd
-		self._TtlCollValtnInd = None
+		self._TtlCollValtnInd = base_types.UninitialisedField(self, 'TtlCollValtnInd', RequestedIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshAcctOwnrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),

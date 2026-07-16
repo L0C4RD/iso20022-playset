@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InstructionProcessingReason3Choice import InstructionProcessingReason3Choice
-from ._InstructionProcessingReason4Choice import InstructionProcessingReason4Choice
-from ._PendingProcessing2Choice import PendingProcessing2Choice
-from ._ProprietaryReason4 import ProprietaryReason4
-from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from . import InstructionProcessingReason3Choice
+from . import InstructionProcessingReason4Choice
+from . import PendingProcessing2Choice
+from . import ProprietaryReason4
+from . import ProprietaryStatusAndReason6
 
 class ProcessingStatus98Choice(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class ProcessingStatus98Choice(base_types._BaseFieldType):
 
 	@AckdAccptd.setter
 	def AckdAccptd(self, value):
-		self._AckdAccptd = value if type(value) != base_types.auto else self.make_default("AckdAccptd")
+		self._AckdAccptd = value if value is not None else base_types.UninitialisedField(self, 'AckdAccptd', ProprietaryReason4, False)
 
 	@AckdAccptd.deleter
 	def AckdAccptd(self):
 		del self._AckdAccptd
-		self._AckdAccptd = None
+		self._AckdAccptd = base_types.UninitialisedField(self, 'AckdAccptd', ProprietaryReason4, False)
 
 	@property
 	def AlrdyMtchdAndAffrmd(self):
@@ -30,12 +30,12 @@ class ProcessingStatus98Choice(base_types._BaseFieldType):
 
 	@AlrdyMtchdAndAffrmd.setter
 	def AlrdyMtchdAndAffrmd(self, value):
-		self._AlrdyMtchdAndAffrmd = value if type(value) != base_types.auto else self.make_default("AlrdyMtchdAndAffrmd")
+		self._AlrdyMtchdAndAffrmd = value if value is not None else base_types.UninitialisedField(self, 'AlrdyMtchdAndAffrmd', ProprietaryReason4, False)
 
 	@AlrdyMtchdAndAffrmd.deleter
 	def AlrdyMtchdAndAffrmd(self):
 		del self._AlrdyMtchdAndAffrmd
-		self._AlrdyMtchdAndAffrmd = None
+		self._AlrdyMtchdAndAffrmd = base_types.UninitialisedField(self, 'AlrdyMtchdAndAffrmd', ProprietaryReason4, False)
 
 	@property
 	def DfltActn(self):
@@ -43,12 +43,12 @@ class ProcessingStatus98Choice(base_types._BaseFieldType):
 
 	@DfltActn.setter
 	def DfltActn(self, value):
-		self._DfltActn = value if type(value) != base_types.auto else self.make_default("DfltActn")
+		self._DfltActn = value if value is not None else base_types.UninitialisedField(self, 'DfltActn', ProprietaryReason4, False)
 
 	@DfltActn.deleter
 	def DfltActn(self):
 		del self._DfltActn
-		self._DfltActn = None
+		self._DfltActn = base_types.UninitialisedField(self, 'DfltActn', ProprietaryReason4, False)
 
 	@property
 	def Done(self):
@@ -56,12 +56,12 @@ class ProcessingStatus98Choice(base_types._BaseFieldType):
 
 	@Done.setter
 	def Done(self, value):
-		self._Done = value if type(value) != base_types.auto else self.make_default("Done")
+		self._Done = value if value is not None else base_types.UninitialisedField(self, 'Done', ProprietaryReason4, False)
 
 	@Done.deleter
 	def Done(self):
 		del self._Done
-		self._Done = None
+		self._Done = base_types.UninitialisedField(self, 'Done', ProprietaryReason4, False)
 
 	@property
 	def ForcdRjctn(self):
@@ -69,12 +69,12 @@ class ProcessingStatus98Choice(base_types._BaseFieldType):
 
 	@ForcdRjctn.setter
 	def ForcdRjctn(self, value):
-		self._ForcdRjctn = value if type(value) != base_types.auto else self.make_default("ForcdRjctn")
+		self._ForcdRjctn = value if value is not None else base_types.UninitialisedField(self, 'ForcdRjctn', ProprietaryReason4, False)
 
 	@ForcdRjctn.deleter
 	def ForcdRjctn(self):
 		del self._ForcdRjctn
-		self._ForcdRjctn = None
+		self._ForcdRjctn = base_types.UninitialisedField(self, 'ForcdRjctn', ProprietaryReason4, False)
 
 	@property
 	def FullyExctdConfSnt(self):
@@ -82,12 +82,12 @@ class ProcessingStatus98Choice(base_types._BaseFieldType):
 
 	@FullyExctdConfSnt.setter
 	def FullyExctdConfSnt(self, value):
-		self._FullyExctdConfSnt = value if type(value) != base_types.auto else self.make_default("FullyExctdConfSnt")
+		self._FullyExctdConfSnt = value if value is not None else base_types.UninitialisedField(self, 'FullyExctdConfSnt', ProprietaryReason4, False)
 
 	@FullyExctdConfSnt.deleter
 	def FullyExctdConfSnt(self):
 		del self._FullyExctdConfSnt
-		self._FullyExctdConfSnt = None
+		self._FullyExctdConfSnt = base_types.UninitialisedField(self, 'FullyExctdConfSnt', ProprietaryReason4, False)
 
 	@property
 	def Futr(self):
@@ -95,12 +95,12 @@ class ProcessingStatus98Choice(base_types._BaseFieldType):
 
 	@Futr.setter
 	def Futr(self, value):
-		self._Futr = value if type(value) != base_types.auto else self.make_default("Futr")
+		self._Futr = value if value is not None else base_types.UninitialisedField(self, 'Futr', ProprietaryReason4, False)
 
 	@Futr.deleter
 	def Futr(self):
 		del self._Futr
-		self._Futr = None
+		self._Futr = base_types.UninitialisedField(self, 'Futr', ProprietaryReason4, False)
 
 	@property
 	def Gnrtd(self):
@@ -108,12 +108,12 @@ class ProcessingStatus98Choice(base_types._BaseFieldType):
 
 	@Gnrtd.setter
 	def Gnrtd(self, value):
-		self._Gnrtd = value if type(value) != base_types.auto else self.make_default("Gnrtd")
+		self._Gnrtd = value if value is not None else base_types.UninitialisedField(self, 'Gnrtd', ProprietaryReason4, False)
 
 	@Gnrtd.deleter
 	def Gnrtd(self):
 		del self._Gnrtd
-		self._Gnrtd = None
+		self._Gnrtd = base_types.UninitialisedField(self, 'Gnrtd', ProprietaryReason4, False)
 
 	@property
 	def InRpr(self):
@@ -121,12 +121,12 @@ class ProcessingStatus98Choice(base_types._BaseFieldType):
 
 	@InRpr.setter
 	def InRpr(self, value):
-		self._InRpr = value if type(value) != base_types.auto else self.make_default("InRpr")
+		self._InRpr = value if value is not None else base_types.UninitialisedField(self, 'InRpr', InstructionProcessingReason4Choice, False)
 
 	@InRpr.deleter
 	def InRpr(self):
 		del self._InRpr
-		self._InRpr = None
+		self._InRpr = base_types.UninitialisedField(self, 'InRpr', InstructionProcessingReason4Choice, False)
 
 	@property
 	def NoInstr(self):
@@ -134,12 +134,12 @@ class ProcessingStatus98Choice(base_types._BaseFieldType):
 
 	@NoInstr.setter
 	def NoInstr(self, value):
-		self._NoInstr = value if type(value) != base_types.auto else self.make_default("NoInstr")
+		self._NoInstr = value if value is not None else base_types.UninitialisedField(self, 'NoInstr', ProprietaryReason4, False)
 
 	@NoInstr.deleter
 	def NoInstr(self):
 		del self._NoInstr
-		self._NoInstr = None
+		self._NoInstr = base_types.UninitialisedField(self, 'NoInstr', ProprietaryReason4, False)
 
 	@property
 	def OpnOrdr(self):
@@ -147,12 +147,12 @@ class ProcessingStatus98Choice(base_types._BaseFieldType):
 
 	@OpnOrdr.setter
 	def OpnOrdr(self, value):
-		self._OpnOrdr = value if type(value) != base_types.auto else self.make_default("OpnOrdr")
+		self._OpnOrdr = value if value is not None else base_types.UninitialisedField(self, 'OpnOrdr', ProprietaryReason4, False)
 
 	@OpnOrdr.deleter
 	def OpnOrdr(self):
 		del self._OpnOrdr
-		self._OpnOrdr = None
+		self._OpnOrdr = base_types.UninitialisedField(self, 'OpnOrdr', ProprietaryReason4, False)
 
 	@property
 	def PdgPrcg(self):
@@ -160,12 +160,12 @@ class ProcessingStatus98Choice(base_types._BaseFieldType):
 
 	@PdgPrcg.setter
 	def PdgPrcg(self, value):
-		self._PdgPrcg = value if type(value) != base_types.auto else self.make_default("PdgPrcg")
+		self._PdgPrcg = value if value is not None else base_types.UninitialisedField(self, 'PdgPrcg', PendingProcessing2Choice, False)
 
 	@PdgPrcg.deleter
 	def PdgPrcg(self):
 		del self._PdgPrcg
-		self._PdgPrcg = None
+		self._PdgPrcg = base_types.UninitialisedField(self, 'PdgPrcg', PendingProcessing2Choice, False)
 
 	@property
 	def PrtrySts(self):
@@ -173,12 +173,12 @@ class ProcessingStatus98Choice(base_types._BaseFieldType):
 
 	@PrtrySts.setter
 	def PrtrySts(self, value):
-		self._PrtrySts = value if type(value) != base_types.auto else self.make_default("PrtrySts")
+		self._PrtrySts = value if value is not None else base_types.UninitialisedField(self, 'PrtrySts', ProprietaryStatusAndReason6, False)
 
 	@PrtrySts.deleter
 	def PrtrySts(self):
 		del self._PrtrySts
-		self._PrtrySts = None
+		self._PrtrySts = base_types.UninitialisedField(self, 'PrtrySts', ProprietaryStatusAndReason6, False)
 
 	@property
 	def RcvdAtIntrmy(self):
@@ -186,12 +186,12 @@ class ProcessingStatus98Choice(base_types._BaseFieldType):
 
 	@RcvdAtIntrmy.setter
 	def RcvdAtIntrmy(self, value):
-		self._RcvdAtIntrmy = value if type(value) != base_types.auto else self.make_default("RcvdAtIntrmy")
+		self._RcvdAtIntrmy = value if value is not None else base_types.UninitialisedField(self, 'RcvdAtIntrmy', ProprietaryReason4, False)
 
 	@RcvdAtIntrmy.deleter
 	def RcvdAtIntrmy(self):
 		del self._RcvdAtIntrmy
-		self._RcvdAtIntrmy = None
+		self._RcvdAtIntrmy = base_types.UninitialisedField(self, 'RcvdAtIntrmy', ProprietaryReason4, False)
 
 	@property
 	def Rjctd(self):
@@ -199,12 +199,12 @@ class ProcessingStatus98Choice(base_types._BaseFieldType):
 
 	@Rjctd.setter
 	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
+		self._Rjctd = value if value is not None else base_types.UninitialisedField(self, 'Rjctd', InstructionProcessingReason3Choice, False)
 
 	@Rjctd.deleter
 	def Rjctd(self):
 		del self._Rjctd
-		self._Rjctd = None
+		self._Rjctd = base_types.UninitialisedField(self, 'Rjctd', InstructionProcessingReason3Choice, False)
 
 	@property
 	def StgInstr(self):
@@ -212,12 +212,12 @@ class ProcessingStatus98Choice(base_types._BaseFieldType):
 
 	@StgInstr.setter
 	def StgInstr(self, value):
-		self._StgInstr = value if type(value) != base_types.auto else self.make_default("StgInstr")
+		self._StgInstr = value if value is not None else base_types.UninitialisedField(self, 'StgInstr', ProprietaryReason4, False)
 
 	@StgInstr.deleter
 	def StgInstr(self):
 		del self._StgInstr
-		self._StgInstr = None
+		self._StgInstr = base_types.UninitialisedField(self, 'StgInstr', ProprietaryReason4, False)
 
 	@property
 	def SttlmInstrSnt(self):
@@ -225,12 +225,12 @@ class ProcessingStatus98Choice(base_types._BaseFieldType):
 
 	@SttlmInstrSnt.setter
 	def SttlmInstrSnt(self, value):
-		self._SttlmInstrSnt = value if type(value) != base_types.auto else self.make_default("SttlmInstrSnt")
+		self._SttlmInstrSnt = value if value is not None else base_types.UninitialisedField(self, 'SttlmInstrSnt', ProprietaryReason4, False)
 
 	@SttlmInstrSnt.deleter
 	def SttlmInstrSnt(self):
 		del self._SttlmInstrSnt
-		self._SttlmInstrSnt = None
+		self._SttlmInstrSnt = base_types.UninitialisedField(self, 'SttlmInstrSnt', ProprietaryReason4, False)
 
 	@property
 	def TradgSspdByStockXchg(self):
@@ -238,12 +238,12 @@ class ProcessingStatus98Choice(base_types._BaseFieldType):
 
 	@TradgSspdByStockXchg.setter
 	def TradgSspdByStockXchg(self, value):
-		self._TradgSspdByStockXchg = value if type(value) != base_types.auto else self.make_default("TradgSspdByStockXchg")
+		self._TradgSspdByStockXchg = value if value is not None else base_types.UninitialisedField(self, 'TradgSspdByStockXchg', ProprietaryReason4, False)
 
 	@TradgSspdByStockXchg.deleter
 	def TradgSspdByStockXchg(self):
 		del self._TradgSspdByStockXchg
-		self._TradgSspdByStockXchg = None
+		self._TradgSspdByStockXchg = base_types.UninitialisedField(self, 'TradgSspdByStockXchg', ProprietaryReason4, False)
 
 	@property
 	def Trtd(self):
@@ -251,12 +251,12 @@ class ProcessingStatus98Choice(base_types._BaseFieldType):
 
 	@Trtd.setter
 	def Trtd(self, value):
-		self._Trtd = value if type(value) != base_types.auto else self.make_default("Trtd")
+		self._Trtd = value if value is not None else base_types.UninitialisedField(self, 'Trtd', ProprietaryReason4, False)
 
 	@Trtd.deleter
 	def Trtd(self):
 		del self._Trtd
-		self._Trtd = None
+		self._Trtd = base_types.UninitialisedField(self, 'Trtd', ProprietaryReason4, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AckdAccptd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),

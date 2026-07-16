@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MICIdentifier import MICIdentifier
-from ._Max350Text import Max350Text
-from ._PercentageRate import PercentageRate
+from . import MICIdentifier
+from . import Max350Text
+from . import PercentageRate
 
 class TradingUnderWaiversPercentage1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TradingUnderWaiversPercentage1(base_types._BaseFieldType):
 
 	@Dsclmr.setter
 	def Dsclmr(self, value):
-		self._Dsclmr = value if type(value) != base_types.auto else self.make_default("Dsclmr")
+		self._Dsclmr = value if value is not None else base_types.UninitialisedField(self, 'Dsclmr', Max350Text, False)
 
 	@Dsclmr.deleter
 	def Dsclmr(self):
 		del self._Dsclmr
-		self._Dsclmr = None
+		self._Dsclmr = base_types.UninitialisedField(self, 'Dsclmr', Max350Text, False)
 
 	@property
 	def TradgUdrWvrPctg(self):
@@ -28,12 +28,12 @@ class TradingUnderWaiversPercentage1(base_types._BaseFieldType):
 
 	@TradgUdrWvrPctg.setter
 	def TradgUdrWvrPctg(self, value):
-		self._TradgUdrWvrPctg = value if type(value) != base_types.auto else self.make_default("TradgUdrWvrPctg")
+		self._TradgUdrWvrPctg = value if value is not None else base_types.UninitialisedField(self, 'TradgUdrWvrPctg', PercentageRate, False)
 
 	@TradgUdrWvrPctg.deleter
 	def TradgUdrWvrPctg(self):
 		del self._TradgUdrWvrPctg
-		self._TradgUdrWvrPctg = None
+		self._TradgUdrWvrPctg = base_types.UninitialisedField(self, 'TradgUdrWvrPctg', PercentageRate, False)
 
 	@property
 	def TradgVn(self):
@@ -41,12 +41,12 @@ class TradingUnderWaiversPercentage1(base_types._BaseFieldType):
 
 	@TradgVn.setter
 	def TradgVn(self, value):
-		self._TradgVn = value if type(value) != base_types.auto else self.make_default("TradgVn")
+		self._TradgVn = value if value is not None else base_types.UninitialisedField(self, 'TradgVn', MICIdentifier, False)
 
 	@TradgVn.deleter
 	def TradgVn(self):
 		del self._TradgVn
-		self._TradgVn = None
+		self._TradgVn = base_types.UninitialisedField(self, 'TradgVn', MICIdentifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dsclmr', type=Max350Text, min=0, max=1, mutex_group=None, array=False),

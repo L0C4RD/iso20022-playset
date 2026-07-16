@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
-from ._GenericIdentification56 import GenericIdentification56
-from ._QuantityAndAvailability3 import QuantityAndAvailability3
+from . import FinancialInstrumentQuantity33Choice
+from . import GenericIdentification56
+from . import QuantityAndAvailability3
 
 class SubBalanceQuantity8Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SubBalanceQuantity8Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+		self._Prtry = value if value is not None else base_types.UninitialisedField(self, 'Prtry', GenericIdentification56, False)
 
 	@Prtry.deleter
 	def Prtry(self):
 		del self._Prtry
-		self._Prtry = None
+		self._Prtry = base_types.UninitialisedField(self, 'Prtry', GenericIdentification56, False)
 
 	@property
 	def Qty(self):
@@ -28,12 +28,12 @@ class SubBalanceQuantity8Choice(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+		self._Qty = value if value is not None else base_types.UninitialisedField(self, 'Qty', FinancialInstrumentQuantity33Choice, False)
 
 	@Qty.deleter
 	def Qty(self):
 		del self._Qty
-		self._Qty = None
+		self._Qty = base_types.UninitialisedField(self, 'Qty', FinancialInstrumentQuantity33Choice, False)
 
 	@property
 	def QtyAndAvlbty(self):
@@ -41,12 +41,12 @@ class SubBalanceQuantity8Choice(base_types._BaseFieldType):
 
 	@QtyAndAvlbty.setter
 	def QtyAndAvlbty(self, value):
-		self._QtyAndAvlbty = value if type(value) != base_types.auto else self.make_default("QtyAndAvlbty")
+		self._QtyAndAvlbty = value if value is not None else base_types.UninitialisedField(self, 'QtyAndAvlbty', QuantityAndAvailability3, False)
 
 	@QtyAndAvlbty.deleter
 	def QtyAndAvlbty(self):
 		del self._QtyAndAvlbty
-		self._QtyAndAvlbty = None
+		self._QtyAndAvlbty = base_types.UninitialisedField(self, 'QtyAndAvlbty', QuantityAndAvailability3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification56, min=0, max=1, mutex_group=1, array=False),

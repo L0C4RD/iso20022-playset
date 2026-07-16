@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Max8Text import Max8Text
+from . import Max35Text
+from . import Max8Text
 
 class RateName1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class RateName1(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+		self._Issr = value if value is not None else base_types.UninitialisedField(self, 'Issr', Max8Text, False)
 
 	@Issr.deleter
 	def Issr(self):
 		del self._Issr
-		self._Issr = None
+		self._Issr = base_types.UninitialisedField(self, 'Issr', Max8Text, False)
 
 	@property
 	def RateNm(self):
@@ -27,12 +27,12 @@ class RateName1(base_types._BaseFieldType):
 
 	@RateNm.setter
 	def RateNm(self, value):
-		self._RateNm = value if type(value) != base_types.auto else self.make_default("RateNm")
+		self._RateNm = value if value is not None else base_types.UninitialisedField(self, 'RateNm', Max35Text, False)
 
 	@RateNm.deleter
 	def RateNm(self):
 		del self._RateNm
-		self._RateNm = None
+		self._RateNm = base_types.UninitialisedField(self, 'RateNm', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Issr', type=Max8Text, min=0, max=1, mutex_group=None, array=False),

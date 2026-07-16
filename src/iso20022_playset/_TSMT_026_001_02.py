@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._StatusChangeRequestV02 import StatusChangeRequestV02
+from . import StatusChangeRequestV02
 
 class TSMT_026_001_02():
 
@@ -18,12 +18,12 @@ class TSMT_026_001_02():
 
 		@StsChngReq.setter
 		def StsChngReq(self, value):
-			self._StsChngReq = value if type(value) != base_types.auto else self.make_default("StsChngReq")
+			self._StsChngReq = value if value is not None else base_types.UninitialisedField(self, 'StsChngReq', StatusChangeRequestV02, False)
 
 		@StsChngReq.deleter
 		def StsChngReq(self):
 			del self._StsChngReq
-			self._StsChngReq = None
+			self._StsChngReq = base_types.UninitialisedField(self, 'StsChngReq', StatusChangeRequestV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='StsChngReq', type=StatusChangeRequestV02, min=1, max=1, mutex_group=None, array=False),

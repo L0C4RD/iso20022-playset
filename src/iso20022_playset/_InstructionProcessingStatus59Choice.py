@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NoReasonCode import NoReasonCode
-from ._PendingStatus78Choice import PendingStatus78Choice
-from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
-from ._RejectedStatus63Choice import RejectedStatus63Choice
+from . import NoReasonCode
+from . import PendingStatus78Choice
+from . import ProprietaryStatusAndReason6
+from . import RejectedStatus63Choice
 
 class InstructionProcessingStatus59Choice(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class InstructionProcessingStatus59Choice(base_types._BaseFieldType):
 
 	@AccptdAndConfd.setter
 	def AccptdAndConfd(self, value):
-		self._AccptdAndConfd = value if type(value) != base_types.auto else self.make_default("AccptdAndConfd")
+		self._AccptdAndConfd = value if value is not None else base_types.UninitialisedField(self, 'AccptdAndConfd', NoReasonCode, False)
 
 	@AccptdAndConfd.deleter
 	def AccptdAndConfd(self):
 		del self._AccptdAndConfd
-		self._AccptdAndConfd = None
+		self._AccptdAndConfd = base_types.UninitialisedField(self, 'AccptdAndConfd', NoReasonCode, False)
 
 	@property
 	def Pdg(self):
@@ -29,12 +29,12 @@ class InstructionProcessingStatus59Choice(base_types._BaseFieldType):
 
 	@Pdg.setter
 	def Pdg(self, value):
-		self._Pdg = value if type(value) != base_types.auto else self.make_default("Pdg")
+		self._Pdg = value if value is not None else base_types.UninitialisedField(self, 'Pdg', PendingStatus78Choice, False)
 
 	@Pdg.deleter
 	def Pdg(self):
 		del self._Pdg
-		self._Pdg = None
+		self._Pdg = base_types.UninitialisedField(self, 'Pdg', PendingStatus78Choice, False)
 
 	@property
 	def PrtrySts(self):
@@ -42,12 +42,12 @@ class InstructionProcessingStatus59Choice(base_types._BaseFieldType):
 
 	@PrtrySts.setter
 	def PrtrySts(self, value):
-		self._PrtrySts = value if type(value) != base_types.auto else self.make_default("PrtrySts")
+		self._PrtrySts = value if value is not None else base_types.UninitialisedField(self, 'PrtrySts', ProprietaryStatusAndReason6, False)
 
 	@PrtrySts.deleter
 	def PrtrySts(self):
 		del self._PrtrySts
-		self._PrtrySts = None
+		self._PrtrySts = base_types.UninitialisedField(self, 'PrtrySts', ProprietaryStatusAndReason6, False)
 
 	@property
 	def Rjctd(self):
@@ -55,12 +55,12 @@ class InstructionProcessingStatus59Choice(base_types._BaseFieldType):
 
 	@Rjctd.setter
 	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
+		self._Rjctd = value if value is not None else base_types.UninitialisedField(self, 'Rjctd', RejectedStatus63Choice, False)
 
 	@Rjctd.deleter
 	def Rjctd(self):
 		del self._Rjctd
-		self._Rjctd = None
+		self._Rjctd = base_types.UninitialisedField(self, 'Rjctd', RejectedStatus63Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AccptdAndConfd', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),

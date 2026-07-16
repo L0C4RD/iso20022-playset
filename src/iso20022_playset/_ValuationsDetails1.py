@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._CollateralAmount4 import CollateralAmount4
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._MarketIdentification89 import MarketIdentification89
-from ._Number import Number
-from ._Price7 import Price7
-from ._ValuationFactorBreakdown1 import ValuationFactorBreakdown1
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import CollateralAmount4
+from . import DateAndDateTime2Choice
+from . import MarketIdentification89
+from . import Number
+from . import Price7
+from . import ValuationFactorBreakdown1
 
 class ValuationsDetails1(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class ValuationsDetails1(base_types._BaseFieldType):
 
 	@AcrdIntrst.setter
 	def AcrdIntrst(self, value):
-		self._AcrdIntrst = value if type(value) != base_types.auto else self.make_default("AcrdIntrst")
+		self._AcrdIntrst = value if value is not None else base_types.UninitialisedField(self, 'AcrdIntrst', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@AcrdIntrst.deleter
 	def AcrdIntrst(self):
 		del self._AcrdIntrst
-		self._AcrdIntrst = None
+		self._AcrdIntrst = base_types.UninitialisedField(self, 'AcrdIntrst', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def CleanPric(self):
@@ -32,12 +32,12 @@ class ValuationsDetails1(base_types._BaseFieldType):
 
 	@CleanPric.setter
 	def CleanPric(self, value):
-		self._CleanPric = value if type(value) != base_types.auto else self.make_default("CleanPric")
+		self._CleanPric = value if value is not None else base_types.UninitialisedField(self, 'CleanPric', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@CleanPric.deleter
 	def CleanPric(self):
 		del self._CleanPric
-		self._CleanPric = None
+		self._CleanPric = base_types.UninitialisedField(self, 'CleanPric', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def MktPric(self):
@@ -45,12 +45,12 @@ class ValuationsDetails1(base_types._BaseFieldType):
 
 	@MktPric.setter
 	def MktPric(self, value):
-		self._MktPric = value if type(value) != base_types.auto else self.make_default("MktPric")
+		self._MktPric = value if value is not None else base_types.UninitialisedField(self, 'MktPric', Price7, False)
 
 	@MktPric.deleter
 	def MktPric(self):
 		del self._MktPric
-		self._MktPric = None
+		self._MktPric = base_types.UninitialisedField(self, 'MktPric', Price7, False)
 
 	@property
 	def NbOfDaysAcrd(self):
@@ -58,12 +58,12 @@ class ValuationsDetails1(base_types._BaseFieldType):
 
 	@NbOfDaysAcrd.setter
 	def NbOfDaysAcrd(self, value):
-		self._NbOfDaysAcrd = value if type(value) != base_types.auto else self.make_default("NbOfDaysAcrd")
+		self._NbOfDaysAcrd = value if value is not None else base_types.UninitialisedField(self, 'NbOfDaysAcrd', Number, False)
 
 	@NbOfDaysAcrd.deleter
 	def NbOfDaysAcrd(self):
 		del self._NbOfDaysAcrd
-		self._NbOfDaysAcrd = None
+		self._NbOfDaysAcrd = base_types.UninitialisedField(self, 'NbOfDaysAcrd', Number, False)
 
 	@property
 	def QtnAge(self):
@@ -71,12 +71,12 @@ class ValuationsDetails1(base_types._BaseFieldType):
 
 	@QtnAge.setter
 	def QtnAge(self, value):
-		self._QtnAge = value if type(value) != base_types.auto else self.make_default("QtnAge")
+		self._QtnAge = value if value is not None else base_types.UninitialisedField(self, 'QtnAge', Number, False)
 
 	@QtnAge.deleter
 	def QtnAge(self):
 		del self._QtnAge
-		self._QtnAge = None
+		self._QtnAge = base_types.UninitialisedField(self, 'QtnAge', Number, False)
 
 	@property
 	def SrcOfPric(self):
@@ -84,12 +84,12 @@ class ValuationsDetails1(base_types._BaseFieldType):
 
 	@SrcOfPric.setter
 	def SrcOfPric(self, value):
-		self._SrcOfPric = value if type(value) != base_types.auto else self.make_default("SrcOfPric")
+		self._SrcOfPric = value if value is not None else base_types.UninitialisedField(self, 'SrcOfPric', MarketIdentification89, False)
 
 	@SrcOfPric.deleter
 	def SrcOfPric(self):
 		del self._SrcOfPric
-		self._SrcOfPric = None
+		self._SrcOfPric = base_types.UninitialisedField(self, 'SrcOfPric', MarketIdentification89, False)
 
 	@property
 	def SttlmDt(self):
@@ -97,12 +97,12 @@ class ValuationsDetails1(base_types._BaseFieldType):
 
 	@SttlmDt.setter
 	def SttlmDt(self, value):
-		self._SttlmDt = value if type(value) != base_types.auto else self.make_default("SttlmDt")
+		self._SttlmDt = value if value is not None else base_types.UninitialisedField(self, 'SttlmDt', DateAndDateTime2Choice, False)
 
 	@SttlmDt.deleter
 	def SttlmDt(self):
 		del self._SttlmDt
-		self._SttlmDt = None
+		self._SttlmDt = base_types.UninitialisedField(self, 'SttlmDt', DateAndDateTime2Choice, False)
 
 	@property
 	def ValtnDtlsAmt(self):
@@ -110,12 +110,12 @@ class ValuationsDetails1(base_types._BaseFieldType):
 
 	@ValtnDtlsAmt.setter
 	def ValtnDtlsAmt(self, value):
-		self._ValtnDtlsAmt = value if type(value) != base_types.auto else self.make_default("ValtnDtlsAmt")
+		self._ValtnDtlsAmt = value if value is not None else base_types.UninitialisedField(self, 'ValtnDtlsAmt', CollateralAmount4, False)
 
 	@ValtnDtlsAmt.deleter
 	def ValtnDtlsAmt(self):
 		del self._ValtnDtlsAmt
-		self._ValtnDtlsAmt = None
+		self._ValtnDtlsAmt = base_types.UninitialisedField(self, 'ValtnDtlsAmt', CollateralAmount4, False)
 
 	@property
 	def ValtnFctrBrkdwn(self):
@@ -123,12 +123,12 @@ class ValuationsDetails1(base_types._BaseFieldType):
 
 	@ValtnFctrBrkdwn.setter
 	def ValtnFctrBrkdwn(self, value):
-		self._ValtnFctrBrkdwn = value if type(value) != base_types.auto else self.make_default("ValtnFctrBrkdwn")
+		self._ValtnFctrBrkdwn = value if value is not None else base_types.UninitialisedField(self, 'ValtnFctrBrkdwn', ValuationFactorBreakdown1, False)
 
 	@ValtnFctrBrkdwn.deleter
 	def ValtnFctrBrkdwn(self):
 		del self._ValtnFctrBrkdwn
-		self._ValtnFctrBrkdwn = None
+		self._ValtnFctrBrkdwn = base_types.UninitialisedField(self, 'ValtnFctrBrkdwn', ValuationFactorBreakdown1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcrdIntrst', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

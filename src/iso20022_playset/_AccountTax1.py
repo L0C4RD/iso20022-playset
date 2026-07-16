@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BillingTaxCalculationMethod1Code import BillingTaxCalculationMethod1Code
-from ._Max40Text import Max40Text
-from ._ResidenceLocation1Choice import ResidenceLocation1Choice
+from . import BillingTaxCalculationMethod1Code
+from . import Max40Text
+from . import ResidenceLocation1Choice
 
 class AccountTax1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AccountTax1(base_types._BaseFieldType):
 
 	@ClctnMtd.setter
 	def ClctnMtd(self, value):
-		self._ClctnMtd = value if type(value) != base_types.auto else self.make_default("ClctnMtd")
+		self._ClctnMtd = value if value is not None else base_types.UninitialisedField(self, 'ClctnMtd', BillingTaxCalculationMethod1Code, False)
 
 	@ClctnMtd.deleter
 	def ClctnMtd(self):
 		del self._ClctnMtd
-		self._ClctnMtd = None
+		self._ClctnMtd = base_types.UninitialisedField(self, 'ClctnMtd', BillingTaxCalculationMethod1Code, False)
 
 	@property
 	def NonResCtry(self):
@@ -28,12 +28,12 @@ class AccountTax1(base_types._BaseFieldType):
 
 	@NonResCtry.setter
 	def NonResCtry(self, value):
-		self._NonResCtry = value if type(value) != base_types.auto else self.make_default("NonResCtry")
+		self._NonResCtry = value if value is not None else base_types.UninitialisedField(self, 'NonResCtry', ResidenceLocation1Choice, False)
 
 	@NonResCtry.deleter
 	def NonResCtry(self):
 		del self._NonResCtry
-		self._NonResCtry = None
+		self._NonResCtry = base_types.UninitialisedField(self, 'NonResCtry', ResidenceLocation1Choice, False)
 
 	@property
 	def Rgn(self):
@@ -41,12 +41,12 @@ class AccountTax1(base_types._BaseFieldType):
 
 	@Rgn.setter
 	def Rgn(self, value):
-		self._Rgn = value if type(value) != base_types.auto else self.make_default("Rgn")
+		self._Rgn = value if value is not None else base_types.UninitialisedField(self, 'Rgn', Max40Text, False)
 
 	@Rgn.deleter
 	def Rgn(self):
 		del self._Rgn
-		self._Rgn = None
+		self._Rgn = base_types.UninitialisedField(self, 'Rgn', Max40Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClctnMtd', type=BillingTaxCalculationMethod1Code, min=1, max=1, mutex_group=None, array=False),

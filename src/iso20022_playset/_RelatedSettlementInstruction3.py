@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection110 import AmountAndDirection110
-from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
-from ._Max35Text import Max35Text
-from ._PartyIdentification143 import PartyIdentification143
-from ._Quantity51Choice import Quantity51Choice
-from ._ReceiveDelivery1Code import ReceiveDelivery1Code
-from ._SettlementDate17Choice import SettlementDate17Choice
-from ._TradeDate8Choice import TradeDate8Choice
-from ._UTIIdentifier import UTIIdentifier
+from . import AmountAndDirection110
+from . import DeliveryReceiptType2Code
+from . import Max35Text
+from . import PartyIdentification143
+from . import Quantity51Choice
+from . import ReceiveDelivery1Code
+from . import SettlementDate17Choice
+from . import TradeDate8Choice
+from . import UTIIdentifier
 
 class RelatedSettlementInstruction3(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class RelatedSettlementInstruction3(base_types._BaseFieldType):
 
 	@CtrPtyDpstry.setter
 	def CtrPtyDpstry(self, value):
-		self._CtrPtyDpstry = value if type(value) != base_types.auto else self.make_default("CtrPtyDpstry")
+		self._CtrPtyDpstry = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyDpstry', PartyIdentification143, False)
 
 	@CtrPtyDpstry.deleter
 	def CtrPtyDpstry(self):
 		del self._CtrPtyDpstry
-		self._CtrPtyDpstry = None
+		self._CtrPtyDpstry = base_types.UninitialisedField(self, 'CtrPtyDpstry', PartyIdentification143, False)
 
 	@property
 	def MktInfrstrctrTxId(self):
@@ -34,12 +34,12 @@ class RelatedSettlementInstruction3(base_types._BaseFieldType):
 
 	@MktInfrstrctrTxId.setter
 	def MktInfrstrctrTxId(self, value):
-		self._MktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("MktInfrstrctrTxId")
+		self._MktInfrstrctrTxId = value if value is not None else base_types.UninitialisedField(self, 'MktInfrstrctrTxId', Max35Text, False)
 
 	@MktInfrstrctrTxId.deleter
 	def MktInfrstrctrTxId(self):
 		del self._MktInfrstrctrTxId
-		self._MktInfrstrctrTxId = None
+		self._MktInfrstrctrTxId = base_types.UninitialisedField(self, 'MktInfrstrctrTxId', Max35Text, False)
 
 	@property
 	def Pmt(self):
@@ -47,12 +47,12 @@ class RelatedSettlementInstruction3(base_types._BaseFieldType):
 
 	@Pmt.setter
 	def Pmt(self, value):
-		self._Pmt = value if type(value) != base_types.auto else self.make_default("Pmt")
+		self._Pmt = value if value is not None else base_types.UninitialisedField(self, 'Pmt', DeliveryReceiptType2Code, False)
 
 	@Pmt.deleter
 	def Pmt(self):
 		del self._Pmt
-		self._Pmt = None
+		self._Pmt = base_types.UninitialisedField(self, 'Pmt', DeliveryReceiptType2Code, False)
 
 	@property
 	def PrcrTxId(self):
@@ -60,12 +60,12 @@ class RelatedSettlementInstruction3(base_types._BaseFieldType):
 
 	@PrcrTxId.setter
 	def PrcrTxId(self, value):
-		self._PrcrTxId = value if type(value) != base_types.auto else self.make_default("PrcrTxId")
+		self._PrcrTxId = value if value is not None else base_types.UninitialisedField(self, 'PrcrTxId', Max35Text, False)
 
 	@PrcrTxId.deleter
 	def PrcrTxId(self):
 		del self._PrcrTxId
-		self._PrcrTxId = None
+		self._PrcrTxId = base_types.UninitialisedField(self, 'PrcrTxId', Max35Text, False)
 
 	@property
 	def RltdSttlmInstrId(self):
@@ -73,12 +73,12 @@ class RelatedSettlementInstruction3(base_types._BaseFieldType):
 
 	@RltdSttlmInstrId.setter
 	def RltdSttlmInstrId(self, value):
-		self._RltdSttlmInstrId = value if type(value) != base_types.auto else self.make_default("RltdSttlmInstrId")
+		self._RltdSttlmInstrId = value if value is not None else base_types.UninitialisedField(self, 'RltdSttlmInstrId', Max35Text, False)
 
 	@RltdSttlmInstrId.deleter
 	def RltdSttlmInstrId(self):
 		del self._RltdSttlmInstrId
-		self._RltdSttlmInstrId = None
+		self._RltdSttlmInstrId = base_types.UninitialisedField(self, 'RltdSttlmInstrId', Max35Text, False)
 
 	@property
 	def SctiesMvmntTp(self):
@@ -86,12 +86,12 @@ class RelatedSettlementInstruction3(base_types._BaseFieldType):
 
 	@SctiesMvmntTp.setter
 	def SctiesMvmntTp(self, value):
-		self._SctiesMvmntTp = value if type(value) != base_types.auto else self.make_default("SctiesMvmntTp")
+		self._SctiesMvmntTp = value if value is not None else base_types.UninitialisedField(self, 'SctiesMvmntTp', ReceiveDelivery1Code, False)
 
 	@SctiesMvmntTp.deleter
 	def SctiesMvmntTp(self):
 		del self._SctiesMvmntTp
-		self._SctiesMvmntTp = None
+		self._SctiesMvmntTp = base_types.UninitialisedField(self, 'SctiesMvmntTp', ReceiveDelivery1Code, False)
 
 	@property
 	def SttlmAmt(self):
@@ -99,12 +99,12 @@ class RelatedSettlementInstruction3(base_types._BaseFieldType):
 
 	@SttlmAmt.setter
 	def SttlmAmt(self, value):
-		self._SttlmAmt = value if type(value) != base_types.auto else self.make_default("SttlmAmt")
+		self._SttlmAmt = value if value is not None else base_types.UninitialisedField(self, 'SttlmAmt', AmountAndDirection110, False)
 
 	@SttlmAmt.deleter
 	def SttlmAmt(self):
 		del self._SttlmAmt
-		self._SttlmAmt = None
+		self._SttlmAmt = base_types.UninitialisedField(self, 'SttlmAmt', AmountAndDirection110, False)
 
 	@property
 	def SttlmDt(self):
@@ -112,12 +112,12 @@ class RelatedSettlementInstruction3(base_types._BaseFieldType):
 
 	@SttlmDt.setter
 	def SttlmDt(self, value):
-		self._SttlmDt = value if type(value) != base_types.auto else self.make_default("SttlmDt")
+		self._SttlmDt = value if value is not None else base_types.UninitialisedField(self, 'SttlmDt', SettlementDate17Choice, False)
 
 	@SttlmDt.deleter
 	def SttlmDt(self):
 		del self._SttlmDt
-		self._SttlmDt = None
+		self._SttlmDt = base_types.UninitialisedField(self, 'SttlmDt', SettlementDate17Choice, False)
 
 	@property
 	def SttlmQty(self):
@@ -125,12 +125,12 @@ class RelatedSettlementInstruction3(base_types._BaseFieldType):
 
 	@SttlmQty.setter
 	def SttlmQty(self, value):
-		self._SttlmQty = value if type(value) != base_types.auto else self.make_default("SttlmQty")
+		self._SttlmQty = value if value is not None else base_types.UninitialisedField(self, 'SttlmQty', Quantity51Choice, False)
 
 	@SttlmQty.deleter
 	def SttlmQty(self):
 		del self._SttlmQty
-		self._SttlmQty = None
+		self._SttlmQty = base_types.UninitialisedField(self, 'SttlmQty', Quantity51Choice, False)
 
 	@property
 	def TradDt(self):
@@ -138,12 +138,12 @@ class RelatedSettlementInstruction3(base_types._BaseFieldType):
 
 	@TradDt.setter
 	def TradDt(self, value):
-		self._TradDt = value if type(value) != base_types.auto else self.make_default("TradDt")
+		self._TradDt = value if value is not None else base_types.UninitialisedField(self, 'TradDt', TradeDate8Choice, False)
 
 	@TradDt.deleter
 	def TradDt(self):
 		del self._TradDt
-		self._TradDt = None
+		self._TradDt = base_types.UninitialisedField(self, 'TradDt', TradeDate8Choice, False)
 
 	@property
 	def UnqTxIdr(self):
@@ -151,12 +151,12 @@ class RelatedSettlementInstruction3(base_types._BaseFieldType):
 
 	@UnqTxIdr.setter
 	def UnqTxIdr(self, value):
-		self._UnqTxIdr = value if type(value) != base_types.auto else self.make_default("UnqTxIdr")
+		self._UnqTxIdr = value if value is not None else base_types.UninitialisedField(self, 'UnqTxIdr', UTIIdentifier, False)
 
 	@UnqTxIdr.deleter
 	def UnqTxIdr(self):
 		del self._UnqTxIdr
-		self._UnqTxIdr = None
+		self._UnqTxIdr = base_types.UninitialisedField(self, 'UnqTxIdr', UTIIdentifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrPtyDpstry', type=PartyIdentification143, min=0, max=1, mutex_group=None, array=False),

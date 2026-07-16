@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AssetClassDetailedSubProductType32Code import AssetClassDetailedSubProductType32Code
-from ._AssetClassProductType2Code import AssetClassProductType2Code
-from ._AssetClassSubProductType8Code import AssetClassSubProductType8Code
+from . import AssetClassDetailedSubProductType32Code
+from . import AssetClassProductType2Code
+from . import AssetClassSubProductType8Code
 
 class EnergyCommodityOil3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class EnergyCommodityOil3(base_types._BaseFieldType):
 
 	@AddtlSubPdct.setter
 	def AddtlSubPdct(self, value):
-		self._AddtlSubPdct = value if type(value) != base_types.auto else self.make_default("AddtlSubPdct")
+		self._AddtlSubPdct = value if value is not None else base_types.UninitialisedField(self, 'AddtlSubPdct', AssetClassDetailedSubProductType32Code, False)
 
 	@AddtlSubPdct.deleter
 	def AddtlSubPdct(self):
 		del self._AddtlSubPdct
-		self._AddtlSubPdct = None
+		self._AddtlSubPdct = base_types.UninitialisedField(self, 'AddtlSubPdct', AssetClassDetailedSubProductType32Code, False)
 
 	@property
 	def BasePdct(self):
@@ -28,12 +28,12 @@ class EnergyCommodityOil3(base_types._BaseFieldType):
 
 	@BasePdct.setter
 	def BasePdct(self, value):
-		self._BasePdct = value if type(value) != base_types.auto else self.make_default("BasePdct")
+		self._BasePdct = value if value is not None else base_types.UninitialisedField(self, 'BasePdct', AssetClassProductType2Code, False)
 
 	@BasePdct.deleter
 	def BasePdct(self):
 		del self._BasePdct
-		self._BasePdct = None
+		self._BasePdct = base_types.UninitialisedField(self, 'BasePdct', AssetClassProductType2Code, False)
 
 	@property
 	def SubPdct(self):
@@ -41,12 +41,12 @@ class EnergyCommodityOil3(base_types._BaseFieldType):
 
 	@SubPdct.setter
 	def SubPdct(self, value):
-		self._SubPdct = value if type(value) != base_types.auto else self.make_default("SubPdct")
+		self._SubPdct = value if value is not None else base_types.UninitialisedField(self, 'SubPdct', AssetClassSubProductType8Code, False)
 
 	@SubPdct.deleter
 	def SubPdct(self):
 		del self._SubPdct
-		self._SubPdct = None
+		self._SubPdct = base_types.UninitialisedField(self, 'SubPdct', AssetClassSubProductType8Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlSubPdct', type=AssetClassDetailedSubProductType32Code, min=0, max=1, mutex_group=None, array=False),

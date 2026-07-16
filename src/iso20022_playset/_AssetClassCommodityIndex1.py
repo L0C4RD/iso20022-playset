@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AssetClassProductType16Code import AssetClassProductType16Code
+from . import AssetClassProductType16Code
 
 class AssetClassCommodityIndex1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class AssetClassCommodityIndex1(base_types._BaseFieldType):
 
 	@BasePdct.setter
 	def BasePdct(self, value):
-		self._BasePdct = value if type(value) != base_types.auto else self.make_default("BasePdct")
+		self._BasePdct = value if value is not None else base_types.UninitialisedField(self, 'BasePdct', AssetClassProductType16Code, False)
 
 	@BasePdct.deleter
 	def BasePdct(self):
 		del self._BasePdct
-		self._BasePdct = None
+		self._BasePdct = base_types.UninitialisedField(self, 'BasePdct', AssetClassProductType16Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BasePdct', type=AssetClassProductType16Code, min=1, max=1, mutex_group=None, array=False),

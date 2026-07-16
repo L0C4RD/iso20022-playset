@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Entitlement1Choice import Entitlement1Choice
-from ._ItemDescription2 import ItemDescription2
-from ._Max2048Text import Max2048Text
-from ._Max35Text import Max35Text
-from ._ResolutionStatus1Code import ResolutionStatus1Code
-from ._ResolutionType2Code import ResolutionType2Code
-from ._VoteInstruction5Code import VoteInstruction5Code
-from ._VoteInstructionType1 import VoteInstructionType1
-from ._VoteType1Code import VoteType1Code
-from ._VotingRightsThreshold2 import VotingRightsThreshold2
-from ._YesNoIndicator import YesNoIndicator
+from . import Entitlement1Choice
+from . import ItemDescription2
+from . import Max2048Text
+from . import Max35Text
+from . import ResolutionStatus1Code
+from . import ResolutionType2Code
+from . import VoteInstruction5Code
+from . import VoteInstructionType1
+from . import VoteType1Code
+from . import VotingRightsThreshold2
+from . import YesNoIndicator
 
 class Resolution8(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class Resolution8(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', ItemDescription2, True)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', ItemDescription2, True)
 
 	@property
 	def Entitlmnt(self):
@@ -36,12 +36,12 @@ class Resolution8(base_types._BaseFieldType):
 
 	@Entitlmnt.setter
 	def Entitlmnt(self, value):
-		self._Entitlmnt = value if type(value) != base_types.auto else self.make_default("Entitlmnt")
+		self._Entitlmnt = value if value is not None else base_types.UninitialisedField(self, 'Entitlmnt', Entitlement1Choice, False)
 
 	@Entitlmnt.deleter
 	def Entitlmnt(self):
 		del self._Entitlmnt
-		self._Entitlmnt = None
+		self._Entitlmnt = base_types.UninitialisedField(self, 'Entitlmnt', Entitlement1Choice, False)
 
 	@property
 	def ForInfOnly(self):
@@ -49,12 +49,12 @@ class Resolution8(base_types._BaseFieldType):
 
 	@ForInfOnly.setter
 	def ForInfOnly(self, value):
-		self._ForInfOnly = value if type(value) != base_types.auto else self.make_default("ForInfOnly")
+		self._ForInfOnly = value if value is not None else base_types.UninitialisedField(self, 'ForInfOnly', YesNoIndicator, False)
 
 	@ForInfOnly.deleter
 	def ForInfOnly(self):
 		del self._ForInfOnly
-		self._ForInfOnly = None
+		self._ForInfOnly = base_types.UninitialisedField(self, 'ForInfOnly', YesNoIndicator, False)
 
 	@property
 	def IssrLabl(self):
@@ -62,12 +62,12 @@ class Resolution8(base_types._BaseFieldType):
 
 	@IssrLabl.setter
 	def IssrLabl(self, value):
-		self._IssrLabl = value if type(value) != base_types.auto else self.make_default("IssrLabl")
+		self._IssrLabl = value if value is not None else base_types.UninitialisedField(self, 'IssrLabl', Max35Text, False)
 
 	@IssrLabl.deleter
 	def IssrLabl(self):
 		del self._IssrLabl
-		self._IssrLabl = None
+		self._IssrLabl = base_types.UninitialisedField(self, 'IssrLabl', Max35Text, False)
 
 	@property
 	def ListgGrpRsltnLabl(self):
@@ -75,12 +75,12 @@ class Resolution8(base_types._BaseFieldType):
 
 	@ListgGrpRsltnLabl.setter
 	def ListgGrpRsltnLabl(self, value):
-		self._ListgGrpRsltnLabl = value if type(value) != base_types.auto else self.make_default("ListgGrpRsltnLabl")
+		self._ListgGrpRsltnLabl = value if value is not None else base_types.UninitialisedField(self, 'ListgGrpRsltnLabl', Max35Text, False)
 
 	@ListgGrpRsltnLabl.deleter
 	def ListgGrpRsltnLabl(self):
 		del self._ListgGrpRsltnLabl
-		self._ListgGrpRsltnLabl = None
+		self._ListgGrpRsltnLabl = base_types.UninitialisedField(self, 'ListgGrpRsltnLabl', Max35Text, False)
 
 	@property
 	def MgmtRcmmndtn(self):
@@ -88,12 +88,12 @@ class Resolution8(base_types._BaseFieldType):
 
 	@MgmtRcmmndtn.setter
 	def MgmtRcmmndtn(self, value):
-		self._MgmtRcmmndtn = value if type(value) != base_types.auto else self.make_default("MgmtRcmmndtn")
+		self._MgmtRcmmndtn = value if value is not None else base_types.UninitialisedField(self, 'MgmtRcmmndtn', VoteInstruction5Code, False)
 
 	@MgmtRcmmndtn.deleter
 	def MgmtRcmmndtn(self):
 		del self._MgmtRcmmndtn
-		self._MgmtRcmmndtn = None
+		self._MgmtRcmmndtn = base_types.UninitialisedField(self, 'MgmtRcmmndtn', VoteInstruction5Code, False)
 
 	@property
 	def NtifngPtyRcmmndtn(self):
@@ -101,12 +101,12 @@ class Resolution8(base_types._BaseFieldType):
 
 	@NtifngPtyRcmmndtn.setter
 	def NtifngPtyRcmmndtn(self, value):
-		self._NtifngPtyRcmmndtn = value if type(value) != base_types.auto else self.make_default("NtifngPtyRcmmndtn")
+		self._NtifngPtyRcmmndtn = value if value is not None else base_types.UninitialisedField(self, 'NtifngPtyRcmmndtn', VoteInstruction5Code, False)
 
 	@NtifngPtyRcmmndtn.deleter
 	def NtifngPtyRcmmndtn(self):
 		del self._NtifngPtyRcmmndtn
-		self._NtifngPtyRcmmndtn = None
+		self._NtifngPtyRcmmndtn = base_types.UninitialisedField(self, 'NtifngPtyRcmmndtn', VoteInstruction5Code, False)
 
 	@property
 	def RghtToWdrwInd(self):
@@ -114,12 +114,12 @@ class Resolution8(base_types._BaseFieldType):
 
 	@RghtToWdrwInd.setter
 	def RghtToWdrwInd(self, value):
-		self._RghtToWdrwInd = value if type(value) != base_types.auto else self.make_default("RghtToWdrwInd")
+		self._RghtToWdrwInd = value if value is not None else base_types.UninitialisedField(self, 'RghtToWdrwInd', YesNoIndicator, False)
 
 	@RghtToWdrwInd.deleter
 	def RghtToWdrwInd(self):
 		del self._RghtToWdrwInd
-		self._RghtToWdrwInd = None
+		self._RghtToWdrwInd = base_types.UninitialisedField(self, 'RghtToWdrwInd', YesNoIndicator, False)
 
 	@property
 	def Sts(self):
@@ -127,12 +127,12 @@ class Resolution8(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', ResolutionStatus1Code, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', ResolutionStatus1Code, False)
 
 	@property
 	def SubmittdBySctyHldr(self):
@@ -140,12 +140,12 @@ class Resolution8(base_types._BaseFieldType):
 
 	@SubmittdBySctyHldr.setter
 	def SubmittdBySctyHldr(self, value):
-		self._SubmittdBySctyHldr = value if type(value) != base_types.auto else self.make_default("SubmittdBySctyHldr")
+		self._SubmittdBySctyHldr = value if value is not None else base_types.UninitialisedField(self, 'SubmittdBySctyHldr', YesNoIndicator, False)
 
 	@SubmittdBySctyHldr.deleter
 	def SubmittdBySctyHldr(self):
 		del self._SubmittdBySctyHldr
-		self._SubmittdBySctyHldr = None
+		self._SubmittdBySctyHldr = base_types.UninitialisedField(self, 'SubmittdBySctyHldr', YesNoIndicator, False)
 
 	@property
 	def Tp(self):
@@ -153,12 +153,12 @@ class Resolution8(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', ResolutionType2Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', ResolutionType2Code, False)
 
 	@property
 	def URLAdr(self):
@@ -166,12 +166,12 @@ class Resolution8(base_types._BaseFieldType):
 
 	@URLAdr.setter
 	def URLAdr(self, value):
-		self._URLAdr = value if type(value) != base_types.auto else self.make_default("URLAdr")
+		self._URLAdr = value if value is not None else base_types.UninitialisedField(self, 'URLAdr', Max2048Text, False)
 
 	@URLAdr.deleter
 	def URLAdr(self):
 		del self._URLAdr
-		self._URLAdr = None
+		self._URLAdr = base_types.UninitialisedField(self, 'URLAdr', Max2048Text, False)
 
 	@property
 	def VoteInstrTp(self):
@@ -179,12 +179,12 @@ class Resolution8(base_types._BaseFieldType):
 
 	@VoteInstrTp.setter
 	def VoteInstrTp(self, value):
-		self._VoteInstrTp = value if type(value) != base_types.auto else self.make_default("VoteInstrTp")
+		self._VoteInstrTp = value if value is not None else base_types.UninitialisedField(self, 'VoteInstrTp', VoteInstructionType1, True)
 
 	@VoteInstrTp.deleter
 	def VoteInstrTp(self):
 		del self._VoteInstrTp
-		self._VoteInstrTp = None
+		self._VoteInstrTp = base_types.UninitialisedField(self, 'VoteInstrTp', VoteInstructionType1, True)
 
 	@property
 	def VoteTp(self):
@@ -192,12 +192,12 @@ class Resolution8(base_types._BaseFieldType):
 
 	@VoteTp.setter
 	def VoteTp(self, value):
-		self._VoteTp = value if type(value) != base_types.auto else self.make_default("VoteTp")
+		self._VoteTp = value if value is not None else base_types.UninitialisedField(self, 'VoteTp', VoteType1Code, False)
 
 	@VoteTp.deleter
 	def VoteTp(self):
 		del self._VoteTp
-		self._VoteTp = None
+		self._VoteTp = base_types.UninitialisedField(self, 'VoteTp', VoteType1Code, False)
 
 	@property
 	def VtngRghtsThrshldForApprvl(self):
@@ -205,12 +205,12 @@ class Resolution8(base_types._BaseFieldType):
 
 	@VtngRghtsThrshldForApprvl.setter
 	def VtngRghtsThrshldForApprvl(self, value):
-		self._VtngRghtsThrshldForApprvl = value if type(value) != base_types.auto else self.make_default("VtngRghtsThrshldForApprvl")
+		self._VtngRghtsThrshldForApprvl = value if value is not None else base_types.UninitialisedField(self, 'VtngRghtsThrshldForApprvl', VotingRightsThreshold2, True)
 
 	@VtngRghtsThrshldForApprvl.deleter
 	def VtngRghtsThrshldForApprvl(self):
 		del self._VtngRghtsThrshldForApprvl
-		self._VtngRghtsThrshldForApprvl = None
+		self._VtngRghtsThrshldForApprvl = base_types.UninitialisedField(self, 'VtngRghtsThrshldForApprvl', VotingRightsThreshold2, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Desc', type=ItemDescription2, min=0, max=None, mutex_group=None, array=True),

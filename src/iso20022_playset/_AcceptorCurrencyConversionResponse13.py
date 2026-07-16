@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardPaymentEnvironment82 import CardPaymentEnvironment82
-from ._CardPaymentTransaction154 import CardPaymentTransaction154
-from ._CurrencyConversion36 import CurrencyConversion36
+from . import CardPaymentEnvironment82
+from . import CardPaymentTransaction154
+from . import CurrencyConversion36
 
 class AcceptorCurrencyConversionResponse13(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AcceptorCurrencyConversionResponse13(base_types._BaseFieldType):
 
 	@CcyConvsRslt.setter
 	def CcyConvsRslt(self, value):
-		self._CcyConvsRslt = value if type(value) != base_types.auto else self.make_default("CcyConvsRslt")
+		self._CcyConvsRslt = value if value is not None else base_types.UninitialisedField(self, 'CcyConvsRslt', CurrencyConversion36, False)
 
 	@CcyConvsRslt.deleter
 	def CcyConvsRslt(self):
 		del self._CcyConvsRslt
-		self._CcyConvsRslt = None
+		self._CcyConvsRslt = base_types.UninitialisedField(self, 'CcyConvsRslt', CurrencyConversion36, False)
 
 	@property
 	def Envt(self):
@@ -28,12 +28,12 @@ class AcceptorCurrencyConversionResponse13(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+		self._Envt = value if value is not None else base_types.UninitialisedField(self, 'Envt', CardPaymentEnvironment82, False)
 
 	@Envt.deleter
 	def Envt(self):
 		del self._Envt
-		self._Envt = None
+		self._Envt = base_types.UninitialisedField(self, 'Envt', CardPaymentEnvironment82, False)
 
 	@property
 	def Tx(self):
@@ -41,12 +41,12 @@ class AcceptorCurrencyConversionResponse13(base_types._BaseFieldType):
 
 	@Tx.setter
 	def Tx(self, value):
-		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
+		self._Tx = value if value is not None else base_types.UninitialisedField(self, 'Tx', CardPaymentTransaction154, False)
 
 	@Tx.deleter
 	def Tx(self):
 		del self._Tx
-		self._Tx = None
+		self._Tx = base_types.UninitialisedField(self, 'Tx', CardPaymentTransaction154, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CcyConvsRslt', type=CurrencyConversion36, min=1, max=1, mutex_group=None, array=False),

@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AgreedRate3 import AgreedRate3
-from ._AmountsAndValueDate8 import AmountsAndValueDate8
-from ._GeneralInformation9 import GeneralInformation9
-from ._NonDeliverableForwardConditions1 import NonDeliverableForwardConditions1
-from ._PostTradeEvent1 import PostTradeEvent1
-from ._RegulatoryReporting8 import RegulatoryReporting8
-from ._SettlementParties120 import SettlementParties120
-from ._SupplementaryData1 import SupplementaryData1
-from ._TradeAgreement14 import TradeAgreement14
-from ._TradePartyIdentification8 import TradePartyIdentification8
+from . import AgreedRate3
+from . import AmountsAndValueDate8
+from . import GeneralInformation9
+from . import NonDeliverableForwardConditions1
+from . import PostTradeEvent1
+from . import RegulatoryReporting8
+from . import SettlementParties120
+from . import SupplementaryData1
+from . import TradeAgreement14
+from . import TradePartyIdentification8
 
 class ForeignExchangeTradeInstructionV06(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class ForeignExchangeTradeInstructionV06(base_types._BaseFieldType):
 
 	@AgrdRate.setter
 	def AgrdRate(self, value):
-		self._AgrdRate = value if type(value) != base_types.auto else self.make_default("AgrdRate")
+		self._AgrdRate = value if value is not None else base_types.UninitialisedField(self, 'AgrdRate', AgreedRate3, False)
 
 	@AgrdRate.deleter
 	def AgrdRate(self):
 		del self._AgrdRate
-		self._AgrdRate = None
+		self._AgrdRate = base_types.UninitialisedField(self, 'AgrdRate', AgreedRate3, False)
 
 	@property
 	def CtrPtySdId(self):
@@ -35,12 +35,12 @@ class ForeignExchangeTradeInstructionV06(base_types._BaseFieldType):
 
 	@CtrPtySdId.setter
 	def CtrPtySdId(self, value):
-		self._CtrPtySdId = value if type(value) != base_types.auto else self.make_default("CtrPtySdId")
+		self._CtrPtySdId = value if value is not None else base_types.UninitialisedField(self, 'CtrPtySdId', TradePartyIdentification8, False)
 
 	@CtrPtySdId.deleter
 	def CtrPtySdId(self):
 		del self._CtrPtySdId
-		self._CtrPtySdId = None
+		self._CtrPtySdId = base_types.UninitialisedField(self, 'CtrPtySdId', TradePartyIdentification8, False)
 
 	@property
 	def CtrPtySdSttlmInstrs(self):
@@ -48,12 +48,12 @@ class ForeignExchangeTradeInstructionV06(base_types._BaseFieldType):
 
 	@CtrPtySdSttlmInstrs.setter
 	def CtrPtySdSttlmInstrs(self, value):
-		self._CtrPtySdSttlmInstrs = value if type(value) != base_types.auto else self.make_default("CtrPtySdSttlmInstrs")
+		self._CtrPtySdSttlmInstrs = value if value is not None else base_types.UninitialisedField(self, 'CtrPtySdSttlmInstrs', SettlementParties120, False)
 
 	@CtrPtySdSttlmInstrs.deleter
 	def CtrPtySdSttlmInstrs(self):
 		del self._CtrPtySdSttlmInstrs
-		self._CtrPtySdSttlmInstrs = None
+		self._CtrPtySdSttlmInstrs = base_types.UninitialisedField(self, 'CtrPtySdSttlmInstrs', SettlementParties120, False)
 
 	@property
 	def NDFConds(self):
@@ -61,12 +61,12 @@ class ForeignExchangeTradeInstructionV06(base_types._BaseFieldType):
 
 	@NDFConds.setter
 	def NDFConds(self, value):
-		self._NDFConds = value if type(value) != base_types.auto else self.make_default("NDFConds")
+		self._NDFConds = value if value is not None else base_types.UninitialisedField(self, 'NDFConds', NonDeliverableForwardConditions1, False)
 
 	@NDFConds.deleter
 	def NDFConds(self):
 		del self._NDFConds
-		self._NDFConds = None
+		self._NDFConds = base_types.UninitialisedField(self, 'NDFConds', NonDeliverableForwardConditions1, False)
 
 	@property
 	def OptnlGnlInf(self):
@@ -74,12 +74,12 @@ class ForeignExchangeTradeInstructionV06(base_types._BaseFieldType):
 
 	@OptnlGnlInf.setter
 	def OptnlGnlInf(self, value):
-		self._OptnlGnlInf = value if type(value) != base_types.auto else self.make_default("OptnlGnlInf")
+		self._OptnlGnlInf = value if value is not None else base_types.UninitialisedField(self, 'OptnlGnlInf', GeneralInformation9, False)
 
 	@OptnlGnlInf.deleter
 	def OptnlGnlInf(self):
 		del self._OptnlGnlInf
-		self._OptnlGnlInf = None
+		self._OptnlGnlInf = base_types.UninitialisedField(self, 'OptnlGnlInf', GeneralInformation9, False)
 
 	@property
 	def PstTradEvt(self):
@@ -87,12 +87,12 @@ class ForeignExchangeTradeInstructionV06(base_types._BaseFieldType):
 
 	@PstTradEvt.setter
 	def PstTradEvt(self, value):
-		self._PstTradEvt = value if type(value) != base_types.auto else self.make_default("PstTradEvt")
+		self._PstTradEvt = value if value is not None else base_types.UninitialisedField(self, 'PstTradEvt', PostTradeEvent1, False)
 
 	@PstTradEvt.deleter
 	def PstTradEvt(self):
 		del self._PstTradEvt
-		self._PstTradEvt = None
+		self._PstTradEvt = base_types.UninitialisedField(self, 'PstTradEvt', PostTradeEvent1, False)
 
 	@property
 	def RgltryRptg(self):
@@ -100,12 +100,12 @@ class ForeignExchangeTradeInstructionV06(base_types._BaseFieldType):
 
 	@RgltryRptg.setter
 	def RgltryRptg(self, value):
-		self._RgltryRptg = value if type(value) != base_types.auto else self.make_default("RgltryRptg")
+		self._RgltryRptg = value if value is not None else base_types.UninitialisedField(self, 'RgltryRptg', RegulatoryReporting8, False)
 
 	@RgltryRptg.deleter
 	def RgltryRptg(self):
 		del self._RgltryRptg
-		self._RgltryRptg = None
+		self._RgltryRptg = base_types.UninitialisedField(self, 'RgltryRptg', RegulatoryReporting8, False)
 
 	@property
 	def SplmtryData(self):
@@ -113,12 +113,12 @@ class ForeignExchangeTradeInstructionV06(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TradAmts(self):
@@ -126,12 +126,12 @@ class ForeignExchangeTradeInstructionV06(base_types._BaseFieldType):
 
 	@TradAmts.setter
 	def TradAmts(self, value):
-		self._TradAmts = value if type(value) != base_types.auto else self.make_default("TradAmts")
+		self._TradAmts = value if value is not None else base_types.UninitialisedField(self, 'TradAmts', AmountsAndValueDate8, False)
 
 	@TradAmts.deleter
 	def TradAmts(self):
 		del self._TradAmts
-		self._TradAmts = None
+		self._TradAmts = base_types.UninitialisedField(self, 'TradAmts', AmountsAndValueDate8, False)
 
 	@property
 	def TradInf(self):
@@ -139,12 +139,12 @@ class ForeignExchangeTradeInstructionV06(base_types._BaseFieldType):
 
 	@TradInf.setter
 	def TradInf(self, value):
-		self._TradInf = value if type(value) != base_types.auto else self.make_default("TradInf")
+		self._TradInf = value if value is not None else base_types.UninitialisedField(self, 'TradInf', TradeAgreement14, False)
 
 	@TradInf.deleter
 	def TradInf(self):
 		del self._TradInf
-		self._TradInf = None
+		self._TradInf = base_types.UninitialisedField(self, 'TradInf', TradeAgreement14, False)
 
 	@property
 	def TradgSdId(self):
@@ -152,12 +152,12 @@ class ForeignExchangeTradeInstructionV06(base_types._BaseFieldType):
 
 	@TradgSdId.setter
 	def TradgSdId(self, value):
-		self._TradgSdId = value if type(value) != base_types.auto else self.make_default("TradgSdId")
+		self._TradgSdId = value if value is not None else base_types.UninitialisedField(self, 'TradgSdId', TradePartyIdentification8, False)
 
 	@TradgSdId.deleter
 	def TradgSdId(self):
 		del self._TradgSdId
-		self._TradgSdId = None
+		self._TradgSdId = base_types.UninitialisedField(self, 'TradgSdId', TradePartyIdentification8, False)
 
 	@property
 	def TradgSdSttlmInstrs(self):
@@ -165,12 +165,12 @@ class ForeignExchangeTradeInstructionV06(base_types._BaseFieldType):
 
 	@TradgSdSttlmInstrs.setter
 	def TradgSdSttlmInstrs(self, value):
-		self._TradgSdSttlmInstrs = value if type(value) != base_types.auto else self.make_default("TradgSdSttlmInstrs")
+		self._TradgSdSttlmInstrs = value if value is not None else base_types.UninitialisedField(self, 'TradgSdSttlmInstrs', SettlementParties120, False)
 
 	@TradgSdSttlmInstrs.deleter
 	def TradgSdSttlmInstrs(self):
 		del self._TradgSdSttlmInstrs
-		self._TradgSdSttlmInstrs = None
+		self._TradgSdSttlmInstrs = base_types.UninitialisedField(self, 'TradgSdSttlmInstrs', SettlementParties120, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AgrdRate', type=AgreedRate3, min=1, max=1, mutex_group=None, array=False),

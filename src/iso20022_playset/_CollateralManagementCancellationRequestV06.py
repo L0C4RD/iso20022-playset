@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CollateralCancellationReason1 import CollateralCancellationReason1
-from ._Obligation8 import Obligation8
-from ._Reference3Choice import Reference3Choice
-from ._SupplementaryData1 import SupplementaryData1
+from . import CollateralCancellationReason1
+from . import Obligation8
+from . import Reference3Choice
+from . import SupplementaryData1
 
 class CollateralManagementCancellationRequestV06(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CollateralManagementCancellationRequestV06(base_types._BaseFieldType):
 
 	@CxlRsn.setter
 	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != base_types.auto else self.make_default("CxlRsn")
+		self._CxlRsn = value if value is not None else base_types.UninitialisedField(self, 'CxlRsn', CollateralCancellationReason1, False)
 
 	@CxlRsn.deleter
 	def CxlRsn(self):
 		del self._CxlRsn
-		self._CxlRsn = None
+		self._CxlRsn = base_types.UninitialisedField(self, 'CxlRsn', CollateralCancellationReason1, False)
 
 	@property
 	def Oblgtn(self):
@@ -29,12 +29,12 @@ class CollateralManagementCancellationRequestV06(base_types._BaseFieldType):
 
 	@Oblgtn.setter
 	def Oblgtn(self, value):
-		self._Oblgtn = value if type(value) != base_types.auto else self.make_default("Oblgtn")
+		self._Oblgtn = value if value is not None else base_types.UninitialisedField(self, 'Oblgtn', Obligation8, False)
 
 	@Oblgtn.deleter
 	def Oblgtn(self):
 		del self._Oblgtn
-		self._Oblgtn = None
+		self._Oblgtn = base_types.UninitialisedField(self, 'Oblgtn', Obligation8, False)
 
 	@property
 	def Ref(self):
@@ -42,12 +42,12 @@ class CollateralManagementCancellationRequestV06(base_types._BaseFieldType):
 
 	@Ref.setter
 	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+		self._Ref = value if value is not None else base_types.UninitialisedField(self, 'Ref', Reference3Choice, False)
 
 	@Ref.deleter
 	def Ref(self):
 		del self._Ref
-		self._Ref = None
+		self._Ref = base_types.UninitialisedField(self, 'Ref', Reference3Choice, False)
 
 	@property
 	def SplmtryData(self):
@@ -55,12 +55,12 @@ class CollateralManagementCancellationRequestV06(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CxlRsn', type=CollateralCancellationReason1, min=1, max=1, mutex_group=None, array=False),

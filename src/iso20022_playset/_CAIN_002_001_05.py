@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AuthorisationResponseV05 import AuthorisationResponseV05
+from . import AuthorisationResponseV05
 
 class CAIN_002_001_05():
 
@@ -18,12 +18,12 @@ class CAIN_002_001_05():
 
 		@AuthstnRspn.setter
 		def AuthstnRspn(self, value):
-			self._AuthstnRspn = value if type(value) != base_types.auto else self.make_default("AuthstnRspn")
+			self._AuthstnRspn = value if value is not None else base_types.UninitialisedField(self, 'AuthstnRspn', AuthorisationResponseV05, False)
 
 		@AuthstnRspn.deleter
 		def AuthstnRspn(self):
 			del self._AuthstnRspn
-			self._AuthstnRspn = None
+			self._AuthstnRspn = base_types.UninitialisedField(self, 'AuthstnRspn', AuthorisationResponseV05, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AuthstnRspn', type=AuthorisationResponseV05, min=1, max=1, mutex_group=None, array=False),

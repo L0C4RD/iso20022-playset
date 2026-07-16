@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._DecimalNumber import DecimalNumber
-from ._Quantity1Code import Quantity1Code
+from . import ActiveCurrencyAndAmount
+from . import DecimalNumber
+from . import Quantity1Code
 
 class UnitOrFaceAmountOrCode1Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class UnitOrFaceAmountOrCode1Choice(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
+		self._Cd = value if value is not None else base_types.UninitialisedField(self, 'Cd', Quantity1Code, False)
 
 	@Cd.deleter
 	def Cd(self):
 		del self._Cd
-		self._Cd = None
+		self._Cd = base_types.UninitialisedField(self, 'Cd', Quantity1Code, False)
 
 	@property
 	def FaceAmt(self):
@@ -28,12 +28,12 @@ class UnitOrFaceAmountOrCode1Choice(base_types._BaseFieldType):
 
 	@FaceAmt.setter
 	def FaceAmt(self, value):
-		self._FaceAmt = value if type(value) != base_types.auto else self.make_default("FaceAmt")
+		self._FaceAmt = value if value is not None else base_types.UninitialisedField(self, 'FaceAmt', ActiveCurrencyAndAmount, False)
 
 	@FaceAmt.deleter
 	def FaceAmt(self):
 		del self._FaceAmt
-		self._FaceAmt = None
+		self._FaceAmt = base_types.UninitialisedField(self, 'FaceAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def Unit(self):
@@ -41,12 +41,12 @@ class UnitOrFaceAmountOrCode1Choice(base_types._BaseFieldType):
 
 	@Unit.setter
 	def Unit(self, value):
-		self._Unit = value if type(value) != base_types.auto else self.make_default("Unit")
+		self._Unit = value if value is not None else base_types.UninitialisedField(self, 'Unit', DecimalNumber, False)
 
 	@Unit.deleter
 	def Unit(self):
 		del self._Unit
-		self._Unit = None
+		self._Unit = base_types.UninitialisedField(self, 'Unit', DecimalNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cd', type=Quantity1Code, min=0, max=1, mutex_group=1, array=False),

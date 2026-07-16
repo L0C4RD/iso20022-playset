@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Clearing7 import Clearing7
-from ._PartyIdentification253Choice import PartyIdentification253Choice
-from ._PartyIdentificationAndAccount227 import PartyIdentificationAndAccount227
-from ._SecuritiesAccount18 import SecuritiesAccount18
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._Settlement2 import Settlement2
-from ._SupplementaryData1 import SupplementaryData1
-from ._TradeLeg11 import TradeLeg11
+from . import Clearing7
+from . import PartyIdentification253Choice
+from . import PartyIdentificationAndAccount227
+from . import SecuritiesAccount18
+from . import SecuritiesAccount19
+from . import Settlement2
+from . import SupplementaryData1
+from . import TradeLeg11
 
 class TradeLegNotificationCancellationV04(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class TradeLegNotificationCancellationV04(base_types._BaseFieldType):
 
 	@ClrAcct.setter
 	def ClrAcct(self, value):
-		self._ClrAcct = value if type(value) != base_types.auto else self.make_default("ClrAcct")
+		self._ClrAcct = value if value is not None else base_types.UninitialisedField(self, 'ClrAcct', SecuritiesAccount18, False)
 
 	@ClrAcct.deleter
 	def ClrAcct(self):
 		del self._ClrAcct
-		self._ClrAcct = None
+		self._ClrAcct = base_types.UninitialisedField(self, 'ClrAcct', SecuritiesAccount18, False)
 
 	@property
 	def ClrDtls(self):
@@ -33,12 +33,12 @@ class TradeLegNotificationCancellationV04(base_types._BaseFieldType):
 
 	@ClrDtls.setter
 	def ClrDtls(self, value):
-		self._ClrDtls = value if type(value) != base_types.auto else self.make_default("ClrDtls")
+		self._ClrDtls = value if value is not None else base_types.UninitialisedField(self, 'ClrDtls', Clearing7, False)
 
 	@ClrDtls.deleter
 	def ClrDtls(self):
 		del self._ClrDtls
-		self._ClrDtls = None
+		self._ClrDtls = base_types.UninitialisedField(self, 'ClrDtls', Clearing7, False)
 
 	@property
 	def ClrMmb(self):
@@ -46,12 +46,12 @@ class TradeLegNotificationCancellationV04(base_types._BaseFieldType):
 
 	@ClrMmb.setter
 	def ClrMmb(self, value):
-		self._ClrMmb = value if type(value) != base_types.auto else self.make_default("ClrMmb")
+		self._ClrMmb = value if value is not None else base_types.UninitialisedField(self, 'ClrMmb', PartyIdentification253Choice, False)
 
 	@ClrMmb.deleter
 	def ClrMmb(self):
 		del self._ClrMmb
-		self._ClrMmb = None
+		self._ClrMmb = base_types.UninitialisedField(self, 'ClrMmb', PartyIdentification253Choice, False)
 
 	@property
 	def DlvryAcct(self):
@@ -59,12 +59,12 @@ class TradeLegNotificationCancellationV04(base_types._BaseFieldType):
 
 	@DlvryAcct.setter
 	def DlvryAcct(self, value):
-		self._DlvryAcct = value if type(value) != base_types.auto else self.make_default("DlvryAcct")
+		self._DlvryAcct = value if value is not None else base_types.UninitialisedField(self, 'DlvryAcct', SecuritiesAccount19, False)
 
 	@DlvryAcct.deleter
 	def DlvryAcct(self):
 		del self._DlvryAcct
-		self._DlvryAcct = None
+		self._DlvryAcct = base_types.UninitialisedField(self, 'DlvryAcct', SecuritiesAccount19, False)
 
 	@property
 	def NonClrMmb(self):
@@ -72,12 +72,12 @@ class TradeLegNotificationCancellationV04(base_types._BaseFieldType):
 
 	@NonClrMmb.setter
 	def NonClrMmb(self, value):
-		self._NonClrMmb = value if type(value) != base_types.auto else self.make_default("NonClrMmb")
+		self._NonClrMmb = value if value is not None else base_types.UninitialisedField(self, 'NonClrMmb', PartyIdentificationAndAccount227, False)
 
 	@NonClrMmb.deleter
 	def NonClrMmb(self):
 		del self._NonClrMmb
-		self._NonClrMmb = None
+		self._NonClrMmb = base_types.UninitialisedField(self, 'NonClrMmb', PartyIdentificationAndAccount227, False)
 
 	@property
 	def SplmtryData(self):
@@ -85,12 +85,12 @@ class TradeLegNotificationCancellationV04(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def SttlmDtls(self):
@@ -98,12 +98,12 @@ class TradeLegNotificationCancellationV04(base_types._BaseFieldType):
 
 	@SttlmDtls.setter
 	def SttlmDtls(self, value):
-		self._SttlmDtls = value if type(value) != base_types.auto else self.make_default("SttlmDtls")
+		self._SttlmDtls = value if value is not None else base_types.UninitialisedField(self, 'SttlmDtls', Settlement2, False)
 
 	@SttlmDtls.deleter
 	def SttlmDtls(self):
 		del self._SttlmDtls
-		self._SttlmDtls = None
+		self._SttlmDtls = base_types.UninitialisedField(self, 'SttlmDtls', Settlement2, False)
 
 	@property
 	def TradLegDtls(self):
@@ -111,12 +111,12 @@ class TradeLegNotificationCancellationV04(base_types._BaseFieldType):
 
 	@TradLegDtls.setter
 	def TradLegDtls(self, value):
-		self._TradLegDtls = value if type(value) != base_types.auto else self.make_default("TradLegDtls")
+		self._TradLegDtls = value if value is not None else base_types.UninitialisedField(self, 'TradLegDtls', TradeLeg11, False)
 
 	@TradLegDtls.deleter
 	def TradLegDtls(self):
 		del self._TradLegDtls
-		self._TradLegDtls = None
+		self._TradLegDtls = base_types.UninitialisedField(self, 'TradLegDtls', TradeLeg11, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClrAcct', type=SecuritiesAccount18, min=1, max=1, mutex_group=None, array=False),

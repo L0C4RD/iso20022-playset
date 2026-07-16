@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmendmentAcceptanceNotificationV03 import AmendmentAcceptanceNotificationV03
+from . import AmendmentAcceptanceNotificationV03
 
 class TSMT_006_001_03():
 
@@ -18,12 +18,12 @@ class TSMT_006_001_03():
 
 		@AmdmntAccptncNtfctn.setter
 		def AmdmntAccptncNtfctn(self, value):
-			self._AmdmntAccptncNtfctn = value if type(value) != base_types.auto else self.make_default("AmdmntAccptncNtfctn")
+			self._AmdmntAccptncNtfctn = value if value is not None else base_types.UninitialisedField(self, 'AmdmntAccptncNtfctn', AmendmentAcceptanceNotificationV03, False)
 
 		@AmdmntAccptncNtfctn.deleter
 		def AmdmntAccptncNtfctn(self):
 			del self._AmdmntAccptncNtfctn
-			self._AmdmntAccptncNtfctn = None
+			self._AmdmntAccptncNtfctn = base_types.UninitialisedField(self, 'AmdmntAccptncNtfctn', AmendmentAcceptanceNotificationV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AmdmntAccptncNtfctn', type=AmendmentAcceptanceNotificationV03, min=1, max=1, mutex_group=None, array=False),

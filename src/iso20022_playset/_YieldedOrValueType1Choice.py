@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PriceValueType1Code import PriceValueType1Code
-from ._YesNoIndicator import YesNoIndicator
+from . import PriceValueType1Code
+from . import YesNoIndicator
 
 class YieldedOrValueType1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class YieldedOrValueType1Choice(base_types._BaseFieldType):
 
 	@ValTp.setter
 	def ValTp(self, value):
-		self._ValTp = value if type(value) != base_types.auto else self.make_default("ValTp")
+		self._ValTp = value if value is not None else base_types.UninitialisedField(self, 'ValTp', PriceValueType1Code, False)
 
 	@ValTp.deleter
 	def ValTp(self):
 		del self._ValTp
-		self._ValTp = None
+		self._ValTp = base_types.UninitialisedField(self, 'ValTp', PriceValueType1Code, False)
 
 	@property
 	def Yldd(self):
@@ -27,12 +27,12 @@ class YieldedOrValueType1Choice(base_types._BaseFieldType):
 
 	@Yldd.setter
 	def Yldd(self, value):
-		self._Yldd = value if type(value) != base_types.auto else self.make_default("Yldd")
+		self._Yldd = value if value is not None else base_types.UninitialisedField(self, 'Yldd', YesNoIndicator, False)
 
 	@Yldd.deleter
 	def Yldd(self):
 		del self._Yldd
-		self._Yldd = None
+		self._Yldd = base_types.UninitialisedField(self, 'Yldd', YesNoIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ValTp', type=PriceValueType1Code, min=0, max=1, mutex_group=1, array=False),

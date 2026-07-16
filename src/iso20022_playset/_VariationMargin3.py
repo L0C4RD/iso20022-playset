@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Amount2 import Amount2
-from ._SecurityIdentification14 import SecurityIdentification14
-from ._TotalVariationMargin1 import TotalVariationMargin1
+from . import Amount2
+from . import SecurityIdentification14
+from . import TotalVariationMargin1
 
 class VariationMargin3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class VariationMargin3(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification14, False)
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
 		del self._FinInstrmId
-		self._FinInstrmId = None
+		self._FinInstrmId = base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification14, False)
 
 	@property
 	def FlsHrcut(self):
@@ -28,12 +28,12 @@ class VariationMargin3(base_types._BaseFieldType):
 
 	@FlsHrcut.setter
 	def FlsHrcut(self, value):
-		self._FlsHrcut = value if type(value) != base_types.auto else self.make_default("FlsHrcut")
+		self._FlsHrcut = value if value is not None else base_types.UninitialisedField(self, 'FlsHrcut', Amount2, False)
 
 	@FlsHrcut.deleter
 	def FlsHrcut(self):
 		del self._FlsHrcut
-		self._FlsHrcut = None
+		self._FlsHrcut = base_types.UninitialisedField(self, 'FlsHrcut', Amount2, False)
 
 	@property
 	def MrkToMktFls(self):
@@ -41,12 +41,12 @@ class VariationMargin3(base_types._BaseFieldType):
 
 	@MrkToMktFls.setter
 	def MrkToMktFls(self, value):
-		self._MrkToMktFls = value if type(value) != base_types.auto else self.make_default("MrkToMktFls")
+		self._MrkToMktFls = value if value is not None else base_types.UninitialisedField(self, 'MrkToMktFls', Amount2, True)
 
 	@MrkToMktFls.deleter
 	def MrkToMktFls(self):
 		del self._MrkToMktFls
-		self._MrkToMktFls = None
+		self._MrkToMktFls = base_types.UninitialisedField(self, 'MrkToMktFls', Amount2, True)
 
 	@property
 	def MrkToMktGrss(self):
@@ -54,12 +54,12 @@ class VariationMargin3(base_types._BaseFieldType):
 
 	@MrkToMktGrss.setter
 	def MrkToMktGrss(self, value):
-		self._MrkToMktGrss = value if type(value) != base_types.auto else self.make_default("MrkToMktGrss")
+		self._MrkToMktGrss = value if value is not None else base_types.UninitialisedField(self, 'MrkToMktGrss', Amount2, True)
 
 	@MrkToMktGrss.deleter
 	def MrkToMktGrss(self):
 		del self._MrkToMktGrss
-		self._MrkToMktGrss = None
+		self._MrkToMktGrss = base_types.UninitialisedField(self, 'MrkToMktGrss', Amount2, True)
 
 	@property
 	def MrkToMktNetd(self):
@@ -67,12 +67,12 @@ class VariationMargin3(base_types._BaseFieldType):
 
 	@MrkToMktNetd.setter
 	def MrkToMktNetd(self, value):
-		self._MrkToMktNetd = value if type(value) != base_types.auto else self.make_default("MrkToMktNetd")
+		self._MrkToMktNetd = value if value is not None else base_types.UninitialisedField(self, 'MrkToMktNetd', Amount2, True)
 
 	@MrkToMktNetd.deleter
 	def MrkToMktNetd(self):
 		del self._MrkToMktNetd
-		self._MrkToMktNetd = None
+		self._MrkToMktNetd = base_types.UninitialisedField(self, 'MrkToMktNetd', Amount2, True)
 
 	@property
 	def TtlMrkToMkt(self):
@@ -80,12 +80,12 @@ class VariationMargin3(base_types._BaseFieldType):
 
 	@TtlMrkToMkt.setter
 	def TtlMrkToMkt(self, value):
-		self._TtlMrkToMkt = value if type(value) != base_types.auto else self.make_default("TtlMrkToMkt")
+		self._TtlMrkToMkt = value if value is not None else base_types.UninitialisedField(self, 'TtlMrkToMkt', Amount2, False)
 
 	@TtlMrkToMkt.deleter
 	def TtlMrkToMkt(self):
 		del self._TtlMrkToMkt
-		self._TtlMrkToMkt = None
+		self._TtlMrkToMkt = base_types.UninitialisedField(self, 'TtlMrkToMkt', Amount2, False)
 
 	@property
 	def TtlVartnMrgn(self):
@@ -93,12 +93,12 @@ class VariationMargin3(base_types._BaseFieldType):
 
 	@TtlVartnMrgn.setter
 	def TtlVartnMrgn(self, value):
-		self._TtlVartnMrgn = value if type(value) != base_types.auto else self.make_default("TtlVartnMrgn")
+		self._TtlVartnMrgn = value if value is not None else base_types.UninitialisedField(self, 'TtlVartnMrgn', TotalVariationMargin1, True)
 
 	@TtlVartnMrgn.deleter
 	def TtlVartnMrgn(self):
 		del self._TtlVartnMrgn
-		self._TtlVartnMrgn = None
+		self._TtlVartnMrgn = base_types.UninitialisedField(self, 'TtlVartnMrgn', TotalVariationMargin1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification14, min=0, max=1, mutex_group=None, array=False),

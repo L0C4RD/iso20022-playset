@@ -2,20 +2,20 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._BonusWithdrawal2 import BonusWithdrawal2
-from ._DateAndAmount2 import DateAndAmount2
-from ._ISODate import ISODate
-from ._InnovativeFinance1 import InnovativeFinance1
-from ._Max35Text import Max35Text
-from ._OtherAmount3 import OtherAmount3
-from ._PreviousYear4 import PreviousYear4
-from ._SubscriptionInformation2 import SubscriptionInformation2
-from ._TaxEfficientProductType2Choice import TaxEfficientProductType2Choice
-from ._TaxReference2 import TaxReference2
-from ._YesNoIndicator import YesNoIndicator
+from . import ActiveCurrencyAnd13DecimalAmount
+from . import ActiveCurrencyAndAmount
+from . import AdditionalInformation15
+from . import BonusWithdrawal2
+from . import DateAndAmount2
+from . import ISODate
+from . import InnovativeFinance1
+from . import Max35Text
+from . import OtherAmount3
+from . import PreviousYear4
+from . import SubscriptionInformation2
+from . import TaxEfficientProductType2Choice
+from . import TaxReference2
+from . import YesNoIndicator
 
 class TaxEfficientProduct7(base_types._BaseFieldType):
 
@@ -26,12 +26,12 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@property
 	def BnsOrWdrwl(self):
@@ -39,12 +39,12 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 
 	@BnsOrWdrwl.setter
 	def BnsOrWdrwl(self, value):
-		self._BnsOrWdrwl = value if type(value) != base_types.auto else self.make_default("BnsOrWdrwl")
+		self._BnsOrWdrwl = value if value is not None else base_types.UninitialisedField(self, 'BnsOrWdrwl', BonusWithdrawal2, True)
 
 	@BnsOrWdrwl.deleter
 	def BnsOrWdrwl(self):
 		del self._BnsOrWdrwl
-		self._BnsOrWdrwl = None
+		self._BnsOrWdrwl = base_types.UninitialisedField(self, 'BnsOrWdrwl', BonusWithdrawal2, True)
 
 	@property
 	def CshCmpntInd(self):
@@ -52,12 +52,12 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 
 	@CshCmpntInd.setter
 	def CshCmpntInd(self, value):
-		self._CshCmpntInd = value if type(value) != base_types.auto else self.make_default("CshCmpntInd")
+		self._CshCmpntInd = value if value is not None else base_types.UninitialisedField(self, 'CshCmpntInd', YesNoIndicator, False)
 
 	@CshCmpntInd.deleter
 	def CshCmpntInd(self):
 		del self._CshCmpntInd
-		self._CshCmpntInd = None
+		self._CshCmpntInd = base_types.UninitialisedField(self, 'CshCmpntInd', YesNoIndicator, False)
 
 	@property
 	def CurInvstmtAmt(self):
@@ -65,12 +65,12 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 
 	@CurInvstmtAmt.setter
 	def CurInvstmtAmt(self, value):
-		self._CurInvstmtAmt = value if type(value) != base_types.auto else self.make_default("CurInvstmtAmt")
+		self._CurInvstmtAmt = value if value is not None else base_types.UninitialisedField(self, 'CurInvstmtAmt', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@CurInvstmtAmt.deleter
 	def CurInvstmtAmt(self):
 		del self._CurInvstmtAmt
-		self._CurInvstmtAmt = None
+		self._CurInvstmtAmt = base_types.UninitialisedField(self, 'CurInvstmtAmt', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def CurYr(self):
@@ -78,12 +78,12 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 
 	@CurYr.setter
 	def CurYr(self, value):
-		self._CurYr = value if type(value) != base_types.auto else self.make_default("CurYr")
+		self._CurYr = value if value is not None else base_types.UninitialisedField(self, 'CurYr', YesNoIndicator, False)
 
 	@CurYr.deleter
 	def CurYr(self):
 		del self._CurYr
-		self._CurYr = None
+		self._CurYr = base_types.UninitialisedField(self, 'CurYr', YesNoIndicator, False)
 
 	@property
 	def CurYrSbcptDtls(self):
@@ -91,12 +91,12 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 
 	@CurYrSbcptDtls.setter
 	def CurYrSbcptDtls(self, value):
-		self._CurYrSbcptDtls = value if type(value) != base_types.auto else self.make_default("CurYrSbcptDtls")
+		self._CurYrSbcptDtls = value if value is not None else base_types.UninitialisedField(self, 'CurYrSbcptDtls', SubscriptionInformation2, False)
 
 	@CurYrSbcptDtls.deleter
 	def CurYrSbcptDtls(self):
 		del self._CurYrSbcptDtls
-		self._CurYrSbcptDtls = None
+		self._CurYrSbcptDtls = base_types.UninitialisedField(self, 'CurYrSbcptDtls', SubscriptionInformation2, False)
 
 	@property
 	def DtFrstQlfygAddtn(self):
@@ -104,12 +104,12 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 
 	@DtFrstQlfygAddtn.setter
 	def DtFrstQlfygAddtn(self, value):
-		self._DtFrstQlfygAddtn = value if type(value) != base_types.auto else self.make_default("DtFrstQlfygAddtn")
+		self._DtFrstQlfygAddtn = value if value is not None else base_types.UninitialisedField(self, 'DtFrstQlfygAddtn', ISODate, False)
 
 	@DtFrstQlfygAddtn.deleter
 	def DtFrstQlfygAddtn(self):
 		del self._DtFrstQlfygAddtn
-		self._DtFrstQlfygAddtn = None
+		self._DtFrstQlfygAddtn = base_types.UninitialisedField(self, 'DtFrstQlfygAddtn', ISODate, False)
 
 	@property
 	def DtOfFrstSbcpt(self):
@@ -117,12 +117,12 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 
 	@DtOfFrstSbcpt.setter
 	def DtOfFrstSbcpt(self, value):
-		self._DtOfFrstSbcpt = value if type(value) != base_types.auto else self.make_default("DtOfFrstSbcpt")
+		self._DtOfFrstSbcpt = value if value is not None else base_types.UninitialisedField(self, 'DtOfFrstSbcpt', ISODate, False)
 
 	@DtOfFrstSbcpt.deleter
 	def DtOfFrstSbcpt(self):
 		del self._DtOfFrstSbcpt
-		self._DtOfFrstSbcpt = None
+		self._DtOfFrstSbcpt = base_types.UninitialisedField(self, 'DtOfFrstSbcpt', ISODate, False)
 
 	@property
 	def EstmtdVal(self):
@@ -130,12 +130,12 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 
 	@EstmtdVal.setter
 	def EstmtdVal(self, value):
-		self._EstmtdVal = value if type(value) != base_types.auto else self.make_default("EstmtdVal")
+		self._EstmtdVal = value if value is not None else base_types.UninitialisedField(self, 'EstmtdVal', DateAndAmount2, False)
 
 	@EstmtdVal.deleter
 	def EstmtdVal(self):
 		del self._EstmtdVal
-		self._EstmtdVal = None
+		self._EstmtdVal = base_types.UninitialisedField(self, 'EstmtdVal', DateAndAmount2, False)
 
 	@property
 	def InnvtvFinc(self):
@@ -143,12 +143,12 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 
 	@InnvtvFinc.setter
 	def InnvtvFinc(self, value):
-		self._InnvtvFinc = value if type(value) != base_types.auto else self.make_default("InnvtvFinc")
+		self._InnvtvFinc = value if value is not None else base_types.UninitialisedField(self, 'InnvtvFinc', InnovativeFinance1, True)
 
 	@InnvtvFinc.deleter
 	def InnvtvFinc(self):
 		del self._InnvtvFinc
-		self._InnvtvFinc = None
+		self._InnvtvFinc = base_types.UninitialisedField(self, 'InnvtvFinc', InnovativeFinance1, True)
 
 	@property
 	def InvstmtsToFllwVal(self):
@@ -156,12 +156,12 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 
 	@InvstmtsToFllwVal.setter
 	def InvstmtsToFllwVal(self, value):
-		self._InvstmtsToFllwVal = value if type(value) != base_types.auto else self.make_default("InvstmtsToFllwVal")
+		self._InvstmtsToFllwVal = value if value is not None else base_types.UninitialisedField(self, 'InvstmtsToFllwVal', DateAndAmount2, True)
 
 	@InvstmtsToFllwVal.deleter
 	def InvstmtsToFllwVal(self):
 		del self._InvstmtsToFllwVal
-		self._InvstmtsToFllwVal = None
+		self._InvstmtsToFllwVal = base_types.UninitialisedField(self, 'InvstmtsToFllwVal', DateAndAmount2, True)
 
 	@property
 	def InvstrTaxRef(self):
@@ -169,12 +169,12 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 
 	@InvstrTaxRef.setter
 	def InvstrTaxRef(self, value):
-		self._InvstrTaxRef = value if type(value) != base_types.auto else self.make_default("InvstrTaxRef")
+		self._InvstrTaxRef = value if value is not None else base_types.UninitialisedField(self, 'InvstrTaxRef', TaxReference2, False)
 
 	@InvstrTaxRef.deleter
 	def InvstrTaxRef(self):
 		del self._InvstrTaxRef
-		self._InvstrTaxRef = None
+		self._InvstrTaxRef = base_types.UninitialisedField(self, 'InvstrTaxRef', TaxReference2, False)
 
 	@property
 	def LwstInvstdAmtCurYr(self):
@@ -182,12 +182,12 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 
 	@LwstInvstdAmtCurYr.setter
 	def LwstInvstdAmtCurYr(self, value):
-		self._LwstInvstdAmtCurYr = value if type(value) != base_types.auto else self.make_default("LwstInvstdAmtCurYr")
+		self._LwstInvstdAmtCurYr = value if value is not None else base_types.UninitialisedField(self, 'LwstInvstdAmtCurYr', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@LwstInvstdAmtCurYr.deleter
 	def LwstInvstdAmtCurYr(self):
 		del self._LwstInvstdAmtCurYr
-		self._LwstInvstdAmtCurYr = None
+		self._LwstInvstdAmtCurYr = base_types.UninitialisedField(self, 'LwstInvstdAmtCurYr', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def OthrAmt(self):
@@ -195,12 +195,12 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 
 	@OthrAmt.setter
 	def OthrAmt(self, value):
-		self._OthrAmt = value if type(value) != base_types.auto else self.make_default("OthrAmt")
+		self._OthrAmt = value if value is not None else base_types.UninitialisedField(self, 'OthrAmt', OtherAmount3, True)
 
 	@OthrAmt.deleter
 	def OthrAmt(self):
 		del self._OthrAmt
-		self._OthrAmt = None
+		self._OthrAmt = base_types.UninitialisedField(self, 'OthrAmt', OtherAmount3, True)
 
 	@property
 	def PrvsYrSbcptAmt(self):
@@ -208,12 +208,12 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 
 	@PrvsYrSbcptAmt.setter
 	def PrvsYrSbcptAmt(self, value):
-		self._PrvsYrSbcptAmt = value if type(value) != base_types.auto else self.make_default("PrvsYrSbcptAmt")
+		self._PrvsYrSbcptAmt = value if value is not None else base_types.UninitialisedField(self, 'PrvsYrSbcptAmt', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@PrvsYrSbcptAmt.deleter
 	def PrvsYrSbcptAmt(self):
 		del self._PrvsYrSbcptAmt
-		self._PrvsYrSbcptAmt = None
+		self._PrvsYrSbcptAmt = base_types.UninitialisedField(self, 'PrvsYrSbcptAmt', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def PrvsYrs(self):
@@ -221,12 +221,12 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 
 	@PrvsYrs.setter
 	def PrvsYrs(self, value):
-		self._PrvsYrs = value if type(value) != base_types.auto else self.make_default("PrvsYrs")
+		self._PrvsYrs = value if value is not None else base_types.UninitialisedField(self, 'PrvsYrs', PreviousYear4, False)
 
 	@PrvsYrs.deleter
 	def PrvsYrs(self):
 		del self._PrvsYrs
-		self._PrvsYrs = None
+		self._PrvsYrs = base_types.UninitialisedField(self, 'PrvsYrs', PreviousYear4, False)
 
 	@property
 	def PrvsYrsSbcptAmt(self):
@@ -234,12 +234,12 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 
 	@PrvsYrsSbcptAmt.setter
 	def PrvsYrsSbcptAmt(self, value):
-		self._PrvsYrsSbcptAmt = value if type(value) != base_types.auto else self.make_default("PrvsYrsSbcptAmt")
+		self._PrvsYrsSbcptAmt = value if value is not None else base_types.UninitialisedField(self, 'PrvsYrsSbcptAmt', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@PrvsYrsSbcptAmt.deleter
 	def PrvsYrsSbcptAmt(self):
 		del self._PrvsYrsSbcptAmt
-		self._PrvsYrsSbcptAmt = None
+		self._PrvsYrsSbcptAmt = base_types.UninitialisedField(self, 'PrvsYrsSbcptAmt', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def TaxClctnBase(self):
@@ -247,12 +247,12 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 
 	@TaxClctnBase.setter
 	def TaxClctnBase(self, value):
-		self._TaxClctnBase = value if type(value) != base_types.auto else self.make_default("TaxClctnBase")
+		self._TaxClctnBase = value if value is not None else base_types.UninitialisedField(self, 'TaxClctnBase', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@TaxClctnBase.deleter
 	def TaxClctnBase(self):
 		del self._TaxClctnBase
-		self._TaxClctnBase = None
+		self._TaxClctnBase = base_types.UninitialisedField(self, 'TaxClctnBase', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def TaxEffcntPdctTp(self):
@@ -260,12 +260,12 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 
 	@TaxEffcntPdctTp.setter
 	def TaxEffcntPdctTp(self, value):
-		self._TaxEffcntPdctTp = value if type(value) != base_types.auto else self.make_default("TaxEffcntPdctTp")
+		self._TaxEffcntPdctTp = value if value is not None else base_types.UninitialisedField(self, 'TaxEffcntPdctTp', TaxEfficientProductType2Choice, False)
 
 	@TaxEffcntPdctTp.deleter
 	def TaxEffcntPdctTp(self):
 		del self._TaxEffcntPdctTp
-		self._TaxEffcntPdctTp = None
+		self._TaxEffcntPdctTp = base_types.UninitialisedField(self, 'TaxEffcntPdctTp', TaxEfficientProductType2Choice, False)
 
 	@property
 	def TrfrAltrnId(self):
@@ -273,12 +273,12 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 
 	@TrfrAltrnId.setter
 	def TrfrAltrnId(self, value):
-		self._TrfrAltrnId = value if type(value) != base_types.auto else self.make_default("TrfrAltrnId")
+		self._TrfrAltrnId = value if value is not None else base_types.UninitialisedField(self, 'TrfrAltrnId', Max35Text, False)
 
 	@TrfrAltrnId.deleter
 	def TrfrAltrnId(self):
 		del self._TrfrAltrnId
-		self._TrfrAltrnId = None
+		self._TrfrAltrnId = base_types.UninitialisedField(self, 'TrfrAltrnId', Max35Text, False)
 
 	@property
 	def TtlSbcptAmt(self):
@@ -286,12 +286,12 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 
 	@TtlSbcptAmt.setter
 	def TtlSbcptAmt(self, value):
-		self._TtlSbcptAmt = value if type(value) != base_types.auto else self.make_default("TtlSbcptAmt")
+		self._TtlSbcptAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlSbcptAmt', ActiveCurrencyAndAmount, False)
 
 	@TtlSbcptAmt.deleter
 	def TtlSbcptAmt(self):
 		del self._TtlSbcptAmt
-		self._TtlSbcptAmt = None
+		self._TtlSbcptAmt = base_types.UninitialisedField(self, 'TtlSbcptAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def UusdTaxDdctn(self):
@@ -299,12 +299,12 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 
 	@UusdTaxDdctn.setter
 	def UusdTaxDdctn(self, value):
-		self._UusdTaxDdctn = value if type(value) != base_types.auto else self.make_default("UusdTaxDdctn")
+		self._UusdTaxDdctn = value if value is not None else base_types.UninitialisedField(self, 'UusdTaxDdctn', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@UusdTaxDdctn.deleter
 	def UusdTaxDdctn(self):
 		del self._UusdTaxDdctn
-		self._UusdTaxDdctn = None
+		self._UusdTaxDdctn = base_types.UninitialisedField(self, 'UusdTaxDdctn', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def WdrwlForResdtlPurchsPrgrs(self):
@@ -312,12 +312,12 @@ class TaxEfficientProduct7(base_types._BaseFieldType):
 
 	@WdrwlForResdtlPurchsPrgrs.setter
 	def WdrwlForResdtlPurchsPrgrs(self, value):
-		self._WdrwlForResdtlPurchsPrgrs = value if type(value) != base_types.auto else self.make_default("WdrwlForResdtlPurchsPrgrs")
+		self._WdrwlForResdtlPurchsPrgrs = value if value is not None else base_types.UninitialisedField(self, 'WdrwlForResdtlPurchsPrgrs', YesNoIndicator, False)
 
 	@WdrwlForResdtlPurchsPrgrs.deleter
 	def WdrwlForResdtlPurchsPrgrs(self):
 		del self._WdrwlForResdtlPurchsPrgrs
-		self._WdrwlForResdtlPurchsPrgrs = None
+		self._WdrwlForResdtlPurchsPrgrs = base_types.UninitialisedField(self, 'WdrwlForResdtlPurchsPrgrs', YesNoIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),

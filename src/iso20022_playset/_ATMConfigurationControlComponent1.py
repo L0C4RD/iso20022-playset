@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMActionType1Code import ATMActionType1Code
-from ._ATMEnvironment7 import ATMEnvironment7
-from ._ATMPropertyComponent1 import ATMPropertyComponent1
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
+from . import ATMActionType1Code
+from . import ATMEnvironment7
+from . import ATMPropertyComponent1
+from . import ISODateTime
+from . import Max35Text
 
 class ATMConfigurationControlComponent1(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class ATMConfigurationControlComponent1(base_types._BaseFieldType):
 
 	@ActnReqrd.setter
 	def ActnReqrd(self, value):
-		self._ActnReqrd = value if type(value) != base_types.auto else self.make_default("ActnReqrd")
+		self._ActnReqrd = value if value is not None else base_types.UninitialisedField(self, 'ActnReqrd', ATMActionType1Code, False)
 
 	@ActnReqrd.deleter
 	def ActnReqrd(self):
 		del self._ActnReqrd
-		self._ActnReqrd = None
+		self._ActnReqrd = base_types.UninitialisedField(self, 'ActnReqrd', ATMActionType1Code, False)
 
 	@property
 	def ActvtnDt(self):
@@ -30,12 +30,12 @@ class ATMConfigurationControlComponent1(base_types._BaseFieldType):
 
 	@ActvtnDt.setter
 	def ActvtnDt(self, value):
-		self._ActvtnDt = value if type(value) != base_types.auto else self.make_default("ActvtnDt")
+		self._ActvtnDt = value if value is not None else base_types.UninitialisedField(self, 'ActvtnDt', ISODateTime, False)
 
 	@ActvtnDt.deleter
 	def ActvtnDt(self):
 		del self._ActvtnDt
-		self._ActvtnDt = None
+		self._ActvtnDt = base_types.UninitialisedField(self, 'ActvtnDt', ISODateTime, False)
 
 	@property
 	def CfgtnVrsn(self):
@@ -43,12 +43,12 @@ class ATMConfigurationControlComponent1(base_types._BaseFieldType):
 
 	@CfgtnVrsn.setter
 	def CfgtnVrsn(self, value):
-		self._CfgtnVrsn = value if type(value) != base_types.auto else self.make_default("CfgtnVrsn")
+		self._CfgtnVrsn = value if value is not None else base_types.UninitialisedField(self, 'CfgtnVrsn', Max35Text, False)
 
 	@CfgtnVrsn.deleter
 	def CfgtnVrsn(self):
 		del self._CfgtnVrsn
-		self._CfgtnVrsn = None
+		self._CfgtnVrsn = base_types.UninitialisedField(self, 'CfgtnVrsn', Max35Text, False)
 
 	@property
 	def Envt(self):
@@ -56,12 +56,12 @@ class ATMConfigurationControlComponent1(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+		self._Envt = value if value is not None else base_types.UninitialisedField(self, 'Envt', ATMEnvironment7, False)
 
 	@Envt.deleter
 	def Envt(self):
 		del self._Envt
-		self._Envt = None
+		self._Envt = base_types.UninitialisedField(self, 'Envt', ATMEnvironment7, False)
 
 	@property
 	def Prprty(self):
@@ -69,12 +69,12 @@ class ATMConfigurationControlComponent1(base_types._BaseFieldType):
 
 	@Prprty.setter
 	def Prprty(self, value):
-		self._Prprty = value if type(value) != base_types.auto else self.make_default("Prprty")
+		self._Prprty = value if value is not None else base_types.UninitialisedField(self, 'Prprty', ATMPropertyComponent1, True)
 
 	@Prprty.deleter
 	def Prprty(self):
 		del self._Prprty
-		self._Prprty = None
+		self._Prprty = base_types.UninitialisedField(self, 'Prprty', ATMPropertyComponent1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActnReqrd', type=ATMActionType1Code, min=1, max=1, mutex_group=None, array=False),

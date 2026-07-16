@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max35Text import Max35Text
-from ._Number import Number
-from ._TypeTransactionTotals2Code import TypeTransactionTotals2Code
+from . import ActiveCurrencyCode
+from . import ImpliedCurrencyAndAmount
+from . import Max35Text
+from . import Number
+from . import TypeTransactionTotals2Code
 
 class TransactionTotals12(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class TransactionTotals12(base_types._BaseFieldType):
 
 	@CardBrnd.setter
 	def CardBrnd(self, value):
-		self._CardBrnd = value if type(value) != base_types.auto else self.make_default("CardBrnd")
+		self._CardBrnd = value if value is not None else base_types.UninitialisedField(self, 'CardBrnd', Max35Text, False)
 
 	@CardBrnd.deleter
 	def CardBrnd(self):
 		del self._CardBrnd
-		self._CardBrnd = None
+		self._CardBrnd = base_types.UninitialisedField(self, 'CardBrnd', Max35Text, False)
 
 	@property
 	def CardPdctPrfl(self):
@@ -30,12 +30,12 @@ class TransactionTotals12(base_types._BaseFieldType):
 
 	@CardPdctPrfl.setter
 	def CardPdctPrfl(self, value):
-		self._CardPdctPrfl = value if type(value) != base_types.auto else self.make_default("CardPdctPrfl")
+		self._CardPdctPrfl = value if value is not None else base_types.UninitialisedField(self, 'CardPdctPrfl', Max35Text, False)
 
 	@CardPdctPrfl.deleter
 	def CardPdctPrfl(self):
 		del self._CardPdctPrfl
-		self._CardPdctPrfl = None
+		self._CardPdctPrfl = base_types.UninitialisedField(self, 'CardPdctPrfl', Max35Text, False)
 
 	@property
 	def Ccy(self):
@@ -43,12 +43,12 @@ class TransactionTotals12(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@property
 	def CmltvAmt(self):
@@ -56,12 +56,12 @@ class TransactionTotals12(base_types._BaseFieldType):
 
 	@CmltvAmt.setter
 	def CmltvAmt(self, value):
-		self._CmltvAmt = value if type(value) != base_types.auto else self.make_default("CmltvAmt")
+		self._CmltvAmt = value if value is not None else base_types.UninitialisedField(self, 'CmltvAmt', ImpliedCurrencyAndAmount, False)
 
 	@CmltvAmt.deleter
 	def CmltvAmt(self):
 		del self._CmltvAmt
-		self._CmltvAmt = None
+		self._CmltvAmt = base_types.UninitialisedField(self, 'CmltvAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def POIGrpId(self):
@@ -69,12 +69,12 @@ class TransactionTotals12(base_types._BaseFieldType):
 
 	@POIGrpId.setter
 	def POIGrpId(self, value):
-		self._POIGrpId = value if type(value) != base_types.auto else self.make_default("POIGrpId")
+		self._POIGrpId = value if value is not None else base_types.UninitialisedField(self, 'POIGrpId', Max35Text, False)
 
 	@POIGrpId.deleter
 	def POIGrpId(self):
 		del self._POIGrpId
-		self._POIGrpId = None
+		self._POIGrpId = base_types.UninitialisedField(self, 'POIGrpId', Max35Text, False)
 
 	@property
 	def Tp(self):
@@ -82,12 +82,12 @@ class TransactionTotals12(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', TypeTransactionTotals2Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', TypeTransactionTotals2Code, False)
 
 	@property
 	def TtlNb(self):
@@ -95,12 +95,12 @@ class TransactionTotals12(base_types._BaseFieldType):
 
 	@TtlNb.setter
 	def TtlNb(self, value):
-		self._TtlNb = value if type(value) != base_types.auto else self.make_default("TtlNb")
+		self._TtlNb = value if value is not None else base_types.UninitialisedField(self, 'TtlNb', Number, False)
 
 	@TtlNb.deleter
 	def TtlNb(self):
 		del self._TtlNb
-		self._TtlNb = None
+		self._TtlNb = base_types.UninitialisedField(self, 'TtlNb', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CardBrnd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

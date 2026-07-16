@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DocumentType4Code import DocumentType4Code
-from ._ISODate import ISODate
-from ._Max140Text import Max140Text
-from ._Max256Text import Max256Text
-from ._Max35Text import Max35Text
+from . import DocumentType4Code
+from . import ISODate
+from . import Max140Text
+from . import Max256Text
+from . import Max35Text
 
 class DocumentGeneralInformation1(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class DocumentGeneralInformation1(base_types._BaseFieldType):
 
 	@DocNb.setter
 	def DocNb(self, value):
-		self._DocNb = value if type(value) != base_types.auto else self.make_default("DocNb")
+		self._DocNb = value if value is not None else base_types.UninitialisedField(self, 'DocNb', Max35Text, False)
 
 	@DocNb.deleter
 	def DocNb(self):
 		del self._DocNb
-		self._DocNb = None
+		self._DocNb = base_types.UninitialisedField(self, 'DocNb', Max35Text, False)
 
 	@property
 	def DocTp(self):
@@ -30,12 +30,12 @@ class DocumentGeneralInformation1(base_types._BaseFieldType):
 
 	@DocTp.setter
 	def DocTp(self, value):
-		self._DocTp = value if type(value) != base_types.auto else self.make_default("DocTp")
+		self._DocTp = value if value is not None else base_types.UninitialisedField(self, 'DocTp', DocumentType4Code, False)
 
 	@DocTp.deleter
 	def DocTp(self):
 		del self._DocTp
-		self._DocTp = None
+		self._DocTp = base_types.UninitialisedField(self, 'DocTp', DocumentType4Code, False)
 
 	@property
 	def IsseDt(self):
@@ -43,12 +43,12 @@ class DocumentGeneralInformation1(base_types._BaseFieldType):
 
 	@IsseDt.setter
 	def IsseDt(self, value):
-		self._IsseDt = value if type(value) != base_types.auto else self.make_default("IsseDt")
+		self._IsseDt = value if value is not None else base_types.UninitialisedField(self, 'IsseDt', ISODate, False)
 
 	@IsseDt.deleter
 	def IsseDt(self):
 		del self._IsseDt
-		self._IsseDt = None
+		self._IsseDt = base_types.UninitialisedField(self, 'IsseDt', ISODate, False)
 
 	@property
 	def SndrRcvrSeqId(self):
@@ -56,12 +56,12 @@ class DocumentGeneralInformation1(base_types._BaseFieldType):
 
 	@SndrRcvrSeqId.setter
 	def SndrRcvrSeqId(self, value):
-		self._SndrRcvrSeqId = value if type(value) != base_types.auto else self.make_default("SndrRcvrSeqId")
+		self._SndrRcvrSeqId = value if value is not None else base_types.UninitialisedField(self, 'SndrRcvrSeqId', Max140Text, False)
 
 	@SndrRcvrSeqId.deleter
 	def SndrRcvrSeqId(self):
 		del self._SndrRcvrSeqId
-		self._SndrRcvrSeqId = None
+		self._SndrRcvrSeqId = base_types.UninitialisedField(self, 'SndrRcvrSeqId', Max140Text, False)
 
 	@property
 	def URL(self):
@@ -69,12 +69,12 @@ class DocumentGeneralInformation1(base_types._BaseFieldType):
 
 	@URL.setter
 	def URL(self, value):
-		self._URL = value if type(value) != base_types.auto else self.make_default("URL")
+		self._URL = value if value is not None else base_types.UninitialisedField(self, 'URL', Max256Text, False)
 
 	@URL.deleter
 	def URL(self):
 		del self._URL
-		self._URL = None
+		self._URL = base_types.UninitialisedField(self, 'URL', Max256Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DocNb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

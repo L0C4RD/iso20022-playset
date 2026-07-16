@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CancellationPendingStatus7Choice import CancellationPendingStatus7Choice
-from ._CancelledStatus13Choice import CancelledStatus13Choice
-from ._FailedSettlementStatus2Choice import FailedSettlementStatus2Choice
-from ._InRepairStatus4Choice import InRepairStatus4Choice
-from ._PendingSettlementStatus3Choice import PendingSettlementStatus3Choice
-from ._RejectionReason56 import RejectionReason56
-from ._ReversedStatus2Choice import ReversedStatus2Choice
-from ._TransferInstructionStatus5 import TransferInstructionStatus5
-from ._TransferUnmatchedStatus4Choice import TransferUnmatchedStatus4Choice
+from . import CancellationPendingStatus7Choice
+from . import CancelledStatus13Choice
+from . import FailedSettlementStatus2Choice
+from . import InRepairStatus4Choice
+from . import PendingSettlementStatus3Choice
+from . import RejectionReason56
+from . import ReversedStatus2Choice
+from . import TransferInstructionStatus5
+from . import TransferUnmatchedStatus4Choice
 
 class TransferStatus5Choice(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class TransferStatus5Choice(base_types._BaseFieldType):
 
 	@Canc.setter
 	def Canc(self, value):
-		self._Canc = value if type(value) != base_types.auto else self.make_default("Canc")
+		self._Canc = value if value is not None else base_types.UninitialisedField(self, 'Canc', CancelledStatus13Choice, False)
 
 	@Canc.deleter
 	def Canc(self):
 		del self._Canc
-		self._Canc = None
+		self._Canc = base_types.UninitialisedField(self, 'Canc', CancelledStatus13Choice, False)
 
 	@property
 	def CxlPdg(self):
@@ -34,12 +34,12 @@ class TransferStatus5Choice(base_types._BaseFieldType):
 
 	@CxlPdg.setter
 	def CxlPdg(self, value):
-		self._CxlPdg = value if type(value) != base_types.auto else self.make_default("CxlPdg")
+		self._CxlPdg = value if value is not None else base_types.UninitialisedField(self, 'CxlPdg', CancellationPendingStatus7Choice, False)
 
 	@CxlPdg.deleter
 	def CxlPdg(self):
 		del self._CxlPdg
-		self._CxlPdg = None
+		self._CxlPdg = base_types.UninitialisedField(self, 'CxlPdg', CancellationPendingStatus7Choice, False)
 
 	@property
 	def FaildSttlm(self):
@@ -47,12 +47,12 @@ class TransferStatus5Choice(base_types._BaseFieldType):
 
 	@FaildSttlm.setter
 	def FaildSttlm(self, value):
-		self._FaildSttlm = value if type(value) != base_types.auto else self.make_default("FaildSttlm")
+		self._FaildSttlm = value if value is not None else base_types.UninitialisedField(self, 'FaildSttlm', FailedSettlementStatus2Choice, False)
 
 	@FaildSttlm.deleter
 	def FaildSttlm(self):
 		del self._FaildSttlm
-		self._FaildSttlm = None
+		self._FaildSttlm = base_types.UninitialisedField(self, 'FaildSttlm', FailedSettlementStatus2Choice, False)
 
 	@property
 	def InRpr(self):
@@ -60,12 +60,12 @@ class TransferStatus5Choice(base_types._BaseFieldType):
 
 	@InRpr.setter
 	def InRpr(self, value):
-		self._InRpr = value if type(value) != base_types.auto else self.make_default("InRpr")
+		self._InRpr = value if value is not None else base_types.UninitialisedField(self, 'InRpr', InRepairStatus4Choice, False)
 
 	@InRpr.deleter
 	def InRpr(self):
 		del self._InRpr
-		self._InRpr = None
+		self._InRpr = base_types.UninitialisedField(self, 'InRpr', InRepairStatus4Choice, False)
 
 	@property
 	def PdgSttlm(self):
@@ -73,12 +73,12 @@ class TransferStatus5Choice(base_types._BaseFieldType):
 
 	@PdgSttlm.setter
 	def PdgSttlm(self, value):
-		self._PdgSttlm = value if type(value) != base_types.auto else self.make_default("PdgSttlm")
+		self._PdgSttlm = value if value is not None else base_types.UninitialisedField(self, 'PdgSttlm', PendingSettlementStatus3Choice, False)
 
 	@PdgSttlm.deleter
 	def PdgSttlm(self):
 		del self._PdgSttlm
-		self._PdgSttlm = None
+		self._PdgSttlm = base_types.UninitialisedField(self, 'PdgSttlm', PendingSettlementStatus3Choice, False)
 
 	@property
 	def Rjctd(self):
@@ -86,12 +86,12 @@ class TransferStatus5Choice(base_types._BaseFieldType):
 
 	@Rjctd.setter
 	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
+		self._Rjctd = value if value is not None else base_types.UninitialisedField(self, 'Rjctd', RejectionReason56, True)
 
 	@Rjctd.deleter
 	def Rjctd(self):
 		del self._Rjctd
-		self._Rjctd = None
+		self._Rjctd = base_types.UninitialisedField(self, 'Rjctd', RejectionReason56, True)
 
 	@property
 	def Rvsd(self):
@@ -99,12 +99,12 @@ class TransferStatus5Choice(base_types._BaseFieldType):
 
 	@Rvsd.setter
 	def Rvsd(self, value):
-		self._Rvsd = value if type(value) != base_types.auto else self.make_default("Rvsd")
+		self._Rvsd = value if value is not None else base_types.UninitialisedField(self, 'Rvsd', ReversedStatus2Choice, False)
 
 	@Rvsd.deleter
 	def Rvsd(self):
 		del self._Rvsd
-		self._Rvsd = None
+		self._Rvsd = base_types.UninitialisedField(self, 'Rvsd', ReversedStatus2Choice, False)
 
 	@property
 	def Sts(self):
@@ -112,12 +112,12 @@ class TransferStatus5Choice(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', TransferInstructionStatus5, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', TransferInstructionStatus5, False)
 
 	@property
 	def Umtchd(self):
@@ -125,12 +125,12 @@ class TransferStatus5Choice(base_types._BaseFieldType):
 
 	@Umtchd.setter
 	def Umtchd(self, value):
-		self._Umtchd = value if type(value) != base_types.auto else self.make_default("Umtchd")
+		self._Umtchd = value if value is not None else base_types.UninitialisedField(self, 'Umtchd', TransferUnmatchedStatus4Choice, False)
 
 	@Umtchd.deleter
 	def Umtchd(self):
 		del self._Umtchd
-		self._Umtchd = None
+		self._Umtchd = base_types.UninitialisedField(self, 'Umtchd', TransferUnmatchedStatus4Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Canc', type=CancelledStatus13Choice, min=0, max=1, mutex_group=1, array=False),

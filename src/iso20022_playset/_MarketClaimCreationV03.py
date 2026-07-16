@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountIdentification70 import AccountIdentification70
-from ._CorporateAction59 import CorporateAction59
-from ._CorporateActionGeneralInformation181 import CorporateActionGeneralInformation181
-from ._CorporateActionOption234 import CorporateActionOption234
-from ._MarketClaimType1Code import MarketClaimType1Code
-from ._References25 import References25
-from ._RelatedSettlementInstruction2 import RelatedSettlementInstruction2
-from ._SettlementParties123 import SettlementParties123
-from ._SettlementParties124 import SettlementParties124
-from ._SupplementaryData1 import SupplementaryData1
+from . import AccountIdentification70
+from . import CorporateAction59
+from . import CorporateActionGeneralInformation181
+from . import CorporateActionOption234
+from . import MarketClaimType1Code
+from . import References25
+from . import RelatedSettlementInstruction2
+from . import SettlementParties123
+from . import SettlementParties124
+from . import SupplementaryData1
 
 class MarketClaimCreationV03(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class MarketClaimCreationV03(base_types._BaseFieldType):
 
 	@AcctDtls.setter
 	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != base_types.auto else self.make_default("AcctDtls")
+		self._AcctDtls = value if value is not None else base_types.UninitialisedField(self, 'AcctDtls', AccountIdentification70, False)
 
 	@AcctDtls.deleter
 	def AcctDtls(self):
 		del self._AcctDtls
-		self._AcctDtls = None
+		self._AcctDtls = base_types.UninitialisedField(self, 'AcctDtls', AccountIdentification70, False)
 
 	@property
 	def CorpActnDtls(self):
@@ -35,12 +35,12 @@ class MarketClaimCreationV03(base_types._BaseFieldType):
 
 	@CorpActnDtls.setter
 	def CorpActnDtls(self, value):
-		self._CorpActnDtls = value if type(value) != base_types.auto else self.make_default("CorpActnDtls")
+		self._CorpActnDtls = value if value is not None else base_types.UninitialisedField(self, 'CorpActnDtls', CorporateAction59, False)
 
 	@CorpActnDtls.deleter
 	def CorpActnDtls(self):
 		del self._CorpActnDtls
-		self._CorpActnDtls = None
+		self._CorpActnDtls = base_types.UninitialisedField(self, 'CorpActnDtls', CorporateAction59, False)
 
 	@property
 	def CorpActnGnlInf(self):
@@ -48,12 +48,12 @@ class MarketClaimCreationV03(base_types._BaseFieldType):
 
 	@CorpActnGnlInf.setter
 	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != base_types.auto else self.make_default("CorpActnGnlInf")
+		self._CorpActnGnlInf = value if value is not None else base_types.UninitialisedField(self, 'CorpActnGnlInf', CorporateActionGeneralInformation181, False)
 
 	@CorpActnGnlInf.deleter
 	def CorpActnGnlInf(self):
 		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
+		self._CorpActnGnlInf = base_types.UninitialisedField(self, 'CorpActnGnlInf', CorporateActionGeneralInformation181, False)
 
 	@property
 	def DlvrgSttlmPties(self):
@@ -61,12 +61,12 @@ class MarketClaimCreationV03(base_types._BaseFieldType):
 
 	@DlvrgSttlmPties.setter
 	def DlvrgSttlmPties(self, value):
-		self._DlvrgSttlmPties = value if type(value) != base_types.auto else self.make_default("DlvrgSttlmPties")
+		self._DlvrgSttlmPties = value if value is not None else base_types.UninitialisedField(self, 'DlvrgSttlmPties', SettlementParties123, False)
 
 	@DlvrgSttlmPties.deleter
 	def DlvrgSttlmPties(self):
 		del self._DlvrgSttlmPties
-		self._DlvrgSttlmPties = None
+		self._DlvrgSttlmPties = base_types.UninitialisedField(self, 'DlvrgSttlmPties', SettlementParties123, False)
 
 	@property
 	def MktClmDtls(self):
@@ -74,12 +74,12 @@ class MarketClaimCreationV03(base_types._BaseFieldType):
 
 	@MktClmDtls.setter
 	def MktClmDtls(self, value):
-		self._MktClmDtls = value if type(value) != base_types.auto else self.make_default("MktClmDtls")
+		self._MktClmDtls = value if value is not None else base_types.UninitialisedField(self, 'MktClmDtls', CorporateActionOption234, False)
 
 	@MktClmDtls.deleter
 	def MktClmDtls(self):
 		del self._MktClmDtls
-		self._MktClmDtls = None
+		self._MktClmDtls = base_types.UninitialisedField(self, 'MktClmDtls', CorporateActionOption234, False)
 
 	@property
 	def MktClmTp(self):
@@ -87,12 +87,12 @@ class MarketClaimCreationV03(base_types._BaseFieldType):
 
 	@MktClmTp.setter
 	def MktClmTp(self, value):
-		self._MktClmTp = value if type(value) != base_types.auto else self.make_default("MktClmTp")
+		self._MktClmTp = value if value is not None else base_types.UninitialisedField(self, 'MktClmTp', MarketClaimType1Code, False)
 
 	@MktClmTp.deleter
 	def MktClmTp(self):
 		del self._MktClmTp
-		self._MktClmTp = None
+		self._MktClmTp = base_types.UninitialisedField(self, 'MktClmTp', MarketClaimType1Code, False)
 
 	@property
 	def RcvgSttlmPties(self):
@@ -100,12 +100,12 @@ class MarketClaimCreationV03(base_types._BaseFieldType):
 
 	@RcvgSttlmPties.setter
 	def RcvgSttlmPties(self, value):
-		self._RcvgSttlmPties = value if type(value) != base_types.auto else self.make_default("RcvgSttlmPties")
+		self._RcvgSttlmPties = value if value is not None else base_types.UninitialisedField(self, 'RcvgSttlmPties', SettlementParties124, False)
 
 	@RcvgSttlmPties.deleter
 	def RcvgSttlmPties(self):
 		del self._RcvgSttlmPties
-		self._RcvgSttlmPties = None
+		self._RcvgSttlmPties = base_types.UninitialisedField(self, 'RcvgSttlmPties', SettlementParties124, False)
 
 	@property
 	def RltdSttlmInstrDtls(self):
@@ -113,12 +113,12 @@ class MarketClaimCreationV03(base_types._BaseFieldType):
 
 	@RltdSttlmInstrDtls.setter
 	def RltdSttlmInstrDtls(self, value):
-		self._RltdSttlmInstrDtls = value if type(value) != base_types.auto else self.make_default("RltdSttlmInstrDtls")
+		self._RltdSttlmInstrDtls = value if value is not None else base_types.UninitialisedField(self, 'RltdSttlmInstrDtls', RelatedSettlementInstruction2, False)
 
 	@RltdSttlmInstrDtls.deleter
 	def RltdSttlmInstrDtls(self):
 		del self._RltdSttlmInstrDtls
-		self._RltdSttlmInstrDtls = None
+		self._RltdSttlmInstrDtls = base_types.UninitialisedField(self, 'RltdSttlmInstrDtls', RelatedSettlementInstruction2, False)
 
 	@property
 	def SplmtryData(self):
@@ -126,12 +126,12 @@ class MarketClaimCreationV03(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TxRef(self):
@@ -139,12 +139,12 @@ class MarketClaimCreationV03(base_types._BaseFieldType):
 
 	@TxRef.setter
 	def TxRef(self, value):
-		self._TxRef = value if type(value) != base_types.auto else self.make_default("TxRef")
+		self._TxRef = value if value is not None else base_types.UninitialisedField(self, 'TxRef', References25, False)
 
 	@TxRef.deleter
 	def TxRef(self):
 		del self._TxRef
-		self._TxRef = None
+		self._TxRef = base_types.UninitialisedField(self, 'TxRef', References25, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctDtls', type=AccountIdentification70, min=1, max=1, mutex_group=None, array=False),

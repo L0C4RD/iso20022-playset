@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ContractSize1 import ContractSize1
-from ._GenericIdentification165 import GenericIdentification165
-from ._PhysicalTransferType4Code import PhysicalTransferType4Code
+from . import ActiveCurrencyCode
+from . import ContractSize1
+from . import GenericIdentification165
+from . import PhysicalTransferType4Code
 
 class FinancialInstrumentAttributes89(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class FinancialInstrumentAttributes89(base_types._BaseFieldType):
 
 	@CtrctSz.setter
 	def CtrctSz(self, value):
-		self._CtrctSz = value if type(value) != base_types.auto else self.make_default("CtrctSz")
+		self._CtrctSz = value if value is not None else base_types.UninitialisedField(self, 'CtrctSz', ContractSize1, False)
 
 	@CtrctSz.deleter
 	def CtrctSz(self):
 		del self._CtrctSz
-		self._CtrctSz = None
+		self._CtrctSz = base_types.UninitialisedField(self, 'CtrctSz', ContractSize1, False)
 
 	@property
 	def DlvryTp(self):
@@ -29,12 +29,12 @@ class FinancialInstrumentAttributes89(base_types._BaseFieldType):
 
 	@DlvryTp.setter
 	def DlvryTp(self, value):
-		self._DlvryTp = value if type(value) != base_types.auto else self.make_default("DlvryTp")
+		self._DlvryTp = value if value is not None else base_types.UninitialisedField(self, 'DlvryTp', PhysicalTransferType4Code, False)
 
 	@DlvryTp.deleter
 	def DlvryTp(self):
 		del self._DlvryTp
-		self._DlvryTp = None
+		self._DlvryTp = base_types.UninitialisedField(self, 'DlvryTp', PhysicalTransferType4Code, False)
 
 	@property
 	def PricCcy(self):
@@ -42,12 +42,12 @@ class FinancialInstrumentAttributes89(base_types._BaseFieldType):
 
 	@PricCcy.setter
 	def PricCcy(self, value):
-		self._PricCcy = value if type(value) != base_types.auto else self.make_default("PricCcy")
+		self._PricCcy = value if value is not None else base_types.UninitialisedField(self, 'PricCcy', ActiveCurrencyCode, False)
 
 	@PricCcy.deleter
 	def PricCcy(self):
 		del self._PricCcy
-		self._PricCcy = None
+		self._PricCcy = base_types.UninitialisedField(self, 'PricCcy', ActiveCurrencyCode, False)
 
 	@property
 	def UndrlygId(self):
@@ -55,12 +55,12 @@ class FinancialInstrumentAttributes89(base_types._BaseFieldType):
 
 	@UndrlygId.setter
 	def UndrlygId(self, value):
-		self._UndrlygId = value if type(value) != base_types.auto else self.make_default("UndrlygId")
+		self._UndrlygId = value if value is not None else base_types.UninitialisedField(self, 'UndrlygId', GenericIdentification165, False)
 
 	@UndrlygId.deleter
 	def UndrlygId(self):
 		del self._UndrlygId
-		self._UndrlygId = None
+		self._UndrlygId = base_types.UninitialisedField(self, 'UndrlygId', GenericIdentification165, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrctSz', type=ContractSize1, min=1, max=1, mutex_group=None, array=False),

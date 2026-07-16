@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesSettlementConditionModificationStatusAdvice002V09 import SecuritiesSettlementConditionModificationStatusAdvice002V09
+from . import SecuritiesSettlementConditionModificationStatusAdvice002V09
 
 class SESE_031_002_09():
 
@@ -18,12 +18,12 @@ class SESE_031_002_09():
 
 		@SctiesSttlmCondModStsAdvc.setter
 		def SctiesSttlmCondModStsAdvc(self, value):
-			self._SctiesSttlmCondModStsAdvc = value if type(value) != base_types.auto else self.make_default("SctiesSttlmCondModStsAdvc")
+			self._SctiesSttlmCondModStsAdvc = value if value is not None else base_types.UninitialisedField(self, 'SctiesSttlmCondModStsAdvc', SecuritiesSettlementConditionModificationStatusAdvice002V09, False)
 
 		@SctiesSttlmCondModStsAdvc.deleter
 		def SctiesSttlmCondModStsAdvc(self):
 			del self._SctiesSttlmCondModStsAdvc
-			self._SctiesSttlmCondModStsAdvc = None
+			self._SctiesSttlmCondModStsAdvc = base_types.UninitialisedField(self, 'SctiesSttlmCondModStsAdvc', SecuritiesSettlementConditionModificationStatusAdvice002V09, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesSttlmCondModStsAdvc', type=SecuritiesSettlementConditionModificationStatusAdvice002V09, min=1, max=1, mutex_group=None, array=False),

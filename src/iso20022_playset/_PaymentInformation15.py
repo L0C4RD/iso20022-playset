@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashAccount7 import CashAccount7
-from ._PaymentMethod4Code import PaymentMethod4Code
+from . import CashAccount7
+from . import PaymentMethod4Code
 
 class PaymentInformation15(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PaymentInformation15(base_types._BaseFieldType):
 
 	@PmtAcct.setter
 	def PmtAcct(self, value):
-		self._PmtAcct = value if type(value) != base_types.auto else self.make_default("PmtAcct")
+		self._PmtAcct = value if value is not None else base_types.UninitialisedField(self, 'PmtAcct', CashAccount7, False)
 
 	@PmtAcct.deleter
 	def PmtAcct(self):
 		del self._PmtAcct
-		self._PmtAcct = None
+		self._PmtAcct = base_types.UninitialisedField(self, 'PmtAcct', CashAccount7, False)
 
 	@property
 	def PmtMtd(self):
@@ -27,12 +27,12 @@ class PaymentInformation15(base_types._BaseFieldType):
 
 	@PmtMtd.setter
 	def PmtMtd(self, value):
-		self._PmtMtd = value if type(value) != base_types.auto else self.make_default("PmtMtd")
+		self._PmtMtd = value if value is not None else base_types.UninitialisedField(self, 'PmtMtd', PaymentMethod4Code, False)
 
 	@PmtMtd.deleter
 	def PmtMtd(self):
 		del self._PmtMtd
-		self._PmtMtd = None
+		self._PmtMtd = base_types.UninitialisedField(self, 'PmtMtd', PaymentMethod4Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PmtAcct', type=CashAccount7, min=0, max=1, mutex_group=None, array=False),

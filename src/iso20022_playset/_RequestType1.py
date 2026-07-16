@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Max500Text import Max500Text
-from ._TransactionRequestType1Code import TransactionRequestType1Code
+from . import Max35Text
+from . import Max500Text
+from . import TransactionRequestType1Code
 
 class RequestType1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class RequestType1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max500Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max500Text, False)
 
 	@property
 	def Nb(self):
@@ -28,12 +28,12 @@ class RequestType1(base_types._BaseFieldType):
 
 	@Nb.setter
 	def Nb(self, value):
-		self._Nb = value if type(value) != base_types.auto else self.make_default("Nb")
+		self._Nb = value if value is not None else base_types.UninitialisedField(self, 'Nb', Max35Text, False)
 
 	@Nb.deleter
 	def Nb(self):
 		del self._Nb
-		self._Nb = None
+		self._Nb = base_types.UninitialisedField(self, 'Nb', Max35Text, False)
 
 	@property
 	def Tp(self):
@@ -41,12 +41,12 @@ class RequestType1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', TransactionRequestType1Code, True)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', TransactionRequestType1Code, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BlockChainAddressWallet14 import BlockChainAddressWallet14
-from ._Cheque10 import Cheque10
-from ._CreditTransfer12 import CreditTransfer12
-from ._InvestmentAccount60 import InvestmentAccount60
+from . import BlockChainAddressWallet14
+from . import Cheque10
+from . import CreditTransfer12
+from . import InvestmentAccount60
 
 class PaymentInstrument28Choice(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class PaymentInstrument28Choice(base_types._BaseFieldType):
 
 	@BkrsDrftDtls.setter
 	def BkrsDrftDtls(self, value):
-		self._BkrsDrftDtls = value if type(value) != base_types.auto else self.make_default("BkrsDrftDtls")
+		self._BkrsDrftDtls = value if value is not None else base_types.UninitialisedField(self, 'BkrsDrftDtls', Cheque10, False)
 
 	@BkrsDrftDtls.deleter
 	def BkrsDrftDtls(self):
 		del self._BkrsDrftDtls
-		self._BkrsDrftDtls = None
+		self._BkrsDrftDtls = base_types.UninitialisedField(self, 'BkrsDrftDtls', Cheque10, False)
 
 	@property
 	def BlckChainCshWllt(self):
@@ -29,12 +29,12 @@ class PaymentInstrument28Choice(base_types._BaseFieldType):
 
 	@BlckChainCshWllt.setter
 	def BlckChainCshWllt(self, value):
-		self._BlckChainCshWllt = value if type(value) != base_types.auto else self.make_default("BlckChainCshWllt")
+		self._BlckChainCshWllt = value if value is not None else base_types.UninitialisedField(self, 'BlckChainCshWllt', BlockChainAddressWallet14, False)
 
 	@BlckChainCshWllt.deleter
 	def BlckChainCshWllt(self):
 		del self._BlckChainCshWllt
-		self._BlckChainCshWllt = None
+		self._BlckChainCshWllt = base_types.UninitialisedField(self, 'BlckChainCshWllt', BlockChainAddressWallet14, False)
 
 	@property
 	def CdtTrfDtls(self):
@@ -42,12 +42,12 @@ class PaymentInstrument28Choice(base_types._BaseFieldType):
 
 	@CdtTrfDtls.setter
 	def CdtTrfDtls(self, value):
-		self._CdtTrfDtls = value if type(value) != base_types.auto else self.make_default("CdtTrfDtls")
+		self._CdtTrfDtls = value if value is not None else base_types.UninitialisedField(self, 'CdtTrfDtls', CreditTransfer12, False)
 
 	@CdtTrfDtls.deleter
 	def CdtTrfDtls(self):
 		del self._CdtTrfDtls
-		self._CdtTrfDtls = None
+		self._CdtTrfDtls = base_types.UninitialisedField(self, 'CdtTrfDtls', CreditTransfer12, False)
 
 	@property
 	def ChqDtls(self):
@@ -55,12 +55,12 @@ class PaymentInstrument28Choice(base_types._BaseFieldType):
 
 	@ChqDtls.setter
 	def ChqDtls(self, value):
-		self._ChqDtls = value if type(value) != base_types.auto else self.make_default("ChqDtls")
+		self._ChqDtls = value if value is not None else base_types.UninitialisedField(self, 'ChqDtls', Cheque10, False)
 
 	@ChqDtls.deleter
 	def ChqDtls(self):
 		del self._ChqDtls
-		self._ChqDtls = None
+		self._ChqDtls = base_types.UninitialisedField(self, 'ChqDtls', Cheque10, False)
 
 	@property
 	def CshAcctDtls(self):
@@ -68,12 +68,12 @@ class PaymentInstrument28Choice(base_types._BaseFieldType):
 
 	@CshAcctDtls.setter
 	def CshAcctDtls(self, value):
-		self._CshAcctDtls = value if type(value) != base_types.auto else self.make_default("CshAcctDtls")
+		self._CshAcctDtls = value if value is not None else base_types.UninitialisedField(self, 'CshAcctDtls', InvestmentAccount60, False)
 
 	@CshAcctDtls.deleter
 	def CshAcctDtls(self):
 		del self._CshAcctDtls
-		self._CshAcctDtls = None
+		self._CshAcctDtls = base_types.UninitialisedField(self, 'CshAcctDtls', InvestmentAccount60, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BkrsDrftDtls', type=Cheque10, min=0, max=1, mutex_group=1, array=False),

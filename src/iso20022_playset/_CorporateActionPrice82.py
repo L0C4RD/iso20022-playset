@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IndicativeOrMarketPrice12Choice import IndicativeOrMarketPrice12Choice
-from ._PriceFormat46Choice import PriceFormat46Choice
-from ._PriceFormat72Choice import PriceFormat72Choice
-from ._PriceFormat73Choice import PriceFormat73Choice
-from ._PriceFormat74Choice import PriceFormat74Choice
+from . import IndicativeOrMarketPrice12Choice
+from . import PriceFormat46Choice
+from . import PriceFormat72Choice
+from . import PriceFormat73Choice
+from . import PriceFormat74Choice
 
 class CorporateActionPrice82(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class CorporateActionPrice82(base_types._BaseFieldType):
 
 	@CshInLieuOfShrPric.setter
 	def CshInLieuOfShrPric(self, value):
-		self._CshInLieuOfShrPric = value if type(value) != base_types.auto else self.make_default("CshInLieuOfShrPric")
+		self._CshInLieuOfShrPric = value if value is not None else base_types.UninitialisedField(self, 'CshInLieuOfShrPric', PriceFormat74Choice, False)
 
 	@CshInLieuOfShrPric.deleter
 	def CshInLieuOfShrPric(self):
 		del self._CshInLieuOfShrPric
-		self._CshInLieuOfShrPric = None
+		self._CshInLieuOfShrPric = base_types.UninitialisedField(self, 'CshInLieuOfShrPric', PriceFormat74Choice, False)
 
 	@property
 	def CshValForTax(self):
@@ -30,12 +30,12 @@ class CorporateActionPrice82(base_types._BaseFieldType):
 
 	@CshValForTax.setter
 	def CshValForTax(self, value):
-		self._CshValForTax = value if type(value) != base_types.auto else self.make_default("CshValForTax")
+		self._CshValForTax = value if value is not None else base_types.UninitialisedField(self, 'CshValForTax', PriceFormat46Choice, False)
 
 	@CshValForTax.deleter
 	def CshValForTax(self):
 		del self._CshValForTax
-		self._CshValForTax = None
+		self._CshValForTax = base_types.UninitialisedField(self, 'CshValForTax', PriceFormat46Choice, False)
 
 	@property
 	def GncCshPricPdPerPdct(self):
@@ -43,12 +43,12 @@ class CorporateActionPrice82(base_types._BaseFieldType):
 
 	@GncCshPricPdPerPdct.setter
 	def GncCshPricPdPerPdct(self, value):
-		self._GncCshPricPdPerPdct = value if type(value) != base_types.auto else self.make_default("GncCshPricPdPerPdct")
+		self._GncCshPricPdPerPdct = value if value is not None else base_types.UninitialisedField(self, 'GncCshPricPdPerPdct', PriceFormat73Choice, False)
 
 	@GncCshPricPdPerPdct.deleter
 	def GncCshPricPdPerPdct(self):
 		del self._GncCshPricPdPerPdct
-		self._GncCshPricPdPerPdct = None
+		self._GncCshPricPdPerPdct = base_types.UninitialisedField(self, 'GncCshPricPdPerPdct', PriceFormat73Choice, False)
 
 	@property
 	def GncCshPricRcvdPerPdct(self):
@@ -56,12 +56,12 @@ class CorporateActionPrice82(base_types._BaseFieldType):
 
 	@GncCshPricRcvdPerPdct.setter
 	def GncCshPricRcvdPerPdct(self, value):
-		self._GncCshPricRcvdPerPdct = value if type(value) != base_types.auto else self.make_default("GncCshPricRcvdPerPdct")
+		self._GncCshPricRcvdPerPdct = value if value is not None else base_types.UninitialisedField(self, 'GncCshPricRcvdPerPdct', PriceFormat72Choice, False)
 
 	@GncCshPricRcvdPerPdct.deleter
 	def GncCshPricRcvdPerPdct(self):
 		del self._GncCshPricRcvdPerPdct
-		self._GncCshPricRcvdPerPdct = None
+		self._GncCshPricRcvdPerPdct = base_types.UninitialisedField(self, 'GncCshPricRcvdPerPdct', PriceFormat72Choice, False)
 
 	@property
 	def IndctvOrMktPric(self):
@@ -69,12 +69,12 @@ class CorporateActionPrice82(base_types._BaseFieldType):
 
 	@IndctvOrMktPric.setter
 	def IndctvOrMktPric(self, value):
-		self._IndctvOrMktPric = value if type(value) != base_types.auto else self.make_default("IndctvOrMktPric")
+		self._IndctvOrMktPric = value if value is not None else base_types.UninitialisedField(self, 'IndctvOrMktPric', IndicativeOrMarketPrice12Choice, False)
 
 	@IndctvOrMktPric.deleter
 	def IndctvOrMktPric(self):
 		del self._IndctvOrMktPric
-		self._IndctvOrMktPric = None
+		self._IndctvOrMktPric = base_types.UninitialisedField(self, 'IndctvOrMktPric', IndicativeOrMarketPrice12Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshInLieuOfShrPric', type=PriceFormat74Choice, min=0, max=1, mutex_group=None, array=False),

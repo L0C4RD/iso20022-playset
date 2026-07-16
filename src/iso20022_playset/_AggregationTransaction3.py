@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DetailedAmount21 import DetailedAmount21
-from ._ISODateTime import ISODateTime
-from ._Number import Number
+from . import DetailedAmount21
+from . import ISODateTime
+from . import Number
 
 class AggregationTransaction3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AggregationTransaction3(base_types._BaseFieldType):
 
 	@FrstPmtDtTm.setter
 	def FrstPmtDtTm(self, value):
-		self._FrstPmtDtTm = value if type(value) != base_types.auto else self.make_default("FrstPmtDtTm")
+		self._FrstPmtDtTm = value if value is not None else base_types.UninitialisedField(self, 'FrstPmtDtTm', ISODateTime, False)
 
 	@FrstPmtDtTm.deleter
 	def FrstPmtDtTm(self):
 		del self._FrstPmtDtTm
-		self._FrstPmtDtTm = None
+		self._FrstPmtDtTm = base_types.UninitialisedField(self, 'FrstPmtDtTm', ISODateTime, False)
 
 	@property
 	def IndvPmt(self):
@@ -28,12 +28,12 @@ class AggregationTransaction3(base_types._BaseFieldType):
 
 	@IndvPmt.setter
 	def IndvPmt(self, value):
-		self._IndvPmt = value if type(value) != base_types.auto else self.make_default("IndvPmt")
+		self._IndvPmt = value if value is not None else base_types.UninitialisedField(self, 'IndvPmt', DetailedAmount21, True)
 
 	@IndvPmt.deleter
 	def IndvPmt(self):
 		del self._IndvPmt
-		self._IndvPmt = None
+		self._IndvPmt = base_types.UninitialisedField(self, 'IndvPmt', DetailedAmount21, True)
 
 	@property
 	def LastPmtDtTm(self):
@@ -41,12 +41,12 @@ class AggregationTransaction3(base_types._BaseFieldType):
 
 	@LastPmtDtTm.setter
 	def LastPmtDtTm(self, value):
-		self._LastPmtDtTm = value if type(value) != base_types.auto else self.make_default("LastPmtDtTm")
+		self._LastPmtDtTm = value if value is not None else base_types.UninitialisedField(self, 'LastPmtDtTm', ISODateTime, False)
 
 	@LastPmtDtTm.deleter
 	def LastPmtDtTm(self):
 		del self._LastPmtDtTm
-		self._LastPmtDtTm = None
+		self._LastPmtDtTm = base_types.UninitialisedField(self, 'LastPmtDtTm', ISODateTime, False)
 
 	@property
 	def NbOfPmts(self):
@@ -54,12 +54,12 @@ class AggregationTransaction3(base_types._BaseFieldType):
 
 	@NbOfPmts.setter
 	def NbOfPmts(self, value):
-		self._NbOfPmts = value if type(value) != base_types.auto else self.make_default("NbOfPmts")
+		self._NbOfPmts = value if value is not None else base_types.UninitialisedField(self, 'NbOfPmts', Number, False)
 
 	@NbOfPmts.deleter
 	def NbOfPmts(self):
 		del self._NbOfPmts
-		self._NbOfPmts = None
+		self._NbOfPmts = base_types.UninitialisedField(self, 'NbOfPmts', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FrstPmtDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),

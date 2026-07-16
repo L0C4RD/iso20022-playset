@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._Max2048Text import Max2048Text
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Visibilty1 import Visibilty1
+from . import DateAndDateTime2Choice
+from . import Max2048Text
+from . import TrueFalseIndicator
+from . import Visibilty1
 
 class CreditorServiceEnrolment1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CreditorServiceEnrolment1(base_types._BaseFieldType):
 
 	@CdtrSvcActvtnLk.setter
 	def CdtrSvcActvtnLk(self, value):
-		self._CdtrSvcActvtnLk = value if type(value) != base_types.auto else self.make_default("CdtrSvcActvtnLk")
+		self._CdtrSvcActvtnLk = value if value is not None else base_types.UninitialisedField(self, 'CdtrSvcActvtnLk', Max2048Text, False)
 
 	@CdtrSvcActvtnLk.deleter
 	def CdtrSvcActvtnLk(self):
 		del self._CdtrSvcActvtnLk
-		self._CdtrSvcActvtnLk = None
+		self._CdtrSvcActvtnLk = base_types.UninitialisedField(self, 'CdtrSvcActvtnLk', Max2048Text, False)
 
 	@property
 	def EnrlmntEndDt(self):
@@ -29,12 +29,12 @@ class CreditorServiceEnrolment1(base_types._BaseFieldType):
 
 	@EnrlmntEndDt.setter
 	def EnrlmntEndDt(self, value):
-		self._EnrlmntEndDt = value if type(value) != base_types.auto else self.make_default("EnrlmntEndDt")
+		self._EnrlmntEndDt = value if value is not None else base_types.UninitialisedField(self, 'EnrlmntEndDt', DateAndDateTime2Choice, False)
 
 	@EnrlmntEndDt.deleter
 	def EnrlmntEndDt(self):
 		del self._EnrlmntEndDt
-		self._EnrlmntEndDt = None
+		self._EnrlmntEndDt = base_types.UninitialisedField(self, 'EnrlmntEndDt', DateAndDateTime2Choice, False)
 
 	@property
 	def EnrlmntStartDt(self):
@@ -42,12 +42,12 @@ class CreditorServiceEnrolment1(base_types._BaseFieldType):
 
 	@EnrlmntStartDt.setter
 	def EnrlmntStartDt(self, value):
-		self._EnrlmntStartDt = value if type(value) != base_types.auto else self.make_default("EnrlmntStartDt")
+		self._EnrlmntStartDt = value if value is not None else base_types.UninitialisedField(self, 'EnrlmntStartDt', DateAndDateTime2Choice, False)
 
 	@EnrlmntStartDt.deleter
 	def EnrlmntStartDt(self):
 		del self._EnrlmntStartDt
-		self._EnrlmntStartDt = None
+		self._EnrlmntStartDt = base_types.UninitialisedField(self, 'EnrlmntStartDt', DateAndDateTime2Choice, False)
 
 	@property
 	def SvcActvtnAllwd(self):
@@ -55,12 +55,12 @@ class CreditorServiceEnrolment1(base_types._BaseFieldType):
 
 	@SvcActvtnAllwd.setter
 	def SvcActvtnAllwd(self, value):
-		self._SvcActvtnAllwd = value if type(value) != base_types.auto else self.make_default("SvcActvtnAllwd")
+		self._SvcActvtnAllwd = value if value is not None else base_types.UninitialisedField(self, 'SvcActvtnAllwd', TrueFalseIndicator, False)
 
 	@SvcActvtnAllwd.deleter
 	def SvcActvtnAllwd(self):
 		del self._SvcActvtnAllwd
-		self._SvcActvtnAllwd = None
+		self._SvcActvtnAllwd = base_types.UninitialisedField(self, 'SvcActvtnAllwd', TrueFalseIndicator, False)
 
 	@property
 	def SvcDescLk(self):
@@ -68,12 +68,12 @@ class CreditorServiceEnrolment1(base_types._BaseFieldType):
 
 	@SvcDescLk.setter
 	def SvcDescLk(self, value):
-		self._SvcDescLk = value if type(value) != base_types.auto else self.make_default("SvcDescLk")
+		self._SvcDescLk = value if value is not None else base_types.UninitialisedField(self, 'SvcDescLk', Max2048Text, False)
 
 	@SvcDescLk.deleter
 	def SvcDescLk(self):
 		del self._SvcDescLk
-		self._SvcDescLk = None
+		self._SvcDescLk = base_types.UninitialisedField(self, 'SvcDescLk', Max2048Text, False)
 
 	@property
 	def Vsblty(self):
@@ -81,12 +81,12 @@ class CreditorServiceEnrolment1(base_types._BaseFieldType):
 
 	@Vsblty.setter
 	def Vsblty(self, value):
-		self._Vsblty = value if type(value) != base_types.auto else self.make_default("Vsblty")
+		self._Vsblty = value if value is not None else base_types.UninitialisedField(self, 'Vsblty', Visibilty1, False)
 
 	@Vsblty.deleter
 	def Vsblty(self):
 		del self._Vsblty
-		self._Vsblty = None
+		self._Vsblty = base_types.UninitialisedField(self, 'Vsblty', Visibilty1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtrSvcActvtnLk', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),

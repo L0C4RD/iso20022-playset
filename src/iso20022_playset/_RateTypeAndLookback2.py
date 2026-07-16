@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._BenchmarkCurveName13Choice import BenchmarkCurveName13Choice
-from ._CrystallisationDay1 import CrystallisationDay1
-from ._InterestRateIndexTenor2Code import InterestRateIndexTenor2Code
-from ._Max3NumericText import Max3NumericText
+from . import ActiveOrHistoricCurrencyCode
+from . import BenchmarkCurveName13Choice
+from . import CrystallisationDay1
+from . import InterestRateIndexTenor2Code
+from . import Max3NumericText
 
 class RateTypeAndLookback2(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class RateTypeAndLookback2(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveOrHistoricCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def CrstllstnDt(self):
@@ -30,12 +30,12 @@ class RateTypeAndLookback2(base_types._BaseFieldType):
 
 	@CrstllstnDt.setter
 	def CrstllstnDt(self, value):
-		self._CrstllstnDt = value if type(value) != base_types.auto else self.make_default("CrstllstnDt")
+		self._CrstllstnDt = value if value is not None else base_types.UninitialisedField(self, 'CrstllstnDt', CrystallisationDay1, False)
 
 	@CrstllstnDt.deleter
 	def CrstllstnDt(self):
 		del self._CrstllstnDt
-		self._CrstllstnDt = None
+		self._CrstllstnDt = base_types.UninitialisedField(self, 'CrstllstnDt', CrystallisationDay1, False)
 
 	@property
 	def LookBckDays(self):
@@ -43,12 +43,12 @@ class RateTypeAndLookback2(base_types._BaseFieldType):
 
 	@LookBckDays.setter
 	def LookBckDays(self, value):
-		self._LookBckDays = value if type(value) != base_types.auto else self.make_default("LookBckDays")
+		self._LookBckDays = value if value is not None else base_types.UninitialisedField(self, 'LookBckDays', Max3NumericText, False)
 
 	@LookBckDays.deleter
 	def LookBckDays(self):
 		del self._LookBckDays
-		self._LookBckDays = None
+		self._LookBckDays = base_types.UninitialisedField(self, 'LookBckDays', Max3NumericText, False)
 
 	@property
 	def Tnr(self):
@@ -56,12 +56,12 @@ class RateTypeAndLookback2(base_types._BaseFieldType):
 
 	@Tnr.setter
 	def Tnr(self, value):
-		self._Tnr = value if type(value) != base_types.auto else self.make_default("Tnr")
+		self._Tnr = value if value is not None else base_types.UninitialisedField(self, 'Tnr', InterestRateIndexTenor2Code, False)
 
 	@Tnr.deleter
 	def Tnr(self):
 		del self._Tnr
-		self._Tnr = None
+		self._Tnr = base_types.UninitialisedField(self, 'Tnr', InterestRateIndexTenor2Code, False)
 
 	@property
 	def Tp(self):
@@ -69,12 +69,12 @@ class RateTypeAndLookback2(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', BenchmarkCurveName13Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', BenchmarkCurveName13Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),

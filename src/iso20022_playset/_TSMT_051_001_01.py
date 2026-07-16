@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RoleAndBaselineAcceptanceNotificationV01 import RoleAndBaselineAcceptanceNotificationV01
+from . import RoleAndBaselineAcceptanceNotificationV01
 
 class TSMT_051_001_01():
 
@@ -18,12 +18,12 @@ class TSMT_051_001_01():
 
 		@RoleAndBaselnAccptncNtfctn.setter
 		def RoleAndBaselnAccptncNtfctn(self, value):
-			self._RoleAndBaselnAccptncNtfctn = value if type(value) != base_types.auto else self.make_default("RoleAndBaselnAccptncNtfctn")
+			self._RoleAndBaselnAccptncNtfctn = value if value is not None else base_types.UninitialisedField(self, 'RoleAndBaselnAccptncNtfctn', RoleAndBaselineAcceptanceNotificationV01, False)
 
 		@RoleAndBaselnAccptncNtfctn.deleter
 		def RoleAndBaselnAccptncNtfctn(self):
 			del self._RoleAndBaselnAccptncNtfctn
-			self._RoleAndBaselnAccptncNtfctn = None
+			self._RoleAndBaselnAccptncNtfctn = base_types.UninitialisedField(self, 'RoleAndBaselnAccptncNtfctn', RoleAndBaselineAcceptanceNotificationV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='RoleAndBaselnAccptncNtfctn', type=RoleAndBaselineAcceptanceNotificationV01, min=1, max=1, mutex_group=None, array=False),

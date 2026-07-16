@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountPrice5 import AmountPrice5
-from ._PercentagePrice2 import PercentagePrice2
+from . import AmountPrice5
+from . import PercentagePrice2
 
 class PriceFormat85Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PriceFormat85Choice(base_types._BaseFieldType):
 
 	@AmtPric.setter
 	def AmtPric(self, value):
-		self._AmtPric = value if type(value) != base_types.auto else self.make_default("AmtPric")
+		self._AmtPric = value if value is not None else base_types.UninitialisedField(self, 'AmtPric', AmountPrice5, False)
 
 	@AmtPric.deleter
 	def AmtPric(self):
 		del self._AmtPric
-		self._AmtPric = None
+		self._AmtPric = base_types.UninitialisedField(self, 'AmtPric', AmountPrice5, False)
 
 	@property
 	def PctgPric(self):
@@ -27,12 +27,12 @@ class PriceFormat85Choice(base_types._BaseFieldType):
 
 	@PctgPric.setter
 	def PctgPric(self, value):
-		self._PctgPric = value if type(value) != base_types.auto else self.make_default("PctgPric")
+		self._PctgPric = value if value is not None else base_types.UninitialisedField(self, 'PctgPric', PercentagePrice2, False)
 
 	@PctgPric.deleter
 	def PctgPric(self):
 		del self._PctgPric
-		self._PctgPric = None
+		self._PctgPric = base_types.UninitialisedField(self, 'PctgPric', PercentagePrice2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmtPric', type=AmountPrice5, min=0, max=1, mutex_group=1, array=False),

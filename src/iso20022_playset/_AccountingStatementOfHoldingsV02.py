@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalReference2 import AdditionalReference2
-from ._AggregateBalanceInformation3 import AggregateBalanceInformation3
-from ._Extension1 import Extension1
-from ._MessageIdentification1 import MessageIdentification1
-from ._Pagination import Pagination
-from ._SafekeepingAccount2 import SafekeepingAccount2
-from ._Statement6 import Statement6
-from ._SubAccountIdentification3 import SubAccountIdentification3
-from ._TotalValueInPageAndStatement import TotalValueInPageAndStatement
+from . import AdditionalReference2
+from . import AggregateBalanceInformation3
+from . import Extension1
+from . import MessageIdentification1
+from . import Pagination
+from . import SafekeepingAccount2
+from . import Statement6
+from . import SubAccountIdentification3
+from . import TotalValueInPageAndStatement
 
 class AccountingStatementOfHoldingsV02(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class AccountingStatementOfHoldingsV02(base_types._BaseFieldType):
 
 	@AcctDtls.setter
 	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != base_types.auto else self.make_default("AcctDtls")
+		self._AcctDtls = value if value is not None else base_types.UninitialisedField(self, 'AcctDtls', SafekeepingAccount2, False)
 
 	@AcctDtls.deleter
 	def AcctDtls(self):
 		del self._AcctDtls
-		self._AcctDtls = None
+		self._AcctDtls = base_types.UninitialisedField(self, 'AcctDtls', SafekeepingAccount2, False)
 
 	@property
 	def BalForAcct(self):
@@ -34,12 +34,12 @@ class AccountingStatementOfHoldingsV02(base_types._BaseFieldType):
 
 	@BalForAcct.setter
 	def BalForAcct(self, value):
-		self._BalForAcct = value if type(value) != base_types.auto else self.make_default("BalForAcct")
+		self._BalForAcct = value if value is not None else base_types.UninitialisedField(self, 'BalForAcct', AggregateBalanceInformation3, True)
 
 	@BalForAcct.deleter
 	def BalForAcct(self):
 		del self._BalForAcct
-		self._BalForAcct = None
+		self._BalForAcct = base_types.UninitialisedField(self, 'BalForAcct', AggregateBalanceInformation3, True)
 
 	@property
 	def MsgId(self):
@@ -47,12 +47,12 @@ class AccountingStatementOfHoldingsV02(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@property
 	def MsgPgntn(self):
@@ -60,12 +60,12 @@ class AccountingStatementOfHoldingsV02(base_types._BaseFieldType):
 
 	@MsgPgntn.setter
 	def MsgPgntn(self, value):
-		self._MsgPgntn = value if type(value) != base_types.auto else self.make_default("MsgPgntn")
+		self._MsgPgntn = value if value is not None else base_types.UninitialisedField(self, 'MsgPgntn', Pagination, False)
 
 	@MsgPgntn.deleter
 	def MsgPgntn(self):
 		del self._MsgPgntn
-		self._MsgPgntn = None
+		self._MsgPgntn = base_types.UninitialisedField(self, 'MsgPgntn', Pagination, False)
 
 	@property
 	def PrvsRef(self):
@@ -73,12 +73,12 @@ class AccountingStatementOfHoldingsV02(base_types._BaseFieldType):
 
 	@PrvsRef.setter
 	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
+		self._PrvsRef = value if value is not None else base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference2, True)
 
 	@PrvsRef.deleter
 	def PrvsRef(self):
 		del self._PrvsRef
-		self._PrvsRef = None
+		self._PrvsRef = base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference2, True)
 
 	@property
 	def RltdRef(self):
@@ -86,12 +86,12 @@ class AccountingStatementOfHoldingsV02(base_types._BaseFieldType):
 
 	@RltdRef.setter
 	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
+		self._RltdRef = value if value is not None else base_types.UninitialisedField(self, 'RltdRef', AdditionalReference2, True)
 
 	@RltdRef.deleter
 	def RltdRef(self):
 		del self._RltdRef
-		self._RltdRef = None
+		self._RltdRef = base_types.UninitialisedField(self, 'RltdRef', AdditionalReference2, True)
 
 	@property
 	def StmtGnlDtls(self):
@@ -99,12 +99,12 @@ class AccountingStatementOfHoldingsV02(base_types._BaseFieldType):
 
 	@StmtGnlDtls.setter
 	def StmtGnlDtls(self, value):
-		self._StmtGnlDtls = value if type(value) != base_types.auto else self.make_default("StmtGnlDtls")
+		self._StmtGnlDtls = value if value is not None else base_types.UninitialisedField(self, 'StmtGnlDtls', Statement6, False)
 
 	@StmtGnlDtls.deleter
 	def StmtGnlDtls(self):
 		del self._StmtGnlDtls
-		self._StmtGnlDtls = None
+		self._StmtGnlDtls = base_types.UninitialisedField(self, 'StmtGnlDtls', Statement6, False)
 
 	@property
 	def SubAcctDtls(self):
@@ -112,12 +112,12 @@ class AccountingStatementOfHoldingsV02(base_types._BaseFieldType):
 
 	@SubAcctDtls.setter
 	def SubAcctDtls(self, value):
-		self._SubAcctDtls = value if type(value) != base_types.auto else self.make_default("SubAcctDtls")
+		self._SubAcctDtls = value if value is not None else base_types.UninitialisedField(self, 'SubAcctDtls', SubAccountIdentification3, True)
 
 	@SubAcctDtls.deleter
 	def SubAcctDtls(self):
 		del self._SubAcctDtls
-		self._SubAcctDtls = None
+		self._SubAcctDtls = base_types.UninitialisedField(self, 'SubAcctDtls', SubAccountIdentification3, True)
 
 	@property
 	def TtlVals(self):
@@ -125,12 +125,12 @@ class AccountingStatementOfHoldingsV02(base_types._BaseFieldType):
 
 	@TtlVals.setter
 	def TtlVals(self, value):
-		self._TtlVals = value if type(value) != base_types.auto else self.make_default("TtlVals")
+		self._TtlVals = value if value is not None else base_types.UninitialisedField(self, 'TtlVals', TotalValueInPageAndStatement, False)
 
 	@TtlVals.deleter
 	def TtlVals(self):
 		del self._TtlVals
-		self._TtlVals = None
+		self._TtlVals = base_types.UninitialisedField(self, 'TtlVals', TotalValueInPageAndStatement, False)
 
 	@property
 	def Xtnsn(self):
@@ -138,12 +138,12 @@ class AccountingStatementOfHoldingsV02(base_types._BaseFieldType):
 
 	@Xtnsn.setter
 	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
+		self._Xtnsn = value if value is not None else base_types.UninitialisedField(self, 'Xtnsn', Extension1, True)
 
 	@Xtnsn.deleter
 	def Xtnsn(self):
 		del self._Xtnsn
-		self._Xtnsn = None
+		self._Xtnsn = base_types.UninitialisedField(self, 'Xtnsn', Extension1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctDtls', type=SafekeepingAccount2, min=1, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from . import DateAndDateTime2Choice
 
 class CorporateAction59(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class CorporateAction59(base_types._BaseFieldType):
 
 	@ExDvddDt.setter
 	def ExDvddDt(self, value):
-		self._ExDvddDt = value if type(value) != base_types.auto else self.make_default("ExDvddDt")
+		self._ExDvddDt = value if value is not None else base_types.UninitialisedField(self, 'ExDvddDt', DateAndDateTime2Choice, False)
 
 	@ExDvddDt.deleter
 	def ExDvddDt(self):
 		del self._ExDvddDt
-		self._ExDvddDt = None
+		self._ExDvddDt = base_types.UninitialisedField(self, 'ExDvddDt', DateAndDateTime2Choice, False)
 
 	@property
 	def RcrdDt(self):
@@ -26,12 +26,12 @@ class CorporateAction59(base_types._BaseFieldType):
 
 	@RcrdDt.setter
 	def RcrdDt(self, value):
-		self._RcrdDt = value if type(value) != base_types.auto else self.make_default("RcrdDt")
+		self._RcrdDt = value if value is not None else base_types.UninitialisedField(self, 'RcrdDt', DateAndDateTime2Choice, False)
 
 	@RcrdDt.deleter
 	def RcrdDt(self):
 		del self._RcrdDt
-		self._RcrdDt = None
+		self._RcrdDt = base_types.UninitialisedField(self, 'RcrdDt', DateAndDateTime2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ExDvddDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),

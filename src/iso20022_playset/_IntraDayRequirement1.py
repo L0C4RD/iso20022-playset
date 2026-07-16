@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._GenericIdentification165 import GenericIdentification165
+from . import ActiveCurrencyAndAmount
+from . import GenericIdentification165
 
 class IntraDayRequirement1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class IntraDayRequirement1(base_types._BaseFieldType):
 
 	@AggtPeakLblty.setter
 	def AggtPeakLblty(self, value):
-		self._AggtPeakLblty = value if type(value) != base_types.auto else self.make_default("AggtPeakLblty")
+		self._AggtPeakLblty = value if value is not None else base_types.UninitialisedField(self, 'AggtPeakLblty', ActiveCurrencyAndAmount, False)
 
 	@AggtPeakLblty.deleter
 	def AggtPeakLblty(self):
 		del self._AggtPeakLblty
-		self._AggtPeakLblty = None
+		self._AggtPeakLblty = base_types.UninitialisedField(self, 'AggtPeakLblty', ActiveCurrencyAndAmount, False)
 
 	@property
 	def IntraDayMrgnCall(self):
@@ -27,12 +27,12 @@ class IntraDayRequirement1(base_types._BaseFieldType):
 
 	@IntraDayMrgnCall.setter
 	def IntraDayMrgnCall(self, value):
-		self._IntraDayMrgnCall = value if type(value) != base_types.auto else self.make_default("IntraDayMrgnCall")
+		self._IntraDayMrgnCall = value if value is not None else base_types.UninitialisedField(self, 'IntraDayMrgnCall', ActiveCurrencyAndAmount, False)
 
 	@IntraDayMrgnCall.deleter
 	def IntraDayMrgnCall(self):
 		del self._IntraDayMrgnCall
-		self._IntraDayMrgnCall = None
+		self._IntraDayMrgnCall = base_types.UninitialisedField(self, 'IntraDayMrgnCall', ActiveCurrencyAndAmount, False)
 
 	@property
 	def MrgnAcctId(self):
@@ -40,12 +40,12 @@ class IntraDayRequirement1(base_types._BaseFieldType):
 
 	@MrgnAcctId.setter
 	def MrgnAcctId(self, value):
-		self._MrgnAcctId = value if type(value) != base_types.auto else self.make_default("MrgnAcctId")
+		self._MrgnAcctId = value if value is not None else base_types.UninitialisedField(self, 'MrgnAcctId', GenericIdentification165, False)
 
 	@MrgnAcctId.deleter
 	def MrgnAcctId(self):
 		del self._MrgnAcctId
-		self._MrgnAcctId = None
+		self._MrgnAcctId = base_types.UninitialisedField(self, 'MrgnAcctId', GenericIdentification165, False)
 
 	@property
 	def PeakInitlMrgnLblty(self):
@@ -53,12 +53,12 @@ class IntraDayRequirement1(base_types._BaseFieldType):
 
 	@PeakInitlMrgnLblty.setter
 	def PeakInitlMrgnLblty(self, value):
-		self._PeakInitlMrgnLblty = value if type(value) != base_types.auto else self.make_default("PeakInitlMrgnLblty")
+		self._PeakInitlMrgnLblty = value if value is not None else base_types.UninitialisedField(self, 'PeakInitlMrgnLblty', ActiveCurrencyAndAmount, False)
 
 	@PeakInitlMrgnLblty.deleter
 	def PeakInitlMrgnLblty(self):
 		del self._PeakInitlMrgnLblty
-		self._PeakInitlMrgnLblty = None
+		self._PeakInitlMrgnLblty = base_types.UninitialisedField(self, 'PeakInitlMrgnLblty', ActiveCurrencyAndAmount, False)
 
 	@property
 	def PeakVartnMrgnLblty(self):
@@ -66,12 +66,12 @@ class IntraDayRequirement1(base_types._BaseFieldType):
 
 	@PeakVartnMrgnLblty.setter
 	def PeakVartnMrgnLblty(self, value):
-		self._PeakVartnMrgnLblty = value if type(value) != base_types.auto else self.make_default("PeakVartnMrgnLblty")
+		self._PeakVartnMrgnLblty = value if value is not None else base_types.UninitialisedField(self, 'PeakVartnMrgnLblty', ActiveCurrencyAndAmount, False)
 
 	@PeakVartnMrgnLblty.deleter
 	def PeakVartnMrgnLblty(self):
 		del self._PeakVartnMrgnLblty
-		self._PeakVartnMrgnLblty = None
+		self._PeakVartnMrgnLblty = base_types.UninitialisedField(self, 'PeakVartnMrgnLblty', ActiveCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AggtPeakLblty', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InformationQualify1Code import InformationQualify1Code
-from ._ResponseType11 import ResponseType11
-from ._UserInterface4Code import UserInterface4Code
+from . import InformationQualify1Code
+from . import ResponseType11
+from . import UserInterface4Code
 
 class OutputResult2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class OutputResult2(base_types._BaseFieldType):
 
 	@DvcTp.setter
 	def DvcTp(self, value):
-		self._DvcTp = value if type(value) != base_types.auto else self.make_default("DvcTp")
+		self._DvcTp = value if value is not None else base_types.UninitialisedField(self, 'DvcTp', UserInterface4Code, False)
 
 	@DvcTp.deleter
 	def DvcTp(self):
 		del self._DvcTp
-		self._DvcTp = None
+		self._DvcTp = base_types.UninitialisedField(self, 'DvcTp', UserInterface4Code, False)
 
 	@property
 	def InfQlfr(self):
@@ -28,12 +28,12 @@ class OutputResult2(base_types._BaseFieldType):
 
 	@InfQlfr.setter
 	def InfQlfr(self, value):
-		self._InfQlfr = value if type(value) != base_types.auto else self.make_default("InfQlfr")
+		self._InfQlfr = value if value is not None else base_types.UninitialisedField(self, 'InfQlfr', InformationQualify1Code, False)
 
 	@InfQlfr.deleter
 	def InfQlfr(self):
 		del self._InfQlfr
-		self._InfQlfr = None
+		self._InfQlfr = base_types.UninitialisedField(self, 'InfQlfr', InformationQualify1Code, False)
 
 	@property
 	def Rspn(self):
@@ -41,12 +41,12 @@ class OutputResult2(base_types._BaseFieldType):
 
 	@Rspn.setter
 	def Rspn(self, value):
-		self._Rspn = value if type(value) != base_types.auto else self.make_default("Rspn")
+		self._Rspn = value if value is not None else base_types.UninitialisedField(self, 'Rspn', ResponseType11, False)
 
 	@Rspn.deleter
 	def Rspn(self):
 		del self._Rspn
-		self._Rspn = None
+		self._Rspn = base_types.UninitialisedField(self, 'Rspn', ResponseType11, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DvcTp', type=UserInterface4Code, min=1, max=1, mutex_group=None, array=False),

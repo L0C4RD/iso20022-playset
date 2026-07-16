@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DirectDebitMandate7 import DirectDebitMandate7
-from ._PaymentCard29 import PaymentCard29
-from ._YesNoIndicator import YesNoIndicator
+from . import DirectDebitMandate7
+from . import PaymentCard29
+from . import YesNoIndicator
 
 class PaymentInstrument24Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PaymentInstrument24Choice(base_types._BaseFieldType):
 
 	@BkrsDrft.setter
 	def BkrsDrft(self, value):
-		self._BkrsDrft = value if type(value) != base_types.auto else self.make_default("BkrsDrft")
+		self._BkrsDrft = value if value is not None else base_types.UninitialisedField(self, 'BkrsDrft', YesNoIndicator, False)
 
 	@BkrsDrft.deleter
 	def BkrsDrft(self):
 		del self._BkrsDrft
-		self._BkrsDrft = None
+		self._BkrsDrft = base_types.UninitialisedField(self, 'BkrsDrft', YesNoIndicator, False)
 
 	@property
 	def Chq(self):
@@ -28,12 +28,12 @@ class PaymentInstrument24Choice(base_types._BaseFieldType):
 
 	@Chq.setter
 	def Chq(self, value):
-		self._Chq = value if type(value) != base_types.auto else self.make_default("Chq")
+		self._Chq = value if value is not None else base_types.UninitialisedField(self, 'Chq', YesNoIndicator, False)
 
 	@Chq.deleter
 	def Chq(self):
 		del self._Chq
-		self._Chq = None
+		self._Chq = base_types.UninitialisedField(self, 'Chq', YesNoIndicator, False)
 
 	@property
 	def DrctDbtDtls(self):
@@ -41,12 +41,12 @@ class PaymentInstrument24Choice(base_types._BaseFieldType):
 
 	@DrctDbtDtls.setter
 	def DrctDbtDtls(self, value):
-		self._DrctDbtDtls = value if type(value) != base_types.auto else self.make_default("DrctDbtDtls")
+		self._DrctDbtDtls = value if value is not None else base_types.UninitialisedField(self, 'DrctDbtDtls', DirectDebitMandate7, False)
 
 	@DrctDbtDtls.deleter
 	def DrctDbtDtls(self):
 		del self._DrctDbtDtls
-		self._DrctDbtDtls = None
+		self._DrctDbtDtls = base_types.UninitialisedField(self, 'DrctDbtDtls', DirectDebitMandate7, False)
 
 	@property
 	def PmtCardDtls(self):
@@ -54,12 +54,12 @@ class PaymentInstrument24Choice(base_types._BaseFieldType):
 
 	@PmtCardDtls.setter
 	def PmtCardDtls(self, value):
-		self._PmtCardDtls = value if type(value) != base_types.auto else self.make_default("PmtCardDtls")
+		self._PmtCardDtls = value if value is not None else base_types.UninitialisedField(self, 'PmtCardDtls', PaymentCard29, False)
 
 	@PmtCardDtls.deleter
 	def PmtCardDtls(self):
 		del self._PmtCardDtls
-		self._PmtCardDtls = None
+		self._PmtCardDtls = base_types.UninitialisedField(self, 'PmtCardDtls', PaymentCard29, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BkrsDrft', type=YesNoIndicator, min=0, max=1, mutex_group=1, array=False),

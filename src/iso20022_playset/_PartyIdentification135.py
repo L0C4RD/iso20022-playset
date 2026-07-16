@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Contact4 import Contact4
-from ._CountryCode import CountryCode
-from ._Max140Text import Max140Text
-from ._Party38Choice import Party38Choice
-from ._PostalAddress24 import PostalAddress24
+from . import Contact4
+from . import CountryCode
+from . import Max140Text
+from . import Party38Choice
+from . import PostalAddress24
 
 class PartyIdentification135(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class PartyIdentification135(base_types._BaseFieldType):
 
 	@CtctDtls.setter
 	def CtctDtls(self, value):
-		self._CtctDtls = value if type(value) != base_types.auto else self.make_default("CtctDtls")
+		self._CtctDtls = value if value is not None else base_types.UninitialisedField(self, 'CtctDtls', Contact4, False)
 
 	@CtctDtls.deleter
 	def CtctDtls(self):
 		del self._CtctDtls
-		self._CtctDtls = None
+		self._CtctDtls = base_types.UninitialisedField(self, 'CtctDtls', Contact4, False)
 
 	@property
 	def CtryOfRes(self):
@@ -30,12 +30,12 @@ class PartyIdentification135(base_types._BaseFieldType):
 
 	@CtryOfRes.setter
 	def CtryOfRes(self, value):
-		self._CtryOfRes = value if type(value) != base_types.auto else self.make_default("CtryOfRes")
+		self._CtryOfRes = value if value is not None else base_types.UninitialisedField(self, 'CtryOfRes', CountryCode, False)
 
 	@CtryOfRes.deleter
 	def CtryOfRes(self):
 		del self._CtryOfRes
-		self._CtryOfRes = None
+		self._CtryOfRes = base_types.UninitialisedField(self, 'CtryOfRes', CountryCode, False)
 
 	@property
 	def Id(self):
@@ -43,12 +43,12 @@ class PartyIdentification135(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Party38Choice, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Party38Choice, False)
 
 	@property
 	def Nm(self):
@@ -56,12 +56,12 @@ class PartyIdentification135(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max140Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max140Text, False)
 
 	@property
 	def PstlAdr(self):
@@ -69,12 +69,12 @@ class PartyIdentification135(base_types._BaseFieldType):
 
 	@PstlAdr.setter
 	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != base_types.auto else self.make_default("PstlAdr")
+		self._PstlAdr = value if value is not None else base_types.UninitialisedField(self, 'PstlAdr', PostalAddress24, False)
 
 	@PstlAdr.deleter
 	def PstlAdr(self):
 		del self._PstlAdr
-		self._PstlAdr = None
+		self._PstlAdr = base_types.UninitialisedField(self, 'PstlAdr', PostalAddress24, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtctDtls', type=Contact4, min=0, max=1, mutex_group=None, array=False),

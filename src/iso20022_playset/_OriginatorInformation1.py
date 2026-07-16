@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max5000Binary import Max5000Binary
+from . import Max5000Binary
 
 class OriginatorInformation1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class OriginatorInformation1(base_types._BaseFieldType):
 
 	@Cert.setter
 	def Cert(self, value):
-		self._Cert = value if type(value) != base_types.auto else self.make_default("Cert")
+		self._Cert = value if value is not None else base_types.UninitialisedField(self, 'Cert', Max5000Binary, True)
 
 	@Cert.deleter
 	def Cert(self):
 		del self._Cert
-		self._Cert = None
+		self._Cert = base_types.UninitialisedField(self, 'Cert', Max5000Binary, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cert', type=Max5000Binary, min=0, max=None, mutex_group=None, array=True),

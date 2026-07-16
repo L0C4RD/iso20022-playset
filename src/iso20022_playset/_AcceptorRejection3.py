@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max100KBinary import Max100KBinary
-from ._Max500Text import Max500Text
-from ._RejectReason2Code import RejectReason2Code
+from . import Max100KBinary
+from . import Max500Text
+from . import RejectReason2Code
 
 class AcceptorRejection3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AcceptorRejection3(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max500Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max500Text, False)
 
 	@property
 	def MsgInErr(self):
@@ -28,12 +28,12 @@ class AcceptorRejection3(base_types._BaseFieldType):
 
 	@MsgInErr.setter
 	def MsgInErr(self, value):
-		self._MsgInErr = value if type(value) != base_types.auto else self.make_default("MsgInErr")
+		self._MsgInErr = value if value is not None else base_types.UninitialisedField(self, 'MsgInErr', Max100KBinary, False)
 
 	@MsgInErr.deleter
 	def MsgInErr(self):
 		del self._MsgInErr
-		self._MsgInErr = None
+		self._MsgInErr = base_types.UninitialisedField(self, 'MsgInErr', Max100KBinary, False)
 
 	@property
 	def RjctRsn(self):
@@ -41,12 +41,12 @@ class AcceptorRejection3(base_types._BaseFieldType):
 
 	@RjctRsn.setter
 	def RjctRsn(self, value):
-		self._RjctRsn = value if type(value) != base_types.auto else self.make_default("RjctRsn")
+		self._RjctRsn = value if value is not None else base_types.UninitialisedField(self, 'RjctRsn', RejectReason2Code, False)
 
 	@RjctRsn.deleter
 	def RjctRsn(self):
 		del self._RjctRsn
-		self._RjctRsn = None
+		self._RjctRsn = base_types.UninitialisedField(self, 'RjctRsn', RejectReason2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),

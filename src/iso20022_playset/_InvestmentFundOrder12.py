@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrument107 import FinancialInstrument107
-from ._InvestmentAccount81 import InvestmentAccount81
-from ._Max35Text import Max35Text
+from . import FinancialInstrument107
+from . import InvestmentAccount81
+from . import Max35Text
 
 class InvestmentFundOrder12(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class InvestmentFundOrder12(base_types._BaseFieldType):
 
 	@ClntRef.setter
 	def ClntRef(self, value):
-		self._ClntRef = value if type(value) != base_types.auto else self.make_default("ClntRef")
+		self._ClntRef = value if value is not None else base_types.UninitialisedField(self, 'ClntRef', Max35Text, False)
 
 	@ClntRef.deleter
 	def ClntRef(self):
 		del self._ClntRef
-		self._ClntRef = None
+		self._ClntRef = base_types.UninitialisedField(self, 'ClntRef', Max35Text, False)
 
 	@property
 	def CxlRef(self):
@@ -28,12 +28,12 @@ class InvestmentFundOrder12(base_types._BaseFieldType):
 
 	@CxlRef.setter
 	def CxlRef(self, value):
-		self._CxlRef = value if type(value) != base_types.auto else self.make_default("CxlRef")
+		self._CxlRef = value if value is not None else base_types.UninitialisedField(self, 'CxlRef', Max35Text, False)
 
 	@CxlRef.deleter
 	def CxlRef(self):
 		del self._CxlRef
-		self._CxlRef = None
+		self._CxlRef = base_types.UninitialisedField(self, 'CxlRef', Max35Text, False)
 
 	@property
 	def DealRef(self):
@@ -41,12 +41,12 @@ class InvestmentFundOrder12(base_types._BaseFieldType):
 
 	@DealRef.setter
 	def DealRef(self, value):
-		self._DealRef = value if type(value) != base_types.auto else self.make_default("DealRef")
+		self._DealRef = value if value is not None else base_types.UninitialisedField(self, 'DealRef', Max35Text, False)
 
 	@DealRef.deleter
 	def DealRef(self):
 		del self._DealRef
-		self._DealRef = None
+		self._DealRef = base_types.UninitialisedField(self, 'DealRef', Max35Text, False)
 
 	@property
 	def FinInstrmDtls(self):
@@ -54,12 +54,12 @@ class InvestmentFundOrder12(base_types._BaseFieldType):
 
 	@FinInstrmDtls.setter
 	def FinInstrmDtls(self, value):
-		self._FinInstrmDtls = value if type(value) != base_types.auto else self.make_default("FinInstrmDtls")
+		self._FinInstrmDtls = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmDtls', FinancialInstrument107, False)
 
 	@FinInstrmDtls.deleter
 	def FinInstrmDtls(self):
 		del self._FinInstrmDtls
-		self._FinInstrmDtls = None
+		self._FinInstrmDtls = base_types.UninitialisedField(self, 'FinInstrmDtls', FinancialInstrument107, False)
 
 	@property
 	def InvstmtAcctDtls(self):
@@ -67,12 +67,12 @@ class InvestmentFundOrder12(base_types._BaseFieldType):
 
 	@InvstmtAcctDtls.setter
 	def InvstmtAcctDtls(self, value):
-		self._InvstmtAcctDtls = value if type(value) != base_types.auto else self.make_default("InvstmtAcctDtls")
+		self._InvstmtAcctDtls = value if value is not None else base_types.UninitialisedField(self, 'InvstmtAcctDtls', InvestmentAccount81, False)
 
 	@InvstmtAcctDtls.deleter
 	def InvstmtAcctDtls(self):
 		del self._InvstmtAcctDtls
-		self._InvstmtAcctDtls = None
+		self._InvstmtAcctDtls = base_types.UninitialisedField(self, 'InvstmtAcctDtls', InvestmentAccount81, False)
 
 	@property
 	def MstrRef(self):
@@ -80,12 +80,12 @@ class InvestmentFundOrder12(base_types._BaseFieldType):
 
 	@MstrRef.setter
 	def MstrRef(self, value):
-		self._MstrRef = value if type(value) != base_types.auto else self.make_default("MstrRef")
+		self._MstrRef = value if value is not None else base_types.UninitialisedField(self, 'MstrRef', Max35Text, False)
 
 	@MstrRef.deleter
 	def MstrRef(self):
 		del self._MstrRef
-		self._MstrRef = None
+		self._MstrRef = base_types.UninitialisedField(self, 'MstrRef', Max35Text, False)
 
 	@property
 	def NonceId(self):
@@ -93,12 +93,12 @@ class InvestmentFundOrder12(base_types._BaseFieldType):
 
 	@NonceId.setter
 	def NonceId(self, value):
-		self._NonceId = value if type(value) != base_types.auto else self.make_default("NonceId")
+		self._NonceId = value if value is not None else base_types.UninitialisedField(self, 'NonceId', Max35Text, False)
 
 	@NonceId.deleter
 	def NonceId(self):
 		del self._NonceId
-		self._NonceId = None
+		self._NonceId = base_types.UninitialisedField(self, 'NonceId', Max35Text, False)
 
 	@property
 	def OrdrRef(self):
@@ -106,12 +106,12 @@ class InvestmentFundOrder12(base_types._BaseFieldType):
 
 	@OrdrRef.setter
 	def OrdrRef(self, value):
-		self._OrdrRef = value if type(value) != base_types.auto else self.make_default("OrdrRef")
+		self._OrdrRef = value if value is not None else base_types.UninitialisedField(self, 'OrdrRef', Max35Text, False)
 
 	@OrdrRef.deleter
 	def OrdrRef(self):
 		del self._OrdrRef
-		self._OrdrRef = None
+		self._OrdrRef = base_types.UninitialisedField(self, 'OrdrRef', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClntRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DocumentNumber16Choice import DocumentNumber16Choice
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from . import DocumentNumber16Choice
+from . import RestrictedFINXMax16Text
 
 class GenericDocumentIdentification6(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class GenericDocumentIdentification6(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', RestrictedFINXMax16Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', RestrictedFINXMax16Text, False)
 
 	@property
 	def MsgNb(self):
@@ -27,12 +27,12 @@ class GenericDocumentIdentification6(base_types._BaseFieldType):
 
 	@MsgNb.setter
 	def MsgNb(self, value):
-		self._MsgNb = value if type(value) != base_types.auto else self.make_default("MsgNb")
+		self._MsgNb = value if value is not None else base_types.UninitialisedField(self, 'MsgNb', DocumentNumber16Choice, False)
 
 	@MsgNb.deleter
 	def MsgNb(self):
 		del self._MsgNb
-		self._MsgNb = None
+		self._MsgNb = base_types.UninitialisedField(self, 'MsgNb', DocumentNumber16Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),

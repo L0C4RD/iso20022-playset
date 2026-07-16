@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._DecimalNumber import DecimalNumber
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import DecimalNumber
 
 class TonsOrCurrency2Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TonsOrCurrency2Choice(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def Nb(self):
@@ -27,12 +27,12 @@ class TonsOrCurrency2Choice(base_types._BaseFieldType):
 
 	@Nb.setter
 	def Nb(self, value):
-		self._Nb = value if type(value) != base_types.auto else self.make_default("Nb")
+		self._Nb = value if value is not None else base_types.UninitialisedField(self, 'Nb', DecimalNumber, False)
 
 	@Nb.deleter
 	def Nb(self):
 		del self._Nb
-		self._Nb = None
+		self._Nb = base_types.UninitialisedField(self, 'Nb', DecimalNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),

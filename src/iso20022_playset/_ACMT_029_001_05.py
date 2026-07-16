@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountSwitchCancelExistingPaymentV05 import AccountSwitchCancelExistingPaymentV05
+from . import AccountSwitchCancelExistingPaymentV05
 
 class ACMT_029_001_05():
 
@@ -18,12 +18,12 @@ class ACMT_029_001_05():
 
 		@AcctSwtchCclExstgPmt.setter
 		def AcctSwtchCclExstgPmt(self, value):
-			self._AcctSwtchCclExstgPmt = value if type(value) != base_types.auto else self.make_default("AcctSwtchCclExstgPmt")
+			self._AcctSwtchCclExstgPmt = value if value is not None else base_types.UninitialisedField(self, 'AcctSwtchCclExstgPmt', AccountSwitchCancelExistingPaymentV05, False)
 
 		@AcctSwtchCclExstgPmt.deleter
 		def AcctSwtchCclExstgPmt(self):
 			del self._AcctSwtchCclExstgPmt
-			self._AcctSwtchCclExstgPmt = None
+			self._AcctSwtchCclExstgPmt = base_types.UninitialisedField(self, 'AcctSwtchCclExstgPmt', AccountSwitchCancelExistingPaymentV05, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AcctSwtchCclExstgPmt', type=AccountSwitchCancelExistingPaymentV05, min=1, max=1, mutex_group=None, array=False),

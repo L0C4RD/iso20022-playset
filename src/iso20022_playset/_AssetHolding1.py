@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
-from ._AssetHolding1Choice import AssetHolding1Choice
-from ._CollateralAccountType3Code import CollateralAccountType3Code
+from . import ActiveCurrencyAnd24Amount
+from . import AssetHolding1Choice
+from . import CollateralAccountType3Code
 
 class AssetHolding1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AssetHolding1(base_types._BaseFieldType):
 
 	@AsstTp.setter
 	def AsstTp(self, value):
-		self._AsstTp = value if type(value) != base_types.auto else self.make_default("AsstTp")
+		self._AsstTp = value if value is not None else base_types.UninitialisedField(self, 'AsstTp', AssetHolding1Choice, False)
 
 	@AsstTp.deleter
 	def AsstTp(self):
 		del self._AsstTp
-		self._AsstTp = None
+		self._AsstTp = base_types.UninitialisedField(self, 'AsstTp', AssetHolding1Choice, False)
 
 	@property
 	def CollRqrmnt(self):
@@ -28,12 +28,12 @@ class AssetHolding1(base_types._BaseFieldType):
 
 	@CollRqrmnt.setter
 	def CollRqrmnt(self, value):
-		self._CollRqrmnt = value if type(value) != base_types.auto else self.make_default("CollRqrmnt")
+		self._CollRqrmnt = value if value is not None else base_types.UninitialisedField(self, 'CollRqrmnt', CollateralAccountType3Code, False)
 
 	@CollRqrmnt.deleter
 	def CollRqrmnt(self):
 		del self._CollRqrmnt
-		self._CollRqrmnt = None
+		self._CollRqrmnt = base_types.UninitialisedField(self, 'CollRqrmnt', CollateralAccountType3Code, False)
 
 	@property
 	def PstHrcutVal(self):
@@ -41,12 +41,12 @@ class AssetHolding1(base_types._BaseFieldType):
 
 	@PstHrcutVal.setter
 	def PstHrcutVal(self, value):
-		self._PstHrcutVal = value if type(value) != base_types.auto else self.make_default("PstHrcutVal")
+		self._PstHrcutVal = value if value is not None else base_types.UninitialisedField(self, 'PstHrcutVal', ActiveCurrencyAnd24Amount, False)
 
 	@PstHrcutVal.deleter
 	def PstHrcutVal(self):
 		del self._PstHrcutVal
-		self._PstHrcutVal = None
+		self._PstHrcutVal = base_types.UninitialisedField(self, 'PstHrcutVal', ActiveCurrencyAnd24Amount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AsstTp', type=AssetHolding1Choice, min=1, max=1, mutex_group=None, array=False),

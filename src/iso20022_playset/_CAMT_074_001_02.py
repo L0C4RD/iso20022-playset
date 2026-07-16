@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IntraBalanceMovementCancellationRequestV02 import IntraBalanceMovementCancellationRequestV02
+from . import IntraBalanceMovementCancellationRequestV02
 
 class CAMT_074_001_02():
 
@@ -18,12 +18,12 @@ class CAMT_074_001_02():
 
 		@IntraBalMvmntCxlReq.setter
 		def IntraBalMvmntCxlReq(self, value):
-			self._IntraBalMvmntCxlReq = value if type(value) != base_types.auto else self.make_default("IntraBalMvmntCxlReq")
+			self._IntraBalMvmntCxlReq = value if value is not None else base_types.UninitialisedField(self, 'IntraBalMvmntCxlReq', IntraBalanceMovementCancellationRequestV02, False)
 
 		@IntraBalMvmntCxlReq.deleter
 		def IntraBalMvmntCxlReq(self):
 			del self._IntraBalMvmntCxlReq
-			self._IntraBalMvmntCxlReq = None
+			self._IntraBalMvmntCxlReq = base_types.UninitialisedField(self, 'IntraBalMvmntCxlReq', IntraBalanceMovementCancellationRequestV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='IntraBalMvmntCxlReq', type=IntraBalanceMovementCancellationRequestV02, min=1, max=1, mutex_group=None, array=False),

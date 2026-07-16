@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._BaseOneRate import BaseOneRate
-from ._GenericIdentification165 import GenericIdentification165
-from ._NonNegativeNumber import NonNegativeNumber
-from ._PositiveNumber import PositiveNumber
+from . import ActiveCurrencyAndAmount
+from . import BaseOneRate
+from . import GenericIdentification165
+from . import NonNegativeNumber
+from . import PositiveNumber
 
 class MonthlyResult1(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class MonthlyResult1(base_types._BaseFieldType):
 
 	@AvrgXcptn.setter
 	def AvrgXcptn(self, value):
-		self._AvrgXcptn = value if type(value) != base_types.auto else self.make_default("AvrgXcptn")
+		self._AvrgXcptn = value if value is not None else base_types.UninitialisedField(self, 'AvrgXcptn', ActiveCurrencyAndAmount, False)
 
 	@AvrgXcptn.deleter
 	def AvrgXcptn(self):
 		del self._AvrgXcptn
-		self._AvrgXcptn = None
+		self._AvrgXcptn = base_types.UninitialisedField(self, 'AvrgXcptn', ActiveCurrencyAndAmount, False)
 
 	@property
 	def Cvrg(self):
@@ -30,12 +30,12 @@ class MonthlyResult1(base_types._BaseFieldType):
 
 	@Cvrg.setter
 	def Cvrg(self, value):
-		self._Cvrg = value if type(value) != base_types.auto else self.make_default("Cvrg")
+		self._Cvrg = value if value is not None else base_types.UninitialisedField(self, 'Cvrg', BaseOneRate, False)
 
 	@Cvrg.deleter
 	def Cvrg(self):
 		del self._Cvrg
-		self._Cvrg = None
+		self._Cvrg = base_types.UninitialisedField(self, 'Cvrg', BaseOneRate, False)
 
 	@property
 	def LrgstXcptn(self):
@@ -43,12 +43,12 @@ class MonthlyResult1(base_types._BaseFieldType):
 
 	@LrgstXcptn.setter
 	def LrgstXcptn(self, value):
-		self._LrgstXcptn = value if type(value) != base_types.auto else self.make_default("LrgstXcptn")
+		self._LrgstXcptn = value if value is not None else base_types.UninitialisedField(self, 'LrgstXcptn', ActiveCurrencyAndAmount, False)
 
 	@LrgstXcptn.deleter
 	def LrgstXcptn(self):
 		del self._LrgstXcptn
-		self._LrgstXcptn = None
+		self._LrgstXcptn = base_types.UninitialisedField(self, 'LrgstXcptn', ActiveCurrencyAndAmount, False)
 
 	@property
 	def LrgstXcptnId(self):
@@ -56,12 +56,12 @@ class MonthlyResult1(base_types._BaseFieldType):
 
 	@LrgstXcptnId.setter
 	def LrgstXcptnId(self, value):
-		self._LrgstXcptnId = value if type(value) != base_types.auto else self.make_default("LrgstXcptnId")
+		self._LrgstXcptnId = value if value is not None else base_types.UninitialisedField(self, 'LrgstXcptnId', GenericIdentification165, False)
 
 	@LrgstXcptnId.deleter
 	def LrgstXcptnId(self):
 		del self._LrgstXcptnId
-		self._LrgstXcptnId = None
+		self._LrgstXcptnId = base_types.UninitialisedField(self, 'LrgstXcptnId', GenericIdentification165, False)
 
 	@property
 	def NbOfObsrvtns(self):
@@ -69,12 +69,12 @@ class MonthlyResult1(base_types._BaseFieldType):
 
 	@NbOfObsrvtns.setter
 	def NbOfObsrvtns(self, value):
-		self._NbOfObsrvtns = value if type(value) != base_types.auto else self.make_default("NbOfObsrvtns")
+		self._NbOfObsrvtns = value if value is not None else base_types.UninitialisedField(self, 'NbOfObsrvtns', PositiveNumber, False)
 
 	@NbOfObsrvtns.deleter
 	def NbOfObsrvtns(self):
 		del self._NbOfObsrvtns
-		self._NbOfObsrvtns = None
+		self._NbOfObsrvtns = base_types.UninitialisedField(self, 'NbOfObsrvtns', PositiveNumber, False)
 
 	@property
 	def NbOfXcptns(self):
@@ -82,12 +82,12 @@ class MonthlyResult1(base_types._BaseFieldType):
 
 	@NbOfXcptns.setter
 	def NbOfXcptns(self, value):
-		self._NbOfXcptns = value if type(value) != base_types.auto else self.make_default("NbOfXcptns")
+		self._NbOfXcptns = value if value is not None else base_types.UninitialisedField(self, 'NbOfXcptns', NonNegativeNumber, False)
 
 	@NbOfXcptns.deleter
 	def NbOfXcptns(self):
 		del self._NbOfXcptns
-		self._NbOfXcptns = None
+		self._NbOfXcptns = base_types.UninitialisedField(self, 'NbOfXcptns', NonNegativeNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AvrgXcptn', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

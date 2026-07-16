@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SubscriptionBulkOrderCancellationRequestV04 import SubscriptionBulkOrderCancellationRequestV04
+from . import SubscriptionBulkOrderCancellationRequestV04
 
 class SETR_008_001_04():
 
@@ -18,12 +18,12 @@ class SETR_008_001_04():
 
 		@SbcptBlkOrdrCxlReq.setter
 		def SbcptBlkOrdrCxlReq(self, value):
-			self._SbcptBlkOrdrCxlReq = value if type(value) != base_types.auto else self.make_default("SbcptBlkOrdrCxlReq")
+			self._SbcptBlkOrdrCxlReq = value if value is not None else base_types.UninitialisedField(self, 'SbcptBlkOrdrCxlReq', SubscriptionBulkOrderCancellationRequestV04, False)
 
 		@SbcptBlkOrdrCxlReq.deleter
 		def SbcptBlkOrdrCxlReq(self):
 			del self._SbcptBlkOrdrCxlReq
-			self._SbcptBlkOrdrCxlReq = None
+			self._SbcptBlkOrdrCxlReq = base_types.UninitialisedField(self, 'SbcptBlkOrdrCxlReq', SubscriptionBulkOrderCancellationRequestV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SbcptBlkOrdrCxlReq', type=SubscriptionBulkOrderCancellationRequestV04, min=1, max=1, mutex_group=None, array=False),

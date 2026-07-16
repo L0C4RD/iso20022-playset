@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._TransferInInstructionV09 import TransferInInstructionV09
+from . import TransferInInstructionV09
 
 class SESE_005_001_09():
 
@@ -18,12 +18,12 @@ class SESE_005_001_09():
 
 		@TrfInInstr.setter
 		def TrfInInstr(self, value):
-			self._TrfInInstr = value if type(value) != base_types.auto else self.make_default("TrfInInstr")
+			self._TrfInInstr = value if value is not None else base_types.UninitialisedField(self, 'TrfInInstr', TransferInInstructionV09, False)
 
 		@TrfInInstr.deleter
 		def TrfInInstr(self):
 			del self._TrfInInstr
-			self._TrfInInstr = None
+			self._TrfInInstr = base_types.UninitialisedField(self, 'TrfInInstr', TransferInInstructionV09, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='TrfInInstr', type=TransferInInstructionV09, min=1, max=1, mutex_group=None, array=False),

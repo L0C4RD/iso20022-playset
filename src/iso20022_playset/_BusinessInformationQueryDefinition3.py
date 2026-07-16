@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GeneralBusinessInformationCriteriaDefinition1Choice import GeneralBusinessInformationCriteriaDefinition1Choice
-from ._QueryType2Code import QueryType2Code
+from . import GeneralBusinessInformationCriteriaDefinition1Choice
+from . import QueryType2Code
 
 class BusinessInformationQueryDefinition3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class BusinessInformationQueryDefinition3(base_types._BaseFieldType):
 
 	@GnlBizInfCrit.setter
 	def GnlBizInfCrit(self, value):
-		self._GnlBizInfCrit = value if type(value) != base_types.auto else self.make_default("GnlBizInfCrit")
+		self._GnlBizInfCrit = value if value is not None else base_types.UninitialisedField(self, 'GnlBizInfCrit', GeneralBusinessInformationCriteriaDefinition1Choice, False)
 
 	@GnlBizInfCrit.deleter
 	def GnlBizInfCrit(self):
 		del self._GnlBizInfCrit
-		self._GnlBizInfCrit = None
+		self._GnlBizInfCrit = base_types.UninitialisedField(self, 'GnlBizInfCrit', GeneralBusinessInformationCriteriaDefinition1Choice, False)
 
 	@property
 	def QryTp(self):
@@ -27,12 +27,12 @@ class BusinessInformationQueryDefinition3(base_types._BaseFieldType):
 
 	@QryTp.setter
 	def QryTp(self, value):
-		self._QryTp = value if type(value) != base_types.auto else self.make_default("QryTp")
+		self._QryTp = value if value is not None else base_types.UninitialisedField(self, 'QryTp', QueryType2Code, False)
 
 	@QryTp.deleter
 	def QryTp(self):
 		del self._QryTp
-		self._QryTp = None
+		self._QryTp = base_types.UninitialisedField(self, 'QryTp', QueryType2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='GnlBizInfCrit', type=GeneralBusinessInformationCriteriaDefinition1Choice, min=0, max=1, mutex_group=None, array=False),

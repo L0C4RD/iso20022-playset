@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LimitIdentification8 import LimitIdentification8
-from ._LimitIdentification9 import LimitIdentification9
+from . import LimitIdentification8
+from . import LimitIdentification9
 
 class LimitIdentification3Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class LimitIdentification3Choice(base_types._BaseFieldType):
 
 	@AllCur.setter
 	def AllCur(self, value):
-		self._AllCur = value if type(value) != base_types.auto else self.make_default("AllCur")
+		self._AllCur = value if value is not None else base_types.UninitialisedField(self, 'AllCur', LimitIdentification9, False)
 
 	@AllCur.deleter
 	def AllCur(self):
 		del self._AllCur
-		self._AllCur = None
+		self._AllCur = base_types.UninitialisedField(self, 'AllCur', LimitIdentification9, False)
 
 	@property
 	def AllDflt(self):
@@ -27,12 +27,12 @@ class LimitIdentification3Choice(base_types._BaseFieldType):
 
 	@AllDflt.setter
 	def AllDflt(self, value):
-		self._AllDflt = value if type(value) != base_types.auto else self.make_default("AllDflt")
+		self._AllDflt = value if value is not None else base_types.UninitialisedField(self, 'AllDflt', LimitIdentification9, False)
 
 	@AllDflt.deleter
 	def AllDflt(self):
 		del self._AllDflt
-		self._AllDflt = None
+		self._AllDflt = base_types.UninitialisedField(self, 'AllDflt', LimitIdentification9, False)
 
 	@property
 	def Cur(self):
@@ -40,12 +40,12 @@ class LimitIdentification3Choice(base_types._BaseFieldType):
 
 	@Cur.setter
 	def Cur(self, value):
-		self._Cur = value if type(value) != base_types.auto else self.make_default("Cur")
+		self._Cur = value if value is not None else base_types.UninitialisedField(self, 'Cur', LimitIdentification8, False)
 
 	@Cur.deleter
 	def Cur(self):
 		del self._Cur
-		self._Cur = None
+		self._Cur = base_types.UninitialisedField(self, 'Cur', LimitIdentification8, False)
 
 	@property
 	def Dflt(self):
@@ -53,12 +53,12 @@ class LimitIdentification3Choice(base_types._BaseFieldType):
 
 	@Dflt.setter
 	def Dflt(self, value):
-		self._Dflt = value if type(value) != base_types.auto else self.make_default("Dflt")
+		self._Dflt = value if value is not None else base_types.UninitialisedField(self, 'Dflt', LimitIdentification8, False)
 
 	@Dflt.deleter
 	def Dflt(self):
 		del self._Dflt
-		self._Dflt = None
+		self._Dflt = base_types.UninitialisedField(self, 'Dflt', LimitIdentification8, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AllCur', type=LimitIdentification9, min=0, max=1, mutex_group=1, array=False),

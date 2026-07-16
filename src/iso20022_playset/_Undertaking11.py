@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CommunicationChannel1 import CommunicationChannel1
-from ._ExpiryDetails1 import ExpiryDetails1
-from ._Narrative1 import Narrative1
-from ._PartyIdentification43 import PartyIdentification43
-from ._UndertakingAmount2 import UndertakingAmount2
+from . import CommunicationChannel1
+from . import ExpiryDetails1
+from . import Narrative1
+from . import PartyIdentification43
+from . import UndertakingAmount2
 
 class Undertaking11(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class Undertaking11(base_types._BaseFieldType):
 
 	@DlvryChanl.setter
 	def DlvryChanl(self, value):
-		self._DlvryChanl = value if type(value) != base_types.auto else self.make_default("DlvryChanl")
+		self._DlvryChanl = value if value is not None else base_types.UninitialisedField(self, 'DlvryChanl', CommunicationChannel1, False)
 
 	@DlvryChanl.deleter
 	def DlvryChanl(self):
 		del self._DlvryChanl
-		self._DlvryChanl = None
+		self._DlvryChanl = base_types.UninitialisedField(self, 'DlvryChanl', CommunicationChannel1, False)
 
 	@property
 	def NewBnfcry(self):
@@ -30,12 +30,12 @@ class Undertaking11(base_types._BaseFieldType):
 
 	@NewBnfcry.setter
 	def NewBnfcry(self, value):
-		self._NewBnfcry = value if type(value) != base_types.auto else self.make_default("NewBnfcry")
+		self._NewBnfcry = value if value is not None else base_types.UninitialisedField(self, 'NewBnfcry', PartyIdentification43, False)
 
 	@NewBnfcry.deleter
 	def NewBnfcry(self):
 		del self._NewBnfcry
-		self._NewBnfcry = None
+		self._NewBnfcry = base_types.UninitialisedField(self, 'NewBnfcry', PartyIdentification43, False)
 
 	@property
 	def NewUdrtkgAmt(self):
@@ -43,12 +43,12 @@ class Undertaking11(base_types._BaseFieldType):
 
 	@NewUdrtkgAmt.setter
 	def NewUdrtkgAmt(self, value):
-		self._NewUdrtkgAmt = value if type(value) != base_types.auto else self.make_default("NewUdrtkgAmt")
+		self._NewUdrtkgAmt = value if value is not None else base_types.UninitialisedField(self, 'NewUdrtkgAmt', UndertakingAmount2, False)
 
 	@NewUdrtkgAmt.deleter
 	def NewUdrtkgAmt(self):
 		del self._NewUdrtkgAmt
-		self._NewUdrtkgAmt = None
+		self._NewUdrtkgAmt = base_types.UninitialisedField(self, 'NewUdrtkgAmt', UndertakingAmount2, False)
 
 	@property
 	def NewUdrtkgTermsAndConds(self):
@@ -56,12 +56,12 @@ class Undertaking11(base_types._BaseFieldType):
 
 	@NewUdrtkgTermsAndConds.setter
 	def NewUdrtkgTermsAndConds(self, value):
-		self._NewUdrtkgTermsAndConds = value if type(value) != base_types.auto else self.make_default("NewUdrtkgTermsAndConds")
+		self._NewUdrtkgTermsAndConds = value if value is not None else base_types.UninitialisedField(self, 'NewUdrtkgTermsAndConds', Narrative1, False)
 
 	@NewUdrtkgTermsAndConds.deleter
 	def NewUdrtkgTermsAndConds(self):
 		del self._NewUdrtkgTermsAndConds
-		self._NewUdrtkgTermsAndConds = None
+		self._NewUdrtkgTermsAndConds = base_types.UninitialisedField(self, 'NewUdrtkgTermsAndConds', Narrative1, False)
 
 	@property
 	def NewXpryDtls(self):
@@ -69,12 +69,12 @@ class Undertaking11(base_types._BaseFieldType):
 
 	@NewXpryDtls.setter
 	def NewXpryDtls(self, value):
-		self._NewXpryDtls = value if type(value) != base_types.auto else self.make_default("NewXpryDtls")
+		self._NewXpryDtls = value if value is not None else base_types.UninitialisedField(self, 'NewXpryDtls', ExpiryDetails1, False)
 
 	@NewXpryDtls.deleter
 	def NewXpryDtls(self):
 		del self._NewXpryDtls
-		self._NewXpryDtls = None
+		self._NewXpryDtls = base_types.UninitialisedField(self, 'NewXpryDtls', ExpiryDetails1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DlvryChanl', type=CommunicationChannel1, min=0, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DTI2024Identifier import DTI2024Identifier
-from ._Max30DecimalNumber import Max30DecimalNumber
-from ._Max30Text import Max30Text
+from . import DTI2024Identifier
+from . import Max30DecimalNumber
+from . import Max30Text
 
 class DigitalTokenAmount3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class DigitalTokenAmount3(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', Max30Text, False)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', Max30Text, False)
 
 	@property
 	def Idr(self):
@@ -28,12 +28,12 @@ class DigitalTokenAmount3(base_types._BaseFieldType):
 
 	@Idr.setter
 	def Idr(self, value):
-		self._Idr = value if type(value) != base_types.auto else self.make_default("Idr")
+		self._Idr = value if value is not None else base_types.UninitialisedField(self, 'Idr', DTI2024Identifier, False)
 
 	@Idr.deleter
 	def Idr(self):
 		del self._Idr
-		self._Idr = None
+		self._Idr = base_types.UninitialisedField(self, 'Idr', DTI2024Identifier, False)
 
 	@property
 	def Unit(self):
@@ -41,12 +41,12 @@ class DigitalTokenAmount3(base_types._BaseFieldType):
 
 	@Unit.setter
 	def Unit(self, value):
-		self._Unit = value if type(value) != base_types.auto else self.make_default("Unit")
+		self._Unit = value if value is not None else base_types.UninitialisedField(self, 'Unit', Max30DecimalNumber, False)
 
 	@Unit.deleter
 	def Unit(self):
 		del self._Unit
-		self._Unit = None
+		self._Unit = base_types.UninitialisedField(self, 'Unit', Max30DecimalNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Desc', type=Max30Text, min=0, max=1, mutex_group=None, array=False),

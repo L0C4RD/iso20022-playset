@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IssuerCSDReport1 import IssuerCSDReport1
-from ._SettlementInternaliser1 import SettlementInternaliser1
-from ._SettlementInternaliserReportHeader1 import SettlementInternaliserReportHeader1
-from ._SupplementaryData1 import SupplementaryData1
+from . import IssuerCSDReport1
+from . import SettlementInternaliser1
+from . import SettlementInternaliserReportHeader1
+from . import SupplementaryData1
 
 class SettlementInternaliserReportV01(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class SettlementInternaliserReportV01(base_types._BaseFieldType):
 
 	@IssrCSD.setter
 	def IssrCSD(self, value):
-		self._IssrCSD = value if type(value) != base_types.auto else self.make_default("IssrCSD")
+		self._IssrCSD = value if value is not None else base_types.UninitialisedField(self, 'IssrCSD', IssuerCSDReport1, True)
 
 	@IssrCSD.deleter
 	def IssrCSD(self):
 		del self._IssrCSD
-		self._IssrCSD = None
+		self._IssrCSD = base_types.UninitialisedField(self, 'IssrCSD', IssuerCSDReport1, True)
 
 	@property
 	def RptHdr(self):
@@ -29,12 +29,12 @@ class SettlementInternaliserReportV01(base_types._BaseFieldType):
 
 	@RptHdr.setter
 	def RptHdr(self, value):
-		self._RptHdr = value if type(value) != base_types.auto else self.make_default("RptHdr")
+		self._RptHdr = value if value is not None else base_types.UninitialisedField(self, 'RptHdr', SettlementInternaliserReportHeader1, False)
 
 	@RptHdr.deleter
 	def RptHdr(self):
 		del self._RptHdr
-		self._RptHdr = None
+		self._RptHdr = base_types.UninitialisedField(self, 'RptHdr', SettlementInternaliserReportHeader1, False)
 
 	@property
 	def SplmtryData(self):
@@ -42,12 +42,12 @@ class SettlementInternaliserReportV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def SttlmIntlr(self):
@@ -55,12 +55,12 @@ class SettlementInternaliserReportV01(base_types._BaseFieldType):
 
 	@SttlmIntlr.setter
 	def SttlmIntlr(self, value):
-		self._SttlmIntlr = value if type(value) != base_types.auto else self.make_default("SttlmIntlr")
+		self._SttlmIntlr = value if value is not None else base_types.UninitialisedField(self, 'SttlmIntlr', SettlementInternaliser1, False)
 
 	@SttlmIntlr.deleter
 	def SttlmIntlr(self):
 		del self._SttlmIntlr
-		self._SttlmIntlr = None
+		self._SttlmIntlr = base_types.UninitialisedField(self, 'SttlmIntlr', SettlementInternaliser1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IssrCSD', type=IssuerCSDReport1, min=1, max=None, mutex_group=None, array=True),

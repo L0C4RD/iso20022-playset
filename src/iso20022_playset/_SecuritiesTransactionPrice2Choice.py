@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection61 import AmountAndDirection61
-from ._DecimalNumber import DecimalNumber
-from ._PercentageRate import PercentageRate
+from . import AmountAndDirection61
+from . import DecimalNumber
+from . import PercentageRate
 
 class SecuritiesTransactionPrice2Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SecuritiesTransactionPrice2Choice(base_types._BaseFieldType):
 
 	@BsisPts.setter
 	def BsisPts(self, value):
-		self._BsisPts = value if type(value) != base_types.auto else self.make_default("BsisPts")
+		self._BsisPts = value if value is not None else base_types.UninitialisedField(self, 'BsisPts', DecimalNumber, False)
 
 	@BsisPts.deleter
 	def BsisPts(self):
 		del self._BsisPts
-		self._BsisPts = None
+		self._BsisPts = base_types.UninitialisedField(self, 'BsisPts', DecimalNumber, False)
 
 	@property
 	def MntryVal(self):
@@ -28,12 +28,12 @@ class SecuritiesTransactionPrice2Choice(base_types._BaseFieldType):
 
 	@MntryVal.setter
 	def MntryVal(self, value):
-		self._MntryVal = value if type(value) != base_types.auto else self.make_default("MntryVal")
+		self._MntryVal = value if value is not None else base_types.UninitialisedField(self, 'MntryVal', AmountAndDirection61, False)
 
 	@MntryVal.deleter
 	def MntryVal(self):
 		del self._MntryVal
-		self._MntryVal = None
+		self._MntryVal = base_types.UninitialisedField(self, 'MntryVal', AmountAndDirection61, False)
 
 	@property
 	def Pctg(self):
@@ -41,12 +41,12 @@ class SecuritiesTransactionPrice2Choice(base_types._BaseFieldType):
 
 	@Pctg.setter
 	def Pctg(self, value):
-		self._Pctg = value if type(value) != base_types.auto else self.make_default("Pctg")
+		self._Pctg = value if value is not None else base_types.UninitialisedField(self, 'Pctg', PercentageRate, False)
 
 	@Pctg.deleter
 	def Pctg(self):
 		del self._Pctg
-		self._Pctg = None
+		self._Pctg = base_types.UninitialisedField(self, 'Pctg', PercentageRate, False)
 
 	@property
 	def Yld(self):
@@ -54,12 +54,12 @@ class SecuritiesTransactionPrice2Choice(base_types._BaseFieldType):
 
 	@Yld.setter
 	def Yld(self, value):
-		self._Yld = value if type(value) != base_types.auto else self.make_default("Yld")
+		self._Yld = value if value is not None else base_types.UninitialisedField(self, 'Yld', PercentageRate, False)
 
 	@Yld.deleter
 	def Yld(self):
 		del self._Yld
-		self._Yld = None
+		self._Yld = base_types.UninitialisedField(self, 'Yld', PercentageRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BsisPts', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),

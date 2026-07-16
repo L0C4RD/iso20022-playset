@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BenchmarkCurveName5Choice import BenchmarkCurveName5Choice
-from ._InterestRateContractTerm2 import InterestRateContractTerm2
+from . import BenchmarkCurveName5Choice
+from . import InterestRateContractTerm2
 
 class FloatingInterestRate8(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class FloatingInterestRate8(base_types._BaseFieldType):
 
 	@RefRate.setter
 	def RefRate(self, value):
-		self._RefRate = value if type(value) != base_types.auto else self.make_default("RefRate")
+		self._RefRate = value if value is not None else base_types.UninitialisedField(self, 'RefRate', BenchmarkCurveName5Choice, False)
 
 	@RefRate.deleter
 	def RefRate(self):
 		del self._RefRate
-		self._RefRate = None
+		self._RefRate = base_types.UninitialisedField(self, 'RefRate', BenchmarkCurveName5Choice, False)
 
 	@property
 	def Term(self):
@@ -27,12 +27,12 @@ class FloatingInterestRate8(base_types._BaseFieldType):
 
 	@Term.setter
 	def Term(self, value):
-		self._Term = value if type(value) != base_types.auto else self.make_default("Term")
+		self._Term = value if value is not None else base_types.UninitialisedField(self, 'Term', InterestRateContractTerm2, False)
 
 	@Term.deleter
 	def Term(self):
 		del self._Term
-		self._Term = None
+		self._Term = base_types.UninitialisedField(self, 'Term', InterestRateContractTerm2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RefRate', type=BenchmarkCurveName5Choice, min=1, max=1, mutex_group=None, array=False),

@@ -2,18 +2,18 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._CancellationRight1Choice import CancellationRight1Choice
-from ._DateAndDateTimeChoice import DateAndDateTimeChoice
-from ._FinancialInstrument57 import FinancialInstrument57
-from ._ISODate import ISODate
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
-from ._PaymentTransaction72 import PaymentTransaction72
-from ._PlaceOfTradeIdentification1Choice import PlaceOfTradeIdentification1Choice
-from ._RedemptionOrder15 import RedemptionOrder15
+from . import ActiveCurrencyAndAmount
+from . import ActiveCurrencyCode
+from . import ActiveOrHistoricCurrencyCode
+from . import CancellationRight1Choice
+from . import DateAndDateTimeChoice
+from . import FinancialInstrument57
+from . import ISODate
+from . import ISODateTime
+from . import Max35Text
+from . import PaymentTransaction72
+from . import PlaceOfTradeIdentification1Choice
+from . import RedemptionOrder15
 
 class RedemptionBulkOrder6(base_types._BaseFieldType):
 
@@ -24,12 +24,12 @@ class RedemptionBulkOrder6(base_types._BaseFieldType):
 
 	@BlkCshSttlmDtls.setter
 	def BlkCshSttlmDtls(self, value):
-		self._BlkCshSttlmDtls = value if type(value) != base_types.auto else self.make_default("BlkCshSttlmDtls")
+		self._BlkCshSttlmDtls = value if value is not None else base_types.UninitialisedField(self, 'BlkCshSttlmDtls', PaymentTransaction72, False)
 
 	@BlkCshSttlmDtls.deleter
 	def BlkCshSttlmDtls(self):
 		del self._BlkCshSttlmDtls
-		self._BlkCshSttlmDtls = None
+		self._BlkCshSttlmDtls = base_types.UninitialisedField(self, 'BlkCshSttlmDtls', PaymentTransaction72, False)
 
 	@property
 	def CxlRght(self):
@@ -37,12 +37,12 @@ class RedemptionBulkOrder6(base_types._BaseFieldType):
 
 	@CxlRght.setter
 	def CxlRght(self, value):
-		self._CxlRght = value if type(value) != base_types.auto else self.make_default("CxlRght")
+		self._CxlRght = value if value is not None else base_types.UninitialisedField(self, 'CxlRght', CancellationRight1Choice, False)
 
 	@CxlRght.deleter
 	def CxlRght(self):
 		del self._CxlRght
-		self._CxlRght = None
+		self._CxlRght = base_types.UninitialisedField(self, 'CxlRght', CancellationRight1Choice, False)
 
 	@property
 	def FinInstrmDtls(self):
@@ -50,12 +50,12 @@ class RedemptionBulkOrder6(base_types._BaseFieldType):
 
 	@FinInstrmDtls.setter
 	def FinInstrmDtls(self, value):
-		self._FinInstrmDtls = value if type(value) != base_types.auto else self.make_default("FinInstrmDtls")
+		self._FinInstrmDtls = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmDtls', FinancialInstrument57, False)
 
 	@FinInstrmDtls.deleter
 	def FinInstrmDtls(self):
 		del self._FinInstrmDtls
-		self._FinInstrmDtls = None
+		self._FinInstrmDtls = base_types.UninitialisedField(self, 'FinInstrmDtls', FinancialInstrument57, False)
 
 	@property
 	def IndvOrdrDtls(self):
@@ -63,12 +63,12 @@ class RedemptionBulkOrder6(base_types._BaseFieldType):
 
 	@IndvOrdrDtls.setter
 	def IndvOrdrDtls(self, value):
-		self._IndvOrdrDtls = value if type(value) != base_types.auto else self.make_default("IndvOrdrDtls")
+		self._IndvOrdrDtls = value if value is not None else base_types.UninitialisedField(self, 'IndvOrdrDtls', RedemptionOrder15, True)
 
 	@IndvOrdrDtls.deleter
 	def IndvOrdrDtls(self):
 		del self._IndvOrdrDtls
-		self._IndvOrdrDtls = None
+		self._IndvOrdrDtls = base_types.UninitialisedField(self, 'IndvOrdrDtls', RedemptionOrder15, True)
 
 	@property
 	def MstrRef(self):
@@ -76,12 +76,12 @@ class RedemptionBulkOrder6(base_types._BaseFieldType):
 
 	@MstrRef.setter
 	def MstrRef(self, value):
-		self._MstrRef = value if type(value) != base_types.auto else self.make_default("MstrRef")
+		self._MstrRef = value if value is not None else base_types.UninitialisedField(self, 'MstrRef', Max35Text, False)
 
 	@MstrRef.deleter
 	def MstrRef(self):
 		del self._MstrRef
-		self._MstrRef = None
+		self._MstrRef = base_types.UninitialisedField(self, 'MstrRef', Max35Text, False)
 
 	@property
 	def OrdrDtTm(self):
@@ -89,12 +89,12 @@ class RedemptionBulkOrder6(base_types._BaseFieldType):
 
 	@OrdrDtTm.setter
 	def OrdrDtTm(self, value):
-		self._OrdrDtTm = value if type(value) != base_types.auto else self.make_default("OrdrDtTm")
+		self._OrdrDtTm = value if value is not None else base_types.UninitialisedField(self, 'OrdrDtTm', ISODateTime, False)
 
 	@OrdrDtTm.deleter
 	def OrdrDtTm(self):
 		del self._OrdrDtTm
-		self._OrdrDtTm = None
+		self._OrdrDtTm = base_types.UninitialisedField(self, 'OrdrDtTm', ISODateTime, False)
 
 	@property
 	def PlcOfTrad(self):
@@ -102,12 +102,12 @@ class RedemptionBulkOrder6(base_types._BaseFieldType):
 
 	@PlcOfTrad.setter
 	def PlcOfTrad(self, value):
-		self._PlcOfTrad = value if type(value) != base_types.auto else self.make_default("PlcOfTrad")
+		self._PlcOfTrad = value if value is not None else base_types.UninitialisedField(self, 'PlcOfTrad', PlaceOfTradeIdentification1Choice, False)
 
 	@PlcOfTrad.deleter
 	def PlcOfTrad(self):
 		del self._PlcOfTrad
-		self._PlcOfTrad = None
+		self._PlcOfTrad = base_types.UninitialisedField(self, 'PlcOfTrad', PlaceOfTradeIdentification1Choice, False)
 
 	@property
 	def ReqdFutrTradDt(self):
@@ -115,12 +115,12 @@ class RedemptionBulkOrder6(base_types._BaseFieldType):
 
 	@ReqdFutrTradDt.setter
 	def ReqdFutrTradDt(self, value):
-		self._ReqdFutrTradDt = value if type(value) != base_types.auto else self.make_default("ReqdFutrTradDt")
+		self._ReqdFutrTradDt = value if value is not None else base_types.UninitialisedField(self, 'ReqdFutrTradDt', ISODate, False)
 
 	@ReqdFutrTradDt.deleter
 	def ReqdFutrTradDt(self):
 		del self._ReqdFutrTradDt
-		self._ReqdFutrTradDt = None
+		self._ReqdFutrTradDt = base_types.UninitialisedField(self, 'ReqdFutrTradDt', ISODate, False)
 
 	@property
 	def ReqdNAVCcy(self):
@@ -128,12 +128,12 @@ class RedemptionBulkOrder6(base_types._BaseFieldType):
 
 	@ReqdNAVCcy.setter
 	def ReqdNAVCcy(self, value):
-		self._ReqdNAVCcy = value if type(value) != base_types.auto else self.make_default("ReqdNAVCcy")
+		self._ReqdNAVCcy = value if value is not None else base_types.UninitialisedField(self, 'ReqdNAVCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@ReqdNAVCcy.deleter
 	def ReqdNAVCcy(self):
 		del self._ReqdNAVCcy
-		self._ReqdNAVCcy = None
+		self._ReqdNAVCcy = base_types.UninitialisedField(self, 'ReqdNAVCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def ReqdSttlmCcy(self):
@@ -141,12 +141,12 @@ class RedemptionBulkOrder6(base_types._BaseFieldType):
 
 	@ReqdSttlmCcy.setter
 	def ReqdSttlmCcy(self, value):
-		self._ReqdSttlmCcy = value if type(value) != base_types.auto else self.make_default("ReqdSttlmCcy")
+		self._ReqdSttlmCcy = value if value is not None else base_types.UninitialisedField(self, 'ReqdSttlmCcy', ActiveCurrencyCode, False)
 
 	@ReqdSttlmCcy.deleter
 	def ReqdSttlmCcy(self):
 		del self._ReqdSttlmCcy
-		self._ReqdSttlmCcy = None
+		self._ReqdSttlmCcy = base_types.UninitialisedField(self, 'ReqdSttlmCcy', ActiveCurrencyCode, False)
 
 	@property
 	def TtlSttlmAmt(self):
@@ -154,12 +154,12 @@ class RedemptionBulkOrder6(base_types._BaseFieldType):
 
 	@TtlSttlmAmt.setter
 	def TtlSttlmAmt(self, value):
-		self._TtlSttlmAmt = value if type(value) != base_types.auto else self.make_default("TtlSttlmAmt")
+		self._TtlSttlmAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlSttlmAmt', ActiveCurrencyAndAmount, False)
 
 	@TtlSttlmAmt.deleter
 	def TtlSttlmAmt(self):
 		del self._TtlSttlmAmt
-		self._TtlSttlmAmt = None
+		self._TtlSttlmAmt = base_types.UninitialisedField(self, 'TtlSttlmAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def XpryDtTm(self):
@@ -167,12 +167,12 @@ class RedemptionBulkOrder6(base_types._BaseFieldType):
 
 	@XpryDtTm.setter
 	def XpryDtTm(self, value):
-		self._XpryDtTm = value if type(value) != base_types.auto else self.make_default("XpryDtTm")
+		self._XpryDtTm = value if value is not None else base_types.UninitialisedField(self, 'XpryDtTm', DateAndDateTimeChoice, False)
 
 	@XpryDtTm.deleter
 	def XpryDtTm(self):
 		del self._XpryDtTm
-		self._XpryDtTm = None
+		self._XpryDtTm = base_types.UninitialisedField(self, 'XpryDtTm', DateAndDateTimeChoice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BlkCshSttlmDtls', type=PaymentTransaction72, min=0, max=1, mutex_group=None, array=False),

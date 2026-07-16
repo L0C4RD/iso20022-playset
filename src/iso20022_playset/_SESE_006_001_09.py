@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._TransferInCancellationRequestV09 import TransferInCancellationRequestV09
+from . import TransferInCancellationRequestV09
 
 class SESE_006_001_09():
 
@@ -18,12 +18,12 @@ class SESE_006_001_09():
 
 		@TrfInCxlReq.setter
 		def TrfInCxlReq(self, value):
-			self._TrfInCxlReq = value if type(value) != base_types.auto else self.make_default("TrfInCxlReq")
+			self._TrfInCxlReq = value if value is not None else base_types.UninitialisedField(self, 'TrfInCxlReq', TransferInCancellationRequestV09, False)
 
 		@TrfInCxlReq.deleter
 		def TrfInCxlReq(self):
 			del self._TrfInCxlReq
-			self._TrfInCxlReq = None
+			self._TrfInCxlReq = base_types.UninitialisedField(self, 'TrfInCxlReq', TransferInCancellationRequestV09, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='TrfInCxlReq', type=TransferInCancellationRequestV09, min=1, max=1, mutex_group=None, array=False),

@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Contact14 import Contact14
-from ._ISODate import ISODate
-from ._MarketSpecificAttribute1 import MarketSpecificAttribute1
-from ._PartyLockStatus1 import PartyLockStatus1
-from ._PartyName4 import PartyName4
-from ._PostalAddress28 import PostalAddress28
-from ._ResidenceType1Code import ResidenceType1Code
-from ._SystemPartyIdentification9 import SystemPartyIdentification9
-from ._SystemPartyType1Choice import SystemPartyType1Choice
-from ._SystemRestriction1 import SystemRestriction1
-from ._TechnicalIdentification2Choice import TechnicalIdentification2Choice
+from . import Contact14
+from . import ISODate
+from . import MarketSpecificAttribute1
+from . import PartyLockStatus1
+from . import PartyName4
+from . import PostalAddress28
+from . import ResidenceType1Code
+from . import SystemPartyIdentification9
+from . import SystemPartyType1Choice
+from . import SystemRestriction1
+from . import TechnicalIdentification2Choice
 
 class SystemParty7(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class SystemParty7(base_types._BaseFieldType):
 
 	@Adr.setter
 	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+		self._Adr = value if value is not None else base_types.UninitialisedField(self, 'Adr', PostalAddress28, True)
 
 	@Adr.deleter
 	def Adr(self):
 		del self._Adr
-		self._Adr = None
+		self._Adr = base_types.UninitialisedField(self, 'Adr', PostalAddress28, True)
 
 	@property
 	def ClsgDt(self):
@@ -36,12 +36,12 @@ class SystemParty7(base_types._BaseFieldType):
 
 	@ClsgDt.setter
 	def ClsgDt(self, value):
-		self._ClsgDt = value if type(value) != base_types.auto else self.make_default("ClsgDt")
+		self._ClsgDt = value if value is not None else base_types.UninitialisedField(self, 'ClsgDt', ISODate, False)
 
 	@ClsgDt.deleter
 	def ClsgDt(self):
 		del self._ClsgDt
-		self._ClsgDt = None
+		self._ClsgDt = base_types.UninitialisedField(self, 'ClsgDt', ISODate, False)
 
 	@property
 	def CtctDtls(self):
@@ -49,12 +49,12 @@ class SystemParty7(base_types._BaseFieldType):
 
 	@CtctDtls.setter
 	def CtctDtls(self, value):
-		self._CtctDtls = value if type(value) != base_types.auto else self.make_default("CtctDtls")
+		self._CtctDtls = value if value is not None else base_types.UninitialisedField(self, 'CtctDtls', Contact14, True)
 
 	@CtctDtls.deleter
 	def CtctDtls(self):
 		del self._CtctDtls
-		self._CtctDtls = None
+		self._CtctDtls = base_types.UninitialisedField(self, 'CtctDtls', Contact14, True)
 
 	@property
 	def LckSts(self):
@@ -62,12 +62,12 @@ class SystemParty7(base_types._BaseFieldType):
 
 	@LckSts.setter
 	def LckSts(self, value):
-		self._LckSts = value if type(value) != base_types.auto else self.make_default("LckSts")
+		self._LckSts = value if value is not None else base_types.UninitialisedField(self, 'LckSts', PartyLockStatus1, False)
 
 	@LckSts.deleter
 	def LckSts(self):
 		del self._LckSts
-		self._LckSts = None
+		self._LckSts = base_types.UninitialisedField(self, 'LckSts', PartyLockStatus1, False)
 
 	@property
 	def MktSpcfcAttr(self):
@@ -75,12 +75,12 @@ class SystemParty7(base_types._BaseFieldType):
 
 	@MktSpcfcAttr.setter
 	def MktSpcfcAttr(self, value):
-		self._MktSpcfcAttr = value if type(value) != base_types.auto else self.make_default("MktSpcfcAttr")
+		self._MktSpcfcAttr = value if value is not None else base_types.UninitialisedField(self, 'MktSpcfcAttr', MarketSpecificAttribute1, True)
 
 	@MktSpcfcAttr.deleter
 	def MktSpcfcAttr(self):
 		del self._MktSpcfcAttr
-		self._MktSpcfcAttr = None
+		self._MktSpcfcAttr = base_types.UninitialisedField(self, 'MktSpcfcAttr', MarketSpecificAttribute1, True)
 
 	@property
 	def Nm(self):
@@ -88,12 +88,12 @@ class SystemParty7(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', PartyName4, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', PartyName4, False)
 
 	@property
 	def OpngDt(self):
@@ -101,12 +101,12 @@ class SystemParty7(base_types._BaseFieldType):
 
 	@OpngDt.setter
 	def OpngDt(self, value):
-		self._OpngDt = value if type(value) != base_types.auto else self.make_default("OpngDt")
+		self._OpngDt = value if value is not None else base_types.UninitialisedField(self, 'OpngDt', ISODate, False)
 
 	@OpngDt.deleter
 	def OpngDt(self):
 		del self._OpngDt
-		self._OpngDt = None
+		self._OpngDt = base_types.UninitialisedField(self, 'OpngDt', ISODate, False)
 
 	@property
 	def PtyId(self):
@@ -114,12 +114,12 @@ class SystemParty7(base_types._BaseFieldType):
 
 	@PtyId.setter
 	def PtyId(self, value):
-		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
+		self._PtyId = value if value is not None else base_types.UninitialisedField(self, 'PtyId', SystemPartyIdentification9, False)
 
 	@PtyId.deleter
 	def PtyId(self):
 		del self._PtyId
-		self._PtyId = None
+		self._PtyId = base_types.UninitialisedField(self, 'PtyId', SystemPartyIdentification9, False)
 
 	@property
 	def ResTp(self):
@@ -127,12 +127,12 @@ class SystemParty7(base_types._BaseFieldType):
 
 	@ResTp.setter
 	def ResTp(self, value):
-		self._ResTp = value if type(value) != base_types.auto else self.make_default("ResTp")
+		self._ResTp = value if value is not None else base_types.UninitialisedField(self, 'ResTp', ResidenceType1Code, False)
 
 	@ResTp.deleter
 	def ResTp(self):
 		del self._ResTp
-		self._ResTp = None
+		self._ResTp = base_types.UninitialisedField(self, 'ResTp', ResidenceType1Code, False)
 
 	@property
 	def Rstrctn(self):
@@ -140,12 +140,12 @@ class SystemParty7(base_types._BaseFieldType):
 
 	@Rstrctn.setter
 	def Rstrctn(self, value):
-		self._Rstrctn = value if type(value) != base_types.auto else self.make_default("Rstrctn")
+		self._Rstrctn = value if value is not None else base_types.UninitialisedField(self, 'Rstrctn', SystemRestriction1, True)
 
 	@Rstrctn.deleter
 	def Rstrctn(self):
 		del self._Rstrctn
-		self._Rstrctn = None
+		self._Rstrctn = base_types.UninitialisedField(self, 'Rstrctn', SystemRestriction1, True)
 
 	@property
 	def TechAdr(self):
@@ -153,12 +153,12 @@ class SystemParty7(base_types._BaseFieldType):
 
 	@TechAdr.setter
 	def TechAdr(self, value):
-		self._TechAdr = value if type(value) != base_types.auto else self.make_default("TechAdr")
+		self._TechAdr = value if value is not None else base_types.UninitialisedField(self, 'TechAdr', TechnicalIdentification2Choice, True)
 
 	@TechAdr.deleter
 	def TechAdr(self):
 		del self._TechAdr
-		self._TechAdr = None
+		self._TechAdr = base_types.UninitialisedField(self, 'TechAdr', TechnicalIdentification2Choice, True)
 
 	@property
 	def Tp(self):
@@ -166,12 +166,12 @@ class SystemParty7(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', SystemPartyType1Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', SystemPartyType1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Adr', type=PostalAddress28, min=0, max=None, mutex_group=None, array=True),

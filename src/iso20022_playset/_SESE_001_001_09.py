@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._TransferOutInstructionV09 import TransferOutInstructionV09
+from . import TransferOutInstructionV09
 
 class SESE_001_001_09():
 
@@ -18,12 +18,12 @@ class SESE_001_001_09():
 
 		@TrfOutInstr.setter
 		def TrfOutInstr(self, value):
-			self._TrfOutInstr = value if type(value) != base_types.auto else self.make_default("TrfOutInstr")
+			self._TrfOutInstr = value if value is not None else base_types.UninitialisedField(self, 'TrfOutInstr', TransferOutInstructionV09, False)
 
 		@TrfOutInstr.deleter
 		def TrfOutInstr(self):
 			del self._TrfOutInstr
-			self._TrfOutInstr = None
+			self._TrfOutInstr = base_types.UninitialisedField(self, 'TrfOutInstr', TransferOutInstructionV09, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='TrfOutInstr', type=TransferOutInstructionV09, min=1, max=1, mutex_group=None, array=False),

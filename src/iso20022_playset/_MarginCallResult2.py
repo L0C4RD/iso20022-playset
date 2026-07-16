@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Result1 import Result1
+from . import Result1
 
 class MarginCallResult2(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class MarginCallResult2(base_types._BaseFieldType):
 
 	@SgrtdIndpdntAmt.setter
 	def SgrtdIndpdntAmt(self, value):
-		self._SgrtdIndpdntAmt = value if type(value) != base_types.auto else self.make_default("SgrtdIndpdntAmt")
+		self._SgrtdIndpdntAmt = value if value is not None else base_types.UninitialisedField(self, 'SgrtdIndpdntAmt', Result1, False)
 
 	@SgrtdIndpdntAmt.deleter
 	def SgrtdIndpdntAmt(self):
 		del self._SgrtdIndpdntAmt
-		self._SgrtdIndpdntAmt = None
+		self._SgrtdIndpdntAmt = base_types.UninitialisedField(self, 'SgrtdIndpdntAmt', Result1, False)
 
 	@property
 	def VartnMrgnRslt(self):
@@ -26,12 +26,12 @@ class MarginCallResult2(base_types._BaseFieldType):
 
 	@VartnMrgnRslt.setter
 	def VartnMrgnRslt(self, value):
-		self._VartnMrgnRslt = value if type(value) != base_types.auto else self.make_default("VartnMrgnRslt")
+		self._VartnMrgnRslt = value if value is not None else base_types.UninitialisedField(self, 'VartnMrgnRslt', Result1, False)
 
 	@VartnMrgnRslt.deleter
 	def VartnMrgnRslt(self):
 		del self._VartnMrgnRslt
-		self._VartnMrgnRslt = None
+		self._VartnMrgnRslt = base_types.UninitialisedField(self, 'VartnMrgnRslt', Result1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SgrtdIndpdntAmt', type=Result1, min=0, max=1, mutex_group=None, array=False),

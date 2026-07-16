@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SettlementFailsDerogation1 import SettlementFailsDerogation1
-from ._SettlementFailureReason3 import SettlementFailureReason3
-from ._SettlementTotalData1 import SettlementTotalData1
+from . import SettlementFailsDerogation1
+from . import SettlementFailureReason3
+from . import SettlementTotalData1
 
 class SettlementFailsData4(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SettlementFailsData4(base_types._BaseFieldType):
 
 	@ElgblForDrgtn.setter
 	def ElgblForDrgtn(self, value):
-		self._ElgblForDrgtn = value if type(value) != base_types.auto else self.make_default("ElgblForDrgtn")
+		self._ElgblForDrgtn = value if value is not None else base_types.UninitialisedField(self, 'ElgblForDrgtn', SettlementFailsDerogation1, False)
 
 	@ElgblForDrgtn.deleter
 	def ElgblForDrgtn(self):
 		del self._ElgblForDrgtn
-		self._ElgblForDrgtn = None
+		self._ElgblForDrgtn = base_types.UninitialisedField(self, 'ElgblForDrgtn', SettlementFailsDerogation1, False)
 
 	@property
 	def FailrRsn(self):
@@ -28,12 +28,12 @@ class SettlementFailsData4(base_types._BaseFieldType):
 
 	@FailrRsn.setter
 	def FailrRsn(self, value):
-		self._FailrRsn = value if type(value) != base_types.auto else self.make_default("FailrRsn")
+		self._FailrRsn = value if value is not None else base_types.UninitialisedField(self, 'FailrRsn', SettlementFailureReason3, False)
 
 	@FailrRsn.deleter
 	def FailrRsn(self):
 		del self._FailrRsn
-		self._FailrRsn = None
+		self._FailrRsn = base_types.UninitialisedField(self, 'FailrRsn', SettlementFailureReason3, False)
 
 	@property
 	def Ttl(self):
@@ -41,12 +41,12 @@ class SettlementFailsData4(base_types._BaseFieldType):
 
 	@Ttl.setter
 	def Ttl(self, value):
-		self._Ttl = value if type(value) != base_types.auto else self.make_default("Ttl")
+		self._Ttl = value if value is not None else base_types.UninitialisedField(self, 'Ttl', SettlementTotalData1, False)
 
 	@Ttl.deleter
 	def Ttl(self):
 		del self._Ttl
-		self._Ttl = None
+		self._Ttl = base_types.UninitialisedField(self, 'Ttl', SettlementTotalData1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ElgblForDrgtn', type=SettlementFailsDerogation1, min=1, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DataModification1Code import DataModification1Code
-from ._Intermediary46 import Intermediary46
+from . import DataModification1Code
+from . import Intermediary46
 
 class ModificationScope40(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ModificationScope40(base_types._BaseFieldType):
 
 	@Intrmy.setter
 	def Intrmy(self, value):
-		self._Intrmy = value if type(value) != base_types.auto else self.make_default("Intrmy")
+		self._Intrmy = value if value is not None else base_types.UninitialisedField(self, 'Intrmy', Intermediary46, False)
 
 	@Intrmy.deleter
 	def Intrmy(self):
 		del self._Intrmy
-		self._Intrmy = None
+		self._Intrmy = base_types.UninitialisedField(self, 'Intrmy', Intermediary46, False)
 
 	@property
 	def ModScpIndctn(self):
@@ -27,12 +27,12 @@ class ModificationScope40(base_types._BaseFieldType):
 
 	@ModScpIndctn.setter
 	def ModScpIndctn(self, value):
-		self._ModScpIndctn = value if type(value) != base_types.auto else self.make_default("ModScpIndctn")
+		self._ModScpIndctn = value if value is not None else base_types.UninitialisedField(self, 'ModScpIndctn', DataModification1Code, False)
 
 	@ModScpIndctn.deleter
 	def ModScpIndctn(self):
 		del self._ModScpIndctn
-		self._ModScpIndctn = None
+		self._ModScpIndctn = base_types.UninitialisedField(self, 'ModScpIndctn', DataModification1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Intrmy', type=Intermediary46, min=1, max=1, mutex_group=None, array=False),

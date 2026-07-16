@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardDataReading8Code import CardDataReading8Code
-from ._ICCResetData1 import ICCResetData1
-from ._Max10000Binary import Max10000Binary
+from . import CardDataReading8Code
+from . import ICCResetData1
+from . import Max10000Binary
 
 class DeviceInitialisationCardReaderResponse2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class DeviceInitialisationCardReaderResponse2(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max10000Binary, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max10000Binary, False)
 
 	@property
 	def CardNtryMd(self):
@@ -28,12 +28,12 @@ class DeviceInitialisationCardReaderResponse2(base_types._BaseFieldType):
 
 	@CardNtryMd.setter
 	def CardNtryMd(self, value):
-		self._CardNtryMd = value if type(value) != base_types.auto else self.make_default("CardNtryMd")
+		self._CardNtryMd = value if value is not None else base_types.UninitialisedField(self, 'CardNtryMd', CardDataReading8Code, False)
 
 	@CardNtryMd.deleter
 	def CardNtryMd(self):
 		del self._CardNtryMd
-		self._CardNtryMd = None
+		self._CardNtryMd = base_types.UninitialisedField(self, 'CardNtryMd', CardDataReading8Code, False)
 
 	@property
 	def ICCRstData(self):
@@ -41,12 +41,12 @@ class DeviceInitialisationCardReaderResponse2(base_types._BaseFieldType):
 
 	@ICCRstData.setter
 	def ICCRstData(self, value):
-		self._ICCRstData = value if type(value) != base_types.auto else self.make_default("ICCRstData")
+		self._ICCRstData = value if value is not None else base_types.UninitialisedField(self, 'ICCRstData', ICCResetData1, False)
 
 	@ICCRstData.deleter
 	def ICCRstData(self):
 		del self._ICCRstData
-		self._ICCRstData = None
+		self._ICCRstData = base_types.UninitialisedField(self, 'ICCRstData', ICCResetData1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),

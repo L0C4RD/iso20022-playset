@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashAsset3 import CashAsset3
-from ._FinancialInstrumentIdentification2 import FinancialInstrumentIdentification2
-from ._OtherAsset2 import OtherAsset2
+from . import CashAsset3
+from . import FinancialInstrumentIdentification2
+from . import OtherAsset2
 
 class FinancialInstrument63Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class FinancialInstrument63Choice(base_types._BaseFieldType):
 
 	@CshAsst.setter
 	def CshAsst(self, value):
-		self._CshAsst = value if type(value) != base_types.auto else self.make_default("CshAsst")
+		self._CshAsst = value if value is not None else base_types.UninitialisedField(self, 'CshAsst', CashAsset3, False)
 
 	@CshAsst.deleter
 	def CshAsst(self):
 		del self._CshAsst
-		self._CshAsst = None
+		self._CshAsst = base_types.UninitialisedField(self, 'CshAsst', CashAsset3, False)
 
 	@property
 	def OthrAsst(self):
@@ -28,12 +28,12 @@ class FinancialInstrument63Choice(base_types._BaseFieldType):
 
 	@OthrAsst.setter
 	def OthrAsst(self, value):
-		self._OthrAsst = value if type(value) != base_types.auto else self.make_default("OthrAsst")
+		self._OthrAsst = value if value is not None else base_types.UninitialisedField(self, 'OthrAsst', OtherAsset2, False)
 
 	@OthrAsst.deleter
 	def OthrAsst(self):
 		del self._OthrAsst
-		self._OthrAsst = None
+		self._OthrAsst = base_types.UninitialisedField(self, 'OthrAsst', OtherAsset2, False)
 
 	@property
 	def Scty(self):
@@ -41,12 +41,12 @@ class FinancialInstrument63Choice(base_types._BaseFieldType):
 
 	@Scty.setter
 	def Scty(self, value):
-		self._Scty = value if type(value) != base_types.auto else self.make_default("Scty")
+		self._Scty = value if value is not None else base_types.UninitialisedField(self, 'Scty', FinancialInstrumentIdentification2, False)
 
 	@Scty.deleter
 	def Scty(self):
 		del self._Scty
-		self._Scty = None
+		self._Scty = base_types.UninitialisedField(self, 'Scty', FinancialInstrumentIdentification2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshAsst', type=CashAsset3, min=0, max=1, mutex_group=1, array=False),

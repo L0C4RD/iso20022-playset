@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdvisingPartyAdditionalInformation1 import AdvisingPartyAdditionalInformation1
-from ._PartyAndSignature2 import PartyAndSignature2
-from ._UndertakingAmendmentMessage1 import UndertakingAmendmentMessage1
-from ._UndertakingConfirmation1 import UndertakingConfirmation1
+from . import AdvisingPartyAdditionalInformation1
+from . import PartyAndSignature2
+from . import UndertakingAmendmentMessage1
+from . import UndertakingConfirmation1
 
 class Amendment2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class Amendment2(base_types._BaseFieldType):
 
 	@ConfDtls.setter
 	def ConfDtls(self, value):
-		self._ConfDtls = value if type(value) != base_types.auto else self.make_default("ConfDtls")
+		self._ConfDtls = value if value is not None else base_types.UninitialisedField(self, 'ConfDtls', UndertakingConfirmation1, False)
 
 	@ConfDtls.deleter
 	def ConfDtls(self):
 		del self._ConfDtls
-		self._ConfDtls = None
+		self._ConfDtls = base_types.UninitialisedField(self, 'ConfDtls', UndertakingConfirmation1, False)
 
 	@property
 	def DgtlSgntr(self):
@@ -29,12 +29,12 @@ class Amendment2(base_types._BaseFieldType):
 
 	@DgtlSgntr.setter
 	def DgtlSgntr(self, value):
-		self._DgtlSgntr = value if type(value) != base_types.auto else self.make_default("DgtlSgntr")
+		self._DgtlSgntr = value if value is not None else base_types.UninitialisedField(self, 'DgtlSgntr', PartyAndSignature2, True)
 
 	@DgtlSgntr.deleter
 	def DgtlSgntr(self):
 		del self._DgtlSgntr
-		self._DgtlSgntr = None
+		self._DgtlSgntr = base_types.UninitialisedField(self, 'DgtlSgntr', PartyAndSignature2, True)
 
 	@property
 	def FrstAdvsgPtyAddtlInf(self):
@@ -42,12 +42,12 @@ class Amendment2(base_types._BaseFieldType):
 
 	@FrstAdvsgPtyAddtlInf.setter
 	def FrstAdvsgPtyAddtlInf(self, value):
-		self._FrstAdvsgPtyAddtlInf = value if type(value) != base_types.auto else self.make_default("FrstAdvsgPtyAddtlInf")
+		self._FrstAdvsgPtyAddtlInf = value if value is not None else base_types.UninitialisedField(self, 'FrstAdvsgPtyAddtlInf', AdvisingPartyAdditionalInformation1, False)
 
 	@FrstAdvsgPtyAddtlInf.deleter
 	def FrstAdvsgPtyAddtlInf(self):
 		del self._FrstAdvsgPtyAddtlInf
-		self._FrstAdvsgPtyAddtlInf = None
+		self._FrstAdvsgPtyAddtlInf = base_types.UninitialisedField(self, 'FrstAdvsgPtyAddtlInf', AdvisingPartyAdditionalInformation1, False)
 
 	@property
 	def ScndAdvsgPtyAddtlInf(self):
@@ -55,12 +55,12 @@ class Amendment2(base_types._BaseFieldType):
 
 	@ScndAdvsgPtyAddtlInf.setter
 	def ScndAdvsgPtyAddtlInf(self, value):
-		self._ScndAdvsgPtyAddtlInf = value if type(value) != base_types.auto else self.make_default("ScndAdvsgPtyAddtlInf")
+		self._ScndAdvsgPtyAddtlInf = value if value is not None else base_types.UninitialisedField(self, 'ScndAdvsgPtyAddtlInf', AdvisingPartyAdditionalInformation1, False)
 
 	@ScndAdvsgPtyAddtlInf.deleter
 	def ScndAdvsgPtyAddtlInf(self):
 		del self._ScndAdvsgPtyAddtlInf
-		self._ScndAdvsgPtyAddtlInf = None
+		self._ScndAdvsgPtyAddtlInf = base_types.UninitialisedField(self, 'ScndAdvsgPtyAddtlInf', AdvisingPartyAdditionalInformation1, False)
 
 	@property
 	def UdrtkgAmdmntMsg(self):
@@ -68,12 +68,12 @@ class Amendment2(base_types._BaseFieldType):
 
 	@UdrtkgAmdmntMsg.setter
 	def UdrtkgAmdmntMsg(self, value):
-		self._UdrtkgAmdmntMsg = value if type(value) != base_types.auto else self.make_default("UdrtkgAmdmntMsg")
+		self._UdrtkgAmdmntMsg = value if value is not None else base_types.UninitialisedField(self, 'UdrtkgAmdmntMsg', UndertakingAmendmentMessage1, False)
 
 	@UdrtkgAmdmntMsg.deleter
 	def UdrtkgAmdmntMsg(self):
 		del self._UdrtkgAmdmntMsg
-		self._UdrtkgAmdmntMsg = None
+		self._UdrtkgAmdmntMsg = base_types.UninitialisedField(self, 'UdrtkgAmdmntMsg', UndertakingAmendmentMessage1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ConfDtls', type=UndertakingConfirmation1, min=0, max=1, mutex_group=None, array=False),

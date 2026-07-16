@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
+from . import ISODate
 
 class DatePeriod5(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class DatePeriod5(base_types._BaseFieldType):
 
 	@CurValDt.setter
 	def CurValDt(self, value):
-		self._CurValDt = value if type(value) != base_types.auto else self.make_default("CurValDt")
+		self._CurValDt = value if value is not None else base_types.UninitialisedField(self, 'CurValDt', ISODate, False)
 
 	@CurValDt.deleter
 	def CurValDt(self):
 		del self._CurValDt
-		self._CurValDt = None
+		self._CurValDt = base_types.UninitialisedField(self, 'CurValDt', ISODate, False)
 
 	@property
 	def ReqdValDt(self):
@@ -26,12 +26,12 @@ class DatePeriod5(base_types._BaseFieldType):
 
 	@ReqdValDt.setter
 	def ReqdValDt(self, value):
-		self._ReqdValDt = value if type(value) != base_types.auto else self.make_default("ReqdValDt")
+		self._ReqdValDt = value if value is not None else base_types.UninitialisedField(self, 'ReqdValDt', ISODate, False)
 
 	@ReqdValDt.deleter
 	def ReqdValDt(self):
 		del self._ReqdValDt
-		self._ReqdValDt = None
+		self._ReqdValDt = base_types.UninitialisedField(self, 'ReqdValDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CurValDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),

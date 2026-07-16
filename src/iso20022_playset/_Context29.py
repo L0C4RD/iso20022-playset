@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._ISO18245MerchantCategoryCode import ISO18245MerchantCategoryCode
-from ._ISO8583POSConditionCode import ISO8583POSConditionCode
-from ._Max35Text import Max35Text
-from ._TransactionInitiator1Code import TransactionInitiator1Code
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ATICALaxProcessing
+from . import ISO18245MerchantCategoryCode
+from . import ISO8583POSConditionCode
+from . import Max35Text
+from . import TransactionInitiator1Code
+from . import TrueFalseIndicator
 
 class Context29(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class Context29(base_types._BaseFieldType):
 
 	@DelydChrgs.setter
 	def DelydChrgs(self, value):
-		self._DelydChrgs = value if type(value) != base_types.auto else self.make_default("DelydChrgs")
+		self._DelydChrgs = value if value is not None else base_types.UninitialisedField(self, 'DelydChrgs', TrueFalseIndicator, False)
 
 	@DelydChrgs.deleter
 	def DelydChrgs(self):
 		del self._DelydChrgs
-		self._DelydChrgs = None
+		self._DelydChrgs = base_types.UninitialisedField(self, 'DelydChrgs', TrueFalseIndicator, False)
 
 	@property
 	def MrchntCtgyCd(self):
@@ -31,12 +31,12 @@ class Context29(base_types._BaseFieldType):
 
 	@MrchntCtgyCd.setter
 	def MrchntCtgyCd(self, value):
-		self._MrchntCtgyCd = value if type(value) != base_types.auto else self.make_default("MrchntCtgyCd")
+		self._MrchntCtgyCd = value if value is not None else base_types.UninitialisedField(self, 'MrchntCtgyCd', ISO18245MerchantCategoryCode, False)
 
 	@MrchntCtgyCd.deleter
 	def MrchntCtgyCd(self):
 		del self._MrchntCtgyCd
-		self._MrchntCtgyCd = None
+		self._MrchntCtgyCd = base_types.UninitialisedField(self, 'MrchntCtgyCd', ISO18245MerchantCategoryCode, False)
 
 	@property
 	def MrchntCtgySpcfcData(self):
@@ -44,12 +44,12 @@ class Context29(base_types._BaseFieldType):
 
 	@MrchntCtgySpcfcData.setter
 	def MrchntCtgySpcfcData(self, value):
-		self._MrchntCtgySpcfcData = value if type(value) != base_types.auto else self.make_default("MrchntCtgySpcfcData")
+		self._MrchntCtgySpcfcData = value if value is not None else base_types.UninitialisedField(self, 'MrchntCtgySpcfcData', Max35Text, False)
 
 	@MrchntCtgySpcfcData.deleter
 	def MrchntCtgySpcfcData(self):
 		del self._MrchntCtgySpcfcData
-		self._MrchntCtgySpcfcData = None
+		self._MrchntCtgySpcfcData = base_types.UninitialisedField(self, 'MrchntCtgySpcfcData', Max35Text, False)
 
 	@property
 	def NoShow(self):
@@ -57,12 +57,12 @@ class Context29(base_types._BaseFieldType):
 
 	@NoShow.setter
 	def NoShow(self, value):
-		self._NoShow = value if type(value) != base_types.auto else self.make_default("NoShow")
+		self._NoShow = value if value is not None else base_types.UninitialisedField(self, 'NoShow', TrueFalseIndicator, False)
 
 	@NoShow.deleter
 	def NoShow(self):
 		del self._NoShow
-		self._NoShow = None
+		self._NoShow = base_types.UninitialisedField(self, 'NoShow', TrueFalseIndicator, False)
 
 	@property
 	def NtlData(self):
@@ -70,12 +70,12 @@ class Context29(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def OthrMrchntCtgy(self):
@@ -83,12 +83,12 @@ class Context29(base_types._BaseFieldType):
 
 	@OthrMrchntCtgy.setter
 	def OthrMrchntCtgy(self, value):
-		self._OthrMrchntCtgy = value if type(value) != base_types.auto else self.make_default("OthrMrchntCtgy")
+		self._OthrMrchntCtgy = value if value is not None else base_types.UninitialisedField(self, 'OthrMrchntCtgy', Max35Text, False)
 
 	@OthrMrchntCtgy.deleter
 	def OthrMrchntCtgy(self):
 		del self._OthrMrchntCtgy
-		self._OthrMrchntCtgy = None
+		self._OthrMrchntCtgy = base_types.UninitialisedField(self, 'OthrMrchntCtgy', Max35Text, False)
 
 	@property
 	def POSCondCd(self):
@@ -96,12 +96,12 @@ class Context29(base_types._BaseFieldType):
 
 	@POSCondCd.setter
 	def POSCondCd(self, value):
-		self._POSCondCd = value if type(value) != base_types.auto else self.make_default("POSCondCd")
+		self._POSCondCd = value if value is not None else base_types.UninitialisedField(self, 'POSCondCd', ISO8583POSConditionCode, False)
 
 	@POSCondCd.deleter
 	def POSCondCd(self):
 		del self._POSCondCd
-		self._POSCondCd = None
+		self._POSCondCd = base_types.UninitialisedField(self, 'POSCondCd', ISO8583POSConditionCode, False)
 
 	@property
 	def PrtlShipmnt(self):
@@ -109,12 +109,12 @@ class Context29(base_types._BaseFieldType):
 
 	@PrtlShipmnt.setter
 	def PrtlShipmnt(self, value):
-		self._PrtlShipmnt = value if type(value) != base_types.auto else self.make_default("PrtlShipmnt")
+		self._PrtlShipmnt = value if value is not None else base_types.UninitialisedField(self, 'PrtlShipmnt', TrueFalseIndicator, False)
 
 	@PrtlShipmnt.deleter
 	def PrtlShipmnt(self):
 		del self._PrtlShipmnt
-		self._PrtlShipmnt = None
+		self._PrtlShipmnt = base_types.UninitialisedField(self, 'PrtlShipmnt', TrueFalseIndicator, False)
 
 	@property
 	def PrvtData(self):
@@ -122,12 +122,12 @@ class Context29(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def ReSubmissn(self):
@@ -135,12 +135,12 @@ class Context29(base_types._BaseFieldType):
 
 	@ReSubmissn.setter
 	def ReSubmissn(self, value):
-		self._ReSubmissn = value if type(value) != base_types.auto else self.make_default("ReSubmissn")
+		self._ReSubmissn = value if value is not None else base_types.UninitialisedField(self, 'ReSubmissn', TrueFalseIndicator, False)
 
 	@ReSubmissn.deleter
 	def ReSubmissn(self):
 		del self._ReSubmissn
-		self._ReSubmissn = None
+		self._ReSubmissn = base_types.UninitialisedField(self, 'ReSubmissn', TrueFalseIndicator, False)
 
 	@property
 	def Reauthstn(self):
@@ -148,12 +148,12 @@ class Context29(base_types._BaseFieldType):
 
 	@Reauthstn.setter
 	def Reauthstn(self, value):
-		self._Reauthstn = value if type(value) != base_types.auto else self.make_default("Reauthstn")
+		self._Reauthstn = value if value is not None else base_types.UninitialisedField(self, 'Reauthstn', TrueFalseIndicator, False)
 
 	@Reauthstn.deleter
 	def Reauthstn(self):
 		del self._Reauthstn
-		self._Reauthstn = None
+		self._Reauthstn = base_types.UninitialisedField(self, 'Reauthstn', TrueFalseIndicator, False)
 
 	@property
 	def TxInitr(self):
@@ -161,12 +161,12 @@ class Context29(base_types._BaseFieldType):
 
 	@TxInitr.setter
 	def TxInitr(self, value):
-		self._TxInitr = value if type(value) != base_types.auto else self.make_default("TxInitr")
+		self._TxInitr = value if value is not None else base_types.UninitialisedField(self, 'TxInitr', TransactionInitiator1Code, False)
 
 	@TxInitr.deleter
 	def TxInitr(self):
 		del self._TxInitr
-		self._TxInitr = None
+		self._TxInitr = base_types.UninitialisedField(self, 'TxInitr', TransactionInitiator1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DelydChrgs', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),

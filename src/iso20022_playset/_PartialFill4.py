@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MarketIdentification97 import MarketIdentification97
-from ._Price14 import Price14
-from ._Quantity6Choice import Quantity6Choice
-from ._QuantityOrAmount2Choice import QuantityOrAmount2Choice
-from ._TradeDate7Choice import TradeDate7Choice
+from . import MarketIdentification97
+from . import Price14
+from . import Quantity6Choice
+from . import QuantityOrAmount2Choice
+from . import TradeDate7Choice
 
 class PartialFill4(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class PartialFill4(base_types._BaseFieldType):
 
 	@ConfQty.setter
 	def ConfQty(self, value):
-		self._ConfQty = value if type(value) != base_types.auto else self.make_default("ConfQty")
+		self._ConfQty = value if value is not None else base_types.UninitialisedField(self, 'ConfQty', Quantity6Choice, False)
 
 	@ConfQty.deleter
 	def ConfQty(self):
 		del self._ConfQty
-		self._ConfQty = None
+		self._ConfQty = base_types.UninitialisedField(self, 'ConfQty', Quantity6Choice, False)
 
 	@property
 	def DealPric(self):
@@ -30,12 +30,12 @@ class PartialFill4(base_types._BaseFieldType):
 
 	@DealPric.setter
 	def DealPric(self, value):
-		self._DealPric = value if type(value) != base_types.auto else self.make_default("DealPric")
+		self._DealPric = value if value is not None else base_types.UninitialisedField(self, 'DealPric', Price14, False)
 
 	@DealPric.deleter
 	def DealPric(self):
 		del self._DealPric
-		self._DealPric = None
+		self._DealPric = base_types.UninitialisedField(self, 'DealPric', Price14, False)
 
 	@property
 	def MtchIncrmtQty(self):
@@ -43,12 +43,12 @@ class PartialFill4(base_types._BaseFieldType):
 
 	@MtchIncrmtQty.setter
 	def MtchIncrmtQty(self, value):
-		self._MtchIncrmtQty = value if type(value) != base_types.auto else self.make_default("MtchIncrmtQty")
+		self._MtchIncrmtQty = value if value is not None else base_types.UninitialisedField(self, 'MtchIncrmtQty', QuantityOrAmount2Choice, False)
 
 	@MtchIncrmtQty.deleter
 	def MtchIncrmtQty(self):
 		del self._MtchIncrmtQty
-		self._MtchIncrmtQty = None
+		self._MtchIncrmtQty = base_types.UninitialisedField(self, 'MtchIncrmtQty', QuantityOrAmount2Choice, False)
 
 	@property
 	def OrgnlOrdrdQty(self):
@@ -56,12 +56,12 @@ class PartialFill4(base_types._BaseFieldType):
 
 	@OrgnlOrdrdQty.setter
 	def OrgnlOrdrdQty(self, value):
-		self._OrgnlOrdrdQty = value if type(value) != base_types.auto else self.make_default("OrgnlOrdrdQty")
+		self._OrgnlOrdrdQty = value if value is not None else base_types.UninitialisedField(self, 'OrgnlOrdrdQty', QuantityOrAmount2Choice, False)
 
 	@OrgnlOrdrdQty.deleter
 	def OrgnlOrdrdQty(self):
 		del self._OrgnlOrdrdQty
-		self._OrgnlOrdrdQty = None
+		self._OrgnlOrdrdQty = base_types.UninitialisedField(self, 'OrgnlOrdrdQty', QuantityOrAmount2Choice, False)
 
 	@property
 	def PlcOfTrad(self):
@@ -69,12 +69,12 @@ class PartialFill4(base_types._BaseFieldType):
 
 	@PlcOfTrad.setter
 	def PlcOfTrad(self, value):
-		self._PlcOfTrad = value if type(value) != base_types.auto else self.make_default("PlcOfTrad")
+		self._PlcOfTrad = value if value is not None else base_types.UninitialisedField(self, 'PlcOfTrad', MarketIdentification97, False)
 
 	@PlcOfTrad.deleter
 	def PlcOfTrad(self):
 		del self._PlcOfTrad
-		self._PlcOfTrad = None
+		self._PlcOfTrad = base_types.UninitialisedField(self, 'PlcOfTrad', MarketIdentification97, False)
 
 	@property
 	def PrevslyExctdQty(self):
@@ -82,12 +82,12 @@ class PartialFill4(base_types._BaseFieldType):
 
 	@PrevslyExctdQty.setter
 	def PrevslyExctdQty(self, value):
-		self._PrevslyExctdQty = value if type(value) != base_types.auto else self.make_default("PrevslyExctdQty")
+		self._PrevslyExctdQty = value if value is not None else base_types.UninitialisedField(self, 'PrevslyExctdQty', QuantityOrAmount2Choice, False)
 
 	@PrevslyExctdQty.deleter
 	def PrevslyExctdQty(self):
 		del self._PrevslyExctdQty
-		self._PrevslyExctdQty = None
+		self._PrevslyExctdQty = base_types.UninitialisedField(self, 'PrevslyExctdQty', QuantityOrAmount2Choice, False)
 
 	@property
 	def RmngQty(self):
@@ -95,12 +95,12 @@ class PartialFill4(base_types._BaseFieldType):
 
 	@RmngQty.setter
 	def RmngQty(self, value):
-		self._RmngQty = value if type(value) != base_types.auto else self.make_default("RmngQty")
+		self._RmngQty = value if value is not None else base_types.UninitialisedField(self, 'RmngQty', QuantityOrAmount2Choice, False)
 
 	@RmngQty.deleter
 	def RmngQty(self):
 		del self._RmngQty
-		self._RmngQty = None
+		self._RmngQty = base_types.UninitialisedField(self, 'RmngQty', QuantityOrAmount2Choice, False)
 
 	@property
 	def TradDt(self):
@@ -108,12 +108,12 @@ class PartialFill4(base_types._BaseFieldType):
 
 	@TradDt.setter
 	def TradDt(self, value):
-		self._TradDt = value if type(value) != base_types.auto else self.make_default("TradDt")
+		self._TradDt = value if value is not None else base_types.UninitialisedField(self, 'TradDt', TradeDate7Choice, False)
 
 	@TradDt.deleter
 	def TradDt(self):
 		del self._TradDt
-		self._TradDt = None
+		self._TradDt = base_types.UninitialisedField(self, 'TradDt', TradeDate7Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ConfQty', type=Quantity6Choice, min=1, max=1, mutex_group=None, array=False),

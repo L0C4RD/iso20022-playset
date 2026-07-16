@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MoneyMarketStatisticalReportStatusAdviceV01 import MoneyMarketStatisticalReportStatusAdviceV01
+from . import MoneyMarketStatisticalReportStatusAdviceV01
 
 class AUTH_028_001_01():
 
@@ -18,12 +18,12 @@ class AUTH_028_001_01():
 
 		@MnyMktSttstclRptStsAdvc.setter
 		def MnyMktSttstclRptStsAdvc(self, value):
-			self._MnyMktSttstclRptStsAdvc = value if type(value) != base_types.auto else self.make_default("MnyMktSttstclRptStsAdvc")
+			self._MnyMktSttstclRptStsAdvc = value if value is not None else base_types.UninitialisedField(self, 'MnyMktSttstclRptStsAdvc', MoneyMarketStatisticalReportStatusAdviceV01, False)
 
 		@MnyMktSttstclRptStsAdvc.deleter
 		def MnyMktSttstclRptStsAdvc(self):
 			del self._MnyMktSttstclRptStsAdvc
-			self._MnyMktSttstclRptStsAdvc = None
+			self._MnyMktSttstclRptStsAdvc = base_types.UninitialisedField(self, 'MnyMktSttstclRptStsAdvc', MoneyMarketStatisticalReportStatusAdviceV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='MnyMktSttstclRptStsAdvc', type=MoneyMarketStatisticalReportStatusAdviceV01, min=1, max=1, mutex_group=None, array=False),

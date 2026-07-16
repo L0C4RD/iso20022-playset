@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FloatingInterestRate8 import FloatingInterestRate8
-from ._ISINOct2015Identifier import ISINOct2015Identifier
+from . import FloatingInterestRate8
+from . import ISINOct2015Identifier
 
 class FinancialInstrument58(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class FinancialInstrument58(base_types._BaseFieldType):
 
 	@ISIN.setter
 	def ISIN(self, value):
-		self._ISIN = value if type(value) != base_types.auto else self.make_default("ISIN")
+		self._ISIN = value if value is not None else base_types.UninitialisedField(self, 'ISIN', ISINOct2015Identifier, False)
 
 	@ISIN.deleter
 	def ISIN(self):
 		del self._ISIN
-		self._ISIN = None
+		self._ISIN = base_types.UninitialisedField(self, 'ISIN', ISINOct2015Identifier, False)
 
 	@property
 	def Nm(self):
@@ -27,12 +27,12 @@ class FinancialInstrument58(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', FloatingInterestRate8, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', FloatingInterestRate8, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=1, mutex_group=None, array=False),

@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Geolocation1 import Geolocation1
-from ._Max35Text import Max35Text
-from ._Min2Max3AlphaText import Min2Max3AlphaText
-from ._NetworkParameters7 import NetworkParameters7
-from ._PartyType33Code import PartyType33Code
+from . import Geolocation1
+from . import Max35Text
+from . import Min2Max3AlphaText
+from . import NetworkParameters7
+from . import PartyType33Code
 
 class GenericIdentification177(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class GenericIdentification177(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', Min2Max3AlphaText, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', Min2Max3AlphaText, False)
 
 	@property
 	def Glctn(self):
@@ -30,12 +30,12 @@ class GenericIdentification177(base_types._BaseFieldType):
 
 	@Glctn.setter
 	def Glctn(self, value):
-		self._Glctn = value if type(value) != base_types.auto else self.make_default("Glctn")
+		self._Glctn = value if value is not None else base_types.UninitialisedField(self, 'Glctn', Geolocation1, False)
 
 	@Glctn.deleter
 	def Glctn(self):
 		del self._Glctn
-		self._Glctn = None
+		self._Glctn = base_types.UninitialisedField(self, 'Glctn', Geolocation1, False)
 
 	@property
 	def Id(self):
@@ -43,12 +43,12 @@ class GenericIdentification177(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def Issr(self):
@@ -56,12 +56,12 @@ class GenericIdentification177(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+		self._Issr = value if value is not None else base_types.UninitialisedField(self, 'Issr', PartyType33Code, False)
 
 	@Issr.deleter
 	def Issr(self):
 		del self._Issr
-		self._Issr = None
+		self._Issr = base_types.UninitialisedField(self, 'Issr', PartyType33Code, False)
 
 	@property
 	def RmotAccs(self):
@@ -69,12 +69,12 @@ class GenericIdentification177(base_types._BaseFieldType):
 
 	@RmotAccs.setter
 	def RmotAccs(self, value):
-		self._RmotAccs = value if type(value) != base_types.auto else self.make_default("RmotAccs")
+		self._RmotAccs = value if value is not None else base_types.UninitialisedField(self, 'RmotAccs', NetworkParameters7, False)
 
 	@RmotAccs.deleter
 	def RmotAccs(self):
 		del self._RmotAccs
-		self._RmotAccs = None
+		self._RmotAccs = base_types.UninitialisedField(self, 'RmotAccs', NetworkParameters7, False)
 
 	@property
 	def ShrtNm(self):
@@ -82,12 +82,12 @@ class GenericIdentification177(base_types._BaseFieldType):
 
 	@ShrtNm.setter
 	def ShrtNm(self, value):
-		self._ShrtNm = value if type(value) != base_types.auto else self.make_default("ShrtNm")
+		self._ShrtNm = value if value is not None else base_types.UninitialisedField(self, 'ShrtNm', Max35Text, False)
 
 	@ShrtNm.deleter
 	def ShrtNm(self):
 		del self._ShrtNm
-		self._ShrtNm = None
+		self._ShrtNm = base_types.UninitialisedField(self, 'ShrtNm', Max35Text, False)
 
 	@property
 	def Tp(self):
@@ -95,12 +95,12 @@ class GenericIdentification177(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', PartyType33Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', PartyType33Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ctry', type=Min2Max3AlphaText, min=0, max=1, mutex_group=None, array=False),

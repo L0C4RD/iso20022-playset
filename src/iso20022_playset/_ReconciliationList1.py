@@ -2,18 +2,18 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CurrencyAndAmount import CurrencyAndAmount
-from ._DecimalNumber import DecimalNumber
-from ._FinancialItem1 import FinancialItem1
-from ._FinancialItemParameters1 import FinancialItemParameters1
-from ._ISODate import ISODate
-from ._Max15NumericText import Max15NumericText
-from ._Max2000Text import Max2000Text
-from ._PaymentIdentification1 import PaymentIdentification1
-from ._PaymentMeans1 import PaymentMeans1
-from ._PaymentTerms6 import PaymentTerms6
-from ._ValidationStatusInformation1 import ValidationStatusInformation1
-from ._xs:IDREF import xs:IDREF
+from . import CurrencyAndAmount
+from . import DecimalNumber
+from . import FinancialItem1
+from . import FinancialItemParameters1
+from . import ISODate
+from . import Max15NumericText
+from . import Max2000Text
+from . import PaymentIdentification1
+from . import PaymentMeans1
+from . import PaymentTerms6
+from . import ValidationStatusInformation1
+from . import xs:IDREF
 
 class ReconciliationList1(base_types._BaseFieldType):
 
@@ -24,12 +24,12 @@ class ReconciliationList1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max2000Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max2000Text, False)
 
 	@property
 	def Advsr(self):
@@ -37,12 +37,12 @@ class ReconciliationList1(base_types._BaseFieldType):
 
 	@Advsr.setter
 	def Advsr(self, value):
-		self._Advsr = value if type(value) != base_types.auto else self.make_default("Advsr")
+		self._Advsr = value if value is not None else base_types.UninitialisedField(self, 'Advsr', xs:IDREF, False)
 
 	@Advsr.deleter
 	def Advsr(self):
 		del self._Advsr
-		self._Advsr = None
+		self._Advsr = base_types.UninitialisedField(self, 'Advsr', xs:IDREF, False)
 
 	@property
 	def AssoctdDoc(self):
@@ -50,12 +50,12 @@ class ReconciliationList1(base_types._BaseFieldType):
 
 	@AssoctdDoc.setter
 	def AssoctdDoc(self, value):
-		self._AssoctdDoc = value if type(value) != base_types.auto else self.make_default("AssoctdDoc")
+		self._AssoctdDoc = value if value is not None else base_types.UninitialisedField(self, 'AssoctdDoc', xs:IDREF, True)
 
 	@AssoctdDoc.deleter
 	def AssoctdDoc(self):
 		del self._AssoctdDoc
-		self._AssoctdDoc = None
+		self._AssoctdDoc = base_types.UninitialisedField(self, 'AssoctdDoc', xs:IDREF, True)
 
 	@property
 	def CtrlSum(self):
@@ -63,12 +63,12 @@ class ReconciliationList1(base_types._BaseFieldType):
 
 	@CtrlSum.setter
 	def CtrlSum(self, value):
-		self._CtrlSum = value if type(value) != base_types.auto else self.make_default("CtrlSum")
+		self._CtrlSum = value if value is not None else base_types.UninitialisedField(self, 'CtrlSum', DecimalNumber, False)
 
 	@CtrlSum.deleter
 	def CtrlSum(self):
 		del self._CtrlSum
-		self._CtrlSum = None
+		self._CtrlSum = base_types.UninitialisedField(self, 'CtrlSum', DecimalNumber, False)
 
 	@property
 	def Dt(self):
@@ -76,12 +76,12 @@ class ReconciliationList1(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@property
 	def Itm(self):
@@ -89,12 +89,12 @@ class ReconciliationList1(base_types._BaseFieldType):
 
 	@Itm.setter
 	def Itm(self, value):
-		self._Itm = value if type(value) != base_types.auto else self.make_default("Itm")
+		self._Itm = value if value is not None else base_types.UninitialisedField(self, 'Itm', FinancialItem1, True)
 
 	@Itm.deleter
 	def Itm(self):
 		del self._Itm
-		self._Itm = None
+		self._Itm = base_types.UninitialisedField(self, 'Itm', FinancialItem1, True)
 
 	@property
 	def ItmCnt(self):
@@ -102,12 +102,12 @@ class ReconciliationList1(base_types._BaseFieldType):
 
 	@ItmCnt.setter
 	def ItmCnt(self, value):
-		self._ItmCnt = value if type(value) != base_types.auto else self.make_default("ItmCnt")
+		self._ItmCnt = value if value is not None else base_types.UninitialisedField(self, 'ItmCnt', Max15NumericText, False)
 
 	@ItmCnt.deleter
 	def ItmCnt(self):
 		del self._ItmCnt
-		self._ItmCnt = None
+		self._ItmCnt = base_types.UninitialisedField(self, 'ItmCnt', Max15NumericText, False)
 
 	@property
 	def Params(self):
@@ -115,12 +115,12 @@ class ReconciliationList1(base_types._BaseFieldType):
 
 	@Params.setter
 	def Params(self, value):
-		self._Params = value if type(value) != base_types.auto else self.make_default("Params")
+		self._Params = value if value is not None else base_types.UninitialisedField(self, 'Params', FinancialItemParameters1, False)
 
 	@Params.deleter
 	def Params(self):
 		del self._Params
-		self._Params = None
+		self._Params = base_types.UninitialisedField(self, 'Params', FinancialItemParameters1, False)
 
 	@property
 	def PmtAmt(self):
@@ -128,12 +128,12 @@ class ReconciliationList1(base_types._BaseFieldType):
 
 	@PmtAmt.setter
 	def PmtAmt(self, value):
-		self._PmtAmt = value if type(value) != base_types.auto else self.make_default("PmtAmt")
+		self._PmtAmt = value if value is not None else base_types.UninitialisedField(self, 'PmtAmt', CurrencyAndAmount, False)
 
 	@PmtAmt.deleter
 	def PmtAmt(self):
 		del self._PmtAmt
-		self._PmtAmt = None
+		self._PmtAmt = base_types.UninitialisedField(self, 'PmtAmt', CurrencyAndAmount, False)
 
 	@property
 	def PmtDt(self):
@@ -141,12 +141,12 @@ class ReconciliationList1(base_types._BaseFieldType):
 
 	@PmtDt.setter
 	def PmtDt(self, value):
-		self._PmtDt = value if type(value) != base_types.auto else self.make_default("PmtDt")
+		self._PmtDt = value if value is not None else base_types.UninitialisedField(self, 'PmtDt', ISODate, False)
 
 	@PmtDt.deleter
 	def PmtDt(self):
 		del self._PmtDt
-		self._PmtDt = None
+		self._PmtDt = base_types.UninitialisedField(self, 'PmtDt', ISODate, False)
 
 	@property
 	def PmtMeans(self):
@@ -154,12 +154,12 @@ class ReconciliationList1(base_types._BaseFieldType):
 
 	@PmtMeans.setter
 	def PmtMeans(self, value):
-		self._PmtMeans = value if type(value) != base_types.auto else self.make_default("PmtMeans")
+		self._PmtMeans = value if value is not None else base_types.UninitialisedField(self, 'PmtMeans', PaymentMeans1, False)
 
 	@PmtMeans.deleter
 	def PmtMeans(self):
 		del self._PmtMeans
-		self._PmtMeans = None
+		self._PmtMeans = base_types.UninitialisedField(self, 'PmtMeans', PaymentMeans1, False)
 
 	@property
 	def PmtRef(self):
@@ -167,12 +167,12 @@ class ReconciliationList1(base_types._BaseFieldType):
 
 	@PmtRef.setter
 	def PmtRef(self, value):
-		self._PmtRef = value if type(value) != base_types.auto else self.make_default("PmtRef")
+		self._PmtRef = value if value is not None else base_types.UninitialisedField(self, 'PmtRef', PaymentIdentification1, False)
 
 	@PmtRef.deleter
 	def PmtRef(self):
 		del self._PmtRef
-		self._PmtRef = None
+		self._PmtRef = base_types.UninitialisedField(self, 'PmtRef', PaymentIdentification1, False)
 
 	@property
 	def PmtTerms(self):
@@ -180,12 +180,12 @@ class ReconciliationList1(base_types._BaseFieldType):
 
 	@PmtTerms.setter
 	def PmtTerms(self, value):
-		self._PmtTerms = value if type(value) != base_types.auto else self.make_default("PmtTerms")
+		self._PmtTerms = value if value is not None else base_types.UninitialisedField(self, 'PmtTerms', PaymentTerms6, False)
 
 	@PmtTerms.deleter
 	def PmtTerms(self):
 		del self._PmtTerms
-		self._PmtTerms = None
+		self._PmtTerms = base_types.UninitialisedField(self, 'PmtTerms', PaymentTerms6, False)
 
 	@property
 	def Rcpt(self):
@@ -193,12 +193,12 @@ class ReconciliationList1(base_types._BaseFieldType):
 
 	@Rcpt.setter
 	def Rcpt(self, value):
-		self._Rcpt = value if type(value) != base_types.auto else self.make_default("Rcpt")
+		self._Rcpt = value if value is not None else base_types.UninitialisedField(self, 'Rcpt', xs:IDREF, False)
 
 	@Rcpt.deleter
 	def Rcpt(self):
 		del self._Rcpt
-		self._Rcpt = None
+		self._Rcpt = base_types.UninitialisedField(self, 'Rcpt', xs:IDREF, False)
 
 	@property
 	def RltdDoc(self):
@@ -206,12 +206,12 @@ class ReconciliationList1(base_types._BaseFieldType):
 
 	@RltdDoc.setter
 	def RltdDoc(self, value):
-		self._RltdDoc = value if type(value) != base_types.auto else self.make_default("RltdDoc")
+		self._RltdDoc = value if value is not None else base_types.UninitialisedField(self, 'RltdDoc', xs:IDREF, True)
 
 	@RltdDoc.deleter
 	def RltdDoc(self):
 		del self._RltdDoc
-		self._RltdDoc = None
+		self._RltdDoc = base_types.UninitialisedField(self, 'RltdDoc', xs:IDREF, True)
 
 	@property
 	def VldtnStsInf(self):
@@ -219,12 +219,12 @@ class ReconciliationList1(base_types._BaseFieldType):
 
 	@VldtnStsInf.setter
 	def VldtnStsInf(self, value):
-		self._VldtnStsInf = value if type(value) != base_types.auto else self.make_default("VldtnStsInf")
+		self._VldtnStsInf = value if value is not None else base_types.UninitialisedField(self, 'VldtnStsInf', ValidationStatusInformation1, False)
 
 	@VldtnStsInf.deleter
 	def VldtnStsInf(self):
 		del self._VldtnStsInf
-		self._VldtnStsInf = None
+		self._VldtnStsInf = base_types.UninitialisedField(self, 'VldtnStsInf', ValidationStatusInformation1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=1, mutex_group=None, array=False),

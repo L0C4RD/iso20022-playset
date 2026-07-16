@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
-from ._GenericIdentification168 import GenericIdentification168
-from ._MICIdentifier import MICIdentifier
-from ._NonNegativeNumber import NonNegativeNumber
-from ._OpenInterest1 import OpenInterest1
-from ._Product1Choice import Product1Choice
+from . import ActiveCurrencyAnd24Amount
+from . import GenericIdentification168
+from . import MICIdentifier
+from . import NonNegativeNumber
+from . import OpenInterest1
+from . import Product1Choice
 
 class ClearedProduct2(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class ClearedProduct2(base_types._BaseFieldType):
 
 	@CCPPdctId.setter
 	def CCPPdctId(self, value):
-		self._CCPPdctId = value if type(value) != base_types.auto else self.make_default("CCPPdctId")
+		self._CCPPdctId = value if value is not None else base_types.UninitialisedField(self, 'CCPPdctId', GenericIdentification168, False)
 
 	@CCPPdctId.deleter
 	def CCPPdctId(self):
 		del self._CCPPdctId
-		self._CCPPdctId = None
+		self._CCPPdctId = base_types.UninitialisedField(self, 'CCPPdctId', GenericIdentification168, False)
 
 	@property
 	def ClrdGrssNtnlAmt(self):
@@ -31,12 +31,12 @@ class ClearedProduct2(base_types._BaseFieldType):
 
 	@ClrdGrssNtnlAmt.setter
 	def ClrdGrssNtnlAmt(self, value):
-		self._ClrdGrssNtnlAmt = value if type(value) != base_types.auto else self.make_default("ClrdGrssNtnlAmt")
+		self._ClrdGrssNtnlAmt = value if value is not None else base_types.UninitialisedField(self, 'ClrdGrssNtnlAmt', ActiveCurrencyAnd24Amount, False)
 
 	@ClrdGrssNtnlAmt.deleter
 	def ClrdGrssNtnlAmt(self):
 		del self._ClrdGrssNtnlAmt
-		self._ClrdGrssNtnlAmt = None
+		self._ClrdGrssNtnlAmt = base_types.UninitialisedField(self, 'ClrdGrssNtnlAmt', ActiveCurrencyAnd24Amount, False)
 
 	@property
 	def OpnIntrst(self):
@@ -44,12 +44,12 @@ class ClearedProduct2(base_types._BaseFieldType):
 
 	@OpnIntrst.setter
 	def OpnIntrst(self, value):
-		self._OpnIntrst = value if type(value) != base_types.auto else self.make_default("OpnIntrst")
+		self._OpnIntrst = value if value is not None else base_types.UninitialisedField(self, 'OpnIntrst', OpenInterest1, False)
 
 	@OpnIntrst.deleter
 	def OpnIntrst(self):
 		del self._OpnIntrst
-		self._OpnIntrst = None
+		self._OpnIntrst = base_types.UninitialisedField(self, 'OpnIntrst', OpenInterest1, False)
 
 	@property
 	def Pdct(self):
@@ -57,12 +57,12 @@ class ClearedProduct2(base_types._BaseFieldType):
 
 	@Pdct.setter
 	def Pdct(self, value):
-		self._Pdct = value if type(value) != base_types.auto else self.make_default("Pdct")
+		self._Pdct = value if value is not None else base_types.UninitialisedField(self, 'Pdct', Product1Choice, False)
 
 	@Pdct.deleter
 	def Pdct(self):
 		del self._Pdct
-		self._Pdct = None
+		self._Pdct = base_types.UninitialisedField(self, 'Pdct', Product1Choice, False)
 
 	@property
 	def TradgVn(self):
@@ -70,12 +70,12 @@ class ClearedProduct2(base_types._BaseFieldType):
 
 	@TradgVn.setter
 	def TradgVn(self, value):
-		self._TradgVn = value if type(value) != base_types.auto else self.make_default("TradgVn")
+		self._TradgVn = value if value is not None else base_types.UninitialisedField(self, 'TradgVn', MICIdentifier, True)
 
 	@TradgVn.deleter
 	def TradgVn(self):
 		del self._TradgVn
-		self._TradgVn = None
+		self._TradgVn = base_types.UninitialisedField(self, 'TradgVn', MICIdentifier, True)
 
 	@property
 	def TrdsClrd(self):
@@ -83,12 +83,12 @@ class ClearedProduct2(base_types._BaseFieldType):
 
 	@TrdsClrd.setter
 	def TrdsClrd(self, value):
-		self._TrdsClrd = value if type(value) != base_types.auto else self.make_default("TrdsClrd")
+		self._TrdsClrd = value if value is not None else base_types.UninitialisedField(self, 'TrdsClrd', NonNegativeNumber, False)
 
 	@TrdsClrd.deleter
 	def TrdsClrd(self):
 		del self._TrdsClrd
-		self._TrdsClrd = None
+		self._TrdsClrd = base_types.UninitialisedField(self, 'TrdsClrd', NonNegativeNumber, False)
 
 	@property
 	def UvrslPdctId(self):
@@ -96,12 +96,12 @@ class ClearedProduct2(base_types._BaseFieldType):
 
 	@UvrslPdctId.setter
 	def UvrslPdctId(self, value):
-		self._UvrslPdctId = value if type(value) != base_types.auto else self.make_default("UvrslPdctId")
+		self._UvrslPdctId = value if value is not None else base_types.UninitialisedField(self, 'UvrslPdctId', GenericIdentification168, False)
 
 	@UvrslPdctId.deleter
 	def UvrslPdctId(self):
 		del self._UvrslPdctId
-		self._UvrslPdctId = None
+		self._UvrslPdctId = base_types.UninitialisedField(self, 'UvrslPdctId', GenericIdentification168, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CCPPdctId', type=GenericIdentification168, min=1, max=1, mutex_group=None, array=False),

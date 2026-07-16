@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Amount2Choice import Amount2Choice
-from ._MessageHeader1 import MessageHeader1
-from ._PaymentInstruction13 import PaymentInstruction13
-from ._SupplementaryData1 import SupplementaryData1
-from ._SystemMember3 import SystemMember3
+from . import Amount2Choice
+from . import MessageHeader1
+from . import PaymentInstruction13
+from . import SupplementaryData1
+from . import SystemMember3
 
 class BackupPaymentV07(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class BackupPaymentV07(base_types._BaseFieldType):
 
 	@Cdtr.setter
 	def Cdtr(self, value):
-		self._Cdtr = value if type(value) != base_types.auto else self.make_default("Cdtr")
+		self._Cdtr = value if value is not None else base_types.UninitialisedField(self, 'Cdtr', SystemMember3, False)
 
 	@Cdtr.deleter
 	def Cdtr(self):
 		del self._Cdtr
-		self._Cdtr = None
+		self._Cdtr = base_types.UninitialisedField(self, 'Cdtr', SystemMember3, False)
 
 	@property
 	def CdtrAgt(self):
@@ -30,12 +30,12 @@ class BackupPaymentV07(base_types._BaseFieldType):
 
 	@CdtrAgt.setter
 	def CdtrAgt(self, value):
-		self._CdtrAgt = value if type(value) != base_types.auto else self.make_default("CdtrAgt")
+		self._CdtrAgt = value if value is not None else base_types.UninitialisedField(self, 'CdtrAgt', SystemMember3, False)
 
 	@CdtrAgt.deleter
 	def CdtrAgt(self):
 		del self._CdtrAgt
-		self._CdtrAgt = None
+		self._CdtrAgt = base_types.UninitialisedField(self, 'CdtrAgt', SystemMember3, False)
 
 	@property
 	def DbtrAgt(self):
@@ -43,12 +43,12 @@ class BackupPaymentV07(base_types._BaseFieldType):
 
 	@DbtrAgt.setter
 	def DbtrAgt(self, value):
-		self._DbtrAgt = value if type(value) != base_types.auto else self.make_default("DbtrAgt")
+		self._DbtrAgt = value if value is not None else base_types.UninitialisedField(self, 'DbtrAgt', SystemMember3, False)
 
 	@DbtrAgt.deleter
 	def DbtrAgt(self):
 		del self._DbtrAgt
-		self._DbtrAgt = None
+		self._DbtrAgt = base_types.UninitialisedField(self, 'DbtrAgt', SystemMember3, False)
 
 	@property
 	def InstrInf(self):
@@ -56,12 +56,12 @@ class BackupPaymentV07(base_types._BaseFieldType):
 
 	@InstrInf.setter
 	def InstrInf(self, value):
-		self._InstrInf = value if type(value) != base_types.auto else self.make_default("InstrInf")
+		self._InstrInf = value if value is not None else base_types.UninitialisedField(self, 'InstrInf', PaymentInstruction13, False)
 
 	@InstrInf.deleter
 	def InstrInf(self):
 		del self._InstrInf
-		self._InstrInf = None
+		self._InstrInf = base_types.UninitialisedField(self, 'InstrInf', PaymentInstruction13, False)
 
 	@property
 	def MsgHdr(self):
@@ -69,12 +69,12 @@ class BackupPaymentV07(base_types._BaseFieldType):
 
 	@MsgHdr.setter
 	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
+		self._MsgHdr = value if value is not None else base_types.UninitialisedField(self, 'MsgHdr', MessageHeader1, False)
 
 	@MsgHdr.deleter
 	def MsgHdr(self):
 		del self._MsgHdr
-		self._MsgHdr = None
+		self._MsgHdr = base_types.UninitialisedField(self, 'MsgHdr', MessageHeader1, False)
 
 	@property
 	def OrgnlMsgId(self):
@@ -82,12 +82,12 @@ class BackupPaymentV07(base_types._BaseFieldType):
 
 	@OrgnlMsgId.setter
 	def OrgnlMsgId(self, value):
-		self._OrgnlMsgId = value if type(value) != base_types.auto else self.make_default("OrgnlMsgId")
+		self._OrgnlMsgId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlMsgId', MessageHeader1, False)
 
 	@OrgnlMsgId.deleter
 	def OrgnlMsgId(self):
 		del self._OrgnlMsgId
-		self._OrgnlMsgId = None
+		self._OrgnlMsgId = base_types.UninitialisedField(self, 'OrgnlMsgId', MessageHeader1, False)
 
 	@property
 	def SplmtryData(self):
@@ -95,12 +95,12 @@ class BackupPaymentV07(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TrfdAmt(self):
@@ -108,12 +108,12 @@ class BackupPaymentV07(base_types._BaseFieldType):
 
 	@TrfdAmt.setter
 	def TrfdAmt(self, value):
-		self._TrfdAmt = value if type(value) != base_types.auto else self.make_default("TrfdAmt")
+		self._TrfdAmt = value if value is not None else base_types.UninitialisedField(self, 'TrfdAmt', Amount2Choice, False)
 
 	@TrfdAmt.deleter
 	def TrfdAmt(self):
 		del self._TrfdAmt
-		self._TrfdAmt = None
+		self._TrfdAmt = base_types.UninitialisedField(self, 'TrfdAmt', Amount2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cdtr', type=SystemMember3, min=1, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ModificationLevel1Code import ModificationLevel1Code
-from ._TransactionOperationType6Code import TransactionOperationType6Code
+from . import ModificationLevel1Code
+from . import TransactionOperationType6Code
 
 class ContractModification3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ContractModification3(base_types._BaseFieldType):
 
 	@ActnTp.setter
 	def ActnTp(self, value):
-		self._ActnTp = value if type(value) != base_types.auto else self.make_default("ActnTp")
+		self._ActnTp = value if value is not None else base_types.UninitialisedField(self, 'ActnTp', TransactionOperationType6Code, False)
 
 	@ActnTp.deleter
 	def ActnTp(self):
 		del self._ActnTp
-		self._ActnTp = None
+		self._ActnTp = base_types.UninitialisedField(self, 'ActnTp', TransactionOperationType6Code, False)
 
 	@property
 	def Lvl(self):
@@ -27,12 +27,12 @@ class ContractModification3(base_types._BaseFieldType):
 
 	@Lvl.setter
 	def Lvl(self, value):
-		self._Lvl = value if type(value) != base_types.auto else self.make_default("Lvl")
+		self._Lvl = value if value is not None else base_types.UninitialisedField(self, 'Lvl', ModificationLevel1Code, False)
 
 	@Lvl.deleter
 	def Lvl(self):
 		del self._Lvl
-		self._Lvl = None
+		self._Lvl = base_types.UninitialisedField(self, 'Lvl', ModificationLevel1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActnTp', type=TransactionOperationType6Code, min=1, max=1, mutex_group=None, array=False),

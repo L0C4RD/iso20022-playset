@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SettlementAccount1 import SettlementAccount1
-from ._SupplementaryData1 import SupplementaryData1
+from . import SettlementAccount1
+from . import SupplementaryData1
 
 class CCPMemberObligationsReportV01(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CCPMemberObligationsReportV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def SttlmAcct(self):
@@ -27,12 +27,12 @@ class CCPMemberObligationsReportV01(base_types._BaseFieldType):
 
 	@SttlmAcct.setter
 	def SttlmAcct(self, value):
-		self._SttlmAcct = value if type(value) != base_types.auto else self.make_default("SttlmAcct")
+		self._SttlmAcct = value if value is not None else base_types.UninitialisedField(self, 'SttlmAcct', SettlementAccount1, True)
 
 	@SttlmAcct.deleter
 	def SttlmAcct(self):
 		del self._SttlmAcct
-		self._SttlmAcct = None
+		self._SttlmAcct = base_types.UninitialisedField(self, 'SttlmAcct', SettlementAccount1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),

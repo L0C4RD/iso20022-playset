@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashProceeds1 import CashProceeds1
-from ._SecuritiesProceeds1 import SecuritiesProceeds1
-from ._TaxVoucher1 import TaxVoucher1
+from . import CashProceeds1
+from . import SecuritiesProceeds1
+from . import TaxVoucher1
 
 class ProceedsMovement1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ProceedsMovement1(base_types._BaseFieldType):
 
 	@CshPrcdsMvmntDtls.setter
 	def CshPrcdsMvmntDtls(self, value):
-		self._CshPrcdsMvmntDtls = value if type(value) != base_types.auto else self.make_default("CshPrcdsMvmntDtls")
+		self._CshPrcdsMvmntDtls = value if value is not None else base_types.UninitialisedField(self, 'CshPrcdsMvmntDtls', CashProceeds1, True)
 
 	@CshPrcdsMvmntDtls.deleter
 	def CshPrcdsMvmntDtls(self):
 		del self._CshPrcdsMvmntDtls
-		self._CshPrcdsMvmntDtls = None
+		self._CshPrcdsMvmntDtls = base_types.UninitialisedField(self, 'CshPrcdsMvmntDtls', CashProceeds1, True)
 
 	@property
 	def SctiesPrcdsMvmntDtls(self):
@@ -28,12 +28,12 @@ class ProceedsMovement1(base_types._BaseFieldType):
 
 	@SctiesPrcdsMvmntDtls.setter
 	def SctiesPrcdsMvmntDtls(self, value):
-		self._SctiesPrcdsMvmntDtls = value if type(value) != base_types.auto else self.make_default("SctiesPrcdsMvmntDtls")
+		self._SctiesPrcdsMvmntDtls = value if value is not None else base_types.UninitialisedField(self, 'SctiesPrcdsMvmntDtls', SecuritiesProceeds1, True)
 
 	@SctiesPrcdsMvmntDtls.deleter
 	def SctiesPrcdsMvmntDtls(self):
 		del self._SctiesPrcdsMvmntDtls
-		self._SctiesPrcdsMvmntDtls = None
+		self._SctiesPrcdsMvmntDtls = base_types.UninitialisedField(self, 'SctiesPrcdsMvmntDtls', SecuritiesProceeds1, True)
 
 	@property
 	def TaxDtls(self):
@@ -41,12 +41,12 @@ class ProceedsMovement1(base_types._BaseFieldType):
 
 	@TaxDtls.setter
 	def TaxDtls(self, value):
-		self._TaxDtls = value if type(value) != base_types.auto else self.make_default("TaxDtls")
+		self._TaxDtls = value if value is not None else base_types.UninitialisedField(self, 'TaxDtls', TaxVoucher1, False)
 
 	@TaxDtls.deleter
 	def TaxDtls(self):
 		del self._TaxDtls
-		self._TaxDtls = None
+		self._TaxDtls = base_types.UninitialisedField(self, 'TaxDtls', TaxVoucher1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshPrcdsMvmntDtls', type=CashProceeds1, min=0, max=None, mutex_group=None, array=True),

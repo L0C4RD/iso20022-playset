@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._TripartyCollateralStatusAdviceV01 import TripartyCollateralStatusAdviceV01
+from . import TripartyCollateralStatusAdviceV01
 
 class COLR_023_001_01():
 
@@ -18,12 +18,12 @@ class COLR_023_001_01():
 
 		@TrptyCollStsAdvc.setter
 		def TrptyCollStsAdvc(self, value):
-			self._TrptyCollStsAdvc = value if type(value) != base_types.auto else self.make_default("TrptyCollStsAdvc")
+			self._TrptyCollStsAdvc = value if value is not None else base_types.UninitialisedField(self, 'TrptyCollStsAdvc', TripartyCollateralStatusAdviceV01, False)
 
 		@TrptyCollStsAdvc.deleter
 		def TrptyCollStsAdvc(self):
 			del self._TrptyCollStsAdvc
-			self._TrptyCollStsAdvc = None
+			self._TrptyCollStsAdvc = base_types.UninitialisedField(self, 'TrptyCollStsAdvc', TripartyCollateralStatusAdviceV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='TrptyCollStsAdvc', type=TripartyCollateralStatusAdviceV01, min=1, max=1, mutex_group=None, array=False),

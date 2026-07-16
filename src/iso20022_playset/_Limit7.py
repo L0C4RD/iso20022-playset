@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Amount2Choice import Amount2Choice
-from ._CreditDebitCode import CreditDebitCode
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._LimitStatus1Code import LimitStatus1Code
-from ._PercentageRate import PercentageRate
+from . import Amount2Choice
+from . import CreditDebitCode
+from . import DateAndDateTime2Choice
+from . import LimitStatus1Code
+from . import PercentageRate
 
 class Limit7(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class Limit7(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', Amount2Choice, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', Amount2Choice, False)
 
 	@property
 	def CdtDbtInd(self):
@@ -30,12 +30,12 @@ class Limit7(base_types._BaseFieldType):
 
 	@CdtDbtInd.setter
 	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+		self._CdtDbtInd = value if value is not None else base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@CdtDbtInd.deleter
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
-		self._CdtDbtInd = None
+		self._CdtDbtInd = base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@property
 	def RmngAmt(self):
@@ -43,12 +43,12 @@ class Limit7(base_types._BaseFieldType):
 
 	@RmngAmt.setter
 	def RmngAmt(self, value):
-		self._RmngAmt = value if type(value) != base_types.auto else self.make_default("RmngAmt")
+		self._RmngAmt = value if value is not None else base_types.UninitialisedField(self, 'RmngAmt', Amount2Choice, False)
 
 	@RmngAmt.deleter
 	def RmngAmt(self):
 		del self._RmngAmt
-		self._RmngAmt = None
+		self._RmngAmt = base_types.UninitialisedField(self, 'RmngAmt', Amount2Choice, False)
 
 	@property
 	def StartDtTm(self):
@@ -56,12 +56,12 @@ class Limit7(base_types._BaseFieldType):
 
 	@StartDtTm.setter
 	def StartDtTm(self, value):
-		self._StartDtTm = value if type(value) != base_types.auto else self.make_default("StartDtTm")
+		self._StartDtTm = value if value is not None else base_types.UninitialisedField(self, 'StartDtTm', DateAndDateTime2Choice, False)
 
 	@StartDtTm.deleter
 	def StartDtTm(self):
 		del self._StartDtTm
-		self._StartDtTm = None
+		self._StartDtTm = base_types.UninitialisedField(self, 'StartDtTm', DateAndDateTime2Choice, False)
 
 	@property
 	def Sts(self):
@@ -69,12 +69,12 @@ class Limit7(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', LimitStatus1Code, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', LimitStatus1Code, False)
 
 	@property
 	def UsdAmt(self):
@@ -82,12 +82,12 @@ class Limit7(base_types._BaseFieldType):
 
 	@UsdAmt.setter
 	def UsdAmt(self, value):
-		self._UsdAmt = value if type(value) != base_types.auto else self.make_default("UsdAmt")
+		self._UsdAmt = value if value is not None else base_types.UninitialisedField(self, 'UsdAmt', Amount2Choice, False)
 
 	@UsdAmt.deleter
 	def UsdAmt(self):
 		del self._UsdAmt
-		self._UsdAmt = None
+		self._UsdAmt = base_types.UninitialisedField(self, 'UsdAmt', Amount2Choice, False)
 
 	@property
 	def UsdAmtCdtDbtInd(self):
@@ -95,12 +95,12 @@ class Limit7(base_types._BaseFieldType):
 
 	@UsdAmtCdtDbtInd.setter
 	def UsdAmtCdtDbtInd(self, value):
-		self._UsdAmtCdtDbtInd = value if type(value) != base_types.auto else self.make_default("UsdAmtCdtDbtInd")
+		self._UsdAmtCdtDbtInd = value if value is not None else base_types.UninitialisedField(self, 'UsdAmtCdtDbtInd', CreditDebitCode, False)
 
 	@UsdAmtCdtDbtInd.deleter
 	def UsdAmtCdtDbtInd(self):
 		del self._UsdAmtCdtDbtInd
-		self._UsdAmtCdtDbtInd = None
+		self._UsdAmtCdtDbtInd = base_types.UninitialisedField(self, 'UsdAmtCdtDbtInd', CreditDebitCode, False)
 
 	@property
 	def UsdPctg(self):
@@ -108,12 +108,12 @@ class Limit7(base_types._BaseFieldType):
 
 	@UsdPctg.setter
 	def UsdPctg(self, value):
-		self._UsdPctg = value if type(value) != base_types.auto else self.make_default("UsdPctg")
+		self._UsdPctg = value if value is not None else base_types.UninitialisedField(self, 'UsdPctg', PercentageRate, False)
 
 	@UsdPctg.deleter
 	def UsdPctg(self):
 		del self._UsdPctg
-		self._UsdPctg = None
+		self._UsdPctg = base_types.UninitialisedField(self, 'UsdPctg', PercentageRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=Amount2Choice, min=1, max=1, mutex_group=None, array=False),

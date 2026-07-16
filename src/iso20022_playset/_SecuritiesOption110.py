@@ -2,23 +2,23 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._CorporateActionAmounts60 import CorporateActionAmounts60
-from ._CorporateActionPrice82 import CorporateActionPrice82
-from ._CorporateActionRate123 import CorporateActionRate123
-from ._CountryCode import CountryCode
-from ._CreditDebitCode import CreditDebitCode
-from ._FinancialInstrumentAttributes129 import FinancialInstrumentAttributes129
-from ._FractionDispositionType26Choice import FractionDispositionType26Choice
-from ._GenericIdentification30 import GenericIdentification30
-from ._IssuerOfferorTaxabilityIndicator2Choice import IssuerOfferorTaxabilityIndicator2Choice
-from ._NewSecuritiesIssuanceType5Code import NewSecuritiesIssuanceType5Code
-from ._NonEligibleProceedsIndicator5Choice import NonEligibleProceedsIndicator5Choice
-from ._Period6Choice import Period6Choice
-from ._Quantity51Choice import Quantity51Choice
-from ._SafekeepingPlaceFormat41Choice import SafekeepingPlaceFormat41Choice
-from ._SecurityDate20 import SecurityDate20
-from ._TemporaryFinancialInstrumentIndicator3Choice import TemporaryFinancialInstrumentIndicator3Choice
+from . import ActiveCurrencyCode
+from . import CorporateActionAmounts60
+from . import CorporateActionPrice82
+from . import CorporateActionRate123
+from . import CountryCode
+from . import CreditDebitCode
+from . import FinancialInstrumentAttributes129
+from . import FractionDispositionType26Choice
+from . import GenericIdentification30
+from . import IssuerOfferorTaxabilityIndicator2Choice
+from . import NewSecuritiesIssuanceType5Code
+from . import NonEligibleProceedsIndicator5Choice
+from . import Period6Choice
+from . import Quantity51Choice
+from . import SafekeepingPlaceFormat41Choice
+from . import SecurityDate20
+from . import TemporaryFinancialInstrumentIndicator3Choice
 
 class SecuritiesOption110(base_types._BaseFieldType):
 
@@ -29,12 +29,12 @@ class SecuritiesOption110(base_types._BaseFieldType):
 
 	@AmtDtls.setter
 	def AmtDtls(self, value):
-		self._AmtDtls = value if type(value) != base_types.auto else self.make_default("AmtDtls")
+		self._AmtDtls = value if value is not None else base_types.UninitialisedField(self, 'AmtDtls', CorporateActionAmounts60, False)
 
 	@AmtDtls.deleter
 	def AmtDtls(self):
 		del self._AmtDtls
-		self._AmtDtls = None
+		self._AmtDtls = base_types.UninitialisedField(self, 'AmtDtls', CorporateActionAmounts60, False)
 
 	@property
 	def CcyOptn(self):
@@ -42,12 +42,12 @@ class SecuritiesOption110(base_types._BaseFieldType):
 
 	@CcyOptn.setter
 	def CcyOptn(self, value):
-		self._CcyOptn = value if type(value) != base_types.auto else self.make_default("CcyOptn")
+		self._CcyOptn = value if value is not None else base_types.UninitialisedField(self, 'CcyOptn', ActiveCurrencyCode, False)
 
 	@CcyOptn.deleter
 	def CcyOptn(self):
 		del self._CcyOptn
-		self._CcyOptn = None
+		self._CcyOptn = base_types.UninitialisedField(self, 'CcyOptn', ActiveCurrencyCode, False)
 
 	@property
 	def CdtDbtInd(self):
@@ -55,12 +55,12 @@ class SecuritiesOption110(base_types._BaseFieldType):
 
 	@CdtDbtInd.setter
 	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+		self._CdtDbtInd = value if value is not None else base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@CdtDbtInd.deleter
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
-		self._CdtDbtInd = None
+		self._CdtDbtInd = base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@property
 	def CtryOfIncmSrc(self):
@@ -68,12 +68,12 @@ class SecuritiesOption110(base_types._BaseFieldType):
 
 	@CtryOfIncmSrc.setter
 	def CtryOfIncmSrc(self, value):
-		self._CtryOfIncmSrc = value if type(value) != base_types.auto else self.make_default("CtryOfIncmSrc")
+		self._CtryOfIncmSrc = value if value is not None else base_types.UninitialisedField(self, 'CtryOfIncmSrc', CountryCode, False)
 
 	@CtryOfIncmSrc.deleter
 	def CtryOfIncmSrc(self):
 		del self._CtryOfIncmSrc
-		self._CtryOfIncmSrc = None
+		self._CtryOfIncmSrc = base_types.UninitialisedField(self, 'CtryOfIncmSrc', CountryCode, False)
 
 	@property
 	def DtDtls(self):
@@ -81,12 +81,12 @@ class SecuritiesOption110(base_types._BaseFieldType):
 
 	@DtDtls.setter
 	def DtDtls(self, value):
-		self._DtDtls = value if type(value) != base_types.auto else self.make_default("DtDtls")
+		self._DtDtls = value if value is not None else base_types.UninitialisedField(self, 'DtDtls', SecurityDate20, False)
 
 	@DtDtls.deleter
 	def DtDtls(self):
 		del self._DtDtls
-		self._DtDtls = None
+		self._DtDtls = base_types.UninitialisedField(self, 'DtDtls', SecurityDate20, False)
 
 	@property
 	def EntitldQty(self):
@@ -94,12 +94,12 @@ class SecuritiesOption110(base_types._BaseFieldType):
 
 	@EntitldQty.setter
 	def EntitldQty(self, value):
-		self._EntitldQty = value if type(value) != base_types.auto else self.make_default("EntitldQty")
+		self._EntitldQty = value if value is not None else base_types.UninitialisedField(self, 'EntitldQty', Quantity51Choice, False)
 
 	@EntitldQty.deleter
 	def EntitldQty(self):
 		del self._EntitldQty
-		self._EntitldQty = None
+		self._EntitldQty = base_types.UninitialisedField(self, 'EntitldQty', Quantity51Choice, False)
 
 	@property
 	def FrctnDspstn(self):
@@ -107,12 +107,12 @@ class SecuritiesOption110(base_types._BaseFieldType):
 
 	@FrctnDspstn.setter
 	def FrctnDspstn(self, value):
-		self._FrctnDspstn = value if type(value) != base_types.auto else self.make_default("FrctnDspstn")
+		self._FrctnDspstn = value if value is not None else base_types.UninitialisedField(self, 'FrctnDspstn', FractionDispositionType26Choice, False)
 
 	@FrctnDspstn.deleter
 	def FrctnDspstn(self):
 		del self._FrctnDspstn
-		self._FrctnDspstn = None
+		self._FrctnDspstn = base_types.UninitialisedField(self, 'FrctnDspstn', FractionDispositionType26Choice, False)
 
 	@property
 	def IncmTp(self):
@@ -120,12 +120,12 @@ class SecuritiesOption110(base_types._BaseFieldType):
 
 	@IncmTp.setter
 	def IncmTp(self, value):
-		self._IncmTp = value if type(value) != base_types.auto else self.make_default("IncmTp")
+		self._IncmTp = value if value is not None else base_types.UninitialisedField(self, 'IncmTp', GenericIdentification30, False)
 
 	@IncmTp.deleter
 	def IncmTp(self):
 		del self._IncmTp
-		self._IncmTp = None
+		self._IncmTp = base_types.UninitialisedField(self, 'IncmTp', GenericIdentification30, False)
 
 	@property
 	def IssrOfferrTaxbltyInd(self):
@@ -133,12 +133,12 @@ class SecuritiesOption110(base_types._BaseFieldType):
 
 	@IssrOfferrTaxbltyInd.setter
 	def IssrOfferrTaxbltyInd(self, value):
-		self._IssrOfferrTaxbltyInd = value if type(value) != base_types.auto else self.make_default("IssrOfferrTaxbltyInd")
+		self._IssrOfferrTaxbltyInd = value if value is not None else base_types.UninitialisedField(self, 'IssrOfferrTaxbltyInd', IssuerOfferorTaxabilityIndicator2Choice, False)
 
 	@IssrOfferrTaxbltyInd.deleter
 	def IssrOfferrTaxbltyInd(self):
 		del self._IssrOfferrTaxbltyInd
-		self._IssrOfferrTaxbltyInd = None
+		self._IssrOfferrTaxbltyInd = base_types.UninitialisedField(self, 'IssrOfferrTaxbltyInd', IssuerOfferorTaxabilityIndicator2Choice, False)
 
 	@property
 	def NewSctiesIssncInd(self):
@@ -146,12 +146,12 @@ class SecuritiesOption110(base_types._BaseFieldType):
 
 	@NewSctiesIssncInd.setter
 	def NewSctiesIssncInd(self, value):
-		self._NewSctiesIssncInd = value if type(value) != base_types.auto else self.make_default("NewSctiesIssncInd")
+		self._NewSctiesIssncInd = value if value is not None else base_types.UninitialisedField(self, 'NewSctiesIssncInd', NewSecuritiesIssuanceType5Code, False)
 
 	@NewSctiesIssncInd.deleter
 	def NewSctiesIssncInd(self):
 		del self._NewSctiesIssncInd
-		self._NewSctiesIssncInd = None
+		self._NewSctiesIssncInd = base_types.UninitialisedField(self, 'NewSctiesIssncInd', NewSecuritiesIssuanceType5Code, False)
 
 	@property
 	def NonElgblPrcdsInd(self):
@@ -159,12 +159,12 @@ class SecuritiesOption110(base_types._BaseFieldType):
 
 	@NonElgblPrcdsInd.setter
 	def NonElgblPrcdsInd(self, value):
-		self._NonElgblPrcdsInd = value if type(value) != base_types.auto else self.make_default("NonElgblPrcdsInd")
+		self._NonElgblPrcdsInd = value if value is not None else base_types.UninitialisedField(self, 'NonElgblPrcdsInd', NonEligibleProceedsIndicator5Choice, False)
 
 	@NonElgblPrcdsInd.deleter
 	def NonElgblPrcdsInd(self):
 		del self._NonElgblPrcdsInd
-		self._NonElgblPrcdsInd = None
+		self._NonElgblPrcdsInd = base_types.UninitialisedField(self, 'NonElgblPrcdsInd', NonEligibleProceedsIndicator5Choice, False)
 
 	@property
 	def OthrIncmTp(self):
@@ -172,12 +172,12 @@ class SecuritiesOption110(base_types._BaseFieldType):
 
 	@OthrIncmTp.setter
 	def OthrIncmTp(self, value):
-		self._OthrIncmTp = value if type(value) != base_types.auto else self.make_default("OthrIncmTp")
+		self._OthrIncmTp = value if value is not None else base_types.UninitialisedField(self, 'OthrIncmTp', GenericIdentification30, True)
 
 	@OthrIncmTp.deleter
 	def OthrIncmTp(self):
 		del self._OthrIncmTp
-		self._OthrIncmTp = None
+		self._OthrIncmTp = base_types.UninitialisedField(self, 'OthrIncmTp', GenericIdentification30, True)
 
 	@property
 	def PricDtls(self):
@@ -185,12 +185,12 @@ class SecuritiesOption110(base_types._BaseFieldType):
 
 	@PricDtls.setter
 	def PricDtls(self, value):
-		self._PricDtls = value if type(value) != base_types.auto else self.make_default("PricDtls")
+		self._PricDtls = value if value is not None else base_types.UninitialisedField(self, 'PricDtls', CorporateActionPrice82, False)
 
 	@PricDtls.deleter
 	def PricDtls(self):
 		del self._PricDtls
-		self._PricDtls = None
+		self._PricDtls = base_types.UninitialisedField(self, 'PricDtls', CorporateActionPrice82, False)
 
 	@property
 	def RateDtls(self):
@@ -198,12 +198,12 @@ class SecuritiesOption110(base_types._BaseFieldType):
 
 	@RateDtls.setter
 	def RateDtls(self, value):
-		self._RateDtls = value if type(value) != base_types.auto else self.make_default("RateDtls")
+		self._RateDtls = value if value is not None else base_types.UninitialisedField(self, 'RateDtls', CorporateActionRate123, False)
 
 	@RateDtls.deleter
 	def RateDtls(self):
 		del self._RateDtls
-		self._RateDtls = None
+		self._RateDtls = base_types.UninitialisedField(self, 'RateDtls', CorporateActionRate123, False)
 
 	@property
 	def SctyDtls(self):
@@ -211,12 +211,12 @@ class SecuritiesOption110(base_types._BaseFieldType):
 
 	@SctyDtls.setter
 	def SctyDtls(self, value):
-		self._SctyDtls = value if type(value) != base_types.auto else self.make_default("SctyDtls")
+		self._SctyDtls = value if value is not None else base_types.UninitialisedField(self, 'SctyDtls', FinancialInstrumentAttributes129, False)
 
 	@SctyDtls.deleter
 	def SctyDtls(self):
 		del self._SctyDtls
-		self._SctyDtls = None
+		self._SctyDtls = base_types.UninitialisedField(self, 'SctyDtls', FinancialInstrumentAttributes129, False)
 
 	@property
 	def SfkpgPlc(self):
@@ -224,12 +224,12 @@ class SecuritiesOption110(base_types._BaseFieldType):
 
 	@SfkpgPlc.setter
 	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
+		self._SfkpgPlc = value if value is not None else base_types.UninitialisedField(self, 'SfkpgPlc', SafekeepingPlaceFormat41Choice, False)
 
 	@SfkpgPlc.deleter
 	def SfkpgPlc(self):
 		del self._SfkpgPlc
-		self._SfkpgPlc = None
+		self._SfkpgPlc = base_types.UninitialisedField(self, 'SfkpgPlc', SafekeepingPlaceFormat41Choice, False)
 
 	@property
 	def TempFinInstrmInd(self):
@@ -237,12 +237,12 @@ class SecuritiesOption110(base_types._BaseFieldType):
 
 	@TempFinInstrmInd.setter
 	def TempFinInstrmInd(self, value):
-		self._TempFinInstrmInd = value if type(value) != base_types.auto else self.make_default("TempFinInstrmInd")
+		self._TempFinInstrmInd = value if value is not None else base_types.UninitialisedField(self, 'TempFinInstrmInd', TemporaryFinancialInstrumentIndicator3Choice, False)
 
 	@TempFinInstrmInd.deleter
 	def TempFinInstrmInd(self):
 		del self._TempFinInstrmInd
-		self._TempFinInstrmInd = None
+		self._TempFinInstrmInd = base_types.UninitialisedField(self, 'TempFinInstrmInd', TemporaryFinancialInstrumentIndicator3Choice, False)
 
 	@property
 	def TradgPrd(self):
@@ -250,12 +250,12 @@ class SecuritiesOption110(base_types._BaseFieldType):
 
 	@TradgPrd.setter
 	def TradgPrd(self, value):
-		self._TradgPrd = value if type(value) != base_types.auto else self.make_default("TradgPrd")
+		self._TradgPrd = value if value is not None else base_types.UninitialisedField(self, 'TradgPrd', Period6Choice, False)
 
 	@TradgPrd.deleter
 	def TradgPrd(self):
 		del self._TradgPrd
-		self._TradgPrd = None
+		self._TradgPrd = base_types.UninitialisedField(self, 'TradgPrd', Period6Choice, False)
 
 	@property
 	def XmptnTp(self):
@@ -263,12 +263,12 @@ class SecuritiesOption110(base_types._BaseFieldType):
 
 	@XmptnTp.setter
 	def XmptnTp(self, value):
-		self._XmptnTp = value if type(value) != base_types.auto else self.make_default("XmptnTp")
+		self._XmptnTp = value if value is not None else base_types.UninitialisedField(self, 'XmptnTp', GenericIdentification30, True)
 
 	@XmptnTp.deleter
 	def XmptnTp(self):
 		del self._XmptnTp
-		self._XmptnTp = None
+		self._XmptnTp = base_types.UninitialisedField(self, 'XmptnTp', GenericIdentification30, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmtDtls', type=CorporateActionAmounts60, min=0, max=1, mutex_group=None, array=False),

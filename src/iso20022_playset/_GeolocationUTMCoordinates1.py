@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
+from . import Max35Text
 
 class GeolocationUTMCoordinates1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class GeolocationUTMCoordinates1(base_types._BaseFieldType):
 
 	@UTMEstwrd.setter
 	def UTMEstwrd(self, value):
-		self._UTMEstwrd = value if type(value) != base_types.auto else self.make_default("UTMEstwrd")
+		self._UTMEstwrd = value if value is not None else base_types.UninitialisedField(self, 'UTMEstwrd', Max35Text, False)
 
 	@UTMEstwrd.deleter
 	def UTMEstwrd(self):
 		del self._UTMEstwrd
-		self._UTMEstwrd = None
+		self._UTMEstwrd = base_types.UninitialisedField(self, 'UTMEstwrd', Max35Text, False)
 
 	@property
 	def UTMNrthwrd(self):
@@ -26,12 +26,12 @@ class GeolocationUTMCoordinates1(base_types._BaseFieldType):
 
 	@UTMNrthwrd.setter
 	def UTMNrthwrd(self, value):
-		self._UTMNrthwrd = value if type(value) != base_types.auto else self.make_default("UTMNrthwrd")
+		self._UTMNrthwrd = value if value is not None else base_types.UninitialisedField(self, 'UTMNrthwrd', Max35Text, False)
 
 	@UTMNrthwrd.deleter
 	def UTMNrthwrd(self):
 		del self._UTMNrthwrd
-		self._UTMNrthwrd = None
+		self._UTMNrthwrd = base_types.UninitialisedField(self, 'UTMNrthwrd', Max35Text, False)
 
 	@property
 	def UTMZone(self):
@@ -39,12 +39,12 @@ class GeolocationUTMCoordinates1(base_types._BaseFieldType):
 
 	@UTMZone.setter
 	def UTMZone(self, value):
-		self._UTMZone = value if type(value) != base_types.auto else self.make_default("UTMZone")
+		self._UTMZone = value if value is not None else base_types.UninitialisedField(self, 'UTMZone', Max35Text, False)
 
 	@UTMZone.deleter
 	def UTMZone(self):
 		del self._UTMZone
-		self._UTMZone = None
+		self._UTMZone = base_types.UninitialisedField(self, 'UTMZone', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='UTMEstwrd', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

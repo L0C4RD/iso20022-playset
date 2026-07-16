@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._PositionSet16 import PositionSet16
-from ._PositionSet17 import PositionSet17
-from ._PositionSet18 import PositionSet18
-from ._PositionSet19 import PositionSet19
-from ._PositionSet20 import PositionSet20
+from . import ISODate
+from . import PositionSet16
+from . import PositionSet17
+from . import PositionSet18
+from . import PositionSet19
+from . import PositionSet20
 
 class NamedPosition3(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class NamedPosition3(base_types._BaseFieldType):
 
 	@Coll.setter
 	def Coll(self, value):
-		self._Coll = value if type(value) != base_types.auto else self.make_default("Coll")
+		self._Coll = value if value is not None else base_types.UninitialisedField(self, 'Coll', PositionSet18, True)
 
 	@Coll.deleter
 	def Coll(self):
 		del self._Coll
-		self._Coll = None
+		self._Coll = base_types.UninitialisedField(self, 'Coll', PositionSet18, True)
 
 	@property
 	def GnlInf(self):
@@ -31,12 +31,12 @@ class NamedPosition3(base_types._BaseFieldType):
 
 	@GnlInf.setter
 	def GnlInf(self, value):
-		self._GnlInf = value if type(value) != base_types.auto else self.make_default("GnlInf")
+		self._GnlInf = value if value is not None else base_types.UninitialisedField(self, 'GnlInf', PositionSet16, True)
 
 	@GnlInf.deleter
 	def GnlInf(self):
 		del self._GnlInf
-		self._GnlInf = None
+		self._GnlInf = base_types.UninitialisedField(self, 'GnlInf', PositionSet16, True)
 
 	@property
 	def Ln(self):
@@ -44,12 +44,12 @@ class NamedPosition3(base_types._BaseFieldType):
 
 	@Ln.setter
 	def Ln(self, value):
-		self._Ln = value if type(value) != base_types.auto else self.make_default("Ln")
+		self._Ln = value if value is not None else base_types.UninitialisedField(self, 'Ln', PositionSet17, True)
 
 	@Ln.deleter
 	def Ln(self):
 		del self._Ln
-		self._Ln = None
+		self._Ln = base_types.UninitialisedField(self, 'Ln', PositionSet17, True)
 
 	@property
 	def Mrgn(self):
@@ -57,12 +57,12 @@ class NamedPosition3(base_types._BaseFieldType):
 
 	@Mrgn.setter
 	def Mrgn(self, value):
-		self._Mrgn = value if type(value) != base_types.auto else self.make_default("Mrgn")
+		self._Mrgn = value if value is not None else base_types.UninitialisedField(self, 'Mrgn', PositionSet20, True)
 
 	@Mrgn.deleter
 	def Mrgn(self):
 		del self._Mrgn
-		self._Mrgn = None
+		self._Mrgn = base_types.UninitialisedField(self, 'Mrgn', PositionSet20, True)
 
 	@property
 	def RefDt(self):
@@ -70,12 +70,12 @@ class NamedPosition3(base_types._BaseFieldType):
 
 	@RefDt.setter
 	def RefDt(self, value):
-		self._RefDt = value if type(value) != base_types.auto else self.make_default("RefDt")
+		self._RefDt = value if value is not None else base_types.UninitialisedField(self, 'RefDt', ISODate, False)
 
 	@RefDt.deleter
 	def RefDt(self):
 		del self._RefDt
-		self._RefDt = None
+		self._RefDt = base_types.UninitialisedField(self, 'RefDt', ISODate, False)
 
 	@property
 	def Reuse(self):
@@ -83,12 +83,12 @@ class NamedPosition3(base_types._BaseFieldType):
 
 	@Reuse.setter
 	def Reuse(self, value):
-		self._Reuse = value if type(value) != base_types.auto else self.make_default("Reuse")
+		self._Reuse = value if value is not None else base_types.UninitialisedField(self, 'Reuse', PositionSet19, True)
 
 	@Reuse.deleter
 	def Reuse(self):
 		del self._Reuse
-		self._Reuse = None
+		self._Reuse = base_types.UninitialisedField(self, 'Reuse', PositionSet19, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Coll', type=PositionSet18, min=0, max=None, mutex_group=None, array=True),

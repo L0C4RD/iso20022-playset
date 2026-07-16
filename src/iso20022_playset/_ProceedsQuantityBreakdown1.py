@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
+from . import FinancialInstrumentQuantity18Choice
 
 class ProceedsQuantityBreakdown1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class ProceedsQuantityBreakdown1(base_types._BaseFieldType):
 
 	@CshCompstnQty.setter
 	def CshCompstnQty(self, value):
-		self._CshCompstnQty = value if type(value) != base_types.auto else self.make_default("CshCompstnQty")
+		self._CshCompstnQty = value if value is not None else base_types.UninitialisedField(self, 'CshCompstnQty', FinancialInstrumentQuantity18Choice, False)
 
 	@CshCompstnQty.deleter
 	def CshCompstnQty(self):
 		del self._CshCompstnQty
-		self._CshCompstnQty = None
+		self._CshCompstnQty = base_types.UninitialisedField(self, 'CshCompstnQty', FinancialInstrumentQuantity18Choice, False)
 
 	@property
 	def TrfOfRcvdPrcdsQty(self):
@@ -26,12 +26,12 @@ class ProceedsQuantityBreakdown1(base_types._BaseFieldType):
 
 	@TrfOfRcvdPrcdsQty.setter
 	def TrfOfRcvdPrcdsQty(self, value):
-		self._TrfOfRcvdPrcdsQty = value if type(value) != base_types.auto else self.make_default("TrfOfRcvdPrcdsQty")
+		self._TrfOfRcvdPrcdsQty = value if value is not None else base_types.UninitialisedField(self, 'TrfOfRcvdPrcdsQty', FinancialInstrumentQuantity18Choice, False)
 
 	@TrfOfRcvdPrcdsQty.deleter
 	def TrfOfRcvdPrcdsQty(self):
 		del self._TrfOfRcvdPrcdsQty
-		self._TrfOfRcvdPrcdsQty = None
+		self._TrfOfRcvdPrcdsQty = base_types.UninitialisedField(self, 'TrfOfRcvdPrcdsQty', FinancialInstrumentQuantity18Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshCompstnQty', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),

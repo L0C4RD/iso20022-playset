@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Balance27 import Balance27
-from ._QuantityBreakdown71 import QuantityBreakdown71
-from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
-from ._SubBalanceType14Choice import SubBalanceType14Choice
+from . import Balance27
+from . import QuantityBreakdown71
+from . import RestrictedFINXMax140Text
+from . import SubBalanceType14Choice
 
 class AdditionalBalanceInformation24(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class AdditionalBalanceInformation24(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+		self._Qty = value if value is not None else base_types.UninitialisedField(self, 'Qty', Balance27, False)
 
 	@Qty.deleter
 	def Qty(self):
 		del self._Qty
-		self._Qty = None
+		self._Qty = base_types.UninitialisedField(self, 'Qty', Balance27, False)
 
 	@property
 	def QtyBrkdwn(self):
@@ -29,12 +29,12 @@ class AdditionalBalanceInformation24(base_types._BaseFieldType):
 
 	@QtyBrkdwn.setter
 	def QtyBrkdwn(self, value):
-		self._QtyBrkdwn = value if type(value) != base_types.auto else self.make_default("QtyBrkdwn")
+		self._QtyBrkdwn = value if value is not None else base_types.UninitialisedField(self, 'QtyBrkdwn', QuantityBreakdown71, True)
 
 	@QtyBrkdwn.deleter
 	def QtyBrkdwn(self):
 		del self._QtyBrkdwn
-		self._QtyBrkdwn = None
+		self._QtyBrkdwn = base_types.UninitialisedField(self, 'QtyBrkdwn', QuantityBreakdown71, True)
 
 	@property
 	def SubBalAddtlDtls(self):
@@ -42,12 +42,12 @@ class AdditionalBalanceInformation24(base_types._BaseFieldType):
 
 	@SubBalAddtlDtls.setter
 	def SubBalAddtlDtls(self, value):
-		self._SubBalAddtlDtls = value if type(value) != base_types.auto else self.make_default("SubBalAddtlDtls")
+		self._SubBalAddtlDtls = value if value is not None else base_types.UninitialisedField(self, 'SubBalAddtlDtls', RestrictedFINXMax140Text, False)
 
 	@SubBalAddtlDtls.deleter
 	def SubBalAddtlDtls(self):
 		del self._SubBalAddtlDtls
-		self._SubBalAddtlDtls = None
+		self._SubBalAddtlDtls = base_types.UninitialisedField(self, 'SubBalAddtlDtls', RestrictedFINXMax140Text, False)
 
 	@property
 	def SubBalTp(self):
@@ -55,12 +55,12 @@ class AdditionalBalanceInformation24(base_types._BaseFieldType):
 
 	@SubBalTp.setter
 	def SubBalTp(self, value):
-		self._SubBalTp = value if type(value) != base_types.auto else self.make_default("SubBalTp")
+		self._SubBalTp = value if value is not None else base_types.UninitialisedField(self, 'SubBalTp', SubBalanceType14Choice, False)
 
 	@SubBalTp.deleter
 	def SubBalTp(self):
 		del self._SubBalTp
-		self._SubBalTp = None
+		self._SubBalTp = base_types.UninitialisedField(self, 'SubBalTp', SubBalanceType14Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Qty', type=Balance27, min=1, max=1, mutex_group=None, array=False),

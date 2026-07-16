@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardDepositType2Code import CardDepositType2Code
-from ._CreditDebit3Code import CreditDebit3Code
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from . import CardDepositType2Code
+from . import CreditDebit3Code
+from . import ImpliedCurrencyAndAmount
 
 class DepositDetails4(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class DepositDetails4(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ImpliedCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def CdtDbt(self):
@@ -28,12 +28,12 @@ class DepositDetails4(base_types._BaseFieldType):
 
 	@CdtDbt.setter
 	def CdtDbt(self, value):
-		self._CdtDbt = value if type(value) != base_types.auto else self.make_default("CdtDbt")
+		self._CdtDbt = value if value is not None else base_types.UninitialisedField(self, 'CdtDbt', CreditDebit3Code, False)
 
 	@CdtDbt.deleter
 	def CdtDbt(self):
 		del self._CdtDbt
-		self._CdtDbt = None
+		self._CdtDbt = base_types.UninitialisedField(self, 'CdtDbt', CreditDebit3Code, False)
 
 	@property
 	def Tp(self):
@@ -41,12 +41,12 @@ class DepositDetails4(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', CardDepositType2Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', CardDepositType2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Operation1Code import Operation1Code
-from ._Term1 import Term1
+from . import Operation1Code
+from . import Term1
 
 class AmountOrPercentageRange1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AmountOrPercentageRange1(base_types._BaseFieldType):
 
 	@Opr.setter
 	def Opr(self, value):
-		self._Opr = value if type(value) != base_types.auto else self.make_default("Opr")
+		self._Opr = value if value is not None else base_types.UninitialisedField(self, 'Opr', Operation1Code, False)
 
 	@Opr.deleter
 	def Opr(self):
 		del self._Opr
-		self._Opr = None
+		self._Opr = base_types.UninitialisedField(self, 'Opr', Operation1Code, False)
 
 	@property
 	def Term(self):
@@ -27,12 +27,12 @@ class AmountOrPercentageRange1(base_types._BaseFieldType):
 
 	@Term.setter
 	def Term(self, value):
-		self._Term = value if type(value) != base_types.auto else self.make_default("Term")
+		self._Term = value if value is not None else base_types.UninitialisedField(self, 'Term', Term1, True)
 
 	@Term.deleter
 	def Term(self):
 		del self._Term
-		self._Term = None
+		self._Term = base_types.UninitialisedField(self, 'Term', Term1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Opr', type=Operation1Code, min=0, max=1, mutex_group=None, array=False),

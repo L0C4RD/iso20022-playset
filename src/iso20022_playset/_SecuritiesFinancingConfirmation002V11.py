@@ -2,21 +2,21 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalParameters26 import AdditionalParameters26
-from ._AmountAndDirection96 import AmountAndDirection96
-from ._CashParties38 import CashParties38
-from ._FinancialInstrumentAttributes122 import FinancialInstrumentAttributes122
-from ._OtherAmounts42 import OtherAmounts42
-from ._OtherParties44 import OtherParties44
-from ._QuantityAndAccount103 import QuantityAndAccount103
-from ._SecuritiesFinancingTransactionDetails46 import SecuritiesFinancingTransactionDetails46
-from ._SecuritiesTradeDetails124 import SecuritiesTradeDetails124
-from ._SecurityIdentification20 import SecurityIdentification20
-from ._SettlementDetails151 import SettlementDetails151
-from ._SettlementParties105 import SettlementParties105
-from ._StandingSettlementInstruction19 import StandingSettlementInstruction19
-from ._SupplementaryData1 import SupplementaryData1
-from ._TransactionTypeAndAdditionalParameters19 import TransactionTypeAndAdditionalParameters19
+from . import AdditionalParameters26
+from . import AmountAndDirection96
+from . import CashParties38
+from . import FinancialInstrumentAttributes122
+from . import OtherAmounts42
+from . import OtherParties44
+from . import QuantityAndAccount103
+from . import SecuritiesFinancingTransactionDetails46
+from . import SecuritiesTradeDetails124
+from . import SecurityIdentification20
+from . import SettlementDetails151
+from . import SettlementParties105
+from . import StandingSettlementInstruction19
+from . import SupplementaryData1
+from . import TransactionTypeAndAdditionalParameters19
 
 class SecuritiesFinancingConfirmation002V11(base_types._BaseFieldType):
 
@@ -27,12 +27,12 @@ class SecuritiesFinancingConfirmation002V11(base_types._BaseFieldType):
 
 	@AddtlParams.setter
 	def AddtlParams(self, value):
-		self._AddtlParams = value if type(value) != base_types.auto else self.make_default("AddtlParams")
+		self._AddtlParams = value if value is not None else base_types.UninitialisedField(self, 'AddtlParams', AdditionalParameters26, False)
 
 	@AddtlParams.deleter
 	def AddtlParams(self):
 		del self._AddtlParams
-		self._AddtlParams = None
+		self._AddtlParams = base_types.UninitialisedField(self, 'AddtlParams', AdditionalParameters26, False)
 
 	@property
 	def CshPties(self):
@@ -40,12 +40,12 @@ class SecuritiesFinancingConfirmation002V11(base_types._BaseFieldType):
 
 	@CshPties.setter
 	def CshPties(self, value):
-		self._CshPties = value if type(value) != base_types.auto else self.make_default("CshPties")
+		self._CshPties = value if value is not None else base_types.UninitialisedField(self, 'CshPties', CashParties38, False)
 
 	@CshPties.deleter
 	def CshPties(self):
 		del self._CshPties
-		self._CshPties = None
+		self._CshPties = base_types.UninitialisedField(self, 'CshPties', CashParties38, False)
 
 	@property
 	def DlvrgSttlmPties(self):
@@ -53,12 +53,12 @@ class SecuritiesFinancingConfirmation002V11(base_types._BaseFieldType):
 
 	@DlvrgSttlmPties.setter
 	def DlvrgSttlmPties(self, value):
-		self._DlvrgSttlmPties = value if type(value) != base_types.auto else self.make_default("DlvrgSttlmPties")
+		self._DlvrgSttlmPties = value if value is not None else base_types.UninitialisedField(self, 'DlvrgSttlmPties', SettlementParties105, False)
 
 	@DlvrgSttlmPties.deleter
 	def DlvrgSttlmPties(self):
 		del self._DlvrgSttlmPties
-		self._DlvrgSttlmPties = None
+		self._DlvrgSttlmPties = base_types.UninitialisedField(self, 'DlvrgSttlmPties', SettlementParties105, False)
 
 	@property
 	def FinInstrmAttrbts(self):
@@ -66,12 +66,12 @@ class SecuritiesFinancingConfirmation002V11(base_types._BaseFieldType):
 
 	@FinInstrmAttrbts.setter
 	def FinInstrmAttrbts(self, value):
-		self._FinInstrmAttrbts = value if type(value) != base_types.auto else self.make_default("FinInstrmAttrbts")
+		self._FinInstrmAttrbts = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmAttrbts', FinancialInstrumentAttributes122, False)
 
 	@FinInstrmAttrbts.deleter
 	def FinInstrmAttrbts(self):
 		del self._FinInstrmAttrbts
-		self._FinInstrmAttrbts = None
+		self._FinInstrmAttrbts = base_types.UninitialisedField(self, 'FinInstrmAttrbts', FinancialInstrumentAttributes122, False)
 
 	@property
 	def FinInstrmId(self):
@@ -79,12 +79,12 @@ class SecuritiesFinancingConfirmation002V11(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification20, False)
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
 		del self._FinInstrmId
-		self._FinInstrmId = None
+		self._FinInstrmId = base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification20, False)
 
 	@property
 	def OthrAmts(self):
@@ -92,12 +92,12 @@ class SecuritiesFinancingConfirmation002V11(base_types._BaseFieldType):
 
 	@OthrAmts.setter
 	def OthrAmts(self, value):
-		self._OthrAmts = value if type(value) != base_types.auto else self.make_default("OthrAmts")
+		self._OthrAmts = value if value is not None else base_types.UninitialisedField(self, 'OthrAmts', OtherAmounts42, False)
 
 	@OthrAmts.deleter
 	def OthrAmts(self):
 		del self._OthrAmts
-		self._OthrAmts = None
+		self._OthrAmts = base_types.UninitialisedField(self, 'OthrAmts', OtherAmounts42, False)
 
 	@property
 	def OthrBizPties(self):
@@ -105,12 +105,12 @@ class SecuritiesFinancingConfirmation002V11(base_types._BaseFieldType):
 
 	@OthrBizPties.setter
 	def OthrBizPties(self, value):
-		self._OthrBizPties = value if type(value) != base_types.auto else self.make_default("OthrBizPties")
+		self._OthrBizPties = value if value is not None else base_types.UninitialisedField(self, 'OthrBizPties', OtherParties44, False)
 
 	@OthrBizPties.deleter
 	def OthrBizPties(self):
 		del self._OthrBizPties
-		self._OthrBizPties = None
+		self._OthrBizPties = base_types.UninitialisedField(self, 'OthrBizPties', OtherParties44, False)
 
 	@property
 	def QtyAndAcctDtls(self):
@@ -118,12 +118,12 @@ class SecuritiesFinancingConfirmation002V11(base_types._BaseFieldType):
 
 	@QtyAndAcctDtls.setter
 	def QtyAndAcctDtls(self, value):
-		self._QtyAndAcctDtls = value if type(value) != base_types.auto else self.make_default("QtyAndAcctDtls")
+		self._QtyAndAcctDtls = value if value is not None else base_types.UninitialisedField(self, 'QtyAndAcctDtls', QuantityAndAccount103, False)
 
 	@QtyAndAcctDtls.deleter
 	def QtyAndAcctDtls(self):
 		del self._QtyAndAcctDtls
-		self._QtyAndAcctDtls = None
+		self._QtyAndAcctDtls = base_types.UninitialisedField(self, 'QtyAndAcctDtls', QuantityAndAccount103, False)
 
 	@property
 	def RcvgSttlmPties(self):
@@ -131,12 +131,12 @@ class SecuritiesFinancingConfirmation002V11(base_types._BaseFieldType):
 
 	@RcvgSttlmPties.setter
 	def RcvgSttlmPties(self, value):
-		self._RcvgSttlmPties = value if type(value) != base_types.auto else self.make_default("RcvgSttlmPties")
+		self._RcvgSttlmPties = value if value is not None else base_types.UninitialisedField(self, 'RcvgSttlmPties', SettlementParties105, False)
 
 	@RcvgSttlmPties.deleter
 	def RcvgSttlmPties(self):
 		del self._RcvgSttlmPties
-		self._RcvgSttlmPties = None
+		self._RcvgSttlmPties = base_types.UninitialisedField(self, 'RcvgSttlmPties', SettlementParties105, False)
 
 	@property
 	def SctiesFincgDtls(self):
@@ -144,12 +144,12 @@ class SecuritiesFinancingConfirmation002V11(base_types._BaseFieldType):
 
 	@SctiesFincgDtls.setter
 	def SctiesFincgDtls(self, value):
-		self._SctiesFincgDtls = value if type(value) != base_types.auto else self.make_default("SctiesFincgDtls")
+		self._SctiesFincgDtls = value if value is not None else base_types.UninitialisedField(self, 'SctiesFincgDtls', SecuritiesFinancingTransactionDetails46, False)
 
 	@SctiesFincgDtls.deleter
 	def SctiesFincgDtls(self):
 		del self._SctiesFincgDtls
-		self._SctiesFincgDtls = None
+		self._SctiesFincgDtls = base_types.UninitialisedField(self, 'SctiesFincgDtls', SecuritiesFinancingTransactionDetails46, False)
 
 	@property
 	def SplmtryData(self):
@@ -157,12 +157,12 @@ class SecuritiesFinancingConfirmation002V11(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def StgSttlmInstrDtls(self):
@@ -170,12 +170,12 @@ class SecuritiesFinancingConfirmation002V11(base_types._BaseFieldType):
 
 	@StgSttlmInstrDtls.setter
 	def StgSttlmInstrDtls(self, value):
-		self._StgSttlmInstrDtls = value if type(value) != base_types.auto else self.make_default("StgSttlmInstrDtls")
+		self._StgSttlmInstrDtls = value if value is not None else base_types.UninitialisedField(self, 'StgSttlmInstrDtls', StandingSettlementInstruction19, False)
 
 	@StgSttlmInstrDtls.deleter
 	def StgSttlmInstrDtls(self):
 		del self._StgSttlmInstrDtls
-		self._StgSttlmInstrDtls = None
+		self._StgSttlmInstrDtls = base_types.UninitialisedField(self, 'StgSttlmInstrDtls', StandingSettlementInstruction19, False)
 
 	@property
 	def SttldAmt(self):
@@ -183,12 +183,12 @@ class SecuritiesFinancingConfirmation002V11(base_types._BaseFieldType):
 
 	@SttldAmt.setter
 	def SttldAmt(self, value):
-		self._SttldAmt = value if type(value) != base_types.auto else self.make_default("SttldAmt")
+		self._SttldAmt = value if value is not None else base_types.UninitialisedField(self, 'SttldAmt', AmountAndDirection96, False)
 
 	@SttldAmt.deleter
 	def SttldAmt(self):
 		del self._SttldAmt
-		self._SttldAmt = None
+		self._SttldAmt = base_types.UninitialisedField(self, 'SttldAmt', AmountAndDirection96, False)
 
 	@property
 	def SttlmParams(self):
@@ -196,12 +196,12 @@ class SecuritiesFinancingConfirmation002V11(base_types._BaseFieldType):
 
 	@SttlmParams.setter
 	def SttlmParams(self, value):
-		self._SttlmParams = value if type(value) != base_types.auto else self.make_default("SttlmParams")
+		self._SttlmParams = value if value is not None else base_types.UninitialisedField(self, 'SttlmParams', SettlementDetails151, False)
 
 	@SttlmParams.deleter
 	def SttlmParams(self):
 		del self._SttlmParams
-		self._SttlmParams = None
+		self._SttlmParams = base_types.UninitialisedField(self, 'SttlmParams', SettlementDetails151, False)
 
 	@property
 	def TradDtls(self):
@@ -209,12 +209,12 @@ class SecuritiesFinancingConfirmation002V11(base_types._BaseFieldType):
 
 	@TradDtls.setter
 	def TradDtls(self, value):
-		self._TradDtls = value if type(value) != base_types.auto else self.make_default("TradDtls")
+		self._TradDtls = value if value is not None else base_types.UninitialisedField(self, 'TradDtls', SecuritiesTradeDetails124, False)
 
 	@TradDtls.deleter
 	def TradDtls(self):
 		del self._TradDtls
-		self._TradDtls = None
+		self._TradDtls = base_types.UninitialisedField(self, 'TradDtls', SecuritiesTradeDetails124, False)
 
 	@property
 	def TxIdDtls(self):
@@ -222,12 +222,12 @@ class SecuritiesFinancingConfirmation002V11(base_types._BaseFieldType):
 
 	@TxIdDtls.setter
 	def TxIdDtls(self, value):
-		self._TxIdDtls = value if type(value) != base_types.auto else self.make_default("TxIdDtls")
+		self._TxIdDtls = value if value is not None else base_types.UninitialisedField(self, 'TxIdDtls', TransactionTypeAndAdditionalParameters19, False)
 
 	@TxIdDtls.deleter
 	def TxIdDtls(self):
 		del self._TxIdDtls
-		self._TxIdDtls = None
+		self._TxIdDtls = base_types.UninitialisedField(self, 'TxIdDtls', TransactionTypeAndAdditionalParameters19, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlParams', type=AdditionalParameters26, min=0, max=1, mutex_group=None, array=False),

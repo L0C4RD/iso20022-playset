@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Quantity51Choice import Quantity51Choice
-from ._ReturnedStatus2Choice import ReturnedStatus2Choice
+from . import Quantity51Choice
+from . import ReturnedStatus2Choice
 
 class ReturnedStatus1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ReturnedStatus1(base_types._BaseFieldType):
 
 	@RtrdQty.setter
 	def RtrdQty(self, value):
-		self._RtrdQty = value if type(value) != base_types.auto else self.make_default("RtrdQty")
+		self._RtrdQty = value if value is not None else base_types.UninitialisedField(self, 'RtrdQty', Quantity51Choice, False)
 
 	@RtrdQty.deleter
 	def RtrdQty(self):
 		del self._RtrdQty
-		self._RtrdQty = None
+		self._RtrdQty = base_types.UninitialisedField(self, 'RtrdQty', Quantity51Choice, False)
 
 	@property
 	def RtrdRsn(self):
@@ -27,12 +27,12 @@ class ReturnedStatus1(base_types._BaseFieldType):
 
 	@RtrdRsn.setter
 	def RtrdRsn(self, value):
-		self._RtrdRsn = value if type(value) != base_types.auto else self.make_default("RtrdRsn")
+		self._RtrdRsn = value if value is not None else base_types.UninitialisedField(self, 'RtrdRsn', ReturnedStatus2Choice, False)
 
 	@RtrdRsn.deleter
 	def RtrdRsn(self):
 		del self._RtrdRsn
-		self._RtrdRsn = None
+		self._RtrdRsn = base_types.UninitialisedField(self, 'RtrdRsn', ReturnedStatus2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RtrdQty', type=Quantity51Choice, min=0, max=1, mutex_group=None, array=False),

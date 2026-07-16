@@ -2,18 +2,18 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalData1 import AdditionalData1
-from ._CustomerDeviceType2Code import CustomerDeviceType2Code
-from ._DeviceIdentification1 import DeviceIdentification1
-from ._ExternalDeviceOperatingSystemType1Code import ExternalDeviceOperatingSystemType1Code
-from ._GeographicPointInDecimalDegrees import GeographicPointInDecimalDegrees
-from ._ISO2ALanguageCode import ISO2ALanguageCode
-from ._ISO3NumericCountryCode import ISO3NumericCountryCode
-from ._Max100Text import Max100Text
-from ._Max256Text import Max256Text
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
-from ._PhoneNumber import PhoneNumber
+from . import AdditionalData1
+from . import CustomerDeviceType2Code
+from . import DeviceIdentification1
+from . import ExternalDeviceOperatingSystemType1Code
+from . import GeographicPointInDecimalDegrees
+from . import ISO2ALanguageCode
+from . import ISO3NumericCountryCode
+from . import Max100Text
+from . import Max256Text
+from . import Max35Text
+from . import Max70Text
+from . import PhoneNumber
 
 class CustomerDevice5(base_types._BaseFieldType):
 
@@ -24,12 +24,12 @@ class CustomerDevice5(base_types._BaseFieldType):
 
 	@AddtlData.setter
 	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+		self._AddtlData = value if value is not None else base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@AddtlData.deleter
 	def AddtlData(self):
 		del self._AddtlData
-		self._AddtlData = None
+		self._AddtlData = base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@property
 	def DvcId(self):
@@ -37,12 +37,12 @@ class CustomerDevice5(base_types._BaseFieldType):
 
 	@DvcId.setter
 	def DvcId(self, value):
-		self._DvcId = value if type(value) != base_types.auto else self.make_default("DvcId")
+		self._DvcId = value if value is not None else base_types.UninitialisedField(self, 'DvcId', DeviceIdentification1, True)
 
 	@DvcId.deleter
 	def DvcId(self):
 		del self._DvcId
-		self._DvcId = None
+		self._DvcId = base_types.UninitialisedField(self, 'DvcId', DeviceIdentification1, True)
 
 	@property
 	def DvcNm(self):
@@ -50,12 +50,12 @@ class CustomerDevice5(base_types._BaseFieldType):
 
 	@DvcNm.setter
 	def DvcNm(self, value):
-		self._DvcNm = value if type(value) != base_types.auto else self.make_default("DvcNm")
+		self._DvcNm = value if value is not None else base_types.UninitialisedField(self, 'DvcNm', Max100Text, False)
 
 	@DvcNm.deleter
 	def DvcNm(self):
 		del self._DvcNm
-		self._DvcNm = None
+		self._DvcNm = base_types.UninitialisedField(self, 'DvcNm', Max100Text, False)
 
 	@property
 	def DvcNmNrmlzd(self):
@@ -63,12 +63,12 @@ class CustomerDevice5(base_types._BaseFieldType):
 
 	@DvcNmNrmlzd.setter
 	def DvcNmNrmlzd(self, value):
-		self._DvcNmNrmlzd = value if type(value) != base_types.auto else self.make_default("DvcNmNrmlzd")
+		self._DvcNmNrmlzd = value if value is not None else base_types.UninitialisedField(self, 'DvcNmNrmlzd', Max100Text, False)
 
 	@DvcNmNrmlzd.deleter
 	def DvcNmNrmlzd(self):
 		del self._DvcNmNrmlzd
-		self._DvcNmNrmlzd = None
+		self._DvcNmNrmlzd = base_types.UninitialisedField(self, 'DvcNmNrmlzd', Max100Text, False)
 
 	@property
 	def Email(self):
@@ -76,12 +76,12 @@ class CustomerDevice5(base_types._BaseFieldType):
 
 	@Email.setter
 	def Email(self, value):
-		self._Email = value if type(value) != base_types.auto else self.make_default("Email")
+		self._Email = value if value is not None else base_types.UninitialisedField(self, 'Email', Max256Text, False)
 
 	@Email.deleter
 	def Email(self):
 		del self._Email
-		self._Email = None
+		self._Email = base_types.UninitialisedField(self, 'Email', Max256Text, False)
 
 	@property
 	def GeogcLctn(self):
@@ -89,12 +89,12 @@ class CustomerDevice5(base_types._BaseFieldType):
 
 	@GeogcLctn.setter
 	def GeogcLctn(self, value):
-		self._GeogcLctn = value if type(value) != base_types.auto else self.make_default("GeogcLctn")
+		self._GeogcLctn = value if value is not None else base_types.UninitialisedField(self, 'GeogcLctn', GeographicPointInDecimalDegrees, False)
 
 	@GeogcLctn.deleter
 	def GeogcLctn(self):
 		del self._GeogcLctn
-		self._GeogcLctn = None
+		self._GeogcLctn = base_types.UninitialisedField(self, 'GeogcLctn', GeographicPointInDecimalDegrees, False)
 
 	@property
 	def IPAdr(self):
@@ -102,12 +102,12 @@ class CustomerDevice5(base_types._BaseFieldType):
 
 	@IPAdr.setter
 	def IPAdr(self, value):
-		self._IPAdr = value if type(value) != base_types.auto else self.make_default("IPAdr")
+		self._IPAdr = value if value is not None else base_types.UninitialisedField(self, 'IPAdr', Max70Text, False)
 
 	@IPAdr.deleter
 	def IPAdr(self):
 		del self._IPAdr
-		self._IPAdr = None
+		self._IPAdr = base_types.UninitialisedField(self, 'IPAdr', Max70Text, False)
 
 	@property
 	def Lang(self):
@@ -115,12 +115,12 @@ class CustomerDevice5(base_types._BaseFieldType):
 
 	@Lang.setter
 	def Lang(self, value):
-		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
+		self._Lang = value if value is not None else base_types.UninitialisedField(self, 'Lang', ISO2ALanguageCode, False)
 
 	@Lang.deleter
 	def Lang(self):
 		del self._Lang
-		self._Lang = None
+		self._Lang = base_types.UninitialisedField(self, 'Lang', ISO2ALanguageCode, False)
 
 	@property
 	def LctnCtryCd(self):
@@ -128,12 +128,12 @@ class CustomerDevice5(base_types._BaseFieldType):
 
 	@LctnCtryCd.setter
 	def LctnCtryCd(self, value):
-		self._LctnCtryCd = value if type(value) != base_types.auto else self.make_default("LctnCtryCd")
+		self._LctnCtryCd = value if value is not None else base_types.UninitialisedField(self, 'LctnCtryCd', ISO3NumericCountryCode, False)
 
 	@LctnCtryCd.deleter
 	def LctnCtryCd(self):
 		del self._LctnCtryCd
-		self._LctnCtryCd = None
+		self._LctnCtryCd = base_types.UninitialisedField(self, 'LctnCtryCd', ISO3NumericCountryCode, False)
 
 	@property
 	def Manfctr(self):
@@ -141,12 +141,12 @@ class CustomerDevice5(base_types._BaseFieldType):
 
 	@Manfctr.setter
 	def Manfctr(self, value):
-		self._Manfctr = value if type(value) != base_types.auto else self.make_default("Manfctr")
+		self._Manfctr = value if value is not None else base_types.UninitialisedField(self, 'Manfctr', Max70Text, False)
 
 	@Manfctr.deleter
 	def Manfctr(self):
 		del self._Manfctr
-		self._Manfctr = None
+		self._Manfctr = base_types.UninitialisedField(self, 'Manfctr', Max70Text, False)
 
 	@property
 	def ManfctrMdlId(self):
@@ -154,12 +154,12 @@ class CustomerDevice5(base_types._BaseFieldType):
 
 	@ManfctrMdlId.setter
 	def ManfctrMdlId(self, value):
-		self._ManfctrMdlId = value if type(value) != base_types.auto else self.make_default("ManfctrMdlId")
+		self._ManfctrMdlId = value if value is not None else base_types.UninitialisedField(self, 'ManfctrMdlId', Max70Text, False)
 
 	@ManfctrMdlId.deleter
 	def ManfctrMdlId(self):
 		del self._ManfctrMdlId
-		self._ManfctrMdlId = None
+		self._ManfctrMdlId = base_types.UninitialisedField(self, 'ManfctrMdlId', Max70Text, False)
 
 	@property
 	def OprgSysBld(self):
@@ -167,12 +167,12 @@ class CustomerDevice5(base_types._BaseFieldType):
 
 	@OprgSysBld.setter
 	def OprgSysBld(self, value):
-		self._OprgSysBld = value if type(value) != base_types.auto else self.make_default("OprgSysBld")
+		self._OprgSysBld = value if value is not None else base_types.UninitialisedField(self, 'OprgSysBld', Max70Text, False)
 
 	@OprgSysBld.deleter
 	def OprgSysBld(self):
 		del self._OprgSysBld
-		self._OprgSysBld = None
+		self._OprgSysBld = base_types.UninitialisedField(self, 'OprgSysBld', Max70Text, False)
 
 	@property
 	def OprgSysId(self):
@@ -180,12 +180,12 @@ class CustomerDevice5(base_types._BaseFieldType):
 
 	@OprgSysId.setter
 	def OprgSysId(self, value):
-		self._OprgSysId = value if type(value) != base_types.auto else self.make_default("OprgSysId")
+		self._OprgSysId = value if value is not None else base_types.UninitialisedField(self, 'OprgSysId', Max70Text, False)
 
 	@OprgSysId.deleter
 	def OprgSysId(self):
 		del self._OprgSysId
-		self._OprgSysId = None
+		self._OprgSysId = base_types.UninitialisedField(self, 'OprgSysId', Max70Text, False)
 
 	@property
 	def OprgSysTp(self):
@@ -193,12 +193,12 @@ class CustomerDevice5(base_types._BaseFieldType):
 
 	@OprgSysTp.setter
 	def OprgSysTp(self, value):
-		self._OprgSysTp = value if type(value) != base_types.auto else self.make_default("OprgSysTp")
+		self._OprgSysTp = value if value is not None else base_types.UninitialisedField(self, 'OprgSysTp', ExternalDeviceOperatingSystemType1Code, False)
 
 	@OprgSysTp.deleter
 	def OprgSysTp(self):
 		del self._OprgSysTp
-		self._OprgSysTp = None
+		self._OprgSysTp = base_types.UninitialisedField(self, 'OprgSysTp', ExternalDeviceOperatingSystemType1Code, False)
 
 	@property
 	def OprgSysVrsn(self):
@@ -206,12 +206,12 @@ class CustomerDevice5(base_types._BaseFieldType):
 
 	@OprgSysVrsn.setter
 	def OprgSysVrsn(self, value):
-		self._OprgSysVrsn = value if type(value) != base_types.auto else self.make_default("OprgSysVrsn")
+		self._OprgSysVrsn = value if value is not None else base_types.UninitialisedField(self, 'OprgSysVrsn', Max35Text, False)
 
 	@OprgSysVrsn.deleter
 	def OprgSysVrsn(self):
 		del self._OprgSysVrsn
-		self._OprgSysVrsn = None
+		self._OprgSysVrsn = base_types.UninitialisedField(self, 'OprgSysVrsn', Max35Text, False)
 
 	@property
 	def OthrOprgSysTp(self):
@@ -219,12 +219,12 @@ class CustomerDevice5(base_types._BaseFieldType):
 
 	@OthrOprgSysTp.setter
 	def OthrOprgSysTp(self, value):
-		self._OthrOprgSysTp = value if type(value) != base_types.auto else self.make_default("OthrOprgSysTp")
+		self._OthrOprgSysTp = value if value is not None else base_types.UninitialisedField(self, 'OthrOprgSysTp', Max35Text, False)
 
 	@OthrOprgSysTp.deleter
 	def OthrOprgSysTp(self):
 		del self._OthrOprgSysTp
-		self._OthrOprgSysTp = None
+		self._OthrOprgSysTp = base_types.UninitialisedField(self, 'OthrOprgSysTp', Max35Text, False)
 
 	@property
 	def OthrTp(self):
@@ -232,12 +232,12 @@ class CustomerDevice5(base_types._BaseFieldType):
 
 	@OthrTp.setter
 	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != base_types.auto else self.make_default("OthrTp")
+		self._OthrTp = value if value is not None else base_types.UninitialisedField(self, 'OthrTp', Max35Text, False)
 
 	@OthrTp.deleter
 	def OthrTp(self):
 		del self._OthrTp
-		self._OthrTp = None
+		self._OthrTp = base_types.UninitialisedField(self, 'OthrTp', Max35Text, False)
 
 	@property
 	def Phne(self):
@@ -245,12 +245,12 @@ class CustomerDevice5(base_types._BaseFieldType):
 
 	@Phne.setter
 	def Phne(self, value):
-		self._Phne = value if type(value) != base_types.auto else self.make_default("Phne")
+		self._Phne = value if value is not None else base_types.UninitialisedField(self, 'Phne', PhoneNumber, False)
 
 	@Phne.deleter
 	def Phne(self):
 		del self._Phne
-		self._Phne = None
+		self._Phne = base_types.UninitialisedField(self, 'Phne', PhoneNumber, False)
 
 	@property
 	def Prvdr(self):
@@ -258,12 +258,12 @@ class CustomerDevice5(base_types._BaseFieldType):
 
 	@Prvdr.setter
 	def Prvdr(self, value):
-		self._Prvdr = value if type(value) != base_types.auto else self.make_default("Prvdr")
+		self._Prvdr = value if value is not None else base_types.UninitialisedField(self, 'Prvdr', Max35Text, False)
 
 	@Prvdr.deleter
 	def Prvdr(self):
 		del self._Prvdr
-		self._Prvdr = None
+		self._Prvdr = base_types.UninitialisedField(self, 'Prvdr', Max35Text, False)
 
 	@property
 	def Tp(self):
@@ -271,12 +271,12 @@ class CustomerDevice5(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', CustomerDeviceType2Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', CustomerDeviceType2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),

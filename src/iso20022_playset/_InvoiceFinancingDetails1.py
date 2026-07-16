@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancingResult1 import FinancingResult1
-from ._InstalmentFinancingInformation1 import InstalmentFinancingInformation1
-from ._OriginalInvoiceInformation1 import OriginalInvoiceInformation1
-from ._PartyIdentification8 import PartyIdentification8
+from . import FinancingResult1
+from . import InstalmentFinancingInformation1
+from . import OriginalInvoiceInformation1
+from . import PartyIdentification8
 
 class InvoiceFinancingDetails1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class InvoiceFinancingDetails1(base_types._BaseFieldType):
 
 	@InstlmtFincgInf.setter
 	def InstlmtFincgInf(self, value):
-		self._InstlmtFincgInf = value if type(value) != base_types.auto else self.make_default("InstlmtFincgInf")
+		self._InstlmtFincgInf = value if value is not None else base_types.UninitialisedField(self, 'InstlmtFincgInf', InstalmentFinancingInformation1, True)
 
 	@InstlmtFincgInf.deleter
 	def InstlmtFincgInf(self):
 		del self._InstlmtFincgInf
-		self._InstlmtFincgInf = None
+		self._InstlmtFincgInf = base_types.UninitialisedField(self, 'InstlmtFincgInf', InstalmentFinancingInformation1, True)
 
 	@property
 	def InvcFincgRslt(self):
@@ -29,12 +29,12 @@ class InvoiceFinancingDetails1(base_types._BaseFieldType):
 
 	@InvcFincgRslt.setter
 	def InvcFincgRslt(self, value):
-		self._InvcFincgRslt = value if type(value) != base_types.auto else self.make_default("InvcFincgRslt")
+		self._InvcFincgRslt = value if value is not None else base_types.UninitialisedField(self, 'InvcFincgRslt', FinancingResult1, False)
 
 	@InvcFincgRslt.deleter
 	def InvcFincgRslt(self):
 		del self._InvcFincgRslt
-		self._InvcFincgRslt = None
+		self._InvcFincgRslt = base_types.UninitialisedField(self, 'InvcFincgRslt', FinancingResult1, False)
 
 	@property
 	def OrgnlInvcInf(self):
@@ -42,12 +42,12 @@ class InvoiceFinancingDetails1(base_types._BaseFieldType):
 
 	@OrgnlInvcInf.setter
 	def OrgnlInvcInf(self, value):
-		self._OrgnlInvcInf = value if type(value) != base_types.auto else self.make_default("OrgnlInvcInf")
+		self._OrgnlInvcInf = value if value is not None else base_types.UninitialisedField(self, 'OrgnlInvcInf', OriginalInvoiceInformation1, False)
 
 	@OrgnlInvcInf.deleter
 	def OrgnlInvcInf(self):
 		del self._OrgnlInvcInf
-		self._OrgnlInvcInf = None
+		self._OrgnlInvcInf = base_types.UninitialisedField(self, 'OrgnlInvcInf', OriginalInvoiceInformation1, False)
 
 	@property
 	def Spplr(self):
@@ -55,12 +55,12 @@ class InvoiceFinancingDetails1(base_types._BaseFieldType):
 
 	@Spplr.setter
 	def Spplr(self, value):
-		self._Spplr = value if type(value) != base_types.auto else self.make_default("Spplr")
+		self._Spplr = value if value is not None else base_types.UninitialisedField(self, 'Spplr', PartyIdentification8, False)
 
 	@Spplr.deleter
 	def Spplr(self):
 		del self._Spplr
-		self._Spplr = None
+		self._Spplr = base_types.UninitialisedField(self, 'Spplr', PartyIdentification8, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InstlmtFincgInf', type=InstalmentFinancingInformation1, min=0, max=None, mutex_group=None, array=True),

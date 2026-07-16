@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcceptorNonFinancialRequestV05 import AcceptorNonFinancialRequestV05
+from . import AcceptorNonFinancialRequestV05
 
 class CAAA_022_001_05():
 
@@ -18,12 +18,12 @@ class CAAA_022_001_05():
 
 		@AccptrNonFinReq.setter
 		def AccptrNonFinReq(self, value):
-			self._AccptrNonFinReq = value if type(value) != base_types.auto else self.make_default("AccptrNonFinReq")
+			self._AccptrNonFinReq = value if value is not None else base_types.UninitialisedField(self, 'AccptrNonFinReq', AcceptorNonFinancialRequestV05, False)
 
 		@AccptrNonFinReq.deleter
 		def AccptrNonFinReq(self):
 			del self._AccptrNonFinReq
-			self._AccptrNonFinReq = None
+			self._AccptrNonFinReq = base_types.UninitialisedField(self, 'AccptrNonFinReq', AcceptorNonFinancialRequestV05, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AccptrNonFinReq', type=AcceptorNonFinancialRequestV05, min=1, max=1, mutex_group=None, array=False),

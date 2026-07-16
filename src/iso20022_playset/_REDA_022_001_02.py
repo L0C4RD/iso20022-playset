@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PartyModificationRequestV02 import PartyModificationRequestV02
+from . import PartyModificationRequestV02
 
 class REDA_022_001_02():
 
@@ -18,12 +18,12 @@ class REDA_022_001_02():
 
 		@PtyModReq.setter
 		def PtyModReq(self, value):
-			self._PtyModReq = value if type(value) != base_types.auto else self.make_default("PtyModReq")
+			self._PtyModReq = value if value is not None else base_types.UninitialisedField(self, 'PtyModReq', PartyModificationRequestV02, False)
 
 		@PtyModReq.deleter
 		def PtyModReq(self):
 			del self._PtyModReq
-			self._PtyModReq = None
+			self._PtyModReq = base_types.UninitialisedField(self, 'PtyModReq', PartyModificationRequestV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='PtyModReq', type=PartyModificationRequestV02, min=1, max=1, mutex_group=None, array=False),

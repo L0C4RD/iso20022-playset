@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ClearingAccountType3Code import ClearingAccountType3Code
-from ._CollateralAccount5 import CollateralAccount5
+from . import ClearingAccountType3Code
+from . import CollateralAccount5
 
 class ClearingAccount1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ClearingAccount1(base_types._BaseFieldType):
 
 	@AcctTp.setter
 	def AcctTp(self, value):
-		self._AcctTp = value if type(value) != base_types.auto else self.make_default("AcctTp")
+		self._AcctTp = value if value is not None else base_types.UninitialisedField(self, 'AcctTp', ClearingAccountType3Code, False)
 
 	@AcctTp.deleter
 	def AcctTp(self):
 		del self._AcctTp
-		self._AcctTp = None
+		self._AcctTp = base_types.UninitialisedField(self, 'AcctTp', ClearingAccountType3Code, False)
 
 	@property
 	def CollAcctOwnr(self):
@@ -27,12 +27,12 @@ class ClearingAccount1(base_types._BaseFieldType):
 
 	@CollAcctOwnr.setter
 	def CollAcctOwnr(self, value):
-		self._CollAcctOwnr = value if type(value) != base_types.auto else self.make_default("CollAcctOwnr")
+		self._CollAcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'CollAcctOwnr', CollateralAccount5, True)
 
 	@CollAcctOwnr.deleter
 	def CollAcctOwnr(self):
 		del self._CollAcctOwnr
-		self._CollAcctOwnr = None
+		self._CollAcctOwnr = base_types.UninitialisedField(self, 'CollAcctOwnr', CollateralAccount5, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctTp', type=ClearingAccountType3Code, min=1, max=1, mutex_group=None, array=False),

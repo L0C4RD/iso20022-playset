@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._Max35Text import Max35Text
-from ._PartyIdentification272 import PartyIdentification272
-from ._TransactionCertificate4 import TransactionCertificate4
+from . import BranchAndFinancialInstitutionIdentification8
+from . import Max35Text
+from . import PartyIdentification272
+from . import TransactionCertificate4
 
 class RegulatoryReportingNotification4(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class RegulatoryReportingNotification4(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification272, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification272, False)
 
 	@property
 	def AcctSvcr(self):
@@ -29,12 +29,12 @@ class RegulatoryReportingNotification4(base_types._BaseFieldType):
 
 	@AcctSvcr.setter
 	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
+		self._AcctSvcr = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@AcctSvcr.deleter
 	def AcctSvcr(self):
 		del self._AcctSvcr
-		self._AcctSvcr = None
+		self._AcctSvcr = base_types.UninitialisedField(self, 'AcctSvcr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def TxCert(self):
@@ -42,12 +42,12 @@ class RegulatoryReportingNotification4(base_types._BaseFieldType):
 
 	@TxCert.setter
 	def TxCert(self, value):
-		self._TxCert = value if type(value) != base_types.auto else self.make_default("TxCert")
+		self._TxCert = value if value is not None else base_types.UninitialisedField(self, 'TxCert', TransactionCertificate4, True)
 
 	@TxCert.deleter
 	def TxCert(self):
 		del self._TxCert
-		self._TxCert = None
+		self._TxCert = base_types.UninitialisedField(self, 'TxCert', TransactionCertificate4, True)
 
 	@property
 	def TxNtfctnId(self):
@@ -55,12 +55,12 @@ class RegulatoryReportingNotification4(base_types._BaseFieldType):
 
 	@TxNtfctnId.setter
 	def TxNtfctnId(self, value):
-		self._TxNtfctnId = value if type(value) != base_types.auto else self.make_default("TxNtfctnId")
+		self._TxNtfctnId = value if value is not None else base_types.UninitialisedField(self, 'TxNtfctnId', Max35Text, False)
 
 	@TxNtfctnId.deleter
 	def TxNtfctnId(self):
 		del self._TxNtfctnId
-		self._TxNtfctnId = None
+		self._TxNtfctnId = base_types.UninitialisedField(self, 'TxNtfctnId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),

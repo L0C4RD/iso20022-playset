@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._YesNoIndicator import YesNoIndicator
+from . import ISODate
+from . import YesNoIndicator
 
 class MoneyPurchaseAnnualAllowance1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class MoneyPurchaseAnnualAllowance1(base_types._BaseFieldType):
 
 	@Trggrd.setter
 	def Trggrd(self, value):
-		self._Trggrd = value if type(value) != base_types.auto else self.make_default("Trggrd")
+		self._Trggrd = value if value is not None else base_types.UninitialisedField(self, 'Trggrd', YesNoIndicator, False)
 
 	@Trggrd.deleter
 	def Trggrd(self):
 		del self._Trggrd
-		self._Trggrd = None
+		self._Trggrd = base_types.UninitialisedField(self, 'Trggrd', YesNoIndicator, False)
 
 	@property
 	def TrggrdDt(self):
@@ -27,12 +27,12 @@ class MoneyPurchaseAnnualAllowance1(base_types._BaseFieldType):
 
 	@TrggrdDt.setter
 	def TrggrdDt(self, value):
-		self._TrggrdDt = value if type(value) != base_types.auto else self.make_default("TrggrdDt")
+		self._TrggrdDt = value if value is not None else base_types.UninitialisedField(self, 'TrggrdDt', ISODate, False)
 
 	@TrggrdDt.deleter
 	def TrggrdDt(self):
 		del self._TrggrdDt
-		self._TrggrdDt = None
+		self._TrggrdDt = base_types.UninitialisedField(self, 'TrggrdDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Trggrd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),

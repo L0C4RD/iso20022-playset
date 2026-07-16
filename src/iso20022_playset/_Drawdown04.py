@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._ApplicableRules1Choice import ApplicableRules1Choice
-from ._BeneficiaryDrawdown2 import BeneficiaryDrawdown2
-from ._Capped1 import Capped1
-from ._DrawdownType2Choice import DrawdownType2Choice
-from ._ISODate import ISODate
-from ._Max140Text import Max140Text
-from ._PercentageRate import PercentageRate
-from ._TaxReference2 import TaxReference2
-from ._YesNoIndicator import YesNoIndicator
+from . import ActiveCurrencyAnd13DecimalAmount
+from . import AdditionalInformation15
+from . import ApplicableRules1Choice
+from . import BeneficiaryDrawdown2
+from . import Capped1
+from . import DrawdownType2Choice
+from . import ISODate
+from . import Max140Text
+from . import PercentageRate
+from . import TaxReference2
+from . import YesNoIndicator
 
 class Drawdown04(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class Drawdown04(base_types._BaseFieldType):
 
 	@AddtlFndsDsgntd.setter
 	def AddtlFndsDsgntd(self, value):
-		self._AddtlFndsDsgntd = value if type(value) != base_types.auto else self.make_default("AddtlFndsDsgntd")
+		self._AddtlFndsDsgntd = value if value is not None else base_types.UninitialisedField(self, 'AddtlFndsDsgntd', YesNoIndicator, False)
 
 	@AddtlFndsDsgntd.deleter
 	def AddtlFndsDsgntd(self):
 		del self._AddtlFndsDsgntd
-		self._AddtlFndsDsgntd = None
+		self._AddtlFndsDsgntd = base_types.UninitialisedField(self, 'AddtlFndsDsgntd', YesNoIndicator, False)
 
 	@property
 	def AddtlInf(self):
@@ -36,12 +36,12 @@ class Drawdown04(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@property
 	def AplblRules(self):
@@ -49,12 +49,12 @@ class Drawdown04(base_types._BaseFieldType):
 
 	@AplblRules.setter
 	def AplblRules(self, value):
-		self._AplblRules = value if type(value) != base_types.auto else self.make_default("AplblRules")
+		self._AplblRules = value if value is not None else base_types.UninitialisedField(self, 'AplblRules', ApplicableRules1Choice, False)
 
 	@AplblRules.deleter
 	def AplblRules(self):
 		del self._AplblRules
-		self._AplblRules = None
+		self._AplblRules = base_types.UninitialisedField(self, 'AplblRules', ApplicableRules1Choice, False)
 
 	@property
 	def BnfcryDtls(self):
@@ -62,12 +62,12 @@ class Drawdown04(base_types._BaseFieldType):
 
 	@BnfcryDtls.setter
 	def BnfcryDtls(self, value):
-		self._BnfcryDtls = value if type(value) != base_types.auto else self.make_default("BnfcryDtls")
+		self._BnfcryDtls = value if value is not None else base_types.UninitialisedField(self, 'BnfcryDtls', BeneficiaryDrawdown2, False)
 
 	@BnfcryDtls.deleter
 	def BnfcryDtls(self):
 		del self._BnfcryDtls
-		self._BnfcryDtls = None
+		self._BnfcryDtls = base_types.UninitialisedField(self, 'BnfcryDtls', BeneficiaryDrawdown2, False)
 
 	@property
 	def CapdLmts(self):
@@ -75,12 +75,12 @@ class Drawdown04(base_types._BaseFieldType):
 
 	@CapdLmts.setter
 	def CapdLmts(self, value):
-		self._CapdLmts = value if type(value) != base_types.auto else self.make_default("CapdLmts")
+		self._CapdLmts = value if value is not None else base_types.UninitialisedField(self, 'CapdLmts', Capped1, False)
 
 	@CapdLmts.deleter
 	def CapdLmts(self):
 		del self._CapdLmts
-		self._CapdLmts = None
+		self._CapdLmts = base_types.UninitialisedField(self, 'CapdLmts', Capped1, False)
 
 	@property
 	def FlxblDrwdwnTrggrdDt(self):
@@ -88,12 +88,12 @@ class Drawdown04(base_types._BaseFieldType):
 
 	@FlxblDrwdwnTrggrdDt.setter
 	def FlxblDrwdwnTrggrdDt(self, value):
-		self._FlxblDrwdwnTrggrdDt = value if type(value) != base_types.auto else self.make_default("FlxblDrwdwnTrggrdDt")
+		self._FlxblDrwdwnTrggrdDt = value if value is not None else base_types.UninitialisedField(self, 'FlxblDrwdwnTrggrdDt', ISODate, False)
 
 	@FlxblDrwdwnTrggrdDt.deleter
 	def FlxblDrwdwnTrggrdDt(self):
 		del self._FlxblDrwdwnTrggrdDt
-		self._FlxblDrwdwnTrggrdDt = None
+		self._FlxblDrwdwnTrggrdDt = base_types.UninitialisedField(self, 'FlxblDrwdwnTrggrdDt', ISODate, False)
 
 	@property
 	def Id(self):
@@ -101,12 +101,12 @@ class Drawdown04(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max140Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max140Text, False)
 
 	@property
 	def InvstrTaxRef(self):
@@ -114,12 +114,12 @@ class Drawdown04(base_types._BaseFieldType):
 
 	@InvstrTaxRef.setter
 	def InvstrTaxRef(self, value):
-		self._InvstrTaxRef = value if type(value) != base_types.auto else self.make_default("InvstrTaxRef")
+		self._InvstrTaxRef = value if value is not None else base_types.UninitialisedField(self, 'InvstrTaxRef', TaxReference2, False)
 
 	@InvstrTaxRef.deleter
 	def InvstrTaxRef(self):
 		del self._InvstrTaxRef
-		self._InvstrTaxRef = None
+		self._InvstrTaxRef = base_types.UninitialisedField(self, 'InvstrTaxRef', TaxReference2, False)
 
 	@property
 	def LftmAllwnc(self):
@@ -127,12 +127,12 @@ class Drawdown04(base_types._BaseFieldType):
 
 	@LftmAllwnc.setter
 	def LftmAllwnc(self, value):
-		self._LftmAllwnc = value if type(value) != base_types.auto else self.make_default("LftmAllwnc")
+		self._LftmAllwnc = value if value is not None else base_types.UninitialisedField(self, 'LftmAllwnc', PercentageRate, False)
 
 	@LftmAllwnc.deleter
 	def LftmAllwnc(self):
 		del self._LftmAllwnc
-		self._LftmAllwnc = None
+		self._LftmAllwnc = base_types.UninitialisedField(self, 'LftmAllwnc', PercentageRate, False)
 
 	@property
 	def MltplPnsnCmcmntLumpSums(self):
@@ -140,12 +140,12 @@ class Drawdown04(base_types._BaseFieldType):
 
 	@MltplPnsnCmcmntLumpSums.setter
 	def MltplPnsnCmcmntLumpSums(self, value):
-		self._MltplPnsnCmcmntLumpSums = value if type(value) != base_types.auto else self.make_default("MltplPnsnCmcmntLumpSums")
+		self._MltplPnsnCmcmntLumpSums = value if value is not None else base_types.UninitialisedField(self, 'MltplPnsnCmcmntLumpSums', YesNoIndicator, False)
 
 	@MltplPnsnCmcmntLumpSums.deleter
 	def MltplPnsnCmcmntLumpSums(self):
 		del self._MltplPnsnCmcmntLumpSums
-		self._MltplPnsnCmcmntLumpSums = None
+		self._MltplPnsnCmcmntLumpSums = base_types.UninitialisedField(self, 'MltplPnsnCmcmntLumpSums', YesNoIndicator, False)
 
 	@property
 	def PctgOfTtlTrfVal(self):
@@ -153,12 +153,12 @@ class Drawdown04(base_types._BaseFieldType):
 
 	@PctgOfTtlTrfVal.setter
 	def PctgOfTtlTrfVal(self, value):
-		self._PctgOfTtlTrfVal = value if type(value) != base_types.auto else self.make_default("PctgOfTtlTrfVal")
+		self._PctgOfTtlTrfVal = value if value is not None else base_types.UninitialisedField(self, 'PctgOfTtlTrfVal', PercentageRate, False)
 
 	@PctgOfTtlTrfVal.deleter
 	def PctgOfTtlTrfVal(self):
 		del self._PctgOfTtlTrfVal
-		self._PctgOfTtlTrfVal = None
+		self._PctgOfTtlTrfVal = base_types.UninitialisedField(self, 'PctgOfTtlTrfVal', PercentageRate, False)
 
 	@property
 	def PnsnCmcmntLumpSumDt(self):
@@ -166,12 +166,12 @@ class Drawdown04(base_types._BaseFieldType):
 
 	@PnsnCmcmntLumpSumDt.setter
 	def PnsnCmcmntLumpSumDt(self, value):
-		self._PnsnCmcmntLumpSumDt = value if type(value) != base_types.auto else self.make_default("PnsnCmcmntLumpSumDt")
+		self._PnsnCmcmntLumpSumDt = value if value is not None else base_types.UninitialisedField(self, 'PnsnCmcmntLumpSumDt', ISODate, False)
 
 	@PnsnCmcmntLumpSumDt.deleter
 	def PnsnCmcmntLumpSumDt(self):
 		del self._PnsnCmcmntLumpSumDt
-		self._PnsnCmcmntLumpSumDt = None
+		self._PnsnCmcmntLumpSumDt = base_types.UninitialisedField(self, 'PnsnCmcmntLumpSumDt', ISODate, False)
 
 	@property
 	def PnsnCmcmntLumpSumRmng(self):
@@ -179,12 +179,12 @@ class Drawdown04(base_types._BaseFieldType):
 
 	@PnsnCmcmntLumpSumRmng.setter
 	def PnsnCmcmntLumpSumRmng(self, value):
-		self._PnsnCmcmntLumpSumRmng = value if type(value) != base_types.auto else self.make_default("PnsnCmcmntLumpSumRmng")
+		self._PnsnCmcmntLumpSumRmng = value if value is not None else base_types.UninitialisedField(self, 'PnsnCmcmntLumpSumRmng', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@PnsnCmcmntLumpSumRmng.deleter
 	def PnsnCmcmntLumpSumRmng(self):
 		del self._PnsnCmcmntLumpSumRmng
-		self._PnsnCmcmntLumpSumRmng = None
+		self._PnsnCmcmntLumpSumRmng = base_types.UninitialisedField(self, 'PnsnCmcmntLumpSumRmng', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def RcptOfDrwdwnInd(self):
@@ -192,12 +192,12 @@ class Drawdown04(base_types._BaseFieldType):
 
 	@RcptOfDrwdwnInd.setter
 	def RcptOfDrwdwnInd(self, value):
-		self._RcptOfDrwdwnInd = value if type(value) != base_types.auto else self.make_default("RcptOfDrwdwnInd")
+		self._RcptOfDrwdwnInd = value if value is not None else base_types.UninitialisedField(self, 'RcptOfDrwdwnInd', YesNoIndicator, False)
 
 	@RcptOfDrwdwnInd.deleter
 	def RcptOfDrwdwnInd(self):
 		del self._RcptOfDrwdwnInd
-		self._RcptOfDrwdwnInd = None
+		self._RcptOfDrwdwnInd = base_types.UninitialisedField(self, 'RcptOfDrwdwnInd', YesNoIndicator, False)
 
 	@property
 	def TrchDt(self):
@@ -205,12 +205,12 @@ class Drawdown04(base_types._BaseFieldType):
 
 	@TrchDt.setter
 	def TrchDt(self, value):
-		self._TrchDt = value if type(value) != base_types.auto else self.make_default("TrchDt")
+		self._TrchDt = value if value is not None else base_types.UninitialisedField(self, 'TrchDt', ISODate, False)
 
 	@TrchDt.deleter
 	def TrchDt(self):
 		del self._TrchDt
-		self._TrchDt = None
+		self._TrchDt = base_types.UninitialisedField(self, 'TrchDt', ISODate, False)
 
 	@property
 	def TrchTp(self):
@@ -218,12 +218,12 @@ class Drawdown04(base_types._BaseFieldType):
 
 	@TrchTp.setter
 	def TrchTp(self, value):
-		self._TrchTp = value if type(value) != base_types.auto else self.make_default("TrchTp")
+		self._TrchTp = value if value is not None else base_types.UninitialisedField(self, 'TrchTp', DrawdownType2Choice, False)
 
 	@TrchTp.deleter
 	def TrchTp(self):
 		del self._TrchTp
-		self._TrchTp = None
+		self._TrchTp = base_types.UninitialisedField(self, 'TrchTp', DrawdownType2Choice, False)
 
 	@property
 	def TtlAmtNetDrwdwn(self):
@@ -231,12 +231,12 @@ class Drawdown04(base_types._BaseFieldType):
 
 	@TtlAmtNetDrwdwn.setter
 	def TtlAmtNetDrwdwn(self, value):
-		self._TtlAmtNetDrwdwn = value if type(value) != base_types.auto else self.make_default("TtlAmtNetDrwdwn")
+		self._TtlAmtNetDrwdwn = value if value is not None else base_types.UninitialisedField(self, 'TtlAmtNetDrwdwn', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@TtlAmtNetDrwdwn.deleter
 	def TtlAmtNetDrwdwn(self):
 		del self._TtlAmtNetDrwdwn
-		self._TtlAmtNetDrwdwn = None
+		self._TtlAmtNetDrwdwn = base_types.UninitialisedField(self, 'TtlAmtNetDrwdwn', ActiveCurrencyAnd13DecimalAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlFndsDsgntd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),

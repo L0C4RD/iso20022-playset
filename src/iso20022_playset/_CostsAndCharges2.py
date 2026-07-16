@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._ISODate import ISODate
-from ._IndividualCostOrCharge2 import IndividualCostOrCharge2
+from . import AdditionalInformation15
+from . import ISODate
+from . import IndividualCostOrCharge2
 
 class CostsAndCharges2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CostsAndCharges2(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, False)
 
 	@property
 	def ExAnteRefDt(self):
@@ -28,12 +28,12 @@ class CostsAndCharges2(base_types._BaseFieldType):
 
 	@ExAnteRefDt.setter
 	def ExAnteRefDt(self, value):
-		self._ExAnteRefDt = value if type(value) != base_types.auto else self.make_default("ExAnteRefDt")
+		self._ExAnteRefDt = value if value is not None else base_types.UninitialisedField(self, 'ExAnteRefDt', ISODate, False)
 
 	@ExAnteRefDt.deleter
 	def ExAnteRefDt(self):
 		del self._ExAnteRefDt
-		self._ExAnteRefDt = None
+		self._ExAnteRefDt = base_types.UninitialisedField(self, 'ExAnteRefDt', ISODate, False)
 
 	@property
 	def IndvCostOrChrg(self):
@@ -41,12 +41,12 @@ class CostsAndCharges2(base_types._BaseFieldType):
 
 	@IndvCostOrChrg.setter
 	def IndvCostOrChrg(self, value):
-		self._IndvCostOrChrg = value if type(value) != base_types.auto else self.make_default("IndvCostOrChrg")
+		self._IndvCostOrChrg = value if value is not None else base_types.UninitialisedField(self, 'IndvCostOrChrg', IndividualCostOrCharge2, True)
 
 	@IndvCostOrChrg.deleter
 	def IndvCostOrChrg(self):
 		del self._IndvCostOrChrg
-		self._IndvCostOrChrg = None
+		self._IndvCostOrChrg = base_types.UninitialisedField(self, 'IndvCostOrChrg', IndividualCostOrCharge2, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),

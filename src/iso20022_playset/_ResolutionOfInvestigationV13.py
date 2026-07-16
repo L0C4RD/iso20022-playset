@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Case6 import Case6
-from ._CaseAssignment6 import CaseAssignment6
-from ._ClaimNonReceipt3Choice import ClaimNonReceipt3Choice
-from ._CorrectiveTransaction5Choice import CorrectiveTransaction5Choice
-from ._InvestigationStatus6Choice import InvestigationStatus6Choice
-from ._PaymentTransaction157 import PaymentTransaction157
-from ._ResolutionData5 import ResolutionData5
-from ._StatementResolutionEntry5 import StatementResolutionEntry5
-from ._SupplementaryData1 import SupplementaryData1
-from ._UnderlyingTransaction32 import UnderlyingTransaction32
+from . import Case6
+from . import CaseAssignment6
+from . import ClaimNonReceipt3Choice
+from . import CorrectiveTransaction5Choice
+from . import InvestigationStatus6Choice
+from . import PaymentTransaction157
+from . import ResolutionData5
+from . import StatementResolutionEntry5
+from . import SupplementaryData1
+from . import UnderlyingTransaction32
 
 class ResolutionOfInvestigationV13(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class ResolutionOfInvestigationV13(base_types._BaseFieldType):
 
 	@Assgnmt.setter
 	def Assgnmt(self, value):
-		self._Assgnmt = value if type(value) != base_types.auto else self.make_default("Assgnmt")
+		self._Assgnmt = value if value is not None else base_types.UninitialisedField(self, 'Assgnmt', CaseAssignment6, False)
 
 	@Assgnmt.deleter
 	def Assgnmt(self):
 		del self._Assgnmt
-		self._Assgnmt = None
+		self._Assgnmt = base_types.UninitialisedField(self, 'Assgnmt', CaseAssignment6, False)
 
 	@property
 	def ClmNonRctDtls(self):
@@ -35,12 +35,12 @@ class ResolutionOfInvestigationV13(base_types._BaseFieldType):
 
 	@ClmNonRctDtls.setter
 	def ClmNonRctDtls(self, value):
-		self._ClmNonRctDtls = value if type(value) != base_types.auto else self.make_default("ClmNonRctDtls")
+		self._ClmNonRctDtls = value if value is not None else base_types.UninitialisedField(self, 'ClmNonRctDtls', ClaimNonReceipt3Choice, False)
 
 	@ClmNonRctDtls.deleter
 	def ClmNonRctDtls(self):
 		del self._ClmNonRctDtls
-		self._ClmNonRctDtls = None
+		self._ClmNonRctDtls = base_types.UninitialisedField(self, 'ClmNonRctDtls', ClaimNonReceipt3Choice, False)
 
 	@property
 	def CrrctnTx(self):
@@ -48,12 +48,12 @@ class ResolutionOfInvestigationV13(base_types._BaseFieldType):
 
 	@CrrctnTx.setter
 	def CrrctnTx(self, value):
-		self._CrrctnTx = value if type(value) != base_types.auto else self.make_default("CrrctnTx")
+		self._CrrctnTx = value if value is not None else base_types.UninitialisedField(self, 'CrrctnTx', CorrectiveTransaction5Choice, False)
 
 	@CrrctnTx.deleter
 	def CrrctnTx(self):
 		del self._CrrctnTx
-		self._CrrctnTx = None
+		self._CrrctnTx = base_types.UninitialisedField(self, 'CrrctnTx', CorrectiveTransaction5Choice, False)
 
 	@property
 	def CxlDtls(self):
@@ -61,12 +61,12 @@ class ResolutionOfInvestigationV13(base_types._BaseFieldType):
 
 	@CxlDtls.setter
 	def CxlDtls(self, value):
-		self._CxlDtls = value if type(value) != base_types.auto else self.make_default("CxlDtls")
+		self._CxlDtls = value if value is not None else base_types.UninitialisedField(self, 'CxlDtls', UnderlyingTransaction32, True)
 
 	@CxlDtls.deleter
 	def CxlDtls(self):
 		del self._CxlDtls
-		self._CxlDtls = None
+		self._CxlDtls = base_types.UninitialisedField(self, 'CxlDtls', UnderlyingTransaction32, True)
 
 	@property
 	def ModDtls(self):
@@ -74,12 +74,12 @@ class ResolutionOfInvestigationV13(base_types._BaseFieldType):
 
 	@ModDtls.setter
 	def ModDtls(self, value):
-		self._ModDtls = value if type(value) != base_types.auto else self.make_default("ModDtls")
+		self._ModDtls = value if value is not None else base_types.UninitialisedField(self, 'ModDtls', PaymentTransaction157, False)
 
 	@ModDtls.deleter
 	def ModDtls(self):
 		del self._ModDtls
-		self._ModDtls = None
+		self._ModDtls = base_types.UninitialisedField(self, 'ModDtls', PaymentTransaction157, False)
 
 	@property
 	def RsltnRltdInf(self):
@@ -87,12 +87,12 @@ class ResolutionOfInvestigationV13(base_types._BaseFieldType):
 
 	@RsltnRltdInf.setter
 	def RsltnRltdInf(self, value):
-		self._RsltnRltdInf = value if type(value) != base_types.auto else self.make_default("RsltnRltdInf")
+		self._RsltnRltdInf = value if value is not None else base_types.UninitialisedField(self, 'RsltnRltdInf', ResolutionData5, False)
 
 	@RsltnRltdInf.deleter
 	def RsltnRltdInf(self):
 		del self._RsltnRltdInf
-		self._RsltnRltdInf = None
+		self._RsltnRltdInf = base_types.UninitialisedField(self, 'RsltnRltdInf', ResolutionData5, False)
 
 	@property
 	def RslvdCase(self):
@@ -100,12 +100,12 @@ class ResolutionOfInvestigationV13(base_types._BaseFieldType):
 
 	@RslvdCase.setter
 	def RslvdCase(self, value):
-		self._RslvdCase = value if type(value) != base_types.auto else self.make_default("RslvdCase")
+		self._RslvdCase = value if value is not None else base_types.UninitialisedField(self, 'RslvdCase', Case6, False)
 
 	@RslvdCase.deleter
 	def RslvdCase(self):
 		del self._RslvdCase
-		self._RslvdCase = None
+		self._RslvdCase = base_types.UninitialisedField(self, 'RslvdCase', Case6, False)
 
 	@property
 	def SplmtryData(self):
@@ -113,12 +113,12 @@ class ResolutionOfInvestigationV13(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def StmtDtls(self):
@@ -126,12 +126,12 @@ class ResolutionOfInvestigationV13(base_types._BaseFieldType):
 
 	@StmtDtls.setter
 	def StmtDtls(self, value):
-		self._StmtDtls = value if type(value) != base_types.auto else self.make_default("StmtDtls")
+		self._StmtDtls = value if value is not None else base_types.UninitialisedField(self, 'StmtDtls', StatementResolutionEntry5, False)
 
 	@StmtDtls.deleter
 	def StmtDtls(self):
 		del self._StmtDtls
-		self._StmtDtls = None
+		self._StmtDtls = base_types.UninitialisedField(self, 'StmtDtls', StatementResolutionEntry5, False)
 
 	@property
 	def Sts(self):
@@ -139,12 +139,12 @@ class ResolutionOfInvestigationV13(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', InvestigationStatus6Choice, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', InvestigationStatus6Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),

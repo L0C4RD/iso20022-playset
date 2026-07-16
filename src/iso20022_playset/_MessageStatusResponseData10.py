@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardAcquisitionResponse3 import CardAcquisitionResponse3
-from ._DeviceSendApplicationProtocolDataUnitCardReaderResponse1 import DeviceSendApplicationProtocolDataUnitCardReaderResponse1
-from ._GenericIdentification177 import GenericIdentification177
-from ._LoyaltyResponse3 import LoyaltyResponse3
-from ._Max35Text import Max35Text
-from ._PaymentResponse8 import PaymentResponse8
-from ._ResponseType11 import ResponseType11
-from ._ReversalResponse10 import ReversalResponse10
-from ._StoredValueResponse9 import StoredValueResponse9
+from . import CardAcquisitionResponse3
+from . import DeviceSendApplicationProtocolDataUnitCardReaderResponse1
+from . import GenericIdentification177
+from . import LoyaltyResponse3
+from . import Max35Text
+from . import PaymentResponse8
+from . import ResponseType11
+from . import ReversalResponse10
+from . import StoredValueResponse9
 
 class MessageStatusResponseData10(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class MessageStatusResponseData10(base_types._BaseFieldType):
 
 	@InitgPty.setter
 	def InitgPty(self, value):
-		self._InitgPty = value if type(value) != base_types.auto else self.make_default("InitgPty")
+		self._InitgPty = value if value is not None else base_types.UninitialisedField(self, 'InitgPty', GenericIdentification177, False)
 
 	@InitgPty.deleter
 	def InitgPty(self):
 		del self._InitgPty
-		self._InitgPty = None
+		self._InitgPty = base_types.UninitialisedField(self, 'InitgPty', GenericIdentification177, False)
 
 	@property
 	def RpeatdCardAcqstnRspn(self):
@@ -34,12 +34,12 @@ class MessageStatusResponseData10(base_types._BaseFieldType):
 
 	@RpeatdCardAcqstnRspn.setter
 	def RpeatdCardAcqstnRspn(self, value):
-		self._RpeatdCardAcqstnRspn = value if type(value) != base_types.auto else self.make_default("RpeatdCardAcqstnRspn")
+		self._RpeatdCardAcqstnRspn = value if value is not None else base_types.UninitialisedField(self, 'RpeatdCardAcqstnRspn', CardAcquisitionResponse3, False)
 
 	@RpeatdCardAcqstnRspn.deleter
 	def RpeatdCardAcqstnRspn(self):
 		del self._RpeatdCardAcqstnRspn
-		self._RpeatdCardAcqstnRspn = None
+		self._RpeatdCardAcqstnRspn = base_types.UninitialisedField(self, 'RpeatdCardAcqstnRspn', CardAcquisitionResponse3, False)
 
 	@property
 	def RpeatdLltyRspn(self):
@@ -47,12 +47,12 @@ class MessageStatusResponseData10(base_types._BaseFieldType):
 
 	@RpeatdLltyRspn.setter
 	def RpeatdLltyRspn(self, value):
-		self._RpeatdLltyRspn = value if type(value) != base_types.auto else self.make_default("RpeatdLltyRspn")
+		self._RpeatdLltyRspn = value if value is not None else base_types.UninitialisedField(self, 'RpeatdLltyRspn', LoyaltyResponse3, False)
 
 	@RpeatdLltyRspn.deleter
 	def RpeatdLltyRspn(self):
 		del self._RpeatdLltyRspn
-		self._RpeatdLltyRspn = None
+		self._RpeatdLltyRspn = base_types.UninitialisedField(self, 'RpeatdLltyRspn', LoyaltyResponse3, False)
 
 	@property
 	def RpeatdPmtRspn(self):
@@ -60,12 +60,12 @@ class MessageStatusResponseData10(base_types._BaseFieldType):
 
 	@RpeatdPmtRspn.setter
 	def RpeatdPmtRspn(self, value):
-		self._RpeatdPmtRspn = value if type(value) != base_types.auto else self.make_default("RpeatdPmtRspn")
+		self._RpeatdPmtRspn = value if value is not None else base_types.UninitialisedField(self, 'RpeatdPmtRspn', PaymentResponse8, False)
 
 	@RpeatdPmtRspn.deleter
 	def RpeatdPmtRspn(self):
 		del self._RpeatdPmtRspn
-		self._RpeatdPmtRspn = None
+		self._RpeatdPmtRspn = base_types.UninitialisedField(self, 'RpeatdPmtRspn', PaymentResponse8, False)
 
 	@property
 	def RpeatdRvslRspn(self):
@@ -73,12 +73,12 @@ class MessageStatusResponseData10(base_types._BaseFieldType):
 
 	@RpeatdRvslRspn.setter
 	def RpeatdRvslRspn(self, value):
-		self._RpeatdRvslRspn = value if type(value) != base_types.auto else self.make_default("RpeatdRvslRspn")
+		self._RpeatdRvslRspn = value if value is not None else base_types.UninitialisedField(self, 'RpeatdRvslRspn', ReversalResponse10, False)
 
 	@RpeatdRvslRspn.deleter
 	def RpeatdRvslRspn(self):
 		del self._RpeatdRvslRspn
-		self._RpeatdRvslRspn = None
+		self._RpeatdRvslRspn = base_types.UninitialisedField(self, 'RpeatdRvslRspn', ReversalResponse10, False)
 
 	@property
 	def RpeatdSndApplPrtcolDataUnitCardRdrRspn(self):
@@ -86,12 +86,12 @@ class MessageStatusResponseData10(base_types._BaseFieldType):
 
 	@RpeatdSndApplPrtcolDataUnitCardRdrRspn.setter
 	def RpeatdSndApplPrtcolDataUnitCardRdrRspn(self, value):
-		self._RpeatdSndApplPrtcolDataUnitCardRdrRspn = value if type(value) != base_types.auto else self.make_default("RpeatdSndApplPrtcolDataUnitCardRdrRspn")
+		self._RpeatdSndApplPrtcolDataUnitCardRdrRspn = value if value is not None else base_types.UninitialisedField(self, 'RpeatdSndApplPrtcolDataUnitCardRdrRspn', DeviceSendApplicationProtocolDataUnitCardReaderResponse1, False)
 
 	@RpeatdSndApplPrtcolDataUnitCardRdrRspn.deleter
 	def RpeatdSndApplPrtcolDataUnitCardRdrRspn(self):
 		del self._RpeatdSndApplPrtcolDataUnitCardRdrRspn
-		self._RpeatdSndApplPrtcolDataUnitCardRdrRspn = None
+		self._RpeatdSndApplPrtcolDataUnitCardRdrRspn = base_types.UninitialisedField(self, 'RpeatdSndApplPrtcolDataUnitCardRdrRspn', DeviceSendApplicationProtocolDataUnitCardReaderResponse1, False)
 
 	@property
 	def RpeatdStordValRspn(self):
@@ -99,12 +99,12 @@ class MessageStatusResponseData10(base_types._BaseFieldType):
 
 	@RpeatdStordValRspn.setter
 	def RpeatdStordValRspn(self, value):
-		self._RpeatdStordValRspn = value if type(value) != base_types.auto else self.make_default("RpeatdStordValRspn")
+		self._RpeatdStordValRspn = value if value is not None else base_types.UninitialisedField(self, 'RpeatdStordValRspn', StoredValueResponse9, False)
 
 	@RpeatdStordValRspn.deleter
 	def RpeatdStordValRspn(self):
 		del self._RpeatdStordValRspn
-		self._RpeatdStordValRspn = None
+		self._RpeatdStordValRspn = base_types.UninitialisedField(self, 'RpeatdStordValRspn', StoredValueResponse9, False)
 
 	@property
 	def TxRspn(self):
@@ -112,12 +112,12 @@ class MessageStatusResponseData10(base_types._BaseFieldType):
 
 	@TxRspn.setter
 	def TxRspn(self, value):
-		self._TxRspn = value if type(value) != base_types.auto else self.make_default("TxRspn")
+		self._TxRspn = value if value is not None else base_types.UninitialisedField(self, 'TxRspn', ResponseType11, False)
 
 	@TxRspn.deleter
 	def TxRspn(self):
 		del self._TxRspn
-		self._TxRspn = None
+		self._TxRspn = base_types.UninitialisedField(self, 'TxRspn', ResponseType11, False)
 
 	@property
 	def XchgId(self):
@@ -125,12 +125,12 @@ class MessageStatusResponseData10(base_types._BaseFieldType):
 
 	@XchgId.setter
 	def XchgId(self, value):
-		self._XchgId = value if type(value) != base_types.auto else self.make_default("XchgId")
+		self._XchgId = value if value is not None else base_types.UninitialisedField(self, 'XchgId', Max35Text, False)
 
 	@XchgId.deleter
 	def XchgId(self):
 		del self._XchgId
-		self._XchgId = None
+		self._XchgId = base_types.UninitialisedField(self, 'XchgId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InitgPty', type=GenericIdentification177, min=1, max=1, mutex_group=None, array=False),

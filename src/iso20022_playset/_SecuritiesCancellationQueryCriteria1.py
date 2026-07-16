@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CancellationProcessingStatus9Choice import CancellationProcessingStatus9Choice
-from ._DateAndDateTimeSearch5Choice import DateAndDateTimeSearch5Choice
-from ._InstructionQueryType1Code import InstructionQueryType1Code
-from ._Max35Text import Max35Text
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
+from . import CancellationProcessingStatus9Choice
+from . import DateAndDateTimeSearch5Choice
+from . import InstructionQueryType1Code
+from . import Max35Text
+from . import SecuritiesAccount19
+from . import SystemPartyIdentification8
 
 class SecuritiesCancellationQueryCriteria1(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class SecuritiesCancellationQueryCriteria1(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', SystemPartyIdentification8, True)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', SystemPartyIdentification8, True)
 
 	@property
 	def CreDtTm(self):
@@ -31,12 +31,12 @@ class SecuritiesCancellationQueryCriteria1(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if value is not None else base_types.UninitialisedField(self, 'CreDtTm', DateAndDateTimeSearch5Choice, False)
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
 		del self._CreDtTm
-		self._CreDtTm = None
+		self._CreDtTm = base_types.UninitialisedField(self, 'CreDtTm', DateAndDateTimeSearch5Choice, False)
 
 	@property
 	def CxlReqId(self):
@@ -44,12 +44,12 @@ class SecuritiesCancellationQueryCriteria1(base_types._BaseFieldType):
 
 	@CxlReqId.setter
 	def CxlReqId(self, value):
-		self._CxlReqId = value if type(value) != base_types.auto else self.make_default("CxlReqId")
+		self._CxlReqId = value if value is not None else base_types.UninitialisedField(self, 'CxlReqId', Max35Text, True)
 
 	@CxlReqId.deleter
 	def CxlReqId(self):
 		del self._CxlReqId
-		self._CxlReqId = None
+		self._CxlReqId = base_types.UninitialisedField(self, 'CxlReqId', Max35Text, True)
 
 	@property
 	def InstrQryTp(self):
@@ -57,12 +57,12 @@ class SecuritiesCancellationQueryCriteria1(base_types._BaseFieldType):
 
 	@InstrQryTp.setter
 	def InstrQryTp(self, value):
-		self._InstrQryTp = value if type(value) != base_types.auto else self.make_default("InstrQryTp")
+		self._InstrQryTp = value if value is not None else base_types.UninitialisedField(self, 'InstrQryTp', InstructionQueryType1Code, False)
 
 	@InstrQryTp.deleter
 	def InstrQryTp(self):
 		del self._InstrQryTp
-		self._InstrQryTp = None
+		self._InstrQryTp = base_types.UninitialisedField(self, 'InstrQryTp', InstructionQueryType1Code, False)
 
 	@property
 	def MsgOrgtr(self):
@@ -70,12 +70,12 @@ class SecuritiesCancellationQueryCriteria1(base_types._BaseFieldType):
 
 	@MsgOrgtr.setter
 	def MsgOrgtr(self, value):
-		self._MsgOrgtr = value if type(value) != base_types.auto else self.make_default("MsgOrgtr")
+		self._MsgOrgtr = value if value is not None else base_types.UninitialisedField(self, 'MsgOrgtr', SystemPartyIdentification8, True)
 
 	@MsgOrgtr.deleter
 	def MsgOrgtr(self):
 		del self._MsgOrgtr
-		self._MsgOrgtr = None
+		self._MsgOrgtr = base_types.UninitialisedField(self, 'MsgOrgtr', SystemPartyIdentification8, True)
 
 	@property
 	def PrcgSts(self):
@@ -83,12 +83,12 @@ class SecuritiesCancellationQueryCriteria1(base_types._BaseFieldType):
 
 	@PrcgSts.setter
 	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != base_types.auto else self.make_default("PrcgSts")
+		self._PrcgSts = value if value is not None else base_types.UninitialisedField(self, 'PrcgSts', CancellationProcessingStatus9Choice, True)
 
 	@PrcgSts.deleter
 	def PrcgSts(self):
 		del self._PrcgSts
-		self._PrcgSts = None
+		self._PrcgSts = base_types.UninitialisedField(self, 'PrcgSts', CancellationProcessingStatus9Choice, True)
 
 	@property
 	def SfkpgAcct(self):
@@ -96,12 +96,12 @@ class SecuritiesCancellationQueryCriteria1(base_types._BaseFieldType):
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, True)
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
-		self._SfkpgAcct = None
+		self._SfkpgAcct = base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnr', type=SystemPartyIdentification8, min=0, max=None, mutex_group=None, array=True),

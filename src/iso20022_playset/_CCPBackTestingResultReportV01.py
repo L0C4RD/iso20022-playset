@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MonthlyResult1 import MonthlyResult1
-from ._SupplementaryData1 import SupplementaryData1
+from . import MonthlyResult1
+from . import SupplementaryData1
 
 class CCPBackTestingResultReportV01(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CCPBackTestingResultReportV01(base_types._BaseFieldType):
 
 	@MnthlyRslt.setter
 	def MnthlyRslt(self, value):
-		self._MnthlyRslt = value if type(value) != base_types.auto else self.make_default("MnthlyRslt")
+		self._MnthlyRslt = value if value is not None else base_types.UninitialisedField(self, 'MnthlyRslt', MonthlyResult1, True)
 
 	@MnthlyRslt.deleter
 	def MnthlyRslt(self):
 		del self._MnthlyRslt
-		self._MnthlyRslt = None
+		self._MnthlyRslt = base_types.UninitialisedField(self, 'MnthlyRslt', MonthlyResult1, True)
 
 	@property
 	def SplmtryData(self):
@@ -27,12 +27,12 @@ class CCPBackTestingResultReportV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MnthlyRslt', type=MonthlyResult1, min=1, max=None, mutex_group=None, array=True),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._ContractClosureReason1Choice import ContractClosureReason1Choice
-from ._DocumentIdentification28 import DocumentIdentification28
-from ._ISODate import ISODate
+from . import BranchAndFinancialInstitutionIdentification8
+from . import ContractClosureReason1Choice
+from . import DocumentIdentification28
+from . import ISODate
 
 class RegisteredContractJournal3(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class RegisteredContractJournal3(base_types._BaseFieldType):
 
 	@ClsrDt.setter
 	def ClsrDt(self, value):
-		self._ClsrDt = value if type(value) != base_types.auto else self.make_default("ClsrDt")
+		self._ClsrDt = value if value is not None else base_types.UninitialisedField(self, 'ClsrDt', ISODate, False)
 
 	@ClsrDt.deleter
 	def ClsrDt(self):
 		del self._ClsrDt
-		self._ClsrDt = None
+		self._ClsrDt = base_types.UninitialisedField(self, 'ClsrDt', ISODate, False)
 
 	@property
 	def ClsrRsn(self):
@@ -29,12 +29,12 @@ class RegisteredContractJournal3(base_types._BaseFieldType):
 
 	@ClsrRsn.setter
 	def ClsrRsn(self, value):
-		self._ClsrRsn = value if type(value) != base_types.auto else self.make_default("ClsrRsn")
+		self._ClsrRsn = value if value is not None else base_types.UninitialisedField(self, 'ClsrRsn', ContractClosureReason1Choice, False)
 
 	@ClsrRsn.deleter
 	def ClsrRsn(self):
 		del self._ClsrRsn
-		self._ClsrRsn = None
+		self._ClsrRsn = base_types.UninitialisedField(self, 'ClsrRsn', ContractClosureReason1Choice, False)
 
 	@property
 	def RegnAgt(self):
@@ -42,12 +42,12 @@ class RegisteredContractJournal3(base_types._BaseFieldType):
 
 	@RegnAgt.setter
 	def RegnAgt(self, value):
-		self._RegnAgt = value if type(value) != base_types.auto else self.make_default("RegnAgt")
+		self._RegnAgt = value if value is not None else base_types.UninitialisedField(self, 'RegnAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@RegnAgt.deleter
 	def RegnAgt(self):
 		del self._RegnAgt
-		self._RegnAgt = None
+		self._RegnAgt = base_types.UninitialisedField(self, 'RegnAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def UnqId(self):
@@ -55,12 +55,12 @@ class RegisteredContractJournal3(base_types._BaseFieldType):
 
 	@UnqId.setter
 	def UnqId(self, value):
-		self._UnqId = value if type(value) != base_types.auto else self.make_default("UnqId")
+		self._UnqId = value if value is not None else base_types.UninitialisedField(self, 'UnqId', DocumentIdentification28, False)
 
 	@UnqId.deleter
 	def UnqId(self):
 		del self._UnqId
-		self._UnqId = None
+		self._UnqId = base_types.UninitialisedField(self, 'UnqId', DocumentIdentification28, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClsrDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),

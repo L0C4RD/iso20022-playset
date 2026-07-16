@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InterestComputationMethodFormat7 import InterestComputationMethodFormat7
+from . import InterestComputationMethodFormat7
 
 class CompareDayCount1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class CompareDayCount1(base_types._BaseFieldType):
 
 	@Val1.setter
 	def Val1(self, value):
-		self._Val1 = value if type(value) != base_types.auto else self.make_default("Val1")
+		self._Val1 = value if value is not None else base_types.UninitialisedField(self, 'Val1', InterestComputationMethodFormat7, False)
 
 	@Val1.deleter
 	def Val1(self):
 		del self._Val1
-		self._Val1 = None
+		self._Val1 = base_types.UninitialisedField(self, 'Val1', InterestComputationMethodFormat7, False)
 
 	@property
 	def Val2(self):
@@ -26,12 +26,12 @@ class CompareDayCount1(base_types._BaseFieldType):
 
 	@Val2.setter
 	def Val2(self, value):
-		self._Val2 = value if type(value) != base_types.auto else self.make_default("Val2")
+		self._Val2 = value if value is not None else base_types.UninitialisedField(self, 'Val2', InterestComputationMethodFormat7, False)
 
 	@Val2.deleter
 	def Val2(self):
 		del self._Val2
-		self._Val2 = None
+		self._Val2 = base_types.UninitialisedField(self, 'Val2', InterestComputationMethodFormat7, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Val1', type=InterestComputationMethodFormat7, min=0, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InvoiceTaxReportV01 import InvoiceTaxReportV01
+from . import InvoiceTaxReportV01
 
 class AUTH_034_001_01():
 
@@ -18,12 +18,12 @@ class AUTH_034_001_01():
 
 		@InvcTaxRpt.setter
 		def InvcTaxRpt(self, value):
-			self._InvcTaxRpt = value if type(value) != base_types.auto else self.make_default("InvcTaxRpt")
+			self._InvcTaxRpt = value if value is not None else base_types.UninitialisedField(self, 'InvcTaxRpt', InvoiceTaxReportV01, False)
 
 		@InvcTaxRpt.deleter
 		def InvcTaxRpt(self):
 			del self._InvcTaxRpt
-			self._InvcTaxRpt = None
+			self._InvcTaxRpt = base_types.UninitialisedField(self, 'InvcTaxRpt', InvoiceTaxReportV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='InvcTaxRpt', type=InvoiceTaxReportV01, min=1, max=1, mutex_group=None, array=False),

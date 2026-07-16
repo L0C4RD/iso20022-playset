@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._ProductIdentifier2Code import ProductIdentifier2Code
+from . import Max35Text
+from . import ProductIdentifier2Code
 
 class ProductIdentifier2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ProductIdentifier2(base_types._BaseFieldType):
 
 	@Idr.setter
 	def Idr(self, value):
-		self._Idr = value if type(value) != base_types.auto else self.make_default("Idr")
+		self._Idr = value if value is not None else base_types.UninitialisedField(self, 'Idr', Max35Text, False)
 
 	@Idr.deleter
 	def Idr(self):
 		del self._Idr
-		self._Idr = None
+		self._Idr = base_types.UninitialisedField(self, 'Idr', Max35Text, False)
 
 	@property
 	def Tp(self):
@@ -27,12 +27,12 @@ class ProductIdentifier2(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', ProductIdentifier2Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', ProductIdentifier2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Idr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

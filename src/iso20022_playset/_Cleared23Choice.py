@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ClearingExceptionOrExemption3Choice import ClearingExceptionOrExemption3Choice
-from ._ClearingPartyAndTime21Choice import ClearingPartyAndTime21Choice
-from ._ClearingPartyAndTime22Choice import ClearingPartyAndTime22Choice
+from . import ClearingExceptionOrExemption3Choice
+from . import ClearingPartyAndTime21Choice
+from . import ClearingPartyAndTime22Choice
 
 class Cleared23Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Cleared23Choice(base_types._BaseFieldType):
 
 	@Clrd.setter
 	def Clrd(self, value):
-		self._Clrd = value if type(value) != base_types.auto else self.make_default("Clrd")
+		self._Clrd = value if value is not None else base_types.UninitialisedField(self, 'Clrd', ClearingPartyAndTime21Choice, False)
 
 	@Clrd.deleter
 	def Clrd(self):
 		del self._Clrd
-		self._Clrd = None
+		self._Clrd = base_types.UninitialisedField(self, 'Clrd', ClearingPartyAndTime21Choice, False)
 
 	@property
 	def IntndToClear(self):
@@ -28,12 +28,12 @@ class Cleared23Choice(base_types._BaseFieldType):
 
 	@IntndToClear.setter
 	def IntndToClear(self, value):
-		self._IntndToClear = value if type(value) != base_types.auto else self.make_default("IntndToClear")
+		self._IntndToClear = value if value is not None else base_types.UninitialisedField(self, 'IntndToClear', ClearingPartyAndTime22Choice, False)
 
 	@IntndToClear.deleter
 	def IntndToClear(self):
 		del self._IntndToClear
-		self._IntndToClear = None
+		self._IntndToClear = base_types.UninitialisedField(self, 'IntndToClear', ClearingPartyAndTime22Choice, False)
 
 	@property
 	def NonClrd(self):
@@ -41,12 +41,12 @@ class Cleared23Choice(base_types._BaseFieldType):
 
 	@NonClrd.setter
 	def NonClrd(self, value):
-		self._NonClrd = value if type(value) != base_types.auto else self.make_default("NonClrd")
+		self._NonClrd = value if value is not None else base_types.UninitialisedField(self, 'NonClrd', ClearingExceptionOrExemption3Choice, False)
 
 	@NonClrd.deleter
 	def NonClrd(self):
 		del self._NonClrd
-		self._NonClrd = None
+		self._NonClrd = base_types.UninitialisedField(self, 'NonClrd', ClearingExceptionOrExemption3Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Clrd', type=ClearingPartyAndTime21Choice, min=0, max=1, mutex_group=1, array=False),

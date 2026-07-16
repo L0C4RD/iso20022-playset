@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Pagination1 import Pagination1
-from ._PartyIdentification136 import PartyIdentification136
-from ._Penalty4 import Penalty4
-from ._PenaltyReport1 import PenaltyReport1
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._SupplementaryData1 import SupplementaryData1
+from . import Pagination1
+from . import PartyIdentification136
+from . import Penalty4
+from . import PenaltyReport1
+from . import SecuritiesAccount19
+from . import SupplementaryData1
 
 class SecuritiesTransactionPenaltiesReportV01(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class SecuritiesTransactionPenaltiesReportV01(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification136, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification136, False)
 
 	@property
 	def AcctSvcr(self):
@@ -31,12 +31,12 @@ class SecuritiesTransactionPenaltiesReportV01(base_types._BaseFieldType):
 
 	@AcctSvcr.setter
 	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
+		self._AcctSvcr = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcr', PartyIdentification136, False)
 
 	@AcctSvcr.deleter
 	def AcctSvcr(self):
 		del self._AcctSvcr
-		self._AcctSvcr = None
+		self._AcctSvcr = base_types.UninitialisedField(self, 'AcctSvcr', PartyIdentification136, False)
 
 	@property
 	def Pnlty(self):
@@ -44,12 +44,12 @@ class SecuritiesTransactionPenaltiesReportV01(base_types._BaseFieldType):
 
 	@Pnlty.setter
 	def Pnlty(self, value):
-		self._Pnlty = value if type(value) != base_types.auto else self.make_default("Pnlty")
+		self._Pnlty = value if value is not None else base_types.UninitialisedField(self, 'Pnlty', Penalty4, True)
 
 	@Pnlty.deleter
 	def Pnlty(self):
 		del self._Pnlty
-		self._Pnlty = None
+		self._Pnlty = base_types.UninitialisedField(self, 'Pnlty', Penalty4, True)
 
 	@property
 	def RptGnlDtls(self):
@@ -57,12 +57,12 @@ class SecuritiesTransactionPenaltiesReportV01(base_types._BaseFieldType):
 
 	@RptGnlDtls.setter
 	def RptGnlDtls(self, value):
-		self._RptGnlDtls = value if type(value) != base_types.auto else self.make_default("RptGnlDtls")
+		self._RptGnlDtls = value if value is not None else base_types.UninitialisedField(self, 'RptGnlDtls', PenaltyReport1, False)
 
 	@RptGnlDtls.deleter
 	def RptGnlDtls(self):
 		del self._RptGnlDtls
-		self._RptGnlDtls = None
+		self._RptGnlDtls = base_types.UninitialisedField(self, 'RptGnlDtls', PenaltyReport1, False)
 
 	@property
 	def RptPgntn(self):
@@ -70,12 +70,12 @@ class SecuritiesTransactionPenaltiesReportV01(base_types._BaseFieldType):
 
 	@RptPgntn.setter
 	def RptPgntn(self, value):
-		self._RptPgntn = value if type(value) != base_types.auto else self.make_default("RptPgntn")
+		self._RptPgntn = value if value is not None else base_types.UninitialisedField(self, 'RptPgntn', Pagination1, False)
 
 	@RptPgntn.deleter
 	def RptPgntn(self):
 		del self._RptPgntn
-		self._RptPgntn = None
+		self._RptPgntn = base_types.UninitialisedField(self, 'RptPgntn', Pagination1, False)
 
 	@property
 	def SfkpgAcct(self):
@@ -83,12 +83,12 @@ class SecuritiesTransactionPenaltiesReportV01(base_types._BaseFieldType):
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
-		self._SfkpgAcct = None
+		self._SfkpgAcct = base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@property
 	def SplmtryData(self):
@@ -96,12 +96,12 @@ class SecuritiesTransactionPenaltiesReportV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CheckType1Code import CheckType1Code
-from ._Max35Text import Max35Text
-from ._Max3Text import Max3Text
-from ._TrackData2 import TrackData2
+from . import CheckType1Code
+from . import Max35Text
+from . import Max3Text
+from . import TrackData2
 
 class Check1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class Check1(base_types._BaseFieldType):
 
 	@AcctNb.setter
 	def AcctNb(self, value):
-		self._AcctNb = value if type(value) != base_types.auto else self.make_default("AcctNb")
+		self._AcctNb = value if value is not None else base_types.UninitialisedField(self, 'AcctNb', Max35Text, False)
 
 	@AcctNb.deleter
 	def AcctNb(self):
 		del self._AcctNb
-		self._AcctNb = None
+		self._AcctNb = base_types.UninitialisedField(self, 'AcctNb', Max35Text, False)
 
 	@property
 	def BkId(self):
@@ -29,12 +29,12 @@ class Check1(base_types._BaseFieldType):
 
 	@BkId.setter
 	def BkId(self, value):
-		self._BkId = value if type(value) != base_types.auto else self.make_default("BkId")
+		self._BkId = value if value is not None else base_types.UninitialisedField(self, 'BkId', Max35Text, False)
 
 	@BkId.deleter
 	def BkId(self):
 		del self._BkId
-		self._BkId = None
+		self._BkId = base_types.UninitialisedField(self, 'BkId', Max35Text, False)
 
 	@property
 	def ChckCardNb(self):
@@ -42,12 +42,12 @@ class Check1(base_types._BaseFieldType):
 
 	@ChckCardNb.setter
 	def ChckCardNb(self, value):
-		self._ChckCardNb = value if type(value) != base_types.auto else self.make_default("ChckCardNb")
+		self._ChckCardNb = value if value is not None else base_types.UninitialisedField(self, 'ChckCardNb', Max35Text, False)
 
 	@ChckCardNb.deleter
 	def ChckCardNb(self):
 		del self._ChckCardNb
-		self._ChckCardNb = None
+		self._ChckCardNb = base_types.UninitialisedField(self, 'ChckCardNb', Max35Text, False)
 
 	@property
 	def ChckNb(self):
@@ -55,12 +55,12 @@ class Check1(base_types._BaseFieldType):
 
 	@ChckNb.setter
 	def ChckNb(self, value):
-		self._ChckNb = value if type(value) != base_types.auto else self.make_default("ChckNb")
+		self._ChckNb = value if value is not None else base_types.UninitialisedField(self, 'ChckNb', Max35Text, False)
 
 	@ChckNb.deleter
 	def ChckNb(self):
 		del self._ChckNb
-		self._ChckNb = None
+		self._ChckNb = base_types.UninitialisedField(self, 'ChckNb', Max35Text, False)
 
 	@property
 	def ChckTp(self):
@@ -68,12 +68,12 @@ class Check1(base_types._BaseFieldType):
 
 	@ChckTp.setter
 	def ChckTp(self, value):
-		self._ChckTp = value if type(value) != base_types.auto else self.make_default("ChckTp")
+		self._ChckTp = value if value is not None else base_types.UninitialisedField(self, 'ChckTp', CheckType1Code, False)
 
 	@ChckTp.deleter
 	def ChckTp(self):
 		del self._ChckTp
-		self._ChckTp = None
+		self._ChckTp = base_types.UninitialisedField(self, 'ChckTp', CheckType1Code, False)
 
 	@property
 	def ChckTrckData2(self):
@@ -81,12 +81,12 @@ class Check1(base_types._BaseFieldType):
 
 	@ChckTrckData2.setter
 	def ChckTrckData2(self, value):
-		self._ChckTrckData2 = value if type(value) != base_types.auto else self.make_default("ChckTrckData2")
+		self._ChckTrckData2 = value if value is not None else base_types.UninitialisedField(self, 'ChckTrckData2', TrackData2, False)
 
 	@ChckTrckData2.deleter
 	def ChckTrckData2(self):
 		del self._ChckTrckData2
-		self._ChckTrckData2 = None
+		self._ChckTrckData2 = base_types.UninitialisedField(self, 'ChckTrckData2', TrackData2, False)
 
 	@property
 	def Ctry(self):
@@ -94,12 +94,12 @@ class Check1(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', Max3Text, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', Max3Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

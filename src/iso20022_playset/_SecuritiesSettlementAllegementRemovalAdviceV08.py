@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
-from ._Max35Text import Max35Text
-from ._PartyIdentification144 import PartyIdentification144
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._SettlementTypeAndIdentification18 import SettlementTypeAndIdentification18
-from ._SupplementaryData1 import SupplementaryData1
-from ._TransactionDetails179 import TransactionDetails179
+from . import BlockChainAddressWallet3
+from . import Max35Text
+from . import PartyIdentification144
+from . import SecuritiesAccount19
+from . import SettlementTypeAndIdentification18
+from . import SupplementaryData1
+from . import TransactionDetails179
 
 class SecuritiesSettlementAllegementRemovalAdviceV08(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class SecuritiesSettlementAllegementRemovalAdviceV08(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification144, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification144, False)
 
 	@property
 	def AcctSvcrTxId(self):
@@ -32,12 +32,12 @@ class SecuritiesSettlementAllegementRemovalAdviceV08(base_types._BaseFieldType):
 
 	@AcctSvcrTxId.setter
 	def AcctSvcrTxId(self, value):
-		self._AcctSvcrTxId = value if type(value) != base_types.auto else self.make_default("AcctSvcrTxId")
+		self._AcctSvcrTxId = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcrTxId', SettlementTypeAndIdentification18, False)
 
 	@AcctSvcrTxId.deleter
 	def AcctSvcrTxId(self):
 		del self._AcctSvcrTxId
-		self._AcctSvcrTxId = None
+		self._AcctSvcrTxId = base_types.UninitialisedField(self, 'AcctSvcrTxId', SettlementTypeAndIdentification18, False)
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -45,12 +45,12 @@ class SecuritiesSettlementAllegementRemovalAdviceV08(base_types._BaseFieldType):
 
 	@BlckChainAdrOrWllt.setter
 	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
+		self._BlckChainAdrOrWllt = value if value is not None else base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet3, False)
 
 	@BlckChainAdrOrWllt.deleter
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+		self._BlckChainAdrOrWllt = base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet3, False)
 
 	@property
 	def CtrPtyMktInfrstrctrTxId(self):
@@ -58,12 +58,12 @@ class SecuritiesSettlementAllegementRemovalAdviceV08(base_types._BaseFieldType):
 
 	@CtrPtyMktInfrstrctrTxId.setter
 	def CtrPtyMktInfrstrctrTxId(self, value):
-		self._CtrPtyMktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("CtrPtyMktInfrstrctrTxId")
+		self._CtrPtyMktInfrstrctrTxId = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyMktInfrstrctrTxId', Max35Text, False)
 
 	@CtrPtyMktInfrstrctrTxId.deleter
 	def CtrPtyMktInfrstrctrTxId(self):
 		del self._CtrPtyMktInfrstrctrTxId
-		self._CtrPtyMktInfrstrctrTxId = None
+		self._CtrPtyMktInfrstrctrTxId = base_types.UninitialisedField(self, 'CtrPtyMktInfrstrctrTxId', Max35Text, False)
 
 	@property
 	def MktInfrstrctrTxId(self):
@@ -71,12 +71,12 @@ class SecuritiesSettlementAllegementRemovalAdviceV08(base_types._BaseFieldType):
 
 	@MktInfrstrctrTxId.setter
 	def MktInfrstrctrTxId(self, value):
-		self._MktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("MktInfrstrctrTxId")
+		self._MktInfrstrctrTxId = value if value is not None else base_types.UninitialisedField(self, 'MktInfrstrctrTxId', Max35Text, False)
 
 	@MktInfrstrctrTxId.deleter
 	def MktInfrstrctrTxId(self):
 		del self._MktInfrstrctrTxId
-		self._MktInfrstrctrTxId = None
+		self._MktInfrstrctrTxId = base_types.UninitialisedField(self, 'MktInfrstrctrTxId', Max35Text, False)
 
 	@property
 	def SfkpgAcct(self):
@@ -84,12 +84,12 @@ class SecuritiesSettlementAllegementRemovalAdviceV08(base_types._BaseFieldType):
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
-		self._SfkpgAcct = None
+		self._SfkpgAcct = base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@property
 	def SplmtryData(self):
@@ -97,12 +97,12 @@ class SecuritiesSettlementAllegementRemovalAdviceV08(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TxDtls(self):
@@ -110,12 +110,12 @@ class SecuritiesSettlementAllegementRemovalAdviceV08(base_types._BaseFieldType):
 
 	@TxDtls.setter
 	def TxDtls(self, value):
-		self._TxDtls = value if type(value) != base_types.auto else self.make_default("TxDtls")
+		self._TxDtls = value if value is not None else base_types.UninitialisedField(self, 'TxDtls', TransactionDetails179, False)
 
 	@TxDtls.deleter
 	def TxDtls(self):
 		del self._TxDtls
-		self._TxDtls = None
+		self._TxDtls = base_types.UninitialisedField(self, 'TxDtls', TransactionDetails179, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),

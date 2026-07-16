@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BuyerProtectionInstructionCancellationRequestV01 import BuyerProtectionInstructionCancellationRequestV01
+from . import BuyerProtectionInstructionCancellationRequestV01
 
 class SEEV_062_001_01():
 
@@ -18,12 +18,12 @@ class SEEV_062_001_01():
 
 		@BuyrPrtcnInstrCxlReq.setter
 		def BuyrPrtcnInstrCxlReq(self, value):
-			self._BuyrPrtcnInstrCxlReq = value if type(value) != base_types.auto else self.make_default("BuyrPrtcnInstrCxlReq")
+			self._BuyrPrtcnInstrCxlReq = value if value is not None else base_types.UninitialisedField(self, 'BuyrPrtcnInstrCxlReq', BuyerProtectionInstructionCancellationRequestV01, False)
 
 		@BuyrPrtcnInstrCxlReq.deleter
 		def BuyrPrtcnInstrCxlReq(self):
 			del self._BuyrPrtcnInstrCxlReq
-			self._BuyrPrtcnInstrCxlReq = None
+			self._BuyrPrtcnInstrCxlReq = base_types.UninitialisedField(self, 'BuyrPrtcnInstrCxlReq', BuyerProtectionInstructionCancellationRequestV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='BuyrPrtcnInstrCxlReq', type=BuyerProtectionInstructionCancellationRequestV01, min=1, max=1, mutex_group=None, array=False),

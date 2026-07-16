@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RequestedIndicator import RequestedIndicator
+from . import RequestedIndicator
 
 class MemberReturnCriteria1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class MemberReturnCriteria1(base_types._BaseFieldType):
 
 	@AcctInd.setter
 	def AcctInd(self, value):
-		self._AcctInd = value if type(value) != base_types.auto else self.make_default("AcctInd")
+		self._AcctInd = value if value is not None else base_types.UninitialisedField(self, 'AcctInd', RequestedIndicator, False)
 
 	@AcctInd.deleter
 	def AcctInd(self):
 		del self._AcctInd
-		self._AcctInd = None
+		self._AcctInd = base_types.UninitialisedField(self, 'AcctInd', RequestedIndicator, False)
 
 	@property
 	def ComAdrInd(self):
@@ -26,12 +26,12 @@ class MemberReturnCriteria1(base_types._BaseFieldType):
 
 	@ComAdrInd.setter
 	def ComAdrInd(self, value):
-		self._ComAdrInd = value if type(value) != base_types.auto else self.make_default("ComAdrInd")
+		self._ComAdrInd = value if value is not None else base_types.UninitialisedField(self, 'ComAdrInd', RequestedIndicator, False)
 
 	@ComAdrInd.deleter
 	def ComAdrInd(self):
 		del self._ComAdrInd
-		self._ComAdrInd = None
+		self._ComAdrInd = base_types.UninitialisedField(self, 'ComAdrInd', RequestedIndicator, False)
 
 	@property
 	def CtctRefInd(self):
@@ -39,12 +39,12 @@ class MemberReturnCriteria1(base_types._BaseFieldType):
 
 	@CtctRefInd.setter
 	def CtctRefInd(self, value):
-		self._CtctRefInd = value if type(value) != base_types.auto else self.make_default("CtctRefInd")
+		self._CtctRefInd = value if value is not None else base_types.UninitialisedField(self, 'CtctRefInd', RequestedIndicator, False)
 
 	@CtctRefInd.deleter
 	def CtctRefInd(self):
 		del self._CtctRefInd
-		self._CtctRefInd = None
+		self._CtctRefInd = base_types.UninitialisedField(self, 'CtctRefInd', RequestedIndicator, False)
 
 	@property
 	def MmbRtrAdrInd(self):
@@ -52,12 +52,12 @@ class MemberReturnCriteria1(base_types._BaseFieldType):
 
 	@MmbRtrAdrInd.setter
 	def MmbRtrAdrInd(self, value):
-		self._MmbRtrAdrInd = value if type(value) != base_types.auto else self.make_default("MmbRtrAdrInd")
+		self._MmbRtrAdrInd = value if value is not None else base_types.UninitialisedField(self, 'MmbRtrAdrInd', RequestedIndicator, False)
 
 	@MmbRtrAdrInd.deleter
 	def MmbRtrAdrInd(self):
 		del self._MmbRtrAdrInd
-		self._MmbRtrAdrInd = None
+		self._MmbRtrAdrInd = base_types.UninitialisedField(self, 'MmbRtrAdrInd', RequestedIndicator, False)
 
 	@property
 	def NmInd(self):
@@ -65,12 +65,12 @@ class MemberReturnCriteria1(base_types._BaseFieldType):
 
 	@NmInd.setter
 	def NmInd(self, value):
-		self._NmInd = value if type(value) != base_types.auto else self.make_default("NmInd")
+		self._NmInd = value if value is not None else base_types.UninitialisedField(self, 'NmInd', RequestedIndicator, False)
 
 	@NmInd.deleter
 	def NmInd(self):
 		del self._NmInd
-		self._NmInd = None
+		self._NmInd = base_types.UninitialisedField(self, 'NmInd', RequestedIndicator, False)
 
 	@property
 	def StsInd(self):
@@ -78,12 +78,12 @@ class MemberReturnCriteria1(base_types._BaseFieldType):
 
 	@StsInd.setter
 	def StsInd(self, value):
-		self._StsInd = value if type(value) != base_types.auto else self.make_default("StsInd")
+		self._StsInd = value if value is not None else base_types.UninitialisedField(self, 'StsInd', RequestedIndicator, False)
 
 	@StsInd.deleter
 	def StsInd(self):
 		del self._StsInd
-		self._StsInd = None
+		self._StsInd = base_types.UninitialisedField(self, 'StsInd', RequestedIndicator, False)
 
 	@property
 	def TpInd(self):
@@ -91,12 +91,12 @@ class MemberReturnCriteria1(base_types._BaseFieldType):
 
 	@TpInd.setter
 	def TpInd(self, value):
-		self._TpInd = value if type(value) != base_types.auto else self.make_default("TpInd")
+		self._TpInd = value if value is not None else base_types.UninitialisedField(self, 'TpInd', RequestedIndicator, False)
 
 	@TpInd.deleter
 	def TpInd(self):
 		del self._TpInd
-		self._TpInd = None
+		self._TpInd = base_types.UninitialisedField(self, 'TpInd', RequestedIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),

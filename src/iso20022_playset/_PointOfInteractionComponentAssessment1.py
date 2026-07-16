@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
-from ._POIComponentAssessment1Code import POIComponentAssessment1Code
+from . import ISODateTime
+from . import Max35Text
+from . import POIComponentAssessment1Code
 
 class PointOfInteractionComponentAssessment1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PointOfInteractionComponentAssessment1(base_types._BaseFieldType):
 
 	@Assgnr.setter
 	def Assgnr(self, value):
-		self._Assgnr = value if type(value) != base_types.auto else self.make_default("Assgnr")
+		self._Assgnr = value if value is not None else base_types.UninitialisedField(self, 'Assgnr', Max35Text, True)
 
 	@Assgnr.deleter
 	def Assgnr(self):
 		del self._Assgnr
-		self._Assgnr = None
+		self._Assgnr = base_types.UninitialisedField(self, 'Assgnr', Max35Text, True)
 
 	@property
 	def DlvryDt(self):
@@ -28,12 +28,12 @@ class PointOfInteractionComponentAssessment1(base_types._BaseFieldType):
 
 	@DlvryDt.setter
 	def DlvryDt(self, value):
-		self._DlvryDt = value if type(value) != base_types.auto else self.make_default("DlvryDt")
+		self._DlvryDt = value if value is not None else base_types.UninitialisedField(self, 'DlvryDt', ISODateTime, False)
 
 	@DlvryDt.deleter
 	def DlvryDt(self):
 		del self._DlvryDt
-		self._DlvryDt = None
+		self._DlvryDt = base_types.UninitialisedField(self, 'DlvryDt', ISODateTime, False)
 
 	@property
 	def Nb(self):
@@ -41,12 +41,12 @@ class PointOfInteractionComponentAssessment1(base_types._BaseFieldType):
 
 	@Nb.setter
 	def Nb(self, value):
-		self._Nb = value if type(value) != base_types.auto else self.make_default("Nb")
+		self._Nb = value if value is not None else base_types.UninitialisedField(self, 'Nb', Max35Text, False)
 
 	@Nb.deleter
 	def Nb(self):
 		del self._Nb
-		self._Nb = None
+		self._Nb = base_types.UninitialisedField(self, 'Nb', Max35Text, False)
 
 	@property
 	def Tp(self):
@@ -54,12 +54,12 @@ class PointOfInteractionComponentAssessment1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', POIComponentAssessment1Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', POIComponentAssessment1Code, False)
 
 	@property
 	def XprtnDt(self):
@@ -67,12 +67,12 @@ class PointOfInteractionComponentAssessment1(base_types._BaseFieldType):
 
 	@XprtnDt.setter
 	def XprtnDt(self, value):
-		self._XprtnDt = value if type(value) != base_types.auto else self.make_default("XprtnDt")
+		self._XprtnDt = value if value is not None else base_types.UninitialisedField(self, 'XprtnDt', ISODateTime, False)
 
 	@XprtnDt.deleter
 	def XprtnDt(self):
 		del self._XprtnDt
-		self._XprtnDt = None
+		self._XprtnDt = base_types.UninitialisedField(self, 'XprtnDt', ISODateTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Assgnr', type=Max35Text, min=1, max=None, mutex_group=None, array=True),

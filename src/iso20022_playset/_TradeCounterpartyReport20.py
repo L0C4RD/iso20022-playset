@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Counterparty45 import Counterparty45
-from ._Counterparty46 import Counterparty46
-from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
-from ._PartyIdentification248Choice import PartyIdentification248Choice
-from ._TradeCounterpartyRelationshipRecord1 import TradeCounterpartyRelationshipRecord1
+from . import Counterparty45
+from . import Counterparty46
+from . import OrganisationIdentification15Choice
+from . import PartyIdentification248Choice
+from . import TradeCounterpartyRelationshipRecord1
 
 class TradeCounterpartyReport20(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class TradeCounterpartyReport20(base_types._BaseFieldType):
 
 	@Bnfcry.setter
 	def Bnfcry(self, value):
-		self._Bnfcry = value if type(value) != base_types.auto else self.make_default("Bnfcry")
+		self._Bnfcry = value if value is not None else base_types.UninitialisedField(self, 'Bnfcry', PartyIdentification248Choice, True)
 
 	@Bnfcry.deleter
 	def Bnfcry(self):
 		del self._Bnfcry
-		self._Bnfcry = None
+		self._Bnfcry = base_types.UninitialisedField(self, 'Bnfcry', PartyIdentification248Choice, True)
 
 	@property
 	def Brkr(self):
@@ -30,12 +30,12 @@ class TradeCounterpartyReport20(base_types._BaseFieldType):
 
 	@Brkr.setter
 	def Brkr(self, value):
-		self._Brkr = value if type(value) != base_types.auto else self.make_default("Brkr")
+		self._Brkr = value if value is not None else base_types.UninitialisedField(self, 'Brkr', OrganisationIdentification15Choice, False)
 
 	@Brkr.deleter
 	def Brkr(self):
 		del self._Brkr
-		self._Brkr = None
+		self._Brkr = base_types.UninitialisedField(self, 'Brkr', OrganisationIdentification15Choice, False)
 
 	@property
 	def ClrMmb(self):
@@ -43,12 +43,12 @@ class TradeCounterpartyReport20(base_types._BaseFieldType):
 
 	@ClrMmb.setter
 	def ClrMmb(self, value):
-		self._ClrMmb = value if type(value) != base_types.auto else self.make_default("ClrMmb")
+		self._ClrMmb = value if value is not None else base_types.UninitialisedField(self, 'ClrMmb', PartyIdentification248Choice, False)
 
 	@ClrMmb.deleter
 	def ClrMmb(self):
 		del self._ClrMmb
-		self._ClrMmb = None
+		self._ClrMmb = base_types.UninitialisedField(self, 'ClrMmb', PartyIdentification248Choice, False)
 
 	@property
 	def ExctnAgt(self):
@@ -56,12 +56,12 @@ class TradeCounterpartyReport20(base_types._BaseFieldType):
 
 	@ExctnAgt.setter
 	def ExctnAgt(self, value):
-		self._ExctnAgt = value if type(value) != base_types.auto else self.make_default("ExctnAgt")
+		self._ExctnAgt = value if value is not None else base_types.UninitialisedField(self, 'ExctnAgt', OrganisationIdentification15Choice, True)
 
 	@ExctnAgt.deleter
 	def ExctnAgt(self):
 		del self._ExctnAgt
-		self._ExctnAgt = None
+		self._ExctnAgt = base_types.UninitialisedField(self, 'ExctnAgt', OrganisationIdentification15Choice, True)
 
 	@property
 	def NttyRspnsblForRpt(self):
@@ -69,12 +69,12 @@ class TradeCounterpartyReport20(base_types._BaseFieldType):
 
 	@NttyRspnsblForRpt.setter
 	def NttyRspnsblForRpt(self, value):
-		self._NttyRspnsblForRpt = value if type(value) != base_types.auto else self.make_default("NttyRspnsblForRpt")
+		self._NttyRspnsblForRpt = value if value is not None else base_types.UninitialisedField(self, 'NttyRspnsblForRpt', OrganisationIdentification15Choice, False)
 
 	@NttyRspnsblForRpt.deleter
 	def NttyRspnsblForRpt(self):
 		del self._NttyRspnsblForRpt
-		self._NttyRspnsblForRpt = None
+		self._NttyRspnsblForRpt = base_types.UninitialisedField(self, 'NttyRspnsblForRpt', OrganisationIdentification15Choice, False)
 
 	@property
 	def OthrCtrPty(self):
@@ -82,12 +82,12 @@ class TradeCounterpartyReport20(base_types._BaseFieldType):
 
 	@OthrCtrPty.setter
 	def OthrCtrPty(self, value):
-		self._OthrCtrPty = value if type(value) != base_types.auto else self.make_default("OthrCtrPty")
+		self._OthrCtrPty = value if value is not None else base_types.UninitialisedField(self, 'OthrCtrPty', Counterparty46, False)
 
 	@OthrCtrPty.deleter
 	def OthrCtrPty(self):
 		del self._OthrCtrPty
-		self._OthrCtrPty = None
+		self._OthrCtrPty = base_types.UninitialisedField(self, 'OthrCtrPty', Counterparty46, False)
 
 	@property
 	def RltshRcrd(self):
@@ -95,12 +95,12 @@ class TradeCounterpartyReport20(base_types._BaseFieldType):
 
 	@RltshRcrd.setter
 	def RltshRcrd(self, value):
-		self._RltshRcrd = value if type(value) != base_types.auto else self.make_default("RltshRcrd")
+		self._RltshRcrd = value if value is not None else base_types.UninitialisedField(self, 'RltshRcrd', TradeCounterpartyRelationshipRecord1, True)
 
 	@RltshRcrd.deleter
 	def RltshRcrd(self):
 		del self._RltshRcrd
-		self._RltshRcrd = None
+		self._RltshRcrd = base_types.UninitialisedField(self, 'RltshRcrd', TradeCounterpartyRelationshipRecord1, True)
 
 	@property
 	def RptgCtrPty(self):
@@ -108,12 +108,12 @@ class TradeCounterpartyReport20(base_types._BaseFieldType):
 
 	@RptgCtrPty.setter
 	def RptgCtrPty(self, value):
-		self._RptgCtrPty = value if type(value) != base_types.auto else self.make_default("RptgCtrPty")
+		self._RptgCtrPty = value if value is not None else base_types.UninitialisedField(self, 'RptgCtrPty', Counterparty45, False)
 
 	@RptgCtrPty.deleter
 	def RptgCtrPty(self):
 		del self._RptgCtrPty
-		self._RptgCtrPty = None
+		self._RptgCtrPty = base_types.UninitialisedField(self, 'RptgCtrPty', Counterparty45, False)
 
 	@property
 	def SubmitgAgt(self):
@@ -121,12 +121,12 @@ class TradeCounterpartyReport20(base_types._BaseFieldType):
 
 	@SubmitgAgt.setter
 	def SubmitgAgt(self, value):
-		self._SubmitgAgt = value if type(value) != base_types.auto else self.make_default("SubmitgAgt")
+		self._SubmitgAgt = value if value is not None else base_types.UninitialisedField(self, 'SubmitgAgt', OrganisationIdentification15Choice, False)
 
 	@SubmitgAgt.deleter
 	def SubmitgAgt(self):
 		del self._SubmitgAgt
-		self._SubmitgAgt = None
+		self._SubmitgAgt = base_types.UninitialisedField(self, 'SubmitgAgt', OrganisationIdentification15Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Bnfcry', type=PartyIdentification248Choice, min=0, max=2, mutex_group=None, array=True),

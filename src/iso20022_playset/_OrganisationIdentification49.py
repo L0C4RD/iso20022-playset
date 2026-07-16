@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCode import CountryCode
-from ._ExternalEntitySize1Code import ExternalEntitySize1Code
-from ._ExternalEntityType1Code import ExternalEntityType1Code
-from ._GenericOrganisationIdentification3 import GenericOrganisationIdentification3
-from ._IndustrySector3Choice import IndustrySector3Choice
-from ._LEIIdentifier import LEIIdentifier
-from ._Max500Text import Max500Text
-from ._NPIIdentifier import NPIIdentifier
-from ._PartyName5 import PartyName5
+from . import CountryCode
+from . import ExternalEntitySize1Code
+from . import ExternalEntityType1Code
+from . import GenericOrganisationIdentification3
+from . import IndustrySector3Choice
+from . import LEIIdentifier
+from . import Max500Text
+from . import NPIIdentifier
+from . import PartyName5
 
 class OrganisationIdentification49(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class OrganisationIdentification49(base_types._BaseFieldType):
 
 	@AltrnOrgId.setter
 	def AltrnOrgId(self, value):
-		self._AltrnOrgId = value if type(value) != base_types.auto else self.make_default("AltrnOrgId")
+		self._AltrnOrgId = value if value is not None else base_types.UninitialisedField(self, 'AltrnOrgId', GenericOrganisationIdentification3, True)
 
 	@AltrnOrgId.deleter
 	def AltrnOrgId(self):
 		del self._AltrnOrgId
-		self._AltrnOrgId = None
+		self._AltrnOrgId = base_types.UninitialisedField(self, 'AltrnOrgId', GenericOrganisationIdentification3, True)
 
 	@property
 	def LEI(self):
@@ -34,12 +34,12 @@ class OrganisationIdentification49(base_types._BaseFieldType):
 
 	@LEI.setter
 	def LEI(self, value):
-		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
+		self._LEI = value if value is not None else base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	@LEI.deleter
 	def LEI(self):
 		del self._LEI
-		self._LEI = None
+		self._LEI = base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	@property
 	def NPI(self):
@@ -47,12 +47,12 @@ class OrganisationIdentification49(base_types._BaseFieldType):
 
 	@NPI.setter
 	def NPI(self, value):
-		self._NPI = value if type(value) != base_types.auto else self.make_default("NPI")
+		self._NPI = value if value is not None else base_types.UninitialisedField(self, 'NPI', NPIIdentifier, False)
 
 	@NPI.deleter
 	def NPI(self):
 		del self._NPI
-		self._NPI = None
+		self._NPI = base_types.UninitialisedField(self, 'NPI', NPIIdentifier, False)
 
 	@property
 	def NttySz(self):
@@ -60,12 +60,12 @@ class OrganisationIdentification49(base_types._BaseFieldType):
 
 	@NttySz.setter
 	def NttySz(self, value):
-		self._NttySz = value if type(value) != base_types.auto else self.make_default("NttySz")
+		self._NttySz = value if value is not None else base_types.UninitialisedField(self, 'NttySz', ExternalEntitySize1Code, False)
 
 	@NttySz.deleter
 	def NttySz(self):
 		del self._NttySz
-		self._NttySz = None
+		self._NttySz = base_types.UninitialisedField(self, 'NttySz', ExternalEntitySize1Code, False)
 
 	@property
 	def NttyTp(self):
@@ -73,12 +73,12 @@ class OrganisationIdentification49(base_types._BaseFieldType):
 
 	@NttyTp.setter
 	def NttyTp(self, value):
-		self._NttyTp = value if type(value) != base_types.auto else self.make_default("NttyTp")
+		self._NttyTp = value if value is not None else base_types.UninitialisedField(self, 'NttyTp', ExternalEntityType1Code, False)
 
 	@NttyTp.deleter
 	def NttyTp(self):
 		del self._NttyTp
-		self._NttyTp = None
+		self._NttyTp = base_types.UninitialisedField(self, 'NttyTp', ExternalEntityType1Code, False)
 
 	@property
 	def OrgNm(self):
@@ -86,12 +86,12 @@ class OrganisationIdentification49(base_types._BaseFieldType):
 
 	@OrgNm.setter
 	def OrgNm(self, value):
-		self._OrgNm = value if type(value) != base_types.auto else self.make_default("OrgNm")
+		self._OrgNm = value if value is not None else base_types.UninitialisedField(self, 'OrgNm', PartyName5, True)
 
 	@OrgNm.deleter
 	def OrgNm(self):
 		del self._OrgNm
-		self._OrgNm = None
+		self._OrgNm = base_types.UninitialisedField(self, 'OrgNm', PartyName5, True)
 
 	@property
 	def PrsnNm(self):
@@ -99,12 +99,12 @@ class OrganisationIdentification49(base_types._BaseFieldType):
 
 	@PrsnNm.setter
 	def PrsnNm(self, value):
-		self._PrsnNm = value if type(value) != base_types.auto else self.make_default("PrsnNm")
+		self._PrsnNm = value if value is not None else base_types.UninitialisedField(self, 'PrsnNm', Max500Text, True)
 
 	@PrsnNm.deleter
 	def PrsnNm(self):
 		del self._PrsnNm
-		self._PrsnNm = None
+		self._PrsnNm = base_types.UninitialisedField(self, 'PrsnNm', Max500Text, True)
 
 	@property
 	def RegdCtry(self):
@@ -112,12 +112,12 @@ class OrganisationIdentification49(base_types._BaseFieldType):
 
 	@RegdCtry.setter
 	def RegdCtry(self, value):
-		self._RegdCtry = value if type(value) != base_types.auto else self.make_default("RegdCtry")
+		self._RegdCtry = value if value is not None else base_types.UninitialisedField(self, 'RegdCtry', CountryCode, False)
 
 	@RegdCtry.deleter
 	def RegdCtry(self):
 		del self._RegdCtry
-		self._RegdCtry = None
+		self._RegdCtry = base_types.UninitialisedField(self, 'RegdCtry', CountryCode, False)
 
 	@property
 	def Sctr(self):
@@ -125,12 +125,12 @@ class OrganisationIdentification49(base_types._BaseFieldType):
 
 	@Sctr.setter
 	def Sctr(self, value):
-		self._Sctr = value if type(value) != base_types.auto else self.make_default("Sctr")
+		self._Sctr = value if value is not None else base_types.UninitialisedField(self, 'Sctr', IndustrySector3Choice, True)
 
 	@Sctr.deleter
 	def Sctr(self):
 		del self._Sctr
-		self._Sctr = None
+		self._Sctr = base_types.UninitialisedField(self, 'Sctr', IndustrySector3Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AltrnOrgId', type=GenericOrganisationIdentification3, min=0, max=None, mutex_group=None, array=True),

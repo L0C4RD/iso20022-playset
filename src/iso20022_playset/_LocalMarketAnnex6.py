@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._CashAccount205 import CashAccount205
-from ._CountryCode import CountryCode
-from ._OrderDesk1 import OrderDesk1
-from ._ProcessingCharacteristics10 import ProcessingCharacteristics10
-from ._ProcessingCharacteristics11 import ProcessingCharacteristics11
-from ._ProcessingCharacteristics9 import ProcessingCharacteristics9
+from . import AdditionalInformation15
+from . import CashAccount205
+from . import CountryCode
+from . import OrderDesk1
+from . import ProcessingCharacteristics10
+from . import ProcessingCharacteristics11
+from . import ProcessingCharacteristics9
 
 class LocalMarketAnnex6(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class LocalMarketAnnex6(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@property
 	def CshSttlmDtls(self):
@@ -32,12 +32,12 @@ class LocalMarketAnnex6(base_types._BaseFieldType):
 
 	@CshSttlmDtls.setter
 	def CshSttlmDtls(self, value):
-		self._CshSttlmDtls = value if type(value) != base_types.auto else self.make_default("CshSttlmDtls")
+		self._CshSttlmDtls = value if value is not None else base_types.UninitialisedField(self, 'CshSttlmDtls', CashAccount205, True)
 
 	@CshSttlmDtls.deleter
 	def CshSttlmDtls(self):
 		del self._CshSttlmDtls
-		self._CshSttlmDtls = None
+		self._CshSttlmDtls = base_types.UninitialisedField(self, 'CshSttlmDtls', CashAccount205, True)
 
 	@property
 	def Ctry(self):
@@ -45,12 +45,12 @@ class LocalMarketAnnex6(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', CountryCode, True)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', CountryCode, True)
 
 	@property
 	def LclOrdrDsk(self):
@@ -58,12 +58,12 @@ class LocalMarketAnnex6(base_types._BaseFieldType):
 
 	@LclOrdrDsk.setter
 	def LclOrdrDsk(self, value):
-		self._LclOrdrDsk = value if type(value) != base_types.auto else self.make_default("LclOrdrDsk")
+		self._LclOrdrDsk = value if value is not None else base_types.UninitialisedField(self, 'LclOrdrDsk', OrderDesk1, False)
 
 	@LclOrdrDsk.deleter
 	def LclOrdrDsk(self):
 		del self._LclOrdrDsk
-		self._LclOrdrDsk = None
+		self._LclOrdrDsk = base_types.UninitialisedField(self, 'LclOrdrDsk', OrderDesk1, False)
 
 	@property
 	def RedPrcgChrtcs(self):
@@ -71,12 +71,12 @@ class LocalMarketAnnex6(base_types._BaseFieldType):
 
 	@RedPrcgChrtcs.setter
 	def RedPrcgChrtcs(self, value):
-		self._RedPrcgChrtcs = value if type(value) != base_types.auto else self.make_default("RedPrcgChrtcs")
+		self._RedPrcgChrtcs = value if value is not None else base_types.UninitialisedField(self, 'RedPrcgChrtcs', ProcessingCharacteristics10, False)
 
 	@RedPrcgChrtcs.deleter
 	def RedPrcgChrtcs(self):
 		del self._RedPrcgChrtcs
-		self._RedPrcgChrtcs = None
+		self._RedPrcgChrtcs = base_types.UninitialisedField(self, 'RedPrcgChrtcs', ProcessingCharacteristics10, False)
 
 	@property
 	def SbcptPrcgChrtcs(self):
@@ -84,12 +84,12 @@ class LocalMarketAnnex6(base_types._BaseFieldType):
 
 	@SbcptPrcgChrtcs.setter
 	def SbcptPrcgChrtcs(self, value):
-		self._SbcptPrcgChrtcs = value if type(value) != base_types.auto else self.make_default("SbcptPrcgChrtcs")
+		self._SbcptPrcgChrtcs = value if value is not None else base_types.UninitialisedField(self, 'SbcptPrcgChrtcs', ProcessingCharacteristics11, False)
 
 	@SbcptPrcgChrtcs.deleter
 	def SbcptPrcgChrtcs(self):
 		del self._SbcptPrcgChrtcs
-		self._SbcptPrcgChrtcs = None
+		self._SbcptPrcgChrtcs = base_types.UninitialisedField(self, 'SbcptPrcgChrtcs', ProcessingCharacteristics11, False)
 
 	@property
 	def SwtchPrcgChrtcs(self):
@@ -97,12 +97,12 @@ class LocalMarketAnnex6(base_types._BaseFieldType):
 
 	@SwtchPrcgChrtcs.setter
 	def SwtchPrcgChrtcs(self, value):
-		self._SwtchPrcgChrtcs = value if type(value) != base_types.auto else self.make_default("SwtchPrcgChrtcs")
+		self._SwtchPrcgChrtcs = value if value is not None else base_types.UninitialisedField(self, 'SwtchPrcgChrtcs', ProcessingCharacteristics9, False)
 
 	@SwtchPrcgChrtcs.deleter
 	def SwtchPrcgChrtcs(self):
 		del self._SwtchPrcgChrtcs
-		self._SwtchPrcgChrtcs = None
+		self._SwtchPrcgChrtcs = base_types.UninitialisedField(self, 'SwtchPrcgChrtcs', ProcessingCharacteristics9, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),

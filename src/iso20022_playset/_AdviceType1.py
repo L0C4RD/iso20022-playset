@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdviceType1Choice import AdviceType1Choice
+from . import AdviceType1Choice
 
 class AdviceType1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class AdviceType1(base_types._BaseFieldType):
 
 	@CdtAdvc.setter
 	def CdtAdvc(self, value):
-		self._CdtAdvc = value if type(value) != base_types.auto else self.make_default("CdtAdvc")
+		self._CdtAdvc = value if value is not None else base_types.UninitialisedField(self, 'CdtAdvc', AdviceType1Choice, False)
 
 	@CdtAdvc.deleter
 	def CdtAdvc(self):
 		del self._CdtAdvc
-		self._CdtAdvc = None
+		self._CdtAdvc = base_types.UninitialisedField(self, 'CdtAdvc', AdviceType1Choice, False)
 
 	@property
 	def DbtAdvc(self):
@@ -26,12 +26,12 @@ class AdviceType1(base_types._BaseFieldType):
 
 	@DbtAdvc.setter
 	def DbtAdvc(self, value):
-		self._DbtAdvc = value if type(value) != base_types.auto else self.make_default("DbtAdvc")
+		self._DbtAdvc = value if value is not None else base_types.UninitialisedField(self, 'DbtAdvc', AdviceType1Choice, False)
 
 	@DbtAdvc.deleter
 	def DbtAdvc(self):
 		del self._DbtAdvc
-		self._DbtAdvc = None
+		self._DbtAdvc = base_types.UninitialisedField(self, 'DbtAdvc', AdviceType1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtAdvc', type=AdviceType1Choice, min=0, max=1, mutex_group=None, array=False),

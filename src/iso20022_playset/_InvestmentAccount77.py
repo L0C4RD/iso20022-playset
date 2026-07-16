@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._OwnerIdentification3Choice import OwnerIdentification3Choice
-from ._PartyIdentification125Choice import PartyIdentification125Choice
+from . import Max35Text
+from . import OwnerIdentification3Choice
+from . import PartyIdentification125Choice
 
 class InvestmentAccount77(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class InvestmentAccount77(base_types._BaseFieldType):
 
 	@AcctDsgnt.setter
 	def AcctDsgnt(self, value):
-		self._AcctDsgnt = value if type(value) != base_types.auto else self.make_default("AcctDsgnt")
+		self._AcctDsgnt = value if value is not None else base_types.UninitialisedField(self, 'AcctDsgnt', Max35Text, False)
 
 	@AcctDsgnt.deleter
 	def AcctDsgnt(self):
 		del self._AcctDsgnt
-		self._AcctDsgnt = None
+		self._AcctDsgnt = base_types.UninitialisedField(self, 'AcctDsgnt', Max35Text, False)
 
 	@property
 	def AcctId(self):
@@ -28,12 +28,12 @@ class InvestmentAccount77(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', Max35Text, False)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', Max35Text, False)
 
 	@property
 	def AcctNm(self):
@@ -41,12 +41,12 @@ class InvestmentAccount77(base_types._BaseFieldType):
 
 	@AcctNm.setter
 	def AcctNm(self, value):
-		self._AcctNm = value if type(value) != base_types.auto else self.make_default("AcctNm")
+		self._AcctNm = value if value is not None else base_types.UninitialisedField(self, 'AcctNm', Max35Text, False)
 
 	@AcctNm.deleter
 	def AcctNm(self):
 		del self._AcctNm
-		self._AcctNm = None
+		self._AcctNm = base_types.UninitialisedField(self, 'AcctNm', Max35Text, False)
 
 	@property
 	def AcctSvcr(self):
@@ -54,12 +54,12 @@ class InvestmentAccount77(base_types._BaseFieldType):
 
 	@AcctSvcr.setter
 	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
+		self._AcctSvcr = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcr', PartyIdentification125Choice, False)
 
 	@AcctSvcr.deleter
 	def AcctSvcr(self):
 		del self._AcctSvcr
-		self._AcctSvcr = None
+		self._AcctSvcr = base_types.UninitialisedField(self, 'AcctSvcr', PartyIdentification125Choice, False)
 
 	@property
 	def OwnrId(self):
@@ -67,12 +67,12 @@ class InvestmentAccount77(base_types._BaseFieldType):
 
 	@OwnrId.setter
 	def OwnrId(self, value):
-		self._OwnrId = value if type(value) != base_types.auto else self.make_default("OwnrId")
+		self._OwnrId = value if value is not None else base_types.UninitialisedField(self, 'OwnrId', OwnerIdentification3Choice, False)
 
 	@OwnrId.deleter
 	def OwnrId(self):
 		del self._OwnrId
-		self._OwnrId = None
+		self._OwnrId = base_types.UninitialisedField(self, 'OwnrId', OwnerIdentification3Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctDsgnt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

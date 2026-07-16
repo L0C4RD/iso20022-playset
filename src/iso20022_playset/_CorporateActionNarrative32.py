@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max350Text import Max350Text
+from . import Max350Text
 
 class CorporateActionNarrative32(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class CorporateActionNarrative32(base_types._BaseFieldType):
 
 	@DlvryDtls.setter
 	def DlvryDtls(self, value):
-		self._DlvryDtls = value if type(value) != base_types.auto else self.make_default("DlvryDtls")
+		self._DlvryDtls = value if value is not None else base_types.UninitialisedField(self, 'DlvryDtls', Max350Text, True)
 
 	@DlvryDtls.deleter
 	def DlvryDtls(self):
 		del self._DlvryDtls
-		self._DlvryDtls = None
+		self._DlvryDtls = base_types.UninitialisedField(self, 'DlvryDtls', Max350Text, True)
 
 	@property
 	def FXInstrsAddtlInf(self):
@@ -26,12 +26,12 @@ class CorporateActionNarrative32(base_types._BaseFieldType):
 
 	@FXInstrsAddtlInf.setter
 	def FXInstrsAddtlInf(self, value):
-		self._FXInstrsAddtlInf = value if type(value) != base_types.auto else self.make_default("FXInstrsAddtlInf")
+		self._FXInstrsAddtlInf = value if value is not None else base_types.UninitialisedField(self, 'FXInstrsAddtlInf', Max350Text, True)
 
 	@FXInstrsAddtlInf.deleter
 	def FXInstrsAddtlInf(self):
 		del self._FXInstrsAddtlInf
-		self._FXInstrsAddtlInf = None
+		self._FXInstrsAddtlInf = base_types.UninitialisedField(self, 'FXInstrsAddtlInf', Max350Text, True)
 
 	@property
 	def InfToCmplyWth(self):
@@ -39,12 +39,12 @@ class CorporateActionNarrative32(base_types._BaseFieldType):
 
 	@InfToCmplyWth.setter
 	def InfToCmplyWth(self, value):
-		self._InfToCmplyWth = value if type(value) != base_types.auto else self.make_default("InfToCmplyWth")
+		self._InfToCmplyWth = value if value is not None else base_types.UninitialisedField(self, 'InfToCmplyWth', Max350Text, True)
 
 	@InfToCmplyWth.deleter
 	def InfToCmplyWth(self):
 		del self._InfToCmplyWth
-		self._InfToCmplyWth = None
+		self._InfToCmplyWth = base_types.UninitialisedField(self, 'InfToCmplyWth', Max350Text, True)
 
 	@property
 	def InstrAddtlInf(self):
@@ -52,12 +52,12 @@ class CorporateActionNarrative32(base_types._BaseFieldType):
 
 	@InstrAddtlInf.setter
 	def InstrAddtlInf(self, value):
-		self._InstrAddtlInf = value if type(value) != base_types.auto else self.make_default("InstrAddtlInf")
+		self._InstrAddtlInf = value if value is not None else base_types.UninitialisedField(self, 'InstrAddtlInf', Max350Text, True)
 
 	@InstrAddtlInf.deleter
 	def InstrAddtlInf(self):
 		del self._InstrAddtlInf
-		self._InstrAddtlInf = None
+		self._InstrAddtlInf = base_types.UninitialisedField(self, 'InstrAddtlInf', Max350Text, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DlvryDtls', type=Max350Text, min=0, max=None, mutex_group=None, array=True),

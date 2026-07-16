@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AssetClassAttributes1 import AssetClassAttributes1
-from ._DerivativeForeignExchange2 import DerivativeForeignExchange2
-from ._DerivativeInterest2 import DerivativeInterest2
+from . import AssetClassAttributes1
+from . import DerivativeForeignExchange2
+from . import DerivativeInterest2
 
 class AssetClassAttributes1Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AssetClassAttributes1Choice(base_types._BaseFieldType):
 
 	@Both.setter
 	def Both(self, value):
-		self._Both = value if type(value) != base_types.auto else self.make_default("Both")
+		self._Both = value if value is not None else base_types.UninitialisedField(self, 'Both', AssetClassAttributes1, False)
 
 	@Both.deleter
 	def Both(self):
 		del self._Both
-		self._Both = None
+		self._Both = base_types.UninitialisedField(self, 'Both', AssetClassAttributes1, False)
 
 	@property
 	def FX(self):
@@ -28,12 +28,12 @@ class AssetClassAttributes1Choice(base_types._BaseFieldType):
 
 	@FX.setter
 	def FX(self, value):
-		self._FX = value if type(value) != base_types.auto else self.make_default("FX")
+		self._FX = value if value is not None else base_types.UninitialisedField(self, 'FX', DerivativeForeignExchange2, False)
 
 	@FX.deleter
 	def FX(self):
 		del self._FX
-		self._FX = None
+		self._FX = base_types.UninitialisedField(self, 'FX', DerivativeForeignExchange2, False)
 
 	@property
 	def Intrst(self):
@@ -41,12 +41,12 @@ class AssetClassAttributes1Choice(base_types._BaseFieldType):
 
 	@Intrst.setter
 	def Intrst(self, value):
-		self._Intrst = value if type(value) != base_types.auto else self.make_default("Intrst")
+		self._Intrst = value if value is not None else base_types.UninitialisedField(self, 'Intrst', DerivativeInterest2, False)
 
 	@Intrst.deleter
 	def Intrst(self):
 		del self._Intrst
-		self._Intrst = None
+		self._Intrst = base_types.UninitialisedField(self, 'Intrst', DerivativeInterest2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Both', type=AssetClassAttributes1, min=0, max=1, mutex_group=1, array=False),

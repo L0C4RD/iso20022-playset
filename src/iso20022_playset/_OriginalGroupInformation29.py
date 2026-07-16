@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
+from . import ISODateTime
+from . import Max35Text
 
 class OriginalGroupInformation29(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class OriginalGroupInformation29(base_types._BaseFieldType):
 
 	@OrgnlCreDtTm.setter
 	def OrgnlCreDtTm(self, value):
-		self._OrgnlCreDtTm = value if type(value) != base_types.auto else self.make_default("OrgnlCreDtTm")
+		self._OrgnlCreDtTm = value if value is not None else base_types.UninitialisedField(self, 'OrgnlCreDtTm', ISODateTime, False)
 
 	@OrgnlCreDtTm.deleter
 	def OrgnlCreDtTm(self):
 		del self._OrgnlCreDtTm
-		self._OrgnlCreDtTm = None
+		self._OrgnlCreDtTm = base_types.UninitialisedField(self, 'OrgnlCreDtTm', ISODateTime, False)
 
 	@property
 	def OrgnlMsgId(self):
@@ -27,12 +27,12 @@ class OriginalGroupInformation29(base_types._BaseFieldType):
 
 	@OrgnlMsgId.setter
 	def OrgnlMsgId(self, value):
-		self._OrgnlMsgId = value if type(value) != base_types.auto else self.make_default("OrgnlMsgId")
+		self._OrgnlMsgId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlMsgId', Max35Text, False)
 
 	@OrgnlMsgId.deleter
 	def OrgnlMsgId(self):
 		del self._OrgnlMsgId
-		self._OrgnlMsgId = None
+		self._OrgnlMsgId = base_types.UninitialisedField(self, 'OrgnlMsgId', Max35Text, False)
 
 	@property
 	def OrgnlMsgNmId(self):
@@ -40,12 +40,12 @@ class OriginalGroupInformation29(base_types._BaseFieldType):
 
 	@OrgnlMsgNmId.setter
 	def OrgnlMsgNmId(self, value):
-		self._OrgnlMsgNmId = value if type(value) != base_types.auto else self.make_default("OrgnlMsgNmId")
+		self._OrgnlMsgNmId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlMsgNmId', Max35Text, False)
 
 	@OrgnlMsgNmId.deleter
 	def OrgnlMsgNmId(self):
 		del self._OrgnlMsgNmId
-		self._OrgnlMsgNmId = None
+		self._OrgnlMsgNmId = base_types.UninitialisedField(self, 'OrgnlMsgNmId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlCreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),

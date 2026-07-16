@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Algorithm14Code import Algorithm14Code
-from ._Number import Number
+from . import Algorithm14Code
+from . import Number
 
 class ATMSecurityConfiguration4(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ATMSecurityConfiguration4(base_types._BaseFieldType):
 
 	@DgtlSgntrAlgo.setter
 	def DgtlSgntrAlgo(self, value):
-		self._DgtlSgntrAlgo = value if type(value) != base_types.auto else self.make_default("DgtlSgntrAlgo")
+		self._DgtlSgntrAlgo = value if value is not None else base_types.UninitialisedField(self, 'DgtlSgntrAlgo', Algorithm14Code, True)
 
 	@DgtlSgntrAlgo.deleter
 	def DgtlSgntrAlgo(self):
 		del self._DgtlSgntrAlgo
-		self._DgtlSgntrAlgo = None
+		self._DgtlSgntrAlgo = base_types.UninitialisedField(self, 'DgtlSgntrAlgo', Algorithm14Code, True)
 
 	@property
 	def MaxCerts(self):
@@ -27,12 +27,12 @@ class ATMSecurityConfiguration4(base_types._BaseFieldType):
 
 	@MaxCerts.setter
 	def MaxCerts(self, value):
-		self._MaxCerts = value if type(value) != base_types.auto else self.make_default("MaxCerts")
+		self._MaxCerts = value if value is not None else base_types.UninitialisedField(self, 'MaxCerts', Number, False)
 
 	@MaxCerts.deleter
 	def MaxCerts(self):
 		del self._MaxCerts
-		self._MaxCerts = None
+		self._MaxCerts = base_types.UninitialisedField(self, 'MaxCerts', Number, False)
 
 	@property
 	def MaxSgntrs(self):
@@ -40,12 +40,12 @@ class ATMSecurityConfiguration4(base_types._BaseFieldType):
 
 	@MaxSgntrs.setter
 	def MaxSgntrs(self, value):
-		self._MaxSgntrs = value if type(value) != base_types.auto else self.make_default("MaxSgntrs")
+		self._MaxSgntrs = value if value is not None else base_types.UninitialisedField(self, 'MaxSgntrs', Number, False)
 
 	@MaxSgntrs.deleter
 	def MaxSgntrs(self):
 		del self._MaxSgntrs
-		self._MaxSgntrs = None
+		self._MaxSgntrs = base_types.UninitialisedField(self, 'MaxSgntrs', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DgtlSgntrAlgo', type=Algorithm14Code, min=0, max=None, mutex_group=None, array=True),

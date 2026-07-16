@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMFeeComponent1 import ATMFeeComponent1
-from ._Action7 import Action7
-from ._Max8Text import Max8Text
-from ._PartyType16Code import PartyType16Code
-from ._ResponseType12 import ResponseType12
-from ._ResponseType8 import ResponseType8
+from . import ATMFeeComponent1
+from . import Action7
+from . import Max8Text
+from . import PartyType16Code
+from . import ResponseType12
+from . import ResponseType8
 
 class AuthorisationResult20(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class AuthorisationResult20(base_types._BaseFieldType):
 
 	@Actn.setter
 	def Actn(self, value):
-		self._Actn = value if type(value) != base_types.auto else self.make_default("Actn")
+		self._Actn = value if value is not None else base_types.UninitialisedField(self, 'Actn', Action7, True)
 
 	@Actn.deleter
 	def Actn(self):
 		del self._Actn
-		self._Actn = None
+		self._Actn = base_types.UninitialisedField(self, 'Actn', Action7, True)
 
 	@property
 	def AuthstnCd(self):
@@ -31,12 +31,12 @@ class AuthorisationResult20(base_types._BaseFieldType):
 
 	@AuthstnCd.setter
 	def AuthstnCd(self, value):
-		self._AuthstnCd = value if type(value) != base_types.auto else self.make_default("AuthstnCd")
+		self._AuthstnCd = value if value is not None else base_types.UninitialisedField(self, 'AuthstnCd', Max8Text, False)
 
 	@AuthstnCd.deleter
 	def AuthstnCd(self):
 		del self._AuthstnCd
-		self._AuthstnCd = None
+		self._AuthstnCd = base_types.UninitialisedField(self, 'AuthstnCd', Max8Text, False)
 
 	@property
 	def AuthstnNtty(self):
@@ -44,12 +44,12 @@ class AuthorisationResult20(base_types._BaseFieldType):
 
 	@AuthstnNtty.setter
 	def AuthstnNtty(self, value):
-		self._AuthstnNtty = value if type(value) != base_types.auto else self.make_default("AuthstnNtty")
+		self._AuthstnNtty = value if value is not None else base_types.UninitialisedField(self, 'AuthstnNtty', PartyType16Code, False)
 
 	@AuthstnNtty.deleter
 	def AuthstnNtty(self):
 		del self._AuthstnNtty
-		self._AuthstnNtty = None
+		self._AuthstnNtty = base_types.UninitialisedField(self, 'AuthstnNtty', PartyType16Code, False)
 
 	@property
 	def AuthstnRspn(self):
@@ -57,12 +57,12 @@ class AuthorisationResult20(base_types._BaseFieldType):
 
 	@AuthstnRspn.setter
 	def AuthstnRspn(self, value):
-		self._AuthstnRspn = value if type(value) != base_types.auto else self.make_default("AuthstnRspn")
+		self._AuthstnRspn = value if value is not None else base_types.UninitialisedField(self, 'AuthstnRspn', ResponseType12, False)
 
 	@AuthstnRspn.deleter
 	def AuthstnRspn(self):
 		del self._AuthstnRspn
-		self._AuthstnRspn = None
+		self._AuthstnRspn = base_types.UninitialisedField(self, 'AuthstnRspn', ResponseType12, False)
 
 	@property
 	def FeeToAdd(self):
@@ -70,12 +70,12 @@ class AuthorisationResult20(base_types._BaseFieldType):
 
 	@FeeToAdd.setter
 	def FeeToAdd(self, value):
-		self._FeeToAdd = value if type(value) != base_types.auto else self.make_default("FeeToAdd")
+		self._FeeToAdd = value if value is not None else base_types.UninitialisedField(self, 'FeeToAdd', ATMFeeComponent1, True)
 
 	@FeeToAdd.deleter
 	def FeeToAdd(self):
 		del self._FeeToAdd
-		self._FeeToAdd = None
+		self._FeeToAdd = base_types.UninitialisedField(self, 'FeeToAdd', ATMFeeComponent1, True)
 
 	@property
 	def RspnTrac(self):
@@ -83,12 +83,12 @@ class AuthorisationResult20(base_types._BaseFieldType):
 
 	@RspnTrac.setter
 	def RspnTrac(self, value):
-		self._RspnTrac = value if type(value) != base_types.auto else self.make_default("RspnTrac")
+		self._RspnTrac = value if value is not None else base_types.UninitialisedField(self, 'RspnTrac', ResponseType8, True)
 
 	@RspnTrac.deleter
 	def RspnTrac(self):
 		del self._RspnTrac
-		self._RspnTrac = None
+		self._RspnTrac = base_types.UninitialisedField(self, 'RspnTrac', ResponseType8, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Actn', type=Action7, min=0, max=None, mutex_group=None, array=True),

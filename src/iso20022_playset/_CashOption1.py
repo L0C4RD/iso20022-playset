@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._CorporateActionAmounts1 import CorporateActionAmounts1
-from ._CorporateActionDate5 import CorporateActionDate5
-from ._CreditDebitCode import CreditDebitCode
-from ._ForeignExchangeTerms8 import ForeignExchangeTerms8
+from . import ActiveCurrencyCode
+from . import CorporateActionAmounts1
+from . import CorporateActionDate5
+from . import CreditDebitCode
+from . import ForeignExchangeTerms8
 
 class CashOption1(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class CashOption1(base_types._BaseFieldType):
 
 	@AmtDtls.setter
 	def AmtDtls(self, value):
-		self._AmtDtls = value if type(value) != base_types.auto else self.make_default("AmtDtls")
+		self._AmtDtls = value if value is not None else base_types.UninitialisedField(self, 'AmtDtls', CorporateActionAmounts1, False)
 
 	@AmtDtls.deleter
 	def AmtDtls(self):
 		del self._AmtDtls
-		self._AmtDtls = None
+		self._AmtDtls = base_types.UninitialisedField(self, 'AmtDtls', CorporateActionAmounts1, False)
 
 	@property
 	def Ccy(self):
@@ -30,12 +30,12 @@ class CashOption1(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@property
 	def CdtDbtInd(self):
@@ -43,12 +43,12 @@ class CashOption1(base_types._BaseFieldType):
 
 	@CdtDbtInd.setter
 	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+		self._CdtDbtInd = value if value is not None else base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@CdtDbtInd.deleter
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
-		self._CdtDbtInd = None
+		self._CdtDbtInd = base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@property
 	def DtDtls(self):
@@ -56,12 +56,12 @@ class CashOption1(base_types._BaseFieldType):
 
 	@DtDtls.setter
 	def DtDtls(self, value):
-		self._DtDtls = value if type(value) != base_types.auto else self.make_default("DtDtls")
+		self._DtDtls = value if value is not None else base_types.UninitialisedField(self, 'DtDtls', CorporateActionDate5, False)
 
 	@DtDtls.deleter
 	def DtDtls(self):
 		del self._DtDtls
-		self._DtDtls = None
+		self._DtDtls = base_types.UninitialisedField(self, 'DtDtls', CorporateActionDate5, False)
 
 	@property
 	def XchgRate(self):
@@ -69,12 +69,12 @@ class CashOption1(base_types._BaseFieldType):
 
 	@XchgRate.setter
 	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != base_types.auto else self.make_default("XchgRate")
+		self._XchgRate = value if value is not None else base_types.UninitialisedField(self, 'XchgRate', ForeignExchangeTerms8, False)
 
 	@XchgRate.deleter
 	def XchgRate(self):
 		del self._XchgRate
-		self._XchgRate = None
+		self._XchgRate = base_types.UninitialisedField(self, 'XchgRate', ForeignExchangeTerms8, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmtDtls', type=CorporateActionAmounts1, min=0, max=1, mutex_group=None, array=False),

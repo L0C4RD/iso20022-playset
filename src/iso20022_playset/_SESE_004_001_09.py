@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ReversalOfTransferOutConfirmationV09 import ReversalOfTransferOutConfirmationV09
+from . import ReversalOfTransferOutConfirmationV09
 
 class SESE_004_001_09():
 
@@ -18,12 +18,12 @@ class SESE_004_001_09():
 
 		@RvslOfTrfOutConf.setter
 		def RvslOfTrfOutConf(self, value):
-			self._RvslOfTrfOutConf = value if type(value) != base_types.auto else self.make_default("RvslOfTrfOutConf")
+			self._RvslOfTrfOutConf = value if value is not None else base_types.UninitialisedField(self, 'RvslOfTrfOutConf', ReversalOfTransferOutConfirmationV09, False)
 
 		@RvslOfTrfOutConf.deleter
 		def RvslOfTrfOutConf(self):
 			del self._RvslOfTrfOutConf
-			self._RvslOfTrfOutConf = None
+			self._RvslOfTrfOutConf = base_types.UninitialisedField(self, 'RvslOfTrfOutConf', ReversalOfTransferOutConfirmationV09, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='RvslOfTrfOutConf', type=ReversalOfTransferOutConfirmationV09, min=1, max=1, mutex_group=None, array=False),

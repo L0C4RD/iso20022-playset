@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CommunicationAddress9 import CommunicationAddress9
-from ._GenericIdentification192 import GenericIdentification192
-from ._LocationCategory4Code import LocationCategory4Code
-from ._Max140Text import Max140Text
-from ._Max70Text import Max70Text
+from . import CommunicationAddress9
+from . import GenericIdentification192
+from . import LocationCategory4Code
+from . import Max140Text
+from . import Max70Text
 
 class Organisation45(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class Organisation45(base_types._BaseFieldType):
 
 	@CmonNm.setter
 	def CmonNm(self, value):
-		self._CmonNm = value if type(value) != base_types.auto else self.make_default("CmonNm")
+		self._CmonNm = value if value is not None else base_types.UninitialisedField(self, 'CmonNm', Max70Text, False)
 
 	@CmonNm.deleter
 	def CmonNm(self):
 		del self._CmonNm
-		self._CmonNm = None
+		self._CmonNm = base_types.UninitialisedField(self, 'CmonNm', Max70Text, False)
 
 	@property
 	def Id(self):
@@ -30,12 +30,12 @@ class Organisation45(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', GenericIdentification192, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', GenericIdentification192, False)
 
 	@property
 	def LctnAndCtct(self):
@@ -43,12 +43,12 @@ class Organisation45(base_types._BaseFieldType):
 
 	@LctnAndCtct.setter
 	def LctnAndCtct(self, value):
-		self._LctnAndCtct = value if type(value) != base_types.auto else self.make_default("LctnAndCtct")
+		self._LctnAndCtct = value if value is not None else base_types.UninitialisedField(self, 'LctnAndCtct', CommunicationAddress9, False)
 
 	@LctnAndCtct.deleter
 	def LctnAndCtct(self):
 		del self._LctnAndCtct
-		self._LctnAndCtct = None
+		self._LctnAndCtct = base_types.UninitialisedField(self, 'LctnAndCtct', CommunicationAddress9, False)
 
 	@property
 	def LctnCtgy(self):
@@ -56,12 +56,12 @@ class Organisation45(base_types._BaseFieldType):
 
 	@LctnCtgy.setter
 	def LctnCtgy(self, value):
-		self._LctnCtgy = value if type(value) != base_types.auto else self.make_default("LctnCtgy")
+		self._LctnCtgy = value if value is not None else base_types.UninitialisedField(self, 'LctnCtgy', LocationCategory4Code, False)
 
 	@LctnCtgy.deleter
 	def LctnCtgy(self):
 		del self._LctnCtgy
-		self._LctnCtgy = None
+		self._LctnCtgy = base_types.UninitialisedField(self, 'LctnCtgy', LocationCategory4Code, False)
 
 	@property
 	def SchmeData(self):
@@ -69,12 +69,12 @@ class Organisation45(base_types._BaseFieldType):
 
 	@SchmeData.setter
 	def SchmeData(self, value):
-		self._SchmeData = value if type(value) != base_types.auto else self.make_default("SchmeData")
+		self._SchmeData = value if value is not None else base_types.UninitialisedField(self, 'SchmeData', Max140Text, False)
 
 	@SchmeData.deleter
 	def SchmeData(self):
 		del self._SchmeData
-		self._SchmeData = None
+		self._SchmeData = base_types.UninitialisedField(self, 'SchmeData', Max140Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CmonNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
-from ._OriginalAndCurrentQuantities4 import OriginalAndCurrentQuantities4
+from . import FinancialInstrumentQuantity36Choice
+from . import OriginalAndCurrentQuantities4
 
 class Quantity54Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Quantity54Choice(base_types._BaseFieldType):
 
 	@OrgnlAndCurFace.setter
 	def OrgnlAndCurFace(self, value):
-		self._OrgnlAndCurFace = value if type(value) != base_types.auto else self.make_default("OrgnlAndCurFace")
+		self._OrgnlAndCurFace = value if value is not None else base_types.UninitialisedField(self, 'OrgnlAndCurFace', OriginalAndCurrentQuantities4, False)
 
 	@OrgnlAndCurFace.deleter
 	def OrgnlAndCurFace(self):
 		del self._OrgnlAndCurFace
-		self._OrgnlAndCurFace = None
+		self._OrgnlAndCurFace = base_types.UninitialisedField(self, 'OrgnlAndCurFace', OriginalAndCurrentQuantities4, False)
 
 	@property
 	def Qty(self):
@@ -27,12 +27,12 @@ class Quantity54Choice(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+		self._Qty = value if value is not None else base_types.UninitialisedField(self, 'Qty', FinancialInstrumentQuantity36Choice, False)
 
 	@Qty.deleter
 	def Qty(self):
 		del self._Qty
-		self._Qty = None
+		self._Qty = base_types.UninitialisedField(self, 'Qty', FinancialInstrumentQuantity36Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlAndCurFace', type=OriginalAndCurrentQuantities4, min=0, max=1, mutex_group=1, array=False),

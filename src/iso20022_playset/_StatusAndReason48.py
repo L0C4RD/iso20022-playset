@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MatchingStatus24Choice import MatchingStatus24Choice
-from ._ProcessingStatus52Choice import ProcessingStatus52Choice
-from ._SettlementStatus32Choice import SettlementStatus32Choice
+from . import MatchingStatus24Choice
+from . import ProcessingStatus52Choice
+from . import SettlementStatus32Choice
 
 class StatusAndReason48(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class StatusAndReason48(base_types._BaseFieldType):
 
 	@IfrrdMtchgSts.setter
 	def IfrrdMtchgSts(self, value):
-		self._IfrrdMtchgSts = value if type(value) != base_types.auto else self.make_default("IfrrdMtchgSts")
+		self._IfrrdMtchgSts = value if value is not None else base_types.UninitialisedField(self, 'IfrrdMtchgSts', MatchingStatus24Choice, False)
 
 	@IfrrdMtchgSts.deleter
 	def IfrrdMtchgSts(self):
 		del self._IfrrdMtchgSts
-		self._IfrrdMtchgSts = None
+		self._IfrrdMtchgSts = base_types.UninitialisedField(self, 'IfrrdMtchgSts', MatchingStatus24Choice, False)
 
 	@property
 	def MtchgSts(self):
@@ -28,12 +28,12 @@ class StatusAndReason48(base_types._BaseFieldType):
 
 	@MtchgSts.setter
 	def MtchgSts(self, value):
-		self._MtchgSts = value if type(value) != base_types.auto else self.make_default("MtchgSts")
+		self._MtchgSts = value if value is not None else base_types.UninitialisedField(self, 'MtchgSts', MatchingStatus24Choice, False)
 
 	@MtchgSts.deleter
 	def MtchgSts(self):
 		del self._MtchgSts
-		self._MtchgSts = None
+		self._MtchgSts = base_types.UninitialisedField(self, 'MtchgSts', MatchingStatus24Choice, False)
 
 	@property
 	def PrcgSts(self):
@@ -41,12 +41,12 @@ class StatusAndReason48(base_types._BaseFieldType):
 
 	@PrcgSts.setter
 	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != base_types.auto else self.make_default("PrcgSts")
+		self._PrcgSts = value if value is not None else base_types.UninitialisedField(self, 'PrcgSts', ProcessingStatus52Choice, False)
 
 	@PrcgSts.deleter
 	def PrcgSts(self):
 		del self._PrcgSts
-		self._PrcgSts = None
+		self._PrcgSts = base_types.UninitialisedField(self, 'PrcgSts', ProcessingStatus52Choice, False)
 
 	@property
 	def SttlmSts(self):
@@ -54,12 +54,12 @@ class StatusAndReason48(base_types._BaseFieldType):
 
 	@SttlmSts.setter
 	def SttlmSts(self, value):
-		self._SttlmSts = value if type(value) != base_types.auto else self.make_default("SttlmSts")
+		self._SttlmSts = value if value is not None else base_types.UninitialisedField(self, 'SttlmSts', SettlementStatus32Choice, False)
 
 	@SttlmSts.deleter
 	def SttlmSts(self):
 		del self._SttlmSts
-		self._SttlmSts = None
+		self._SttlmSts = base_types.UninitialisedField(self, 'SttlmSts', SettlementStatus32Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IfrrdMtchgSts', type=MatchingStatus24Choice, min=0, max=1, mutex_group=None, array=False),

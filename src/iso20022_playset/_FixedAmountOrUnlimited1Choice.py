@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Unlimited9Text import Unlimited9Text
+from . import ActiveCurrencyAndAmount
+from . import Unlimited9Text
 
 class FixedAmountOrUnlimited1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class FixedAmountOrUnlimited1Choice(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def NotLtd(self):
@@ -27,12 +27,12 @@ class FixedAmountOrUnlimited1Choice(base_types._BaseFieldType):
 
 	@NotLtd.setter
 	def NotLtd(self, value):
-		self._NotLtd = value if type(value) != base_types.auto else self.make_default("NotLtd")
+		self._NotLtd = value if value is not None else base_types.UninitialisedField(self, 'NotLtd', Unlimited9Text, False)
 
 	@NotLtd.deleter
 	def NotLtd(self):
 		del self._NotLtd
-		self._NotLtd = None
+		self._NotLtd = base_types.UninitialisedField(self, 'NotLtd', Unlimited9Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),

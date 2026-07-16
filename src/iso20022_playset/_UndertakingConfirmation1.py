@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTimeChoice import DateAndDateTimeChoice
-from ._Max2000Text import Max2000Text
-from ._Max35Text import Max35Text
-from ._PartyIdentification43 import PartyIdentification43
+from . import DateAndDateTimeChoice
+from . import Max2000Text
+from . import Max35Text
+from . import PartyIdentification43
 
 class UndertakingConfirmation1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class UndertakingConfirmation1(base_types._BaseFieldType):
 
 	@Cnfrmr.setter
 	def Cnfrmr(self, value):
-		self._Cnfrmr = value if type(value) != base_types.auto else self.make_default("Cnfrmr")
+		self._Cnfrmr = value if value is not None else base_types.UninitialisedField(self, 'Cnfrmr', PartyIdentification43, False)
 
 	@Cnfrmr.deleter
 	def Cnfrmr(self):
 		del self._Cnfrmr
-		self._Cnfrmr = None
+		self._Cnfrmr = base_types.UninitialisedField(self, 'Cnfrmr', PartyIdentification43, False)
 
 	@property
 	def Conf(self):
@@ -29,12 +29,12 @@ class UndertakingConfirmation1(base_types._BaseFieldType):
 
 	@Conf.setter
 	def Conf(self, value):
-		self._Conf = value if type(value) != base_types.auto else self.make_default("Conf")
+		self._Conf = value if value is not None else base_types.UninitialisedField(self, 'Conf', Max2000Text, True)
 
 	@Conf.deleter
 	def Conf(self):
 		del self._Conf
-		self._Conf = None
+		self._Conf = base_types.UninitialisedField(self, 'Conf', Max2000Text, True)
 
 	@property
 	def Dt(self):
@@ -42,12 +42,12 @@ class UndertakingConfirmation1(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', DateAndDateTimeChoice, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', DateAndDateTimeChoice, False)
 
 	@property
 	def RefNb(self):
@@ -55,12 +55,12 @@ class UndertakingConfirmation1(base_types._BaseFieldType):
 
 	@RefNb.setter
 	def RefNb(self, value):
-		self._RefNb = value if type(value) != base_types.auto else self.make_default("RefNb")
+		self._RefNb = value if value is not None else base_types.UninitialisedField(self, 'RefNb', Max35Text, False)
 
 	@RefNb.deleter
 	def RefNb(self):
 		del self._RefNb
-		self._RefNb = None
+		self._RefNb = base_types.UninitialisedField(self, 'RefNb', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cnfrmr', type=PartyIdentification43, min=1, max=1, mutex_group=None, array=False),

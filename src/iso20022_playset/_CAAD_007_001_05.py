@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ErrorV05 import ErrorV05
+from . import ErrorV05
 
 class CAAD_007_001_05():
 
@@ -18,12 +18,12 @@ class CAAD_007_001_05():
 
 		@Err.setter
 		def Err(self, value):
-			self._Err = value if type(value) != base_types.auto else self.make_default("Err")
+			self._Err = value if value is not None else base_types.UninitialisedField(self, 'Err', ErrorV05, False)
 
 		@Err.deleter
 		def Err(self):
 			del self._Err
-			self._Err = None
+			self._Err = base_types.UninitialisedField(self, 'Err', ErrorV05, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='Err', type=ErrorV05, min=1, max=1, mutex_group=None, array=False),

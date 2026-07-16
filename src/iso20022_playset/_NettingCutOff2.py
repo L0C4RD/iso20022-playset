@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CutOff1 import CutOff1
-from ._NettingIdentification2Choice import NettingIdentification2Choice
+from . import CutOff1
+from . import NettingIdentification2Choice
 
 class NettingCutOff2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class NettingCutOff2(base_types._BaseFieldType):
 
 	@NetgId.setter
 	def NetgId(self, value):
-		self._NetgId = value if type(value) != base_types.auto else self.make_default("NetgId")
+		self._NetgId = value if value is not None else base_types.UninitialisedField(self, 'NetgId', NettingIdentification2Choice, False)
 
 	@NetgId.deleter
 	def NetgId(self):
 		del self._NetgId
-		self._NetgId = None
+		self._NetgId = base_types.UninitialisedField(self, 'NetgId', NettingIdentification2Choice, False)
 
 	@property
 	def NewCutOff(self):
@@ -27,12 +27,12 @@ class NettingCutOff2(base_types._BaseFieldType):
 
 	@NewCutOff.setter
 	def NewCutOff(self, value):
-		self._NewCutOff = value if type(value) != base_types.auto else self.make_default("NewCutOff")
+		self._NewCutOff = value if value is not None else base_types.UninitialisedField(self, 'NewCutOff', CutOff1, True)
 
 	@NewCutOff.deleter
 	def NewCutOff(self):
 		del self._NewCutOff
-		self._NewCutOff = None
+		self._NewCutOff = base_types.UninitialisedField(self, 'NewCutOff', CutOff1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NetgId', type=NettingIdentification2Choice, min=1, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMInquiryResponseV03 import ATMInquiryResponseV03
+from . import ATMInquiryResponseV03
 
 class CATP_007_001_03():
 
@@ -18,12 +18,12 @@ class CATP_007_001_03():
 
 		@ATMNqryRspn.setter
 		def ATMNqryRspn(self, value):
-			self._ATMNqryRspn = value if type(value) != base_types.auto else self.make_default("ATMNqryRspn")
+			self._ATMNqryRspn = value if value is not None else base_types.UninitialisedField(self, 'ATMNqryRspn', ATMInquiryResponseV03, False)
 
 		@ATMNqryRspn.deleter
 		def ATMNqryRspn(self):
 			del self._ATMNqryRspn
-			self._ATMNqryRspn = None
+			self._ATMNqryRspn = base_types.UninitialisedField(self, 'ATMNqryRspn', ATMInquiryResponseV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ATMNqryRspn', type=ATMInquiryResponseV03, min=1, max=1, mutex_group=None, array=False),

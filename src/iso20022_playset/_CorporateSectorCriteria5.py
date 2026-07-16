@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialPartySectorType2Code import FinancialPartySectorType2Code
-from ._NACEDomainIdentifier import NACEDomainIdentifier
-from ._NotReported1Code import NotReported1Code
+from . import FinancialPartySectorType2Code
+from . import NACEDomainIdentifier
+from . import NotReported1Code
 
 class CorporateSectorCriteria5(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CorporateSectorCriteria5(base_types._BaseFieldType):
 
 	@FISctr.setter
 	def FISctr(self, value):
-		self._FISctr = value if type(value) != base_types.auto else self.make_default("FISctr")
+		self._FISctr = value if value is not None else base_types.UninitialisedField(self, 'FISctr', FinancialPartySectorType2Code, True)
 
 	@FISctr.deleter
 	def FISctr(self):
 		del self._FISctr
-		self._FISctr = None
+		self._FISctr = base_types.UninitialisedField(self, 'FISctr', FinancialPartySectorType2Code, True)
 
 	@property
 	def NFISctr(self):
@@ -28,12 +28,12 @@ class CorporateSectorCriteria5(base_types._BaseFieldType):
 
 	@NFISctr.setter
 	def NFISctr(self, value):
-		self._NFISctr = value if type(value) != base_types.auto else self.make_default("NFISctr")
+		self._NFISctr = value if value is not None else base_types.UninitialisedField(self, 'NFISctr', NACEDomainIdentifier, True)
 
 	@NFISctr.deleter
 	def NFISctr(self):
 		del self._NFISctr
-		self._NFISctr = None
+		self._NFISctr = base_types.UninitialisedField(self, 'NFISctr', NACEDomainIdentifier, True)
 
 	@property
 	def NotRptd(self):
@@ -41,12 +41,12 @@ class CorporateSectorCriteria5(base_types._BaseFieldType):
 
 	@NotRptd.setter
 	def NotRptd(self, value):
-		self._NotRptd = value if type(value) != base_types.auto else self.make_default("NotRptd")
+		self._NotRptd = value if value is not None else base_types.UninitialisedField(self, 'NotRptd', NotReported1Code, False)
 
 	@NotRptd.deleter
 	def NotRptd(self):
 		del self._NotRptd
-		self._NotRptd = None
+		self._NotRptd = base_types.UninitialisedField(self, 'NotRptd', NotReported1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FISctr', type=FinancialPartySectorType2Code, min=0, max=None, mutex_group=None, array=True),

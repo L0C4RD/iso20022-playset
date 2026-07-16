@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._OriginalGroupHeader21 import OriginalGroupHeader21
-from ._OriginalPaymentInstruction55 import OriginalPaymentInstruction55
+from . import OriginalGroupHeader21
+from . import OriginalPaymentInstruction55
 
 class UnderlyingTransaction37(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class UnderlyingTransaction37(base_types._BaseFieldType):
 
 	@OrgnlGrpInfAndCxl.setter
 	def OrgnlGrpInfAndCxl(self, value):
-		self._OrgnlGrpInfAndCxl = value if type(value) != base_types.auto else self.make_default("OrgnlGrpInfAndCxl")
+		self._OrgnlGrpInfAndCxl = value if value is not None else base_types.UninitialisedField(self, 'OrgnlGrpInfAndCxl', OriginalGroupHeader21, False)
 
 	@OrgnlGrpInfAndCxl.deleter
 	def OrgnlGrpInfAndCxl(self):
 		del self._OrgnlGrpInfAndCxl
-		self._OrgnlGrpInfAndCxl = None
+		self._OrgnlGrpInfAndCxl = base_types.UninitialisedField(self, 'OrgnlGrpInfAndCxl', OriginalGroupHeader21, False)
 
 	@property
 	def OrgnlPmtInfAndCxl(self):
@@ -27,12 +27,12 @@ class UnderlyingTransaction37(base_types._BaseFieldType):
 
 	@OrgnlPmtInfAndCxl.setter
 	def OrgnlPmtInfAndCxl(self, value):
-		self._OrgnlPmtInfAndCxl = value if type(value) != base_types.auto else self.make_default("OrgnlPmtInfAndCxl")
+		self._OrgnlPmtInfAndCxl = value if value is not None else base_types.UninitialisedField(self, 'OrgnlPmtInfAndCxl', OriginalPaymentInstruction55, True)
 
 	@OrgnlPmtInfAndCxl.deleter
 	def OrgnlPmtInfAndCxl(self):
 		del self._OrgnlPmtInfAndCxl
-		self._OrgnlPmtInfAndCxl = None
+		self._OrgnlPmtInfAndCxl = base_types.UninitialisedField(self, 'OrgnlPmtInfAndCxl', OriginalPaymentInstruction55, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlGrpInfAndCxl', type=OriginalGroupHeader21, min=0, max=1, mutex_group=None, array=False),

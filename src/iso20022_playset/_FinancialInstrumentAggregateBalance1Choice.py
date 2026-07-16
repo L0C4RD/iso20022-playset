@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentAggregateBalance2 import FinancialInstrumentAggregateBalance2
-from ._YesNoIndicator import YesNoIndicator
+from . import FinancialInstrumentAggregateBalance2
+from . import YesNoIndicator
 
 class FinancialInstrumentAggregateBalance1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class FinancialInstrumentAggregateBalance1Choice(base_types._BaseFieldType):
 
 	@HldgBal.setter
 	def HldgBal(self, value):
-		self._HldgBal = value if type(value) != base_types.auto else self.make_default("HldgBal")
+		self._HldgBal = value if value is not None else base_types.UninitialisedField(self, 'HldgBal', FinancialInstrumentAggregateBalance2, False)
 
 	@HldgBal.deleter
 	def HldgBal(self):
 		del self._HldgBal
-		self._HldgBal = None
+		self._HldgBal = base_types.UninitialisedField(self, 'HldgBal', FinancialInstrumentAggregateBalance2, False)
 
 	@property
 	def HldgsInd(self):
@@ -27,12 +27,12 @@ class FinancialInstrumentAggregateBalance1Choice(base_types._BaseFieldType):
 
 	@HldgsInd.setter
 	def HldgsInd(self, value):
-		self._HldgsInd = value if type(value) != base_types.auto else self.make_default("HldgsInd")
+		self._HldgsInd = value if value is not None else base_types.UninitialisedField(self, 'HldgsInd', YesNoIndicator, False)
 
 	@HldgsInd.deleter
 	def HldgsInd(self):
 		del self._HldgsInd
-		self._HldgsInd = None
+		self._HldgsInd = base_types.UninitialisedField(self, 'HldgsInd', YesNoIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='HldgBal', type=FinancialInstrumentAggregateBalance2, min=0, max=1, mutex_group=1, array=False),

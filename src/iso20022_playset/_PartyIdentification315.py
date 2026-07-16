@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AlternatePartyIdentification7 import AlternatePartyIdentification7
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._LEIIdentifier import LEIIdentifier
-from ._Max35Text import Max35Text
-from ._PartyIdentification257Choice import PartyIdentification257Choice
-from ._PartyTextInformation1 import PartyTextInformation1
+from . import AlternatePartyIdentification7
+from . import DateAndDateTime2Choice
+from . import LEIIdentifier
+from . import Max35Text
+from . import PartyIdentification257Choice
+from . import PartyTextInformation1
 
 class PartyIdentification315(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class PartyIdentification315(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', PartyTextInformation1, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', PartyTextInformation1, False)
 
 	@property
 	def AltrnId(self):
@@ -31,12 +31,12 @@ class PartyIdentification315(base_types._BaseFieldType):
 
 	@AltrnId.setter
 	def AltrnId(self, value):
-		self._AltrnId = value if type(value) != base_types.auto else self.make_default("AltrnId")
+		self._AltrnId = value if value is not None else base_types.UninitialisedField(self, 'AltrnId', AlternatePartyIdentification7, False)
 
 	@AltrnId.deleter
 	def AltrnId(self):
 		del self._AltrnId
-		self._AltrnId = None
+		self._AltrnId = base_types.UninitialisedField(self, 'AltrnId', AlternatePartyIdentification7, False)
 
 	@property
 	def Id(self):
@@ -44,12 +44,12 @@ class PartyIdentification315(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', PartyIdentification257Choice, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', PartyIdentification257Choice, False)
 
 	@property
 	def LEI(self):
@@ -57,12 +57,12 @@ class PartyIdentification315(base_types._BaseFieldType):
 
 	@LEI.setter
 	def LEI(self, value):
-		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
+		self._LEI = value if value is not None else base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	@LEI.deleter
 	def LEI(self):
 		del self._LEI
-		self._LEI = None
+		self._LEI = base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	@property
 	def PrcgDt(self):
@@ -70,12 +70,12 @@ class PartyIdentification315(base_types._BaseFieldType):
 
 	@PrcgDt.setter
 	def PrcgDt(self, value):
-		self._PrcgDt = value if type(value) != base_types.auto else self.make_default("PrcgDt")
+		self._PrcgDt = value if value is not None else base_types.UninitialisedField(self, 'PrcgDt', DateAndDateTime2Choice, False)
 
 	@PrcgDt.deleter
 	def PrcgDt(self):
 		del self._PrcgDt
-		self._PrcgDt = None
+		self._PrcgDt = base_types.UninitialisedField(self, 'PrcgDt', DateAndDateTime2Choice, False)
 
 	@property
 	def PrcgId(self):
@@ -83,12 +83,12 @@ class PartyIdentification315(base_types._BaseFieldType):
 
 	@PrcgId.setter
 	def PrcgId(self, value):
-		self._PrcgId = value if type(value) != base_types.auto else self.make_default("PrcgId")
+		self._PrcgId = value if value is not None else base_types.UninitialisedField(self, 'PrcgId', Max35Text, False)
 
 	@PrcgId.deleter
 	def PrcgId(self):
 		del self._PrcgId
-		self._PrcgId = None
+		self._PrcgId = base_types.UninitialisedField(self, 'PrcgId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation1, min=0, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMRejectV02 import ATMRejectV02
+from . import ATMRejectV02
 
 class CATP_005_001_02():
 
@@ -18,12 +18,12 @@ class CATP_005_001_02():
 
 		@ATMRjct.setter
 		def ATMRjct(self, value):
-			self._ATMRjct = value if type(value) != base_types.auto else self.make_default("ATMRjct")
+			self._ATMRjct = value if value is not None else base_types.UninitialisedField(self, 'ATMRjct', ATMRejectV02, False)
 
 		@ATMRjct.deleter
 		def ATMRjct(self):
 			del self._ATMRjct
-			self._ATMRjct = None
+			self._ATMRjct = base_types.UninitialisedField(self, 'ATMRjct', ATMRejectV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ATMRjct', type=ATMRejectV02, min=1, max=1, mutex_group=None, array=False),

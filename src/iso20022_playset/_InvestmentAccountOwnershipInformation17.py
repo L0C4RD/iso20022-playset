@@ -2,32 +2,32 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountingStatus1Choice import AccountingStatus1Choice
-from ._AdditiononalInformation13 import AdditiononalInformation13
-from ._CRSForm1Choice import CRSForm1Choice
-from ._CRSStatus4 import CRSStatus4
-from ._CommunicationAddress6 import CommunicationAddress6
-from ._CompanyLink1Choice import CompanyLink1Choice
-from ._CountryAndResidentialStatusType2 import CountryAndResidentialStatusType2
-from ._DateAndAmount1 import DateAndAmount1
-from ._FATCAForm1Choice import FATCAForm1Choice
-from ._FATCAStatus2 import FATCAStatus2
-from ._GenericIdentification82 import GenericIdentification82
-from ._ISODate import ISODate
-from ._LanguageCode import LanguageCode
-from ._MailType1Choice import MailType1Choice
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
-from ._MiFIDClassification1 import MiFIDClassification1
-from ._ModificationScope27 import ModificationScope27
-from ._MoneyLaunderingCheck1Choice import MoneyLaunderingCheck1Choice
-from ._Notification2 import Notification2
-from ._OwnershipBeneficiaryRate1 import OwnershipBeneficiaryRate1
-from ._Party48Choice import Party48Choice
-from ._RegulatoryInformation1 import RegulatoryInformation1
-from ._TaxExemptionReason2Choice import TaxExemptionReason2Choice
-from ._TaxReporting3 import TaxReporting3
-from ._YesNoIndicator import YesNoIndicator
+from . import AccountingStatus1Choice
+from . import AdditiononalInformation13
+from . import CRSForm1Choice
+from . import CRSStatus4
+from . import CommunicationAddress6
+from . import CompanyLink1Choice
+from . import CountryAndResidentialStatusType2
+from . import DateAndAmount1
+from . import FATCAForm1Choice
+from . import FATCAStatus2
+from . import GenericIdentification82
+from . import ISODate
+from . import LanguageCode
+from . import MailType1Choice
+from . import Max350Text
+from . import Max35Text
+from . import MiFIDClassification1
+from . import ModificationScope27
+from . import MoneyLaunderingCheck1Choice
+from . import Notification2
+from . import OwnershipBeneficiaryRate1
+from . import Party48Choice
+from . import RegulatoryInformation1
+from . import TaxExemptionReason2Choice
+from . import TaxReporting3
+from . import YesNoIndicator
 
 class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
@@ -38,12 +38,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@AcctgSts.setter
 	def AcctgSts(self, value):
-		self._AcctgSts = value if type(value) != base_types.auto else self.make_default("AcctgSts")
+		self._AcctgSts = value if value is not None else base_types.UninitialisedField(self, 'AcctgSts', AccountingStatus1Choice, False)
 
 	@AcctgSts.deleter
 	def AcctgSts(self):
 		del self._AcctgSts
-		self._AcctgSts = None
+		self._AcctgSts = base_types.UninitialisedField(self, 'AcctgSts', AccountingStatus1Choice, False)
 
 	@property
 	def AddtlInf(self):
@@ -51,12 +51,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditiononalInformation13, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditiononalInformation13, True)
 
 	@property
 	def AddtlRgltryInf(self):
@@ -64,12 +64,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@AddtlRgltryInf.setter
 	def AddtlRgltryInf(self, value):
-		self._AddtlRgltryInf = value if type(value) != base_types.auto else self.make_default("AddtlRgltryInf")
+		self._AddtlRgltryInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlRgltryInf', RegulatoryInformation1, False)
 
 	@AddtlRgltryInf.deleter
 	def AddtlRgltryInf(self):
 		del self._AddtlRgltryInf
-		self._AddtlRgltryInf = None
+		self._AddtlRgltryInf = base_types.UninitialisedField(self, 'AddtlRgltryInf', RegulatoryInformation1, False)
 
 	@property
 	def CRSFormTp(self):
@@ -77,12 +77,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@CRSFormTp.setter
 	def CRSFormTp(self, value):
-		self._CRSFormTp = value if type(value) != base_types.auto else self.make_default("CRSFormTp")
+		self._CRSFormTp = value if value is not None else base_types.UninitialisedField(self, 'CRSFormTp', CRSForm1Choice, True)
 
 	@CRSFormTp.deleter
 	def CRSFormTp(self):
 		del self._CRSFormTp
-		self._CRSFormTp = None
+		self._CRSFormTp = base_types.UninitialisedField(self, 'CRSFormTp', CRSForm1Choice, True)
 
 	@property
 	def CRSRptgDt(self):
@@ -90,12 +90,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@CRSRptgDt.setter
 	def CRSRptgDt(self, value):
-		self._CRSRptgDt = value if type(value) != base_types.auto else self.make_default("CRSRptgDt")
+		self._CRSRptgDt = value if value is not None else base_types.UninitialisedField(self, 'CRSRptgDt', ISODate, False)
 
 	@CRSRptgDt.deleter
 	def CRSRptgDt(self):
 		del self._CRSRptgDt
-		self._CRSRptgDt = None
+		self._CRSRptgDt = base_types.UninitialisedField(self, 'CRSRptgDt', ISODate, False)
 
 	@property
 	def CRSSts(self):
@@ -103,12 +103,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@CRSSts.setter
 	def CRSSts(self, value):
-		self._CRSSts = value if type(value) != base_types.auto else self.make_default("CRSSts")
+		self._CRSSts = value if value is not None else base_types.UninitialisedField(self, 'CRSSts', CRSStatus4, True)
 
 	@CRSSts.deleter
 	def CRSSts(self):
 		del self._CRSSts
-		self._CRSSts = None
+		self._CRSSts = base_types.UninitialisedField(self, 'CRSSts', CRSStatus4, True)
 
 	@property
 	def ClntId(self):
@@ -116,12 +116,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@ClntId.setter
 	def ClntId(self, value):
-		self._ClntId = value if type(value) != base_types.auto else self.make_default("ClntId")
+		self._ClntId = value if value is not None else base_types.UninitialisedField(self, 'ClntId', Max35Text, False)
 
 	@ClntId.deleter
 	def ClntId(self):
 		del self._ClntId
-		self._ClntId = None
+		self._ClntId = base_types.UninitialisedField(self, 'ClntId', Max35Text, False)
 
 	@property
 	def CpnyLk(self):
@@ -129,12 +129,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@CpnyLk.setter
 	def CpnyLk(self, value):
-		self._CpnyLk = value if type(value) != base_types.auto else self.make_default("CpnyLk")
+		self._CpnyLk = value if value is not None else base_types.UninitialisedField(self, 'CpnyLk', CompanyLink1Choice, False)
 
 	@CpnyLk.deleter
 	def CpnyLk(self):
 		del self._CpnyLk
-		self._CpnyLk = None
+		self._CpnyLk = base_types.UninitialisedField(self, 'CpnyLk', CompanyLink1Choice, False)
 
 	@property
 	def CtrlgPty(self):
@@ -142,12 +142,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@CtrlgPty.setter
 	def CtrlgPty(self, value):
-		self._CtrlgPty = value if type(value) != base_types.auto else self.make_default("CtrlgPty")
+		self._CtrlgPty = value if value is not None else base_types.UninitialisedField(self, 'CtrlgPty', YesNoIndicator, False)
 
 	@CtrlgPty.deleter
 	def CtrlgPty(self):
 		del self._CtrlgPty
-		self._CtrlgPty = None
+		self._CtrlgPty = base_types.UninitialisedField(self, 'CtrlgPty', YesNoIndicator, False)
 
 	@property
 	def CtryAndResdtlSts(self):
@@ -155,12 +155,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@CtryAndResdtlSts.setter
 	def CtryAndResdtlSts(self, value):
-		self._CtryAndResdtlSts = value if type(value) != base_types.auto else self.make_default("CtryAndResdtlSts")
+		self._CtryAndResdtlSts = value if value is not None else base_types.UninitialisedField(self, 'CtryAndResdtlSts', CountryAndResidentialStatusType2, False)
 
 	@CtryAndResdtlSts.deleter
 	def CtryAndResdtlSts(self):
 		del self._CtryAndResdtlSts
-		self._CtryAndResdtlSts = None
+		self._CtryAndResdtlSts = base_types.UninitialisedField(self, 'CtryAndResdtlSts', CountryAndResidentialStatusType2, False)
 
 	@property
 	def ElctrncMlngSvcRef(self):
@@ -168,12 +168,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@ElctrncMlngSvcRef.setter
 	def ElctrncMlngSvcRef(self, value):
-		self._ElctrncMlngSvcRef = value if type(value) != base_types.auto else self.make_default("ElctrncMlngSvcRef")
+		self._ElctrncMlngSvcRef = value if value is not None else base_types.UninitialisedField(self, 'ElctrncMlngSvcRef', Max350Text, False)
 
 	@ElctrncMlngSvcRef.deleter
 	def ElctrncMlngSvcRef(self):
 		del self._ElctrncMlngSvcRef
-		self._ElctrncMlngSvcRef = None
+		self._ElctrncMlngSvcRef = base_types.UninitialisedField(self, 'ElctrncMlngSvcRef', Max350Text, False)
 
 	@property
 	def EqtyVal(self):
@@ -181,12 +181,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@EqtyVal.setter
 	def EqtyVal(self, value):
-		self._EqtyVal = value if type(value) != base_types.auto else self.make_default("EqtyVal")
+		self._EqtyVal = value if value is not None else base_types.UninitialisedField(self, 'EqtyVal', DateAndAmount1, False)
 
 	@EqtyVal.deleter
 	def EqtyVal(self):
 		del self._EqtyVal
-		self._EqtyVal = None
+		self._EqtyVal = base_types.UninitialisedField(self, 'EqtyVal', DateAndAmount1, False)
 
 	@property
 	def FATCAFormTp(self):
@@ -194,12 +194,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@FATCAFormTp.setter
 	def FATCAFormTp(self, value):
-		self._FATCAFormTp = value if type(value) != base_types.auto else self.make_default("FATCAFormTp")
+		self._FATCAFormTp = value if value is not None else base_types.UninitialisedField(self, 'FATCAFormTp', FATCAForm1Choice, True)
 
 	@FATCAFormTp.deleter
 	def FATCAFormTp(self):
 		del self._FATCAFormTp
-		self._FATCAFormTp = None
+		self._FATCAFormTp = base_types.UninitialisedField(self, 'FATCAFormTp', FATCAForm1Choice, True)
 
 	@property
 	def FATCARptgDt(self):
@@ -207,12 +207,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@FATCARptgDt.setter
 	def FATCARptgDt(self, value):
-		self._FATCARptgDt = value if type(value) != base_types.auto else self.make_default("FATCARptgDt")
+		self._FATCARptgDt = value if value is not None else base_types.UninitialisedField(self, 'FATCARptgDt', ISODate, False)
 
 	@FATCARptgDt.deleter
 	def FATCARptgDt(self):
 		del self._FATCARptgDt
-		self._FATCARptgDt = None
+		self._FATCARptgDt = base_types.UninitialisedField(self, 'FATCARptgDt', ISODate, False)
 
 	@property
 	def FATCASts(self):
@@ -220,12 +220,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@FATCASts.setter
 	def FATCASts(self, value):
-		self._FATCASts = value if type(value) != base_types.auto else self.make_default("FATCASts")
+		self._FATCASts = value if value is not None else base_types.UninitialisedField(self, 'FATCASts', FATCAStatus2, True)
 
 	@FATCASts.deleter
 	def FATCASts(self):
 		del self._FATCASts
-		self._FATCASts = None
+		self._FATCASts = base_types.UninitialisedField(self, 'FATCASts', FATCAStatus2, True)
 
 	@property
 	def FsclXmptn(self):
@@ -233,12 +233,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@FsclXmptn.setter
 	def FsclXmptn(self, value):
-		self._FsclXmptn = value if type(value) != base_types.auto else self.make_default("FsclXmptn")
+		self._FsclXmptn = value if value is not None else base_types.UninitialisedField(self, 'FsclXmptn', YesNoIndicator, False)
 
 	@FsclXmptn.deleter
 	def FsclXmptn(self):
 		del self._FsclXmptn
-		self._FsclXmptn = None
+		self._FsclXmptn = base_types.UninitialisedField(self, 'FsclXmptn', YesNoIndicator, False)
 
 	@property
 	def Lang(self):
@@ -246,12 +246,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@Lang.setter
 	def Lang(self, value):
-		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
+		self._Lang = value if value is not None else base_types.UninitialisedField(self, 'Lang', LanguageCode, False)
 
 	@Lang.deleter
 	def Lang(self):
 		del self._Lang
-		self._Lang = None
+		self._Lang = base_types.UninitialisedField(self, 'Lang', LanguageCode, False)
 
 	@property
 	def MailTp(self):
@@ -259,12 +259,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@MailTp.setter
 	def MailTp(self, value):
-		self._MailTp = value if type(value) != base_types.auto else self.make_default("MailTp")
+		self._MailTp = value if value is not None else base_types.UninitialisedField(self, 'MailTp', MailType1Choice, False)
 
 	@MailTp.deleter
 	def MailTp(self):
 		del self._MailTp
-		self._MailTp = None
+		self._MailTp = base_types.UninitialisedField(self, 'MailTp', MailType1Choice, False)
 
 	@property
 	def MiFIDClssfctn(self):
@@ -272,12 +272,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@MiFIDClssfctn.setter
 	def MiFIDClssfctn(self, value):
-		self._MiFIDClssfctn = value if type(value) != base_types.auto else self.make_default("MiFIDClssfctn")
+		self._MiFIDClssfctn = value if value is not None else base_types.UninitialisedField(self, 'MiFIDClssfctn', MiFIDClassification1, False)
 
 	@MiFIDClssfctn.deleter
 	def MiFIDClssfctn(self):
 		del self._MiFIDClssfctn
-		self._MiFIDClssfctn = None
+		self._MiFIDClssfctn = base_types.UninitialisedField(self, 'MiFIDClssfctn', MiFIDClassification1, False)
 
 	@property
 	def MntryWlth(self):
@@ -285,12 +285,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@MntryWlth.setter
 	def MntryWlth(self, value):
-		self._MntryWlth = value if type(value) != base_types.auto else self.make_default("MntryWlth")
+		self._MntryWlth = value if value is not None else base_types.UninitialisedField(self, 'MntryWlth', DateAndAmount1, False)
 
 	@MntryWlth.deleter
 	def MntryWlth(self):
 		del self._MntryWlth
-		self._MntryWlth = None
+		self._MntryWlth = base_types.UninitialisedField(self, 'MntryWlth', DateAndAmount1, False)
 
 	@property
 	def MnyLndrgChck(self):
@@ -298,12 +298,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@MnyLndrgChck.setter
 	def MnyLndrgChck(self, value):
-		self._MnyLndrgChck = value if type(value) != base_types.auto else self.make_default("MnyLndrgChck")
+		self._MnyLndrgChck = value if value is not None else base_types.UninitialisedField(self, 'MnyLndrgChck', MoneyLaunderingCheck1Choice, False)
 
 	@MnyLndrgChck.deleter
 	def MnyLndrgChck(self):
 		del self._MnyLndrgChck
-		self._MnyLndrgChck = None
+		self._MnyLndrgChck = base_types.UninitialisedField(self, 'MnyLndrgChck', MoneyLaunderingCheck1Choice, False)
 
 	@property
 	def ModfdInvstrPrflVldtn(self):
@@ -311,12 +311,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@ModfdInvstrPrflVldtn.setter
 	def ModfdInvstrPrflVldtn(self, value):
-		self._ModfdInvstrPrflVldtn = value if type(value) != base_types.auto else self.make_default("ModfdInvstrPrflVldtn")
+		self._ModfdInvstrPrflVldtn = value if value is not None else base_types.UninitialisedField(self, 'ModfdInvstrPrflVldtn', ModificationScope27, True)
 
 	@ModfdInvstrPrflVldtn.deleter
 	def ModfdInvstrPrflVldtn(self):
 		del self._ModfdInvstrPrflVldtn
-		self._ModfdInvstrPrflVldtn = None
+		self._ModfdInvstrPrflVldtn = base_types.UninitialisedField(self, 'ModfdInvstrPrflVldtn', ModificationScope27, True)
 
 	@property
 	def Ntfctn(self):
@@ -324,12 +324,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@Ntfctn.setter
 	def Ntfctn(self, value):
-		self._Ntfctn = value if type(value) != base_types.auto else self.make_default("Ntfctn")
+		self._Ntfctn = value if value is not None else base_types.UninitialisedField(self, 'Ntfctn', Notification2, True)
 
 	@Ntfctn.deleter
 	def Ntfctn(self):
 		del self._Ntfctn
-		self._Ntfctn = None
+		self._Ntfctn = base_types.UninitialisedField(self, 'Ntfctn', Notification2, True)
 
 	@property
 	def OthrId(self):
@@ -337,12 +337,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@OthrId.setter
 	def OthrId(self, value):
-		self._OthrId = value if type(value) != base_types.auto else self.make_default("OthrId")
+		self._OthrId = value if value is not None else base_types.UninitialisedField(self, 'OthrId', GenericIdentification82, True)
 
 	@OthrId.deleter
 	def OthrId(self):
 		del self._OthrId
-		self._OthrId = None
+		self._OthrId = base_types.UninitialisedField(self, 'OthrId', GenericIdentification82, True)
 
 	@property
 	def OwnrshBnfcryRate(self):
@@ -350,12 +350,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@OwnrshBnfcryRate.setter
 	def OwnrshBnfcryRate(self, value):
-		self._OwnrshBnfcryRate = value if type(value) != base_types.auto else self.make_default("OwnrshBnfcryRate")
+		self._OwnrshBnfcryRate = value if value is not None else base_types.UninitialisedField(self, 'OwnrshBnfcryRate', OwnershipBeneficiaryRate1, False)
 
 	@OwnrshBnfcryRate.deleter
 	def OwnrshBnfcryRate(self):
 		del self._OwnrshBnfcryRate
-		self._OwnrshBnfcryRate = None
+		self._OwnrshBnfcryRate = base_types.UninitialisedField(self, 'OwnrshBnfcryRate', OwnershipBeneficiaryRate1, False)
 
 	@property
 	def PmryComAdr(self):
@@ -363,12 +363,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@PmryComAdr.setter
 	def PmryComAdr(self, value):
-		self._PmryComAdr = value if type(value) != base_types.auto else self.make_default("PmryComAdr")
+		self._PmryComAdr = value if value is not None else base_types.UninitialisedField(self, 'PmryComAdr', CommunicationAddress6, True)
 
 	@PmryComAdr.deleter
 	def PmryComAdr(self):
 		del self._PmryComAdr
-		self._PmryComAdr = None
+		self._PmryComAdr = base_types.UninitialisedField(self, 'PmryComAdr', CommunicationAddress6, True)
 
 	@property
 	def Pty(self):
@@ -376,12 +376,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@Pty.setter
 	def Pty(self, value):
-		self._Pty = value if type(value) != base_types.auto else self.make_default("Pty")
+		self._Pty = value if value is not None else base_types.UninitialisedField(self, 'Pty', Party48Choice, False)
 
 	@Pty.deleter
 	def Pty(self):
 		del self._Pty
-		self._Pty = None
+		self._Pty = base_types.UninitialisedField(self, 'Pty', Party48Choice, False)
 
 	@property
 	def ScndryComAdr(self):
@@ -389,12 +389,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@ScndryComAdr.setter
 	def ScndryComAdr(self, value):
-		self._ScndryComAdr = value if type(value) != base_types.auto else self.make_default("ScndryComAdr")
+		self._ScndryComAdr = value if value is not None else base_types.UninitialisedField(self, 'ScndryComAdr', CommunicationAddress6, True)
 
 	@ScndryComAdr.deleter
 	def ScndryComAdr(self):
 		del self._ScndryComAdr
-		self._ScndryComAdr = None
+		self._ScndryComAdr = base_types.UninitialisedField(self, 'ScndryComAdr', CommunicationAddress6, True)
 
 	@property
 	def SgntryRghtInd(self):
@@ -402,12 +402,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@SgntryRghtInd.setter
 	def SgntryRghtInd(self, value):
-		self._SgntryRghtInd = value if type(value) != base_types.auto else self.make_default("SgntryRghtInd")
+		self._SgntryRghtInd = value if value is not None else base_types.UninitialisedField(self, 'SgntryRghtInd', YesNoIndicator, False)
 
 	@SgntryRghtInd.deleter
 	def SgntryRghtInd(self):
 		del self._SgntryRghtInd
-		self._SgntryRghtInd = None
+		self._SgntryRghtInd = base_types.UninitialisedField(self, 'SgntryRghtInd', YesNoIndicator, False)
 
 	@property
 	def TaxRptg(self):
@@ -415,12 +415,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@TaxRptg.setter
 	def TaxRptg(self, value):
-		self._TaxRptg = value if type(value) != base_types.auto else self.make_default("TaxRptg")
+		self._TaxRptg = value if value is not None else base_types.UninitialisedField(self, 'TaxRptg', TaxReporting3, True)
 
 	@TaxRptg.deleter
 	def TaxRptg(self):
 		del self._TaxRptg
-		self._TaxRptg = None
+		self._TaxRptg = base_types.UninitialisedField(self, 'TaxRptg', TaxReporting3, True)
 
 	@property
 	def TaxXmptn(self):
@@ -428,12 +428,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@TaxXmptn.setter
 	def TaxXmptn(self, value):
-		self._TaxXmptn = value if type(value) != base_types.auto else self.make_default("TaxXmptn")
+		self._TaxXmptn = value if value is not None else base_types.UninitialisedField(self, 'TaxXmptn', TaxExemptionReason2Choice, False)
 
 	@TaxXmptn.deleter
 	def TaxXmptn(self):
 		del self._TaxXmptn
-		self._TaxXmptn = None
+		self._TaxXmptn = base_types.UninitialisedField(self, 'TaxXmptn', TaxExemptionReason2Choice, False)
 
 	@property
 	def WorkgCptl(self):
@@ -441,12 +441,12 @@ class InvestmentAccountOwnershipInformation17(base_types._BaseFieldType):
 
 	@WorkgCptl.setter
 	def WorkgCptl(self, value):
-		self._WorkgCptl = value if type(value) != base_types.auto else self.make_default("WorkgCptl")
+		self._WorkgCptl = value if value is not None else base_types.UninitialisedField(self, 'WorkgCptl', DateAndAmount1, False)
 
 	@WorkgCptl.deleter
 	def WorkgCptl(self):
 		del self._WorkgCptl
-		self._WorkgCptl = None
+		self._WorkgCptl = base_types.UninitialisedField(self, 'WorkgCptl', DateAndAmount1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctgSts', type=AccountingStatus1Choice, min=0, max=1, mutex_group=None, array=False),

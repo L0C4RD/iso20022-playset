@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MessageHeader1 import MessageHeader1
-from ._Pagination1 import Pagination1
-from ._SecurityStatement3 import SecurityStatement3
-from ._SupplementaryData1 import SupplementaryData1
+from . import MessageHeader1
+from . import Pagination1
+from . import SecurityStatement3
+from . import SupplementaryData1
 
 class SecurityActivityAdviceV01(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class SecurityActivityAdviceV01(base_types._BaseFieldType):
 
 	@MsgHdr.setter
 	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
+		self._MsgHdr = value if value is not None else base_types.UninitialisedField(self, 'MsgHdr', MessageHeader1, False)
 
 	@MsgHdr.deleter
 	def MsgHdr(self):
 		del self._MsgHdr
-		self._MsgHdr = None
+		self._MsgHdr = base_types.UninitialisedField(self, 'MsgHdr', MessageHeader1, False)
 
 	@property
 	def Pgntn(self):
@@ -29,12 +29,12 @@ class SecurityActivityAdviceV01(base_types._BaseFieldType):
 
 	@Pgntn.setter
 	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+		self._Pgntn = value if value is not None else base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@Pgntn.deleter
 	def Pgntn(self):
 		del self._Pgntn
-		self._Pgntn = None
+		self._Pgntn = base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@property
 	def SctyActvty(self):
@@ -42,12 +42,12 @@ class SecurityActivityAdviceV01(base_types._BaseFieldType):
 
 	@SctyActvty.setter
 	def SctyActvty(self, value):
-		self._SctyActvty = value if type(value) != base_types.auto else self.make_default("SctyActvty")
+		self._SctyActvty = value if value is not None else base_types.UninitialisedField(self, 'SctyActvty', SecurityStatement3, False)
 
 	@SctyActvty.deleter
 	def SctyActvty(self):
 		del self._SctyActvty
-		self._SctyActvty = None
+		self._SctyActvty = base_types.UninitialisedField(self, 'SctyActvty', SecurityStatement3, False)
 
 	@property
 	def SplmtryData(self):
@@ -55,12 +55,12 @@ class SecurityActivityAdviceV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=0, max=1, mutex_group=None, array=False),

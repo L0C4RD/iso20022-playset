@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DatePeriod3 import DatePeriod3
-from ._Frequency36Choice import Frequency36Choice
-from ._ISODate import ISODate
-from ._SequenceType2Code import SequenceType2Code
+from . import DatePeriod3
+from . import Frequency36Choice
+from . import ISODate
+from . import SequenceType2Code
 
 class MandateOccurrences5(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class MandateOccurrences5(base_types._BaseFieldType):
 
 	@Drtn.setter
 	def Drtn(self, value):
-		self._Drtn = value if type(value) != base_types.auto else self.make_default("Drtn")
+		self._Drtn = value if value is not None else base_types.UninitialisedField(self, 'Drtn', DatePeriod3, False)
 
 	@Drtn.deleter
 	def Drtn(self):
 		del self._Drtn
-		self._Drtn = None
+		self._Drtn = base_types.UninitialisedField(self, 'Drtn', DatePeriod3, False)
 
 	@property
 	def FnlColltnDt(self):
@@ -29,12 +29,12 @@ class MandateOccurrences5(base_types._BaseFieldType):
 
 	@FnlColltnDt.setter
 	def FnlColltnDt(self, value):
-		self._FnlColltnDt = value if type(value) != base_types.auto else self.make_default("FnlColltnDt")
+		self._FnlColltnDt = value if value is not None else base_types.UninitialisedField(self, 'FnlColltnDt', ISODate, False)
 
 	@FnlColltnDt.deleter
 	def FnlColltnDt(self):
 		del self._FnlColltnDt
-		self._FnlColltnDt = None
+		self._FnlColltnDt = base_types.UninitialisedField(self, 'FnlColltnDt', ISODate, False)
 
 	@property
 	def Frqcy(self):
@@ -42,12 +42,12 @@ class MandateOccurrences5(base_types._BaseFieldType):
 
 	@Frqcy.setter
 	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
+		self._Frqcy = value if value is not None else base_types.UninitialisedField(self, 'Frqcy', Frequency36Choice, False)
 
 	@Frqcy.deleter
 	def Frqcy(self):
 		del self._Frqcy
-		self._Frqcy = None
+		self._Frqcy = base_types.UninitialisedField(self, 'Frqcy', Frequency36Choice, False)
 
 	@property
 	def FrstColltnDt(self):
@@ -55,12 +55,12 @@ class MandateOccurrences5(base_types._BaseFieldType):
 
 	@FrstColltnDt.setter
 	def FrstColltnDt(self, value):
-		self._FrstColltnDt = value if type(value) != base_types.auto else self.make_default("FrstColltnDt")
+		self._FrstColltnDt = value if value is not None else base_types.UninitialisedField(self, 'FrstColltnDt', ISODate, False)
 
 	@FrstColltnDt.deleter
 	def FrstColltnDt(self):
 		del self._FrstColltnDt
-		self._FrstColltnDt = None
+		self._FrstColltnDt = base_types.UninitialisedField(self, 'FrstColltnDt', ISODate, False)
 
 	@property
 	def SeqTp(self):
@@ -68,12 +68,12 @@ class MandateOccurrences5(base_types._BaseFieldType):
 
 	@SeqTp.setter
 	def SeqTp(self, value):
-		self._SeqTp = value if type(value) != base_types.auto else self.make_default("SeqTp")
+		self._SeqTp = value if value is not None else base_types.UninitialisedField(self, 'SeqTp', SequenceType2Code, False)
 
 	@SeqTp.deleter
 	def SeqTp(self):
 		del self._SeqTp
-		self._SeqTp = None
+		self._SeqTp = base_types.UninitialisedField(self, 'SeqTp', SequenceType2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Drtn', type=DatePeriod3, min=0, max=1, mutex_group=None, array=False),

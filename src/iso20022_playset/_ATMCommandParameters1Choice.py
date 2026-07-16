@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMConfigurationParameter1 import ATMConfigurationParameter1
-from ._ATMStatus1Code import ATMStatus1Code
-from ._MessageFunction8Code import MessageFunction8Code
+from . import ATMConfigurationParameter1
+from . import ATMStatus1Code
+from . import MessageFunction8Code
 
 class ATMCommandParameters1Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ATMCommandParameters1Choice(base_types._BaseFieldType):
 
 	@ATMReqrdGblSts.setter
 	def ATMReqrdGblSts(self, value):
-		self._ATMReqrdGblSts = value if type(value) != base_types.auto else self.make_default("ATMReqrdGblSts")
+		self._ATMReqrdGblSts = value if value is not None else base_types.UninitialisedField(self, 'ATMReqrdGblSts', ATMStatus1Code, False)
 
 	@ATMReqrdGblSts.deleter
 	def ATMReqrdGblSts(self):
 		del self._ATMReqrdGblSts
-		self._ATMReqrdGblSts = None
+		self._ATMReqrdGblSts = base_types.UninitialisedField(self, 'ATMReqrdGblSts', ATMStatus1Code, False)
 
 	@property
 	def ReqrdCfgtnParam(self):
@@ -28,12 +28,12 @@ class ATMCommandParameters1Choice(base_types._BaseFieldType):
 
 	@ReqrdCfgtnParam.setter
 	def ReqrdCfgtnParam(self, value):
-		self._ReqrdCfgtnParam = value if type(value) != base_types.auto else self.make_default("ReqrdCfgtnParam")
+		self._ReqrdCfgtnParam = value if value is not None else base_types.UninitialisedField(self, 'ReqrdCfgtnParam', ATMConfigurationParameter1, False)
 
 	@ReqrdCfgtnParam.deleter
 	def ReqrdCfgtnParam(self):
 		del self._ReqrdCfgtnParam
-		self._ReqrdCfgtnParam = None
+		self._ReqrdCfgtnParam = base_types.UninitialisedField(self, 'ReqrdCfgtnParam', ATMConfigurationParameter1, False)
 
 	@property
 	def XpctdMsgFctn(self):
@@ -41,12 +41,12 @@ class ATMCommandParameters1Choice(base_types._BaseFieldType):
 
 	@XpctdMsgFctn.setter
 	def XpctdMsgFctn(self, value):
-		self._XpctdMsgFctn = value if type(value) != base_types.auto else self.make_default("XpctdMsgFctn")
+		self._XpctdMsgFctn = value if value is not None else base_types.UninitialisedField(self, 'XpctdMsgFctn', MessageFunction8Code, False)
 
 	@XpctdMsgFctn.deleter
 	def XpctdMsgFctn(self):
 		del self._XpctdMsgFctn
-		self._XpctdMsgFctn = None
+		self._XpctdMsgFctn = base_types.UninitialisedField(self, 'XpctdMsgFctn', MessageFunction8Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ATMReqrdGblSts', type=ATMStatus1Code, min=0, max=1, mutex_group=1, array=False),

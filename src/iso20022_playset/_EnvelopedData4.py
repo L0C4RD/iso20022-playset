@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._EncryptedContent3 import EncryptedContent3
-from ._Number import Number
-from ._Recipient4Choice import Recipient4Choice
+from . import EncryptedContent3
+from . import Number
+from . import Recipient4Choice
 
 class EnvelopedData4(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class EnvelopedData4(base_types._BaseFieldType):
 
 	@NcrptdCntt.setter
 	def NcrptdCntt(self, value):
-		self._NcrptdCntt = value if type(value) != base_types.auto else self.make_default("NcrptdCntt")
+		self._NcrptdCntt = value if value is not None else base_types.UninitialisedField(self, 'NcrptdCntt', EncryptedContent3, False)
 
 	@NcrptdCntt.deleter
 	def NcrptdCntt(self):
 		del self._NcrptdCntt
-		self._NcrptdCntt = None
+		self._NcrptdCntt = base_types.UninitialisedField(self, 'NcrptdCntt', EncryptedContent3, False)
 
 	@property
 	def Rcpt(self):
@@ -28,12 +28,12 @@ class EnvelopedData4(base_types._BaseFieldType):
 
 	@Rcpt.setter
 	def Rcpt(self, value):
-		self._Rcpt = value if type(value) != base_types.auto else self.make_default("Rcpt")
+		self._Rcpt = value if value is not None else base_types.UninitialisedField(self, 'Rcpt', Recipient4Choice, True)
 
 	@Rcpt.deleter
 	def Rcpt(self):
 		del self._Rcpt
-		self._Rcpt = None
+		self._Rcpt = base_types.UninitialisedField(self, 'Rcpt', Recipient4Choice, True)
 
 	@property
 	def Vrsn(self):
@@ -41,12 +41,12 @@ class EnvelopedData4(base_types._BaseFieldType):
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+		self._Vrsn = value if value is not None else base_types.UninitialisedField(self, 'Vrsn', Number, False)
 
 	@Vrsn.deleter
 	def Vrsn(self):
 		del self._Vrsn
-		self._Vrsn = None
+		self._Vrsn = base_types.UninitialisedField(self, 'Vrsn', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NcrptdCntt', type=EncryptedContent3, min=0, max=1, mutex_group=None, array=False),

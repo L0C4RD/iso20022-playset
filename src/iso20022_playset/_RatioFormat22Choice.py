@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndQuantityRatio5 import AmountAndQuantityRatio5
-from ._AmountToAmountRatio3 import AmountToAmountRatio3
-from ._QuantityToQuantityRatio2 import QuantityToQuantityRatio2
+from . import AmountAndQuantityRatio5
+from . import AmountToAmountRatio3
+from . import QuantityToQuantityRatio2
 
 class RatioFormat22Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class RatioFormat22Choice(base_types._BaseFieldType):
 
 	@AmtToAmt.setter
 	def AmtToAmt(self, value):
-		self._AmtToAmt = value if type(value) != base_types.auto else self.make_default("AmtToAmt")
+		self._AmtToAmt = value if value is not None else base_types.UninitialisedField(self, 'AmtToAmt', AmountToAmountRatio3, False)
 
 	@AmtToAmt.deleter
 	def AmtToAmt(self):
 		del self._AmtToAmt
-		self._AmtToAmt = None
+		self._AmtToAmt = base_types.UninitialisedField(self, 'AmtToAmt', AmountToAmountRatio3, False)
 
 	@property
 	def AmtToQty(self):
@@ -28,12 +28,12 @@ class RatioFormat22Choice(base_types._BaseFieldType):
 
 	@AmtToQty.setter
 	def AmtToQty(self, value):
-		self._AmtToQty = value if type(value) != base_types.auto else self.make_default("AmtToQty")
+		self._AmtToQty = value if value is not None else base_types.UninitialisedField(self, 'AmtToQty', AmountAndQuantityRatio5, False)
 
 	@AmtToQty.deleter
 	def AmtToQty(self):
 		del self._AmtToQty
-		self._AmtToQty = None
+		self._AmtToQty = base_types.UninitialisedField(self, 'AmtToQty', AmountAndQuantityRatio5, False)
 
 	@property
 	def QtyToAmt(self):
@@ -41,12 +41,12 @@ class RatioFormat22Choice(base_types._BaseFieldType):
 
 	@QtyToAmt.setter
 	def QtyToAmt(self, value):
-		self._QtyToAmt = value if type(value) != base_types.auto else self.make_default("QtyToAmt")
+		self._QtyToAmt = value if value is not None else base_types.UninitialisedField(self, 'QtyToAmt', AmountAndQuantityRatio5, False)
 
 	@QtyToAmt.deleter
 	def QtyToAmt(self):
 		del self._QtyToAmt
-		self._QtyToAmt = None
+		self._QtyToAmt = base_types.UninitialisedField(self, 'QtyToAmt', AmountAndQuantityRatio5, False)
 
 	@property
 	def QtyToQty(self):
@@ -54,12 +54,12 @@ class RatioFormat22Choice(base_types._BaseFieldType):
 
 	@QtyToQty.setter
 	def QtyToQty(self, value):
-		self._QtyToQty = value if type(value) != base_types.auto else self.make_default("QtyToQty")
+		self._QtyToQty = value if value is not None else base_types.UninitialisedField(self, 'QtyToQty', QuantityToQuantityRatio2, False)
 
 	@QtyToQty.deleter
 	def QtyToQty(self):
 		del self._QtyToQty
-		self._QtyToQty = None
+		self._QtyToQty = base_types.UninitialisedField(self, 'QtyToQty', QuantityToQuantityRatio2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmtToAmt', type=AmountToAmountRatio3, min=0, max=1, mutex_group=1, array=False),

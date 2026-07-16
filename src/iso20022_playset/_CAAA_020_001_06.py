@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._TransactionAdviceV06 import TransactionAdviceV06
+from . import TransactionAdviceV06
 
 class CAAA_020_001_06():
 
@@ -18,12 +18,12 @@ class CAAA_020_001_06():
 
 		@TxAdvc.setter
 		def TxAdvc(self, value):
-			self._TxAdvc = value if type(value) != base_types.auto else self.make_default("TxAdvc")
+			self._TxAdvc = value if value is not None else base_types.UninitialisedField(self, 'TxAdvc', TransactionAdviceV06, False)
 
 		@TxAdvc.deleter
 		def TxAdvc(self):
 			del self._TxAdvc
-			self._TxAdvc = None
+			self._TxAdvc = base_types.UninitialisedField(self, 'TxAdvc', TransactionAdviceV06, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='TxAdvc', type=TransactionAdviceV06, min=1, max=1, mutex_group=None, array=False),

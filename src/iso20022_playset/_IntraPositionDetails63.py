@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IntraPositionMovementDetails20 import IntraPositionMovementDetails20
-from ._SafekeepingPlaceFormat39Choice import SafekeepingPlaceFormat39Choice
-from ._SecuritiesBalanceType8Choice import SecuritiesBalanceType8Choice
+from . import IntraPositionMovementDetails20
+from . import SafekeepingPlaceFormat39Choice
+from . import SecuritiesBalanceType8Choice
 
 class IntraPositionDetails63(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class IntraPositionDetails63(base_types._BaseFieldType):
 
 	@BalFr.setter
 	def BalFr(self, value):
-		self._BalFr = value if type(value) != base_types.auto else self.make_default("BalFr")
+		self._BalFr = value if value is not None else base_types.UninitialisedField(self, 'BalFr', SecuritiesBalanceType8Choice, False)
 
 	@BalFr.deleter
 	def BalFr(self):
 		del self._BalFr
-		self._BalFr = None
+		self._BalFr = base_types.UninitialisedField(self, 'BalFr', SecuritiesBalanceType8Choice, False)
 
 	@property
 	def IntraPosMvmnt(self):
@@ -28,12 +28,12 @@ class IntraPositionDetails63(base_types._BaseFieldType):
 
 	@IntraPosMvmnt.setter
 	def IntraPosMvmnt(self, value):
-		self._IntraPosMvmnt = value if type(value) != base_types.auto else self.make_default("IntraPosMvmnt")
+		self._IntraPosMvmnt = value if value is not None else base_types.UninitialisedField(self, 'IntraPosMvmnt', IntraPositionMovementDetails20, True)
 
 	@IntraPosMvmnt.deleter
 	def IntraPosMvmnt(self):
 		del self._IntraPosMvmnt
-		self._IntraPosMvmnt = None
+		self._IntraPosMvmnt = base_types.UninitialisedField(self, 'IntraPosMvmnt', IntraPositionMovementDetails20, True)
 
 	@property
 	def SfkpgPlc(self):
@@ -41,12 +41,12 @@ class IntraPositionDetails63(base_types._BaseFieldType):
 
 	@SfkpgPlc.setter
 	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
+		self._SfkpgPlc = value if value is not None else base_types.UninitialisedField(self, 'SfkpgPlc', SafekeepingPlaceFormat39Choice, False)
 
 	@SfkpgPlc.deleter
 	def SfkpgPlc(self):
 		del self._SfkpgPlc
-		self._SfkpgPlc = None
+		self._SfkpgPlc = base_types.UninitialisedField(self, 'SfkpgPlc', SafekeepingPlaceFormat39Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BalFr', type=SecuritiesBalanceType8Choice, min=1, max=1, mutex_group=None, array=False),

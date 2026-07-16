@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SafekeepingAccountIdentification1Code import SafekeepingAccountIdentification1Code
+from . import SafekeepingAccountIdentification1Code
 
 class AccountIdentification10(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class AccountIdentification10(base_types._BaseFieldType):
 
 	@IdCd.setter
 	def IdCd(self, value):
-		self._IdCd = value if type(value) != base_types.auto else self.make_default("IdCd")
+		self._IdCd = value if value is not None else base_types.UninitialisedField(self, 'IdCd', SafekeepingAccountIdentification1Code, False)
 
 	@IdCd.deleter
 	def IdCd(self):
 		del self._IdCd
-		self._IdCd = None
+		self._IdCd = base_types.UninitialisedField(self, 'IdCd', SafekeepingAccountIdentification1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IdCd', type=SafekeepingAccountIdentification1Code, min=1, max=1, mutex_group=None, array=False),

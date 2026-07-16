@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CloseLinkDeletionRequestV01 import CloseLinkDeletionRequestV01
+from . import CloseLinkDeletionRequestV01
 
 class REDA_077_001_01():
 
@@ -18,12 +18,12 @@ class REDA_077_001_01():
 
 		@ClsLkDeltnReq.setter
 		def ClsLkDeltnReq(self, value):
-			self._ClsLkDeltnReq = value if type(value) != base_types.auto else self.make_default("ClsLkDeltnReq")
+			self._ClsLkDeltnReq = value if value is not None else base_types.UninitialisedField(self, 'ClsLkDeltnReq', CloseLinkDeletionRequestV01, False)
 
 		@ClsLkDeltnReq.deleter
 		def ClsLkDeltnReq(self):
 			del self._ClsLkDeltnReq
-			self._ClsLkDeltnReq = None
+			self._ClsLkDeltnReq = base_types.UninitialisedField(self, 'ClsLkDeltnReq', CloseLinkDeletionRequestV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ClsLkDeltnReq', type=CloseLinkDeletionRequestV01, min=1, max=1, mutex_group=None, array=False),

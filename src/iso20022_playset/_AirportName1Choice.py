@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AirportDescription1 import AirportDescription1
-from ._Max6Text import Max6Text
+from . import AirportDescription1
+from . import Max6Text
 
 class AirportName1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AirportName1Choice(base_types._BaseFieldType):
 
 	@AirprtCd.setter
 	def AirprtCd(self, value):
-		self._AirprtCd = value if type(value) != base_types.auto else self.make_default("AirprtCd")
+		self._AirprtCd = value if value is not None else base_types.UninitialisedField(self, 'AirprtCd', Max6Text, False)
 
 	@AirprtCd.deleter
 	def AirprtCd(self):
 		del self._AirprtCd
-		self._AirprtCd = None
+		self._AirprtCd = base_types.UninitialisedField(self, 'AirprtCd', Max6Text, False)
 
 	@property
 	def OthrAirprtDesc(self):
@@ -27,12 +27,12 @@ class AirportName1Choice(base_types._BaseFieldType):
 
 	@OthrAirprtDesc.setter
 	def OthrAirprtDesc(self, value):
-		self._OthrAirprtDesc = value if type(value) != base_types.auto else self.make_default("OthrAirprtDesc")
+		self._OthrAirprtDesc = value if value is not None else base_types.UninitialisedField(self, 'OthrAirprtDesc', AirportDescription1, False)
 
 	@OthrAirprtDesc.deleter
 	def OthrAirprtDesc(self):
 		del self._OthrAirprtDesc
-		self._OthrAirprtDesc = None
+		self._OthrAirprtDesc = base_types.UninitialisedField(self, 'OthrAirprtDesc', AirportDescription1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AirprtCd', type=Max6Text, min=0, max=1, mutex_group=1, array=False),

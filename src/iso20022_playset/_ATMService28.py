@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMService18 import ATMService18
-from ._ATMServiceType13Code import ATMServiceType13Code
-from ._ATMTransaction8 import ATMTransaction8
-from ._ATMTransactionAmounts6 import ATMTransactionAmounts6
+from . import ATMService18
+from . import ATMServiceType13Code
+from . import ATMTransaction8
+from . import ATMTransactionAmounts6
 
 class ATMService28(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ATMService28(base_types._BaseFieldType):
 
 	@Lmts.setter
 	def Lmts(self, value):
-		self._Lmts = value if type(value) != base_types.auto else self.make_default("Lmts")
+		self._Lmts = value if value is not None else base_types.UninitialisedField(self, 'Lmts', ATMTransactionAmounts6, True)
 
 	@Lmts.deleter
 	def Lmts(self):
 		del self._Lmts
-		self._Lmts = None
+		self._Lmts = base_types.UninitialisedField(self, 'Lmts', ATMTransactionAmounts6, True)
 
 	@property
 	def PrefrdWdrwl(self):
@@ -29,12 +29,12 @@ class ATMService28(base_types._BaseFieldType):
 
 	@PrefrdWdrwl.setter
 	def PrefrdWdrwl(self, value):
-		self._PrefrdWdrwl = value if type(value) != base_types.auto else self.make_default("PrefrdWdrwl")
+		self._PrefrdWdrwl = value if value is not None else base_types.UninitialisedField(self, 'PrefrdWdrwl', ATMTransaction8, False)
 
 	@PrefrdWdrwl.deleter
 	def PrefrdWdrwl(self):
 		del self._PrefrdWdrwl
-		self._PrefrdWdrwl = None
+		self._PrefrdWdrwl = base_types.UninitialisedField(self, 'PrefrdWdrwl', ATMTransaction8, False)
 
 	@property
 	def SvcTp(self):
@@ -42,12 +42,12 @@ class ATMService28(base_types._BaseFieldType):
 
 	@SvcTp.setter
 	def SvcTp(self, value):
-		self._SvcTp = value if type(value) != base_types.auto else self.make_default("SvcTp")
+		self._SvcTp = value if value is not None else base_types.UninitialisedField(self, 'SvcTp', ATMServiceType13Code, False)
 
 	@SvcTp.deleter
 	def SvcTp(self):
 		del self._SvcTp
-		self._SvcTp = None
+		self._SvcTp = base_types.UninitialisedField(self, 'SvcTp', ATMServiceType13Code, False)
 
 	@property
 	def SvcVarnt(self):
@@ -55,12 +55,12 @@ class ATMService28(base_types._BaseFieldType):
 
 	@SvcVarnt.setter
 	def SvcVarnt(self, value):
-		self._SvcVarnt = value if type(value) != base_types.auto else self.make_default("SvcVarnt")
+		self._SvcVarnt = value if value is not None else base_types.UninitialisedField(self, 'SvcVarnt', ATMService18, True)
 
 	@SvcVarnt.deleter
 	def SvcVarnt(self):
 		del self._SvcVarnt
-		self._SvcVarnt = None
+		self._SvcVarnt = base_types.UninitialisedField(self, 'SvcVarnt', ATMService18, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Lmts', type=ATMTransactionAmounts6, min=0, max=None, mutex_group=None, array=True),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CollateralStatus1Code import CollateralStatus1Code
-from ._CollateralStatus2Choice import CollateralStatus2Choice
+from . import CollateralStatus1Code
+from . import CollateralStatus2Choice
 
 class TransactionStatus6(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TransactionStatus6(base_types._BaseFieldType):
 
 	@CvrgSts.setter
 	def CvrgSts(self, value):
-		self._CvrgSts = value if type(value) != base_types.auto else self.make_default("CvrgSts")
+		self._CvrgSts = value if value is not None else base_types.UninitialisedField(self, 'CvrgSts', CollateralStatus1Code, False)
 
 	@CvrgSts.deleter
 	def CvrgSts(self):
 		del self._CvrgSts
-		self._CvrgSts = None
+		self._CvrgSts = base_types.UninitialisedField(self, 'CvrgSts', CollateralStatus1Code, False)
 
 	@property
 	def ExctnSts(self):
@@ -27,12 +27,12 @@ class TransactionStatus6(base_types._BaseFieldType):
 
 	@ExctnSts.setter
 	def ExctnSts(self, value):
-		self._ExctnSts = value if type(value) != base_types.auto else self.make_default("ExctnSts")
+		self._ExctnSts = value if value is not None else base_types.UninitialisedField(self, 'ExctnSts', CollateralStatus2Choice, False)
 
 	@ExctnSts.deleter
 	def ExctnSts(self):
 		del self._ExctnSts
-		self._ExctnSts = None
+		self._ExctnSts = base_types.UninitialisedField(self, 'ExctnSts', CollateralStatus2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CvrgSts', type=CollateralStatus1Code, min=0, max=1, mutex_group=None, array=False),

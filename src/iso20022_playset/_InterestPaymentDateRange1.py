@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
+from . import ISODate
+from . import Max35Text
 
 class InterestPaymentDateRange1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class InterestPaymentDateRange1(base_types._BaseFieldType):
 
 	@DueDt.setter
 	def DueDt(self, value):
-		self._DueDt = value if type(value) != base_types.auto else self.make_default("DueDt")
+		self._DueDt = value if value is not None else base_types.UninitialisedField(self, 'DueDt', ISODate, False)
 
 	@DueDt.deleter
 	def DueDt(self):
 		del self._DueDt
-		self._DueDt = None
+		self._DueDt = base_types.UninitialisedField(self, 'DueDt', ISODate, False)
 
 	@property
 	def IntrstSchdlId(self):
@@ -27,12 +27,12 @@ class InterestPaymentDateRange1(base_types._BaseFieldType):
 
 	@IntrstSchdlId.setter
 	def IntrstSchdlId(self, value):
-		self._IntrstSchdlId = value if type(value) != base_types.auto else self.make_default("IntrstSchdlId")
+		self._IntrstSchdlId = value if value is not None else base_types.UninitialisedField(self, 'IntrstSchdlId', Max35Text, False)
 
 	@IntrstSchdlId.deleter
 	def IntrstSchdlId(self):
 		del self._IntrstSchdlId
-		self._IntrstSchdlId = None
+		self._IntrstSchdlId = base_types.UninitialisedField(self, 'IntrstSchdlId', Max35Text, False)
 
 	@property
 	def XpctdDt(self):
@@ -40,12 +40,12 @@ class InterestPaymentDateRange1(base_types._BaseFieldType):
 
 	@XpctdDt.setter
 	def XpctdDt(self, value):
-		self._XpctdDt = value if type(value) != base_types.auto else self.make_default("XpctdDt")
+		self._XpctdDt = value if value is not None else base_types.UninitialisedField(self, 'XpctdDt', ISODate, False)
 
 	@XpctdDt.deleter
 	def XpctdDt(self):
 		del self._XpctdDt
-		self._XpctdDt = None
+		self._XpctdDt = base_types.UninitialisedField(self, 'XpctdDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DueDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),

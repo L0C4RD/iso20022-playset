@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContractValuationData8 import ContractValuationData8
-from ._ISODateTime import ISODateTime
-from ._TradeCounterpartyReport20 import TradeCounterpartyReport20
+from . import ContractValuationData8
+from . import ISODateTime
+from . import TradeCounterpartyReport20
 
 class CounterpartySpecificData36(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CounterpartySpecificData36(base_types._BaseFieldType):
 
 	@CtrPty.setter
 	def CtrPty(self, value):
-		self._CtrPty = value if type(value) != base_types.auto else self.make_default("CtrPty")
+		self._CtrPty = value if value is not None else base_types.UninitialisedField(self, 'CtrPty', TradeCounterpartyReport20, False)
 
 	@CtrPty.deleter
 	def CtrPty(self):
 		del self._CtrPty
-		self._CtrPty = None
+		self._CtrPty = base_types.UninitialisedField(self, 'CtrPty', TradeCounterpartyReport20, False)
 
 	@property
 	def RptgTmStmp(self):
@@ -28,12 +28,12 @@ class CounterpartySpecificData36(base_types._BaseFieldType):
 
 	@RptgTmStmp.setter
 	def RptgTmStmp(self, value):
-		self._RptgTmStmp = value if type(value) != base_types.auto else self.make_default("RptgTmStmp")
+		self._RptgTmStmp = value if value is not None else base_types.UninitialisedField(self, 'RptgTmStmp', ISODateTime, False)
 
 	@RptgTmStmp.deleter
 	def RptgTmStmp(self):
 		del self._RptgTmStmp
-		self._RptgTmStmp = None
+		self._RptgTmStmp = base_types.UninitialisedField(self, 'RptgTmStmp', ISODateTime, False)
 
 	@property
 	def Valtn(self):
@@ -41,12 +41,12 @@ class CounterpartySpecificData36(base_types._BaseFieldType):
 
 	@Valtn.setter
 	def Valtn(self, value):
-		self._Valtn = value if type(value) != base_types.auto else self.make_default("Valtn")
+		self._Valtn = value if value is not None else base_types.UninitialisedField(self, 'Valtn', ContractValuationData8, False)
 
 	@Valtn.deleter
 	def Valtn(self):
 		del self._Valtn
-		self._Valtn = None
+		self._Valtn = base_types.UninitialisedField(self, 'Valtn', ContractValuationData8, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrPty', type=TradeCounterpartyReport20, min=1, max=1, mutex_group=None, array=False),

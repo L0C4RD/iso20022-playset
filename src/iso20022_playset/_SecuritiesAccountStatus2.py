@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._Status6Code import Status6Code
-from ._StatusReasonInformation10 import StatusReasonInformation10
+from . import SecuritiesAccount19
+from . import Status6Code
+from . import StatusReasonInformation10
 
 class SecuritiesAccountStatus2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SecuritiesAccountStatus2(base_types._BaseFieldType):
 
 	@RltdSctiesAcct.setter
 	def RltdSctiesAcct(self, value):
-		self._RltdSctiesAcct = value if type(value) != base_types.auto else self.make_default("RltdSctiesAcct")
+		self._RltdSctiesAcct = value if value is not None else base_types.UninitialisedField(self, 'RltdSctiesAcct', SecuritiesAccount19, False)
 
 	@RltdSctiesAcct.deleter
 	def RltdSctiesAcct(self):
 		del self._RltdSctiesAcct
-		self._RltdSctiesAcct = None
+		self._RltdSctiesAcct = base_types.UninitialisedField(self, 'RltdSctiesAcct', SecuritiesAccount19, False)
 
 	@property
 	def Sts(self):
@@ -28,12 +28,12 @@ class SecuritiesAccountStatus2(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', Status6Code, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', Status6Code, False)
 
 	@property
 	def StsRsn(self):
@@ -41,12 +41,12 @@ class SecuritiesAccountStatus2(base_types._BaseFieldType):
 
 	@StsRsn.setter
 	def StsRsn(self, value):
-		self._StsRsn = value if type(value) != base_types.auto else self.make_default("StsRsn")
+		self._StsRsn = value if value is not None else base_types.UninitialisedField(self, 'StsRsn', StatusReasonInformation10, True)
 
 	@StsRsn.deleter
 	def StsRsn(self):
 		del self._StsRsn
-		self._StsRsn = None
+		self._StsRsn = base_types.UninitialisedField(self, 'StsRsn', StatusReasonInformation10, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RltdSctiesAcct', type=SecuritiesAccount19, min=0, max=1, mutex_group=None, array=False),

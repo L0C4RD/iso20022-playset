@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection34 import AmountAndDirection34
+from . import AmountAndDirection34
 
 class BillingServicesAmount3(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class BillingServicesAmount3(base_types._BaseFieldType):
 
 	@HstAmt.setter
 	def HstAmt(self, value):
-		self._HstAmt = value if type(value) != base_types.auto else self.make_default("HstAmt")
+		self._HstAmt = value if value is not None else base_types.UninitialisedField(self, 'HstAmt', AmountAndDirection34, False)
 
 	@HstAmt.deleter
 	def HstAmt(self):
 		del self._HstAmt
-		self._HstAmt = None
+		self._HstAmt = base_types.UninitialisedField(self, 'HstAmt', AmountAndDirection34, False)
 
 	@property
 	def SrcAmt(self):
@@ -26,12 +26,12 @@ class BillingServicesAmount3(base_types._BaseFieldType):
 
 	@SrcAmt.setter
 	def SrcAmt(self, value):
-		self._SrcAmt = value if type(value) != base_types.auto else self.make_default("SrcAmt")
+		self._SrcAmt = value if value is not None else base_types.UninitialisedField(self, 'SrcAmt', AmountAndDirection34, False)
 
 	@SrcAmt.deleter
 	def SrcAmt(self):
 		del self._SrcAmt
-		self._SrcAmt = None
+		self._SrcAmt = base_types.UninitialisedField(self, 'SrcAmt', AmountAndDirection34, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='HstAmt', type=AmountAndDirection34, min=1, max=1, mutex_group=None, array=False),

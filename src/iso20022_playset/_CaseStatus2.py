@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CaseStatus2Code import CaseStatus2Code
-from ._ISODateTime import ISODateTime
-from ._Max140Text import Max140Text
+from . import CaseStatus2Code
+from . import ISODateTime
+from . import Max140Text
 
 class CaseStatus2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CaseStatus2(base_types._BaseFieldType):
 
 	@CaseSts.setter
 	def CaseSts(self, value):
-		self._CaseSts = value if type(value) != base_types.auto else self.make_default("CaseSts")
+		self._CaseSts = value if value is not None else base_types.UninitialisedField(self, 'CaseSts', CaseStatus2Code, False)
 
 	@CaseSts.deleter
 	def CaseSts(self):
 		del self._CaseSts
-		self._CaseSts = None
+		self._CaseSts = base_types.UninitialisedField(self, 'CaseSts', CaseStatus2Code, False)
 
 	@property
 	def DtTm(self):
@@ -28,12 +28,12 @@ class CaseStatus2(base_types._BaseFieldType):
 
 	@DtTm.setter
 	def DtTm(self, value):
-		self._DtTm = value if type(value) != base_types.auto else self.make_default("DtTm")
+		self._DtTm = value if value is not None else base_types.UninitialisedField(self, 'DtTm', ISODateTime, False)
 
 	@DtTm.deleter
 	def DtTm(self):
 		del self._DtTm
-		self._DtTm = None
+		self._DtTm = base_types.UninitialisedField(self, 'DtTm', ISODateTime, False)
 
 	@property
 	def Rsn(self):
@@ -41,12 +41,12 @@ class CaseStatus2(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', Max140Text, False)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', Max140Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CaseSts', type=CaseStatus2Code, min=1, max=1, mutex_group=None, array=False),

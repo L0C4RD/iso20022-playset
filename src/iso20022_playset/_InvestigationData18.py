@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Document12 import Document12
-from ._FileData1 import FileData1
-from ._InvestigationDataRecord12Choice import InvestigationDataRecord12Choice
-from ._InvestigationReason1Choice import InvestigationReason1Choice
-from ._InvestigationReasonSubType1Choice import InvestigationReasonSubType1Choice
-from ._Max3Number import Max3Number
-from ._Party40Choice import Party40Choice
-from ._RelatedInvestigationData1 import RelatedInvestigationData1
+from . import Document12
+from . import FileData1
+from . import InvestigationDataRecord12Choice
+from . import InvestigationReason1Choice
+from . import InvestigationReasonSubType1Choice
+from . import Max3Number
+from . import Party40Choice
+from . import RelatedInvestigationData1
 
 class InvestigationData18(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class InvestigationData18(base_types._BaseFieldType):
 
 	@NclsdFile.setter
 	def NclsdFile(self, value):
-		self._NclsdFile = value if type(value) != base_types.auto else self.make_default("NclsdFile")
+		self._NclsdFile = value if value is not None else base_types.UninitialisedField(self, 'NclsdFile', Document12, True)
 
 	@NclsdFile.deleter
 	def NclsdFile(self):
 		del self._NclsdFile
-		self._NclsdFile = None
+		self._NclsdFile = base_types.UninitialisedField(self, 'NclsdFile', Document12, True)
 
 	@property
 	def OrgnlInvstgtnRsn(self):
@@ -33,12 +33,12 @@ class InvestigationData18(base_types._BaseFieldType):
 
 	@OrgnlInvstgtnRsn.setter
 	def OrgnlInvstgtnRsn(self, value):
-		self._OrgnlInvstgtnRsn = value if type(value) != base_types.auto else self.make_default("OrgnlInvstgtnRsn")
+		self._OrgnlInvstgtnRsn = value if value is not None else base_types.UninitialisedField(self, 'OrgnlInvstgtnRsn', InvestigationReason1Choice, False)
 
 	@OrgnlInvstgtnRsn.deleter
 	def OrgnlInvstgtnRsn(self):
 		del self._OrgnlInvstgtnRsn
-		self._OrgnlInvstgtnRsn = None
+		self._OrgnlInvstgtnRsn = base_types.UninitialisedField(self, 'OrgnlInvstgtnRsn', InvestigationReason1Choice, False)
 
 	@property
 	def OrgnlInvstgtnRsnSubTp(self):
@@ -46,12 +46,12 @@ class InvestigationData18(base_types._BaseFieldType):
 
 	@OrgnlInvstgtnRsnSubTp.setter
 	def OrgnlInvstgtnRsnSubTp(self, value):
-		self._OrgnlInvstgtnRsnSubTp = value if type(value) != base_types.auto else self.make_default("OrgnlInvstgtnRsnSubTp")
+		self._OrgnlInvstgtnRsnSubTp = value if value is not None else base_types.UninitialisedField(self, 'OrgnlInvstgtnRsnSubTp', InvestigationReasonSubType1Choice, False)
 
 	@OrgnlInvstgtnRsnSubTp.deleter
 	def OrgnlInvstgtnRsnSubTp(self):
 		del self._OrgnlInvstgtnRsnSubTp
-		self._OrgnlInvstgtnRsnSubTp = None
+		self._OrgnlInvstgtnRsnSubTp = base_types.UninitialisedField(self, 'OrgnlInvstgtnRsnSubTp', InvestigationReasonSubType1Choice, False)
 
 	@property
 	def OrgnlInvstgtnSeq(self):
@@ -59,12 +59,12 @@ class InvestigationData18(base_types._BaseFieldType):
 
 	@OrgnlInvstgtnSeq.setter
 	def OrgnlInvstgtnSeq(self, value):
-		self._OrgnlInvstgtnSeq = value if type(value) != base_types.auto else self.make_default("OrgnlInvstgtnSeq")
+		self._OrgnlInvstgtnSeq = value if value is not None else base_types.UninitialisedField(self, 'OrgnlInvstgtnSeq', Max3Number, False)
 
 	@OrgnlInvstgtnSeq.deleter
 	def OrgnlInvstgtnSeq(self):
 		del self._OrgnlInvstgtnSeq
-		self._OrgnlInvstgtnSeq = None
+		self._OrgnlInvstgtnSeq = base_types.UninitialisedField(self, 'OrgnlInvstgtnSeq', Max3Number, False)
 
 	@property
 	def RltdFileData(self):
@@ -72,12 +72,12 @@ class InvestigationData18(base_types._BaseFieldType):
 
 	@RltdFileData.setter
 	def RltdFileData(self, value):
-		self._RltdFileData = value if type(value) != base_types.auto else self.make_default("RltdFileData")
+		self._RltdFileData = value if value is not None else base_types.UninitialisedField(self, 'RltdFileData', FileData1, True)
 
 	@RltdFileData.deleter
 	def RltdFileData(self):
 		del self._RltdFileData
-		self._RltdFileData = None
+		self._RltdFileData = base_types.UninitialisedField(self, 'RltdFileData', FileData1, True)
 
 	@property
 	def RltdInvstgtnData(self):
@@ -85,12 +85,12 @@ class InvestigationData18(base_types._BaseFieldType):
 
 	@RltdInvstgtnData.setter
 	def RltdInvstgtnData(self, value):
-		self._RltdInvstgtnData = value if type(value) != base_types.auto else self.make_default("RltdInvstgtnData")
+		self._RltdInvstgtnData = value if value is not None else base_types.UninitialisedField(self, 'RltdInvstgtnData', RelatedInvestigationData1, False)
 
 	@RltdInvstgtnData.deleter
 	def RltdInvstgtnData(self):
 		del self._RltdInvstgtnData
-		self._RltdInvstgtnData = None
+		self._RltdInvstgtnData = base_types.UninitialisedField(self, 'RltdInvstgtnData', RelatedInvestigationData1, False)
 
 	@property
 	def RspnData(self):
@@ -98,12 +98,12 @@ class InvestigationData18(base_types._BaseFieldType):
 
 	@RspnData.setter
 	def RspnData(self, value):
-		self._RspnData = value if type(value) != base_types.auto else self.make_default("RspnData")
+		self._RspnData = value if value is not None else base_types.UninitialisedField(self, 'RspnData', InvestigationDataRecord12Choice, False)
 
 	@RspnData.deleter
 	def RspnData(self):
 		del self._RspnData
-		self._RspnData = None
+		self._RspnData = base_types.UninitialisedField(self, 'RspnData', InvestigationDataRecord12Choice, False)
 
 	@property
 	def RspnOrgtr(self):
@@ -111,12 +111,12 @@ class InvestigationData18(base_types._BaseFieldType):
 
 	@RspnOrgtr.setter
 	def RspnOrgtr(self, value):
-		self._RspnOrgtr = value if type(value) != base_types.auto else self.make_default("RspnOrgtr")
+		self._RspnOrgtr = value if value is not None else base_types.UninitialisedField(self, 'RspnOrgtr', Party40Choice, False)
 
 	@RspnOrgtr.deleter
 	def RspnOrgtr(self):
 		del self._RspnOrgtr
-		self._RspnOrgtr = None
+		self._RspnOrgtr = base_types.UninitialisedField(self, 'RspnOrgtr', Party40Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NclsdFile', type=Document12, min=0, max=None, mutex_group=None, array=True),

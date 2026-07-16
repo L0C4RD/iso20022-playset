@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
-from ._Party50Choice import Party50Choice
+from . import BranchAndFinancialInstitutionIdentification8
+from . import ISODateTime
+from . import Max35Text
+from . import Party50Choice
 
 class IdentificationAssignment4(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class IdentificationAssignment4(base_types._BaseFieldType):
 
 	@Assgne.setter
 	def Assgne(self, value):
-		self._Assgne = value if type(value) != base_types.auto else self.make_default("Assgne")
+		self._Assgne = value if value is not None else base_types.UninitialisedField(self, 'Assgne', Party50Choice, False)
 
 	@Assgne.deleter
 	def Assgne(self):
 		del self._Assgne
-		self._Assgne = None
+		self._Assgne = base_types.UninitialisedField(self, 'Assgne', Party50Choice, False)
 
 	@property
 	def Assgnr(self):
@@ -29,12 +29,12 @@ class IdentificationAssignment4(base_types._BaseFieldType):
 
 	@Assgnr.setter
 	def Assgnr(self, value):
-		self._Assgnr = value if type(value) != base_types.auto else self.make_default("Assgnr")
+		self._Assgnr = value if value is not None else base_types.UninitialisedField(self, 'Assgnr', Party50Choice, False)
 
 	@Assgnr.deleter
 	def Assgnr(self):
 		del self._Assgnr
-		self._Assgnr = None
+		self._Assgnr = base_types.UninitialisedField(self, 'Assgnr', Party50Choice, False)
 
 	@property
 	def CreDtTm(self):
@@ -42,12 +42,12 @@ class IdentificationAssignment4(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if value is not None else base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
 		del self._CreDtTm
-		self._CreDtTm = None
+		self._CreDtTm = base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@property
 	def Cretr(self):
@@ -55,12 +55,12 @@ class IdentificationAssignment4(base_types._BaseFieldType):
 
 	@Cretr.setter
 	def Cretr(self, value):
-		self._Cretr = value if type(value) != base_types.auto else self.make_default("Cretr")
+		self._Cretr = value if value is not None else base_types.UninitialisedField(self, 'Cretr', Party50Choice, False)
 
 	@Cretr.deleter
 	def Cretr(self):
 		del self._Cretr
-		self._Cretr = None
+		self._Cretr = base_types.UninitialisedField(self, 'Cretr', Party50Choice, False)
 
 	@property
 	def FrstAgt(self):
@@ -68,12 +68,12 @@ class IdentificationAssignment4(base_types._BaseFieldType):
 
 	@FrstAgt.setter
 	def FrstAgt(self, value):
-		self._FrstAgt = value if type(value) != base_types.auto else self.make_default("FrstAgt")
+		self._FrstAgt = value if value is not None else base_types.UninitialisedField(self, 'FrstAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@FrstAgt.deleter
 	def FrstAgt(self):
 		del self._FrstAgt
-		self._FrstAgt = None
+		self._FrstAgt = base_types.UninitialisedField(self, 'FrstAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def MsgId(self):
@@ -81,12 +81,12 @@ class IdentificationAssignment4(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Assgne', type=Party50Choice, min=1, max=1, mutex_group=None, array=False),

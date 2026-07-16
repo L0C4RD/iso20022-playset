@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FailedMovement1 import FailedMovement1
-from ._Max35Text import Max35Text
-from ._PartyIdentification2Choice import PartyIdentification2Choice
+from . import FailedMovement1
+from . import Max35Text
+from . import PartyIdentification2Choice
 
 class CorporateActionMovementFailedStatus1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CorporateActionMovementFailedStatus1(base_types._BaseFieldType):
 
 	@AcctOwnrId.setter
 	def AcctOwnrId(self, value):
-		self._AcctOwnrId = value if type(value) != base_types.auto else self.make_default("AcctOwnrId")
+		self._AcctOwnrId = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnrId', PartyIdentification2Choice, False)
 
 	@AcctOwnrId.deleter
 	def AcctOwnrId(self):
 		del self._AcctOwnrId
-		self._AcctOwnrId = None
+		self._AcctOwnrId = base_types.UninitialisedField(self, 'AcctOwnrId', PartyIdentification2Choice, False)
 
 	@property
 	def AgtAcctId(self):
@@ -28,12 +28,12 @@ class CorporateActionMovementFailedStatus1(base_types._BaseFieldType):
 
 	@AgtAcctId.setter
 	def AgtAcctId(self, value):
-		self._AgtAcctId = value if type(value) != base_types.auto else self.make_default("AgtAcctId")
+		self._AgtAcctId = value if value is not None else base_types.UninitialisedField(self, 'AgtAcctId', Max35Text, False)
 
 	@AgtAcctId.deleter
 	def AgtAcctId(self):
 		del self._AgtAcctId
-		self._AgtAcctId = None
+		self._AgtAcctId = base_types.UninitialisedField(self, 'AgtAcctId', Max35Text, False)
 
 	@property
 	def ClntAcctId(self):
@@ -41,12 +41,12 @@ class CorporateActionMovementFailedStatus1(base_types._BaseFieldType):
 
 	@ClntAcctId.setter
 	def ClntAcctId(self, value):
-		self._ClntAcctId = value if type(value) != base_types.auto else self.make_default("ClntAcctId")
+		self._ClntAcctId = value if value is not None else base_types.UninitialisedField(self, 'ClntAcctId', Max35Text, False)
 
 	@ClntAcctId.deleter
 	def ClntAcctId(self):
 		del self._ClntAcctId
-		self._ClntAcctId = None
+		self._ClntAcctId = base_types.UninitialisedField(self, 'ClntAcctId', Max35Text, False)
 
 	@property
 	def RsrcDtls(self):
@@ -54,12 +54,12 @@ class CorporateActionMovementFailedStatus1(base_types._BaseFieldType):
 
 	@RsrcDtls.setter
 	def RsrcDtls(self, value):
-		self._RsrcDtls = value if type(value) != base_types.auto else self.make_default("RsrcDtls")
+		self._RsrcDtls = value if value is not None else base_types.UninitialisedField(self, 'RsrcDtls', FailedMovement1, True)
 
 	@RsrcDtls.deleter
 	def RsrcDtls(self):
 		del self._RsrcDtls
-		self._RsrcDtls = None
+		self._RsrcDtls = base_types.UninitialisedField(self, 'RsrcDtls', FailedMovement1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),

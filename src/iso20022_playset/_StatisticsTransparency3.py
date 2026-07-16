@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._DecimalNumber import DecimalNumber
-from ._Number import Number
+from . import ActiveCurrencyAndAmount
+from . import DecimalNumber
+from . import Number
 
 class StatisticsTransparency3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class StatisticsTransparency3(base_types._BaseFieldType):
 
 	@AvrgDalyNbOfTxs.setter
 	def AvrgDalyNbOfTxs(self, value):
-		self._AvrgDalyNbOfTxs = value if type(value) != base_types.auto else self.make_default("AvrgDalyNbOfTxs")
+		self._AvrgDalyNbOfTxs = value if value is not None else base_types.UninitialisedField(self, 'AvrgDalyNbOfTxs', DecimalNumber, False)
 
 	@AvrgDalyNbOfTxs.deleter
 	def AvrgDalyNbOfTxs(self):
 		del self._AvrgDalyNbOfTxs
-		self._AvrgDalyNbOfTxs = None
+		self._AvrgDalyNbOfTxs = base_types.UninitialisedField(self, 'AvrgDalyNbOfTxs', DecimalNumber, False)
 
 	@property
 	def AvrgDalyTrnvr(self):
@@ -28,12 +28,12 @@ class StatisticsTransparency3(base_types._BaseFieldType):
 
 	@AvrgDalyTrnvr.setter
 	def AvrgDalyTrnvr(self, value):
-		self._AvrgDalyTrnvr = value if type(value) != base_types.auto else self.make_default("AvrgDalyTrnvr")
+		self._AvrgDalyTrnvr = value if value is not None else base_types.UninitialisedField(self, 'AvrgDalyTrnvr', ActiveCurrencyAndAmount, False)
 
 	@AvrgDalyTrnvr.deleter
 	def AvrgDalyTrnvr(self):
 		del self._AvrgDalyTrnvr
-		self._AvrgDalyTrnvr = None
+		self._AvrgDalyTrnvr = base_types.UninitialisedField(self, 'AvrgDalyTrnvr', ActiveCurrencyAndAmount, False)
 
 	@property
 	def AvrgTxVal(self):
@@ -41,12 +41,12 @@ class StatisticsTransparency3(base_types._BaseFieldType):
 
 	@AvrgTxVal.setter
 	def AvrgTxVal(self, value):
-		self._AvrgTxVal = value if type(value) != base_types.auto else self.make_default("AvrgTxVal")
+		self._AvrgTxVal = value if value is not None else base_types.UninitialisedField(self, 'AvrgTxVal', ActiveCurrencyAndAmount, False)
 
 	@AvrgTxVal.deleter
 	def AvrgTxVal(self):
 		del self._AvrgTxVal
-		self._AvrgTxVal = None
+		self._AvrgTxVal = base_types.UninitialisedField(self, 'AvrgTxVal', ActiveCurrencyAndAmount, False)
 
 	@property
 	def LrgInScale(self):
@@ -54,12 +54,12 @@ class StatisticsTransparency3(base_types._BaseFieldType):
 
 	@LrgInScale.setter
 	def LrgInScale(self, value):
-		self._LrgInScale = value if type(value) != base_types.auto else self.make_default("LrgInScale")
+		self._LrgInScale = value if value is not None else base_types.UninitialisedField(self, 'LrgInScale', DecimalNumber, False)
 
 	@LrgInScale.deleter
 	def LrgInScale(self):
 		del self._LrgInScale
-		self._LrgInScale = None
+		self._LrgInScale = base_types.UninitialisedField(self, 'LrgInScale', DecimalNumber, False)
 
 	@property
 	def StdMktSz(self):
@@ -67,12 +67,12 @@ class StatisticsTransparency3(base_types._BaseFieldType):
 
 	@StdMktSz.setter
 	def StdMktSz(self, value):
-		self._StdMktSz = value if type(value) != base_types.auto else self.make_default("StdMktSz")
+		self._StdMktSz = value if value is not None else base_types.UninitialisedField(self, 'StdMktSz', DecimalNumber, False)
 
 	@StdMktSz.deleter
 	def StdMktSz(self):
 		del self._StdMktSz
-		self._StdMktSz = None
+		self._StdMktSz = base_types.UninitialisedField(self, 'StdMktSz', DecimalNumber, False)
 
 	@property
 	def TtlNbOfTradgDays(self):
@@ -80,12 +80,12 @@ class StatisticsTransparency3(base_types._BaseFieldType):
 
 	@TtlNbOfTradgDays.setter
 	def TtlNbOfTradgDays(self, value):
-		self._TtlNbOfTradgDays = value if type(value) != base_types.auto else self.make_default("TtlNbOfTradgDays")
+		self._TtlNbOfTradgDays = value if value is not None else base_types.UninitialisedField(self, 'TtlNbOfTradgDays', Number, False)
 
 	@TtlNbOfTradgDays.deleter
 	def TtlNbOfTradgDays(self):
 		del self._TtlNbOfTradgDays
-		self._TtlNbOfTradgDays = None
+		self._TtlNbOfTradgDays = base_types.UninitialisedField(self, 'TtlNbOfTradgDays', Number, False)
 
 	@property
 	def TtlNbOfTxsExctd(self):
@@ -93,12 +93,12 @@ class StatisticsTransparency3(base_types._BaseFieldType):
 
 	@TtlNbOfTxsExctd.setter
 	def TtlNbOfTxsExctd(self, value):
-		self._TtlNbOfTxsExctd = value if type(value) != base_types.auto else self.make_default("TtlNbOfTxsExctd")
+		self._TtlNbOfTxsExctd = value if value is not None else base_types.UninitialisedField(self, 'TtlNbOfTxsExctd', DecimalNumber, False)
 
 	@TtlNbOfTxsExctd.deleter
 	def TtlNbOfTxsExctd(self):
 		del self._TtlNbOfTxsExctd
-		self._TtlNbOfTxsExctd = None
+		self._TtlNbOfTxsExctd = base_types.UninitialisedField(self, 'TtlNbOfTxsExctd', DecimalNumber, False)
 
 	@property
 	def TtlVolOfTxsExctd(self):
@@ -106,12 +106,12 @@ class StatisticsTransparency3(base_types._BaseFieldType):
 
 	@TtlVolOfTxsExctd.setter
 	def TtlVolOfTxsExctd(self, value):
-		self._TtlVolOfTxsExctd = value if type(value) != base_types.auto else self.make_default("TtlVolOfTxsExctd")
+		self._TtlVolOfTxsExctd = value if value is not None else base_types.UninitialisedField(self, 'TtlVolOfTxsExctd', DecimalNumber, False)
 
 	@TtlVolOfTxsExctd.deleter
 	def TtlVolOfTxsExctd(self):
 		del self._TtlVolOfTxsExctd
-		self._TtlVolOfTxsExctd = None
+		self._TtlVolOfTxsExctd = base_types.UninitialisedField(self, 'TtlVolOfTxsExctd', DecimalNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AvrgDalyNbOfTxs', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMPINManagementResponse3 import ATMPINManagementResponse3
-from ._ContentInformationType10 import ContentInformationType10
-from ._ContentInformationType15 import ContentInformationType15
-from ._Header31 import Header31
+from . import ATMPINManagementResponse3
+from . import ContentInformationType10
+from . import ContentInformationType15
+from . import Header31
 
 class ATMPINManagementResponseV03(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ATMPINManagementResponseV03(base_types._BaseFieldType):
 
 	@ATMPINMgmtRspn.setter
 	def ATMPINMgmtRspn(self, value):
-		self._ATMPINMgmtRspn = value if type(value) != base_types.auto else self.make_default("ATMPINMgmtRspn")
+		self._ATMPINMgmtRspn = value if value is not None else base_types.UninitialisedField(self, 'ATMPINMgmtRspn', ATMPINManagementResponse3, False)
 
 	@ATMPINMgmtRspn.deleter
 	def ATMPINMgmtRspn(self):
 		del self._ATMPINMgmtRspn
-		self._ATMPINMgmtRspn = None
+		self._ATMPINMgmtRspn = base_types.UninitialisedField(self, 'ATMPINMgmtRspn', ATMPINManagementResponse3, False)
 
 	@property
 	def Hdr(self):
@@ -29,12 +29,12 @@ class ATMPINManagementResponseV03(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header31, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header31, False)
 
 	@property
 	def PrtctdATMPINMgmtRspn(self):
@@ -42,12 +42,12 @@ class ATMPINManagementResponseV03(base_types._BaseFieldType):
 
 	@PrtctdATMPINMgmtRspn.setter
 	def PrtctdATMPINMgmtRspn(self, value):
-		self._PrtctdATMPINMgmtRspn = value if type(value) != base_types.auto else self.make_default("PrtctdATMPINMgmtRspn")
+		self._PrtctdATMPINMgmtRspn = value if value is not None else base_types.UninitialisedField(self, 'PrtctdATMPINMgmtRspn', ContentInformationType10, False)
 
 	@PrtctdATMPINMgmtRspn.deleter
 	def PrtctdATMPINMgmtRspn(self):
 		del self._PrtctdATMPINMgmtRspn
-		self._PrtctdATMPINMgmtRspn = None
+		self._PrtctdATMPINMgmtRspn = base_types.UninitialisedField(self, 'PrtctdATMPINMgmtRspn', ContentInformationType10, False)
 
 	@property
 	def SctyTrlr(self):
@@ -55,12 +55,12 @@ class ATMPINManagementResponseV03(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType15, False)
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
 		del self._SctyTrlr
-		self._SctyTrlr = None
+		self._SctyTrlr = base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType15, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ATMPINMgmtRspn', type=ATMPINManagementResponse3, min=0, max=1, mutex_group=None, array=False),

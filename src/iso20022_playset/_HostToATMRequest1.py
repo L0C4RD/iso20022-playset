@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMCommandIdentification1 import ATMCommandIdentification1
-from ._ATMEnvironment9 import ATMEnvironment9
-from ._MessageFunction8Code import MessageFunction8Code
+from . import ATMCommandIdentification1
+from . import ATMEnvironment9
+from . import MessageFunction8Code
 
 class HostToATMRequest1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class HostToATMRequest1(base_types._BaseFieldType):
 
 	@CmdId.setter
 	def CmdId(self, value):
-		self._CmdId = value if type(value) != base_types.auto else self.make_default("CmdId")
+		self._CmdId = value if value is not None else base_types.UninitialisedField(self, 'CmdId', ATMCommandIdentification1, False)
 
 	@CmdId.deleter
 	def CmdId(self):
 		del self._CmdId
-		self._CmdId = None
+		self._CmdId = base_types.UninitialisedField(self, 'CmdId', ATMCommandIdentification1, False)
 
 	@property
 	def Envt(self):
@@ -28,12 +28,12 @@ class HostToATMRequest1(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+		self._Envt = value if value is not None else base_types.UninitialisedField(self, 'Envt', ATMEnvironment9, False)
 
 	@Envt.deleter
 	def Envt(self):
 		del self._Envt
-		self._Envt = None
+		self._Envt = base_types.UninitialisedField(self, 'Envt', ATMEnvironment9, False)
 
 	@property
 	def XpctdMsgFctn(self):
@@ -41,12 +41,12 @@ class HostToATMRequest1(base_types._BaseFieldType):
 
 	@XpctdMsgFctn.setter
 	def XpctdMsgFctn(self, value):
-		self._XpctdMsgFctn = value if type(value) != base_types.auto else self.make_default("XpctdMsgFctn")
+		self._XpctdMsgFctn = value if value is not None else base_types.UninitialisedField(self, 'XpctdMsgFctn', MessageFunction8Code, False)
 
 	@XpctdMsgFctn.deleter
 	def XpctdMsgFctn(self):
 		del self._XpctdMsgFctn
-		self._XpctdMsgFctn = None
+		self._XpctdMsgFctn = base_types.UninitialisedField(self, 'XpctdMsgFctn', MessageFunction8Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CmdId', type=ATMCommandIdentification1, min=0, max=1, mutex_group=None, array=False),

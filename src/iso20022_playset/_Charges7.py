@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import BranchAndFinancialInstitutionIdentification6
 
 class Charges7(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Charges7(base_types._BaseFieldType):
 
 	@Agt.setter
 	def Agt(self, value):
-		self._Agt = value if type(value) != base_types.auto else self.make_default("Agt")
+		self._Agt = value if value is not None else base_types.UninitialisedField(self, 'Agt', BranchAndFinancialInstitutionIdentification6, False)
 
 	@Agt.deleter
 	def Agt(self):
 		del self._Agt
-		self._Agt = None
+		self._Agt = base_types.UninitialisedField(self, 'Agt', BranchAndFinancialInstitutionIdentification6, False)
 
 	@property
 	def Amt(self):
@@ -27,12 +27,12 @@ class Charges7(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Agt', type=BranchAndFinancialInstitutionIdentification6, min=1, max=1, mutex_group=None, array=False),

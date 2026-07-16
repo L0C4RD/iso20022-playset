@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BusinessDayReportOrError10Choice import BusinessDayReportOrError10Choice
-from ._SystemIdentification2Choice import SystemIdentification2Choice
+from . import BusinessDayReportOrError10Choice
+from . import SystemIdentification2Choice
 
 class BusinessDay8(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class BusinessDay8(base_types._BaseFieldType):
 
 	@BizDayOrErr.setter
 	def BizDayOrErr(self, value):
-		self._BizDayOrErr = value if type(value) != base_types.auto else self.make_default("BizDayOrErr")
+		self._BizDayOrErr = value if value is not None else base_types.UninitialisedField(self, 'BizDayOrErr', BusinessDayReportOrError10Choice, False)
 
 	@BizDayOrErr.deleter
 	def BizDayOrErr(self):
 		del self._BizDayOrErr
-		self._BizDayOrErr = None
+		self._BizDayOrErr = base_types.UninitialisedField(self, 'BizDayOrErr', BusinessDayReportOrError10Choice, False)
 
 	@property
 	def SysId(self):
@@ -27,12 +27,12 @@ class BusinessDay8(base_types._BaseFieldType):
 
 	@SysId.setter
 	def SysId(self, value):
-		self._SysId = value if type(value) != base_types.auto else self.make_default("SysId")
+		self._SysId = value if value is not None else base_types.UninitialisedField(self, 'SysId', SystemIdentification2Choice, True)
 
 	@SysId.deleter
 	def SysId(self):
 		del self._SysId
-		self._SysId = None
+		self._SysId = base_types.UninitialisedField(self, 'SysId', SystemIdentification2Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BizDayOrErr', type=BusinessDayReportOrError10Choice, min=1, max=1, mutex_group=None, array=False),

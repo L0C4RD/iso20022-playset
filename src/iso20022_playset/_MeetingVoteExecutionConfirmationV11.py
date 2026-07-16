@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DetailedInstructionStatus19 import DetailedInstructionStatus19
-from ._Max2048Text import Max2048Text
-from ._Max35Text import Max35Text
-from ._MeetingReference10 import MeetingReference10
-from ._Pagination1 import Pagination1
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._SupplementaryData1 import SupplementaryData1
+from . import DetailedInstructionStatus19
+from . import Max2048Text
+from . import Max35Text
+from . import MeetingReference10
+from . import Pagination1
+from . import SecurityIdentification19
+from . import SupplementaryData1
 
 class MeetingVoteExecutionConfirmationV11(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class MeetingVoteExecutionConfirmationV11(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
 		del self._FinInstrmId
-		self._FinInstrmId = None
+		self._FinInstrmId = base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@property
 	def MtgInstrId(self):
@@ -32,12 +32,12 @@ class MeetingVoteExecutionConfirmationV11(base_types._BaseFieldType):
 
 	@MtgInstrId.setter
 	def MtgInstrId(self, value):
-		self._MtgInstrId = value if type(value) != base_types.auto else self.make_default("MtgInstrId")
+		self._MtgInstrId = value if value is not None else base_types.UninitialisedField(self, 'MtgInstrId', Max35Text, False)
 
 	@MtgInstrId.deleter
 	def MtgInstrId(self):
 		del self._MtgInstrId
-		self._MtgInstrId = None
+		self._MtgInstrId = base_types.UninitialisedField(self, 'MtgInstrId', Max35Text, False)
 
 	@property
 	def MtgRef(self):
@@ -45,12 +45,12 @@ class MeetingVoteExecutionConfirmationV11(base_types._BaseFieldType):
 
 	@MtgRef.setter
 	def MtgRef(self, value):
-		self._MtgRef = value if type(value) != base_types.auto else self.make_default("MtgRef")
+		self._MtgRef = value if value is not None else base_types.UninitialisedField(self, 'MtgRef', MeetingReference10, False)
 
 	@MtgRef.deleter
 	def MtgRef(self):
 		del self._MtgRef
-		self._MtgRef = None
+		self._MtgRef = base_types.UninitialisedField(self, 'MtgRef', MeetingReference10, False)
 
 	@property
 	def Pgntn(self):
@@ -58,12 +58,12 @@ class MeetingVoteExecutionConfirmationV11(base_types._BaseFieldType):
 
 	@Pgntn.setter
 	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+		self._Pgntn = value if value is not None else base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@Pgntn.deleter
 	def Pgntn(self):
 		del self._Pgntn
-		self._Pgntn = None
+		self._Pgntn = base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@property
 	def SplmtryData(self):
@@ -71,12 +71,12 @@ class MeetingVoteExecutionConfirmationV11(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def VoteExctnConfId(self):
@@ -84,12 +84,12 @@ class MeetingVoteExecutionConfirmationV11(base_types._BaseFieldType):
 
 	@VoteExctnConfId.setter
 	def VoteExctnConfId(self, value):
-		self._VoteExctnConfId = value if type(value) != base_types.auto else self.make_default("VoteExctnConfId")
+		self._VoteExctnConfId = value if value is not None else base_types.UninitialisedField(self, 'VoteExctnConfId', Max35Text, False)
 
 	@VoteExctnConfId.deleter
 	def VoteExctnConfId(self):
 		del self._VoteExctnConfId
-		self._VoteExctnConfId = None
+		self._VoteExctnConfId = base_types.UninitialisedField(self, 'VoteExctnConfId', Max35Text, False)
 
 	@property
 	def VoteInstrs(self):
@@ -97,12 +97,12 @@ class MeetingVoteExecutionConfirmationV11(base_types._BaseFieldType):
 
 	@VoteInstrs.setter
 	def VoteInstrs(self, value):
-		self._VoteInstrs = value if type(value) != base_types.auto else self.make_default("VoteInstrs")
+		self._VoteInstrs = value if value is not None else base_types.UninitialisedField(self, 'VoteInstrs', DetailedInstructionStatus19, True)
 
 	@VoteInstrs.deleter
 	def VoteInstrs(self):
 		del self._VoteInstrs
-		self._VoteInstrs = None
+		self._VoteInstrs = base_types.UninitialisedField(self, 'VoteInstrs', DetailedInstructionStatus19, True)
 
 	@property
 	def VoteInstrsConfURLAdr(self):
@@ -110,12 +110,12 @@ class MeetingVoteExecutionConfirmationV11(base_types._BaseFieldType):
 
 	@VoteInstrsConfURLAdr.setter
 	def VoteInstrsConfURLAdr(self, value):
-		self._VoteInstrsConfURLAdr = value if type(value) != base_types.auto else self.make_default("VoteInstrsConfURLAdr")
+		self._VoteInstrsConfURLAdr = value if value is not None else base_types.UninitialisedField(self, 'VoteInstrsConfURLAdr', Max2048Text, False)
 
 	@VoteInstrsConfURLAdr.deleter
 	def VoteInstrsConfURLAdr(self):
 		del self._VoteInstrsConfURLAdr
-		self._VoteInstrsConfURLAdr = None
+		self._VoteInstrsConfURLAdr = base_types.UninitialisedField(self, 'VoteInstrsConfURLAdr', Max2048Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),

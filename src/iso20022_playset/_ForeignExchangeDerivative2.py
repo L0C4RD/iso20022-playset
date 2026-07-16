@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AssetClassSubProductType19Code import AssetClassSubProductType19Code
+from . import AssetClassSubProductType19Code
 
 class ForeignExchangeDerivative2(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class ForeignExchangeDerivative2(base_types._BaseFieldType):
 
 	@CtrctSubTp.setter
 	def CtrctSubTp(self, value):
-		self._CtrctSubTp = value if type(value) != base_types.auto else self.make_default("CtrctSubTp")
+		self._CtrctSubTp = value if value is not None else base_types.UninitialisedField(self, 'CtrctSubTp', AssetClassSubProductType19Code, False)
 
 	@CtrctSubTp.deleter
 	def CtrctSubTp(self):
 		del self._CtrctSubTp
-		self._CtrctSubTp = None
+		self._CtrctSubTp = base_types.UninitialisedField(self, 'CtrctSubTp', AssetClassSubProductType19Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrctSubTp', type=AssetClassSubProductType19Code, min=1, max=1, mutex_group=None, array=False),

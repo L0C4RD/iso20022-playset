@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._HostToATMRequestV01 import HostToATMRequestV01
+from . import HostToATMRequestV01
 
 class CAAM_007_001_01():
 
@@ -18,12 +18,12 @@ class CAAM_007_001_01():
 
 		@HstToATMReq.setter
 		def HstToATMReq(self, value):
-			self._HstToATMReq = value if type(value) != base_types.auto else self.make_default("HstToATMReq")
+			self._HstToATMReq = value if value is not None else base_types.UninitialisedField(self, 'HstToATMReq', HostToATMRequestV01, False)
 
 		@HstToATMReq.deleter
 		def HstToATMReq(self):
 			del self._HstToATMReq
-			self._HstToATMReq = None
+			self._HstToATMReq = base_types.UninitialisedField(self, 'HstToATMReq', HostToATMRequestV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='HstToATMReq', type=HostToATMRequestV01, min=1, max=1, mutex_group=None, array=False),

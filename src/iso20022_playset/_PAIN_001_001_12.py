@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CustomerCreditTransferInitiationV12 import CustomerCreditTransferInitiationV12
+from . import CustomerCreditTransferInitiationV12
 
 class PAIN_001_001_12():
 
@@ -18,12 +18,12 @@ class PAIN_001_001_12():
 
 		@CstmrCdtTrfInitn.setter
 		def CstmrCdtTrfInitn(self, value):
-			self._CstmrCdtTrfInitn = value if type(value) != base_types.auto else self.make_default("CstmrCdtTrfInitn")
+			self._CstmrCdtTrfInitn = value if value is not None else base_types.UninitialisedField(self, 'CstmrCdtTrfInitn', CustomerCreditTransferInitiationV12, False)
 
 		@CstmrCdtTrfInitn.deleter
 		def CstmrCdtTrfInitn(self):
 			del self._CstmrCdtTrfInitn
-			self._CstmrCdtTrfInitn = None
+			self._CstmrCdtTrfInitn = base_types.UninitialisedField(self, 'CstmrCdtTrfInitn', CustomerCreditTransferInitiationV12, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CstmrCdtTrfInitn', type=CustomerCreditTransferInitiationV12, min=1, max=1, mutex_group=None, array=False),

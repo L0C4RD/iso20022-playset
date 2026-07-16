@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Amount17 import Amount17
-from ._Number import Number
+from . import Amount17
+from . import Number
 
 class SettlementCategoryTotal2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SettlementCategoryTotal2(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', Amount17, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', Amount17, False)
 
 	@property
 	def Cnt(self):
@@ -27,12 +27,12 @@ class SettlementCategoryTotal2(base_types._BaseFieldType):
 
 	@Cnt.setter
 	def Cnt(self, value):
-		self._Cnt = value if type(value) != base_types.auto else self.make_default("Cnt")
+		self._Cnt = value if value is not None else base_types.UninitialisedField(self, 'Cnt', Number, False)
 
 	@Cnt.deleter
 	def Cnt(self):
 		del self._Cnt
-		self._Cnt = None
+		self._Cnt = base_types.UninitialisedField(self, 'Cnt', Number, False)
 
 	@property
 	def IntrchngFee(self):
@@ -40,12 +40,12 @@ class SettlementCategoryTotal2(base_types._BaseFieldType):
 
 	@IntrchngFee.setter
 	def IntrchngFee(self, value):
-		self._IntrchngFee = value if type(value) != base_types.auto else self.make_default("IntrchngFee")
+		self._IntrchngFee = value if value is not None else base_types.UninitialisedField(self, 'IntrchngFee', Amount17, False)
 
 	@IntrchngFee.deleter
 	def IntrchngFee(self):
 		del self._IntrchngFee
-		self._IntrchngFee = None
+		self._IntrchngFee = base_types.UninitialisedField(self, 'IntrchngFee', Amount17, False)
 
 	@property
 	def PrcgFee(self):
@@ -53,12 +53,12 @@ class SettlementCategoryTotal2(base_types._BaseFieldType):
 
 	@PrcgFee.setter
 	def PrcgFee(self, value):
-		self._PrcgFee = value if type(value) != base_types.auto else self.make_default("PrcgFee")
+		self._PrcgFee = value if value is not None else base_types.UninitialisedField(self, 'PrcgFee', Amount17, False)
 
 	@PrcgFee.deleter
 	def PrcgFee(self):
 		del self._PrcgFee
-		self._PrcgFee = None
+		self._PrcgFee = base_types.UninitialisedField(self, 'PrcgFee', Amount17, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=Amount17, min=1, max=1, mutex_group=None, array=False),

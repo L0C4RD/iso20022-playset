@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ShortLong1Code import ShortLong1Code
-from ._SubBalanceQuantity8Choice import SubBalanceQuantity8Choice
+from . import ShortLong1Code
+from . import SubBalanceQuantity8Choice
 
 class Balance21(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Balance21(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+		self._Qty = value if value is not None else base_types.UninitialisedField(self, 'Qty', SubBalanceQuantity8Choice, False)
 
 	@Qty.deleter
 	def Qty(self):
 		del self._Qty
-		self._Qty = None
+		self._Qty = base_types.UninitialisedField(self, 'Qty', SubBalanceQuantity8Choice, False)
 
 	@property
 	def ShrtLngInd(self):
@@ -27,12 +27,12 @@ class Balance21(base_types._BaseFieldType):
 
 	@ShrtLngInd.setter
 	def ShrtLngInd(self, value):
-		self._ShrtLngInd = value if type(value) != base_types.auto else self.make_default("ShrtLngInd")
+		self._ShrtLngInd = value if value is not None else base_types.UninitialisedField(self, 'ShrtLngInd', ShortLong1Code, False)
 
 	@ShrtLngInd.deleter
 	def ShrtLngInd(self):
 		del self._ShrtLngInd
-		self._ShrtLngInd = None
+		self._ShrtLngInd = base_types.UninitialisedField(self, 'ShrtLngInd', ShortLong1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Qty', type=SubBalanceQuantity8Choice, min=1, max=1, mutex_group=None, array=False),

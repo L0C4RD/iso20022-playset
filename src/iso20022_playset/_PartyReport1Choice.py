@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PartyCancellation1 import PartyCancellation1
-from ._PartyUpdate1 import PartyUpdate1
+from . import PartyCancellation1
+from . import PartyUpdate1
 
 class PartyReport1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PartyReport1Choice(base_types._BaseFieldType):
 
 	@Cxl.setter
 	def Cxl(self, value):
-		self._Cxl = value if type(value) != base_types.auto else self.make_default("Cxl")
+		self._Cxl = value if value is not None else base_types.UninitialisedField(self, 'Cxl', PartyCancellation1, False)
 
 	@Cxl.deleter
 	def Cxl(self):
 		del self._Cxl
-		self._Cxl = None
+		self._Cxl = base_types.UninitialisedField(self, 'Cxl', PartyCancellation1, False)
 
 	@property
 	def Upd(self):
@@ -27,12 +27,12 @@ class PartyReport1Choice(base_types._BaseFieldType):
 
 	@Upd.setter
 	def Upd(self, value):
-		self._Upd = value if type(value) != base_types.auto else self.make_default("Upd")
+		self._Upd = value if value is not None else base_types.UninitialisedField(self, 'Upd', PartyUpdate1, False)
 
 	@Upd.deleter
 	def Upd(self):
 		del self._Upd
-		self._Upd = None
+		self._Upd = base_types.UninitialisedField(self, 'Upd', PartyUpdate1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cxl', type=PartyCancellation1, min=0, max=1, mutex_group=1, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PriceFormat62Choice import PriceFormat62Choice
-from ._PriceFormat92Choice import PriceFormat92Choice
-from ._PriceFormat93Choice import PriceFormat93Choice
+from . import PriceFormat62Choice
+from . import PriceFormat92Choice
+from . import PriceFormat93Choice
 
 class CorporateActionPrice97(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CorporateActionPrice97(base_types._BaseFieldType):
 
 	@CshInLieuOfShrPric.setter
 	def CshInLieuOfShrPric(self, value):
-		self._CshInLieuOfShrPric = value if type(value) != base_types.auto else self.make_default("CshInLieuOfShrPric")
+		self._CshInLieuOfShrPric = value if value is not None else base_types.UninitialisedField(self, 'CshInLieuOfShrPric', PriceFormat92Choice, False)
 
 	@CshInLieuOfShrPric.deleter
 	def CshInLieuOfShrPric(self):
 		del self._CshInLieuOfShrPric
-		self._CshInLieuOfShrPric = None
+		self._CshInLieuOfShrPric = base_types.UninitialisedField(self, 'CshInLieuOfShrPric', PriceFormat92Choice, False)
 
 	@property
 	def FrstBidIncrmtPric(self):
@@ -28,12 +28,12 @@ class CorporateActionPrice97(base_types._BaseFieldType):
 
 	@FrstBidIncrmtPric.setter
 	def FrstBidIncrmtPric(self, value):
-		self._FrstBidIncrmtPric = value if type(value) != base_types.auto else self.make_default("FrstBidIncrmtPric")
+		self._FrstBidIncrmtPric = value if value is not None else base_types.UninitialisedField(self, 'FrstBidIncrmtPric', PriceFormat93Choice, False)
 
 	@FrstBidIncrmtPric.deleter
 	def FrstBidIncrmtPric(self):
 		del self._FrstBidIncrmtPric
-		self._FrstBidIncrmtPric = None
+		self._FrstBidIncrmtPric = base_types.UninitialisedField(self, 'FrstBidIncrmtPric', PriceFormat93Choice, False)
 
 	@property
 	def LastBidIncrmtPric(self):
@@ -41,12 +41,12 @@ class CorporateActionPrice97(base_types._BaseFieldType):
 
 	@LastBidIncrmtPric.setter
 	def LastBidIncrmtPric(self, value):
-		self._LastBidIncrmtPric = value if type(value) != base_types.auto else self.make_default("LastBidIncrmtPric")
+		self._LastBidIncrmtPric = value if value is not None else base_types.UninitialisedField(self, 'LastBidIncrmtPric', PriceFormat93Choice, False)
 
 	@LastBidIncrmtPric.deleter
 	def LastBidIncrmtPric(self):
 		del self._LastBidIncrmtPric
-		self._LastBidIncrmtPric = None
+		self._LastBidIncrmtPric = base_types.UninitialisedField(self, 'LastBidIncrmtPric', PriceFormat93Choice, False)
 
 	@property
 	def MaxCshToInst(self):
@@ -54,12 +54,12 @@ class CorporateActionPrice97(base_types._BaseFieldType):
 
 	@MaxCshToInst.setter
 	def MaxCshToInst(self, value):
-		self._MaxCshToInst = value if type(value) != base_types.auto else self.make_default("MaxCshToInst")
+		self._MaxCshToInst = value if value is not None else base_types.UninitialisedField(self, 'MaxCshToInst', PriceFormat62Choice, False)
 
 	@MaxCshToInst.deleter
 	def MaxCshToInst(self):
 		del self._MaxCshToInst
-		self._MaxCshToInst = None
+		self._MaxCshToInst = base_types.UninitialisedField(self, 'MaxCshToInst', PriceFormat62Choice, False)
 
 	@property
 	def MaxPric(self):
@@ -67,12 +67,12 @@ class CorporateActionPrice97(base_types._BaseFieldType):
 
 	@MaxPric.setter
 	def MaxPric(self, value):
-		self._MaxPric = value if type(value) != base_types.auto else self.make_default("MaxPric")
+		self._MaxPric = value if value is not None else base_types.UninitialisedField(self, 'MaxPric', PriceFormat93Choice, False)
 
 	@MaxPric.deleter
 	def MaxPric(self):
 		del self._MaxPric
-		self._MaxPric = None
+		self._MaxPric = base_types.UninitialisedField(self, 'MaxPric', PriceFormat93Choice, False)
 
 	@property
 	def MinCshToInst(self):
@@ -80,12 +80,12 @@ class CorporateActionPrice97(base_types._BaseFieldType):
 
 	@MinCshToInst.setter
 	def MinCshToInst(self, value):
-		self._MinCshToInst = value if type(value) != base_types.auto else self.make_default("MinCshToInst")
+		self._MinCshToInst = value if value is not None else base_types.UninitialisedField(self, 'MinCshToInst', PriceFormat62Choice, False)
 
 	@MinCshToInst.deleter
 	def MinCshToInst(self):
 		del self._MinCshToInst
-		self._MinCshToInst = None
+		self._MinCshToInst = base_types.UninitialisedField(self, 'MinCshToInst', PriceFormat62Choice, False)
 
 	@property
 	def MinMltplCshToInst(self):
@@ -93,12 +93,12 @@ class CorporateActionPrice97(base_types._BaseFieldType):
 
 	@MinMltplCshToInst.setter
 	def MinMltplCshToInst(self, value):
-		self._MinMltplCshToInst = value if type(value) != base_types.auto else self.make_default("MinMltplCshToInst")
+		self._MinMltplCshToInst = value if value is not None else base_types.UninitialisedField(self, 'MinMltplCshToInst', PriceFormat62Choice, False)
 
 	@MinMltplCshToInst.deleter
 	def MinMltplCshToInst(self):
 		del self._MinMltplCshToInst
-		self._MinMltplCshToInst = None
+		self._MinMltplCshToInst = base_types.UninitialisedField(self, 'MinMltplCshToInst', PriceFormat62Choice, False)
 
 	@property
 	def MinPric(self):
@@ -106,12 +106,12 @@ class CorporateActionPrice97(base_types._BaseFieldType):
 
 	@MinPric.setter
 	def MinPric(self, value):
-		self._MinPric = value if type(value) != base_types.auto else self.make_default("MinPric")
+		self._MinPric = value if value is not None else base_types.UninitialisedField(self, 'MinPric', PriceFormat93Choice, False)
 
 	@MinPric.deleter
 	def MinPric(self):
 		del self._MinPric
-		self._MinPric = None
+		self._MinPric = base_types.UninitialisedField(self, 'MinPric', PriceFormat93Choice, False)
 
 	@property
 	def OverSbcptDpstPric(self):
@@ -119,12 +119,12 @@ class CorporateActionPrice97(base_types._BaseFieldType):
 
 	@OverSbcptDpstPric.setter
 	def OverSbcptDpstPric(self, value):
-		self._OverSbcptDpstPric = value if type(value) != base_types.auto else self.make_default("OverSbcptDpstPric")
+		self._OverSbcptDpstPric = value if value is not None else base_types.UninitialisedField(self, 'OverSbcptDpstPric', PriceFormat92Choice, False)
 
 	@OverSbcptDpstPric.deleter
 	def OverSbcptDpstPric(self):
 		del self._OverSbcptDpstPric
-		self._OverSbcptDpstPric = None
+		self._OverSbcptDpstPric = base_types.UninitialisedField(self, 'OverSbcptDpstPric', PriceFormat92Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshInLieuOfShrPric', type=PriceFormat92Choice, min=0, max=1, mutex_group=None, array=False),

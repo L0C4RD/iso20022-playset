@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._AmountAndDirection34 import AmountAndDirection34
-from ._BillingChargeMethod1Code import BillingChargeMethod1Code
-from ._Max20Text import Max20Text
+from . import ActiveOrHistoricCurrencyCode
+from . import AmountAndDirection34
+from . import BillingChargeMethod1Code
+from . import Max20Text
 
 class BillingPrice1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class BillingPrice1(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveOrHistoricCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def Mtd(self):
@@ -29,12 +29,12 @@ class BillingPrice1(base_types._BaseFieldType):
 
 	@Mtd.setter
 	def Mtd(self, value):
-		self._Mtd = value if type(value) != base_types.auto else self.make_default("Mtd")
+		self._Mtd = value if value is not None else base_types.UninitialisedField(self, 'Mtd', BillingChargeMethod1Code, False)
 
 	@Mtd.deleter
 	def Mtd(self):
 		del self._Mtd
-		self._Mtd = None
+		self._Mtd = base_types.UninitialisedField(self, 'Mtd', BillingChargeMethod1Code, False)
 
 	@property
 	def Rule(self):
@@ -42,12 +42,12 @@ class BillingPrice1(base_types._BaseFieldType):
 
 	@Rule.setter
 	def Rule(self, value):
-		self._Rule = value if type(value) != base_types.auto else self.make_default("Rule")
+		self._Rule = value if value is not None else base_types.UninitialisedField(self, 'Rule', Max20Text, False)
 
 	@Rule.deleter
 	def Rule(self):
 		del self._Rule
-		self._Rule = None
+		self._Rule = base_types.UninitialisedField(self, 'Rule', Max20Text, False)
 
 	@property
 	def UnitPric(self):
@@ -55,12 +55,12 @@ class BillingPrice1(base_types._BaseFieldType):
 
 	@UnitPric.setter
 	def UnitPric(self, value):
-		self._UnitPric = value if type(value) != base_types.auto else self.make_default("UnitPric")
+		self._UnitPric = value if value is not None else base_types.UninitialisedField(self, 'UnitPric', AmountAndDirection34, False)
 
 	@UnitPric.deleter
 	def UnitPric(self):
 		del self._UnitPric
-		self._UnitPric = None
+		self._UnitPric = base_types.UninitialisedField(self, 'UnitPric', AmountAndDirection34, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),

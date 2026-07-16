@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AuthorityRequestType1 import AuthorityRequestType1
-from ._InvestigatedParties1Choice import InvestigatedParties1Choice
-from ._Max500Text import Max500Text
+from . import AuthorityRequestType1
+from . import InvestigatedParties1Choice
+from . import Max500Text
 
 class AuthorityInvestigation2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AuthorityInvestigation2(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max500Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max500Text, False)
 
 	@property
 	def AddtlInvstgtdPties(self):
@@ -28,12 +28,12 @@ class AuthorityInvestigation2(base_types._BaseFieldType):
 
 	@AddtlInvstgtdPties.setter
 	def AddtlInvstgtdPties(self, value):
-		self._AddtlInvstgtdPties = value if type(value) != base_types.auto else self.make_default("AddtlInvstgtdPties")
+		self._AddtlInvstgtdPties = value if value is not None else base_types.UninitialisedField(self, 'AddtlInvstgtdPties', InvestigatedParties1Choice, False)
 
 	@AddtlInvstgtdPties.deleter
 	def AddtlInvstgtdPties(self):
 		del self._AddtlInvstgtdPties
-		self._AddtlInvstgtdPties = None
+		self._AddtlInvstgtdPties = base_types.UninitialisedField(self, 'AddtlInvstgtdPties', InvestigatedParties1Choice, False)
 
 	@property
 	def InvstgtdRoles(self):
@@ -41,12 +41,12 @@ class AuthorityInvestigation2(base_types._BaseFieldType):
 
 	@InvstgtdRoles.setter
 	def InvstgtdRoles(self, value):
-		self._InvstgtdRoles = value if type(value) != base_types.auto else self.make_default("InvstgtdRoles")
+		self._InvstgtdRoles = value if value is not None else base_types.UninitialisedField(self, 'InvstgtdRoles', InvestigatedParties1Choice, False)
 
 	@InvstgtdRoles.deleter
 	def InvstgtdRoles(self):
 		del self._InvstgtdRoles
-		self._InvstgtdRoles = None
+		self._InvstgtdRoles = base_types.UninitialisedField(self, 'InvstgtdRoles', InvestigatedParties1Choice, False)
 
 	@property
 	def Tp(self):
@@ -54,12 +54,12 @@ class AuthorityInvestigation2(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', AuthorityRequestType1, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', AuthorityRequestType1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),

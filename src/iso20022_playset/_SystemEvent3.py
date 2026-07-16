@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._SystemEventType4Choice import SystemEventType4Choice
+from . import ISODateTime
+from . import SystemEventType4Choice
 
 class SystemEvent3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SystemEvent3(base_types._BaseFieldType):
 
 	@EndTm.setter
 	def EndTm(self, value):
-		self._EndTm = value if type(value) != base_types.auto else self.make_default("EndTm")
+		self._EndTm = value if value is not None else base_types.UninitialisedField(self, 'EndTm', ISODateTime, False)
 
 	@EndTm.deleter
 	def EndTm(self):
 		del self._EndTm
-		self._EndTm = None
+		self._EndTm = base_types.UninitialisedField(self, 'EndTm', ISODateTime, False)
 
 	@property
 	def FctvTm(self):
@@ -27,12 +27,12 @@ class SystemEvent3(base_types._BaseFieldType):
 
 	@FctvTm.setter
 	def FctvTm(self, value):
-		self._FctvTm = value if type(value) != base_types.auto else self.make_default("FctvTm")
+		self._FctvTm = value if value is not None else base_types.UninitialisedField(self, 'FctvTm', ISODateTime, False)
 
 	@FctvTm.deleter
 	def FctvTm(self):
 		del self._FctvTm
-		self._FctvTm = None
+		self._FctvTm = base_types.UninitialisedField(self, 'FctvTm', ISODateTime, False)
 
 	@property
 	def SchdldTm(self):
@@ -40,12 +40,12 @@ class SystemEvent3(base_types._BaseFieldType):
 
 	@SchdldTm.setter
 	def SchdldTm(self, value):
-		self._SchdldTm = value if type(value) != base_types.auto else self.make_default("SchdldTm")
+		self._SchdldTm = value if value is not None else base_types.UninitialisedField(self, 'SchdldTm', ISODateTime, False)
 
 	@SchdldTm.deleter
 	def SchdldTm(self):
 		del self._SchdldTm
-		self._SchdldTm = None
+		self._SchdldTm = base_types.UninitialisedField(self, 'SchdldTm', ISODateTime, False)
 
 	@property
 	def StartTm(self):
@@ -53,12 +53,12 @@ class SystemEvent3(base_types._BaseFieldType):
 
 	@StartTm.setter
 	def StartTm(self, value):
-		self._StartTm = value if type(value) != base_types.auto else self.make_default("StartTm")
+		self._StartTm = value if value is not None else base_types.UninitialisedField(self, 'StartTm', ISODateTime, False)
 
 	@StartTm.deleter
 	def StartTm(self):
 		del self._StartTm
-		self._StartTm = None
+		self._StartTm = base_types.UninitialisedField(self, 'StartTm', ISODateTime, False)
 
 	@property
 	def Tp(self):
@@ -66,12 +66,12 @@ class SystemEvent3(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', SystemEventType4Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', SystemEventType4Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EndTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),

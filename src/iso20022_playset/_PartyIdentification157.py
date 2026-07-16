@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
-from ._PartyIdentification137Choice import PartyIdentification137Choice
+from . import LEIIdentifier
+from . import PartyIdentification137Choice
 
 class PartyIdentification157(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PartyIdentification157(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', PartyIdentification137Choice, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', PartyIdentification137Choice, False)
 
 	@property
 	def LEI(self):
@@ -27,12 +27,12 @@ class PartyIdentification157(base_types._BaseFieldType):
 
 	@LEI.setter
 	def LEI(self, value):
-		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
+		self._LEI = value if value is not None else base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	@LEI.deleter
 	def LEI(self):
 		del self._LEI
-		self._LEI = None
+		self._LEI = base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=PartyIdentification137Choice, min=1, max=1, mutex_group=None, array=False),

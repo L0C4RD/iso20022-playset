@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BackTestingMethodology1 import BackTestingMethodology1
-from ._SupplementaryData1 import SupplementaryData1
+from . import BackTestingMethodology1
+from . import SupplementaryData1
 
 class CCPBackTestingDefinitionReportV01(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CCPBackTestingDefinitionReportV01(base_types._BaseFieldType):
 
 	@Mthdlgy.setter
 	def Mthdlgy(self, value):
-		self._Mthdlgy = value if type(value) != base_types.auto else self.make_default("Mthdlgy")
+		self._Mthdlgy = value if value is not None else base_types.UninitialisedField(self, 'Mthdlgy', BackTestingMethodology1, True)
 
 	@Mthdlgy.deleter
 	def Mthdlgy(self):
 		del self._Mthdlgy
-		self._Mthdlgy = None
+		self._Mthdlgy = base_types.UninitialisedField(self, 'Mthdlgy', BackTestingMethodology1, True)
 
 	@property
 	def SplmtryData(self):
@@ -27,12 +27,12 @@ class CCPBackTestingDefinitionReportV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Mthdlgy', type=BackTestingMethodology1, min=1, max=None, mutex_group=None, array=True),

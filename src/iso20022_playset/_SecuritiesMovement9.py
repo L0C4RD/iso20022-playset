@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
-from ._CollateralEntryType1Code import CollateralEntryType1Code
-from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
-from ._Max35Text import Max35Text
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._YesNoIndicator import YesNoIndicator
+from . import BlockChainAddressWallet3
+from . import CollateralEntryType1Code
+from . import FinancialInstrumentQuantity33Choice
+from . import Max35Text
+from . import SecuritiesAccount19
+from . import SecurityIdentification19
+from . import YesNoIndicator
 
 class SecuritiesMovement9(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class SecuritiesMovement9(base_types._BaseFieldType):
 
 	@BlckChainAdrOrWllt.setter
 	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
+		self._BlckChainAdrOrWllt = value if value is not None else base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet3, False)
 
 	@BlckChainAdrOrWllt.deleter
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+		self._BlckChainAdrOrWllt = base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet3, False)
 
 	@property
 	def ClntSctiesMvmntId(self):
@@ -32,12 +32,12 @@ class SecuritiesMovement9(base_types._BaseFieldType):
 
 	@ClntSctiesMvmntId.setter
 	def ClntSctiesMvmntId(self, value):
-		self._ClntSctiesMvmntId = value if type(value) != base_types.auto else self.make_default("ClntSctiesMvmntId")
+		self._ClntSctiesMvmntId = value if value is not None else base_types.UninitialisedField(self, 'ClntSctiesMvmntId', Max35Text, False)
 
 	@ClntSctiesMvmntId.deleter
 	def ClntSctiesMvmntId(self):
 		del self._ClntSctiesMvmntId
-		self._ClntSctiesMvmntId = None
+		self._ClntSctiesMvmntId = base_types.UninitialisedField(self, 'ClntSctiesMvmntId', Max35Text, False)
 
 	@property
 	def CollMvmnt(self):
@@ -45,12 +45,12 @@ class SecuritiesMovement9(base_types._BaseFieldType):
 
 	@CollMvmnt.setter
 	def CollMvmnt(self, value):
-		self._CollMvmnt = value if type(value) != base_types.auto else self.make_default("CollMvmnt")
+		self._CollMvmnt = value if value is not None else base_types.UninitialisedField(self, 'CollMvmnt', YesNoIndicator, False)
 
 	@CollMvmnt.deleter
 	def CollMvmnt(self):
 		del self._CollMvmnt
-		self._CollMvmnt = None
+		self._CollMvmnt = base_types.UninitialisedField(self, 'CollMvmnt', YesNoIndicator, False)
 
 	@property
 	def FinInstrmId(self):
@@ -58,12 +58,12 @@ class SecuritiesMovement9(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
 		del self._FinInstrmId
-		self._FinInstrmId = None
+		self._FinInstrmId = base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@property
 	def Qty(self):
@@ -71,12 +71,12 @@ class SecuritiesMovement9(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+		self._Qty = value if value is not None else base_types.UninitialisedField(self, 'Qty', FinancialInstrumentQuantity33Choice, False)
 
 	@Qty.deleter
 	def Qty(self):
 		del self._Qty
-		self._Qty = None
+		self._Qty = base_types.UninitialisedField(self, 'Qty', FinancialInstrumentQuantity33Choice, False)
 
 	@property
 	def SctiesMvmntTp(self):
@@ -84,12 +84,12 @@ class SecuritiesMovement9(base_types._BaseFieldType):
 
 	@SctiesMvmntTp.setter
 	def SctiesMvmntTp(self, value):
-		self._SctiesMvmntTp = value if type(value) != base_types.auto else self.make_default("SctiesMvmntTp")
+		self._SctiesMvmntTp = value if value is not None else base_types.UninitialisedField(self, 'SctiesMvmntTp', CollateralEntryType1Code, False)
 
 	@SctiesMvmntTp.deleter
 	def SctiesMvmntTp(self):
 		del self._SctiesMvmntTp
-		self._SctiesMvmntTp = None
+		self._SctiesMvmntTp = base_types.UninitialisedField(self, 'SctiesMvmntTp', CollateralEntryType1Code, False)
 
 	@property
 	def SfkpgAcct(self):
@@ -97,12 +97,12 @@ class SecuritiesMovement9(base_types._BaseFieldType):
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
-		self._SfkpgAcct = None
+		self._SfkpgAcct = base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@property
 	def TrptyAgtSvcPrvdrSctiesMvmntId(self):
@@ -110,12 +110,12 @@ class SecuritiesMovement9(base_types._BaseFieldType):
 
 	@TrptyAgtSvcPrvdrSctiesMvmntId.setter
 	def TrptyAgtSvcPrvdrSctiesMvmntId(self, value):
-		self._TrptyAgtSvcPrvdrSctiesMvmntId = value if type(value) != base_types.auto else self.make_default("TrptyAgtSvcPrvdrSctiesMvmntId")
+		self._TrptyAgtSvcPrvdrSctiesMvmntId = value if value is not None else base_types.UninitialisedField(self, 'TrptyAgtSvcPrvdrSctiesMvmntId', Max35Text, False)
 
 	@TrptyAgtSvcPrvdrSctiesMvmntId.deleter
 	def TrptyAgtSvcPrvdrSctiesMvmntId(self):
 		del self._TrptyAgtSvcPrvdrSctiesMvmntId
-		self._TrptyAgtSvcPrvdrSctiesMvmntId = None
+		self._TrptyAgtSvcPrvdrSctiesMvmntId = base_types.UninitialisedField(self, 'TrptyAgtSvcPrvdrSctiesMvmntId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),

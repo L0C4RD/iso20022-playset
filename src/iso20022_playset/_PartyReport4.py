@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PartyOrBusinessError4Choice import PartyOrBusinessError4Choice
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
+from . import PartyOrBusinessError4Choice
+from . import SystemPartyIdentification8
 
 class PartyReport4(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PartyReport4(base_types._BaseFieldType):
 
 	@PtyId.setter
 	def PtyId(self, value):
-		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
+		self._PtyId = value if value is not None else base_types.UninitialisedField(self, 'PtyId', SystemPartyIdentification8, False)
 
 	@PtyId.deleter
 	def PtyId(self):
 		del self._PtyId
-		self._PtyId = None
+		self._PtyId = base_types.UninitialisedField(self, 'PtyId', SystemPartyIdentification8, False)
 
 	@property
 	def PtyOrErr(self):
@@ -27,12 +27,12 @@ class PartyReport4(base_types._BaseFieldType):
 
 	@PtyOrErr.setter
 	def PtyOrErr(self, value):
-		self._PtyOrErr = value if type(value) != base_types.auto else self.make_default("PtyOrErr")
+		self._PtyOrErr = value if value is not None else base_types.UninitialisedField(self, 'PtyOrErr', PartyOrBusinessError4Choice, False)
 
 	@PtyOrErr.deleter
 	def PtyOrErr(self):
 		del self._PtyOrErr
-		self._PtyOrErr = None
+		self._PtyOrErr = base_types.UninitialisedField(self, 'PtyOrErr', PartyOrBusinessError4Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PtyId', type=SystemPartyIdentification8, min=1, max=1, mutex_group=None, array=False),

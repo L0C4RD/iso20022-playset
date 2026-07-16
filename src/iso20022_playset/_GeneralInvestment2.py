@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountOwnershipType6Code import AccountOwnershipType6Code
-from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._DateAndAmount2 import DateAndAmount2
-from ._GeneralInvestmentAccountType2Choice import GeneralInvestmentAccountType2Choice
+from . import AccountOwnershipType6Code
+from . import ActiveCurrencyAnd13DecimalAmount
+from . import AdditionalInformation15
+from . import DateAndAmount2
+from . import GeneralInvestmentAccountType2Choice
 
 class GeneralInvestment2(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class GeneralInvestment2(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@property
 	def CurInvstmtAmt(self):
@@ -30,12 +30,12 @@ class GeneralInvestment2(base_types._BaseFieldType):
 
 	@CurInvstmtAmt.setter
 	def CurInvstmtAmt(self, value):
-		self._CurInvstmtAmt = value if type(value) != base_types.auto else self.make_default("CurInvstmtAmt")
+		self._CurInvstmtAmt = value if value is not None else base_types.UninitialisedField(self, 'CurInvstmtAmt', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@CurInvstmtAmt.deleter
 	def CurInvstmtAmt(self):
 		del self._CurInvstmtAmt
-		self._CurInvstmtAmt = None
+		self._CurInvstmtAmt = base_types.UninitialisedField(self, 'CurInvstmtAmt', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def EstmtdVal(self):
@@ -43,12 +43,12 @@ class GeneralInvestment2(base_types._BaseFieldType):
 
 	@EstmtdVal.setter
 	def EstmtdVal(self, value):
-		self._EstmtdVal = value if type(value) != base_types.auto else self.make_default("EstmtdVal")
+		self._EstmtdVal = value if value is not None else base_types.UninitialisedField(self, 'EstmtdVal', DateAndAmount2, False)
 
 	@EstmtdVal.deleter
 	def EstmtdVal(self):
 		del self._EstmtdVal
-		self._EstmtdVal = None
+		self._EstmtdVal = base_types.UninitialisedField(self, 'EstmtdVal', DateAndAmount2, False)
 
 	@property
 	def OwnrshTp(self):
@@ -56,12 +56,12 @@ class GeneralInvestment2(base_types._BaseFieldType):
 
 	@OwnrshTp.setter
 	def OwnrshTp(self, value):
-		self._OwnrshTp = value if type(value) != base_types.auto else self.make_default("OwnrshTp")
+		self._OwnrshTp = value if value is not None else base_types.UninitialisedField(self, 'OwnrshTp', AccountOwnershipType6Code, False)
 
 	@OwnrshTp.deleter
 	def OwnrshTp(self):
 		del self._OwnrshTp
-		self._OwnrshTp = None
+		self._OwnrshTp = base_types.UninitialisedField(self, 'OwnrshTp', AccountOwnershipType6Code, False)
 
 	@property
 	def Tp(self):
@@ -69,12 +69,12 @@ class GeneralInvestment2(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', GeneralInvestmentAccountType2Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', GeneralInvestmentAccountType2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),

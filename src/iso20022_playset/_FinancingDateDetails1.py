@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
+from . import ISODate
 
 class FinancingDateDetails1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class FinancingDateDetails1(base_types._BaseFieldType):
 
 	@BookDt.setter
 	def BookDt(self, value):
-		self._BookDt = value if type(value) != base_types.auto else self.make_default("BookDt")
+		self._BookDt = value if value is not None else base_types.UninitialisedField(self, 'BookDt', ISODate, True)
 
 	@BookDt.deleter
 	def BookDt(self):
 		del self._BookDt
-		self._BookDt = None
+		self._BookDt = base_types.UninitialisedField(self, 'BookDt', ISODate, True)
 
 	@property
 	def CdtDt(self):
@@ -26,12 +26,12 @@ class FinancingDateDetails1(base_types._BaseFieldType):
 
 	@CdtDt.setter
 	def CdtDt(self, value):
-		self._CdtDt = value if type(value) != base_types.auto else self.make_default("CdtDt")
+		self._CdtDt = value if value is not None else base_types.UninitialisedField(self, 'CdtDt', ISODate, False)
 
 	@CdtDt.deleter
 	def CdtDt(self):
 		del self._CdtDt
-		self._CdtDt = None
+		self._CdtDt = base_types.UninitialisedField(self, 'CdtDt', ISODate, False)
 
 	@property
 	def DbtDt(self):
@@ -39,12 +39,12 @@ class FinancingDateDetails1(base_types._BaseFieldType):
 
 	@DbtDt.setter
 	def DbtDt(self, value):
-		self._DbtDt = value if type(value) != base_types.auto else self.make_default("DbtDt")
+		self._DbtDt = value if value is not None else base_types.UninitialisedField(self, 'DbtDt', ISODate, False)
 
 	@DbtDt.deleter
 	def DbtDt(self):
 		del self._DbtDt
-		self._DbtDt = None
+		self._DbtDt = base_types.UninitialisedField(self, 'DbtDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BookDt', type=ISODate, min=0, max=None, mutex_group=None, array=True),

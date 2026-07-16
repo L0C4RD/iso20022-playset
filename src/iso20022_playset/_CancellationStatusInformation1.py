@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CancellationStatus4Code import CancellationStatus4Code
-from ._Max105Text import Max105Text
-from ._StatusReason4Choice import StatusReason4Choice
+from . import CancellationStatus4Code
+from . import Max105Text
+from . import StatusReason4Choice
 
 class CancellationStatusInformation1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CancellationStatusInformation1(base_types._BaseFieldType):
 
 	@AddtlStsRsnInf.setter
 	def AddtlStsRsnInf(self, value):
-		self._AddtlStsRsnInf = value if type(value) != base_types.auto else self.make_default("AddtlStsRsnInf")
+		self._AddtlStsRsnInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlStsRsnInf', Max105Text, True)
 
 	@AddtlStsRsnInf.deleter
 	def AddtlStsRsnInf(self):
 		del self._AddtlStsRsnInf
-		self._AddtlStsRsnInf = None
+		self._AddtlStsRsnInf = base_types.UninitialisedField(self, 'AddtlStsRsnInf', Max105Text, True)
 
 	@property
 	def Sts(self):
@@ -28,12 +28,12 @@ class CancellationStatusInformation1(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', CancellationStatus4Code, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', CancellationStatus4Code, False)
 
 	@property
 	def StsRsn(self):
@@ -41,12 +41,12 @@ class CancellationStatusInformation1(base_types._BaseFieldType):
 
 	@StsRsn.setter
 	def StsRsn(self, value):
-		self._StsRsn = value if type(value) != base_types.auto else self.make_default("StsRsn")
+		self._StsRsn = value if value is not None else base_types.UninitialisedField(self, 'StsRsn', StatusReason4Choice, False)
 
 	@StsRsn.deleter
 	def StsRsn(self):
 		del self._StsRsn
-		self._StsRsn = None
+		self._StsRsn = base_types.UninitialisedField(self, 'StsRsn', StatusReason4Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlStsRsnInf', type=Max105Text, min=0, max=None, mutex_group=None, array=True),

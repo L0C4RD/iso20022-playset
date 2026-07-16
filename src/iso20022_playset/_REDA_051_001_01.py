@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountLinkStatusAdviceV01 import AccountLinkStatusAdviceV01
+from . import AccountLinkStatusAdviceV01
 
 class REDA_051_001_01():
 
@@ -18,12 +18,12 @@ class REDA_051_001_01():
 
 		@AcctLkStsAdvc.setter
 		def AcctLkStsAdvc(self, value):
-			self._AcctLkStsAdvc = value if type(value) != base_types.auto else self.make_default("AcctLkStsAdvc")
+			self._AcctLkStsAdvc = value if value is not None else base_types.UninitialisedField(self, 'AcctLkStsAdvc', AccountLinkStatusAdviceV01, False)
 
 		@AcctLkStsAdvc.deleter
 		def AcctLkStsAdvc(self):
 			del self._AcctLkStsAdvc
-			self._AcctLkStsAdvc = None
+			self._AcctLkStsAdvc = base_types.UninitialisedField(self, 'AcctLkStsAdvc', AccountLinkStatusAdviceV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AcctLkStsAdvc', type=AccountLinkStatusAdviceV01, min=1, max=1, mutex_group=None, array=False),

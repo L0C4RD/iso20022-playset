@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalBalanceInformation2 import AdditionalBalanceInformation2
-from ._Extended350Code import Extended350Code
-from ._SecuritiesBalanceType1Code import SecuritiesBalanceType1Code
-from ._SubBalanceQuantity1Choice import SubBalanceQuantity1Choice
+from . import AdditionalBalanceInformation2
+from . import Extended350Code
+from . import SecuritiesBalanceType1Code
+from . import SubBalanceQuantity1Choice
 
 class SubBalanceInformation2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class SubBalanceInformation2(base_types._BaseFieldType):
 
 	@AddtlBalBrkdwnDtls.setter
 	def AddtlBalBrkdwnDtls(self, value):
-		self._AddtlBalBrkdwnDtls = value if type(value) != base_types.auto else self.make_default("AddtlBalBrkdwnDtls")
+		self._AddtlBalBrkdwnDtls = value if value is not None else base_types.UninitialisedField(self, 'AddtlBalBrkdwnDtls', AdditionalBalanceInformation2, True)
 
 	@AddtlBalBrkdwnDtls.deleter
 	def AddtlBalBrkdwnDtls(self):
 		del self._AddtlBalBrkdwnDtls
-		self._AddtlBalBrkdwnDtls = None
+		self._AddtlBalBrkdwnDtls = base_types.UninitialisedField(self, 'AddtlBalBrkdwnDtls', AdditionalBalanceInformation2, True)
 
 	@property
 	def Qty(self):
@@ -29,12 +29,12 @@ class SubBalanceInformation2(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+		self._Qty = value if value is not None else base_types.UninitialisedField(self, 'Qty', SubBalanceQuantity1Choice, False)
 
 	@Qty.deleter
 	def Qty(self):
 		del self._Qty
-		self._Qty = None
+		self._Qty = base_types.UninitialisedField(self, 'Qty', SubBalanceQuantity1Choice, False)
 
 	@property
 	def SubBalTp(self):
@@ -42,12 +42,12 @@ class SubBalanceInformation2(base_types._BaseFieldType):
 
 	@SubBalTp.setter
 	def SubBalTp(self, value):
-		self._SubBalTp = value if type(value) != base_types.auto else self.make_default("SubBalTp")
+		self._SubBalTp = value if value is not None else base_types.UninitialisedField(self, 'SubBalTp', SecuritiesBalanceType1Code, False)
 
 	@SubBalTp.deleter
 	def SubBalTp(self):
 		del self._SubBalTp
-		self._SubBalTp = None
+		self._SubBalTp = base_types.UninitialisedField(self, 'SubBalTp', SecuritiesBalanceType1Code, False)
 
 	@property
 	def XtndedSubBalTp(self):
@@ -55,12 +55,12 @@ class SubBalanceInformation2(base_types._BaseFieldType):
 
 	@XtndedSubBalTp.setter
 	def XtndedSubBalTp(self, value):
-		self._XtndedSubBalTp = value if type(value) != base_types.auto else self.make_default("XtndedSubBalTp")
+		self._XtndedSubBalTp = value if value is not None else base_types.UninitialisedField(self, 'XtndedSubBalTp', Extended350Code, False)
 
 	@XtndedSubBalTp.deleter
 	def XtndedSubBalTp(self):
 		del self._XtndedSubBalTp
-		self._XtndedSubBalTp = None
+		self._XtndedSubBalTp = base_types.UninitialisedField(self, 'XtndedSubBalTp', Extended350Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlBalBrkdwnDtls', type=AdditionalBalanceInformation2, min=0, max=None, mutex_group=None, array=True),

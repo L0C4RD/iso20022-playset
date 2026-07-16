@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PaymentStatusTrackerUpdateV05 import PaymentStatusTrackerUpdateV05
+from . import PaymentStatusTrackerUpdateV05
 
 class TRCK_001_001_05():
 
@@ -18,12 +18,12 @@ class TRCK_001_001_05():
 
 		@PmtStsTrckrUpd.setter
 		def PmtStsTrckrUpd(self, value):
-			self._PmtStsTrckrUpd = value if type(value) != base_types.auto else self.make_default("PmtStsTrckrUpd")
+			self._PmtStsTrckrUpd = value if value is not None else base_types.UninitialisedField(self, 'PmtStsTrckrUpd', PaymentStatusTrackerUpdateV05, False)
 
 		@PmtStsTrckrUpd.deleter
 		def PmtStsTrckrUpd(self):
 			del self._PmtStsTrckrUpd
-			self._PmtStsTrckrUpd = None
+			self._PmtStsTrckrUpd = base_types.UninitialisedField(self, 'PmtStsTrckrUpd', PaymentStatusTrackerUpdateV05, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='PmtStsTrckrUpd', type=PaymentStatusTrackerUpdateV05, min=1, max=1, mutex_group=None, array=False),

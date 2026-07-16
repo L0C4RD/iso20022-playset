@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import TrueFalseIndicator
 
 class ContractRegistrationStatementCriteria1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class ContractRegistrationStatementCriteria1(base_types._BaseFieldType):
 
 	@AddtlSpprtgDocJrnl.setter
 	def AddtlSpprtgDocJrnl(self, value):
-		self._AddtlSpprtgDocJrnl = value if type(value) != base_types.auto else self.make_default("AddtlSpprtgDocJrnl")
+		self._AddtlSpprtgDocJrnl = value if value is not None else base_types.UninitialisedField(self, 'AddtlSpprtgDocJrnl', TrueFalseIndicator, False)
 
 	@AddtlSpprtgDocJrnl.deleter
 	def AddtlSpprtgDocJrnl(self):
 		del self._AddtlSpprtgDocJrnl
-		self._AddtlSpprtgDocJrnl = None
+		self._AddtlSpprtgDocJrnl = base_types.UninitialisedField(self, 'AddtlSpprtgDocJrnl', TrueFalseIndicator, False)
 
 	@property
 	def RgltryRuleVldtn(self):
@@ -26,12 +26,12 @@ class ContractRegistrationStatementCriteria1(base_types._BaseFieldType):
 
 	@RgltryRuleVldtn.setter
 	def RgltryRuleVldtn(self, value):
-		self._RgltryRuleVldtn = value if type(value) != base_types.auto else self.make_default("RgltryRuleVldtn")
+		self._RgltryRuleVldtn = value if value is not None else base_types.UninitialisedField(self, 'RgltryRuleVldtn', TrueFalseIndicator, False)
 
 	@RgltryRuleVldtn.deleter
 	def RgltryRuleVldtn(self):
 		del self._RgltryRuleVldtn
-		self._RgltryRuleVldtn = None
+		self._RgltryRuleVldtn = base_types.UninitialisedField(self, 'RgltryRuleVldtn', TrueFalseIndicator, False)
 
 	@property
 	def SpprtgDocJrnl(self):
@@ -39,12 +39,12 @@ class ContractRegistrationStatementCriteria1(base_types._BaseFieldType):
 
 	@SpprtgDocJrnl.setter
 	def SpprtgDocJrnl(self, value):
-		self._SpprtgDocJrnl = value if type(value) != base_types.auto else self.make_default("SpprtgDocJrnl")
+		self._SpprtgDocJrnl = value if value is not None else base_types.UninitialisedField(self, 'SpprtgDocJrnl', TrueFalseIndicator, False)
 
 	@SpprtgDocJrnl.deleter
 	def SpprtgDocJrnl(self):
 		del self._SpprtgDocJrnl
-		self._SpprtgDocJrnl = None
+		self._SpprtgDocJrnl = base_types.UninitialisedField(self, 'SpprtgDocJrnl', TrueFalseIndicator, False)
 
 	@property
 	def TxJrnl(self):
@@ -52,12 +52,12 @@ class ContractRegistrationStatementCriteria1(base_types._BaseFieldType):
 
 	@TxJrnl.setter
 	def TxJrnl(self, value):
-		self._TxJrnl = value if type(value) != base_types.auto else self.make_default("TxJrnl")
+		self._TxJrnl = value if value is not None else base_types.UninitialisedField(self, 'TxJrnl', TrueFalseIndicator, False)
 
 	@TxJrnl.deleter
 	def TxJrnl(self):
 		del self._TxJrnl
-		self._TxJrnl = None
+		self._TxJrnl = base_types.UninitialisedField(self, 'TxJrnl', TrueFalseIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlSpprtgDocJrnl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),

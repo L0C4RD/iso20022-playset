@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SpecialRequestV01 import SpecialRequestV01
+from . import SpecialRequestV01
 
 class TSMT_047_001_01():
 
@@ -18,12 +18,12 @@ class TSMT_047_001_01():
 
 		@SpclReq.setter
 		def SpclReq(self, value):
-			self._SpclReq = value if type(value) != base_types.auto else self.make_default("SpclReq")
+			self._SpclReq = value if value is not None else base_types.UninitialisedField(self, 'SpclReq', SpecialRequestV01, False)
 
 		@SpclReq.deleter
 		def SpclReq(self):
 			del self._SpclReq
-			self._SpclReq = None
+			self._SpclReq = base_types.UninitialisedField(self, 'SpclReq', SpecialRequestV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SpclReq', type=SpecialRequestV01, min=1, max=1, mutex_group=None, array=False),

@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._CardDataReading8Code import CardDataReading8Code
-from ._CardIdentificationType1Code import CardIdentificationType1Code
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max10Text import Max10Text
-from ._Max35Text import Max35Text
-from ._Max45Text import Max45Text
-from ._StoredValueAccountType1Code import StoredValueAccountType1Code
+from . import ActiveCurrencyCode
+from . import CardDataReading8Code
+from . import CardIdentificationType1Code
+from . import ImpliedCurrencyAndAmount
+from . import Max10Text
+from . import Max35Text
+from . import Max45Text
+from . import StoredValueAccountType1Code
 
 class StoredValueAccount2(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class StoredValueAccount2(base_types._BaseFieldType):
 
 	@AcctTp.setter
 	def AcctTp(self, value):
-		self._AcctTp = value if type(value) != base_types.auto else self.make_default("AcctTp")
+		self._AcctTp = value if value is not None else base_types.UninitialisedField(self, 'AcctTp', StoredValueAccountType1Code, False)
 
 	@AcctTp.deleter
 	def AcctTp(self):
 		del self._AcctTp
-		self._AcctTp = None
+		self._AcctTp = base_types.UninitialisedField(self, 'AcctTp', StoredValueAccountType1Code, False)
 
 	@property
 	def Bal(self):
@@ -33,12 +33,12 @@ class StoredValueAccount2(base_types._BaseFieldType):
 
 	@Bal.setter
 	def Bal(self, value):
-		self._Bal = value if type(value) != base_types.auto else self.make_default("Bal")
+		self._Bal = value if value is not None else base_types.UninitialisedField(self, 'Bal', ImpliedCurrencyAndAmount, False)
 
 	@Bal.deleter
 	def Bal(self):
 		del self._Bal
-		self._Bal = None
+		self._Bal = base_types.UninitialisedField(self, 'Bal', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def Brnd(self):
@@ -46,12 +46,12 @@ class StoredValueAccount2(base_types._BaseFieldType):
 
 	@Brnd.setter
 	def Brnd(self, value):
-		self._Brnd = value if type(value) != base_types.auto else self.make_default("Brnd")
+		self._Brnd = value if value is not None else base_types.UninitialisedField(self, 'Brnd', Max35Text, False)
 
 	@Brnd.deleter
 	def Brnd(self):
 		del self._Brnd
-		self._Brnd = None
+		self._Brnd = base_types.UninitialisedField(self, 'Brnd', Max35Text, False)
 
 	@property
 	def Ccy(self):
@@ -59,12 +59,12 @@ class StoredValueAccount2(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@property
 	def Id(self):
@@ -72,12 +72,12 @@ class StoredValueAccount2(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def IdTp(self):
@@ -85,12 +85,12 @@ class StoredValueAccount2(base_types._BaseFieldType):
 
 	@IdTp.setter
 	def IdTp(self, value):
-		self._IdTp = value if type(value) != base_types.auto else self.make_default("IdTp")
+		self._IdTp = value if value is not None else base_types.UninitialisedField(self, 'IdTp', CardIdentificationType1Code, False)
 
 	@IdTp.deleter
 	def IdTp(self):
 		del self._IdTp
-		self._IdTp = None
+		self._IdTp = base_types.UninitialisedField(self, 'IdTp', CardIdentificationType1Code, False)
 
 	@property
 	def NtryMd(self):
@@ -98,12 +98,12 @@ class StoredValueAccount2(base_types._BaseFieldType):
 
 	@NtryMd.setter
 	def NtryMd(self, value):
-		self._NtryMd = value if type(value) != base_types.auto else self.make_default("NtryMd")
+		self._NtryMd = value if value is not None else base_types.UninitialisedField(self, 'NtryMd', CardDataReading8Code, False)
 
 	@NtryMd.deleter
 	def NtryMd(self):
 		del self._NtryMd
-		self._NtryMd = None
+		self._NtryMd = base_types.UninitialisedField(self, 'NtryMd', CardDataReading8Code, False)
 
 	@property
 	def OwnrNm(self):
@@ -111,12 +111,12 @@ class StoredValueAccount2(base_types._BaseFieldType):
 
 	@OwnrNm.setter
 	def OwnrNm(self, value):
-		self._OwnrNm = value if type(value) != base_types.auto else self.make_default("OwnrNm")
+		self._OwnrNm = value if value is not None else base_types.UninitialisedField(self, 'OwnrNm', Max45Text, False)
 
 	@OwnrNm.deleter
 	def OwnrNm(self):
 		del self._OwnrNm
-		self._OwnrNm = None
+		self._OwnrNm = base_types.UninitialisedField(self, 'OwnrNm', Max45Text, False)
 
 	@property
 	def Prvdr(self):
@@ -124,12 +124,12 @@ class StoredValueAccount2(base_types._BaseFieldType):
 
 	@Prvdr.setter
 	def Prvdr(self, value):
-		self._Prvdr = value if type(value) != base_types.auto else self.make_default("Prvdr")
+		self._Prvdr = value if value is not None else base_types.UninitialisedField(self, 'Prvdr', Max35Text, False)
 
 	@Prvdr.deleter
 	def Prvdr(self):
 		del self._Prvdr
-		self._Prvdr = None
+		self._Prvdr = base_types.UninitialisedField(self, 'Prvdr', Max35Text, False)
 
 	@property
 	def XpryDt(self):
@@ -137,12 +137,12 @@ class StoredValueAccount2(base_types._BaseFieldType):
 
 	@XpryDt.setter
 	def XpryDt(self, value):
-		self._XpryDt = value if type(value) != base_types.auto else self.make_default("XpryDt")
+		self._XpryDt = value if value is not None else base_types.UninitialisedField(self, 'XpryDt', Max10Text, False)
 
 	@XpryDt.deleter
 	def XpryDt(self):
 		del self._XpryDt
-		self._XpryDt = None
+		self._XpryDt = base_types.UninitialisedField(self, 'XpryDt', Max10Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctTp', type=StoredValueAccountType1Code, min=0, max=1, mutex_group=None, array=False),

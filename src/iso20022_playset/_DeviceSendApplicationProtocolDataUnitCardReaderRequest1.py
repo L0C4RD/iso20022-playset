@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Min1Max256Binary import Min1Max256Binary
+from . import Min1Max256Binary
 
 class DeviceSendApplicationProtocolDataUnitCardReaderRequest1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class DeviceSendApplicationProtocolDataUnitCardReaderRequest1(base_types._BaseFi
 
 	@Clss.setter
 	def Clss(self, value):
-		self._Clss = value if type(value) != base_types.auto else self.make_default("Clss")
+		self._Clss = value if value is not None else base_types.UninitialisedField(self, 'Clss', Min1Max256Binary, False)
 
 	@Clss.deleter
 	def Clss(self):
 		del self._Clss
-		self._Clss = None
+		self._Clss = base_types.UninitialisedField(self, 'Clss', Min1Max256Binary, False)
 
 	@property
 	def Data(self):
@@ -26,12 +26,12 @@ class DeviceSendApplicationProtocolDataUnitCardReaderRequest1(base_types._BaseFi
 
 	@Data.setter
 	def Data(self, value):
-		self._Data = value if type(value) != base_types.auto else self.make_default("Data")
+		self._Data = value if value is not None else base_types.UninitialisedField(self, 'Data', Min1Max256Binary, False)
 
 	@Data.deleter
 	def Data(self):
 		del self._Data
-		self._Data = None
+		self._Data = base_types.UninitialisedField(self, 'Data', Min1Max256Binary, False)
 
 	@property
 	def Instr(self):
@@ -39,12 +39,12 @@ class DeviceSendApplicationProtocolDataUnitCardReaderRequest1(base_types._BaseFi
 
 	@Instr.setter
 	def Instr(self, value):
-		self._Instr = value if type(value) != base_types.auto else self.make_default("Instr")
+		self._Instr = value if value is not None else base_types.UninitialisedField(self, 'Instr', Min1Max256Binary, False)
 
 	@Instr.deleter
 	def Instr(self):
 		del self._Instr
-		self._Instr = None
+		self._Instr = base_types.UninitialisedField(self, 'Instr', Min1Max256Binary, False)
 
 	@property
 	def Param1(self):
@@ -52,12 +52,12 @@ class DeviceSendApplicationProtocolDataUnitCardReaderRequest1(base_types._BaseFi
 
 	@Param1.setter
 	def Param1(self, value):
-		self._Param1 = value if type(value) != base_types.auto else self.make_default("Param1")
+		self._Param1 = value if value is not None else base_types.UninitialisedField(self, 'Param1', Min1Max256Binary, False)
 
 	@Param1.deleter
 	def Param1(self):
 		del self._Param1
-		self._Param1 = None
+		self._Param1 = base_types.UninitialisedField(self, 'Param1', Min1Max256Binary, False)
 
 	@property
 	def Param2(self):
@@ -65,12 +65,12 @@ class DeviceSendApplicationProtocolDataUnitCardReaderRequest1(base_types._BaseFi
 
 	@Param2.setter
 	def Param2(self, value):
-		self._Param2 = value if type(value) != base_types.auto else self.make_default("Param2")
+		self._Param2 = value if value is not None else base_types.UninitialisedField(self, 'Param2', Min1Max256Binary, False)
 
 	@Param2.deleter
 	def Param2(self):
 		del self._Param2
-		self._Param2 = None
+		self._Param2 = base_types.UninitialisedField(self, 'Param2', Min1Max256Binary, False)
 
 	@property
 	def XpctdLngth(self):
@@ -78,12 +78,12 @@ class DeviceSendApplicationProtocolDataUnitCardReaderRequest1(base_types._BaseFi
 
 	@XpctdLngth.setter
 	def XpctdLngth(self, value):
-		self._XpctdLngth = value if type(value) != base_types.auto else self.make_default("XpctdLngth")
+		self._XpctdLngth = value if value is not None else base_types.UninitialisedField(self, 'XpctdLngth', Min1Max256Binary, False)
 
 	@XpctdLngth.deleter
 	def XpctdLngth(self):
 		del self._XpctdLngth
-		self._XpctdLngth = None
+		self._XpctdLngth = base_types.UninitialisedField(self, 'XpctdLngth', Min1Max256Binary, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Clss', type=Min1Max256Binary, min=1, max=1, mutex_group=None, array=False),

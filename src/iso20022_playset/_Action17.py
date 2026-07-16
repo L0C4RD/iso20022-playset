@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActionMessage11 import ActionMessage11
-from ._ActionType15Code import ActionType15Code
-from ._NetworkParameters7 import NetworkParameters7
-from ._ProcessRetry3 import ProcessRetry3
-from ._ProcessTiming6 import ProcessTiming6
+from . import ActionMessage11
+from . import ActionType15Code
+from . import NetworkParameters7
+from . import ProcessRetry3
+from . import ProcessTiming6
 
 class Action17(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class Action17(base_types._BaseFieldType):
 
 	@ActnTp.setter
 	def ActnTp(self, value):
-		self._ActnTp = value if type(value) != base_types.auto else self.make_default("ActnTp")
+		self._ActnTp = value if value is not None else base_types.UninitialisedField(self, 'ActnTp', ActionType15Code, False)
 
 	@ActnTp.deleter
 	def ActnTp(self):
 		del self._ActnTp
-		self._ActnTp = None
+		self._ActnTp = base_types.UninitialisedField(self, 'ActnTp', ActionType15Code, False)
 
 	@property
 	def MsgToPres(self):
@@ -30,12 +30,12 @@ class Action17(base_types._BaseFieldType):
 
 	@MsgToPres.setter
 	def MsgToPres(self, value):
-		self._MsgToPres = value if type(value) != base_types.auto else self.make_default("MsgToPres")
+		self._MsgToPres = value if value is not None else base_types.UninitialisedField(self, 'MsgToPres', ActionMessage11, False)
 
 	@MsgToPres.deleter
 	def MsgToPres(self):
 		del self._MsgToPres
-		self._MsgToPres = None
+		self._MsgToPres = base_types.UninitialisedField(self, 'MsgToPres', ActionMessage11, False)
 
 	@property
 	def RmotAccs(self):
@@ -43,12 +43,12 @@ class Action17(base_types._BaseFieldType):
 
 	@RmotAccs.setter
 	def RmotAccs(self, value):
-		self._RmotAccs = value if type(value) != base_types.auto else self.make_default("RmotAccs")
+		self._RmotAccs = value if value is not None else base_types.UninitialisedField(self, 'RmotAccs', NetworkParameters7, False)
 
 	@RmotAccs.deleter
 	def RmotAccs(self):
 		del self._RmotAccs
-		self._RmotAccs = None
+		self._RmotAccs = base_types.UninitialisedField(self, 'RmotAccs', NetworkParameters7, False)
 
 	@property
 	def Rtry(self):
@@ -56,12 +56,12 @@ class Action17(base_types._BaseFieldType):
 
 	@Rtry.setter
 	def Rtry(self, value):
-		self._Rtry = value if type(value) != base_types.auto else self.make_default("Rtry")
+		self._Rtry = value if value is not None else base_types.UninitialisedField(self, 'Rtry', ProcessRetry3, False)
 
 	@Rtry.deleter
 	def Rtry(self):
 		del self._Rtry
-		self._Rtry = None
+		self._Rtry = base_types.UninitialisedField(self, 'Rtry', ProcessRetry3, False)
 
 	@property
 	def TmCond(self):
@@ -69,12 +69,12 @@ class Action17(base_types._BaseFieldType):
 
 	@TmCond.setter
 	def TmCond(self, value):
-		self._TmCond = value if type(value) != base_types.auto else self.make_default("TmCond")
+		self._TmCond = value if value is not None else base_types.UninitialisedField(self, 'TmCond', ProcessTiming6, False)
 
 	@TmCond.deleter
 	def TmCond(self):
 		del self._TmCond
-		self._TmCond = None
+		self._TmCond = base_types.UninitialisedField(self, 'TmCond', ProcessTiming6, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActnTp', type=ActionType15Code, min=1, max=1, mutex_group=None, array=False),

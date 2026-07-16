@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IdentificationModificationAdviceV04 import IdentificationModificationAdviceV04
+from . import IdentificationModificationAdviceV04
 
 class ACMT_022_001_04():
 
@@ -18,12 +18,12 @@ class ACMT_022_001_04():
 
 		@IdModAdvc.setter
 		def IdModAdvc(self, value):
-			self._IdModAdvc = value if type(value) != base_types.auto else self.make_default("IdModAdvc")
+			self._IdModAdvc = value if value is not None else base_types.UninitialisedField(self, 'IdModAdvc', IdentificationModificationAdviceV04, False)
 
 		@IdModAdvc.deleter
 		def IdModAdvc(self):
 			del self._IdModAdvc
-			self._IdModAdvc = None
+			self._IdModAdvc = base_types.UninitialisedField(self, 'IdModAdvc', IdentificationModificationAdviceV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='IdModAdvc', type=IdentificationModificationAdviceV04, min=1, max=1, mutex_group=None, array=False),

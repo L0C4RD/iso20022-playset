@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._PartyIdentification118Choice import PartyIdentification118Choice
+from . import ActiveCurrencyAndAmount
+from . import PartyIdentification118Choice
 
 class Guarantee1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Guarantee1(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def Prvdr(self):
@@ -27,12 +27,12 @@ class Guarantee1(base_types._BaseFieldType):
 
 	@Prvdr.setter
 	def Prvdr(self, value):
-		self._Prvdr = value if type(value) != base_types.auto else self.make_default("Prvdr")
+		self._Prvdr = value if value is not None else base_types.UninitialisedField(self, 'Prvdr', PartyIdentification118Choice, False)
 
 	@Prvdr.deleter
 	def Prvdr(self):
 		del self._Prvdr
-		self._Prvdr = None
+		self._Prvdr = base_types.UninitialisedField(self, 'Prvdr', PartyIdentification118Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

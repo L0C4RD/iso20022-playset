@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionOption43Choice import CorporateActionOption43Choice
-from ._OptionNumber1Choice import OptionNumber1Choice
-from ._Quantity55Choice import Quantity55Choice
+from . import CorporateActionOption43Choice
+from . import OptionNumber1Choice
+from . import Quantity55Choice
 
 class CorporateActionOption202(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CorporateActionOption202(base_types._BaseFieldType):
 
 	@InstdQty.setter
 	def InstdQty(self, value):
-		self._InstdQty = value if type(value) != base_types.auto else self.make_default("InstdQty")
+		self._InstdQty = value if value is not None else base_types.UninitialisedField(self, 'InstdQty', Quantity55Choice, False)
 
 	@InstdQty.deleter
 	def InstdQty(self):
 		del self._InstdQty
-		self._InstdQty = None
+		self._InstdQty = base_types.UninitialisedField(self, 'InstdQty', Quantity55Choice, False)
 
 	@property
 	def OptnNb(self):
@@ -28,12 +28,12 @@ class CorporateActionOption202(base_types._BaseFieldType):
 
 	@OptnNb.setter
 	def OptnNb(self, value):
-		self._OptnNb = value if type(value) != base_types.auto else self.make_default("OptnNb")
+		self._OptnNb = value if value is not None else base_types.UninitialisedField(self, 'OptnNb', OptionNumber1Choice, False)
 
 	@OptnNb.deleter
 	def OptnNb(self):
 		del self._OptnNb
-		self._OptnNb = None
+		self._OptnNb = base_types.UninitialisedField(self, 'OptnNb', OptionNumber1Choice, False)
 
 	@property
 	def OptnTp(self):
@@ -41,12 +41,12 @@ class CorporateActionOption202(base_types._BaseFieldType):
 
 	@OptnTp.setter
 	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != base_types.auto else self.make_default("OptnTp")
+		self._OptnTp = value if value is not None else base_types.UninitialisedField(self, 'OptnTp', CorporateActionOption43Choice, False)
 
 	@OptnTp.deleter
 	def OptnTp(self):
 		del self._OptnTp
-		self._OptnTp = None
+		self._OptnTp = base_types.UninitialisedField(self, 'OptnTp', CorporateActionOption43Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InstdQty', type=Quantity55Choice, min=1, max=1, mutex_group=None, array=False),

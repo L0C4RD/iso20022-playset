@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max30DecimalNumber import Max30DecimalNumber
-from ._SecurityIdentification19 import SecurityIdentification19
+from . import Max30DecimalNumber
+from . import SecurityIdentification19
 
 class NetworkFee1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class NetworkFee1(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
 		del self._FinInstrmId
-		self._FinInstrmId = None
+		self._FinInstrmId = base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@property
 	def NtwkFeeQty(self):
@@ -27,12 +27,12 @@ class NetworkFee1(base_types._BaseFieldType):
 
 	@NtwkFeeQty.setter
 	def NtwkFeeQty(self, value):
-		self._NtwkFeeQty = value if type(value) != base_types.auto else self.make_default("NtwkFeeQty")
+		self._NtwkFeeQty = value if value is not None else base_types.UninitialisedField(self, 'NtwkFeeQty', Max30DecimalNumber, False)
 
 	@NtwkFeeQty.deleter
 	def NtwkFeeQty(self):
 		del self._NtwkFeeQty
-		self._NtwkFeeQty = None
+		self._NtwkFeeQty = base_types.UninitialisedField(self, 'NtwkFeeQty', Max30DecimalNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),

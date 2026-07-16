@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LimitIdentification8 import LimitIdentification8
-from ._LimitOrError4Choice import LimitOrError4Choice
+from . import LimitIdentification8
+from . import LimitOrError4Choice
 
 class LimitReport8(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class LimitReport8(base_types._BaseFieldType):
 
 	@LmtId.setter
 	def LmtId(self, value):
-		self._LmtId = value if type(value) != base_types.auto else self.make_default("LmtId")
+		self._LmtId = value if value is not None else base_types.UninitialisedField(self, 'LmtId', LimitIdentification8, False)
 
 	@LmtId.deleter
 	def LmtId(self):
 		del self._LmtId
-		self._LmtId = None
+		self._LmtId = base_types.UninitialisedField(self, 'LmtId', LimitIdentification8, False)
 
 	@property
 	def LmtOrErr(self):
@@ -27,12 +27,12 @@ class LimitReport8(base_types._BaseFieldType):
 
 	@LmtOrErr.setter
 	def LmtOrErr(self, value):
-		self._LmtOrErr = value if type(value) != base_types.auto else self.make_default("LmtOrErr")
+		self._LmtOrErr = value if value is not None else base_types.UninitialisedField(self, 'LmtOrErr', LimitOrError4Choice, False)
 
 	@LmtOrErr.deleter
 	def LmtOrErr(self):
 		del self._LmtOrErr
-		self._LmtOrErr = None
+		self._LmtOrErr = base_types.UninitialisedField(self, 'LmtOrErr', LimitOrError4Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LmtId', type=LimitIdentification8, min=1, max=1, mutex_group=None, array=False),

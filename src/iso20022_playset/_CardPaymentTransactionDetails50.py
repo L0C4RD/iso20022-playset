@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ISODate import ISODate
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max10000Binary import Max10000Binary
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ActiveCurrencyCode
+from . import ISODate
+from . import ImpliedCurrencyAndAmount
+from . import Max10000Binary
+from . import TrueFalseIndicator
 
 class CardPaymentTransactionDetails50(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class CardPaymentTransactionDetails50(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@property
 	def ICCRltdData(self):
@@ -30,12 +30,12 @@ class CardPaymentTransactionDetails50(base_types._BaseFieldType):
 
 	@ICCRltdData.setter
 	def ICCRltdData(self, value):
-		self._ICCRltdData = value if type(value) != base_types.auto else self.make_default("ICCRltdData")
+		self._ICCRltdData = value if value is not None else base_types.UninitialisedField(self, 'ICCRltdData', Max10000Binary, False)
 
 	@ICCRltdData.deleter
 	def ICCRltdData(self):
 		del self._ICCRltdData
-		self._ICCRltdData = None
+		self._ICCRltdData = base_types.UninitialisedField(self, 'ICCRltdData', Max10000Binary, False)
 
 	@property
 	def KeepAuthstnOpn(self):
@@ -43,12 +43,12 @@ class CardPaymentTransactionDetails50(base_types._BaseFieldType):
 
 	@KeepAuthstnOpn.setter
 	def KeepAuthstnOpn(self, value):
-		self._KeepAuthstnOpn = value if type(value) != base_types.auto else self.make_default("KeepAuthstnOpn")
+		self._KeepAuthstnOpn = value if value is not None else base_types.UninitialisedField(self, 'KeepAuthstnOpn', TrueFalseIndicator, False)
 
 	@KeepAuthstnOpn.deleter
 	def KeepAuthstnOpn(self):
 		del self._KeepAuthstnOpn
-		self._KeepAuthstnOpn = None
+		self._KeepAuthstnOpn = base_types.UninitialisedField(self, 'KeepAuthstnOpn', TrueFalseIndicator, False)
 
 	@property
 	def TtlAmt(self):
@@ -56,12 +56,12 @@ class CardPaymentTransactionDetails50(base_types._BaseFieldType):
 
 	@TtlAmt.setter
 	def TtlAmt(self, value):
-		self._TtlAmt = value if type(value) != base_types.auto else self.make_default("TtlAmt")
+		self._TtlAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlAmt', ImpliedCurrencyAndAmount, False)
 
 	@TtlAmt.deleter
 	def TtlAmt(self):
 		del self._TtlAmt
-		self._TtlAmt = None
+		self._TtlAmt = base_types.UninitialisedField(self, 'TtlAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def VldtyDt(self):
@@ -69,12 +69,12 @@ class CardPaymentTransactionDetails50(base_types._BaseFieldType):
 
 	@VldtyDt.setter
 	def VldtyDt(self, value):
-		self._VldtyDt = value if type(value) != base_types.auto else self.make_default("VldtyDt")
+		self._VldtyDt = value if value is not None else base_types.UninitialisedField(self, 'VldtyDt', ISODate, False)
 
 	@VldtyDt.deleter
 	def VldtyDt(self):
 		del self._VldtyDt
-		self._VldtyDt = None
+		self._VldtyDt = base_types.UninitialisedField(self, 'VldtyDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),

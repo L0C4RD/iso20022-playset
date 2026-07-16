@@ -2,23 +2,23 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._AmountType4Choice import AmountType4Choice
-from ._CashAccount40 import CashAccount40
-from ._ChargeBearerType1Code import ChargeBearerType1Code
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._ISODate import ISODate
-from ._InstructionForCreditorAgent3 import InstructionForCreditorAgent3
-from ._InstructionForNextAgent1 import InstructionForNextAgent1
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
-from ._PartyIdentification272 import PartyIdentification272
-from ._PaymentTypeInformation27 import PaymentTypeInformation27
-from ._Purpose2Choice import Purpose2Choice
-from ._RemittanceInformation22 import RemittanceInformation22
-from ._RemittanceLocation8 import RemittanceLocation8
-from ._SettlementDateTimeIndication1 import SettlementDateTimeIndication1
-from ._SettlementInstruction16 import SettlementInstruction16
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import AmountType4Choice
+from . import CashAccount40
+from . import ChargeBearerType1Code
+from . import DateAndDateTime2Choice
+from . import ISODate
+from . import InstructionForCreditorAgent3
+from . import InstructionForNextAgent1
+from . import Max140Text
+from . import Max35Text
+from . import PartyIdentification272
+from . import PaymentTypeInformation27
+from . import Purpose2Choice
+from . import RemittanceInformation22
+from . import RemittanceLocation8
+from . import SettlementDateTimeIndication1
+from . import SettlementInstruction16
 
 class RequestedModification11(base_types._BaseFieldType):
 
@@ -29,12 +29,12 @@ class RequestedModification11(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', AmountType4Choice, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', AmountType4Choice, False)
 
 	@property
 	def Cdtr(self):
@@ -42,12 +42,12 @@ class RequestedModification11(base_types._BaseFieldType):
 
 	@Cdtr.setter
 	def Cdtr(self, value):
-		self._Cdtr = value if type(value) != base_types.auto else self.make_default("Cdtr")
+		self._Cdtr = value if value is not None else base_types.UninitialisedField(self, 'Cdtr', PartyIdentification272, False)
 
 	@Cdtr.deleter
 	def Cdtr(self):
 		del self._Cdtr
-		self._Cdtr = None
+		self._Cdtr = base_types.UninitialisedField(self, 'Cdtr', PartyIdentification272, False)
 
 	@property
 	def CdtrAcct(self):
@@ -55,12 +55,12 @@ class RequestedModification11(base_types._BaseFieldType):
 
 	@CdtrAcct.setter
 	def CdtrAcct(self, value):
-		self._CdtrAcct = value if type(value) != base_types.auto else self.make_default("CdtrAcct")
+		self._CdtrAcct = value if value is not None else base_types.UninitialisedField(self, 'CdtrAcct', CashAccount40, False)
 
 	@CdtrAcct.deleter
 	def CdtrAcct(self):
 		del self._CdtrAcct
-		self._CdtrAcct = None
+		self._CdtrAcct = base_types.UninitialisedField(self, 'CdtrAcct', CashAccount40, False)
 
 	@property
 	def CdtrAgtAcct(self):
@@ -68,12 +68,12 @@ class RequestedModification11(base_types._BaseFieldType):
 
 	@CdtrAgtAcct.setter
 	def CdtrAgtAcct(self, value):
-		self._CdtrAgtAcct = value if type(value) != base_types.auto else self.make_default("CdtrAgtAcct")
+		self._CdtrAgtAcct = value if value is not None else base_types.UninitialisedField(self, 'CdtrAgtAcct', CashAccount40, False)
 
 	@CdtrAgtAcct.deleter
 	def CdtrAgtAcct(self):
 		del self._CdtrAgtAcct
-		self._CdtrAgtAcct = None
+		self._CdtrAgtAcct = base_types.UninitialisedField(self, 'CdtrAgtAcct', CashAccount40, False)
 
 	@property
 	def ChrgBr(self):
@@ -81,12 +81,12 @@ class RequestedModification11(base_types._BaseFieldType):
 
 	@ChrgBr.setter
 	def ChrgBr(self, value):
-		self._ChrgBr = value if type(value) != base_types.auto else self.make_default("ChrgBr")
+		self._ChrgBr = value if value is not None else base_types.UninitialisedField(self, 'ChrgBr', ChargeBearerType1Code, False)
 
 	@ChrgBr.deleter
 	def ChrgBr(self):
 		del self._ChrgBr
-		self._ChrgBr = None
+		self._ChrgBr = base_types.UninitialisedField(self, 'ChrgBr', ChargeBearerType1Code, False)
 
 	@property
 	def Dbtr(self):
@@ -94,12 +94,12 @@ class RequestedModification11(base_types._BaseFieldType):
 
 	@Dbtr.setter
 	def Dbtr(self, value):
-		self._Dbtr = value if type(value) != base_types.auto else self.make_default("Dbtr")
+		self._Dbtr = value if value is not None else base_types.UninitialisedField(self, 'Dbtr', PartyIdentification272, False)
 
 	@Dbtr.deleter
 	def Dbtr(self):
 		del self._Dbtr
-		self._Dbtr = None
+		self._Dbtr = base_types.UninitialisedField(self, 'Dbtr', PartyIdentification272, False)
 
 	@property
 	def DbtrAcct(self):
@@ -107,12 +107,12 @@ class RequestedModification11(base_types._BaseFieldType):
 
 	@DbtrAcct.setter
 	def DbtrAcct(self, value):
-		self._DbtrAcct = value if type(value) != base_types.auto else self.make_default("DbtrAcct")
+		self._DbtrAcct = value if value is not None else base_types.UninitialisedField(self, 'DbtrAcct', CashAccount40, False)
 
 	@DbtrAcct.deleter
 	def DbtrAcct(self):
 		del self._DbtrAcct
-		self._DbtrAcct = None
+		self._DbtrAcct = base_types.UninitialisedField(self, 'DbtrAcct', CashAccount40, False)
 
 	@property
 	def DbtrAgtAcct(self):
@@ -120,12 +120,12 @@ class RequestedModification11(base_types._BaseFieldType):
 
 	@DbtrAgtAcct.setter
 	def DbtrAgtAcct(self, value):
-		self._DbtrAgtAcct = value if type(value) != base_types.auto else self.make_default("DbtrAgtAcct")
+		self._DbtrAgtAcct = value if value is not None else base_types.UninitialisedField(self, 'DbtrAgtAcct', CashAccount40, False)
 
 	@DbtrAgtAcct.deleter
 	def DbtrAgtAcct(self):
 		del self._DbtrAgtAcct
-		self._DbtrAgtAcct = None
+		self._DbtrAgtAcct = base_types.UninitialisedField(self, 'DbtrAgtAcct', CashAccount40, False)
 
 	@property
 	def EndToEndId(self):
@@ -133,12 +133,12 @@ class RequestedModification11(base_types._BaseFieldType):
 
 	@EndToEndId.setter
 	def EndToEndId(self, value):
-		self._EndToEndId = value if type(value) != base_types.auto else self.make_default("EndToEndId")
+		self._EndToEndId = value if value is not None else base_types.UninitialisedField(self, 'EndToEndId', Max35Text, False)
 
 	@EndToEndId.deleter
 	def EndToEndId(self):
 		del self._EndToEndId
-		self._EndToEndId = None
+		self._EndToEndId = base_types.UninitialisedField(self, 'EndToEndId', Max35Text, False)
 
 	@property
 	def InstrForCdtrAgt(self):
@@ -146,12 +146,12 @@ class RequestedModification11(base_types._BaseFieldType):
 
 	@InstrForCdtrAgt.setter
 	def InstrForCdtrAgt(self, value):
-		self._InstrForCdtrAgt = value if type(value) != base_types.auto else self.make_default("InstrForCdtrAgt")
+		self._InstrForCdtrAgt = value if value is not None else base_types.UninitialisedField(self, 'InstrForCdtrAgt', InstructionForCreditorAgent3, True)
 
 	@InstrForCdtrAgt.deleter
 	def InstrForCdtrAgt(self):
 		del self._InstrForCdtrAgt
-		self._InstrForCdtrAgt = None
+		self._InstrForCdtrAgt = base_types.UninitialisedField(self, 'InstrForCdtrAgt', InstructionForCreditorAgent3, True)
 
 	@property
 	def InstrForDbtrAgt(self):
@@ -159,12 +159,12 @@ class RequestedModification11(base_types._BaseFieldType):
 
 	@InstrForDbtrAgt.setter
 	def InstrForDbtrAgt(self, value):
-		self._InstrForDbtrAgt = value if type(value) != base_types.auto else self.make_default("InstrForDbtrAgt")
+		self._InstrForDbtrAgt = value if value is not None else base_types.UninitialisedField(self, 'InstrForDbtrAgt', Max140Text, False)
 
 	@InstrForDbtrAgt.deleter
 	def InstrForDbtrAgt(self):
 		del self._InstrForDbtrAgt
-		self._InstrForDbtrAgt = None
+		self._InstrForDbtrAgt = base_types.UninitialisedField(self, 'InstrForDbtrAgt', Max140Text, False)
 
 	@property
 	def InstrForNxtAgt(self):
@@ -172,12 +172,12 @@ class RequestedModification11(base_types._BaseFieldType):
 
 	@InstrForNxtAgt.setter
 	def InstrForNxtAgt(self, value):
-		self._InstrForNxtAgt = value if type(value) != base_types.auto else self.make_default("InstrForNxtAgt")
+		self._InstrForNxtAgt = value if value is not None else base_types.UninitialisedField(self, 'InstrForNxtAgt', InstructionForNextAgent1, True)
 
 	@InstrForNxtAgt.deleter
 	def InstrForNxtAgt(self):
 		del self._InstrForNxtAgt
-		self._InstrForNxtAgt = None
+		self._InstrForNxtAgt = base_types.UninitialisedField(self, 'InstrForNxtAgt', InstructionForNextAgent1, True)
 
 	@property
 	def InstrId(self):
@@ -185,12 +185,12 @@ class RequestedModification11(base_types._BaseFieldType):
 
 	@InstrId.setter
 	def InstrId(self, value):
-		self._InstrId = value if type(value) != base_types.auto else self.make_default("InstrId")
+		self._InstrId = value if value is not None else base_types.UninitialisedField(self, 'InstrId', Max35Text, False)
 
 	@InstrId.deleter
 	def InstrId(self):
 		del self._InstrId
-		self._InstrId = None
+		self._InstrId = base_types.UninitialisedField(self, 'InstrId', Max35Text, False)
 
 	@property
 	def IntrBkSttlmAmt(self):
@@ -198,12 +198,12 @@ class RequestedModification11(base_types._BaseFieldType):
 
 	@IntrBkSttlmAmt.setter
 	def IntrBkSttlmAmt(self, value):
-		self._IntrBkSttlmAmt = value if type(value) != base_types.auto else self.make_default("IntrBkSttlmAmt")
+		self._IntrBkSttlmAmt = value if value is not None else base_types.UninitialisedField(self, 'IntrBkSttlmAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@IntrBkSttlmAmt.deleter
 	def IntrBkSttlmAmt(self):
 		del self._IntrBkSttlmAmt
-		self._IntrBkSttlmAmt = None
+		self._IntrBkSttlmAmt = base_types.UninitialisedField(self, 'IntrBkSttlmAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def IntrBkSttlmDt(self):
@@ -211,12 +211,12 @@ class RequestedModification11(base_types._BaseFieldType):
 
 	@IntrBkSttlmDt.setter
 	def IntrBkSttlmDt(self, value):
-		self._IntrBkSttlmDt = value if type(value) != base_types.auto else self.make_default("IntrBkSttlmDt")
+		self._IntrBkSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'IntrBkSttlmDt', ISODate, False)
 
 	@IntrBkSttlmDt.deleter
 	def IntrBkSttlmDt(self):
 		del self._IntrBkSttlmDt
-		self._IntrBkSttlmDt = None
+		self._IntrBkSttlmDt = base_types.UninitialisedField(self, 'IntrBkSttlmDt', ISODate, False)
 
 	@property
 	def PmtTpInf(self):
@@ -224,12 +224,12 @@ class RequestedModification11(base_types._BaseFieldType):
 
 	@PmtTpInf.setter
 	def PmtTpInf(self, value):
-		self._PmtTpInf = value if type(value) != base_types.auto else self.make_default("PmtTpInf")
+		self._PmtTpInf = value if value is not None else base_types.UninitialisedField(self, 'PmtTpInf', PaymentTypeInformation27, False)
 
 	@PmtTpInf.deleter
 	def PmtTpInf(self):
 		del self._PmtTpInf
-		self._PmtTpInf = None
+		self._PmtTpInf = base_types.UninitialisedField(self, 'PmtTpInf', PaymentTypeInformation27, False)
 
 	@property
 	def Purp(self):
@@ -237,12 +237,12 @@ class RequestedModification11(base_types._BaseFieldType):
 
 	@Purp.setter
 	def Purp(self, value):
-		self._Purp = value if type(value) != base_types.auto else self.make_default("Purp")
+		self._Purp = value if value is not None else base_types.UninitialisedField(self, 'Purp', Purpose2Choice, False)
 
 	@Purp.deleter
 	def Purp(self):
 		del self._Purp
-		self._Purp = None
+		self._Purp = base_types.UninitialisedField(self, 'Purp', Purpose2Choice, False)
 
 	@property
 	def ReqdColltnDt(self):
@@ -250,12 +250,12 @@ class RequestedModification11(base_types._BaseFieldType):
 
 	@ReqdColltnDt.setter
 	def ReqdColltnDt(self, value):
-		self._ReqdColltnDt = value if type(value) != base_types.auto else self.make_default("ReqdColltnDt")
+		self._ReqdColltnDt = value if value is not None else base_types.UninitialisedField(self, 'ReqdColltnDt', ISODate, False)
 
 	@ReqdColltnDt.deleter
 	def ReqdColltnDt(self):
 		del self._ReqdColltnDt
-		self._ReqdColltnDt = None
+		self._ReqdColltnDt = base_types.UninitialisedField(self, 'ReqdColltnDt', ISODate, False)
 
 	@property
 	def ReqdExctnDt(self):
@@ -263,12 +263,12 @@ class RequestedModification11(base_types._BaseFieldType):
 
 	@ReqdExctnDt.setter
 	def ReqdExctnDt(self, value):
-		self._ReqdExctnDt = value if type(value) != base_types.auto else self.make_default("ReqdExctnDt")
+		self._ReqdExctnDt = value if value is not None else base_types.UninitialisedField(self, 'ReqdExctnDt', DateAndDateTime2Choice, False)
 
 	@ReqdExctnDt.deleter
 	def ReqdExctnDt(self):
 		del self._ReqdExctnDt
-		self._ReqdExctnDt = None
+		self._ReqdExctnDt = base_types.UninitialisedField(self, 'ReqdExctnDt', DateAndDateTime2Choice, False)
 
 	@property
 	def RltdRmtInf(self):
@@ -276,12 +276,12 @@ class RequestedModification11(base_types._BaseFieldType):
 
 	@RltdRmtInf.setter
 	def RltdRmtInf(self, value):
-		self._RltdRmtInf = value if type(value) != base_types.auto else self.make_default("RltdRmtInf")
+		self._RltdRmtInf = value if value is not None else base_types.UninitialisedField(self, 'RltdRmtInf', RemittanceLocation8, True)
 
 	@RltdRmtInf.deleter
 	def RltdRmtInf(self):
 		del self._RltdRmtInf
-		self._RltdRmtInf = None
+		self._RltdRmtInf = base_types.UninitialisedField(self, 'RltdRmtInf', RemittanceLocation8, True)
 
 	@property
 	def RmtInf(self):
@@ -289,12 +289,12 @@ class RequestedModification11(base_types._BaseFieldType):
 
 	@RmtInf.setter
 	def RmtInf(self, value):
-		self._RmtInf = value if type(value) != base_types.auto else self.make_default("RmtInf")
+		self._RmtInf = value if value is not None else base_types.UninitialisedField(self, 'RmtInf', RemittanceInformation22, False)
 
 	@RmtInf.deleter
 	def RmtInf(self):
 		del self._RmtInf
-		self._RmtInf = None
+		self._RmtInf = base_types.UninitialisedField(self, 'RmtInf', RemittanceInformation22, False)
 
 	@property
 	def SttlmInf(self):
@@ -302,12 +302,12 @@ class RequestedModification11(base_types._BaseFieldType):
 
 	@SttlmInf.setter
 	def SttlmInf(self, value):
-		self._SttlmInf = value if type(value) != base_types.auto else self.make_default("SttlmInf")
+		self._SttlmInf = value if value is not None else base_types.UninitialisedField(self, 'SttlmInf', SettlementInstruction16, False)
 
 	@SttlmInf.deleter
 	def SttlmInf(self):
 		del self._SttlmInf
-		self._SttlmInf = None
+		self._SttlmInf = base_types.UninitialisedField(self, 'SttlmInf', SettlementInstruction16, False)
 
 	@property
 	def SttlmTmIndctn(self):
@@ -315,12 +315,12 @@ class RequestedModification11(base_types._BaseFieldType):
 
 	@SttlmTmIndctn.setter
 	def SttlmTmIndctn(self, value):
-		self._SttlmTmIndctn = value if type(value) != base_types.auto else self.make_default("SttlmTmIndctn")
+		self._SttlmTmIndctn = value if value is not None else base_types.UninitialisedField(self, 'SttlmTmIndctn', SettlementDateTimeIndication1, False)
 
 	@SttlmTmIndctn.deleter
 	def SttlmTmIndctn(self):
 		del self._SttlmTmIndctn
-		self._SttlmTmIndctn = None
+		self._SttlmTmIndctn = base_types.UninitialisedField(self, 'SttlmTmIndctn', SettlementDateTimeIndication1, False)
 
 	@property
 	def TxId(self):
@@ -328,12 +328,12 @@ class RequestedModification11(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	@property
 	def UltmtCdtr(self):
@@ -341,12 +341,12 @@ class RequestedModification11(base_types._BaseFieldType):
 
 	@UltmtCdtr.setter
 	def UltmtCdtr(self, value):
-		self._UltmtCdtr = value if type(value) != base_types.auto else self.make_default("UltmtCdtr")
+		self._UltmtCdtr = value if value is not None else base_types.UninitialisedField(self, 'UltmtCdtr', PartyIdentification272, False)
 
 	@UltmtCdtr.deleter
 	def UltmtCdtr(self):
 		del self._UltmtCdtr
-		self._UltmtCdtr = None
+		self._UltmtCdtr = base_types.UninitialisedField(self, 'UltmtCdtr', PartyIdentification272, False)
 
 	@property
 	def UltmtDbtr(self):
@@ -354,12 +354,12 @@ class RequestedModification11(base_types._BaseFieldType):
 
 	@UltmtDbtr.setter
 	def UltmtDbtr(self, value):
-		self._UltmtDbtr = value if type(value) != base_types.auto else self.make_default("UltmtDbtr")
+		self._UltmtDbtr = value if value is not None else base_types.UninitialisedField(self, 'UltmtDbtr', PartyIdentification272, False)
 
 	@UltmtDbtr.deleter
 	def UltmtDbtr(self):
 		del self._UltmtDbtr
-		self._UltmtDbtr = None
+		self._UltmtDbtr = base_types.UninitialisedField(self, 'UltmtDbtr', PartyIdentification272, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=AmountType4Choice, min=0, max=1, mutex_group=None, array=False),

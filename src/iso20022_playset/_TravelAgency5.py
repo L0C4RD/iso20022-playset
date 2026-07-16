@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._Address4 import Address4
-from ._ContactBusiness2 import ContactBusiness2
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
-from ._TravelAgencyPackage2 import TravelAgencyPackage2
+from . import ATICALaxProcessing
+from . import Address4
+from . import ContactBusiness2
+from . import Max35Text
+from . import Max70Text
+from . import TravelAgencyPackage2
 
 class TravelAgency5(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class TravelAgency5(base_types._BaseFieldType):
 
 	@Adr.setter
 	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+		self._Adr = value if value is not None else base_types.UninitialisedField(self, 'Adr', Address4, False)
 
 	@Adr.deleter
 	def Adr(self):
 		del self._Adr
-		self._Adr = None
+		self._Adr = base_types.UninitialisedField(self, 'Adr', Address4, False)
 
 	@property
 	def Assgnr(self):
@@ -31,12 +31,12 @@ class TravelAgency5(base_types._BaseFieldType):
 
 	@Assgnr.setter
 	def Assgnr(self, value):
-		self._Assgnr = value if type(value) != base_types.auto else self.make_default("Assgnr")
+		self._Assgnr = value if value is not None else base_types.UninitialisedField(self, 'Assgnr', Max35Text, False)
 
 	@Assgnr.deleter
 	def Assgnr(self):
 		del self._Assgnr
-		self._Assgnr = None
+		self._Assgnr = base_types.UninitialisedField(self, 'Assgnr', Max35Text, False)
 
 	@property
 	def Cd(self):
@@ -44,12 +44,12 @@ class TravelAgency5(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
+		self._Cd = value if value is not None else base_types.UninitialisedField(self, 'Cd', Max35Text, False)
 
 	@Cd.deleter
 	def Cd(self):
 		del self._Cd
-		self._Cd = None
+		self._Cd = base_types.UninitialisedField(self, 'Cd', Max35Text, False)
 
 	@property
 	def Ctct(self):
@@ -57,12 +57,12 @@ class TravelAgency5(base_types._BaseFieldType):
 
 	@Ctct.setter
 	def Ctct(self, value):
-		self._Ctct = value if type(value) != base_types.auto else self.make_default("Ctct")
+		self._Ctct = value if value is not None else base_types.UninitialisedField(self, 'Ctct', ContactBusiness2, False)
 
 	@Ctct.deleter
 	def Ctct(self):
 		del self._Ctct
-		self._Ctct = None
+		self._Ctct = base_types.UninitialisedField(self, 'Ctct', ContactBusiness2, False)
 
 	@property
 	def IATACd(self):
@@ -70,12 +70,12 @@ class TravelAgency5(base_types._BaseFieldType):
 
 	@IATACd.setter
 	def IATACd(self, value):
-		self._IATACd = value if type(value) != base_types.auto else self.make_default("IATACd")
+		self._IATACd = value if value is not None else base_types.UninitialisedField(self, 'IATACd', Max35Text, False)
 
 	@IATACd.deleter
 	def IATACd(self):
 		del self._IATACd
-		self._IATACd = None
+		self._IATACd = base_types.UninitialisedField(self, 'IATACd', Max35Text, False)
 
 	@property
 	def Nm(self):
@@ -83,12 +83,12 @@ class TravelAgency5(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max70Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max70Text, False)
 
 	@property
 	def NtlData(self):
@@ -96,12 +96,12 @@ class TravelAgency5(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def PrvtData(self):
@@ -109,12 +109,12 @@ class TravelAgency5(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def ShrtNm(self):
@@ -122,12 +122,12 @@ class TravelAgency5(base_types._BaseFieldType):
 
 	@ShrtNm.setter
 	def ShrtNm(self, value):
-		self._ShrtNm = value if type(value) != base_types.auto else self.make_default("ShrtNm")
+		self._ShrtNm = value if value is not None else base_types.UninitialisedField(self, 'ShrtNm', Max35Text, False)
 
 	@ShrtNm.deleter
 	def ShrtNm(self):
 		del self._ShrtNm
-		self._ShrtNm = None
+		self._ShrtNm = base_types.UninitialisedField(self, 'ShrtNm', Max35Text, False)
 
 	@property
 	def TrvlPackg(self):
@@ -135,12 +135,12 @@ class TravelAgency5(base_types._BaseFieldType):
 
 	@TrvlPackg.setter
 	def TrvlPackg(self, value):
-		self._TrvlPackg = value if type(value) != base_types.auto else self.make_default("TrvlPackg")
+		self._TrvlPackg = value if value is not None else base_types.UninitialisedField(self, 'TrvlPackg', TravelAgencyPackage2, True)
 
 	@TrvlPackg.deleter
 	def TrvlPackg(self):
 		del self._TrvlPackg
-		self._TrvlPackg = None
+		self._TrvlPackg = base_types.UninitialisedField(self, 'TrvlPackg', TravelAgencyPackage2, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Adr', type=Address4, min=0, max=1, mutex_group=None, array=False),

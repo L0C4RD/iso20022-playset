@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MeetingCancellationReason2 import MeetingCancellationReason2
-from ._MeetingReference10 import MeetingReference10
-from ._SecurityPosition23 import SecurityPosition23
-from ._SupplementaryData1 import SupplementaryData1
+from . import MeetingCancellationReason2
+from . import MeetingReference10
+from . import SecurityPosition23
+from . import SupplementaryData1
 
 class MeetingCancellationV10(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class MeetingCancellationV10(base_types._BaseFieldType):
 
 	@MtgRef.setter
 	def MtgRef(self, value):
-		self._MtgRef = value if type(value) != base_types.auto else self.make_default("MtgRef")
+		self._MtgRef = value if value is not None else base_types.UninitialisedField(self, 'MtgRef', MeetingReference10, False)
 
 	@MtgRef.deleter
 	def MtgRef(self):
 		del self._MtgRef
-		self._MtgRef = None
+		self._MtgRef = base_types.UninitialisedField(self, 'MtgRef', MeetingReference10, False)
 
 	@property
 	def Rsn(self):
@@ -29,12 +29,12 @@ class MeetingCancellationV10(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', MeetingCancellationReason2, False)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', MeetingCancellationReason2, False)
 
 	@property
 	def Scty(self):
@@ -42,12 +42,12 @@ class MeetingCancellationV10(base_types._BaseFieldType):
 
 	@Scty.setter
 	def Scty(self, value):
-		self._Scty = value if type(value) != base_types.auto else self.make_default("Scty")
+		self._Scty = value if value is not None else base_types.UninitialisedField(self, 'Scty', SecurityPosition23, True)
 
 	@Scty.deleter
 	def Scty(self):
 		del self._Scty
-		self._Scty = None
+		self._Scty = base_types.UninitialisedField(self, 'Scty', SecurityPosition23, True)
 
 	@property
 	def SplmtryData(self):
@@ -55,12 +55,12 @@ class MeetingCancellationV10(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MtgRef', type=MeetingReference10, min=1, max=1, mutex_group=None, array=False),

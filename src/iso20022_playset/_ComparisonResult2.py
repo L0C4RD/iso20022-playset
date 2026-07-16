@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Addition2 import Addition2
-from ._Deletion2 import Deletion2
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
-from ._Number import Number
-from ._Replacement2 import Replacement2
+from . import Addition2
+from . import Deletion2
+from . import Max350Text
+from . import Max35Text
+from . import Number
+from . import Replacement2
 
 class ComparisonResult2(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class ComparisonResult2(base_types._BaseFieldType):
 
 	@Addtn.setter
 	def Addtn(self, value):
-		self._Addtn = value if type(value) != base_types.auto else self.make_default("Addtn")
+		self._Addtn = value if value is not None else base_types.UninitialisedField(self, 'Addtn', Addition2, False)
 
 	@Addtn.deleter
 	def Addtn(self):
 		del self._Addtn
-		self._Addtn = None
+		self._Addtn = base_types.UninitialisedField(self, 'Addtn', Addition2, False)
 
 	@property
 	def Deltn(self):
@@ -31,12 +31,12 @@ class ComparisonResult2(base_types._BaseFieldType):
 
 	@Deltn.setter
 	def Deltn(self, value):
-		self._Deltn = value if type(value) != base_types.auto else self.make_default("Deltn")
+		self._Deltn = value if value is not None else base_types.UninitialisedField(self, 'Deltn', Deletion2, False)
 
 	@Deltn.deleter
 	def Deltn(self):
 		del self._Deltn
-		self._Deltn = None
+		self._Deltn = base_types.UninitialisedField(self, 'Deltn', Deletion2, False)
 
 	@property
 	def ElmtNm(self):
@@ -44,12 +44,12 @@ class ComparisonResult2(base_types._BaseFieldType):
 
 	@ElmtNm.setter
 	def ElmtNm(self, value):
-		self._ElmtNm = value if type(value) != base_types.auto else self.make_default("ElmtNm")
+		self._ElmtNm = value if value is not None else base_types.UninitialisedField(self, 'ElmtNm', Max35Text, False)
 
 	@ElmtNm.deleter
 	def ElmtNm(self):
 		del self._ElmtNm
-		self._ElmtNm = None
+		self._ElmtNm = base_types.UninitialisedField(self, 'ElmtNm', Max35Text, False)
 
 	@property
 	def ElmtPth(self):
@@ -57,12 +57,12 @@ class ComparisonResult2(base_types._BaseFieldType):
 
 	@ElmtPth.setter
 	def ElmtPth(self, value):
-		self._ElmtPth = value if type(value) != base_types.auto else self.make_default("ElmtPth")
+		self._ElmtPth = value if value is not None else base_types.UninitialisedField(self, 'ElmtPth', Max350Text, False)
 
 	@ElmtPth.deleter
 	def ElmtPth(self):
 		del self._ElmtPth
-		self._ElmtPth = None
+		self._ElmtPth = base_types.UninitialisedField(self, 'ElmtPth', Max350Text, False)
 
 	@property
 	def ElmtSeqNb(self):
@@ -70,12 +70,12 @@ class ComparisonResult2(base_types._BaseFieldType):
 
 	@ElmtSeqNb.setter
 	def ElmtSeqNb(self, value):
-		self._ElmtSeqNb = value if type(value) != base_types.auto else self.make_default("ElmtSeqNb")
+		self._ElmtSeqNb = value if value is not None else base_types.UninitialisedField(self, 'ElmtSeqNb', Number, False)
 
 	@ElmtSeqNb.deleter
 	def ElmtSeqNb(self):
 		del self._ElmtSeqNb
-		self._ElmtSeqNb = None
+		self._ElmtSeqNb = base_types.UninitialisedField(self, 'ElmtSeqNb', Number, False)
 
 	@property
 	def Rplcmnt(self):
@@ -83,12 +83,12 @@ class ComparisonResult2(base_types._BaseFieldType):
 
 	@Rplcmnt.setter
 	def Rplcmnt(self, value):
-		self._Rplcmnt = value if type(value) != base_types.auto else self.make_default("Rplcmnt")
+		self._Rplcmnt = value if value is not None else base_types.UninitialisedField(self, 'Rplcmnt', Replacement2, False)
 
 	@Rplcmnt.deleter
 	def Rplcmnt(self):
 		del self._Rplcmnt
-		self._Rplcmnt = None
+		self._Rplcmnt = base_types.UninitialisedField(self, 'Rplcmnt', Replacement2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Addtn', type=Addition2, min=0, max=1, mutex_group=1, array=False),

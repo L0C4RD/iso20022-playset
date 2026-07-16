@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
-from ._CollateralParties4 import CollateralParties4
-from ._Reference21 import Reference21
-from ._RemovalProcessing2Choice import RemovalProcessing2Choice
-from ._RemovalTypeAndReason1 import RemovalTypeAndReason1
-from ._SecuritiesAccount19 import SecuritiesAccount19
+from . import BlockChainAddressWallet3
+from . import CollateralParties4
+from . import Reference21
+from . import RemovalProcessing2Choice
+from . import RemovalTypeAndReason1
+from . import SecuritiesAccount19
 
 class RequestDetails28(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class RequestDetails28(base_types._BaseFieldType):
 
 	@BlckChainAdrOrWllt.setter
 	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
+		self._BlckChainAdrOrWllt = value if value is not None else base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet3, False)
 
 	@BlckChainAdrOrWllt.deleter
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+		self._BlckChainAdrOrWllt = base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet3, False)
 
 	@property
 	def CtrPty(self):
@@ -31,12 +31,12 @@ class RequestDetails28(base_types._BaseFieldType):
 
 	@CtrPty.setter
 	def CtrPty(self, value):
-		self._CtrPty = value if type(value) != base_types.auto else self.make_default("CtrPty")
+		self._CtrPty = value if value is not None else base_types.UninitialisedField(self, 'CtrPty', CollateralParties4, False)
 
 	@CtrPty.deleter
 	def CtrPty(self):
 		del self._CtrPty
-		self._CtrPty = None
+		self._CtrPty = base_types.UninitialisedField(self, 'CtrPty', CollateralParties4, False)
 
 	@property
 	def FinInstrmAndAttrbts(self):
@@ -44,12 +44,12 @@ class RequestDetails28(base_types._BaseFieldType):
 
 	@FinInstrmAndAttrbts.setter
 	def FinInstrmAndAttrbts(self, value):
-		self._FinInstrmAndAttrbts = value if type(value) != base_types.auto else self.make_default("FinInstrmAndAttrbts")
+		self._FinInstrmAndAttrbts = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmAndAttrbts', RemovalProcessing2Choice, True)
 
 	@FinInstrmAndAttrbts.deleter
 	def FinInstrmAndAttrbts(self):
 		del self._FinInstrmAndAttrbts
-		self._FinInstrmAndAttrbts = None
+		self._FinInstrmAndAttrbts = base_types.UninitialisedField(self, 'FinInstrmAndAttrbts', RemovalProcessing2Choice, True)
 
 	@property
 	def Ref(self):
@@ -57,12 +57,12 @@ class RequestDetails28(base_types._BaseFieldType):
 
 	@Ref.setter
 	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+		self._Ref = value if value is not None else base_types.UninitialisedField(self, 'Ref', Reference21, False)
 
 	@Ref.deleter
 	def Ref(self):
 		del self._Ref
-		self._Ref = None
+		self._Ref = base_types.UninitialisedField(self, 'Ref', Reference21, False)
 
 	@property
 	def Rmvl(self):
@@ -70,12 +70,12 @@ class RequestDetails28(base_types._BaseFieldType):
 
 	@Rmvl.setter
 	def Rmvl(self, value):
-		self._Rmvl = value if type(value) != base_types.auto else self.make_default("Rmvl")
+		self._Rmvl = value if value is not None else base_types.UninitialisedField(self, 'Rmvl', RemovalTypeAndReason1, False)
 
 	@Rmvl.deleter
 	def Rmvl(self):
 		del self._Rmvl
-		self._Rmvl = None
+		self._Rmvl = base_types.UninitialisedField(self, 'Rmvl', RemovalTypeAndReason1, False)
 
 	@property
 	def SfkpgAcct(self):
@@ -83,12 +83,12 @@ class RequestDetails28(base_types._BaseFieldType):
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
-		self._SfkpgAcct = None
+		self._SfkpgAcct = base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),

@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._AdditionalBalanceInformation2 import AdditionalBalanceInformation2
-from ._BalanceQuantity1Choice import BalanceQuantity1Choice
-from ._ForeignExchangeTerms6 import ForeignExchangeTerms6
-from ._Number import Number
-from ._PlusOrMinusIndicator import PlusOrMinusIndicator
-from ._PriceInformation2 import PriceInformation2
-from ._SafekeepingPlaceFormatChoice import SafekeepingPlaceFormatChoice
-from ._SubBalanceInformation2 import SubBalanceInformation2
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import AdditionalBalanceInformation2
+from . import BalanceQuantity1Choice
+from . import ForeignExchangeTerms6
+from . import Number
+from . import PlusOrMinusIndicator
+from . import PriceInformation2
+from . import SafekeepingPlaceFormatChoice
+from . import SubBalanceInformation2
 
 class AggregateBalancePerSafekeepingPlace3(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class AggregateBalancePerSafekeepingPlace3(base_types._BaseFieldType):
 
 	@AcrdIntrstAmt.setter
 	def AcrdIntrstAmt(self, value):
-		self._AcrdIntrstAmt = value if type(value) != base_types.auto else self.make_default("AcrdIntrstAmt")
+		self._AcrdIntrstAmt = value if value is not None else base_types.UninitialisedField(self, 'AcrdIntrstAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@AcrdIntrstAmt.deleter
 	def AcrdIntrstAmt(self):
 		del self._AcrdIntrstAmt
-		self._AcrdIntrstAmt = None
+		self._AcrdIntrstAmt = base_types.UninitialisedField(self, 'AcrdIntrstAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def AcrdIntrstAmtSgn(self):
@@ -34,12 +34,12 @@ class AggregateBalancePerSafekeepingPlace3(base_types._BaseFieldType):
 
 	@AcrdIntrstAmtSgn.setter
 	def AcrdIntrstAmtSgn(self, value):
-		self._AcrdIntrstAmtSgn = value if type(value) != base_types.auto else self.make_default("AcrdIntrstAmtSgn")
+		self._AcrdIntrstAmtSgn = value if value is not None else base_types.UninitialisedField(self, 'AcrdIntrstAmtSgn', PlusOrMinusIndicator, False)
 
 	@AcrdIntrstAmtSgn.deleter
 	def AcrdIntrstAmtSgn(self):
 		del self._AcrdIntrstAmtSgn
-		self._AcrdIntrstAmtSgn = None
+		self._AcrdIntrstAmtSgn = base_types.UninitialisedField(self, 'AcrdIntrstAmtSgn', PlusOrMinusIndicator, False)
 
 	@property
 	def AddtlBalBrkdwnDtls(self):
@@ -47,12 +47,12 @@ class AggregateBalancePerSafekeepingPlace3(base_types._BaseFieldType):
 
 	@AddtlBalBrkdwnDtls.setter
 	def AddtlBalBrkdwnDtls(self, value):
-		self._AddtlBalBrkdwnDtls = value if type(value) != base_types.auto else self.make_default("AddtlBalBrkdwnDtls")
+		self._AddtlBalBrkdwnDtls = value if value is not None else base_types.UninitialisedField(self, 'AddtlBalBrkdwnDtls', AdditionalBalanceInformation2, True)
 
 	@AddtlBalBrkdwnDtls.deleter
 	def AddtlBalBrkdwnDtls(self):
 		del self._AddtlBalBrkdwnDtls
-		self._AddtlBalBrkdwnDtls = None
+		self._AddtlBalBrkdwnDtls = base_types.UninitialisedField(self, 'AddtlBalBrkdwnDtls', AdditionalBalanceInformation2, True)
 
 	@property
 	def AggtQty(self):
@@ -60,12 +60,12 @@ class AggregateBalancePerSafekeepingPlace3(base_types._BaseFieldType):
 
 	@AggtQty.setter
 	def AggtQty(self, value):
-		self._AggtQty = value if type(value) != base_types.auto else self.make_default("AggtQty")
+		self._AggtQty = value if value is not None else base_types.UninitialisedField(self, 'AggtQty', BalanceQuantity1Choice, False)
 
 	@AggtQty.deleter
 	def AggtQty(self):
 		del self._AggtQty
-		self._AggtQty = None
+		self._AggtQty = base_types.UninitialisedField(self, 'AggtQty', BalanceQuantity1Choice, False)
 
 	@property
 	def AvlblQty(self):
@@ -73,12 +73,12 @@ class AggregateBalancePerSafekeepingPlace3(base_types._BaseFieldType):
 
 	@AvlblQty.setter
 	def AvlblQty(self, value):
-		self._AvlblQty = value if type(value) != base_types.auto else self.make_default("AvlblQty")
+		self._AvlblQty = value if value is not None else base_types.UninitialisedField(self, 'AvlblQty', BalanceQuantity1Choice, False)
 
 	@AvlblQty.deleter
 	def AvlblQty(self):
 		del self._AvlblQty
-		self._AvlblQty = None
+		self._AvlblQty = base_types.UninitialisedField(self, 'AvlblQty', BalanceQuantity1Choice, False)
 
 	@property
 	def BalBrkdwnDtls(self):
@@ -86,12 +86,12 @@ class AggregateBalancePerSafekeepingPlace3(base_types._BaseFieldType):
 
 	@BalBrkdwnDtls.setter
 	def BalBrkdwnDtls(self, value):
-		self._BalBrkdwnDtls = value if type(value) != base_types.auto else self.make_default("BalBrkdwnDtls")
+		self._BalBrkdwnDtls = value if value is not None else base_types.UninitialisedField(self, 'BalBrkdwnDtls', SubBalanceInformation2, True)
 
 	@BalBrkdwnDtls.deleter
 	def BalBrkdwnDtls(self):
 		del self._BalBrkdwnDtls
-		self._BalBrkdwnDtls = None
+		self._BalBrkdwnDtls = base_types.UninitialisedField(self, 'BalBrkdwnDtls', SubBalanceInformation2, True)
 
 	@property
 	def BookVal(self):
@@ -99,12 +99,12 @@ class AggregateBalancePerSafekeepingPlace3(base_types._BaseFieldType):
 
 	@BookVal.setter
 	def BookVal(self, value):
-		self._BookVal = value if type(value) != base_types.auto else self.make_default("BookVal")
+		self._BookVal = value if value is not None else base_types.UninitialisedField(self, 'BookVal', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@BookVal.deleter
 	def BookVal(self):
 		del self._BookVal
-		self._BookVal = None
+		self._BookVal = base_types.UninitialisedField(self, 'BookVal', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def DaysAcrd(self):
@@ -112,12 +112,12 @@ class AggregateBalancePerSafekeepingPlace3(base_types._BaseFieldType):
 
 	@DaysAcrd.setter
 	def DaysAcrd(self, value):
-		self._DaysAcrd = value if type(value) != base_types.auto else self.make_default("DaysAcrd")
+		self._DaysAcrd = value if value is not None else base_types.UninitialisedField(self, 'DaysAcrd', Number, False)
 
 	@DaysAcrd.deleter
 	def DaysAcrd(self):
 		del self._DaysAcrd
-		self._DaysAcrd = None
+		self._DaysAcrd = base_types.UninitialisedField(self, 'DaysAcrd', Number, False)
 
 	@property
 	def FXDtls(self):
@@ -125,12 +125,12 @@ class AggregateBalancePerSafekeepingPlace3(base_types._BaseFieldType):
 
 	@FXDtls.setter
 	def FXDtls(self, value):
-		self._FXDtls = value if type(value) != base_types.auto else self.make_default("FXDtls")
+		self._FXDtls = value if value is not None else base_types.UninitialisedField(self, 'FXDtls', ForeignExchangeTerms6, False)
 
 	@FXDtls.deleter
 	def FXDtls(self):
 		del self._FXDtls
-		self._FXDtls = None
+		self._FXDtls = base_types.UninitialisedField(self, 'FXDtls', ForeignExchangeTerms6, False)
 
 	@property
 	def HldgVal(self):
@@ -138,12 +138,12 @@ class AggregateBalancePerSafekeepingPlace3(base_types._BaseFieldType):
 
 	@HldgVal.setter
 	def HldgVal(self, value):
-		self._HldgVal = value if type(value) != base_types.auto else self.make_default("HldgVal")
+		self._HldgVal = value if value is not None else base_types.UninitialisedField(self, 'HldgVal', ActiveOrHistoricCurrencyAndAmount, True)
 
 	@HldgVal.deleter
 	def HldgVal(self):
 		del self._HldgVal
-		self._HldgVal = None
+		self._HldgVal = base_types.UninitialisedField(self, 'HldgVal', ActiveOrHistoricCurrencyAndAmount, True)
 
 	@property
 	def NotAvlblQty(self):
@@ -151,12 +151,12 @@ class AggregateBalancePerSafekeepingPlace3(base_types._BaseFieldType):
 
 	@NotAvlblQty.setter
 	def NotAvlblQty(self, value):
-		self._NotAvlblQty = value if type(value) != base_types.auto else self.make_default("NotAvlblQty")
+		self._NotAvlblQty = value if value is not None else base_types.UninitialisedField(self, 'NotAvlblQty', BalanceQuantity1Choice, False)
 
 	@NotAvlblQty.deleter
 	def NotAvlblQty(self):
 		del self._NotAvlblQty
-		self._NotAvlblQty = None
+		self._NotAvlblQty = base_types.UninitialisedField(self, 'NotAvlblQty', BalanceQuantity1Choice, False)
 
 	@property
 	def PricDtls(self):
@@ -164,12 +164,12 @@ class AggregateBalancePerSafekeepingPlace3(base_types._BaseFieldType):
 
 	@PricDtls.setter
 	def PricDtls(self, value):
-		self._PricDtls = value if type(value) != base_types.auto else self.make_default("PricDtls")
+		self._PricDtls = value if value is not None else base_types.UninitialisedField(self, 'PricDtls', PriceInformation2, True)
 
 	@PricDtls.deleter
 	def PricDtls(self):
 		del self._PricDtls
-		self._PricDtls = None
+		self._PricDtls = base_types.UninitialisedField(self, 'PricDtls', PriceInformation2, True)
 
 	@property
 	def PrvsHldgVal(self):
@@ -177,12 +177,12 @@ class AggregateBalancePerSafekeepingPlace3(base_types._BaseFieldType):
 
 	@PrvsHldgVal.setter
 	def PrvsHldgVal(self, value):
-		self._PrvsHldgVal = value if type(value) != base_types.auto else self.make_default("PrvsHldgVal")
+		self._PrvsHldgVal = value if value is not None else base_types.UninitialisedField(self, 'PrvsHldgVal', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@PrvsHldgVal.deleter
 	def PrvsHldgVal(self):
 		del self._PrvsHldgVal
-		self._PrvsHldgVal = None
+		self._PrvsHldgVal = base_types.UninitialisedField(self, 'PrvsHldgVal', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def SfkpgPlc(self):
@@ -190,12 +190,12 @@ class AggregateBalancePerSafekeepingPlace3(base_types._BaseFieldType):
 
 	@SfkpgPlc.setter
 	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
+		self._SfkpgPlc = value if value is not None else base_types.UninitialisedField(self, 'SfkpgPlc', SafekeepingPlaceFormatChoice, False)
 
 	@SfkpgPlc.deleter
 	def SfkpgPlc(self):
 		del self._SfkpgPlc
-		self._SfkpgPlc = None
+		self._SfkpgPlc = base_types.UninitialisedField(self, 'SfkpgPlc', SafekeepingPlaceFormatChoice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcrdIntrstAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

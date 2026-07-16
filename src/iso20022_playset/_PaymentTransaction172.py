@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._Case6 import Case6
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
-from ._OriginalGroupInformation33 import OriginalGroupInformation33
-from ._OriginalTransactionReference47 import OriginalTransactionReference47
-from ._PaymentCancellationReason6 import PaymentCancellationReason6
-from ._SupplementaryData1 import SupplementaryData1
-from ._UUIDv4Identifier import UUIDv4Identifier
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import BranchAndFinancialInstitutionIdentification8
+from . import Case6
+from . import ISODate
+from . import Max35Text
+from . import OriginalGroupInformation33
+from . import OriginalTransactionReference47
+from . import PaymentCancellationReason6
+from . import SupplementaryData1
+from . import UUIDv4Identifier
 
 class PaymentTransaction172(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class PaymentTransaction172(base_types._BaseFieldType):
 
 	@Assgne.setter
 	def Assgne(self, value):
-		self._Assgne = value if type(value) != base_types.auto else self.make_default("Assgne")
+		self._Assgne = value if value is not None else base_types.UninitialisedField(self, 'Assgne', BranchAndFinancialInstitutionIdentification8, False)
 
 	@Assgne.deleter
 	def Assgne(self):
 		del self._Assgne
-		self._Assgne = None
+		self._Assgne = base_types.UninitialisedField(self, 'Assgne', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def Assgnr(self):
@@ -35,12 +35,12 @@ class PaymentTransaction172(base_types._BaseFieldType):
 
 	@Assgnr.setter
 	def Assgnr(self, value):
-		self._Assgnr = value if type(value) != base_types.auto else self.make_default("Assgnr")
+		self._Assgnr = value if value is not None else base_types.UninitialisedField(self, 'Assgnr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@Assgnr.deleter
 	def Assgnr(self):
 		del self._Assgnr
-		self._Assgnr = None
+		self._Assgnr = base_types.UninitialisedField(self, 'Assgnr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def Case(self):
@@ -48,12 +48,12 @@ class PaymentTransaction172(base_types._BaseFieldType):
 
 	@Case.setter
 	def Case(self, value):
-		self._Case = value if type(value) != base_types.auto else self.make_default("Case")
+		self._Case = value if value is not None else base_types.UninitialisedField(self, 'Case', Case6, False)
 
 	@Case.deleter
 	def Case(self):
 		del self._Case
-		self._Case = None
+		self._Case = base_types.UninitialisedField(self, 'Case', Case6, False)
 
 	@property
 	def CxlId(self):
@@ -61,12 +61,12 @@ class PaymentTransaction172(base_types._BaseFieldType):
 
 	@CxlId.setter
 	def CxlId(self, value):
-		self._CxlId = value if type(value) != base_types.auto else self.make_default("CxlId")
+		self._CxlId = value if value is not None else base_types.UninitialisedField(self, 'CxlId', Max35Text, False)
 
 	@CxlId.deleter
 	def CxlId(self):
 		del self._CxlId
-		self._CxlId = None
+		self._CxlId = base_types.UninitialisedField(self, 'CxlId', Max35Text, False)
 
 	@property
 	def CxlRsnInf(self):
@@ -74,12 +74,12 @@ class PaymentTransaction172(base_types._BaseFieldType):
 
 	@CxlRsnInf.setter
 	def CxlRsnInf(self, value):
-		self._CxlRsnInf = value if type(value) != base_types.auto else self.make_default("CxlRsnInf")
+		self._CxlRsnInf = value if value is not None else base_types.UninitialisedField(self, 'CxlRsnInf', PaymentCancellationReason6, True)
 
 	@CxlRsnInf.deleter
 	def CxlRsnInf(self):
 		del self._CxlRsnInf
-		self._CxlRsnInf = None
+		self._CxlRsnInf = base_types.UninitialisedField(self, 'CxlRsnInf', PaymentCancellationReason6, True)
 
 	@property
 	def OrgnlClrSysRef(self):
@@ -87,12 +87,12 @@ class PaymentTransaction172(base_types._BaseFieldType):
 
 	@OrgnlClrSysRef.setter
 	def OrgnlClrSysRef(self, value):
-		self._OrgnlClrSysRef = value if type(value) != base_types.auto else self.make_default("OrgnlClrSysRef")
+		self._OrgnlClrSysRef = value if value is not None else base_types.UninitialisedField(self, 'OrgnlClrSysRef', Max35Text, False)
 
 	@OrgnlClrSysRef.deleter
 	def OrgnlClrSysRef(self):
 		del self._OrgnlClrSysRef
-		self._OrgnlClrSysRef = None
+		self._OrgnlClrSysRef = base_types.UninitialisedField(self, 'OrgnlClrSysRef', Max35Text, False)
 
 	@property
 	def OrgnlEndToEndId(self):
@@ -100,12 +100,12 @@ class PaymentTransaction172(base_types._BaseFieldType):
 
 	@OrgnlEndToEndId.setter
 	def OrgnlEndToEndId(self, value):
-		self._OrgnlEndToEndId = value if type(value) != base_types.auto else self.make_default("OrgnlEndToEndId")
+		self._OrgnlEndToEndId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlEndToEndId', Max35Text, False)
 
 	@OrgnlEndToEndId.deleter
 	def OrgnlEndToEndId(self):
 		del self._OrgnlEndToEndId
-		self._OrgnlEndToEndId = None
+		self._OrgnlEndToEndId = base_types.UninitialisedField(self, 'OrgnlEndToEndId', Max35Text, False)
 
 	@property
 	def OrgnlGrpInf(self):
@@ -113,12 +113,12 @@ class PaymentTransaction172(base_types._BaseFieldType):
 
 	@OrgnlGrpInf.setter
 	def OrgnlGrpInf(self, value):
-		self._OrgnlGrpInf = value if type(value) != base_types.auto else self.make_default("OrgnlGrpInf")
+		self._OrgnlGrpInf = value if value is not None else base_types.UninitialisedField(self, 'OrgnlGrpInf', OriginalGroupInformation33, False)
 
 	@OrgnlGrpInf.deleter
 	def OrgnlGrpInf(self):
 		del self._OrgnlGrpInf
-		self._OrgnlGrpInf = None
+		self._OrgnlGrpInf = base_types.UninitialisedField(self, 'OrgnlGrpInf', OriginalGroupInformation33, False)
 
 	@property
 	def OrgnlInstrId(self):
@@ -126,12 +126,12 @@ class PaymentTransaction172(base_types._BaseFieldType):
 
 	@OrgnlInstrId.setter
 	def OrgnlInstrId(self, value):
-		self._OrgnlInstrId = value if type(value) != base_types.auto else self.make_default("OrgnlInstrId")
+		self._OrgnlInstrId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlInstrId', Max35Text, False)
 
 	@OrgnlInstrId.deleter
 	def OrgnlInstrId(self):
 		del self._OrgnlInstrId
-		self._OrgnlInstrId = None
+		self._OrgnlInstrId = base_types.UninitialisedField(self, 'OrgnlInstrId', Max35Text, False)
 
 	@property
 	def OrgnlIntrBkSttlmAmt(self):
@@ -139,12 +139,12 @@ class PaymentTransaction172(base_types._BaseFieldType):
 
 	@OrgnlIntrBkSttlmAmt.setter
 	def OrgnlIntrBkSttlmAmt(self, value):
-		self._OrgnlIntrBkSttlmAmt = value if type(value) != base_types.auto else self.make_default("OrgnlIntrBkSttlmAmt")
+		self._OrgnlIntrBkSttlmAmt = value if value is not None else base_types.UninitialisedField(self, 'OrgnlIntrBkSttlmAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@OrgnlIntrBkSttlmAmt.deleter
 	def OrgnlIntrBkSttlmAmt(self):
 		del self._OrgnlIntrBkSttlmAmt
-		self._OrgnlIntrBkSttlmAmt = None
+		self._OrgnlIntrBkSttlmAmt = base_types.UninitialisedField(self, 'OrgnlIntrBkSttlmAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def OrgnlIntrBkSttlmDt(self):
@@ -152,12 +152,12 @@ class PaymentTransaction172(base_types._BaseFieldType):
 
 	@OrgnlIntrBkSttlmDt.setter
 	def OrgnlIntrBkSttlmDt(self, value):
-		self._OrgnlIntrBkSttlmDt = value if type(value) != base_types.auto else self.make_default("OrgnlIntrBkSttlmDt")
+		self._OrgnlIntrBkSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'OrgnlIntrBkSttlmDt', ISODate, False)
 
 	@OrgnlIntrBkSttlmDt.deleter
 	def OrgnlIntrBkSttlmDt(self):
 		del self._OrgnlIntrBkSttlmDt
-		self._OrgnlIntrBkSttlmDt = None
+		self._OrgnlIntrBkSttlmDt = base_types.UninitialisedField(self, 'OrgnlIntrBkSttlmDt', ISODate, False)
 
 	@property
 	def OrgnlTxId(self):
@@ -165,12 +165,12 @@ class PaymentTransaction172(base_types._BaseFieldType):
 
 	@OrgnlTxId.setter
 	def OrgnlTxId(self, value):
-		self._OrgnlTxId = value if type(value) != base_types.auto else self.make_default("OrgnlTxId")
+		self._OrgnlTxId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlTxId', Max35Text, False)
 
 	@OrgnlTxId.deleter
 	def OrgnlTxId(self):
 		del self._OrgnlTxId
-		self._OrgnlTxId = None
+		self._OrgnlTxId = base_types.UninitialisedField(self, 'OrgnlTxId', Max35Text, False)
 
 	@property
 	def OrgnlTxRef(self):
@@ -178,12 +178,12 @@ class PaymentTransaction172(base_types._BaseFieldType):
 
 	@OrgnlTxRef.setter
 	def OrgnlTxRef(self, value):
-		self._OrgnlTxRef = value if type(value) != base_types.auto else self.make_default("OrgnlTxRef")
+		self._OrgnlTxRef = value if value is not None else base_types.UninitialisedField(self, 'OrgnlTxRef', OriginalTransactionReference47, False)
 
 	@OrgnlTxRef.deleter
 	def OrgnlTxRef(self):
 		del self._OrgnlTxRef
-		self._OrgnlTxRef = None
+		self._OrgnlTxRef = base_types.UninitialisedField(self, 'OrgnlTxRef', OriginalTransactionReference47, False)
 
 	@property
 	def OrgnlUETR(self):
@@ -191,12 +191,12 @@ class PaymentTransaction172(base_types._BaseFieldType):
 
 	@OrgnlUETR.setter
 	def OrgnlUETR(self, value):
-		self._OrgnlUETR = value if type(value) != base_types.auto else self.make_default("OrgnlUETR")
+		self._OrgnlUETR = value if value is not None else base_types.UninitialisedField(self, 'OrgnlUETR', UUIDv4Identifier, False)
 
 	@OrgnlUETR.deleter
 	def OrgnlUETR(self):
 		del self._OrgnlUETR
-		self._OrgnlUETR = None
+		self._OrgnlUETR = base_types.UninitialisedField(self, 'OrgnlUETR', UUIDv4Identifier, False)
 
 	@property
 	def SplmtryData(self):
@@ -204,12 +204,12 @@ class PaymentTransaction172(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Assgne', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),

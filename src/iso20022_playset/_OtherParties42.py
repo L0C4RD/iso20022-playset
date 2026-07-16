@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PartyIdentification157 import PartyIdentification157
-from ._PartyIdentification170 import PartyIdentification170
+from . import PartyIdentification157
+from . import PartyIdentification170
 
 class OtherParties42(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class OtherParties42(base_types._BaseFieldType):
 
 	@Invstr.setter
 	def Invstr(self, value):
-		self._Invstr = value if type(value) != base_types.auto else self.make_default("Invstr")
+		self._Invstr = value if value is not None else base_types.UninitialisedField(self, 'Invstr', PartyIdentification170, False)
 
 	@Invstr.deleter
 	def Invstr(self):
 		del self._Invstr
-		self._Invstr = None
+		self._Invstr = base_types.UninitialisedField(self, 'Invstr', PartyIdentification170, False)
 
 	@property
 	def StockXchg(self):
@@ -27,12 +27,12 @@ class OtherParties42(base_types._BaseFieldType):
 
 	@StockXchg.setter
 	def StockXchg(self, value):
-		self._StockXchg = value if type(value) != base_types.auto else self.make_default("StockXchg")
+		self._StockXchg = value if value is not None else base_types.UninitialisedField(self, 'StockXchg', PartyIdentification157, False)
 
 	@StockXchg.deleter
 	def StockXchg(self):
 		del self._StockXchg
-		self._StockXchg = None
+		self._StockXchg = base_types.UninitialisedField(self, 'StockXchg', PartyIdentification157, False)
 
 	@property
 	def TradRgltr(self):
@@ -40,12 +40,12 @@ class OtherParties42(base_types._BaseFieldType):
 
 	@TradRgltr.setter
 	def TradRgltr(self, value):
-		self._TradRgltr = value if type(value) != base_types.auto else self.make_default("TradRgltr")
+		self._TradRgltr = value if value is not None else base_types.UninitialisedField(self, 'TradRgltr', PartyIdentification157, False)
 
 	@TradRgltr.deleter
 	def TradRgltr(self):
 		del self._TradRgltr
-		self._TradRgltr = None
+		self._TradRgltr = base_types.UninitialisedField(self, 'TradRgltr', PartyIdentification157, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Invstr', type=PartyIdentification170, min=0, max=1, mutex_group=None, array=False),

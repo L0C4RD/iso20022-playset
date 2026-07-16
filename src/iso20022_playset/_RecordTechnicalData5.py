@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ExternalAuthorityExchangeReason1Code import ExternalAuthorityExchangeReason1Code
-from ._ISODateTime import ISODateTime
+from . import ExternalAuthorityExchangeReason1Code
+from . import ISODateTime
 
 class RecordTechnicalData5(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class RecordTechnicalData5(base_types._BaseFieldType):
 
 	@RctDtTm.setter
 	def RctDtTm(self, value):
-		self._RctDtTm = value if type(value) != base_types.auto else self.make_default("RctDtTm")
+		self._RctDtTm = value if value is not None else base_types.UninitialisedField(self, 'RctDtTm', ISODateTime, False)
 
 	@RctDtTm.deleter
 	def RctDtTm(self):
 		del self._RctDtTm
-		self._RctDtTm = None
+		self._RctDtTm = base_types.UninitialisedField(self, 'RctDtTm', ISODateTime, False)
 
 	@property
 	def XchgRsn(self):
@@ -27,12 +27,12 @@ class RecordTechnicalData5(base_types._BaseFieldType):
 
 	@XchgRsn.setter
 	def XchgRsn(self, value):
-		self._XchgRsn = value if type(value) != base_types.auto else self.make_default("XchgRsn")
+		self._XchgRsn = value if value is not None else base_types.UninitialisedField(self, 'XchgRsn', ExternalAuthorityExchangeReason1Code, True)
 
 	@XchgRsn.deleter
 	def XchgRsn(self):
 		del self._XchgRsn
-		self._XchgRsn = None
+		self._XchgRsn = base_types.UninitialisedField(self, 'XchgRsn', ExternalAuthorityExchangeReason1Code, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RctDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),

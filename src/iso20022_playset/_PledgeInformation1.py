@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification36 import GenericIdentification36
-from ._PartyIdentification232Choice import PartyIdentification232Choice
-from ._ThirdPartyIdentification1 import ThirdPartyIdentification1
-from ._YesNoIndicator import YesNoIndicator
+from . import GenericIdentification36
+from . import PartyIdentification232Choice
+from . import ThirdPartyIdentification1
+from . import YesNoIndicator
 
 class PledgeInformation1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class PledgeInformation1(base_types._BaseFieldType):
 
 	@PldgTp.setter
 	def PldgTp(self, value):
-		self._PldgTp = value if type(value) != base_types.auto else self.make_default("PldgTp")
+		self._PldgTp = value if value is not None else base_types.UninitialisedField(self, 'PldgTp', GenericIdentification36, False)
 
 	@PldgTp.deleter
 	def PldgTp(self):
 		del self._PldgTp
-		self._PldgTp = None
+		self._PldgTp = base_types.UninitialisedField(self, 'PldgTp', GenericIdentification36, False)
 
 	@property
 	def Pldgr(self):
@@ -29,12 +29,12 @@ class PledgeInformation1(base_types._BaseFieldType):
 
 	@Pldgr.setter
 	def Pldgr(self, value):
-		self._Pldgr = value if type(value) != base_types.auto else self.make_default("Pldgr")
+		self._Pldgr = value if value is not None else base_types.UninitialisedField(self, 'Pldgr', PartyIdentification232Choice, False)
 
 	@Pldgr.deleter
 	def Pldgr(self):
 		del self._Pldgr
-		self._Pldgr = None
+		self._Pldgr = base_types.UninitialisedField(self, 'Pldgr', PartyIdentification232Choice, False)
 
 	@property
 	def RtrSctiesInd(self):
@@ -42,12 +42,12 @@ class PledgeInformation1(base_types._BaseFieldType):
 
 	@RtrSctiesInd.setter
 	def RtrSctiesInd(self, value):
-		self._RtrSctiesInd = value if type(value) != base_types.auto else self.make_default("RtrSctiesInd")
+		self._RtrSctiesInd = value if value is not None else base_types.UninitialisedField(self, 'RtrSctiesInd', YesNoIndicator, False)
 
 	@RtrSctiesInd.deleter
 	def RtrSctiesInd(self):
 		del self._RtrSctiesInd
-		self._RtrSctiesInd = None
+		self._RtrSctiesInd = base_types.UninitialisedField(self, 'RtrSctiesInd', YesNoIndicator, False)
 
 	@property
 	def ThrdPty(self):
@@ -55,12 +55,12 @@ class PledgeInformation1(base_types._BaseFieldType):
 
 	@ThrdPty.setter
 	def ThrdPty(self, value):
-		self._ThrdPty = value if type(value) != base_types.auto else self.make_default("ThrdPty")
+		self._ThrdPty = value if value is not None else base_types.UninitialisedField(self, 'ThrdPty', ThirdPartyIdentification1, False)
 
 	@ThrdPty.deleter
 	def ThrdPty(self):
 		del self._ThrdPty
-		self._ThrdPty = None
+		self._ThrdPty = base_types.UninitialisedField(self, 'ThrdPty', ThirdPartyIdentification1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PldgTp', type=GenericIdentification36, min=1, max=1, mutex_group=None, array=False),

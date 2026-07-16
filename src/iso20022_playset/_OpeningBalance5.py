@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._OpeningBalance6Choice import OpeningBalance6Choice
-from ._ShortLong1Code import ShortLong1Code
+from . import OpeningBalance6Choice
+from . import ShortLong1Code
 
 class OpeningBalance5(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class OpeningBalance5(base_types._BaseFieldType):
 
 	@OpngBal.setter
 	def OpngBal(self, value):
-		self._OpngBal = value if type(value) != base_types.auto else self.make_default("OpngBal")
+		self._OpngBal = value if value is not None else base_types.UninitialisedField(self, 'OpngBal', OpeningBalance6Choice, False)
 
 	@OpngBal.deleter
 	def OpngBal(self):
 		del self._OpngBal
-		self._OpngBal = None
+		self._OpngBal = base_types.UninitialisedField(self, 'OpngBal', OpeningBalance6Choice, False)
 
 	@property
 	def ShrtLngInd(self):
@@ -27,12 +27,12 @@ class OpeningBalance5(base_types._BaseFieldType):
 
 	@ShrtLngInd.setter
 	def ShrtLngInd(self, value):
-		self._ShrtLngInd = value if type(value) != base_types.auto else self.make_default("ShrtLngInd")
+		self._ShrtLngInd = value if value is not None else base_types.UninitialisedField(self, 'ShrtLngInd', ShortLong1Code, False)
 
 	@ShrtLngInd.deleter
 	def ShrtLngInd(self):
 		del self._ShrtLngInd
-		self._ShrtLngInd = None
+		self._ShrtLngInd = base_types.UninitialisedField(self, 'ShrtLngInd', ShortLong1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OpngBal', type=OpeningBalance6Choice, min=1, max=1, mutex_group=None, array=False),

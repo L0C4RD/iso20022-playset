@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
-from ._PaymentContext30 import PaymentContext30
-from ._ReconciliationResponseData2 import ReconciliationResponseData2
-from ._ResponseType11 import ResponseType11
-from ._SupplementaryData1 import SupplementaryData1
+from . import CardPaymentEnvironment81
+from . import PaymentContext30
+from . import ReconciliationResponseData2
+from . import ResponseType11
+from . import SupplementaryData1
 
 class ReconciliationResponse10(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class ReconciliationResponse10(base_types._BaseFieldType):
 
 	@Cntxt.setter
 	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != base_types.auto else self.make_default("Cntxt")
+		self._Cntxt = value if value is not None else base_types.UninitialisedField(self, 'Cntxt', PaymentContext30, False)
 
 	@Cntxt.deleter
 	def Cntxt(self):
 		del self._Cntxt
-		self._Cntxt = None
+		self._Cntxt = base_types.UninitialisedField(self, 'Cntxt', PaymentContext30, False)
 
 	@property
 	def Envt(self):
@@ -30,12 +30,12 @@ class ReconciliationResponse10(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+		self._Envt = value if value is not None else base_types.UninitialisedField(self, 'Envt', CardPaymentEnvironment81, False)
 
 	@Envt.deleter
 	def Envt(self):
 		del self._Envt
-		self._Envt = None
+		self._Envt = base_types.UninitialisedField(self, 'Envt', CardPaymentEnvironment81, False)
 
 	@property
 	def RcncltnRspnData(self):
@@ -43,12 +43,12 @@ class ReconciliationResponse10(base_types._BaseFieldType):
 
 	@RcncltnRspnData.setter
 	def RcncltnRspnData(self, value):
-		self._RcncltnRspnData = value if type(value) != base_types.auto else self.make_default("RcncltnRspnData")
+		self._RcncltnRspnData = value if value is not None else base_types.UninitialisedField(self, 'RcncltnRspnData', ReconciliationResponseData2, False)
 
 	@RcncltnRspnData.deleter
 	def RcncltnRspnData(self):
 		del self._RcncltnRspnData
-		self._RcncltnRspnData = None
+		self._RcncltnRspnData = base_types.UninitialisedField(self, 'RcncltnRspnData', ReconciliationResponseData2, False)
 
 	@property
 	def Rspn(self):
@@ -56,12 +56,12 @@ class ReconciliationResponse10(base_types._BaseFieldType):
 
 	@Rspn.setter
 	def Rspn(self, value):
-		self._Rspn = value if type(value) != base_types.auto else self.make_default("Rspn")
+		self._Rspn = value if value is not None else base_types.UninitialisedField(self, 'Rspn', ResponseType11, False)
 
 	@Rspn.deleter
 	def Rspn(self):
 		del self._Rspn
-		self._Rspn = None
+		self._Rspn = base_types.UninitialisedField(self, 'Rspn', ResponseType11, False)
 
 	@property
 	def SplmtryData(self):
@@ -69,12 +69,12 @@ class ReconciliationResponse10(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),

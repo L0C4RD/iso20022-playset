@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalData1 import AdditionalData1
-from ._Address2 import Address2
-from ._CorporateTaxType1Code import CorporateTaxType1Code
-from ._GeographicPointInDecimalDegrees import GeographicPointInDecimalDegrees
-from ._ISO3NumericCountryCode import ISO3NumericCountryCode
-from ._LocalData11 import LocalData11
-from ._Max256Text import Max256Text
-from ._Max35Text import Max35Text
-from ._Max99Text import Max99Text
+from . import AdditionalData1
+from . import Address2
+from . import CorporateTaxType1Code
+from . import GeographicPointInDecimalDegrees
+from . import ISO3NumericCountryCode
+from . import LocalData11
+from . import Max256Text
+from . import Max35Text
+from . import Max99Text
 
 class PartyIdentification284(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class PartyIdentification284(base_types._BaseFieldType):
 
 	@AddtlAdr.setter
 	def AddtlAdr(self, value):
-		self._AddtlAdr = value if type(value) != base_types.auto else self.make_default("AddtlAdr")
+		self._AddtlAdr = value if value is not None else base_types.UninitialisedField(self, 'AddtlAdr', Max256Text, False)
 
 	@AddtlAdr.deleter
 	def AddtlAdr(self):
 		del self._AddtlAdr
-		self._AddtlAdr = None
+		self._AddtlAdr = base_types.UninitialisedField(self, 'AddtlAdr', Max256Text, False)
 
 	@property
 	def AddtlCtct(self):
@@ -34,12 +34,12 @@ class PartyIdentification284(base_types._BaseFieldType):
 
 	@AddtlCtct.setter
 	def AddtlCtct(self, value):
-		self._AddtlCtct = value if type(value) != base_types.auto else self.make_default("AddtlCtct")
+		self._AddtlCtct = value if value is not None else base_types.UninitialisedField(self, 'AddtlCtct', Max256Text, False)
 
 	@AddtlCtct.deleter
 	def AddtlCtct(self):
 		del self._AddtlCtct
-		self._AddtlCtct = None
+		self._AddtlCtct = base_types.UninitialisedField(self, 'AddtlCtct', Max256Text, False)
 
 	@property
 	def AddtlData(self):
@@ -47,12 +47,12 @@ class PartyIdentification284(base_types._BaseFieldType):
 
 	@AddtlData.setter
 	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+		self._AddtlData = value if value is not None else base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@AddtlData.deleter
 	def AddtlData(self):
 		del self._AddtlData
-		self._AddtlData = None
+		self._AddtlData = base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@property
 	def AddtlId(self):
@@ -60,12 +60,12 @@ class PartyIdentification284(base_types._BaseFieldType):
 
 	@AddtlId.setter
 	def AddtlId(self, value):
-		self._AddtlId = value if type(value) != base_types.auto else self.make_default("AddtlId")
+		self._AddtlId = value if value is not None else base_types.UninitialisedField(self, 'AddtlId', AdditionalData1, False)
 
 	@AddtlId.deleter
 	def AddtlId(self):
 		del self._AddtlId
-		self._AddtlId = None
+		self._AddtlId = base_types.UninitialisedField(self, 'AddtlId', AdditionalData1, False)
 
 	@property
 	def Adr(self):
@@ -73,12 +73,12 @@ class PartyIdentification284(base_types._BaseFieldType):
 
 	@Adr.setter
 	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+		self._Adr = value if value is not None else base_types.UninitialisedField(self, 'Adr', Address2, False)
 
 	@Adr.deleter
 	def Adr(self):
 		del self._Adr
-		self._Adr = None
+		self._Adr = base_types.UninitialisedField(self, 'Adr', Address2, False)
 
 	@property
 	def Assgnr(self):
@@ -86,12 +86,12 @@ class PartyIdentification284(base_types._BaseFieldType):
 
 	@Assgnr.setter
 	def Assgnr(self, value):
-		self._Assgnr = value if type(value) != base_types.auto else self.make_default("Assgnr")
+		self._Assgnr = value if value is not None else base_types.UninitialisedField(self, 'Assgnr', Max35Text, False)
 
 	@Assgnr.deleter
 	def Assgnr(self):
 		del self._Assgnr
-		self._Assgnr = None
+		self._Assgnr = base_types.UninitialisedField(self, 'Assgnr', Max35Text, False)
 
 	@property
 	def BizTp(self):
@@ -99,12 +99,12 @@ class PartyIdentification284(base_types._BaseFieldType):
 
 	@BizTp.setter
 	def BizTp(self, value):
-		self._BizTp = value if type(value) != base_types.auto else self.make_default("BizTp")
+		self._BizTp = value if value is not None else base_types.UninitialisedField(self, 'BizTp', Max35Text, False)
 
 	@BizTp.deleter
 	def BizTp(self):
 		del self._BizTp
-		self._BizTp = None
+		self._BizTp = base_types.UninitialisedField(self, 'BizTp', Max35Text, False)
 
 	@property
 	def BizTpPrvddBy(self):
@@ -112,12 +112,12 @@ class PartyIdentification284(base_types._BaseFieldType):
 
 	@BizTpPrvddBy.setter
 	def BizTpPrvddBy(self, value):
-		self._BizTpPrvddBy = value if type(value) != base_types.auto else self.make_default("BizTpPrvddBy")
+		self._BizTpPrvddBy = value if value is not None else base_types.UninitialisedField(self, 'BizTpPrvddBy', Max35Text, False)
 
 	@BizTpPrvddBy.deleter
 	def BizTpPrvddBy(self):
 		del self._BizTpPrvddBy
-		self._BizTpPrvddBy = None
+		self._BizTpPrvddBy = base_types.UninitialisedField(self, 'BizTpPrvddBy', Max35Text, False)
 
 	@property
 	def CertfctnTp(self):
@@ -125,12 +125,12 @@ class PartyIdentification284(base_types._BaseFieldType):
 
 	@CertfctnTp.setter
 	def CertfctnTp(self, value):
-		self._CertfctnTp = value if type(value) != base_types.auto else self.make_default("CertfctnTp")
+		self._CertfctnTp = value if value is not None else base_types.UninitialisedField(self, 'CertfctnTp', Max35Text, False)
 
 	@CertfctnTp.deleter
 	def CertfctnTp(self):
 		del self._CertfctnTp
-		self._CertfctnTp = None
+		self._CertfctnTp = base_types.UninitialisedField(self, 'CertfctnTp', Max35Text, False)
 
 	@property
 	def CertfctnTpPrvddBy(self):
@@ -138,12 +138,12 @@ class PartyIdentification284(base_types._BaseFieldType):
 
 	@CertfctnTpPrvddBy.setter
 	def CertfctnTpPrvddBy(self, value):
-		self._CertfctnTpPrvddBy = value if type(value) != base_types.auto else self.make_default("CertfctnTpPrvddBy")
+		self._CertfctnTpPrvddBy = value if value is not None else base_types.UninitialisedField(self, 'CertfctnTpPrvddBy', Max35Text, False)
 
 	@CertfctnTpPrvddBy.deleter
 	def CertfctnTpPrvddBy(self):
 		del self._CertfctnTpPrvddBy
-		self._CertfctnTpPrvddBy = None
+		self._CertfctnTpPrvddBy = base_types.UninitialisedField(self, 'CertfctnTpPrvddBy', Max35Text, False)
 
 	@property
 	def CorpTaxId(self):
@@ -151,12 +151,12 @@ class PartyIdentification284(base_types._BaseFieldType):
 
 	@CorpTaxId.setter
 	def CorpTaxId(self, value):
-		self._CorpTaxId = value if type(value) != base_types.auto else self.make_default("CorpTaxId")
+		self._CorpTaxId = value if value is not None else base_types.UninitialisedField(self, 'CorpTaxId', Max35Text, False)
 
 	@CorpTaxId.deleter
 	def CorpTaxId(self):
 		del self._CorpTaxId
-		self._CorpTaxId = None
+		self._CorpTaxId = base_types.UninitialisedField(self, 'CorpTaxId', Max35Text, False)
 
 	@property
 	def CorpTaxIdTp(self):
@@ -164,12 +164,12 @@ class PartyIdentification284(base_types._BaseFieldType):
 
 	@CorpTaxIdTp.setter
 	def CorpTaxIdTp(self, value):
-		self._CorpTaxIdTp = value if type(value) != base_types.auto else self.make_default("CorpTaxIdTp")
+		self._CorpTaxIdTp = value if value is not None else base_types.UninitialisedField(self, 'CorpTaxIdTp', CorporateTaxType1Code, False)
 
 	@CorpTaxIdTp.deleter
 	def CorpTaxIdTp(self):
 		del self._CorpTaxIdTp
-		self._CorpTaxIdTp = None
+		self._CorpTaxIdTp = base_types.UninitialisedField(self, 'CorpTaxIdTp', CorporateTaxType1Code, False)
 
 	@property
 	def CstmrSvc(self):
@@ -177,12 +177,12 @@ class PartyIdentification284(base_types._BaseFieldType):
 
 	@CstmrSvc.setter
 	def CstmrSvc(self, value):
-		self._CstmrSvc = value if type(value) != base_types.auto else self.make_default("CstmrSvc")
+		self._CstmrSvc = value if value is not None else base_types.UninitialisedField(self, 'CstmrSvc', Max35Text, False)
 
 	@CstmrSvc.deleter
 	def CstmrSvc(self):
 		del self._CstmrSvc
-		self._CstmrSvc = None
+		self._CstmrSvc = base_types.UninitialisedField(self, 'CstmrSvc', Max35Text, False)
 
 	@property
 	def Ctry(self):
@@ -190,12 +190,12 @@ class PartyIdentification284(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', ISO3NumericCountryCode, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', ISO3NumericCountryCode, False)
 
 	@property
 	def Email(self):
@@ -203,12 +203,12 @@ class PartyIdentification284(base_types._BaseFieldType):
 
 	@Email.setter
 	def Email(self, value):
-		self._Email = value if type(value) != base_types.auto else self.make_default("Email")
+		self._Email = value if value is not None else base_types.UninitialisedField(self, 'Email', Max256Text, False)
 
 	@Email.deleter
 	def Email(self):
 		del self._Email
-		self._Email = None
+		self._Email = base_types.UninitialisedField(self, 'Email', Max256Text, False)
 
 	@property
 	def GeogcLctn(self):
@@ -216,12 +216,12 @@ class PartyIdentification284(base_types._BaseFieldType):
 
 	@GeogcLctn.setter
 	def GeogcLctn(self, value):
-		self._GeogcLctn = value if type(value) != base_types.auto else self.make_default("GeogcLctn")
+		self._GeogcLctn = value if value is not None else base_types.UninitialisedField(self, 'GeogcLctn', GeographicPointInDecimalDegrees, False)
 
 	@GeogcLctn.deleter
 	def GeogcLctn(self):
 		del self._GeogcLctn
-		self._GeogcLctn = None
+		self._GeogcLctn = base_types.UninitialisedField(self, 'GeogcLctn', GeographicPointInDecimalDegrees, False)
 
 	@property
 	def Id(self):
@@ -229,12 +229,12 @@ class PartyIdentification284(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def LclData(self):
@@ -242,12 +242,12 @@ class PartyIdentification284(base_types._BaseFieldType):
 
 	@LclData.setter
 	def LclData(self, value):
-		self._LclData = value if type(value) != base_types.auto else self.make_default("LclData")
+		self._LclData = value if value is not None else base_types.UninitialisedField(self, 'LclData', LocalData11, False)
 
 	@LclData.deleter
 	def LclData(self):
 		del self._LclData
-		self._LclData = None
+		self._LclData = base_types.UninitialisedField(self, 'LclData', LocalData11, False)
 
 	@property
 	def LglCorpNm(self):
@@ -255,12 +255,12 @@ class PartyIdentification284(base_types._BaseFieldType):
 
 	@LglCorpNm.setter
 	def LglCorpNm(self, value):
-		self._LglCorpNm = value if type(value) != base_types.auto else self.make_default("LglCorpNm")
+		self._LglCorpNm = value if value is not None else base_types.UninitialisedField(self, 'LglCorpNm', Max99Text, False)
 
 	@LglCorpNm.deleter
 	def LglCorpNm(self):
 		del self._LglCorpNm
-		self._LglCorpNm = None
+		self._LglCorpNm = base_types.UninitialisedField(self, 'LglCorpNm', Max99Text, False)
 
 	@property
 	def NmAndLctn(self):
@@ -268,12 +268,12 @@ class PartyIdentification284(base_types._BaseFieldType):
 
 	@NmAndLctn.setter
 	def NmAndLctn(self, value):
-		self._NmAndLctn = value if type(value) != base_types.auto else self.make_default("NmAndLctn")
+		self._NmAndLctn = value if value is not None else base_types.UninitialisedField(self, 'NmAndLctn', Max99Text, False)
 
 	@NmAndLctn.deleter
 	def NmAndLctn(self):
 		del self._NmAndLctn
-		self._NmAndLctn = None
+		self._NmAndLctn = base_types.UninitialisedField(self, 'NmAndLctn', Max99Text, False)
 
 	@property
 	def OwnrEthnctyTp(self):
@@ -281,12 +281,12 @@ class PartyIdentification284(base_types._BaseFieldType):
 
 	@OwnrEthnctyTp.setter
 	def OwnrEthnctyTp(self, value):
-		self._OwnrEthnctyTp = value if type(value) != base_types.auto else self.make_default("OwnrEthnctyTp")
+		self._OwnrEthnctyTp = value if value is not None else base_types.UninitialisedField(self, 'OwnrEthnctyTp', Max35Text, False)
 
 	@OwnrEthnctyTp.deleter
 	def OwnrEthnctyTp(self):
 		del self._OwnrEthnctyTp
-		self._OwnrEthnctyTp = None
+		self._OwnrEthnctyTp = base_types.UninitialisedField(self, 'OwnrEthnctyTp', Max35Text, False)
 
 	@property
 	def OwnrEthnctyTpPrvddBy(self):
@@ -294,12 +294,12 @@ class PartyIdentification284(base_types._BaseFieldType):
 
 	@OwnrEthnctyTpPrvddBy.setter
 	def OwnrEthnctyTpPrvddBy(self, value):
-		self._OwnrEthnctyTpPrvddBy = value if type(value) != base_types.auto else self.make_default("OwnrEthnctyTpPrvddBy")
+		self._OwnrEthnctyTpPrvddBy = value if value is not None else base_types.UninitialisedField(self, 'OwnrEthnctyTpPrvddBy', Max35Text, False)
 
 	@OwnrEthnctyTpPrvddBy.deleter
 	def OwnrEthnctyTpPrvddBy(self):
 		del self._OwnrEthnctyTpPrvddBy
-		self._OwnrEthnctyTpPrvddBy = None
+		self._OwnrEthnctyTpPrvddBy = base_types.UninitialisedField(self, 'OwnrEthnctyTpPrvddBy', Max35Text, False)
 
 	@property
 	def OwnrTp(self):
@@ -307,12 +307,12 @@ class PartyIdentification284(base_types._BaseFieldType):
 
 	@OwnrTp.setter
 	def OwnrTp(self, value):
-		self._OwnrTp = value if type(value) != base_types.auto else self.make_default("OwnrTp")
+		self._OwnrTp = value if value is not None else base_types.UninitialisedField(self, 'OwnrTp', Max35Text, False)
 
 	@OwnrTp.deleter
 	def OwnrTp(self):
 		del self._OwnrTp
-		self._OwnrTp = None
+		self._OwnrTp = base_types.UninitialisedField(self, 'OwnrTp', Max35Text, False)
 
 	@property
 	def OwnrTpPrvddBy(self):
@@ -320,12 +320,12 @@ class PartyIdentification284(base_types._BaseFieldType):
 
 	@OwnrTpPrvddBy.setter
 	def OwnrTpPrvddBy(self, value):
-		self._OwnrTpPrvddBy = value if type(value) != base_types.auto else self.make_default("OwnrTpPrvddBy")
+		self._OwnrTpPrvddBy = value if value is not None else base_types.UninitialisedField(self, 'OwnrTpPrvddBy', Max35Text, False)
 
 	@OwnrTpPrvddBy.deleter
 	def OwnrTpPrvddBy(self):
 		del self._OwnrTpPrvddBy
-		self._OwnrTpPrvddBy = None
+		self._OwnrTpPrvddBy = base_types.UninitialisedField(self, 'OwnrTpPrvddBy', Max35Text, False)
 
 	@property
 	def PhneNb(self):
@@ -333,12 +333,12 @@ class PartyIdentification284(base_types._BaseFieldType):
 
 	@PhneNb.setter
 	def PhneNb(self, value):
-		self._PhneNb = value if type(value) != base_types.auto else self.make_default("PhneNb")
+		self._PhneNb = value if value is not None else base_types.UninitialisedField(self, 'PhneNb', Max35Text, False)
 
 	@PhneNb.deleter
 	def PhneNb(self):
 		del self._PhneNb
-		self._PhneNb = None
+		self._PhneNb = base_types.UninitialisedField(self, 'PhneNb', Max35Text, False)
 
 	@property
 	def ShrtNm(self):
@@ -346,12 +346,12 @@ class PartyIdentification284(base_types._BaseFieldType):
 
 	@ShrtNm.setter
 	def ShrtNm(self, value):
-		self._ShrtNm = value if type(value) != base_types.auto else self.make_default("ShrtNm")
+		self._ShrtNm = value if value is not None else base_types.UninitialisedField(self, 'ShrtNm', Max35Text, False)
 
 	@ShrtNm.deleter
 	def ShrtNm(self):
 		del self._ShrtNm
-		self._ShrtNm = None
+		self._ShrtNm = base_types.UninitialisedField(self, 'ShrtNm', Max35Text, False)
 
 	@property
 	def TaxRegnId(self):
@@ -359,12 +359,12 @@ class PartyIdentification284(base_types._BaseFieldType):
 
 	@TaxRegnId.setter
 	def TaxRegnId(self, value):
-		self._TaxRegnId = value if type(value) != base_types.auto else self.make_default("TaxRegnId")
+		self._TaxRegnId = value if value is not None else base_types.UninitialisedField(self, 'TaxRegnId', Max35Text, False)
 
 	@TaxRegnId.deleter
 	def TaxRegnId(self):
 		del self._TaxRegnId
-		self._TaxRegnId = None
+		self._TaxRegnId = base_types.UninitialisedField(self, 'TaxRegnId', Max35Text, False)
 
 	@property
 	def URLAdr(self):
@@ -372,12 +372,12 @@ class PartyIdentification284(base_types._BaseFieldType):
 
 	@URLAdr.setter
 	def URLAdr(self, value):
-		self._URLAdr = value if type(value) != base_types.auto else self.make_default("URLAdr")
+		self._URLAdr = value if value is not None else base_types.UninitialisedField(self, 'URLAdr', Max256Text, False)
 
 	@URLAdr.deleter
 	def URLAdr(self):
 		del self._URLAdr
-		self._URLAdr = None
+		self._URLAdr = base_types.UninitialisedField(self, 'URLAdr', Max256Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),

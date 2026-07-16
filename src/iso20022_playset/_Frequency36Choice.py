@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Frequency6Code import Frequency6Code
-from ._FrequencyAndMoment1 import FrequencyAndMoment1
-from ._FrequencyPeriod1 import FrequencyPeriod1
+from . import Frequency6Code
+from . import FrequencyAndMoment1
+from . import FrequencyPeriod1
 
 class Frequency36Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Frequency36Choice(base_types._BaseFieldType):
 
 	@Prd.setter
 	def Prd(self, value):
-		self._Prd = value if type(value) != base_types.auto else self.make_default("Prd")
+		self._Prd = value if value is not None else base_types.UninitialisedField(self, 'Prd', FrequencyPeriod1, False)
 
 	@Prd.deleter
 	def Prd(self):
 		del self._Prd
-		self._Prd = None
+		self._Prd = base_types.UninitialisedField(self, 'Prd', FrequencyPeriod1, False)
 
 	@property
 	def PtInTm(self):
@@ -28,12 +28,12 @@ class Frequency36Choice(base_types._BaseFieldType):
 
 	@PtInTm.setter
 	def PtInTm(self, value):
-		self._PtInTm = value if type(value) != base_types.auto else self.make_default("PtInTm")
+		self._PtInTm = value if value is not None else base_types.UninitialisedField(self, 'PtInTm', FrequencyAndMoment1, False)
 
 	@PtInTm.deleter
 	def PtInTm(self):
 		del self._PtInTm
-		self._PtInTm = None
+		self._PtInTm = base_types.UninitialisedField(self, 'PtInTm', FrequencyAndMoment1, False)
 
 	@property
 	def Tp(self):
@@ -41,12 +41,12 @@ class Frequency36Choice(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', Frequency6Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', Frequency6Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Prd', type=FrequencyPeriod1, min=0, max=1, mutex_group=1, array=False),

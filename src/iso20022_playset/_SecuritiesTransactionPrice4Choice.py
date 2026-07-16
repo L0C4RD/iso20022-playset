@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesTransactionPrice1 import SecuritiesTransactionPrice1
-from ._SecuritiesTransactionPrice2Choice import SecuritiesTransactionPrice2Choice
+from . import SecuritiesTransactionPrice1
+from . import SecuritiesTransactionPrice2Choice
 
 class SecuritiesTransactionPrice4Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SecuritiesTransactionPrice4Choice(base_types._BaseFieldType):
 
 	@NoPric.setter
 	def NoPric(self, value):
-		self._NoPric = value if type(value) != base_types.auto else self.make_default("NoPric")
+		self._NoPric = value if value is not None else base_types.UninitialisedField(self, 'NoPric', SecuritiesTransactionPrice1, False)
 
 	@NoPric.deleter
 	def NoPric(self):
 		del self._NoPric
-		self._NoPric = None
+		self._NoPric = base_types.UninitialisedField(self, 'NoPric', SecuritiesTransactionPrice1, False)
 
 	@property
 	def Pric(self):
@@ -27,12 +27,12 @@ class SecuritiesTransactionPrice4Choice(base_types._BaseFieldType):
 
 	@Pric.setter
 	def Pric(self, value):
-		self._Pric = value if type(value) != base_types.auto else self.make_default("Pric")
+		self._Pric = value if value is not None else base_types.UninitialisedField(self, 'Pric', SecuritiesTransactionPrice2Choice, False)
 
 	@Pric.deleter
 	def Pric(self):
 		del self._Pric
-		self._Pric = None
+		self._Pric = base_types.UninitialisedField(self, 'Pric', SecuritiesTransactionPrice2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NoPric', type=SecuritiesTransactionPrice1, min=0, max=1, mutex_group=1, array=False),

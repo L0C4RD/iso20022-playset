@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MaturityTerm2 import MaturityTerm2
+from . import MaturityTerm2
 
 class TimeToMaturityPeriod1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class TimeToMaturityPeriod1(base_types._BaseFieldType):
 
 	@End.setter
 	def End(self, value):
-		self._End = value if type(value) != base_types.auto else self.make_default("End")
+		self._End = value if value is not None else base_types.UninitialisedField(self, 'End', MaturityTerm2, False)
 
 	@End.deleter
 	def End(self):
 		del self._End
-		self._End = None
+		self._End = base_types.UninitialisedField(self, 'End', MaturityTerm2, False)
 
 	@property
 	def Start(self):
@@ -26,12 +26,12 @@ class TimeToMaturityPeriod1(base_types._BaseFieldType):
 
 	@Start.setter
 	def Start(self, value):
-		self._Start = value if type(value) != base_types.auto else self.make_default("Start")
+		self._Start = value if value is not None else base_types.UninitialisedField(self, 'Start', MaturityTerm2, False)
 
 	@Start.deleter
 	def Start(self):
 		del self._Start
-		self._Start = None
+		self._Start = base_types.UninitialisedField(self, 'Start', MaturityTerm2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='End', type=MaturityTerm2, min=0, max=1, mutex_group=None, array=False),

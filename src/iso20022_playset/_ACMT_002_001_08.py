@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountDetailsConfirmationV08 import AccountDetailsConfirmationV08
+from . import AccountDetailsConfirmationV08
 
 class ACMT_002_001_08():
 
@@ -18,12 +18,12 @@ class ACMT_002_001_08():
 
 		@AcctDtlsConf.setter
 		def AcctDtlsConf(self, value):
-			self._AcctDtlsConf = value if type(value) != base_types.auto else self.make_default("AcctDtlsConf")
+			self._AcctDtlsConf = value if value is not None else base_types.UninitialisedField(self, 'AcctDtlsConf', AccountDetailsConfirmationV08, False)
 
 		@AcctDtlsConf.deleter
 		def AcctDtlsConf(self):
 			del self._AcctDtlsConf
-			self._AcctDtlsConf = None
+			self._AcctDtlsConf = base_types.UninitialisedField(self, 'AcctDtlsConf', AccountDetailsConfirmationV08, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AcctDtlsConf', type=AccountDetailsConfirmationV08, min=1, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashSettlementSystemPlace1Choice import CashSettlementSystemPlace1Choice
-from ._Max30DecimalNumber import Max30DecimalNumber
-from ._SecurityIdentification19 import SecurityIdentification19
+from . import CashSettlementSystemPlace1Choice
+from . import Max30DecimalNumber
+from . import SecurityIdentification19
 
 class DigitalPaymentSettlement2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class DigitalPaymentSettlement2(base_types._BaseFieldType):
 
 	@CshSttlmSysPlc.setter
 	def CshSttlmSysPlc(self, value):
-		self._CshSttlmSysPlc = value if type(value) != base_types.auto else self.make_default("CshSttlmSysPlc")
+		self._CshSttlmSysPlc = value if value is not None else base_types.UninitialisedField(self, 'CshSttlmSysPlc', CashSettlementSystemPlace1Choice, False)
 
 	@CshSttlmSysPlc.deleter
 	def CshSttlmSysPlc(self):
 		del self._CshSttlmSysPlc
-		self._CshSttlmSysPlc = None
+		self._CshSttlmSysPlc = base_types.UninitialisedField(self, 'CshSttlmSysPlc', CashSettlementSystemPlace1Choice, False)
 
 	@property
 	def ElctrncMnyTknSttlmQty(self):
@@ -28,12 +28,12 @@ class DigitalPaymentSettlement2(base_types._BaseFieldType):
 
 	@ElctrncMnyTknSttlmQty.setter
 	def ElctrncMnyTknSttlmQty(self, value):
-		self._ElctrncMnyTknSttlmQty = value if type(value) != base_types.auto else self.make_default("ElctrncMnyTknSttlmQty")
+		self._ElctrncMnyTknSttlmQty = value if value is not None else base_types.UninitialisedField(self, 'ElctrncMnyTknSttlmQty', Max30DecimalNumber, False)
 
 	@ElctrncMnyTknSttlmQty.deleter
 	def ElctrncMnyTknSttlmQty(self):
 		del self._ElctrncMnyTknSttlmQty
-		self._ElctrncMnyTknSttlmQty = None
+		self._ElctrncMnyTknSttlmQty = base_types.UninitialisedField(self, 'ElctrncMnyTknSttlmQty', Max30DecimalNumber, False)
 
 	@property
 	def FinInstrmId(self):
@@ -41,12 +41,12 @@ class DigitalPaymentSettlement2(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
 		del self._FinInstrmId
-		self._FinInstrmId = None
+		self._FinInstrmId = base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshSttlmSysPlc', type=CashSettlementSystemPlace1Choice, min=0, max=1, mutex_group=None, array=False),

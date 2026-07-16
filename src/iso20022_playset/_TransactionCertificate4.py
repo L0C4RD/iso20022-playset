@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashAccount40 import CashAccount40
-from ._CountryCode import CountryCode
-from ._DocumentAmendment1 import DocumentAmendment1
-from ._DocumentIdentification28 import DocumentIdentification28
-from ._Max35Text import Max35Text
-from ._SupplementaryData1 import SupplementaryData1
-from ._TransactionCertificateRecord2 import TransactionCertificateRecord2
+from . import CashAccount40
+from . import CountryCode
+from . import DocumentAmendment1
+from . import DocumentIdentification28
+from . import Max35Text
+from . import SupplementaryData1
+from . import TransactionCertificateRecord2
 
 class TransactionCertificate4(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class TransactionCertificate4(base_types._BaseFieldType):
 
 	@Acct.setter
 	def Acct(self, value):
-		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
+		self._Acct = value if value is not None else base_types.UninitialisedField(self, 'Acct', CashAccount40, False)
 
 	@Acct.deleter
 	def Acct(self):
 		del self._Acct
-		self._Acct = None
+		self._Acct = base_types.UninitialisedField(self, 'Acct', CashAccount40, False)
 
 	@property
 	def Amdmnt(self):
@@ -32,12 +32,12 @@ class TransactionCertificate4(base_types._BaseFieldType):
 
 	@Amdmnt.setter
 	def Amdmnt(self, value):
-		self._Amdmnt = value if type(value) != base_types.auto else self.make_default("Amdmnt")
+		self._Amdmnt = value if value is not None else base_types.UninitialisedField(self, 'Amdmnt', DocumentAmendment1, False)
 
 	@Amdmnt.deleter
 	def Amdmnt(self):
 		del self._Amdmnt
-		self._Amdmnt = None
+		self._Amdmnt = base_types.UninitialisedField(self, 'Amdmnt', DocumentAmendment1, False)
 
 	@property
 	def BkAcctDmcltnCtry(self):
@@ -45,12 +45,12 @@ class TransactionCertificate4(base_types._BaseFieldType):
 
 	@BkAcctDmcltnCtry.setter
 	def BkAcctDmcltnCtry(self, value):
-		self._BkAcctDmcltnCtry = value if type(value) != base_types.auto else self.make_default("BkAcctDmcltnCtry")
+		self._BkAcctDmcltnCtry = value if value is not None else base_types.UninitialisedField(self, 'BkAcctDmcltnCtry', CountryCode, False)
 
 	@BkAcctDmcltnCtry.deleter
 	def BkAcctDmcltnCtry(self):
 		del self._BkAcctDmcltnCtry
-		self._BkAcctDmcltnCtry = None
+		self._BkAcctDmcltnCtry = base_types.UninitialisedField(self, 'BkAcctDmcltnCtry', CountryCode, False)
 
 	@property
 	def Cert(self):
@@ -58,12 +58,12 @@ class TransactionCertificate4(base_types._BaseFieldType):
 
 	@Cert.setter
 	def Cert(self, value):
-		self._Cert = value if type(value) != base_types.auto else self.make_default("Cert")
+		self._Cert = value if value is not None else base_types.UninitialisedField(self, 'Cert', DocumentIdentification28, False)
 
 	@Cert.deleter
 	def Cert(self):
 		del self._Cert
-		self._Cert = None
+		self._Cert = base_types.UninitialisedField(self, 'Cert', DocumentIdentification28, False)
 
 	@property
 	def CertRcrd(self):
@@ -71,12 +71,12 @@ class TransactionCertificate4(base_types._BaseFieldType):
 
 	@CertRcrd.setter
 	def CertRcrd(self, value):
-		self._CertRcrd = value if type(value) != base_types.auto else self.make_default("CertRcrd")
+		self._CertRcrd = value if value is not None else base_types.UninitialisedField(self, 'CertRcrd', TransactionCertificateRecord2, True)
 
 	@CertRcrd.deleter
 	def CertRcrd(self):
 		del self._CertRcrd
-		self._CertRcrd = None
+		self._CertRcrd = base_types.UninitialisedField(self, 'CertRcrd', TransactionCertificateRecord2, True)
 
 	@property
 	def SplmtryData(self):
@@ -84,12 +84,12 @@ class TransactionCertificate4(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TxId(self):
@@ -97,12 +97,12 @@ class TransactionCertificate4(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),

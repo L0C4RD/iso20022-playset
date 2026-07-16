@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._Max256Text import Max256Text
-from ._UpdateLogPartyRecord2Choice import UpdateLogPartyRecord2Choice
+from . import ISODateTime
+from . import Max256Text
+from . import UpdateLogPartyRecord2Choice
 
 class PartyAuditTrail2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PartyAuditTrail2(base_types._BaseFieldType):
 
 	@ApprvgUsr.setter
 	def ApprvgUsr(self, value):
-		self._ApprvgUsr = value if type(value) != base_types.auto else self.make_default("ApprvgUsr")
+		self._ApprvgUsr = value if value is not None else base_types.UninitialisedField(self, 'ApprvgUsr', Max256Text, False)
 
 	@ApprvgUsr.deleter
 	def ApprvgUsr(self):
 		del self._ApprvgUsr
-		self._ApprvgUsr = None
+		self._ApprvgUsr = base_types.UninitialisedField(self, 'ApprvgUsr', Max256Text, False)
 
 	@property
 	def InstgUsr(self):
@@ -28,12 +28,12 @@ class PartyAuditTrail2(base_types._BaseFieldType):
 
 	@InstgUsr.setter
 	def InstgUsr(self, value):
-		self._InstgUsr = value if type(value) != base_types.auto else self.make_default("InstgUsr")
+		self._InstgUsr = value if value is not None else base_types.UninitialisedField(self, 'InstgUsr', Max256Text, False)
 
 	@InstgUsr.deleter
 	def InstgUsr(self):
 		del self._InstgUsr
-		self._InstgUsr = None
+		self._InstgUsr = base_types.UninitialisedField(self, 'InstgUsr', Max256Text, False)
 
 	@property
 	def OprTmStmp(self):
@@ -41,12 +41,12 @@ class PartyAuditTrail2(base_types._BaseFieldType):
 
 	@OprTmStmp.setter
 	def OprTmStmp(self, value):
-		self._OprTmStmp = value if type(value) != base_types.auto else self.make_default("OprTmStmp")
+		self._OprTmStmp = value if value is not None else base_types.UninitialisedField(self, 'OprTmStmp', ISODateTime, False)
 
 	@OprTmStmp.deleter
 	def OprTmStmp(self):
 		del self._OprTmStmp
-		self._OprTmStmp = None
+		self._OprTmStmp = base_types.UninitialisedField(self, 'OprTmStmp', ISODateTime, False)
 
 	@property
 	def Rcrd(self):
@@ -54,12 +54,12 @@ class PartyAuditTrail2(base_types._BaseFieldType):
 
 	@Rcrd.setter
 	def Rcrd(self, value):
-		self._Rcrd = value if type(value) != base_types.auto else self.make_default("Rcrd")
+		self._Rcrd = value if value is not None else base_types.UninitialisedField(self, 'Rcrd', UpdateLogPartyRecord2Choice, True)
 
 	@Rcrd.deleter
 	def Rcrd(self):
 		del self._Rcrd
-		self._Rcrd = None
+		self._Rcrd = base_types.UninitialisedField(self, 'Rcrd', UpdateLogPartyRecord2Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ApprvgUsr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),

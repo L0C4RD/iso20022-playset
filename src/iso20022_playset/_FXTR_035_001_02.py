@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ForeignExchangeTradeConfirmationRequestAmendmentRequestV02 import ForeignExchangeTradeConfirmationRequestAmendmentRequestV02
+from . import ForeignExchangeTradeConfirmationRequestAmendmentRequestV02
 
 class FXTR_035_001_02():
 
@@ -18,12 +18,12 @@ class FXTR_035_001_02():
 
 		@FXTradConfReqAmdmntReq.setter
 		def FXTradConfReqAmdmntReq(self, value):
-			self._FXTradConfReqAmdmntReq = value if type(value) != base_types.auto else self.make_default("FXTradConfReqAmdmntReq")
+			self._FXTradConfReqAmdmntReq = value if value is not None else base_types.UninitialisedField(self, 'FXTradConfReqAmdmntReq', ForeignExchangeTradeConfirmationRequestAmendmentRequestV02, False)
 
 		@FXTradConfReqAmdmntReq.deleter
 		def FXTradConfReqAmdmntReq(self):
 			del self._FXTradConfReqAmdmntReq
-			self._FXTradConfReqAmdmntReq = None
+			self._FXTradConfReqAmdmntReq = base_types.UninitialisedField(self, 'FXTradConfReqAmdmntReq', ForeignExchangeTradeConfirmationRequestAmendmentRequestV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='FXTradConfReqAmdmntReq', type=ForeignExchangeTradeConfirmationRequestAmendmentRequestV02, min=1, max=1, mutex_group=None, array=False),

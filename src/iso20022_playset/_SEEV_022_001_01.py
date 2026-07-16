@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AgentCAMovementStatusAdviceV01 import AgentCAMovementStatusAdviceV01
+from . import AgentCAMovementStatusAdviceV01
 
 class SEEV_022_001_01():
 
@@ -18,12 +18,12 @@ class SEEV_022_001_01():
 
 		@AgtCAMvmntStsAdvc.setter
 		def AgtCAMvmntStsAdvc(self, value):
-			self._AgtCAMvmntStsAdvc = value if type(value) != base_types.auto else self.make_default("AgtCAMvmntStsAdvc")
+			self._AgtCAMvmntStsAdvc = value if value is not None else base_types.UninitialisedField(self, 'AgtCAMvmntStsAdvc', AgentCAMovementStatusAdviceV01, False)
 
 		@AgtCAMvmntStsAdvc.deleter
 		def AgtCAMvmntStsAdvc(self):
 			del self._AgtCAMvmntStsAdvc
-			self._AgtCAMvmntStsAdvc = None
+			self._AgtCAMvmntStsAdvc = base_types.UninitialisedField(self, 'AgtCAMvmntStsAdvc', AgentCAMovementStatusAdviceV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AgtCAMvmntStsAdvc', type=AgentCAMovementStatusAdviceV01, min=1, max=1, mutex_group=None, array=False),

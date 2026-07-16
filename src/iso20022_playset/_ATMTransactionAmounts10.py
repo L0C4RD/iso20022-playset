@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMMediaType4Code import ATMMediaType4Code
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._Number import Number
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ATMMediaType4Code
+from . import ActiveCurrencyCode
+from . import Number
+from . import TrueFalseIndicator
 
 class ATMTransactionAmounts10(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ATMTransactionAmounts10(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@property
 	def DispFlg(self):
@@ -29,12 +29,12 @@ class ATMTransactionAmounts10(base_types._BaseFieldType):
 
 	@DispFlg.setter
 	def DispFlg(self, value):
-		self._DispFlg = value if type(value) != base_types.auto else self.make_default("DispFlg")
+		self._DispFlg = value if value is not None else base_types.UninitialisedField(self, 'DispFlg', TrueFalseIndicator, False)
 
 	@DispFlg.deleter
 	def DispFlg(self):
 		del self._DispFlg
-		self._DispFlg = None
+		self._DispFlg = base_types.UninitialisedField(self, 'DispFlg', TrueFalseIndicator, False)
 
 	@property
 	def MaxNb(self):
@@ -42,12 +42,12 @@ class ATMTransactionAmounts10(base_types._BaseFieldType):
 
 	@MaxNb.setter
 	def MaxNb(self, value):
-		self._MaxNb = value if type(value) != base_types.auto else self.make_default("MaxNb")
+		self._MaxNb = value if value is not None else base_types.UninitialisedField(self, 'MaxNb', Number, False)
 
 	@MaxNb.deleter
 	def MaxNb(self):
 		del self._MaxNb
-		self._MaxNb = None
+		self._MaxNb = base_types.UninitialisedField(self, 'MaxNb', Number, False)
 
 	@property
 	def MdiaTp(self):
@@ -55,12 +55,12 @@ class ATMTransactionAmounts10(base_types._BaseFieldType):
 
 	@MdiaTp.setter
 	def MdiaTp(self, value):
-		self._MdiaTp = value if type(value) != base_types.auto else self.make_default("MdiaTp")
+		self._MdiaTp = value if value is not None else base_types.UninitialisedField(self, 'MdiaTp', ATMMediaType4Code, False)
 
 	@MdiaTp.deleter
 	def MdiaTp(self):
 		del self._MdiaTp
-		self._MdiaTp = None
+		self._MdiaTp = base_types.UninitialisedField(self, 'MdiaTp', ATMMediaType4Code, False)
 
 	@property
 	def MinNb(self):
@@ -68,12 +68,12 @@ class ATMTransactionAmounts10(base_types._BaseFieldType):
 
 	@MinNb.setter
 	def MinNb(self, value):
-		self._MinNb = value if type(value) != base_types.auto else self.make_default("MinNb")
+		self._MinNb = value if value is not None else base_types.UninitialisedField(self, 'MinNb', Number, False)
 
 	@MinNb.deleter
 	def MinNb(self):
 		del self._MinNb
-		self._MinNb = None
+		self._MinNb = base_types.UninitialisedField(self, 'MinNb', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),

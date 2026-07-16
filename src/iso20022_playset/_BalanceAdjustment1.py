@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection34 import AmountAndDirection34
-from ._BalanceAdjustmentType1Code import BalanceAdjustmentType1Code
-from ._DecimalNumber import DecimalNumber
-from ._ISODate import ISODate
-from ._Max105Text import Max105Text
+from . import AmountAndDirection34
+from . import BalanceAdjustmentType1Code
+from . import DecimalNumber
+from . import ISODate
+from . import Max105Text
 
 class BalanceAdjustment1(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class BalanceAdjustment1(base_types._BaseFieldType):
 
 	@AvrgAmt.setter
 	def AvrgAmt(self, value):
-		self._AvrgAmt = value if type(value) != base_types.auto else self.make_default("AvrgAmt")
+		self._AvrgAmt = value if value is not None else base_types.UninitialisedField(self, 'AvrgAmt', AmountAndDirection34, False)
 
 	@AvrgAmt.deleter
 	def AvrgAmt(self):
 		del self._AvrgAmt
-		self._AvrgAmt = None
+		self._AvrgAmt = base_types.UninitialisedField(self, 'AvrgAmt', AmountAndDirection34, False)
 
 	@property
 	def BalAmt(self):
@@ -30,12 +30,12 @@ class BalanceAdjustment1(base_types._BaseFieldType):
 
 	@BalAmt.setter
 	def BalAmt(self, value):
-		self._BalAmt = value if type(value) != base_types.auto else self.make_default("BalAmt")
+		self._BalAmt = value if value is not None else base_types.UninitialisedField(self, 'BalAmt', AmountAndDirection34, False)
 
 	@BalAmt.deleter
 	def BalAmt(self):
 		del self._BalAmt
-		self._BalAmt = None
+		self._BalAmt = base_types.UninitialisedField(self, 'BalAmt', AmountAndDirection34, False)
 
 	@property
 	def Days(self):
@@ -43,12 +43,12 @@ class BalanceAdjustment1(base_types._BaseFieldType):
 
 	@Days.setter
 	def Days(self, value):
-		self._Days = value if type(value) != base_types.auto else self.make_default("Days")
+		self._Days = value if value is not None else base_types.UninitialisedField(self, 'Days', DecimalNumber, False)
 
 	@Days.deleter
 	def Days(self):
 		del self._Days
-		self._Days = None
+		self._Days = base_types.UninitialisedField(self, 'Days', DecimalNumber, False)
 
 	@property
 	def Desc(self):
@@ -56,12 +56,12 @@ class BalanceAdjustment1(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', Max105Text, False)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', Max105Text, False)
 
 	@property
 	def EarngsAdjstmntAmt(self):
@@ -69,12 +69,12 @@ class BalanceAdjustment1(base_types._BaseFieldType):
 
 	@EarngsAdjstmntAmt.setter
 	def EarngsAdjstmntAmt(self, value):
-		self._EarngsAdjstmntAmt = value if type(value) != base_types.auto else self.make_default("EarngsAdjstmntAmt")
+		self._EarngsAdjstmntAmt = value if value is not None else base_types.UninitialisedField(self, 'EarngsAdjstmntAmt', AmountAndDirection34, False)
 
 	@EarngsAdjstmntAmt.deleter
 	def EarngsAdjstmntAmt(self):
 		del self._EarngsAdjstmntAmt
-		self._EarngsAdjstmntAmt = None
+		self._EarngsAdjstmntAmt = base_types.UninitialisedField(self, 'EarngsAdjstmntAmt', AmountAndDirection34, False)
 
 	@property
 	def ErrDt(self):
@@ -82,12 +82,12 @@ class BalanceAdjustment1(base_types._BaseFieldType):
 
 	@ErrDt.setter
 	def ErrDt(self, value):
-		self._ErrDt = value if type(value) != base_types.auto else self.make_default("ErrDt")
+		self._ErrDt = value if value is not None else base_types.UninitialisedField(self, 'ErrDt', ISODate, False)
 
 	@ErrDt.deleter
 	def ErrDt(self):
 		del self._ErrDt
-		self._ErrDt = None
+		self._ErrDt = base_types.UninitialisedField(self, 'ErrDt', ISODate, False)
 
 	@property
 	def PstngDt(self):
@@ -95,12 +95,12 @@ class BalanceAdjustment1(base_types._BaseFieldType):
 
 	@PstngDt.setter
 	def PstngDt(self, value):
-		self._PstngDt = value if type(value) != base_types.auto else self.make_default("PstngDt")
+		self._PstngDt = value if value is not None else base_types.UninitialisedField(self, 'PstngDt', ISODate, False)
 
 	@PstngDt.deleter
 	def PstngDt(self):
 		del self._PstngDt
-		self._PstngDt = None
+		self._PstngDt = base_types.UninitialisedField(self, 'PstngDt', ISODate, False)
 
 	@property
 	def Tp(self):
@@ -108,12 +108,12 @@ class BalanceAdjustment1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', BalanceAdjustmentType1Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', BalanceAdjustmentType1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AvrgAmt', type=AmountAndDirection34, min=0, max=1, mutex_group=None, array=False),

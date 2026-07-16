@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcquirerHostConfiguration10 import AcquirerHostConfiguration10
-from ._GenericIdentification176 import GenericIdentification176
-from ._Max256Text import Max256Text
-from ._Max35Text import Max35Text
-from ._NonFinancialRequestType2Code import NonFinancialRequestType2Code
-from ._TerminalManagementAction3Code import TerminalManagementAction3Code
+from . import AcquirerHostConfiguration10
+from . import GenericIdentification176
+from . import Max256Text
+from . import Max35Text
+from . import NonFinancialRequestType2Code
+from . import TerminalManagementAction3Code
 
 class ServiceProviderParameters4(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class ServiceProviderParameters4(base_types._BaseFieldType):
 
 	@ActnTp.setter
 	def ActnTp(self, value):
-		self._ActnTp = value if type(value) != base_types.auto else self.make_default("ActnTp")
+		self._ActnTp = value if value is not None else base_types.UninitialisedField(self, 'ActnTp', TerminalManagementAction3Code, False)
 
 	@ActnTp.deleter
 	def ActnTp(self):
 		del self._ActnTp
-		self._ActnTp = None
+		self._ActnTp = base_types.UninitialisedField(self, 'ActnTp', TerminalManagementAction3Code, False)
 
 	@property
 	def ApplId(self):
@@ -31,12 +31,12 @@ class ServiceProviderParameters4(base_types._BaseFieldType):
 
 	@ApplId.setter
 	def ApplId(self, value):
-		self._ApplId = value if type(value) != base_types.auto else self.make_default("ApplId")
+		self._ApplId = value if value is not None else base_types.UninitialisedField(self, 'ApplId', Max35Text, True)
 
 	@ApplId.deleter
 	def ApplId(self):
 		del self._ApplId
-		self._ApplId = None
+		self._ApplId = base_types.UninitialisedField(self, 'ApplId', Max35Text, True)
 
 	@property
 	def Hst(self):
@@ -44,12 +44,12 @@ class ServiceProviderParameters4(base_types._BaseFieldType):
 
 	@Hst.setter
 	def Hst(self, value):
-		self._Hst = value if type(value) != base_types.auto else self.make_default("Hst")
+		self._Hst = value if value is not None else base_types.UninitialisedField(self, 'Hst', AcquirerHostConfiguration10, True)
 
 	@Hst.deleter
 	def Hst(self):
 		del self._Hst
-		self._Hst = None
+		self._Hst = base_types.UninitialisedField(self, 'Hst', AcquirerHostConfiguration10, True)
 
 	@property
 	def NonFinActnSpprtd(self):
@@ -57,12 +57,12 @@ class ServiceProviderParameters4(base_types._BaseFieldType):
 
 	@NonFinActnSpprtd.setter
 	def NonFinActnSpprtd(self, value):
-		self._NonFinActnSpprtd = value if type(value) != base_types.auto else self.make_default("NonFinActnSpprtd")
+		self._NonFinActnSpprtd = value if value is not None else base_types.UninitialisedField(self, 'NonFinActnSpprtd', NonFinancialRequestType2Code, True)
 
 	@NonFinActnSpprtd.deleter
 	def NonFinActnSpprtd(self):
 		del self._NonFinActnSpprtd
-		self._NonFinActnSpprtd = None
+		self._NonFinActnSpprtd = base_types.UninitialisedField(self, 'NonFinActnSpprtd', NonFinancialRequestType2Code, True)
 
 	@property
 	def SvcPrvdrId(self):
@@ -70,12 +70,12 @@ class ServiceProviderParameters4(base_types._BaseFieldType):
 
 	@SvcPrvdrId.setter
 	def SvcPrvdrId(self, value):
-		self._SvcPrvdrId = value if type(value) != base_types.auto else self.make_default("SvcPrvdrId")
+		self._SvcPrvdrId = value if value is not None else base_types.UninitialisedField(self, 'SvcPrvdrId', GenericIdentification176, True)
 
 	@SvcPrvdrId.deleter
 	def SvcPrvdrId(self):
 		del self._SvcPrvdrId
-		self._SvcPrvdrId = None
+		self._SvcPrvdrId = base_types.UninitialisedField(self, 'SvcPrvdrId', GenericIdentification176, True)
 
 	@property
 	def Vrsn(self):
@@ -83,12 +83,12 @@ class ServiceProviderParameters4(base_types._BaseFieldType):
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+		self._Vrsn = value if value is not None else base_types.UninitialisedField(self, 'Vrsn', Max256Text, False)
 
 	@Vrsn.deleter
 	def Vrsn(self):
 		del self._Vrsn
-		self._Vrsn = None
+		self._Vrsn = base_types.UninitialisedField(self, 'Vrsn', Max256Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActnTp', type=TerminalManagementAction3Code, min=1, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
-from ._SecurityIdentification46Choice import SecurityIdentification46Choice
+from . import Max350Text
+from . import Max35Text
+from . import SecurityIdentification46Choice
 
 class FinancialInstrumentIdentification7(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class FinancialInstrumentIdentification7(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', SecurityIdentification46Choice, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', SecurityIdentification46Choice, False)
 
 	@property
 	def Nm(self):
@@ -28,12 +28,12 @@ class FinancialInstrumentIdentification7(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max350Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max350Text, False)
 
 	@property
 	def ShrtNm(self):
@@ -41,12 +41,12 @@ class FinancialInstrumentIdentification7(base_types._BaseFieldType):
 
 	@ShrtNm.setter
 	def ShrtNm(self, value):
-		self._ShrtNm = value if type(value) != base_types.auto else self.make_default("ShrtNm")
+		self._ShrtNm = value if value is not None else base_types.UninitialisedField(self, 'ShrtNm', Max35Text, False)
 
 	@ShrtNm.deleter
 	def ShrtNm(self):
 		del self._ShrtNm
-		self._ShrtNm = None
+		self._ShrtNm = base_types.UninitialisedField(self, 'ShrtNm', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=SecurityIdentification46Choice, min=1, max=1, mutex_group=None, array=False),

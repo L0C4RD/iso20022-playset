@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CCPPortfolioStressTestingDefinitionReportV02 import CCPPortfolioStressTestingDefinitionReportV02
+from . import CCPPortfolioStressTestingDefinitionReportV02
 
 class AUTH_057_001_02():
 
@@ -18,12 +18,12 @@ class AUTH_057_001_02():
 
 		@CCPPrtflStrssTstgDefRpt.setter
 		def CCPPrtflStrssTstgDefRpt(self, value):
-			self._CCPPrtflStrssTstgDefRpt = value if type(value) != base_types.auto else self.make_default("CCPPrtflStrssTstgDefRpt")
+			self._CCPPrtflStrssTstgDefRpt = value if value is not None else base_types.UninitialisedField(self, 'CCPPrtflStrssTstgDefRpt', CCPPortfolioStressTestingDefinitionReportV02, False)
 
 		@CCPPrtflStrssTstgDefRpt.deleter
 		def CCPPrtflStrssTstgDefRpt(self):
 			del self._CCPPrtflStrssTstgDefRpt
-			self._CCPPrtflStrssTstgDefRpt = None
+			self._CCPPrtflStrssTstgDefRpt = base_types.UninitialisedField(self, 'CCPPrtflStrssTstgDefRpt', CCPPortfolioStressTestingDefinitionReportV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CCPPrtflStrssTstgDefRpt', type=CCPPortfolioStressTestingDefinitionReportV02, min=1, max=1, mutex_group=None, array=False),

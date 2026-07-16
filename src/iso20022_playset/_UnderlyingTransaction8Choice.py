@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._UnderlyingPaymentInstruction9 import UnderlyingPaymentInstruction9
-from ._UnderlyingPaymentTransaction8 import UnderlyingPaymentTransaction8
-from ._UnderlyingStatementEntry3 import UnderlyingStatementEntry3
+from . import UnderlyingPaymentInstruction9
+from . import UnderlyingPaymentTransaction8
+from . import UnderlyingStatementEntry3
 
 class UnderlyingTransaction8Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class UnderlyingTransaction8Choice(base_types._BaseFieldType):
 
 	@Initn.setter
 	def Initn(self, value):
-		self._Initn = value if type(value) != base_types.auto else self.make_default("Initn")
+		self._Initn = value if value is not None else base_types.UninitialisedField(self, 'Initn', UnderlyingPaymentInstruction9, False)
 
 	@Initn.deleter
 	def Initn(self):
 		del self._Initn
-		self._Initn = None
+		self._Initn = base_types.UninitialisedField(self, 'Initn', UnderlyingPaymentInstruction9, False)
 
 	@property
 	def IntrBk(self):
@@ -28,12 +28,12 @@ class UnderlyingTransaction8Choice(base_types._BaseFieldType):
 
 	@IntrBk.setter
 	def IntrBk(self, value):
-		self._IntrBk = value if type(value) != base_types.auto else self.make_default("IntrBk")
+		self._IntrBk = value if value is not None else base_types.UninitialisedField(self, 'IntrBk', UnderlyingPaymentTransaction8, False)
 
 	@IntrBk.deleter
 	def IntrBk(self):
 		del self._IntrBk
-		self._IntrBk = None
+		self._IntrBk = base_types.UninitialisedField(self, 'IntrBk', UnderlyingPaymentTransaction8, False)
 
 	@property
 	def StmtNtry(self):
@@ -41,12 +41,12 @@ class UnderlyingTransaction8Choice(base_types._BaseFieldType):
 
 	@StmtNtry.setter
 	def StmtNtry(self, value):
-		self._StmtNtry = value if type(value) != base_types.auto else self.make_default("StmtNtry")
+		self._StmtNtry = value if value is not None else base_types.UninitialisedField(self, 'StmtNtry', UnderlyingStatementEntry3, False)
 
 	@StmtNtry.deleter
 	def StmtNtry(self):
 		del self._StmtNtry
-		self._StmtNtry = None
+		self._StmtNtry = base_types.UninitialisedField(self, 'StmtNtry', UnderlyingStatementEntry3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Initn', type=UnderlyingPaymentInstruction9, min=0, max=1, mutex_group=1, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RequestedIndicator import RequestedIndicator
+from . import RequestedIndicator
 
 class SecuritiesReturnCriteria1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class SecuritiesReturnCriteria1(base_types._BaseFieldType):
 
 	@CSD.setter
 	def CSD(self, value):
-		self._CSD = value if type(value) != base_types.auto else self.make_default("CSD")
+		self._CSD = value if value is not None else base_types.UninitialisedField(self, 'CSD', RequestedIndicator, False)
 
 	@CSD.deleter
 	def CSD(self):
 		del self._CSD
-		self._CSD = None
+		self._CSD = base_types.UninitialisedField(self, 'CSD', RequestedIndicator, False)
 
 	@property
 	def ClssfctnFinInstrm(self):
@@ -26,12 +26,12 @@ class SecuritiesReturnCriteria1(base_types._BaseFieldType):
 
 	@ClssfctnFinInstrm.setter
 	def ClssfctnFinInstrm(self, value):
-		self._ClssfctnFinInstrm = value if type(value) != base_types.auto else self.make_default("ClssfctnFinInstrm")
+		self._ClssfctnFinInstrm = value if value is not None else base_types.UninitialisedField(self, 'ClssfctnFinInstrm', RequestedIndicator, False)
 
 	@ClssfctnFinInstrm.deleter
 	def ClssfctnFinInstrm(self):
 		del self._ClssfctnFinInstrm
-		self._ClssfctnFinInstrm = None
+		self._ClssfctnFinInstrm = base_types.UninitialisedField(self, 'ClssfctnFinInstrm', RequestedIndicator, False)
 
 	@property
 	def CtryOfIsse(self):
@@ -39,12 +39,12 @@ class SecuritiesReturnCriteria1(base_types._BaseFieldType):
 
 	@CtryOfIsse.setter
 	def CtryOfIsse(self, value):
-		self._CtryOfIsse = value if type(value) != base_types.auto else self.make_default("CtryOfIsse")
+		self._CtryOfIsse = value if value is not None else base_types.UninitialisedField(self, 'CtryOfIsse', RequestedIndicator, False)
 
 	@CtryOfIsse.deleter
 	def CtryOfIsse(self):
 		del self._CtryOfIsse
-		self._CtryOfIsse = None
+		self._CtryOfIsse = base_types.UninitialisedField(self, 'CtryOfIsse', RequestedIndicator, False)
 
 	@property
 	def DevtgSttlmUnit(self):
@@ -52,12 +52,12 @@ class SecuritiesReturnCriteria1(base_types._BaseFieldType):
 
 	@DevtgSttlmUnit.setter
 	def DevtgSttlmUnit(self, value):
-		self._DevtgSttlmUnit = value if type(value) != base_types.auto else self.make_default("DevtgSttlmUnit")
+		self._DevtgSttlmUnit = value if value is not None else base_types.UninitialisedField(self, 'DevtgSttlmUnit', RequestedIndicator, False)
 
 	@DevtgSttlmUnit.deleter
 	def DevtgSttlmUnit(self):
 		del self._DevtgSttlmUnit
-		self._DevtgSttlmUnit = None
+		self._DevtgSttlmUnit = base_types.UninitialisedField(self, 'DevtgSttlmUnit', RequestedIndicator, False)
 
 	@property
 	def FinInstrmId(self):
@@ -65,12 +65,12 @@ class SecuritiesReturnCriteria1(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmId', RequestedIndicator, False)
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
 		del self._FinInstrmId
-		self._FinInstrmId = None
+		self._FinInstrmId = base_types.UninitialisedField(self, 'FinInstrmId', RequestedIndicator, False)
 
 	@property
 	def ISOSctyLngNm(self):
@@ -78,12 +78,12 @@ class SecuritiesReturnCriteria1(base_types._BaseFieldType):
 
 	@ISOSctyLngNm.setter
 	def ISOSctyLngNm(self, value):
-		self._ISOSctyLngNm = value if type(value) != base_types.auto else self.make_default("ISOSctyLngNm")
+		self._ISOSctyLngNm = value if value is not None else base_types.UninitialisedField(self, 'ISOSctyLngNm', RequestedIndicator, False)
 
 	@ISOSctyLngNm.deleter
 	def ISOSctyLngNm(self):
 		del self._ISOSctyLngNm
-		self._ISOSctyLngNm = None
+		self._ISOSctyLngNm = base_types.UninitialisedField(self, 'ISOSctyLngNm', RequestedIndicator, False)
 
 	@property
 	def ISOSctyShrtNm(self):
@@ -91,12 +91,12 @@ class SecuritiesReturnCriteria1(base_types._BaseFieldType):
 
 	@ISOSctyShrtNm.setter
 	def ISOSctyShrtNm(self, value):
-		self._ISOSctyShrtNm = value if type(value) != base_types.auto else self.make_default("ISOSctyShrtNm")
+		self._ISOSctyShrtNm = value if value is not None else base_types.UninitialisedField(self, 'ISOSctyShrtNm', RequestedIndicator, False)
 
 	@ISOSctyShrtNm.deleter
 	def ISOSctyShrtNm(self):
 		del self._ISOSctyShrtNm
-		self._ISOSctyShrtNm = None
+		self._ISOSctyShrtNm = base_types.UninitialisedField(self, 'ISOSctyShrtNm', RequestedIndicator, False)
 
 	@property
 	def InvstrCSD(self):
@@ -104,12 +104,12 @@ class SecuritiesReturnCriteria1(base_types._BaseFieldType):
 
 	@InvstrCSD.setter
 	def InvstrCSD(self, value):
-		self._InvstrCSD = value if type(value) != base_types.auto else self.make_default("InvstrCSD")
+		self._InvstrCSD = value if value is not None else base_types.UninitialisedField(self, 'InvstrCSD', RequestedIndicator, False)
 
 	@InvstrCSD.deleter
 	def InvstrCSD(self):
 		del self._InvstrCSD
-		self._InvstrCSD = None
+		self._InvstrCSD = base_types.UninitialisedField(self, 'InvstrCSD', RequestedIndicator, False)
 
 	@property
 	def IsseCcy(self):
@@ -117,12 +117,12 @@ class SecuritiesReturnCriteria1(base_types._BaseFieldType):
 
 	@IsseCcy.setter
 	def IsseCcy(self, value):
-		self._IsseCcy = value if type(value) != base_types.auto else self.make_default("IsseCcy")
+		self._IsseCcy = value if value is not None else base_types.UninitialisedField(self, 'IsseCcy', RequestedIndicator, False)
 
 	@IsseCcy.deleter
 	def IsseCcy(self):
 		del self._IsseCcy
-		self._IsseCcy = None
+		self._IsseCcy = base_types.UninitialisedField(self, 'IsseCcy', RequestedIndicator, False)
 
 	@property
 	def IsseDt(self):
@@ -130,12 +130,12 @@ class SecuritiesReturnCriteria1(base_types._BaseFieldType):
 
 	@IsseDt.setter
 	def IsseDt(self, value):
-		self._IsseDt = value if type(value) != base_types.auto else self.make_default("IsseDt")
+		self._IsseDt = value if value is not None else base_types.UninitialisedField(self, 'IsseDt', RequestedIndicator, False)
 
 	@IsseDt.deleter
 	def IsseDt(self):
 		del self._IsseDt
-		self._IsseDt = None
+		self._IsseDt = base_types.UninitialisedField(self, 'IsseDt', RequestedIndicator, False)
 
 	@property
 	def IssrCSD(self):
@@ -143,12 +143,12 @@ class SecuritiesReturnCriteria1(base_types._BaseFieldType):
 
 	@IssrCSD.setter
 	def IssrCSD(self, value):
-		self._IssrCSD = value if type(value) != base_types.auto else self.make_default("IssrCSD")
+		self._IssrCSD = value if value is not None else base_types.UninitialisedField(self, 'IssrCSD', RequestedIndicator, False)
 
 	@IssrCSD.deleter
 	def IssrCSD(self):
 		del self._IssrCSD
-		self._IssrCSD = None
+		self._IssrCSD = base_types.UninitialisedField(self, 'IssrCSD', RequestedIndicator, False)
 
 	@property
 	def MinDnmtn(self):
@@ -156,12 +156,12 @@ class SecuritiesReturnCriteria1(base_types._BaseFieldType):
 
 	@MinDnmtn.setter
 	def MinDnmtn(self, value):
-		self._MinDnmtn = value if type(value) != base_types.auto else self.make_default("MinDnmtn")
+		self._MinDnmtn = value if value is not None else base_types.UninitialisedField(self, 'MinDnmtn', RequestedIndicator, False)
 
 	@MinDnmtn.deleter
 	def MinDnmtn(self):
 		del self._MinDnmtn
-		self._MinDnmtn = None
+		self._MinDnmtn = base_types.UninitialisedField(self, 'MinDnmtn', RequestedIndicator, False)
 
 	@property
 	def MinMltplQty(self):
@@ -169,12 +169,12 @@ class SecuritiesReturnCriteria1(base_types._BaseFieldType):
 
 	@MinMltplQty.setter
 	def MinMltplQty(self, value):
-		self._MinMltplQty = value if type(value) != base_types.auto else self.make_default("MinMltplQty")
+		self._MinMltplQty = value if value is not None else base_types.UninitialisedField(self, 'MinMltplQty', RequestedIndicator, False)
 
 	@MinMltplQty.deleter
 	def MinMltplQty(self):
 		del self._MinMltplQty
-		self._MinMltplQty = None
+		self._MinMltplQty = base_types.UninitialisedField(self, 'MinMltplQty', RequestedIndicator, False)
 
 	@property
 	def MtrtyDt(self):
@@ -182,12 +182,12 @@ class SecuritiesReturnCriteria1(base_types._BaseFieldType):
 
 	@MtrtyDt.setter
 	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != base_types.auto else self.make_default("MtrtyDt")
+		self._MtrtyDt = value if value is not None else base_types.UninitialisedField(self, 'MtrtyDt', RequestedIndicator, False)
 
 	@MtrtyDt.deleter
 	def MtrtyDt(self):
 		del self._MtrtyDt
-		self._MtrtyDt = None
+		self._MtrtyDt = base_types.UninitialisedField(self, 'MtrtyDt', RequestedIndicator, False)
 
 	@property
 	def SctiesQtyTp(self):
@@ -195,12 +195,12 @@ class SecuritiesReturnCriteria1(base_types._BaseFieldType):
 
 	@SctiesQtyTp.setter
 	def SctiesQtyTp(self, value):
-		self._SctiesQtyTp = value if type(value) != base_types.auto else self.make_default("SctiesQtyTp")
+		self._SctiesQtyTp = value if value is not None else base_types.UninitialisedField(self, 'SctiesQtyTp', RequestedIndicator, False)
 
 	@SctiesQtyTp.deleter
 	def SctiesQtyTp(self):
 		del self._SctiesQtyTp
-		self._SctiesQtyTp = None
+		self._SctiesQtyTp = base_types.UninitialisedField(self, 'SctiesQtyTp', RequestedIndicator, False)
 
 	@property
 	def SctySts(self):
@@ -208,12 +208,12 @@ class SecuritiesReturnCriteria1(base_types._BaseFieldType):
 
 	@SctySts.setter
 	def SctySts(self, value):
-		self._SctySts = value if type(value) != base_types.auto else self.make_default("SctySts")
+		self._SctySts = value if value is not None else base_types.UninitialisedField(self, 'SctySts', RequestedIndicator, False)
 
 	@SctySts.deleter
 	def SctySts(self):
 		del self._SctySts
-		self._SctySts = None
+		self._SctySts = base_types.UninitialisedField(self, 'SctySts', RequestedIndicator, False)
 
 	@property
 	def TechIssrCSD(self):
@@ -221,12 +221,12 @@ class SecuritiesReturnCriteria1(base_types._BaseFieldType):
 
 	@TechIssrCSD.setter
 	def TechIssrCSD(self, value):
-		self._TechIssrCSD = value if type(value) != base_types.auto else self.make_default("TechIssrCSD")
+		self._TechIssrCSD = value if value is not None else base_types.UninitialisedField(self, 'TechIssrCSD', RequestedIndicator, False)
 
 	@TechIssrCSD.deleter
 	def TechIssrCSD(self):
 		del self._TechIssrCSD
-		self._TechIssrCSD = None
+		self._TechIssrCSD = base_types.UninitialisedField(self, 'TechIssrCSD', RequestedIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CSD', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),

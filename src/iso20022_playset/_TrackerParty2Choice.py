@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstitutionIdentification21 import FinancialInstitutionIdentification21
-from ._OrganisationIdentification29 import OrganisationIdentification29
-from ._PersonIdentification13 import PersonIdentification13
+from . import FinancialInstitutionIdentification21
+from . import OrganisationIdentification29
+from . import PersonIdentification13
 
 class TrackerParty2Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TrackerParty2Choice(base_types._BaseFieldType):
 
 	@FinInstnId.setter
 	def FinInstnId(self, value):
-		self._FinInstnId = value if type(value) != base_types.auto else self.make_default("FinInstnId")
+		self._FinInstnId = value if value is not None else base_types.UninitialisedField(self, 'FinInstnId', FinancialInstitutionIdentification21, False)
 
 	@FinInstnId.deleter
 	def FinInstnId(self):
 		del self._FinInstnId
-		self._FinInstnId = None
+		self._FinInstnId = base_types.UninitialisedField(self, 'FinInstnId', FinancialInstitutionIdentification21, False)
 
 	@property
 	def OrgId(self):
@@ -28,12 +28,12 @@ class TrackerParty2Choice(base_types._BaseFieldType):
 
 	@OrgId.setter
 	def OrgId(self, value):
-		self._OrgId = value if type(value) != base_types.auto else self.make_default("OrgId")
+		self._OrgId = value if value is not None else base_types.UninitialisedField(self, 'OrgId', OrganisationIdentification29, False)
 
 	@OrgId.deleter
 	def OrgId(self):
 		del self._OrgId
-		self._OrgId = None
+		self._OrgId = base_types.UninitialisedField(self, 'OrgId', OrganisationIdentification29, False)
 
 	@property
 	def PrvtId(self):
@@ -41,12 +41,12 @@ class TrackerParty2Choice(base_types._BaseFieldType):
 
 	@PrvtId.setter
 	def PrvtId(self, value):
-		self._PrvtId = value if type(value) != base_types.auto else self.make_default("PrvtId")
+		self._PrvtId = value if value is not None else base_types.UninitialisedField(self, 'PrvtId', PersonIdentification13, False)
 
 	@PrvtId.deleter
 	def PrvtId(self):
 		del self._PrvtId
-		self._PrvtId = None
+		self._PrvtId = base_types.UninitialisedField(self, 'PrvtId', PersonIdentification13, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FinInstnId', type=FinancialInstitutionIdentification21, min=0, max=1, mutex_group=1, array=False),

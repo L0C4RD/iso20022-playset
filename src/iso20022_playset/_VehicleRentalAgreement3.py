@@ -2,20 +2,20 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Address2 import Address2
-from ._Amount21 import Amount21
-from ._Discount3 import Discount3
-from ._Distance1 import Distance1
-from ._ISODate import ISODate
-from ._ISOTime import ISOTime
-from ._LoyaltyProgramme5 import LoyaltyProgramme5
-from ._Max35NumericText import Max35NumericText
-from ._Max35Text import Max35Text
-from ._Max4NumericText import Max4NumericText
-from ._RentalDetails3 import RentalDetails3
-from ._RentalRate2 import RentalRate2
-from ._Tax41 import Tax41
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import Address2
+from . import Amount21
+from . import Discount3
+from . import Distance1
+from . import ISODate
+from . import ISOTime
+from . import LoyaltyProgramme5
+from . import Max35NumericText
+from . import Max35Text
+from . import Max4NumericText
+from . import RentalDetails3
+from . import RentalRate2
+from . import Tax41
+from . import TrueFalseIndicator
 
 class VehicleRentalAgreement3(base_types._BaseFieldType):
 
@@ -26,12 +26,12 @@ class VehicleRentalAgreement3(base_types._BaseFieldType):
 
 	@AddtlAmt.setter
 	def AddtlAmt(self, value):
-		self._AddtlAmt = value if type(value) != base_types.auto else self.make_default("AddtlAmt")
+		self._AddtlAmt = value if value is not None else base_types.UninitialisedField(self, 'AddtlAmt', Amount21, True)
 
 	@AddtlAmt.deleter
 	def AddtlAmt(self):
 		del self._AddtlAmt
-		self._AddtlAmt = None
+		self._AddtlAmt = base_types.UninitialisedField(self, 'AddtlAmt', Amount21, True)
 
 	@property
 	def Adjstd(self):
@@ -39,12 +39,12 @@ class VehicleRentalAgreement3(base_types._BaseFieldType):
 
 	@Adjstd.setter
 	def Adjstd(self, value):
-		self._Adjstd = value if type(value) != base_types.auto else self.make_default("Adjstd")
+		self._Adjstd = value if value is not None else base_types.UninitialisedField(self, 'Adjstd', TrueFalseIndicator, False)
 
 	@Adjstd.deleter
 	def Adjstd(self):
 		del self._Adjstd
-		self._Adjstd = None
+		self._Adjstd = base_types.UninitialisedField(self, 'Adjstd', TrueFalseIndicator, False)
 
 	@property
 	def ChckInDt(self):
@@ -52,12 +52,12 @@ class VehicleRentalAgreement3(base_types._BaseFieldType):
 
 	@ChckInDt.setter
 	def ChckInDt(self, value):
-		self._ChckInDt = value if type(value) != base_types.auto else self.make_default("ChckInDt")
+		self._ChckInDt = value if value is not None else base_types.UninitialisedField(self, 'ChckInDt', ISODate, False)
 
 	@ChckInDt.deleter
 	def ChckInDt(self):
 		del self._ChckInDt
-		self._ChckInDt = None
+		self._ChckInDt = base_types.UninitialisedField(self, 'ChckInDt', ISODate, False)
 
 	@property
 	def ChckInTm(self):
@@ -65,12 +65,12 @@ class VehicleRentalAgreement3(base_types._BaseFieldType):
 
 	@ChckInTm.setter
 	def ChckInTm(self, value):
-		self._ChckInTm = value if type(value) != base_types.auto else self.make_default("ChckInTm")
+		self._ChckInTm = value if value is not None else base_types.UninitialisedField(self, 'ChckInTm', ISOTime, False)
 
 	@ChckInTm.deleter
 	def ChckInTm(self):
 		del self._ChckInTm
-		self._ChckInTm = None
+		self._ChckInTm = base_types.UninitialisedField(self, 'ChckInTm', ISOTime, False)
 
 	@property
 	def ChckOutDt(self):
@@ -78,12 +78,12 @@ class VehicleRentalAgreement3(base_types._BaseFieldType):
 
 	@ChckOutDt.setter
 	def ChckOutDt(self, value):
-		self._ChckOutDt = value if type(value) != base_types.auto else self.make_default("ChckOutDt")
+		self._ChckOutDt = value if value is not None else base_types.UninitialisedField(self, 'ChckOutDt', ISODate, False)
 
 	@ChckOutDt.deleter
 	def ChckOutDt(self):
 		del self._ChckOutDt
-		self._ChckOutDt = None
+		self._ChckOutDt = base_types.UninitialisedField(self, 'ChckOutDt', ISODate, False)
 
 	@property
 	def ChckOutTm(self):
@@ -91,12 +91,12 @@ class VehicleRentalAgreement3(base_types._BaseFieldType):
 
 	@ChckOutTm.setter
 	def ChckOutTm(self, value):
-		self._ChckOutTm = value if type(value) != base_types.auto else self.make_default("ChckOutTm")
+		self._ChckOutTm = value if value is not None else base_types.UninitialisedField(self, 'ChckOutTm', ISOTime, False)
 
 	@ChckOutTm.deleter
 	def ChckOutTm(self):
 		del self._ChckOutTm
-		self._ChckOutTm = None
+		self._ChckOutTm = base_types.UninitialisedField(self, 'ChckOutTm', ISOTime, False)
 
 	@property
 	def Clss(self):
@@ -104,12 +104,12 @@ class VehicleRentalAgreement3(base_types._BaseFieldType):
 
 	@Clss.setter
 	def Clss(self, value):
-		self._Clss = value if type(value) != base_types.auto else self.make_default("Clss")
+		self._Clss = value if value is not None else base_types.UninitialisedField(self, 'Clss', Max35Text, False)
 
 	@Clss.deleter
 	def Clss(self):
 		del self._Clss
-		self._Clss = None
+		self._Clss = base_types.UninitialisedField(self, 'Clss', Max35Text, False)
 
 	@property
 	def Drtn(self):
@@ -117,12 +117,12 @@ class VehicleRentalAgreement3(base_types._BaseFieldType):
 
 	@Drtn.setter
 	def Drtn(self, value):
-		self._Drtn = value if type(value) != base_types.auto else self.make_default("Drtn")
+		self._Drtn = value if value is not None else base_types.UninitialisedField(self, 'Drtn', Max4NumericText, False)
 
 	@Drtn.deleter
 	def Drtn(self):
 		del self._Drtn
-		self._Drtn = None
+		self._Drtn = base_types.UninitialisedField(self, 'Drtn', Max4NumericText, False)
 
 	@property
 	def DscntPrgrmm(self):
@@ -130,12 +130,12 @@ class VehicleRentalAgreement3(base_types._BaseFieldType):
 
 	@DscntPrgrmm.setter
 	def DscntPrgrmm(self, value):
-		self._DscntPrgrmm = value if type(value) != base_types.auto else self.make_default("DscntPrgrmm")
+		self._DscntPrgrmm = value if value is not None else base_types.UninitialisedField(self, 'DscntPrgrmm', Discount3, True)
 
 	@DscntPrgrmm.deleter
 	def DscntPrgrmm(self):
 		del self._DscntPrgrmm
-		self._DscntPrgrmm = None
+		self._DscntPrgrmm = base_types.UninitialisedField(self, 'DscntPrgrmm', Discount3, True)
 
 	@property
 	def EstmtdTax(self):
@@ -143,12 +143,12 @@ class VehicleRentalAgreement3(base_types._BaseFieldType):
 
 	@EstmtdTax.setter
 	def EstmtdTax(self, value):
-		self._EstmtdTax = value if type(value) != base_types.auto else self.make_default("EstmtdTax")
+		self._EstmtdTax = value if value is not None else base_types.UninitialisedField(self, 'EstmtdTax', Tax41, True)
 
 	@EstmtdTax.deleter
 	def EstmtdTax(self):
 		del self._EstmtdTax
-		self._EstmtdTax = None
+		self._EstmtdTax = base_types.UninitialisedField(self, 'EstmtdTax', Tax41, True)
 
 	@property
 	def Insrnc(self):
@@ -156,12 +156,12 @@ class VehicleRentalAgreement3(base_types._BaseFieldType):
 
 	@Insrnc.setter
 	def Insrnc(self, value):
-		self._Insrnc = value if type(value) != base_types.auto else self.make_default("Insrnc")
+		self._Insrnc = value if value is not None else base_types.UninitialisedField(self, 'Insrnc', TrueFalseIndicator, False)
 
 	@Insrnc.deleter
 	def Insrnc(self):
 		del self._Insrnc
-		self._Insrnc = None
+		self._Insrnc = base_types.UninitialisedField(self, 'Insrnc', TrueFalseIndicator, False)
 
 	@property
 	def LltyPrgrmm(self):
@@ -169,12 +169,12 @@ class VehicleRentalAgreement3(base_types._BaseFieldType):
 
 	@LltyPrgrmm.setter
 	def LltyPrgrmm(self, value):
-		self._LltyPrgrmm = value if type(value) != base_types.auto else self.make_default("LltyPrgrmm")
+		self._LltyPrgrmm = value if value is not None else base_types.UninitialisedField(self, 'LltyPrgrmm', LoyaltyProgramme5, True)
 
 	@LltyPrgrmm.deleter
 	def LltyPrgrmm(self):
 		del self._LltyPrgrmm
-		self._LltyPrgrmm = None
+		self._LltyPrgrmm = base_types.UninitialisedField(self, 'LltyPrgrmm', LoyaltyProgramme5, True)
 
 	@property
 	def Make(self):
@@ -182,12 +182,12 @@ class VehicleRentalAgreement3(base_types._BaseFieldType):
 
 	@Make.setter
 	def Make(self, value):
-		self._Make = value if type(value) != base_types.auto else self.make_default("Make")
+		self._Make = value if value is not None else base_types.UninitialisedField(self, 'Make', Max35NumericText, False)
 
 	@Make.deleter
 	def Make(self):
 		del self._Make
-		self._Make = None
+		self._Make = base_types.UninitialisedField(self, 'Make', Max35NumericText, False)
 
 	@property
 	def Mdl(self):
@@ -195,12 +195,12 @@ class VehicleRentalAgreement3(base_types._BaseFieldType):
 
 	@Mdl.setter
 	def Mdl(self, value):
-		self._Mdl = value if type(value) != base_types.auto else self.make_default("Mdl")
+		self._Mdl = value if value is not None else base_types.UninitialisedField(self, 'Mdl', Max35NumericText, False)
 
 	@Mdl.deleter
 	def Mdl(self):
 		del self._Mdl
-		self._Mdl = None
+		self._Mdl = base_types.UninitialisedField(self, 'Mdl', Max35NumericText, False)
 
 	@property
 	def Nb(self):
@@ -208,12 +208,12 @@ class VehicleRentalAgreement3(base_types._BaseFieldType):
 
 	@Nb.setter
 	def Nb(self, value):
-		self._Nb = value if type(value) != base_types.auto else self.make_default("Nb")
+		self._Nb = value if value is not None else base_types.UninitialisedField(self, 'Nb', Max35Text, False)
 
 	@Nb.deleter
 	def Nb(self):
 		del self._Nb
-		self._Nb = None
+		self._Nb = base_types.UninitialisedField(self, 'Nb', Max35Text, False)
 
 	@property
 	def PckpLctn(self):
@@ -221,12 +221,12 @@ class VehicleRentalAgreement3(base_types._BaseFieldType):
 
 	@PckpLctn.setter
 	def PckpLctn(self, value):
-		self._PckpLctn = value if type(value) != base_types.auto else self.make_default("PckpLctn")
+		self._PckpLctn = value if value is not None else base_types.UninitialisedField(self, 'PckpLctn', Address2, True)
 
 	@PckpLctn.deleter
 	def PckpLctn(self):
 		del self._PckpLctn
-		self._PckpLctn = None
+		self._PckpLctn = base_types.UninitialisedField(self, 'PckpLctn', Address2, True)
 
 	@property
 	def RegnNb(self):
@@ -234,12 +234,12 @@ class VehicleRentalAgreement3(base_types._BaseFieldType):
 
 	@RegnNb.setter
 	def RegnNb(self, value):
-		self._RegnNb = value if type(value) != base_types.auto else self.make_default("RegnNb")
+		self._RegnNb = value if value is not None else base_types.UninitialisedField(self, 'RegnNb', Max35Text, False)
 
 	@RegnNb.deleter
 	def RegnNb(self):
 		del self._RegnNb
-		self._RegnNb = None
+		self._RegnNb = base_types.UninitialisedField(self, 'RegnNb', Max35Text, False)
 
 	@property
 	def RntlDtls(self):
@@ -247,12 +247,12 @@ class VehicleRentalAgreement3(base_types._BaseFieldType):
 
 	@RntlDtls.setter
 	def RntlDtls(self, value):
-		self._RntlDtls = value if type(value) != base_types.auto else self.make_default("RntlDtls")
+		self._RntlDtls = value if value is not None else base_types.UninitialisedField(self, 'RntlDtls', RentalDetails3, False)
 
 	@RntlDtls.deleter
 	def RntlDtls(self):
 		del self._RntlDtls
-		self._RntlDtls = None
+		self._RntlDtls = base_types.UninitialisedField(self, 'RntlDtls', RentalDetails3, False)
 
 	@property
 	def RntlLctn(self):
@@ -260,12 +260,12 @@ class VehicleRentalAgreement3(base_types._BaseFieldType):
 
 	@RntlLctn.setter
 	def RntlLctn(self, value):
-		self._RntlLctn = value if type(value) != base_types.auto else self.make_default("RntlLctn")
+		self._RntlLctn = value if value is not None else base_types.UninitialisedField(self, 'RntlLctn', Address2, False)
 
 	@RntlLctn.deleter
 	def RntlLctn(self):
 		del self._RntlLctn
-		self._RntlLctn = None
+		self._RntlLctn = base_types.UninitialisedField(self, 'RntlLctn', Address2, False)
 
 	@property
 	def RntlRate(self):
@@ -273,12 +273,12 @@ class VehicleRentalAgreement3(base_types._BaseFieldType):
 
 	@RntlRate.setter
 	def RntlRate(self, value):
-		self._RntlRate = value if type(value) != base_types.auto else self.make_default("RntlRate")
+		self._RntlRate = value if value is not None else base_types.UninitialisedField(self, 'RntlRate', RentalRate2, True)
 
 	@RntlRate.deleter
 	def RntlRate(self):
 		del self._RntlRate
-		self._RntlRate = None
+		self._RntlRate = base_types.UninitialisedField(self, 'RntlRate', RentalRate2, True)
 
 	@property
 	def RtrLctn(self):
@@ -286,12 +286,12 @@ class VehicleRentalAgreement3(base_types._BaseFieldType):
 
 	@RtrLctn.setter
 	def RtrLctn(self, value):
-		self._RtrLctn = value if type(value) != base_types.auto else self.make_default("RtrLctn")
+		self._RtrLctn = value if value is not None else base_types.UninitialisedField(self, 'RtrLctn', Address2, False)
 
 	@RtrLctn.deleter
 	def RtrLctn(self):
 		del self._RtrLctn
-		self._RtrLctn = None
+		self._RtrLctn = base_types.UninitialisedField(self, 'RtrLctn', Address2, False)
 
 	@property
 	def TrvlDstnc(self):
@@ -299,12 +299,12 @@ class VehicleRentalAgreement3(base_types._BaseFieldType):
 
 	@TrvlDstnc.setter
 	def TrvlDstnc(self, value):
-		self._TrvlDstnc = value if type(value) != base_types.auto else self.make_default("TrvlDstnc")
+		self._TrvlDstnc = value if value is not None else base_types.UninitialisedField(self, 'TrvlDstnc', Distance1, False)
 
 	@TrvlDstnc.deleter
 	def TrvlDstnc(self):
 		del self._TrvlDstnc
-		self._TrvlDstnc = None
+		self._TrvlDstnc = base_types.UninitialisedField(self, 'TrvlDstnc', Distance1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlAmt', type=Amount21, min=0, max=None, mutex_group=None, array=True),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
+from . import Max35Text
 
 class MeetingInstructionCancellation1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class MeetingInstructionCancellation1(base_types._BaseFieldType):
 
 	@MtgInstrCxlReqId.setter
 	def MtgInstrCxlReqId(self, value):
-		self._MtgInstrCxlReqId = value if type(value) != base_types.auto else self.make_default("MtgInstrCxlReqId")
+		self._MtgInstrCxlReqId = value if value is not None else base_types.UninitialisedField(self, 'MtgInstrCxlReqId', Max35Text, False)
 
 	@MtgInstrCxlReqId.deleter
 	def MtgInstrCxlReqId(self):
 		del self._MtgInstrCxlReqId
-		self._MtgInstrCxlReqId = None
+		self._MtgInstrCxlReqId = base_types.UninitialisedField(self, 'MtgInstrCxlReqId', Max35Text, False)
 
 	@property
 	def SnglInstrId(self):
@@ -26,12 +26,12 @@ class MeetingInstructionCancellation1(base_types._BaseFieldType):
 
 	@SnglInstrId.setter
 	def SnglInstrId(self, value):
-		self._SnglInstrId = value if type(value) != base_types.auto else self.make_default("SnglInstrId")
+		self._SnglInstrId = value if value is not None else base_types.UninitialisedField(self, 'SnglInstrId', Max35Text, False)
 
 	@SnglInstrId.deleter
 	def SnglInstrId(self):
 		del self._SnglInstrId
-		self._SnglInstrId = None
+		self._SnglInstrId = base_types.UninitialisedField(self, 'SnglInstrId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MtgInstrCxlReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

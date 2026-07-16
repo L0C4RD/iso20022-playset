@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalInformation31 import AdditionalInformation31
-from ._Driver3 import Driver3
-from ._FleetLineItem5 import FleetLineItem5
-from ._FleetTransactionDetail1 import FleetTransactionDetail1
-from ._LocalAmenity1 import LocalAmenity1
-from ._Max10Text import Max10Text
-from ._Max1Number import Max1Number
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
-from ._PlainCardData23 import PlainCardData23
-from ._Vehicle6 import Vehicle6
+from . import AdditionalInformation31
+from . import Driver3
+from . import FleetLineItem5
+from . import FleetTransactionDetail1
+from . import LocalAmenity1
+from . import Max10Text
+from . import Max1Number
+from . import Max35Text
+from . import Max70Text
+from . import PlainCardData23
+from . import Vehicle6
 
 class FleetData6(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class FleetData6(base_types._BaseFieldType):
 
 	@AddtlNtrdData.setter
 	def AddtlNtrdData(self, value):
-		self._AddtlNtrdData = value if type(value) != base_types.auto else self.make_default("AddtlNtrdData")
+		self._AddtlNtrdData = value if value is not None else base_types.UninitialisedField(self, 'AddtlNtrdData', AdditionalInformation31, False)
 
 	@AddtlNtrdData.deleter
 	def AddtlNtrdData(self):
 		del self._AddtlNtrdData
-		self._AddtlNtrdData = None
+		self._AddtlNtrdData = base_types.UninitialisedField(self, 'AddtlNtrdData', AdditionalInformation31, False)
 
 	@property
 	def AgtFuelPrmptCd(self):
@@ -36,12 +36,12 @@ class FleetData6(base_types._BaseFieldType):
 
 	@AgtFuelPrmptCd.setter
 	def AgtFuelPrmptCd(self, value):
-		self._AgtFuelPrmptCd = value if type(value) != base_types.auto else self.make_default("AgtFuelPrmptCd")
+		self._AgtFuelPrmptCd = value if value is not None else base_types.UninitialisedField(self, 'AgtFuelPrmptCd', Max35Text, False)
 
 	@AgtFuelPrmptCd.deleter
 	def AgtFuelPrmptCd(self):
 		del self._AgtFuelPrmptCd
-		self._AgtFuelPrmptCd = None
+		self._AgtFuelPrmptCd = base_types.UninitialisedField(self, 'AgtFuelPrmptCd', Max35Text, False)
 
 	@property
 	def CardFuelPrmptCd(self):
@@ -49,12 +49,12 @@ class FleetData6(base_types._BaseFieldType):
 
 	@CardFuelPrmptCd.setter
 	def CardFuelPrmptCd(self, value):
-		self._CardFuelPrmptCd = value if type(value) != base_types.auto else self.make_default("CardFuelPrmptCd")
+		self._CardFuelPrmptCd = value if value is not None else base_types.UninitialisedField(self, 'CardFuelPrmptCd', Max1Number, False)
 
 	@CardFuelPrmptCd.deleter
 	def CardFuelPrmptCd(self):
 		del self._CardFuelPrmptCd
-		self._CardFuelPrmptCd = None
+		self._CardFuelPrmptCd = base_types.UninitialisedField(self, 'CardFuelPrmptCd', Max1Number, False)
 
 	@property
 	def Drvr(self):
@@ -62,12 +62,12 @@ class FleetData6(base_types._BaseFieldType):
 
 	@Drvr.setter
 	def Drvr(self, value):
-		self._Drvr = value if type(value) != base_types.auto else self.make_default("Drvr")
+		self._Drvr = value if value is not None else base_types.UninitialisedField(self, 'Drvr', Driver3, False)
 
 	@Drvr.deleter
 	def Drvr(self):
 		del self._Drvr
-		self._Drvr = None
+		self._Drvr = base_types.UninitialisedField(self, 'Drvr', Driver3, False)
 
 	@property
 	def DrvrOrVhclCard(self):
@@ -75,12 +75,12 @@ class FleetData6(base_types._BaseFieldType):
 
 	@DrvrOrVhclCard.setter
 	def DrvrOrVhclCard(self, value):
-		self._DrvrOrVhclCard = value if type(value) != base_types.auto else self.make_default("DrvrOrVhclCard")
+		self._DrvrOrVhclCard = value if value is not None else base_types.UninitialisedField(self, 'DrvrOrVhclCard', PlainCardData23, False)
 
 	@DrvrOrVhclCard.deleter
 	def DrvrOrVhclCard(self):
 		del self._DrvrOrVhclCard
-		self._DrvrOrVhclCard = None
+		self._DrvrOrVhclCard = base_types.UninitialisedField(self, 'DrvrOrVhclCard', PlainCardData23, False)
 
 	@property
 	def LclAmnty(self):
@@ -88,12 +88,12 @@ class FleetData6(base_types._BaseFieldType):
 
 	@LclAmnty.setter
 	def LclAmnty(self, value):
-		self._LclAmnty = value if type(value) != base_types.auto else self.make_default("LclAmnty")
+		self._LclAmnty = value if value is not None else base_types.UninitialisedField(self, 'LclAmnty', LocalAmenity1, True)
 
 	@LclAmnty.deleter
 	def LclAmnty(self):
 		del self._LclAmnty
-		self._LclAmnty = None
+		self._LclAmnty = base_types.UninitialisedField(self, 'LclAmnty', LocalAmenity1, True)
 
 	@property
 	def LineItm(self):
@@ -101,12 +101,12 @@ class FleetData6(base_types._BaseFieldType):
 
 	@LineItm.setter
 	def LineItm(self, value):
-		self._LineItm = value if type(value) != base_types.auto else self.make_default("LineItm")
+		self._LineItm = value if value is not None else base_types.UninitialisedField(self, 'LineItm', FleetLineItem5, True)
 
 	@LineItm.deleter
 	def LineItm(self):
 		del self._LineItm
-		self._LineItm = None
+		self._LineItm = base_types.UninitialisedField(self, 'LineItm', FleetLineItem5, True)
 
 	@property
 	def TripBllgId(self):
@@ -114,12 +114,12 @@ class FleetData6(base_types._BaseFieldType):
 
 	@TripBllgId.setter
 	def TripBllgId(self, value):
-		self._TripBllgId = value if type(value) != base_types.auto else self.make_default("TripBllgId")
+		self._TripBllgId = value if value is not None else base_types.UninitialisedField(self, 'TripBllgId', Max70Text, False)
 
 	@TripBllgId.deleter
 	def TripBllgId(self):
 		del self._TripBllgId
-		self._TripBllgId = None
+		self._TripBllgId = base_types.UninitialisedField(self, 'TripBllgId', Max70Text, False)
 
 	@property
 	def TripCtrlNb(self):
@@ -127,12 +127,12 @@ class FleetData6(base_types._BaseFieldType):
 
 	@TripCtrlNb.setter
 	def TripCtrlNb(self, value):
-		self._TripCtrlNb = value if type(value) != base_types.auto else self.make_default("TripCtrlNb")
+		self._TripCtrlNb = value if value is not None else base_types.UninitialisedField(self, 'TripCtrlNb', Max35Text, False)
 
 	@TripCtrlNb.deleter
 	def TripCtrlNb(self):
 		del self._TripCtrlNb
-		self._TripCtrlNb = None
+		self._TripCtrlNb = base_types.UninitialisedField(self, 'TripCtrlNb', Max35Text, False)
 
 	@property
 	def TripDlvryTcktNb(self):
@@ -140,12 +140,12 @@ class FleetData6(base_types._BaseFieldType):
 
 	@TripDlvryTcktNb.setter
 	def TripDlvryTcktNb(self, value):
-		self._TripDlvryTcktNb = value if type(value) != base_types.auto else self.make_default("TripDlvryTcktNb")
+		self._TripDlvryTcktNb = value if value is not None else base_types.UninitialisedField(self, 'TripDlvryTcktNb', Max35Text, False)
 
 	@TripDlvryTcktNb.deleter
 	def TripDlvryTcktNb(self):
 		del self._TripDlvryTcktNb
-		self._TripDlvryTcktNb = None
+		self._TripDlvryTcktNb = base_types.UninitialisedField(self, 'TripDlvryTcktNb', Max35Text, False)
 
 	@property
 	def TripInvcNb(self):
@@ -153,12 +153,12 @@ class FleetData6(base_types._BaseFieldType):
 
 	@TripInvcNb.setter
 	def TripInvcNb(self, value):
-		self._TripInvcNb = value if type(value) != base_types.auto else self.make_default("TripInvcNb")
+		self._TripInvcNb = value if value is not None else base_types.UninitialisedField(self, 'TripInvcNb', Max70Text, False)
 
 	@TripInvcNb.deleter
 	def TripInvcNb(self):
 		del self._TripInvcNb
-		self._TripInvcNb = None
+		self._TripInvcNb = base_types.UninitialisedField(self, 'TripInvcNb', Max70Text, False)
 
 	@property
 	def TripJobNb(self):
@@ -166,12 +166,12 @@ class FleetData6(base_types._BaseFieldType):
 
 	@TripJobNb.setter
 	def TripJobNb(self, value):
-		self._TripJobNb = value if type(value) != base_types.auto else self.make_default("TripJobNb")
+		self._TripJobNb = value if value is not None else base_types.UninitialisedField(self, 'TripJobNb', Max10Text, False)
 
 	@TripJobNb.deleter
 	def TripJobNb(self):
 		del self._TripJobNb
-		self._TripJobNb = None
+		self._TripJobNb = base_types.UninitialisedField(self, 'TripJobNb', Max10Text, False)
 
 	@property
 	def TripNb(self):
@@ -179,12 +179,12 @@ class FleetData6(base_types._BaseFieldType):
 
 	@TripNb.setter
 	def TripNb(self, value):
-		self._TripNb = value if type(value) != base_types.auto else self.make_default("TripNb")
+		self._TripNb = value if value is not None else base_types.UninitialisedField(self, 'TripNb', Max35Text, False)
 
 	@TripNb.deleter
 	def TripNb(self):
 		del self._TripNb
-		self._TripNb = None
+		self._TripNb = base_types.UninitialisedField(self, 'TripNb', Max35Text, False)
 
 	@property
 	def TripWorkOrdr(self):
@@ -192,12 +192,12 @@ class FleetData6(base_types._BaseFieldType):
 
 	@TripWorkOrdr.setter
 	def TripWorkOrdr(self, value):
-		self._TripWorkOrdr = value if type(value) != base_types.auto else self.make_default("TripWorkOrdr")
+		self._TripWorkOrdr = value if value is not None else base_types.UninitialisedField(self, 'TripWorkOrdr', Max70Text, False)
 
 	@TripWorkOrdr.deleter
 	def TripWorkOrdr(self):
 		del self._TripWorkOrdr
-		self._TripWorkOrdr = None
+		self._TripWorkOrdr = base_types.UninitialisedField(self, 'TripWorkOrdr', Max70Text, False)
 
 	@property
 	def TxRltdData(self):
@@ -205,12 +205,12 @@ class FleetData6(base_types._BaseFieldType):
 
 	@TxRltdData.setter
 	def TxRltdData(self, value):
-		self._TxRltdData = value if type(value) != base_types.auto else self.make_default("TxRltdData")
+		self._TxRltdData = value if value is not None else base_types.UninitialisedField(self, 'TxRltdData', FleetTransactionDetail1, True)
 
 	@TxRltdData.deleter
 	def TxRltdData(self):
 		del self._TxRltdData
-		self._TxRltdData = None
+		self._TxRltdData = base_types.UninitialisedField(self, 'TxRltdData', FleetTransactionDetail1, True)
 
 	@property
 	def Vhcl(self):
@@ -218,12 +218,12 @@ class FleetData6(base_types._BaseFieldType):
 
 	@Vhcl.setter
 	def Vhcl(self, value):
-		self._Vhcl = value if type(value) != base_types.auto else self.make_default("Vhcl")
+		self._Vhcl = value if value is not None else base_types.UninitialisedField(self, 'Vhcl', Vehicle6, False)
 
 	@Vhcl.deleter
 	def Vhcl(self):
 		del self._Vhcl
-		self._Vhcl = None
+		self._Vhcl = base_types.UninitialisedField(self, 'Vhcl', Vehicle6, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlNtrdData', type=AdditionalInformation31, min=0, max=1, mutex_group=None, array=False),

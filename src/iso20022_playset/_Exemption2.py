@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AttestationValue1Code import AttestationValue1Code
-from ._Exemption2Code import Exemption2Code
-from ._Max4Text import Max4Text
+from . import AttestationValue1Code
+from . import Exemption2Code
+from . import Max4Text
 
 class Exemption2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Exemption2(base_types._BaseFieldType):
 
 	@RsnNotHnrd.setter
 	def RsnNotHnrd(self, value):
-		self._RsnNotHnrd = value if type(value) != base_types.auto else self.make_default("RsnNotHnrd")
+		self._RsnNotHnrd = value if value is not None else base_types.UninitialisedField(self, 'RsnNotHnrd', Max4Text, True)
 
 	@RsnNotHnrd.deleter
 	def RsnNotHnrd(self):
 		del self._RsnNotHnrd
-		self._RsnNotHnrd = None
+		self._RsnNotHnrd = base_types.UninitialisedField(self, 'RsnNotHnrd', Max4Text, True)
 
 	@property
 	def Tp(self):
@@ -28,12 +28,12 @@ class Exemption2(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', Exemption2Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', Exemption2Code, False)
 
 	@property
 	def Val(self):
@@ -41,12 +41,12 @@ class Exemption2(base_types._BaseFieldType):
 
 	@Val.setter
 	def Val(self, value):
-		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
+		self._Val = value if value is not None else base_types.UninitialisedField(self, 'Val', AttestationValue1Code, False)
 
 	@Val.deleter
 	def Val(self):
 		del self._Val
-		self._Val = None
+		self._Val = base_types.UninitialisedField(self, 'Val', AttestationValue1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RsnNotHnrd', type=Max4Text, min=0, max=None, mutex_group=None, array=True),

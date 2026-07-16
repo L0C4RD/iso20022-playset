@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CurrencyCriteriaDefinition1Choice import CurrencyCriteriaDefinition1Choice
-from ._QueryType2Code import QueryType2Code
+from . import CurrencyCriteriaDefinition1Choice
+from . import QueryType2Code
 
 class CurrencyQueryDefinition3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CurrencyQueryDefinition3(base_types._BaseFieldType):
 
 	@CcyCrit.setter
 	def CcyCrit(self, value):
-		self._CcyCrit = value if type(value) != base_types.auto else self.make_default("CcyCrit")
+		self._CcyCrit = value if value is not None else base_types.UninitialisedField(self, 'CcyCrit', CurrencyCriteriaDefinition1Choice, False)
 
 	@CcyCrit.deleter
 	def CcyCrit(self):
 		del self._CcyCrit
-		self._CcyCrit = None
+		self._CcyCrit = base_types.UninitialisedField(self, 'CcyCrit', CurrencyCriteriaDefinition1Choice, False)
 
 	@property
 	def QryTp(self):
@@ -27,12 +27,12 @@ class CurrencyQueryDefinition3(base_types._BaseFieldType):
 
 	@QryTp.setter
 	def QryTp(self, value):
-		self._QryTp = value if type(value) != base_types.auto else self.make_default("QryTp")
+		self._QryTp = value if value is not None else base_types.UninitialisedField(self, 'QryTp', QueryType2Code, False)
 
 	@QryTp.deleter
 	def QryTp(self):
 		del self._QryTp
-		self._QryTp = None
+		self._QryTp = base_types.UninitialisedField(self, 'QryTp', QueryType2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CcyCrit', type=CurrencyCriteriaDefinition1Choice, min=0, max=1, mutex_group=None, array=False),

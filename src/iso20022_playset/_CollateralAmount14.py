@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection49 import AmountAndDirection49
+from . import AmountAndDirection49
 
 class CollateralAmount14(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class CollateralAmount14(base_types._BaseFieldType):
 
 	@Acrd.setter
 	def Acrd(self, value):
-		self._Acrd = value if type(value) != base_types.auto else self.make_default("Acrd")
+		self._Acrd = value if value is not None else base_types.UninitialisedField(self, 'Acrd', AmountAndDirection49, False)
 
 	@Acrd.deleter
 	def Acrd(self):
 		del self._Acrd
-		self._Acrd = None
+		self._Acrd = base_types.UninitialisedField(self, 'Acrd', AmountAndDirection49, False)
 
 	@property
 	def Termntn(self):
@@ -26,12 +26,12 @@ class CollateralAmount14(base_types._BaseFieldType):
 
 	@Termntn.setter
 	def Termntn(self, value):
-		self._Termntn = value if type(value) != base_types.auto else self.make_default("Termntn")
+		self._Termntn = value if value is not None else base_types.UninitialisedField(self, 'Termntn', AmountAndDirection49, False)
 
 	@Termntn.deleter
 	def Termntn(self):
 		del self._Termntn
-		self._Termntn = None
+		self._Termntn = base_types.UninitialisedField(self, 'Termntn', AmountAndDirection49, False)
 
 	@property
 	def Tx(self):
@@ -39,12 +39,12 @@ class CollateralAmount14(base_types._BaseFieldType):
 
 	@Tx.setter
 	def Tx(self, value):
-		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
+		self._Tx = value if value is not None else base_types.UninitialisedField(self, 'Tx', AmountAndDirection49, False)
 
 	@Tx.deleter
 	def Tx(self):
 		del self._Tx
-		self._Tx = None
+		self._Tx = base_types.UninitialisedField(self, 'Tx', AmountAndDirection49, False)
 
 	@property
 	def UdsptdTx(self):
@@ -52,12 +52,12 @@ class CollateralAmount14(base_types._BaseFieldType):
 
 	@UdsptdTx.setter
 	def UdsptdTx(self, value):
-		self._UdsptdTx = value if type(value) != base_types.auto else self.make_default("UdsptdTx")
+		self._UdsptdTx = value if value is not None else base_types.UninitialisedField(self, 'UdsptdTx', AmountAndDirection49, False)
 
 	@UdsptdTx.deleter
 	def UdsptdTx(self):
 		del self._UdsptdTx
-		self._UdsptdTx = None
+		self._UdsptdTx = base_types.UninitialisedField(self, 'UdsptdTx', AmountAndDirection49, False)
 
 	@property
 	def ValSght(self):
@@ -65,12 +65,12 @@ class CollateralAmount14(base_types._BaseFieldType):
 
 	@ValSght.setter
 	def ValSght(self, value):
-		self._ValSght = value if type(value) != base_types.auto else self.make_default("ValSght")
+		self._ValSght = value if value is not None else base_types.UninitialisedField(self, 'ValSght', AmountAndDirection49, False)
 
 	@ValSght.deleter
 	def ValSght(self):
 		del self._ValSght
-		self._ValSght = None
+		self._ValSght = base_types.UninitialisedField(self, 'ValSght', AmountAndDirection49, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acrd', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),

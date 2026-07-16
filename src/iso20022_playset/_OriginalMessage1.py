@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CopyDuplicate1Code import CopyDuplicate1Code
-from ._ISONormalisedDateTime import ISONormalisedDateTime
-from ._Max35Text import Max35Text
-from ._Party9Choice import Party9Choice
+from . import CopyDuplicate1Code
+from . import ISONormalisedDateTime
+from . import Max35Text
+from . import Party9Choice
 
 class OriginalMessage1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class OriginalMessage1(base_types._BaseFieldType):
 
 	@BizMsgIdr.setter
 	def BizMsgIdr(self, value):
-		self._BizMsgIdr = value if type(value) != base_types.auto else self.make_default("BizMsgIdr")
+		self._BizMsgIdr = value if value is not None else base_types.UninitialisedField(self, 'BizMsgIdr', Max35Text, False)
 
 	@BizMsgIdr.deleter
 	def BizMsgIdr(self):
 		del self._BizMsgIdr
-		self._BizMsgIdr = None
+		self._BizMsgIdr = base_types.UninitialisedField(self, 'BizMsgIdr', Max35Text, False)
 
 	@property
 	def CpyDplct(self):
@@ -29,12 +29,12 @@ class OriginalMessage1(base_types._BaseFieldType):
 
 	@CpyDplct.setter
 	def CpyDplct(self, value):
-		self._CpyDplct = value if type(value) != base_types.auto else self.make_default("CpyDplct")
+		self._CpyDplct = value if value is not None else base_types.UninitialisedField(self, 'CpyDplct', CopyDuplicate1Code, False)
 
 	@CpyDplct.deleter
 	def CpyDplct(self):
 		del self._CpyDplct
-		self._CpyDplct = None
+		self._CpyDplct = base_types.UninitialisedField(self, 'CpyDplct', CopyDuplicate1Code, False)
 
 	@property
 	def CreDt(self):
@@ -42,12 +42,12 @@ class OriginalMessage1(base_types._BaseFieldType):
 
 	@CreDt.setter
 	def CreDt(self, value):
-		self._CreDt = value if type(value) != base_types.auto else self.make_default("CreDt")
+		self._CreDt = value if value is not None else base_types.UninitialisedField(self, 'CreDt', ISONormalisedDateTime, False)
 
 	@CreDt.deleter
 	def CreDt(self):
 		del self._CreDt
-		self._CreDt = None
+		self._CreDt = base_types.UninitialisedField(self, 'CreDt', ISONormalisedDateTime, False)
 
 	@property
 	def Fr(self):
@@ -55,12 +55,12 @@ class OriginalMessage1(base_types._BaseFieldType):
 
 	@Fr.setter
 	def Fr(self, value):
-		self._Fr = value if type(value) != base_types.auto else self.make_default("Fr")
+		self._Fr = value if value is not None else base_types.UninitialisedField(self, 'Fr', Party9Choice, False)
 
 	@Fr.deleter
 	def Fr(self):
 		del self._Fr
-		self._Fr = None
+		self._Fr = base_types.UninitialisedField(self, 'Fr', Party9Choice, False)
 
 	@property
 	def MsgDefIdr(self):
@@ -68,12 +68,12 @@ class OriginalMessage1(base_types._BaseFieldType):
 
 	@MsgDefIdr.setter
 	def MsgDefIdr(self, value):
-		self._MsgDefIdr = value if type(value) != base_types.auto else self.make_default("MsgDefIdr")
+		self._MsgDefIdr = value if value is not None else base_types.UninitialisedField(self, 'MsgDefIdr', Max35Text, False)
 
 	@MsgDefIdr.deleter
 	def MsgDefIdr(self):
 		del self._MsgDefIdr
-		self._MsgDefIdr = None
+		self._MsgDefIdr = base_types.UninitialisedField(self, 'MsgDefIdr', Max35Text, False)
 
 	@property
 	def To(self):
@@ -81,12 +81,12 @@ class OriginalMessage1(base_types._BaseFieldType):
 
 	@To.setter
 	def To(self, value):
-		self._To = value if type(value) != base_types.auto else self.make_default("To")
+		self._To = value if value is not None else base_types.UninitialisedField(self, 'To', Party9Choice, False)
 
 	@To.deleter
 	def To(self):
 		del self._To
-		self._To = None
+		self._To = base_types.UninitialisedField(self, 'To', Party9Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BizMsgIdr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

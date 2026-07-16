@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CaseStatusReportV06 import CaseStatusReportV06
+from . import CaseStatusReportV06
 
 class CAMT_039_001_06():
 
@@ -18,12 +18,12 @@ class CAMT_039_001_06():
 
 		@CaseStsRpt.setter
 		def CaseStsRpt(self, value):
-			self._CaseStsRpt = value if type(value) != base_types.auto else self.make_default("CaseStsRpt")
+			self._CaseStsRpt = value if value is not None else base_types.UninitialisedField(self, 'CaseStsRpt', CaseStatusReportV06, False)
 
 		@CaseStsRpt.deleter
 		def CaseStsRpt(self):
 			del self._CaseStsRpt
-			self._CaseStsRpt = None
+			self._CaseStsRpt = base_types.UninitialisedField(self, 'CaseStsRpt', CaseStatusReportV06, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CaseStsRpt', type=CaseStatusReportV06, min=1, max=1, mutex_group=None, array=False),

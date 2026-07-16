@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Number import Number
-from ._Period4Choice import Period4Choice
-from ._SecuritiesInvalidReferenceDataReport4 import SecuritiesInvalidReferenceDataReport4
-from ._SupplementaryData1 import SupplementaryData1
+from . import Number
+from . import Period4Choice
+from . import SecuritiesInvalidReferenceDataReport4
+from . import SupplementaryData1
 
 class FinancialInstrumentReportingInvalidReferenceDataReportV02(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class FinancialInstrumentReportingInvalidReferenceDataReportV02(base_types._Base
 
 	@DtPrd.setter
 	def DtPrd(self, value):
-		self._DtPrd = value if type(value) != base_types.auto else self.make_default("DtPrd")
+		self._DtPrd = value if value is not None else base_types.UninitialisedField(self, 'DtPrd', Period4Choice, False)
 
 	@DtPrd.deleter
 	def DtPrd(self):
 		del self._DtPrd
-		self._DtPrd = None
+		self._DtPrd = base_types.UninitialisedField(self, 'DtPrd', Period4Choice, False)
 
 	@property
 	def FinInstrms(self):
@@ -29,12 +29,12 @@ class FinancialInstrumentReportingInvalidReferenceDataReportV02(base_types._Base
 
 	@FinInstrms.setter
 	def FinInstrms(self, value):
-		self._FinInstrms = value if type(value) != base_types.auto else self.make_default("FinInstrms")
+		self._FinInstrms = value if value is not None else base_types.UninitialisedField(self, 'FinInstrms', SecuritiesInvalidReferenceDataReport4, True)
 
 	@FinInstrms.deleter
 	def FinInstrms(self):
 		del self._FinInstrms
-		self._FinInstrms = None
+		self._FinInstrms = base_types.UninitialisedField(self, 'FinInstrms', SecuritiesInvalidReferenceDataReport4, True)
 
 	@property
 	def NbOfRcrds(self):
@@ -42,12 +42,12 @@ class FinancialInstrumentReportingInvalidReferenceDataReportV02(base_types._Base
 
 	@NbOfRcrds.setter
 	def NbOfRcrds(self, value):
-		self._NbOfRcrds = value if type(value) != base_types.auto else self.make_default("NbOfRcrds")
+		self._NbOfRcrds = value if value is not None else base_types.UninitialisedField(self, 'NbOfRcrds', Number, False)
 
 	@NbOfRcrds.deleter
 	def NbOfRcrds(self):
 		del self._NbOfRcrds
-		self._NbOfRcrds = None
+		self._NbOfRcrds = base_types.UninitialisedField(self, 'NbOfRcrds', Number, False)
 
 	@property
 	def SplmtryData(self):
@@ -55,12 +55,12 @@ class FinancialInstrumentReportingInvalidReferenceDataReportV02(base_types._Base
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DtPrd', type=Period4Choice, min=1, max=1, mutex_group=None, array=False),

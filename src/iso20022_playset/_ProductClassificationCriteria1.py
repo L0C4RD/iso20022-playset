@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CFIOct2015Identifier import CFIOct2015Identifier
-from ._Max52Text import Max52Text
+from . import CFIOct2015Identifier
+from . import Max52Text
 
 class ProductClassificationCriteria1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ProductClassificationCriteria1(base_types._BaseFieldType):
 
 	@ClssfctnFinInstrm.setter
 	def ClssfctnFinInstrm(self, value):
-		self._ClssfctnFinInstrm = value if type(value) != base_types.auto else self.make_default("ClssfctnFinInstrm")
+		self._ClssfctnFinInstrm = value if value is not None else base_types.UninitialisedField(self, 'ClssfctnFinInstrm', CFIOct2015Identifier, True)
 
 	@ClssfctnFinInstrm.deleter
 	def ClssfctnFinInstrm(self):
 		del self._ClssfctnFinInstrm
-		self._ClssfctnFinInstrm = None
+		self._ClssfctnFinInstrm = base_types.UninitialisedField(self, 'ClssfctnFinInstrm', CFIOct2015Identifier, True)
 
 	@property
 	def UnqPdctIdr(self):
@@ -27,12 +27,12 @@ class ProductClassificationCriteria1(base_types._BaseFieldType):
 
 	@UnqPdctIdr.setter
 	def UnqPdctIdr(self, value):
-		self._UnqPdctIdr = value if type(value) != base_types.auto else self.make_default("UnqPdctIdr")
+		self._UnqPdctIdr = value if value is not None else base_types.UninitialisedField(self, 'UnqPdctIdr', Max52Text, True)
 
 	@UnqPdctIdr.deleter
 	def UnqPdctIdr(self):
 		del self._UnqPdctIdr
-		self._UnqPdctIdr = None
+		self._UnqPdctIdr = base_types.UninitialisedField(self, 'UnqPdctIdr', Max52Text, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClssfctnFinInstrm', type=CFIOct2015Identifier, min=0, max=None, mutex_group=None, array=True),

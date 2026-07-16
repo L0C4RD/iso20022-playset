@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ForwardDataSetSubmissionReportV05 import ForwardDataSetSubmissionReportV05
+from . import ForwardDataSetSubmissionReportV05
 
 class TSMT_017_001_05():
 
@@ -18,12 +18,12 @@ class TSMT_017_001_05():
 
 		@FwdDataSetSubmissnRpt.setter
 		def FwdDataSetSubmissnRpt(self, value):
-			self._FwdDataSetSubmissnRpt = value if type(value) != base_types.auto else self.make_default("FwdDataSetSubmissnRpt")
+			self._FwdDataSetSubmissnRpt = value if value is not None else base_types.UninitialisedField(self, 'FwdDataSetSubmissnRpt', ForwardDataSetSubmissionReportV05, False)
 
 		@FwdDataSetSubmissnRpt.deleter
 		def FwdDataSetSubmissnRpt(self):
 			del self._FwdDataSetSubmissnRpt
-			self._FwdDataSetSubmissnRpt = None
+			self._FwdDataSetSubmissnRpt = base_types.UninitialisedField(self, 'FwdDataSetSubmissnRpt', ForwardDataSetSubmissionReportV05, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='FwdDataSetSubmissnRpt', type=ForwardDataSetSubmissionReportV05, min=1, max=1, mutex_group=None, array=False),

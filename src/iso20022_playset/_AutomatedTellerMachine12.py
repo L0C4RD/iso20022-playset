@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMEquipment1 import ATMEquipment1
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._Max35Text import Max35Text
-from ._PointOfInteractionCapabilities10 import PointOfInteractionCapabilities10
-from ._PostalAddress17 import PostalAddress17
-from ._TransactionEnvironment2Code import TransactionEnvironment2Code
+from . import ATMEquipment1
+from . import ActiveCurrencyCode
+from . import Max35Text
+from . import PointOfInteractionCapabilities10
+from . import PostalAddress17
+from . import TransactionEnvironment2Code
 
 class AutomatedTellerMachine12(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class AutomatedTellerMachine12(base_types._BaseFieldType):
 
 	@AddtlId.setter
 	def AddtlId(self, value):
-		self._AddtlId = value if type(value) != base_types.auto else self.make_default("AddtlId")
+		self._AddtlId = value if value is not None else base_types.UninitialisedField(self, 'AddtlId', Max35Text, False)
 
 	@AddtlId.deleter
 	def AddtlId(self):
 		del self._AddtlId
-		self._AddtlId = None
+		self._AddtlId = base_types.UninitialisedField(self, 'AddtlId', Max35Text, False)
 
 	@property
 	def BaseCcy(self):
@@ -31,12 +31,12 @@ class AutomatedTellerMachine12(base_types._BaseFieldType):
 
 	@BaseCcy.setter
 	def BaseCcy(self, value):
-		self._BaseCcy = value if type(value) != base_types.auto else self.make_default("BaseCcy")
+		self._BaseCcy = value if value is not None else base_types.UninitialisedField(self, 'BaseCcy', ActiveCurrencyCode, False)
 
 	@BaseCcy.deleter
 	def BaseCcy(self):
 		del self._BaseCcy
-		self._BaseCcy = None
+		self._BaseCcy = base_types.UninitialisedField(self, 'BaseCcy', ActiveCurrencyCode, False)
 
 	@property
 	def Cpblties(self):
@@ -44,12 +44,12 @@ class AutomatedTellerMachine12(base_types._BaseFieldType):
 
 	@Cpblties.setter
 	def Cpblties(self, value):
-		self._Cpblties = value if type(value) != base_types.auto else self.make_default("Cpblties")
+		self._Cpblties = value if value is not None else base_types.UninitialisedField(self, 'Cpblties', PointOfInteractionCapabilities10, False)
 
 	@Cpblties.deleter
 	def Cpblties(self):
 		del self._Cpblties
-		self._Cpblties = None
+		self._Cpblties = base_types.UninitialisedField(self, 'Cpblties', PointOfInteractionCapabilities10, False)
 
 	@property
 	def Eqpmnt(self):
@@ -57,12 +57,12 @@ class AutomatedTellerMachine12(base_types._BaseFieldType):
 
 	@Eqpmnt.setter
 	def Eqpmnt(self, value):
-		self._Eqpmnt = value if type(value) != base_types.auto else self.make_default("Eqpmnt")
+		self._Eqpmnt = value if value is not None else base_types.UninitialisedField(self, 'Eqpmnt', ATMEquipment1, False)
 
 	@Eqpmnt.deleter
 	def Eqpmnt(self):
 		del self._Eqpmnt
-		self._Eqpmnt = None
+		self._Eqpmnt = base_types.UninitialisedField(self, 'Eqpmnt', ATMEquipment1, False)
 
 	@property
 	def Id(self):
@@ -70,12 +70,12 @@ class AutomatedTellerMachine12(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def Lctn(self):
@@ -83,12 +83,12 @@ class AutomatedTellerMachine12(base_types._BaseFieldType):
 
 	@Lctn.setter
 	def Lctn(self, value):
-		self._Lctn = value if type(value) != base_types.auto else self.make_default("Lctn")
+		self._Lctn = value if value is not None else base_types.UninitialisedField(self, 'Lctn', PostalAddress17, False)
 
 	@Lctn.deleter
 	def Lctn(self):
 		del self._Lctn
-		self._Lctn = None
+		self._Lctn = base_types.UninitialisedField(self, 'Lctn', PostalAddress17, False)
 
 	@property
 	def LctnCtgy(self):
@@ -96,12 +96,12 @@ class AutomatedTellerMachine12(base_types._BaseFieldType):
 
 	@LctnCtgy.setter
 	def LctnCtgy(self, value):
-		self._LctnCtgy = value if type(value) != base_types.auto else self.make_default("LctnCtgy")
+		self._LctnCtgy = value if value is not None else base_types.UninitialisedField(self, 'LctnCtgy', TransactionEnvironment2Code, False)
 
 	@LctnCtgy.deleter
 	def LctnCtgy(self):
 		del self._LctnCtgy
-		self._LctnCtgy = None
+		self._LctnCtgy = base_types.UninitialisedField(self, 'LctnCtgy', TransactionEnvironment2Code, False)
 
 	@property
 	def SeqNb(self):
@@ -109,12 +109,12 @@ class AutomatedTellerMachine12(base_types._BaseFieldType):
 
 	@SeqNb.setter
 	def SeqNb(self, value):
-		self._SeqNb = value if type(value) != base_types.auto else self.make_default("SeqNb")
+		self._SeqNb = value if value is not None else base_types.UninitialisedField(self, 'SeqNb', Max35Text, False)
 
 	@SeqNb.deleter
 	def SeqNb(self):
 		del self._SeqNb
-		self._SeqNb = None
+		self._SeqNb = base_types.UninitialisedField(self, 'SeqNb', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

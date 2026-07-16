@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CurrencyExchange20 import CurrencyExchange20
-from ._ErrorHandling3 import ErrorHandling3
+from . import CurrencyExchange20
+from . import ErrorHandling3
 
 class ExchangeRateReportOrError4Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ExchangeRateReportOrError4Choice(base_types._BaseFieldType):
 
 	@BizErr.setter
 	def BizErr(self, value):
-		self._BizErr = value if type(value) != base_types.auto else self.make_default("BizErr")
+		self._BizErr = value if value is not None else base_types.UninitialisedField(self, 'BizErr', ErrorHandling3, True)
 
 	@BizErr.deleter
 	def BizErr(self):
 		del self._BizErr
-		self._BizErr = None
+		self._BizErr = base_types.UninitialisedField(self, 'BizErr', ErrorHandling3, True)
 
 	@property
 	def CcyXchg(self):
@@ -27,12 +27,12 @@ class ExchangeRateReportOrError4Choice(base_types._BaseFieldType):
 
 	@CcyXchg.setter
 	def CcyXchg(self, value):
-		self._CcyXchg = value if type(value) != base_types.auto else self.make_default("CcyXchg")
+		self._CcyXchg = value if value is not None else base_types.UninitialisedField(self, 'CcyXchg', CurrencyExchange20, False)
 
 	@CcyXchg.deleter
 	def CcyXchg(self):
 		del self._CcyXchg
-		self._CcyXchg = None
+		self._CcyXchg = base_types.UninitialisedField(self, 'CcyXchg', CurrencyExchange20, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BizErr', type=ErrorHandling3, min=1, max=None, mutex_group=1, array=True),

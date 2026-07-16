@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BICFIDec2014Identifier import BICFIDec2014Identifier
-from ._ClearingSystemMemberIdentification2 import ClearingSystemMemberIdentification2
-from ._GenericFinancialIdentification1 import GenericFinancialIdentification1
-from ._LEIIdentifier import LEIIdentifier
-from ._Max140Text import Max140Text
-from ._PostalAddress24 import PostalAddress24
+from . import BICFIDec2014Identifier
+from . import ClearingSystemMemberIdentification2
+from . import GenericFinancialIdentification1
+from . import LEIIdentifier
+from . import Max140Text
+from . import PostalAddress24
 
 class FinancialInstitutionIdentification18(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class FinancialInstitutionIdentification18(base_types._BaseFieldType):
 
 	@BICFI.setter
 	def BICFI(self, value):
-		self._BICFI = value if type(value) != base_types.auto else self.make_default("BICFI")
+		self._BICFI = value if value is not None else base_types.UninitialisedField(self, 'BICFI', BICFIDec2014Identifier, False)
 
 	@BICFI.deleter
 	def BICFI(self):
 		del self._BICFI
-		self._BICFI = None
+		self._BICFI = base_types.UninitialisedField(self, 'BICFI', BICFIDec2014Identifier, False)
 
 	@property
 	def ClrSysMmbId(self):
@@ -31,12 +31,12 @@ class FinancialInstitutionIdentification18(base_types._BaseFieldType):
 
 	@ClrSysMmbId.setter
 	def ClrSysMmbId(self, value):
-		self._ClrSysMmbId = value if type(value) != base_types.auto else self.make_default("ClrSysMmbId")
+		self._ClrSysMmbId = value if value is not None else base_types.UninitialisedField(self, 'ClrSysMmbId', ClearingSystemMemberIdentification2, False)
 
 	@ClrSysMmbId.deleter
 	def ClrSysMmbId(self):
 		del self._ClrSysMmbId
-		self._ClrSysMmbId = None
+		self._ClrSysMmbId = base_types.UninitialisedField(self, 'ClrSysMmbId', ClearingSystemMemberIdentification2, False)
 
 	@property
 	def LEI(self):
@@ -44,12 +44,12 @@ class FinancialInstitutionIdentification18(base_types._BaseFieldType):
 
 	@LEI.setter
 	def LEI(self, value):
-		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
+		self._LEI = value if value is not None else base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	@LEI.deleter
 	def LEI(self):
 		del self._LEI
-		self._LEI = None
+		self._LEI = base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	@property
 	def Nm(self):
@@ -57,12 +57,12 @@ class FinancialInstitutionIdentification18(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max140Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max140Text, False)
 
 	@property
 	def Othr(self):
@@ -70,12 +70,12 @@ class FinancialInstitutionIdentification18(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', GenericFinancialIdentification1, False)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', GenericFinancialIdentification1, False)
 
 	@property
 	def PstlAdr(self):
@@ -83,12 +83,12 @@ class FinancialInstitutionIdentification18(base_types._BaseFieldType):
 
 	@PstlAdr.setter
 	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != base_types.auto else self.make_default("PstlAdr")
+		self._PstlAdr = value if value is not None else base_types.UninitialisedField(self, 'PstlAdr', PostalAddress24, False)
 
 	@PstlAdr.deleter
 	def PstlAdr(self):
 		del self._PstlAdr
-		self._PstlAdr = None
+		self._PstlAdr = base_types.UninitialisedField(self, 'PstlAdr', PostalAddress24, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BICFI', type=BICFIDec2014Identifier, min=0, max=1, mutex_group=None, array=False),

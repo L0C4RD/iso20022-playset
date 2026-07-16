@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountExcludedMandateMaintenanceAmendmentRequestV05 import AccountExcludedMandateMaintenanceAmendmentRequestV05
+from . import AccountExcludedMandateMaintenanceAmendmentRequestV05
 
 class ACMT_016_001_05():
 
@@ -18,12 +18,12 @@ class ACMT_016_001_05():
 
 		@AcctExcldMndtMntncAmdmntReq.setter
 		def AcctExcldMndtMntncAmdmntReq(self, value):
-			self._AcctExcldMndtMntncAmdmntReq = value if type(value) != base_types.auto else self.make_default("AcctExcldMndtMntncAmdmntReq")
+			self._AcctExcldMndtMntncAmdmntReq = value if value is not None else base_types.UninitialisedField(self, 'AcctExcldMndtMntncAmdmntReq', AccountExcludedMandateMaintenanceAmendmentRequestV05, False)
 
 		@AcctExcldMndtMntncAmdmntReq.deleter
 		def AcctExcldMndtMntncAmdmntReq(self):
 			del self._AcctExcldMndtMntncAmdmntReq
-			self._AcctExcldMndtMntncAmdmntReq = None
+			self._AcctExcldMndtMntncAmdmntReq = base_types.UninitialisedField(self, 'AcctExcldMndtMntncAmdmntReq', AccountExcludedMandateMaintenanceAmendmentRequestV05, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AcctExcldMndtMntncAmdmntReq', type=AccountExcludedMandateMaintenanceAmendmentRequestV05, min=1, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DecimalNumber import DecimalNumber
-from ._Max15NumericText import Max15NumericText
+from . import DecimalNumber
+from . import Max15NumericText
 
 class ControlData1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ControlData1(base_types._BaseFieldType):
 
 	@CtrlSum.setter
 	def CtrlSum(self, value):
-		self._CtrlSum = value if type(value) != base_types.auto else self.make_default("CtrlSum")
+		self._CtrlSum = value if value is not None else base_types.UninitialisedField(self, 'CtrlSum', DecimalNumber, False)
 
 	@CtrlSum.deleter
 	def CtrlSum(self):
 		del self._CtrlSum
-		self._CtrlSum = None
+		self._CtrlSum = base_types.UninitialisedField(self, 'CtrlSum', DecimalNumber, False)
 
 	@property
 	def NbOfTxs(self):
@@ -27,12 +27,12 @@ class ControlData1(base_types._BaseFieldType):
 
 	@NbOfTxs.setter
 	def NbOfTxs(self, value):
-		self._NbOfTxs = value if type(value) != base_types.auto else self.make_default("NbOfTxs")
+		self._NbOfTxs = value if value is not None else base_types.UninitialisedField(self, 'NbOfTxs', Max15NumericText, False)
 
 	@NbOfTxs.deleter
 	def NbOfTxs(self):
 		del self._NbOfTxs
-		self._NbOfTxs = None
+		self._NbOfTxs = base_types.UninitialisedField(self, 'NbOfTxs', Max15NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrlSum', type=DecimalNumber, min=0, max=1, mutex_group=None, array=False),

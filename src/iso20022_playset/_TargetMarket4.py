@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._InvestorKnowledge1 import InvestorKnowledge1
-from ._InvestorRequirements4 import InvestorRequirements4
-from ._InvestorType2 import InvestorType2
-from ._LossBearing2 import LossBearing2
-from ._OtherTargetMarket1 import OtherTargetMarket1
-from ._RiskTolerance1 import RiskTolerance1
+from . import ISODate
+from . import InvestorKnowledge1
+from . import InvestorRequirements4
+from . import InvestorType2
+from . import LossBearing2
+from . import OtherTargetMarket1
+from . import RiskTolerance1
 
 class TargetMarket4(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class TargetMarket4(base_types._BaseFieldType):
 
 	@AbltyToBearLosses.setter
 	def AbltyToBearLosses(self, value):
-		self._AbltyToBearLosses = value if type(value) != base_types.auto else self.make_default("AbltyToBearLosses")
+		self._AbltyToBearLosses = value if value is not None else base_types.UninitialisedField(self, 'AbltyToBearLosses', LossBearing2, False)
 
 	@AbltyToBearLosses.deleter
 	def AbltyToBearLosses(self):
 		del self._AbltyToBearLosses
-		self._AbltyToBearLosses = None
+		self._AbltyToBearLosses = base_types.UninitialisedField(self, 'AbltyToBearLosses', LossBearing2, False)
 
 	@property
 	def ClntObjctvsAndNeeds(self):
@@ -32,12 +32,12 @@ class TargetMarket4(base_types._BaseFieldType):
 
 	@ClntObjctvsAndNeeds.setter
 	def ClntObjctvsAndNeeds(self, value):
-		self._ClntObjctvsAndNeeds = value if type(value) != base_types.auto else self.make_default("ClntObjctvsAndNeeds")
+		self._ClntObjctvsAndNeeds = value if value is not None else base_types.UninitialisedField(self, 'ClntObjctvsAndNeeds', InvestorRequirements4, False)
 
 	@ClntObjctvsAndNeeds.deleter
 	def ClntObjctvsAndNeeds(self):
 		del self._ClntObjctvsAndNeeds
-		self._ClntObjctvsAndNeeds = None
+		self._ClntObjctvsAndNeeds = base_types.UninitialisedField(self, 'ClntObjctvsAndNeeds', InvestorRequirements4, False)
 
 	@property
 	def InvstrTp(self):
@@ -45,12 +45,12 @@ class TargetMarket4(base_types._BaseFieldType):
 
 	@InvstrTp.setter
 	def InvstrTp(self, value):
-		self._InvstrTp = value if type(value) != base_types.auto else self.make_default("InvstrTp")
+		self._InvstrTp = value if value is not None else base_types.UninitialisedField(self, 'InvstrTp', InvestorType2, False)
 
 	@InvstrTp.deleter
 	def InvstrTp(self):
 		del self._InvstrTp
-		self._InvstrTp = None
+		self._InvstrTp = base_types.UninitialisedField(self, 'InvstrTp', InvestorType2, False)
 
 	@property
 	def KnwldgAndOrExprnc(self):
@@ -58,12 +58,12 @@ class TargetMarket4(base_types._BaseFieldType):
 
 	@KnwldgAndOrExprnc.setter
 	def KnwldgAndOrExprnc(self, value):
-		self._KnwldgAndOrExprnc = value if type(value) != base_types.auto else self.make_default("KnwldgAndOrExprnc")
+		self._KnwldgAndOrExprnc = value if value is not None else base_types.UninitialisedField(self, 'KnwldgAndOrExprnc', InvestorKnowledge1, False)
 
 	@KnwldgAndOrExprnc.deleter
 	def KnwldgAndOrExprnc(self):
 		del self._KnwldgAndOrExprnc
-		self._KnwldgAndOrExprnc = None
+		self._KnwldgAndOrExprnc = base_types.UninitialisedField(self, 'KnwldgAndOrExprnc', InvestorKnowledge1, False)
 
 	@property
 	def Othr(self):
@@ -71,12 +71,12 @@ class TargetMarket4(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', OtherTargetMarket1, True)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', OtherTargetMarket1, True)
 
 	@property
 	def RefDt(self):
@@ -84,12 +84,12 @@ class TargetMarket4(base_types._BaseFieldType):
 
 	@RefDt.setter
 	def RefDt(self, value):
-		self._RefDt = value if type(value) != base_types.auto else self.make_default("RefDt")
+		self._RefDt = value if value is not None else base_types.UninitialisedField(self, 'RefDt', ISODate, False)
 
 	@RefDt.deleter
 	def RefDt(self):
 		del self._RefDt
-		self._RefDt = None
+		self._RefDt = base_types.UninitialisedField(self, 'RefDt', ISODate, False)
 
 	@property
 	def RskTlrnce(self):
@@ -97,12 +97,12 @@ class TargetMarket4(base_types._BaseFieldType):
 
 	@RskTlrnce.setter
 	def RskTlrnce(self, value):
-		self._RskTlrnce = value if type(value) != base_types.auto else self.make_default("RskTlrnce")
+		self._RskTlrnce = value if value is not None else base_types.UninitialisedField(self, 'RskTlrnce', RiskTolerance1, False)
 
 	@RskTlrnce.deleter
 	def RskTlrnce(self):
 		del self._RskTlrnce
-		self._RskTlrnce = None
+		self._RskTlrnce = base_types.UninitialisedField(self, 'RskTlrnce', RiskTolerance1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AbltyToBearLosses', type=LossBearing2, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CreditDefaultSwapIndex3 import CreditDefaultSwapIndex3
-from ._ISINOct2015Identifier import ISINOct2015Identifier
+from . import CreditDefaultSwapIndex3
+from . import ISINOct2015Identifier
 
 class CreditDefaultSwapDerivative5(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CreditDefaultSwapDerivative5(base_types._BaseFieldType):
 
 	@UndrlygCdtDfltSwpId.setter
 	def UndrlygCdtDfltSwpId(self, value):
-		self._UndrlygCdtDfltSwpId = value if type(value) != base_types.auto else self.make_default("UndrlygCdtDfltSwpId")
+		self._UndrlygCdtDfltSwpId = value if value is not None else base_types.UninitialisedField(self, 'UndrlygCdtDfltSwpId', ISINOct2015Identifier, False)
 
 	@UndrlygCdtDfltSwpId.deleter
 	def UndrlygCdtDfltSwpId(self):
 		del self._UndrlygCdtDfltSwpId
-		self._UndrlygCdtDfltSwpId = None
+		self._UndrlygCdtDfltSwpId = base_types.UninitialisedField(self, 'UndrlygCdtDfltSwpId', ISINOct2015Identifier, False)
 
 	@property
 	def UndrlygCdtDfltSwpIndx(self):
@@ -27,12 +27,12 @@ class CreditDefaultSwapDerivative5(base_types._BaseFieldType):
 
 	@UndrlygCdtDfltSwpIndx.setter
 	def UndrlygCdtDfltSwpIndx(self, value):
-		self._UndrlygCdtDfltSwpIndx = value if type(value) != base_types.auto else self.make_default("UndrlygCdtDfltSwpIndx")
+		self._UndrlygCdtDfltSwpIndx = value if value is not None else base_types.UninitialisedField(self, 'UndrlygCdtDfltSwpIndx', CreditDefaultSwapIndex3, False)
 
 	@UndrlygCdtDfltSwpIndx.deleter
 	def UndrlygCdtDfltSwpIndx(self):
 		del self._UndrlygCdtDfltSwpIndx
-		self._UndrlygCdtDfltSwpIndx = None
+		self._UndrlygCdtDfltSwpIndx = base_types.UninitialisedField(self, 'UndrlygCdtDfltSwpIndx', CreditDefaultSwapIndex3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='UndrlygCdtDfltSwpId', type=ISINOct2015Identifier, min=0, max=1, mutex_group=None, array=False),

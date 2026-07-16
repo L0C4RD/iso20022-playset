@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from . import ActiveCurrencyAndAmount
 
 class ProfitAndLoss2Choice(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class ProfitAndLoss2Choice(base_types._BaseFieldType):
 
 	@Loss.setter
 	def Loss(self, value):
-		self._Loss = value if type(value) != base_types.auto else self.make_default("Loss")
+		self._Loss = value if value is not None else base_types.UninitialisedField(self, 'Loss', ActiveCurrencyAndAmount, False)
 
 	@Loss.deleter
 	def Loss(self):
 		del self._Loss
-		self._Loss = None
+		self._Loss = base_types.UninitialisedField(self, 'Loss', ActiveCurrencyAndAmount, False)
 
 	@property
 	def Prft(self):
@@ -26,12 +26,12 @@ class ProfitAndLoss2Choice(base_types._BaseFieldType):
 
 	@Prft.setter
 	def Prft(self, value):
-		self._Prft = value if type(value) != base_types.auto else self.make_default("Prft")
+		self._Prft = value if value is not None else base_types.UninitialisedField(self, 'Prft', ActiveCurrencyAndAmount, False)
 
 	@Prft.deleter
 	def Prft(self):
 		del self._Prft
-		self._Prft = None
+		self._Prft = base_types.UninitialisedField(self, 'Prft', ActiveCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Loss', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DerivativesTradeReconciliationStatisticalReportV03 import DerivativesTradeReconciliationStatisticalReportV03
+from . import DerivativesTradeReconciliationStatisticalReportV03
 
 class AUTH_091_001_03():
 
@@ -18,12 +18,12 @@ class AUTH_091_001_03():
 
 		@DerivsTradRcncltnSttstclRpt.setter
 		def DerivsTradRcncltnSttstclRpt(self, value):
-			self._DerivsTradRcncltnSttstclRpt = value if type(value) != base_types.auto else self.make_default("DerivsTradRcncltnSttstclRpt")
+			self._DerivsTradRcncltnSttstclRpt = value if value is not None else base_types.UninitialisedField(self, 'DerivsTradRcncltnSttstclRpt', DerivativesTradeReconciliationStatisticalReportV03, False)
 
 		@DerivsTradRcncltnSttstclRpt.deleter
 		def DerivsTradRcncltnSttstclRpt(self):
 			del self._DerivsTradRcncltnSttstclRpt
-			self._DerivsTradRcncltnSttstclRpt = None
+			self._DerivsTradRcncltnSttstclRpt = base_types.UninitialisedField(self, 'DerivsTradRcncltnSttstclRpt', DerivativesTradeReconciliationStatisticalReportV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='DerivsTradRcncltnSttstclRpt', type=DerivativesTradeReconciliationStatisticalReportV03, min=1, max=1, mutex_group=None, array=False),

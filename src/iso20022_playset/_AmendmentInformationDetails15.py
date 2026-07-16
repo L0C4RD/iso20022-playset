@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CashAccount40 import CashAccount40
-from ._Exact2NumericText import Exact2NumericText
-from ._Frequency36Choice import Frequency36Choice
-from ._ISODate import ISODate
-from ._MandateSetupReason1Choice import MandateSetupReason1Choice
-from ._Max35Text import Max35Text
-from ._PartyIdentification272 import PartyIdentification272
+from . import BranchAndFinancialInstitutionIdentification8
+from . import CashAccount40
+from . import Exact2NumericText
+from . import Frequency36Choice
+from . import ISODate
+from . import MandateSetupReason1Choice
+from . import Max35Text
+from . import PartyIdentification272
 
 class AmendmentInformationDetails15(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class AmendmentInformationDetails15(base_types._BaseFieldType):
 
 	@OrgnlCdtrAgt.setter
 	def OrgnlCdtrAgt(self, value):
-		self._OrgnlCdtrAgt = value if type(value) != base_types.auto else self.make_default("OrgnlCdtrAgt")
+		self._OrgnlCdtrAgt = value if value is not None else base_types.UninitialisedField(self, 'OrgnlCdtrAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@OrgnlCdtrAgt.deleter
 	def OrgnlCdtrAgt(self):
 		del self._OrgnlCdtrAgt
-		self._OrgnlCdtrAgt = None
+		self._OrgnlCdtrAgt = base_types.UninitialisedField(self, 'OrgnlCdtrAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def OrgnlCdtrAgtAcct(self):
@@ -33,12 +33,12 @@ class AmendmentInformationDetails15(base_types._BaseFieldType):
 
 	@OrgnlCdtrAgtAcct.setter
 	def OrgnlCdtrAgtAcct(self, value):
-		self._OrgnlCdtrAgtAcct = value if type(value) != base_types.auto else self.make_default("OrgnlCdtrAgtAcct")
+		self._OrgnlCdtrAgtAcct = value if value is not None else base_types.UninitialisedField(self, 'OrgnlCdtrAgtAcct', CashAccount40, False)
 
 	@OrgnlCdtrAgtAcct.deleter
 	def OrgnlCdtrAgtAcct(self):
 		del self._OrgnlCdtrAgtAcct
-		self._OrgnlCdtrAgtAcct = None
+		self._OrgnlCdtrAgtAcct = base_types.UninitialisedField(self, 'OrgnlCdtrAgtAcct', CashAccount40, False)
 
 	@property
 	def OrgnlCdtrSchmeId(self):
@@ -46,12 +46,12 @@ class AmendmentInformationDetails15(base_types._BaseFieldType):
 
 	@OrgnlCdtrSchmeId.setter
 	def OrgnlCdtrSchmeId(self, value):
-		self._OrgnlCdtrSchmeId = value if type(value) != base_types.auto else self.make_default("OrgnlCdtrSchmeId")
+		self._OrgnlCdtrSchmeId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlCdtrSchmeId', PartyIdentification272, False)
 
 	@OrgnlCdtrSchmeId.deleter
 	def OrgnlCdtrSchmeId(self):
 		del self._OrgnlCdtrSchmeId
-		self._OrgnlCdtrSchmeId = None
+		self._OrgnlCdtrSchmeId = base_types.UninitialisedField(self, 'OrgnlCdtrSchmeId', PartyIdentification272, False)
 
 	@property
 	def OrgnlDbtr(self):
@@ -59,12 +59,12 @@ class AmendmentInformationDetails15(base_types._BaseFieldType):
 
 	@OrgnlDbtr.setter
 	def OrgnlDbtr(self, value):
-		self._OrgnlDbtr = value if type(value) != base_types.auto else self.make_default("OrgnlDbtr")
+		self._OrgnlDbtr = value if value is not None else base_types.UninitialisedField(self, 'OrgnlDbtr', PartyIdentification272, False)
 
 	@OrgnlDbtr.deleter
 	def OrgnlDbtr(self):
 		del self._OrgnlDbtr
-		self._OrgnlDbtr = None
+		self._OrgnlDbtr = base_types.UninitialisedField(self, 'OrgnlDbtr', PartyIdentification272, False)
 
 	@property
 	def OrgnlDbtrAcct(self):
@@ -72,12 +72,12 @@ class AmendmentInformationDetails15(base_types._BaseFieldType):
 
 	@OrgnlDbtrAcct.setter
 	def OrgnlDbtrAcct(self, value):
-		self._OrgnlDbtrAcct = value if type(value) != base_types.auto else self.make_default("OrgnlDbtrAcct")
+		self._OrgnlDbtrAcct = value if value is not None else base_types.UninitialisedField(self, 'OrgnlDbtrAcct', CashAccount40, False)
 
 	@OrgnlDbtrAcct.deleter
 	def OrgnlDbtrAcct(self):
 		del self._OrgnlDbtrAcct
-		self._OrgnlDbtrAcct = None
+		self._OrgnlDbtrAcct = base_types.UninitialisedField(self, 'OrgnlDbtrAcct', CashAccount40, False)
 
 	@property
 	def OrgnlDbtrAgt(self):
@@ -85,12 +85,12 @@ class AmendmentInformationDetails15(base_types._BaseFieldType):
 
 	@OrgnlDbtrAgt.setter
 	def OrgnlDbtrAgt(self, value):
-		self._OrgnlDbtrAgt = value if type(value) != base_types.auto else self.make_default("OrgnlDbtrAgt")
+		self._OrgnlDbtrAgt = value if value is not None else base_types.UninitialisedField(self, 'OrgnlDbtrAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@OrgnlDbtrAgt.deleter
 	def OrgnlDbtrAgt(self):
 		del self._OrgnlDbtrAgt
-		self._OrgnlDbtrAgt = None
+		self._OrgnlDbtrAgt = base_types.UninitialisedField(self, 'OrgnlDbtrAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def OrgnlDbtrAgtAcct(self):
@@ -98,12 +98,12 @@ class AmendmentInformationDetails15(base_types._BaseFieldType):
 
 	@OrgnlDbtrAgtAcct.setter
 	def OrgnlDbtrAgtAcct(self, value):
-		self._OrgnlDbtrAgtAcct = value if type(value) != base_types.auto else self.make_default("OrgnlDbtrAgtAcct")
+		self._OrgnlDbtrAgtAcct = value if value is not None else base_types.UninitialisedField(self, 'OrgnlDbtrAgtAcct', CashAccount40, False)
 
 	@OrgnlDbtrAgtAcct.deleter
 	def OrgnlDbtrAgtAcct(self):
 		del self._OrgnlDbtrAgtAcct
-		self._OrgnlDbtrAgtAcct = None
+		self._OrgnlDbtrAgtAcct = base_types.UninitialisedField(self, 'OrgnlDbtrAgtAcct', CashAccount40, False)
 
 	@property
 	def OrgnlFnlColltnDt(self):
@@ -111,12 +111,12 @@ class AmendmentInformationDetails15(base_types._BaseFieldType):
 
 	@OrgnlFnlColltnDt.setter
 	def OrgnlFnlColltnDt(self, value):
-		self._OrgnlFnlColltnDt = value if type(value) != base_types.auto else self.make_default("OrgnlFnlColltnDt")
+		self._OrgnlFnlColltnDt = value if value is not None else base_types.UninitialisedField(self, 'OrgnlFnlColltnDt', ISODate, False)
 
 	@OrgnlFnlColltnDt.deleter
 	def OrgnlFnlColltnDt(self):
 		del self._OrgnlFnlColltnDt
-		self._OrgnlFnlColltnDt = None
+		self._OrgnlFnlColltnDt = base_types.UninitialisedField(self, 'OrgnlFnlColltnDt', ISODate, False)
 
 	@property
 	def OrgnlFrqcy(self):
@@ -124,12 +124,12 @@ class AmendmentInformationDetails15(base_types._BaseFieldType):
 
 	@OrgnlFrqcy.setter
 	def OrgnlFrqcy(self, value):
-		self._OrgnlFrqcy = value if type(value) != base_types.auto else self.make_default("OrgnlFrqcy")
+		self._OrgnlFrqcy = value if value is not None else base_types.UninitialisedField(self, 'OrgnlFrqcy', Frequency36Choice, False)
 
 	@OrgnlFrqcy.deleter
 	def OrgnlFrqcy(self):
 		del self._OrgnlFrqcy
-		self._OrgnlFrqcy = None
+		self._OrgnlFrqcy = base_types.UninitialisedField(self, 'OrgnlFrqcy', Frequency36Choice, False)
 
 	@property
 	def OrgnlMndtId(self):
@@ -137,12 +137,12 @@ class AmendmentInformationDetails15(base_types._BaseFieldType):
 
 	@OrgnlMndtId.setter
 	def OrgnlMndtId(self, value):
-		self._OrgnlMndtId = value if type(value) != base_types.auto else self.make_default("OrgnlMndtId")
+		self._OrgnlMndtId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlMndtId', Max35Text, False)
 
 	@OrgnlMndtId.deleter
 	def OrgnlMndtId(self):
 		del self._OrgnlMndtId
-		self._OrgnlMndtId = None
+		self._OrgnlMndtId = base_types.UninitialisedField(self, 'OrgnlMndtId', Max35Text, False)
 
 	@property
 	def OrgnlRsn(self):
@@ -150,12 +150,12 @@ class AmendmentInformationDetails15(base_types._BaseFieldType):
 
 	@OrgnlRsn.setter
 	def OrgnlRsn(self, value):
-		self._OrgnlRsn = value if type(value) != base_types.auto else self.make_default("OrgnlRsn")
+		self._OrgnlRsn = value if value is not None else base_types.UninitialisedField(self, 'OrgnlRsn', MandateSetupReason1Choice, False)
 
 	@OrgnlRsn.deleter
 	def OrgnlRsn(self):
 		del self._OrgnlRsn
-		self._OrgnlRsn = None
+		self._OrgnlRsn = base_types.UninitialisedField(self, 'OrgnlRsn', MandateSetupReason1Choice, False)
 
 	@property
 	def OrgnlTrckgDays(self):
@@ -163,12 +163,12 @@ class AmendmentInformationDetails15(base_types._BaseFieldType):
 
 	@OrgnlTrckgDays.setter
 	def OrgnlTrckgDays(self, value):
-		self._OrgnlTrckgDays = value if type(value) != base_types.auto else self.make_default("OrgnlTrckgDays")
+		self._OrgnlTrckgDays = value if value is not None else base_types.UninitialisedField(self, 'OrgnlTrckgDays', Exact2NumericText, False)
 
 	@OrgnlTrckgDays.deleter
 	def OrgnlTrckgDays(self):
 		del self._OrgnlTrckgDays
-		self._OrgnlTrckgDays = None
+		self._OrgnlTrckgDays = base_types.UninitialisedField(self, 'OrgnlTrckgDays', Exact2NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlCdtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),

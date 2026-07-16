@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max256Text import Max256Text
-from ._NaturalPersonIdentification1 import NaturalPersonIdentification1
-from ._PersonName1 import PersonName1
+from . import Max256Text
+from . import NaturalPersonIdentification1
+from . import PersonName1
 
 class PartyIdentification222(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PartyIdentification222(base_types._BaseFieldType):
 
 	@EmailAdr.setter
 	def EmailAdr(self, value):
-		self._EmailAdr = value if type(value) != base_types.auto else self.make_default("EmailAdr")
+		self._EmailAdr = value if value is not None else base_types.UninitialisedField(self, 'EmailAdr', Max256Text, False)
 
 	@EmailAdr.deleter
 	def EmailAdr(self):
 		del self._EmailAdr
-		self._EmailAdr = None
+		self._EmailAdr = base_types.UninitialisedField(self, 'EmailAdr', Max256Text, False)
 
 	@property
 	def Id(self):
@@ -28,12 +28,12 @@ class PartyIdentification222(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', NaturalPersonIdentification1, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', NaturalPersonIdentification1, False)
 
 	@property
 	def NmAndAdr(self):
@@ -41,12 +41,12 @@ class PartyIdentification222(base_types._BaseFieldType):
 
 	@NmAndAdr.setter
 	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
+		self._NmAndAdr = value if value is not None else base_types.UninitialisedField(self, 'NmAndAdr', PersonName1, False)
 
 	@NmAndAdr.deleter
 	def NmAndAdr(self):
 		del self._NmAndAdr
-		self._NmAndAdr = None
+		self._NmAndAdr = base_types.UninitialisedField(self, 'NmAndAdr', PersonName1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),

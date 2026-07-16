@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SubscriptionOrderV05 import SubscriptionOrderV05
+from . import SubscriptionOrderV05
 
 class SETR_010_001_05():
 
@@ -18,12 +18,12 @@ class SETR_010_001_05():
 
 		@SbcptOrdr.setter
 		def SbcptOrdr(self, value):
-			self._SbcptOrdr = value if type(value) != base_types.auto else self.make_default("SbcptOrdr")
+			self._SbcptOrdr = value if value is not None else base_types.UninitialisedField(self, 'SbcptOrdr', SubscriptionOrderV05, False)
 
 		@SbcptOrdr.deleter
 		def SbcptOrdr(self):
 			del self._SbcptOrdr
-			self._SbcptOrdr = None
+			self._SbcptOrdr = base_types.UninitialisedField(self, 'SbcptOrdr', SubscriptionOrderV05, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SbcptOrdr', type=SubscriptionOrderV05, min=1, max=1, mutex_group=None, array=False),

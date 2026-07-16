@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CreditorEnrolmentAmendment6 import CreditorEnrolmentAmendment6
-from ._CreditorEnrolmentAmendmentReason3 import CreditorEnrolmentAmendmentReason3
-from ._OriginalBusinessInstruction1 import OriginalBusinessInstruction1
-from ._OriginalEnrolment3Choice import OriginalEnrolment3Choice
-from ._SupplementaryData1 import SupplementaryData1
+from . import CreditorEnrolmentAmendment6
+from . import CreditorEnrolmentAmendmentReason3
+from . import OriginalBusinessInstruction1
+from . import OriginalEnrolment3Choice
+from . import SupplementaryData1
 
 class CreditorEnrolmentAmendment5(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class CreditorEnrolmentAmendment5(base_types._BaseFieldType):
 
 	@Amdmnt.setter
 	def Amdmnt(self, value):
-		self._Amdmnt = value if type(value) != base_types.auto else self.make_default("Amdmnt")
+		self._Amdmnt = value if value is not None else base_types.UninitialisedField(self, 'Amdmnt', CreditorEnrolmentAmendment6, False)
 
 	@Amdmnt.deleter
 	def Amdmnt(self):
 		del self._Amdmnt
-		self._Amdmnt = None
+		self._Amdmnt = base_types.UninitialisedField(self, 'Amdmnt', CreditorEnrolmentAmendment6, False)
 
 	@property
 	def AmdmntRsn(self):
@@ -30,12 +30,12 @@ class CreditorEnrolmentAmendment5(base_types._BaseFieldType):
 
 	@AmdmntRsn.setter
 	def AmdmntRsn(self, value):
-		self._AmdmntRsn = value if type(value) != base_types.auto else self.make_default("AmdmntRsn")
+		self._AmdmntRsn = value if value is not None else base_types.UninitialisedField(self, 'AmdmntRsn', CreditorEnrolmentAmendmentReason3, False)
 
 	@AmdmntRsn.deleter
 	def AmdmntRsn(self):
 		del self._AmdmntRsn
-		self._AmdmntRsn = None
+		self._AmdmntRsn = base_types.UninitialisedField(self, 'AmdmntRsn', CreditorEnrolmentAmendmentReason3, False)
 
 	@property
 	def OrgnlBizInstr(self):
@@ -43,12 +43,12 @@ class CreditorEnrolmentAmendment5(base_types._BaseFieldType):
 
 	@OrgnlBizInstr.setter
 	def OrgnlBizInstr(self, value):
-		self._OrgnlBizInstr = value if type(value) != base_types.auto else self.make_default("OrgnlBizInstr")
+		self._OrgnlBizInstr = value if value is not None else base_types.UninitialisedField(self, 'OrgnlBizInstr', OriginalBusinessInstruction1, False)
 
 	@OrgnlBizInstr.deleter
 	def OrgnlBizInstr(self):
 		del self._OrgnlBizInstr
-		self._OrgnlBizInstr = None
+		self._OrgnlBizInstr = base_types.UninitialisedField(self, 'OrgnlBizInstr', OriginalBusinessInstruction1, False)
 
 	@property
 	def OrgnlEnrlmnt(self):
@@ -56,12 +56,12 @@ class CreditorEnrolmentAmendment5(base_types._BaseFieldType):
 
 	@OrgnlEnrlmnt.setter
 	def OrgnlEnrlmnt(self, value):
-		self._OrgnlEnrlmnt = value if type(value) != base_types.auto else self.make_default("OrgnlEnrlmnt")
+		self._OrgnlEnrlmnt = value if value is not None else base_types.UninitialisedField(self, 'OrgnlEnrlmnt', OriginalEnrolment3Choice, False)
 
 	@OrgnlEnrlmnt.deleter
 	def OrgnlEnrlmnt(self):
 		del self._OrgnlEnrlmnt
-		self._OrgnlEnrlmnt = None
+		self._OrgnlEnrlmnt = base_types.UninitialisedField(self, 'OrgnlEnrlmnt', OriginalEnrolment3Choice, False)
 
 	@property
 	def SplmtryData(self):
@@ -69,12 +69,12 @@ class CreditorEnrolmentAmendment5(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amdmnt', type=CreditorEnrolmentAmendment6, min=1, max=1, mutex_group=None, array=False),

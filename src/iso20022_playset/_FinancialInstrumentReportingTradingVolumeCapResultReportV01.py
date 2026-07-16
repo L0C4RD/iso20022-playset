@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesMarketReportHeader1 import SecuritiesMarketReportHeader1
-from ._SupplementaryData1 import SupplementaryData1
-from ._VolumeCapResult1 import VolumeCapResult1
+from . import SecuritiesMarketReportHeader1
+from . import SupplementaryData1
+from . import VolumeCapResult1
 
 class FinancialInstrumentReportingTradingVolumeCapResultReportV01(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class FinancialInstrumentReportingTradingVolumeCapResultReportV01(base_types._Ba
 
 	@RptHdr.setter
 	def RptHdr(self, value):
-		self._RptHdr = value if type(value) != base_types.auto else self.make_default("RptHdr")
+		self._RptHdr = value if value is not None else base_types.UninitialisedField(self, 'RptHdr', SecuritiesMarketReportHeader1, False)
 
 	@RptHdr.deleter
 	def RptHdr(self):
 		del self._RptHdr
-		self._RptHdr = None
+		self._RptHdr = base_types.UninitialisedField(self, 'RptHdr', SecuritiesMarketReportHeader1, False)
 
 	@property
 	def SplmtryData(self):
@@ -28,12 +28,12 @@ class FinancialInstrumentReportingTradingVolumeCapResultReportV01(base_types._Ba
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def VolCapRslt(self):
@@ -41,12 +41,12 @@ class FinancialInstrumentReportingTradingVolumeCapResultReportV01(base_types._Ba
 
 	@VolCapRslt.setter
 	def VolCapRslt(self, value):
-		self._VolCapRslt = value if type(value) != base_types.auto else self.make_default("VolCapRslt")
+		self._VolCapRslt = value if value is not None else base_types.UninitialisedField(self, 'VolCapRslt', VolumeCapResult1, True)
 
 	@VolCapRslt.deleter
 	def VolCapRslt(self):
 		del self._VolCapRslt
-		self._VolCapRslt = None
+		self._VolCapRslt = base_types.UninitialisedField(self, 'VolCapRslt', VolumeCapResult1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RptHdr', type=SecuritiesMarketReportHeader1, min=1, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CustodyStatementOfHoldingsCancellationV02 import CustodyStatementOfHoldingsCancellationV02
+from . import CustodyStatementOfHoldingsCancellationV02
 
 class SEMT_004_001_02():
 
@@ -18,12 +18,12 @@ class SEMT_004_001_02():
 
 		@CtdyStmtOfHldgsCxlV02.setter
 		def CtdyStmtOfHldgsCxlV02(self, value):
-			self._CtdyStmtOfHldgsCxlV02 = value if type(value) != base_types.auto else self.make_default("CtdyStmtOfHldgsCxlV02")
+			self._CtdyStmtOfHldgsCxlV02 = value if value is not None else base_types.UninitialisedField(self, 'CtdyStmtOfHldgsCxlV02', CustodyStatementOfHoldingsCancellationV02, False)
 
 		@CtdyStmtOfHldgsCxlV02.deleter
 		def CtdyStmtOfHldgsCxlV02(self):
 			del self._CtdyStmtOfHldgsCxlV02
-			self._CtdyStmtOfHldgsCxlV02 = None
+			self._CtdyStmtOfHldgsCxlV02 = base_types.UninitialisedField(self, 'CtdyStmtOfHldgsCxlV02', CustodyStatementOfHoldingsCancellationV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CtdyStmtOfHldgsCxlV02', type=CustodyStatementOfHoldingsCancellationV02, min=1, max=1, mutex_group=None, array=False),

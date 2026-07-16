@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ReuseDataReportCorrection14 import ReuseDataReportCorrection14
-from ._ReuseDataReportError5 import ReuseDataReportError5
-from ._ReuseDataReportNew6 import ReuseDataReportNew6
+from . import ReuseDataReportCorrection14
+from . import ReuseDataReportError5
+from . import ReuseDataReportNew6
 
 class ReuseDataReport6Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ReuseDataReport6Choice(base_types._BaseFieldType):
 
 	@CollReuseUpd.setter
 	def CollReuseUpd(self, value):
-		self._CollReuseUpd = value if type(value) != base_types.auto else self.make_default("CollReuseUpd")
+		self._CollReuseUpd = value if value is not None else base_types.UninitialisedField(self, 'CollReuseUpd', ReuseDataReportCorrection14, False)
 
 	@CollReuseUpd.deleter
 	def CollReuseUpd(self):
 		del self._CollReuseUpd
-		self._CollReuseUpd = None
+		self._CollReuseUpd = base_types.UninitialisedField(self, 'CollReuseUpd', ReuseDataReportCorrection14, False)
 
 	@property
 	def Crrctn(self):
@@ -28,12 +28,12 @@ class ReuseDataReport6Choice(base_types._BaseFieldType):
 
 	@Crrctn.setter
 	def Crrctn(self, value):
-		self._Crrctn = value if type(value) != base_types.auto else self.make_default("Crrctn")
+		self._Crrctn = value if value is not None else base_types.UninitialisedField(self, 'Crrctn', ReuseDataReportCorrection14, False)
 
 	@Crrctn.deleter
 	def Crrctn(self):
 		del self._Crrctn
-		self._Crrctn = None
+		self._Crrctn = base_types.UninitialisedField(self, 'Crrctn', ReuseDataReportCorrection14, False)
 
 	@property
 	def Err(self):
@@ -41,12 +41,12 @@ class ReuseDataReport6Choice(base_types._BaseFieldType):
 
 	@Err.setter
 	def Err(self, value):
-		self._Err = value if type(value) != base_types.auto else self.make_default("Err")
+		self._Err = value if value is not None else base_types.UninitialisedField(self, 'Err', ReuseDataReportError5, False)
 
 	@Err.deleter
 	def Err(self):
 		del self._Err
-		self._Err = None
+		self._Err = base_types.UninitialisedField(self, 'Err', ReuseDataReportError5, False)
 
 	@property
 	def New(self):
@@ -54,12 +54,12 @@ class ReuseDataReport6Choice(base_types._BaseFieldType):
 
 	@New.setter
 	def New(self, value):
-		self._New = value if type(value) != base_types.auto else self.make_default("New")
+		self._New = value if value is not None else base_types.UninitialisedField(self, 'New', ReuseDataReportNew6, False)
 
 	@New.deleter
 	def New(self):
 		del self._New
-		self._New = None
+		self._New = base_types.UninitialisedField(self, 'New', ReuseDataReportNew6, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollReuseUpd', type=ReuseDataReportCorrection14, min=0, max=1, mutex_group=1, array=False),

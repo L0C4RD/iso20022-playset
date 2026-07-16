@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PartyCreationRequestV02 import PartyCreationRequestV02
+from . import PartyCreationRequestV02
 
 class REDA_014_001_02():
 
@@ -18,12 +18,12 @@ class REDA_014_001_02():
 
 		@PtyCreReq.setter
 		def PtyCreReq(self, value):
-			self._PtyCreReq = value if type(value) != base_types.auto else self.make_default("PtyCreReq")
+			self._PtyCreReq = value if value is not None else base_types.UninitialisedField(self, 'PtyCreReq', PartyCreationRequestV02, False)
 
 		@PtyCreReq.deleter
 		def PtyCreReq(self):
 			del self._PtyCreReq
-			self._PtyCreReq = None
+			self._PtyCreReq = base_types.UninitialisedField(self, 'PtyCreReq', PartyCreationRequestV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='PtyCreReq', type=PartyCreationRequestV02, min=1, max=1, mutex_group=None, array=False),

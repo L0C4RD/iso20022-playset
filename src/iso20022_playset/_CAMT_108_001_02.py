@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ChequeCancellationOrStopRequestV02 import ChequeCancellationOrStopRequestV02
+from . import ChequeCancellationOrStopRequestV02
 
 class CAMT_108_001_02():
 
@@ -18,12 +18,12 @@ class CAMT_108_001_02():
 
 		@ChqCxlOrStopReq.setter
 		def ChqCxlOrStopReq(self, value):
-			self._ChqCxlOrStopReq = value if type(value) != base_types.auto else self.make_default("ChqCxlOrStopReq")
+			self._ChqCxlOrStopReq = value if value is not None else base_types.UninitialisedField(self, 'ChqCxlOrStopReq', ChequeCancellationOrStopRequestV02, False)
 
 		@ChqCxlOrStopReq.deleter
 		def ChqCxlOrStopReq(self):
 			del self._ChqCxlOrStopReq
-			self._ChqCxlOrStopReq = None
+			self._ChqCxlOrStopReq = base_types.UninitialisedField(self, 'ChqCxlOrStopReq', ChequeCancellationOrStopRequestV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ChqCxlOrStopReq', type=ChequeCancellationOrStopRequestV02, min=1, max=1, mutex_group=None, array=False),

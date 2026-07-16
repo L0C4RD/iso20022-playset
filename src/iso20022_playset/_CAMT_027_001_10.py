@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ClaimNonReceiptV10 import ClaimNonReceiptV10
+from . import ClaimNonReceiptV10
 
 class CAMT_027_001_10():
 
@@ -18,12 +18,12 @@ class CAMT_027_001_10():
 
 		@ClmNonRct.setter
 		def ClmNonRct(self, value):
-			self._ClmNonRct = value if type(value) != base_types.auto else self.make_default("ClmNonRct")
+			self._ClmNonRct = value if value is not None else base_types.UninitialisedField(self, 'ClmNonRct', ClaimNonReceiptV10, False)
 
 		@ClmNonRct.deleter
 		def ClmNonRct(self):
 			del self._ClmNonRct
-			self._ClmNonRct = None
+			self._ClmNonRct = base_types.UninitialisedField(self, 'ClmNonRct', ClaimNonReceiptV10, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ClmNonRct', type=ClaimNonReceiptV10, min=1, max=1, mutex_group=None, array=False),

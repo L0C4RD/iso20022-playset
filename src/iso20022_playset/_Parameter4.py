@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Algorithm11Code import Algorithm11Code
-from ._AlgorithmIdentification12 import AlgorithmIdentification12
-from ._EncryptionFormat1Code import EncryptionFormat1Code
+from . import Algorithm11Code
+from . import AlgorithmIdentification12
+from . import EncryptionFormat1Code
 
 class Parameter4(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Parameter4(base_types._BaseFieldType):
 
 	@DgstAlgo.setter
 	def DgstAlgo(self, value):
-		self._DgstAlgo = value if type(value) != base_types.auto else self.make_default("DgstAlgo")
+		self._DgstAlgo = value if value is not None else base_types.UninitialisedField(self, 'DgstAlgo', Algorithm11Code, False)
 
 	@DgstAlgo.deleter
 	def DgstAlgo(self):
 		del self._DgstAlgo
-		self._DgstAlgo = None
+		self._DgstAlgo = base_types.UninitialisedField(self, 'DgstAlgo', Algorithm11Code, False)
 
 	@property
 	def MskGnrtrAlgo(self):
@@ -28,12 +28,12 @@ class Parameter4(base_types._BaseFieldType):
 
 	@MskGnrtrAlgo.setter
 	def MskGnrtrAlgo(self, value):
-		self._MskGnrtrAlgo = value if type(value) != base_types.auto else self.make_default("MskGnrtrAlgo")
+		self._MskGnrtrAlgo = value if value is not None else base_types.UninitialisedField(self, 'MskGnrtrAlgo', AlgorithmIdentification12, False)
 
 	@MskGnrtrAlgo.deleter
 	def MskGnrtrAlgo(self):
 		del self._MskGnrtrAlgo
-		self._MskGnrtrAlgo = None
+		self._MskGnrtrAlgo = base_types.UninitialisedField(self, 'MskGnrtrAlgo', AlgorithmIdentification12, False)
 
 	@property
 	def NcrptnFrmt(self):
@@ -41,12 +41,12 @@ class Parameter4(base_types._BaseFieldType):
 
 	@NcrptnFrmt.setter
 	def NcrptnFrmt(self, value):
-		self._NcrptnFrmt = value if type(value) != base_types.auto else self.make_default("NcrptnFrmt")
+		self._NcrptnFrmt = value if value is not None else base_types.UninitialisedField(self, 'NcrptnFrmt', EncryptionFormat1Code, False)
 
 	@NcrptnFrmt.deleter
 	def NcrptnFrmt(self):
 		del self._NcrptnFrmt
-		self._NcrptnFrmt = None
+		self._NcrptnFrmt = base_types.UninitialisedField(self, 'NcrptnFrmt', EncryptionFormat1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DgstAlgo', type=Algorithm11Code, min=0, max=1, mutex_group=None, array=False),

@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._Address4 import Address4
-from ._ExternalTransactorType1Code import ExternalTransactorType1Code
-from ._LocalData20 import LocalData20
-from ._Max11NumericText import Max11NumericText
-from ._Max15AlphaNumericText import Max15AlphaNumericText
-from ._Max35Text import Max35Text
-from ._Max99Text import Max99Text
-from ._SubMerchant1 import SubMerchant1
+from . import ATICALaxProcessing
+from . import Address4
+from . import ExternalTransactorType1Code
+from . import LocalData20
+from . import Max11NumericText
+from . import Max15AlphaNumericText
+from . import Max35Text
+from . import Max99Text
+from . import SubMerchant1
 
 class TransactorData1(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class TransactorData1(base_types._BaseFieldType):
 
 	@Adr.setter
 	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+		self._Adr = value if value is not None else base_types.UninitialisedField(self, 'Adr', Address4, False)
 
 	@Adr.deleter
 	def Adr(self):
 		del self._Adr
-		self._Adr = None
+		self._Adr = base_types.UninitialisedField(self, 'Adr', Address4, False)
 
 	@property
 	def BizId(self):
@@ -34,12 +34,12 @@ class TransactorData1(base_types._BaseFieldType):
 
 	@BizId.setter
 	def BizId(self, value):
-		self._BizId = value if type(value) != base_types.auto else self.make_default("BizId")
+		self._BizId = value if value is not None else base_types.UninitialisedField(self, 'BizId', Max15AlphaNumericText, False)
 
 	@BizId.deleter
 	def BizId(self):
 		del self._BizId
-		self._BizId = None
+		self._BizId = base_types.UninitialisedField(self, 'BizId', Max15AlphaNumericText, False)
 
 	@property
 	def BizNm(self):
@@ -47,12 +47,12 @@ class TransactorData1(base_types._BaseFieldType):
 
 	@BizNm.setter
 	def BizNm(self, value):
-		self._BizNm = value if type(value) != base_types.auto else self.make_default("BizNm")
+		self._BizNm = value if value is not None else base_types.UninitialisedField(self, 'BizNm', Max35Text, False)
 
 	@BizNm.deleter
 	def BizNm(self):
 		del self._BizNm
-		self._BizNm = None
+		self._BizNm = base_types.UninitialisedField(self, 'BizNm', Max35Text, False)
 
 	@property
 	def Id(self):
@@ -60,12 +60,12 @@ class TransactorData1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max11NumericText, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max11NumericText, False)
 
 	@property
 	def LclData(self):
@@ -73,12 +73,12 @@ class TransactorData1(base_types._BaseFieldType):
 
 	@LclData.setter
 	def LclData(self, value):
-		self._LclData = value if type(value) != base_types.auto else self.make_default("LclData")
+		self._LclData = value if value is not None else base_types.UninitialisedField(self, 'LclData', LocalData20, True)
 
 	@LclData.deleter
 	def LclData(self):
 		del self._LclData
-		self._LclData = None
+		self._LclData = base_types.UninitialisedField(self, 'LclData', LocalData20, True)
 
 	@property
 	def LglCorpNm(self):
@@ -86,12 +86,12 @@ class TransactorData1(base_types._BaseFieldType):
 
 	@LglCorpNm.setter
 	def LglCorpNm(self, value):
-		self._LglCorpNm = value if type(value) != base_types.auto else self.make_default("LglCorpNm")
+		self._LglCorpNm = value if value is not None else base_types.UninitialisedField(self, 'LglCorpNm', Max99Text, False)
 
 	@LglCorpNm.deleter
 	def LglCorpNm(self):
 		del self._LglCorpNm
-		self._LglCorpNm = None
+		self._LglCorpNm = base_types.UninitialisedField(self, 'LglCorpNm', Max99Text, False)
 
 	@property
 	def NtlData(self):
@@ -99,12 +99,12 @@ class TransactorData1(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def PrvtData(self):
@@ -112,12 +112,12 @@ class TransactorData1(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def SubMrchnt(self):
@@ -125,12 +125,12 @@ class TransactorData1(base_types._BaseFieldType):
 
 	@SubMrchnt.setter
 	def SubMrchnt(self, value):
-		self._SubMrchnt = value if type(value) != base_types.auto else self.make_default("SubMrchnt")
+		self._SubMrchnt = value if value is not None else base_types.UninitialisedField(self, 'SubMrchnt', SubMerchant1, True)
 
 	@SubMrchnt.deleter
 	def SubMrchnt(self):
 		del self._SubMrchnt
-		self._SubMrchnt = None
+		self._SubMrchnt = base_types.UninitialisedField(self, 'SubMrchnt', SubMerchant1, True)
 
 	@property
 	def Tp(self):
@@ -138,12 +138,12 @@ class TransactorData1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', ExternalTransactorType1Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', ExternalTransactorType1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Adr', type=Address4, min=0, max=1, mutex_group=None, array=False),

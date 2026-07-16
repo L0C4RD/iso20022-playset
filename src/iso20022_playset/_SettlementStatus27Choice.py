@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ProprietaryReason4 import ProprietaryReason4
-from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from . import ProprietaryReason4
+from . import ProprietaryStatusAndReason6
 
 class SettlementStatus27Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SettlementStatus27Choice(base_types._BaseFieldType):
 
 	@PrtlSttlm.setter
 	def PrtlSttlm(self, value):
-		self._PrtlSttlm = value if type(value) != base_types.auto else self.make_default("PrtlSttlm")
+		self._PrtlSttlm = value if value is not None else base_types.UninitialisedField(self, 'PrtlSttlm', ProprietaryReason4, True)
 
 	@PrtlSttlm.deleter
 	def PrtlSttlm(self):
 		del self._PrtlSttlm
-		self._PrtlSttlm = None
+		self._PrtlSttlm = base_types.UninitialisedField(self, 'PrtlSttlm', ProprietaryReason4, True)
 
 	@property
 	def Prtry(self):
@@ -27,12 +27,12 @@ class SettlementStatus27Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+		self._Prtry = value if value is not None else base_types.UninitialisedField(self, 'Prtry', ProprietaryStatusAndReason6, False)
 
 	@Prtry.deleter
 	def Prtry(self):
 		del self._Prtry
-		self._Prtry = None
+		self._Prtry = base_types.UninitialisedField(self, 'Prtry', ProprietaryStatusAndReason6, False)
 
 	@property
 	def Sttld(self):
@@ -40,12 +40,12 @@ class SettlementStatus27Choice(base_types._BaseFieldType):
 
 	@Sttld.setter
 	def Sttld(self, value):
-		self._Sttld = value if type(value) != base_types.auto else self.make_default("Sttld")
+		self._Sttld = value if value is not None else base_types.UninitialisedField(self, 'Sttld', ProprietaryReason4, True)
 
 	@Sttld.deleter
 	def Sttld(self):
 		del self._Sttld
-		self._Sttld = None
+		self._Sttld = base_types.UninitialisedField(self, 'Sttld', ProprietaryReason4, True)
 
 	@property
 	def Usttld(self):
@@ -53,12 +53,12 @@ class SettlementStatus27Choice(base_types._BaseFieldType):
 
 	@Usttld.setter
 	def Usttld(self, value):
-		self._Usttld = value if type(value) != base_types.auto else self.make_default("Usttld")
+		self._Usttld = value if value is not None else base_types.UninitialisedField(self, 'Usttld', ProprietaryReason4, True)
 
 	@Usttld.deleter
 	def Usttld(self):
 		del self._Usttld
-		self._Usttld = None
+		self._Usttld = base_types.UninitialisedField(self, 'Usttld', ProprietaryReason4, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrtlSttlm', type=ProprietaryReason4, min=1, max=None, mutex_group=1, array=True),

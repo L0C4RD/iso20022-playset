@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CounterpartyData91 import CounterpartyData91
-from ._Number import Number
-from ._ReconciliationReport15 import ReconciliationReport15
+from . import CounterpartyData91
+from . import Number
+from . import ReconciliationReport15
 
 class ReconciliationCounterpartyPairStatistics7(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ReconciliationCounterpartyPairStatistics7(base_types._BaseFieldType):
 
 	@CtrPtyId.setter
 	def CtrPtyId(self, value):
-		self._CtrPtyId = value if type(value) != base_types.auto else self.make_default("CtrPtyId")
+		self._CtrPtyId = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyId', CounterpartyData91, False)
 
 	@CtrPtyId.deleter
 	def CtrPtyId(self):
 		del self._CtrPtyId
-		self._CtrPtyId = None
+		self._CtrPtyId = base_types.UninitialisedField(self, 'CtrPtyId', CounterpartyData91, False)
 
 	@property
 	def RcncltnRpt(self):
@@ -28,12 +28,12 @@ class ReconciliationCounterpartyPairStatistics7(base_types._BaseFieldType):
 
 	@RcncltnRpt.setter
 	def RcncltnRpt(self, value):
-		self._RcncltnRpt = value if type(value) != base_types.auto else self.make_default("RcncltnRpt")
+		self._RcncltnRpt = value if value is not None else base_types.UninitialisedField(self, 'RcncltnRpt', ReconciliationReport15, True)
 
 	@RcncltnRpt.deleter
 	def RcncltnRpt(self):
 		del self._RcncltnRpt
-		self._RcncltnRpt = None
+		self._RcncltnRpt = base_types.UninitialisedField(self, 'RcncltnRpt', ReconciliationReport15, True)
 
 	@property
 	def TtlNbOfTxs(self):
@@ -41,12 +41,12 @@ class ReconciliationCounterpartyPairStatistics7(base_types._BaseFieldType):
 
 	@TtlNbOfTxs.setter
 	def TtlNbOfTxs(self, value):
-		self._TtlNbOfTxs = value if type(value) != base_types.auto else self.make_default("TtlNbOfTxs")
+		self._TtlNbOfTxs = value if value is not None else base_types.UninitialisedField(self, 'TtlNbOfTxs', Number, False)
 
 	@TtlNbOfTxs.deleter
 	def TtlNbOfTxs(self):
 		del self._TtlNbOfTxs
-		self._TtlNbOfTxs = None
+		self._TtlNbOfTxs = base_types.UninitialisedField(self, 'TtlNbOfTxs', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrPtyId', type=CounterpartyData91, min=1, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTime1Choice import DateAndDateTime1Choice
-from ._TradingDateCode2Choice import TradingDateCode2Choice
+from . import DateAndDateTime1Choice
+from . import TradingDateCode2Choice
 
 class TradeDate7Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TradeDate7Choice(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', DateAndDateTime1Choice, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', DateAndDateTime1Choice, False)
 
 	@property
 	def Val(self):
@@ -27,12 +27,12 @@ class TradeDate7Choice(base_types._BaseFieldType):
 
 	@Val.setter
 	def Val(self, value):
-		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
+		self._Val = value if value is not None else base_types.UninitialisedField(self, 'Val', TradingDateCode2Choice, False)
 
 	@Val.deleter
 	def Val(self):
 		del self._Val
-		self._Val = None
+		self._Val = base_types.UninitialisedField(self, 'Val', TradingDateCode2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dt', type=DateAndDateTime1Choice, min=0, max=1, mutex_group=1, array=False),

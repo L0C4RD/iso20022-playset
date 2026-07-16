@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActionDestination1Code import ActionDestination1Code
-from ._ActionType14Code import ActionType14Code
-from ._AdditionalData1 import AdditionalData1
-from ._ContactPersonal1 import ContactPersonal1
-from ._ISOMax3ALanguageCode import ISOMax3ALanguageCode
-from ._Max140Binary import Max140Binary
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
-from ._OutputFormat4Code import OutputFormat4Code
-from ._PartyType34Code import PartyType34Code
+from . import ActionDestination1Code
+from . import ActionType14Code
+from . import AdditionalData1
+from . import ContactPersonal1
+from . import ISOMax3ALanguageCode
+from . import Max140Binary
+from . import Max35Text
+from . import Max70Text
+from . import OutputFormat4Code
+from . import PartyType34Code
 
 class Action16(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class Action16(base_types._BaseFieldType):
 
 	@CertId.setter
 	def CertId(self, value):
-		self._CertId = value if type(value) != base_types.auto else self.make_default("CertId")
+		self._CertId = value if value is not None else base_types.UninitialisedField(self, 'CertId', Max70Text, False)
 
 	@CertId.deleter
 	def CertId(self):
 		del self._CertId
-		self._CertId = None
+		self._CertId = base_types.UninitialisedField(self, 'CertId', Max70Text, False)
 
 	@property
 	def Cntt(self):
@@ -35,12 +35,12 @@ class Action16(base_types._BaseFieldType):
 
 	@Cntt.setter
 	def Cntt(self, value):
-		self._Cntt = value if type(value) != base_types.auto else self.make_default("Cntt")
+		self._Cntt = value if value is not None else base_types.UninitialisedField(self, 'Cntt', AdditionalData1, True)
 
 	@Cntt.deleter
 	def Cntt(self):
 		del self._Cntt
-		self._Cntt = None
+		self._Cntt = base_types.UninitialisedField(self, 'Cntt', AdditionalData1, True)
 
 	@property
 	def Ctct(self):
@@ -48,12 +48,12 @@ class Action16(base_types._BaseFieldType):
 
 	@Ctct.setter
 	def Ctct(self, value):
-		self._Ctct = value if type(value) != base_types.auto else self.make_default("Ctct")
+		self._Ctct = value if value is not None else base_types.UninitialisedField(self, 'Ctct', ContactPersonal1, False)
 
 	@Ctct.deleter
 	def Ctct(self):
 		del self._Ctct
-		self._Ctct = None
+		self._Ctct = base_types.UninitialisedField(self, 'Ctct', ContactPersonal1, False)
 
 	@property
 	def Dstn(self):
@@ -61,12 +61,12 @@ class Action16(base_types._BaseFieldType):
 
 	@Dstn.setter
 	def Dstn(self, value):
-		self._Dstn = value if type(value) != base_types.auto else self.make_default("Dstn")
+		self._Dstn = value if value is not None else base_types.UninitialisedField(self, 'Dstn', PartyType34Code, False)
 
 	@Dstn.deleter
 	def Dstn(self):
 		del self._Dstn
-		self._Dstn = None
+		self._Dstn = base_types.UninitialisedField(self, 'Dstn', PartyType34Code, False)
 
 	@property
 	def DstnAdr(self):
@@ -74,12 +74,12 @@ class Action16(base_types._BaseFieldType):
 
 	@DstnAdr.setter
 	def DstnAdr(self, value):
-		self._DstnAdr = value if type(value) != base_types.auto else self.make_default("DstnAdr")
+		self._DstnAdr = value if value is not None else base_types.UninitialisedField(self, 'DstnAdr', Max70Text, False)
 
 	@DstnAdr.deleter
 	def DstnAdr(self):
 		del self._DstnAdr
-		self._DstnAdr = None
+		self._DstnAdr = base_types.UninitialisedField(self, 'DstnAdr', Max70Text, False)
 
 	@property
 	def DstnTp(self):
@@ -87,12 +87,12 @@ class Action16(base_types._BaseFieldType):
 
 	@DstnTp.setter
 	def DstnTp(self, value):
-		self._DstnTp = value if type(value) != base_types.auto else self.make_default("DstnTp")
+		self._DstnTp = value if value is not None else base_types.UninitialisedField(self, 'DstnTp', ActionDestination1Code, False)
 
 	@DstnTp.deleter
 	def DstnTp(self):
 		del self._DstnTp
-		self._DstnTp = None
+		self._DstnTp = base_types.UninitialisedField(self, 'DstnTp', ActionDestination1Code, False)
 
 	@property
 	def Frmt(self):
@@ -100,12 +100,12 @@ class Action16(base_types._BaseFieldType):
 
 	@Frmt.setter
 	def Frmt(self, value):
-		self._Frmt = value if type(value) != base_types.auto else self.make_default("Frmt")
+		self._Frmt = value if value is not None else base_types.UninitialisedField(self, 'Frmt', OutputFormat4Code, False)
 
 	@Frmt.deleter
 	def Frmt(self):
 		del self._Frmt
-		self._Frmt = None
+		self._Frmt = base_types.UninitialisedField(self, 'Frmt', OutputFormat4Code, False)
 
 	@property
 	def Lang(self):
@@ -113,12 +113,12 @@ class Action16(base_types._BaseFieldType):
 
 	@Lang.setter
 	def Lang(self, value):
-		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
+		self._Lang = value if value is not None else base_types.UninitialisedField(self, 'Lang', ISOMax3ALanguageCode, False)
 
 	@Lang.deleter
 	def Lang(self):
 		del self._Lang
-		self._Lang = None
+		self._Lang = base_types.UninitialisedField(self, 'Lang', ISOMax3ALanguageCode, False)
 
 	@property
 	def OthrDstn(self):
@@ -126,12 +126,12 @@ class Action16(base_types._BaseFieldType):
 
 	@OthrDstn.setter
 	def OthrDstn(self, value):
-		self._OthrDstn = value if type(value) != base_types.auto else self.make_default("OthrDstn")
+		self._OthrDstn = value if value is not None else base_types.UninitialisedField(self, 'OthrDstn', Max35Text, False)
 
 	@OthrDstn.deleter
 	def OthrDstn(self):
 		del self._OthrDstn
-		self._OthrDstn = None
+		self._OthrDstn = base_types.UninitialisedField(self, 'OthrDstn', Max35Text, False)
 
 	@property
 	def OthrDstnTp(self):
@@ -139,12 +139,12 @@ class Action16(base_types._BaseFieldType):
 
 	@OthrDstnTp.setter
 	def OthrDstnTp(self, value):
-		self._OthrDstnTp = value if type(value) != base_types.auto else self.make_default("OthrDstnTp")
+		self._OthrDstnTp = value if value is not None else base_types.UninitialisedField(self, 'OthrDstnTp', Max35Text, False)
 
 	@OthrDstnTp.deleter
 	def OthrDstnTp(self):
 		del self._OthrDstnTp
-		self._OthrDstnTp = None
+		self._OthrDstnTp = base_types.UninitialisedField(self, 'OthrDstnTp', Max35Text, False)
 
 	@property
 	def OthrFrmt(self):
@@ -152,12 +152,12 @@ class Action16(base_types._BaseFieldType):
 
 	@OthrFrmt.setter
 	def OthrFrmt(self, value):
-		self._OthrFrmt = value if type(value) != base_types.auto else self.make_default("OthrFrmt")
+		self._OthrFrmt = value if value is not None else base_types.UninitialisedField(self, 'OthrFrmt', Max35Text, False)
 
 	@OthrFrmt.deleter
 	def OthrFrmt(self):
 		del self._OthrFrmt
-		self._OthrFrmt = None
+		self._OthrFrmt = base_types.UninitialisedField(self, 'OthrFrmt', Max35Text, False)
 
 	@property
 	def OthrTp(self):
@@ -165,12 +165,12 @@ class Action16(base_types._BaseFieldType):
 
 	@OthrTp.setter
 	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != base_types.auto else self.make_default("OthrTp")
+		self._OthrTp = value if value is not None else base_types.UninitialisedField(self, 'OthrTp', Max35Text, False)
 
 	@OthrTp.deleter
 	def OthrTp(self):
 		del self._OthrTp
-		self._OthrTp = None
+		self._OthrTp = base_types.UninitialisedField(self, 'OthrTp', Max35Text, False)
 
 	@property
 	def Sgntr(self):
@@ -178,12 +178,12 @@ class Action16(base_types._BaseFieldType):
 
 	@Sgntr.setter
 	def Sgntr(self, value):
-		self._Sgntr = value if type(value) != base_types.auto else self.make_default("Sgntr")
+		self._Sgntr = value if value is not None else base_types.UninitialisedField(self, 'Sgntr', Max140Binary, False)
 
 	@Sgntr.deleter
 	def Sgntr(self):
 		del self._Sgntr
-		self._Sgntr = None
+		self._Sgntr = base_types.UninitialisedField(self, 'Sgntr', Max140Binary, False)
 
 	@property
 	def Tp(self):
@@ -191,12 +191,12 @@ class Action16(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', ActionType14Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', ActionType14Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CertId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),

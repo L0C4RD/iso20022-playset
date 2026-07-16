@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Document8 import Document8
-from ._Max2000Text import Max2000Text
-from ._PlaceOrUnderConfirmationChoice1 import PlaceOrUnderConfirmationChoice1
-from ._PresentationMedium1Choice import PresentationMedium1Choice
+from . import Document8
+from . import Max2000Text
+from . import PlaceOrUnderConfirmationChoice1
+from . import PresentationMedium1Choice
 
 class Presentation1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class Presentation1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max2000Text, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max2000Text, True)
 
 	@property
 	def Doc(self):
@@ -29,12 +29,12 @@ class Presentation1(base_types._BaseFieldType):
 
 	@Doc.setter
 	def Doc(self, value):
-		self._Doc = value if type(value) != base_types.auto else self.make_default("Doc")
+		self._Doc = value if value is not None else base_types.UninitialisedField(self, 'Doc', Document8, True)
 
 	@Doc.deleter
 	def Doc(self):
 		del self._Doc
-		self._Doc = None
+		self._Doc = base_types.UninitialisedField(self, 'Doc', Document8, True)
 
 	@property
 	def Mdm(self):
@@ -42,12 +42,12 @@ class Presentation1(base_types._BaseFieldType):
 
 	@Mdm.setter
 	def Mdm(self, value):
-		self._Mdm = value if type(value) != base_types.auto else self.make_default("Mdm")
+		self._Mdm = value if value is not None else base_types.UninitialisedField(self, 'Mdm', PresentationMedium1Choice, False)
 
 	@Mdm.deleter
 	def Mdm(self):
 		del self._Mdm
-		self._Mdm = None
+		self._Mdm = base_types.UninitialisedField(self, 'Mdm', PresentationMedium1Choice, False)
 
 	@property
 	def PlcOfPresntnOrUdrConfChc(self):
@@ -55,12 +55,12 @@ class Presentation1(base_types._BaseFieldType):
 
 	@PlcOfPresntnOrUdrConfChc.setter
 	def PlcOfPresntnOrUdrConfChc(self, value):
-		self._PlcOfPresntnOrUdrConfChc = value if type(value) != base_types.auto else self.make_default("PlcOfPresntnOrUdrConfChc")
+		self._PlcOfPresntnOrUdrConfChc = value if value is not None else base_types.UninitialisedField(self, 'PlcOfPresntnOrUdrConfChc', PlaceOrUnderConfirmationChoice1, False)
 
 	@PlcOfPresntnOrUdrConfChc.deleter
 	def PlcOfPresntnOrUdrConfChc(self):
 		del self._PlcOfPresntnOrUdrConfChc
-		self._PlcOfPresntnOrUdrConfChc = None
+		self._PlcOfPresntnOrUdrConfChc = base_types.UninitialisedField(self, 'PlcOfPresntnOrUdrConfChc', PlaceOrUnderConfirmationChoice1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),

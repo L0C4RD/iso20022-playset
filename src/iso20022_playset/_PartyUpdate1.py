@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._PartyDetail1 import PartyDetail1
-from ._PartyIdentification136 import PartyIdentification136
-from ._Period4Choice import Period4Choice
-from ._StatusDetail1 import StatusDetail1
-from ._SupplementaryData1 import SupplementaryData1
+from . import Max35Text
+from . import PartyDetail1
+from . import PartyIdentification136
+from . import Period4Choice
+from . import StatusDetail1
+from . import SupplementaryData1
 
 class PartyUpdate1(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class PartyUpdate1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', PartyIdentification136, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', PartyIdentification136, False)
 
 	@property
 	def Othr(self):
@@ -31,12 +31,12 @@ class PartyUpdate1(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', PartyDetail1, False)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', PartyDetail1, False)
 
 	@property
 	def PrvsId(self):
@@ -44,12 +44,12 @@ class PartyUpdate1(base_types._BaseFieldType):
 
 	@PrvsId.setter
 	def PrvsId(self, value):
-		self._PrvsId = value if type(value) != base_types.auto else self.make_default("PrvsId")
+		self._PrvsId = value if value is not None else base_types.UninitialisedField(self, 'PrvsId', PartyIdentification136, False)
 
 	@PrvsId.deleter
 	def PrvsId(self):
 		del self._PrvsId
-		self._PrvsId = None
+		self._PrvsId = base_types.UninitialisedField(self, 'PrvsId', PartyIdentification136, False)
 
 	@property
 	def SplmtryData(self):
@@ -57,12 +57,12 @@ class PartyUpdate1(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def Sts(self):
@@ -70,12 +70,12 @@ class PartyUpdate1(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', StatusDetail1, True)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', StatusDetail1, True)
 
 	@property
 	def TechRcrdId(self):
@@ -83,12 +83,12 @@ class PartyUpdate1(base_types._BaseFieldType):
 
 	@TechRcrdId.setter
 	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
+		self._TechRcrdId = value if value is not None else base_types.UninitialisedField(self, 'TechRcrdId', Max35Text, False)
 
 	@TechRcrdId.deleter
 	def TechRcrdId(self):
 		del self._TechRcrdId
-		self._TechRcrdId = None
+		self._TechRcrdId = base_types.UninitialisedField(self, 'TechRcrdId', Max35Text, False)
 
 	@property
 	def TechVldtyPrd(self):
@@ -96,12 +96,12 @@ class PartyUpdate1(base_types._BaseFieldType):
 
 	@TechVldtyPrd.setter
 	def TechVldtyPrd(self, value):
-		self._TechVldtyPrd = value if type(value) != base_types.auto else self.make_default("TechVldtyPrd")
+		self._TechVldtyPrd = value if value is not None else base_types.UninitialisedField(self, 'TechVldtyPrd', Period4Choice, False)
 
 	@TechVldtyPrd.deleter
 	def TechVldtyPrd(self):
 		del self._TechVldtyPrd
-		self._TechVldtyPrd = None
+		self._TechVldtyPrd = base_types.UninitialisedField(self, 'TechVldtyPrd', Period4Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=PartyIdentification136, min=1, max=1, mutex_group=None, array=False),

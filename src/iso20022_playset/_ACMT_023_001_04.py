@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IdentificationVerificationRequestV04 import IdentificationVerificationRequestV04
+from . import IdentificationVerificationRequestV04
 
 class ACMT_023_001_04():
 
@@ -18,12 +18,12 @@ class ACMT_023_001_04():
 
 		@IdVrfctnReq.setter
 		def IdVrfctnReq(self, value):
-			self._IdVrfctnReq = value if type(value) != base_types.auto else self.make_default("IdVrfctnReq")
+			self._IdVrfctnReq = value if value is not None else base_types.UninitialisedField(self, 'IdVrfctnReq', IdentificationVerificationRequestV04, False)
 
 		@IdVrfctnReq.deleter
 		def IdVrfctnReq(self):
 			del self._IdVrfctnReq
-			self._IdVrfctnReq = None
+			self._IdVrfctnReq = base_types.UninitialisedField(self, 'IdVrfctnReq', IdentificationVerificationRequestV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='IdVrfctnReq', type=IdentificationVerificationRequestV04, min=1, max=1, mutex_group=None, array=False),

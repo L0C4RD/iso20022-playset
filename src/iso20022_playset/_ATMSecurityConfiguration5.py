@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Number import Number
-from ._PINFormat4Code import PINFormat4Code
+from . import Number
+from . import PINFormat4Code
 
 class ATMSecurityConfiguration5(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ATMSecurityConfiguration5(base_types._BaseFieldType):
 
 	@PINFrmt.setter
 	def PINFrmt(self, value):
-		self._PINFrmt = value if type(value) != base_types.auto else self.make_default("PINFrmt")
+		self._PINFrmt = value if value is not None else base_types.UninitialisedField(self, 'PINFrmt', PINFormat4Code, True)
 
 	@PINFrmt.deleter
 	def PINFrmt(self):
 		del self._PINFrmt
-		self._PINFrmt = None
+		self._PINFrmt = base_types.UninitialisedField(self, 'PINFrmt', PINFormat4Code, True)
 
 	@property
 	def PINLngthCpblties(self):
@@ -27,12 +27,12 @@ class ATMSecurityConfiguration5(base_types._BaseFieldType):
 
 	@PINLngthCpblties.setter
 	def PINLngthCpblties(self, value):
-		self._PINLngthCpblties = value if type(value) != base_types.auto else self.make_default("PINLngthCpblties")
+		self._PINLngthCpblties = value if value is not None else base_types.UninitialisedField(self, 'PINLngthCpblties', Number, False)
 
 	@PINLngthCpblties.deleter
 	def PINLngthCpblties(self):
 		del self._PINLngthCpblties
-		self._PINLngthCpblties = None
+		self._PINLngthCpblties = base_types.UninitialisedField(self, 'PINLngthCpblties', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PINFrmt', type=PINFormat4Code, min=0, max=None, mutex_group=None, array=True),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ISODate import ISODate
-from ._ISODateTime import ISODateTime
-from ._TransactionOperationType4Code import TransactionOperationType4Code
+from . import ActiveCurrencyCode
+from . import ISODate
+from . import ISODateTime
+from . import TransactionOperationType4Code
 
 class SettlementInternaliserReportHeader1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class SettlementInternaliserReportHeader1(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@property
 	def CreDtTm(self):
@@ -29,12 +29,12 @@ class SettlementInternaliserReportHeader1(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if value is not None else base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
 		del self._CreDtTm
-		self._CreDtTm = None
+		self._CreDtTm = base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@property
 	def RptSts(self):
@@ -42,12 +42,12 @@ class SettlementInternaliserReportHeader1(base_types._BaseFieldType):
 
 	@RptSts.setter
 	def RptSts(self, value):
-		self._RptSts = value if type(value) != base_types.auto else self.make_default("RptSts")
+		self._RptSts = value if value is not None else base_types.UninitialisedField(self, 'RptSts', TransactionOperationType4Code, False)
 
 	@RptSts.deleter
 	def RptSts(self):
 		del self._RptSts
-		self._RptSts = None
+		self._RptSts = base_types.UninitialisedField(self, 'RptSts', TransactionOperationType4Code, False)
 
 	@property
 	def RptgDt(self):
@@ -55,12 +55,12 @@ class SettlementInternaliserReportHeader1(base_types._BaseFieldType):
 
 	@RptgDt.setter
 	def RptgDt(self, value):
-		self._RptgDt = value if type(value) != base_types.auto else self.make_default("RptgDt")
+		self._RptgDt = value if value is not None else base_types.UninitialisedField(self, 'RptgDt', ISODate, False)
 
 	@RptgDt.deleter
 	def RptgDt(self):
 		del self._RptgDt
-		self._RptgDt = None
+		self._RptgDt = base_types.UninitialisedField(self, 'RptgDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),

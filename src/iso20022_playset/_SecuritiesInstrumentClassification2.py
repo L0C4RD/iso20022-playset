@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CFIOct2015Identifier import CFIOct2015Identifier
-from ._ISODate import ISODate
-from ._Modification1Code import Modification1Code
-from ._Period4Choice import Period4Choice
+from . import CFIOct2015Identifier
+from . import ISODate
+from . import Modification1Code
+from . import Period4Choice
 
 class SecuritiesInstrumentClassification2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class SecuritiesInstrumentClassification2(base_types._BaseFieldType):
 
 	@Idr.setter
 	def Idr(self, value):
-		self._Idr = value if type(value) != base_types.auto else self.make_default("Idr")
+		self._Idr = value if value is not None else base_types.UninitialisedField(self, 'Idr', CFIOct2015Identifier, False)
 
 	@Idr.deleter
 	def Idr(self):
 		del self._Idr
-		self._Idr = None
+		self._Idr = base_types.UninitialisedField(self, 'Idr', CFIOct2015Identifier, False)
 
 	@property
 	def LastUpdtd(self):
@@ -29,12 +29,12 @@ class SecuritiesInstrumentClassification2(base_types._BaseFieldType):
 
 	@LastUpdtd.setter
 	def LastUpdtd(self, value):
-		self._LastUpdtd = value if type(value) != base_types.auto else self.make_default("LastUpdtd")
+		self._LastUpdtd = value if value is not None else base_types.UninitialisedField(self, 'LastUpdtd', ISODate, False)
 
 	@LastUpdtd.deleter
 	def LastUpdtd(self):
 		del self._LastUpdtd
-		self._LastUpdtd = None
+		self._LastUpdtd = base_types.UninitialisedField(self, 'LastUpdtd', ISODate, False)
 
 	@property
 	def Mod(self):
@@ -42,12 +42,12 @@ class SecuritiesInstrumentClassification2(base_types._BaseFieldType):
 
 	@Mod.setter
 	def Mod(self, value):
-		self._Mod = value if type(value) != base_types.auto else self.make_default("Mod")
+		self._Mod = value if value is not None else base_types.UninitialisedField(self, 'Mod', Modification1Code, False)
 
 	@Mod.deleter
 	def Mod(self):
 		del self._Mod
-		self._Mod = None
+		self._Mod = base_types.UninitialisedField(self, 'Mod', Modification1Code, False)
 
 	@property
 	def VldtyPrd(self):
@@ -55,12 +55,12 @@ class SecuritiesInstrumentClassification2(base_types._BaseFieldType):
 
 	@VldtyPrd.setter
 	def VldtyPrd(self, value):
-		self._VldtyPrd = value if type(value) != base_types.auto else self.make_default("VldtyPrd")
+		self._VldtyPrd = value if value is not None else base_types.UninitialisedField(self, 'VldtyPrd', Period4Choice, False)
 
 	@VldtyPrd.deleter
 	def VldtyPrd(self):
 		del self._VldtyPrd
-		self._VldtyPrd = None
+		self._VldtyPrd = base_types.UninitialisedField(self, 'VldtyPrd', Period4Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Idr', type=CFIOct2015Identifier, min=1, max=1, mutex_group=None, array=False),

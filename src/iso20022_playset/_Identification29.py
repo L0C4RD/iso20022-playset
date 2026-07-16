@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from ._RestrictedFINXMax52Text import RestrictedFINXMax52Text
+from . import RestrictedFINXMax16Text
+from . import RestrictedFINXMax52Text
 
 class Identification29(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Identification29(base_types._BaseFieldType):
 
 	@AcctOwnrTxId.setter
 	def AcctOwnrTxId(self, value):
-		self._AcctOwnrTxId = value if type(value) != base_types.auto else self.make_default("AcctOwnrTxId")
+		self._AcctOwnrTxId = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnrTxId', RestrictedFINXMax16Text, False)
 
 	@AcctOwnrTxId.deleter
 	def AcctOwnrTxId(self):
 		del self._AcctOwnrTxId
-		self._AcctOwnrTxId = None
+		self._AcctOwnrTxId = base_types.UninitialisedField(self, 'AcctOwnrTxId', RestrictedFINXMax16Text, False)
 
 	@property
 	def AcctSvcrTxId(self):
@@ -27,12 +27,12 @@ class Identification29(base_types._BaseFieldType):
 
 	@AcctSvcrTxId.setter
 	def AcctSvcrTxId(self, value):
-		self._AcctSvcrTxId = value if type(value) != base_types.auto else self.make_default("AcctSvcrTxId")
+		self._AcctSvcrTxId = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcrTxId', RestrictedFINXMax16Text, False)
 
 	@AcctSvcrTxId.deleter
 	def AcctSvcrTxId(self):
 		del self._AcctSvcrTxId
-		self._AcctSvcrTxId = None
+		self._AcctSvcrTxId = base_types.UninitialisedField(self, 'AcctSvcrTxId', RestrictedFINXMax16Text, False)
 
 	@property
 	def BsktId(self):
@@ -40,12 +40,12 @@ class Identification29(base_types._BaseFieldType):
 
 	@BsktId.setter
 	def BsktId(self, value):
-		self._BsktId = value if type(value) != base_types.auto else self.make_default("BsktId")
+		self._BsktId = value if value is not None else base_types.UninitialisedField(self, 'BsktId', RestrictedFINXMax16Text, False)
 
 	@BsktId.deleter
 	def BsktId(self):
 		del self._BsktId
-		self._BsktId = None
+		self._BsktId = base_types.UninitialisedField(self, 'BsktId', RestrictedFINXMax16Text, False)
 
 	@property
 	def CmonId(self):
@@ -53,12 +53,12 @@ class Identification29(base_types._BaseFieldType):
 
 	@CmonId.setter
 	def CmonId(self, value):
-		self._CmonId = value if type(value) != base_types.auto else self.make_default("CmonId")
+		self._CmonId = value if value is not None else base_types.UninitialisedField(self, 'CmonId', RestrictedFINXMax16Text, False)
 
 	@CmonId.deleter
 	def CmonId(self):
 		del self._CmonId
-		self._CmonId = None
+		self._CmonId = base_types.UninitialisedField(self, 'CmonId', RestrictedFINXMax16Text, False)
 
 	@property
 	def CorpActnEvtId(self):
@@ -66,12 +66,12 @@ class Identification29(base_types._BaseFieldType):
 
 	@CorpActnEvtId.setter
 	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
+		self._CorpActnEvtId = value if value is not None else base_types.UninitialisedField(self, 'CorpActnEvtId', RestrictedFINXMax16Text, False)
 
 	@CorpActnEvtId.deleter
 	def CorpActnEvtId(self):
 		del self._CorpActnEvtId
-		self._CorpActnEvtId = None
+		self._CorpActnEvtId = base_types.UninitialisedField(self, 'CorpActnEvtId', RestrictedFINXMax16Text, False)
 
 	@property
 	def CtrPtyMktInfrstrctrTxId(self):
@@ -79,12 +79,12 @@ class Identification29(base_types._BaseFieldType):
 
 	@CtrPtyMktInfrstrctrTxId.setter
 	def CtrPtyMktInfrstrctrTxId(self, value):
-		self._CtrPtyMktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("CtrPtyMktInfrstrctrTxId")
+		self._CtrPtyMktInfrstrctrTxId = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyMktInfrstrctrTxId', RestrictedFINXMax16Text, False)
 
 	@CtrPtyMktInfrstrctrTxId.deleter
 	def CtrPtyMktInfrstrctrTxId(self):
 		del self._CtrPtyMktInfrstrctrTxId
-		self._CtrPtyMktInfrstrctrTxId = None
+		self._CtrPtyMktInfrstrctrTxId = base_types.UninitialisedField(self, 'CtrPtyMktInfrstrctrTxId', RestrictedFINXMax16Text, False)
 
 	@property
 	def IndxId(self):
@@ -92,12 +92,12 @@ class Identification29(base_types._BaseFieldType):
 
 	@IndxId.setter
 	def IndxId(self, value):
-		self._IndxId = value if type(value) != base_types.auto else self.make_default("IndxId")
+		self._IndxId = value if value is not None else base_types.UninitialisedField(self, 'IndxId', RestrictedFINXMax16Text, False)
 
 	@IndxId.deleter
 	def IndxId(self):
 		del self._IndxId
-		self._IndxId = None
+		self._IndxId = base_types.UninitialisedField(self, 'IndxId', RestrictedFINXMax16Text, False)
 
 	@property
 	def ListId(self):
@@ -105,12 +105,12 @@ class Identification29(base_types._BaseFieldType):
 
 	@ListId.setter
 	def ListId(self, value):
-		self._ListId = value if type(value) != base_types.auto else self.make_default("ListId")
+		self._ListId = value if value is not None else base_types.UninitialisedField(self, 'ListId', RestrictedFINXMax16Text, False)
 
 	@ListId.deleter
 	def ListId(self):
 		del self._ListId
-		self._ListId = None
+		self._ListId = base_types.UninitialisedField(self, 'ListId', RestrictedFINXMax16Text, False)
 
 	@property
 	def MktInfrstrctrTxId(self):
@@ -118,12 +118,12 @@ class Identification29(base_types._BaseFieldType):
 
 	@MktInfrstrctrTxId.setter
 	def MktInfrstrctrTxId(self, value):
-		self._MktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("MktInfrstrctrTxId")
+		self._MktInfrstrctrTxId = value if value is not None else base_types.UninitialisedField(self, 'MktInfrstrctrTxId', RestrictedFINXMax16Text, False)
 
 	@MktInfrstrctrTxId.deleter
 	def MktInfrstrctrTxId(self):
 		del self._MktInfrstrctrTxId
-		self._MktInfrstrctrTxId = None
+		self._MktInfrstrctrTxId = base_types.UninitialisedField(self, 'MktInfrstrctrTxId', RestrictedFINXMax16Text, False)
 
 	@property
 	def MstrId(self):
@@ -131,12 +131,12 @@ class Identification29(base_types._BaseFieldType):
 
 	@MstrId.setter
 	def MstrId(self, value):
-		self._MstrId = value if type(value) != base_types.auto else self.make_default("MstrId")
+		self._MstrId = value if value is not None else base_types.UninitialisedField(self, 'MstrId', RestrictedFINXMax16Text, False)
 
 	@MstrId.deleter
 	def MstrId(self):
 		del self._MstrId
-		self._MstrId = None
+		self._MstrId = base_types.UninitialisedField(self, 'MstrId', RestrictedFINXMax16Text, False)
 
 	@property
 	def PoolId(self):
@@ -144,12 +144,12 @@ class Identification29(base_types._BaseFieldType):
 
 	@PoolId.setter
 	def PoolId(self, value):
-		self._PoolId = value if type(value) != base_types.auto else self.make_default("PoolId")
+		self._PoolId = value if value is not None else base_types.UninitialisedField(self, 'PoolId', RestrictedFINXMax16Text, False)
 
 	@PoolId.deleter
 	def PoolId(self):
 		del self._PoolId
-		self._PoolId = None
+		self._PoolId = base_types.UninitialisedField(self, 'PoolId', RestrictedFINXMax16Text, False)
 
 	@property
 	def PrcrTxId(self):
@@ -157,12 +157,12 @@ class Identification29(base_types._BaseFieldType):
 
 	@PrcrTxId.setter
 	def PrcrTxId(self, value):
-		self._PrcrTxId = value if type(value) != base_types.auto else self.make_default("PrcrTxId")
+		self._PrcrTxId = value if value is not None else base_types.UninitialisedField(self, 'PrcrTxId', RestrictedFINXMax16Text, False)
 
 	@PrcrTxId.deleter
 	def PrcrTxId(self):
 		del self._PrcrTxId
-		self._PrcrTxId = None
+		self._PrcrTxId = base_types.UninitialisedField(self, 'PrcrTxId', RestrictedFINXMax16Text, False)
 
 	@property
 	def PrgmId(self):
@@ -170,12 +170,12 @@ class Identification29(base_types._BaseFieldType):
 
 	@PrgmId.setter
 	def PrgmId(self, value):
-		self._PrgmId = value if type(value) != base_types.auto else self.make_default("PrgmId")
+		self._PrgmId = value if value is not None else base_types.UninitialisedField(self, 'PrgmId', RestrictedFINXMax16Text, False)
 
 	@PrgmId.deleter
 	def PrgmId(self):
 		del self._PrgmId
-		self._PrgmId = None
+		self._PrgmId = base_types.UninitialisedField(self, 'PrgmId', RestrictedFINXMax16Text, False)
 
 	@property
 	def TradId(self):
@@ -183,12 +183,12 @@ class Identification29(base_types._BaseFieldType):
 
 	@TradId.setter
 	def TradId(self, value):
-		self._TradId = value if type(value) != base_types.auto else self.make_default("TradId")
+		self._TradId = value if value is not None else base_types.UninitialisedField(self, 'TradId', RestrictedFINXMax52Text, True)
 
 	@TradId.deleter
 	def TradId(self):
 		del self._TradId
-		self._TradId = None
+		self._TradId = base_types.UninitialisedField(self, 'TradId', RestrictedFINXMax52Text, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnrTxId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),

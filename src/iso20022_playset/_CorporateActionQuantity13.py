@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentQuantity43Choice import FinancialInstrumentQuantity43Choice
+from . import FinancialInstrumentQuantity43Choice
 
 class CorporateActionQuantity13(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class CorporateActionQuantity13(base_types._BaseFieldType):
 
 	@BaseDnmtn.setter
 	def BaseDnmtn(self, value):
-		self._BaseDnmtn = value if type(value) != base_types.auto else self.make_default("BaseDnmtn")
+		self._BaseDnmtn = value if value is not None else base_types.UninitialisedField(self, 'BaseDnmtn', FinancialInstrumentQuantity43Choice, False)
 
 	@BaseDnmtn.deleter
 	def BaseDnmtn(self):
 		del self._BaseDnmtn
-		self._BaseDnmtn = None
+		self._BaseDnmtn = base_types.UninitialisedField(self, 'BaseDnmtn', FinancialInstrumentQuantity43Choice, False)
 
 	@property
 	def IncrmtlDnmtn(self):
@@ -26,12 +26,12 @@ class CorporateActionQuantity13(base_types._BaseFieldType):
 
 	@IncrmtlDnmtn.setter
 	def IncrmtlDnmtn(self, value):
-		self._IncrmtlDnmtn = value if type(value) != base_types.auto else self.make_default("IncrmtlDnmtn")
+		self._IncrmtlDnmtn = value if value is not None else base_types.UninitialisedField(self, 'IncrmtlDnmtn', FinancialInstrumentQuantity43Choice, False)
 
 	@IncrmtlDnmtn.deleter
 	def IncrmtlDnmtn(self):
 		del self._IncrmtlDnmtn
-		self._IncrmtlDnmtn = None
+		self._IncrmtlDnmtn = base_types.UninitialisedField(self, 'IncrmtlDnmtn', FinancialInstrumentQuantity43Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BaseDnmtn', type=FinancialInstrumentQuantity43Choice, min=0, max=1, mutex_group=None, array=False),

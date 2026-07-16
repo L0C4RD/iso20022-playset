@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CancellationReason16Choice import CancellationReason16Choice
-from ._DatePeriod2 import DatePeriod2
-from ._ISODate import ISODate
-from ._InvoiceLegalIssue5 import InvoiceLegalIssue5
-from ._Max35Text import Max35Text
-from ._SystemAndCurrency1 import SystemAndCurrency1
+from . import CancellationReason16Choice
+from . import DatePeriod2
+from . import ISODate
+from . import InvoiceLegalIssue5
+from . import Max35Text
+from . import SystemAndCurrency1
 
 class BillingCancellationReport3(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class BillingCancellationReport3(base_types._BaseFieldType):
 
 	@BllgId.setter
 	def BllgId(self, value):
-		self._BllgId = value if type(value) != base_types.auto else self.make_default("BllgId")
+		self._BllgId = value if value is not None else base_types.UninitialisedField(self, 'BllgId', Max35Text, False)
 
 	@BllgId.deleter
 	def BllgId(self):
 		del self._BllgId
-		self._BllgId = None
+		self._BllgId = base_types.UninitialisedField(self, 'BllgId', Max35Text, False)
 
 	@property
 	def BllgPrd(self):
@@ -31,12 +31,12 @@ class BillingCancellationReport3(base_types._BaseFieldType):
 
 	@BllgPrd.setter
 	def BllgPrd(self, value):
-		self._BllgPrd = value if type(value) != base_types.auto else self.make_default("BllgPrd")
+		self._BllgPrd = value if value is not None else base_types.UninitialisedField(self, 'BllgPrd', DatePeriod2, False)
 
 	@BllgPrd.deleter
 	def BllgPrd(self):
 		del self._BllgPrd
-		self._BllgPrd = None
+		self._BllgPrd = base_types.UninitialisedField(self, 'BllgPrd', DatePeriod2, False)
 
 	@property
 	def CxlRsn(self):
@@ -44,12 +44,12 @@ class BillingCancellationReport3(base_types._BaseFieldType):
 
 	@CxlRsn.setter
 	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != base_types.auto else self.make_default("CxlRsn")
+		self._CxlRsn = value if value is not None else base_types.UninitialisedField(self, 'CxlRsn', CancellationReason16Choice, False)
 
 	@CxlRsn.deleter
 	def CxlRsn(self):
 		del self._CxlRsn
-		self._CxlRsn = None
+		self._CxlRsn = base_types.UninitialisedField(self, 'CxlRsn', CancellationReason16Choice, False)
 
 	@property
 	def InvcDt(self):
@@ -57,12 +57,12 @@ class BillingCancellationReport3(base_types._BaseFieldType):
 
 	@InvcDt.setter
 	def InvcDt(self, value):
-		self._InvcDt = value if type(value) != base_types.auto else self.make_default("InvcDt")
+		self._InvcDt = value if value is not None else base_types.UninitialisedField(self, 'InvcDt', ISODate, False)
 
 	@InvcDt.deleter
 	def InvcDt(self):
 		del self._InvcDt
-		self._InvcDt = None
+		self._InvcDt = base_types.UninitialisedField(self, 'InvcDt', ISODate, False)
 
 	@property
 	def RgltryData(self):
@@ -70,12 +70,12 @@ class BillingCancellationReport3(base_types._BaseFieldType):
 
 	@RgltryData.setter
 	def RgltryData(self, value):
-		self._RgltryData = value if type(value) != base_types.auto else self.make_default("RgltryData")
+		self._RgltryData = value if value is not None else base_types.UninitialisedField(self, 'RgltryData', InvoiceLegalIssue5, False)
 
 	@RgltryData.deleter
 	def RgltryData(self):
 		del self._RgltryData
-		self._RgltryData = None
+		self._RgltryData = base_types.UninitialisedField(self, 'RgltryData', InvoiceLegalIssue5, False)
 
 	@property
 	def Svc(self):
@@ -83,12 +83,12 @@ class BillingCancellationReport3(base_types._BaseFieldType):
 
 	@Svc.setter
 	def Svc(self, value):
-		self._Svc = value if type(value) != base_types.auto else self.make_default("Svc")
+		self._Svc = value if value is not None else base_types.UninitialisedField(self, 'Svc', SystemAndCurrency1, False)
 
 	@Svc.deleter
 	def Svc(self):
 		del self._Svc
-		self._Svc = None
+		self._Svc = base_types.UninitialisedField(self, 'Svc', SystemAndCurrency1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BllgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

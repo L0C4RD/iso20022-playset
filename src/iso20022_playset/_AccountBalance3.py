@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Balance29 import Balance29
-from ._ISO8583AccountTypeCode import ISO8583AccountTypeCode
+from . import Balance29
+from . import ISO8583AccountTypeCode
 
 class AccountBalance3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AccountBalance3(base_types._BaseFieldType):
 
 	@AcctTp.setter
 	def AcctTp(self, value):
-		self._AcctTp = value if type(value) != base_types.auto else self.make_default("AcctTp")
+		self._AcctTp = value if value is not None else base_types.UninitialisedField(self, 'AcctTp', ISO8583AccountTypeCode, False)
 
 	@AcctTp.deleter
 	def AcctTp(self):
 		del self._AcctTp
-		self._AcctTp = None
+		self._AcctTp = base_types.UninitialisedField(self, 'AcctTp', ISO8583AccountTypeCode, False)
 
 	@property
 	def Bal(self):
@@ -27,12 +27,12 @@ class AccountBalance3(base_types._BaseFieldType):
 
 	@Bal.setter
 	def Bal(self, value):
-		self._Bal = value if type(value) != base_types.auto else self.make_default("Bal")
+		self._Bal = value if value is not None else base_types.UninitialisedField(self, 'Bal', Balance29, True)
 
 	@Bal.deleter
 	def Bal(self):
 		del self._Bal
-		self._Bal = None
+		self._Bal = base_types.UninitialisedField(self, 'Bal', Balance29, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctTp', type=ISO8583AccountTypeCode, min=1, max=1, mutex_group=None, array=False),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
-from ._TaxAmount3 import TaxAmount3
-from ._TaxPeriod3 import TaxPeriod3
+from . import Max140Text
+from . import Max35Text
+from . import TaxAmount3
+from . import TaxPeriod3
 
 class TaxRecord3(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class TaxRecord3(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max140Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max140Text, False)
 
 	@property
 	def CertId(self):
@@ -29,12 +29,12 @@ class TaxRecord3(base_types._BaseFieldType):
 
 	@CertId.setter
 	def CertId(self, value):
-		self._CertId = value if type(value) != base_types.auto else self.make_default("CertId")
+		self._CertId = value if value is not None else base_types.UninitialisedField(self, 'CertId', Max35Text, False)
 
 	@CertId.deleter
 	def CertId(self):
 		del self._CertId
-		self._CertId = None
+		self._CertId = base_types.UninitialisedField(self, 'CertId', Max35Text, False)
 
 	@property
 	def Ctgy(self):
@@ -42,12 +42,12 @@ class TaxRecord3(base_types._BaseFieldType):
 
 	@Ctgy.setter
 	def Ctgy(self, value):
-		self._Ctgy = value if type(value) != base_types.auto else self.make_default("Ctgy")
+		self._Ctgy = value if value is not None else base_types.UninitialisedField(self, 'Ctgy', Max35Text, False)
 
 	@Ctgy.deleter
 	def Ctgy(self):
 		del self._Ctgy
-		self._Ctgy = None
+		self._Ctgy = base_types.UninitialisedField(self, 'Ctgy', Max35Text, False)
 
 	@property
 	def CtgyDtls(self):
@@ -55,12 +55,12 @@ class TaxRecord3(base_types._BaseFieldType):
 
 	@CtgyDtls.setter
 	def CtgyDtls(self, value):
-		self._CtgyDtls = value if type(value) != base_types.auto else self.make_default("CtgyDtls")
+		self._CtgyDtls = value if value is not None else base_types.UninitialisedField(self, 'CtgyDtls', Max35Text, False)
 
 	@CtgyDtls.deleter
 	def CtgyDtls(self):
 		del self._CtgyDtls
-		self._CtgyDtls = None
+		self._CtgyDtls = base_types.UninitialisedField(self, 'CtgyDtls', Max35Text, False)
 
 	@property
 	def DbtrSts(self):
@@ -68,12 +68,12 @@ class TaxRecord3(base_types._BaseFieldType):
 
 	@DbtrSts.setter
 	def DbtrSts(self, value):
-		self._DbtrSts = value if type(value) != base_types.auto else self.make_default("DbtrSts")
+		self._DbtrSts = value if value is not None else base_types.UninitialisedField(self, 'DbtrSts', Max35Text, False)
 
 	@DbtrSts.deleter
 	def DbtrSts(self):
 		del self._DbtrSts
-		self._DbtrSts = None
+		self._DbtrSts = base_types.UninitialisedField(self, 'DbtrSts', Max35Text, False)
 
 	@property
 	def FrmsCd(self):
@@ -81,12 +81,12 @@ class TaxRecord3(base_types._BaseFieldType):
 
 	@FrmsCd.setter
 	def FrmsCd(self, value):
-		self._FrmsCd = value if type(value) != base_types.auto else self.make_default("FrmsCd")
+		self._FrmsCd = value if value is not None else base_types.UninitialisedField(self, 'FrmsCd', Max35Text, False)
 
 	@FrmsCd.deleter
 	def FrmsCd(self):
 		del self._FrmsCd
-		self._FrmsCd = None
+		self._FrmsCd = base_types.UninitialisedField(self, 'FrmsCd', Max35Text, False)
 
 	@property
 	def Prd(self):
@@ -94,12 +94,12 @@ class TaxRecord3(base_types._BaseFieldType):
 
 	@Prd.setter
 	def Prd(self, value):
-		self._Prd = value if type(value) != base_types.auto else self.make_default("Prd")
+		self._Prd = value if value is not None else base_types.UninitialisedField(self, 'Prd', TaxPeriod3, False)
 
 	@Prd.deleter
 	def Prd(self):
 		del self._Prd
-		self._Prd = None
+		self._Prd = base_types.UninitialisedField(self, 'Prd', TaxPeriod3, False)
 
 	@property
 	def TaxAmt(self):
@@ -107,12 +107,12 @@ class TaxRecord3(base_types._BaseFieldType):
 
 	@TaxAmt.setter
 	def TaxAmt(self, value):
-		self._TaxAmt = value if type(value) != base_types.auto else self.make_default("TaxAmt")
+		self._TaxAmt = value if value is not None else base_types.UninitialisedField(self, 'TaxAmt', TaxAmount3, False)
 
 	@TaxAmt.deleter
 	def TaxAmt(self):
 		del self._TaxAmt
-		self._TaxAmt = None
+		self._TaxAmt = base_types.UninitialisedField(self, 'TaxAmt', TaxAmount3, False)
 
 	@property
 	def Tp(self):
@@ -120,12 +120,12 @@ class TaxRecord3(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', Max35Text, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),

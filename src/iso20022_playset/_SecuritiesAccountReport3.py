@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._SecuritiesAccountOrBusinessError3Choice import SecuritiesAccountOrBusinessError3Choice
+from . import SecuritiesAccount19
+from . import SecuritiesAccountOrBusinessError3Choice
 
 class SecuritiesAccountReport3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SecuritiesAccountReport3(base_types._BaseFieldType):
 
 	@SctiesAcctId.setter
 	def SctiesAcctId(self, value):
-		self._SctiesAcctId = value if type(value) != base_types.auto else self.make_default("SctiesAcctId")
+		self._SctiesAcctId = value if value is not None else base_types.UninitialisedField(self, 'SctiesAcctId', SecuritiesAccount19, False)
 
 	@SctiesAcctId.deleter
 	def SctiesAcctId(self):
 		del self._SctiesAcctId
-		self._SctiesAcctId = None
+		self._SctiesAcctId = base_types.UninitialisedField(self, 'SctiesAcctId', SecuritiesAccount19, False)
 
 	@property
 	def SctiesAcctOrErr(self):
@@ -27,12 +27,12 @@ class SecuritiesAccountReport3(base_types._BaseFieldType):
 
 	@SctiesAcctOrErr.setter
 	def SctiesAcctOrErr(self, value):
-		self._SctiesAcctOrErr = value if type(value) != base_types.auto else self.make_default("SctiesAcctOrErr")
+		self._SctiesAcctOrErr = value if value is not None else base_types.UninitialisedField(self, 'SctiesAcctOrErr', SecuritiesAccountOrBusinessError3Choice, False)
 
 	@SctiesAcctOrErr.deleter
 	def SctiesAcctOrErr(self):
 		del self._SctiesAcctOrErr
-		self._SctiesAcctOrErr = None
+		self._SctiesAcctOrErr = base_types.UninitialisedField(self, 'SctiesAcctOrErr', SecuritiesAccountOrBusinessError3Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SctiesAcctId', type=SecuritiesAccount19, min=1, max=1, mutex_group=None, array=False),

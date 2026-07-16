@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._RejectionStatus3 import RejectionStatus3
-from ._Status4Code import Status4Code
+from . import Max35Text
+from . import RejectionStatus3
+from . import Status4Code
 
 class CollateralCancellationStatus2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CollateralCancellationStatus2(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max35Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max35Text, False)
 
 	@property
 	def CollStsCd(self):
@@ -28,12 +28,12 @@ class CollateralCancellationStatus2(base_types._BaseFieldType):
 
 	@CollStsCd.setter
 	def CollStsCd(self, value):
-		self._CollStsCd = value if type(value) != base_types.auto else self.make_default("CollStsCd")
+		self._CollStsCd = value if value is not None else base_types.UninitialisedField(self, 'CollStsCd', Status4Code, False)
 
 	@CollStsCd.deleter
 	def CollStsCd(self):
 		del self._CollStsCd
-		self._CollStsCd = None
+		self._CollStsCd = base_types.UninitialisedField(self, 'CollStsCd', Status4Code, False)
 
 	@property
 	def RjctnDtls(self):
@@ -41,12 +41,12 @@ class CollateralCancellationStatus2(base_types._BaseFieldType):
 
 	@RjctnDtls.setter
 	def RjctnDtls(self, value):
-		self._RjctnDtls = value if type(value) != base_types.auto else self.make_default("RjctnDtls")
+		self._RjctnDtls = value if value is not None else base_types.UninitialisedField(self, 'RjctnDtls', RejectionStatus3, False)
 
 	@RjctnDtls.deleter
 	def RjctnDtls(self):
 		del self._RjctnDtls
-		self._RjctnDtls = None
+		self._RjctnDtls = base_types.UninitialisedField(self, 'RjctnDtls', RejectionStatus3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._ReuseValue1Choice import ReuseValue1Choice
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import ReuseValue1Choice
 
 class VolumeMetrics4(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class VolumeMetrics4(base_types._BaseFieldType):
 
 	@ReuseVal.setter
 	def ReuseVal(self, value):
-		self._ReuseVal = value if type(value) != base_types.auto else self.make_default("ReuseVal")
+		self._ReuseVal = value if value is not None else base_types.UninitialisedField(self, 'ReuseVal', ReuseValue1Choice, False)
 
 	@ReuseVal.deleter
 	def ReuseVal(self):
 		del self._ReuseVal
-		self._ReuseVal = None
+		self._ReuseVal = base_types.UninitialisedField(self, 'ReuseVal', ReuseValue1Choice, False)
 
 	@property
 	def RinvstdCshAmt(self):
@@ -27,12 +27,12 @@ class VolumeMetrics4(base_types._BaseFieldType):
 
 	@RinvstdCshAmt.setter
 	def RinvstdCshAmt(self, value):
-		self._RinvstdCshAmt = value if type(value) != base_types.auto else self.make_default("RinvstdCshAmt")
+		self._RinvstdCshAmt = value if value is not None else base_types.UninitialisedField(self, 'RinvstdCshAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@RinvstdCshAmt.deleter
 	def RinvstdCshAmt(self):
 		del self._RinvstdCshAmt
-		self._RinvstdCshAmt = None
+		self._RinvstdCshAmt = base_types.UninitialisedField(self, 'RinvstdCshAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ReuseVal', type=ReuseValue1Choice, min=0, max=1, mutex_group=None, array=False),

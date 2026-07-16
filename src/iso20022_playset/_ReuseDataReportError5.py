@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CounterpartyData87 import CounterpartyData87
-from ._ISODateTime import ISODateTime
-from ._Max140Text import Max140Text
-from ._SupplementaryData1 import SupplementaryData1
+from . import CounterpartyData87
+from . import ISODateTime
+from . import Max140Text
+from . import SupplementaryData1
 
 class ReuseDataReportError5(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ReuseDataReportError5(base_types._BaseFieldType):
 
 	@CtrPty.setter
 	def CtrPty(self, value):
-		self._CtrPty = value if type(value) != base_types.auto else self.make_default("CtrPty")
+		self._CtrPty = value if value is not None else base_types.UninitialisedField(self, 'CtrPty', CounterpartyData87, False)
 
 	@CtrPty.deleter
 	def CtrPty(self):
 		del self._CtrPty
-		self._CtrPty = None
+		self._CtrPty = base_types.UninitialisedField(self, 'CtrPty', CounterpartyData87, False)
 
 	@property
 	def RptgDtTm(self):
@@ -29,12 +29,12 @@ class ReuseDataReportError5(base_types._BaseFieldType):
 
 	@RptgDtTm.setter
 	def RptgDtTm(self, value):
-		self._RptgDtTm = value if type(value) != base_types.auto else self.make_default("RptgDtTm")
+		self._RptgDtTm = value if value is not None else base_types.UninitialisedField(self, 'RptgDtTm', ISODateTime, False)
 
 	@RptgDtTm.deleter
 	def RptgDtTm(self):
 		del self._RptgDtTm
-		self._RptgDtTm = None
+		self._RptgDtTm = base_types.UninitialisedField(self, 'RptgDtTm', ISODateTime, False)
 
 	@property
 	def SplmtryData(self):
@@ -42,12 +42,12 @@ class ReuseDataReportError5(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TechRcrdId(self):
@@ -55,12 +55,12 @@ class ReuseDataReportError5(base_types._BaseFieldType):
 
 	@TechRcrdId.setter
 	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
+		self._TechRcrdId = value if value is not None else base_types.UninitialisedField(self, 'TechRcrdId', Max140Text, False)
 
 	@TechRcrdId.deleter
 	def TechRcrdId(self):
 		del self._TechRcrdId
-		self._TechRcrdId = None
+		self._TechRcrdId = base_types.UninitialisedField(self, 'TechRcrdId', Max140Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrPty', type=CounterpartyData87, min=1, max=1, mutex_group=None, array=False),

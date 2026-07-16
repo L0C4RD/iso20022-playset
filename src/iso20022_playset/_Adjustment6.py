@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdjustmentDirection1Code import AdjustmentDirection1Code
-from ._AdjustmentType1Choice import AdjustmentType1Choice
-from ._CurrencyAndAmount import CurrencyAndAmount
+from . import AdjustmentDirection1Code
+from . import AdjustmentType1Choice
+from . import CurrencyAndAmount
 
 class Adjustment6(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Adjustment6(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', CurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', CurrencyAndAmount, False)
 
 	@property
 	def Drctn(self):
@@ -28,12 +28,12 @@ class Adjustment6(base_types._BaseFieldType):
 
 	@Drctn.setter
 	def Drctn(self, value):
-		self._Drctn = value if type(value) != base_types.auto else self.make_default("Drctn")
+		self._Drctn = value if value is not None else base_types.UninitialisedField(self, 'Drctn', AdjustmentDirection1Code, False)
 
 	@Drctn.deleter
 	def Drctn(self):
 		del self._Drctn
-		self._Drctn = None
+		self._Drctn = base_types.UninitialisedField(self, 'Drctn', AdjustmentDirection1Code, False)
 
 	@property
 	def Tp(self):
@@ -41,12 +41,12 @@ class Adjustment6(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', AdjustmentType1Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', AdjustmentType1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

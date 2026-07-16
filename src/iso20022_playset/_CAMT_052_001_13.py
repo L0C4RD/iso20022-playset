@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BankToCustomerAccountReportV13 import BankToCustomerAccountReportV13
+from . import BankToCustomerAccountReportV13
 
 class CAMT_052_001_13():
 
@@ -18,12 +18,12 @@ class CAMT_052_001_13():
 
 		@BkToCstmrAcctRpt.setter
 		def BkToCstmrAcctRpt(self, value):
-			self._BkToCstmrAcctRpt = value if type(value) != base_types.auto else self.make_default("BkToCstmrAcctRpt")
+			self._BkToCstmrAcctRpt = value if value is not None else base_types.UninitialisedField(self, 'BkToCstmrAcctRpt', BankToCustomerAccountReportV13, False)
 
 		@BkToCstmrAcctRpt.deleter
 		def BkToCstmrAcctRpt(self):
 			del self._BkToCstmrAcctRpt
-			self._BkToCstmrAcctRpt = None
+			self._BkToCstmrAcctRpt = base_types.UninitialisedField(self, 'BkToCstmrAcctRpt', BankToCustomerAccountReportV13, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='BkToCstmrAcctRpt', type=BankToCustomerAccountReportV13, min=1, max=1, mutex_group=None, array=False),

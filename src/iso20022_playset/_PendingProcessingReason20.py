@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max210Text import Max210Text
-from ._PendingProcessingReason22Choice import PendingProcessingReason22Choice
+from . import Max210Text
+from . import PendingProcessingReason22Choice
 
 class PendingProcessingReason20(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PendingProcessingReason20(base_types._BaseFieldType):
 
 	@AddtlRsnInf.setter
 	def AddtlRsnInf(self, value):
-		self._AddtlRsnInf = value if type(value) != base_types.auto else self.make_default("AddtlRsnInf")
+		self._AddtlRsnInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlRsnInf', Max210Text, False)
 
 	@AddtlRsnInf.deleter
 	def AddtlRsnInf(self):
 		del self._AddtlRsnInf
-		self._AddtlRsnInf = None
+		self._AddtlRsnInf = base_types.UninitialisedField(self, 'AddtlRsnInf', Max210Text, False)
 
 	@property
 	def Cd(self):
@@ -27,12 +27,12 @@ class PendingProcessingReason20(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
+		self._Cd = value if value is not None else base_types.UninitialisedField(self, 'Cd', PendingProcessingReason22Choice, False)
 
 	@Cd.deleter
 	def Cd(self):
 		del self._Cd
-		self._Cd = None
+		self._Cd = base_types.UninitialisedField(self, 'Cd', PendingProcessingReason22Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlRsnInf', type=Max210Text, min=0, max=1, mutex_group=None, array=False),

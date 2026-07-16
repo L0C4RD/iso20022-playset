@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
+from . import Max35Text
 
 class Acquirer7(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class Acquirer7(base_types._BaseFieldType):
 
 	@AcqrgInstn.setter
 	def AcqrgInstn(self, value):
-		self._AcqrgInstn = value if type(value) != base_types.auto else self.make_default("AcqrgInstn")
+		self._AcqrgInstn = value if value is not None else base_types.UninitialisedField(self, 'AcqrgInstn', Max35Text, False)
 
 	@AcqrgInstn.deleter
 	def AcqrgInstn(self):
 		del self._AcqrgInstn
-		self._AcqrgInstn = None
+		self._AcqrgInstn = base_types.UninitialisedField(self, 'AcqrgInstn', Max35Text, False)
 
 	@property
 	def Brnch(self):
@@ -26,12 +26,12 @@ class Acquirer7(base_types._BaseFieldType):
 
 	@Brnch.setter
 	def Brnch(self, value):
-		self._Brnch = value if type(value) != base_types.auto else self.make_default("Brnch")
+		self._Brnch = value if value is not None else base_types.UninitialisedField(self, 'Brnch', Max35Text, False)
 
 	@Brnch.deleter
 	def Brnch(self):
 		del self._Brnch
-		self._Brnch = None
+		self._Brnch = base_types.UninitialisedField(self, 'Brnch', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcqrgInstn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

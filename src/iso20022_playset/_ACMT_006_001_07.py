@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountManagementStatusReportV07 import AccountManagementStatusReportV07
+from . import AccountManagementStatusReportV07
 
 class ACMT_006_001_07():
 
@@ -18,12 +18,12 @@ class ACMT_006_001_07():
 
 		@AcctMgmtStsRpt.setter
 		def AcctMgmtStsRpt(self, value):
-			self._AcctMgmtStsRpt = value if type(value) != base_types.auto else self.make_default("AcctMgmtStsRpt")
+			self._AcctMgmtStsRpt = value if value is not None else base_types.UninitialisedField(self, 'AcctMgmtStsRpt', AccountManagementStatusReportV07, False)
 
 		@AcctMgmtStsRpt.deleter
 		def AcctMgmtStsRpt(self):
 			del self._AcctMgmtStsRpt
-			self._AcctMgmtStsRpt = None
+			self._AcctMgmtStsRpt = base_types.UninitialisedField(self, 'AcctMgmtStsRpt', AccountManagementStatusReportV07, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AcctMgmtStsRpt', type=AccountManagementStatusReportV07, min=1, max=1, mutex_group=None, array=False),

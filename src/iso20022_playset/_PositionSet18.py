@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PositionSetDimensions14 import PositionSetDimensions14
-from ._PositionSetMetrics12 import PositionSetMetrics12
+from . import PositionSetDimensions14
+from . import PositionSetMetrics12
 
 class PositionSet18(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PositionSet18(base_types._BaseFieldType):
 
 	@Dmnsns.setter
 	def Dmnsns(self, value):
-		self._Dmnsns = value if type(value) != base_types.auto else self.make_default("Dmnsns")
+		self._Dmnsns = value if value is not None else base_types.UninitialisedField(self, 'Dmnsns', PositionSetDimensions14, False)
 
 	@Dmnsns.deleter
 	def Dmnsns(self):
 		del self._Dmnsns
-		self._Dmnsns = None
+		self._Dmnsns = base_types.UninitialisedField(self, 'Dmnsns', PositionSetDimensions14, False)
 
 	@property
 	def Mtrcs(self):
@@ -27,12 +27,12 @@ class PositionSet18(base_types._BaseFieldType):
 
 	@Mtrcs.setter
 	def Mtrcs(self, value):
-		self._Mtrcs = value if type(value) != base_types.auto else self.make_default("Mtrcs")
+		self._Mtrcs = value if value is not None else base_types.UninitialisedField(self, 'Mtrcs', PositionSetMetrics12, False)
 
 	@Mtrcs.deleter
 	def Mtrcs(self):
 		del self._Mtrcs
-		self._Mtrcs = None
+		self._Mtrcs = base_types.UninitialisedField(self, 'Mtrcs', PositionSetMetrics12, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dmnsns', type=PositionSetDimensions14, min=1, max=1, mutex_group=None, array=False),

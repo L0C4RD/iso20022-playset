@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._GrossDividendRate2 import GrossDividendRate2
-from ._RateValueType2FormatChoice import RateValueType2FormatChoice
+from . import ActiveCurrencyAndAmount
+from . import GrossDividendRate2
+from . import RateValueType2FormatChoice
 
 class GrossDividendRate1Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class GrossDividendRate1Choice(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def NotSpcfdRate(self):
@@ -28,12 +28,12 @@ class GrossDividendRate1Choice(base_types._BaseFieldType):
 
 	@NotSpcfdRate.setter
 	def NotSpcfdRate(self, value):
-		self._NotSpcfdRate = value if type(value) != base_types.auto else self.make_default("NotSpcfdRate")
+		self._NotSpcfdRate = value if value is not None else base_types.UninitialisedField(self, 'NotSpcfdRate', RateValueType2FormatChoice, False)
 
 	@NotSpcfdRate.deleter
 	def NotSpcfdRate(self):
 		del self._NotSpcfdRate
-		self._NotSpcfdRate = None
+		self._NotSpcfdRate = base_types.UninitialisedField(self, 'NotSpcfdRate', RateValueType2FormatChoice, False)
 
 	@property
 	def RateTpAmt(self):
@@ -41,12 +41,12 @@ class GrossDividendRate1Choice(base_types._BaseFieldType):
 
 	@RateTpAmt.setter
 	def RateTpAmt(self, value):
-		self._RateTpAmt = value if type(value) != base_types.auto else self.make_default("RateTpAmt")
+		self._RateTpAmt = value if value is not None else base_types.UninitialisedField(self, 'RateTpAmt', GrossDividendRate2, False)
 
 	@RateTpAmt.deleter
 	def RateTpAmt(self):
 		del self._RateTpAmt
-		self._RateTpAmt = None
+		self._RateTpAmt = base_types.UninitialisedField(self, 'RateTpAmt', GrossDividendRate2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),

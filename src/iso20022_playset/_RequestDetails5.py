@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._RequestDetails4 import RequestDetails4
+from . import Max35Text
+from . import RequestDetails4
 
 class RequestDetails5(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class RequestDetails5(base_types._BaseFieldType):
 
 	@ReqRef.setter
 	def ReqRef(self, value):
-		self._ReqRef = value if type(value) != base_types.auto else self.make_default("ReqRef")
+		self._ReqRef = value if value is not None else base_types.UninitialisedField(self, 'ReqRef', Max35Text, False)
 
 	@ReqRef.deleter
 	def ReqRef(self):
 		del self._ReqRef
-		self._ReqRef = None
+		self._ReqRef = base_types.UninitialisedField(self, 'ReqRef', Max35Text, False)
 
 	@property
 	def RptKey(self):
@@ -27,12 +27,12 @@ class RequestDetails5(base_types._BaseFieldType):
 
 	@RptKey.setter
 	def RptKey(self, value):
-		self._RptKey = value if type(value) != base_types.auto else self.make_default("RptKey")
+		self._RptKey = value if value is not None else base_types.UninitialisedField(self, 'RptKey', RequestDetails4, True)
 
 	@RptKey.deleter
 	def RptKey(self):
 		del self._RptKey
-		self._RptKey = None
+		self._RptKey = base_types.UninitialisedField(self, 'RptKey', RequestDetails4, True)
 
 	@property
 	def Tp(self):
@@ -40,12 +40,12 @@ class RequestDetails5(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', Max35Text, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ReqRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

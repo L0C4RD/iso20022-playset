@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CommunicationAddress8 import CommunicationAddress8
-from ._Max35Text import Max35Text
-from ._PaymentRole1Code import PaymentRole1Code
+from . import CommunicationAddress8
+from . import Max35Text
+from . import PaymentRole1Code
 
 class ContactIdentificationAndAddress1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ContactIdentificationAndAddress1(base_types._BaseFieldType):
 
 	@ComAdr.setter
 	def ComAdr(self, value):
-		self._ComAdr = value if type(value) != base_types.auto else self.make_default("ComAdr")
+		self._ComAdr = value if value is not None else base_types.UninitialisedField(self, 'ComAdr', CommunicationAddress8, False)
 
 	@ComAdr.deleter
 	def ComAdr(self):
 		del self._ComAdr
-		self._ComAdr = None
+		self._ComAdr = base_types.UninitialisedField(self, 'ComAdr', CommunicationAddress8, False)
 
 	@property
 	def Nm(self):
@@ -28,12 +28,12 @@ class ContactIdentificationAndAddress1(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max35Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max35Text, False)
 
 	@property
 	def Role(self):
@@ -41,12 +41,12 @@ class ContactIdentificationAndAddress1(base_types._BaseFieldType):
 
 	@Role.setter
 	def Role(self, value):
-		self._Role = value if type(value) != base_types.auto else self.make_default("Role")
+		self._Role = value if value is not None else base_types.UninitialisedField(self, 'Role', PaymentRole1Code, False)
 
 	@Role.deleter
 	def Role(self):
 		del self._Role
-		self._Role = None
+		self._Role = base_types.UninitialisedField(self, 'Role', PaymentRole1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ComAdr', type=CommunicationAddress8, min=1, max=1, mutex_group=None, array=False),

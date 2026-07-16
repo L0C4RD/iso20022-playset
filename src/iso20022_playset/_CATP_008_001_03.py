@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMCompletionAdviceV03 import ATMCompletionAdviceV03
+from . import ATMCompletionAdviceV03
 
 class CATP_008_001_03():
 
@@ -18,12 +18,12 @@ class CATP_008_001_03():
 
 		@ATMCmpltnAdvc.setter
 		def ATMCmpltnAdvc(self, value):
-			self._ATMCmpltnAdvc = value if type(value) != base_types.auto else self.make_default("ATMCmpltnAdvc")
+			self._ATMCmpltnAdvc = value if value is not None else base_types.UninitialisedField(self, 'ATMCmpltnAdvc', ATMCompletionAdviceV03, False)
 
 		@ATMCmpltnAdvc.deleter
 		def ATMCmpltnAdvc(self):
 			del self._ATMCmpltnAdvc
-			self._ATMCmpltnAdvc = None
+			self._ATMCmpltnAdvc = base_types.UninitialisedField(self, 'ATMCmpltnAdvc', ATMCompletionAdviceV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ATMCmpltnAdvc', type=ATMCompletionAdviceV03, min=1, max=1, mutex_group=None, array=False),

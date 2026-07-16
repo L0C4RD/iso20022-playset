@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._LimitAmount1 import LimitAmount1
-from ._LimitJournalEntry3 import LimitJournalEntry3
+from . import ISODate
+from . import LimitAmount1
+from . import LimitJournalEntry3
 
 class LimitJournal3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class LimitJournal3(base_types._BaseFieldType):
 
 	@JrnlActvtyDt.setter
 	def JrnlActvtyDt(self, value):
-		self._JrnlActvtyDt = value if type(value) != base_types.auto else self.make_default("JrnlActvtyDt")
+		self._JrnlActvtyDt = value if value is not None else base_types.UninitialisedField(self, 'JrnlActvtyDt', ISODate, False)
 
 	@JrnlActvtyDt.deleter
 	def JrnlActvtyDt(self):
 		del self._JrnlActvtyDt
-		self._JrnlActvtyDt = None
+		self._JrnlActvtyDt = base_types.UninitialisedField(self, 'JrnlActvtyDt', ISODate, False)
 
 	@property
 	def JrnlNtry(self):
@@ -28,12 +28,12 @@ class LimitJournal3(base_types._BaseFieldType):
 
 	@JrnlNtry.setter
 	def JrnlNtry(self, value):
-		self._JrnlNtry = value if type(value) != base_types.auto else self.make_default("JrnlNtry")
+		self._JrnlNtry = value if value is not None else base_types.UninitialisedField(self, 'JrnlNtry', LimitJournalEntry3, True)
 
 	@JrnlNtry.deleter
 	def JrnlNtry(self):
 		del self._JrnlNtry
-		self._JrnlNtry = None
+		self._JrnlNtry = base_types.UninitialisedField(self, 'JrnlNtry', LimitJournalEntry3, True)
 
 	@property
 	def Lmt(self):
@@ -41,12 +41,12 @@ class LimitJournal3(base_types._BaseFieldType):
 
 	@Lmt.setter
 	def Lmt(self, value):
-		self._Lmt = value if type(value) != base_types.auto else self.make_default("Lmt")
+		self._Lmt = value if value is not None else base_types.UninitialisedField(self, 'Lmt', LimitAmount1, False)
 
 	@Lmt.deleter
 	def Lmt(self):
 		del self._Lmt
-		self._Lmt = None
+		self._Lmt = base_types.UninitialisedField(self, 'Lmt', LimitAmount1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='JrnlActvtyDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),

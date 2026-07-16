@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InvoiceFinancingRequestV01 import InvoiceFinancingRequestV01
+from . import InvoiceFinancingRequestV01
 
 class TSIN_001_001_01():
 
@@ -18,12 +18,12 @@ class TSIN_001_001_01():
 
 		@InvcFincgReq.setter
 		def InvcFincgReq(self, value):
-			self._InvcFincgReq = value if type(value) != base_types.auto else self.make_default("InvcFincgReq")
+			self._InvcFincgReq = value if value is not None else base_types.UninitialisedField(self, 'InvcFincgReq', InvoiceFinancingRequestV01, False)
 
 		@InvcFincgReq.deleter
 		def InvcFincgReq(self):
 			del self._InvcFincgReq
-			self._InvcFincgReq = None
+			self._InvcFincgReq = base_types.UninitialisedField(self, 'InvcFincgReq', InvoiceFinancingRequestV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='InvcFincgReq', type=InvoiceFinancingRequestV01, min=1, max=1, mutex_group=None, array=False),

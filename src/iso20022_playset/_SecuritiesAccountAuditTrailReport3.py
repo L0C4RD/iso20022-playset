@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AuditTrailOrBusinessError6Choice import AuditTrailOrBusinessError6Choice
-from ._DatePeriodSearch1Choice import DatePeriodSearch1Choice
-from ._SecuritiesAccount19 import SecuritiesAccount19
+from . import AuditTrailOrBusinessError6Choice
+from . import DatePeriodSearch1Choice
+from . import SecuritiesAccount19
 
 class SecuritiesAccountAuditTrailReport3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SecuritiesAccountAuditTrailReport3(base_types._BaseFieldType):
 
 	@DtPrd.setter
 	def DtPrd(self, value):
-		self._DtPrd = value if type(value) != base_types.auto else self.make_default("DtPrd")
+		self._DtPrd = value if value is not None else base_types.UninitialisedField(self, 'DtPrd', DatePeriodSearch1Choice, False)
 
 	@DtPrd.deleter
 	def DtPrd(self):
 		del self._DtPrd
-		self._DtPrd = None
+		self._DtPrd = base_types.UninitialisedField(self, 'DtPrd', DatePeriodSearch1Choice, False)
 
 	@property
 	def SctiesAcctAudtTrlOrErr(self):
@@ -28,12 +28,12 @@ class SecuritiesAccountAuditTrailReport3(base_types._BaseFieldType):
 
 	@SctiesAcctAudtTrlOrErr.setter
 	def SctiesAcctAudtTrlOrErr(self, value):
-		self._SctiesAcctAudtTrlOrErr = value if type(value) != base_types.auto else self.make_default("SctiesAcctAudtTrlOrErr")
+		self._SctiesAcctAudtTrlOrErr = value if value is not None else base_types.UninitialisedField(self, 'SctiesAcctAudtTrlOrErr', AuditTrailOrBusinessError6Choice, False)
 
 	@SctiesAcctAudtTrlOrErr.deleter
 	def SctiesAcctAudtTrlOrErr(self):
 		del self._SctiesAcctAudtTrlOrErr
-		self._SctiesAcctAudtTrlOrErr = None
+		self._SctiesAcctAudtTrlOrErr = base_types.UninitialisedField(self, 'SctiesAcctAudtTrlOrErr', AuditTrailOrBusinessError6Choice, False)
 
 	@property
 	def SctiesAcctId(self):
@@ -41,12 +41,12 @@ class SecuritiesAccountAuditTrailReport3(base_types._BaseFieldType):
 
 	@SctiesAcctId.setter
 	def SctiesAcctId(self, value):
-		self._SctiesAcctId = value if type(value) != base_types.auto else self.make_default("SctiesAcctId")
+		self._SctiesAcctId = value if value is not None else base_types.UninitialisedField(self, 'SctiesAcctId', SecuritiesAccount19, False)
 
 	@SctiesAcctId.deleter
 	def SctiesAcctId(self):
 		del self._SctiesAcctId
-		self._SctiesAcctId = None
+		self._SctiesAcctId = base_types.UninitialisedField(self, 'SctiesAcctId', SecuritiesAccount19, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DtPrd', type=DatePeriodSearch1Choice, min=0, max=1, mutex_group=None, array=False),

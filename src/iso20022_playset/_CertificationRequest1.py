@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CertificationRequest2 import CertificationRequest2
-from ._Max140Text import Max140Text
+from . import CertificationRequest2
+from . import Max140Text
 
 class CertificationRequest1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CertificationRequest1(base_types._BaseFieldType):
 
 	@CertReqInf.setter
 	def CertReqInf(self, value):
-		self._CertReqInf = value if type(value) != base_types.auto else self.make_default("CertReqInf")
+		self._CertReqInf = value if value is not None else base_types.UninitialisedField(self, 'CertReqInf', CertificationRequest2, False)
 
 	@CertReqInf.deleter
 	def CertReqInf(self):
 		del self._CertReqInf
-		self._CertReqInf = None
+		self._CertReqInf = base_types.UninitialisedField(self, 'CertReqInf', CertificationRequest2, False)
 
 	@property
 	def KeyId(self):
@@ -27,12 +27,12 @@ class CertificationRequest1(base_types._BaseFieldType):
 
 	@KeyId.setter
 	def KeyId(self, value):
-		self._KeyId = value if type(value) != base_types.auto else self.make_default("KeyId")
+		self._KeyId = value if value is not None else base_types.UninitialisedField(self, 'KeyId', Max140Text, False)
 
 	@KeyId.deleter
 	def KeyId(self):
 		del self._KeyId
-		self._KeyId = None
+		self._KeyId = base_types.UninitialisedField(self, 'KeyId', Max140Text, False)
 
 	@property
 	def KeyVrsn(self):
@@ -40,12 +40,12 @@ class CertificationRequest1(base_types._BaseFieldType):
 
 	@KeyVrsn.setter
 	def KeyVrsn(self, value):
-		self._KeyVrsn = value if type(value) != base_types.auto else self.make_default("KeyVrsn")
+		self._KeyVrsn = value if value is not None else base_types.UninitialisedField(self, 'KeyVrsn', Max140Text, False)
 
 	@KeyVrsn.deleter
 	def KeyVrsn(self):
 		del self._KeyVrsn
-		self._KeyVrsn = None
+		self._KeyVrsn = base_types.UninitialisedField(self, 'KeyVrsn', Max140Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CertReqInf', type=CertificationRequest2, min=1, max=1, mutex_group=None, array=False),

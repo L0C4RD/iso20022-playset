@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCode import CountryCode
-from ._Exact2UpperCaseAlphaText import Exact2UpperCaseAlphaText
-from ._LEIIdentifier import LEIIdentifier
+from . import CountryCode
+from . import Exact2UpperCaseAlphaText
+from . import LEIIdentifier
 
 class IssuerCSDIdentification1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class IssuerCSDIdentification1(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@property
 	def FrstTwoCharsInstrmId(self):
@@ -28,12 +28,12 @@ class IssuerCSDIdentification1(base_types._BaseFieldType):
 
 	@FrstTwoCharsInstrmId.setter
 	def FrstTwoCharsInstrmId(self, value):
-		self._FrstTwoCharsInstrmId = value if type(value) != base_types.auto else self.make_default("FrstTwoCharsInstrmId")
+		self._FrstTwoCharsInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FrstTwoCharsInstrmId', Exact2UpperCaseAlphaText, False)
 
 	@FrstTwoCharsInstrmId.deleter
 	def FrstTwoCharsInstrmId(self):
 		del self._FrstTwoCharsInstrmId
-		self._FrstTwoCharsInstrmId = None
+		self._FrstTwoCharsInstrmId = base_types.UninitialisedField(self, 'FrstTwoCharsInstrmId', Exact2UpperCaseAlphaText, False)
 
 	@property
 	def LEI(self):
@@ -41,12 +41,12 @@ class IssuerCSDIdentification1(base_types._BaseFieldType):
 
 	@LEI.setter
 	def LEI(self, value):
-		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
+		self._LEI = value if value is not None else base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	@LEI.deleter
 	def LEI(self):
 		del self._LEI
-		self._LEI = None
+		self._LEI = base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),

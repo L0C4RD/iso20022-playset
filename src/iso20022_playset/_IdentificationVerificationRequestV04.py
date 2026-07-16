@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IdentificationAssignment4 import IdentificationAssignment4
-from ._IdentificationVerification5 import IdentificationVerification5
-from ._SupplementaryData1 import SupplementaryData1
+from . import IdentificationAssignment4
+from . import IdentificationVerification5
+from . import SupplementaryData1
 
 class IdentificationVerificationRequestV04(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class IdentificationVerificationRequestV04(base_types._BaseFieldType):
 
 	@Assgnmt.setter
 	def Assgnmt(self, value):
-		self._Assgnmt = value if type(value) != base_types.auto else self.make_default("Assgnmt")
+		self._Assgnmt = value if value is not None else base_types.UninitialisedField(self, 'Assgnmt', IdentificationAssignment4, False)
 
 	@Assgnmt.deleter
 	def Assgnmt(self):
 		del self._Assgnmt
-		self._Assgnmt = None
+		self._Assgnmt = base_types.UninitialisedField(self, 'Assgnmt', IdentificationAssignment4, False)
 
 	@property
 	def SplmtryData(self):
@@ -28,12 +28,12 @@ class IdentificationVerificationRequestV04(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def Vrfctn(self):
@@ -41,12 +41,12 @@ class IdentificationVerificationRequestV04(base_types._BaseFieldType):
 
 	@Vrfctn.setter
 	def Vrfctn(self, value):
-		self._Vrfctn = value if type(value) != base_types.auto else self.make_default("Vrfctn")
+		self._Vrfctn = value if value is not None else base_types.UninitialisedField(self, 'Vrfctn', IdentificationVerification5, True)
 
 	@Vrfctn.deleter
 	def Vrfctn(self):
 		del self._Vrfctn
-		self._Vrfctn = None
+		self._Vrfctn = base_types.UninitialisedField(self, 'Vrfctn', IdentificationVerification5, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Assgnmt', type=IdentificationAssignment4, min=1, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DuplicateV07 import DuplicateV07
+from . import DuplicateV07
 
 class CAMT_034_001_07():
 
@@ -18,12 +18,12 @@ class CAMT_034_001_07():
 
 		@Dplct.setter
 		def Dplct(self, value):
-			self._Dplct = value if type(value) != base_types.auto else self.make_default("Dplct")
+			self._Dplct = value if value is not None else base_types.UninitialisedField(self, 'Dplct', DuplicateV07, False)
 
 		@Dplct.deleter
 		def Dplct(self):
 			del self._Dplct
-			self._Dplct = None
+			self._Dplct = base_types.UninitialisedField(self, 'Dplct', DuplicateV07, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='Dplct', type=DuplicateV07, min=1, max=1, mutex_group=None, array=False),

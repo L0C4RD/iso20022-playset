@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._StressItem1Choice import StressItem1Choice
+from . import StressItem1Choice
 
 class StressItem1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class StressItem1(base_types._BaseFieldType):
 
 	@StrssPdct.setter
 	def StrssPdct(self, value):
-		self._StrssPdct = value if type(value) != base_types.auto else self.make_default("StrssPdct")
+		self._StrssPdct = value if value is not None else base_types.UninitialisedField(self, 'StrssPdct', StressItem1Choice, False)
 
 	@StrssPdct.deleter
 	def StrssPdct(self):
 		del self._StrssPdct
-		self._StrssPdct = None
+		self._StrssPdct = base_types.UninitialisedField(self, 'StrssPdct', StressItem1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='StrssPdct', type=StressItem1Choice, min=1, max=1, mutex_group=None, array=False),

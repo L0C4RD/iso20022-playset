@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardManagementResponseV04 import CardManagementResponseV04
+from . import CardManagementResponseV04
 
 class CAIN_024_001_04():
 
@@ -18,12 +18,12 @@ class CAIN_024_001_04():
 
 		@CardMgmtRspn.setter
 		def CardMgmtRspn(self, value):
-			self._CardMgmtRspn = value if type(value) != base_types.auto else self.make_default("CardMgmtRspn")
+			self._CardMgmtRspn = value if value is not None else base_types.UninitialisedField(self, 'CardMgmtRspn', CardManagementResponseV04, False)
 
 		@CardMgmtRspn.deleter
 		def CardMgmtRspn(self):
 			del self._CardMgmtRspn
-			self._CardMgmtRspn = None
+			self._CardMgmtRspn = base_types.UninitialisedField(self, 'CardMgmtRspn', CardManagementResponseV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CardMgmtRspn', type=CardManagementResponseV04, min=1, max=1, mutex_group=None, array=False),

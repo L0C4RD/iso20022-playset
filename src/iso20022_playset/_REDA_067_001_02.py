@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RequestToPayCreditorEnrolmentAmendmentRequestV02 import RequestToPayCreditorEnrolmentAmendmentRequestV02
+from . import RequestToPayCreditorEnrolmentAmendmentRequestV02
 
 class REDA_067_001_02():
 
@@ -18,12 +18,12 @@ class REDA_067_001_02():
 
 		@ReqToPayCdtrEnrlmntAmdmntReq.setter
 		def ReqToPayCdtrEnrlmntAmdmntReq(self, value):
-			self._ReqToPayCdtrEnrlmntAmdmntReq = value if type(value) != base_types.auto else self.make_default("ReqToPayCdtrEnrlmntAmdmntReq")
+			self._ReqToPayCdtrEnrlmntAmdmntReq = value if value is not None else base_types.UninitialisedField(self, 'ReqToPayCdtrEnrlmntAmdmntReq', RequestToPayCreditorEnrolmentAmendmentRequestV02, False)
 
 		@ReqToPayCdtrEnrlmntAmdmntReq.deleter
 		def ReqToPayCdtrEnrlmntAmdmntReq(self):
 			del self._ReqToPayCdtrEnrlmntAmdmntReq
-			self._ReqToPayCdtrEnrlmntAmdmntReq = None
+			self._ReqToPayCdtrEnrlmntAmdmntReq = base_types.UninitialisedField(self, 'ReqToPayCdtrEnrlmntAmdmntReq', RequestToPayCreditorEnrolmentAmendmentRequestV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ReqToPayCdtrEnrlmntAmdmntReq', type=RequestToPayCreditorEnrolmentAmendmentRequestV02, min=1, max=1, mutex_group=None, array=False),

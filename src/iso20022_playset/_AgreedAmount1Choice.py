@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AgreedAmount1 import AgreedAmount1
-from ._Amount1 import Amount1
+from . import AgreedAmount1
+from . import Amount1
 
 class AgreedAmount1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AgreedAmount1Choice(base_types._BaseFieldType):
 
 	@AgrdAmtDtls.setter
 	def AgrdAmtDtls(self, value):
-		self._AgrdAmtDtls = value if type(value) != base_types.auto else self.make_default("AgrdAmtDtls")
+		self._AgrdAmtDtls = value if value is not None else base_types.UninitialisedField(self, 'AgrdAmtDtls', AgreedAmount1, False)
 
 	@AgrdAmtDtls.deleter
 	def AgrdAmtDtls(self):
 		del self._AgrdAmtDtls
-		self._AgrdAmtDtls = None
+		self._AgrdAmtDtls = base_types.UninitialisedField(self, 'AgrdAmtDtls', AgreedAmount1, False)
 
 	@property
 	def SgrtdIndpdntAmt(self):
@@ -27,12 +27,12 @@ class AgreedAmount1Choice(base_types._BaseFieldType):
 
 	@SgrtdIndpdntAmt.setter
 	def SgrtdIndpdntAmt(self, value):
-		self._SgrtdIndpdntAmt = value if type(value) != base_types.auto else self.make_default("SgrtdIndpdntAmt")
+		self._SgrtdIndpdntAmt = value if value is not None else base_types.UninitialisedField(self, 'SgrtdIndpdntAmt', Amount1, False)
 
 	@SgrtdIndpdntAmt.deleter
 	def SgrtdIndpdntAmt(self):
 		del self._SgrtdIndpdntAmt
-		self._SgrtdIndpdntAmt = None
+		self._SgrtdIndpdntAmt = base_types.UninitialisedField(self, 'SgrtdIndpdntAmt', Amount1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AgrdAmtDtls', type=AgreedAmount1, min=0, max=1, mutex_group=1, array=False),

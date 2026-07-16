@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._xs:IDREF import xs:IDREF
+from . import xs:IDREF
 
 class FinancingNotificationParties1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class FinancingNotificationParties1(base_types._BaseFieldType):
 
 	@AckRcvr.setter
 	def AckRcvr(self, value):
-		self._AckRcvr = value if type(value) != base_types.auto else self.make_default("AckRcvr")
+		self._AckRcvr = value if value is not None else base_types.UninitialisedField(self, 'AckRcvr', xs:IDREF, True)
 
 	@AckRcvr.deleter
 	def AckRcvr(self):
 		del self._AckRcvr
-		self._AckRcvr = None
+		self._AckRcvr = base_types.UninitialisedField(self, 'AckRcvr', xs:IDREF, True)
 
 	@property
 	def NtfctnRcvr(self):
@@ -26,12 +26,12 @@ class FinancingNotificationParties1(base_types._BaseFieldType):
 
 	@NtfctnRcvr.setter
 	def NtfctnRcvr(self, value):
-		self._NtfctnRcvr = value if type(value) != base_types.auto else self.make_default("NtfctnRcvr")
+		self._NtfctnRcvr = value if value is not None else base_types.UninitialisedField(self, 'NtfctnRcvr', xs:IDREF, False)
 
 	@NtfctnRcvr.deleter
 	def NtfctnRcvr(self):
 		del self._NtfctnRcvr
-		self._NtfctnRcvr = None
+		self._NtfctnRcvr = base_types.UninitialisedField(self, 'NtfctnRcvr', xs:IDREF, False)
 
 	@property
 	def NtifngPty(self):
@@ -39,12 +39,12 @@ class FinancingNotificationParties1(base_types._BaseFieldType):
 
 	@NtifngPty.setter
 	def NtifngPty(self, value):
-		self._NtifngPty = value if type(value) != base_types.auto else self.make_default("NtifngPty")
+		self._NtifngPty = value if value is not None else base_types.UninitialisedField(self, 'NtifngPty', xs:IDREF, False)
 
 	@NtifngPty.deleter
 	def NtifngPty(self):
 		del self._NtifngPty
-		self._NtifngPty = None
+		self._NtifngPty = base_types.UninitialisedField(self, 'NtifngPty', xs:IDREF, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AckRcvr', type=XS_IDREF, min=0, max=None, mutex_group=None, array=True),

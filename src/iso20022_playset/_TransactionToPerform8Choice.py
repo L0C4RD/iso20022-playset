@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LoyaltyRequest8 import LoyaltyRequest8
-from ._PaymentRequest8 import PaymentRequest8
-from ._ReversalRequest8 import ReversalRequest8
+from . import LoyaltyRequest8
+from . import PaymentRequest8
+from . import ReversalRequest8
 
 class TransactionToPerform8Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TransactionToPerform8Choice(base_types._BaseFieldType):
 
 	@LltyReq.setter
 	def LltyReq(self, value):
-		self._LltyReq = value if type(value) != base_types.auto else self.make_default("LltyReq")
+		self._LltyReq = value if value is not None else base_types.UninitialisedField(self, 'LltyReq', LoyaltyRequest8, False)
 
 	@LltyReq.deleter
 	def LltyReq(self):
 		del self._LltyReq
-		self._LltyReq = None
+		self._LltyReq = base_types.UninitialisedField(self, 'LltyReq', LoyaltyRequest8, False)
 
 	@property
 	def PmtReq(self):
@@ -28,12 +28,12 @@ class TransactionToPerform8Choice(base_types._BaseFieldType):
 
 	@PmtReq.setter
 	def PmtReq(self, value):
-		self._PmtReq = value if type(value) != base_types.auto else self.make_default("PmtReq")
+		self._PmtReq = value if value is not None else base_types.UninitialisedField(self, 'PmtReq', PaymentRequest8, False)
 
 	@PmtReq.deleter
 	def PmtReq(self):
 		del self._PmtReq
-		self._PmtReq = None
+		self._PmtReq = base_types.UninitialisedField(self, 'PmtReq', PaymentRequest8, False)
 
 	@property
 	def RvslReq(self):
@@ -41,12 +41,12 @@ class TransactionToPerform8Choice(base_types._BaseFieldType):
 
 	@RvslReq.setter
 	def RvslReq(self, value):
-		self._RvslReq = value if type(value) != base_types.auto else self.make_default("RvslReq")
+		self._RvslReq = value if value is not None else base_types.UninitialisedField(self, 'RvslReq', ReversalRequest8, False)
 
 	@RvslReq.deleter
 	def RvslReq(self):
 		del self._RvslReq
-		self._RvslReq = None
+		self._RvslReq = base_types.UninitialisedField(self, 'RvslReq', ReversalRequest8, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LltyReq', type=LoyaltyRequest8, min=0, max=1, mutex_group=1, array=False),

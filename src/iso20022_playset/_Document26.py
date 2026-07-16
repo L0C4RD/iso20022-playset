@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISO2ALanguageCode import ISO2ALanguageCode
-from ._LanguageVersion1Code import LanguageVersion1Code
-from ._Max2048Text import Max2048Text
+from . import ISO2ALanguageCode
+from . import LanguageVersion1Code
+from . import Max2048Text
 
 class Document26(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Document26(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', Max2048Text, False)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', Max2048Text, False)
 
 	@property
 	def ElctrncSealRef(self):
@@ -28,12 +28,12 @@ class Document26(base_types._BaseFieldType):
 
 	@ElctrncSealRef.setter
 	def ElctrncSealRef(self, value):
-		self._ElctrncSealRef = value if type(value) != base_types.auto else self.make_default("ElctrncSealRef")
+		self._ElctrncSealRef = value if value is not None else base_types.UninitialisedField(self, 'ElctrncSealRef', Max2048Text, False)
 
 	@ElctrncSealRef.deleter
 	def ElctrncSealRef(self):
 		del self._ElctrncSealRef
-		self._ElctrncSealRef = None
+		self._ElctrncSealRef = base_types.UninitialisedField(self, 'ElctrncSealRef', Max2048Text, False)
 
 	@property
 	def Lang(self):
@@ -41,12 +41,12 @@ class Document26(base_types._BaseFieldType):
 
 	@Lang.setter
 	def Lang(self, value):
-		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
+		self._Lang = value if value is not None else base_types.UninitialisedField(self, 'Lang', ISO2ALanguageCode, True)
 
 	@Lang.deleter
 	def Lang(self):
 		del self._Lang
-		self._Lang = None
+		self._Lang = base_types.UninitialisedField(self, 'Lang', ISO2ALanguageCode, True)
 
 	@property
 	def OrgnlOrTrnsltd(self):
@@ -54,12 +54,12 @@ class Document26(base_types._BaseFieldType):
 
 	@OrgnlOrTrnsltd.setter
 	def OrgnlOrTrnsltd(self, value):
-		self._OrgnlOrTrnsltd = value if type(value) != base_types.auto else self.make_default("OrgnlOrTrnsltd")
+		self._OrgnlOrTrnsltd = value if value is not None else base_types.UninitialisedField(self, 'OrgnlOrTrnsltd', LanguageVersion1Code, False)
 
 	@OrgnlOrTrnsltd.deleter
 	def OrgnlOrTrnsltd(self):
 		del self._OrgnlOrTrnsltd
-		self._OrgnlOrTrnsltd = None
+		self._OrgnlOrTrnsltd = base_types.UninitialisedField(self, 'OrgnlOrTrnsltd', LanguageVersion1Code, False)
 
 	@property
 	def Ref(self):
@@ -67,12 +67,12 @@ class Document26(base_types._BaseFieldType):
 
 	@Ref.setter
 	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+		self._Ref = value if value is not None else base_types.UninitialisedField(self, 'Ref', Max2048Text, False)
 
 	@Ref.deleter
 	def Ref(self):
 		del self._Ref
-		self._Ref = None
+		self._Ref = base_types.UninitialisedField(self, 'Ref', Max2048Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Desc', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),

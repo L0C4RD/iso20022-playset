@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BusinessApplicationHeader1 import BusinessApplicationHeader1
-from ._StrictPayload import StrictPayload
-from ._YesNoIndicator import YesNoIndicator
-from ._xs:ID import xs:ID
+from . import BusinessApplicationHeader1
+from . import StrictPayload
+from . import YesNoIndicator
+from . import xs:ID
 
 class EncapsulatedBusinessMessage1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class EncapsulatedBusinessMessage1(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', BusinessApplicationHeader1, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', BusinessApplicationHeader1, False)
 
 	@property
 	def Msg(self):
@@ -29,12 +29,12 @@ class EncapsulatedBusinessMessage1(base_types._BaseFieldType):
 
 	@Msg.setter
 	def Msg(self, value):
-		self._Msg = value if type(value) != base_types.auto else self.make_default("Msg")
+		self._Msg = value if value is not None else base_types.UninitialisedField(self, 'Msg', StrictPayload, False)
 
 	@Msg.deleter
 	def Msg(self):
 		del self._Msg
-		self._Msg = None
+		self._Msg = base_types.UninitialisedField(self, 'Msg', StrictPayload, False)
 
 	@property
 	def Prfx(self):
@@ -42,12 +42,12 @@ class EncapsulatedBusinessMessage1(base_types._BaseFieldType):
 
 	@Prfx.setter
 	def Prfx(self, value):
-		self._Prfx = value if type(value) != base_types.auto else self.make_default("Prfx")
+		self._Prfx = value if value is not None else base_types.UninitialisedField(self, 'Prfx', xs:ID, False)
 
 	@Prfx.deleter
 	def Prfx(self):
 		del self._Prfx
-		self._Prfx = None
+		self._Prfx = base_types.UninitialisedField(self, 'Prfx', xs:ID, False)
 
 	@property
 	def Prtl(self):
@@ -55,12 +55,12 @@ class EncapsulatedBusinessMessage1(base_types._BaseFieldType):
 
 	@Prtl.setter
 	def Prtl(self, value):
-		self._Prtl = value if type(value) != base_types.auto else self.make_default("Prtl")
+		self._Prtl = value if value is not None else base_types.UninitialisedField(self, 'Prtl', YesNoIndicator, False)
 
 	@Prtl.deleter
 	def Prtl(self):
 		del self._Prtl
-		self._Prtl = None
+		self._Prtl = base_types.UninitialisedField(self, 'Prtl', YesNoIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Hdr', type=BusinessApplicationHeader1, min=0, max=1, mutex_group=None, array=False),

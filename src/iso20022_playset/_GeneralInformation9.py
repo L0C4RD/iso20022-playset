@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._AgreementConditions1 import AgreementConditions1
-from ._CalculationAgent1Choice import CalculationAgent1Choice
-from ._ContactInformation1 import ContactInformation1
-from ._CountryCode import CountryCode
-from ._ISOYear import ISOYear
-from ._Max210Text import Max210Text
-from ._Max35Text import Max35Text
-from ._PartyIdentification242Choice import PartyIdentification242Choice
-from ._Trading1MethodCode import Trading1MethodCode
-from ._YesNoIndicator import YesNoIndicator
+from . import ActiveCurrencyAndAmount
+from . import AgreementConditions1
+from . import CalculationAgent1Choice
+from . import ContactInformation1
+from . import CountryCode
+from . import ISOYear
+from . import Max210Text
+from . import Max35Text
+from . import PartyIdentification242Choice
+from . import Trading1MethodCode
+from . import YesNoIndicator
 
 class GeneralInformation9(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class GeneralInformation9(base_types._BaseFieldType):
 
 	@AgrmtDtls.setter
 	def AgrmtDtls(self, value):
-		self._AgrmtDtls = value if type(value) != base_types.auto else self.make_default("AgrmtDtls")
+		self._AgrmtDtls = value if value is not None else base_types.UninitialisedField(self, 'AgrmtDtls', AgreementConditions1, False)
 
 	@AgrmtDtls.deleter
 	def AgrmtDtls(self):
 		del self._AgrmtDtls
-		self._AgrmtDtls = None
+		self._AgrmtDtls = base_types.UninitialisedField(self, 'AgrmtDtls', AgreementConditions1, False)
 
 	@property
 	def BlckInd(self):
@@ -36,12 +36,12 @@ class GeneralInformation9(base_types._BaseFieldType):
 
 	@BlckInd.setter
 	def BlckInd(self, value):
-		self._BlckInd = value if type(value) != base_types.auto else self.make_default("BlckInd")
+		self._BlckInd = value if value is not None else base_types.UninitialisedField(self, 'BlckInd', YesNoIndicator, False)
 
 	@BlckInd.deleter
 	def BlckInd(self):
 		del self._BlckInd
-		self._BlckInd = None
+		self._BlckInd = base_types.UninitialisedField(self, 'BlckInd', YesNoIndicator, False)
 
 	@property
 	def BrkrId(self):
@@ -49,12 +49,12 @@ class GeneralInformation9(base_types._BaseFieldType):
 
 	@BrkrId.setter
 	def BrkrId(self, value):
-		self._BrkrId = value if type(value) != base_types.auto else self.make_default("BrkrId")
+		self._BrkrId = value if value is not None else base_types.UninitialisedField(self, 'BrkrId', PartyIdentification242Choice, False)
 
 	@BrkrId.deleter
 	def BrkrId(self):
 		del self._BrkrId
-		self._BrkrId = None
+		self._BrkrId = base_types.UninitialisedField(self, 'BrkrId', PartyIdentification242Choice, False)
 
 	@property
 	def BrkrsComssn(self):
@@ -62,12 +62,12 @@ class GeneralInformation9(base_types._BaseFieldType):
 
 	@BrkrsComssn.setter
 	def BrkrsComssn(self, value):
-		self._BrkrsComssn = value if type(value) != base_types.auto else self.make_default("BrkrsComssn")
+		self._BrkrsComssn = value if value is not None else base_types.UninitialisedField(self, 'BrkrsComssn', ActiveCurrencyAndAmount, False)
 
 	@BrkrsComssn.deleter
 	def BrkrsComssn(self):
 		del self._BrkrsComssn
-		self._BrkrsComssn = None
+		self._BrkrsComssn = base_types.UninitialisedField(self, 'BrkrsComssn', ActiveCurrencyAndAmount, False)
 
 	@property
 	def BrkrsRef(self):
@@ -75,12 +75,12 @@ class GeneralInformation9(base_types._BaseFieldType):
 
 	@BrkrsRef.setter
 	def BrkrsRef(self, value):
-		self._BrkrsRef = value if type(value) != base_types.auto else self.make_default("BrkrsRef")
+		self._BrkrsRef = value if value is not None else base_types.UninitialisedField(self, 'BrkrsRef', Max35Text, False)
 
 	@BrkrsRef.deleter
 	def BrkrsRef(self):
 		del self._BrkrsRef
-		self._BrkrsRef = None
+		self._BrkrsRef = base_types.UninitialisedField(self, 'BrkrsRef', Max35Text, False)
 
 	@property
 	def ClctnAgt(self):
@@ -88,12 +88,12 @@ class GeneralInformation9(base_types._BaseFieldType):
 
 	@ClctnAgt.setter
 	def ClctnAgt(self, value):
-		self._ClctnAgt = value if type(value) != base_types.auto else self.make_default("ClctnAgt")
+		self._ClctnAgt = value if value is not None else base_types.UninitialisedField(self, 'ClctnAgt', CalculationAgent1Choice, False)
 
 	@ClctnAgt.deleter
 	def ClctnAgt(self):
 		del self._ClctnAgt
-		self._ClctnAgt = None
+		self._ClctnAgt = base_types.UninitialisedField(self, 'ClctnAgt', CalculationAgent1Choice, False)
 
 	@property
 	def CtctInf(self):
@@ -101,12 +101,12 @@ class GeneralInformation9(base_types._BaseFieldType):
 
 	@CtctInf.setter
 	def CtctInf(self, value):
-		self._CtctInf = value if type(value) != base_types.auto else self.make_default("CtctInf")
+		self._CtctInf = value if value is not None else base_types.UninitialisedField(self, 'CtctInf', ContactInformation1, False)
 
 	@CtctInf.deleter
 	def CtctInf(self):
 		del self._CtctInf
-		self._CtctInf = None
+		self._CtctInf = base_types.UninitialisedField(self, 'CtctInf', ContactInformation1, False)
 
 	@property
 	def CtrPtyRef(self):
@@ -114,12 +114,12 @@ class GeneralInformation9(base_types._BaseFieldType):
 
 	@CtrPtyRef.setter
 	def CtrPtyRef(self, value):
-		self._CtrPtyRef = value if type(value) != base_types.auto else self.make_default("CtrPtyRef")
+		self._CtrPtyRef = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyRef', Max35Text, False)
 
 	@CtrPtyRef.deleter
 	def CtrPtyRef(self):
 		del self._CtrPtyRef
-		self._CtrPtyRef = None
+		self._CtrPtyRef = base_types.UninitialisedField(self, 'CtrPtyRef', Max35Text, False)
 
 	@property
 	def DealgBrnchCtrPtySd(self):
@@ -127,12 +127,12 @@ class GeneralInformation9(base_types._BaseFieldType):
 
 	@DealgBrnchCtrPtySd.setter
 	def DealgBrnchCtrPtySd(self, value):
-		self._DealgBrnchCtrPtySd = value if type(value) != base_types.auto else self.make_default("DealgBrnchCtrPtySd")
+		self._DealgBrnchCtrPtySd = value if value is not None else base_types.UninitialisedField(self, 'DealgBrnchCtrPtySd', PartyIdentification242Choice, False)
 
 	@DealgBrnchCtrPtySd.deleter
 	def DealgBrnchCtrPtySd(self):
 		del self._DealgBrnchCtrPtySd
-		self._DealgBrnchCtrPtySd = None
+		self._DealgBrnchCtrPtySd = base_types.UninitialisedField(self, 'DealgBrnchCtrPtySd', PartyIdentification242Choice, False)
 
 	@property
 	def DealgBrnchTradgSd(self):
@@ -140,12 +140,12 @@ class GeneralInformation9(base_types._BaseFieldType):
 
 	@DealgBrnchTradgSd.setter
 	def DealgBrnchTradgSd(self, value):
-		self._DealgBrnchTradgSd = value if type(value) != base_types.auto else self.make_default("DealgBrnchTradgSd")
+		self._DealgBrnchTradgSd = value if value is not None else base_types.UninitialisedField(self, 'DealgBrnchTradgSd', PartyIdentification242Choice, False)
 
 	@DealgBrnchTradgSd.deleter
 	def DealgBrnchTradgSd(self):
 		del self._DealgBrnchTradgSd
-		self._DealgBrnchTradgSd = None
+		self._DealgBrnchTradgSd = base_types.UninitialisedField(self, 'DealgBrnchTradgSd', PartyIdentification242Choice, False)
 
 	@property
 	def DealgMtd(self):
@@ -153,12 +153,12 @@ class GeneralInformation9(base_types._BaseFieldType):
 
 	@DealgMtd.setter
 	def DealgMtd(self, value):
-		self._DealgMtd = value if type(value) != base_types.auto else self.make_default("DealgMtd")
+		self._DealgMtd = value if value is not None else base_types.UninitialisedField(self, 'DealgMtd', Trading1MethodCode, False)
 
 	@DealgMtd.deleter
 	def DealgMtd(self):
 		del self._DealgMtd
-		self._DealgMtd = None
+		self._DealgMtd = base_types.UninitialisedField(self, 'DealgMtd', Trading1MethodCode, False)
 
 	@property
 	def DefsYr(self):
@@ -166,12 +166,12 @@ class GeneralInformation9(base_types._BaseFieldType):
 
 	@DefsYr.setter
 	def DefsYr(self, value):
-		self._DefsYr = value if type(value) != base_types.auto else self.make_default("DefsYr")
+		self._DefsYr = value if value is not None else base_types.UninitialisedField(self, 'DefsYr', ISOYear, False)
 
 	@DefsYr.deleter
 	def DefsYr(self):
 		del self._DefsYr
-		self._DefsYr = None
+		self._DefsYr = base_types.UninitialisedField(self, 'DefsYr', ISOYear, False)
 
 	@property
 	def PmtClrCentr(self):
@@ -179,12 +179,12 @@ class GeneralInformation9(base_types._BaseFieldType):
 
 	@PmtClrCentr.setter
 	def PmtClrCentr(self, value):
-		self._PmtClrCentr = value if type(value) != base_types.auto else self.make_default("PmtClrCentr")
+		self._PmtClrCentr = value if value is not None else base_types.UninitialisedField(self, 'PmtClrCentr', CountryCode, False)
 
 	@PmtClrCentr.deleter
 	def PmtClrCentr(self):
 		del self._PmtClrCentr
-		self._PmtClrCentr = None
+		self._PmtClrCentr = base_types.UninitialisedField(self, 'PmtClrCentr', CountryCode, False)
 
 	@property
 	def RltdTradRef(self):
@@ -192,12 +192,12 @@ class GeneralInformation9(base_types._BaseFieldType):
 
 	@RltdTradRef.setter
 	def RltdTradRef(self, value):
-		self._RltdTradRef = value if type(value) != base_types.auto else self.make_default("RltdTradRef")
+		self._RltdTradRef = value if value is not None else base_types.UninitialisedField(self, 'RltdTradRef', Max35Text, False)
 
 	@RltdTradRef.deleter
 	def RltdTradRef(self):
 		del self._RltdTradRef
-		self._RltdTradRef = None
+		self._RltdTradRef = base_types.UninitialisedField(self, 'RltdTradRef', Max35Text, False)
 
 	@property
 	def SndrToRcvrInf(self):
@@ -205,12 +205,12 @@ class GeneralInformation9(base_types._BaseFieldType):
 
 	@SndrToRcvrInf.setter
 	def SndrToRcvrInf(self, value):
-		self._SndrToRcvrInf = value if type(value) != base_types.auto else self.make_default("SndrToRcvrInf")
+		self._SndrToRcvrInf = value if value is not None else base_types.UninitialisedField(self, 'SndrToRcvrInf', Max210Text, False)
 
 	@SndrToRcvrInf.deleter
 	def SndrToRcvrInf(self):
 		del self._SndrToRcvrInf
-		self._SndrToRcvrInf = None
+		self._SndrToRcvrInf = base_types.UninitialisedField(self, 'SndrToRcvrInf', Max210Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AgrmtDtls', type=AgreementConditions1, min=0, max=1, mutex_group=None, array=False),

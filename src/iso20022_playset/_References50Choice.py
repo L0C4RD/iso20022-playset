@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from . import RestrictedFINXMax16Text
 
 class References50Choice(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class References50Choice(base_types._BaseFieldType):
 
 	@AcctSvcrTxId.setter
 	def AcctSvcrTxId(self, value):
-		self._AcctSvcrTxId = value if type(value) != base_types.auto else self.make_default("AcctSvcrTxId")
+		self._AcctSvcrTxId = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcrTxId', RestrictedFINXMax16Text, False)
 
 	@AcctSvcrTxId.deleter
 	def AcctSvcrTxId(self):
 		del self._AcctSvcrTxId
-		self._AcctSvcrTxId = None
+		self._AcctSvcrTxId = base_types.UninitialisedField(self, 'AcctSvcrTxId', RestrictedFINXMax16Text, False)
 
 	@property
 	def IntraBalMvmntId(self):
@@ -26,12 +26,12 @@ class References50Choice(base_types._BaseFieldType):
 
 	@IntraBalMvmntId.setter
 	def IntraBalMvmntId(self, value):
-		self._IntraBalMvmntId = value if type(value) != base_types.auto else self.make_default("IntraBalMvmntId")
+		self._IntraBalMvmntId = value if value is not None else base_types.UninitialisedField(self, 'IntraBalMvmntId', RestrictedFINXMax16Text, False)
 
 	@IntraBalMvmntId.deleter
 	def IntraBalMvmntId(self):
 		del self._IntraBalMvmntId
-		self._IntraBalMvmntId = None
+		self._IntraBalMvmntId = base_types.UninitialisedField(self, 'IntraBalMvmntId', RestrictedFINXMax16Text, False)
 
 	@property
 	def IntraPosMvmntId(self):
@@ -39,12 +39,12 @@ class References50Choice(base_types._BaseFieldType):
 
 	@IntraPosMvmntId.setter
 	def IntraPosMvmntId(self, value):
-		self._IntraPosMvmntId = value if type(value) != base_types.auto else self.make_default("IntraPosMvmntId")
+		self._IntraPosMvmntId = value if value is not None else base_types.UninitialisedField(self, 'IntraPosMvmntId', RestrictedFINXMax16Text, False)
 
 	@IntraPosMvmntId.deleter
 	def IntraPosMvmntId(self):
 		del self._IntraPosMvmntId
-		self._IntraPosMvmntId = None
+		self._IntraPosMvmntId = base_types.UninitialisedField(self, 'IntraPosMvmntId', RestrictedFINXMax16Text, False)
 
 	@property
 	def MktInfrstrctrTxId(self):
@@ -52,12 +52,12 @@ class References50Choice(base_types._BaseFieldType):
 
 	@MktInfrstrctrTxId.setter
 	def MktInfrstrctrTxId(self, value):
-		self._MktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("MktInfrstrctrTxId")
+		self._MktInfrstrctrTxId = value if value is not None else base_types.UninitialisedField(self, 'MktInfrstrctrTxId', RestrictedFINXMax16Text, False)
 
 	@MktInfrstrctrTxId.deleter
 	def MktInfrstrctrTxId(self):
 		del self._MktInfrstrctrTxId
-		self._MktInfrstrctrTxId = None
+		self._MktInfrstrctrTxId = base_types.UninitialisedField(self, 'MktInfrstrctrTxId', RestrictedFINXMax16Text, False)
 
 	@property
 	def OthrTxId(self):
@@ -65,12 +65,12 @@ class References50Choice(base_types._BaseFieldType):
 
 	@OthrTxId.setter
 	def OthrTxId(self, value):
-		self._OthrTxId = value if type(value) != base_types.auto else self.make_default("OthrTxId")
+		self._OthrTxId = value if value is not None else base_types.UninitialisedField(self, 'OthrTxId', RestrictedFINXMax16Text, False)
 
 	@OthrTxId.deleter
 	def OthrTxId(self):
 		del self._OthrTxId
-		self._OthrTxId = None
+		self._OthrTxId = base_types.UninitialisedField(self, 'OthrTxId', RestrictedFINXMax16Text, False)
 
 	@property
 	def PoolId(self):
@@ -78,12 +78,12 @@ class References50Choice(base_types._BaseFieldType):
 
 	@PoolId.setter
 	def PoolId(self, value):
-		self._PoolId = value if type(value) != base_types.auto else self.make_default("PoolId")
+		self._PoolId = value if value is not None else base_types.UninitialisedField(self, 'PoolId', RestrictedFINXMax16Text, False)
 
 	@PoolId.deleter
 	def PoolId(self):
 		del self._PoolId
-		self._PoolId = None
+		self._PoolId = base_types.UninitialisedField(self, 'PoolId', RestrictedFINXMax16Text, False)
 
 	@property
 	def SctiesSttlmTxId(self):
@@ -91,12 +91,12 @@ class References50Choice(base_types._BaseFieldType):
 
 	@SctiesSttlmTxId.setter
 	def SctiesSttlmTxId(self, value):
-		self._SctiesSttlmTxId = value if type(value) != base_types.auto else self.make_default("SctiesSttlmTxId")
+		self._SctiesSttlmTxId = value if value is not None else base_types.UninitialisedField(self, 'SctiesSttlmTxId', RestrictedFINXMax16Text, False)
 
 	@SctiesSttlmTxId.deleter
 	def SctiesSttlmTxId(self):
 		del self._SctiesSttlmTxId
-		self._SctiesSttlmTxId = None
+		self._SctiesSttlmTxId = base_types.UninitialisedField(self, 'SctiesSttlmTxId', RestrictedFINXMax16Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctSvcrTxId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),

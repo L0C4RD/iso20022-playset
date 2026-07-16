@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NotReported1Code import NotReported1Code
-from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from . import NotReported1Code
+from . import OrganisationIdentification15Choice
 
 class TradePartyIdentificationQuery11Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TradePartyIdentificationQuery11Choice(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', OrganisationIdentification15Choice, True)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', OrganisationIdentification15Choice, True)
 
 	@property
 	def NotRptd(self):
@@ -27,12 +27,12 @@ class TradePartyIdentificationQuery11Choice(base_types._BaseFieldType):
 
 	@NotRptd.setter
 	def NotRptd(self, value):
-		self._NotRptd = value if type(value) != base_types.auto else self.make_default("NotRptd")
+		self._NotRptd = value if value is not None else base_types.UninitialisedField(self, 'NotRptd', NotReported1Code, False)
 
 	@NotRptd.deleter
 	def NotRptd(self):
 		del self._NotRptd
-		self._NotRptd = None
+		self._NotRptd = base_types.UninitialisedField(self, 'NotRptd', NotReported1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=OrganisationIdentification15Choice, min=1, max=None, mutex_group=1, array=True),

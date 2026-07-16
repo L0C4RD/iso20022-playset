@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DataModification1Code import DataModification1Code
-from ._NewIssueAllocation2 import NewIssueAllocation2
+from . import DataModification1Code
+from . import NewIssueAllocation2
 
 class ModificationScope21(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ModificationScope21(base_types._BaseFieldType):
 
 	@IsseAllcn.setter
 	def IsseAllcn(self, value):
-		self._IsseAllcn = value if type(value) != base_types.auto else self.make_default("IsseAllcn")
+		self._IsseAllcn = value if value is not None else base_types.UninitialisedField(self, 'IsseAllcn', NewIssueAllocation2, False)
 
 	@IsseAllcn.deleter
 	def IsseAllcn(self):
 		del self._IsseAllcn
-		self._IsseAllcn = None
+		self._IsseAllcn = base_types.UninitialisedField(self, 'IsseAllcn', NewIssueAllocation2, False)
 
 	@property
 	def ModScpIndctn(self):
@@ -27,12 +27,12 @@ class ModificationScope21(base_types._BaseFieldType):
 
 	@ModScpIndctn.setter
 	def ModScpIndctn(self, value):
-		self._ModScpIndctn = value if type(value) != base_types.auto else self.make_default("ModScpIndctn")
+		self._ModScpIndctn = value if value is not None else base_types.UninitialisedField(self, 'ModScpIndctn', DataModification1Code, False)
 
 	@ModScpIndctn.deleter
 	def ModScpIndctn(self):
 		del self._ModScpIndctn
-		self._ModScpIndctn = None
+		self._ModScpIndctn = base_types.UninitialisedField(self, 'ModScpIndctn', DataModification1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IsseAllcn', type=NewIssueAllocation2, min=1, max=1, mutex_group=None, array=False),

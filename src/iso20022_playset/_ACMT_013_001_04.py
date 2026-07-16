@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountReportRequestV04 import AccountReportRequestV04
+from . import AccountReportRequestV04
 
 class ACMT_013_001_04():
 
@@ -18,12 +18,12 @@ class ACMT_013_001_04():
 
 		@AcctRptReq.setter
 		def AcctRptReq(self, value):
-			self._AcctRptReq = value if type(value) != base_types.auto else self.make_default("AcctRptReq")
+			self._AcctRptReq = value if value is not None else base_types.UninitialisedField(self, 'AcctRptReq', AccountReportRequestV04, False)
 
 		@AcctRptReq.deleter
 		def AcctRptReq(self):
 			del self._AcctRptReq
-			self._AcctRptReq = None
+			self._AcctRptReq = base_types.UninitialisedField(self, 'AcctRptReq', AccountReportRequestV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AcctRptReq', type=AccountReportRequestV04, min=1, max=1, mutex_group=None, array=False),

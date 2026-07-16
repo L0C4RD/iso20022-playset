@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BuyerProtectionInstructionV01 import BuyerProtectionInstructionV01
+from . import BuyerProtectionInstructionV01
 
 class SEEV_060_001_01():
 
@@ -18,12 +18,12 @@ class SEEV_060_001_01():
 
 		@BuyrPrtcnInstr.setter
 		def BuyrPrtcnInstr(self, value):
-			self._BuyrPrtcnInstr = value if type(value) != base_types.auto else self.make_default("BuyrPrtcnInstr")
+			self._BuyrPrtcnInstr = value if value is not None else base_types.UninitialisedField(self, 'BuyrPrtcnInstr', BuyerProtectionInstructionV01, False)
 
 		@BuyrPrtcnInstr.deleter
 		def BuyrPrtcnInstr(self):
 			del self._BuyrPrtcnInstr
-			self._BuyrPrtcnInstr = None
+			self._BuyrPrtcnInstr = base_types.UninitialisedField(self, 'BuyrPrtcnInstr', BuyerProtectionInstructionV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='BuyrPrtcnInstr', type=BuyerProtectionInstructionV01, min=1, max=1, mutex_group=None, array=False),

@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ForeignExchangeRate3 import ForeignExchangeRate3
-from ._ISODate import ISODate
-from ._PenaltyAmountBreakdown1 import PenaltyAmountBreakdown1
-from ._PenaltyFinancialInstrumentIdentification1 import PenaltyFinancialInstrumentIdentification1
-from ._PriceRateOrAmount4Choice import PriceRateOrAmount4Choice
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ForeignExchangeRate3
+from . import ISODate
+from . import PenaltyAmountBreakdown1
+from . import PenaltyFinancialInstrumentIdentification1
+from . import PriceRateOrAmount4Choice
+from . import TrueFalseIndicator
 
 class PenaltyCalculationRecord1(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class PenaltyCalculationRecord1(base_types._BaseFieldType):
 
 	@DscntRate.setter
 	def DscntRate(self, value):
-		self._DscntRate = value if type(value) != base_types.auto else self.make_default("DscntRate")
+		self._DscntRate = value if value is not None else base_types.UninitialisedField(self, 'DscntRate', PriceRateOrAmount4Choice, False)
 
 	@DscntRate.deleter
 	def DscntRate(self):
 		del self._DscntRate
-		self._DscntRate = None
+		self._DscntRate = base_types.UninitialisedField(self, 'DscntRate', PriceRateOrAmount4Choice, False)
 
 	@property
 	def Dt(self):
@@ -31,12 +31,12 @@ class PenaltyCalculationRecord1(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@property
 	def FXData(self):
@@ -44,12 +44,12 @@ class PenaltyCalculationRecord1(base_types._BaseFieldType):
 
 	@FXData.setter
 	def FXData(self, value):
-		self._FXData = value if type(value) != base_types.auto else self.make_default("FXData")
+		self._FXData = value if value is not None else base_types.UninitialisedField(self, 'FXData', ForeignExchangeRate3, True)
 
 	@FXData.deleter
 	def FXData(self):
 		del self._FXData
-		self._FXData = None
+		self._FXData = base_types.UninitialisedField(self, 'FXData', ForeignExchangeRate3, True)
 
 	@property
 	def FinInstrmAttrbts(self):
@@ -57,12 +57,12 @@ class PenaltyCalculationRecord1(base_types._BaseFieldType):
 
 	@FinInstrmAttrbts.setter
 	def FinInstrmAttrbts(self, value):
-		self._FinInstrmAttrbts = value if type(value) != base_types.auto else self.make_default("FinInstrmAttrbts")
+		self._FinInstrmAttrbts = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmAttrbts', PenaltyFinancialInstrumentIdentification1, False)
 
 	@FinInstrmAttrbts.deleter
 	def FinInstrmAttrbts(self):
 		del self._FinInstrmAttrbts
-		self._FinInstrmAttrbts = None
+		self._FinInstrmAttrbts = base_types.UninitialisedField(self, 'FinInstrmAttrbts', PenaltyFinancialInstrumentIdentification1, False)
 
 	@property
 	def MssngRefData(self):
@@ -70,12 +70,12 @@ class PenaltyCalculationRecord1(base_types._BaseFieldType):
 
 	@MssngRefData.setter
 	def MssngRefData(self, value):
-		self._MssngRefData = value if type(value) != base_types.auto else self.make_default("MssngRefData")
+		self._MssngRefData = value if value is not None else base_types.UninitialisedField(self, 'MssngRefData', TrueFalseIndicator, False)
 
 	@MssngRefData.deleter
 	def MssngRefData(self):
 		del self._MssngRefData
-		self._MssngRefData = None
+		self._MssngRefData = base_types.UninitialisedField(self, 'MssngRefData', TrueFalseIndicator, False)
 
 	@property
 	def SubAmtPnltyBrkdwn(self):
@@ -83,12 +83,12 @@ class PenaltyCalculationRecord1(base_types._BaseFieldType):
 
 	@SubAmtPnltyBrkdwn.setter
 	def SubAmtPnltyBrkdwn(self, value):
-		self._SubAmtPnltyBrkdwn = value if type(value) != base_types.auto else self.make_default("SubAmtPnltyBrkdwn")
+		self._SubAmtPnltyBrkdwn = value if value is not None else base_types.UninitialisedField(self, 'SubAmtPnltyBrkdwn', PenaltyAmountBreakdown1, True)
 
 	@SubAmtPnltyBrkdwn.deleter
 	def SubAmtPnltyBrkdwn(self):
 		del self._SubAmtPnltyBrkdwn
-		self._SubAmtPnltyBrkdwn = None
+		self._SubAmtPnltyBrkdwn = base_types.UninitialisedField(self, 'SubAmtPnltyBrkdwn', PenaltyAmountBreakdown1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DscntRate', type=PriceRateOrAmount4Choice, min=0, max=1, mutex_group=None, array=False),

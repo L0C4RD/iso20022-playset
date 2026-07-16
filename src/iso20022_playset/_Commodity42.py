@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CompareAmountAndDirection2 import CompareAmountAndDirection2
-from ._CompareCommodityAssetClass3 import CompareCommodityAssetClass3
-from ._CompareDecimalNumber3 import CompareDecimalNumber3
-from ._CompareUnitOfMeasure3 import CompareUnitOfMeasure3
-from ._CompareUnitPrice6 import CompareUnitPrice6
+from . import CompareAmountAndDirection2
+from . import CompareCommodityAssetClass3
+from . import CompareDecimalNumber3
+from . import CompareUnitOfMeasure3
+from . import CompareUnitPrice6
 
 class Commodity42(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class Commodity42(base_types._BaseFieldType):
 
 	@Clssfctn.setter
 	def Clssfctn(self, value):
-		self._Clssfctn = value if type(value) != base_types.auto else self.make_default("Clssfctn")
+		self._Clssfctn = value if value is not None else base_types.UninitialisedField(self, 'Clssfctn', CompareCommodityAssetClass3, False)
 
 	@Clssfctn.deleter
 	def Clssfctn(self):
 		del self._Clssfctn
-		self._Clssfctn = None
+		self._Clssfctn = base_types.UninitialisedField(self, 'Clssfctn', CompareCommodityAssetClass3, False)
 
 	@property
 	def MktVal(self):
@@ -30,12 +30,12 @@ class Commodity42(base_types._BaseFieldType):
 
 	@MktVal.setter
 	def MktVal(self, value):
-		self._MktVal = value if type(value) != base_types.auto else self.make_default("MktVal")
+		self._MktVal = value if value is not None else base_types.UninitialisedField(self, 'MktVal', CompareAmountAndDirection2, False)
 
 	@MktVal.deleter
 	def MktVal(self):
 		del self._MktVal
-		self._MktVal = None
+		self._MktVal = base_types.UninitialisedField(self, 'MktVal', CompareAmountAndDirection2, False)
 
 	@property
 	def Qty(self):
@@ -43,12 +43,12 @@ class Commodity42(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+		self._Qty = value if value is not None else base_types.UninitialisedField(self, 'Qty', CompareDecimalNumber3, False)
 
 	@Qty.deleter
 	def Qty(self):
 		del self._Qty
-		self._Qty = None
+		self._Qty = base_types.UninitialisedField(self, 'Qty', CompareDecimalNumber3, False)
 
 	@property
 	def UnitOfMeasr(self):
@@ -56,12 +56,12 @@ class Commodity42(base_types._BaseFieldType):
 
 	@UnitOfMeasr.setter
 	def UnitOfMeasr(self, value):
-		self._UnitOfMeasr = value if type(value) != base_types.auto else self.make_default("UnitOfMeasr")
+		self._UnitOfMeasr = value if value is not None else base_types.UninitialisedField(self, 'UnitOfMeasr', CompareUnitOfMeasure3, False)
 
 	@UnitOfMeasr.deleter
 	def UnitOfMeasr(self):
 		del self._UnitOfMeasr
-		self._UnitOfMeasr = None
+		self._UnitOfMeasr = base_types.UninitialisedField(self, 'UnitOfMeasr', CompareUnitOfMeasure3, False)
 
 	@property
 	def UnitPric(self):
@@ -69,12 +69,12 @@ class Commodity42(base_types._BaseFieldType):
 
 	@UnitPric.setter
 	def UnitPric(self, value):
-		self._UnitPric = value if type(value) != base_types.auto else self.make_default("UnitPric")
+		self._UnitPric = value if value is not None else base_types.UninitialisedField(self, 'UnitPric', CompareUnitPrice6, False)
 
 	@UnitPric.deleter
 	def UnitPric(self):
 		del self._UnitPric
-		self._UnitPric = None
+		self._UnitPric = base_types.UninitialisedField(self, 'UnitPric', CompareUnitPrice6, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Clssfctn', type=CompareCommodityAssetClass3, min=0, max=1, mutex_group=None, array=False),

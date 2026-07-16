@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BuyInConfirmationV03 import BuyInConfirmationV03
+from . import BuyInConfirmationV03
 
 class SECL_009_001_03():
 
@@ -18,12 +18,12 @@ class SECL_009_001_03():
 
 		@BuyInConf.setter
 		def BuyInConf(self, value):
-			self._BuyInConf = value if type(value) != base_types.auto else self.make_default("BuyInConf")
+			self._BuyInConf = value if value is not None else base_types.UninitialisedField(self, 'BuyInConf', BuyInConfirmationV03, False)
 
 		@BuyInConf.deleter
 		def BuyInConf(self):
 			del self._BuyInConf
-			self._BuyInConf = None
+			self._BuyInConf = base_types.UninitialisedField(self, 'BuyInConf', BuyInConfirmationV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='BuyInConf', type=BuyInConfirmationV03, min=1, max=1, mutex_group=None, array=False),

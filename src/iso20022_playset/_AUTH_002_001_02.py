@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InformationRequestResponseV02 import InformationRequestResponseV02
+from . import InformationRequestResponseV02
 
 class AUTH_002_001_02():
 
@@ -18,12 +18,12 @@ class AUTH_002_001_02():
 
 		@InfReqRspn.setter
 		def InfReqRspn(self, value):
-			self._InfReqRspn = value if type(value) != base_types.auto else self.make_default("InfReqRspn")
+			self._InfReqRspn = value if value is not None else base_types.UninitialisedField(self, 'InfReqRspn', InformationRequestResponseV02, False)
 
 		@InfReqRspn.deleter
 		def InfReqRspn(self):
 			del self._InfReqRspn
-			self._InfReqRspn = None
+			self._InfReqRspn = base_types.UninitialisedField(self, 'InfReqRspn', InformationRequestResponseV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='InfReqRspn', type=InformationRequestResponseV02, min=1, max=1, mutex_group=None, array=False),

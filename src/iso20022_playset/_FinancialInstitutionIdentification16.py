@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BICFIDec2014Identifier import BICFIDec2014Identifier
-from ._BranchData2 import BranchData2
-from ._ClearingSystemMemberIdentification4Choice import ClearingSystemMemberIdentification4Choice
-from ._LEIIdentifier import LEIIdentifier
-from ._Max35Text import Max35Text
-from ._NameAndAddress5 import NameAndAddress5
+from . import BICFIDec2014Identifier
+from . import BranchData2
+from . import ClearingSystemMemberIdentification4Choice
+from . import LEIIdentifier
+from . import Max35Text
+from . import NameAndAddress5
 
 class FinancialInstitutionIdentification16(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class FinancialInstitutionIdentification16(base_types._BaseFieldType):
 
 	@BICFI.setter
 	def BICFI(self, value):
-		self._BICFI = value if type(value) != base_types.auto else self.make_default("BICFI")
+		self._BICFI = value if value is not None else base_types.UninitialisedField(self, 'BICFI', BICFIDec2014Identifier, False)
 
 	@BICFI.deleter
 	def BICFI(self):
 		del self._BICFI
-		self._BICFI = None
+		self._BICFI = base_types.UninitialisedField(self, 'BICFI', BICFIDec2014Identifier, False)
 
 	@property
 	def BrnchId(self):
@@ -31,12 +31,12 @@ class FinancialInstitutionIdentification16(base_types._BaseFieldType):
 
 	@BrnchId.setter
 	def BrnchId(self, value):
-		self._BrnchId = value if type(value) != base_types.auto else self.make_default("BrnchId")
+		self._BrnchId = value if value is not None else base_types.UninitialisedField(self, 'BrnchId', BranchData2, False)
 
 	@BrnchId.deleter
 	def BrnchId(self):
 		del self._BrnchId
-		self._BrnchId = None
+		self._BrnchId = base_types.UninitialisedField(self, 'BrnchId', BranchData2, False)
 
 	@property
 	def ClrSysMmbId(self):
@@ -44,12 +44,12 @@ class FinancialInstitutionIdentification16(base_types._BaseFieldType):
 
 	@ClrSysMmbId.setter
 	def ClrSysMmbId(self, value):
-		self._ClrSysMmbId = value if type(value) != base_types.auto else self.make_default("ClrSysMmbId")
+		self._ClrSysMmbId = value if value is not None else base_types.UninitialisedField(self, 'ClrSysMmbId', ClearingSystemMemberIdentification4Choice, False)
 
 	@ClrSysMmbId.deleter
 	def ClrSysMmbId(self):
 		del self._ClrSysMmbId
-		self._ClrSysMmbId = None
+		self._ClrSysMmbId = base_types.UninitialisedField(self, 'ClrSysMmbId', ClearingSystemMemberIdentification4Choice, False)
 
 	@property
 	def LEI(self):
@@ -57,12 +57,12 @@ class FinancialInstitutionIdentification16(base_types._BaseFieldType):
 
 	@LEI.setter
 	def LEI(self, value):
-		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
+		self._LEI = value if value is not None else base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	@LEI.deleter
 	def LEI(self):
 		del self._LEI
-		self._LEI = None
+		self._LEI = base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	@property
 	def NmAndAdr(self):
@@ -70,12 +70,12 @@ class FinancialInstitutionIdentification16(base_types._BaseFieldType):
 
 	@NmAndAdr.setter
 	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
+		self._NmAndAdr = value if value is not None else base_types.UninitialisedField(self, 'NmAndAdr', NameAndAddress5, False)
 
 	@NmAndAdr.deleter
 	def NmAndAdr(self):
 		del self._NmAndAdr
-		self._NmAndAdr = None
+		self._NmAndAdr = base_types.UninitialisedField(self, 'NmAndAdr', NameAndAddress5, False)
 
 	@property
 	def PrtryId(self):
@@ -83,12 +83,12 @@ class FinancialInstitutionIdentification16(base_types._BaseFieldType):
 
 	@PrtryId.setter
 	def PrtryId(self, value):
-		self._PrtryId = value if type(value) != base_types.auto else self.make_default("PrtryId")
+		self._PrtryId = value if value is not None else base_types.UninitialisedField(self, 'PrtryId', Max35Text, False)
 
 	@PrtryId.deleter
 	def PrtryId(self):
 		del self._PrtryId
-		self._PrtryId = None
+		self._PrtryId = base_types.UninitialisedField(self, 'PrtryId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BICFI', type=BICFIDec2014Identifier, min=0, max=1, mutex_group=None, array=False),

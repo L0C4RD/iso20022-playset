@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._AmountAndDirection20 import AmountAndDirection20
-from ._BlockChainAddressWallet5 import BlockChainAddressWallet5
-from ._CollateralAccount3 import CollateralAccount3
-from ._ISODate import ISODate
-from ._Number import Number
-from ._PercentageRate import PercentageRate
+from . import ActiveCurrencyAndAmount
+from . import AmountAndDirection20
+from . import BlockChainAddressWallet5
+from . import CollateralAccount3
+from . import ISODate
+from . import Number
+from . import PercentageRate
 
 class InterestCalculation5(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class InterestCalculation5(base_types._BaseFieldType):
 
 	@AcrdIntrstAmt.setter
 	def AcrdIntrstAmt(self, value):
-		self._AcrdIntrstAmt = value if type(value) != base_types.auto else self.make_default("AcrdIntrstAmt")
+		self._AcrdIntrstAmt = value if value is not None else base_types.UninitialisedField(self, 'AcrdIntrstAmt', AmountAndDirection20, False)
 
 	@AcrdIntrstAmt.deleter
 	def AcrdIntrstAmt(self):
 		del self._AcrdIntrstAmt
-		self._AcrdIntrstAmt = None
+		self._AcrdIntrstAmt = base_types.UninitialisedField(self, 'AcrdIntrstAmt', AmountAndDirection20, False)
 
 	@property
 	def AggtdIntrstAmt(self):
@@ -32,12 +32,12 @@ class InterestCalculation5(base_types._BaseFieldType):
 
 	@AggtdIntrstAmt.setter
 	def AggtdIntrstAmt(self, value):
-		self._AggtdIntrstAmt = value if type(value) != base_types.auto else self.make_default("AggtdIntrstAmt")
+		self._AggtdIntrstAmt = value if value is not None else base_types.UninitialisedField(self, 'AggtdIntrstAmt', ActiveCurrencyAndAmount, False)
 
 	@AggtdIntrstAmt.deleter
 	def AggtdIntrstAmt(self):
 		del self._AggtdIntrstAmt
-		self._AggtdIntrstAmt = None
+		self._AggtdIntrstAmt = base_types.UninitialisedField(self, 'AggtdIntrstAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -45,12 +45,12 @@ class InterestCalculation5(base_types._BaseFieldType):
 
 	@BlckChainAdrOrWllt.setter
 	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
+		self._BlckChainAdrOrWllt = value if value is not None else base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet5, False)
 
 	@BlckChainAdrOrWllt.deleter
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+		self._BlckChainAdrOrWllt = base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet5, False)
 
 	@property
 	def ClctnDt(self):
@@ -58,12 +58,12 @@ class InterestCalculation5(base_types._BaseFieldType):
 
 	@ClctnDt.setter
 	def ClctnDt(self, value):
-		self._ClctnDt = value if type(value) != base_types.auto else self.make_default("ClctnDt")
+		self._ClctnDt = value if value is not None else base_types.UninitialisedField(self, 'ClctnDt', ISODate, False)
 
 	@ClctnDt.deleter
 	def ClctnDt(self):
 		del self._ClctnDt
-		self._ClctnDt = None
+		self._ClctnDt = base_types.UninitialisedField(self, 'ClctnDt', ISODate, False)
 
 	@property
 	def CollAcctId(self):
@@ -71,12 +71,12 @@ class InterestCalculation5(base_types._BaseFieldType):
 
 	@CollAcctId.setter
 	def CollAcctId(self, value):
-		self._CollAcctId = value if type(value) != base_types.auto else self.make_default("CollAcctId")
+		self._CollAcctId = value if value is not None else base_types.UninitialisedField(self, 'CollAcctId', CollateralAccount3, False)
 
 	@CollAcctId.deleter
 	def CollAcctId(self):
 		del self._CollAcctId
-		self._CollAcctId = None
+		self._CollAcctId = base_types.UninitialisedField(self, 'CollAcctId', CollateralAccount3, False)
 
 	@property
 	def FctvPrncplAmt(self):
@@ -84,12 +84,12 @@ class InterestCalculation5(base_types._BaseFieldType):
 
 	@FctvPrncplAmt.setter
 	def FctvPrncplAmt(self, value):
-		self._FctvPrncplAmt = value if type(value) != base_types.auto else self.make_default("FctvPrncplAmt")
+		self._FctvPrncplAmt = value if value is not None else base_types.UninitialisedField(self, 'FctvPrncplAmt', AmountAndDirection20, False)
 
 	@FctvPrncplAmt.deleter
 	def FctvPrncplAmt(self):
 		del self._FctvPrncplAmt
-		self._FctvPrncplAmt = None
+		self._FctvPrncplAmt = base_types.UninitialisedField(self, 'FctvPrncplAmt', AmountAndDirection20, False)
 
 	@property
 	def FctvRate(self):
@@ -97,12 +97,12 @@ class InterestCalculation5(base_types._BaseFieldType):
 
 	@FctvRate.setter
 	def FctvRate(self, value):
-		self._FctvRate = value if type(value) != base_types.auto else self.make_default("FctvRate")
+		self._FctvRate = value if value is not None else base_types.UninitialisedField(self, 'FctvRate', PercentageRate, False)
 
 	@FctvRate.deleter
 	def FctvRate(self):
 		del self._FctvRate
-		self._FctvRate = None
+		self._FctvRate = base_types.UninitialisedField(self, 'FctvRate', PercentageRate, False)
 
 	@property
 	def IntrstRate(self):
@@ -110,12 +110,12 @@ class InterestCalculation5(base_types._BaseFieldType):
 
 	@IntrstRate.setter
 	def IntrstRate(self, value):
-		self._IntrstRate = value if type(value) != base_types.auto else self.make_default("IntrstRate")
+		self._IntrstRate = value if value is not None else base_types.UninitialisedField(self, 'IntrstRate', PercentageRate, False)
 
 	@IntrstRate.deleter
 	def IntrstRate(self):
 		del self._IntrstRate
-		self._IntrstRate = None
+		self._IntrstRate = base_types.UninitialisedField(self, 'IntrstRate', PercentageRate, False)
 
 	@property
 	def MvmntAmt(self):
@@ -123,12 +123,12 @@ class InterestCalculation5(base_types._BaseFieldType):
 
 	@MvmntAmt.setter
 	def MvmntAmt(self, value):
-		self._MvmntAmt = value if type(value) != base_types.auto else self.make_default("MvmntAmt")
+		self._MvmntAmt = value if value is not None else base_types.UninitialisedField(self, 'MvmntAmt', AmountAndDirection20, False)
 
 	@MvmntAmt.deleter
 	def MvmntAmt(self):
 		del self._MvmntAmt
-		self._MvmntAmt = None
+		self._MvmntAmt = base_types.UninitialisedField(self, 'MvmntAmt', AmountAndDirection20, False)
 
 	@property
 	def NbOfDays(self):
@@ -136,12 +136,12 @@ class InterestCalculation5(base_types._BaseFieldType):
 
 	@NbOfDays.setter
 	def NbOfDays(self, value):
-		self._NbOfDays = value if type(value) != base_types.auto else self.make_default("NbOfDays")
+		self._NbOfDays = value if value is not None else base_types.UninitialisedField(self, 'NbOfDays', Number, False)
 
 	@NbOfDays.deleter
 	def NbOfDays(self):
 		del self._NbOfDays
-		self._NbOfDays = None
+		self._NbOfDays = base_types.UninitialisedField(self, 'NbOfDays', Number, False)
 
 	@property
 	def PrncplAmt(self):
@@ -149,12 +149,12 @@ class InterestCalculation5(base_types._BaseFieldType):
 
 	@PrncplAmt.setter
 	def PrncplAmt(self, value):
-		self._PrncplAmt = value if type(value) != base_types.auto else self.make_default("PrncplAmt")
+		self._PrncplAmt = value if value is not None else base_types.UninitialisedField(self, 'PrncplAmt', AmountAndDirection20, False)
 
 	@PrncplAmt.deleter
 	def PrncplAmt(self):
 		del self._PrncplAmt
-		self._PrncplAmt = None
+		self._PrncplAmt = base_types.UninitialisedField(self, 'PrncplAmt', AmountAndDirection20, False)
 
 	@property
 	def Sprd(self):
@@ -162,12 +162,12 @@ class InterestCalculation5(base_types._BaseFieldType):
 
 	@Sprd.setter
 	def Sprd(self, value):
-		self._Sprd = value if type(value) != base_types.auto else self.make_default("Sprd")
+		self._Sprd = value if value is not None else base_types.UninitialisedField(self, 'Sprd', PercentageRate, False)
 
 	@Sprd.deleter
 	def Sprd(self):
 		del self._Sprd
-		self._Sprd = None
+		self._Sprd = base_types.UninitialisedField(self, 'Sprd', PercentageRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcrdIntrstAmt', type=AmountAndDirection20, min=1, max=1, mutex_group=None, array=False),

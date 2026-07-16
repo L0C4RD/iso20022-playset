@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CommunicationCharacteristics5 import CommunicationCharacteristics5
-from ._CryptographicKey19 import CryptographicKey19
-from ._MemoryCharacteristics1 import MemoryCharacteristics1
-from ._Number import Number
+from . import CommunicationCharacteristics5
+from . import CryptographicKey19
+from . import MemoryCharacteristics1
+from . import Number
 
 class PointOfInteractionComponentCharacteristics11(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class PointOfInteractionComponentCharacteristics11(base_types._BaseFieldType):
 
 	@Com.setter
 	def Com(self, value):
-		self._Com = value if type(value) != base_types.auto else self.make_default("Com")
+		self._Com = value if value is not None else base_types.UninitialisedField(self, 'Com', CommunicationCharacteristics5, True)
 
 	@Com.deleter
 	def Com(self):
 		del self._Com
-		self._Com = None
+		self._Com = base_types.UninitialisedField(self, 'Com', CommunicationCharacteristics5, True)
 
 	@property
 	def Mmry(self):
@@ -29,12 +29,12 @@ class PointOfInteractionComponentCharacteristics11(base_types._BaseFieldType):
 
 	@Mmry.setter
 	def Mmry(self, value):
-		self._Mmry = value if type(value) != base_types.auto else self.make_default("Mmry")
+		self._Mmry = value if value is not None else base_types.UninitialisedField(self, 'Mmry', MemoryCharacteristics1, True)
 
 	@Mmry.deleter
 	def Mmry(self):
 		del self._Mmry
-		self._Mmry = None
+		self._Mmry = base_types.UninitialisedField(self, 'Mmry', MemoryCharacteristics1, True)
 
 	@property
 	def SbcbrIdntyMdls(self):
@@ -42,12 +42,12 @@ class PointOfInteractionComponentCharacteristics11(base_types._BaseFieldType):
 
 	@SbcbrIdntyMdls.setter
 	def SbcbrIdntyMdls(self, value):
-		self._SbcbrIdntyMdls = value if type(value) != base_types.auto else self.make_default("SbcbrIdntyMdls")
+		self._SbcbrIdntyMdls = value if value is not None else base_types.UninitialisedField(self, 'SbcbrIdntyMdls', Number, False)
 
 	@SbcbrIdntyMdls.deleter
 	def SbcbrIdntyMdls(self):
 		del self._SbcbrIdntyMdls
-		self._SbcbrIdntyMdls = None
+		self._SbcbrIdntyMdls = base_types.UninitialisedField(self, 'SbcbrIdntyMdls', Number, False)
 
 	@property
 	def SctyAccsMdls(self):
@@ -55,12 +55,12 @@ class PointOfInteractionComponentCharacteristics11(base_types._BaseFieldType):
 
 	@SctyAccsMdls.setter
 	def SctyAccsMdls(self, value):
-		self._SctyAccsMdls = value if type(value) != base_types.auto else self.make_default("SctyAccsMdls")
+		self._SctyAccsMdls = value if value is not None else base_types.UninitialisedField(self, 'SctyAccsMdls', Number, False)
 
 	@SctyAccsMdls.deleter
 	def SctyAccsMdls(self):
 		del self._SctyAccsMdls
-		self._SctyAccsMdls = None
+		self._SctyAccsMdls = base_types.UninitialisedField(self, 'SctyAccsMdls', Number, False)
 
 	@property
 	def SctyElmt(self):
@@ -68,12 +68,12 @@ class PointOfInteractionComponentCharacteristics11(base_types._BaseFieldType):
 
 	@SctyElmt.setter
 	def SctyElmt(self, value):
-		self._SctyElmt = value if type(value) != base_types.auto else self.make_default("SctyElmt")
+		self._SctyElmt = value if value is not None else base_types.UninitialisedField(self, 'SctyElmt', CryptographicKey19, True)
 
 	@SctyElmt.deleter
 	def SctyElmt(self):
 		del self._SctyElmt
-		self._SctyElmt = None
+		self._SctyElmt = base_types.UninitialisedField(self, 'SctyElmt', CryptographicKey19, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Com', type=CommunicationCharacteristics5, min=0, max=None, mutex_group=None, array=True),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ForeignExchangeTradeConfirmationStatusAdviceAcknowledgementV02 import ForeignExchangeTradeConfirmationStatusAdviceAcknowledgementV02
+from . import ForeignExchangeTradeConfirmationStatusAdviceAcknowledgementV02
 
 class FXTR_038_001_02():
 
@@ -18,12 +18,12 @@ class FXTR_038_001_02():
 
 		@FXTradConfStsAdvcAck.setter
 		def FXTradConfStsAdvcAck(self, value):
-			self._FXTradConfStsAdvcAck = value if type(value) != base_types.auto else self.make_default("FXTradConfStsAdvcAck")
+			self._FXTradConfStsAdvcAck = value if value is not None else base_types.UninitialisedField(self, 'FXTradConfStsAdvcAck', ForeignExchangeTradeConfirmationStatusAdviceAcknowledgementV02, False)
 
 		@FXTradConfStsAdvcAck.deleter
 		def FXTradConfStsAdvcAck(self):
 			del self._FXTradConfStsAdvcAck
-			self._FXTradConfStsAdvcAck = None
+			self._FXTradConfStsAdvcAck = base_types.UninitialisedField(self, 'FXTradConfStsAdvcAck', ForeignExchangeTradeConfirmationStatusAdviceAcknowledgementV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='FXTradConfStsAdvcAck', type=ForeignExchangeTradeConfirmationStatusAdviceAcknowledgementV02, min=1, max=1, mutex_group=None, array=False),

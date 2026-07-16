@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._TradeData60Choice import TradeData60Choice
-from ._TradeReportHeader4 import TradeReportHeader4
+from . import SupplementaryData1
+from . import TradeData60Choice
+from . import TradeReportHeader4
 
 class DerivativesTradeStateReportV02(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class DerivativesTradeStateReportV02(base_types._BaseFieldType):
 
 	@RptHdr.setter
 	def RptHdr(self, value):
-		self._RptHdr = value if type(value) != base_types.auto else self.make_default("RptHdr")
+		self._RptHdr = value if value is not None else base_types.UninitialisedField(self, 'RptHdr', TradeReportHeader4, False)
 
 	@RptHdr.deleter
 	def RptHdr(self):
 		del self._RptHdr
-		self._RptHdr = None
+		self._RptHdr = base_types.UninitialisedField(self, 'RptHdr', TradeReportHeader4, False)
 
 	@property
 	def SplmtryData(self):
@@ -28,12 +28,12 @@ class DerivativesTradeStateReportV02(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TradData(self):
@@ -41,12 +41,12 @@ class DerivativesTradeStateReportV02(base_types._BaseFieldType):
 
 	@TradData.setter
 	def TradData(self, value):
-		self._TradData = value if type(value) != base_types.auto else self.make_default("TradData")
+		self._TradData = value if value is not None else base_types.UninitialisedField(self, 'TradData', TradeData60Choice, False)
 
 	@TradData.deleter
 	def TradData(self):
 		del self._TradData
-		self._TradData = None
+		self._TradData = base_types.UninitialisedField(self, 'TradData', TradeData60Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RptHdr', type=TradeReportHeader4, min=1, max=1, mutex_group=None, array=False),

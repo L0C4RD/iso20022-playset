@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ExternalMessageFunction1Code import ExternalMessageFunction1Code
-from ._ISODateTime import ISODateTime
-from ._Max140Binary import Max140Binary
-from ._Max15NumericText import Max15NumericText
-from ._Max2048Text import Max2048Text
-from ._Max35Text import Max35Text
-from ._Max3NumericText import Max3NumericText
-from ._Max70Text import Max70Text
+from . import ExternalMessageFunction1Code
+from . import ISODateTime
+from . import Max140Binary
+from . import Max15NumericText
+from . import Max2048Text
+from . import Max35Text
+from . import Max3NumericText
+from . import Max70Text
 
 class Header72(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class Header72(base_types._BaseFieldType):
 
 	@BtchId.setter
 	def BtchId(self, value):
-		self._BtchId = value if type(value) != base_types.auto else self.make_default("BtchId")
+		self._BtchId = value if value is not None else base_types.UninitialisedField(self, 'BtchId', Max35Text, False)
 
 	@BtchId.deleter
 	def BtchId(self):
 		del self._BtchId
-		self._BtchId = None
+		self._BtchId = base_types.UninitialisedField(self, 'BtchId', Max35Text, False)
 
 	@property
 	def ColltnId(self):
@@ -33,12 +33,12 @@ class Header72(base_types._BaseFieldType):
 
 	@ColltnId.setter
 	def ColltnId(self, value):
-		self._ColltnId = value if type(value) != base_types.auto else self.make_default("ColltnId")
+		self._ColltnId = value if value is not None else base_types.UninitialisedField(self, 'ColltnId', Max35Text, False)
 
 	@ColltnId.deleter
 	def ColltnId(self):
 		del self._ColltnId
-		self._ColltnId = None
+		self._ColltnId = base_types.UninitialisedField(self, 'ColltnId', Max35Text, False)
 
 	@property
 	def CreDtTm(self):
@@ -46,12 +46,12 @@ class Header72(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if value is not None else base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
 		del self._CreDtTm
-		self._CreDtTm = None
+		self._CreDtTm = base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@property
 	def InitgPtyId(self):
@@ -59,12 +59,12 @@ class Header72(base_types._BaseFieldType):
 
 	@InitgPtyId.setter
 	def InitgPtyId(self, value):
-		self._InitgPtyId = value if type(value) != base_types.auto else self.make_default("InitgPtyId")
+		self._InitgPtyId = value if value is not None else base_types.UninitialisedField(self, 'InitgPtyId', Max35Text, False)
 
 	@InitgPtyId.deleter
 	def InitgPtyId(self):
 		del self._InitgPtyId
-		self._InitgPtyId = None
+		self._InitgPtyId = base_types.UninitialisedField(self, 'InitgPtyId', Max35Text, False)
 
 	@property
 	def MsgChcksmInptVal(self):
@@ -72,12 +72,12 @@ class Header72(base_types._BaseFieldType):
 
 	@MsgChcksmInptVal.setter
 	def MsgChcksmInptVal(self, value):
-		self._MsgChcksmInptVal = value if type(value) != base_types.auto else self.make_default("MsgChcksmInptVal")
+		self._MsgChcksmInptVal = value if value is not None else base_types.UninitialisedField(self, 'MsgChcksmInptVal', Max140Binary, False)
 
 	@MsgChcksmInptVal.deleter
 	def MsgChcksmInptVal(self):
 		del self._MsgChcksmInptVal
-		self._MsgChcksmInptVal = None
+		self._MsgChcksmInptVal = base_types.UninitialisedField(self, 'MsgChcksmInptVal', Max140Binary, False)
 
 	@property
 	def MsgFctn(self):
@@ -85,12 +85,12 @@ class Header72(base_types._BaseFieldType):
 
 	@MsgFctn.setter
 	def MsgFctn(self, value):
-		self._MsgFctn = value if type(value) != base_types.auto else self.make_default("MsgFctn")
+		self._MsgFctn = value if value is not None else base_types.UninitialisedField(self, 'MsgFctn', ExternalMessageFunction1Code, False)
 
 	@MsgFctn.deleter
 	def MsgFctn(self):
 		del self._MsgFctn
-		self._MsgFctn = None
+		self._MsgFctn = base_types.UninitialisedField(self, 'MsgFctn', ExternalMessageFunction1Code, False)
 
 	@property
 	def MsgSeqNb(self):
@@ -98,12 +98,12 @@ class Header72(base_types._BaseFieldType):
 
 	@MsgSeqNb.setter
 	def MsgSeqNb(self, value):
-		self._MsgSeqNb = value if type(value) != base_types.auto else self.make_default("MsgSeqNb")
+		self._MsgSeqNb = value if value is not None else base_types.UninitialisedField(self, 'MsgSeqNb', Max15NumericText, False)
 
 	@MsgSeqNb.deleter
 	def MsgSeqNb(self):
 		del self._MsgSeqNb
-		self._MsgSeqNb = None
+		self._MsgSeqNb = base_types.UninitialisedField(self, 'MsgSeqNb', Max15NumericText, False)
 
 	@property
 	def PrtcolVrsn(self):
@@ -111,12 +111,12 @@ class Header72(base_types._BaseFieldType):
 
 	@PrtcolVrsn.setter
 	def PrtcolVrsn(self, value):
-		self._PrtcolVrsn = value if type(value) != base_types.auto else self.make_default("PrtcolVrsn")
+		self._PrtcolVrsn = value if value is not None else base_types.UninitialisedField(self, 'PrtcolVrsn', Max2048Text, False)
 
 	@PrtcolVrsn.deleter
 	def PrtcolVrsn(self):
 		del self._PrtcolVrsn
-		self._PrtcolVrsn = None
+		self._PrtcolVrsn = base_types.UninitialisedField(self, 'PrtcolVrsn', Max2048Text, False)
 
 	@property
 	def RcptPtyId(self):
@@ -124,12 +124,12 @@ class Header72(base_types._BaseFieldType):
 
 	@RcptPtyId.setter
 	def RcptPtyId(self, value):
-		self._RcptPtyId = value if type(value) != base_types.auto else self.make_default("RcptPtyId")
+		self._RcptPtyId = value if value is not None else base_types.UninitialisedField(self, 'RcptPtyId', Max35Text, False)
 
 	@RcptPtyId.deleter
 	def RcptPtyId(self):
 		del self._RcptPtyId
-		self._RcptPtyId = None
+		self._RcptPtyId = base_types.UninitialisedField(self, 'RcptPtyId', Max35Text, False)
 
 	@property
 	def ReTrnsmssnCntr(self):
@@ -137,12 +137,12 @@ class Header72(base_types._BaseFieldType):
 
 	@ReTrnsmssnCntr.setter
 	def ReTrnsmssnCntr(self, value):
-		self._ReTrnsmssnCntr = value if type(value) != base_types.auto else self.make_default("ReTrnsmssnCntr")
+		self._ReTrnsmssnCntr = value if value is not None else base_types.UninitialisedField(self, 'ReTrnsmssnCntr', Max3NumericText, False)
 
 	@ReTrnsmssnCntr.deleter
 	def ReTrnsmssnCntr(self):
 		del self._ReTrnsmssnCntr
-		self._ReTrnsmssnCntr = None
+		self._ReTrnsmssnCntr = base_types.UninitialisedField(self, 'ReTrnsmssnCntr', Max3NumericText, False)
 
 	@property
 	def TracData(self):
@@ -150,12 +150,12 @@ class Header72(base_types._BaseFieldType):
 
 	@TracData.setter
 	def TracData(self, value):
-		self._TracData = value if type(value) != base_types.auto else self.make_default("TracData")
+		self._TracData = value if value is not None else base_types.UninitialisedField(self, 'TracData', Max70Text, False)
 
 	@TracData.deleter
 	def TracData(self):
 		del self._TracData
-		self._TracData = None
+		self._TracData = base_types.UninitialisedField(self, 'TracData', Max70Text, False)
 
 	@property
 	def XchgId(self):
@@ -163,12 +163,12 @@ class Header72(base_types._BaseFieldType):
 
 	@XchgId.setter
 	def XchgId(self, value):
-		self._XchgId = value if type(value) != base_types.auto else self.make_default("XchgId")
+		self._XchgId = value if value is not None else base_types.UninitialisedField(self, 'XchgId', Max35Text, False)
 
 	@XchgId.deleter
 	def XchgId(self):
 		del self._XchgId
-		self._XchgId = None
+		self._XchgId = base_types.UninitialisedField(self, 'XchgId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BtchId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

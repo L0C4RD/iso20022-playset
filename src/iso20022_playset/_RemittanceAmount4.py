@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DocumentAdjustment1 import DocumentAdjustment1
-from ._DocumentAmount1 import DocumentAmount1
+from . import DocumentAdjustment1
+from . import DocumentAmount1
 
 class RemittanceAmount4(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class RemittanceAmount4(base_types._BaseFieldType):
 
 	@AdjstmntAmtAndRsn.setter
 	def AdjstmntAmtAndRsn(self, value):
-		self._AdjstmntAmtAndRsn = value if type(value) != base_types.auto else self.make_default("AdjstmntAmtAndRsn")
+		self._AdjstmntAmtAndRsn = value if value is not None else base_types.UninitialisedField(self, 'AdjstmntAmtAndRsn', DocumentAdjustment1, True)
 
 	@AdjstmntAmtAndRsn.deleter
 	def AdjstmntAmtAndRsn(self):
 		del self._AdjstmntAmtAndRsn
-		self._AdjstmntAmtAndRsn = None
+		self._AdjstmntAmtAndRsn = base_types.UninitialisedField(self, 'AdjstmntAmtAndRsn', DocumentAdjustment1, True)
 
 	@property
 	def RmtAmtAndTp(self):
@@ -27,12 +27,12 @@ class RemittanceAmount4(base_types._BaseFieldType):
 
 	@RmtAmtAndTp.setter
 	def RmtAmtAndTp(self, value):
-		self._RmtAmtAndTp = value if type(value) != base_types.auto else self.make_default("RmtAmtAndTp")
+		self._RmtAmtAndTp = value if value is not None else base_types.UninitialisedField(self, 'RmtAmtAndTp', DocumentAmount1, True)
 
 	@RmtAmtAndTp.deleter
 	def RmtAmtAndTp(self):
 		del self._RmtAmtAndTp
-		self._RmtAmtAndTp = None
+		self._RmtAmtAndTp = base_types.UninitialisedField(self, 'RmtAmtAndTp', DocumentAmount1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AdjstmntAmtAndRsn', type=DocumentAdjustment1, min=0, max=None, mutex_group=None, array=True),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PriceMetrics3 import PriceMetrics3
-from ._VolumeMetrics5 import VolumeMetrics5
+from . import PriceMetrics3
+from . import VolumeMetrics5
 
 class PositionSetMetrics13(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PositionSetMetrics13(base_types._BaseFieldType):
 
 	@PricMtrcs.setter
 	def PricMtrcs(self, value):
-		self._PricMtrcs = value if type(value) != base_types.auto else self.make_default("PricMtrcs")
+		self._PricMtrcs = value if value is not None else base_types.UninitialisedField(self, 'PricMtrcs', PriceMetrics3, False)
 
 	@PricMtrcs.deleter
 	def PricMtrcs(self):
 		del self._PricMtrcs
-		self._PricMtrcs = None
+		self._PricMtrcs = base_types.UninitialisedField(self, 'PricMtrcs', PriceMetrics3, False)
 
 	@property
 	def VolMtrcs(self):
@@ -27,12 +27,12 @@ class PositionSetMetrics13(base_types._BaseFieldType):
 
 	@VolMtrcs.setter
 	def VolMtrcs(self, value):
-		self._VolMtrcs = value if type(value) != base_types.auto else self.make_default("VolMtrcs")
+		self._VolMtrcs = value if value is not None else base_types.UninitialisedField(self, 'VolMtrcs', VolumeMetrics5, False)
 
 	@VolMtrcs.deleter
 	def VolMtrcs(self):
 		del self._VolMtrcs
-		self._VolMtrcs = None
+		self._VolMtrcs = base_types.UninitialisedField(self, 'VolMtrcs', VolumeMetrics5, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PricMtrcs', type=PriceMetrics3, min=0, max=1, mutex_group=None, array=False),

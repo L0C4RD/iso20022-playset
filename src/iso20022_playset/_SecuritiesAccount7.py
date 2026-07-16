@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._PartyIdentification2Choice import PartyIdentification2Choice
+from . import Max35Text
+from . import PartyIdentification2Choice
 
 class SecuritiesAccount7(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SecuritiesAccount7(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', Max35Text, False)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', Max35Text, False)
 
 	@property
 	def AcctOwnrId(self):
@@ -27,12 +27,12 @@ class SecuritiesAccount7(base_types._BaseFieldType):
 
 	@AcctOwnrId.setter
 	def AcctOwnrId(self, value):
-		self._AcctOwnrId = value if type(value) != base_types.auto else self.make_default("AcctOwnrId")
+		self._AcctOwnrId = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnrId', PartyIdentification2Choice, False)
 
 	@AcctOwnrId.deleter
 	def AcctOwnrId(self):
 		del self._AcctOwnrId
-		self._AcctOwnrId = None
+		self._AcctOwnrId = base_types.UninitialisedField(self, 'AcctOwnrId', PartyIdentification2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

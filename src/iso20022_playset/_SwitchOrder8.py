@@ -2,27 +2,27 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._AdditionalAmount1Choice import AdditionalAmount1Choice
-from ._CancellationRight1Choice import CancellationRight1Choice
-from ._CustomerConductClassification1Choice import CustomerConductClassification1Choice
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
-from ._FinancialAdvice1Code import FinancialAdvice1Code
-from ._ForeignExchangeTerms44 import ForeignExchangeTerms44
-from ._ISODate import ISODate
-from ._ISODateTime import ISODateTime
-from ._Intermediary50 import Intermediary50
-from ._InvestmentAccount81 import InvestmentAccount81
-from ._Max35Text import Max35Text
-from ._NegotiatedTrade1Code import NegotiatedTrade1Code
-from ._OrderWaiver1 import OrderWaiver1
-from ._PaymentTransaction181 import PaymentTransaction181
-from ._PlaceOfTradeIdentification4Choice import PlaceOfTradeIdentification4Choice
-from ._SignatureType1Choice import SignatureType1Choice
-from ._SwitchRedemptionLegOrder7 import SwitchRedemptionLegOrder7
-from ._SwitchSubscriptionLegOrder7 import SwitchSubscriptionLegOrder7
-from ._TransactionChannelType1Choice import TransactionChannelType1Choice
+from . import ActiveCurrencyAndAmount
+from . import AdditionalAmount1Choice
+from . import CancellationRight1Choice
+from . import CustomerConductClassification1Choice
+from . import DateAndDateTime2Choice
+from . import DeliveryReceiptType2Code
+from . import FinancialAdvice1Code
+from . import ForeignExchangeTerms44
+from . import ISODate
+from . import ISODateTime
+from . import Intermediary50
+from . import InvestmentAccount81
+from . import Max35Text
+from . import NegotiatedTrade1Code
+from . import OrderWaiver1
+from . import PaymentTransaction181
+from . import PlaceOfTradeIdentification4Choice
+from . import SignatureType1Choice
+from . import SwitchRedemptionLegOrder7
+from . import SwitchSubscriptionLegOrder7
+from . import TransactionChannelType1Choice
 
 class SwitchOrder8(base_types._BaseFieldType):
 
@@ -33,12 +33,12 @@ class SwitchOrder8(base_types._BaseFieldType):
 
 	@AddtlAmt.setter
 	def AddtlAmt(self, value):
-		self._AddtlAmt = value if type(value) != base_types.auto else self.make_default("AddtlAmt")
+		self._AddtlAmt = value if value is not None else base_types.UninitialisedField(self, 'AddtlAmt', AdditionalAmount1Choice, False)
 
 	@AddtlAmt.deleter
 	def AddtlAmt(self):
 		del self._AddtlAmt
-		self._AddtlAmt = None
+		self._AddtlAmt = base_types.UninitialisedField(self, 'AddtlAmt', AdditionalAmount1Choice, False)
 
 	@property
 	def ClntRef(self):
@@ -46,12 +46,12 @@ class SwitchOrder8(base_types._BaseFieldType):
 
 	@ClntRef.setter
 	def ClntRef(self, value):
-		self._ClntRef = value if type(value) != base_types.auto else self.make_default("ClntRef")
+		self._ClntRef = value if value is not None else base_types.UninitialisedField(self, 'ClntRef', Max35Text, False)
 
 	@ClntRef.deleter
 	def ClntRef(self):
 		del self._ClntRef
-		self._ClntRef = None
+		self._ClntRef = base_types.UninitialisedField(self, 'ClntRef', Max35Text, False)
 
 	@property
 	def CshSttlmDt(self):
@@ -59,12 +59,12 @@ class SwitchOrder8(base_types._BaseFieldType):
 
 	@CshSttlmDt.setter
 	def CshSttlmDt(self, value):
-		self._CshSttlmDt = value if type(value) != base_types.auto else self.make_default("CshSttlmDt")
+		self._CshSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'CshSttlmDt', ISODate, False)
 
 	@CshSttlmDt.deleter
 	def CshSttlmDt(self):
 		del self._CshSttlmDt
-		self._CshSttlmDt = None
+		self._CshSttlmDt = base_types.UninitialisedField(self, 'CshSttlmDt', ISODate, False)
 
 	@property
 	def CshSttlmDtls(self):
@@ -72,12 +72,12 @@ class SwitchOrder8(base_types._BaseFieldType):
 
 	@CshSttlmDtls.setter
 	def CshSttlmDtls(self, value):
-		self._CshSttlmDtls = value if type(value) != base_types.auto else self.make_default("CshSttlmDtls")
+		self._CshSttlmDtls = value if value is not None else base_types.UninitialisedField(self, 'CshSttlmDtls', PaymentTransaction181, False)
 
 	@CshSttlmDtls.deleter
 	def CshSttlmDtls(self):
 		del self._CshSttlmDtls
-		self._CshSttlmDtls = None
+		self._CshSttlmDtls = base_types.UninitialisedField(self, 'CshSttlmDtls', PaymentTransaction181, False)
 
 	@property
 	def CstmrCndctClssfctn(self):
@@ -85,12 +85,12 @@ class SwitchOrder8(base_types._BaseFieldType):
 
 	@CstmrCndctClssfctn.setter
 	def CstmrCndctClssfctn(self, value):
-		self._CstmrCndctClssfctn = value if type(value) != base_types.auto else self.make_default("CstmrCndctClssfctn")
+		self._CstmrCndctClssfctn = value if value is not None else base_types.UninitialisedField(self, 'CstmrCndctClssfctn', CustomerConductClassification1Choice, False)
 
 	@CstmrCndctClssfctn.deleter
 	def CstmrCndctClssfctn(self):
 		del self._CstmrCndctClssfctn
-		self._CstmrCndctClssfctn = None
+		self._CstmrCndctClssfctn = base_types.UninitialisedField(self, 'CstmrCndctClssfctn', CustomerConductClassification1Choice, False)
 
 	@property
 	def CxlRght(self):
@@ -98,12 +98,12 @@ class SwitchOrder8(base_types._BaseFieldType):
 
 	@CxlRght.setter
 	def CxlRght(self, value):
-		self._CxlRght = value if type(value) != base_types.auto else self.make_default("CxlRght")
+		self._CxlRght = value if value is not None else base_types.UninitialisedField(self, 'CxlRght', CancellationRight1Choice, False)
 
 	@CxlRght.deleter
 	def CxlRght(self):
 		del self._CxlRght
-		self._CxlRght = None
+		self._CxlRght = base_types.UninitialisedField(self, 'CxlRght', CancellationRight1Choice, False)
 
 	@property
 	def FXDtls(self):
@@ -111,12 +111,12 @@ class SwitchOrder8(base_types._BaseFieldType):
 
 	@FXDtls.setter
 	def FXDtls(self, value):
-		self._FXDtls = value if type(value) != base_types.auto else self.make_default("FXDtls")
+		self._FXDtls = value if value is not None else base_types.UninitialisedField(self, 'FXDtls', ForeignExchangeTerms44, False)
 
 	@FXDtls.deleter
 	def FXDtls(self):
 		del self._FXDtls
-		self._FXDtls = None
+		self._FXDtls = base_types.UninitialisedField(self, 'FXDtls', ForeignExchangeTerms44, False)
 
 	@property
 	def FinAdvc(self):
@@ -124,12 +124,12 @@ class SwitchOrder8(base_types._BaseFieldType):
 
 	@FinAdvc.setter
 	def FinAdvc(self, value):
-		self._FinAdvc = value if type(value) != base_types.auto else self.make_default("FinAdvc")
+		self._FinAdvc = value if value is not None else base_types.UninitialisedField(self, 'FinAdvc', FinancialAdvice1Code, False)
 
 	@FinAdvc.deleter
 	def FinAdvc(self):
 		del self._FinAdvc
-		self._FinAdvc = None
+		self._FinAdvc = base_types.UninitialisedField(self, 'FinAdvc', FinancialAdvice1Code, False)
 
 	@property
 	def InvstmtAcctDtls(self):
@@ -137,12 +137,12 @@ class SwitchOrder8(base_types._BaseFieldType):
 
 	@InvstmtAcctDtls.setter
 	def InvstmtAcctDtls(self, value):
-		self._InvstmtAcctDtls = value if type(value) != base_types.auto else self.make_default("InvstmtAcctDtls")
+		self._InvstmtAcctDtls = value if value is not None else base_types.UninitialisedField(self, 'InvstmtAcctDtls', InvestmentAccount81, False)
 
 	@InvstmtAcctDtls.deleter
 	def InvstmtAcctDtls(self):
 		del self._InvstmtAcctDtls
-		self._InvstmtAcctDtls = None
+		self._InvstmtAcctDtls = base_types.UninitialisedField(self, 'InvstmtAcctDtls', InvestmentAccount81, False)
 
 	@property
 	def MstrRef(self):
@@ -150,12 +150,12 @@ class SwitchOrder8(base_types._BaseFieldType):
 
 	@MstrRef.setter
 	def MstrRef(self, value):
-		self._MstrRef = value if type(value) != base_types.auto else self.make_default("MstrRef")
+		self._MstrRef = value if value is not None else base_types.UninitialisedField(self, 'MstrRef', Max35Text, False)
 
 	@MstrRef.deleter
 	def MstrRef(self):
 		del self._MstrRef
-		self._MstrRef = None
+		self._MstrRef = base_types.UninitialisedField(self, 'MstrRef', Max35Text, False)
 
 	@property
 	def NgtdTrad(self):
@@ -163,12 +163,12 @@ class SwitchOrder8(base_types._BaseFieldType):
 
 	@NgtdTrad.setter
 	def NgtdTrad(self, value):
-		self._NgtdTrad = value if type(value) != base_types.auto else self.make_default("NgtdTrad")
+		self._NgtdTrad = value if value is not None else base_types.UninitialisedField(self, 'NgtdTrad', NegotiatedTrade1Code, False)
 
 	@NgtdTrad.deleter
 	def NgtdTrad(self):
 		del self._NgtdTrad
-		self._NgtdTrad = None
+		self._NgtdTrad = base_types.UninitialisedField(self, 'NgtdTrad', NegotiatedTrade1Code, False)
 
 	@property
 	def NonceId(self):
@@ -176,12 +176,12 @@ class SwitchOrder8(base_types._BaseFieldType):
 
 	@NonceId.setter
 	def NonceId(self, value):
-		self._NonceId = value if type(value) != base_types.auto else self.make_default("NonceId")
+		self._NonceId = value if value is not None else base_types.UninitialisedField(self, 'NonceId', Max35Text, False)
 
 	@NonceId.deleter
 	def NonceId(self):
 		del self._NonceId
-		self._NonceId = None
+		self._NonceId = base_types.UninitialisedField(self, 'NonceId', Max35Text, False)
 
 	@property
 	def OrdrDtTm(self):
@@ -189,12 +189,12 @@ class SwitchOrder8(base_types._BaseFieldType):
 
 	@OrdrDtTm.setter
 	def OrdrDtTm(self, value):
-		self._OrdrDtTm = value if type(value) != base_types.auto else self.make_default("OrdrDtTm")
+		self._OrdrDtTm = value if value is not None else base_types.UninitialisedField(self, 'OrdrDtTm', ISODateTime, False)
 
 	@OrdrDtTm.deleter
 	def OrdrDtTm(self):
 		del self._OrdrDtTm
-		self._OrdrDtTm = None
+		self._OrdrDtTm = base_types.UninitialisedField(self, 'OrdrDtTm', ISODateTime, False)
 
 	@property
 	def OrdrRef(self):
@@ -202,12 +202,12 @@ class SwitchOrder8(base_types._BaseFieldType):
 
 	@OrdrRef.setter
 	def OrdrRef(self, value):
-		self._OrdrRef = value if type(value) != base_types.auto else self.make_default("OrdrRef")
+		self._OrdrRef = value if value is not None else base_types.UninitialisedField(self, 'OrdrRef', Max35Text, False)
 
 	@OrdrRef.deleter
 	def OrdrRef(self):
 		del self._OrdrRef
-		self._OrdrRef = None
+		self._OrdrRef = base_types.UninitialisedField(self, 'OrdrRef', Max35Text, False)
 
 	@property
 	def OrdrWvrDtls(self):
@@ -215,12 +215,12 @@ class SwitchOrder8(base_types._BaseFieldType):
 
 	@OrdrWvrDtls.setter
 	def OrdrWvrDtls(self, value):
-		self._OrdrWvrDtls = value if type(value) != base_types.auto else self.make_default("OrdrWvrDtls")
+		self._OrdrWvrDtls = value if value is not None else base_types.UninitialisedField(self, 'OrdrWvrDtls', OrderWaiver1, False)
 
 	@OrdrWvrDtls.deleter
 	def OrdrWvrDtls(self):
 		del self._OrdrWvrDtls
-		self._OrdrWvrDtls = None
+		self._OrdrWvrDtls = base_types.UninitialisedField(self, 'OrdrWvrDtls', OrderWaiver1, False)
 
 	@property
 	def PlcOfTrad(self):
@@ -228,12 +228,12 @@ class SwitchOrder8(base_types._BaseFieldType):
 
 	@PlcOfTrad.setter
 	def PlcOfTrad(self, value):
-		self._PlcOfTrad = value if type(value) != base_types.auto else self.make_default("PlcOfTrad")
+		self._PlcOfTrad = value if value is not None else base_types.UninitialisedField(self, 'PlcOfTrad', PlaceOfTradeIdentification4Choice, False)
 
 	@PlcOfTrad.deleter
 	def PlcOfTrad(self):
 		del self._PlcOfTrad
-		self._PlcOfTrad = None
+		self._PlcOfTrad = base_types.UninitialisedField(self, 'PlcOfTrad', PlaceOfTradeIdentification4Choice, False)
 
 	@property
 	def RedLegDtls(self):
@@ -241,12 +241,12 @@ class SwitchOrder8(base_types._BaseFieldType):
 
 	@RedLegDtls.setter
 	def RedLegDtls(self, value):
-		self._RedLegDtls = value if type(value) != base_types.auto else self.make_default("RedLegDtls")
+		self._RedLegDtls = value if value is not None else base_types.UninitialisedField(self, 'RedLegDtls', SwitchRedemptionLegOrder7, True)
 
 	@RedLegDtls.deleter
 	def RedLegDtls(self):
 		del self._RedLegDtls
-		self._RedLegDtls = None
+		self._RedLegDtls = base_types.UninitialisedField(self, 'RedLegDtls', SwitchRedemptionLegOrder7, True)
 
 	@property
 	def ReqdFutrTradDt(self):
@@ -254,12 +254,12 @@ class SwitchOrder8(base_types._BaseFieldType):
 
 	@ReqdFutrTradDt.setter
 	def ReqdFutrTradDt(self, value):
-		self._ReqdFutrTradDt = value if type(value) != base_types.auto else self.make_default("ReqdFutrTradDt")
+		self._ReqdFutrTradDt = value if value is not None else base_types.UninitialisedField(self, 'ReqdFutrTradDt', ISODate, False)
 
 	@ReqdFutrTradDt.deleter
 	def ReqdFutrTradDt(self):
 		del self._ReqdFutrTradDt
-		self._ReqdFutrTradDt = None
+		self._ReqdFutrTradDt = base_types.UninitialisedField(self, 'ReqdFutrTradDt', ISODate, False)
 
 	@property
 	def RltdPtyDtls(self):
@@ -267,12 +267,12 @@ class SwitchOrder8(base_types._BaseFieldType):
 
 	@RltdPtyDtls.setter
 	def RltdPtyDtls(self, value):
-		self._RltdPtyDtls = value if type(value) != base_types.auto else self.make_default("RltdPtyDtls")
+		self._RltdPtyDtls = value if value is not None else base_types.UninitialisedField(self, 'RltdPtyDtls', Intermediary50, True)
 
 	@RltdPtyDtls.deleter
 	def RltdPtyDtls(self):
 		del self._RltdPtyDtls
-		self._RltdPtyDtls = None
+		self._RltdPtyDtls = base_types.UninitialisedField(self, 'RltdPtyDtls', Intermediary50, True)
 
 	@property
 	def SbcptLegDtls(self):
@@ -280,12 +280,12 @@ class SwitchOrder8(base_types._BaseFieldType):
 
 	@SbcptLegDtls.setter
 	def SbcptLegDtls(self, value):
-		self._SbcptLegDtls = value if type(value) != base_types.auto else self.make_default("SbcptLegDtls")
+		self._SbcptLegDtls = value if value is not None else base_types.UninitialisedField(self, 'SbcptLegDtls', SwitchSubscriptionLegOrder7, True)
 
 	@SbcptLegDtls.deleter
 	def SbcptLegDtls(self):
 		del self._SbcptLegDtls
-		self._SbcptLegDtls = None
+		self._SbcptLegDtls = base_types.UninitialisedField(self, 'SbcptLegDtls', SwitchSubscriptionLegOrder7, True)
 
 	@property
 	def SgntrTp(self):
@@ -293,12 +293,12 @@ class SwitchOrder8(base_types._BaseFieldType):
 
 	@SgntrTp.setter
 	def SgntrTp(self, value):
-		self._SgntrTp = value if type(value) != base_types.auto else self.make_default("SgntrTp")
+		self._SgntrTp = value if value is not None else base_types.UninitialisedField(self, 'SgntrTp', SignatureType1Choice, False)
 
 	@SgntrTp.deleter
 	def SgntrTp(self):
 		del self._SgntrTp
-		self._SgntrTp = None
+		self._SgntrTp = base_types.UninitialisedField(self, 'SgntrTp', SignatureType1Choice, False)
 
 	@property
 	def SttlmAmt(self):
@@ -306,12 +306,12 @@ class SwitchOrder8(base_types._BaseFieldType):
 
 	@SttlmAmt.setter
 	def SttlmAmt(self, value):
-		self._SttlmAmt = value if type(value) != base_types.auto else self.make_default("SttlmAmt")
+		self._SttlmAmt = value if value is not None else base_types.UninitialisedField(self, 'SttlmAmt', ActiveCurrencyAndAmount, False)
 
 	@SttlmAmt.deleter
 	def SttlmAmt(self):
 		del self._SttlmAmt
-		self._SttlmAmt = None
+		self._SttlmAmt = base_types.UninitialisedField(self, 'SttlmAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def SttlmMtd(self):
@@ -319,12 +319,12 @@ class SwitchOrder8(base_types._BaseFieldType):
 
 	@SttlmMtd.setter
 	def SttlmMtd(self, value):
-		self._SttlmMtd = value if type(value) != base_types.auto else self.make_default("SttlmMtd")
+		self._SttlmMtd = value if value is not None else base_types.UninitialisedField(self, 'SttlmMtd', DeliveryReceiptType2Code, False)
 
 	@SttlmMtd.deleter
 	def SttlmMtd(self):
 		del self._SttlmMtd
-		self._SttlmMtd = None
+		self._SttlmMtd = base_types.UninitialisedField(self, 'SttlmMtd', DeliveryReceiptType2Code, False)
 
 	@property
 	def TxChanlTp(self):
@@ -332,12 +332,12 @@ class SwitchOrder8(base_types._BaseFieldType):
 
 	@TxChanlTp.setter
 	def TxChanlTp(self, value):
-		self._TxChanlTp = value if type(value) != base_types.auto else self.make_default("TxChanlTp")
+		self._TxChanlTp = value if value is not None else base_types.UninitialisedField(self, 'TxChanlTp', TransactionChannelType1Choice, False)
 
 	@TxChanlTp.deleter
 	def TxChanlTp(self):
 		del self._TxChanlTp
-		self._TxChanlTp = None
+		self._TxChanlTp = base_types.UninitialisedField(self, 'TxChanlTp', TransactionChannelType1Choice, False)
 
 	@property
 	def XpryDtTm(self):
@@ -345,12 +345,12 @@ class SwitchOrder8(base_types._BaseFieldType):
 
 	@XpryDtTm.setter
 	def XpryDtTm(self, value):
-		self._XpryDtTm = value if type(value) != base_types.auto else self.make_default("XpryDtTm")
+		self._XpryDtTm = value if value is not None else base_types.UninitialisedField(self, 'XpryDtTm', DateAndDateTime2Choice, False)
 
 	@XpryDtTm.deleter
 	def XpryDtTm(self):
 		del self._XpryDtTm
-		self._XpryDtTm = None
+		self._XpryDtTm = base_types.UninitialisedField(self, 'XpryDtTm', DateAndDateTime2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlAmt', type=AdditionalAmount1Choice, min=0, max=1, mutex_group=None, array=False),

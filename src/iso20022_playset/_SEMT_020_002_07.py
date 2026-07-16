@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesMessageCancellationAdvice002V07 import SecuritiesMessageCancellationAdvice002V07
+from . import SecuritiesMessageCancellationAdvice002V07
 
 class SEMT_020_002_07():
 
@@ -18,12 +18,12 @@ class SEMT_020_002_07():
 
 		@SctiesMsgCxlAdvc.setter
 		def SctiesMsgCxlAdvc(self, value):
-			self._SctiesMsgCxlAdvc = value if type(value) != base_types.auto else self.make_default("SctiesMsgCxlAdvc")
+			self._SctiesMsgCxlAdvc = value if value is not None else base_types.UninitialisedField(self, 'SctiesMsgCxlAdvc', SecuritiesMessageCancellationAdvice002V07, False)
 
 		@SctiesMsgCxlAdvc.deleter
 		def SctiesMsgCxlAdvc(self):
 			del self._SctiesMsgCxlAdvc
-			self._SctiesMsgCxlAdvc = None
+			self._SctiesMsgCxlAdvc = base_types.UninitialisedField(self, 'SctiesMsgCxlAdvc', SecuritiesMessageCancellationAdvice002V07, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesMsgCxlAdvc', type=SecuritiesMessageCancellationAdvice002V07, min=1, max=1, mutex_group=None, array=False),

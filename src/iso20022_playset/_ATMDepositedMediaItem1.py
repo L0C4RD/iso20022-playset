@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMMediaStatus1Code import ATMMediaStatus1Code
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._CheckCodeLine1Code import CheckCodeLine1Code
-from ._GenericInformation1 import GenericInformation1
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max70Text import Max70Text
-from ._Number import Number
-from ._PercentageRate import PercentageRate
+from . import ATMMediaStatus1Code
+from . import ActiveCurrencyCode
+from . import CheckCodeLine1Code
+from . import GenericInformation1
+from . import ImpliedCurrencyAndAmount
+from . import Max70Text
+from . import Number
+from . import PercentageRate
 
 class ATMDepositedMediaItem1(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class ATMDepositedMediaItem1(base_types._BaseFieldType):
 
 	@AddtlData.setter
 	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+		self._AddtlData = value if value is not None else base_types.UninitialisedField(self, 'AddtlData', GenericInformation1, True)
 
 	@AddtlData.deleter
 	def AddtlData(self):
 		del self._AddtlData
-		self._AddtlData = None
+		self._AddtlData = base_types.UninitialisedField(self, 'AddtlData', GenericInformation1, True)
 
 	@property
 	def Ccy(self):
@@ -33,12 +33,12 @@ class ATMDepositedMediaItem1(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@property
 	def CdLine(self):
@@ -46,12 +46,12 @@ class ATMDepositedMediaItem1(base_types._BaseFieldType):
 
 	@CdLine.setter
 	def CdLine(self, value):
-		self._CdLine = value if type(value) != base_types.auto else self.make_default("CdLine")
+		self._CdLine = value if value is not None else base_types.UninitialisedField(self, 'CdLine', Max70Text, False)
 
 	@CdLine.deleter
 	def CdLine(self):
 		del self._CdLine
-		self._CdLine = None
+		self._CdLine = base_types.UninitialisedField(self, 'CdLine', Max70Text, False)
 
 	@property
 	def CdLineFrmt(self):
@@ -59,12 +59,12 @@ class ATMDepositedMediaItem1(base_types._BaseFieldType):
 
 	@CdLineFrmt.setter
 	def CdLineFrmt(self, value):
-		self._CdLineFrmt = value if type(value) != base_types.auto else self.make_default("CdLineFrmt")
+		self._CdLineFrmt = value if value is not None else base_types.UninitialisedField(self, 'CdLineFrmt', CheckCodeLine1Code, False)
 
 	@CdLineFrmt.deleter
 	def CdLineFrmt(self):
 		del self._CdLineFrmt
-		self._CdLineFrmt = None
+		self._CdLineFrmt = base_types.UninitialisedField(self, 'CdLineFrmt', CheckCodeLine1Code, False)
 
 	@property
 	def CnfdncLvl(self):
@@ -72,12 +72,12 @@ class ATMDepositedMediaItem1(base_types._BaseFieldType):
 
 	@CnfdncLvl.setter
 	def CnfdncLvl(self, value):
-		self._CnfdncLvl = value if type(value) != base_types.auto else self.make_default("CnfdncLvl")
+		self._CnfdncLvl = value if value is not None else base_types.UninitialisedField(self, 'CnfdncLvl', PercentageRate, False)
 
 	@CnfdncLvl.deleter
 	def CnfdncLvl(self):
 		del self._CnfdncLvl
-		self._CnfdncLvl = None
+		self._CnfdncLvl = base_types.UninitialisedField(self, 'CnfdncLvl', PercentageRate, False)
 
 	@property
 	def Cnt(self):
@@ -85,12 +85,12 @@ class ATMDepositedMediaItem1(base_types._BaseFieldType):
 
 	@Cnt.setter
 	def Cnt(self, value):
-		self._Cnt = value if type(value) != base_types.auto else self.make_default("Cnt")
+		self._Cnt = value if value is not None else base_types.UninitialisedField(self, 'Cnt', Number, False)
 
 	@Cnt.deleter
 	def Cnt(self):
 		del self._Cnt
-		self._Cnt = None
+		self._Cnt = base_types.UninitialisedField(self, 'Cnt', Number, False)
 
 	@property
 	def MdiaId(self):
@@ -98,12 +98,12 @@ class ATMDepositedMediaItem1(base_types._BaseFieldType):
 
 	@MdiaId.setter
 	def MdiaId(self, value):
-		self._MdiaId = value if type(value) != base_types.auto else self.make_default("MdiaId")
+		self._MdiaId = value if value is not None else base_types.UninitialisedField(self, 'MdiaId', Max70Text, False)
 
 	@MdiaId.deleter
 	def MdiaId(self):
 		del self._MdiaId
-		self._MdiaId = None
+		self._MdiaId = base_types.UninitialisedField(self, 'MdiaId', Max70Text, False)
 
 	@property
 	def MdiaSts(self):
@@ -111,12 +111,12 @@ class ATMDepositedMediaItem1(base_types._BaseFieldType):
 
 	@MdiaSts.setter
 	def MdiaSts(self, value):
-		self._MdiaSts = value if type(value) != base_types.auto else self.make_default("MdiaSts")
+		self._MdiaSts = value if value is not None else base_types.UninitialisedField(self, 'MdiaSts', ATMMediaStatus1Code, False)
 
 	@MdiaSts.deleter
 	def MdiaSts(self):
 		del self._MdiaSts
-		self._MdiaSts = None
+		self._MdiaSts = base_types.UninitialisedField(self, 'MdiaSts', ATMMediaStatus1Code, False)
 
 	@property
 	def Ref(self):
@@ -124,12 +124,12 @@ class ATMDepositedMediaItem1(base_types._BaseFieldType):
 
 	@Ref.setter
 	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+		self._Ref = value if value is not None else base_types.UninitialisedField(self, 'Ref', Max70Text, False)
 
 	@Ref.deleter
 	def Ref(self):
 		del self._Ref
-		self._Ref = None
+		self._Ref = base_types.UninitialisedField(self, 'Ref', Max70Text, False)
 
 	@property
 	def RjctdRsn(self):
@@ -137,12 +137,12 @@ class ATMDepositedMediaItem1(base_types._BaseFieldType):
 
 	@RjctdRsn.setter
 	def RjctdRsn(self, value):
-		self._RjctdRsn = value if type(value) != base_types.auto else self.make_default("RjctdRsn")
+		self._RjctdRsn = value if value is not None else base_types.UninitialisedField(self, 'RjctdRsn', Max70Text, False)
 
 	@RjctdRsn.deleter
 	def RjctdRsn(self):
 		del self._RjctdRsn
-		self._RjctdRsn = None
+		self._RjctdRsn = base_types.UninitialisedField(self, 'RjctdRsn', Max70Text, False)
 
 	@property
 	def ScnndVal(self):
@@ -150,12 +150,12 @@ class ATMDepositedMediaItem1(base_types._BaseFieldType):
 
 	@ScnndVal.setter
 	def ScnndVal(self, value):
-		self._ScnndVal = value if type(value) != base_types.auto else self.make_default("ScnndVal")
+		self._ScnndVal = value if value is not None else base_types.UninitialisedField(self, 'ScnndVal', ImpliedCurrencyAndAmount, False)
 
 	@ScnndVal.deleter
 	def ScnndVal(self):
 		del self._ScnndVal
-		self._ScnndVal = None
+		self._ScnndVal = base_types.UninitialisedField(self, 'ScnndVal', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def UnitVal(self):
@@ -163,12 +163,12 @@ class ATMDepositedMediaItem1(base_types._BaseFieldType):
 
 	@UnitVal.setter
 	def UnitVal(self, value):
-		self._UnitVal = value if type(value) != base_types.auto else self.make_default("UnitVal")
+		self._UnitVal = value if value is not None else base_types.UninitialisedField(self, 'UnitVal', ImpliedCurrencyAndAmount, False)
 
 	@UnitVal.deleter
 	def UnitVal(self):
 		del self._UnitVal
-		self._UnitVal = None
+		self._UnitVal = base_types.UninitialisedField(self, 'UnitVal', ImpliedCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlData', type=GenericInformation1, min=0, max=None, mutex_group=None, array=True),

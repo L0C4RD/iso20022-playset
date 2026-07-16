@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FIToFIPaymentReversalV13 import FIToFIPaymentReversalV13
+from . import FIToFIPaymentReversalV13
 
 class PACS_007_001_13():
 
@@ -18,12 +18,12 @@ class PACS_007_001_13():
 
 		@FIToFIPmtRvsl.setter
 		def FIToFIPmtRvsl(self, value):
-			self._FIToFIPmtRvsl = value if type(value) != base_types.auto else self.make_default("FIToFIPmtRvsl")
+			self._FIToFIPmtRvsl = value if value is not None else base_types.UninitialisedField(self, 'FIToFIPmtRvsl', FIToFIPaymentReversalV13, False)
 
 		@FIToFIPmtRvsl.deleter
 		def FIToFIPmtRvsl(self):
 			del self._FIToFIPmtRvsl
-			self._FIToFIPmtRvsl = None
+			self._FIToFIPmtRvsl = base_types.UninitialisedField(self, 'FIToFIPmtRvsl', FIToFIPaymentReversalV13, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='FIToFIPmtRvsl', type=FIToFIPaymentReversalV13, min=1, max=1, mutex_group=None, array=False),

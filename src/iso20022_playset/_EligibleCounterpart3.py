@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._EligibilityIdentification3Choice import EligibilityIdentification3Choice
-from ._EligibilityType1Code import EligibilityType1Code
-from ._ISODate import ISODate
-from ._SystemPartyIdentification2Choice import SystemPartyIdentification2Choice
+from . import EligibilityIdentification3Choice
+from . import EligibilityType1Code
+from . import ISODate
+from . import SystemPartyIdentification2Choice
 
 class EligibleCounterpart3(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class EligibleCounterpart3(base_types._BaseFieldType):
 
 	@ElgblCntrptId.setter
 	def ElgblCntrptId(self, value):
-		self._ElgblCntrptId = value if type(value) != base_types.auto else self.make_default("ElgblCntrptId")
+		self._ElgblCntrptId = value if value is not None else base_types.UninitialisedField(self, 'ElgblCntrptId', SystemPartyIdentification2Choice, False)
 
 	@ElgblCntrptId.deleter
 	def ElgblCntrptId(self):
 		del self._ElgblCntrptId
-		self._ElgblCntrptId = None
+		self._ElgblCntrptId = base_types.UninitialisedField(self, 'ElgblCntrptId', SystemPartyIdentification2Choice, False)
 
 	@property
 	def ElgbltyId(self):
@@ -29,12 +29,12 @@ class EligibleCounterpart3(base_types._BaseFieldType):
 
 	@ElgbltyId.setter
 	def ElgbltyId(self, value):
-		self._ElgbltyId = value if type(value) != base_types.auto else self.make_default("ElgbltyId")
+		self._ElgbltyId = value if value is not None else base_types.UninitialisedField(self, 'ElgbltyId', EligibilityIdentification3Choice, False)
 
 	@ElgbltyId.deleter
 	def ElgbltyId(self):
 		del self._ElgbltyId
-		self._ElgbltyId = None
+		self._ElgbltyId = base_types.UninitialisedField(self, 'ElgbltyId', EligibilityIdentification3Choice, False)
 
 	@property
 	def ElgbltyTp(self):
@@ -42,12 +42,12 @@ class EligibleCounterpart3(base_types._BaseFieldType):
 
 	@ElgbltyTp.setter
 	def ElgbltyTp(self, value):
-		self._ElgbltyTp = value if type(value) != base_types.auto else self.make_default("ElgbltyTp")
+		self._ElgbltyTp = value if value is not None else base_types.UninitialisedField(self, 'ElgbltyTp', EligibilityType1Code, False)
 
 	@ElgbltyTp.deleter
 	def ElgbltyTp(self):
 		del self._ElgbltyTp
-		self._ElgbltyTp = None
+		self._ElgbltyTp = base_types.UninitialisedField(self, 'ElgbltyTp', EligibilityType1Code, False)
 
 	@property
 	def IssrId(self):
@@ -55,12 +55,12 @@ class EligibleCounterpart3(base_types._BaseFieldType):
 
 	@IssrId.setter
 	def IssrId(self, value):
-		self._IssrId = value if type(value) != base_types.auto else self.make_default("IssrId")
+		self._IssrId = value if value is not None else base_types.UninitialisedField(self, 'IssrId', SystemPartyIdentification2Choice, False)
 
 	@IssrId.deleter
 	def IssrId(self):
 		del self._IssrId
-		self._IssrId = None
+		self._IssrId = base_types.UninitialisedField(self, 'IssrId', SystemPartyIdentification2Choice, False)
 
 	@property
 	def VldFr(self):
@@ -68,12 +68,12 @@ class EligibleCounterpart3(base_types._BaseFieldType):
 
 	@VldFr.setter
 	def VldFr(self, value):
-		self._VldFr = value if type(value) != base_types.auto else self.make_default("VldFr")
+		self._VldFr = value if value is not None else base_types.UninitialisedField(self, 'VldFr', ISODate, False)
 
 	@VldFr.deleter
 	def VldFr(self):
 		del self._VldFr
-		self._VldFr = None
+		self._VldFr = base_types.UninitialisedField(self, 'VldFr', ISODate, False)
 
 	@property
 	def VldTo(self):
@@ -81,12 +81,12 @@ class EligibleCounterpart3(base_types._BaseFieldType):
 
 	@VldTo.setter
 	def VldTo(self, value):
-		self._VldTo = value if type(value) != base_types.auto else self.make_default("VldTo")
+		self._VldTo = value if value is not None else base_types.UninitialisedField(self, 'VldTo', ISODate, False)
 
 	@VldTo.deleter
 	def VldTo(self):
 		del self._VldTo
-		self._VldTo = None
+		self._VldTo = base_types.UninitialisedField(self, 'VldTo', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ElgblCntrptId', type=SystemPartyIdentification2Choice, min=1, max=1, mutex_group=None, array=False),

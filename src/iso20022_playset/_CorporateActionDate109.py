@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateFormat49Choice import DateFormat49Choice
-from ._DateFormat67Choice import DateFormat67Choice
+from . import DateFormat49Choice
+from . import DateFormat67Choice
 
 class CorporateActionDate109(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CorporateActionDate109(base_types._BaseFieldType):
 
 	@CoverXprtnDdln.setter
 	def CoverXprtnDdln(self, value):
-		self._CoverXprtnDdln = value if type(value) != base_types.auto else self.make_default("CoverXprtnDdln")
+		self._CoverXprtnDdln = value if value is not None else base_types.UninitialisedField(self, 'CoverXprtnDdln', DateFormat67Choice, False)
 
 	@CoverXprtnDdln.deleter
 	def CoverXprtnDdln(self):
 		del self._CoverXprtnDdln
-		self._CoverXprtnDdln = None
+		self._CoverXprtnDdln = base_types.UninitialisedField(self, 'CoverXprtnDdln', DateFormat67Choice, False)
 
 	@property
 	def TradgDt(self):
@@ -27,12 +27,12 @@ class CorporateActionDate109(base_types._BaseFieldType):
 
 	@TradgDt.setter
 	def TradgDt(self, value):
-		self._TradgDt = value if type(value) != base_types.auto else self.make_default("TradgDt")
+		self._TradgDt = value if value is not None else base_types.UninitialisedField(self, 'TradgDt', DateFormat49Choice, False)
 
 	@TradgDt.deleter
 	def TradgDt(self):
 		del self._TradgDt
-		self._TradgDt = None
+		self._TradgDt = base_types.UninitialisedField(self, 'TradgDt', DateFormat49Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CoverXprtnDdln', type=DateFormat67Choice, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateFormat42Choice import DateFormat42Choice
-from ._Max35Text import Max35Text
+from . import DateFormat42Choice
+from . import Max35Text
 
 class Series1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Series1(base_types._BaseFieldType):
 
 	@SrsDt.setter
 	def SrsDt(self, value):
-		self._SrsDt = value if type(value) != base_types.auto else self.make_default("SrsDt")
+		self._SrsDt = value if value is not None else base_types.UninitialisedField(self, 'SrsDt', DateFormat42Choice, False)
 
 	@SrsDt.deleter
 	def SrsDt(self):
 		del self._SrsDt
-		self._SrsDt = None
+		self._SrsDt = base_types.UninitialisedField(self, 'SrsDt', DateFormat42Choice, False)
 
 	@property
 	def SrsNm(self):
@@ -27,12 +27,12 @@ class Series1(base_types._BaseFieldType):
 
 	@SrsNm.setter
 	def SrsNm(self, value):
-		self._SrsNm = value if type(value) != base_types.auto else self.make_default("SrsNm")
+		self._SrsNm = value if value is not None else base_types.UninitialisedField(self, 'SrsNm', Max35Text, False)
 
 	@SrsNm.deleter
 	def SrsNm(self):
 		del self._SrsNm
-		self._SrsNm = None
+		self._SrsNm = base_types.UninitialisedField(self, 'SrsNm', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SrsDt', type=DateFormat42Choice, min=0, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ExternalDateFrequency1Code import ExternalDateFrequency1Code
-from ._ISODate import ISODate
-from ._Number import Number
+from . import ExternalDateFrequency1Code
+from . import ISODate
+from . import Number
 
 class DateInformation1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class DateInformation1(base_types._BaseFieldType):
 
 	@Frqcy.setter
 	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
+		self._Frqcy = value if value is not None else base_types.UninitialisedField(self, 'Frqcy', ExternalDateFrequency1Code, False)
 
 	@Frqcy.deleter
 	def Frqcy(self):
 		del self._Frqcy
-		self._Frqcy = None
+		self._Frqcy = base_types.UninitialisedField(self, 'Frqcy', ExternalDateFrequency1Code, False)
 
 	@property
 	def Nb(self):
@@ -28,12 +28,12 @@ class DateInformation1(base_types._BaseFieldType):
 
 	@Nb.setter
 	def Nb(self, value):
-		self._Nb = value if type(value) != base_types.auto else self.make_default("Nb")
+		self._Nb = value if value is not None else base_types.UninitialisedField(self, 'Nb', Number, False)
 
 	@Nb.deleter
 	def Nb(self):
 		del self._Nb
-		self._Nb = None
+		self._Nb = base_types.UninitialisedField(self, 'Nb', Number, False)
 
 	@property
 	def StartDt(self):
@@ -41,12 +41,12 @@ class DateInformation1(base_types._BaseFieldType):
 
 	@StartDt.setter
 	def StartDt(self, value):
-		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
+		self._StartDt = value if value is not None else base_types.UninitialisedField(self, 'StartDt', ISODate, False)
 
 	@StartDt.deleter
 	def StartDt(self):
 		del self._StartDt
-		self._StartDt = None
+		self._StartDt = base_types.UninitialisedField(self, 'StartDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Frqcy', type=ExternalDateFrequency1Code, min=1, max=1, mutex_group=None, array=False),

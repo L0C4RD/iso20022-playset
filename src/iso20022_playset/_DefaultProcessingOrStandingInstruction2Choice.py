@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._YesNoIndicator import YesNoIndicator
+from . import YesNoIndicator
 
 class DefaultProcessingOrStandingInstruction2Choice(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class DefaultProcessingOrStandingInstruction2Choice(base_types._BaseFieldType):
 
 	@DfltOptnInd.setter
 	def DfltOptnInd(self, value):
-		self._DfltOptnInd = value if type(value) != base_types.auto else self.make_default("DfltOptnInd")
+		self._DfltOptnInd = value if value is not None else base_types.UninitialisedField(self, 'DfltOptnInd', YesNoIndicator, False)
 
 	@DfltOptnInd.deleter
 	def DfltOptnInd(self):
 		del self._DfltOptnInd
-		self._DfltOptnInd = None
+		self._DfltOptnInd = base_types.UninitialisedField(self, 'DfltOptnInd', YesNoIndicator, False)
 
 	@property
 	def StgInstrInd(self):
@@ -26,12 +26,12 @@ class DefaultProcessingOrStandingInstruction2Choice(base_types._BaseFieldType):
 
 	@StgInstrInd.setter
 	def StgInstrInd(self, value):
-		self._StgInstrInd = value if type(value) != base_types.auto else self.make_default("StgInstrInd")
+		self._StgInstrInd = value if value is not None else base_types.UninitialisedField(self, 'StgInstrInd', YesNoIndicator, False)
 
 	@StgInstrInd.deleter
 	def StgInstrInd(self):
 		del self._StgInstrInd
-		self._StgInstrInd = None
+		self._StgInstrInd = base_types.UninitialisedField(self, 'StgInstrInd', YesNoIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DfltOptnInd', type=YesNoIndicator, min=0, max=1, mutex_group=1, array=False),

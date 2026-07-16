@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._Charge26 import Charge26
-from ._Commission21 import Commission21
-from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
-from ._InvestmentFundTransactionInType1Choice import InvestmentFundTransactionInType1Choice
-from ._QuantityType1Choice import QuantityType1Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import ActiveCurrencyCode
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import Charge26
+from . import Commission21
+from . import FinancialInstrumentQuantity1
+from . import InvestmentFundTransactionInType1Choice
+from . import QuantityType1Choice
+from . import YesNoIndicator
 
 class FundCashInBreakdown3(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class FundCashInBreakdown3(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def ChrgDtls(self):
@@ -33,12 +33,12 @@ class FundCashInBreakdown3(base_types._BaseFieldType):
 
 	@ChrgDtls.setter
 	def ChrgDtls(self, value):
-		self._ChrgDtls = value if type(value) != base_types.auto else self.make_default("ChrgDtls")
+		self._ChrgDtls = value if value is not None else base_types.UninitialisedField(self, 'ChrgDtls', Charge26, True)
 
 	@ChrgDtls.deleter
 	def ChrgDtls(self):
 		del self._ChrgDtls
-		self._ChrgDtls = None
+		self._ChrgDtls = base_types.UninitialisedField(self, 'ChrgDtls', Charge26, True)
 
 	@property
 	def ComssnDtls(self):
@@ -46,12 +46,12 @@ class FundCashInBreakdown3(base_types._BaseFieldType):
 
 	@ComssnDtls.setter
 	def ComssnDtls(self, value):
-		self._ComssnDtls = value if type(value) != base_types.auto else self.make_default("ComssnDtls")
+		self._ComssnDtls = value if value is not None else base_types.UninitialisedField(self, 'ComssnDtls', Commission21, True)
 
 	@ComssnDtls.deleter
 	def ComssnDtls(self):
 		del self._ComssnDtls
-		self._ComssnDtls = None
+		self._ComssnDtls = base_types.UninitialisedField(self, 'ComssnDtls', Commission21, True)
 
 	@property
 	def InvstmtFndTxInTp(self):
@@ -59,12 +59,12 @@ class FundCashInBreakdown3(base_types._BaseFieldType):
 
 	@InvstmtFndTxInTp.setter
 	def InvstmtFndTxInTp(self, value):
-		self._InvstmtFndTxInTp = value if type(value) != base_types.auto else self.make_default("InvstmtFndTxInTp")
+		self._InvstmtFndTxInTp = value if value is not None else base_types.UninitialisedField(self, 'InvstmtFndTxInTp', InvestmentFundTransactionInType1Choice, False)
 
 	@InvstmtFndTxInTp.deleter
 	def InvstmtFndTxInTp(self):
 		del self._InvstmtFndTxInTp
-		self._InvstmtFndTxInTp = None
+		self._InvstmtFndTxInTp = base_types.UninitialisedField(self, 'InvstmtFndTxInTp', InvestmentFundTransactionInType1Choice, False)
 
 	@property
 	def NewAmtInd(self):
@@ -72,12 +72,12 @@ class FundCashInBreakdown3(base_types._BaseFieldType):
 
 	@NewAmtInd.setter
 	def NewAmtInd(self, value):
-		self._NewAmtInd = value if type(value) != base_types.auto else self.make_default("NewAmtInd")
+		self._NewAmtInd = value if value is not None else base_types.UninitialisedField(self, 'NewAmtInd', YesNoIndicator, False)
 
 	@NewAmtInd.deleter
 	def NewAmtInd(self):
 		del self._NewAmtInd
-		self._NewAmtInd = None
+		self._NewAmtInd = base_types.UninitialisedField(self, 'NewAmtInd', YesNoIndicator, False)
 
 	@property
 	def OrgnlOrdrQtyTp(self):
@@ -85,12 +85,12 @@ class FundCashInBreakdown3(base_types._BaseFieldType):
 
 	@OrgnlOrdrQtyTp.setter
 	def OrgnlOrdrQtyTp(self, value):
-		self._OrgnlOrdrQtyTp = value if type(value) != base_types.auto else self.make_default("OrgnlOrdrQtyTp")
+		self._OrgnlOrdrQtyTp = value if value is not None else base_types.UninitialisedField(self, 'OrgnlOrdrQtyTp', QuantityType1Choice, False)
 
 	@OrgnlOrdrQtyTp.deleter
 	def OrgnlOrdrQtyTp(self):
 		del self._OrgnlOrdrQtyTp
-		self._OrgnlOrdrQtyTp = None
+		self._OrgnlOrdrQtyTp = base_types.UninitialisedField(self, 'OrgnlOrdrQtyTp', QuantityType1Choice, False)
 
 	@property
 	def SttlmCcy(self):
@@ -98,12 +98,12 @@ class FundCashInBreakdown3(base_types._BaseFieldType):
 
 	@SttlmCcy.setter
 	def SttlmCcy(self, value):
-		self._SttlmCcy = value if type(value) != base_types.auto else self.make_default("SttlmCcy")
+		self._SttlmCcy = value if value is not None else base_types.UninitialisedField(self, 'SttlmCcy', ActiveCurrencyCode, False)
 
 	@SttlmCcy.deleter
 	def SttlmCcy(self):
 		del self._SttlmCcy
-		self._SttlmCcy = None
+		self._SttlmCcy = base_types.UninitialisedField(self, 'SttlmCcy', ActiveCurrencyCode, False)
 
 	@property
 	def UnitsNb(self):
@@ -111,12 +111,12 @@ class FundCashInBreakdown3(base_types._BaseFieldType):
 
 	@UnitsNb.setter
 	def UnitsNb(self, value):
-		self._UnitsNb = value if type(value) != base_types.auto else self.make_default("UnitsNb")
+		self._UnitsNb = value if value is not None else base_types.UninitialisedField(self, 'UnitsNb', FinancialInstrumentQuantity1, False)
 
 	@UnitsNb.deleter
 	def UnitsNb(self):
 		del self._UnitsNb
-		self._UnitsNb = None
+		self._UnitsNb = base_types.UninitialisedField(self, 'UnitsNb', FinancialInstrumentQuantity1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

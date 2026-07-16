@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMCustomerProfile2 import ATMCustomerProfile2
-from ._LanguageCode import LanguageCode
-from ._TransactionVerificationResult5 import TransactionVerificationResult5
+from . import ATMCustomerProfile2
+from . import LanguageCode
+from . import TransactionVerificationResult5
 
 class ATMCustomer9(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ATMCustomer9(base_types._BaseFieldType):
 
 	@AuthntcnRslt.setter
 	def AuthntcnRslt(self, value):
-		self._AuthntcnRslt = value if type(value) != base_types.auto else self.make_default("AuthntcnRslt")
+		self._AuthntcnRslt = value if value is not None else base_types.UninitialisedField(self, 'AuthntcnRslt', TransactionVerificationResult5, True)
 
 	@AuthntcnRslt.deleter
 	def AuthntcnRslt(self):
 		del self._AuthntcnRslt
-		self._AuthntcnRslt = None
+		self._AuthntcnRslt = base_types.UninitialisedField(self, 'AuthntcnRslt', TransactionVerificationResult5, True)
 
 	@property
 	def PrefrdLang(self):
@@ -28,12 +28,12 @@ class ATMCustomer9(base_types._BaseFieldType):
 
 	@PrefrdLang.setter
 	def PrefrdLang(self, value):
-		self._PrefrdLang = value if type(value) != base_types.auto else self.make_default("PrefrdLang")
+		self._PrefrdLang = value if value is not None else base_types.UninitialisedField(self, 'PrefrdLang', LanguageCode, False)
 
 	@PrefrdLang.deleter
 	def PrefrdLang(self):
 		del self._PrefrdLang
-		self._PrefrdLang = None
+		self._PrefrdLang = base_types.UninitialisedField(self, 'PrefrdLang', LanguageCode, False)
 
 	@property
 	def Prfl(self):
@@ -41,12 +41,12 @@ class ATMCustomer9(base_types._BaseFieldType):
 
 	@Prfl.setter
 	def Prfl(self, value):
-		self._Prfl = value if type(value) != base_types.auto else self.make_default("Prfl")
+		self._Prfl = value if value is not None else base_types.UninitialisedField(self, 'Prfl', ATMCustomerProfile2, False)
 
 	@Prfl.deleter
 	def Prfl(self):
 		del self._Prfl
-		self._Prfl = None
+		self._Prfl = base_types.UninitialisedField(self, 'Prfl', ATMCustomerProfile2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AuthntcnRslt', type=TransactionVerificationResult5, min=0, max=None, mutex_group=None, array=True),

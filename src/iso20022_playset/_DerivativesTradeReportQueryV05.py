@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PartyIdentification121Choice import PartyIdentification121Choice
-from ._SupplementaryData1 import SupplementaryData1
-from ._TradeReportQuery18Choice import TradeReportQuery18Choice
+from . import PartyIdentification121Choice
+from . import SupplementaryData1
+from . import TradeReportQuery18Choice
 
 class DerivativesTradeReportQueryV05(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class DerivativesTradeReportQueryV05(base_types._BaseFieldType):
 
 	@RqstngAuthrty.setter
 	def RqstngAuthrty(self, value):
-		self._RqstngAuthrty = value if type(value) != base_types.auto else self.make_default("RqstngAuthrty")
+		self._RqstngAuthrty = value if value is not None else base_types.UninitialisedField(self, 'RqstngAuthrty', PartyIdentification121Choice, False)
 
 	@RqstngAuthrty.deleter
 	def RqstngAuthrty(self):
 		del self._RqstngAuthrty
-		self._RqstngAuthrty = None
+		self._RqstngAuthrty = base_types.UninitialisedField(self, 'RqstngAuthrty', PartyIdentification121Choice, False)
 
 	@property
 	def SplmtryData(self):
@@ -28,12 +28,12 @@ class DerivativesTradeReportQueryV05(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TradQryData(self):
@@ -41,12 +41,12 @@ class DerivativesTradeReportQueryV05(base_types._BaseFieldType):
 
 	@TradQryData.setter
 	def TradQryData(self, value):
-		self._TradQryData = value if type(value) != base_types.auto else self.make_default("TradQryData")
+		self._TradQryData = value if value is not None else base_types.UninitialisedField(self, 'TradQryData', TradeReportQuery18Choice, False)
 
 	@TradQryData.deleter
 	def TradQryData(self):
 		del self._TradQryData
-		self._TradQryData = None
+		self._TradQryData = base_types.UninitialisedField(self, 'TradQryData', TradeReportQuery18Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RqstngAuthrty', type=PartyIdentification121Choice, min=1, max=1, mutex_group=None, array=False),

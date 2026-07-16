@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Agreement4 import Agreement4
-from ._Collateral53 import Collateral53
-from ._Obligation11 import Obligation11
-from ._Pagination1 import Pagination1
-from ._ReportParameters6 import ReportParameters6
-from ._SupplementaryData1 import SupplementaryData1
+from . import Agreement4
+from . import Collateral53
+from . import Obligation11
+from . import Pagination1
+from . import ReportParameters6
+from . import SupplementaryData1
 
 class CollateralAndExposureReportV05(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class CollateralAndExposureReportV05(base_types._BaseFieldType):
 
 	@Agrmt.setter
 	def Agrmt(self, value):
-		self._Agrmt = value if type(value) != base_types.auto else self.make_default("Agrmt")
+		self._Agrmt = value if value is not None else base_types.UninitialisedField(self, 'Agrmt', Agreement4, False)
 
 	@Agrmt.deleter
 	def Agrmt(self):
 		del self._Agrmt
-		self._Agrmt = None
+		self._Agrmt = base_types.UninitialisedField(self, 'Agrmt', Agreement4, False)
 
 	@property
 	def CollRpt(self):
@@ -31,12 +31,12 @@ class CollateralAndExposureReportV05(base_types._BaseFieldType):
 
 	@CollRpt.setter
 	def CollRpt(self, value):
-		self._CollRpt = value if type(value) != base_types.auto else self.make_default("CollRpt")
+		self._CollRpt = value if value is not None else base_types.UninitialisedField(self, 'CollRpt', Collateral53, True)
 
 	@CollRpt.deleter
 	def CollRpt(self):
 		del self._CollRpt
-		self._CollRpt = None
+		self._CollRpt = base_types.UninitialisedField(self, 'CollRpt', Collateral53, True)
 
 	@property
 	def Oblgtn(self):
@@ -44,12 +44,12 @@ class CollateralAndExposureReportV05(base_types._BaseFieldType):
 
 	@Oblgtn.setter
 	def Oblgtn(self, value):
-		self._Oblgtn = value if type(value) != base_types.auto else self.make_default("Oblgtn")
+		self._Oblgtn = value if value is not None else base_types.UninitialisedField(self, 'Oblgtn', Obligation11, False)
 
 	@Oblgtn.deleter
 	def Oblgtn(self):
 		del self._Oblgtn
-		self._Oblgtn = None
+		self._Oblgtn = base_types.UninitialisedField(self, 'Oblgtn', Obligation11, False)
 
 	@property
 	def Pgntn(self):
@@ -57,12 +57,12 @@ class CollateralAndExposureReportV05(base_types._BaseFieldType):
 
 	@Pgntn.setter
 	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+		self._Pgntn = value if value is not None else base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@Pgntn.deleter
 	def Pgntn(self):
 		del self._Pgntn
-		self._Pgntn = None
+		self._Pgntn = base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@property
 	def RptParams(self):
@@ -70,12 +70,12 @@ class CollateralAndExposureReportV05(base_types._BaseFieldType):
 
 	@RptParams.setter
 	def RptParams(self, value):
-		self._RptParams = value if type(value) != base_types.auto else self.make_default("RptParams")
+		self._RptParams = value if value is not None else base_types.UninitialisedField(self, 'RptParams', ReportParameters6, False)
 
 	@RptParams.deleter
 	def RptParams(self):
 		del self._RptParams
-		self._RptParams = None
+		self._RptParams = base_types.UninitialisedField(self, 'RptParams', ReportParameters6, False)
 
 	@property
 	def SplmtryData(self):
@@ -83,12 +83,12 @@ class CollateralAndExposureReportV05(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Agrmt', type=Agreement4, min=0, max=1, mutex_group=None, array=False),

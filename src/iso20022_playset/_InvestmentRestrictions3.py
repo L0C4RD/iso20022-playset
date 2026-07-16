@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._DecimalNumber import DecimalNumber
-from ._HoldingTransferable1Code import HoldingTransferable1Code
-from ._Max350Text import Max350Text
-from ._Max70Text import Max70Text
-from ._Number import Number
+from . import ActiveCurrencyAndAmount
+from . import AdditionalInformation15
+from . import DecimalNumber
+from . import HoldingTransferable1Code
+from . import Max350Text
+from . import Max70Text
+from . import Number
 
 class InvestmentRestrictions3(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class InvestmentRestrictions3(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@property
 	def HldgTrfbl(self):
@@ -32,12 +32,12 @@ class InvestmentRestrictions3(base_types._BaseFieldType):
 
 	@HldgTrfbl.setter
 	def HldgTrfbl(self, value):
-		self._HldgTrfbl = value if type(value) != base_types.auto else self.make_default("HldgTrfbl")
+		self._HldgTrfbl = value if value is not None else base_types.UninitialisedField(self, 'HldgTrfbl', HoldingTransferable1Code, False)
 
 	@HldgTrfbl.deleter
 	def HldgTrfbl(self):
 		del self._HldgTrfbl
-		self._HldgTrfbl = None
+		self._HldgTrfbl = base_types.UninitialisedField(self, 'HldgTrfbl', HoldingTransferable1Code, False)
 
 	@property
 	def MaxRedAmt(self):
@@ -45,12 +45,12 @@ class InvestmentRestrictions3(base_types._BaseFieldType):
 
 	@MaxRedAmt.setter
 	def MaxRedAmt(self, value):
-		self._MaxRedAmt = value if type(value) != base_types.auto else self.make_default("MaxRedAmt")
+		self._MaxRedAmt = value if value is not None else base_types.UninitialisedField(self, 'MaxRedAmt', ActiveCurrencyAndAmount, False)
 
 	@MaxRedAmt.deleter
 	def MaxRedAmt(self):
 		del self._MaxRedAmt
-		self._MaxRedAmt = None
+		self._MaxRedAmt = base_types.UninitialisedField(self, 'MaxRedAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def MaxRedUnits(self):
@@ -58,12 +58,12 @@ class InvestmentRestrictions3(base_types._BaseFieldType):
 
 	@MaxRedUnits.setter
 	def MaxRedUnits(self, value):
-		self._MaxRedUnits = value if type(value) != base_types.auto else self.make_default("MaxRedUnits")
+		self._MaxRedUnits = value if value is not None else base_types.UninitialisedField(self, 'MaxRedUnits', DecimalNumber, False)
 
 	@MaxRedUnits.deleter
 	def MaxRedUnits(self):
 		del self._MaxRedUnits
-		self._MaxRedUnits = None
+		self._MaxRedUnits = base_types.UninitialisedField(self, 'MaxRedUnits', DecimalNumber, False)
 
 	@property
 	def MaxSwtchRedAmt(self):
@@ -71,12 +71,12 @@ class InvestmentRestrictions3(base_types._BaseFieldType):
 
 	@MaxSwtchRedAmt.setter
 	def MaxSwtchRedAmt(self, value):
-		self._MaxSwtchRedAmt = value if type(value) != base_types.auto else self.make_default("MaxSwtchRedAmt")
+		self._MaxSwtchRedAmt = value if value is not None else base_types.UninitialisedField(self, 'MaxSwtchRedAmt', ActiveCurrencyAndAmount, False)
 
 	@MaxSwtchRedAmt.deleter
 	def MaxSwtchRedAmt(self):
 		del self._MaxSwtchRedAmt
-		self._MaxSwtchRedAmt = None
+		self._MaxSwtchRedAmt = base_types.UninitialisedField(self, 'MaxSwtchRedAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def MaxSwtchRedUnits(self):
@@ -84,12 +84,12 @@ class InvestmentRestrictions3(base_types._BaseFieldType):
 
 	@MaxSwtchRedUnits.setter
 	def MaxSwtchRedUnits(self, value):
-		self._MaxSwtchRedUnits = value if type(value) != base_types.auto else self.make_default("MaxSwtchRedUnits")
+		self._MaxSwtchRedUnits = value if value is not None else base_types.UninitialisedField(self, 'MaxSwtchRedUnits', DecimalNumber, False)
 
 	@MaxSwtchRedUnits.deleter
 	def MaxSwtchRedUnits(self):
 		del self._MaxSwtchRedUnits
-		self._MaxSwtchRedUnits = None
+		self._MaxSwtchRedUnits = base_types.UninitialisedField(self, 'MaxSwtchRedUnits', DecimalNumber, False)
 
 	@property
 	def MinHldgAmt(self):
@@ -97,12 +97,12 @@ class InvestmentRestrictions3(base_types._BaseFieldType):
 
 	@MinHldgAmt.setter
 	def MinHldgAmt(self, value):
-		self._MinHldgAmt = value if type(value) != base_types.auto else self.make_default("MinHldgAmt")
+		self._MinHldgAmt = value if value is not None else base_types.UninitialisedField(self, 'MinHldgAmt', ActiveCurrencyAndAmount, False)
 
 	@MinHldgAmt.deleter
 	def MinHldgAmt(self):
 		del self._MinHldgAmt
-		self._MinHldgAmt = None
+		self._MinHldgAmt = base_types.UninitialisedField(self, 'MinHldgAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def MinHldgPrd(self):
@@ -110,12 +110,12 @@ class InvestmentRestrictions3(base_types._BaseFieldType):
 
 	@MinHldgPrd.setter
 	def MinHldgPrd(self, value):
-		self._MinHldgPrd = value if type(value) != base_types.auto else self.make_default("MinHldgPrd")
+		self._MinHldgPrd = value if value is not None else base_types.UninitialisedField(self, 'MinHldgPrd', Max70Text, False)
 
 	@MinHldgPrd.deleter
 	def MinHldgPrd(self):
 		del self._MinHldgPrd
-		self._MinHldgPrd = None
+		self._MinHldgPrd = base_types.UninitialisedField(self, 'MinHldgPrd', Max70Text, False)
 
 	@property
 	def MinHldgUnits(self):
@@ -123,12 +123,12 @@ class InvestmentRestrictions3(base_types._BaseFieldType):
 
 	@MinHldgUnits.setter
 	def MinHldgUnits(self, value):
-		self._MinHldgUnits = value if type(value) != base_types.auto else self.make_default("MinHldgUnits")
+		self._MinHldgUnits = value if value is not None else base_types.UninitialisedField(self, 'MinHldgUnits', DecimalNumber, False)
 
 	@MinHldgUnits.deleter
 	def MinHldgUnits(self):
 		del self._MinHldgUnits
-		self._MinHldgUnits = None
+		self._MinHldgUnits = base_types.UninitialisedField(self, 'MinHldgUnits', DecimalNumber, False)
 
 	@property
 	def MinInitlSbcptAmt(self):
@@ -136,12 +136,12 @@ class InvestmentRestrictions3(base_types._BaseFieldType):
 
 	@MinInitlSbcptAmt.setter
 	def MinInitlSbcptAmt(self, value):
-		self._MinInitlSbcptAmt = value if type(value) != base_types.auto else self.make_default("MinInitlSbcptAmt")
+		self._MinInitlSbcptAmt = value if value is not None else base_types.UninitialisedField(self, 'MinInitlSbcptAmt', ActiveCurrencyAndAmount, False)
 
 	@MinInitlSbcptAmt.deleter
 	def MinInitlSbcptAmt(self):
 		del self._MinInitlSbcptAmt
-		self._MinInitlSbcptAmt = None
+		self._MinInitlSbcptAmt = base_types.UninitialisedField(self, 'MinInitlSbcptAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def MinInitlSbcptUnits(self):
@@ -149,12 +149,12 @@ class InvestmentRestrictions3(base_types._BaseFieldType):
 
 	@MinInitlSbcptUnits.setter
 	def MinInitlSbcptUnits(self, value):
-		self._MinInitlSbcptUnits = value if type(value) != base_types.auto else self.make_default("MinInitlSbcptUnits")
+		self._MinInitlSbcptUnits = value if value is not None else base_types.UninitialisedField(self, 'MinInitlSbcptUnits', Number, False)
 
 	@MinInitlSbcptUnits.deleter
 	def MinInitlSbcptUnits(self):
 		del self._MinInitlSbcptUnits
-		self._MinInitlSbcptUnits = None
+		self._MinInitlSbcptUnits = base_types.UninitialisedField(self, 'MinInitlSbcptUnits', Number, False)
 
 	@property
 	def MinRedPctg(self):
@@ -162,12 +162,12 @@ class InvestmentRestrictions3(base_types._BaseFieldType):
 
 	@MinRedPctg.setter
 	def MinRedPctg(self, value):
-		self._MinRedPctg = value if type(value) != base_types.auto else self.make_default("MinRedPctg")
+		self._MinRedPctg = value if value is not None else base_types.UninitialisedField(self, 'MinRedPctg', DecimalNumber, False)
 
 	@MinRedPctg.deleter
 	def MinRedPctg(self):
 		del self._MinRedPctg
-		self._MinRedPctg = None
+		self._MinRedPctg = base_types.UninitialisedField(self, 'MinRedPctg', DecimalNumber, False)
 
 	@property
 	def MinSbsqntSbcptAmt(self):
@@ -175,12 +175,12 @@ class InvestmentRestrictions3(base_types._BaseFieldType):
 
 	@MinSbsqntSbcptAmt.setter
 	def MinSbsqntSbcptAmt(self, value):
-		self._MinSbsqntSbcptAmt = value if type(value) != base_types.auto else self.make_default("MinSbsqntSbcptAmt")
+		self._MinSbsqntSbcptAmt = value if value is not None else base_types.UninitialisedField(self, 'MinSbsqntSbcptAmt', ActiveCurrencyAndAmount, False)
 
 	@MinSbsqntSbcptAmt.deleter
 	def MinSbsqntSbcptAmt(self):
 		del self._MinSbsqntSbcptAmt
-		self._MinSbsqntSbcptAmt = None
+		self._MinSbsqntSbcptAmt = base_types.UninitialisedField(self, 'MinSbsqntSbcptAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def MinSbsqntSbcptUnits(self):
@@ -188,12 +188,12 @@ class InvestmentRestrictions3(base_types._BaseFieldType):
 
 	@MinSbsqntSbcptUnits.setter
 	def MinSbsqntSbcptUnits(self, value):
-		self._MinSbsqntSbcptUnits = value if type(value) != base_types.auto else self.make_default("MinSbsqntSbcptUnits")
+		self._MinSbsqntSbcptUnits = value if value is not None else base_types.UninitialisedField(self, 'MinSbsqntSbcptUnits', Number, False)
 
 	@MinSbsqntSbcptUnits.deleter
 	def MinSbsqntSbcptUnits(self):
 		del self._MinSbsqntSbcptUnits
-		self._MinSbsqntSbcptUnits = None
+		self._MinSbsqntSbcptUnits = base_types.UninitialisedField(self, 'MinSbsqntSbcptUnits', Number, False)
 
 	@property
 	def MinSwtchSbcptAmt(self):
@@ -201,12 +201,12 @@ class InvestmentRestrictions3(base_types._BaseFieldType):
 
 	@MinSwtchSbcptAmt.setter
 	def MinSwtchSbcptAmt(self, value):
-		self._MinSwtchSbcptAmt = value if type(value) != base_types.auto else self.make_default("MinSwtchSbcptAmt")
+		self._MinSwtchSbcptAmt = value if value is not None else base_types.UninitialisedField(self, 'MinSwtchSbcptAmt', ActiveCurrencyAndAmount, False)
 
 	@MinSwtchSbcptAmt.deleter
 	def MinSwtchSbcptAmt(self):
 		del self._MinSwtchSbcptAmt
-		self._MinSwtchSbcptAmt = None
+		self._MinSwtchSbcptAmt = base_types.UninitialisedField(self, 'MinSwtchSbcptAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def MinSwtchSbcptUnits(self):
@@ -214,12 +214,12 @@ class InvestmentRestrictions3(base_types._BaseFieldType):
 
 	@MinSwtchSbcptUnits.setter
 	def MinSwtchSbcptUnits(self, value):
-		self._MinSwtchSbcptUnits = value if type(value) != base_types.auto else self.make_default("MinSwtchSbcptUnits")
+		self._MinSwtchSbcptUnits = value if value is not None else base_types.UninitialisedField(self, 'MinSwtchSbcptUnits', DecimalNumber, False)
 
 	@MinSwtchSbcptUnits.deleter
 	def MinSwtchSbcptUnits(self):
 		del self._MinSwtchSbcptUnits
-		self._MinSwtchSbcptUnits = None
+		self._MinSwtchSbcptUnits = base_types.UninitialisedField(self, 'MinSwtchSbcptUnits', DecimalNumber, False)
 
 	@property
 	def OthrRedRstrctns(self):
@@ -227,12 +227,12 @@ class InvestmentRestrictions3(base_types._BaseFieldType):
 
 	@OthrRedRstrctns.setter
 	def OthrRedRstrctns(self, value):
-		self._OthrRedRstrctns = value if type(value) != base_types.auto else self.make_default("OthrRedRstrctns")
+		self._OthrRedRstrctns = value if value is not None else base_types.UninitialisedField(self, 'OthrRedRstrctns', Max350Text, False)
 
 	@OthrRedRstrctns.deleter
 	def OthrRedRstrctns(self):
 		del self._OthrRedRstrctns
-		self._OthrRedRstrctns = None
+		self._OthrRedRstrctns = base_types.UninitialisedField(self, 'OthrRedRstrctns', Max350Text, False)
 
 	@property
 	def OthrSwtchRstrctns(self):
@@ -240,12 +240,12 @@ class InvestmentRestrictions3(base_types._BaseFieldType):
 
 	@OthrSwtchRstrctns.setter
 	def OthrSwtchRstrctns(self, value):
-		self._OthrSwtchRstrctns = value if type(value) != base_types.auto else self.make_default("OthrSwtchRstrctns")
+		self._OthrSwtchRstrctns = value if value is not None else base_types.UninitialisedField(self, 'OthrSwtchRstrctns', Max350Text, False)
 
 	@OthrSwtchRstrctns.deleter
 	def OthrSwtchRstrctns(self):
 		del self._OthrSwtchRstrctns
-		self._OthrSwtchRstrctns = None
+		self._OthrSwtchRstrctns = base_types.UninitialisedField(self, 'OthrSwtchRstrctns', Max350Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),

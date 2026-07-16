@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection53 import AmountAndDirection53
-from ._InterestRate27Choice import InterestRate27Choice
+from . import AmountAndDirection53
+from . import InterestRate27Choice
 
 class InterestRate6(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class InterestRate6(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', AmountAndDirection53, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', AmountAndDirection53, False)
 
 	@property
 	def IntrstRate(self):
@@ -27,12 +27,12 @@ class InterestRate6(base_types._BaseFieldType):
 
 	@IntrstRate.setter
 	def IntrstRate(self, value):
-		self._IntrstRate = value if type(value) != base_types.auto else self.make_default("IntrstRate")
+		self._IntrstRate = value if value is not None else base_types.UninitialisedField(self, 'IntrstRate', InterestRate27Choice, False)
 
 	@IntrstRate.deleter
 	def IntrstRate(self):
 		del self._IntrstRate
-		self._IntrstRate = None
+		self._IntrstRate = base_types.UninitialisedField(self, 'IntrstRate', InterestRate27Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=AmountAndDirection53, min=1, max=1, mutex_group=None, array=False),

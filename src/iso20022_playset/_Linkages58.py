@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DocumentNumber5Choice import DocumentNumber5Choice
-from ._References70Choice import References70Choice
+from . import DocumentNumber5Choice
+from . import References70Choice
 
 class Linkages58(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Linkages58(base_types._BaseFieldType):
 
 	@MsgNb.setter
 	def MsgNb(self, value):
-		self._MsgNb = value if type(value) != base_types.auto else self.make_default("MsgNb")
+		self._MsgNb = value if value is not None else base_types.UninitialisedField(self, 'MsgNb', DocumentNumber5Choice, False)
 
 	@MsgNb.deleter
 	def MsgNb(self):
 		del self._MsgNb
-		self._MsgNb = None
+		self._MsgNb = base_types.UninitialisedField(self, 'MsgNb', DocumentNumber5Choice, False)
 
 	@property
 	def Refs(self):
@@ -27,12 +27,12 @@ class Linkages58(base_types._BaseFieldType):
 
 	@Refs.setter
 	def Refs(self, value):
-		self._Refs = value if type(value) != base_types.auto else self.make_default("Refs")
+		self._Refs = value if value is not None else base_types.UninitialisedField(self, 'Refs', References70Choice, False)
 
 	@Refs.deleter
 	def Refs(self):
 		del self._Refs
-		self._Refs = None
+		self._Refs = base_types.UninitialisedField(self, 'Refs', References70Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgNb', type=DocumentNumber5Choice, min=0, max=1, mutex_group=None, array=False),

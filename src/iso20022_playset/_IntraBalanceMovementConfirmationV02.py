@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalParameters16 import AdditionalParameters16
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CashAccount40 import CashAccount40
-from ._DocumentIdentification51 import DocumentIdentification51
-from ._IntraBalance6 import IntraBalance6
-from ._SupplementaryData1 import SupplementaryData1
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
+from . import AdditionalParameters16
+from . import BranchAndFinancialInstitutionIdentification8
+from . import CashAccount40
+from . import DocumentIdentification51
+from . import IntraBalance6
+from . import SupplementaryData1
+from . import SystemPartyIdentification8
 
 class IntraBalanceMovementConfirmationV02(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class IntraBalanceMovementConfirmationV02(base_types._BaseFieldType):
 
 	@AddtlParams.setter
 	def AddtlParams(self, value):
-		self._AddtlParams = value if type(value) != base_types.auto else self.make_default("AddtlParams")
+		self._AddtlParams = value if value is not None else base_types.UninitialisedField(self, 'AddtlParams', AdditionalParameters16, False)
 
 	@AddtlParams.deleter
 	def AddtlParams(self):
 		del self._AddtlParams
-		self._AddtlParams = None
+		self._AddtlParams = base_types.UninitialisedField(self, 'AddtlParams', AdditionalParameters16, False)
 
 	@property
 	def CshAcct(self):
@@ -32,12 +32,12 @@ class IntraBalanceMovementConfirmationV02(base_types._BaseFieldType):
 
 	@CshAcct.setter
 	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != base_types.auto else self.make_default("CshAcct")
+		self._CshAcct = value if value is not None else base_types.UninitialisedField(self, 'CshAcct', CashAccount40, False)
 
 	@CshAcct.deleter
 	def CshAcct(self):
 		del self._CshAcct
-		self._CshAcct = None
+		self._CshAcct = base_types.UninitialisedField(self, 'CshAcct', CashAccount40, False)
 
 	@property
 	def CshAcctOwnr(self):
@@ -45,12 +45,12 @@ class IntraBalanceMovementConfirmationV02(base_types._BaseFieldType):
 
 	@CshAcctOwnr.setter
 	def CshAcctOwnr(self, value):
-		self._CshAcctOwnr = value if type(value) != base_types.auto else self.make_default("CshAcctOwnr")
+		self._CshAcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'CshAcctOwnr', SystemPartyIdentification8, False)
 
 	@CshAcctOwnr.deleter
 	def CshAcctOwnr(self):
 		del self._CshAcctOwnr
-		self._CshAcctOwnr = None
+		self._CshAcctOwnr = base_types.UninitialisedField(self, 'CshAcctOwnr', SystemPartyIdentification8, False)
 
 	@property
 	def CshAcctSvcr(self):
@@ -58,12 +58,12 @@ class IntraBalanceMovementConfirmationV02(base_types._BaseFieldType):
 
 	@CshAcctSvcr.setter
 	def CshAcctSvcr(self, value):
-		self._CshAcctSvcr = value if type(value) != base_types.auto else self.make_default("CshAcctSvcr")
+		self._CshAcctSvcr = value if value is not None else base_types.UninitialisedField(self, 'CshAcctSvcr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@CshAcctSvcr.deleter
 	def CshAcctSvcr(self):
 		del self._CshAcctSvcr
-		self._CshAcctSvcr = None
+		self._CshAcctSvcr = base_types.UninitialisedField(self, 'CshAcctSvcr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def Id(self):
@@ -71,12 +71,12 @@ class IntraBalanceMovementConfirmationV02(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', DocumentIdentification51, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', DocumentIdentification51, False)
 
 	@property
 	def IntraBal(self):
@@ -84,12 +84,12 @@ class IntraBalanceMovementConfirmationV02(base_types._BaseFieldType):
 
 	@IntraBal.setter
 	def IntraBal(self, value):
-		self._IntraBal = value if type(value) != base_types.auto else self.make_default("IntraBal")
+		self._IntraBal = value if value is not None else base_types.UninitialisedField(self, 'IntraBal', IntraBalance6, False)
 
 	@IntraBal.deleter
 	def IntraBal(self):
 		del self._IntraBal
-		self._IntraBal = None
+		self._IntraBal = base_types.UninitialisedField(self, 'IntraBal', IntraBalance6, False)
 
 	@property
 	def SplmtryData(self):
@@ -97,12 +97,12 @@ class IntraBalanceMovementConfirmationV02(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlParams', type=AdditionalParameters16, min=0, max=1, mutex_group=None, array=False),

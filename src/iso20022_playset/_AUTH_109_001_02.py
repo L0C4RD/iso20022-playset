@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DerivativesTradeMarginDataTransactionStateReportV02 import DerivativesTradeMarginDataTransactionStateReportV02
+from . import DerivativesTradeMarginDataTransactionStateReportV02
 
 class AUTH_109_001_02():
 
@@ -18,12 +18,12 @@ class AUTH_109_001_02():
 
 		@DerivsTradMrgnDataTxStatRpt.setter
 		def DerivsTradMrgnDataTxStatRpt(self, value):
-			self._DerivsTradMrgnDataTxStatRpt = value if type(value) != base_types.auto else self.make_default("DerivsTradMrgnDataTxStatRpt")
+			self._DerivsTradMrgnDataTxStatRpt = value if value is not None else base_types.UninitialisedField(self, 'DerivsTradMrgnDataTxStatRpt', DerivativesTradeMarginDataTransactionStateReportV02, False)
 
 		@DerivsTradMrgnDataTxStatRpt.deleter
 		def DerivsTradMrgnDataTxStatRpt(self):
 			del self._DerivsTradMrgnDataTxStatRpt
-			self._DerivsTradMrgnDataTxStatRpt = None
+			self._DerivsTradMrgnDataTxStatRpt = base_types.UninitialisedField(self, 'DerivsTradMrgnDataTxStatRpt', DerivativesTradeMarginDataTransactionStateReportV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='DerivsTradMrgnDataTxStatRpt', type=DerivativesTradeMarginDataTransactionStateReportV02, min=1, max=1, mutex_group=None, array=False),

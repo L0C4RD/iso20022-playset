@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max210Text import Max210Text
-from ._ReportItem1 import ReportItem1
-from ._ReportItemRejectionReason1Choice import ReportItemRejectionReason1Choice
+from . import Max210Text
+from . import ReportItem1
+from . import ReportItemRejectionReason1Choice
 
 class ReportItemStatus1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ReportItemStatus1(base_types._BaseFieldType):
 
 	@AddtlRsnInf.setter
 	def AddtlRsnInf(self, value):
-		self._AddtlRsnInf = value if type(value) != base_types.auto else self.make_default("AddtlRsnInf")
+		self._AddtlRsnInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlRsnInf', Max210Text, False)
 
 	@AddtlRsnInf.deleter
 	def AddtlRsnInf(self):
 		del self._AddtlRsnInf
-		self._AddtlRsnInf = None
+		self._AddtlRsnInf = base_types.UninitialisedField(self, 'AddtlRsnInf', Max210Text, False)
 
 	@property
 	def RptItm(self):
@@ -28,12 +28,12 @@ class ReportItemStatus1(base_types._BaseFieldType):
 
 	@RptItm.setter
 	def RptItm(self, value):
-		self._RptItm = value if type(value) != base_types.auto else self.make_default("RptItm")
+		self._RptItm = value if value is not None else base_types.UninitialisedField(self, 'RptItm', ReportItem1, True)
 
 	@RptItm.deleter
 	def RptItm(self):
 		del self._RptItm
-		self._RptItm = None
+		self._RptItm = base_types.UninitialisedField(self, 'RptItm', ReportItem1, True)
 
 	@property
 	def Xcptn(self):
@@ -41,12 +41,12 @@ class ReportItemStatus1(base_types._BaseFieldType):
 
 	@Xcptn.setter
 	def Xcptn(self, value):
-		self._Xcptn = value if type(value) != base_types.auto else self.make_default("Xcptn")
+		self._Xcptn = value if value is not None else base_types.UninitialisedField(self, 'Xcptn', ReportItemRejectionReason1Choice, False)
 
 	@Xcptn.deleter
 	def Xcptn(self):
 		del self._Xcptn
-		self._Xcptn = None
+		self._Xcptn = base_types.UninitialisedField(self, 'Xcptn', ReportItemRejectionReason1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlRsnInf', type=Max210Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IntraPositionDetails60 import IntraPositionDetails60
-from ._IntraPositionProcessingStatus11Choice import IntraPositionProcessingStatus11Choice
-from ._Linkages75 import Linkages75
-from ._SettlementStatus34Choice import SettlementStatus34Choice
-from ._SupplementaryData1 import SupplementaryData1
-from ._TransactionIdentifications29 import TransactionIdentifications29
+from . import IntraPositionDetails60
+from . import IntraPositionProcessingStatus11Choice
+from . import Linkages75
+from . import SettlementStatus34Choice
+from . import SupplementaryData1
+from . import TransactionIdentifications29
 
 class IntraPositionMovementStatusAdviceV09(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class IntraPositionMovementStatusAdviceV09(base_types._BaseFieldType):
 
 	@Lkg.setter
 	def Lkg(self, value):
-		self._Lkg = value if type(value) != base_types.auto else self.make_default("Lkg")
+		self._Lkg = value if value is not None else base_types.UninitialisedField(self, 'Lkg', Linkages75, False)
 
 	@Lkg.deleter
 	def Lkg(self):
 		del self._Lkg
-		self._Lkg = None
+		self._Lkg = base_types.UninitialisedField(self, 'Lkg', Linkages75, False)
 
 	@property
 	def PrcgSts(self):
@@ -31,12 +31,12 @@ class IntraPositionMovementStatusAdviceV09(base_types._BaseFieldType):
 
 	@PrcgSts.setter
 	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != base_types.auto else self.make_default("PrcgSts")
+		self._PrcgSts = value if value is not None else base_types.UninitialisedField(self, 'PrcgSts', IntraPositionProcessingStatus11Choice, False)
 
 	@PrcgSts.deleter
 	def PrcgSts(self):
 		del self._PrcgSts
-		self._PrcgSts = None
+		self._PrcgSts = base_types.UninitialisedField(self, 'PrcgSts', IntraPositionProcessingStatus11Choice, False)
 
 	@property
 	def SplmtryData(self):
@@ -44,12 +44,12 @@ class IntraPositionMovementStatusAdviceV09(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def SttlmSts(self):
@@ -57,12 +57,12 @@ class IntraPositionMovementStatusAdviceV09(base_types._BaseFieldType):
 
 	@SttlmSts.setter
 	def SttlmSts(self, value):
-		self._SttlmSts = value if type(value) != base_types.auto else self.make_default("SttlmSts")
+		self._SttlmSts = value if value is not None else base_types.UninitialisedField(self, 'SttlmSts', SettlementStatus34Choice, False)
 
 	@SttlmSts.deleter
 	def SttlmSts(self):
 		del self._SttlmSts
-		self._SttlmSts = None
+		self._SttlmSts = base_types.UninitialisedField(self, 'SttlmSts', SettlementStatus34Choice, False)
 
 	@property
 	def TxDtls(self):
@@ -70,12 +70,12 @@ class IntraPositionMovementStatusAdviceV09(base_types._BaseFieldType):
 
 	@TxDtls.setter
 	def TxDtls(self, value):
-		self._TxDtls = value if type(value) != base_types.auto else self.make_default("TxDtls")
+		self._TxDtls = value if value is not None else base_types.UninitialisedField(self, 'TxDtls', IntraPositionDetails60, False)
 
 	@TxDtls.deleter
 	def TxDtls(self):
 		del self._TxDtls
-		self._TxDtls = None
+		self._TxDtls = base_types.UninitialisedField(self, 'TxDtls', IntraPositionDetails60, False)
 
 	@property
 	def TxId(self):
@@ -83,12 +83,12 @@ class IntraPositionMovementStatusAdviceV09(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', TransactionIdentifications29, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', TransactionIdentifications29, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Lkg', type=Linkages75, min=0, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesStatementQueryV09 import SecuritiesStatementQueryV09
+from . import SecuritiesStatementQueryV09
 
 class SEMT_021_001_09():
 
@@ -18,12 +18,12 @@ class SEMT_021_001_09():
 
 		@SctiesStmtQry.setter
 		def SctiesStmtQry(self, value):
-			self._SctiesStmtQry = value if type(value) != base_types.auto else self.make_default("SctiesStmtQry")
+			self._SctiesStmtQry = value if value is not None else base_types.UninitialisedField(self, 'SctiesStmtQry', SecuritiesStatementQueryV09, False)
 
 		@SctiesStmtQry.deleter
 		def SctiesStmtQry(self):
 			del self._SctiesStmtQry
-			self._SctiesStmtQry = None
+			self._SctiesStmtQry = base_types.UninitialisedField(self, 'SctiesStmtQry', SecuritiesStatementQueryV09, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesStmtQry', type=SecuritiesStatementQueryV09, min=1, max=1, mutex_group=None, array=False),

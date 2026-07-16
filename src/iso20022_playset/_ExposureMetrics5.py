@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection53 import AmountAndDirection53
+from . import AmountAndDirection53
 
 class ExposureMetrics5(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class ExposureMetrics5(base_types._BaseFieldType):
 
 	@CollMktVal.setter
 	def CollMktVal(self, value):
-		self._CollMktVal = value if type(value) != base_types.auto else self.make_default("CollMktVal")
+		self._CollMktVal = value if value is not None else base_types.UninitialisedField(self, 'CollMktVal', AmountAndDirection53, False)
 
 	@CollMktVal.deleter
 	def CollMktVal(self):
 		del self._CollMktVal
-		self._CollMktVal = None
+		self._CollMktVal = base_types.UninitialisedField(self, 'CollMktVal', AmountAndDirection53, False)
 
 	@property
 	def CshCollAmt(self):
@@ -26,12 +26,12 @@ class ExposureMetrics5(base_types._BaseFieldType):
 
 	@CshCollAmt.setter
 	def CshCollAmt(self, value):
-		self._CshCollAmt = value if type(value) != base_types.auto else self.make_default("CshCollAmt")
+		self._CshCollAmt = value if value is not None else base_types.UninitialisedField(self, 'CshCollAmt', AmountAndDirection53, False)
 
 	@CshCollAmt.deleter
 	def CshCollAmt(self):
 		del self._CshCollAmt
-		self._CshCollAmt = None
+		self._CshCollAmt = base_types.UninitialisedField(self, 'CshCollAmt', AmountAndDirection53, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollMktVal', type=AmountAndDirection53, min=0, max=1, mutex_group=None, array=False),

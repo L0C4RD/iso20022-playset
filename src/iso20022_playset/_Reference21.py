@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Max52Text import Max52Text
+from . import Max35Text
+from . import Max52Text
 
 class Reference21(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Reference21(base_types._BaseFieldType):
 
 	@CmonTxId.setter
 	def CmonTxId(self, value):
-		self._CmonTxId = value if type(value) != base_types.auto else self.make_default("CmonTxId")
+		self._CmonTxId = value if value is not None else base_types.UninitialisedField(self, 'CmonTxId', Max52Text, False)
 
 	@CmonTxId.deleter
 	def CmonTxId(self):
 		del self._CmonTxId
-		self._CmonTxId = None
+		self._CmonTxId = base_types.UninitialisedField(self, 'CmonTxId', Max52Text, False)
 
 	@property
 	def RcvrCollCtrctId(self):
@@ -27,12 +27,12 @@ class Reference21(base_types._BaseFieldType):
 
 	@RcvrCollCtrctId.setter
 	def RcvrCollCtrctId(self, value):
-		self._RcvrCollCtrctId = value if type(value) != base_types.auto else self.make_default("RcvrCollCtrctId")
+		self._RcvrCollCtrctId = value if value is not None else base_types.UninitialisedField(self, 'RcvrCollCtrctId', Max35Text, False)
 
 	@RcvrCollCtrctId.deleter
 	def RcvrCollCtrctId(self):
 		del self._RcvrCollCtrctId
-		self._RcvrCollCtrctId = None
+		self._RcvrCollCtrctId = base_types.UninitialisedField(self, 'RcvrCollCtrctId', Max35Text, False)
 
 	@property
 	def RcvrCollTxId(self):
@@ -40,12 +40,12 @@ class Reference21(base_types._BaseFieldType):
 
 	@RcvrCollTxId.setter
 	def RcvrCollTxId(self, value):
-		self._RcvrCollTxId = value if type(value) != base_types.auto else self.make_default("RcvrCollTxId")
+		self._RcvrCollTxId = value if value is not None else base_types.UninitialisedField(self, 'RcvrCollTxId', Max35Text, False)
 
 	@RcvrCollTxId.deleter
 	def RcvrCollTxId(self):
 		del self._RcvrCollTxId
-		self._RcvrCollTxId = None
+		self._RcvrCollTxId = base_types.UninitialisedField(self, 'RcvrCollTxId', Max35Text, False)
 
 	@property
 	def SndrCollCtrctId(self):
@@ -53,12 +53,12 @@ class Reference21(base_types._BaseFieldType):
 
 	@SndrCollCtrctId.setter
 	def SndrCollCtrctId(self, value):
-		self._SndrCollCtrctId = value if type(value) != base_types.auto else self.make_default("SndrCollCtrctId")
+		self._SndrCollCtrctId = value if value is not None else base_types.UninitialisedField(self, 'SndrCollCtrctId', Max35Text, False)
 
 	@SndrCollCtrctId.deleter
 	def SndrCollCtrctId(self):
 		del self._SndrCollCtrctId
-		self._SndrCollCtrctId = None
+		self._SndrCollCtrctId = base_types.UninitialisedField(self, 'SndrCollCtrctId', Max35Text, False)
 
 	@property
 	def SndrCollTxId(self):
@@ -66,12 +66,12 @@ class Reference21(base_types._BaseFieldType):
 
 	@SndrCollTxId.setter
 	def SndrCollTxId(self, value):
-		self._SndrCollTxId = value if type(value) != base_types.auto else self.make_default("SndrCollTxId")
+		self._SndrCollTxId = value if value is not None else base_types.UninitialisedField(self, 'SndrCollTxId', Max35Text, False)
 
 	@SndrCollTxId.deleter
 	def SndrCollTxId(self):
 		del self._SndrCollTxId
-		self._SndrCollTxId = None
+		self._SndrCollTxId = base_types.UninitialisedField(self, 'SndrCollTxId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CmonTxId', type=Max52Text, min=0, max=1, mutex_group=None, array=False),

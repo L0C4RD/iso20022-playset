@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalFeeReconciliation4 import AdditionalFeeReconciliation4
-from ._CreditDebit3Code import CreditDebit3Code
-from ._FinancialReconciliation4 import FinancialReconciliation4
-from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
-from ._ISODate import ISODate
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max35Text import Max35Text
-from ._MessageReconciliation4 import MessageReconciliation4
+from . import AdditionalFeeReconciliation4
+from . import CreditDebit3Code
+from . import FinancialReconciliation4
+from . import ISO3NumericCurrencyCode
+from . import ISODate
+from . import ImpliedCurrencyAndAmount
+from . import Max35Text
+from . import MessageReconciliation4
 
 class TransactionTotals15(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class TransactionTotals15(base_types._BaseFieldType):
 
 	@AddtlFeeRcncltn.setter
 	def AddtlFeeRcncltn(self, value):
-		self._AddtlFeeRcncltn = value if type(value) != base_types.auto else self.make_default("AddtlFeeRcncltn")
+		self._AddtlFeeRcncltn = value if value is not None else base_types.UninitialisedField(self, 'AddtlFeeRcncltn', AdditionalFeeReconciliation4, True)
 
 	@AddtlFeeRcncltn.deleter
 	def AddtlFeeRcncltn(self):
 		del self._AddtlFeeRcncltn
-		self._AddtlFeeRcncltn = None
+		self._AddtlFeeRcncltn = base_types.UninitialisedField(self, 'AddtlFeeRcncltn', AdditionalFeeReconciliation4, True)
 
 	@property
 	def Amt(self):
@@ -33,12 +33,12 @@ class TransactionTotals15(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ImpliedCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def Ccy(self):
@@ -46,12 +46,12 @@ class TransactionTotals15(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ISO3NumericCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ISO3NumericCurrencyCode, False)
 
 	@property
 	def CdtDbt(self):
@@ -59,12 +59,12 @@ class TransactionTotals15(base_types._BaseFieldType):
 
 	@CdtDbt.setter
 	def CdtDbt(self, value):
-		self._CdtDbt = value if type(value) != base_types.auto else self.make_default("CdtDbt")
+		self._CdtDbt = value if value is not None else base_types.UninitialisedField(self, 'CdtDbt', CreditDebit3Code, False)
 
 	@CdtDbt.deleter
 	def CdtDbt(self):
 		del self._CdtDbt
-		self._CdtDbt = None
+		self._CdtDbt = base_types.UninitialisedField(self, 'CdtDbt', CreditDebit3Code, False)
 
 	@property
 	def ChckptRef(self):
@@ -72,12 +72,12 @@ class TransactionTotals15(base_types._BaseFieldType):
 
 	@ChckptRef.setter
 	def ChckptRef(self, value):
-		self._ChckptRef = value if type(value) != base_types.auto else self.make_default("ChckptRef")
+		self._ChckptRef = value if value is not None else base_types.UninitialisedField(self, 'ChckptRef', Max35Text, False)
 
 	@ChckptRef.deleter
 	def ChckptRef(self):
 		del self._ChckptRef
-		self._ChckptRef = None
+		self._ChckptRef = base_types.UninitialisedField(self, 'ChckptRef', Max35Text, False)
 
 	@property
 	def Dt(self):
@@ -85,12 +85,12 @@ class TransactionTotals15(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@property
 	def Fin(self):
@@ -98,12 +98,12 @@ class TransactionTotals15(base_types._BaseFieldType):
 
 	@Fin.setter
 	def Fin(self, value):
-		self._Fin = value if type(value) != base_types.auto else self.make_default("Fin")
+		self._Fin = value if value is not None else base_types.UninitialisedField(self, 'Fin', FinancialReconciliation4, True)
 
 	@Fin.deleter
 	def Fin(self):
 		del self._Fin
-		self._Fin = None
+		self._Fin = base_types.UninitialisedField(self, 'Fin', FinancialReconciliation4, True)
 
 	@property
 	def Id(self):
@@ -111,12 +111,12 @@ class TransactionTotals15(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def Msg(self):
@@ -124,12 +124,12 @@ class TransactionTotals15(base_types._BaseFieldType):
 
 	@Msg.setter
 	def Msg(self, value):
-		self._Msg = value if type(value) != base_types.auto else self.make_default("Msg")
+		self._Msg = value if value is not None else base_types.UninitialisedField(self, 'Msg', MessageReconciliation4, True)
 
 	@Msg.deleter
 	def Msg(self):
 		del self._Msg
-		self._Msg = None
+		self._Msg = base_types.UninitialisedField(self, 'Msg', MessageReconciliation4, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlFeeRcncltn', type=AdditionalFeeReconciliation4, min=0, max=None, mutex_group=None, array=True),

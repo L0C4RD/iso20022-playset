@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NumberAndSumOfTransactions2 import NumberAndSumOfTransactions2
-from ._PaymentCommon6 import PaymentCommon6
-from ._TransactionReport8 import TransactionReport8
+from . import NumberAndSumOfTransactions2
+from . import PaymentCommon6
+from . import TransactionReport8
 
 class Transactions11(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Transactions11(base_types._BaseFieldType):
 
 	@PmtCmonInf.setter
 	def PmtCmonInf(self, value):
-		self._PmtCmonInf = value if type(value) != base_types.auto else self.make_default("PmtCmonInf")
+		self._PmtCmonInf = value if value is not None else base_types.UninitialisedField(self, 'PmtCmonInf', PaymentCommon6, False)
 
 	@PmtCmonInf.deleter
 	def PmtCmonInf(self):
 		del self._PmtCmonInf
-		self._PmtCmonInf = None
+		self._PmtCmonInf = base_types.UninitialisedField(self, 'PmtCmonInf', PaymentCommon6, False)
 
 	@property
 	def TxRpt(self):
@@ -28,12 +28,12 @@ class Transactions11(base_types._BaseFieldType):
 
 	@TxRpt.setter
 	def TxRpt(self, value):
-		self._TxRpt = value if type(value) != base_types.auto else self.make_default("TxRpt")
+		self._TxRpt = value if value is not None else base_types.UninitialisedField(self, 'TxRpt', TransactionReport8, True)
 
 	@TxRpt.deleter
 	def TxRpt(self):
 		del self._TxRpt
-		self._TxRpt = None
+		self._TxRpt = base_types.UninitialisedField(self, 'TxRpt', TransactionReport8, True)
 
 	@property
 	def TxsSummry(self):
@@ -41,12 +41,12 @@ class Transactions11(base_types._BaseFieldType):
 
 	@TxsSummry.setter
 	def TxsSummry(self, value):
-		self._TxsSummry = value if type(value) != base_types.auto else self.make_default("TxsSummry")
+		self._TxsSummry = value if value is not None else base_types.UninitialisedField(self, 'TxsSummry', NumberAndSumOfTransactions2, False)
 
 	@TxsSummry.deleter
 	def TxsSummry(self):
 		del self._TxsSummry
-		self._TxsSummry = None
+		self._TxsSummry = base_types.UninitialisedField(self, 'TxsSummry', NumberAndSumOfTransactions2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PmtCmonInf', type=PaymentCommon6, min=0, max=1, mutex_group=None, array=False),

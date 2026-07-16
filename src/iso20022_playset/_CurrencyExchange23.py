@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._BaseOne18Rate import BaseOne18Rate
-from ._ExchangeRateBasis1Choice import ExchangeRateBasis1Choice
-from ._ISODateTime import ISODateTime
+from . import ActiveOrHistoricCurrencyCode
+from . import BaseOne18Rate
+from . import ExchangeRateBasis1Choice
+from . import ISODateTime
 
 class CurrencyExchange23(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CurrencyExchange23(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveOrHistoricCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def FwdXchgRate(self):
@@ -29,12 +29,12 @@ class CurrencyExchange23(base_types._BaseFieldType):
 
 	@FwdXchgRate.setter
 	def FwdXchgRate(self, value):
-		self._FwdXchgRate = value if type(value) != base_types.auto else self.make_default("FwdXchgRate")
+		self._FwdXchgRate = value if value is not None else base_types.UninitialisedField(self, 'FwdXchgRate', BaseOne18Rate, False)
 
 	@FwdXchgRate.deleter
 	def FwdXchgRate(self):
 		del self._FwdXchgRate
-		self._FwdXchgRate = None
+		self._FwdXchgRate = base_types.UninitialisedField(self, 'FwdXchgRate', BaseOne18Rate, False)
 
 	@property
 	def FxgDt(self):
@@ -42,12 +42,12 @@ class CurrencyExchange23(base_types._BaseFieldType):
 
 	@FxgDt.setter
 	def FxgDt(self, value):
-		self._FxgDt = value if type(value) != base_types.auto else self.make_default("FxgDt")
+		self._FxgDt = value if value is not None else base_types.UninitialisedField(self, 'FxgDt', ISODateTime, False)
 
 	@FxgDt.deleter
 	def FxgDt(self):
 		del self._FxgDt
-		self._FxgDt = None
+		self._FxgDt = base_types.UninitialisedField(self, 'FxgDt', ISODateTime, False)
 
 	@property
 	def XchgRate(self):
@@ -55,12 +55,12 @@ class CurrencyExchange23(base_types._BaseFieldType):
 
 	@XchgRate.setter
 	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != base_types.auto else self.make_default("XchgRate")
+		self._XchgRate = value if value is not None else base_types.UninitialisedField(self, 'XchgRate', BaseOne18Rate, False)
 
 	@XchgRate.deleter
 	def XchgRate(self):
 		del self._XchgRate
-		self._XchgRate = None
+		self._XchgRate = base_types.UninitialisedField(self, 'XchgRate', BaseOne18Rate, False)
 
 	@property
 	def XchgRateBsis(self):
@@ -68,12 +68,12 @@ class CurrencyExchange23(base_types._BaseFieldType):
 
 	@XchgRateBsis.setter
 	def XchgRateBsis(self, value):
-		self._XchgRateBsis = value if type(value) != base_types.auto else self.make_default("XchgRateBsis")
+		self._XchgRateBsis = value if value is not None else base_types.UninitialisedField(self, 'XchgRateBsis', ExchangeRateBasis1Choice, False)
 
 	@XchgRateBsis.deleter
 	def XchgRateBsis(self):
 		del self._XchgRateBsis
-		self._XchgRateBsis = None
+		self._XchgRateBsis = base_types.UninitialisedField(self, 'XchgRateBsis', ExchangeRateBasis1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),

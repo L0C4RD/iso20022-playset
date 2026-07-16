@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MessageHeader1 import MessageHeader1
-from ._Reservation4 import Reservation4
-from ._ReservationIdentification4 import ReservationIdentification4
-from ._SupplementaryData1 import SupplementaryData1
+from . import MessageHeader1
+from . import Reservation4
+from . import ReservationIdentification4
+from . import SupplementaryData1
 
 class CreateReservationV03(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CreateReservationV03(base_types._BaseFieldType):
 
 	@MsgHdr.setter
 	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
+		self._MsgHdr = value if value is not None else base_types.UninitialisedField(self, 'MsgHdr', MessageHeader1, False)
 
 	@MsgHdr.deleter
 	def MsgHdr(self):
 		del self._MsgHdr
-		self._MsgHdr = None
+		self._MsgHdr = base_types.UninitialisedField(self, 'MsgHdr', MessageHeader1, False)
 
 	@property
 	def RsvatnId(self):
@@ -29,12 +29,12 @@ class CreateReservationV03(base_types._BaseFieldType):
 
 	@RsvatnId.setter
 	def RsvatnId(self, value):
-		self._RsvatnId = value if type(value) != base_types.auto else self.make_default("RsvatnId")
+		self._RsvatnId = value if value is not None else base_types.UninitialisedField(self, 'RsvatnId', ReservationIdentification4, False)
 
 	@RsvatnId.deleter
 	def RsvatnId(self):
 		del self._RsvatnId
-		self._RsvatnId = None
+		self._RsvatnId = base_types.UninitialisedField(self, 'RsvatnId', ReservationIdentification4, False)
 
 	@property
 	def SplmtryData(self):
@@ -42,12 +42,12 @@ class CreateReservationV03(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def ValSet(self):
@@ -55,12 +55,12 @@ class CreateReservationV03(base_types._BaseFieldType):
 
 	@ValSet.setter
 	def ValSet(self, value):
-		self._ValSet = value if type(value) != base_types.auto else self.make_default("ValSet")
+		self._ValSet = value if value is not None else base_types.UninitialisedField(self, 'ValSet', Reservation4, False)
 
 	@ValSet.deleter
 	def ValSet(self):
 		del self._ValSet
-		self._ValSet = None
+		self._ValSet = base_types.UninitialisedField(self, 'ValSet', Reservation4, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=1, max=1, mutex_group=None, array=False),

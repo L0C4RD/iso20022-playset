@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection6 import AmountAndDirection6
+from . import AmountAndDirection6
 
 class TotalValueInPageAndStatement2(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class TotalValueInPageAndStatement2(base_types._BaseFieldType):
 
 	@TtlBookValOfStmt.setter
 	def TtlBookValOfStmt(self, value):
-		self._TtlBookValOfStmt = value if type(value) != base_types.auto else self.make_default("TtlBookValOfStmt")
+		self._TtlBookValOfStmt = value if value is not None else base_types.UninitialisedField(self, 'TtlBookValOfStmt', AmountAndDirection6, False)
 
 	@TtlBookValOfStmt.deleter
 	def TtlBookValOfStmt(self):
 		del self._TtlBookValOfStmt
-		self._TtlBookValOfStmt = None
+		self._TtlBookValOfStmt = base_types.UninitialisedField(self, 'TtlBookValOfStmt', AmountAndDirection6, False)
 
 	@property
 	def TtlHldgsValOfPg(self):
@@ -26,12 +26,12 @@ class TotalValueInPageAndStatement2(base_types._BaseFieldType):
 
 	@TtlHldgsValOfPg.setter
 	def TtlHldgsValOfPg(self, value):
-		self._TtlHldgsValOfPg = value if type(value) != base_types.auto else self.make_default("TtlHldgsValOfPg")
+		self._TtlHldgsValOfPg = value if value is not None else base_types.UninitialisedField(self, 'TtlHldgsValOfPg', AmountAndDirection6, False)
 
 	@TtlHldgsValOfPg.deleter
 	def TtlHldgsValOfPg(self):
 		del self._TtlHldgsValOfPg
-		self._TtlHldgsValOfPg = None
+		self._TtlHldgsValOfPg = base_types.UninitialisedField(self, 'TtlHldgsValOfPg', AmountAndDirection6, False)
 
 	@property
 	def TtlHldgsValOfStmt(self):
@@ -39,12 +39,12 @@ class TotalValueInPageAndStatement2(base_types._BaseFieldType):
 
 	@TtlHldgsValOfStmt.setter
 	def TtlHldgsValOfStmt(self, value):
-		self._TtlHldgsValOfStmt = value if type(value) != base_types.auto else self.make_default("TtlHldgsValOfStmt")
+		self._TtlHldgsValOfStmt = value if value is not None else base_types.UninitialisedField(self, 'TtlHldgsValOfStmt', AmountAndDirection6, False)
 
 	@TtlHldgsValOfStmt.deleter
 	def TtlHldgsValOfStmt(self):
 		del self._TtlHldgsValOfStmt
-		self._TtlHldgsValOfStmt = None
+		self._TtlHldgsValOfStmt = base_types.UninitialisedField(self, 'TtlHldgsValOfStmt', AmountAndDirection6, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TtlBookValOfStmt', type=AmountAndDirection6, min=0, max=1, mutex_group=None, array=False),

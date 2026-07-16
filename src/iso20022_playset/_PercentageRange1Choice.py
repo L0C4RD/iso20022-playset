@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FromToPercentageRange1 import FromToPercentageRange1
-from ._PercentageRangeBoundary1 import PercentageRangeBoundary1
-from ._PercentageRate import PercentageRate
+from . import FromToPercentageRange1
+from . import PercentageRangeBoundary1
+from . import PercentageRate
 
 class PercentageRange1Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PercentageRange1Choice(base_types._BaseFieldType):
 
 	@EQ.setter
 	def EQ(self, value):
-		self._EQ = value if type(value) != base_types.auto else self.make_default("EQ")
+		self._EQ = value if value is not None else base_types.UninitialisedField(self, 'EQ', PercentageRate, False)
 
 	@EQ.deleter
 	def EQ(self):
 		del self._EQ
-		self._EQ = None
+		self._EQ = base_types.UninitialisedField(self, 'EQ', PercentageRate, False)
 
 	@property
 	def Fr(self):
@@ -28,12 +28,12 @@ class PercentageRange1Choice(base_types._BaseFieldType):
 
 	@Fr.setter
 	def Fr(self, value):
-		self._Fr = value if type(value) != base_types.auto else self.make_default("Fr")
+		self._Fr = value if value is not None else base_types.UninitialisedField(self, 'Fr', PercentageRangeBoundary1, False)
 
 	@Fr.deleter
 	def Fr(self):
 		del self._Fr
-		self._Fr = None
+		self._Fr = base_types.UninitialisedField(self, 'Fr', PercentageRangeBoundary1, False)
 
 	@property
 	def FrTo(self):
@@ -41,12 +41,12 @@ class PercentageRange1Choice(base_types._BaseFieldType):
 
 	@FrTo.setter
 	def FrTo(self, value):
-		self._FrTo = value if type(value) != base_types.auto else self.make_default("FrTo")
+		self._FrTo = value if value is not None else base_types.UninitialisedField(self, 'FrTo', FromToPercentageRange1, False)
 
 	@FrTo.deleter
 	def FrTo(self):
 		del self._FrTo
-		self._FrTo = None
+		self._FrTo = base_types.UninitialisedField(self, 'FrTo', FromToPercentageRange1, False)
 
 	@property
 	def NEQ(self):
@@ -54,12 +54,12 @@ class PercentageRange1Choice(base_types._BaseFieldType):
 
 	@NEQ.setter
 	def NEQ(self, value):
-		self._NEQ = value if type(value) != base_types.auto else self.make_default("NEQ")
+		self._NEQ = value if value is not None else base_types.UninitialisedField(self, 'NEQ', PercentageRate, False)
 
 	@NEQ.deleter
 	def NEQ(self):
 		del self._NEQ
-		self._NEQ = None
+		self._NEQ = base_types.UninitialisedField(self, 'NEQ', PercentageRate, False)
 
 	@property
 	def To(self):
@@ -67,12 +67,12 @@ class PercentageRange1Choice(base_types._BaseFieldType):
 
 	@To.setter
 	def To(self, value):
-		self._To = value if type(value) != base_types.auto else self.make_default("To")
+		self._To = value if value is not None else base_types.UninitialisedField(self, 'To', PercentageRangeBoundary1, False)
 
 	@To.deleter
 	def To(self):
 		del self._To
-		self._To = None
+		self._To = base_types.UninitialisedField(self, 'To', PercentageRangeBoundary1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EQ', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),

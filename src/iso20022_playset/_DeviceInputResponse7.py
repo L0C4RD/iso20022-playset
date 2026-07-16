@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InputResult6 import InputResult6
-from ._OutputResult3 import OutputResult3
+from . import InputResult6
+from . import OutputResult3
 
 class DeviceInputResponse7(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DeviceInputResponse7(base_types._BaseFieldType):
 
 	@InptRslt.setter
 	def InptRslt(self, value):
-		self._InptRslt = value if type(value) != base_types.auto else self.make_default("InptRslt")
+		self._InptRslt = value if value is not None else base_types.UninitialisedField(self, 'InptRslt', InputResult6, False)
 
 	@InptRslt.deleter
 	def InptRslt(self):
 		del self._InptRslt
-		self._InptRslt = None
+		self._InptRslt = base_types.UninitialisedField(self, 'InptRslt', InputResult6, False)
 
 	@property
 	def OutptRslt(self):
@@ -27,12 +27,12 @@ class DeviceInputResponse7(base_types._BaseFieldType):
 
 	@OutptRslt.setter
 	def OutptRslt(self, value):
-		self._OutptRslt = value if type(value) != base_types.auto else self.make_default("OutptRslt")
+		self._OutptRslt = value if value is not None else base_types.UninitialisedField(self, 'OutptRslt', OutputResult3, False)
 
 	@OutptRslt.deleter
 	def OutptRslt(self):
 		del self._OutptRslt
-		self._OutptRslt = None
+		self._OutptRslt = base_types.UninitialisedField(self, 'OutptRslt', OutputResult3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InptRslt', type=InputResult6, min=1, max=1, mutex_group=None, array=False),

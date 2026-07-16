@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AuthorityRequestType1 import AuthorityRequestType1
-from ._Max500Text import Max500Text
-from ._Min8Max28NumericText import Min8Max28NumericText
+from . import AuthorityRequestType1
+from . import Max500Text
+from . import Min8Max28NumericText
 
 class PaymentInstrumentType1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PaymentInstrumentType1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max500Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max500Text, False)
 
 	@property
 	def AuthrtyReqTp(self):
@@ -28,12 +28,12 @@ class PaymentInstrumentType1(base_types._BaseFieldType):
 
 	@AuthrtyReqTp.setter
 	def AuthrtyReqTp(self, value):
-		self._AuthrtyReqTp = value if type(value) != base_types.auto else self.make_default("AuthrtyReqTp")
+		self._AuthrtyReqTp = value if value is not None else base_types.UninitialisedField(self, 'AuthrtyReqTp', AuthorityRequestType1, True)
 
 	@AuthrtyReqTp.deleter
 	def AuthrtyReqTp(self):
 		del self._AuthrtyReqTp
-		self._AuthrtyReqTp = None
+		self._AuthrtyReqTp = base_types.UninitialisedField(self, 'AuthrtyReqTp', AuthorityRequestType1, True)
 
 	@property
 	def CardNb(self):
@@ -41,12 +41,12 @@ class PaymentInstrumentType1(base_types._BaseFieldType):
 
 	@CardNb.setter
 	def CardNb(self, value):
-		self._CardNb = value if type(value) != base_types.auto else self.make_default("CardNb")
+		self._CardNb = value if value is not None else base_types.UninitialisedField(self, 'CardNb', Min8Max28NumericText, False)
 
 	@CardNb.deleter
 	def CardNb(self):
 		del self._CardNb
-		self._CardNb = None
+		self._CardNb = base_types.UninitialisedField(self, 'CardNb', Min8Max28NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),

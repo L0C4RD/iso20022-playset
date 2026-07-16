@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import DateAndDateTime2Choice
+from . import TrueFalseIndicator
 
 class Visibilty1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Visibilty1(base_types._BaseFieldType):
 
 	@EndDt.setter
 	def EndDt(self, value):
-		self._EndDt = value if type(value) != base_types.auto else self.make_default("EndDt")
+		self._EndDt = value if value is not None else base_types.UninitialisedField(self, 'EndDt', DateAndDateTime2Choice, False)
 
 	@EndDt.deleter
 	def EndDt(self):
 		del self._EndDt
-		self._EndDt = None
+		self._EndDt = base_types.UninitialisedField(self, 'EndDt', DateAndDateTime2Choice, False)
 
 	@property
 	def LtdVsblty(self):
@@ -27,12 +27,12 @@ class Visibilty1(base_types._BaseFieldType):
 
 	@LtdVsblty.setter
 	def LtdVsblty(self, value):
-		self._LtdVsblty = value if type(value) != base_types.auto else self.make_default("LtdVsblty")
+		self._LtdVsblty = value if value is not None else base_types.UninitialisedField(self, 'LtdVsblty', TrueFalseIndicator, False)
 
 	@LtdVsblty.deleter
 	def LtdVsblty(self):
 		del self._LtdVsblty
-		self._LtdVsblty = None
+		self._LtdVsblty = base_types.UninitialisedField(self, 'LtdVsblty', TrueFalseIndicator, False)
 
 	@property
 	def StartDt(self):
@@ -40,12 +40,12 @@ class Visibilty1(base_types._BaseFieldType):
 
 	@StartDt.setter
 	def StartDt(self, value):
-		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
+		self._StartDt = value if value is not None else base_types.UninitialisedField(self, 'StartDt', DateAndDateTime2Choice, False)
 
 	@StartDt.deleter
 	def StartDt(self):
 		del self._StartDt
-		self._StartDt = None
+		self._StartDt = base_types.UninitialisedField(self, 'StartDt', DateAndDateTime2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EndDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),

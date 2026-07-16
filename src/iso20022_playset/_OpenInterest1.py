@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
-from ._PositiveNumber import PositiveNumber
+from . import ActiveCurrencyAnd24Amount
+from . import PositiveNumber
 
 class OpenInterest1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class OpenInterest1(base_types._BaseFieldType):
 
 	@GrssNtnlAmt.setter
 	def GrssNtnlAmt(self, value):
-		self._GrssNtnlAmt = value if type(value) != base_types.auto else self.make_default("GrssNtnlAmt")
+		self._GrssNtnlAmt = value if value is not None else base_types.UninitialisedField(self, 'GrssNtnlAmt', ActiveCurrencyAnd24Amount, False)
 
 	@GrssNtnlAmt.deleter
 	def GrssNtnlAmt(self):
 		del self._GrssNtnlAmt
-		self._GrssNtnlAmt = None
+		self._GrssNtnlAmt = base_types.UninitialisedField(self, 'GrssNtnlAmt', ActiveCurrencyAnd24Amount, False)
 
 	@property
 	def NbOfLots(self):
@@ -27,12 +27,12 @@ class OpenInterest1(base_types._BaseFieldType):
 
 	@NbOfLots.setter
 	def NbOfLots(self, value):
-		self._NbOfLots = value if type(value) != base_types.auto else self.make_default("NbOfLots")
+		self._NbOfLots = value if value is not None else base_types.UninitialisedField(self, 'NbOfLots', PositiveNumber, False)
 
 	@NbOfLots.deleter
 	def NbOfLots(self):
 		del self._NbOfLots
-		self._NbOfLots = None
+		self._NbOfLots = base_types.UninitialisedField(self, 'NbOfLots', PositiveNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='GrssNtnlAmt', type=ActiveCurrencyAnd24Amount, min=1, max=1, mutex_group=None, array=False),

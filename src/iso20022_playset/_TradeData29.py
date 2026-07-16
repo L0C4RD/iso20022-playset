@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DetailedReportStatistics5 import DetailedReportStatistics5
-from ._DetailedTransactionStatistics2Choice import DetailedTransactionStatistics2Choice
-from ._SupplementaryData1 import SupplementaryData1
+from . import DetailedReportStatistics5
+from . import DetailedTransactionStatistics2Choice
+from . import SupplementaryData1
 
 class TradeData29(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TradeData29(base_types._BaseFieldType):
 
 	@RptSttstcs.setter
 	def RptSttstcs(self, value):
-		self._RptSttstcs = value if type(value) != base_types.auto else self.make_default("RptSttstcs")
+		self._RptSttstcs = value if value is not None else base_types.UninitialisedField(self, 'RptSttstcs', DetailedReportStatistics5, True)
 
 	@RptSttstcs.deleter
 	def RptSttstcs(self):
 		del self._RptSttstcs
-		self._RptSttstcs = None
+		self._RptSttstcs = base_types.UninitialisedField(self, 'RptSttstcs', DetailedReportStatistics5, True)
 
 	@property
 	def SplmtryData(self):
@@ -28,12 +28,12 @@ class TradeData29(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TxSttstcs(self):
@@ -41,12 +41,12 @@ class TradeData29(base_types._BaseFieldType):
 
 	@TxSttstcs.setter
 	def TxSttstcs(self, value):
-		self._TxSttstcs = value if type(value) != base_types.auto else self.make_default("TxSttstcs")
+		self._TxSttstcs = value if value is not None else base_types.UninitialisedField(self, 'TxSttstcs', DetailedTransactionStatistics2Choice, True)
 
 	@TxSttstcs.deleter
 	def TxSttstcs(self):
 		del self._TxSttstcs
-		self._TxSttstcs = None
+		self._TxSttstcs = base_types.UninitialisedField(self, 'TxSttstcs', DetailedTransactionStatistics2Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RptSttstcs', type=DetailedReportStatistics5, min=1, max=None, mutex_group=None, array=True),

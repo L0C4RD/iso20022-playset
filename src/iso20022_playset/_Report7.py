@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PartyIdentificationAndAccount227 import PartyIdentificationAndAccount227
-from ._SettlementObligation9 import SettlementObligation9
+from . import PartyIdentificationAndAccount227
+from . import SettlementObligation9
 
 class Report7(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Report7(base_types._BaseFieldType):
 
 	@NonClrMmb.setter
 	def NonClrMmb(self, value):
-		self._NonClrMmb = value if type(value) != base_types.auto else self.make_default("NonClrMmb")
+		self._NonClrMmb = value if value is not None else base_types.UninitialisedField(self, 'NonClrMmb', PartyIdentificationAndAccount227, True)
 
 	@NonClrMmb.deleter
 	def NonClrMmb(self):
 		del self._NonClrMmb
-		self._NonClrMmb = None
+		self._NonClrMmb = base_types.UninitialisedField(self, 'NonClrMmb', PartyIdentificationAndAccount227, True)
 
 	@property
 	def SttlmOblgtnDtls(self):
@@ -27,12 +27,12 @@ class Report7(base_types._BaseFieldType):
 
 	@SttlmOblgtnDtls.setter
 	def SttlmOblgtnDtls(self, value):
-		self._SttlmOblgtnDtls = value if type(value) != base_types.auto else self.make_default("SttlmOblgtnDtls")
+		self._SttlmOblgtnDtls = value if value is not None else base_types.UninitialisedField(self, 'SttlmOblgtnDtls', SettlementObligation9, True)
 
 	@SttlmOblgtnDtls.deleter
 	def SttlmOblgtnDtls(self):
 		del self._SttlmOblgtnDtls
-		self._SttlmOblgtnDtls = None
+		self._SttlmOblgtnDtls = base_types.UninitialisedField(self, 'SttlmOblgtnDtls', SettlementObligation9, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NonClrMmb', type=PartyIdentificationAndAccount227, min=0, max=None, mutex_group=None, array=True),

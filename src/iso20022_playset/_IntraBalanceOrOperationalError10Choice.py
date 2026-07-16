@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ErrorHandling5 import ErrorHandling5
-from ._IntraBalanceCancellation7 import IntraBalanceCancellation7
+from . import ErrorHandling5
+from . import IntraBalanceCancellation7
 
 class IntraBalanceOrOperationalError10Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class IntraBalanceOrOperationalError10Choice(base_types._BaseFieldType):
 
 	@Cxls.setter
 	def Cxls(self, value):
-		self._Cxls = value if type(value) != base_types.auto else self.make_default("Cxls")
+		self._Cxls = value if value is not None else base_types.UninitialisedField(self, 'Cxls', IntraBalanceCancellation7, True)
 
 	@Cxls.deleter
 	def Cxls(self):
 		del self._Cxls
-		self._Cxls = None
+		self._Cxls = base_types.UninitialisedField(self, 'Cxls', IntraBalanceCancellation7, True)
 
 	@property
 	def OprlErr(self):
@@ -27,12 +27,12 @@ class IntraBalanceOrOperationalError10Choice(base_types._BaseFieldType):
 
 	@OprlErr.setter
 	def OprlErr(self, value):
-		self._OprlErr = value if type(value) != base_types.auto else self.make_default("OprlErr")
+		self._OprlErr = value if value is not None else base_types.UninitialisedField(self, 'OprlErr', ErrorHandling5, True)
 
 	@OprlErr.deleter
 	def OprlErr(self):
 		del self._OprlErr
-		self._OprlErr = None
+		self._OprlErr = base_types.UninitialisedField(self, 'OprlErr', ErrorHandling5, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cxls', type=IntraBalanceCancellation7, min=1, max=None, mutex_group=1, array=True),

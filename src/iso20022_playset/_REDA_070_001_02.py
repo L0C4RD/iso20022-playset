@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RequestToPayDebtorActivationRequestV02 import RequestToPayDebtorActivationRequestV02
+from . import RequestToPayDebtorActivationRequestV02
 
 class REDA_070_001_02():
 
@@ -18,12 +18,12 @@ class REDA_070_001_02():
 
 		@ReqToPayDbtrActvtnReq.setter
 		def ReqToPayDbtrActvtnReq(self, value):
-			self._ReqToPayDbtrActvtnReq = value if type(value) != base_types.auto else self.make_default("ReqToPayDbtrActvtnReq")
+			self._ReqToPayDbtrActvtnReq = value if value is not None else base_types.UninitialisedField(self, 'ReqToPayDbtrActvtnReq', RequestToPayDebtorActivationRequestV02, False)
 
 		@ReqToPayDbtrActvtnReq.deleter
 		def ReqToPayDbtrActvtnReq(self):
 			del self._ReqToPayDbtrActvtnReq
-			self._ReqToPayDbtrActvtnReq = None
+			self._ReqToPayDbtrActvtnReq = base_types.UninitialisedField(self, 'ReqToPayDbtrActvtnReq', RequestToPayDebtorActivationRequestV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ReqToPayDbtrActvtnReq', type=RequestToPayDebtorActivationRequestV02, min=1, max=1, mutex_group=None, array=False),

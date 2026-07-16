@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CCPIncomeStatementAndCapitalAdequacyReportV02 import CCPIncomeStatementAndCapitalAdequacyReportV02
+from . import CCPIncomeStatementAndCapitalAdequacyReportV02
 
 class AUTH_059_001_02():
 
@@ -18,12 +18,12 @@ class AUTH_059_001_02():
 
 		@CCPIncmStmtAndCptlAdqcyRpt.setter
 		def CCPIncmStmtAndCptlAdqcyRpt(self, value):
-			self._CCPIncmStmtAndCptlAdqcyRpt = value if type(value) != base_types.auto else self.make_default("CCPIncmStmtAndCptlAdqcyRpt")
+			self._CCPIncmStmtAndCptlAdqcyRpt = value if value is not None else base_types.UninitialisedField(self, 'CCPIncmStmtAndCptlAdqcyRpt', CCPIncomeStatementAndCapitalAdequacyReportV02, False)
 
 		@CCPIncmStmtAndCptlAdqcyRpt.deleter
 		def CCPIncmStmtAndCptlAdqcyRpt(self):
 			del self._CCPIncmStmtAndCptlAdqcyRpt
-			self._CCPIncmStmtAndCptlAdqcyRpt = None
+			self._CCPIncmStmtAndCptlAdqcyRpt = base_types.UninitialisedField(self, 'CCPIncmStmtAndCptlAdqcyRpt', CCPIncomeStatementAndCapitalAdequacyReportV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CCPIncmStmtAndCptlAdqcyRpt', type=CCPIncomeStatementAndCapitalAdequacyReportV02, min=1, max=1, mutex_group=None, array=False),

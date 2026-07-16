@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Account28 import Account28
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._AdditionalReference10 import AdditionalReference10
-from ._FinancialInstrument61Choice import FinancialInstrument61Choice
-from ._FundSettlementParameters18 import FundSettlementParameters18
-from ._Max35Text import Max35Text
-from ._YesNoIndicator import YesNoIndicator
+from . import Account28
+from . import AdditionalInformation15
+from . import AdditionalReference10
+from . import FinancialInstrument61Choice
+from . import FundSettlementParameters18
+from . import Max35Text
+from . import YesNoIndicator
 
 class FinancialInstrument101(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class FinancialInstrument101(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@property
 	def AsstsHeldInOwnNm(self):
@@ -32,12 +32,12 @@ class FinancialInstrument101(base_types._BaseFieldType):
 
 	@AsstsHeldInOwnNm.setter
 	def AsstsHeldInOwnNm(self, value):
-		self._AsstsHeldInOwnNm = value if type(value) != base_types.auto else self.make_default("AsstsHeldInOwnNm")
+		self._AsstsHeldInOwnNm = value if value is not None else base_types.UninitialisedField(self, 'AsstsHeldInOwnNm', YesNoIndicator, False)
 
 	@AsstsHeldInOwnNm.deleter
 	def AsstsHeldInOwnNm(self):
 		del self._AsstsHeldInOwnNm
-		self._AsstsHeldInOwnNm = None
+		self._AsstsHeldInOwnNm = base_types.UninitialisedField(self, 'AsstsHeldInOwnNm', YesNoIndicator, False)
 
 	@property
 	def ClntRef(self):
@@ -45,12 +45,12 @@ class FinancialInstrument101(base_types._BaseFieldType):
 
 	@ClntRef.setter
 	def ClntRef(self, value):
-		self._ClntRef = value if type(value) != base_types.auto else self.make_default("ClntRef")
+		self._ClntRef = value if value is not None else base_types.UninitialisedField(self, 'ClntRef', AdditionalReference10, False)
 
 	@ClntRef.deleter
 	def ClntRef(self):
 		del self._ClntRef
-		self._ClntRef = None
+		self._ClntRef = base_types.UninitialisedField(self, 'ClntRef', AdditionalReference10, False)
 
 	@property
 	def CtrPtyRef(self):
@@ -58,12 +58,12 @@ class FinancialInstrument101(base_types._BaseFieldType):
 
 	@CtrPtyRef.setter
 	def CtrPtyRef(self, value):
-		self._CtrPtyRef = value if type(value) != base_types.auto else self.make_default("CtrPtyRef")
+		self._CtrPtyRef = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyRef', AdditionalReference10, False)
 
 	@CtrPtyRef.deleter
 	def CtrPtyRef(self):
 		del self._CtrPtyRef
-		self._CtrPtyRef = None
+		self._CtrPtyRef = base_types.UninitialisedField(self, 'CtrPtyRef', AdditionalReference10, False)
 
 	@property
 	def Instrm(self):
@@ -71,12 +71,12 @@ class FinancialInstrument101(base_types._BaseFieldType):
 
 	@Instrm.setter
 	def Instrm(self, value):
-		self._Instrm = value if type(value) != base_types.auto else self.make_default("Instrm")
+		self._Instrm = value if value is not None else base_types.UninitialisedField(self, 'Instrm', FinancialInstrument61Choice, False)
 
 	@Instrm.deleter
 	def Instrm(self):
 		del self._Instrm
-		self._Instrm = None
+		self._Instrm = base_types.UninitialisedField(self, 'Instrm', FinancialInstrument61Choice, False)
 
 	@property
 	def LineId(self):
@@ -84,12 +84,12 @@ class FinancialInstrument101(base_types._BaseFieldType):
 
 	@LineId.setter
 	def LineId(self, value):
-		self._LineId = value if type(value) != base_types.auto else self.make_default("LineId")
+		self._LineId = value if value is not None else base_types.UninitialisedField(self, 'LineId', Max35Text, False)
 
 	@LineId.deleter
 	def LineId(self):
 		del self._LineId
-		self._LineId = None
+		self._LineId = base_types.UninitialisedField(self, 'LineId', Max35Text, False)
 
 	@property
 	def SttlmPtiesDtls(self):
@@ -97,12 +97,12 @@ class FinancialInstrument101(base_types._BaseFieldType):
 
 	@SttlmPtiesDtls.setter
 	def SttlmPtiesDtls(self, value):
-		self._SttlmPtiesDtls = value if type(value) != base_types.auto else self.make_default("SttlmPtiesDtls")
+		self._SttlmPtiesDtls = value if value is not None else base_types.UninitialisedField(self, 'SttlmPtiesDtls', FundSettlementParameters18, False)
 
 	@SttlmPtiesDtls.deleter
 	def SttlmPtiesDtls(self):
 		del self._SttlmPtiesDtls
-		self._SttlmPtiesDtls = None
+		self._SttlmPtiesDtls = base_types.UninitialisedField(self, 'SttlmPtiesDtls', FundSettlementParameters18, False)
 
 	@property
 	def TrfRsltsInChngOfBnfclOwnr(self):
@@ -110,12 +110,12 @@ class FinancialInstrument101(base_types._BaseFieldType):
 
 	@TrfRsltsInChngOfBnfclOwnr.setter
 	def TrfRsltsInChngOfBnfclOwnr(self, value):
-		self._TrfRsltsInChngOfBnfclOwnr = value if type(value) != base_types.auto else self.make_default("TrfRsltsInChngOfBnfclOwnr")
+		self._TrfRsltsInChngOfBnfclOwnr = value if value is not None else base_types.UninitialisedField(self, 'TrfRsltsInChngOfBnfclOwnr', YesNoIndicator, False)
 
 	@TrfRsltsInChngOfBnfclOwnr.deleter
 	def TrfRsltsInChngOfBnfclOwnr(self):
 		del self._TrfRsltsInChngOfBnfclOwnr
-		self._TrfRsltsInChngOfBnfclOwnr = None
+		self._TrfRsltsInChngOfBnfclOwnr = base_types.UninitialisedField(self, 'TrfRsltsInChngOfBnfclOwnr', YesNoIndicator, False)
 
 	@property
 	def TrfeeAcct(self):
@@ -123,12 +123,12 @@ class FinancialInstrument101(base_types._BaseFieldType):
 
 	@TrfeeAcct.setter
 	def TrfeeAcct(self, value):
-		self._TrfeeAcct = value if type(value) != base_types.auto else self.make_default("TrfeeAcct")
+		self._TrfeeAcct = value if value is not None else base_types.UninitialisedField(self, 'TrfeeAcct', Account28, False)
 
 	@TrfeeAcct.deleter
 	def TrfeeAcct(self):
 		del self._TrfeeAcct
-		self._TrfeeAcct = None
+		self._TrfeeAcct = base_types.UninitialisedField(self, 'TrfeeAcct', Account28, False)
 
 	@property
 	def Trfr(self):
@@ -136,12 +136,12 @@ class FinancialInstrument101(base_types._BaseFieldType):
 
 	@Trfr.setter
 	def Trfr(self, value):
-		self._Trfr = value if type(value) != base_types.auto else self.make_default("Trfr")
+		self._Trfr = value if value is not None else base_types.UninitialisedField(self, 'Trfr', Account28, False)
 
 	@Trfr.deleter
 	def Trfr(self):
 		del self._Trfr
-		self._Trfr = None
+		self._Trfr = base_types.UninitialisedField(self, 'Trfr', Account28, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),

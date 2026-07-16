@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._UnderlyingEquityType3Code import UnderlyingEquityType3Code
-from ._UnderlyingEquityType4Code import UnderlyingEquityType4Code
-from ._UnderlyingEquityType5Code import UnderlyingEquityType5Code
-from ._UnderlyingEquityType6Code import UnderlyingEquityType6Code
+from . import UnderlyingEquityType3Code
+from . import UnderlyingEquityType4Code
+from . import UnderlyingEquityType5Code
+from . import UnderlyingEquityType6Code
 
 class EquityDerivative3Choice(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class EquityDerivative3Choice(base_types._BaseFieldType):
 
 	@Bskt.setter
 	def Bskt(self, value):
-		self._Bskt = value if type(value) != base_types.auto else self.make_default("Bskt")
+		self._Bskt = value if value is not None else base_types.UninitialisedField(self, 'Bskt', UnderlyingEquityType3Code, False)
 
 	@Bskt.deleter
 	def Bskt(self):
 		del self._Bskt
-		self._Bskt = None
+		self._Bskt = base_types.UninitialisedField(self, 'Bskt', UnderlyingEquityType3Code, False)
 
 	@property
 	def Indx(self):
@@ -29,12 +29,12 @@ class EquityDerivative3Choice(base_types._BaseFieldType):
 
 	@Indx.setter
 	def Indx(self, value):
-		self._Indx = value if type(value) != base_types.auto else self.make_default("Indx")
+		self._Indx = value if value is not None else base_types.UninitialisedField(self, 'Indx', UnderlyingEquityType4Code, False)
 
 	@Indx.deleter
 	def Indx(self):
 		del self._Indx
-		self._Indx = None
+		self._Indx = base_types.UninitialisedField(self, 'Indx', UnderlyingEquityType4Code, False)
 
 	@property
 	def Othr(self):
@@ -42,12 +42,12 @@ class EquityDerivative3Choice(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', UnderlyingEquityType6Code, False)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', UnderlyingEquityType6Code, False)
 
 	@property
 	def SnglNm(self):
@@ -55,12 +55,12 @@ class EquityDerivative3Choice(base_types._BaseFieldType):
 
 	@SnglNm.setter
 	def SnglNm(self, value):
-		self._SnglNm = value if type(value) != base_types.auto else self.make_default("SnglNm")
+		self._SnglNm = value if value is not None else base_types.UninitialisedField(self, 'SnglNm', UnderlyingEquityType5Code, False)
 
 	@SnglNm.deleter
 	def SnglNm(self):
 		del self._SnglNm
-		self._SnglNm = None
+		self._SnglNm = base_types.UninitialisedField(self, 'SnglNm', UnderlyingEquityType5Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Bskt', type=UnderlyingEquityType3Code, min=0, max=1, mutex_group=1, array=False),

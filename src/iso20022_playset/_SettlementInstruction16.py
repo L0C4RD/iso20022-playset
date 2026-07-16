@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CashAccount40 import CashAccount40
+from . import BranchAndFinancialInstitutionIdentification8
+from . import CashAccount40
 
 class SettlementInstruction16(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SettlementInstruction16(base_types._BaseFieldType):
 
 	@InstdRmbrsmntAgt.setter
 	def InstdRmbrsmntAgt(self, value):
-		self._InstdRmbrsmntAgt = value if type(value) != base_types.auto else self.make_default("InstdRmbrsmntAgt")
+		self._InstdRmbrsmntAgt = value if value is not None else base_types.UninitialisedField(self, 'InstdRmbrsmntAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@InstdRmbrsmntAgt.deleter
 	def InstdRmbrsmntAgt(self):
 		del self._InstdRmbrsmntAgt
-		self._InstdRmbrsmntAgt = None
+		self._InstdRmbrsmntAgt = base_types.UninitialisedField(self, 'InstdRmbrsmntAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def InstdRmbrsmntAgtAcct(self):
@@ -27,12 +27,12 @@ class SettlementInstruction16(base_types._BaseFieldType):
 
 	@InstdRmbrsmntAgtAcct.setter
 	def InstdRmbrsmntAgtAcct(self, value):
-		self._InstdRmbrsmntAgtAcct = value if type(value) != base_types.auto else self.make_default("InstdRmbrsmntAgtAcct")
+		self._InstdRmbrsmntAgtAcct = value if value is not None else base_types.UninitialisedField(self, 'InstdRmbrsmntAgtAcct', CashAccount40, False)
 
 	@InstdRmbrsmntAgtAcct.deleter
 	def InstdRmbrsmntAgtAcct(self):
 		del self._InstdRmbrsmntAgtAcct
-		self._InstdRmbrsmntAgtAcct = None
+		self._InstdRmbrsmntAgtAcct = base_types.UninitialisedField(self, 'InstdRmbrsmntAgtAcct', CashAccount40, False)
 
 	@property
 	def InstgRmbrsmntAgt(self):
@@ -40,12 +40,12 @@ class SettlementInstruction16(base_types._BaseFieldType):
 
 	@InstgRmbrsmntAgt.setter
 	def InstgRmbrsmntAgt(self, value):
-		self._InstgRmbrsmntAgt = value if type(value) != base_types.auto else self.make_default("InstgRmbrsmntAgt")
+		self._InstgRmbrsmntAgt = value if value is not None else base_types.UninitialisedField(self, 'InstgRmbrsmntAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@InstgRmbrsmntAgt.deleter
 	def InstgRmbrsmntAgt(self):
 		del self._InstgRmbrsmntAgt
-		self._InstgRmbrsmntAgt = None
+		self._InstgRmbrsmntAgt = base_types.UninitialisedField(self, 'InstgRmbrsmntAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def InstgRmbrsmntAgtAcct(self):
@@ -53,12 +53,12 @@ class SettlementInstruction16(base_types._BaseFieldType):
 
 	@InstgRmbrsmntAgtAcct.setter
 	def InstgRmbrsmntAgtAcct(self, value):
-		self._InstgRmbrsmntAgtAcct = value if type(value) != base_types.auto else self.make_default("InstgRmbrsmntAgtAcct")
+		self._InstgRmbrsmntAgtAcct = value if value is not None else base_types.UninitialisedField(self, 'InstgRmbrsmntAgtAcct', CashAccount40, False)
 
 	@InstgRmbrsmntAgtAcct.deleter
 	def InstgRmbrsmntAgtAcct(self):
 		del self._InstgRmbrsmntAgtAcct
-		self._InstgRmbrsmntAgtAcct = None
+		self._InstgRmbrsmntAgtAcct = base_types.UninitialisedField(self, 'InstgRmbrsmntAgtAcct', CashAccount40, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InstdRmbrsmntAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),

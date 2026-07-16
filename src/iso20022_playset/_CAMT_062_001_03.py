@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PayInScheduleV03 import PayInScheduleV03
+from . import PayInScheduleV03
 
 class CAMT_062_001_03():
 
@@ -18,12 +18,12 @@ class CAMT_062_001_03():
 
 		@PayInSchdl.setter
 		def PayInSchdl(self, value):
-			self._PayInSchdl = value if type(value) != base_types.auto else self.make_default("PayInSchdl")
+			self._PayInSchdl = value if value is not None else base_types.UninitialisedField(self, 'PayInSchdl', PayInScheduleV03, False)
 
 		@PayInSchdl.deleter
 		def PayInSchdl(self):
 			del self._PayInSchdl
-			self._PayInSchdl = None
+			self._PayInSchdl = base_types.UninitialisedField(self, 'PayInSchdl', PayInScheduleV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='PayInSchdl', type=PayInScheduleV03, min=1, max=1, mutex_group=None, array=False),

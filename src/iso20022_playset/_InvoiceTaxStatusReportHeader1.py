@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
-from ._MessageIdentification1 import MessageIdentification1
-from ._TaxOrganisationIdentification1 import TaxOrganisationIdentification1
-from ._TaxReportingStatus1Code import TaxReportingStatus1Code
+from . import GenericValidationRuleIdentification1
+from . import MessageIdentification1
+from . import TaxOrganisationIdentification1
+from . import TaxReportingStatus1Code
 
 class InvoiceTaxStatusReportHeader1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class InvoiceTaxStatusReportHeader1(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@property
 	def OrgnlMsgId(self):
@@ -29,12 +29,12 @@ class InvoiceTaxStatusReportHeader1(base_types._BaseFieldType):
 
 	@OrgnlMsgId.setter
 	def OrgnlMsgId(self, value):
-		self._OrgnlMsgId = value if type(value) != base_types.auto else self.make_default("OrgnlMsgId")
+		self._OrgnlMsgId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlMsgId', MessageIdentification1, False)
 
 	@OrgnlMsgId.deleter
 	def OrgnlMsgId(self):
 		del self._OrgnlMsgId
-		self._OrgnlMsgId = None
+		self._OrgnlMsgId = base_types.UninitialisedField(self, 'OrgnlMsgId', MessageIdentification1, False)
 
 	@property
 	def RptSts(self):
@@ -42,12 +42,12 @@ class InvoiceTaxStatusReportHeader1(base_types._BaseFieldType):
 
 	@RptSts.setter
 	def RptSts(self, value):
-		self._RptSts = value if type(value) != base_types.auto else self.make_default("RptSts")
+		self._RptSts = value if value is not None else base_types.UninitialisedField(self, 'RptSts', TaxReportingStatus1Code, False)
 
 	@RptSts.deleter
 	def RptSts(self):
 		del self._RptSts
-		self._RptSts = None
+		self._RptSts = base_types.UninitialisedField(self, 'RptSts', TaxReportingStatus1Code, False)
 
 	@property
 	def TaxAuthrty(self):
@@ -55,12 +55,12 @@ class InvoiceTaxStatusReportHeader1(base_types._BaseFieldType):
 
 	@TaxAuthrty.setter
 	def TaxAuthrty(self, value):
-		self._TaxAuthrty = value if type(value) != base_types.auto else self.make_default("TaxAuthrty")
+		self._TaxAuthrty = value if value is not None else base_types.UninitialisedField(self, 'TaxAuthrty', TaxOrganisationIdentification1, False)
 
 	@TaxAuthrty.deleter
 	def TaxAuthrty(self):
 		del self._TaxAuthrty
-		self._TaxAuthrty = None
+		self._TaxAuthrty = base_types.UninitialisedField(self, 'TaxAuthrty', TaxOrganisationIdentification1, False)
 
 	@property
 	def VldtnRule(self):
@@ -68,12 +68,12 @@ class InvoiceTaxStatusReportHeader1(base_types._BaseFieldType):
 
 	@VldtnRule.setter
 	def VldtnRule(self, value):
-		self._VldtnRule = value if type(value) != base_types.auto else self.make_default("VldtnRule")
+		self._VldtnRule = value if value is not None else base_types.UninitialisedField(self, 'VldtnRule', GenericValidationRuleIdentification1, True)
 
 	@VldtnRule.deleter
 	def VldtnRule(self):
 		del self._VldtnRule
-		self._VldtnRule = None
+		self._VldtnRule = base_types.UninitialisedField(self, 'VldtnRule', GenericValidationRuleIdentification1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),

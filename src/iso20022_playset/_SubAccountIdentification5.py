@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountIdentificationFormatChoice import AccountIdentificationFormatChoice
-from ._AggregateBalanceInformation4 import AggregateBalanceInformation4
-from ._YesNoIndicator import YesNoIndicator
+from . import AccountIdentificationFormatChoice
+from . import AggregateBalanceInformation4
+from . import YesNoIndicator
 
 class SubAccountIdentification5(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SubAccountIdentification5(base_types._BaseFieldType):
 
 	@ActvtyInd.setter
 	def ActvtyInd(self, value):
-		self._ActvtyInd = value if type(value) != base_types.auto else self.make_default("ActvtyInd")
+		self._ActvtyInd = value if value is not None else base_types.UninitialisedField(self, 'ActvtyInd', YesNoIndicator, False)
 
 	@ActvtyInd.deleter
 	def ActvtyInd(self):
 		del self._ActvtyInd
-		self._ActvtyInd = None
+		self._ActvtyInd = base_types.UninitialisedField(self, 'ActvtyInd', YesNoIndicator, False)
 
 	@property
 	def BalForSubAcct(self):
@@ -28,12 +28,12 @@ class SubAccountIdentification5(base_types._BaseFieldType):
 
 	@BalForSubAcct.setter
 	def BalForSubAcct(self, value):
-		self._BalForSubAcct = value if type(value) != base_types.auto else self.make_default("BalForSubAcct")
+		self._BalForSubAcct = value if value is not None else base_types.UninitialisedField(self, 'BalForSubAcct', AggregateBalanceInformation4, True)
 
 	@BalForSubAcct.deleter
 	def BalForSubAcct(self):
 		del self._BalForSubAcct
-		self._BalForSubAcct = None
+		self._BalForSubAcct = base_types.UninitialisedField(self, 'BalForSubAcct', AggregateBalanceInformation4, True)
 
 	@property
 	def FngbInd(self):
@@ -41,12 +41,12 @@ class SubAccountIdentification5(base_types._BaseFieldType):
 
 	@FngbInd.setter
 	def FngbInd(self, value):
-		self._FngbInd = value if type(value) != base_types.auto else self.make_default("FngbInd")
+		self._FngbInd = value if value is not None else base_types.UninitialisedField(self, 'FngbInd', YesNoIndicator, False)
 
 	@FngbInd.deleter
 	def FngbInd(self):
 		del self._FngbInd
-		self._FngbInd = None
+		self._FngbInd = base_types.UninitialisedField(self, 'FngbInd', YesNoIndicator, False)
 
 	@property
 	def Id(self):
@@ -54,12 +54,12 @@ class SubAccountIdentification5(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', AccountIdentificationFormatChoice, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', AccountIdentificationFormatChoice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification36 import GenericIdentification36
-from ._LEIIdentifier import LEIIdentifier
+from . import GenericIdentification36
+from . import LEIIdentifier
 
 class PartyIdentification203Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PartyIdentification203Choice(base_types._BaseFieldType):
 
 	@LEI.setter
 	def LEI(self, value):
-		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
+		self._LEI = value if value is not None else base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	@LEI.deleter
 	def LEI(self):
 		del self._LEI
-		self._LEI = None
+		self._LEI = base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	@property
 	def PrtryId(self):
@@ -27,12 +27,12 @@ class PartyIdentification203Choice(base_types._BaseFieldType):
 
 	@PrtryId.setter
 	def PrtryId(self, value):
-		self._PrtryId = value if type(value) != base_types.auto else self.make_default("PrtryId")
+		self._PrtryId = value if value is not None else base_types.UninitialisedField(self, 'PrtryId', GenericIdentification36, False)
 
 	@PrtryId.deleter
 	def PrtryId(self):
 		del self._PrtryId
-		self._PrtryId = None
+		self._PrtryId = base_types.UninitialisedField(self, 'PrtryId', GenericIdentification36, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=1, array=False),

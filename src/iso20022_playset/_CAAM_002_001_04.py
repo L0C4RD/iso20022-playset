@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMDeviceControlV04 import ATMDeviceControlV04
+from . import ATMDeviceControlV04
 
 class CAAM_002_001_04():
 
@@ -18,12 +18,12 @@ class CAAM_002_001_04():
 
 		@ATMDvcCtrl.setter
 		def ATMDvcCtrl(self, value):
-			self._ATMDvcCtrl = value if type(value) != base_types.auto else self.make_default("ATMDvcCtrl")
+			self._ATMDvcCtrl = value if value is not None else base_types.UninitialisedField(self, 'ATMDvcCtrl', ATMDeviceControlV04, False)
 
 		@ATMDvcCtrl.deleter
 		def ATMDvcCtrl(self):
 			del self._ATMDvcCtrl
-			self._ATMDvcCtrl = None
+			self._ATMDvcCtrl = base_types.UninitialisedField(self, 'ATMDvcCtrl', ATMDeviceControlV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ATMDvcCtrl', type=ATMDeviceControlV04, min=1, max=1, mutex_group=None, array=False),

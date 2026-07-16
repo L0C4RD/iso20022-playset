@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from ._AmountPriceType1Code import AmountPriceType1Code
+from . import ActiveCurrencyAnd13DecimalAmount
+from . import AmountPriceType1Code
 
 class AmountPricePerAmount2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AmountPricePerAmount2(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def AmtPricTp(self):
@@ -27,12 +27,12 @@ class AmountPricePerAmount2(base_types._BaseFieldType):
 
 	@AmtPricTp.setter
 	def AmtPricTp(self, value):
-		self._AmtPricTp = value if type(value) != base_types.auto else self.make_default("AmtPricTp")
+		self._AmtPricTp = value if value is not None else base_types.UninitialisedField(self, 'AmtPricTp', AmountPriceType1Code, False)
 
 	@AmtPricTp.deleter
 	def AmtPricTp(self):
 		del self._AmtPricTp
-		self._AmtPricTp = None
+		self._AmtPricTp = base_types.UninitialisedField(self, 'AmtPricTp', AmountPriceType1Code, False)
 
 	@property
 	def PricVal(self):
@@ -40,12 +40,12 @@ class AmountPricePerAmount2(base_types._BaseFieldType):
 
 	@PricVal.setter
 	def PricVal(self, value):
-		self._PricVal = value if type(value) != base_types.auto else self.make_default("PricVal")
+		self._PricVal = value if value is not None else base_types.UninitialisedField(self, 'PricVal', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@PricVal.deleter
 	def PricVal(self):
 		del self._PricVal
-		self._PricVal = None
+		self._PricVal = base_types.UninitialisedField(self, 'PricVal', ActiveCurrencyAnd13DecimalAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),

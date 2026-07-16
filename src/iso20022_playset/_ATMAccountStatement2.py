@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ISODate import ISODate
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max256Text import Max256Text
-from ._Max70Text import Max70Text
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ActiveCurrencyCode
+from . import ISODate
+from . import ImpliedCurrencyAndAmount
+from . import Max256Text
+from . import Max70Text
+from . import TrueFalseIndicator
 
 class ATMAccountStatement2(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class ATMAccountStatement2(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ImpliedCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def Ccy(self):
@@ -31,12 +31,12 @@ class ATMAccountStatement2(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@property
 	def CdtTx(self):
@@ -44,12 +44,12 @@ class ATMAccountStatement2(base_types._BaseFieldType):
 
 	@CdtTx.setter
 	def CdtTx(self, value):
-		self._CdtTx = value if type(value) != base_types.auto else self.make_default("CdtTx")
+		self._CdtTx = value if value is not None else base_types.UninitialisedField(self, 'CdtTx', TrueFalseIndicator, False)
 
 	@CdtTx.deleter
 	def CdtTx(self):
 		del self._CdtTx
-		self._CdtTx = None
+		self._CdtTx = base_types.UninitialisedField(self, 'CdtTx', TrueFalseIndicator, False)
 
 	@property
 	def LngTxt(self):
@@ -57,12 +57,12 @@ class ATMAccountStatement2(base_types._BaseFieldType):
 
 	@LngTxt.setter
 	def LngTxt(self, value):
-		self._LngTxt = value if type(value) != base_types.auto else self.make_default("LngTxt")
+		self._LngTxt = value if value is not None else base_types.UninitialisedField(self, 'LngTxt', Max256Text, False)
 
 	@LngTxt.deleter
 	def LngTxt(self):
 		del self._LngTxt
-		self._LngTxt = None
+		self._LngTxt = base_types.UninitialisedField(self, 'LngTxt', Max256Text, False)
 
 	@property
 	def ShrtTxt(self):
@@ -70,12 +70,12 @@ class ATMAccountStatement2(base_types._BaseFieldType):
 
 	@ShrtTxt.setter
 	def ShrtTxt(self, value):
-		self._ShrtTxt = value if type(value) != base_types.auto else self.make_default("ShrtTxt")
+		self._ShrtTxt = value if value is not None else base_types.UninitialisedField(self, 'ShrtTxt', Max70Text, False)
 
 	@ShrtTxt.deleter
 	def ShrtTxt(self):
 		del self._ShrtTxt
-		self._ShrtTxt = None
+		self._ShrtTxt = base_types.UninitialisedField(self, 'ShrtTxt', Max70Text, False)
 
 	@property
 	def TxDt(self):
@@ -83,12 +83,12 @@ class ATMAccountStatement2(base_types._BaseFieldType):
 
 	@TxDt.setter
 	def TxDt(self, value):
-		self._TxDt = value if type(value) != base_types.auto else self.make_default("TxDt")
+		self._TxDt = value if value is not None else base_types.UninitialisedField(self, 'TxDt', ISODate, False)
 
 	@TxDt.deleter
 	def TxDt(self):
 		del self._TxDt
-		self._TxDt = None
+		self._TxDt = base_types.UninitialisedField(self, 'TxDt', ISODate, False)
 
 	@property
 	def ValDt(self):
@@ -96,12 +96,12 @@ class ATMAccountStatement2(base_types._BaseFieldType):
 
 	@ValDt.setter
 	def ValDt(self, value):
-		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
+		self._ValDt = value if value is not None else base_types.UninitialisedField(self, 'ValDt', ISODate, False)
 
 	@ValDt.deleter
 	def ValDt(self):
 		del self._ValDt
-		self._ValDt = None
+		self._ValDt = base_types.UninitialisedField(self, 'ValDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

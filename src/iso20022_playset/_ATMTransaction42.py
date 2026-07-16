@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndCurrency1 import AmountAndCurrency1
-from ._CardAccount20 import CardAccount20
-from ._ContentInformationType10 import ContentInformationType10
-from ._DetailedAmount12 import DetailedAmount12
-from ._Max10000Binary import Max10000Binary
-from ._TransactionIdentifier3 import TransactionIdentifier3
+from . import AmountAndCurrency1
+from . import CardAccount20
+from . import ContentInformationType10
+from . import DetailedAmount12
+from . import Max10000Binary
+from . import TransactionIdentifier3
 
 class ATMTransaction42(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class ATMTransaction42(base_types._BaseFieldType):
 
 	@AcctData.setter
 	def AcctData(self, value):
-		self._AcctData = value if type(value) != base_types.auto else self.make_default("AcctData")
+		self._AcctData = value if value is not None else base_types.UninitialisedField(self, 'AcctData', CardAccount20, False)
 
 	@AcctData.deleter
 	def AcctData(self):
 		del self._AcctData
-		self._AcctData = None
+		self._AcctData = base_types.UninitialisedField(self, 'AcctData', CardAccount20, False)
 
 	@property
 	def DtldReqdAmt(self):
@@ -31,12 +31,12 @@ class ATMTransaction42(base_types._BaseFieldType):
 
 	@DtldReqdAmt.setter
 	def DtldReqdAmt(self, value):
-		self._DtldReqdAmt = value if type(value) != base_types.auto else self.make_default("DtldReqdAmt")
+		self._DtldReqdAmt = value if value is not None else base_types.UninitialisedField(self, 'DtldReqdAmt', DetailedAmount12, False)
 
 	@DtldReqdAmt.deleter
 	def DtldReqdAmt(self):
 		del self._DtldReqdAmt
-		self._DtldReqdAmt = None
+		self._DtldReqdAmt = base_types.UninitialisedField(self, 'DtldReqdAmt', DetailedAmount12, False)
 
 	@property
 	def ICCRltdData(self):
@@ -44,12 +44,12 @@ class ATMTransaction42(base_types._BaseFieldType):
 
 	@ICCRltdData.setter
 	def ICCRltdData(self, value):
-		self._ICCRltdData = value if type(value) != base_types.auto else self.make_default("ICCRltdData")
+		self._ICCRltdData = value if value is not None else base_types.UninitialisedField(self, 'ICCRltdData', Max10000Binary, False)
 
 	@ICCRltdData.deleter
 	def ICCRltdData(self):
 		del self._ICCRltdData
-		self._ICCRltdData = None
+		self._ICCRltdData = base_types.UninitialisedField(self, 'ICCRltdData', Max10000Binary, False)
 
 	@property
 	def PrtctdAcctData(self):
@@ -57,12 +57,12 @@ class ATMTransaction42(base_types._BaseFieldType):
 
 	@PrtctdAcctData.setter
 	def PrtctdAcctData(self, value):
-		self._PrtctdAcctData = value if type(value) != base_types.auto else self.make_default("PrtctdAcctData")
+		self._PrtctdAcctData = value if value is not None else base_types.UninitialisedField(self, 'PrtctdAcctData', ContentInformationType10, False)
 
 	@PrtctdAcctData.deleter
 	def PrtctdAcctData(self):
 		del self._PrtctdAcctData
-		self._PrtctdAcctData = None
+		self._PrtctdAcctData = base_types.UninitialisedField(self, 'PrtctdAcctData', ContentInformationType10, False)
 
 	@property
 	def TtlReqdAmt(self):
@@ -70,12 +70,12 @@ class ATMTransaction42(base_types._BaseFieldType):
 
 	@TtlReqdAmt.setter
 	def TtlReqdAmt(self, value):
-		self._TtlReqdAmt = value if type(value) != base_types.auto else self.make_default("TtlReqdAmt")
+		self._TtlReqdAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlReqdAmt', AmountAndCurrency1, False)
 
 	@TtlReqdAmt.deleter
 	def TtlReqdAmt(self):
 		del self._TtlReqdAmt
-		self._TtlReqdAmt = None
+		self._TtlReqdAmt = base_types.UninitialisedField(self, 'TtlReqdAmt', AmountAndCurrency1, False)
 
 	@property
 	def TxId(self):
@@ -83,12 +83,12 @@ class ATMTransaction42(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', TransactionIdentifier3, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', TransactionIdentifier3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctData', type=CardAccount20, min=0, max=1, mutex_group=None, array=False),

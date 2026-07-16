@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMReconciliationAcknowledgementV03 import ATMReconciliationAcknowledgementV03
+from . import ATMReconciliationAcknowledgementV03
 
 class CAAM_010_001_03():
 
@@ -18,12 +18,12 @@ class CAAM_010_001_03():
 
 		@ATMRcncltnAck.setter
 		def ATMRcncltnAck(self, value):
-			self._ATMRcncltnAck = value if type(value) != base_types.auto else self.make_default("ATMRcncltnAck")
+			self._ATMRcncltnAck = value if value is not None else base_types.UninitialisedField(self, 'ATMRcncltnAck', ATMReconciliationAcknowledgementV03, False)
 
 		@ATMRcncltnAck.deleter
 		def ATMRcncltnAck(self):
 			del self._ATMRcncltnAck
-			self._ATMRcncltnAck = None
+			self._ATMRcncltnAck = base_types.UninitialisedField(self, 'ATMRcncltnAck', ATMReconciliationAcknowledgementV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ATMRcncltnAck', type=ATMReconciliationAcknowledgementV03, min=1, max=1, mutex_group=None, array=False),

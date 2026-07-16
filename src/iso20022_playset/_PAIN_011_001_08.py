@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MandateCancellationRequestV08 import MandateCancellationRequestV08
+from . import MandateCancellationRequestV08
 
 class PAIN_011_001_08():
 
@@ -18,12 +18,12 @@ class PAIN_011_001_08():
 
 		@MndtCxlReq.setter
 		def MndtCxlReq(self, value):
-			self._MndtCxlReq = value if type(value) != base_types.auto else self.make_default("MndtCxlReq")
+			self._MndtCxlReq = value if value is not None else base_types.UninitialisedField(self, 'MndtCxlReq', MandateCancellationRequestV08, False)
 
 		@MndtCxlReq.deleter
 		def MndtCxlReq(self):
 			del self._MndtCxlReq
-			self._MndtCxlReq = None
+			self._MndtCxlReq = base_types.UninitialisedField(self, 'MndtCxlReq', MandateCancellationRequestV08, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='MndtCxlReq', type=MandateCancellationRequestV08, min=1, max=1, mutex_group=None, array=False),

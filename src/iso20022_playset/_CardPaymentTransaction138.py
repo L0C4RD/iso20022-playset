@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardDataReading8Code import CardDataReading8Code
-from ._CardPaymentServiceType12Code import CardPaymentServiceType12Code
-from ._CardPaymentServiceType15Code import CardPaymentServiceType15Code
-from ._CardPaymentServiceType9Code import CardPaymentServiceType9Code
-from ._CardPaymentTransactionResult4 import CardPaymentTransactionResult4
-from ._GenericIdentification32 import GenericIdentification32
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
-from ._TransactionIdentifier1 import TransactionIdentifier1
+from . import CardDataReading8Code
+from . import CardPaymentServiceType12Code
+from . import CardPaymentServiceType15Code
+from . import CardPaymentServiceType9Code
+from . import CardPaymentTransactionResult4
+from . import GenericIdentification32
+from . import Max140Text
+from . import Max35Text
+from . import TransactionIdentifier1
 
 class CardPaymentTransaction138(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class CardPaymentTransaction138(base_types._BaseFieldType):
 
 	@AddtlSvc.setter
 	def AddtlSvc(self, value):
-		self._AddtlSvc = value if type(value) != base_types.auto else self.make_default("AddtlSvc")
+		self._AddtlSvc = value if value is not None else base_types.UninitialisedField(self, 'AddtlSvc', CardPaymentServiceType9Code, True)
 
 	@AddtlSvc.deleter
 	def AddtlSvc(self):
 		del self._AddtlSvc
-		self._AddtlSvc = None
+		self._AddtlSvc = base_types.UninitialisedField(self, 'AddtlSvc', CardPaymentServiceType9Code, True)
 
 	@property
 	def CardDataNtryMd(self):
@@ -34,12 +34,12 @@ class CardPaymentTransaction138(base_types._BaseFieldType):
 
 	@CardDataNtryMd.setter
 	def CardDataNtryMd(self, value):
-		self._CardDataNtryMd = value if type(value) != base_types.auto else self.make_default("CardDataNtryMd")
+		self._CardDataNtryMd = value if value is not None else base_types.UninitialisedField(self, 'CardDataNtryMd', CardDataReading8Code, False)
 
 	@CardDataNtryMd.deleter
 	def CardDataNtryMd(self):
 		del self._CardDataNtryMd
-		self._CardDataNtryMd = None
+		self._CardDataNtryMd = base_types.UninitialisedField(self, 'CardDataNtryMd', CardDataReading8Code, False)
 
 	@property
 	def InitrTxId(self):
@@ -47,12 +47,12 @@ class CardPaymentTransaction138(base_types._BaseFieldType):
 
 	@InitrTxId.setter
 	def InitrTxId(self, value):
-		self._InitrTxId = value if type(value) != base_types.auto else self.make_default("InitrTxId")
+		self._InitrTxId = value if value is not None else base_types.UninitialisedField(self, 'InitrTxId', Max35Text, False)
 
 	@InitrTxId.deleter
 	def InitrTxId(self):
 		del self._InitrTxId
-		self._InitrTxId = None
+		self._InitrTxId = base_types.UninitialisedField(self, 'InitrTxId', Max35Text, False)
 
 	@property
 	def POIId(self):
@@ -60,12 +60,12 @@ class CardPaymentTransaction138(base_types._BaseFieldType):
 
 	@POIId.setter
 	def POIId(self, value):
-		self._POIId = value if type(value) != base_types.auto else self.make_default("POIId")
+		self._POIId = value if value is not None else base_types.UninitialisedField(self, 'POIId', GenericIdentification32, False)
 
 	@POIId.deleter
 	def POIId(self):
 		del self._POIId
-		self._POIId = None
+		self._POIId = base_types.UninitialisedField(self, 'POIId', GenericIdentification32, False)
 
 	@property
 	def RcptTxId(self):
@@ -73,12 +73,12 @@ class CardPaymentTransaction138(base_types._BaseFieldType):
 
 	@RcptTxId.setter
 	def RcptTxId(self, value):
-		self._RcptTxId = value if type(value) != base_types.auto else self.make_default("RcptTxId")
+		self._RcptTxId = value if value is not None else base_types.UninitialisedField(self, 'RcptTxId', Max140Text, False)
 
 	@RcptTxId.deleter
 	def RcptTxId(self):
 		del self._RcptTxId
-		self._RcptTxId = None
+		self._RcptTxId = base_types.UninitialisedField(self, 'RcptTxId', Max140Text, False)
 
 	@property
 	def SaleRefId(self):
@@ -86,12 +86,12 @@ class CardPaymentTransaction138(base_types._BaseFieldType):
 
 	@SaleRefId.setter
 	def SaleRefId(self, value):
-		self._SaleRefId = value if type(value) != base_types.auto else self.make_default("SaleRefId")
+		self._SaleRefId = value if value is not None else base_types.UninitialisedField(self, 'SaleRefId', Max35Text, False)
 
 	@SaleRefId.deleter
 	def SaleRefId(self):
 		del self._SaleRefId
-		self._SaleRefId = None
+		self._SaleRefId = base_types.UninitialisedField(self, 'SaleRefId', Max35Text, False)
 
 	@property
 	def SvcAttr(self):
@@ -99,12 +99,12 @@ class CardPaymentTransaction138(base_types._BaseFieldType):
 
 	@SvcAttr.setter
 	def SvcAttr(self, value):
-		self._SvcAttr = value if type(value) != base_types.auto else self.make_default("SvcAttr")
+		self._SvcAttr = value if value is not None else base_types.UninitialisedField(self, 'SvcAttr', CardPaymentServiceType15Code, False)
 
 	@SvcAttr.deleter
 	def SvcAttr(self):
 		del self._SvcAttr
-		self._SvcAttr = None
+		self._SvcAttr = base_types.UninitialisedField(self, 'SvcAttr', CardPaymentServiceType15Code, False)
 
 	@property
 	def TxId(self):
@@ -112,12 +112,12 @@ class CardPaymentTransaction138(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', TransactionIdentifier1, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', TransactionIdentifier1, False)
 
 	@property
 	def TxRslt(self):
@@ -125,12 +125,12 @@ class CardPaymentTransaction138(base_types._BaseFieldType):
 
 	@TxRslt.setter
 	def TxRslt(self, value):
-		self._TxRslt = value if type(value) != base_types.auto else self.make_default("TxRslt")
+		self._TxRslt = value if value is not None else base_types.UninitialisedField(self, 'TxRslt', CardPaymentTransactionResult4, False)
 
 	@TxRslt.deleter
 	def TxRslt(self):
 		del self._TxRslt
-		self._TxRslt = None
+		self._TxRslt = base_types.UninitialisedField(self, 'TxRslt', CardPaymentTransactionResult4, False)
 
 	@property
 	def TxTp(self):
@@ -138,12 +138,12 @@ class CardPaymentTransaction138(base_types._BaseFieldType):
 
 	@TxTp.setter
 	def TxTp(self, value):
-		self._TxTp = value if type(value) != base_types.auto else self.make_default("TxTp")
+		self._TxTp = value if value is not None else base_types.UninitialisedField(self, 'TxTp', CardPaymentServiceType12Code, False)
 
 	@TxTp.deleter
 	def TxTp(self):
 		del self._TxTp
-		self._TxTp = None
+		self._TxTp = base_types.UninitialisedField(self, 'TxTp', CardPaymentServiceType12Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlSvc', type=CardPaymentServiceType9Code, min=0, max=None, mutex_group=None, array=True),

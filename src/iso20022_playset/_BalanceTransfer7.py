@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BalanceTransferFundingLimit1 import BalanceTransferFundingLimit1
-from ._BalanceTransferReference1 import BalanceTransferReference1
-from ._SettlementMethod7Choice import SettlementMethod7Choice
+from . import BalanceTransferFundingLimit1
+from . import BalanceTransferReference1
+from . import SettlementMethod7Choice
 
 class BalanceTransfer7(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class BalanceTransfer7(base_types._BaseFieldType):
 
 	@BalTrfFndgLmt.setter
 	def BalTrfFndgLmt(self, value):
-		self._BalTrfFndgLmt = value if type(value) != base_types.auto else self.make_default("BalTrfFndgLmt")
+		self._BalTrfFndgLmt = value if value is not None else base_types.UninitialisedField(self, 'BalTrfFndgLmt', BalanceTransferFundingLimit1, False)
 
 	@BalTrfFndgLmt.deleter
 	def BalTrfFndgLmt(self):
 		del self._BalTrfFndgLmt
-		self._BalTrfFndgLmt = None
+		self._BalTrfFndgLmt = base_types.UninitialisedField(self, 'BalTrfFndgLmt', BalanceTransferFundingLimit1, False)
 
 	@property
 	def BalTrfMtd(self):
@@ -28,12 +28,12 @@ class BalanceTransfer7(base_types._BaseFieldType):
 
 	@BalTrfMtd.setter
 	def BalTrfMtd(self, value):
-		self._BalTrfMtd = value if type(value) != base_types.auto else self.make_default("BalTrfMtd")
+		self._BalTrfMtd = value if value is not None else base_types.UninitialisedField(self, 'BalTrfMtd', SettlementMethod7Choice, False)
 
 	@BalTrfMtd.deleter
 	def BalTrfMtd(self):
 		del self._BalTrfMtd
-		self._BalTrfMtd = None
+		self._BalTrfMtd = base_types.UninitialisedField(self, 'BalTrfMtd', SettlementMethod7Choice, False)
 
 	@property
 	def BalTrfRef(self):
@@ -41,12 +41,12 @@ class BalanceTransfer7(base_types._BaseFieldType):
 
 	@BalTrfRef.setter
 	def BalTrfRef(self, value):
-		self._BalTrfRef = value if type(value) != base_types.auto else self.make_default("BalTrfRef")
+		self._BalTrfRef = value if value is not None else base_types.UninitialisedField(self, 'BalTrfRef', BalanceTransferReference1, False)
 
 	@BalTrfRef.deleter
 	def BalTrfRef(self):
 		del self._BalTrfRef
-		self._BalTrfRef = None
+		self._BalTrfRef = base_types.UninitialisedField(self, 'BalTrfRef', BalanceTransferReference1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BalTrfFndgLmt', type=BalanceTransferFundingLimit1, min=0, max=1, mutex_group=None, array=False),

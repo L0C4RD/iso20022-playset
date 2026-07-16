@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NetReportV04 import NetReportV04
+from . import NetReportV04
 
 class CAMT_088_001_04():
 
@@ -18,12 +18,12 @@ class CAMT_088_001_04():
 
 		@NetRpt.setter
 		def NetRpt(self, value):
-			self._NetRpt = value if type(value) != base_types.auto else self.make_default("NetRpt")
+			self._NetRpt = value if value is not None else base_types.UninitialisedField(self, 'NetRpt', NetReportV04, False)
 
 		@NetRpt.deleter
 		def NetRpt(self):
 			del self._NetRpt
-			self._NetRpt = None
+			self._NetRpt = base_types.UninitialisedField(self, 'NetRpt', NetReportV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='NetRpt', type=NetReportV04, min=1, max=1, mutex_group=None, array=False),

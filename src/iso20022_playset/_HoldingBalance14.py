@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._SafekeepingPlaceFormat42Choice import SafekeepingPlaceFormat42Choice
-from ._SecuritiesEntryType2Code import SecuritiesEntryType2Code
-from ._SignedQuantityFormat14 import SignedQuantityFormat14
+from . import ISODate
+from . import SafekeepingPlaceFormat42Choice
+from . import SecuritiesEntryType2Code
+from . import SignedQuantityFormat14
 
 class HoldingBalance14(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class HoldingBalance14(base_types._BaseFieldType):
 
 	@Bal.setter
 	def Bal(self, value):
-		self._Bal = value if type(value) != base_types.auto else self.make_default("Bal")
+		self._Bal = value if value is not None else base_types.UninitialisedField(self, 'Bal', SignedQuantityFormat14, False)
 
 	@Bal.deleter
 	def Bal(self):
 		del self._Bal
-		self._Bal = None
+		self._Bal = base_types.UninitialisedField(self, 'Bal', SignedQuantityFormat14, False)
 
 	@property
 	def BalTp(self):
@@ -29,12 +29,12 @@ class HoldingBalance14(base_types._BaseFieldType):
 
 	@BalTp.setter
 	def BalTp(self, value):
-		self._BalTp = value if type(value) != base_types.auto else self.make_default("BalTp")
+		self._BalTp = value if value is not None else base_types.UninitialisedField(self, 'BalTp', SecuritiesEntryType2Code, False)
 
 	@BalTp.deleter
 	def BalTp(self):
 		del self._BalTp
-		self._BalTp = None
+		self._BalTp = base_types.UninitialisedField(self, 'BalTp', SecuritiesEntryType2Code, False)
 
 	@property
 	def Dt(self):
@@ -42,12 +42,12 @@ class HoldingBalance14(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@property
 	def SfkpgPlc(self):
@@ -55,12 +55,12 @@ class HoldingBalance14(base_types._BaseFieldType):
 
 	@SfkpgPlc.setter
 	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
+		self._SfkpgPlc = value if value is not None else base_types.UninitialisedField(self, 'SfkpgPlc', SafekeepingPlaceFormat42Choice, False)
 
 	@SfkpgPlc.deleter
 	def SfkpgPlc(self):
 		del self._SfkpgPlc
-		self._SfkpgPlc = None
+		self._SfkpgPlc = base_types.UninitialisedField(self, 'SfkpgPlc', SafekeepingPlaceFormat42Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Bal', type=SignedQuantityFormat14, min=1, max=1, mutex_group=None, array=False),

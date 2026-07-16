@@ -2,23 +2,23 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._Exact12Text import Exact12Text
-from ._Exact15Text import Exact15Text
-from ._Exact2NumericText import Exact2NumericText
-from ._ISODate import ISODate
-from ._ISODateTime import ISODateTime
-from ._ISOTime import ISOTime
-from ._LifeCycleSupport1Code import LifeCycleSupport1Code
-from ._Max1000Text import Max1000Text
-from ._Max12NumericText import Max12NumericText
-from ._Max140Text import Max140Text
-from ._Max23NumericText import Max23NumericText
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
-from ._Max99Text import Max99Text
-from ._PurchaseIdentifierType3Code import PurchaseIdentifierType3Code
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ATICALaxProcessing
+from . import Exact12Text
+from . import Exact15Text
+from . import Exact2NumericText
+from . import ISODate
+from . import ISODateTime
+from . import ISOTime
+from . import LifeCycleSupport1Code
+from . import Max1000Text
+from . import Max12NumericText
+from . import Max140Text
+from . import Max23NumericText
+from . import Max35Text
+from . import Max70Text
+from . import Max99Text
+from . import PurchaseIdentifierType3Code
+from . import TrueFalseIndicator
 
 class TransactionIdentification59(base_types._BaseFieldType):
 
@@ -29,12 +29,12 @@ class TransactionIdentification59(base_types._BaseFieldType):
 
 	@AcqrrRefData.setter
 	def AcqrrRefData(self, value):
-		self._AcqrrRefData = value if type(value) != base_types.auto else self.make_default("AcqrrRefData")
+		self._AcqrrRefData = value if value is not None else base_types.UninitialisedField(self, 'AcqrrRefData', Max140Text, False)
 
 	@AcqrrRefData.deleter
 	def AcqrrRefData(self):
 		del self._AcqrrRefData
-		self._AcqrrRefData = None
+		self._AcqrrRefData = base_types.UninitialisedField(self, 'AcqrrRefData', Max140Text, False)
 
 	@property
 	def AcqrrRefNb(self):
@@ -42,12 +42,12 @@ class TransactionIdentification59(base_types._BaseFieldType):
 
 	@AcqrrRefNb.setter
 	def AcqrrRefNb(self, value):
-		self._AcqrrRefNb = value if type(value) != base_types.auto else self.make_default("AcqrrRefNb")
+		self._AcqrrRefNb = value if value is not None else base_types.UninitialisedField(self, 'AcqrrRefNb', Max23NumericText, False)
 
 	@AcqrrRefNb.deleter
 	def AcqrrRefNb(self):
 		del self._AcqrrRefNb
-		self._AcqrrRefNb = None
+		self._AcqrrRefNb = base_types.UninitialisedField(self, 'AcqrrRefNb', Max23NumericText, False)
 
 	@property
 	def AssoctdData(self):
@@ -55,12 +55,12 @@ class TransactionIdentification59(base_types._BaseFieldType):
 
 	@AssoctdData.setter
 	def AssoctdData(self, value):
-		self._AssoctdData = value if type(value) != base_types.auto else self.make_default("AssoctdData")
+		self._AssoctdData = value if value is not None else base_types.UninitialisedField(self, 'AssoctdData', TrueFalseIndicator, False)
 
 	@AssoctdData.deleter
 	def AssoctdData(self):
 		del self._AssoctdData
-		self._AssoctdData = None
+		self._AssoctdData = base_types.UninitialisedField(self, 'AssoctdData', TrueFalseIndicator, False)
 
 	@property
 	def AssoctdDataDstn(self):
@@ -68,12 +68,12 @@ class TransactionIdentification59(base_types._BaseFieldType):
 
 	@AssoctdDataDstn.setter
 	def AssoctdDataDstn(self, value):
-		self._AssoctdDataDstn = value if type(value) != base_types.auto else self.make_default("AssoctdDataDstn")
+		self._AssoctdDataDstn = value if value is not None else base_types.UninitialisedField(self, 'AssoctdDataDstn', Max35Text, False)
 
 	@AssoctdDataDstn.deleter
 	def AssoctdDataDstn(self):
 		del self._AssoctdDataDstn
-		self._AssoctdDataDstn = None
+		self._AssoctdDataDstn = base_types.UninitialisedField(self, 'AssoctdDataDstn', Max35Text, False)
 
 	@property
 	def AssoctdDataRef(self):
@@ -81,12 +81,12 @@ class TransactionIdentification59(base_types._BaseFieldType):
 
 	@AssoctdDataRef.setter
 	def AssoctdDataRef(self, value):
-		self._AssoctdDataRef = value if type(value) != base_types.auto else self.make_default("AssoctdDataRef")
+		self._AssoctdDataRef = value if value is not None else base_types.UninitialisedField(self, 'AssoctdDataRef', Max70Text, False)
 
 	@AssoctdDataRef.deleter
 	def AssoctdDataRef(self):
 		del self._AssoctdDataRef
-		self._AssoctdDataRef = None
+		self._AssoctdDataRef = base_types.UninitialisedField(self, 'AssoctdDataRef', Max70Text, False)
 
 	@property
 	def AuthntcnTkn(self):
@@ -94,12 +94,12 @@ class TransactionIdentification59(base_types._BaseFieldType):
 
 	@AuthntcnTkn.setter
 	def AuthntcnTkn(self, value):
-		self._AuthntcnTkn = value if type(value) != base_types.auto else self.make_default("AuthntcnTkn")
+		self._AuthntcnTkn = value if value is not None else base_types.UninitialisedField(self, 'AuthntcnTkn', Max35Text, False)
 
 	@AuthntcnTkn.deleter
 	def AuthntcnTkn(self):
 		del self._AuthntcnTkn
-		self._AuthntcnTkn = None
+		self._AuthntcnTkn = base_types.UninitialisedField(self, 'AuthntcnTkn', Max35Text, False)
 
 	@property
 	def AuthstnSeqNb(self):
@@ -107,12 +107,12 @@ class TransactionIdentification59(base_types._BaseFieldType):
 
 	@AuthstnSeqNb.setter
 	def AuthstnSeqNb(self, value):
-		self._AuthstnSeqNb = value if type(value) != base_types.auto else self.make_default("AuthstnSeqNb")
+		self._AuthstnSeqNb = value if value is not None else base_types.UninitialisedField(self, 'AuthstnSeqNb', Exact2NumericText, False)
 
 	@AuthstnSeqNb.deleter
 	def AuthstnSeqNb(self):
 		del self._AuthstnSeqNb
-		self._AuthstnSeqNb = None
+		self._AuthstnSeqNb = base_types.UninitialisedField(self, 'AuthstnSeqNb', Exact2NumericText, False)
 
 	@property
 	def IssrRefData(self):
@@ -120,12 +120,12 @@ class TransactionIdentification59(base_types._BaseFieldType):
 
 	@IssrRefData.setter
 	def IssrRefData(self, value):
-		self._IssrRefData = value if type(value) != base_types.auto else self.make_default("IssrRefData")
+		self._IssrRefData = value if value is not None else base_types.UninitialisedField(self, 'IssrRefData', Max1000Text, False)
 
 	@IssrRefData.deleter
 	def IssrRefData(self):
 		del self._IssrRefData
-		self._IssrRefData = None
+		self._IssrRefData = base_types.UninitialisedField(self, 'IssrRefData', Max1000Text, False)
 
 	@property
 	def LclDt(self):
@@ -133,12 +133,12 @@ class TransactionIdentification59(base_types._BaseFieldType):
 
 	@LclDt.setter
 	def LclDt(self, value):
-		self._LclDt = value if type(value) != base_types.auto else self.make_default("LclDt")
+		self._LclDt = value if value is not None else base_types.UninitialisedField(self, 'LclDt', ISODate, False)
 
 	@LclDt.deleter
 	def LclDt(self):
 		del self._LclDt
-		self._LclDt = None
+		self._LclDt = base_types.UninitialisedField(self, 'LclDt', ISODate, False)
 
 	@property
 	def LclTm(self):
@@ -146,12 +146,12 @@ class TransactionIdentification59(base_types._BaseFieldType):
 
 	@LclTm.setter
 	def LclTm(self, value):
-		self._LclTm = value if type(value) != base_types.auto else self.make_default("LclTm")
+		self._LclTm = value if value is not None else base_types.UninitialisedField(self, 'LclTm', ISOTime, False)
 
 	@LclTm.deleter
 	def LclTm(self):
 		del self._LclTm
-		self._LclTm = None
+		self._LclTm = base_types.UninitialisedField(self, 'LclTm', ISOTime, False)
 
 	@property
 	def LifeCyclId(self):
@@ -159,12 +159,12 @@ class TransactionIdentification59(base_types._BaseFieldType):
 
 	@LifeCyclId.setter
 	def LifeCyclId(self, value):
-		self._LifeCyclId = value if type(value) != base_types.auto else self.make_default("LifeCyclId")
+		self._LifeCyclId = value if value is not None else base_types.UninitialisedField(self, 'LifeCyclId', Exact15Text, False)
 
 	@LifeCyclId.deleter
 	def LifeCyclId(self):
 		del self._LifeCyclId
-		self._LifeCyclId = None
+		self._LifeCyclId = base_types.UninitialisedField(self, 'LifeCyclId', Exact15Text, False)
 
 	@property
 	def LifeCyclIdMssng(self):
@@ -172,12 +172,12 @@ class TransactionIdentification59(base_types._BaseFieldType):
 
 	@LifeCyclIdMssng.setter
 	def LifeCyclIdMssng(self, value):
-		self._LifeCyclIdMssng = value if type(value) != base_types.auto else self.make_default("LifeCyclIdMssng")
+		self._LifeCyclIdMssng = value if value is not None else base_types.UninitialisedField(self, 'LifeCyclIdMssng', Max70Text, False)
 
 	@LifeCyclIdMssng.deleter
 	def LifeCyclIdMssng(self):
 		del self._LifeCyclIdMssng
-		self._LifeCyclIdMssng = None
+		self._LifeCyclIdMssng = base_types.UninitialisedField(self, 'LifeCyclIdMssng', Max70Text, False)
 
 	@property
 	def LifeCyclSpprt(self):
@@ -185,12 +185,12 @@ class TransactionIdentification59(base_types._BaseFieldType):
 
 	@LifeCyclSpprt.setter
 	def LifeCyclSpprt(self, value):
-		self._LifeCyclSpprt = value if type(value) != base_types.auto else self.make_default("LifeCyclSpprt")
+		self._LifeCyclSpprt = value if value is not None else base_types.UninitialisedField(self, 'LifeCyclSpprt', LifeCycleSupport1Code, False)
 
 	@LifeCyclSpprt.deleter
 	def LifeCyclSpprt(self):
 		del self._LifeCyclSpprt
-		self._LifeCyclSpprt = None
+		self._LifeCyclSpprt = base_types.UninitialisedField(self, 'LifeCyclSpprt', LifeCycleSupport1Code, False)
 
 	@property
 	def NtlData(self):
@@ -198,12 +198,12 @@ class TransactionIdentification59(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def PresntmntSeqCnt(self):
@@ -211,12 +211,12 @@ class TransactionIdentification59(base_types._BaseFieldType):
 
 	@PresntmntSeqCnt.setter
 	def PresntmntSeqCnt(self, value):
-		self._PresntmntSeqCnt = value if type(value) != base_types.auto else self.make_default("PresntmntSeqCnt")
+		self._PresntmntSeqCnt = value if value is not None else base_types.UninitialisedField(self, 'PresntmntSeqCnt', Exact2NumericText, False)
 
 	@PresntmntSeqCnt.deleter
 	def PresntmntSeqCnt(self):
 		del self._PresntmntSeqCnt
-		self._PresntmntSeqCnt = None
+		self._PresntmntSeqCnt = base_types.UninitialisedField(self, 'PresntmntSeqCnt', Exact2NumericText, False)
 
 	@property
 	def PresntmntSeqNb(self):
@@ -224,12 +224,12 @@ class TransactionIdentification59(base_types._BaseFieldType):
 
 	@PresntmntSeqNb.setter
 	def PresntmntSeqNb(self, value):
-		self._PresntmntSeqNb = value if type(value) != base_types.auto else self.make_default("PresntmntSeqNb")
+		self._PresntmntSeqNb = value if value is not None else base_types.UninitialisedField(self, 'PresntmntSeqNb', Exact2NumericText, False)
 
 	@PresntmntSeqNb.deleter
 	def PresntmntSeqNb(self):
 		del self._PresntmntSeqNb
-		self._PresntmntSeqNb = None
+		self._PresntmntSeqNb = base_types.UninitialisedField(self, 'PresntmntSeqNb', Exact2NumericText, False)
 
 	@property
 	def PrvtData(self):
@@ -237,12 +237,12 @@ class TransactionIdentification59(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def PurchsIdr(self):
@@ -250,12 +250,12 @@ class TransactionIdentification59(base_types._BaseFieldType):
 
 	@PurchsIdr.setter
 	def PurchsIdr(self, value):
-		self._PurchsIdr = value if type(value) != base_types.auto else self.make_default("PurchsIdr")
+		self._PurchsIdr = value if value is not None else base_types.UninitialisedField(self, 'PurchsIdr', Max99Text, False)
 
 	@PurchsIdr.deleter
 	def PurchsIdr(self):
 		del self._PurchsIdr
-		self._PurchsIdr = None
+		self._PurchsIdr = base_types.UninitialisedField(self, 'PurchsIdr', Max99Text, False)
 
 	@property
 	def PurchsIdrTp(self):
@@ -263,12 +263,12 @@ class TransactionIdentification59(base_types._BaseFieldType):
 
 	@PurchsIdrTp.setter
 	def PurchsIdrTp(self, value):
-		self._PurchsIdrTp = value if type(value) != base_types.auto else self.make_default("PurchsIdrTp")
+		self._PurchsIdrTp = value if value is not None else base_types.UninitialisedField(self, 'PurchsIdrTp', PurchaseIdentifierType3Code, False)
 
 	@PurchsIdrTp.deleter
 	def PurchsIdrTp(self):
 		del self._PurchsIdrTp
-		self._PurchsIdrTp = None
+		self._PurchsIdrTp = base_types.UninitialisedField(self, 'PurchsIdrTp', PurchaseIdentifierType3Code, False)
 
 	@property
 	def RtrvlRefNb(self):
@@ -276,12 +276,12 @@ class TransactionIdentification59(base_types._BaseFieldType):
 
 	@RtrvlRefNb.setter
 	def RtrvlRefNb(self, value):
-		self._RtrvlRefNb = value if type(value) != base_types.auto else self.make_default("RtrvlRefNb")
+		self._RtrvlRefNb = value if value is not None else base_types.UninitialisedField(self, 'RtrvlRefNb', Exact12Text, False)
 
 	@RtrvlRefNb.deleter
 	def RtrvlRefNb(self):
 		del self._RtrvlRefNb
-		self._RtrvlRefNb = None
+		self._RtrvlRefNb = base_types.UninitialisedField(self, 'RtrvlRefNb', Exact12Text, False)
 
 	@property
 	def SysTracAudtNb(self):
@@ -289,12 +289,12 @@ class TransactionIdentification59(base_types._BaseFieldType):
 
 	@SysTracAudtNb.setter
 	def SysTracAudtNb(self, value):
-		self._SysTracAudtNb = value if type(value) != base_types.auto else self.make_default("SysTracAudtNb")
+		self._SysTracAudtNb = value if value is not None else base_types.UninitialisedField(self, 'SysTracAudtNb', Max12NumericText, False)
 
 	@SysTracAudtNb.deleter
 	def SysTracAudtNb(self):
 		del self._SysTracAudtNb
-		self._SysTracAudtNb = None
+		self._SysTracAudtNb = base_types.UninitialisedField(self, 'SysTracAudtNb', Max12NumericText, False)
 
 	@property
 	def TmZone(self):
@@ -302,12 +302,12 @@ class TransactionIdentification59(base_types._BaseFieldType):
 
 	@TmZone.setter
 	def TmZone(self, value):
-		self._TmZone = value if type(value) != base_types.auto else self.make_default("TmZone")
+		self._TmZone = value if value is not None else base_types.UninitialisedField(self, 'TmZone', Max70Text, False)
 
 	@TmZone.deleter
 	def TmZone(self):
 		del self._TmZone
-		self._TmZone = None
+		self._TmZone = base_types.UninitialisedField(self, 'TmZone', Max70Text, False)
 
 	@property
 	def TrnsmssnDtTm(self):
@@ -315,12 +315,12 @@ class TransactionIdentification59(base_types._BaseFieldType):
 
 	@TrnsmssnDtTm.setter
 	def TrnsmssnDtTm(self, value):
-		self._TrnsmssnDtTm = value if type(value) != base_types.auto else self.make_default("TrnsmssnDtTm")
+		self._TrnsmssnDtTm = value if value is not None else base_types.UninitialisedField(self, 'TrnsmssnDtTm', ISODateTime, False)
 
 	@TrnsmssnDtTm.deleter
 	def TrnsmssnDtTm(self):
 		del self._TrnsmssnDtTm
-		self._TrnsmssnDtTm = None
+		self._TrnsmssnDtTm = base_types.UninitialisedField(self, 'TrnsmssnDtTm', ISODateTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcqrrRefData', type=Max140Text, min=0, max=1, mutex_group=None, array=False),

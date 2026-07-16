@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalReference10 import AdditionalReference10
-from ._CancellationStatusAndReason5 import CancellationStatusAndReason5
-from ._Extension1 import Extension1
-from ._MarketPracticeVersion1 import MarketPracticeVersion1
-from ._MessageIdentification1 import MessageIdentification1
-from ._References64Choice import References64Choice
+from . import AdditionalReference10
+from . import CancellationStatusAndReason5
+from . import Extension1
+from . import MarketPracticeVersion1
+from . import MessageIdentification1
+from . import References64Choice
 
 class TransferCancellationStatusReportV07(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class TransferCancellationStatusReportV07(base_types._BaseFieldType):
 
 	@CtrPtyRef.setter
 	def CtrPtyRef(self, value):
-		self._CtrPtyRef = value if type(value) != base_types.auto else self.make_default("CtrPtyRef")
+		self._CtrPtyRef = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyRef', AdditionalReference10, False)
 
 	@CtrPtyRef.deleter
 	def CtrPtyRef(self):
 		del self._CtrPtyRef
-		self._CtrPtyRef = None
+		self._CtrPtyRef = base_types.UninitialisedField(self, 'CtrPtyRef', AdditionalReference10, False)
 
 	@property
 	def MktPrctcVrsn(self):
@@ -31,12 +31,12 @@ class TransferCancellationStatusReportV07(base_types._BaseFieldType):
 
 	@MktPrctcVrsn.setter
 	def MktPrctcVrsn(self, value):
-		self._MktPrctcVrsn = value if type(value) != base_types.auto else self.make_default("MktPrctcVrsn")
+		self._MktPrctcVrsn = value if value is not None else base_types.UninitialisedField(self, 'MktPrctcVrsn', MarketPracticeVersion1, False)
 
 	@MktPrctcVrsn.deleter
 	def MktPrctcVrsn(self):
 		del self._MktPrctcVrsn
-		self._MktPrctcVrsn = None
+		self._MktPrctcVrsn = base_types.UninitialisedField(self, 'MktPrctcVrsn', MarketPracticeVersion1, False)
 
 	@property
 	def MsgId(self):
@@ -44,12 +44,12 @@ class TransferCancellationStatusReportV07(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@property
 	def Ref(self):
@@ -57,12 +57,12 @@ class TransferCancellationStatusReportV07(base_types._BaseFieldType):
 
 	@Ref.setter
 	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+		self._Ref = value if value is not None else base_types.UninitialisedField(self, 'Ref', References64Choice, False)
 
 	@Ref.deleter
 	def Ref(self):
 		del self._Ref
-		self._Ref = None
+		self._Ref = base_types.UninitialisedField(self, 'Ref', References64Choice, False)
 
 	@property
 	def StsRpt(self):
@@ -70,12 +70,12 @@ class TransferCancellationStatusReportV07(base_types._BaseFieldType):
 
 	@StsRpt.setter
 	def StsRpt(self, value):
-		self._StsRpt = value if type(value) != base_types.auto else self.make_default("StsRpt")
+		self._StsRpt = value if value is not None else base_types.UninitialisedField(self, 'StsRpt', CancellationStatusAndReason5, False)
 
 	@StsRpt.deleter
 	def StsRpt(self):
 		del self._StsRpt
-		self._StsRpt = None
+		self._StsRpt = base_types.UninitialisedField(self, 'StsRpt', CancellationStatusAndReason5, False)
 
 	@property
 	def Xtnsn(self):
@@ -83,12 +83,12 @@ class TransferCancellationStatusReportV07(base_types._BaseFieldType):
 
 	@Xtnsn.setter
 	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
+		self._Xtnsn = value if value is not None else base_types.UninitialisedField(self, 'Xtnsn', Extension1, True)
 
 	@Xtnsn.deleter
 	def Xtnsn(self):
 		del self._Xtnsn
-		self._Xtnsn = None
+		self._Xtnsn = base_types.UninitialisedField(self, 'Xtnsn', Extension1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrPtyRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),

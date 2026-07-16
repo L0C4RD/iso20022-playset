@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InvestigationStatus1Code import InvestigationStatus1Code
-from ._SupplementaryDataEnvelope1 import SupplementaryDataEnvelope1
+from . import InvestigationStatus1Code
+from . import SupplementaryDataEnvelope1
 
 class InvestigationResult1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class InvestigationResult1Choice(base_types._BaseFieldType):
 
 	@InvstgtnSts.setter
 	def InvstgtnSts(self, value):
-		self._InvstgtnSts = value if type(value) != base_types.auto else self.make_default("InvstgtnSts")
+		self._InvstgtnSts = value if value is not None else base_types.UninitialisedField(self, 'InvstgtnSts', InvestigationStatus1Code, False)
 
 	@InvstgtnSts.deleter
 	def InvstgtnSts(self):
 		del self._InvstgtnSts
-		self._InvstgtnSts = None
+		self._InvstgtnSts = base_types.UninitialisedField(self, 'InvstgtnSts', InvestigationStatus1Code, False)
 
 	@property
 	def Rslt(self):
@@ -27,12 +27,12 @@ class InvestigationResult1Choice(base_types._BaseFieldType):
 
 	@Rslt.setter
 	def Rslt(self, value):
-		self._Rslt = value if type(value) != base_types.auto else self.make_default("Rslt")
+		self._Rslt = value if value is not None else base_types.UninitialisedField(self, 'Rslt', SupplementaryDataEnvelope1, False)
 
 	@Rslt.deleter
 	def Rslt(self):
 		del self._Rslt
-		self._Rslt = None
+		self._Rslt = base_types.UninitialisedField(self, 'Rslt', SupplementaryDataEnvelope1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InvstgtnSts', type=InvestigationStatus1Code, min=0, max=1, mutex_group=1, array=False),

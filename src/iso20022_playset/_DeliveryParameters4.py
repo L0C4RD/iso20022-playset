@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContactIdentification2 import ContactIdentification2
-from ._NameAndAddress4 import NameAndAddress4
-from ._YesNoIndicator import YesNoIndicator
+from . import ContactIdentification2
+from . import NameAndAddress4
+from . import YesNoIndicator
 
 class DeliveryParameters4(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class DeliveryParameters4(base_types._BaseFieldType):
 
 	@CtctPrsn.setter
 	def CtctPrsn(self, value):
-		self._CtctPrsn = value if type(value) != base_types.auto else self.make_default("CtctPrsn")
+		self._CtctPrsn = value if value is not None else base_types.UninitialisedField(self, 'CtctPrsn', ContactIdentification2, False)
 
 	@CtctPrsn.deleter
 	def CtctPrsn(self):
 		del self._CtctPrsn
-		self._CtctPrsn = None
+		self._CtctPrsn = base_types.UninitialisedField(self, 'CtctPrsn', ContactIdentification2, False)
 
 	@property
 	def NmAndAdr(self):
@@ -28,12 +28,12 @@ class DeliveryParameters4(base_types._BaseFieldType):
 
 	@NmAndAdr.setter
 	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
+		self._NmAndAdr = value if value is not None else base_types.UninitialisedField(self, 'NmAndAdr', NameAndAddress4, False)
 
 	@NmAndAdr.deleter
 	def NmAndAdr(self):
 		del self._NmAndAdr
-		self._NmAndAdr = None
+		self._NmAndAdr = base_types.UninitialisedField(self, 'NmAndAdr', NameAndAddress4, False)
 
 	@property
 	def RegdAdrInd(self):
@@ -41,12 +41,12 @@ class DeliveryParameters4(base_types._BaseFieldType):
 
 	@RegdAdrInd.setter
 	def RegdAdrInd(self, value):
-		self._RegdAdrInd = value if type(value) != base_types.auto else self.make_default("RegdAdrInd")
+		self._RegdAdrInd = value if value is not None else base_types.UninitialisedField(self, 'RegdAdrInd', YesNoIndicator, False)
 
 	@RegdAdrInd.deleter
 	def RegdAdrInd(self):
 		del self._RegdAdrInd
-		self._RegdAdrInd = None
+		self._RegdAdrInd = base_types.UninitialisedField(self, 'RegdAdrInd', YesNoIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtctPrsn', type=ContactIdentification2, min=0, max=1, mutex_group=None, array=False),

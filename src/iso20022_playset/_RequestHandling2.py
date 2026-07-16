@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._Max140Text import Max140Text
-from ._Max4AlphaNumericText import Max4AlphaNumericText
+from . import ISODateTime
+from . import Max140Text
+from . import Max4AlphaNumericText
 
 class RequestHandling2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class RequestHandling2(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', Max140Text, False)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', Max140Text, False)
 
 	@property
 	def StsCd(self):
@@ -28,12 +28,12 @@ class RequestHandling2(base_types._BaseFieldType):
 
 	@StsCd.setter
 	def StsCd(self, value):
-		self._StsCd = value if type(value) != base_types.auto else self.make_default("StsCd")
+		self._StsCd = value if value is not None else base_types.UninitialisedField(self, 'StsCd', Max4AlphaNumericText, False)
 
 	@StsCd.deleter
 	def StsCd(self):
 		del self._StsCd
-		self._StsCd = None
+		self._StsCd = base_types.UninitialisedField(self, 'StsCd', Max4AlphaNumericText, False)
 
 	@property
 	def StsDtTm(self):
@@ -41,12 +41,12 @@ class RequestHandling2(base_types._BaseFieldType):
 
 	@StsDtTm.setter
 	def StsDtTm(self, value):
-		self._StsDtTm = value if type(value) != base_types.auto else self.make_default("StsDtTm")
+		self._StsDtTm = value if value is not None else base_types.UninitialisedField(self, 'StsDtTm', ISODateTime, False)
 
 	@StsDtTm.deleter
 	def StsDtTm(self):
 		del self._StsDtTm
-		self._StsDtTm = None
+		self._StsDtTm = base_types.UninitialisedField(self, 'StsDtTm', ISODateTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Desc', type=Max140Text, min=0, max=1, mutex_group=None, array=False),

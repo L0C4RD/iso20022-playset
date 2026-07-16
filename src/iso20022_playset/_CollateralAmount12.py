@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection49 import AmountAndDirection49
-from ._CalculationMethod1Code import CalculationMethod1Code
-from ._Frequency38Choice import Frequency38Choice
-from ._Max3NumericText import Max3NumericText
+from . import AmountAndDirection49
+from . import CalculationMethod1Code
+from . import Frequency38Choice
+from . import Max3NumericText
 
 class CollateralAmount12(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CollateralAmount12(base_types._BaseFieldType):
 
 	@Acrd.setter
 	def Acrd(self, value):
-		self._Acrd = value if type(value) != base_types.auto else self.make_default("Acrd")
+		self._Acrd = value if value is not None else base_types.UninitialisedField(self, 'Acrd', AmountAndDirection49, False)
 
 	@Acrd.deleter
 	def Acrd(self):
 		del self._Acrd
-		self._Acrd = None
+		self._Acrd = base_types.UninitialisedField(self, 'Acrd', AmountAndDirection49, False)
 
 	@property
 	def CmpndSmplAcrlClctn(self):
@@ -29,12 +29,12 @@ class CollateralAmount12(base_types._BaseFieldType):
 
 	@CmpndSmplAcrlClctn.setter
 	def CmpndSmplAcrlClctn(self, value):
-		self._CmpndSmplAcrlClctn = value if type(value) != base_types.auto else self.make_default("CmpndSmplAcrlClctn")
+		self._CmpndSmplAcrlClctn = value if value is not None else base_types.UninitialisedField(self, 'CmpndSmplAcrlClctn', CalculationMethod1Code, False)
 
 	@CmpndSmplAcrlClctn.deleter
 	def CmpndSmplAcrlClctn(self):
 		del self._CmpndSmplAcrlClctn
-		self._CmpndSmplAcrlClctn = None
+		self._CmpndSmplAcrlClctn = base_types.UninitialisedField(self, 'CmpndSmplAcrlClctn', CalculationMethod1Code, False)
 
 	@property
 	def IntrstPmtDely(self):
@@ -42,12 +42,12 @@ class CollateralAmount12(base_types._BaseFieldType):
 
 	@IntrstPmtDely.setter
 	def IntrstPmtDely(self, value):
-		self._IntrstPmtDely = value if type(value) != base_types.auto else self.make_default("IntrstPmtDely")
+		self._IntrstPmtDely = value if value is not None else base_types.UninitialisedField(self, 'IntrstPmtDely', Max3NumericText, False)
 
 	@IntrstPmtDely.deleter
 	def IntrstPmtDely(self):
 		del self._IntrstPmtDely
-		self._IntrstPmtDely = None
+		self._IntrstPmtDely = base_types.UninitialisedField(self, 'IntrstPmtDely', Max3NumericText, False)
 
 	@property
 	def PmtFrqcy(self):
@@ -55,12 +55,12 @@ class CollateralAmount12(base_types._BaseFieldType):
 
 	@PmtFrqcy.setter
 	def PmtFrqcy(self, value):
-		self._PmtFrqcy = value if type(value) != base_types.auto else self.make_default("PmtFrqcy")
+		self._PmtFrqcy = value if value is not None else base_types.UninitialisedField(self, 'PmtFrqcy', Frequency38Choice, False)
 
 	@PmtFrqcy.deleter
 	def PmtFrqcy(self):
 		del self._PmtFrqcy
-		self._PmtFrqcy = None
+		self._PmtFrqcy = base_types.UninitialisedField(self, 'PmtFrqcy', Frequency38Choice, False)
 
 	@property
 	def Termntn(self):
@@ -68,12 +68,12 @@ class CollateralAmount12(base_types._BaseFieldType):
 
 	@Termntn.setter
 	def Termntn(self, value):
-		self._Termntn = value if type(value) != base_types.auto else self.make_default("Termntn")
+		self._Termntn = value if value is not None else base_types.UninitialisedField(self, 'Termntn', AmountAndDirection49, False)
 
 	@Termntn.deleter
 	def Termntn(self):
 		del self._Termntn
-		self._Termntn = None
+		self._Termntn = base_types.UninitialisedField(self, 'Termntn', AmountAndDirection49, False)
 
 	@property
 	def Tx(self):
@@ -81,12 +81,12 @@ class CollateralAmount12(base_types._BaseFieldType):
 
 	@Tx.setter
 	def Tx(self, value):
-		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
+		self._Tx = value if value is not None else base_types.UninitialisedField(self, 'Tx', AmountAndDirection49, False)
 
 	@Tx.deleter
 	def Tx(self):
 		del self._Tx
-		self._Tx = None
+		self._Tx = base_types.UninitialisedField(self, 'Tx', AmountAndDirection49, False)
 
 	@property
 	def ValSght(self):
@@ -94,12 +94,12 @@ class CollateralAmount12(base_types._BaseFieldType):
 
 	@ValSght.setter
 	def ValSght(self, value):
-		self._ValSght = value if type(value) != base_types.auto else self.make_default("ValSght")
+		self._ValSght = value if value is not None else base_types.UninitialisedField(self, 'ValSght', AmountAndDirection49, False)
 
 	@ValSght.deleter
 	def ValSght(self):
 		del self._ValSght
-		self._ValSght = None
+		self._ValSght = base_types.UninitialisedField(self, 'ValSght', AmountAndDirection49, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acrd', type=AmountAndDirection49, min=0, max=1, mutex_group=None, array=False),

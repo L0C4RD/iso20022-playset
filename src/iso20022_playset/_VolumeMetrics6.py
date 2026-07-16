@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ExposureMetrics5 import ExposureMetrics5
+from . import ExposureMetrics5
 
 class VolumeMetrics6(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class VolumeMetrics6(base_types._BaseFieldType):
 
 	@Neg.setter
 	def Neg(self, value):
-		self._Neg = value if type(value) != base_types.auto else self.make_default("Neg")
+		self._Neg = value if value is not None else base_types.UninitialisedField(self, 'Neg', ExposureMetrics5, False)
 
 	@Neg.deleter
 	def Neg(self):
 		del self._Neg
-		self._Neg = None
+		self._Neg = base_types.UninitialisedField(self, 'Neg', ExposureMetrics5, False)
 
 	@property
 	def Postv(self):
@@ -26,12 +26,12 @@ class VolumeMetrics6(base_types._BaseFieldType):
 
 	@Postv.setter
 	def Postv(self, value):
-		self._Postv = value if type(value) != base_types.auto else self.make_default("Postv")
+		self._Postv = value if value is not None else base_types.UninitialisedField(self, 'Postv', ExposureMetrics5, False)
 
 	@Postv.deleter
 	def Postv(self):
 		del self._Postv
-		self._Postv = None
+		self._Postv = base_types.UninitialisedField(self, 'Postv', ExposureMetrics5, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Neg', type=ExposureMetrics5, min=0, max=1, mutex_group=None, array=False),

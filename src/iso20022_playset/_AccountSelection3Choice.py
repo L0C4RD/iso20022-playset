@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InvestmentAccount76 import InvestmentAccount76
-from ._Max35Text import Max35Text
+from . import InvestmentAccount76
+from . import Max35Text
 
 class AccountSelection3Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AccountSelection3Choice(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', Max35Text, False)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', Max35Text, False)
 
 	@property
 	def OthrAcctSelctnData(self):
@@ -27,12 +27,12 @@ class AccountSelection3Choice(base_types._BaseFieldType):
 
 	@OthrAcctSelctnData.setter
 	def OthrAcctSelctnData(self, value):
-		self._OthrAcctSelctnData = value if type(value) != base_types.auto else self.make_default("OthrAcctSelctnData")
+		self._OthrAcctSelctnData = value if value is not None else base_types.UninitialisedField(self, 'OthrAcctSelctnData', InvestmentAccount76, False)
 
 	@OthrAcctSelctnData.deleter
 	def OthrAcctSelctnData(self):
 		del self._OthrAcctSelctnData
-		self._OthrAcctSelctnData = None
+		self._OthrAcctSelctnData = base_types.UninitialisedField(self, 'OthrAcctSelctnData', InvestmentAccount76, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),

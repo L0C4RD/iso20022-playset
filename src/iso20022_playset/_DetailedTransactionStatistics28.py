@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AbnormalValuesData4 import AbnormalValuesData4
-from ._Number import Number
+from . import AbnormalValuesData4
+from . import Number
 
 class DetailedTransactionStatistics28(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DetailedTransactionStatistics28(base_types._BaseFieldType):
 
 	@NbOfDerivsRptd.setter
 	def NbOfDerivsRptd(self, value):
-		self._NbOfDerivsRptd = value if type(value) != base_types.auto else self.make_default("NbOfDerivsRptd")
+		self._NbOfDerivsRptd = value if value is not None else base_types.UninitialisedField(self, 'NbOfDerivsRptd', Number, False)
 
 	@NbOfDerivsRptd.deleter
 	def NbOfDerivsRptd(self):
 		del self._NbOfDerivsRptd
-		self._NbOfDerivsRptd = None
+		self._NbOfDerivsRptd = base_types.UninitialisedField(self, 'NbOfDerivsRptd', Number, False)
 
 	@property
 	def NbOfDerivsRptdWthOtlrs(self):
@@ -27,12 +27,12 @@ class DetailedTransactionStatistics28(base_types._BaseFieldType):
 
 	@NbOfDerivsRptdWthOtlrs.setter
 	def NbOfDerivsRptdWthOtlrs(self, value):
-		self._NbOfDerivsRptdWthOtlrs = value if type(value) != base_types.auto else self.make_default("NbOfDerivsRptdWthOtlrs")
+		self._NbOfDerivsRptdWthOtlrs = value if value is not None else base_types.UninitialisedField(self, 'NbOfDerivsRptdWthOtlrs', Number, False)
 
 	@NbOfDerivsRptdWthOtlrs.deleter
 	def NbOfDerivsRptdWthOtlrs(self):
 		del self._NbOfDerivsRptdWthOtlrs
-		self._NbOfDerivsRptdWthOtlrs = None
+		self._NbOfDerivsRptdWthOtlrs = base_types.UninitialisedField(self, 'NbOfDerivsRptdWthOtlrs', Number, False)
 
 	@property
 	def Wrnngs(self):
@@ -40,12 +40,12 @@ class DetailedTransactionStatistics28(base_types._BaseFieldType):
 
 	@Wrnngs.setter
 	def Wrnngs(self, value):
-		self._Wrnngs = value if type(value) != base_types.auto else self.make_default("Wrnngs")
+		self._Wrnngs = value if value is not None else base_types.UninitialisedField(self, 'Wrnngs', AbnormalValuesData4, True)
 
 	@Wrnngs.deleter
 	def Wrnngs(self):
 		del self._Wrnngs
-		self._Wrnngs = None
+		self._Wrnngs = base_types.UninitialisedField(self, 'Wrnngs', AbnormalValuesData4, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NbOfDerivsRptd', type=Number, min=1, max=1, mutex_group=None, array=False),

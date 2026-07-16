@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification47 import GenericIdentification47
-from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from ._RestrictedFINXMax70Text import RestrictedFINXMax70Text
+from . import GenericIdentification47
+from . import RestrictedFINXMax140Text
+from . import RestrictedFINXMax16Text
+from . import RestrictedFINXMax70Text
 
 class BlockChainAddressWallet8(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class BlockChainAddressWallet8(base_types._BaseFieldType):
 
 	@Dsgnt.setter
 	def Dsgnt(self, value):
-		self._Dsgnt = value if type(value) != base_types.auto else self.make_default("Dsgnt")
+		self._Dsgnt = value if value is not None else base_types.UninitialisedField(self, 'Dsgnt', RestrictedFINXMax16Text, False)
 
 	@Dsgnt.deleter
 	def Dsgnt(self):
 		del self._Dsgnt
-		self._Dsgnt = None
+		self._Dsgnt = base_types.UninitialisedField(self, 'Dsgnt', RestrictedFINXMax16Text, False)
 
 	@property
 	def Id(self):
@@ -29,12 +29,12 @@ class BlockChainAddressWallet8(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', RestrictedFINXMax140Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', RestrictedFINXMax140Text, False)
 
 	@property
 	def Nm(self):
@@ -42,12 +42,12 @@ class BlockChainAddressWallet8(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', RestrictedFINXMax70Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', RestrictedFINXMax70Text, False)
 
 	@property
 	def Tp(self):
@@ -55,12 +55,12 @@ class BlockChainAddressWallet8(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', GenericIdentification47, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', GenericIdentification47, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dsgnt', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),

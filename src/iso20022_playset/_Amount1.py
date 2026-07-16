@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Max210Text import Max210Text
-from ._Max35Text import Max35Text
+from . import ActiveCurrencyAndAmount
+from . import Max210Text
+from . import Max35Text
 
 class Amount1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Amount1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max210Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max210Text, False)
 
 	@property
 	def AgrdAmt(self):
@@ -28,12 +28,12 @@ class Amount1(base_types._BaseFieldType):
 
 	@AgrdAmt.setter
 	def AgrdAmt(self, value):
-		self._AgrdAmt = value if type(value) != base_types.auto else self.make_default("AgrdAmt")
+		self._AgrdAmt = value if value is not None else base_types.UninitialisedField(self, 'AgrdAmt', ActiveCurrencyAndAmount, False)
 
 	@AgrdAmt.deleter
 	def AgrdAmt(self):
 		del self._AgrdAmt
-		self._AgrdAmt = None
+		self._AgrdAmt = base_types.UninitialisedField(self, 'AgrdAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def MrgnCallReqId(self):
@@ -41,12 +41,12 @@ class Amount1(base_types._BaseFieldType):
 
 	@MrgnCallReqId.setter
 	def MrgnCallReqId(self, value):
-		self._MrgnCallReqId = value if type(value) != base_types.auto else self.make_default("MrgnCallReqId")
+		self._MrgnCallReqId = value if value is not None else base_types.UninitialisedField(self, 'MrgnCallReqId', Max35Text, False)
 
 	@MrgnCallReqId.deleter
 	def MrgnCallReqId(self):
 		del self._MrgnCallReqId
-		self._MrgnCallReqId = None
+		self._MrgnCallReqId = base_types.UninitialisedField(self, 'MrgnCallReqId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max210Text, min=0, max=1, mutex_group=None, array=False),

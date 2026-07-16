@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Acquirer7 import Acquirer7
-from ._AutomatedTellerMachine7 import AutomatedTellerMachine7
-from ._Max35Text import Max35Text
+from . import Acquirer7
+from . import AutomatedTellerMachine7
+from . import Max35Text
 
 class ATMEnvironment9(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ATMEnvironment9(base_types._BaseFieldType):
 
 	@ATM.setter
 	def ATM(self, value):
-		self._ATM = value if type(value) != base_types.auto else self.make_default("ATM")
+		self._ATM = value if value is not None else base_types.UninitialisedField(self, 'ATM', AutomatedTellerMachine7, False)
 
 	@ATM.deleter
 	def ATM(self):
 		del self._ATM
-		self._ATM = None
+		self._ATM = base_types.UninitialisedField(self, 'ATM', AutomatedTellerMachine7, False)
 
 	@property
 	def ATMMgrId(self):
@@ -28,12 +28,12 @@ class ATMEnvironment9(base_types._BaseFieldType):
 
 	@ATMMgrId.setter
 	def ATMMgrId(self, value):
-		self._ATMMgrId = value if type(value) != base_types.auto else self.make_default("ATMMgrId")
+		self._ATMMgrId = value if value is not None else base_types.UninitialisedField(self, 'ATMMgrId', Max35Text, False)
 
 	@ATMMgrId.deleter
 	def ATMMgrId(self):
 		del self._ATMMgrId
-		self._ATMMgrId = None
+		self._ATMMgrId = base_types.UninitialisedField(self, 'ATMMgrId', Max35Text, False)
 
 	@property
 	def Acqrr(self):
@@ -41,12 +41,12 @@ class ATMEnvironment9(base_types._BaseFieldType):
 
 	@Acqrr.setter
 	def Acqrr(self, value):
-		self._Acqrr = value if type(value) != base_types.auto else self.make_default("Acqrr")
+		self._Acqrr = value if value is not None else base_types.UninitialisedField(self, 'Acqrr', Acquirer7, False)
 
 	@Acqrr.deleter
 	def Acqrr(self):
 		del self._Acqrr
-		self._Acqrr = None
+		self._Acqrr = base_types.UninitialisedField(self, 'Acqrr', Acquirer7, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ATM', type=AutomatedTellerMachine7, min=1, max=1, mutex_group=None, array=False),

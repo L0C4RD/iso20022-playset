@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Vote18Choice import Vote18Choice
-from ._VoteInstructionType3Choice import VoteInstructionType3Choice
+from . import Vote18Choice
+from . import VoteInstructionType3Choice
 
 class Vote17Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Vote17Choice(base_types._BaseFieldType):
 
 	@VoteForAllAgndRsltns.setter
 	def VoteForAllAgndRsltns(self, value):
-		self._VoteForAllAgndRsltns = value if type(value) != base_types.auto else self.make_default("VoteForAllAgndRsltns")
+		self._VoteForAllAgndRsltns = value if value is not None else base_types.UninitialisedField(self, 'VoteForAllAgndRsltns', VoteInstructionType3Choice, False)
 
 	@VoteForAllAgndRsltns.deleter
 	def VoteForAllAgndRsltns(self):
 		del self._VoteForAllAgndRsltns
-		self._VoteForAllAgndRsltns = None
+		self._VoteForAllAgndRsltns = base_types.UninitialisedField(self, 'VoteForAllAgndRsltns', VoteInstructionType3Choice, False)
 
 	@property
 	def VotePerAgndRsltn(self):
@@ -27,12 +27,12 @@ class Vote17Choice(base_types._BaseFieldType):
 
 	@VotePerAgndRsltn.setter
 	def VotePerAgndRsltn(self, value):
-		self._VotePerAgndRsltn = value if type(value) != base_types.auto else self.make_default("VotePerAgndRsltn")
+		self._VotePerAgndRsltn = value if value is not None else base_types.UninitialisedField(self, 'VotePerAgndRsltn', Vote18Choice, False)
 
 	@VotePerAgndRsltn.deleter
 	def VotePerAgndRsltn(self):
 		del self._VotePerAgndRsltn
-		self._VotePerAgndRsltn = None
+		self._VotePerAgndRsltn = base_types.UninitialisedField(self, 'VotePerAgndRsltn', Vote18Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='VoteForAllAgndRsltns', type=VoteInstructionType3Choice, min=0, max=1, mutex_group=1, array=False),

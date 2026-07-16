@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NetworkManagementInitiationV05 import NetworkManagementInitiationV05
+from . import NetworkManagementInitiationV05
 
 class CANM_001_001_05():
 
@@ -18,12 +18,12 @@ class CANM_001_001_05():
 
 		@NtwkMgmtInitn.setter
 		def NtwkMgmtInitn(self, value):
-			self._NtwkMgmtInitn = value if type(value) != base_types.auto else self.make_default("NtwkMgmtInitn")
+			self._NtwkMgmtInitn = value if value is not None else base_types.UninitialisedField(self, 'NtwkMgmtInitn', NetworkManagementInitiationV05, False)
 
 		@NtwkMgmtInitn.deleter
 		def NtwkMgmtInitn(self):
 			del self._NtwkMgmtInitn
-			self._NtwkMgmtInitn = None
+			self._NtwkMgmtInitn = base_types.UninitialisedField(self, 'NtwkMgmtInitn', NetworkManagementInitiationV05, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='NtwkMgmtInitn', type=NetworkManagementInitiationV05, min=1, max=1, mutex_group=None, array=False),

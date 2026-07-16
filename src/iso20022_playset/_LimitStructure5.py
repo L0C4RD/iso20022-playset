@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Amount4Choice import Amount4Choice
-from ._Limit10 import Limit10
-from ._Limit8 import Limit8
-from ._LimitIdentification3Choice import LimitIdentification3Choice
+from . import Amount4Choice
+from . import Limit10
+from . import Limit8
+from . import LimitIdentification3Choice
 
 class LimitStructure5(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class LimitStructure5(base_types._BaseFieldType):
 
 	@LmtId.setter
 	def LmtId(self, value):
-		self._LmtId = value if type(value) != base_types.auto else self.make_default("LmtId")
+		self._LmtId = value if value is not None else base_types.UninitialisedField(self, 'LmtId', LimitIdentification3Choice, False)
 
 	@LmtId.deleter
 	def LmtId(self):
 		del self._LmtId
-		self._LmtId = None
+		self._LmtId = base_types.UninitialisedField(self, 'LmtId', LimitIdentification3Choice, False)
 
 	@property
 	def LmtValAmdmnt(self):
@@ -29,12 +29,12 @@ class LimitStructure5(base_types._BaseFieldType):
 
 	@LmtValAmdmnt.setter
 	def LmtValAmdmnt(self, value):
-		self._LmtValAmdmnt = value if type(value) != base_types.auto else self.make_default("LmtValAmdmnt")
+		self._LmtValAmdmnt = value if value is not None else base_types.UninitialisedField(self, 'LmtValAmdmnt', Amount4Choice, False)
 
 	@LmtValAmdmnt.deleter
 	def LmtValAmdmnt(self):
 		del self._LmtValAmdmnt
-		self._LmtValAmdmnt = None
+		self._LmtValAmdmnt = base_types.UninitialisedField(self, 'LmtValAmdmnt', Amount4Choice, False)
 
 	@property
 	def NewLmtValSet(self):
@@ -42,12 +42,12 @@ class LimitStructure5(base_types._BaseFieldType):
 
 	@NewLmtValSet.setter
 	def NewLmtValSet(self, value):
-		self._NewLmtValSet = value if type(value) != base_types.auto else self.make_default("NewLmtValSet")
+		self._NewLmtValSet = value if value is not None else base_types.UninitialisedField(self, 'NewLmtValSet', Limit8, False)
 
 	@NewLmtValSet.deleter
 	def NewLmtValSet(self):
 		del self._NewLmtValSet
-		self._NewLmtValSet = None
+		self._NewLmtValSet = base_types.UninitialisedField(self, 'NewLmtValSet', Limit8, False)
 
 	@property
 	def OdLmtValSet(self):
@@ -55,12 +55,12 @@ class LimitStructure5(base_types._BaseFieldType):
 
 	@OdLmtValSet.setter
 	def OdLmtValSet(self, value):
-		self._OdLmtValSet = value if type(value) != base_types.auto else self.make_default("OdLmtValSet")
+		self._OdLmtValSet = value if value is not None else base_types.UninitialisedField(self, 'OdLmtValSet', Limit10, False)
 
 	@OdLmtValSet.deleter
 	def OdLmtValSet(self):
 		del self._OdLmtValSet
-		self._OdLmtValSet = None
+		self._OdLmtValSet = base_types.UninitialisedField(self, 'OdLmtValSet', Limit10, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LmtId', type=LimitIdentification3Choice, min=1, max=1, mutex_group=None, array=False),

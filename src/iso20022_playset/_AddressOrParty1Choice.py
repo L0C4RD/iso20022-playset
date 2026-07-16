@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NameAndAddress10 import NameAndAddress10
-from ._PostalAddress6 import PostalAddress6
+from . import NameAndAddress10
+from . import PostalAddress6
 
 class AddressOrParty1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AddressOrParty1Choice(base_types._BaseFieldType):
 
 	@NewAdr.setter
 	def NewAdr(self, value):
-		self._NewAdr = value if type(value) != base_types.auto else self.make_default("NewAdr")
+		self._NewAdr = value if value is not None else base_types.UninitialisedField(self, 'NewAdr', PostalAddress6, False)
 
 	@NewAdr.deleter
 	def NewAdr(self):
 		del self._NewAdr
-		self._NewAdr = None
+		self._NewAdr = base_types.UninitialisedField(self, 'NewAdr', PostalAddress6, False)
 
 	@property
 	def NewBnfcry(self):
@@ -27,12 +27,12 @@ class AddressOrParty1Choice(base_types._BaseFieldType):
 
 	@NewBnfcry.setter
 	def NewBnfcry(self, value):
-		self._NewBnfcry = value if type(value) != base_types.auto else self.make_default("NewBnfcry")
+		self._NewBnfcry = value if value is not None else base_types.UninitialisedField(self, 'NewBnfcry', NameAndAddress10, False)
 
 	@NewBnfcry.deleter
 	def NewBnfcry(self):
 		del self._NewBnfcry
-		self._NewBnfcry = None
+		self._NewBnfcry = base_types.UninitialisedField(self, 'NewBnfcry', NameAndAddress10, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NewAdr', type=PostalAddress6, min=0, max=1, mutex_group=1, array=False),

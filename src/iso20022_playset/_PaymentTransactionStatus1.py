@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._StatusReasonInformation12 import StatusReasonInformation12
-from ._TransactionStatus1Choice import TransactionStatus1Choice
+from . import StatusReasonInformation12
+from . import TransactionStatus1Choice
 
 class PaymentTransactionStatus1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PaymentTransactionStatus1(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', TransactionStatus1Choice, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', TransactionStatus1Choice, False)
 
 	@property
 	def StsRsnInf(self):
@@ -27,12 +27,12 @@ class PaymentTransactionStatus1(base_types._BaseFieldType):
 
 	@StsRsnInf.setter
 	def StsRsnInf(self, value):
-		self._StsRsnInf = value if type(value) != base_types.auto else self.make_default("StsRsnInf")
+		self._StsRsnInf = value if value is not None else base_types.UninitialisedField(self, 'StsRsnInf', StatusReasonInformation12, True)
 
 	@StsRsnInf.deleter
 	def StsRsnInf(self):
 		del self._StsRsnInf
-		self._StsRsnInf = None
+		self._StsRsnInf = base_types.UninitialisedField(self, 'StsRsnInf', StatusReasonInformation12, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Sts', type=TransactionStatus1Choice, min=1, max=1, mutex_group=None, array=False),

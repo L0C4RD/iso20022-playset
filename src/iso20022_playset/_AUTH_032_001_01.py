@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentReportingEquityTransparencyDataReportV01 import FinancialInstrumentReportingEquityTransparencyDataReportV01
+from . import FinancialInstrumentReportingEquityTransparencyDataReportV01
 
 class AUTH_032_001_01():
 
@@ -18,12 +18,12 @@ class AUTH_032_001_01():
 
 		@FinInstrmRptgEqtyTrnsprncyDataRpt.setter
 		def FinInstrmRptgEqtyTrnsprncyDataRpt(self, value):
-			self._FinInstrmRptgEqtyTrnsprncyDataRpt = value if type(value) != base_types.auto else self.make_default("FinInstrmRptgEqtyTrnsprncyDataRpt")
+			self._FinInstrmRptgEqtyTrnsprncyDataRpt = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmRptgEqtyTrnsprncyDataRpt', FinancialInstrumentReportingEquityTransparencyDataReportV01, False)
 
 		@FinInstrmRptgEqtyTrnsprncyDataRpt.deleter
 		def FinInstrmRptgEqtyTrnsprncyDataRpt(self):
 			del self._FinInstrmRptgEqtyTrnsprncyDataRpt
-			self._FinInstrmRptgEqtyTrnsprncyDataRpt = None
+			self._FinInstrmRptgEqtyTrnsprncyDataRpt = base_types.UninitialisedField(self, 'FinInstrmRptgEqtyTrnsprncyDataRpt', FinancialInstrumentReportingEquityTransparencyDataReportV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='FinInstrmRptgEqtyTrnsprncyDataRpt', type=FinancialInstrumentReportingEquityTransparencyDataReportV01, min=1, max=1, mutex_group=None, array=False),

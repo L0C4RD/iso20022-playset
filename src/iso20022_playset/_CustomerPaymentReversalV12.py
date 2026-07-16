@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GroupHeader124 import GroupHeader124
-from ._OriginalGroupHeader20 import OriginalGroupHeader20
-from ._OriginalPaymentInstruction50 import OriginalPaymentInstruction50
-from ._SupplementaryData1 import SupplementaryData1
+from . import GroupHeader124
+from . import OriginalGroupHeader20
+from . import OriginalPaymentInstruction50
+from . import SupplementaryData1
 
 class CustomerPaymentReversalV12(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CustomerPaymentReversalV12(base_types._BaseFieldType):
 
 	@GrpHdr.setter
 	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
+		self._GrpHdr = value if value is not None else base_types.UninitialisedField(self, 'GrpHdr', GroupHeader124, False)
 
 	@GrpHdr.deleter
 	def GrpHdr(self):
 		del self._GrpHdr
-		self._GrpHdr = None
+		self._GrpHdr = base_types.UninitialisedField(self, 'GrpHdr', GroupHeader124, False)
 
 	@property
 	def OrgnlGrpInf(self):
@@ -29,12 +29,12 @@ class CustomerPaymentReversalV12(base_types._BaseFieldType):
 
 	@OrgnlGrpInf.setter
 	def OrgnlGrpInf(self, value):
-		self._OrgnlGrpInf = value if type(value) != base_types.auto else self.make_default("OrgnlGrpInf")
+		self._OrgnlGrpInf = value if value is not None else base_types.UninitialisedField(self, 'OrgnlGrpInf', OriginalGroupHeader20, False)
 
 	@OrgnlGrpInf.deleter
 	def OrgnlGrpInf(self):
 		del self._OrgnlGrpInf
-		self._OrgnlGrpInf = None
+		self._OrgnlGrpInf = base_types.UninitialisedField(self, 'OrgnlGrpInf', OriginalGroupHeader20, False)
 
 	@property
 	def OrgnlPmtInfAndRvsl(self):
@@ -42,12 +42,12 @@ class CustomerPaymentReversalV12(base_types._BaseFieldType):
 
 	@OrgnlPmtInfAndRvsl.setter
 	def OrgnlPmtInfAndRvsl(self, value):
-		self._OrgnlPmtInfAndRvsl = value if type(value) != base_types.auto else self.make_default("OrgnlPmtInfAndRvsl")
+		self._OrgnlPmtInfAndRvsl = value if value is not None else base_types.UninitialisedField(self, 'OrgnlPmtInfAndRvsl', OriginalPaymentInstruction50, True)
 
 	@OrgnlPmtInfAndRvsl.deleter
 	def OrgnlPmtInfAndRvsl(self):
 		del self._OrgnlPmtInfAndRvsl
-		self._OrgnlPmtInfAndRvsl = None
+		self._OrgnlPmtInfAndRvsl = base_types.UninitialisedField(self, 'OrgnlPmtInfAndRvsl', OriginalPaymentInstruction50, True)
 
 	@property
 	def SplmtryData(self):
@@ -55,12 +55,12 @@ class CustomerPaymentReversalV12(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='GrpHdr', type=GroupHeader124, min=1, max=1, mutex_group=None, array=False),

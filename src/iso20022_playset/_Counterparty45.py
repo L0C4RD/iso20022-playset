@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CounterpartyTradeNature15Choice import CounterpartyTradeNature15Choice
-from ._CountryCode import CountryCode
-from ._Direction4Choice import Direction4Choice
-from ._PartyIdentification248Choice import PartyIdentification248Choice
-from ._ReportingExemption1 import ReportingExemption1
-from ._TradingCapacity7Code import TradingCapacity7Code
+from . import CounterpartyTradeNature15Choice
+from . import CountryCode
+from . import Direction4Choice
+from . import PartyIdentification248Choice
+from . import ReportingExemption1
+from . import TradingCapacity7Code
 
 class Counterparty45(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class Counterparty45(base_types._BaseFieldType):
 
 	@BookgLctn.setter
 	def BookgLctn(self, value):
-		self._BookgLctn = value if type(value) != base_types.auto else self.make_default("BookgLctn")
+		self._BookgLctn = value if value is not None else base_types.UninitialisedField(self, 'BookgLctn', CountryCode, False)
 
 	@BookgLctn.deleter
 	def BookgLctn(self):
 		del self._BookgLctn
-		self._BookgLctn = None
+		self._BookgLctn = base_types.UninitialisedField(self, 'BookgLctn', CountryCode, False)
 
 	@property
 	def DrctnOrSd(self):
@@ -31,12 +31,12 @@ class Counterparty45(base_types._BaseFieldType):
 
 	@DrctnOrSd.setter
 	def DrctnOrSd(self, value):
-		self._DrctnOrSd = value if type(value) != base_types.auto else self.make_default("DrctnOrSd")
+		self._DrctnOrSd = value if value is not None else base_types.UninitialisedField(self, 'DrctnOrSd', Direction4Choice, False)
 
 	@DrctnOrSd.deleter
 	def DrctnOrSd(self):
 		del self._DrctnOrSd
-		self._DrctnOrSd = None
+		self._DrctnOrSd = base_types.UninitialisedField(self, 'DrctnOrSd', Direction4Choice, False)
 
 	@property
 	def Id(self):
@@ -44,12 +44,12 @@ class Counterparty45(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', PartyIdentification248Choice, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', PartyIdentification248Choice, False)
 
 	@property
 	def Ntr(self):
@@ -57,12 +57,12 @@ class Counterparty45(base_types._BaseFieldType):
 
 	@Ntr.setter
 	def Ntr(self, value):
-		self._Ntr = value if type(value) != base_types.auto else self.make_default("Ntr")
+		self._Ntr = value if value is not None else base_types.UninitialisedField(self, 'Ntr', CounterpartyTradeNature15Choice, False)
 
 	@Ntr.deleter
 	def Ntr(self):
 		del self._Ntr
-		self._Ntr = None
+		self._Ntr = base_types.UninitialisedField(self, 'Ntr', CounterpartyTradeNature15Choice, False)
 
 	@property
 	def RptgXmptn(self):
@@ -70,12 +70,12 @@ class Counterparty45(base_types._BaseFieldType):
 
 	@RptgXmptn.setter
 	def RptgXmptn(self, value):
-		self._RptgXmptn = value if type(value) != base_types.auto else self.make_default("RptgXmptn")
+		self._RptgXmptn = value if value is not None else base_types.UninitialisedField(self, 'RptgXmptn', ReportingExemption1, False)
 
 	@RptgXmptn.deleter
 	def RptgXmptn(self):
 		del self._RptgXmptn
-		self._RptgXmptn = None
+		self._RptgXmptn = base_types.UninitialisedField(self, 'RptgXmptn', ReportingExemption1, False)
 
 	@property
 	def TradgCpcty(self):
@@ -83,12 +83,12 @@ class Counterparty45(base_types._BaseFieldType):
 
 	@TradgCpcty.setter
 	def TradgCpcty(self, value):
-		self._TradgCpcty = value if type(value) != base_types.auto else self.make_default("TradgCpcty")
+		self._TradgCpcty = value if value is not None else base_types.UninitialisedField(self, 'TradgCpcty', TradingCapacity7Code, False)
 
 	@TradgCpcty.deleter
 	def TradgCpcty(self):
 		del self._TradgCpcty
-		self._TradgCpcty = None
+		self._TradgCpcty = base_types.UninitialisedField(self, 'TradgCpcty', TradingCapacity7Code, False)
 
 	@property
 	def TradrLctn(self):
@@ -96,12 +96,12 @@ class Counterparty45(base_types._BaseFieldType):
 
 	@TradrLctn.setter
 	def TradrLctn(self, value):
-		self._TradrLctn = value if type(value) != base_types.auto else self.make_default("TradrLctn")
+		self._TradrLctn = value if value is not None else base_types.UninitialisedField(self, 'TradrLctn', CountryCode, False)
 
 	@TradrLctn.deleter
 	def TradrLctn(self):
 		del self._TradrLctn
-		self._TradrLctn = None
+		self._TradrLctn = base_types.UninitialisedField(self, 'TradrLctn', CountryCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BookgLctn', type=CountryCode, min=0, max=1, mutex_group=None, array=False),

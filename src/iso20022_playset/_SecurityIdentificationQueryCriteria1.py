@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._Max52Text import Max52Text
+from . import ISINOct2015Identifier
+from . import Max52Text
 
 class SecurityIdentificationQueryCriteria1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SecurityIdentificationQueryCriteria1(base_types._BaseFieldType):
 
 	@AltrntvInstrmId.setter
 	def AltrntvInstrmId(self, value):
-		self._AltrntvInstrmId = value if type(value) != base_types.auto else self.make_default("AltrntvInstrmId")
+		self._AltrntvInstrmId = value if value is not None else base_types.UninitialisedField(self, 'AltrntvInstrmId', Max52Text, True)
 
 	@AltrntvInstrmId.deleter
 	def AltrntvInstrmId(self):
 		del self._AltrntvInstrmId
-		self._AltrntvInstrmId = None
+		self._AltrntvInstrmId = base_types.UninitialisedField(self, 'AltrntvInstrmId', Max52Text, True)
 
 	@property
 	def ISIN(self):
@@ -27,12 +27,12 @@ class SecurityIdentificationQueryCriteria1(base_types._BaseFieldType):
 
 	@ISIN.setter
 	def ISIN(self, value):
-		self._ISIN = value if type(value) != base_types.auto else self.make_default("ISIN")
+		self._ISIN = value if value is not None else base_types.UninitialisedField(self, 'ISIN', ISINOct2015Identifier, True)
 
 	@ISIN.deleter
 	def ISIN(self):
 		del self._ISIN
-		self._ISIN = None
+		self._ISIN = base_types.UninitialisedField(self, 'ISIN', ISINOct2015Identifier, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AltrntvInstrmId', type=Max52Text, min=0, max=None, mutex_group=None, array=True),

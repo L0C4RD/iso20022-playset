@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Counterparty39 import Counterparty39
-from ._ISODate import ISODate
-from ._ISODateTime import ISODateTime
-from ._Max140Text import Max140Text
-from ._Max52Text import Max52Text
-from ._PostedMarginOrCollateral4 import PostedMarginOrCollateral4
-from ._ReceivedMarginOrCollateral4 import ReceivedMarginOrCollateral4
-from ._SupplementaryData1 import SupplementaryData1
+from . import Counterparty39
+from . import ISODate
+from . import ISODateTime
+from . import Max140Text
+from . import Max52Text
+from . import PostedMarginOrCollateral4
+from . import ReceivedMarginOrCollateral4
+from . import SupplementaryData1
 
 class CollateralMarginMarginUpdate5(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class CollateralMarginMarginUpdate5(base_types._BaseFieldType):
 
 	@CollPrtflId.setter
 	def CollPrtflId(self, value):
-		self._CollPrtflId = value if type(value) != base_types.auto else self.make_default("CollPrtflId")
+		self._CollPrtflId = value if value is not None else base_types.UninitialisedField(self, 'CollPrtflId', Max52Text, False)
 
 	@CollPrtflId.deleter
 	def CollPrtflId(self):
 		del self._CollPrtflId
-		self._CollPrtflId = None
+		self._CollPrtflId = base_types.UninitialisedField(self, 'CollPrtflId', Max52Text, False)
 
 	@property
 	def CtrPty(self):
@@ -33,12 +33,12 @@ class CollateralMarginMarginUpdate5(base_types._BaseFieldType):
 
 	@CtrPty.setter
 	def CtrPty(self, value):
-		self._CtrPty = value if type(value) != base_types.auto else self.make_default("CtrPty")
+		self._CtrPty = value if value is not None else base_types.UninitialisedField(self, 'CtrPty', Counterparty39, False)
 
 	@CtrPty.deleter
 	def CtrPty(self):
 		del self._CtrPty
-		self._CtrPty = None
+		self._CtrPty = base_types.UninitialisedField(self, 'CtrPty', Counterparty39, False)
 
 	@property
 	def EvtDt(self):
@@ -46,12 +46,12 @@ class CollateralMarginMarginUpdate5(base_types._BaseFieldType):
 
 	@EvtDt.setter
 	def EvtDt(self, value):
-		self._EvtDt = value if type(value) != base_types.auto else self.make_default("EvtDt")
+		self._EvtDt = value if value is not None else base_types.UninitialisedField(self, 'EvtDt', ISODate, False)
 
 	@EvtDt.deleter
 	def EvtDt(self):
 		del self._EvtDt
-		self._EvtDt = None
+		self._EvtDt = base_types.UninitialisedField(self, 'EvtDt', ISODate, False)
 
 	@property
 	def PstdMrgnOrColl(self):
@@ -59,12 +59,12 @@ class CollateralMarginMarginUpdate5(base_types._BaseFieldType):
 
 	@PstdMrgnOrColl.setter
 	def PstdMrgnOrColl(self, value):
-		self._PstdMrgnOrColl = value if type(value) != base_types.auto else self.make_default("PstdMrgnOrColl")
+		self._PstdMrgnOrColl = value if value is not None else base_types.UninitialisedField(self, 'PstdMrgnOrColl', PostedMarginOrCollateral4, False)
 
 	@PstdMrgnOrColl.deleter
 	def PstdMrgnOrColl(self):
 		del self._PstdMrgnOrColl
-		self._PstdMrgnOrColl = None
+		self._PstdMrgnOrColl = base_types.UninitialisedField(self, 'PstdMrgnOrColl', PostedMarginOrCollateral4, False)
 
 	@property
 	def RcvdMrgnOrColl(self):
@@ -72,12 +72,12 @@ class CollateralMarginMarginUpdate5(base_types._BaseFieldType):
 
 	@RcvdMrgnOrColl.setter
 	def RcvdMrgnOrColl(self, value):
-		self._RcvdMrgnOrColl = value if type(value) != base_types.auto else self.make_default("RcvdMrgnOrColl")
+		self._RcvdMrgnOrColl = value if value is not None else base_types.UninitialisedField(self, 'RcvdMrgnOrColl', ReceivedMarginOrCollateral4, False)
 
 	@RcvdMrgnOrColl.deleter
 	def RcvdMrgnOrColl(self):
 		del self._RcvdMrgnOrColl
-		self._RcvdMrgnOrColl = None
+		self._RcvdMrgnOrColl = base_types.UninitialisedField(self, 'RcvdMrgnOrColl', ReceivedMarginOrCollateral4, False)
 
 	@property
 	def RptgDtTm(self):
@@ -85,12 +85,12 @@ class CollateralMarginMarginUpdate5(base_types._BaseFieldType):
 
 	@RptgDtTm.setter
 	def RptgDtTm(self, value):
-		self._RptgDtTm = value if type(value) != base_types.auto else self.make_default("RptgDtTm")
+		self._RptgDtTm = value if value is not None else base_types.UninitialisedField(self, 'RptgDtTm', ISODateTime, False)
 
 	@RptgDtTm.deleter
 	def RptgDtTm(self):
 		del self._RptgDtTm
-		self._RptgDtTm = None
+		self._RptgDtTm = base_types.UninitialisedField(self, 'RptgDtTm', ISODateTime, False)
 
 	@property
 	def SplmtryData(self):
@@ -98,12 +98,12 @@ class CollateralMarginMarginUpdate5(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TechRcrdId(self):
@@ -111,12 +111,12 @@ class CollateralMarginMarginUpdate5(base_types._BaseFieldType):
 
 	@TechRcrdId.setter
 	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
+		self._TechRcrdId = value if value is not None else base_types.UninitialisedField(self, 'TechRcrdId', Max140Text, False)
 
 	@TechRcrdId.deleter
 	def TechRcrdId(self):
 		del self._TechRcrdId
-		self._TechRcrdId = None
+		self._TechRcrdId = base_types.UninitialisedField(self, 'TechRcrdId', Max140Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollPrtflId', type=Max52Text, min=1, max=1, mutex_group=None, array=False),

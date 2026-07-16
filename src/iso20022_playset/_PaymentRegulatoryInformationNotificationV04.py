@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CurrencyControlHeader9 import CurrencyControlHeader9
-from ._RegulatoryReportingNotification4 import RegulatoryReportingNotification4
-from ._SupplementaryData1 import SupplementaryData1
+from . import CurrencyControlHeader9
+from . import RegulatoryReportingNotification4
+from . import SupplementaryData1
 
 class PaymentRegulatoryInformationNotificationV04(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PaymentRegulatoryInformationNotificationV04(base_types._BaseFieldType):
 
 	@GrpHdr.setter
 	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
+		self._GrpHdr = value if value is not None else base_types.UninitialisedField(self, 'GrpHdr', CurrencyControlHeader9, False)
 
 	@GrpHdr.deleter
 	def GrpHdr(self):
 		del self._GrpHdr
-		self._GrpHdr = None
+		self._GrpHdr = base_types.UninitialisedField(self, 'GrpHdr', CurrencyControlHeader9, False)
 
 	@property
 	def SplmtryData(self):
@@ -28,12 +28,12 @@ class PaymentRegulatoryInformationNotificationV04(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TxNtfctn(self):
@@ -41,12 +41,12 @@ class PaymentRegulatoryInformationNotificationV04(base_types._BaseFieldType):
 
 	@TxNtfctn.setter
 	def TxNtfctn(self, value):
-		self._TxNtfctn = value if type(value) != base_types.auto else self.make_default("TxNtfctn")
+		self._TxNtfctn = value if value is not None else base_types.UninitialisedField(self, 'TxNtfctn', RegulatoryReportingNotification4, True)
 
 	@TxNtfctn.deleter
 	def TxNtfctn(self):
 		del self._TxNtfctn
-		self._TxNtfctn = None
+		self._TxNtfctn = base_types.UninitialisedField(self, 'TxNtfctn', RegulatoryReportingNotification4, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='GrpHdr', type=CurrencyControlHeader9, min=1, max=1, mutex_group=None, array=False),

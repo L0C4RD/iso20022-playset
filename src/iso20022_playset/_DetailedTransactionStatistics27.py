@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MissingValuationsData2 import MissingValuationsData2
-from ._Number import Number
+from . import MissingValuationsData2
+from . import Number
 
 class DetailedTransactionStatistics27(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DetailedTransactionStatistics27(base_types._BaseFieldType):
 
 	@NbOfOutsdngDerivs.setter
 	def NbOfOutsdngDerivs(self, value):
-		self._NbOfOutsdngDerivs = value if type(value) != base_types.auto else self.make_default("NbOfOutsdngDerivs")
+		self._NbOfOutsdngDerivs = value if value is not None else base_types.UninitialisedField(self, 'NbOfOutsdngDerivs', Number, False)
 
 	@NbOfOutsdngDerivs.deleter
 	def NbOfOutsdngDerivs(self):
 		del self._NbOfOutsdngDerivs
-		self._NbOfOutsdngDerivs = None
+		self._NbOfOutsdngDerivs = base_types.UninitialisedField(self, 'NbOfOutsdngDerivs', Number, False)
 
 	@property
 	def NbOfOutsdngDerivsWthNoValtn(self):
@@ -27,12 +27,12 @@ class DetailedTransactionStatistics27(base_types._BaseFieldType):
 
 	@NbOfOutsdngDerivsWthNoValtn.setter
 	def NbOfOutsdngDerivsWthNoValtn(self, value):
-		self._NbOfOutsdngDerivsWthNoValtn = value if type(value) != base_types.auto else self.make_default("NbOfOutsdngDerivsWthNoValtn")
+		self._NbOfOutsdngDerivsWthNoValtn = value if value is not None else base_types.UninitialisedField(self, 'NbOfOutsdngDerivsWthNoValtn', Number, False)
 
 	@NbOfOutsdngDerivsWthNoValtn.deleter
 	def NbOfOutsdngDerivsWthNoValtn(self):
 		del self._NbOfOutsdngDerivsWthNoValtn
-		self._NbOfOutsdngDerivsWthNoValtn = None
+		self._NbOfOutsdngDerivsWthNoValtn = base_types.UninitialisedField(self, 'NbOfOutsdngDerivsWthNoValtn', Number, False)
 
 	@property
 	def NbOfOutsdngDerivsWthOutdtdValtn(self):
@@ -40,12 +40,12 @@ class DetailedTransactionStatistics27(base_types._BaseFieldType):
 
 	@NbOfOutsdngDerivsWthOutdtdValtn.setter
 	def NbOfOutsdngDerivsWthOutdtdValtn(self, value):
-		self._NbOfOutsdngDerivsWthOutdtdValtn = value if type(value) != base_types.auto else self.make_default("NbOfOutsdngDerivsWthOutdtdValtn")
+		self._NbOfOutsdngDerivsWthOutdtdValtn = value if value is not None else base_types.UninitialisedField(self, 'NbOfOutsdngDerivsWthOutdtdValtn', Number, False)
 
 	@NbOfOutsdngDerivsWthOutdtdValtn.deleter
 	def NbOfOutsdngDerivsWthOutdtdValtn(self):
 		del self._NbOfOutsdngDerivsWthOutdtdValtn
-		self._NbOfOutsdngDerivsWthOutdtdValtn = None
+		self._NbOfOutsdngDerivsWthOutdtdValtn = base_types.UninitialisedField(self, 'NbOfOutsdngDerivsWthOutdtdValtn', Number, False)
 
 	@property
 	def Wrnngs(self):
@@ -53,12 +53,12 @@ class DetailedTransactionStatistics27(base_types._BaseFieldType):
 
 	@Wrnngs.setter
 	def Wrnngs(self, value):
-		self._Wrnngs = value if type(value) != base_types.auto else self.make_default("Wrnngs")
+		self._Wrnngs = value if value is not None else base_types.UninitialisedField(self, 'Wrnngs', MissingValuationsData2, True)
 
 	@Wrnngs.deleter
 	def Wrnngs(self):
 		del self._Wrnngs
-		self._Wrnngs = None
+		self._Wrnngs = base_types.UninitialisedField(self, 'Wrnngs', MissingValuationsData2, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NbOfOutsdngDerivs', type=Number, min=1, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Document10 import Document10
-from ._FixedOrRecurrentDate1Choice import FixedOrRecurrentDate1Choice
+from . import Document10
+from . import FixedOrRecurrentDate1Choice
 
 class Trigger1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Trigger1(base_types._BaseFieldType):
 
 	@DcmntryEvt.setter
 	def DcmntryEvt(self, value):
-		self._DcmntryEvt = value if type(value) != base_types.auto else self.make_default("DcmntryEvt")
+		self._DcmntryEvt = value if value is not None else base_types.UninitialisedField(self, 'DcmntryEvt', Document10, True)
 
 	@DcmntryEvt.deleter
 	def DcmntryEvt(self):
 		del self._DcmntryEvt
-		self._DcmntryEvt = None
+		self._DcmntryEvt = base_types.UninitialisedField(self, 'DcmntryEvt', Document10, True)
 
 	@property
 	def DtChc(self):
@@ -27,12 +27,12 @@ class Trigger1(base_types._BaseFieldType):
 
 	@DtChc.setter
 	def DtChc(self, value):
-		self._DtChc = value if type(value) != base_types.auto else self.make_default("DtChc")
+		self._DtChc = value if value is not None else base_types.UninitialisedField(self, 'DtChc', FixedOrRecurrentDate1Choice, False)
 
 	@DtChc.deleter
 	def DtChc(self):
 		del self._DtChc
-		self._DtChc = None
+		self._DtChc = base_types.UninitialisedField(self, 'DtChc', FixedOrRecurrentDate1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DcmntryEvt', type=Document10, min=0, max=None, mutex_group=None, array=True),

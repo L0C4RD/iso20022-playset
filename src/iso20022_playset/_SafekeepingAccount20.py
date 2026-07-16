@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._HoldingBalance15 import HoldingBalance15
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
-from ._PartyIdentification231Choice import PartyIdentification231Choice
-from ._PartyIdentification264Choice import PartyIdentification264Choice
-from ._PledgeInformation1 import PledgeInformation1
+from . import HoldingBalance15
+from . import Max140Text
+from . import Max35Text
+from . import PartyIdentification231Choice
+from . import PartyIdentification264Choice
+from . import PledgeInformation1
 
 class SafekeepingAccount20(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class SafekeepingAccount20(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', Max35Text, False)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', Max35Text, False)
 
 	@property
 	def AcctOwnr(self):
@@ -31,12 +31,12 @@ class SafekeepingAccount20(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification231Choice, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification231Choice, False)
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -44,12 +44,12 @@ class SafekeepingAccount20(base_types._BaseFieldType):
 
 	@BlckChainAdrOrWllt.setter
 	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
+		self._BlckChainAdrOrWllt = value if value is not None else base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', Max140Text, False)
 
 	@BlckChainAdrOrWllt.deleter
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+		self._BlckChainAdrOrWllt = base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', Max140Text, False)
 
 	@property
 	def InstdBal(self):
@@ -57,12 +57,12 @@ class SafekeepingAccount20(base_types._BaseFieldType):
 
 	@InstdBal.setter
 	def InstdBal(self, value):
-		self._InstdBal = value if type(value) != base_types.auto else self.make_default("InstdBal")
+		self._InstdBal = value if value is not None else base_types.UninitialisedField(self, 'InstdBal', HoldingBalance15, True)
 
 	@InstdBal.deleter
 	def InstdBal(self):
 		del self._InstdBal
-		self._InstdBal = None
+		self._InstdBal = base_types.UninitialisedField(self, 'InstdBal', HoldingBalance15, True)
 
 	@property
 	def PldgDtls(self):
@@ -70,12 +70,12 @@ class SafekeepingAccount20(base_types._BaseFieldType):
 
 	@PldgDtls.setter
 	def PldgDtls(self, value):
-		self._PldgDtls = value if type(value) != base_types.auto else self.make_default("PldgDtls")
+		self._PldgDtls = value if value is not None else base_types.UninitialisedField(self, 'PldgDtls', PledgeInformation1, False)
 
 	@PldgDtls.deleter
 	def PldgDtls(self):
 		del self._PldgDtls
-		self._PldgDtls = None
+		self._PldgDtls = base_types.UninitialisedField(self, 'PldgDtls', PledgeInformation1, False)
 
 	@property
 	def RghtsHldr(self):
@@ -83,12 +83,12 @@ class SafekeepingAccount20(base_types._BaseFieldType):
 
 	@RghtsHldr.setter
 	def RghtsHldr(self, value):
-		self._RghtsHldr = value if type(value) != base_types.auto else self.make_default("RghtsHldr")
+		self._RghtsHldr = value if value is not None else base_types.UninitialisedField(self, 'RghtsHldr', PartyIdentification264Choice, True)
 
 	@RghtsHldr.deleter
 	def RghtsHldr(self):
 		del self._RghtsHldr
-		self._RghtsHldr = None
+		self._RghtsHldr = base_types.UninitialisedField(self, 'RghtsHldr', PartyIdentification264Choice, True)
 
 	@property
 	def SubAcctId(self):
@@ -96,12 +96,12 @@ class SafekeepingAccount20(base_types._BaseFieldType):
 
 	@SubAcctId.setter
 	def SubAcctId(self, value):
-		self._SubAcctId = value if type(value) != base_types.auto else self.make_default("SubAcctId")
+		self._SubAcctId = value if value is not None else base_types.UninitialisedField(self, 'SubAcctId', Max35Text, False)
 
 	@SubAcctId.deleter
 	def SubAcctId(self):
 		del self._SubAcctId
-		self._SubAcctId = None
+		self._SubAcctId = base_types.UninitialisedField(self, 'SubAcctId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
-from ._Max35Text import Max35Text
-from ._Number import Number
-from ._YesNoIndicator import YesNoIndicator
+from . import FinancialInstrumentQuantity1Choice
+from . import Max35Text
+from . import Number
+from . import YesNoIndicator
 
 class BuyIn3(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class BuyIn3(base_types._BaseFieldType):
 
 	@BuyInNtfctnId.setter
 	def BuyInNtfctnId(self, value):
-		self._BuyInNtfctnId = value if type(value) != base_types.auto else self.make_default("BuyInNtfctnId")
+		self._BuyInNtfctnId = value if value is not None else base_types.UninitialisedField(self, 'BuyInNtfctnId', Max35Text, False)
 
 	@BuyInNtfctnId.deleter
 	def BuyInNtfctnId(self):
 		del self._BuyInNtfctnId
-		self._BuyInNtfctnId = None
+		self._BuyInNtfctnId = base_types.UninitialisedField(self, 'BuyInNtfctnId', Max35Text, False)
 
 	@property
 	def CvrdQty(self):
@@ -29,12 +29,12 @@ class BuyIn3(base_types._BaseFieldType):
 
 	@CvrdQty.setter
 	def CvrdQty(self, value):
-		self._CvrdQty = value if type(value) != base_types.auto else self.make_default("CvrdQty")
+		self._CvrdQty = value if value is not None else base_types.UninitialisedField(self, 'CvrdQty', FinancialInstrumentQuantity1Choice, False)
 
 	@CvrdQty.deleter
 	def CvrdQty(self):
 		del self._CvrdQty
-		self._CvrdQty = None
+		self._CvrdQty = base_types.UninitialisedField(self, 'CvrdQty', FinancialInstrumentQuantity1Choice, False)
 
 	@property
 	def InitlQty(self):
@@ -42,12 +42,12 @@ class BuyIn3(base_types._BaseFieldType):
 
 	@InitlQty.setter
 	def InitlQty(self, value):
-		self._InitlQty = value if type(value) != base_types.auto else self.make_default("InitlQty")
+		self._InitlQty = value if value is not None else base_types.UninitialisedField(self, 'InitlQty', FinancialInstrumentQuantity1Choice, False)
 
 	@InitlQty.deleter
 	def InitlQty(self):
 		del self._InitlQty
-		self._InitlQty = None
+		self._InitlQty = base_types.UninitialisedField(self, 'InitlQty', FinancialInstrumentQuantity1Choice, False)
 
 	@property
 	def NbOfDays(self):
@@ -55,12 +55,12 @@ class BuyIn3(base_types._BaseFieldType):
 
 	@NbOfDays.setter
 	def NbOfDays(self, value):
-		self._NbOfDays = value if type(value) != base_types.auto else self.make_default("NbOfDays")
+		self._NbOfDays = value if value is not None else base_types.UninitialisedField(self, 'NbOfDays', Number, False)
 
 	@NbOfDays.deleter
 	def NbOfDays(self):
 		del self._NbOfDays
-		self._NbOfDays = None
+		self._NbOfDays = base_types.UninitialisedField(self, 'NbOfDays', Number, False)
 
 	@property
 	def ReqForDelyInd(self):
@@ -68,12 +68,12 @@ class BuyIn3(base_types._BaseFieldType):
 
 	@ReqForDelyInd.setter
 	def ReqForDelyInd(self, value):
-		self._ReqForDelyInd = value if type(value) != base_types.auto else self.make_default("ReqForDelyInd")
+		self._ReqForDelyInd = value if value is not None else base_types.UninitialisedField(self, 'ReqForDelyInd', YesNoIndicator, False)
 
 	@ReqForDelyInd.deleter
 	def ReqForDelyInd(self):
 		del self._ReqForDelyInd
-		self._ReqForDelyInd = None
+		self._ReqForDelyInd = base_types.UninitialisedField(self, 'ReqForDelyInd', YesNoIndicator, False)
 
 	@property
 	def UcvrdQty(self):
@@ -81,12 +81,12 @@ class BuyIn3(base_types._BaseFieldType):
 
 	@UcvrdQty.setter
 	def UcvrdQty(self, value):
-		self._UcvrdQty = value if type(value) != base_types.auto else self.make_default("UcvrdQty")
+		self._UcvrdQty = value if value is not None else base_types.UninitialisedField(self, 'UcvrdQty', FinancialInstrumentQuantity1Choice, False)
 
 	@UcvrdQty.deleter
 	def UcvrdQty(self):
 		del self._UcvrdQty
-		self._UcvrdQty = None
+		self._UcvrdQty = base_types.UninitialisedField(self, 'UcvrdQty', FinancialInstrumentQuantity1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BuyInNtfctnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

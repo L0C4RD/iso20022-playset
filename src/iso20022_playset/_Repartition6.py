@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._FinancialInstrument87 import FinancialInstrument87
-from ._UnitsOrAmountOrPercentage1Choice import UnitsOrAmountOrPercentage1Choice
+from . import ActiveOrHistoricCurrencyCode
+from . import FinancialInstrument87
+from . import UnitsOrAmountOrPercentage1Choice
 
 class Repartition6(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Repartition6(base_types._BaseFieldType):
 
 	@CcyOfPlan.setter
 	def CcyOfPlan(self, value):
-		self._CcyOfPlan = value if type(value) != base_types.auto else self.make_default("CcyOfPlan")
+		self._CcyOfPlan = value if value is not None else base_types.UninitialisedField(self, 'CcyOfPlan', ActiveOrHistoricCurrencyCode, False)
 
 	@CcyOfPlan.deleter
 	def CcyOfPlan(self):
 		del self._CcyOfPlan
-		self._CcyOfPlan = None
+		self._CcyOfPlan = base_types.UninitialisedField(self, 'CcyOfPlan', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def FinInstrm(self):
@@ -28,12 +28,12 @@ class Repartition6(base_types._BaseFieldType):
 
 	@FinInstrm.setter
 	def FinInstrm(self, value):
-		self._FinInstrm = value if type(value) != base_types.auto else self.make_default("FinInstrm")
+		self._FinInstrm = value if value is not None else base_types.UninitialisedField(self, 'FinInstrm', FinancialInstrument87, False)
 
 	@FinInstrm.deleter
 	def FinInstrm(self):
 		del self._FinInstrm
-		self._FinInstrm = None
+		self._FinInstrm = base_types.UninitialisedField(self, 'FinInstrm', FinancialInstrument87, False)
 
 	@property
 	def Qty(self):
@@ -41,12 +41,12 @@ class Repartition6(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+		self._Qty = value if value is not None else base_types.UninitialisedField(self, 'Qty', UnitsOrAmountOrPercentage1Choice, False)
 
 	@Qty.deleter
 	def Qty(self):
 		del self._Qty
-		self._Qty = None
+		self._Qty = base_types.UninitialisedField(self, 'Qty', UnitsOrAmountOrPercentage1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CcyOfPlan', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),

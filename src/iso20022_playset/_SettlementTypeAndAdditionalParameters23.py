@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
-from ._Max35Text import Max35Text
-from ._ReceiveDelivery1Code import ReceiveDelivery1Code
-from ._YesNoIndicator import YesNoIndicator
+from . import DeliveryReceiptType2Code
+from . import Max35Text
+from . import ReceiveDelivery1Code
+from . import YesNoIndicator
 
 class SettlementTypeAndAdditionalParameters23(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class SettlementTypeAndAdditionalParameters23(base_types._BaseFieldType):
 
 	@ClntCollInstrId.setter
 	def ClntCollInstrId(self, value):
-		self._ClntCollInstrId = value if type(value) != base_types.auto else self.make_default("ClntCollInstrId")
+		self._ClntCollInstrId = value if value is not None else base_types.UninitialisedField(self, 'ClntCollInstrId', Max35Text, False)
 
 	@ClntCollInstrId.deleter
 	def ClntCollInstrId(self):
 		del self._ClntCollInstrId
-		self._ClntCollInstrId = None
+		self._ClntCollInstrId = base_types.UninitialisedField(self, 'ClntCollInstrId', Max35Text, False)
 
 	@property
 	def ClntTrptyCollTxId(self):
@@ -29,12 +29,12 @@ class SettlementTypeAndAdditionalParameters23(base_types._BaseFieldType):
 
 	@ClntTrptyCollTxId.setter
 	def ClntTrptyCollTxId(self, value):
-		self._ClntTrptyCollTxId = value if type(value) != base_types.auto else self.make_default("ClntTrptyCollTxId")
+		self._ClntTrptyCollTxId = value if value is not None else base_types.UninitialisedField(self, 'ClntTrptyCollTxId', Max35Text, False)
 
 	@ClntTrptyCollTxId.deleter
 	def ClntTrptyCollTxId(self):
 		del self._ClntTrptyCollTxId
-		self._ClntTrptyCollTxId = None
+		self._ClntTrptyCollTxId = base_types.UninitialisedField(self, 'ClntTrptyCollTxId', Max35Text, False)
 
 	@property
 	def CmonId(self):
@@ -42,12 +42,12 @@ class SettlementTypeAndAdditionalParameters23(base_types._BaseFieldType):
 
 	@CmonId.setter
 	def CmonId(self, value):
-		self._CmonId = value if type(value) != base_types.auto else self.make_default("CmonId")
+		self._CmonId = value if value is not None else base_types.UninitialisedField(self, 'CmonId', Max35Text, False)
 
 	@CmonId.deleter
 	def CmonId(self):
 		del self._CmonId
-		self._CmonId = None
+		self._CmonId = base_types.UninitialisedField(self, 'CmonId', Max35Text, False)
 
 	@property
 	def CorpActnEvtId(self):
@@ -55,12 +55,12 @@ class SettlementTypeAndAdditionalParameters23(base_types._BaseFieldType):
 
 	@CorpActnEvtId.setter
 	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
+		self._CorpActnEvtId = value if value is not None else base_types.UninitialisedField(self, 'CorpActnEvtId', Max35Text, False)
 
 	@CorpActnEvtId.deleter
 	def CorpActnEvtId(self):
 		del self._CorpActnEvtId
-		self._CorpActnEvtId = None
+		self._CorpActnEvtId = base_types.UninitialisedField(self, 'CorpActnEvtId', Max35Text, False)
 
 	@property
 	def NonceId(self):
@@ -68,12 +68,12 @@ class SettlementTypeAndAdditionalParameters23(base_types._BaseFieldType):
 
 	@NonceId.setter
 	def NonceId(self, value):
-		self._NonceId = value if type(value) != base_types.auto else self.make_default("NonceId")
+		self._NonceId = value if value is not None else base_types.UninitialisedField(self, 'NonceId', Max35Text, False)
 
 	@NonceId.deleter
 	def NonceId(self):
 		del self._NonceId
-		self._NonceId = None
+		self._NonceId = base_types.UninitialisedField(self, 'NonceId', Max35Text, False)
 
 	@property
 	def Pmt(self):
@@ -81,12 +81,12 @@ class SettlementTypeAndAdditionalParameters23(base_types._BaseFieldType):
 
 	@Pmt.setter
 	def Pmt(self, value):
-		self._Pmt = value if type(value) != base_types.auto else self.make_default("Pmt")
+		self._Pmt = value if value is not None else base_types.UninitialisedField(self, 'Pmt', DeliveryReceiptType2Code, False)
 
 	@Pmt.deleter
 	def Pmt(self):
 		del self._Pmt
-		self._Pmt = None
+		self._Pmt = base_types.UninitialisedField(self, 'Pmt', DeliveryReceiptType2Code, False)
 
 	@property
 	def RcncltnInd(self):
@@ -94,12 +94,12 @@ class SettlementTypeAndAdditionalParameters23(base_types._BaseFieldType):
 
 	@RcncltnInd.setter
 	def RcncltnInd(self, value):
-		self._RcncltnInd = value if type(value) != base_types.auto else self.make_default("RcncltnInd")
+		self._RcncltnInd = value if value is not None else base_types.UninitialisedField(self, 'RcncltnInd', YesNoIndicator, False)
 
 	@RcncltnInd.deleter
 	def RcncltnInd(self):
 		del self._RcncltnInd
-		self._RcncltnInd = None
+		self._RcncltnInd = base_types.UninitialisedField(self, 'RcncltnInd', YesNoIndicator, False)
 
 	@property
 	def SctiesMvmntTp(self):
@@ -107,12 +107,12 @@ class SettlementTypeAndAdditionalParameters23(base_types._BaseFieldType):
 
 	@SctiesMvmntTp.setter
 	def SctiesMvmntTp(self, value):
-		self._SctiesMvmntTp = value if type(value) != base_types.auto else self.make_default("SctiesMvmntTp")
+		self._SctiesMvmntTp = value if value is not None else base_types.UninitialisedField(self, 'SctiesMvmntTp', ReceiveDelivery1Code, False)
 
 	@SctiesMvmntTp.deleter
 	def SctiesMvmntTp(self):
 		del self._SctiesMvmntTp
-		self._SctiesMvmntTp = None
+		self._SctiesMvmntTp = base_types.UninitialisedField(self, 'SctiesMvmntTp', ReceiveDelivery1Code, False)
 
 	@property
 	def TrptyAgtSvcPrvdrCollInstrId(self):
@@ -120,12 +120,12 @@ class SettlementTypeAndAdditionalParameters23(base_types._BaseFieldType):
 
 	@TrptyAgtSvcPrvdrCollInstrId.setter
 	def TrptyAgtSvcPrvdrCollInstrId(self, value):
-		self._TrptyAgtSvcPrvdrCollInstrId = value if type(value) != base_types.auto else self.make_default("TrptyAgtSvcPrvdrCollInstrId")
+		self._TrptyAgtSvcPrvdrCollInstrId = value if value is not None else base_types.UninitialisedField(self, 'TrptyAgtSvcPrvdrCollInstrId', Max35Text, False)
 
 	@TrptyAgtSvcPrvdrCollInstrId.deleter
 	def TrptyAgtSvcPrvdrCollInstrId(self):
 		del self._TrptyAgtSvcPrvdrCollInstrId
-		self._TrptyAgtSvcPrvdrCollInstrId = None
+		self._TrptyAgtSvcPrvdrCollInstrId = base_types.UninitialisedField(self, 'TrptyAgtSvcPrvdrCollInstrId', Max35Text, False)
 
 	@property
 	def TrptyAgtSvcPrvdrCollTxId(self):
@@ -133,12 +133,12 @@ class SettlementTypeAndAdditionalParameters23(base_types._BaseFieldType):
 
 	@TrptyAgtSvcPrvdrCollTxId.setter
 	def TrptyAgtSvcPrvdrCollTxId(self, value):
-		self._TrptyAgtSvcPrvdrCollTxId = value if type(value) != base_types.auto else self.make_default("TrptyAgtSvcPrvdrCollTxId")
+		self._TrptyAgtSvcPrvdrCollTxId = value if value is not None else base_types.UninitialisedField(self, 'TrptyAgtSvcPrvdrCollTxId', Max35Text, False)
 
 	@TrptyAgtSvcPrvdrCollTxId.deleter
 	def TrptyAgtSvcPrvdrCollTxId(self):
 		del self._TrptyAgtSvcPrvdrCollTxId
-		self._TrptyAgtSvcPrvdrCollTxId = None
+		self._TrptyAgtSvcPrvdrCollTxId = base_types.UninitialisedField(self, 'TrptyAgtSvcPrvdrCollTxId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClntCollInstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

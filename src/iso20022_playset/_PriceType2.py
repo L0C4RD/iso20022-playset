@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max350Text import Max350Text
-from ._TypeOfPrice6Code import TypeOfPrice6Code
+from . import Max350Text
+from . import TypeOfPrice6Code
 
 class PriceType2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PriceType2(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max350Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max350Text, False)
 
 	@property
 	def Strd(self):
@@ -27,12 +27,12 @@ class PriceType2(base_types._BaseFieldType):
 
 	@Strd.setter
 	def Strd(self, value):
-		self._Strd = value if type(value) != base_types.auto else self.make_default("Strd")
+		self._Strd = value if value is not None else base_types.UninitialisedField(self, 'Strd', TypeOfPrice6Code, False)
 
 	@Strd.deleter
 	def Strd(self):
 		del self._Strd
-		self._Strd = None
+		self._Strd = base_types.UninitialisedField(self, 'Strd', TypeOfPrice6Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max350Text, min=0, max=1, mutex_group=None, array=False),

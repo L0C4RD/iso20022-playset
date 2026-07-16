@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ResponseStatus8Choice import ResponseStatus8Choice
-from ._SupplementaryData1 import SupplementaryData1
-from ._TransactionDetails157 import TransactionDetails157
-from ._TransactionIdentification7 import TransactionIdentification7
+from . import ResponseStatus8Choice
+from . import SupplementaryData1
+from . import TransactionDetails157
+from . import TransactionIdentification7
 
 class SecuritiesSettlementTransactionCounterpartyResponse002V04(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class SecuritiesSettlementTransactionCounterpartyResponse002V04(base_types._Base
 
 	@RspnSts.setter
 	def RspnSts(self, value):
-		self._RspnSts = value if type(value) != base_types.auto else self.make_default("RspnSts")
+		self._RspnSts = value if value is not None else base_types.UninitialisedField(self, 'RspnSts', ResponseStatus8Choice, False)
 
 	@RspnSts.deleter
 	def RspnSts(self):
 		del self._RspnSts
-		self._RspnSts = None
+		self._RspnSts = base_types.UninitialisedField(self, 'RspnSts', ResponseStatus8Choice, False)
 
 	@property
 	def SplmtryData(self):
@@ -29,12 +29,12 @@ class SecuritiesSettlementTransactionCounterpartyResponse002V04(base_types._Base
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TxDtls(self):
@@ -42,12 +42,12 @@ class SecuritiesSettlementTransactionCounterpartyResponse002V04(base_types._Base
 
 	@TxDtls.setter
 	def TxDtls(self, value):
-		self._TxDtls = value if type(value) != base_types.auto else self.make_default("TxDtls")
+		self._TxDtls = value if value is not None else base_types.UninitialisedField(self, 'TxDtls', TransactionDetails157, False)
 
 	@TxDtls.deleter
 	def TxDtls(self):
 		del self._TxDtls
-		self._TxDtls = None
+		self._TxDtls = base_types.UninitialisedField(self, 'TxDtls', TransactionDetails157, False)
 
 	@property
 	def TxId(self):
@@ -55,12 +55,12 @@ class SecuritiesSettlementTransactionCounterpartyResponse002V04(base_types._Base
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', TransactionIdentification7, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', TransactionIdentification7, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RspnSts', type=ResponseStatus8Choice, min=1, max=1, mutex_group=None, array=False),

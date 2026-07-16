@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._ContractTerm6Choice import ContractTerm6Choice
-from ._ExposureType10Code import ExposureType10Code
-from ._ExternalAgreementType1Code import ExternalAgreementType1Code
-from ._ISODate import ISODate
-from ._Max52Text import Max52Text
-from ._Rates1Choice import Rates1Choice
-from ._Security49 import Security49
-from ._SpecialCollateral1Code import SpecialCollateral1Code
-from ._TradingVenueType1Choice import TradingVenueType1Choice
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ActiveOrHistoricCurrencyCode
+from . import ContractTerm6Choice
+from . import ExposureType10Code
+from . import ExternalAgreementType1Code
+from . import ISODate
+from . import Max52Text
+from . import Rates1Choice
+from . import Security49
+from . import SpecialCollateral1Code
+from . import TradingVenueType1Choice
+from . import TrueFalseIndicator
 
 class LoanData134(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class LoanData134(base_types._BaseFieldType):
 
 	@Clrd.setter
 	def Clrd(self, value):
-		self._Clrd = value if type(value) != base_types.auto else self.make_default("Clrd")
+		self._Clrd = value if value is not None else base_types.UninitialisedField(self, 'Clrd', TrueFalseIndicator, False)
 
 	@Clrd.deleter
 	def Clrd(self):
 		del self._Clrd
-		self._Clrd = None
+		self._Clrd = base_types.UninitialisedField(self, 'Clrd', TrueFalseIndicator, False)
 
 	@property
 	def CtrctTp(self):
@@ -36,12 +36,12 @@ class LoanData134(base_types._BaseFieldType):
 
 	@CtrctTp.setter
 	def CtrctTp(self, value):
-		self._CtrctTp = value if type(value) != base_types.auto else self.make_default("CtrctTp")
+		self._CtrctTp = value if value is not None else base_types.UninitialisedField(self, 'CtrctTp', ExposureType10Code, False)
 
 	@CtrctTp.deleter
 	def CtrctTp(self):
 		del self._CtrctTp
-		self._CtrctTp = None
+		self._CtrctTp = base_types.UninitialisedField(self, 'CtrctTp', ExposureType10Code, False)
 
 	@property
 	def GnlColl(self):
@@ -49,12 +49,12 @@ class LoanData134(base_types._BaseFieldType):
 
 	@GnlColl.setter
 	def GnlColl(self, value):
-		self._GnlColl = value if type(value) != base_types.auto else self.make_default("GnlColl")
+		self._GnlColl = value if value is not None else base_types.UninitialisedField(self, 'GnlColl', SpecialCollateral1Code, False)
 
 	@GnlColl.deleter
 	def GnlColl(self):
 		del self._GnlColl
-		self._GnlColl = None
+		self._GnlColl = base_types.UninitialisedField(self, 'GnlColl', SpecialCollateral1Code, False)
 
 	@property
 	def MstrAgrmtTp(self):
@@ -62,12 +62,12 @@ class LoanData134(base_types._BaseFieldType):
 
 	@MstrAgrmtTp.setter
 	def MstrAgrmtTp(self, value):
-		self._MstrAgrmtTp = value if type(value) != base_types.auto else self.make_default("MstrAgrmtTp")
+		self._MstrAgrmtTp = value if value is not None else base_types.UninitialisedField(self, 'MstrAgrmtTp', ExternalAgreementType1Code, False)
 
 	@MstrAgrmtTp.deleter
 	def MstrAgrmtTp(self):
 		del self._MstrAgrmtTp
-		self._MstrAgrmtTp = None
+		self._MstrAgrmtTp = base_types.UninitialisedField(self, 'MstrAgrmtTp', ExternalAgreementType1Code, False)
 
 	@property
 	def MtrtyDt(self):
@@ -75,12 +75,12 @@ class LoanData134(base_types._BaseFieldType):
 
 	@MtrtyDt.setter
 	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != base_types.auto else self.make_default("MtrtyDt")
+		self._MtrtyDt = value if value is not None else base_types.UninitialisedField(self, 'MtrtyDt', ISODate, False)
 
 	@MtrtyDt.deleter
 	def MtrtyDt(self):
 		del self._MtrtyDt
-		self._MtrtyDt = None
+		self._MtrtyDt = base_types.UninitialisedField(self, 'MtrtyDt', ISODate, False)
 
 	@property
 	def OutsdngMrgnLnCcy(self):
@@ -88,12 +88,12 @@ class LoanData134(base_types._BaseFieldType):
 
 	@OutsdngMrgnLnCcy.setter
 	def OutsdngMrgnLnCcy(self, value):
-		self._OutsdngMrgnLnCcy = value if type(value) != base_types.auto else self.make_default("OutsdngMrgnLnCcy")
+		self._OutsdngMrgnLnCcy = value if value is not None else base_types.UninitialisedField(self, 'OutsdngMrgnLnCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@OutsdngMrgnLnCcy.deleter
 	def OutsdngMrgnLnCcy(self):
 		del self._OutsdngMrgnLnCcy
-		self._OutsdngMrgnLnCcy = None
+		self._OutsdngMrgnLnCcy = base_types.UninitialisedField(self, 'OutsdngMrgnLnCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def PricCcy(self):
@@ -101,12 +101,12 @@ class LoanData134(base_types._BaseFieldType):
 
 	@PricCcy.setter
 	def PricCcy(self, value):
-		self._PricCcy = value if type(value) != base_types.auto else self.make_default("PricCcy")
+		self._PricCcy = value if value is not None else base_types.UninitialisedField(self, 'PricCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@PricCcy.deleter
 	def PricCcy(self):
 		del self._PricCcy
-		self._PricCcy = None
+		self._PricCcy = base_types.UninitialisedField(self, 'PricCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def PrncplAmtCcy(self):
@@ -114,12 +114,12 @@ class LoanData134(base_types._BaseFieldType):
 
 	@PrncplAmtCcy.setter
 	def PrncplAmtCcy(self, value):
-		self._PrncplAmtCcy = value if type(value) != base_types.auto else self.make_default("PrncplAmtCcy")
+		self._PrncplAmtCcy = value if value is not None else base_types.UninitialisedField(self, 'PrncplAmtCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@PrncplAmtCcy.deleter
 	def PrncplAmtCcy(self):
 		del self._PrncplAmtCcy
-		self._PrncplAmtCcy = None
+		self._PrncplAmtCcy = base_types.UninitialisedField(self, 'PrncplAmtCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def PrtflCd(self):
@@ -127,12 +127,12 @@ class LoanData134(base_types._BaseFieldType):
 
 	@PrtflCd.setter
 	def PrtflCd(self, value):
-		self._PrtflCd = value if type(value) != base_types.auto else self.make_default("PrtflCd")
+		self._PrtflCd = value if value is not None else base_types.UninitialisedField(self, 'PrtflCd', Max52Text, False)
 
 	@PrtflCd.deleter
 	def PrtflCd(self):
 		del self._PrtflCd
-		self._PrtflCd = None
+		self._PrtflCd = base_types.UninitialisedField(self, 'PrtflCd', Max52Text, False)
 
 	@property
 	def Rates(self):
@@ -140,12 +140,12 @@ class LoanData134(base_types._BaseFieldType):
 
 	@Rates.setter
 	def Rates(self, value):
-		self._Rates = value if type(value) != base_types.auto else self.make_default("Rates")
+		self._Rates = value if value is not None else base_types.UninitialisedField(self, 'Rates', Rates1Choice, False)
 
 	@Rates.deleter
 	def Rates(self):
 		del self._Rates
-		self._Rates = None
+		self._Rates = base_types.UninitialisedField(self, 'Rates', Rates1Choice, False)
 
 	@property
 	def Scty(self):
@@ -153,12 +153,12 @@ class LoanData134(base_types._BaseFieldType):
 
 	@Scty.setter
 	def Scty(self, value):
-		self._Scty = value if type(value) != base_types.auto else self.make_default("Scty")
+		self._Scty = value if value is not None else base_types.UninitialisedField(self, 'Scty', Security49, False)
 
 	@Scty.deleter
 	def Scty(self):
 		del self._Scty
-		self._Scty = None
+		self._Scty = base_types.UninitialisedField(self, 'Scty', Security49, False)
 
 	@property
 	def Term(self):
@@ -166,12 +166,12 @@ class LoanData134(base_types._BaseFieldType):
 
 	@Term.setter
 	def Term(self, value):
-		self._Term = value if type(value) != base_types.auto else self.make_default("Term")
+		self._Term = value if value is not None else base_types.UninitialisedField(self, 'Term', ContractTerm6Choice, False)
 
 	@Term.deleter
 	def Term(self):
 		del self._Term
-		self._Term = None
+		self._Term = base_types.UninitialisedField(self, 'Term', ContractTerm6Choice, False)
 
 	@property
 	def TradgVn(self):
@@ -179,12 +179,12 @@ class LoanData134(base_types._BaseFieldType):
 
 	@TradgVn.setter
 	def TradgVn(self, value):
-		self._TradgVn = value if type(value) != base_types.auto else self.make_default("TradgVn")
+		self._TradgVn = value if value is not None else base_types.UninitialisedField(self, 'TradgVn', TradingVenueType1Choice, False)
 
 	@TradgVn.deleter
 	def TradgVn(self):
 		del self._TradgVn
-		self._TradgVn = None
+		self._TradgVn = base_types.UninitialisedField(self, 'TradgVn', TradingVenueType1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Clrd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),

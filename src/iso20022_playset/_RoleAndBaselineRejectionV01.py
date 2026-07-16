@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MessageIdentification1 import MessageIdentification1
-from ._Reason2 import Reason2
-from ._SimpleIdentificationInformation import SimpleIdentificationInformation
+from . import MessageIdentification1
+from . import Reason2
+from . import SimpleIdentificationInformation
 
 class RoleAndBaselineRejectionV01(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class RoleAndBaselineRejectionV01(base_types._BaseFieldType):
 
 	@RjctnId.setter
 	def RjctnId(self, value):
-		self._RjctnId = value if type(value) != base_types.auto else self.make_default("RjctnId")
+		self._RjctnId = value if value is not None else base_types.UninitialisedField(self, 'RjctnId', MessageIdentification1, False)
 
 	@RjctnId.deleter
 	def RjctnId(self):
 		del self._RjctnId
-		self._RjctnId = None
+		self._RjctnId = base_types.UninitialisedField(self, 'RjctnId', MessageIdentification1, False)
 
 	@property
 	def RjctnRsn(self):
@@ -28,12 +28,12 @@ class RoleAndBaselineRejectionV01(base_types._BaseFieldType):
 
 	@RjctnRsn.setter
 	def RjctnRsn(self, value):
-		self._RjctnRsn = value if type(value) != base_types.auto else self.make_default("RjctnRsn")
+		self._RjctnRsn = value if value is not None else base_types.UninitialisedField(self, 'RjctnRsn', Reason2, False)
 
 	@RjctnRsn.deleter
 	def RjctnRsn(self):
 		del self._RjctnRsn
-		self._RjctnRsn = None
+		self._RjctnRsn = base_types.UninitialisedField(self, 'RjctnRsn', Reason2, False)
 
 	@property
 	def RltdMsgRef(self):
@@ -41,12 +41,12 @@ class RoleAndBaselineRejectionV01(base_types._BaseFieldType):
 
 	@RltdMsgRef.setter
 	def RltdMsgRef(self, value):
-		self._RltdMsgRef = value if type(value) != base_types.auto else self.make_default("RltdMsgRef")
+		self._RltdMsgRef = value if value is not None else base_types.UninitialisedField(self, 'RltdMsgRef', MessageIdentification1, False)
 
 	@RltdMsgRef.deleter
 	def RltdMsgRef(self):
 		del self._RltdMsgRef
-		self._RltdMsgRef = None
+		self._RltdMsgRef = base_types.UninitialisedField(self, 'RltdMsgRef', MessageIdentification1, False)
 
 	@property
 	def TxId(self):
@@ -54,12 +54,12 @@ class RoleAndBaselineRejectionV01(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', SimpleIdentificationInformation, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', SimpleIdentificationInformation, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RjctnId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),

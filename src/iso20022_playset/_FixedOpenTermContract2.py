@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._RepoTerminationOption2Code import RepoTerminationOption2Code
+from . import ISODate
+from . import RepoTerminationOption2Code
 
 class FixedOpenTermContract2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class FixedOpenTermContract2(base_types._BaseFieldType):
 
 	@MtrtyDt.setter
 	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != base_types.auto else self.make_default("MtrtyDt")
+		self._MtrtyDt = value if value is not None else base_types.UninitialisedField(self, 'MtrtyDt', ISODate, False)
 
 	@MtrtyDt.deleter
 	def MtrtyDt(self):
 		del self._MtrtyDt
-		self._MtrtyDt = None
+		self._MtrtyDt = base_types.UninitialisedField(self, 'MtrtyDt', ISODate, False)
 
 	@property
 	def TermntnOptn(self):
@@ -27,12 +27,12 @@ class FixedOpenTermContract2(base_types._BaseFieldType):
 
 	@TermntnOptn.setter
 	def TermntnOptn(self, value):
-		self._TermntnOptn = value if type(value) != base_types.auto else self.make_default("TermntnOptn")
+		self._TermntnOptn = value if value is not None else base_types.UninitialisedField(self, 'TermntnOptn', RepoTerminationOption2Code, False)
 
 	@TermntnOptn.deleter
 	def TermntnOptn(self):
 		del self._TermntnOptn
-		self._TermntnOptn = None
+		self._TermntnOptn = base_types.UninitialisedField(self, 'TermntnOptn', RepoTerminationOption2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MtrtyDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),

@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._DatePeriod1Choice import DatePeriod1Choice
-from ._Frequency22Choice import Frequency22Choice
-from ._Max35Text import Max35Text
-from ._PenaltyListType1Choice import PenaltyListType1Choice
-from ._UpdateType15Choice import UpdateType15Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import DateAndDateTime2Choice
+from . import DatePeriod1Choice
+from . import Frequency22Choice
+from . import Max35Text
+from . import PenaltyListType1Choice
+from . import UpdateType15Choice
+from . import YesNoIndicator
 
 class PenaltyReport1(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class PenaltyReport1(base_types._BaseFieldType):
 
 	@ActvtyInd.setter
 	def ActvtyInd(self, value):
-		self._ActvtyInd = value if type(value) != base_types.auto else self.make_default("ActvtyInd")
+		self._ActvtyInd = value if value is not None else base_types.UninitialisedField(self, 'ActvtyInd', YesNoIndicator, False)
 
 	@ActvtyInd.deleter
 	def ActvtyInd(self):
 		del self._ActvtyInd
-		self._ActvtyInd = None
+		self._ActvtyInd = base_types.UninitialisedField(self, 'ActvtyInd', YesNoIndicator, False)
 
 	@property
 	def Frqcy(self):
@@ -32,12 +32,12 @@ class PenaltyReport1(base_types._BaseFieldType):
 
 	@Frqcy.setter
 	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
+		self._Frqcy = value if value is not None else base_types.UninitialisedField(self, 'Frqcy', Frequency22Choice, False)
 
 	@Frqcy.deleter
 	def Frqcy(self):
 		del self._Frqcy
-		self._Frqcy = None
+		self._Frqcy = base_types.UninitialisedField(self, 'Frqcy', Frequency22Choice, False)
 
 	@property
 	def PnltyListTp(self):
@@ -45,12 +45,12 @@ class PenaltyReport1(base_types._BaseFieldType):
 
 	@PnltyListTp.setter
 	def PnltyListTp(self, value):
-		self._PnltyListTp = value if type(value) != base_types.auto else self.make_default("PnltyListTp")
+		self._PnltyListTp = value if value is not None else base_types.UninitialisedField(self, 'PnltyListTp', PenaltyListType1Choice, False)
 
 	@PnltyListTp.deleter
 	def PnltyListTp(self):
 		del self._PnltyListTp
-		self._PnltyListTp = None
+		self._PnltyListTp = base_types.UninitialisedField(self, 'PnltyListTp', PenaltyListType1Choice, False)
 
 	@property
 	def RptDt(self):
@@ -58,12 +58,12 @@ class PenaltyReport1(base_types._BaseFieldType):
 
 	@RptDt.setter
 	def RptDt(self, value):
-		self._RptDt = value if type(value) != base_types.auto else self.make_default("RptDt")
+		self._RptDt = value if value is not None else base_types.UninitialisedField(self, 'RptDt', DateAndDateTime2Choice, False)
 
 	@RptDt.deleter
 	def RptDt(self):
 		del self._RptDt
-		self._RptDt = None
+		self._RptDt = base_types.UninitialisedField(self, 'RptDt', DateAndDateTime2Choice, False)
 
 	@property
 	def RptId(self):
@@ -71,12 +71,12 @@ class PenaltyReport1(base_types._BaseFieldType):
 
 	@RptId.setter
 	def RptId(self, value):
-		self._RptId = value if type(value) != base_types.auto else self.make_default("RptId")
+		self._RptId = value if value is not None else base_types.UninitialisedField(self, 'RptId', Max35Text, False)
 
 	@RptId.deleter
 	def RptId(self):
 		del self._RptId
-		self._RptId = None
+		self._RptId = base_types.UninitialisedField(self, 'RptId', Max35Text, False)
 
 	@property
 	def RptPrd(self):
@@ -84,12 +84,12 @@ class PenaltyReport1(base_types._BaseFieldType):
 
 	@RptPrd.setter
 	def RptPrd(self, value):
-		self._RptPrd = value if type(value) != base_types.auto else self.make_default("RptPrd")
+		self._RptPrd = value if value is not None else base_types.UninitialisedField(self, 'RptPrd', DatePeriod1Choice, False)
 
 	@RptPrd.deleter
 	def RptPrd(self):
 		del self._RptPrd
-		self._RptPrd = None
+		self._RptPrd = base_types.UninitialisedField(self, 'RptPrd', DatePeriod1Choice, False)
 
 	@property
 	def UpdTp(self):
@@ -97,12 +97,12 @@ class PenaltyReport1(base_types._BaseFieldType):
 
 	@UpdTp.setter
 	def UpdTp(self, value):
-		self._UpdTp = value if type(value) != base_types.auto else self.make_default("UpdTp")
+		self._UpdTp = value if value is not None else base_types.UninitialisedField(self, 'UpdTp', UpdateType15Choice, False)
 
 	@UpdTp.deleter
 	def UpdTp(self):
 		del self._UpdTp
-		self._UpdTp = None
+		self._UpdTp = base_types.UninitialisedField(self, 'UpdTp', UpdateType15Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),

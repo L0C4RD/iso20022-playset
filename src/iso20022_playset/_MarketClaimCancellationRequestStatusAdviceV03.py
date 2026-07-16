@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionGeneralInformation181 import CorporateActionGeneralInformation181
-from ._CorporateActionOption234 import CorporateActionOption234
-from ._DocumentIdentification9 import DocumentIdentification9
-from ._MarketClaimCancellationRequestStatus2Choice import MarketClaimCancellationRequestStatus2Choice
-from ._References26 import References26
-from ._SupplementaryData1 import SupplementaryData1
+from . import CorporateActionGeneralInformation181
+from . import CorporateActionOption234
+from . import DocumentIdentification9
+from . import MarketClaimCancellationRequestStatus2Choice
+from . import References26
+from . import SupplementaryData1
 
 class MarketClaimCancellationRequestStatusAdviceV03(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class MarketClaimCancellationRequestStatusAdviceV03(base_types._BaseFieldType):
 
 	@CorpActnGnlInf.setter
 	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != base_types.auto else self.make_default("CorpActnGnlInf")
+		self._CorpActnGnlInf = value if value is not None else base_types.UninitialisedField(self, 'CorpActnGnlInf', CorporateActionGeneralInformation181, False)
 
 	@CorpActnGnlInf.deleter
 	def CorpActnGnlInf(self):
 		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
+		self._CorpActnGnlInf = base_types.UninitialisedField(self, 'CorpActnGnlInf', CorporateActionGeneralInformation181, False)
 
 	@property
 	def MktClmCxlReqId(self):
@@ -31,12 +31,12 @@ class MarketClaimCancellationRequestStatusAdviceV03(base_types._BaseFieldType):
 
 	@MktClmCxlReqId.setter
 	def MktClmCxlReqId(self, value):
-		self._MktClmCxlReqId = value if type(value) != base_types.auto else self.make_default("MktClmCxlReqId")
+		self._MktClmCxlReqId = value if value is not None else base_types.UninitialisedField(self, 'MktClmCxlReqId', DocumentIdentification9, False)
 
 	@MktClmCxlReqId.deleter
 	def MktClmCxlReqId(self):
 		del self._MktClmCxlReqId
-		self._MktClmCxlReqId = None
+		self._MktClmCxlReqId = base_types.UninitialisedField(self, 'MktClmCxlReqId', DocumentIdentification9, False)
 
 	@property
 	def MktClmCxlReqSts(self):
@@ -44,12 +44,12 @@ class MarketClaimCancellationRequestStatusAdviceV03(base_types._BaseFieldType):
 
 	@MktClmCxlReqSts.setter
 	def MktClmCxlReqSts(self, value):
-		self._MktClmCxlReqSts = value if type(value) != base_types.auto else self.make_default("MktClmCxlReqSts")
+		self._MktClmCxlReqSts = value if value is not None else base_types.UninitialisedField(self, 'MktClmCxlReqSts', MarketClaimCancellationRequestStatus2Choice, False)
 
 	@MktClmCxlReqSts.deleter
 	def MktClmCxlReqSts(self):
 		del self._MktClmCxlReqSts
-		self._MktClmCxlReqSts = None
+		self._MktClmCxlReqSts = base_types.UninitialisedField(self, 'MktClmCxlReqSts', MarketClaimCancellationRequestStatus2Choice, False)
 
 	@property
 	def MktClmDtls(self):
@@ -57,12 +57,12 @@ class MarketClaimCancellationRequestStatusAdviceV03(base_types._BaseFieldType):
 
 	@MktClmDtls.setter
 	def MktClmDtls(self, value):
-		self._MktClmDtls = value if type(value) != base_types.auto else self.make_default("MktClmDtls")
+		self._MktClmDtls = value if value is not None else base_types.UninitialisedField(self, 'MktClmDtls', CorporateActionOption234, False)
 
 	@MktClmDtls.deleter
 	def MktClmDtls(self):
 		del self._MktClmDtls
-		self._MktClmDtls = None
+		self._MktClmDtls = base_types.UninitialisedField(self, 'MktClmDtls', CorporateActionOption234, False)
 
 	@property
 	def SplmtryData(self):
@@ -70,12 +70,12 @@ class MarketClaimCancellationRequestStatusAdviceV03(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TxRef(self):
@@ -83,12 +83,12 @@ class MarketClaimCancellationRequestStatusAdviceV03(base_types._BaseFieldType):
 
 	@TxRef.setter
 	def TxRef(self, value):
-		self._TxRef = value if type(value) != base_types.auto else self.make_default("TxRef")
+		self._TxRef = value if value is not None else base_types.UninitialisedField(self, 'TxRef', References26, False)
 
 	@TxRef.deleter
 	def TxRef(self):
 		del self._TxRef
-		self._TxRef = None
+		self._TxRef = base_types.UninitialisedField(self, 'TxRef', References26, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CorpActnGnlInf', type=CorporateActionGeneralInformation181, min=1, max=1, mutex_group=None, array=False),

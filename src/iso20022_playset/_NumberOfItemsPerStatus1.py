@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max15NumericText import Max15NumericText
-from ._ReportItemStatus1Code import ReportItemStatus1Code
+from . import Max15NumericText
+from . import ReportItemStatus1Code
 
 class NumberOfItemsPerStatus1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class NumberOfItemsPerStatus1(base_types._BaseFieldType):
 
 	@NbOfItms.setter
 	def NbOfItms(self, value):
-		self._NbOfItms = value if type(value) != base_types.auto else self.make_default("NbOfItms")
+		self._NbOfItms = value if value is not None else base_types.UninitialisedField(self, 'NbOfItms', Max15NumericText, False)
 
 	@NbOfItms.deleter
 	def NbOfItms(self):
 		del self._NbOfItms
-		self._NbOfItms = None
+		self._NbOfItms = base_types.UninitialisedField(self, 'NbOfItms', Max15NumericText, False)
 
 	@property
 	def Sts(self):
@@ -27,12 +27,12 @@ class NumberOfItemsPerStatus1(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', ReportItemStatus1Code, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', ReportItemStatus1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NbOfItms', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),

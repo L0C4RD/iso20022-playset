@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CancellationProcess2Code import CancellationProcess2Code
-from ._ExchangeConfiguration10 import ExchangeConfiguration10
-from ._ExchangeConfiguration9 import ExchangeConfiguration9
-from ._FinancialCapture1Code import FinancialCapture1Code
+from . import CancellationProcess2Code
+from . import ExchangeConfiguration10
+from . import ExchangeConfiguration9
+from . import FinancialCapture1Code
 
 class AcquirerProtocolExchangeBehavior2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class AcquirerProtocolExchangeBehavior2(base_types._BaseFieldType):
 
 	@BtchTrf.setter
 	def BtchTrf(self, value):
-		self._BtchTrf = value if type(value) != base_types.auto else self.make_default("BtchTrf")
+		self._BtchTrf = value if value is not None else base_types.UninitialisedField(self, 'BtchTrf', ExchangeConfiguration9, False)
 
 	@BtchTrf.deleter
 	def BtchTrf(self):
 		del self._BtchTrf
-		self._BtchTrf = None
+		self._BtchTrf = base_types.UninitialisedField(self, 'BtchTrf', ExchangeConfiguration9, False)
 
 	@property
 	def CmpltnXchg(self):
@@ -29,12 +29,12 @@ class AcquirerProtocolExchangeBehavior2(base_types._BaseFieldType):
 
 	@CmpltnXchg.setter
 	def CmpltnXchg(self, value):
-		self._CmpltnXchg = value if type(value) != base_types.auto else self.make_default("CmpltnXchg")
+		self._CmpltnXchg = value if value is not None else base_types.UninitialisedField(self, 'CmpltnXchg', ExchangeConfiguration10, False)
 
 	@CmpltnXchg.deleter
 	def CmpltnXchg(self):
 		del self._CmpltnXchg
-		self._CmpltnXchg = None
+		self._CmpltnXchg = base_types.UninitialisedField(self, 'CmpltnXchg', ExchangeConfiguration10, False)
 
 	@property
 	def CxlXchg(self):
@@ -42,12 +42,12 @@ class AcquirerProtocolExchangeBehavior2(base_types._BaseFieldType):
 
 	@CxlXchg.setter
 	def CxlXchg(self, value):
-		self._CxlXchg = value if type(value) != base_types.auto else self.make_default("CxlXchg")
+		self._CxlXchg = value if value is not None else base_types.UninitialisedField(self, 'CxlXchg', CancellationProcess2Code, False)
 
 	@CxlXchg.deleter
 	def CxlXchg(self):
 		del self._CxlXchg
-		self._CxlXchg = None
+		self._CxlXchg = base_types.UninitialisedField(self, 'CxlXchg', CancellationProcess2Code, False)
 
 	@property
 	def FinCaptr(self):
@@ -55,12 +55,12 @@ class AcquirerProtocolExchangeBehavior2(base_types._BaseFieldType):
 
 	@FinCaptr.setter
 	def FinCaptr(self, value):
-		self._FinCaptr = value if type(value) != base_types.auto else self.make_default("FinCaptr")
+		self._FinCaptr = value if value is not None else base_types.UninitialisedField(self, 'FinCaptr', FinancialCapture1Code, False)
 
 	@FinCaptr.deleter
 	def FinCaptr(self):
 		del self._FinCaptr
-		self._FinCaptr = None
+		self._FinCaptr = base_types.UninitialisedField(self, 'FinCaptr', FinancialCapture1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BtchTrf', type=ExchangeConfiguration9, min=0, max=1, mutex_group=None, array=False),

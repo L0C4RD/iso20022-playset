@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._Number import Number
+from . import ISODateTime
+from . import Number
 
 class LocalDateTime1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class LocalDateTime1(base_types._BaseFieldType):
 
 	@FrDtTm.setter
 	def FrDtTm(self, value):
-		self._FrDtTm = value if type(value) != base_types.auto else self.make_default("FrDtTm")
+		self._FrDtTm = value if value is not None else base_types.UninitialisedField(self, 'FrDtTm', ISODateTime, False)
 
 	@FrDtTm.deleter
 	def FrDtTm(self):
 		del self._FrDtTm
-		self._FrDtTm = None
+		self._FrDtTm = base_types.UninitialisedField(self, 'FrDtTm', ISODateTime, False)
 
 	@property
 	def ToDtTm(self):
@@ -27,12 +27,12 @@ class LocalDateTime1(base_types._BaseFieldType):
 
 	@ToDtTm.setter
 	def ToDtTm(self, value):
-		self._ToDtTm = value if type(value) != base_types.auto else self.make_default("ToDtTm")
+		self._ToDtTm = value if value is not None else base_types.UninitialisedField(self, 'ToDtTm', ISODateTime, False)
 
 	@ToDtTm.deleter
 	def ToDtTm(self):
 		del self._ToDtTm
-		self._ToDtTm = None
+		self._ToDtTm = base_types.UninitialisedField(self, 'ToDtTm', ISODateTime, False)
 
 	@property
 	def UTCOffset(self):
@@ -40,12 +40,12 @@ class LocalDateTime1(base_types._BaseFieldType):
 
 	@UTCOffset.setter
 	def UTCOffset(self, value):
-		self._UTCOffset = value if type(value) != base_types.auto else self.make_default("UTCOffset")
+		self._UTCOffset = value if value is not None else base_types.UninitialisedField(self, 'UTCOffset', Number, False)
 
 	@UTCOffset.deleter
 	def UTCOffset(self):
 		del self._UTCOffset
-		self._UTCOffset = None
+		self._UTCOffset = base_types.UninitialisedField(self, 'UTCOffset', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FrDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),

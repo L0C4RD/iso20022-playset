@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMDepositCompletionAdviceV02 import ATMDepositCompletionAdviceV02
+from . import ATMDepositCompletionAdviceV02
 
 class CATP_014_001_02():
 
@@ -18,12 +18,12 @@ class CATP_014_001_02():
 
 		@ATMDpstCmpltnAdvc.setter
 		def ATMDpstCmpltnAdvc(self, value):
-			self._ATMDpstCmpltnAdvc = value if type(value) != base_types.auto else self.make_default("ATMDpstCmpltnAdvc")
+			self._ATMDpstCmpltnAdvc = value if value is not None else base_types.UninitialisedField(self, 'ATMDpstCmpltnAdvc', ATMDepositCompletionAdviceV02, False)
 
 		@ATMDpstCmpltnAdvc.deleter
 		def ATMDpstCmpltnAdvc(self):
 			del self._ATMDpstCmpltnAdvc
-			self._ATMDpstCmpltnAdvc = None
+			self._ATMDpstCmpltnAdvc = base_types.UninitialisedField(self, 'ATMDpstCmpltnAdvc', ATMDepositCompletionAdviceV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ATMDpstCmpltnAdvc', type=ATMDepositCompletionAdviceV02, min=1, max=1, mutex_group=None, array=False),

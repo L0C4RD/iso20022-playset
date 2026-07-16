@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max25Text import Max25Text
+from . import Max25Text
 
 class CommodityDerivative5(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class CommodityDerivative5(base_types._BaseFieldType):
 
 	@AvrgTmChrtr.setter
 	def AvrgTmChrtr(self, value):
-		self._AvrgTmChrtr = value if type(value) != base_types.auto else self.make_default("AvrgTmChrtr")
+		self._AvrgTmChrtr = value if value is not None else base_types.UninitialisedField(self, 'AvrgTmChrtr', Max25Text, False)
 
 	@AvrgTmChrtr.deleter
 	def AvrgTmChrtr(self):
 		del self._AvrgTmChrtr
-		self._AvrgTmChrtr = None
+		self._AvrgTmChrtr = base_types.UninitialisedField(self, 'AvrgTmChrtr', Max25Text, False)
 
 	@property
 	def Sz(self):
@@ -26,12 +26,12 @@ class CommodityDerivative5(base_types._BaseFieldType):
 
 	@Sz.setter
 	def Sz(self, value):
-		self._Sz = value if type(value) != base_types.auto else self.make_default("Sz")
+		self._Sz = value if value is not None else base_types.UninitialisedField(self, 'Sz', Max25Text, False)
 
 	@Sz.deleter
 	def Sz(self):
 		del self._Sz
-		self._Sz = None
+		self._Sz = base_types.UninitialisedField(self, 'Sz', Max25Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AvrgTmChrtr', type=Max25Text, min=1, max=1, mutex_group=None, array=False),

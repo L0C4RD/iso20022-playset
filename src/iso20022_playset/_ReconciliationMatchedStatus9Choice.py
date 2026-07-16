@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NoReasonCode import NoReasonCode
-from ._ReconciliationResult10 import ReconciliationResult10
+from . import NoReasonCode
+from . import ReconciliationResult10
 
 class ReconciliationMatchedStatus9Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ReconciliationMatchedStatus9Choice(base_types._BaseFieldType):
 
 	@Mtchd.setter
 	def Mtchd(self, value):
-		self._Mtchd = value if type(value) != base_types.auto else self.make_default("Mtchd")
+		self._Mtchd = value if value is not None else base_types.UninitialisedField(self, 'Mtchd', NoReasonCode, False)
 
 	@Mtchd.deleter
 	def Mtchd(self):
 		del self._Mtchd
-		self._Mtchd = None
+		self._Mtchd = base_types.UninitialisedField(self, 'Mtchd', NoReasonCode, False)
 
 	@property
 	def NotMtchd(self):
@@ -27,12 +27,12 @@ class ReconciliationMatchedStatus9Choice(base_types._BaseFieldType):
 
 	@NotMtchd.setter
 	def NotMtchd(self, value):
-		self._NotMtchd = value if type(value) != base_types.auto else self.make_default("NotMtchd")
+		self._NotMtchd = value if value is not None else base_types.UninitialisedField(self, 'NotMtchd', ReconciliationResult10, False)
 
 	@NotMtchd.deleter
 	def NotMtchd(self):
 		del self._NotMtchd
-		self._NotMtchd = None
+		self._NotMtchd = base_types.UninitialisedField(self, 'NotMtchd', ReconciliationResult10, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Mtchd', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),

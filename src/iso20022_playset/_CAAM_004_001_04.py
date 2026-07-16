@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMKeyDownloadResponseV04 import ATMKeyDownloadResponseV04
+from . import ATMKeyDownloadResponseV04
 
 class CAAM_004_001_04():
 
@@ -18,12 +18,12 @@ class CAAM_004_001_04():
 
 		@ATMKeyDwnldRspn.setter
 		def ATMKeyDwnldRspn(self, value):
-			self._ATMKeyDwnldRspn = value if type(value) != base_types.auto else self.make_default("ATMKeyDwnldRspn")
+			self._ATMKeyDwnldRspn = value if value is not None else base_types.UninitialisedField(self, 'ATMKeyDwnldRspn', ATMKeyDownloadResponseV04, False)
 
 		@ATMKeyDwnldRspn.deleter
 		def ATMKeyDwnldRspn(self):
 			del self._ATMKeyDwnldRspn
-			self._ATMKeyDwnldRspn = None
+			self._ATMKeyDwnldRspn = base_types.UninitialisedField(self, 'ATMKeyDwnldRspn', ATMKeyDownloadResponseV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ATMKeyDwnldRspn', type=ATMKeyDownloadResponseV04, min=1, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AgentCAStandingInstructionCancellationRequestV01 import AgentCAStandingInstructionCancellationRequestV01
+from . import AgentCAStandingInstructionCancellationRequestV01
 
 class SEEV_026_001_01():
 
@@ -18,12 +18,12 @@ class SEEV_026_001_01():
 
 		@AgtCAStgInstrCxlReq.setter
 		def AgtCAStgInstrCxlReq(self, value):
-			self._AgtCAStgInstrCxlReq = value if type(value) != base_types.auto else self.make_default("AgtCAStgInstrCxlReq")
+			self._AgtCAStgInstrCxlReq = value if value is not None else base_types.UninitialisedField(self, 'AgtCAStgInstrCxlReq', AgentCAStandingInstructionCancellationRequestV01, False)
 
 		@AgtCAStgInstrCxlReq.deleter
 		def AgtCAStgInstrCxlReq(self):
 			del self._AgtCAStgInstrCxlReq
-			self._AgtCAStgInstrCxlReq = None
+			self._AgtCAStgInstrCxlReq = base_types.UninitialisedField(self, 'AgtCAStgInstrCxlReq', AgentCAStandingInstructionCancellationRequestV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AgtCAStgInstrCxlReq', type=AgentCAStandingInstructionCancellationRequestV01, min=1, max=1, mutex_group=None, array=False),

@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._ISODateTime import ISODateTime
-from ._Max15NumericText import Max15NumericText
-from ._Max35Text import Max35Text
-from ._PartyIdentification272 import PartyIdentification272
+from . import BranchAndFinancialInstitutionIdentification8
+from . import ISODateTime
+from . import Max15NumericText
+from . import Max35Text
+from . import PartyIdentification272
 
 class CurrencyControlHeader7(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class CurrencyControlHeader7(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if value is not None else base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
 		del self._CreDtTm
-		self._CreDtTm = None
+		self._CreDtTm = base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@property
 	def MsgId(self):
@@ -30,12 +30,12 @@ class CurrencyControlHeader7(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@property
 	def NbOfItms(self):
@@ -43,12 +43,12 @@ class CurrencyControlHeader7(base_types._BaseFieldType):
 
 	@NbOfItms.setter
 	def NbOfItms(self, value):
-		self._NbOfItms = value if type(value) != base_types.auto else self.make_default("NbOfItms")
+		self._NbOfItms = value if value is not None else base_types.UninitialisedField(self, 'NbOfItms', Max15NumericText, False)
 
 	@NbOfItms.deleter
 	def NbOfItms(self):
 		del self._NbOfItms
-		self._NbOfItms = None
+		self._NbOfItms = base_types.UninitialisedField(self, 'NbOfItms', Max15NumericText, False)
 
 	@property
 	def RcvgPty(self):
@@ -56,12 +56,12 @@ class CurrencyControlHeader7(base_types._BaseFieldType):
 
 	@RcvgPty.setter
 	def RcvgPty(self, value):
-		self._RcvgPty = value if type(value) != base_types.auto else self.make_default("RcvgPty")
+		self._RcvgPty = value if value is not None else base_types.UninitialisedField(self, 'RcvgPty', PartyIdentification272, False)
 
 	@RcvgPty.deleter
 	def RcvgPty(self):
 		del self._RcvgPty
-		self._RcvgPty = None
+		self._RcvgPty = base_types.UninitialisedField(self, 'RcvgPty', PartyIdentification272, False)
 
 	@property
 	def RegnAgt(self):
@@ -69,12 +69,12 @@ class CurrencyControlHeader7(base_types._BaseFieldType):
 
 	@RegnAgt.setter
 	def RegnAgt(self, value):
-		self._RegnAgt = value if type(value) != base_types.auto else self.make_default("RegnAgt")
+		self._RegnAgt = value if value is not None else base_types.UninitialisedField(self, 'RegnAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@RegnAgt.deleter
 	def RegnAgt(self):
 		del self._RegnAgt
-		self._RegnAgt = None
+		self._RegnAgt = base_types.UninitialisedField(self, 'RegnAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),

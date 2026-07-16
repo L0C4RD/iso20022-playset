@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._OrderCancellationStatus2Code import OrderCancellationStatus2Code
-from ._RejectedStatus10 import RejectedStatus10
+from . import OrderCancellationStatus2Code
+from . import RejectedStatus10
 
 class CancellationStatus22Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CancellationStatus22Choice(base_types._BaseFieldType):
 
 	@Rjctd.setter
 	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
+		self._Rjctd = value if value is not None else base_types.UninitialisedField(self, 'Rjctd', RejectedStatus10, False)
 
 	@Rjctd.deleter
 	def Rjctd(self):
 		del self._Rjctd
-		self._Rjctd = None
+		self._Rjctd = base_types.UninitialisedField(self, 'Rjctd', RejectedStatus10, False)
 
 	@property
 	def Sts(self):
@@ -27,12 +27,12 @@ class CancellationStatus22Choice(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', OrderCancellationStatus2Code, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', OrderCancellationStatus2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Rjctd', type=RejectedStatus10, min=0, max=1, mutex_group=1, array=False),

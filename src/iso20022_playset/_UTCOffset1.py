@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISOTime import ISOTime
-from ._PlusOrMinusIndicator import PlusOrMinusIndicator
+from . import ISOTime
+from . import PlusOrMinusIndicator
 
 class UTCOffset1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class UTCOffset1(base_types._BaseFieldType):
 
 	@NbOfHrs.setter
 	def NbOfHrs(self, value):
-		self._NbOfHrs = value if type(value) != base_types.auto else self.make_default("NbOfHrs")
+		self._NbOfHrs = value if value is not None else base_types.UninitialisedField(self, 'NbOfHrs', ISOTime, False)
 
 	@NbOfHrs.deleter
 	def NbOfHrs(self):
 		del self._NbOfHrs
-		self._NbOfHrs = None
+		self._NbOfHrs = base_types.UninitialisedField(self, 'NbOfHrs', ISOTime, False)
 
 	@property
 	def Sgn(self):
@@ -27,12 +27,12 @@ class UTCOffset1(base_types._BaseFieldType):
 
 	@Sgn.setter
 	def Sgn(self, value):
-		self._Sgn = value if type(value) != base_types.auto else self.make_default("Sgn")
+		self._Sgn = value if value is not None else base_types.UninitialisedField(self, 'Sgn', PlusOrMinusIndicator, False)
 
 	@Sgn.deleter
 	def Sgn(self):
 		del self._Sgn
-		self._Sgn = None
+		self._Sgn = base_types.UninitialisedField(self, 'Sgn', PlusOrMinusIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NbOfHrs', type=ISOTime, min=1, max=1, mutex_group=None, array=False),

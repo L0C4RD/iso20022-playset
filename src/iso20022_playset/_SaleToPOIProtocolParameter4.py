@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max1025Text import Max1025Text
-from ._Max256Text import Max256Text
-from ._Max35Text import Max35Text
-from ._Max8Text import Max8Text
-from ._Organisation26 import Organisation26
-from ._RetailerMessage1Code import RetailerMessage1Code
-from ._RetailerService2Code import RetailerService2Code
-from ._RetailerService8Code import RetailerService8Code
-from ._TerminalManagementAction3Code import TerminalManagementAction3Code
+from . import Max1025Text
+from . import Max256Text
+from . import Max35Text
+from . import Max8Text
+from . import Organisation26
+from . import RetailerMessage1Code
+from . import RetailerService2Code
+from . import RetailerService8Code
+from . import TerminalManagementAction3Code
 
 class SaleToPOIProtocolParameter4(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class SaleToPOIProtocolParameter4(base_types._BaseFieldType):
 
 	@ActnTp.setter
 	def ActnTp(self, value):
-		self._ActnTp = value if type(value) != base_types.auto else self.make_default("ActnTp")
+		self._ActnTp = value if value is not None else base_types.UninitialisedField(self, 'ActnTp', TerminalManagementAction3Code, False)
 
 	@ActnTp.deleter
 	def ActnTp(self):
 		del self._ActnTp
-		self._ActnTp = None
+		self._ActnTp = base_types.UninitialisedField(self, 'ActnTp', TerminalManagementAction3Code, False)
 
 	@property
 	def AllwdPOIMsg(self):
@@ -34,12 +34,12 @@ class SaleToPOIProtocolParameter4(base_types._BaseFieldType):
 
 	@AllwdPOIMsg.setter
 	def AllwdPOIMsg(self, value):
-		self._AllwdPOIMsg = value if type(value) != base_types.auto else self.make_default("AllwdPOIMsg")
+		self._AllwdPOIMsg = value if value is not None else base_types.UninitialisedField(self, 'AllwdPOIMsg', RetailerMessage1Code, True)
 
 	@AllwdPOIMsg.deleter
 	def AllwdPOIMsg(self):
 		del self._AllwdPOIMsg
-		self._AllwdPOIMsg = None
+		self._AllwdPOIMsg = base_types.UninitialisedField(self, 'AllwdPOIMsg', RetailerMessage1Code, True)
 
 	@property
 	def AllwdPOISvc(self):
@@ -47,12 +47,12 @@ class SaleToPOIProtocolParameter4(base_types._BaseFieldType):
 
 	@AllwdPOISvc.setter
 	def AllwdPOISvc(self, value):
-		self._AllwdPOISvc = value if type(value) != base_types.auto else self.make_default("AllwdPOISvc")
+		self._AllwdPOISvc = value if value is not None else base_types.UninitialisedField(self, 'AllwdPOISvc', RetailerService2Code, True)
 
 	@AllwdPOISvc.deleter
 	def AllwdPOISvc(self):
 		del self._AllwdPOISvc
-		self._AllwdPOISvc = None
+		self._AllwdPOISvc = base_types.UninitialisedField(self, 'AllwdPOISvc', RetailerService2Code, True)
 
 	@property
 	def AllwdSaleDvc(self):
@@ -60,12 +60,12 @@ class SaleToPOIProtocolParameter4(base_types._BaseFieldType):
 
 	@AllwdSaleDvc.setter
 	def AllwdSaleDvc(self, value):
-		self._AllwdSaleDvc = value if type(value) != base_types.auto else self.make_default("AllwdSaleDvc")
+		self._AllwdSaleDvc = value if value is not None else base_types.UninitialisedField(self, 'AllwdSaleDvc', RetailerService8Code, True)
 
 	@AllwdSaleDvc.deleter
 	def AllwdSaleDvc(self):
 		del self._AllwdSaleDvc
-		self._AllwdSaleDvc = None
+		self._AllwdSaleDvc = base_types.UninitialisedField(self, 'AllwdSaleDvc', RetailerService8Code, True)
 
 	@property
 	def AllwdSaleMsg(self):
@@ -73,12 +73,12 @@ class SaleToPOIProtocolParameter4(base_types._BaseFieldType):
 
 	@AllwdSaleMsg.setter
 	def AllwdSaleMsg(self, value):
-		self._AllwdSaleMsg = value if type(value) != base_types.auto else self.make_default("AllwdSaleMsg")
+		self._AllwdSaleMsg = value if value is not None else base_types.UninitialisedField(self, 'AllwdSaleMsg', RetailerMessage1Code, True)
 
 	@AllwdSaleMsg.deleter
 	def AllwdSaleMsg(self):
 		del self._AllwdSaleMsg
-		self._AllwdSaleMsg = None
+		self._AllwdSaleMsg = base_types.UninitialisedField(self, 'AllwdSaleMsg', RetailerMessage1Code, True)
 
 	@property
 	def HstId(self):
@@ -86,12 +86,12 @@ class SaleToPOIProtocolParameter4(base_types._BaseFieldType):
 
 	@HstId.setter
 	def HstId(self, value):
-		self._HstId = value if type(value) != base_types.auto else self.make_default("HstId")
+		self._HstId = value if value is not None else base_types.UninitialisedField(self, 'HstId', Max35Text, False)
 
 	@HstId.deleter
 	def HstId(self):
 		del self._HstId
-		self._HstId = None
+		self._HstId = base_types.UninitialisedField(self, 'HstId', Max35Text, False)
 
 	@property
 	def MrchntId(self):
@@ -99,12 +99,12 @@ class SaleToPOIProtocolParameter4(base_types._BaseFieldType):
 
 	@MrchntId.setter
 	def MrchntId(self, value):
-		self._MrchntId = value if type(value) != base_types.auto else self.make_default("MrchntId")
+		self._MrchntId = value if value is not None else base_types.UninitialisedField(self, 'MrchntId', Organisation26, False)
 
 	@MrchntId.deleter
 	def MrchntId(self):
 		del self._MrchntId
-		self._MrchntId = None
+		self._MrchntId = base_types.UninitialisedField(self, 'MrchntId', Organisation26, False)
 
 	@property
 	def MrchntPOIId(self):
@@ -112,12 +112,12 @@ class SaleToPOIProtocolParameter4(base_types._BaseFieldType):
 
 	@MrchntPOIId.setter
 	def MrchntPOIId(self, value):
-		self._MrchntPOIId = value if type(value) != base_types.auto else self.make_default("MrchntPOIId")
+		self._MrchntPOIId = value if value is not None else base_types.UninitialisedField(self, 'MrchntPOIId', Max35Text, False)
 
 	@MrchntPOIId.deleter
 	def MrchntPOIId(self):
 		del self._MrchntPOIId
-		self._MrchntPOIId = None
+		self._MrchntPOIId = base_types.UninitialisedField(self, 'MrchntPOIId', Max35Text, False)
 
 	@property
 	def PrtcolVrsn(self):
@@ -125,12 +125,12 @@ class SaleToPOIProtocolParameter4(base_types._BaseFieldType):
 
 	@PrtcolVrsn.setter
 	def PrtcolVrsn(self, value):
-		self._PrtcolVrsn = value if type(value) != base_types.auto else self.make_default("PrtcolVrsn")
+		self._PrtcolVrsn = value if value is not None else base_types.UninitialisedField(self, 'PrtcolVrsn', Max8Text, False)
 
 	@PrtcolVrsn.deleter
 	def PrtcolVrsn(self):
 		del self._PrtcolVrsn
-		self._PrtcolVrsn = None
+		self._PrtcolVrsn = base_types.UninitialisedField(self, 'PrtcolVrsn', Max8Text, False)
 
 	@property
 	def SaleId(self):
@@ -138,12 +138,12 @@ class SaleToPOIProtocolParameter4(base_types._BaseFieldType):
 
 	@SaleId.setter
 	def SaleId(self, value):
-		self._SaleId = value if type(value) != base_types.auto else self.make_default("SaleId")
+		self._SaleId = value if value is not None else base_types.UninitialisedField(self, 'SaleId', Max35Text, False)
 
 	@SaleId.deleter
 	def SaleId(self):
 		del self._SaleId
-		self._SaleId = None
+		self._SaleId = base_types.UninitialisedField(self, 'SaleId', Max35Text, False)
 
 	@property
 	def Vrsn(self):
@@ -151,12 +151,12 @@ class SaleToPOIProtocolParameter4(base_types._BaseFieldType):
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+		self._Vrsn = value if value is not None else base_types.UninitialisedField(self, 'Vrsn', Max256Text, False)
 
 	@Vrsn.deleter
 	def Vrsn(self):
 		del self._Vrsn
-		self._Vrsn = None
+		self._Vrsn = base_types.UninitialisedField(self, 'Vrsn', Max256Text, False)
 
 	@property
 	def XtrnlyTpSpprtd(self):
@@ -164,12 +164,12 @@ class SaleToPOIProtocolParameter4(base_types._BaseFieldType):
 
 	@XtrnlyTpSpprtd.setter
 	def XtrnlyTpSpprtd(self, value):
-		self._XtrnlyTpSpprtd = value if type(value) != base_types.auto else self.make_default("XtrnlyTpSpprtd")
+		self._XtrnlyTpSpprtd = value if value is not None else base_types.UninitialisedField(self, 'XtrnlyTpSpprtd', Max1025Text, True)
 
 	@XtrnlyTpSpprtd.deleter
 	def XtrnlyTpSpprtd(self):
 		del self._XtrnlyTpSpprtd
-		self._XtrnlyTpSpprtd = None
+		self._XtrnlyTpSpprtd = base_types.UninitialisedField(self, 'XtrnlyTpSpprtd', Max1025Text, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActnTp', type=TerminalManagementAction3Code, min=1, max=1, mutex_group=None, array=False),

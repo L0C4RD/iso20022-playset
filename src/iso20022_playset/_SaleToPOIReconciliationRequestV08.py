@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContentInformationType38 import ContentInformationType38
-from ._Header41 import Header41
-from ._ReconciliationRequest9 import ReconciliationRequest9
+from . import ContentInformationType38
+from . import Header41
+from . import ReconciliationRequest9
 
 class SaleToPOIReconciliationRequestV08(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SaleToPOIReconciliationRequestV08(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header41, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header41, False)
 
 	@property
 	def RcncltnReq(self):
@@ -28,12 +28,12 @@ class SaleToPOIReconciliationRequestV08(base_types._BaseFieldType):
 
 	@RcncltnReq.setter
 	def RcncltnReq(self, value):
-		self._RcncltnReq = value if type(value) != base_types.auto else self.make_default("RcncltnReq")
+		self._RcncltnReq = value if value is not None else base_types.UninitialisedField(self, 'RcncltnReq', ReconciliationRequest9, False)
 
 	@RcncltnReq.deleter
 	def RcncltnReq(self):
 		del self._RcncltnReq
-		self._RcncltnReq = None
+		self._RcncltnReq = base_types.UninitialisedField(self, 'RcncltnReq', ReconciliationRequest9, False)
 
 	@property
 	def SctyTrlr(self):
@@ -41,12 +41,12 @@ class SaleToPOIReconciliationRequestV08(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType38, False)
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
 		del self._SctyTrlr
-		self._SctyTrlr = None
+		self._SctyTrlr = base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType38, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Hdr', type=Header41, min=1, max=1, mutex_group=None, array=False),

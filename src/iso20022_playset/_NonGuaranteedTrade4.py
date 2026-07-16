@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DeliveringPartiesAndAccount22 import DeliveringPartiesAndAccount22
-from ._PartyIdentification253Choice import PartyIdentification253Choice
-from ._ReceivingPartiesAndAccount22 import ReceivingPartiesAndAccount22
+from . import DeliveringPartiesAndAccount22
+from . import PartyIdentification253Choice
+from . import ReceivingPartiesAndAccount22
 
 class NonGuaranteedTrade4(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class NonGuaranteedTrade4(base_types._BaseFieldType):
 
 	@DlvrgPties.setter
 	def DlvrgPties(self, value):
-		self._DlvrgPties = value if type(value) != base_types.auto else self.make_default("DlvrgPties")
+		self._DlvrgPties = value if value is not None else base_types.UninitialisedField(self, 'DlvrgPties', DeliveringPartiesAndAccount22, False)
 
 	@DlvrgPties.deleter
 	def DlvrgPties(self):
 		del self._DlvrgPties
-		self._DlvrgPties = None
+		self._DlvrgPties = base_types.UninitialisedField(self, 'DlvrgPties', DeliveringPartiesAndAccount22, False)
 
 	@property
 	def RcvgPties(self):
@@ -28,12 +28,12 @@ class NonGuaranteedTrade4(base_types._BaseFieldType):
 
 	@RcvgPties.setter
 	def RcvgPties(self, value):
-		self._RcvgPties = value if type(value) != base_types.auto else self.make_default("RcvgPties")
+		self._RcvgPties = value if value is not None else base_types.UninitialisedField(self, 'RcvgPties', ReceivingPartiesAndAccount22, False)
 
 	@RcvgPties.deleter
 	def RcvgPties(self):
 		del self._RcvgPties
-		self._RcvgPties = None
+		self._RcvgPties = base_types.UninitialisedField(self, 'RcvgPties', ReceivingPartiesAndAccount22, False)
 
 	@property
 	def TradCtrPtyClrMmbId(self):
@@ -41,12 +41,12 @@ class NonGuaranteedTrade4(base_types._BaseFieldType):
 
 	@TradCtrPtyClrMmbId.setter
 	def TradCtrPtyClrMmbId(self, value):
-		self._TradCtrPtyClrMmbId = value if type(value) != base_types.auto else self.make_default("TradCtrPtyClrMmbId")
+		self._TradCtrPtyClrMmbId = value if value is not None else base_types.UninitialisedField(self, 'TradCtrPtyClrMmbId', PartyIdentification253Choice, False)
 
 	@TradCtrPtyClrMmbId.deleter
 	def TradCtrPtyClrMmbId(self):
 		del self._TradCtrPtyClrMmbId
-		self._TradCtrPtyClrMmbId = None
+		self._TradCtrPtyClrMmbId = base_types.UninitialisedField(self, 'TradCtrPtyClrMmbId', PartyIdentification253Choice, False)
 
 	@property
 	def TradCtrPtyMmbId(self):
@@ -54,12 +54,12 @@ class NonGuaranteedTrade4(base_types._BaseFieldType):
 
 	@TradCtrPtyMmbId.setter
 	def TradCtrPtyMmbId(self, value):
-		self._TradCtrPtyMmbId = value if type(value) != base_types.auto else self.make_default("TradCtrPtyMmbId")
+		self._TradCtrPtyMmbId = value if value is not None else base_types.UninitialisedField(self, 'TradCtrPtyMmbId', PartyIdentification253Choice, False)
 
 	@TradCtrPtyMmbId.deleter
 	def TradCtrPtyMmbId(self):
 		del self._TradCtrPtyMmbId
-		self._TradCtrPtyMmbId = None
+		self._TradCtrPtyMmbId = base_types.UninitialisedField(self, 'TradCtrPtyMmbId', PartyIdentification253Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DlvrgPties', type=DeliveringPartiesAndAccount22, min=0, max=1, mutex_group=None, array=False),

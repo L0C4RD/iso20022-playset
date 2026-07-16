@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CollateralType1Code import CollateralType1Code
-from ._ISODate import ISODate
+from . import CollateralType1Code
+from . import ISODate
 
 class CollateralMovement9(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CollateralMovement9(base_types._BaseFieldType):
 
 	@CollTp.setter
 	def CollTp(self, value):
-		self._CollTp = value if type(value) != base_types.auto else self.make_default("CollTp")
+		self._CollTp = value if value is not None else base_types.UninitialisedField(self, 'CollTp', CollateralType1Code, False)
 
 	@CollTp.deleter
 	def CollTp(self):
 		del self._CollTp
-		self._CollTp = None
+		self._CollTp = base_types.UninitialisedField(self, 'CollTp', CollateralType1Code, False)
 
 	@property
 	def Dt(self):
@@ -27,12 +27,12 @@ class CollateralMovement9(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollTp', type=CollateralType1Code, min=1, max=1, mutex_group=None, array=False),

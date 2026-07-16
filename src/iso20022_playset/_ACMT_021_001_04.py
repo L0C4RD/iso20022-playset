@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountClosingAdditionalInformationRequestV04 import AccountClosingAdditionalInformationRequestV04
+from . import AccountClosingAdditionalInformationRequestV04
 
 class ACMT_021_001_04():
 
@@ -18,12 +18,12 @@ class ACMT_021_001_04():
 
 		@AcctClsgAddtlInfReq.setter
 		def AcctClsgAddtlInfReq(self, value):
-			self._AcctClsgAddtlInfReq = value if type(value) != base_types.auto else self.make_default("AcctClsgAddtlInfReq")
+			self._AcctClsgAddtlInfReq = value if value is not None else base_types.UninitialisedField(self, 'AcctClsgAddtlInfReq', AccountClosingAdditionalInformationRequestV04, False)
 
 		@AcctClsgAddtlInfReq.deleter
 		def AcctClsgAddtlInfReq(self):
 			del self._AcctClsgAddtlInfReq
-			self._AcctClsgAddtlInfReq = None
+			self._AcctClsgAddtlInfReq = base_types.UninitialisedField(self, 'AcctClsgAddtlInfReq', AccountClosingAdditionalInformationRequestV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AcctClsgAddtlInfReq', type=AccountClosingAdditionalInformationRequestV04, min=1, max=1, mutex_group=None, array=False),

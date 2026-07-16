@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AnyBICIdentifier import AnyBICIdentifier
-from ._CountryCode import CountryCode
-from ._MICIdentifier import MICIdentifier
-from ._Max35Text import Max35Text
+from . import AnyBICIdentifier
+from . import CountryCode
+from . import MICIdentifier
+from . import Max35Text
 
 class PlaceOfTradeIdentification1Choice(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class PlaceOfTradeIdentification1Choice(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@property
 	def OverTheCntr(self):
@@ -29,12 +29,12 @@ class PlaceOfTradeIdentification1Choice(base_types._BaseFieldType):
 
 	@OverTheCntr.setter
 	def OverTheCntr(self, value):
-		self._OverTheCntr = value if type(value) != base_types.auto else self.make_default("OverTheCntr")
+		self._OverTheCntr = value if value is not None else base_types.UninitialisedField(self, 'OverTheCntr', Max35Text, False)
 
 	@OverTheCntr.deleter
 	def OverTheCntr(self):
 		del self._OverTheCntr
-		self._OverTheCntr = None
+		self._OverTheCntr = base_types.UninitialisedField(self, 'OverTheCntr', Max35Text, False)
 
 	@property
 	def Pty(self):
@@ -42,12 +42,12 @@ class PlaceOfTradeIdentification1Choice(base_types._BaseFieldType):
 
 	@Pty.setter
 	def Pty(self, value):
-		self._Pty = value if type(value) != base_types.auto else self.make_default("Pty")
+		self._Pty = value if value is not None else base_types.UninitialisedField(self, 'Pty', AnyBICIdentifier, False)
 
 	@Pty.deleter
 	def Pty(self):
 		del self._Pty
-		self._Pty = None
+		self._Pty = base_types.UninitialisedField(self, 'Pty', AnyBICIdentifier, False)
 
 	@property
 	def Xchg(self):
@@ -55,12 +55,12 @@ class PlaceOfTradeIdentification1Choice(base_types._BaseFieldType):
 
 	@Xchg.setter
 	def Xchg(self, value):
-		self._Xchg = value if type(value) != base_types.auto else self.make_default("Xchg")
+		self._Xchg = value if value is not None else base_types.UninitialisedField(self, 'Xchg', MICIdentifier, False)
 
 	@Xchg.deleter
 	def Xchg(self):
 		del self._Xchg
-		self._Xchg = None
+		self._Xchg = base_types.UninitialisedField(self, 'Xchg', MICIdentifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),

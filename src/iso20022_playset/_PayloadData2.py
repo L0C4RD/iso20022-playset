@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ISODateTime
+from . import Max35Text
+from . import TrueFalseIndicator
 
 class PayloadData2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PayloadData2(base_types._BaseFieldType):
 
 	@CreDtAndTm.setter
 	def CreDtAndTm(self, value):
-		self._CreDtAndTm = value if type(value) != base_types.auto else self.make_default("CreDtAndTm")
+		self._CreDtAndTm = value if value is not None else base_types.UninitialisedField(self, 'CreDtAndTm', ISODateTime, False)
 
 	@CreDtAndTm.deleter
 	def CreDtAndTm(self):
 		del self._CreDtAndTm
-		self._CreDtAndTm = None
+		self._CreDtAndTm = base_types.UninitialisedField(self, 'CreDtAndTm', ISODateTime, False)
 
 	@property
 	def PssblDplctFlg(self):
@@ -28,12 +28,12 @@ class PayloadData2(base_types._BaseFieldType):
 
 	@PssblDplctFlg.setter
 	def PssblDplctFlg(self, value):
-		self._PssblDplctFlg = value if type(value) != base_types.auto else self.make_default("PssblDplctFlg")
+		self._PssblDplctFlg = value if value is not None else base_types.UninitialisedField(self, 'PssblDplctFlg', TrueFalseIndicator, False)
 
 	@PssblDplctFlg.deleter
 	def PssblDplctFlg(self):
 		del self._PssblDplctFlg
-		self._PssblDplctFlg = None
+		self._PssblDplctFlg = base_types.UninitialisedField(self, 'PssblDplctFlg', TrueFalseIndicator, False)
 
 	@property
 	def PyldIdr(self):
@@ -41,12 +41,12 @@ class PayloadData2(base_types._BaseFieldType):
 
 	@PyldIdr.setter
 	def PyldIdr(self, value):
-		self._PyldIdr = value if type(value) != base_types.auto else self.make_default("PyldIdr")
+		self._PyldIdr = value if value is not None else base_types.UninitialisedField(self, 'PyldIdr', Max35Text, False)
 
 	@PyldIdr.deleter
 	def PyldIdr(self):
 		del self._PyldIdr
-		self._PyldIdr = None
+		self._PyldIdr = base_types.UninitialisedField(self, 'PyldIdr', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CreDtAndTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),

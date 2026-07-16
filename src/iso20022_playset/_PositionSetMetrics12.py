@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PercentageRate import PercentageRate
-from ._QuantityNominalValue2Choice import QuantityNominalValue2Choice
-from ._VolumeMetrics6 import VolumeMetrics6
+from . import PercentageRate
+from . import QuantityNominalValue2Choice
+from . import VolumeMetrics6
 
 class PositionSetMetrics12(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PositionSetMetrics12(base_types._BaseFieldType):
 
 	@HrcutOrMrgn.setter
 	def HrcutOrMrgn(self, value):
-		self._HrcutOrMrgn = value if type(value) != base_types.auto else self.make_default("HrcutOrMrgn")
+		self._HrcutOrMrgn = value if value is not None else base_types.UninitialisedField(self, 'HrcutOrMrgn', PercentageRate, False)
 
 	@HrcutOrMrgn.deleter
 	def HrcutOrMrgn(self):
 		del self._HrcutOrMrgn
-		self._HrcutOrMrgn = None
+		self._HrcutOrMrgn = base_types.UninitialisedField(self, 'HrcutOrMrgn', PercentageRate, False)
 
 	@property
 	def QtyOrNmnlAmt(self):
@@ -28,12 +28,12 @@ class PositionSetMetrics12(base_types._BaseFieldType):
 
 	@QtyOrNmnlAmt.setter
 	def QtyOrNmnlAmt(self, value):
-		self._QtyOrNmnlAmt = value if type(value) != base_types.auto else self.make_default("QtyOrNmnlAmt")
+		self._QtyOrNmnlAmt = value if value is not None else base_types.UninitialisedField(self, 'QtyOrNmnlAmt', QuantityNominalValue2Choice, False)
 
 	@QtyOrNmnlAmt.deleter
 	def QtyOrNmnlAmt(self):
 		del self._QtyOrNmnlAmt
-		self._QtyOrNmnlAmt = None
+		self._QtyOrNmnlAmt = base_types.UninitialisedField(self, 'QtyOrNmnlAmt', QuantityNominalValue2Choice, False)
 
 	@property
 	def VolMtrcs(self):
@@ -41,12 +41,12 @@ class PositionSetMetrics12(base_types._BaseFieldType):
 
 	@VolMtrcs.setter
 	def VolMtrcs(self, value):
-		self._VolMtrcs = value if type(value) != base_types.auto else self.make_default("VolMtrcs")
+		self._VolMtrcs = value if value is not None else base_types.UninitialisedField(self, 'VolMtrcs', VolumeMetrics6, False)
 
 	@VolMtrcs.deleter
 	def VolMtrcs(self):
 		del self._VolMtrcs
-		self._VolMtrcs = None
+		self._VolMtrcs = base_types.UninitialisedField(self, 'VolMtrcs', VolumeMetrics6, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='HrcutOrMrgn', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),

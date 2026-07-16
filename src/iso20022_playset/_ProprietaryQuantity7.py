@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DecimalNumber import DecimalNumber
-from ._Exact4AlphaNumericText import Exact4AlphaNumericText
-from ._Max35Text import Max35Text
-from ._ShortLong1Code import ShortLong1Code
+from . import DecimalNumber
+from . import Exact4AlphaNumericText
+from . import Max35Text
+from . import ShortLong1Code
 
 class ProprietaryQuantity7(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ProprietaryQuantity7(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+		self._Issr = value if value is not None else base_types.UninitialisedField(self, 'Issr', Max35Text, False)
 
 	@Issr.deleter
 	def Issr(self):
 		del self._Issr
-		self._Issr = None
+		self._Issr = base_types.UninitialisedField(self, 'Issr', Max35Text, False)
 
 	@property
 	def Qty(self):
@@ -29,12 +29,12 @@ class ProprietaryQuantity7(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+		self._Qty = value if value is not None else base_types.UninitialisedField(self, 'Qty', DecimalNumber, False)
 
 	@Qty.deleter
 	def Qty(self):
 		del self._Qty
-		self._Qty = None
+		self._Qty = base_types.UninitialisedField(self, 'Qty', DecimalNumber, False)
 
 	@property
 	def QtyTp(self):
@@ -42,12 +42,12 @@ class ProprietaryQuantity7(base_types._BaseFieldType):
 
 	@QtyTp.setter
 	def QtyTp(self, value):
-		self._QtyTp = value if type(value) != base_types.auto else self.make_default("QtyTp")
+		self._QtyTp = value if value is not None else base_types.UninitialisedField(self, 'QtyTp', Exact4AlphaNumericText, False)
 
 	@QtyTp.deleter
 	def QtyTp(self):
 		del self._QtyTp
-		self._QtyTp = None
+		self._QtyTp = base_types.UninitialisedField(self, 'QtyTp', Exact4AlphaNumericText, False)
 
 	@property
 	def SchmeNm(self):
@@ -55,12 +55,12 @@ class ProprietaryQuantity7(base_types._BaseFieldType):
 
 	@SchmeNm.setter
 	def SchmeNm(self, value):
-		self._SchmeNm = value if type(value) != base_types.auto else self.make_default("SchmeNm")
+		self._SchmeNm = value if value is not None else base_types.UninitialisedField(self, 'SchmeNm', Max35Text, False)
 
 	@SchmeNm.deleter
 	def SchmeNm(self):
 		del self._SchmeNm
-		self._SchmeNm = None
+		self._SchmeNm = base_types.UninitialisedField(self, 'SchmeNm', Max35Text, False)
 
 	@property
 	def ShrtLngPos(self):
@@ -68,12 +68,12 @@ class ProprietaryQuantity7(base_types._BaseFieldType):
 
 	@ShrtLngPos.setter
 	def ShrtLngPos(self, value):
-		self._ShrtLngPos = value if type(value) != base_types.auto else self.make_default("ShrtLngPos")
+		self._ShrtLngPos = value if value is not None else base_types.UninitialisedField(self, 'ShrtLngPos', ShortLong1Code, False)
 
 	@ShrtLngPos.deleter
 	def ShrtLngPos(self):
 		del self._ShrtLngPos
-		self._ShrtLngPos = None
+		self._ShrtLngPos = base_types.UninitialisedField(self, 'ShrtLngPos', ShortLong1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Issr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

@@ -2,22 +2,22 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._BrokeredDeal1Code import BrokeredDeal1Code
-from ._CounterpartyIdentification3Choice import CounterpartyIdentification3Choice
-from ._DateAndDateTimeChoice import DateAndDateTimeChoice
-from ._FinancialInstrumentProductType1Code import FinancialInstrumentProductType1Code
-from ._FloatingRateNote2 import FloatingRateNote2
-from ._ISODate import ISODate
-from ._InterestRateType1Code import InterestRateType1Code
-from ._LEIIdentifier import LEIIdentifier
-from ._Max105Text import Max105Text
-from ._MoneyMarketTransactionType1Code import MoneyMarketTransactionType1Code
-from ._NovationStatus1Code import NovationStatus1Code
-from ._Option12 import Option12
-from ._PercentageRate import PercentageRate
-from ._SupplementaryData1 import SupplementaryData1
-from ._TransactionOperationType1Code import TransactionOperationType1Code
+from . import ActiveCurrencyAndAmount
+from . import BrokeredDeal1Code
+from . import CounterpartyIdentification3Choice
+from . import DateAndDateTimeChoice
+from . import FinancialInstrumentProductType1Code
+from . import FloatingRateNote2
+from . import ISODate
+from . import InterestRateType1Code
+from . import LEIIdentifier
+from . import Max105Text
+from . import MoneyMarketTransactionType1Code
+from . import NovationStatus1Code
+from . import Option12
+from . import PercentageRate
+from . import SupplementaryData1
+from . import TransactionOperationType1Code
 
 class UnsecuredMarketTransaction4(base_types._BaseFieldType):
 
@@ -28,12 +28,12 @@ class UnsecuredMarketTransaction4(base_types._BaseFieldType):
 
 	@BrkrdDeal.setter
 	def BrkrdDeal(self, value):
-		self._BrkrdDeal = value if type(value) != base_types.auto else self.make_default("BrkrdDeal")
+		self._BrkrdDeal = value if value is not None else base_types.UninitialisedField(self, 'BrkrdDeal', BrokeredDeal1Code, False)
 
 	@BrkrdDeal.deleter
 	def BrkrdDeal(self):
 		del self._BrkrdDeal
-		self._BrkrdDeal = None
+		self._BrkrdDeal = base_types.UninitialisedField(self, 'BrkrdDeal', BrokeredDeal1Code, False)
 
 	@property
 	def BrnchId(self):
@@ -41,12 +41,12 @@ class UnsecuredMarketTransaction4(base_types._BaseFieldType):
 
 	@BrnchId.setter
 	def BrnchId(self, value):
-		self._BrnchId = value if type(value) != base_types.auto else self.make_default("BrnchId")
+		self._BrnchId = value if value is not None else base_types.UninitialisedField(self, 'BrnchId', LEIIdentifier, False)
 
 	@BrnchId.deleter
 	def BrnchId(self):
 		del self._BrnchId
-		self._BrnchId = None
+		self._BrnchId = base_types.UninitialisedField(self, 'BrnchId', LEIIdentifier, False)
 
 	@property
 	def CallPutOptn(self):
@@ -54,12 +54,12 @@ class UnsecuredMarketTransaction4(base_types._BaseFieldType):
 
 	@CallPutOptn.setter
 	def CallPutOptn(self, value):
-		self._CallPutOptn = value if type(value) != base_types.auto else self.make_default("CallPutOptn")
+		self._CallPutOptn = value if value is not None else base_types.UninitialisedField(self, 'CallPutOptn', Option12, True)
 
 	@CallPutOptn.deleter
 	def CallPutOptn(self):
 		del self._CallPutOptn
-		self._CallPutOptn = None
+		self._CallPutOptn = base_types.UninitialisedField(self, 'CallPutOptn', Option12, True)
 
 	@property
 	def CtrPtyId(self):
@@ -67,12 +67,12 @@ class UnsecuredMarketTransaction4(base_types._BaseFieldType):
 
 	@CtrPtyId.setter
 	def CtrPtyId(self, value):
-		self._CtrPtyId = value if type(value) != base_types.auto else self.make_default("CtrPtyId")
+		self._CtrPtyId = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyId', CounterpartyIdentification3Choice, False)
 
 	@CtrPtyId.deleter
 	def CtrPtyId(self):
 		del self._CtrPtyId
-		self._CtrPtyId = None
+		self._CtrPtyId = base_types.UninitialisedField(self, 'CtrPtyId', CounterpartyIdentification3Choice, False)
 
 	@property
 	def CtrPtyPrtryTxId(self):
@@ -80,12 +80,12 @@ class UnsecuredMarketTransaction4(base_types._BaseFieldType):
 
 	@CtrPtyPrtryTxId.setter
 	def CtrPtyPrtryTxId(self, value):
-		self._CtrPtyPrtryTxId = value if type(value) != base_types.auto else self.make_default("CtrPtyPrtryTxId")
+		self._CtrPtyPrtryTxId = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyPrtryTxId', Max105Text, False)
 
 	@CtrPtyPrtryTxId.deleter
 	def CtrPtyPrtryTxId(self):
 		del self._CtrPtyPrtryTxId
-		self._CtrPtyPrtryTxId = None
+		self._CtrPtyPrtryTxId = base_types.UninitialisedField(self, 'CtrPtyPrtryTxId', Max105Text, False)
 
 	@property
 	def DealPric(self):
@@ -93,12 +93,12 @@ class UnsecuredMarketTransaction4(base_types._BaseFieldType):
 
 	@DealPric.setter
 	def DealPric(self, value):
-		self._DealPric = value if type(value) != base_types.auto else self.make_default("DealPric")
+		self._DealPric = value if value is not None else base_types.UninitialisedField(self, 'DealPric', PercentageRate, False)
 
 	@DealPric.deleter
 	def DealPric(self):
 		del self._DealPric
-		self._DealPric = None
+		self._DealPric = base_types.UninitialisedField(self, 'DealPric', PercentageRate, False)
 
 	@property
 	def DealRate(self):
@@ -106,12 +106,12 @@ class UnsecuredMarketTransaction4(base_types._BaseFieldType):
 
 	@DealRate.setter
 	def DealRate(self, value):
-		self._DealRate = value if type(value) != base_types.auto else self.make_default("DealRate")
+		self._DealRate = value if value is not None else base_types.UninitialisedField(self, 'DealRate', PercentageRate, False)
 
 	@DealRate.deleter
 	def DealRate(self):
 		del self._DealRate
-		self._DealRate = None
+		self._DealRate = base_types.UninitialisedField(self, 'DealRate', PercentageRate, False)
 
 	@property
 	def FltgRateNote(self):
@@ -119,12 +119,12 @@ class UnsecuredMarketTransaction4(base_types._BaseFieldType):
 
 	@FltgRateNote.setter
 	def FltgRateNote(self, value):
-		self._FltgRateNote = value if type(value) != base_types.auto else self.make_default("FltgRateNote")
+		self._FltgRateNote = value if value is not None else base_types.UninitialisedField(self, 'FltgRateNote', FloatingRateNote2, False)
 
 	@FltgRateNote.deleter
 	def FltgRateNote(self):
 		del self._FltgRateNote
-		self._FltgRateNote = None
+		self._FltgRateNote = base_types.UninitialisedField(self, 'FltgRateNote', FloatingRateNote2, False)
 
 	@property
 	def InstrmTp(self):
@@ -132,12 +132,12 @@ class UnsecuredMarketTransaction4(base_types._BaseFieldType):
 
 	@InstrmTp.setter
 	def InstrmTp(self, value):
-		self._InstrmTp = value if type(value) != base_types.auto else self.make_default("InstrmTp")
+		self._InstrmTp = value if value is not None else base_types.UninitialisedField(self, 'InstrmTp', FinancialInstrumentProductType1Code, False)
 
 	@InstrmTp.deleter
 	def InstrmTp(self):
 		del self._InstrmTp
-		self._InstrmTp = None
+		self._InstrmTp = base_types.UninitialisedField(self, 'InstrmTp', FinancialInstrumentProductType1Code, False)
 
 	@property
 	def MtrtyDt(self):
@@ -145,12 +145,12 @@ class UnsecuredMarketTransaction4(base_types._BaseFieldType):
 
 	@MtrtyDt.setter
 	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != base_types.auto else self.make_default("MtrtyDt")
+		self._MtrtyDt = value if value is not None else base_types.UninitialisedField(self, 'MtrtyDt', ISODate, False)
 
 	@MtrtyDt.deleter
 	def MtrtyDt(self):
 		del self._MtrtyDt
-		self._MtrtyDt = None
+		self._MtrtyDt = base_types.UninitialisedField(self, 'MtrtyDt', ISODate, False)
 
 	@property
 	def NvtnSts(self):
@@ -158,12 +158,12 @@ class UnsecuredMarketTransaction4(base_types._BaseFieldType):
 
 	@NvtnSts.setter
 	def NvtnSts(self, value):
-		self._NvtnSts = value if type(value) != base_types.auto else self.make_default("NvtnSts")
+		self._NvtnSts = value if value is not None else base_types.UninitialisedField(self, 'NvtnSts', NovationStatus1Code, False)
 
 	@NvtnSts.deleter
 	def NvtnSts(self):
 		del self._NvtnSts
-		self._NvtnSts = None
+		self._NvtnSts = base_types.UninitialisedField(self, 'NvtnSts', NovationStatus1Code, False)
 
 	@property
 	def PrtryTxId(self):
@@ -171,12 +171,12 @@ class UnsecuredMarketTransaction4(base_types._BaseFieldType):
 
 	@PrtryTxId.setter
 	def PrtryTxId(self, value):
-		self._PrtryTxId = value if type(value) != base_types.auto else self.make_default("PrtryTxId")
+		self._PrtryTxId = value if value is not None else base_types.UninitialisedField(self, 'PrtryTxId', Max105Text, False)
 
 	@PrtryTxId.deleter
 	def PrtryTxId(self):
 		del self._PrtryTxId
-		self._PrtryTxId = None
+		self._PrtryTxId = base_types.UninitialisedField(self, 'PrtryTxId', Max105Text, False)
 
 	@property
 	def RateTp(self):
@@ -184,12 +184,12 @@ class UnsecuredMarketTransaction4(base_types._BaseFieldType):
 
 	@RateTp.setter
 	def RateTp(self, value):
-		self._RateTp = value if type(value) != base_types.auto else self.make_default("RateTp")
+		self._RateTp = value if value is not None else base_types.UninitialisedField(self, 'RateTp', InterestRateType1Code, False)
 
 	@RateTp.deleter
 	def RateTp(self):
 		del self._RateTp
-		self._RateTp = None
+		self._RateTp = base_types.UninitialisedField(self, 'RateTp', InterestRateType1Code, False)
 
 	@property
 	def RltdPrtryTxId(self):
@@ -197,12 +197,12 @@ class UnsecuredMarketTransaction4(base_types._BaseFieldType):
 
 	@RltdPrtryTxId.setter
 	def RltdPrtryTxId(self, value):
-		self._RltdPrtryTxId = value if type(value) != base_types.auto else self.make_default("RltdPrtryTxId")
+		self._RltdPrtryTxId = value if value is not None else base_types.UninitialisedField(self, 'RltdPrtryTxId', Max105Text, False)
 
 	@RltdPrtryTxId.deleter
 	def RltdPrtryTxId(self):
 		del self._RltdPrtryTxId
-		self._RltdPrtryTxId = None
+		self._RltdPrtryTxId = base_types.UninitialisedField(self, 'RltdPrtryTxId', Max105Text, False)
 
 	@property
 	def RptdTxSts(self):
@@ -210,12 +210,12 @@ class UnsecuredMarketTransaction4(base_types._BaseFieldType):
 
 	@RptdTxSts.setter
 	def RptdTxSts(self, value):
-		self._RptdTxSts = value if type(value) != base_types.auto else self.make_default("RptdTxSts")
+		self._RptdTxSts = value if value is not None else base_types.UninitialisedField(self, 'RptdTxSts', TransactionOperationType1Code, False)
 
 	@RptdTxSts.deleter
 	def RptdTxSts(self):
 		del self._RptdTxSts
-		self._RptdTxSts = None
+		self._RptdTxSts = base_types.UninitialisedField(self, 'RptdTxSts', TransactionOperationType1Code, False)
 
 	@property
 	def SplmtryData(self):
@@ -223,12 +223,12 @@ class UnsecuredMarketTransaction4(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def SttlmDt(self):
@@ -236,12 +236,12 @@ class UnsecuredMarketTransaction4(base_types._BaseFieldType):
 
 	@SttlmDt.setter
 	def SttlmDt(self, value):
-		self._SttlmDt = value if type(value) != base_types.auto else self.make_default("SttlmDt")
+		self._SttlmDt = value if value is not None else base_types.UninitialisedField(self, 'SttlmDt', ISODate, False)
 
 	@SttlmDt.deleter
 	def SttlmDt(self):
 		del self._SttlmDt
-		self._SttlmDt = None
+		self._SttlmDt = base_types.UninitialisedField(self, 'SttlmDt', ISODate, False)
 
 	@property
 	def TradDt(self):
@@ -249,12 +249,12 @@ class UnsecuredMarketTransaction4(base_types._BaseFieldType):
 
 	@TradDt.setter
 	def TradDt(self, value):
-		self._TradDt = value if type(value) != base_types.auto else self.make_default("TradDt")
+		self._TradDt = value if value is not None else base_types.UninitialisedField(self, 'TradDt', DateAndDateTimeChoice, False)
 
 	@TradDt.deleter
 	def TradDt(self):
 		del self._TradDt
-		self._TradDt = None
+		self._TradDt = base_types.UninitialisedField(self, 'TradDt', DateAndDateTimeChoice, False)
 
 	@property
 	def TxNmnlAmt(self):
@@ -262,12 +262,12 @@ class UnsecuredMarketTransaction4(base_types._BaseFieldType):
 
 	@TxNmnlAmt.setter
 	def TxNmnlAmt(self, value):
-		self._TxNmnlAmt = value if type(value) != base_types.auto else self.make_default("TxNmnlAmt")
+		self._TxNmnlAmt = value if value is not None else base_types.UninitialisedField(self, 'TxNmnlAmt', ActiveCurrencyAndAmount, False)
 
 	@TxNmnlAmt.deleter
 	def TxNmnlAmt(self):
 		del self._TxNmnlAmt
-		self._TxNmnlAmt = None
+		self._TxNmnlAmt = base_types.UninitialisedField(self, 'TxNmnlAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def TxTp(self):
@@ -275,12 +275,12 @@ class UnsecuredMarketTransaction4(base_types._BaseFieldType):
 
 	@TxTp.setter
 	def TxTp(self, value):
-		self._TxTp = value if type(value) != base_types.auto else self.make_default("TxTp")
+		self._TxTp = value if value is not None else base_types.UninitialisedField(self, 'TxTp', MoneyMarketTransactionType1Code, False)
 
 	@TxTp.deleter
 	def TxTp(self):
 		del self._TxTp
-		self._TxTp = None
+		self._TxTp = base_types.UninitialisedField(self, 'TxTp', MoneyMarketTransactionType1Code, False)
 
 	@property
 	def UnqTxIdr(self):
@@ -288,12 +288,12 @@ class UnsecuredMarketTransaction4(base_types._BaseFieldType):
 
 	@UnqTxIdr.setter
 	def UnqTxIdr(self, value):
-		self._UnqTxIdr = value if type(value) != base_types.auto else self.make_default("UnqTxIdr")
+		self._UnqTxIdr = value if value is not None else base_types.UninitialisedField(self, 'UnqTxIdr', Max105Text, False)
 
 	@UnqTxIdr.deleter
 	def UnqTxIdr(self):
 		del self._UnqTxIdr
-		self._UnqTxIdr = None
+		self._UnqTxIdr = base_types.UninitialisedField(self, 'UnqTxIdr', Max105Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BrkrdDeal', type=BrokeredDeal1Code, min=0, max=1, mutex_group=None, array=False),

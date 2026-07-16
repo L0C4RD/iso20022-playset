@@ -2,28 +2,28 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._Exact14NumericText import Exact14NumericText
-from ._Exact1AlphaText import Exact1AlphaText
-from ._Exact1Text import Exact1Text
-from ._Exact20Binary import Exact20Binary
-from ._Exact2NumericText import Exact2NumericText
-from ._Exact3AlphaNumericText import Exact3AlphaNumericText
-from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
-from ._ISO8583ShippingIndicatorCode import ISO8583ShippingIndicatorCode
-from ._Max10KText import Max10KText
-from ._Max10Text import Max10Text
-from ._Max16Binary import Max16Binary
-from ._Max35Text import Max35Text
-from ._Max36Text import Max36Text
-from ._Max37Text import Max37Text
-from ._Max40Text import Max40Text
-from ._Max45Text import Max45Text
-from ._Max48Text import Max48Text
-from ._Max50Text import Max50Text
-from ._Max64Text import Max64Text
-from ._Min5Max8Text import Min5Max8Text
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ATICALaxProcessing
+from . import Exact14NumericText
+from . import Exact1AlphaText
+from . import Exact1Text
+from . import Exact20Binary
+from . import Exact2NumericText
+from . import Exact3AlphaNumericText
+from . import ISO3NumericCurrencyCode
+from . import ISO8583ShippingIndicatorCode
+from . import Max10KText
+from . import Max10Text
+from . import Max16Binary
+from . import Max35Text
+from . import Max36Text
+from . import Max37Text
+from . import Max40Text
+from . import Max45Text
+from . import Max48Text
+from . import Max50Text
+from . import Max64Text
+from . import Min5Max8Text
+from . import TrueFalseIndicator
 
 class CardAuthenticationData1(base_types._BaseFieldType):
 
@@ -34,12 +34,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@AccptrCertSrlNb.setter
 	def AccptrCertSrlNb(self, value):
-		self._AccptrCertSrlNb = value if type(value) != base_types.auto else self.make_default("AccptrCertSrlNb")
+		self._AccptrCertSrlNb = value if value is not None else base_types.UninitialisedField(self, 'AccptrCertSrlNb', Max16Binary, False)
 
 	@AccptrCertSrlNb.deleter
 	def AccptrCertSrlNb(self):
 		del self._AccptrCertSrlNb
-		self._AccptrCertSrlNb = None
+		self._AccptrCertSrlNb = base_types.UninitialisedField(self, 'AccptrCertSrlNb', Max16Binary, False)
 
 	@property
 	def AcctBasedDgtlSgntr(self):
@@ -47,12 +47,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@AcctBasedDgtlSgntr.setter
 	def AcctBasedDgtlSgntr(self, value):
-		self._AcctBasedDgtlSgntr = value if type(value) != base_types.auto else self.make_default("AcctBasedDgtlSgntr")
+		self._AcctBasedDgtlSgntr = value if value is not None else base_types.UninitialisedField(self, 'AcctBasedDgtlSgntr', Exact2NumericText, False)
 
 	@AcctBasedDgtlSgntr.deleter
 	def AcctBasedDgtlSgntr(self):
 		del self._AcctBasedDgtlSgntr
-		self._AcctBasedDgtlSgntr = None
+		self._AcctBasedDgtlSgntr = base_types.UninitialisedField(self, 'AcctBasedDgtlSgntr', Exact2NumericText, False)
 
 	@property
 	def AdrMtchInd(self):
@@ -60,12 +60,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@AdrMtchInd.setter
 	def AdrMtchInd(self, value):
-		self._AdrMtchInd = value if type(value) != base_types.auto else self.make_default("AdrMtchInd")
+		self._AdrMtchInd = value if value is not None else base_types.UninitialisedField(self, 'AdrMtchInd', Exact1Text, False)
 
 	@AdrMtchInd.deleter
 	def AdrMtchInd(self):
 		del self._AdrMtchInd
-		self._AdrMtchInd = None
+		self._AdrMtchInd = base_types.UninitialisedField(self, 'AdrMtchInd', Exact1Text, False)
 
 	@property
 	def ApplIPAdr(self):
@@ -73,12 +73,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@ApplIPAdr.setter
 	def ApplIPAdr(self, value):
-		self._ApplIPAdr = value if type(value) != base_types.auto else self.make_default("ApplIPAdr")
+		self._ApplIPAdr = value if value is not None else base_types.UninitialisedField(self, 'ApplIPAdr', Max45Text, False)
 
 	@ApplIPAdr.deleter
 	def ApplIPAdr(self):
 		del self._ApplIPAdr
-		self._ApplIPAdr = None
+		self._ApplIPAdr = base_types.UninitialisedField(self, 'ApplIPAdr', Max45Text, False)
 
 	@property
 	def AuthntcnCd(self):
@@ -86,12 +86,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@AuthntcnCd.setter
 	def AuthntcnCd(self, value):
-		self._AuthntcnCd = value if type(value) != base_types.auto else self.make_default("AuthntcnCd")
+		self._AuthntcnCd = value if value is not None else base_types.UninitialisedField(self, 'AuthntcnCd', Max50Text, False)
 
 	@AuthntcnCd.deleter
 	def AuthntcnCd(self):
 		del self._AuthntcnCd
-		self._AuthntcnCd = None
+		self._AuthntcnCd = base_types.UninitialisedField(self, 'AuthntcnCd', Max50Text, False)
 
 	@property
 	def AuthntcnMrchntNm(self):
@@ -99,12 +99,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@AuthntcnMrchntNm.setter
 	def AuthntcnMrchntNm(self, value):
-		self._AuthntcnMrchntNm = value if type(value) != base_types.auto else self.make_default("AuthntcnMrchntNm")
+		self._AuthntcnMrchntNm = value if value is not None else base_types.UninitialisedField(self, 'AuthntcnMrchntNm', Max40Text, False)
 
 	@AuthntcnMrchntNm.deleter
 	def AuthntcnMrchntNm(self):
 		del self._AuthntcnMrchntNm
-		self._AuthntcnMrchntNm = None
+		self._AuthntcnMrchntNm = base_types.UninitialisedField(self, 'AuthntcnMrchntNm', Max40Text, False)
 
 	@property
 	def AuthntcnSts(self):
@@ -112,12 +112,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@AuthntcnSts.setter
 	def AuthntcnSts(self, value):
-		self._AuthntcnSts = value if type(value) != base_types.auto else self.make_default("AuthntcnSts")
+		self._AuthntcnSts = value if value is not None else base_types.UninitialisedField(self, 'AuthntcnSts', Exact1AlphaText, False)
 
 	@AuthntcnSts.deleter
 	def AuthntcnSts(self):
 		del self._AuthntcnSts
-		self._AuthntcnSts = None
+		self._AuthntcnSts = base_types.UninitialisedField(self, 'AuthntcnSts', Exact1AlphaText, False)
 
 	@property
 	def AuthntcnSvrTxIdr(self):
@@ -125,12 +125,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@AuthntcnSvrTxIdr.setter
 	def AuthntcnSvrTxIdr(self, value):
-		self._AuthntcnSvrTxIdr = value if type(value) != base_types.auto else self.make_default("AuthntcnSvrTxIdr")
+		self._AuthntcnSvrTxIdr = value if value is not None else base_types.UninitialisedField(self, 'AuthntcnSvrTxIdr', Max36Text, False)
 
 	@AuthntcnSvrTxIdr.deleter
 	def AuthntcnSvrTxIdr(self):
 		del self._AuthntcnSvrTxIdr
-		self._AuthntcnSvrTxIdr = None
+		self._AuthntcnSvrTxIdr = base_types.UninitialisedField(self, 'AuthntcnSvrTxIdr', Max36Text, False)
 
 	@property
 	def AuthntcnVal(self):
@@ -138,12 +138,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@AuthntcnVal.setter
 	def AuthntcnVal(self, value):
-		self._AuthntcnVal = value if type(value) != base_types.auto else self.make_default("AuthntcnVal")
+		self._AuthntcnVal = value if value is not None else base_types.UninitialisedField(self, 'AuthntcnVal', Exact20Binary, False)
 
 	@AuthntcnVal.deleter
 	def AuthntcnVal(self):
 		del self._AuthntcnVal
-		self._AuthntcnVal = None
+		self._AuthntcnVal = base_types.UninitialisedField(self, 'AuthntcnVal', Exact20Binary, False)
 
 	@property
 	def BrwsrIPAdr(self):
@@ -151,12 +151,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@BrwsrIPAdr.setter
 	def BrwsrIPAdr(self, value):
-		self._BrwsrIPAdr = value if type(value) != base_types.auto else self.make_default("BrwsrIPAdr")
+		self._BrwsrIPAdr = value if value is not None else base_types.UninitialisedField(self, 'BrwsrIPAdr', Max45Text, False)
 
 	@BrwsrIPAdr.deleter
 	def BrwsrIPAdr(self):
 		del self._BrwsrIPAdr
-		self._BrwsrIPAdr = None
+		self._BrwsrIPAdr = base_types.UninitialisedField(self, 'BrwsrIPAdr', Max45Text, False)
 
 	@property
 	def CrdhldrCertSrlNb(self):
@@ -164,12 +164,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@CrdhldrCertSrlNb.setter
 	def CrdhldrCertSrlNb(self, value):
-		self._CrdhldrCertSrlNb = value if type(value) != base_types.auto else self.make_default("CrdhldrCertSrlNb")
+		self._CrdhldrCertSrlNb = value if value is not None else base_types.UninitialisedField(self, 'CrdhldrCertSrlNb', Max16Binary, False)
 
 	@CrdhldrCertSrlNb.deleter
 	def CrdhldrCertSrlNb(self):
 		del self._CrdhldrCertSrlNb
-		self._CrdhldrCertSrlNb = None
+		self._CrdhldrCertSrlNb = base_types.UninitialisedField(self, 'CrdhldrCertSrlNb', Max16Binary, False)
 
 	@property
 	def DataQlty(self):
@@ -177,12 +177,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@DataQlty.setter
 	def DataQlty(self, value):
-		self._DataQlty = value if type(value) != base_types.auto else self.make_default("DataQlty")
+		self._DataQlty = value if value is not None else base_types.UninitialisedField(self, 'DataQlty', TrueFalseIndicator, False)
 
 	@DataQlty.deleter
 	def DataQlty(self):
 		del self._DataQlty
-		self._DataQlty = None
+		self._DataQlty = base_types.UninitialisedField(self, 'DataQlty', TrueFalseIndicator, False)
 
 	@property
 	def DvcId(self):
@@ -190,12 +190,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@DvcId.setter
 	def DvcId(self, value):
-		self._DvcId = value if type(value) != base_types.auto else self.make_default("DvcId")
+		self._DvcId = value if value is not None else base_types.UninitialisedField(self, 'DvcId', Max64Text, True)
 
 	@DvcId.deleter
 	def DvcId(self):
 		del self._DvcId
-		self._DvcId = None
+		self._DvcId = base_types.UninitialisedField(self, 'DvcId', Max64Text, True)
 
 	@property
 	def DvcIdVlctyCnt(self):
@@ -203,12 +203,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@DvcIdVlctyCnt.setter
 	def DvcIdVlctyCnt(self, value):
-		self._DvcIdVlctyCnt = value if type(value) != base_types.auto else self.make_default("DvcIdVlctyCnt")
+		self._DvcIdVlctyCnt = value if value is not None else base_types.UninitialisedField(self, 'DvcIdVlctyCnt', Exact2NumericText, False)
 
 	@DvcIdVlctyCnt.deleter
 	def DvcIdVlctyCnt(self):
 		del self._DvcIdVlctyCnt
-		self._DvcIdVlctyCnt = None
+		self._DvcIdVlctyCnt = base_types.UninitialisedField(self, 'DvcIdVlctyCnt', Exact2NumericText, False)
 
 	@property
 	def DvcInf(self):
@@ -216,12 +216,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@DvcInf.setter
 	def DvcInf(self, value):
-		self._DvcInf = value if type(value) != base_types.auto else self.make_default("DvcInf")
+		self._DvcInf = value if value is not None else base_types.UninitialisedField(self, 'DvcInf', Max10KText, False)
 
 	@DvcInf.deleter
 	def DvcInf(self):
 		del self._DvcInf
-		self._DvcInf = None
+		self._DvcInf = base_types.UninitialisedField(self, 'DvcInf', Max10KText, False)
 
 	@property
 	def DvcTp(self):
@@ -229,12 +229,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@DvcTp.setter
 	def DvcTp(self, value):
-		self._DvcTp = value if type(value) != base_types.auto else self.make_default("DvcTp")
+		self._DvcTp = value if value is not None else base_types.UninitialisedField(self, 'DvcTp', Exact2NumericText, True)
 
 	@DvcTp.deleter
 	def DvcTp(self):
 		del self._DvcTp
-		self._DvcTp = None
+		self._DvcTp = base_types.UninitialisedField(self, 'DvcTp', Exact2NumericText, True)
 
 	@property
 	def IPAdrVlctyCnt(self):
@@ -242,12 +242,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@IPAdrVlctyCnt.setter
 	def IPAdrVlctyCnt(self, value):
-		self._IPAdrVlctyCnt = value if type(value) != base_types.auto else self.make_default("IPAdrVlctyCnt")
+		self._IPAdrVlctyCnt = value if value is not None else base_types.UninitialisedField(self, 'IPAdrVlctyCnt', Exact2NumericText, False)
 
 	@IPAdrVlctyCnt.deleter
 	def IPAdrVlctyCnt(self):
 		del self._IPAdrVlctyCnt
-		self._IPAdrVlctyCnt = None
+		self._IPAdrVlctyCnt = base_types.UninitialisedField(self, 'IPAdrVlctyCnt', Exact2NumericText, False)
 
 	@property
 	def IntrmyTxIdr(self):
@@ -255,12 +255,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@IntrmyTxIdr.setter
 	def IntrmyTxIdr(self, value):
-		self._IntrmyTxIdr = value if type(value) != base_types.auto else self.make_default("IntrmyTxIdr")
+		self._IntrmyTxIdr = value if value is not None else base_types.UninitialisedField(self, 'IntrmyTxIdr', Max36Text, False)
 
 	@IntrmyTxIdr.deleter
 	def IntrmyTxIdr(self):
 		del self._IntrmyTxIdr
-		self._IntrmyTxIdr = None
+		self._IntrmyTxIdr = base_types.UninitialisedField(self, 'IntrmyTxIdr', Max36Text, False)
 
 	@property
 	def MsgCtgy(self):
@@ -268,12 +268,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@MsgCtgy.setter
 	def MsgCtgy(self, value):
-		self._MsgCtgy = value if type(value) != base_types.auto else self.make_default("MsgCtgy")
+		self._MsgCtgy = value if value is not None else base_types.UninitialisedField(self, 'MsgCtgy', Exact2NumericText, False)
 
 	@MsgCtgy.deleter
 	def MsgCtgy(self):
 		del self._MsgCtgy
-		self._MsgCtgy = None
+		self._MsgCtgy = base_types.UninitialisedField(self, 'MsgCtgy', Exact2NumericText, False)
 
 	@property
 	def MsgVrsn(self):
@@ -281,12 +281,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@MsgVrsn.setter
 	def MsgVrsn(self, value):
-		self._MsgVrsn = value if type(value) != base_types.auto else self.make_default("MsgVrsn")
+		self._MsgVrsn = value if value is not None else base_types.UninitialisedField(self, 'MsgVrsn', Min5Max8Text, False)
 
 	@MsgVrsn.deleter
 	def MsgVrsn(self):
 		del self._MsgVrsn
-		self._MsgVrsn = None
+		self._MsgVrsn = base_types.UninitialisedField(self, 'MsgVrsn', Min5Max8Text, False)
 
 	@property
 	def NtlData(self):
@@ -294,12 +294,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def Prgrmm(self):
@@ -307,12 +307,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@Prgrmm.setter
 	def Prgrmm(self, value):
-		self._Prgrmm = value if type(value) != base_types.auto else self.make_default("Prgrmm")
+		self._Prgrmm = value if value is not None else base_types.UninitialisedField(self, 'Prgrmm', Max10Text, False)
 
 	@Prgrmm.deleter
 	def Prgrmm(self):
 		del self._Prgrmm
-		self._Prgrmm = None
+		self._Prgrmm = base_types.UninitialisedField(self, 'Prgrmm', Max10Text, False)
 
 	@property
 	def PrvtData(self):
@@ -320,12 +320,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def PurchsAmt(self):
@@ -333,12 +333,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@PurchsAmt.setter
 	def PurchsAmt(self, value):
-		self._PurchsAmt = value if type(value) != base_types.auto else self.make_default("PurchsAmt")
+		self._PurchsAmt = value if value is not None else base_types.UninitialisedField(self, 'PurchsAmt', Max48Text, False)
 
 	@PurchsAmt.deleter
 	def PurchsAmt(self):
 		del self._PurchsAmt
-		self._PurchsAmt = None
+		self._PurchsAmt = base_types.UninitialisedField(self, 'PurchsAmt', Max48Text, False)
 
 	@property
 	def PurchsCcy(self):
@@ -346,12 +346,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@PurchsCcy.setter
 	def PurchsCcy(self, value):
-		self._PurchsCcy = value if type(value) != base_types.auto else self.make_default("PurchsCcy")
+		self._PurchsCcy = value if value is not None else base_types.UninitialisedField(self, 'PurchsCcy', ISO3NumericCurrencyCode, False)
 
 	@PurchsCcy.deleter
 	def PurchsCcy(self):
 		del self._PurchsCcy
-		self._PurchsCcy = None
+		self._PurchsCcy = base_types.UninitialisedField(self, 'PurchsCcy', ISO3NumericCurrencyCode, False)
 
 	@property
 	def PurchsDtTm(self):
@@ -359,12 +359,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@PurchsDtTm.setter
 	def PurchsDtTm(self, value):
-		self._PurchsDtTm = value if type(value) != base_types.auto else self.make_default("PurchsDtTm")
+		self._PurchsDtTm = value if value is not None else base_types.UninitialisedField(self, 'PurchsDtTm', Exact14NumericText, False)
 
 	@PurchsDtTm.deleter
 	def PurchsDtTm(self):
 		del self._PurchsDtTm
-		self._PurchsDtTm = None
+		self._PurchsDtTm = base_types.UninitialisedField(self, 'PurchsDtTm', Exact14NumericText, False)
 
 	@property
 	def RcrngTxSetp(self):
@@ -372,12 +372,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@RcrngTxSetp.setter
 	def RcrngTxSetp(self, value):
-		self._RcrngTxSetp = value if type(value) != base_types.auto else self.make_default("RcrngTxSetp")
+		self._RcrngTxSetp = value if value is not None else base_types.UninitialisedField(self, 'RcrngTxSetp', Exact3AlphaNumericText, False)
 
 	@RcrngTxSetp.deleter
 	def RcrngTxSetp(self):
 		del self._RcrngTxSetp
-		self._RcrngTxSetp = None
+		self._RcrngTxSetp = base_types.UninitialisedField(self, 'RcrngTxSetp', Exact3AlphaNumericText, False)
 
 	@property
 	def SDKApplId(self):
@@ -385,12 +385,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@SDKApplId.setter
 	def SDKApplId(self, value):
-		self._SDKApplId = value if type(value) != base_types.auto else self.make_default("SDKApplId")
+		self._SDKApplId = value if value is not None else base_types.UninitialisedField(self, 'SDKApplId', Max37Text, False)
 
 	@SDKApplId.deleter
 	def SDKApplId(self):
 		del self._SDKApplId
-		self._SDKApplId = None
+		self._SDKApplId = base_types.UninitialisedField(self, 'SDKApplId', Max37Text, False)
 
 	@property
 	def ShppgInd(self):
@@ -398,12 +398,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@ShppgInd.setter
 	def ShppgInd(self, value):
-		self._ShppgInd = value if type(value) != base_types.auto else self.make_default("ShppgInd")
+		self._ShppgInd = value if value is not None else base_types.UninitialisedField(self, 'ShppgInd', ISO8583ShippingIndicatorCode, False)
 
 	@ShppgInd.deleter
 	def ShppgInd(self):
 		del self._ShppgInd
-		self._ShppgInd = None
+		self._ShppgInd = base_types.UninitialisedField(self, 'ShppgInd', ISO8583ShippingIndicatorCode, False)
 
 	@property
 	def SsnId(self):
@@ -411,12 +411,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@SsnId.setter
 	def SsnId(self, value):
-		self._SsnId = value if type(value) != base_types.auto else self.make_default("SsnId")
+		self._SsnId = value if value is not None else base_types.UninitialisedField(self, 'SsnId', Max35Text, False)
 
 	@SsnId.deleter
 	def SsnId(self):
 		del self._SsnId
-		self._SsnId = None
+		self._SsnId = base_types.UninitialisedField(self, 'SsnId', Max35Text, False)
 
 	@property
 	def ThrdPtyId(self):
@@ -424,12 +424,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@ThrdPtyId.setter
 	def ThrdPtyId(self, value):
-		self._ThrdPtyId = value if type(value) != base_types.auto else self.make_default("ThrdPtyId")
+		self._ThrdPtyId = value if value is not None else base_types.UninitialisedField(self, 'ThrdPtyId', Max64Text, False)
 
 	@ThrdPtyId.deleter
 	def ThrdPtyId(self):
 		del self._ThrdPtyId
-		self._ThrdPtyId = None
+		self._ThrdPtyId = base_types.UninitialisedField(self, 'ThrdPtyId', Max64Text, False)
 
 	@property
 	def ThrdPtyRskScore(self):
@@ -437,12 +437,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@ThrdPtyRskScore.setter
 	def ThrdPtyRskScore(self, value):
-		self._ThrdPtyRskScore = value if type(value) != base_types.auto else self.make_default("ThrdPtyRskScore")
+		self._ThrdPtyRskScore = value if value is not None else base_types.UninitialisedField(self, 'ThrdPtyRskScore', Exact2NumericText, False)
 
 	@ThrdPtyRskScore.deleter
 	def ThrdPtyRskScore(self):
 		del self._ThrdPtyRskScore
-		self._ThrdPtyRskScore = None
+		self._ThrdPtyRskScore = base_types.UninitialisedField(self, 'ThrdPtyRskScore', Exact2NumericText, False)
 
 	@property
 	def XID(self):
@@ -450,12 +450,12 @@ class CardAuthenticationData1(base_types._BaseFieldType):
 
 	@XID.setter
 	def XID(self, value):
-		self._XID = value if type(value) != base_types.auto else self.make_default("XID")
+		self._XID = value if value is not None else base_types.UninitialisedField(self, 'XID', Exact20Binary, False)
 
 	@XID.deleter
 	def XID(self):
 		del self._XID
-		self._XID = None
+		self._XID = base_types.UninitialisedField(self, 'XID', Exact20Binary, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AccptrCertSrlNb', type=Max16Binary, min=0, max=1, mutex_group=None, array=False),

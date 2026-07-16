@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection44 import AmountAndDirection44
-from ._AmountAndDirection58 import AmountAndDirection58
+from . import AmountAndDirection44
+from . import AmountAndDirection58
 
 class OtherAmounts42(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class OtherAmounts42(base_types._BaseFieldType):
 
 	@AcrdCptlstnAmt.setter
 	def AcrdCptlstnAmt(self, value):
-		self._AcrdCptlstnAmt = value if type(value) != base_types.auto else self.make_default("AcrdCptlstnAmt")
+		self._AcrdCptlstnAmt = value if value is not None else base_types.UninitialisedField(self, 'AcrdCptlstnAmt', AmountAndDirection58, False)
 
 	@AcrdCptlstnAmt.deleter
 	def AcrdCptlstnAmt(self):
 		del self._AcrdCptlstnAmt
-		self._AcrdCptlstnAmt = None
+		self._AcrdCptlstnAmt = base_types.UninitialisedField(self, 'AcrdCptlstnAmt', AmountAndDirection58, False)
 
 	@property
 	def AcrdIntrstAmt(self):
@@ -27,12 +27,12 @@ class OtherAmounts42(base_types._BaseFieldType):
 
 	@AcrdIntrstAmt.setter
 	def AcrdIntrstAmt(self, value):
-		self._AcrdIntrstAmt = value if type(value) != base_types.auto else self.make_default("AcrdIntrstAmt")
+		self._AcrdIntrstAmt = value if value is not None else base_types.UninitialisedField(self, 'AcrdIntrstAmt', AmountAndDirection58, False)
 
 	@AcrdIntrstAmt.deleter
 	def AcrdIntrstAmt(self):
 		del self._AcrdIntrstAmt
-		self._AcrdIntrstAmt = None
+		self._AcrdIntrstAmt = base_types.UninitialisedField(self, 'AcrdIntrstAmt', AmountAndDirection58, False)
 
 	@property
 	def BookVal(self):
@@ -40,12 +40,12 @@ class OtherAmounts42(base_types._BaseFieldType):
 
 	@BookVal.setter
 	def BookVal(self, value):
-		self._BookVal = value if type(value) != base_types.auto else self.make_default("BookVal")
+		self._BookVal = value if value is not None else base_types.UninitialisedField(self, 'BookVal', AmountAndDirection58, False)
 
 	@BookVal.deleter
 	def BookVal(self):
 		del self._BookVal
-		self._BookVal = None
+		self._BookVal = base_types.UninitialisedField(self, 'BookVal', AmountAndDirection58, False)
 
 	@property
 	def ChrgsFees(self):
@@ -53,12 +53,12 @@ class OtherAmounts42(base_types._BaseFieldType):
 
 	@ChrgsFees.setter
 	def ChrgsFees(self, value):
-		self._ChrgsFees = value if type(value) != base_types.auto else self.make_default("ChrgsFees")
+		self._ChrgsFees = value if value is not None else base_types.UninitialisedField(self, 'ChrgsFees', AmountAndDirection58, False)
 
 	@ChrgsFees.deleter
 	def ChrgsFees(self):
 		del self._ChrgsFees
-		self._ChrgsFees = None
+		self._ChrgsFees = base_types.UninitialisedField(self, 'ChrgsFees', AmountAndDirection58, False)
 
 	@property
 	def CsmptnTax(self):
@@ -66,12 +66,12 @@ class OtherAmounts42(base_types._BaseFieldType):
 
 	@CsmptnTax.setter
 	def CsmptnTax(self, value):
-		self._CsmptnTax = value if type(value) != base_types.auto else self.make_default("CsmptnTax")
+		self._CsmptnTax = value if value is not None else base_types.UninitialisedField(self, 'CsmptnTax', AmountAndDirection58, False)
 
 	@CsmptnTax.deleter
 	def CsmptnTax(self):
 		del self._CsmptnTax
-		self._CsmptnTax = None
+		self._CsmptnTax = base_types.UninitialisedField(self, 'CsmptnTax', AmountAndDirection58, False)
 
 	@property
 	def CtryNtlFdrlTax(self):
@@ -79,12 +79,12 @@ class OtherAmounts42(base_types._BaseFieldType):
 
 	@CtryNtlFdrlTax.setter
 	def CtryNtlFdrlTax(self, value):
-		self._CtryNtlFdrlTax = value if type(value) != base_types.auto else self.make_default("CtryNtlFdrlTax")
+		self._CtryNtlFdrlTax = value if value is not None else base_types.UninitialisedField(self, 'CtryNtlFdrlTax', AmountAndDirection58, False)
 
 	@CtryNtlFdrlTax.deleter
 	def CtryNtlFdrlTax(self):
 		del self._CtryNtlFdrlTax
-		self._CtryNtlFdrlTax = None
+		self._CtryNtlFdrlTax = base_types.UninitialisedField(self, 'CtryNtlFdrlTax', AmountAndDirection58, False)
 
 	@property
 	def ExctgBrkrAmt(self):
@@ -92,12 +92,12 @@ class OtherAmounts42(base_types._BaseFieldType):
 
 	@ExctgBrkrAmt.setter
 	def ExctgBrkrAmt(self, value):
-		self._ExctgBrkrAmt = value if type(value) != base_types.auto else self.make_default("ExctgBrkrAmt")
+		self._ExctgBrkrAmt = value if value is not None else base_types.UninitialisedField(self, 'ExctgBrkrAmt', AmountAndDirection58, False)
 
 	@ExctgBrkrAmt.deleter
 	def ExctgBrkrAmt(self):
 		del self._ExctgBrkrAmt
-		self._ExctgBrkrAmt = None
+		self._ExctgBrkrAmt = base_types.UninitialisedField(self, 'ExctgBrkrAmt', AmountAndDirection58, False)
 
 	@property
 	def IsseDscntAllwnc(self):
@@ -105,12 +105,12 @@ class OtherAmounts42(base_types._BaseFieldType):
 
 	@IsseDscntAllwnc.setter
 	def IsseDscntAllwnc(self, value):
-		self._IsseDscntAllwnc = value if type(value) != base_types.auto else self.make_default("IsseDscntAllwnc")
+		self._IsseDscntAllwnc = value if value is not None else base_types.UninitialisedField(self, 'IsseDscntAllwnc', AmountAndDirection58, False)
 
 	@IsseDscntAllwnc.deleter
 	def IsseDscntAllwnc(self):
 		del self._IsseDscntAllwnc
-		self._IsseDscntAllwnc = None
+		self._IsseDscntAllwnc = base_types.UninitialisedField(self, 'IsseDscntAllwnc', AmountAndDirection58, False)
 
 	@property
 	def LclBrkrComssn(self):
@@ -118,12 +118,12 @@ class OtherAmounts42(base_types._BaseFieldType):
 
 	@LclBrkrComssn.setter
 	def LclBrkrComssn(self, value):
-		self._LclBrkrComssn = value if type(value) != base_types.auto else self.make_default("LclBrkrComssn")
+		self._LclBrkrComssn = value if value is not None else base_types.UninitialisedField(self, 'LclBrkrComssn', AmountAndDirection58, False)
 
 	@LclBrkrComssn.deleter
 	def LclBrkrComssn(self):
 		del self._LclBrkrComssn
-		self._LclBrkrComssn = None
+		self._LclBrkrComssn = base_types.UninitialisedField(self, 'LclBrkrComssn', AmountAndDirection58, False)
 
 	@property
 	def LclTax(self):
@@ -131,12 +131,12 @@ class OtherAmounts42(base_types._BaseFieldType):
 
 	@LclTax.setter
 	def LclTax(self, value):
-		self._LclTax = value if type(value) != base_types.auto else self.make_default("LclTax")
+		self._LclTax = value if value is not None else base_types.UninitialisedField(self, 'LclTax', AmountAndDirection58, False)
 
 	@LclTax.deleter
 	def LclTax(self):
 		del self._LclTax
-		self._LclTax = None
+		self._LclTax = base_types.UninitialisedField(self, 'LclTax', AmountAndDirection58, False)
 
 	@property
 	def Mrgn(self):
@@ -144,12 +144,12 @@ class OtherAmounts42(base_types._BaseFieldType):
 
 	@Mrgn.setter
 	def Mrgn(self, value):
-		self._Mrgn = value if type(value) != base_types.auto else self.make_default("Mrgn")
+		self._Mrgn = value if value is not None else base_types.UninitialisedField(self, 'Mrgn', AmountAndDirection58, False)
 
 	@Mrgn.deleter
 	def Mrgn(self):
 		del self._Mrgn
-		self._Mrgn = None
+		self._Mrgn = base_types.UninitialisedField(self, 'Mrgn', AmountAndDirection58, False)
 
 	@property
 	def NetGnLoss(self):
@@ -157,12 +157,12 @@ class OtherAmounts42(base_types._BaseFieldType):
 
 	@NetGnLoss.setter
 	def NetGnLoss(self, value):
-		self._NetGnLoss = value if type(value) != base_types.auto else self.make_default("NetGnLoss")
+		self._NetGnLoss = value if value is not None else base_types.UninitialisedField(self, 'NetGnLoss', AmountAndDirection58, False)
 
 	@NetGnLoss.deleter
 	def NetGnLoss(self):
 		del self._NetGnLoss
-		self._NetGnLoss = None
+		self._NetGnLoss = base_types.UninitialisedField(self, 'NetGnLoss', AmountAndDirection58, False)
 
 	@property
 	def Othr(self):
@@ -170,12 +170,12 @@ class OtherAmounts42(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', AmountAndDirection58, False)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', AmountAndDirection58, False)
 
 	@property
 	def PmtLevyTax(self):
@@ -183,12 +183,12 @@ class OtherAmounts42(base_types._BaseFieldType):
 
 	@PmtLevyTax.setter
 	def PmtLevyTax(self, value):
-		self._PmtLevyTax = value if type(value) != base_types.auto else self.make_default("PmtLevyTax")
+		self._PmtLevyTax = value if value is not None else base_types.UninitialisedField(self, 'PmtLevyTax', AmountAndDirection58, False)
 
 	@PmtLevyTax.deleter
 	def PmtLevyTax(self):
 		del self._PmtLevyTax
-		self._PmtLevyTax = None
+		self._PmtLevyTax = base_types.UninitialisedField(self, 'PmtLevyTax', AmountAndDirection58, False)
 
 	@property
 	def RgltryAmt(self):
@@ -196,12 +196,12 @@ class OtherAmounts42(base_types._BaseFieldType):
 
 	@RgltryAmt.setter
 	def RgltryAmt(self, value):
-		self._RgltryAmt = value if type(value) != base_types.auto else self.make_default("RgltryAmt")
+		self._RgltryAmt = value if value is not None else base_types.UninitialisedField(self, 'RgltryAmt', AmountAndDirection58, False)
 
 	@RgltryAmt.deleter
 	def RgltryAmt(self):
 		del self._RgltryAmt
-		self._RgltryAmt = None
+		self._RgltryAmt = base_types.UninitialisedField(self, 'RgltryAmt', AmountAndDirection58, False)
 
 	@property
 	def RsrchFee(self):
@@ -209,12 +209,12 @@ class OtherAmounts42(base_types._BaseFieldType):
 
 	@RsrchFee.setter
 	def RsrchFee(self, value):
-		self._RsrchFee = value if type(value) != base_types.auto else self.make_default("RsrchFee")
+		self._RsrchFee = value if value is not None else base_types.UninitialisedField(self, 'RsrchFee', AmountAndDirection44, False)
 
 	@RsrchFee.deleter
 	def RsrchFee(self):
 		del self._RsrchFee
-		self._RsrchFee = None
+		self._RsrchFee = base_types.UninitialisedField(self, 'RsrchFee', AmountAndDirection44, False)
 
 	@property
 	def ShppgAmt(self):
@@ -222,12 +222,12 @@ class OtherAmounts42(base_types._BaseFieldType):
 
 	@ShppgAmt.setter
 	def ShppgAmt(self, value):
-		self._ShppgAmt = value if type(value) != base_types.auto else self.make_default("ShppgAmt")
+		self._ShppgAmt = value if value is not None else base_types.UninitialisedField(self, 'ShppgAmt', AmountAndDirection58, False)
 
 	@ShppgAmt.deleter
 	def ShppgAmt(self):
 		del self._ShppgAmt
-		self._ShppgAmt = None
+		self._ShppgAmt = base_types.UninitialisedField(self, 'ShppgAmt', AmountAndDirection58, False)
 
 	@property
 	def SpclCncssn(self):
@@ -235,12 +235,12 @@ class OtherAmounts42(base_types._BaseFieldType):
 
 	@SpclCncssn.setter
 	def SpclCncssn(self, value):
-		self._SpclCncssn = value if type(value) != base_types.auto else self.make_default("SpclCncssn")
+		self._SpclCncssn = value if value is not None else base_types.UninitialisedField(self, 'SpclCncssn', AmountAndDirection58, False)
 
 	@SpclCncssn.deleter
 	def SpclCncssn(self):
 		del self._SpclCncssn
-		self._SpclCncssn = None
+		self._SpclCncssn = base_types.UninitialisedField(self, 'SpclCncssn', AmountAndDirection58, False)
 
 	@property
 	def StmpDty(self):
@@ -248,12 +248,12 @@ class OtherAmounts42(base_types._BaseFieldType):
 
 	@StmpDty.setter
 	def StmpDty(self, value):
-		self._StmpDty = value if type(value) != base_types.auto else self.make_default("StmpDty")
+		self._StmpDty = value if value is not None else base_types.UninitialisedField(self, 'StmpDty', AmountAndDirection58, False)
 
 	@StmpDty.deleter
 	def StmpDty(self):
 		del self._StmpDty
-		self._StmpDty = None
+		self._StmpDty = base_types.UninitialisedField(self, 'StmpDty', AmountAndDirection58, False)
 
 	@property
 	def StockXchgTax(self):
@@ -261,12 +261,12 @@ class OtherAmounts42(base_types._BaseFieldType):
 
 	@StockXchgTax.setter
 	def StockXchgTax(self, value):
-		self._StockXchgTax = value if type(value) != base_types.auto else self.make_default("StockXchgTax")
+		self._StockXchgTax = value if value is not None else base_types.UninitialisedField(self, 'StockXchgTax', AmountAndDirection58, False)
 
 	@StockXchgTax.deleter
 	def StockXchgTax(self):
 		del self._StockXchgTax
-		self._StockXchgTax = None
+		self._StockXchgTax = base_types.UninitialisedField(self, 'StockXchgTax', AmountAndDirection58, False)
 
 	@property
 	def TradAmt(self):
@@ -274,12 +274,12 @@ class OtherAmounts42(base_types._BaseFieldType):
 
 	@TradAmt.setter
 	def TradAmt(self, value):
-		self._TradAmt = value if type(value) != base_types.auto else self.make_default("TradAmt")
+		self._TradAmt = value if value is not None else base_types.UninitialisedField(self, 'TradAmt', AmountAndDirection58, False)
 
 	@TradAmt.deleter
 	def TradAmt(self):
 		del self._TradAmt
-		self._TradAmt = None
+		self._TradAmt = base_types.UninitialisedField(self, 'TradAmt', AmountAndDirection58, False)
 
 	@property
 	def TrfTax(self):
@@ -287,12 +287,12 @@ class OtherAmounts42(base_types._BaseFieldType):
 
 	@TrfTax.setter
 	def TrfTax(self, value):
-		self._TrfTax = value if type(value) != base_types.auto else self.make_default("TrfTax")
+		self._TrfTax = value if value is not None else base_types.UninitialisedField(self, 'TrfTax', AmountAndDirection58, False)
 
 	@TrfTax.deleter
 	def TrfTax(self):
 		del self._TrfTax
-		self._TrfTax = None
+		self._TrfTax = base_types.UninitialisedField(self, 'TrfTax', AmountAndDirection58, False)
 
 	@property
 	def TxTax(self):
@@ -300,12 +300,12 @@ class OtherAmounts42(base_types._BaseFieldType):
 
 	@TxTax.setter
 	def TxTax(self, value):
-		self._TxTax = value if type(value) != base_types.auto else self.make_default("TxTax")
+		self._TxTax = value if value is not None else base_types.UninitialisedField(self, 'TxTax', AmountAndDirection58, False)
 
 	@TxTax.deleter
 	def TxTax(self):
 		del self._TxTax
-		self._TxTax = None
+		self._TxTax = base_types.UninitialisedField(self, 'TxTax', AmountAndDirection58, False)
 
 	@property
 	def ValAddedTax(self):
@@ -313,12 +313,12 @@ class OtherAmounts42(base_types._BaseFieldType):
 
 	@ValAddedTax.setter
 	def ValAddedTax(self, value):
-		self._ValAddedTax = value if type(value) != base_types.auto else self.make_default("ValAddedTax")
+		self._ValAddedTax = value if value is not None else base_types.UninitialisedField(self, 'ValAddedTax', AmountAndDirection58, False)
 
 	@ValAddedTax.deleter
 	def ValAddedTax(self):
 		del self._ValAddedTax
-		self._ValAddedTax = None
+		self._ValAddedTax = base_types.UninitialisedField(self, 'ValAddedTax', AmountAndDirection58, False)
 
 	@property
 	def WhldgTax(self):
@@ -326,12 +326,12 @@ class OtherAmounts42(base_types._BaseFieldType):
 
 	@WhldgTax.setter
 	def WhldgTax(self, value):
-		self._WhldgTax = value if type(value) != base_types.auto else self.make_default("WhldgTax")
+		self._WhldgTax = value if value is not None else base_types.UninitialisedField(self, 'WhldgTax', AmountAndDirection58, False)
 
 	@WhldgTax.deleter
 	def WhldgTax(self):
 		del self._WhldgTax
-		self._WhldgTax = None
+		self._WhldgTax = base_types.UninitialisedField(self, 'WhldgTax', AmountAndDirection58, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcrdCptlstnAmt', type=AmountAndDirection58, min=0, max=1, mutex_group=None, array=False),

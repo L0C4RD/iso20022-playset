@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._PartyIdentification272 import PartyIdentification272
-from ._UUIDv4Identifier import UUIDv4Identifier
+from . import Max35Text
+from . import PartyIdentification272
+from . import UUIDv4Identifier
 
 class TransactionReferences8(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TransactionReferences8(base_types._BaseFieldType):
 
 	@CdtrSchmeId.setter
 	def CdtrSchmeId(self, value):
-		self._CdtrSchmeId = value if type(value) != base_types.auto else self.make_default("CdtrSchmeId")
+		self._CdtrSchmeId = value if value is not None else base_types.UninitialisedField(self, 'CdtrSchmeId', PartyIdentification272, False)
 
 	@CdtrSchmeId.deleter
 	def CdtrSchmeId(self):
 		del self._CdtrSchmeId
-		self._CdtrSchmeId = None
+		self._CdtrSchmeId = base_types.UninitialisedField(self, 'CdtrSchmeId', PartyIdentification272, False)
 
 	@property
 	def EndToEndId(self):
@@ -28,12 +28,12 @@ class TransactionReferences8(base_types._BaseFieldType):
 
 	@EndToEndId.setter
 	def EndToEndId(self, value):
-		self._EndToEndId = value if type(value) != base_types.auto else self.make_default("EndToEndId")
+		self._EndToEndId = value if value is not None else base_types.UninitialisedField(self, 'EndToEndId', Max35Text, False)
 
 	@EndToEndId.deleter
 	def EndToEndId(self):
 		del self._EndToEndId
-		self._EndToEndId = None
+		self._EndToEndId = base_types.UninitialisedField(self, 'EndToEndId', Max35Text, False)
 
 	@property
 	def InstrId(self):
@@ -41,12 +41,12 @@ class TransactionReferences8(base_types._BaseFieldType):
 
 	@InstrId.setter
 	def InstrId(self, value):
-		self._InstrId = value if type(value) != base_types.auto else self.make_default("InstrId")
+		self._InstrId = value if value is not None else base_types.UninitialisedField(self, 'InstrId', Max35Text, False)
 
 	@InstrId.deleter
 	def InstrId(self):
 		del self._InstrId
-		self._InstrId = None
+		self._InstrId = base_types.UninitialisedField(self, 'InstrId', Max35Text, False)
 
 	@property
 	def MndtId(self):
@@ -54,12 +54,12 @@ class TransactionReferences8(base_types._BaseFieldType):
 
 	@MndtId.setter
 	def MndtId(self, value):
-		self._MndtId = value if type(value) != base_types.auto else self.make_default("MndtId")
+		self._MndtId = value if value is not None else base_types.UninitialisedField(self, 'MndtId', Max35Text, False)
 
 	@MndtId.deleter
 	def MndtId(self):
 		del self._MndtId
-		self._MndtId = None
+		self._MndtId = base_types.UninitialisedField(self, 'MndtId', Max35Text, False)
 
 	@property
 	def PmtInfId(self):
@@ -67,12 +67,12 @@ class TransactionReferences8(base_types._BaseFieldType):
 
 	@PmtInfId.setter
 	def PmtInfId(self, value):
-		self._PmtInfId = value if type(value) != base_types.auto else self.make_default("PmtInfId")
+		self._PmtInfId = value if value is not None else base_types.UninitialisedField(self, 'PmtInfId', Max35Text, False)
 
 	@PmtInfId.deleter
 	def PmtInfId(self):
 		del self._PmtInfId
-		self._PmtInfId = None
+		self._PmtInfId = base_types.UninitialisedField(self, 'PmtInfId', Max35Text, False)
 
 	@property
 	def TxId(self):
@@ -80,12 +80,12 @@ class TransactionReferences8(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	@property
 	def UETR(self):
@@ -93,12 +93,12 @@ class TransactionReferences8(base_types._BaseFieldType):
 
 	@UETR.setter
 	def UETR(self, value):
-		self._UETR = value if type(value) != base_types.auto else self.make_default("UETR")
+		self._UETR = value if value is not None else base_types.UninitialisedField(self, 'UETR', UUIDv4Identifier, False)
 
 	@UETR.deleter
 	def UETR(self):
 		del self._UETR
-		self._UETR = None
+		self._UETR = base_types.UninitialisedField(self, 'UETR', UUIDv4Identifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtrSchmeId', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),

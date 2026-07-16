@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CustomerOrder1 import CustomerOrder1
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._LoyaltyRequestData3 import LoyaltyRequestData3
-from ._PaymentTransaction165 import PaymentTransaction165
-from ._ReversalReason1Code import ReversalReason1Code
+from . import CustomerOrder1
+from . import ImpliedCurrencyAndAmount
+from . import LoyaltyRequestData3
+from . import PaymentTransaction165
+from . import ReversalReason1Code
 
 class ReversalRequest7(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class ReversalRequest7(base_types._BaseFieldType):
 
 	@CstmrOrdr.setter
 	def CstmrOrdr(self, value):
-		self._CstmrOrdr = value if type(value) != base_types.auto else self.make_default("CstmrOrdr")
+		self._CstmrOrdr = value if value is not None else base_types.UninitialisedField(self, 'CstmrOrdr', CustomerOrder1, False)
 
 	@CstmrOrdr.deleter
 	def CstmrOrdr(self):
 		del self._CstmrOrdr
-		self._CstmrOrdr = None
+		self._CstmrOrdr = base_types.UninitialisedField(self, 'CstmrOrdr', CustomerOrder1, False)
 
 	@property
 	def LltyData(self):
@@ -30,12 +30,12 @@ class ReversalRequest7(base_types._BaseFieldType):
 
 	@LltyData.setter
 	def LltyData(self, value):
-		self._LltyData = value if type(value) != base_types.auto else self.make_default("LltyData")
+		self._LltyData = value if value is not None else base_types.UninitialisedField(self, 'LltyData', LoyaltyRequestData3, True)
 
 	@LltyData.deleter
 	def LltyData(self):
 		del self._LltyData
-		self._LltyData = None
+		self._LltyData = base_types.UninitialisedField(self, 'LltyData', LoyaltyRequestData3, True)
 
 	@property
 	def RvsdAmt(self):
@@ -43,12 +43,12 @@ class ReversalRequest7(base_types._BaseFieldType):
 
 	@RvsdAmt.setter
 	def RvsdAmt(self, value):
-		self._RvsdAmt = value if type(value) != base_types.auto else self.make_default("RvsdAmt")
+		self._RvsdAmt = value if value is not None else base_types.UninitialisedField(self, 'RvsdAmt', ImpliedCurrencyAndAmount, False)
 
 	@RvsdAmt.deleter
 	def RvsdAmt(self):
 		del self._RvsdAmt
-		self._RvsdAmt = None
+		self._RvsdAmt = base_types.UninitialisedField(self, 'RvsdAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def RvslRsn(self):
@@ -56,12 +56,12 @@ class ReversalRequest7(base_types._BaseFieldType):
 
 	@RvslRsn.setter
 	def RvslRsn(self, value):
-		self._RvslRsn = value if type(value) != base_types.auto else self.make_default("RvslRsn")
+		self._RvslRsn = value if value is not None else base_types.UninitialisedField(self, 'RvslRsn', ReversalReason1Code, False)
 
 	@RvslRsn.deleter
 	def RvslRsn(self):
 		del self._RvslRsn
-		self._RvslRsn = None
+		self._RvslRsn = base_types.UninitialisedField(self, 'RvslRsn', ReversalReason1Code, False)
 
 	@property
 	def RvslTx(self):
@@ -69,12 +69,12 @@ class ReversalRequest7(base_types._BaseFieldType):
 
 	@RvslTx.setter
 	def RvslTx(self, value):
-		self._RvslTx = value if type(value) != base_types.auto else self.make_default("RvslTx")
+		self._RvslTx = value if value is not None else base_types.UninitialisedField(self, 'RvslTx', PaymentTransaction165, False)
 
 	@RvslTx.deleter
 	def RvslTx(self):
 		del self._RvslTx
-		self._RvslTx = None
+		self._RvslTx = base_types.UninitialisedField(self, 'RvslTx', PaymentTransaction165, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CstmrOrdr', type=CustomerOrder1, min=0, max=1, mutex_group=None, array=False),

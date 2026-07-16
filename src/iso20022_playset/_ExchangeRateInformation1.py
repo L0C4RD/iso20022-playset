@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BaseOneRate import BaseOneRate
-from ._ExchangeRateType1Code import ExchangeRateType1Code
-from ._Max35Text import Max35Text
+from . import BaseOneRate
+from . import ExchangeRateType1Code
+from . import Max35Text
 
 class ExchangeRateInformation1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ExchangeRateInformation1(base_types._BaseFieldType):
 
 	@CtrctId.setter
 	def CtrctId(self, value):
-		self._CtrctId = value if type(value) != base_types.auto else self.make_default("CtrctId")
+		self._CtrctId = value if value is not None else base_types.UninitialisedField(self, 'CtrctId', Max35Text, False)
 
 	@CtrctId.deleter
 	def CtrctId(self):
 		del self._CtrctId
-		self._CtrctId = None
+		self._CtrctId = base_types.UninitialisedField(self, 'CtrctId', Max35Text, False)
 
 	@property
 	def RateTp(self):
@@ -28,12 +28,12 @@ class ExchangeRateInformation1(base_types._BaseFieldType):
 
 	@RateTp.setter
 	def RateTp(self, value):
-		self._RateTp = value if type(value) != base_types.auto else self.make_default("RateTp")
+		self._RateTp = value if value is not None else base_types.UninitialisedField(self, 'RateTp', ExchangeRateType1Code, False)
 
 	@RateTp.deleter
 	def RateTp(self):
 		del self._RateTp
-		self._RateTp = None
+		self._RateTp = base_types.UninitialisedField(self, 'RateTp', ExchangeRateType1Code, False)
 
 	@property
 	def XchgRate(self):
@@ -41,12 +41,12 @@ class ExchangeRateInformation1(base_types._BaseFieldType):
 
 	@XchgRate.setter
 	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != base_types.auto else self.make_default("XchgRate")
+		self._XchgRate = value if value is not None else base_types.UninitialisedField(self, 'XchgRate', BaseOneRate, False)
 
 	@XchgRate.deleter
 	def XchgRate(self):
 		del self._XchgRate
-		self._XchgRate = None
+		self._XchgRate = base_types.UninitialisedField(self, 'XchgRate', BaseOneRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

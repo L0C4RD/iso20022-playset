@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalData1 import AdditionalData1
-from ._Address2 import Address2
-from ._CardholderName3 import CardholderName3
-from ._ContactPersonal1 import ContactPersonal1
-from ._Credentials3 import Credentials3
-from ._FinancialInstitution8 import FinancialInstitution8
-from ._ISODate import ISODate
-from ._ISOMax3ACountryCode import ISOMax3ACountryCode
-from ._LocalData15 import LocalData15
-from ._Max2NumericText import Max2NumericText
-from ._Max35Text import Max35Text
+from . import AdditionalData1
+from . import Address2
+from . import CardholderName3
+from . import ContactPersonal1
+from . import Credentials3
+from . import FinancialInstitution8
+from . import ISODate
+from . import ISOMax3ACountryCode
+from . import LocalData15
+from . import Max2NumericText
+from . import Max35Text
 
 class PartyIdentification287(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class PartyIdentification287(base_types._BaseFieldType):
 
 	@AddtlData.setter
 	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+		self._AddtlData = value if value is not None else base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@AddtlData.deleter
 	def AddtlData(self):
 		del self._AddtlData
-		self._AddtlData = None
+		self._AddtlData = base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@property
 	def Adr(self):
@@ -36,12 +36,12 @@ class PartyIdentification287(base_types._BaseFieldType):
 
 	@Adr.setter
 	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+		self._Adr = value if value is not None else base_types.UninitialisedField(self, 'Adr', Address2, False)
 
 	@Adr.deleter
 	def Adr(self):
 		del self._Adr
-		self._Adr = None
+		self._Adr = base_types.UninitialisedField(self, 'Adr', Address2, False)
 
 	@property
 	def Crdntls(self):
@@ -49,12 +49,12 @@ class PartyIdentification287(base_types._BaseFieldType):
 
 	@Crdntls.setter
 	def Crdntls(self, value):
-		self._Crdntls = value if type(value) != base_types.auto else self.make_default("Crdntls")
+		self._Crdntls = value if value is not None else base_types.UninitialisedField(self, 'Crdntls', Credentials3, True)
 
 	@Crdntls.deleter
 	def Crdntls(self):
 		del self._Crdntls
-		self._Crdntls = None
+		self._Crdntls = base_types.UninitialisedField(self, 'Crdntls', Credentials3, True)
 
 	@property
 	def Ctct(self):
@@ -62,12 +62,12 @@ class PartyIdentification287(base_types._BaseFieldType):
 
 	@Ctct.setter
 	def Ctct(self, value):
-		self._Ctct = value if type(value) != base_types.auto else self.make_default("Ctct")
+		self._Ctct = value if value is not None else base_types.UninitialisedField(self, 'Ctct', ContactPersonal1, False)
 
 	@Ctct.deleter
 	def Ctct(self):
 		del self._Ctct
-		self._Ctct = None
+		self._Ctct = base_types.UninitialisedField(self, 'Ctct', ContactPersonal1, False)
 
 	@property
 	def CtryOfBirth(self):
@@ -75,12 +75,12 @@ class PartyIdentification287(base_types._BaseFieldType):
 
 	@CtryOfBirth.setter
 	def CtryOfBirth(self, value):
-		self._CtryOfBirth = value if type(value) != base_types.auto else self.make_default("CtryOfBirth")
+		self._CtryOfBirth = value if value is not None else base_types.UninitialisedField(self, 'CtryOfBirth', ISOMax3ACountryCode, False)
 
 	@CtryOfBirth.deleter
 	def CtryOfBirth(self):
 		del self._CtryOfBirth
-		self._CtryOfBirth = None
+		self._CtryOfBirth = base_types.UninitialisedField(self, 'CtryOfBirth', ISOMax3ACountryCode, False)
 
 	@property
 	def Dsgnt(self):
@@ -88,12 +88,12 @@ class PartyIdentification287(base_types._BaseFieldType):
 
 	@Dsgnt.setter
 	def Dsgnt(self, value):
-		self._Dsgnt = value if type(value) != base_types.auto else self.make_default("Dsgnt")
+		self._Dsgnt = value if value is not None else base_types.UninitialisedField(self, 'Dsgnt', Max2NumericText, False)
 
 	@Dsgnt.deleter
 	def Dsgnt(self):
 		del self._Dsgnt
-		self._Dsgnt = None
+		self._Dsgnt = base_types.UninitialisedField(self, 'Dsgnt', Max2NumericText, False)
 
 	@property
 	def DtOfBirth(self):
@@ -101,12 +101,12 @@ class PartyIdentification287(base_types._BaseFieldType):
 
 	@DtOfBirth.setter
 	def DtOfBirth(self, value):
-		self._DtOfBirth = value if type(value) != base_types.auto else self.make_default("DtOfBirth")
+		self._DtOfBirth = value if value is not None else base_types.UninitialisedField(self, 'DtOfBirth', ISODate, False)
 
 	@DtOfBirth.deleter
 	def DtOfBirth(self):
 		del self._DtOfBirth
-		self._DtOfBirth = None
+		self._DtOfBirth = base_types.UninitialisedField(self, 'DtOfBirth', ISODate, False)
 
 	@property
 	def FI(self):
@@ -114,12 +114,12 @@ class PartyIdentification287(base_types._BaseFieldType):
 
 	@FI.setter
 	def FI(self, value):
-		self._FI = value if type(value) != base_types.auto else self.make_default("FI")
+		self._FI = value if value is not None else base_types.UninitialisedField(self, 'FI', FinancialInstitution8, False)
 
 	@FI.deleter
 	def FI(self):
 		del self._FI
-		self._FI = None
+		self._FI = base_types.UninitialisedField(self, 'FI', FinancialInstitution8, False)
 
 	@property
 	def Id(self):
@@ -127,12 +127,12 @@ class PartyIdentification287(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def LclData(self):
@@ -140,12 +140,12 @@ class PartyIdentification287(base_types._BaseFieldType):
 
 	@LclData.setter
 	def LclData(self, value):
-		self._LclData = value if type(value) != base_types.auto else self.make_default("LclData")
+		self._LclData = value if value is not None else base_types.UninitialisedField(self, 'LclData', LocalData15, False)
 
 	@LclData.deleter
 	def LclData(self):
 		del self._LclData
-		self._LclData = None
+		self._LclData = base_types.UninitialisedField(self, 'LclData', LocalData15, False)
 
 	@property
 	def Nm(self):
@@ -153,12 +153,12 @@ class PartyIdentification287(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', CardholderName3, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', CardholderName3, False)
 
 	@property
 	def Ntlty(self):
@@ -166,12 +166,12 @@ class PartyIdentification287(base_types._BaseFieldType):
 
 	@Ntlty.setter
 	def Ntlty(self, value):
-		self._Ntlty = value if type(value) != base_types.auto else self.make_default("Ntlty")
+		self._Ntlty = value if value is not None else base_types.UninitialisedField(self, 'Ntlty', ISOMax3ACountryCode, False)
 
 	@Ntlty.deleter
 	def Ntlty(self):
 		del self._Ntlty
-		self._Ntlty = None
+		self._Ntlty = base_types.UninitialisedField(self, 'Ntlty', ISOMax3ACountryCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),

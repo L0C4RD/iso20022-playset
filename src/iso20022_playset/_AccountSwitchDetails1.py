@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BalanceTransferWindow1Code import BalanceTransferWindow1Code
-from ._ISODate import ISODate
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
-from ._ResponseDetails1 import ResponseDetails1
-from ._SwitchStatus1Code import SwitchStatus1Code
-from ._SwitchType1Code import SwitchType1Code
+from . import BalanceTransferWindow1Code
+from . import ISODate
+from . import ISODateTime
+from . import Max35Text
+from . import ResponseDetails1
+from . import SwitchStatus1Code
+from . import SwitchType1Code
 
 class AccountSwitchDetails1(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class AccountSwitchDetails1(base_types._BaseFieldType):
 
 	@BalTrfWndw.setter
 	def BalTrfWndw(self, value):
-		self._BalTrfWndw = value if type(value) != base_types.auto else self.make_default("BalTrfWndw")
+		self._BalTrfWndw = value if value is not None else base_types.UninitialisedField(self, 'BalTrfWndw', BalanceTransferWindow1Code, False)
 
 	@BalTrfWndw.deleter
 	def BalTrfWndw(self):
 		del self._BalTrfWndw
-		self._BalTrfWndw = None
+		self._BalTrfWndw = base_types.UninitialisedField(self, 'BalTrfWndw', BalanceTransferWindow1Code, False)
 
 	@property
 	def Rspn(self):
@@ -32,12 +32,12 @@ class AccountSwitchDetails1(base_types._BaseFieldType):
 
 	@Rspn.setter
 	def Rspn(self, value):
-		self._Rspn = value if type(value) != base_types.auto else self.make_default("Rspn")
+		self._Rspn = value if value is not None else base_types.UninitialisedField(self, 'Rspn', ResponseDetails1, True)
 
 	@Rspn.deleter
 	def Rspn(self):
 		del self._Rspn
-		self._Rspn = None
+		self._Rspn = base_types.UninitialisedField(self, 'Rspn', ResponseDetails1, True)
 
 	@property
 	def RtgUnqRefNb(self):
@@ -45,12 +45,12 @@ class AccountSwitchDetails1(base_types._BaseFieldType):
 
 	@RtgUnqRefNb.setter
 	def RtgUnqRefNb(self, value):
-		self._RtgUnqRefNb = value if type(value) != base_types.auto else self.make_default("RtgUnqRefNb")
+		self._RtgUnqRefNb = value if value is not None else base_types.UninitialisedField(self, 'RtgUnqRefNb', Max35Text, False)
 
 	@RtgUnqRefNb.deleter
 	def RtgUnqRefNb(self):
 		del self._RtgUnqRefNb
-		self._RtgUnqRefNb = None
+		self._RtgUnqRefNb = base_types.UninitialisedField(self, 'RtgUnqRefNb', Max35Text, False)
 
 	@property
 	def SwtchDt(self):
@@ -58,12 +58,12 @@ class AccountSwitchDetails1(base_types._BaseFieldType):
 
 	@SwtchDt.setter
 	def SwtchDt(self, value):
-		self._SwtchDt = value if type(value) != base_types.auto else self.make_default("SwtchDt")
+		self._SwtchDt = value if value is not None else base_types.UninitialisedField(self, 'SwtchDt', ISODate, False)
 
 	@SwtchDt.deleter
 	def SwtchDt(self):
 		del self._SwtchDt
-		self._SwtchDt = None
+		self._SwtchDt = base_types.UninitialisedField(self, 'SwtchDt', ISODate, False)
 
 	@property
 	def SwtchRcvdDtTm(self):
@@ -71,12 +71,12 @@ class AccountSwitchDetails1(base_types._BaseFieldType):
 
 	@SwtchRcvdDtTm.setter
 	def SwtchRcvdDtTm(self, value):
-		self._SwtchRcvdDtTm = value if type(value) != base_types.auto else self.make_default("SwtchRcvdDtTm")
+		self._SwtchRcvdDtTm = value if value is not None else base_types.UninitialisedField(self, 'SwtchRcvdDtTm', ISODateTime, False)
 
 	@SwtchRcvdDtTm.deleter
 	def SwtchRcvdDtTm(self):
 		del self._SwtchRcvdDtTm
-		self._SwtchRcvdDtTm = None
+		self._SwtchRcvdDtTm = base_types.UninitialisedField(self, 'SwtchRcvdDtTm', ISODateTime, False)
 
 	@property
 	def SwtchSts(self):
@@ -84,12 +84,12 @@ class AccountSwitchDetails1(base_types._BaseFieldType):
 
 	@SwtchSts.setter
 	def SwtchSts(self, value):
-		self._SwtchSts = value if type(value) != base_types.auto else self.make_default("SwtchSts")
+		self._SwtchSts = value if value is not None else base_types.UninitialisedField(self, 'SwtchSts', SwitchStatus1Code, False)
 
 	@SwtchSts.deleter
 	def SwtchSts(self):
 		del self._SwtchSts
-		self._SwtchSts = None
+		self._SwtchSts = base_types.UninitialisedField(self, 'SwtchSts', SwitchStatus1Code, False)
 
 	@property
 	def SwtchTp(self):
@@ -97,12 +97,12 @@ class AccountSwitchDetails1(base_types._BaseFieldType):
 
 	@SwtchTp.setter
 	def SwtchTp(self, value):
-		self._SwtchTp = value if type(value) != base_types.auto else self.make_default("SwtchTp")
+		self._SwtchTp = value if value is not None else base_types.UninitialisedField(self, 'SwtchTp', SwitchType1Code, False)
 
 	@SwtchTp.deleter
 	def SwtchTp(self):
 		del self._SwtchTp
-		self._SwtchTp = None
+		self._SwtchTp = base_types.UninitialisedField(self, 'SwtchTp', SwitchType1Code, False)
 
 	@property
 	def UnqRefNb(self):
@@ -110,12 +110,12 @@ class AccountSwitchDetails1(base_types._BaseFieldType):
 
 	@UnqRefNb.setter
 	def UnqRefNb(self, value):
-		self._UnqRefNb = value if type(value) != base_types.auto else self.make_default("UnqRefNb")
+		self._UnqRefNb = value if value is not None else base_types.UninitialisedField(self, 'UnqRefNb', Max35Text, False)
 
 	@UnqRefNb.deleter
 	def UnqRefNb(self):
 		del self._UnqRefNb
-		self._UnqRefNb = None
+		self._UnqRefNb = base_types.UninitialisedField(self, 'UnqRefNb', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BalTrfWndw', type=BalanceTransferWindow1Code, min=0, max=1, mutex_group=None, array=False),

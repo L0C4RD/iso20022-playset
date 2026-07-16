@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MaintenanceDelegationRequestV11 import MaintenanceDelegationRequestV11
+from . import MaintenanceDelegationRequestV11
 
 class CATM_005_001_11():
 
@@ -18,12 +18,12 @@ class CATM_005_001_11():
 
 		@MntncDlgtnReq.setter
 		def MntncDlgtnReq(self, value):
-			self._MntncDlgtnReq = value if type(value) != base_types.auto else self.make_default("MntncDlgtnReq")
+			self._MntncDlgtnReq = value if value is not None else base_types.UninitialisedField(self, 'MntncDlgtnReq', MaintenanceDelegationRequestV11, False)
 
 		@MntncDlgtnReq.deleter
 		def MntncDlgtnReq(self):
 			del self._MntncDlgtnReq
-			self._MntncDlgtnReq = None
+			self._MntncDlgtnReq = base_types.UninitialisedField(self, 'MntncDlgtnReq', MaintenanceDelegationRequestV11, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='MntncDlgtnReq', type=MaintenanceDelegationRequestV11, min=1, max=1, mutex_group=None, array=False),

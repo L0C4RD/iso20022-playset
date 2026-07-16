@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
+from . import RestrictedFINXMax350Text
 
 class UpdatedAdditionalInformation22(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class UpdatedAdditionalInformation22(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', RestrictedFINXMax350Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', RestrictedFINXMax350Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=RestrictedFINXMax350Text, min=1, max=1, mutex_group=None, array=False),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMReconciliationAdvice3 import ATMReconciliationAdvice3
-from ._ContentInformationType10 import ContentInformationType10
-from ._ContentInformationType15 import ContentInformationType15
-from ._Header32 import Header32
+from . import ATMReconciliationAdvice3
+from . import ContentInformationType10
+from . import ContentInformationType15
+from . import Header32
 
 class ATMReconciliationAdviceV03(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ATMReconciliationAdviceV03(base_types._BaseFieldType):
 
 	@ATMRcncltnAdvc.setter
 	def ATMRcncltnAdvc(self, value):
-		self._ATMRcncltnAdvc = value if type(value) != base_types.auto else self.make_default("ATMRcncltnAdvc")
+		self._ATMRcncltnAdvc = value if value is not None else base_types.UninitialisedField(self, 'ATMRcncltnAdvc', ATMReconciliationAdvice3, False)
 
 	@ATMRcncltnAdvc.deleter
 	def ATMRcncltnAdvc(self):
 		del self._ATMRcncltnAdvc
-		self._ATMRcncltnAdvc = None
+		self._ATMRcncltnAdvc = base_types.UninitialisedField(self, 'ATMRcncltnAdvc', ATMReconciliationAdvice3, False)
 
 	@property
 	def Hdr(self):
@@ -29,12 +29,12 @@ class ATMReconciliationAdviceV03(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header32, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header32, False)
 
 	@property
 	def PrtctdATMRcncltnAdvc(self):
@@ -42,12 +42,12 @@ class ATMReconciliationAdviceV03(base_types._BaseFieldType):
 
 	@PrtctdATMRcncltnAdvc.setter
 	def PrtctdATMRcncltnAdvc(self, value):
-		self._PrtctdATMRcncltnAdvc = value if type(value) != base_types.auto else self.make_default("PrtctdATMRcncltnAdvc")
+		self._PrtctdATMRcncltnAdvc = value if value is not None else base_types.UninitialisedField(self, 'PrtctdATMRcncltnAdvc', ContentInformationType10, False)
 
 	@PrtctdATMRcncltnAdvc.deleter
 	def PrtctdATMRcncltnAdvc(self):
 		del self._PrtctdATMRcncltnAdvc
-		self._PrtctdATMRcncltnAdvc = None
+		self._PrtctdATMRcncltnAdvc = base_types.UninitialisedField(self, 'PrtctdATMRcncltnAdvc', ContentInformationType10, False)
 
 	@property
 	def SctyTrlr(self):
@@ -55,12 +55,12 @@ class ATMReconciliationAdviceV03(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType15, False)
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
 		del self._SctyTrlr
-		self._SctyTrlr = None
+		self._SctyTrlr = base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType15, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ATMRcncltnAdvc', type=ATMReconciliationAdvice3, min=0, max=1, mutex_group=None, array=False),

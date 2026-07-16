@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Count1 import Count1
-from ._DocumentIdentification3 import DocumentIdentification3
-from ._DocumentIdentification5 import DocumentIdentification5
-from ._MessageIdentification1 import MessageIdentification1
-from ._PendingActivity2 import PendingActivity2
-from ._SimpleIdentificationInformation import SimpleIdentificationInformation
-from ._TransactionStatus4 import TransactionStatus4
-from ._ValidationResult3 import ValidationResult3
+from . import Count1
+from . import DocumentIdentification3
+from . import DocumentIdentification5
+from . import MessageIdentification1
+from . import PendingActivity2
+from . import SimpleIdentificationInformation
+from . import TransactionStatus4
+from . import ValidationResult3
 
 class ErrorReportV03(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class ErrorReportV03(base_types._BaseFieldType):
 
 	@ErrDesc.setter
 	def ErrDesc(self, value):
-		self._ErrDesc = value if type(value) != base_types.auto else self.make_default("ErrDesc")
+		self._ErrDesc = value if value is not None else base_types.UninitialisedField(self, 'ErrDesc', ValidationResult3, True)
 
 	@ErrDesc.deleter
 	def ErrDesc(self):
 		del self._ErrDesc
-		self._ErrDesc = None
+		self._ErrDesc = base_types.UninitialisedField(self, 'ErrDesc', ValidationResult3, True)
 
 	@property
 	def EstblishdBaselnId(self):
@@ -33,12 +33,12 @@ class ErrorReportV03(base_types._BaseFieldType):
 
 	@EstblishdBaselnId.setter
 	def EstblishdBaselnId(self, value):
-		self._EstblishdBaselnId = value if type(value) != base_types.auto else self.make_default("EstblishdBaselnId")
+		self._EstblishdBaselnId = value if value is not None else base_types.UninitialisedField(self, 'EstblishdBaselnId', DocumentIdentification3, False)
 
 	@EstblishdBaselnId.deleter
 	def EstblishdBaselnId(self):
 		del self._EstblishdBaselnId
-		self._EstblishdBaselnId = None
+		self._EstblishdBaselnId = base_types.UninitialisedField(self, 'EstblishdBaselnId', DocumentIdentification3, False)
 
 	@property
 	def NbOfErrs(self):
@@ -46,12 +46,12 @@ class ErrorReportV03(base_types._BaseFieldType):
 
 	@NbOfErrs.setter
 	def NbOfErrs(self, value):
-		self._NbOfErrs = value if type(value) != base_types.auto else self.make_default("NbOfErrs")
+		self._NbOfErrs = value if value is not None else base_types.UninitialisedField(self, 'NbOfErrs', Count1, False)
 
 	@NbOfErrs.deleter
 	def NbOfErrs(self):
 		del self._NbOfErrs
-		self._NbOfErrs = None
+		self._NbOfErrs = base_types.UninitialisedField(self, 'NbOfErrs', Count1, False)
 
 	@property
 	def ReqForActn(self):
@@ -59,12 +59,12 @@ class ErrorReportV03(base_types._BaseFieldType):
 
 	@ReqForActn.setter
 	def ReqForActn(self, value):
-		self._ReqForActn = value if type(value) != base_types.auto else self.make_default("ReqForActn")
+		self._ReqForActn = value if value is not None else base_types.UninitialisedField(self, 'ReqForActn', PendingActivity2, False)
 
 	@ReqForActn.deleter
 	def ReqForActn(self):
 		del self._ReqForActn
-		self._ReqForActn = None
+		self._ReqForActn = base_types.UninitialisedField(self, 'ReqForActn', PendingActivity2, False)
 
 	@property
 	def RjctdMsgRef(self):
@@ -72,12 +72,12 @@ class ErrorReportV03(base_types._BaseFieldType):
 
 	@RjctdMsgRef.setter
 	def RjctdMsgRef(self, value):
-		self._RjctdMsgRef = value if type(value) != base_types.auto else self.make_default("RjctdMsgRef")
+		self._RjctdMsgRef = value if value is not None else base_types.UninitialisedField(self, 'RjctdMsgRef', MessageIdentification1, False)
 
 	@RjctdMsgRef.deleter
 	def RjctdMsgRef(self):
 		del self._RjctdMsgRef
-		self._RjctdMsgRef = None
+		self._RjctdMsgRef = base_types.UninitialisedField(self, 'RjctdMsgRef', MessageIdentification1, False)
 
 	@property
 	def RptId(self):
@@ -85,12 +85,12 @@ class ErrorReportV03(base_types._BaseFieldType):
 
 	@RptId.setter
 	def RptId(self, value):
-		self._RptId = value if type(value) != base_types.auto else self.make_default("RptId")
+		self._RptId = value if value is not None else base_types.UninitialisedField(self, 'RptId', MessageIdentification1, False)
 
 	@RptId.deleter
 	def RptId(self):
 		del self._RptId
-		self._RptId = None
+		self._RptId = base_types.UninitialisedField(self, 'RptId', MessageIdentification1, False)
 
 	@property
 	def TxId(self):
@@ -98,12 +98,12 @@ class ErrorReportV03(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', SimpleIdentificationInformation, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', SimpleIdentificationInformation, False)
 
 	@property
 	def TxSts(self):
@@ -111,12 +111,12 @@ class ErrorReportV03(base_types._BaseFieldType):
 
 	@TxSts.setter
 	def TxSts(self, value):
-		self._TxSts = value if type(value) != base_types.auto else self.make_default("TxSts")
+		self._TxSts = value if value is not None else base_types.UninitialisedField(self, 'TxSts', TransactionStatus4, False)
 
 	@TxSts.deleter
 	def TxSts(self):
 		del self._TxSts
-		self._TxSts = None
+		self._TxSts = base_types.UninitialisedField(self, 'TxSts', TransactionStatus4, False)
 
 	@property
 	def UsrTxRef(self):
@@ -124,12 +124,12 @@ class ErrorReportV03(base_types._BaseFieldType):
 
 	@UsrTxRef.setter
 	def UsrTxRef(self, value):
-		self._UsrTxRef = value if type(value) != base_types.auto else self.make_default("UsrTxRef")
+		self._UsrTxRef = value if value is not None else base_types.UninitialisedField(self, 'UsrTxRef', DocumentIdentification5, False)
 
 	@UsrTxRef.deleter
 	def UsrTxRef(self):
 		del self._UsrTxRef
-		self._UsrTxRef = None
+		self._UsrTxRef = base_types.UninitialisedField(self, 'UsrTxRef', DocumentIdentification5, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ErrDesc', type=ValidationResult3, min=1, max=None, mutex_group=None, array=True),

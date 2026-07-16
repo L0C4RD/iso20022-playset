@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTimeChoice import DateAndDateTimeChoice
-from ._DatePeriod1Choice import DatePeriod1Choice
-from ._Frequency22Choice import Frequency22Choice
-from ._FrequencyGranularityType1Code import FrequencyGranularityType1Code
-from ._Max35Text import Max35Text
-from ._Number3Choice import Number3Choice
-from ._SenderBusinessRole1Code import SenderBusinessRole1Code
-from ._UpdateType4Choice import UpdateType4Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import DateAndDateTimeChoice
+from . import DatePeriod1Choice
+from . import Frequency22Choice
+from . import FrequencyGranularityType1Code
+from . import Max35Text
+from . import Number3Choice
+from . import SenderBusinessRole1Code
+from . import UpdateType4Choice
+from . import YesNoIndicator
 
 class Statement59(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class Statement59(base_types._BaseFieldType):
 
 	@ActvtyInd.setter
 	def ActvtyInd(self, value):
-		self._ActvtyInd = value if type(value) != base_types.auto else self.make_default("ActvtyInd")
+		self._ActvtyInd = value if value is not None else base_types.UninitialisedField(self, 'ActvtyInd', YesNoIndicator, False)
 
 	@ActvtyInd.deleter
 	def ActvtyInd(self):
 		del self._ActvtyInd
-		self._ActvtyInd = None
+		self._ActvtyInd = base_types.UninitialisedField(self, 'ActvtyInd', YesNoIndicator, False)
 
 	@property
 	def Frqcy(self):
@@ -34,12 +34,12 @@ class Statement59(base_types._BaseFieldType):
 
 	@Frqcy.setter
 	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
+		self._Frqcy = value if value is not None else base_types.UninitialisedField(self, 'Frqcy', Frequency22Choice, False)
 
 	@Frqcy.deleter
 	def Frqcy(self):
 		del self._Frqcy
-		self._Frqcy = None
+		self._Frqcy = base_types.UninitialisedField(self, 'Frqcy', Frequency22Choice, False)
 
 	@property
 	def FrqcyGrnlrty(self):
@@ -47,12 +47,12 @@ class Statement59(base_types._BaseFieldType):
 
 	@FrqcyGrnlrty.setter
 	def FrqcyGrnlrty(self, value):
-		self._FrqcyGrnlrty = value if type(value) != base_types.auto else self.make_default("FrqcyGrnlrty")
+		self._FrqcyGrnlrty = value if value is not None else base_types.UninitialisedField(self, 'FrqcyGrnlrty', FrequencyGranularityType1Code, False)
 
 	@FrqcyGrnlrty.deleter
 	def FrqcyGrnlrty(self):
 		del self._FrqcyGrnlrty
-		self._FrqcyGrnlrty = None
+		self._FrqcyGrnlrty = base_types.UninitialisedField(self, 'FrqcyGrnlrty', FrequencyGranularityType1Code, False)
 
 	@property
 	def QryRef(self):
@@ -60,12 +60,12 @@ class Statement59(base_types._BaseFieldType):
 
 	@QryRef.setter
 	def QryRef(self, value):
-		self._QryRef = value if type(value) != base_types.auto else self.make_default("QryRef")
+		self._QryRef = value if value is not None else base_types.UninitialisedField(self, 'QryRef', Max35Text, False)
 
 	@QryRef.deleter
 	def QryRef(self):
 		del self._QryRef
-		self._QryRef = None
+		self._QryRef = base_types.UninitialisedField(self, 'QryRef', Max35Text, False)
 
 	@property
 	def SndrBizRole(self):
@@ -73,12 +73,12 @@ class Statement59(base_types._BaseFieldType):
 
 	@SndrBizRole.setter
 	def SndrBizRole(self, value):
-		self._SndrBizRole = value if type(value) != base_types.auto else self.make_default("SndrBizRole")
+		self._SndrBizRole = value if value is not None else base_types.UninitialisedField(self, 'SndrBizRole', SenderBusinessRole1Code, False)
 
 	@SndrBizRole.deleter
 	def SndrBizRole(self):
 		del self._SndrBizRole
-		self._SndrBizRole = None
+		self._SndrBizRole = base_types.UninitialisedField(self, 'SndrBizRole', SenderBusinessRole1Code, False)
 
 	@property
 	def StmtDtTm(self):
@@ -86,12 +86,12 @@ class Statement59(base_types._BaseFieldType):
 
 	@StmtDtTm.setter
 	def StmtDtTm(self, value):
-		self._StmtDtTm = value if type(value) != base_types.auto else self.make_default("StmtDtTm")
+		self._StmtDtTm = value if value is not None else base_types.UninitialisedField(self, 'StmtDtTm', DateAndDateTimeChoice, False)
 
 	@StmtDtTm.deleter
 	def StmtDtTm(self):
 		del self._StmtDtTm
-		self._StmtDtTm = None
+		self._StmtDtTm = base_types.UninitialisedField(self, 'StmtDtTm', DateAndDateTimeChoice, False)
 
 	@property
 	def StmtId(self):
@@ -99,12 +99,12 @@ class Statement59(base_types._BaseFieldType):
 
 	@StmtId.setter
 	def StmtId(self, value):
-		self._StmtId = value if type(value) != base_types.auto else self.make_default("StmtId")
+		self._StmtId = value if value is not None else base_types.UninitialisedField(self, 'StmtId', Max35Text, False)
 
 	@StmtId.deleter
 	def StmtId(self):
 		del self._StmtId
-		self._StmtId = None
+		self._StmtId = base_types.UninitialisedField(self, 'StmtId', Max35Text, False)
 
 	@property
 	def StmtNb(self):
@@ -112,12 +112,12 @@ class Statement59(base_types._BaseFieldType):
 
 	@StmtNb.setter
 	def StmtNb(self, value):
-		self._StmtNb = value if type(value) != base_types.auto else self.make_default("StmtNb")
+		self._StmtNb = value if value is not None else base_types.UninitialisedField(self, 'StmtNb', Number3Choice, False)
 
 	@StmtNb.deleter
 	def StmtNb(self):
 		del self._StmtNb
-		self._StmtNb = None
+		self._StmtNb = base_types.UninitialisedField(self, 'StmtNb', Number3Choice, False)
 
 	@property
 	def StmtPrd(self):
@@ -125,12 +125,12 @@ class Statement59(base_types._BaseFieldType):
 
 	@StmtPrd.setter
 	def StmtPrd(self, value):
-		self._StmtPrd = value if type(value) != base_types.auto else self.make_default("StmtPrd")
+		self._StmtPrd = value if value is not None else base_types.UninitialisedField(self, 'StmtPrd', DatePeriod1Choice, False)
 
 	@StmtPrd.deleter
 	def StmtPrd(self):
 		del self._StmtPrd
-		self._StmtPrd = None
+		self._StmtPrd = base_types.UninitialisedField(self, 'StmtPrd', DatePeriod1Choice, False)
 
 	@property
 	def UpdTp(self):
@@ -138,12 +138,12 @@ class Statement59(base_types._BaseFieldType):
 
 	@UpdTp.setter
 	def UpdTp(self, value):
-		self._UpdTp = value if type(value) != base_types.auto else self.make_default("UpdTp")
+		self._UpdTp = value if value is not None else base_types.UninitialisedField(self, 'UpdTp', UpdateType4Choice, False)
 
 	@UpdTp.deleter
 	def UpdTp(self):
 		del self._UpdTp
-		self._UpdTp = None
+		self._UpdTp = base_types.UninitialisedField(self, 'UpdTp', UpdateType4Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),

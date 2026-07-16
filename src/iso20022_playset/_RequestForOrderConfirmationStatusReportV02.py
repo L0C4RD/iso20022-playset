@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Extension1 import Extension1
-from ._MessageAndBusinessReference10 import MessageAndBusinessReference10
-from ._MessageIdentification1 import MessageIdentification1
+from . import Extension1
+from . import MessageAndBusinessReference10
+from . import MessageIdentification1
 
 class RequestForOrderConfirmationStatusReportV02(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class RequestForOrderConfirmationStatusReportV02(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@property
 	def ReqDtls(self):
@@ -28,12 +28,12 @@ class RequestForOrderConfirmationStatusReportV02(base_types._BaseFieldType):
 
 	@ReqDtls.setter
 	def ReqDtls(self, value):
-		self._ReqDtls = value if type(value) != base_types.auto else self.make_default("ReqDtls")
+		self._ReqDtls = value if value is not None else base_types.UninitialisedField(self, 'ReqDtls', MessageAndBusinessReference10, True)
 
 	@ReqDtls.deleter
 	def ReqDtls(self):
 		del self._ReqDtls
-		self._ReqDtls = None
+		self._ReqDtls = base_types.UninitialisedField(self, 'ReqDtls', MessageAndBusinessReference10, True)
 
 	@property
 	def Xtnsn(self):
@@ -41,12 +41,12 @@ class RequestForOrderConfirmationStatusReportV02(base_types._BaseFieldType):
 
 	@Xtnsn.setter
 	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
+		self._Xtnsn = value if value is not None else base_types.UninitialisedField(self, 'Xtnsn', Extension1, True)
 
 	@Xtnsn.deleter
 	def Xtnsn(self):
 		del self._Xtnsn
-		self._Xtnsn = None
+		self._Xtnsn = base_types.UninitialisedField(self, 'Xtnsn', Extension1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),

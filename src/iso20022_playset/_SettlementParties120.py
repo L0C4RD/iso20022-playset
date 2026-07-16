@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PartyIdentification242Choice import PartyIdentification242Choice
+from . import PartyIdentification242Choice
 
 class SettlementParties120(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class SettlementParties120(base_types._BaseFieldType):
 
 	@BnfcryInstn.setter
 	def BnfcryInstn(self, value):
-		self._BnfcryInstn = value if type(value) != base_types.auto else self.make_default("BnfcryInstn")
+		self._BnfcryInstn = value if value is not None else base_types.UninitialisedField(self, 'BnfcryInstn', PartyIdentification242Choice, False)
 
 	@BnfcryInstn.deleter
 	def BnfcryInstn(self):
 		del self._BnfcryInstn
-		self._BnfcryInstn = None
+		self._BnfcryInstn = base_types.UninitialisedField(self, 'BnfcryInstn', PartyIdentification242Choice, False)
 
 	@property
 	def DlvryAgt(self):
@@ -26,12 +26,12 @@ class SettlementParties120(base_types._BaseFieldType):
 
 	@DlvryAgt.setter
 	def DlvryAgt(self, value):
-		self._DlvryAgt = value if type(value) != base_types.auto else self.make_default("DlvryAgt")
+		self._DlvryAgt = value if value is not None else base_types.UninitialisedField(self, 'DlvryAgt', PartyIdentification242Choice, False)
 
 	@DlvryAgt.deleter
 	def DlvryAgt(self):
 		del self._DlvryAgt
-		self._DlvryAgt = None
+		self._DlvryAgt = base_types.UninitialisedField(self, 'DlvryAgt', PartyIdentification242Choice, False)
 
 	@property
 	def Intrmy(self):
@@ -39,12 +39,12 @@ class SettlementParties120(base_types._BaseFieldType):
 
 	@Intrmy.setter
 	def Intrmy(self, value):
-		self._Intrmy = value if type(value) != base_types.auto else self.make_default("Intrmy")
+		self._Intrmy = value if value is not None else base_types.UninitialisedField(self, 'Intrmy', PartyIdentification242Choice, False)
 
 	@Intrmy.deleter
 	def Intrmy(self):
 		del self._Intrmy
-		self._Intrmy = None
+		self._Intrmy = base_types.UninitialisedField(self, 'Intrmy', PartyIdentification242Choice, False)
 
 	@property
 	def RcvgAgt(self):
@@ -52,12 +52,12 @@ class SettlementParties120(base_types._BaseFieldType):
 
 	@RcvgAgt.setter
 	def RcvgAgt(self, value):
-		self._RcvgAgt = value if type(value) != base_types.auto else self.make_default("RcvgAgt")
+		self._RcvgAgt = value if value is not None else base_types.UninitialisedField(self, 'RcvgAgt', PartyIdentification242Choice, False)
 
 	@RcvgAgt.deleter
 	def RcvgAgt(self):
 		del self._RcvgAgt
-		self._RcvgAgt = None
+		self._RcvgAgt = base_types.UninitialisedField(self, 'RcvgAgt', PartyIdentification242Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BnfcryInstn', type=PartyIdentification242Choice, min=0, max=1, mutex_group=None, array=False),

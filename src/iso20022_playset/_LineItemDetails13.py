@@ -2,21 +2,21 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Adjustment7 import Adjustment7
-from ._Charge24 import Charge24
-from ._CountryCode import CountryCode
-from ._CurrencyAndAmount import CurrencyAndAmount
-from ._Incoterms4 import Incoterms4
-from ._Max70Text import Max70Text
-from ._PercentageTolerance1 import PercentageTolerance1
-from ._ProductCategory1Choice import ProductCategory1Choice
-from ._ProductCharacteristics1Choice import ProductCharacteristics1Choice
-from ._ProductIdentifier2Choice import ProductIdentifier2Choice
-from ._Quantity9 import Quantity9
-from ._ShipmentSchedule2Choice import ShipmentSchedule2Choice
-from ._Tax23 import Tax23
-from ._TransportMeans5 import TransportMeans5
-from ._UnitPrice18 import UnitPrice18
+from . import Adjustment7
+from . import Charge24
+from . import CountryCode
+from . import CurrencyAndAmount
+from . import Incoterms4
+from . import Max70Text
+from . import PercentageTolerance1
+from . import ProductCategory1Choice
+from . import ProductCharacteristics1Choice
+from . import ProductIdentifier2Choice
+from . import Quantity9
+from . import ShipmentSchedule2Choice
+from . import Tax23
+from . import TransportMeans5
+from . import UnitPrice18
 
 class LineItemDetails13(base_types._BaseFieldType):
 
@@ -27,12 +27,12 @@ class LineItemDetails13(base_types._BaseFieldType):
 
 	@Adjstmnt.setter
 	def Adjstmnt(self, value):
-		self._Adjstmnt = value if type(value) != base_types.auto else self.make_default("Adjstmnt")
+		self._Adjstmnt = value if value is not None else base_types.UninitialisedField(self, 'Adjstmnt', Adjustment7, True)
 
 	@Adjstmnt.deleter
 	def Adjstmnt(self):
 		del self._Adjstmnt
-		self._Adjstmnt = None
+		self._Adjstmnt = base_types.UninitialisedField(self, 'Adjstmnt', Adjustment7, True)
 
 	@property
 	def FrghtChrgs(self):
@@ -40,12 +40,12 @@ class LineItemDetails13(base_types._BaseFieldType):
 
 	@FrghtChrgs.setter
 	def FrghtChrgs(self, value):
-		self._FrghtChrgs = value if type(value) != base_types.auto else self.make_default("FrghtChrgs")
+		self._FrghtChrgs = value if value is not None else base_types.UninitialisedField(self, 'FrghtChrgs', Charge24, False)
 
 	@FrghtChrgs.deleter
 	def FrghtChrgs(self):
 		del self._FrghtChrgs
-		self._FrghtChrgs = None
+		self._FrghtChrgs = base_types.UninitialisedField(self, 'FrghtChrgs', Charge24, False)
 
 	@property
 	def Incotrms(self):
@@ -53,12 +53,12 @@ class LineItemDetails13(base_types._BaseFieldType):
 
 	@Incotrms.setter
 	def Incotrms(self, value):
-		self._Incotrms = value if type(value) != base_types.auto else self.make_default("Incotrms")
+		self._Incotrms = value if value is not None else base_types.UninitialisedField(self, 'Incotrms', Incoterms4, False)
 
 	@Incotrms.deleter
 	def Incotrms(self):
 		del self._Incotrms
-		self._Incotrms = None
+		self._Incotrms = base_types.UninitialisedField(self, 'Incotrms', Incoterms4, False)
 
 	@property
 	def LineItmId(self):
@@ -66,12 +66,12 @@ class LineItemDetails13(base_types._BaseFieldType):
 
 	@LineItmId.setter
 	def LineItmId(self, value):
-		self._LineItmId = value if type(value) != base_types.auto else self.make_default("LineItmId")
+		self._LineItmId = value if value is not None else base_types.UninitialisedField(self, 'LineItmId', Max70Text, False)
 
 	@LineItmId.deleter
 	def LineItmId(self):
 		del self._LineItmId
-		self._LineItmId = None
+		self._LineItmId = base_types.UninitialisedField(self, 'LineItmId', Max70Text, False)
 
 	@property
 	def PdctChrtcs(self):
@@ -79,12 +79,12 @@ class LineItemDetails13(base_types._BaseFieldType):
 
 	@PdctChrtcs.setter
 	def PdctChrtcs(self, value):
-		self._PdctChrtcs = value if type(value) != base_types.auto else self.make_default("PdctChrtcs")
+		self._PdctChrtcs = value if value is not None else base_types.UninitialisedField(self, 'PdctChrtcs', ProductCharacteristics1Choice, True)
 
 	@PdctChrtcs.deleter
 	def PdctChrtcs(self):
 		del self._PdctChrtcs
-		self._PdctChrtcs = None
+		self._PdctChrtcs = base_types.UninitialisedField(self, 'PdctChrtcs', ProductCharacteristics1Choice, True)
 
 	@property
 	def PdctCtgy(self):
@@ -92,12 +92,12 @@ class LineItemDetails13(base_types._BaseFieldType):
 
 	@PdctCtgy.setter
 	def PdctCtgy(self, value):
-		self._PdctCtgy = value if type(value) != base_types.auto else self.make_default("PdctCtgy")
+		self._PdctCtgy = value if value is not None else base_types.UninitialisedField(self, 'PdctCtgy', ProductCategory1Choice, True)
 
 	@PdctCtgy.deleter
 	def PdctCtgy(self):
 		del self._PdctCtgy
-		self._PdctCtgy = None
+		self._PdctCtgy = base_types.UninitialisedField(self, 'PdctCtgy', ProductCategory1Choice, True)
 
 	@property
 	def PdctIdr(self):
@@ -105,12 +105,12 @@ class LineItemDetails13(base_types._BaseFieldType):
 
 	@PdctIdr.setter
 	def PdctIdr(self, value):
-		self._PdctIdr = value if type(value) != base_types.auto else self.make_default("PdctIdr")
+		self._PdctIdr = value if value is not None else base_types.UninitialisedField(self, 'PdctIdr', ProductIdentifier2Choice, True)
 
 	@PdctIdr.deleter
 	def PdctIdr(self):
 		del self._PdctIdr
-		self._PdctIdr = None
+		self._PdctIdr = base_types.UninitialisedField(self, 'PdctIdr', ProductIdentifier2Choice, True)
 
 	@property
 	def PdctNm(self):
@@ -118,12 +118,12 @@ class LineItemDetails13(base_types._BaseFieldType):
 
 	@PdctNm.setter
 	def PdctNm(self, value):
-		self._PdctNm = value if type(value) != base_types.auto else self.make_default("PdctNm")
+		self._PdctNm = value if value is not None else base_types.UninitialisedField(self, 'PdctNm', Max70Text, False)
 
 	@PdctNm.deleter
 	def PdctNm(self):
 		del self._PdctNm
-		self._PdctNm = None
+		self._PdctNm = base_types.UninitialisedField(self, 'PdctNm', Max70Text, False)
 
 	@property
 	def PdctOrgn(self):
@@ -131,12 +131,12 @@ class LineItemDetails13(base_types._BaseFieldType):
 
 	@PdctOrgn.setter
 	def PdctOrgn(self, value):
-		self._PdctOrgn = value if type(value) != base_types.auto else self.make_default("PdctOrgn")
+		self._PdctOrgn = value if value is not None else base_types.UninitialisedField(self, 'PdctOrgn', CountryCode, True)
 
 	@PdctOrgn.deleter
 	def PdctOrgn(self):
 		del self._PdctOrgn
-		self._PdctOrgn = None
+		self._PdctOrgn = base_types.UninitialisedField(self, 'PdctOrgn', CountryCode, True)
 
 	@property
 	def PricTlrnce(self):
@@ -144,12 +144,12 @@ class LineItemDetails13(base_types._BaseFieldType):
 
 	@PricTlrnce.setter
 	def PricTlrnce(self, value):
-		self._PricTlrnce = value if type(value) != base_types.auto else self.make_default("PricTlrnce")
+		self._PricTlrnce = value if value is not None else base_types.UninitialisedField(self, 'PricTlrnce', PercentageTolerance1, False)
 
 	@PricTlrnce.deleter
 	def PricTlrnce(self):
 		del self._PricTlrnce
-		self._PricTlrnce = None
+		self._PricTlrnce = base_types.UninitialisedField(self, 'PricTlrnce', PercentageTolerance1, False)
 
 	@property
 	def Qty(self):
@@ -157,12 +157,12 @@ class LineItemDetails13(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+		self._Qty = value if value is not None else base_types.UninitialisedField(self, 'Qty', Quantity9, False)
 
 	@Qty.deleter
 	def Qty(self):
 		del self._Qty
-		self._Qty = None
+		self._Qty = base_types.UninitialisedField(self, 'Qty', Quantity9, False)
 
 	@property
 	def QtyTlrnce(self):
@@ -170,12 +170,12 @@ class LineItemDetails13(base_types._BaseFieldType):
 
 	@QtyTlrnce.setter
 	def QtyTlrnce(self, value):
-		self._QtyTlrnce = value if type(value) != base_types.auto else self.make_default("QtyTlrnce")
+		self._QtyTlrnce = value if value is not None else base_types.UninitialisedField(self, 'QtyTlrnce', PercentageTolerance1, False)
 
 	@QtyTlrnce.deleter
 	def QtyTlrnce(self):
 		del self._QtyTlrnce
-		self._QtyTlrnce = None
+		self._QtyTlrnce = base_types.UninitialisedField(self, 'QtyTlrnce', PercentageTolerance1, False)
 
 	@property
 	def RtgSummry(self):
@@ -183,12 +183,12 @@ class LineItemDetails13(base_types._BaseFieldType):
 
 	@RtgSummry.setter
 	def RtgSummry(self, value):
-		self._RtgSummry = value if type(value) != base_types.auto else self.make_default("RtgSummry")
+		self._RtgSummry = value if value is not None else base_types.UninitialisedField(self, 'RtgSummry', TransportMeans5, False)
 
 	@RtgSummry.deleter
 	def RtgSummry(self):
 		del self._RtgSummry
-		self._RtgSummry = None
+		self._RtgSummry = base_types.UninitialisedField(self, 'RtgSummry', TransportMeans5, False)
 
 	@property
 	def ShipmntSchdl(self):
@@ -196,12 +196,12 @@ class LineItemDetails13(base_types._BaseFieldType):
 
 	@ShipmntSchdl.setter
 	def ShipmntSchdl(self, value):
-		self._ShipmntSchdl = value if type(value) != base_types.auto else self.make_default("ShipmntSchdl")
+		self._ShipmntSchdl = value if value is not None else base_types.UninitialisedField(self, 'ShipmntSchdl', ShipmentSchedule2Choice, False)
 
 	@ShipmntSchdl.deleter
 	def ShipmntSchdl(self):
 		del self._ShipmntSchdl
-		self._ShipmntSchdl = None
+		self._ShipmntSchdl = base_types.UninitialisedField(self, 'ShipmntSchdl', ShipmentSchedule2Choice, False)
 
 	@property
 	def Tax(self):
@@ -209,12 +209,12 @@ class LineItemDetails13(base_types._BaseFieldType):
 
 	@Tax.setter
 	def Tax(self, value):
-		self._Tax = value if type(value) != base_types.auto else self.make_default("Tax")
+		self._Tax = value if value is not None else base_types.UninitialisedField(self, 'Tax', Tax23, True)
 
 	@Tax.deleter
 	def Tax(self):
 		del self._Tax
-		self._Tax = None
+		self._Tax = base_types.UninitialisedField(self, 'Tax', Tax23, True)
 
 	@property
 	def TtlAmt(self):
@@ -222,12 +222,12 @@ class LineItemDetails13(base_types._BaseFieldType):
 
 	@TtlAmt.setter
 	def TtlAmt(self, value):
-		self._TtlAmt = value if type(value) != base_types.auto else self.make_default("TtlAmt")
+		self._TtlAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlAmt', CurrencyAndAmount, False)
 
 	@TtlAmt.deleter
 	def TtlAmt(self):
 		del self._TtlAmt
-		self._TtlAmt = None
+		self._TtlAmt = base_types.UninitialisedField(self, 'TtlAmt', CurrencyAndAmount, False)
 
 	@property
 	def UnitPric(self):
@@ -235,12 +235,12 @@ class LineItemDetails13(base_types._BaseFieldType):
 
 	@UnitPric.setter
 	def UnitPric(self, value):
-		self._UnitPric = value if type(value) != base_types.auto else self.make_default("UnitPric")
+		self._UnitPric = value if value is not None else base_types.UninitialisedField(self, 'UnitPric', UnitPrice18, False)
 
 	@UnitPric.deleter
 	def UnitPric(self):
 		del self._UnitPric
-		self._UnitPric = None
+		self._UnitPric = base_types.UninitialisedField(self, 'UnitPric', UnitPrice18, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Adjstmnt', type=Adjustment7, min=0, max=None, mutex_group=None, array=True),

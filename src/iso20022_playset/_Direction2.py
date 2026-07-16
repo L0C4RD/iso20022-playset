@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._OptionParty3Code import OptionParty3Code
+from . import OptionParty3Code
 
 class Direction2(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class Direction2(base_types._BaseFieldType):
 
 	@DrctnOfTheFrstLeg.setter
 	def DrctnOfTheFrstLeg(self, value):
-		self._DrctnOfTheFrstLeg = value if type(value) != base_types.auto else self.make_default("DrctnOfTheFrstLeg")
+		self._DrctnOfTheFrstLeg = value if value is not None else base_types.UninitialisedField(self, 'DrctnOfTheFrstLeg', OptionParty3Code, False)
 
 	@DrctnOfTheFrstLeg.deleter
 	def DrctnOfTheFrstLeg(self):
 		del self._DrctnOfTheFrstLeg
-		self._DrctnOfTheFrstLeg = None
+		self._DrctnOfTheFrstLeg = base_types.UninitialisedField(self, 'DrctnOfTheFrstLeg', OptionParty3Code, False)
 
 	@property
 	def DrctnOfTheScndLeg(self):
@@ -26,12 +26,12 @@ class Direction2(base_types._BaseFieldType):
 
 	@DrctnOfTheScndLeg.setter
 	def DrctnOfTheScndLeg(self, value):
-		self._DrctnOfTheScndLeg = value if type(value) != base_types.auto else self.make_default("DrctnOfTheScndLeg")
+		self._DrctnOfTheScndLeg = value if value is not None else base_types.UninitialisedField(self, 'DrctnOfTheScndLeg', OptionParty3Code, False)
 
 	@DrctnOfTheScndLeg.deleter
 	def DrctnOfTheScndLeg(self):
 		del self._DrctnOfTheScndLeg
-		self._DrctnOfTheScndLeg = None
+		self._DrctnOfTheScndLeg = base_types.UninitialisedField(self, 'DrctnOfTheScndLeg', OptionParty3Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DrctnOfTheFrstLeg', type=OptionParty3Code, min=1, max=1, mutex_group=None, array=False),

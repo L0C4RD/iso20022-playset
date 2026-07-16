@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FeeCollectionResponseV03 import FeeCollectionResponseV03
+from . import FeeCollectionResponseV03
 
 class CAFC_002_001_03():
 
@@ -18,12 +18,12 @@ class CAFC_002_001_03():
 
 		@FeeColltnRspn.setter
 		def FeeColltnRspn(self, value):
-			self._FeeColltnRspn = value if type(value) != base_types.auto else self.make_default("FeeColltnRspn")
+			self._FeeColltnRspn = value if value is not None else base_types.UninitialisedField(self, 'FeeColltnRspn', FeeCollectionResponseV03, False)
 
 		@FeeColltnRspn.deleter
 		def FeeColltnRspn(self):
 			del self._FeeColltnRspn
-			self._FeeColltnRspn = None
+			self._FeeColltnRspn = base_types.UninitialisedField(self, 'FeeColltnRspn', FeeCollectionResponseV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='FeeColltnRspn', type=FeeCollectionResponseV03, min=1, max=1, mutex_group=None, array=False),

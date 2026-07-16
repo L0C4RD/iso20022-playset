@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LanguageCode import LanguageCode
-from ._Number import Number
-from ._OutputFormat1Code import OutputFormat1Code
-from ._UserInterface1Code import UserInterface1Code
+from . import LanguageCode
+from . import Number
+from . import OutputFormat1Code
+from . import UserInterface1Code
 
 class DisplayCapabilities6(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class DisplayCapabilities6(base_types._BaseFieldType):
 
 	@AvlblFrmt.setter
 	def AvlblFrmt(self, value):
-		self._AvlblFrmt = value if type(value) != base_types.auto else self.make_default("AvlblFrmt")
+		self._AvlblFrmt = value if value is not None else base_types.UninitialisedField(self, 'AvlblFrmt', OutputFormat1Code, True)
 
 	@AvlblFrmt.deleter
 	def AvlblFrmt(self):
 		del self._AvlblFrmt
-		self._AvlblFrmt = None
+		self._AvlblFrmt = base_types.UninitialisedField(self, 'AvlblFrmt', OutputFormat1Code, True)
 
 	@property
 	def AvlblLang(self):
@@ -29,12 +29,12 @@ class DisplayCapabilities6(base_types._BaseFieldType):
 
 	@AvlblLang.setter
 	def AvlblLang(self, value):
-		self._AvlblLang = value if type(value) != base_types.auto else self.make_default("AvlblLang")
+		self._AvlblLang = value if value is not None else base_types.UninitialisedField(self, 'AvlblLang', LanguageCode, True)
 
 	@AvlblLang.deleter
 	def AvlblLang(self):
 		del self._AvlblLang
-		self._AvlblLang = None
+		self._AvlblLang = base_types.UninitialisedField(self, 'AvlblLang', LanguageCode, True)
 
 	@property
 	def Dstn(self):
@@ -42,12 +42,12 @@ class DisplayCapabilities6(base_types._BaseFieldType):
 
 	@Dstn.setter
 	def Dstn(self, value):
-		self._Dstn = value if type(value) != base_types.auto else self.make_default("Dstn")
+		self._Dstn = value if value is not None else base_types.UninitialisedField(self, 'Dstn', UserInterface1Code, False)
 
 	@Dstn.deleter
 	def Dstn(self):
 		del self._Dstn
-		self._Dstn = None
+		self._Dstn = base_types.UninitialisedField(self, 'Dstn', UserInterface1Code, False)
 
 	@property
 	def LineWidth(self):
@@ -55,12 +55,12 @@ class DisplayCapabilities6(base_types._BaseFieldType):
 
 	@LineWidth.setter
 	def LineWidth(self, value):
-		self._LineWidth = value if type(value) != base_types.auto else self.make_default("LineWidth")
+		self._LineWidth = value if value is not None else base_types.UninitialisedField(self, 'LineWidth', Number, False)
 
 	@LineWidth.deleter
 	def LineWidth(self):
 		del self._LineWidth
-		self._LineWidth = None
+		self._LineWidth = base_types.UninitialisedField(self, 'LineWidth', Number, False)
 
 	@property
 	def NbOfLines(self):
@@ -68,12 +68,12 @@ class DisplayCapabilities6(base_types._BaseFieldType):
 
 	@NbOfLines.setter
 	def NbOfLines(self, value):
-		self._NbOfLines = value if type(value) != base_types.auto else self.make_default("NbOfLines")
+		self._NbOfLines = value if value is not None else base_types.UninitialisedField(self, 'NbOfLines', Number, False)
 
 	@NbOfLines.deleter
 	def NbOfLines(self):
 		del self._NbOfLines
-		self._NbOfLines = None
+		self._NbOfLines = base_types.UninitialisedField(self, 'NbOfLines', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AvlblFrmt', type=OutputFormat1Code, min=0, max=None, mutex_group=None, array=True),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericOrganisationType1 import GenericOrganisationType1
-from ._RequestedIndicator import RequestedIndicator
+from . import GenericOrganisationType1
+from . import RequestedIndicator
 
 class OrganisationType2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class OrganisationType2(base_types._BaseFieldType):
 
 	@AnyBIC.setter
 	def AnyBIC(self, value):
-		self._AnyBIC = value if type(value) != base_types.auto else self.make_default("AnyBIC")
+		self._AnyBIC = value if value is not None else base_types.UninitialisedField(self, 'AnyBIC', RequestedIndicator, False)
 
 	@AnyBIC.deleter
 	def AnyBIC(self):
 		del self._AnyBIC
-		self._AnyBIC = None
+		self._AnyBIC = base_types.UninitialisedField(self, 'AnyBIC', RequestedIndicator, False)
 
 	@property
 	def EmailAdr(self):
@@ -27,12 +27,12 @@ class OrganisationType2(base_types._BaseFieldType):
 
 	@EmailAdr.setter
 	def EmailAdr(self, value):
-		self._EmailAdr = value if type(value) != base_types.auto else self.make_default("EmailAdr")
+		self._EmailAdr = value if value is not None else base_types.UninitialisedField(self, 'EmailAdr', RequestedIndicator, False)
 
 	@EmailAdr.deleter
 	def EmailAdr(self):
 		del self._EmailAdr
-		self._EmailAdr = None
+		self._EmailAdr = base_types.UninitialisedField(self, 'EmailAdr', RequestedIndicator, False)
 
 	@property
 	def LEI(self):
@@ -40,12 +40,12 @@ class OrganisationType2(base_types._BaseFieldType):
 
 	@LEI.setter
 	def LEI(self, value):
-		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
+		self._LEI = value if value is not None else base_types.UninitialisedField(self, 'LEI', RequestedIndicator, False)
 
 	@LEI.deleter
 	def LEI(self):
 		del self._LEI
-		self._LEI = None
+		self._LEI = base_types.UninitialisedField(self, 'LEI', RequestedIndicator, False)
 
 	@property
 	def Othr(self):
@@ -53,12 +53,12 @@ class OrganisationType2(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', GenericOrganisationType1, True)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', GenericOrganisationType1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AnyBIC', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),

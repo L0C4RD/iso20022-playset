@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._TimeOutNotificationV03 import TimeOutNotificationV03
+from . import TimeOutNotificationV03
 
 class TSMT_040_001_03():
 
@@ -18,12 +18,12 @@ class TSMT_040_001_03():
 
 		@TmOutNtfctn.setter
 		def TmOutNtfctn(self, value):
-			self._TmOutNtfctn = value if type(value) != base_types.auto else self.make_default("TmOutNtfctn")
+			self._TmOutNtfctn = value if value is not None else base_types.UninitialisedField(self, 'TmOutNtfctn', TimeOutNotificationV03, False)
 
 		@TmOutNtfctn.deleter
 		def TmOutNtfctn(self):
 			del self._TmOutNtfctn
-			self._TmOutNtfctn = None
+			self._TmOutNtfctn = base_types.UninitialisedField(self, 'TmOutNtfctn', TimeOutNotificationV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='TmOutNtfctn', type=TimeOutNotificationV03, min=1, max=1, mutex_group=None, array=False),

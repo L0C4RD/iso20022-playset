@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ProprietaryReason4 import ProprietaryReason4
-from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
+from . import ProprietaryReason4
+from . import ProprietaryStatusAndReason6
 
 class ReplacementProcessingStatus10Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ReplacementProcessingStatus10Choice(base_types._BaseFieldType):
 
 	@Accptd.setter
 	def Accptd(self, value):
-		self._Accptd = value if type(value) != base_types.auto else self.make_default("Accptd")
+		self._Accptd = value if value is not None else base_types.UninitialisedField(self, 'Accptd', ProprietaryReason4, False)
 
 	@Accptd.deleter
 	def Accptd(self):
 		del self._Accptd
-		self._Accptd = None
+		self._Accptd = base_types.UninitialisedField(self, 'Accptd', ProprietaryReason4, False)
 
 	@property
 	def Cmpltd(self):
@@ -27,12 +27,12 @@ class ReplacementProcessingStatus10Choice(base_types._BaseFieldType):
 
 	@Cmpltd.setter
 	def Cmpltd(self, value):
-		self._Cmpltd = value if type(value) != base_types.auto else self.make_default("Cmpltd")
+		self._Cmpltd = value if value is not None else base_types.UninitialisedField(self, 'Cmpltd', ProprietaryReason4, False)
 
 	@Cmpltd.deleter
 	def Cmpltd(self):
 		del self._Cmpltd
-		self._Cmpltd = None
+		self._Cmpltd = base_types.UninitialisedField(self, 'Cmpltd', ProprietaryReason4, False)
 
 	@property
 	def Dnd(self):
@@ -40,12 +40,12 @@ class ReplacementProcessingStatus10Choice(base_types._BaseFieldType):
 
 	@Dnd.setter
 	def Dnd(self, value):
-		self._Dnd = value if type(value) != base_types.auto else self.make_default("Dnd")
+		self._Dnd = value if value is not None else base_types.UninitialisedField(self, 'Dnd', ProprietaryReason4, False)
 
 	@Dnd.deleter
 	def Dnd(self):
 		del self._Dnd
-		self._Dnd = None
+		self._Dnd = base_types.UninitialisedField(self, 'Dnd', ProprietaryReason4, False)
 
 	@property
 	def InRpr(self):
@@ -53,12 +53,12 @@ class ReplacementProcessingStatus10Choice(base_types._BaseFieldType):
 
 	@InRpr.setter
 	def InRpr(self, value):
-		self._InRpr = value if type(value) != base_types.auto else self.make_default("InRpr")
+		self._InRpr = value if value is not None else base_types.UninitialisedField(self, 'InRpr', ProprietaryReason4, False)
 
 	@InRpr.deleter
 	def InRpr(self):
 		del self._InRpr
-		self._InRpr = None
+		self._InRpr = base_types.UninitialisedField(self, 'InRpr', ProprietaryReason4, False)
 
 	@property
 	def ModReqd(self):
@@ -66,12 +66,12 @@ class ReplacementProcessingStatus10Choice(base_types._BaseFieldType):
 
 	@ModReqd.setter
 	def ModReqd(self, value):
-		self._ModReqd = value if type(value) != base_types.auto else self.make_default("ModReqd")
+		self._ModReqd = value if value is not None else base_types.UninitialisedField(self, 'ModReqd', ProprietaryReason4, False)
 
 	@ModReqd.deleter
 	def ModReqd(self):
 		del self._ModReqd
-		self._ModReqd = None
+		self._ModReqd = base_types.UninitialisedField(self, 'ModReqd', ProprietaryReason4, False)
 
 	@property
 	def Pdg(self):
@@ -79,12 +79,12 @@ class ReplacementProcessingStatus10Choice(base_types._BaseFieldType):
 
 	@Pdg.setter
 	def Pdg(self, value):
-		self._Pdg = value if type(value) != base_types.auto else self.make_default("Pdg")
+		self._Pdg = value if value is not None else base_types.UninitialisedField(self, 'Pdg', ProprietaryReason4, False)
 
 	@Pdg.deleter
 	def Pdg(self):
 		del self._Pdg
-		self._Pdg = None
+		self._Pdg = base_types.UninitialisedField(self, 'Pdg', ProprietaryReason4, False)
 
 	@property
 	def PrtlRplcmntAccptd(self):
@@ -92,12 +92,12 @@ class ReplacementProcessingStatus10Choice(base_types._BaseFieldType):
 
 	@PrtlRplcmntAccptd.setter
 	def PrtlRplcmntAccptd(self, value):
-		self._PrtlRplcmntAccptd = value if type(value) != base_types.auto else self.make_default("PrtlRplcmntAccptd")
+		self._PrtlRplcmntAccptd = value if value is not None else base_types.UninitialisedField(self, 'PrtlRplcmntAccptd', ProprietaryReason4, False)
 
 	@PrtlRplcmntAccptd.deleter
 	def PrtlRplcmntAccptd(self):
 		del self._PrtlRplcmntAccptd
-		self._PrtlRplcmntAccptd = None
+		self._PrtlRplcmntAccptd = base_types.UninitialisedField(self, 'PrtlRplcmntAccptd', ProprietaryReason4, False)
 
 	@property
 	def PrtrySts(self):
@@ -105,12 +105,12 @@ class ReplacementProcessingStatus10Choice(base_types._BaseFieldType):
 
 	@PrtrySts.setter
 	def PrtrySts(self, value):
-		self._PrtrySts = value if type(value) != base_types.auto else self.make_default("PrtrySts")
+		self._PrtrySts = value if value is not None else base_types.UninitialisedField(self, 'PrtrySts', ProprietaryStatusAndReason6, False)
 
 	@PrtrySts.deleter
 	def PrtrySts(self):
 		del self._PrtrySts
-		self._PrtrySts = None
+		self._PrtrySts = base_types.UninitialisedField(self, 'PrtrySts', ProprietaryStatusAndReason6, False)
 
 	@property
 	def RcvdAtIntrmy(self):
@@ -118,12 +118,12 @@ class ReplacementProcessingStatus10Choice(base_types._BaseFieldType):
 
 	@RcvdAtIntrmy.setter
 	def RcvdAtIntrmy(self, value):
-		self._RcvdAtIntrmy = value if type(value) != base_types.auto else self.make_default("RcvdAtIntrmy")
+		self._RcvdAtIntrmy = value if value is not None else base_types.UninitialisedField(self, 'RcvdAtIntrmy', ProprietaryReason4, False)
 
 	@RcvdAtIntrmy.deleter
 	def RcvdAtIntrmy(self):
 		del self._RcvdAtIntrmy
-		self._RcvdAtIntrmy = None
+		self._RcvdAtIntrmy = base_types.UninitialisedField(self, 'RcvdAtIntrmy', ProprietaryReason4, False)
 
 	@property
 	def RcvdAtStockXchg(self):
@@ -131,12 +131,12 @@ class ReplacementProcessingStatus10Choice(base_types._BaseFieldType):
 
 	@RcvdAtStockXchg.setter
 	def RcvdAtStockXchg(self, value):
-		self._RcvdAtStockXchg = value if type(value) != base_types.auto else self.make_default("RcvdAtStockXchg")
+		self._RcvdAtStockXchg = value if value is not None else base_types.UninitialisedField(self, 'RcvdAtStockXchg', ProprietaryReason4, False)
 
 	@RcvdAtStockXchg.deleter
 	def RcvdAtStockXchg(self):
 		del self._RcvdAtStockXchg
-		self._RcvdAtStockXchg = None
+		self._RcvdAtStockXchg = base_types.UninitialisedField(self, 'RcvdAtStockXchg', ProprietaryReason4, False)
 
 	@property
 	def Rjctd(self):
@@ -144,12 +144,12 @@ class ReplacementProcessingStatus10Choice(base_types._BaseFieldType):
 
 	@Rjctd.setter
 	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
+		self._Rjctd = value if value is not None else base_types.UninitialisedField(self, 'Rjctd', ProprietaryReason4, False)
 
 	@Rjctd.deleter
 	def Rjctd(self):
 		del self._Rjctd
-		self._Rjctd = None
+		self._Rjctd = base_types.UninitialisedField(self, 'Rjctd', ProprietaryReason4, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Accptd', type=ProprietaryReason4, min=0, max=1, mutex_group=1, array=False),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PartyIdentificationAndAccount150 import PartyIdentificationAndAccount150
-from ._PartyIdentificationAndAccount151 import PartyIdentificationAndAccount151
-from ._PartyIdentificationAndAccount152 import PartyIdentificationAndAccount152
-from ._PartyIdentificationAndAccount154 import PartyIdentificationAndAccount154
+from . import PartyIdentificationAndAccount150
+from . import PartyIdentificationAndAccount151
+from . import PartyIdentificationAndAccount152
+from . import PartyIdentificationAndAccount154
 
 class OtherParties32(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class OtherParties32(base_types._BaseFieldType):
 
 	@Invstr.setter
 	def Invstr(self, value):
-		self._Invstr = value if type(value) != base_types.auto else self.make_default("Invstr")
+		self._Invstr = value if value is not None else base_types.UninitialisedField(self, 'Invstr', PartyIdentificationAndAccount150, True)
 
 	@Invstr.deleter
 	def Invstr(self):
 		del self._Invstr
-		self._Invstr = None
+		self._Invstr = base_types.UninitialisedField(self, 'Invstr', PartyIdentificationAndAccount150, True)
 
 	@property
 	def QlfdFrgnIntrmy(self):
@@ -29,12 +29,12 @@ class OtherParties32(base_types._BaseFieldType):
 
 	@QlfdFrgnIntrmy.setter
 	def QlfdFrgnIntrmy(self, value):
-		self._QlfdFrgnIntrmy = value if type(value) != base_types.auto else self.make_default("QlfdFrgnIntrmy")
+		self._QlfdFrgnIntrmy = value if value is not None else base_types.UninitialisedField(self, 'QlfdFrgnIntrmy', PartyIdentificationAndAccount151, False)
 
 	@QlfdFrgnIntrmy.deleter
 	def QlfdFrgnIntrmy(self):
 		del self._QlfdFrgnIntrmy
-		self._QlfdFrgnIntrmy = None
+		self._QlfdFrgnIntrmy = base_types.UninitialisedField(self, 'QlfdFrgnIntrmy', PartyIdentificationAndAccount151, False)
 
 	@property
 	def StockXchg(self):
@@ -42,12 +42,12 @@ class OtherParties32(base_types._BaseFieldType):
 
 	@StockXchg.setter
 	def StockXchg(self, value):
-		self._StockXchg = value if type(value) != base_types.auto else self.make_default("StockXchg")
+		self._StockXchg = value if value is not None else base_types.UninitialisedField(self, 'StockXchg', PartyIdentificationAndAccount152, False)
 
 	@StockXchg.deleter
 	def StockXchg(self):
 		del self._StockXchg
-		self._StockXchg = None
+		self._StockXchg = base_types.UninitialisedField(self, 'StockXchg', PartyIdentificationAndAccount152, False)
 
 	@property
 	def TradRgltr(self):
@@ -55,12 +55,12 @@ class OtherParties32(base_types._BaseFieldType):
 
 	@TradRgltr.setter
 	def TradRgltr(self, value):
-		self._TradRgltr = value if type(value) != base_types.auto else self.make_default("TradRgltr")
+		self._TradRgltr = value if value is not None else base_types.UninitialisedField(self, 'TradRgltr', PartyIdentificationAndAccount152, False)
 
 	@TradRgltr.deleter
 	def TradRgltr(self):
 		del self._TradRgltr
-		self._TradRgltr = None
+		self._TradRgltr = base_types.UninitialisedField(self, 'TradRgltr', PartyIdentificationAndAccount152, False)
 
 	@property
 	def TrptyAgt(self):
@@ -68,12 +68,12 @@ class OtherParties32(base_types._BaseFieldType):
 
 	@TrptyAgt.setter
 	def TrptyAgt(self, value):
-		self._TrptyAgt = value if type(value) != base_types.auto else self.make_default("TrptyAgt")
+		self._TrptyAgt = value if value is not None else base_types.UninitialisedField(self, 'TrptyAgt', PartyIdentificationAndAccount154, False)
 
 	@TrptyAgt.deleter
 	def TrptyAgt(self):
 		del self._TrptyAgt
-		self._TrptyAgt = None
+		self._TrptyAgt = base_types.UninitialisedField(self, 'TrptyAgt', PartyIdentificationAndAccount154, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Invstr', type=PartyIdentificationAndAccount150, min=0, max=None, mutex_group=None, array=True),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Percentage14Rate import Percentage14Rate
+from . import Max35Text
+from . import Percentage14Rate
 
 class QuorumQuantity2Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class QuorumQuantity2Choice(base_types._BaseFieldType):
 
 	@QrmQty.setter
 	def QrmQty(self, value):
-		self._QrmQty = value if type(value) != base_types.auto else self.make_default("QrmQty")
+		self._QrmQty = value if value is not None else base_types.UninitialisedField(self, 'QrmQty', Max35Text, False)
 
 	@QrmQty.deleter
 	def QrmQty(self):
 		del self._QrmQty
-		self._QrmQty = None
+		self._QrmQty = base_types.UninitialisedField(self, 'QrmQty', Max35Text, False)
 
 	@property
 	def QrmQtyPctg(self):
@@ -27,12 +27,12 @@ class QuorumQuantity2Choice(base_types._BaseFieldType):
 
 	@QrmQtyPctg.setter
 	def QrmQtyPctg(self, value):
-		self._QrmQtyPctg = value if type(value) != base_types.auto else self.make_default("QrmQtyPctg")
+		self._QrmQtyPctg = value if value is not None else base_types.UninitialisedField(self, 'QrmQtyPctg', Percentage14Rate, False)
 
 	@QrmQtyPctg.deleter
 	def QrmQtyPctg(self):
 		del self._QrmQtyPctg
-		self._QrmQtyPctg = None
+		self._QrmQtyPctg = base_types.UninitialisedField(self, 'QrmQtyPctg', Percentage14Rate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='QrmQty', type=Max35Text, min=0, max=1, mutex_group=1, array=False),

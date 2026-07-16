@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionDetails1 import CorporateActionDetails1
-from ._FinancialInstitutionIdentification28 import FinancialInstitutionIdentification28
-from ._Pagination1 import Pagination1
-from ._Statement87 import Statement87
-from ._SupplementaryData1 import SupplementaryData1
+from . import CorporateActionDetails1
+from . import FinancialInstitutionIdentification28
+from . import Pagination1
+from . import Statement87
+from . import SupplementaryData1
 
 class BuyerProtectionInstructionReportV01(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class BuyerProtectionInstructionReportV01(base_types._BaseFieldType):
 
 	@CorpActnDtls.setter
 	def CorpActnDtls(self, value):
-		self._CorpActnDtls = value if type(value) != base_types.auto else self.make_default("CorpActnDtls")
+		self._CorpActnDtls = value if value is not None else base_types.UninitialisedField(self, 'CorpActnDtls', CorporateActionDetails1, True)
 
 	@CorpActnDtls.deleter
 	def CorpActnDtls(self):
 		del self._CorpActnDtls
-		self._CorpActnDtls = None
+		self._CorpActnDtls = base_types.UninitialisedField(self, 'CorpActnDtls', CorporateActionDetails1, True)
 
 	@property
 	def FIId(self):
@@ -30,12 +30,12 @@ class BuyerProtectionInstructionReportV01(base_types._BaseFieldType):
 
 	@FIId.setter
 	def FIId(self, value):
-		self._FIId = value if type(value) != base_types.auto else self.make_default("FIId")
+		self._FIId = value if value is not None else base_types.UninitialisedField(self, 'FIId', FinancialInstitutionIdentification28, False)
 
 	@FIId.deleter
 	def FIId(self):
 		del self._FIId
-		self._FIId = None
+		self._FIId = base_types.UninitialisedField(self, 'FIId', FinancialInstitutionIdentification28, False)
 
 	@property
 	def Pgntn(self):
@@ -43,12 +43,12 @@ class BuyerProtectionInstructionReportV01(base_types._BaseFieldType):
 
 	@Pgntn.setter
 	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+		self._Pgntn = value if value is not None else base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@Pgntn.deleter
 	def Pgntn(self):
 		del self._Pgntn
-		self._Pgntn = None
+		self._Pgntn = base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@property
 	def SplmtryData(self):
@@ -56,12 +56,12 @@ class BuyerProtectionInstructionReportV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def StmtGnlDtls(self):
@@ -69,12 +69,12 @@ class BuyerProtectionInstructionReportV01(base_types._BaseFieldType):
 
 	@StmtGnlDtls.setter
 	def StmtGnlDtls(self, value):
-		self._StmtGnlDtls = value if type(value) != base_types.auto else self.make_default("StmtGnlDtls")
+		self._StmtGnlDtls = value if value is not None else base_types.UninitialisedField(self, 'StmtGnlDtls', Statement87, False)
 
 	@StmtGnlDtls.deleter
 	def StmtGnlDtls(self):
 		del self._StmtGnlDtls
-		self._StmtGnlDtls = None
+		self._StmtGnlDtls = base_types.UninitialisedField(self, 'StmtGnlDtls', Statement87, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CorpActnDtls', type=CorporateActionDetails1, min=1, max=None, mutex_group=None, array=True),

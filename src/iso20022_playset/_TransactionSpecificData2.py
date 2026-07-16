@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._FleetLineItem6 import FleetLineItem6
-from ._Max16HexBinaryText import Max16HexBinaryText
+from . import ATICALaxProcessing
+from . import FleetLineItem6
+from . import Max16HexBinaryText
 
 class TransactionSpecificData2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TransactionSpecificData2(base_types._BaseFieldType):
 
 	@FleetLineItm.setter
 	def FleetLineItm(self, value):
-		self._FleetLineItm = value if type(value) != base_types.auto else self.make_default("FleetLineItm")
+		self._FleetLineItm = value if value is not None else base_types.UninitialisedField(self, 'FleetLineItm', FleetLineItem6, True)
 
 	@FleetLineItm.deleter
 	def FleetLineItm(self):
 		del self._FleetLineItm
-		self._FleetLineItm = None
+		self._FleetLineItm = base_types.UninitialisedField(self, 'FleetLineItm', FleetLineItem6, True)
 
 	@property
 	def NtlData(self):
@@ -28,12 +28,12 @@ class TransactionSpecificData2(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def PrvtData(self):
@@ -41,12 +41,12 @@ class TransactionSpecificData2(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def PurchsRstrctn(self):
@@ -54,12 +54,12 @@ class TransactionSpecificData2(base_types._BaseFieldType):
 
 	@PurchsRstrctn.setter
 	def PurchsRstrctn(self, value):
-		self._PurchsRstrctn = value if type(value) != base_types.auto else self.make_default("PurchsRstrctn")
+		self._PurchsRstrctn = value if value is not None else base_types.UninitialisedField(self, 'PurchsRstrctn', Max16HexBinaryText, False)
 
 	@PurchsRstrctn.deleter
 	def PurchsRstrctn(self):
 		del self._PurchsRstrctn
-		self._PurchsRstrctn = None
+		self._PurchsRstrctn = base_types.UninitialisedField(self, 'PurchsRstrctn', Max16HexBinaryText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FleetLineItm', type=FleetLineItem6, min=0, max=None, mutex_group=None, array=True),

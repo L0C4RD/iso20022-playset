@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._ContractRegistrationStatementCriteria1 import ContractRegistrationStatementCriteria1
-from ._Max35Text import Max35Text
-from ._ReportingPeriod4 import ReportingPeriod4
-from ._SupplementaryData1 import SupplementaryData1
-from ._TradeParty6 import TradeParty6
+from . import BranchAndFinancialInstitutionIdentification8
+from . import ContractRegistrationStatementCriteria1
+from . import Max35Text
+from . import ReportingPeriod4
+from . import SupplementaryData1
+from . import TradeParty6
 
 class ContractRegistrationStatementRequest3(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class ContractRegistrationStatementRequest3(base_types._BaseFieldType):
 
 	@RegdCtrctId.setter
 	def RegdCtrctId(self, value):
-		self._RegdCtrctId = value if type(value) != base_types.auto else self.make_default("RegdCtrctId")
+		self._RegdCtrctId = value if value is not None else base_types.UninitialisedField(self, 'RegdCtrctId', Max35Text, False)
 
 	@RegdCtrctId.deleter
 	def RegdCtrctId(self):
 		del self._RegdCtrctId
-		self._RegdCtrctId = None
+		self._RegdCtrctId = base_types.UninitialisedField(self, 'RegdCtrctId', Max35Text, False)
 
 	@property
 	def RegnAgt(self):
@@ -31,12 +31,12 @@ class ContractRegistrationStatementRequest3(base_types._BaseFieldType):
 
 	@RegnAgt.setter
 	def RegnAgt(self, value):
-		self._RegnAgt = value if type(value) != base_types.auto else self.make_default("RegnAgt")
+		self._RegnAgt = value if value is not None else base_types.UninitialisedField(self, 'RegnAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@RegnAgt.deleter
 	def RegnAgt(self):
 		del self._RegnAgt
-		self._RegnAgt = None
+		self._RegnAgt = base_types.UninitialisedField(self, 'RegnAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def RptgPrd(self):
@@ -44,12 +44,12 @@ class ContractRegistrationStatementRequest3(base_types._BaseFieldType):
 
 	@RptgPrd.setter
 	def RptgPrd(self, value):
-		self._RptgPrd = value if type(value) != base_types.auto else self.make_default("RptgPrd")
+		self._RptgPrd = value if value is not None else base_types.UninitialisedField(self, 'RptgPrd', ReportingPeriod4, False)
 
 	@RptgPrd.deleter
 	def RptgPrd(self):
 		del self._RptgPrd
-		self._RptgPrd = None
+		self._RptgPrd = base_types.UninitialisedField(self, 'RptgPrd', ReportingPeriod4, False)
 
 	@property
 	def RptgPty(self):
@@ -57,12 +57,12 @@ class ContractRegistrationStatementRequest3(base_types._BaseFieldType):
 
 	@RptgPty.setter
 	def RptgPty(self, value):
-		self._RptgPty = value if type(value) != base_types.auto else self.make_default("RptgPty")
+		self._RptgPty = value if value is not None else base_types.UninitialisedField(self, 'RptgPty', TradeParty6, False)
 
 	@RptgPty.deleter
 	def RptgPty(self):
 		del self._RptgPty
-		self._RptgPty = None
+		self._RptgPty = base_types.UninitialisedField(self, 'RptgPty', TradeParty6, False)
 
 	@property
 	def RtrCrit(self):
@@ -70,12 +70,12 @@ class ContractRegistrationStatementRequest3(base_types._BaseFieldType):
 
 	@RtrCrit.setter
 	def RtrCrit(self, value):
-		self._RtrCrit = value if type(value) != base_types.auto else self.make_default("RtrCrit")
+		self._RtrCrit = value if value is not None else base_types.UninitialisedField(self, 'RtrCrit', ContractRegistrationStatementCriteria1, False)
 
 	@RtrCrit.deleter
 	def RtrCrit(self):
 		del self._RtrCrit
-		self._RtrCrit = None
+		self._RtrCrit = base_types.UninitialisedField(self, 'RtrCrit', ContractRegistrationStatementCriteria1, False)
 
 	@property
 	def SplmtryData(self):
@@ -83,12 +83,12 @@ class ContractRegistrationStatementRequest3(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def StmtReqId(self):
@@ -96,12 +96,12 @@ class ContractRegistrationStatementRequest3(base_types._BaseFieldType):
 
 	@StmtReqId.setter
 	def StmtReqId(self, value):
-		self._StmtReqId = value if type(value) != base_types.auto else self.make_default("StmtReqId")
+		self._StmtReqId = value if value is not None else base_types.UninitialisedField(self, 'StmtReqId', Max35Text, False)
 
 	@StmtReqId.deleter
 	def StmtReqId(self):
 		del self._StmtReqId
-		self._StmtReqId = None
+		self._StmtReqId = base_types.UninitialisedField(self, 'StmtReqId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RegdCtrctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PortfolioCode5Choice import PortfolioCode5Choice
+from . import PortfolioCode5Choice
 
 class MarginPortfolio3(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class MarginPortfolio3(base_types._BaseFieldType):
 
 	@InitlMrgnPrtflCd.setter
 	def InitlMrgnPrtflCd(self, value):
-		self._InitlMrgnPrtflCd = value if type(value) != base_types.auto else self.make_default("InitlMrgnPrtflCd")
+		self._InitlMrgnPrtflCd = value if value is not None else base_types.UninitialisedField(self, 'InitlMrgnPrtflCd', PortfolioCode5Choice, False)
 
 	@InitlMrgnPrtflCd.deleter
 	def InitlMrgnPrtflCd(self):
 		del self._InitlMrgnPrtflCd
-		self._InitlMrgnPrtflCd = None
+		self._InitlMrgnPrtflCd = base_types.UninitialisedField(self, 'InitlMrgnPrtflCd', PortfolioCode5Choice, False)
 
 	@property
 	def VartnMrgnPrtflCd(self):
@@ -26,12 +26,12 @@ class MarginPortfolio3(base_types._BaseFieldType):
 
 	@VartnMrgnPrtflCd.setter
 	def VartnMrgnPrtflCd(self, value):
-		self._VartnMrgnPrtflCd = value if type(value) != base_types.auto else self.make_default("VartnMrgnPrtflCd")
+		self._VartnMrgnPrtflCd = value if value is not None else base_types.UninitialisedField(self, 'VartnMrgnPrtflCd', PortfolioCode5Choice, False)
 
 	@VartnMrgnPrtflCd.deleter
 	def VartnMrgnPrtflCd(self):
 		del self._VartnMrgnPrtflCd
-		self._VartnMrgnPrtflCd = None
+		self._VartnMrgnPrtflCd = base_types.UninitialisedField(self, 'VartnMrgnPrtflCd', PortfolioCode5Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InitlMrgnPrtflCd', type=PortfolioCode5Choice, min=1, max=1, mutex_group=None, array=False),

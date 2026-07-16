@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Account32 import Account32
-from ._LEIIdentifier import LEIIdentifier
-from ._PartyIdentification125Choice import PartyIdentification125Choice
+from . import Account32
+from . import LEIIdentifier
+from . import PartyIdentification125Choice
 
 class Intermediary47(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Intermediary47(base_types._BaseFieldType):
 
 	@Acct.setter
 	def Acct(self, value):
-		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
+		self._Acct = value if value is not None else base_types.UninitialisedField(self, 'Acct', Account32, False)
 
 	@Acct.deleter
 	def Acct(self):
 		del self._Acct
-		self._Acct = None
+		self._Acct = base_types.UninitialisedField(self, 'Acct', Account32, False)
 
 	@property
 	def Id(self):
@@ -28,12 +28,12 @@ class Intermediary47(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', PartyIdentification125Choice, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', PartyIdentification125Choice, False)
 
 	@property
 	def LglNttyIdr(self):
@@ -41,12 +41,12 @@ class Intermediary47(base_types._BaseFieldType):
 
 	@LglNttyIdr.setter
 	def LglNttyIdr(self, value):
-		self._LglNttyIdr = value if type(value) != base_types.auto else self.make_default("LglNttyIdr")
+		self._LglNttyIdr = value if value is not None else base_types.UninitialisedField(self, 'LglNttyIdr', LEIIdentifier, False)
 
 	@LglNttyIdr.deleter
 	def LglNttyIdr(self):
 		del self._LglNttyIdr
-		self._LglNttyIdr = None
+		self._LglNttyIdr = base_types.UninitialisedField(self, 'LglNttyIdr', LEIIdentifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acct', type=Account32, min=0, max=1, mutex_group=None, array=False),

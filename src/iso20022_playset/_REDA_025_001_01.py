@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._EligibleSecuritiesCreationRequestV01 import EligibleSecuritiesCreationRequestV01
+from . import EligibleSecuritiesCreationRequestV01
 
 class REDA_025_001_01():
 
@@ -18,12 +18,12 @@ class REDA_025_001_01():
 
 		@ElgblSctiesCreReq.setter
 		def ElgblSctiesCreReq(self, value):
-			self._ElgblSctiesCreReq = value if type(value) != base_types.auto else self.make_default("ElgblSctiesCreReq")
+			self._ElgblSctiesCreReq = value if value is not None else base_types.UninitialisedField(self, 'ElgblSctiesCreReq', EligibleSecuritiesCreationRequestV01, False)
 
 		@ElgblSctiesCreReq.deleter
 		def ElgblSctiesCreReq(self):
 			del self._ElgblSctiesCreReq
-			self._ElgblSctiesCreReq = None
+			self._ElgblSctiesCreReq = base_types.UninitialisedField(self, 'ElgblSctiesCreReq', EligibleSecuritiesCreationRequestV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ElgblSctiesCreReq', type=EligibleSecuritiesCreationRequestV01, min=1, max=1, mutex_group=None, array=False),

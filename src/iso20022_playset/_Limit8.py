@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Amount2Choice import Amount2Choice
-from ._CreditDebitCode import CreditDebitCode
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from . import Amount2Choice
+from . import CreditDebitCode
+from . import DateAndDateTime2Choice
 
 class Limit8(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Limit8(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', Amount2Choice, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', Amount2Choice, False)
 
 	@property
 	def CdtDbtInd(self):
@@ -28,12 +28,12 @@ class Limit8(base_types._BaseFieldType):
 
 	@CdtDbtInd.setter
 	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+		self._CdtDbtInd = value if value is not None else base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@CdtDbtInd.deleter
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
-		self._CdtDbtInd = None
+		self._CdtDbtInd = base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@property
 	def StartDtTm(self):
@@ -41,12 +41,12 @@ class Limit8(base_types._BaseFieldType):
 
 	@StartDtTm.setter
 	def StartDtTm(self, value):
-		self._StartDtTm = value if type(value) != base_types.auto else self.make_default("StartDtTm")
+		self._StartDtTm = value if value is not None else base_types.UninitialisedField(self, 'StartDtTm', DateAndDateTime2Choice, False)
 
 	@StartDtTm.deleter
 	def StartDtTm(self):
 		del self._StartDtTm
-		self._StartDtTm = None
+		self._StartDtTm = base_types.UninitialisedField(self, 'StartDtTm', DateAndDateTime2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=Amount2Choice, min=1, max=1, mutex_group=None, array=False),

@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DocumentIdentification57 import DocumentIdentification57
-from ._InstructionProcessingStatus59Choice import InstructionProcessingStatus59Choice
-from ._PartyIdentification143 import PartyIdentification143
-from ._RelatedSettlementInstruction4 import RelatedSettlementInstruction4
-from ._SecuritiesAccountIdentification1Choice import SecuritiesAccountIdentification1Choice
+from . import DocumentIdentification57
+from . import InstructionProcessingStatus59Choice
+from . import PartyIdentification143
+from . import RelatedSettlementInstruction4
+from . import SecuritiesAccountIdentification1Choice
 
 class BuyerProtectionInstructionDetails1(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class BuyerProtectionInstructionDetails1(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', SecuritiesAccountIdentification1Choice, False)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', SecuritiesAccountIdentification1Choice, False)
 
 	@property
 	def BuyrPrtcnInstrId(self):
@@ -30,12 +30,12 @@ class BuyerProtectionInstructionDetails1(base_types._BaseFieldType):
 
 	@BuyrPrtcnInstrId.setter
 	def BuyrPrtcnInstrId(self, value):
-		self._BuyrPrtcnInstrId = value if type(value) != base_types.auto else self.make_default("BuyrPrtcnInstrId")
+		self._BuyrPrtcnInstrId = value if value is not None else base_types.UninitialisedField(self, 'BuyrPrtcnInstrId', DocumentIdentification57, False)
 
 	@BuyrPrtcnInstrId.deleter
 	def BuyrPrtcnInstrId(self):
 		del self._BuyrPrtcnInstrId
-		self._BuyrPrtcnInstrId = None
+		self._BuyrPrtcnInstrId = base_types.UninitialisedField(self, 'BuyrPrtcnInstrId', DocumentIdentification57, False)
 
 	@property
 	def CtrPtyDpstry(self):
@@ -43,12 +43,12 @@ class BuyerProtectionInstructionDetails1(base_types._BaseFieldType):
 
 	@CtrPtyDpstry.setter
 	def CtrPtyDpstry(self, value):
-		self._CtrPtyDpstry = value if type(value) != base_types.auto else self.make_default("CtrPtyDpstry")
+		self._CtrPtyDpstry = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyDpstry', PartyIdentification143, False)
 
 	@CtrPtyDpstry.deleter
 	def CtrPtyDpstry(self):
 		del self._CtrPtyDpstry
-		self._CtrPtyDpstry = None
+		self._CtrPtyDpstry = base_types.UninitialisedField(self, 'CtrPtyDpstry', PartyIdentification143, False)
 
 	@property
 	def InstrPrcgSts(self):
@@ -56,12 +56,12 @@ class BuyerProtectionInstructionDetails1(base_types._BaseFieldType):
 
 	@InstrPrcgSts.setter
 	def InstrPrcgSts(self, value):
-		self._InstrPrcgSts = value if type(value) != base_types.auto else self.make_default("InstrPrcgSts")
+		self._InstrPrcgSts = value if value is not None else base_types.UninitialisedField(self, 'InstrPrcgSts', InstructionProcessingStatus59Choice, False)
 
 	@InstrPrcgSts.deleter
 	def InstrPrcgSts(self):
 		del self._InstrPrcgSts
-		self._InstrPrcgSts = None
+		self._InstrPrcgSts = base_types.UninitialisedField(self, 'InstrPrcgSts', InstructionProcessingStatus59Choice, False)
 
 	@property
 	def RltdSttlmInstrId(self):
@@ -69,12 +69,12 @@ class BuyerProtectionInstructionDetails1(base_types._BaseFieldType):
 
 	@RltdSttlmInstrId.setter
 	def RltdSttlmInstrId(self, value):
-		self._RltdSttlmInstrId = value if type(value) != base_types.auto else self.make_default("RltdSttlmInstrId")
+		self._RltdSttlmInstrId = value if value is not None else base_types.UninitialisedField(self, 'RltdSttlmInstrId', RelatedSettlementInstruction4, False)
 
 	@RltdSttlmInstrId.deleter
 	def RltdSttlmInstrId(self):
 		del self._RltdSttlmInstrId
-		self._RltdSttlmInstrId = None
+		self._RltdSttlmInstrId = base_types.UninitialisedField(self, 'RltdSttlmInstrId', RelatedSettlementInstruction4, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=SecuritiesAccountIdentification1Choice, min=1, max=1, mutex_group=None, array=False),

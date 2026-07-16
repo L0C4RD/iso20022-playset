@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Extended350Code import Extended350Code
-from ._GenericIdentification1 import GenericIdentification1
-from ._NoReasonCode import NoReasonCode
-from ._TransferUnmatchedReason3Code import TransferUnmatchedReason3Code
+from . import Extended350Code
+from . import GenericIdentification1
+from . import NoReasonCode
+from . import TransferUnmatchedReason3Code
 
 class TransferUnmatchedStatus4Choice(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class TransferUnmatchedStatus4Choice(base_types._BaseFieldType):
 
 	@DataSrcSchme.setter
 	def DataSrcSchme(self, value):
-		self._DataSrcSchme = value if type(value) != base_types.auto else self.make_default("DataSrcSchme")
+		self._DataSrcSchme = value if value is not None else base_types.UninitialisedField(self, 'DataSrcSchme', GenericIdentification1, False)
 
 	@DataSrcSchme.deleter
 	def DataSrcSchme(self):
 		del self._DataSrcSchme
-		self._DataSrcSchme = None
+		self._DataSrcSchme = base_types.UninitialisedField(self, 'DataSrcSchme', GenericIdentification1, False)
 
 	@property
 	def NoSpcfdRsn(self):
@@ -29,12 +29,12 @@ class TransferUnmatchedStatus4Choice(base_types._BaseFieldType):
 
 	@NoSpcfdRsn.setter
 	def NoSpcfdRsn(self, value):
-		self._NoSpcfdRsn = value if type(value) != base_types.auto else self.make_default("NoSpcfdRsn")
+		self._NoSpcfdRsn = value if value is not None else base_types.UninitialisedField(self, 'NoSpcfdRsn', NoReasonCode, False)
 
 	@NoSpcfdRsn.deleter
 	def NoSpcfdRsn(self):
 		del self._NoSpcfdRsn
-		self._NoSpcfdRsn = None
+		self._NoSpcfdRsn = base_types.UninitialisedField(self, 'NoSpcfdRsn', NoReasonCode, False)
 
 	@property
 	def Rsn(self):
@@ -42,12 +42,12 @@ class TransferUnmatchedStatus4Choice(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', TransferUnmatchedReason3Code, False)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', TransferUnmatchedReason3Code, False)
 
 	@property
 	def XtndedRsn(self):
@@ -55,12 +55,12 @@ class TransferUnmatchedStatus4Choice(base_types._BaseFieldType):
 
 	@XtndedRsn.setter
 	def XtndedRsn(self, value):
-		self._XtndedRsn = value if type(value) != base_types.auto else self.make_default("XtndedRsn")
+		self._XtndedRsn = value if value is not None else base_types.UninitialisedField(self, 'XtndedRsn', Extended350Code, False)
 
 	@XtndedRsn.deleter
 	def XtndedRsn(self):
 		del self._XtndedRsn
-		self._XtndedRsn = None
+		self._XtndedRsn = base_types.UninitialisedField(self, 'XtndedRsn', Extended350Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DataSrcSchme', type=GenericIdentification1, min=0, max=1, mutex_group=1, array=False),

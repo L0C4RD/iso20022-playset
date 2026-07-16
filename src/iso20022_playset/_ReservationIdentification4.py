@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountIdentification4Choice import AccountIdentification4Choice
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._Max35Text import Max35Text
-from ._ReservationType2Choice import ReservationType2Choice
-from ._SystemIdentification2Choice import SystemIdentification2Choice
+from . import AccountIdentification4Choice
+from . import BranchAndFinancialInstitutionIdentification8
+from . import Max35Text
+from . import ReservationType2Choice
+from . import SystemIdentification2Choice
 
 class ReservationIdentification4(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class ReservationIdentification4(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', AccountIdentification4Choice, False)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', AccountIdentification4Choice, False)
 
 	@property
 	def AcctOwnr(self):
@@ -30,12 +30,12 @@ class ReservationIdentification4(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def RsvatnId(self):
@@ -43,12 +43,12 @@ class ReservationIdentification4(base_types._BaseFieldType):
 
 	@RsvatnId.setter
 	def RsvatnId(self, value):
-		self._RsvatnId = value if type(value) != base_types.auto else self.make_default("RsvatnId")
+		self._RsvatnId = value if value is not None else base_types.UninitialisedField(self, 'RsvatnId', Max35Text, False)
 
 	@RsvatnId.deleter
 	def RsvatnId(self):
 		del self._RsvatnId
-		self._RsvatnId = None
+		self._RsvatnId = base_types.UninitialisedField(self, 'RsvatnId', Max35Text, False)
 
 	@property
 	def SysId(self):
@@ -56,12 +56,12 @@ class ReservationIdentification4(base_types._BaseFieldType):
 
 	@SysId.setter
 	def SysId(self, value):
-		self._SysId = value if type(value) != base_types.auto else self.make_default("SysId")
+		self._SysId = value if value is not None else base_types.UninitialisedField(self, 'SysId', SystemIdentification2Choice, False)
 
 	@SysId.deleter
 	def SysId(self):
 		del self._SysId
-		self._SysId = None
+		self._SysId = base_types.UninitialisedField(self, 'SysId', SystemIdentification2Choice, False)
 
 	@property
 	def Tp(self):
@@ -69,12 +69,12 @@ class ReservationIdentification4(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', ReservationType2Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', ReservationType2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),

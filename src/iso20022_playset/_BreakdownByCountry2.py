@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashInForecast5 import CashInForecast5
-from ._CashOutForecast5 import CashOutForecast5
-from ._CountryCode import CountryCode
-from ._NetCashForecast4 import NetCashForecast4
+from . import CashInForecast5
+from . import CashOutForecast5
+from . import CountryCode
+from . import NetCashForecast4
 
 class BreakdownByCountry2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class BreakdownByCountry2(base_types._BaseFieldType):
 
 	@CshInFcst.setter
 	def CshInFcst(self, value):
-		self._CshInFcst = value if type(value) != base_types.auto else self.make_default("CshInFcst")
+		self._CshInFcst = value if value is not None else base_types.UninitialisedField(self, 'CshInFcst', CashInForecast5, True)
 
 	@CshInFcst.deleter
 	def CshInFcst(self):
 		del self._CshInFcst
-		self._CshInFcst = None
+		self._CshInFcst = base_types.UninitialisedField(self, 'CshInFcst', CashInForecast5, True)
 
 	@property
 	def CshOutFcst(self):
@@ -29,12 +29,12 @@ class BreakdownByCountry2(base_types._BaseFieldType):
 
 	@CshOutFcst.setter
 	def CshOutFcst(self, value):
-		self._CshOutFcst = value if type(value) != base_types.auto else self.make_default("CshOutFcst")
+		self._CshOutFcst = value if value is not None else base_types.UninitialisedField(self, 'CshOutFcst', CashOutForecast5, True)
 
 	@CshOutFcst.deleter
 	def CshOutFcst(self):
 		del self._CshOutFcst
-		self._CshOutFcst = None
+		self._CshOutFcst = base_types.UninitialisedField(self, 'CshOutFcst', CashOutForecast5, True)
 
 	@property
 	def Ctry(self):
@@ -42,12 +42,12 @@ class BreakdownByCountry2(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@property
 	def NetCshFcst(self):
@@ -55,12 +55,12 @@ class BreakdownByCountry2(base_types._BaseFieldType):
 
 	@NetCshFcst.setter
 	def NetCshFcst(self, value):
-		self._NetCshFcst = value if type(value) != base_types.auto else self.make_default("NetCshFcst")
+		self._NetCshFcst = value if value is not None else base_types.UninitialisedField(self, 'NetCshFcst', NetCashForecast4, True)
 
 	@NetCshFcst.deleter
 	def NetCshFcst(self):
 		del self._NetCshFcst
-		self._NetCshFcst = None
+		self._NetCshFcst = base_types.UninitialisedField(self, 'NetCshFcst', NetCashForecast4, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshInFcst', type=CashInForecast5, min=0, max=None, mutex_group=None, array=True),

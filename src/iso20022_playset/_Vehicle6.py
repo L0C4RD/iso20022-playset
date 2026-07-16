@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardDataReading5Code import CardDataReading5Code
-from ._DecimalNumber import DecimalNumber
-from ._Max10Text import Max10Text
-from ._Max35NumericText import Max35NumericText
-from ._Max35Text import Max35Text
-from ._OnBoardDiagnostics1 import OnBoardDiagnostics1
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._Vehicle2 import Vehicle2
+from . import CardDataReading5Code
+from . import DecimalNumber
+from . import Max10Text
+from . import Max35NumericText
+from . import Max35Text
+from . import OnBoardDiagnostics1
+from . import TrueFalseIndicator
+from . import Vehicle2
 
 class Vehicle6(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class Vehicle6(base_types._BaseFieldType):
 
 	@AddtlData.setter
 	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+		self._AddtlData = value if value is not None else base_types.UninitialisedField(self, 'AddtlData', Vehicle2, True)
 
 	@AddtlData.deleter
 	def AddtlData(self):
 		del self._AddtlData
-		self._AddtlData = None
+		self._AddtlData = base_types.UninitialisedField(self, 'AddtlData', Vehicle2, True)
 
 	@property
 	def FleetNb(self):
@@ -33,12 +33,12 @@ class Vehicle6(base_types._BaseFieldType):
 
 	@FleetNb.setter
 	def FleetNb(self, value):
-		self._FleetNb = value if type(value) != base_types.auto else self.make_default("FleetNb")
+		self._FleetNb = value if value is not None else base_types.UninitialisedField(self, 'FleetNb', Max10Text, False)
 
 	@FleetNb.deleter
 	def FleetNb(self):
 		del self._FleetNb
-		self._FleetNb = None
+		self._FleetNb = base_types.UninitialisedField(self, 'FleetNb', Max10Text, False)
 
 	@property
 	def Hbmtr(self):
@@ -46,12 +46,12 @@ class Vehicle6(base_types._BaseFieldType):
 
 	@Hbmtr.setter
 	def Hbmtr(self, value):
-		self._Hbmtr = value if type(value) != base_types.auto else self.make_default("Hbmtr")
+		self._Hbmtr = value if value is not None else base_types.UninitialisedField(self, 'Hbmtr', DecimalNumber, False)
 
 	@Hbmtr.deleter
 	def Hbmtr(self):
 		del self._Hbmtr
-		self._Hbmtr = None
+		self._Hbmtr = base_types.UninitialisedField(self, 'Hbmtr', DecimalNumber, False)
 
 	@property
 	def IdNb(self):
@@ -59,12 +59,12 @@ class Vehicle6(base_types._BaseFieldType):
 
 	@IdNb.setter
 	def IdNb(self, value):
-		self._IdNb = value if type(value) != base_types.auto else self.make_default("IdNb")
+		self._IdNb = value if value is not None else base_types.UninitialisedField(self, 'IdNb', Max35NumericText, False)
 
 	@IdNb.deleter
 	def IdNb(self):
 		del self._IdNb
-		self._IdNb = None
+		self._IdNb = base_types.UninitialisedField(self, 'IdNb', Max35NumericText, False)
 
 	@property
 	def MntncId(self):
@@ -72,12 +72,12 @@ class Vehicle6(base_types._BaseFieldType):
 
 	@MntncId.setter
 	def MntncId(self, value):
-		self._MntncId = value if type(value) != base_types.auto else self.make_default("MntncId")
+		self._MntncId = value if value is not None else base_types.UninitialisedField(self, 'MntncId', Max35Text, False)
 
 	@MntncId.deleter
 	def MntncId(self):
 		del self._MntncId
-		self._MntncId = None
+		self._MntncId = base_types.UninitialisedField(self, 'MntncId', Max35Text, False)
 
 	@property
 	def Nb(self):
@@ -85,12 +85,12 @@ class Vehicle6(base_types._BaseFieldType):
 
 	@Nb.setter
 	def Nb(self, value):
-		self._Nb = value if type(value) != base_types.auto else self.make_default("Nb")
+		self._Nb = value if value is not None else base_types.UninitialisedField(self, 'Nb', Max35NumericText, False)
 
 	@Nb.deleter
 	def Nb(self):
 		del self._Nb
-		self._Nb = None
+		self._Nb = base_types.UninitialisedField(self, 'Nb', Max35NumericText, False)
 
 	@property
 	def Odmtr(self):
@@ -98,12 +98,12 @@ class Vehicle6(base_types._BaseFieldType):
 
 	@Odmtr.setter
 	def Odmtr(self, value):
-		self._Odmtr = value if type(value) != base_types.auto else self.make_default("Odmtr")
+		self._Odmtr = value if value is not None else base_types.UninitialisedField(self, 'Odmtr', DecimalNumber, False)
 
 	@Odmtr.deleter
 	def Odmtr(self):
 		del self._Odmtr
-		self._Odmtr = None
+		self._Odmtr = base_types.UninitialisedField(self, 'Odmtr', DecimalNumber, False)
 
 	@property
 	def OnBrdDgnstcs(self):
@@ -111,12 +111,12 @@ class Vehicle6(base_types._BaseFieldType):
 
 	@OnBrdDgnstcs.setter
 	def OnBrdDgnstcs(self, value):
-		self._OnBrdDgnstcs = value if type(value) != base_types.auto else self.make_default("OnBrdDgnstcs")
+		self._OnBrdDgnstcs = value if value is not None else base_types.UninitialisedField(self, 'OnBrdDgnstcs', OnBoardDiagnostics1, False)
 
 	@OnBrdDgnstcs.deleter
 	def OnBrdDgnstcs(self):
 		del self._OnBrdDgnstcs
-		self._OnBrdDgnstcs = None
+		self._OnBrdDgnstcs = base_types.UninitialisedField(self, 'OnBrdDgnstcs', OnBoardDiagnostics1, False)
 
 	@property
 	def Rplcmnt(self):
@@ -124,12 +124,12 @@ class Vehicle6(base_types._BaseFieldType):
 
 	@Rplcmnt.setter
 	def Rplcmnt(self, value):
-		self._Rplcmnt = value if type(value) != base_types.auto else self.make_default("Rplcmnt")
+		self._Rplcmnt = value if value is not None else base_types.UninitialisedField(self, 'Rplcmnt', TrueFalseIndicator, False)
 
 	@Rplcmnt.deleter
 	def Rplcmnt(self):
 		del self._Rplcmnt
-		self._Rplcmnt = None
+		self._Rplcmnt = base_types.UninitialisedField(self, 'Rplcmnt', TrueFalseIndicator, False)
 
 	@property
 	def SubFleetNb(self):
@@ -137,12 +137,12 @@ class Vehicle6(base_types._BaseFieldType):
 
 	@SubFleetNb.setter
 	def SubFleetNb(self, value):
-		self._SubFleetNb = value if type(value) != base_types.auto else self.make_default("SubFleetNb")
+		self._SubFleetNb = value if value is not None else base_types.UninitialisedField(self, 'SubFleetNb', Max35Text, False)
 
 	@SubFleetNb.deleter
 	def SubFleetNb(self):
 		del self._SubFleetNb
-		self._SubFleetNb = None
+		self._SubFleetNb = base_types.UninitialisedField(self, 'SubFleetNb', Max35Text, False)
 
 	@property
 	def Tag(self):
@@ -150,12 +150,12 @@ class Vehicle6(base_types._BaseFieldType):
 
 	@Tag.setter
 	def Tag(self, value):
-		self._Tag = value if type(value) != base_types.auto else self.make_default("Tag")
+		self._Tag = value if value is not None else base_types.UninitialisedField(self, 'Tag', Max35Text, False)
 
 	@Tag.deleter
 	def Tag(self):
 		del self._Tag
-		self._Tag = None
+		self._Tag = base_types.UninitialisedField(self, 'Tag', Max35Text, False)
 
 	@property
 	def TagNtryMd(self):
@@ -163,12 +163,12 @@ class Vehicle6(base_types._BaseFieldType):
 
 	@TagNtryMd.setter
 	def TagNtryMd(self, value):
-		self._TagNtryMd = value if type(value) != base_types.auto else self.make_default("TagNtryMd")
+		self._TagNtryMd = value if value is not None else base_types.UninitialisedField(self, 'TagNtryMd', CardDataReading5Code, False)
 
 	@TagNtryMd.deleter
 	def TagNtryMd(self):
 		del self._TagNtryMd
-		self._TagNtryMd = None
+		self._TagNtryMd = base_types.UninitialisedField(self, 'TagNtryMd', CardDataReading5Code, False)
 
 	@property
 	def TrlrNb(self):
@@ -176,12 +176,12 @@ class Vehicle6(base_types._BaseFieldType):
 
 	@TrlrNb.setter
 	def TrlrNb(self, value):
-		self._TrlrNb = value if type(value) != base_types.auto else self.make_default("TrlrNb")
+		self._TrlrNb = value if value is not None else base_types.UninitialisedField(self, 'TrlrNb', Max35NumericText, False)
 
 	@TrlrNb.deleter
 	def TrlrNb(self):
 		del self._TrlrNb
-		self._TrlrNb = None
+		self._TrlrNb = base_types.UninitialisedField(self, 'TrlrNb', Max35NumericText, False)
 
 	@property
 	def UnitNb(self):
@@ -189,12 +189,12 @@ class Vehicle6(base_types._BaseFieldType):
 
 	@UnitNb.setter
 	def UnitNb(self, value):
-		self._UnitNb = value if type(value) != base_types.auto else self.make_default("UnitNb")
+		self._UnitNb = value if value is not None else base_types.UninitialisedField(self, 'UnitNb', Max35NumericText, False)
 
 	@UnitNb.deleter
 	def UnitNb(self):
 		del self._UnitNb
-		self._UnitNb = None
+		self._UnitNb = base_types.UninitialisedField(self, 'UnitNb', Max35NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlData', type=Vehicle2, min=0, max=None, mutex_group=None, array=True),

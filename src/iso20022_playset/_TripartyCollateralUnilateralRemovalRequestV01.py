@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CollateralRole1Code import CollateralRole1Code
-from ._Max35Text import Max35Text
-from ._Pagination1 import Pagination1
-from ._PartyIdentification232 import PartyIdentification232
-from ._RequestDetails28 import RequestDetails28
-from ._SupplementaryData1 import SupplementaryData1
+from . import CollateralRole1Code
+from . import Max35Text
+from . import Pagination1
+from . import PartyIdentification232
+from . import RequestDetails28
+from . import SupplementaryData1
 
 class TripartyCollateralUnilateralRemovalRequestV01(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class TripartyCollateralUnilateralRemovalRequestV01(base_types._BaseFieldType):
 
 	@ClntPtyA.setter
 	def ClntPtyA(self, value):
-		self._ClntPtyA = value if type(value) != base_types.auto else self.make_default("ClntPtyA")
+		self._ClntPtyA = value if value is not None else base_types.UninitialisedField(self, 'ClntPtyA', PartyIdentification232, False)
 
 	@ClntPtyA.deleter
 	def ClntPtyA(self):
 		del self._ClntPtyA
-		self._ClntPtyA = None
+		self._ClntPtyA = base_types.UninitialisedField(self, 'ClntPtyA', PartyIdentification232, False)
 
 	@property
 	def CollSd(self):
@@ -31,12 +31,12 @@ class TripartyCollateralUnilateralRemovalRequestV01(base_types._BaseFieldType):
 
 	@CollSd.setter
 	def CollSd(self, value):
-		self._CollSd = value if type(value) != base_types.auto else self.make_default("CollSd")
+		self._CollSd = value if value is not None else base_types.UninitialisedField(self, 'CollSd', CollateralRole1Code, False)
 
 	@CollSd.deleter
 	def CollSd(self):
 		del self._CollSd
-		self._CollSd = None
+		self._CollSd = base_types.UninitialisedField(self, 'CollSd', CollateralRole1Code, False)
 
 	@property
 	def Pgntn(self):
@@ -44,12 +44,12 @@ class TripartyCollateralUnilateralRemovalRequestV01(base_types._BaseFieldType):
 
 	@Pgntn.setter
 	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+		self._Pgntn = value if value is not None else base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@Pgntn.deleter
 	def Pgntn(self):
 		del self._Pgntn
-		self._Pgntn = None
+		self._Pgntn = base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@property
 	def PtyA(self):
@@ -57,12 +57,12 @@ class TripartyCollateralUnilateralRemovalRequestV01(base_types._BaseFieldType):
 
 	@PtyA.setter
 	def PtyA(self, value):
-		self._PtyA = value if type(value) != base_types.auto else self.make_default("PtyA")
+		self._PtyA = value if value is not None else base_types.UninitialisedField(self, 'PtyA', PartyIdentification232, False)
 
 	@PtyA.deleter
 	def PtyA(self):
 		del self._PtyA
-		self._PtyA = None
+		self._PtyA = base_types.UninitialisedField(self, 'PtyA', PartyIdentification232, False)
 
 	@property
 	def ReqDtls(self):
@@ -70,12 +70,12 @@ class TripartyCollateralUnilateralRemovalRequestV01(base_types._BaseFieldType):
 
 	@ReqDtls.setter
 	def ReqDtls(self, value):
-		self._ReqDtls = value if type(value) != base_types.auto else self.make_default("ReqDtls")
+		self._ReqDtls = value if value is not None else base_types.UninitialisedField(self, 'ReqDtls', RequestDetails28, False)
 
 	@ReqDtls.deleter
 	def ReqDtls(self):
 		del self._ReqDtls
-		self._ReqDtls = None
+		self._ReqDtls = base_types.UninitialisedField(self, 'ReqDtls', RequestDetails28, False)
 
 	@property
 	def RmvlReqId(self):
@@ -83,12 +83,12 @@ class TripartyCollateralUnilateralRemovalRequestV01(base_types._BaseFieldType):
 
 	@RmvlReqId.setter
 	def RmvlReqId(self, value):
-		self._RmvlReqId = value if type(value) != base_types.auto else self.make_default("RmvlReqId")
+		self._RmvlReqId = value if value is not None else base_types.UninitialisedField(self, 'RmvlReqId', Max35Text, False)
 
 	@RmvlReqId.deleter
 	def RmvlReqId(self):
 		del self._RmvlReqId
-		self._RmvlReqId = None
+		self._RmvlReqId = base_types.UninitialisedField(self, 'RmvlReqId', Max35Text, False)
 
 	@property
 	def SplmtryData(self):
@@ -96,12 +96,12 @@ class TripartyCollateralUnilateralRemovalRequestV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, False)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClntPtyA', type=PartyIdentification232, min=0, max=1, mutex_group=None, array=False),

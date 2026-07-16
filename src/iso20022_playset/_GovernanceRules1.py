@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GovernanceIdentification1Choice import GovernanceIdentification1Choice
-from ._Location1 import Location1
+from . import GovernanceIdentification1Choice
+from . import Location1
 
 class GovernanceRules1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class GovernanceRules1(base_types._BaseFieldType):
 
 	@AplblLaw.setter
 	def AplblLaw(self, value):
-		self._AplblLaw = value if type(value) != base_types.auto else self.make_default("AplblLaw")
+		self._AplblLaw = value if value is not None else base_types.UninitialisedField(self, 'AplblLaw', Location1, False)
 
 	@AplblLaw.deleter
 	def AplblLaw(self):
 		del self._AplblLaw
-		self._AplblLaw = None
+		self._AplblLaw = base_types.UninitialisedField(self, 'AplblLaw', Location1, False)
 
 	@property
 	def Jursdctn(self):
@@ -27,12 +27,12 @@ class GovernanceRules1(base_types._BaseFieldType):
 
 	@Jursdctn.setter
 	def Jursdctn(self, value):
-		self._Jursdctn = value if type(value) != base_types.auto else self.make_default("Jursdctn")
+		self._Jursdctn = value if value is not None else base_types.UninitialisedField(self, 'Jursdctn', Location1, True)
 
 	@Jursdctn.deleter
 	def Jursdctn(self):
 		del self._Jursdctn
-		self._Jursdctn = None
+		self._Jursdctn = base_types.UninitialisedField(self, 'Jursdctn', Location1, True)
 
 	@property
 	def RuleId(self):
@@ -40,12 +40,12 @@ class GovernanceRules1(base_types._BaseFieldType):
 
 	@RuleId.setter
 	def RuleId(self, value):
-		self._RuleId = value if type(value) != base_types.auto else self.make_default("RuleId")
+		self._RuleId = value if value is not None else base_types.UninitialisedField(self, 'RuleId', GovernanceIdentification1Choice, False)
 
 	@RuleId.deleter
 	def RuleId(self):
 		del self._RuleId
-		self._RuleId = None
+		self._RuleId = base_types.UninitialisedField(self, 'RuleId', GovernanceIdentification1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AplblLaw', type=Location1, min=0, max=1, mutex_group=None, array=False),

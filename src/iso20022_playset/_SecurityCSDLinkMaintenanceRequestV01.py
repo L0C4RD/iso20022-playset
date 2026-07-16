@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MessageHeader1 import MessageHeader1
-from ._SecurityCSDLink9 import SecurityCSDLink9
-from ._SecurityCSDLinkUpdate3 import SecurityCSDLinkUpdate3
-from ._SupplementaryData1 import SupplementaryData1
+from . import MessageHeader1
+from . import SecurityCSDLink9
+from . import SecurityCSDLinkUpdate3
+from . import SupplementaryData1
 
 class SecurityCSDLinkMaintenanceRequestV01(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class SecurityCSDLinkMaintenanceRequestV01(base_types._BaseFieldType):
 
 	@MsgHdr.setter
 	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
+		self._MsgHdr = value if value is not None else base_types.UninitialisedField(self, 'MsgHdr', MessageHeader1, False)
 
 	@MsgHdr.deleter
 	def MsgHdr(self):
 		del self._MsgHdr
-		self._MsgHdr = None
+		self._MsgHdr = base_types.UninitialisedField(self, 'MsgHdr', MessageHeader1, False)
 
 	@property
 	def SctyCSDLkId(self):
@@ -29,12 +29,12 @@ class SecurityCSDLinkMaintenanceRequestV01(base_types._BaseFieldType):
 
 	@SctyCSDLkId.setter
 	def SctyCSDLkId(self, value):
-		self._SctyCSDLkId = value if type(value) != base_types.auto else self.make_default("SctyCSDLkId")
+		self._SctyCSDLkId = value if value is not None else base_types.UninitialisedField(self, 'SctyCSDLkId', SecurityCSDLink9, False)
 
 	@SctyCSDLkId.deleter
 	def SctyCSDLkId(self):
 		del self._SctyCSDLkId
-		self._SctyCSDLkId = None
+		self._SctyCSDLkId = base_types.UninitialisedField(self, 'SctyCSDLkId', SecurityCSDLink9, False)
 
 	@property
 	def SplmtryData(self):
@@ -42,12 +42,12 @@ class SecurityCSDLinkMaintenanceRequestV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def Upd(self):
@@ -55,12 +55,12 @@ class SecurityCSDLinkMaintenanceRequestV01(base_types._BaseFieldType):
 
 	@Upd.setter
 	def Upd(self, value):
-		self._Upd = value if type(value) != base_types.auto else self.make_default("Upd")
+		self._Upd = value if value is not None else base_types.UninitialisedField(self, 'Upd', SecurityCSDLinkUpdate3, False)
 
 	@Upd.deleter
 	def Upd(self):
 		del self._Upd
-		self._Upd = None
+		self._Upd = base_types.UninitialisedField(self, 'Upd', SecurityCSDLinkUpdate3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=0, max=1, mutex_group=None, array=False),

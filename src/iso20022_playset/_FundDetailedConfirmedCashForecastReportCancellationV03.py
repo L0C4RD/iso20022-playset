@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalReference3 import AdditionalReference3
-from ._FundDetailedConfirmedCashForecastReport3 import FundDetailedConfirmedCashForecastReport3
-from ._MessageIdentification1 import MessageIdentification1
-from ._Pagination import Pagination
+from . import AdditionalReference3
+from . import FundDetailedConfirmedCashForecastReport3
+from . import MessageIdentification1
+from . import Pagination
 
 class FundDetailedConfirmedCashForecastReportCancellationV03(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class FundDetailedConfirmedCashForecastReportCancellationV03(base_types._BaseFie
 
 	@CshFcstRptToBeCanc.setter
 	def CshFcstRptToBeCanc(self, value):
-		self._CshFcstRptToBeCanc = value if type(value) != base_types.auto else self.make_default("CshFcstRptToBeCanc")
+		self._CshFcstRptToBeCanc = value if value is not None else base_types.UninitialisedField(self, 'CshFcstRptToBeCanc', FundDetailedConfirmedCashForecastReport3, False)
 
 	@CshFcstRptToBeCanc.deleter
 	def CshFcstRptToBeCanc(self):
 		del self._CshFcstRptToBeCanc
-		self._CshFcstRptToBeCanc = None
+		self._CshFcstRptToBeCanc = base_types.UninitialisedField(self, 'CshFcstRptToBeCanc', FundDetailedConfirmedCashForecastReport3, False)
 
 	@property
 	def MsgId(self):
@@ -29,12 +29,12 @@ class FundDetailedConfirmedCashForecastReportCancellationV03(base_types._BaseFie
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@property
 	def MsgPgntn(self):
@@ -42,12 +42,12 @@ class FundDetailedConfirmedCashForecastReportCancellationV03(base_types._BaseFie
 
 	@MsgPgntn.setter
 	def MsgPgntn(self, value):
-		self._MsgPgntn = value if type(value) != base_types.auto else self.make_default("MsgPgntn")
+		self._MsgPgntn = value if value is not None else base_types.UninitialisedField(self, 'MsgPgntn', Pagination, False)
 
 	@MsgPgntn.deleter
 	def MsgPgntn(self):
 		del self._MsgPgntn
-		self._MsgPgntn = None
+		self._MsgPgntn = base_types.UninitialisedField(self, 'MsgPgntn', Pagination, False)
 
 	@property
 	def PoolRef(self):
@@ -55,12 +55,12 @@ class FundDetailedConfirmedCashForecastReportCancellationV03(base_types._BaseFie
 
 	@PoolRef.setter
 	def PoolRef(self, value):
-		self._PoolRef = value if type(value) != base_types.auto else self.make_default("PoolRef")
+		self._PoolRef = value if value is not None else base_types.UninitialisedField(self, 'PoolRef', AdditionalReference3, False)
 
 	@PoolRef.deleter
 	def PoolRef(self):
 		del self._PoolRef
-		self._PoolRef = None
+		self._PoolRef = base_types.UninitialisedField(self, 'PoolRef', AdditionalReference3, False)
 
 	@property
 	def PrvsRef(self):
@@ -68,12 +68,12 @@ class FundDetailedConfirmedCashForecastReportCancellationV03(base_types._BaseFie
 
 	@PrvsRef.setter
 	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
+		self._PrvsRef = value if value is not None else base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference3, False)
 
 	@PrvsRef.deleter
 	def PrvsRef(self):
 		del self._PrvsRef
-		self._PrvsRef = None
+		self._PrvsRef = base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference3, False)
 
 	@property
 	def RltdRef(self):
@@ -81,12 +81,12 @@ class FundDetailedConfirmedCashForecastReportCancellationV03(base_types._BaseFie
 
 	@RltdRef.setter
 	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
+		self._RltdRef = value if value is not None else base_types.UninitialisedField(self, 'RltdRef', AdditionalReference3, True)
 
 	@RltdRef.deleter
 	def RltdRef(self):
 		del self._RltdRef
-		self._RltdRef = None
+		self._RltdRef = base_types.UninitialisedField(self, 'RltdRef', AdditionalReference3, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshFcstRptToBeCanc', type=FundDetailedConfirmedCashForecastReport3, min=0, max=1, mutex_group=None, array=False),

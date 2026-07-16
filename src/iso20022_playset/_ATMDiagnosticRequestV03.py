@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMDiagnosticRequest3 import ATMDiagnosticRequest3
-from ._ContentInformationType10 import ContentInformationType10
-from ._ContentInformationType15 import ContentInformationType15
-from ._Header31 import Header31
+from . import ATMDiagnosticRequest3
+from . import ContentInformationType10
+from . import ContentInformationType15
+from . import Header31
 
 class ATMDiagnosticRequestV03(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ATMDiagnosticRequestV03(base_types._BaseFieldType):
 
 	@ATMDgnstcReq.setter
 	def ATMDgnstcReq(self, value):
-		self._ATMDgnstcReq = value if type(value) != base_types.auto else self.make_default("ATMDgnstcReq")
+		self._ATMDgnstcReq = value if value is not None else base_types.UninitialisedField(self, 'ATMDgnstcReq', ATMDiagnosticRequest3, False)
 
 	@ATMDgnstcReq.deleter
 	def ATMDgnstcReq(self):
 		del self._ATMDgnstcReq
-		self._ATMDgnstcReq = None
+		self._ATMDgnstcReq = base_types.UninitialisedField(self, 'ATMDgnstcReq', ATMDiagnosticRequest3, False)
 
 	@property
 	def Hdr(self):
@@ -29,12 +29,12 @@ class ATMDiagnosticRequestV03(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header31, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header31, False)
 
 	@property
 	def PrtctdATMDgnstcReq(self):
@@ -42,12 +42,12 @@ class ATMDiagnosticRequestV03(base_types._BaseFieldType):
 
 	@PrtctdATMDgnstcReq.setter
 	def PrtctdATMDgnstcReq(self, value):
-		self._PrtctdATMDgnstcReq = value if type(value) != base_types.auto else self.make_default("PrtctdATMDgnstcReq")
+		self._PrtctdATMDgnstcReq = value if value is not None else base_types.UninitialisedField(self, 'PrtctdATMDgnstcReq', ContentInformationType10, False)
 
 	@PrtctdATMDgnstcReq.deleter
 	def PrtctdATMDgnstcReq(self):
 		del self._PrtctdATMDgnstcReq
-		self._PrtctdATMDgnstcReq = None
+		self._PrtctdATMDgnstcReq = base_types.UninitialisedField(self, 'PrtctdATMDgnstcReq', ContentInformationType10, False)
 
 	@property
 	def SctyTrlr(self):
@@ -55,12 +55,12 @@ class ATMDiagnosticRequestV03(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType15, False)
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
 		del self._SctyTrlr
-		self._SctyTrlr = None
+		self._SctyTrlr = base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType15, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ATMDgnstcReq', type=ATMDiagnosticRequest3, min=0, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMContext26 import ATMContext26
-from ._ATMEnvironment17 import ATMEnvironment17
-from ._ATMTransaction42 import ATMTransaction42
+from . import ATMContext26
+from . import ATMEnvironment17
+from . import ATMTransaction42
 
 class ATMInquiryRequest3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ATMInquiryRequest3(base_types._BaseFieldType):
 
 	@Cntxt.setter
 	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != base_types.auto else self.make_default("Cntxt")
+		self._Cntxt = value if value is not None else base_types.UninitialisedField(self, 'Cntxt', ATMContext26, False)
 
 	@Cntxt.deleter
 	def Cntxt(self):
 		del self._Cntxt
-		self._Cntxt = None
+		self._Cntxt = base_types.UninitialisedField(self, 'Cntxt', ATMContext26, False)
 
 	@property
 	def Envt(self):
@@ -28,12 +28,12 @@ class ATMInquiryRequest3(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+		self._Envt = value if value is not None else base_types.UninitialisedField(self, 'Envt', ATMEnvironment17, False)
 
 	@Envt.deleter
 	def Envt(self):
 		del self._Envt
-		self._Envt = None
+		self._Envt = base_types.UninitialisedField(self, 'Envt', ATMEnvironment17, False)
 
 	@property
 	def Tx(self):
@@ -41,12 +41,12 @@ class ATMInquiryRequest3(base_types._BaseFieldType):
 
 	@Tx.setter
 	def Tx(self, value):
-		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
+		self._Tx = value if value is not None else base_types.UninitialisedField(self, 'Tx', ATMTransaction42, False)
 
 	@Tx.deleter
 	def Tx(self):
 		del self._Tx
-		self._Tx = None
+		self._Tx = base_types.UninitialisedField(self, 'Tx', ATMTransaction42, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cntxt', type=ATMContext26, min=1, max=1, mutex_group=None, array=False),

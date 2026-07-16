@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RiskAssessment4 import RiskAssessment4
-from ._RiskInputData3 import RiskInputData3
+from . import RiskAssessment4
+from . import RiskInputData3
 
 class RiskContext4(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class RiskContext4(base_types._BaseFieldType):
 
 	@Assmnt.setter
 	def Assmnt(self, value):
-		self._Assmnt = value if type(value) != base_types.auto else self.make_default("Assmnt")
+		self._Assmnt = value if value is not None else base_types.UninitialisedField(self, 'Assmnt', RiskAssessment4, True)
 
 	@Assmnt.deleter
 	def Assmnt(self):
 		del self._Assmnt
-		self._Assmnt = None
+		self._Assmnt = base_types.UninitialisedField(self, 'Assmnt', RiskAssessment4, True)
 
 	@property
 	def InptData(self):
@@ -27,12 +27,12 @@ class RiskContext4(base_types._BaseFieldType):
 
 	@InptData.setter
 	def InptData(self, value):
-		self._InptData = value if type(value) != base_types.auto else self.make_default("InptData")
+		self._InptData = value if value is not None else base_types.UninitialisedField(self, 'InptData', RiskInputData3, True)
 
 	@InptData.deleter
 	def InptData(self):
 		del self._InptData
-		self._InptData = None
+		self._InptData = base_types.UninitialisedField(self, 'InptData', RiskInputData3, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Assmnt', type=RiskAssessment4, min=0, max=None, mutex_group=None, array=True),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._TripartyCollateralAllegementNotificationCancellationAdviceV01 import TripartyCollateralAllegementNotificationCancellationAdviceV01
+from . import TripartyCollateralAllegementNotificationCancellationAdviceV01
 
 class COLR_024_001_01():
 
@@ -18,12 +18,12 @@ class COLR_024_001_01():
 
 		@TrptyCollAllgmtNtfctnCxlAdvc.setter
 		def TrptyCollAllgmtNtfctnCxlAdvc(self, value):
-			self._TrptyCollAllgmtNtfctnCxlAdvc = value if type(value) != base_types.auto else self.make_default("TrptyCollAllgmtNtfctnCxlAdvc")
+			self._TrptyCollAllgmtNtfctnCxlAdvc = value if value is not None else base_types.UninitialisedField(self, 'TrptyCollAllgmtNtfctnCxlAdvc', TripartyCollateralAllegementNotificationCancellationAdviceV01, False)
 
 		@TrptyCollAllgmtNtfctnCxlAdvc.deleter
 		def TrptyCollAllgmtNtfctnCxlAdvc(self):
 			del self._TrptyCollAllgmtNtfctnCxlAdvc
-			self._TrptyCollAllgmtNtfctnCxlAdvc = None
+			self._TrptyCollAllgmtNtfctnCxlAdvc = base_types.UninitialisedField(self, 'TrptyCollAllgmtNtfctnCxlAdvc', TripartyCollateralAllegementNotificationCancellationAdviceV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='TrptyCollAllgmtNtfctnCxlAdvc', type=TripartyCollateralAllegementNotificationCancellationAdviceV01, min=1, max=1, mutex_group=None, array=False),

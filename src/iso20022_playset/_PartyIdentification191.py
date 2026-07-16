@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
-from ._PartyIdentification145Choice import PartyIdentification145Choice
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from . import LEIIdentifier
+from . import PartyIdentification145Choice
+from . import RestrictedFINXMax16Text
 
 class PartyIdentification191(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PartyIdentification191(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', PartyIdentification145Choice, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', PartyIdentification145Choice, False)
 
 	@property
 	def LEI(self):
@@ -28,12 +28,12 @@ class PartyIdentification191(base_types._BaseFieldType):
 
 	@LEI.setter
 	def LEI(self, value):
-		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
+		self._LEI = value if value is not None else base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	@LEI.deleter
 	def LEI(self):
 		del self._LEI
-		self._LEI = None
+		self._LEI = base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	@property
 	def PrcgId(self):
@@ -41,12 +41,12 @@ class PartyIdentification191(base_types._BaseFieldType):
 
 	@PrcgId.setter
 	def PrcgId(self, value):
-		self._PrcgId = value if type(value) != base_types.auto else self.make_default("PrcgId")
+		self._PrcgId = value if value is not None else base_types.UninitialisedField(self, 'PrcgId', RestrictedFINXMax16Text, False)
 
 	@PrcgId.deleter
 	def PrcgId(self):
 		del self._PrcgId
-		self._PrcgId = None
+		self._PrcgId = base_types.UninitialisedField(self, 'PrcgId', RestrictedFINXMax16Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=PartyIdentification145Choice, min=1, max=1, mutex_group=None, array=False),

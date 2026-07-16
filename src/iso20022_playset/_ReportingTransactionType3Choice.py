@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesTransactionReport2 import SecuritiesTransactionReport2
-from ._SecuritiesTransactionReport7 import SecuritiesTransactionReport7
-from ._SupplementaryData1 import SupplementaryData1
+from . import SecuritiesTransactionReport2
+from . import SecuritiesTransactionReport7
+from . import SupplementaryData1
 
 class ReportingTransactionType3Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ReportingTransactionType3Choice(base_types._BaseFieldType):
 
 	@Cxl.setter
 	def Cxl(self, value):
-		self._Cxl = value if type(value) != base_types.auto else self.make_default("Cxl")
+		self._Cxl = value if value is not None else base_types.UninitialisedField(self, 'Cxl', SecuritiesTransactionReport2, False)
 
 	@Cxl.deleter
 	def Cxl(self):
 		del self._Cxl
-		self._Cxl = None
+		self._Cxl = base_types.UninitialisedField(self, 'Cxl', SecuritiesTransactionReport2, False)
 
 	@property
 	def New(self):
@@ -28,12 +28,12 @@ class ReportingTransactionType3Choice(base_types._BaseFieldType):
 
 	@New.setter
 	def New(self, value):
-		self._New = value if type(value) != base_types.auto else self.make_default("New")
+		self._New = value if value is not None else base_types.UninitialisedField(self, 'New', SecuritiesTransactionReport7, False)
 
 	@New.deleter
 	def New(self):
 		del self._New
-		self._New = None
+		self._New = base_types.UninitialisedField(self, 'New', SecuritiesTransactionReport7, False)
 
 	@property
 	def SplmtryData(self):
@@ -41,12 +41,12 @@ class ReportingTransactionType3Choice(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cxl', type=SecuritiesTransactionReport2, min=0, max=1, mutex_group=1, array=False),

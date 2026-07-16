@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ProcessingPosition23Choice import ProcessingPosition23Choice
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from . import ProcessingPosition23Choice
+from . import RestrictedFINXMax16Text
 
 class Linkages50(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Linkages50(base_types._BaseFieldType):
 
 	@PrcgPos.setter
 	def PrcgPos(self, value):
-		self._PrcgPos = value if type(value) != base_types.auto else self.make_default("PrcgPos")
+		self._PrcgPos = value if value is not None else base_types.UninitialisedField(self, 'PrcgPos', ProcessingPosition23Choice, False)
 
 	@PrcgPos.deleter
 	def PrcgPos(self):
 		del self._PrcgPos
-		self._PrcgPos = None
+		self._PrcgPos = base_types.UninitialisedField(self, 'PrcgPos', ProcessingPosition23Choice, False)
 
 	@property
 	def SctiesSttlmTxId(self):
@@ -27,12 +27,12 @@ class Linkages50(base_types._BaseFieldType):
 
 	@SctiesSttlmTxId.setter
 	def SctiesSttlmTxId(self, value):
-		self._SctiesSttlmTxId = value if type(value) != base_types.auto else self.make_default("SctiesSttlmTxId")
+		self._SctiesSttlmTxId = value if value is not None else base_types.UninitialisedField(self, 'SctiesSttlmTxId', RestrictedFINXMax16Text, False)
 
 	@SctiesSttlmTxId.deleter
 	def SctiesSttlmTxId(self):
 		del self._SctiesSttlmTxId
-		self._SctiesSttlmTxId = None
+		self._SctiesSttlmTxId = base_types.UninitialisedField(self, 'SctiesSttlmTxId', RestrictedFINXMax16Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrcgPos', type=ProcessingPosition23Choice, min=0, max=1, mutex_group=None, array=False),

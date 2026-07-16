@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._TradeData35Choice import TradeData35Choice
+from . import SupplementaryData1
+from . import TradeData35Choice
 
 class SecuritiesFinancingReportingTransactionStatusAdviceV02(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SecuritiesFinancingReportingTransactionStatusAdviceV02(base_types._BaseFie
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TxRptStsAndRsn(self):
@@ -27,12 +27,12 @@ class SecuritiesFinancingReportingTransactionStatusAdviceV02(base_types._BaseFie
 
 	@TxRptStsAndRsn.setter
 	def TxRptStsAndRsn(self, value):
-		self._TxRptStsAndRsn = value if type(value) != base_types.auto else self.make_default("TxRptStsAndRsn")
+		self._TxRptStsAndRsn = value if value is not None else base_types.UninitialisedField(self, 'TxRptStsAndRsn', TradeData35Choice, True)
 
 	@TxRptStsAndRsn.deleter
 	def TxRptStsAndRsn(self):
 		del self._TxRptStsAndRsn
-		self._TxRptStsAndRsn = None
+		self._TxRptStsAndRsn = base_types.UninitialisedField(self, 'TxRptStsAndRsn', TradeData35Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),

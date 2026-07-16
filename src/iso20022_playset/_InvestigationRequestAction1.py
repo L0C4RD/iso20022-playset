@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InvestigationActionReason1 import InvestigationActionReason1
-from ._InvestigationRequestAction1Choice import InvestigationRequestAction1Choice
+from . import InvestigationActionReason1
+from . import InvestigationRequestAction1Choice
 
 class InvestigationRequestAction1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class InvestigationRequestAction1(base_types._BaseFieldType):
 
 	@Actn.setter
 	def Actn(self, value):
-		self._Actn = value if type(value) != base_types.auto else self.make_default("Actn")
+		self._Actn = value if value is not None else base_types.UninitialisedField(self, 'Actn', InvestigationRequestAction1Choice, False)
 
 	@Actn.deleter
 	def Actn(self):
 		del self._Actn
-		self._Actn = None
+		self._Actn = base_types.UninitialisedField(self, 'Actn', InvestigationRequestAction1Choice, False)
 
 	@property
 	def ActnRsn(self):
@@ -27,12 +27,12 @@ class InvestigationRequestAction1(base_types._BaseFieldType):
 
 	@ActnRsn.setter
 	def ActnRsn(self, value):
-		self._ActnRsn = value if type(value) != base_types.auto else self.make_default("ActnRsn")
+		self._ActnRsn = value if value is not None else base_types.UninitialisedField(self, 'ActnRsn', InvestigationActionReason1, False)
 
 	@ActnRsn.deleter
 	def ActnRsn(self):
 		del self._ActnRsn
-		self._ActnRsn = None
+		self._ActnRsn = base_types.UninitialisedField(self, 'ActnRsn', InvestigationActionReason1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Actn', type=InvestigationRequestAction1Choice, min=1, max=1, mutex_group=None, array=False),

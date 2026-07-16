@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionEventType112Choice import CorporateActionEventType112Choice
-from ._FinancialInstrumentAttributes132 import FinancialInstrumentAttributes132
-from ._Max35Text import Max35Text
+from . import CorporateActionEventType112Choice
+from . import FinancialInstrumentAttributes132
+from . import Max35Text
 
 class CorporateActionGeneralInformation180(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CorporateActionGeneralInformation180(base_types._BaseFieldType):
 
 	@CorpActnEvtId.setter
 	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
+		self._CorpActnEvtId = value if value is not None else base_types.UninitialisedField(self, 'CorpActnEvtId', Max35Text, False)
 
 	@CorpActnEvtId.deleter
 	def CorpActnEvtId(self):
 		del self._CorpActnEvtId
-		self._CorpActnEvtId = None
+		self._CorpActnEvtId = base_types.UninitialisedField(self, 'CorpActnEvtId', Max35Text, False)
 
 	@property
 	def EvtTp(self):
@@ -28,12 +28,12 @@ class CorporateActionGeneralInformation180(base_types._BaseFieldType):
 
 	@EvtTp.setter
 	def EvtTp(self, value):
-		self._EvtTp = value if type(value) != base_types.auto else self.make_default("EvtTp")
+		self._EvtTp = value if value is not None else base_types.UninitialisedField(self, 'EvtTp', CorporateActionEventType112Choice, False)
 
 	@EvtTp.deleter
 	def EvtTp(self):
 		del self._EvtTp
-		self._EvtTp = None
+		self._EvtTp = base_types.UninitialisedField(self, 'EvtTp', CorporateActionEventType112Choice, False)
 
 	@property
 	def OffclCorpActnEvtId(self):
@@ -41,12 +41,12 @@ class CorporateActionGeneralInformation180(base_types._BaseFieldType):
 
 	@OffclCorpActnEvtId.setter
 	def OffclCorpActnEvtId(self, value):
-		self._OffclCorpActnEvtId = value if type(value) != base_types.auto else self.make_default("OffclCorpActnEvtId")
+		self._OffclCorpActnEvtId = value if value is not None else base_types.UninitialisedField(self, 'OffclCorpActnEvtId', Max35Text, False)
 
 	@OffclCorpActnEvtId.deleter
 	def OffclCorpActnEvtId(self):
 		del self._OffclCorpActnEvtId
-		self._OffclCorpActnEvtId = None
+		self._OffclCorpActnEvtId = base_types.UninitialisedField(self, 'OffclCorpActnEvtId', Max35Text, False)
 
 	@property
 	def UndrlygScty(self):
@@ -54,12 +54,12 @@ class CorporateActionGeneralInformation180(base_types._BaseFieldType):
 
 	@UndrlygScty.setter
 	def UndrlygScty(self, value):
-		self._UndrlygScty = value if type(value) != base_types.auto else self.make_default("UndrlygScty")
+		self._UndrlygScty = value if value is not None else base_types.UninitialisedField(self, 'UndrlygScty', FinancialInstrumentAttributes132, False)
 
 	@UndrlygScty.deleter
 	def UndrlygScty(self):
 		del self._UndrlygScty
-		self._UndrlygScty = None
+		self._UndrlygScty = base_types.UninitialisedField(self, 'UndrlygScty', FinancialInstrumentAttributes132, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

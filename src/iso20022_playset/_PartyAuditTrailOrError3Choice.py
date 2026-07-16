@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ErrorHandling5 import ErrorHandling5
-from ._PartyAuditTrailReport4 import PartyAuditTrailReport4
+from . import ErrorHandling5
+from . import PartyAuditTrailReport4
 
 class PartyAuditTrailOrError3Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PartyAuditTrailOrError3Choice(base_types._BaseFieldType):
 
 	@OprlErr.setter
 	def OprlErr(self, value):
-		self._OprlErr = value if type(value) != base_types.auto else self.make_default("OprlErr")
+		self._OprlErr = value if value is not None else base_types.UninitialisedField(self, 'OprlErr', ErrorHandling5, True)
 
 	@OprlErr.deleter
 	def OprlErr(self):
 		del self._OprlErr
-		self._OprlErr = None
+		self._OprlErr = base_types.UninitialisedField(self, 'OprlErr', ErrorHandling5, True)
 
 	@property
 	def PtyAudtTrlRpt(self):
@@ -27,12 +27,12 @@ class PartyAuditTrailOrError3Choice(base_types._BaseFieldType):
 
 	@PtyAudtTrlRpt.setter
 	def PtyAudtTrlRpt(self, value):
-		self._PtyAudtTrlRpt = value if type(value) != base_types.auto else self.make_default("PtyAudtTrlRpt")
+		self._PtyAudtTrlRpt = value if value is not None else base_types.UninitialisedField(self, 'PtyAudtTrlRpt', PartyAuditTrailReport4, True)
 
 	@PtyAudtTrlRpt.deleter
 	def PtyAudtTrlRpt(self):
 		del self._PtyAudtTrlRpt
-		self._PtyAudtTrlRpt = None
+		self._PtyAudtTrlRpt = base_types.UninitialisedField(self, 'PtyAudtTrlRpt', PartyAuditTrailReport4, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OprlErr', type=ErrorHandling5, min=1, max=None, mutex_group=1, array=True),

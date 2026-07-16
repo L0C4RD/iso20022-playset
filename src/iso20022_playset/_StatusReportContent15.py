@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AttendanceContext1Code import AttendanceContext1Code
-from ._DataSetRequest7 import DataSetRequest7
-from ._ISODateTime import ISODateTime
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
-from ._PointOfInteractionCapabilities11 import PointOfInteractionCapabilities11
-from ._PointOfInteractionComponent18 import PointOfInteractionComponent18
-from ._TMSEvent13 import TMSEvent13
+from . import AttendanceContext1Code
+from . import DataSetRequest7
+from . import ISODateTime
+from . import Max140Text
+from . import Max35Text
+from . import PointOfInteractionCapabilities11
+from . import PointOfInteractionComponent18
+from . import TMSEvent13
 
 class StatusReportContent15(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class StatusReportContent15(base_types._BaseFieldType):
 
 	@AttndncCntxt.setter
 	def AttndncCntxt(self, value):
-		self._AttndncCntxt = value if type(value) != base_types.auto else self.make_default("AttndncCntxt")
+		self._AttndncCntxt = value if value is not None else base_types.UninitialisedField(self, 'AttndncCntxt', AttendanceContext1Code, False)
 
 	@AttndncCntxt.deleter
 	def AttndncCntxt(self):
 		del self._AttndncCntxt
-		self._AttndncCntxt = None
+		self._AttndncCntxt = base_types.UninitialisedField(self, 'AttndncCntxt', AttendanceContext1Code, False)
 
 	@property
 	def DataSetReqrd(self):
@@ -33,12 +33,12 @@ class StatusReportContent15(base_types._BaseFieldType):
 
 	@DataSetReqrd.setter
 	def DataSetReqrd(self, value):
-		self._DataSetReqrd = value if type(value) != base_types.auto else self.make_default("DataSetReqrd")
+		self._DataSetReqrd = value if value is not None else base_types.UninitialisedField(self, 'DataSetReqrd', DataSetRequest7, True)
 
 	@DataSetReqrd.deleter
 	def DataSetReqrd(self):
 		del self._DataSetReqrd
-		self._DataSetReqrd = None
+		self._DataSetReqrd = base_types.UninitialisedField(self, 'DataSetReqrd', DataSetRequest7, True)
 
 	@property
 	def Errs(self):
@@ -46,12 +46,12 @@ class StatusReportContent15(base_types._BaseFieldType):
 
 	@Errs.setter
 	def Errs(self, value):
-		self._Errs = value if type(value) != base_types.auto else self.make_default("Errs")
+		self._Errs = value if value is not None else base_types.UninitialisedField(self, 'Errs', Max140Text, True)
 
 	@Errs.deleter
 	def Errs(self):
 		del self._Errs
-		self._Errs = None
+		self._Errs = base_types.UninitialisedField(self, 'Errs', Max140Text, True)
 
 	@property
 	def Evt(self):
@@ -59,12 +59,12 @@ class StatusReportContent15(base_types._BaseFieldType):
 
 	@Evt.setter
 	def Evt(self, value):
-		self._Evt = value if type(value) != base_types.auto else self.make_default("Evt")
+		self._Evt = value if value is not None else base_types.UninitialisedField(self, 'Evt', TMSEvent13, True)
 
 	@Evt.deleter
 	def Evt(self):
 		del self._Evt
-		self._Evt = None
+		self._Evt = base_types.UninitialisedField(self, 'Evt', TMSEvent13, True)
 
 	@property
 	def POICmpnt(self):
@@ -72,12 +72,12 @@ class StatusReportContent15(base_types._BaseFieldType):
 
 	@POICmpnt.setter
 	def POICmpnt(self, value):
-		self._POICmpnt = value if type(value) != base_types.auto else self.make_default("POICmpnt")
+		self._POICmpnt = value if value is not None else base_types.UninitialisedField(self, 'POICmpnt', PointOfInteractionComponent18, True)
 
 	@POICmpnt.deleter
 	def POICmpnt(self):
 		del self._POICmpnt
-		self._POICmpnt = None
+		self._POICmpnt = base_types.UninitialisedField(self, 'POICmpnt', PointOfInteractionComponent18, True)
 
 	@property
 	def POICpblties(self):
@@ -85,12 +85,12 @@ class StatusReportContent15(base_types._BaseFieldType):
 
 	@POICpblties.setter
 	def POICpblties(self, value):
-		self._POICpblties = value if type(value) != base_types.auto else self.make_default("POICpblties")
+		self._POICpblties = value if value is not None else base_types.UninitialisedField(self, 'POICpblties', PointOfInteractionCapabilities11, False)
 
 	@POICpblties.deleter
 	def POICpblties(self):
 		del self._POICpblties
-		self._POICpblties = None
+		self._POICpblties = base_types.UninitialisedField(self, 'POICpblties', PointOfInteractionCapabilities11, False)
 
 	@property
 	def POIDtTm(self):
@@ -98,12 +98,12 @@ class StatusReportContent15(base_types._BaseFieldType):
 
 	@POIDtTm.setter
 	def POIDtTm(self, value):
-		self._POIDtTm = value if type(value) != base_types.auto else self.make_default("POIDtTm")
+		self._POIDtTm = value if value is not None else base_types.UninitialisedField(self, 'POIDtTm', ISODateTime, False)
 
 	@POIDtTm.deleter
 	def POIDtTm(self):
 		del self._POIDtTm
-		self._POIDtTm = None
+		self._POIDtTm = base_types.UninitialisedField(self, 'POIDtTm', ISODateTime, False)
 
 	@property
 	def POIGrpId(self):
@@ -111,12 +111,12 @@ class StatusReportContent15(base_types._BaseFieldType):
 
 	@POIGrpId.setter
 	def POIGrpId(self, value):
-		self._POIGrpId = value if type(value) != base_types.auto else self.make_default("POIGrpId")
+		self._POIGrpId = value if value is not None else base_types.UninitialisedField(self, 'POIGrpId', Max35Text, True)
 
 	@POIGrpId.deleter
 	def POIGrpId(self):
 		del self._POIGrpId
-		self._POIGrpId = None
+		self._POIGrpId = base_types.UninitialisedField(self, 'POIGrpId', Max35Text, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AttndncCntxt', type=AttendanceContext1Code, min=0, max=1, mutex_group=None, array=False),

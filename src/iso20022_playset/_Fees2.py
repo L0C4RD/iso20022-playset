@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Fee7 import Fee7
-from ._Max35Text import Max35Text
+from . import Fee7
+from . import Max35Text
 
 class Fees2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Fees2(base_types._BaseFieldType):
 
 	@ComrclAgrmtRef.setter
 	def ComrclAgrmtRef(self, value):
-		self._ComrclAgrmtRef = value if type(value) != base_types.auto else self.make_default("ComrclAgrmtRef")
+		self._ComrclAgrmtRef = value if value is not None else base_types.UninitialisedField(self, 'ComrclAgrmtRef', Max35Text, False)
 
 	@ComrclAgrmtRef.deleter
 	def ComrclAgrmtRef(self):
 		del self._ComrclAgrmtRef
-		self._ComrclAgrmtRef = None
+		self._ComrclAgrmtRef = base_types.UninitialisedField(self, 'ComrclAgrmtRef', Max35Text, False)
 
 	@property
 	def IndvFee(self):
@@ -27,12 +27,12 @@ class Fees2(base_types._BaseFieldType):
 
 	@IndvFee.setter
 	def IndvFee(self, value):
-		self._IndvFee = value if type(value) != base_types.auto else self.make_default("IndvFee")
+		self._IndvFee = value if value is not None else base_types.UninitialisedField(self, 'IndvFee', Fee7, True)
 
 	@IndvFee.deleter
 	def IndvFee(self):
 		del self._IndvFee
-		self._IndvFee = None
+		self._IndvFee = base_types.UninitialisedField(self, 'IndvFee', Fee7, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ComrclAgrmtRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

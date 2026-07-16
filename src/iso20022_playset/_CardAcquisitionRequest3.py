@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardPaymentServiceType13Code import CardPaymentServiceType13Code
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
-from ._TransactionIdentifier1 import TransactionIdentifier1
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import CardPaymentServiceType13Code
+from . import ImpliedCurrencyAndAmount
+from . import Max35Text
+from . import Max70Text
+from . import TransactionIdentifier1
+from . import TrueFalseIndicator
 
 class CardAcquisitionRequest3(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class CardAcquisitionRequest3(base_types._BaseFieldType):
 
 	@AllwdLltyBrnd.setter
 	def AllwdLltyBrnd(self, value):
-		self._AllwdLltyBrnd = value if type(value) != base_types.auto else self.make_default("AllwdLltyBrnd")
+		self._AllwdLltyBrnd = value if value is not None else base_types.UninitialisedField(self, 'AllwdLltyBrnd', Max35Text, True)
 
 	@AllwdLltyBrnd.deleter
 	def AllwdLltyBrnd(self):
 		del self._AllwdLltyBrnd
-		self._AllwdLltyBrnd = None
+		self._AllwdLltyBrnd = base_types.UninitialisedField(self, 'AllwdLltyBrnd', Max35Text, True)
 
 	@property
 	def AllwdPmtBrnd(self):
@@ -31,12 +31,12 @@ class CardAcquisitionRequest3(base_types._BaseFieldType):
 
 	@AllwdPmtBrnd.setter
 	def AllwdPmtBrnd(self, value):
-		self._AllwdPmtBrnd = value if type(value) != base_types.auto else self.make_default("AllwdPmtBrnd")
+		self._AllwdPmtBrnd = value if value is not None else base_types.UninitialisedField(self, 'AllwdPmtBrnd', Max35Text, True)
 
 	@AllwdPmtBrnd.deleter
 	def AllwdPmtBrnd(self):
 		del self._AllwdPmtBrnd
-		self._AllwdPmtBrnd = None
+		self._AllwdPmtBrnd = base_types.UninitialisedField(self, 'AllwdPmtBrnd', Max35Text, True)
 
 	@property
 	def CshBckFlg(self):
@@ -44,12 +44,12 @@ class CardAcquisitionRequest3(base_types._BaseFieldType):
 
 	@CshBckFlg.setter
 	def CshBckFlg(self, value):
-		self._CshBckFlg = value if type(value) != base_types.auto else self.make_default("CshBckFlg")
+		self._CshBckFlg = value if value is not None else base_types.UninitialisedField(self, 'CshBckFlg', TrueFalseIndicator, False)
 
 	@CshBckFlg.deleter
 	def CshBckFlg(self):
 		del self._CshBckFlg
-		self._CshBckFlg = None
+		self._CshBckFlg = base_types.UninitialisedField(self, 'CshBckFlg', TrueFalseIndicator, False)
 
 	@property
 	def ForceCstmrSelctnFlg(self):
@@ -57,12 +57,12 @@ class CardAcquisitionRequest3(base_types._BaseFieldType):
 
 	@ForceCstmrSelctnFlg.setter
 	def ForceCstmrSelctnFlg(self, value):
-		self._ForceCstmrSelctnFlg = value if type(value) != base_types.auto else self.make_default("ForceCstmrSelctnFlg")
+		self._ForceCstmrSelctnFlg = value if value is not None else base_types.UninitialisedField(self, 'ForceCstmrSelctnFlg', TrueFalseIndicator, False)
 
 	@ForceCstmrSelctnFlg.deleter
 	def ForceCstmrSelctnFlg(self):
 		del self._ForceCstmrSelctnFlg
-		self._ForceCstmrSelctnFlg = None
+		self._ForceCstmrSelctnFlg = base_types.UninitialisedField(self, 'ForceCstmrSelctnFlg', TrueFalseIndicator, False)
 
 	@property
 	def PmtTp(self):
@@ -70,12 +70,12 @@ class CardAcquisitionRequest3(base_types._BaseFieldType):
 
 	@PmtTp.setter
 	def PmtTp(self, value):
-		self._PmtTp = value if type(value) != base_types.auto else self.make_default("PmtTp")
+		self._PmtTp = value if value is not None else base_types.UninitialisedField(self, 'PmtTp', CardPaymentServiceType13Code, False)
 
 	@PmtTp.deleter
 	def PmtTp(self):
 		del self._PmtTp
-		self._PmtTp = None
+		self._PmtTp = base_types.UninitialisedField(self, 'PmtTp', CardPaymentServiceType13Code, False)
 
 	@property
 	def SaleToAcqrrData(self):
@@ -83,12 +83,12 @@ class CardAcquisitionRequest3(base_types._BaseFieldType):
 
 	@SaleToAcqrrData.setter
 	def SaleToAcqrrData(self, value):
-		self._SaleToAcqrrData = value if type(value) != base_types.auto else self.make_default("SaleToAcqrrData")
+		self._SaleToAcqrrData = value if value is not None else base_types.UninitialisedField(self, 'SaleToAcqrrData', Max70Text, False)
 
 	@SaleToAcqrrData.deleter
 	def SaleToAcqrrData(self):
 		del self._SaleToAcqrrData
-		self._SaleToAcqrrData = None
+		self._SaleToAcqrrData = base_types.UninitialisedField(self, 'SaleToAcqrrData', Max70Text, False)
 
 	@property
 	def SaleToIssrData(self):
@@ -96,12 +96,12 @@ class CardAcquisitionRequest3(base_types._BaseFieldType):
 
 	@SaleToIssrData.setter
 	def SaleToIssrData(self, value):
-		self._SaleToIssrData = value if type(value) != base_types.auto else self.make_default("SaleToIssrData")
+		self._SaleToIssrData = value if value is not None else base_types.UninitialisedField(self, 'SaleToIssrData', Max70Text, False)
 
 	@SaleToIssrData.deleter
 	def SaleToIssrData(self):
 		del self._SaleToIssrData
-		self._SaleToIssrData = None
+		self._SaleToIssrData = base_types.UninitialisedField(self, 'SaleToIssrData', Max70Text, False)
 
 	@property
 	def SaleToPOIData(self):
@@ -109,12 +109,12 @@ class CardAcquisitionRequest3(base_types._BaseFieldType):
 
 	@SaleToPOIData.setter
 	def SaleToPOIData(self, value):
-		self._SaleToPOIData = value if type(value) != base_types.auto else self.make_default("SaleToPOIData")
+		self._SaleToPOIData = value if value is not None else base_types.UninitialisedField(self, 'SaleToPOIData', Max70Text, False)
 
 	@SaleToPOIData.deleter
 	def SaleToPOIData(self):
 		del self._SaleToPOIData
-		self._SaleToPOIData = None
+		self._SaleToPOIData = base_types.UninitialisedField(self, 'SaleToPOIData', Max70Text, False)
 
 	@property
 	def SaleTxId(self):
@@ -122,12 +122,12 @@ class CardAcquisitionRequest3(base_types._BaseFieldType):
 
 	@SaleTxId.setter
 	def SaleTxId(self, value):
-		self._SaleTxId = value if type(value) != base_types.auto else self.make_default("SaleTxId")
+		self._SaleTxId = value if value is not None else base_types.UninitialisedField(self, 'SaleTxId', TransactionIdentifier1, False)
 
 	@SaleTxId.deleter
 	def SaleTxId(self):
 		del self._SaleTxId
-		self._SaleTxId = None
+		self._SaleTxId = base_types.UninitialisedField(self, 'SaleTxId', TransactionIdentifier1, False)
 
 	@property
 	def TtlAmt(self):
@@ -135,12 +135,12 @@ class CardAcquisitionRequest3(base_types._BaseFieldType):
 
 	@TtlAmt.setter
 	def TtlAmt(self, value):
-		self._TtlAmt = value if type(value) != base_types.auto else self.make_default("TtlAmt")
+		self._TtlAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlAmt', ImpliedCurrencyAndAmount, False)
 
 	@TtlAmt.deleter
 	def TtlAmt(self):
 		del self._TtlAmt
-		self._TtlAmt = None
+		self._TtlAmt = base_types.UninitialisedField(self, 'TtlAmt', ImpliedCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AllwdLltyBrnd', type=Max35Text, min=0, max=None, mutex_group=None, array=True),

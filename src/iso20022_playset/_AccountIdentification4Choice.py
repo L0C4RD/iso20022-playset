@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericAccountIdentification1 import GenericAccountIdentification1
-from ._IBAN2007Identifier import IBAN2007Identifier
+from . import GenericAccountIdentification1
+from . import IBAN2007Identifier
 
 class AccountIdentification4Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AccountIdentification4Choice(base_types._BaseFieldType):
 
 	@IBAN.setter
 	def IBAN(self, value):
-		self._IBAN = value if type(value) != base_types.auto else self.make_default("IBAN")
+		self._IBAN = value if value is not None else base_types.UninitialisedField(self, 'IBAN', IBAN2007Identifier, False)
 
 	@IBAN.deleter
 	def IBAN(self):
 		del self._IBAN
-		self._IBAN = None
+		self._IBAN = base_types.UninitialisedField(self, 'IBAN', IBAN2007Identifier, False)
 
 	@property
 	def Othr(self):
@@ -27,12 +27,12 @@ class AccountIdentification4Choice(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', GenericAccountIdentification1, False)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', GenericAccountIdentification1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IBAN', type=IBAN2007Identifier, min=0, max=1, mutex_group=1, array=False),

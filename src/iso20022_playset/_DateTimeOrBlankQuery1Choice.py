@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateTimePeriod1 import DateTimePeriod1
-from ._NotReported1Code import NotReported1Code
+from . import DateTimePeriod1
+from . import NotReported1Code
 
 class DateTimeOrBlankQuery1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DateTimeOrBlankQuery1Choice(base_types._BaseFieldType):
 
 	@NotRptd.setter
 	def NotRptd(self, value):
-		self._NotRptd = value if type(value) != base_types.auto else self.make_default("NotRptd")
+		self._NotRptd = value if value is not None else base_types.UninitialisedField(self, 'NotRptd', NotReported1Code, False)
 
 	@NotRptd.deleter
 	def NotRptd(self):
 		del self._NotRptd
-		self._NotRptd = None
+		self._NotRptd = base_types.UninitialisedField(self, 'NotRptd', NotReported1Code, False)
 
 	@property
 	def Rg(self):
@@ -27,12 +27,12 @@ class DateTimeOrBlankQuery1Choice(base_types._BaseFieldType):
 
 	@Rg.setter
 	def Rg(self, value):
-		self._Rg = value if type(value) != base_types.auto else self.make_default("Rg")
+		self._Rg = value if value is not None else base_types.UninitialisedField(self, 'Rg', DateTimePeriod1, False)
 
 	@Rg.deleter
 	def Rg(self):
 		del self._Rg
-		self._Rg = None
+		self._Rg = base_types.UninitialisedField(self, 'Rg', DateTimePeriod1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NotRptd', type=NotReported1Code, min=0, max=1, mutex_group=1, array=False),

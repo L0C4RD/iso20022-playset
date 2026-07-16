@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalData2 import AdditionalData2
-from ._FleetData6 import FleetData6
-from ._Invoice3 import Invoice3
-from ._Lodging4 import Lodging4
-from ._PassengerTransport3 import PassengerTransport3
-from ._Sale3 import Sale3
-from ._ShippingData3 import ShippingData3
-from ._TelecomServices3 import TelecomServices3
-from ._TemporaryServices3 import TemporaryServices3
-from ._TravelAgency4 import TravelAgency4
-from ._VehicleRentalService3 import VehicleRentalService3
+from . import AdditionalData2
+from . import FleetData6
+from . import Invoice3
+from . import Lodging4
+from . import PassengerTransport3
+from . import Sale3
+from . import ShippingData3
+from . import TelecomServices3
+from . import TemporaryServices3
+from . import TravelAgency4
+from . import VehicleRentalService3
 
 class AddendumData6(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class AddendumData6(base_types._BaseFieldType):
 
 	@AddtlData.setter
 	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+		self._AddtlData = value if value is not None else base_types.UninitialisedField(self, 'AddtlData', AdditionalData2, True)
 
 	@AddtlData.deleter
 	def AddtlData(self):
 		del self._AddtlData
-		self._AddtlData = None
+		self._AddtlData = base_types.UninitialisedField(self, 'AddtlData', AdditionalData2, True)
 
 	@property
 	def Fleet(self):
@@ -36,12 +36,12 @@ class AddendumData6(base_types._BaseFieldType):
 
 	@Fleet.setter
 	def Fleet(self, value):
-		self._Fleet = value if type(value) != base_types.auto else self.make_default("Fleet")
+		self._Fleet = value if value is not None else base_types.UninitialisedField(self, 'Fleet', FleetData6, False)
 
 	@Fleet.deleter
 	def Fleet(self):
 		del self._Fleet
-		self._Fleet = None
+		self._Fleet = base_types.UninitialisedField(self, 'Fleet', FleetData6, False)
 
 	@property
 	def Invc(self):
@@ -49,12 +49,12 @@ class AddendumData6(base_types._BaseFieldType):
 
 	@Invc.setter
 	def Invc(self, value):
-		self._Invc = value if type(value) != base_types.auto else self.make_default("Invc")
+		self._Invc = value if value is not None else base_types.UninitialisedField(self, 'Invc', Invoice3, False)
 
 	@Invc.deleter
 	def Invc(self):
 		del self._Invc
-		self._Invc = None
+		self._Invc = base_types.UninitialisedField(self, 'Invc', Invoice3, False)
 
 	@property
 	def Ldgg(self):
@@ -62,12 +62,12 @@ class AddendumData6(base_types._BaseFieldType):
 
 	@Ldgg.setter
 	def Ldgg(self, value):
-		self._Ldgg = value if type(value) != base_types.auto else self.make_default("Ldgg")
+		self._Ldgg = value if value is not None else base_types.UninitialisedField(self, 'Ldgg', Lodging4, True)
 
 	@Ldgg.deleter
 	def Ldgg(self):
 		del self._Ldgg
-		self._Ldgg = None
+		self._Ldgg = base_types.UninitialisedField(self, 'Ldgg', Lodging4, True)
 
 	@property
 	def PssngrTrnsprt(self):
@@ -75,12 +75,12 @@ class AddendumData6(base_types._BaseFieldType):
 
 	@PssngrTrnsprt.setter
 	def PssngrTrnsprt(self, value):
-		self._PssngrTrnsprt = value if type(value) != base_types.auto else self.make_default("PssngrTrnsprt")
+		self._PssngrTrnsprt = value if value is not None else base_types.UninitialisedField(self, 'PssngrTrnsprt', PassengerTransport3, False)
 
 	@PssngrTrnsprt.deleter
 	def PssngrTrnsprt(self):
 		del self._PssngrTrnsprt
-		self._PssngrTrnsprt = None
+		self._PssngrTrnsprt = base_types.UninitialisedField(self, 'PssngrTrnsprt', PassengerTransport3, False)
 
 	@property
 	def Sale(self):
@@ -88,12 +88,12 @@ class AddendumData6(base_types._BaseFieldType):
 
 	@Sale.setter
 	def Sale(self, value):
-		self._Sale = value if type(value) != base_types.auto else self.make_default("Sale")
+		self._Sale = value if value is not None else base_types.UninitialisedField(self, 'Sale', Sale3, False)
 
 	@Sale.deleter
 	def Sale(self):
 		del self._Sale
-		self._Sale = None
+		self._Sale = base_types.UninitialisedField(self, 'Sale', Sale3, False)
 
 	@property
 	def ShppgData(self):
@@ -101,12 +101,12 @@ class AddendumData6(base_types._BaseFieldType):
 
 	@ShppgData.setter
 	def ShppgData(self, value):
-		self._ShppgData = value if type(value) != base_types.auto else self.make_default("ShppgData")
+		self._ShppgData = value if value is not None else base_types.UninitialisedField(self, 'ShppgData', ShippingData3, False)
 
 	@ShppgData.deleter
 	def ShppgData(self):
 		del self._ShppgData
-		self._ShppgData = None
+		self._ShppgData = base_types.UninitialisedField(self, 'ShppgData', ShippingData3, False)
 
 	@property
 	def TelecomSvcs(self):
@@ -114,12 +114,12 @@ class AddendumData6(base_types._BaseFieldType):
 
 	@TelecomSvcs.setter
 	def TelecomSvcs(self, value):
-		self._TelecomSvcs = value if type(value) != base_types.auto else self.make_default("TelecomSvcs")
+		self._TelecomSvcs = value if value is not None else base_types.UninitialisedField(self, 'TelecomSvcs', TelecomServices3, False)
 
 	@TelecomSvcs.deleter
 	def TelecomSvcs(self):
 		del self._TelecomSvcs
-		self._TelecomSvcs = None
+		self._TelecomSvcs = base_types.UninitialisedField(self, 'TelecomSvcs', TelecomServices3, False)
 
 	@property
 	def TempSvcs(self):
@@ -127,12 +127,12 @@ class AddendumData6(base_types._BaseFieldType):
 
 	@TempSvcs.setter
 	def TempSvcs(self, value):
-		self._TempSvcs = value if type(value) != base_types.auto else self.make_default("TempSvcs")
+		self._TempSvcs = value if value is not None else base_types.UninitialisedField(self, 'TempSvcs', TemporaryServices3, True)
 
 	@TempSvcs.deleter
 	def TempSvcs(self):
 		del self._TempSvcs
-		self._TempSvcs = None
+		self._TempSvcs = base_types.UninitialisedField(self, 'TempSvcs', TemporaryServices3, True)
 
 	@property
 	def TrvlAgcy(self):
@@ -140,12 +140,12 @@ class AddendumData6(base_types._BaseFieldType):
 
 	@TrvlAgcy.setter
 	def TrvlAgcy(self, value):
-		self._TrvlAgcy = value if type(value) != base_types.auto else self.make_default("TrvlAgcy")
+		self._TrvlAgcy = value if value is not None else base_types.UninitialisedField(self, 'TrvlAgcy', TravelAgency4, True)
 
 	@TrvlAgcy.deleter
 	def TrvlAgcy(self):
 		del self._TrvlAgcy
-		self._TrvlAgcy = None
+		self._TrvlAgcy = base_types.UninitialisedField(self, 'TrvlAgcy', TravelAgency4, True)
 
 	@property
 	def VhclRntl(self):
@@ -153,12 +153,12 @@ class AddendumData6(base_types._BaseFieldType):
 
 	@VhclRntl.setter
 	def VhclRntl(self, value):
-		self._VhclRntl = value if type(value) != base_types.auto else self.make_default("VhclRntl")
+		self._VhclRntl = value if value is not None else base_types.UninitialisedField(self, 'VhclRntl', VehicleRentalService3, True)
 
 	@VhclRntl.deleter
 	def VhclRntl(self):
 		del self._VhclRntl
-		self._VhclRntl = None
+		self._VhclRntl = base_types.UninitialisedField(self, 'VhclRntl', VehicleRentalService3, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData2, min=0, max=None, mutex_group=None, array=True),

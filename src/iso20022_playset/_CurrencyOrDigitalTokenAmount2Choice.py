@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._DigitalTokenAmount3 import DigitalTokenAmount3
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import DigitalTokenAmount3
 
 class CurrencyOrDigitalTokenAmount2Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CurrencyOrDigitalTokenAmount2Choice(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def DgtlTknAmt(self):
@@ -27,12 +27,12 @@ class CurrencyOrDigitalTokenAmount2Choice(base_types._BaseFieldType):
 
 	@DgtlTknAmt.setter
 	def DgtlTknAmt(self, value):
-		self._DgtlTknAmt = value if type(value) != base_types.auto else self.make_default("DgtlTknAmt")
+		self._DgtlTknAmt = value if value is not None else base_types.UninitialisedField(self, 'DgtlTknAmt', DigitalTokenAmount3, False)
 
 	@DgtlTknAmt.deleter
 	def DgtlTknAmt(self):
 		del self._DgtlTknAmt
-		self._DgtlTknAmt = None
+		self._DgtlTknAmt = base_types.UninitialisedField(self, 'DgtlTknAmt', DigitalTokenAmount3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),

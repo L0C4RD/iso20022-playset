@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._FloatingInterestRate8 import FloatingInterestRate8
-from ._InterestRate8Choice import InterestRate8Choice
+from . import ActiveOrHistoricCurrencyCode
+from . import FloatingInterestRate8
+from . import InterestRate8Choice
 
 class DerivativeInterest3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class DerivativeInterest3(base_types._BaseFieldType):
 
 	@FrstLegIntrstRate.setter
 	def FrstLegIntrstRate(self, value):
-		self._FrstLegIntrstRate = value if type(value) != base_types.auto else self.make_default("FrstLegIntrstRate")
+		self._FrstLegIntrstRate = value if value is not None else base_types.UninitialisedField(self, 'FrstLegIntrstRate', InterestRate8Choice, False)
 
 	@FrstLegIntrstRate.deleter
 	def FrstLegIntrstRate(self):
 		del self._FrstLegIntrstRate
-		self._FrstLegIntrstRate = None
+		self._FrstLegIntrstRate = base_types.UninitialisedField(self, 'FrstLegIntrstRate', InterestRate8Choice, False)
 
 	@property
 	def IntrstRate(self):
@@ -28,12 +28,12 @@ class DerivativeInterest3(base_types._BaseFieldType):
 
 	@IntrstRate.setter
 	def IntrstRate(self, value):
-		self._IntrstRate = value if type(value) != base_types.auto else self.make_default("IntrstRate")
+		self._IntrstRate = value if value is not None else base_types.UninitialisedField(self, 'IntrstRate', FloatingInterestRate8, False)
 
 	@IntrstRate.deleter
 	def IntrstRate(self):
 		del self._IntrstRate
-		self._IntrstRate = None
+		self._IntrstRate = base_types.UninitialisedField(self, 'IntrstRate', FloatingInterestRate8, False)
 
 	@property
 	def OthrLegIntrstRate(self):
@@ -41,12 +41,12 @@ class DerivativeInterest3(base_types._BaseFieldType):
 
 	@OthrLegIntrstRate.setter
 	def OthrLegIntrstRate(self, value):
-		self._OthrLegIntrstRate = value if type(value) != base_types.auto else self.make_default("OthrLegIntrstRate")
+		self._OthrLegIntrstRate = value if value is not None else base_types.UninitialisedField(self, 'OthrLegIntrstRate', InterestRate8Choice, False)
 
 	@OthrLegIntrstRate.deleter
 	def OthrLegIntrstRate(self):
 		del self._OthrLegIntrstRate
-		self._OthrLegIntrstRate = None
+		self._OthrLegIntrstRate = base_types.UninitialisedField(self, 'OthrLegIntrstRate', InterestRate8Choice, False)
 
 	@property
 	def OthrNtnlCcy(self):
@@ -54,12 +54,12 @@ class DerivativeInterest3(base_types._BaseFieldType):
 
 	@OthrNtnlCcy.setter
 	def OthrNtnlCcy(self, value):
-		self._OthrNtnlCcy = value if type(value) != base_types.auto else self.make_default("OthrNtnlCcy")
+		self._OthrNtnlCcy = value if value is not None else base_types.UninitialisedField(self, 'OthrNtnlCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@OthrNtnlCcy.deleter
 	def OthrNtnlCcy(self):
 		del self._OthrNtnlCcy
-		self._OthrNtnlCcy = None
+		self._OthrNtnlCcy = base_types.UninitialisedField(self, 'OthrNtnlCcy', ActiveOrHistoricCurrencyCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FrstLegIntrstRate', type=InterestRate8Choice, min=0, max=1, mutex_group=None, array=False),

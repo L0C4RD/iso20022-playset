@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BusinessApplicationHeader5 import BusinessApplicationHeader5
-from ._BusinessMessagePriorityCode import BusinessMessagePriorityCode
-from ._CopyDuplicate1Code import CopyDuplicate1Code
-from ._ISODateTime import ISODateTime
-from ._ImplementationSpecification1 import ImplementationSpecification1
-from ._Max35Text import Max35Text
-from ._Party44Choice import Party44Choice
-from ._SignatureEnvelope import SignatureEnvelope
-from ._UnicodeChartsCode import UnicodeChartsCode
-from ._YesNoIndicator import YesNoIndicator
+from . import BusinessApplicationHeader5
+from . import BusinessMessagePriorityCode
+from . import CopyDuplicate1Code
+from . import ISODateTime
+from . import ImplementationSpecification1
+from . import Max35Text
+from . import Party44Choice
+from . import SignatureEnvelope
+from . import UnicodeChartsCode
+from . import YesNoIndicator
 
 class HEAD_001_001_02():
 
@@ -27,12 +27,12 @@ class HEAD_001_001_02():
 
 		@BizMsgIdr.setter
 		def BizMsgIdr(self, value):
-			self._BizMsgIdr = value if type(value) != base_types.auto else self.make_default("BizMsgIdr")
+			self._BizMsgIdr = value if value is not None else base_types.UninitialisedField(self, 'BizMsgIdr', Max35Text, False)
 
 		@BizMsgIdr.deleter
 		def BizMsgIdr(self):
 			del self._BizMsgIdr
-			self._BizMsgIdr = None
+			self._BizMsgIdr = base_types.UninitialisedField(self, 'BizMsgIdr', Max35Text, False)
 
 		@property
 		def BizPrcgDt(self):
@@ -40,12 +40,12 @@ class HEAD_001_001_02():
 
 		@BizPrcgDt.setter
 		def BizPrcgDt(self, value):
-			self._BizPrcgDt = value if type(value) != base_types.auto else self.make_default("BizPrcgDt")
+			self._BizPrcgDt = value if value is not None else base_types.UninitialisedField(self, 'BizPrcgDt', ISODateTime, False)
 
 		@BizPrcgDt.deleter
 		def BizPrcgDt(self):
 			del self._BizPrcgDt
-			self._BizPrcgDt = None
+			self._BizPrcgDt = base_types.UninitialisedField(self, 'BizPrcgDt', ISODateTime, False)
 
 		@property
 		def BizSvc(self):
@@ -53,12 +53,12 @@ class HEAD_001_001_02():
 
 		@BizSvc.setter
 		def BizSvc(self, value):
-			self._BizSvc = value if type(value) != base_types.auto else self.make_default("BizSvc")
+			self._BizSvc = value if value is not None else base_types.UninitialisedField(self, 'BizSvc', Max35Text, False)
 
 		@BizSvc.deleter
 		def BizSvc(self):
 			del self._BizSvc
-			self._BizSvc = None
+			self._BizSvc = base_types.UninitialisedField(self, 'BizSvc', Max35Text, False)
 
 		@property
 		def CharSet(self):
@@ -66,12 +66,12 @@ class HEAD_001_001_02():
 
 		@CharSet.setter
 		def CharSet(self, value):
-			self._CharSet = value if type(value) != base_types.auto else self.make_default("CharSet")
+			self._CharSet = value if value is not None else base_types.UninitialisedField(self, 'CharSet', UnicodeChartsCode, False)
 
 		@CharSet.deleter
 		def CharSet(self):
 			del self._CharSet
-			self._CharSet = None
+			self._CharSet = base_types.UninitialisedField(self, 'CharSet', UnicodeChartsCode, False)
 
 		@property
 		def CpyDplct(self):
@@ -79,12 +79,12 @@ class HEAD_001_001_02():
 
 		@CpyDplct.setter
 		def CpyDplct(self, value):
-			self._CpyDplct = value if type(value) != base_types.auto else self.make_default("CpyDplct")
+			self._CpyDplct = value if value is not None else base_types.UninitialisedField(self, 'CpyDplct', CopyDuplicate1Code, False)
 
 		@CpyDplct.deleter
 		def CpyDplct(self):
 			del self._CpyDplct
-			self._CpyDplct = None
+			self._CpyDplct = base_types.UninitialisedField(self, 'CpyDplct', CopyDuplicate1Code, False)
 
 		@property
 		def CreDt(self):
@@ -92,12 +92,12 @@ class HEAD_001_001_02():
 
 		@CreDt.setter
 		def CreDt(self, value):
-			self._CreDt = value if type(value) != base_types.auto else self.make_default("CreDt")
+			self._CreDt = value if value is not None else base_types.UninitialisedField(self, 'CreDt', ISODateTime, False)
 
 		@CreDt.deleter
 		def CreDt(self):
 			del self._CreDt
-			self._CreDt = None
+			self._CreDt = base_types.UninitialisedField(self, 'CreDt', ISODateTime, False)
 
 		@property
 		def Fr(self):
@@ -105,12 +105,12 @@ class HEAD_001_001_02():
 
 		@Fr.setter
 		def Fr(self, value):
-			self._Fr = value if type(value) != base_types.auto else self.make_default("Fr")
+			self._Fr = value if value is not None else base_types.UninitialisedField(self, 'Fr', Party44Choice, False)
 
 		@Fr.deleter
 		def Fr(self):
 			del self._Fr
-			self._Fr = None
+			self._Fr = base_types.UninitialisedField(self, 'Fr', Party44Choice, False)
 
 		@property
 		def MktPrctc(self):
@@ -118,12 +118,12 @@ class HEAD_001_001_02():
 
 		@MktPrctc.setter
 		def MktPrctc(self, value):
-			self._MktPrctc = value if type(value) != base_types.auto else self.make_default("MktPrctc")
+			self._MktPrctc = value if value is not None else base_types.UninitialisedField(self, 'MktPrctc', ImplementationSpecification1, False)
 
 		@MktPrctc.deleter
 		def MktPrctc(self):
 			del self._MktPrctc
-			self._MktPrctc = None
+			self._MktPrctc = base_types.UninitialisedField(self, 'MktPrctc', ImplementationSpecification1, False)
 
 		@property
 		def MsgDefIdr(self):
@@ -131,12 +131,12 @@ class HEAD_001_001_02():
 
 		@MsgDefIdr.setter
 		def MsgDefIdr(self, value):
-			self._MsgDefIdr = value if type(value) != base_types.auto else self.make_default("MsgDefIdr")
+			self._MsgDefIdr = value if value is not None else base_types.UninitialisedField(self, 'MsgDefIdr', Max35Text, False)
 
 		@MsgDefIdr.deleter
 		def MsgDefIdr(self):
 			del self._MsgDefIdr
-			self._MsgDefIdr = None
+			self._MsgDefIdr = base_types.UninitialisedField(self, 'MsgDefIdr', Max35Text, False)
 
 		@property
 		def Prty(self):
@@ -144,12 +144,12 @@ class HEAD_001_001_02():
 
 		@Prty.setter
 		def Prty(self, value):
-			self._Prty = value if type(value) != base_types.auto else self.make_default("Prty")
+			self._Prty = value if value is not None else base_types.UninitialisedField(self, 'Prty', BusinessMessagePriorityCode, False)
 
 		@Prty.deleter
 		def Prty(self):
 			del self._Prty
-			self._Prty = None
+			self._Prty = base_types.UninitialisedField(self, 'Prty', BusinessMessagePriorityCode, False)
 
 		@property
 		def PssblDplct(self):
@@ -157,12 +157,12 @@ class HEAD_001_001_02():
 
 		@PssblDplct.setter
 		def PssblDplct(self, value):
-			self._PssblDplct = value if type(value) != base_types.auto else self.make_default("PssblDplct")
+			self._PssblDplct = value if value is not None else base_types.UninitialisedField(self, 'PssblDplct', YesNoIndicator, False)
 
 		@PssblDplct.deleter
 		def PssblDplct(self):
 			del self._PssblDplct
-			self._PssblDplct = None
+			self._PssblDplct = base_types.UninitialisedField(self, 'PssblDplct', YesNoIndicator, False)
 
 		@property
 		def Rltd(self):
@@ -170,12 +170,12 @@ class HEAD_001_001_02():
 
 		@Rltd.setter
 		def Rltd(self, value):
-			self._Rltd = value if type(value) != base_types.auto else self.make_default("Rltd")
+			self._Rltd = value if value is not None else base_types.UninitialisedField(self, 'Rltd', BusinessApplicationHeader5, True)
 
 		@Rltd.deleter
 		def Rltd(self):
 			del self._Rltd
-			self._Rltd = None
+			self._Rltd = base_types.UninitialisedField(self, 'Rltd', BusinessApplicationHeader5, True)
 
 		@property
 		def Sgntr(self):
@@ -183,12 +183,12 @@ class HEAD_001_001_02():
 
 		@Sgntr.setter
 		def Sgntr(self, value):
-			self._Sgntr = value if type(value) != base_types.auto else self.make_default("Sgntr")
+			self._Sgntr = value if value is not None else base_types.UninitialisedField(self, 'Sgntr', SignatureEnvelope, False)
 
 		@Sgntr.deleter
 		def Sgntr(self):
 			del self._Sgntr
-			self._Sgntr = None
+			self._Sgntr = base_types.UninitialisedField(self, 'Sgntr', SignatureEnvelope, False)
 
 		@property
 		def To(self):
@@ -196,12 +196,12 @@ class HEAD_001_001_02():
 
 		@To.setter
 		def To(self, value):
-			self._To = value if type(value) != base_types.auto else self.make_default("To")
+			self._To = value if value is not None else base_types.UninitialisedField(self, 'To', Party44Choice, False)
 
 		@To.deleter
 		def To(self):
 			del self._To
-			self._To = None
+			self._To = base_types.UninitialisedField(self, 'To', Party44Choice, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='BizMsgIdr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

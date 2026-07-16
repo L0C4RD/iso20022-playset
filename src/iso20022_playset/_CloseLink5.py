@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._SystemPartyIdentification2Choice import SystemPartyIdentification2Choice
+from . import SecurityIdentification19
+from . import SystemPartyIdentification2Choice
 
 class CloseLink5(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CloseLink5(base_types._BaseFieldType):
 
 	@CdtPrvdrId.setter
 	def CdtPrvdrId(self, value):
-		self._CdtPrvdrId = value if type(value) != base_types.auto else self.make_default("CdtPrvdrId")
+		self._CdtPrvdrId = value if value is not None else base_types.UninitialisedField(self, 'CdtPrvdrId', SystemPartyIdentification2Choice, False)
 
 	@CdtPrvdrId.deleter
 	def CdtPrvdrId(self):
 		del self._CdtPrvdrId
-		self._CdtPrvdrId = None
+		self._CdtPrvdrId = base_types.UninitialisedField(self, 'CdtPrvdrId', SystemPartyIdentification2Choice, False)
 
 	@property
 	def PtyId(self):
@@ -27,12 +27,12 @@ class CloseLink5(base_types._BaseFieldType):
 
 	@PtyId.setter
 	def PtyId(self, value):
-		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
+		self._PtyId = value if value is not None else base_types.UninitialisedField(self, 'PtyId', SystemPartyIdentification2Choice, False)
 
 	@PtyId.deleter
 	def PtyId(self):
 		del self._PtyId
-		self._PtyId = None
+		self._PtyId = base_types.UninitialisedField(self, 'PtyId', SystemPartyIdentification2Choice, False)
 
 	@property
 	def SctyId(self):
@@ -40,12 +40,12 @@ class CloseLink5(base_types._BaseFieldType):
 
 	@SctyId.setter
 	def SctyId(self, value):
-		self._SctyId = value if type(value) != base_types.auto else self.make_default("SctyId")
+		self._SctyId = value if value is not None else base_types.UninitialisedField(self, 'SctyId', SecurityIdentification19, True)
 
 	@SctyId.deleter
 	def SctyId(self):
 		del self._SctyId
-		self._SctyId = None
+		self._SctyId = base_types.UninitialisedField(self, 'SctyId', SecurityIdentification19, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtPrvdrId', type=SystemPartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),

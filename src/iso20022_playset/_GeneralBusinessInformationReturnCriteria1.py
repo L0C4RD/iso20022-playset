@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RequestedIndicator import RequestedIndicator
+from . import RequestedIndicator
 
 class GeneralBusinessInformationReturnCriteria1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class GeneralBusinessInformationReturnCriteria1(base_types._BaseFieldType):
 
 	@QlfrInd.setter
 	def QlfrInd(self, value):
-		self._QlfrInd = value if type(value) != base_types.auto else self.make_default("QlfrInd")
+		self._QlfrInd = value if value is not None else base_types.UninitialisedField(self, 'QlfrInd', RequestedIndicator, False)
 
 	@QlfrInd.deleter
 	def QlfrInd(self):
 		del self._QlfrInd
-		self._QlfrInd = None
+		self._QlfrInd = base_types.UninitialisedField(self, 'QlfrInd', RequestedIndicator, False)
 
 	@property
 	def SbjtDtlsInd(self):
@@ -26,12 +26,12 @@ class GeneralBusinessInformationReturnCriteria1(base_types._BaseFieldType):
 
 	@SbjtDtlsInd.setter
 	def SbjtDtlsInd(self, value):
-		self._SbjtDtlsInd = value if type(value) != base_types.auto else self.make_default("SbjtDtlsInd")
+		self._SbjtDtlsInd = value if value is not None else base_types.UninitialisedField(self, 'SbjtDtlsInd', RequestedIndicator, False)
 
 	@SbjtDtlsInd.deleter
 	def SbjtDtlsInd(self):
 		del self._SbjtDtlsInd
-		self._SbjtDtlsInd = None
+		self._SbjtDtlsInd = base_types.UninitialisedField(self, 'SbjtDtlsInd', RequestedIndicator, False)
 
 	@property
 	def SbjtInd(self):
@@ -39,12 +39,12 @@ class GeneralBusinessInformationReturnCriteria1(base_types._BaseFieldType):
 
 	@SbjtInd.setter
 	def SbjtInd(self, value):
-		self._SbjtInd = value if type(value) != base_types.auto else self.make_default("SbjtInd")
+		self._SbjtInd = value if value is not None else base_types.UninitialisedField(self, 'SbjtInd', RequestedIndicator, False)
 
 	@SbjtInd.deleter
 	def SbjtInd(self):
 		del self._SbjtInd
-		self._SbjtInd = None
+		self._SbjtInd = base_types.UninitialisedField(self, 'SbjtInd', RequestedIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='QlfrInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),

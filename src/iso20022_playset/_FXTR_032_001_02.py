@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ForeignExchangeTradeCaptureReportRequestV02 import ForeignExchangeTradeCaptureReportRequestV02
+from . import ForeignExchangeTradeCaptureReportRequestV02
 
 class FXTR_032_001_02():
 
@@ -18,12 +18,12 @@ class FXTR_032_001_02():
 
 		@FXTradCaptrRptReq.setter
 		def FXTradCaptrRptReq(self, value):
-			self._FXTradCaptrRptReq = value if type(value) != base_types.auto else self.make_default("FXTradCaptrRptReq")
+			self._FXTradCaptrRptReq = value if value is not None else base_types.UninitialisedField(self, 'FXTradCaptrRptReq', ForeignExchangeTradeCaptureReportRequestV02, False)
 
 		@FXTradCaptrRptReq.deleter
 		def FXTradCaptrRptReq(self):
 			del self._FXTradCaptrRptReq
-			self._FXTradCaptrRptReq = None
+			self._FXTradCaptrRptReq = base_types.UninitialisedField(self, 'FXTradCaptrRptReq', ForeignExchangeTradeCaptureReportRequestV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='FXTradCaptrRptReq', type=ForeignExchangeTradeCaptureReportRequestV02, min=1, max=1, mutex_group=None, array=False),

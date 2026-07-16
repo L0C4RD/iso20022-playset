@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CreateStandingOrderV03 import CreateStandingOrderV03
+from . import CreateStandingOrderV03
 
 class CAMT_102_001_03():
 
@@ -18,12 +18,12 @@ class CAMT_102_001_03():
 
 		@CretStgOrdr.setter
 		def CretStgOrdr(self, value):
-			self._CretStgOrdr = value if type(value) != base_types.auto else self.make_default("CretStgOrdr")
+			self._CretStgOrdr = value if value is not None else base_types.UninitialisedField(self, 'CretStgOrdr', CreateStandingOrderV03, False)
 
 		@CretStgOrdr.deleter
 		def CretStgOrdr(self):
 			del self._CretStgOrdr
-			self._CretStgOrdr = None
+			self._CretStgOrdr = base_types.UninitialisedField(self, 'CretStgOrdr', CreateStandingOrderV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CretStgOrdr', type=CreateStandingOrderV03, min=1, max=1, mutex_group=None, array=False),

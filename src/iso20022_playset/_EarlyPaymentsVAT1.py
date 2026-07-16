@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CurrencyAndAmount import CurrencyAndAmount
-from ._Max4Text import Max4Text
-from ._PercentageRate import PercentageRate
+from . import CurrencyAndAmount
+from . import Max4Text
+from . import PercentageRate
 
 class EarlyPaymentsVAT1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class EarlyPaymentsVAT1(base_types._BaseFieldType):
 
 	@DscntTaxAmt.setter
 	def DscntTaxAmt(self, value):
-		self._DscntTaxAmt = value if type(value) != base_types.auto else self.make_default("DscntTaxAmt")
+		self._DscntTaxAmt = value if value is not None else base_types.UninitialisedField(self, 'DscntTaxAmt', CurrencyAndAmount, False)
 
 	@DscntTaxAmt.deleter
 	def DscntTaxAmt(self):
 		del self._DscntTaxAmt
-		self._DscntTaxAmt = None
+		self._DscntTaxAmt = base_types.UninitialisedField(self, 'DscntTaxAmt', CurrencyAndAmount, False)
 
 	@property
 	def DscntTaxTp(self):
@@ -28,12 +28,12 @@ class EarlyPaymentsVAT1(base_types._BaseFieldType):
 
 	@DscntTaxTp.setter
 	def DscntTaxTp(self, value):
-		self._DscntTaxTp = value if type(value) != base_types.auto else self.make_default("DscntTaxTp")
+		self._DscntTaxTp = value if value is not None else base_types.UninitialisedField(self, 'DscntTaxTp', Max4Text, False)
 
 	@DscntTaxTp.deleter
 	def DscntTaxTp(self):
 		del self._DscntTaxTp
-		self._DscntTaxTp = None
+		self._DscntTaxTp = base_types.UninitialisedField(self, 'DscntTaxTp', Max4Text, False)
 
 	@property
 	def TaxRate(self):
@@ -41,12 +41,12 @@ class EarlyPaymentsVAT1(base_types._BaseFieldType):
 
 	@TaxRate.setter
 	def TaxRate(self, value):
-		self._TaxRate = value if type(value) != base_types.auto else self.make_default("TaxRate")
+		self._TaxRate = value if value is not None else base_types.UninitialisedField(self, 'TaxRate', PercentageRate, False)
 
 	@TaxRate.deleter
 	def TaxRate(self):
 		del self._TaxRate
-		self._TaxRate = None
+		self._TaxRate = base_types.UninitialisedField(self, 'TaxRate', PercentageRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DscntTaxAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

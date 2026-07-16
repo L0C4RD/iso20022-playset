@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PartyIdentification125Choice import PartyIdentification125Choice
-from ._Referred1Code import Referred1Code
+from . import PartyIdentification125Choice
+from . import Referred1Code
 
 class ReferredAgent3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ReferredAgent3(base_types._BaseFieldType):
 
 	@Rfrd.setter
 	def Rfrd(self, value):
-		self._Rfrd = value if type(value) != base_types.auto else self.make_default("Rfrd")
+		self._Rfrd = value if value is not None else base_types.UninitialisedField(self, 'Rfrd', Referred1Code, False)
 
 	@Rfrd.deleter
 	def Rfrd(self):
 		del self._Rfrd
-		self._Rfrd = None
+		self._Rfrd = base_types.UninitialisedField(self, 'Rfrd', Referred1Code, False)
 
 	@property
 	def RfrdPlcmntAgt(self):
@@ -27,12 +27,12 @@ class ReferredAgent3(base_types._BaseFieldType):
 
 	@RfrdPlcmntAgt.setter
 	def RfrdPlcmntAgt(self, value):
-		self._RfrdPlcmntAgt = value if type(value) != base_types.auto else self.make_default("RfrdPlcmntAgt")
+		self._RfrdPlcmntAgt = value if value is not None else base_types.UninitialisedField(self, 'RfrdPlcmntAgt', PartyIdentification125Choice, False)
 
 	@RfrdPlcmntAgt.deleter
 	def RfrdPlcmntAgt(self):
 		del self._RfrdPlcmntAgt
-		self._RfrdPlcmntAgt = None
+		self._RfrdPlcmntAgt = base_types.UninitialisedField(self, 'RfrdPlcmntAgt', PartyIdentification125Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Rfrd', type=Referred1Code, min=1, max=1, mutex_group=None, array=False),

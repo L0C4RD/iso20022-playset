@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LoyaltyAccountRequest3 import LoyaltyAccountRequest3
-from ._PaymentAccountRequest1 import PaymentAccountRequest1
-from ._StoredValueRequest8 import StoredValueRequest8
-from ._TransactionIdentifier1 import TransactionIdentifier1
+from . import LoyaltyAccountRequest3
+from . import PaymentAccountRequest1
+from . import StoredValueRequest8
+from . import TransactionIdentifier1
 
 class BalanceInquiryRequest8(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class BalanceInquiryRequest8(base_types._BaseFieldType):
 
 	@LltyAcctReq.setter
 	def LltyAcctReq(self, value):
-		self._LltyAcctReq = value if type(value) != base_types.auto else self.make_default("LltyAcctReq")
+		self._LltyAcctReq = value if value is not None else base_types.UninitialisedField(self, 'LltyAcctReq', LoyaltyAccountRequest3, False)
 
 	@LltyAcctReq.deleter
 	def LltyAcctReq(self):
 		del self._LltyAcctReq
-		self._LltyAcctReq = None
+		self._LltyAcctReq = base_types.UninitialisedField(self, 'LltyAcctReq', LoyaltyAccountRequest3, False)
 
 	@property
 	def PmtAcctReq(self):
@@ -29,12 +29,12 @@ class BalanceInquiryRequest8(base_types._BaseFieldType):
 
 	@PmtAcctReq.setter
 	def PmtAcctReq(self, value):
-		self._PmtAcctReq = value if type(value) != base_types.auto else self.make_default("PmtAcctReq")
+		self._PmtAcctReq = value if value is not None else base_types.UninitialisedField(self, 'PmtAcctReq', PaymentAccountRequest1, False)
 
 	@PmtAcctReq.deleter
 	def PmtAcctReq(self):
 		del self._PmtAcctReq
-		self._PmtAcctReq = None
+		self._PmtAcctReq = base_types.UninitialisedField(self, 'PmtAcctReq', PaymentAccountRequest1, False)
 
 	@property
 	def SaleTxId(self):
@@ -42,12 +42,12 @@ class BalanceInquiryRequest8(base_types._BaseFieldType):
 
 	@SaleTxId.setter
 	def SaleTxId(self, value):
-		self._SaleTxId = value if type(value) != base_types.auto else self.make_default("SaleTxId")
+		self._SaleTxId = value if value is not None else base_types.UninitialisedField(self, 'SaleTxId', TransactionIdentifier1, False)
 
 	@SaleTxId.deleter
 	def SaleTxId(self):
 		del self._SaleTxId
-		self._SaleTxId = None
+		self._SaleTxId = base_types.UninitialisedField(self, 'SaleTxId', TransactionIdentifier1, False)
 
 	@property
 	def StordValAcctReq(self):
@@ -55,12 +55,12 @@ class BalanceInquiryRequest8(base_types._BaseFieldType):
 
 	@StordValAcctReq.setter
 	def StordValAcctReq(self, value):
-		self._StordValAcctReq = value if type(value) != base_types.auto else self.make_default("StordValAcctReq")
+		self._StordValAcctReq = value if value is not None else base_types.UninitialisedField(self, 'StordValAcctReq', StoredValueRequest8, False)
 
 	@StordValAcctReq.deleter
 	def StordValAcctReq(self):
 		del self._StordValAcctReq
-		self._StordValAcctReq = None
+		self._StordValAcctReq = base_types.UninitialisedField(self, 'StordValAcctReq', StoredValueRequest8, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LltyAcctReq', type=LoyaltyAccountRequest3, min=0, max=1, mutex_group=None, array=False),

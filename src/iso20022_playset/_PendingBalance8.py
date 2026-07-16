@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SettlementTypeAndIdentification26 import SettlementTypeAndIdentification26
-from ._SignedQuantityFormat13 import SignedQuantityFormat13
+from . import SettlementTypeAndIdentification26
+from . import SignedQuantityFormat13
 
 class PendingBalance8(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PendingBalance8(base_types._BaseFieldType):
 
 	@Bal.setter
 	def Bal(self, value):
-		self._Bal = value if type(value) != base_types.auto else self.make_default("Bal")
+		self._Bal = value if value is not None else base_types.UninitialisedField(self, 'Bal', SignedQuantityFormat13, False)
 
 	@Bal.deleter
 	def Bal(self):
 		del self._Bal
-		self._Bal = None
+		self._Bal = base_types.UninitialisedField(self, 'Bal', SignedQuantityFormat13, False)
 
 	@property
 	def PdgTxs(self):
@@ -27,12 +27,12 @@ class PendingBalance8(base_types._BaseFieldType):
 
 	@PdgTxs.setter
 	def PdgTxs(self, value):
-		self._PdgTxs = value if type(value) != base_types.auto else self.make_default("PdgTxs")
+		self._PdgTxs = value if value is not None else base_types.UninitialisedField(self, 'PdgTxs', SettlementTypeAndIdentification26, True)
 
 	@PdgTxs.deleter
 	def PdgTxs(self):
 		del self._PdgTxs
-		self._PdgTxs = None
+		self._PdgTxs = base_types.UninitialisedField(self, 'PdgTxs', SettlementTypeAndIdentification26, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Bal', type=SignedQuantityFormat13, min=1, max=1, mutex_group=None, array=False),

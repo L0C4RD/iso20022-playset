@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BuyInNotificationV03 import BuyInNotificationV03
+from . import BuyInNotificationV03
 
 class SECL_007_001_03():
 
@@ -18,12 +18,12 @@ class SECL_007_001_03():
 
 		@BuyInNtfctn.setter
 		def BuyInNtfctn(self, value):
-			self._BuyInNtfctn = value if type(value) != base_types.auto else self.make_default("BuyInNtfctn")
+			self._BuyInNtfctn = value if value is not None else base_types.UninitialisedField(self, 'BuyInNtfctn', BuyInNotificationV03, False)
 
 		@BuyInNtfctn.deleter
 		def BuyInNtfctn(self):
 			del self._BuyInNtfctn
-			self._BuyInNtfctn = None
+			self._BuyInNtfctn = base_types.UninitialisedField(self, 'BuyInNtfctn', BuyInNotificationV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='BuyInNtfctn', type=BuyInNotificationV03, min=1, max=1, mutex_group=None, array=False),

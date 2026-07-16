@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalData1 import AdditionalData1
-from ._Amount22 import Amount22
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
-from ._PhoneNumber import PhoneNumber
-from ._Tax41 import Tax41
-from ._TelecomServicesLineItem3 import TelecomServicesLineItem3
+from . import AdditionalData1
+from . import Amount22
+from . import ISODate
+from . import Max35Text
+from . import Max70Text
+from . import PhoneNumber
+from . import Tax41
+from . import TelecomServicesLineItem3
 
 class TelecomServices3(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class TelecomServices3(base_types._BaseFieldType):
 
 	@AddtlData.setter
 	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+		self._AddtlData = value if value is not None else base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@AddtlData.deleter
 	def AddtlData(self):
 		del self._AddtlData
-		self._AddtlData = None
+		self._AddtlData = base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@property
 	def BllgEnd(self):
@@ -33,12 +33,12 @@ class TelecomServices3(base_types._BaseFieldType):
 
 	@BllgEnd.setter
 	def BllgEnd(self, value):
-		self._BllgEnd = value if type(value) != base_types.auto else self.make_default("BllgEnd")
+		self._BllgEnd = value if value is not None else base_types.UninitialisedField(self, 'BllgEnd', ISODate, False)
 
 	@BllgEnd.deleter
 	def BllgEnd(self):
 		del self._BllgEnd
-		self._BllgEnd = None
+		self._BllgEnd = base_types.UninitialisedField(self, 'BllgEnd', ISODate, False)
 
 	@property
 	def BllgEvt(self):
@@ -46,12 +46,12 @@ class TelecomServices3(base_types._BaseFieldType):
 
 	@BllgEvt.setter
 	def BllgEvt(self, value):
-		self._BllgEvt = value if type(value) != base_types.auto else self.make_default("BllgEvt")
+		self._BllgEvt = value if value is not None else base_types.UninitialisedField(self, 'BllgEvt', Amount22, True)
 
 	@BllgEvt.deleter
 	def BllgEvt(self):
 		del self._BllgEvt
-		self._BllgEvt = None
+		self._BllgEvt = base_types.UninitialisedField(self, 'BllgEvt', Amount22, True)
 
 	@property
 	def BllgStart(self):
@@ -59,12 +59,12 @@ class TelecomServices3(base_types._BaseFieldType):
 
 	@BllgStart.setter
 	def BllgStart(self, value):
-		self._BllgStart = value if type(value) != base_types.auto else self.make_default("BllgStart")
+		self._BllgStart = value if value is not None else base_types.UninitialisedField(self, 'BllgStart', ISODate, False)
 
 	@BllgStart.deleter
 	def BllgStart(self):
 		del self._BllgStart
-		self._BllgStart = None
+		self._BllgStart = base_types.UninitialisedField(self, 'BllgStart', ISODate, False)
 
 	@property
 	def CstmrAcctNb(self):
@@ -72,12 +72,12 @@ class TelecomServices3(base_types._BaseFieldType):
 
 	@CstmrAcctNb.setter
 	def CstmrAcctNb(self, value):
-		self._CstmrAcctNb = value if type(value) != base_types.auto else self.make_default("CstmrAcctNb")
+		self._CstmrAcctNb = value if value is not None else base_types.UninitialisedField(self, 'CstmrAcctNb', Max35Text, False)
 
 	@CstmrAcctNb.deleter
 	def CstmrAcctNb(self):
 		del self._CstmrAcctNb
-		self._CstmrAcctNb = None
+		self._CstmrAcctNb = base_types.UninitialisedField(self, 'CstmrAcctNb', Max35Text, False)
 
 	@property
 	def CstmrNm(self):
@@ -85,12 +85,12 @@ class TelecomServices3(base_types._BaseFieldType):
 
 	@CstmrNm.setter
 	def CstmrNm(self, value):
-		self._CstmrNm = value if type(value) != base_types.auto else self.make_default("CstmrNm")
+		self._CstmrNm = value if value is not None else base_types.UninitialisedField(self, 'CstmrNm', Max70Text, False)
 
 	@CstmrNm.deleter
 	def CstmrNm(self):
 		del self._CstmrNm
-		self._CstmrNm = None
+		self._CstmrNm = base_types.UninitialisedField(self, 'CstmrNm', Max70Text, False)
 
 	@property
 	def CstmrPhne(self):
@@ -98,12 +98,12 @@ class TelecomServices3(base_types._BaseFieldType):
 
 	@CstmrPhne.setter
 	def CstmrPhne(self, value):
-		self._CstmrPhne = value if type(value) != base_types.auto else self.make_default("CstmrPhne")
+		self._CstmrPhne = value if value is not None else base_types.UninitialisedField(self, 'CstmrPhne', PhoneNumber, False)
 
 	@CstmrPhne.deleter
 	def CstmrPhne(self):
 		del self._CstmrPhne
-		self._CstmrPhne = None
+		self._CstmrPhne = base_types.UninitialisedField(self, 'CstmrPhne', PhoneNumber, False)
 
 	@property
 	def LineItm(self):
@@ -111,12 +111,12 @@ class TelecomServices3(base_types._BaseFieldType):
 
 	@LineItm.setter
 	def LineItm(self, value):
-		self._LineItm = value if type(value) != base_types.auto else self.make_default("LineItm")
+		self._LineItm = value if value is not None else base_types.UninitialisedField(self, 'LineItm', TelecomServicesLineItem3, True)
 
 	@LineItm.deleter
 	def LineItm(self):
 		del self._LineItm
-		self._LineItm = None
+		self._LineItm = base_types.UninitialisedField(self, 'LineItm', TelecomServicesLineItem3, True)
 
 	@property
 	def TtlTax(self):
@@ -124,12 +124,12 @@ class TelecomServices3(base_types._BaseFieldType):
 
 	@TtlTax.setter
 	def TtlTax(self, value):
-		self._TtlTax = value if type(value) != base_types.auto else self.make_default("TtlTax")
+		self._TtlTax = value if value is not None else base_types.UninitialisedField(self, 'TtlTax', Tax41, True)
 
 	@TtlTax.deleter
 	def TtlTax(self):
 		del self._TtlTax
-		self._TtlTax = None
+		self._TtlTax = base_types.UninitialisedField(self, 'TtlTax', Tax41, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),

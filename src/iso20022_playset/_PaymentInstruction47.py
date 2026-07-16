@@ -2,20 +2,20 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Amount2Choice import Amount2Choice
-from ._Amount3Choice import Amount3Choice
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._DateTimePeriod1Choice import DateTimePeriod1Choice
-from ._ISODate import ISODate
-from ._Max10Text import Max10Text
-from ._Max20000Text import Max20000Text
-from ._Max35Text import Max35Text
-from ._PaymentOrigin1Choice import PaymentOrigin1Choice
-from ._PaymentStatus6 import PaymentStatus6
-from ._PaymentTransactionParty4 import PaymentTransactionParty4
-from ._PaymentType4Choice import PaymentType4Choice
-from ._Priority1Choice import Priority1Choice
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import Amount2Choice
+from . import Amount3Choice
+from . import DateAndDateTime2Choice
+from . import DateTimePeriod1Choice
+from . import ISODate
+from . import Max10Text
+from . import Max20000Text
+from . import Max35Text
+from . import PaymentOrigin1Choice
+from . import PaymentStatus6
+from . import PaymentTransactionParty4
+from . import PaymentType4Choice
+from . import Priority1Choice
+from . import TrueFalseIndicator
 
 class PaymentInstruction47(base_types._BaseFieldType):
 
@@ -26,12 +26,12 @@ class PaymentInstruction47(base_types._BaseFieldType):
 
 	@EndToEndId.setter
 	def EndToEndId(self, value):
-		self._EndToEndId = value if type(value) != base_types.auto else self.make_default("EndToEndId")
+		self._EndToEndId = value if value is not None else base_types.UninitialisedField(self, 'EndToEndId', Max35Text, False)
 
 	@EndToEndId.deleter
 	def EndToEndId(self):
 		del self._EndToEndId
-		self._EndToEndId = None
+		self._EndToEndId = base_types.UninitialisedField(self, 'EndToEndId', Max35Text, False)
 
 	@property
 	def GnrtdOrdr(self):
@@ -39,12 +39,12 @@ class PaymentInstruction47(base_types._BaseFieldType):
 
 	@GnrtdOrdr.setter
 	def GnrtdOrdr(self, value):
-		self._GnrtdOrdr = value if type(value) != base_types.auto else self.make_default("GnrtdOrdr")
+		self._GnrtdOrdr = value if value is not None else base_types.UninitialisedField(self, 'GnrtdOrdr', TrueFalseIndicator, False)
 
 	@GnrtdOrdr.deleter
 	def GnrtdOrdr(self):
 		del self._GnrtdOrdr
-		self._GnrtdOrdr = None
+		self._GnrtdOrdr = base_types.UninitialisedField(self, 'GnrtdOrdr', TrueFalseIndicator, False)
 
 	@property
 	def InstdAmt(self):
@@ -52,12 +52,12 @@ class PaymentInstruction47(base_types._BaseFieldType):
 
 	@InstdAmt.setter
 	def InstdAmt(self, value):
-		self._InstdAmt = value if type(value) != base_types.auto else self.make_default("InstdAmt")
+		self._InstdAmt = value if value is not None else base_types.UninitialisedField(self, 'InstdAmt', Amount3Choice, False)
 
 	@InstdAmt.deleter
 	def InstdAmt(self):
 		del self._InstdAmt
-		self._InstdAmt = None
+		self._InstdAmt = base_types.UninitialisedField(self, 'InstdAmt', Amount3Choice, False)
 
 	@property
 	def InstrCpy(self):
@@ -65,12 +65,12 @@ class PaymentInstruction47(base_types._BaseFieldType):
 
 	@InstrCpy.setter
 	def InstrCpy(self, value):
-		self._InstrCpy = value if type(value) != base_types.auto else self.make_default("InstrCpy")
+		self._InstrCpy = value if value is not None else base_types.UninitialisedField(self, 'InstrCpy', Max20000Text, False)
 
 	@InstrCpy.deleter
 	def InstrCpy(self):
 		del self._InstrCpy
-		self._InstrCpy = None
+		self._InstrCpy = base_types.UninitialisedField(self, 'InstrCpy', Max20000Text, False)
 
 	@property
 	def IntrBkSttlmAmt(self):
@@ -78,12 +78,12 @@ class PaymentInstruction47(base_types._BaseFieldType):
 
 	@IntrBkSttlmAmt.setter
 	def IntrBkSttlmAmt(self, value):
-		self._IntrBkSttlmAmt = value if type(value) != base_types.auto else self.make_default("IntrBkSttlmAmt")
+		self._IntrBkSttlmAmt = value if value is not None else base_types.UninitialisedField(self, 'IntrBkSttlmAmt', Amount2Choice, False)
 
 	@IntrBkSttlmAmt.deleter
 	def IntrBkSttlmAmt(self):
 		del self._IntrBkSttlmAmt
-		self._IntrBkSttlmAmt = None
+		self._IntrBkSttlmAmt = base_types.UninitialisedField(self, 'IntrBkSttlmAmt', Amount2Choice, False)
 
 	@property
 	def IntrBkSttlmDt(self):
@@ -91,12 +91,12 @@ class PaymentInstruction47(base_types._BaseFieldType):
 
 	@IntrBkSttlmDt.setter
 	def IntrBkSttlmDt(self, value):
-		self._IntrBkSttlmDt = value if type(value) != base_types.auto else self.make_default("IntrBkSttlmDt")
+		self._IntrBkSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'IntrBkSttlmDt', ISODate, False)
 
 	@IntrBkSttlmDt.deleter
 	def IntrBkSttlmDt(self):
 		del self._IntrBkSttlmDt
-		self._IntrBkSttlmDt = None
+		self._IntrBkSttlmDt = base_types.UninitialisedField(self, 'IntrBkSttlmDt', ISODate, False)
 
 	@property
 	def MsgId(self):
@@ -104,12 +104,12 @@ class PaymentInstruction47(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@property
 	def PmtMtd(self):
@@ -117,12 +117,12 @@ class PaymentInstruction47(base_types._BaseFieldType):
 
 	@PmtMtd.setter
 	def PmtMtd(self, value):
-		self._PmtMtd = value if type(value) != base_types.auto else self.make_default("PmtMtd")
+		self._PmtMtd = value if value is not None else base_types.UninitialisedField(self, 'PmtMtd', PaymentOrigin1Choice, False)
 
 	@PmtMtd.deleter
 	def PmtMtd(self):
 		del self._PmtMtd
-		self._PmtMtd = None
+		self._PmtMtd = base_types.UninitialisedField(self, 'PmtMtd', PaymentOrigin1Choice, False)
 
 	@property
 	def PrcgVldtyTm(self):
@@ -130,12 +130,12 @@ class PaymentInstruction47(base_types._BaseFieldType):
 
 	@PrcgVldtyTm.setter
 	def PrcgVldtyTm(self, value):
-		self._PrcgVldtyTm = value if type(value) != base_types.auto else self.make_default("PrcgVldtyTm")
+		self._PrcgVldtyTm = value if value is not None else base_types.UninitialisedField(self, 'PrcgVldtyTm', DateTimePeriod1Choice, False)
 
 	@PrcgVldtyTm.deleter
 	def PrcgVldtyTm(self):
 		del self._PrcgVldtyTm
-		self._PrcgVldtyTm = None
+		self._PrcgVldtyTm = base_types.UninitialisedField(self, 'PrcgVldtyTm', DateTimePeriod1Choice, False)
 
 	@property
 	def Prty(self):
@@ -143,12 +143,12 @@ class PaymentInstruction47(base_types._BaseFieldType):
 
 	@Prty.setter
 	def Prty(self, value):
-		self._Prty = value if type(value) != base_types.auto else self.make_default("Prty")
+		self._Prty = value if value is not None else base_types.UninitialisedField(self, 'Prty', Priority1Choice, False)
 
 	@Prty.deleter
 	def Prty(self):
 		del self._Prty
-		self._Prty = None
+		self._Prty = base_types.UninitialisedField(self, 'Prty', Priority1Choice, False)
 
 	@property
 	def Pties(self):
@@ -156,12 +156,12 @@ class PaymentInstruction47(base_types._BaseFieldType):
 
 	@Pties.setter
 	def Pties(self, value):
-		self._Pties = value if type(value) != base_types.auto else self.make_default("Pties")
+		self._Pties = value if value is not None else base_types.UninitialisedField(self, 'Pties', PaymentTransactionParty4, False)
 
 	@Pties.deleter
 	def Pties(self):
 		del self._Pties
-		self._Pties = None
+		self._Pties = base_types.UninitialisedField(self, 'Pties', PaymentTransactionParty4, False)
 
 	@property
 	def Purp(self):
@@ -169,12 +169,12 @@ class PaymentInstruction47(base_types._BaseFieldType):
 
 	@Purp.setter
 	def Purp(self, value):
-		self._Purp = value if type(value) != base_types.auto else self.make_default("Purp")
+		self._Purp = value if value is not None else base_types.UninitialisedField(self, 'Purp', Max10Text, False)
 
 	@Purp.deleter
 	def Purp(self):
 		del self._Purp
-		self._Purp = None
+		self._Purp = base_types.UninitialisedField(self, 'Purp', Max10Text, False)
 
 	@property
 	def ReqdExctnDt(self):
@@ -182,12 +182,12 @@ class PaymentInstruction47(base_types._BaseFieldType):
 
 	@ReqdExctnDt.setter
 	def ReqdExctnDt(self, value):
-		self._ReqdExctnDt = value if type(value) != base_types.auto else self.make_default("ReqdExctnDt")
+		self._ReqdExctnDt = value if value is not None else base_types.UninitialisedField(self, 'ReqdExctnDt', DateAndDateTime2Choice, False)
 
 	@ReqdExctnDt.deleter
 	def ReqdExctnDt(self):
 		del self._ReqdExctnDt
-		self._ReqdExctnDt = None
+		self._ReqdExctnDt = base_types.UninitialisedField(self, 'ReqdExctnDt', DateAndDateTime2Choice, False)
 
 	@property
 	def Sts(self):
@@ -195,12 +195,12 @@ class PaymentInstruction47(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', PaymentStatus6, True)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', PaymentStatus6, True)
 
 	@property
 	def Tp(self):
@@ -208,12 +208,12 @@ class PaymentInstruction47(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', PaymentType4Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', PaymentType4Choice, False)
 
 	@property
 	def TxId(self):
@@ -221,12 +221,12 @@ class PaymentInstruction47(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EndToEndId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

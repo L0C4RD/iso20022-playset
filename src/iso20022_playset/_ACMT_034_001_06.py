@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountSwitchRequestPaymentV06 import AccountSwitchRequestPaymentV06
+from . import AccountSwitchRequestPaymentV06
 
 class ACMT_034_001_06():
 
@@ -18,12 +18,12 @@ class ACMT_034_001_06():
 
 		@AcctSwtchReqPmt.setter
 		def AcctSwtchReqPmt(self, value):
-			self._AcctSwtchReqPmt = value if type(value) != base_types.auto else self.make_default("AcctSwtchReqPmt")
+			self._AcctSwtchReqPmt = value if value is not None else base_types.UninitialisedField(self, 'AcctSwtchReqPmt', AccountSwitchRequestPaymentV06, False)
 
 		@AcctSwtchReqPmt.deleter
 		def AcctSwtchReqPmt(self):
 			del self._AcctSwtchReqPmt
-			self._AcctSwtchReqPmt = None
+			self._AcctSwtchReqPmt = base_types.UninitialisedField(self, 'AcctSwtchReqPmt', AccountSwitchRequestPaymentV06, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AcctSwtchReqPmt', type=AccountSwitchRequestPaymentV06, min=1, max=1, mutex_group=None, array=False),

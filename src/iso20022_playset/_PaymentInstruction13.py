@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._PaymentType4Choice import PaymentType4Choice
+from . import ISODateTime
+from . import PaymentType4Choice
 
 class PaymentInstruction13(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PaymentInstruction13(base_types._BaseFieldType):
 
 	@PmtTp.setter
 	def PmtTp(self, value):
-		self._PmtTp = value if type(value) != base_types.auto else self.make_default("PmtTp")
+		self._PmtTp = value if value is not None else base_types.UninitialisedField(self, 'PmtTp', PaymentType4Choice, False)
 
 	@PmtTp.deleter
 	def PmtTp(self):
 		del self._PmtTp
-		self._PmtTp = None
+		self._PmtTp = base_types.UninitialisedField(self, 'PmtTp', PaymentType4Choice, False)
 
 	@property
 	def ReqdExctnDtTm(self):
@@ -27,12 +27,12 @@ class PaymentInstruction13(base_types._BaseFieldType):
 
 	@ReqdExctnDtTm.setter
 	def ReqdExctnDtTm(self, value):
-		self._ReqdExctnDtTm = value if type(value) != base_types.auto else self.make_default("ReqdExctnDtTm")
+		self._ReqdExctnDtTm = value if value is not None else base_types.UninitialisedField(self, 'ReqdExctnDtTm', ISODateTime, False)
 
 	@ReqdExctnDtTm.deleter
 	def ReqdExctnDtTm(self):
 		del self._ReqdExctnDtTm
-		self._ReqdExctnDtTm = None
+		self._ReqdExctnDtTm = base_types.UninitialisedField(self, 'ReqdExctnDtTm', ISODateTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PmtTp', type=PaymentType4Choice, min=0, max=1, mutex_group=None, array=False),

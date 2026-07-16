@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountLinkMaintenanceRequestV01 import AccountLinkMaintenanceRequestV01
+from . import AccountLinkMaintenanceRequestV01
 
 class REDA_050_001_01():
 
@@ -18,12 +18,12 @@ class REDA_050_001_01():
 
 		@AcctLkMntncReq.setter
 		def AcctLkMntncReq(self, value):
-			self._AcctLkMntncReq = value if type(value) != base_types.auto else self.make_default("AcctLkMntncReq")
+			self._AcctLkMntncReq = value if value is not None else base_types.UninitialisedField(self, 'AcctLkMntncReq', AccountLinkMaintenanceRequestV01, False)
 
 		@AcctLkMntncReq.deleter
 		def AcctLkMntncReq(self):
 			del self._AcctLkMntncReq
-			self._AcctLkMntncReq = None
+			self._AcctLkMntncReq = base_types.UninitialisedField(self, 'AcctLkMntncReq', AccountLinkMaintenanceRequestV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AcctLkMntncReq', type=AccountLinkMaintenanceRequestV01, min=1, max=1, mutex_group=None, array=False),

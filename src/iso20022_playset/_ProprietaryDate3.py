@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._Max35Text import Max35Text
+from . import DateAndDateTime2Choice
+from . import Max35Text
 
 class ProprietaryDate3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ProprietaryDate3(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', DateAndDateTime2Choice, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', DateAndDateTime2Choice, False)
 
 	@property
 	def Tp(self):
@@ -27,12 +27,12 @@ class ProprietaryDate3(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', Max35Text, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dt', type=DateAndDateTime2Choice, min=1, max=1, mutex_group=None, array=False),

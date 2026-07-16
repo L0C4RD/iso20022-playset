@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmountRange3 import ActiveCurrencyAndAmountRange3
-from ._ImpliedCurrencyAndAmountRange1 import ImpliedCurrencyAndAmountRange1
+from . import ActiveCurrencyAndAmountRange3
+from . import ImpliedCurrencyAndAmountRange1
 
 class ActiveAmountRange3Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ActiveAmountRange3Choice(base_types._BaseFieldType):
 
 	@CcyAndAmtRg.setter
 	def CcyAndAmtRg(self, value):
-		self._CcyAndAmtRg = value if type(value) != base_types.auto else self.make_default("CcyAndAmtRg")
+		self._CcyAndAmtRg = value if value is not None else base_types.UninitialisedField(self, 'CcyAndAmtRg', ActiveCurrencyAndAmountRange3, False)
 
 	@CcyAndAmtRg.deleter
 	def CcyAndAmtRg(self):
 		del self._CcyAndAmtRg
-		self._CcyAndAmtRg = None
+		self._CcyAndAmtRg = base_types.UninitialisedField(self, 'CcyAndAmtRg', ActiveCurrencyAndAmountRange3, False)
 
 	@property
 	def ImpldCcyAndAmtRg(self):
@@ -27,12 +27,12 @@ class ActiveAmountRange3Choice(base_types._BaseFieldType):
 
 	@ImpldCcyAndAmtRg.setter
 	def ImpldCcyAndAmtRg(self, value):
-		self._ImpldCcyAndAmtRg = value if type(value) != base_types.auto else self.make_default("ImpldCcyAndAmtRg")
+		self._ImpldCcyAndAmtRg = value if value is not None else base_types.UninitialisedField(self, 'ImpldCcyAndAmtRg', ImpliedCurrencyAndAmountRange1, False)
 
 	@ImpldCcyAndAmtRg.deleter
 	def ImpldCcyAndAmtRg(self):
 		del self._ImpldCcyAndAmtRg
-		self._ImpldCcyAndAmtRg = None
+		self._ImpldCcyAndAmtRg = base_types.UninitialisedField(self, 'ImpldCcyAndAmtRg', ImpliedCurrencyAndAmountRange1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CcyAndAmtRg', type=ActiveCurrencyAndAmountRange3, min=0, max=1, mutex_group=1, array=False),

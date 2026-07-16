@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalReference10 import AdditionalReference10
-from ._Extension1 import Extension1
-from ._Max35Text import Max35Text
-from ._MessageIdentification1 import MessageIdentification1
-from ._Pagination1 import Pagination1
-from ._PriceReportFunction1Code import PriceReportFunction1Code
-from ._PriceValuation5 import PriceValuation5
+from . import AdditionalReference10
+from . import Extension1
+from . import Max35Text
+from . import MessageIdentification1
+from . import Pagination1
+from . import PriceReportFunction1Code
+from . import PriceValuation5
 
 class PriceReportV05(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class PriceReportV05(base_types._BaseFieldType):
 
 	@CxlId.setter
 	def CxlId(self, value):
-		self._CxlId = value if type(value) != base_types.auto else self.make_default("CxlId")
+		self._CxlId = value if value is not None else base_types.UninitialisedField(self, 'CxlId', Max35Text, False)
 
 	@CxlId.deleter
 	def CxlId(self):
 		del self._CxlId
-		self._CxlId = None
+		self._CxlId = base_types.UninitialisedField(self, 'CxlId', Max35Text, False)
 
 	@property
 	def Fctn(self):
@@ -32,12 +32,12 @@ class PriceReportV05(base_types._BaseFieldType):
 
 	@Fctn.setter
 	def Fctn(self, value):
-		self._Fctn = value if type(value) != base_types.auto else self.make_default("Fctn")
+		self._Fctn = value if value is not None else base_types.UninitialisedField(self, 'Fctn', PriceReportFunction1Code, False)
 
 	@Fctn.deleter
 	def Fctn(self):
 		del self._Fctn
-		self._Fctn = None
+		self._Fctn = base_types.UninitialisedField(self, 'Fctn', PriceReportFunction1Code, False)
 
 	@property
 	def MsgId(self):
@@ -45,12 +45,12 @@ class PriceReportV05(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@property
 	def MsgPgntn(self):
@@ -58,12 +58,12 @@ class PriceReportV05(base_types._BaseFieldType):
 
 	@MsgPgntn.setter
 	def MsgPgntn(self, value):
-		self._MsgPgntn = value if type(value) != base_types.auto else self.make_default("MsgPgntn")
+		self._MsgPgntn = value if value is not None else base_types.UninitialisedField(self, 'MsgPgntn', Pagination1, False)
 
 	@MsgPgntn.deleter
 	def MsgPgntn(self):
 		del self._MsgPgntn
-		self._MsgPgntn = None
+		self._MsgPgntn = base_types.UninitialisedField(self, 'MsgPgntn', Pagination1, False)
 
 	@property
 	def PoolRef(self):
@@ -71,12 +71,12 @@ class PriceReportV05(base_types._BaseFieldType):
 
 	@PoolRef.setter
 	def PoolRef(self, value):
-		self._PoolRef = value if type(value) != base_types.auto else self.make_default("PoolRef")
+		self._PoolRef = value if value is not None else base_types.UninitialisedField(self, 'PoolRef', AdditionalReference10, False)
 
 	@PoolRef.deleter
 	def PoolRef(self):
 		del self._PoolRef
-		self._PoolRef = None
+		self._PoolRef = base_types.UninitialisedField(self, 'PoolRef', AdditionalReference10, False)
 
 	@property
 	def PricRptId(self):
@@ -84,12 +84,12 @@ class PriceReportV05(base_types._BaseFieldType):
 
 	@PricRptId.setter
 	def PricRptId(self, value):
-		self._PricRptId = value if type(value) != base_types.auto else self.make_default("PricRptId")
+		self._PricRptId = value if value is not None else base_types.UninitialisedField(self, 'PricRptId', Max35Text, False)
 
 	@PricRptId.deleter
 	def PricRptId(self):
 		del self._PricRptId
-		self._PricRptId = None
+		self._PricRptId = base_types.UninitialisedField(self, 'PricRptId', Max35Text, False)
 
 	@property
 	def PricValtnDtls(self):
@@ -97,12 +97,12 @@ class PriceReportV05(base_types._BaseFieldType):
 
 	@PricValtnDtls.setter
 	def PricValtnDtls(self, value):
-		self._PricValtnDtls = value if type(value) != base_types.auto else self.make_default("PricValtnDtls")
+		self._PricValtnDtls = value if value is not None else base_types.UninitialisedField(self, 'PricValtnDtls', PriceValuation5, True)
 
 	@PricValtnDtls.deleter
 	def PricValtnDtls(self):
 		del self._PricValtnDtls
-		self._PricValtnDtls = None
+		self._PricValtnDtls = base_types.UninitialisedField(self, 'PricValtnDtls', PriceValuation5, True)
 
 	@property
 	def PrvsRef(self):
@@ -110,12 +110,12 @@ class PriceReportV05(base_types._BaseFieldType):
 
 	@PrvsRef.setter
 	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
+		self._PrvsRef = value if value is not None else base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference10, True)
 
 	@PrvsRef.deleter
 	def PrvsRef(self):
 		del self._PrvsRef
-		self._PrvsRef = None
+		self._PrvsRef = base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference10, True)
 
 	@property
 	def RltdRef(self):
@@ -123,12 +123,12 @@ class PriceReportV05(base_types._BaseFieldType):
 
 	@RltdRef.setter
 	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
+		self._RltdRef = value if value is not None else base_types.UninitialisedField(self, 'RltdRef', AdditionalReference10, False)
 
 	@RltdRef.deleter
 	def RltdRef(self):
 		del self._RltdRef
-		self._RltdRef = None
+		self._RltdRef = base_types.UninitialisedField(self, 'RltdRef', AdditionalReference10, False)
 
 	@property
 	def Xtnsn(self):
@@ -136,12 +136,12 @@ class PriceReportV05(base_types._BaseFieldType):
 
 	@Xtnsn.setter
 	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
+		self._Xtnsn = value if value is not None else base_types.UninitialisedField(self, 'Xtnsn', Extension1, True)
 
 	@Xtnsn.deleter
 	def Xtnsn(self):
 		del self._Xtnsn
-		self._Xtnsn = None
+		self._Xtnsn = base_types.UninitialisedField(self, 'Xtnsn', Extension1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CxlId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

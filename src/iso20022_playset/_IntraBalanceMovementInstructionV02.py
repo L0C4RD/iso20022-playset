@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CashAccount40 import CashAccount40
-from ._IntraBalance5 import IntraBalance5
-from ._Linkages57 import Linkages57
-from ._Max35Text import Max35Text
-from ._NumberCount1Choice import NumberCount1Choice
-from ._SupplementaryData1 import SupplementaryData1
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
-from ._TransactionAndDocumentIdentification6 import TransactionAndDocumentIdentification6
+from . import BranchAndFinancialInstitutionIdentification8
+from . import CashAccount40
+from . import IntraBalance5
+from . import Linkages57
+from . import Max35Text
+from . import NumberCount1Choice
+from . import SupplementaryData1
+from . import SystemPartyIdentification8
+from . import TransactionAndDocumentIdentification6
 
 class IntraBalanceMovementInstructionV02(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class IntraBalanceMovementInstructionV02(base_types._BaseFieldType):
 
 	@CorpActnEvtId.setter
 	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
+		self._CorpActnEvtId = value if value is not None else base_types.UninitialisedField(self, 'CorpActnEvtId', Max35Text, False)
 
 	@CorpActnEvtId.deleter
 	def CorpActnEvtId(self):
 		del self._CorpActnEvtId
-		self._CorpActnEvtId = None
+		self._CorpActnEvtId = base_types.UninitialisedField(self, 'CorpActnEvtId', Max35Text, False)
 
 	@property
 	def CshAcct(self):
@@ -34,12 +34,12 @@ class IntraBalanceMovementInstructionV02(base_types._BaseFieldType):
 
 	@CshAcct.setter
 	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != base_types.auto else self.make_default("CshAcct")
+		self._CshAcct = value if value is not None else base_types.UninitialisedField(self, 'CshAcct', CashAccount40, False)
 
 	@CshAcct.deleter
 	def CshAcct(self):
 		del self._CshAcct
-		self._CshAcct = None
+		self._CshAcct = base_types.UninitialisedField(self, 'CshAcct', CashAccount40, False)
 
 	@property
 	def CshAcctOwnr(self):
@@ -47,12 +47,12 @@ class IntraBalanceMovementInstructionV02(base_types._BaseFieldType):
 
 	@CshAcctOwnr.setter
 	def CshAcctOwnr(self, value):
-		self._CshAcctOwnr = value if type(value) != base_types.auto else self.make_default("CshAcctOwnr")
+		self._CshAcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'CshAcctOwnr', SystemPartyIdentification8, False)
 
 	@CshAcctOwnr.deleter
 	def CshAcctOwnr(self):
 		del self._CshAcctOwnr
-		self._CshAcctOwnr = None
+		self._CshAcctOwnr = base_types.UninitialisedField(self, 'CshAcctOwnr', SystemPartyIdentification8, False)
 
 	@property
 	def CshAcctSvcr(self):
@@ -60,12 +60,12 @@ class IntraBalanceMovementInstructionV02(base_types._BaseFieldType):
 
 	@CshAcctSvcr.setter
 	def CshAcctSvcr(self, value):
-		self._CshAcctSvcr = value if type(value) != base_types.auto else self.make_default("CshAcctSvcr")
+		self._CshAcctSvcr = value if value is not None else base_types.UninitialisedField(self, 'CshAcctSvcr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@CshAcctSvcr.deleter
 	def CshAcctSvcr(self):
 		del self._CshAcctSvcr
-		self._CshAcctSvcr = None
+		self._CshAcctSvcr = base_types.UninitialisedField(self, 'CshAcctSvcr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def Id(self):
@@ -73,12 +73,12 @@ class IntraBalanceMovementInstructionV02(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', TransactionAndDocumentIdentification6, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', TransactionAndDocumentIdentification6, False)
 
 	@property
 	def IntraBal(self):
@@ -86,12 +86,12 @@ class IntraBalanceMovementInstructionV02(base_types._BaseFieldType):
 
 	@IntraBal.setter
 	def IntraBal(self, value):
-		self._IntraBal = value if type(value) != base_types.auto else self.make_default("IntraBal")
+		self._IntraBal = value if value is not None else base_types.UninitialisedField(self, 'IntraBal', IntraBalance5, False)
 
 	@IntraBal.deleter
 	def IntraBal(self):
 		del self._IntraBal
-		self._IntraBal = None
+		self._IntraBal = base_types.UninitialisedField(self, 'IntraBal', IntraBalance5, False)
 
 	@property
 	def Lnkgs(self):
@@ -99,12 +99,12 @@ class IntraBalanceMovementInstructionV02(base_types._BaseFieldType):
 
 	@Lnkgs.setter
 	def Lnkgs(self, value):
-		self._Lnkgs = value if type(value) != base_types.auto else self.make_default("Lnkgs")
+		self._Lnkgs = value if value is not None else base_types.UninitialisedField(self, 'Lnkgs', Linkages57, True)
 
 	@Lnkgs.deleter
 	def Lnkgs(self):
 		del self._Lnkgs
-		self._Lnkgs = None
+		self._Lnkgs = base_types.UninitialisedField(self, 'Lnkgs', Linkages57, True)
 
 	@property
 	def NbCounts(self):
@@ -112,12 +112,12 @@ class IntraBalanceMovementInstructionV02(base_types._BaseFieldType):
 
 	@NbCounts.setter
 	def NbCounts(self, value):
-		self._NbCounts = value if type(value) != base_types.auto else self.make_default("NbCounts")
+		self._NbCounts = value if value is not None else base_types.UninitialisedField(self, 'NbCounts', NumberCount1Choice, False)
 
 	@NbCounts.deleter
 	def NbCounts(self):
 		del self._NbCounts
-		self._NbCounts = None
+		self._NbCounts = base_types.UninitialisedField(self, 'NbCounts', NumberCount1Choice, False)
 
 	@property
 	def SplmtryData(self):
@@ -125,12 +125,12 @@ class IntraBalanceMovementInstructionV02(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CorpActnEvtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

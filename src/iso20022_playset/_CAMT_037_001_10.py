@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DebitAuthorisationRequestV10 import DebitAuthorisationRequestV10
+from . import DebitAuthorisationRequestV10
 
 class CAMT_037_001_10():
 
@@ -18,12 +18,12 @@ class CAMT_037_001_10():
 
 		@DbtAuthstnReq.setter
 		def DbtAuthstnReq(self, value):
-			self._DbtAuthstnReq = value if type(value) != base_types.auto else self.make_default("DbtAuthstnReq")
+			self._DbtAuthstnReq = value if value is not None else base_types.UninitialisedField(self, 'DbtAuthstnReq', DebitAuthorisationRequestV10, False)
 
 		@DbtAuthstnReq.deleter
 		def DbtAuthstnReq(self):
 			del self._DbtAuthstnReq
-			self._DbtAuthstnReq = None
+			self._DbtAuthstnReq = base_types.UninitialisedField(self, 'DbtAuthstnReq', DebitAuthorisationRequestV10, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='DbtAuthstnReq', type=DebitAuthorisationRequestV10, min=1, max=1, mutex_group=None, array=False),

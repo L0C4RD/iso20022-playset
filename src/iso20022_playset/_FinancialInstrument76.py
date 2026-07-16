@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DistributionPolicy1Code import DistributionPolicy1Code
-from ._FormOfSecurity1Code import FormOfSecurity1Code
-from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
-from ._SecurityClassificationType3Choice import SecurityClassificationType3Choice
+from . import DistributionPolicy1Code
+from . import FormOfSecurity1Code
+from . import RestrictedFINXMax35Text
+from . import SecurityClassificationType3Choice
 
 class FinancialInstrument76(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class FinancialInstrument76(base_types._BaseFieldType):
 
 	@ClssTp.setter
 	def ClssTp(self, value):
-		self._ClssTp = value if type(value) != base_types.auto else self.make_default("ClssTp")
+		self._ClssTp = value if value is not None else base_types.UninitialisedField(self, 'ClssTp', RestrictedFINXMax35Text, False)
 
 	@ClssTp.deleter
 	def ClssTp(self):
 		del self._ClssTp
-		self._ClssTp = None
+		self._ClssTp = base_types.UninitialisedField(self, 'ClssTp', RestrictedFINXMax35Text, False)
 
 	@property
 	def ClssfctnTp(self):
@@ -29,12 +29,12 @@ class FinancialInstrument76(base_types._BaseFieldType):
 
 	@ClssfctnTp.setter
 	def ClssfctnTp(self, value):
-		self._ClssfctnTp = value if type(value) != base_types.auto else self.make_default("ClssfctnTp")
+		self._ClssfctnTp = value if value is not None else base_types.UninitialisedField(self, 'ClssfctnTp', SecurityClassificationType3Choice, False)
 
 	@ClssfctnTp.deleter
 	def ClssfctnTp(self):
 		del self._ClssfctnTp
-		self._ClssfctnTp = None
+		self._ClssfctnTp = base_types.UninitialisedField(self, 'ClssfctnTp', SecurityClassificationType3Choice, False)
 
 	@property
 	def DstrbtnPlcy(self):
@@ -42,12 +42,12 @@ class FinancialInstrument76(base_types._BaseFieldType):
 
 	@DstrbtnPlcy.setter
 	def DstrbtnPlcy(self, value):
-		self._DstrbtnPlcy = value if type(value) != base_types.auto else self.make_default("DstrbtnPlcy")
+		self._DstrbtnPlcy = value if value is not None else base_types.UninitialisedField(self, 'DstrbtnPlcy', DistributionPolicy1Code, False)
 
 	@DstrbtnPlcy.deleter
 	def DstrbtnPlcy(self):
 		del self._DstrbtnPlcy
-		self._DstrbtnPlcy = None
+		self._DstrbtnPlcy = base_types.UninitialisedField(self, 'DstrbtnPlcy', DistributionPolicy1Code, False)
 
 	@property
 	def SctiesForm(self):
@@ -55,12 +55,12 @@ class FinancialInstrument76(base_types._BaseFieldType):
 
 	@SctiesForm.setter
 	def SctiesForm(self, value):
-		self._SctiesForm = value if type(value) != base_types.auto else self.make_default("SctiesForm")
+		self._SctiesForm = value if value is not None else base_types.UninitialisedField(self, 'SctiesForm', FormOfSecurity1Code, False)
 
 	@SctiesForm.deleter
 	def SctiesForm(self):
 		del self._SctiesForm
-		self._SctiesForm = None
+		self._SctiesForm = base_types.UninitialisedField(self, 'SctiesForm', FormOfSecurity1Code, False)
 
 	@property
 	def SplmtryId(self):
@@ -68,12 +68,12 @@ class FinancialInstrument76(base_types._BaseFieldType):
 
 	@SplmtryId.setter
 	def SplmtryId(self, value):
-		self._SplmtryId = value if type(value) != base_types.auto else self.make_default("SplmtryId")
+		self._SplmtryId = value if value is not None else base_types.UninitialisedField(self, 'SplmtryId', RestrictedFINXMax35Text, False)
 
 	@SplmtryId.deleter
 	def SplmtryId(self):
 		del self._SplmtryId
-		self._SplmtryId = None
+		self._SplmtryId = base_types.UninitialisedField(self, 'SplmtryId', RestrictedFINXMax35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClssTp', type=RestrictedFINXMax35Text, min=0, max=1, mutex_group=None, array=False),

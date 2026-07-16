@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._KeyExchangeInitiationV05 import KeyExchangeInitiationV05
+from . import KeyExchangeInitiationV05
 
 class CANM_003_001_05():
 
@@ -18,12 +18,12 @@ class CANM_003_001_05():
 
 		@KeyXchgInitn.setter
 		def KeyXchgInitn(self, value):
-			self._KeyXchgInitn = value if type(value) != base_types.auto else self.make_default("KeyXchgInitn")
+			self._KeyXchgInitn = value if value is not None else base_types.UninitialisedField(self, 'KeyXchgInitn', KeyExchangeInitiationV05, False)
 
 		@KeyXchgInitn.deleter
 		def KeyXchgInitn(self):
 			del self._KeyXchgInitn
-			self._KeyXchgInitn = None
+			self._KeyXchgInitn = base_types.UninitialisedField(self, 'KeyXchgInitn', KeyExchangeInitiationV05, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='KeyXchgInitn', type=KeyExchangeInitiationV05, min=1, max=1, mutex_group=None, array=False),

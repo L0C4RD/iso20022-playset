@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
-from ._ISODate import ISODate
-from ._Number import Number
-from ._Percentage14Rate import Percentage14Rate
+from . import FinancialInstrumentQuantity18Choice
+from . import ISODate
+from . import Number
+from . import Percentage14Rate
 
 class Participation6(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class Participation6(base_types._BaseFieldType):
 
 	@ClctnDt.setter
 	def ClctnDt(self, value):
-		self._ClctnDt = value if type(value) != base_types.auto else self.make_default("ClctnDt")
+		self._ClctnDt = value if value is not None else base_types.UninitialisedField(self, 'ClctnDt', ISODate, False)
 
 	@ClctnDt.deleter
 	def ClctnDt(self):
 		del self._ClctnDt
-		self._ClctnDt = None
+		self._ClctnDt = base_types.UninitialisedField(self, 'ClctnDt', ISODate, False)
 
 	@property
 	def PctgOfVtngRghts(self):
@@ -29,12 +29,12 @@ class Participation6(base_types._BaseFieldType):
 
 	@PctgOfVtngRghts.setter
 	def PctgOfVtngRghts(self, value):
-		self._PctgOfVtngRghts = value if type(value) != base_types.auto else self.make_default("PctgOfVtngRghts")
+		self._PctgOfVtngRghts = value if value is not None else base_types.UninitialisedField(self, 'PctgOfVtngRghts', Percentage14Rate, False)
 
 	@PctgOfVtngRghts.deleter
 	def PctgOfVtngRghts(self):
 		del self._PctgOfVtngRghts
-		self._PctgOfVtngRghts = None
+		self._PctgOfVtngRghts = base_types.UninitialisedField(self, 'PctgOfVtngRghts', Percentage14Rate, False)
 
 	@property
 	def TtlNbOfSctiesOutsdng(self):
@@ -42,12 +42,12 @@ class Participation6(base_types._BaseFieldType):
 
 	@TtlNbOfSctiesOutsdng.setter
 	def TtlNbOfSctiesOutsdng(self, value):
-		self._TtlNbOfSctiesOutsdng = value if type(value) != base_types.auto else self.make_default("TtlNbOfSctiesOutsdng")
+		self._TtlNbOfSctiesOutsdng = value if value is not None else base_types.UninitialisedField(self, 'TtlNbOfSctiesOutsdng', FinancialInstrumentQuantity18Choice, False)
 
 	@TtlNbOfSctiesOutsdng.deleter
 	def TtlNbOfSctiesOutsdng(self):
 		del self._TtlNbOfSctiesOutsdng
-		self._TtlNbOfSctiesOutsdng = None
+		self._TtlNbOfSctiesOutsdng = base_types.UninitialisedField(self, 'TtlNbOfSctiesOutsdng', FinancialInstrumentQuantity18Choice, False)
 
 	@property
 	def TtlNbOfVtngRghts(self):
@@ -55,12 +55,12 @@ class Participation6(base_types._BaseFieldType):
 
 	@TtlNbOfVtngRghts.setter
 	def TtlNbOfVtngRghts(self, value):
-		self._TtlNbOfVtngRghts = value if type(value) != base_types.auto else self.make_default("TtlNbOfVtngRghts")
+		self._TtlNbOfVtngRghts = value if value is not None else base_types.UninitialisedField(self, 'TtlNbOfVtngRghts', Number, False)
 
 	@TtlNbOfVtngRghts.deleter
 	def TtlNbOfVtngRghts(self):
 		del self._TtlNbOfVtngRghts
-		self._TtlNbOfVtngRghts = None
+		self._TtlNbOfVtngRghts = base_types.UninitialisedField(self, 'TtlNbOfVtngRghts', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClctnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),

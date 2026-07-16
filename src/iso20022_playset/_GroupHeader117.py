@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
-from ._Party50Choice import Party50Choice
+from . import ISODateTime
+from . import Max35Text
+from . import Party50Choice
 
 class GroupHeader117(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class GroupHeader117(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if value is not None else base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
 		del self._CreDtTm
-		self._CreDtTm = None
+		self._CreDtTm = base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@property
 	def MsgId(self):
@@ -28,12 +28,12 @@ class GroupHeader117(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@property
 	def MsgSndr(self):
@@ -41,12 +41,12 @@ class GroupHeader117(base_types._BaseFieldType):
 
 	@MsgSndr.setter
 	def MsgSndr(self, value):
-		self._MsgSndr = value if type(value) != base_types.auto else self.make_default("MsgSndr")
+		self._MsgSndr = value if value is not None else base_types.UninitialisedField(self, 'MsgSndr', Party50Choice, False)
 
 	@MsgSndr.deleter
 	def MsgSndr(self):
 		del self._MsgSndr
-		self._MsgSndr = None
+		self._MsgSndr = base_types.UninitialisedField(self, 'MsgSndr', Party50Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),

@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._CashAccount7 import CashAccount7
-from ._FinancingDateDetails1 import FinancingDateDetails1
-from ._Number import Number
-from ._PercentageRate import PercentageRate
+from . import ActiveCurrencyAndAmount
+from . import CashAccount7
+from . import FinancingDateDetails1
+from . import Number
+from . import PercentageRate
 
 class FinancingAllowedSummary1(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class FinancingAllowedSummary1(base_types._BaseFieldType):
 
 	@ApldPctg.setter
 	def ApldPctg(self, value):
-		self._ApldPctg = value if type(value) != base_types.auto else self.make_default("ApldPctg")
+		self._ApldPctg = value if value is not None else base_types.UninitialisedField(self, 'ApldPctg', PercentageRate, False)
 
 	@ApldPctg.deleter
 	def ApldPctg(self):
 		del self._ApldPctg
-		self._ApldPctg = None
+		self._ApldPctg = base_types.UninitialisedField(self, 'ApldPctg', PercentageRate, False)
 
 	@property
 	def CdtAcct(self):
@@ -30,12 +30,12 @@ class FinancingAllowedSummary1(base_types._BaseFieldType):
 
 	@CdtAcct.setter
 	def CdtAcct(self, value):
-		self._CdtAcct = value if type(value) != base_types.auto else self.make_default("CdtAcct")
+		self._CdtAcct = value if value is not None else base_types.UninitialisedField(self, 'CdtAcct', CashAccount7, False)
 
 	@CdtAcct.deleter
 	def CdtAcct(self):
 		del self._CdtAcct
-		self._CdtAcct = None
+		self._CdtAcct = base_types.UninitialisedField(self, 'CdtAcct', CashAccount7, False)
 
 	@property
 	def FincdItmNb(self):
@@ -43,12 +43,12 @@ class FinancingAllowedSummary1(base_types._BaseFieldType):
 
 	@FincdItmNb.setter
 	def FincdItmNb(self, value):
-		self._FincdItmNb = value if type(value) != base_types.auto else self.make_default("FincdItmNb")
+		self._FincdItmNb = value if value is not None else base_types.UninitialisedField(self, 'FincdItmNb', Number, False)
 
 	@FincdItmNb.deleter
 	def FincdItmNb(self):
 		del self._FincdItmNb
-		self._FincdItmNb = None
+		self._FincdItmNb = base_types.UninitialisedField(self, 'FincdItmNb', Number, False)
 
 	@property
 	def FincgAcct(self):
@@ -56,12 +56,12 @@ class FinancingAllowedSummary1(base_types._BaseFieldType):
 
 	@FincgAcct.setter
 	def FincgAcct(self, value):
-		self._FincgAcct = value if type(value) != base_types.auto else self.make_default("FincgAcct")
+		self._FincgAcct = value if value is not None else base_types.UninitialisedField(self, 'FincgAcct', CashAccount7, False)
 
 	@FincgAcct.deleter
 	def FincgAcct(self):
 		del self._FincgAcct
-		self._FincgAcct = None
+		self._FincgAcct = base_types.UninitialisedField(self, 'FincgAcct', CashAccount7, False)
 
 	@property
 	def FincgDtDtls(self):
@@ -69,12 +69,12 @@ class FinancingAllowedSummary1(base_types._BaseFieldType):
 
 	@FincgDtDtls.setter
 	def FincgDtDtls(self, value):
-		self._FincgDtDtls = value if type(value) != base_types.auto else self.make_default("FincgDtDtls")
+		self._FincgDtDtls = value if value is not None else base_types.UninitialisedField(self, 'FincgDtDtls', FinancingDateDetails1, False)
 
 	@FincgDtDtls.deleter
 	def FincgDtDtls(self):
 		del self._FincgDtDtls
-		self._FincgDtDtls = None
+		self._FincgDtDtls = base_types.UninitialisedField(self, 'FincgDtDtls', FinancingDateDetails1, False)
 
 	@property
 	def TtlAccptdItmsAmt(self):
@@ -82,12 +82,12 @@ class FinancingAllowedSummary1(base_types._BaseFieldType):
 
 	@TtlAccptdItmsAmt.setter
 	def TtlAccptdItmsAmt(self, value):
-		self._TtlAccptdItmsAmt = value if type(value) != base_types.auto else self.make_default("TtlAccptdItmsAmt")
+		self._TtlAccptdItmsAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlAccptdItmsAmt', ActiveCurrencyAndAmount, False)
 
 	@TtlAccptdItmsAmt.deleter
 	def TtlAccptdItmsAmt(self):
 		del self._TtlAccptdItmsAmt
-		self._TtlAccptdItmsAmt = None
+		self._TtlAccptdItmsAmt = base_types.UninitialisedField(self, 'TtlAccptdItmsAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def TtlFincdAmt(self):
@@ -95,12 +95,12 @@ class FinancingAllowedSummary1(base_types._BaseFieldType):
 
 	@TtlFincdAmt.setter
 	def TtlFincdAmt(self, value):
-		self._TtlFincdAmt = value if type(value) != base_types.auto else self.make_default("TtlFincdAmt")
+		self._TtlFincdAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlFincdAmt', ActiveCurrencyAndAmount, False)
 
 	@TtlFincdAmt.deleter
 	def TtlFincdAmt(self):
 		del self._TtlFincdAmt
-		self._TtlFincdAmt = None
+		self._TtlFincdAmt = base_types.UninitialisedField(self, 'TtlFincdAmt', ActiveCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ApldPctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),

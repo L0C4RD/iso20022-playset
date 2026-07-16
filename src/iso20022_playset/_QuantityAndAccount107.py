@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashAccountIdentification6Choice import CashAccountIdentification6Choice
-from ._FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
-from ._QuantityBreakdown69 import QuantityBreakdown69
-from ._RestrictedFINXMax210Text import RestrictedFINXMax210Text
-from ._SafeKeepingPlace4 import SafeKeepingPlace4
+from . import CashAccountIdentification6Choice
+from . import FinancialInstrumentQuantity36Choice
+from . import QuantityBreakdown69
+from . import RestrictedFINXMax210Text
+from . import SafeKeepingPlace4
 
 class QuantityAndAccount107(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class QuantityAndAccount107(base_types._BaseFieldType):
 
 	@CshAcct.setter
 	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != base_types.auto else self.make_default("CshAcct")
+		self._CshAcct = value if value is not None else base_types.UninitialisedField(self, 'CshAcct', CashAccountIdentification6Choice, False)
 
 	@CshAcct.deleter
 	def CshAcct(self):
 		del self._CshAcct
-		self._CshAcct = None
+		self._CshAcct = base_types.UninitialisedField(self, 'CshAcct', CashAccountIdentification6Choice, False)
 
 	@property
 	def DnmtnChc(self):
@@ -30,12 +30,12 @@ class QuantityAndAccount107(base_types._BaseFieldType):
 
 	@DnmtnChc.setter
 	def DnmtnChc(self, value):
-		self._DnmtnChc = value if type(value) != base_types.auto else self.make_default("DnmtnChc")
+		self._DnmtnChc = value if value is not None else base_types.UninitialisedField(self, 'DnmtnChc', RestrictedFINXMax210Text, False)
 
 	@DnmtnChc.deleter
 	def DnmtnChc(self):
 		del self._DnmtnChc
-		self._DnmtnChc = None
+		self._DnmtnChc = base_types.UninitialisedField(self, 'DnmtnChc', RestrictedFINXMax210Text, False)
 
 	@property
 	def QtyBrkdwn(self):
@@ -43,12 +43,12 @@ class QuantityAndAccount107(base_types._BaseFieldType):
 
 	@QtyBrkdwn.setter
 	def QtyBrkdwn(self, value):
-		self._QtyBrkdwn = value if type(value) != base_types.auto else self.make_default("QtyBrkdwn")
+		self._QtyBrkdwn = value if value is not None else base_types.UninitialisedField(self, 'QtyBrkdwn', QuantityBreakdown69, True)
 
 	@QtyBrkdwn.deleter
 	def QtyBrkdwn(self):
 		del self._QtyBrkdwn
-		self._QtyBrkdwn = None
+		self._QtyBrkdwn = base_types.UninitialisedField(self, 'QtyBrkdwn', QuantityBreakdown69, True)
 
 	@property
 	def SfkpgPlc(self):
@@ -56,12 +56,12 @@ class QuantityAndAccount107(base_types._BaseFieldType):
 
 	@SfkpgPlc.setter
 	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
+		self._SfkpgPlc = value if value is not None else base_types.UninitialisedField(self, 'SfkpgPlc', SafeKeepingPlace4, False)
 
 	@SfkpgPlc.deleter
 	def SfkpgPlc(self):
 		del self._SfkpgPlc
-		self._SfkpgPlc = None
+		self._SfkpgPlc = base_types.UninitialisedField(self, 'SfkpgPlc', SafeKeepingPlace4, False)
 
 	@property
 	def SttlmQty(self):
@@ -69,12 +69,12 @@ class QuantityAndAccount107(base_types._BaseFieldType):
 
 	@SttlmQty.setter
 	def SttlmQty(self, value):
-		self._SttlmQty = value if type(value) != base_types.auto else self.make_default("SttlmQty")
+		self._SttlmQty = value if value is not None else base_types.UninitialisedField(self, 'SttlmQty', FinancialInstrumentQuantity36Choice, False)
 
 	@SttlmQty.deleter
 	def SttlmQty(self):
 		del self._SttlmQty
-		self._SttlmQty = None
+		self._SttlmQty = base_types.UninitialisedField(self, 'SttlmQty', FinancialInstrumentQuantity36Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshAcct', type=CashAccountIdentification6Choice, min=0, max=1, mutex_group=None, array=False),

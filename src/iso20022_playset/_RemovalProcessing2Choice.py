@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCode import CountryCode
-from ._GenericIdentification37 import GenericIdentification37
-from ._SecurityIdentification19 import SecurityIdentification19
+from . import CountryCode
+from . import GenericIdentification37
+from . import SecurityIdentification19
 
 class RemovalProcessing2Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class RemovalProcessing2Choice(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
 		del self._FinInstrmId
-		self._FinInstrmId = None
+		self._FinInstrmId = base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@property
 	def IndxId(self):
@@ -28,12 +28,12 @@ class RemovalProcessing2Choice(base_types._BaseFieldType):
 
 	@IndxId.setter
 	def IndxId(self, value):
-		self._IndxId = value if type(value) != base_types.auto else self.make_default("IndxId")
+		self._IndxId = value if value is not None else base_types.UninitialisedField(self, 'IndxId', GenericIdentification37, False)
 
 	@IndxId.deleter
 	def IndxId(self):
 		del self._IndxId
-		self._IndxId = None
+		self._IndxId = base_types.UninitialisedField(self, 'IndxId', GenericIdentification37, False)
 
 	@property
 	def IssrCtry(self):
@@ -41,12 +41,12 @@ class RemovalProcessing2Choice(base_types._BaseFieldType):
 
 	@IssrCtry.setter
 	def IssrCtry(self, value):
-		self._IssrCtry = value if type(value) != base_types.auto else self.make_default("IssrCtry")
+		self._IssrCtry = value if value is not None else base_types.UninitialisedField(self, 'IssrCtry', CountryCode, False)
 
 	@IssrCtry.deleter
 	def IssrCtry(self):
 		del self._IssrCtry
-		self._IssrCtry = None
+		self._IssrCtry = base_types.UninitialisedField(self, 'IssrCtry', CountryCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=0, max=1, mutex_group=1, array=False),

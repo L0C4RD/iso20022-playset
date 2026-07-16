@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._Exact1NumericText import Exact1NumericText
-from ._Max20Text import Max20Text
-from ._Max35Text import Max35Text
-from ._Max50Text import Max50Text
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ATICALaxProcessing
+from . import Exact1NumericText
+from . import Max20Text
+from . import Max35Text
+from . import Max50Text
+from . import TrueFalseIndicator
 
 class DisputeData5(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class DisputeData5(base_types._BaseFieldType):
 
 	@AcqrrCaseRef.setter
 	def AcqrrCaseRef(self, value):
-		self._AcqrrCaseRef = value if type(value) != base_types.auto else self.make_default("AcqrrCaseRef")
+		self._AcqrrCaseRef = value if value is not None else base_types.UninitialisedField(self, 'AcqrrCaseRef', Max20Text, False)
 
 	@AcqrrCaseRef.deleter
 	def AcqrrCaseRef(self):
 		del self._AcqrrCaseRef
-		self._AcqrrCaseRef = None
+		self._AcqrrCaseRef = base_types.UninitialisedField(self, 'AcqrrCaseRef', Max20Text, False)
 
 	@property
 	def AgtBndlCaseRef(self):
@@ -31,12 +31,12 @@ class DisputeData5(base_types._BaseFieldType):
 
 	@AgtBndlCaseRef.setter
 	def AgtBndlCaseRef(self, value):
-		self._AgtBndlCaseRef = value if type(value) != base_types.auto else self.make_default("AgtBndlCaseRef")
+		self._AgtBndlCaseRef = value if value is not None else base_types.UninitialisedField(self, 'AgtBndlCaseRef', Max20Text, False)
 
 	@AgtBndlCaseRef.deleter
 	def AgtBndlCaseRef(self):
 		del self._AgtBndlCaseRef
-		self._AgtBndlCaseRef = None
+		self._AgtBndlCaseRef = base_types.UninitialisedField(self, 'AgtBndlCaseRef', Max20Text, False)
 
 	@property
 	def AgtCaseRef(self):
@@ -44,12 +44,12 @@ class DisputeData5(base_types._BaseFieldType):
 
 	@AgtCaseRef.setter
 	def AgtCaseRef(self, value):
-		self._AgtCaseRef = value if type(value) != base_types.auto else self.make_default("AgtCaseRef")
+		self._AgtCaseRef = value if value is not None else base_types.UninitialisedField(self, 'AgtCaseRef', Max20Text, False)
 
 	@AgtCaseRef.deleter
 	def AgtCaseRef(self):
 		del self._AgtCaseRef
-		self._AgtCaseRef = None
+		self._AgtCaseRef = base_types.UninitialisedField(self, 'AgtCaseRef', Max20Text, False)
 
 	@property
 	def ChrgbckElgblty(self):
@@ -57,12 +57,12 @@ class DisputeData5(base_types._BaseFieldType):
 
 	@ChrgbckElgblty.setter
 	def ChrgbckElgblty(self, value):
-		self._ChrgbckElgblty = value if type(value) != base_types.auto else self.make_default("ChrgbckElgblty")
+		self._ChrgbckElgblty = value if value is not None else base_types.UninitialisedField(self, 'ChrgbckElgblty', Max35Text, False)
 
 	@ChrgbckElgblty.deleter
 	def ChrgbckElgblty(self):
 		del self._ChrgbckElgblty
-		self._ChrgbckElgblty = None
+		self._ChrgbckElgblty = base_types.UninitialisedField(self, 'ChrgbckElgblty', Max35Text, False)
 
 	@property
 	def Cond(self):
@@ -70,12 +70,12 @@ class DisputeData5(base_types._BaseFieldType):
 
 	@Cond.setter
 	def Cond(self, value):
-		self._Cond = value if type(value) != base_types.auto else self.make_default("Cond")
+		self._Cond = value if value is not None else base_types.UninitialisedField(self, 'Cond', Max35Text, False)
 
 	@Cond.deleter
 	def Cond(self):
 		del self._Cond
-		self._Cond = None
+		self._Cond = base_types.UninitialisedField(self, 'Cond', Max35Text, False)
 
 	@property
 	def Cycl(self):
@@ -83,12 +83,12 @@ class DisputeData5(base_types._BaseFieldType):
 
 	@Cycl.setter
 	def Cycl(self, value):
-		self._Cycl = value if type(value) != base_types.auto else self.make_default("Cycl")
+		self._Cycl = value if value is not None else base_types.UninitialisedField(self, 'Cycl', Exact1NumericText, False)
 
 	@Cycl.deleter
 	def Cycl(self):
 		del self._Cycl
-		self._Cycl = None
+		self._Cycl = base_types.UninitialisedField(self, 'Cycl', Exact1NumericText, False)
 
 	@property
 	def DcmnttnSts(self):
@@ -96,12 +96,12 @@ class DisputeData5(base_types._BaseFieldType):
 
 	@DcmnttnSts.setter
 	def DcmnttnSts(self, value):
-		self._DcmnttnSts = value if type(value) != base_types.auto else self.make_default("DcmnttnSts")
+		self._DcmnttnSts = value if value is not None else base_types.UninitialisedField(self, 'DcmnttnSts', Max35Text, False)
 
 	@DcmnttnSts.deleter
 	def DcmnttnSts(self):
 		del self._DcmnttnSts
-		self._DcmnttnSts = None
+		self._DcmnttnSts = base_types.UninitialisedField(self, 'DcmnttnSts', Max35Text, False)
 
 	@property
 	def IssrCaseRef(self):
@@ -109,12 +109,12 @@ class DisputeData5(base_types._BaseFieldType):
 
 	@IssrCaseRef.setter
 	def IssrCaseRef(self, value):
-		self._IssrCaseRef = value if type(value) != base_types.auto else self.make_default("IssrCaseRef")
+		self._IssrCaseRef = value if value is not None else base_types.UninitialisedField(self, 'IssrCaseRef', Max20Text, False)
 
 	@IssrCaseRef.deleter
 	def IssrCaseRef(self):
 		del self._IssrCaseRef
-		self._IssrCaseRef = None
+		self._IssrCaseRef = base_types.UninitialisedField(self, 'IssrCaseRef', Max20Text, False)
 
 	@property
 	def MsgTxt(self):
@@ -122,12 +122,12 @@ class DisputeData5(base_types._BaseFieldType):
 
 	@MsgTxt.setter
 	def MsgTxt(self, value):
-		self._MsgTxt = value if type(value) != base_types.auto else self.make_default("MsgTxt")
+		self._MsgTxt = value if value is not None else base_types.UninitialisedField(self, 'MsgTxt', Max50Text, False)
 
 	@MsgTxt.deleter
 	def MsgTxt(self):
 		del self._MsgTxt
-		self._MsgTxt = None
+		self._MsgTxt = base_types.UninitialisedField(self, 'MsgTxt', Max50Text, False)
 
 	@property
 	def NtlData(self):
@@ -135,12 +135,12 @@ class DisputeData5(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def Prtl(self):
@@ -148,12 +148,12 @@ class DisputeData5(base_types._BaseFieldType):
 
 	@Prtl.setter
 	def Prtl(self, value):
-		self._Prtl = value if type(value) != base_types.auto else self.make_default("Prtl")
+		self._Prtl = value if value is not None else base_types.UninitialisedField(self, 'Prtl', TrueFalseIndicator, False)
 
 	@Prtl.deleter
 	def Prtl(self):
 		del self._Prtl
-		self._Prtl = None
+		self._Prtl = base_types.UninitialisedField(self, 'Prtl', TrueFalseIndicator, False)
 
 	@property
 	def PrvtData(self):
@@ -161,12 +161,12 @@ class DisputeData5(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def RjctRsn(self):
@@ -174,12 +174,12 @@ class DisputeData5(base_types._BaseFieldType):
 
 	@RjctRsn.setter
 	def RjctRsn(self, value):
-		self._RjctRsn = value if type(value) != base_types.auto else self.make_default("RjctRsn")
+		self._RjctRsn = value if value is not None else base_types.UninitialisedField(self, 'RjctRsn', Max35Text, True)
 
 	@RjctRsn.deleter
 	def RjctRsn(self):
 		del self._RjctRsn
-		self._RjctRsn = None
+		self._RjctRsn = base_types.UninitialisedField(self, 'RjctRsn', Max35Text, True)
 
 	@property
 	def Sts(self):
@@ -187,12 +187,12 @@ class DisputeData5(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', Max35Text, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcqrrCaseRef', type=Max20Text, min=0, max=1, mutex_group=None, array=False),

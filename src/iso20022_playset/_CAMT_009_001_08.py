@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GetLimitV08 import GetLimitV08
+from . import GetLimitV08
 
 class CAMT_009_001_08():
 
@@ -18,12 +18,12 @@ class CAMT_009_001_08():
 
 		@GetLmt.setter
 		def GetLmt(self, value):
-			self._GetLmt = value if type(value) != base_types.auto else self.make_default("GetLmt")
+			self._GetLmt = value if value is not None else base_types.UninitialisedField(self, 'GetLmt', GetLimitV08, False)
 
 		@GetLmt.deleter
 		def GetLmt(self):
 			del self._GetLmt
-			self._GetLmt = None
+			self._GetLmt = base_types.UninitialisedField(self, 'GetLmt', GetLimitV08, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='GetLmt', type=GetLimitV08, min=1, max=1, mutex_group=None, array=False),

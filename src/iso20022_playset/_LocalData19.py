@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._ISOMax3ALanguageCode import ISOMax3ALanguageCode
-from ._LocalAddress1 import LocalAddress1
-from ._LocalAddress2 import LocalAddress2
-from ._Max200Text import Max200Text
-from ._Max210Text import Max210Text
-from ._Max35Text import Max35Text
-from ._Max512Text import Max512Text
-from ._Max70Text import Max70Text
+from . import ATICALaxProcessing
+from . import ISOMax3ALanguageCode
+from . import LocalAddress1
+from . import LocalAddress2
+from . import Max200Text
+from . import Max210Text
+from . import Max35Text
+from . import Max512Text
+from . import Max70Text
 
 class LocalData19(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class LocalData19(base_types._BaseFieldType):
 
 	@AddtlAdr.setter
 	def AddtlAdr(self, value):
-		self._AddtlAdr = value if type(value) != base_types.auto else self.make_default("AddtlAdr")
+		self._AddtlAdr = value if value is not None else base_types.UninitialisedField(self, 'AddtlAdr', Max512Text, False)
 
 	@AddtlAdr.deleter
 	def AddtlAdr(self):
 		del self._AddtlAdr
-		self._AddtlAdr = None
+		self._AddtlAdr = base_types.UninitialisedField(self, 'AddtlAdr', Max512Text, False)
 
 	@property
 	def AddtlCtct(self):
@@ -34,12 +34,12 @@ class LocalData19(base_types._BaseFieldType):
 
 	@AddtlCtct.setter
 	def AddtlCtct(self, value):
-		self._AddtlCtct = value if type(value) != base_types.auto else self.make_default("AddtlCtct")
+		self._AddtlCtct = value if value is not None else base_types.UninitialisedField(self, 'AddtlCtct', Max512Text, False)
 
 	@AddtlCtct.deleter
 	def AddtlCtct(self):
 		del self._AddtlCtct
-		self._AddtlCtct = None
+		self._AddtlCtct = base_types.UninitialisedField(self, 'AddtlCtct', Max512Text, False)
 
 	@property
 	def Adr(self):
@@ -47,12 +47,12 @@ class LocalData19(base_types._BaseFieldType):
 
 	@Adr.setter
 	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+		self._Adr = value if value is not None else base_types.UninitialisedField(self, 'Adr', LocalAddress2, False)
 
 	@Adr.deleter
 	def Adr(self):
 		del self._Adr
-		self._Adr = None
+		self._Adr = base_types.UninitialisedField(self, 'Adr', LocalAddress2, False)
 
 	@property
 	def BizNm(self):
@@ -60,12 +60,12 @@ class LocalData19(base_types._BaseFieldType):
 
 	@BizNm.setter
 	def BizNm(self, value):
-		self._BizNm = value if type(value) != base_types.auto else self.make_default("BizNm")
+		self._BizNm = value if value is not None else base_types.UninitialisedField(self, 'BizNm', Max70Text, False)
 
 	@BizNm.deleter
 	def BizNm(self):
 		del self._BizNm
-		self._BizNm = None
+		self._BizNm = base_types.UninitialisedField(self, 'BizNm', Max70Text, False)
 
 	@property
 	def Lang(self):
@@ -73,12 +73,12 @@ class LocalData19(base_types._BaseFieldType):
 
 	@Lang.setter
 	def Lang(self, value):
-		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
+		self._Lang = value if value is not None else base_types.UninitialisedField(self, 'Lang', ISOMax3ALanguageCode, False)
 
 	@Lang.deleter
 	def Lang(self):
 		del self._Lang
-		self._Lang = None
+		self._Lang = base_types.UninitialisedField(self, 'Lang', ISOMax3ALanguageCode, False)
 
 	@property
 	def LglCorpNm(self):
@@ -86,12 +86,12 @@ class LocalData19(base_types._BaseFieldType):
 
 	@LglCorpNm.setter
 	def LglCorpNm(self, value):
-		self._LglCorpNm = value if type(value) != base_types.auto else self.make_default("LglCorpNm")
+		self._LglCorpNm = value if value is not None else base_types.UninitialisedField(self, 'LglCorpNm', Max210Text, False)
 
 	@LglCorpNm.deleter
 	def LglCorpNm(self):
 		del self._LglCorpNm
-		self._LglCorpNm = None
+		self._LglCorpNm = base_types.UninitialisedField(self, 'LglCorpNm', Max210Text, False)
 
 	@property
 	def NcodgFrmt(self):
@@ -99,12 +99,12 @@ class LocalData19(base_types._BaseFieldType):
 
 	@NcodgFrmt.setter
 	def NcodgFrmt(self, value):
-		self._NcodgFrmt = value if type(value) != base_types.auto else self.make_default("NcodgFrmt")
+		self._NcodgFrmt = value if value is not None else base_types.UninitialisedField(self, 'NcodgFrmt', Max35Text, False)
 
 	@NcodgFrmt.deleter
 	def NcodgFrmt(self):
 		del self._NcodgFrmt
-		self._NcodgFrmt = None
+		self._NcodgFrmt = base_types.UninitialisedField(self, 'NcodgFrmt', Max35Text, False)
 
 	@property
 	def NmAndLctn(self):
@@ -112,12 +112,12 @@ class LocalData19(base_types._BaseFieldType):
 
 	@NmAndLctn.setter
 	def NmAndLctn(self, value):
-		self._NmAndLctn = value if type(value) != base_types.auto else self.make_default("NmAndLctn")
+		self._NmAndLctn = value if value is not None else base_types.UninitialisedField(self, 'NmAndLctn', Max200Text, False)
 
 	@NmAndLctn.deleter
 	def NmAndLctn(self):
 		del self._NmAndLctn
-		self._NmAndLctn = None
+		self._NmAndLctn = base_types.UninitialisedField(self, 'NmAndLctn', Max200Text, False)
 
 	@property
 	def NtlData(self):
@@ -125,12 +125,12 @@ class LocalData19(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def PrvtData(self):
@@ -138,12 +138,12 @@ class LocalData19(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def SvcLctn(self):
@@ -151,12 +151,12 @@ class LocalData19(base_types._BaseFieldType):
 
 	@SvcLctn.setter
 	def SvcLctn(self, value):
-		self._SvcLctn = value if type(value) != base_types.auto else self.make_default("SvcLctn")
+		self._SvcLctn = value if value is not None else base_types.UninitialisedField(self, 'SvcLctn', LocalAddress1, False)
 
 	@SvcLctn.deleter
 	def SvcLctn(self):
 		del self._SvcLctn
-		self._SvcLctn = None
+		self._SvcLctn = base_types.UninitialisedField(self, 'SvcLctn', LocalAddress1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlAdr', type=Max512Text, min=0, max=1, mutex_group=None, array=False),

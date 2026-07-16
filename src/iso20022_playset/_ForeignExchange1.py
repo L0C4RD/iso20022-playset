@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._BaseOneRate import BaseOneRate
-from ._DecimalNumber import DecimalNumber
+from . import ActiveOrHistoricCurrencyCode
+from . import BaseOneRate
+from . import DecimalNumber
 
 class ForeignExchange1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ForeignExchange1(base_types._BaseFieldType):
 
 	@FrgnCcy.setter
 	def FrgnCcy(self, value):
-		self._FrgnCcy = value if type(value) != base_types.auto else self.make_default("FrgnCcy")
+		self._FrgnCcy = value if value is not None else base_types.UninitialisedField(self, 'FrgnCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@FrgnCcy.deleter
 	def FrgnCcy(self):
 		del self._FrgnCcy
-		self._FrgnCcy = None
+		self._FrgnCcy = base_types.UninitialisedField(self, 'FrgnCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def XchgFwdPt(self):
@@ -28,12 +28,12 @@ class ForeignExchange1(base_types._BaseFieldType):
 
 	@XchgFwdPt.setter
 	def XchgFwdPt(self, value):
-		self._XchgFwdPt = value if type(value) != base_types.auto else self.make_default("XchgFwdPt")
+		self._XchgFwdPt = value if value is not None else base_types.UninitialisedField(self, 'XchgFwdPt', DecimalNumber, False)
 
 	@XchgFwdPt.deleter
 	def XchgFwdPt(self):
 		del self._XchgFwdPt
-		self._XchgFwdPt = None
+		self._XchgFwdPt = base_types.UninitialisedField(self, 'XchgFwdPt', DecimalNumber, False)
 
 	@property
 	def XchgSpotRate(self):
@@ -41,12 +41,12 @@ class ForeignExchange1(base_types._BaseFieldType):
 
 	@XchgSpotRate.setter
 	def XchgSpotRate(self, value):
-		self._XchgSpotRate = value if type(value) != base_types.auto else self.make_default("XchgSpotRate")
+		self._XchgSpotRate = value if value is not None else base_types.UninitialisedField(self, 'XchgSpotRate', BaseOneRate, False)
 
 	@XchgSpotRate.deleter
 	def XchgSpotRate(self):
 		del self._XchgSpotRate
-		self._XchgSpotRate = None
+		self._XchgSpotRate = base_types.UninitialisedField(self, 'XchgSpotRate', BaseOneRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FrgnCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),

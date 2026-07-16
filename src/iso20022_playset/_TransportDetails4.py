@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Charge25 import Charge25
-from ._Consignment3 import Consignment3
-from ._DocumentIdentification7 import DocumentIdentification7
-from ._Incoterms4 import Incoterms4
-from ._ShipmentDate1Choice import ShipmentDate1Choice
-from ._TransportMeans6 import TransportMeans6
-from ._TransportedGoods1 import TransportedGoods1
+from . import Charge25
+from . import Consignment3
+from . import DocumentIdentification7
+from . import Incoterms4
+from . import ShipmentDate1Choice
+from . import TransportMeans6
+from . import TransportedGoods1
 
 class TransportDetails4(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class TransportDetails4(base_types._BaseFieldType):
 
 	@Consgnmt.setter
 	def Consgnmt(self, value):
-		self._Consgnmt = value if type(value) != base_types.auto else self.make_default("Consgnmt")
+		self._Consgnmt = value if value is not None else base_types.UninitialisedField(self, 'Consgnmt', Consignment3, False)
 
 	@Consgnmt.deleter
 	def Consgnmt(self):
 		del self._Consgnmt
-		self._Consgnmt = None
+		self._Consgnmt = base_types.UninitialisedField(self, 'Consgnmt', Consignment3, False)
 
 	@property
 	def FrghtChrgs(self):
@@ -32,12 +32,12 @@ class TransportDetails4(base_types._BaseFieldType):
 
 	@FrghtChrgs.setter
 	def FrghtChrgs(self, value):
-		self._FrghtChrgs = value if type(value) != base_types.auto else self.make_default("FrghtChrgs")
+		self._FrghtChrgs = value if value is not None else base_types.UninitialisedField(self, 'FrghtChrgs', Charge25, False)
 
 	@FrghtChrgs.deleter
 	def FrghtChrgs(self):
 		del self._FrghtChrgs
-		self._FrghtChrgs = None
+		self._FrghtChrgs = base_types.UninitialisedField(self, 'FrghtChrgs', Charge25, False)
 
 	@property
 	def Incotrms(self):
@@ -45,12 +45,12 @@ class TransportDetails4(base_types._BaseFieldType):
 
 	@Incotrms.setter
 	def Incotrms(self, value):
-		self._Incotrms = value if type(value) != base_types.auto else self.make_default("Incotrms")
+		self._Incotrms = value if value is not None else base_types.UninitialisedField(self, 'Incotrms', Incoterms4, False)
 
 	@Incotrms.deleter
 	def Incotrms(self):
 		del self._Incotrms
-		self._Incotrms = None
+		self._Incotrms = base_types.UninitialisedField(self, 'Incotrms', Incoterms4, False)
 
 	@property
 	def RtgSummry(self):
@@ -58,12 +58,12 @@ class TransportDetails4(base_types._BaseFieldType):
 
 	@RtgSummry.setter
 	def RtgSummry(self, value):
-		self._RtgSummry = value if type(value) != base_types.auto else self.make_default("RtgSummry")
+		self._RtgSummry = value if value is not None else base_types.UninitialisedField(self, 'RtgSummry', TransportMeans6, False)
 
 	@RtgSummry.deleter
 	def RtgSummry(self):
 		del self._RtgSummry
-		self._RtgSummry = None
+		self._RtgSummry = base_types.UninitialisedField(self, 'RtgSummry', TransportMeans6, False)
 
 	@property
 	def ShipmntDt(self):
@@ -71,12 +71,12 @@ class TransportDetails4(base_types._BaseFieldType):
 
 	@ShipmntDt.setter
 	def ShipmntDt(self, value):
-		self._ShipmntDt = value if type(value) != base_types.auto else self.make_default("ShipmntDt")
+		self._ShipmntDt = value if value is not None else base_types.UninitialisedField(self, 'ShipmntDt', ShipmentDate1Choice, False)
 
 	@ShipmntDt.deleter
 	def ShipmntDt(self):
 		del self._ShipmntDt
-		self._ShipmntDt = None
+		self._ShipmntDt = base_types.UninitialisedField(self, 'ShipmntDt', ShipmentDate1Choice, False)
 
 	@property
 	def TrnsprtDocRef(self):
@@ -84,12 +84,12 @@ class TransportDetails4(base_types._BaseFieldType):
 
 	@TrnsprtDocRef.setter
 	def TrnsprtDocRef(self, value):
-		self._TrnsprtDocRef = value if type(value) != base_types.auto else self.make_default("TrnsprtDocRef")
+		self._TrnsprtDocRef = value if value is not None else base_types.UninitialisedField(self, 'TrnsprtDocRef', DocumentIdentification7, True)
 
 	@TrnsprtDocRef.deleter
 	def TrnsprtDocRef(self):
 		del self._TrnsprtDocRef
-		self._TrnsprtDocRef = None
+		self._TrnsprtDocRef = base_types.UninitialisedField(self, 'TrnsprtDocRef', DocumentIdentification7, True)
 
 	@property
 	def TrnsprtdGoods(self):
@@ -97,12 +97,12 @@ class TransportDetails4(base_types._BaseFieldType):
 
 	@TrnsprtdGoods.setter
 	def TrnsprtdGoods(self, value):
-		self._TrnsprtdGoods = value if type(value) != base_types.auto else self.make_default("TrnsprtdGoods")
+		self._TrnsprtdGoods = value if value is not None else base_types.UninitialisedField(self, 'TrnsprtdGoods', TransportedGoods1, True)
 
 	@TrnsprtdGoods.deleter
 	def TrnsprtdGoods(self):
 		del self._TrnsprtdGoods
-		self._TrnsprtdGoods = None
+		self._TrnsprtdGoods = base_types.UninitialisedField(self, 'TrnsprtdGoods', TransportedGoods1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Consgnmt', type=Consignment3, min=0, max=1, mutex_group=None, array=False),

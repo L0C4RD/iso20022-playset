@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCode import CountryCode
-from ._Max35Text import Max35Text
+from . import CountryCode
+from . import Max35Text
 
 class ResidenceLocation1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ResidenceLocation1Choice(base_types._BaseFieldType):
 
 	@Area.setter
 	def Area(self, value):
-		self._Area = value if type(value) != base_types.auto else self.make_default("Area")
+		self._Area = value if value is not None else base_types.UninitialisedField(self, 'Area', Max35Text, False)
 
 	@Area.deleter
 	def Area(self):
 		del self._Area
-		self._Area = None
+		self._Area = base_types.UninitialisedField(self, 'Area', Max35Text, False)
 
 	@property
 	def Ctry(self):
@@ -27,12 +27,12 @@ class ResidenceLocation1Choice(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Area', type=Max35Text, min=0, max=1, mutex_group=1, array=False),

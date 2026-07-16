@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashMovement2 import CashMovement2
-from ._CorporateActionInformation1 import CorporateActionInformation1
-from ._CorporateActionMovement1 import CorporateActionMovement1
-from ._DocumentIdentification8 import DocumentIdentification8
-from ._ProceedsMovement1 import ProceedsMovement1
-from ._UnderlyingSecurityMovement1 import UnderlyingSecurityMovement1
+from . import CashMovement2
+from . import CorporateActionInformation1
+from . import CorporateActionMovement1
+from . import DocumentIdentification8
+from . import ProceedsMovement1
+from . import UnderlyingSecurityMovement1
 
 class AgentCAMovementInstructionV01(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class AgentCAMovementInstructionV01(base_types._BaseFieldType):
 
 	@AgtCAElctnAdvcId.setter
 	def AgtCAElctnAdvcId(self, value):
-		self._AgtCAElctnAdvcId = value if type(value) != base_types.auto else self.make_default("AgtCAElctnAdvcId")
+		self._AgtCAElctnAdvcId = value if value is not None else base_types.UninitialisedField(self, 'AgtCAElctnAdvcId', DocumentIdentification8, False)
 
 	@AgtCAElctnAdvcId.deleter
 	def AgtCAElctnAdvcId(self):
 		del self._AgtCAElctnAdvcId
-		self._AgtCAElctnAdvcId = None
+		self._AgtCAElctnAdvcId = base_types.UninitialisedField(self, 'AgtCAElctnAdvcId', DocumentIdentification8, False)
 
 	@property
 	def CorpActnGnlInf(self):
@@ -31,12 +31,12 @@ class AgentCAMovementInstructionV01(base_types._BaseFieldType):
 
 	@CorpActnGnlInf.setter
 	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != base_types.auto else self.make_default("CorpActnGnlInf")
+		self._CorpActnGnlInf = value if value is not None else base_types.UninitialisedField(self, 'CorpActnGnlInf', CorporateActionInformation1, False)
 
 	@CorpActnGnlInf.deleter
 	def CorpActnGnlInf(self):
 		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
+		self._CorpActnGnlInf = base_types.UninitialisedField(self, 'CorpActnGnlInf', CorporateActionInformation1, False)
 
 	@property
 	def Id(self):
@@ -44,12 +44,12 @@ class AgentCAMovementInstructionV01(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', DocumentIdentification8, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', DocumentIdentification8, False)
 
 	@property
 	def MvmntGnlInf(self):
@@ -57,12 +57,12 @@ class AgentCAMovementInstructionV01(base_types._BaseFieldType):
 
 	@MvmntGnlInf.setter
 	def MvmntGnlInf(self, value):
-		self._MvmntGnlInf = value if type(value) != base_types.auto else self.make_default("MvmntGnlInf")
+		self._MvmntGnlInf = value if value is not None else base_types.UninitialisedField(self, 'MvmntGnlInf', CorporateActionMovement1, False)
 
 	@MvmntGnlInf.deleter
 	def MvmntGnlInf(self):
 		del self._MvmntGnlInf
-		self._MvmntGnlInf = None
+		self._MvmntGnlInf = base_types.UninitialisedField(self, 'MvmntGnlInf', CorporateActionMovement1, False)
 
 	@property
 	def PrcdsMvmntDtls(self):
@@ -70,12 +70,12 @@ class AgentCAMovementInstructionV01(base_types._BaseFieldType):
 
 	@PrcdsMvmntDtls.setter
 	def PrcdsMvmntDtls(self, value):
-		self._PrcdsMvmntDtls = value if type(value) != base_types.auto else self.make_default("PrcdsMvmntDtls")
+		self._PrcdsMvmntDtls = value if value is not None else base_types.UninitialisedField(self, 'PrcdsMvmntDtls', ProceedsMovement1, False)
 
 	@PrcdsMvmntDtls.deleter
 	def PrcdsMvmntDtls(self):
 		del self._PrcdsMvmntDtls
-		self._PrcdsMvmntDtls = None
+		self._PrcdsMvmntDtls = base_types.UninitialisedField(self, 'PrcdsMvmntDtls', ProceedsMovement1, False)
 
 	@property
 	def UndrlygCshMvmntDtls(self):
@@ -83,12 +83,12 @@ class AgentCAMovementInstructionV01(base_types._BaseFieldType):
 
 	@UndrlygCshMvmntDtls.setter
 	def UndrlygCshMvmntDtls(self, value):
-		self._UndrlygCshMvmntDtls = value if type(value) != base_types.auto else self.make_default("UndrlygCshMvmntDtls")
+		self._UndrlygCshMvmntDtls = value if value is not None else base_types.UninitialisedField(self, 'UndrlygCshMvmntDtls', CashMovement2, True)
 
 	@UndrlygCshMvmntDtls.deleter
 	def UndrlygCshMvmntDtls(self):
 		del self._UndrlygCshMvmntDtls
-		self._UndrlygCshMvmntDtls = None
+		self._UndrlygCshMvmntDtls = base_types.UninitialisedField(self, 'UndrlygCshMvmntDtls', CashMovement2, True)
 
 	@property
 	def UndrlygSctiesMvmntDtls(self):
@@ -96,12 +96,12 @@ class AgentCAMovementInstructionV01(base_types._BaseFieldType):
 
 	@UndrlygSctiesMvmntDtls.setter
 	def UndrlygSctiesMvmntDtls(self, value):
-		self._UndrlygSctiesMvmntDtls = value if type(value) != base_types.auto else self.make_default("UndrlygSctiesMvmntDtls")
+		self._UndrlygSctiesMvmntDtls = value if value is not None else base_types.UninitialisedField(self, 'UndrlygSctiesMvmntDtls', UnderlyingSecurityMovement1, True)
 
 	@UndrlygSctiesMvmntDtls.deleter
 	def UndrlygSctiesMvmntDtls(self):
 		del self._UndrlygSctiesMvmntDtls
-		self._UndrlygSctiesMvmntDtls = None
+		self._UndrlygSctiesMvmntDtls = base_types.UninitialisedField(self, 'UndrlygSctiesMvmntDtls', UnderlyingSecurityMovement1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AgtCAElctnAdvcId', type=DocumentIdentification8, min=0, max=1, mutex_group=None, array=False),

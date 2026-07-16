@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DocumentIdentification7 import DocumentIdentification7
-from ._Max70Text import Max70Text
-from ._UserDefinedInformation1 import UserDefinedInformation1
+from . import DocumentIdentification7
+from . import Max70Text
+from . import UserDefinedInformation1
 
 class TransportedGoods1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TransportedGoods1(base_types._BaseFieldType):
 
 	@BuyrDfndInf.setter
 	def BuyrDfndInf(self, value):
-		self._BuyrDfndInf = value if type(value) != base_types.auto else self.make_default("BuyrDfndInf")
+		self._BuyrDfndInf = value if value is not None else base_types.UninitialisedField(self, 'BuyrDfndInf', UserDefinedInformation1, True)
 
 	@BuyrDfndInf.deleter
 	def BuyrDfndInf(self):
 		del self._BuyrDfndInf
-		self._BuyrDfndInf = None
+		self._BuyrDfndInf = base_types.UninitialisedField(self, 'BuyrDfndInf', UserDefinedInformation1, True)
 
 	@property
 	def GoodsDesc(self):
@@ -28,12 +28,12 @@ class TransportedGoods1(base_types._BaseFieldType):
 
 	@GoodsDesc.setter
 	def GoodsDesc(self, value):
-		self._GoodsDesc = value if type(value) != base_types.auto else self.make_default("GoodsDesc")
+		self._GoodsDesc = value if value is not None else base_types.UninitialisedField(self, 'GoodsDesc', Max70Text, False)
 
 	@GoodsDesc.deleter
 	def GoodsDesc(self):
 		del self._GoodsDesc
-		self._GoodsDesc = None
+		self._GoodsDesc = base_types.UninitialisedField(self, 'GoodsDesc', Max70Text, False)
 
 	@property
 	def PurchsOrdrRef(self):
@@ -41,12 +41,12 @@ class TransportedGoods1(base_types._BaseFieldType):
 
 	@PurchsOrdrRef.setter
 	def PurchsOrdrRef(self, value):
-		self._PurchsOrdrRef = value if type(value) != base_types.auto else self.make_default("PurchsOrdrRef")
+		self._PurchsOrdrRef = value if value is not None else base_types.UninitialisedField(self, 'PurchsOrdrRef', DocumentIdentification7, False)
 
 	@PurchsOrdrRef.deleter
 	def PurchsOrdrRef(self):
 		del self._PurchsOrdrRef
-		self._PurchsOrdrRef = None
+		self._PurchsOrdrRef = base_types.UninitialisedField(self, 'PurchsOrdrRef', DocumentIdentification7, False)
 
 	@property
 	def SellrDfndInf(self):
@@ -54,12 +54,12 @@ class TransportedGoods1(base_types._BaseFieldType):
 
 	@SellrDfndInf.setter
 	def SellrDfndInf(self, value):
-		self._SellrDfndInf = value if type(value) != base_types.auto else self.make_default("SellrDfndInf")
+		self._SellrDfndInf = value if value is not None else base_types.UninitialisedField(self, 'SellrDfndInf', UserDefinedInformation1, True)
 
 	@SellrDfndInf.deleter
 	def SellrDfndInf(self):
 		del self._SellrDfndInf
-		self._SellrDfndInf = None
+		self._SellrDfndInf = base_types.UninitialisedField(self, 'SellrDfndInf', UserDefinedInformation1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BuyrDfndInf', type=UserDefinedInformation1, min=0, max=None, mutex_group=None, array=True),

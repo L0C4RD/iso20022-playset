@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCode import CountryCode
-from ._ISODate import ISODate
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
-from ._PartyIdentification140 import PartyIdentification140
-from ._PostalAddress1 import PostalAddress1
+from . import CountryCode
+from . import ISODate
+from . import Max140Text
+from . import Max35Text
+from . import PartyIdentification140
+from . import PostalAddress1
 
 class Organisation36(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class Organisation36(base_types._BaseFieldType):
 
 	@CorpInvstrAdr.setter
 	def CorpInvstrAdr(self, value):
-		self._CorpInvstrAdr = value if type(value) != base_types.auto else self.make_default("CorpInvstrAdr")
+		self._CorpInvstrAdr = value if value is not None else base_types.UninitialisedField(self, 'CorpInvstrAdr', PostalAddress1, False)
 
 	@CorpInvstrAdr.deleter
 	def CorpInvstrAdr(self):
 		del self._CorpInvstrAdr
-		self._CorpInvstrAdr = None
+		self._CorpInvstrAdr = base_types.UninitialisedField(self, 'CorpInvstrAdr', PostalAddress1, False)
 
 	@property
 	def Id(self):
@@ -31,12 +31,12 @@ class Organisation36(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', PartyIdentification140, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', PartyIdentification140, False)
 
 	@property
 	def Nm(self):
@@ -44,12 +44,12 @@ class Organisation36(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max140Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max140Text, False)
 
 	@property
 	def NtlRegnNb(self):
@@ -57,12 +57,12 @@ class Organisation36(base_types._BaseFieldType):
 
 	@NtlRegnNb.setter
 	def NtlRegnNb(self, value):
-		self._NtlRegnNb = value if type(value) != base_types.auto else self.make_default("NtlRegnNb")
+		self._NtlRegnNb = value if value is not None else base_types.UninitialisedField(self, 'NtlRegnNb', Max35Text, False)
 
 	@NtlRegnNb.deleter
 	def NtlRegnNb(self):
 		del self._NtlRegnNb
-		self._NtlRegnNb = None
+		self._NtlRegnNb = base_types.UninitialisedField(self, 'NtlRegnNb', Max35Text, False)
 
 	@property
 	def Purp(self):
@@ -70,12 +70,12 @@ class Organisation36(base_types._BaseFieldType):
 
 	@Purp.setter
 	def Purp(self, value):
-		self._Purp = value if type(value) != base_types.auto else self.make_default("Purp")
+		self._Purp = value if value is not None else base_types.UninitialisedField(self, 'Purp', Max35Text, False)
 
 	@Purp.deleter
 	def Purp(self):
 		del self._Purp
-		self._Purp = None
+		self._Purp = base_types.UninitialisedField(self, 'Purp', Max35Text, False)
 
 	@property
 	def RegnCtry(self):
@@ -83,12 +83,12 @@ class Organisation36(base_types._BaseFieldType):
 
 	@RegnCtry.setter
 	def RegnCtry(self, value):
-		self._RegnCtry = value if type(value) != base_types.auto else self.make_default("RegnCtry")
+		self._RegnCtry = value if value is not None else base_types.UninitialisedField(self, 'RegnCtry', CountryCode, False)
 
 	@RegnCtry.deleter
 	def RegnCtry(self):
 		del self._RegnCtry
-		self._RegnCtry = None
+		self._RegnCtry = base_types.UninitialisedField(self, 'RegnCtry', CountryCode, False)
 
 	@property
 	def RegnDt(self):
@@ -96,12 +96,12 @@ class Organisation36(base_types._BaseFieldType):
 
 	@RegnDt.setter
 	def RegnDt(self, value):
-		self._RegnDt = value if type(value) != base_types.auto else self.make_default("RegnDt")
+		self._RegnDt = value if value is not None else base_types.UninitialisedField(self, 'RegnDt', ISODate, False)
 
 	@RegnDt.deleter
 	def RegnDt(self):
 		del self._RegnDt
-		self._RegnDt = None
+		self._RegnDt = base_types.UninitialisedField(self, 'RegnDt', ISODate, False)
 
 	@property
 	def TaxIdNb(self):
@@ -109,12 +109,12 @@ class Organisation36(base_types._BaseFieldType):
 
 	@TaxIdNb.setter
 	def TaxIdNb(self, value):
-		self._TaxIdNb = value if type(value) != base_types.auto else self.make_default("TaxIdNb")
+		self._TaxIdNb = value if value is not None else base_types.UninitialisedField(self, 'TaxIdNb', Max35Text, False)
 
 	@TaxIdNb.deleter
 	def TaxIdNb(self):
 		del self._TaxIdNb
-		self._TaxIdNb = None
+		self._TaxIdNb = base_types.UninitialisedField(self, 'TaxIdNb', Max35Text, False)
 
 	@property
 	def TaxtnCtry(self):
@@ -122,12 +122,12 @@ class Organisation36(base_types._BaseFieldType):
 
 	@TaxtnCtry.setter
 	def TaxtnCtry(self, value):
-		self._TaxtnCtry = value if type(value) != base_types.auto else self.make_default("TaxtnCtry")
+		self._TaxtnCtry = value if value is not None else base_types.UninitialisedField(self, 'TaxtnCtry', CountryCode, False)
 
 	@TaxtnCtry.deleter
 	def TaxtnCtry(self):
 		del self._TaxtnCtry
-		self._TaxtnCtry = None
+		self._TaxtnCtry = base_types.UninitialisedField(self, 'TaxtnCtry', CountryCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CorpInvstrAdr', type=PostalAddress1, min=1, max=1, mutex_group=None, array=False),

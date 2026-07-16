@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Address2 import Address2
-from ._CardSecurityCapability1 import CardSecurityCapability1
-from ._ISODate import ISODate
-from ._Max16Text import Max16Text
-from ._Max256Text import Max256Text
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import Address2
+from . import CardSecurityCapability1
+from . import ISODate
+from . import Max16Text
+from . import Max256Text
+from . import TrueFalseIndicator
 
 class CardNotReceivedDetails3(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class CardNotReceivedDetails3(base_types._BaseFieldType):
 
 	@CardSctyCd.setter
 	def CardSctyCd(self, value):
-		self._CardSctyCd = value if type(value) != base_types.auto else self.make_default("CardSctyCd")
+		self._CardSctyCd = value if value is not None else base_types.UninitialisedField(self, 'CardSctyCd', TrueFalseIndicator, False)
 
 	@CardSctyCd.deleter
 	def CardSctyCd(self):
 		del self._CardSctyCd
-		self._CardSctyCd = None
+		self._CardSctyCd = base_types.UninitialisedField(self, 'CardSctyCd', TrueFalseIndicator, False)
 
 	@property
 	def CardSctyCpblty(self):
@@ -31,12 +31,12 @@ class CardNotReceivedDetails3(base_types._BaseFieldType):
 
 	@CardSctyCpblty.setter
 	def CardSctyCpblty(self, value):
-		self._CardSctyCpblty = value if type(value) != base_types.auto else self.make_default("CardSctyCpblty")
+		self._CardSctyCpblty = value if value is not None else base_types.UninitialisedField(self, 'CardSctyCpblty', CardSecurityCapability1, True)
 
 	@CardSctyCpblty.deleter
 	def CardSctyCpblty(self):
 		del self._CardSctyCpblty
-		self._CardSctyCpblty = None
+		self._CardSctyCpblty = base_types.UninitialisedField(self, 'CardSctyCpblty', CardSecurityCapability1, True)
 
 	@property
 	def DtMld(self):
@@ -44,12 +44,12 @@ class CardNotReceivedDetails3(base_types._BaseFieldType):
 
 	@DtMld.setter
 	def DtMld(self, value):
-		self._DtMld = value if type(value) != base_types.auto else self.make_default("DtMld")
+		self._DtMld = value if value is not None else base_types.UninitialisedField(self, 'DtMld', ISODate, False)
 
 	@DtMld.deleter
 	def DtMld(self):
 		del self._DtMld
-		self._DtMld = None
+		self._DtMld = base_types.UninitialisedField(self, 'DtMld', ISODate, False)
 
 	@property
 	def MldFrPstlCd(self):
@@ -57,12 +57,12 @@ class CardNotReceivedDetails3(base_types._BaseFieldType):
 
 	@MldFrPstlCd.setter
 	def MldFrPstlCd(self, value):
-		self._MldFrPstlCd = value if type(value) != base_types.auto else self.make_default("MldFrPstlCd")
+		self._MldFrPstlCd = value if value is not None else base_types.UninitialisedField(self, 'MldFrPstlCd', Max16Text, False)
 
 	@MldFrPstlCd.deleter
 	def MldFrPstlCd(self):
 		del self._MldFrPstlCd
-		self._MldFrPstlCd = None
+		self._MldFrPstlCd = base_types.UninitialisedField(self, 'MldFrPstlCd', Max16Text, False)
 
 	@property
 	def MlngAdr(self):
@@ -70,12 +70,12 @@ class CardNotReceivedDetails3(base_types._BaseFieldType):
 
 	@MlngAdr.setter
 	def MlngAdr(self, value):
-		self._MlngAdr = value if type(value) != base_types.auto else self.make_default("MlngAdr")
+		self._MlngAdr = value if value is not None else base_types.UninitialisedField(self, 'MlngAdr', Address2, False)
 
 	@MlngAdr.deleter
 	def MlngAdr(self):
 		del self._MlngAdr
-		self._MlngAdr = None
+		self._MlngAdr = base_types.UninitialisedField(self, 'MlngAdr', Address2, False)
 
 	@property
 	def MlngAdrUstrd(self):
@@ -83,12 +83,12 @@ class CardNotReceivedDetails3(base_types._BaseFieldType):
 
 	@MlngAdrUstrd.setter
 	def MlngAdrUstrd(self, value):
-		self._MlngAdrUstrd = value if type(value) != base_types.auto else self.make_default("MlngAdrUstrd")
+		self._MlngAdrUstrd = value if value is not None else base_types.UninitialisedField(self, 'MlngAdrUstrd', Max256Text, False)
 
 	@MlngAdrUstrd.deleter
 	def MlngAdrUstrd(self):
 		del self._MlngAdrUstrd
-		self._MlngAdrUstrd = None
+		self._MlngAdrUstrd = base_types.UninitialisedField(self, 'MlngAdrUstrd', Max256Text, False)
 
 	@property
 	def VldFr(self):
@@ -96,12 +96,12 @@ class CardNotReceivedDetails3(base_types._BaseFieldType):
 
 	@VldFr.setter
 	def VldFr(self, value):
-		self._VldFr = value if type(value) != base_types.auto else self.make_default("VldFr")
+		self._VldFr = value if value is not None else base_types.UninitialisedField(self, 'VldFr', ISODate, False)
 
 	@VldFr.deleter
 	def VldFr(self):
 		del self._VldFr
-		self._VldFr = None
+		self._VldFr = base_types.UninitialisedField(self, 'VldFr', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CardSctyCd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardPaymentTransactionDetails50 import CardPaymentTransactionDetails50
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
-from ._TransactionIdentifier1 import TransactionIdentifier1
+from . import CardPaymentTransactionDetails50
+from . import Max140Text
+from . import Max35Text
+from . import TransactionIdentifier1
 
 class CardPaymentTransaction117(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CardPaymentTransaction117(base_types._BaseFieldType):
 
 	@InitrTxId.setter
 	def InitrTxId(self, value):
-		self._InitrTxId = value if type(value) != base_types.auto else self.make_default("InitrTxId")
+		self._InitrTxId = value if value is not None else base_types.UninitialisedField(self, 'InitrTxId', Max35Text, False)
 
 	@InitrTxId.deleter
 	def InitrTxId(self):
 		del self._InitrTxId
-		self._InitrTxId = None
+		self._InitrTxId = base_types.UninitialisedField(self, 'InitrTxId', Max35Text, False)
 
 	@property
 	def IntrchngData(self):
@@ -29,12 +29,12 @@ class CardPaymentTransaction117(base_types._BaseFieldType):
 
 	@IntrchngData.setter
 	def IntrchngData(self, value):
-		self._IntrchngData = value if type(value) != base_types.auto else self.make_default("IntrchngData")
+		self._IntrchngData = value if value is not None else base_types.UninitialisedField(self, 'IntrchngData', Max140Text, False)
 
 	@IntrchngData.deleter
 	def IntrchngData(self):
 		del self._IntrchngData
-		self._IntrchngData = None
+		self._IntrchngData = base_types.UninitialisedField(self, 'IntrchngData', Max140Text, False)
 
 	@property
 	def RcncltnId(self):
@@ -42,12 +42,12 @@ class CardPaymentTransaction117(base_types._BaseFieldType):
 
 	@RcncltnId.setter
 	def RcncltnId(self, value):
-		self._RcncltnId = value if type(value) != base_types.auto else self.make_default("RcncltnId")
+		self._RcncltnId = value if value is not None else base_types.UninitialisedField(self, 'RcncltnId', Max35Text, False)
 
 	@RcncltnId.deleter
 	def RcncltnId(self):
 		del self._RcncltnId
-		self._RcncltnId = None
+		self._RcncltnId = base_types.UninitialisedField(self, 'RcncltnId', Max35Text, False)
 
 	@property
 	def RcptTxId(self):
@@ -55,12 +55,12 @@ class CardPaymentTransaction117(base_types._BaseFieldType):
 
 	@RcptTxId.setter
 	def RcptTxId(self, value):
-		self._RcptTxId = value if type(value) != base_types.auto else self.make_default("RcptTxId")
+		self._RcptTxId = value if value is not None else base_types.UninitialisedField(self, 'RcptTxId', Max140Text, False)
 
 	@RcptTxId.deleter
 	def RcptTxId(self):
 		del self._RcptTxId
-		self._RcptTxId = None
+		self._RcptTxId = base_types.UninitialisedField(self, 'RcptTxId', Max140Text, False)
 
 	@property
 	def SaleRefId(self):
@@ -68,12 +68,12 @@ class CardPaymentTransaction117(base_types._BaseFieldType):
 
 	@SaleRefId.setter
 	def SaleRefId(self, value):
-		self._SaleRefId = value if type(value) != base_types.auto else self.make_default("SaleRefId")
+		self._SaleRefId = value if value is not None else base_types.UninitialisedField(self, 'SaleRefId', Max35Text, False)
 
 	@SaleRefId.deleter
 	def SaleRefId(self):
 		del self._SaleRefId
-		self._SaleRefId = None
+		self._SaleRefId = base_types.UninitialisedField(self, 'SaleRefId', Max35Text, False)
 
 	@property
 	def TxDtls(self):
@@ -81,12 +81,12 @@ class CardPaymentTransaction117(base_types._BaseFieldType):
 
 	@TxDtls.setter
 	def TxDtls(self, value):
-		self._TxDtls = value if type(value) != base_types.auto else self.make_default("TxDtls")
+		self._TxDtls = value if value is not None else base_types.UninitialisedField(self, 'TxDtls', CardPaymentTransactionDetails50, False)
 
 	@TxDtls.deleter
 	def TxDtls(self):
 		del self._TxDtls
-		self._TxDtls = None
+		self._TxDtls = base_types.UninitialisedField(self, 'TxDtls', CardPaymentTransactionDetails50, False)
 
 	@property
 	def TxId(self):
@@ -94,12 +94,12 @@ class CardPaymentTransaction117(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', TransactionIdentifier1, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', TransactionIdentifier1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InitrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

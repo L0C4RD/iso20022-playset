@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCode import CountryCode
-from ._IdentificationType6Choice import IdentificationType6Choice
-from ._Max35Text import Max35Text
+from . import CountryCode
+from . import IdentificationType6Choice
+from . import Max35Text
 
 class AlternatePartyIdentification4(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AlternatePartyIdentification4(base_types._BaseFieldType):
 
 	@AltrnId.setter
 	def AltrnId(self, value):
-		self._AltrnId = value if type(value) != base_types.auto else self.make_default("AltrnId")
+		self._AltrnId = value if value is not None else base_types.UninitialisedField(self, 'AltrnId', Max35Text, False)
 
 	@AltrnId.deleter
 	def AltrnId(self):
 		del self._AltrnId
-		self._AltrnId = None
+		self._AltrnId = base_types.UninitialisedField(self, 'AltrnId', Max35Text, False)
 
 	@property
 	def Ctry(self):
@@ -28,12 +28,12 @@ class AlternatePartyIdentification4(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@property
 	def IdTp(self):
@@ -41,12 +41,12 @@ class AlternatePartyIdentification4(base_types._BaseFieldType):
 
 	@IdTp.setter
 	def IdTp(self, value):
-		self._IdTp = value if type(value) != base_types.auto else self.make_default("IdTp")
+		self._IdTp = value if value is not None else base_types.UninitialisedField(self, 'IdTp', IdentificationType6Choice, False)
 
 	@IdTp.deleter
 	def IdTp(self):
 		del self._IdTp
-		self._IdTp = None
+		self._IdTp = base_types.UninitialisedField(self, 'IdTp', IdentificationType6Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AltrnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

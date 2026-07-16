@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContentInformationType38 import ContentInformationType38
-from ._InformationQualify1Code import InformationQualify1Code
-from ._Max20000Text import Max20000Text
-from ._Number import Number
-from ._OutputBarcode2 import OutputBarcode2
-from ._OutputFormat3Code import OutputFormat3Code
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._UserInterface4Code import UserInterface4Code
+from . import ContentInformationType38
+from . import InformationQualify1Code
+from . import Max20000Text
+from . import Number
+from . import OutputBarcode2
+from . import OutputFormat3Code
+from . import TrueFalseIndicator
+from . import UserInterface4Code
 
 class ActionMessage11(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class ActionMessage11(base_types._BaseFieldType):
 
 	@Frmt.setter
 	def Frmt(self, value):
-		self._Frmt = value if type(value) != base_types.auto else self.make_default("Frmt")
+		self._Frmt = value if value is not None else base_types.UninitialisedField(self, 'Frmt', OutputFormat3Code, False)
 
 	@Frmt.deleter
 	def Frmt(self):
 		del self._Frmt
-		self._Frmt = None
+		self._Frmt = base_types.UninitialisedField(self, 'Frmt', OutputFormat3Code, False)
 
 	@property
 	def InfQlfr(self):
@@ -33,12 +33,12 @@ class ActionMessage11(base_types._BaseFieldType):
 
 	@InfQlfr.setter
 	def InfQlfr(self, value):
-		self._InfQlfr = value if type(value) != base_types.auto else self.make_default("InfQlfr")
+		self._InfQlfr = value if value is not None else base_types.UninitialisedField(self, 'InfQlfr', InformationQualify1Code, False)
 
 	@InfQlfr.deleter
 	def InfQlfr(self):
 		del self._InfQlfr
-		self._InfQlfr = None
+		self._InfQlfr = base_types.UninitialisedField(self, 'InfQlfr', InformationQualify1Code, False)
 
 	@property
 	def MinDispTm(self):
@@ -46,12 +46,12 @@ class ActionMessage11(base_types._BaseFieldType):
 
 	@MinDispTm.setter
 	def MinDispTm(self, value):
-		self._MinDispTm = value if type(value) != base_types.auto else self.make_default("MinDispTm")
+		self._MinDispTm = value if value is not None else base_types.UninitialisedField(self, 'MinDispTm', Number, False)
 
 	@MinDispTm.deleter
 	def MinDispTm(self):
 		del self._MinDispTm
-		self._MinDispTm = None
+		self._MinDispTm = base_types.UninitialisedField(self, 'MinDispTm', Number, False)
 
 	@property
 	def MsgCntt(self):
@@ -59,12 +59,12 @@ class ActionMessage11(base_types._BaseFieldType):
 
 	@MsgCntt.setter
 	def MsgCntt(self, value):
-		self._MsgCntt = value if type(value) != base_types.auto else self.make_default("MsgCntt")
+		self._MsgCntt = value if value is not None else base_types.UninitialisedField(self, 'MsgCntt', Max20000Text, False)
 
 	@MsgCntt.deleter
 	def MsgCntt(self):
 		del self._MsgCntt
-		self._MsgCntt = None
+		self._MsgCntt = base_types.UninitialisedField(self, 'MsgCntt', Max20000Text, False)
 
 	@property
 	def MsgCnttSgntr(self):
@@ -72,12 +72,12 @@ class ActionMessage11(base_types._BaseFieldType):
 
 	@MsgCnttSgntr.setter
 	def MsgCnttSgntr(self, value):
-		self._MsgCnttSgntr = value if type(value) != base_types.auto else self.make_default("MsgCnttSgntr")
+		self._MsgCnttSgntr = value if value is not None else base_types.UninitialisedField(self, 'MsgCnttSgntr', ContentInformationType38, False)
 
 	@MsgCnttSgntr.deleter
 	def MsgCnttSgntr(self):
 		del self._MsgCnttSgntr
-		self._MsgCnttSgntr = None
+		self._MsgCnttSgntr = base_types.UninitialisedField(self, 'MsgCnttSgntr', ContentInformationType38, False)
 
 	@property
 	def MsgDstn(self):
@@ -85,12 +85,12 @@ class ActionMessage11(base_types._BaseFieldType):
 
 	@MsgDstn.setter
 	def MsgDstn(self, value):
-		self._MsgDstn = value if type(value) != base_types.auto else self.make_default("MsgDstn")
+		self._MsgDstn = value if value is not None else base_types.UninitialisedField(self, 'MsgDstn', UserInterface4Code, False)
 
 	@MsgDstn.deleter
 	def MsgDstn(self):
 		del self._MsgDstn
-		self._MsgDstn = None
+		self._MsgDstn = base_types.UninitialisedField(self, 'MsgDstn', UserInterface4Code, False)
 
 	@property
 	def OutptBrcd(self):
@@ -98,12 +98,12 @@ class ActionMessage11(base_types._BaseFieldType):
 
 	@OutptBrcd.setter
 	def OutptBrcd(self, value):
-		self._OutptBrcd = value if type(value) != base_types.auto else self.make_default("OutptBrcd")
+		self._OutptBrcd = value if value is not None else base_types.UninitialisedField(self, 'OutptBrcd', OutputBarcode2, False)
 
 	@OutptBrcd.deleter
 	def OutptBrcd(self):
 		del self._OutptBrcd
-		self._OutptBrcd = None
+		self._OutptBrcd = base_types.UninitialisedField(self, 'OutptBrcd', OutputBarcode2, False)
 
 	@property
 	def RspnReqrdFlg(self):
@@ -111,12 +111,12 @@ class ActionMessage11(base_types._BaseFieldType):
 
 	@RspnReqrdFlg.setter
 	def RspnReqrdFlg(self, value):
-		self._RspnReqrdFlg = value if type(value) != base_types.auto else self.make_default("RspnReqrdFlg")
+		self._RspnReqrdFlg = value if value is not None else base_types.UninitialisedField(self, 'RspnReqrdFlg', TrueFalseIndicator, False)
 
 	@RspnReqrdFlg.deleter
 	def RspnReqrdFlg(self):
 		del self._RspnReqrdFlg
-		self._RspnReqrdFlg = None
+		self._RspnReqrdFlg = base_types.UninitialisedField(self, 'RspnReqrdFlg', TrueFalseIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Frmt', type=OutputFormat3Code, min=0, max=1, mutex_group=None, array=False),

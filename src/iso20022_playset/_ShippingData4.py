@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._ISODateTime import ISODateTime
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max35Text import Max35Text
-from ._Max40Text import Max40Text
-from ._Max6NumericText import Max6NumericText
-from ._Max70Text import Max70Text
-from ._ShippingPackage4 import ShippingPackage4
-from ._Tax44 import Tax44
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ATICALaxProcessing
+from . import ISODateTime
+from . import ImpliedCurrencyAndAmount
+from . import Max35Text
+from . import Max40Text
+from . import Max6NumericText
+from . import Max70Text
+from . import ShippingPackage4
+from . import Tax44
+from . import TrueFalseIndicator
 
 class ShippingData4(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class ShippingData4(base_types._BaseFieldType):
 
 	@IncntivAmt.setter
 	def IncntivAmt(self, value):
-		self._IncntivAmt = value if type(value) != base_types.auto else self.make_default("IncntivAmt")
+		self._IncntivAmt = value if value is not None else base_types.UninitialisedField(self, 'IncntivAmt', ImpliedCurrencyAndAmount, False)
 
 	@IncntivAmt.deleter
 	def IncntivAmt(self):
 		del self._IncntivAmt
-		self._IncntivAmt = None
+		self._IncntivAmt = base_types.UninitialisedField(self, 'IncntivAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def Insrnc(self):
@@ -35,12 +35,12 @@ class ShippingData4(base_types._BaseFieldType):
 
 	@Insrnc.setter
 	def Insrnc(self, value):
-		self._Insrnc = value if type(value) != base_types.auto else self.make_default("Insrnc")
+		self._Insrnc = value if value is not None else base_types.UninitialisedField(self, 'Insrnc', TrueFalseIndicator, False)
 
 	@Insrnc.deleter
 	def Insrnc(self):
 		del self._Insrnc
-		self._Insrnc = None
+		self._Insrnc = base_types.UninitialisedField(self, 'Insrnc', TrueFalseIndicator, False)
 
 	@property
 	def InsrncAmt(self):
@@ -48,12 +48,12 @@ class ShippingData4(base_types._BaseFieldType):
 
 	@InsrncAmt.setter
 	def InsrncAmt(self, value):
-		self._InsrncAmt = value if type(value) != base_types.auto else self.make_default("InsrncAmt")
+		self._InsrncAmt = value if value is not None else base_types.UninitialisedField(self, 'InsrncAmt', ImpliedCurrencyAndAmount, False)
 
 	@InsrncAmt.deleter
 	def InsrncAmt(self):
 		del self._InsrncAmt
-		self._InsrncAmt = None
+		self._InsrncAmt = base_types.UninitialisedField(self, 'InsrncAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def InvcCreDtTm(self):
@@ -61,12 +61,12 @@ class ShippingData4(base_types._BaseFieldType):
 
 	@InvcCreDtTm.setter
 	def InvcCreDtTm(self, value):
-		self._InvcCreDtTm = value if type(value) != base_types.auto else self.make_default("InvcCreDtTm")
+		self._InvcCreDtTm = value if value is not None else base_types.UninitialisedField(self, 'InvcCreDtTm', ISODateTime, False)
 
 	@InvcCreDtTm.deleter
 	def InvcCreDtTm(self):
 		del self._InvcCreDtTm
-		self._InvcCreDtTm = None
+		self._InvcCreDtTm = base_types.UninitialisedField(self, 'InvcCreDtTm', ISODateTime, False)
 
 	@property
 	def InvcNb(self):
@@ -74,12 +74,12 @@ class ShippingData4(base_types._BaseFieldType):
 
 	@InvcNb.setter
 	def InvcNb(self, value):
-		self._InvcNb = value if type(value) != base_types.auto else self.make_default("InvcNb")
+		self._InvcNb = value if value is not None else base_types.UninitialisedField(self, 'InvcNb', Max70Text, False)
 
 	@InvcNb.deleter
 	def InvcNb(self):
 		del self._InvcNb
-		self._InvcNb = None
+		self._InvcNb = base_types.UninitialisedField(self, 'InvcNb', Max70Text, False)
 
 	@property
 	def MiscExpnss(self):
@@ -87,12 +87,12 @@ class ShippingData4(base_types._BaseFieldType):
 
 	@MiscExpnss.setter
 	def MiscExpnss(self, value):
-		self._MiscExpnss = value if type(value) != base_types.auto else self.make_default("MiscExpnss")
+		self._MiscExpnss = value if value is not None else base_types.UninitialisedField(self, 'MiscExpnss', ImpliedCurrencyAndAmount, False)
 
 	@MiscExpnss.deleter
 	def MiscExpnss(self):
 		del self._MiscExpnss
-		self._MiscExpnss = None
+		self._MiscExpnss = base_types.UninitialisedField(self, 'MiscExpnss', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def NbOfPackgs(self):
@@ -100,12 +100,12 @@ class ShippingData4(base_types._BaseFieldType):
 
 	@NbOfPackgs.setter
 	def NbOfPackgs(self, value):
-		self._NbOfPackgs = value if type(value) != base_types.auto else self.make_default("NbOfPackgs")
+		self._NbOfPackgs = value if value is not None else base_types.UninitialisedField(self, 'NbOfPackgs', Max6NumericText, False)
 
 	@NbOfPackgs.deleter
 	def NbOfPackgs(self):
 		del self._NbOfPackgs
-		self._NbOfPackgs = None
+		self._NbOfPackgs = base_types.UninitialisedField(self, 'NbOfPackgs', Max6NumericText, False)
 
 	@property
 	def NetAmt(self):
@@ -113,12 +113,12 @@ class ShippingData4(base_types._BaseFieldType):
 
 	@NetAmt.setter
 	def NetAmt(self, value):
-		self._NetAmt = value if type(value) != base_types.auto else self.make_default("NetAmt")
+		self._NetAmt = value if value is not None else base_types.UninitialisedField(self, 'NetAmt', ImpliedCurrencyAndAmount, False)
 
 	@NetAmt.deleter
 	def NetAmt(self):
 		del self._NetAmt
-		self._NetAmt = None
+		self._NetAmt = base_types.UninitialisedField(self, 'NetAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def NtlData(self):
@@ -126,12 +126,12 @@ class ShippingData4(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def Packg(self):
@@ -139,12 +139,12 @@ class ShippingData4(base_types._BaseFieldType):
 
 	@Packg.setter
 	def Packg(self, value):
-		self._Packg = value if type(value) != base_types.auto else self.make_default("Packg")
+		self._Packg = value if value is not None else base_types.UninitialisedField(self, 'Packg', ShippingPackage4, True)
 
 	@Packg.deleter
 	def Packg(self):
 		del self._Packg
-		self._Packg = None
+		self._Packg = base_types.UninitialisedField(self, 'Packg', ShippingPackage4, True)
 
 	@property
 	def PrvtData(self):
@@ -152,12 +152,12 @@ class ShippingData4(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def SummryCmmdtyId(self):
@@ -165,12 +165,12 @@ class ShippingData4(base_types._BaseFieldType):
 
 	@SummryCmmdtyId.setter
 	def SummryCmmdtyId(self, value):
-		self._SummryCmmdtyId = value if type(value) != base_types.auto else self.make_default("SummryCmmdtyId")
+		self._SummryCmmdtyId = value if value is not None else base_types.UninitialisedField(self, 'SummryCmmdtyId', Max35Text, False)
 
 	@SummryCmmdtyId.deleter
 	def SummryCmmdtyId(self):
 		del self._SummryCmmdtyId
-		self._SummryCmmdtyId = None
+		self._SummryCmmdtyId = base_types.UninitialisedField(self, 'SummryCmmdtyId', Max35Text, False)
 
 	@property
 	def SvcDscrptrCd(self):
@@ -178,12 +178,12 @@ class ShippingData4(base_types._BaseFieldType):
 
 	@SvcDscrptrCd.setter
 	def SvcDscrptrCd(self, value):
-		self._SvcDscrptrCd = value if type(value) != base_types.auto else self.make_default("SvcDscrptrCd")
+		self._SvcDscrptrCd = value if value is not None else base_types.UninitialisedField(self, 'SvcDscrptrCd', Max40Text, False)
 
 	@SvcDscrptrCd.deleter
 	def SvcDscrptrCd(self):
 		del self._SvcDscrptrCd
-		self._SvcDscrptrCd = None
+		self._SvcDscrptrCd = base_types.UninitialisedField(self, 'SvcDscrptrCd', Max40Text, False)
 
 	@property
 	def Tax(self):
@@ -191,12 +191,12 @@ class ShippingData4(base_types._BaseFieldType):
 
 	@Tax.setter
 	def Tax(self, value):
-		self._Tax = value if type(value) != base_types.auto else self.make_default("Tax")
+		self._Tax = value if value is not None else base_types.UninitialisedField(self, 'Tax', Tax44, True)
 
 	@Tax.deleter
 	def Tax(self):
 		del self._Tax
-		self._Tax = None
+		self._Tax = base_types.UninitialisedField(self, 'Tax', Tax44, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IncntivAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._AmountAndForeignExchange1 import AmountAndForeignExchange1
-from ._BillingTaxRecord2 import BillingTaxRecord2
-from ._CreditDebitCode import CreditDebitCode
-from ._Max20AlphaNumericText import Max20AlphaNumericText
-from ._Max350Text import Max350Text
-from ._Number import Number
+from . import ActiveCurrencyAndAmount
+from . import AmountAndForeignExchange1
+from . import BillingTaxRecord2
+from . import CreditDebitCode
+from . import Max20AlphaNumericText
+from . import Max350Text
+from . import Number
 
 class ServiceItemTotals13(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class ServiceItemTotals13(base_types._BaseFieldType):
 
 	@CdtDbtInd.setter
 	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+		self._CdtDbtInd = value if value is not None else base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@CdtDbtInd.deleter
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
-		self._CdtDbtInd = None
+		self._CdtDbtInd = base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@property
 	def Desc(self):
@@ -32,12 +32,12 @@ class ServiceItemTotals13(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', Max350Text, False)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', Max350Text, False)
 
 	@property
 	def ItmTp(self):
@@ -45,12 +45,12 @@ class ServiceItemTotals13(base_types._BaseFieldType):
 
 	@ItmTp.setter
 	def ItmTp(self, value):
-		self._ItmTp = value if type(value) != base_types.auto else self.make_default("ItmTp")
+		self._ItmTp = value if value is not None else base_types.UninitialisedField(self, 'ItmTp', Max20AlphaNumericText, False)
 
 	@ItmTp.deleter
 	def ItmTp(self):
 		del self._ItmTp
-		self._ItmTp = None
+		self._ItmTp = base_types.UninitialisedField(self, 'ItmTp', Max20AlphaNumericText, False)
 
 	@property
 	def Qty(self):
@@ -58,12 +58,12 @@ class ServiceItemTotals13(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+		self._Qty = value if value is not None else base_types.UninitialisedField(self, 'Qty', Number, False)
 
 	@Qty.deleter
 	def Qty(self):
 		del self._Qty
-		self._Qty = None
+		self._Qty = base_types.UninitialisedField(self, 'Qty', Number, False)
 
 	@property
 	def Tax(self):
@@ -71,12 +71,12 @@ class ServiceItemTotals13(base_types._BaseFieldType):
 
 	@Tax.setter
 	def Tax(self, value):
-		self._Tax = value if type(value) != base_types.auto else self.make_default("Tax")
+		self._Tax = value if value is not None else base_types.UninitialisedField(self, 'Tax', BillingTaxRecord2, True)
 
 	@Tax.deleter
 	def Tax(self):
 		del self._Tax
-		self._Tax = None
+		self._Tax = base_types.UninitialisedField(self, 'Tax', BillingTaxRecord2, True)
 
 	@property
 	def TtlInvcAmt(self):
@@ -84,12 +84,12 @@ class ServiceItemTotals13(base_types._BaseFieldType):
 
 	@TtlInvcAmt.setter
 	def TtlInvcAmt(self, value):
-		self._TtlInvcAmt = value if type(value) != base_types.auto else self.make_default("TtlInvcAmt")
+		self._TtlInvcAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlInvcAmt', AmountAndForeignExchange1, False)
 
 	@TtlInvcAmt.deleter
 	def TtlInvcAmt(self):
 		del self._TtlInvcAmt
-		self._TtlInvcAmt = None
+		self._TtlInvcAmt = base_types.UninitialisedField(self, 'TtlInvcAmt', AmountAndForeignExchange1, False)
 
 	@property
 	def UnitPric(self):
@@ -97,12 +97,12 @@ class ServiceItemTotals13(base_types._BaseFieldType):
 
 	@UnitPric.setter
 	def UnitPric(self, value):
-		self._UnitPric = value if type(value) != base_types.auto else self.make_default("UnitPric")
+		self._UnitPric = value if value is not None else base_types.UninitialisedField(self, 'UnitPric', ActiveCurrencyAndAmount, False)
 
 	@UnitPric.deleter
 	def UnitPric(self):
 		del self._UnitPric
-		self._UnitPric = None
+		self._UnitPric = base_types.UninitialisedField(self, 'UnitPric', ActiveCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Exact4AlphaNumericText import Exact4AlphaNumericText
-from ._Max35Text import Max35Text
-from ._SupplementaryData1 import SupplementaryData1
-from ._WithdrawalReason1 import WithdrawalReason1
+from . import Exact4AlphaNumericText
+from . import Max35Text
+from . import SupplementaryData1
+from . import WithdrawalReason1
 
 class ForeignExchangeTradeWithdrawalNotificationV03(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ForeignExchangeTradeWithdrawalNotificationV03(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@property
 	def MtchgSysUnqRef(self):
@@ -29,12 +29,12 @@ class ForeignExchangeTradeWithdrawalNotificationV03(base_types._BaseFieldType):
 
 	@MtchgSysUnqRef.setter
 	def MtchgSysUnqRef(self, value):
-		self._MtchgSysUnqRef = value if type(value) != base_types.auto else self.make_default("MtchgSysUnqRef")
+		self._MtchgSysUnqRef = value if value is not None else base_types.UninitialisedField(self, 'MtchgSysUnqRef', Max35Text, False)
 
 	@MtchgSysUnqRef.deleter
 	def MtchgSysUnqRef(self):
 		del self._MtchgSysUnqRef
-		self._MtchgSysUnqRef = None
+		self._MtchgSysUnqRef = base_types.UninitialisedField(self, 'MtchgSysUnqRef', Max35Text, False)
 
 	@property
 	def SplmtryData(self):
@@ -42,12 +42,12 @@ class ForeignExchangeTradeWithdrawalNotificationV03(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def SttlmSsnIdr(self):
@@ -55,12 +55,12 @@ class ForeignExchangeTradeWithdrawalNotificationV03(base_types._BaseFieldType):
 
 	@SttlmSsnIdr.setter
 	def SttlmSsnIdr(self, value):
-		self._SttlmSsnIdr = value if type(value) != base_types.auto else self.make_default("SttlmSsnIdr")
+		self._SttlmSsnIdr = value if value is not None else base_types.UninitialisedField(self, 'SttlmSsnIdr', Exact4AlphaNumericText, False)
 
 	@SttlmSsnIdr.deleter
 	def SttlmSsnIdr(self):
 		del self._SttlmSsnIdr
-		self._SttlmSsnIdr = None
+		self._SttlmSsnIdr = base_types.UninitialisedField(self, 'SttlmSsnIdr', Exact4AlphaNumericText, False)
 
 	@property
 	def WdrwlRsn(self):
@@ -68,12 +68,12 @@ class ForeignExchangeTradeWithdrawalNotificationV03(base_types._BaseFieldType):
 
 	@WdrwlRsn.setter
 	def WdrwlRsn(self, value):
-		self._WdrwlRsn = value if type(value) != base_types.auto else self.make_default("WdrwlRsn")
+		self._WdrwlRsn = value if value is not None else base_types.UninitialisedField(self, 'WdrwlRsn', WithdrawalReason1, False)
 
 	@WdrwlRsn.deleter
 	def WdrwlRsn(self):
 		del self._WdrwlRsn
-		self._WdrwlRsn = None
+		self._WdrwlRsn = base_types.UninitialisedField(self, 'WdrwlRsn', WithdrawalReason1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

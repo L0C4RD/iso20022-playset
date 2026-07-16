@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._UpdatedAdditionalInformation19 import UpdatedAdditionalInformation19
-from ._UpdatedAdditionalInformation21 import UpdatedAdditionalInformation21
+from . import UpdatedAdditionalInformation19
+from . import UpdatedAdditionalInformation21
 
 class CorporateActionNarrative66(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CorporateActionNarrative66(base_types._BaseFieldType):
 
 	@AddtlTxt.setter
 	def AddtlTxt(self, value):
-		self._AddtlTxt = value if type(value) != base_types.auto else self.make_default("AddtlTxt")
+		self._AddtlTxt = value if value is not None else base_types.UninitialisedField(self, 'AddtlTxt', UpdatedAdditionalInformation19, True)
 
 	@AddtlTxt.deleter
 	def AddtlTxt(self):
 		del self._AddtlTxt
-		self._AddtlTxt = None
+		self._AddtlTxt = base_types.UninitialisedField(self, 'AddtlTxt', UpdatedAdditionalInformation19, True)
 
 	@property
 	def CertfctnBrkdwn(self):
@@ -27,12 +27,12 @@ class CorporateActionNarrative66(base_types._BaseFieldType):
 
 	@CertfctnBrkdwn.setter
 	def CertfctnBrkdwn(self, value):
-		self._CertfctnBrkdwn = value if type(value) != base_types.auto else self.make_default("CertfctnBrkdwn")
+		self._CertfctnBrkdwn = value if value is not None else base_types.UninitialisedField(self, 'CertfctnBrkdwn', UpdatedAdditionalInformation21, True)
 
 	@CertfctnBrkdwn.deleter
 	def CertfctnBrkdwn(self):
 		del self._CertfctnBrkdwn
-		self._CertfctnBrkdwn = None
+		self._CertfctnBrkdwn = base_types.UninitialisedField(self, 'CertfctnBrkdwn', UpdatedAdditionalInformation21, True)
 
 	@property
 	def InfConds(self):
@@ -40,12 +40,12 @@ class CorporateActionNarrative66(base_types._BaseFieldType):
 
 	@InfConds.setter
 	def InfConds(self, value):
-		self._InfConds = value if type(value) != base_types.auto else self.make_default("InfConds")
+		self._InfConds = value if value is not None else base_types.UninitialisedField(self, 'InfConds', UpdatedAdditionalInformation21, True)
 
 	@InfConds.deleter
 	def InfConds(self):
 		del self._InfConds
-		self._InfConds = None
+		self._InfConds = base_types.UninitialisedField(self, 'InfConds', UpdatedAdditionalInformation21, True)
 
 	@property
 	def InfToCmplyWth(self):
@@ -53,12 +53,12 @@ class CorporateActionNarrative66(base_types._BaseFieldType):
 
 	@InfToCmplyWth.setter
 	def InfToCmplyWth(self, value):
-		self._InfToCmplyWth = value if type(value) != base_types.auto else self.make_default("InfToCmplyWth")
+		self._InfToCmplyWth = value if value is not None else base_types.UninitialisedField(self, 'InfToCmplyWth', UpdatedAdditionalInformation21, True)
 
 	@InfToCmplyWth.deleter
 	def InfToCmplyWth(self):
 		del self._InfToCmplyWth
-		self._InfToCmplyWth = None
+		self._InfToCmplyWth = base_types.UninitialisedField(self, 'InfToCmplyWth', UpdatedAdditionalInformation21, True)
 
 	@property
 	def NrrtvVrsn(self):
@@ -66,12 +66,12 @@ class CorporateActionNarrative66(base_types._BaseFieldType):
 
 	@NrrtvVrsn.setter
 	def NrrtvVrsn(self, value):
-		self._NrrtvVrsn = value if type(value) != base_types.auto else self.make_default("NrrtvVrsn")
+		self._NrrtvVrsn = value if value is not None else base_types.UninitialisedField(self, 'NrrtvVrsn', UpdatedAdditionalInformation19, True)
 
 	@NrrtvVrsn.deleter
 	def NrrtvVrsn(self):
 		del self._NrrtvVrsn
-		self._NrrtvVrsn = None
+		self._NrrtvVrsn = base_types.UninitialisedField(self, 'NrrtvVrsn', UpdatedAdditionalInformation19, True)
 
 	@property
 	def SctyRstrctn(self):
@@ -79,12 +79,12 @@ class CorporateActionNarrative66(base_types._BaseFieldType):
 
 	@SctyRstrctn.setter
 	def SctyRstrctn(self, value):
-		self._SctyRstrctn = value if type(value) != base_types.auto else self.make_default("SctyRstrctn")
+		self._SctyRstrctn = value if value is not None else base_types.UninitialisedField(self, 'SctyRstrctn', UpdatedAdditionalInformation21, True)
 
 	@SctyRstrctn.deleter
 	def SctyRstrctn(self):
 		del self._SctyRstrctn
-		self._SctyRstrctn = None
+		self._SctyRstrctn = base_types.UninitialisedField(self, 'SctyRstrctn', UpdatedAdditionalInformation21, True)
 
 	@property
 	def TaxtnConds(self):
@@ -92,12 +92,12 @@ class CorporateActionNarrative66(base_types._BaseFieldType):
 
 	@TaxtnConds.setter
 	def TaxtnConds(self, value):
-		self._TaxtnConds = value if type(value) != base_types.auto else self.make_default("TaxtnConds")
+		self._TaxtnConds = value if value is not None else base_types.UninitialisedField(self, 'TaxtnConds', UpdatedAdditionalInformation21, True)
 
 	@TaxtnConds.deleter
 	def TaxtnConds(self):
 		del self._TaxtnConds
-		self._TaxtnConds = None
+		self._TaxtnConds = base_types.UninitialisedField(self, 'TaxtnConds', UpdatedAdditionalInformation21, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlTxt', type=UpdatedAdditionalInformation19, min=0, max=None, mutex_group=None, array=True),

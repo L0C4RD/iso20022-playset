@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._BenchmarkCurveName7Choice import BenchmarkCurveName7Choice
-from ._DecimalNumber import DecimalNumber
-from ._Max256Text import Max256Text
-from ._Price8 import Price8
-from ._SecurityIdentification39 import SecurityIdentification39
+from . import ActiveOrHistoricCurrencyCode
+from . import BenchmarkCurveName7Choice
+from . import DecimalNumber
+from . import Max256Text
+from . import Price8
+from . import SecurityIdentification39
 
 class BenchmarkCurve6(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class BenchmarkCurve6(base_types._BaseFieldType):
 
 	@BchmkCrvCcy.setter
 	def BchmkCrvCcy(self, value):
-		self._BchmkCrvCcy = value if type(value) != base_types.auto else self.make_default("BchmkCrvCcy")
+		self._BchmkCrvCcy = value if value is not None else base_types.UninitialisedField(self, 'BchmkCrvCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@BchmkCrvCcy.deleter
 	def BchmkCrvCcy(self):
 		del self._BchmkCrvCcy
-		self._BchmkCrvCcy = None
+		self._BchmkCrvCcy = base_types.UninitialisedField(self, 'BchmkCrvCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def BchmkCrvNm(self):
@@ -31,12 +31,12 @@ class BenchmarkCurve6(base_types._BaseFieldType):
 
 	@BchmkCrvNm.setter
 	def BchmkCrvNm(self, value):
-		self._BchmkCrvNm = value if type(value) != base_types.auto else self.make_default("BchmkCrvNm")
+		self._BchmkCrvNm = value if value is not None else base_types.UninitialisedField(self, 'BchmkCrvNm', BenchmarkCurveName7Choice, False)
 
 	@BchmkCrvNm.deleter
 	def BchmkCrvNm(self):
 		del self._BchmkCrvNm
-		self._BchmkCrvNm = None
+		self._BchmkCrvNm = base_types.UninitialisedField(self, 'BchmkCrvNm', BenchmarkCurveName7Choice, False)
 
 	@property
 	def BchmkCrvPt(self):
@@ -44,12 +44,12 @@ class BenchmarkCurve6(base_types._BaseFieldType):
 
 	@BchmkCrvPt.setter
 	def BchmkCrvPt(self, value):
-		self._BchmkCrvPt = value if type(value) != base_types.auto else self.make_default("BchmkCrvPt")
+		self._BchmkCrvPt = value if value is not None else base_types.UninitialisedField(self, 'BchmkCrvPt', Max256Text, False)
 
 	@BchmkCrvPt.deleter
 	def BchmkCrvPt(self):
 		del self._BchmkCrvPt
-		self._BchmkCrvPt = None
+		self._BchmkCrvPt = base_types.UninitialisedField(self, 'BchmkCrvPt', Max256Text, False)
 
 	@property
 	def BchmkId(self):
@@ -57,12 +57,12 @@ class BenchmarkCurve6(base_types._BaseFieldType):
 
 	@BchmkId.setter
 	def BchmkId(self, value):
-		self._BchmkId = value if type(value) != base_types.auto else self.make_default("BchmkId")
+		self._BchmkId = value if value is not None else base_types.UninitialisedField(self, 'BchmkId', SecurityIdentification39, False)
 
 	@BchmkId.deleter
 	def BchmkId(self):
 		del self._BchmkId
-		self._BchmkId = None
+		self._BchmkId = base_types.UninitialisedField(self, 'BchmkId', SecurityIdentification39, False)
 
 	@property
 	def BchmkPric(self):
@@ -70,12 +70,12 @@ class BenchmarkCurve6(base_types._BaseFieldType):
 
 	@BchmkPric.setter
 	def BchmkPric(self, value):
-		self._BchmkPric = value if type(value) != base_types.auto else self.make_default("BchmkPric")
+		self._BchmkPric = value if value is not None else base_types.UninitialisedField(self, 'BchmkPric', Price8, False)
 
 	@BchmkPric.deleter
 	def BchmkPric(self):
 		del self._BchmkPric
-		self._BchmkPric = None
+		self._BchmkPric = base_types.UninitialisedField(self, 'BchmkPric', Price8, False)
 
 	@property
 	def Sprd(self):
@@ -83,12 +83,12 @@ class BenchmarkCurve6(base_types._BaseFieldType):
 
 	@Sprd.setter
 	def Sprd(self, value):
-		self._Sprd = value if type(value) != base_types.auto else self.make_default("Sprd")
+		self._Sprd = value if value is not None else base_types.UninitialisedField(self, 'Sprd', DecimalNumber, False)
 
 	@Sprd.deleter
 	def Sprd(self):
 		del self._Sprd
-		self._Sprd = None
+		self._Sprd = base_types.UninitialisedField(self, 'Sprd', DecimalNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BchmkCrvCcy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),

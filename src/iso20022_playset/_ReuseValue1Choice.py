@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from . import ActiveOrHistoricCurrencyAndAmount
 
 class ReuseValue1Choice(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class ReuseValue1Choice(base_types._BaseFieldType):
 
 	@Actl.setter
 	def Actl(self, value):
-		self._Actl = value if type(value) != base_types.auto else self.make_default("Actl")
+		self._Actl = value if value is not None else base_types.UninitialisedField(self, 'Actl', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@Actl.deleter
 	def Actl(self):
 		del self._Actl
-		self._Actl = None
+		self._Actl = base_types.UninitialisedField(self, 'Actl', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def Estmtd(self):
@@ -26,12 +26,12 @@ class ReuseValue1Choice(base_types._BaseFieldType):
 
 	@Estmtd.setter
 	def Estmtd(self, value):
-		self._Estmtd = value if type(value) != base_types.auto else self.make_default("Estmtd")
+		self._Estmtd = value if value is not None else base_types.UninitialisedField(self, 'Estmtd', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@Estmtd.deleter
 	def Estmtd(self):
 		del self._Estmtd
-		self._Estmtd = None
+		self._Estmtd = base_types.UninitialisedField(self, 'Estmtd', ActiveOrHistoricCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Actl', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),

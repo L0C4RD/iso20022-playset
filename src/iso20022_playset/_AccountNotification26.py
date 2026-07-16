@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CashAccount40 import CashAccount40
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
-from ._NotificationItem10 import NotificationItem10
-from ._Party50Choice import Party50Choice
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import BranchAndFinancialInstitutionIdentification8
+from . import CashAccount40
+from . import ISODate
+from . import Max35Text
+from . import NotificationItem10
+from . import Party50Choice
 
 class AccountNotification26(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class AccountNotification26(base_types._BaseFieldType):
 
 	@Acct.setter
 	def Acct(self, value):
-		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
+		self._Acct = value if value is not None else base_types.UninitialisedField(self, 'Acct', CashAccount40, False)
 
 	@Acct.deleter
 	def Acct(self):
 		del self._Acct
-		self._Acct = None
+		self._Acct = base_types.UninitialisedField(self, 'Acct', CashAccount40, False)
 
 	@property
 	def AcctOwnr(self):
@@ -32,12 +32,12 @@ class AccountNotification26(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', Party50Choice, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', Party50Choice, False)
 
 	@property
 	def AcctSvcr(self):
@@ -45,12 +45,12 @@ class AccountNotification26(base_types._BaseFieldType):
 
 	@AcctSvcr.setter
 	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
+		self._AcctSvcr = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@AcctSvcr.deleter
 	def AcctSvcr(self):
 		del self._AcctSvcr
-		self._AcctSvcr = None
+		self._AcctSvcr = base_types.UninitialisedField(self, 'AcctSvcr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def Dbtr(self):
@@ -58,12 +58,12 @@ class AccountNotification26(base_types._BaseFieldType):
 
 	@Dbtr.setter
 	def Dbtr(self, value):
-		self._Dbtr = value if type(value) != base_types.auto else self.make_default("Dbtr")
+		self._Dbtr = value if value is not None else base_types.UninitialisedField(self, 'Dbtr', Party50Choice, False)
 
 	@Dbtr.deleter
 	def Dbtr(self):
 		del self._Dbtr
-		self._Dbtr = None
+		self._Dbtr = base_types.UninitialisedField(self, 'Dbtr', Party50Choice, False)
 
 	@property
 	def DbtrAgt(self):
@@ -71,12 +71,12 @@ class AccountNotification26(base_types._BaseFieldType):
 
 	@DbtrAgt.setter
 	def DbtrAgt(self, value):
-		self._DbtrAgt = value if type(value) != base_types.auto else self.make_default("DbtrAgt")
+		self._DbtrAgt = value if value is not None else base_types.UninitialisedField(self, 'DbtrAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@DbtrAgt.deleter
 	def DbtrAgt(self):
 		del self._DbtrAgt
-		self._DbtrAgt = None
+		self._DbtrAgt = base_types.UninitialisedField(self, 'DbtrAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def Id(self):
@@ -84,12 +84,12 @@ class AccountNotification26(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def IntrmyAgt(self):
@@ -97,12 +97,12 @@ class AccountNotification26(base_types._BaseFieldType):
 
 	@IntrmyAgt.setter
 	def IntrmyAgt(self, value):
-		self._IntrmyAgt = value if type(value) != base_types.auto else self.make_default("IntrmyAgt")
+		self._IntrmyAgt = value if value is not None else base_types.UninitialisedField(self, 'IntrmyAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@IntrmyAgt.deleter
 	def IntrmyAgt(self):
 		del self._IntrmyAgt
-		self._IntrmyAgt = None
+		self._IntrmyAgt = base_types.UninitialisedField(self, 'IntrmyAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def Itm(self):
@@ -110,12 +110,12 @@ class AccountNotification26(base_types._BaseFieldType):
 
 	@Itm.setter
 	def Itm(self, value):
-		self._Itm = value if type(value) != base_types.auto else self.make_default("Itm")
+		self._Itm = value if value is not None else base_types.UninitialisedField(self, 'Itm', NotificationItem10, True)
 
 	@Itm.deleter
 	def Itm(self):
 		del self._Itm
-		self._Itm = None
+		self._Itm = base_types.UninitialisedField(self, 'Itm', NotificationItem10, True)
 
 	@property
 	def RltdAcct(self):
@@ -123,12 +123,12 @@ class AccountNotification26(base_types._BaseFieldType):
 
 	@RltdAcct.setter
 	def RltdAcct(self, value):
-		self._RltdAcct = value if type(value) != base_types.auto else self.make_default("RltdAcct")
+		self._RltdAcct = value if value is not None else base_types.UninitialisedField(self, 'RltdAcct', CashAccount40, False)
 
 	@RltdAcct.deleter
 	def RltdAcct(self):
 		del self._RltdAcct
-		self._RltdAcct = None
+		self._RltdAcct = base_types.UninitialisedField(self, 'RltdAcct', CashAccount40, False)
 
 	@property
 	def TtlAmt(self):
@@ -136,12 +136,12 @@ class AccountNotification26(base_types._BaseFieldType):
 
 	@TtlAmt.setter
 	def TtlAmt(self, value):
-		self._TtlAmt = value if type(value) != base_types.auto else self.make_default("TtlAmt")
+		self._TtlAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@TtlAmt.deleter
 	def TtlAmt(self):
 		del self._TtlAmt
-		self._TtlAmt = None
+		self._TtlAmt = base_types.UninitialisedField(self, 'TtlAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def XpctdValDt(self):
@@ -149,12 +149,12 @@ class AccountNotification26(base_types._BaseFieldType):
 
 	@XpctdValDt.setter
 	def XpctdValDt(self, value):
-		self._XpctdValDt = value if type(value) != base_types.auto else self.make_default("XpctdValDt")
+		self._XpctdValDt = value if value is not None else base_types.UninitialisedField(self, 'XpctdValDt', ISODate, False)
 
 	@XpctdValDt.deleter
 	def XpctdValDt(self):
 		del self._XpctdValDt
-		self._XpctdValDt = None
+		self._XpctdValDt = base_types.UninitialisedField(self, 'XpctdValDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._FundOrderType5Choice import FundOrderType5Choice
-from ._FundPaymentType1Choice import FundPaymentType1Choice
+from . import AdditionalInformation15
+from . import FundOrderType5Choice
+from . import FundPaymentType1Choice
 
 class PaymentInstrument16(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PaymentInstrument16(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@property
 	def InstrmTp(self):
@@ -28,12 +28,12 @@ class PaymentInstrument16(base_types._BaseFieldType):
 
 	@InstrmTp.setter
 	def InstrmTp(self, value):
-		self._InstrmTp = value if type(value) != base_types.auto else self.make_default("InstrmTp")
+		self._InstrmTp = value if value is not None else base_types.UninitialisedField(self, 'InstrmTp', FundPaymentType1Choice, False)
 
 	@InstrmTp.deleter
 	def InstrmTp(self):
 		del self._InstrmTp
-		self._InstrmTp = None
+		self._InstrmTp = base_types.UninitialisedField(self, 'InstrmTp', FundPaymentType1Choice, False)
 
 	@property
 	def OrdrTp(self):
@@ -41,12 +41,12 @@ class PaymentInstrument16(base_types._BaseFieldType):
 
 	@OrdrTp.setter
 	def OrdrTp(self, value):
-		self._OrdrTp = value if type(value) != base_types.auto else self.make_default("OrdrTp")
+		self._OrdrTp = value if value is not None else base_types.UninitialisedField(self, 'OrdrTp', FundOrderType5Choice, False)
 
 	@OrdrTp.deleter
 	def OrdrTp(self):
 		del self._OrdrTp
-		self._OrdrTp = None
+		self._OrdrTp = base_types.UninitialisedField(self, 'OrdrTp', FundOrderType5Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),

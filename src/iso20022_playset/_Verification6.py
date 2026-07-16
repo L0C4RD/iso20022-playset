@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalData1 import AdditionalData1
-from ._ExternalAuthenticationMethod1Code import ExternalAuthenticationMethod1Code
-from ._Max35Text import Max35Text
-from ._Max500Text import Max500Text
-from ._PINData1 import PINData1
-from ._Verification3Code import Verification3Code
-from ._VerificationEntity2Code import VerificationEntity2Code
-from ._VerificationValue1 import VerificationValue1
+from . import AdditionalData1
+from . import ExternalAuthenticationMethod1Code
+from . import Max35Text
+from . import Max500Text
+from . import PINData1
+from . import Verification3Code
+from . import VerificationEntity2Code
+from . import VerificationValue1
 
 class Verification6(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class Verification6(base_types._BaseFieldType):
 
 	@Data.setter
 	def Data(self, value):
-		self._Data = value if type(value) != base_types.auto else self.make_default("Data")
+		self._Data = value if value is not None else base_types.UninitialisedField(self, 'Data', VerificationValue1, True)
 
 	@Data.deleter
 	def Data(self):
 		del self._Data
-		self._Data = None
+		self._Data = base_types.UninitialisedField(self, 'Data', VerificationValue1, True)
 
 	@property
 	def Ntty(self):
@@ -33,12 +33,12 @@ class Verification6(base_types._BaseFieldType):
 
 	@Ntty.setter
 	def Ntty(self, value):
-		self._Ntty = value if type(value) != base_types.auto else self.make_default("Ntty")
+		self._Ntty = value if value is not None else base_types.UninitialisedField(self, 'Ntty', VerificationEntity2Code, False)
 
 	@Ntty.deleter
 	def Ntty(self):
 		del self._Ntty
-		self._Ntty = None
+		self._Ntty = base_types.UninitialisedField(self, 'Ntty', VerificationEntity2Code, False)
 
 	@property
 	def OthrNtty(self):
@@ -46,12 +46,12 @@ class Verification6(base_types._BaseFieldType):
 
 	@OthrNtty.setter
 	def OthrNtty(self, value):
-		self._OthrNtty = value if type(value) != base_types.auto else self.make_default("OthrNtty")
+		self._OthrNtty = value if value is not None else base_types.UninitialisedField(self, 'OthrNtty', Max35Text, False)
 
 	@OthrNtty.deleter
 	def OthrNtty(self):
 		del self._OthrNtty
-		self._OthrNtty = None
+		self._OthrNtty = base_types.UninitialisedField(self, 'OthrNtty', Max35Text, False)
 
 	@property
 	def OthrRslt(self):
@@ -59,12 +59,12 @@ class Verification6(base_types._BaseFieldType):
 
 	@OthrRslt.setter
 	def OthrRslt(self, value):
-		self._OthrRslt = value if type(value) != base_types.auto else self.make_default("OthrRslt")
+		self._OthrRslt = value if value is not None else base_types.UninitialisedField(self, 'OthrRslt', Max500Text, False)
 
 	@OthrRslt.deleter
 	def OthrRslt(self):
 		del self._OthrRslt
-		self._OthrRslt = None
+		self._OthrRslt = base_types.UninitialisedField(self, 'OthrRslt', Max500Text, False)
 
 	@property
 	def OthrTp(self):
@@ -72,12 +72,12 @@ class Verification6(base_types._BaseFieldType):
 
 	@OthrTp.setter
 	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != base_types.auto else self.make_default("OthrTp")
+		self._OthrTp = value if value is not None else base_types.UninitialisedField(self, 'OthrTp', Max35Text, False)
 
 	@OthrTp.deleter
 	def OthrTp(self):
 		del self._OthrTp
-		self._OthrTp = None
+		self._OthrTp = base_types.UninitialisedField(self, 'OthrTp', Max35Text, False)
 
 	@property
 	def PINData(self):
@@ -85,12 +85,12 @@ class Verification6(base_types._BaseFieldType):
 
 	@PINData.setter
 	def PINData(self, value):
-		self._PINData = value if type(value) != base_types.auto else self.make_default("PINData")
+		self._PINData = value if value is not None else base_types.UninitialisedField(self, 'PINData', PINData1, False)
 
 	@PINData.deleter
 	def PINData(self):
 		del self._PINData
-		self._PINData = None
+		self._PINData = base_types.UninitialisedField(self, 'PINData', PINData1, False)
 
 	@property
 	def Rslt(self):
@@ -98,12 +98,12 @@ class Verification6(base_types._BaseFieldType):
 
 	@Rslt.setter
 	def Rslt(self, value):
-		self._Rslt = value if type(value) != base_types.auto else self.make_default("Rslt")
+		self._Rslt = value if value is not None else base_types.UninitialisedField(self, 'Rslt', Verification3Code, False)
 
 	@Rslt.deleter
 	def Rslt(self):
 		del self._Rslt
-		self._Rslt = None
+		self._Rslt = base_types.UninitialisedField(self, 'Rslt', Verification3Code, False)
 
 	@property
 	def RsltDtls(self):
@@ -111,12 +111,12 @@ class Verification6(base_types._BaseFieldType):
 
 	@RsltDtls.setter
 	def RsltDtls(self, value):
-		self._RsltDtls = value if type(value) != base_types.auto else self.make_default("RsltDtls")
+		self._RsltDtls = value if value is not None else base_types.UninitialisedField(self, 'RsltDtls', AdditionalData1, True)
 
 	@RsltDtls.deleter
 	def RsltDtls(self):
 		del self._RsltDtls
-		self._RsltDtls = None
+		self._RsltDtls = base_types.UninitialisedField(self, 'RsltDtls', AdditionalData1, True)
 
 	@property
 	def SubTp(self):
@@ -124,12 +124,12 @@ class Verification6(base_types._BaseFieldType):
 
 	@SubTp.setter
 	def SubTp(self, value):
-		self._SubTp = value if type(value) != base_types.auto else self.make_default("SubTp")
+		self._SubTp = value if value is not None else base_types.UninitialisedField(self, 'SubTp', Max35Text, False)
 
 	@SubTp.deleter
 	def SubTp(self):
 		del self._SubTp
-		self._SubTp = None
+		self._SubTp = base_types.UninitialisedField(self, 'SubTp', Max35Text, False)
 
 	@property
 	def Tp(self):
@@ -137,12 +137,12 @@ class Verification6(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', ExternalAuthenticationMethod1Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', ExternalAuthenticationMethod1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Data', type=VerificationValue1, min=0, max=None, mutex_group=None, array=True),

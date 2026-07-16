@@ -2,20 +2,20 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AffirmationStatus9Choice import AffirmationStatus9Choice
-from ._CurrencyToBuyOrSell1Choice import CurrencyToBuyOrSell1Choice
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._InvestorCapacity5Choice import InvestorCapacity5Choice
-from ._MatchingStatus28Choice import MatchingStatus28Choice
-from ._Max3Number import Max3Number
-from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
-from ._PlaceOfTradeIdentification2 import PlaceOfTradeIdentification2
-from ._Price11 import Price11
-from ._Reporting9Choice import Reporting9Choice
-from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
-from ._TradeDate9Choice import TradeDate9Choice
-from ._TradeOriginator4Choice import TradeOriginator4Choice
-from ._TradeTransactionCondition6Choice import TradeTransactionCondition6Choice
+from . import AffirmationStatus9Choice
+from . import CurrencyToBuyOrSell1Choice
+from . import DateAndDateTime2Choice
+from . import InvestorCapacity5Choice
+from . import MatchingStatus28Choice
+from . import Max3Number
+from . import PlaceOfClearingIdentification2
+from . import PlaceOfTradeIdentification2
+from . import Price11
+from . import Reporting9Choice
+from . import RestrictedFINXMax350Text
+from . import TradeDate9Choice
+from . import TradeOriginator4Choice
+from . import TradeTransactionCondition6Choice
 
 class SecuritiesTradeDetails125(base_types._BaseFieldType):
 
@@ -26,12 +26,12 @@ class SecuritiesTradeDetails125(base_types._BaseFieldType):
 
 	@AffirmSts.setter
 	def AffirmSts(self, value):
-		self._AffirmSts = value if type(value) != base_types.auto else self.make_default("AffirmSts")
+		self._AffirmSts = value if value is not None else base_types.UninitialisedField(self, 'AffirmSts', AffirmationStatus9Choice, False)
 
 	@AffirmSts.deleter
 	def AffirmSts(self):
 		del self._AffirmSts
-		self._AffirmSts = None
+		self._AffirmSts = base_types.UninitialisedField(self, 'AffirmSts', AffirmationStatus9Choice, False)
 
 	@property
 	def CcyToBuyOrSell(self):
@@ -39,12 +39,12 @@ class SecuritiesTradeDetails125(base_types._BaseFieldType):
 
 	@CcyToBuyOrSell.setter
 	def CcyToBuyOrSell(self, value):
-		self._CcyToBuyOrSell = value if type(value) != base_types.auto else self.make_default("CcyToBuyOrSell")
+		self._CcyToBuyOrSell = value if value is not None else base_types.UninitialisedField(self, 'CcyToBuyOrSell', CurrencyToBuyOrSell1Choice, False)
 
 	@CcyToBuyOrSell.deleter
 	def CcyToBuyOrSell(self):
 		del self._CcyToBuyOrSell
-		self._CcyToBuyOrSell = None
+		self._CcyToBuyOrSell = base_types.UninitialisedField(self, 'CcyToBuyOrSell', CurrencyToBuyOrSell1Choice, False)
 
 	@property
 	def DealPric(self):
@@ -52,12 +52,12 @@ class SecuritiesTradeDetails125(base_types._BaseFieldType):
 
 	@DealPric.setter
 	def DealPric(self, value):
-		self._DealPric = value if type(value) != base_types.auto else self.make_default("DealPric")
+		self._DealPric = value if value is not None else base_types.UninitialisedField(self, 'DealPric', Price11, False)
 
 	@DealPric.deleter
 	def DealPric(self):
 		del self._DealPric
-		self._DealPric = None
+		self._DealPric = base_types.UninitialisedField(self, 'DealPric', Price11, False)
 
 	@property
 	def FxAddtlDtls(self):
@@ -65,12 +65,12 @@ class SecuritiesTradeDetails125(base_types._BaseFieldType):
 
 	@FxAddtlDtls.setter
 	def FxAddtlDtls(self, value):
-		self._FxAddtlDtls = value if type(value) != base_types.auto else self.make_default("FxAddtlDtls")
+		self._FxAddtlDtls = value if value is not None else base_types.UninitialisedField(self, 'FxAddtlDtls', RestrictedFINXMax350Text, False)
 
 	@FxAddtlDtls.deleter
 	def FxAddtlDtls(self):
 		del self._FxAddtlDtls
-		self._FxAddtlDtls = None
+		self._FxAddtlDtls = base_types.UninitialisedField(self, 'FxAddtlDtls', RestrictedFINXMax350Text, False)
 
 	@property
 	def InvstrCpcty(self):
@@ -78,12 +78,12 @@ class SecuritiesTradeDetails125(base_types._BaseFieldType):
 
 	@InvstrCpcty.setter
 	def InvstrCpcty(self, value):
-		self._InvstrCpcty = value if type(value) != base_types.auto else self.make_default("InvstrCpcty")
+		self._InvstrCpcty = value if value is not None else base_types.UninitialisedField(self, 'InvstrCpcty', InvestorCapacity5Choice, False)
 
 	@InvstrCpcty.deleter
 	def InvstrCpcty(self):
 		del self._InvstrCpcty
-		self._InvstrCpcty = None
+		self._InvstrCpcty = base_types.UninitialisedField(self, 'InvstrCpcty', InvestorCapacity5Choice, False)
 
 	@property
 	def MtchgSts(self):
@@ -91,12 +91,12 @@ class SecuritiesTradeDetails125(base_types._BaseFieldType):
 
 	@MtchgSts.setter
 	def MtchgSts(self, value):
-		self._MtchgSts = value if type(value) != base_types.auto else self.make_default("MtchgSts")
+		self._MtchgSts = value if value is not None else base_types.UninitialisedField(self, 'MtchgSts', MatchingStatus28Choice, False)
 
 	@MtchgSts.deleter
 	def MtchgSts(self):
 		del self._MtchgSts
-		self._MtchgSts = None
+		self._MtchgSts = base_types.UninitialisedField(self, 'MtchgSts', MatchingStatus28Choice, False)
 
 	@property
 	def NbOfDaysAcrd(self):
@@ -104,12 +104,12 @@ class SecuritiesTradeDetails125(base_types._BaseFieldType):
 
 	@NbOfDaysAcrd.setter
 	def NbOfDaysAcrd(self, value):
-		self._NbOfDaysAcrd = value if type(value) != base_types.auto else self.make_default("NbOfDaysAcrd")
+		self._NbOfDaysAcrd = value if value is not None else base_types.UninitialisedField(self, 'NbOfDaysAcrd', Max3Number, False)
 
 	@NbOfDaysAcrd.deleter
 	def NbOfDaysAcrd(self):
 		del self._NbOfDaysAcrd
-		self._NbOfDaysAcrd = None
+		self._NbOfDaysAcrd = base_types.UninitialisedField(self, 'NbOfDaysAcrd', Max3Number, False)
 
 	@property
 	def OpngSttlmDt(self):
@@ -117,12 +117,12 @@ class SecuritiesTradeDetails125(base_types._BaseFieldType):
 
 	@OpngSttlmDt.setter
 	def OpngSttlmDt(self, value):
-		self._OpngSttlmDt = value if type(value) != base_types.auto else self.make_default("OpngSttlmDt")
+		self._OpngSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'OpngSttlmDt', DateAndDateTime2Choice, False)
 
 	@OpngSttlmDt.deleter
 	def OpngSttlmDt(self):
 		del self._OpngSttlmDt
-		self._OpngSttlmDt = None
+		self._OpngSttlmDt = base_types.UninitialisedField(self, 'OpngSttlmDt', DateAndDateTime2Choice, False)
 
 	@property
 	def PlcOfClr(self):
@@ -130,12 +130,12 @@ class SecuritiesTradeDetails125(base_types._BaseFieldType):
 
 	@PlcOfClr.setter
 	def PlcOfClr(self, value):
-		self._PlcOfClr = value if type(value) != base_types.auto else self.make_default("PlcOfClr")
+		self._PlcOfClr = value if value is not None else base_types.UninitialisedField(self, 'PlcOfClr', PlaceOfClearingIdentification2, False)
 
 	@PlcOfClr.deleter
 	def PlcOfClr(self):
 		del self._PlcOfClr
-		self._PlcOfClr = None
+		self._PlcOfClr = base_types.UninitialisedField(self, 'PlcOfClr', PlaceOfClearingIdentification2, False)
 
 	@property
 	def PlcOfTrad(self):
@@ -143,12 +143,12 @@ class SecuritiesTradeDetails125(base_types._BaseFieldType):
 
 	@PlcOfTrad.setter
 	def PlcOfTrad(self, value):
-		self._PlcOfTrad = value if type(value) != base_types.auto else self.make_default("PlcOfTrad")
+		self._PlcOfTrad = value if value is not None else base_types.UninitialisedField(self, 'PlcOfTrad', PlaceOfTradeIdentification2, False)
 
 	@PlcOfTrad.deleter
 	def PlcOfTrad(self):
 		del self._PlcOfTrad
-		self._PlcOfTrad = None
+		self._PlcOfTrad = base_types.UninitialisedField(self, 'PlcOfTrad', PlaceOfTradeIdentification2, False)
 
 	@property
 	def Rptg(self):
@@ -156,12 +156,12 @@ class SecuritiesTradeDetails125(base_types._BaseFieldType):
 
 	@Rptg.setter
 	def Rptg(self, value):
-		self._Rptg = value if type(value) != base_types.auto else self.make_default("Rptg")
+		self._Rptg = value if value is not None else base_types.UninitialisedField(self, 'Rptg', Reporting9Choice, True)
 
 	@Rptg.deleter
 	def Rptg(self):
 		del self._Rptg
-		self._Rptg = None
+		self._Rptg = base_types.UninitialisedField(self, 'Rptg', Reporting9Choice, True)
 
 	@property
 	def SttlmInstrPrcgAddtlDtls(self):
@@ -169,12 +169,12 @@ class SecuritiesTradeDetails125(base_types._BaseFieldType):
 
 	@SttlmInstrPrcgAddtlDtls.setter
 	def SttlmInstrPrcgAddtlDtls(self, value):
-		self._SttlmInstrPrcgAddtlDtls = value if type(value) != base_types.auto else self.make_default("SttlmInstrPrcgAddtlDtls")
+		self._SttlmInstrPrcgAddtlDtls = value if value is not None else base_types.UninitialisedField(self, 'SttlmInstrPrcgAddtlDtls', RestrictedFINXMax350Text, False)
 
 	@SttlmInstrPrcgAddtlDtls.deleter
 	def SttlmInstrPrcgAddtlDtls(self):
 		del self._SttlmInstrPrcgAddtlDtls
-		self._SttlmInstrPrcgAddtlDtls = None
+		self._SttlmInstrPrcgAddtlDtls = base_types.UninitialisedField(self, 'SttlmInstrPrcgAddtlDtls', RestrictedFINXMax350Text, False)
 
 	@property
 	def TradDt(self):
@@ -182,12 +182,12 @@ class SecuritiesTradeDetails125(base_types._BaseFieldType):
 
 	@TradDt.setter
 	def TradDt(self, value):
-		self._TradDt = value if type(value) != base_types.auto else self.make_default("TradDt")
+		self._TradDt = value if value is not None else base_types.UninitialisedField(self, 'TradDt', TradeDate9Choice, False)
 
 	@TradDt.deleter
 	def TradDt(self):
 		del self._TradDt
-		self._TradDt = None
+		self._TradDt = base_types.UninitialisedField(self, 'TradDt', TradeDate9Choice, False)
 
 	@property
 	def TradOrgtrRole(self):
@@ -195,12 +195,12 @@ class SecuritiesTradeDetails125(base_types._BaseFieldType):
 
 	@TradOrgtrRole.setter
 	def TradOrgtrRole(self, value):
-		self._TradOrgtrRole = value if type(value) != base_types.auto else self.make_default("TradOrgtrRole")
+		self._TradOrgtrRole = value if value is not None else base_types.UninitialisedField(self, 'TradOrgtrRole', TradeOriginator4Choice, False)
 
 	@TradOrgtrRole.deleter
 	def TradOrgtrRole(self):
 		del self._TradOrgtrRole
-		self._TradOrgtrRole = None
+		self._TradOrgtrRole = base_types.UninitialisedField(self, 'TradOrgtrRole', TradeOriginator4Choice, False)
 
 	@property
 	def TradTxCond(self):
@@ -208,12 +208,12 @@ class SecuritiesTradeDetails125(base_types._BaseFieldType):
 
 	@TradTxCond.setter
 	def TradTxCond(self, value):
-		self._TradTxCond = value if type(value) != base_types.auto else self.make_default("TradTxCond")
+		self._TradTxCond = value if value is not None else base_types.UninitialisedField(self, 'TradTxCond', TradeTransactionCondition6Choice, True)
 
 	@TradTxCond.deleter
 	def TradTxCond(self):
 		del self._TradTxCond
-		self._TradTxCond = None
+		self._TradTxCond = base_types.UninitialisedField(self, 'TradTxCond', TradeTransactionCondition6Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AffirmSts', type=AffirmationStatus9Choice, min=0, max=1, mutex_group=None, array=False),

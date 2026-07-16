@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
-from ._POIComponentType5Code import POIComponentType5Code
+from . import Max35Text
+from . import Max70Text
+from . import POIComponentType5Code
 
 class PointOfInteractionComponent16(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PointOfInteractionComponent16(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def ItmNb(self):
@@ -28,12 +28,12 @@ class PointOfInteractionComponent16(base_types._BaseFieldType):
 
 	@ItmNb.setter
 	def ItmNb(self, value):
-		self._ItmNb = value if type(value) != base_types.auto else self.make_default("ItmNb")
+		self._ItmNb = value if value is not None else base_types.UninitialisedField(self, 'ItmNb', Max35Text, False)
 
 	@ItmNb.deleter
 	def ItmNb(self):
 		del self._ItmNb
-		self._ItmNb = None
+		self._ItmNb = base_types.UninitialisedField(self, 'ItmNb', Max35Text, False)
 
 	@property
 	def PrvdrId(self):
@@ -41,12 +41,12 @@ class PointOfInteractionComponent16(base_types._BaseFieldType):
 
 	@PrvdrId.setter
 	def PrvdrId(self, value):
-		self._PrvdrId = value if type(value) != base_types.auto else self.make_default("PrvdrId")
+		self._PrvdrId = value if value is not None else base_types.UninitialisedField(self, 'PrvdrId', Max35Text, False)
 
 	@PrvdrId.deleter
 	def PrvdrId(self):
 		del self._PrvdrId
-		self._PrvdrId = None
+		self._PrvdrId = base_types.UninitialisedField(self, 'PrvdrId', Max35Text, False)
 
 	@property
 	def SrlNb(self):
@@ -54,12 +54,12 @@ class PointOfInteractionComponent16(base_types._BaseFieldType):
 
 	@SrlNb.setter
 	def SrlNb(self, value):
-		self._SrlNb = value if type(value) != base_types.auto else self.make_default("SrlNb")
+		self._SrlNb = value if value is not None else base_types.UninitialisedField(self, 'SrlNb', Max70Text, False)
 
 	@SrlNb.deleter
 	def SrlNb(self):
 		del self._SrlNb
-		self._SrlNb = None
+		self._SrlNb = base_types.UninitialisedField(self, 'SrlNb', Max70Text, False)
 
 	@property
 	def Tp(self):
@@ -67,12 +67,12 @@ class PointOfInteractionComponent16(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', POIComponentType5Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', POIComponentType5Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

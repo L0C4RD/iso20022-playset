@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
-from ._GenericIdentification30 import GenericIdentification30
-from ._GenericIdentification37 import GenericIdentification37
+from . import FinancialInstrumentQuantity1Choice
+from . import GenericIdentification30
+from . import GenericIdentification37
 
 class QuantityBreakdown32(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class QuantityBreakdown32(base_types._BaseFieldType):
 
 	@LotNb.setter
 	def LotNb(self, value):
-		self._LotNb = value if type(value) != base_types.auto else self.make_default("LotNb")
+		self._LotNb = value if value is not None else base_types.UninitialisedField(self, 'LotNb', GenericIdentification37, False)
 
 	@LotNb.deleter
 	def LotNb(self):
 		del self._LotNb
-		self._LotNb = None
+		self._LotNb = base_types.UninitialisedField(self, 'LotNb', GenericIdentification37, False)
 
 	@property
 	def LotQty(self):
@@ -28,12 +28,12 @@ class QuantityBreakdown32(base_types._BaseFieldType):
 
 	@LotQty.setter
 	def LotQty(self, value):
-		self._LotQty = value if type(value) != base_types.auto else self.make_default("LotQty")
+		self._LotQty = value if value is not None else base_types.UninitialisedField(self, 'LotQty', FinancialInstrumentQuantity1Choice, False)
 
 	@LotQty.deleter
 	def LotQty(self):
 		del self._LotQty
-		self._LotQty = None
+		self._LotQty = base_types.UninitialisedField(self, 'LotQty', FinancialInstrumentQuantity1Choice, False)
 
 	@property
 	def SctiesSubBalTp(self):
@@ -41,12 +41,12 @@ class QuantityBreakdown32(base_types._BaseFieldType):
 
 	@SctiesSubBalTp.setter
 	def SctiesSubBalTp(self, value):
-		self._SctiesSubBalTp = value if type(value) != base_types.auto else self.make_default("SctiesSubBalTp")
+		self._SctiesSubBalTp = value if value is not None else base_types.UninitialisedField(self, 'SctiesSubBalTp', GenericIdentification30, False)
 
 	@SctiesSubBalTp.deleter
 	def SctiesSubBalTp(self):
 		del self._SctiesSubBalTp
-		self._SctiesSubBalTp = None
+		self._SctiesSubBalTp = base_types.UninitialisedField(self, 'SctiesSubBalTp', GenericIdentification30, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LotNb', type=GenericIdentification37, min=0, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountIdentification2Choice import AccountIdentification2Choice
-from ._CreditDebitCode import CreditDebitCode
-from ._PartyIdentification2Choice import PartyIdentification2Choice
+from . import AccountIdentification2Choice
+from . import CreditDebitCode
+from . import PartyIdentification2Choice
 
 class CashAccount19(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CashAccount19(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', AccountIdentification2Choice, False)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', AccountIdentification2Choice, False)
 
 	@property
 	def AcctOwnrId(self):
@@ -28,12 +28,12 @@ class CashAccount19(base_types._BaseFieldType):
 
 	@AcctOwnrId.setter
 	def AcctOwnrId(self, value):
-		self._AcctOwnrId = value if type(value) != base_types.auto else self.make_default("AcctOwnrId")
+		self._AcctOwnrId = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnrId', PartyIdentification2Choice, False)
 
 	@AcctOwnrId.deleter
 	def AcctOwnrId(self):
 		del self._AcctOwnrId
-		self._AcctOwnrId = None
+		self._AcctOwnrId = base_types.UninitialisedField(self, 'AcctOwnrId', PartyIdentification2Choice, False)
 
 	@property
 	def CdtDbtInd(self):
@@ -41,12 +41,12 @@ class CashAccount19(base_types._BaseFieldType):
 
 	@CdtDbtInd.setter
 	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+		self._CdtDbtInd = value if value is not None else base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@CdtDbtInd.deleter
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
-		self._CdtDbtInd = None
+		self._CdtDbtInd = base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=AccountIdentification2Choice, min=1, max=1, mutex_group=None, array=False),

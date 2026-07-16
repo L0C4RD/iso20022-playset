@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcceptorAuthorisationRequestV15 import AcceptorAuthorisationRequestV15
+from . import AcceptorAuthorisationRequestV15
 
 class CAAA_001_001_15():
 
@@ -18,12 +18,12 @@ class CAAA_001_001_15():
 
 		@AccptrAuthstnReq.setter
 		def AccptrAuthstnReq(self, value):
-			self._AccptrAuthstnReq = value if type(value) != base_types.auto else self.make_default("AccptrAuthstnReq")
+			self._AccptrAuthstnReq = value if value is not None else base_types.UninitialisedField(self, 'AccptrAuthstnReq', AcceptorAuthorisationRequestV15, False)
 
 		@AccptrAuthstnReq.deleter
 		def AccptrAuthstnReq(self):
 			del self._AccptrAuthstnReq
-			self._AccptrAuthstnReq = None
+			self._AccptrAuthstnReq = base_types.UninitialisedField(self, 'AccptrAuthstnReq', AcceptorAuthorisationRequestV15, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AccptrAuthstnReq', type=AcceptorAuthorisationRequestV15, min=1, max=1, mutex_group=None, array=False),

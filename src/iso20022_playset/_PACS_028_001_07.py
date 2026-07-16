@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FIToFIPaymentStatusRequestV07 import FIToFIPaymentStatusRequestV07
+from . import FIToFIPaymentStatusRequestV07
 
 class PACS_028_001_07():
 
@@ -18,12 +18,12 @@ class PACS_028_001_07():
 
 		@FIToFIPmtStsReq.setter
 		def FIToFIPmtStsReq(self, value):
-			self._FIToFIPmtStsReq = value if type(value) != base_types.auto else self.make_default("FIToFIPmtStsReq")
+			self._FIToFIPmtStsReq = value if value is not None else base_types.UninitialisedField(self, 'FIToFIPmtStsReq', FIToFIPaymentStatusRequestV07, False)
 
 		@FIToFIPmtStsReq.deleter
 		def FIToFIPmtStsReq(self):
 			del self._FIToFIPmtStsReq
-			self._FIToFIPmtStsReq = None
+			self._FIToFIPmtStsReq = base_types.UninitialisedField(self, 'FIToFIPmtStsReq', FIToFIPaymentStatusRequestV07, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='FIToFIPmtStsReq', type=FIToFIPaymentStatusRequestV07, min=1, max=1, mutex_group=None, array=False),

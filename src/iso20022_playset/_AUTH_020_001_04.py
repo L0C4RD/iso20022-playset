@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContractRegistrationClosureRequestV04 import ContractRegistrationClosureRequestV04
+from . import ContractRegistrationClosureRequestV04
 
 class AUTH_020_001_04():
 
@@ -18,12 +18,12 @@ class AUTH_020_001_04():
 
 		@CtrctRegnClsrReq.setter
 		def CtrctRegnClsrReq(self, value):
-			self._CtrctRegnClsrReq = value if type(value) != base_types.auto else self.make_default("CtrctRegnClsrReq")
+			self._CtrctRegnClsrReq = value if value is not None else base_types.UninitialisedField(self, 'CtrctRegnClsrReq', ContractRegistrationClosureRequestV04, False)
 
 		@CtrctRegnClsrReq.deleter
 		def CtrctRegnClsrReq(self):
 			del self._CtrctRegnClsrReq
-			self._CtrctRegnClsrReq = None
+			self._CtrctRegnClsrReq = base_types.UninitialisedField(self, 'CtrctRegnClsrReq', ContractRegistrationClosureRequestV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CtrctRegnClsrReq', type=ContractRegistrationClosureRequestV04, min=1, max=1, mutex_group=None, array=False),

@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AggregateBalanceInformation46 import AggregateBalanceInformation46
-from ._BlockChainAddressWallet1 import BlockChainAddressWallet1
-from ._Intermediary44 import Intermediary44
-from ._Pagination1 import Pagination1
-from ._PartyIdentification136 import PartyIdentification136
-from ._PartyIdentification144 import PartyIdentification144
-from ._SecuritiesAccount26 import SecuritiesAccount26
-from ._Statement73 import Statement73
-from ._SubAccountIdentification71 import SubAccountIdentification71
-from ._TotalValueInPageAndStatement1 import TotalValueInPageAndStatement1
+from . import AggregateBalanceInformation46
+from . import BlockChainAddressWallet1
+from . import Intermediary44
+from . import Pagination1
+from . import PartyIdentification136
+from . import PartyIdentification144
+from . import SecuritiesAccount26
+from . import Statement73
+from . import SubAccountIdentification71
+from . import TotalValueInPageAndStatement1
 
 class SecuritiesBalanceCustodyReportV12(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class SecuritiesBalanceCustodyReportV12(base_types._BaseFieldType):
 
 	@AcctBaseCcyTtlAmts.setter
 	def AcctBaseCcyTtlAmts(self, value):
-		self._AcctBaseCcyTtlAmts = value if type(value) != base_types.auto else self.make_default("AcctBaseCcyTtlAmts")
+		self._AcctBaseCcyTtlAmts = value if value is not None else base_types.UninitialisedField(self, 'AcctBaseCcyTtlAmts', TotalValueInPageAndStatement1, False)
 
 	@AcctBaseCcyTtlAmts.deleter
 	def AcctBaseCcyTtlAmts(self):
 		del self._AcctBaseCcyTtlAmts
-		self._AcctBaseCcyTtlAmts = None
+		self._AcctBaseCcyTtlAmts = base_types.UninitialisedField(self, 'AcctBaseCcyTtlAmts', TotalValueInPageAndStatement1, False)
 
 	@property
 	def AcctOwnr(self):
@@ -35,12 +35,12 @@ class SecuritiesBalanceCustodyReportV12(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification144, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification144, False)
 
 	@property
 	def AcctSvcr(self):
@@ -48,12 +48,12 @@ class SecuritiesBalanceCustodyReportV12(base_types._BaseFieldType):
 
 	@AcctSvcr.setter
 	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
+		self._AcctSvcr = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcr', PartyIdentification136, False)
 
 	@AcctSvcr.deleter
 	def AcctSvcr(self):
 		del self._AcctSvcr
-		self._AcctSvcr = None
+		self._AcctSvcr = base_types.UninitialisedField(self, 'AcctSvcr', PartyIdentification136, False)
 
 	@property
 	def BalForAcct(self):
@@ -61,12 +61,12 @@ class SecuritiesBalanceCustodyReportV12(base_types._BaseFieldType):
 
 	@BalForAcct.setter
 	def BalForAcct(self, value):
-		self._BalForAcct = value if type(value) != base_types.auto else self.make_default("BalForAcct")
+		self._BalForAcct = value if value is not None else base_types.UninitialisedField(self, 'BalForAcct', AggregateBalanceInformation46, True)
 
 	@BalForAcct.deleter
 	def BalForAcct(self):
 		del self._BalForAcct
-		self._BalForAcct = None
+		self._BalForAcct = base_types.UninitialisedField(self, 'BalForAcct', AggregateBalanceInformation46, True)
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -74,12 +74,12 @@ class SecuritiesBalanceCustodyReportV12(base_types._BaseFieldType):
 
 	@BlckChainAdrOrWllt.setter
 	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
+		self._BlckChainAdrOrWllt = value if value is not None else base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet1, False)
 
 	@BlckChainAdrOrWllt.deleter
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+		self._BlckChainAdrOrWllt = base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet1, False)
 
 	@property
 	def IntrmyInf(self):
@@ -87,12 +87,12 @@ class SecuritiesBalanceCustodyReportV12(base_types._BaseFieldType):
 
 	@IntrmyInf.setter
 	def IntrmyInf(self, value):
-		self._IntrmyInf = value if type(value) != base_types.auto else self.make_default("IntrmyInf")
+		self._IntrmyInf = value if value is not None else base_types.UninitialisedField(self, 'IntrmyInf', Intermediary44, True)
 
 	@IntrmyInf.deleter
 	def IntrmyInf(self):
 		del self._IntrmyInf
-		self._IntrmyInf = None
+		self._IntrmyInf = base_types.UninitialisedField(self, 'IntrmyInf', Intermediary44, True)
 
 	@property
 	def Pgntn(self):
@@ -100,12 +100,12 @@ class SecuritiesBalanceCustodyReportV12(base_types._BaseFieldType):
 
 	@Pgntn.setter
 	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+		self._Pgntn = value if value is not None else base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@Pgntn.deleter
 	def Pgntn(self):
 		del self._Pgntn
-		self._Pgntn = None
+		self._Pgntn = base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@property
 	def SfkpgAcct(self):
@@ -113,12 +113,12 @@ class SecuritiesBalanceCustodyReportV12(base_types._BaseFieldType):
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount26, False)
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
-		self._SfkpgAcct = None
+		self._SfkpgAcct = base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount26, False)
 
 	@property
 	def StmtGnlDtls(self):
@@ -126,12 +126,12 @@ class SecuritiesBalanceCustodyReportV12(base_types._BaseFieldType):
 
 	@StmtGnlDtls.setter
 	def StmtGnlDtls(self, value):
-		self._StmtGnlDtls = value if type(value) != base_types.auto else self.make_default("StmtGnlDtls")
+		self._StmtGnlDtls = value if value is not None else base_types.UninitialisedField(self, 'StmtGnlDtls', Statement73, False)
 
 	@StmtGnlDtls.deleter
 	def StmtGnlDtls(self):
 		del self._StmtGnlDtls
-		self._StmtGnlDtls = None
+		self._StmtGnlDtls = base_types.UninitialisedField(self, 'StmtGnlDtls', Statement73, False)
 
 	@property
 	def SubAcctDtls(self):
@@ -139,12 +139,12 @@ class SecuritiesBalanceCustodyReportV12(base_types._BaseFieldType):
 
 	@SubAcctDtls.setter
 	def SubAcctDtls(self, value):
-		self._SubAcctDtls = value if type(value) != base_types.auto else self.make_default("SubAcctDtls")
+		self._SubAcctDtls = value if value is not None else base_types.UninitialisedField(self, 'SubAcctDtls', SubAccountIdentification71, True)
 
 	@SubAcctDtls.deleter
 	def SubAcctDtls(self):
 		del self._SubAcctDtls
-		self._SubAcctDtls = None
+		self._SubAcctDtls = base_types.UninitialisedField(self, 'SubAcctDtls', SubAccountIdentification71, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctBaseCcyTtlAmts', type=TotalValueInPageAndStatement1, min=0, max=1, mutex_group=None, array=False),

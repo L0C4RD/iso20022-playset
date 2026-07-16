@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Case6 import Case6
-from ._DecimalNumber import DecimalNumber
-from ._GroupCancellationIndicator import GroupCancellationIndicator
-from ._ISODateTime import ISODateTime
-from ._Max15NumericText import Max15NumericText
-from ._Max35Text import Max35Text
-from ._PaymentCancellationReason6 import PaymentCancellationReason6
+from . import Case6
+from . import DecimalNumber
+from . import GroupCancellationIndicator
+from . import ISODateTime
+from . import Max15NumericText
+from . import Max35Text
+from . import PaymentCancellationReason6
 
 class OriginalGroupHeader21(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class OriginalGroupHeader21(base_types._BaseFieldType):
 
 	@Case.setter
 	def Case(self, value):
-		self._Case = value if type(value) != base_types.auto else self.make_default("Case")
+		self._Case = value if value is not None else base_types.UninitialisedField(self, 'Case', Case6, False)
 
 	@Case.deleter
 	def Case(self):
 		del self._Case
-		self._Case = None
+		self._Case = base_types.UninitialisedField(self, 'Case', Case6, False)
 
 	@property
 	def CtrlSum(self):
@@ -32,12 +32,12 @@ class OriginalGroupHeader21(base_types._BaseFieldType):
 
 	@CtrlSum.setter
 	def CtrlSum(self, value):
-		self._CtrlSum = value if type(value) != base_types.auto else self.make_default("CtrlSum")
+		self._CtrlSum = value if value is not None else base_types.UninitialisedField(self, 'CtrlSum', DecimalNumber, False)
 
 	@CtrlSum.deleter
 	def CtrlSum(self):
 		del self._CtrlSum
-		self._CtrlSum = None
+		self._CtrlSum = base_types.UninitialisedField(self, 'CtrlSum', DecimalNumber, False)
 
 	@property
 	def CxlRsnInf(self):
@@ -45,12 +45,12 @@ class OriginalGroupHeader21(base_types._BaseFieldType):
 
 	@CxlRsnInf.setter
 	def CxlRsnInf(self, value):
-		self._CxlRsnInf = value if type(value) != base_types.auto else self.make_default("CxlRsnInf")
+		self._CxlRsnInf = value if value is not None else base_types.UninitialisedField(self, 'CxlRsnInf', PaymentCancellationReason6, True)
 
 	@CxlRsnInf.deleter
 	def CxlRsnInf(self):
 		del self._CxlRsnInf
-		self._CxlRsnInf = None
+		self._CxlRsnInf = base_types.UninitialisedField(self, 'CxlRsnInf', PaymentCancellationReason6, True)
 
 	@property
 	def GrpCxl(self):
@@ -58,12 +58,12 @@ class OriginalGroupHeader21(base_types._BaseFieldType):
 
 	@GrpCxl.setter
 	def GrpCxl(self, value):
-		self._GrpCxl = value if type(value) != base_types.auto else self.make_default("GrpCxl")
+		self._GrpCxl = value if value is not None else base_types.UninitialisedField(self, 'GrpCxl', GroupCancellationIndicator, False)
 
 	@GrpCxl.deleter
 	def GrpCxl(self):
 		del self._GrpCxl
-		self._GrpCxl = None
+		self._GrpCxl = base_types.UninitialisedField(self, 'GrpCxl', GroupCancellationIndicator, False)
 
 	@property
 	def GrpCxlId(self):
@@ -71,12 +71,12 @@ class OriginalGroupHeader21(base_types._BaseFieldType):
 
 	@GrpCxlId.setter
 	def GrpCxlId(self, value):
-		self._GrpCxlId = value if type(value) != base_types.auto else self.make_default("GrpCxlId")
+		self._GrpCxlId = value if value is not None else base_types.UninitialisedField(self, 'GrpCxlId', Max35Text, False)
 
 	@GrpCxlId.deleter
 	def GrpCxlId(self):
 		del self._GrpCxlId
-		self._GrpCxlId = None
+		self._GrpCxlId = base_types.UninitialisedField(self, 'GrpCxlId', Max35Text, False)
 
 	@property
 	def NbOfTxs(self):
@@ -84,12 +84,12 @@ class OriginalGroupHeader21(base_types._BaseFieldType):
 
 	@NbOfTxs.setter
 	def NbOfTxs(self, value):
-		self._NbOfTxs = value if type(value) != base_types.auto else self.make_default("NbOfTxs")
+		self._NbOfTxs = value if value is not None else base_types.UninitialisedField(self, 'NbOfTxs', Max15NumericText, False)
 
 	@NbOfTxs.deleter
 	def NbOfTxs(self):
 		del self._NbOfTxs
-		self._NbOfTxs = None
+		self._NbOfTxs = base_types.UninitialisedField(self, 'NbOfTxs', Max15NumericText, False)
 
 	@property
 	def OrgnlCreDtTm(self):
@@ -97,12 +97,12 @@ class OriginalGroupHeader21(base_types._BaseFieldType):
 
 	@OrgnlCreDtTm.setter
 	def OrgnlCreDtTm(self, value):
-		self._OrgnlCreDtTm = value if type(value) != base_types.auto else self.make_default("OrgnlCreDtTm")
+		self._OrgnlCreDtTm = value if value is not None else base_types.UninitialisedField(self, 'OrgnlCreDtTm', ISODateTime, False)
 
 	@OrgnlCreDtTm.deleter
 	def OrgnlCreDtTm(self):
 		del self._OrgnlCreDtTm
-		self._OrgnlCreDtTm = None
+		self._OrgnlCreDtTm = base_types.UninitialisedField(self, 'OrgnlCreDtTm', ISODateTime, False)
 
 	@property
 	def OrgnlMsgId(self):
@@ -110,12 +110,12 @@ class OriginalGroupHeader21(base_types._BaseFieldType):
 
 	@OrgnlMsgId.setter
 	def OrgnlMsgId(self, value):
-		self._OrgnlMsgId = value if type(value) != base_types.auto else self.make_default("OrgnlMsgId")
+		self._OrgnlMsgId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlMsgId', Max35Text, False)
 
 	@OrgnlMsgId.deleter
 	def OrgnlMsgId(self):
 		del self._OrgnlMsgId
-		self._OrgnlMsgId = None
+		self._OrgnlMsgId = base_types.UninitialisedField(self, 'OrgnlMsgId', Max35Text, False)
 
 	@property
 	def OrgnlMsgNmId(self):
@@ -123,12 +123,12 @@ class OriginalGroupHeader21(base_types._BaseFieldType):
 
 	@OrgnlMsgNmId.setter
 	def OrgnlMsgNmId(self, value):
-		self._OrgnlMsgNmId = value if type(value) != base_types.auto else self.make_default("OrgnlMsgNmId")
+		self._OrgnlMsgNmId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlMsgNmId', Max35Text, False)
 
 	@OrgnlMsgNmId.deleter
 	def OrgnlMsgNmId(self):
 		del self._OrgnlMsgNmId
-		self._OrgnlMsgNmId = None
+		self._OrgnlMsgNmId = base_types.UninitialisedField(self, 'OrgnlMsgNmId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Case', type=Case6, min=0, max=1, mutex_group=None, array=False),

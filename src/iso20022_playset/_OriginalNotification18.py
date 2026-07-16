@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GroupCancellationIndicator import GroupCancellationIndicator
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
-from ._OriginalNotificationReference16 import OriginalNotificationReference16
+from . import GroupCancellationIndicator
+from . import ISODateTime
+from . import Max35Text
+from . import OriginalNotificationReference16
 
 class OriginalNotification18(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class OriginalNotification18(base_types._BaseFieldType):
 
 	@NtfctnCxl.setter
 	def NtfctnCxl(self, value):
-		self._NtfctnCxl = value if type(value) != base_types.auto else self.make_default("NtfctnCxl")
+		self._NtfctnCxl = value if value is not None else base_types.UninitialisedField(self, 'NtfctnCxl', GroupCancellationIndicator, False)
 
 	@NtfctnCxl.deleter
 	def NtfctnCxl(self):
 		del self._NtfctnCxl
-		self._NtfctnCxl = None
+		self._NtfctnCxl = base_types.UninitialisedField(self, 'NtfctnCxl', GroupCancellationIndicator, False)
 
 	@property
 	def OrgnlCreDtTm(self):
@@ -29,12 +29,12 @@ class OriginalNotification18(base_types._BaseFieldType):
 
 	@OrgnlCreDtTm.setter
 	def OrgnlCreDtTm(self, value):
-		self._OrgnlCreDtTm = value if type(value) != base_types.auto else self.make_default("OrgnlCreDtTm")
+		self._OrgnlCreDtTm = value if value is not None else base_types.UninitialisedField(self, 'OrgnlCreDtTm', ISODateTime, False)
 
 	@OrgnlCreDtTm.deleter
 	def OrgnlCreDtTm(self):
 		del self._OrgnlCreDtTm
-		self._OrgnlCreDtTm = None
+		self._OrgnlCreDtTm = base_types.UninitialisedField(self, 'OrgnlCreDtTm', ISODateTime, False)
 
 	@property
 	def OrgnlMsgId(self):
@@ -42,12 +42,12 @@ class OriginalNotification18(base_types._BaseFieldType):
 
 	@OrgnlMsgId.setter
 	def OrgnlMsgId(self, value):
-		self._OrgnlMsgId = value if type(value) != base_types.auto else self.make_default("OrgnlMsgId")
+		self._OrgnlMsgId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlMsgId', Max35Text, False)
 
 	@OrgnlMsgId.deleter
 	def OrgnlMsgId(self):
 		del self._OrgnlMsgId
-		self._OrgnlMsgId = None
+		self._OrgnlMsgId = base_types.UninitialisedField(self, 'OrgnlMsgId', Max35Text, False)
 
 	@property
 	def OrgnlNtfctnId(self):
@@ -55,12 +55,12 @@ class OriginalNotification18(base_types._BaseFieldType):
 
 	@OrgnlNtfctnId.setter
 	def OrgnlNtfctnId(self, value):
-		self._OrgnlNtfctnId = value if type(value) != base_types.auto else self.make_default("OrgnlNtfctnId")
+		self._OrgnlNtfctnId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlNtfctnId', Max35Text, False)
 
 	@OrgnlNtfctnId.deleter
 	def OrgnlNtfctnId(self):
 		del self._OrgnlNtfctnId
-		self._OrgnlNtfctnId = None
+		self._OrgnlNtfctnId = base_types.UninitialisedField(self, 'OrgnlNtfctnId', Max35Text, False)
 
 	@property
 	def OrgnlNtfctnRef(self):
@@ -68,12 +68,12 @@ class OriginalNotification18(base_types._BaseFieldType):
 
 	@OrgnlNtfctnRef.setter
 	def OrgnlNtfctnRef(self, value):
-		self._OrgnlNtfctnRef = value if type(value) != base_types.auto else self.make_default("OrgnlNtfctnRef")
+		self._OrgnlNtfctnRef = value if value is not None else base_types.UninitialisedField(self, 'OrgnlNtfctnRef', OriginalNotificationReference16, True)
 
 	@OrgnlNtfctnRef.deleter
 	def OrgnlNtfctnRef(self):
 		del self._OrgnlNtfctnRef
-		self._OrgnlNtfctnRef = None
+		self._OrgnlNtfctnRef = base_types.UninitialisedField(self, 'OrgnlNtfctnRef', OriginalNotificationReference16, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NtfctnCxl', type=GroupCancellationIndicator, min=0, max=1, mutex_group=None, array=False),

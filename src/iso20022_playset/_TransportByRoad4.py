@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCode import CountryCode
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
+from . import CountryCode
+from . import Max35Text
+from . import Max70Text
 
 class TransportByRoad4(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TransportByRoad4(base_types._BaseFieldType):
 
 	@CrrierAgtCtry.setter
 	def CrrierAgtCtry(self, value):
-		self._CrrierAgtCtry = value if type(value) != base_types.auto else self.make_default("CrrierAgtCtry")
+		self._CrrierAgtCtry = value if value is not None else base_types.UninitialisedField(self, 'CrrierAgtCtry', CountryCode, False)
 
 	@CrrierAgtCtry.deleter
 	def CrrierAgtCtry(self):
 		del self._CrrierAgtCtry
-		self._CrrierAgtCtry = None
+		self._CrrierAgtCtry = base_types.UninitialisedField(self, 'CrrierAgtCtry', CountryCode, False)
 
 	@property
 	def CrrierAgtNm(self):
@@ -28,12 +28,12 @@ class TransportByRoad4(base_types._BaseFieldType):
 
 	@CrrierAgtNm.setter
 	def CrrierAgtNm(self, value):
-		self._CrrierAgtNm = value if type(value) != base_types.auto else self.make_default("CrrierAgtNm")
+		self._CrrierAgtNm = value if value is not None else base_types.UninitialisedField(self, 'CrrierAgtNm', Max70Text, False)
 
 	@CrrierAgtNm.deleter
 	def CrrierAgtNm(self):
 		del self._CrrierAgtNm
-		self._CrrierAgtNm = None
+		self._CrrierAgtNm = base_types.UninitialisedField(self, 'CrrierAgtNm', Max70Text, False)
 
 	@property
 	def PlcOfDlvry(self):
@@ -41,12 +41,12 @@ class TransportByRoad4(base_types._BaseFieldType):
 
 	@PlcOfDlvry.setter
 	def PlcOfDlvry(self, value):
-		self._PlcOfDlvry = value if type(value) != base_types.auto else self.make_default("PlcOfDlvry")
+		self._PlcOfDlvry = value if value is not None else base_types.UninitialisedField(self, 'PlcOfDlvry', Max35Text, False)
 
 	@PlcOfDlvry.deleter
 	def PlcOfDlvry(self):
 		del self._PlcOfDlvry
-		self._PlcOfDlvry = None
+		self._PlcOfDlvry = base_types.UninitialisedField(self, 'PlcOfDlvry', Max35Text, False)
 
 	@property
 	def PlcOfRct(self):
@@ -54,12 +54,12 @@ class TransportByRoad4(base_types._BaseFieldType):
 
 	@PlcOfRct.setter
 	def PlcOfRct(self, value):
-		self._PlcOfRct = value if type(value) != base_types.auto else self.make_default("PlcOfRct")
+		self._PlcOfRct = value if value is not None else base_types.UninitialisedField(self, 'PlcOfRct', Max35Text, False)
 
 	@PlcOfRct.deleter
 	def PlcOfRct(self):
 		del self._PlcOfRct
-		self._PlcOfRct = None
+		self._PlcOfRct = base_types.UninitialisedField(self, 'PlcOfRct', Max35Text, False)
 
 	@property
 	def RoadCrrierCtry(self):
@@ -67,12 +67,12 @@ class TransportByRoad4(base_types._BaseFieldType):
 
 	@RoadCrrierCtry.setter
 	def RoadCrrierCtry(self, value):
-		self._RoadCrrierCtry = value if type(value) != base_types.auto else self.make_default("RoadCrrierCtry")
+		self._RoadCrrierCtry = value if value is not None else base_types.UninitialisedField(self, 'RoadCrrierCtry', CountryCode, False)
 
 	@RoadCrrierCtry.deleter
 	def RoadCrrierCtry(self):
 		del self._RoadCrrierCtry
-		self._RoadCrrierCtry = None
+		self._RoadCrrierCtry = base_types.UninitialisedField(self, 'RoadCrrierCtry', CountryCode, False)
 
 	@property
 	def RoadCrrierNm(self):
@@ -80,12 +80,12 @@ class TransportByRoad4(base_types._BaseFieldType):
 
 	@RoadCrrierNm.setter
 	def RoadCrrierNm(self, value):
-		self._RoadCrrierNm = value if type(value) != base_types.auto else self.make_default("RoadCrrierNm")
+		self._RoadCrrierNm = value if value is not None else base_types.UninitialisedField(self, 'RoadCrrierNm', Max70Text, False)
 
 	@RoadCrrierNm.deleter
 	def RoadCrrierNm(self):
 		del self._RoadCrrierNm
-		self._RoadCrrierNm = None
+		self._RoadCrrierNm = base_types.UninitialisedField(self, 'RoadCrrierNm', Max70Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CrrierAgtCtry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),

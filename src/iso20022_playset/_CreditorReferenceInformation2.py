@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CreditorReferenceType2 import CreditorReferenceType2
-from ._Max35Text import Max35Text
+from . import CreditorReferenceType2
+from . import Max35Text
 
 class CreditorReferenceInformation2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CreditorReferenceInformation2(base_types._BaseFieldType):
 
 	@Ref.setter
 	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+		self._Ref = value if value is not None else base_types.UninitialisedField(self, 'Ref', Max35Text, False)
 
 	@Ref.deleter
 	def Ref(self):
 		del self._Ref
-		self._Ref = None
+		self._Ref = base_types.UninitialisedField(self, 'Ref', Max35Text, False)
 
 	@property
 	def Tp(self):
@@ -27,12 +27,12 @@ class CreditorReferenceInformation2(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', CreditorReferenceType2, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', CreditorReferenceType2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ref', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

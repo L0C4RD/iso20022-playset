@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesTransactionPrice23Choice import SecuritiesTransactionPrice23Choice
+from . import SecuritiesTransactionPrice23Choice
 
 class OptionMultipleBarrierLevels1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class OptionMultipleBarrierLevels1(base_types._BaseFieldType):
 
 	@LwrLvl.setter
 	def LwrLvl(self, value):
-		self._LwrLvl = value if type(value) != base_types.auto else self.make_default("LwrLvl")
+		self._LwrLvl = value if value is not None else base_types.UninitialisedField(self, 'LwrLvl', SecuritiesTransactionPrice23Choice, False)
 
 	@LwrLvl.deleter
 	def LwrLvl(self):
 		del self._LwrLvl
-		self._LwrLvl = None
+		self._LwrLvl = base_types.UninitialisedField(self, 'LwrLvl', SecuritiesTransactionPrice23Choice, False)
 
 	@property
 	def UpperLvl(self):
@@ -26,12 +26,12 @@ class OptionMultipleBarrierLevels1(base_types._BaseFieldType):
 
 	@UpperLvl.setter
 	def UpperLvl(self, value):
-		self._UpperLvl = value if type(value) != base_types.auto else self.make_default("UpperLvl")
+		self._UpperLvl = value if value is not None else base_types.UninitialisedField(self, 'UpperLvl', SecuritiesTransactionPrice23Choice, False)
 
 	@UpperLvl.deleter
 	def UpperLvl(self):
 		del self._UpperLvl
-		self._UpperLvl = None
+		self._UpperLvl = base_types.UninitialisedField(self, 'UpperLvl', SecuritiesTransactionPrice23Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LwrLvl', type=SecuritiesTransactionPrice23Choice, min=1, max=1, mutex_group=None, array=False),

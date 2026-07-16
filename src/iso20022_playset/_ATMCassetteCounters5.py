@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMCounterType3Code import ATMCounterType3Code
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Number import Number
+from . import ATMCounterType3Code
+from . import ImpliedCurrencyAndAmount
+from . import Number
 
 class ATMCassetteCounters5(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ATMCassetteCounters5(base_types._BaseFieldType):
 
 	@AddedNb.setter
 	def AddedNb(self, value):
-		self._AddedNb = value if type(value) != base_types.auto else self.make_default("AddedNb")
+		self._AddedNb = value if value is not None else base_types.UninitialisedField(self, 'AddedNb', Number, False)
 
 	@AddedNb.deleter
 	def AddedNb(self):
 		del self._AddedNb
-		self._AddedNb = None
+		self._AddedNb = base_types.UninitialisedField(self, 'AddedNb', Number, False)
 
 	@property
 	def DpstdAmt(self):
@@ -28,12 +28,12 @@ class ATMCassetteCounters5(base_types._BaseFieldType):
 
 	@DpstdAmt.setter
 	def DpstdAmt(self, value):
-		self._DpstdAmt = value if type(value) != base_types.auto else self.make_default("DpstdAmt")
+		self._DpstdAmt = value if value is not None else base_types.UninitialisedField(self, 'DpstdAmt', ImpliedCurrencyAndAmount, False)
 
 	@DpstdAmt.deleter
 	def DpstdAmt(self):
 		del self._DpstdAmt
-		self._DpstdAmt = None
+		self._DpstdAmt = base_types.UninitialisedField(self, 'DpstdAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def DpstdNb(self):
@@ -41,12 +41,12 @@ class ATMCassetteCounters5(base_types._BaseFieldType):
 
 	@DpstdNb.setter
 	def DpstdNb(self, value):
-		self._DpstdNb = value if type(value) != base_types.auto else self.make_default("DpstdNb")
+		self._DpstdNb = value if value is not None else base_types.UninitialisedField(self, 'DpstdNb', Number, False)
 
 	@DpstdNb.deleter
 	def DpstdNb(self):
 		del self._DpstdNb
-		self._DpstdNb = None
+		self._DpstdNb = base_types.UninitialisedField(self, 'DpstdNb', Number, False)
 
 	@property
 	def DspnsdNb(self):
@@ -54,12 +54,12 @@ class ATMCassetteCounters5(base_types._BaseFieldType):
 
 	@DspnsdNb.setter
 	def DspnsdNb(self, value):
-		self._DspnsdNb = value if type(value) != base_types.auto else self.make_default("DspnsdNb")
+		self._DspnsdNb = value if value is not None else base_types.UninitialisedField(self, 'DspnsdNb', Number, False)
 
 	@DspnsdNb.deleter
 	def DspnsdNb(self):
 		del self._DspnsdNb
-		self._DspnsdNb = None
+		self._DspnsdNb = base_types.UninitialisedField(self, 'DspnsdNb', Number, False)
 
 	@property
 	def InitlAmt(self):
@@ -67,12 +67,12 @@ class ATMCassetteCounters5(base_types._BaseFieldType):
 
 	@InitlAmt.setter
 	def InitlAmt(self, value):
-		self._InitlAmt = value if type(value) != base_types.auto else self.make_default("InitlAmt")
+		self._InitlAmt = value if value is not None else base_types.UninitialisedField(self, 'InitlAmt', ImpliedCurrencyAndAmount, False)
 
 	@InitlAmt.deleter
 	def InitlAmt(self):
 		del self._InitlAmt
-		self._InitlAmt = None
+		self._InitlAmt = base_types.UninitialisedField(self, 'InitlAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def InitlNb(self):
@@ -80,12 +80,12 @@ class ATMCassetteCounters5(base_types._BaseFieldType):
 
 	@InitlNb.setter
 	def InitlNb(self, value):
-		self._InitlNb = value if type(value) != base_types.auto else self.make_default("InitlNb")
+		self._InitlNb = value if value is not None else base_types.UninitialisedField(self, 'InitlNb', Number, False)
 
 	@InitlNb.deleter
 	def InitlNb(self):
 		del self._InitlNb
-		self._InitlNb = None
+		self._InitlNb = base_types.UninitialisedField(self, 'InitlNb', Number, False)
 
 	@property
 	def PresntdNb(self):
@@ -93,12 +93,12 @@ class ATMCassetteCounters5(base_types._BaseFieldType):
 
 	@PresntdNb.setter
 	def PresntdNb(self, value):
-		self._PresntdNb = value if type(value) != base_types.auto else self.make_default("PresntdNb")
+		self._PresntdNb = value if value is not None else base_types.UninitialisedField(self, 'PresntdNb', Number, False)
 
 	@PresntdNb.deleter
 	def PresntdNb(self):
 		del self._PresntdNb
-		self._PresntdNb = None
+		self._PresntdNb = base_types.UninitialisedField(self, 'PresntdNb', Number, False)
 
 	@property
 	def RcycldNb(self):
@@ -106,12 +106,12 @@ class ATMCassetteCounters5(base_types._BaseFieldType):
 
 	@RcycldNb.setter
 	def RcycldNb(self, value):
-		self._RcycldNb = value if type(value) != base_types.auto else self.make_default("RcycldNb")
+		self._RcycldNb = value if value is not None else base_types.UninitialisedField(self, 'RcycldNb', Number, False)
 
 	@RcycldNb.deleter
 	def RcycldNb(self):
 		del self._RcycldNb
-		self._RcycldNb = None
+		self._RcycldNb = base_types.UninitialisedField(self, 'RcycldNb', Number, False)
 
 	@property
 	def RjctdNb(self):
@@ -119,12 +119,12 @@ class ATMCassetteCounters5(base_types._BaseFieldType):
 
 	@RjctdNb.setter
 	def RjctdNb(self, value):
-		self._RjctdNb = value if type(value) != base_types.auto else self.make_default("RjctdNb")
+		self._RjctdNb = value if value is not None else base_types.UninitialisedField(self, 'RjctdNb', Number, False)
 
 	@RjctdNb.deleter
 	def RjctdNb(self):
 		del self._RjctdNb
-		self._RjctdNb = None
+		self._RjctdNb = base_types.UninitialisedField(self, 'RjctdNb', Number, False)
 
 	@property
 	def RmvdAmt(self):
@@ -132,12 +132,12 @@ class ATMCassetteCounters5(base_types._BaseFieldType):
 
 	@RmvdAmt.setter
 	def RmvdAmt(self, value):
-		self._RmvdAmt = value if type(value) != base_types.auto else self.make_default("RmvdAmt")
+		self._RmvdAmt = value if value is not None else base_types.UninitialisedField(self, 'RmvdAmt', ImpliedCurrencyAndAmount, False)
 
 	@RmvdAmt.deleter
 	def RmvdAmt(self):
 		del self._RmvdAmt
-		self._RmvdAmt = None
+		self._RmvdAmt = base_types.UninitialisedField(self, 'RmvdAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def RmvdNb(self):
@@ -145,12 +145,12 @@ class ATMCassetteCounters5(base_types._BaseFieldType):
 
 	@RmvdNb.setter
 	def RmvdNb(self, value):
-		self._RmvdNb = value if type(value) != base_types.auto else self.make_default("RmvdNb")
+		self._RmvdNb = value if value is not None else base_types.UninitialisedField(self, 'RmvdNb', Number, False)
 
 	@RmvdNb.deleter
 	def RmvdNb(self):
 		del self._RmvdNb
-		self._RmvdNb = None
+		self._RmvdNb = base_types.UninitialisedField(self, 'RmvdNb', Number, False)
 
 	@property
 	def RtrctdAmt(self):
@@ -158,12 +158,12 @@ class ATMCassetteCounters5(base_types._BaseFieldType):
 
 	@RtrctdAmt.setter
 	def RtrctdAmt(self, value):
-		self._RtrctdAmt = value if type(value) != base_types.auto else self.make_default("RtrctdAmt")
+		self._RtrctdAmt = value if value is not None else base_types.UninitialisedField(self, 'RtrctdAmt', ImpliedCurrencyAndAmount, False)
 
 	@RtrctdAmt.deleter
 	def RtrctdAmt(self):
 		del self._RtrctdAmt
-		self._RtrctdAmt = None
+		self._RtrctdAmt = base_types.UninitialisedField(self, 'RtrctdAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def RtrctdNb(self):
@@ -171,12 +171,12 @@ class ATMCassetteCounters5(base_types._BaseFieldType):
 
 	@RtrctdNb.setter
 	def RtrctdNb(self, value):
-		self._RtrctdNb = value if type(value) != base_types.auto else self.make_default("RtrctdNb")
+		self._RtrctdNb = value if value is not None else base_types.UninitialisedField(self, 'RtrctdNb', Number, False)
 
 	@RtrctdNb.deleter
 	def RtrctdNb(self):
 		del self._RtrctdNb
-		self._RtrctdNb = None
+		self._RtrctdNb = base_types.UninitialisedField(self, 'RtrctdNb', Number, False)
 
 	@property
 	def Tp(self):
@@ -184,12 +184,12 @@ class ATMCassetteCounters5(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', ATMCounterType3Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', ATMCounterType3Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddedNb', type=Number, min=0, max=1, mutex_group=None, array=False),

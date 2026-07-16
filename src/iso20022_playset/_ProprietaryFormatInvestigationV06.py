@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Case6 import Case6
-from ._CaseAssignment6 import CaseAssignment6
-from ._ProprietaryData7 import ProprietaryData7
-from ._SupplementaryData1 import SupplementaryData1
+from . import Case6
+from . import CaseAssignment6
+from . import ProprietaryData7
+from . import SupplementaryData1
 
 class ProprietaryFormatInvestigationV06(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ProprietaryFormatInvestigationV06(base_types._BaseFieldType):
 
 	@Assgnmt.setter
 	def Assgnmt(self, value):
-		self._Assgnmt = value if type(value) != base_types.auto else self.make_default("Assgnmt")
+		self._Assgnmt = value if value is not None else base_types.UninitialisedField(self, 'Assgnmt', CaseAssignment6, False)
 
 	@Assgnmt.deleter
 	def Assgnmt(self):
 		del self._Assgnmt
-		self._Assgnmt = None
+		self._Assgnmt = base_types.UninitialisedField(self, 'Assgnmt', CaseAssignment6, False)
 
 	@property
 	def Case(self):
@@ -29,12 +29,12 @@ class ProprietaryFormatInvestigationV06(base_types._BaseFieldType):
 
 	@Case.setter
 	def Case(self, value):
-		self._Case = value if type(value) != base_types.auto else self.make_default("Case")
+		self._Case = value if value is not None else base_types.UninitialisedField(self, 'Case', Case6, False)
 
 	@Case.deleter
 	def Case(self):
 		del self._Case
-		self._Case = None
+		self._Case = base_types.UninitialisedField(self, 'Case', Case6, False)
 
 	@property
 	def PrtryData(self):
@@ -42,12 +42,12 @@ class ProprietaryFormatInvestigationV06(base_types._BaseFieldType):
 
 	@PrtryData.setter
 	def PrtryData(self, value):
-		self._PrtryData = value if type(value) != base_types.auto else self.make_default("PrtryData")
+		self._PrtryData = value if value is not None else base_types.UninitialisedField(self, 'PrtryData', ProprietaryData7, False)
 
 	@PrtryData.deleter
 	def PrtryData(self):
 		del self._PrtryData
-		self._PrtryData = None
+		self._PrtryData = base_types.UninitialisedField(self, 'PrtryData', ProprietaryData7, False)
 
 	@property
 	def SplmtryData(self):
@@ -55,12 +55,12 @@ class ProprietaryFormatInvestigationV06(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),

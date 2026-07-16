@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DayOfMonthNumber import DayOfMonthNumber
-from ._Frequency14Code import Frequency14Code
-from ._WeekDay3Code import WeekDay3Code
+from . import DayOfMonthNumber
+from . import Frequency14Code
+from . import WeekDay3Code
 
 class TradeQueryExecutionFrequency3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TradeQueryExecutionFrequency3(base_types._BaseFieldType):
 
 	@DayOfMnth.setter
 	def DayOfMnth(self, value):
-		self._DayOfMnth = value if type(value) != base_types.auto else self.make_default("DayOfMnth")
+		self._DayOfMnth = value if value is not None else base_types.UninitialisedField(self, 'DayOfMnth', DayOfMonthNumber, True)
 
 	@DayOfMnth.deleter
 	def DayOfMnth(self):
 		del self._DayOfMnth
-		self._DayOfMnth = None
+		self._DayOfMnth = base_types.UninitialisedField(self, 'DayOfMnth', DayOfMonthNumber, True)
 
 	@property
 	def DlvryDay(self):
@@ -28,12 +28,12 @@ class TradeQueryExecutionFrequency3(base_types._BaseFieldType):
 
 	@DlvryDay.setter
 	def DlvryDay(self, value):
-		self._DlvryDay = value if type(value) != base_types.auto else self.make_default("DlvryDay")
+		self._DlvryDay = value if value is not None else base_types.UninitialisedField(self, 'DlvryDay', WeekDay3Code, True)
 
 	@DlvryDay.deleter
 	def DlvryDay(self):
 		del self._DlvryDay
-		self._DlvryDay = None
+		self._DlvryDay = base_types.UninitialisedField(self, 'DlvryDay', WeekDay3Code, True)
 
 	@property
 	def FrqcyTp(self):
@@ -41,12 +41,12 @@ class TradeQueryExecutionFrequency3(base_types._BaseFieldType):
 
 	@FrqcyTp.setter
 	def FrqcyTp(self, value):
-		self._FrqcyTp = value if type(value) != base_types.auto else self.make_default("FrqcyTp")
+		self._FrqcyTp = value if value is not None else base_types.UninitialisedField(self, 'FrqcyTp', Frequency14Code, False)
 
 	@FrqcyTp.deleter
 	def FrqcyTp(self):
 		del self._FrqcyTp
-		self._FrqcyTp = None
+		self._FrqcyTp = base_types.UninitialisedField(self, 'FrqcyTp', Frequency14Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DayOfMnth', type=DayOfMonthNumber, min=0, max=None, mutex_group=None, array=True),

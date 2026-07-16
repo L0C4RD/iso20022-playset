@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification1 import GenericIdentification1
-from ._Max256Text import Max256Text
-from ._PartyIdentification2Choice import PartyIdentification2Choice
-from ._SingleQualifiedPartyIdentification1 import SingleQualifiedPartyIdentification1
-from ._xs:ID import xs:ID
+from . import GenericIdentification1
+from . import Max256Text
+from . import PartyIdentification2Choice
+from . import SingleQualifiedPartyIdentification1
+from . import xs:ID
 
 class QualifiedPartyIdentification1(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class QualifiedPartyIdentification1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', xs:ID, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', xs:ID, False)
 
 	@property
 	def Pty(self):
@@ -30,12 +30,12 @@ class QualifiedPartyIdentification1(base_types._BaseFieldType):
 
 	@Pty.setter
 	def Pty(self, value):
-		self._Pty = value if type(value) != base_types.auto else self.make_default("Pty")
+		self._Pty = value if value is not None else base_types.UninitialisedField(self, 'Pty', SingleQualifiedPartyIdentification1, True)
 
 	@Pty.deleter
 	def Pty(self):
 		del self._Pty
-		self._Pty = None
+		self._Pty = base_types.UninitialisedField(self, 'Pty', SingleQualifiedPartyIdentification1, True)
 
 	@property
 	def Role(self):
@@ -43,12 +43,12 @@ class QualifiedPartyIdentification1(base_types._BaseFieldType):
 
 	@Role.setter
 	def Role(self, value):
-		self._Role = value if type(value) != base_types.auto else self.make_default("Role")
+		self._Role = value if value is not None else base_types.UninitialisedField(self, 'Role', GenericIdentification1, False)
 
 	@Role.deleter
 	def Role(self):
 		del self._Role
-		self._Role = None
+		self._Role = base_types.UninitialisedField(self, 'Role', GenericIdentification1, False)
 
 	@property
 	def RoleDesc(self):
@@ -56,12 +56,12 @@ class QualifiedPartyIdentification1(base_types._BaseFieldType):
 
 	@RoleDesc.setter
 	def RoleDesc(self, value):
-		self._RoleDesc = value if type(value) != base_types.auto else self.make_default("RoleDesc")
+		self._RoleDesc = value if value is not None else base_types.UninitialisedField(self, 'RoleDesc', Max256Text, False)
 
 	@RoleDesc.deleter
 	def RoleDesc(self):
 		del self._RoleDesc
-		self._RoleDesc = None
+		self._RoleDesc = base_types.UninitialisedField(self, 'RoleDesc', Max256Text, False)
 
 	@property
 	def ShrtId(self):
@@ -69,12 +69,12 @@ class QualifiedPartyIdentification1(base_types._BaseFieldType):
 
 	@ShrtId.setter
 	def ShrtId(self, value):
-		self._ShrtId = value if type(value) != base_types.auto else self.make_default("ShrtId")
+		self._ShrtId = value if value is not None else base_types.UninitialisedField(self, 'ShrtId', PartyIdentification2Choice, False)
 
 	@ShrtId.deleter
 	def ShrtId(self):
 		del self._ShrtId
-		self._ShrtId = None
+		self._ShrtId = base_types.UninitialisedField(self, 'ShrtId', PartyIdentification2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=XS_ID, min=1, max=1, mutex_group=None, array=False),

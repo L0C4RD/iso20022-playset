@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Amendment8 import Amendment8
-from ._UndertakingStatus2Code import UndertakingStatus2Code
+from . import Amendment8
+from . import UndertakingStatus2Code
 
 class Amendment7(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Amendment7(base_types._BaseFieldType):
 
 	@AmdmntId.setter
 	def AmdmntId(self, value):
-		self._AmdmntId = value if type(value) != base_types.auto else self.make_default("AmdmntId")
+		self._AmdmntId = value if value is not None else base_types.UninitialisedField(self, 'AmdmntId', Amendment8, False)
 
 	@AmdmntId.deleter
 	def AmdmntId(self):
 		del self._AmdmntId
-		self._AmdmntId = None
+		self._AmdmntId = base_types.UninitialisedField(self, 'AmdmntId', Amendment8, False)
 
 	@property
 	def AmdmntSts(self):
@@ -27,12 +27,12 @@ class Amendment7(base_types._BaseFieldType):
 
 	@AmdmntSts.setter
 	def AmdmntSts(self, value):
-		self._AmdmntSts = value if type(value) != base_types.auto else self.make_default("AmdmntSts")
+		self._AmdmntSts = value if value is not None else base_types.UninitialisedField(self, 'AmdmntSts', UndertakingStatus2Code, False)
 
 	@AmdmntSts.deleter
 	def AmdmntSts(self):
 		del self._AmdmntSts
-		self._AmdmntSts = None
+		self._AmdmntSts = base_types.UninitialisedField(self, 'AmdmntSts', UndertakingStatus2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmdmntId', type=Amendment8, min=1, max=1, mutex_group=None, array=False),

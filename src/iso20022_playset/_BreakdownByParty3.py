@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalParameters1 import AdditionalParameters1
-from ._CashInForecast5 import CashInForecast5
-from ._CashOutForecast5 import CashOutForecast5
-from ._InvestmentAccount42 import InvestmentAccount42
-from ._NetCashForecast4 import NetCashForecast4
+from . import AdditionalParameters1
+from . import CashInForecast5
+from . import CashOutForecast5
+from . import InvestmentAccount42
+from . import NetCashForecast4
 
 class BreakdownByParty3(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class BreakdownByParty3(base_types._BaseFieldType):
 
 	@AddtlParams.setter
 	def AddtlParams(self, value):
-		self._AddtlParams = value if type(value) != base_types.auto else self.make_default("AddtlParams")
+		self._AddtlParams = value if value is not None else base_types.UninitialisedField(self, 'AddtlParams', AdditionalParameters1, False)
 
 	@AddtlParams.deleter
 	def AddtlParams(self):
 		del self._AddtlParams
-		self._AddtlParams = None
+		self._AddtlParams = base_types.UninitialisedField(self, 'AddtlParams', AdditionalParameters1, False)
 
 	@property
 	def CshInFcst(self):
@@ -30,12 +30,12 @@ class BreakdownByParty3(base_types._BaseFieldType):
 
 	@CshInFcst.setter
 	def CshInFcst(self, value):
-		self._CshInFcst = value if type(value) != base_types.auto else self.make_default("CshInFcst")
+		self._CshInFcst = value if value is not None else base_types.UninitialisedField(self, 'CshInFcst', CashInForecast5, True)
 
 	@CshInFcst.deleter
 	def CshInFcst(self):
 		del self._CshInFcst
-		self._CshInFcst = None
+		self._CshInFcst = base_types.UninitialisedField(self, 'CshInFcst', CashInForecast5, True)
 
 	@property
 	def CshOutFcst(self):
@@ -43,12 +43,12 @@ class BreakdownByParty3(base_types._BaseFieldType):
 
 	@CshOutFcst.setter
 	def CshOutFcst(self, value):
-		self._CshOutFcst = value if type(value) != base_types.auto else self.make_default("CshOutFcst")
+		self._CshOutFcst = value if value is not None else base_types.UninitialisedField(self, 'CshOutFcst', CashOutForecast5, True)
 
 	@CshOutFcst.deleter
 	def CshOutFcst(self):
 		del self._CshOutFcst
-		self._CshOutFcst = None
+		self._CshOutFcst = base_types.UninitialisedField(self, 'CshOutFcst', CashOutForecast5, True)
 
 	@property
 	def NetCshFcst(self):
@@ -56,12 +56,12 @@ class BreakdownByParty3(base_types._BaseFieldType):
 
 	@NetCshFcst.setter
 	def NetCshFcst(self, value):
-		self._NetCshFcst = value if type(value) != base_types.auto else self.make_default("NetCshFcst")
+		self._NetCshFcst = value if value is not None else base_types.UninitialisedField(self, 'NetCshFcst', NetCashForecast4, True)
 
 	@NetCshFcst.deleter
 	def NetCshFcst(self):
 		del self._NetCshFcst
-		self._NetCshFcst = None
+		self._NetCshFcst = base_types.UninitialisedField(self, 'NetCshFcst', NetCashForecast4, True)
 
 	@property
 	def Pty(self):
@@ -69,12 +69,12 @@ class BreakdownByParty3(base_types._BaseFieldType):
 
 	@Pty.setter
 	def Pty(self, value):
-		self._Pty = value if type(value) != base_types.auto else self.make_default("Pty")
+		self._Pty = value if value is not None else base_types.UninitialisedField(self, 'Pty', InvestmentAccount42, False)
 
 	@Pty.deleter
 	def Pty(self):
 		del self._Pty
-		self._Pty = None
+		self._Pty = base_types.UninitialisedField(self, 'Pty', InvestmentAccount42, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlParams', type=AdditionalParameters1, min=0, max=1, mutex_group=None, array=False),

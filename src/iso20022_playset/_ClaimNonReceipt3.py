@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._ISODate import ISODate
+from . import BranchAndFinancialInstitutionIdentification8
+from . import ISODate
 
 class ClaimNonReceipt3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ClaimNonReceipt3(base_types._BaseFieldType):
 
 	@DtPrcd.setter
 	def DtPrcd(self, value):
-		self._DtPrcd = value if type(value) != base_types.auto else self.make_default("DtPrcd")
+		self._DtPrcd = value if value is not None else base_types.UninitialisedField(self, 'DtPrcd', ISODate, False)
 
 	@DtPrcd.deleter
 	def DtPrcd(self):
 		del self._DtPrcd
-		self._DtPrcd = None
+		self._DtPrcd = base_types.UninitialisedField(self, 'DtPrcd', ISODate, False)
 
 	@property
 	def OrgnlNxtAgt(self):
@@ -27,12 +27,12 @@ class ClaimNonReceipt3(base_types._BaseFieldType):
 
 	@OrgnlNxtAgt.setter
 	def OrgnlNxtAgt(self, value):
-		self._OrgnlNxtAgt = value if type(value) != base_types.auto else self.make_default("OrgnlNxtAgt")
+		self._OrgnlNxtAgt = value if value is not None else base_types.UninitialisedField(self, 'OrgnlNxtAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@OrgnlNxtAgt.deleter
 	def OrgnlNxtAgt(self):
 		del self._OrgnlNxtAgt
-		self._OrgnlNxtAgt = None
+		self._OrgnlNxtAgt = base_types.UninitialisedField(self, 'OrgnlNxtAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DtPrcd', type=ISODate, min=1, max=1, mutex_group=None, array=False),

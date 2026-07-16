@@ -2,18 +2,18 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CreditDebit3Code import CreditDebit3Code
-from ._DecimalNumber import DecimalNumber
-from ._FleetServiceType1Code import FleetServiceType1Code
-from ._ISOTime import ISOTime
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max35Text import Max35Text
-from ._Max4Text import Max4Text
-from ._Max6Text import Max6Text
-from ._PercentageRate import PercentageRate
-from ._Tax44 import Tax44
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._UnitOfMeasure14Code import UnitOfMeasure14Code
+from . import CreditDebit3Code
+from . import DecimalNumber
+from . import FleetServiceType1Code
+from . import ISOTime
+from . import ImpliedCurrencyAndAmount
+from . import Max35Text
+from . import Max4Text
+from . import Max6Text
+from . import PercentageRate
+from . import Tax44
+from . import TrueFalseIndicator
+from . import UnitOfMeasure14Code
 
 class FleetLineItem7(base_types._BaseFieldType):
 
@@ -24,12 +24,12 @@ class FleetLineItem7(base_types._BaseFieldType):
 
 	@ChrggCmpltnTm.setter
 	def ChrggCmpltnTm(self, value):
-		self._ChrggCmpltnTm = value if type(value) != base_types.auto else self.make_default("ChrggCmpltnTm")
+		self._ChrggCmpltnTm = value if value is not None else base_types.UninitialisedField(self, 'ChrggCmpltnTm', ISOTime, False)
 
 	@ChrggCmpltnTm.deleter
 	def ChrggCmpltnTm(self):
 		del self._ChrggCmpltnTm
-		self._ChrggCmpltnTm = None
+		self._ChrggCmpltnTm = base_types.UninitialisedField(self, 'ChrggCmpltnTm', ISOTime, False)
 
 	@property
 	def ChrggStartTm(self):
@@ -37,12 +37,12 @@ class FleetLineItem7(base_types._BaseFieldType):
 
 	@ChrggStartTm.setter
 	def ChrggStartTm(self, value):
-		self._ChrggStartTm = value if type(value) != base_types.auto else self.make_default("ChrggStartTm")
+		self._ChrggStartTm = value if value is not None else base_types.UninitialisedField(self, 'ChrggStartTm', ISOTime, False)
 
 	@ChrggStartTm.deleter
 	def ChrggStartTm(self):
 		del self._ChrggStartTm
-		self._ChrggStartTm = None
+		self._ChrggStartTm = base_types.UninitialisedField(self, 'ChrggStartTm', ISOTime, False)
 
 	@property
 	def CostPlusUnitDscnt(self):
@@ -50,12 +50,12 @@ class FleetLineItem7(base_types._BaseFieldType):
 
 	@CostPlusUnitDscnt.setter
 	def CostPlusUnitDscnt(self, value):
-		self._CostPlusUnitDscnt = value if type(value) != base_types.auto else self.make_default("CostPlusUnitDscnt")
+		self._CostPlusUnitDscnt = value if value is not None else base_types.UninitialisedField(self, 'CostPlusUnitDscnt', ImpliedCurrencyAndAmount, False)
 
 	@CostPlusUnitDscnt.deleter
 	def CostPlusUnitDscnt(self):
 		del self._CostPlusUnitDscnt
-		self._CostPlusUnitDscnt = None
+		self._CostPlusUnitDscnt = base_types.UninitialisedField(self, 'CostPlusUnitDscnt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def CostPlusUnitDscntSgn(self):
@@ -63,12 +63,12 @@ class FleetLineItem7(base_types._BaseFieldType):
 
 	@CostPlusUnitDscntSgn.setter
 	def CostPlusUnitDscntSgn(self, value):
-		self._CostPlusUnitDscntSgn = value if type(value) != base_types.auto else self.make_default("CostPlusUnitDscntSgn")
+		self._CostPlusUnitDscntSgn = value if value is not None else base_types.UninitialisedField(self, 'CostPlusUnitDscntSgn', CreditDebit3Code, False)
 
 	@CostPlusUnitDscntSgn.deleter
 	def CostPlusUnitDscntSgn(self):
 		del self._CostPlusUnitDscntSgn
-		self._CostPlusUnitDscntSgn = None
+		self._CostPlusUnitDscntSgn = base_types.UninitialisedField(self, 'CostPlusUnitDscntSgn', CreditDebit3Code, False)
 
 	@property
 	def CostPlusUnitPric(self):
@@ -76,12 +76,12 @@ class FleetLineItem7(base_types._BaseFieldType):
 
 	@CostPlusUnitPric.setter
 	def CostPlusUnitPric(self, value):
-		self._CostPlusUnitPric = value if type(value) != base_types.auto else self.make_default("CostPlusUnitPric")
+		self._CostPlusUnitPric = value if value is not None else base_types.UninitialisedField(self, 'CostPlusUnitPric', ImpliedCurrencyAndAmount, False)
 
 	@CostPlusUnitPric.deleter
 	def CostPlusUnitPric(self):
 		del self._CostPlusUnitPric
-		self._CostPlusUnitPric = None
+		self._CostPlusUnitPric = base_types.UninitialisedField(self, 'CostPlusUnitPric', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def DscntAmt(self):
@@ -89,12 +89,12 @@ class FleetLineItem7(base_types._BaseFieldType):
 
 	@DscntAmt.setter
 	def DscntAmt(self, value):
-		self._DscntAmt = value if type(value) != base_types.auto else self.make_default("DscntAmt")
+		self._DscntAmt = value if value is not None else base_types.UninitialisedField(self, 'DscntAmt', ImpliedCurrencyAndAmount, False)
 
 	@DscntAmt.deleter
 	def DscntAmt(self):
 		del self._DscntAmt
-		self._DscntAmt = None
+		self._DscntAmt = base_types.UninitialisedField(self, 'DscntAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def FlatDscntRate(self):
@@ -102,12 +102,12 @@ class FleetLineItem7(base_types._BaseFieldType):
 
 	@FlatDscntRate.setter
 	def FlatDscntRate(self, value):
-		self._FlatDscntRate = value if type(value) != base_types.auto else self.make_default("FlatDscntRate")
+		self._FlatDscntRate = value if value is not None else base_types.UninitialisedField(self, 'FlatDscntRate', ImpliedCurrencyAndAmount, False)
 
 	@FlatDscntRate.deleter
 	def FlatDscntRate(self):
 		del self._FlatDscntRate
-		self._FlatDscntRate = None
+		self._FlatDscntRate = base_types.UninitialisedField(self, 'FlatDscntRate', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def Fuel(self):
@@ -115,12 +115,12 @@ class FleetLineItem7(base_types._BaseFieldType):
 
 	@Fuel.setter
 	def Fuel(self, value):
-		self._Fuel = value if type(value) != base_types.auto else self.make_default("Fuel")
+		self._Fuel = value if value is not None else base_types.UninitialisedField(self, 'Fuel', TrueFalseIndicator, False)
 
 	@Fuel.deleter
 	def Fuel(self):
 		del self._Fuel
-		self._Fuel = None
+		self._Fuel = base_types.UninitialisedField(self, 'Fuel', TrueFalseIndicator, False)
 
 	@property
 	def FuelBrndCd(self):
@@ -128,12 +128,12 @@ class FleetLineItem7(base_types._BaseFieldType):
 
 	@FuelBrndCd.setter
 	def FuelBrndCd(self, value):
-		self._FuelBrndCd = value if type(value) != base_types.auto else self.make_default("FuelBrndCd")
+		self._FuelBrndCd = value if value is not None else base_types.UninitialisedField(self, 'FuelBrndCd', Max4Text, False)
 
 	@FuelBrndCd.deleter
 	def FuelBrndCd(self):
 		del self._FuelBrndCd
-		self._FuelBrndCd = None
+		self._FuelBrndCd = base_types.UninitialisedField(self, 'FuelBrndCd', Max4Text, False)
 
 	@property
 	def NetAmt(self):
@@ -141,12 +141,12 @@ class FleetLineItem7(base_types._BaseFieldType):
 
 	@NetAmt.setter
 	def NetAmt(self, value):
-		self._NetAmt = value if type(value) != base_types.auto else self.make_default("NetAmt")
+		self._NetAmt = value if value is not None else base_types.UninitialisedField(self, 'NetAmt', ImpliedCurrencyAndAmount, False)
 
 	@NetAmt.deleter
 	def NetAmt(self):
 		del self._NetAmt
-		self._NetAmt = None
+		self._NetAmt = base_types.UninitialisedField(self, 'NetAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def NonTaxbl(self):
@@ -154,12 +154,12 @@ class FleetLineItem7(base_types._BaseFieldType):
 
 	@NonTaxbl.setter
 	def NonTaxbl(self, value):
-		self._NonTaxbl = value if type(value) != base_types.auto else self.make_default("NonTaxbl")
+		self._NonTaxbl = value if value is not None else base_types.UninitialisedField(self, 'NonTaxbl', TrueFalseIndicator, False)
 
 	@NonTaxbl.deleter
 	def NonTaxbl(self):
 		del self._NonTaxbl
-		self._NonTaxbl = None
+		self._NonTaxbl = base_types.UninitialisedField(self, 'NonTaxbl', TrueFalseIndicator, False)
 
 	@property
 	def PctgDscntRate(self):
@@ -167,12 +167,12 @@ class FleetLineItem7(base_types._BaseFieldType):
 
 	@PctgDscntRate.setter
 	def PctgDscntRate(self, value):
-		self._PctgDscntRate = value if type(value) != base_types.auto else self.make_default("PctgDscntRate")
+		self._PctgDscntRate = value if value is not None else base_types.UninitialisedField(self, 'PctgDscntRate', PercentageRate, False)
 
 	@PctgDscntRate.deleter
 	def PctgDscntRate(self):
 		del self._PctgDscntRate
-		self._PctgDscntRate = None
+		self._PctgDscntRate = base_types.UninitialisedField(self, 'PctgDscntRate', PercentageRate, False)
 
 	@property
 	def PdctCd(self):
@@ -180,12 +180,12 @@ class FleetLineItem7(base_types._BaseFieldType):
 
 	@PdctCd.setter
 	def PdctCd(self, value):
-		self._PdctCd = value if type(value) != base_types.auto else self.make_default("PdctCd")
+		self._PdctCd = value if value is not None else base_types.UninitialisedField(self, 'PdctCd', Max4Text, False)
 
 	@PdctCd.deleter
 	def PdctCd(self):
 		del self._PdctCd
-		self._PdctCd = None
+		self._PdctCd = base_types.UninitialisedField(self, 'PdctCd', Max4Text, False)
 
 	@property
 	def PdctCdAssgnr(self):
@@ -193,12 +193,12 @@ class FleetLineItem7(base_types._BaseFieldType):
 
 	@PdctCdAssgnr.setter
 	def PdctCdAssgnr(self, value):
-		self._PdctCdAssgnr = value if type(value) != base_types.auto else self.make_default("PdctCdAssgnr")
+		self._PdctCdAssgnr = value if value is not None else base_types.UninitialisedField(self, 'PdctCdAssgnr', Max35Text, False)
 
 	@PdctCdAssgnr.deleter
 	def PdctCdAssgnr(self):
 		del self._PdctCdAssgnr
-		self._PdctCdAssgnr = None
+		self._PdctCdAssgnr = base_types.UninitialisedField(self, 'PdctCdAssgnr', Max35Text, False)
 
 	@property
 	def PdctCtgy(self):
@@ -206,12 +206,12 @@ class FleetLineItem7(base_types._BaseFieldType):
 
 	@PdctCtgy.setter
 	def PdctCtgy(self, value):
-		self._PdctCtgy = value if type(value) != base_types.auto else self.make_default("PdctCtgy")
+		self._PdctCtgy = value if value is not None else base_types.UninitialisedField(self, 'PdctCtgy', Max35Text, False)
 
 	@PdctCtgy.deleter
 	def PdctCtgy(self):
 		del self._PdctCtgy
-		self._PdctCtgy = None
+		self._PdctCtgy = base_types.UninitialisedField(self, 'PdctCtgy', Max35Text, False)
 
 	@property
 	def PdctQlfr(self):
@@ -219,12 +219,12 @@ class FleetLineItem7(base_types._BaseFieldType):
 
 	@PdctQlfr.setter
 	def PdctQlfr(self, value):
-		self._PdctQlfr = value if type(value) != base_types.auto else self.make_default("PdctQlfr")
+		self._PdctQlfr = value if value is not None else base_types.UninitialisedField(self, 'PdctQlfr', Max6Text, False)
 
 	@PdctQlfr.deleter
 	def PdctQlfr(self):
 		del self._PdctQlfr
-		self._PdctQlfr = None
+		self._PdctQlfr = base_types.UninitialisedField(self, 'PdctQlfr', Max6Text, False)
 
 	@property
 	def PdctQty(self):
@@ -232,12 +232,12 @@ class FleetLineItem7(base_types._BaseFieldType):
 
 	@PdctQty.setter
 	def PdctQty(self, value):
-		self._PdctQty = value if type(value) != base_types.auto else self.make_default("PdctQty")
+		self._PdctQty = value if value is not None else base_types.UninitialisedField(self, 'PdctQty', DecimalNumber, False)
 
 	@PdctQty.deleter
 	def PdctQty(self):
 		del self._PdctQty
-		self._PdctQty = None
+		self._PdctQty = base_types.UninitialisedField(self, 'PdctQty', DecimalNumber, False)
 
 	@property
 	def PerUnitDscntRate(self):
@@ -245,12 +245,12 @@ class FleetLineItem7(base_types._BaseFieldType):
 
 	@PerUnitDscntRate.setter
 	def PerUnitDscntRate(self, value):
-		self._PerUnitDscntRate = value if type(value) != base_types.auto else self.make_default("PerUnitDscntRate")
+		self._PerUnitDscntRate = value if value is not None else base_types.UninitialisedField(self, 'PerUnitDscntRate', ImpliedCurrencyAndAmount, False)
 
 	@PerUnitDscntRate.deleter
 	def PerUnitDscntRate(self):
 		del self._PerUnitDscntRate
-		self._PerUnitDscntRate = None
+		self._PerUnitDscntRate = base_types.UninitialisedField(self, 'PerUnitDscntRate', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def SvcTp(self):
@@ -258,12 +258,12 @@ class FleetLineItem7(base_types._BaseFieldType):
 
 	@SvcTp.setter
 	def SvcTp(self, value):
-		self._SvcTp = value if type(value) != base_types.auto else self.make_default("SvcTp")
+		self._SvcTp = value if value is not None else base_types.UninitialisedField(self, 'SvcTp', FleetServiceType1Code, False)
 
 	@SvcTp.deleter
 	def SvcTp(self):
 		del self._SvcTp
-		self._SvcTp = None
+		self._SvcTp = base_types.UninitialisedField(self, 'SvcTp', FleetServiceType1Code, False)
 
 	@property
 	def Tax(self):
@@ -271,12 +271,12 @@ class FleetLineItem7(base_types._BaseFieldType):
 
 	@Tax.setter
 	def Tax(self, value):
-		self._Tax = value if type(value) != base_types.auto else self.make_default("Tax")
+		self._Tax = value if value is not None else base_types.UninitialisedField(self, 'Tax', Tax44, True)
 
 	@Tax.deleter
 	def Tax(self):
 		del self._Tax
-		self._Tax = None
+		self._Tax = base_types.UninitialisedField(self, 'Tax', Tax44, True)
 
 	@property
 	def TtlAmtExclgTax(self):
@@ -284,12 +284,12 @@ class FleetLineItem7(base_types._BaseFieldType):
 
 	@TtlAmtExclgTax.setter
 	def TtlAmtExclgTax(self, value):
-		self._TtlAmtExclgTax = value if type(value) != base_types.auto else self.make_default("TtlAmtExclgTax")
+		self._TtlAmtExclgTax = value if value is not None else base_types.UninitialisedField(self, 'TtlAmtExclgTax', ImpliedCurrencyAndAmount, False)
 
 	@TtlAmtExclgTax.deleter
 	def TtlAmtExclgTax(self):
 		del self._TtlAmtExclgTax
-		self._TtlAmtExclgTax = None
+		self._TtlAmtExclgTax = base_types.UninitialisedField(self, 'TtlAmtExclgTax', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def TtlAmtInclgTax(self):
@@ -297,12 +297,12 @@ class FleetLineItem7(base_types._BaseFieldType):
 
 	@TtlAmtInclgTax.setter
 	def TtlAmtInclgTax(self, value):
-		self._TtlAmtInclgTax = value if type(value) != base_types.auto else self.make_default("TtlAmtInclgTax")
+		self._TtlAmtInclgTax = value if value is not None else base_types.UninitialisedField(self, 'TtlAmtInclgTax', ImpliedCurrencyAndAmount, False)
 
 	@TtlAmtInclgTax.deleter
 	def TtlAmtInclgTax(self):
 		del self._TtlAmtInclgTax
-		self._TtlAmtInclgTax = None
+		self._TtlAmtInclgTax = base_types.UninitialisedField(self, 'TtlAmtInclgTax', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def TtlTmChrgg(self):
@@ -310,12 +310,12 @@ class FleetLineItem7(base_types._BaseFieldType):
 
 	@TtlTmChrgg.setter
 	def TtlTmChrgg(self, value):
-		self._TtlTmChrgg = value if type(value) != base_types.auto else self.make_default("TtlTmChrgg")
+		self._TtlTmChrgg = value if value is not None else base_types.UninitialisedField(self, 'TtlTmChrgg', ISOTime, False)
 
 	@TtlTmChrgg.deleter
 	def TtlTmChrgg(self):
 		del self._TtlTmChrgg
-		self._TtlTmChrgg = None
+		self._TtlTmChrgg = base_types.UninitialisedField(self, 'TtlTmChrgg', ISOTime, False)
 
 	@property
 	def TtlTmPlugdIn(self):
@@ -323,12 +323,12 @@ class FleetLineItem7(base_types._BaseFieldType):
 
 	@TtlTmPlugdIn.setter
 	def TtlTmPlugdIn(self, value):
-		self._TtlTmPlugdIn = value if type(value) != base_types.auto else self.make_default("TtlTmPlugdIn")
+		self._TtlTmPlugdIn = value if value is not None else base_types.UninitialisedField(self, 'TtlTmPlugdIn', ISOTime, False)
 
 	@TtlTmPlugdIn.deleter
 	def TtlTmPlugdIn(self):
 		del self._TtlTmPlugdIn
-		self._TtlTmPlugdIn = None
+		self._TtlTmPlugdIn = base_types.UninitialisedField(self, 'TtlTmPlugdIn', ISOTime, False)
 
 	@property
 	def UnitOfMeasr(self):
@@ -336,12 +336,12 @@ class FleetLineItem7(base_types._BaseFieldType):
 
 	@UnitOfMeasr.setter
 	def UnitOfMeasr(self, value):
-		self._UnitOfMeasr = value if type(value) != base_types.auto else self.make_default("UnitOfMeasr")
+		self._UnitOfMeasr = value if value is not None else base_types.UninitialisedField(self, 'UnitOfMeasr', UnitOfMeasure14Code, False)
 
 	@UnitOfMeasr.deleter
 	def UnitOfMeasr(self):
 		del self._UnitOfMeasr
-		self._UnitOfMeasr = None
+		self._UnitOfMeasr = base_types.UninitialisedField(self, 'UnitOfMeasr', UnitOfMeasure14Code, False)
 
 	@property
 	def UnitPric(self):
@@ -349,12 +349,12 @@ class FleetLineItem7(base_types._BaseFieldType):
 
 	@UnitPric.setter
 	def UnitPric(self, value):
-		self._UnitPric = value if type(value) != base_types.auto else self.make_default("UnitPric")
+		self._UnitPric = value if value is not None else base_types.UninitialisedField(self, 'UnitPric', ImpliedCurrencyAndAmount, False)
 
 	@UnitPric.deleter
 	def UnitPric(self):
 		del self._UnitPric
-		self._UnitPric = None
+		self._UnitPric = base_types.UninitialisedField(self, 'UnitPric', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def UnitPricTax(self):
@@ -362,12 +362,12 @@ class FleetLineItem7(base_types._BaseFieldType):
 
 	@UnitPricTax.setter
 	def UnitPricTax(self, value):
-		self._UnitPricTax = value if type(value) != base_types.auto else self.make_default("UnitPricTax")
+		self._UnitPricTax = value if value is not None else base_types.UninitialisedField(self, 'UnitPricTax', TrueFalseIndicator, False)
 
 	@UnitPricTax.deleter
 	def UnitPricTax(self):
 		del self._UnitPricTax
-		self._UnitPricTax = None
+		self._UnitPricTax = base_types.UninitialisedField(self, 'UnitPricTax', TrueFalseIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ChrggCmpltnTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),

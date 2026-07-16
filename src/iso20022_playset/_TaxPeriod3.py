@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DatePeriod2 import DatePeriod2
-from ._ISOYear import ISOYear
-from ._TaxRecordPeriod1Code import TaxRecordPeriod1Code
+from . import DatePeriod2
+from . import ISOYear
+from . import TaxRecordPeriod1Code
 
 class TaxPeriod3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TaxPeriod3(base_types._BaseFieldType):
 
 	@FrToDt.setter
 	def FrToDt(self, value):
-		self._FrToDt = value if type(value) != base_types.auto else self.make_default("FrToDt")
+		self._FrToDt = value if value is not None else base_types.UninitialisedField(self, 'FrToDt', DatePeriod2, False)
 
 	@FrToDt.deleter
 	def FrToDt(self):
 		del self._FrToDt
-		self._FrToDt = None
+		self._FrToDt = base_types.UninitialisedField(self, 'FrToDt', DatePeriod2, False)
 
 	@property
 	def Tp(self):
@@ -28,12 +28,12 @@ class TaxPeriod3(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', TaxRecordPeriod1Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', TaxRecordPeriod1Code, False)
 
 	@property
 	def Yr(self):
@@ -41,12 +41,12 @@ class TaxPeriod3(base_types._BaseFieldType):
 
 	@Yr.setter
 	def Yr(self, value):
-		self._Yr = value if type(value) != base_types.auto else self.make_default("Yr")
+		self._Yr = value if value is not None else base_types.UninitialisedField(self, 'Yr', ISOYear, False)
 
 	@Yr.deleter
 	def Yr(self):
 		del self._Yr
-		self._Yr = None
+		self._Yr = base_types.UninitialisedField(self, 'Yr', ISOYear, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FrToDt', type=DatePeriod2, min=0, max=1, mutex_group=None, array=False),

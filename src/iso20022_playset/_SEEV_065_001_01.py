@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BuyerProtectionInstructionAllegementRemovalAdviceV01 import BuyerProtectionInstructionAllegementRemovalAdviceV01
+from . import BuyerProtectionInstructionAllegementRemovalAdviceV01
 
 class SEEV_065_001_01():
 
@@ -18,12 +18,12 @@ class SEEV_065_001_01():
 
 		@BuyrPrtcnInstrAllgmtRmvlAdvc.setter
 		def BuyrPrtcnInstrAllgmtRmvlAdvc(self, value):
-			self._BuyrPrtcnInstrAllgmtRmvlAdvc = value if type(value) != base_types.auto else self.make_default("BuyrPrtcnInstrAllgmtRmvlAdvc")
+			self._BuyrPrtcnInstrAllgmtRmvlAdvc = value if value is not None else base_types.UninitialisedField(self, 'BuyrPrtcnInstrAllgmtRmvlAdvc', BuyerProtectionInstructionAllegementRemovalAdviceV01, False)
 
 		@BuyrPrtcnInstrAllgmtRmvlAdvc.deleter
 		def BuyrPrtcnInstrAllgmtRmvlAdvc(self):
 			del self._BuyrPrtcnInstrAllgmtRmvlAdvc
-			self._BuyrPrtcnInstrAllgmtRmvlAdvc = None
+			self._BuyrPrtcnInstrAllgmtRmvlAdvc = base_types.UninitialisedField(self, 'BuyrPrtcnInstrAllgmtRmvlAdvc', BuyerProtectionInstructionAllegementRemovalAdviceV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='BuyrPrtcnInstrAllgmtRmvlAdvc', type=BuyerProtectionInstructionAllegementRemovalAdviceV01, min=1, max=1, mutex_group=None, array=False),

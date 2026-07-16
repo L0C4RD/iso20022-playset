@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMDeviceReport5 import ATMDeviceReport5
-from ._ContentInformationType10 import ContentInformationType10
-from ._ContentInformationType13 import ContentInformationType13
-from ._Header31 import Header31
+from . import ATMDeviceReport5
+from . import ContentInformationType10
+from . import ContentInformationType13
+from . import Header31
 
 class ATMDeviceReportV05(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ATMDeviceReportV05(base_types._BaseFieldType):
 
 	@ATMDvcRpt.setter
 	def ATMDvcRpt(self, value):
-		self._ATMDvcRpt = value if type(value) != base_types.auto else self.make_default("ATMDvcRpt")
+		self._ATMDvcRpt = value if value is not None else base_types.UninitialisedField(self, 'ATMDvcRpt', ATMDeviceReport5, False)
 
 	@ATMDvcRpt.deleter
 	def ATMDvcRpt(self):
 		del self._ATMDvcRpt
-		self._ATMDvcRpt = None
+		self._ATMDvcRpt = base_types.UninitialisedField(self, 'ATMDvcRpt', ATMDeviceReport5, False)
 
 	@property
 	def Hdr(self):
@@ -29,12 +29,12 @@ class ATMDeviceReportV05(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header31, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header31, False)
 
 	@property
 	def PrtctdATMDvcRpt(self):
@@ -42,12 +42,12 @@ class ATMDeviceReportV05(base_types._BaseFieldType):
 
 	@PrtctdATMDvcRpt.setter
 	def PrtctdATMDvcRpt(self, value):
-		self._PrtctdATMDvcRpt = value if type(value) != base_types.auto else self.make_default("PrtctdATMDvcRpt")
+		self._PrtctdATMDvcRpt = value if value is not None else base_types.UninitialisedField(self, 'PrtctdATMDvcRpt', ContentInformationType10, False)
 
 	@PrtctdATMDvcRpt.deleter
 	def PrtctdATMDvcRpt(self):
 		del self._PrtctdATMDvcRpt
-		self._PrtctdATMDvcRpt = None
+		self._PrtctdATMDvcRpt = base_types.UninitialisedField(self, 'PrtctdATMDvcRpt', ContentInformationType10, False)
 
 	@property
 	def SctyTrlr(self):
@@ -55,12 +55,12 @@ class ATMDeviceReportV05(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType13, False)
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
 		del self._SctyTrlr
-		self._SctyTrlr = None
+		self._SctyTrlr = base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType13, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ATMDvcRpt', type=ATMDeviceReport5, min=0, max=1, mutex_group=None, array=False),

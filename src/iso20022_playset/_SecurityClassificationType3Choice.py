@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CFIOct2015Identifier import CFIOct2015Identifier
-from ._GenericIdentification39 import GenericIdentification39
+from . import CFIOct2015Identifier
+from . import GenericIdentification39
 
 class SecurityClassificationType3Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SecurityClassificationType3Choice(base_types._BaseFieldType):
 
 	@AltrnClssfctn.setter
 	def AltrnClssfctn(self, value):
-		self._AltrnClssfctn = value if type(value) != base_types.auto else self.make_default("AltrnClssfctn")
+		self._AltrnClssfctn = value if value is not None else base_types.UninitialisedField(self, 'AltrnClssfctn', GenericIdentification39, False)
 
 	@AltrnClssfctn.deleter
 	def AltrnClssfctn(self):
 		del self._AltrnClssfctn
-		self._AltrnClssfctn = None
+		self._AltrnClssfctn = base_types.UninitialisedField(self, 'AltrnClssfctn', GenericIdentification39, False)
 
 	@property
 	def CFI(self):
@@ -27,12 +27,12 @@ class SecurityClassificationType3Choice(base_types._BaseFieldType):
 
 	@CFI.setter
 	def CFI(self, value):
-		self._CFI = value if type(value) != base_types.auto else self.make_default("CFI")
+		self._CFI = value if value is not None else base_types.UninitialisedField(self, 'CFI', CFIOct2015Identifier, False)
 
 	@CFI.deleter
 	def CFI(self):
 		del self._CFI
-		self._CFI = None
+		self._CFI = base_types.UninitialisedField(self, 'CFI', CFIOct2015Identifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AltrnClssfctn', type=GenericIdentification39, min=0, max=1, mutex_group=1, array=False),

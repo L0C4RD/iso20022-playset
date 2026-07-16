@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PayInEventAcknowledgementV02 import PayInEventAcknowledgementV02
+from . import PayInEventAcknowledgementV02
 
 class CAMT_063_001_02():
 
@@ -18,12 +18,12 @@ class CAMT_063_001_02():
 
 		@PayInEvtAck.setter
 		def PayInEvtAck(self, value):
-			self._PayInEvtAck = value if type(value) != base_types.auto else self.make_default("PayInEvtAck")
+			self._PayInEvtAck = value if value is not None else base_types.UninitialisedField(self, 'PayInEvtAck', PayInEventAcknowledgementV02, False)
 
 		@PayInEvtAck.deleter
 		def PayInEvtAck(self):
 			del self._PayInEvtAck
-			self._PayInEvtAck = None
+			self._PayInEvtAck = base_types.UninitialisedField(self, 'PayInEvtAck', PayInEventAcknowledgementV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='PayInEvtAck', type=PayInEventAcknowledgementV02, min=1, max=1, mutex_group=None, array=False),

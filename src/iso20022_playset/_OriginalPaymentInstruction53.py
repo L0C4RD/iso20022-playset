@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BatchBookingIndicator import BatchBookingIndicator
-from ._DecimalNumber import DecimalNumber
-from ._Max15NumericText import Max15NumericText
-from ._Max35Text import Max35Text
-from ._PaymentReversalReason10 import PaymentReversalReason10
-from ._PaymentTransaction174 import PaymentTransaction174
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import BatchBookingIndicator
+from . import DecimalNumber
+from . import Max15NumericText
+from . import Max35Text
+from . import PaymentReversalReason10
+from . import PaymentTransaction174
+from . import TrueFalseIndicator
 
 class OriginalPaymentInstruction53(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class OriginalPaymentInstruction53(base_types._BaseFieldType):
 
 	@BtchBookg.setter
 	def BtchBookg(self, value):
-		self._BtchBookg = value if type(value) != base_types.auto else self.make_default("BtchBookg")
+		self._BtchBookg = value if value is not None else base_types.UninitialisedField(self, 'BtchBookg', BatchBookingIndicator, False)
 
 	@BtchBookg.deleter
 	def BtchBookg(self):
 		del self._BtchBookg
-		self._BtchBookg = None
+		self._BtchBookg = base_types.UninitialisedField(self, 'BtchBookg', BatchBookingIndicator, False)
 
 	@property
 	def OrgnlCtrlSum(self):
@@ -32,12 +32,12 @@ class OriginalPaymentInstruction53(base_types._BaseFieldType):
 
 	@OrgnlCtrlSum.setter
 	def OrgnlCtrlSum(self, value):
-		self._OrgnlCtrlSum = value if type(value) != base_types.auto else self.make_default("OrgnlCtrlSum")
+		self._OrgnlCtrlSum = value if value is not None else base_types.UninitialisedField(self, 'OrgnlCtrlSum', DecimalNumber, False)
 
 	@OrgnlCtrlSum.deleter
 	def OrgnlCtrlSum(self):
 		del self._OrgnlCtrlSum
-		self._OrgnlCtrlSum = None
+		self._OrgnlCtrlSum = base_types.UninitialisedField(self, 'OrgnlCtrlSum', DecimalNumber, False)
 
 	@property
 	def OrgnlNbOfTxs(self):
@@ -45,12 +45,12 @@ class OriginalPaymentInstruction53(base_types._BaseFieldType):
 
 	@OrgnlNbOfTxs.setter
 	def OrgnlNbOfTxs(self, value):
-		self._OrgnlNbOfTxs = value if type(value) != base_types.auto else self.make_default("OrgnlNbOfTxs")
+		self._OrgnlNbOfTxs = value if value is not None else base_types.UninitialisedField(self, 'OrgnlNbOfTxs', Max15NumericText, False)
 
 	@OrgnlNbOfTxs.deleter
 	def OrgnlNbOfTxs(self):
 		del self._OrgnlNbOfTxs
-		self._OrgnlNbOfTxs = None
+		self._OrgnlNbOfTxs = base_types.UninitialisedField(self, 'OrgnlNbOfTxs', Max15NumericText, False)
 
 	@property
 	def OrgnlPmtInfId(self):
@@ -58,12 +58,12 @@ class OriginalPaymentInstruction53(base_types._BaseFieldType):
 
 	@OrgnlPmtInfId.setter
 	def OrgnlPmtInfId(self, value):
-		self._OrgnlPmtInfId = value if type(value) != base_types.auto else self.make_default("OrgnlPmtInfId")
+		self._OrgnlPmtInfId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlPmtInfId', Max35Text, False)
 
 	@OrgnlPmtInfId.deleter
 	def OrgnlPmtInfId(self):
 		del self._OrgnlPmtInfId
-		self._OrgnlPmtInfId = None
+		self._OrgnlPmtInfId = base_types.UninitialisedField(self, 'OrgnlPmtInfId', Max35Text, False)
 
 	@property
 	def PmtInfRvsl(self):
@@ -71,12 +71,12 @@ class OriginalPaymentInstruction53(base_types._BaseFieldType):
 
 	@PmtInfRvsl.setter
 	def PmtInfRvsl(self, value):
-		self._PmtInfRvsl = value if type(value) != base_types.auto else self.make_default("PmtInfRvsl")
+		self._PmtInfRvsl = value if value is not None else base_types.UninitialisedField(self, 'PmtInfRvsl', TrueFalseIndicator, False)
 
 	@PmtInfRvsl.deleter
 	def PmtInfRvsl(self):
 		del self._PmtInfRvsl
-		self._PmtInfRvsl = None
+		self._PmtInfRvsl = base_types.UninitialisedField(self, 'PmtInfRvsl', TrueFalseIndicator, False)
 
 	@property
 	def RvslPmtInfId(self):
@@ -84,12 +84,12 @@ class OriginalPaymentInstruction53(base_types._BaseFieldType):
 
 	@RvslPmtInfId.setter
 	def RvslPmtInfId(self, value):
-		self._RvslPmtInfId = value if type(value) != base_types.auto else self.make_default("RvslPmtInfId")
+		self._RvslPmtInfId = value if value is not None else base_types.UninitialisedField(self, 'RvslPmtInfId', Max35Text, False)
 
 	@RvslPmtInfId.deleter
 	def RvslPmtInfId(self):
 		del self._RvslPmtInfId
-		self._RvslPmtInfId = None
+		self._RvslPmtInfId = base_types.UninitialisedField(self, 'RvslPmtInfId', Max35Text, False)
 
 	@property
 	def RvslRsnInf(self):
@@ -97,12 +97,12 @@ class OriginalPaymentInstruction53(base_types._BaseFieldType):
 
 	@RvslRsnInf.setter
 	def RvslRsnInf(self, value):
-		self._RvslRsnInf = value if type(value) != base_types.auto else self.make_default("RvslRsnInf")
+		self._RvslRsnInf = value if value is not None else base_types.UninitialisedField(self, 'RvslRsnInf', PaymentReversalReason10, True)
 
 	@RvslRsnInf.deleter
 	def RvslRsnInf(self):
 		del self._RvslRsnInf
-		self._RvslRsnInf = None
+		self._RvslRsnInf = base_types.UninitialisedField(self, 'RvslRsnInf', PaymentReversalReason10, True)
 
 	@property
 	def TxInf(self):
@@ -110,12 +110,12 @@ class OriginalPaymentInstruction53(base_types._BaseFieldType):
 
 	@TxInf.setter
 	def TxInf(self, value):
-		self._TxInf = value if type(value) != base_types.auto else self.make_default("TxInf")
+		self._TxInf = value if value is not None else base_types.UninitialisedField(self, 'TxInf', PaymentTransaction174, True)
 
 	@TxInf.deleter
 	def TxInf(self):
 		del self._TxInf
-		self._TxInf = None
+		self._TxInf = base_types.UninitialisedField(self, 'TxInf', PaymentTransaction174, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BtchBookg', type=BatchBookingIndicator, min=0, max=1, mutex_group=None, array=False),

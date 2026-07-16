@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._UndertakingStatusReportV01 import UndertakingStatusReportV01
+from . import UndertakingStatusReportV01
 
 class TSRV_019_001_01():
 
@@ -18,12 +18,12 @@ class TSRV_019_001_01():
 
 		@UdrtkgStsRpt.setter
 		def UdrtkgStsRpt(self, value):
-			self._UdrtkgStsRpt = value if type(value) != base_types.auto else self.make_default("UdrtkgStsRpt")
+			self._UdrtkgStsRpt = value if value is not None else base_types.UninitialisedField(self, 'UdrtkgStsRpt', UndertakingStatusReportV01, False)
 
 		@UdrtkgStsRpt.deleter
 		def UdrtkgStsRpt(self):
 			del self._UdrtkgStsRpt
-			self._UdrtkgStsRpt = None
+			self._UdrtkgStsRpt = base_types.UninitialisedField(self, 'UdrtkgStsRpt', UndertakingStatusReportV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='UdrtkgStsRpt', type=UndertakingStatusReportV01, min=1, max=1, mutex_group=None, array=False),

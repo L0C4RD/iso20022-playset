@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._Max2000Text import Max2000Text
+from . import ISODate
+from . import Max2000Text
 
 class BankInstructions1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class BankInstructions1(base_types._BaseFieldType):
 
 	@LastDtForRspn.setter
 	def LastDtForRspn(self, value):
-		self._LastDtForRspn = value if type(value) != base_types.auto else self.make_default("LastDtForRspn")
+		self._LastDtForRspn = value if value is not None else base_types.UninitialisedField(self, 'LastDtForRspn', ISODate, False)
 
 	@LastDtForRspn.deleter
 	def LastDtForRspn(self):
 		del self._LastDtForRspn
-		self._LastDtForRspn = None
+		self._LastDtForRspn = base_types.UninitialisedField(self, 'LastDtForRspn', ISODate, False)
 
 	@property
 	def Txt(self):
@@ -27,12 +27,12 @@ class BankInstructions1(base_types._BaseFieldType):
 
 	@Txt.setter
 	def Txt(self, value):
-		self._Txt = value if type(value) != base_types.auto else self.make_default("Txt")
+		self._Txt = value if value is not None else base_types.UninitialisedField(self, 'Txt', Max2000Text, True)
 
 	@Txt.deleter
 	def Txt(self):
 		del self._Txt
-		self._Txt = None
+		self._Txt = base_types.UninitialisedField(self, 'Txt', Max2000Text, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LastDtForRspn', type=ISODate, min=0, max=1, mutex_group=None, array=False),

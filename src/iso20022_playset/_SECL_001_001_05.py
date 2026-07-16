@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._TradeLegNotificationV05 import TradeLegNotificationV05
+from . import TradeLegNotificationV05
 
 class SECL_001_001_05():
 
@@ -18,12 +18,12 @@ class SECL_001_001_05():
 
 		@TradLegNtfctn.setter
 		def TradLegNtfctn(self, value):
-			self._TradLegNtfctn = value if type(value) != base_types.auto else self.make_default("TradLegNtfctn")
+			self._TradLegNtfctn = value if value is not None else base_types.UninitialisedField(self, 'TradLegNtfctn', TradeLegNotificationV05, False)
 
 		@TradLegNtfctn.deleter
 		def TradLegNtfctn(self):
 			del self._TradLegNtfctn
-			self._TradLegNtfctn = None
+			self._TradLegNtfctn = base_types.UninitialisedField(self, 'TradLegNtfctn', TradeLegNotificationV05, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='TradLegNtfctn', type=TradeLegNotificationV05, min=1, max=1, mutex_group=None, array=False),

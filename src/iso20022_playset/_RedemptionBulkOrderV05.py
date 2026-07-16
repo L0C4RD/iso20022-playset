@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalReference10 import AdditionalReference10
-from ._AdditionalReference11 import AdditionalReference11
-from ._CopyInformation5 import CopyInformation5
-from ._Extension1 import Extension1
-from ._MessageIdentification1 import MessageIdentification1
-from ._RedemptionBulkOrder08 import RedemptionBulkOrder08
+from . import AdditionalReference10
+from . import AdditionalReference11
+from . import CopyInformation5
+from . import Extension1
+from . import MessageIdentification1
+from . import RedemptionBulkOrder08
 
 class RedemptionBulkOrderV05(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class RedemptionBulkOrderV05(base_types._BaseFieldType):
 
 	@BlkOrdrDtls.setter
 	def BlkOrdrDtls(self, value):
-		self._BlkOrdrDtls = value if type(value) != base_types.auto else self.make_default("BlkOrdrDtls")
+		self._BlkOrdrDtls = value if value is not None else base_types.UninitialisedField(self, 'BlkOrdrDtls', RedemptionBulkOrder08, False)
 
 	@BlkOrdrDtls.deleter
 	def BlkOrdrDtls(self):
 		del self._BlkOrdrDtls
-		self._BlkOrdrDtls = None
+		self._BlkOrdrDtls = base_types.UninitialisedField(self, 'BlkOrdrDtls', RedemptionBulkOrder08, False)
 
 	@property
 	def CpyDtls(self):
@@ -31,12 +31,12 @@ class RedemptionBulkOrderV05(base_types._BaseFieldType):
 
 	@CpyDtls.setter
 	def CpyDtls(self, value):
-		self._CpyDtls = value if type(value) != base_types.auto else self.make_default("CpyDtls")
+		self._CpyDtls = value if value is not None else base_types.UninitialisedField(self, 'CpyDtls', CopyInformation5, False)
 
 	@CpyDtls.deleter
 	def CpyDtls(self):
 		del self._CpyDtls
-		self._CpyDtls = None
+		self._CpyDtls = base_types.UninitialisedField(self, 'CpyDtls', CopyInformation5, False)
 
 	@property
 	def MsgId(self):
@@ -44,12 +44,12 @@ class RedemptionBulkOrderV05(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@property
 	def PoolRef(self):
@@ -57,12 +57,12 @@ class RedemptionBulkOrderV05(base_types._BaseFieldType):
 
 	@PoolRef.setter
 	def PoolRef(self, value):
-		self._PoolRef = value if type(value) != base_types.auto else self.make_default("PoolRef")
+		self._PoolRef = value if value is not None else base_types.UninitialisedField(self, 'PoolRef', AdditionalReference11, False)
 
 	@PoolRef.deleter
 	def PoolRef(self):
 		del self._PoolRef
-		self._PoolRef = None
+		self._PoolRef = base_types.UninitialisedField(self, 'PoolRef', AdditionalReference11, False)
 
 	@property
 	def PrvsRef(self):
@@ -70,12 +70,12 @@ class RedemptionBulkOrderV05(base_types._BaseFieldType):
 
 	@PrvsRef.setter
 	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
+		self._PrvsRef = value if value is not None else base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference10, True)
 
 	@PrvsRef.deleter
 	def PrvsRef(self):
 		del self._PrvsRef
-		self._PrvsRef = None
+		self._PrvsRef = base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference10, True)
 
 	@property
 	def Xtnsn(self):
@@ -83,12 +83,12 @@ class RedemptionBulkOrderV05(base_types._BaseFieldType):
 
 	@Xtnsn.setter
 	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
+		self._Xtnsn = value if value is not None else base_types.UninitialisedField(self, 'Xtnsn', Extension1, True)
 
 	@Xtnsn.deleter
 	def Xtnsn(self):
 		del self._Xtnsn
-		self._Xtnsn = None
+		self._Xtnsn = base_types.UninitialisedField(self, 'Xtnsn', Extension1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BlkOrdrDtls', type=RedemptionBulkOrder08, min=1, max=1, mutex_group=None, array=False),

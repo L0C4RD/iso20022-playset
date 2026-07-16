@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FundIdentification5 import FundIdentification5
-from ._PartyIdentification242Choice import PartyIdentification242Choice
+from . import FundIdentification5
+from . import PartyIdentification242Choice
 
 class TradePartyIdentification8(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TradePartyIdentification8(base_types._BaseFieldType):
 
 	@FndId.setter
 	def FndId(self, value):
-		self._FndId = value if type(value) != base_types.auto else self.make_default("FndId")
+		self._FndId = value if value is not None else base_types.UninitialisedField(self, 'FndId', FundIdentification5, True)
 
 	@FndId.deleter
 	def FndId(self):
 		del self._FndId
-		self._FndId = None
+		self._FndId = base_types.UninitialisedField(self, 'FndId', FundIdentification5, True)
 
 	@property
 	def SubmitgPty(self):
@@ -27,12 +27,12 @@ class TradePartyIdentification8(base_types._BaseFieldType):
 
 	@SubmitgPty.setter
 	def SubmitgPty(self, value):
-		self._SubmitgPty = value if type(value) != base_types.auto else self.make_default("SubmitgPty")
+		self._SubmitgPty = value if value is not None else base_types.UninitialisedField(self, 'SubmitgPty', PartyIdentification242Choice, False)
 
 	@SubmitgPty.deleter
 	def SubmitgPty(self):
 		del self._SubmitgPty
-		self._SubmitgPty = None
+		self._SubmitgPty = base_types.UninitialisedField(self, 'SubmitgPty', PartyIdentification242Choice, False)
 
 	@property
 	def TradPty(self):
@@ -40,12 +40,12 @@ class TradePartyIdentification8(base_types._BaseFieldType):
 
 	@TradPty.setter
 	def TradPty(self, value):
-		self._TradPty = value if type(value) != base_types.auto else self.make_default("TradPty")
+		self._TradPty = value if value is not None else base_types.UninitialisedField(self, 'TradPty', PartyIdentification242Choice, False)
 
 	@TradPty.deleter
 	def TradPty(self):
 		del self._TradPty
-		self._TradPty = None
+		self._TradPty = base_types.UninitialisedField(self, 'TradPty', PartyIdentification242Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FndId', type=FundIdentification5, min=0, max=None, mutex_group=None, array=True),

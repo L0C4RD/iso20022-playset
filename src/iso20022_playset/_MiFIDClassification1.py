@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max350Text import Max350Text
-from ._OrderOriginatorEligibility1Code import OrderOriginatorEligibility1Code
+from . import Max350Text
+from . import OrderOriginatorEligibility1Code
 
 class MiFIDClassification1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class MiFIDClassification1(base_types._BaseFieldType):
 
 	@Clssfctn.setter
 	def Clssfctn(self, value):
-		self._Clssfctn = value if type(value) != base_types.auto else self.make_default("Clssfctn")
+		self._Clssfctn = value if value is not None else base_types.UninitialisedField(self, 'Clssfctn', OrderOriginatorEligibility1Code, False)
 
 	@Clssfctn.deleter
 	def Clssfctn(self):
 		del self._Clssfctn
-		self._Clssfctn = None
+		self._Clssfctn = base_types.UninitialisedField(self, 'Clssfctn', OrderOriginatorEligibility1Code, False)
 
 	@property
 	def Nrrtv(self):
@@ -27,12 +27,12 @@ class MiFIDClassification1(base_types._BaseFieldType):
 
 	@Nrrtv.setter
 	def Nrrtv(self, value):
-		self._Nrrtv = value if type(value) != base_types.auto else self.make_default("Nrrtv")
+		self._Nrrtv = value if value is not None else base_types.UninitialisedField(self, 'Nrrtv', Max350Text, False)
 
 	@Nrrtv.deleter
 	def Nrrtv(self):
 		del self._Nrrtv
-		self._Nrrtv = None
+		self._Nrrtv = base_types.UninitialisedField(self, 'Nrrtv', Max350Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Clssfctn', type=OrderOriginatorEligibility1Code, min=1, max=1, mutex_group=None, array=False),

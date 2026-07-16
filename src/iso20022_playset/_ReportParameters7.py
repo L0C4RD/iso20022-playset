@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._EventFrequency6Code import EventFrequency6Code
-from ._Exact5NumericText import Exact5NumericText
-from ._Max35Text import Max35Text
-from ._StatementUpdateType1Code import StatementUpdateType1Code
-from ._YesNoIndicator import YesNoIndicator
+from . import DateAndDateTime2Choice
+from . import EventFrequency6Code
+from . import Exact5NumericText
+from . import Max35Text
+from . import StatementUpdateType1Code
+from . import YesNoIndicator
 
 class ReportParameters7(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class ReportParameters7(base_types._BaseFieldType):
 
 	@ActvtyInd.setter
 	def ActvtyInd(self, value):
-		self._ActvtyInd = value if type(value) != base_types.auto else self.make_default("ActvtyInd")
+		self._ActvtyInd = value if value is not None else base_types.UninitialisedField(self, 'ActvtyInd', YesNoIndicator, False)
 
 	@ActvtyInd.deleter
 	def ActvtyInd(self):
 		del self._ActvtyInd
-		self._ActvtyInd = None
+		self._ActvtyInd = base_types.UninitialisedField(self, 'ActvtyInd', YesNoIndicator, False)
 
 	@property
 	def Frqcy(self):
@@ -31,12 +31,12 @@ class ReportParameters7(base_types._BaseFieldType):
 
 	@Frqcy.setter
 	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
+		self._Frqcy = value if value is not None else base_types.UninitialisedField(self, 'Frqcy', EventFrequency6Code, False)
 
 	@Frqcy.deleter
 	def Frqcy(self):
 		del self._Frqcy
-		self._Frqcy = None
+		self._Frqcy = base_types.UninitialisedField(self, 'Frqcy', EventFrequency6Code, False)
 
 	@property
 	def NetPosId(self):
@@ -44,12 +44,12 @@ class ReportParameters7(base_types._BaseFieldType):
 
 	@NetPosId.setter
 	def NetPosId(self, value):
-		self._NetPosId = value if type(value) != base_types.auto else self.make_default("NetPosId")
+		self._NetPosId = value if value is not None else base_types.UninitialisedField(self, 'NetPosId', Max35Text, False)
 
 	@NetPosId.deleter
 	def NetPosId(self):
 		del self._NetPosId
-		self._NetPosId = None
+		self._NetPosId = base_types.UninitialisedField(self, 'NetPosId', Max35Text, False)
 
 	@property
 	def RptDtAndTm(self):
@@ -57,12 +57,12 @@ class ReportParameters7(base_types._BaseFieldType):
 
 	@RptDtAndTm.setter
 	def RptDtAndTm(self, value):
-		self._RptDtAndTm = value if type(value) != base_types.auto else self.make_default("RptDtAndTm")
+		self._RptDtAndTm = value if value is not None else base_types.UninitialisedField(self, 'RptDtAndTm', DateAndDateTime2Choice, False)
 
 	@RptDtAndTm.deleter
 	def RptDtAndTm(self):
 		del self._RptDtAndTm
-		self._RptDtAndTm = None
+		self._RptDtAndTm = base_types.UninitialisedField(self, 'RptDtAndTm', DateAndDateTime2Choice, False)
 
 	@property
 	def RptNb(self):
@@ -70,12 +70,12 @@ class ReportParameters7(base_types._BaseFieldType):
 
 	@RptNb.setter
 	def RptNb(self, value):
-		self._RptNb = value if type(value) != base_types.auto else self.make_default("RptNb")
+		self._RptNb = value if value is not None else base_types.UninitialisedField(self, 'RptNb', Exact5NumericText, False)
 
 	@RptNb.deleter
 	def RptNb(self):
 		del self._RptNb
-		self._RptNb = None
+		self._RptNb = base_types.UninitialisedField(self, 'RptNb', Exact5NumericText, False)
 
 	@property
 	def UpdTp(self):
@@ -83,12 +83,12 @@ class ReportParameters7(base_types._BaseFieldType):
 
 	@UpdTp.setter
 	def UpdTp(self, value):
-		self._UpdTp = value if type(value) != base_types.auto else self.make_default("UpdTp")
+		self._UpdTp = value if value is not None else base_types.UninitialisedField(self, 'UpdTp', StatementUpdateType1Code, False)
 
 	@UpdTp.deleter
 	def UpdTp(self):
 		del self._UpdTp
-		self._UpdTp = None
+		self._UpdTp = base_types.UninitialisedField(self, 'UpdTp', StatementUpdateType1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),

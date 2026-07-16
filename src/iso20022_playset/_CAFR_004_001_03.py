@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FraudDispositionResponseV03 import FraudDispositionResponseV03
+from . import FraudDispositionResponseV03
 
 class CAFR_004_001_03():
 
@@ -18,12 +18,12 @@ class CAFR_004_001_03():
 
 		@FrdDspstnRspn.setter
 		def FrdDspstnRspn(self, value):
-			self._FrdDspstnRspn = value if type(value) != base_types.auto else self.make_default("FrdDspstnRspn")
+			self._FrdDspstnRspn = value if value is not None else base_types.UninitialisedField(self, 'FrdDspstnRspn', FraudDispositionResponseV03, False)
 
 		@FrdDspstnRspn.deleter
 		def FrdDspstnRspn(self):
 			del self._FrdDspstnRspn
-			self._FrdDspstnRspn = None
+			self._FrdDspstnRspn = base_types.UninitialisedField(self, 'FrdDspstnRspn', FraudDispositionResponseV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='FrdDspstnRspn', type=FraudDispositionResponseV03, min=1, max=1, mutex_group=None, array=False),

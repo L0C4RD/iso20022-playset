@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GroupHeader122 import GroupHeader122
-from ._RemittanceInformation27 import RemittanceInformation27
-from ._SupplementaryData1 import SupplementaryData1
+from . import GroupHeader122
+from . import RemittanceInformation27
+from . import SupplementaryData1
 
 class RemittanceAdviceV07(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class RemittanceAdviceV07(base_types._BaseFieldType):
 
 	@GrpHdr.setter
 	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
+		self._GrpHdr = value if value is not None else base_types.UninitialisedField(self, 'GrpHdr', GroupHeader122, False)
 
 	@GrpHdr.deleter
 	def GrpHdr(self):
 		del self._GrpHdr
-		self._GrpHdr = None
+		self._GrpHdr = base_types.UninitialisedField(self, 'GrpHdr', GroupHeader122, False)
 
 	@property
 	def RmtInf(self):
@@ -28,12 +28,12 @@ class RemittanceAdviceV07(base_types._BaseFieldType):
 
 	@RmtInf.setter
 	def RmtInf(self, value):
-		self._RmtInf = value if type(value) != base_types.auto else self.make_default("RmtInf")
+		self._RmtInf = value if value is not None else base_types.UninitialisedField(self, 'RmtInf', RemittanceInformation27, True)
 
 	@RmtInf.deleter
 	def RmtInf(self):
 		del self._RmtInf
-		self._RmtInf = None
+		self._RmtInf = base_types.UninitialisedField(self, 'RmtInf', RemittanceInformation27, True)
 
 	@property
 	def SplmtryData(self):
@@ -41,12 +41,12 @@ class RemittanceAdviceV07(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='GrpHdr', type=GroupHeader122, min=1, max=1, mutex_group=None, array=False),

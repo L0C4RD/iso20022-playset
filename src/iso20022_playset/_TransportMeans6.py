@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MultimodalTransport3 import MultimodalTransport3
-from ._SingleTransport8 import SingleTransport8
+from . import MultimodalTransport3
+from . import SingleTransport8
 
 class TransportMeans6(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TransportMeans6(base_types._BaseFieldType):
 
 	@IndvTrnsprt.setter
 	def IndvTrnsprt(self, value):
-		self._IndvTrnsprt = value if type(value) != base_types.auto else self.make_default("IndvTrnsprt")
+		self._IndvTrnsprt = value if value is not None else base_types.UninitialisedField(self, 'IndvTrnsprt', SingleTransport8, False)
 
 	@IndvTrnsprt.deleter
 	def IndvTrnsprt(self):
 		del self._IndvTrnsprt
-		self._IndvTrnsprt = None
+		self._IndvTrnsprt = base_types.UninitialisedField(self, 'IndvTrnsprt', SingleTransport8, False)
 
 	@property
 	def MltmdlTrnsprt(self):
@@ -27,12 +27,12 @@ class TransportMeans6(base_types._BaseFieldType):
 
 	@MltmdlTrnsprt.setter
 	def MltmdlTrnsprt(self, value):
-		self._MltmdlTrnsprt = value if type(value) != base_types.auto else self.make_default("MltmdlTrnsprt")
+		self._MltmdlTrnsprt = value if value is not None else base_types.UninitialisedField(self, 'MltmdlTrnsprt', MultimodalTransport3, False)
 
 	@MltmdlTrnsprt.deleter
 	def MltmdlTrnsprt(self):
 		del self._MltmdlTrnsprt
-		self._MltmdlTrnsprt = None
+		self._MltmdlTrnsprt = base_types.UninitialisedField(self, 'MltmdlTrnsprt', MultimodalTransport3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IndvTrnsprt', type=SingleTransport8, min=1, max=1, mutex_group=None, array=False),

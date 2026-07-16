@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CertificateIssuer1 import CertificateIssuer1
-from ._Number import Number
-from ._PublicRSAKey2 import PublicRSAKey2
-from ._RelativeDistinguishedName2 import RelativeDistinguishedName2
+from . import CertificateIssuer1
+from . import Number
+from . import PublicRSAKey2
+from . import RelativeDistinguishedName2
 
 class CertificationRequest2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CertificationRequest2(base_types._BaseFieldType):
 
 	@Attr.setter
 	def Attr(self, value):
-		self._Attr = value if type(value) != base_types.auto else self.make_default("Attr")
+		self._Attr = value if value is not None else base_types.UninitialisedField(self, 'Attr', RelativeDistinguishedName2, True)
 
 	@Attr.deleter
 	def Attr(self):
 		del self._Attr
-		self._Attr = None
+		self._Attr = base_types.UninitialisedField(self, 'Attr', RelativeDistinguishedName2, True)
 
 	@property
 	def SbjtNm(self):
@@ -29,12 +29,12 @@ class CertificationRequest2(base_types._BaseFieldType):
 
 	@SbjtNm.setter
 	def SbjtNm(self, value):
-		self._SbjtNm = value if type(value) != base_types.auto else self.make_default("SbjtNm")
+		self._SbjtNm = value if value is not None else base_types.UninitialisedField(self, 'SbjtNm', CertificateIssuer1, False)
 
 	@SbjtNm.deleter
 	def SbjtNm(self):
 		del self._SbjtNm
-		self._SbjtNm = None
+		self._SbjtNm = base_types.UninitialisedField(self, 'SbjtNm', CertificateIssuer1, False)
 
 	@property
 	def SbjtPblcKeyInf(self):
@@ -42,12 +42,12 @@ class CertificationRequest2(base_types._BaseFieldType):
 
 	@SbjtPblcKeyInf.setter
 	def SbjtPblcKeyInf(self, value):
-		self._SbjtPblcKeyInf = value if type(value) != base_types.auto else self.make_default("SbjtPblcKeyInf")
+		self._SbjtPblcKeyInf = value if value is not None else base_types.UninitialisedField(self, 'SbjtPblcKeyInf', PublicRSAKey2, False)
 
 	@SbjtPblcKeyInf.deleter
 	def SbjtPblcKeyInf(self):
 		del self._SbjtPblcKeyInf
-		self._SbjtPblcKeyInf = None
+		self._SbjtPblcKeyInf = base_types.UninitialisedField(self, 'SbjtPblcKeyInf', PublicRSAKey2, False)
 
 	@property
 	def Vrsn(self):
@@ -55,12 +55,12 @@ class CertificationRequest2(base_types._BaseFieldType):
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+		self._Vrsn = value if value is not None else base_types.UninitialisedField(self, 'Vrsn', Number, False)
 
 	@Vrsn.deleter
 	def Vrsn(self):
 		del self._Vrsn
-		self._Vrsn = None
+		self._Vrsn = base_types.UninitialisedField(self, 'Vrsn', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Attr', type=RelativeDistinguishedName2, min=1, max=None, mutex_group=None, array=True),

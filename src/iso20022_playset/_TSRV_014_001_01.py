@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ExtendOrPayRequestV01 import ExtendOrPayRequestV01
+from . import ExtendOrPayRequestV01
 
 class TSRV_014_001_01():
 
@@ -18,12 +18,12 @@ class TSRV_014_001_01():
 
 		@XtndOrPayReq.setter
 		def XtndOrPayReq(self, value):
-			self._XtndOrPayReq = value if type(value) != base_types.auto else self.make_default("XtndOrPayReq")
+			self._XtndOrPayReq = value if value is not None else base_types.UninitialisedField(self, 'XtndOrPayReq', ExtendOrPayRequestV01, False)
 
 		@XtndOrPayReq.deleter
 		def XtndOrPayReq(self):
 			del self._XtndOrPayReq
-			self._XtndOrPayReq = None
+			self._XtndOrPayReq = base_types.UninitialisedField(self, 'XtndOrPayReq', ExtendOrPayRequestV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='XtndOrPayReq', type=ExtendOrPayRequestV01, min=1, max=1, mutex_group=None, array=False),

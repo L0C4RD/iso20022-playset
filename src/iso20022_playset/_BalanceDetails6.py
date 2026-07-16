@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection31 import AmountAndDirection31
-from ._BalanceType7Choice import BalanceType7Choice
-from ._FinancialAssetTypeCategory1Code import FinancialAssetTypeCategory1Code
-from ._Unrealised1Code import Unrealised1Code
+from . import AmountAndDirection31
+from . import BalanceType7Choice
+from . import FinancialAssetTypeCategory1Code
+from . import Unrealised1Code
 
 class BalanceDetails6(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class BalanceDetails6(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', AmountAndDirection31, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', AmountAndDirection31, False)
 
 	@property
 	def Ctgy(self):
@@ -29,12 +29,12 @@ class BalanceDetails6(base_types._BaseFieldType):
 
 	@Ctgy.setter
 	def Ctgy(self, value):
-		self._Ctgy = value if type(value) != base_types.auto else self.make_default("Ctgy")
+		self._Ctgy = value if value is not None else base_types.UninitialisedField(self, 'Ctgy', FinancialAssetTypeCategory1Code, False)
 
 	@Ctgy.deleter
 	def Ctgy(self):
 		del self._Ctgy
-		self._Ctgy = None
+		self._Ctgy = base_types.UninitialisedField(self, 'Ctgy', FinancialAssetTypeCategory1Code, False)
 
 	@property
 	def Tp(self):
@@ -42,12 +42,12 @@ class BalanceDetails6(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', BalanceType7Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', BalanceType7Choice, False)
 
 	@property
 	def Urlsd(self):
@@ -55,12 +55,12 @@ class BalanceDetails6(base_types._BaseFieldType):
 
 	@Urlsd.setter
 	def Urlsd(self, value):
-		self._Urlsd = value if type(value) != base_types.auto else self.make_default("Urlsd")
+		self._Urlsd = value if value is not None else base_types.UninitialisedField(self, 'Urlsd', Unrealised1Code, False)
 
 	@Urlsd.deleter
 	def Urlsd(self):
 		del self._Urlsd
-		self._Urlsd = None
+		self._Urlsd = base_types.UninitialisedField(self, 'Urlsd', Unrealised1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=AmountAndDirection31, min=1, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._StandingSettlementInstructionStatusAdviceV01 import StandingSettlementInstructionStatusAdviceV01
+from . import StandingSettlementInstructionStatusAdviceV01
 
 class REDA_058_001_01():
 
@@ -18,12 +18,12 @@ class REDA_058_001_01():
 
 		@StgSttlmInstrStsAdvc.setter
 		def StgSttlmInstrStsAdvc(self, value):
-			self._StgSttlmInstrStsAdvc = value if type(value) != base_types.auto else self.make_default("StgSttlmInstrStsAdvc")
+			self._StgSttlmInstrStsAdvc = value if value is not None else base_types.UninitialisedField(self, 'StgSttlmInstrStsAdvc', StandingSettlementInstructionStatusAdviceV01, False)
 
 		@StgSttlmInstrStsAdvc.deleter
 		def StgSttlmInstrStsAdvc(self):
 			del self._StgSttlmInstrStsAdvc
-			self._StgSttlmInstrStsAdvc = None
+			self._StgSttlmInstrStsAdvc = base_types.UninitialisedField(self, 'StgSttlmInstrStsAdvc', StandingSettlementInstructionStatusAdviceV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='StgSttlmInstrStsAdvc', type=StandingSettlementInstructionStatusAdviceV01, min=1, max=1, mutex_group=None, array=False),

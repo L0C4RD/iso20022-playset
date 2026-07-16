@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Number import Number
-from ._OnLinePIN11 import OnLinePIN11
-from ._PINRequestType1Code import PINRequestType1Code
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import Max35Text
+from . import Number
+from . import OnLinePIN11
+from . import PINRequestType1Code
+from . import TrueFalseIndicator
 
 class DeviceSecureInputRequest6(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class DeviceSecureInputRequest6(base_types._BaseFieldType):
 
 	@BeepKeyFlg.setter
 	def BeepKeyFlg(self, value):
-		self._BeepKeyFlg = value if type(value) != base_types.auto else self.make_default("BeepKeyFlg")
+		self._BeepKeyFlg = value if value is not None else base_types.UninitialisedField(self, 'BeepKeyFlg', TrueFalseIndicator, False)
 
 	@BeepKeyFlg.deleter
 	def BeepKeyFlg(self):
 		del self._BeepKeyFlg
-		self._BeepKeyFlg = None
+		self._BeepKeyFlg = base_types.UninitialisedField(self, 'BeepKeyFlg', TrueFalseIndicator, False)
 
 	@property
 	def CrdhldrPIN(self):
@@ -30,12 +30,12 @@ class DeviceSecureInputRequest6(base_types._BaseFieldType):
 
 	@CrdhldrPIN.setter
 	def CrdhldrPIN(self, value):
-		self._CrdhldrPIN = value if type(value) != base_types.auto else self.make_default("CrdhldrPIN")
+		self._CrdhldrPIN = value if value is not None else base_types.UninitialisedField(self, 'CrdhldrPIN', OnLinePIN11, False)
 
 	@CrdhldrPIN.deleter
 	def CrdhldrPIN(self):
 		del self._CrdhldrPIN
-		self._CrdhldrPIN = None
+		self._CrdhldrPIN = base_types.UninitialisedField(self, 'CrdhldrPIN', OnLinePIN11, False)
 
 	@property
 	def MaxWtgTm(self):
@@ -43,12 +43,12 @@ class DeviceSecureInputRequest6(base_types._BaseFieldType):
 
 	@MaxWtgTm.setter
 	def MaxWtgTm(self, value):
-		self._MaxWtgTm = value if type(value) != base_types.auto else self.make_default("MaxWtgTm")
+		self._MaxWtgTm = value if value is not None else base_types.UninitialisedField(self, 'MaxWtgTm', Number, False)
 
 	@MaxWtgTm.deleter
 	def MaxWtgTm(self):
 		del self._MaxWtgTm
-		self._MaxWtgTm = None
+		self._MaxWtgTm = base_types.UninitialisedField(self, 'MaxWtgTm', Number, False)
 
 	@property
 	def PINReqTp(self):
@@ -56,12 +56,12 @@ class DeviceSecureInputRequest6(base_types._BaseFieldType):
 
 	@PINReqTp.setter
 	def PINReqTp(self, value):
-		self._PINReqTp = value if type(value) != base_types.auto else self.make_default("PINReqTp")
+		self._PINReqTp = value if value is not None else base_types.UninitialisedField(self, 'PINReqTp', PINRequestType1Code, False)
 
 	@PINReqTp.deleter
 	def PINReqTp(self):
 		del self._PINReqTp
-		self._PINReqTp = None
+		self._PINReqTp = base_types.UninitialisedField(self, 'PINReqTp', PINRequestType1Code, False)
 
 	@property
 	def PINVrfctnMtd(self):
@@ -69,12 +69,12 @@ class DeviceSecureInputRequest6(base_types._BaseFieldType):
 
 	@PINVrfctnMtd.setter
 	def PINVrfctnMtd(self, value):
-		self._PINVrfctnMtd = value if type(value) != base_types.auto else self.make_default("PINVrfctnMtd")
+		self._PINVrfctnMtd = value if value is not None else base_types.UninitialisedField(self, 'PINVrfctnMtd', Max35Text, False)
 
 	@PINVrfctnMtd.deleter
 	def PINVrfctnMtd(self):
 		del self._PINVrfctnMtd
-		self._PINVrfctnMtd = None
+		self._PINVrfctnMtd = base_types.UninitialisedField(self, 'PINVrfctnMtd', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BeepKeyFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),

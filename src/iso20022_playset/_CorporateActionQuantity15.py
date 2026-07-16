@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentQuantity34Choice import FinancialInstrumentQuantity34Choice
-from ._FinancialInstrumentQuantity35Choice import FinancialInstrumentQuantity35Choice
+from . import FinancialInstrumentQuantity34Choice
+from . import FinancialInstrumentQuantity35Choice
 
 class CorporateActionQuantity15(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CorporateActionQuantity15(base_types._BaseFieldType):
 
 	@BaseDnmtn.setter
 	def BaseDnmtn(self, value):
-		self._BaseDnmtn = value if type(value) != base_types.auto else self.make_default("BaseDnmtn")
+		self._BaseDnmtn = value if value is not None else base_types.UninitialisedField(self, 'BaseDnmtn', FinancialInstrumentQuantity35Choice, False)
 
 	@BaseDnmtn.deleter
 	def BaseDnmtn(self):
 		del self._BaseDnmtn
-		self._BaseDnmtn = None
+		self._BaseDnmtn = base_types.UninitialisedField(self, 'BaseDnmtn', FinancialInstrumentQuantity35Choice, False)
 
 	@property
 	def IncrmtlDnmtn(self):
@@ -27,12 +27,12 @@ class CorporateActionQuantity15(base_types._BaseFieldType):
 
 	@IncrmtlDnmtn.setter
 	def IncrmtlDnmtn(self, value):
-		self._IncrmtlDnmtn = value if type(value) != base_types.auto else self.make_default("IncrmtlDnmtn")
+		self._IncrmtlDnmtn = value if value is not None else base_types.UninitialisedField(self, 'IncrmtlDnmtn', FinancialInstrumentQuantity35Choice, False)
 
 	@IncrmtlDnmtn.deleter
 	def IncrmtlDnmtn(self):
 		del self._IncrmtlDnmtn
-		self._IncrmtlDnmtn = None
+		self._IncrmtlDnmtn = base_types.UninitialisedField(self, 'IncrmtlDnmtn', FinancialInstrumentQuantity35Choice, False)
 
 	@property
 	def MaxQty(self):
@@ -40,12 +40,12 @@ class CorporateActionQuantity15(base_types._BaseFieldType):
 
 	@MaxQty.setter
 	def MaxQty(self, value):
-		self._MaxQty = value if type(value) != base_types.auto else self.make_default("MaxQty")
+		self._MaxQty = value if value is not None else base_types.UninitialisedField(self, 'MaxQty', FinancialInstrumentQuantity34Choice, False)
 
 	@MaxQty.deleter
 	def MaxQty(self):
 		del self._MaxQty
-		self._MaxQty = None
+		self._MaxQty = base_types.UninitialisedField(self, 'MaxQty', FinancialInstrumentQuantity34Choice, False)
 
 	@property
 	def MinQtySght(self):
@@ -53,12 +53,12 @@ class CorporateActionQuantity15(base_types._BaseFieldType):
 
 	@MinQtySght.setter
 	def MinQtySght(self, value):
-		self._MinQtySght = value if type(value) != base_types.auto else self.make_default("MinQtySght")
+		self._MinQtySght = value if value is not None else base_types.UninitialisedField(self, 'MinQtySght', FinancialInstrumentQuantity34Choice, False)
 
 	@MinQtySght.deleter
 	def MinQtySght(self):
 		del self._MinQtySght
-		self._MinQtySght = None
+		self._MinQtySght = base_types.UninitialisedField(self, 'MinQtySght', FinancialInstrumentQuantity34Choice, False)
 
 	@property
 	def NewBrdLotQty(self):
@@ -66,12 +66,12 @@ class CorporateActionQuantity15(base_types._BaseFieldType):
 
 	@NewBrdLotQty.setter
 	def NewBrdLotQty(self, value):
-		self._NewBrdLotQty = value if type(value) != base_types.auto else self.make_default("NewBrdLotQty")
+		self._NewBrdLotQty = value if value is not None else base_types.UninitialisedField(self, 'NewBrdLotQty', FinancialInstrumentQuantity35Choice, False)
 
 	@NewBrdLotQty.deleter
 	def NewBrdLotQty(self):
 		del self._NewBrdLotQty
-		self._NewBrdLotQty = None
+		self._NewBrdLotQty = base_types.UninitialisedField(self, 'NewBrdLotQty', FinancialInstrumentQuantity35Choice, False)
 
 	@property
 	def NewDnmtnQty(self):
@@ -79,12 +79,12 @@ class CorporateActionQuantity15(base_types._BaseFieldType):
 
 	@NewDnmtnQty.setter
 	def NewDnmtnQty(self, value):
-		self._NewDnmtnQty = value if type(value) != base_types.auto else self.make_default("NewDnmtnQty")
+		self._NewDnmtnQty = value if value is not None else base_types.UninitialisedField(self, 'NewDnmtnQty', FinancialInstrumentQuantity35Choice, False)
 
 	@NewDnmtnQty.deleter
 	def NewDnmtnQty(self):
 		del self._NewDnmtnQty
-		self._NewDnmtnQty = None
+		self._NewDnmtnQty = base_types.UninitialisedField(self, 'NewDnmtnQty', FinancialInstrumentQuantity35Choice, False)
 
 	@property
 	def NewOutsdngQty(self):
@@ -92,12 +92,12 @@ class CorporateActionQuantity15(base_types._BaseFieldType):
 
 	@NewOutsdngQty.setter
 	def NewOutsdngQty(self, value):
-		self._NewOutsdngQty = value if type(value) != base_types.auto else self.make_default("NewOutsdngQty")
+		self._NewOutsdngQty = value if value is not None else base_types.UninitialisedField(self, 'NewOutsdngQty', FinancialInstrumentQuantity35Choice, False)
 
 	@NewOutsdngQty.deleter
 	def NewOutsdngQty(self):
 		del self._NewOutsdngQty
-		self._NewOutsdngQty = None
+		self._NewOutsdngQty = base_types.UninitialisedField(self, 'NewOutsdngQty', FinancialInstrumentQuantity35Choice, False)
 
 	@property
 	def SctyClldQty(self):
@@ -105,12 +105,12 @@ class CorporateActionQuantity15(base_types._BaseFieldType):
 
 	@SctyClldQty.setter
 	def SctyClldQty(self, value):
-		self._SctyClldQty = value if type(value) != base_types.auto else self.make_default("SctyClldQty")
+		self._SctyClldQty = value if value is not None else base_types.UninitialisedField(self, 'SctyClldQty', FinancialInstrumentQuantity35Choice, False)
 
 	@SctyClldQty.deleter
 	def SctyClldQty(self):
 		del self._SctyClldQty
-		self._SctyClldQty = None
+		self._SctyClldQty = base_types.UninitialisedField(self, 'SctyClldQty', FinancialInstrumentQuantity35Choice, False)
 
 	@property
 	def TtlOutsdngQty(self):
@@ -118,12 +118,12 @@ class CorporateActionQuantity15(base_types._BaseFieldType):
 
 	@TtlOutsdngQty.setter
 	def TtlOutsdngQty(self, value):
-		self._TtlOutsdngQty = value if type(value) != base_types.auto else self.make_default("TtlOutsdngQty")
+		self._TtlOutsdngQty = value if value is not None else base_types.UninitialisedField(self, 'TtlOutsdngQty', FinancialInstrumentQuantity35Choice, False)
 
 	@TtlOutsdngQty.deleter
 	def TtlOutsdngQty(self):
 		del self._TtlOutsdngQty
-		self._TtlOutsdngQty = None
+		self._TtlOutsdngQty = base_types.UninitialisedField(self, 'TtlOutsdngQty', FinancialInstrumentQuantity35Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BaseDnmtn', type=FinancialInstrumentQuantity35Choice, min=0, max=1, mutex_group=None, array=False),

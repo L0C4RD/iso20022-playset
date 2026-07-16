@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DemandRefusal1 import DemandRefusal1
-from ._PartyAndSignature2 import PartyAndSignature2
+from . import DemandRefusal1
+from . import PartyAndSignature2
 
 class DemandRefusalNotificationV01(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DemandRefusalNotificationV01(base_types._BaseFieldType):
 
 	@DgtlSgntr.setter
 	def DgtlSgntr(self, value):
-		self._DgtlSgntr = value if type(value) != base_types.auto else self.make_default("DgtlSgntr")
+		self._DgtlSgntr = value if value is not None else base_types.UninitialisedField(self, 'DgtlSgntr', PartyAndSignature2, False)
 
 	@DgtlSgntr.deleter
 	def DgtlSgntr(self):
 		del self._DgtlSgntr
-		self._DgtlSgntr = None
+		self._DgtlSgntr = base_types.UninitialisedField(self, 'DgtlSgntr', PartyAndSignature2, False)
 
 	@property
 	def DmndRfslNtfctnDtls(self):
@@ -27,12 +27,12 @@ class DemandRefusalNotificationV01(base_types._BaseFieldType):
 
 	@DmndRfslNtfctnDtls.setter
 	def DmndRfslNtfctnDtls(self, value):
-		self._DmndRfslNtfctnDtls = value if type(value) != base_types.auto else self.make_default("DmndRfslNtfctnDtls")
+		self._DmndRfslNtfctnDtls = value if value is not None else base_types.UninitialisedField(self, 'DmndRfslNtfctnDtls', DemandRefusal1, True)
 
 	@DmndRfslNtfctnDtls.deleter
 	def DmndRfslNtfctnDtls(self):
 		del self._DmndRfslNtfctnDtls
-		self._DmndRfslNtfctnDtls = None
+		self._DmndRfslNtfctnDtls = base_types.UninitialisedField(self, 'DmndRfslNtfctnDtls', DemandRefusal1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature2, min=0, max=1, mutex_group=None, array=False),

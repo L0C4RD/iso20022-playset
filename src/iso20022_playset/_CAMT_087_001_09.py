@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RequestToModifyPaymentV09 import RequestToModifyPaymentV09
+from . import RequestToModifyPaymentV09
 
 class CAMT_087_001_09():
 
@@ -18,12 +18,12 @@ class CAMT_087_001_09():
 
 		@ReqToModfyPmt.setter
 		def ReqToModfyPmt(self, value):
-			self._ReqToModfyPmt = value if type(value) != base_types.auto else self.make_default("ReqToModfyPmt")
+			self._ReqToModfyPmt = value if value is not None else base_types.UninitialisedField(self, 'ReqToModfyPmt', RequestToModifyPaymentV09, False)
 
 		@ReqToModfyPmt.deleter
 		def ReqToModfyPmt(self):
 			del self._ReqToModfyPmt
-			self._ReqToModfyPmt = None
+			self._ReqToModfyPmt = base_types.UninitialisedField(self, 'ReqToModfyPmt', RequestToModifyPaymentV09, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ReqToModfyPmt', type=RequestToModifyPaymentV09, min=1, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ISODate import ISODate
-from ._Max70Text import Max70Text
+from . import ActiveCurrencyAndAmount
+from . import ISODate
+from . import Max70Text
 
 class Instalment1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Instalment1(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def PmtDueDt(self):
@@ -28,12 +28,12 @@ class Instalment1(base_types._BaseFieldType):
 
 	@PmtDueDt.setter
 	def PmtDueDt(self, value):
-		self._PmtDueDt = value if type(value) != base_types.auto else self.make_default("PmtDueDt")
+		self._PmtDueDt = value if value is not None else base_types.UninitialisedField(self, 'PmtDueDt', ISODate, False)
 
 	@PmtDueDt.deleter
 	def PmtDueDt(self):
 		del self._PmtDueDt
-		self._PmtDueDt = None
+		self._PmtDueDt = base_types.UninitialisedField(self, 'PmtDueDt', ISODate, False)
 
 	@property
 	def SeqId(self):
@@ -41,12 +41,12 @@ class Instalment1(base_types._BaseFieldType):
 
 	@SeqId.setter
 	def SeqId(self, value):
-		self._SeqId = value if type(value) != base_types.auto else self.make_default("SeqId")
+		self._SeqId = value if value is not None else base_types.UninitialisedField(self, 'SeqId', Max70Text, False)
 
 	@SeqId.deleter
 	def SeqId(self):
 		del self._SeqId
-		self._SeqId = None
+		self._SeqId = base_types.UninitialisedField(self, 'SeqId', Max70Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

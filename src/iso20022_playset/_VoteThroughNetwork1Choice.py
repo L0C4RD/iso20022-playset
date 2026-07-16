@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
-from ._VoteChannel1Code import VoteChannel1Code
+from . import AnyBICDec2014Identifier
+from . import VoteChannel1Code
 
 class VoteThroughNetwork1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class VoteThroughNetwork1Choice(base_types._BaseFieldType):
 
 	@VoteChanl.setter
 	def VoteChanl(self, value):
-		self._VoteChanl = value if type(value) != base_types.auto else self.make_default("VoteChanl")
+		self._VoteChanl = value if value is not None else base_types.UninitialisedField(self, 'VoteChanl', VoteChannel1Code, False)
 
 	@VoteChanl.deleter
 	def VoteChanl(self):
 		del self._VoteChanl
-		self._VoteChanl = None
+		self._VoteChanl = base_types.UninitialisedField(self, 'VoteChanl', VoteChannel1Code, False)
 
 	@property
 	def VoteDrctlyToIssr(self):
@@ -27,12 +27,12 @@ class VoteThroughNetwork1Choice(base_types._BaseFieldType):
 
 	@VoteDrctlyToIssr.setter
 	def VoteDrctlyToIssr(self, value):
-		self._VoteDrctlyToIssr = value if type(value) != base_types.auto else self.make_default("VoteDrctlyToIssr")
+		self._VoteDrctlyToIssr = value if value is not None else base_types.UninitialisedField(self, 'VoteDrctlyToIssr', AnyBICDec2014Identifier, True)
 
 	@VoteDrctlyToIssr.deleter
 	def VoteDrctlyToIssr(self):
 		del self._VoteDrctlyToIssr
-		self._VoteDrctlyToIssr = None
+		self._VoteDrctlyToIssr = base_types.UninitialisedField(self, 'VoteDrctlyToIssr', AnyBICDec2014Identifier, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='VoteChanl', type=VoteChannel1Code, min=0, max=1, mutex_group=1, array=False),

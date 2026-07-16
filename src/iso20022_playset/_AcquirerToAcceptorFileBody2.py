@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcceptorCancellationAdviceResponse13 import AcceptorCancellationAdviceResponse13
-from ._AcceptorCompletionAdviceResponse13 import AcceptorCompletionAdviceResponse13
-from ._CardPaymentBatchTransferResponse12 import CardPaymentBatchTransferResponse12
+from . import AcceptorCancellationAdviceResponse13
+from . import AcceptorCompletionAdviceResponse13
+from . import CardPaymentBatchTransferResponse12
 
 class AcquirerToAcceptorFileBody2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AcquirerToAcceptorFileBody2(base_types._BaseFieldType):
 
 	@BtchTrfRspn.setter
 	def BtchTrfRspn(self, value):
-		self._BtchTrfRspn = value if type(value) != base_types.auto else self.make_default("BtchTrfRspn")
+		self._BtchTrfRspn = value if value is not None else base_types.UninitialisedField(self, 'BtchTrfRspn', CardPaymentBatchTransferResponse12, False)
 
 	@BtchTrfRspn.deleter
 	def BtchTrfRspn(self):
 		del self._BtchTrfRspn
-		self._BtchTrfRspn = None
+		self._BtchTrfRspn = base_types.UninitialisedField(self, 'BtchTrfRspn', CardPaymentBatchTransferResponse12, False)
 
 	@property
 	def CmpltnAdvcRspn(self):
@@ -28,12 +28,12 @@ class AcquirerToAcceptorFileBody2(base_types._BaseFieldType):
 
 	@CmpltnAdvcRspn.setter
 	def CmpltnAdvcRspn(self, value):
-		self._CmpltnAdvcRspn = value if type(value) != base_types.auto else self.make_default("CmpltnAdvcRspn")
+		self._CmpltnAdvcRspn = value if value is not None else base_types.UninitialisedField(self, 'CmpltnAdvcRspn', AcceptorCompletionAdviceResponse13, False)
 
 	@CmpltnAdvcRspn.deleter
 	def CmpltnAdvcRspn(self):
 		del self._CmpltnAdvcRspn
-		self._CmpltnAdvcRspn = None
+		self._CmpltnAdvcRspn = base_types.UninitialisedField(self, 'CmpltnAdvcRspn', AcceptorCompletionAdviceResponse13, False)
 
 	@property
 	def CxlRspn(self):
@@ -41,12 +41,12 @@ class AcquirerToAcceptorFileBody2(base_types._BaseFieldType):
 
 	@CxlRspn.setter
 	def CxlRspn(self, value):
-		self._CxlRspn = value if type(value) != base_types.auto else self.make_default("CxlRspn")
+		self._CxlRspn = value if value is not None else base_types.UninitialisedField(self, 'CxlRspn', AcceptorCancellationAdviceResponse13, False)
 
 	@CxlRspn.deleter
 	def CxlRspn(self):
 		del self._CxlRspn
-		self._CxlRspn = None
+		self._CxlRspn = base_types.UninitialisedField(self, 'CxlRspn', AcceptorCancellationAdviceResponse13, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BtchTrfRspn', type=CardPaymentBatchTransferResponse12, min=0, max=1, mutex_group=None, array=False),

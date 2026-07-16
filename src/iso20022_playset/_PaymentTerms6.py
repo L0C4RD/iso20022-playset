@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CurrencyAndAmount import CurrencyAndAmount
-from ._ISODate import ISODate
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
-from ._PaymentPeriod1 import PaymentPeriod1
-from ._PercentageRate import PercentageRate
+from . import CurrencyAndAmount
+from . import ISODate
+from . import Max140Text
+from . import Max35Text
+from . import PaymentPeriod1
+from . import PercentageRate
 
 class PaymentTerms6(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class PaymentTerms6(base_types._BaseFieldType):
 
 	@BsisAmt.setter
 	def BsisAmt(self, value):
-		self._BsisAmt = value if type(value) != base_types.auto else self.make_default("BsisAmt")
+		self._BsisAmt = value if value is not None else base_types.UninitialisedField(self, 'BsisAmt', CurrencyAndAmount, False)
 
 	@BsisAmt.deleter
 	def BsisAmt(self):
 		del self._BsisAmt
-		self._BsisAmt = None
+		self._BsisAmt = base_types.UninitialisedField(self, 'BsisAmt', CurrencyAndAmount, False)
 
 	@property
 	def Desc(self):
@@ -31,12 +31,12 @@ class PaymentTerms6(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', Max140Text, True)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', Max140Text, True)
 
 	@property
 	def DrctDbtMndtId(self):
@@ -44,12 +44,12 @@ class PaymentTerms6(base_types._BaseFieldType):
 
 	@DrctDbtMndtId.setter
 	def DrctDbtMndtId(self, value):
-		self._DrctDbtMndtId = value if type(value) != base_types.auto else self.make_default("DrctDbtMndtId")
+		self._DrctDbtMndtId = value if value is not None else base_types.UninitialisedField(self, 'DrctDbtMndtId', Max35Text, True)
 
 	@DrctDbtMndtId.deleter
 	def DrctDbtMndtId(self):
 		del self._DrctDbtMndtId
-		self._DrctDbtMndtId = None
+		self._DrctDbtMndtId = base_types.UninitialisedField(self, 'DrctDbtMndtId', Max35Text, True)
 
 	@property
 	def DscntAmt(self):
@@ -57,12 +57,12 @@ class PaymentTerms6(base_types._BaseFieldType):
 
 	@DscntAmt.setter
 	def DscntAmt(self, value):
-		self._DscntAmt = value if type(value) != base_types.auto else self.make_default("DscntAmt")
+		self._DscntAmt = value if value is not None else base_types.UninitialisedField(self, 'DscntAmt', CurrencyAndAmount, False)
 
 	@DscntAmt.deleter
 	def DscntAmt(self):
 		del self._DscntAmt
-		self._DscntAmt = None
+		self._DscntAmt = base_types.UninitialisedField(self, 'DscntAmt', CurrencyAndAmount, False)
 
 	@property
 	def DscntPctRate(self):
@@ -70,12 +70,12 @@ class PaymentTerms6(base_types._BaseFieldType):
 
 	@DscntPctRate.setter
 	def DscntPctRate(self, value):
-		self._DscntPctRate = value if type(value) != base_types.auto else self.make_default("DscntPctRate")
+		self._DscntPctRate = value if value is not None else base_types.UninitialisedField(self, 'DscntPctRate', PercentageRate, False)
 
 	@DscntPctRate.deleter
 	def DscntPctRate(self):
 		del self._DscntPctRate
-		self._DscntPctRate = None
+		self._DscntPctRate = base_types.UninitialisedField(self, 'DscntPctRate', PercentageRate, False)
 
 	@property
 	def DueDt(self):
@@ -83,12 +83,12 @@ class PaymentTerms6(base_types._BaseFieldType):
 
 	@DueDt.setter
 	def DueDt(self, value):
-		self._DueDt = value if type(value) != base_types.auto else self.make_default("DueDt")
+		self._DueDt = value if value is not None else base_types.UninitialisedField(self, 'DueDt', ISODate, False)
 
 	@DueDt.deleter
 	def DueDt(self):
 		del self._DueDt
-		self._DueDt = None
+		self._DueDt = base_types.UninitialisedField(self, 'DueDt', ISODate, False)
 
 	@property
 	def PmtPrd(self):
@@ -96,12 +96,12 @@ class PaymentTerms6(base_types._BaseFieldType):
 
 	@PmtPrd.setter
 	def PmtPrd(self, value):
-		self._PmtPrd = value if type(value) != base_types.auto else self.make_default("PmtPrd")
+		self._PmtPrd = value if value is not None else base_types.UninitialisedField(self, 'PmtPrd', PaymentPeriod1, False)
 
 	@PmtPrd.deleter
 	def PmtPrd(self):
 		del self._PmtPrd
-		self._PmtPrd = None
+		self._PmtPrd = base_types.UninitialisedField(self, 'PmtPrd', PaymentPeriod1, False)
 
 	@property
 	def PnltyAmt(self):
@@ -109,12 +109,12 @@ class PaymentTerms6(base_types._BaseFieldType):
 
 	@PnltyAmt.setter
 	def PnltyAmt(self, value):
-		self._PnltyAmt = value if type(value) != base_types.auto else self.make_default("PnltyAmt")
+		self._PnltyAmt = value if value is not None else base_types.UninitialisedField(self, 'PnltyAmt', CurrencyAndAmount, False)
 
 	@PnltyAmt.deleter
 	def PnltyAmt(self):
 		del self._PnltyAmt
-		self._PnltyAmt = None
+		self._PnltyAmt = base_types.UninitialisedField(self, 'PnltyAmt', CurrencyAndAmount, False)
 
 	@property
 	def PnltyPctRate(self):
@@ -122,12 +122,12 @@ class PaymentTerms6(base_types._BaseFieldType):
 
 	@PnltyPctRate.setter
 	def PnltyPctRate(self, value):
-		self._PnltyPctRate = value if type(value) != base_types.auto else self.make_default("PnltyPctRate")
+		self._PnltyPctRate = value if value is not None else base_types.UninitialisedField(self, 'PnltyPctRate', PercentageRate, False)
 
 	@PnltyPctRate.deleter
 	def PnltyPctRate(self):
 		del self._PnltyPctRate
-		self._PnltyPctRate = None
+		self._PnltyPctRate = base_types.UninitialisedField(self, 'PnltyPctRate', PercentageRate, False)
 
 	@property
 	def PrtlPmtPct(self):
@@ -135,12 +135,12 @@ class PaymentTerms6(base_types._BaseFieldType):
 
 	@PrtlPmtPct.setter
 	def PrtlPmtPct(self, value):
-		self._PrtlPmtPct = value if type(value) != base_types.auto else self.make_default("PrtlPmtPct")
+		self._PrtlPmtPct = value if value is not None else base_types.UninitialisedField(self, 'PrtlPmtPct', PercentageRate, False)
 
 	@PrtlPmtPct.deleter
 	def PrtlPmtPct(self):
 		del self._PrtlPmtPct
-		self._PrtlPmtPct = None
+		self._PrtlPmtPct = base_types.UninitialisedField(self, 'PrtlPmtPct', PercentageRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BsisAmt', type=CurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

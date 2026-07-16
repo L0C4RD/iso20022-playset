@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AddendumResponseV04 import AddendumResponseV04
+from . import AddendumResponseV04
 
 class CAIN_026_001_04():
 
@@ -18,12 +18,12 @@ class CAIN_026_001_04():
 
 		@AdddmRspn.setter
 		def AdddmRspn(self, value):
-			self._AdddmRspn = value if type(value) != base_types.auto else self.make_default("AdddmRspn")
+			self._AdddmRspn = value if value is not None else base_types.UninitialisedField(self, 'AdddmRspn', AddendumResponseV04, False)
 
 		@AdddmRspn.deleter
 		def AdddmRspn(self):
 			del self._AdddmRspn
-			self._AdddmRspn = None
+			self._AdddmRspn = base_types.UninitialisedField(self, 'AdddmRspn', AddendumResponseV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AdddmRspn', type=AddendumResponseV04, min=1, max=1, mutex_group=None, array=False),

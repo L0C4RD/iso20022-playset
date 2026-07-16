@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalData1 import AdditionalData1
-from ._CardDataReading9Code import CardDataReading9Code
-from ._Frequency12Code import Frequency12Code
-from ._ISOMax3ACountryCode import ISOMax3ACountryCode
-from ._Max10PositiveNumber import Max10PositiveNumber
-from ._Max35Text import Max35Text
-from ._Max5PositiveNumber import Max5PositiveNumber
-from ._PartyIdentification285 import PartyIdentification285
-from ._RiskAssessment1Code import RiskAssessment1Code
+from . import AdditionalData1
+from . import CardDataReading9Code
+from . import Frequency12Code
+from . import ISOMax3ACountryCode
+from . import Max10PositiveNumber
+from . import Max35Text
+from . import Max5PositiveNumber
+from . import PartyIdentification285
+from . import RiskAssessment1Code
 
 class Wallet3(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class Wallet3(base_types._BaseFieldType):
 
 	@AcctAge.setter
 	def AcctAge(self, value):
-		self._AcctAge = value if type(value) != base_types.auto else self.make_default("AcctAge")
+		self._AcctAge = value if value is not None else base_types.UninitialisedField(self, 'AcctAge', Max5PositiveNumber, False)
 
 	@AcctAge.deleter
 	def AcctAge(self):
 		del self._AcctAge
-		self._AcctAge = None
+		self._AcctAge = base_types.UninitialisedField(self, 'AcctAge', Max5PositiveNumber, False)
 
 	@property
 	def AcctCtry(self):
@@ -34,12 +34,12 @@ class Wallet3(base_types._BaseFieldType):
 
 	@AcctCtry.setter
 	def AcctCtry(self, value):
-		self._AcctCtry = value if type(value) != base_types.auto else self.make_default("AcctCtry")
+		self._AcctCtry = value if value is not None else base_types.UninitialisedField(self, 'AcctCtry', ISOMax3ACountryCode, False)
 
 	@AcctCtry.deleter
 	def AcctCtry(self):
 		del self._AcctCtry
-		self._AcctCtry = None
+		self._AcctCtry = base_types.UninitialisedField(self, 'AcctCtry', ISOMax3ACountryCode, False)
 
 	@property
 	def AcctEmailAge(self):
@@ -47,12 +47,12 @@ class Wallet3(base_types._BaseFieldType):
 
 	@AcctEmailAge.setter
 	def AcctEmailAge(self, value):
-		self._AcctEmailAge = value if type(value) != base_types.auto else self.make_default("AcctEmailAge")
+		self._AcctEmailAge = value if value is not None else base_types.UninitialisedField(self, 'AcctEmailAge', Max5PositiveNumber, False)
 
 	@AcctEmailAge.deleter
 	def AcctEmailAge(self):
 		del self._AcctEmailAge
-		self._AcctEmailAge = None
+		self._AcctEmailAge = base_types.UninitialisedField(self, 'AcctEmailAge', Max5PositiveNumber, False)
 
 	@property
 	def Actvty(self):
@@ -60,12 +60,12 @@ class Wallet3(base_types._BaseFieldType):
 
 	@Actvty.setter
 	def Actvty(self, value):
-		self._Actvty = value if type(value) != base_types.auto else self.make_default("Actvty")
+		self._Actvty = value if value is not None else base_types.UninitialisedField(self, 'Actvty', Max10PositiveNumber, False)
 
 	@Actvty.deleter
 	def Actvty(self):
 		del self._Actvty
-		self._Actvty = None
+		self._Actvty = base_types.UninitialisedField(self, 'Actvty', Max10PositiveNumber, False)
 
 	@property
 	def ActvtyIntrvl(self):
@@ -73,12 +73,12 @@ class Wallet3(base_types._BaseFieldType):
 
 	@ActvtyIntrvl.setter
 	def ActvtyIntrvl(self, value):
-		self._ActvtyIntrvl = value if type(value) != base_types.auto else self.make_default("ActvtyIntrvl")
+		self._ActvtyIntrvl = value if value is not None else base_types.UninitialisedField(self, 'ActvtyIntrvl', Frequency12Code, False)
 
 	@ActvtyIntrvl.deleter
 	def ActvtyIntrvl(self):
 		del self._ActvtyIntrvl
-		self._ActvtyIntrvl = None
+		self._ActvtyIntrvl = base_types.UninitialisedField(self, 'ActvtyIntrvl', Frequency12Code, False)
 
 	@property
 	def AddtlData(self):
@@ -86,12 +86,12 @@ class Wallet3(base_types._BaseFieldType):
 
 	@AddtlData.setter
 	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+		self._AddtlData = value if value is not None else base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@AddtlData.deleter
 	def AddtlData(self):
 		del self._AddtlData
-		self._AddtlData = None
+		self._AddtlData = base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@property
 	def CardDataNtryMd(self):
@@ -99,12 +99,12 @@ class Wallet3(base_types._BaseFieldType):
 
 	@CardDataNtryMd.setter
 	def CardDataNtryMd(self, value):
-		self._CardDataNtryMd = value if type(value) != base_types.auto else self.make_default("CardDataNtryMd")
+		self._CardDataNtryMd = value if value is not None else base_types.UninitialisedField(self, 'CardDataNtryMd', CardDataReading9Code, False)
 
 	@CardDataNtryMd.deleter
 	def CardDataNtryMd(self):
 		del self._CardDataNtryMd
-		self._CardDataNtryMd = None
+		self._CardDataNtryMd = base_types.UninitialisedField(self, 'CardDataNtryMd', CardDataReading9Code, False)
 
 	@property
 	def DaysSncLastActvty(self):
@@ -112,12 +112,12 @@ class Wallet3(base_types._BaseFieldType):
 
 	@DaysSncLastActvty.setter
 	def DaysSncLastActvty(self, value):
-		self._DaysSncLastActvty = value if type(value) != base_types.auto else self.make_default("DaysSncLastActvty")
+		self._DaysSncLastActvty = value if value is not None else base_types.UninitialisedField(self, 'DaysSncLastActvty', Max5PositiveNumber, False)
 
 	@DaysSncLastActvty.deleter
 	def DaysSncLastActvty(self):
 		del self._DaysSncLastActvty
-		self._DaysSncLastActvty = None
+		self._DaysSncLastActvty = base_types.UninitialisedField(self, 'DaysSncLastActvty', Max5PositiveNumber, False)
 
 	@property
 	def LastWlltChng(self):
@@ -125,12 +125,12 @@ class Wallet3(base_types._BaseFieldType):
 
 	@LastWlltChng.setter
 	def LastWlltChng(self, value):
-		self._LastWlltChng = value if type(value) != base_types.auto else self.make_default("LastWlltChng")
+		self._LastWlltChng = value if value is not None else base_types.UninitialisedField(self, 'LastWlltChng', Max5PositiveNumber, False)
 
 	@LastWlltChng.deleter
 	def LastWlltChng(self):
 		del self._LastWlltChng
-		self._LastWlltChng = None
+		self._LastWlltChng = base_types.UninitialisedField(self, 'LastWlltChng', Max5PositiveNumber, False)
 
 	@property
 	def OthrCardDataNtryMd(self):
@@ -138,12 +138,12 @@ class Wallet3(base_types._BaseFieldType):
 
 	@OthrCardDataNtryMd.setter
 	def OthrCardDataNtryMd(self, value):
-		self._OthrCardDataNtryMd = value if type(value) != base_types.auto else self.make_default("OthrCardDataNtryMd")
+		self._OthrCardDataNtryMd = value if value is not None else base_types.UninitialisedField(self, 'OthrCardDataNtryMd', Max35Text, False)
 
 	@OthrCardDataNtryMd.deleter
 	def OthrCardDataNtryMd(self):
 		del self._OthrCardDataNtryMd
-		self._OthrCardDataNtryMd = None
+		self._OthrCardDataNtryMd = base_types.UninitialisedField(self, 'OthrCardDataNtryMd', Max35Text, False)
 
 	@property
 	def PANAge(self):
@@ -151,12 +151,12 @@ class Wallet3(base_types._BaseFieldType):
 
 	@PANAge.setter
 	def PANAge(self, value):
-		self._PANAge = value if type(value) != base_types.auto else self.make_default("PANAge")
+		self._PANAge = value if value is not None else base_types.UninitialisedField(self, 'PANAge', Max5PositiveNumber, False)
 
 	@PANAge.deleter
 	def PANAge(self):
 		del self._PANAge
-		self._PANAge = None
+		self._PANAge = base_types.UninitialisedField(self, 'PANAge', Max5PositiveNumber, False)
 
 	@property
 	def Prvdr(self):
@@ -164,12 +164,12 @@ class Wallet3(base_types._BaseFieldType):
 
 	@Prvdr.setter
 	def Prvdr(self, value):
-		self._Prvdr = value if type(value) != base_types.auto else self.make_default("Prvdr")
+		self._Prvdr = value if value is not None else base_types.UninitialisedField(self, 'Prvdr', PartyIdentification285, False)
 
 	@Prvdr.deleter
 	def Prvdr(self):
 		del self._Prvdr
-		self._Prvdr = None
+		self._Prvdr = base_types.UninitialisedField(self, 'Prvdr', PartyIdentification285, False)
 
 	@property
 	def PrvdrAcctScore(self):
@@ -177,12 +177,12 @@ class Wallet3(base_types._BaseFieldType):
 
 	@PrvdrAcctScore.setter
 	def PrvdrAcctScore(self, value):
-		self._PrvdrAcctScore = value if type(value) != base_types.auto else self.make_default("PrvdrAcctScore")
+		self._PrvdrAcctScore = value if value is not None else base_types.UninitialisedField(self, 'PrvdrAcctScore', Max5PositiveNumber, False)
 
 	@PrvdrAcctScore.deleter
 	def PrvdrAcctScore(self):
 		del self._PrvdrAcctScore
-		self._PrvdrAcctScore = None
+		self._PrvdrAcctScore = base_types.UninitialisedField(self, 'PrvdrAcctScore', Max5PositiveNumber, False)
 
 	@property
 	def PrvdrDvcScore(self):
@@ -190,12 +190,12 @@ class Wallet3(base_types._BaseFieldType):
 
 	@PrvdrDvcScore.setter
 	def PrvdrDvcScore(self, value):
-		self._PrvdrDvcScore = value if type(value) != base_types.auto else self.make_default("PrvdrDvcScore")
+		self._PrvdrDvcScore = value if value is not None else base_types.UninitialisedField(self, 'PrvdrDvcScore', Max5PositiveNumber, False)
 
 	@PrvdrDvcScore.deleter
 	def PrvdrDvcScore(self):
 		del self._PrvdrDvcScore
-		self._PrvdrDvcScore = None
+		self._PrvdrDvcScore = base_types.UninitialisedField(self, 'PrvdrDvcScore', Max5PositiveNumber, False)
 
 	@property
 	def PrvdrPhneScore(self):
@@ -203,12 +203,12 @@ class Wallet3(base_types._BaseFieldType):
 
 	@PrvdrPhneScore.setter
 	def PrvdrPhneScore(self, value):
-		self._PrvdrPhneScore = value if type(value) != base_types.auto else self.make_default("PrvdrPhneScore")
+		self._PrvdrPhneScore = value if value is not None else base_types.UninitialisedField(self, 'PrvdrPhneScore', Max5PositiveNumber, False)
 
 	@PrvdrPhneScore.deleter
 	def PrvdrPhneScore(self):
 		del self._PrvdrPhneScore
-		self._PrvdrPhneScore = None
+		self._PrvdrPhneScore = base_types.UninitialisedField(self, 'PrvdrPhneScore', Max5PositiveNumber, False)
 
 	@property
 	def PrvdrRskAssmnt(self):
@@ -216,12 +216,12 @@ class Wallet3(base_types._BaseFieldType):
 
 	@PrvdrRskAssmnt.setter
 	def PrvdrRskAssmnt(self, value):
-		self._PrvdrRskAssmnt = value if type(value) != base_types.auto else self.make_default("PrvdrRskAssmnt")
+		self._PrvdrRskAssmnt = value if value is not None else base_types.UninitialisedField(self, 'PrvdrRskAssmnt', RiskAssessment1Code, False)
 
 	@PrvdrRskAssmnt.deleter
 	def PrvdrRskAssmnt(self):
 		del self._PrvdrRskAssmnt
-		self._PrvdrRskAssmnt = None
+		self._PrvdrRskAssmnt = base_types.UninitialisedField(self, 'PrvdrRskAssmnt', RiskAssessment1Code, False)
 
 	@property
 	def PrvdrRskAssmntMdlVrsn(self):
@@ -229,12 +229,12 @@ class Wallet3(base_types._BaseFieldType):
 
 	@PrvdrRskAssmntMdlVrsn.setter
 	def PrvdrRskAssmntMdlVrsn(self, value):
-		self._PrvdrRskAssmntMdlVrsn = value if type(value) != base_types.auto else self.make_default("PrvdrRskAssmntMdlVrsn")
+		self._PrvdrRskAssmntMdlVrsn = value if value is not None else base_types.UninitialisedField(self, 'PrvdrRskAssmntMdlVrsn', Max35Text, False)
 
 	@PrvdrRskAssmntMdlVrsn.deleter
 	def PrvdrRskAssmntMdlVrsn(self):
 		del self._PrvdrRskAssmntMdlVrsn
-		self._PrvdrRskAssmntMdlVrsn = None
+		self._PrvdrRskAssmntMdlVrsn = base_types.UninitialisedField(self, 'PrvdrRskAssmntMdlVrsn', Max35Text, False)
 
 	@property
 	def SspdCrds(self):
@@ -242,12 +242,12 @@ class Wallet3(base_types._BaseFieldType):
 
 	@SspdCrds.setter
 	def SspdCrds(self, value):
-		self._SspdCrds = value if type(value) != base_types.auto else self.make_default("SspdCrds")
+		self._SspdCrds = value if value is not None else base_types.UninitialisedField(self, 'SspdCrds', Max5PositiveNumber, False)
 
 	@SspdCrds.deleter
 	def SspdCrds(self):
 		del self._SspdCrds
-		self._SspdCrds = None
+		self._SspdCrds = base_types.UninitialisedField(self, 'SspdCrds', Max5PositiveNumber, False)
 
 	@property
 	def UsrAcctAge(self):
@@ -255,12 +255,12 @@ class Wallet3(base_types._BaseFieldType):
 
 	@UsrAcctAge.setter
 	def UsrAcctAge(self, value):
-		self._UsrAcctAge = value if type(value) != base_types.auto else self.make_default("UsrAcctAge")
+		self._UsrAcctAge = value if value is not None else base_types.UninitialisedField(self, 'UsrAcctAge', Max5PositiveNumber, False)
 
 	@UsrAcctAge.deleter
 	def UsrAcctAge(self):
 		del self._UsrAcctAge
-		self._UsrAcctAge = None
+		self._UsrAcctAge = base_types.UninitialisedField(self, 'UsrAcctAge', Max5PositiveNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctAge', type=Max5PositiveNumber, min=0, max=1, mutex_group=None, array=False),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CryptographicKeyType4Code import CryptographicKeyType4Code
-from ._KEKIdentifier4 import KEKIdentifier4
-from ._Max140Binary import Max140Binary
-from ._Max5000Binary import Max5000Binary
+from . import CryptographicKeyType4Code
+from . import KEKIdentifier4
+from . import Max140Binary
+from . import Max5000Binary
 
 class ATMConfigurationParameter2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ATMConfigurationParameter2(base_types._BaseFieldType):
 
 	@Cert.setter
 	def Cert(self, value):
-		self._Cert = value if type(value) != base_types.auto else self.make_default("Cert")
+		self._Cert = value if value is not None else base_types.UninitialisedField(self, 'Cert', Max5000Binary, True)
 
 	@Cert.deleter
 	def Cert(self):
 		del self._Cert
-		self._Cert = None
+		self._Cert = base_types.UninitialisedField(self, 'Cert', Max5000Binary, True)
 
 	@property
 	def HstChllng(self):
@@ -29,12 +29,12 @@ class ATMConfigurationParameter2(base_types._BaseFieldType):
 
 	@HstChllng.setter
 	def HstChllng(self, value):
-		self._HstChllng = value if type(value) != base_types.auto else self.make_default("HstChllng")
+		self._HstChllng = value if value is not None else base_types.UninitialisedField(self, 'HstChllng', Max140Binary, False)
 
 	@HstChllng.deleter
 	def HstChllng(self):
 		del self._HstChllng
-		self._HstChllng = None
+		self._HstChllng = base_types.UninitialisedField(self, 'HstChllng', Max140Binary, False)
 
 	@property
 	def KeyCtgy(self):
@@ -42,12 +42,12 @@ class ATMConfigurationParameter2(base_types._BaseFieldType):
 
 	@KeyCtgy.setter
 	def KeyCtgy(self, value):
-		self._KeyCtgy = value if type(value) != base_types.auto else self.make_default("KeyCtgy")
+		self._KeyCtgy = value if value is not None else base_types.UninitialisedField(self, 'KeyCtgy', CryptographicKeyType4Code, False)
 
 	@KeyCtgy.deleter
 	def KeyCtgy(self):
 		del self._KeyCtgy
-		self._KeyCtgy = None
+		self._KeyCtgy = base_types.UninitialisedField(self, 'KeyCtgy', CryptographicKeyType4Code, False)
 
 	@property
 	def KeyProps(self):
@@ -55,12 +55,12 @@ class ATMConfigurationParameter2(base_types._BaseFieldType):
 
 	@KeyProps.setter
 	def KeyProps(self, value):
-		self._KeyProps = value if type(value) != base_types.auto else self.make_default("KeyProps")
+		self._KeyProps = value if value is not None else base_types.UninitialisedField(self, 'KeyProps', KEKIdentifier4, True)
 
 	@KeyProps.deleter
 	def KeyProps(self):
 		del self._KeyProps
-		self._KeyProps = None
+		self._KeyProps = base_types.UninitialisedField(self, 'KeyProps', KEKIdentifier4, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cert', type=Max5000Binary, min=0, max=None, mutex_group=None, array=True),

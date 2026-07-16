@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._ISOTime import ISOTime
-from ._Max35NumericText import Max35NumericText
-from ._Max35Text import Max35Text
+from . import ISODate
+from . import ISOTime
+from . import Max35NumericText
+from . import Max35Text
 
 class DepartureOrArrival2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class DepartureOrArrival2(base_types._BaseFieldType):
 
 	@CrrierCd.setter
 	def CrrierCd(self, value):
-		self._CrrierCd = value if type(value) != base_types.auto else self.make_default("CrrierCd")
+		self._CrrierCd = value if value is not None else base_types.UninitialisedField(self, 'CrrierCd', Max35Text, False)
 
 	@CrrierCd.deleter
 	def CrrierCd(self):
 		del self._CrrierCd
-		self._CrrierCd = None
+		self._CrrierCd = base_types.UninitialisedField(self, 'CrrierCd', Max35Text, False)
 
 	@property
 	def Dt(self):
@@ -29,12 +29,12 @@ class DepartureOrArrival2(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@property
 	def RouteNb(self):
@@ -42,12 +42,12 @@ class DepartureOrArrival2(base_types._BaseFieldType):
 
 	@RouteNb.setter
 	def RouteNb(self, value):
-		self._RouteNb = value if type(value) != base_types.auto else self.make_default("RouteNb")
+		self._RouteNb = value if value is not None else base_types.UninitialisedField(self, 'RouteNb', Max35NumericText, False)
 
 	@RouteNb.deleter
 	def RouteNb(self):
 		del self._RouteNb
-		self._RouteNb = None
+		self._RouteNb = base_types.UninitialisedField(self, 'RouteNb', Max35NumericText, False)
 
 	@property
 	def Tm(self):
@@ -55,12 +55,12 @@ class DepartureOrArrival2(base_types._BaseFieldType):
 
 	@Tm.setter
 	def Tm(self, value):
-		self._Tm = value if type(value) != base_types.auto else self.make_default("Tm")
+		self._Tm = value if value is not None else base_types.UninitialisedField(self, 'Tm', ISOTime, False)
 
 	@Tm.deleter
 	def Tm(self):
 		del self._Tm
-		self._Tm = None
+		self._Tm = base_types.UninitialisedField(self, 'Tm', ISOTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CrrierCd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

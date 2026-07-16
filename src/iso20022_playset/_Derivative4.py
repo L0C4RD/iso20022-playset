@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Future4 import Future4
-from ._Option15 import Option15
+from . import Future4
+from . import Option15
 
 class Derivative4(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Derivative4(base_types._BaseFieldType):
 
 	@Futr.setter
 	def Futr(self, value):
-		self._Futr = value if type(value) != base_types.auto else self.make_default("Futr")
+		self._Futr = value if value is not None else base_types.UninitialisedField(self, 'Futr', Future4, False)
 
 	@Futr.deleter
 	def Futr(self):
 		del self._Futr
-		self._Futr = None
+		self._Futr = base_types.UninitialisedField(self, 'Futr', Future4, False)
 
 	@property
 	def Optn(self):
@@ -27,12 +27,12 @@ class Derivative4(base_types._BaseFieldType):
 
 	@Optn.setter
 	def Optn(self, value):
-		self._Optn = value if type(value) != base_types.auto else self.make_default("Optn")
+		self._Optn = value if value is not None else base_types.UninitialisedField(self, 'Optn', Option15, False)
 
 	@Optn.deleter
 	def Optn(self):
 		del self._Optn
-		self._Optn = None
+		self._Optn = base_types.UninitialisedField(self, 'Optn', Option15, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Futr', type=Future4, min=0, max=1, mutex_group=None, array=False),

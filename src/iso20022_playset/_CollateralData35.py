@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CollateralType21 import CollateralType21
-from ._SecurityIdentification26Choice import SecurityIdentification26Choice
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import CollateralType21
+from . import SecurityIdentification26Choice
+from . import TrueFalseIndicator
 
 class CollateralData35(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CollateralData35(base_types._BaseFieldType):
 
 	@AsstTp.setter
 	def AsstTp(self, value):
-		self._AsstTp = value if type(value) != base_types.auto else self.make_default("AsstTp")
+		self._AsstTp = value if value is not None else base_types.UninitialisedField(self, 'AsstTp', CollateralType21, False)
 
 	@AsstTp.deleter
 	def AsstTp(self):
 		del self._AsstTp
-		self._AsstTp = None
+		self._AsstTp = base_types.UninitialisedField(self, 'AsstTp', CollateralType21, False)
 
 	@property
 	def BsktIdr(self):
@@ -28,12 +28,12 @@ class CollateralData35(base_types._BaseFieldType):
 
 	@BsktIdr.setter
 	def BsktIdr(self, value):
-		self._BsktIdr = value if type(value) != base_types.auto else self.make_default("BsktIdr")
+		self._BsktIdr = value if value is not None else base_types.UninitialisedField(self, 'BsktIdr', SecurityIdentification26Choice, False)
 
 	@BsktIdr.deleter
 	def BsktIdr(self):
 		del self._BsktIdr
-		self._BsktIdr = None
+		self._BsktIdr = base_types.UninitialisedField(self, 'BsktIdr', SecurityIdentification26Choice, False)
 
 	@property
 	def NetXpsrCollstnInd(self):
@@ -41,12 +41,12 @@ class CollateralData35(base_types._BaseFieldType):
 
 	@NetXpsrCollstnInd.setter
 	def NetXpsrCollstnInd(self, value):
-		self._NetXpsrCollstnInd = value if type(value) != base_types.auto else self.make_default("NetXpsrCollstnInd")
+		self._NetXpsrCollstnInd = value if value is not None else base_types.UninitialisedField(self, 'NetXpsrCollstnInd', TrueFalseIndicator, False)
 
 	@NetXpsrCollstnInd.deleter
 	def NetXpsrCollstnInd(self):
 		del self._NetXpsrCollstnInd
-		self._NetXpsrCollstnInd = None
+		self._NetXpsrCollstnInd = base_types.UninitialisedField(self, 'NetXpsrCollstnInd', TrueFalseIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AsstTp', type=CollateralType21, min=0, max=1, mutex_group=None, array=False),

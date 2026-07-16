@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinalStatus1Code import FinalStatus1Code
-from ._Max35Text import Max35Text
-from ._Max4AlphaNumericText import Max4AlphaNumericText
-from ._PendingStatus4Code import PendingStatus4Code
+from . import FinalStatus1Code
+from . import Max35Text
+from . import Max4AlphaNumericText
+from . import PendingStatus4Code
 
 class PaymentStatusCode6Choice(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class PaymentStatusCode6Choice(base_types._BaseFieldType):
 
 	@Fnl.setter
 	def Fnl(self, value):
-		self._Fnl = value if type(value) != base_types.auto else self.make_default("Fnl")
+		self._Fnl = value if value is not None else base_types.UninitialisedField(self, 'Fnl', FinalStatus1Code, False)
 
 	@Fnl.deleter
 	def Fnl(self):
 		del self._Fnl
-		self._Fnl = None
+		self._Fnl = base_types.UninitialisedField(self, 'Fnl', FinalStatus1Code, False)
 
 	@property
 	def Pdg(self):
@@ -29,12 +29,12 @@ class PaymentStatusCode6Choice(base_types._BaseFieldType):
 
 	@Pdg.setter
 	def Pdg(self, value):
-		self._Pdg = value if type(value) != base_types.auto else self.make_default("Pdg")
+		self._Pdg = value if value is not None else base_types.UninitialisedField(self, 'Pdg', PendingStatus4Code, False)
 
 	@Pdg.deleter
 	def Pdg(self):
 		del self._Pdg
-		self._Pdg = None
+		self._Pdg = base_types.UninitialisedField(self, 'Pdg', PendingStatus4Code, False)
 
 	@property
 	def Prtry(self):
@@ -42,12 +42,12 @@ class PaymentStatusCode6Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+		self._Prtry = value if value is not None else base_types.UninitialisedField(self, 'Prtry', Max35Text, False)
 
 	@Prtry.deleter
 	def Prtry(self):
 		del self._Prtry
-		self._Prtry = None
+		self._Prtry = base_types.UninitialisedField(self, 'Prtry', Max35Text, False)
 
 	@property
 	def RTGS(self):
@@ -55,12 +55,12 @@ class PaymentStatusCode6Choice(base_types._BaseFieldType):
 
 	@RTGS.setter
 	def RTGS(self, value):
-		self._RTGS = value if type(value) != base_types.auto else self.make_default("RTGS")
+		self._RTGS = value if value is not None else base_types.UninitialisedField(self, 'RTGS', Max4AlphaNumericText, False)
 
 	@RTGS.deleter
 	def RTGS(self):
 		del self._RTGS
-		self._RTGS = None
+		self._RTGS = base_types.UninitialisedField(self, 'RTGS', Max4AlphaNumericText, False)
 
 	@property
 	def Sttlm(self):
@@ -68,12 +68,12 @@ class PaymentStatusCode6Choice(base_types._BaseFieldType):
 
 	@Sttlm.setter
 	def Sttlm(self, value):
-		self._Sttlm = value if type(value) != base_types.auto else self.make_default("Sttlm")
+		self._Sttlm = value if value is not None else base_types.UninitialisedField(self, 'Sttlm', Max4AlphaNumericText, False)
 
 	@Sttlm.deleter
 	def Sttlm(self):
 		del self._Sttlm
-		self._Sttlm = None
+		self._Sttlm = base_types.UninitialisedField(self, 'Sttlm', Max4AlphaNumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Fnl', type=FinalStatus1Code, min=0, max=1, mutex_group=1, array=False),

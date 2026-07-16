@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CashAccount40 import CashAccount40
-from ._ISODate import ISODate
+from . import BranchAndFinancialInstitutionIdentification8
+from . import CashAccount40
+from . import ISODate
 
 class SettlementInstruction19(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SettlementInstruction19(base_types._BaseFieldType):
 
 	@Cdtr.setter
 	def Cdtr(self, value):
-		self._Cdtr = value if type(value) != base_types.auto else self.make_default("Cdtr")
+		self._Cdtr = value if value is not None else base_types.UninitialisedField(self, 'Cdtr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@Cdtr.deleter
 	def Cdtr(self):
 		del self._Cdtr
-		self._Cdtr = None
+		self._Cdtr = base_types.UninitialisedField(self, 'Cdtr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def CdtrAcct(self):
@@ -28,12 +28,12 @@ class SettlementInstruction19(base_types._BaseFieldType):
 
 	@CdtrAcct.setter
 	def CdtrAcct(self, value):
-		self._CdtrAcct = value if type(value) != base_types.auto else self.make_default("CdtrAcct")
+		self._CdtrAcct = value if value is not None else base_types.UninitialisedField(self, 'CdtrAcct', CashAccount40, False)
 
 	@CdtrAcct.deleter
 	def CdtrAcct(self):
 		del self._CdtrAcct
-		self._CdtrAcct = None
+		self._CdtrAcct = base_types.UninitialisedField(self, 'CdtrAcct', CashAccount40, False)
 
 	@property
 	def CdtrAgt(self):
@@ -41,12 +41,12 @@ class SettlementInstruction19(base_types._BaseFieldType):
 
 	@CdtrAgt.setter
 	def CdtrAgt(self, value):
-		self._CdtrAgt = value if type(value) != base_types.auto else self.make_default("CdtrAgt")
+		self._CdtrAgt = value if value is not None else base_types.UninitialisedField(self, 'CdtrAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@CdtrAgt.deleter
 	def CdtrAgt(self):
 		del self._CdtrAgt
-		self._CdtrAgt = None
+		self._CdtrAgt = base_types.UninitialisedField(self, 'CdtrAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def CdtrAgtAcct(self):
@@ -54,12 +54,12 @@ class SettlementInstruction19(base_types._BaseFieldType):
 
 	@CdtrAgtAcct.setter
 	def CdtrAgtAcct(self, value):
-		self._CdtrAgtAcct = value if type(value) != base_types.auto else self.make_default("CdtrAgtAcct")
+		self._CdtrAgtAcct = value if value is not None else base_types.UninitialisedField(self, 'CdtrAgtAcct', CashAccount40, False)
 
 	@CdtrAgtAcct.deleter
 	def CdtrAgtAcct(self):
 		del self._CdtrAgtAcct
-		self._CdtrAgtAcct = None
+		self._CdtrAgtAcct = base_types.UninitialisedField(self, 'CdtrAgtAcct', CashAccount40, False)
 
 	@property
 	def ReqdSttlmDt(self):
@@ -67,12 +67,12 @@ class SettlementInstruction19(base_types._BaseFieldType):
 
 	@ReqdSttlmDt.setter
 	def ReqdSttlmDt(self, value):
-		self._ReqdSttlmDt = value if type(value) != base_types.auto else self.make_default("ReqdSttlmDt")
+		self._ReqdSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'ReqdSttlmDt', ISODate, False)
 
 	@ReqdSttlmDt.deleter
 	def ReqdSttlmDt(self):
 		del self._ReqdSttlmDt
-		self._ReqdSttlmDt = None
+		self._ReqdSttlmDt = base_types.UninitialisedField(self, 'ReqdSttlmDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cdtr', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),

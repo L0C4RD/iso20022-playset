@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._ISOMax3ACountryCode import ISOMax3ACountryCode
-from ._Max35Text import Max35Text
-from ._PartyType17Code import PartyType17Code
-from ._PartyType18Code import PartyType18Code
+from . import ISODateTime
+from . import ISOMax3ACountryCode
+from . import Max35Text
+from . import PartyType17Code
+from . import PartyType18Code
 
 class Traceability10(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class Traceability10(base_types._BaseFieldType):
 
 	@Assgnr.setter
 	def Assgnr(self, value):
-		self._Assgnr = value if type(value) != base_types.auto else self.make_default("Assgnr")
+		self._Assgnr = value if value is not None else base_types.UninitialisedField(self, 'Assgnr', PartyType18Code, False)
 
 	@Assgnr.deleter
 	def Assgnr(self):
 		del self._Assgnr
-		self._Assgnr = None
+		self._Assgnr = base_types.UninitialisedField(self, 'Assgnr', PartyType18Code, False)
 
 	@property
 	def Ctry(self):
@@ -30,12 +30,12 @@ class Traceability10(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', ISOMax3ACountryCode, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', ISOMax3ACountryCode, False)
 
 	@property
 	def DtTmIn(self):
@@ -43,12 +43,12 @@ class Traceability10(base_types._BaseFieldType):
 
 	@DtTmIn.setter
 	def DtTmIn(self, value):
-		self._DtTmIn = value if type(value) != base_types.auto else self.make_default("DtTmIn")
+		self._DtTmIn = value if value is not None else base_types.UninitialisedField(self, 'DtTmIn', ISODateTime, False)
 
 	@DtTmIn.deleter
 	def DtTmIn(self):
 		del self._DtTmIn
-		self._DtTmIn = None
+		self._DtTmIn = base_types.UninitialisedField(self, 'DtTmIn', ISODateTime, False)
 
 	@property
 	def DtTmOut(self):
@@ -56,12 +56,12 @@ class Traceability10(base_types._BaseFieldType):
 
 	@DtTmOut.setter
 	def DtTmOut(self, value):
-		self._DtTmOut = value if type(value) != base_types.auto else self.make_default("DtTmOut")
+		self._DtTmOut = value if value is not None else base_types.UninitialisedField(self, 'DtTmOut', ISODateTime, False)
 
 	@DtTmOut.deleter
 	def DtTmOut(self):
 		del self._DtTmOut
-		self._DtTmOut = None
+		self._DtTmOut = base_types.UninitialisedField(self, 'DtTmOut', ISODateTime, False)
 
 	@property
 	def Id(self):
@@ -69,12 +69,12 @@ class Traceability10(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def OthrTp(self):
@@ -82,12 +82,12 @@ class Traceability10(base_types._BaseFieldType):
 
 	@OthrTp.setter
 	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != base_types.auto else self.make_default("OthrTp")
+		self._OthrTp = value if value is not None else base_types.UninitialisedField(self, 'OthrTp', Max35Text, False)
 
 	@OthrTp.deleter
 	def OthrTp(self):
 		del self._OthrTp
-		self._OthrTp = None
+		self._OthrTp = base_types.UninitialisedField(self, 'OthrTp', Max35Text, False)
 
 	@property
 	def ShrtNm(self):
@@ -95,12 +95,12 @@ class Traceability10(base_types._BaseFieldType):
 
 	@ShrtNm.setter
 	def ShrtNm(self, value):
-		self._ShrtNm = value if type(value) != base_types.auto else self.make_default("ShrtNm")
+		self._ShrtNm = value if value is not None else base_types.UninitialisedField(self, 'ShrtNm', Max35Text, False)
 
 	@ShrtNm.deleter
 	def ShrtNm(self):
 		del self._ShrtNm
-		self._ShrtNm = None
+		self._ShrtNm = base_types.UninitialisedField(self, 'ShrtNm', Max35Text, False)
 
 	@property
 	def Tp(self):
@@ -108,12 +108,12 @@ class Traceability10(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', PartyType17Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', PartyType17Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Assgnr', type=PartyType18Code, min=0, max=1, mutex_group=None, array=False),

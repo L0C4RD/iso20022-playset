@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MeetingCancellationV10 import MeetingCancellationV10
+from . import MeetingCancellationV10
 
 class SEEV_002_001_10():
 
@@ -18,12 +18,12 @@ class SEEV_002_001_10():
 
 		@MtgCxl.setter
 		def MtgCxl(self, value):
-			self._MtgCxl = value if type(value) != base_types.auto else self.make_default("MtgCxl")
+			self._MtgCxl = value if value is not None else base_types.UninitialisedField(self, 'MtgCxl', MeetingCancellationV10, False)
 
 		@MtgCxl.deleter
 		def MtgCxl(self):
 			del self._MtgCxl
-			self._MtgCxl = None
+			self._MtgCxl = base_types.UninitialisedField(self, 'MtgCxl', MeetingCancellationV10, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='MtgCxl', type=MeetingCancellationV10, min=1, max=1, mutex_group=None, array=False),

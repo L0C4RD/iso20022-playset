@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMWithdrawalRequestV03 import ATMWithdrawalRequestV03
+from . import ATMWithdrawalRequestV03
 
 class CATP_001_001_03():
 
@@ -18,12 +18,12 @@ class CATP_001_001_03():
 
 		@ATMWdrwlReq.setter
 		def ATMWdrwlReq(self, value):
-			self._ATMWdrwlReq = value if type(value) != base_types.auto else self.make_default("ATMWdrwlReq")
+			self._ATMWdrwlReq = value if value is not None else base_types.UninitialisedField(self, 'ATMWdrwlReq', ATMWithdrawalRequestV03, False)
 
 		@ATMWdrwlReq.deleter
 		def ATMWdrwlReq(self):
 			del self._ATMWdrwlReq
-			self._ATMWdrwlReq = None
+			self._ATMWdrwlReq = base_types.UninitialisedField(self, 'ATMWdrwlReq', ATMWithdrawalRequestV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ATMWdrwlReq', type=ATMWithdrawalRequestV03, min=1, max=1, mutex_group=None, array=False),

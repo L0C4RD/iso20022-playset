@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Address4 import Address4
-from ._LocalData10 import LocalData10
-from ._Max256Text import Max256Text
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
+from . import Address4
+from . import LocalData10
+from . import Max256Text
+from . import Max35Text
+from . import Max70Text
 
 class FinancialInstitution10(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class FinancialInstitution10(base_types._BaseFieldType):
 
 	@AddtlCtct.setter
 	def AddtlCtct(self, value):
-		self._AddtlCtct = value if type(value) != base_types.auto else self.make_default("AddtlCtct")
+		self._AddtlCtct = value if value is not None else base_types.UninitialisedField(self, 'AddtlCtct', Max256Text, False)
 
 	@AddtlCtct.deleter
 	def AddtlCtct(self):
 		del self._AddtlCtct
-		self._AddtlCtct = None
+		self._AddtlCtct = base_types.UninitialisedField(self, 'AddtlCtct', Max256Text, False)
 
 	@property
 	def Adr(self):
@@ -30,12 +30,12 @@ class FinancialInstitution10(base_types._BaseFieldType):
 
 	@Adr.setter
 	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+		self._Adr = value if value is not None else base_types.UninitialisedField(self, 'Adr', Address4, False)
 
 	@Adr.deleter
 	def Adr(self):
 		del self._Adr
-		self._Adr = None
+		self._Adr = base_types.UninitialisedField(self, 'Adr', Address4, False)
 
 	@property
 	def CstmrSvc(self):
@@ -43,12 +43,12 @@ class FinancialInstitution10(base_types._BaseFieldType):
 
 	@CstmrSvc.setter
 	def CstmrSvc(self, value):
-		self._CstmrSvc = value if type(value) != base_types.auto else self.make_default("CstmrSvc")
+		self._CstmrSvc = value if value is not None else base_types.UninitialisedField(self, 'CstmrSvc', Max35Text, False)
 
 	@CstmrSvc.deleter
 	def CstmrSvc(self):
 		del self._CstmrSvc
-		self._CstmrSvc = None
+		self._CstmrSvc = base_types.UninitialisedField(self, 'CstmrSvc', Max35Text, False)
 
 	@property
 	def Email(self):
@@ -56,12 +56,12 @@ class FinancialInstitution10(base_types._BaseFieldType):
 
 	@Email.setter
 	def Email(self, value):
-		self._Email = value if type(value) != base_types.auto else self.make_default("Email")
+		self._Email = value if value is not None else base_types.UninitialisedField(self, 'Email', Max256Text, False)
 
 	@Email.deleter
 	def Email(self):
 		del self._Email
-		self._Email = None
+		self._Email = base_types.UninitialisedField(self, 'Email', Max256Text, False)
 
 	@property
 	def Id(self):
@@ -69,12 +69,12 @@ class FinancialInstitution10(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def LclData(self):
@@ -82,12 +82,12 @@ class FinancialInstitution10(base_types._BaseFieldType):
 
 	@LclData.setter
 	def LclData(self, value):
-		self._LclData = value if type(value) != base_types.auto else self.make_default("LclData")
+		self._LclData = value if value is not None else base_types.UninitialisedField(self, 'LclData', LocalData10, False)
 
 	@LclData.deleter
 	def LclData(self):
 		del self._LclData
-		self._LclData = None
+		self._LclData = base_types.UninitialisedField(self, 'LclData', LocalData10, False)
 
 	@property
 	def Nm(self):
@@ -95,12 +95,12 @@ class FinancialInstitution10(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max70Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max70Text, False)
 
 	@property
 	def Phne(self):
@@ -108,12 +108,12 @@ class FinancialInstitution10(base_types._BaseFieldType):
 
 	@Phne.setter
 	def Phne(self, value):
-		self._Phne = value if type(value) != base_types.auto else self.make_default("Phne")
+		self._Phne = value if value is not None else base_types.UninitialisedField(self, 'Phne', Max35Text, False)
 
 	@Phne.deleter
 	def Phne(self):
 		del self._Phne
-		self._Phne = None
+		self._Phne = base_types.UninitialisedField(self, 'Phne', Max35Text, False)
 
 	@property
 	def URL(self):
@@ -121,12 +121,12 @@ class FinancialInstitution10(base_types._BaseFieldType):
 
 	@URL.setter
 	def URL(self, value):
-		self._URL = value if type(value) != base_types.auto else self.make_default("URL")
+		self._URL = value if value is not None else base_types.UninitialisedField(self, 'URL', Max256Text, False)
 
 	@URL.deleter
 	def URL(self):
 		del self._URL
-		self._URL = None
+		self._URL = base_types.UninitialisedField(self, 'URL', Max256Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlCtct', type=Max256Text, min=0, max=1, mutex_group=None, array=False),

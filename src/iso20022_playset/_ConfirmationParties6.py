@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ConfirmationPartyDetails10 import ConfirmationPartyDetails10
-from ._ConfirmationPartyDetails7 import ConfirmationPartyDetails7
-from ._ConfirmationPartyDetails8 import ConfirmationPartyDetails8
-from ._ConfirmationPartyDetails9 import ConfirmationPartyDetails9
+from . import ConfirmationPartyDetails10
+from . import ConfirmationPartyDetails7
+from . import ConfirmationPartyDetails8
+from . import ConfirmationPartyDetails9
 
 class ConfirmationParties6(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ConfirmationParties6(base_types._BaseFieldType):
 
 	@AffrmgPty.setter
 	def AffrmgPty(self, value):
-		self._AffrmgPty = value if type(value) != base_types.auto else self.make_default("AffrmgPty")
+		self._AffrmgPty = value if value is not None else base_types.UninitialisedField(self, 'AffrmgPty', ConfirmationPartyDetails8, False)
 
 	@AffrmgPty.deleter
 	def AffrmgPty(self):
 		del self._AffrmgPty
-		self._AffrmgPty = None
+		self._AffrmgPty = base_types.UninitialisedField(self, 'AffrmgPty', ConfirmationPartyDetails8, False)
 
 	@property
 	def BrkrOfCdt(self):
@@ -29,12 +29,12 @@ class ConfirmationParties6(base_types._BaseFieldType):
 
 	@BrkrOfCdt.setter
 	def BrkrOfCdt(self, value):
-		self._BrkrOfCdt = value if type(value) != base_types.auto else self.make_default("BrkrOfCdt")
+		self._BrkrOfCdt = value if value is not None else base_types.UninitialisedField(self, 'BrkrOfCdt', ConfirmationPartyDetails8, False)
 
 	@BrkrOfCdt.deleter
 	def BrkrOfCdt(self):
 		del self._BrkrOfCdt
-		self._BrkrOfCdt = None
+		self._BrkrOfCdt = base_types.UninitialisedField(self, 'BrkrOfCdt', ConfirmationPartyDetails8, False)
 
 	@property
 	def Brrwr(self):
@@ -42,12 +42,12 @@ class ConfirmationParties6(base_types._BaseFieldType):
 
 	@Brrwr.setter
 	def Brrwr(self, value):
-		self._Brrwr = value if type(value) != base_types.auto else self.make_default("Brrwr")
+		self._Brrwr = value if value is not None else base_types.UninitialisedField(self, 'Brrwr', ConfirmationPartyDetails7, False)
 
 	@Brrwr.deleter
 	def Brrwr(self):
 		del self._Brrwr
-		self._Brrwr = None
+		self._Brrwr = base_types.UninitialisedField(self, 'Brrwr', ConfirmationPartyDetails7, False)
 
 	@property
 	def Buyr(self):
@@ -55,12 +55,12 @@ class ConfirmationParties6(base_types._BaseFieldType):
 
 	@Buyr.setter
 	def Buyr(self, value):
-		self._Buyr = value if type(value) != base_types.auto else self.make_default("Buyr")
+		self._Buyr = value if value is not None else base_types.UninitialisedField(self, 'Buyr', ConfirmationPartyDetails7, False)
 
 	@Buyr.deleter
 	def Buyr(self):
 		del self._Buyr
-		self._Buyr = None
+		self._Buyr = base_types.UninitialisedField(self, 'Buyr', ConfirmationPartyDetails7, False)
 
 	@property
 	def CMUCtrPty(self):
@@ -68,12 +68,12 @@ class ConfirmationParties6(base_types._BaseFieldType):
 
 	@CMUCtrPty.setter
 	def CMUCtrPty(self, value):
-		self._CMUCtrPty = value if type(value) != base_types.auto else self.make_default("CMUCtrPty")
+		self._CMUCtrPty = value if value is not None else base_types.UninitialisedField(self, 'CMUCtrPty', ConfirmationPartyDetails8, False)
 
 	@CMUCtrPty.deleter
 	def CMUCtrPty(self):
 		del self._CMUCtrPty
-		self._CMUCtrPty = None
+		self._CMUCtrPty = base_types.UninitialisedField(self, 'CMUCtrPty', ConfirmationPartyDetails8, False)
 
 	@property
 	def CMUPty(self):
@@ -81,12 +81,12 @@ class ConfirmationParties6(base_types._BaseFieldType):
 
 	@CMUPty.setter
 	def CMUPty(self, value):
-		self._CMUPty = value if type(value) != base_types.auto else self.make_default("CMUPty")
+		self._CMUPty = value if value is not None else base_types.UninitialisedField(self, 'CMUPty', ConfirmationPartyDetails8, False)
 
 	@CMUPty.deleter
 	def CMUPty(self):
 		del self._CMUPty
-		self._CMUPty = None
+		self._CMUPty = base_types.UninitialisedField(self, 'CMUPty', ConfirmationPartyDetails8, False)
 
 	@property
 	def ClrFirm(self):
@@ -94,12 +94,12 @@ class ConfirmationParties6(base_types._BaseFieldType):
 
 	@ClrFirm.setter
 	def ClrFirm(self, value):
-		self._ClrFirm = value if type(value) != base_types.auto else self.make_default("ClrFirm")
+		self._ClrFirm = value if value is not None else base_types.UninitialisedField(self, 'ClrFirm', ConfirmationPartyDetails9, False)
 
 	@ClrFirm.deleter
 	def ClrFirm(self):
 		del self._ClrFirm
-		self._ClrFirm = None
+		self._ClrFirm = base_types.UninitialisedField(self, 'ClrFirm', ConfirmationPartyDetails9, False)
 
 	@property
 	def ExctgBrkr(self):
@@ -107,12 +107,12 @@ class ConfirmationParties6(base_types._BaseFieldType):
 
 	@ExctgBrkr.setter
 	def ExctgBrkr(self, value):
-		self._ExctgBrkr = value if type(value) != base_types.auto else self.make_default("ExctgBrkr")
+		self._ExctgBrkr = value if value is not None else base_types.UninitialisedField(self, 'ExctgBrkr', ConfirmationPartyDetails9, False)
 
 	@ExctgBrkr.deleter
 	def ExctgBrkr(self):
 		del self._ExctgBrkr
-		self._ExctgBrkr = None
+		self._ExctgBrkr = base_types.UninitialisedField(self, 'ExctgBrkr', ConfirmationPartyDetails9, False)
 
 	@property
 	def IntrdcgFirm(self):
@@ -120,12 +120,12 @@ class ConfirmationParties6(base_types._BaseFieldType):
 
 	@IntrdcgFirm.setter
 	def IntrdcgFirm(self, value):
-		self._IntrdcgFirm = value if type(value) != base_types.auto else self.make_default("IntrdcgFirm")
+		self._IntrdcgFirm = value if value is not None else base_types.UninitialisedField(self, 'IntrdcgFirm', ConfirmationPartyDetails8, False)
 
 	@IntrdcgFirm.deleter
 	def IntrdcgFirm(self):
 		del self._IntrdcgFirm
-		self._IntrdcgFirm = None
+		self._IntrdcgFirm = base_types.UninitialisedField(self, 'IntrdcgFirm', ConfirmationPartyDetails8, False)
 
 	@property
 	def Lndr(self):
@@ -133,12 +133,12 @@ class ConfirmationParties6(base_types._BaseFieldType):
 
 	@Lndr.setter
 	def Lndr(self, value):
-		self._Lndr = value if type(value) != base_types.auto else self.make_default("Lndr")
+		self._Lndr = value if value is not None else base_types.UninitialisedField(self, 'Lndr', ConfirmationPartyDetails7, False)
 
 	@Lndr.deleter
 	def Lndr(self):
 		del self._Lndr
-		self._Lndr = None
+		self._Lndr = base_types.UninitialisedField(self, 'Lndr', ConfirmationPartyDetails7, False)
 
 	@property
 	def Sellr(self):
@@ -146,12 +146,12 @@ class ConfirmationParties6(base_types._BaseFieldType):
 
 	@Sellr.setter
 	def Sellr(self, value):
-		self._Sellr = value if type(value) != base_types.auto else self.make_default("Sellr")
+		self._Sellr = value if value is not None else base_types.UninitialisedField(self, 'Sellr', ConfirmationPartyDetails7, False)
 
 	@Sellr.deleter
 	def Sellr(self):
 		del self._Sellr
-		self._Sellr = None
+		self._Sellr = base_types.UninitialisedField(self, 'Sellr', ConfirmationPartyDetails7, False)
 
 	@property
 	def StepInFirm(self):
@@ -159,12 +159,12 @@ class ConfirmationParties6(base_types._BaseFieldType):
 
 	@StepInFirm.setter
 	def StepInFirm(self, value):
-		self._StepInFirm = value if type(value) != base_types.auto else self.make_default("StepInFirm")
+		self._StepInFirm = value if value is not None else base_types.UninitialisedField(self, 'StepInFirm', ConfirmationPartyDetails8, False)
 
 	@StepInFirm.deleter
 	def StepInFirm(self):
 		del self._StepInFirm
-		self._StepInFirm = None
+		self._StepInFirm = base_types.UninitialisedField(self, 'StepInFirm', ConfirmationPartyDetails8, False)
 
 	@property
 	def StepOutFirm(self):
@@ -172,12 +172,12 @@ class ConfirmationParties6(base_types._BaseFieldType):
 
 	@StepOutFirm.setter
 	def StepOutFirm(self, value):
-		self._StepOutFirm = value if type(value) != base_types.auto else self.make_default("StepOutFirm")
+		self._StepOutFirm = value if value is not None else base_types.UninitialisedField(self, 'StepOutFirm', ConfirmationPartyDetails8, False)
 
 	@StepOutFirm.deleter
 	def StepOutFirm(self):
 		del self._StepOutFirm
-		self._StepOutFirm = None
+		self._StepOutFirm = base_types.UninitialisedField(self, 'StepOutFirm', ConfirmationPartyDetails8, False)
 
 	@property
 	def TradBnfcryPty(self):
@@ -185,12 +185,12 @@ class ConfirmationParties6(base_types._BaseFieldType):
 
 	@TradBnfcryPty.setter
 	def TradBnfcryPty(self, value):
-		self._TradBnfcryPty = value if type(value) != base_types.auto else self.make_default("TradBnfcryPty")
+		self._TradBnfcryPty = value if value is not None else base_types.UninitialisedField(self, 'TradBnfcryPty', ConfirmationPartyDetails10, False)
 
 	@TradBnfcryPty.deleter
 	def TradBnfcryPty(self):
 		del self._TradBnfcryPty
-		self._TradBnfcryPty = None
+		self._TradBnfcryPty = base_types.UninitialisedField(self, 'TradBnfcryPty', ConfirmationPartyDetails10, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AffrmgPty', type=ConfirmationPartyDetails8, min=0, max=1, mutex_group=None, array=False),

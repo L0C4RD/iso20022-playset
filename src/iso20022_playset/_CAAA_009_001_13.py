@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcceptorReconciliationRequestV13 import AcceptorReconciliationRequestV13
+from . import AcceptorReconciliationRequestV13
 
 class CAAA_009_001_13():
 
@@ -18,12 +18,12 @@ class CAAA_009_001_13():
 
 		@AccptrRcncltnReq.setter
 		def AccptrRcncltnReq(self, value):
-			self._AccptrRcncltnReq = value if type(value) != base_types.auto else self.make_default("AccptrRcncltnReq")
+			self._AccptrRcncltnReq = value if value is not None else base_types.UninitialisedField(self, 'AccptrRcncltnReq', AcceptorReconciliationRequestV13, False)
 
 		@AccptrRcncltnReq.deleter
 		def AccptrRcncltnReq(self):
 			del self._AccptrRcncltnReq
-			self._AccptrRcncltnReq = None
+			self._AccptrRcncltnReq = base_types.UninitialisedField(self, 'AccptrRcncltnReq', AcceptorReconciliationRequestV13, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AccptrRcncltnReq', type=AcceptorReconciliationRequestV13, min=1, max=1, mutex_group=None, array=False),

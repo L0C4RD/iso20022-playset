@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CurrencyAndAmount import CurrencyAndAmount
-from ._CurrencyReference3 import CurrencyReference3
-from ._Max4Text import Max4Text
-from ._Max500Text import Max500Text
-from ._PercentageRate import PercentageRate
+from . import CurrencyAndAmount
+from . import CurrencyReference3
+from . import Max4Text
+from . import Max500Text
+from . import PercentageRate
 
 class SettlementSubTotalCalculatedTax2(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class SettlementSubTotalCalculatedTax2(base_types._BaseFieldType):
 
 	@BsisAmt.setter
 	def BsisAmt(self, value):
-		self._BsisAmt = value if type(value) != base_types.auto else self.make_default("BsisAmt")
+		self._BsisAmt = value if value is not None else base_types.UninitialisedField(self, 'BsisAmt', CurrencyAndAmount, True)
 
 	@BsisAmt.deleter
 	def BsisAmt(self):
 		del self._BsisAmt
-		self._BsisAmt = None
+		self._BsisAmt = base_types.UninitialisedField(self, 'BsisAmt', CurrencyAndAmount, True)
 
 	@property
 	def ClctdAmt(self):
@@ -30,12 +30,12 @@ class SettlementSubTotalCalculatedTax2(base_types._BaseFieldType):
 
 	@ClctdAmt.setter
 	def ClctdAmt(self, value):
-		self._ClctdAmt = value if type(value) != base_types.auto else self.make_default("ClctdAmt")
+		self._ClctdAmt = value if value is not None else base_types.UninitialisedField(self, 'ClctdAmt', CurrencyAndAmount, True)
 
 	@ClctdAmt.deleter
 	def ClctdAmt(self):
 		del self._ClctdAmt
-		self._ClctdAmt = None
+		self._ClctdAmt = base_types.UninitialisedField(self, 'ClctdAmt', CurrencyAndAmount, True)
 
 	@property
 	def ClctdRate(self):
@@ -43,12 +43,12 @@ class SettlementSubTotalCalculatedTax2(base_types._BaseFieldType):
 
 	@ClctdRate.setter
 	def ClctdRate(self, value):
-		self._ClctdRate = value if type(value) != base_types.auto else self.make_default("ClctdRate")
+		self._ClctdRate = value if value is not None else base_types.UninitialisedField(self, 'ClctdRate', PercentageRate, False)
 
 	@ClctdRate.deleter
 	def ClctdRate(self):
 		del self._ClctdRate
-		self._ClctdRate = None
+		self._ClctdRate = base_types.UninitialisedField(self, 'ClctdRate', PercentageRate, False)
 
 	@property
 	def TaxCcyXchg(self):
@@ -56,12 +56,12 @@ class SettlementSubTotalCalculatedTax2(base_types._BaseFieldType):
 
 	@TaxCcyXchg.setter
 	def TaxCcyXchg(self, value):
-		self._TaxCcyXchg = value if type(value) != base_types.auto else self.make_default("TaxCcyXchg")
+		self._TaxCcyXchg = value if value is not None else base_types.UninitialisedField(self, 'TaxCcyXchg', CurrencyReference3, False)
 
 	@TaxCcyXchg.deleter
 	def TaxCcyXchg(self):
 		del self._TaxCcyXchg
-		self._TaxCcyXchg = None
+		self._TaxCcyXchg = base_types.UninitialisedField(self, 'TaxCcyXchg', CurrencyReference3, False)
 
 	@property
 	def TpCd(self):
@@ -69,12 +69,12 @@ class SettlementSubTotalCalculatedTax2(base_types._BaseFieldType):
 
 	@TpCd.setter
 	def TpCd(self, value):
-		self._TpCd = value if type(value) != base_types.auto else self.make_default("TpCd")
+		self._TpCd = value if value is not None else base_types.UninitialisedField(self, 'TpCd', Max4Text, False)
 
 	@TpCd.deleter
 	def TpCd(self):
 		del self._TpCd
-		self._TpCd = None
+		self._TpCd = base_types.UninitialisedField(self, 'TpCd', Max4Text, False)
 
 	@property
 	def XmptnRsnCd(self):
@@ -82,12 +82,12 @@ class SettlementSubTotalCalculatedTax2(base_types._BaseFieldType):
 
 	@XmptnRsnCd.setter
 	def XmptnRsnCd(self, value):
-		self._XmptnRsnCd = value if type(value) != base_types.auto else self.make_default("XmptnRsnCd")
+		self._XmptnRsnCd = value if value is not None else base_types.UninitialisedField(self, 'XmptnRsnCd', Max4Text, False)
 
 	@XmptnRsnCd.deleter
 	def XmptnRsnCd(self):
 		del self._XmptnRsnCd
-		self._XmptnRsnCd = None
+		self._XmptnRsnCd = base_types.UninitialisedField(self, 'XmptnRsnCd', Max4Text, False)
 
 	@property
 	def XmptnRsnTxt(self):
@@ -95,12 +95,12 @@ class SettlementSubTotalCalculatedTax2(base_types._BaseFieldType):
 
 	@XmptnRsnTxt.setter
 	def XmptnRsnTxt(self, value):
-		self._XmptnRsnTxt = value if type(value) != base_types.auto else self.make_default("XmptnRsnTxt")
+		self._XmptnRsnTxt = value if value is not None else base_types.UninitialisedField(self, 'XmptnRsnTxt', Max500Text, False)
 
 	@XmptnRsnTxt.deleter
 	def XmptnRsnTxt(self):
 		del self._XmptnRsnTxt
-		self._XmptnRsnTxt = None
+		self._XmptnRsnTxt = base_types.UninitialisedField(self, 'XmptnRsnTxt', Max500Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BsisAmt', type=CurrencyAndAmount, min=0, max=None, mutex_group=None, array=True),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PositiveNumber import PositiveNumber
-from ._ServiceResponse10 import ServiceResponse10
+from . import PositiveNumber
+from . import ServiceResponse10
 
 class ReportTransactionResponse8(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ReportTransactionResponse8(base_types._BaseFieldType):
 
 	@BlckStart.setter
 	def BlckStart(self, value):
-		self._BlckStart = value if type(value) != base_types.auto else self.make_default("BlckStart")
+		self._BlckStart = value if value is not None else base_types.UninitialisedField(self, 'BlckStart', PositiveNumber, False)
 
 	@BlckStart.deleter
 	def BlckStart(self):
 		del self._BlckStart
-		self._BlckStart = None
+		self._BlckStart = base_types.UninitialisedField(self, 'BlckStart', PositiveNumber, False)
 
 	@property
 	def BlckStop(self):
@@ -27,12 +27,12 @@ class ReportTransactionResponse8(base_types._BaseFieldType):
 
 	@BlckStop.setter
 	def BlckStop(self, value):
-		self._BlckStop = value if type(value) != base_types.auto else self.make_default("BlckStop")
+		self._BlckStop = value if value is not None else base_types.UninitialisedField(self, 'BlckStop', PositiveNumber, False)
 
 	@BlckStop.deleter
 	def BlckStop(self):
 		del self._BlckStop
-		self._BlckStop = None
+		self._BlckStop = base_types.UninitialisedField(self, 'BlckStop', PositiveNumber, False)
 
 	@property
 	def RptFullSz(self):
@@ -40,12 +40,12 @@ class ReportTransactionResponse8(base_types._BaseFieldType):
 
 	@RptFullSz.setter
 	def RptFullSz(self, value):
-		self._RptFullSz = value if type(value) != base_types.auto else self.make_default("RptFullSz")
+		self._RptFullSz = value if value is not None else base_types.UninitialisedField(self, 'RptFullSz', PositiveNumber, False)
 
 	@RptFullSz.deleter
 	def RptFullSz(self):
 		del self._RptFullSz
-		self._RptFullSz = None
+		self._RptFullSz = base_types.UninitialisedField(self, 'RptFullSz', PositiveNumber, False)
 
 	@property
 	def TxRpt(self):
@@ -53,12 +53,12 @@ class ReportTransactionResponse8(base_types._BaseFieldType):
 
 	@TxRpt.setter
 	def TxRpt(self, value):
-		self._TxRpt = value if type(value) != base_types.auto else self.make_default("TxRpt")
+		self._TxRpt = value if value is not None else base_types.UninitialisedField(self, 'TxRpt', ServiceResponse10, True)
 
 	@TxRpt.deleter
 	def TxRpt(self):
 		del self._TxRpt
-		self._TxRpt = None
+		self._TxRpt = base_types.UninitialisedField(self, 'TxRpt', ServiceResponse10, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BlckStart', type=PositiveNumber, min=1, max=1, mutex_group=None, array=False),

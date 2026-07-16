@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BuyInResponseV03 import BuyInResponseV03
+from . import BuyInResponseV03
 
 class SECL_008_001_03():
 
@@ -18,12 +18,12 @@ class SECL_008_001_03():
 
 		@BuyInRspn.setter
 		def BuyInRspn(self, value):
-			self._BuyInRspn = value if type(value) != base_types.auto else self.make_default("BuyInRspn")
+			self._BuyInRspn = value if value is not None else base_types.UninitialisedField(self, 'BuyInRspn', BuyInResponseV03, False)
 
 		@BuyInRspn.deleter
 		def BuyInRspn(self):
 			del self._BuyInRspn
-			self._BuyInRspn = None
+			self._BuyInRspn = base_types.UninitialisedField(self, 'BuyInRspn', BuyInResponseV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='BuyInRspn', type=BuyInResponseV03, min=1, max=1, mutex_group=None, array=False),

@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountIdentification4Choice import AccountIdentification4Choice
-from ._Adjustment5 import Adjustment5
-from ._AmountAndForeignExchange1 import AmountAndForeignExchange1
-from ._BillingTaxRecord2 import BillingTaxRecord2
-from ._ISODate import ISODate
+from . import AccountIdentification4Choice
+from . import Adjustment5
+from . import AmountAndForeignExchange1
+from . import BillingTaxRecord2
+from . import ISODate
 
 class InvoiceTotals7(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class InvoiceTotals7(base_types._BaseFieldType):
 
 	@Adjstmnt.setter
 	def Adjstmnt(self, value):
-		self._Adjstmnt = value if type(value) != base_types.auto else self.make_default("Adjstmnt")
+		self._Adjstmnt = value if value is not None else base_types.UninitialisedField(self, 'Adjstmnt', Adjustment5, False)
 
 	@Adjstmnt.deleter
 	def Adjstmnt(self):
 		del self._Adjstmnt
-		self._Adjstmnt = None
+		self._Adjstmnt = base_types.UninitialisedField(self, 'Adjstmnt', Adjustment5, False)
 
 	@property
 	def CshAcct(self):
@@ -30,12 +30,12 @@ class InvoiceTotals7(base_types._BaseFieldType):
 
 	@CshAcct.setter
 	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != base_types.auto else self.make_default("CshAcct")
+		self._CshAcct = value if value is not None else base_types.UninitialisedField(self, 'CshAcct', AccountIdentification4Choice, False)
 
 	@CshAcct.deleter
 	def CshAcct(self):
 		del self._CshAcct
-		self._CshAcct = None
+		self._CshAcct = base_types.UninitialisedField(self, 'CshAcct', AccountIdentification4Choice, False)
 
 	@property
 	def PmtDueDt(self):
@@ -43,12 +43,12 @@ class InvoiceTotals7(base_types._BaseFieldType):
 
 	@PmtDueDt.setter
 	def PmtDueDt(self, value):
-		self._PmtDueDt = value if type(value) != base_types.auto else self.make_default("PmtDueDt")
+		self._PmtDueDt = value if value is not None else base_types.UninitialisedField(self, 'PmtDueDt', ISODate, False)
 
 	@PmtDueDt.deleter
 	def PmtDueDt(self):
 		del self._PmtDueDt
-		self._PmtDueDt = None
+		self._PmtDueDt = base_types.UninitialisedField(self, 'PmtDueDt', ISODate, False)
 
 	@property
 	def Tax(self):
@@ -56,12 +56,12 @@ class InvoiceTotals7(base_types._BaseFieldType):
 
 	@Tax.setter
 	def Tax(self, value):
-		self._Tax = value if type(value) != base_types.auto else self.make_default("Tax")
+		self._Tax = value if value is not None else base_types.UninitialisedField(self, 'Tax', BillingTaxRecord2, True)
 
 	@Tax.deleter
 	def Tax(self):
 		del self._Tax
-		self._Tax = None
+		self._Tax = base_types.UninitialisedField(self, 'Tax', BillingTaxRecord2, True)
 
 	@property
 	def TtlInvcAmt(self):
@@ -69,12 +69,12 @@ class InvoiceTotals7(base_types._BaseFieldType):
 
 	@TtlInvcAmt.setter
 	def TtlInvcAmt(self, value):
-		self._TtlInvcAmt = value if type(value) != base_types.auto else self.make_default("TtlInvcAmt")
+		self._TtlInvcAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlInvcAmt', AmountAndForeignExchange1, False)
 
 	@TtlInvcAmt.deleter
 	def TtlInvcAmt(self):
 		del self._TtlInvcAmt
-		self._TtlInvcAmt = None
+		self._TtlInvcAmt = base_types.UninitialisedField(self, 'TtlInvcAmt', AmountAndForeignExchange1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Adjstmnt', type=Adjustment5, min=0, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContactIdentification1 import ContactIdentification1
+from . import ContactIdentification1
 
 class BankContactPerson1Choice(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class BankContactPerson1Choice(base_types._BaseFieldType):
 
 	@BuyrBkCtctPrsn.setter
 	def BuyrBkCtctPrsn(self, value):
-		self._BuyrBkCtctPrsn = value if type(value) != base_types.auto else self.make_default("BuyrBkCtctPrsn")
+		self._BuyrBkCtctPrsn = value if value is not None else base_types.UninitialisedField(self, 'BuyrBkCtctPrsn', ContactIdentification1, True)
 
 	@BuyrBkCtctPrsn.deleter
 	def BuyrBkCtctPrsn(self):
 		del self._BuyrBkCtctPrsn
-		self._BuyrBkCtctPrsn = None
+		self._BuyrBkCtctPrsn = base_types.UninitialisedField(self, 'BuyrBkCtctPrsn', ContactIdentification1, True)
 
 	@property
 	def SellrBkCtctPrsn(self):
@@ -26,12 +26,12 @@ class BankContactPerson1Choice(base_types._BaseFieldType):
 
 	@SellrBkCtctPrsn.setter
 	def SellrBkCtctPrsn(self, value):
-		self._SellrBkCtctPrsn = value if type(value) != base_types.auto else self.make_default("SellrBkCtctPrsn")
+		self._SellrBkCtctPrsn = value if value is not None else base_types.UninitialisedField(self, 'SellrBkCtctPrsn', ContactIdentification1, True)
 
 	@SellrBkCtctPrsn.deleter
 	def SellrBkCtctPrsn(self):
 		del self._SellrBkCtctPrsn
-		self._SellrBkCtctPrsn = None
+		self._SellrBkCtctPrsn = base_types.UninitialisedField(self, 'SellrBkCtctPrsn', ContactIdentification1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BuyrBkCtctPrsn', type=ContactIdentification1, min=1, max=None, mutex_group=1, array=True),

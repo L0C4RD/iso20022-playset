@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryAndResidentialStatusType2 import CountryAndResidentialStatusType2
-from ._GenericIdentification164 import GenericIdentification164
-from ._ISODate import ISODate
-from ._Max350Text import Max350Text
+from . import CountryAndResidentialStatusType2
+from . import GenericIdentification164
+from . import ISODate
+from . import Max350Text
 
 class IndividualPerson32(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class IndividualPerson32(base_types._BaseFieldType):
 
 	@BirthDt.setter
 	def BirthDt(self, value):
-		self._BirthDt = value if type(value) != base_types.auto else self.make_default("BirthDt")
+		self._BirthDt = value if value is not None else base_types.UninitialisedField(self, 'BirthDt', ISODate, False)
 
 	@BirthDt.deleter
 	def BirthDt(self):
 		del self._BirthDt
-		self._BirthDt = None
+		self._BirthDt = base_types.UninitialisedField(self, 'BirthDt', ISODate, False)
 
 	@property
 	def CtryAndResdtlSts(self):
@@ -29,12 +29,12 @@ class IndividualPerson32(base_types._BaseFieldType):
 
 	@CtryAndResdtlSts.setter
 	def CtryAndResdtlSts(self, value):
-		self._CtryAndResdtlSts = value if type(value) != base_types.auto else self.make_default("CtryAndResdtlSts")
+		self._CtryAndResdtlSts = value if value is not None else base_types.UninitialisedField(self, 'CtryAndResdtlSts', CountryAndResidentialStatusType2, False)
 
 	@CtryAndResdtlSts.deleter
 	def CtryAndResdtlSts(self):
 		del self._CtryAndResdtlSts
-		self._CtryAndResdtlSts = None
+		self._CtryAndResdtlSts = base_types.UninitialisedField(self, 'CtryAndResdtlSts', CountryAndResidentialStatusType2, False)
 
 	@property
 	def Nm(self):
@@ -42,12 +42,12 @@ class IndividualPerson32(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max350Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max350Text, False)
 
 	@property
 	def OthrId(self):
@@ -55,12 +55,12 @@ class IndividualPerson32(base_types._BaseFieldType):
 
 	@OthrId.setter
 	def OthrId(self, value):
-		self._OthrId = value if type(value) != base_types.auto else self.make_default("OthrId")
+		self._OthrId = value if value is not None else base_types.UninitialisedField(self, 'OthrId', GenericIdentification164, True)
 
 	@OthrId.deleter
 	def OthrId(self):
 		del self._OthrId
-		self._OthrId = None
+		self._OthrId = base_types.UninitialisedField(self, 'OthrId', GenericIdentification164, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BirthDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),

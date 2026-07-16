@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._TrackerHeader6 import TrackerHeader6
-from ._TrackerStatusAndTransaction19 import TrackerStatusAndTransaction19
+from . import SupplementaryData1
+from . import TrackerHeader6
+from . import TrackerStatusAndTransaction19
 
 class PaymentStatusTrackerUpdateV04(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PaymentStatusTrackerUpdateV04(base_types._BaseFieldType):
 
 	@GrpHdr.setter
 	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
+		self._GrpHdr = value if value is not None else base_types.UninitialisedField(self, 'GrpHdr', TrackerHeader6, False)
 
 	@GrpHdr.deleter
 	def GrpHdr(self):
 		del self._GrpHdr
-		self._GrpHdr = None
+		self._GrpHdr = base_types.UninitialisedField(self, 'GrpHdr', TrackerHeader6, False)
 
 	@property
 	def SplmtryData(self):
@@ -28,12 +28,12 @@ class PaymentStatusTrackerUpdateV04(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TrckrStsAndTx(self):
@@ -41,12 +41,12 @@ class PaymentStatusTrackerUpdateV04(base_types._BaseFieldType):
 
 	@TrckrStsAndTx.setter
 	def TrckrStsAndTx(self, value):
-		self._TrckrStsAndTx = value if type(value) != base_types.auto else self.make_default("TrckrStsAndTx")
+		self._TrckrStsAndTx = value if value is not None else base_types.UninitialisedField(self, 'TrckrStsAndTx', TrackerStatusAndTransaction19, True)
 
 	@TrckrStsAndTx.deleter
 	def TrckrStsAndTx(self):
 		del self._TrckrStsAndTx
-		self._TrckrStsAndTx = None
+		self._TrckrStsAndTx = base_types.UninitialisedField(self, 'TrckrStsAndTx', TrackerStatusAndTransaction19, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='GrpHdr', type=TrackerHeader6, min=1, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PartyDeletionRequestV01 import PartyDeletionRequestV01
+from . import PartyDeletionRequestV01
 
 class REDA_031_001_01():
 
@@ -18,12 +18,12 @@ class REDA_031_001_01():
 
 		@PtyDeltnReq.setter
 		def PtyDeltnReq(self, value):
-			self._PtyDeltnReq = value if type(value) != base_types.auto else self.make_default("PtyDeltnReq")
+			self._PtyDeltnReq = value if value is not None else base_types.UninitialisedField(self, 'PtyDeltnReq', PartyDeletionRequestV01, False)
 
 		@PtyDeltnReq.deleter
 		def PtyDeltnReq(self):
 			del self._PtyDeltnReq
-			self._PtyDeltnReq = None
+			self._PtyDeltnReq = base_types.UninitialisedField(self, 'PtyDeltnReq', PartyDeletionRequestV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='PtyDeltnReq', type=PartyDeletionRequestV01, min=1, max=1, mutex_group=None, array=False),

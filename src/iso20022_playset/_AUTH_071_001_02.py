@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesFinancingReportingTransactionReusedCollateralDataReportV02 import SecuritiesFinancingReportingTransactionReusedCollateralDataReportV02
+from . import SecuritiesFinancingReportingTransactionReusedCollateralDataReportV02
 
 class AUTH_071_001_02():
 
@@ -18,12 +18,12 @@ class AUTH_071_001_02():
 
 		@SctiesFincgRptgTxReusdCollDataRpt.setter
 		def SctiesFincgRptgTxReusdCollDataRpt(self, value):
-			self._SctiesFincgRptgTxReusdCollDataRpt = value if type(value) != base_types.auto else self.make_default("SctiesFincgRptgTxReusdCollDataRpt")
+			self._SctiesFincgRptgTxReusdCollDataRpt = value if value is not None else base_types.UninitialisedField(self, 'SctiesFincgRptgTxReusdCollDataRpt', SecuritiesFinancingReportingTransactionReusedCollateralDataReportV02, False)
 
 		@SctiesFincgRptgTxReusdCollDataRpt.deleter
 		def SctiesFincgRptgTxReusdCollDataRpt(self):
 			del self._SctiesFincgRptgTxReusdCollDataRpt
-			self._SctiesFincgRptgTxReusdCollDataRpt = None
+			self._SctiesFincgRptgTxReusdCollDataRpt = base_types.UninitialisedField(self, 'SctiesFincgRptgTxReusdCollDataRpt', SecuritiesFinancingReportingTransactionReusedCollateralDataReportV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesFincgRptgTxReusdCollDataRpt', type=SecuritiesFinancingReportingTransactionReusedCollateralDataReportV02, min=1, max=1, mutex_group=None, array=False),

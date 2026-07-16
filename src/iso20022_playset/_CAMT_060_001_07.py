@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountReportingRequestV07 import AccountReportingRequestV07
+from . import AccountReportingRequestV07
 
 class CAMT_060_001_07():
 
@@ -18,12 +18,12 @@ class CAMT_060_001_07():
 
 		@AcctRptgReq.setter
 		def AcctRptgReq(self, value):
-			self._AcctRptgReq = value if type(value) != base_types.auto else self.make_default("AcctRptgReq")
+			self._AcctRptgReq = value if value is not None else base_types.UninitialisedField(self, 'AcctRptgReq', AccountReportingRequestV07, False)
 
 		@AcctRptgReq.deleter
 		def AcctRptgReq(self):
 			del self._AcctRptgReq
-			self._AcctRptgReq = None
+			self._AcctRptgReq = base_types.UninitialisedField(self, 'AcctRptgReq', AccountReportingRequestV07, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AcctRptgReq', type=AccountReportingRequestV07, min=1, max=1, mutex_group=None, array=False),

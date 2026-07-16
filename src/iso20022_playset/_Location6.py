@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Address2 import Address2
-from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
-from ._Max256Text import Max256Text
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
+from . import Address2
+from . import ISO3NumericCurrencyCode
+from . import Max256Text
+from . import Max35Text
+from . import Max70Text
 
 class Location6(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class Location6(base_types._BaseFieldType):
 
 	@Adr.setter
 	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+		self._Adr = value if value is not None else base_types.UninitialisedField(self, 'Adr', Address2, False)
 
 	@Adr.deleter
 	def Adr(self):
 		del self._Adr
-		self._Adr = None
+		self._Adr = base_types.UninitialisedField(self, 'Adr', Address2, False)
 
 	@property
 	def Cd(self):
@@ -30,12 +30,12 @@ class Location6(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
+		self._Cd = value if value is not None else base_types.UninitialisedField(self, 'Cd', Max35Text, False)
 
 	@Cd.deleter
 	def Cd(self):
 		del self._Cd
-		self._Cd = None
+		self._Cd = base_types.UninitialisedField(self, 'Cd', Max35Text, False)
 
 	@property
 	def Desc(self):
@@ -43,12 +43,12 @@ class Location6(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', Max256Text, False)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', Max256Text, False)
 
 	@property
 	def LclCcy(self):
@@ -56,12 +56,12 @@ class Location6(base_types._BaseFieldType):
 
 	@LclCcy.setter
 	def LclCcy(self, value):
-		self._LclCcy = value if type(value) != base_types.auto else self.make_default("LclCcy")
+		self._LclCcy = value if value is not None else base_types.UninitialisedField(self, 'LclCcy', ISO3NumericCurrencyCode, False)
 
 	@LclCcy.deleter
 	def LclCcy(self):
 		del self._LclCcy
-		self._LclCcy = None
+		self._LclCcy = base_types.UninitialisedField(self, 'LclCcy', ISO3NumericCurrencyCode, False)
 
 	@property
 	def LclTmZone(self):
@@ -69,12 +69,12 @@ class Location6(base_types._BaseFieldType):
 
 	@LclTmZone.setter
 	def LclTmZone(self, value):
-		self._LclTmZone = value if type(value) != base_types.auto else self.make_default("LclTmZone")
+		self._LclTmZone = value if value is not None else base_types.UninitialisedField(self, 'LclTmZone', Max70Text, False)
 
 	@LclTmZone.deleter
 	def LclTmZone(self):
 		del self._LclTmZone
-		self._LclTmZone = None
+		self._LclTmZone = base_types.UninitialisedField(self, 'LclTmZone', Max70Text, False)
 
 	@property
 	def Nm(self):
@@ -82,12 +82,12 @@ class Location6(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max35Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Adr', type=Address2, min=0, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max350Text import Max350Text
+from . import Max350Text
 
 class Replacement2(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class Replacement2(base_types._BaseFieldType):
 
 	@CurVal.setter
 	def CurVal(self, value):
-		self._CurVal = value if type(value) != base_types.auto else self.make_default("CurVal")
+		self._CurVal = value if value is not None else base_types.UninitialisedField(self, 'CurVal', Max350Text, False)
 
 	@CurVal.deleter
 	def CurVal(self):
 		del self._CurVal
-		self._CurVal = None
+		self._CurVal = base_types.UninitialisedField(self, 'CurVal', Max350Text, False)
 
 	@property
 	def PropsdVal(self):
@@ -26,12 +26,12 @@ class Replacement2(base_types._BaseFieldType):
 
 	@PropsdVal.setter
 	def PropsdVal(self, value):
-		self._PropsdVal = value if type(value) != base_types.auto else self.make_default("PropsdVal")
+		self._PropsdVal = value if value is not None else base_types.UninitialisedField(self, 'PropsdVal', Max350Text, False)
 
 	@PropsdVal.deleter
 	def PropsdVal(self):
 		del self._PropsdVal
-		self._PropsdVal = None
+		self._PropsdVal = base_types.UninitialisedField(self, 'PropsdVal', Max350Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CurVal', type=Max350Text, min=1, max=1, mutex_group=None, array=False),

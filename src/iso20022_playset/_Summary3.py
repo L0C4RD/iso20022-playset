@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ExposureType13Code import ExposureType13Code
-from ._ISODate import ISODate
-from ._ISODateTime import ISODateTime
-from ._ShortLong1Code import ShortLong1Code
-from ._SummaryAmounts2 import SummaryAmounts2
+from . import ActiveCurrencyAndAmount
+from . import ExposureType13Code
+from . import ISODate
+from . import ISODateTime
+from . import ShortLong1Code
+from . import SummaryAmounts2
 
 class Summary3(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class Summary3(base_types._BaseFieldType):
 
 	@NetXcssDfcit.setter
 	def NetXcssDfcit(self, value):
-		self._NetXcssDfcit = value if type(value) != base_types.auto else self.make_default("NetXcssDfcit")
+		self._NetXcssDfcit = value if value is not None else base_types.UninitialisedField(self, 'NetXcssDfcit', ActiveCurrencyAndAmount, False)
 
 	@NetXcssDfcit.deleter
 	def NetXcssDfcit(self):
 		del self._NetXcssDfcit
-		self._NetXcssDfcit = None
+		self._NetXcssDfcit = base_types.UninitialisedField(self, 'NetXcssDfcit', ActiveCurrencyAndAmount, False)
 
 	@property
 	def NetXcssDfcitInd(self):
@@ -31,12 +31,12 @@ class Summary3(base_types._BaseFieldType):
 
 	@NetXcssDfcitInd.setter
 	def NetXcssDfcitInd(self, value):
-		self._NetXcssDfcitInd = value if type(value) != base_types.auto else self.make_default("NetXcssDfcitInd")
+		self._NetXcssDfcitInd = value if value is not None else base_types.UninitialisedField(self, 'NetXcssDfcitInd', ShortLong1Code, False)
 
 	@NetXcssDfcitInd.deleter
 	def NetXcssDfcitInd(self):
 		del self._NetXcssDfcitInd
-		self._NetXcssDfcitInd = None
+		self._NetXcssDfcitInd = base_types.UninitialisedField(self, 'NetXcssDfcitInd', ShortLong1Code, False)
 
 	@property
 	def ReqdSttlmDt(self):
@@ -44,12 +44,12 @@ class Summary3(base_types._BaseFieldType):
 
 	@ReqdSttlmDt.setter
 	def ReqdSttlmDt(self, value):
-		self._ReqdSttlmDt = value if type(value) != base_types.auto else self.make_default("ReqdSttlmDt")
+		self._ReqdSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'ReqdSttlmDt', ISODate, False)
 
 	@ReqdSttlmDt.deleter
 	def ReqdSttlmDt(self):
 		del self._ReqdSttlmDt
-		self._ReqdSttlmDt = None
+		self._ReqdSttlmDt = base_types.UninitialisedField(self, 'ReqdSttlmDt', ISODate, False)
 
 	@property
 	def SummryDtls(self):
@@ -57,12 +57,12 @@ class Summary3(base_types._BaseFieldType):
 
 	@SummryDtls.setter
 	def SummryDtls(self, value):
-		self._SummryDtls = value if type(value) != base_types.auto else self.make_default("SummryDtls")
+		self._SummryDtls = value if value is not None else base_types.UninitialisedField(self, 'SummryDtls', SummaryAmounts2, False)
 
 	@SummryDtls.deleter
 	def SummryDtls(self):
 		del self._SummryDtls
-		self._SummryDtls = None
+		self._SummryDtls = base_types.UninitialisedField(self, 'SummryDtls', SummaryAmounts2, False)
 
 	@property
 	def TtlValOfColl(self):
@@ -70,12 +70,12 @@ class Summary3(base_types._BaseFieldType):
 
 	@TtlValOfColl.setter
 	def TtlValOfColl(self, value):
-		self._TtlValOfColl = value if type(value) != base_types.auto else self.make_default("TtlValOfColl")
+		self._TtlValOfColl = value if value is not None else base_types.UninitialisedField(self, 'TtlValOfColl', ActiveCurrencyAndAmount, False)
 
 	@TtlValOfColl.deleter
 	def TtlValOfColl(self):
 		del self._TtlValOfColl
-		self._TtlValOfColl = None
+		self._TtlValOfColl = base_types.UninitialisedField(self, 'TtlValOfColl', ActiveCurrencyAndAmount, False)
 
 	@property
 	def ValtnDtTm(self):
@@ -83,12 +83,12 @@ class Summary3(base_types._BaseFieldType):
 
 	@ValtnDtTm.setter
 	def ValtnDtTm(self, value):
-		self._ValtnDtTm = value if type(value) != base_types.auto else self.make_default("ValtnDtTm")
+		self._ValtnDtTm = value if value is not None else base_types.UninitialisedField(self, 'ValtnDtTm', ISODateTime, False)
 
 	@ValtnDtTm.deleter
 	def ValtnDtTm(self):
 		del self._ValtnDtTm
-		self._ValtnDtTm = None
+		self._ValtnDtTm = base_types.UninitialisedField(self, 'ValtnDtTm', ISODateTime, False)
 
 	@property
 	def XpsdAmtPtyA(self):
@@ -96,12 +96,12 @@ class Summary3(base_types._BaseFieldType):
 
 	@XpsdAmtPtyA.setter
 	def XpsdAmtPtyA(self, value):
-		self._XpsdAmtPtyA = value if type(value) != base_types.auto else self.make_default("XpsdAmtPtyA")
+		self._XpsdAmtPtyA = value if value is not None else base_types.UninitialisedField(self, 'XpsdAmtPtyA', ActiveCurrencyAndAmount, False)
 
 	@XpsdAmtPtyA.deleter
 	def XpsdAmtPtyA(self):
 		del self._XpsdAmtPtyA
-		self._XpsdAmtPtyA = None
+		self._XpsdAmtPtyA = base_types.UninitialisedField(self, 'XpsdAmtPtyA', ActiveCurrencyAndAmount, False)
 
 	@property
 	def XpsdAmtPtyB(self):
@@ -109,12 +109,12 @@ class Summary3(base_types._BaseFieldType):
 
 	@XpsdAmtPtyB.setter
 	def XpsdAmtPtyB(self, value):
-		self._XpsdAmtPtyB = value if type(value) != base_types.auto else self.make_default("XpsdAmtPtyB")
+		self._XpsdAmtPtyB = value if value is not None else base_types.UninitialisedField(self, 'XpsdAmtPtyB', ActiveCurrencyAndAmount, False)
 
 	@XpsdAmtPtyB.deleter
 	def XpsdAmtPtyB(self):
 		del self._XpsdAmtPtyB
-		self._XpsdAmtPtyB = None
+		self._XpsdAmtPtyB = base_types.UninitialisedField(self, 'XpsdAmtPtyB', ActiveCurrencyAndAmount, False)
 
 	@property
 	def XpsrTp(self):
@@ -122,12 +122,12 @@ class Summary3(base_types._BaseFieldType):
 
 	@XpsrTp.setter
 	def XpsrTp(self, value):
-		self._XpsrTp = value if type(value) != base_types.auto else self.make_default("XpsrTp")
+		self._XpsrTp = value if value is not None else base_types.UninitialisedField(self, 'XpsrTp', ExposureType13Code, False)
 
 	@XpsrTp.deleter
 	def XpsrTp(self):
 		del self._XpsrTp
-		self._XpsrTp = None
+		self._XpsrTp = base_types.UninitialisedField(self, 'XpsrTp', ExposureType13Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NetXcssDfcit', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

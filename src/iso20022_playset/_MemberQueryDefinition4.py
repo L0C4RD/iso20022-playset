@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MemberCriteriaDefinition2Choice import MemberCriteriaDefinition2Choice
-from ._QueryType2Code import QueryType2Code
+from . import MemberCriteriaDefinition2Choice
+from . import QueryType2Code
 
 class MemberQueryDefinition4(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class MemberQueryDefinition4(base_types._BaseFieldType):
 
 	@MmbCrit.setter
 	def MmbCrit(self, value):
-		self._MmbCrit = value if type(value) != base_types.auto else self.make_default("MmbCrit")
+		self._MmbCrit = value if value is not None else base_types.UninitialisedField(self, 'MmbCrit', MemberCriteriaDefinition2Choice, False)
 
 	@MmbCrit.deleter
 	def MmbCrit(self):
 		del self._MmbCrit
-		self._MmbCrit = None
+		self._MmbCrit = base_types.UninitialisedField(self, 'MmbCrit', MemberCriteriaDefinition2Choice, False)
 
 	@property
 	def QryTp(self):
@@ -27,12 +27,12 @@ class MemberQueryDefinition4(base_types._BaseFieldType):
 
 	@QryTp.setter
 	def QryTp(self, value):
-		self._QryTp = value if type(value) != base_types.auto else self.make_default("QryTp")
+		self._QryTp = value if value is not None else base_types.UninitialisedField(self, 'QryTp', QueryType2Code, False)
 
 	@QryTp.deleter
 	def QryTp(self):
 		del self._QryTp
-		self._QryTp = None
+		self._QryTp = base_types.UninitialisedField(self, 'QryTp', QueryType2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MmbCrit', type=MemberCriteriaDefinition2Choice, min=0, max=1, mutex_group=None, array=False),

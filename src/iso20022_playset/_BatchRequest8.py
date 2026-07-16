@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._TransactionIdentifier1 import TransactionIdentifier1
-from ._TransactionToPerform8Choice import TransactionToPerform8Choice
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import TransactionIdentifier1
+from . import TransactionToPerform8Choice
+from . import TrueFalseIndicator
 
 class BatchRequest8(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class BatchRequest8(base_types._BaseFieldType):
 
 	@RmvAllFlg.setter
 	def RmvAllFlg(self, value):
-		self._RmvAllFlg = value if type(value) != base_types.auto else self.make_default("RmvAllFlg")
+		self._RmvAllFlg = value if value is not None else base_types.UninitialisedField(self, 'RmvAllFlg', TrueFalseIndicator, False)
 
 	@RmvAllFlg.deleter
 	def RmvAllFlg(self):
 		del self._RmvAllFlg
-		self._RmvAllFlg = None
+		self._RmvAllFlg = base_types.UninitialisedField(self, 'RmvAllFlg', TrueFalseIndicator, False)
 
 	@property
 	def SaleBtchId(self):
@@ -28,12 +28,12 @@ class BatchRequest8(base_types._BaseFieldType):
 
 	@SaleBtchId.setter
 	def SaleBtchId(self, value):
-		self._SaleBtchId = value if type(value) != base_types.auto else self.make_default("SaleBtchId")
+		self._SaleBtchId = value if value is not None else base_types.UninitialisedField(self, 'SaleBtchId', TransactionIdentifier1, False)
 
 	@SaleBtchId.deleter
 	def SaleBtchId(self):
 		del self._SaleBtchId
-		self._SaleBtchId = None
+		self._SaleBtchId = base_types.UninitialisedField(self, 'SaleBtchId', TransactionIdentifier1, False)
 
 	@property
 	def TxToPrfrm(self):
@@ -41,12 +41,12 @@ class BatchRequest8(base_types._BaseFieldType):
 
 	@TxToPrfrm.setter
 	def TxToPrfrm(self, value):
-		self._TxToPrfrm = value if type(value) != base_types.auto else self.make_default("TxToPrfrm")
+		self._TxToPrfrm = value if value is not None else base_types.UninitialisedField(self, 'TxToPrfrm', TransactionToPerform8Choice, True)
 
 	@TxToPrfrm.deleter
 	def TxToPrfrm(self):
 		del self._TxToPrfrm
-		self._TxToPrfrm = None
+		self._TxToPrfrm = base_types.UninitialisedField(self, 'TxToPrfrm', TransactionToPerform8Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RmvAllFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),

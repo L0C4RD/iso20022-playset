@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BankServicesBillingStatementV05 import BankServicesBillingStatementV05
+from . import BankServicesBillingStatementV05
 
 class CAMT_086_001_05():
 
@@ -18,12 +18,12 @@ class CAMT_086_001_05():
 
 		@BkSvcsBllgStmt.setter
 		def BkSvcsBllgStmt(self, value):
-			self._BkSvcsBllgStmt = value if type(value) != base_types.auto else self.make_default("BkSvcsBllgStmt")
+			self._BkSvcsBllgStmt = value if value is not None else base_types.UninitialisedField(self, 'BkSvcsBllgStmt', BankServicesBillingStatementV05, False)
 
 		@BkSvcsBllgStmt.deleter
 		def BkSvcsBllgStmt(self):
 			del self._BkSvcsBllgStmt
-			self._BkSvcsBllgStmt = None
+			self._BkSvcsBllgStmt = base_types.UninitialisedField(self, 'BkSvcsBllgStmt', BankServicesBillingStatementV05, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='BkSvcsBllgStmt', type=BankServicesBillingStatementV05, min=1, max=1, mutex_group=None, array=False),

@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalRequestData1Choice import AdditionalRequestData1Choice
-from ._Document12 import Document12
-from ._FileData1 import FileData1
-from ._InvestigationReason1Choice import InvestigationReason1Choice
-from ._InvestigationReasonSubType1Choice import InvestigationReasonSubType1Choice
-from ._Max3Number import Max3Number
-from ._RelatedInvestigationData1 import RelatedInvestigationData1
+from . import AdditionalRequestData1Choice
+from . import Document12
+from . import FileData1
+from . import InvestigationReason1Choice
+from . import InvestigationReasonSubType1Choice
+from . import Max3Number
+from . import RelatedInvestigationData1
 
 class InvestigationReason2(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class InvestigationReason2(base_types._BaseFieldType):
 
 	@AddtlReqData.setter
 	def AddtlReqData(self, value):
-		self._AddtlReqData = value if type(value) != base_types.auto else self.make_default("AddtlReqData")
+		self._AddtlReqData = value if value is not None else base_types.UninitialisedField(self, 'AddtlReqData', AdditionalRequestData1Choice, False)
 
 	@AddtlReqData.deleter
 	def AddtlReqData(self):
 		del self._AddtlReqData
-		self._AddtlReqData = None
+		self._AddtlReqData = base_types.UninitialisedField(self, 'AddtlReqData', AdditionalRequestData1Choice, False)
 
 	@property
 	def NclsdFile(self):
@@ -32,12 +32,12 @@ class InvestigationReason2(base_types._BaseFieldType):
 
 	@NclsdFile.setter
 	def NclsdFile(self, value):
-		self._NclsdFile = value if type(value) != base_types.auto else self.make_default("NclsdFile")
+		self._NclsdFile = value if value is not None else base_types.UninitialisedField(self, 'NclsdFile', Document12, True)
 
 	@NclsdFile.deleter
 	def NclsdFile(self):
 		del self._NclsdFile
-		self._NclsdFile = None
+		self._NclsdFile = base_types.UninitialisedField(self, 'NclsdFile', Document12, True)
 
 	@property
 	def RltdFileData(self):
@@ -45,12 +45,12 @@ class InvestigationReason2(base_types._BaseFieldType):
 
 	@RltdFileData.setter
 	def RltdFileData(self, value):
-		self._RltdFileData = value if type(value) != base_types.auto else self.make_default("RltdFileData")
+		self._RltdFileData = value if value is not None else base_types.UninitialisedField(self, 'RltdFileData', FileData1, True)
 
 	@RltdFileData.deleter
 	def RltdFileData(self):
 		del self._RltdFileData
-		self._RltdFileData = None
+		self._RltdFileData = base_types.UninitialisedField(self, 'RltdFileData', FileData1, True)
 
 	@property
 	def RltdInvstgtnData(self):
@@ -58,12 +58,12 @@ class InvestigationReason2(base_types._BaseFieldType):
 
 	@RltdInvstgtnData.setter
 	def RltdInvstgtnData(self, value):
-		self._RltdInvstgtnData = value if type(value) != base_types.auto else self.make_default("RltdInvstgtnData")
+		self._RltdInvstgtnData = value if value is not None else base_types.UninitialisedField(self, 'RltdInvstgtnData', RelatedInvestigationData1, False)
 
 	@RltdInvstgtnData.deleter
 	def RltdInvstgtnData(self):
 		del self._RltdInvstgtnData
-		self._RltdInvstgtnData = None
+		self._RltdInvstgtnData = base_types.UninitialisedField(self, 'RltdInvstgtnData', RelatedInvestigationData1, False)
 
 	@property
 	def Rsn(self):
@@ -71,12 +71,12 @@ class InvestigationReason2(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', InvestigationReason1Choice, False)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', InvestigationReason1Choice, False)
 
 	@property
 	def RsnSubTp(self):
@@ -84,12 +84,12 @@ class InvestigationReason2(base_types._BaseFieldType):
 
 	@RsnSubTp.setter
 	def RsnSubTp(self, value):
-		self._RsnSubTp = value if type(value) != base_types.auto else self.make_default("RsnSubTp")
+		self._RsnSubTp = value if value is not None else base_types.UninitialisedField(self, 'RsnSubTp', InvestigationReasonSubType1Choice, False)
 
 	@RsnSubTp.deleter
 	def RsnSubTp(self):
 		del self._RsnSubTp
-		self._RsnSubTp = None
+		self._RsnSubTp = base_types.UninitialisedField(self, 'RsnSubTp', InvestigationReasonSubType1Choice, False)
 
 	@property
 	def Seq(self):
@@ -97,12 +97,12 @@ class InvestigationReason2(base_types._BaseFieldType):
 
 	@Seq.setter
 	def Seq(self, value):
-		self._Seq = value if type(value) != base_types.auto else self.make_default("Seq")
+		self._Seq = value if value is not None else base_types.UninitialisedField(self, 'Seq', Max3Number, False)
 
 	@Seq.deleter
 	def Seq(self):
 		del self._Seq
-		self._Seq = None
+		self._Seq = base_types.UninitialisedField(self, 'Seq', Max3Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlReqData', type=AdditionalRequestData1Choice, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MemberIdentification3Choice import MemberIdentification3Choice
-from ._MemberReportOrError8Choice import MemberReportOrError8Choice
+from . import MemberIdentification3Choice
+from . import MemberReportOrError8Choice
 
 class MemberReport6(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class MemberReport6(base_types._BaseFieldType):
 
 	@MmbId.setter
 	def MmbId(self, value):
-		self._MmbId = value if type(value) != base_types.auto else self.make_default("MmbId")
+		self._MmbId = value if value is not None else base_types.UninitialisedField(self, 'MmbId', MemberIdentification3Choice, False)
 
 	@MmbId.deleter
 	def MmbId(self):
 		del self._MmbId
-		self._MmbId = None
+		self._MmbId = base_types.UninitialisedField(self, 'MmbId', MemberIdentification3Choice, False)
 
 	@property
 	def MmbOrErr(self):
@@ -27,12 +27,12 @@ class MemberReport6(base_types._BaseFieldType):
 
 	@MmbOrErr.setter
 	def MmbOrErr(self, value):
-		self._MmbOrErr = value if type(value) != base_types.auto else self.make_default("MmbOrErr")
+		self._MmbOrErr = value if value is not None else base_types.UninitialisedField(self, 'MmbOrErr', MemberReportOrError8Choice, False)
 
 	@MmbOrErr.deleter
 	def MmbOrErr(self):
 		del self._MmbOrErr
-		self._MmbOrErr = None
+		self._MmbOrErr = base_types.UninitialisedField(self, 'MmbOrErr', MemberReportOrError8Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MmbId', type=MemberIdentification3Choice, min=1, max=1, mutex_group=None, array=False),

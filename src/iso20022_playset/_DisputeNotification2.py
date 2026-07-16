@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SegregatedIndependentAmountDispute2 import SegregatedIndependentAmountDispute2
-from ._VariationMarginDispute1 import VariationMarginDispute1
+from . import SegregatedIndependentAmountDispute2
+from . import VariationMarginDispute1
 
 class DisputeNotification2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DisputeNotification2(base_types._BaseFieldType):
 
 	@SgrtdIndpdntAmtDspt.setter
 	def SgrtdIndpdntAmtDspt(self, value):
-		self._SgrtdIndpdntAmtDspt = value if type(value) != base_types.auto else self.make_default("SgrtdIndpdntAmtDspt")
+		self._SgrtdIndpdntAmtDspt = value if value is not None else base_types.UninitialisedField(self, 'SgrtdIndpdntAmtDspt', SegregatedIndependentAmountDispute2, False)
 
 	@SgrtdIndpdntAmtDspt.deleter
 	def SgrtdIndpdntAmtDspt(self):
 		del self._SgrtdIndpdntAmtDspt
-		self._SgrtdIndpdntAmtDspt = None
+		self._SgrtdIndpdntAmtDspt = base_types.UninitialisedField(self, 'SgrtdIndpdntAmtDspt', SegregatedIndependentAmountDispute2, False)
 
 	@property
 	def VartnMrgnDspt(self):
@@ -27,12 +27,12 @@ class DisputeNotification2(base_types._BaseFieldType):
 
 	@VartnMrgnDspt.setter
 	def VartnMrgnDspt(self, value):
-		self._VartnMrgnDspt = value if type(value) != base_types.auto else self.make_default("VartnMrgnDspt")
+		self._VartnMrgnDspt = value if value is not None else base_types.UninitialisedField(self, 'VartnMrgnDspt', VariationMarginDispute1, False)
 
 	@VartnMrgnDspt.deleter
 	def VartnMrgnDspt(self):
 		del self._VartnMrgnDspt
-		self._VartnMrgnDspt = None
+		self._VartnMrgnDspt = base_types.UninitialisedField(self, 'VartnMrgnDspt', VariationMarginDispute1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SgrtdIndpdntAmtDspt', type=SegregatedIndependentAmountDispute2, min=0, max=1, mutex_group=None, array=False),

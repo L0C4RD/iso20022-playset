@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._AggregatedPenaltyAmount2 import AggregatedPenaltyAmount2
-from ._AmountAndDirection5 import AmountAndDirection5
+from . import ActiveCurrencyAndAmount
+from . import AggregatedPenaltyAmount2
+from . import AmountAndDirection5
 
 class AggregatedPenaltyAmount1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AggregatedPenaltyAmount1(base_types._BaseFieldType):
 
 	@AggtdCdtAmt.setter
 	def AggtdCdtAmt(self, value):
-		self._AggtdCdtAmt = value if type(value) != base_types.auto else self.make_default("AggtdCdtAmt")
+		self._AggtdCdtAmt = value if value is not None else base_types.UninitialisedField(self, 'AggtdCdtAmt', ActiveCurrencyAndAmount, False)
 
 	@AggtdCdtAmt.deleter
 	def AggtdCdtAmt(self):
 		del self._AggtdCdtAmt
-		self._AggtdCdtAmt = None
+		self._AggtdCdtAmt = base_types.UninitialisedField(self, 'AggtdCdtAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def AggtdDbtAmt(self):
@@ -28,12 +28,12 @@ class AggregatedPenaltyAmount1(base_types._BaseFieldType):
 
 	@AggtdDbtAmt.setter
 	def AggtdDbtAmt(self, value):
-		self._AggtdDbtAmt = value if type(value) != base_types.auto else self.make_default("AggtdDbtAmt")
+		self._AggtdDbtAmt = value if value is not None else base_types.UninitialisedField(self, 'AggtdDbtAmt', ActiveCurrencyAndAmount, False)
 
 	@AggtdDbtAmt.deleter
 	def AggtdDbtAmt(self):
 		del self._AggtdDbtAmt
-		self._AggtdDbtAmt = None
+		self._AggtdDbtAmt = base_types.UninitialisedField(self, 'AggtdDbtAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def CtrPtyCSDAggtdAmt(self):
@@ -41,12 +41,12 @@ class AggregatedPenaltyAmount1(base_types._BaseFieldType):
 
 	@CtrPtyCSDAggtdAmt.setter
 	def CtrPtyCSDAggtdAmt(self, value):
-		self._CtrPtyCSDAggtdAmt = value if type(value) != base_types.auto else self.make_default("CtrPtyCSDAggtdAmt")
+		self._CtrPtyCSDAggtdAmt = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyCSDAggtdAmt', AggregatedPenaltyAmount2, True)
 
 	@CtrPtyCSDAggtdAmt.deleter
 	def CtrPtyCSDAggtdAmt(self):
 		del self._CtrPtyCSDAggtdAmt
-		self._CtrPtyCSDAggtdAmt = None
+		self._CtrPtyCSDAggtdAmt = base_types.UninitialisedField(self, 'CtrPtyCSDAggtdAmt', AggregatedPenaltyAmount2, True)
 
 	@property
 	def GblNetAmt(self):
@@ -54,12 +54,12 @@ class AggregatedPenaltyAmount1(base_types._BaseFieldType):
 
 	@GblNetAmt.setter
 	def GblNetAmt(self, value):
-		self._GblNetAmt = value if type(value) != base_types.auto else self.make_default("GblNetAmt")
+		self._GblNetAmt = value if value is not None else base_types.UninitialisedField(self, 'GblNetAmt', AmountAndDirection5, False)
 
 	@GblNetAmt.deleter
 	def GblNetAmt(self):
 		del self._GblNetAmt
-		self._GblNetAmt = None
+		self._GblNetAmt = base_types.UninitialisedField(self, 'GblNetAmt', AmountAndDirection5, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AggtdCdtAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

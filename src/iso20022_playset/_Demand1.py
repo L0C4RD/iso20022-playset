@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashAccount27 import CashAccount27
-from ._DemandDocumentation1 import DemandDocumentation1
-from ._DemandType1Code import DemandType1Code
-from ._ISODate import ISODate
-from ._Max2000Text import Max2000Text
-from ._Max35Text import Max35Text
-from ._Presentation2 import Presentation2
-from ._Undertaking6 import Undertaking6
-from ._UndertakingAmount3 import UndertakingAmount3
+from . import CashAccount27
+from . import DemandDocumentation1
+from . import DemandType1Code
+from . import ISODate
+from . import Max2000Text
+from . import Max35Text
+from . import Presentation2
+from . import Undertaking6
+from . import UndertakingAmount3
 
 class Demand1(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class Demand1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max2000Text, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max2000Text, True)
 
 	@property
 	def AdvsgPtyRefNb(self):
@@ -34,12 +34,12 @@ class Demand1(base_types._BaseFieldType):
 
 	@AdvsgPtyRefNb.setter
 	def AdvsgPtyRefNb(self, value):
-		self._AdvsgPtyRefNb = value if type(value) != base_types.auto else self.make_default("AdvsgPtyRefNb")
+		self._AdvsgPtyRefNb = value if value is not None else base_types.UninitialisedField(self, 'AdvsgPtyRefNb', Max35Text, False)
 
 	@AdvsgPtyRefNb.deleter
 	def AdvsgPtyRefNb(self):
 		del self._AdvsgPtyRefNb
-		self._AdvsgPtyRefNb = None
+		self._AdvsgPtyRefNb = base_types.UninitialisedField(self, 'AdvsgPtyRefNb', Max35Text, False)
 
 	@property
 	def CnfrmrRefNb(self):
@@ -47,12 +47,12 @@ class Demand1(base_types._BaseFieldType):
 
 	@CnfrmrRefNb.setter
 	def CnfrmrRefNb(self, value):
-		self._CnfrmrRefNb = value if type(value) != base_types.auto else self.make_default("CnfrmrRefNb")
+		self._CnfrmrRefNb = value if value is not None else base_types.UninitialisedField(self, 'CnfrmrRefNb', Max35Text, False)
 
 	@CnfrmrRefNb.deleter
 	def CnfrmrRefNb(self):
 		del self._CnfrmrRefNb
-		self._CnfrmrRefNb = None
+		self._CnfrmrRefNb = base_types.UninitialisedField(self, 'CnfrmrRefNb', Max35Text, False)
 
 	@property
 	def DmndAmt(self):
@@ -60,12 +60,12 @@ class Demand1(base_types._BaseFieldType):
 
 	@DmndAmt.setter
 	def DmndAmt(self, value):
-		self._DmndAmt = value if type(value) != base_types.auto else self.make_default("DmndAmt")
+		self._DmndAmt = value if value is not None else base_types.UninitialisedField(self, 'DmndAmt', UndertakingAmount3, False)
 
 	@DmndAmt.deleter
 	def DmndAmt(self):
 		del self._DmndAmt
-		self._DmndAmt = None
+		self._DmndAmt = base_types.UninitialisedField(self, 'DmndAmt', UndertakingAmount3, False)
 
 	@property
 	def DmndDcmnttn(self):
@@ -73,12 +73,12 @@ class Demand1(base_types._BaseFieldType):
 
 	@DmndDcmnttn.setter
 	def DmndDcmnttn(self, value):
-		self._DmndDcmnttn = value if type(value) != base_types.auto else self.make_default("DmndDcmnttn")
+		self._DmndDcmnttn = value if value is not None else base_types.UninitialisedField(self, 'DmndDcmnttn', DemandDocumentation1, False)
 
 	@DmndDcmnttn.deleter
 	def DmndDcmnttn(self):
 		del self._DmndDcmnttn
-		self._DmndDcmnttn = None
+		self._DmndDcmnttn = base_types.UninitialisedField(self, 'DmndDcmnttn', DemandDocumentation1, False)
 
 	@property
 	def Id(self):
@@ -86,12 +86,12 @@ class Demand1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def PresntnDtls(self):
@@ -99,12 +99,12 @@ class Demand1(base_types._BaseFieldType):
 
 	@PresntnDtls.setter
 	def PresntnDtls(self, value):
-		self._PresntnDtls = value if type(value) != base_types.auto else self.make_default("PresntnDtls")
+		self._PresntnDtls = value if value is not None else base_types.UninitialisedField(self, 'PresntnDtls', Presentation2, False)
 
 	@PresntnDtls.deleter
 	def PresntnDtls(self):
 		del self._PresntnDtls
-		self._PresntnDtls = None
+		self._PresntnDtls = base_types.UninitialisedField(self, 'PresntnDtls', Presentation2, False)
 
 	@property
 	def ReqdXpryDt(self):
@@ -112,12 +112,12 @@ class Demand1(base_types._BaseFieldType):
 
 	@ReqdXpryDt.setter
 	def ReqdXpryDt(self, value):
-		self._ReqdXpryDt = value if type(value) != base_types.auto else self.make_default("ReqdXpryDt")
+		self._ReqdXpryDt = value if value is not None else base_types.UninitialisedField(self, 'ReqdXpryDt', ISODate, False)
 
 	@ReqdXpryDt.deleter
 	def ReqdXpryDt(self):
 		del self._ReqdXpryDt
-		self._ReqdXpryDt = None
+		self._ReqdXpryDt = base_types.UninitialisedField(self, 'ReqdXpryDt', ISODate, False)
 
 	@property
 	def ScndAdvsgPtyRefNb(self):
@@ -125,12 +125,12 @@ class Demand1(base_types._BaseFieldType):
 
 	@ScndAdvsgPtyRefNb.setter
 	def ScndAdvsgPtyRefNb(self, value):
-		self._ScndAdvsgPtyRefNb = value if type(value) != base_types.auto else self.make_default("ScndAdvsgPtyRefNb")
+		self._ScndAdvsgPtyRefNb = value if value is not None else base_types.UninitialisedField(self, 'ScndAdvsgPtyRefNb', Max35Text, False)
 
 	@ScndAdvsgPtyRefNb.deleter
 	def ScndAdvsgPtyRefNb(self):
 		del self._ScndAdvsgPtyRefNb
-		self._ScndAdvsgPtyRefNb = None
+		self._ScndAdvsgPtyRefNb = base_types.UninitialisedField(self, 'ScndAdvsgPtyRefNb', Max35Text, False)
 
 	@property
 	def SttlmAcct(self):
@@ -138,12 +138,12 @@ class Demand1(base_types._BaseFieldType):
 
 	@SttlmAcct.setter
 	def SttlmAcct(self, value):
-		self._SttlmAcct = value if type(value) != base_types.auto else self.make_default("SttlmAcct")
+		self._SttlmAcct = value if value is not None else base_types.UninitialisedField(self, 'SttlmAcct', CashAccount27, True)
 
 	@SttlmAcct.deleter
 	def SttlmAcct(self):
 		del self._SttlmAcct
-		self._SttlmAcct = None
+		self._SttlmAcct = base_types.UninitialisedField(self, 'SttlmAcct', CashAccount27, True)
 
 	@property
 	def Tp(self):
@@ -151,12 +151,12 @@ class Demand1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', DemandType1Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', DemandType1Code, False)
 
 	@property
 	def UdrtkgId(self):
@@ -164,12 +164,12 @@ class Demand1(base_types._BaseFieldType):
 
 	@UdrtkgId.setter
 	def UdrtkgId(self, value):
-		self._UdrtkgId = value if type(value) != base_types.auto else self.make_default("UdrtkgId")
+		self._UdrtkgId = value if value is not None else base_types.UninitialisedField(self, 'UdrtkgId', Undertaking6, False)
 
 	@UdrtkgId.deleter
 	def UdrtkgId(self):
 		del self._UdrtkgId
-		self._UdrtkgId = None
+		self._UdrtkgId = base_types.UninitialisedField(self, 'UdrtkgId', Undertaking6, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),

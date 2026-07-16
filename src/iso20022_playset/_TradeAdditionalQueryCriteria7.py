@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateSectorCriteria5 import CorporateSectorCriteria5
-from ._PartyNatureType1Code import PartyNatureType1Code
-from ._SecuritiesTradeVenueCriteria1Choice import SecuritiesTradeVenueCriteria1Choice
-from ._TransactionOperationType6Code import TransactionOperationType6Code
+from . import CorporateSectorCriteria5
+from . import PartyNatureType1Code
+from . import SecuritiesTradeVenueCriteria1Choice
+from . import TransactionOperationType6Code
 
 class TradeAdditionalQueryCriteria7(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class TradeAdditionalQueryCriteria7(base_types._BaseFieldType):
 
 	@ActnTp.setter
 	def ActnTp(self, value):
-		self._ActnTp = value if type(value) != base_types.auto else self.make_default("ActnTp")
+		self._ActnTp = value if value is not None else base_types.UninitialisedField(self, 'ActnTp', TransactionOperationType6Code, True)
 
 	@ActnTp.deleter
 	def ActnTp(self):
 		del self._ActnTp
-		self._ActnTp = None
+		self._ActnTp = base_types.UninitialisedField(self, 'ActnTp', TransactionOperationType6Code, True)
 
 	@property
 	def CorpSctr(self):
@@ -29,12 +29,12 @@ class TradeAdditionalQueryCriteria7(base_types._BaseFieldType):
 
 	@CorpSctr.setter
 	def CorpSctr(self, value):
-		self._CorpSctr = value if type(value) != base_types.auto else self.make_default("CorpSctr")
+		self._CorpSctr = value if value is not None else base_types.UninitialisedField(self, 'CorpSctr', CorporateSectorCriteria5, True)
 
 	@CorpSctr.deleter
 	def CorpSctr(self):
 		del self._CorpSctr
-		self._CorpSctr = None
+		self._CorpSctr = base_types.UninitialisedField(self, 'CorpSctr', CorporateSectorCriteria5, True)
 
 	@property
 	def ExctnVn(self):
@@ -42,12 +42,12 @@ class TradeAdditionalQueryCriteria7(base_types._BaseFieldType):
 
 	@ExctnVn.setter
 	def ExctnVn(self, value):
-		self._ExctnVn = value if type(value) != base_types.auto else self.make_default("ExctnVn")
+		self._ExctnVn = value if value is not None else base_types.UninitialisedField(self, 'ExctnVn', SecuritiesTradeVenueCriteria1Choice, False)
 
 	@ExctnVn.deleter
 	def ExctnVn(self):
 		del self._ExctnVn
-		self._ExctnVn = None
+		self._ExctnVn = base_types.UninitialisedField(self, 'ExctnVn', SecuritiesTradeVenueCriteria1Choice, False)
 
 	@property
 	def NtrOfCtrPty(self):
@@ -55,12 +55,12 @@ class TradeAdditionalQueryCriteria7(base_types._BaseFieldType):
 
 	@NtrOfCtrPty.setter
 	def NtrOfCtrPty(self, value):
-		self._NtrOfCtrPty = value if type(value) != base_types.auto else self.make_default("NtrOfCtrPty")
+		self._NtrOfCtrPty = value if value is not None else base_types.UninitialisedField(self, 'NtrOfCtrPty', PartyNatureType1Code, True)
 
 	@NtrOfCtrPty.deleter
 	def NtrOfCtrPty(self):
 		del self._NtrOfCtrPty
-		self._NtrOfCtrPty = None
+		self._NtrOfCtrPty = base_types.UninitialisedField(self, 'NtrOfCtrPty', PartyNatureType1Code, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActnTp', type=TransactionOperationType6Code, min=0, max=None, mutex_group=None, array=True),

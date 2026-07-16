@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CommonFinancialInstrumentAttributes10 import CommonFinancialInstrumentAttributes10
-from ._FinancialInstrument97 import FinancialInstrument97
-from ._SecurityIdentification39 import SecurityIdentification39
+from . import CommonFinancialInstrumentAttributes10
+from . import FinancialInstrument97
+from . import SecurityIdentification39
 
 class SecurityAttributes10(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SecurityAttributes10(base_types._BaseFieldType):
 
 	@FinInstrmAttrbts.setter
 	def FinInstrmAttrbts(self, value):
-		self._FinInstrmAttrbts = value if type(value) != base_types.auto else self.make_default("FinInstrmAttrbts")
+		self._FinInstrmAttrbts = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmAttrbts', CommonFinancialInstrumentAttributes10, True)
 
 	@FinInstrmAttrbts.deleter
 	def FinInstrmAttrbts(self):
 		del self._FinInstrmAttrbts
-		self._FinInstrmAttrbts = None
+		self._FinInstrmAttrbts = base_types.UninitialisedField(self, 'FinInstrmAttrbts', CommonFinancialInstrumentAttributes10, True)
 
 	@property
 	def FinInstrmId(self):
@@ -28,12 +28,12 @@ class SecurityAttributes10(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification39, False)
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
 		del self._FinInstrmId
-		self._FinInstrmId = None
+		self._FinInstrmId = base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification39, False)
 
 	@property
 	def FinInstrmTp(self):
@@ -41,12 +41,12 @@ class SecurityAttributes10(base_types._BaseFieldType):
 
 	@FinInstrmTp.setter
 	def FinInstrmTp(self, value):
-		self._FinInstrmTp = value if type(value) != base_types.auto else self.make_default("FinInstrmTp")
+		self._FinInstrmTp = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmTp', FinancialInstrument97, True)
 
 	@FinInstrmTp.deleter
 	def FinInstrmTp(self):
 		del self._FinInstrmTp
-		self._FinInstrmTp = None
+		self._FinInstrmTp = base_types.UninitialisedField(self, 'FinInstrmTp', FinancialInstrument97, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FinInstrmAttrbts', type=CommonFinancialInstrumentAttributes10, min=0, max=None, mutex_group=None, array=True),

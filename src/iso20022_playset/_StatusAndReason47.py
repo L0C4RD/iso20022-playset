@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Status38Choice import Status38Choice
-from ._Transaction162 import Transaction162
+from . import Status38Choice
+from . import Transaction162
 
 class StatusAndReason47(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class StatusAndReason47(base_types._BaseFieldType):
 
 	@StsAndRsn.setter
 	def StsAndRsn(self, value):
-		self._StsAndRsn = value if type(value) != base_types.auto else self.make_default("StsAndRsn")
+		self._StsAndRsn = value if value is not None else base_types.UninitialisedField(self, 'StsAndRsn', Status38Choice, False)
 
 	@StsAndRsn.deleter
 	def StsAndRsn(self):
 		del self._StsAndRsn
-		self._StsAndRsn = None
+		self._StsAndRsn = base_types.UninitialisedField(self, 'StsAndRsn', Status38Choice, False)
 
 	@property
 	def Tx(self):
@@ -27,12 +27,12 @@ class StatusAndReason47(base_types._BaseFieldType):
 
 	@Tx.setter
 	def Tx(self, value):
-		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
+		self._Tx = value if value is not None else base_types.UninitialisedField(self, 'Tx', Transaction162, True)
 
 	@Tx.deleter
 	def Tx(self):
 		del self._Tx
-		self._Tx = None
+		self._Tx = base_types.UninitialisedField(self, 'Tx', Transaction162, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='StsAndRsn', type=Status38Choice, min=1, max=1, mutex_group=None, array=False),

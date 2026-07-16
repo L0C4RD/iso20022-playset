@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMEquipment3 import ATMEquipment3
-from ._ATMSecurityConfiguration1 import ATMSecurityConfiguration1
-from ._ATMSecurityScheme3Code import ATMSecurityScheme3Code
+from . import ATMEquipment3
+from . import ATMSecurityConfiguration1
+from . import ATMSecurityScheme3Code
 
 class ATMSecurityContext3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ATMSecurityContext3(base_types._BaseFieldType):
 
 	@CurCfgtn.setter
 	def CurCfgtn(self, value):
-		self._CurCfgtn = value if type(value) != base_types.auto else self.make_default("CurCfgtn")
+		self._CurCfgtn = value if value is not None else base_types.UninitialisedField(self, 'CurCfgtn', ATMSecurityConfiguration1, False)
 
 	@CurCfgtn.deleter
 	def CurCfgtn(self):
 		del self._CurCfgtn
-		self._CurCfgtn = None
+		self._CurCfgtn = base_types.UninitialisedField(self, 'CurCfgtn', ATMSecurityConfiguration1, False)
 
 	@property
 	def CurSctySchme(self):
@@ -28,12 +28,12 @@ class ATMSecurityContext3(base_types._BaseFieldType):
 
 	@CurSctySchme.setter
 	def CurSctySchme(self, value):
-		self._CurSctySchme = value if type(value) != base_types.auto else self.make_default("CurSctySchme")
+		self._CurSctySchme = value if value is not None else base_types.UninitialisedField(self, 'CurSctySchme', ATMSecurityScheme3Code, False)
 
 	@CurSctySchme.deleter
 	def CurSctySchme(self):
 		del self._CurSctySchme
-		self._CurSctySchme = None
+		self._CurSctySchme = base_types.UninitialisedField(self, 'CurSctySchme', ATMSecurityScheme3Code, False)
 
 	@property
 	def DvcPrprty(self):
@@ -41,12 +41,12 @@ class ATMSecurityContext3(base_types._BaseFieldType):
 
 	@DvcPrprty.setter
 	def DvcPrprty(self, value):
-		self._DvcPrprty = value if type(value) != base_types.auto else self.make_default("DvcPrprty")
+		self._DvcPrprty = value if value is not None else base_types.UninitialisedField(self, 'DvcPrprty', ATMEquipment3, False)
 
 	@DvcPrprty.deleter
 	def DvcPrprty(self):
 		del self._DvcPrprty
-		self._DvcPrprty = None
+		self._DvcPrprty = base_types.UninitialisedField(self, 'DvcPrprty', ATMEquipment3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CurCfgtn', type=ATMSecurityConfiguration1, min=0, max=1, mutex_group=None, array=False),

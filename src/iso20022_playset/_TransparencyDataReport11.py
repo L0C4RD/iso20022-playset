@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._DecimalNumberFraction5 import DecimalNumberFraction5
-from ._EquityInstrumentReportingClassification1Code import EquityInstrumentReportingClassification1Code
-from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._ISODate import ISODate
-from ._MICIdentifier import MICIdentifier
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
+from . import ActiveCurrencyAnd13DecimalAmount
+from . import ActiveCurrencyAndAmount
+from . import DecimalNumberFraction5
+from . import EquityInstrumentReportingClassification1Code
+from . import ISINOct2015Identifier
+from . import ISODate
+from . import MICIdentifier
+from . import Max350Text
+from . import Max35Text
 
 class TransparencyDataReport11(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class TransparencyDataReport11(base_types._BaseFieldType):
 
 	@FinInstrmClssfctn.setter
 	def FinInstrmClssfctn(self, value):
-		self._FinInstrmClssfctn = value if type(value) != base_types.auto else self.make_default("FinInstrmClssfctn")
+		self._FinInstrmClssfctn = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmClssfctn', EquityInstrumentReportingClassification1Code, False)
 
 	@FinInstrmClssfctn.deleter
 	def FinInstrmClssfctn(self):
 		del self._FinInstrmClssfctn
-		self._FinInstrmClssfctn = None
+		self._FinInstrmClssfctn = base_types.UninitialisedField(self, 'FinInstrmClssfctn', EquityInstrumentReportingClassification1Code, False)
 
 	@property
 	def FullNm(self):
@@ -34,12 +34,12 @@ class TransparencyDataReport11(base_types._BaseFieldType):
 
 	@FullNm.setter
 	def FullNm(self, value):
-		self._FullNm = value if type(value) != base_types.auto else self.make_default("FullNm")
+		self._FullNm = value if value is not None else base_types.UninitialisedField(self, 'FullNm', Max350Text, False)
 
 	@FullNm.deleter
 	def FullNm(self):
 		del self._FullNm
-		self._FullNm = None
+		self._FullNm = base_types.UninitialisedField(self, 'FullNm', Max350Text, False)
 
 	@property
 	def HldgsExcdgTtlVtngRghtThrshld(self):
@@ -47,12 +47,12 @@ class TransparencyDataReport11(base_types._BaseFieldType):
 
 	@HldgsExcdgTtlVtngRghtThrshld.setter
 	def HldgsExcdgTtlVtngRghtThrshld(self, value):
-		self._HldgsExcdgTtlVtngRghtThrshld = value if type(value) != base_types.auto else self.make_default("HldgsExcdgTtlVtngRghtThrshld")
+		self._HldgsExcdgTtlVtngRghtThrshld = value if value is not None else base_types.UninitialisedField(self, 'HldgsExcdgTtlVtngRghtThrshld', DecimalNumberFraction5, False)
 
 	@HldgsExcdgTtlVtngRghtThrshld.deleter
 	def HldgsExcdgTtlVtngRghtThrshld(self):
 		del self._HldgsExcdgTtlVtngRghtThrshld
-		self._HldgsExcdgTtlVtngRghtThrshld = None
+		self._HldgsExcdgTtlVtngRghtThrshld = base_types.UninitialisedField(self, 'HldgsExcdgTtlVtngRghtThrshld', DecimalNumberFraction5, False)
 
 	@property
 	def Id(self):
@@ -60,12 +60,12 @@ class TransparencyDataReport11(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', ISINOct2015Identifier, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', ISINOct2015Identifier, False)
 
 	@property
 	def InstrmPric(self):
@@ -73,12 +73,12 @@ class TransparencyDataReport11(base_types._BaseFieldType):
 
 	@InstrmPric.setter
 	def InstrmPric(self, value):
-		self._InstrmPric = value if type(value) != base_types.auto else self.make_default("InstrmPric")
+		self._InstrmPric = value if value is not None else base_types.UninitialisedField(self, 'InstrmPric', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@InstrmPric.deleter
 	def InstrmPric(self):
 		del self._InstrmPric
-		self._InstrmPric = None
+		self._InstrmPric = base_types.UninitialisedField(self, 'InstrmPric', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def IssncSz(self):
@@ -86,12 +86,12 @@ class TransparencyDataReport11(base_types._BaseFieldType):
 
 	@IssncSz.setter
 	def IssncSz(self, value):
-		self._IssncSz = value if type(value) != base_types.auto else self.make_default("IssncSz")
+		self._IssncSz = value if value is not None else base_types.UninitialisedField(self, 'IssncSz', ActiveCurrencyAndAmount, False)
 
 	@IssncSz.deleter
 	def IssncSz(self):
 		del self._IssncSz
-		self._IssncSz = None
+		self._IssncSz = base_types.UninitialisedField(self, 'IssncSz', ActiveCurrencyAndAmount, False)
 
 	@property
 	def NbOutsdngInstrms(self):
@@ -99,12 +99,12 @@ class TransparencyDataReport11(base_types._BaseFieldType):
 
 	@NbOutsdngInstrms.setter
 	def NbOutsdngInstrms(self, value):
-		self._NbOutsdngInstrms = value if type(value) != base_types.auto else self.make_default("NbOutsdngInstrms")
+		self._NbOutsdngInstrms = value if value is not None else base_types.UninitialisedField(self, 'NbOutsdngInstrms', DecimalNumberFraction5, False)
 
 	@NbOutsdngInstrms.deleter
 	def NbOutsdngInstrms(self):
 		del self._NbOutsdngInstrms
-		self._NbOutsdngInstrms = None
+		self._NbOutsdngInstrms = base_types.UninitialisedField(self, 'NbOutsdngInstrms', DecimalNumberFraction5, False)
 
 	@property
 	def RptgDt(self):
@@ -112,12 +112,12 @@ class TransparencyDataReport11(base_types._BaseFieldType):
 
 	@RptgDt.setter
 	def RptgDt(self, value):
-		self._RptgDt = value if type(value) != base_types.auto else self.make_default("RptgDt")
+		self._RptgDt = value if value is not None else base_types.UninitialisedField(self, 'RptgDt', ISODate, False)
 
 	@RptgDt.deleter
 	def RptgDt(self):
 		del self._RptgDt
-		self._RptgDt = None
+		self._RptgDt = base_types.UninitialisedField(self, 'RptgDt', ISODate, False)
 
 	@property
 	def TechRcrdId(self):
@@ -125,12 +125,12 @@ class TransparencyDataReport11(base_types._BaseFieldType):
 
 	@TechRcrdId.setter
 	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
+		self._TechRcrdId = value if value is not None else base_types.UninitialisedField(self, 'TechRcrdId', Max35Text, False)
 
 	@TechRcrdId.deleter
 	def TechRcrdId(self):
 		del self._TechRcrdId
-		self._TechRcrdId = None
+		self._TechRcrdId = base_types.UninitialisedField(self, 'TechRcrdId', Max35Text, False)
 
 	@property
 	def TradgVn(self):
@@ -138,12 +138,12 @@ class TransparencyDataReport11(base_types._BaseFieldType):
 
 	@TradgVn.setter
 	def TradgVn(self, value):
-		self._TradgVn = value if type(value) != base_types.auto else self.make_default("TradgVn")
+		self._TradgVn = value if value is not None else base_types.UninitialisedField(self, 'TradgVn', MICIdentifier, False)
 
 	@TradgVn.deleter
 	def TradgVn(self):
 		del self._TradgVn
-		self._TradgVn = None
+		self._TradgVn = base_types.UninitialisedField(self, 'TradgVn', MICIdentifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FinInstrmClssfctn', type=EquityInstrumentReportingClassification1Code, min=1, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountOrRate3Choice import AmountOrRate3Choice
-from ._CommissionType5Choice import CommissionType5Choice
+from . import AmountOrRate3Choice
+from . import CommissionType5Choice
 
 class Commission21(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Commission21(base_types._BaseFieldType):
 
 	@ComssnApld.setter
 	def ComssnApld(self, value):
-		self._ComssnApld = value if type(value) != base_types.auto else self.make_default("ComssnApld")
+		self._ComssnApld = value if value is not None else base_types.UninitialisedField(self, 'ComssnApld', AmountOrRate3Choice, False)
 
 	@ComssnApld.deleter
 	def ComssnApld(self):
 		del self._ComssnApld
-		self._ComssnApld = None
+		self._ComssnApld = base_types.UninitialisedField(self, 'ComssnApld', AmountOrRate3Choice, False)
 
 	@property
 	def ComssnTp(self):
@@ -27,12 +27,12 @@ class Commission21(base_types._BaseFieldType):
 
 	@ComssnTp.setter
 	def ComssnTp(self, value):
-		self._ComssnTp = value if type(value) != base_types.auto else self.make_default("ComssnTp")
+		self._ComssnTp = value if value is not None else base_types.UninitialisedField(self, 'ComssnTp', CommissionType5Choice, False)
 
 	@ComssnTp.deleter
 	def ComssnTp(self):
 		del self._ComssnTp
-		self._ComssnTp = None
+		self._ComssnTp = base_types.UninitialisedField(self, 'ComssnTp', CommissionType5Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ComssnApld', type=AmountOrRate3Choice, min=1, max=1, mutex_group=None, array=False),

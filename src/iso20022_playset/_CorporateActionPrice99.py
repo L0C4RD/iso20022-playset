@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PriceFormat50Choice import PriceFormat50Choice
-from ._PriceFormat66Choice import PriceFormat66Choice
+from . import PriceFormat50Choice
+from . import PriceFormat66Choice
 
 class CorporateActionPrice99(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CorporateActionPrice99(base_types._BaseFieldType):
 
 	@GncCshPricPdPerPdct.setter
 	def GncCshPricPdPerPdct(self, value):
-		self._GncCshPricPdPerPdct = value if type(value) != base_types.auto else self.make_default("GncCshPricPdPerPdct")
+		self._GncCshPricPdPerPdct = value if value is not None else base_types.UninitialisedField(self, 'GncCshPricPdPerPdct', PriceFormat50Choice, False)
 
 	@GncCshPricPdPerPdct.deleter
 	def GncCshPricPdPerPdct(self):
 		del self._GncCshPricPdPerPdct
-		self._GncCshPricPdPerPdct = None
+		self._GncCshPricPdPerPdct = base_types.UninitialisedField(self, 'GncCshPricPdPerPdct', PriceFormat50Choice, False)
 
 	@property
 	def GncCshPricRcvdPerPdct(self):
@@ -27,12 +27,12 @@ class CorporateActionPrice99(base_types._BaseFieldType):
 
 	@GncCshPricRcvdPerPdct.setter
 	def GncCshPricRcvdPerPdct(self, value):
-		self._GncCshPricRcvdPerPdct = value if type(value) != base_types.auto else self.make_default("GncCshPricRcvdPerPdct")
+		self._GncCshPricRcvdPerPdct = value if value is not None else base_types.UninitialisedField(self, 'GncCshPricRcvdPerPdct', PriceFormat66Choice, False)
 
 	@GncCshPricRcvdPerPdct.deleter
 	def GncCshPricRcvdPerPdct(self):
 		del self._GncCshPricRcvdPerPdct
-		self._GncCshPricRcvdPerPdct = None
+		self._GncCshPricRcvdPerPdct = base_types.UninitialisedField(self, 'GncCshPricRcvdPerPdct', PriceFormat66Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='GncCshPricPdPerPdct', type=PriceFormat50Choice, min=0, max=1, mutex_group=None, array=False),

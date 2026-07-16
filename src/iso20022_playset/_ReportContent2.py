@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max10NumericText import Max10NumericText
-from ._ReportContent2Choice import ReportContent2Choice
+from . import Max10NumericText
+from . import ReportContent2Choice
 
 class ReportContent2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ReportContent2(base_types._BaseFieldType):
 
 	@FrmtdCntt.setter
 	def FrmtdCntt(self, value):
-		self._FrmtdCntt = value if type(value) != base_types.auto else self.make_default("FrmtdCntt")
+		self._FrmtdCntt = value if value is not None else base_types.UninitialisedField(self, 'FrmtdCntt', ReportContent2Choice, False)
 
 	@FrmtdCntt.deleter
 	def FrmtdCntt(self):
 		del self._FrmtdCntt
-		self._FrmtdCntt = None
+		self._FrmtdCntt = base_types.UninitialisedField(self, 'FrmtdCntt', ReportContent2Choice, False)
 
 	@property
 	def RptLineSeq(self):
@@ -27,12 +27,12 @@ class ReportContent2(base_types._BaseFieldType):
 
 	@RptLineSeq.setter
 	def RptLineSeq(self, value):
-		self._RptLineSeq = value if type(value) != base_types.auto else self.make_default("RptLineSeq")
+		self._RptLineSeq = value if value is not None else base_types.UninitialisedField(self, 'RptLineSeq', Max10NumericText, False)
 
 	@RptLineSeq.deleter
 	def RptLineSeq(self):
 		del self._RptLineSeq
-		self._RptLineSeq = None
+		self._RptLineSeq = base_types.UninitialisedField(self, 'RptLineSeq', Max10NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FrmtdCntt', type=ReportContent2Choice, min=1, max=1, mutex_group=None, array=False),

@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateTimePeriod2 import DateTimePeriod2
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
-from ._PartyIdentification125Choice import PartyIdentification125Choice
-from ._RestrictionStatus1Choice import RestrictionStatus1Choice
+from . import DateTimePeriod2
+from . import Max350Text
+from . import Max35Text
+from . import PartyIdentification125Choice
+from . import RestrictionStatus1Choice
 
 class AdditiononalInformation13(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class AdditiononalInformation13(base_types._BaseFieldType):
 
 	@AcctVldtn.setter
 	def AcctVldtn(self, value):
-		self._AcctVldtn = value if type(value) != base_types.auto else self.make_default("AcctVldtn")
+		self._AcctVldtn = value if value is not None else base_types.UninitialisedField(self, 'AcctVldtn', Max350Text, False)
 
 	@AcctVldtn.deleter
 	def AcctVldtn(self):
 		del self._AcctVldtn
-		self._AcctVldtn = None
+		self._AcctVldtn = base_types.UninitialisedField(self, 'AcctVldtn', Max350Text, False)
 
 	@property
 	def AddtlInf(self):
@@ -30,12 +30,12 @@ class AdditiononalInformation13(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max350Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max350Text, False)
 
 	@property
 	def Lmttn(self):
@@ -43,12 +43,12 @@ class AdditiononalInformation13(base_types._BaseFieldType):
 
 	@Lmttn.setter
 	def Lmttn(self, value):
-		self._Lmttn = value if type(value) != base_types.auto else self.make_default("Lmttn")
+		self._Lmttn = value if value is not None else base_types.UninitialisedField(self, 'Lmttn', Max350Text, False)
 
 	@Lmttn.deleter
 	def Lmttn(self):
 		del self._Lmttn
-		self._Lmttn = None
+		self._Lmttn = base_types.UninitialisedField(self, 'Lmttn', Max350Text, False)
 
 	@property
 	def Prd(self):
@@ -56,12 +56,12 @@ class AdditiononalInformation13(base_types._BaseFieldType):
 
 	@Prd.setter
 	def Prd(self, value):
-		self._Prd = value if type(value) != base_types.auto else self.make_default("Prd")
+		self._Prd = value if value is not None else base_types.UninitialisedField(self, 'Prd', DateTimePeriod2, False)
 
 	@Prd.deleter
 	def Prd(self):
 		del self._Prd
-		self._Prd = None
+		self._Prd = base_types.UninitialisedField(self, 'Prd', DateTimePeriod2, False)
 
 	@property
 	def Rgltr(self):
@@ -69,12 +69,12 @@ class AdditiononalInformation13(base_types._BaseFieldType):
 
 	@Rgltr.setter
 	def Rgltr(self, value):
-		self._Rgltr = value if type(value) != base_types.auto else self.make_default("Rgltr")
+		self._Rgltr = value if value is not None else base_types.UninitialisedField(self, 'Rgltr', PartyIdentification125Choice, False)
 
 	@Rgltr.deleter
 	def Rgltr(self):
 		del self._Rgltr
-		self._Rgltr = None
+		self._Rgltr = base_types.UninitialisedField(self, 'Rgltr', PartyIdentification125Choice, False)
 
 	@property
 	def Sts(self):
@@ -82,12 +82,12 @@ class AdditiononalInformation13(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', RestrictionStatus1Choice, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', RestrictionStatus1Choice, False)
 
 	@property
 	def Tp(self):
@@ -95,12 +95,12 @@ class AdditiononalInformation13(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', Max35Text, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctVldtn', type=Max350Text, min=0, max=1, mutex_group=None, array=False),

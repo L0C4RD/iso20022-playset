@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection53 import AmountAndDirection53
-from ._AssetClassCommodity5Choice import AssetClassCommodity5Choice
-from ._Quantity17 import Quantity17
-from ._SecuritiesTransactionPrice19Choice import SecuritiesTransactionPrice19Choice
+from . import AmountAndDirection53
+from . import AssetClassCommodity5Choice
+from . import Quantity17
+from . import SecuritiesTransactionPrice19Choice
 
 class Commodity43(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class Commodity43(base_types._BaseFieldType):
 
 	@Clssfctn.setter
 	def Clssfctn(self, value):
-		self._Clssfctn = value if type(value) != base_types.auto else self.make_default("Clssfctn")
+		self._Clssfctn = value if value is not None else base_types.UninitialisedField(self, 'Clssfctn', AssetClassCommodity5Choice, False)
 
 	@Clssfctn.deleter
 	def Clssfctn(self):
 		del self._Clssfctn
-		self._Clssfctn = None
+		self._Clssfctn = base_types.UninitialisedField(self, 'Clssfctn', AssetClassCommodity5Choice, False)
 
 	@property
 	def MktVal(self):
@@ -29,12 +29,12 @@ class Commodity43(base_types._BaseFieldType):
 
 	@MktVal.setter
 	def MktVal(self, value):
-		self._MktVal = value if type(value) != base_types.auto else self.make_default("MktVal")
+		self._MktVal = value if value is not None else base_types.UninitialisedField(self, 'MktVal', AmountAndDirection53, False)
 
 	@MktVal.deleter
 	def MktVal(self):
 		del self._MktVal
-		self._MktVal = None
+		self._MktVal = base_types.UninitialisedField(self, 'MktVal', AmountAndDirection53, False)
 
 	@property
 	def Qty(self):
@@ -42,12 +42,12 @@ class Commodity43(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+		self._Qty = value if value is not None else base_types.UninitialisedField(self, 'Qty', Quantity17, False)
 
 	@Qty.deleter
 	def Qty(self):
 		del self._Qty
-		self._Qty = None
+		self._Qty = base_types.UninitialisedField(self, 'Qty', Quantity17, False)
 
 	@property
 	def UnitPric(self):
@@ -55,12 +55,12 @@ class Commodity43(base_types._BaseFieldType):
 
 	@UnitPric.setter
 	def UnitPric(self, value):
-		self._UnitPric = value if type(value) != base_types.auto else self.make_default("UnitPric")
+		self._UnitPric = value if value is not None else base_types.UninitialisedField(self, 'UnitPric', SecuritiesTransactionPrice19Choice, False)
 
 	@UnitPric.deleter
 	def UnitPric(self):
 		del self._UnitPric
-		self._UnitPric = None
+		self._UnitPric = base_types.UninitialisedField(self, 'UnitPric', SecuritiesTransactionPrice19Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Clssfctn', type=AssetClassCommodity5Choice, min=0, max=1, mutex_group=None, array=False),

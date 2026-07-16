@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMEnvironment9 import ATMEnvironment9
-from ._ATMStatus2 import ATMStatus2
+from . import ATMEnvironment9
+from . import ATMStatus2
 
 class ATMDiagnosticRequest3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ATMDiagnosticRequest3(base_types._BaseFieldType):
 
 	@ATMGblSts.setter
 	def ATMGblSts(self, value):
-		self._ATMGblSts = value if type(value) != base_types.auto else self.make_default("ATMGblSts")
+		self._ATMGblSts = value if value is not None else base_types.UninitialisedField(self, 'ATMGblSts', ATMStatus2, False)
 
 	@ATMGblSts.deleter
 	def ATMGblSts(self):
 		del self._ATMGblSts
-		self._ATMGblSts = None
+		self._ATMGblSts = base_types.UninitialisedField(self, 'ATMGblSts', ATMStatus2, False)
 
 	@property
 	def Envt(self):
@@ -27,12 +27,12 @@ class ATMDiagnosticRequest3(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+		self._Envt = value if value is not None else base_types.UninitialisedField(self, 'Envt', ATMEnvironment9, False)
 
 	@Envt.deleter
 	def Envt(self):
 		del self._Envt
-		self._Envt = None
+		self._Envt = base_types.UninitialisedField(self, 'Envt', ATMEnvironment9, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ATMGblSts', type=ATMStatus2, min=1, max=1, mutex_group=None, array=False),

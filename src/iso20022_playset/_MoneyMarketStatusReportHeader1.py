@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateTimePeriod1 import DateTimePeriod1
-from ._GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
-from ._LEIIdentifier import LEIIdentifier
-from ._StatisticalReportingStatus1Code import StatisticalReportingStatus1Code
+from . import DateTimePeriod1
+from . import GenericValidationRuleIdentification1
+from . import LEIIdentifier
+from . import StatisticalReportingStatus1Code
 
 class MoneyMarketStatusReportHeader1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class MoneyMarketStatusReportHeader1(base_types._BaseFieldType):
 
 	@RptSts.setter
 	def RptSts(self, value):
-		self._RptSts = value if type(value) != base_types.auto else self.make_default("RptSts")
+		self._RptSts = value if value is not None else base_types.UninitialisedField(self, 'RptSts', StatisticalReportingStatus1Code, False)
 
 	@RptSts.deleter
 	def RptSts(self):
 		del self._RptSts
-		self._RptSts = None
+		self._RptSts = base_types.UninitialisedField(self, 'RptSts', StatisticalReportingStatus1Code, False)
 
 	@property
 	def RptgAgt(self):
@@ -29,12 +29,12 @@ class MoneyMarketStatusReportHeader1(base_types._BaseFieldType):
 
 	@RptgAgt.setter
 	def RptgAgt(self, value):
-		self._RptgAgt = value if type(value) != base_types.auto else self.make_default("RptgAgt")
+		self._RptgAgt = value if value is not None else base_types.UninitialisedField(self, 'RptgAgt', LEIIdentifier, False)
 
 	@RptgAgt.deleter
 	def RptgAgt(self):
 		del self._RptgAgt
-		self._RptgAgt = None
+		self._RptgAgt = base_types.UninitialisedField(self, 'RptgAgt', LEIIdentifier, False)
 
 	@property
 	def RptgPrd(self):
@@ -42,12 +42,12 @@ class MoneyMarketStatusReportHeader1(base_types._BaseFieldType):
 
 	@RptgPrd.setter
 	def RptgPrd(self, value):
-		self._RptgPrd = value if type(value) != base_types.auto else self.make_default("RptgPrd")
+		self._RptgPrd = value if value is not None else base_types.UninitialisedField(self, 'RptgPrd', DateTimePeriod1, False)
 
 	@RptgPrd.deleter
 	def RptgPrd(self):
 		del self._RptgPrd
-		self._RptgPrd = None
+		self._RptgPrd = base_types.UninitialisedField(self, 'RptgPrd', DateTimePeriod1, False)
 
 	@property
 	def VldtnRule(self):
@@ -55,12 +55,12 @@ class MoneyMarketStatusReportHeader1(base_types._BaseFieldType):
 
 	@VldtnRule.setter
 	def VldtnRule(self, value):
-		self._VldtnRule = value if type(value) != base_types.auto else self.make_default("VldtnRule")
+		self._VldtnRule = value if value is not None else base_types.UninitialisedField(self, 'VldtnRule', GenericValidationRuleIdentification1, True)
 
 	@VldtnRule.deleter
 	def VldtnRule(self):
 		del self._VldtnRule
-		self._VldtnRule = None
+		self._VldtnRule = base_types.UninitialisedField(self, 'VldtnRule', GenericValidationRuleIdentification1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RptSts', type=StatisticalReportingStatus1Code, min=1, max=1, mutex_group=None, array=False),

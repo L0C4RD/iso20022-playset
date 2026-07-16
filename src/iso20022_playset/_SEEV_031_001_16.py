@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionNotificationV16 import CorporateActionNotificationV16
+from . import CorporateActionNotificationV16
 
 class SEEV_031_001_16():
 
@@ -18,12 +18,12 @@ class SEEV_031_001_16():
 
 		@CorpActnNtfctn.setter
 		def CorpActnNtfctn(self, value):
-			self._CorpActnNtfctn = value if type(value) != base_types.auto else self.make_default("CorpActnNtfctn")
+			self._CorpActnNtfctn = value if value is not None else base_types.UninitialisedField(self, 'CorpActnNtfctn', CorporateActionNotificationV16, False)
 
 		@CorpActnNtfctn.deleter
 		def CorpActnNtfctn(self):
 			del self._CorpActnNtfctn
-			self._CorpActnNtfctn = None
+			self._CorpActnNtfctn = base_types.UninitialisedField(self, 'CorpActnNtfctn', CorporateActionNotificationV16, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CorpActnNtfctn', type=CorporateActionNotificationV16, min=1, max=1, mutex_group=None, array=False),

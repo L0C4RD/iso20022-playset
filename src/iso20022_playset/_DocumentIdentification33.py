@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DocumentIdentification3Choice import DocumentIdentification3Choice
-from ._DocumentNumber5Choice import DocumentNumber5Choice
+from . import DocumentIdentification3Choice
+from . import DocumentNumber5Choice
 
 class DocumentIdentification33(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DocumentIdentification33(base_types._BaseFieldType):
 
 	@DocNb.setter
 	def DocNb(self, value):
-		self._DocNb = value if type(value) != base_types.auto else self.make_default("DocNb")
+		self._DocNb = value if value is not None else base_types.UninitialisedField(self, 'DocNb', DocumentNumber5Choice, False)
 
 	@DocNb.deleter
 	def DocNb(self):
 		del self._DocNb
-		self._DocNb = None
+		self._DocNb = base_types.UninitialisedField(self, 'DocNb', DocumentNumber5Choice, False)
 
 	@property
 	def Id(self):
@@ -27,12 +27,12 @@ class DocumentIdentification33(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', DocumentIdentification3Choice, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', DocumentIdentification3Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DocNb', type=DocumentNumber5Choice, min=0, max=1, mutex_group=None, array=False),

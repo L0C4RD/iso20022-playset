@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Pagination1 import Pagination1
-from ._PartyIdentification253Choice import PartyIdentification253Choice
-from ._Report7 import Report7
-from ._ReportParameters8 import ReportParameters8
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._SettlementParties37Choice import SettlementParties37Choice
-from ._SupplementaryData1 import SupplementaryData1
+from . import Pagination1
+from . import PartyIdentification253Choice
+from . import Report7
+from . import ReportParameters8
+from . import SecuritiesAccount19
+from . import SettlementParties37Choice
+from . import SupplementaryData1
 
 class SettlementObligationReportV04(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class SettlementObligationReportV04(base_types._BaseFieldType):
 
 	@ClrMmb.setter
 	def ClrMmb(self, value):
-		self._ClrMmb = value if type(value) != base_types.auto else self.make_default("ClrMmb")
+		self._ClrMmb = value if value is not None else base_types.UninitialisedField(self, 'ClrMmb', PartyIdentification253Choice, False)
 
 	@ClrMmb.deleter
 	def ClrMmb(self):
 		del self._ClrMmb
-		self._ClrMmb = None
+		self._ClrMmb = base_types.UninitialisedField(self, 'ClrMmb', PartyIdentification253Choice, False)
 
 	@property
 	def ClrSgmt(self):
@@ -32,12 +32,12 @@ class SettlementObligationReportV04(base_types._BaseFieldType):
 
 	@ClrSgmt.setter
 	def ClrSgmt(self, value):
-		self._ClrSgmt = value if type(value) != base_types.auto else self.make_default("ClrSgmt")
+		self._ClrSgmt = value if value is not None else base_types.UninitialisedField(self, 'ClrSgmt', PartyIdentification253Choice, False)
 
 	@ClrSgmt.deleter
 	def ClrSgmt(self):
 		del self._ClrSgmt
-		self._ClrSgmt = None
+		self._ClrSgmt = base_types.UninitialisedField(self, 'ClrSgmt', PartyIdentification253Choice, False)
 
 	@property
 	def DlvryAcct(self):
@@ -45,12 +45,12 @@ class SettlementObligationReportV04(base_types._BaseFieldType):
 
 	@DlvryAcct.setter
 	def DlvryAcct(self, value):
-		self._DlvryAcct = value if type(value) != base_types.auto else self.make_default("DlvryAcct")
+		self._DlvryAcct = value if value is not None else base_types.UninitialisedField(self, 'DlvryAcct', SecuritiesAccount19, False)
 
 	@DlvryAcct.deleter
 	def DlvryAcct(self):
 		del self._DlvryAcct
-		self._DlvryAcct = None
+		self._DlvryAcct = base_types.UninitialisedField(self, 'DlvryAcct', SecuritiesAccount19, False)
 
 	@property
 	def Pgntn(self):
@@ -58,12 +58,12 @@ class SettlementObligationReportV04(base_types._BaseFieldType):
 
 	@Pgntn.setter
 	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+		self._Pgntn = value if value is not None else base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@Pgntn.deleter
 	def Pgntn(self):
 		del self._Pgntn
-		self._Pgntn = None
+		self._Pgntn = base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@property
 	def RptDtls(self):
@@ -71,12 +71,12 @@ class SettlementObligationReportV04(base_types._BaseFieldType):
 
 	@RptDtls.setter
 	def RptDtls(self, value):
-		self._RptDtls = value if type(value) != base_types.auto else self.make_default("RptDtls")
+		self._RptDtls = value if value is not None else base_types.UninitialisedField(self, 'RptDtls', Report7, True)
 
 	@RptDtls.deleter
 	def RptDtls(self):
 		del self._RptDtls
-		self._RptDtls = None
+		self._RptDtls = base_types.UninitialisedField(self, 'RptDtls', Report7, True)
 
 	@property
 	def RptParams(self):
@@ -84,12 +84,12 @@ class SettlementObligationReportV04(base_types._BaseFieldType):
 
 	@RptParams.setter
 	def RptParams(self, value):
-		self._RptParams = value if type(value) != base_types.auto else self.make_default("RptParams")
+		self._RptParams = value if value is not None else base_types.UninitialisedField(self, 'RptParams', ReportParameters8, False)
 
 	@RptParams.deleter
 	def RptParams(self):
 		del self._RptParams
-		self._RptParams = None
+		self._RptParams = base_types.UninitialisedField(self, 'RptParams', ReportParameters8, False)
 
 	@property
 	def SplmtryData(self):
@@ -97,12 +97,12 @@ class SettlementObligationReportV04(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def SttlmPties(self):
@@ -110,12 +110,12 @@ class SettlementObligationReportV04(base_types._BaseFieldType):
 
 	@SttlmPties.setter
 	def SttlmPties(self, value):
-		self._SttlmPties = value if type(value) != base_types.auto else self.make_default("SttlmPties")
+		self._SttlmPties = value if value is not None else base_types.UninitialisedField(self, 'SttlmPties', SettlementParties37Choice, False)
 
 	@SttlmPties.deleter
 	def SttlmPties(self):
 		del self._SttlmPties
-		self._SttlmPties = None
+		self._SttlmPties = base_types.UninitialisedField(self, 'SttlmPties', SettlementParties37Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClrMmb', type=PartyIdentification253Choice, min=0, max=1, mutex_group=None, array=False),

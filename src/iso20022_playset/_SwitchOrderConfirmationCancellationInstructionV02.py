@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalReference8 import AdditionalReference8
-from ._AdditionalReference9 import AdditionalReference9
-from ._CopyInformation4 import CopyInformation4
-from ._InvestmentFundOrder11 import InvestmentFundOrder11
-from ._Max35Text import Max35Text
-from ._MessageIdentification1 import MessageIdentification1
-from ._YesNoIndicator import YesNoIndicator
+from . import AdditionalReference8
+from . import AdditionalReference9
+from . import CopyInformation4
+from . import InvestmentFundOrder11
+from . import Max35Text
+from . import MessageIdentification1
+from . import YesNoIndicator
 
 class SwitchOrderConfirmationCancellationInstructionV02(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class SwitchOrderConfirmationCancellationInstructionV02(base_types._BaseFieldTyp
 
 	@AmdmntInd.setter
 	def AmdmntInd(self, value):
-		self._AmdmntInd = value if type(value) != base_types.auto else self.make_default("AmdmntInd")
+		self._AmdmntInd = value if value is not None else base_types.UninitialisedField(self, 'AmdmntInd', YesNoIndicator, False)
 
 	@AmdmntInd.deleter
 	def AmdmntInd(self):
 		del self._AmdmntInd
-		self._AmdmntInd = None
+		self._AmdmntInd = base_types.UninitialisedField(self, 'AmdmntInd', YesNoIndicator, False)
 
 	@property
 	def CpyDtls(self):
@@ -32,12 +32,12 @@ class SwitchOrderConfirmationCancellationInstructionV02(base_types._BaseFieldTyp
 
 	@CpyDtls.setter
 	def CpyDtls(self, value):
-		self._CpyDtls = value if type(value) != base_types.auto else self.make_default("CpyDtls")
+		self._CpyDtls = value if value is not None else base_types.UninitialisedField(self, 'CpyDtls', CopyInformation4, False)
 
 	@CpyDtls.deleter
 	def CpyDtls(self):
 		del self._CpyDtls
-		self._CpyDtls = None
+		self._CpyDtls = base_types.UninitialisedField(self, 'CpyDtls', CopyInformation4, False)
 
 	@property
 	def MsgId(self):
@@ -45,12 +45,12 @@ class SwitchOrderConfirmationCancellationInstructionV02(base_types._BaseFieldTyp
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@property
 	def MstrRef(self):
@@ -58,12 +58,12 @@ class SwitchOrderConfirmationCancellationInstructionV02(base_types._BaseFieldTyp
 
 	@MstrRef.setter
 	def MstrRef(self, value):
-		self._MstrRef = value if type(value) != base_types.auto else self.make_default("MstrRef")
+		self._MstrRef = value if value is not None else base_types.UninitialisedField(self, 'MstrRef', Max35Text, False)
 
 	@MstrRef.deleter
 	def MstrRef(self):
 		del self._MstrRef
-		self._MstrRef = None
+		self._MstrRef = base_types.UninitialisedField(self, 'MstrRef', Max35Text, False)
 
 	@property
 	def OrdrRefs(self):
@@ -71,12 +71,12 @@ class SwitchOrderConfirmationCancellationInstructionV02(base_types._BaseFieldTyp
 
 	@OrdrRefs.setter
 	def OrdrRefs(self, value):
-		self._OrdrRefs = value if type(value) != base_types.auto else self.make_default("OrdrRefs")
+		self._OrdrRefs = value if value is not None else base_types.UninitialisedField(self, 'OrdrRefs', InvestmentFundOrder11, True)
 
 	@OrdrRefs.deleter
 	def OrdrRefs(self):
 		del self._OrdrRefs
-		self._OrdrRefs = None
+		self._OrdrRefs = base_types.UninitialisedField(self, 'OrdrRefs', InvestmentFundOrder11, True)
 
 	@property
 	def PoolRef(self):
@@ -84,12 +84,12 @@ class SwitchOrderConfirmationCancellationInstructionV02(base_types._BaseFieldTyp
 
 	@PoolRef.setter
 	def PoolRef(self, value):
-		self._PoolRef = value if type(value) != base_types.auto else self.make_default("PoolRef")
+		self._PoolRef = value if value is not None else base_types.UninitialisedField(self, 'PoolRef', AdditionalReference9, False)
 
 	@PoolRef.deleter
 	def PoolRef(self):
 		del self._PoolRef
-		self._PoolRef = None
+		self._PoolRef = base_types.UninitialisedField(self, 'PoolRef', AdditionalReference9, False)
 
 	@property
 	def PrvsRef(self):
@@ -97,12 +97,12 @@ class SwitchOrderConfirmationCancellationInstructionV02(base_types._BaseFieldTyp
 
 	@PrvsRef.setter
 	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
+		self._PrvsRef = value if value is not None else base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference8, True)
 
 	@PrvsRef.deleter
 	def PrvsRef(self):
 		del self._PrvsRef
-		self._PrvsRef = None
+		self._PrvsRef = base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference8, True)
 
 	@property
 	def RltdRef(self):
@@ -110,12 +110,12 @@ class SwitchOrderConfirmationCancellationInstructionV02(base_types._BaseFieldTyp
 
 	@RltdRef.setter
 	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
+		self._RltdRef = value if value is not None else base_types.UninitialisedField(self, 'RltdRef', AdditionalReference8, False)
 
 	@RltdRef.deleter
 	def RltdRef(self):
 		del self._RltdRef
-		self._RltdRef = None
+		self._RltdRef = base_types.UninitialisedField(self, 'RltdRef', AdditionalReference8, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmdmntInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),

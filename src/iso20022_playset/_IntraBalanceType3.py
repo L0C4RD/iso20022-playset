@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashSubBalanceTypeAndQuantityBreakdown3 import CashSubBalanceTypeAndQuantityBreakdown3
+from . import CashSubBalanceTypeAndQuantityBreakdown3
 
 class IntraBalanceType3(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class IntraBalanceType3(base_types._BaseFieldType):
 
 	@BalFr.setter
 	def BalFr(self, value):
-		self._BalFr = value if type(value) != base_types.auto else self.make_default("BalFr")
+		self._BalFr = value if value is not None else base_types.UninitialisedField(self, 'BalFr', CashSubBalanceTypeAndQuantityBreakdown3, False)
 
 	@BalFr.deleter
 	def BalFr(self):
 		del self._BalFr
-		self._BalFr = None
+		self._BalFr = base_types.UninitialisedField(self, 'BalFr', CashSubBalanceTypeAndQuantityBreakdown3, False)
 
 	@property
 	def BalTo(self):
@@ -26,12 +26,12 @@ class IntraBalanceType3(base_types._BaseFieldType):
 
 	@BalTo.setter
 	def BalTo(self, value):
-		self._BalTo = value if type(value) != base_types.auto else self.make_default("BalTo")
+		self._BalTo = value if value is not None else base_types.UninitialisedField(self, 'BalTo', CashSubBalanceTypeAndQuantityBreakdown3, False)
 
 	@BalTo.deleter
 	def BalTo(self):
 		del self._BalTo
-		self._BalTo = None
+		self._BalTo = base_types.UninitialisedField(self, 'BalTo', CashSubBalanceTypeAndQuantityBreakdown3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BalFr', type=CashSubBalanceTypeAndQuantityBreakdown3, min=0, max=1, mutex_group=None, array=False),

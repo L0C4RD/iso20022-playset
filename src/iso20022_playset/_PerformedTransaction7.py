@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._LoyaltyResult3 import LoyaltyResult3
-from ._Max35Text import Max35Text
-from ._ResponseType11 import ResponseType11
-from ._RetailerPaymentResult7 import RetailerPaymentResult7
-from ._TransactionIdentifier1 import TransactionIdentifier1
+from . import ImpliedCurrencyAndAmount
+from . import LoyaltyResult3
+from . import Max35Text
+from . import ResponseType11
+from . import RetailerPaymentResult7
+from . import TransactionIdentifier1
 
 class PerformedTransaction7(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class PerformedTransaction7(base_types._BaseFieldType):
 
 	@LltyRslt.setter
 	def LltyRslt(self, value):
-		self._LltyRslt = value if type(value) != base_types.auto else self.make_default("LltyRslt")
+		self._LltyRslt = value if value is not None else base_types.UninitialisedField(self, 'LltyRslt', LoyaltyResult3, True)
 
 	@LltyRslt.deleter
 	def LltyRslt(self):
 		del self._LltyRslt
-		self._LltyRslt = None
+		self._LltyRslt = base_types.UninitialisedField(self, 'LltyRslt', LoyaltyResult3, True)
 
 	@property
 	def POIRcncltnId(self):
@@ -31,12 +31,12 @@ class PerformedTransaction7(base_types._BaseFieldType):
 
 	@POIRcncltnId.setter
 	def POIRcncltnId(self, value):
-		self._POIRcncltnId = value if type(value) != base_types.auto else self.make_default("POIRcncltnId")
+		self._POIRcncltnId = value if value is not None else base_types.UninitialisedField(self, 'POIRcncltnId', Max35Text, False)
 
 	@POIRcncltnId.deleter
 	def POIRcncltnId(self):
 		del self._POIRcncltnId
-		self._POIRcncltnId = None
+		self._POIRcncltnId = base_types.UninitialisedField(self, 'POIRcncltnId', Max35Text, False)
 
 	@property
 	def POITxId(self):
@@ -44,12 +44,12 @@ class PerformedTransaction7(base_types._BaseFieldType):
 
 	@POITxId.setter
 	def POITxId(self, value):
-		self._POITxId = value if type(value) != base_types.auto else self.make_default("POITxId")
+		self._POITxId = value if value is not None else base_types.UninitialisedField(self, 'POITxId', TransactionIdentifier1, False)
 
 	@POITxId.deleter
 	def POITxId(self):
 		del self._POITxId
-		self._POITxId = None
+		self._POITxId = base_types.UninitialisedField(self, 'POITxId', TransactionIdentifier1, False)
 
 	@property
 	def PmtRslt(self):
@@ -57,12 +57,12 @@ class PerformedTransaction7(base_types._BaseFieldType):
 
 	@PmtRslt.setter
 	def PmtRslt(self, value):
-		self._PmtRslt = value if type(value) != base_types.auto else self.make_default("PmtRslt")
+		self._PmtRslt = value if value is not None else base_types.UninitialisedField(self, 'PmtRslt', RetailerPaymentResult7, False)
 
 	@PmtRslt.deleter
 	def PmtRslt(self):
 		del self._PmtRslt
-		self._PmtRslt = None
+		self._PmtRslt = base_types.UninitialisedField(self, 'PmtRslt', RetailerPaymentResult7, False)
 
 	@property
 	def Rspn(self):
@@ -70,12 +70,12 @@ class PerformedTransaction7(base_types._BaseFieldType):
 
 	@Rspn.setter
 	def Rspn(self, value):
-		self._Rspn = value if type(value) != base_types.auto else self.make_default("Rspn")
+		self._Rspn = value if value is not None else base_types.UninitialisedField(self, 'Rspn', ResponseType11, False)
 
 	@Rspn.deleter
 	def Rspn(self):
 		del self._Rspn
-		self._Rspn = None
+		self._Rspn = base_types.UninitialisedField(self, 'Rspn', ResponseType11, False)
 
 	@property
 	def RvsdAmt(self):
@@ -83,12 +83,12 @@ class PerformedTransaction7(base_types._BaseFieldType):
 
 	@RvsdAmt.setter
 	def RvsdAmt(self, value):
-		self._RvsdAmt = value if type(value) != base_types.auto else self.make_default("RvsdAmt")
+		self._RvsdAmt = value if value is not None else base_types.UninitialisedField(self, 'RvsdAmt', ImpliedCurrencyAndAmount, False)
 
 	@RvsdAmt.deleter
 	def RvsdAmt(self):
 		del self._RvsdAmt
-		self._RvsdAmt = None
+		self._RvsdAmt = base_types.UninitialisedField(self, 'RvsdAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def SaleTxId(self):
@@ -96,12 +96,12 @@ class PerformedTransaction7(base_types._BaseFieldType):
 
 	@SaleTxId.setter
 	def SaleTxId(self, value):
-		self._SaleTxId = value if type(value) != base_types.auto else self.make_default("SaleTxId")
+		self._SaleTxId = value if value is not None else base_types.UninitialisedField(self, 'SaleTxId', TransactionIdentifier1, False)
 
 	@SaleTxId.deleter
 	def SaleTxId(self):
 		del self._SaleTxId
-		self._SaleTxId = None
+		self._SaleTxId = base_types.UninitialisedField(self, 'SaleTxId', TransactionIdentifier1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LltyRslt', type=LoyaltyResult3, min=0, max=None, mutex_group=None, array=True),

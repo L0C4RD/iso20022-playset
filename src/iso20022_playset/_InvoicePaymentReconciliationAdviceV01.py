@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BusinessLetter1 import BusinessLetter1
-from ._DecimalNumber import DecimalNumber
-from ._EncapsulatedBusinessMessage1 import EncapsulatedBusinessMessage1
-from ._Max15NumericText import Max15NumericText
-from ._ReconciliationList1 import ReconciliationList1
+from . import BusinessLetter1
+from . import DecimalNumber
+from . import EncapsulatedBusinessMessage1
+from . import Max15NumericText
+from . import ReconciliationList1
 
 class InvoicePaymentReconciliationAdviceV01(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class InvoicePaymentReconciliationAdviceV01(base_types._BaseFieldType):
 
 	@AttchdMsg.setter
 	def AttchdMsg(self, value):
-		self._AttchdMsg = value if type(value) != base_types.auto else self.make_default("AttchdMsg")
+		self._AttchdMsg = value if value is not None else base_types.UninitialisedField(self, 'AttchdMsg', EncapsulatedBusinessMessage1, True)
 
 	@AttchdMsg.deleter
 	def AttchdMsg(self):
 		del self._AttchdMsg
-		self._AttchdMsg = None
+		self._AttchdMsg = base_types.UninitialisedField(self, 'AttchdMsg', EncapsulatedBusinessMessage1, True)
 
 	@property
 	def CtrlSum(self):
@@ -30,12 +30,12 @@ class InvoicePaymentReconciliationAdviceV01(base_types._BaseFieldType):
 
 	@CtrlSum.setter
 	def CtrlSum(self, value):
-		self._CtrlSum = value if type(value) != base_types.auto else self.make_default("CtrlSum")
+		self._CtrlSum = value if value is not None else base_types.UninitialisedField(self, 'CtrlSum', DecimalNumber, False)
 
 	@CtrlSum.deleter
 	def CtrlSum(self):
 		del self._CtrlSum
-		self._CtrlSum = None
+		self._CtrlSum = base_types.UninitialisedField(self, 'CtrlSum', DecimalNumber, False)
 
 	@property
 	def Hdr(self):
@@ -43,12 +43,12 @@ class InvoicePaymentReconciliationAdviceV01(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', BusinessLetter1, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', BusinessLetter1, False)
 
 	@property
 	def ItmCnt(self):
@@ -56,12 +56,12 @@ class InvoicePaymentReconciliationAdviceV01(base_types._BaseFieldType):
 
 	@ItmCnt.setter
 	def ItmCnt(self, value):
-		self._ItmCnt = value if type(value) != base_types.auto else self.make_default("ItmCnt")
+		self._ItmCnt = value if value is not None else base_types.UninitialisedField(self, 'ItmCnt', Max15NumericText, False)
 
 	@ItmCnt.deleter
 	def ItmCnt(self):
 		del self._ItmCnt
-		self._ItmCnt = None
+		self._ItmCnt = base_types.UninitialisedField(self, 'ItmCnt', Max15NumericText, False)
 
 	@property
 	def RcncltnCnt(self):
@@ -69,12 +69,12 @@ class InvoicePaymentReconciliationAdviceV01(base_types._BaseFieldType):
 
 	@RcncltnCnt.setter
 	def RcncltnCnt(self, value):
-		self._RcncltnCnt = value if type(value) != base_types.auto else self.make_default("RcncltnCnt")
+		self._RcncltnCnt = value if value is not None else base_types.UninitialisedField(self, 'RcncltnCnt', Max15NumericText, False)
 
 	@RcncltnCnt.deleter
 	def RcncltnCnt(self):
 		del self._RcncltnCnt
-		self._RcncltnCnt = None
+		self._RcncltnCnt = base_types.UninitialisedField(self, 'RcncltnCnt', Max15NumericText, False)
 
 	@property
 	def RcncltnList(self):
@@ -82,12 +82,12 @@ class InvoicePaymentReconciliationAdviceV01(base_types._BaseFieldType):
 
 	@RcncltnList.setter
 	def RcncltnList(self, value):
-		self._RcncltnList = value if type(value) != base_types.auto else self.make_default("RcncltnList")
+		self._RcncltnList = value if value is not None else base_types.UninitialisedField(self, 'RcncltnList', ReconciliationList1, True)
 
 	@RcncltnList.deleter
 	def RcncltnList(self):
 		del self._RcncltnList
-		self._RcncltnList = None
+		self._RcncltnList = base_types.UninitialisedField(self, 'RcncltnList', ReconciliationList1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AttchdMsg', type=EncapsulatedBusinessMessage1, min=0, max=None, mutex_group=None, array=True),

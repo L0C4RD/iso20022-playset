@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._AmountAndDirection102 import AmountAndDirection102
-from ._ClearingMemberFee1 import ClearingMemberFee1
+from . import ActiveCurrencyAndAmount
+from . import AmountAndDirection102
+from . import ClearingMemberFee1
 
 class IncomeStatement2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class IncomeStatement2(base_types._BaseFieldType):
 
 	@ClrMmbFee.setter
 	def ClrMmbFee(self, value):
-		self._ClrMmbFee = value if type(value) != base_types.auto else self.make_default("ClrMmbFee")
+		self._ClrMmbFee = value if value is not None else base_types.UninitialisedField(self, 'ClrMmbFee', ClearingMemberFee1, True)
 
 	@ClrMmbFee.deleter
 	def ClrMmbFee(self):
 		del self._ClrMmbFee
-		self._ClrMmbFee = None
+		self._ClrMmbFee = base_types.UninitialisedField(self, 'ClrMmbFee', ClearingMemberFee1, True)
 
 	@property
 	def NetIntrstIncm(self):
@@ -28,12 +28,12 @@ class IncomeStatement2(base_types._BaseFieldType):
 
 	@NetIntrstIncm.setter
 	def NetIntrstIncm(self, value):
-		self._NetIntrstIncm = value if type(value) != base_types.auto else self.make_default("NetIntrstIncm")
+		self._NetIntrstIncm = value if value is not None else base_types.UninitialisedField(self, 'NetIntrstIncm', ActiveCurrencyAndAmount, False)
 
 	@NetIntrstIncm.deleter
 	def NetIntrstIncm(self):
 		del self._NetIntrstIncm
-		self._NetIntrstIncm = None
+		self._NetIntrstIncm = base_types.UninitialisedField(self, 'NetIntrstIncm', ActiveCurrencyAndAmount, False)
 
 	@property
 	def NonOprgExpnss(self):
@@ -41,12 +41,12 @@ class IncomeStatement2(base_types._BaseFieldType):
 
 	@NonOprgExpnss.setter
 	def NonOprgExpnss(self, value):
-		self._NonOprgExpnss = value if type(value) != base_types.auto else self.make_default("NonOprgExpnss")
+		self._NonOprgExpnss = value if value is not None else base_types.UninitialisedField(self, 'NonOprgExpnss', ActiveCurrencyAndAmount, False)
 
 	@NonOprgExpnss.deleter
 	def NonOprgExpnss(self):
 		del self._NonOprgExpnss
-		self._NonOprgExpnss = None
+		self._NonOprgExpnss = base_types.UninitialisedField(self, 'NonOprgExpnss', ActiveCurrencyAndAmount, False)
 
 	@property
 	def OprgExpnss(self):
@@ -54,12 +54,12 @@ class IncomeStatement2(base_types._BaseFieldType):
 
 	@OprgExpnss.setter
 	def OprgExpnss(self, value):
-		self._OprgExpnss = value if type(value) != base_types.auto else self.make_default("OprgExpnss")
+		self._OprgExpnss = value if value is not None else base_types.UninitialisedField(self, 'OprgExpnss', ActiveCurrencyAndAmount, False)
 
 	@OprgExpnss.deleter
 	def OprgExpnss(self):
 		del self._OprgExpnss
-		self._OprgExpnss = None
+		self._OprgExpnss = base_types.UninitialisedField(self, 'OprgExpnss', ActiveCurrencyAndAmount, False)
 
 	@property
 	def OprgPrftOrLoss(self):
@@ -67,12 +67,12 @@ class IncomeStatement2(base_types._BaseFieldType):
 
 	@OprgPrftOrLoss.setter
 	def OprgPrftOrLoss(self, value):
-		self._OprgPrftOrLoss = value if type(value) != base_types.auto else self.make_default("OprgPrftOrLoss")
+		self._OprgPrftOrLoss = value if value is not None else base_types.UninitialisedField(self, 'OprgPrftOrLoss', AmountAndDirection102, False)
 
 	@OprgPrftOrLoss.deleter
 	def OprgPrftOrLoss(self):
 		del self._OprgPrftOrLoss
-		self._OprgPrftOrLoss = None
+		self._OprgPrftOrLoss = base_types.UninitialisedField(self, 'OprgPrftOrLoss', AmountAndDirection102, False)
 
 	@property
 	def OthrNonOprgRvn(self):
@@ -80,12 +80,12 @@ class IncomeStatement2(base_types._BaseFieldType):
 
 	@OthrNonOprgRvn.setter
 	def OthrNonOprgRvn(self, value):
-		self._OthrNonOprgRvn = value if type(value) != base_types.auto else self.make_default("OthrNonOprgRvn")
+		self._OthrNonOprgRvn = value if value is not None else base_types.UninitialisedField(self, 'OthrNonOprgRvn', ActiveCurrencyAndAmount, False)
 
 	@OthrNonOprgRvn.deleter
 	def OthrNonOprgRvn(self):
 		del self._OthrNonOprgRvn
-		self._OthrNonOprgRvn = None
+		self._OthrNonOprgRvn = base_types.UninitialisedField(self, 'OthrNonOprgRvn', ActiveCurrencyAndAmount, False)
 
 	@property
 	def OthrOprgRvn(self):
@@ -93,12 +93,12 @@ class IncomeStatement2(base_types._BaseFieldType):
 
 	@OthrOprgRvn.setter
 	def OthrOprgRvn(self, value):
-		self._OthrOprgRvn = value if type(value) != base_types.auto else self.make_default("OthrOprgRvn")
+		self._OthrOprgRvn = value if value is not None else base_types.UninitialisedField(self, 'OthrOprgRvn', ActiveCurrencyAndAmount, False)
 
 	@OthrOprgRvn.deleter
 	def OthrOprgRvn(self):
 		del self._OthrOprgRvn
-		self._OthrOprgRvn = None
+		self._OthrOprgRvn = base_types.UninitialisedField(self, 'OthrOprgRvn', ActiveCurrencyAndAmount, False)
 
 	@property
 	def PreTaxPrftOrLoss(self):
@@ -106,12 +106,12 @@ class IncomeStatement2(base_types._BaseFieldType):
 
 	@PreTaxPrftOrLoss.setter
 	def PreTaxPrftOrLoss(self, value):
-		self._PreTaxPrftOrLoss = value if type(value) != base_types.auto else self.make_default("PreTaxPrftOrLoss")
+		self._PreTaxPrftOrLoss = value if value is not None else base_types.UninitialisedField(self, 'PreTaxPrftOrLoss', AmountAndDirection102, False)
 
 	@PreTaxPrftOrLoss.deleter
 	def PreTaxPrftOrLoss(self):
 		del self._PreTaxPrftOrLoss
-		self._PreTaxPrftOrLoss = None
+		self._PreTaxPrftOrLoss = base_types.UninitialisedField(self, 'PreTaxPrftOrLoss', AmountAndDirection102, False)
 
 	@property
 	def PstTaxPrftOrLoss(self):
@@ -119,12 +119,12 @@ class IncomeStatement2(base_types._BaseFieldType):
 
 	@PstTaxPrftOrLoss.setter
 	def PstTaxPrftOrLoss(self, value):
-		self._PstTaxPrftOrLoss = value if type(value) != base_types.auto else self.make_default("PstTaxPrftOrLoss")
+		self._PstTaxPrftOrLoss = value if value is not None else base_types.UninitialisedField(self, 'PstTaxPrftOrLoss', AmountAndDirection102, False)
 
 	@PstTaxPrftOrLoss.deleter
 	def PstTaxPrftOrLoss(self):
 		del self._PstTaxPrftOrLoss
-		self._PstTaxPrftOrLoss = None
+		self._PstTaxPrftOrLoss = base_types.UninitialisedField(self, 'PstTaxPrftOrLoss', AmountAndDirection102, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClrMmbFee', type=ClearingMemberFee1, min=1, max=None, mutex_group=None, array=True),

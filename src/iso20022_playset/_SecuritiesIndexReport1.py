@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCode import CountryCode
-from ._FinancialInstrument46Choice import FinancialInstrument46Choice
-from ._Max35Text import Max35Text
-from ._Period4Choice import Period4Choice
+from . import CountryCode
+from . import FinancialInstrument46Choice
+from . import Max35Text
+from . import Period4Choice
 
 class SecuritiesIndexReport1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class SecuritiesIndexReport1(base_types._BaseFieldType):
 
 	@Indx.setter
 	def Indx(self, value):
-		self._Indx = value if type(value) != base_types.auto else self.make_default("Indx")
+		self._Indx = value if value is not None else base_types.UninitialisedField(self, 'Indx', FinancialInstrument46Choice, False)
 
 	@Indx.deleter
 	def Indx(self):
 		del self._Indx
-		self._Indx = None
+		self._Indx = base_types.UninitialisedField(self, 'Indx', FinancialInstrument46Choice, False)
 
 	@property
 	def RqstngNtty(self):
@@ -29,12 +29,12 @@ class SecuritiesIndexReport1(base_types._BaseFieldType):
 
 	@RqstngNtty.setter
 	def RqstngNtty(self, value):
-		self._RqstngNtty = value if type(value) != base_types.auto else self.make_default("RqstngNtty")
+		self._RqstngNtty = value if value is not None else base_types.UninitialisedField(self, 'RqstngNtty', CountryCode, False)
 
 	@RqstngNtty.deleter
 	def RqstngNtty(self):
 		del self._RqstngNtty
-		self._RqstngNtty = None
+		self._RqstngNtty = base_types.UninitialisedField(self, 'RqstngNtty', CountryCode, False)
 
 	@property
 	def TechRcrdId(self):
@@ -42,12 +42,12 @@ class SecuritiesIndexReport1(base_types._BaseFieldType):
 
 	@TechRcrdId.setter
 	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
+		self._TechRcrdId = value if value is not None else base_types.UninitialisedField(self, 'TechRcrdId', Max35Text, False)
 
 	@TechRcrdId.deleter
 	def TechRcrdId(self):
 		del self._TechRcrdId
-		self._TechRcrdId = None
+		self._TechRcrdId = base_types.UninitialisedField(self, 'TechRcrdId', Max35Text, False)
 
 	@property
 	def VldtyPrd(self):
@@ -55,12 +55,12 @@ class SecuritiesIndexReport1(base_types._BaseFieldType):
 
 	@VldtyPrd.setter
 	def VldtyPrd(self, value):
-		self._VldtyPrd = value if type(value) != base_types.auto else self.make_default("VldtyPrd")
+		self._VldtyPrd = value if value is not None else base_types.UninitialisedField(self, 'VldtyPrd', Period4Choice, False)
 
 	@VldtyPrd.deleter
 	def VldtyPrd(self):
 		del self._VldtyPrd
-		self._VldtyPrd = None
+		self._VldtyPrd = base_types.UninitialisedField(self, 'VldtyPrd', Period4Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Indx', type=FinancialInstrument46Choice, min=1, max=1, mutex_group=None, array=False),

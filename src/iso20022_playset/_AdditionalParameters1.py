@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._CountryCode import CountryCode
-from ._Max35Text import Max35Text
+from . import ActiveOrHistoricCurrencyCode
+from . import CountryCode
+from . import Max35Text
 
 class AdditionalParameters1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AdditionalParameters1(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveOrHistoricCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def Ctry(self):
@@ -28,12 +28,12 @@ class AdditionalParameters1(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@property
 	def GeoArea(self):
@@ -41,12 +41,12 @@ class AdditionalParameters1(base_types._BaseFieldType):
 
 	@GeoArea.setter
 	def GeoArea(self, value):
-		self._GeoArea = value if type(value) != base_types.auto else self.make_default("GeoArea")
+		self._GeoArea = value if value is not None else base_types.UninitialisedField(self, 'GeoArea', Max35Text, False)
 
 	@GeoArea.deleter
 	def GeoArea(self):
 		del self._GeoArea
-		self._GeoArea = None
+		self._GeoArea = base_types.UninitialisedField(self, 'GeoArea', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),

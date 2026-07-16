@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCode import CountryCode
-from ._DTI2024Identifier import DTI2024Identifier
-from ._GenericIdentification85 import GenericIdentification85
-from ._SafekeepingPlaceTypeAndIdentification1 import SafekeepingPlaceTypeAndIdentification1
-from ._SafekeepingPlaceTypeAndText9 import SafekeepingPlaceTypeAndText9
+from . import CountryCode
+from . import DTI2024Identifier
+from . import GenericIdentification85
+from . import SafekeepingPlaceTypeAndIdentification1
+from . import SafekeepingPlaceTypeAndText9
 
 class SafekeepingPlaceFormat48Choice(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class SafekeepingPlaceFormat48Choice(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@property
 	def DgtlLdgrId(self):
@@ -30,12 +30,12 @@ class SafekeepingPlaceFormat48Choice(base_types._BaseFieldType):
 
 	@DgtlLdgrId.setter
 	def DgtlLdgrId(self, value):
-		self._DgtlLdgrId = value if type(value) != base_types.auto else self.make_default("DgtlLdgrId")
+		self._DgtlLdgrId = value if value is not None else base_types.UninitialisedField(self, 'DgtlLdgrId', DTI2024Identifier, False)
 
 	@DgtlLdgrId.deleter
 	def DgtlLdgrId(self):
 		del self._DgtlLdgrId
-		self._DgtlLdgrId = None
+		self._DgtlLdgrId = base_types.UninitialisedField(self, 'DgtlLdgrId', DTI2024Identifier, False)
 
 	@property
 	def Id(self):
@@ -43,12 +43,12 @@ class SafekeepingPlaceFormat48Choice(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', SafekeepingPlaceTypeAndText9, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', SafekeepingPlaceTypeAndText9, False)
 
 	@property
 	def Prtry(self):
@@ -56,12 +56,12 @@ class SafekeepingPlaceFormat48Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+		self._Prtry = value if value is not None else base_types.UninitialisedField(self, 'Prtry', GenericIdentification85, False)
 
 	@Prtry.deleter
 	def Prtry(self):
 		del self._Prtry
-		self._Prtry = None
+		self._Prtry = base_types.UninitialisedField(self, 'Prtry', GenericIdentification85, False)
 
 	@property
 	def TpAndId(self):
@@ -69,12 +69,12 @@ class SafekeepingPlaceFormat48Choice(base_types._BaseFieldType):
 
 	@TpAndId.setter
 	def TpAndId(self, value):
-		self._TpAndId = value if type(value) != base_types.auto else self.make_default("TpAndId")
+		self._TpAndId = value if value is not None else base_types.UninitialisedField(self, 'TpAndId', SafekeepingPlaceTypeAndIdentification1, False)
 
 	@TpAndId.deleter
 	def TpAndId(self):
 		del self._TpAndId
-		self._TpAndId = None
+		self._TpAndId = base_types.UninitialisedField(self, 'TpAndId', SafekeepingPlaceTypeAndIdentification1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),

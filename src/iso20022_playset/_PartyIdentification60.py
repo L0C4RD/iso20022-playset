@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
-from ._Max35Text import Max35Text
-from ._NameAndAddress8 import NameAndAddress8
+from . import LEIIdentifier
+from . import Max35Text
+from . import NameAndAddress8
 
 class PartyIdentification60(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PartyIdentification60(base_types._BaseFieldType):
 
 	@FndId.setter
 	def FndId(self, value):
-		self._FndId = value if type(value) != base_types.auto else self.make_default("FndId")
+		self._FndId = value if value is not None else base_types.UninitialisedField(self, 'FndId', Max35Text, False)
 
 	@FndId.deleter
 	def FndId(self):
 		del self._FndId
-		self._FndId = None
+		self._FndId = base_types.UninitialisedField(self, 'FndId', Max35Text, False)
 
 	@property
 	def LglNttyIdr(self):
@@ -28,12 +28,12 @@ class PartyIdentification60(base_types._BaseFieldType):
 
 	@LglNttyIdr.setter
 	def LglNttyIdr(self, value):
-		self._LglNttyIdr = value if type(value) != base_types.auto else self.make_default("LglNttyIdr")
+		self._LglNttyIdr = value if value is not None else base_types.UninitialisedField(self, 'LglNttyIdr', LEIIdentifier, False)
 
 	@LglNttyIdr.deleter
 	def LglNttyIdr(self):
 		del self._LglNttyIdr
-		self._LglNttyIdr = None
+		self._LglNttyIdr = base_types.UninitialisedField(self, 'LglNttyIdr', LEIIdentifier, False)
 
 	@property
 	def NmAndAdr(self):
@@ -41,12 +41,12 @@ class PartyIdentification60(base_types._BaseFieldType):
 
 	@NmAndAdr.setter
 	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
+		self._NmAndAdr = value if value is not None else base_types.UninitialisedField(self, 'NmAndAdr', NameAndAddress8, False)
 
 	@NmAndAdr.deleter
 	def NmAndAdr(self):
 		del self._NmAndAdr
-		self._NmAndAdr = None
+		self._NmAndAdr = base_types.UninitialisedField(self, 'NmAndAdr', NameAndAddress8, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FndId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

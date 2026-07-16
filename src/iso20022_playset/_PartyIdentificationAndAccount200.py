@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContactIdentification2 import ContactIdentification2
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
-from ._PartyIdentification178Choice import PartyIdentification178Choice
-from ._SubAccount5 import SubAccount5
+from . import ContactIdentification2
+from . import DateAndDateTime2Choice
+from . import Max140Text
+from . import Max35Text
+from . import PartyIdentification178Choice
+from . import SubAccount5
 
 class PartyIdentificationAndAccount200(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class PartyIdentificationAndAccount200(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', Max35Text, False)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', Max35Text, False)
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -31,12 +31,12 @@ class PartyIdentificationAndAccount200(base_types._BaseFieldType):
 
 	@BlckChainAdrOrWllt.setter
 	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
+		self._BlckChainAdrOrWllt = value if value is not None else base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', Max140Text, False)
 
 	@BlckChainAdrOrWllt.deleter
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+		self._BlckChainAdrOrWllt = base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', Max140Text, False)
 
 	@property
 	def CtctPrsn(self):
@@ -44,12 +44,12 @@ class PartyIdentificationAndAccount200(base_types._BaseFieldType):
 
 	@CtctPrsn.setter
 	def CtctPrsn(self, value):
-		self._CtctPrsn = value if type(value) != base_types.auto else self.make_default("CtctPrsn")
+		self._CtctPrsn = value if value is not None else base_types.UninitialisedField(self, 'CtctPrsn', ContactIdentification2, False)
 
 	@CtctPrsn.deleter
 	def CtctPrsn(self):
 		del self._CtctPrsn
-		self._CtctPrsn = None
+		self._CtctPrsn = base_types.UninitialisedField(self, 'CtctPrsn', ContactIdentification2, False)
 
 	@property
 	def PrcgDt(self):
@@ -57,12 +57,12 @@ class PartyIdentificationAndAccount200(base_types._BaseFieldType):
 
 	@PrcgDt.setter
 	def PrcgDt(self, value):
-		self._PrcgDt = value if type(value) != base_types.auto else self.make_default("PrcgDt")
+		self._PrcgDt = value if value is not None else base_types.UninitialisedField(self, 'PrcgDt', DateAndDateTime2Choice, False)
 
 	@PrcgDt.deleter
 	def PrcgDt(self):
 		del self._PrcgDt
-		self._PrcgDt = None
+		self._PrcgDt = base_types.UninitialisedField(self, 'PrcgDt', DateAndDateTime2Choice, False)
 
 	@property
 	def PrcgId(self):
@@ -70,12 +70,12 @@ class PartyIdentificationAndAccount200(base_types._BaseFieldType):
 
 	@PrcgId.setter
 	def PrcgId(self, value):
-		self._PrcgId = value if type(value) != base_types.auto else self.make_default("PrcgId")
+		self._PrcgId = value if value is not None else base_types.UninitialisedField(self, 'PrcgId', Max35Text, False)
 
 	@PrcgId.deleter
 	def PrcgId(self):
 		del self._PrcgId
-		self._PrcgId = None
+		self._PrcgId = base_types.UninitialisedField(self, 'PrcgId', Max35Text, False)
 
 	@property
 	def PtyId(self):
@@ -83,12 +83,12 @@ class PartyIdentificationAndAccount200(base_types._BaseFieldType):
 
 	@PtyId.setter
 	def PtyId(self, value):
-		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
+		self._PtyId = value if value is not None else base_types.UninitialisedField(self, 'PtyId', PartyIdentification178Choice, False)
 
 	@PtyId.deleter
 	def PtyId(self):
 		del self._PtyId
-		self._PtyId = None
+		self._PtyId = base_types.UninitialisedField(self, 'PtyId', PartyIdentification178Choice, False)
 
 	@property
 	def SubAcct(self):
@@ -96,12 +96,12 @@ class PartyIdentificationAndAccount200(base_types._BaseFieldType):
 
 	@SubAcct.setter
 	def SubAcct(self, value):
-		self._SubAcct = value if type(value) != base_types.auto else self.make_default("SubAcct")
+		self._SubAcct = value if value is not None else base_types.UninitialisedField(self, 'SubAcct', SubAccount5, False)
 
 	@SubAcct.deleter
 	def SubAcct(self):
 		del self._SubAcct
-		self._SubAcct = None
+		self._SubAcct = base_types.UninitialisedField(self, 'SubAcct', SubAccount5, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

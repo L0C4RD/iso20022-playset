@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DocumentNumber5Choice import DocumentNumber5Choice
-from ._Identification30 import Identification30
+from . import DocumentNumber5Choice
+from . import Identification30
 
 class DocumentNumber20(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DocumentNumber20(base_types._BaseFieldType):
 
 	@Nb.setter
 	def Nb(self, value):
-		self._Nb = value if type(value) != base_types.auto else self.make_default("Nb")
+		self._Nb = value if value is not None else base_types.UninitialisedField(self, 'Nb', DocumentNumber5Choice, False)
 
 	@Nb.deleter
 	def Nb(self):
 		del self._Nb
-		self._Nb = None
+		self._Nb = base_types.UninitialisedField(self, 'Nb', DocumentNumber5Choice, False)
 
 	@property
 	def Refs(self):
@@ -27,12 +27,12 @@ class DocumentNumber20(base_types._BaseFieldType):
 
 	@Refs.setter
 	def Refs(self, value):
-		self._Refs = value if type(value) != base_types.auto else self.make_default("Refs")
+		self._Refs = value if value is not None else base_types.UninitialisedField(self, 'Refs', Identification30, True)
 
 	@Refs.deleter
 	def Refs(self):
 		del self._Refs
-		self._Refs = None
+		self._Refs = base_types.UninitialisedField(self, 'Refs', Identification30, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Nb', type=DocumentNumber5Choice, min=1, max=1, mutex_group=None, array=False),

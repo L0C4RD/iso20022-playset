@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Adjustment6 import Adjustment6
-from ._CurrencyAndAmount import CurrencyAndAmount
-from ._DocumentIdentification7 import DocumentIdentification7
+from . import Adjustment6
+from . import CurrencyAndAmount
+from . import DocumentIdentification7
 
 class ReportLine5(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ReportLine5(base_types._BaseFieldType):
 
 	@Adjstmnt.setter
 	def Adjstmnt(self, value):
-		self._Adjstmnt = value if type(value) != base_types.auto else self.make_default("Adjstmnt")
+		self._Adjstmnt = value if value is not None else base_types.UninitialisedField(self, 'Adjstmnt', Adjustment6, True)
 
 	@Adjstmnt.deleter
 	def Adjstmnt(self):
 		del self._Adjstmnt
-		self._Adjstmnt = None
+		self._Adjstmnt = base_types.UninitialisedField(self, 'Adjstmnt', Adjustment6, True)
 
 	@property
 	def NetAmt(self):
@@ -28,12 +28,12 @@ class ReportLine5(base_types._BaseFieldType):
 
 	@NetAmt.setter
 	def NetAmt(self, value):
-		self._NetAmt = value if type(value) != base_types.auto else self.make_default("NetAmt")
+		self._NetAmt = value if value is not None else base_types.UninitialisedField(self, 'NetAmt', CurrencyAndAmount, False)
 
 	@NetAmt.deleter
 	def NetAmt(self):
 		del self._NetAmt
-		self._NetAmt = None
+		self._NetAmt = base_types.UninitialisedField(self, 'NetAmt', CurrencyAndAmount, False)
 
 	@property
 	def PurchsOrdrRef(self):
@@ -41,12 +41,12 @@ class ReportLine5(base_types._BaseFieldType):
 
 	@PurchsOrdrRef.setter
 	def PurchsOrdrRef(self, value):
-		self._PurchsOrdrRef = value if type(value) != base_types.auto else self.make_default("PurchsOrdrRef")
+		self._PurchsOrdrRef = value if value is not None else base_types.UninitialisedField(self, 'PurchsOrdrRef', DocumentIdentification7, False)
 
 	@PurchsOrdrRef.deleter
 	def PurchsOrdrRef(self):
 		del self._PurchsOrdrRef
-		self._PurchsOrdrRef = None
+		self._PurchsOrdrRef = base_types.UninitialisedField(self, 'PurchsOrdrRef', DocumentIdentification7, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Adjstmnt', type=Adjustment6, min=0, max=None, mutex_group=None, array=True),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._ISOTime import ISOTime
-from ._Max256Text import Max256Text
-from ._Max70Text import Max70Text
+from . import ISODate
+from . import ISOTime
+from . import Max256Text
+from . import Max70Text
 
 class DepartureOrArrival1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class DepartureOrArrival1(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', Max256Text, False)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', Max256Text, False)
 
 	@property
 	def Dt(self):
@@ -29,12 +29,12 @@ class DepartureOrArrival1(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@property
 	def Lctn(self):
@@ -42,12 +42,12 @@ class DepartureOrArrival1(base_types._BaseFieldType):
 
 	@Lctn.setter
 	def Lctn(self, value):
-		self._Lctn = value if type(value) != base_types.auto else self.make_default("Lctn")
+		self._Lctn = value if value is not None else base_types.UninitialisedField(self, 'Lctn', Max70Text, False)
 
 	@Lctn.deleter
 	def Lctn(self):
 		del self._Lctn
-		self._Lctn = None
+		self._Lctn = base_types.UninitialisedField(self, 'Lctn', Max70Text, False)
 
 	@property
 	def Tm(self):
@@ -55,12 +55,12 @@ class DepartureOrArrival1(base_types._BaseFieldType):
 
 	@Tm.setter
 	def Tm(self, value):
-		self._Tm = value if type(value) != base_types.auto else self.make_default("Tm")
+		self._Tm = value if value is not None else base_types.UninitialisedField(self, 'Tm', ISOTime, False)
 
 	@Tm.deleter
 	def Tm(self):
 		del self._Tm
-		self._Tm = None
+		self._Tm = base_types.UninitialisedField(self, 'Tm', ISOTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Desc', type=Max256Text, min=0, max=1, mutex_group=None, array=False),

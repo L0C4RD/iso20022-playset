@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMCommand7 import ATMCommand7
-from ._Max100KBinary import Max100KBinary
-from ._Max35Text import Max35Text
-from ._Max500Text import Max500Text
-from ._RejectReason1Code import RejectReason1Code
+from . import ATMCommand7
+from . import Max100KBinary
+from . import Max35Text
+from . import Max500Text
+from . import RejectReason1Code
 
 class ATMReject2(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class ATMReject2(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max500Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max500Text, False)
 
 	@property
 	def Cmd(self):
@@ -30,12 +30,12 @@ class ATMReject2(base_types._BaseFieldType):
 
 	@Cmd.setter
 	def Cmd(self, value):
-		self._Cmd = value if type(value) != base_types.auto else self.make_default("Cmd")
+		self._Cmd = value if value is not None else base_types.UninitialisedField(self, 'Cmd', ATMCommand7, True)
 
 	@Cmd.deleter
 	def Cmd(self):
 		del self._Cmd
-		self._Cmd = None
+		self._Cmd = base_types.UninitialisedField(self, 'Cmd', ATMCommand7, True)
 
 	@property
 	def MsgInErr(self):
@@ -43,12 +43,12 @@ class ATMReject2(base_types._BaseFieldType):
 
 	@MsgInErr.setter
 	def MsgInErr(self, value):
-		self._MsgInErr = value if type(value) != base_types.auto else self.make_default("MsgInErr")
+		self._MsgInErr = value if value is not None else base_types.UninitialisedField(self, 'MsgInErr', Max100KBinary, False)
 
 	@MsgInErr.deleter
 	def MsgInErr(self):
 		del self._MsgInErr
-		self._MsgInErr = None
+		self._MsgInErr = base_types.UninitialisedField(self, 'MsgInErr', Max100KBinary, False)
 
 	@property
 	def RjctInitrId(self):
@@ -56,12 +56,12 @@ class ATMReject2(base_types._BaseFieldType):
 
 	@RjctInitrId.setter
 	def RjctInitrId(self, value):
-		self._RjctInitrId = value if type(value) != base_types.auto else self.make_default("RjctInitrId")
+		self._RjctInitrId = value if value is not None else base_types.UninitialisedField(self, 'RjctInitrId', Max35Text, False)
 
 	@RjctInitrId.deleter
 	def RjctInitrId(self):
 		del self._RjctInitrId
-		self._RjctInitrId = None
+		self._RjctInitrId = base_types.UninitialisedField(self, 'RjctInitrId', Max35Text, False)
 
 	@property
 	def RjctRsn(self):
@@ -69,12 +69,12 @@ class ATMReject2(base_types._BaseFieldType):
 
 	@RjctRsn.setter
 	def RjctRsn(self, value):
-		self._RjctRsn = value if type(value) != base_types.auto else self.make_default("RjctRsn")
+		self._RjctRsn = value if value is not None else base_types.UninitialisedField(self, 'RjctRsn', RejectReason1Code, False)
 
 	@RjctRsn.deleter
 	def RjctRsn(self):
 		del self._RjctRsn
-		self._RjctRsn = None
+		self._RjctRsn = base_types.UninitialisedField(self, 'RjctRsn', RejectReason1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateType8Code import DateType8Code
-from ._Period18 import Period18
+from . import DateType8Code
+from . import Period18
 
 class Period12Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Period12Choice(base_types._BaseFieldType):
 
 	@Prd.setter
 	def Prd(self, value):
-		self._Prd = value if type(value) != base_types.auto else self.make_default("Prd")
+		self._Prd = value if value is not None else base_types.UninitialisedField(self, 'Prd', Period18, False)
 
 	@Prd.deleter
 	def Prd(self):
 		del self._Prd
-		self._Prd = None
+		self._Prd = base_types.UninitialisedField(self, 'Prd', Period18, False)
 
 	@property
 	def PrdCd(self):
@@ -27,12 +27,12 @@ class Period12Choice(base_types._BaseFieldType):
 
 	@PrdCd.setter
 	def PrdCd(self, value):
-		self._PrdCd = value if type(value) != base_types.auto else self.make_default("PrdCd")
+		self._PrdCd = value if value is not None else base_types.UninitialisedField(self, 'PrdCd', DateType8Code, False)
 
 	@PrdCd.deleter
 	def PrdCd(self):
 		del self._PrdCd
-		self._PrdCd = None
+		self._PrdCd = base_types.UninitialisedField(self, 'PrdCd', DateType8Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Prd', type=Period18, min=0, max=1, mutex_group=1, array=False),

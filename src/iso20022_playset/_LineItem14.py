@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CurrencyAndAmount import CurrencyAndAmount
-from ._LineItemDetails12 import LineItemDetails12
+from . import CurrencyAndAmount
+from . import LineItemDetails12
 
 class LineItem14(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class LineItem14(base_types._BaseFieldType):
 
 	@AccptdLineItmsTtlAmt.setter
 	def AccptdLineItmsTtlAmt(self, value):
-		self._AccptdLineItmsTtlAmt = value if type(value) != base_types.auto else self.make_default("AccptdLineItmsTtlAmt")
+		self._AccptdLineItmsTtlAmt = value if value is not None else base_types.UninitialisedField(self, 'AccptdLineItmsTtlAmt', CurrencyAndAmount, False)
 
 	@AccptdLineItmsTtlAmt.deleter
 	def AccptdLineItmsTtlAmt(self):
 		del self._AccptdLineItmsTtlAmt
-		self._AccptdLineItmsTtlAmt = None
+		self._AccptdLineItmsTtlAmt = base_types.UninitialisedField(self, 'AccptdLineItmsTtlAmt', CurrencyAndAmount, False)
 
 	@property
 	def AccptdTtlNetAmt(self):
@@ -27,12 +27,12 @@ class LineItem14(base_types._BaseFieldType):
 
 	@AccptdTtlNetAmt.setter
 	def AccptdTtlNetAmt(self, value):
-		self._AccptdTtlNetAmt = value if type(value) != base_types.auto else self.make_default("AccptdTtlNetAmt")
+		self._AccptdTtlNetAmt = value if value is not None else base_types.UninitialisedField(self, 'AccptdTtlNetAmt', CurrencyAndAmount, False)
 
 	@AccptdTtlNetAmt.deleter
 	def AccptdTtlNetAmt(self):
 		del self._AccptdTtlNetAmt
-		self._AccptdTtlNetAmt = None
+		self._AccptdTtlNetAmt = base_types.UninitialisedField(self, 'AccptdTtlNetAmt', CurrencyAndAmount, False)
 
 	@property
 	def LineItmDtls(self):
@@ -40,12 +40,12 @@ class LineItem14(base_types._BaseFieldType):
 
 	@LineItmDtls.setter
 	def LineItmDtls(self, value):
-		self._LineItmDtls = value if type(value) != base_types.auto else self.make_default("LineItmDtls")
+		self._LineItmDtls = value if value is not None else base_types.UninitialisedField(self, 'LineItmDtls', LineItemDetails12, True)
 
 	@LineItmDtls.deleter
 	def LineItmDtls(self):
 		del self._LineItmDtls
-		self._LineItmDtls = None
+		self._LineItmDtls = base_types.UninitialisedField(self, 'LineItmDtls', LineItemDetails12, True)
 
 	@property
 	def OrdrdLineItmsTtlAmt(self):
@@ -53,12 +53,12 @@ class LineItem14(base_types._BaseFieldType):
 
 	@OrdrdLineItmsTtlAmt.setter
 	def OrdrdLineItmsTtlAmt(self, value):
-		self._OrdrdLineItmsTtlAmt = value if type(value) != base_types.auto else self.make_default("OrdrdLineItmsTtlAmt")
+		self._OrdrdLineItmsTtlAmt = value if value is not None else base_types.UninitialisedField(self, 'OrdrdLineItmsTtlAmt', CurrencyAndAmount, False)
 
 	@OrdrdLineItmsTtlAmt.deleter
 	def OrdrdLineItmsTtlAmt(self):
 		del self._OrdrdLineItmsTtlAmt
-		self._OrdrdLineItmsTtlAmt = None
+		self._OrdrdLineItmsTtlAmt = base_types.UninitialisedField(self, 'OrdrdLineItmsTtlAmt', CurrencyAndAmount, False)
 
 	@property
 	def OrdrdTtlNetAmt(self):
@@ -66,12 +66,12 @@ class LineItem14(base_types._BaseFieldType):
 
 	@OrdrdTtlNetAmt.setter
 	def OrdrdTtlNetAmt(self, value):
-		self._OrdrdTtlNetAmt = value if type(value) != base_types.auto else self.make_default("OrdrdTtlNetAmt")
+		self._OrdrdTtlNetAmt = value if value is not None else base_types.UninitialisedField(self, 'OrdrdTtlNetAmt', CurrencyAndAmount, False)
 
 	@OrdrdTtlNetAmt.deleter
 	def OrdrdTtlNetAmt(self):
 		del self._OrdrdTtlNetAmt
-		self._OrdrdTtlNetAmt = None
+		self._OrdrdTtlNetAmt = base_types.UninitialisedField(self, 'OrdrdTtlNetAmt', CurrencyAndAmount, False)
 
 	@property
 	def OutsdngLineItmsTtlAmt(self):
@@ -79,12 +79,12 @@ class LineItem14(base_types._BaseFieldType):
 
 	@OutsdngLineItmsTtlAmt.setter
 	def OutsdngLineItmsTtlAmt(self, value):
-		self._OutsdngLineItmsTtlAmt = value if type(value) != base_types.auto else self.make_default("OutsdngLineItmsTtlAmt")
+		self._OutsdngLineItmsTtlAmt = value if value is not None else base_types.UninitialisedField(self, 'OutsdngLineItmsTtlAmt', CurrencyAndAmount, False)
 
 	@OutsdngLineItmsTtlAmt.deleter
 	def OutsdngLineItmsTtlAmt(self):
 		del self._OutsdngLineItmsTtlAmt
-		self._OutsdngLineItmsTtlAmt = None
+		self._OutsdngLineItmsTtlAmt = base_types.UninitialisedField(self, 'OutsdngLineItmsTtlAmt', CurrencyAndAmount, False)
 
 	@property
 	def OutsdngTtlNetAmt(self):
@@ -92,12 +92,12 @@ class LineItem14(base_types._BaseFieldType):
 
 	@OutsdngTtlNetAmt.setter
 	def OutsdngTtlNetAmt(self, value):
-		self._OutsdngTtlNetAmt = value if type(value) != base_types.auto else self.make_default("OutsdngTtlNetAmt")
+		self._OutsdngTtlNetAmt = value if value is not None else base_types.UninitialisedField(self, 'OutsdngTtlNetAmt', CurrencyAndAmount, False)
 
 	@OutsdngTtlNetAmt.deleter
 	def OutsdngTtlNetAmt(self):
 		del self._OutsdngTtlNetAmt
-		self._OutsdngTtlNetAmt = None
+		self._OutsdngTtlNetAmt = base_types.UninitialisedField(self, 'OutsdngTtlNetAmt', CurrencyAndAmount, False)
 
 	@property
 	def PdgLineItmsTtlAmt(self):
@@ -105,12 +105,12 @@ class LineItem14(base_types._BaseFieldType):
 
 	@PdgLineItmsTtlAmt.setter
 	def PdgLineItmsTtlAmt(self, value):
-		self._PdgLineItmsTtlAmt = value if type(value) != base_types.auto else self.make_default("PdgLineItmsTtlAmt")
+		self._PdgLineItmsTtlAmt = value if value is not None else base_types.UninitialisedField(self, 'PdgLineItmsTtlAmt', CurrencyAndAmount, False)
 
 	@PdgLineItmsTtlAmt.deleter
 	def PdgLineItmsTtlAmt(self):
 		del self._PdgLineItmsTtlAmt
-		self._PdgLineItmsTtlAmt = None
+		self._PdgLineItmsTtlAmt = base_types.UninitialisedField(self, 'PdgLineItmsTtlAmt', CurrencyAndAmount, False)
 
 	@property
 	def PdgTtlNetAmt(self):
@@ -118,12 +118,12 @@ class LineItem14(base_types._BaseFieldType):
 
 	@PdgTtlNetAmt.setter
 	def PdgTtlNetAmt(self, value):
-		self._PdgTtlNetAmt = value if type(value) != base_types.auto else self.make_default("PdgTtlNetAmt")
+		self._PdgTtlNetAmt = value if value is not None else base_types.UninitialisedField(self, 'PdgTtlNetAmt', CurrencyAndAmount, False)
 
 	@PdgTtlNetAmt.deleter
 	def PdgTtlNetAmt(self):
 		del self._PdgTtlNetAmt
-		self._PdgTtlNetAmt = None
+		self._PdgTtlNetAmt = base_types.UninitialisedField(self, 'PdgTtlNetAmt', CurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AccptdLineItmsTtlAmt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

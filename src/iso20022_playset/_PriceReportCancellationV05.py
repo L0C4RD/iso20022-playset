@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalReference10 import AdditionalReference10
-from ._DateAndDateTime1Choice import DateAndDateTime1Choice
-from ._Extension1 import Extension1
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
-from ._MessageIdentification1 import MessageIdentification1
-from ._Pagination1 import Pagination1
-from ._PriceReport4 import PriceReport4
-from ._YesNoIndicator import YesNoIndicator
+from . import AdditionalReference10
+from . import DateAndDateTime1Choice
+from . import Extension1
+from . import Max350Text
+from . import Max35Text
+from . import MessageIdentification1
+from . import Pagination1
+from . import PriceReport4
+from . import YesNoIndicator
 
 class PriceReportCancellationV05(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class PriceReportCancellationV05(base_types._BaseFieldType):
 
 	@CancPricValtnDtls.setter
 	def CancPricValtnDtls(self, value):
-		self._CancPricValtnDtls = value if type(value) != base_types.auto else self.make_default("CancPricValtnDtls")
+		self._CancPricValtnDtls = value if value is not None else base_types.UninitialisedField(self, 'CancPricValtnDtls', PriceReport4, True)
 
 	@CancPricValtnDtls.deleter
 	def CancPricValtnDtls(self):
 		del self._CancPricValtnDtls
-		self._CancPricValtnDtls = None
+		self._CancPricValtnDtls = base_types.UninitialisedField(self, 'CancPricValtnDtls', PriceReport4, True)
 
 	@property
 	def CmpltPricCxl(self):
@@ -34,12 +34,12 @@ class PriceReportCancellationV05(base_types._BaseFieldType):
 
 	@CmpltPricCxl.setter
 	def CmpltPricCxl(self, value):
-		self._CmpltPricCxl = value if type(value) != base_types.auto else self.make_default("CmpltPricCxl")
+		self._CmpltPricCxl = value if value is not None else base_types.UninitialisedField(self, 'CmpltPricCxl', YesNoIndicator, False)
 
 	@CmpltPricCxl.deleter
 	def CmpltPricCxl(self):
 		del self._CmpltPricCxl
-		self._CmpltPricCxl = None
+		self._CmpltPricCxl = base_types.UninitialisedField(self, 'CmpltPricCxl', YesNoIndicator, False)
 
 	@property
 	def CxlId(self):
@@ -47,12 +47,12 @@ class PriceReportCancellationV05(base_types._BaseFieldType):
 
 	@CxlId.setter
 	def CxlId(self, value):
-		self._CxlId = value if type(value) != base_types.auto else self.make_default("CxlId")
+		self._CxlId = value if value is not None else base_types.UninitialisedField(self, 'CxlId', Max35Text, False)
 
 	@CxlId.deleter
 	def CxlId(self):
 		del self._CxlId
-		self._CxlId = None
+		self._CxlId = base_types.UninitialisedField(self, 'CxlId', Max35Text, False)
 
 	@property
 	def CxlRsn(self):
@@ -60,12 +60,12 @@ class PriceReportCancellationV05(base_types._BaseFieldType):
 
 	@CxlRsn.setter
 	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != base_types.auto else self.make_default("CxlRsn")
+		self._CxlRsn = value if value is not None else base_types.UninitialisedField(self, 'CxlRsn', Max350Text, False)
 
 	@CxlRsn.deleter
 	def CxlRsn(self):
 		del self._CxlRsn
-		self._CxlRsn = None
+		self._CxlRsn = base_types.UninitialisedField(self, 'CxlRsn', Max350Text, False)
 
 	@property
 	def MsgId(self):
@@ -73,12 +73,12 @@ class PriceReportCancellationV05(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@property
 	def MsgPgntn(self):
@@ -86,12 +86,12 @@ class PriceReportCancellationV05(base_types._BaseFieldType):
 
 	@MsgPgntn.setter
 	def MsgPgntn(self, value):
-		self._MsgPgntn = value if type(value) != base_types.auto else self.make_default("MsgPgntn")
+		self._MsgPgntn = value if value is not None else base_types.UninitialisedField(self, 'MsgPgntn', Pagination1, False)
 
 	@MsgPgntn.deleter
 	def MsgPgntn(self):
 		del self._MsgPgntn
-		self._MsgPgntn = None
+		self._MsgPgntn = base_types.UninitialisedField(self, 'MsgPgntn', Pagination1, False)
 
 	@property
 	def PoolRef(self):
@@ -99,12 +99,12 @@ class PriceReportCancellationV05(base_types._BaseFieldType):
 
 	@PoolRef.setter
 	def PoolRef(self, value):
-		self._PoolRef = value if type(value) != base_types.auto else self.make_default("PoolRef")
+		self._PoolRef = value if value is not None else base_types.UninitialisedField(self, 'PoolRef', AdditionalReference10, False)
 
 	@PoolRef.deleter
 	def PoolRef(self):
 		del self._PoolRef
-		self._PoolRef = None
+		self._PoolRef = base_types.UninitialisedField(self, 'PoolRef', AdditionalReference10, False)
 
 	@property
 	def PricRptId(self):
@@ -112,12 +112,12 @@ class PriceReportCancellationV05(base_types._BaseFieldType):
 
 	@PricRptId.setter
 	def PricRptId(self, value):
-		self._PricRptId = value if type(value) != base_types.auto else self.make_default("PricRptId")
+		self._PricRptId = value if value is not None else base_types.UninitialisedField(self, 'PricRptId', Max35Text, False)
 
 	@PricRptId.deleter
 	def PricRptId(self):
 		del self._PricRptId
-		self._PricRptId = None
+		self._PricRptId = base_types.UninitialisedField(self, 'PricRptId', Max35Text, False)
 
 	@property
 	def PrvsRef(self):
@@ -125,12 +125,12 @@ class PriceReportCancellationV05(base_types._BaseFieldType):
 
 	@PrvsRef.setter
 	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
+		self._PrvsRef = value if value is not None else base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference10, False)
 
 	@PrvsRef.deleter
 	def PrvsRef(self):
 		del self._PrvsRef
-		self._PrvsRef = None
+		self._PrvsRef = base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference10, False)
 
 	@property
 	def XpctdPricCrrctnDt(self):
@@ -138,12 +138,12 @@ class PriceReportCancellationV05(base_types._BaseFieldType):
 
 	@XpctdPricCrrctnDt.setter
 	def XpctdPricCrrctnDt(self, value):
-		self._XpctdPricCrrctnDt = value if type(value) != base_types.auto else self.make_default("XpctdPricCrrctnDt")
+		self._XpctdPricCrrctnDt = value if value is not None else base_types.UninitialisedField(self, 'XpctdPricCrrctnDt', DateAndDateTime1Choice, False)
 
 	@XpctdPricCrrctnDt.deleter
 	def XpctdPricCrrctnDt(self):
 		del self._XpctdPricCrrctnDt
-		self._XpctdPricCrrctnDt = None
+		self._XpctdPricCrrctnDt = base_types.UninitialisedField(self, 'XpctdPricCrrctnDt', DateAndDateTime1Choice, False)
 
 	@property
 	def Xtnsn(self):
@@ -151,12 +151,12 @@ class PriceReportCancellationV05(base_types._BaseFieldType):
 
 	@Xtnsn.setter
 	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
+		self._Xtnsn = value if value is not None else base_types.UninitialisedField(self, 'Xtnsn', Extension1, True)
 
 	@Xtnsn.deleter
 	def Xtnsn(self):
 		del self._Xtnsn
-		self._Xtnsn = None
+		self._Xtnsn = base_types.UninitialisedField(self, 'Xtnsn', Extension1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CancPricValtnDtls', type=PriceReport4, min=0, max=None, mutex_group=None, array=True),

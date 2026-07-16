@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ExternalAuthorityIdentification1Code import ExternalAuthorityIdentification1Code
-from ._Max350Text import Max350Text
+from . import ExternalAuthorityIdentification1Code
+from . import Max350Text
 
 class SupervisingAuthorityIdentification1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SupervisingAuthorityIdentification1Choice(base_types._BaseFieldType):
 
 	@FullNm.setter
 	def FullNm(self, value):
-		self._FullNm = value if type(value) != base_types.auto else self.make_default("FullNm")
+		self._FullNm = value if value is not None else base_types.UninitialisedField(self, 'FullNm', Max350Text, False)
 
 	@FullNm.deleter
 	def FullNm(self):
 		del self._FullNm
-		self._FullNm = None
+		self._FullNm = base_types.UninitialisedField(self, 'FullNm', Max350Text, False)
 
 	@property
 	def PrtryId(self):
@@ -27,12 +27,12 @@ class SupervisingAuthorityIdentification1Choice(base_types._BaseFieldType):
 
 	@PrtryId.setter
 	def PrtryId(self, value):
-		self._PrtryId = value if type(value) != base_types.auto else self.make_default("PrtryId")
+		self._PrtryId = value if value is not None else base_types.UninitialisedField(self, 'PrtryId', ExternalAuthorityIdentification1Code, False)
 
 	@PrtryId.deleter
 	def PrtryId(self):
 		del self._PrtryId
-		self._PrtryId = None
+		self._PrtryId = base_types.UninitialisedField(self, 'PrtryId', ExternalAuthorityIdentification1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FullNm', type=Max350Text, min=0, max=1, mutex_group=1, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection102 import AmountAndDirection102
+from . import AmountAndDirection102
 
 class Flows1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class Flows1(base_types._BaseFieldType):
 
 	@InvstmtFlows.setter
 	def InvstmtFlows(self, value):
-		self._InvstmtFlows = value if type(value) != base_types.auto else self.make_default("InvstmtFlows")
+		self._InvstmtFlows = value if value is not None else base_types.UninitialisedField(self, 'InvstmtFlows', AmountAndDirection102, False)
 
 	@InvstmtFlows.deleter
 	def InvstmtFlows(self):
 		del self._InvstmtFlows
-		self._InvstmtFlows = None
+		self._InvstmtFlows = base_types.UninitialisedField(self, 'InvstmtFlows', AmountAndDirection102, False)
 
 	@property
 	def PmtBkFlows(self):
@@ -26,12 +26,12 @@ class Flows1(base_types._BaseFieldType):
 
 	@PmtBkFlows.setter
 	def PmtBkFlows(self, value):
-		self._PmtBkFlows = value if type(value) != base_types.auto else self.make_default("PmtBkFlows")
+		self._PmtBkFlows = value if value is not None else base_types.UninitialisedField(self, 'PmtBkFlows', AmountAndDirection102, False)
 
 	@PmtBkFlows.deleter
 	def PmtBkFlows(self):
 		del self._PmtBkFlows
-		self._PmtBkFlows = None
+		self._PmtBkFlows = base_types.UninitialisedField(self, 'PmtBkFlows', AmountAndDirection102, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InvstmtFlows', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),

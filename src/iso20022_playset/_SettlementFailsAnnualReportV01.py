@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SettlementFailsData4 import SettlementFailsData4
-from ._SettlementFailsReportHeader2 import SettlementFailsReportHeader2
-from ._SupplementaryData1 import SupplementaryData1
+from . import SettlementFailsData4
+from . import SettlementFailsReportHeader2
+from . import SupplementaryData1
 
 class SettlementFailsAnnualReportV01(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SettlementFailsAnnualReportV01(base_types._BaseFieldType):
 
 	@AnlAggt.setter
 	def AnlAggt(self, value):
-		self._AnlAggt = value if type(value) != base_types.auto else self.make_default("AnlAggt")
+		self._AnlAggt = value if value is not None else base_types.UninitialisedField(self, 'AnlAggt', SettlementFailsData4, False)
 
 	@AnlAggt.deleter
 	def AnlAggt(self):
 		del self._AnlAggt
-		self._AnlAggt = None
+		self._AnlAggt = base_types.UninitialisedField(self, 'AnlAggt', SettlementFailsData4, False)
 
 	@property
 	def RptHdr(self):
@@ -28,12 +28,12 @@ class SettlementFailsAnnualReportV01(base_types._BaseFieldType):
 
 	@RptHdr.setter
 	def RptHdr(self, value):
-		self._RptHdr = value if type(value) != base_types.auto else self.make_default("RptHdr")
+		self._RptHdr = value if value is not None else base_types.UninitialisedField(self, 'RptHdr', SettlementFailsReportHeader2, False)
 
 	@RptHdr.deleter
 	def RptHdr(self):
 		del self._RptHdr
-		self._RptHdr = None
+		self._RptHdr = base_types.UninitialisedField(self, 'RptHdr', SettlementFailsReportHeader2, False)
 
 	@property
 	def SplmtryData(self):
@@ -41,12 +41,12 @@ class SettlementFailsAnnualReportV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AnlAggt', type=SettlementFailsData4, min=1, max=1, mutex_group=None, array=False),

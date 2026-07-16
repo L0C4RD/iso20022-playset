@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountIdentification72Choice import AccountIdentification72Choice
-from ._CorporateActionGeneralInformation92 import CorporateActionGeneralInformation92
-from ._Max8000Text import Max8000Text
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._SupplementaryData1 import SupplementaryData1
+from . import AccountIdentification72Choice
+from . import CorporateActionGeneralInformation92
+from . import Max8000Text
+from . import SecurityIdentification19
+from . import SupplementaryData1
 
 class CorporateActionNarrativeV09(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class CorporateActionNarrativeV09(base_types._BaseFieldType):
 
 	@AcctDtls.setter
 	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != base_types.auto else self.make_default("AcctDtls")
+		self._AcctDtls = value if value is not None else base_types.UninitialisedField(self, 'AcctDtls', AccountIdentification72Choice, False)
 
 	@AcctDtls.deleter
 	def AcctDtls(self):
 		del self._AcctDtls
-		self._AcctDtls = None
+		self._AcctDtls = base_types.UninitialisedField(self, 'AcctDtls', AccountIdentification72Choice, False)
 
 	@property
 	def AddtlInf(self):
@@ -30,12 +30,12 @@ class CorporateActionNarrativeV09(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max8000Text, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max8000Text, True)
 
 	@property
 	def CorpActnGnlInf(self):
@@ -43,12 +43,12 @@ class CorporateActionNarrativeV09(base_types._BaseFieldType):
 
 	@CorpActnGnlInf.setter
 	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != base_types.auto else self.make_default("CorpActnGnlInf")
+		self._CorpActnGnlInf = value if value is not None else base_types.UninitialisedField(self, 'CorpActnGnlInf', CorporateActionGeneralInformation92, False)
 
 	@CorpActnGnlInf.deleter
 	def CorpActnGnlInf(self):
 		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
+		self._CorpActnGnlInf = base_types.UninitialisedField(self, 'CorpActnGnlInf', CorporateActionGeneralInformation92, False)
 
 	@property
 	def SplmtryData(self):
@@ -56,12 +56,12 @@ class CorporateActionNarrativeV09(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def UndrlygScty(self):
@@ -69,12 +69,12 @@ class CorporateActionNarrativeV09(base_types._BaseFieldType):
 
 	@UndrlygScty.setter
 	def UndrlygScty(self, value):
-		self._UndrlygScty = value if type(value) != base_types.auto else self.make_default("UndrlygScty")
+		self._UndrlygScty = value if value is not None else base_types.UninitialisedField(self, 'UndrlygScty', SecurityIdentification19, False)
 
 	@UndrlygScty.deleter
 	def UndrlygScty(self):
 		del self._UndrlygScty
-		self._UndrlygScty = None
+		self._UndrlygScty = base_types.UninitialisedField(self, 'UndrlygScty', SecurityIdentification19, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctDtls', type=AccountIdentification72Choice, min=0, max=1, mutex_group=None, array=False),

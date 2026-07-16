@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Agreement4 import Agreement4
-from ._InterestStatement5 import InterestStatement5
-from ._Max35Text import Max35Text
-from ._Obligation9 import Obligation9
-from ._Pagination1 import Pagination1
-from ._Statement85 import Statement85
-from ._SupplementaryData1 import SupplementaryData1
+from . import Agreement4
+from . import InterestStatement5
+from . import Max35Text
+from . import Obligation9
+from . import Pagination1
+from . import Statement85
+from . import SupplementaryData1
 
 class InterestPaymentStatementV05(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class InterestPaymentStatementV05(base_types._BaseFieldType):
 
 	@Agrmt.setter
 	def Agrmt(self, value):
-		self._Agrmt = value if type(value) != base_types.auto else self.make_default("Agrmt")
+		self._Agrmt = value if value is not None else base_types.UninitialisedField(self, 'Agrmt', Agreement4, False)
 
 	@Agrmt.deleter
 	def Agrmt(self):
 		del self._Agrmt
-		self._Agrmt = None
+		self._Agrmt = base_types.UninitialisedField(self, 'Agrmt', Agreement4, False)
 
 	@property
 	def IntrstStmt(self):
@@ -32,12 +32,12 @@ class InterestPaymentStatementV05(base_types._BaseFieldType):
 
 	@IntrstStmt.setter
 	def IntrstStmt(self, value):
-		self._IntrstStmt = value if type(value) != base_types.auto else self.make_default("IntrstStmt")
+		self._IntrstStmt = value if value is not None else base_types.UninitialisedField(self, 'IntrstStmt', InterestStatement5, False)
 
 	@IntrstStmt.deleter
 	def IntrstStmt(self):
 		del self._IntrstStmt
-		self._IntrstStmt = None
+		self._IntrstStmt = base_types.UninitialisedField(self, 'IntrstStmt', InterestStatement5, False)
 
 	@property
 	def Oblgtn(self):
@@ -45,12 +45,12 @@ class InterestPaymentStatementV05(base_types._BaseFieldType):
 
 	@Oblgtn.setter
 	def Oblgtn(self, value):
-		self._Oblgtn = value if type(value) != base_types.auto else self.make_default("Oblgtn")
+		self._Oblgtn = value if value is not None else base_types.UninitialisedField(self, 'Oblgtn', Obligation9, False)
 
 	@Oblgtn.deleter
 	def Oblgtn(self):
 		del self._Oblgtn
-		self._Oblgtn = None
+		self._Oblgtn = base_types.UninitialisedField(self, 'Oblgtn', Obligation9, False)
 
 	@property
 	def Pgntn(self):
@@ -58,12 +58,12 @@ class InterestPaymentStatementV05(base_types._BaseFieldType):
 
 	@Pgntn.setter
 	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+		self._Pgntn = value if value is not None else base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@Pgntn.deleter
 	def Pgntn(self):
 		del self._Pgntn
-		self._Pgntn = None
+		self._Pgntn = base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@property
 	def SplmtryData(self):
@@ -71,12 +71,12 @@ class InterestPaymentStatementV05(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def StmtParams(self):
@@ -84,12 +84,12 @@ class InterestPaymentStatementV05(base_types._BaseFieldType):
 
 	@StmtParams.setter
 	def StmtParams(self, value):
-		self._StmtParams = value if type(value) != base_types.auto else self.make_default("StmtParams")
+		self._StmtParams = value if value is not None else base_types.UninitialisedField(self, 'StmtParams', Statement85, False)
 
 	@StmtParams.deleter
 	def StmtParams(self):
 		del self._StmtParams
-		self._StmtParams = None
+		self._StmtParams = base_types.UninitialisedField(self, 'StmtParams', Statement85, False)
 
 	@property
 	def TxId(self):
@@ -97,12 +97,12 @@ class InterestPaymentStatementV05(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Agrmt', type=Agreement4, min=0, max=1, mutex_group=None, array=False),

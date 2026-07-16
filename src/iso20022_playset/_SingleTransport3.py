@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._TransportByAir2 import TransportByAir2
-from ._TransportByRail2 import TransportByRail2
-from ._TransportByRoad2 import TransportByRoad2
-from ._TransportBySea4 import TransportBySea4
+from . import TransportByAir2
+from . import TransportByRail2
+from . import TransportByRoad2
+from . import TransportBySea4
 
 class SingleTransport3(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class SingleTransport3(base_types._BaseFieldType):
 
 	@TrnsprtByAir.setter
 	def TrnsprtByAir(self, value):
-		self._TrnsprtByAir = value if type(value) != base_types.auto else self.make_default("TrnsprtByAir")
+		self._TrnsprtByAir = value if value is not None else base_types.UninitialisedField(self, 'TrnsprtByAir', TransportByAir2, False)
 
 	@TrnsprtByAir.deleter
 	def TrnsprtByAir(self):
 		del self._TrnsprtByAir
-		self._TrnsprtByAir = None
+		self._TrnsprtByAir = base_types.UninitialisedField(self, 'TrnsprtByAir', TransportByAir2, False)
 
 	@property
 	def TrnsprtByRail(self):
@@ -29,12 +29,12 @@ class SingleTransport3(base_types._BaseFieldType):
 
 	@TrnsprtByRail.setter
 	def TrnsprtByRail(self, value):
-		self._TrnsprtByRail = value if type(value) != base_types.auto else self.make_default("TrnsprtByRail")
+		self._TrnsprtByRail = value if value is not None else base_types.UninitialisedField(self, 'TrnsprtByRail', TransportByRail2, False)
 
 	@TrnsprtByRail.deleter
 	def TrnsprtByRail(self):
 		del self._TrnsprtByRail
-		self._TrnsprtByRail = None
+		self._TrnsprtByRail = base_types.UninitialisedField(self, 'TrnsprtByRail', TransportByRail2, False)
 
 	@property
 	def TrnsprtByRoad(self):
@@ -42,12 +42,12 @@ class SingleTransport3(base_types._BaseFieldType):
 
 	@TrnsprtByRoad.setter
 	def TrnsprtByRoad(self, value):
-		self._TrnsprtByRoad = value if type(value) != base_types.auto else self.make_default("TrnsprtByRoad")
+		self._TrnsprtByRoad = value if value is not None else base_types.UninitialisedField(self, 'TrnsprtByRoad', TransportByRoad2, False)
 
 	@TrnsprtByRoad.deleter
 	def TrnsprtByRoad(self):
 		del self._TrnsprtByRoad
-		self._TrnsprtByRoad = None
+		self._TrnsprtByRoad = base_types.UninitialisedField(self, 'TrnsprtByRoad', TransportByRoad2, False)
 
 	@property
 	def TrnsprtBySea(self):
@@ -55,12 +55,12 @@ class SingleTransport3(base_types._BaseFieldType):
 
 	@TrnsprtBySea.setter
 	def TrnsprtBySea(self, value):
-		self._TrnsprtBySea = value if type(value) != base_types.auto else self.make_default("TrnsprtBySea")
+		self._TrnsprtBySea = value if value is not None else base_types.UninitialisedField(self, 'TrnsprtBySea', TransportBySea4, False)
 
 	@TrnsprtBySea.deleter
 	def TrnsprtBySea(self):
 		del self._TrnsprtBySea
-		self._TrnsprtBySea = None
+		self._TrnsprtBySea = base_types.UninitialisedField(self, 'TrnsprtBySea', TransportBySea4, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TrnsprtByAir', type=TransportByAir2, min=0, max=1, mutex_group=None, array=False),

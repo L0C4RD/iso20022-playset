@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InvestorTypeIdentification1 import InvestorTypeIdentification1
-from ._Vote17Choice import Vote17Choice
-from ._VoteInstructionForMeetingResolution3Choice import VoteInstructionForMeetingResolution3Choice
+from . import InvestorTypeIdentification1
+from . import Vote17Choice
+from . import VoteInstructionForMeetingResolution3Choice
 
 class VoteDetails7(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class VoteDetails7(base_types._BaseFieldType):
 
 	@InvstrTpId.setter
 	def InvstrTpId(self, value):
-		self._InvstrTpId = value if type(value) != base_types.auto else self.make_default("InvstrTpId")
+		self._InvstrTpId = value if value is not None else base_types.UninitialisedField(self, 'InvstrTpId', InvestorTypeIdentification1, False)
 
 	@InvstrTpId.deleter
 	def InvstrTpId(self):
 		del self._InvstrTpId
-		self._InvstrTpId = None
+		self._InvstrTpId = base_types.UninitialisedField(self, 'InvstrTpId', InvestorTypeIdentification1, False)
 
 	@property
 	def VoteInstrForAgndRsltn(self):
@@ -28,12 +28,12 @@ class VoteDetails7(base_types._BaseFieldType):
 
 	@VoteInstrForAgndRsltn.setter
 	def VoteInstrForAgndRsltn(self, value):
-		self._VoteInstrForAgndRsltn = value if type(value) != base_types.auto else self.make_default("VoteInstrForAgndRsltn")
+		self._VoteInstrForAgndRsltn = value if value is not None else base_types.UninitialisedField(self, 'VoteInstrForAgndRsltn', Vote17Choice, False)
 
 	@VoteInstrForAgndRsltn.deleter
 	def VoteInstrForAgndRsltn(self):
 		del self._VoteInstrForAgndRsltn
-		self._VoteInstrForAgndRsltn = None
+		self._VoteInstrForAgndRsltn = base_types.UninitialisedField(self, 'VoteInstrForAgndRsltn', Vote17Choice, False)
 
 	@property
 	def VoteInstrForMtgRsltn(self):
@@ -41,12 +41,12 @@ class VoteDetails7(base_types._BaseFieldType):
 
 	@VoteInstrForMtgRsltn.setter
 	def VoteInstrForMtgRsltn(self, value):
-		self._VoteInstrForMtgRsltn = value if type(value) != base_types.auto else self.make_default("VoteInstrForMtgRsltn")
+		self._VoteInstrForMtgRsltn = value if value is not None else base_types.UninitialisedField(self, 'VoteInstrForMtgRsltn', VoteInstructionForMeetingResolution3Choice, False)
 
 	@VoteInstrForMtgRsltn.deleter
 	def VoteInstrForMtgRsltn(self):
 		del self._VoteInstrForMtgRsltn
-		self._VoteInstrForMtgRsltn = None
+		self._VoteInstrForMtgRsltn = base_types.UninitialisedField(self, 'VoteInstrForMtgRsltn', VoteInstructionForMeetingResolution3Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InvstrTpId', type=InvestorTypeIdentification1, min=0, max=1, mutex_group=None, array=False),

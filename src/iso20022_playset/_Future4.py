@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._BaseOneRate import BaseOneRate
-from ._ISODateTime import ISODateTime
-from ._Price8 import Price8
-from ._TimeUnit3Choice import TimeUnit3Choice
-from ._UnderlyingAttributes4 import UnderlyingAttributes4
-from ._UnitOfMeasure7Choice import UnitOfMeasure7Choice
+from . import ActiveCurrencyAndAmount
+from . import BaseOneRate
+from . import ISODateTime
+from . import Price8
+from . import TimeUnit3Choice
+from . import UnderlyingAttributes4
+from . import UnitOfMeasure7Choice
 
 class Future4(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class Future4(base_types._BaseFieldType):
 
 	@AddtlUndrlygAttrbts.setter
 	def AddtlUndrlygAttrbts(self, value):
-		self._AddtlUndrlygAttrbts = value if type(value) != base_types.auto else self.make_default("AddtlUndrlygAttrbts")
+		self._AddtlUndrlygAttrbts = value if value is not None else base_types.UninitialisedField(self, 'AddtlUndrlygAttrbts', UnderlyingAttributes4, True)
 
 	@AddtlUndrlygAttrbts.deleter
 	def AddtlUndrlygAttrbts(self):
 		del self._AddtlUndrlygAttrbts
-		self._AddtlUndrlygAttrbts = None
+		self._AddtlUndrlygAttrbts = base_types.UninitialisedField(self, 'AddtlUndrlygAttrbts', UnderlyingAttributes4, True)
 
 	@property
 	def CtrctSz(self):
@@ -32,12 +32,12 @@ class Future4(base_types._BaseFieldType):
 
 	@CtrctSz.setter
 	def CtrctSz(self, value):
-		self._CtrctSz = value if type(value) != base_types.auto else self.make_default("CtrctSz")
+		self._CtrctSz = value if value is not None else base_types.UninitialisedField(self, 'CtrctSz', BaseOneRate, False)
 
 	@CtrctSz.deleter
 	def CtrctSz(self):
 		del self._CtrctSz
-		self._CtrctSz = None
+		self._CtrctSz = base_types.UninitialisedField(self, 'CtrctSz', BaseOneRate, False)
 
 	@property
 	def ExrcPric(self):
@@ -45,12 +45,12 @@ class Future4(base_types._BaseFieldType):
 
 	@ExrcPric.setter
 	def ExrcPric(self, value):
-		self._ExrcPric = value if type(value) != base_types.auto else self.make_default("ExrcPric")
+		self._ExrcPric = value if value is not None else base_types.UninitialisedField(self, 'ExrcPric', Price8, False)
 
 	@ExrcPric.deleter
 	def ExrcPric(self):
 		del self._ExrcPric
-		self._ExrcPric = None
+		self._ExrcPric = base_types.UninitialisedField(self, 'ExrcPric', Price8, False)
 
 	@property
 	def FutrDt(self):
@@ -58,12 +58,12 @@ class Future4(base_types._BaseFieldType):
 
 	@FutrDt.setter
 	def FutrDt(self, value):
-		self._FutrDt = value if type(value) != base_types.auto else self.make_default("FutrDt")
+		self._FutrDt = value if value is not None else base_types.UninitialisedField(self, 'FutrDt', ISODateTime, False)
 
 	@FutrDt.deleter
 	def FutrDt(self):
 		del self._FutrDt
-		self._FutrDt = None
+		self._FutrDt = base_types.UninitialisedField(self, 'FutrDt', ISODateTime, False)
 
 	@property
 	def MinSz(self):
@@ -71,12 +71,12 @@ class Future4(base_types._BaseFieldType):
 
 	@MinSz.setter
 	def MinSz(self, value):
-		self._MinSz = value if type(value) != base_types.auto else self.make_default("MinSz")
+		self._MinSz = value if value is not None else base_types.UninitialisedField(self, 'MinSz', ActiveCurrencyAndAmount, False)
 
 	@MinSz.deleter
 	def MinSz(self):
 		del self._MinSz
-		self._MinSz = None
+		self._MinSz = base_types.UninitialisedField(self, 'MinSz', ActiveCurrencyAndAmount, False)
 
 	@property
 	def TmUnit(self):
@@ -84,12 +84,12 @@ class Future4(base_types._BaseFieldType):
 
 	@TmUnit.setter
 	def TmUnit(self, value):
-		self._TmUnit = value if type(value) != base_types.auto else self.make_default("TmUnit")
+		self._TmUnit = value if value is not None else base_types.UninitialisedField(self, 'TmUnit', TimeUnit3Choice, False)
 
 	@TmUnit.deleter
 	def TmUnit(self):
 		del self._TmUnit
-		self._TmUnit = None
+		self._TmUnit = base_types.UninitialisedField(self, 'TmUnit', TimeUnit3Choice, False)
 
 	@property
 	def UnitOfMeasr(self):
@@ -97,12 +97,12 @@ class Future4(base_types._BaseFieldType):
 
 	@UnitOfMeasr.setter
 	def UnitOfMeasr(self, value):
-		self._UnitOfMeasr = value if type(value) != base_types.auto else self.make_default("UnitOfMeasr")
+		self._UnitOfMeasr = value if value is not None else base_types.UninitialisedField(self, 'UnitOfMeasr', UnitOfMeasure7Choice, False)
 
 	@UnitOfMeasr.deleter
 	def UnitOfMeasr(self):
 		del self._UnitOfMeasr
-		self._UnitOfMeasr = None
+		self._UnitOfMeasr = base_types.UninitialisedField(self, 'UnitOfMeasr', UnitOfMeasure7Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlUndrlygAttrbts', type=UnderlyingAttributes4, min=0, max=None, mutex_group=None, array=True),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardPaymentEnvironment82 import CardPaymentEnvironment82
-from ._Max20000Text import Max20000Text
-from ._PaymentContext30 import PaymentContext30
-from ._SupplementaryData1 import SupplementaryData1
+from . import CardPaymentEnvironment82
+from . import Max20000Text
+from . import PaymentContext30
+from . import SupplementaryData1
 
 class AdministrativeRequest9(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class AdministrativeRequest9(base_types._BaseFieldType):
 
 	@AdmstvSvcId.setter
 	def AdmstvSvcId(self, value):
-		self._AdmstvSvcId = value if type(value) != base_types.auto else self.make_default("AdmstvSvcId")
+		self._AdmstvSvcId = value if value is not None else base_types.UninitialisedField(self, 'AdmstvSvcId', Max20000Text, False)
 
 	@AdmstvSvcId.deleter
 	def AdmstvSvcId(self):
 		del self._AdmstvSvcId
-		self._AdmstvSvcId = None
+		self._AdmstvSvcId = base_types.UninitialisedField(self, 'AdmstvSvcId', Max20000Text, False)
 
 	@property
 	def Cntxt(self):
@@ -29,12 +29,12 @@ class AdministrativeRequest9(base_types._BaseFieldType):
 
 	@Cntxt.setter
 	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != base_types.auto else self.make_default("Cntxt")
+		self._Cntxt = value if value is not None else base_types.UninitialisedField(self, 'Cntxt', PaymentContext30, False)
 
 	@Cntxt.deleter
 	def Cntxt(self):
 		del self._Cntxt
-		self._Cntxt = None
+		self._Cntxt = base_types.UninitialisedField(self, 'Cntxt', PaymentContext30, False)
 
 	@property
 	def Envt(self):
@@ -42,12 +42,12 @@ class AdministrativeRequest9(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+		self._Envt = value if value is not None else base_types.UninitialisedField(self, 'Envt', CardPaymentEnvironment82, False)
 
 	@Envt.deleter
 	def Envt(self):
 		del self._Envt
-		self._Envt = None
+		self._Envt = base_types.UninitialisedField(self, 'Envt', CardPaymentEnvironment82, False)
 
 	@property
 	def SplmtryData(self):
@@ -55,12 +55,12 @@ class AdministrativeRequest9(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AdmstvSvcId', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCode import CountryCode
-from ._UTCOffset1 import UTCOffset1
+from . import CountryCode
+from . import UTCOffset1
 
 class MainFundOrderDeskLocation1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class MainFundOrderDeskLocation1(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@property
 	def TmZoneOffSet(self):
@@ -27,12 +27,12 @@ class MainFundOrderDeskLocation1(base_types._BaseFieldType):
 
 	@TmZoneOffSet.setter
 	def TmZoneOffSet(self, value):
-		self._TmZoneOffSet = value if type(value) != base_types.auto else self.make_default("TmZoneOffSet")
+		self._TmZoneOffSet = value if value is not None else base_types.UninitialisedField(self, 'TmZoneOffSet', UTCOffset1, False)
 
 	@TmZoneOffSet.deleter
 	def TmZoneOffSet(self):
 		del self._TmZoneOffSet
-		self._TmZoneOffSet = None
+		self._TmZoneOffSet = base_types.UninitialisedField(self, 'TmZoneOffSet', UTCOffset1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),

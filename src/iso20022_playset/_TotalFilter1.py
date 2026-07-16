@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
+from . import Max35Text
 
 class TotalFilter1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class TotalFilter1(base_types._BaseFieldType):
 
 	@CshrId.setter
 	def CshrId(self, value):
-		self._CshrId = value if type(value) != base_types.auto else self.make_default("CshrId")
+		self._CshrId = value if value is not None else base_types.UninitialisedField(self, 'CshrId', Max35Text, False)
 
 	@CshrId.deleter
 	def CshrId(self):
 		del self._CshrId
-		self._CshrId = None
+		self._CshrId = base_types.UninitialisedField(self, 'CshrId', Max35Text, False)
 
 	@property
 	def POIId(self):
@@ -26,12 +26,12 @@ class TotalFilter1(base_types._BaseFieldType):
 
 	@POIId.setter
 	def POIId(self, value):
-		self._POIId = value if type(value) != base_types.auto else self.make_default("POIId")
+		self._POIId = value if value is not None else base_types.UninitialisedField(self, 'POIId', Max35Text, False)
 
 	@POIId.deleter
 	def POIId(self):
 		del self._POIId
-		self._POIId = None
+		self._POIId = base_types.UninitialisedField(self, 'POIId', Max35Text, False)
 
 	@property
 	def SaleId(self):
@@ -39,12 +39,12 @@ class TotalFilter1(base_types._BaseFieldType):
 
 	@SaleId.setter
 	def SaleId(self, value):
-		self._SaleId = value if type(value) != base_types.auto else self.make_default("SaleId")
+		self._SaleId = value if value is not None else base_types.UninitialisedField(self, 'SaleId', Max35Text, False)
 
 	@SaleId.deleter
 	def SaleId(self):
 		del self._SaleId
-		self._SaleId = None
+		self._SaleId = base_types.UninitialisedField(self, 'SaleId', Max35Text, False)
 
 	@property
 	def ShftNb(self):
@@ -52,12 +52,12 @@ class TotalFilter1(base_types._BaseFieldType):
 
 	@ShftNb.setter
 	def ShftNb(self, value):
-		self._ShftNb = value if type(value) != base_types.auto else self.make_default("ShftNb")
+		self._ShftNb = value if value is not None else base_types.UninitialisedField(self, 'ShftNb', Max35Text, False)
 
 	@ShftNb.deleter
 	def ShftNb(self):
 		del self._ShftNb
-		self._ShftNb = None
+		self._ShftNb = base_types.UninitialisedField(self, 'ShftNb', Max35Text, False)
 
 	@property
 	def TtlsGrpId(self):
@@ -65,12 +65,12 @@ class TotalFilter1(base_types._BaseFieldType):
 
 	@TtlsGrpId.setter
 	def TtlsGrpId(self, value):
-		self._TtlsGrpId = value if type(value) != base_types.auto else self.make_default("TtlsGrpId")
+		self._TtlsGrpId = value if value is not None else base_types.UninitialisedField(self, 'TtlsGrpId', Max35Text, False)
 
 	@TtlsGrpId.deleter
 	def TtlsGrpId(self):
 		del self._TtlsGrpId
-		self._TtlsGrpId = None
+		self._TtlsGrpId = base_types.UninitialisedField(self, 'TtlsGrpId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

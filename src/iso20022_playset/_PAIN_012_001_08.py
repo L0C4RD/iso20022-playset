@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MandateAcceptanceReportV08 import MandateAcceptanceReportV08
+from . import MandateAcceptanceReportV08
 
 class PAIN_012_001_08():
 
@@ -18,12 +18,12 @@ class PAIN_012_001_08():
 
 		@MndtAccptncRpt.setter
 		def MndtAccptncRpt(self, value):
-			self._MndtAccptncRpt = value if type(value) != base_types.auto else self.make_default("MndtAccptncRpt")
+			self._MndtAccptncRpt = value if value is not None else base_types.UninitialisedField(self, 'MndtAccptncRpt', MandateAcceptanceReportV08, False)
 
 		@MndtAccptncRpt.deleter
 		def MndtAccptncRpt(self):
 			del self._MndtAccptncRpt
-			self._MndtAccptncRpt = None
+			self._MndtAccptncRpt = base_types.UninitialisedField(self, 'MndtAccptncRpt', MandateAcceptanceReportV08, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='MndtAccptncRpt', type=MandateAcceptanceReportV08, min=1, max=1, mutex_group=None, array=False),

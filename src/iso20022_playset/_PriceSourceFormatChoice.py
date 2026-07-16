@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification5 import GenericIdentification5
-from ._MICIdentifier import MICIdentifier
-from ._PriceSource import PriceSource
+from . import GenericIdentification5
+from . import MICIdentifier
+from . import PriceSource
 
 class PriceSourceFormatChoice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PriceSourceFormatChoice(base_types._BaseFieldType):
 
 	@LclMktPlc.setter
 	def LclMktPlc(self, value):
-		self._LclMktPlc = value if type(value) != base_types.auto else self.make_default("LclMktPlc")
+		self._LclMktPlc = value if value is not None else base_types.UninitialisedField(self, 'LclMktPlc', MICIdentifier, False)
 
 	@LclMktPlc.deleter
 	def LclMktPlc(self):
 		del self._LclMktPlc
-		self._LclMktPlc = None
+		self._LclMktPlc = base_types.UninitialisedField(self, 'LclMktPlc', MICIdentifier, False)
 
 	@property
 	def NonLclMktPlc(self):
@@ -28,12 +28,12 @@ class PriceSourceFormatChoice(base_types._BaseFieldType):
 
 	@NonLclMktPlc.setter
 	def NonLclMktPlc(self, value):
-		self._NonLclMktPlc = value if type(value) != base_types.auto else self.make_default("NonLclMktPlc")
+		self._NonLclMktPlc = value if value is not None else base_types.UninitialisedField(self, 'NonLclMktPlc', PriceSource, False)
 
 	@NonLclMktPlc.deleter
 	def NonLclMktPlc(self):
 		del self._NonLclMktPlc
-		self._NonLclMktPlc = None
+		self._NonLclMktPlc = base_types.UninitialisedField(self, 'NonLclMktPlc', PriceSource, False)
 
 	@property
 	def PlcAsDSS(self):
@@ -41,12 +41,12 @@ class PriceSourceFormatChoice(base_types._BaseFieldType):
 
 	@PlcAsDSS.setter
 	def PlcAsDSS(self, value):
-		self._PlcAsDSS = value if type(value) != base_types.auto else self.make_default("PlcAsDSS")
+		self._PlcAsDSS = value if value is not None else base_types.UninitialisedField(self, 'PlcAsDSS', GenericIdentification5, False)
 
 	@PlcAsDSS.deleter
 	def PlcAsDSS(self):
 		del self._PlcAsDSS
-		self._PlcAsDSS = None
+		self._PlcAsDSS = base_types.UninitialisedField(self, 'PlcAsDSS', GenericIdentification5, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LclMktPlc', type=MICIdentifier, min=0, max=1, mutex_group=1, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FileActionResponseV03 import FileActionResponseV03
+from . import FileActionResponseV03
 
 class CAFM_002_001_03():
 
@@ -18,12 +18,12 @@ class CAFM_002_001_03():
 
 		@FileActnRspn.setter
 		def FileActnRspn(self, value):
-			self._FileActnRspn = value if type(value) != base_types.auto else self.make_default("FileActnRspn")
+			self._FileActnRspn = value if value is not None else base_types.UninitialisedField(self, 'FileActnRspn', FileActionResponseV03, False)
 
 		@FileActnRspn.deleter
 		def FileActnRspn(self):
 			del self._FileActnRspn
-			self._FileActnRspn = None
+			self._FileActnRspn = base_types.UninitialisedField(self, 'FileActnRspn', FileActionResponseV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='FileActnRspn', type=FileActionResponseV03, min=1, max=1, mutex_group=None, array=False),

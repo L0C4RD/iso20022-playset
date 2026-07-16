@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GovernanceRules2 import GovernanceRules2
-from ._ISODate import ISODate
-from ._Max2000Text import Max2000Text
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
-from ._Priority3Code import Priority3Code
-from ._QualifiedDocumentInformation1 import QualifiedDocumentInformation1
-from ._QualifiedPartyAndXMLSignature1 import QualifiedPartyAndXMLSignature1
-from ._QualifiedPartyIdentification1 import QualifiedPartyIdentification1
-from ._ValidationStatusInformation1 import ValidationStatusInformation1
+from . import GovernanceRules2
+from . import ISODate
+from . import Max2000Text
+from . import Max350Text
+from . import Max35Text
+from . import Priority3Code
+from . import QualifiedDocumentInformation1
+from . import QualifiedPartyAndXMLSignature1
+from . import QualifiedPartyIdentification1
+from . import ValidationStatusInformation1
 
 class BusinessLetter1(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class BusinessLetter1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max2000Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max2000Text, False)
 
 	@property
 	def ApplCntxt(self):
@@ -35,12 +35,12 @@ class BusinessLetter1(base_types._BaseFieldType):
 
 	@ApplCntxt.setter
 	def ApplCntxt(self, value):
-		self._ApplCntxt = value if type(value) != base_types.auto else self.make_default("ApplCntxt")
+		self._ApplCntxt = value if value is not None else base_types.UninitialisedField(self, 'ApplCntxt', Max35Text, False)
 
 	@ApplCntxt.deleter
 	def ApplCntxt(self):
 		del self._ApplCntxt
-		self._ApplCntxt = None
+		self._ApplCntxt = base_types.UninitialisedField(self, 'ApplCntxt', Max35Text, False)
 
 	@property
 	def AssoctdDoc(self):
@@ -48,12 +48,12 @@ class BusinessLetter1(base_types._BaseFieldType):
 
 	@AssoctdDoc.setter
 	def AssoctdDoc(self, value):
-		self._AssoctdDoc = value if type(value) != base_types.auto else self.make_default("AssoctdDoc")
+		self._AssoctdDoc = value if value is not None else base_types.UninitialisedField(self, 'AssoctdDoc', QualifiedDocumentInformation1, True)
 
 	@AssoctdDoc.deleter
 	def AssoctdDoc(self):
 		del self._AssoctdDoc
-		self._AssoctdDoc = None
+		self._AssoctdDoc = base_types.UninitialisedField(self, 'AssoctdDoc', QualifiedDocumentInformation1, True)
 
 	@property
 	def AuthstnUsr(self):
@@ -61,12 +61,12 @@ class BusinessLetter1(base_types._BaseFieldType):
 
 	@AuthstnUsr.setter
 	def AuthstnUsr(self, value):
-		self._AuthstnUsr = value if type(value) != base_types.auto else self.make_default("AuthstnUsr")
+		self._AuthstnUsr = value if value is not None else base_types.UninitialisedField(self, 'AuthstnUsr', QualifiedPartyIdentification1, True)
 
 	@AuthstnUsr.deleter
 	def AuthstnUsr(self):
 		del self._AuthstnUsr
-		self._AuthstnUsr = None
+		self._AuthstnUsr = base_types.UninitialisedField(self, 'AuthstnUsr', QualifiedPartyIdentification1, True)
 
 	@property
 	def CnttIdr(self):
@@ -74,12 +74,12 @@ class BusinessLetter1(base_types._BaseFieldType):
 
 	@CnttIdr.setter
 	def CnttIdr(self, value):
-		self._CnttIdr = value if type(value) != base_types.auto else self.make_default("CnttIdr")
+		self._CnttIdr = value if value is not None else base_types.UninitialisedField(self, 'CnttIdr', Max35Text, True)
 
 	@CnttIdr.deleter
 	def CnttIdr(self):
 		del self._CnttIdr
-		self._CnttIdr = None
+		self._CnttIdr = base_types.UninitialisedField(self, 'CnttIdr', Max35Text, True)
 
 	@property
 	def CpyRcpt(self):
@@ -87,12 +87,12 @@ class BusinessLetter1(base_types._BaseFieldType):
 
 	@CpyRcpt.setter
 	def CpyRcpt(self, value):
-		self._CpyRcpt = value if type(value) != base_types.auto else self.make_default("CpyRcpt")
+		self._CpyRcpt = value if value is not None else base_types.UninitialisedField(self, 'CpyRcpt', QualifiedPartyIdentification1, True)
 
 	@CpyRcpt.deleter
 	def CpyRcpt(self):
 		del self._CpyRcpt
-		self._CpyRcpt = None
+		self._CpyRcpt = base_types.UninitialisedField(self, 'CpyRcpt', QualifiedPartyIdentification1, True)
 
 	@property
 	def DgtlSgntr(self):
@@ -100,12 +100,12 @@ class BusinessLetter1(base_types._BaseFieldType):
 
 	@DgtlSgntr.setter
 	def DgtlSgntr(self, value):
-		self._DgtlSgntr = value if type(value) != base_types.auto else self.make_default("DgtlSgntr")
+		self._DgtlSgntr = value if value is not None else base_types.UninitialisedField(self, 'DgtlSgntr', QualifiedPartyAndXMLSignature1, True)
 
 	@DgtlSgntr.deleter
 	def DgtlSgntr(self):
 		del self._DgtlSgntr
-		self._DgtlSgntr = None
+		self._DgtlSgntr = base_types.UninitialisedField(self, 'DgtlSgntr', QualifiedPartyAndXMLSignature1, True)
 
 	@property
 	def Dt(self):
@@ -113,12 +113,12 @@ class BusinessLetter1(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@property
 	def GovngCtrct(self):
@@ -126,12 +126,12 @@ class BusinessLetter1(base_types._BaseFieldType):
 
 	@GovngCtrct.setter
 	def GovngCtrct(self, value):
-		self._GovngCtrct = value if type(value) != base_types.auto else self.make_default("GovngCtrct")
+		self._GovngCtrct = value if value is not None else base_types.UninitialisedField(self, 'GovngCtrct', QualifiedDocumentInformation1, True)
 
 	@GovngCtrct.deleter
 	def GovngCtrct(self):
 		del self._GovngCtrct
-		self._GovngCtrct = None
+		self._GovngCtrct = base_types.UninitialisedField(self, 'GovngCtrct', QualifiedDocumentInformation1, True)
 
 	@property
 	def InstrPrty(self):
@@ -139,12 +139,12 @@ class BusinessLetter1(base_types._BaseFieldType):
 
 	@InstrPrty.setter
 	def InstrPrty(self, value):
-		self._InstrPrty = value if type(value) != base_types.auto else self.make_default("InstrPrty")
+		self._InstrPrty = value if value is not None else base_types.UninitialisedField(self, 'InstrPrty', Priority3Code, False)
 
 	@InstrPrty.deleter
 	def InstrPrty(self):
 		del self._InstrPrty
-		self._InstrPrty = None
+		self._InstrPrty = base_types.UninitialisedField(self, 'InstrPrty', Priority3Code, False)
 
 	@property
 	def LglCntxt(self):
@@ -152,12 +152,12 @@ class BusinessLetter1(base_types._BaseFieldType):
 
 	@LglCntxt.setter
 	def LglCntxt(self, value):
-		self._LglCntxt = value if type(value) != base_types.auto else self.make_default("LglCntxt")
+		self._LglCntxt = value if value is not None else base_types.UninitialisedField(self, 'LglCntxt', GovernanceRules2, True)
 
 	@LglCntxt.deleter
 	def LglCntxt(self):
 		del self._LglCntxt
-		self._LglCntxt = None
+		self._LglCntxt = base_types.UninitialisedField(self, 'LglCntxt', GovernanceRules2, True)
 
 	@property
 	def LttrIdr(self):
@@ -165,12 +165,12 @@ class BusinessLetter1(base_types._BaseFieldType):
 
 	@LttrIdr.setter
 	def LttrIdr(self, value):
-		self._LttrIdr = value if type(value) != base_types.auto else self.make_default("LttrIdr")
+		self._LttrIdr = value if value is not None else base_types.UninitialisedField(self, 'LttrIdr', QualifiedDocumentInformation1, False)
 
 	@LttrIdr.deleter
 	def LttrIdr(self):
 		del self._LttrIdr
-		self._LttrIdr = None
+		self._LttrIdr = base_types.UninitialisedField(self, 'LttrIdr', QualifiedDocumentInformation1, False)
 
 	@property
 	def Ntce(self):
@@ -178,12 +178,12 @@ class BusinessLetter1(base_types._BaseFieldType):
 
 	@Ntce.setter
 	def Ntce(self, value):
-		self._Ntce = value if type(value) != base_types.auto else self.make_default("Ntce")
+		self._Ntce = value if value is not None else base_types.UninitialisedField(self, 'Ntce', Max350Text, False)
 
 	@Ntce.deleter
 	def Ntce(self):
 		del self._Ntce
-		self._Ntce = None
+		self._Ntce = base_types.UninitialisedField(self, 'Ntce', Max350Text, False)
 
 	@property
 	def Orgtr(self):
@@ -191,12 +191,12 @@ class BusinessLetter1(base_types._BaseFieldType):
 
 	@Orgtr.setter
 	def Orgtr(self, value):
-		self._Orgtr = value if type(value) != base_types.auto else self.make_default("Orgtr")
+		self._Orgtr = value if value is not None else base_types.UninitialisedField(self, 'Orgtr', QualifiedPartyIdentification1, False)
 
 	@Orgtr.deleter
 	def Orgtr(self):
 		del self._Orgtr
-		self._Orgtr = None
+		self._Orgtr = base_types.UninitialisedField(self, 'Orgtr', QualifiedPartyIdentification1, False)
 
 	@property
 	def OthrPty(self):
@@ -204,12 +204,12 @@ class BusinessLetter1(base_types._BaseFieldType):
 
 	@OthrPty.setter
 	def OthrPty(self, value):
-		self._OthrPty = value if type(value) != base_types.auto else self.make_default("OthrPty")
+		self._OthrPty = value if value is not None else base_types.UninitialisedField(self, 'OthrPty', QualifiedPartyIdentification1, True)
 
 	@OthrPty.deleter
 	def OthrPty(self):
 		del self._OthrPty
-		self._OthrPty = None
+		self._OthrPty = base_types.UninitialisedField(self, 'OthrPty', QualifiedPartyIdentification1, True)
 
 	@property
 	def PmryRcpt(self):
@@ -217,12 +217,12 @@ class BusinessLetter1(base_types._BaseFieldType):
 
 	@PmryRcpt.setter
 	def PmryRcpt(self, value):
-		self._PmryRcpt = value if type(value) != base_types.auto else self.make_default("PmryRcpt")
+		self._PmryRcpt = value if value is not None else base_types.UninitialisedField(self, 'PmryRcpt', QualifiedPartyIdentification1, True)
 
 	@PmryRcpt.deleter
 	def PmryRcpt(self):
 		del self._PmryRcpt
-		self._PmryRcpt = None
+		self._PmryRcpt = base_types.UninitialisedField(self, 'PmryRcpt', QualifiedPartyIdentification1, True)
 
 	@property
 	def RltdLttr(self):
@@ -230,12 +230,12 @@ class BusinessLetter1(base_types._BaseFieldType):
 
 	@RltdLttr.setter
 	def RltdLttr(self, value):
-		self._RltdLttr = value if type(value) != base_types.auto else self.make_default("RltdLttr")
+		self._RltdLttr = value if value is not None else base_types.UninitialisedField(self, 'RltdLttr', QualifiedDocumentInformation1, True)
 
 	@RltdLttr.deleter
 	def RltdLttr(self):
 		del self._RltdLttr
-		self._RltdLttr = None
+		self._RltdLttr = base_types.UninitialisedField(self, 'RltdLttr', QualifiedDocumentInformation1, True)
 
 	@property
 	def RltdMsg(self):
@@ -243,12 +243,12 @@ class BusinessLetter1(base_types._BaseFieldType):
 
 	@RltdMsg.setter
 	def RltdMsg(self, value):
-		self._RltdMsg = value if type(value) != base_types.auto else self.make_default("RltdMsg")
+		self._RltdMsg = value if value is not None else base_types.UninitialisedField(self, 'RltdMsg', QualifiedDocumentInformation1, True)
 
 	@RltdMsg.deleter
 	def RltdMsg(self):
 		del self._RltdMsg
-		self._RltdMsg = None
+		self._RltdMsg = base_types.UninitialisedField(self, 'RltdMsg', QualifiedDocumentInformation1, True)
 
 	@property
 	def RspnRcpt(self):
@@ -256,12 +256,12 @@ class BusinessLetter1(base_types._BaseFieldType):
 
 	@RspnRcpt.setter
 	def RspnRcpt(self, value):
-		self._RspnRcpt = value if type(value) != base_types.auto else self.make_default("RspnRcpt")
+		self._RspnRcpt = value if value is not None else base_types.UninitialisedField(self, 'RspnRcpt', QualifiedPartyIdentification1, True)
 
 	@RspnRcpt.deleter
 	def RspnRcpt(self):
 		del self._RspnRcpt
-		self._RspnRcpt = None
+		self._RspnRcpt = base_types.UninitialisedField(self, 'RspnRcpt', QualifiedPartyIdentification1, True)
 
 	@property
 	def Sndr(self):
@@ -269,12 +269,12 @@ class BusinessLetter1(base_types._BaseFieldType):
 
 	@Sndr.setter
 	def Sndr(self, value):
-		self._Sndr = value if type(value) != base_types.auto else self.make_default("Sndr")
+		self._Sndr = value if value is not None else base_types.UninitialisedField(self, 'Sndr', QualifiedPartyIdentification1, True)
 
 	@Sndr.deleter
 	def Sndr(self):
 		del self._Sndr
-		self._Sndr = None
+		self._Sndr = base_types.UninitialisedField(self, 'Sndr', QualifiedPartyIdentification1, True)
 
 	@property
 	def VldtnStsInf(self):
@@ -282,12 +282,12 @@ class BusinessLetter1(base_types._BaseFieldType):
 
 	@VldtnStsInf.setter
 	def VldtnStsInf(self, value):
-		self._VldtnStsInf = value if type(value) != base_types.auto else self.make_default("VldtnStsInf")
+		self._VldtnStsInf = value if value is not None else base_types.UninitialisedField(self, 'VldtnStsInf', ValidationStatusInformation1, False)
 
 	@VldtnStsInf.deleter
 	def VldtnStsInf(self):
 		del self._VldtnStsInf
-		self._VldtnStsInf = None
+		self._VldtnStsInf = base_types.UninitialisedField(self, 'VldtnStsInf', ValidationStatusInformation1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=1, mutex_group=None, array=False),

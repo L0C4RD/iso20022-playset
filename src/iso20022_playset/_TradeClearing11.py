@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Cleared23Choice import Cleared23Choice
-from ._ClearingObligationType1Code import ClearingObligationType1Code
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import Cleared23Choice
+from . import ClearingObligationType1Code
+from . import TrueFalseIndicator
 
 class TradeClearing11(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TradeClearing11(base_types._BaseFieldType):
 
 	@ClrOblgtn.setter
 	def ClrOblgtn(self, value):
-		self._ClrOblgtn = value if type(value) != base_types.auto else self.make_default("ClrOblgtn")
+		self._ClrOblgtn = value if value is not None else base_types.UninitialisedField(self, 'ClrOblgtn', ClearingObligationType1Code, False)
 
 	@ClrOblgtn.deleter
 	def ClrOblgtn(self):
 		del self._ClrOblgtn
-		self._ClrOblgtn = None
+		self._ClrOblgtn = base_types.UninitialisedField(self, 'ClrOblgtn', ClearingObligationType1Code, False)
 
 	@property
 	def ClrSts(self):
@@ -28,12 +28,12 @@ class TradeClearing11(base_types._BaseFieldType):
 
 	@ClrSts.setter
 	def ClrSts(self, value):
-		self._ClrSts = value if type(value) != base_types.auto else self.make_default("ClrSts")
+		self._ClrSts = value if value is not None else base_types.UninitialisedField(self, 'ClrSts', Cleared23Choice, False)
 
 	@ClrSts.deleter
 	def ClrSts(self):
 		del self._ClrSts
-		self._ClrSts = None
+		self._ClrSts = base_types.UninitialisedField(self, 'ClrSts', Cleared23Choice, False)
 
 	@property
 	def IntraGrp(self):
@@ -41,12 +41,12 @@ class TradeClearing11(base_types._BaseFieldType):
 
 	@IntraGrp.setter
 	def IntraGrp(self, value):
-		self._IntraGrp = value if type(value) != base_types.auto else self.make_default("IntraGrp")
+		self._IntraGrp = value if value is not None else base_types.UninitialisedField(self, 'IntraGrp', TrueFalseIndicator, False)
 
 	@IntraGrp.deleter
 	def IntraGrp(self):
 		del self._IntraGrp
-		self._IntraGrp = None
+		self._IntraGrp = base_types.UninitialisedField(self, 'IntraGrp', TrueFalseIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClrOblgtn', type=ClearingObligationType1Code, min=0, max=1, mutex_group=None, array=False),

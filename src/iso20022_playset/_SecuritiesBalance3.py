@@ -2,19 +2,19 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._BalanceQuantity13Choice import BalanceQuantity13Choice
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
-from ._ForeignExchangeTerms19 import ForeignExchangeTerms19
-from ._GenericIdentification178 import GenericIdentification178
-from ._PartyIdentification232 import PartyIdentification232
-from ._Rating2 import Rating2
-from ._SafeKeepingPlace3 import SafeKeepingPlace3
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._SecuritiesSettlementStatus3Code import SecuritiesSettlementStatus3Code
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._ValuationsDetails1 import ValuationsDetails1
-from ._YesNoIndicator import YesNoIndicator
+from . import ActiveOrHistoricCurrencyCode
+from . import BalanceQuantity13Choice
+from . import BlockChainAddressWallet3
+from . import ForeignExchangeTerms19
+from . import GenericIdentification178
+from . import PartyIdentification232
+from . import Rating2
+from . import SafeKeepingPlace3
+from . import SecuritiesAccount19
+from . import SecuritiesSettlementStatus3Code
+from . import SecurityIdentification19
+from . import ValuationsDetails1
+from . import YesNoIndicator
 
 class SecuritiesBalance3(base_types._BaseFieldType):
 
@@ -25,12 +25,12 @@ class SecuritiesBalance3(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification232, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification232, False)
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -38,12 +38,12 @@ class SecuritiesBalance3(base_types._BaseFieldType):
 
 	@BlckChainAdrOrWllt.setter
 	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
+		self._BlckChainAdrOrWllt = value if value is not None else base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet3, False)
 
 	@BlckChainAdrOrWllt.deleter
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+		self._BlckChainAdrOrWllt = base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet3, False)
 
 	@property
 	def CollInd(self):
@@ -51,12 +51,12 @@ class SecuritiesBalance3(base_types._BaseFieldType):
 
 	@CollInd.setter
 	def CollInd(self, value):
-		self._CollInd = value if type(value) != base_types.auto else self.make_default("CollInd")
+		self._CollInd = value if value is not None else base_types.UninitialisedField(self, 'CollInd', YesNoIndicator, False)
 
 	@CollInd.deleter
 	def CollInd(self):
 		del self._CollInd
-		self._CollInd = None
+		self._CollInd = base_types.UninitialisedField(self, 'CollInd', YesNoIndicator, False)
 
 	@property
 	def DnmtnCcy(self):
@@ -64,12 +64,12 @@ class SecuritiesBalance3(base_types._BaseFieldType):
 
 	@DnmtnCcy.setter
 	def DnmtnCcy(self, value):
-		self._DnmtnCcy = value if type(value) != base_types.auto else self.make_default("DnmtnCcy")
+		self._DnmtnCcy = value if value is not None else base_types.UninitialisedField(self, 'DnmtnCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@DnmtnCcy.deleter
 	def DnmtnCcy(self):
 		del self._DnmtnCcy
-		self._DnmtnCcy = None
+		self._DnmtnCcy = base_types.UninitialisedField(self, 'DnmtnCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def FXDtls(self):
@@ -77,12 +77,12 @@ class SecuritiesBalance3(base_types._BaseFieldType):
 
 	@FXDtls.setter
 	def FXDtls(self, value):
-		self._FXDtls = value if type(value) != base_types.auto else self.make_default("FXDtls")
+		self._FXDtls = value if value is not None else base_types.UninitialisedField(self, 'FXDtls', ForeignExchangeTerms19, False)
 
 	@FXDtls.deleter
 	def FXDtls(self):
 		del self._FXDtls
-		self._FXDtls = None
+		self._FXDtls = base_types.UninitialisedField(self, 'FXDtls', ForeignExchangeTerms19, False)
 
 	@property
 	def FinInstrmId(self):
@@ -90,12 +90,12 @@ class SecuritiesBalance3(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
 		del self._FinInstrmId
-		self._FinInstrmId = None
+		self._FinInstrmId = base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@property
 	def Qty(self):
@@ -103,12 +103,12 @@ class SecuritiesBalance3(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+		self._Qty = value if value is not None else base_types.UninitialisedField(self, 'Qty', BalanceQuantity13Choice, False)
 
 	@Qty.deleter
 	def Qty(self):
 		del self._Qty
-		self._Qty = None
+		self._Qty = base_types.UninitialisedField(self, 'Qty', BalanceQuantity13Choice, False)
 
 	@property
 	def RatgDtls(self):
@@ -116,12 +116,12 @@ class SecuritiesBalance3(base_types._BaseFieldType):
 
 	@RatgDtls.setter
 	def RatgDtls(self, value):
-		self._RatgDtls = value if type(value) != base_types.auto else self.make_default("RatgDtls")
+		self._RatgDtls = value if value is not None else base_types.UninitialisedField(self, 'RatgDtls', Rating2, True)
 
 	@RatgDtls.deleter
 	def RatgDtls(self):
 		del self._RatgDtls
-		self._RatgDtls = None
+		self._RatgDtls = base_types.UninitialisedField(self, 'RatgDtls', Rating2, True)
 
 	@property
 	def SfkpgAcct(self):
@@ -129,12 +129,12 @@ class SecuritiesBalance3(base_types._BaseFieldType):
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
-		self._SfkpgAcct = None
+		self._SfkpgAcct = base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@property
 	def SfkpgPlc(self):
@@ -142,12 +142,12 @@ class SecuritiesBalance3(base_types._BaseFieldType):
 
 	@SfkpgPlc.setter
 	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
+		self._SfkpgPlc = value if value is not None else base_types.UninitialisedField(self, 'SfkpgPlc', SafeKeepingPlace3, False)
 
 	@SfkpgPlc.deleter
 	def SfkpgPlc(self):
 		del self._SfkpgPlc
-		self._SfkpgPlc = None
+		self._SfkpgPlc = base_types.UninitialisedField(self, 'SfkpgPlc', SafeKeepingPlace3, False)
 
 	@property
 	def SttlmSts(self):
@@ -155,12 +155,12 @@ class SecuritiesBalance3(base_types._BaseFieldType):
 
 	@SttlmSts.setter
 	def SttlmSts(self, value):
-		self._SttlmSts = value if type(value) != base_types.auto else self.make_default("SttlmSts")
+		self._SttlmSts = value if value is not None else base_types.UninitialisedField(self, 'SttlmSts', SecuritiesSettlementStatus3Code, False)
 
 	@SttlmSts.deleter
 	def SttlmSts(self):
 		del self._SttlmSts
-		self._SttlmSts = None
+		self._SttlmSts = base_types.UninitialisedField(self, 'SttlmSts', SecuritiesSettlementStatus3Code, False)
 
 	@property
 	def TxLotNb(self):
@@ -168,12 +168,12 @@ class SecuritiesBalance3(base_types._BaseFieldType):
 
 	@TxLotNb.setter
 	def TxLotNb(self, value):
-		self._TxLotNb = value if type(value) != base_types.auto else self.make_default("TxLotNb")
+		self._TxLotNb = value if value is not None else base_types.UninitialisedField(self, 'TxLotNb', GenericIdentification178, True)
 
 	@TxLotNb.deleter
 	def TxLotNb(self):
 		del self._TxLotNb
-		self._TxLotNb = None
+		self._TxLotNb = base_types.UninitialisedField(self, 'TxLotNb', GenericIdentification178, True)
 
 	@property
 	def ValtnDtls(self):
@@ -181,12 +181,12 @@ class SecuritiesBalance3(base_types._BaseFieldType):
 
 	@ValtnDtls.setter
 	def ValtnDtls(self, value):
-		self._ValtnDtls = value if type(value) != base_types.auto else self.make_default("ValtnDtls")
+		self._ValtnDtls = value if value is not None else base_types.UninitialisedField(self, 'ValtnDtls', ValuationsDetails1, False)
 
 	@ValtnDtls.deleter
 	def ValtnDtls(self):
 		del self._ValtnDtls
-		self._ValtnDtls = None
+		self._ValtnDtls = base_types.UninitialisedField(self, 'ValtnDtls', ValuationsDetails1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification232, min=0, max=1, mutex_group=None, array=False),

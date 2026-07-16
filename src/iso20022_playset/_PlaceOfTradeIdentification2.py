@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
-from ._MarketIdentification90 import MarketIdentification90
+from . import LEIIdentifier
+from . import MarketIdentification90
 
 class PlaceOfTradeIdentification2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PlaceOfTradeIdentification2(base_types._BaseFieldType):
 
 	@LEI.setter
 	def LEI(self, value):
-		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
+		self._LEI = value if value is not None else base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	@LEI.deleter
 	def LEI(self):
 		del self._LEI
-		self._LEI = None
+		self._LEI = base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	@property
 	def MktTpAndId(self):
@@ -27,12 +27,12 @@ class PlaceOfTradeIdentification2(base_types._BaseFieldType):
 
 	@MktTpAndId.setter
 	def MktTpAndId(self, value):
-		self._MktTpAndId = value if type(value) != base_types.auto else self.make_default("MktTpAndId")
+		self._MktTpAndId = value if value is not None else base_types.UninitialisedField(self, 'MktTpAndId', MarketIdentification90, False)
 
 	@MktTpAndId.deleter
 	def MktTpAndId(self):
 		del self._MktTpAndId
-		self._MktTpAndId = None
+		self._MktTpAndId = base_types.UninitialisedField(self, 'MktTpAndId', MarketIdentification90, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),

@@ -2,20 +2,20 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._Address4 import Address4
-from ._ContactPersonal2 import ContactPersonal2
-from ._Credentials3 import Credentials3
-from ._FinancialInstitution10 import FinancialInstitution10
-from ._ISO8583AccountIdentifierTypeCode import ISO8583AccountIdentifierTypeCode
-from ._ISODate import ISODate
-from ._ISOMax3ACountryCode import ISOMax3ACountryCode
-from ._LocalData21 import LocalData21
-from ._Max105Text import Max105Text
-from ._Max2NumericText import Max2NumericText
-from ._Max35Text import Max35Text
-from ._Max3Text import Max3Text
-from ._Max70Text import Max70Text
+from . import ATICALaxProcessing
+from . import Address4
+from . import ContactPersonal2
+from . import Credentials3
+from . import FinancialInstitution10
+from . import ISO8583AccountIdentifierTypeCode
+from . import ISODate
+from . import ISOMax3ACountryCode
+from . import LocalData21
+from . import Max105Text
+from . import Max2NumericText
+from . import Max35Text
+from . import Max3Text
+from . import Max70Text
 
 class PayerData1(base_types._BaseFieldType):
 
@@ -26,12 +26,12 @@ class PayerData1(base_types._BaseFieldType):
 
 	@AcctIdr.setter
 	def AcctIdr(self, value):
-		self._AcctIdr = value if type(value) != base_types.auto else self.make_default("AcctIdr")
+		self._AcctIdr = value if value is not None else base_types.UninitialisedField(self, 'AcctIdr', Max70Text, False)
 
 	@AcctIdr.deleter
 	def AcctIdr(self):
 		del self._AcctIdr
-		self._AcctIdr = None
+		self._AcctIdr = base_types.UninitialisedField(self, 'AcctIdr', Max70Text, False)
 
 	@property
 	def AcctIdrTp(self):
@@ -39,12 +39,12 @@ class PayerData1(base_types._BaseFieldType):
 
 	@AcctIdrTp.setter
 	def AcctIdrTp(self, value):
-		self._AcctIdrTp = value if type(value) != base_types.auto else self.make_default("AcctIdrTp")
+		self._AcctIdrTp = value if value is not None else base_types.UninitialisedField(self, 'AcctIdrTp', ISO8583AccountIdentifierTypeCode, False)
 
 	@AcctIdrTp.deleter
 	def AcctIdrTp(self):
 		del self._AcctIdrTp
-		self._AcctIdrTp = None
+		self._AcctIdrTp = base_types.UninitialisedField(self, 'AcctIdrTp', ISO8583AccountIdentifierTypeCode, False)
 
 	@property
 	def Adr(self):
@@ -52,12 +52,12 @@ class PayerData1(base_types._BaseFieldType):
 
 	@Adr.setter
 	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+		self._Adr = value if value is not None else base_types.UninitialisedField(self, 'Adr', Address4, False)
 
 	@Adr.deleter
 	def Adr(self):
 		del self._Adr
-		self._Adr = None
+		self._Adr = base_types.UninitialisedField(self, 'Adr', Address4, False)
 
 	@property
 	def AliasNm(self):
@@ -65,12 +65,12 @@ class PayerData1(base_types._BaseFieldType):
 
 	@AliasNm.setter
 	def AliasNm(self, value):
-		self._AliasNm = value if type(value) != base_types.auto else self.make_default("AliasNm")
+		self._AliasNm = value if value is not None else base_types.UninitialisedField(self, 'AliasNm', Max70Text, False)
 
 	@AliasNm.deleter
 	def AliasNm(self):
 		del self._AliasNm
-		self._AliasNm = None
+		self._AliasNm = base_types.UninitialisedField(self, 'AliasNm', Max70Text, False)
 
 	@property
 	def Crdntls(self):
@@ -78,12 +78,12 @@ class PayerData1(base_types._BaseFieldType):
 
 	@Crdntls.setter
 	def Crdntls(self, value):
-		self._Crdntls = value if type(value) != base_types.auto else self.make_default("Crdntls")
+		self._Crdntls = value if value is not None else base_types.UninitialisedField(self, 'Crdntls', Credentials3, True)
 
 	@Crdntls.deleter
 	def Crdntls(self):
 		del self._Crdntls
-		self._Crdntls = None
+		self._Crdntls = base_types.UninitialisedField(self, 'Crdntls', Credentials3, True)
 
 	@property
 	def Ctct(self):
@@ -91,12 +91,12 @@ class PayerData1(base_types._BaseFieldType):
 
 	@Ctct.setter
 	def Ctct(self, value):
-		self._Ctct = value if type(value) != base_types.auto else self.make_default("Ctct")
+		self._Ctct = value if value is not None else base_types.UninitialisedField(self, 'Ctct', ContactPersonal2, False)
 
 	@Ctct.deleter
 	def Ctct(self):
 		del self._Ctct
-		self._Ctct = None
+		self._Ctct = base_types.UninitialisedField(self, 'Ctct', ContactPersonal2, False)
 
 	@property
 	def CtryOfBirth(self):
@@ -104,12 +104,12 @@ class PayerData1(base_types._BaseFieldType):
 
 	@CtryOfBirth.setter
 	def CtryOfBirth(self, value):
-		self._CtryOfBirth = value if type(value) != base_types.auto else self.make_default("CtryOfBirth")
+		self._CtryOfBirth = value if value is not None else base_types.UninitialisedField(self, 'CtryOfBirth', ISOMax3ACountryCode, False)
 
 	@CtryOfBirth.deleter
 	def CtryOfBirth(self):
 		del self._CtryOfBirth
-		self._CtryOfBirth = None
+		self._CtryOfBirth = base_types.UninitialisedField(self, 'CtryOfBirth', ISOMax3ACountryCode, False)
 
 	@property
 	def Dsgnt(self):
@@ -117,12 +117,12 @@ class PayerData1(base_types._BaseFieldType):
 
 	@Dsgnt.setter
 	def Dsgnt(self, value):
-		self._Dsgnt = value if type(value) != base_types.auto else self.make_default("Dsgnt")
+		self._Dsgnt = value if value is not None else base_types.UninitialisedField(self, 'Dsgnt', Max2NumericText, False)
 
 	@Dsgnt.deleter
 	def Dsgnt(self):
 		del self._Dsgnt
-		self._Dsgnt = None
+		self._Dsgnt = base_types.UninitialisedField(self, 'Dsgnt', Max2NumericText, False)
 
 	@property
 	def DtOfBirth(self):
@@ -130,12 +130,12 @@ class PayerData1(base_types._BaseFieldType):
 
 	@DtOfBirth.setter
 	def DtOfBirth(self, value):
-		self._DtOfBirth = value if type(value) != base_types.auto else self.make_default("DtOfBirth")
+		self._DtOfBirth = value if value is not None else base_types.UninitialisedField(self, 'DtOfBirth', ISODate, False)
 
 	@DtOfBirth.deleter
 	def DtOfBirth(self):
 		del self._DtOfBirth
-		self._DtOfBirth = None
+		self._DtOfBirth = base_types.UninitialisedField(self, 'DtOfBirth', ISODate, False)
 
 	@property
 	def FI(self):
@@ -143,12 +143,12 @@ class PayerData1(base_types._BaseFieldType):
 
 	@FI.setter
 	def FI(self, value):
-		self._FI = value if type(value) != base_types.auto else self.make_default("FI")
+		self._FI = value if value is not None else base_types.UninitialisedField(self, 'FI', FinancialInstitution10, False)
 
 	@FI.deleter
 	def FI(self):
 		del self._FI
-		self._FI = None
+		self._FI = base_types.UninitialisedField(self, 'FI', FinancialInstitution10, False)
 
 	@property
 	def GvnNm(self):
@@ -156,12 +156,12 @@ class PayerData1(base_types._BaseFieldType):
 
 	@GvnNm.setter
 	def GvnNm(self, value):
-		self._GvnNm = value if type(value) != base_types.auto else self.make_default("GvnNm")
+		self._GvnNm = value if value is not None else base_types.UninitialisedField(self, 'GvnNm', Max35Text, False)
 
 	@GvnNm.deleter
 	def GvnNm(self):
 		del self._GvnNm
-		self._GvnNm = None
+		self._GvnNm = base_types.UninitialisedField(self, 'GvnNm', Max35Text, False)
 
 	@property
 	def Id(self):
@@ -169,12 +169,12 @@ class PayerData1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def LastNm(self):
@@ -182,12 +182,12 @@ class PayerData1(base_types._BaseFieldType):
 
 	@LastNm.setter
 	def LastNm(self, value):
-		self._LastNm = value if type(value) != base_types.auto else self.make_default("LastNm")
+		self._LastNm = value if value is not None else base_types.UninitialisedField(self, 'LastNm', Max35Text, False)
 
 	@LastNm.deleter
 	def LastNm(self):
 		del self._LastNm
-		self._LastNm = None
+		self._LastNm = base_types.UninitialisedField(self, 'LastNm', Max35Text, False)
 
 	@property
 	def LclData(self):
@@ -195,12 +195,12 @@ class PayerData1(base_types._BaseFieldType):
 
 	@LclData.setter
 	def LclData(self, value):
-		self._LclData = value if type(value) != base_types.auto else self.make_default("LclData")
+		self._LclData = value if value is not None else base_types.UninitialisedField(self, 'LclData', LocalData21, False)
 
 	@LclData.deleter
 	def LclData(self):
 		del self._LclData
-		self._LclData = None
+		self._LclData = base_types.UninitialisedField(self, 'LclData', LocalData21, False)
 
 	@property
 	def MddlNm(self):
@@ -208,12 +208,12 @@ class PayerData1(base_types._BaseFieldType):
 
 	@MddlNm.setter
 	def MddlNm(self, value):
-		self._MddlNm = value if type(value) != base_types.auto else self.make_default("MddlNm")
+		self._MddlNm = value if value is not None else base_types.UninitialisedField(self, 'MddlNm', Max35Text, False)
 
 	@MddlNm.deleter
 	def MddlNm(self):
 		del self._MddlNm
-		self._MddlNm = None
+		self._MddlNm = base_types.UninitialisedField(self, 'MddlNm', Max35Text, False)
 
 	@property
 	def Nm(self):
@@ -221,12 +221,12 @@ class PayerData1(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max105Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max105Text, False)
 
 	@property
 	def NtlData(self):
@@ -234,12 +234,12 @@ class PayerData1(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def Ntlty(self):
@@ -247,12 +247,12 @@ class PayerData1(base_types._BaseFieldType):
 
 	@Ntlty.setter
 	def Ntlty(self, value):
-		self._Ntlty = value if type(value) != base_types.auto else self.make_default("Ntlty")
+		self._Ntlty = value if value is not None else base_types.UninitialisedField(self, 'Ntlty', ISOMax3ACountryCode, False)
 
 	@Ntlty.deleter
 	def Ntlty(self):
 		del self._Ntlty
-		self._Ntlty = None
+		self._Ntlty = base_types.UninitialisedField(self, 'Ntlty', ISOMax3ACountryCode, False)
 
 	@property
 	def NttyTp(self):
@@ -260,12 +260,12 @@ class PayerData1(base_types._BaseFieldType):
 
 	@NttyTp.setter
 	def NttyTp(self, value):
-		self._NttyTp = value if type(value) != base_types.auto else self.make_default("NttyTp")
+		self._NttyTp = value if value is not None else base_types.UninitialisedField(self, 'NttyTp', Max3Text, False)
 
 	@NttyTp.deleter
 	def NttyTp(self):
 		del self._NttyTp
-		self._NttyTp = None
+		self._NttyTp = base_types.UninitialisedField(self, 'NttyTp', Max3Text, False)
 
 	@property
 	def Ocptn(self):
@@ -273,12 +273,12 @@ class PayerData1(base_types._BaseFieldType):
 
 	@Ocptn.setter
 	def Ocptn(self, value):
-		self._Ocptn = value if type(value) != base_types.auto else self.make_default("Ocptn")
+		self._Ocptn = value if value is not None else base_types.UninitialisedField(self, 'Ocptn', Max35Text, False)
 
 	@Ocptn.deleter
 	def Ocptn(self):
 		del self._Ocptn
-		self._Ocptn = None
+		self._Ocptn = base_types.UninitialisedField(self, 'Ocptn', Max35Text, False)
 
 	@property
 	def PrvtData(self):
@@ -286,12 +286,12 @@ class PayerData1(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctIdr', type=Max70Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SubBalanceQuantity5Choice import SubBalanceQuantity5Choice
-from ._SubBalanceType9Choice import SubBalanceType9Choice
+from . import SubBalanceQuantity5Choice
+from . import SubBalanceType9Choice
 
 class SubBalanceBreakdown1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SubBalanceBreakdown1(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+		self._Qty = value if value is not None else base_types.UninitialisedField(self, 'Qty', SubBalanceQuantity5Choice, False)
 
 	@Qty.deleter
 	def Qty(self):
 		del self._Qty
-		self._Qty = None
+		self._Qty = base_types.UninitialisedField(self, 'Qty', SubBalanceQuantity5Choice, False)
 
 	@property
 	def SubBalTp(self):
@@ -27,12 +27,12 @@ class SubBalanceBreakdown1(base_types._BaseFieldType):
 
 	@SubBalTp.setter
 	def SubBalTp(self, value):
-		self._SubBalTp = value if type(value) != base_types.auto else self.make_default("SubBalTp")
+		self._SubBalTp = value if value is not None else base_types.UninitialisedField(self, 'SubBalTp', SubBalanceType9Choice, False)
 
 	@SubBalTp.deleter
 	def SubBalTp(self):
 		del self._SubBalTp
-		self._SubBalTp = None
+		self._SubBalTp = base_types.UninitialisedField(self, 'SubBalTp', SubBalanceType9Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Qty', type=SubBalanceQuantity5Choice, min=1, max=1, mutex_group=None, array=False),

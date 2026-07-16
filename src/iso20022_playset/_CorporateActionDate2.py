@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateFormat4Choice import DateFormat4Choice
+from . import DateFormat4Choice
 
 class CorporateActionDate2(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class CorporateActionDate2(base_types._BaseFieldType):
 
 	@CertfctnDdln.setter
 	def CertfctnDdln(self, value):
-		self._CertfctnDdln = value if type(value) != base_types.auto else self.make_default("CertfctnDdln")
+		self._CertfctnDdln = value if value is not None else base_types.UninitialisedField(self, 'CertfctnDdln', DateFormat4Choice, False)
 
 	@CertfctnDdln.deleter
 	def CertfctnDdln(self):
 		del self._CertfctnDdln
-		self._CertfctnDdln = None
+		self._CertfctnDdln = base_types.UninitialisedField(self, 'CertfctnDdln', DateFormat4Choice, False)
 
 	@property
 	def CoverXprtnDt(self):
@@ -26,12 +26,12 @@ class CorporateActionDate2(base_types._BaseFieldType):
 
 	@CoverXprtnDt.setter
 	def CoverXprtnDt(self, value):
-		self._CoverXprtnDt = value if type(value) != base_types.auto else self.make_default("CoverXprtnDt")
+		self._CoverXprtnDt = value if value is not None else base_types.UninitialisedField(self, 'CoverXprtnDt', DateFormat4Choice, False)
 
 	@CoverXprtnDt.deleter
 	def CoverXprtnDt(self):
 		del self._CoverXprtnDt
-		self._CoverXprtnDt = None
+		self._CoverXprtnDt = base_types.UninitialisedField(self, 'CoverXprtnDt', DateFormat4Choice, False)
 
 	@property
 	def CrtApprvlDt(self):
@@ -39,12 +39,12 @@ class CorporateActionDate2(base_types._BaseFieldType):
 
 	@CrtApprvlDt.setter
 	def CrtApprvlDt(self, value):
-		self._CrtApprvlDt = value if type(value) != base_types.auto else self.make_default("CrtApprvlDt")
+		self._CrtApprvlDt = value if value is not None else base_types.UninitialisedField(self, 'CrtApprvlDt', DateFormat4Choice, False)
 
 	@CrtApprvlDt.deleter
 	def CrtApprvlDt(self):
 		del self._CrtApprvlDt
-		self._CrtApprvlDt = None
+		self._CrtApprvlDt = base_types.UninitialisedField(self, 'CrtApprvlDt', DateFormat4Choice, False)
 
 	@property
 	def DdlnForTaxBrkdwnInstr(self):
@@ -52,12 +52,12 @@ class CorporateActionDate2(base_types._BaseFieldType):
 
 	@DdlnForTaxBrkdwnInstr.setter
 	def DdlnForTaxBrkdwnInstr(self, value):
-		self._DdlnForTaxBrkdwnInstr = value if type(value) != base_types.auto else self.make_default("DdlnForTaxBrkdwnInstr")
+		self._DdlnForTaxBrkdwnInstr = value if value is not None else base_types.UninitialisedField(self, 'DdlnForTaxBrkdwnInstr', DateFormat4Choice, False)
 
 	@DdlnForTaxBrkdwnInstr.deleter
 	def DdlnForTaxBrkdwnInstr(self):
 		del self._DdlnForTaxBrkdwnInstr
-		self._DdlnForTaxBrkdwnInstr = None
+		self._DdlnForTaxBrkdwnInstr = base_types.UninitialisedField(self, 'DdlnForTaxBrkdwnInstr', DateFormat4Choice, False)
 
 	@property
 	def EarlyClsgDt(self):
@@ -65,12 +65,12 @@ class CorporateActionDate2(base_types._BaseFieldType):
 
 	@EarlyClsgDt.setter
 	def EarlyClsgDt(self, value):
-		self._EarlyClsgDt = value if type(value) != base_types.auto else self.make_default("EarlyClsgDt")
+		self._EarlyClsgDt = value if value is not None else base_types.UninitialisedField(self, 'EarlyClsgDt', DateFormat4Choice, False)
 
 	@EarlyClsgDt.deleter
 	def EarlyClsgDt(self):
 		del self._EarlyClsgDt
-		self._EarlyClsgDt = None
+		self._EarlyClsgDt = base_types.UninitialisedField(self, 'EarlyClsgDt', DateFormat4Choice, False)
 
 	@property
 	def ElctnToCtrPtyDdln(self):
@@ -78,12 +78,12 @@ class CorporateActionDate2(base_types._BaseFieldType):
 
 	@ElctnToCtrPtyDdln.setter
 	def ElctnToCtrPtyDdln(self, value):
-		self._ElctnToCtrPtyDdln = value if type(value) != base_types.auto else self.make_default("ElctnToCtrPtyDdln")
+		self._ElctnToCtrPtyDdln = value if value is not None else base_types.UninitialisedField(self, 'ElctnToCtrPtyDdln', DateFormat4Choice, False)
 
 	@ElctnToCtrPtyDdln.deleter
 	def ElctnToCtrPtyDdln(self):
 		del self._ElctnToCtrPtyDdln
-		self._ElctnToCtrPtyDdln = None
+		self._ElctnToCtrPtyDdln = base_types.UninitialisedField(self, 'ElctnToCtrPtyDdln', DateFormat4Choice, False)
 
 	@property
 	def EqulstnDt(self):
@@ -91,12 +91,12 @@ class CorporateActionDate2(base_types._BaseFieldType):
 
 	@EqulstnDt.setter
 	def EqulstnDt(self, value):
-		self._EqulstnDt = value if type(value) != base_types.auto else self.make_default("EqulstnDt")
+		self._EqulstnDt = value if value is not None else base_types.UninitialisedField(self, 'EqulstnDt', DateFormat4Choice, False)
 
 	@EqulstnDt.deleter
 	def EqulstnDt(self):
 		del self._EqulstnDt
-		self._EqulstnDt = None
+		self._EqulstnDt = base_types.UninitialisedField(self, 'EqulstnDt', DateFormat4Choice, False)
 
 	@property
 	def ExDvddDt(self):
@@ -104,12 +104,12 @@ class CorporateActionDate2(base_types._BaseFieldType):
 
 	@ExDvddDt.setter
 	def ExDvddDt(self, value):
-		self._ExDvddDt = value if type(value) != base_types.auto else self.make_default("ExDvddDt")
+		self._ExDvddDt = value if value is not None else base_types.UninitialisedField(self, 'ExDvddDt', DateFormat4Choice, False)
 
 	@ExDvddDt.deleter
 	def ExDvddDt(self):
 		del self._ExDvddDt
-		self._ExDvddDt = None
+		self._ExDvddDt = base_types.UninitialisedField(self, 'ExDvddDt', DateFormat4Choice, False)
 
 	@property
 	def FctvDt(self):
@@ -117,12 +117,12 @@ class CorporateActionDate2(base_types._BaseFieldType):
 
 	@FctvDt.setter
 	def FctvDt(self, value):
-		self._FctvDt = value if type(value) != base_types.auto else self.make_default("FctvDt")
+		self._FctvDt = value if value is not None else base_types.UninitialisedField(self, 'FctvDt', DateFormat4Choice, False)
 
 	@FctvDt.deleter
 	def FctvDt(self):
 		del self._FctvDt
-		self._FctvDt = None
+		self._FctvDt = base_types.UninitialisedField(self, 'FctvDt', DateFormat4Choice, False)
 
 	@property
 	def GrntedPrtcptnDt(self):
@@ -130,12 +130,12 @@ class CorporateActionDate2(base_types._BaseFieldType):
 
 	@GrntedPrtcptnDt.setter
 	def GrntedPrtcptnDt(self, value):
-		self._GrntedPrtcptnDt = value if type(value) != base_types.auto else self.make_default("GrntedPrtcptnDt")
+		self._GrntedPrtcptnDt = value if value is not None else base_types.UninitialisedField(self, 'GrntedPrtcptnDt', DateFormat4Choice, False)
 
 	@GrntedPrtcptnDt.deleter
 	def GrntedPrtcptnDt(self):
 		del self._GrntedPrtcptnDt
-		self._GrntedPrtcptnDt = None
+		self._GrntedPrtcptnDt = base_types.UninitialisedField(self, 'GrntedPrtcptnDt', DateFormat4Choice, False)
 
 	@property
 	def IndxFxgDt(self):
@@ -143,12 +143,12 @@ class CorporateActionDate2(base_types._BaseFieldType):
 
 	@IndxFxgDt.setter
 	def IndxFxgDt(self, value):
-		self._IndxFxgDt = value if type(value) != base_types.auto else self.make_default("IndxFxgDt")
+		self._IndxFxgDt = value if value is not None else base_types.UninitialisedField(self, 'IndxFxgDt', DateFormat4Choice, False)
 
 	@IndxFxgDt.deleter
 	def IndxFxgDt(self):
 		del self._IndxFxgDt
-		self._IndxFxgDt = None
+		self._IndxFxgDt = base_types.UninitialisedField(self, 'IndxFxgDt', DateFormat4Choice, False)
 
 	@property
 	def LpsdDt(self):
@@ -156,12 +156,12 @@ class CorporateActionDate2(base_types._BaseFieldType):
 
 	@LpsdDt.setter
 	def LpsdDt(self, value):
-		self._LpsdDt = value if type(value) != base_types.auto else self.make_default("LpsdDt")
+		self._LpsdDt = value if value is not None else base_types.UninitialisedField(self, 'LpsdDt', DateFormat4Choice, False)
 
 	@LpsdDt.deleter
 	def LpsdDt(self):
 		del self._LpsdDt
-		self._LpsdDt = None
+		self._LpsdDt = base_types.UninitialisedField(self, 'LpsdDt', DateFormat4Choice, False)
 
 	@property
 	def LtryDt(self):
@@ -169,12 +169,12 @@ class CorporateActionDate2(base_types._BaseFieldType):
 
 	@LtryDt.setter
 	def LtryDt(self, value):
-		self._LtryDt = value if type(value) != base_types.auto else self.make_default("LtryDt")
+		self._LtryDt = value if value is not None else base_types.UninitialisedField(self, 'LtryDt', DateFormat4Choice, False)
 
 	@LtryDt.deleter
 	def LtryDt(self):
 		del self._LtryDt
-		self._LtryDt = None
+		self._LtryDt = base_types.UninitialisedField(self, 'LtryDt', DateFormat4Choice, False)
 
 	@property
 	def MrgnFxgDt(self):
@@ -182,12 +182,12 @@ class CorporateActionDate2(base_types._BaseFieldType):
 
 	@MrgnFxgDt.setter
 	def MrgnFxgDt(self, value):
-		self._MrgnFxgDt = value if type(value) != base_types.auto else self.make_default("MrgnFxgDt")
+		self._MrgnFxgDt = value if value is not None else base_types.UninitialisedField(self, 'MrgnFxgDt', DateFormat4Choice, False)
 
 	@MrgnFxgDt.deleter
 	def MrgnFxgDt(self):
 		del self._MrgnFxgDt
-		self._MrgnFxgDt = None
+		self._MrgnFxgDt = base_types.UninitialisedField(self, 'MrgnFxgDt', DateFormat4Choice, False)
 
 	@property
 	def MtrtyDt(self):
@@ -195,12 +195,12 @@ class CorporateActionDate2(base_types._BaseFieldType):
 
 	@MtrtyDt.setter
 	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != base_types.auto else self.make_default("MtrtyDt")
+		self._MtrtyDt = value if value is not None else base_types.UninitialisedField(self, 'MtrtyDt', DateFormat4Choice, False)
 
 	@MtrtyDt.deleter
 	def MtrtyDt(self):
 		del self._MtrtyDt
-		self._MtrtyDt = None
+		self._MtrtyDt = base_types.UninitialisedField(self, 'MtrtyDt', DateFormat4Choice, False)
 
 	@property
 	def PrratnDt(self):
@@ -208,12 +208,12 @@ class CorporateActionDate2(base_types._BaseFieldType):
 
 	@PrratnDt.setter
 	def PrratnDt(self, value):
-		self._PrratnDt = value if type(value) != base_types.auto else self.make_default("PrratnDt")
+		self._PrratnDt = value if value is not None else base_types.UninitialisedField(self, 'PrratnDt', DateFormat4Choice, False)
 
 	@PrratnDt.deleter
 	def PrratnDt(self):
 		del self._PrratnDt
-		self._PrratnDt = None
+		self._PrratnDt = base_types.UninitialisedField(self, 'PrratnDt', DateFormat4Choice, False)
 
 	@property
 	def PrtctDt(self):
@@ -221,12 +221,12 @@ class CorporateActionDate2(base_types._BaseFieldType):
 
 	@PrtctDt.setter
 	def PrtctDt(self, value):
-		self._PrtctDt = value if type(value) != base_types.auto else self.make_default("PrtctDt")
+		self._PrtctDt = value if value is not None else base_types.UninitialisedField(self, 'PrtctDt', DateFormat4Choice, False)
 
 	@PrtctDt.deleter
 	def PrtctDt(self):
 		del self._PrtctDt
-		self._PrtctDt = None
+		self._PrtctDt = base_types.UninitialisedField(self, 'PrtctDt', DateFormat4Choice, False)
 
 	@property
 	def RcrdDt(self):
@@ -234,12 +234,12 @@ class CorporateActionDate2(base_types._BaseFieldType):
 
 	@RcrdDt.setter
 	def RcrdDt(self, value):
-		self._RcrdDt = value if type(value) != base_types.auto else self.make_default("RcrdDt")
+		self._RcrdDt = value if value is not None else base_types.UninitialisedField(self, 'RcrdDt', DateFormat4Choice, False)
 
 	@RcrdDt.deleter
 	def RcrdDt(self):
 		del self._RcrdDt
-		self._RcrdDt = None
+		self._RcrdDt = base_types.UninitialisedField(self, 'RcrdDt', DateFormat4Choice, False)
 
 	@property
 	def RedDt(self):
@@ -247,12 +247,12 @@ class CorporateActionDate2(base_types._BaseFieldType):
 
 	@RedDt.setter
 	def RedDt(self, value):
-		self._RedDt = value if type(value) != base_types.auto else self.make_default("RedDt")
+		self._RedDt = value if value is not None else base_types.UninitialisedField(self, 'RedDt', DateFormat4Choice, False)
 
 	@RedDt.deleter
 	def RedDt(self):
 		del self._RedDt
-		self._RedDt = None
+		self._RedDt = base_types.UninitialisedField(self, 'RedDt', DateFormat4Choice, False)
 
 	@property
 	def RegnDdln(self):
@@ -260,12 +260,12 @@ class CorporateActionDate2(base_types._BaseFieldType):
 
 	@RegnDdln.setter
 	def RegnDdln(self, value):
-		self._RegnDdln = value if type(value) != base_types.auto else self.make_default("RegnDdln")
+		self._RegnDdln = value if value is not None else base_types.UninitialisedField(self, 'RegnDdln', DateFormat4Choice, False)
 
 	@RegnDdln.deleter
 	def RegnDdln(self):
 		del self._RegnDdln
-		self._RegnDdln = None
+		self._RegnDdln = base_types.UninitialisedField(self, 'RegnDdln', DateFormat4Choice, False)
 
 	@property
 	def RsltsPblctnDt(self):
@@ -273,12 +273,12 @@ class CorporateActionDate2(base_types._BaseFieldType):
 
 	@RsltsPblctnDt.setter
 	def RsltsPblctnDt(self, value):
-		self._RsltsPblctnDt = value if type(value) != base_types.auto else self.make_default("RsltsPblctnDt")
+		self._RsltsPblctnDt = value if value is not None else base_types.UninitialisedField(self, 'RsltsPblctnDt', DateFormat4Choice, False)
 
 	@RsltsPblctnDt.deleter
 	def RsltsPblctnDt(self):
 		del self._RsltsPblctnDt
-		self._RsltsPblctnDt = None
+		self._RsltsPblctnDt = base_types.UninitialisedField(self, 'RsltsPblctnDt', DateFormat4Choice, False)
 
 	@property
 	def SpclExDt(self):
@@ -286,12 +286,12 @@ class CorporateActionDate2(base_types._BaseFieldType):
 
 	@SpclExDt.setter
 	def SpclExDt(self, value):
-		self._SpclExDt = value if type(value) != base_types.auto else self.make_default("SpclExDt")
+		self._SpclExDt = value if value is not None else base_types.UninitialisedField(self, 'SpclExDt', DateFormat4Choice, False)
 
 	@SpclExDt.deleter
 	def SpclExDt(self):
 		del self._SpclExDt
-		self._SpclExDt = None
+		self._SpclExDt = base_types.UninitialisedField(self, 'SpclExDt', DateFormat4Choice, False)
 
 	@property
 	def TradgSspdDt(self):
@@ -299,12 +299,12 @@ class CorporateActionDate2(base_types._BaseFieldType):
 
 	@TradgSspdDt.setter
 	def TradgSspdDt(self, value):
-		self._TradgSspdDt = value if type(value) != base_types.auto else self.make_default("TradgSspdDt")
+		self._TradgSspdDt = value if value is not None else base_types.UninitialisedField(self, 'TradgSspdDt', DateFormat4Choice, False)
 
 	@TradgSspdDt.deleter
 	def TradgSspdDt(self):
 		del self._TradgSspdDt
-		self._TradgSspdDt = None
+		self._TradgSspdDt = base_types.UninitialisedField(self, 'TradgSspdDt', DateFormat4Choice, False)
 
 	@property
 	def UcondlDt(self):
@@ -312,12 +312,12 @@ class CorporateActionDate2(base_types._BaseFieldType):
 
 	@UcondlDt.setter
 	def UcondlDt(self, value):
-		self._UcondlDt = value if type(value) != base_types.auto else self.make_default("UcondlDt")
+		self._UcondlDt = value if value is not None else base_types.UninitialisedField(self, 'UcondlDt', DateFormat4Choice, False)
 
 	@UcondlDt.deleter
 	def UcondlDt(self):
 		del self._UcondlDt
-		self._UcondlDt = None
+		self._UcondlDt = base_types.UninitialisedField(self, 'UcondlDt', DateFormat4Choice, False)
 
 	@property
 	def WhlyUcondlDt(self):
@@ -325,12 +325,12 @@ class CorporateActionDate2(base_types._BaseFieldType):
 
 	@WhlyUcondlDt.setter
 	def WhlyUcondlDt(self, value):
-		self._WhlyUcondlDt = value if type(value) != base_types.auto else self.make_default("WhlyUcondlDt")
+		self._WhlyUcondlDt = value if value is not None else base_types.UninitialisedField(self, 'WhlyUcondlDt', DateFormat4Choice, False)
 
 	@WhlyUcondlDt.deleter
 	def WhlyUcondlDt(self):
 		del self._WhlyUcondlDt
-		self._WhlyUcondlDt = None
+		self._WhlyUcondlDt = base_types.UninitialisedField(self, 'WhlyUcondlDt', DateFormat4Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CertfctnDdln', type=DateFormat4Choice, min=0, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISOTime import ISOTime
+from . import ISOTime
 
 class SettlementTimeRequest2(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class SettlementTimeRequest2(base_types._BaseFieldType):
 
 	@CLSTm.setter
 	def CLSTm(self, value):
-		self._CLSTm = value if type(value) != base_types.auto else self.make_default("CLSTm")
+		self._CLSTm = value if value is not None else base_types.UninitialisedField(self, 'CLSTm', ISOTime, False)
 
 	@CLSTm.deleter
 	def CLSTm(self):
 		del self._CLSTm
-		self._CLSTm = None
+		self._CLSTm = base_types.UninitialisedField(self, 'CLSTm', ISOTime, False)
 
 	@property
 	def FrTm(self):
@@ -26,12 +26,12 @@ class SettlementTimeRequest2(base_types._BaseFieldType):
 
 	@FrTm.setter
 	def FrTm(self, value):
-		self._FrTm = value if type(value) != base_types.auto else self.make_default("FrTm")
+		self._FrTm = value if value is not None else base_types.UninitialisedField(self, 'FrTm', ISOTime, False)
 
 	@FrTm.deleter
 	def FrTm(self):
 		del self._FrTm
-		self._FrTm = None
+		self._FrTm = base_types.UninitialisedField(self, 'FrTm', ISOTime, False)
 
 	@property
 	def RjctTm(self):
@@ -39,12 +39,12 @@ class SettlementTimeRequest2(base_types._BaseFieldType):
 
 	@RjctTm.setter
 	def RjctTm(self, value):
-		self._RjctTm = value if type(value) != base_types.auto else self.make_default("RjctTm")
+		self._RjctTm = value if value is not None else base_types.UninitialisedField(self, 'RjctTm', ISOTime, False)
 
 	@RjctTm.deleter
 	def RjctTm(self):
 		del self._RjctTm
-		self._RjctTm = None
+		self._RjctTm = base_types.UninitialisedField(self, 'RjctTm', ISOTime, False)
 
 	@property
 	def TillTm(self):
@@ -52,12 +52,12 @@ class SettlementTimeRequest2(base_types._BaseFieldType):
 
 	@TillTm.setter
 	def TillTm(self, value):
-		self._TillTm = value if type(value) != base_types.auto else self.make_default("TillTm")
+		self._TillTm = value if value is not None else base_types.UninitialisedField(self, 'TillTm', ISOTime, False)
 
 	@TillTm.deleter
 	def TillTm(self):
 		del self._TillTm
-		self._TillTm = None
+		self._TillTm = base_types.UninitialisedField(self, 'TillTm', ISOTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CLSTm', type=ISOTime, min=0, max=1, mutex_group=None, array=False),

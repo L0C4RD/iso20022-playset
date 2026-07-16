@@ -2,18 +2,18 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CurrencyAndAmount import CurrencyAndAmount
-from ._CurrencyCode import CurrencyCode
-from ._DocumentIdentification1 import DocumentIdentification1
-from ._ISODate import ISODate
-from ._InsuranceClauses1Code import InsuranceClauses1Code
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
-from ._PartyIdentification26 import PartyIdentification26
-from ._PartyIdentification29Choice import PartyIdentification29Choice
-from ._PostalAddress5 import PostalAddress5
-from ._SingleTransport3 import SingleTransport3
+from . import CurrencyAndAmount
+from . import CurrencyCode
+from . import DocumentIdentification1
+from . import ISODate
+from . import InsuranceClauses1Code
+from . import Max350Text
+from . import Max35Text
+from . import Max70Text
+from . import PartyIdentification26
+from . import PartyIdentification29Choice
+from . import PostalAddress5
+from . import SingleTransport3
 
 class InsuranceDataSet1(base_types._BaseFieldType):
 
@@ -24,12 +24,12 @@ class InsuranceDataSet1(base_types._BaseFieldType):
 
 	@Assrd.setter
 	def Assrd(self, value):
-		self._Assrd = value if type(value) != base_types.auto else self.make_default("Assrd")
+		self._Assrd = value if value is not None else base_types.UninitialisedField(self, 'Assrd', PartyIdentification29Choice, False)
 
 	@Assrd.deleter
 	def Assrd(self):
 		del self._Assrd
-		self._Assrd = None
+		self._Assrd = base_types.UninitialisedField(self, 'Assrd', PartyIdentification29Choice, False)
 
 	@property
 	def ClmsPyblAt(self):
@@ -37,12 +37,12 @@ class InsuranceDataSet1(base_types._BaseFieldType):
 
 	@ClmsPyblAt.setter
 	def ClmsPyblAt(self, value):
-		self._ClmsPyblAt = value if type(value) != base_types.auto else self.make_default("ClmsPyblAt")
+		self._ClmsPyblAt = value if value is not None else base_types.UninitialisedField(self, 'ClmsPyblAt', PostalAddress5, False)
 
 	@ClmsPyblAt.deleter
 	def ClmsPyblAt(self):
 		del self._ClmsPyblAt
-		self._ClmsPyblAt = None
+		self._ClmsPyblAt = base_types.UninitialisedField(self, 'ClmsPyblAt', PostalAddress5, False)
 
 	@property
 	def ClmsPyblIn(self):
@@ -50,12 +50,12 @@ class InsuranceDataSet1(base_types._BaseFieldType):
 
 	@ClmsPyblIn.setter
 	def ClmsPyblIn(self, value):
-		self._ClmsPyblIn = value if type(value) != base_types.auto else self.make_default("ClmsPyblIn")
+		self._ClmsPyblIn = value if value is not None else base_types.UninitialisedField(self, 'ClmsPyblIn', CurrencyCode, False)
 
 	@ClmsPyblIn.deleter
 	def ClmsPyblIn(self):
 		del self._ClmsPyblIn
-		self._ClmsPyblIn = None
+		self._ClmsPyblIn = base_types.UninitialisedField(self, 'ClmsPyblIn', CurrencyCode, False)
 
 	@property
 	def DataSetId(self):
@@ -63,12 +63,12 @@ class InsuranceDataSet1(base_types._BaseFieldType):
 
 	@DataSetId.setter
 	def DataSetId(self, value):
-		self._DataSetId = value if type(value) != base_types.auto else self.make_default("DataSetId")
+		self._DataSetId = value if value is not None else base_types.UninitialisedField(self, 'DataSetId', DocumentIdentification1, False)
 
 	@DataSetId.deleter
 	def DataSetId(self):
 		del self._DataSetId
-		self._DataSetId = None
+		self._DataSetId = base_types.UninitialisedField(self, 'DataSetId', DocumentIdentification1, False)
 
 	@property
 	def FctvDt(self):
@@ -76,12 +76,12 @@ class InsuranceDataSet1(base_types._BaseFieldType):
 
 	@FctvDt.setter
 	def FctvDt(self, value):
-		self._FctvDt = value if type(value) != base_types.auto else self.make_default("FctvDt")
+		self._FctvDt = value if value is not None else base_types.UninitialisedField(self, 'FctvDt', ISODate, False)
 
 	@FctvDt.deleter
 	def FctvDt(self):
 		del self._FctvDt
-		self._FctvDt = None
+		self._FctvDt = base_types.UninitialisedField(self, 'FctvDt', ISODate, False)
 
 	@property
 	def InsrdAmt(self):
@@ -89,12 +89,12 @@ class InsuranceDataSet1(base_types._BaseFieldType):
 
 	@InsrdAmt.setter
 	def InsrdAmt(self, value):
-		self._InsrdAmt = value if type(value) != base_types.auto else self.make_default("InsrdAmt")
+		self._InsrdAmt = value if value is not None else base_types.UninitialisedField(self, 'InsrdAmt', CurrencyAndAmount, False)
 
 	@InsrdAmt.deleter
 	def InsrdAmt(self):
 		del self._InsrdAmt
-		self._InsrdAmt = None
+		self._InsrdAmt = base_types.UninitialisedField(self, 'InsrdAmt', CurrencyAndAmount, False)
 
 	@property
 	def InsrdGoodsDesc(self):
@@ -102,12 +102,12 @@ class InsuranceDataSet1(base_types._BaseFieldType):
 
 	@InsrdGoodsDesc.setter
 	def InsrdGoodsDesc(self, value):
-		self._InsrdGoodsDesc = value if type(value) != base_types.auto else self.make_default("InsrdGoodsDesc")
+		self._InsrdGoodsDesc = value if value is not None else base_types.UninitialisedField(self, 'InsrdGoodsDesc', Max70Text, False)
 
 	@InsrdGoodsDesc.deleter
 	def InsrdGoodsDesc(self):
 		del self._InsrdGoodsDesc
-		self._InsrdGoodsDesc = None
+		self._InsrdGoodsDesc = base_types.UninitialisedField(self, 'InsrdGoodsDesc', Max70Text, False)
 
 	@property
 	def InsrncClauses(self):
@@ -115,12 +115,12 @@ class InsuranceDataSet1(base_types._BaseFieldType):
 
 	@InsrncClauses.setter
 	def InsrncClauses(self, value):
-		self._InsrncClauses = value if type(value) != base_types.auto else self.make_default("InsrncClauses")
+		self._InsrncClauses = value if value is not None else base_types.UninitialisedField(self, 'InsrncClauses', InsuranceClauses1Code, True)
 
 	@InsrncClauses.deleter
 	def InsrncClauses(self):
 		del self._InsrncClauses
-		self._InsrncClauses = None
+		self._InsrncClauses = base_types.UninitialisedField(self, 'InsrncClauses', InsuranceClauses1Code, True)
 
 	@property
 	def InsrncConds(self):
@@ -128,12 +128,12 @@ class InsuranceDataSet1(base_types._BaseFieldType):
 
 	@InsrncConds.setter
 	def InsrncConds(self, value):
-		self._InsrncConds = value if type(value) != base_types.auto else self.make_default("InsrncConds")
+		self._InsrncConds = value if value is not None else base_types.UninitialisedField(self, 'InsrncConds', Max350Text, True)
 
 	@InsrncConds.deleter
 	def InsrncConds(self):
 		del self._InsrncConds
-		self._InsrncConds = None
+		self._InsrncConds = base_types.UninitialisedField(self, 'InsrncConds', Max350Text, True)
 
 	@property
 	def InsrncDocId(self):
@@ -141,12 +141,12 @@ class InsuranceDataSet1(base_types._BaseFieldType):
 
 	@InsrncDocId.setter
 	def InsrncDocId(self, value):
-		self._InsrncDocId = value if type(value) != base_types.auto else self.make_default("InsrncDocId")
+		self._InsrncDocId = value if value is not None else base_types.UninitialisedField(self, 'InsrncDocId', Max35Text, False)
 
 	@InsrncDocId.deleter
 	def InsrncDocId(self):
 		del self._InsrncDocId
-		self._InsrncDocId = None
+		self._InsrncDocId = base_types.UninitialisedField(self, 'InsrncDocId', Max35Text, False)
 
 	@property
 	def IsseDt(self):
@@ -154,12 +154,12 @@ class InsuranceDataSet1(base_types._BaseFieldType):
 
 	@IsseDt.setter
 	def IsseDt(self, value):
-		self._IsseDt = value if type(value) != base_types.auto else self.make_default("IsseDt")
+		self._IsseDt = value if value is not None else base_types.UninitialisedField(self, 'IsseDt', ISODate, False)
 
 	@IsseDt.deleter
 	def IsseDt(self):
 		del self._IsseDt
-		self._IsseDt = None
+		self._IsseDt = base_types.UninitialisedField(self, 'IsseDt', ISODate, False)
 
 	@property
 	def Issr(self):
@@ -167,12 +167,12 @@ class InsuranceDataSet1(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+		self._Issr = value if value is not None else base_types.UninitialisedField(self, 'Issr', PartyIdentification26, False)
 
 	@Issr.deleter
 	def Issr(self):
 		del self._Issr
-		self._Issr = None
+		self._Issr = base_types.UninitialisedField(self, 'Issr', PartyIdentification26, False)
 
 	@property
 	def PlcOfIsse(self):
@@ -180,12 +180,12 @@ class InsuranceDataSet1(base_types._BaseFieldType):
 
 	@PlcOfIsse.setter
 	def PlcOfIsse(self, value):
-		self._PlcOfIsse = value if type(value) != base_types.auto else self.make_default("PlcOfIsse")
+		self._PlcOfIsse = value if value is not None else base_types.UninitialisedField(self, 'PlcOfIsse', PostalAddress5, False)
 
 	@PlcOfIsse.deleter
 	def PlcOfIsse(self):
 		del self._PlcOfIsse
-		self._PlcOfIsse = None
+		self._PlcOfIsse = base_types.UninitialisedField(self, 'PlcOfIsse', PostalAddress5, False)
 
 	@property
 	def Trnsprt(self):
@@ -193,12 +193,12 @@ class InsuranceDataSet1(base_types._BaseFieldType):
 
 	@Trnsprt.setter
 	def Trnsprt(self, value):
-		self._Trnsprt = value if type(value) != base_types.auto else self.make_default("Trnsprt")
+		self._Trnsprt = value if value is not None else base_types.UninitialisedField(self, 'Trnsprt', SingleTransport3, False)
 
 	@Trnsprt.deleter
 	def Trnsprt(self):
 		del self._Trnsprt
-		self._Trnsprt = None
+		self._Trnsprt = base_types.UninitialisedField(self, 'Trnsprt', SingleTransport3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Assrd', type=PartyIdentification29Choice, min=1, max=1, mutex_group=None, array=False),

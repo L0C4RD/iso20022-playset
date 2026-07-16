@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from . import OrganisationIdentification15Choice
 
 class CounterpartyData87(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class CounterpartyData87(base_types._BaseFieldType):
 
 	@NttyRspnsblForRpt.setter
 	def NttyRspnsblForRpt(self, value):
-		self._NttyRspnsblForRpt = value if type(value) != base_types.auto else self.make_default("NttyRspnsblForRpt")
+		self._NttyRspnsblForRpt = value if value is not None else base_types.UninitialisedField(self, 'NttyRspnsblForRpt', OrganisationIdentification15Choice, False)
 
 	@NttyRspnsblForRpt.deleter
 	def NttyRspnsblForRpt(self):
 		del self._NttyRspnsblForRpt
-		self._NttyRspnsblForRpt = None
+		self._NttyRspnsblForRpt = base_types.UninitialisedField(self, 'NttyRspnsblForRpt', OrganisationIdentification15Choice, False)
 
 	@property
 	def RptSubmitgNtty(self):
@@ -26,12 +26,12 @@ class CounterpartyData87(base_types._BaseFieldType):
 
 	@RptSubmitgNtty.setter
 	def RptSubmitgNtty(self, value):
-		self._RptSubmitgNtty = value if type(value) != base_types.auto else self.make_default("RptSubmitgNtty")
+		self._RptSubmitgNtty = value if value is not None else base_types.UninitialisedField(self, 'RptSubmitgNtty', OrganisationIdentification15Choice, False)
 
 	@RptSubmitgNtty.deleter
 	def RptSubmitgNtty(self):
 		del self._RptSubmitgNtty
-		self._RptSubmitgNtty = None
+		self._RptSubmitgNtty = base_types.UninitialisedField(self, 'RptSubmitgNtty', OrganisationIdentification15Choice, False)
 
 	@property
 	def RptgCtrPty(self):
@@ -39,12 +39,12 @@ class CounterpartyData87(base_types._BaseFieldType):
 
 	@RptgCtrPty.setter
 	def RptgCtrPty(self, value):
-		self._RptgCtrPty = value if type(value) != base_types.auto else self.make_default("RptgCtrPty")
+		self._RptgCtrPty = value if value is not None else base_types.UninitialisedField(self, 'RptgCtrPty', OrganisationIdentification15Choice, False)
 
 	@RptgCtrPty.deleter
 	def RptgCtrPty(self):
 		del self._RptgCtrPty
-		self._RptgCtrPty = None
+		self._RptgCtrPty = base_types.UninitialisedField(self, 'RptgCtrPty', OrganisationIdentification15Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NttyRspnsblForRpt', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),

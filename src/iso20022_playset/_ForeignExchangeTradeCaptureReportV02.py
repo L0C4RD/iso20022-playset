@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalReferences2 import AdditionalReferences2
-from ._Header23 import Header23
-from ._Max35Text import Max35Text
-from ._MessageIdentification1 import MessageIdentification1
-from ._Number import Number
-from ._SupplementaryData1 import SupplementaryData1
-from ._Trade7 import Trade7
-from ._TradePartyIdentification9 import TradePartyIdentification9
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import AdditionalReferences2
+from . import Header23
+from . import Max35Text
+from . import MessageIdentification1
+from . import Number
+from . import SupplementaryData1
+from . import Trade7
+from . import TradePartyIdentification9
+from . import TrueFalseIndicator
 
 class ForeignExchangeTradeCaptureReportV02(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class ForeignExchangeTradeCaptureReportV02(base_types._BaseFieldType):
 
 	@CtrPtySdId.setter
 	def CtrPtySdId(self, value):
-		self._CtrPtySdId = value if type(value) != base_types.auto else self.make_default("CtrPtySdId")
+		self._CtrPtySdId = value if value is not None else base_types.UninitialisedField(self, 'CtrPtySdId', TradePartyIdentification9, False)
 
 	@CtrPtySdId.deleter
 	def CtrPtySdId(self):
 		del self._CtrPtySdId
-		self._CtrPtySdId = None
+		self._CtrPtySdId = base_types.UninitialisedField(self, 'CtrPtySdId', TradePartyIdentification9, False)
 
 	@property
 	def Hdr(self):
@@ -34,12 +34,12 @@ class ForeignExchangeTradeCaptureReportV02(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header23, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header23, False)
 
 	@property
 	def LastRptReqd(self):
@@ -47,12 +47,12 @@ class ForeignExchangeTradeCaptureReportV02(base_types._BaseFieldType):
 
 	@LastRptReqd.setter
 	def LastRptReqd(self, value):
-		self._LastRptReqd = value if type(value) != base_types.auto else self.make_default("LastRptReqd")
+		self._LastRptReqd = value if value is not None else base_types.UninitialisedField(self, 'LastRptReqd', TrueFalseIndicator, False)
 
 	@LastRptReqd.deleter
 	def LastRptReqd(self):
 		del self._LastRptReqd
-		self._LastRptReqd = None
+		self._LastRptReqd = base_types.UninitialisedField(self, 'LastRptReqd', TrueFalseIndicator, False)
 
 	@property
 	def QryRjctRsn(self):
@@ -60,12 +60,12 @@ class ForeignExchangeTradeCaptureReportV02(base_types._BaseFieldType):
 
 	@QryRjctRsn.setter
 	def QryRjctRsn(self, value):
-		self._QryRjctRsn = value if type(value) != base_types.auto else self.make_default("QryRjctRsn")
+		self._QryRjctRsn = value if value is not None else base_types.UninitialisedField(self, 'QryRjctRsn', Max35Text, False)
 
 	@QryRjctRsn.deleter
 	def QryRjctRsn(self):
 		del self._QryRjctRsn
-		self._QryRjctRsn = None
+		self._QryRjctRsn = base_types.UninitialisedField(self, 'QryRjctRsn', Max35Text, False)
 
 	@property
 	def Ref(self):
@@ -73,12 +73,12 @@ class ForeignExchangeTradeCaptureReportV02(base_types._BaseFieldType):
 
 	@Ref.setter
 	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+		self._Ref = value if value is not None else base_types.UninitialisedField(self, 'Ref', AdditionalReferences2, False)
 
 	@Ref.deleter
 	def Ref(self):
 		del self._Ref
-		self._Ref = None
+		self._Ref = base_types.UninitialisedField(self, 'Ref', AdditionalReferences2, False)
 
 	@property
 	def ReqRjctd(self):
@@ -86,12 +86,12 @@ class ForeignExchangeTradeCaptureReportV02(base_types._BaseFieldType):
 
 	@ReqRjctd.setter
 	def ReqRjctd(self, value):
-		self._ReqRjctd = value if type(value) != base_types.auto else self.make_default("ReqRjctd")
+		self._ReqRjctd = value if value is not None else base_types.UninitialisedField(self, 'ReqRjctd', TrueFalseIndicator, False)
 
 	@ReqRjctd.deleter
 	def ReqRjctd(self):
 		del self._ReqRjctd
-		self._ReqRjctd = None
+		self._ReqRjctd = base_types.UninitialisedField(self, 'ReqRjctd', TrueFalseIndicator, False)
 
 	@property
 	def ReqRspndr(self):
@@ -99,12 +99,12 @@ class ForeignExchangeTradeCaptureReportV02(base_types._BaseFieldType):
 
 	@ReqRspndr.setter
 	def ReqRspndr(self, value):
-		self._ReqRspndr = value if type(value) != base_types.auto else self.make_default("ReqRspndr")
+		self._ReqRspndr = value if value is not None else base_types.UninitialisedField(self, 'ReqRspndr', TrueFalseIndicator, False)
 
 	@ReqRspndr.deleter
 	def ReqRspndr(self):
 		del self._ReqRspndr
-		self._ReqRspndr = None
+		self._ReqRspndr = base_types.UninitialisedField(self, 'ReqRspndr', TrueFalseIndicator, False)
 
 	@property
 	def RptId(self):
@@ -112,12 +112,12 @@ class ForeignExchangeTradeCaptureReportV02(base_types._BaseFieldType):
 
 	@RptId.setter
 	def RptId(self, value):
-		self._RptId = value if type(value) != base_types.auto else self.make_default("RptId")
+		self._RptId = value if value is not None else base_types.UninitialisedField(self, 'RptId', MessageIdentification1, False)
 
 	@RptId.deleter
 	def RptId(self):
 		del self._RptId
-		self._RptId = None
+		self._RptId = base_types.UninitialisedField(self, 'RptId', MessageIdentification1, False)
 
 	@property
 	def SplmtryData(self):
@@ -125,12 +125,12 @@ class ForeignExchangeTradeCaptureReportV02(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TradDtl(self):
@@ -138,12 +138,12 @@ class ForeignExchangeTradeCaptureReportV02(base_types._BaseFieldType):
 
 	@TradDtl.setter
 	def TradDtl(self, value):
-		self._TradDtl = value if type(value) != base_types.auto else self.make_default("TradDtl")
+		self._TradDtl = value if value is not None else base_types.UninitialisedField(self, 'TradDtl', Trade7, False)
 
 	@TradDtl.deleter
 	def TradDtl(self):
 		del self._TradDtl
-		self._TradDtl = None
+		self._TradDtl = base_types.UninitialisedField(self, 'TradDtl', Trade7, False)
 
 	@property
 	def TradgSdId(self):
@@ -151,12 +151,12 @@ class ForeignExchangeTradeCaptureReportV02(base_types._BaseFieldType):
 
 	@TradgSdId.setter
 	def TradgSdId(self, value):
-		self._TradgSdId = value if type(value) != base_types.auto else self.make_default("TradgSdId")
+		self._TradgSdId = value if value is not None else base_types.UninitialisedField(self, 'TradgSdId', TradePartyIdentification9, False)
 
 	@TradgSdId.deleter
 	def TradgSdId(self):
 		del self._TradgSdId
-		self._TradgSdId = None
+		self._TradgSdId = base_types.UninitialisedField(self, 'TradgSdId', TradePartyIdentification9, False)
 
 	@property
 	def TtlNbTrds(self):
@@ -164,12 +164,12 @@ class ForeignExchangeTradeCaptureReportV02(base_types._BaseFieldType):
 
 	@TtlNbTrds.setter
 	def TtlNbTrds(self, value):
-		self._TtlNbTrds = value if type(value) != base_types.auto else self.make_default("TtlNbTrds")
+		self._TtlNbTrds = value if value is not None else base_types.UninitialisedField(self, 'TtlNbTrds', Number, False)
 
 	@TtlNbTrds.deleter
 	def TtlNbTrds(self):
 		del self._TtlNbTrds
-		self._TtlNbTrds = None
+		self._TtlNbTrds = base_types.UninitialisedField(self, 'TtlNbTrds', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrPtySdId', type=TradePartyIdentification9, min=0, max=1, mutex_group=None, array=False),

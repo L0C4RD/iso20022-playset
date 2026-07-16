@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContractRegistrationRequestV04 import ContractRegistrationRequestV04
+from . import ContractRegistrationRequestV04
 
 class AUTH_018_001_04():
 
@@ -18,12 +18,12 @@ class AUTH_018_001_04():
 
 		@CtrctRegnReq.setter
 		def CtrctRegnReq(self, value):
-			self._CtrctRegnReq = value if type(value) != base_types.auto else self.make_default("CtrctRegnReq")
+			self._CtrctRegnReq = value if value is not None else base_types.UninitialisedField(self, 'CtrctRegnReq', ContractRegistrationRequestV04, False)
 
 		@CtrctRegnReq.deleter
 		def CtrctRegnReq(self):
 			del self._CtrctRegnReq
-			self._CtrctRegnReq = None
+			self._CtrctRegnReq = base_types.UninitialisedField(self, 'CtrctRegnReq', ContractRegistrationRequestV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CtrctRegnReq', type=ContractRegistrationRequestV04, min=1, max=1, mutex_group=None, array=False),

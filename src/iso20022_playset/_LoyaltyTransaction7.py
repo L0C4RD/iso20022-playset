@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._LoyaltyTransactionType1Code import LoyaltyTransactionType1Code
-from ._PaymentTransaction165 import PaymentTransaction165
-from ._Product6 import Product6
-from ._TransactionIdentifier1 import TransactionIdentifier1
+from . import ActiveCurrencyCode
+from . import ImpliedCurrencyAndAmount
+from . import LoyaltyTransactionType1Code
+from . import PaymentTransaction165
+from . import Product6
+from . import TransactionIdentifier1
 
 class LoyaltyTransaction7(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class LoyaltyTransaction7(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@property
 	def LltyTxTp(self):
@@ -31,12 +31,12 @@ class LoyaltyTransaction7(base_types._BaseFieldType):
 
 	@LltyTxTp.setter
 	def LltyTxTp(self, value):
-		self._LltyTxTp = value if type(value) != base_types.auto else self.make_default("LltyTxTp")
+		self._LltyTxTp = value if value is not None else base_types.UninitialisedField(self, 'LltyTxTp', LoyaltyTransactionType1Code, False)
 
 	@LltyTxTp.deleter
 	def LltyTxTp(self):
 		del self._LltyTxTp
-		self._LltyTxTp = None
+		self._LltyTxTp = base_types.UninitialisedField(self, 'LltyTxTp', LoyaltyTransactionType1Code, False)
 
 	@property
 	def OrgnlPOITx(self):
@@ -44,12 +44,12 @@ class LoyaltyTransaction7(base_types._BaseFieldType):
 
 	@OrgnlPOITx.setter
 	def OrgnlPOITx(self, value):
-		self._OrgnlPOITx = value if type(value) != base_types.auto else self.make_default("OrgnlPOITx")
+		self._OrgnlPOITx = value if value is not None else base_types.UninitialisedField(self, 'OrgnlPOITx', PaymentTransaction165, False)
 
 	@OrgnlPOITx.deleter
 	def OrgnlPOITx(self):
 		del self._OrgnlPOITx
-		self._OrgnlPOITx = None
+		self._OrgnlPOITx = base_types.UninitialisedField(self, 'OrgnlPOITx', PaymentTransaction165, False)
 
 	@property
 	def SaleItm(self):
@@ -57,12 +57,12 @@ class LoyaltyTransaction7(base_types._BaseFieldType):
 
 	@SaleItm.setter
 	def SaleItm(self, value):
-		self._SaleItm = value if type(value) != base_types.auto else self.make_default("SaleItm")
+		self._SaleItm = value if value is not None else base_types.UninitialisedField(self, 'SaleItm', Product6, True)
 
 	@SaleItm.deleter
 	def SaleItm(self):
 		del self._SaleItm
-		self._SaleItm = None
+		self._SaleItm = base_types.UninitialisedField(self, 'SaleItm', Product6, True)
 
 	@property
 	def SaleTxId(self):
@@ -70,12 +70,12 @@ class LoyaltyTransaction7(base_types._BaseFieldType):
 
 	@SaleTxId.setter
 	def SaleTxId(self, value):
-		self._SaleTxId = value if type(value) != base_types.auto else self.make_default("SaleTxId")
+		self._SaleTxId = value if value is not None else base_types.UninitialisedField(self, 'SaleTxId', TransactionIdentifier1, False)
 
 	@SaleTxId.deleter
 	def SaleTxId(self):
 		del self._SaleTxId
-		self._SaleTxId = None
+		self._SaleTxId = base_types.UninitialisedField(self, 'SaleTxId', TransactionIdentifier1, False)
 
 	@property
 	def TtlAmt(self):
@@ -83,12 +83,12 @@ class LoyaltyTransaction7(base_types._BaseFieldType):
 
 	@TtlAmt.setter
 	def TtlAmt(self, value):
-		self._TtlAmt = value if type(value) != base_types.auto else self.make_default("TtlAmt")
+		self._TtlAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlAmt', ImpliedCurrencyAndAmount, False)
 
 	@TtlAmt.deleter
 	def TtlAmt(self):
 		del self._TtlAmt
-		self._TtlAmt = None
+		self._TtlAmt = base_types.UninitialisedField(self, 'TtlAmt', ImpliedCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),

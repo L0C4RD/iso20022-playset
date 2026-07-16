@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CutOffData2 import CutOffData2
-from ._NettingCutOffReportData2 import NettingCutOffReportData2
-from ._SupplementaryData1 import SupplementaryData1
+from . import CutOffData2
+from . import NettingCutOffReportData2
+from . import SupplementaryData1
 
 class NettingCutOffReferenceDataReportV02(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class NettingCutOffReferenceDataReportV02(base_types._BaseFieldType):
 
 	@PtcptNetgCutOffData.setter
 	def PtcptNetgCutOffData(self, value):
-		self._PtcptNetgCutOffData = value if type(value) != base_types.auto else self.make_default("PtcptNetgCutOffData")
+		self._PtcptNetgCutOffData = value if value is not None else base_types.UninitialisedField(self, 'PtcptNetgCutOffData', CutOffData2, True)
 
 	@PtcptNetgCutOffData.deleter
 	def PtcptNetgCutOffData(self):
 		del self._PtcptNetgCutOffData
-		self._PtcptNetgCutOffData = None
+		self._PtcptNetgCutOffData = base_types.UninitialisedField(self, 'PtcptNetgCutOffData', CutOffData2, True)
 
 	@property
 	def RptData(self):
@@ -28,12 +28,12 @@ class NettingCutOffReferenceDataReportV02(base_types._BaseFieldType):
 
 	@RptData.setter
 	def RptData(self, value):
-		self._RptData = value if type(value) != base_types.auto else self.make_default("RptData")
+		self._RptData = value if value is not None else base_types.UninitialisedField(self, 'RptData', NettingCutOffReportData2, False)
 
 	@RptData.deleter
 	def RptData(self):
 		del self._RptData
-		self._RptData = None
+		self._RptData = base_types.UninitialisedField(self, 'RptData', NettingCutOffReportData2, False)
 
 	@property
 	def SplmtryData(self):
@@ -41,12 +41,12 @@ class NettingCutOffReferenceDataReportV02(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PtcptNetgCutOffData', type=CutOffData2, min=1, max=None, mutex_group=None, array=True),

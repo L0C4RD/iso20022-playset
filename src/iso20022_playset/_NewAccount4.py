@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashAccount43 import CashAccount43
-from ._IndividualPerson44 import IndividualPerson44
-from ._Organisation43 import Organisation43
+from . import CashAccount43
+from . import IndividualPerson44
+from . import Organisation43
 
 class NewAccount4(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class NewAccount4(base_types._BaseFieldType):
 
 	@Acct.setter
 	def Acct(self, value):
-		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
+		self._Acct = value if value is not None else base_types.UninitialisedField(self, 'Acct', CashAccount43, False)
 
 	@Acct.deleter
 	def Acct(self):
 		del self._Acct
-		self._Acct = None
+		self._Acct = base_types.UninitialisedField(self, 'Acct', CashAccount43, False)
 
 	@property
 	def AcctPty(self):
@@ -28,12 +28,12 @@ class NewAccount4(base_types._BaseFieldType):
 
 	@AcctPty.setter
 	def AcctPty(self, value):
-		self._AcctPty = value if type(value) != base_types.auto else self.make_default("AcctPty")
+		self._AcctPty = value if value is not None else base_types.UninitialisedField(self, 'AcctPty', IndividualPerson44, True)
 
 	@AcctPty.deleter
 	def AcctPty(self):
 		del self._AcctPty
-		self._AcctPty = None
+		self._AcctPty = base_types.UninitialisedField(self, 'AcctPty', IndividualPerson44, True)
 
 	@property
 	def Org(self):
@@ -41,12 +41,12 @@ class NewAccount4(base_types._BaseFieldType):
 
 	@Org.setter
 	def Org(self, value):
-		self._Org = value if type(value) != base_types.auto else self.make_default("Org")
+		self._Org = value if value is not None else base_types.UninitialisedField(self, 'Org', Organisation43, False)
 
 	@Org.deleter
 	def Org(self):
 		del self._Org
-		self._Org = None
+		self._Org = base_types.UninitialisedField(self, 'Org', Organisation43, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acct', type=CashAccount43, min=1, max=1, mutex_group=None, array=False),

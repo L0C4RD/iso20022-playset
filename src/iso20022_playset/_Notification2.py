@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InformationDistribution1Choice import InformationDistribution1Choice
-from ._Max35Text import Max35Text
-from ._YesNoIndicator import YesNoIndicator
+from . import InformationDistribution1Choice
+from . import Max35Text
+from . import YesNoIndicator
 
 class Notification2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Notification2(base_types._BaseFieldType):
 
 	@DstrbtnTp.setter
 	def DstrbtnTp(self, value):
-		self._DstrbtnTp = value if type(value) != base_types.auto else self.make_default("DstrbtnTp")
+		self._DstrbtnTp = value if value is not None else base_types.UninitialisedField(self, 'DstrbtnTp', InformationDistribution1Choice, False)
 
 	@DstrbtnTp.deleter
 	def DstrbtnTp(self):
 		del self._DstrbtnTp
-		self._DstrbtnTp = None
+		self._DstrbtnTp = base_types.UninitialisedField(self, 'DstrbtnTp', InformationDistribution1Choice, False)
 
 	@property
 	def NtfctnTp(self):
@@ -28,12 +28,12 @@ class Notification2(base_types._BaseFieldType):
 
 	@NtfctnTp.setter
 	def NtfctnTp(self, value):
-		self._NtfctnTp = value if type(value) != base_types.auto else self.make_default("NtfctnTp")
+		self._NtfctnTp = value if value is not None else base_types.UninitialisedField(self, 'NtfctnTp', Max35Text, False)
 
 	@NtfctnTp.deleter
 	def NtfctnTp(self):
 		del self._NtfctnTp
-		self._NtfctnTp = None
+		self._NtfctnTp = base_types.UninitialisedField(self, 'NtfctnTp', Max35Text, False)
 
 	@property
 	def Reqrd(self):
@@ -41,12 +41,12 @@ class Notification2(base_types._BaseFieldType):
 
 	@Reqrd.setter
 	def Reqrd(self, value):
-		self._Reqrd = value if type(value) != base_types.auto else self.make_default("Reqrd")
+		self._Reqrd = value if value is not None else base_types.UninitialisedField(self, 'Reqrd', YesNoIndicator, False)
 
 	@Reqrd.deleter
 	def Reqrd(self):
 		del self._Reqrd
-		self._Reqrd = None
+		self._Reqrd = base_types.UninitialisedField(self, 'Reqrd', YesNoIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DstrbtnTp', type=InformationDistribution1Choice, min=0, max=1, mutex_group=None, array=False),

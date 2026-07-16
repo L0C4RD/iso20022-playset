@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RequestedIndicator import RequestedIndicator
+from . import RequestedIndicator
 
 class PartyDataReturnCriteria2(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class PartyDataReturnCriteria2(base_types._BaseFieldType):
 
 	@Adr.setter
 	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+		self._Adr = value if value is not None else base_types.UninitialisedField(self, 'Adr', RequestedIndicator, False)
 
 	@Adr.deleter
 	def Adr(self):
 		del self._Adr
-		self._Adr = None
+		self._Adr = base_types.UninitialisedField(self, 'Adr', RequestedIndicator, False)
 
 	@property
 	def ClsgDt(self):
@@ -26,12 +26,12 @@ class PartyDataReturnCriteria2(base_types._BaseFieldType):
 
 	@ClsgDt.setter
 	def ClsgDt(self, value):
-		self._ClsgDt = value if type(value) != base_types.auto else self.make_default("ClsgDt")
+		self._ClsgDt = value if value is not None else base_types.UninitialisedField(self, 'ClsgDt', RequestedIndicator, False)
 
 	@ClsgDt.deleter
 	def ClsgDt(self):
 		del self._ClsgDt
-		self._ClsgDt = None
+		self._ClsgDt = base_types.UninitialisedField(self, 'ClsgDt', RequestedIndicator, False)
 
 	@property
 	def CtctDtls(self):
@@ -39,12 +39,12 @@ class PartyDataReturnCriteria2(base_types._BaseFieldType):
 
 	@CtctDtls.setter
 	def CtctDtls(self, value):
-		self._CtctDtls = value if type(value) != base_types.auto else self.make_default("CtctDtls")
+		self._CtctDtls = value if value is not None else base_types.UninitialisedField(self, 'CtctDtls', RequestedIndicator, False)
 
 	@CtctDtls.deleter
 	def CtctDtls(self):
 		del self._CtctDtls
-		self._CtctDtls = None
+		self._CtctDtls = base_types.UninitialisedField(self, 'CtctDtls', RequestedIndicator, False)
 
 	@property
 	def LckSts(self):
@@ -52,12 +52,12 @@ class PartyDataReturnCriteria2(base_types._BaseFieldType):
 
 	@LckSts.setter
 	def LckSts(self, value):
-		self._LckSts = value if type(value) != base_types.auto else self.make_default("LckSts")
+		self._LckSts = value if value is not None else base_types.UninitialisedField(self, 'LckSts', RequestedIndicator, False)
 
 	@LckSts.deleter
 	def LckSts(self):
 		del self._LckSts
-		self._LckSts = None
+		self._LckSts = base_types.UninitialisedField(self, 'LckSts', RequestedIndicator, False)
 
 	@property
 	def MktSpcfcAttr(self):
@@ -65,12 +65,12 @@ class PartyDataReturnCriteria2(base_types._BaseFieldType):
 
 	@MktSpcfcAttr.setter
 	def MktSpcfcAttr(self, value):
-		self._MktSpcfcAttr = value if type(value) != base_types.auto else self.make_default("MktSpcfcAttr")
+		self._MktSpcfcAttr = value if value is not None else base_types.UninitialisedField(self, 'MktSpcfcAttr', RequestedIndicator, False)
 
 	@MktSpcfcAttr.deleter
 	def MktSpcfcAttr(self):
 		del self._MktSpcfcAttr
-		self._MktSpcfcAttr = None
+		self._MktSpcfcAttr = base_types.UninitialisedField(self, 'MktSpcfcAttr', RequestedIndicator, False)
 
 	@property
 	def Nm(self):
@@ -78,12 +78,12 @@ class PartyDataReturnCriteria2(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', RequestedIndicator, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', RequestedIndicator, False)
 
 	@property
 	def OpngDt(self):
@@ -91,12 +91,12 @@ class PartyDataReturnCriteria2(base_types._BaseFieldType):
 
 	@OpngDt.setter
 	def OpngDt(self, value):
-		self._OpngDt = value if type(value) != base_types.auto else self.make_default("OpngDt")
+		self._OpngDt = value if value is not None else base_types.UninitialisedField(self, 'OpngDt', RequestedIndicator, False)
 
 	@OpngDt.deleter
 	def OpngDt(self):
 		del self._OpngDt
-		self._OpngDt = None
+		self._OpngDt = base_types.UninitialisedField(self, 'OpngDt', RequestedIndicator, False)
 
 	@property
 	def PtyId(self):
@@ -104,12 +104,12 @@ class PartyDataReturnCriteria2(base_types._BaseFieldType):
 
 	@PtyId.setter
 	def PtyId(self, value):
-		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
+		self._PtyId = value if value is not None else base_types.UninitialisedField(self, 'PtyId', RequestedIndicator, False)
 
 	@PtyId.deleter
 	def PtyId(self):
 		del self._PtyId
-		self._PtyId = None
+		self._PtyId = base_types.UninitialisedField(self, 'PtyId', RequestedIndicator, False)
 
 	@property
 	def ResTp(self):
@@ -117,12 +117,12 @@ class PartyDataReturnCriteria2(base_types._BaseFieldType):
 
 	@ResTp.setter
 	def ResTp(self, value):
-		self._ResTp = value if type(value) != base_types.auto else self.make_default("ResTp")
+		self._ResTp = value if value is not None else base_types.UninitialisedField(self, 'ResTp', RequestedIndicator, False)
 
 	@ResTp.deleter
 	def ResTp(self):
 		del self._ResTp
-		self._ResTp = None
+		self._ResTp = base_types.UninitialisedField(self, 'ResTp', RequestedIndicator, False)
 
 	@property
 	def RspnsblPtyId(self):
@@ -130,12 +130,12 @@ class PartyDataReturnCriteria2(base_types._BaseFieldType):
 
 	@RspnsblPtyId.setter
 	def RspnsblPtyId(self, value):
-		self._RspnsblPtyId = value if type(value) != base_types.auto else self.make_default("RspnsblPtyId")
+		self._RspnsblPtyId = value if value is not None else base_types.UninitialisedField(self, 'RspnsblPtyId', RequestedIndicator, False)
 
 	@RspnsblPtyId.deleter
 	def RspnsblPtyId(self):
 		del self._RspnsblPtyId
-		self._RspnsblPtyId = None
+		self._RspnsblPtyId = base_types.UninitialisedField(self, 'RspnsblPtyId', RequestedIndicator, False)
 
 	@property
 	def RstrctdOnDt(self):
@@ -143,12 +143,12 @@ class PartyDataReturnCriteria2(base_types._BaseFieldType):
 
 	@RstrctdOnDt.setter
 	def RstrctdOnDt(self, value):
-		self._RstrctdOnDt = value if type(value) != base_types.auto else self.make_default("RstrctdOnDt")
+		self._RstrctdOnDt = value if value is not None else base_types.UninitialisedField(self, 'RstrctdOnDt', RequestedIndicator, False)
 
 	@RstrctdOnDt.deleter
 	def RstrctdOnDt(self):
 		del self._RstrctdOnDt
-		self._RstrctdOnDt = None
+		self._RstrctdOnDt = base_types.UninitialisedField(self, 'RstrctdOnDt', RequestedIndicator, False)
 
 	@property
 	def RstrctnId(self):
@@ -156,12 +156,12 @@ class PartyDataReturnCriteria2(base_types._BaseFieldType):
 
 	@RstrctnId.setter
 	def RstrctnId(self, value):
-		self._RstrctnId = value if type(value) != base_types.auto else self.make_default("RstrctnId")
+		self._RstrctnId = value if value is not None else base_types.UninitialisedField(self, 'RstrctnId', RequestedIndicator, False)
 
 	@RstrctnId.deleter
 	def RstrctnId(self):
 		del self._RstrctnId
-		self._RstrctnId = None
+		self._RstrctnId = base_types.UninitialisedField(self, 'RstrctnId', RequestedIndicator, False)
 
 	@property
 	def ShrtNm(self):
@@ -169,12 +169,12 @@ class PartyDataReturnCriteria2(base_types._BaseFieldType):
 
 	@ShrtNm.setter
 	def ShrtNm(self, value):
-		self._ShrtNm = value if type(value) != base_types.auto else self.make_default("ShrtNm")
+		self._ShrtNm = value if value is not None else base_types.UninitialisedField(self, 'ShrtNm', RequestedIndicator, False)
 
 	@ShrtNm.deleter
 	def ShrtNm(self):
 		del self._ShrtNm
-		self._ShrtNm = None
+		self._ShrtNm = base_types.UninitialisedField(self, 'ShrtNm', RequestedIndicator, False)
 
 	@property
 	def TechAdr(self):
@@ -182,12 +182,12 @@ class PartyDataReturnCriteria2(base_types._BaseFieldType):
 
 	@TechAdr.setter
 	def TechAdr(self, value):
-		self._TechAdr = value if type(value) != base_types.auto else self.make_default("TechAdr")
+		self._TechAdr = value if value is not None else base_types.UninitialisedField(self, 'TechAdr', RequestedIndicator, False)
 
 	@TechAdr.deleter
 	def TechAdr(self):
 		del self._TechAdr
-		self._TechAdr = None
+		self._TechAdr = base_types.UninitialisedField(self, 'TechAdr', RequestedIndicator, False)
 
 	@property
 	def Tp(self):
@@ -195,12 +195,12 @@ class PartyDataReturnCriteria2(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', RequestedIndicator, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', RequestedIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Adr', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),

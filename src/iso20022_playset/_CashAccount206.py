@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountIdentificationAndName7 import AccountIdentificationAndName7
-from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
-from ._Max35Text import Max35Text
+from . import AccountIdentificationAndName7
+from . import AnyBICDec2014Identifier
+from . import Max35Text
 
 class CashAccount206(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CashAccount206(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', AccountIdentificationAndName7, False)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', AccountIdentificationAndName7, False)
 
 	@property
 	def AcctTpDesc(self):
@@ -28,12 +28,12 @@ class CashAccount206(base_types._BaseFieldType):
 
 	@AcctTpDesc.setter
 	def AcctTpDesc(self, value):
-		self._AcctTpDesc = value if type(value) != base_types.auto else self.make_default("AcctTpDesc")
+		self._AcctTpDesc = value if value is not None else base_types.UninitialisedField(self, 'AcctTpDesc', Max35Text, False)
 
 	@AcctTpDesc.deleter
 	def AcctTpDesc(self):
 		del self._AcctTpDesc
-		self._AcctTpDesc = None
+		self._AcctTpDesc = base_types.UninitialisedField(self, 'AcctTpDesc', Max35Text, False)
 
 	@property
 	def Svcr(self):
@@ -41,12 +41,12 @@ class CashAccount206(base_types._BaseFieldType):
 
 	@Svcr.setter
 	def Svcr(self, value):
-		self._Svcr = value if type(value) != base_types.auto else self.make_default("Svcr")
+		self._Svcr = value if value is not None else base_types.UninitialisedField(self, 'Svcr', AnyBICDec2014Identifier, False)
 
 	@Svcr.deleter
 	def Svcr(self):
 		del self._Svcr
-		self._Svcr = None
+		self._Svcr = base_types.UninitialisedField(self, 'Svcr', AnyBICDec2014Identifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=AccountIdentificationAndName7, min=1, max=1, mutex_group=None, array=False),

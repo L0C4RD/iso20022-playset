@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection5 import AmountAndDirection5
-from ._PartyIdentification136 import PartyIdentification136
-from ._PenaltyPartyIdentification1 import PenaltyPartyIdentification1
-from ._PenaltyRecord4 import PenaltyRecord4
+from . import AmountAndDirection5
+from . import PartyIdentification136
+from . import PenaltyPartyIdentification1
+from . import PenaltyRecord4
 
 class PenaltyPerCounterparty4(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class PenaltyPerCounterparty4(base_types._BaseFieldType):
 
 	@AcctSvcr.setter
 	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
+		self._AcctSvcr = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcr', PartyIdentification136, False)
 
 	@AcctSvcr.deleter
 	def AcctSvcr(self):
 		del self._AcctSvcr
-		self._AcctSvcr = None
+		self._AcctSvcr = base_types.UninitialisedField(self, 'AcctSvcr', PartyIdentification136, False)
 
 	@property
 	def AggtdNetAmt(self):
@@ -29,12 +29,12 @@ class PenaltyPerCounterparty4(base_types._BaseFieldType):
 
 	@AggtdNetAmt.setter
 	def AggtdNetAmt(self, value):
-		self._AggtdNetAmt = value if type(value) != base_types.auto else self.make_default("AggtdNetAmt")
+		self._AggtdNetAmt = value if value is not None else base_types.UninitialisedField(self, 'AggtdNetAmt', AmountAndDirection5, False)
 
 	@AggtdNetAmt.deleter
 	def AggtdNetAmt(self):
 		del self._AggtdNetAmt
-		self._AggtdNetAmt = None
+		self._AggtdNetAmt = base_types.UninitialisedField(self, 'AggtdNetAmt', AmountAndDirection5, False)
 
 	@property
 	def PnltyDtls(self):
@@ -42,12 +42,12 @@ class PenaltyPerCounterparty4(base_types._BaseFieldType):
 
 	@PnltyDtls.setter
 	def PnltyDtls(self, value):
-		self._PnltyDtls = value if type(value) != base_types.auto else self.make_default("PnltyDtls")
+		self._PnltyDtls = value if value is not None else base_types.UninitialisedField(self, 'PnltyDtls', PenaltyRecord4, True)
 
 	@PnltyDtls.deleter
 	def PnltyDtls(self):
 		del self._PnltyDtls
-		self._PnltyDtls = None
+		self._PnltyDtls = base_types.UninitialisedField(self, 'PnltyDtls', PenaltyRecord4, True)
 
 	@property
 	def PtyId(self):
@@ -55,12 +55,12 @@ class PenaltyPerCounterparty4(base_types._BaseFieldType):
 
 	@PtyId.setter
 	def PtyId(self, value):
-		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
+		self._PtyId = value if value is not None else base_types.UninitialisedField(self, 'PtyId', PenaltyPartyIdentification1, False)
 
 	@PtyId.deleter
 	def PtyId(self):
 		del self._PtyId
-		self._PtyId = None
+		self._PtyId = base_types.UninitialisedField(self, 'PtyId', PenaltyPartyIdentification1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctSvcr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),

@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._BaseOneRate import BaseOneRate
-from ._CashAccount40 import CashAccount40
-from ._Charges6 import Charges6
-from ._CreditDebitCode import CreditDebitCode
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._Max140Text import Max140Text
-from ._TransactionReferences6 import TransactionReferences6
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import BaseOneRate
+from . import CashAccount40
+from . import Charges6
+from . import CreditDebitCode
+from . import DateAndDateTime2Choice
+from . import Max140Text
+from . import TransactionReferences6
 
 class BookingConfirmation5(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class BookingConfirmation5(base_types._BaseFieldType):
 
 	@Acct.setter
 	def Acct(self, value):
-		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
+		self._Acct = value if value is not None else base_types.UninitialisedField(self, 'Acct', CashAccount40, False)
 
 	@Acct.deleter
 	def Acct(self):
 		del self._Acct
-		self._Acct = None
+		self._Acct = base_types.UninitialisedField(self, 'Acct', CashAccount40, False)
 
 	@property
 	def Amt(self):
@@ -33,12 +33,12 @@ class BookingConfirmation5(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def BookgDt(self):
@@ -46,12 +46,12 @@ class BookingConfirmation5(base_types._BaseFieldType):
 
 	@BookgDt.setter
 	def BookgDt(self, value):
-		self._BookgDt = value if type(value) != base_types.auto else self.make_default("BookgDt")
+		self._BookgDt = value if value is not None else base_types.UninitialisedField(self, 'BookgDt', DateAndDateTime2Choice, False)
 
 	@BookgDt.deleter
 	def BookgDt(self):
 		del self._BookgDt
-		self._BookgDt = None
+		self._BookgDt = base_types.UninitialisedField(self, 'BookgDt', DateAndDateTime2Choice, False)
 
 	@property
 	def CdtDbtInd(self):
@@ -59,12 +59,12 @@ class BookingConfirmation5(base_types._BaseFieldType):
 
 	@CdtDbtInd.setter
 	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+		self._CdtDbtInd = value if value is not None else base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@CdtDbtInd.deleter
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
-		self._CdtDbtInd = None
+		self._CdtDbtInd = base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@property
 	def Chrgs(self):
@@ -72,12 +72,12 @@ class BookingConfirmation5(base_types._BaseFieldType):
 
 	@Chrgs.setter
 	def Chrgs(self, value):
-		self._Chrgs = value if type(value) != base_types.auto else self.make_default("Chrgs")
+		self._Chrgs = value if value is not None else base_types.UninitialisedField(self, 'Chrgs', Charges6, False)
 
 	@Chrgs.deleter
 	def Chrgs(self):
 		del self._Chrgs
-		self._Chrgs = None
+		self._Chrgs = base_types.UninitialisedField(self, 'Chrgs', Charges6, False)
 
 	@property
 	def Refs(self):
@@ -85,12 +85,12 @@ class BookingConfirmation5(base_types._BaseFieldType):
 
 	@Refs.setter
 	def Refs(self, value):
-		self._Refs = value if type(value) != base_types.auto else self.make_default("Refs")
+		self._Refs = value if value is not None else base_types.UninitialisedField(self, 'Refs', TransactionReferences6, False)
 
 	@Refs.deleter
 	def Refs(self):
 		del self._Refs
-		self._Refs = None
+		self._Refs = base_types.UninitialisedField(self, 'Refs', TransactionReferences6, False)
 
 	@property
 	def Rsn(self):
@@ -98,12 +98,12 @@ class BookingConfirmation5(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', Max140Text, False)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', Max140Text, False)
 
 	@property
 	def ValDt(self):
@@ -111,12 +111,12 @@ class BookingConfirmation5(base_types._BaseFieldType):
 
 	@ValDt.setter
 	def ValDt(self, value):
-		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
+		self._ValDt = value if value is not None else base_types.UninitialisedField(self, 'ValDt', DateAndDateTime2Choice, False)
 
 	@ValDt.deleter
 	def ValDt(self):
 		del self._ValDt
-		self._ValDt = None
+		self._ValDt = base_types.UninitialisedField(self, 'ValDt', DateAndDateTime2Choice, False)
 
 	@property
 	def XchgRate(self):
@@ -124,12 +124,12 @@ class BookingConfirmation5(base_types._BaseFieldType):
 
 	@XchgRate.setter
 	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != base_types.auto else self.make_default("XchgRate")
+		self._XchgRate = value if value is not None else base_types.UninitialisedField(self, 'XchgRate', BaseOneRate, False)
 
 	@XchgRate.deleter
 	def XchgRate(self):
 		del self._XchgRate
-		self._XchgRate = None
+		self._XchgRate = base_types.UninitialisedField(self, 'XchgRate', BaseOneRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),

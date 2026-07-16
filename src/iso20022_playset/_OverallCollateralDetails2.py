@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CollateralAmount15 import CollateralAmount15
-from ._CollateralStatus1Code import CollateralStatus1Code
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._Max350Text import Max350Text
-from ._PercentageRate import PercentageRate
+from . import CollateralAmount15
+from . import CollateralStatus1Code
+from . import DateAndDateTime2Choice
+from . import Max350Text
+from . import PercentageRate
 
 class OverallCollateralDetails2(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class OverallCollateralDetails2(base_types._BaseFieldType):
 
 	@CollAddtlDtls.setter
 	def CollAddtlDtls(self, value):
-		self._CollAddtlDtls = value if type(value) != base_types.auto else self.make_default("CollAddtlDtls")
+		self._CollAddtlDtls = value if value is not None else base_types.UninitialisedField(self, 'CollAddtlDtls', Max350Text, False)
 
 	@CollAddtlDtls.deleter
 	def CollAddtlDtls(self):
 		del self._CollAddtlDtls
-		self._CollAddtlDtls = None
+		self._CollAddtlDtls = base_types.UninitialisedField(self, 'CollAddtlDtls', Max350Text, False)
 
 	@property
 	def GblCollSts(self):
@@ -30,12 +30,12 @@ class OverallCollateralDetails2(base_types._BaseFieldType):
 
 	@GblCollSts.setter
 	def GblCollSts(self, value):
-		self._GblCollSts = value if type(value) != base_types.auto else self.make_default("GblCollSts")
+		self._GblCollSts = value if value is not None else base_types.UninitialisedField(self, 'GblCollSts', CollateralStatus1Code, False)
 
 	@GblCollSts.deleter
 	def GblCollSts(self):
 		del self._GblCollSts
-		self._GblCollSts = None
+		self._GblCollSts = base_types.UninitialisedField(self, 'GblCollSts', CollateralStatus1Code, False)
 
 	@property
 	def MrgnRate(self):
@@ -43,12 +43,12 @@ class OverallCollateralDetails2(base_types._BaseFieldType):
 
 	@MrgnRate.setter
 	def MrgnRate(self, value):
-		self._MrgnRate = value if type(value) != base_types.auto else self.make_default("MrgnRate")
+		self._MrgnRate = value if value is not None else base_types.UninitialisedField(self, 'MrgnRate', PercentageRate, False)
 
 	@MrgnRate.deleter
 	def MrgnRate(self):
 		del self._MrgnRate
-		self._MrgnRate = None
+		self._MrgnRate = base_types.UninitialisedField(self, 'MrgnRate', PercentageRate, False)
 
 	@property
 	def ValtnAmts(self):
@@ -56,12 +56,12 @@ class OverallCollateralDetails2(base_types._BaseFieldType):
 
 	@ValtnAmts.setter
 	def ValtnAmts(self, value):
-		self._ValtnAmts = value if type(value) != base_types.auto else self.make_default("ValtnAmts")
+		self._ValtnAmts = value if value is not None else base_types.UninitialisedField(self, 'ValtnAmts', CollateralAmount15, False)
 
 	@ValtnAmts.deleter
 	def ValtnAmts(self):
 		del self._ValtnAmts
-		self._ValtnAmts = None
+		self._ValtnAmts = base_types.UninitialisedField(self, 'ValtnAmts', CollateralAmount15, False)
 
 	@property
 	def ValtnDt(self):
@@ -69,12 +69,12 @@ class OverallCollateralDetails2(base_types._BaseFieldType):
 
 	@ValtnDt.setter
 	def ValtnDt(self, value):
-		self._ValtnDt = value if type(value) != base_types.auto else self.make_default("ValtnDt")
+		self._ValtnDt = value if value is not None else base_types.UninitialisedField(self, 'ValtnDt', DateAndDateTime2Choice, False)
 
 	@ValtnDt.deleter
 	def ValtnDt(self):
 		del self._ValtnDt
-		self._ValtnDt = None
+		self._ValtnDt = base_types.UninitialisedField(self, 'ValtnDt', DateAndDateTime2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollAddtlDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),

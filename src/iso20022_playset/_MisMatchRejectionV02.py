@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MessageIdentification1 import MessageIdentification1
-from ._RejectionReason1Choice import RejectionReason1Choice
-from ._SimpleIdentificationInformation import SimpleIdentificationInformation
+from . import MessageIdentification1
+from . import RejectionReason1Choice
+from . import SimpleIdentificationInformation
 
 class MisMatchRejectionV02(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class MisMatchRejectionV02(base_types._BaseFieldType):
 
 	@DataSetMtchRptRef.setter
 	def DataSetMtchRptRef(self, value):
-		self._DataSetMtchRptRef = value if type(value) != base_types.auto else self.make_default("DataSetMtchRptRef")
+		self._DataSetMtchRptRef = value if value is not None else base_types.UninitialisedField(self, 'DataSetMtchRptRef', MessageIdentification1, False)
 
 	@DataSetMtchRptRef.deleter
 	def DataSetMtchRptRef(self):
 		del self._DataSetMtchRptRef
-		self._DataSetMtchRptRef = None
+		self._DataSetMtchRptRef = base_types.UninitialisedField(self, 'DataSetMtchRptRef', MessageIdentification1, False)
 
 	@property
 	def RjctnId(self):
@@ -28,12 +28,12 @@ class MisMatchRejectionV02(base_types._BaseFieldType):
 
 	@RjctnId.setter
 	def RjctnId(self, value):
-		self._RjctnId = value if type(value) != base_types.auto else self.make_default("RjctnId")
+		self._RjctnId = value if value is not None else base_types.UninitialisedField(self, 'RjctnId', MessageIdentification1, False)
 
 	@RjctnId.deleter
 	def RjctnId(self):
 		del self._RjctnId
-		self._RjctnId = None
+		self._RjctnId = base_types.UninitialisedField(self, 'RjctnId', MessageIdentification1, False)
 
 	@property
 	def RjctnRsn(self):
@@ -41,12 +41,12 @@ class MisMatchRejectionV02(base_types._BaseFieldType):
 
 	@RjctnRsn.setter
 	def RjctnRsn(self, value):
-		self._RjctnRsn = value if type(value) != base_types.auto else self.make_default("RjctnRsn")
+		self._RjctnRsn = value if value is not None else base_types.UninitialisedField(self, 'RjctnRsn', RejectionReason1Choice, False)
 
 	@RjctnRsn.deleter
 	def RjctnRsn(self):
 		del self._RjctnRsn
-		self._RjctnRsn = None
+		self._RjctnRsn = base_types.UninitialisedField(self, 'RjctnRsn', RejectionReason1Choice, False)
 
 	@property
 	def SubmitrTxRef(self):
@@ -54,12 +54,12 @@ class MisMatchRejectionV02(base_types._BaseFieldType):
 
 	@SubmitrTxRef.setter
 	def SubmitrTxRef(self, value):
-		self._SubmitrTxRef = value if type(value) != base_types.auto else self.make_default("SubmitrTxRef")
+		self._SubmitrTxRef = value if value is not None else base_types.UninitialisedField(self, 'SubmitrTxRef', SimpleIdentificationInformation, False)
 
 	@SubmitrTxRef.deleter
 	def SubmitrTxRef(self):
 		del self._SubmitrTxRef
-		self._SubmitrTxRef = None
+		self._SubmitrTxRef = base_types.UninitialisedField(self, 'SubmitrTxRef', SimpleIdentificationInformation, False)
 
 	@property
 	def TxId(self):
@@ -67,12 +67,12 @@ class MisMatchRejectionV02(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', SimpleIdentificationInformation, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', SimpleIdentificationInformation, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DataSetMtchRptRef', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),

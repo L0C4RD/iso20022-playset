@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._AmountAndDirection102 import AmountAndDirection102
-from ._EndOfDayRequirement1 import EndOfDayRequirement1
-from ._Fraction5DecimalNumber import Fraction5DecimalNumber
-from ._Max256Text import Max256Text
-from ._NonNegativeFraction5DecimalNumber import NonNegativeFraction5DecimalNumber
+from . import ActiveCurrencyAnd24Amount
+from . import ActiveCurrencyAndAmount
+from . import AmountAndDirection102
+from . import EndOfDayRequirement1
+from . import Fraction5DecimalNumber
+from . import Max256Text
+from . import NonNegativeFraction5DecimalNumber
 
 class Position1(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class Position1(base_types._BaseFieldType):
 
 	@GrssDltaEqvtQty.setter
 	def GrssDltaEqvtQty(self, value):
-		self._GrssDltaEqvtQty = value if type(value) != base_types.auto else self.make_default("GrssDltaEqvtQty")
+		self._GrssDltaEqvtQty = value if value is not None else base_types.UninitialisedField(self, 'GrssDltaEqvtQty', NonNegativeFraction5DecimalNumber, False)
 
 	@GrssDltaEqvtQty.deleter
 	def GrssDltaEqvtQty(self):
 		del self._GrssDltaEqvtQty
-		self._GrssDltaEqvtQty = None
+		self._GrssDltaEqvtQty = base_types.UninitialisedField(self, 'GrssDltaEqvtQty', NonNegativeFraction5DecimalNumber, False)
 
 	@property
 	def GrssDltaEqvtVal(self):
@@ -32,12 +32,12 @@ class Position1(base_types._BaseFieldType):
 
 	@GrssDltaEqvtVal.setter
 	def GrssDltaEqvtVal(self, value):
-		self._GrssDltaEqvtVal = value if type(value) != base_types.auto else self.make_default("GrssDltaEqvtVal")
+		self._GrssDltaEqvtVal = value if value is not None else base_types.UninitialisedField(self, 'GrssDltaEqvtVal', ActiveCurrencyAndAmount, False)
 
 	@GrssDltaEqvtVal.deleter
 	def GrssDltaEqvtVal(self):
 		del self._GrssDltaEqvtVal
-		self._GrssDltaEqvtVal = None
+		self._GrssDltaEqvtVal = base_types.UninitialisedField(self, 'GrssDltaEqvtVal', ActiveCurrencyAndAmount, False)
 
 	@property
 	def GrssMktVal(self):
@@ -45,12 +45,12 @@ class Position1(base_types._BaseFieldType):
 
 	@GrssMktVal.setter
 	def GrssMktVal(self, value):
-		self._GrssMktVal = value if type(value) != base_types.auto else self.make_default("GrssMktVal")
+		self._GrssMktVal = value if value is not None else base_types.UninitialisedField(self, 'GrssMktVal', ActiveCurrencyAndAmount, False)
 
 	@GrssMktVal.deleter
 	def GrssMktVal(self):
 		del self._GrssMktVal
-		self._GrssMktVal = None
+		self._GrssMktVal = base_types.UninitialisedField(self, 'GrssMktVal', ActiveCurrencyAndAmount, False)
 
 	@property
 	def GrssNtnl(self):
@@ -58,12 +58,12 @@ class Position1(base_types._BaseFieldType):
 
 	@GrssNtnl.setter
 	def GrssNtnl(self, value):
-		self._GrssNtnl = value if type(value) != base_types.auto else self.make_default("GrssNtnl")
+		self._GrssNtnl = value if value is not None else base_types.UninitialisedField(self, 'GrssNtnl', ActiveCurrencyAnd24Amount, False)
 
 	@GrssNtnl.deleter
 	def GrssNtnl(self):
 		del self._GrssNtnl
-		self._GrssNtnl = None
+		self._GrssNtnl = base_types.UninitialisedField(self, 'GrssNtnl', ActiveCurrencyAnd24Amount, False)
 
 	@property
 	def NetDltaEqvtQty(self):
@@ -71,12 +71,12 @@ class Position1(base_types._BaseFieldType):
 
 	@NetDltaEqvtQty.setter
 	def NetDltaEqvtQty(self, value):
-		self._NetDltaEqvtQty = value if type(value) != base_types.auto else self.make_default("NetDltaEqvtQty")
+		self._NetDltaEqvtQty = value if value is not None else base_types.UninitialisedField(self, 'NetDltaEqvtQty', Fraction5DecimalNumber, False)
 
 	@NetDltaEqvtQty.deleter
 	def NetDltaEqvtQty(self):
 		del self._NetDltaEqvtQty
-		self._NetDltaEqvtQty = None
+		self._NetDltaEqvtQty = base_types.UninitialisedField(self, 'NetDltaEqvtQty', Fraction5DecimalNumber, False)
 
 	@property
 	def NetDltaEqvtVal(self):
@@ -84,12 +84,12 @@ class Position1(base_types._BaseFieldType):
 
 	@NetDltaEqvtVal.setter
 	def NetDltaEqvtVal(self, value):
-		self._NetDltaEqvtVal = value if type(value) != base_types.auto else self.make_default("NetDltaEqvtVal")
+		self._NetDltaEqvtVal = value if value is not None else base_types.UninitialisedField(self, 'NetDltaEqvtVal', AmountAndDirection102, False)
 
 	@NetDltaEqvtVal.deleter
 	def NetDltaEqvtVal(self):
 		del self._NetDltaEqvtVal
-		self._NetDltaEqvtVal = None
+		self._NetDltaEqvtVal = base_types.UninitialisedField(self, 'NetDltaEqvtVal', AmountAndDirection102, False)
 
 	@property
 	def NetNtnl(self):
@@ -97,12 +97,12 @@ class Position1(base_types._BaseFieldType):
 
 	@NetNtnl.setter
 	def NetNtnl(self, value):
-		self._NetNtnl = value if type(value) != base_types.auto else self.make_default("NetNtnl")
+		self._NetNtnl = value if value is not None else base_types.UninitialisedField(self, 'NetNtnl', AmountAndDirection102, False)
 
 	@NetNtnl.deleter
 	def NetNtnl(self):
 		del self._NetNtnl
-		self._NetNtnl = None
+		self._NetNtnl = base_types.UninitialisedField(self, 'NetNtnl', AmountAndDirection102, False)
 
 	@property
 	def PdctId(self):
@@ -110,12 +110,12 @@ class Position1(base_types._BaseFieldType):
 
 	@PdctId.setter
 	def PdctId(self, value):
-		self._PdctId = value if type(value) != base_types.auto else self.make_default("PdctId")
+		self._PdctId = value if value is not None else base_types.UninitialisedField(self, 'PdctId', Max256Text, False)
 
 	@PdctId.deleter
 	def PdctId(self):
 		del self._PdctId
-		self._PdctId = None
+		self._PdctId = base_types.UninitialisedField(self, 'PdctId', Max256Text, False)
 
 	@property
 	def RskRqrmnt(self):
@@ -123,12 +123,12 @@ class Position1(base_types._BaseFieldType):
 
 	@RskRqrmnt.setter
 	def RskRqrmnt(self, value):
-		self._RskRqrmnt = value if type(value) != base_types.auto else self.make_default("RskRqrmnt")
+		self._RskRqrmnt = value if value is not None else base_types.UninitialisedField(self, 'RskRqrmnt', EndOfDayRequirement1, False)
 
 	@RskRqrmnt.deleter
 	def RskRqrmnt(self):
 		del self._RskRqrmnt
-		self._RskRqrmnt = None
+		self._RskRqrmnt = base_types.UninitialisedField(self, 'RskRqrmnt', EndOfDayRequirement1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='GrssDltaEqvtQty', type=NonNegativeFraction5DecimalNumber, min=0, max=1, mutex_group=None, array=False),

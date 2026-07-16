@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ModifyTransactionV10 import ModifyTransactionV10
+from . import ModifyTransactionV10
 
 class CAMT_007_001_10():
 
@@ -18,12 +18,12 @@ class CAMT_007_001_10():
 
 		@ModfyTx.setter
 		def ModfyTx(self, value):
-			self._ModfyTx = value if type(value) != base_types.auto else self.make_default("ModfyTx")
+			self._ModfyTx = value if value is not None else base_types.UninitialisedField(self, 'ModfyTx', ModifyTransactionV10, False)
 
 		@ModfyTx.deleter
 		def ModfyTx(self):
 			del self._ModfyTx
-			self._ModfyTx = None
+			self._ModfyTx = base_types.UninitialisedField(self, 'ModfyTx', ModifyTransactionV10, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ModfyTx', type=ModifyTransactionV10, min=1, max=1, mutex_group=None, array=False),

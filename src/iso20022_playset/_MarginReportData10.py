@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContractModification8 import ContractModification8
-from ._ISODate import ISODate
-from ._ISODateTime import ISODateTime
-from ._MarginCollateralReport5 import MarginCollateralReport5
-from ._PostedMarginOrCollateral6 import PostedMarginOrCollateral6
-from ._ReceivedMarginOrCollateral6 import ReceivedMarginOrCollateral6
-from ._SupplementaryData1 import SupplementaryData1
-from ._TechnicalAttributes6 import TechnicalAttributes6
-from ._TradeCounterpartyReport20 import TradeCounterpartyReport20
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._UniqueTransactionIdentifier2Choice import UniqueTransactionIdentifier2Choice
+from . import ContractModification8
+from . import ISODate
+from . import ISODateTime
+from . import MarginCollateralReport5
+from . import PostedMarginOrCollateral6
+from . import ReceivedMarginOrCollateral6
+from . import SupplementaryData1
+from . import TechnicalAttributes6
+from . import TradeCounterpartyReport20
+from . import TrueFalseIndicator
+from . import UniqueTransactionIdentifier2Choice
 
 class MarginReportData10(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class MarginReportData10(base_types._BaseFieldType):
 
 	@Coll.setter
 	def Coll(self, value):
-		self._Coll = value if type(value) != base_types.auto else self.make_default("Coll")
+		self._Coll = value if value is not None else base_types.UninitialisedField(self, 'Coll', MarginCollateralReport5, False)
 
 	@Coll.deleter
 	def Coll(self):
 		del self._Coll
-		self._Coll = None
+		self._Coll = base_types.UninitialisedField(self, 'Coll', MarginCollateralReport5, False)
 
 	@property
 	def CtrPtyId(self):
@@ -36,12 +36,12 @@ class MarginReportData10(base_types._BaseFieldType):
 
 	@CtrPtyId.setter
 	def CtrPtyId(self, value):
-		self._CtrPtyId = value if type(value) != base_types.auto else self.make_default("CtrPtyId")
+		self._CtrPtyId = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyId', TradeCounterpartyReport20, False)
 
 	@CtrPtyId.deleter
 	def CtrPtyId(self):
 		del self._CtrPtyId
-		self._CtrPtyId = None
+		self._CtrPtyId = base_types.UninitialisedField(self, 'CtrPtyId', TradeCounterpartyReport20, False)
 
 	@property
 	def CtrPtyRatgThrshldInd(self):
@@ -49,12 +49,12 @@ class MarginReportData10(base_types._BaseFieldType):
 
 	@CtrPtyRatgThrshldInd.setter
 	def CtrPtyRatgThrshldInd(self, value):
-		self._CtrPtyRatgThrshldInd = value if type(value) != base_types.auto else self.make_default("CtrPtyRatgThrshldInd")
+		self._CtrPtyRatgThrshldInd = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyRatgThrshldInd', TrueFalseIndicator, False)
 
 	@CtrPtyRatgThrshldInd.deleter
 	def CtrPtyRatgThrshldInd(self):
 		del self._CtrPtyRatgThrshldInd
-		self._CtrPtyRatgThrshldInd = None
+		self._CtrPtyRatgThrshldInd = base_types.UninitialisedField(self, 'CtrPtyRatgThrshldInd', TrueFalseIndicator, False)
 
 	@property
 	def CtrPtyRatgTrggrInd(self):
@@ -62,12 +62,12 @@ class MarginReportData10(base_types._BaseFieldType):
 
 	@CtrPtyRatgTrggrInd.setter
 	def CtrPtyRatgTrggrInd(self, value):
-		self._CtrPtyRatgTrggrInd = value if type(value) != base_types.auto else self.make_default("CtrPtyRatgTrggrInd")
+		self._CtrPtyRatgTrggrInd = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyRatgTrggrInd', TrueFalseIndicator, False)
 
 	@CtrPtyRatgTrggrInd.deleter
 	def CtrPtyRatgTrggrInd(self):
 		del self._CtrPtyRatgTrggrInd
-		self._CtrPtyRatgTrggrInd = None
+		self._CtrPtyRatgTrggrInd = base_types.UninitialisedField(self, 'CtrPtyRatgTrggrInd', TrueFalseIndicator, False)
 
 	@property
 	def CtrctMod(self):
@@ -75,12 +75,12 @@ class MarginReportData10(base_types._BaseFieldType):
 
 	@CtrctMod.setter
 	def CtrctMod(self, value):
-		self._CtrctMod = value if type(value) != base_types.auto else self.make_default("CtrctMod")
+		self._CtrctMod = value if value is not None else base_types.UninitialisedField(self, 'CtrctMod', ContractModification8, False)
 
 	@CtrctMod.deleter
 	def CtrctMod(self):
 		del self._CtrctMod
-		self._CtrctMod = None
+		self._CtrctMod = base_types.UninitialisedField(self, 'CtrctMod', ContractModification8, False)
 
 	@property
 	def EvtDt(self):
@@ -88,12 +88,12 @@ class MarginReportData10(base_types._BaseFieldType):
 
 	@EvtDt.setter
 	def EvtDt(self, value):
-		self._EvtDt = value if type(value) != base_types.auto else self.make_default("EvtDt")
+		self._EvtDt = value if value is not None else base_types.UninitialisedField(self, 'EvtDt', ISODate, False)
 
 	@EvtDt.deleter
 	def EvtDt(self):
 		del self._EvtDt
-		self._EvtDt = None
+		self._EvtDt = base_types.UninitialisedField(self, 'EvtDt', ISODate, False)
 
 	@property
 	def PstdMrgnOrColl(self):
@@ -101,12 +101,12 @@ class MarginReportData10(base_types._BaseFieldType):
 
 	@PstdMrgnOrColl.setter
 	def PstdMrgnOrColl(self, value):
-		self._PstdMrgnOrColl = value if type(value) != base_types.auto else self.make_default("PstdMrgnOrColl")
+		self._PstdMrgnOrColl = value if value is not None else base_types.UninitialisedField(self, 'PstdMrgnOrColl', PostedMarginOrCollateral6, False)
 
 	@PstdMrgnOrColl.deleter
 	def PstdMrgnOrColl(self):
 		del self._PstdMrgnOrColl
-		self._PstdMrgnOrColl = None
+		self._PstdMrgnOrColl = base_types.UninitialisedField(self, 'PstdMrgnOrColl', PostedMarginOrCollateral6, False)
 
 	@property
 	def RcvdMrgnOrColl(self):
@@ -114,12 +114,12 @@ class MarginReportData10(base_types._BaseFieldType):
 
 	@RcvdMrgnOrColl.setter
 	def RcvdMrgnOrColl(self, value):
-		self._RcvdMrgnOrColl = value if type(value) != base_types.auto else self.make_default("RcvdMrgnOrColl")
+		self._RcvdMrgnOrColl = value if value is not None else base_types.UninitialisedField(self, 'RcvdMrgnOrColl', ReceivedMarginOrCollateral6, False)
 
 	@RcvdMrgnOrColl.deleter
 	def RcvdMrgnOrColl(self):
 		del self._RcvdMrgnOrColl
-		self._RcvdMrgnOrColl = None
+		self._RcvdMrgnOrColl = base_types.UninitialisedField(self, 'RcvdMrgnOrColl', ReceivedMarginOrCollateral6, False)
 
 	@property
 	def RptgTmStmp(self):
@@ -127,12 +127,12 @@ class MarginReportData10(base_types._BaseFieldType):
 
 	@RptgTmStmp.setter
 	def RptgTmStmp(self, value):
-		self._RptgTmStmp = value if type(value) != base_types.auto else self.make_default("RptgTmStmp")
+		self._RptgTmStmp = value if value is not None else base_types.UninitialisedField(self, 'RptgTmStmp', ISODateTime, False)
 
 	@RptgTmStmp.deleter
 	def RptgTmStmp(self):
 		del self._RptgTmStmp
-		self._RptgTmStmp = None
+		self._RptgTmStmp = base_types.UninitialisedField(self, 'RptgTmStmp', ISODateTime, False)
 
 	@property
 	def SplmtryData(self):
@@ -140,12 +140,12 @@ class MarginReportData10(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TechAttrbts(self):
@@ -153,12 +153,12 @@ class MarginReportData10(base_types._BaseFieldType):
 
 	@TechAttrbts.setter
 	def TechAttrbts(self, value):
-		self._TechAttrbts = value if type(value) != base_types.auto else self.make_default("TechAttrbts")
+		self._TechAttrbts = value if value is not None else base_types.UninitialisedField(self, 'TechAttrbts', TechnicalAttributes6, False)
 
 	@TechAttrbts.deleter
 	def TechAttrbts(self):
 		del self._TechAttrbts
-		self._TechAttrbts = None
+		self._TechAttrbts = base_types.UninitialisedField(self, 'TechAttrbts', TechnicalAttributes6, False)
 
 	@property
 	def TxId(self):
@@ -166,12 +166,12 @@ class MarginReportData10(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', UniqueTransactionIdentifier2Choice, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', UniqueTransactionIdentifier2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Coll', type=MarginCollateralReport5, min=1, max=1, mutex_group=None, array=False),

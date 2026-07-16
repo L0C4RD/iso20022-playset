@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PartyIdentification43 import PartyIdentification43
-from ._Undertaking7 import Undertaking7
+from . import PartyIdentification43
+from . import Undertaking7
 
 class UndertakingNonExtensionStatusAdvice1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class UndertakingNonExtensionStatusAdvice1(base_types._BaseFieldType):
 
 	@NtifngPty.setter
 	def NtifngPty(self, value):
-		self._NtifngPty = value if type(value) != base_types.auto else self.make_default("NtifngPty")
+		self._NtifngPty = value if value is not None else base_types.UninitialisedField(self, 'NtifngPty', PartyIdentification43, False)
 
 	@NtifngPty.deleter
 	def NtifngPty(self):
 		del self._NtifngPty
-		self._NtifngPty = None
+		self._NtifngPty = base_types.UninitialisedField(self, 'NtifngPty', PartyIdentification43, False)
 
 	@property
 	def UdrtkgId(self):
@@ -27,12 +27,12 @@ class UndertakingNonExtensionStatusAdvice1(base_types._BaseFieldType):
 
 	@UdrtkgId.setter
 	def UdrtkgId(self, value):
-		self._UdrtkgId = value if type(value) != base_types.auto else self.make_default("UdrtkgId")
+		self._UdrtkgId = value if value is not None else base_types.UninitialisedField(self, 'UdrtkgId', Undertaking7, False)
 
 	@UdrtkgId.deleter
 	def UdrtkgId(self):
 		del self._UdrtkgId
-		self._UdrtkgId = None
+		self._UdrtkgId = base_types.UninitialisedField(self, 'UdrtkgId', Undertaking7, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NtifngPty', type=PartyIdentification43, min=1, max=1, mutex_group=None, array=False),

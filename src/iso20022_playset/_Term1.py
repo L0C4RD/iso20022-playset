@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Operator1Code import Operator1Code
-from ._RateOrAbsoluteValue1Choice import RateOrAbsoluteValue1Choice
+from . import Operator1Code
+from . import RateOrAbsoluteValue1Choice
 
 class Term1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Term1(base_types._BaseFieldType):
 
 	@Oprtr.setter
 	def Oprtr(self, value):
-		self._Oprtr = value if type(value) != base_types.auto else self.make_default("Oprtr")
+		self._Oprtr = value if value is not None else base_types.UninitialisedField(self, 'Oprtr', Operator1Code, False)
 
 	@Oprtr.deleter
 	def Oprtr(self):
 		del self._Oprtr
-		self._Oprtr = None
+		self._Oprtr = base_types.UninitialisedField(self, 'Oprtr', Operator1Code, False)
 
 	@property
 	def Val(self):
@@ -27,12 +27,12 @@ class Term1(base_types._BaseFieldType):
 
 	@Val.setter
 	def Val(self, value):
-		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
+		self._Val = value if value is not None else base_types.UninitialisedField(self, 'Val', RateOrAbsoluteValue1Choice, False)
 
 	@Val.deleter
 	def Val(self):
 		del self._Val
-		self._Val = None
+		self._Val = base_types.UninitialisedField(self, 'Val', RateOrAbsoluteValue1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Oprtr', type=Operator1Code, min=1, max=1, mutex_group=None, array=False),

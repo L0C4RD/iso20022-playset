@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Status6Code import Status6Code
-from ._StatusReasonInformation10 import StatusReasonInformation10
+from . import Status6Code
+from . import StatusReasonInformation10
 
 class AccountLinkStatus1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AccountLinkStatus1(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', Status6Code, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', Status6Code, False)
 
 	@property
 	def StsRsn(self):
@@ -27,12 +27,12 @@ class AccountLinkStatus1(base_types._BaseFieldType):
 
 	@StsRsn.setter
 	def StsRsn(self, value):
-		self._StsRsn = value if type(value) != base_types.auto else self.make_default("StsRsn")
+		self._StsRsn = value if value is not None else base_types.UninitialisedField(self, 'StsRsn', StatusReasonInformation10, True)
 
 	@StsRsn.deleter
 	def StsRsn(self):
 		del self._StsRsn
-		self._StsRsn = None
+		self._StsRsn = base_types.UninitialisedField(self, 'StsRsn', StatusReasonInformation10, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Sts', type=Status6Code, min=1, max=1, mutex_group=None, array=False),

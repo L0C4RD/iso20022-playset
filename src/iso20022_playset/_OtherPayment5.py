@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection106 import AmountAndDirection106
-from ._ISODate import ISODate
-from ._PartyIdentification236Choice import PartyIdentification236Choice
-from ._PaymentType5Choice import PaymentType5Choice
+from . import AmountAndDirection106
+from . import ISODate
+from . import PartyIdentification236Choice
+from . import PaymentType5Choice
 
 class OtherPayment5(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class OtherPayment5(base_types._BaseFieldType):
 
 	@PmtAmt.setter
 	def PmtAmt(self, value):
-		self._PmtAmt = value if type(value) != base_types.auto else self.make_default("PmtAmt")
+		self._PmtAmt = value if value is not None else base_types.UninitialisedField(self, 'PmtAmt', AmountAndDirection106, False)
 
 	@PmtAmt.deleter
 	def PmtAmt(self):
 		del self._PmtAmt
-		self._PmtAmt = None
+		self._PmtAmt = base_types.UninitialisedField(self, 'PmtAmt', AmountAndDirection106, False)
 
 	@property
 	def PmtDt(self):
@@ -29,12 +29,12 @@ class OtherPayment5(base_types._BaseFieldType):
 
 	@PmtDt.setter
 	def PmtDt(self, value):
-		self._PmtDt = value if type(value) != base_types.auto else self.make_default("PmtDt")
+		self._PmtDt = value if value is not None else base_types.UninitialisedField(self, 'PmtDt', ISODate, False)
 
 	@PmtDt.deleter
 	def PmtDt(self):
 		del self._PmtDt
-		self._PmtDt = None
+		self._PmtDt = base_types.UninitialisedField(self, 'PmtDt', ISODate, False)
 
 	@property
 	def PmtPyer(self):
@@ -42,12 +42,12 @@ class OtherPayment5(base_types._BaseFieldType):
 
 	@PmtPyer.setter
 	def PmtPyer(self, value):
-		self._PmtPyer = value if type(value) != base_types.auto else self.make_default("PmtPyer")
+		self._PmtPyer = value if value is not None else base_types.UninitialisedField(self, 'PmtPyer', PartyIdentification236Choice, False)
 
 	@PmtPyer.deleter
 	def PmtPyer(self):
 		del self._PmtPyer
-		self._PmtPyer = None
+		self._PmtPyer = base_types.UninitialisedField(self, 'PmtPyer', PartyIdentification236Choice, False)
 
 	@property
 	def PmtRcvr(self):
@@ -55,12 +55,12 @@ class OtherPayment5(base_types._BaseFieldType):
 
 	@PmtRcvr.setter
 	def PmtRcvr(self, value):
-		self._PmtRcvr = value if type(value) != base_types.auto else self.make_default("PmtRcvr")
+		self._PmtRcvr = value if value is not None else base_types.UninitialisedField(self, 'PmtRcvr', PartyIdentification236Choice, False)
 
 	@PmtRcvr.deleter
 	def PmtRcvr(self):
 		del self._PmtRcvr
-		self._PmtRcvr = None
+		self._PmtRcvr = base_types.UninitialisedField(self, 'PmtRcvr', PartyIdentification236Choice, False)
 
 	@property
 	def PmtTp(self):
@@ -68,12 +68,12 @@ class OtherPayment5(base_types._BaseFieldType):
 
 	@PmtTp.setter
 	def PmtTp(self, value):
-		self._PmtTp = value if type(value) != base_types.auto else self.make_default("PmtTp")
+		self._PmtTp = value if value is not None else base_types.UninitialisedField(self, 'PmtTp', PaymentType5Choice, False)
 
 	@PmtTp.deleter
 	def PmtTp(self):
 		del self._PmtTp
-		self._PmtTp = None
+		self._PmtTp = base_types.UninitialisedField(self, 'PmtTp', PaymentType5Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PmtAmt', type=AmountAndDirection106, min=0, max=1, mutex_group=None, array=False),

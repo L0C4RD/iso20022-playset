@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Exact4AlphaNumericText import Exact4AlphaNumericText
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
-from ._Max4Text import Max4Text
-from ._YesNoIndicator import YesNoIndicator
+from . import Exact4AlphaNumericText
+from . import ISODate
+from . import Max35Text
+from . import Max4Text
+from . import YesNoIndicator
 
 class TradeAgreement14(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class TradeAgreement14(base_types._BaseFieldType):
 
 	@CmonRef.setter
 	def CmonRef(self, value):
-		self._CmonRef = value if type(value) != base_types.auto else self.make_default("CmonRef")
+		self._CmonRef = value if value is not None else base_types.UninitialisedField(self, 'CmonRef', Max35Text, False)
 
 	@CmonRef.deleter
 	def CmonRef(self):
 		del self._CmonRef
-		self._CmonRef = None
+		self._CmonRef = base_types.UninitialisedField(self, 'CmonRef', Max35Text, False)
 
 	@property
 	def OprScp(self):
@@ -30,12 +30,12 @@ class TradeAgreement14(base_types._BaseFieldType):
 
 	@OprScp.setter
 	def OprScp(self, value):
-		self._OprScp = value if type(value) != base_types.auto else self.make_default("OprScp")
+		self._OprScp = value if value is not None else base_types.UninitialisedField(self, 'OprScp', Max4Text, False)
 
 	@OprScp.deleter
 	def OprScp(self):
 		del self._OprScp
-		self._OprScp = None
+		self._OprScp = base_types.UninitialisedField(self, 'OprScp', Max4Text, False)
 
 	@property
 	def OprTp(self):
@@ -43,12 +43,12 @@ class TradeAgreement14(base_types._BaseFieldType):
 
 	@OprTp.setter
 	def OprTp(self, value):
-		self._OprTp = value if type(value) != base_types.auto else self.make_default("OprTp")
+		self._OprTp = value if value is not None else base_types.UninitialisedField(self, 'OprTp', Max4Text, False)
 
 	@OprTp.deleter
 	def OprTp(self):
 		del self._OprTp
-		self._OprTp = None
+		self._OprTp = base_types.UninitialisedField(self, 'OprTp', Max4Text, False)
 
 	@property
 	def OrgtrRef(self):
@@ -56,12 +56,12 @@ class TradeAgreement14(base_types._BaseFieldType):
 
 	@OrgtrRef.setter
 	def OrgtrRef(self, value):
-		self._OrgtrRef = value if type(value) != base_types.auto else self.make_default("OrgtrRef")
+		self._OrgtrRef = value if value is not None else base_types.UninitialisedField(self, 'OrgtrRef', Max35Text, False)
 
 	@OrgtrRef.deleter
 	def OrgtrRef(self):
 		del self._OrgtrRef
-		self._OrgtrRef = None
+		self._OrgtrRef = base_types.UninitialisedField(self, 'OrgtrRef', Max35Text, False)
 
 	@property
 	def PdctTp(self):
@@ -69,12 +69,12 @@ class TradeAgreement14(base_types._BaseFieldType):
 
 	@PdctTp.setter
 	def PdctTp(self, value):
-		self._PdctTp = value if type(value) != base_types.auto else self.make_default("PdctTp")
+		self._PdctTp = value if value is not None else base_types.UninitialisedField(self, 'PdctTp', Max35Text, False)
 
 	@PdctTp.deleter
 	def PdctTp(self):
 		del self._PdctTp
-		self._PdctTp = None
+		self._PdctTp = base_types.UninitialisedField(self, 'PdctTp', Max35Text, False)
 
 	@property
 	def PmtVrssPmtInd(self):
@@ -82,12 +82,12 @@ class TradeAgreement14(base_types._BaseFieldType):
 
 	@PmtVrssPmtInd.setter
 	def PmtVrssPmtInd(self, value):
-		self._PmtVrssPmtInd = value if type(value) != base_types.auto else self.make_default("PmtVrssPmtInd")
+		self._PmtVrssPmtInd = value if value is not None else base_types.UninitialisedField(self, 'PmtVrssPmtInd', YesNoIndicator, False)
 
 	@PmtVrssPmtInd.deleter
 	def PmtVrssPmtInd(self):
 		del self._PmtVrssPmtInd
-		self._PmtVrssPmtInd = None
+		self._PmtVrssPmtInd = base_types.UninitialisedField(self, 'PmtVrssPmtInd', YesNoIndicator, False)
 
 	@property
 	def SttlmSsnIdr(self):
@@ -95,12 +95,12 @@ class TradeAgreement14(base_types._BaseFieldType):
 
 	@SttlmSsnIdr.setter
 	def SttlmSsnIdr(self, value):
-		self._SttlmSsnIdr = value if type(value) != base_types.auto else self.make_default("SttlmSsnIdr")
+		self._SttlmSsnIdr = value if value is not None else base_types.UninitialisedField(self, 'SttlmSsnIdr', Exact4AlphaNumericText, False)
 
 	@SttlmSsnIdr.deleter
 	def SttlmSsnIdr(self):
 		del self._SttlmSsnIdr
-		self._SttlmSsnIdr = None
+		self._SttlmSsnIdr = base_types.UninitialisedField(self, 'SttlmSsnIdr', Exact4AlphaNumericText, False)
 
 	@property
 	def TradDt(self):
@@ -108,12 +108,12 @@ class TradeAgreement14(base_types._BaseFieldType):
 
 	@TradDt.setter
 	def TradDt(self, value):
-		self._TradDt = value if type(value) != base_types.auto else self.make_default("TradDt")
+		self._TradDt = value if value is not None else base_types.UninitialisedField(self, 'TradDt', ISODate, False)
 
 	@TradDt.deleter
 	def TradDt(self):
 		del self._TradDt
-		self._TradDt = None
+		self._TradDt = base_types.UninitialisedField(self, 'TradDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CmonRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISO2ALanguageCode import ISO2ALanguageCode
-from ._Max1025Text import Max1025Text
-from ._Max8000Text import Max8000Text
+from . import ISO2ALanguageCode
+from . import Max1025Text
+from . import Max8000Text
 
 class ItemDescription2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ItemDescription2(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', Max8000Text, True)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', Max8000Text, True)
 
 	@property
 	def Lang(self):
@@ -28,12 +28,12 @@ class ItemDescription2(base_types._BaseFieldType):
 
 	@Lang.setter
 	def Lang(self, value):
-		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
+		self._Lang = value if value is not None else base_types.UninitialisedField(self, 'Lang', ISO2ALanguageCode, False)
 
 	@Lang.deleter
 	def Lang(self):
 		del self._Lang
-		self._Lang = None
+		self._Lang = base_types.UninitialisedField(self, 'Lang', ISO2ALanguageCode, False)
 
 	@property
 	def Titl(self):
@@ -41,12 +41,12 @@ class ItemDescription2(base_types._BaseFieldType):
 
 	@Titl.setter
 	def Titl(self, value):
-		self._Titl = value if type(value) != base_types.auto else self.make_default("Titl")
+		self._Titl = value if value is not None else base_types.UninitialisedField(self, 'Titl', Max1025Text, False)
 
 	@Titl.deleter
 	def Titl(self):
 		del self._Titl
-		self._Titl = None
+		self._Titl = base_types.UninitialisedField(self, 'Titl', Max1025Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Desc', type=Max8000Text, min=0, max=None, mutex_group=None, array=True),

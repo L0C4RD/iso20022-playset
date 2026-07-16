@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification168 import GenericIdentification168
-from ._StressSize1Choice import StressSize1Choice
+from . import GenericIdentification168
+from . import StressSize1Choice
 
 class StressedProduct1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class StressedProduct1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', GenericIdentification168, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', GenericIdentification168, False)
 
 	@property
 	def MaxStrssSz(self):
@@ -27,12 +27,12 @@ class StressedProduct1(base_types._BaseFieldType):
 
 	@MaxStrssSz.setter
 	def MaxStrssSz(self, value):
-		self._MaxStrssSz = value if type(value) != base_types.auto else self.make_default("MaxStrssSz")
+		self._MaxStrssSz = value if value is not None else base_types.UninitialisedField(self, 'MaxStrssSz', StressSize1Choice, False)
 
 	@MaxStrssSz.deleter
 	def MaxStrssSz(self):
 		del self._MaxStrssSz
-		self._MaxStrssSz = None
+		self._MaxStrssSz = base_types.UninitialisedField(self, 'MaxStrssSz', StressSize1Choice, False)
 
 	@property
 	def MinStrssSz(self):
@@ -40,12 +40,12 @@ class StressedProduct1(base_types._BaseFieldType):
 
 	@MinStrssSz.setter
 	def MinStrssSz(self, value):
-		self._MinStrssSz = value if type(value) != base_types.auto else self.make_default("MinStrssSz")
+		self._MinStrssSz = value if value is not None else base_types.UninitialisedField(self, 'MinStrssSz', StressSize1Choice, False)
 
 	@MinStrssSz.deleter
 	def MinStrssSz(self):
 		del self._MinStrssSz
-		self._MinStrssSz = None
+		self._MinStrssSz = base_types.UninitialisedField(self, 'MinStrssSz', StressSize1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=GenericIdentification168, min=1, max=1, mutex_group=None, array=False),

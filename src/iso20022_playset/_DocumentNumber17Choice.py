@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Exact3NumericText import Exact3NumericText
-from ._GenericIdentification30 import GenericIdentification30
-from ._ISO20022MessageIdentificationText import ISO20022MessageIdentificationText
+from . import Exact3NumericText
+from . import GenericIdentification30
+from . import ISO20022MessageIdentificationText
 
 class DocumentNumber17Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class DocumentNumber17Choice(base_types._BaseFieldType):
 
 	@LngNb.setter
 	def LngNb(self, value):
-		self._LngNb = value if type(value) != base_types.auto else self.make_default("LngNb")
+		self._LngNb = value if value is not None else base_types.UninitialisedField(self, 'LngNb', ISO20022MessageIdentificationText, False)
 
 	@LngNb.deleter
 	def LngNb(self):
 		del self._LngNb
-		self._LngNb = None
+		self._LngNb = base_types.UninitialisedField(self, 'LngNb', ISO20022MessageIdentificationText, False)
 
 	@property
 	def PrtryNb(self):
@@ -28,12 +28,12 @@ class DocumentNumber17Choice(base_types._BaseFieldType):
 
 	@PrtryNb.setter
 	def PrtryNb(self, value):
-		self._PrtryNb = value if type(value) != base_types.auto else self.make_default("PrtryNb")
+		self._PrtryNb = value if value is not None else base_types.UninitialisedField(self, 'PrtryNb', GenericIdentification30, False)
 
 	@PrtryNb.deleter
 	def PrtryNb(self):
 		del self._PrtryNb
-		self._PrtryNb = None
+		self._PrtryNb = base_types.UninitialisedField(self, 'PrtryNb', GenericIdentification30, False)
 
 	@property
 	def ShrtNb(self):
@@ -41,12 +41,12 @@ class DocumentNumber17Choice(base_types._BaseFieldType):
 
 	@ShrtNb.setter
 	def ShrtNb(self, value):
-		self._ShrtNb = value if type(value) != base_types.auto else self.make_default("ShrtNb")
+		self._ShrtNb = value if value is not None else base_types.UninitialisedField(self, 'ShrtNb', Exact3NumericText, False)
 
 	@ShrtNb.deleter
 	def ShrtNb(self):
 		del self._ShrtNb
-		self._ShrtNb = None
+		self._ShrtNb = base_types.UninitialisedField(self, 'ShrtNb', Exact3NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LngNb', type=ISO20022MessageIdentificationText, min=0, max=1, mutex_group=1, array=False),

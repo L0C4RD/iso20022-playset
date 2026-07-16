@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._EncryptedData2 import EncryptedData2
-from ._Max10MbText import Max10MbText
-from ._Max10NumericText import Max10NumericText
-from ._Max20MbBinary import Max20MbBinary
+from . import EncryptedData2
+from . import Max10MbText
+from . import Max10NumericText
+from . import Max20MbBinary
 
 class ReportContent3(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ReportContent3(base_types._BaseFieldType):
 
 	@Binry.setter
 	def Binry(self, value):
-		self._Binry = value if type(value) != base_types.auto else self.make_default("Binry")
+		self._Binry = value if value is not None else base_types.UninitialisedField(self, 'Binry', Max20MbBinary, False)
 
 	@Binry.deleter
 	def Binry(self):
 		del self._Binry
-		self._Binry = None
+		self._Binry = base_types.UninitialisedField(self, 'Binry', Max20MbBinary, False)
 
 	@property
 	def PrtctdData(self):
@@ -29,12 +29,12 @@ class ReportContent3(base_types._BaseFieldType):
 
 	@PrtctdData.setter
 	def PrtctdData(self, value):
-		self._PrtctdData = value if type(value) != base_types.auto else self.make_default("PrtctdData")
+		self._PrtctdData = value if value is not None else base_types.UninitialisedField(self, 'PrtctdData', EncryptedData2, False)
 
 	@PrtctdData.deleter
 	def PrtctdData(self):
 		del self._PrtctdData
-		self._PrtctdData = None
+		self._PrtctdData = base_types.UninitialisedField(self, 'PrtctdData', EncryptedData2, False)
 
 	@property
 	def RptLineSeq(self):
@@ -42,12 +42,12 @@ class ReportContent3(base_types._BaseFieldType):
 
 	@RptLineSeq.setter
 	def RptLineSeq(self, value):
-		self._RptLineSeq = value if type(value) != base_types.auto else self.make_default("RptLineSeq")
+		self._RptLineSeq = value if value is not None else base_types.UninitialisedField(self, 'RptLineSeq', Max10NumericText, False)
 
 	@RptLineSeq.deleter
 	def RptLineSeq(self):
 		del self._RptLineSeq
-		self._RptLineSeq = None
+		self._RptLineSeq = base_types.UninitialisedField(self, 'RptLineSeq', Max10NumericText, False)
 
 	@property
 	def Txt(self):
@@ -55,12 +55,12 @@ class ReportContent3(base_types._BaseFieldType):
 
 	@Txt.setter
 	def Txt(self, value):
-		self._Txt = value if type(value) != base_types.auto else self.make_default("Txt")
+		self._Txt = value if value is not None else base_types.UninitialisedField(self, 'Txt', Max10MbText, False)
 
 	@Txt.deleter
 	def Txt(self):
 		del self._Txt
-		self._Txt = None
+		self._Txt = base_types.UninitialisedField(self, 'Txt', Max10MbText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Binry', type=Max20MbBinary, min=0, max=1, mutex_group=None, array=False),

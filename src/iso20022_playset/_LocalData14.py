@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalData1 import AdditionalData1
-from ._ISOMax3ALanguageCode import ISOMax3ALanguageCode
-from ._Max210Text import Max210Text
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
+from . import AdditionalData1
+from . import ISOMax3ALanguageCode
+from . import Max210Text
+from . import Max35Text
+from . import Max70Text
 
 class LocalData14(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class LocalData14(base_types._BaseFieldType):
 
 	@AddtlData.setter
 	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+		self._AddtlData = value if value is not None else base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@AddtlData.deleter
 	def AddtlData(self):
 		del self._AddtlData
-		self._AddtlData = None
+		self._AddtlData = base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@property
 	def Lang(self):
@@ -30,12 +30,12 @@ class LocalData14(base_types._BaseFieldType):
 
 	@Lang.setter
 	def Lang(self, value):
-		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
+		self._Lang = value if value is not None else base_types.UninitialisedField(self, 'Lang', ISOMax3ALanguageCode, False)
 
 	@Lang.deleter
 	def Lang(self):
 		del self._Lang
-		self._Lang = None
+		self._Lang = base_types.UninitialisedField(self, 'Lang', ISOMax3ALanguageCode, False)
 
 	@property
 	def LglCorpNm(self):
@@ -43,12 +43,12 @@ class LocalData14(base_types._BaseFieldType):
 
 	@LglCorpNm.setter
 	def LglCorpNm(self, value):
-		self._LglCorpNm = value if type(value) != base_types.auto else self.make_default("LglCorpNm")
+		self._LglCorpNm = value if value is not None else base_types.UninitialisedField(self, 'LglCorpNm', Max210Text, False)
 
 	@LglCorpNm.deleter
 	def LglCorpNm(self):
 		del self._LglCorpNm
-		self._LglCorpNm = None
+		self._LglCorpNm = base_types.UninitialisedField(self, 'LglCorpNm', Max210Text, False)
 
 	@property
 	def NcodgFrmt(self):
@@ -56,12 +56,12 @@ class LocalData14(base_types._BaseFieldType):
 
 	@NcodgFrmt.setter
 	def NcodgFrmt(self, value):
-		self._NcodgFrmt = value if type(value) != base_types.auto else self.make_default("NcodgFrmt")
+		self._NcodgFrmt = value if value is not None else base_types.UninitialisedField(self, 'NcodgFrmt', Max35Text, False)
 
 	@NcodgFrmt.deleter
 	def NcodgFrmt(self):
 		del self._NcodgFrmt
-		self._NcodgFrmt = None
+		self._NcodgFrmt = base_types.UninitialisedField(self, 'NcodgFrmt', Max35Text, False)
 
 	@property
 	def ShrtNm(self):
@@ -69,12 +69,12 @@ class LocalData14(base_types._BaseFieldType):
 
 	@ShrtNm.setter
 	def ShrtNm(self, value):
-		self._ShrtNm = value if type(value) != base_types.auto else self.make_default("ShrtNm")
+		self._ShrtNm = value if value is not None else base_types.UninitialisedField(self, 'ShrtNm', Max70Text, False)
 
 	@ShrtNm.deleter
 	def ShrtNm(self):
 		del self._ShrtNm
-		self._ShrtNm = None
+		self._ShrtNm = base_types.UninitialisedField(self, 'ShrtNm', Max70Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),

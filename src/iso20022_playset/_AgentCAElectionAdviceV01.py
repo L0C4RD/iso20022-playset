@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContactPerson1 import ContactPerson1
-from ._CorporateActionAdditionalInformation1 import CorporateActionAdditionalInformation1
-from ._CorporateActionElection3 import CorporateActionElection3
-from ._CorporateActionInformation1 import CorporateActionInformation1
-from ._DocumentIdentification8 import DocumentIdentification8
-from ._ElectionAdviceFunction1 import ElectionAdviceFunction1
+from . import ContactPerson1
+from . import CorporateActionAdditionalInformation1
+from . import CorporateActionElection3
+from . import CorporateActionInformation1
+from . import DocumentIdentification8
+from . import ElectionAdviceFunction1
 
 class AgentCAElectionAdviceV01(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class AgentCAElectionAdviceV01(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', CorporateActionAdditionalInformation1, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', CorporateActionAdditionalInformation1, False)
 
 	@property
 	def CorpActnGnlInf(self):
@@ -31,12 +31,12 @@ class AgentCAElectionAdviceV01(base_types._BaseFieldType):
 
 	@CorpActnGnlInf.setter
 	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != base_types.auto else self.make_default("CorpActnGnlInf")
+		self._CorpActnGnlInf = value if value is not None else base_types.UninitialisedField(self, 'CorpActnGnlInf', CorporateActionInformation1, False)
 
 	@CorpActnGnlInf.deleter
 	def CorpActnGnlInf(self):
 		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
+		self._CorpActnGnlInf = base_types.UninitialisedField(self, 'CorpActnGnlInf', CorporateActionInformation1, False)
 
 	@property
 	def CtctDtls(self):
@@ -44,12 +44,12 @@ class AgentCAElectionAdviceV01(base_types._BaseFieldType):
 
 	@CtctDtls.setter
 	def CtctDtls(self, value):
-		self._CtctDtls = value if type(value) != base_types.auto else self.make_default("CtctDtls")
+		self._CtctDtls = value if value is not None else base_types.UninitialisedField(self, 'CtctDtls', ContactPerson1, False)
 
 	@CtctDtls.deleter
 	def CtctDtls(self):
 		del self._CtctDtls
-		self._CtctDtls = None
+		self._CtctDtls = base_types.UninitialisedField(self, 'CtctDtls', ContactPerson1, False)
 
 	@property
 	def ElctnAdvcTpAndLkg(self):
@@ -57,12 +57,12 @@ class AgentCAElectionAdviceV01(base_types._BaseFieldType):
 
 	@ElctnAdvcTpAndLkg.setter
 	def ElctnAdvcTpAndLkg(self, value):
-		self._ElctnAdvcTpAndLkg = value if type(value) != base_types.auto else self.make_default("ElctnAdvcTpAndLkg")
+		self._ElctnAdvcTpAndLkg = value if value is not None else base_types.UninitialisedField(self, 'ElctnAdvcTpAndLkg', ElectionAdviceFunction1, False)
 
 	@ElctnAdvcTpAndLkg.deleter
 	def ElctnAdvcTpAndLkg(self):
 		del self._ElctnAdvcTpAndLkg
-		self._ElctnAdvcTpAndLkg = None
+		self._ElctnAdvcTpAndLkg = base_types.UninitialisedField(self, 'ElctnAdvcTpAndLkg', ElectionAdviceFunction1, False)
 
 	@property
 	def ElctnDtls(self):
@@ -70,12 +70,12 @@ class AgentCAElectionAdviceV01(base_types._BaseFieldType):
 
 	@ElctnDtls.setter
 	def ElctnDtls(self, value):
-		self._ElctnDtls = value if type(value) != base_types.auto else self.make_default("ElctnDtls")
+		self._ElctnDtls = value if value is not None else base_types.UninitialisedField(self, 'ElctnDtls', CorporateActionElection3, False)
 
 	@ElctnDtls.deleter
 	def ElctnDtls(self):
 		del self._ElctnDtls
-		self._ElctnDtls = None
+		self._ElctnDtls = base_types.UninitialisedField(self, 'ElctnDtls', CorporateActionElection3, False)
 
 	@property
 	def Id(self):
@@ -83,12 +83,12 @@ class AgentCAElectionAdviceV01(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', DocumentIdentification8, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', DocumentIdentification8, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=CorporateActionAdditionalInformation1, min=0, max=1, mutex_group=None, array=False),

@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateFormat57Choice import DateFormat57Choice
-from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
-from ._PartyIdentification218 import PartyIdentification218
-from ._ShareholdingType1Code import ShareholdingType1Code
-from ._SupplementaryData1 import SupplementaryData1
+from . import DateFormat57Choice
+from . import FinancialInstrumentQuantity18Choice
+from . import PartyIdentification218
+from . import ShareholdingType1Code
+from . import SupplementaryData1
 
 class ShareholdingBalance1(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class ShareholdingBalance1(base_types._BaseFieldType):
 
 	@InitlDtOfShrhldg.setter
 	def InitlDtOfShrhldg(self, value):
-		self._InitlDtOfShrhldg = value if type(value) != base_types.auto else self.make_default("InitlDtOfShrhldg")
+		self._InitlDtOfShrhldg = value if value is not None else base_types.UninitialisedField(self, 'InitlDtOfShrhldg', DateFormat57Choice, False)
 
 	@InitlDtOfShrhldg.deleter
 	def InitlDtOfShrhldg(self):
 		del self._InitlDtOfShrhldg
-		self._InitlDtOfShrhldg = None
+		self._InitlDtOfShrhldg = base_types.UninitialisedField(self, 'InitlDtOfShrhldg', DateFormat57Choice, False)
 
 	@property
 	def Qty(self):
@@ -30,12 +30,12 @@ class ShareholdingBalance1(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+		self._Qty = value if value is not None else base_types.UninitialisedField(self, 'Qty', FinancialInstrumentQuantity18Choice, False)
 
 	@Qty.deleter
 	def Qty(self):
 		del self._Qty
-		self._Qty = None
+		self._Qty = base_types.UninitialisedField(self, 'Qty', FinancialInstrumentQuantity18Choice, False)
 
 	@property
 	def ShrhldgTp(self):
@@ -43,12 +43,12 @@ class ShareholdingBalance1(base_types._BaseFieldType):
 
 	@ShrhldgTp.setter
 	def ShrhldgTp(self, value):
-		self._ShrhldgTp = value if type(value) != base_types.auto else self.make_default("ShrhldgTp")
+		self._ShrhldgTp = value if value is not None else base_types.UninitialisedField(self, 'ShrhldgTp', ShareholdingType1Code, False)
 
 	@ShrhldgTp.deleter
 	def ShrhldgTp(self):
 		del self._ShrhldgTp
-		self._ShrhldgTp = None
+		self._ShrhldgTp = base_types.UninitialisedField(self, 'ShrhldgTp', ShareholdingType1Code, False)
 
 	@property
 	def SplmtryData(self):
@@ -56,12 +56,12 @@ class ShareholdingBalance1(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def ThrdPty(self):
@@ -69,12 +69,12 @@ class ShareholdingBalance1(base_types._BaseFieldType):
 
 	@ThrdPty.setter
 	def ThrdPty(self, value):
-		self._ThrdPty = value if type(value) != base_types.auto else self.make_default("ThrdPty")
+		self._ThrdPty = value if value is not None else base_types.UninitialisedField(self, 'ThrdPty', PartyIdentification218, True)
 
 	@ThrdPty.deleter
 	def ThrdPty(self):
 		del self._ThrdPty
-		self._ThrdPty = None
+		self._ThrdPty = base_types.UninitialisedField(self, 'ThrdPty', PartyIdentification218, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InitlDtOfShrhldg', type=DateFormat57Choice, min=0, max=1, mutex_group=None, array=False),

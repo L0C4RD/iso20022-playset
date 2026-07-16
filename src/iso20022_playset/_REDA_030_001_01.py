@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecurityDeletionStatusAdviceV01 import SecurityDeletionStatusAdviceV01
+from . import SecurityDeletionStatusAdviceV01
 
 class REDA_030_001_01():
 
@@ -18,12 +18,12 @@ class REDA_030_001_01():
 
 		@SctyDeltnStsAdvc.setter
 		def SctyDeltnStsAdvc(self, value):
-			self._SctyDeltnStsAdvc = value if type(value) != base_types.auto else self.make_default("SctyDeltnStsAdvc")
+			self._SctyDeltnStsAdvc = value if value is not None else base_types.UninitialisedField(self, 'SctyDeltnStsAdvc', SecurityDeletionStatusAdviceV01, False)
 
 		@SctyDeltnStsAdvc.deleter
 		def SctyDeltnStsAdvc(self):
 			del self._SctyDeltnStsAdvc
-			self._SctyDeltnStsAdvc = None
+			self._SctyDeltnStsAdvc = base_types.UninitialisedField(self, 'SctyDeltnStsAdvc', SecurityDeletionStatusAdviceV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctyDeltnStsAdvc', type=SecurityDeletionStatusAdviceV01, min=1, max=1, mutex_group=None, array=False),

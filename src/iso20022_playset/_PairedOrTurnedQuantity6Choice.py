@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
+from . import FinancialInstrumentQuantity36Choice
 
 class PairedOrTurnedQuantity6Choice(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class PairedOrTurnedQuantity6Choice(base_types._BaseFieldType):
 
 	@PairdOffQty.setter
 	def PairdOffQty(self, value):
-		self._PairdOffQty = value if type(value) != base_types.auto else self.make_default("PairdOffQty")
+		self._PairdOffQty = value if value is not None else base_types.UninitialisedField(self, 'PairdOffQty', FinancialInstrumentQuantity36Choice, False)
 
 	@PairdOffQty.deleter
 	def PairdOffQty(self):
 		del self._PairdOffQty
-		self._PairdOffQty = None
+		self._PairdOffQty = base_types.UninitialisedField(self, 'PairdOffQty', FinancialInstrumentQuantity36Choice, False)
 
 	@property
 	def TrndQty(self):
@@ -26,12 +26,12 @@ class PairedOrTurnedQuantity6Choice(base_types._BaseFieldType):
 
 	@TrndQty.setter
 	def TrndQty(self, value):
-		self._TrndQty = value if type(value) != base_types.auto else self.make_default("TrndQty")
+		self._TrndQty = value if value is not None else base_types.UninitialisedField(self, 'TrndQty', FinancialInstrumentQuantity36Choice, False)
 
 	@TrndQty.deleter
 	def TrndQty(self):
 		del self._TrndQty
-		self._TrndQty = None
+		self._TrndQty = base_types.UninitialisedField(self, 'TrndQty', FinancialInstrumentQuantity36Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PairdOffQty', type=FinancialInstrumentQuantity36Choice, min=0, max=1, mutex_group=1, array=False),

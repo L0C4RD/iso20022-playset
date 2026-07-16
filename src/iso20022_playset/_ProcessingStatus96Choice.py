@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcknowledgedAcceptedStatus31Choice import AcknowledgedAcceptedStatus31Choice
-from ._CancellationStatus20Choice import CancellationStatus20Choice
-from ._DeniedStatus19Choice import DeniedStatus19Choice
-from ._PendingStatus51Choice import PendingStatus51Choice
-from ._ProprietaryStatusAndReason7 import ProprietaryStatusAndReason7
-from ._RejectionOrRepairStatus46Choice import RejectionOrRepairStatus46Choice
-from ._RejectionOrRepairStatus47Choice import RejectionOrRepairStatus47Choice
+from . import AcknowledgedAcceptedStatus31Choice
+from . import CancellationStatus20Choice
+from . import DeniedStatus19Choice
+from . import PendingStatus51Choice
+from . import ProprietaryStatusAndReason7
+from . import RejectionOrRepairStatus46Choice
+from . import RejectionOrRepairStatus47Choice
 
 class ProcessingStatus96Choice(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class ProcessingStatus96Choice(base_types._BaseFieldType):
 
 	@AckdAccptd.setter
 	def AckdAccptd(self, value):
-		self._AckdAccptd = value if type(value) != base_types.auto else self.make_default("AckdAccptd")
+		self._AckdAccptd = value if value is not None else base_types.UninitialisedField(self, 'AckdAccptd', AcknowledgedAcceptedStatus31Choice, False)
 
 	@AckdAccptd.deleter
 	def AckdAccptd(self):
 		del self._AckdAccptd
-		self._AckdAccptd = None
+		self._AckdAccptd = base_types.UninitialisedField(self, 'AckdAccptd', AcknowledgedAcceptedStatus31Choice, False)
 
 	@property
 	def Canc(self):
@@ -32,12 +32,12 @@ class ProcessingStatus96Choice(base_types._BaseFieldType):
 
 	@Canc.setter
 	def Canc(self, value):
-		self._Canc = value if type(value) != base_types.auto else self.make_default("Canc")
+		self._Canc = value if value is not None else base_types.UninitialisedField(self, 'Canc', CancellationStatus20Choice, False)
 
 	@Canc.deleter
 	def Canc(self):
 		del self._Canc
-		self._Canc = None
+		self._Canc = base_types.UninitialisedField(self, 'Canc', CancellationStatus20Choice, False)
 
 	@property
 	def Dnd(self):
@@ -45,12 +45,12 @@ class ProcessingStatus96Choice(base_types._BaseFieldType):
 
 	@Dnd.setter
 	def Dnd(self, value):
-		self._Dnd = value if type(value) != base_types.auto else self.make_default("Dnd")
+		self._Dnd = value if value is not None else base_types.UninitialisedField(self, 'Dnd', DeniedStatus19Choice, False)
 
 	@Dnd.deleter
 	def Dnd(self):
 		del self._Dnd
-		self._Dnd = None
+		self._Dnd = base_types.UninitialisedField(self, 'Dnd', DeniedStatus19Choice, False)
 
 	@property
 	def PdgCxl(self):
@@ -58,12 +58,12 @@ class ProcessingStatus96Choice(base_types._BaseFieldType):
 
 	@PdgCxl.setter
 	def PdgCxl(self, value):
-		self._PdgCxl = value if type(value) != base_types.auto else self.make_default("PdgCxl")
+		self._PdgCxl = value if value is not None else base_types.UninitialisedField(self, 'PdgCxl', PendingStatus51Choice, False)
 
 	@PdgCxl.deleter
 	def PdgCxl(self):
 		del self._PdgCxl
-		self._PdgCxl = None
+		self._PdgCxl = base_types.UninitialisedField(self, 'PdgCxl', PendingStatus51Choice, False)
 
 	@property
 	def Prtry(self):
@@ -71,12 +71,12 @@ class ProcessingStatus96Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+		self._Prtry = value if value is not None else base_types.UninitialisedField(self, 'Prtry', ProprietaryStatusAndReason7, False)
 
 	@Prtry.deleter
 	def Prtry(self):
 		del self._Prtry
-		self._Prtry = None
+		self._Prtry = base_types.UninitialisedField(self, 'Prtry', ProprietaryStatusAndReason7, False)
 
 	@property
 	def Rjctd(self):
@@ -84,12 +84,12 @@ class ProcessingStatus96Choice(base_types._BaseFieldType):
 
 	@Rjctd.setter
 	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
+		self._Rjctd = value if value is not None else base_types.UninitialisedField(self, 'Rjctd', RejectionOrRepairStatus47Choice, False)
 
 	@Rjctd.deleter
 	def Rjctd(self):
 		del self._Rjctd
-		self._Rjctd = None
+		self._Rjctd = base_types.UninitialisedField(self, 'Rjctd', RejectionOrRepairStatus47Choice, False)
 
 	@property
 	def Rpr(self):
@@ -97,12 +97,12 @@ class ProcessingStatus96Choice(base_types._BaseFieldType):
 
 	@Rpr.setter
 	def Rpr(self, value):
-		self._Rpr = value if type(value) != base_types.auto else self.make_default("Rpr")
+		self._Rpr = value if value is not None else base_types.UninitialisedField(self, 'Rpr', RejectionOrRepairStatus46Choice, False)
 
 	@Rpr.deleter
 	def Rpr(self):
 		del self._Rpr
-		self._Rpr = None
+		self._Rpr = base_types.UninitialisedField(self, 'Rpr', RejectionOrRepairStatus46Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus31Choice, min=0, max=1, mutex_group=1, array=False),

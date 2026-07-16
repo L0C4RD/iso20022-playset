@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AvailableFinancialResourcesAmount2 import AvailableFinancialResourcesAmount2
-from ._ReportingAssetBreakdown2 import ReportingAssetBreakdown2
-from ._SupplementaryData1 import SupplementaryData1
+from . import AvailableFinancialResourcesAmount2
+from . import ReportingAssetBreakdown2
+from . import SupplementaryData1
 
 class CCPAvailableFinancialResourcesReportV02(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CCPAvailableFinancialResourcesReportV02(base_types._BaseFieldType):
 
 	@AvlblFinRsrcsAmt.setter
 	def AvlblFinRsrcsAmt(self, value):
-		self._AvlblFinRsrcsAmt = value if type(value) != base_types.auto else self.make_default("AvlblFinRsrcsAmt")
+		self._AvlblFinRsrcsAmt = value if value is not None else base_types.UninitialisedField(self, 'AvlblFinRsrcsAmt', AvailableFinancialResourcesAmount2, False)
 
 	@AvlblFinRsrcsAmt.deleter
 	def AvlblFinRsrcsAmt(self):
 		del self._AvlblFinRsrcsAmt
-		self._AvlblFinRsrcsAmt = None
+		self._AvlblFinRsrcsAmt = base_types.UninitialisedField(self, 'AvlblFinRsrcsAmt', AvailableFinancialResourcesAmount2, False)
 
 	@property
 	def OthrPrfnddRsrcs(self):
@@ -28,12 +28,12 @@ class CCPAvailableFinancialResourcesReportV02(base_types._BaseFieldType):
 
 	@OthrPrfnddRsrcs.setter
 	def OthrPrfnddRsrcs(self, value):
-		self._OthrPrfnddRsrcs = value if type(value) != base_types.auto else self.make_default("OthrPrfnddRsrcs")
+		self._OthrPrfnddRsrcs = value if value is not None else base_types.UninitialisedField(self, 'OthrPrfnddRsrcs', ReportingAssetBreakdown2, False)
 
 	@OthrPrfnddRsrcs.deleter
 	def OthrPrfnddRsrcs(self):
 		del self._OthrPrfnddRsrcs
-		self._OthrPrfnddRsrcs = None
+		self._OthrPrfnddRsrcs = base_types.UninitialisedField(self, 'OthrPrfnddRsrcs', ReportingAssetBreakdown2, False)
 
 	@property
 	def SplmtryData(self):
@@ -41,12 +41,12 @@ class CCPAvailableFinancialResourcesReportV02(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AvlblFinRsrcsAmt', type=AvailableFinancialResourcesAmount2, min=1, max=1, mutex_group=None, array=False),

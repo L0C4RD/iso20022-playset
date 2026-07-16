@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._CountryCode import CountryCode
-from ._ExemptionReason1Choice import ExemptionReason1Choice
-from ._PartyIdentification113 import PartyIdentification113
-from ._PercentageRate import PercentageRate
-from ._TaxCalculationInformation10 import TaxCalculationInformation10
-from ._TaxType3Choice import TaxType3Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import ActiveCurrencyAndAmount
+from . import CountryCode
+from . import ExemptionReason1Choice
+from . import PartyIdentification113
+from . import PercentageRate
+from . import TaxCalculationInformation10
+from . import TaxType3Choice
+from . import YesNoIndicator
 
 class Tax32(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class Tax32(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@property
 	def InftvAmt(self):
@@ -33,12 +33,12 @@ class Tax32(base_types._BaseFieldType):
 
 	@InftvAmt.setter
 	def InftvAmt(self, value):
-		self._InftvAmt = value if type(value) != base_types.auto else self.make_default("InftvAmt")
+		self._InftvAmt = value if value is not None else base_types.UninitialisedField(self, 'InftvAmt', ActiveCurrencyAndAmount, False)
 
 	@InftvAmt.deleter
 	def InftvAmt(self):
 		del self._InftvAmt
-		self._InftvAmt = None
+		self._InftvAmt = base_types.UninitialisedField(self, 'InftvAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def InftvRate(self):
@@ -46,12 +46,12 @@ class Tax32(base_types._BaseFieldType):
 
 	@InftvRate.setter
 	def InftvRate(self, value):
-		self._InftvRate = value if type(value) != base_types.auto else self.make_default("InftvRate")
+		self._InftvRate = value if value is not None else base_types.UninitialisedField(self, 'InftvRate', PercentageRate, False)
 
 	@InftvRate.deleter
 	def InftvRate(self):
 		del self._InftvRate
-		self._InftvRate = None
+		self._InftvRate = base_types.UninitialisedField(self, 'InftvRate', PercentageRate, False)
 
 	@property
 	def RcptId(self):
@@ -59,12 +59,12 @@ class Tax32(base_types._BaseFieldType):
 
 	@RcptId.setter
 	def RcptId(self, value):
-		self._RcptId = value if type(value) != base_types.auto else self.make_default("RcptId")
+		self._RcptId = value if value is not None else base_types.UninitialisedField(self, 'RcptId', PartyIdentification113, False)
 
 	@RcptId.deleter
 	def RcptId(self):
 		del self._RcptId
-		self._RcptId = None
+		self._RcptId = base_types.UninitialisedField(self, 'RcptId', PartyIdentification113, False)
 
 	@property
 	def TaxClctnDtls(self):
@@ -72,12 +72,12 @@ class Tax32(base_types._BaseFieldType):
 
 	@TaxClctnDtls.setter
 	def TaxClctnDtls(self, value):
-		self._TaxClctnDtls = value if type(value) != base_types.auto else self.make_default("TaxClctnDtls")
+		self._TaxClctnDtls = value if value is not None else base_types.UninitialisedField(self, 'TaxClctnDtls', TaxCalculationInformation10, False)
 
 	@TaxClctnDtls.deleter
 	def TaxClctnDtls(self):
 		del self._TaxClctnDtls
-		self._TaxClctnDtls = None
+		self._TaxClctnDtls = base_types.UninitialisedField(self, 'TaxClctnDtls', TaxCalculationInformation10, False)
 
 	@property
 	def Tp(self):
@@ -85,12 +85,12 @@ class Tax32(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', TaxType3Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', TaxType3Choice, False)
 
 	@property
 	def XmptnInd(self):
@@ -98,12 +98,12 @@ class Tax32(base_types._BaseFieldType):
 
 	@XmptnInd.setter
 	def XmptnInd(self, value):
-		self._XmptnInd = value if type(value) != base_types.auto else self.make_default("XmptnInd")
+		self._XmptnInd = value if value is not None else base_types.UninitialisedField(self, 'XmptnInd', YesNoIndicator, False)
 
 	@XmptnInd.deleter
 	def XmptnInd(self):
 		del self._XmptnInd
-		self._XmptnInd = None
+		self._XmptnInd = base_types.UninitialisedField(self, 'XmptnInd', YesNoIndicator, False)
 
 	@property
 	def XmptnRsn(self):
@@ -111,12 +111,12 @@ class Tax32(base_types._BaseFieldType):
 
 	@XmptnRsn.setter
 	def XmptnRsn(self, value):
-		self._XmptnRsn = value if type(value) != base_types.auto else self.make_default("XmptnRsn")
+		self._XmptnRsn = value if value is not None else base_types.UninitialisedField(self, 'XmptnRsn', ExemptionReason1Choice, False)
 
 	@XmptnRsn.deleter
 	def XmptnRsn(self):
 		del self._XmptnRsn
-		self._XmptnRsn = None
+		self._XmptnRsn = base_types.UninitialisedField(self, 'XmptnRsn', ExemptionReason1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=None, array=False),

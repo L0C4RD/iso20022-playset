@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ReportLine5 import ReportLine5
-from ._ReportLine6 import ReportLine6
+from . import ReportLine5
+from . import ReportLine6
 
 class BreakDown1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class BreakDown1Choice(base_types._BaseFieldType):
 
 	@ByComrclInvc.setter
 	def ByComrclInvc(self, value):
-		self._ByComrclInvc = value if type(value) != base_types.auto else self.make_default("ByComrclInvc")
+		self._ByComrclInvc = value if value is not None else base_types.UninitialisedField(self, 'ByComrclInvc', ReportLine6, False)
 
 	@ByComrclInvc.deleter
 	def ByComrclInvc(self):
 		del self._ByComrclInvc
-		self._ByComrclInvc = None
+		self._ByComrclInvc = base_types.UninitialisedField(self, 'ByComrclInvc', ReportLine6, False)
 
 	@property
 	def ByPurchsOrdr(self):
@@ -27,12 +27,12 @@ class BreakDown1Choice(base_types._BaseFieldType):
 
 	@ByPurchsOrdr.setter
 	def ByPurchsOrdr(self, value):
-		self._ByPurchsOrdr = value if type(value) != base_types.auto else self.make_default("ByPurchsOrdr")
+		self._ByPurchsOrdr = value if value is not None else base_types.UninitialisedField(self, 'ByPurchsOrdr', ReportLine5, False)
 
 	@ByPurchsOrdr.deleter
 	def ByPurchsOrdr(self):
 		del self._ByPurchsOrdr
-		self._ByPurchsOrdr = None
+		self._ByPurchsOrdr = base_types.UninitialisedField(self, 'ByPurchsOrdr', ReportLine5, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ByComrclInvc', type=ReportLine6, min=0, max=1, mutex_group=1, array=False),

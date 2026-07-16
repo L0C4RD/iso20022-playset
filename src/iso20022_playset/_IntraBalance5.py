@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Amount2Choice import Amount2Choice
-from ._CashSubBalanceTypeAndQuantityBreakdown3 import CashSubBalanceTypeAndQuantityBreakdown3
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._GenericIdentification37 import GenericIdentification37
-from ._Max350Text import Max350Text
-from ._PriorityNumeric4Choice import PriorityNumeric4Choice
+from . import Amount2Choice
+from . import CashSubBalanceTypeAndQuantityBreakdown3
+from . import DateAndDateTime2Choice
+from . import GenericIdentification37
+from . import Max350Text
+from . import PriorityNumeric4Choice
 
 class IntraBalance5(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class IntraBalance5(base_types._BaseFieldType):
 
 	@BalFr.setter
 	def BalFr(self, value):
-		self._BalFr = value if type(value) != base_types.auto else self.make_default("BalFr")
+		self._BalFr = value if value is not None else base_types.UninitialisedField(self, 'BalFr', CashSubBalanceTypeAndQuantityBreakdown3, False)
 
 	@BalFr.deleter
 	def BalFr(self):
 		del self._BalFr
-		self._BalFr = None
+		self._BalFr = base_types.UninitialisedField(self, 'BalFr', CashSubBalanceTypeAndQuantityBreakdown3, False)
 
 	@property
 	def BalTo(self):
@@ -31,12 +31,12 @@ class IntraBalance5(base_types._BaseFieldType):
 
 	@BalTo.setter
 	def BalTo(self, value):
-		self._BalTo = value if type(value) != base_types.auto else self.make_default("BalTo")
+		self._BalTo = value if value is not None else base_types.UninitialisedField(self, 'BalTo', CashSubBalanceTypeAndQuantityBreakdown3, False)
 
 	@BalTo.deleter
 	def BalTo(self):
 		del self._BalTo
-		self._BalTo = None
+		self._BalTo = base_types.UninitialisedField(self, 'BalTo', CashSubBalanceTypeAndQuantityBreakdown3, False)
 
 	@property
 	def CshSubBalId(self):
@@ -44,12 +44,12 @@ class IntraBalance5(base_types._BaseFieldType):
 
 	@CshSubBalId.setter
 	def CshSubBalId(self, value):
-		self._CshSubBalId = value if type(value) != base_types.auto else self.make_default("CshSubBalId")
+		self._CshSubBalId = value if value is not None else base_types.UninitialisedField(self, 'CshSubBalId', GenericIdentification37, False)
 
 	@CshSubBalId.deleter
 	def CshSubBalId(self):
 		del self._CshSubBalId
-		self._CshSubBalId = None
+		self._CshSubBalId = base_types.UninitialisedField(self, 'CshSubBalId', GenericIdentification37, False)
 
 	@property
 	def InstrPrcgAddtlDtls(self):
@@ -57,12 +57,12 @@ class IntraBalance5(base_types._BaseFieldType):
 
 	@InstrPrcgAddtlDtls.setter
 	def InstrPrcgAddtlDtls(self, value):
-		self._InstrPrcgAddtlDtls = value if type(value) != base_types.auto else self.make_default("InstrPrcgAddtlDtls")
+		self._InstrPrcgAddtlDtls = value if value is not None else base_types.UninitialisedField(self, 'InstrPrcgAddtlDtls', Max350Text, False)
 
 	@InstrPrcgAddtlDtls.deleter
 	def InstrPrcgAddtlDtls(self):
 		del self._InstrPrcgAddtlDtls
-		self._InstrPrcgAddtlDtls = None
+		self._InstrPrcgAddtlDtls = base_types.UninitialisedField(self, 'InstrPrcgAddtlDtls', Max350Text, False)
 
 	@property
 	def Prty(self):
@@ -70,12 +70,12 @@ class IntraBalance5(base_types._BaseFieldType):
 
 	@Prty.setter
 	def Prty(self, value):
-		self._Prty = value if type(value) != base_types.auto else self.make_default("Prty")
+		self._Prty = value if value is not None else base_types.UninitialisedField(self, 'Prty', PriorityNumeric4Choice, False)
 
 	@Prty.deleter
 	def Prty(self):
 		del self._Prty
-		self._Prty = None
+		self._Prty = base_types.UninitialisedField(self, 'Prty', PriorityNumeric4Choice, False)
 
 	@property
 	def SttlmAmt(self):
@@ -83,12 +83,12 @@ class IntraBalance5(base_types._BaseFieldType):
 
 	@SttlmAmt.setter
 	def SttlmAmt(self, value):
-		self._SttlmAmt = value if type(value) != base_types.auto else self.make_default("SttlmAmt")
+		self._SttlmAmt = value if value is not None else base_types.UninitialisedField(self, 'SttlmAmt', Amount2Choice, False)
 
 	@SttlmAmt.deleter
 	def SttlmAmt(self):
 		del self._SttlmAmt
-		self._SttlmAmt = None
+		self._SttlmAmt = base_types.UninitialisedField(self, 'SttlmAmt', Amount2Choice, False)
 
 	@property
 	def SttlmDt(self):
@@ -96,12 +96,12 @@ class IntraBalance5(base_types._BaseFieldType):
 
 	@SttlmDt.setter
 	def SttlmDt(self, value):
-		self._SttlmDt = value if type(value) != base_types.auto else self.make_default("SttlmDt")
+		self._SttlmDt = value if value is not None else base_types.UninitialisedField(self, 'SttlmDt', DateAndDateTime2Choice, False)
 
 	@SttlmDt.deleter
 	def SttlmDt(self):
 		del self._SttlmDt
-		self._SttlmDt = None
+		self._SttlmDt = base_types.UninitialisedField(self, 'SttlmDt', DateAndDateTime2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BalFr', type=CashSubBalanceTypeAndQuantityBreakdown3, min=1, max=1, mutex_group=None, array=False),

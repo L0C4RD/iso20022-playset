@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesBalanceCustodyReport002V11 import SecuritiesBalanceCustodyReport002V11
+from . import SecuritiesBalanceCustodyReport002V11
 
 class SEMT_002_002_11():
 
@@ -18,12 +18,12 @@ class SEMT_002_002_11():
 
 		@SctiesBalCtdyRpt.setter
 		def SctiesBalCtdyRpt(self, value):
-			self._SctiesBalCtdyRpt = value if type(value) != base_types.auto else self.make_default("SctiesBalCtdyRpt")
+			self._SctiesBalCtdyRpt = value if value is not None else base_types.UninitialisedField(self, 'SctiesBalCtdyRpt', SecuritiesBalanceCustodyReport002V11, False)
 
 		@SctiesBalCtdyRpt.deleter
 		def SctiesBalCtdyRpt(self):
 			del self._SctiesBalCtdyRpt
-			self._SctiesBalCtdyRpt = None
+			self._SctiesBalCtdyRpt = base_types.UninitialisedField(self, 'SctiesBalCtdyRpt', SecuritiesBalanceCustodyReport002V11, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesBalCtdyRpt', type=SecuritiesBalanceCustodyReport002V11, min=1, max=1, mutex_group=None, array=False),

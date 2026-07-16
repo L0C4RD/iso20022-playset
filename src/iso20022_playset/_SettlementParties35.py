@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification49 import GenericIdentification49
-from ._PartyIdentification99Choice import PartyIdentification99Choice
-from ._SettlementParties32 import SettlementParties32
+from . import GenericIdentification49
+from . import PartyIdentification99Choice
+from . import SettlementParties32
 
 class SettlementParties35(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SettlementParties35(base_types._BaseFieldType):
 
 	@LclMktId.setter
 	def LclMktId(self, value):
-		self._LclMktId = value if type(value) != base_types.auto else self.make_default("LclMktId")
+		self._LclMktId = value if value is not None else base_types.UninitialisedField(self, 'LclMktId', GenericIdentification49, True)
 
 	@LclMktId.deleter
 	def LclMktId(self):
 		del self._LclMktId
-		self._LclMktId = None
+		self._LclMktId = base_types.UninitialisedField(self, 'LclMktId', GenericIdentification49, True)
 
 	@property
 	def RegnDtls(self):
@@ -28,12 +28,12 @@ class SettlementParties35(base_types._BaseFieldType):
 
 	@RegnDtls.setter
 	def RegnDtls(self, value):
-		self._RegnDtls = value if type(value) != base_types.auto else self.make_default("RegnDtls")
+		self._RegnDtls = value if value is not None else base_types.UninitialisedField(self, 'RegnDtls', PartyIdentification99Choice, False)
 
 	@RegnDtls.deleter
 	def RegnDtls(self):
 		del self._RegnDtls
-		self._RegnDtls = None
+		self._RegnDtls = base_types.UninitialisedField(self, 'RegnDtls', PartyIdentification99Choice, False)
 
 	@property
 	def StgSttlmPties(self):
@@ -41,12 +41,12 @@ class SettlementParties35(base_types._BaseFieldType):
 
 	@StgSttlmPties.setter
 	def StgSttlmPties(self, value):
-		self._StgSttlmPties = value if type(value) != base_types.auto else self.make_default("StgSttlmPties")
+		self._StgSttlmPties = value if value is not None else base_types.UninitialisedField(self, 'StgSttlmPties', SettlementParties32, False)
 
 	@StgSttlmPties.deleter
 	def StgSttlmPties(self):
 		del self._StgSttlmPties
-		self._StgSttlmPties = None
+		self._StgSttlmPties = base_types.UninitialisedField(self, 'StgSttlmPties', SettlementParties32, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LclMktId', type=GenericIdentification49, min=0, max=None, mutex_group=None, array=True),

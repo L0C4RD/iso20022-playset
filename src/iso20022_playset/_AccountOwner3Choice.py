@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IndividualPersonIdentification3Choice import IndividualPersonIdentification3Choice
-from ._PartyIdentification220 import PartyIdentification220
+from . import IndividualPersonIdentification3Choice
+from . import PartyIdentification220
 
 class AccountOwner3Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AccountOwner3Choice(base_types._BaseFieldType):
 
 	@IndvOwnrId.setter
 	def IndvOwnrId(self, value):
-		self._IndvOwnrId = value if type(value) != base_types.auto else self.make_default("IndvOwnrId")
+		self._IndvOwnrId = value if value is not None else base_types.UninitialisedField(self, 'IndvOwnrId', IndividualPersonIdentification3Choice, False)
 
 	@IndvOwnrId.deleter
 	def IndvOwnrId(self):
 		del self._IndvOwnrId
-		self._IndvOwnrId = None
+		self._IndvOwnrId = base_types.UninitialisedField(self, 'IndvOwnrId', IndividualPersonIdentification3Choice, False)
 
 	@property
 	def OrgOwnrId(self):
@@ -27,12 +27,12 @@ class AccountOwner3Choice(base_types._BaseFieldType):
 
 	@OrgOwnrId.setter
 	def OrgOwnrId(self, value):
-		self._OrgOwnrId = value if type(value) != base_types.auto else self.make_default("OrgOwnrId")
+		self._OrgOwnrId = value if value is not None else base_types.UninitialisedField(self, 'OrgOwnrId', PartyIdentification220, False)
 
 	@OrgOwnrId.deleter
 	def OrgOwnrId(self):
 		del self._OrgOwnrId
-		self._OrgOwnrId = None
+		self._OrgOwnrId = base_types.UninitialisedField(self, 'OrgOwnrId', PartyIdentification220, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IndvOwnrId', type=IndividualPersonIdentification3Choice, min=0, max=1, mutex_group=1, array=False),

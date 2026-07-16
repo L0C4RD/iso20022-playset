@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ClassificationType32Choice import ClassificationType32Choice
-from ._FinancialInstrumentIdentification4 import FinancialInstrumentIdentification4
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
-from ._SecurityIdentification25Choice import SecurityIdentification25Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import ClassificationType32Choice
+from . import FinancialInstrumentIdentification4
+from . import Max350Text
+from . import Max35Text
+from . import SecurityIdentification25Choice
+from . import YesNoIndicator
 
 class FinancialInstrumentIdentification3(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class FinancialInstrumentIdentification3(base_types._BaseFieldType):
 
 	@AltrnScty.setter
 	def AltrnScty(self, value):
-		self._AltrnScty = value if type(value) != base_types.auto else self.make_default("AltrnScty")
+		self._AltrnScty = value if value is not None else base_types.UninitialisedField(self, 'AltrnScty', FinancialInstrumentIdentification4, True)
 
 	@AltrnScty.deleter
 	def AltrnScty(self):
 		del self._AltrnScty
-		self._AltrnScty = None
+		self._AltrnScty = base_types.UninitialisedField(self, 'AltrnScty', FinancialInstrumentIdentification4, True)
 
 	@property
 	def ClssfctnTp(self):
@@ -31,12 +31,12 @@ class FinancialInstrumentIdentification3(base_types._BaseFieldType):
 
 	@ClssfctnTp.setter
 	def ClssfctnTp(self, value):
-		self._ClssfctnTp = value if type(value) != base_types.auto else self.make_default("ClssfctnTp")
+		self._ClssfctnTp = value if value is not None else base_types.UninitialisedField(self, 'ClssfctnTp', ClassificationType32Choice, False)
 
 	@ClssfctnTp.deleter
 	def ClssfctnTp(self):
 		del self._ClssfctnTp
-		self._ClssfctnTp = None
+		self._ClssfctnTp = base_types.UninitialisedField(self, 'ClssfctnTp', ClassificationType32Choice, False)
 
 	@property
 	def Id(self):
@@ -44,12 +44,12 @@ class FinancialInstrumentIdentification3(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', SecurityIdentification25Choice, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', SecurityIdentification25Choice, False)
 
 	@property
 	def Nm(self):
@@ -57,12 +57,12 @@ class FinancialInstrumentIdentification3(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max350Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max350Text, False)
 
 	@property
 	def RstrctdInd(self):
@@ -70,12 +70,12 @@ class FinancialInstrumentIdentification3(base_types._BaseFieldType):
 
 	@RstrctdInd.setter
 	def RstrctdInd(self, value):
-		self._RstrctdInd = value if type(value) != base_types.auto else self.make_default("RstrctdInd")
+		self._RstrctdInd = value if value is not None else base_types.UninitialisedField(self, 'RstrctdInd', YesNoIndicator, False)
 
 	@RstrctdInd.deleter
 	def RstrctdInd(self):
 		del self._RstrctdInd
-		self._RstrctdInd = None
+		self._RstrctdInd = base_types.UninitialisedField(self, 'RstrctdInd', YesNoIndicator, False)
 
 	@property
 	def ShrtNm(self):
@@ -83,12 +83,12 @@ class FinancialInstrumentIdentification3(base_types._BaseFieldType):
 
 	@ShrtNm.setter
 	def ShrtNm(self, value):
-		self._ShrtNm = value if type(value) != base_types.auto else self.make_default("ShrtNm")
+		self._ShrtNm = value if value is not None else base_types.UninitialisedField(self, 'ShrtNm', Max35Text, False)
 
 	@ShrtNm.deleter
 	def ShrtNm(self):
 		del self._ShrtNm
-		self._ShrtNm = None
+		self._ShrtNm = base_types.UninitialisedField(self, 'ShrtNm', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AltrnScty', type=FinancialInstrumentIdentification4, min=0, max=None, mutex_group=None, array=True),

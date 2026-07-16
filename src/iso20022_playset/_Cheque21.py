@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstitutionIdentification15 import FinancialInstitutionIdentification15
-from ._Max35Text import Max35Text
-from ._PartyIdentification139 import PartyIdentification139
+from . import FinancialInstitutionIdentification15
+from . import Max35Text
+from . import PartyIdentification139
 
 class Cheque21(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Cheque21(base_types._BaseFieldType):
 
 	@DrweeId.setter
 	def DrweeId(self, value):
-		self._DrweeId = value if type(value) != base_types.auto else self.make_default("DrweeId")
+		self._DrweeId = value if value is not None else base_types.UninitialisedField(self, 'DrweeId', FinancialInstitutionIdentification15, False)
 
 	@DrweeId.deleter
 	def DrweeId(self):
 		del self._DrweeId
-		self._DrweeId = None
+		self._DrweeId = base_types.UninitialisedField(self, 'DrweeId', FinancialInstitutionIdentification15, False)
 
 	@property
 	def DrwrId(self):
@@ -28,12 +28,12 @@ class Cheque21(base_types._BaseFieldType):
 
 	@DrwrId.setter
 	def DrwrId(self, value):
-		self._DrwrId = value if type(value) != base_types.auto else self.make_default("DrwrId")
+		self._DrwrId = value if value is not None else base_types.UninitialisedField(self, 'DrwrId', PartyIdentification139, False)
 
 	@DrwrId.deleter
 	def DrwrId(self):
 		del self._DrwrId
-		self._DrwrId = None
+		self._DrwrId = base_types.UninitialisedField(self, 'DrwrId', PartyIdentification139, False)
 
 	@property
 	def Nb(self):
@@ -41,12 +41,12 @@ class Cheque21(base_types._BaseFieldType):
 
 	@Nb.setter
 	def Nb(self, value):
-		self._Nb = value if type(value) != base_types.auto else self.make_default("Nb")
+		self._Nb = value if value is not None else base_types.UninitialisedField(self, 'Nb', Max35Text, False)
 
 	@Nb.deleter
 	def Nb(self):
 		del self._Nb
-		self._Nb = None
+		self._Nb = base_types.UninitialisedField(self, 'Nb', Max35Text, False)
 
 	@property
 	def PyeeId(self):
@@ -54,12 +54,12 @@ class Cheque21(base_types._BaseFieldType):
 
 	@PyeeId.setter
 	def PyeeId(self, value):
-		self._PyeeId = value if type(value) != base_types.auto else self.make_default("PyeeId")
+		self._PyeeId = value if value is not None else base_types.UninitialisedField(self, 'PyeeId', PartyIdentification139, False)
 
 	@PyeeId.deleter
 	def PyeeId(self):
 		del self._PyeeId
-		self._PyeeId = None
+		self._PyeeId = base_types.UninitialisedField(self, 'PyeeId', PartyIdentification139, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DrweeId', type=FinancialInstitutionIdentification15, min=0, max=1, mutex_group=None, array=False),

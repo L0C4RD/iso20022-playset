@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
+from . import Max35Text
 
 class PointOfInteraction6(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class PointOfInteraction6(base_types._BaseFieldType):
 
 	@ManfctrIdr.setter
 	def ManfctrIdr(self, value):
-		self._ManfctrIdr = value if type(value) != base_types.auto else self.make_default("ManfctrIdr")
+		self._ManfctrIdr = value if value is not None else base_types.UninitialisedField(self, 'ManfctrIdr', Max35Text, False)
 
 	@ManfctrIdr.deleter
 	def ManfctrIdr(self):
 		del self._ManfctrIdr
-		self._ManfctrIdr = None
+		self._ManfctrIdr = base_types.UninitialisedField(self, 'ManfctrIdr', Max35Text, False)
 
 	@property
 	def Mdl(self):
@@ -26,12 +26,12 @@ class PointOfInteraction6(base_types._BaseFieldType):
 
 	@Mdl.setter
 	def Mdl(self, value):
-		self._Mdl = value if type(value) != base_types.auto else self.make_default("Mdl")
+		self._Mdl = value if value is not None else base_types.UninitialisedField(self, 'Mdl', Max35Text, False)
 
 	@Mdl.deleter
 	def Mdl(self):
 		del self._Mdl
-		self._Mdl = None
+		self._Mdl = base_types.UninitialisedField(self, 'Mdl', Max35Text, False)
 
 	@property
 	def SrlNb(self):
@@ -39,12 +39,12 @@ class PointOfInteraction6(base_types._BaseFieldType):
 
 	@SrlNb.setter
 	def SrlNb(self, value):
-		self._SrlNb = value if type(value) != base_types.auto else self.make_default("SrlNb")
+		self._SrlNb = value if value is not None else base_types.UninitialisedField(self, 'SrlNb', Max35Text, False)
 
 	@SrlNb.deleter
 	def SrlNb(self):
 		del self._SrlNb
-		self._SrlNb = None
+		self._SrlNb = base_types.UninitialisedField(self, 'SrlNb', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ManfctrIdr', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

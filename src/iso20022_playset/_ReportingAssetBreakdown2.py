@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._DebtIssuerType1Code import DebtIssuerType1Code
-from ._Max350Text import Max350Text
-from ._ProductType6Code import ProductType6Code
+from . import ActiveCurrencyAndAmount
+from . import DebtIssuerType1Code
+from . import Max350Text
+from . import ProductType6Code
 
 class ReportingAssetBreakdown2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ReportingAssetBreakdown2(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def DebtIssrTp(self):
@@ -29,12 +29,12 @@ class ReportingAssetBreakdown2(base_types._BaseFieldType):
 
 	@DebtIssrTp.setter
 	def DebtIssrTp(self, value):
-		self._DebtIssrTp = value if type(value) != base_types.auto else self.make_default("DebtIssrTp")
+		self._DebtIssrTp = value if value is not None else base_types.UninitialisedField(self, 'DebtIssrTp', DebtIssuerType1Code, False)
 
 	@DebtIssrTp.deleter
 	def DebtIssrTp(self):
 		del self._DebtIssrTp
-		self._DebtIssrTp = None
+		self._DebtIssrTp = base_types.UninitialisedField(self, 'DebtIssrTp', DebtIssuerType1Code, False)
 
 	@property
 	def Id(self):
@@ -42,12 +42,12 @@ class ReportingAssetBreakdown2(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max350Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max350Text, False)
 
 	@property
 	def RptgAsstTp(self):
@@ -55,12 +55,12 @@ class ReportingAssetBreakdown2(base_types._BaseFieldType):
 
 	@RptgAsstTp.setter
 	def RptgAsstTp(self, value):
-		self._RptgAsstTp = value if type(value) != base_types.auto else self.make_default("RptgAsstTp")
+		self._RptgAsstTp = value if value is not None else base_types.UninitialisedField(self, 'RptgAsstTp', ProductType6Code, False)
 
 	@RptgAsstTp.deleter
 	def RptgAsstTp(self):
 		del self._RptgAsstTp
-		self._RptgAsstTp = None
+		self._RptgAsstTp = base_types.UninitialisedField(self, 'RptgAsstTp', ProductType6Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

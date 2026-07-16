@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AgentCAMovementCancellationRequestV01 import AgentCAMovementCancellationRequestV01
+from . import AgentCAMovementCancellationRequestV01
 
 class SEEV_020_001_01():
 
@@ -18,12 +18,12 @@ class SEEV_020_001_01():
 
 		@AgtCAMvmntCxlReq.setter
 		def AgtCAMvmntCxlReq(self, value):
-			self._AgtCAMvmntCxlReq = value if type(value) != base_types.auto else self.make_default("AgtCAMvmntCxlReq")
+			self._AgtCAMvmntCxlReq = value if value is not None else base_types.UninitialisedField(self, 'AgtCAMvmntCxlReq', AgentCAMovementCancellationRequestV01, False)
 
 		@AgtCAMvmntCxlReq.deleter
 		def AgtCAMvmntCxlReq(self):
 			del self._AgtCAMvmntCxlReq
-			self._AgtCAMvmntCxlReq = None
+			self._AgtCAMvmntCxlReq = base_types.UninitialisedField(self, 'AgtCAMvmntCxlReq', AgentCAMovementCancellationRequestV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AgtCAMvmntCxlReq', type=AgentCAMovementCancellationRequestV01, min=1, max=1, mutex_group=None, array=False),

@@ -2,18 +2,18 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection53 import AmountAndDirection53
-from ._CountryCode import CountryCode
-from ._DigitalTokenAmount2 import DigitalTokenAmount2
-from ._FinancialInstrumentQuantity25Choice import FinancialInstrumentQuantity25Choice
-from ._ISODateTime import ISODateTime
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._MICIdentifier import MICIdentifier
-from ._Max35Text import Max35Text
-from ._Max52Text import Max52Text
-from ._RegulatoryTradingCapacity1Code import RegulatoryTradingCapacity1Code
-from ._SecuritiesTransactionPrice22Choice import SecuritiesTransactionPrice22Choice
-from ._VariationType1Code import VariationType1Code
+from . import AmountAndDirection53
+from . import CountryCode
+from . import DigitalTokenAmount2
+from . import FinancialInstrumentQuantity25Choice
+from . import ISODateTime
+from . import ImpliedCurrencyAndAmount
+from . import MICIdentifier
+from . import Max35Text
+from . import Max52Text
+from . import RegulatoryTradingCapacity1Code
+from . import SecuritiesTransactionPrice22Choice
+from . import VariationType1Code
 
 class SecuritiesTransaction3(base_types._BaseFieldType):
 
@@ -24,12 +24,12 @@ class SecuritiesTransaction3(base_types._BaseFieldType):
 
 	@CmplxTradCmpntId.setter
 	def CmplxTradCmpntId(self, value):
-		self._CmplxTradCmpntId = value if type(value) != base_types.auto else self.make_default("CmplxTradCmpntId")
+		self._CmplxTradCmpntId = value if value is not None else base_types.UninitialisedField(self, 'CmplxTradCmpntId', Max35Text, False)
 
 	@CmplxTradCmpntId.deleter
 	def CmplxTradCmpntId(self):
 		del self._CmplxTradCmpntId
-		self._CmplxTradCmpntId = None
+		self._CmplxTradCmpntId = base_types.UninitialisedField(self, 'CmplxTradCmpntId', Max35Text, False)
 
 	@property
 	def CtryOfBrnch(self):
@@ -37,12 +37,12 @@ class SecuritiesTransaction3(base_types._BaseFieldType):
 
 	@CtryOfBrnch.setter
 	def CtryOfBrnch(self, value):
-		self._CtryOfBrnch = value if type(value) != base_types.auto else self.make_default("CtryOfBrnch")
+		self._CtryOfBrnch = value if value is not None else base_types.UninitialisedField(self, 'CtryOfBrnch', CountryCode, False)
 
 	@CtryOfBrnch.deleter
 	def CtryOfBrnch(self):
 		del self._CtryOfBrnch
-		self._CtryOfBrnch = None
+		self._CtryOfBrnch = base_types.UninitialisedField(self, 'CtryOfBrnch', CountryCode, False)
 
 	@property
 	def DerivNtnlChng(self):
@@ -50,12 +50,12 @@ class SecuritiesTransaction3(base_types._BaseFieldType):
 
 	@DerivNtnlChng.setter
 	def DerivNtnlChng(self, value):
-		self._DerivNtnlChng = value if type(value) != base_types.auto else self.make_default("DerivNtnlChng")
+		self._DerivNtnlChng = value if value is not None else base_types.UninitialisedField(self, 'DerivNtnlChng', VariationType1Code, False)
 
 	@DerivNtnlChng.deleter
 	def DerivNtnlChng(self):
 		del self._DerivNtnlChng
-		self._DerivNtnlChng = None
+		self._DerivNtnlChng = base_types.UninitialisedField(self, 'DerivNtnlChng', VariationType1Code, False)
 
 	@property
 	def DgtlTknQty(self):
@@ -63,12 +63,12 @@ class SecuritiesTransaction3(base_types._BaseFieldType):
 
 	@DgtlTknQty.setter
 	def DgtlTknQty(self, value):
-		self._DgtlTknQty = value if type(value) != base_types.auto else self.make_default("DgtlTknQty")
+		self._DgtlTknQty = value if value is not None else base_types.UninitialisedField(self, 'DgtlTknQty', DigitalTokenAmount2, True)
 
 	@DgtlTknQty.deleter
 	def DgtlTknQty(self):
 		del self._DgtlTknQty
-		self._DgtlTknQty = None
+		self._DgtlTknQty = base_types.UninitialisedField(self, 'DgtlTknQty', DigitalTokenAmount2, True)
 
 	@property
 	def NetAmt(self):
@@ -76,12 +76,12 @@ class SecuritiesTransaction3(base_types._BaseFieldType):
 
 	@NetAmt.setter
 	def NetAmt(self, value):
-		self._NetAmt = value if type(value) != base_types.auto else self.make_default("NetAmt")
+		self._NetAmt = value if value is not None else base_types.UninitialisedField(self, 'NetAmt', ImpliedCurrencyAndAmount, False)
 
 	@NetAmt.deleter
 	def NetAmt(self):
 		del self._NetAmt
-		self._NetAmt = None
+		self._NetAmt = base_types.UninitialisedField(self, 'NetAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def Pric(self):
@@ -89,12 +89,12 @@ class SecuritiesTransaction3(base_types._BaseFieldType):
 
 	@Pric.setter
 	def Pric(self, value):
-		self._Pric = value if type(value) != base_types.auto else self.make_default("Pric")
+		self._Pric = value if value is not None else base_types.UninitialisedField(self, 'Pric', SecuritiesTransactionPrice22Choice, False)
 
 	@Pric.deleter
 	def Pric(self):
 		del self._Pric
-		self._Pric = None
+		self._Pric = base_types.UninitialisedField(self, 'Pric', SecuritiesTransactionPrice22Choice, False)
 
 	@property
 	def Qty(self):
@@ -102,12 +102,12 @@ class SecuritiesTransaction3(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+		self._Qty = value if value is not None else base_types.UninitialisedField(self, 'Qty', FinancialInstrumentQuantity25Choice, False)
 
 	@Qty.deleter
 	def Qty(self):
 		del self._Qty
-		self._Qty = None
+		self._Qty = base_types.UninitialisedField(self, 'Qty', FinancialInstrumentQuantity25Choice, False)
 
 	@property
 	def TradDt(self):
@@ -115,12 +115,12 @@ class SecuritiesTransaction3(base_types._BaseFieldType):
 
 	@TradDt.setter
 	def TradDt(self, value):
-		self._TradDt = value if type(value) != base_types.auto else self.make_default("TradDt")
+		self._TradDt = value if value is not None else base_types.UninitialisedField(self, 'TradDt', ISODateTime, False)
 
 	@TradDt.deleter
 	def TradDt(self):
 		del self._TradDt
-		self._TradDt = None
+		self._TradDt = base_types.UninitialisedField(self, 'TradDt', ISODateTime, False)
 
 	@property
 	def TradPlcMtchgId(self):
@@ -128,12 +128,12 @@ class SecuritiesTransaction3(base_types._BaseFieldType):
 
 	@TradPlcMtchgId.setter
 	def TradPlcMtchgId(self, value):
-		self._TradPlcMtchgId = value if type(value) != base_types.auto else self.make_default("TradPlcMtchgId")
+		self._TradPlcMtchgId = value if value is not None else base_types.UninitialisedField(self, 'TradPlcMtchgId', Max52Text, False)
 
 	@TradPlcMtchgId.deleter
 	def TradPlcMtchgId(self):
 		del self._TradPlcMtchgId
-		self._TradPlcMtchgId = None
+		self._TradPlcMtchgId = base_types.UninitialisedField(self, 'TradPlcMtchgId', Max52Text, False)
 
 	@property
 	def TradVn(self):
@@ -141,12 +141,12 @@ class SecuritiesTransaction3(base_types._BaseFieldType):
 
 	@TradVn.setter
 	def TradVn(self, value):
-		self._TradVn = value if type(value) != base_types.auto else self.make_default("TradVn")
+		self._TradVn = value if value is not None else base_types.UninitialisedField(self, 'TradVn', MICIdentifier, False)
 
 	@TradVn.deleter
 	def TradVn(self):
 		del self._TradVn
-		self._TradVn = None
+		self._TradVn = base_types.UninitialisedField(self, 'TradVn', MICIdentifier, False)
 
 	@property
 	def TradgCpcty(self):
@@ -154,12 +154,12 @@ class SecuritiesTransaction3(base_types._BaseFieldType):
 
 	@TradgCpcty.setter
 	def TradgCpcty(self, value):
-		self._TradgCpcty = value if type(value) != base_types.auto else self.make_default("TradgCpcty")
+		self._TradgCpcty = value if value is not None else base_types.UninitialisedField(self, 'TradgCpcty', RegulatoryTradingCapacity1Code, False)
 
 	@TradgCpcty.deleter
 	def TradgCpcty(self):
 		del self._TradgCpcty
-		self._TradgCpcty = None
+		self._TradgCpcty = base_types.UninitialisedField(self, 'TradgCpcty', RegulatoryTradingCapacity1Code, False)
 
 	@property
 	def UpFrntPmt(self):
@@ -167,12 +167,12 @@ class SecuritiesTransaction3(base_types._BaseFieldType):
 
 	@UpFrntPmt.setter
 	def UpFrntPmt(self, value):
-		self._UpFrntPmt = value if type(value) != base_types.auto else self.make_default("UpFrntPmt")
+		self._UpFrntPmt = value if value is not None else base_types.UninitialisedField(self, 'UpFrntPmt', AmountAndDirection53, False)
 
 	@UpFrntPmt.deleter
 	def UpFrntPmt(self):
 		del self._UpFrntPmt
-		self._UpFrntPmt = None
+		self._UpFrntPmt = base_types.UninitialisedField(self, 'UpFrntPmt', AmountAndDirection53, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CmplxTradCmpntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

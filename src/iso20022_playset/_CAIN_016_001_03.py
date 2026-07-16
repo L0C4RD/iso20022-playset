@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InquiryInitiationV03 import InquiryInitiationV03
+from . import InquiryInitiationV03
 
 class CAIN_016_001_03():
 
@@ -18,12 +18,12 @@ class CAIN_016_001_03():
 
 		@NqryInitn.setter
 		def NqryInitn(self, value):
-			self._NqryInitn = value if type(value) != base_types.auto else self.make_default("NqryInitn")
+			self._NqryInitn = value if value is not None else base_types.UninitialisedField(self, 'NqryInitn', InquiryInitiationV03, False)
 
 		@NqryInitn.deleter
 		def NqryInitn(self):
 			del self._NqryInitn
-			self._NqryInitn = None
+			self._NqryInitn = base_types.UninitialisedField(self, 'NqryInitn', InquiryInitiationV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='NqryInitn', type=InquiryInitiationV03, min=1, max=1, mutex_group=None, array=False),

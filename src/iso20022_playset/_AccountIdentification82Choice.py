@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
-from ._GenericAccountIdentification1 import GenericAccountIdentification1
-from ._IBAN2007Identifier import IBAN2007Identifier
+from . import BlockChainAddressWallet3
+from . import GenericAccountIdentification1
+from . import IBAN2007Identifier
 
 class AccountIdentification82Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AccountIdentification82Choice(base_types._BaseFieldType):
 
 	@BlckChainCshWllt.setter
 	def BlckChainCshWllt(self, value):
-		self._BlckChainCshWllt = value if type(value) != base_types.auto else self.make_default("BlckChainCshWllt")
+		self._BlckChainCshWllt = value if value is not None else base_types.UninitialisedField(self, 'BlckChainCshWllt', BlockChainAddressWallet3, False)
 
 	@BlckChainCshWllt.deleter
 	def BlckChainCshWllt(self):
 		del self._BlckChainCshWllt
-		self._BlckChainCshWllt = None
+		self._BlckChainCshWllt = base_types.UninitialisedField(self, 'BlckChainCshWllt', BlockChainAddressWallet3, False)
 
 	@property
 	def IBAN(self):
@@ -28,12 +28,12 @@ class AccountIdentification82Choice(base_types._BaseFieldType):
 
 	@IBAN.setter
 	def IBAN(self, value):
-		self._IBAN = value if type(value) != base_types.auto else self.make_default("IBAN")
+		self._IBAN = value if value is not None else base_types.UninitialisedField(self, 'IBAN', IBAN2007Identifier, False)
 
 	@IBAN.deleter
 	def IBAN(self):
 		del self._IBAN
-		self._IBAN = None
+		self._IBAN = base_types.UninitialisedField(self, 'IBAN', IBAN2007Identifier, False)
 
 	@property
 	def Othr(self):
@@ -41,12 +41,12 @@ class AccountIdentification82Choice(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', GenericAccountIdentification1, False)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', GenericAccountIdentification1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BlckChainCshWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=1, array=False),

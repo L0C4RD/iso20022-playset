@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PartyIdentification136 import PartyIdentification136
-from ._PartyIdentificationAndAccount202 import PartyIdentificationAndAccount202
+from . import PartyIdentification136
+from . import PartyIdentificationAndAccount202
 
 class CollateralParties9(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CollateralParties9(base_types._BaseFieldType):
 
 	@ClntPtyA.setter
 	def ClntPtyA(self, value):
-		self._ClntPtyA = value if type(value) != base_types.auto else self.make_default("ClntPtyA")
+		self._ClntPtyA = value if value is not None else base_types.UninitialisedField(self, 'ClntPtyA', PartyIdentificationAndAccount202, False)
 
 	@ClntPtyA.deleter
 	def ClntPtyA(self):
 		del self._ClntPtyA
-		self._ClntPtyA = None
+		self._ClntPtyA = base_types.UninitialisedField(self, 'ClntPtyA', PartyIdentificationAndAccount202, False)
 
 	@property
 	def PtyA(self):
@@ -27,12 +27,12 @@ class CollateralParties9(base_types._BaseFieldType):
 
 	@PtyA.setter
 	def PtyA(self, value):
-		self._PtyA = value if type(value) != base_types.auto else self.make_default("PtyA")
+		self._PtyA = value if value is not None else base_types.UninitialisedField(self, 'PtyA', PartyIdentificationAndAccount202, False)
 
 	@PtyA.deleter
 	def PtyA(self):
 		del self._PtyA
-		self._PtyA = None
+		self._PtyA = base_types.UninitialisedField(self, 'PtyA', PartyIdentificationAndAccount202, False)
 
 	@property
 	def TrptyAgt(self):
@@ -40,12 +40,12 @@ class CollateralParties9(base_types._BaseFieldType):
 
 	@TrptyAgt.setter
 	def TrptyAgt(self, value):
-		self._TrptyAgt = value if type(value) != base_types.auto else self.make_default("TrptyAgt")
+		self._TrptyAgt = value if value is not None else base_types.UninitialisedField(self, 'TrptyAgt', PartyIdentification136, False)
 
 	@TrptyAgt.deleter
 	def TrptyAgt(self):
 		del self._TrptyAgt
-		self._TrptyAgt = None
+		self._TrptyAgt = base_types.UninitialisedField(self, 'TrptyAgt', PartyIdentification136, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClntPtyA', type=PartyIdentificationAndAccount202, min=0, max=1, mutex_group=None, array=False),

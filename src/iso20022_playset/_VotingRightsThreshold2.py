@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NumberOrPercentage2Choice import NumberOrPercentage2Choice
-from ._ThresholdBasis1Choice import ThresholdBasis1Choice
+from . import NumberOrPercentage2Choice
+from . import ThresholdBasis1Choice
 
 class VotingRightsThreshold2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class VotingRightsThreshold2(base_types._BaseFieldType):
 
 	@Thrshld.setter
 	def Thrshld(self, value):
-		self._Thrshld = value if type(value) != base_types.auto else self.make_default("Thrshld")
+		self._Thrshld = value if value is not None else base_types.UninitialisedField(self, 'Thrshld', NumberOrPercentage2Choice, False)
 
 	@Thrshld.deleter
 	def Thrshld(self):
 		del self._Thrshld
-		self._Thrshld = None
+		self._Thrshld = base_types.UninitialisedField(self, 'Thrshld', NumberOrPercentage2Choice, False)
 
 	@property
 	def ThrshldBsis(self):
@@ -27,12 +27,12 @@ class VotingRightsThreshold2(base_types._BaseFieldType):
 
 	@ThrshldBsis.setter
 	def ThrshldBsis(self, value):
-		self._ThrshldBsis = value if type(value) != base_types.auto else self.make_default("ThrshldBsis")
+		self._ThrshldBsis = value if value is not None else base_types.UninitialisedField(self, 'ThrshldBsis', ThresholdBasis1Choice, False)
 
 	@ThrshldBsis.deleter
 	def ThrshldBsis(self):
 		del self._ThrshldBsis
-		self._ThrshldBsis = None
+		self._ThrshldBsis = base_types.UninitialisedField(self, 'ThrshldBsis', ThresholdBasis1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Thrshld', type=NumberOrPercentage2Choice, min=1, max=1, mutex_group=None, array=False),

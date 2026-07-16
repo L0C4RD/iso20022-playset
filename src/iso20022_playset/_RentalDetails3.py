@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
-from ._ISODateTime import ISODateTime
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max4NumericText import Max4NumericText
-from ._Max70Text import Max70Text
-from ._PeriodUnit2Code import PeriodUnit2Code
-from ._ServiceStartEnd3 import ServiceStartEnd3
+from . import ISO3NumericCurrencyCode
+from . import ISODateTime
+from . import ImpliedCurrencyAndAmount
+from . import Max4NumericText
+from . import Max70Text
+from . import PeriodUnit2Code
+from . import ServiceStartEnd3
 
 class RentalDetails3(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class RentalDetails3(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ISO3NumericCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ISO3NumericCurrencyCode, False)
 
 	@property
 	def DtTm(self):
@@ -32,12 +32,12 @@ class RentalDetails3(base_types._BaseFieldType):
 
 	@DtTm.setter
 	def DtTm(self, value):
-		self._DtTm = value if type(value) != base_types.auto else self.make_default("DtTm")
+		self._DtTm = value if value is not None else base_types.UninitialisedField(self, 'DtTm', ISODateTime, False)
 
 	@DtTm.deleter
 	def DtTm(self):
 		del self._DtTm
-		self._DtTm = None
+		self._DtTm = base_types.UninitialisedField(self, 'DtTm', ISODateTime, False)
 
 	@property
 	def Id(self):
@@ -45,12 +45,12 @@ class RentalDetails3(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max70Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max70Text, False)
 
 	@property
 	def Rtr(self):
@@ -58,12 +58,12 @@ class RentalDetails3(base_types._BaseFieldType):
 
 	@Rtr.setter
 	def Rtr(self, value):
-		self._Rtr = value if type(value) != base_types.auto else self.make_default("Rtr")
+		self._Rtr = value if value is not None else base_types.UninitialisedField(self, 'Rtr', ServiceStartEnd3, False)
 
 	@Rtr.deleter
 	def Rtr(self):
 		del self._Rtr
-		self._Rtr = None
+		self._Rtr = base_types.UninitialisedField(self, 'Rtr', ServiceStartEnd3, False)
 
 	@property
 	def Start(self):
@@ -71,12 +71,12 @@ class RentalDetails3(base_types._BaseFieldType):
 
 	@Start.setter
 	def Start(self, value):
-		self._Start = value if type(value) != base_types.auto else self.make_default("Start")
+		self._Start = value if value is not None else base_types.UninitialisedField(self, 'Start', ServiceStartEnd3, False)
 
 	@Start.deleter
 	def Start(self):
 		del self._Start
-		self._Start = None
+		self._Start = base_types.UninitialisedField(self, 'Start', ServiceStartEnd3, False)
 
 	@property
 	def TmPrd(self):
@@ -84,12 +84,12 @@ class RentalDetails3(base_types._BaseFieldType):
 
 	@TmPrd.setter
 	def TmPrd(self, value):
-		self._TmPrd = value if type(value) != base_types.auto else self.make_default("TmPrd")
+		self._TmPrd = value if value is not None else base_types.UninitialisedField(self, 'TmPrd', PeriodUnit2Code, True)
 
 	@TmPrd.deleter
 	def TmPrd(self):
 		del self._TmPrd
-		self._TmPrd = None
+		self._TmPrd = base_types.UninitialisedField(self, 'TmPrd', PeriodUnit2Code, True)
 
 	@property
 	def TmPrdRate(self):
@@ -97,12 +97,12 @@ class RentalDetails3(base_types._BaseFieldType):
 
 	@TmPrdRate.setter
 	def TmPrdRate(self, value):
-		self._TmPrdRate = value if type(value) != base_types.auto else self.make_default("TmPrdRate")
+		self._TmPrdRate = value if value is not None else base_types.UninitialisedField(self, 'TmPrdRate', ImpliedCurrencyAndAmount, False)
 
 	@TmPrdRate.deleter
 	def TmPrdRate(self):
 		del self._TmPrdRate
-		self._TmPrdRate = None
+		self._TmPrdRate = base_types.UninitialisedField(self, 'TmPrdRate', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def TmPrdUnit(self):
@@ -110,12 +110,12 @@ class RentalDetails3(base_types._BaseFieldType):
 
 	@TmPrdUnit.setter
 	def TmPrdUnit(self, value):
-		self._TmPrdUnit = value if type(value) != base_types.auto else self.make_default("TmPrdUnit")
+		self._TmPrdUnit = value if value is not None else base_types.UninitialisedField(self, 'TmPrdUnit', Max4NumericText, False)
 
 	@TmPrdUnit.deleter
 	def TmPrdUnit(self):
 		del self._TmPrdUnit
-		self._TmPrdUnit = None
+		self._TmPrdUnit = base_types.UninitialisedField(self, 'TmPrdUnit', Max4NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ccy', type=ISO3NumericCurrencyCode, min=0, max=1, mutex_group=None, array=False),

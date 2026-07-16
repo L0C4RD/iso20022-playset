@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Max210Text import Max210Text
+from . import ActiveCurrencyAndAmount
+from . import Max210Text
 
 class Result1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Result1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max210Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max210Text, False)
 
 	@property
 	def DueToPtyA(self):
@@ -27,12 +27,12 @@ class Result1(base_types._BaseFieldType):
 
 	@DueToPtyA.setter
 	def DueToPtyA(self, value):
-		self._DueToPtyA = value if type(value) != base_types.auto else self.make_default("DueToPtyA")
+		self._DueToPtyA = value if value is not None else base_types.UninitialisedField(self, 'DueToPtyA', ActiveCurrencyAndAmount, False)
 
 	@DueToPtyA.deleter
 	def DueToPtyA(self):
 		del self._DueToPtyA
-		self._DueToPtyA = None
+		self._DueToPtyA = base_types.UninitialisedField(self, 'DueToPtyA', ActiveCurrencyAndAmount, False)
 
 	@property
 	def DueToPtyB(self):
@@ -40,12 +40,12 @@ class Result1(base_types._BaseFieldType):
 
 	@DueToPtyB.setter
 	def DueToPtyB(self, value):
-		self._DueToPtyB = value if type(value) != base_types.auto else self.make_default("DueToPtyB")
+		self._DueToPtyB = value if value is not None else base_types.UninitialisedField(self, 'DueToPtyB', ActiveCurrencyAndAmount, False)
 
 	@DueToPtyB.deleter
 	def DueToPtyB(self):
 		del self._DueToPtyB
-		self._DueToPtyB = None
+		self._DueToPtyB = base_types.UninitialisedField(self, 'DueToPtyB', ActiveCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max210Text, min=0, max=1, mutex_group=None, array=False),

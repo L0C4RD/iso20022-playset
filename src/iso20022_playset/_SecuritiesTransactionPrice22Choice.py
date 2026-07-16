@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesTransactionPrice2Choice import SecuritiesTransactionPrice2Choice
-from ._SecuritiesTransactionPrice6 import SecuritiesTransactionPrice6
-from ._SecuritiesTransactionPrice7 import SecuritiesTransactionPrice7
+from . import SecuritiesTransactionPrice2Choice
+from . import SecuritiesTransactionPrice6
+from . import SecuritiesTransactionPrice7
 
 class SecuritiesTransactionPrice22Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SecuritiesTransactionPrice22Choice(base_types._BaseFieldType):
 
 	@DgtlTknPric.setter
 	def DgtlTknPric(self, value):
-		self._DgtlTknPric = value if type(value) != base_types.auto else self.make_default("DgtlTknPric")
+		self._DgtlTknPric = value if value is not None else base_types.UninitialisedField(self, 'DgtlTknPric', SecuritiesTransactionPrice7, False)
 
 	@DgtlTknPric.deleter
 	def DgtlTknPric(self):
 		del self._DgtlTknPric
-		self._DgtlTknPric = None
+		self._DgtlTknPric = base_types.UninitialisedField(self, 'DgtlTknPric', SecuritiesTransactionPrice7, False)
 
 	@property
 	def NoPric(self):
@@ -28,12 +28,12 @@ class SecuritiesTransactionPrice22Choice(base_types._BaseFieldType):
 
 	@NoPric.setter
 	def NoPric(self, value):
-		self._NoPric = value if type(value) != base_types.auto else self.make_default("NoPric")
+		self._NoPric = value if value is not None else base_types.UninitialisedField(self, 'NoPric', SecuritiesTransactionPrice6, False)
 
 	@NoPric.deleter
 	def NoPric(self):
 		del self._NoPric
-		self._NoPric = None
+		self._NoPric = base_types.UninitialisedField(self, 'NoPric', SecuritiesTransactionPrice6, False)
 
 	@property
 	def Pric(self):
@@ -41,12 +41,12 @@ class SecuritiesTransactionPrice22Choice(base_types._BaseFieldType):
 
 	@Pric.setter
 	def Pric(self, value):
-		self._Pric = value if type(value) != base_types.auto else self.make_default("Pric")
+		self._Pric = value if value is not None else base_types.UninitialisedField(self, 'Pric', SecuritiesTransactionPrice2Choice, False)
 
 	@Pric.deleter
 	def Pric(self):
 		del self._Pric
-		self._Pric = None
+		self._Pric = base_types.UninitialisedField(self, 'Pric', SecuritiesTransactionPrice2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DgtlTknPric', type=SecuritiesTransactionPrice7, min=0, max=1, mutex_group=1, array=False),

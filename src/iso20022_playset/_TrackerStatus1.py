@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._ExternalPaymentTransactionStatus1Code import ExternalPaymentTransactionStatus1Code
-from ._PaymentRejectReturnReason1 import PaymentRejectReturnReason1
-from ._PaymentStatusReason1 import PaymentStatusReason1
+from . import DateAndDateTime2Choice
+from . import ExternalPaymentTransactionStatus1Code
+from . import PaymentRejectReturnReason1
+from . import PaymentStatusReason1
 
 class TrackerStatus1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class TrackerStatus1(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', DateAndDateTime2Choice, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', DateAndDateTime2Choice, False)
 
 	@property
 	def RjctRtrRsn(self):
@@ -29,12 +29,12 @@ class TrackerStatus1(base_types._BaseFieldType):
 
 	@RjctRtrRsn.setter
 	def RjctRtrRsn(self, value):
-		self._RjctRtrRsn = value if type(value) != base_types.auto else self.make_default("RjctRtrRsn")
+		self._RjctRtrRsn = value if value is not None else base_types.UninitialisedField(self, 'RjctRtrRsn', PaymentRejectReturnReason1, True)
 
 	@RjctRtrRsn.deleter
 	def RjctRtrRsn(self):
 		del self._RjctRtrRsn
-		self._RjctRtrRsn = None
+		self._RjctRtrRsn = base_types.UninitialisedField(self, 'RjctRtrRsn', PaymentRejectReturnReason1, True)
 
 	@property
 	def Sts(self):
@@ -42,12 +42,12 @@ class TrackerStatus1(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', ExternalPaymentTransactionStatus1Code, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', ExternalPaymentTransactionStatus1Code, False)
 
 	@property
 	def StsRsn(self):
@@ -55,12 +55,12 @@ class TrackerStatus1(base_types._BaseFieldType):
 
 	@StsRsn.setter
 	def StsRsn(self, value):
-		self._StsRsn = value if type(value) != base_types.auto else self.make_default("StsRsn")
+		self._StsRsn = value if value is not None else base_types.UninitialisedField(self, 'StsRsn', PaymentStatusReason1, True)
 
 	@StsRsn.deleter
 	def StsRsn(self):
 		del self._StsRsn
-		self._StsRsn = None
+		self._StsRsn = base_types.UninitialisedField(self, 'StsRsn', PaymentStatusReason1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),

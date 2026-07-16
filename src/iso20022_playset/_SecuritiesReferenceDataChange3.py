@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
-from ._SecurityIdentification39 import SecurityIdentification39
+from . import ISODateTime
+from . import Max350Text
+from . import Max35Text
+from . import SecurityIdentification39
 
 class SecuritiesReferenceDataChange3(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class SecuritiesReferenceDataChange3(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification39, False)
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
 		del self._FinInstrmId
-		self._FinInstrmId = None
+		self._FinInstrmId = base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification39, False)
 
 	@property
 	def FldNm(self):
@@ -29,12 +29,12 @@ class SecuritiesReferenceDataChange3(base_types._BaseFieldType):
 
 	@FldNm.setter
 	def FldNm(self, value):
-		self._FldNm = value if type(value) != base_types.auto else self.make_default("FldNm")
+		self._FldNm = value if value is not None else base_types.UninitialisedField(self, 'FldNm', Max35Text, False)
 
 	@FldNm.deleter
 	def FldNm(self):
 		del self._FldNm
-		self._FldNm = None
+		self._FldNm = base_types.UninitialisedField(self, 'FldNm', Max35Text, False)
 
 	@property
 	def NewFldVal(self):
@@ -42,12 +42,12 @@ class SecuritiesReferenceDataChange3(base_types._BaseFieldType):
 
 	@NewFldVal.setter
 	def NewFldVal(self, value):
-		self._NewFldVal = value if type(value) != base_types.auto else self.make_default("NewFldVal")
+		self._NewFldVal = value if value is not None else base_types.UninitialisedField(self, 'NewFldVal', Max350Text, False)
 
 	@NewFldVal.deleter
 	def NewFldVal(self):
 		del self._NewFldVal
-		self._NewFldVal = None
+		self._NewFldVal = base_types.UninitialisedField(self, 'NewFldVal', Max350Text, False)
 
 	@property
 	def OdFldVal(self):
@@ -55,12 +55,12 @@ class SecuritiesReferenceDataChange3(base_types._BaseFieldType):
 
 	@OdFldVal.setter
 	def OdFldVal(self, value):
-		self._OdFldVal = value if type(value) != base_types.auto else self.make_default("OdFldVal")
+		self._OdFldVal = value if value is not None else base_types.UninitialisedField(self, 'OdFldVal', Max350Text, False)
 
 	@OdFldVal.deleter
 	def OdFldVal(self):
 		del self._OdFldVal
-		self._OdFldVal = None
+		self._OdFldVal = base_types.UninitialisedField(self, 'OdFldVal', Max350Text, False)
 
 	@property
 	def OprTmStmp(self):
@@ -68,12 +68,12 @@ class SecuritiesReferenceDataChange3(base_types._BaseFieldType):
 
 	@OprTmStmp.setter
 	def OprTmStmp(self, value):
-		self._OprTmStmp = value if type(value) != base_types.auto else self.make_default("OprTmStmp")
+		self._OprTmStmp = value if value is not None else base_types.UninitialisedField(self, 'OprTmStmp', ISODateTime, False)
 
 	@OprTmStmp.deleter
 	def OprTmStmp(self):
 		del self._OprTmStmp
-		self._OprTmStmp = None
+		self._OprTmStmp = base_types.UninitialisedField(self, 'OprTmStmp', ISODateTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification39, min=1, max=1, mutex_group=None, array=False),

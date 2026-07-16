@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ClearingPartyAndTime14 import ClearingPartyAndTime14
-from ._NoReasonCode import NoReasonCode
+from . import ClearingPartyAndTime14
+from . import NoReasonCode
 
 class Cleared16Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Cleared16Choice(base_types._BaseFieldType):
 
 	@Clrd.setter
 	def Clrd(self, value):
-		self._Clrd = value if type(value) != base_types.auto else self.make_default("Clrd")
+		self._Clrd = value if value is not None else base_types.UninitialisedField(self, 'Clrd', ClearingPartyAndTime14, False)
 
 	@Clrd.deleter
 	def Clrd(self):
 		del self._Clrd
-		self._Clrd = None
+		self._Clrd = base_types.UninitialisedField(self, 'Clrd', ClearingPartyAndTime14, False)
 
 	@property
 	def NonClrd(self):
@@ -27,12 +27,12 @@ class Cleared16Choice(base_types._BaseFieldType):
 
 	@NonClrd.setter
 	def NonClrd(self, value):
-		self._NonClrd = value if type(value) != base_types.auto else self.make_default("NonClrd")
+		self._NonClrd = value if value is not None else base_types.UninitialisedField(self, 'NonClrd', NoReasonCode, False)
 
 	@NonClrd.deleter
 	def NonClrd(self):
 		del self._NonClrd
-		self._NonClrd = None
+		self._NonClrd = base_types.UninitialisedField(self, 'NonClrd', NoReasonCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Clrd', type=ClearingPartyAndTime14, min=0, max=1, mutex_group=1, array=False),

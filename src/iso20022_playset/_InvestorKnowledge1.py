@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._OtherTargetMarketInvestorKnowledge1 import OtherTargetMarketInvestorKnowledge1
-from ._TargetMarket1Code import TargetMarket1Code
+from . import OtherTargetMarketInvestorKnowledge1
+from . import TargetMarket1Code
 
 class InvestorKnowledge1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class InvestorKnowledge1(base_types._BaseFieldType):
 
 	@AdvncdInvstr.setter
 	def AdvncdInvstr(self, value):
-		self._AdvncdInvstr = value if type(value) != base_types.auto else self.make_default("AdvncdInvstr")
+		self._AdvncdInvstr = value if value is not None else base_types.UninitialisedField(self, 'AdvncdInvstr', TargetMarket1Code, False)
 
 	@AdvncdInvstr.deleter
 	def AdvncdInvstr(self):
 		del self._AdvncdInvstr
-		self._AdvncdInvstr = None
+		self._AdvncdInvstr = base_types.UninitialisedField(self, 'AdvncdInvstr', TargetMarket1Code, False)
 
 	@property
 	def BsicInvstr(self):
@@ -27,12 +27,12 @@ class InvestorKnowledge1(base_types._BaseFieldType):
 
 	@BsicInvstr.setter
 	def BsicInvstr(self, value):
-		self._BsicInvstr = value if type(value) != base_types.auto else self.make_default("BsicInvstr")
+		self._BsicInvstr = value if value is not None else base_types.UninitialisedField(self, 'BsicInvstr', TargetMarket1Code, False)
 
 	@BsicInvstr.deleter
 	def BsicInvstr(self):
 		del self._BsicInvstr
-		self._BsicInvstr = None
+		self._BsicInvstr = base_types.UninitialisedField(self, 'BsicInvstr', TargetMarket1Code, False)
 
 	@property
 	def ExprtInvstrDE(self):
@@ -40,12 +40,12 @@ class InvestorKnowledge1(base_types._BaseFieldType):
 
 	@ExprtInvstrDE.setter
 	def ExprtInvstrDE(self, value):
-		self._ExprtInvstrDE = value if type(value) != base_types.auto else self.make_default("ExprtInvstrDE")
+		self._ExprtInvstrDE = value if value is not None else base_types.UninitialisedField(self, 'ExprtInvstrDE', TargetMarket1Code, False)
 
 	@ExprtInvstrDE.deleter
 	def ExprtInvstrDE(self):
 		del self._ExprtInvstrDE
-		self._ExprtInvstrDE = None
+		self._ExprtInvstrDE = base_types.UninitialisedField(self, 'ExprtInvstrDE', TargetMarket1Code, False)
 
 	@property
 	def InfrmdInvstr(self):
@@ -53,12 +53,12 @@ class InvestorKnowledge1(base_types._BaseFieldType):
 
 	@InfrmdInvstr.setter
 	def InfrmdInvstr(self, value):
-		self._InfrmdInvstr = value if type(value) != base_types.auto else self.make_default("InfrmdInvstr")
+		self._InfrmdInvstr = value if value is not None else base_types.UninitialisedField(self, 'InfrmdInvstr', TargetMarket1Code, False)
 
 	@InfrmdInvstr.deleter
 	def InfrmdInvstr(self):
 		del self._InfrmdInvstr
-		self._InfrmdInvstr = None
+		self._InfrmdInvstr = base_types.UninitialisedField(self, 'InfrmdInvstr', TargetMarket1Code, False)
 
 	@property
 	def Othr(self):
@@ -66,12 +66,12 @@ class InvestorKnowledge1(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', OtherTargetMarketInvestorKnowledge1, True)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', OtherTargetMarketInvestorKnowledge1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AdvncdInvstr', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),

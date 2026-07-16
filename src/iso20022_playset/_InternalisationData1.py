@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InternalisationData2 import InternalisationData2
-from ._InternalisationDataRate1 import InternalisationDataRate1
+from . import InternalisationData2
+from . import InternalisationDataRate1
 
 class InternalisationData1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class InternalisationData1(base_types._BaseFieldType):
 
 	@Aggt.setter
 	def Aggt(self, value):
-		self._Aggt = value if type(value) != base_types.auto else self.make_default("Aggt")
+		self._Aggt = value if value is not None else base_types.UninitialisedField(self, 'Aggt', InternalisationData2, False)
 
 	@Aggt.deleter
 	def Aggt(self):
 		del self._Aggt
-		self._Aggt = None
+		self._Aggt = base_types.UninitialisedField(self, 'Aggt', InternalisationData2, False)
 
 	@property
 	def FaildRate(self):
@@ -27,12 +27,12 @@ class InternalisationData1(base_types._BaseFieldType):
 
 	@FaildRate.setter
 	def FaildRate(self, value):
-		self._FaildRate = value if type(value) != base_types.auto else self.make_default("FaildRate")
+		self._FaildRate = value if value is not None else base_types.UninitialisedField(self, 'FaildRate', InternalisationDataRate1, False)
 
 	@FaildRate.deleter
 	def FaildRate(self):
 		del self._FaildRate
-		self._FaildRate = None
+		self._FaildRate = base_types.UninitialisedField(self, 'FaildRate', InternalisationDataRate1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Aggt', type=InternalisationData2, min=1, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PaymentReturnV14 import PaymentReturnV14
+from . import PaymentReturnV14
 
 class PACS_004_001_14():
 
@@ -18,12 +18,12 @@ class PACS_004_001_14():
 
 		@PmtRtr.setter
 		def PmtRtr(self, value):
-			self._PmtRtr = value if type(value) != base_types.auto else self.make_default("PmtRtr")
+			self._PmtRtr = value if value is not None else base_types.UninitialisedField(self, 'PmtRtr', PaymentReturnV14, False)
 
 		@PmtRtr.deleter
 		def PmtRtr(self):
 			del self._PmtRtr
-			self._PmtRtr = None
+			self._PmtRtr = base_types.UninitialisedField(self, 'PmtRtr', PaymentReturnV14, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='PmtRtr', type=PaymentReturnV14, min=1, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BackupPaymentV07 import BackupPaymentV07
+from . import BackupPaymentV07
 
 class CAMT_023_001_07():
 
@@ -18,12 +18,12 @@ class CAMT_023_001_07():
 
 		@BckpPmt.setter
 		def BckpPmt(self, value):
-			self._BckpPmt = value if type(value) != base_types.auto else self.make_default("BckpPmt")
+			self._BckpPmt = value if value is not None else base_types.UninitialisedField(self, 'BckpPmt', BackupPaymentV07, False)
 
 		@BckpPmt.deleter
 		def BckpPmt(self):
 			del self._BckpPmt
-			self._BckpPmt = None
+			self._BckpPmt = base_types.UninitialisedField(self, 'BckpPmt', BackupPaymentV07, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='BckpPmt', type=BackupPaymentV07, min=1, max=1, mutex_group=None, array=False),

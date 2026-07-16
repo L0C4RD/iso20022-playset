@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DocumentLineInformation1 import DocumentLineInformation1
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
-from ._ReferredDocumentType4 import ReferredDocumentType4
+from . import DocumentLineInformation1
+from . import ISODate
+from . import Max35Text
+from . import ReferredDocumentType4
 
 class ReferredDocumentInformation7(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ReferredDocumentInformation7(base_types._BaseFieldType):
 
 	@LineDtls.setter
 	def LineDtls(self, value):
-		self._LineDtls = value if type(value) != base_types.auto else self.make_default("LineDtls")
+		self._LineDtls = value if value is not None else base_types.UninitialisedField(self, 'LineDtls', DocumentLineInformation1, True)
 
 	@LineDtls.deleter
 	def LineDtls(self):
 		del self._LineDtls
-		self._LineDtls = None
+		self._LineDtls = base_types.UninitialisedField(self, 'LineDtls', DocumentLineInformation1, True)
 
 	@property
 	def Nb(self):
@@ -29,12 +29,12 @@ class ReferredDocumentInformation7(base_types._BaseFieldType):
 
 	@Nb.setter
 	def Nb(self, value):
-		self._Nb = value if type(value) != base_types.auto else self.make_default("Nb")
+		self._Nb = value if value is not None else base_types.UninitialisedField(self, 'Nb', Max35Text, False)
 
 	@Nb.deleter
 	def Nb(self):
 		del self._Nb
-		self._Nb = None
+		self._Nb = base_types.UninitialisedField(self, 'Nb', Max35Text, False)
 
 	@property
 	def RltdDt(self):
@@ -42,12 +42,12 @@ class ReferredDocumentInformation7(base_types._BaseFieldType):
 
 	@RltdDt.setter
 	def RltdDt(self, value):
-		self._RltdDt = value if type(value) != base_types.auto else self.make_default("RltdDt")
+		self._RltdDt = value if value is not None else base_types.UninitialisedField(self, 'RltdDt', ISODate, False)
 
 	@RltdDt.deleter
 	def RltdDt(self):
 		del self._RltdDt
-		self._RltdDt = None
+		self._RltdDt = base_types.UninitialisedField(self, 'RltdDt', ISODate, False)
 
 	@property
 	def Tp(self):
@@ -55,12 +55,12 @@ class ReferredDocumentInformation7(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', ReferredDocumentType4, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', ReferredDocumentType4, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LineDtls', type=DocumentLineInformation1, min=0, max=None, mutex_group=None, array=True),

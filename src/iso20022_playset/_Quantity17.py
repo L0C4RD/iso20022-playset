@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DecimalNumber import DecimalNumber
-from ._UnitOfMeasure11Code import UnitOfMeasure11Code
+from . import DecimalNumber
+from . import UnitOfMeasure11Code
 
 class Quantity17(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Quantity17(base_types._BaseFieldType):
 
 	@UnitOfMeasr.setter
 	def UnitOfMeasr(self, value):
-		self._UnitOfMeasr = value if type(value) != base_types.auto else self.make_default("UnitOfMeasr")
+		self._UnitOfMeasr = value if value is not None else base_types.UninitialisedField(self, 'UnitOfMeasr', UnitOfMeasure11Code, False)
 
 	@UnitOfMeasr.deleter
 	def UnitOfMeasr(self):
 		del self._UnitOfMeasr
-		self._UnitOfMeasr = None
+		self._UnitOfMeasr = base_types.UninitialisedField(self, 'UnitOfMeasr', UnitOfMeasure11Code, False)
 
 	@property
 	def Val(self):
@@ -27,12 +27,12 @@ class Quantity17(base_types._BaseFieldType):
 
 	@Val.setter
 	def Val(self, value):
-		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
+		self._Val = value if value is not None else base_types.UninitialisedField(self, 'Val', DecimalNumber, False)
 
 	@Val.deleter
 	def Val(self):
 		del self._Val
-		self._Val = None
+		self._Val = base_types.UninitialisedField(self, 'Val', DecimalNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='UnitOfMeasr', type=UnitOfMeasure11Code, min=1, max=1, mutex_group=None, array=False),

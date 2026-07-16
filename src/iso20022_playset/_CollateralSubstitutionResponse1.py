@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Max35Text import Max35Text
+from . import ActiveCurrencyAndAmount
+from . import Max35Text
 
 class CollateralSubstitutionResponse1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CollateralSubstitutionResponse1(base_types._BaseFieldType):
 
 	@AccptdAmt.setter
 	def AccptdAmt(self, value):
-		self._AccptdAmt = value if type(value) != base_types.auto else self.make_default("AccptdAmt")
+		self._AccptdAmt = value if value is not None else base_types.UninitialisedField(self, 'AccptdAmt', ActiveCurrencyAndAmount, False)
 
 	@AccptdAmt.deleter
 	def AccptdAmt(self):
 		del self._AccptdAmt
-		self._AccptdAmt = None
+		self._AccptdAmt = base_types.UninitialisedField(self, 'AccptdAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def CollSbstitnReqId(self):
@@ -27,12 +27,12 @@ class CollateralSubstitutionResponse1(base_types._BaseFieldType):
 
 	@CollSbstitnReqId.setter
 	def CollSbstitnReqId(self, value):
-		self._CollSbstitnReqId = value if type(value) != base_types.auto else self.make_default("CollSbstitnReqId")
+		self._CollSbstitnReqId = value if value is not None else base_types.UninitialisedField(self, 'CollSbstitnReqId', Max35Text, False)
 
 	@CollSbstitnReqId.deleter
 	def CollSbstitnReqId(self):
 		del self._CollSbstitnReqId
-		self._CollSbstitnReqId = None
+		self._CollSbstitnReqId = base_types.UninitialisedField(self, 'CollSbstitnReqId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AccptdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

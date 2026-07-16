@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RequestForOrderStatusReportV05 import RequestForOrderStatusReportV05
+from . import RequestForOrderStatusReportV05
 
 class SETR_018_001_05():
 
@@ -18,12 +18,12 @@ class SETR_018_001_05():
 
 		@ReqForOrdrStsRpt.setter
 		def ReqForOrdrStsRpt(self, value):
-			self._ReqForOrdrStsRpt = value if type(value) != base_types.auto else self.make_default("ReqForOrdrStsRpt")
+			self._ReqForOrdrStsRpt = value if value is not None else base_types.UninitialisedField(self, 'ReqForOrdrStsRpt', RequestForOrderStatusReportV05, False)
 
 		@ReqForOrdrStsRpt.deleter
 		def ReqForOrdrStsRpt(self):
 			del self._ReqForOrdrStsRpt
-			self._ReqForOrdrStsRpt = None
+			self._ReqForOrdrStsRpt = base_types.UninitialisedField(self, 'ReqForOrdrStsRpt', RequestForOrderStatusReportV05, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ReqForOrdrStsRpt', type=RequestForOrderStatusReportV05, min=1, max=1, mutex_group=None, array=False),

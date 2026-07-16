@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DecimalNumber import DecimalNumber
-from ._Holding1Code import Holding1Code
-from ._Max35Text import Max35Text
+from . import DecimalNumber
+from . import Holding1Code
+from . import Max35Text
 
 class BlockedHoldingDetails2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class BlockedHoldingDetails2(base_types._BaseFieldType):
 
 	@BlckdHldg.setter
 	def BlckdHldg(self, value):
-		self._BlckdHldg = value if type(value) != base_types.auto else self.make_default("BlckdHldg")
+		self._BlckdHldg = value if value is not None else base_types.UninitialisedField(self, 'BlckdHldg', Holding1Code, False)
 
 	@BlckdHldg.deleter
 	def BlckdHldg(self):
 		del self._BlckdHldg
-		self._BlckdHldg = None
+		self._BlckdHldg = base_types.UninitialisedField(self, 'BlckdHldg', Holding1Code, False)
 
 	@property
 	def HldgCertNb(self):
@@ -28,12 +28,12 @@ class BlockedHoldingDetails2(base_types._BaseFieldType):
 
 	@HldgCertNb.setter
 	def HldgCertNb(self, value):
-		self._HldgCertNb = value if type(value) != base_types.auto else self.make_default("HldgCertNb")
+		self._HldgCertNb = value if value is not None else base_types.UninitialisedField(self, 'HldgCertNb', Max35Text, False)
 
 	@HldgCertNb.deleter
 	def HldgCertNb(self):
 		del self._HldgCertNb
-		self._HldgCertNb = None
+		self._HldgCertNb = base_types.UninitialisedField(self, 'HldgCertNb', Max35Text, False)
 
 	@property
 	def PrtlHldgUnits(self):
@@ -41,12 +41,12 @@ class BlockedHoldingDetails2(base_types._BaseFieldType):
 
 	@PrtlHldgUnits.setter
 	def PrtlHldgUnits(self, value):
-		self._PrtlHldgUnits = value if type(value) != base_types.auto else self.make_default("PrtlHldgUnits")
+		self._PrtlHldgUnits = value if value is not None else base_types.UninitialisedField(self, 'PrtlHldgUnits', DecimalNumber, False)
 
 	@PrtlHldgUnits.deleter
 	def PrtlHldgUnits(self):
 		del self._PrtlHldgUnits
-		self._PrtlHldgUnits = None
+		self._PrtlHldgUnits = base_types.UninitialisedField(self, 'PrtlHldgUnits', DecimalNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BlckdHldg', type=Holding1Code, min=1, max=1, mutex_group=None, array=False),

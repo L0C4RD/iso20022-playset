@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RetrievalResponseV03 import RetrievalResponseV03
+from . import RetrievalResponseV03
 
 class CAIN_022_001_03():
 
@@ -18,12 +18,12 @@ class CAIN_022_001_03():
 
 		@RtrvlRspn.setter
 		def RtrvlRspn(self, value):
-			self._RtrvlRspn = value if type(value) != base_types.auto else self.make_default("RtrvlRspn")
+			self._RtrvlRspn = value if value is not None else base_types.UninitialisedField(self, 'RtrvlRspn', RetrievalResponseV03, False)
 
 		@RtrvlRspn.deleter
 		def RtrvlRspn(self):
 			del self._RtrvlRspn
-			self._RtrvlRspn = None
+			self._RtrvlRspn = base_types.UninitialisedField(self, 'RtrvlRspn', RetrievalResponseV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='RtrvlRspn', type=RetrievalResponseV03, min=1, max=1, mutex_group=None, array=False),

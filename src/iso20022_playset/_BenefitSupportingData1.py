@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
+from . import Max35Text
 
 class BenefitSupportingData1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class BenefitSupportingData1(base_types._BaseFieldType):
 
 	@AdmstrId.setter
 	def AdmstrId(self, value):
-		self._AdmstrId = value if type(value) != base_types.auto else self.make_default("AdmstrId")
+		self._AdmstrId = value if value is not None else base_types.UninitialisedField(self, 'AdmstrId', Max35Text, False)
 
 	@AdmstrId.deleter
 	def AdmstrId(self):
 		del self._AdmstrId
-		self._AdmstrId = None
+		self._AdmstrId = base_types.UninitialisedField(self, 'AdmstrId', Max35Text, False)
 
 	@property
 	def DcsnRsn(self):
@@ -26,12 +26,12 @@ class BenefitSupportingData1(base_types._BaseFieldType):
 
 	@DcsnRsn.setter
 	def DcsnRsn(self, value):
-		self._DcsnRsn = value if type(value) != base_types.auto else self.make_default("DcsnRsn")
+		self._DcsnRsn = value if value is not None else base_types.UninitialisedField(self, 'DcsnRsn', Max35Text, False)
 
 	@DcsnRsn.deleter
 	def DcsnRsn(self):
 		del self._DcsnRsn
-		self._DcsnRsn = None
+		self._DcsnRsn = base_types.UninitialisedField(self, 'DcsnRsn', Max35Text, False)
 
 	@property
 	def PrvdrId(self):
@@ -39,12 +39,12 @@ class BenefitSupportingData1(base_types._BaseFieldType):
 
 	@PrvdrId.setter
 	def PrvdrId(self, value):
-		self._PrvdrId = value if type(value) != base_types.auto else self.make_default("PrvdrId")
+		self._PrvdrId = value if value is not None else base_types.UninitialisedField(self, 'PrvdrId', Max35Text, False)
 
 	@PrvdrId.deleter
 	def PrvdrId(self):
 		del self._PrvdrId
-		self._PrvdrId = None
+		self._PrvdrId = base_types.UninitialisedField(self, 'PrvdrId', Max35Text, False)
 
 	@property
 	def SvcTp(self):
@@ -52,12 +52,12 @@ class BenefitSupportingData1(base_types._BaseFieldType):
 
 	@SvcTp.setter
 	def SvcTp(self, value):
-		self._SvcTp = value if type(value) != base_types.auto else self.make_default("SvcTp")
+		self._SvcTp = value if value is not None else base_types.UninitialisedField(self, 'SvcTp', Max35Text, False)
 
 	@SvcTp.deleter
 	def SvcTp(self):
 		del self._SvcTp
-		self._SvcTp = None
+		self._SvcTp = base_types.UninitialisedField(self, 'SvcTp', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AdmstrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._TransactionReportV03 import TransactionReportV03
+from . import TransactionReportV03
 
 class TSMT_041_001_03():
 
@@ -18,12 +18,12 @@ class TSMT_041_001_03():
 
 		@TxRpt.setter
 		def TxRpt(self, value):
-			self._TxRpt = value if type(value) != base_types.auto else self.make_default("TxRpt")
+			self._TxRpt = value if value is not None else base_types.UninitialisedField(self, 'TxRpt', TransactionReportV03, False)
 
 		@TxRpt.deleter
 		def TxRpt(self):
 			del self._TxRpt
-			self._TxRpt = None
+			self._TxRpt = base_types.UninitialisedField(self, 'TxRpt', TransactionReportV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='TxRpt', type=TransactionReportV03, min=1, max=1, mutex_group=None, array=False),

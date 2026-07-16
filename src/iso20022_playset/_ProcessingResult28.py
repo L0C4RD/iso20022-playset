@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._ATICAPartyType1Code import ATICAPartyType1Code
-from ._Exact6AlphaNumericText import Exact6AlphaNumericText
-from ._ISO8583ActionCode import ISO8583ActionCode
-from ._ISO8583ResponseCode import ISO8583ResponseCode
-from ._ISOMax3ACountryCode import ISOMax3ACountryCode
-from ._Max35Text import Max35Text
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ATICALaxProcessing
+from . import ATICAPartyType1Code
+from . import Exact6AlphaNumericText
+from . import ISO8583ActionCode
+from . import ISO8583ResponseCode
+from . import ISOMax3ACountryCode
+from . import Max35Text
+from . import TrueFalseIndicator
 
 class ProcessingResult28(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class ProcessingResult28(base_types._BaseFieldType):
 
 	@ActnCd.setter
 	def ActnCd(self, value):
-		self._ActnCd = value if type(value) != base_types.auto else self.make_default("ActnCd")
+		self._ActnCd = value if value is not None else base_types.UninitialisedField(self, 'ActnCd', ISO8583ActionCode, False)
 
 	@ActnCd.deleter
 	def ActnCd(self):
 		del self._ActnCd
-		self._ActnCd = None
+		self._ActnCd = base_types.UninitialisedField(self, 'ActnCd', ISO8583ActionCode, False)
 
 	@property
 	def ApprvlCd(self):
@@ -33,12 +33,12 @@ class ProcessingResult28(base_types._BaseFieldType):
 
 	@ApprvlCd.setter
 	def ApprvlCd(self, value):
-		self._ApprvlCd = value if type(value) != base_types.auto else self.make_default("ApprvlCd")
+		self._ApprvlCd = value if value is not None else base_types.UninitialisedField(self, 'ApprvlCd', Exact6AlphaNumericText, False)
 
 	@ApprvlCd.deleter
 	def ApprvlCd(self):
 		del self._ApprvlCd
-		self._ApprvlCd = None
+		self._ApprvlCd = base_types.UninitialisedField(self, 'ApprvlCd', Exact6AlphaNumericText, False)
 
 	@property
 	def NtlData(self):
@@ -46,12 +46,12 @@ class ProcessingResult28(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def PrvtData(self):
@@ -59,12 +59,12 @@ class ProcessingResult28(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def RspnCd(self):
@@ -72,12 +72,12 @@ class ProcessingResult28(base_types._BaseFieldType):
 
 	@RspnCd.setter
 	def RspnCd(self, value):
-		self._RspnCd = value if type(value) != base_types.auto else self.make_default("RspnCd")
+		self._RspnCd = value if value is not None else base_types.UninitialisedField(self, 'RspnCd', ISO8583ResponseCode, False)
 
 	@RspnCd.deleter
 	def RspnCd(self):
 		del self._RspnCd
-		self._RspnCd = None
+		self._RspnCd = base_types.UninitialisedField(self, 'RspnCd', ISO8583ResponseCode, False)
 
 	@property
 	def RspnRsn(self):
@@ -85,12 +85,12 @@ class ProcessingResult28(base_types._BaseFieldType):
 
 	@RspnRsn.setter
 	def RspnRsn(self, value):
-		self._RspnRsn = value if type(value) != base_types.auto else self.make_default("RspnRsn")
+		self._RspnRsn = value if value is not None else base_types.UninitialisedField(self, 'RspnRsn', Max35Text, False)
 
 	@RspnRsn.deleter
 	def RspnRsn(self):
 		del self._RspnRsn
-		self._RspnRsn = None
+		self._RspnRsn = base_types.UninitialisedField(self, 'RspnRsn', Max35Text, False)
 
 	@property
 	def RspnSrcCtry(self):
@@ -98,12 +98,12 @@ class ProcessingResult28(base_types._BaseFieldType):
 
 	@RspnSrcCtry.setter
 	def RspnSrcCtry(self, value):
-		self._RspnSrcCtry = value if type(value) != base_types.auto else self.make_default("RspnSrcCtry")
+		self._RspnSrcCtry = value if value is not None else base_types.UninitialisedField(self, 'RspnSrcCtry', ISOMax3ACountryCode, False)
 
 	@RspnSrcCtry.deleter
 	def RspnSrcCtry(self):
 		del self._RspnSrcCtry
-		self._RspnSrcCtry = None
+		self._RspnSrcCtry = base_types.UninitialisedField(self, 'RspnSrcCtry', ISOMax3ACountryCode, False)
 
 	@property
 	def RspnSrcId(self):
@@ -111,12 +111,12 @@ class ProcessingResult28(base_types._BaseFieldType):
 
 	@RspnSrcId.setter
 	def RspnSrcId(self, value):
-		self._RspnSrcId = value if type(value) != base_types.auto else self.make_default("RspnSrcId")
+		self._RspnSrcId = value if value is not None else base_types.UninitialisedField(self, 'RspnSrcId', Max35Text, False)
 
 	@RspnSrcId.deleter
 	def RspnSrcId(self):
 		del self._RspnSrcId
-		self._RspnSrcId = None
+		self._RspnSrcId = base_types.UninitialisedField(self, 'RspnSrcId', Max35Text, False)
 
 	@property
 	def RspnSrcNm(self):
@@ -124,12 +124,12 @@ class ProcessingResult28(base_types._BaseFieldType):
 
 	@RspnSrcNm.setter
 	def RspnSrcNm(self, value):
-		self._RspnSrcNm = value if type(value) != base_types.auto else self.make_default("RspnSrcNm")
+		self._RspnSrcNm = value if value is not None else base_types.UninitialisedField(self, 'RspnSrcNm', Max35Text, False)
 
 	@RspnSrcNm.deleter
 	def RspnSrcNm(self):
 		del self._RspnSrcNm
-		self._RspnSrcNm = None
+		self._RspnSrcNm = base_types.UninitialisedField(self, 'RspnSrcNm', Max35Text, False)
 
 	@property
 	def RspnSrcTp(self):
@@ -137,12 +137,12 @@ class ProcessingResult28(base_types._BaseFieldType):
 
 	@RspnSrcTp.setter
 	def RspnSrcTp(self, value):
-		self._RspnSrcTp = value if type(value) != base_types.auto else self.make_default("RspnSrcTp")
+		self._RspnSrcTp = value if value is not None else base_types.UninitialisedField(self, 'RspnSrcTp', ATICAPartyType1Code, False)
 
 	@RspnSrcTp.deleter
 	def RspnSrcTp(self):
 		del self._RspnSrcTp
-		self._RspnSrcTp = None
+		self._RspnSrcTp = base_types.UninitialisedField(self, 'RspnSrcTp', ATICAPartyType1Code, False)
 
 	@property
 	def TempScrCardDataReusePrtd(self):
@@ -150,12 +150,12 @@ class ProcessingResult28(base_types._BaseFieldType):
 
 	@TempScrCardDataReusePrtd.setter
 	def TempScrCardDataReusePrtd(self, value):
-		self._TempScrCardDataReusePrtd = value if type(value) != base_types.auto else self.make_default("TempScrCardDataReusePrtd")
+		self._TempScrCardDataReusePrtd = value if value is not None else base_types.UninitialisedField(self, 'TempScrCardDataReusePrtd', TrueFalseIndicator, False)
 
 	@TempScrCardDataReusePrtd.deleter
 	def TempScrCardDataReusePrtd(self):
 		del self._TempScrCardDataReusePrtd
-		self._TempScrCardDataReusePrtd = None
+		self._TempScrCardDataReusePrtd = base_types.UninitialisedField(self, 'TempScrCardDataReusePrtd', TrueFalseIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActnCd', type=ISO8583ActionCode, min=0, max=1, mutex_group=None, array=False),

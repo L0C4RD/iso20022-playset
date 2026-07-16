@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InformationQualify1Code import InformationQualify1Code
-from ._InputResultData6 import InputResultData6
-from ._SaleCapabilities2Code import SaleCapabilities2Code
+from . import InformationQualify1Code
+from . import InputResultData6
+from . import SaleCapabilities2Code
 
 class InputResult6(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class InputResult6(base_types._BaseFieldType):
 
 	@DvcTp.setter
 	def DvcTp(self, value):
-		self._DvcTp = value if type(value) != base_types.auto else self.make_default("DvcTp")
+		self._DvcTp = value if value is not None else base_types.UninitialisedField(self, 'DvcTp', SaleCapabilities2Code, False)
 
 	@DvcTp.deleter
 	def DvcTp(self):
 		del self._DvcTp
-		self._DvcTp = None
+		self._DvcTp = base_types.UninitialisedField(self, 'DvcTp', SaleCapabilities2Code, False)
 
 	@property
 	def InfQlfr(self):
@@ -28,12 +28,12 @@ class InputResult6(base_types._BaseFieldType):
 
 	@InfQlfr.setter
 	def InfQlfr(self, value):
-		self._InfQlfr = value if type(value) != base_types.auto else self.make_default("InfQlfr")
+		self._InfQlfr = value if value is not None else base_types.UninitialisedField(self, 'InfQlfr', InformationQualify1Code, False)
 
 	@InfQlfr.deleter
 	def InfQlfr(self):
 		del self._InfQlfr
-		self._InfQlfr = None
+		self._InfQlfr = base_types.UninitialisedField(self, 'InfQlfr', InformationQualify1Code, False)
 
 	@property
 	def InptRsltData(self):
@@ -41,12 +41,12 @@ class InputResult6(base_types._BaseFieldType):
 
 	@InptRsltData.setter
 	def InptRsltData(self, value):
-		self._InptRsltData = value if type(value) != base_types.auto else self.make_default("InptRsltData")
+		self._InptRsltData = value if value is not None else base_types.UninitialisedField(self, 'InptRsltData', InputResultData6, False)
 
 	@InptRsltData.deleter
 	def InptRsltData(self):
 		del self._InptRsltData
-		self._InptRsltData = None
+		self._InptRsltData = base_types.UninitialisedField(self, 'InptRsltData', InputResultData6, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DvcTp', type=SaleCapabilities2Code, min=1, max=1, mutex_group=None, array=False),

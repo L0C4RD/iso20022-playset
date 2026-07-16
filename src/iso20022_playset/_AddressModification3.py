@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Modification1Code import Modification1Code
-from ._PostalAddress27 import PostalAddress27
+from . import Modification1Code
+from . import PostalAddress27
 
 class AddressModification3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AddressModification3(base_types._BaseFieldType):
 
 	@Adr.setter
 	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+		self._Adr = value if value is not None else base_types.UninitialisedField(self, 'Adr', PostalAddress27, False)
 
 	@Adr.deleter
 	def Adr(self):
 		del self._Adr
-		self._Adr = None
+		self._Adr = base_types.UninitialisedField(self, 'Adr', PostalAddress27, False)
 
 	@property
 	def ModCd(self):
@@ -27,12 +27,12 @@ class AddressModification3(base_types._BaseFieldType):
 
 	@ModCd.setter
 	def ModCd(self, value):
-		self._ModCd = value if type(value) != base_types.auto else self.make_default("ModCd")
+		self._ModCd = value if value is not None else base_types.UninitialisedField(self, 'ModCd', Modification1Code, False)
 
 	@ModCd.deleter
 	def ModCd(self):
 		del self._ModCd
-		self._ModCd = None
+		self._ModCd = base_types.UninitialisedField(self, 'ModCd', Modification1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Adr', type=PostalAddress27, min=1, max=1, mutex_group=None, array=False),

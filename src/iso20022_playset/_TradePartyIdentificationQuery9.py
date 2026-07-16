@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
-from ._CountryCode import CountryCode
-from ._LEIIdentifier import LEIIdentifier
-from ._Max50Text import Max50Text
-from ._NotReported1Code import NotReported1Code
+from . import AnyBICDec2014Identifier
+from . import CountryCode
+from . import LEIIdentifier
+from . import Max50Text
+from . import NotReported1Code
 
 class TradePartyIdentificationQuery9(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class TradePartyIdentificationQuery9(base_types._BaseFieldType):
 
 	@AnyBIC.setter
 	def AnyBIC(self, value):
-		self._AnyBIC = value if type(value) != base_types.auto else self.make_default("AnyBIC")
+		self._AnyBIC = value if value is not None else base_types.UninitialisedField(self, 'AnyBIC', AnyBICDec2014Identifier, True)
 
 	@AnyBIC.deleter
 	def AnyBIC(self):
 		del self._AnyBIC
-		self._AnyBIC = None
+		self._AnyBIC = base_types.UninitialisedField(self, 'AnyBIC', AnyBICDec2014Identifier, True)
 
 	@property
 	def ClntId(self):
@@ -30,12 +30,12 @@ class TradePartyIdentificationQuery9(base_types._BaseFieldType):
 
 	@ClntId.setter
 	def ClntId(self, value):
-		self._ClntId = value if type(value) != base_types.auto else self.make_default("ClntId")
+		self._ClntId = value if value is not None else base_types.UninitialisedField(self, 'ClntId', Max50Text, True)
 
 	@ClntId.deleter
 	def ClntId(self):
 		del self._ClntId
-		self._ClntId = None
+		self._ClntId = base_types.UninitialisedField(self, 'ClntId', Max50Text, True)
 
 	@property
 	def CtryCd(self):
@@ -43,12 +43,12 @@ class TradePartyIdentificationQuery9(base_types._BaseFieldType):
 
 	@CtryCd.setter
 	def CtryCd(self, value):
-		self._CtryCd = value if type(value) != base_types.auto else self.make_default("CtryCd")
+		self._CtryCd = value if value is not None else base_types.UninitialisedField(self, 'CtryCd', CountryCode, True)
 
 	@CtryCd.deleter
 	def CtryCd(self):
 		del self._CtryCd
-		self._CtryCd = None
+		self._CtryCd = base_types.UninitialisedField(self, 'CtryCd', CountryCode, True)
 
 	@property
 	def LEI(self):
@@ -56,12 +56,12 @@ class TradePartyIdentificationQuery9(base_types._BaseFieldType):
 
 	@LEI.setter
 	def LEI(self, value):
-		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
+		self._LEI = value if value is not None else base_types.UninitialisedField(self, 'LEI', LEIIdentifier, True)
 
 	@LEI.deleter
 	def LEI(self):
 		del self._LEI
-		self._LEI = None
+		self._LEI = base_types.UninitialisedField(self, 'LEI', LEIIdentifier, True)
 
 	@property
 	def NotRptd(self):
@@ -69,12 +69,12 @@ class TradePartyIdentificationQuery9(base_types._BaseFieldType):
 
 	@NotRptd.setter
 	def NotRptd(self, value):
-		self._NotRptd = value if type(value) != base_types.auto else self.make_default("NotRptd")
+		self._NotRptd = value if value is not None else base_types.UninitialisedField(self, 'NotRptd', NotReported1Code, False)
 
 	@NotRptd.deleter
 	def NotRptd(self):
 		del self._NotRptd
-		self._NotRptd = None
+		self._NotRptd = base_types.UninitialisedField(self, 'NotRptd', NotReported1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=None, mutex_group=None, array=True),

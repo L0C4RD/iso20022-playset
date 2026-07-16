@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ExternalMarketArea1Code import ExternalMarketArea1Code
-from ._MarketIdentification87 import MarketIdentification87
+from . import ExternalMarketArea1Code
+from . import MarketIdentification87
 
 class MarketIdentificationOrCashPurpose1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class MarketIdentificationOrCashPurpose1Choice(base_types._BaseFieldType):
 
 	@CshSSIPurp.setter
 	def CshSSIPurp(self, value):
-		self._CshSSIPurp = value if type(value) != base_types.auto else self.make_default("CshSSIPurp")
+		self._CshSSIPurp = value if value is not None else base_types.UninitialisedField(self, 'CshSSIPurp', ExternalMarketArea1Code, True)
 
 	@CshSSIPurp.deleter
 	def CshSSIPurp(self):
 		del self._CshSSIPurp
-		self._CshSSIPurp = None
+		self._CshSSIPurp = base_types.UninitialisedField(self, 'CshSSIPurp', ExternalMarketArea1Code, True)
 
 	@property
 	def SttlmInstrMktId(self):
@@ -27,12 +27,12 @@ class MarketIdentificationOrCashPurpose1Choice(base_types._BaseFieldType):
 
 	@SttlmInstrMktId.setter
 	def SttlmInstrMktId(self, value):
-		self._SttlmInstrMktId = value if type(value) != base_types.auto else self.make_default("SttlmInstrMktId")
+		self._SttlmInstrMktId = value if value is not None else base_types.UninitialisedField(self, 'SttlmInstrMktId', MarketIdentification87, False)
 
 	@SttlmInstrMktId.deleter
 	def SttlmInstrMktId(self):
 		del self._SttlmInstrMktId
-		self._SttlmInstrMktId = None
+		self._SttlmInstrMktId = base_types.UninitialisedField(self, 'SttlmInstrMktId', MarketIdentification87, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshSSIPurp', type=ExternalMarketArea1Code, min=1, max=None, mutex_group=1, array=True),

@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMCommand7Code import ATMCommand7Code
-from ._ATMCommandIdentification1 import ATMCommandIdentification1
-from ._ATMCommandParameters3Choice import ATMCommandParameters3Choice
-from ._ATMCommandReason1Code import ATMCommandReason1Code
-from ._ISODateTime import ISODateTime
-from ._Max70Text import Max70Text
-from ._TMSContactLevel2Code import TMSContactLevel2Code
+from . import ATMCommand7Code
+from . import ATMCommandIdentification1
+from . import ATMCommandParameters3Choice
+from . import ATMCommandReason1Code
+from . import ISODateTime
+from . import Max70Text
+from . import TMSContactLevel2Code
 
 class ATMCommand14(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class ATMCommand14(base_types._BaseFieldType):
 
 	@AddtlRsnInf.setter
 	def AddtlRsnInf(self, value):
-		self._AddtlRsnInf = value if type(value) != base_types.auto else self.make_default("AddtlRsnInf")
+		self._AddtlRsnInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlRsnInf', Max70Text, False)
 
 	@AddtlRsnInf.deleter
 	def AddtlRsnInf(self):
 		del self._AddtlRsnInf
-		self._AddtlRsnInf = None
+		self._AddtlRsnInf = base_types.UninitialisedField(self, 'AddtlRsnInf', Max70Text, False)
 
 	@property
 	def CmdId(self):
@@ -32,12 +32,12 @@ class ATMCommand14(base_types._BaseFieldType):
 
 	@CmdId.setter
 	def CmdId(self, value):
-		self._CmdId = value if type(value) != base_types.auto else self.make_default("CmdId")
+		self._CmdId = value if value is not None else base_types.UninitialisedField(self, 'CmdId', ATMCommandIdentification1, False)
 
 	@CmdId.deleter
 	def CmdId(self):
 		del self._CmdId
-		self._CmdId = None
+		self._CmdId = base_types.UninitialisedField(self, 'CmdId', ATMCommandIdentification1, False)
 
 	@property
 	def CmdParams(self):
@@ -45,12 +45,12 @@ class ATMCommand14(base_types._BaseFieldType):
 
 	@CmdParams.setter
 	def CmdParams(self, value):
-		self._CmdParams = value if type(value) != base_types.auto else self.make_default("CmdParams")
+		self._CmdParams = value if value is not None else base_types.UninitialisedField(self, 'CmdParams', ATMCommandParameters3Choice, False)
 
 	@CmdParams.deleter
 	def CmdParams(self):
 		del self._CmdParams
-		self._CmdParams = None
+		self._CmdParams = base_types.UninitialisedField(self, 'CmdParams', ATMCommandParameters3Choice, False)
 
 	@property
 	def DtTm(self):
@@ -58,12 +58,12 @@ class ATMCommand14(base_types._BaseFieldType):
 
 	@DtTm.setter
 	def DtTm(self, value):
-		self._DtTm = value if type(value) != base_types.auto else self.make_default("DtTm")
+		self._DtTm = value if value is not None else base_types.UninitialisedField(self, 'DtTm', ISODateTime, False)
 
 	@DtTm.deleter
 	def DtTm(self):
 		del self._DtTm
-		self._DtTm = None
+		self._DtTm = base_types.UninitialisedField(self, 'DtTm', ISODateTime, False)
 
 	@property
 	def Rsn(self):
@@ -71,12 +71,12 @@ class ATMCommand14(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', ATMCommandReason1Code, False)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', ATMCommandReason1Code, False)
 
 	@property
 	def Tp(self):
@@ -84,12 +84,12 @@ class ATMCommand14(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', ATMCommand7Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', ATMCommand7Code, False)
 
 	@property
 	def TracRsn(self):
@@ -97,12 +97,12 @@ class ATMCommand14(base_types._BaseFieldType):
 
 	@TracRsn.setter
 	def TracRsn(self, value):
-		self._TracRsn = value if type(value) != base_types.auto else self.make_default("TracRsn")
+		self._TracRsn = value if value is not None else base_types.UninitialisedField(self, 'TracRsn', ATMCommandReason1Code, True)
 
 	@TracRsn.deleter
 	def TracRsn(self):
 		del self._TracRsn
-		self._TracRsn = None
+		self._TracRsn = base_types.UninitialisedField(self, 'TracRsn', ATMCommandReason1Code, True)
 
 	@property
 	def Urgcy(self):
@@ -110,12 +110,12 @@ class ATMCommand14(base_types._BaseFieldType):
 
 	@Urgcy.setter
 	def Urgcy(self, value):
-		self._Urgcy = value if type(value) != base_types.auto else self.make_default("Urgcy")
+		self._Urgcy = value if value is not None else base_types.UninitialisedField(self, 'Urgcy', TMSContactLevel2Code, False)
 
 	@Urgcy.deleter
 	def Urgcy(self):
 		del self._Urgcy
-		self._Urgcy = None
+		self._Urgcy = base_types.UninitialisedField(self, 'Urgcy', TMSContactLevel2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlRsnInf', type=Max70Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PercentageRate import PercentageRate
-from ._SecuredCollateral2Choice import SecuredCollateral2Choice
-from ._SpecialCollateral2Code import SpecialCollateral2Code
+from . import PercentageRate
+from . import SecuredCollateral2Choice
+from . import SpecialCollateral2Code
 
 class Collateral18(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Collateral18(base_types._BaseFieldType):
 
 	@Hrcut.setter
 	def Hrcut(self, value):
-		self._Hrcut = value if type(value) != base_types.auto else self.make_default("Hrcut")
+		self._Hrcut = value if value is not None else base_types.UninitialisedField(self, 'Hrcut', PercentageRate, False)
 
 	@Hrcut.deleter
 	def Hrcut(self):
 		del self._Hrcut
-		self._Hrcut = None
+		self._Hrcut = base_types.UninitialisedField(self, 'Hrcut', PercentageRate, False)
 
 	@property
 	def SpclCollInd(self):
@@ -28,12 +28,12 @@ class Collateral18(base_types._BaseFieldType):
 
 	@SpclCollInd.setter
 	def SpclCollInd(self, value):
-		self._SpclCollInd = value if type(value) != base_types.auto else self.make_default("SpclCollInd")
+		self._SpclCollInd = value if value is not None else base_types.UninitialisedField(self, 'SpclCollInd', SpecialCollateral2Code, False)
 
 	@SpclCollInd.deleter
 	def SpclCollInd(self):
 		del self._SpclCollInd
-		self._SpclCollInd = None
+		self._SpclCollInd = base_types.UninitialisedField(self, 'SpclCollInd', SpecialCollateral2Code, False)
 
 	@property
 	def Valtn(self):
@@ -41,12 +41,12 @@ class Collateral18(base_types._BaseFieldType):
 
 	@Valtn.setter
 	def Valtn(self, value):
-		self._Valtn = value if type(value) != base_types.auto else self.make_default("Valtn")
+		self._Valtn = value if value is not None else base_types.UninitialisedField(self, 'Valtn', SecuredCollateral2Choice, False)
 
 	@Valtn.deleter
 	def Valtn(self):
 		del self._Valtn
-		self._Valtn = None
+		self._Valtn = base_types.UninitialisedField(self, 'Valtn', SecuredCollateral2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Hrcut', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),

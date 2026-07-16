@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BaseOneRate import BaseOneRate
+from . import BaseOneRate
 
 class ValuationFactorBreakdown1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class ValuationFactorBreakdown1(base_types._BaseFieldType):
 
 	@Hrcut.setter
 	def Hrcut(self, value):
-		self._Hrcut = value if type(value) != base_types.auto else self.make_default("Hrcut")
+		self._Hrcut = value if value is not None else base_types.UninitialisedField(self, 'Hrcut', BaseOneRate, False)
 
 	@Hrcut.deleter
 	def Hrcut(self):
 		del self._Hrcut
-		self._Hrcut = None
+		self._Hrcut = base_types.UninitialisedField(self, 'Hrcut', BaseOneRate, False)
 
 	@property
 	def InfltnFctr(self):
@@ -26,12 +26,12 @@ class ValuationFactorBreakdown1(base_types._BaseFieldType):
 
 	@InfltnFctr.setter
 	def InfltnFctr(self, value):
-		self._InfltnFctr = value if type(value) != base_types.auto else self.make_default("InfltnFctr")
+		self._InfltnFctr = value if value is not None else base_types.UninitialisedField(self, 'InfltnFctr', BaseOneRate, False)
 
 	@InfltnFctr.deleter
 	def InfltnFctr(self):
 		del self._InfltnFctr
-		self._InfltnFctr = None
+		self._InfltnFctr = base_types.UninitialisedField(self, 'InfltnFctr', BaseOneRate, False)
 
 	@property
 	def PoolFctr(self):
@@ -39,12 +39,12 @@ class ValuationFactorBreakdown1(base_types._BaseFieldType):
 
 	@PoolFctr.setter
 	def PoolFctr(self, value):
-		self._PoolFctr = value if type(value) != base_types.auto else self.make_default("PoolFctr")
+		self._PoolFctr = value if value is not None else base_types.UninitialisedField(self, 'PoolFctr', BaseOneRate, False)
 
 	@PoolFctr.deleter
 	def PoolFctr(self):
 		del self._PoolFctr
-		self._PoolFctr = None
+		self._PoolFctr = base_types.UninitialisedField(self, 'PoolFctr', BaseOneRate, False)
 
 	@property
 	def ValtnFctr(self):
@@ -52,12 +52,12 @@ class ValuationFactorBreakdown1(base_types._BaseFieldType):
 
 	@ValtnFctr.setter
 	def ValtnFctr(self, value):
-		self._ValtnFctr = value if type(value) != base_types.auto else self.make_default("ValtnFctr")
+		self._ValtnFctr = value if value is not None else base_types.UninitialisedField(self, 'ValtnFctr', BaseOneRate, False)
 
 	@ValtnFctr.deleter
 	def ValtnFctr(self):
 		del self._ValtnFctr
-		self._ValtnFctr = None
+		self._ValtnFctr = base_types.UninitialisedField(self, 'ValtnFctr', BaseOneRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Hrcut', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),

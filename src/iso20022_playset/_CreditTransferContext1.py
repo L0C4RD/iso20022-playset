@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashAccount40 import CashAccount40
-from ._ContentInformationType39 import ContentInformationType39
-from ._Max1025Text import Max1025Text
-from ._PartyIdentification272 import PartyIdentification272
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import CashAccount40
+from . import ContentInformationType39
+from . import Max1025Text
+from . import PartyIdentification272
+from . import TrueFalseIndicator
 
 class CreditTransferContext1(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class CreditTransferContext1(base_types._BaseFieldType):
 
 	@AutomtcNtfctnOfCshMvmnt.setter
 	def AutomtcNtfctnOfCshMvmnt(self, value):
-		self._AutomtcNtfctnOfCshMvmnt = value if type(value) != base_types.auto else self.make_default("AutomtcNtfctnOfCshMvmnt")
+		self._AutomtcNtfctnOfCshMvmnt = value if value is not None else base_types.UninitialisedField(self, 'AutomtcNtfctnOfCshMvmnt', TrueFalseIndicator, False)
 
 	@AutomtcNtfctnOfCshMvmnt.deleter
 	def AutomtcNtfctnOfCshMvmnt(self):
 		del self._AutomtcNtfctnOfCshMvmnt
-		self._AutomtcNtfctnOfCshMvmnt = None
+		self._AutomtcNtfctnOfCshMvmnt = base_types.UninitialisedField(self, 'AutomtcNtfctnOfCshMvmnt', TrueFalseIndicator, False)
 
 	@property
 	def Cdtr(self):
@@ -30,12 +30,12 @@ class CreditTransferContext1(base_types._BaseFieldType):
 
 	@Cdtr.setter
 	def Cdtr(self, value):
-		self._Cdtr = value if type(value) != base_types.auto else self.make_default("Cdtr")
+		self._Cdtr = value if value is not None else base_types.UninitialisedField(self, 'Cdtr', PartyIdentification272, False)
 
 	@Cdtr.deleter
 	def Cdtr(self):
 		del self._Cdtr
-		self._Cdtr = None
+		self._Cdtr = base_types.UninitialisedField(self, 'Cdtr', PartyIdentification272, False)
 
 	@property
 	def CdtrAcct(self):
@@ -43,12 +43,12 @@ class CreditTransferContext1(base_types._BaseFieldType):
 
 	@CdtrAcct.setter
 	def CdtrAcct(self, value):
-		self._CdtrAcct = value if type(value) != base_types.auto else self.make_default("CdtrAcct")
+		self._CdtrAcct = value if value is not None else base_types.UninitialisedField(self, 'CdtrAcct', CashAccount40, False)
 
 	@CdtrAcct.deleter
 	def CdtrAcct(self):
 		del self._CdtrAcct
-		self._CdtrAcct = None
+		self._CdtrAcct = base_types.UninitialisedField(self, 'CdtrAcct', CashAccount40, False)
 
 	@property
 	def Dbtr(self):
@@ -56,12 +56,12 @@ class CreditTransferContext1(base_types._BaseFieldType):
 
 	@Dbtr.setter
 	def Dbtr(self, value):
-		self._Dbtr = value if type(value) != base_types.auto else self.make_default("Dbtr")
+		self._Dbtr = value if value is not None else base_types.UninitialisedField(self, 'Dbtr', PartyIdentification272, False)
 
 	@Dbtr.deleter
 	def Dbtr(self):
 		del self._Dbtr
-		self._Dbtr = None
+		self._Dbtr = base_types.UninitialisedField(self, 'Dbtr', PartyIdentification272, False)
 
 	@property
 	def DbtrAcct(self):
@@ -69,12 +69,12 @@ class CreditTransferContext1(base_types._BaseFieldType):
 
 	@DbtrAcct.setter
 	def DbtrAcct(self, value):
-		self._DbtrAcct = value if type(value) != base_types.auto else self.make_default("DbtrAcct")
+		self._DbtrAcct = value if value is not None else base_types.UninitialisedField(self, 'DbtrAcct', CashAccount40, False)
 
 	@DbtrAcct.deleter
 	def DbtrAcct(self):
 		del self._DbtrAcct
-		self._DbtrAcct = None
+		self._DbtrAcct = base_types.UninitialisedField(self, 'DbtrAcct', CashAccount40, False)
 
 	@property
 	def PrtctdCdtrAcct(self):
@@ -82,12 +82,12 @@ class CreditTransferContext1(base_types._BaseFieldType):
 
 	@PrtctdCdtrAcct.setter
 	def PrtctdCdtrAcct(self, value):
-		self._PrtctdCdtrAcct = value if type(value) != base_types.auto else self.make_default("PrtctdCdtrAcct")
+		self._PrtctdCdtrAcct = value if value is not None else base_types.UninitialisedField(self, 'PrtctdCdtrAcct', ContentInformationType39, False)
 
 	@PrtctdCdtrAcct.deleter
 	def PrtctdCdtrAcct(self):
 		del self._PrtctdCdtrAcct
-		self._PrtctdCdtrAcct = None
+		self._PrtctdCdtrAcct = base_types.UninitialisedField(self, 'PrtctdCdtrAcct', ContentInformationType39, False)
 
 	@property
 	def PrtctdDbtrAcct(self):
@@ -95,12 +95,12 @@ class CreditTransferContext1(base_types._BaseFieldType):
 
 	@PrtctdDbtrAcct.setter
 	def PrtctdDbtrAcct(self, value):
-		self._PrtctdDbtrAcct = value if type(value) != base_types.auto else self.make_default("PrtctdDbtrAcct")
+		self._PrtctdDbtrAcct = value if value is not None else base_types.UninitialisedField(self, 'PrtctdDbtrAcct', ContentInformationType39, False)
 
 	@PrtctdDbtrAcct.deleter
 	def PrtctdDbtrAcct(self):
 		del self._PrtctdDbtrAcct
-		self._PrtctdDbtrAcct = None
+		self._PrtctdDbtrAcct = base_types.UninitialisedField(self, 'PrtctdDbtrAcct', ContentInformationType39, False)
 
 	@property
 	def SysToNtfy(self):
@@ -108,12 +108,12 @@ class CreditTransferContext1(base_types._BaseFieldType):
 
 	@SysToNtfy.setter
 	def SysToNtfy(self, value):
-		self._SysToNtfy = value if type(value) != base_types.auto else self.make_default("SysToNtfy")
+		self._SysToNtfy = value if value is not None else base_types.UninitialisedField(self, 'SysToNtfy', Max1025Text, False)
 
 	@SysToNtfy.deleter
 	def SysToNtfy(self):
 		del self._SysToNtfy
-		self._SysToNtfy = None
+		self._SysToNtfy = base_types.UninitialisedField(self, 'SysToNtfy', Max1025Text, False)
 
 	@property
 	def WaitForNtfctnBfrEndg(self):
@@ -121,12 +121,12 @@ class CreditTransferContext1(base_types._BaseFieldType):
 
 	@WaitForNtfctnBfrEndg.setter
 	def WaitForNtfctnBfrEndg(self, value):
-		self._WaitForNtfctnBfrEndg = value if type(value) != base_types.auto else self.make_default("WaitForNtfctnBfrEndg")
+		self._WaitForNtfctnBfrEndg = value if value is not None else base_types.UninitialisedField(self, 'WaitForNtfctnBfrEndg', TrueFalseIndicator, False)
 
 	@WaitForNtfctnBfrEndg.deleter
 	def WaitForNtfctnBfrEndg(self):
 		del self._WaitForNtfctnBfrEndg
-		self._WaitForNtfctnBfrEndg = None
+		self._WaitForNtfctnBfrEndg = base_types.UninitialisedField(self, 'WaitForNtfctnBfrEndg', TrueFalseIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AutomtcNtfctnOfCshMvmnt', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),

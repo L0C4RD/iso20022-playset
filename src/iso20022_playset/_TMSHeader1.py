@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification176 import GenericIdentification176
-from ._GenericIdentification177 import GenericIdentification177
-from ._ISODateTime import ISODateTime
-from ._Max6Text import Max6Text
-from ._Number import Number
-from ._Traceability8 import Traceability8
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import GenericIdentification176
+from . import GenericIdentification177
+from . import ISODateTime
+from . import Max6Text
+from . import Number
+from . import Traceability8
+from . import TrueFalseIndicator
 
 class TMSHeader1(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class TMSHeader1(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if value is not None else base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
 		del self._CreDtTm
-		self._CreDtTm = None
+		self._CreDtTm = base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@property
 	def DwnldTrf(self):
@@ -32,12 +32,12 @@ class TMSHeader1(base_types._BaseFieldType):
 
 	@DwnldTrf.setter
 	def DwnldTrf(self, value):
-		self._DwnldTrf = value if type(value) != base_types.auto else self.make_default("DwnldTrf")
+		self._DwnldTrf = value if value is not None else base_types.UninitialisedField(self, 'DwnldTrf', TrueFalseIndicator, False)
 
 	@DwnldTrf.deleter
 	def DwnldTrf(self):
 		del self._DwnldTrf
-		self._DwnldTrf = None
+		self._DwnldTrf = base_types.UninitialisedField(self, 'DwnldTrf', TrueFalseIndicator, False)
 
 	@property
 	def FrmtVrsn(self):
@@ -45,12 +45,12 @@ class TMSHeader1(base_types._BaseFieldType):
 
 	@FrmtVrsn.setter
 	def FrmtVrsn(self, value):
-		self._FrmtVrsn = value if type(value) != base_types.auto else self.make_default("FrmtVrsn")
+		self._FrmtVrsn = value if value is not None else base_types.UninitialisedField(self, 'FrmtVrsn', Max6Text, False)
 
 	@FrmtVrsn.deleter
 	def FrmtVrsn(self):
 		del self._FrmtVrsn
-		self._FrmtVrsn = None
+		self._FrmtVrsn = base_types.UninitialisedField(self, 'FrmtVrsn', Max6Text, False)
 
 	@property
 	def InitgPty(self):
@@ -58,12 +58,12 @@ class TMSHeader1(base_types._BaseFieldType):
 
 	@InitgPty.setter
 	def InitgPty(self, value):
-		self._InitgPty = value if type(value) != base_types.auto else self.make_default("InitgPty")
+		self._InitgPty = value if value is not None else base_types.UninitialisedField(self, 'InitgPty', GenericIdentification176, False)
 
 	@InitgPty.deleter
 	def InitgPty(self):
 		del self._InitgPty
-		self._InitgPty = None
+		self._InitgPty = base_types.UninitialisedField(self, 'InitgPty', GenericIdentification176, False)
 
 	@property
 	def RcptPty(self):
@@ -71,12 +71,12 @@ class TMSHeader1(base_types._BaseFieldType):
 
 	@RcptPty.setter
 	def RcptPty(self, value):
-		self._RcptPty = value if type(value) != base_types.auto else self.make_default("RcptPty")
+		self._RcptPty = value if value is not None else base_types.UninitialisedField(self, 'RcptPty', GenericIdentification177, False)
 
 	@RcptPty.deleter
 	def RcptPty(self):
 		del self._RcptPty
-		self._RcptPty = None
+		self._RcptPty = base_types.UninitialisedField(self, 'RcptPty', GenericIdentification177, False)
 
 	@property
 	def Tracblt(self):
@@ -84,12 +84,12 @@ class TMSHeader1(base_types._BaseFieldType):
 
 	@Tracblt.setter
 	def Tracblt(self, value):
-		self._Tracblt = value if type(value) != base_types.auto else self.make_default("Tracblt")
+		self._Tracblt = value if value is not None else base_types.UninitialisedField(self, 'Tracblt', Traceability8, True)
 
 	@Tracblt.deleter
 	def Tracblt(self):
 		del self._Tracblt
-		self._Tracblt = None
+		self._Tracblt = base_types.UninitialisedField(self, 'Tracblt', Traceability8, True)
 
 	@property
 	def XchgId(self):
@@ -97,12 +97,12 @@ class TMSHeader1(base_types._BaseFieldType):
 
 	@XchgId.setter
 	def XchgId(self, value):
-		self._XchgId = value if type(value) != base_types.auto else self.make_default("XchgId")
+		self._XchgId = value if value is not None else base_types.UninitialisedField(self, 'XchgId', Number, False)
 
 	@XchgId.deleter
 	def XchgId(self):
 		del self._XchgId
-		self._XchgId = None
+		self._XchgId = base_types.UninitialisedField(self, 'XchgId', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._OpeningConditions1 import OpeningConditions1
+from . import Max35Text
+from . import OpeningConditions1
 
 class NDFOpeningFixing1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class NDFOpeningFixing1Choice(base_types._BaseFieldType):
 
 	@OpngConds.setter
 	def OpngConds(self, value):
-		self._OpngConds = value if type(value) != base_types.auto else self.make_default("OpngConds")
+		self._OpngConds = value if value is not None else base_types.UninitialisedField(self, 'OpngConds', OpeningConditions1, False)
 
 	@OpngConds.deleter
 	def OpngConds(self):
 		del self._OpngConds
-		self._OpngConds = None
+		self._OpngConds = base_types.UninitialisedField(self, 'OpngConds', OpeningConditions1, False)
 
 	@property
 	def OpngConfRef(self):
@@ -27,12 +27,12 @@ class NDFOpeningFixing1Choice(base_types._BaseFieldType):
 
 	@OpngConfRef.setter
 	def OpngConfRef(self, value):
-		self._OpngConfRef = value if type(value) != base_types.auto else self.make_default("OpngConfRef")
+		self._OpngConfRef = value if value is not None else base_types.UninitialisedField(self, 'OpngConfRef', Max35Text, False)
 
 	@OpngConfRef.deleter
 	def OpngConfRef(self):
 		del self._OpngConfRef
-		self._OpngConfRef = None
+		self._OpngConfRef = base_types.UninitialisedField(self, 'OpngConfRef', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OpngConds', type=OpeningConditions1, min=0, max=1, mutex_group=1, array=False),

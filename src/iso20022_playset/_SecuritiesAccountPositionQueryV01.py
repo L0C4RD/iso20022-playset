@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PositionSearchCriteria4 import PositionSearchCriteria4
-from ._Statement89 import Statement89
-from ._SupplementaryData1 import SupplementaryData1
+from . import PositionSearchCriteria4
+from . import Statement89
+from . import SupplementaryData1
 
 class SecuritiesAccountPositionQueryV01(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SecuritiesAccountPositionQueryV01(base_types._BaseFieldType):
 
 	@SchCrit.setter
 	def SchCrit(self, value):
-		self._SchCrit = value if type(value) != base_types.auto else self.make_default("SchCrit")
+		self._SchCrit = value if value is not None else base_types.UninitialisedField(self, 'SchCrit', PositionSearchCriteria4, False)
 
 	@SchCrit.deleter
 	def SchCrit(self):
 		del self._SchCrit
-		self._SchCrit = None
+		self._SchCrit = base_types.UninitialisedField(self, 'SchCrit', PositionSearchCriteria4, False)
 
 	@property
 	def SplmtryData(self):
@@ -28,12 +28,12 @@ class SecuritiesAccountPositionQueryV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def Stmt(self):
@@ -41,12 +41,12 @@ class SecuritiesAccountPositionQueryV01(base_types._BaseFieldType):
 
 	@Stmt.setter
 	def Stmt(self, value):
-		self._Stmt = value if type(value) != base_types.auto else self.make_default("Stmt")
+		self._Stmt = value if value is not None else base_types.UninitialisedField(self, 'Stmt', Statement89, False)
 
 	@Stmt.deleter
 	def Stmt(self):
 		del self._Stmt
-		self._Stmt = None
+		self._Stmt = base_types.UninitialisedField(self, 'Stmt', Statement89, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SchCrit', type=PositionSearchCriteria4, min=1, max=1, mutex_group=None, array=False),

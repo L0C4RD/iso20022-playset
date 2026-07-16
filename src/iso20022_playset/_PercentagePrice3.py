@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Percentage14Rate import Percentage14Rate
-from ._PriceRateType3Code import PriceRateType3Code
+from . import Percentage14Rate
+from . import PriceRateType3Code
 
 class PercentagePrice3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PercentagePrice3(base_types._BaseFieldType):
 
 	@PctgPricTp.setter
 	def PctgPricTp(self, value):
-		self._PctgPricTp = value if type(value) != base_types.auto else self.make_default("PctgPricTp")
+		self._PctgPricTp = value if value is not None else base_types.UninitialisedField(self, 'PctgPricTp', PriceRateType3Code, False)
 
 	@PctgPricTp.deleter
 	def PctgPricTp(self):
 		del self._PctgPricTp
-		self._PctgPricTp = None
+		self._PctgPricTp = base_types.UninitialisedField(self, 'PctgPricTp', PriceRateType3Code, False)
 
 	@property
 	def PricVal(self):
@@ -27,12 +27,12 @@ class PercentagePrice3(base_types._BaseFieldType):
 
 	@PricVal.setter
 	def PricVal(self, value):
-		self._PricVal = value if type(value) != base_types.auto else self.make_default("PricVal")
+		self._PricVal = value if value is not None else base_types.UninitialisedField(self, 'PricVal', Percentage14Rate, False)
 
 	@PricVal.deleter
 	def PricVal(self):
 		del self._PricVal
-		self._PricVal = None
+		self._PricVal = base_types.UninitialisedField(self, 'PricVal', Percentage14Rate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PctgPricTp', type=PriceRateType3Code, min=1, max=1, mutex_group=None, array=False),

@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CFIOct2015Identifier import CFIOct2015Identifier
-from ._CountryCode import CountryCode
-from ._CurrencyExchange23 import CurrencyExchange23
-from ._FinancialInstrumentContractType2Code import FinancialInstrumentContractType2Code
-from ._MICIdentifier import MICIdentifier
-from ._Max50Text import Max50Text
-from ._ProductType4Code import ProductType4Code
-from ._SecurityIdentification41Choice import SecurityIdentification41Choice
-from ._SecurityIdentification46 import SecurityIdentification46
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import CFIOct2015Identifier
+from . import CountryCode
+from . import CurrencyExchange23
+from . import FinancialInstrumentContractType2Code
+from . import MICIdentifier
+from . import Max50Text
+from . import ProductType4Code
+from . import SecurityIdentification41Choice
+from . import SecurityIdentification46
+from . import TrueFalseIndicator
 
 class ContractType15(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class ContractType15(base_types._BaseFieldType):
 
 	@AsstClss.setter
 	def AsstClss(self, value):
-		self._AsstClss = value if type(value) != base_types.auto else self.make_default("AsstClss")
+		self._AsstClss = value if value is not None else base_types.UninitialisedField(self, 'AsstClss', ProductType4Code, False)
 
 	@AsstClss.deleter
 	def AsstClss(self):
 		del self._AsstClss
-		self._AsstClss = None
+		self._AsstClss = base_types.UninitialisedField(self, 'AsstClss', ProductType4Code, False)
 
 	@property
 	def CtrctTp(self):
@@ -35,12 +35,12 @@ class ContractType15(base_types._BaseFieldType):
 
 	@CtrctTp.setter
 	def CtrctTp(self, value):
-		self._CtrctTp = value if type(value) != base_types.auto else self.make_default("CtrctTp")
+		self._CtrctTp = value if value is not None else base_types.UninitialisedField(self, 'CtrctTp', FinancialInstrumentContractType2Code, False)
 
 	@CtrctTp.deleter
 	def CtrctTp(self):
 		del self._CtrctTp
-		self._CtrctTp = None
+		self._CtrctTp = base_types.UninitialisedField(self, 'CtrctTp', FinancialInstrumentContractType2Code, False)
 
 	@property
 	def DerivBasedOnCrptAsst(self):
@@ -48,12 +48,12 @@ class ContractType15(base_types._BaseFieldType):
 
 	@DerivBasedOnCrptAsst.setter
 	def DerivBasedOnCrptAsst(self, value):
-		self._DerivBasedOnCrptAsst = value if type(value) != base_types.auto else self.make_default("DerivBasedOnCrptAsst")
+		self._DerivBasedOnCrptAsst = value if value is not None else base_types.UninitialisedField(self, 'DerivBasedOnCrptAsst', TrueFalseIndicator, False)
 
 	@DerivBasedOnCrptAsst.deleter
 	def DerivBasedOnCrptAsst(self):
 		del self._DerivBasedOnCrptAsst
-		self._DerivBasedOnCrptAsst = None
+		self._DerivBasedOnCrptAsst = base_types.UninitialisedField(self, 'DerivBasedOnCrptAsst', TrueFalseIndicator, False)
 
 	@property
 	def PdctClssfctn(self):
@@ -61,12 +61,12 @@ class ContractType15(base_types._BaseFieldType):
 
 	@PdctClssfctn.setter
 	def PdctClssfctn(self, value):
-		self._PdctClssfctn = value if type(value) != base_types.auto else self.make_default("PdctClssfctn")
+		self._PdctClssfctn = value if value is not None else base_types.UninitialisedField(self, 'PdctClssfctn', CFIOct2015Identifier, False)
 
 	@PdctClssfctn.deleter
 	def PdctClssfctn(self):
 		del self._PdctClssfctn
-		self._PdctClssfctn = None
+		self._PdctClssfctn = base_types.UninitialisedField(self, 'PdctClssfctn', CFIOct2015Identifier, False)
 
 	@property
 	def PdctId(self):
@@ -74,12 +74,12 @@ class ContractType15(base_types._BaseFieldType):
 
 	@PdctId.setter
 	def PdctId(self, value):
-		self._PdctId = value if type(value) != base_types.auto else self.make_default("PdctId")
+		self._PdctId = value if value is not None else base_types.UninitialisedField(self, 'PdctId', SecurityIdentification46, False)
 
 	@PdctId.deleter
 	def PdctId(self):
 		del self._PdctId
-		self._PdctId = None
+		self._PdctId = base_types.UninitialisedField(self, 'PdctId', SecurityIdentification46, False)
 
 	@property
 	def PlcOfSttlm(self):
@@ -87,12 +87,12 @@ class ContractType15(base_types._BaseFieldType):
 
 	@PlcOfSttlm.setter
 	def PlcOfSttlm(self, value):
-		self._PlcOfSttlm = value if type(value) != base_types.auto else self.make_default("PlcOfSttlm")
+		self._PlcOfSttlm = value if value is not None else base_types.UninitialisedField(self, 'PlcOfSttlm', CountryCode, False)
 
 	@PlcOfSttlm.deleter
 	def PlcOfSttlm(self):
 		del self._PlcOfSttlm
-		self._PlcOfSttlm = None
+		self._PlcOfSttlm = base_types.UninitialisedField(self, 'PlcOfSttlm', CountryCode, False)
 
 	@property
 	def SttlmCcy(self):
@@ -100,12 +100,12 @@ class ContractType15(base_types._BaseFieldType):
 
 	@SttlmCcy.setter
 	def SttlmCcy(self, value):
-		self._SttlmCcy = value if type(value) != base_types.auto else self.make_default("SttlmCcy")
+		self._SttlmCcy = value if value is not None else base_types.UninitialisedField(self, 'SttlmCcy', CurrencyExchange23, False)
 
 	@SttlmCcy.deleter
 	def SttlmCcy(self):
 		del self._SttlmCcy
-		self._SttlmCcy = None
+		self._SttlmCcy = base_types.UninitialisedField(self, 'SttlmCcy', CurrencyExchange23, False)
 
 	@property
 	def SttlmCcyScndLeg(self):
@@ -113,12 +113,12 @@ class ContractType15(base_types._BaseFieldType):
 
 	@SttlmCcyScndLeg.setter
 	def SttlmCcyScndLeg(self, value):
-		self._SttlmCcyScndLeg = value if type(value) != base_types.auto else self.make_default("SttlmCcyScndLeg")
+		self._SttlmCcyScndLeg = value if value is not None else base_types.UninitialisedField(self, 'SttlmCcyScndLeg', CurrencyExchange23, False)
 
 	@SttlmCcyScndLeg.deleter
 	def SttlmCcyScndLeg(self):
 		del self._SttlmCcyScndLeg
-		self._SttlmCcyScndLeg = None
+		self._SttlmCcyScndLeg = base_types.UninitialisedField(self, 'SttlmCcyScndLeg', CurrencyExchange23, False)
 
 	@property
 	def UndrlygAsstPricSrc(self):
@@ -126,12 +126,12 @@ class ContractType15(base_types._BaseFieldType):
 
 	@UndrlygAsstPricSrc.setter
 	def UndrlygAsstPricSrc(self, value):
-		self._UndrlygAsstPricSrc = value if type(value) != base_types.auto else self.make_default("UndrlygAsstPricSrc")
+		self._UndrlygAsstPricSrc = value if value is not None else base_types.UninitialisedField(self, 'UndrlygAsstPricSrc', Max50Text, False)
 
 	@UndrlygAsstPricSrc.deleter
 	def UndrlygAsstPricSrc(self):
 		del self._UndrlygAsstPricSrc
-		self._UndrlygAsstPricSrc = None
+		self._UndrlygAsstPricSrc = base_types.UninitialisedField(self, 'UndrlygAsstPricSrc', Max50Text, False)
 
 	@property
 	def UndrlygAsstTradgPltfmIdr(self):
@@ -139,12 +139,12 @@ class ContractType15(base_types._BaseFieldType):
 
 	@UndrlygAsstTradgPltfmIdr.setter
 	def UndrlygAsstTradgPltfmIdr(self, value):
-		self._UndrlygAsstTradgPltfmIdr = value if type(value) != base_types.auto else self.make_default("UndrlygAsstTradgPltfmIdr")
+		self._UndrlygAsstTradgPltfmIdr = value if value is not None else base_types.UninitialisedField(self, 'UndrlygAsstTradgPltfmIdr', MICIdentifier, False)
 
 	@UndrlygAsstTradgPltfmIdr.deleter
 	def UndrlygAsstTradgPltfmIdr(self):
 		del self._UndrlygAsstTradgPltfmIdr
-		self._UndrlygAsstTradgPltfmIdr = None
+		self._UndrlygAsstTradgPltfmIdr = base_types.UninitialisedField(self, 'UndrlygAsstTradgPltfmIdr', MICIdentifier, False)
 
 	@property
 	def UndrlygInstrm(self):
@@ -152,12 +152,12 @@ class ContractType15(base_types._BaseFieldType):
 
 	@UndrlygInstrm.setter
 	def UndrlygInstrm(self, value):
-		self._UndrlygInstrm = value if type(value) != base_types.auto else self.make_default("UndrlygInstrm")
+		self._UndrlygInstrm = value if value is not None else base_types.UninitialisedField(self, 'UndrlygInstrm', SecurityIdentification41Choice, False)
 
 	@UndrlygInstrm.deleter
 	def UndrlygInstrm(self):
 		del self._UndrlygInstrm
-		self._UndrlygInstrm = None
+		self._UndrlygInstrm = base_types.UninitialisedField(self, 'UndrlygInstrm', SecurityIdentification41Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AsstClss', type=ProductType4Code, min=0, max=1, mutex_group=None, array=False),

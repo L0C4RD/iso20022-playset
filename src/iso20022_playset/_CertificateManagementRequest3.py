@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardPaymentServiceType10Code import CardPaymentServiceType10Code
-from ._CertificationRequest1 import CertificationRequest1
-from ._GenericIdentification176 import GenericIdentification176
-from ._ISODateTime import ISODateTime
-from ._KeyUsage1Code import KeyUsage1Code
-from ._Max10KBinary import Max10KBinary
-from ._Max140Binary import Max140Binary
-from ._Max20000Text import Max20000Text
-from ._Max70Text import Max70Text
-from ._PointOfInteraction6 import PointOfInteraction6
+from . import CardPaymentServiceType10Code
+from . import CertificationRequest1
+from . import GenericIdentification176
+from . import ISODateTime
+from . import KeyUsage1Code
+from . import Max10KBinary
+from . import Max140Binary
+from . import Max20000Text
+from . import Max70Text
+from . import PointOfInteraction6
 
 class CertificateManagementRequest3(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class CertificateManagementRequest3(base_types._BaseFieldType):
 
 	@BinryCertfctnReq.setter
 	def BinryCertfctnReq(self, value):
-		self._BinryCertfctnReq = value if type(value) != base_types.auto else self.make_default("BinryCertfctnReq")
+		self._BinryCertfctnReq = value if value is not None else base_types.UninitialisedField(self, 'BinryCertfctnReq', Max20000Text, False)
 
 	@BinryCertfctnReq.deleter
 	def BinryCertfctnReq(self):
 		del self._BinryCertfctnReq
-		self._BinryCertfctnReq = None
+		self._BinryCertfctnReq = base_types.UninitialisedField(self, 'BinryCertfctnReq', Max20000Text, False)
 
 	@property
 	def CertSvc(self):
@@ -35,12 +35,12 @@ class CertificateManagementRequest3(base_types._BaseFieldType):
 
 	@CertSvc.setter
 	def CertSvc(self, value):
-		self._CertSvc = value if type(value) != base_types.auto else self.make_default("CertSvc")
+		self._CertSvc = value if value is not None else base_types.UninitialisedField(self, 'CertSvc', CardPaymentServiceType10Code, False)
 
 	@CertSvc.deleter
 	def CertSvc(self):
 		del self._CertSvc
-		self._CertSvc = None
+		self._CertSvc = base_types.UninitialisedField(self, 'CertSvc', CardPaymentServiceType10Code, False)
 
 	@property
 	def CertfctnReq(self):
@@ -48,12 +48,12 @@ class CertificateManagementRequest3(base_types._BaseFieldType):
 
 	@CertfctnReq.setter
 	def CertfctnReq(self, value):
-		self._CertfctnReq = value if type(value) != base_types.auto else self.make_default("CertfctnReq")
+		self._CertfctnReq = value if value is not None else base_types.UninitialisedField(self, 'CertfctnReq', CertificationRequest1, False)
 
 	@CertfctnReq.deleter
 	def CertfctnReq(self):
 		del self._CertfctnReq
-		self._CertfctnReq = None
+		self._CertfctnReq = base_types.UninitialisedField(self, 'CertfctnReq', CertificationRequest1, False)
 
 	@property
 	def ClntCert(self):
@@ -61,12 +61,12 @@ class CertificateManagementRequest3(base_types._BaseFieldType):
 
 	@ClntCert.setter
 	def ClntCert(self, value):
-		self._ClntCert = value if type(value) != base_types.auto else self.make_default("ClntCert")
+		self._ClntCert = value if value is not None else base_types.UninitialisedField(self, 'ClntCert', Max10KBinary, False)
 
 	@ClntCert.deleter
 	def ClntCert(self):
 		del self._ClntCert
-		self._ClntCert = None
+		self._ClntCert = base_types.UninitialisedField(self, 'ClntCert', Max10KBinary, False)
 
 	@property
 	def KeyFctn(self):
@@ -74,12 +74,12 @@ class CertificateManagementRequest3(base_types._BaseFieldType):
 
 	@KeyFctn.setter
 	def KeyFctn(self, value):
-		self._KeyFctn = value if type(value) != base_types.auto else self.make_default("KeyFctn")
+		self._KeyFctn = value if value is not None else base_types.UninitialisedField(self, 'KeyFctn', KeyUsage1Code, True)
 
 	@KeyFctn.deleter
 	def KeyFctn(self):
 		del self._KeyFctn
-		self._KeyFctn = None
+		self._KeyFctn = base_types.UninitialisedField(self, 'KeyFctn', KeyUsage1Code, True)
 
 	@property
 	def POIChllngVal(self):
@@ -87,12 +87,12 @@ class CertificateManagementRequest3(base_types._BaseFieldType):
 
 	@POIChllngVal.setter
 	def POIChllngVal(self, value):
-		self._POIChllngVal = value if type(value) != base_types.auto else self.make_default("POIChllngVal")
+		self._POIChllngVal = value if value is not None else base_types.UninitialisedField(self, 'POIChllngVal', Max140Binary, False)
 
 	@POIChllngVal.deleter
 	def POIChllngVal(self):
 		del self._POIChllngVal
-		self._POIChllngVal = None
+		self._POIChllngVal = base_types.UninitialisedField(self, 'POIChllngVal', Max140Binary, False)
 
 	@property
 	def POIDtTm(self):
@@ -100,12 +100,12 @@ class CertificateManagementRequest3(base_types._BaseFieldType):
 
 	@POIDtTm.setter
 	def POIDtTm(self, value):
-		self._POIDtTm = value if type(value) != base_types.auto else self.make_default("POIDtTm")
+		self._POIDtTm = value if value is not None else base_types.UninitialisedField(self, 'POIDtTm', ISODateTime, False)
 
 	@POIDtTm.deleter
 	def POIDtTm(self):
 		del self._POIDtTm
-		self._POIDtTm = None
+		self._POIDtTm = base_types.UninitialisedField(self, 'POIDtTm', ISODateTime, False)
 
 	@property
 	def POIId(self):
@@ -113,12 +113,12 @@ class CertificateManagementRequest3(base_types._BaseFieldType):
 
 	@POIId.setter
 	def POIId(self, value):
-		self._POIId = value if type(value) != base_types.auto else self.make_default("POIId")
+		self._POIId = value if value is not None else base_types.UninitialisedField(self, 'POIId', GenericIdentification176, False)
 
 	@POIId.deleter
 	def POIId(self):
 		del self._POIId
-		self._POIId = None
+		self._POIId = base_types.UninitialisedField(self, 'POIId', GenericIdentification176, False)
 
 	@property
 	def SctyDomn(self):
@@ -126,12 +126,12 @@ class CertificateManagementRequest3(base_types._BaseFieldType):
 
 	@SctyDomn.setter
 	def SctyDomn(self, value):
-		self._SctyDomn = value if type(value) != base_types.auto else self.make_default("SctyDomn")
+		self._SctyDomn = value if value is not None else base_types.UninitialisedField(self, 'SctyDomn', Max70Text, False)
 
 	@SctyDomn.deleter
 	def SctyDomn(self):
 		del self._SctyDomn
-		self._SctyDomn = None
+		self._SctyDomn = base_types.UninitialisedField(self, 'SctyDomn', Max70Text, False)
 
 	@property
 	def TMId(self):
@@ -139,12 +139,12 @@ class CertificateManagementRequest3(base_types._BaseFieldType):
 
 	@TMId.setter
 	def TMId(self, value):
-		self._TMId = value if type(value) != base_types.auto else self.make_default("TMId")
+		self._TMId = value if value is not None else base_types.UninitialisedField(self, 'TMId', GenericIdentification176, False)
 
 	@TMId.deleter
 	def TMId(self):
 		del self._TMId
-		self._TMId = None
+		self._TMId = base_types.UninitialisedField(self, 'TMId', GenericIdentification176, False)
 
 	@property
 	def WhtListId(self):
@@ -152,12 +152,12 @@ class CertificateManagementRequest3(base_types._BaseFieldType):
 
 	@WhtListId.setter
 	def WhtListId(self, value):
-		self._WhtListId = value if type(value) != base_types.auto else self.make_default("WhtListId")
+		self._WhtListId = value if value is not None else base_types.UninitialisedField(self, 'WhtListId', PointOfInteraction6, False)
 
 	@WhtListId.deleter
 	def WhtListId(self):
 		del self._WhtListId
-		self._WhtListId = None
+		self._WhtListId = base_types.UninitialisedField(self, 'WhtListId', PointOfInteraction6, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BinryCertfctnReq', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),

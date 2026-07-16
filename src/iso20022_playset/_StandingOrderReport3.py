@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._StandingOrderIdentification8 import StandingOrderIdentification8
-from ._StandingOrderOrError10Choice import StandingOrderOrError10Choice
+from . import StandingOrderIdentification8
+from . import StandingOrderOrError10Choice
 
 class StandingOrderReport3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class StandingOrderReport3(base_types._BaseFieldType):
 
 	@StgOrdrId.setter
 	def StgOrdrId(self, value):
-		self._StgOrdrId = value if type(value) != base_types.auto else self.make_default("StgOrdrId")
+		self._StgOrdrId = value if value is not None else base_types.UninitialisedField(self, 'StgOrdrId', StandingOrderIdentification8, False)
 
 	@StgOrdrId.deleter
 	def StgOrdrId(self):
 		del self._StgOrdrId
-		self._StgOrdrId = None
+		self._StgOrdrId = base_types.UninitialisedField(self, 'StgOrdrId', StandingOrderIdentification8, False)
 
 	@property
 	def StgOrdrOrErr(self):
@@ -27,12 +27,12 @@ class StandingOrderReport3(base_types._BaseFieldType):
 
 	@StgOrdrOrErr.setter
 	def StgOrdrOrErr(self, value):
-		self._StgOrdrOrErr = value if type(value) != base_types.auto else self.make_default("StgOrdrOrErr")
+		self._StgOrdrOrErr = value if value is not None else base_types.UninitialisedField(self, 'StgOrdrOrErr', StandingOrderOrError10Choice, False)
 
 	@StgOrdrOrErr.deleter
 	def StgOrdrOrErr(self):
 		del self._StgOrdrOrErr
-		self._StgOrdrOrErr = None
+		self._StgOrdrOrErr = base_types.UninitialisedField(self, 'StgOrdrOrErr', StandingOrderOrError10Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='StgOrdrId', type=StandingOrderIdentification8, min=1, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionNarrativeV09 import CorporateActionNarrativeV09
+from . import CorporateActionNarrativeV09
 
 class SEEV_038_001_09():
 
@@ -18,12 +18,12 @@ class SEEV_038_001_09():
 
 		@CorpActnNrrtv.setter
 		def CorpActnNrrtv(self, value):
-			self._CorpActnNrrtv = value if type(value) != base_types.auto else self.make_default("CorpActnNrrtv")
+			self._CorpActnNrrtv = value if value is not None else base_types.UninitialisedField(self, 'CorpActnNrrtv', CorporateActionNarrativeV09, False)
 
 		@CorpActnNrrtv.deleter
 		def CorpActnNrrtv(self):
 			del self._CorpActnNrrtv
-			self._CorpActnNrrtv = None
+			self._CorpActnNrrtv = base_types.UninitialisedField(self, 'CorpActnNrrtv', CorporateActionNarrativeV09, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CorpActnNrrtv', type=CorporateActionNarrativeV09, min=1, max=1, mutex_group=None, array=False),

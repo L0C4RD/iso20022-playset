@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalData1 import AdditionalData1
-from ._AdditionalInformation22 import AdditionalInformation22
-from ._CardholderName2 import CardholderName2
-from ._ISOMax3ALanguageCode import ISOMax3ALanguageCode
-from ._LocalAddress1 import LocalAddress1
-from ._Max35Text import Max35Text
-from ._Max512Text import Max512Text
+from . import AdditionalData1
+from . import AdditionalInformation22
+from . import CardholderName2
+from . import ISOMax3ALanguageCode
+from . import LocalAddress1
+from . import Max35Text
+from . import Max512Text
 
 class LocalData16(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class LocalData16(base_types._BaseFieldType):
 
 	@AddtlData.setter
 	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+		self._AddtlData = value if value is not None else base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@AddtlData.deleter
 	def AddtlData(self):
 		del self._AddtlData
-		self._AddtlData = None
+		self._AddtlData = base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@property
 	def AddtlInf(self):
@@ -32,12 +32,12 @@ class LocalData16(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation22, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation22, True)
 
 	@property
 	def CrdhldrNm(self):
@@ -45,12 +45,12 @@ class LocalData16(base_types._BaseFieldType):
 
 	@CrdhldrNm.setter
 	def CrdhldrNm(self, value):
-		self._CrdhldrNm = value if type(value) != base_types.auto else self.make_default("CrdhldrNm")
+		self._CrdhldrNm = value if value is not None else base_types.UninitialisedField(self, 'CrdhldrNm', CardholderName2, False)
 
 	@CrdhldrNm.deleter
 	def CrdhldrNm(self):
 		del self._CrdhldrNm
-		self._CrdhldrNm = None
+		self._CrdhldrNm = base_types.UninitialisedField(self, 'CrdhldrNm', CardholderName2, False)
 
 	@property
 	def Lang(self):
@@ -58,12 +58,12 @@ class LocalData16(base_types._BaseFieldType):
 
 	@Lang.setter
 	def Lang(self, value):
-		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
+		self._Lang = value if value is not None else base_types.UninitialisedField(self, 'Lang', ISOMax3ALanguageCode, False)
 
 	@Lang.deleter
 	def Lang(self):
 		del self._Lang
-		self._Lang = None
+		self._Lang = base_types.UninitialisedField(self, 'Lang', ISOMax3ALanguageCode, False)
 
 	@property
 	def MldFrPstlCd(self):
@@ -71,12 +71,12 @@ class LocalData16(base_types._BaseFieldType):
 
 	@MldFrPstlCd.setter
 	def MldFrPstlCd(self, value):
-		self._MldFrPstlCd = value if type(value) != base_types.auto else self.make_default("MldFrPstlCd")
+		self._MldFrPstlCd = value if value is not None else base_types.UninitialisedField(self, 'MldFrPstlCd', Max35Text, False)
 
 	@MldFrPstlCd.deleter
 	def MldFrPstlCd(self):
 		del self._MldFrPstlCd
-		self._MldFrPstlCd = None
+		self._MldFrPstlCd = base_types.UninitialisedField(self, 'MldFrPstlCd', Max35Text, False)
 
 	@property
 	def MlngAdr(self):
@@ -84,12 +84,12 @@ class LocalData16(base_types._BaseFieldType):
 
 	@MlngAdr.setter
 	def MlngAdr(self, value):
-		self._MlngAdr = value if type(value) != base_types.auto else self.make_default("MlngAdr")
+		self._MlngAdr = value if value is not None else base_types.UninitialisedField(self, 'MlngAdr', LocalAddress1, False)
 
 	@MlngAdr.deleter
 	def MlngAdr(self):
 		del self._MlngAdr
-		self._MlngAdr = None
+		self._MlngAdr = base_types.UninitialisedField(self, 'MlngAdr', LocalAddress1, False)
 
 	@property
 	def MlngAdrUstrd(self):
@@ -97,12 +97,12 @@ class LocalData16(base_types._BaseFieldType):
 
 	@MlngAdrUstrd.setter
 	def MlngAdrUstrd(self, value):
-		self._MlngAdrUstrd = value if type(value) != base_types.auto else self.make_default("MlngAdrUstrd")
+		self._MlngAdrUstrd = value if value is not None else base_types.UninitialisedField(self, 'MlngAdrUstrd', Max512Text, False)
 
 	@MlngAdrUstrd.deleter
 	def MlngAdrUstrd(self):
 		del self._MlngAdrUstrd
-		self._MlngAdrUstrd = None
+		self._MlngAdrUstrd = base_types.UninitialisedField(self, 'MlngAdrUstrd', Max512Text, False)
 
 	@property
 	def NcodgFrmt(self):
@@ -110,12 +110,12 @@ class LocalData16(base_types._BaseFieldType):
 
 	@NcodgFrmt.setter
 	def NcodgFrmt(self, value):
-		self._NcodgFrmt = value if type(value) != base_types.auto else self.make_default("NcodgFrmt")
+		self._NcodgFrmt = value if value is not None else base_types.UninitialisedField(self, 'NcodgFrmt', Max35Text, False)
 
 	@NcodgFrmt.deleter
 	def NcodgFrmt(self):
 		del self._NcodgFrmt
-		self._NcodgFrmt = None
+		self._NcodgFrmt = base_types.UninitialisedField(self, 'NcodgFrmt', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),

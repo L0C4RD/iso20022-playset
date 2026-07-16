@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PortfolioTransferInstructionV12 import PortfolioTransferInstructionV12
+from . import PortfolioTransferInstructionV12
 
 class SESE_012_001_12():
 
@@ -18,12 +18,12 @@ class SESE_012_001_12():
 
 		@PrtflTrfInstr.setter
 		def PrtflTrfInstr(self, value):
-			self._PrtflTrfInstr = value if type(value) != base_types.auto else self.make_default("PrtflTrfInstr")
+			self._PrtflTrfInstr = value if value is not None else base_types.UninitialisedField(self, 'PrtflTrfInstr', PortfolioTransferInstructionV12, False)
 
 		@PrtflTrfInstr.deleter
 		def PrtflTrfInstr(self):
 			del self._PrtflTrfInstr
-			self._PrtflTrfInstr = None
+			self._PrtflTrfInstr = base_types.UninitialisedField(self, 'PrtflTrfInstr', PortfolioTransferInstructionV12, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='PrtflTrfInstr', type=PortfolioTransferInstructionV12, min=1, max=1, mutex_group=None, array=False),

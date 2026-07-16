@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification176 import GenericIdentification176
-from ._ISODateTime import ISODateTime
-from ._MaintenanceDelegation17 import MaintenanceDelegation17
-from ._Max140Binary import Max140Binary
+from . import GenericIdentification176
+from . import ISODateTime
+from . import MaintenanceDelegation17
+from . import Max140Binary
 
 class MaintenanceDelegationResponse8(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class MaintenanceDelegationResponse8(base_types._BaseFieldType):
 
 	@DlgtnRspn.setter
 	def DlgtnRspn(self, value):
-		self._DlgtnRspn = value if type(value) != base_types.auto else self.make_default("DlgtnRspn")
+		self._DlgtnRspn = value if value is not None else base_types.UninitialisedField(self, 'DlgtnRspn', MaintenanceDelegation17, True)
 
 	@DlgtnRspn.deleter
 	def DlgtnRspn(self):
 		del self._DlgtnRspn
-		self._DlgtnRspn = None
+		self._DlgtnRspn = base_types.UninitialisedField(self, 'DlgtnRspn', MaintenanceDelegation17, True)
 
 	@property
 	def MstrTMId(self):
@@ -29,12 +29,12 @@ class MaintenanceDelegationResponse8(base_types._BaseFieldType):
 
 	@MstrTMId.setter
 	def MstrTMId(self, value):
-		self._MstrTMId = value if type(value) != base_types.auto else self.make_default("MstrTMId")
+		self._MstrTMId = value if value is not None else base_types.UninitialisedField(self, 'MstrTMId', GenericIdentification176, False)
 
 	@MstrTMId.deleter
 	def MstrTMId(self):
 		del self._MstrTMId
-		self._MstrTMId = None
+		self._MstrTMId = base_types.UninitialisedField(self, 'MstrTMId', GenericIdentification176, False)
 
 	@property
 	def TMChllngVal(self):
@@ -42,12 +42,12 @@ class MaintenanceDelegationResponse8(base_types._BaseFieldType):
 
 	@TMChllngVal.setter
 	def TMChllngVal(self, value):
-		self._TMChllngVal = value if type(value) != base_types.auto else self.make_default("TMChllngVal")
+		self._TMChllngVal = value if value is not None else base_types.UninitialisedField(self, 'TMChllngVal', Max140Binary, False)
 
 	@TMChllngVal.deleter
 	def TMChllngVal(self):
 		del self._TMChllngVal
-		self._TMChllngVal = None
+		self._TMChllngVal = base_types.UninitialisedField(self, 'TMChllngVal', Max140Binary, False)
 
 	@property
 	def TMDtTm(self):
@@ -55,12 +55,12 @@ class MaintenanceDelegationResponse8(base_types._BaseFieldType):
 
 	@TMDtTm.setter
 	def TMDtTm(self, value):
-		self._TMDtTm = value if type(value) != base_types.auto else self.make_default("TMDtTm")
+		self._TMDtTm = value if value is not None else base_types.UninitialisedField(self, 'TMDtTm', ISODateTime, False)
 
 	@TMDtTm.deleter
 	def TMDtTm(self):
 		del self._TMDtTm
-		self._TMDtTm = None
+		self._TMDtTm = base_types.UninitialisedField(self, 'TMDtTm', ISODateTime, False)
 
 	@property
 	def TMId(self):
@@ -68,12 +68,12 @@ class MaintenanceDelegationResponse8(base_types._BaseFieldType):
 
 	@TMId.setter
 	def TMId(self, value):
-		self._TMId = value if type(value) != base_types.auto else self.make_default("TMId")
+		self._TMId = value if value is not None else base_types.UninitialisedField(self, 'TMId', GenericIdentification176, False)
 
 	@TMId.deleter
 	def TMId(self):
 		del self._TMId
-		self._TMId = None
+		self._TMId = base_types.UninitialisedField(self, 'TMId', GenericIdentification176, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DlgtnRspn', type=MaintenanceDelegation17, min=1, max=None, mutex_group=None, array=True),

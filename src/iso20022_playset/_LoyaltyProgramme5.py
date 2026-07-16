@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Address2 import Address2
-from ._CardholderName3 import CardholderName3
-from ._ISODate import ISODate
-from ._LoyaltyValueType1Code import LoyaltyValueType1Code
-from ._Max10NumericText import Max10NumericText
-from ._Max35Text import Max35Text
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import Address2
+from . import CardholderName3
+from . import ISODate
+from . import LoyaltyValueType1Code
+from . import Max10NumericText
+from . import Max35Text
+from . import TrueFalseIndicator
 
 class LoyaltyProgramme5(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class LoyaltyProgramme5(base_types._BaseFieldType):
 
 	@Bal.setter
 	def Bal(self, value):
-		self._Bal = value if type(value) != base_types.auto else self.make_default("Bal")
+		self._Bal = value if value is not None else base_types.UninitialisedField(self, 'Bal', Max10NumericText, False)
 
 	@Bal.deleter
 	def Bal(self):
 		del self._Bal
-		self._Bal = None
+		self._Bal = base_types.UninitialisedField(self, 'Bal', Max10NumericText, False)
 
 	@property
 	def Elgblty(self):
@@ -32,12 +32,12 @@ class LoyaltyProgramme5(base_types._BaseFieldType):
 
 	@Elgblty.setter
 	def Elgblty(self, value):
-		self._Elgblty = value if type(value) != base_types.auto else self.make_default("Elgblty")
+		self._Elgblty = value if value is not None else base_types.UninitialisedField(self, 'Elgblty', TrueFalseIndicator, True)
 
 	@Elgblty.deleter
 	def Elgblty(self):
 		del self._Elgblty
-		self._Elgblty = None
+		self._Elgblty = base_types.UninitialisedField(self, 'Elgblty', TrueFalseIndicator, True)
 
 	@property
 	def Issr(self):
@@ -45,12 +45,12 @@ class LoyaltyProgramme5(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+		self._Issr = value if value is not None else base_types.UninitialisedField(self, 'Issr', Max35Text, False)
 
 	@Issr.deleter
 	def Issr(self):
 		del self._Issr
-		self._Issr = None
+		self._Issr = base_types.UninitialisedField(self, 'Issr', Max35Text, False)
 
 	@property
 	def MmbAdr(self):
@@ -58,12 +58,12 @@ class LoyaltyProgramme5(base_types._BaseFieldType):
 
 	@MmbAdr.setter
 	def MmbAdr(self, value):
-		self._MmbAdr = value if type(value) != base_types.auto else self.make_default("MmbAdr")
+		self._MmbAdr = value if value is not None else base_types.UninitialisedField(self, 'MmbAdr', Address2, False)
 
 	@MmbAdr.deleter
 	def MmbAdr(self):
 		del self._MmbAdr
-		self._MmbAdr = None
+		self._MmbAdr = base_types.UninitialisedField(self, 'MmbAdr', Address2, False)
 
 	@property
 	def MmbId(self):
@@ -71,12 +71,12 @@ class LoyaltyProgramme5(base_types._BaseFieldType):
 
 	@MmbId.setter
 	def MmbId(self, value):
-		self._MmbId = value if type(value) != base_types.auto else self.make_default("MmbId")
+		self._MmbId = value if value is not None else base_types.UninitialisedField(self, 'MmbId', Max35Text, False)
 
 	@MmbId.deleter
 	def MmbId(self):
 		del self._MmbId
-		self._MmbId = None
+		self._MmbId = base_types.UninitialisedField(self, 'MmbId', Max35Text, False)
 
 	@property
 	def MmbNm(self):
@@ -84,12 +84,12 @@ class LoyaltyProgramme5(base_types._BaseFieldType):
 
 	@MmbNm.setter
 	def MmbNm(self, value):
-		self._MmbNm = value if type(value) != base_types.auto else self.make_default("MmbNm")
+		self._MmbNm = value if value is not None else base_types.UninitialisedField(self, 'MmbNm', CardholderName3, False)
 
 	@MmbNm.deleter
 	def MmbNm(self):
 		del self._MmbNm
-		self._MmbNm = None
+		self._MmbNm = base_types.UninitialisedField(self, 'MmbNm', CardholderName3, False)
 
 	@property
 	def MmbSts(self):
@@ -97,12 +97,12 @@ class LoyaltyProgramme5(base_types._BaseFieldType):
 
 	@MmbSts.setter
 	def MmbSts(self, value):
-		self._MmbSts = value if type(value) != base_types.auto else self.make_default("MmbSts")
+		self._MmbSts = value if value is not None else base_types.UninitialisedField(self, 'MmbSts', Max35Text, False)
 
 	@MmbSts.deleter
 	def MmbSts(self):
 		del self._MmbSts
-		self._MmbSts = None
+		self._MmbSts = base_types.UninitialisedField(self, 'MmbSts', Max35Text, False)
 
 	@property
 	def OthrValTp(self):
@@ -110,12 +110,12 @@ class LoyaltyProgramme5(base_types._BaseFieldType):
 
 	@OthrValTp.setter
 	def OthrValTp(self, value):
-		self._OthrValTp = value if type(value) != base_types.auto else self.make_default("OthrValTp")
+		self._OthrValTp = value if value is not None else base_types.UninitialisedField(self, 'OthrValTp', Max35Text, False)
 
 	@OthrValTp.deleter
 	def OthrValTp(self):
 		del self._OthrValTp
-		self._OthrValTp = None
+		self._OthrValTp = base_types.UninitialisedField(self, 'OthrValTp', Max35Text, False)
 
 	@property
 	def Val(self):
@@ -123,12 +123,12 @@ class LoyaltyProgramme5(base_types._BaseFieldType):
 
 	@Val.setter
 	def Val(self, value):
-		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
+		self._Val = value if value is not None else base_types.UninitialisedField(self, 'Val', Max10NumericText, False)
 
 	@Val.deleter
 	def Val(self):
 		del self._Val
-		self._Val = None
+		self._Val = base_types.UninitialisedField(self, 'Val', Max10NumericText, False)
 
 	@property
 	def ValToCdt(self):
@@ -136,12 +136,12 @@ class LoyaltyProgramme5(base_types._BaseFieldType):
 
 	@ValToCdt.setter
 	def ValToCdt(self, value):
-		self._ValToCdt = value if type(value) != base_types.auto else self.make_default("ValToCdt")
+		self._ValToCdt = value if value is not None else base_types.UninitialisedField(self, 'ValToCdt', Max10NumericText, False)
 
 	@ValToCdt.deleter
 	def ValToCdt(self):
 		del self._ValToCdt
-		self._ValToCdt = None
+		self._ValToCdt = base_types.UninitialisedField(self, 'ValToCdt', Max10NumericText, False)
 
 	@property
 	def ValToDbt(self):
@@ -149,12 +149,12 @@ class LoyaltyProgramme5(base_types._BaseFieldType):
 
 	@ValToDbt.setter
 	def ValToDbt(self, value):
-		self._ValToDbt = value if type(value) != base_types.auto else self.make_default("ValToDbt")
+		self._ValToDbt = value if value is not None else base_types.UninitialisedField(self, 'ValToDbt', Max10NumericText, False)
 
 	@ValToDbt.deleter
 	def ValToDbt(self):
 		del self._ValToDbt
-		self._ValToDbt = None
+		self._ValToDbt = base_types.UninitialisedField(self, 'ValToDbt', Max10NumericText, False)
 
 	@property
 	def ValTp(self):
@@ -162,12 +162,12 @@ class LoyaltyProgramme5(base_types._BaseFieldType):
 
 	@ValTp.setter
 	def ValTp(self, value):
-		self._ValTp = value if type(value) != base_types.auto else self.make_default("ValTp")
+		self._ValTp = value if value is not None else base_types.UninitialisedField(self, 'ValTp', LoyaltyValueType1Code, False)
 
 	@ValTp.deleter
 	def ValTp(self):
 		del self._ValTp
-		self._ValTp = None
+		self._ValTp = base_types.UninitialisedField(self, 'ValTp', LoyaltyValueType1Code, False)
 
 	@property
 	def XprtnDt(self):
@@ -175,12 +175,12 @@ class LoyaltyProgramme5(base_types._BaseFieldType):
 
 	@XprtnDt.setter
 	def XprtnDt(self, value):
-		self._XprtnDt = value if type(value) != base_types.auto else self.make_default("XprtnDt")
+		self._XprtnDt = value if value is not None else base_types.UninitialisedField(self, 'XprtnDt', ISODate, False)
 
 	@XprtnDt.deleter
 	def XprtnDt(self):
 		del self._XprtnDt
-		self._XprtnDt = None
+		self._XprtnDt = base_types.UninitialisedField(self, 'XprtnDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Bal', type=Max10NumericText, min=0, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._GenericIdentification178 import GenericIdentification178
-from ._Period4Choice import Period4Choice
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import GenericIdentification178
+from . import Period4Choice
 
 class CollateralTransactionAmountBreakdown2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CollateralTransactionAmountBreakdown2(base_types._BaseFieldType):
 
 	@LotNb.setter
 	def LotNb(self, value):
-		self._LotNb = value if type(value) != base_types.auto else self.make_default("LotNb")
+		self._LotNb = value if value is not None else base_types.UninitialisedField(self, 'LotNb', GenericIdentification178, False)
 
 	@LotNb.deleter
 	def LotNb(self):
 		del self._LotNb
-		self._LotNb = None
+		self._LotNb = base_types.UninitialisedField(self, 'LotNb', GenericIdentification178, False)
 
 	@property
 	def Prd(self):
@@ -28,12 +28,12 @@ class CollateralTransactionAmountBreakdown2(base_types._BaseFieldType):
 
 	@Prd.setter
 	def Prd(self, value):
-		self._Prd = value if type(value) != base_types.auto else self.make_default("Prd")
+		self._Prd = value if value is not None else base_types.UninitialisedField(self, 'Prd', Period4Choice, False)
 
 	@Prd.deleter
 	def Prd(self):
 		del self._Prd
-		self._Prd = None
+		self._Prd = base_types.UninitialisedField(self, 'Prd', Period4Choice, False)
 
 	@property
 	def TxAmt(self):
@@ -41,12 +41,12 @@ class CollateralTransactionAmountBreakdown2(base_types._BaseFieldType):
 
 	@TxAmt.setter
 	def TxAmt(self, value):
-		self._TxAmt = value if type(value) != base_types.auto else self.make_default("TxAmt")
+		self._TxAmt = value if value is not None else base_types.UninitialisedField(self, 'TxAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@TxAmt.deleter
 	def TxAmt(self):
 		del self._TxAmt
-		self._TxAmt = None
+		self._TxAmt = base_types.UninitialisedField(self, 'TxAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LotNb', type=GenericIdentification178, min=1, max=1, mutex_group=None, array=False),

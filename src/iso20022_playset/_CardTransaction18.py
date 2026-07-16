@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardTransaction3Choice import CardTransaction3Choice
-from ._CashAccount40 import CashAccount40
-from ._PaymentCard4 import PaymentCard4
-from ._PointOfInteraction1 import PointOfInteraction1
+from . import CardTransaction3Choice
+from . import CashAccount40
+from . import PaymentCard4
+from . import PointOfInteraction1
 
 class CardTransaction18(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CardTransaction18(base_types._BaseFieldType):
 
 	@Card.setter
 	def Card(self, value):
-		self._Card = value if type(value) != base_types.auto else self.make_default("Card")
+		self._Card = value if value is not None else base_types.UninitialisedField(self, 'Card', PaymentCard4, False)
 
 	@Card.deleter
 	def Card(self):
 		del self._Card
-		self._Card = None
+		self._Card = base_types.UninitialisedField(self, 'Card', PaymentCard4, False)
 
 	@property
 	def POI(self):
@@ -29,12 +29,12 @@ class CardTransaction18(base_types._BaseFieldType):
 
 	@POI.setter
 	def POI(self, value):
-		self._POI = value if type(value) != base_types.auto else self.make_default("POI")
+		self._POI = value if value is not None else base_types.UninitialisedField(self, 'POI', PointOfInteraction1, False)
 
 	@POI.deleter
 	def POI(self):
 		del self._POI
-		self._POI = None
+		self._POI = base_types.UninitialisedField(self, 'POI', PointOfInteraction1, False)
 
 	@property
 	def PrePdAcct(self):
@@ -42,12 +42,12 @@ class CardTransaction18(base_types._BaseFieldType):
 
 	@PrePdAcct.setter
 	def PrePdAcct(self, value):
-		self._PrePdAcct = value if type(value) != base_types.auto else self.make_default("PrePdAcct")
+		self._PrePdAcct = value if value is not None else base_types.UninitialisedField(self, 'PrePdAcct', CashAccount40, False)
 
 	@PrePdAcct.deleter
 	def PrePdAcct(self):
 		del self._PrePdAcct
-		self._PrePdAcct = None
+		self._PrePdAcct = base_types.UninitialisedField(self, 'PrePdAcct', CashAccount40, False)
 
 	@property
 	def Tx(self):
@@ -55,12 +55,12 @@ class CardTransaction18(base_types._BaseFieldType):
 
 	@Tx.setter
 	def Tx(self, value):
-		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
+		self._Tx = value if value is not None else base_types.UninitialisedField(self, 'Tx', CardTransaction3Choice, False)
 
 	@Tx.deleter
 	def Tx(self):
 		del self._Tx
-		self._Tx = None
+		self._Tx = base_types.UninitialisedField(self, 'Tx', CardTransaction3Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Card', type=PaymentCard4, min=0, max=1, mutex_group=None, array=False),

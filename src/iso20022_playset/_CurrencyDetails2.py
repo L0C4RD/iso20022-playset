@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._Exact3NumericText import Exact3NumericText
-from ._Max35Text import Max35Text
-from ._Number import Number
+from . import ActiveCurrencyCode
+from . import Exact3NumericText
+from . import Max35Text
+from . import Number
 
 class CurrencyDetails2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CurrencyDetails2(base_types._BaseFieldType):
 
 	@AlphaCd.setter
 	def AlphaCd(self, value):
-		self._AlphaCd = value if type(value) != base_types.auto else self.make_default("AlphaCd")
+		self._AlphaCd = value if value is not None else base_types.UninitialisedField(self, 'AlphaCd', ActiveCurrencyCode, False)
 
 	@AlphaCd.deleter
 	def AlphaCd(self):
 		del self._AlphaCd
-		self._AlphaCd = None
+		self._AlphaCd = base_types.UninitialisedField(self, 'AlphaCd', ActiveCurrencyCode, False)
 
 	@property
 	def Dcml(self):
@@ -29,12 +29,12 @@ class CurrencyDetails2(base_types._BaseFieldType):
 
 	@Dcml.setter
 	def Dcml(self, value):
-		self._Dcml = value if type(value) != base_types.auto else self.make_default("Dcml")
+		self._Dcml = value if value is not None else base_types.UninitialisedField(self, 'Dcml', Number, False)
 
 	@Dcml.deleter
 	def Dcml(self):
 		del self._Dcml
-		self._Dcml = None
+		self._Dcml = base_types.UninitialisedField(self, 'Dcml', Number, False)
 
 	@property
 	def Nm(self):
@@ -42,12 +42,12 @@ class CurrencyDetails2(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max35Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max35Text, False)
 
 	@property
 	def NmrcCd(self):
@@ -55,12 +55,12 @@ class CurrencyDetails2(base_types._BaseFieldType):
 
 	@NmrcCd.setter
 	def NmrcCd(self, value):
-		self._NmrcCd = value if type(value) != base_types.auto else self.make_default("NmrcCd")
+		self._NmrcCd = value if value is not None else base_types.UninitialisedField(self, 'NmrcCd', Exact3NumericText, False)
 
 	@NmrcCd.deleter
 	def NmrcCd(self):
 		del self._NmrcCd
-		self._NmrcCd = None
+		self._NmrcCd = base_types.UninitialisedField(self, 'NmrcCd', Exact3NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AlphaCd', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),

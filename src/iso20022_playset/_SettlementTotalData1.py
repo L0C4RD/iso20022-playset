@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SettlementDataRate2 import SettlementDataRate2
-from ._SettlementDataVolume2 import SettlementDataVolume2
+from . import SettlementDataRate2
+from . import SettlementDataVolume2
 
 class SettlementTotalData1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SettlementTotalData1(base_types._BaseFieldType):
 
 	@Faild.setter
 	def Faild(self, value):
-		self._Faild = value if type(value) != base_types.auto else self.make_default("Faild")
+		self._Faild = value if value is not None else base_types.UninitialisedField(self, 'Faild', SettlementDataVolume2, False)
 
 	@Faild.deleter
 	def Faild(self):
 		del self._Faild
-		self._Faild = None
+		self._Faild = base_types.UninitialisedField(self, 'Faild', SettlementDataVolume2, False)
 
 	@property
 	def FaildRate(self):
@@ -27,12 +27,12 @@ class SettlementTotalData1(base_types._BaseFieldType):
 
 	@FaildRate.setter
 	def FaildRate(self, value):
-		self._FaildRate = value if type(value) != base_types.auto else self.make_default("FaildRate")
+		self._FaildRate = value if value is not None else base_types.UninitialisedField(self, 'FaildRate', SettlementDataRate2, False)
 
 	@FaildRate.deleter
 	def FaildRate(self):
 		del self._FaildRate
-		self._FaildRate = None
+		self._FaildRate = base_types.UninitialisedField(self, 'FaildRate', SettlementDataRate2, False)
 
 	@property
 	def Sttld(self):
@@ -40,12 +40,12 @@ class SettlementTotalData1(base_types._BaseFieldType):
 
 	@Sttld.setter
 	def Sttld(self, value):
-		self._Sttld = value if type(value) != base_types.auto else self.make_default("Sttld")
+		self._Sttld = value if value is not None else base_types.UninitialisedField(self, 'Sttld', SettlementDataVolume2, False)
 
 	@Sttld.deleter
 	def Sttld(self):
 		del self._Sttld
-		self._Sttld = None
+		self._Sttld = base_types.UninitialisedField(self, 'Sttld', SettlementDataVolume2, False)
 
 	@property
 	def Ttl(self):
@@ -53,12 +53,12 @@ class SettlementTotalData1(base_types._BaseFieldType):
 
 	@Ttl.setter
 	def Ttl(self, value):
-		self._Ttl = value if type(value) != base_types.auto else self.make_default("Ttl")
+		self._Ttl = value if value is not None else base_types.UninitialisedField(self, 'Ttl', SettlementDataVolume2, False)
 
 	@Ttl.deleter
 	def Ttl(self):
 		del self._Ttl
-		self._Ttl = None
+		self._Ttl = base_types.UninitialisedField(self, 'Ttl', SettlementDataVolume2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Faild', type=SettlementDataVolume2, min=1, max=1, mutex_group=None, array=False),

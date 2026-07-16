@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
+from . import Max35Text
 
 class RegulatoryInformation1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class RegulatoryInformation1(base_types._BaseFieldType):
 
 	@Brnch.setter
 	def Brnch(self, value):
-		self._Brnch = value if type(value) != base_types.auto else self.make_default("Brnch")
+		self._Brnch = value if value is not None else base_types.UninitialisedField(self, 'Brnch', Max35Text, False)
 
 	@Brnch.deleter
 	def Brnch(self):
 		del self._Brnch
-		self._Brnch = None
+		self._Brnch = base_types.UninitialisedField(self, 'Brnch', Max35Text, False)
 
 	@property
 	def Grp(self):
@@ -26,12 +26,12 @@ class RegulatoryInformation1(base_types._BaseFieldType):
 
 	@Grp.setter
 	def Grp(self, value):
-		self._Grp = value if type(value) != base_types.auto else self.make_default("Grp")
+		self._Grp = value if value is not None else base_types.UninitialisedField(self, 'Grp', Max35Text, False)
 
 	@Grp.deleter
 	def Grp(self):
 		del self._Grp
-		self._Grp = None
+		self._Grp = base_types.UninitialisedField(self, 'Grp', Max35Text, False)
 
 	@property
 	def Othr(self):
@@ -39,12 +39,12 @@ class RegulatoryInformation1(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', Max35Text, False)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', Max35Text, False)
 
 	@property
 	def Sctr(self):
@@ -52,12 +52,12 @@ class RegulatoryInformation1(base_types._BaseFieldType):
 
 	@Sctr.setter
 	def Sctr(self, value):
-		self._Sctr = value if type(value) != base_types.auto else self.make_default("Sctr")
+		self._Sctr = value if value is not None else base_types.UninitialisedField(self, 'Sctr', Max35Text, False)
 
 	@Sctr.deleter
 	def Sctr(self):
 		del self._Sctr
-		self._Sctr = None
+		self._Sctr = base_types.UninitialisedField(self, 'Sctr', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Brnch', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

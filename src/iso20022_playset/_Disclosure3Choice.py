@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NoReasonCode import NoReasonCode
-from ._SafekeepingAccount17 import SafekeepingAccount17
+from . import NoReasonCode
+from . import SafekeepingAccount17
 
 class Disclosure3Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Disclosure3Choice(base_types._BaseFieldType):
 
 	@NoDsclsr.setter
 	def NoDsclsr(self, value):
-		self._NoDsclsr = value if type(value) != base_types.auto else self.make_default("NoDsclsr")
+		self._NoDsclsr = value if value is not None else base_types.UninitialisedField(self, 'NoDsclsr', NoReasonCode, False)
 
 	@NoDsclsr.deleter
 	def NoDsclsr(self):
 		del self._NoDsclsr
-		self._NoDsclsr = None
+		self._NoDsclsr = base_types.UninitialisedField(self, 'NoDsclsr', NoReasonCode, False)
 
 	@property
 	def SfkpgAcctAndHldgs(self):
@@ -27,12 +27,12 @@ class Disclosure3Choice(base_types._BaseFieldType):
 
 	@SfkpgAcctAndHldgs.setter
 	def SfkpgAcctAndHldgs(self, value):
-		self._SfkpgAcctAndHldgs = value if type(value) != base_types.auto else self.make_default("SfkpgAcctAndHldgs")
+		self._SfkpgAcctAndHldgs = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcctAndHldgs', SafekeepingAccount17, True)
 
 	@SfkpgAcctAndHldgs.deleter
 	def SfkpgAcctAndHldgs(self):
 		del self._SfkpgAcctAndHldgs
-		self._SfkpgAcctAndHldgs = None
+		self._SfkpgAcctAndHldgs = base_types.UninitialisedField(self, 'SfkpgAcctAndHldgs', SafekeepingAccount17, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NoDsclsr', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AlgorithmIdentification36 import AlgorithmIdentification36
-from ._EncapsulatedContent3 import EncapsulatedContent3
-from ._Max140Binary import Max140Binary
-from ._Number import Number
+from . import AlgorithmIdentification36
+from . import EncapsulatedContent3
+from . import Max140Binary
+from . import Number
 
 class DigestedData6(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class DigestedData6(base_types._BaseFieldType):
 
 	@Dgst.setter
 	def Dgst(self, value):
-		self._Dgst = value if type(value) != base_types.auto else self.make_default("Dgst")
+		self._Dgst = value if value is not None else base_types.UninitialisedField(self, 'Dgst', Max140Binary, False)
 
 	@Dgst.deleter
 	def Dgst(self):
 		del self._Dgst
-		self._Dgst = None
+		self._Dgst = base_types.UninitialisedField(self, 'Dgst', Max140Binary, False)
 
 	@property
 	def DgstAlgo(self):
@@ -29,12 +29,12 @@ class DigestedData6(base_types._BaseFieldType):
 
 	@DgstAlgo.setter
 	def DgstAlgo(self, value):
-		self._DgstAlgo = value if type(value) != base_types.auto else self.make_default("DgstAlgo")
+		self._DgstAlgo = value if value is not None else base_types.UninitialisedField(self, 'DgstAlgo', AlgorithmIdentification36, False)
 
 	@DgstAlgo.deleter
 	def DgstAlgo(self):
 		del self._DgstAlgo
-		self._DgstAlgo = None
+		self._DgstAlgo = base_types.UninitialisedField(self, 'DgstAlgo', AlgorithmIdentification36, False)
 
 	@property
 	def NcpsltdCntt(self):
@@ -42,12 +42,12 @@ class DigestedData6(base_types._BaseFieldType):
 
 	@NcpsltdCntt.setter
 	def NcpsltdCntt(self, value):
-		self._NcpsltdCntt = value if type(value) != base_types.auto else self.make_default("NcpsltdCntt")
+		self._NcpsltdCntt = value if value is not None else base_types.UninitialisedField(self, 'NcpsltdCntt', EncapsulatedContent3, False)
 
 	@NcpsltdCntt.deleter
 	def NcpsltdCntt(self):
 		del self._NcpsltdCntt
-		self._NcpsltdCntt = None
+		self._NcpsltdCntt = base_types.UninitialisedField(self, 'NcpsltdCntt', EncapsulatedContent3, False)
 
 	@property
 	def Vrsn(self):
@@ -55,12 +55,12 @@ class DigestedData6(base_types._BaseFieldType):
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+		self._Vrsn = value if value is not None else base_types.UninitialisedField(self, 'Vrsn', Number, False)
 
 	@Vrsn.deleter
 	def Vrsn(self):
 		del self._Vrsn
-		self._Vrsn = None
+		self._Vrsn = base_types.UninitialisedField(self, 'Vrsn', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dgst', type=Max140Binary, min=1, max=1, mutex_group=None, array=False),

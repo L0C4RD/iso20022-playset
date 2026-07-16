@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CollateralMovement12 import CollateralMovement12
-from ._CollateralProposal7 import CollateralProposal7
+from . import CollateralMovement12
+from . import CollateralProposal7
 
 class CollateralProposal6Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CollateralProposal6Choice(base_types._BaseFieldType):
 
 	@CollPrpslDtls.setter
 	def CollPrpslDtls(self, value):
-		self._CollPrpslDtls = value if type(value) != base_types.auto else self.make_default("CollPrpslDtls")
+		self._CollPrpslDtls = value if value is not None else base_types.UninitialisedField(self, 'CollPrpslDtls', CollateralProposal7, False)
 
 	@CollPrpslDtls.deleter
 	def CollPrpslDtls(self):
 		del self._CollPrpslDtls
-		self._CollPrpslDtls = None
+		self._CollPrpslDtls = base_types.UninitialisedField(self, 'CollPrpslDtls', CollateralProposal7, False)
 
 	@property
 	def SgrtdIndpdntAmt(self):
@@ -27,12 +27,12 @@ class CollateralProposal6Choice(base_types._BaseFieldType):
 
 	@SgrtdIndpdntAmt.setter
 	def SgrtdIndpdntAmt(self, value):
-		self._SgrtdIndpdntAmt = value if type(value) != base_types.auto else self.make_default("SgrtdIndpdntAmt")
+		self._SgrtdIndpdntAmt = value if value is not None else base_types.UninitialisedField(self, 'SgrtdIndpdntAmt', CollateralMovement12, False)
 
 	@SgrtdIndpdntAmt.deleter
 	def SgrtdIndpdntAmt(self):
 		del self._SgrtdIndpdntAmt
-		self._SgrtdIndpdntAmt = None
+		self._SgrtdIndpdntAmt = base_types.UninitialisedField(self, 'SgrtdIndpdntAmt', CollateralMovement12, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollPrpslDtls', type=CollateralProposal7, min=0, max=1, mutex_group=1, array=False),

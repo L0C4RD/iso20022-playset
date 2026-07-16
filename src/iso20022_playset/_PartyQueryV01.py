@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MessageHeader2 import MessageHeader2
-from ._PartyDataReturnCriteria2 import PartyDataReturnCriteria2
-from ._PartyDataSearchCriteria2 import PartyDataSearchCriteria2
-from ._SupplementaryData1 import SupplementaryData1
+from . import MessageHeader2
+from . import PartyDataReturnCriteria2
+from . import PartyDataSearchCriteria2
+from . import SupplementaryData1
 
 class PartyQueryV01(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class PartyQueryV01(base_types._BaseFieldType):
 
 	@MsgHdr.setter
 	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
+		self._MsgHdr = value if value is not None else base_types.UninitialisedField(self, 'MsgHdr', MessageHeader2, False)
 
 	@MsgHdr.deleter
 	def MsgHdr(self):
 		del self._MsgHdr
-		self._MsgHdr = None
+		self._MsgHdr = base_types.UninitialisedField(self, 'MsgHdr', MessageHeader2, False)
 
 	@property
 	def RtrCrit(self):
@@ -29,12 +29,12 @@ class PartyQueryV01(base_types._BaseFieldType):
 
 	@RtrCrit.setter
 	def RtrCrit(self, value):
-		self._RtrCrit = value if type(value) != base_types.auto else self.make_default("RtrCrit")
+		self._RtrCrit = value if value is not None else base_types.UninitialisedField(self, 'RtrCrit', PartyDataReturnCriteria2, False)
 
 	@RtrCrit.deleter
 	def RtrCrit(self):
 		del self._RtrCrit
-		self._RtrCrit = None
+		self._RtrCrit = base_types.UninitialisedField(self, 'RtrCrit', PartyDataReturnCriteria2, False)
 
 	@property
 	def SchCrit(self):
@@ -42,12 +42,12 @@ class PartyQueryV01(base_types._BaseFieldType):
 
 	@SchCrit.setter
 	def SchCrit(self, value):
-		self._SchCrit = value if type(value) != base_types.auto else self.make_default("SchCrit")
+		self._SchCrit = value if value is not None else base_types.UninitialisedField(self, 'SchCrit', PartyDataSearchCriteria2, False)
 
 	@SchCrit.deleter
 	def SchCrit(self):
 		del self._SchCrit
-		self._SchCrit = None
+		self._SchCrit = base_types.UninitialisedField(self, 'SchCrit', PartyDataSearchCriteria2, False)
 
 	@property
 	def SplmtryData(self):
@@ -55,12 +55,12 @@ class PartyQueryV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader2, min=0, max=1, mutex_group=None, array=False),

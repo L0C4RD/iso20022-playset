@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AlternatePartyIdentification7 import AlternatePartyIdentification7
-from ._BeneficiaryCertificationType10Choice import BeneficiaryCertificationType10Choice
-from ._CountryCode import CountryCode
-from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
-from ._LEIIdentifier import LEIIdentifier
-from ._Max350Text import Max350Text
-from ._PartyIdentification229Choice import PartyIdentification229Choice
-from ._RateAndAmountFormat57Choice import RateAndAmountFormat57Choice
+from . import AlternatePartyIdentification7
+from . import BeneficiaryCertificationType10Choice
+from . import CountryCode
+from . import FinancialInstrumentQuantity33Choice
+from . import LEIIdentifier
+from . import Max350Text
+from . import PartyIdentification229Choice
+from . import RateAndAmountFormat57Choice
 
 class PartyIdentification313(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class PartyIdentification313(base_types._BaseFieldType):
 
 	@AltrnId.setter
 	def AltrnId(self, value):
-		self._AltrnId = value if type(value) != base_types.auto else self.make_default("AltrnId")
+		self._AltrnId = value if value is not None else base_types.UninitialisedField(self, 'AltrnId', AlternatePartyIdentification7, True)
 
 	@AltrnId.deleter
 	def AltrnId(self):
 		del self._AltrnId
-		self._AltrnId = None
+		self._AltrnId = base_types.UninitialisedField(self, 'AltrnId', AlternatePartyIdentification7, True)
 
 	@property
 	def CertfctnBrkdwn(self):
@@ -33,12 +33,12 @@ class PartyIdentification313(base_types._BaseFieldType):
 
 	@CertfctnBrkdwn.setter
 	def CertfctnBrkdwn(self, value):
-		self._CertfctnBrkdwn = value if type(value) != base_types.auto else self.make_default("CertfctnBrkdwn")
+		self._CertfctnBrkdwn = value if value is not None else base_types.UninitialisedField(self, 'CertfctnBrkdwn', Max350Text, True)
 
 	@CertfctnBrkdwn.deleter
 	def CertfctnBrkdwn(self):
 		del self._CertfctnBrkdwn
-		self._CertfctnBrkdwn = None
+		self._CertfctnBrkdwn = base_types.UninitialisedField(self, 'CertfctnBrkdwn', Max350Text, True)
 
 	@property
 	def CertfctnTp(self):
@@ -46,12 +46,12 @@ class PartyIdentification313(base_types._BaseFieldType):
 
 	@CertfctnTp.setter
 	def CertfctnTp(self, value):
-		self._CertfctnTp = value if type(value) != base_types.auto else self.make_default("CertfctnTp")
+		self._CertfctnTp = value if value is not None else base_types.UninitialisedField(self, 'CertfctnTp', BeneficiaryCertificationType10Choice, True)
 
 	@CertfctnTp.deleter
 	def CertfctnTp(self):
 		del self._CertfctnTp
-		self._CertfctnTp = None
+		self._CertfctnTp = base_types.UninitialisedField(self, 'CertfctnTp', BeneficiaryCertificationType10Choice, True)
 
 	@property
 	def DmclCtry(self):
@@ -59,12 +59,12 @@ class PartyIdentification313(base_types._BaseFieldType):
 
 	@DmclCtry.setter
 	def DmclCtry(self, value):
-		self._DmclCtry = value if type(value) != base_types.auto else self.make_default("DmclCtry")
+		self._DmclCtry = value if value is not None else base_types.UninitialisedField(self, 'DmclCtry', CountryCode, False)
 
 	@DmclCtry.deleter
 	def DmclCtry(self):
 		del self._DmclCtry
-		self._DmclCtry = None
+		self._DmclCtry = base_types.UninitialisedField(self, 'DmclCtry', CountryCode, False)
 
 	@property
 	def LEIId(self):
@@ -72,12 +72,12 @@ class PartyIdentification313(base_types._BaseFieldType):
 
 	@LEIId.setter
 	def LEIId(self, value):
-		self._LEIId = value if type(value) != base_types.auto else self.make_default("LEIId")
+		self._LEIId = value if value is not None else base_types.UninitialisedField(self, 'LEIId', LEIIdentifier, False)
 
 	@LEIId.deleter
 	def LEIId(self):
 		del self._LEIId
-		self._LEIId = None
+		self._LEIId = base_types.UninitialisedField(self, 'LEIId', LEIIdentifier, False)
 
 	@property
 	def NonDmclCtry(self):
@@ -85,12 +85,12 @@ class PartyIdentification313(base_types._BaseFieldType):
 
 	@NonDmclCtry.setter
 	def NonDmclCtry(self, value):
-		self._NonDmclCtry = value if type(value) != base_types.auto else self.make_default("NonDmclCtry")
+		self._NonDmclCtry = value if value is not None else base_types.UninitialisedField(self, 'NonDmclCtry', CountryCode, True)
 
 	@NonDmclCtry.deleter
 	def NonDmclCtry(self):
 		del self._NonDmclCtry
-		self._NonDmclCtry = None
+		self._NonDmclCtry = base_types.UninitialisedField(self, 'NonDmclCtry', CountryCode, True)
 
 	@property
 	def OwndSctiesQty(self):
@@ -98,12 +98,12 @@ class PartyIdentification313(base_types._BaseFieldType):
 
 	@OwndSctiesQty.setter
 	def OwndSctiesQty(self, value):
-		self._OwndSctiesQty = value if type(value) != base_types.auto else self.make_default("OwndSctiesQty")
+		self._OwndSctiesQty = value if value is not None else base_types.UninitialisedField(self, 'OwndSctiesQty', FinancialInstrumentQuantity33Choice, False)
 
 	@OwndSctiesQty.deleter
 	def OwndSctiesQty(self):
 		del self._OwndSctiesQty
-		self._OwndSctiesQty = None
+		self._OwndSctiesQty = base_types.UninitialisedField(self, 'OwndSctiesQty', FinancialInstrumentQuantity33Choice, False)
 
 	@property
 	def OwnrId(self):
@@ -111,12 +111,12 @@ class PartyIdentification313(base_types._BaseFieldType):
 
 	@OwnrId.setter
 	def OwnrId(self, value):
-		self._OwnrId = value if type(value) != base_types.auto else self.make_default("OwnrId")
+		self._OwnrId = value if value is not None else base_types.UninitialisedField(self, 'OwnrId', PartyIdentification229Choice, False)
 
 	@OwnrId.deleter
 	def OwnrId(self):
 		del self._OwnrId
-		self._OwnrId = None
+		self._OwnrId = base_types.UninitialisedField(self, 'OwnrId', PartyIdentification229Choice, False)
 
 	@property
 	def WhldgTaxRate(self):
@@ -124,12 +124,12 @@ class PartyIdentification313(base_types._BaseFieldType):
 
 	@WhldgTaxRate.setter
 	def WhldgTaxRate(self, value):
-		self._WhldgTaxRate = value if type(value) != base_types.auto else self.make_default("WhldgTaxRate")
+		self._WhldgTaxRate = value if value is not None else base_types.UninitialisedField(self, 'WhldgTaxRate', RateAndAmountFormat57Choice, False)
 
 	@WhldgTaxRate.deleter
 	def WhldgTaxRate(self):
 		del self._WhldgTaxRate
-		self._WhldgTaxRate = None
+		self._WhldgTaxRate = base_types.UninitialisedField(self, 'WhldgTaxRate', RateAndAmountFormat57Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification7, min=0, max=None, mutex_group=None, array=True),

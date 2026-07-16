@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CollateralValuation6 import CollateralValuation6
-from ._CollateralValuation7 import CollateralValuation7
+from . import CollateralValuation6
+from . import CollateralValuation7
 
 class SecuredCollateral2Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SecuredCollateral2Choice(base_types._BaseFieldType):
 
 	@MltplColl.setter
 	def MltplColl(self, value):
-		self._MltplColl = value if type(value) != base_types.auto else self.make_default("MltplColl")
+		self._MltplColl = value if value is not None else base_types.UninitialisedField(self, 'MltplColl', CollateralValuation6, True)
 
 	@MltplColl.deleter
 	def MltplColl(self):
 		del self._MltplColl
-		self._MltplColl = None
+		self._MltplColl = base_types.UninitialisedField(self, 'MltplColl', CollateralValuation6, True)
 
 	@property
 	def OthrColl(self):
@@ -27,12 +27,12 @@ class SecuredCollateral2Choice(base_types._BaseFieldType):
 
 	@OthrColl.setter
 	def OthrColl(self, value):
-		self._OthrColl = value if type(value) != base_types.auto else self.make_default("OthrColl")
+		self._OthrColl = value if value is not None else base_types.UninitialisedField(self, 'OthrColl', CollateralValuation7, True)
 
 	@OthrColl.deleter
 	def OthrColl(self):
 		del self._OthrColl
-		self._OthrColl = None
+		self._OthrColl = base_types.UninitialisedField(self, 'OthrColl', CollateralValuation7, True)
 
 	@property
 	def PoolColl(self):
@@ -40,12 +40,12 @@ class SecuredCollateral2Choice(base_types._BaseFieldType):
 
 	@PoolColl.setter
 	def PoolColl(self, value):
-		self._PoolColl = value if type(value) != base_types.auto else self.make_default("PoolColl")
+		self._PoolColl = value if value is not None else base_types.UninitialisedField(self, 'PoolColl', CollateralValuation6, False)
 
 	@PoolColl.deleter
 	def PoolColl(self):
 		del self._PoolColl
-		self._PoolColl = None
+		self._PoolColl = base_types.UninitialisedField(self, 'PoolColl', CollateralValuation6, False)
 
 	@property
 	def SnglColl(self):
@@ -53,12 +53,12 @@ class SecuredCollateral2Choice(base_types._BaseFieldType):
 
 	@SnglColl.setter
 	def SnglColl(self, value):
-		self._SnglColl = value if type(value) != base_types.auto else self.make_default("SnglColl")
+		self._SnglColl = value if value is not None else base_types.UninitialisedField(self, 'SnglColl', CollateralValuation6, False)
 
 	@SnglColl.deleter
 	def SnglColl(self):
 		del self._SnglColl
-		self._SnglColl = None
+		self._SnglColl = base_types.UninitialisedField(self, 'SnglColl', CollateralValuation6, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MltplColl', type=CollateralValuation6, min=1, max=None, mutex_group=1, array=True),

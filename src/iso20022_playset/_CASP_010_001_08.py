@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SaleToPOIReportResponseV08 import SaleToPOIReportResponseV08
+from . import SaleToPOIReportResponseV08
 
 class CASP_010_001_08():
 
@@ -18,12 +18,12 @@ class CASP_010_001_08():
 
 		@SaleToPOIRptRspn.setter
 		def SaleToPOIRptRspn(self, value):
-			self._SaleToPOIRptRspn = value if type(value) != base_types.auto else self.make_default("SaleToPOIRptRspn")
+			self._SaleToPOIRptRspn = value if value is not None else base_types.UninitialisedField(self, 'SaleToPOIRptRspn', SaleToPOIReportResponseV08, False)
 
 		@SaleToPOIRptRspn.deleter
 		def SaleToPOIRptRspn(self):
 			del self._SaleToPOIRptRspn
-			self._SaleToPOIRptRspn = None
+			self._SaleToPOIRptRspn = base_types.UninitialisedField(self, 'SaleToPOIRptRspn', SaleToPOIReportResponseV08, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SaleToPOIRptRspn', type=SaleToPOIReportResponseV08, min=1, max=1, mutex_group=None, array=False),

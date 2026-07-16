@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ClearingSystemIdentification2Choice import ClearingSystemIdentification2Choice
-from ._LEIIdentifier import LEIIdentifier
-from ._Max105Text import Max105Text
-from ._Max34Text import Max34Text
-from ._PartyIdentification44 import PartyIdentification44
+from . import ClearingSystemIdentification2Choice
+from . import LEIIdentifier
+from . import Max105Text
+from . import Max34Text
+from . import PartyIdentification44
 
 class PartyIdentification59(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class PartyIdentification59(base_types._BaseFieldType):
 
 	@AcctNb.setter
 	def AcctNb(self, value):
-		self._AcctNb = value if type(value) != base_types.auto else self.make_default("AcctNb")
+		self._AcctNb = value if value is not None else base_types.UninitialisedField(self, 'AcctNb', Max34Text, False)
 
 	@AcctNb.deleter
 	def AcctNb(self):
 		del self._AcctNb
-		self._AcctNb = None
+		self._AcctNb = base_types.UninitialisedField(self, 'AcctNb', Max34Text, False)
 
 	@property
 	def Adr(self):
@@ -30,12 +30,12 @@ class PartyIdentification59(base_types._BaseFieldType):
 
 	@Adr.setter
 	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+		self._Adr = value if value is not None else base_types.UninitialisedField(self, 'Adr', Max105Text, False)
 
 	@Adr.deleter
 	def Adr(self):
 		del self._Adr
-		self._Adr = None
+		self._Adr = base_types.UninitialisedField(self, 'Adr', Max105Text, False)
 
 	@property
 	def AnyBIC(self):
@@ -43,12 +43,12 @@ class PartyIdentification59(base_types._BaseFieldType):
 
 	@AnyBIC.setter
 	def AnyBIC(self, value):
-		self._AnyBIC = value if type(value) != base_types.auto else self.make_default("AnyBIC")
+		self._AnyBIC = value if value is not None else base_types.UninitialisedField(self, 'AnyBIC', PartyIdentification44, False)
 
 	@AnyBIC.deleter
 	def AnyBIC(self):
 		del self._AnyBIC
-		self._AnyBIC = None
+		self._AnyBIC = base_types.UninitialisedField(self, 'AnyBIC', PartyIdentification44, False)
 
 	@property
 	def ClrSysId(self):
@@ -56,12 +56,12 @@ class PartyIdentification59(base_types._BaseFieldType):
 
 	@ClrSysId.setter
 	def ClrSysId(self, value):
-		self._ClrSysId = value if type(value) != base_types.auto else self.make_default("ClrSysId")
+		self._ClrSysId = value if value is not None else base_types.UninitialisedField(self, 'ClrSysId', ClearingSystemIdentification2Choice, False)
 
 	@ClrSysId.deleter
 	def ClrSysId(self):
 		del self._ClrSysId
-		self._ClrSysId = None
+		self._ClrSysId = base_types.UninitialisedField(self, 'ClrSysId', ClearingSystemIdentification2Choice, False)
 
 	@property
 	def LglNttyIdr(self):
@@ -69,12 +69,12 @@ class PartyIdentification59(base_types._BaseFieldType):
 
 	@LglNttyIdr.setter
 	def LglNttyIdr(self, value):
-		self._LglNttyIdr = value if type(value) != base_types.auto else self.make_default("LglNttyIdr")
+		self._LglNttyIdr = value if value is not None else base_types.UninitialisedField(self, 'LglNttyIdr', LEIIdentifier, False)
 
 	@LglNttyIdr.deleter
 	def LglNttyIdr(self):
 		del self._LglNttyIdr
-		self._LglNttyIdr = None
+		self._LglNttyIdr = base_types.UninitialisedField(self, 'LglNttyIdr', LEIIdentifier, False)
 
 	@property
 	def PtyNm(self):
@@ -82,12 +82,12 @@ class PartyIdentification59(base_types._BaseFieldType):
 
 	@PtyNm.setter
 	def PtyNm(self, value):
-		self._PtyNm = value if type(value) != base_types.auto else self.make_default("PtyNm")
+		self._PtyNm = value if value is not None else base_types.UninitialisedField(self, 'PtyNm', Max34Text, False)
 
 	@PtyNm.deleter
 	def PtyNm(self):
 		del self._PtyNm
-		self._PtyNm = None
+		self._PtyNm = base_types.UninitialisedField(self, 'PtyNm', Max34Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctNb', type=Max34Text, min=0, max=1, mutex_group=None, array=False),

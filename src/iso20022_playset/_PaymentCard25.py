@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardType1Code import CardType1Code
-from ._ISOYearMonth import ISOYearMonth
-from ._Max35Text import Max35Text
-from ._Max3Text import Max3Text
-from ._PartyIdentification113 import PartyIdentification113
+from . import CardType1Code
+from . import ISOYearMonth
+from . import Max35Text
+from . import Max3Text
+from . import PartyIdentification113
 
 class PaymentCard25(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class PaymentCard25(base_types._BaseFieldType):
 
 	@CardIssrId.setter
 	def CardIssrId(self, value):
-		self._CardIssrId = value if type(value) != base_types.auto else self.make_default("CardIssrId")
+		self._CardIssrId = value if value is not None else base_types.UninitialisedField(self, 'CardIssrId', PartyIdentification113, False)
 
 	@CardIssrId.deleter
 	def CardIssrId(self):
 		del self._CardIssrId
-		self._CardIssrId = None
+		self._CardIssrId = base_types.UninitialisedField(self, 'CardIssrId', PartyIdentification113, False)
 
 	@property
 	def CardIssrNm(self):
@@ -30,12 +30,12 @@ class PaymentCard25(base_types._BaseFieldType):
 
 	@CardIssrNm.setter
 	def CardIssrNm(self, value):
-		self._CardIssrNm = value if type(value) != base_types.auto else self.make_default("CardIssrNm")
+		self._CardIssrNm = value if value is not None else base_types.UninitialisedField(self, 'CardIssrNm', Max35Text, False)
 
 	@CardIssrNm.deleter
 	def CardIssrNm(self):
 		del self._CardIssrNm
-		self._CardIssrNm = None
+		self._CardIssrNm = base_types.UninitialisedField(self, 'CardIssrNm', Max35Text, False)
 
 	@property
 	def HldrNm(self):
@@ -43,12 +43,12 @@ class PaymentCard25(base_types._BaseFieldType):
 
 	@HldrNm.setter
 	def HldrNm(self, value):
-		self._HldrNm = value if type(value) != base_types.auto else self.make_default("HldrNm")
+		self._HldrNm = value if value is not None else base_types.UninitialisedField(self, 'HldrNm', Max35Text, False)
 
 	@HldrNm.deleter
 	def HldrNm(self):
 		del self._HldrNm
-		self._HldrNm = None
+		self._HldrNm = base_types.UninitialisedField(self, 'HldrNm', Max35Text, False)
 
 	@property
 	def Nb(self):
@@ -56,12 +56,12 @@ class PaymentCard25(base_types._BaseFieldType):
 
 	@Nb.setter
 	def Nb(self, value):
-		self._Nb = value if type(value) != base_types.auto else self.make_default("Nb")
+		self._Nb = value if value is not None else base_types.UninitialisedField(self, 'Nb', Max35Text, False)
 
 	@Nb.deleter
 	def Nb(self):
 		del self._Nb
-		self._Nb = None
+		self._Nb = base_types.UninitialisedField(self, 'Nb', Max35Text, False)
 
 	@property
 	def SctyCd(self):
@@ -69,12 +69,12 @@ class PaymentCard25(base_types._BaseFieldType):
 
 	@SctyCd.setter
 	def SctyCd(self, value):
-		self._SctyCd = value if type(value) != base_types.auto else self.make_default("SctyCd")
+		self._SctyCd = value if value is not None else base_types.UninitialisedField(self, 'SctyCd', Max35Text, False)
 
 	@SctyCd.deleter
 	def SctyCd(self):
 		del self._SctyCd
-		self._SctyCd = None
+		self._SctyCd = base_types.UninitialisedField(self, 'SctyCd', Max35Text, False)
 
 	@property
 	def SeqNb(self):
@@ -82,12 +82,12 @@ class PaymentCard25(base_types._BaseFieldType):
 
 	@SeqNb.setter
 	def SeqNb(self, value):
-		self._SeqNb = value if type(value) != base_types.auto else self.make_default("SeqNb")
+		self._SeqNb = value if value is not None else base_types.UninitialisedField(self, 'SeqNb', Max3Text, False)
 
 	@SeqNb.deleter
 	def SeqNb(self):
 		del self._SeqNb
-		self._SeqNb = None
+		self._SeqNb = base_types.UninitialisedField(self, 'SeqNb', Max3Text, False)
 
 	@property
 	def StartDt(self):
@@ -95,12 +95,12 @@ class PaymentCard25(base_types._BaseFieldType):
 
 	@StartDt.setter
 	def StartDt(self, value):
-		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
+		self._StartDt = value if value is not None else base_types.UninitialisedField(self, 'StartDt', ISOYearMonth, False)
 
 	@StartDt.deleter
 	def StartDt(self):
 		del self._StartDt
-		self._StartDt = None
+		self._StartDt = base_types.UninitialisedField(self, 'StartDt', ISOYearMonth, False)
 
 	@property
 	def Tp(self):
@@ -108,12 +108,12 @@ class PaymentCard25(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', CardType1Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', CardType1Code, False)
 
 	@property
 	def XpryDt(self):
@@ -121,12 +121,12 @@ class PaymentCard25(base_types._BaseFieldType):
 
 	@XpryDt.setter
 	def XpryDt(self, value):
-		self._XpryDt = value if type(value) != base_types.auto else self.make_default("XpryDt")
+		self._XpryDt = value if value is not None else base_types.UninitialisedField(self, 'XpryDt', ISOYearMonth, False)
 
 	@XpryDt.deleter
 	def XpryDt(self):
 		del self._XpryDt
-		self._XpryDt = None
+		self._XpryDt = base_types.UninitialisedField(self, 'XpryDt', ISOYearMonth, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CardIssrId', type=PartyIdentification113, min=0, max=1, mutex_group=None, array=False),

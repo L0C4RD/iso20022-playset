@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashAccount40 import CashAccount40
-from ._ClearingSystemIdentification3Choice import ClearingSystemIdentification3Choice
-from ._SettlementMethod2Code import SettlementMethod2Code
+from . import CashAccount40
+from . import ClearingSystemIdentification3Choice
+from . import SettlementMethod2Code
 
 class SettlementInstruction14(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SettlementInstruction14(base_types._BaseFieldType):
 
 	@ClrSys.setter
 	def ClrSys(self, value):
-		self._ClrSys = value if type(value) != base_types.auto else self.make_default("ClrSys")
+		self._ClrSys = value if value is not None else base_types.UninitialisedField(self, 'ClrSys', ClearingSystemIdentification3Choice, False)
 
 	@ClrSys.deleter
 	def ClrSys(self):
 		del self._ClrSys
-		self._ClrSys = None
+		self._ClrSys = base_types.UninitialisedField(self, 'ClrSys', ClearingSystemIdentification3Choice, False)
 
 	@property
 	def SttlmAcct(self):
@@ -28,12 +28,12 @@ class SettlementInstruction14(base_types._BaseFieldType):
 
 	@SttlmAcct.setter
 	def SttlmAcct(self, value):
-		self._SttlmAcct = value if type(value) != base_types.auto else self.make_default("SttlmAcct")
+		self._SttlmAcct = value if value is not None else base_types.UninitialisedField(self, 'SttlmAcct', CashAccount40, False)
 
 	@SttlmAcct.deleter
 	def SttlmAcct(self):
 		del self._SttlmAcct
-		self._SttlmAcct = None
+		self._SttlmAcct = base_types.UninitialisedField(self, 'SttlmAcct', CashAccount40, False)
 
 	@property
 	def SttlmMtd(self):
@@ -41,12 +41,12 @@ class SettlementInstruction14(base_types._BaseFieldType):
 
 	@SttlmMtd.setter
 	def SttlmMtd(self, value):
-		self._SttlmMtd = value if type(value) != base_types.auto else self.make_default("SttlmMtd")
+		self._SttlmMtd = value if value is not None else base_types.UninitialisedField(self, 'SttlmMtd', SettlementMethod2Code, False)
 
 	@SttlmMtd.deleter
 	def SttlmMtd(self):
 		del self._SttlmMtd
-		self._SttlmMtd = None
+		self._SttlmMtd = base_types.UninitialisedField(self, 'SttlmMtd', SettlementMethod2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClrSys', type=ClearingSystemIdentification3Choice, min=0, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max2048Text import Max2048Text
-from ._NameAndAddress16 import NameAndAddress16
-from ._RemittanceLocationMethod2Code import RemittanceLocationMethod2Code
+from . import Max2048Text
+from . import NameAndAddress16
+from . import RemittanceLocationMethod2Code
 
 class RemittanceLocationData1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class RemittanceLocationData1(base_types._BaseFieldType):
 
 	@ElctrncAdr.setter
 	def ElctrncAdr(self, value):
-		self._ElctrncAdr = value if type(value) != base_types.auto else self.make_default("ElctrncAdr")
+		self._ElctrncAdr = value if value is not None else base_types.UninitialisedField(self, 'ElctrncAdr', Max2048Text, False)
 
 	@ElctrncAdr.deleter
 	def ElctrncAdr(self):
 		del self._ElctrncAdr
-		self._ElctrncAdr = None
+		self._ElctrncAdr = base_types.UninitialisedField(self, 'ElctrncAdr', Max2048Text, False)
 
 	@property
 	def Mtd(self):
@@ -28,12 +28,12 @@ class RemittanceLocationData1(base_types._BaseFieldType):
 
 	@Mtd.setter
 	def Mtd(self, value):
-		self._Mtd = value if type(value) != base_types.auto else self.make_default("Mtd")
+		self._Mtd = value if value is not None else base_types.UninitialisedField(self, 'Mtd', RemittanceLocationMethod2Code, False)
 
 	@Mtd.deleter
 	def Mtd(self):
 		del self._Mtd
-		self._Mtd = None
+		self._Mtd = base_types.UninitialisedField(self, 'Mtd', RemittanceLocationMethod2Code, False)
 
 	@property
 	def PstlAdr(self):
@@ -41,12 +41,12 @@ class RemittanceLocationData1(base_types._BaseFieldType):
 
 	@PstlAdr.setter
 	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != base_types.auto else self.make_default("PstlAdr")
+		self._PstlAdr = value if value is not None else base_types.UninitialisedField(self, 'PstlAdr', NameAndAddress16, False)
 
 	@PstlAdr.deleter
 	def PstlAdr(self):
 		del self._PstlAdr
-		self._PstlAdr = None
+		self._PstlAdr = base_types.UninitialisedField(self, 'PstlAdr', NameAndAddress16, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ElctrncAdr', type=Max2048Text, min=0, max=1, mutex_group=None, array=False),

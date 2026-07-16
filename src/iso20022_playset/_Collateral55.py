@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashCollateral3 import CashCollateral3
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
-from ._OtherCollateral9 import OtherCollateral9
-from ._SecuritiesCollateral10 import SecuritiesCollateral10
+from . import CashCollateral3
+from . import Max140Text
+from . import Max35Text
+from . import OtherCollateral9
+from . import SecuritiesCollateral10
 
 class Collateral55(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class Collateral55(base_types._BaseFieldType):
 
 	@CollPrpslRspnId.setter
 	def CollPrpslRspnId(self, value):
-		self._CollPrpslRspnId = value if type(value) != base_types.auto else self.make_default("CollPrpslRspnId")
+		self._CollPrpslRspnId = value if value is not None else base_types.UninitialisedField(self, 'CollPrpslRspnId', Max35Text, False)
 
 	@CollPrpslRspnId.deleter
 	def CollPrpslRspnId(self):
 		del self._CollPrpslRspnId
-		self._CollPrpslRspnId = None
+		self._CollPrpslRspnId = base_types.UninitialisedField(self, 'CollPrpslRspnId', Max35Text, False)
 
 	@property
 	def CshColl(self):
@@ -30,12 +30,12 @@ class Collateral55(base_types._BaseFieldType):
 
 	@CshColl.setter
 	def CshColl(self, value):
-		self._CshColl = value if type(value) != base_types.auto else self.make_default("CshColl")
+		self._CshColl = value if value is not None else base_types.UninitialisedField(self, 'CshColl', CashCollateral3, True)
 
 	@CshColl.deleter
 	def CshColl(self):
 		del self._CshColl
-		self._CshColl = None
+		self._CshColl = base_types.UninitialisedField(self, 'CshColl', CashCollateral3, True)
 
 	@property
 	def MrgnCallReqId(self):
@@ -43,12 +43,12 @@ class Collateral55(base_types._BaseFieldType):
 
 	@MrgnCallReqId.setter
 	def MrgnCallReqId(self, value):
-		self._MrgnCallReqId = value if type(value) != base_types.auto else self.make_default("MrgnCallReqId")
+		self._MrgnCallReqId = value if value is not None else base_types.UninitialisedField(self, 'MrgnCallReqId', Max35Text, False)
 
 	@MrgnCallReqId.deleter
 	def MrgnCallReqId(self):
 		del self._MrgnCallReqId
-		self._MrgnCallReqId = None
+		self._MrgnCallReqId = base_types.UninitialisedField(self, 'MrgnCallReqId', Max35Text, False)
 
 	@property
 	def MrgnCallRspnId(self):
@@ -56,12 +56,12 @@ class Collateral55(base_types._BaseFieldType):
 
 	@MrgnCallRspnId.setter
 	def MrgnCallRspnId(self, value):
-		self._MrgnCallRspnId = value if type(value) != base_types.auto else self.make_default("MrgnCallRspnId")
+		self._MrgnCallRspnId = value if value is not None else base_types.UninitialisedField(self, 'MrgnCallRspnId', Max35Text, False)
 
 	@MrgnCallRspnId.deleter
 	def MrgnCallRspnId(self):
 		del self._MrgnCallRspnId
-		self._MrgnCallRspnId = None
+		self._MrgnCallRspnId = base_types.UninitialisedField(self, 'MrgnCallRspnId', Max35Text, False)
 
 	@property
 	def OthrColl(self):
@@ -69,12 +69,12 @@ class Collateral55(base_types._BaseFieldType):
 
 	@OthrColl.setter
 	def OthrColl(self, value):
-		self._OthrColl = value if type(value) != base_types.auto else self.make_default("OthrColl")
+		self._OthrColl = value if value is not None else base_types.UninitialisedField(self, 'OthrColl', OtherCollateral9, True)
 
 	@OthrColl.deleter
 	def OthrColl(self):
 		del self._OthrColl
-		self._OthrColl = None
+		self._OthrColl = base_types.UninitialisedField(self, 'OthrColl', OtherCollateral9, True)
 
 	@property
 	def SctiesColl(self):
@@ -82,12 +82,12 @@ class Collateral55(base_types._BaseFieldType):
 
 	@SctiesColl.setter
 	def SctiesColl(self, value):
-		self._SctiesColl = value if type(value) != base_types.auto else self.make_default("SctiesColl")
+		self._SctiesColl = value if value is not None else base_types.UninitialisedField(self, 'SctiesColl', SecuritiesCollateral10, True)
 
 	@SctiesColl.deleter
 	def SctiesColl(self):
 		del self._SctiesColl
-		self._SctiesColl = None
+		self._SctiesColl = base_types.UninitialisedField(self, 'SctiesColl', SecuritiesCollateral10, True)
 
 	@property
 	def StdSttlmInstrs(self):
@@ -95,12 +95,12 @@ class Collateral55(base_types._BaseFieldType):
 
 	@StdSttlmInstrs.setter
 	def StdSttlmInstrs(self, value):
-		self._StdSttlmInstrs = value if type(value) != base_types.auto else self.make_default("StdSttlmInstrs")
+		self._StdSttlmInstrs = value if value is not None else base_types.UninitialisedField(self, 'StdSttlmInstrs', Max140Text, False)
 
 	@StdSttlmInstrs.deleter
 	def StdSttlmInstrs(self):
 		del self._StdSttlmInstrs
-		self._StdSttlmInstrs = None
+		self._StdSttlmInstrs = base_types.UninitialisedField(self, 'StdSttlmInstrs', Max140Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollPrpslRspnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

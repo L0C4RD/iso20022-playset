@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ErrorHandling5 import ErrorHandling5
-from ._SecurityOrBusinessError4Choice import SecurityOrBusinessError4Choice
+from . import ErrorHandling5
+from . import SecurityOrBusinessError4Choice
 
 class SecurityOrOperationalError4Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SecurityOrOperationalError4Choice(base_types._BaseFieldType):
 
 	@OprlErr.setter
 	def OprlErr(self, value):
-		self._OprlErr = value if type(value) != base_types.auto else self.make_default("OprlErr")
+		self._OprlErr = value if value is not None else base_types.UninitialisedField(self, 'OprlErr', ErrorHandling5, True)
 
 	@OprlErr.deleter
 	def OprlErr(self):
 		del self._OprlErr
-		self._OprlErr = None
+		self._OprlErr = base_types.UninitialisedField(self, 'OprlErr', ErrorHandling5, True)
 
 	@property
 	def SctyRptOrBizErr(self):
@@ -27,12 +27,12 @@ class SecurityOrOperationalError4Choice(base_types._BaseFieldType):
 
 	@SctyRptOrBizErr.setter
 	def SctyRptOrBizErr(self, value):
-		self._SctyRptOrBizErr = value if type(value) != base_types.auto else self.make_default("SctyRptOrBizErr")
+		self._SctyRptOrBizErr = value if value is not None else base_types.UninitialisedField(self, 'SctyRptOrBizErr', SecurityOrBusinessError4Choice, False)
 
 	@SctyRptOrBizErr.deleter
 	def SctyRptOrBizErr(self):
 		del self._SctyRptOrBizErr
-		self._SctyRptOrBizErr = None
+		self._SctyRptOrBizErr = base_types.UninitialisedField(self, 'SctyRptOrBizErr', SecurityOrBusinessError4Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OprlErr', type=ErrorHandling5, min=1, max=None, mutex_group=1, array=True),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CodeOrProprietary1Choice import CodeOrProprietary1Choice
-from ._ISODateTime import ISODateTime
+from . import CodeOrProprietary1Choice
+from . import ISODateTime
 
 class Restriction1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Restriction1(base_types._BaseFieldType):
 
 	@RstrctnTp.setter
 	def RstrctnTp(self, value):
-		self._RstrctnTp = value if type(value) != base_types.auto else self.make_default("RstrctnTp")
+		self._RstrctnTp = value if value is not None else base_types.UninitialisedField(self, 'RstrctnTp', CodeOrProprietary1Choice, False)
 
 	@RstrctnTp.deleter
 	def RstrctnTp(self):
 		del self._RstrctnTp
-		self._RstrctnTp = None
+		self._RstrctnTp = base_types.UninitialisedField(self, 'RstrctnTp', CodeOrProprietary1Choice, False)
 
 	@property
 	def VldFr(self):
@@ -27,12 +27,12 @@ class Restriction1(base_types._BaseFieldType):
 
 	@VldFr.setter
 	def VldFr(self, value):
-		self._VldFr = value if type(value) != base_types.auto else self.make_default("VldFr")
+		self._VldFr = value if value is not None else base_types.UninitialisedField(self, 'VldFr', ISODateTime, False)
 
 	@VldFr.deleter
 	def VldFr(self):
 		del self._VldFr
-		self._VldFr = None
+		self._VldFr = base_types.UninitialisedField(self, 'VldFr', ISODateTime, False)
 
 	@property
 	def VldUntil(self):
@@ -40,12 +40,12 @@ class Restriction1(base_types._BaseFieldType):
 
 	@VldUntil.setter
 	def VldUntil(self, value):
-		self._VldUntil = value if type(value) != base_types.auto else self.make_default("VldUntil")
+		self._VldUntil = value if value is not None else base_types.UninitialisedField(self, 'VldUntil', ISODateTime, False)
 
 	@VldUntil.deleter
 	def VldUntil(self):
 		del self._VldUntil
-		self._VldUntil = None
+		self._VldUntil = base_types.UninitialisedField(self, 'VldUntil', ISODateTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RstrctnTp', type=CodeOrProprietary1Choice, min=1, max=1, mutex_group=None, array=False),

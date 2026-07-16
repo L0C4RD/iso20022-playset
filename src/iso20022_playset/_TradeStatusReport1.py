@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._OriginalMessage1 import OriginalMessage1
-from ._StatusReasonInformation8 import StatusReasonInformation8
-from ._UndertakingStatus1Code import UndertakingStatus1Code
+from . import Max35Text
+from . import OriginalMessage1
+from . import StatusReasonInformation8
+from . import UndertakingStatus1Code
 
 class TradeStatusReport1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class TradeStatusReport1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max35Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max35Text, False)
 
 	@property
 	def OrgnlMsgDtls(self):
@@ -29,12 +29,12 @@ class TradeStatusReport1(base_types._BaseFieldType):
 
 	@OrgnlMsgDtls.setter
 	def OrgnlMsgDtls(self, value):
-		self._OrgnlMsgDtls = value if type(value) != base_types.auto else self.make_default("OrgnlMsgDtls")
+		self._OrgnlMsgDtls = value if value is not None else base_types.UninitialisedField(self, 'OrgnlMsgDtls', OriginalMessage1, False)
 
 	@OrgnlMsgDtls.deleter
 	def OrgnlMsgDtls(self):
 		del self._OrgnlMsgDtls
-		self._OrgnlMsgDtls = None
+		self._OrgnlMsgDtls = base_types.UninitialisedField(self, 'OrgnlMsgDtls', OriginalMessage1, False)
 
 	@property
 	def Sts(self):
@@ -42,12 +42,12 @@ class TradeStatusReport1(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', UndertakingStatus1Code, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', UndertakingStatus1Code, False)
 
 	@property
 	def StsRsn(self):
@@ -55,12 +55,12 @@ class TradeStatusReport1(base_types._BaseFieldType):
 
 	@StsRsn.setter
 	def StsRsn(self, value):
-		self._StsRsn = value if type(value) != base_types.auto else self.make_default("StsRsn")
+		self._StsRsn = value if value is not None else base_types.UninitialisedField(self, 'StsRsn', StatusReasonInformation8, True)
 
 	@StsRsn.deleter
 	def StsRsn(self):
 		del self._StsRsn
-		self._StsRsn = None
+		self._StsRsn = base_types.UninitialisedField(self, 'StsRsn', StatusReasonInformation8, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

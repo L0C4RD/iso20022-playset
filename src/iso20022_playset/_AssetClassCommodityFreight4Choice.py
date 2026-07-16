@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FreightCommodityContainerShip2 import FreightCommodityContainerShip2
-from ._FreightCommodityDry3 import FreightCommodityDry3
-from ._FreightCommodityOther2 import FreightCommodityOther2
-from ._FreightCommodityWet3 import FreightCommodityWet3
+from . import FreightCommodityContainerShip2
+from . import FreightCommodityDry3
+from . import FreightCommodityOther2
+from . import FreightCommodityWet3
 
 class AssetClassCommodityFreight4Choice(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class AssetClassCommodityFreight4Choice(base_types._BaseFieldType):
 
 	@CntnrShip.setter
 	def CntnrShip(self, value):
-		self._CntnrShip = value if type(value) != base_types.auto else self.make_default("CntnrShip")
+		self._CntnrShip = value if value is not None else base_types.UninitialisedField(self, 'CntnrShip', FreightCommodityContainerShip2, False)
 
 	@CntnrShip.deleter
 	def CntnrShip(self):
 		del self._CntnrShip
-		self._CntnrShip = None
+		self._CntnrShip = base_types.UninitialisedField(self, 'CntnrShip', FreightCommodityContainerShip2, False)
 
 	@property
 	def Dry(self):
@@ -29,12 +29,12 @@ class AssetClassCommodityFreight4Choice(base_types._BaseFieldType):
 
 	@Dry.setter
 	def Dry(self, value):
-		self._Dry = value if type(value) != base_types.auto else self.make_default("Dry")
+		self._Dry = value if value is not None else base_types.UninitialisedField(self, 'Dry', FreightCommodityDry3, False)
 
 	@Dry.deleter
 	def Dry(self):
 		del self._Dry
-		self._Dry = None
+		self._Dry = base_types.UninitialisedField(self, 'Dry', FreightCommodityDry3, False)
 
 	@property
 	def Othr(self):
@@ -42,12 +42,12 @@ class AssetClassCommodityFreight4Choice(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', FreightCommodityOther2, False)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', FreightCommodityOther2, False)
 
 	@property
 	def Wet(self):
@@ -55,12 +55,12 @@ class AssetClassCommodityFreight4Choice(base_types._BaseFieldType):
 
 	@Wet.setter
 	def Wet(self, value):
-		self._Wet = value if type(value) != base_types.auto else self.make_default("Wet")
+		self._Wet = value if value is not None else base_types.UninitialisedField(self, 'Wet', FreightCommodityWet3, False)
 
 	@Wet.deleter
 	def Wet(self):
 		del self._Wet
-		self._Wet = None
+		self._Wet = base_types.UninitialisedField(self, 'Wet', FreightCommodityWet3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CntnrShip', type=FreightCommodityContainerShip2, min=0, max=1, mutex_group=1, array=False),

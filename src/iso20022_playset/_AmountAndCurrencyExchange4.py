@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndCurrencyExchangeDetails5 import AmountAndCurrencyExchangeDetails5
-from ._AmountAndCurrencyExchangeDetails6 import AmountAndCurrencyExchangeDetails6
+from . import AmountAndCurrencyExchangeDetails5
+from . import AmountAndCurrencyExchangeDetails6
 
 class AmountAndCurrencyExchange4(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AmountAndCurrencyExchange4(base_types._BaseFieldType):
 
 	@AnncdPstngAmt.setter
 	def AnncdPstngAmt(self, value):
-		self._AnncdPstngAmt = value if type(value) != base_types.auto else self.make_default("AnncdPstngAmt")
+		self._AnncdPstngAmt = value if value is not None else base_types.UninitialisedField(self, 'AnncdPstngAmt', AmountAndCurrencyExchangeDetails5, False)
 
 	@AnncdPstngAmt.deleter
 	def AnncdPstngAmt(self):
 		del self._AnncdPstngAmt
-		self._AnncdPstngAmt = None
+		self._AnncdPstngAmt = base_types.UninitialisedField(self, 'AnncdPstngAmt', AmountAndCurrencyExchangeDetails5, False)
 
 	@property
 	def CntrValAmt(self):
@@ -27,12 +27,12 @@ class AmountAndCurrencyExchange4(base_types._BaseFieldType):
 
 	@CntrValAmt.setter
 	def CntrValAmt(self, value):
-		self._CntrValAmt = value if type(value) != base_types.auto else self.make_default("CntrValAmt")
+		self._CntrValAmt = value if value is not None else base_types.UninitialisedField(self, 'CntrValAmt', AmountAndCurrencyExchangeDetails5, False)
 
 	@CntrValAmt.deleter
 	def CntrValAmt(self):
 		del self._CntrValAmt
-		self._CntrValAmt = None
+		self._CntrValAmt = base_types.UninitialisedField(self, 'CntrValAmt', AmountAndCurrencyExchangeDetails5, False)
 
 	@property
 	def InstdAmt(self):
@@ -40,12 +40,12 @@ class AmountAndCurrencyExchange4(base_types._BaseFieldType):
 
 	@InstdAmt.setter
 	def InstdAmt(self, value):
-		self._InstdAmt = value if type(value) != base_types.auto else self.make_default("InstdAmt")
+		self._InstdAmt = value if value is not None else base_types.UninitialisedField(self, 'InstdAmt', AmountAndCurrencyExchangeDetails5, False)
 
 	@InstdAmt.deleter
 	def InstdAmt(self):
 		del self._InstdAmt
-		self._InstdAmt = None
+		self._InstdAmt = base_types.UninitialisedField(self, 'InstdAmt', AmountAndCurrencyExchangeDetails5, False)
 
 	@property
 	def PrtryAmt(self):
@@ -53,12 +53,12 @@ class AmountAndCurrencyExchange4(base_types._BaseFieldType):
 
 	@PrtryAmt.setter
 	def PrtryAmt(self, value):
-		self._PrtryAmt = value if type(value) != base_types.auto else self.make_default("PrtryAmt")
+		self._PrtryAmt = value if value is not None else base_types.UninitialisedField(self, 'PrtryAmt', AmountAndCurrencyExchangeDetails6, True)
 
 	@PrtryAmt.deleter
 	def PrtryAmt(self):
 		del self._PrtryAmt
-		self._PrtryAmt = None
+		self._PrtryAmt = base_types.UninitialisedField(self, 'PrtryAmt', AmountAndCurrencyExchangeDetails6, True)
 
 	@property
 	def TxAmt(self):
@@ -66,12 +66,12 @@ class AmountAndCurrencyExchange4(base_types._BaseFieldType):
 
 	@TxAmt.setter
 	def TxAmt(self, value):
-		self._TxAmt = value if type(value) != base_types.auto else self.make_default("TxAmt")
+		self._TxAmt = value if value is not None else base_types.UninitialisedField(self, 'TxAmt', AmountAndCurrencyExchangeDetails5, False)
 
 	@TxAmt.deleter
 	def TxAmt(self):
 		del self._TxAmt
-		self._TxAmt = None
+		self._TxAmt = base_types.UninitialisedField(self, 'TxAmt', AmountAndCurrencyExchangeDetails5, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AnncdPstngAmt', type=AmountAndCurrencyExchangeDetails5, min=0, max=1, mutex_group=None, array=False),

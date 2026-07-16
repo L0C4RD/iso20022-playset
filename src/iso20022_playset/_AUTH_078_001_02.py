@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesFinancingReportingPairingRequestV02 import SecuritiesFinancingReportingPairingRequestV02
+from . import SecuritiesFinancingReportingPairingRequestV02
 
 class AUTH_078_001_02():
 
@@ -18,12 +18,12 @@ class AUTH_078_001_02():
 
 		@SctiesFincgRptgPairgReq.setter
 		def SctiesFincgRptgPairgReq(self, value):
-			self._SctiesFincgRptgPairgReq = value if type(value) != base_types.auto else self.make_default("SctiesFincgRptgPairgReq")
+			self._SctiesFincgRptgPairgReq = value if value is not None else base_types.UninitialisedField(self, 'SctiesFincgRptgPairgReq', SecuritiesFinancingReportingPairingRequestV02, False)
 
 		@SctiesFincgRptgPairgReq.deleter
 		def SctiesFincgRptgPairgReq(self):
 			del self._SctiesFincgRptgPairgReq
-			self._SctiesFincgRptgPairgReq = None
+			self._SctiesFincgRptgPairgReq = base_types.UninitialisedField(self, 'SctiesFincgRptgPairgReq', SecuritiesFinancingReportingPairingRequestV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesFincgRptgPairgReq', type=SecuritiesFinancingReportingPairingRequestV02, min=1, max=1, mutex_group=None, array=False),

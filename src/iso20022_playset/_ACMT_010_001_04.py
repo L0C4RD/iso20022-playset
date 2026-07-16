@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountRequestAcknowledgementV04 import AccountRequestAcknowledgementV04
+from . import AccountRequestAcknowledgementV04
 
 class ACMT_010_001_04():
 
@@ -18,12 +18,12 @@ class ACMT_010_001_04():
 
 		@AcctReqAck.setter
 		def AcctReqAck(self, value):
-			self._AcctReqAck = value if type(value) != base_types.auto else self.make_default("AcctReqAck")
+			self._AcctReqAck = value if value is not None else base_types.UninitialisedField(self, 'AcctReqAck', AccountRequestAcknowledgementV04, False)
 
 		@AcctReqAck.deleter
 		def AcctReqAck(self):
 			del self._AcctReqAck
-			self._AcctReqAck = None
+			self._AcctReqAck = base_types.UninitialisedField(self, 'AcctReqAck', AccountRequestAcknowledgementV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AcctReqAck', type=AccountRequestAcknowledgementV04, min=1, max=1, mutex_group=None, array=False),

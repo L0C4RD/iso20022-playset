@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ReturnExcessCash1 import ReturnExcessCash1
-from ._ThresholdType1Code import ThresholdType1Code
+from . import ActiveCurrencyAndAmount
+from . import ReturnExcessCash1
+from . import ThresholdType1Code
 
 class SummaryAmounts2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SummaryAmounts2(base_types._BaseFieldType):
 
 	@AdjstdXpsr.setter
 	def AdjstdXpsr(self, value):
-		self._AdjstdXpsr = value if type(value) != base_types.auto else self.make_default("AdjstdXpsr")
+		self._AdjstdXpsr = value if value is not None else base_types.UninitialisedField(self, 'AdjstdXpsr', ActiveCurrencyAndAmount, False)
 
 	@AdjstdXpsr.deleter
 	def AdjstdXpsr(self):
 		del self._AdjstdXpsr
-		self._AdjstdXpsr = None
+		self._AdjstdXpsr = base_types.UninitialisedField(self, 'AdjstdXpsr', ActiveCurrencyAndAmount, False)
 
 	@property
 	def CollReqrd(self):
@@ -28,12 +28,12 @@ class SummaryAmounts2(base_types._BaseFieldType):
 
 	@CollReqrd.setter
 	def CollReqrd(self, value):
-		self._CollReqrd = value if type(value) != base_types.auto else self.make_default("CollReqrd")
+		self._CollReqrd = value if value is not None else base_types.UninitialisedField(self, 'CollReqrd', ActiveCurrencyAndAmount, False)
 
 	@CollReqrd.deleter
 	def CollReqrd(self):
 		del self._CollReqrd
-		self._CollReqrd = None
+		self._CollReqrd = base_types.UninitialisedField(self, 'CollReqrd', ActiveCurrencyAndAmount, False)
 
 	@property
 	def MinTrfAmt(self):
@@ -41,12 +41,12 @@ class SummaryAmounts2(base_types._BaseFieldType):
 
 	@MinTrfAmt.setter
 	def MinTrfAmt(self, value):
-		self._MinTrfAmt = value if type(value) != base_types.auto else self.make_default("MinTrfAmt")
+		self._MinTrfAmt = value if value is not None else base_types.UninitialisedField(self, 'MinTrfAmt', ActiveCurrencyAndAmount, False)
 
 	@MinTrfAmt.deleter
 	def MinTrfAmt(self):
 		del self._MinTrfAmt
-		self._MinTrfAmt = None
+		self._MinTrfAmt = base_types.UninitialisedField(self, 'MinTrfAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def PreHrcutCollVal(self):
@@ -54,12 +54,12 @@ class SummaryAmounts2(base_types._BaseFieldType):
 
 	@PreHrcutCollVal.setter
 	def PreHrcutCollVal(self, value):
-		self._PreHrcutCollVal = value if type(value) != base_types.auto else self.make_default("PreHrcutCollVal")
+		self._PreHrcutCollVal = value if value is not None else base_types.UninitialisedField(self, 'PreHrcutCollVal', ActiveCurrencyAndAmount, False)
 
 	@PreHrcutCollVal.deleter
 	def PreHrcutCollVal(self):
 		del self._PreHrcutCollVal
-		self._PreHrcutCollVal = None
+		self._PreHrcutCollVal = base_types.UninitialisedField(self, 'PreHrcutCollVal', ActiveCurrencyAndAmount, False)
 
 	@property
 	def PrvsCollVal(self):
@@ -67,12 +67,12 @@ class SummaryAmounts2(base_types._BaseFieldType):
 
 	@PrvsCollVal.setter
 	def PrvsCollVal(self, value):
-		self._PrvsCollVal = value if type(value) != base_types.auto else self.make_default("PrvsCollVal")
+		self._PrvsCollVal = value if value is not None else base_types.UninitialisedField(self, 'PrvsCollVal', ActiveCurrencyAndAmount, False)
 
 	@PrvsCollVal.deleter
 	def PrvsCollVal(self):
 		del self._PrvsCollVal
-		self._PrvsCollVal = None
+		self._PrvsCollVal = base_types.UninitialisedField(self, 'PrvsCollVal', ActiveCurrencyAndAmount, False)
 
 	@property
 	def PrvsXpsrVal(self):
@@ -80,12 +80,12 @@ class SummaryAmounts2(base_types._BaseFieldType):
 
 	@PrvsXpsrVal.setter
 	def PrvsXpsrVal(self, value):
-		self._PrvsXpsrVal = value if type(value) != base_types.auto else self.make_default("PrvsXpsrVal")
+		self._PrvsXpsrVal = value if value is not None else base_types.UninitialisedField(self, 'PrvsXpsrVal', ActiveCurrencyAndAmount, False)
 
 	@PrvsXpsrVal.deleter
 	def PrvsXpsrVal(self):
 		del self._PrvsXpsrVal
-		self._PrvsXpsrVal = None
+		self._PrvsXpsrVal = base_types.UninitialisedField(self, 'PrvsXpsrVal', ActiveCurrencyAndAmount, False)
 
 	@property
 	def RndgAmt(self):
@@ -93,12 +93,12 @@ class SummaryAmounts2(base_types._BaseFieldType):
 
 	@RndgAmt.setter
 	def RndgAmt(self, value):
-		self._RndgAmt = value if type(value) != base_types.auto else self.make_default("RndgAmt")
+		self._RndgAmt = value if value is not None else base_types.UninitialisedField(self, 'RndgAmt', ActiveCurrencyAndAmount, False)
 
 	@RndgAmt.deleter
 	def RndgAmt(self):
 		del self._RndgAmt
-		self._RndgAmt = None
+		self._RndgAmt = base_types.UninitialisedField(self, 'RndgAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def RtrXcssCshAndCollCcy(self):
@@ -106,12 +106,12 @@ class SummaryAmounts2(base_types._BaseFieldType):
 
 	@RtrXcssCshAndCollCcy.setter
 	def RtrXcssCshAndCollCcy(self, value):
-		self._RtrXcssCshAndCollCcy = value if type(value) != base_types.auto else self.make_default("RtrXcssCshAndCollCcy")
+		self._RtrXcssCshAndCollCcy = value if value is not None else base_types.UninitialisedField(self, 'RtrXcssCshAndCollCcy', ReturnExcessCash1, True)
 
 	@RtrXcssCshAndCollCcy.deleter
 	def RtrXcssCshAndCollCcy(self):
 		del self._RtrXcssCshAndCollCcy
-		self._RtrXcssCshAndCollCcy = None
+		self._RtrXcssCshAndCollCcy = base_types.UninitialisedField(self, 'RtrXcssCshAndCollCcy', ReturnExcessCash1, True)
 
 	@property
 	def ThrshldAmt(self):
@@ -119,12 +119,12 @@ class SummaryAmounts2(base_types._BaseFieldType):
 
 	@ThrshldAmt.setter
 	def ThrshldAmt(self, value):
-		self._ThrshldAmt = value if type(value) != base_types.auto else self.make_default("ThrshldAmt")
+		self._ThrshldAmt = value if value is not None else base_types.UninitialisedField(self, 'ThrshldAmt', ActiveCurrencyAndAmount, False)
 
 	@ThrshldAmt.deleter
 	def ThrshldAmt(self):
 		del self._ThrshldAmt
-		self._ThrshldAmt = None
+		self._ThrshldAmt = base_types.UninitialisedField(self, 'ThrshldAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def ThrshldTp(self):
@@ -132,12 +132,12 @@ class SummaryAmounts2(base_types._BaseFieldType):
 
 	@ThrshldTp.setter
 	def ThrshldTp(self, value):
-		self._ThrshldTp = value if type(value) != base_types.auto else self.make_default("ThrshldTp")
+		self._ThrshldTp = value if value is not None else base_types.UninitialisedField(self, 'ThrshldTp', ThresholdType1Code, False)
 
 	@ThrshldTp.deleter
 	def ThrshldTp(self):
 		del self._ThrshldTp
-		self._ThrshldTp = None
+		self._ThrshldTp = base_types.UninitialisedField(self, 'ThrshldTp', ThresholdType1Code, False)
 
 	@property
 	def TtlAcrdIntrstAmt(self):
@@ -145,12 +145,12 @@ class SummaryAmounts2(base_types._BaseFieldType):
 
 	@TtlAcrdIntrstAmt.setter
 	def TtlAcrdIntrstAmt(self, value):
-		self._TtlAcrdIntrstAmt = value if type(value) != base_types.auto else self.make_default("TtlAcrdIntrstAmt")
+		self._TtlAcrdIntrstAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlAcrdIntrstAmt', ActiveCurrencyAndAmount, False)
 
 	@TtlAcrdIntrstAmt.deleter
 	def TtlAcrdIntrstAmt(self):
 		del self._TtlAcrdIntrstAmt
-		self._TtlAcrdIntrstAmt = None
+		self._TtlAcrdIntrstAmt = base_types.UninitialisedField(self, 'TtlAcrdIntrstAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def TtlFees(self):
@@ -158,12 +158,12 @@ class SummaryAmounts2(base_types._BaseFieldType):
 
 	@TtlFees.setter
 	def TtlFees(self, value):
-		self._TtlFees = value if type(value) != base_types.auto else self.make_default("TtlFees")
+		self._TtlFees = value if value is not None else base_types.UninitialisedField(self, 'TtlFees', ActiveCurrencyAndAmount, False)
 
 	@TtlFees.deleter
 	def TtlFees(self):
 		del self._TtlFees
-		self._TtlFees = None
+		self._TtlFees = base_types.UninitialisedField(self, 'TtlFees', ActiveCurrencyAndAmount, False)
 
 	@property
 	def TtlPdgIncmgColl(self):
@@ -171,12 +171,12 @@ class SummaryAmounts2(base_types._BaseFieldType):
 
 	@TtlPdgIncmgColl.setter
 	def TtlPdgIncmgColl(self, value):
-		self._TtlPdgIncmgColl = value if type(value) != base_types.auto else self.make_default("TtlPdgIncmgColl")
+		self._TtlPdgIncmgColl = value if value is not None else base_types.UninitialisedField(self, 'TtlPdgIncmgColl', ActiveCurrencyAndAmount, False)
 
 	@TtlPdgIncmgColl.deleter
 	def TtlPdgIncmgColl(self):
 		del self._TtlPdgIncmgColl
-		self._TtlPdgIncmgColl = None
+		self._TtlPdgIncmgColl = base_types.UninitialisedField(self, 'TtlPdgIncmgColl', ActiveCurrencyAndAmount, False)
 
 	@property
 	def TtlPdgOutgngColl(self):
@@ -184,12 +184,12 @@ class SummaryAmounts2(base_types._BaseFieldType):
 
 	@TtlPdgOutgngColl.setter
 	def TtlPdgOutgngColl(self, value):
-		self._TtlPdgOutgngColl = value if type(value) != base_types.auto else self.make_default("TtlPdgOutgngColl")
+		self._TtlPdgOutgngColl = value if value is not None else base_types.UninitialisedField(self, 'TtlPdgOutgngColl', ActiveCurrencyAndAmount, False)
 
 	@TtlPdgOutgngColl.deleter
 	def TtlPdgOutgngColl(self):
 		del self._TtlPdgOutgngColl
-		self._TtlPdgOutgngColl = None
+		self._TtlPdgOutgngColl = base_types.UninitialisedField(self, 'TtlPdgOutgngColl', ActiveCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AdjstdXpsr', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

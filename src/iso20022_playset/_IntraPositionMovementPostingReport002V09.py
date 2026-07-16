@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BlockChainAddressWallet7 import BlockChainAddressWallet7
-from ._FinancialInstrumentDetails44 import FinancialInstrumentDetails44
-from ._Pagination1 import Pagination1
-from ._PartyIdentification136Choice import PartyIdentification136Choice
-from ._SecuritiesAccount30 import SecuritiesAccount30
-from ._Statement81 import Statement81
+from . import BlockChainAddressWallet7
+from . import FinancialInstrumentDetails44
+from . import Pagination1
+from . import PartyIdentification136Choice
+from . import SecuritiesAccount30
+from . import Statement81
 
 class IntraPositionMovementPostingReport002V09(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class IntraPositionMovementPostingReport002V09(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification136Choice, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification136Choice, False)
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -31,12 +31,12 @@ class IntraPositionMovementPostingReport002V09(base_types._BaseFieldType):
 
 	@BlckChainAdrOrWllt.setter
 	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
+		self._BlckChainAdrOrWllt = value if value is not None else base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet7, False)
 
 	@BlckChainAdrOrWllt.deleter
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+		self._BlckChainAdrOrWllt = base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet7, False)
 
 	@property
 	def FinInstrm(self):
@@ -44,12 +44,12 @@ class IntraPositionMovementPostingReport002V09(base_types._BaseFieldType):
 
 	@FinInstrm.setter
 	def FinInstrm(self, value):
-		self._FinInstrm = value if type(value) != base_types.auto else self.make_default("FinInstrm")
+		self._FinInstrm = value if value is not None else base_types.UninitialisedField(self, 'FinInstrm', FinancialInstrumentDetails44, True)
 
 	@FinInstrm.deleter
 	def FinInstrm(self):
 		del self._FinInstrm
-		self._FinInstrm = None
+		self._FinInstrm = base_types.UninitialisedField(self, 'FinInstrm', FinancialInstrumentDetails44, True)
 
 	@property
 	def Pgntn(self):
@@ -57,12 +57,12 @@ class IntraPositionMovementPostingReport002V09(base_types._BaseFieldType):
 
 	@Pgntn.setter
 	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+		self._Pgntn = value if value is not None else base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@Pgntn.deleter
 	def Pgntn(self):
 		del self._Pgntn
-		self._Pgntn = None
+		self._Pgntn = base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@property
 	def SfkpgAcct(self):
@@ -70,12 +70,12 @@ class IntraPositionMovementPostingReport002V09(base_types._BaseFieldType):
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount30, False)
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
-		self._SfkpgAcct = None
+		self._SfkpgAcct = base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount30, False)
 
 	@property
 	def StmtGnlDtls(self):
@@ -83,12 +83,12 @@ class IntraPositionMovementPostingReport002V09(base_types._BaseFieldType):
 
 	@StmtGnlDtls.setter
 	def StmtGnlDtls(self, value):
-		self._StmtGnlDtls = value if type(value) != base_types.auto else self.make_default("StmtGnlDtls")
+		self._StmtGnlDtls = value if value is not None else base_types.UninitialisedField(self, 'StmtGnlDtls', Statement81, False)
 
 	@StmtGnlDtls.deleter
 	def StmtGnlDtls(self):
 		del self._StmtGnlDtls
-		self._StmtGnlDtls = None
+		self._StmtGnlDtls = base_types.UninitialisedField(self, 'StmtGnlDtls', Statement81, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification136Choice, min=0, max=1, mutex_group=None, array=False),

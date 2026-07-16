@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
+from . import Max35Text
 
 class AcknowledgementDetails1Choice(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class AcknowledgementDetails1Choice(base_types._BaseFieldType):
 
 	@PayInCallRef.setter
 	def PayInCallRef(self, value):
-		self._PayInCallRef = value if type(value) != base_types.auto else self.make_default("PayInCallRef")
+		self._PayInCallRef = value if value is not None else base_types.UninitialisedField(self, 'PayInCallRef', Max35Text, False)
 
 	@PayInCallRef.deleter
 	def PayInCallRef(self):
 		del self._PayInCallRef
-		self._PayInCallRef = None
+		self._PayInCallRef = base_types.UninitialisedField(self, 'PayInCallRef', Max35Text, False)
 
 	@property
 	def PayInSchdlRef(self):
@@ -26,12 +26,12 @@ class AcknowledgementDetails1Choice(base_types._BaseFieldType):
 
 	@PayInSchdlRef.setter
 	def PayInSchdlRef(self, value):
-		self._PayInSchdlRef = value if type(value) != base_types.auto else self.make_default("PayInSchdlRef")
+		self._PayInSchdlRef = value if value is not None else base_types.UninitialisedField(self, 'PayInSchdlRef', Max35Text, False)
 
 	@PayInSchdlRef.deleter
 	def PayInSchdlRef(self):
 		del self._PayInSchdlRef
-		self._PayInSchdlRef = None
+		self._PayInSchdlRef = base_types.UninitialisedField(self, 'PayInSchdlRef', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PayInCallRef', type=Max35Text, min=0, max=1, mutex_group=1, array=False),

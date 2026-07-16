@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NameAndAddress8 import NameAndAddress8
-from ._PartyIdentification265 import PartyIdentification265
-from ._PartyIdentification266 import PartyIdentification266
+from . import NameAndAddress8
+from . import PartyIdentification265
+from . import PartyIdentification266
 
 class PartyIdentification242Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PartyIdentification242Choice(base_types._BaseFieldType):
 
 	@AnyBIC.setter
 	def AnyBIC(self, value):
-		self._AnyBIC = value if type(value) != base_types.auto else self.make_default("AnyBIC")
+		self._AnyBIC = value if value is not None else base_types.UninitialisedField(self, 'AnyBIC', PartyIdentification265, False)
 
 	@AnyBIC.deleter
 	def AnyBIC(self):
 		del self._AnyBIC
-		self._AnyBIC = None
+		self._AnyBIC = base_types.UninitialisedField(self, 'AnyBIC', PartyIdentification265, False)
 
 	@property
 	def NmAndAdr(self):
@@ -28,12 +28,12 @@ class PartyIdentification242Choice(base_types._BaseFieldType):
 
 	@NmAndAdr.setter
 	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
+		self._NmAndAdr = value if value is not None else base_types.UninitialisedField(self, 'NmAndAdr', NameAndAddress8, False)
 
 	@NmAndAdr.deleter
 	def NmAndAdr(self):
 		del self._NmAndAdr
-		self._NmAndAdr = None
+		self._NmAndAdr = base_types.UninitialisedField(self, 'NmAndAdr', NameAndAddress8, False)
 
 	@property
 	def PtyId(self):
@@ -41,12 +41,12 @@ class PartyIdentification242Choice(base_types._BaseFieldType):
 
 	@PtyId.setter
 	def PtyId(self, value):
-		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
+		self._PtyId = value if value is not None else base_types.UninitialisedField(self, 'PtyId', PartyIdentification266, False)
 
 	@PtyId.deleter
 	def PtyId(self):
 		del self._PtyId
-		self._PtyId = None
+		self._PtyId = base_types.UninitialisedField(self, 'PtyId', PartyIdentification266, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AnyBIC', type=PartyIdentification265, min=0, max=1, mutex_group=1, array=False),

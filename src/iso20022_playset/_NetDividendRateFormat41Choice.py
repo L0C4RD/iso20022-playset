@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndRateStatus2 import AmountAndRateStatus2
-from ._RateTypeAndAmountAndStatus60 import RateTypeAndAmountAndStatus60
-from ._RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
+from . import AmountAndRateStatus2
+from . import RateTypeAndAmountAndStatus60
+from . import RestrictedFINActiveCurrencyAnd13DecimalAmount
 
 class NetDividendRateFormat41Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class NetDividendRateFormat41Choice(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', RestrictedFINActiveCurrencyAnd13DecimalAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', RestrictedFINActiveCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def AmtAndRateSts(self):
@@ -28,12 +28,12 @@ class NetDividendRateFormat41Choice(base_types._BaseFieldType):
 
 	@AmtAndRateSts.setter
 	def AmtAndRateSts(self, value):
-		self._AmtAndRateSts = value if type(value) != base_types.auto else self.make_default("AmtAndRateSts")
+		self._AmtAndRateSts = value if value is not None else base_types.UninitialisedField(self, 'AmtAndRateSts', AmountAndRateStatus2, False)
 
 	@AmtAndRateSts.deleter
 	def AmtAndRateSts(self):
 		del self._AmtAndRateSts
-		self._AmtAndRateSts = None
+		self._AmtAndRateSts = base_types.UninitialisedField(self, 'AmtAndRateSts', AmountAndRateStatus2, False)
 
 	@property
 	def RateTpAndAmtAndRateSts(self):
@@ -41,12 +41,12 @@ class NetDividendRateFormat41Choice(base_types._BaseFieldType):
 
 	@RateTpAndAmtAndRateSts.setter
 	def RateTpAndAmtAndRateSts(self, value):
-		self._RateTpAndAmtAndRateSts = value if type(value) != base_types.auto else self.make_default("RateTpAndAmtAndRateSts")
+		self._RateTpAndAmtAndRateSts = value if value is not None else base_types.UninitialisedField(self, 'RateTpAndAmtAndRateSts', RateTypeAndAmountAndStatus60, False)
 
 	@RateTpAndAmtAndRateSts.deleter
 	def RateTpAndAmtAndRateSts(self):
 		del self._RateTpAndAmtAndRateSts
-		self._RateTpAndAmtAndRateSts = None
+		self._RateTpAndAmtAndRateSts = base_types.UninitialisedField(self, 'RateTpAndAmtAndRateSts', RateTypeAndAmountAndStatus60, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=RestrictedFINActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=1, array=False),

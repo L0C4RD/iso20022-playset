@@ -2,19 +2,19 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AffirmationStatus8Choice import AffirmationStatus8Choice
-from ._AllocationSatus3Choice import AllocationSatus3Choice
-from ._CancellationProcessingStatus7Choice import CancellationProcessingStatus7Choice
-from ._CorporateActionEventProcessingStatus3Choice import CorporateActionEventProcessingStatus3Choice
-from ._CorporateActionEventStage3Choice import CorporateActionEventStage3Choice
-from ._InstructionProcessingStatus23Choice import InstructionProcessingStatus23Choice
-from ._MatchingStatus27Choice import MatchingStatus27Choice
-from ._RegistrationProcessingStatus3Choice import RegistrationProcessingStatus3Choice
-from ._ReplacementProcessingStatus8Choice import ReplacementProcessingStatus8Choice
-from ._RepoCallRequestStatus8Choice import RepoCallRequestStatus8Choice
-from ._ResponseStatus5Choice import ResponseStatus5Choice
-from ._SettlementConditionModificationStatus3Choice import SettlementConditionModificationStatus3Choice
-from ._SettlementStatus19Choice import SettlementStatus19Choice
+from . import AffirmationStatus8Choice
+from . import AllocationSatus3Choice
+from . import CancellationProcessingStatus7Choice
+from . import CorporateActionEventProcessingStatus3Choice
+from . import CorporateActionEventStage3Choice
+from . import InstructionProcessingStatus23Choice
+from . import MatchingStatus27Choice
+from . import RegistrationProcessingStatus3Choice
+from . import ReplacementProcessingStatus8Choice
+from . import RepoCallRequestStatus8Choice
+from . import ResponseStatus5Choice
+from . import SettlementConditionModificationStatus3Choice
+from . import SettlementStatus19Choice
 
 class Status19Choice(base_types._BaseFieldType):
 
@@ -25,12 +25,12 @@ class Status19Choice(base_types._BaseFieldType):
 
 	@AffirmSts.setter
 	def AffirmSts(self, value):
-		self._AffirmSts = value if type(value) != base_types.auto else self.make_default("AffirmSts")
+		self._AffirmSts = value if value is not None else base_types.UninitialisedField(self, 'AffirmSts', AffirmationStatus8Choice, False)
 
 	@AffirmSts.deleter
 	def AffirmSts(self):
 		del self._AffirmSts
-		self._AffirmSts = None
+		self._AffirmSts = base_types.UninitialisedField(self, 'AffirmSts', AffirmationStatus8Choice, False)
 
 	@property
 	def AllcnSts(self):
@@ -38,12 +38,12 @@ class Status19Choice(base_types._BaseFieldType):
 
 	@AllcnSts.setter
 	def AllcnSts(self, value):
-		self._AllcnSts = value if type(value) != base_types.auto else self.make_default("AllcnSts")
+		self._AllcnSts = value if value is not None else base_types.UninitialisedField(self, 'AllcnSts', AllocationSatus3Choice, False)
 
 	@AllcnSts.deleter
 	def AllcnSts(self):
 		del self._AllcnSts
-		self._AllcnSts = None
+		self._AllcnSts = base_types.UninitialisedField(self, 'AllcnSts', AllocationSatus3Choice, False)
 
 	@property
 	def CorpActnEvtPrcgSts(self):
@@ -51,12 +51,12 @@ class Status19Choice(base_types._BaseFieldType):
 
 	@CorpActnEvtPrcgSts.setter
 	def CorpActnEvtPrcgSts(self, value):
-		self._CorpActnEvtPrcgSts = value if type(value) != base_types.auto else self.make_default("CorpActnEvtPrcgSts")
+		self._CorpActnEvtPrcgSts = value if value is not None else base_types.UninitialisedField(self, 'CorpActnEvtPrcgSts', CorporateActionEventProcessingStatus3Choice, False)
 
 	@CorpActnEvtPrcgSts.deleter
 	def CorpActnEvtPrcgSts(self):
 		del self._CorpActnEvtPrcgSts
-		self._CorpActnEvtPrcgSts = None
+		self._CorpActnEvtPrcgSts = base_types.UninitialisedField(self, 'CorpActnEvtPrcgSts', CorporateActionEventProcessingStatus3Choice, False)
 
 	@property
 	def CorpActnEvtStag(self):
@@ -64,12 +64,12 @@ class Status19Choice(base_types._BaseFieldType):
 
 	@CorpActnEvtStag.setter
 	def CorpActnEvtStag(self, value):
-		self._CorpActnEvtStag = value if type(value) != base_types.auto else self.make_default("CorpActnEvtStag")
+		self._CorpActnEvtStag = value if value is not None else base_types.UninitialisedField(self, 'CorpActnEvtStag', CorporateActionEventStage3Choice, False)
 
 	@CorpActnEvtStag.deleter
 	def CorpActnEvtStag(self):
 		del self._CorpActnEvtStag
-		self._CorpActnEvtStag = None
+		self._CorpActnEvtStag = base_types.UninitialisedField(self, 'CorpActnEvtStag', CorporateActionEventStage3Choice, False)
 
 	@property
 	def CxlPrcgSts(self):
@@ -77,12 +77,12 @@ class Status19Choice(base_types._BaseFieldType):
 
 	@CxlPrcgSts.setter
 	def CxlPrcgSts(self, value):
-		self._CxlPrcgSts = value if type(value) != base_types.auto else self.make_default("CxlPrcgSts")
+		self._CxlPrcgSts = value if value is not None else base_types.UninitialisedField(self, 'CxlPrcgSts', CancellationProcessingStatus7Choice, False)
 
 	@CxlPrcgSts.deleter
 	def CxlPrcgSts(self):
 		del self._CxlPrcgSts
-		self._CxlPrcgSts = None
+		self._CxlPrcgSts = base_types.UninitialisedField(self, 'CxlPrcgSts', CancellationProcessingStatus7Choice, False)
 
 	@property
 	def IfrrdMtchgSts(self):
@@ -90,12 +90,12 @@ class Status19Choice(base_types._BaseFieldType):
 
 	@IfrrdMtchgSts.setter
 	def IfrrdMtchgSts(self, value):
-		self._IfrrdMtchgSts = value if type(value) != base_types.auto else self.make_default("IfrrdMtchgSts")
+		self._IfrrdMtchgSts = value if value is not None else base_types.UninitialisedField(self, 'IfrrdMtchgSts', MatchingStatus27Choice, False)
 
 	@IfrrdMtchgSts.deleter
 	def IfrrdMtchgSts(self):
 		del self._IfrrdMtchgSts
-		self._IfrrdMtchgSts = None
+		self._IfrrdMtchgSts = base_types.UninitialisedField(self, 'IfrrdMtchgSts', MatchingStatus27Choice, False)
 
 	@property
 	def InstrPrcgSts(self):
@@ -103,12 +103,12 @@ class Status19Choice(base_types._BaseFieldType):
 
 	@InstrPrcgSts.setter
 	def InstrPrcgSts(self, value):
-		self._InstrPrcgSts = value if type(value) != base_types.auto else self.make_default("InstrPrcgSts")
+		self._InstrPrcgSts = value if value is not None else base_types.UninitialisedField(self, 'InstrPrcgSts', InstructionProcessingStatus23Choice, False)
 
 	@InstrPrcgSts.deleter
 	def InstrPrcgSts(self):
 		del self._InstrPrcgSts
-		self._InstrPrcgSts = None
+		self._InstrPrcgSts = base_types.UninitialisedField(self, 'InstrPrcgSts', InstructionProcessingStatus23Choice, False)
 
 	@property
 	def MtchgSts(self):
@@ -116,12 +116,12 @@ class Status19Choice(base_types._BaseFieldType):
 
 	@MtchgSts.setter
 	def MtchgSts(self, value):
-		self._MtchgSts = value if type(value) != base_types.auto else self.make_default("MtchgSts")
+		self._MtchgSts = value if value is not None else base_types.UninitialisedField(self, 'MtchgSts', MatchingStatus27Choice, False)
 
 	@MtchgSts.deleter
 	def MtchgSts(self):
 		del self._MtchgSts
-		self._MtchgSts = None
+		self._MtchgSts = base_types.UninitialisedField(self, 'MtchgSts', MatchingStatus27Choice, False)
 
 	@property
 	def RegnPrcgSts(self):
@@ -129,12 +129,12 @@ class Status19Choice(base_types._BaseFieldType):
 
 	@RegnPrcgSts.setter
 	def RegnPrcgSts(self, value):
-		self._RegnPrcgSts = value if type(value) != base_types.auto else self.make_default("RegnPrcgSts")
+		self._RegnPrcgSts = value if value is not None else base_types.UninitialisedField(self, 'RegnPrcgSts', RegistrationProcessingStatus3Choice, False)
 
 	@RegnPrcgSts.deleter
 	def RegnPrcgSts(self):
 		del self._RegnPrcgSts
-		self._RegnPrcgSts = None
+		self._RegnPrcgSts = base_types.UninitialisedField(self, 'RegnPrcgSts', RegistrationProcessingStatus3Choice, False)
 
 	@property
 	def RepoCallReqSts(self):
@@ -142,12 +142,12 @@ class Status19Choice(base_types._BaseFieldType):
 
 	@RepoCallReqSts.setter
 	def RepoCallReqSts(self, value):
-		self._RepoCallReqSts = value if type(value) != base_types.auto else self.make_default("RepoCallReqSts")
+		self._RepoCallReqSts = value if value is not None else base_types.UninitialisedField(self, 'RepoCallReqSts', RepoCallRequestStatus8Choice, False)
 
 	@RepoCallReqSts.deleter
 	def RepoCallReqSts(self):
 		del self._RepoCallReqSts
-		self._RepoCallReqSts = None
+		self._RepoCallReqSts = base_types.UninitialisedField(self, 'RepoCallReqSts', RepoCallRequestStatus8Choice, False)
 
 	@property
 	def RplcmntPrcgSts(self):
@@ -155,12 +155,12 @@ class Status19Choice(base_types._BaseFieldType):
 
 	@RplcmntPrcgSts.setter
 	def RplcmntPrcgSts(self, value):
-		self._RplcmntPrcgSts = value if type(value) != base_types.auto else self.make_default("RplcmntPrcgSts")
+		self._RplcmntPrcgSts = value if value is not None else base_types.UninitialisedField(self, 'RplcmntPrcgSts', ReplacementProcessingStatus8Choice, False)
 
 	@RplcmntPrcgSts.deleter
 	def RplcmntPrcgSts(self):
 		del self._RplcmntPrcgSts
-		self._RplcmntPrcgSts = None
+		self._RplcmntPrcgSts = base_types.UninitialisedField(self, 'RplcmntPrcgSts', ReplacementProcessingStatus8Choice, False)
 
 	@property
 	def RspnSts(self):
@@ -168,12 +168,12 @@ class Status19Choice(base_types._BaseFieldType):
 
 	@RspnSts.setter
 	def RspnSts(self, value):
-		self._RspnSts = value if type(value) != base_types.auto else self.make_default("RspnSts")
+		self._RspnSts = value if value is not None else base_types.UninitialisedField(self, 'RspnSts', ResponseStatus5Choice, False)
 
 	@RspnSts.deleter
 	def RspnSts(self):
 		del self._RspnSts
-		self._RspnSts = None
+		self._RspnSts = base_types.UninitialisedField(self, 'RspnSts', ResponseStatus5Choice, False)
 
 	@property
 	def SttlmCondModSts(self):
@@ -181,12 +181,12 @@ class Status19Choice(base_types._BaseFieldType):
 
 	@SttlmCondModSts.setter
 	def SttlmCondModSts(self, value):
-		self._SttlmCondModSts = value if type(value) != base_types.auto else self.make_default("SttlmCondModSts")
+		self._SttlmCondModSts = value if value is not None else base_types.UninitialisedField(self, 'SttlmCondModSts', SettlementConditionModificationStatus3Choice, False)
 
 	@SttlmCondModSts.deleter
 	def SttlmCondModSts(self):
 		del self._SttlmCondModSts
-		self._SttlmCondModSts = None
+		self._SttlmCondModSts = base_types.UninitialisedField(self, 'SttlmCondModSts', SettlementConditionModificationStatus3Choice, False)
 
 	@property
 	def SttlmSts(self):
@@ -194,12 +194,12 @@ class Status19Choice(base_types._BaseFieldType):
 
 	@SttlmSts.setter
 	def SttlmSts(self, value):
-		self._SttlmSts = value if type(value) != base_types.auto else self.make_default("SttlmSts")
+		self._SttlmSts = value if value is not None else base_types.UninitialisedField(self, 'SttlmSts', SettlementStatus19Choice, False)
 
 	@SttlmSts.deleter
 	def SttlmSts(self):
 		del self._SttlmSts
-		self._SttlmSts = None
+		self._SttlmSts = base_types.UninitialisedField(self, 'SttlmSts', SettlementStatus19Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AffirmSts', type=AffirmationStatus8Choice, min=0, max=1, mutex_group=1, array=False),

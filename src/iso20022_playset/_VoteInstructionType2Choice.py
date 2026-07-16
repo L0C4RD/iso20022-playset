@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification30 import GenericIdentification30
-from ._VoteInstruction7Code import VoteInstruction7Code
+from . import GenericIdentification30
+from . import VoteInstruction7Code
 
 class VoteInstructionType2Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class VoteInstructionType2Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+		self._Prtry = value if value is not None else base_types.UninitialisedField(self, 'Prtry', GenericIdentification30, False)
 
 	@Prtry.deleter
 	def Prtry(self):
 		del self._Prtry
-		self._Prtry = None
+		self._Prtry = base_types.UninitialisedField(self, 'Prtry', GenericIdentification30, False)
 
 	@property
 	def Tp(self):
@@ -27,12 +27,12 @@ class VoteInstructionType2Choice(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', VoteInstruction7Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', VoteInstruction7Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification30, min=0, max=1, mutex_group=1, array=False),

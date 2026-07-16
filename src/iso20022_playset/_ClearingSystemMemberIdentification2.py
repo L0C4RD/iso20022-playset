@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ClearingSystemIdentification2Choice import ClearingSystemIdentification2Choice
-from ._Max35Text import Max35Text
+from . import ClearingSystemIdentification2Choice
+from . import Max35Text
 
 class ClearingSystemMemberIdentification2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ClearingSystemMemberIdentification2(base_types._BaseFieldType):
 
 	@ClrSysId.setter
 	def ClrSysId(self, value):
-		self._ClrSysId = value if type(value) != base_types.auto else self.make_default("ClrSysId")
+		self._ClrSysId = value if value is not None else base_types.UninitialisedField(self, 'ClrSysId', ClearingSystemIdentification2Choice, False)
 
 	@ClrSysId.deleter
 	def ClrSysId(self):
 		del self._ClrSysId
-		self._ClrSysId = None
+		self._ClrSysId = base_types.UninitialisedField(self, 'ClrSysId', ClearingSystemIdentification2Choice, False)
 
 	@property
 	def MmbId(self):
@@ -27,12 +27,12 @@ class ClearingSystemMemberIdentification2(base_types._BaseFieldType):
 
 	@MmbId.setter
 	def MmbId(self, value):
-		self._MmbId = value if type(value) != base_types.auto else self.make_default("MmbId")
+		self._MmbId = value if value is not None else base_types.UninitialisedField(self, 'MmbId', Max35Text, False)
 
 	@MmbId.deleter
 	def MmbId(self):
 		del self._MmbId
-		self._MmbId = None
+		self._MmbId = base_types.UninitialisedField(self, 'MmbId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClrSysId', type=ClearingSystemIdentification2Choice, min=0, max=1, mutex_group=None, array=False),

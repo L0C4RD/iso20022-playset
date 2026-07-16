@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DocumentGeneralInformation5 import DocumentGeneralInformation5
-from ._ISODate import ISODate
-from ._Max1025Text import Max1025Text
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
-from ._OriginalMessage6 import OriginalMessage6
-from ._Party50Choice import Party50Choice
-from ._SupplementaryData1 import SupplementaryData1
-from ._SupportLetterType1Choice import SupportLetterType1Choice
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import DocumentGeneralInformation5
+from . import ISODate
+from . import Max1025Text
+from . import Max140Text
+from . import Max35Text
+from . import OriginalMessage6
+from . import Party50Choice
+from . import SupplementaryData1
+from . import SupportLetterType1Choice
+from . import TrueFalseIndicator
 
 class SupportingDocumentRequestOrLetter4(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class SupportingDocumentRequestOrLetter4(base_types._BaseFieldType):
 
 	@Attchmnt.setter
 	def Attchmnt(self, value):
-		self._Attchmnt = value if type(value) != base_types.auto else self.make_default("Attchmnt")
+		self._Attchmnt = value if value is not None else base_types.UninitialisedField(self, 'Attchmnt', DocumentGeneralInformation5, True)
 
 	@Attchmnt.deleter
 	def Attchmnt(self):
 		del self._Attchmnt
-		self._Attchmnt = None
+		self._Attchmnt = base_types.UninitialisedField(self, 'Attchmnt', DocumentGeneralInformation5, True)
 
 	@property
 	def Desc(self):
@@ -35,12 +35,12 @@ class SupportingDocumentRequestOrLetter4(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', Max1025Text, False)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', Max1025Text, False)
 
 	@property
 	def Dt(self):
@@ -48,12 +48,12 @@ class SupportingDocumentRequestOrLetter4(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@property
 	def DueDt(self):
@@ -61,12 +61,12 @@ class SupportingDocumentRequestOrLetter4(base_types._BaseFieldType):
 
 	@DueDt.setter
 	def DueDt(self, value):
-		self._DueDt = value if type(value) != base_types.auto else self.make_default("DueDt")
+		self._DueDt = value if value is not None else base_types.UninitialisedField(self, 'DueDt', ISODate, False)
 
 	@DueDt.deleter
 	def DueDt(self):
 		del self._DueDt
-		self._DueDt = None
+		self._DueDt = base_types.UninitialisedField(self, 'DueDt', ISODate, False)
 
 	@property
 	def OrgnlRefs(self):
@@ -74,12 +74,12 @@ class SupportingDocumentRequestOrLetter4(base_types._BaseFieldType):
 
 	@OrgnlRefs.setter
 	def OrgnlRefs(self, value):
-		self._OrgnlRefs = value if type(value) != base_types.auto else self.make_default("OrgnlRefs")
+		self._OrgnlRefs = value if value is not None else base_types.UninitialisedField(self, 'OrgnlRefs', OriginalMessage6, True)
 
 	@OrgnlRefs.deleter
 	def OrgnlRefs(self):
 		del self._OrgnlRefs
-		self._OrgnlRefs = None
+		self._OrgnlRefs = base_types.UninitialisedField(self, 'OrgnlRefs', OriginalMessage6, True)
 
 	@property
 	def Rcvr(self):
@@ -87,12 +87,12 @@ class SupportingDocumentRequestOrLetter4(base_types._BaseFieldType):
 
 	@Rcvr.setter
 	def Rcvr(self, value):
-		self._Rcvr = value if type(value) != base_types.auto else self.make_default("Rcvr")
+		self._Rcvr = value if value is not None else base_types.UninitialisedField(self, 'Rcvr', Party50Choice, False)
 
 	@Rcvr.deleter
 	def Rcvr(self):
 		del self._Rcvr
-		self._Rcvr = None
+		self._Rcvr = base_types.UninitialisedField(self, 'Rcvr', Party50Choice, False)
 
 	@property
 	def ReqOrLttrId(self):
@@ -100,12 +100,12 @@ class SupportingDocumentRequestOrLetter4(base_types._BaseFieldType):
 
 	@ReqOrLttrId.setter
 	def ReqOrLttrId(self, value):
-		self._ReqOrLttrId = value if type(value) != base_types.auto else self.make_default("ReqOrLttrId")
+		self._ReqOrLttrId = value if value is not None else base_types.UninitialisedField(self, 'ReqOrLttrId', Max35Text, False)
 
 	@ReqOrLttrId.deleter
 	def ReqOrLttrId(self):
 		del self._ReqOrLttrId
-		self._ReqOrLttrId = None
+		self._ReqOrLttrId = base_types.UninitialisedField(self, 'ReqOrLttrId', Max35Text, False)
 
 	@property
 	def RspnReqrd(self):
@@ -113,12 +113,12 @@ class SupportingDocumentRequestOrLetter4(base_types._BaseFieldType):
 
 	@RspnReqrd.setter
 	def RspnReqrd(self, value):
-		self._RspnReqrd = value if type(value) != base_types.auto else self.make_default("RspnReqrd")
+		self._RspnReqrd = value if value is not None else base_types.UninitialisedField(self, 'RspnReqrd', TrueFalseIndicator, False)
 
 	@RspnReqrd.deleter
 	def RspnReqrd(self):
 		del self._RspnReqrd
-		self._RspnReqrd = None
+		self._RspnReqrd = base_types.UninitialisedField(self, 'RspnReqrd', TrueFalseIndicator, False)
 
 	@property
 	def Sbjt(self):
@@ -126,12 +126,12 @@ class SupportingDocumentRequestOrLetter4(base_types._BaseFieldType):
 
 	@Sbjt.setter
 	def Sbjt(self, value):
-		self._Sbjt = value if type(value) != base_types.auto else self.make_default("Sbjt")
+		self._Sbjt = value if value is not None else base_types.UninitialisedField(self, 'Sbjt', Max140Text, False)
 
 	@Sbjt.deleter
 	def Sbjt(self):
 		del self._Sbjt
-		self._Sbjt = None
+		self._Sbjt = base_types.UninitialisedField(self, 'Sbjt', Max140Text, False)
 
 	@property
 	def Sndr(self):
@@ -139,12 +139,12 @@ class SupportingDocumentRequestOrLetter4(base_types._BaseFieldType):
 
 	@Sndr.setter
 	def Sndr(self, value):
-		self._Sndr = value if type(value) != base_types.auto else self.make_default("Sndr")
+		self._Sndr = value if value is not None else base_types.UninitialisedField(self, 'Sndr', Party50Choice, False)
 
 	@Sndr.deleter
 	def Sndr(self):
 		del self._Sndr
-		self._Sndr = None
+		self._Sndr = base_types.UninitialisedField(self, 'Sndr', Party50Choice, False)
 
 	@property
 	def SplmtryData(self):
@@ -152,12 +152,12 @@ class SupportingDocumentRequestOrLetter4(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def Tp(self):
@@ -165,12 +165,12 @@ class SupportingDocumentRequestOrLetter4(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', SupportLetterType1Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', SupportLetterType1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Attchmnt', type=DocumentGeneralInformation5, min=0, max=None, mutex_group=None, array=True),

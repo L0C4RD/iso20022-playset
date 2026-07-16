@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PartyIdentification341 import PartyIdentification341
-from ._PartyIdentification342 import PartyIdentification342
+from . import PartyIdentification341
+from . import PartyIdentification342
 
 class PartyIdentification264Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PartyIdentification264Choice(base_types._BaseFieldType):
 
 	@LglPrsn.setter
 	def LglPrsn(self, value):
-		self._LglPrsn = value if type(value) != base_types.auto else self.make_default("LglPrsn")
+		self._LglPrsn = value if value is not None else base_types.UninitialisedField(self, 'LglPrsn', PartyIdentification341, False)
 
 	@LglPrsn.deleter
 	def LglPrsn(self):
 		del self._LglPrsn
-		self._LglPrsn = None
+		self._LglPrsn = base_types.UninitialisedField(self, 'LglPrsn', PartyIdentification341, False)
 
 	@property
 	def NtrlPrsn(self):
@@ -27,12 +27,12 @@ class PartyIdentification264Choice(base_types._BaseFieldType):
 
 	@NtrlPrsn.setter
 	def NtrlPrsn(self, value):
-		self._NtrlPrsn = value if type(value) != base_types.auto else self.make_default("NtrlPrsn")
+		self._NtrlPrsn = value if value is not None else base_types.UninitialisedField(self, 'NtrlPrsn', PartyIdentification342, True)
 
 	@NtrlPrsn.deleter
 	def NtrlPrsn(self):
 		del self._NtrlPrsn
-		self._NtrlPrsn = None
+		self._NtrlPrsn = base_types.UninitialisedField(self, 'NtrlPrsn', PartyIdentification342, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LglPrsn', type=PartyIdentification341, min=0, max=1, mutex_group=1, array=False),

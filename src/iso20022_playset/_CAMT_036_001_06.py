@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DebitAuthorisationResponseV06 import DebitAuthorisationResponseV06
+from . import DebitAuthorisationResponseV06
 
 class CAMT_036_001_06():
 
@@ -18,12 +18,12 @@ class CAMT_036_001_06():
 
 		@DbtAuthstnRspn.setter
 		def DbtAuthstnRspn(self, value):
-			self._DbtAuthstnRspn = value if type(value) != base_types.auto else self.make_default("DbtAuthstnRspn")
+			self._DbtAuthstnRspn = value if value is not None else base_types.UninitialisedField(self, 'DbtAuthstnRspn', DebitAuthorisationResponseV06, False)
 
 		@DbtAuthstnRspn.deleter
 		def DbtAuthstnRspn(self):
 			del self._DbtAuthstnRspn
-			self._DbtAuthstnRspn = None
+			self._DbtAuthstnRspn = base_types.UninitialisedField(self, 'DbtAuthstnRspn', DebitAuthorisationResponseV06, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='DbtAuthstnRspn', type=DebitAuthorisationResponseV06, min=1, max=1, mutex_group=None, array=False),

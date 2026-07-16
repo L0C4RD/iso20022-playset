@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISINIdentifier import ISINIdentifier
-from ._Max140Text import Max140Text
-from ._OtherIdentification1 import OtherIdentification1
+from . import ISINIdentifier
+from . import Max140Text
+from . import OtherIdentification1
 
 class SecurityIdentification14(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SecurityIdentification14(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', Max140Text, False)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', Max140Text, False)
 
 	@property
 	def ISIN(self):
@@ -28,12 +28,12 @@ class SecurityIdentification14(base_types._BaseFieldType):
 
 	@ISIN.setter
 	def ISIN(self, value):
-		self._ISIN = value if type(value) != base_types.auto else self.make_default("ISIN")
+		self._ISIN = value if value is not None else base_types.UninitialisedField(self, 'ISIN', ISINIdentifier, False)
 
 	@ISIN.deleter
 	def ISIN(self):
 		del self._ISIN
-		self._ISIN = None
+		self._ISIN = base_types.UninitialisedField(self, 'ISIN', ISINIdentifier, False)
 
 	@property
 	def OthrId(self):
@@ -41,12 +41,12 @@ class SecurityIdentification14(base_types._BaseFieldType):
 
 	@OthrId.setter
 	def OthrId(self, value):
-		self._OthrId = value if type(value) != base_types.auto else self.make_default("OthrId")
+		self._OthrId = value if value is not None else base_types.UninitialisedField(self, 'OthrId', OtherIdentification1, True)
 
 	@OthrId.deleter
 	def OthrId(self):
 		del self._OthrId
-		self._OthrId = None
+		self._OthrId = base_types.UninitialisedField(self, 'OthrId', OtherIdentification1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Desc', type=Max140Text, min=0, max=1, mutex_group=None, array=False),

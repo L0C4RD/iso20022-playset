@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
+from . import ISODate
 
 class ShipmentDateRange1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class ShipmentDateRange1(base_types._BaseFieldType):
 
 	@EarlstShipmntDt.setter
 	def EarlstShipmntDt(self, value):
-		self._EarlstShipmntDt = value if type(value) != base_types.auto else self.make_default("EarlstShipmntDt")
+		self._EarlstShipmntDt = value if value is not None else base_types.UninitialisedField(self, 'EarlstShipmntDt', ISODate, False)
 
 	@EarlstShipmntDt.deleter
 	def EarlstShipmntDt(self):
 		del self._EarlstShipmntDt
-		self._EarlstShipmntDt = None
+		self._EarlstShipmntDt = base_types.UninitialisedField(self, 'EarlstShipmntDt', ISODate, False)
 
 	@property
 	def LatstShipmntDt(self):
@@ -26,12 +26,12 @@ class ShipmentDateRange1(base_types._BaseFieldType):
 
 	@LatstShipmntDt.setter
 	def LatstShipmntDt(self, value):
-		self._LatstShipmntDt = value if type(value) != base_types.auto else self.make_default("LatstShipmntDt")
+		self._LatstShipmntDt = value if value is not None else base_types.UninitialisedField(self, 'LatstShipmntDt', ISODate, False)
 
 	@LatstShipmntDt.deleter
 	def LatstShipmntDt(self):
 		del self._LatstShipmntDt
-		self._LatstShipmntDt = None
+		self._LatstShipmntDt = base_types.UninitialisedField(self, 'LatstShipmntDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EarlstShipmntDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),

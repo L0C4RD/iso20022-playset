@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountIdentification69 import AccountIdentification69
-from ._CorporateActionGeneralInformation183 import CorporateActionGeneralInformation183
-from ._CorporateActionNarrative10 import CorporateActionNarrative10
-from ._CorporateActionOption200 import CorporateActionOption200
-from ._DocumentIdentification31 import DocumentIdentification31
-from ._ProtectInstruction3 import ProtectInstruction3
-from ._SupplementaryData1 import SupplementaryData1
-from ._YesNoIndicator import YesNoIndicator
+from . import AccountIdentification69
+from . import CorporateActionGeneralInformation183
+from . import CorporateActionNarrative10
+from . import CorporateActionOption200
+from . import DocumentIdentification31
+from . import ProtectInstruction3
+from . import SupplementaryData1
+from . import YesNoIndicator
 
 class CorporateActionInstructionCancellationRequestV13(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class CorporateActionInstructionCancellationRequestV13(base_types._BaseFieldType
 
 	@AcctDtls.setter
 	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != base_types.auto else self.make_default("AcctDtls")
+		self._AcctDtls = value if value is not None else base_types.UninitialisedField(self, 'AcctDtls', AccountIdentification69, False)
 
 	@AcctDtls.deleter
 	def AcctDtls(self):
 		del self._AcctDtls
-		self._AcctDtls = None
+		self._AcctDtls = base_types.UninitialisedField(self, 'AcctDtls', AccountIdentification69, False)
 
 	@property
 	def AddtlInf(self):
@@ -33,12 +33,12 @@ class CorporateActionInstructionCancellationRequestV13(base_types._BaseFieldType
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', CorporateActionNarrative10, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', CorporateActionNarrative10, False)
 
 	@property
 	def ChngInstrInd(self):
@@ -46,12 +46,12 @@ class CorporateActionInstructionCancellationRequestV13(base_types._BaseFieldType
 
 	@ChngInstrInd.setter
 	def ChngInstrInd(self, value):
-		self._ChngInstrInd = value if type(value) != base_types.auto else self.make_default("ChngInstrInd")
+		self._ChngInstrInd = value if value is not None else base_types.UninitialisedField(self, 'ChngInstrInd', YesNoIndicator, False)
 
 	@ChngInstrInd.deleter
 	def ChngInstrInd(self):
 		del self._ChngInstrInd
-		self._ChngInstrInd = None
+		self._ChngInstrInd = base_types.UninitialisedField(self, 'ChngInstrInd', YesNoIndicator, False)
 
 	@property
 	def CorpActnGnlInf(self):
@@ -59,12 +59,12 @@ class CorporateActionInstructionCancellationRequestV13(base_types._BaseFieldType
 
 	@CorpActnGnlInf.setter
 	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != base_types.auto else self.make_default("CorpActnGnlInf")
+		self._CorpActnGnlInf = value if value is not None else base_types.UninitialisedField(self, 'CorpActnGnlInf', CorporateActionGeneralInformation183, False)
 
 	@CorpActnGnlInf.deleter
 	def CorpActnGnlInf(self):
 		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
+		self._CorpActnGnlInf = base_types.UninitialisedField(self, 'CorpActnGnlInf', CorporateActionGeneralInformation183, False)
 
 	@property
 	def CorpActnInstr(self):
@@ -72,12 +72,12 @@ class CorporateActionInstructionCancellationRequestV13(base_types._BaseFieldType
 
 	@CorpActnInstr.setter
 	def CorpActnInstr(self, value):
-		self._CorpActnInstr = value if type(value) != base_types.auto else self.make_default("CorpActnInstr")
+		self._CorpActnInstr = value if value is not None else base_types.UninitialisedField(self, 'CorpActnInstr', CorporateActionOption200, False)
 
 	@CorpActnInstr.deleter
 	def CorpActnInstr(self):
 		del self._CorpActnInstr
-		self._CorpActnInstr = None
+		self._CorpActnInstr = base_types.UninitialisedField(self, 'CorpActnInstr', CorporateActionOption200, False)
 
 	@property
 	def InstrId(self):
@@ -85,12 +85,12 @@ class CorporateActionInstructionCancellationRequestV13(base_types._BaseFieldType
 
 	@InstrId.setter
 	def InstrId(self, value):
-		self._InstrId = value if type(value) != base_types.auto else self.make_default("InstrId")
+		self._InstrId = value if value is not None else base_types.UninitialisedField(self, 'InstrId', DocumentIdentification31, False)
 
 	@InstrId.deleter
 	def InstrId(self):
 		del self._InstrId
-		self._InstrId = None
+		self._InstrId = base_types.UninitialisedField(self, 'InstrId', DocumentIdentification31, False)
 
 	@property
 	def PrtctInstr(self):
@@ -98,12 +98,12 @@ class CorporateActionInstructionCancellationRequestV13(base_types._BaseFieldType
 
 	@PrtctInstr.setter
 	def PrtctInstr(self, value):
-		self._PrtctInstr = value if type(value) != base_types.auto else self.make_default("PrtctInstr")
+		self._PrtctInstr = value if value is not None else base_types.UninitialisedField(self, 'PrtctInstr', ProtectInstruction3, False)
 
 	@PrtctInstr.deleter
 	def PrtctInstr(self):
 		del self._PrtctInstr
-		self._PrtctInstr = None
+		self._PrtctInstr = base_types.UninitialisedField(self, 'PrtctInstr', ProtectInstruction3, False)
 
 	@property
 	def SplmtryData(self):
@@ -111,12 +111,12 @@ class CorporateActionInstructionCancellationRequestV13(base_types._BaseFieldType
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctDtls', type=AccountIdentification69, min=1, max=1, mutex_group=None, array=False),

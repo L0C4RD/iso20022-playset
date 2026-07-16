@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IndependentAmount1 import IndependentAmount1
-from ._IndependentAmount2 import IndependentAmount2
+from . import IndependentAmount1
+from . import IndependentAmount2
 
 class AggregatedIndependentAmount1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AggregatedIndependentAmount1(base_types._BaseFieldType):
 
 	@NetOpnPos.setter
 	def NetOpnPos(self, value):
-		self._NetOpnPos = value if type(value) != base_types.auto else self.make_default("NetOpnPos")
+		self._NetOpnPos = value if value is not None else base_types.UninitialisedField(self, 'NetOpnPos', IndependentAmount1, False)
 
 	@NetOpnPos.deleter
 	def NetOpnPos(self):
 		del self._NetOpnPos
-		self._NetOpnPos = None
+		self._NetOpnPos = base_types.UninitialisedField(self, 'NetOpnPos', IndependentAmount1, False)
 
 	@property
 	def OthrAmt(self):
@@ -27,12 +27,12 @@ class AggregatedIndependentAmount1(base_types._BaseFieldType):
 
 	@OthrAmt.setter
 	def OthrAmt(self, value):
-		self._OthrAmt = value if type(value) != base_types.auto else self.make_default("OthrAmt")
+		self._OthrAmt = value if value is not None else base_types.UninitialisedField(self, 'OthrAmt', IndependentAmount2, True)
 
 	@OthrAmt.deleter
 	def OthrAmt(self):
 		del self._OthrAmt
-		self._OthrAmt = None
+		self._OthrAmt = base_types.UninitialisedField(self, 'OthrAmt', IndependentAmount2, True)
 
 	@property
 	def Trad(self):
@@ -40,12 +40,12 @@ class AggregatedIndependentAmount1(base_types._BaseFieldType):
 
 	@Trad.setter
 	def Trad(self, value):
-		self._Trad = value if type(value) != base_types.auto else self.make_default("Trad")
+		self._Trad = value if value is not None else base_types.UninitialisedField(self, 'Trad', IndependentAmount1, False)
 
 	@Trad.deleter
 	def Trad(self):
 		del self._Trad
-		self._Trad = None
+		self._Trad = base_types.UninitialisedField(self, 'Trad', IndependentAmount1, False)
 
 	@property
 	def ValAtRsk(self):
@@ -53,12 +53,12 @@ class AggregatedIndependentAmount1(base_types._BaseFieldType):
 
 	@ValAtRsk.setter
 	def ValAtRsk(self, value):
-		self._ValAtRsk = value if type(value) != base_types.auto else self.make_default("ValAtRsk")
+		self._ValAtRsk = value if value is not None else base_types.UninitialisedField(self, 'ValAtRsk', IndependentAmount1, False)
 
 	@ValAtRsk.deleter
 	def ValAtRsk(self):
 		del self._ValAtRsk
-		self._ValAtRsk = None
+		self._ValAtRsk = base_types.UninitialisedField(self, 'ValAtRsk', IndependentAmount1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NetOpnPos', type=IndependentAmount1, min=0, max=1, mutex_group=None, array=False),

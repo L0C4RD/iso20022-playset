@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcceptedStatus8Choice import AcceptedStatus8Choice
-from ._CancelledStatus12Choice import CancelledStatus12Choice
-from ._MatchingStatus34Choice import MatchingStatus34Choice
-from ._PendingStatus63Choice import PendingStatus63Choice
-from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
-from ._RejectedStatus37Choice import RejectedStatus37Choice
+from . import AcceptedStatus8Choice
+from . import CancelledStatus12Choice
+from . import MatchingStatus34Choice
+from . import PendingStatus63Choice
+from . import ProprietaryStatusAndReason6
+from . import RejectedStatus37Choice
 
 class MarketClaimProcessingStatus1Choice(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class MarketClaimProcessingStatus1Choice(base_types._BaseFieldType):
 
 	@AccptdForFrthrPrcg.setter
 	def AccptdForFrthrPrcg(self, value):
-		self._AccptdForFrthrPrcg = value if type(value) != base_types.auto else self.make_default("AccptdForFrthrPrcg")
+		self._AccptdForFrthrPrcg = value if value is not None else base_types.UninitialisedField(self, 'AccptdForFrthrPrcg', AcceptedStatus8Choice, False)
 
 	@AccptdForFrthrPrcg.deleter
 	def AccptdForFrthrPrcg(self):
 		del self._AccptdForFrthrPrcg
-		self._AccptdForFrthrPrcg = None
+		self._AccptdForFrthrPrcg = base_types.UninitialisedField(self, 'AccptdForFrthrPrcg', AcceptedStatus8Choice, False)
 
 	@property
 	def Canc(self):
@@ -31,12 +31,12 @@ class MarketClaimProcessingStatus1Choice(base_types._BaseFieldType):
 
 	@Canc.setter
 	def Canc(self, value):
-		self._Canc = value if type(value) != base_types.auto else self.make_default("Canc")
+		self._Canc = value if value is not None else base_types.UninitialisedField(self, 'Canc', CancelledStatus12Choice, False)
 
 	@Canc.deleter
 	def Canc(self):
 		del self._Canc
-		self._Canc = None
+		self._Canc = base_types.UninitialisedField(self, 'Canc', CancelledStatus12Choice, False)
 
 	@property
 	def MtchgSts(self):
@@ -44,12 +44,12 @@ class MarketClaimProcessingStatus1Choice(base_types._BaseFieldType):
 
 	@MtchgSts.setter
 	def MtchgSts(self, value):
-		self._MtchgSts = value if type(value) != base_types.auto else self.make_default("MtchgSts")
+		self._MtchgSts = value if value is not None else base_types.UninitialisedField(self, 'MtchgSts', MatchingStatus34Choice, False)
 
 	@MtchgSts.deleter
 	def MtchgSts(self):
 		del self._MtchgSts
-		self._MtchgSts = None
+		self._MtchgSts = base_types.UninitialisedField(self, 'MtchgSts', MatchingStatus34Choice, False)
 
 	@property
 	def Pdg(self):
@@ -57,12 +57,12 @@ class MarketClaimProcessingStatus1Choice(base_types._BaseFieldType):
 
 	@Pdg.setter
 	def Pdg(self, value):
-		self._Pdg = value if type(value) != base_types.auto else self.make_default("Pdg")
+		self._Pdg = value if value is not None else base_types.UninitialisedField(self, 'Pdg', PendingStatus63Choice, False)
 
 	@Pdg.deleter
 	def Pdg(self):
 		del self._Pdg
-		self._Pdg = None
+		self._Pdg = base_types.UninitialisedField(self, 'Pdg', PendingStatus63Choice, False)
 
 	@property
 	def PrtrySts(self):
@@ -70,12 +70,12 @@ class MarketClaimProcessingStatus1Choice(base_types._BaseFieldType):
 
 	@PrtrySts.setter
 	def PrtrySts(self, value):
-		self._PrtrySts = value if type(value) != base_types.auto else self.make_default("PrtrySts")
+		self._PrtrySts = value if value is not None else base_types.UninitialisedField(self, 'PrtrySts', ProprietaryStatusAndReason6, False)
 
 	@PrtrySts.deleter
 	def PrtrySts(self):
 		del self._PrtrySts
-		self._PrtrySts = None
+		self._PrtrySts = base_types.UninitialisedField(self, 'PrtrySts', ProprietaryStatusAndReason6, False)
 
 	@property
 	def Rjctd(self):
@@ -83,12 +83,12 @@ class MarketClaimProcessingStatus1Choice(base_types._BaseFieldType):
 
 	@Rjctd.setter
 	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
+		self._Rjctd = value if value is not None else base_types.UninitialisedField(self, 'Rjctd', RejectedStatus37Choice, False)
 
 	@Rjctd.deleter
 	def Rjctd(self):
 		del self._Rjctd
-		self._Rjctd = None
+		self._Rjctd = base_types.UninitialisedField(self, 'Rjctd', RejectedStatus37Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AccptdForFrthrPrcg', type=AcceptedStatus8Choice, min=0, max=1, mutex_group=1, array=False),

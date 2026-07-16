@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesSettlementTransactionReversalAdvice002V10 import SecuritiesSettlementTransactionReversalAdvice002V10
+from . import SecuritiesSettlementTransactionReversalAdvice002V10
 
 class SESE_026_002_10():
 
@@ -18,12 +18,12 @@ class SESE_026_002_10():
 
 		@SctiesSttlmTxRvslAdvc.setter
 		def SctiesSttlmTxRvslAdvc(self, value):
-			self._SctiesSttlmTxRvslAdvc = value if type(value) != base_types.auto else self.make_default("SctiesSttlmTxRvslAdvc")
+			self._SctiesSttlmTxRvslAdvc = value if value is not None else base_types.UninitialisedField(self, 'SctiesSttlmTxRvslAdvc', SecuritiesSettlementTransactionReversalAdvice002V10, False)
 
 		@SctiesSttlmTxRvslAdvc.deleter
 		def SctiesSttlmTxRvslAdvc(self):
 			del self._SctiesSttlmTxRvslAdvc
-			self._SctiesSttlmTxRvslAdvc = None
+			self._SctiesSttlmTxRvslAdvc = base_types.UninitialisedField(self, 'SctiesSttlmTxRvslAdvc', SecuritiesSettlementTransactionReversalAdvice002V10, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesSttlmTxRvslAdvc', type=SecuritiesSettlementTransactionReversalAdvice002V10, min=1, max=1, mutex_group=None, array=False),

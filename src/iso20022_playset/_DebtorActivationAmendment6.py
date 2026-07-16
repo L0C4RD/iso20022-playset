@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DebtorActivation6 import DebtorActivation6
-from ._ElectronicInvoice1 import ElectronicInvoice1
+from . import DebtorActivation6
+from . import ElectronicInvoice1
 
 class DebtorActivationAmendment6(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DebtorActivationAmendment6(base_types._BaseFieldType):
 
 	@DbtrActvtn.setter
 	def DbtrActvtn(self, value):
-		self._DbtrActvtn = value if type(value) != base_types.auto else self.make_default("DbtrActvtn")
+		self._DbtrActvtn = value if value is not None else base_types.UninitialisedField(self, 'DbtrActvtn', DebtorActivation6, False)
 
 	@DbtrActvtn.deleter
 	def DbtrActvtn(self):
 		del self._DbtrActvtn
-		self._DbtrActvtn = None
+		self._DbtrActvtn = base_types.UninitialisedField(self, 'DbtrActvtn', DebtorActivation6, False)
 
 	@property
 	def ElctrncInvcData(self):
@@ -27,12 +27,12 @@ class DebtorActivationAmendment6(base_types._BaseFieldType):
 
 	@ElctrncInvcData.setter
 	def ElctrncInvcData(self, value):
-		self._ElctrncInvcData = value if type(value) != base_types.auto else self.make_default("ElctrncInvcData")
+		self._ElctrncInvcData = value if value is not None else base_types.UninitialisedField(self, 'ElctrncInvcData', ElectronicInvoice1, False)
 
 	@ElctrncInvcData.deleter
 	def ElctrncInvcData(self):
 		del self._ElctrncInvcData
-		self._ElctrncInvcData = None
+		self._ElctrncInvcData = base_types.UninitialisedField(self, 'ElctrncInvcData', ElectronicInvoice1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DbtrActvtn', type=DebtorActivation6, min=0, max=1, mutex_group=None, array=False),

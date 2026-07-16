@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CustomerPaymentReversalV13 import CustomerPaymentReversalV13
+from . import CustomerPaymentReversalV13
 
 class PAIN_007_001_13():
 
@@ -18,12 +18,12 @@ class PAIN_007_001_13():
 
 		@CstmrPmtRvsl.setter
 		def CstmrPmtRvsl(self, value):
-			self._CstmrPmtRvsl = value if type(value) != base_types.auto else self.make_default("CstmrPmtRvsl")
+			self._CstmrPmtRvsl = value if value is not None else base_types.UninitialisedField(self, 'CstmrPmtRvsl', CustomerPaymentReversalV13, False)
 
 		@CstmrPmtRvsl.deleter
 		def CstmrPmtRvsl(self):
 			del self._CstmrPmtRvsl
-			self._CstmrPmtRvsl = None
+			self._CstmrPmtRvsl = base_types.UninitialisedField(self, 'CstmrPmtRvsl', CustomerPaymentReversalV13, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CstmrPmtRvsl', type=CustomerPaymentReversalV13, min=1, max=1, mutex_group=None, array=False),

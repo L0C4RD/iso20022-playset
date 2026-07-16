@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MessageIdentification1 import MessageIdentification1
-from ._SimpleIdentificationInformation import SimpleIdentificationInformation
+from . import MessageIdentification1
+from . import SimpleIdentificationInformation
 
 class RoleAndBaselineAcceptanceV01(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class RoleAndBaselineAcceptanceV01(base_types._BaseFieldType):
 
 	@AccptncId.setter
 	def AccptncId(self, value):
-		self._AccptncId = value if type(value) != base_types.auto else self.make_default("AccptncId")
+		self._AccptncId = value if value is not None else base_types.UninitialisedField(self, 'AccptncId', MessageIdentification1, False)
 
 	@AccptncId.deleter
 	def AccptncId(self):
 		del self._AccptncId
-		self._AccptncId = None
+		self._AccptncId = base_types.UninitialisedField(self, 'AccptncId', MessageIdentification1, False)
 
 	@property
 	def RltdMsgRef(self):
@@ -27,12 +27,12 @@ class RoleAndBaselineAcceptanceV01(base_types._BaseFieldType):
 
 	@RltdMsgRef.setter
 	def RltdMsgRef(self, value):
-		self._RltdMsgRef = value if type(value) != base_types.auto else self.make_default("RltdMsgRef")
+		self._RltdMsgRef = value if value is not None else base_types.UninitialisedField(self, 'RltdMsgRef', MessageIdentification1, False)
 
 	@RltdMsgRef.deleter
 	def RltdMsgRef(self):
 		del self._RltdMsgRef
-		self._RltdMsgRef = None
+		self._RltdMsgRef = base_types.UninitialisedField(self, 'RltdMsgRef', MessageIdentification1, False)
 
 	@property
 	def TxId(self):
@@ -40,12 +40,12 @@ class RoleAndBaselineAcceptanceV01(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', SimpleIdentificationInformation, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', SimpleIdentificationInformation, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AccptncId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),

@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashAccount204 import CashAccount204
-from ._CountryCode import CountryCode
-from ._Max350Text import Max350Text
-from ._PartyIdentification125Choice import PartyIdentification125Choice
-from ._PercentageRate import PercentageRate
+from . import CashAccount204
+from . import CountryCode
+from . import Max350Text
+from . import PartyIdentification125Choice
+from . import PercentageRate
 
 class TaxReporting3(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class TaxReporting3(base_types._BaseFieldType):
 
 	@CshAcctDtls.setter
 	def CshAcctDtls(self, value):
-		self._CshAcctDtls = value if type(value) != base_types.auto else self.make_default("CshAcctDtls")
+		self._CshAcctDtls = value if value is not None else base_types.UninitialisedField(self, 'CshAcctDtls', CashAccount204, False)
 
 	@CshAcctDtls.deleter
 	def CshAcctDtls(self):
 		del self._CshAcctDtls
-		self._CshAcctDtls = None
+		self._CshAcctDtls = base_types.UninitialisedField(self, 'CshAcctDtls', CashAccount204, False)
 
 	@property
 	def Desc(self):
@@ -30,12 +30,12 @@ class TaxReporting3(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', Max350Text, False)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', Max350Text, False)
 
 	@property
 	def TaxPyer(self):
@@ -43,12 +43,12 @@ class TaxReporting3(base_types._BaseFieldType):
 
 	@TaxPyer.setter
 	def TaxPyer(self, value):
-		self._TaxPyer = value if type(value) != base_types.auto else self.make_default("TaxPyer")
+		self._TaxPyer = value if value is not None else base_types.UninitialisedField(self, 'TaxPyer', PartyIdentification125Choice, False)
 
 	@TaxPyer.deleter
 	def TaxPyer(self):
 		del self._TaxPyer
-		self._TaxPyer = None
+		self._TaxPyer = base_types.UninitialisedField(self, 'TaxPyer', PartyIdentification125Choice, False)
 
 	@property
 	def TaxRate(self):
@@ -56,12 +56,12 @@ class TaxReporting3(base_types._BaseFieldType):
 
 	@TaxRate.setter
 	def TaxRate(self, value):
-		self._TaxRate = value if type(value) != base_types.auto else self.make_default("TaxRate")
+		self._TaxRate = value if value is not None else base_types.UninitialisedField(self, 'TaxRate', PercentageRate, False)
 
 	@TaxRate.deleter
 	def TaxRate(self):
 		del self._TaxRate
-		self._TaxRate = None
+		self._TaxRate = base_types.UninitialisedField(self, 'TaxRate', PercentageRate, False)
 
 	@property
 	def TaxRcpt(self):
@@ -69,12 +69,12 @@ class TaxReporting3(base_types._BaseFieldType):
 
 	@TaxRcpt.setter
 	def TaxRcpt(self, value):
-		self._TaxRcpt = value if type(value) != base_types.auto else self.make_default("TaxRcpt")
+		self._TaxRcpt = value if value is not None else base_types.UninitialisedField(self, 'TaxRcpt', PartyIdentification125Choice, False)
 
 	@TaxRcpt.deleter
 	def TaxRcpt(self):
 		del self._TaxRcpt
-		self._TaxRcpt = None
+		self._TaxRcpt = base_types.UninitialisedField(self, 'TaxRcpt', PartyIdentification125Choice, False)
 
 	@property
 	def TaxtnCtry(self):
@@ -82,12 +82,12 @@ class TaxReporting3(base_types._BaseFieldType):
 
 	@TaxtnCtry.setter
 	def TaxtnCtry(self, value):
-		self._TaxtnCtry = value if type(value) != base_types.auto else self.make_default("TaxtnCtry")
+		self._TaxtnCtry = value if value is not None else base_types.UninitialisedField(self, 'TaxtnCtry', CountryCode, False)
 
 	@TaxtnCtry.deleter
 	def TaxtnCtry(self):
 		del self._TaxtnCtry
-		self._TaxtnCtry = None
+		self._TaxtnCtry = base_types.UninitialisedField(self, 'TaxtnCtry', CountryCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshAcctDtls', type=CashAccount204, min=0, max=1, mutex_group=None, array=False),

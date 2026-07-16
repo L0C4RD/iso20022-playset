@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PartyIdentificationAndAccount177 import PartyIdentificationAndAccount177
-from ._PartyIdentificationAndAccount178 import PartyIdentificationAndAccount178
+from . import PartyIdentificationAndAccount177
+from . import PartyIdentificationAndAccount178
 
 class CashParties40(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CashParties40(base_types._BaseFieldType):
 
 	@Cdtr.setter
 	def Cdtr(self, value):
-		self._Cdtr = value if type(value) != base_types.auto else self.make_default("Cdtr")
+		self._Cdtr = value if value is not None else base_types.UninitialisedField(self, 'Cdtr', PartyIdentificationAndAccount177, False)
 
 	@Cdtr.deleter
 	def Cdtr(self):
 		del self._Cdtr
-		self._Cdtr = None
+		self._Cdtr = base_types.UninitialisedField(self, 'Cdtr', PartyIdentificationAndAccount177, False)
 
 	@property
 	def CdtrAgt(self):
@@ -27,12 +27,12 @@ class CashParties40(base_types._BaseFieldType):
 
 	@CdtrAgt.setter
 	def CdtrAgt(self, value):
-		self._CdtrAgt = value if type(value) != base_types.auto else self.make_default("CdtrAgt")
+		self._CdtrAgt = value if value is not None else base_types.UninitialisedField(self, 'CdtrAgt', PartyIdentificationAndAccount178, False)
 
 	@CdtrAgt.deleter
 	def CdtrAgt(self):
 		del self._CdtrAgt
-		self._CdtrAgt = None
+		self._CdtrAgt = base_types.UninitialisedField(self, 'CdtrAgt', PartyIdentificationAndAccount178, False)
 
 	@property
 	def Dbtr(self):
@@ -40,12 +40,12 @@ class CashParties40(base_types._BaseFieldType):
 
 	@Dbtr.setter
 	def Dbtr(self, value):
-		self._Dbtr = value if type(value) != base_types.auto else self.make_default("Dbtr")
+		self._Dbtr = value if value is not None else base_types.UninitialisedField(self, 'Dbtr', PartyIdentificationAndAccount177, False)
 
 	@Dbtr.deleter
 	def Dbtr(self):
 		del self._Dbtr
-		self._Dbtr = None
+		self._Dbtr = base_types.UninitialisedField(self, 'Dbtr', PartyIdentificationAndAccount177, False)
 
 	@property
 	def DbtrAgt(self):
@@ -53,12 +53,12 @@ class CashParties40(base_types._BaseFieldType):
 
 	@DbtrAgt.setter
 	def DbtrAgt(self, value):
-		self._DbtrAgt = value if type(value) != base_types.auto else self.make_default("DbtrAgt")
+		self._DbtrAgt = value if value is not None else base_types.UninitialisedField(self, 'DbtrAgt', PartyIdentificationAndAccount178, False)
 
 	@DbtrAgt.deleter
 	def DbtrAgt(self):
 		del self._DbtrAgt
-		self._DbtrAgt = None
+		self._DbtrAgt = base_types.UninitialisedField(self, 'DbtrAgt', PartyIdentificationAndAccount178, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cdtr', type=PartyIdentificationAndAccount177, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCode import CountryCode
-from ._RateAndAmountFormat1Choice import RateAndAmountFormat1Choice
+from . import CountryCode
+from . import RateAndAmountFormat1Choice
 
 class SecurityWithHoldingTax1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SecurityWithHoldingTax1(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@property
 	def WhldgTaxVal(self):
@@ -27,12 +27,12 @@ class SecurityWithHoldingTax1(base_types._BaseFieldType):
 
 	@WhldgTaxVal.setter
 	def WhldgTaxVal(self, value):
-		self._WhldgTaxVal = value if type(value) != base_types.auto else self.make_default("WhldgTaxVal")
+		self._WhldgTaxVal = value if value is not None else base_types.UninitialisedField(self, 'WhldgTaxVal', RateAndAmountFormat1Choice, False)
 
 	@WhldgTaxVal.deleter
 	def WhldgTaxVal(self):
 		del self._WhldgTaxVal
-		self._WhldgTaxVal = None
+		self._WhldgTaxVal = base_types.UninitialisedField(self, 'WhldgTaxVal', RateAndAmountFormat1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),

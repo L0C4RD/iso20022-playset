@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionEventProcessingType4Choice import CorporateActionEventProcessingType4Choice
-from ._CorporateActionEventType107Choice import CorporateActionEventType107Choice
-from ._CorporateActionMandatoryVoluntary3Choice import CorporateActionMandatoryVoluntary3Choice
-from ._FinancialInstrumentDescription5 import FinancialInstrumentDescription5
-from ._Max35Text import Max35Text
-from ._PartyIdentification129Choice import PartyIdentification129Choice
+from . import CorporateActionEventProcessingType4Choice
+from . import CorporateActionEventType107Choice
+from . import CorporateActionMandatoryVoluntary3Choice
+from . import FinancialInstrumentDescription5
+from . import Max35Text
+from . import PartyIdentification129Choice
 
 class CorporateActionGeneralInformation175(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class CorporateActionGeneralInformation175(base_types._BaseFieldType):
 
 	@AgtId.setter
 	def AgtId(self, value):
-		self._AgtId = value if type(value) != base_types.auto else self.make_default("AgtId")
+		self._AgtId = value if value is not None else base_types.UninitialisedField(self, 'AgtId', PartyIdentification129Choice, False)
 
 	@AgtId.deleter
 	def AgtId(self):
 		del self._AgtId
-		self._AgtId = None
+		self._AgtId = base_types.UninitialisedField(self, 'AgtId', PartyIdentification129Choice, False)
 
 	@property
 	def CorpActnEvtId(self):
@@ -31,12 +31,12 @@ class CorporateActionGeneralInformation175(base_types._BaseFieldType):
 
 	@CorpActnEvtId.setter
 	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
+		self._CorpActnEvtId = value if value is not None else base_types.UninitialisedField(self, 'CorpActnEvtId', Max35Text, False)
 
 	@CorpActnEvtId.deleter
 	def CorpActnEvtId(self):
 		del self._CorpActnEvtId
-		self._CorpActnEvtId = None
+		self._CorpActnEvtId = base_types.UninitialisedField(self, 'CorpActnEvtId', Max35Text, False)
 
 	@property
 	def EvtPrcgTp(self):
@@ -44,12 +44,12 @@ class CorporateActionGeneralInformation175(base_types._BaseFieldType):
 
 	@EvtPrcgTp.setter
 	def EvtPrcgTp(self, value):
-		self._EvtPrcgTp = value if type(value) != base_types.auto else self.make_default("EvtPrcgTp")
+		self._EvtPrcgTp = value if value is not None else base_types.UninitialisedField(self, 'EvtPrcgTp', CorporateActionEventProcessingType4Choice, False)
 
 	@EvtPrcgTp.deleter
 	def EvtPrcgTp(self):
 		del self._EvtPrcgTp
-		self._EvtPrcgTp = None
+		self._EvtPrcgTp = base_types.UninitialisedField(self, 'EvtPrcgTp', CorporateActionEventProcessingType4Choice, False)
 
 	@property
 	def EvtTp(self):
@@ -57,12 +57,12 @@ class CorporateActionGeneralInformation175(base_types._BaseFieldType):
 
 	@EvtTp.setter
 	def EvtTp(self, value):
-		self._EvtTp = value if type(value) != base_types.auto else self.make_default("EvtTp")
+		self._EvtTp = value if value is not None else base_types.UninitialisedField(self, 'EvtTp', CorporateActionEventType107Choice, False)
 
 	@EvtTp.deleter
 	def EvtTp(self):
 		del self._EvtTp
-		self._EvtTp = None
+		self._EvtTp = base_types.UninitialisedField(self, 'EvtTp', CorporateActionEventType107Choice, False)
 
 	@property
 	def MndtryVlntryEvtTp(self):
@@ -70,12 +70,12 @@ class CorporateActionGeneralInformation175(base_types._BaseFieldType):
 
 	@MndtryVlntryEvtTp.setter
 	def MndtryVlntryEvtTp(self, value):
-		self._MndtryVlntryEvtTp = value if type(value) != base_types.auto else self.make_default("MndtryVlntryEvtTp")
+		self._MndtryVlntryEvtTp = value if value is not None else base_types.UninitialisedField(self, 'MndtryVlntryEvtTp', CorporateActionMandatoryVoluntary3Choice, False)
 
 	@MndtryVlntryEvtTp.deleter
 	def MndtryVlntryEvtTp(self):
 		del self._MndtryVlntryEvtTp
-		self._MndtryVlntryEvtTp = None
+		self._MndtryVlntryEvtTp = base_types.UninitialisedField(self, 'MndtryVlntryEvtTp', CorporateActionMandatoryVoluntary3Choice, False)
 
 	@property
 	def OffclCorpActnEvtId(self):
@@ -83,12 +83,12 @@ class CorporateActionGeneralInformation175(base_types._BaseFieldType):
 
 	@OffclCorpActnEvtId.setter
 	def OffclCorpActnEvtId(self, value):
-		self._OffclCorpActnEvtId = value if type(value) != base_types.auto else self.make_default("OffclCorpActnEvtId")
+		self._OffclCorpActnEvtId = value if value is not None else base_types.UninitialisedField(self, 'OffclCorpActnEvtId', Max35Text, False)
 
 	@OffclCorpActnEvtId.deleter
 	def OffclCorpActnEvtId(self):
 		del self._OffclCorpActnEvtId
-		self._OffclCorpActnEvtId = None
+		self._OffclCorpActnEvtId = base_types.UninitialisedField(self, 'OffclCorpActnEvtId', Max35Text, False)
 
 	@property
 	def UndrlygScty(self):
@@ -96,12 +96,12 @@ class CorporateActionGeneralInformation175(base_types._BaseFieldType):
 
 	@UndrlygScty.setter
 	def UndrlygScty(self, value):
-		self._UndrlygScty = value if type(value) != base_types.auto else self.make_default("UndrlygScty")
+		self._UndrlygScty = value if value is not None else base_types.UninitialisedField(self, 'UndrlygScty', FinancialInstrumentDescription5, False)
 
 	@UndrlygScty.deleter
 	def UndrlygScty(self):
 		del self._UndrlygScty
-		self._UndrlygScty = None
+		self._UndrlygScty = base_types.UninitialisedField(self, 'UndrlygScty', FinancialInstrumentDescription5, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AgtId', type=PartyIdentification129Choice, min=1, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
-from ._Quantity1Code import Quantity1Code
+from . import FinancialInstrumentQuantity18Choice
+from . import Quantity1Code
 
 class QuantityOrCode1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class QuantityOrCode1Choice(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
+		self._Cd = value if value is not None else base_types.UninitialisedField(self, 'Cd', Quantity1Code, False)
 
 	@Cd.deleter
 	def Cd(self):
 		del self._Cd
-		self._Cd = None
+		self._Cd = base_types.UninitialisedField(self, 'Cd', Quantity1Code, False)
 
 	@property
 	def Qty(self):
@@ -27,12 +27,12 @@ class QuantityOrCode1Choice(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+		self._Qty = value if value is not None else base_types.UninitialisedField(self, 'Qty', FinancialInstrumentQuantity18Choice, False)
 
 	@Qty.deleter
 	def Qty(self):
 		del self._Qty
-		self._Qty = None
+		self._Qty = base_types.UninitialisedField(self, 'Qty', FinancialInstrumentQuantity18Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cd', type=Quantity1Code, min=0, max=1, mutex_group=1, array=False),

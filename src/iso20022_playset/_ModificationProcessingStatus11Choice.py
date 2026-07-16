@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcknowledgedAcceptedStatus30Choice import AcknowledgedAcceptedStatus30Choice
-from ._DeniedStatus19Choice import DeniedStatus19Choice
-from ._ModificationStatus5Choice import ModificationStatus5Choice
-from ._PendingProcessingStatus16Choice import PendingProcessingStatus16Choice
-from ._ProprietaryStatusAndReason7 import ProprietaryStatusAndReason7
-from ._RejectionStatus42Choice import RejectionStatus42Choice
-from ._RepairStatus17Choice import RepairStatus17Choice
+from . import AcknowledgedAcceptedStatus30Choice
+from . import DeniedStatus19Choice
+from . import ModificationStatus5Choice
+from . import PendingProcessingStatus16Choice
+from . import ProprietaryStatusAndReason7
+from . import RejectionStatus42Choice
+from . import RepairStatus17Choice
 
 class ModificationProcessingStatus11Choice(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class ModificationProcessingStatus11Choice(base_types._BaseFieldType):
 
 	@AckdAccptd.setter
 	def AckdAccptd(self, value):
-		self._AckdAccptd = value if type(value) != base_types.auto else self.make_default("AckdAccptd")
+		self._AckdAccptd = value if value is not None else base_types.UninitialisedField(self, 'AckdAccptd', AcknowledgedAcceptedStatus30Choice, False)
 
 	@AckdAccptd.deleter
 	def AckdAccptd(self):
 		del self._AckdAccptd
-		self._AckdAccptd = None
+		self._AckdAccptd = base_types.UninitialisedField(self, 'AckdAccptd', AcknowledgedAcceptedStatus30Choice, False)
 
 	@property
 	def Dnd(self):
@@ -32,12 +32,12 @@ class ModificationProcessingStatus11Choice(base_types._BaseFieldType):
 
 	@Dnd.setter
 	def Dnd(self, value):
-		self._Dnd = value if type(value) != base_types.auto else self.make_default("Dnd")
+		self._Dnd = value if value is not None else base_types.UninitialisedField(self, 'Dnd', DeniedStatus19Choice, False)
 
 	@Dnd.deleter
 	def Dnd(self):
 		del self._Dnd
-		self._Dnd = None
+		self._Dnd = base_types.UninitialisedField(self, 'Dnd', DeniedStatus19Choice, False)
 
 	@property
 	def Modfd(self):
@@ -45,12 +45,12 @@ class ModificationProcessingStatus11Choice(base_types._BaseFieldType):
 
 	@Modfd.setter
 	def Modfd(self, value):
-		self._Modfd = value if type(value) != base_types.auto else self.make_default("Modfd")
+		self._Modfd = value if value is not None else base_types.UninitialisedField(self, 'Modfd', ModificationStatus5Choice, False)
 
 	@Modfd.deleter
 	def Modfd(self):
 		del self._Modfd
-		self._Modfd = None
+		self._Modfd = base_types.UninitialisedField(self, 'Modfd', ModificationStatus5Choice, False)
 
 	@property
 	def PdgPrcg(self):
@@ -58,12 +58,12 @@ class ModificationProcessingStatus11Choice(base_types._BaseFieldType):
 
 	@PdgPrcg.setter
 	def PdgPrcg(self, value):
-		self._PdgPrcg = value if type(value) != base_types.auto else self.make_default("PdgPrcg")
+		self._PdgPrcg = value if value is not None else base_types.UninitialisedField(self, 'PdgPrcg', PendingProcessingStatus16Choice, False)
 
 	@PdgPrcg.deleter
 	def PdgPrcg(self):
 		del self._PdgPrcg
-		self._PdgPrcg = None
+		self._PdgPrcg = base_types.UninitialisedField(self, 'PdgPrcg', PendingProcessingStatus16Choice, False)
 
 	@property
 	def Prtry(self):
@@ -71,12 +71,12 @@ class ModificationProcessingStatus11Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+		self._Prtry = value if value is not None else base_types.UninitialisedField(self, 'Prtry', ProprietaryStatusAndReason7, False)
 
 	@Prtry.deleter
 	def Prtry(self):
 		del self._Prtry
-		self._Prtry = None
+		self._Prtry = base_types.UninitialisedField(self, 'Prtry', ProprietaryStatusAndReason7, False)
 
 	@property
 	def Rjctd(self):
@@ -84,12 +84,12 @@ class ModificationProcessingStatus11Choice(base_types._BaseFieldType):
 
 	@Rjctd.setter
 	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
+		self._Rjctd = value if value is not None else base_types.UninitialisedField(self, 'Rjctd', RejectionStatus42Choice, False)
 
 	@Rjctd.deleter
 	def Rjctd(self):
 		del self._Rjctd
-		self._Rjctd = None
+		self._Rjctd = base_types.UninitialisedField(self, 'Rjctd', RejectionStatus42Choice, False)
 
 	@property
 	def Rprd(self):
@@ -97,12 +97,12 @@ class ModificationProcessingStatus11Choice(base_types._BaseFieldType):
 
 	@Rprd.setter
 	def Rprd(self, value):
-		self._Rprd = value if type(value) != base_types.auto else self.make_default("Rprd")
+		self._Rprd = value if value is not None else base_types.UninitialisedField(self, 'Rprd', RepairStatus17Choice, False)
 
 	@Rprd.deleter
 	def Rprd(self):
 		del self._Rprd
-		self._Rprd = None
+		self._Rprd = base_types.UninitialisedField(self, 'Rprd', RepairStatus17Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus30Choice, min=0, max=1, mutex_group=1, array=False),

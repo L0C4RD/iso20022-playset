@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BaseOneRate import BaseOneRate
-from ._Max2000Text import Max2000Text
-from ._ModelType1Choice import ModelType1Choice
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import BaseOneRate
+from . import Max2000Text
+from . import ModelType1Choice
+from . import TrueFalseIndicator
 
 class BackTestingMethodology1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class BackTestingMethodology1(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', Max2000Text, False)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', Max2000Text, False)
 
 	@property
 	def MdlCnfdncLvl(self):
@@ -29,12 +29,12 @@ class BackTestingMethodology1(base_types._BaseFieldType):
 
 	@MdlCnfdncLvl.setter
 	def MdlCnfdncLvl(self, value):
-		self._MdlCnfdncLvl = value if type(value) != base_types.auto else self.make_default("MdlCnfdncLvl")
+		self._MdlCnfdncLvl = value if value is not None else base_types.UninitialisedField(self, 'MdlCnfdncLvl', BaseOneRate, False)
 
 	@MdlCnfdncLvl.deleter
 	def MdlCnfdncLvl(self):
 		del self._MdlCnfdncLvl
-		self._MdlCnfdncLvl = None
+		self._MdlCnfdncLvl = base_types.UninitialisedField(self, 'MdlCnfdncLvl', BaseOneRate, False)
 
 	@property
 	def RskMdlTp(self):
@@ -42,12 +42,12 @@ class BackTestingMethodology1(base_types._BaseFieldType):
 
 	@RskMdlTp.setter
 	def RskMdlTp(self, value):
-		self._RskMdlTp = value if type(value) != base_types.auto else self.make_default("RskMdlTp")
+		self._RskMdlTp = value if value is not None else base_types.UninitialisedField(self, 'RskMdlTp', ModelType1Choice, False)
 
 	@RskMdlTp.deleter
 	def RskMdlTp(self):
 		del self._RskMdlTp
-		self._RskMdlTp = None
+		self._RskMdlTp = base_types.UninitialisedField(self, 'RskMdlTp', ModelType1Choice, False)
 
 	@property
 	def VartnMrgnCleanInd(self):
@@ -55,12 +55,12 @@ class BackTestingMethodology1(base_types._BaseFieldType):
 
 	@VartnMrgnCleanInd.setter
 	def VartnMrgnCleanInd(self, value):
-		self._VartnMrgnCleanInd = value if type(value) != base_types.auto else self.make_default("VartnMrgnCleanInd")
+		self._VartnMrgnCleanInd = value if value is not None else base_types.UninitialisedField(self, 'VartnMrgnCleanInd', TrueFalseIndicator, False)
 
 	@VartnMrgnCleanInd.deleter
 	def VartnMrgnCleanInd(self):
 		del self._VartnMrgnCleanInd
-		self._VartnMrgnCleanInd = None
+		self._VartnMrgnCleanInd = base_types.UninitialisedField(self, 'VartnMrgnCleanInd', TrueFalseIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Desc', type=Max2000Text, min=0, max=1, mutex_group=None, array=False),

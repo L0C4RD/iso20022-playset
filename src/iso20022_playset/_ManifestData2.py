@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Number import Number
+from . import Max35Text
+from . import Number
 
 class ManifestData2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ManifestData2(base_types._BaseFieldType):
 
 	@DocTp.setter
 	def DocTp(self, value):
-		self._DocTp = value if type(value) != base_types.auto else self.make_default("DocTp")
+		self._DocTp = value if value is not None else base_types.UninitialisedField(self, 'DocTp', Max35Text, False)
 
 	@DocTp.deleter
 	def DocTp(self):
 		del self._DocTp
-		self._DocTp = None
+		self._DocTp = base_types.UninitialisedField(self, 'DocTp', Max35Text, False)
 
 	@property
 	def NbOfDocs(self):
@@ -27,12 +27,12 @@ class ManifestData2(base_types._BaseFieldType):
 
 	@NbOfDocs.setter
 	def NbOfDocs(self, value):
-		self._NbOfDocs = value if type(value) != base_types.auto else self.make_default("NbOfDocs")
+		self._NbOfDocs = value if value is not None else base_types.UninitialisedField(self, 'NbOfDocs', Number, False)
 
 	@NbOfDocs.deleter
 	def NbOfDocs(self):
 		del self._NbOfDocs
-		self._NbOfDocs = None
+		self._NbOfDocs = base_types.UninitialisedField(self, 'NbOfDocs', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DocTp', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

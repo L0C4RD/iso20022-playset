@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CAPEEncodingMode1Code import CAPEEncodingMode1Code
-from ._CAPEExchangeMode1Code import CAPEExchangeMode1Code
-from ._CryptographicKey19 import CryptographicKey19
-from ._Max35Text import Max35Text
-from ._NetworkParameters7 import NetworkParameters7
-from ._PhysicalInterfaceParameter1 import PhysicalInterfaceParameter1
-from ._TerminalManagementAction3Code import TerminalManagementAction3Code
+from . import CAPEEncodingMode1Code
+from . import CAPEExchangeMode1Code
+from . import CryptographicKey19
+from . import Max35Text
+from . import NetworkParameters7
+from . import PhysicalInterfaceParameter1
+from . import TerminalManagementAction3Code
 
 class HostCommunicationParameter8(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class HostCommunicationParameter8(base_types._BaseFieldType):
 
 	@ActnTp.setter
 	def ActnTp(self, value):
-		self._ActnTp = value if type(value) != base_types.auto else self.make_default("ActnTp")
+		self._ActnTp = value if value is not None else base_types.UninitialisedField(self, 'ActnTp', TerminalManagementAction3Code, False)
 
 	@ActnTp.deleter
 	def ActnTp(self):
 		del self._ActnTp
-		self._ActnTp = None
+		self._ActnTp = base_types.UninitialisedField(self, 'ActnTp', TerminalManagementAction3Code, False)
 
 	@property
 	def Adr(self):
@@ -32,12 +32,12 @@ class HostCommunicationParameter8(base_types._BaseFieldType):
 
 	@Adr.setter
 	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+		self._Adr = value if value is not None else base_types.UninitialisedField(self, 'Adr', NetworkParameters7, False)
 
 	@Adr.deleter
 	def Adr(self):
 		del self._Adr
-		self._Adr = None
+		self._Adr = base_types.UninitialisedField(self, 'Adr', NetworkParameters7, False)
 
 	@property
 	def HstId(self):
@@ -45,12 +45,12 @@ class HostCommunicationParameter8(base_types._BaseFieldType):
 
 	@HstId.setter
 	def HstId(self, value):
-		self._HstId = value if type(value) != base_types.auto else self.make_default("HstId")
+		self._HstId = value if value is not None else base_types.UninitialisedField(self, 'HstId', Max35Text, False)
 
 	@HstId.deleter
 	def HstId(self):
 		del self._HstId
-		self._HstId = None
+		self._HstId = base_types.UninitialisedField(self, 'HstId', Max35Text, False)
 
 	@property
 	def Key(self):
@@ -58,12 +58,12 @@ class HostCommunicationParameter8(base_types._BaseFieldType):
 
 	@Key.setter
 	def Key(self, value):
-		self._Key = value if type(value) != base_types.auto else self.make_default("Key")
+		self._Key = value if value is not None else base_types.UninitialisedField(self, 'Key', CryptographicKey19, True)
 
 	@Key.deleter
 	def Key(self):
 		del self._Key
-		self._Key = None
+		self._Key = base_types.UninitialisedField(self, 'Key', CryptographicKey19, True)
 
 	@property
 	def NcodgMd(self):
@@ -71,12 +71,12 @@ class HostCommunicationParameter8(base_types._BaseFieldType):
 
 	@NcodgMd.setter
 	def NcodgMd(self, value):
-		self._NcodgMd = value if type(value) != base_types.auto else self.make_default("NcodgMd")
+		self._NcodgMd = value if value is not None else base_types.UninitialisedField(self, 'NcodgMd', CAPEEncodingMode1Code, False)
 
 	@NcodgMd.deleter
 	def NcodgMd(self):
 		del self._NcodgMd
-		self._NcodgMd = None
+		self._NcodgMd = base_types.UninitialisedField(self, 'NcodgMd', CAPEEncodingMode1Code, False)
 
 	@property
 	def NtwkSvcPrvdr(self):
@@ -84,12 +84,12 @@ class HostCommunicationParameter8(base_types._BaseFieldType):
 
 	@NtwkSvcPrvdr.setter
 	def NtwkSvcPrvdr(self, value):
-		self._NtwkSvcPrvdr = value if type(value) != base_types.auto else self.make_default("NtwkSvcPrvdr")
+		self._NtwkSvcPrvdr = value if value is not None else base_types.UninitialisedField(self, 'NtwkSvcPrvdr', NetworkParameters7, False)
 
 	@NtwkSvcPrvdr.deleter
 	def NtwkSvcPrvdr(self):
 		del self._NtwkSvcPrvdr
-		self._NtwkSvcPrvdr = None
+		self._NtwkSvcPrvdr = base_types.UninitialisedField(self, 'NtwkSvcPrvdr', NetworkParameters7, False)
 
 	@property
 	def PhysIntrfc(self):
@@ -97,12 +97,12 @@ class HostCommunicationParameter8(base_types._BaseFieldType):
 
 	@PhysIntrfc.setter
 	def PhysIntrfc(self, value):
-		self._PhysIntrfc = value if type(value) != base_types.auto else self.make_default("PhysIntrfc")
+		self._PhysIntrfc = value if value is not None else base_types.UninitialisedField(self, 'PhysIntrfc', PhysicalInterfaceParameter1, False)
 
 	@PhysIntrfc.deleter
 	def PhysIntrfc(self):
 		del self._PhysIntrfc
-		self._PhysIntrfc = None
+		self._PhysIntrfc = base_types.UninitialisedField(self, 'PhysIntrfc', PhysicalInterfaceParameter1, False)
 
 	@property
 	def XchgMd(self):
@@ -110,12 +110,12 @@ class HostCommunicationParameter8(base_types._BaseFieldType):
 
 	@XchgMd.setter
 	def XchgMd(self, value):
-		self._XchgMd = value if type(value) != base_types.auto else self.make_default("XchgMd")
+		self._XchgMd = value if value is not None else base_types.UninitialisedField(self, 'XchgMd', CAPEExchangeMode1Code, False)
 
 	@XchgMd.deleter
 	def XchgMd(self):
 		del self._XchgMd
-		self._XchgMd = None
+		self._XchgMd = base_types.UninitialisedField(self, 'XchgMd', CAPEExchangeMode1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActnTp', type=TerminalManagementAction3Code, min=1, max=1, mutex_group=None, array=False),

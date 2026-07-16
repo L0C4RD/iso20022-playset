@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._AmountAndDirection20 import AmountAndDirection20
-from ._Collateral6 import Collateral6
-from ._MarginResult1Choice import MarginResult1Choice
+from . import ActiveCurrencyAndAmount
+from . import AmountAndDirection20
+from . import Collateral6
+from . import MarginResult1Choice
 
 class MarginCalculation1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class MarginCalculation1(base_types._BaseFieldType):
 
 	@CollOnDpst.setter
 	def CollOnDpst(self, value):
-		self._CollOnDpst = value if type(value) != base_types.auto else self.make_default("CollOnDpst")
+		self._CollOnDpst = value if value is not None else base_types.UninitialisedField(self, 'CollOnDpst', Collateral6, True)
 
 	@CollOnDpst.deleter
 	def CollOnDpst(self):
 		del self._CollOnDpst
-		self._CollOnDpst = None
+		self._CollOnDpst = base_types.UninitialisedField(self, 'CollOnDpst', Collateral6, True)
 
 	@property
 	def MinRqrmntDpst(self):
@@ -29,12 +29,12 @@ class MarginCalculation1(base_types._BaseFieldType):
 
 	@MinRqrmntDpst.setter
 	def MinRqrmntDpst(self, value):
-		self._MinRqrmntDpst = value if type(value) != base_types.auto else self.make_default("MinRqrmntDpst")
+		self._MinRqrmntDpst = value if value is not None else base_types.UninitialisedField(self, 'MinRqrmntDpst', ActiveCurrencyAndAmount, False)
 
 	@MinRqrmntDpst.deleter
 	def MinRqrmntDpst(self):
 		del self._MinRqrmntDpst
-		self._MinRqrmntDpst = None
+		self._MinRqrmntDpst = base_types.UninitialisedField(self, 'MinRqrmntDpst', ActiveCurrencyAndAmount, False)
 
 	@property
 	def MrgnRslt(self):
@@ -42,12 +42,12 @@ class MarginCalculation1(base_types._BaseFieldType):
 
 	@MrgnRslt.setter
 	def MrgnRslt(self, value):
-		self._MrgnRslt = value if type(value) != base_types.auto else self.make_default("MrgnRslt")
+		self._MrgnRslt = value if value is not None else base_types.UninitialisedField(self, 'MrgnRslt', MarginResult1Choice, False)
 
 	@MrgnRslt.deleter
 	def MrgnRslt(self):
 		del self._MrgnRslt
-		self._MrgnRslt = None
+		self._MrgnRslt = base_types.UninitialisedField(self, 'MrgnRslt', MarginResult1Choice, False)
 
 	@property
 	def TtlMrgnAmt(self):
@@ -55,12 +55,12 @@ class MarginCalculation1(base_types._BaseFieldType):
 
 	@TtlMrgnAmt.setter
 	def TtlMrgnAmt(self, value):
-		self._TtlMrgnAmt = value if type(value) != base_types.auto else self.make_default("TtlMrgnAmt")
+		self._TtlMrgnAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlMrgnAmt', AmountAndDirection20, False)
 
 	@TtlMrgnAmt.deleter
 	def TtlMrgnAmt(self):
 		del self._TtlMrgnAmt
-		self._TtlMrgnAmt = None
+		self._TtlMrgnAmt = base_types.UninitialisedField(self, 'TtlMrgnAmt', AmountAndDirection20, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollOnDpst', type=Collateral6, min=0, max=None, mutex_group=None, array=True),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DemandWithdrawalNotificationV01 import DemandWithdrawalNotificationV01
+from . import DemandWithdrawalNotificationV01
 
 class TSRV_017_001_01():
 
@@ -18,12 +18,12 @@ class TSRV_017_001_01():
 
 		@DmndWdrwlNtfctn.setter
 		def DmndWdrwlNtfctn(self, value):
-			self._DmndWdrwlNtfctn = value if type(value) != base_types.auto else self.make_default("DmndWdrwlNtfctn")
+			self._DmndWdrwlNtfctn = value if value is not None else base_types.UninitialisedField(self, 'DmndWdrwlNtfctn', DemandWithdrawalNotificationV01, False)
 
 		@DmndWdrwlNtfctn.deleter
 		def DmndWdrwlNtfctn(self):
 			del self._DmndWdrwlNtfctn
-			self._DmndWdrwlNtfctn = None
+			self._DmndWdrwlNtfctn = base_types.UninitialisedField(self, 'DmndWdrwlNtfctn', DemandWithdrawalNotificationV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='DmndWdrwlNtfctn', type=DemandWithdrawalNotificationV01, min=1, max=1, mutex_group=None, array=False),

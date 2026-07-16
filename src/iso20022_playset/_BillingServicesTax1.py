@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection34 import AmountAndDirection34
-from ._DecimalNumber import DecimalNumber
-from ._Max35Text import Max35Text
-from ._Max40Text import Max40Text
+from . import AmountAndDirection34
+from . import DecimalNumber
+from . import Max35Text
+from . import Max40Text
 
 class BillingServicesTax1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class BillingServicesTax1(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', Max40Text, False)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', Max40Text, False)
 
 	@property
 	def HstAmt(self):
@@ -29,12 +29,12 @@ class BillingServicesTax1(base_types._BaseFieldType):
 
 	@HstAmt.setter
 	def HstAmt(self, value):
-		self._HstAmt = value if type(value) != base_types.auto else self.make_default("HstAmt")
+		self._HstAmt = value if value is not None else base_types.UninitialisedField(self, 'HstAmt', AmountAndDirection34, False)
 
 	@HstAmt.deleter
 	def HstAmt(self):
 		del self._HstAmt
-		self._HstAmt = None
+		self._HstAmt = base_types.UninitialisedField(self, 'HstAmt', AmountAndDirection34, False)
 
 	@property
 	def Nb(self):
@@ -42,12 +42,12 @@ class BillingServicesTax1(base_types._BaseFieldType):
 
 	@Nb.setter
 	def Nb(self, value):
-		self._Nb = value if type(value) != base_types.auto else self.make_default("Nb")
+		self._Nb = value if value is not None else base_types.UninitialisedField(self, 'Nb', Max35Text, False)
 
 	@Nb.deleter
 	def Nb(self):
 		del self._Nb
-		self._Nb = None
+		self._Nb = base_types.UninitialisedField(self, 'Nb', Max35Text, False)
 
 	@property
 	def PricgAmt(self):
@@ -55,12 +55,12 @@ class BillingServicesTax1(base_types._BaseFieldType):
 
 	@PricgAmt.setter
 	def PricgAmt(self, value):
-		self._PricgAmt = value if type(value) != base_types.auto else self.make_default("PricgAmt")
+		self._PricgAmt = value if value is not None else base_types.UninitialisedField(self, 'PricgAmt', AmountAndDirection34, False)
 
 	@PricgAmt.deleter
 	def PricgAmt(self):
 		del self._PricgAmt
-		self._PricgAmt = None
+		self._PricgAmt = base_types.UninitialisedField(self, 'PricgAmt', AmountAndDirection34, False)
 
 	@property
 	def Rate(self):
@@ -68,12 +68,12 @@ class BillingServicesTax1(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+		self._Rate = value if value is not None else base_types.UninitialisedField(self, 'Rate', DecimalNumber, False)
 
 	@Rate.deleter
 	def Rate(self):
 		del self._Rate
-		self._Rate = None
+		self._Rate = base_types.UninitialisedField(self, 'Rate', DecimalNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Desc', type=Max40Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max100Text import Max100Text
-from ._Max200Text import Max200Text
-from ._Max35Text import Max35Text
+from . import Max100Text
+from . import Max200Text
+from . import Max35Text
 
 class LocalAddress1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class LocalAddress1(base_types._BaseFieldType):
 
 	@AdrLine1.setter
 	def AdrLine1(self, value):
-		self._AdrLine1 = value if type(value) != base_types.auto else self.make_default("AdrLine1")
+		self._AdrLine1 = value if value is not None else base_types.UninitialisedField(self, 'AdrLine1', Max200Text, False)
 
 	@AdrLine1.deleter
 	def AdrLine1(self):
 		del self._AdrLine1
-		self._AdrLine1 = None
+		self._AdrLine1 = base_types.UninitialisedField(self, 'AdrLine1', Max200Text, False)
 
 	@property
 	def AdrLine2(self):
@@ -28,12 +28,12 @@ class LocalAddress1(base_types._BaseFieldType):
 
 	@AdrLine2.setter
 	def AdrLine2(self, value):
-		self._AdrLine2 = value if type(value) != base_types.auto else self.make_default("AdrLine2")
+		self._AdrLine2 = value if value is not None else base_types.UninitialisedField(self, 'AdrLine2', Max200Text, False)
 
 	@AdrLine2.deleter
 	def AdrLine2(self):
 		del self._AdrLine2
-		self._AdrLine2 = None
+		self._AdrLine2 = base_types.UninitialisedField(self, 'AdrLine2', Max200Text, False)
 
 	@property
 	def BldgNb(self):
@@ -41,12 +41,12 @@ class LocalAddress1(base_types._BaseFieldType):
 
 	@BldgNb.setter
 	def BldgNb(self, value):
-		self._BldgNb = value if type(value) != base_types.auto else self.make_default("BldgNb")
+		self._BldgNb = value if value is not None else base_types.UninitialisedField(self, 'BldgNb', Max35Text, False)
 
 	@BldgNb.deleter
 	def BldgNb(self):
 		del self._BldgNb
-		self._BldgNb = None
+		self._BldgNb = base_types.UninitialisedField(self, 'BldgNb', Max35Text, False)
 
 	@property
 	def CtrySubDvsnMjrNm(self):
@@ -54,12 +54,12 @@ class LocalAddress1(base_types._BaseFieldType):
 
 	@CtrySubDvsnMjrNm.setter
 	def CtrySubDvsnMjrNm(self, value):
-		self._CtrySubDvsnMjrNm = value if type(value) != base_types.auto else self.make_default("CtrySubDvsnMjrNm")
+		self._CtrySubDvsnMjrNm = value if value is not None else base_types.UninitialisedField(self, 'CtrySubDvsnMjrNm', Max100Text, False)
 
 	@CtrySubDvsnMjrNm.deleter
 	def CtrySubDvsnMjrNm(self):
 		del self._CtrySubDvsnMjrNm
-		self._CtrySubDvsnMjrNm = None
+		self._CtrySubDvsnMjrNm = base_types.UninitialisedField(self, 'CtrySubDvsnMjrNm', Max100Text, False)
 
 	@property
 	def CtrySubDvsnMnrNm(self):
@@ -67,12 +67,12 @@ class LocalAddress1(base_types._BaseFieldType):
 
 	@CtrySubDvsnMnrNm.setter
 	def CtrySubDvsnMnrNm(self, value):
-		self._CtrySubDvsnMnrNm = value if type(value) != base_types.auto else self.make_default("CtrySubDvsnMnrNm")
+		self._CtrySubDvsnMnrNm = value if value is not None else base_types.UninitialisedField(self, 'CtrySubDvsnMnrNm', Max100Text, False)
 
 	@CtrySubDvsnMnrNm.deleter
 	def CtrySubDvsnMnrNm(self):
 		del self._CtrySubDvsnMnrNm
-		self._CtrySubDvsnMnrNm = None
+		self._CtrySubDvsnMnrNm = base_types.UninitialisedField(self, 'CtrySubDvsnMnrNm', Max100Text, False)
 
 	@property
 	def PstlCd(self):
@@ -80,12 +80,12 @@ class LocalAddress1(base_types._BaseFieldType):
 
 	@PstlCd.setter
 	def PstlCd(self, value):
-		self._PstlCd = value if type(value) != base_types.auto else self.make_default("PstlCd")
+		self._PstlCd = value if value is not None else base_types.UninitialisedField(self, 'PstlCd', Max35Text, False)
 
 	@PstlCd.deleter
 	def PstlCd(self):
 		del self._PstlCd
-		self._PstlCd = None
+		self._PstlCd = base_types.UninitialisedField(self, 'PstlCd', Max35Text, False)
 
 	@property
 	def StrtNm(self):
@@ -93,12 +93,12 @@ class LocalAddress1(base_types._BaseFieldType):
 
 	@StrtNm.setter
 	def StrtNm(self, value):
-		self._StrtNm = value if type(value) != base_types.auto else self.make_default("StrtNm")
+		self._StrtNm = value if value is not None else base_types.UninitialisedField(self, 'StrtNm', Max200Text, False)
 
 	@StrtNm.deleter
 	def StrtNm(self):
 		del self._StrtNm
-		self._StrtNm = None
+		self._StrtNm = base_types.UninitialisedField(self, 'StrtNm', Max200Text, False)
 
 	@property
 	def TwnNm(self):
@@ -106,12 +106,12 @@ class LocalAddress1(base_types._BaseFieldType):
 
 	@TwnNm.setter
 	def TwnNm(self, value):
-		self._TwnNm = value if type(value) != base_types.auto else self.make_default("TwnNm")
+		self._TwnNm = value if value is not None else base_types.UninitialisedField(self, 'TwnNm', Max100Text, False)
 
 	@TwnNm.deleter
 	def TwnNm(self):
 		del self._TwnNm
-		self._TwnNm = None
+		self._TwnNm = base_types.UninitialisedField(self, 'TwnNm', Max100Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AdrLine1', type=Max200Text, min=0, max=1, mutex_group=None, array=False),

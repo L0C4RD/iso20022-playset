@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._BondDerivative2 import BondDerivative2
-from ._FloatingInterestRate8 import FloatingInterestRate8
-from ._ISODate import ISODate
-from ._InflationIndex1Choice import InflationIndex1Choice
-from ._InterestRateDerivative2Choice import InterestRateDerivative2Choice
+from . import ActiveCurrencyCode
+from . import BondDerivative2
+from . import FloatingInterestRate8
+from . import ISODate
+from . import InflationIndex1Choice
+from . import InterestRateDerivative2Choice
 
 class InterestRateDerivative5(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class InterestRateDerivative5(base_types._BaseFieldType):
 
 	@InfltnIndx.setter
 	def InfltnIndx(self, value):
-		self._InfltnIndx = value if type(value) != base_types.auto else self.make_default("InfltnIndx")
+		self._InfltnIndx = value if value is not None else base_types.UninitialisedField(self, 'InfltnIndx', InflationIndex1Choice, False)
 
 	@InfltnIndx.deleter
 	def InfltnIndx(self):
 		del self._InfltnIndx
-		self._InfltnIndx = None
+		self._InfltnIndx = base_types.UninitialisedField(self, 'InfltnIndx', InflationIndex1Choice, False)
 
 	@property
 	def IntrstRateRef(self):
@@ -31,12 +31,12 @@ class InterestRateDerivative5(base_types._BaseFieldType):
 
 	@IntrstRateRef.setter
 	def IntrstRateRef(self, value):
-		self._IntrstRateRef = value if type(value) != base_types.auto else self.make_default("IntrstRateRef")
+		self._IntrstRateRef = value if value is not None else base_types.UninitialisedField(self, 'IntrstRateRef', FloatingInterestRate8, False)
 
 	@IntrstRateRef.deleter
 	def IntrstRateRef(self):
 		del self._IntrstRateRef
-		self._IntrstRateRef = None
+		self._IntrstRateRef = base_types.UninitialisedField(self, 'IntrstRateRef', FloatingInterestRate8, False)
 
 	@property
 	def SwptnNtnlCcy(self):
@@ -44,12 +44,12 @@ class InterestRateDerivative5(base_types._BaseFieldType):
 
 	@SwptnNtnlCcy.setter
 	def SwptnNtnlCcy(self, value):
-		self._SwptnNtnlCcy = value if type(value) != base_types.auto else self.make_default("SwptnNtnlCcy")
+		self._SwptnNtnlCcy = value if value is not None else base_types.UninitialisedField(self, 'SwptnNtnlCcy', ActiveCurrencyCode, False)
 
 	@SwptnNtnlCcy.deleter
 	def SwptnNtnlCcy(self):
 		del self._SwptnNtnlCcy
-		self._SwptnNtnlCcy = None
+		self._SwptnNtnlCcy = base_types.UninitialisedField(self, 'SwptnNtnlCcy', ActiveCurrencyCode, False)
 
 	@property
 	def UndrlygBd(self):
@@ -57,12 +57,12 @@ class InterestRateDerivative5(base_types._BaseFieldType):
 
 	@UndrlygBd.setter
 	def UndrlygBd(self, value):
-		self._UndrlygBd = value if type(value) != base_types.auto else self.make_default("UndrlygBd")
+		self._UndrlygBd = value if value is not None else base_types.UninitialisedField(self, 'UndrlygBd', BondDerivative2, False)
 
 	@UndrlygBd.deleter
 	def UndrlygBd(self):
 		del self._UndrlygBd
-		self._UndrlygBd = None
+		self._UndrlygBd = base_types.UninitialisedField(self, 'UndrlygBd', BondDerivative2, False)
 
 	@property
 	def UndrlygSwpMtrtyDt(self):
@@ -70,12 +70,12 @@ class InterestRateDerivative5(base_types._BaseFieldType):
 
 	@UndrlygSwpMtrtyDt.setter
 	def UndrlygSwpMtrtyDt(self, value):
-		self._UndrlygSwpMtrtyDt = value if type(value) != base_types.auto else self.make_default("UndrlygSwpMtrtyDt")
+		self._UndrlygSwpMtrtyDt = value if value is not None else base_types.UninitialisedField(self, 'UndrlygSwpMtrtyDt', ISODate, False)
 
 	@UndrlygSwpMtrtyDt.deleter
 	def UndrlygSwpMtrtyDt(self):
 		del self._UndrlygSwpMtrtyDt
-		self._UndrlygSwpMtrtyDt = None
+		self._UndrlygSwpMtrtyDt = base_types.UninitialisedField(self, 'UndrlygSwpMtrtyDt', ISODate, False)
 
 	@property
 	def UndrlygTp(self):
@@ -83,12 +83,12 @@ class InterestRateDerivative5(base_types._BaseFieldType):
 
 	@UndrlygTp.setter
 	def UndrlygTp(self, value):
-		self._UndrlygTp = value if type(value) != base_types.auto else self.make_default("UndrlygTp")
+		self._UndrlygTp = value if value is not None else base_types.UninitialisedField(self, 'UndrlygTp', InterestRateDerivative2Choice, False)
 
 	@UndrlygTp.deleter
 	def UndrlygTp(self):
 		del self._UndrlygTp
-		self._UndrlygTp = None
+		self._UndrlygTp = base_types.UninitialisedField(self, 'UndrlygTp', InterestRateDerivative2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InfltnIndx', type=InflationIndex1Choice, min=0, max=1, mutex_group=None, array=False),

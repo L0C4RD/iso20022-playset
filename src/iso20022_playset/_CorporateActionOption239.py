@@ -2,18 +2,18 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._CashAccountIdentification9Choice import CashAccountIdentification9Choice
-from ._CorporateActionOption41Choice import CorporateActionOption41Choice
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
-from ._OptionFeaturesFormat25Choice import OptionFeaturesFormat25Choice
-from ._OptionNumber1Choice import OptionNumber1Choice
-from ._PartyIdentification127Choice import PartyIdentification127Choice
-from ._Quantity51Choice import Quantity51Choice
-from ._SafekeepingPlaceFormat42Choice import SafekeepingPlaceFormat42Choice
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._SignedQuantityFormat11 import SignedQuantityFormat11
+from . import ActiveCurrencyAndAmount
+from . import CashAccountIdentification9Choice
+from . import CorporateActionOption41Choice
+from . import Max140Text
+from . import Max35Text
+from . import OptionFeaturesFormat25Choice
+from . import OptionNumber1Choice
+from . import PartyIdentification127Choice
+from . import Quantity51Choice
+from . import SafekeepingPlaceFormat42Choice
+from . import SecurityIdentification19
+from . import SignedQuantityFormat11
 
 class CorporateActionOption239(base_types._BaseFieldType):
 
@@ -24,12 +24,12 @@ class CorporateActionOption239(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification127Choice, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification127Choice, False)
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -37,12 +37,12 @@ class CorporateActionOption239(base_types._BaseFieldType):
 
 	@BlckChainAdrOrWllt.setter
 	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
+		self._BlckChainAdrOrWllt = value if value is not None else base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', Max140Text, False)
 
 	@BlckChainAdrOrWllt.deleter
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+		self._BlckChainAdrOrWllt = base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', Max140Text, False)
 
 	@property
 	def CshAcct(self):
@@ -50,12 +50,12 @@ class CorporateActionOption239(base_types._BaseFieldType):
 
 	@CshAcct.setter
 	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != base_types.auto else self.make_default("CshAcct")
+		self._CshAcct = value if value is not None else base_types.UninitialisedField(self, 'CshAcct', CashAccountIdentification9Choice, False)
 
 	@CshAcct.deleter
 	def CshAcct(self):
 		del self._CshAcct
-		self._CshAcct = None
+		self._CshAcct = base_types.UninitialisedField(self, 'CshAcct', CashAccountIdentification9Choice, False)
 
 	@property
 	def FinInstrmId(self):
@@ -63,12 +63,12 @@ class CorporateActionOption239(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
 		del self._FinInstrmId
-		self._FinInstrmId = None
+		self._FinInstrmId = base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@property
 	def InstdBal(self):
@@ -76,12 +76,12 @@ class CorporateActionOption239(base_types._BaseFieldType):
 
 	@InstdBal.setter
 	def InstdBal(self, value):
-		self._InstdBal = value if type(value) != base_types.auto else self.make_default("InstdBal")
+		self._InstdBal = value if value is not None else base_types.UninitialisedField(self, 'InstdBal', SignedQuantityFormat11, False)
 
 	@InstdBal.deleter
 	def InstdBal(self):
 		del self._InstdBal
-		self._InstdBal = None
+		self._InstdBal = base_types.UninitialisedField(self, 'InstdBal', SignedQuantityFormat11, False)
 
 	@property
 	def OptnFeatrs(self):
@@ -89,12 +89,12 @@ class CorporateActionOption239(base_types._BaseFieldType):
 
 	@OptnFeatrs.setter
 	def OptnFeatrs(self, value):
-		self._OptnFeatrs = value if type(value) != base_types.auto else self.make_default("OptnFeatrs")
+		self._OptnFeatrs = value if value is not None else base_types.UninitialisedField(self, 'OptnFeatrs', OptionFeaturesFormat25Choice, False)
 
 	@OptnFeatrs.deleter
 	def OptnFeatrs(self):
 		del self._OptnFeatrs
-		self._OptnFeatrs = None
+		self._OptnFeatrs = base_types.UninitialisedField(self, 'OptnFeatrs', OptionFeaturesFormat25Choice, False)
 
 	@property
 	def OptnNb(self):
@@ -102,12 +102,12 @@ class CorporateActionOption239(base_types._BaseFieldType):
 
 	@OptnNb.setter
 	def OptnNb(self, value):
-		self._OptnNb = value if type(value) != base_types.auto else self.make_default("OptnNb")
+		self._OptnNb = value if value is not None else base_types.UninitialisedField(self, 'OptnNb', OptionNumber1Choice, False)
 
 	@OptnNb.deleter
 	def OptnNb(self):
 		del self._OptnNb
-		self._OptnNb = None
+		self._OptnNb = base_types.UninitialisedField(self, 'OptnNb', OptionNumber1Choice, False)
 
 	@property
 	def OptnTp(self):
@@ -115,12 +115,12 @@ class CorporateActionOption239(base_types._BaseFieldType):
 
 	@OptnTp.setter
 	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != base_types.auto else self.make_default("OptnTp")
+		self._OptnTp = value if value is not None else base_types.UninitialisedField(self, 'OptnTp', CorporateActionOption41Choice, False)
 
 	@OptnTp.deleter
 	def OptnTp(self):
 		del self._OptnTp
-		self._OptnTp = None
+		self._OptnTp = base_types.UninitialisedField(self, 'OptnTp', CorporateActionOption41Choice, False)
 
 	@property
 	def PrtctBal(self):
@@ -128,12 +128,12 @@ class CorporateActionOption239(base_types._BaseFieldType):
 
 	@PrtctBal.setter
 	def PrtctBal(self, value):
-		self._PrtctBal = value if type(value) != base_types.auto else self.make_default("PrtctBal")
+		self._PrtctBal = value if value is not None else base_types.UninitialisedField(self, 'PrtctBal', SignedQuantityFormat11, False)
 
 	@PrtctBal.deleter
 	def PrtctBal(self):
 		del self._PrtctBal
-		self._PrtctBal = None
+		self._PrtctBal = base_types.UninitialisedField(self, 'PrtctBal', SignedQuantityFormat11, False)
 
 	@property
 	def SfkpgAcct(self):
@@ -141,12 +141,12 @@ class CorporateActionOption239(base_types._BaseFieldType):
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcct', Max35Text, False)
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
-		self._SfkpgAcct = None
+		self._SfkpgAcct = base_types.UninitialisedField(self, 'SfkpgAcct', Max35Text, False)
 
 	@property
 	def SfkpgPlc(self):
@@ -154,12 +154,12 @@ class CorporateActionOption239(base_types._BaseFieldType):
 
 	@SfkpgPlc.setter
 	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
+		self._SfkpgPlc = value if value is not None else base_types.UninitialisedField(self, 'SfkpgPlc', SafekeepingPlaceFormat42Choice, False)
 
 	@SfkpgPlc.deleter
 	def SfkpgPlc(self):
 		del self._SfkpgPlc
-		self._SfkpgPlc = None
+		self._SfkpgPlc = base_types.UninitialisedField(self, 'SfkpgPlc', SafekeepingPlaceFormat42Choice, False)
 
 	@property
 	def StsCshAmt(self):
@@ -167,12 +167,12 @@ class CorporateActionOption239(base_types._BaseFieldType):
 
 	@StsCshAmt.setter
 	def StsCshAmt(self, value):
-		self._StsCshAmt = value if type(value) != base_types.auto else self.make_default("StsCshAmt")
+		self._StsCshAmt = value if value is not None else base_types.UninitialisedField(self, 'StsCshAmt', ActiveCurrencyAndAmount, False)
 
 	@StsCshAmt.deleter
 	def StsCshAmt(self):
 		del self._StsCshAmt
-		self._StsCshAmt = None
+		self._StsCshAmt = base_types.UninitialisedField(self, 'StsCshAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def StsQty(self):
@@ -180,12 +180,12 @@ class CorporateActionOption239(base_types._BaseFieldType):
 
 	@StsQty.setter
 	def StsQty(self, value):
-		self._StsQty = value if type(value) != base_types.auto else self.make_default("StsQty")
+		self._StsQty = value if value is not None else base_types.UninitialisedField(self, 'StsQty', Quantity51Choice, False)
 
 	@StsQty.deleter
 	def StsQty(self):
 		del self._StsQty
-		self._StsQty = None
+		self._StsQty = base_types.UninitialisedField(self, 'StsQty', Quantity51Choice, False)
 
 	@property
 	def TtlElgblBal(self):
@@ -193,12 +193,12 @@ class CorporateActionOption239(base_types._BaseFieldType):
 
 	@TtlElgblBal.setter
 	def TtlElgblBal(self, value):
-		self._TtlElgblBal = value if type(value) != base_types.auto else self.make_default("TtlElgblBal")
+		self._TtlElgblBal = value if value is not None else base_types.UninitialisedField(self, 'TtlElgblBal', SignedQuantityFormat11, False)
 
 	@TtlElgblBal.deleter
 	def TtlElgblBal(self):
 		del self._TtlElgblBal
-		self._TtlElgblBal = None
+		self._TtlElgblBal = base_types.UninitialisedField(self, 'TtlElgblBal', SignedQuantityFormat11, False)
 
 	@property
 	def UinstdBal(self):
@@ -206,12 +206,12 @@ class CorporateActionOption239(base_types._BaseFieldType):
 
 	@UinstdBal.setter
 	def UinstdBal(self, value):
-		self._UinstdBal = value if type(value) != base_types.auto else self.make_default("UinstdBal")
+		self._UinstdBal = value if value is not None else base_types.UninitialisedField(self, 'UinstdBal', SignedQuantityFormat11, False)
 
 	@UinstdBal.deleter
 	def UinstdBal(self):
 		del self._UinstdBal
-		self._UinstdBal = None
+		self._UinstdBal = base_types.UninitialisedField(self, 'UinstdBal', SignedQuantityFormat11, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification127Choice, min=0, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ChequeCancellationReason1Choice import ChequeCancellationReason1Choice
-from ._ChequePartyRole1Code import ChequePartyRole1Code
-from ._Max140Text import Max140Text
+from . import ChequeCancellationReason1Choice
+from . import ChequePartyRole1Code
+from . import Max140Text
 
 class ChequeCancellationReason1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ChequeCancellationReason1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max140Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max140Text, False)
 
 	@property
 	def Orgtr(self):
@@ -28,12 +28,12 @@ class ChequeCancellationReason1(base_types._BaseFieldType):
 
 	@Orgtr.setter
 	def Orgtr(self, value):
-		self._Orgtr = value if type(value) != base_types.auto else self.make_default("Orgtr")
+		self._Orgtr = value if value is not None else base_types.UninitialisedField(self, 'Orgtr', ChequePartyRole1Code, False)
 
 	@Orgtr.deleter
 	def Orgtr(self):
 		del self._Orgtr
-		self._Orgtr = None
+		self._Orgtr = base_types.UninitialisedField(self, 'Orgtr', ChequePartyRole1Code, False)
 
 	@property
 	def Rsn(self):
@@ -41,12 +41,12 @@ class ChequeCancellationReason1(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', ChequeCancellationReason1Choice, False)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', ChequeCancellationReason1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),

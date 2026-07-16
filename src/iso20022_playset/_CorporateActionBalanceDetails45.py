@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BalanceFormat14Choice import BalanceFormat14Choice
-from ._BalanceFormat16Choice import BalanceFormat16Choice
-from ._TotalEligibleBalanceFormat11 import TotalEligibleBalanceFormat11
+from . import BalanceFormat14Choice
+from . import BalanceFormat16Choice
+from . import TotalEligibleBalanceFormat11
 
 class CorporateActionBalanceDetails45(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CorporateActionBalanceDetails45(base_types._BaseFieldType):
 
 	@AfctdBal.setter
 	def AfctdBal(self, value):
-		self._AfctdBal = value if type(value) != base_types.auto else self.make_default("AfctdBal")
+		self._AfctdBal = value if value is not None else base_types.UninitialisedField(self, 'AfctdBal', BalanceFormat14Choice, False)
 
 	@AfctdBal.deleter
 	def AfctdBal(self):
 		del self._AfctdBal
-		self._AfctdBal = None
+		self._AfctdBal = base_types.UninitialisedField(self, 'AfctdBal', BalanceFormat14Choice, False)
 
 	@property
 	def BlckdBal(self):
@@ -28,12 +28,12 @@ class CorporateActionBalanceDetails45(base_types._BaseFieldType):
 
 	@BlckdBal.setter
 	def BlckdBal(self, value):
-		self._BlckdBal = value if type(value) != base_types.auto else self.make_default("BlckdBal")
+		self._BlckdBal = value if value is not None else base_types.UninitialisedField(self, 'BlckdBal', BalanceFormat14Choice, False)
 
 	@BlckdBal.deleter
 	def BlckdBal(self):
 		del self._BlckdBal
-		self._BlckdBal = None
+		self._BlckdBal = base_types.UninitialisedField(self, 'BlckdBal', BalanceFormat14Choice, False)
 
 	@property
 	def BrrwdBal(self):
@@ -41,12 +41,12 @@ class CorporateActionBalanceDetails45(base_types._BaseFieldType):
 
 	@BrrwdBal.setter
 	def BrrwdBal(self, value):
-		self._BrrwdBal = value if type(value) != base_types.auto else self.make_default("BrrwdBal")
+		self._BrrwdBal = value if value is not None else base_types.UninitialisedField(self, 'BrrwdBal', BalanceFormat14Choice, False)
 
 	@BrrwdBal.deleter
 	def BrrwdBal(self):
 		del self._BrrwdBal
-		self._BrrwdBal = None
+		self._BrrwdBal = base_types.UninitialisedField(self, 'BrrwdBal', BalanceFormat14Choice, False)
 
 	@property
 	def CollInBal(self):
@@ -54,12 +54,12 @@ class CorporateActionBalanceDetails45(base_types._BaseFieldType):
 
 	@CollInBal.setter
 	def CollInBal(self, value):
-		self._CollInBal = value if type(value) != base_types.auto else self.make_default("CollInBal")
+		self._CollInBal = value if value is not None else base_types.UninitialisedField(self, 'CollInBal', BalanceFormat14Choice, False)
 
 	@CollInBal.deleter
 	def CollInBal(self):
 		del self._CollInBal
-		self._CollInBal = None
+		self._CollInBal = base_types.UninitialisedField(self, 'CollInBal', BalanceFormat14Choice, False)
 
 	@property
 	def CollOutBal(self):
@@ -67,12 +67,12 @@ class CorporateActionBalanceDetails45(base_types._BaseFieldType):
 
 	@CollOutBal.setter
 	def CollOutBal(self, value):
-		self._CollOutBal = value if type(value) != base_types.auto else self.make_default("CollOutBal")
+		self._CollOutBal = value if value is not None else base_types.UninitialisedField(self, 'CollOutBal', BalanceFormat14Choice, False)
 
 	@CollOutBal.deleter
 	def CollOutBal(self):
 		del self._CollOutBal
-		self._CollOutBal = None
+		self._CollOutBal = base_types.UninitialisedField(self, 'CollOutBal', BalanceFormat14Choice, False)
 
 	@property
 	def ConfdBal(self):
@@ -80,12 +80,12 @@ class CorporateActionBalanceDetails45(base_types._BaseFieldType):
 
 	@ConfdBal.setter
 	def ConfdBal(self, value):
-		self._ConfdBal = value if type(value) != base_types.auto else self.make_default("ConfdBal")
+		self._ConfdBal = value if value is not None else base_types.UninitialisedField(self, 'ConfdBal', BalanceFormat14Choice, False)
 
 	@ConfdBal.deleter
 	def ConfdBal(self):
 		del self._ConfdBal
-		self._ConfdBal = None
+		self._ConfdBal = base_types.UninitialisedField(self, 'ConfdBal', BalanceFormat14Choice, False)
 
 	@property
 	def InTrnsShipmntBal(self):
@@ -93,12 +93,12 @@ class CorporateActionBalanceDetails45(base_types._BaseFieldType):
 
 	@InTrnsShipmntBal.setter
 	def InTrnsShipmntBal(self, value):
-		self._InTrnsShipmntBal = value if type(value) != base_types.auto else self.make_default("InTrnsShipmntBal")
+		self._InTrnsShipmntBal = value if value is not None else base_types.UninitialisedField(self, 'InTrnsShipmntBal', BalanceFormat14Choice, False)
 
 	@InTrnsShipmntBal.deleter
 	def InTrnsShipmntBal(self):
 		del self._InTrnsShipmntBal
-		self._InTrnsShipmntBal = None
+		self._InTrnsShipmntBal = base_types.UninitialisedField(self, 'InTrnsShipmntBal', BalanceFormat14Choice, False)
 
 	@property
 	def OnLnBal(self):
@@ -106,12 +106,12 @@ class CorporateActionBalanceDetails45(base_types._BaseFieldType):
 
 	@OnLnBal.setter
 	def OnLnBal(self, value):
-		self._OnLnBal = value if type(value) != base_types.auto else self.make_default("OnLnBal")
+		self._OnLnBal = value if value is not None else base_types.UninitialisedField(self, 'OnLnBal', BalanceFormat14Choice, False)
 
 	@OnLnBal.deleter
 	def OnLnBal(self):
 		del self._OnLnBal
-		self._OnLnBal = None
+		self._OnLnBal = base_types.UninitialisedField(self, 'OnLnBal', BalanceFormat14Choice, False)
 
 	@property
 	def OutForRegnBal(self):
@@ -119,12 +119,12 @@ class CorporateActionBalanceDetails45(base_types._BaseFieldType):
 
 	@OutForRegnBal.setter
 	def OutForRegnBal(self, value):
-		self._OutForRegnBal = value if type(value) != base_types.auto else self.make_default("OutForRegnBal")
+		self._OutForRegnBal = value if value is not None else base_types.UninitialisedField(self, 'OutForRegnBal', BalanceFormat14Choice, False)
 
 	@OutForRegnBal.deleter
 	def OutForRegnBal(self):
 		del self._OutForRegnBal
-		self._OutForRegnBal = None
+		self._OutForRegnBal = base_types.UninitialisedField(self, 'OutForRegnBal', BalanceFormat14Choice, False)
 
 	@property
 	def PdgDlvryBal(self):
@@ -132,12 +132,12 @@ class CorporateActionBalanceDetails45(base_types._BaseFieldType):
 
 	@PdgDlvryBal.setter
 	def PdgDlvryBal(self, value):
-		self._PdgDlvryBal = value if type(value) != base_types.auto else self.make_default("PdgDlvryBal")
+		self._PdgDlvryBal = value if value is not None else base_types.UninitialisedField(self, 'PdgDlvryBal', BalanceFormat16Choice, True)
 
 	@PdgDlvryBal.deleter
 	def PdgDlvryBal(self):
 		del self._PdgDlvryBal
-		self._PdgDlvryBal = None
+		self._PdgDlvryBal = base_types.UninitialisedField(self, 'PdgDlvryBal', BalanceFormat16Choice, True)
 
 	@property
 	def PdgRctBal(self):
@@ -145,12 +145,12 @@ class CorporateActionBalanceDetails45(base_types._BaseFieldType):
 
 	@PdgRctBal.setter
 	def PdgRctBal(self, value):
-		self._PdgRctBal = value if type(value) != base_types.auto else self.make_default("PdgRctBal")
+		self._PdgRctBal = value if value is not None else base_types.UninitialisedField(self, 'PdgRctBal', BalanceFormat16Choice, True)
 
 	@PdgRctBal.deleter
 	def PdgRctBal(self):
 		del self._PdgRctBal
-		self._PdgRctBal = None
+		self._PdgRctBal = base_types.UninitialisedField(self, 'PdgRctBal', BalanceFormat16Choice, True)
 
 	@property
 	def RegdBal(self):
@@ -158,12 +158,12 @@ class CorporateActionBalanceDetails45(base_types._BaseFieldType):
 
 	@RegdBal.setter
 	def RegdBal(self, value):
-		self._RegdBal = value if type(value) != base_types.auto else self.make_default("RegdBal")
+		self._RegdBal = value if value is not None else base_types.UninitialisedField(self, 'RegdBal', BalanceFormat14Choice, False)
 
 	@RegdBal.deleter
 	def RegdBal(self):
 		del self._RegdBal
-		self._RegdBal = None
+		self._RegdBal = base_types.UninitialisedField(self, 'RegdBal', BalanceFormat14Choice, False)
 
 	@property
 	def StrtPosBal(self):
@@ -171,12 +171,12 @@ class CorporateActionBalanceDetails45(base_types._BaseFieldType):
 
 	@StrtPosBal.setter
 	def StrtPosBal(self, value):
-		self._StrtPosBal = value if type(value) != base_types.auto else self.make_default("StrtPosBal")
+		self._StrtPosBal = value if value is not None else base_types.UninitialisedField(self, 'StrtPosBal', BalanceFormat14Choice, False)
 
 	@StrtPosBal.deleter
 	def StrtPosBal(self):
 		del self._StrtPosBal
-		self._StrtPosBal = None
+		self._StrtPosBal = base_types.UninitialisedField(self, 'StrtPosBal', BalanceFormat14Choice, False)
 
 	@property
 	def SttlmPosBal(self):
@@ -184,12 +184,12 @@ class CorporateActionBalanceDetails45(base_types._BaseFieldType):
 
 	@SttlmPosBal.setter
 	def SttlmPosBal(self, value):
-		self._SttlmPosBal = value if type(value) != base_types.auto else self.make_default("SttlmPosBal")
+		self._SttlmPosBal = value if value is not None else base_types.UninitialisedField(self, 'SttlmPosBal', BalanceFormat16Choice, True)
 
 	@SttlmPosBal.deleter
 	def SttlmPosBal(self):
 		del self._SttlmPosBal
-		self._SttlmPosBal = None
+		self._SttlmPosBal = base_types.UninitialisedField(self, 'SttlmPosBal', BalanceFormat16Choice, True)
 
 	@property
 	def TradDtPosBal(self):
@@ -197,12 +197,12 @@ class CorporateActionBalanceDetails45(base_types._BaseFieldType):
 
 	@TradDtPosBal.setter
 	def TradDtPosBal(self, value):
-		self._TradDtPosBal = value if type(value) != base_types.auto else self.make_default("TradDtPosBal")
+		self._TradDtPosBal = value if value is not None else base_types.UninitialisedField(self, 'TradDtPosBal', BalanceFormat14Choice, False)
 
 	@TradDtPosBal.deleter
 	def TradDtPosBal(self):
 		del self._TradDtPosBal
-		self._TradDtPosBal = None
+		self._TradDtPosBal = base_types.UninitialisedField(self, 'TradDtPosBal', BalanceFormat14Choice, False)
 
 	@property
 	def TtlElgblBal(self):
@@ -210,12 +210,12 @@ class CorporateActionBalanceDetails45(base_types._BaseFieldType):
 
 	@TtlElgblBal.setter
 	def TtlElgblBal(self, value):
-		self._TtlElgblBal = value if type(value) != base_types.auto else self.make_default("TtlElgblBal")
+		self._TtlElgblBal = value if value is not None else base_types.UninitialisedField(self, 'TtlElgblBal', TotalEligibleBalanceFormat11, False)
 
 	@TtlElgblBal.deleter
 	def TtlElgblBal(self):
 		del self._TtlElgblBal
-		self._TtlElgblBal = None
+		self._TtlElgblBal = base_types.UninitialisedField(self, 'TtlElgblBal', TotalEligibleBalanceFormat11, False)
 
 	@property
 	def UafctdBal(self):
@@ -223,12 +223,12 @@ class CorporateActionBalanceDetails45(base_types._BaseFieldType):
 
 	@UafctdBal.setter
 	def UafctdBal(self, value):
-		self._UafctdBal = value if type(value) != base_types.auto else self.make_default("UafctdBal")
+		self._UafctdBal = value if value is not None else base_types.UninitialisedField(self, 'UafctdBal', BalanceFormat14Choice, False)
 
 	@UafctdBal.deleter
 	def UafctdBal(self):
 		del self._UafctdBal
-		self._UafctdBal = None
+		self._UafctdBal = base_types.UninitialisedField(self, 'UafctdBal', BalanceFormat14Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AfctdBal', type=BalanceFormat14Choice, min=0, max=1, mutex_group=None, array=False),

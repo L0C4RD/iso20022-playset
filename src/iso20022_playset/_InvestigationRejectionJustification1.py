@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InvestigationRejection1Code import InvestigationRejection1Code
+from . import InvestigationRejection1Code
 
 class InvestigationRejectionJustification1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class InvestigationRejectionJustification1(base_types._BaseFieldType):
 
 	@RjctnRsn.setter
 	def RjctnRsn(self, value):
-		self._RjctnRsn = value if type(value) != base_types.auto else self.make_default("RjctnRsn")
+		self._RjctnRsn = value if value is not None else base_types.UninitialisedField(self, 'RjctnRsn', InvestigationRejection1Code, False)
 
 	@RjctnRsn.deleter
 	def RjctnRsn(self):
 		del self._RjctnRsn
-		self._RjctnRsn = None
+		self._RjctnRsn = base_types.UninitialisedField(self, 'RjctnRsn', InvestigationRejection1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RjctnRsn', type=InvestigationRejection1Code, min=1, max=1, mutex_group=None, array=False),

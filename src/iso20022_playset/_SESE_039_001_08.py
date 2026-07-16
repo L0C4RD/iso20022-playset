@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesSettlementTransactionModificationRequestStatusAdviceV08 import SecuritiesSettlementTransactionModificationRequestStatusAdviceV08
+from . import SecuritiesSettlementTransactionModificationRequestStatusAdviceV08
 
 class SESE_039_001_08():
 
@@ -18,12 +18,12 @@ class SESE_039_001_08():
 
 		@SctiesSttlmTxModReqStsAdvc.setter
 		def SctiesSttlmTxModReqStsAdvc(self, value):
-			self._SctiesSttlmTxModReqStsAdvc = value if type(value) != base_types.auto else self.make_default("SctiesSttlmTxModReqStsAdvc")
+			self._SctiesSttlmTxModReqStsAdvc = value if value is not None else base_types.UninitialisedField(self, 'SctiesSttlmTxModReqStsAdvc', SecuritiesSettlementTransactionModificationRequestStatusAdviceV08, False)
 
 		@SctiesSttlmTxModReqStsAdvc.deleter
 		def SctiesSttlmTxModReqStsAdvc(self):
 			del self._SctiesSttlmTxModReqStsAdvc
-			self._SctiesSttlmTxModReqStsAdvc = None
+			self._SctiesSttlmTxModReqStsAdvc = base_types.UninitialisedField(self, 'SctiesSttlmTxModReqStsAdvc', SecuritiesSettlementTransactionModificationRequestStatusAdviceV08, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesSttlmTxModReqStsAdvc', type=SecuritiesSettlementTransactionModificationRequestStatusAdviceV08, min=1, max=1, mutex_group=None, array=False),

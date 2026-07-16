@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BalanceFormat11Choice import BalanceFormat11Choice
-from ._CorporateActionEventDeadlines3 import CorporateActionEventDeadlines3
-from ._CorporateActionOption30Choice import CorporateActionOption30Choice
-from ._DefaultProcessingOrStandingInstruction2Choice import DefaultProcessingOrStandingInstruction2Choice
-from ._Exact3NumericText import Exact3NumericText
-from ._OptionInstructionDetails13 import OptionInstructionDetails13
-from ._SignedQuantityFormat10 import SignedQuantityFormat10
+from . import BalanceFormat11Choice
+from . import CorporateActionEventDeadlines3
+from . import CorporateActionOption30Choice
+from . import DefaultProcessingOrStandingInstruction2Choice
+from . import Exact3NumericText
+from . import OptionInstructionDetails13
+from . import SignedQuantityFormat10
 
 class InstructedCorporateActionOption23(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class InstructedCorporateActionOption23(base_types._BaseFieldType):
 
 	@DfltActn.setter
 	def DfltActn(self, value):
-		self._DfltActn = value if type(value) != base_types.auto else self.make_default("DfltActn")
+		self._DfltActn = value if value is not None else base_types.UninitialisedField(self, 'DfltActn', DefaultProcessingOrStandingInstruction2Choice, False)
 
 	@DfltActn.deleter
 	def DfltActn(self):
 		del self._DfltActn
-		self._DfltActn = None
+		self._DfltActn = base_types.UninitialisedField(self, 'DfltActn', DefaultProcessingOrStandingInstruction2Choice, False)
 
 	@property
 	def EvtDdlns(self):
@@ -32,12 +32,12 @@ class InstructedCorporateActionOption23(base_types._BaseFieldType):
 
 	@EvtDdlns.setter
 	def EvtDdlns(self, value):
-		self._EvtDdlns = value if type(value) != base_types.auto else self.make_default("EvtDdlns")
+		self._EvtDdlns = value if value is not None else base_types.UninitialisedField(self, 'EvtDdlns', CorporateActionEventDeadlines3, False)
 
 	@EvtDdlns.deleter
 	def EvtDdlns(self):
 		del self._EvtDdlns
-		self._EvtDdlns = None
+		self._EvtDdlns = base_types.UninitialisedField(self, 'EvtDdlns', CorporateActionEventDeadlines3, False)
 
 	@property
 	def InstdBal(self):
@@ -45,12 +45,12 @@ class InstructedCorporateActionOption23(base_types._BaseFieldType):
 
 	@InstdBal.setter
 	def InstdBal(self, value):
-		self._InstdBal = value if type(value) != base_types.auto else self.make_default("InstdBal")
+		self._InstdBal = value if value is not None else base_types.UninitialisedField(self, 'InstdBal', BalanceFormat11Choice, False)
 
 	@InstdBal.deleter
 	def InstdBal(self):
 		del self._InstdBal
-		self._InstdBal = None
+		self._InstdBal = base_types.UninitialisedField(self, 'InstdBal', BalanceFormat11Choice, False)
 
 	@property
 	def OptnAccptdInstdBal(self):
@@ -58,12 +58,12 @@ class InstructedCorporateActionOption23(base_types._BaseFieldType):
 
 	@OptnAccptdInstdBal.setter
 	def OptnAccptdInstdBal(self, value):
-		self._OptnAccptdInstdBal = value if type(value) != base_types.auto else self.make_default("OptnAccptdInstdBal")
+		self._OptnAccptdInstdBal = value if value is not None else base_types.UninitialisedField(self, 'OptnAccptdInstdBal', SignedQuantityFormat10, False)
 
 	@OptnAccptdInstdBal.deleter
 	def OptnAccptdInstdBal(self):
 		del self._OptnAccptdInstdBal
-		self._OptnAccptdInstdBal = None
+		self._OptnAccptdInstdBal = base_types.UninitialisedField(self, 'OptnAccptdInstdBal', SignedQuantityFormat10, False)
 
 	@property
 	def OptnCancInstrBal(self):
@@ -71,12 +71,12 @@ class InstructedCorporateActionOption23(base_types._BaseFieldType):
 
 	@OptnCancInstrBal.setter
 	def OptnCancInstrBal(self, value):
-		self._OptnCancInstrBal = value if type(value) != base_types.auto else self.make_default("OptnCancInstrBal")
+		self._OptnCancInstrBal = value if value is not None else base_types.UninitialisedField(self, 'OptnCancInstrBal', SignedQuantityFormat10, False)
 
 	@OptnCancInstrBal.deleter
 	def OptnCancInstrBal(self):
 		del self._OptnCancInstrBal
-		self._OptnCancInstrBal = None
+		self._OptnCancInstrBal = base_types.UninitialisedField(self, 'OptnCancInstrBal', SignedQuantityFormat10, False)
 
 	@property
 	def OptnInstrDtls(self):
@@ -84,12 +84,12 @@ class InstructedCorporateActionOption23(base_types._BaseFieldType):
 
 	@OptnInstrDtls.setter
 	def OptnInstrDtls(self, value):
-		self._OptnInstrDtls = value if type(value) != base_types.auto else self.make_default("OptnInstrDtls")
+		self._OptnInstrDtls = value if value is not None else base_types.UninitialisedField(self, 'OptnInstrDtls', OptionInstructionDetails13, True)
 
 	@OptnInstrDtls.deleter
 	def OptnInstrDtls(self):
 		del self._OptnInstrDtls
-		self._OptnInstrDtls = None
+		self._OptnInstrDtls = base_types.UninitialisedField(self, 'OptnInstrDtls', OptionInstructionDetails13, True)
 
 	@property
 	def OptnNb(self):
@@ -97,12 +97,12 @@ class InstructedCorporateActionOption23(base_types._BaseFieldType):
 
 	@OptnNb.setter
 	def OptnNb(self, value):
-		self._OptnNb = value if type(value) != base_types.auto else self.make_default("OptnNb")
+		self._OptnNb = value if value is not None else base_types.UninitialisedField(self, 'OptnNb', Exact3NumericText, False)
 
 	@OptnNb.deleter
 	def OptnNb(self):
 		del self._OptnNb
-		self._OptnNb = None
+		self._OptnNb = base_types.UninitialisedField(self, 'OptnNb', Exact3NumericText, False)
 
 	@property
 	def OptnPdgInstrBal(self):
@@ -110,12 +110,12 @@ class InstructedCorporateActionOption23(base_types._BaseFieldType):
 
 	@OptnPdgInstrBal.setter
 	def OptnPdgInstrBal(self, value):
-		self._OptnPdgInstrBal = value if type(value) != base_types.auto else self.make_default("OptnPdgInstrBal")
+		self._OptnPdgInstrBal = value if value is not None else base_types.UninitialisedField(self, 'OptnPdgInstrBal', SignedQuantityFormat10, False)
 
 	@OptnPdgInstrBal.deleter
 	def OptnPdgInstrBal(self):
 		del self._OptnPdgInstrBal
-		self._OptnPdgInstrBal = None
+		self._OptnPdgInstrBal = base_types.UninitialisedField(self, 'OptnPdgInstrBal', SignedQuantityFormat10, False)
 
 	@property
 	def OptnPrtctInstrBal(self):
@@ -123,12 +123,12 @@ class InstructedCorporateActionOption23(base_types._BaseFieldType):
 
 	@OptnPrtctInstrBal.setter
 	def OptnPrtctInstrBal(self, value):
-		self._OptnPrtctInstrBal = value if type(value) != base_types.auto else self.make_default("OptnPrtctInstrBal")
+		self._OptnPrtctInstrBal = value if value is not None else base_types.UninitialisedField(self, 'OptnPrtctInstrBal', SignedQuantityFormat10, False)
 
 	@OptnPrtctInstrBal.deleter
 	def OptnPrtctInstrBal(self):
 		del self._OptnPrtctInstrBal
-		self._OptnPrtctInstrBal = None
+		self._OptnPrtctInstrBal = base_types.UninitialisedField(self, 'OptnPrtctInstrBal', SignedQuantityFormat10, False)
 
 	@property
 	def OptnRjctdInstrBal(self):
@@ -136,12 +136,12 @@ class InstructedCorporateActionOption23(base_types._BaseFieldType):
 
 	@OptnRjctdInstrBal.setter
 	def OptnRjctdInstrBal(self, value):
-		self._OptnRjctdInstrBal = value if type(value) != base_types.auto else self.make_default("OptnRjctdInstrBal")
+		self._OptnRjctdInstrBal = value if value is not None else base_types.UninitialisedField(self, 'OptnRjctdInstrBal', SignedQuantityFormat10, False)
 
 	@OptnRjctdInstrBal.deleter
 	def OptnRjctdInstrBal(self):
 		del self._OptnRjctdInstrBal
-		self._OptnRjctdInstrBal = None
+		self._OptnRjctdInstrBal = base_types.UninitialisedField(self, 'OptnRjctdInstrBal', SignedQuantityFormat10, False)
 
 	@property
 	def OptnRtrdInstdBal(self):
@@ -149,12 +149,12 @@ class InstructedCorporateActionOption23(base_types._BaseFieldType):
 
 	@OptnRtrdInstdBal.setter
 	def OptnRtrdInstdBal(self, value):
-		self._OptnRtrdInstdBal = value if type(value) != base_types.auto else self.make_default("OptnRtrdInstdBal")
+		self._OptnRtrdInstdBal = value if value is not None else base_types.UninitialisedField(self, 'OptnRtrdInstdBal', SignedQuantityFormat10, False)
 
 	@OptnRtrdInstdBal.deleter
 	def OptnRtrdInstdBal(self):
 		del self._OptnRtrdInstdBal
-		self._OptnRtrdInstdBal = None
+		self._OptnRtrdInstdBal = base_types.UninitialisedField(self, 'OptnRtrdInstdBal', SignedQuantityFormat10, False)
 
 	@property
 	def OptnTp(self):
@@ -162,12 +162,12 @@ class InstructedCorporateActionOption23(base_types._BaseFieldType):
 
 	@OptnTp.setter
 	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != base_types.auto else self.make_default("OptnTp")
+		self._OptnTp = value if value is not None else base_types.UninitialisedField(self, 'OptnTp', CorporateActionOption30Choice, False)
 
 	@OptnTp.deleter
 	def OptnTp(self):
 		del self._OptnTp
-		self._OptnTp = None
+		self._OptnTp = base_types.UninitialisedField(self, 'OptnTp', CorporateActionOption30Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DfltActn', type=DefaultProcessingOrStandingInstruction2Choice, min=0, max=1, mutex_group=None, array=False),

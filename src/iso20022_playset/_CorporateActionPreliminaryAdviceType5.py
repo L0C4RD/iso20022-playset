@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionMovementPreliminaryAdviceFunction1Code import CorporateActionMovementPreliminaryAdviceFunction1Code
-from ._CorporateActionPreliminaryAdviceType1Code import CorporateActionPreliminaryAdviceType1Code
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from . import CorporateActionMovementPreliminaryAdviceFunction1Code
+from . import CorporateActionPreliminaryAdviceType1Code
+from . import RestrictedFINXMax16Text
 
 class CorporateActionPreliminaryAdviceType5(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CorporateActionPreliminaryAdviceType5(base_types._BaseFieldType):
 
 	@Fctn.setter
 	def Fctn(self, value):
-		self._Fctn = value if type(value) != base_types.auto else self.make_default("Fctn")
+		self._Fctn = value if value is not None else base_types.UninitialisedField(self, 'Fctn', CorporateActionMovementPreliminaryAdviceFunction1Code, False)
 
 	@Fctn.deleter
 	def Fctn(self):
 		del self._Fctn
-		self._Fctn = None
+		self._Fctn = base_types.UninitialisedField(self, 'Fctn', CorporateActionMovementPreliminaryAdviceFunction1Code, False)
 
 	@property
 	def MvmntPrlimryAdvcId(self):
@@ -28,12 +28,12 @@ class CorporateActionPreliminaryAdviceType5(base_types._BaseFieldType):
 
 	@MvmntPrlimryAdvcId.setter
 	def MvmntPrlimryAdvcId(self, value):
-		self._MvmntPrlimryAdvcId = value if type(value) != base_types.auto else self.make_default("MvmntPrlimryAdvcId")
+		self._MvmntPrlimryAdvcId = value if value is not None else base_types.UninitialisedField(self, 'MvmntPrlimryAdvcId', RestrictedFINXMax16Text, False)
 
 	@MvmntPrlimryAdvcId.deleter
 	def MvmntPrlimryAdvcId(self):
 		del self._MvmntPrlimryAdvcId
-		self._MvmntPrlimryAdvcId = None
+		self._MvmntPrlimryAdvcId = base_types.UninitialisedField(self, 'MvmntPrlimryAdvcId', RestrictedFINXMax16Text, False)
 
 	@property
 	def Tp(self):
@@ -41,12 +41,12 @@ class CorporateActionPreliminaryAdviceType5(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', CorporateActionPreliminaryAdviceType1Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', CorporateActionPreliminaryAdviceType1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Fctn', type=CorporateActionMovementPreliminaryAdviceFunction1Code, min=1, max=1, mutex_group=None, array=False),

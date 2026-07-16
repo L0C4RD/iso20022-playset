@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AttendanceAdmissionConditions2 import AttendanceAdmissionConditions2
-from ._DateFormat58Choice import DateFormat58Choice
-from ._Max350Text import Max350Text
+from . import AttendanceAdmissionConditions2
+from . import DateFormat58Choice
+from . import Max350Text
 
 class Attendance2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Attendance2(base_types._BaseFieldType):
 
 	@AdmssnConds.setter
 	def AdmssnConds(self, value):
-		self._AdmssnConds = value if type(value) != base_types.auto else self.make_default("AdmssnConds")
+		self._AdmssnConds = value if value is not None else base_types.UninitialisedField(self, 'AdmssnConds', AttendanceAdmissionConditions2, True)
 
 	@AdmssnConds.deleter
 	def AdmssnConds(self):
 		del self._AdmssnConds
-		self._AdmssnConds = None
+		self._AdmssnConds = base_types.UninitialisedField(self, 'AdmssnConds', AttendanceAdmissionConditions2, True)
 
 	@property
 	def ConfDdln(self):
@@ -28,12 +28,12 @@ class Attendance2(base_types._BaseFieldType):
 
 	@ConfDdln.setter
 	def ConfDdln(self, value):
-		self._ConfDdln = value if type(value) != base_types.auto else self.make_default("ConfDdln")
+		self._ConfDdln = value if value is not None else base_types.UninitialisedField(self, 'ConfDdln', DateFormat58Choice, False)
 
 	@ConfDdln.deleter
 	def ConfDdln(self):
 		del self._ConfDdln
-		self._ConfDdln = None
+		self._ConfDdln = base_types.UninitialisedField(self, 'ConfDdln', DateFormat58Choice, False)
 
 	@property
 	def ConfInf(self):
@@ -41,12 +41,12 @@ class Attendance2(base_types._BaseFieldType):
 
 	@ConfInf.setter
 	def ConfInf(self, value):
-		self._ConfInf = value if type(value) != base_types.auto else self.make_default("ConfInf")
+		self._ConfInf = value if value is not None else base_types.UninitialisedField(self, 'ConfInf', Max350Text, False)
 
 	@ConfInf.deleter
 	def ConfInf(self):
 		del self._ConfInf
-		self._ConfInf = None
+		self._ConfInf = base_types.UninitialisedField(self, 'ConfInf', Max350Text, False)
 
 	@property
 	def ConfMktDdln(self):
@@ -54,12 +54,12 @@ class Attendance2(base_types._BaseFieldType):
 
 	@ConfMktDdln.setter
 	def ConfMktDdln(self, value):
-		self._ConfMktDdln = value if type(value) != base_types.auto else self.make_default("ConfMktDdln")
+		self._ConfMktDdln = value if value is not None else base_types.UninitialisedField(self, 'ConfMktDdln', DateFormat58Choice, False)
 
 	@ConfMktDdln.deleter
 	def ConfMktDdln(self):
 		del self._ConfMktDdln
-		self._ConfMktDdln = None
+		self._ConfMktDdln = base_types.UninitialisedField(self, 'ConfMktDdln', DateFormat58Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AdmssnConds', type=AttendanceAdmissionConditions2, min=0, max=7, mutex_group=None, array=True),

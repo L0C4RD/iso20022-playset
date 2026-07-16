@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max256Text import Max256Text
-from ._RecommendedActionCode1 import RecommendedActionCode1
+from . import Max256Text
+from . import RecommendedActionCode1
 
 class RecommendationAction2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class RecommendationAction2(base_types._BaseFieldType):
 
 	@Actn.setter
 	def Actn(self, value):
-		self._Actn = value if type(value) != base_types.auto else self.make_default("Actn")
+		self._Actn = value if value is not None else base_types.UninitialisedField(self, 'Actn', RecommendedActionCode1, False)
 
 	@Actn.deleter
 	def Actn(self):
 		del self._Actn
-		self._Actn = None
+		self._Actn = base_types.UninitialisedField(self, 'Actn', RecommendedActionCode1, False)
 
 	@property
 	def Dtls(self):
@@ -27,12 +27,12 @@ class RecommendationAction2(base_types._BaseFieldType):
 
 	@Dtls.setter
 	def Dtls(self, value):
-		self._Dtls = value if type(value) != base_types.auto else self.make_default("Dtls")
+		self._Dtls = value if value is not None else base_types.UninitialisedField(self, 'Dtls', Max256Text, False)
 
 	@Dtls.deleter
 	def Dtls(self):
 		del self._Dtls
-		self._Dtls = None
+		self._Dtls = base_types.UninitialisedField(self, 'Dtls', Max256Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Actn', type=RecommendedActionCode1, min=0, max=1, mutex_group=None, array=False),

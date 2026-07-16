@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DetailedTransactionStatistics26 import DetailedTransactionStatistics26
-from ._ReportPeriodActivity1Code import ReportPeriodActivity1Code
+from . import DetailedTransactionStatistics26
+from . import ReportPeriodActivity1Code
 
 class DetailedMissingMarginInformationStatistics4Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DetailedMissingMarginInformationStatistics4Choice(base_types._BaseFieldTyp
 
 	@DataSetActn.setter
 	def DataSetActn(self, value):
-		self._DataSetActn = value if type(value) != base_types.auto else self.make_default("DataSetActn")
+		self._DataSetActn = value if value is not None else base_types.UninitialisedField(self, 'DataSetActn', ReportPeriodActivity1Code, False)
 
 	@DataSetActn.deleter
 	def DataSetActn(self):
 		del self._DataSetActn
-		self._DataSetActn = None
+		self._DataSetActn = base_types.UninitialisedField(self, 'DataSetActn', ReportPeriodActivity1Code, False)
 
 	@property
 	def Rpt(self):
@@ -27,12 +27,12 @@ class DetailedMissingMarginInformationStatistics4Choice(base_types._BaseFieldTyp
 
 	@Rpt.setter
 	def Rpt(self, value):
-		self._Rpt = value if type(value) != base_types.auto else self.make_default("Rpt")
+		self._Rpt = value if value is not None else base_types.UninitialisedField(self, 'Rpt', DetailedTransactionStatistics26, False)
 
 	@Rpt.deleter
 	def Rpt(self):
 		del self._Rpt
-		self._Rpt = None
+		self._Rpt = base_types.UninitialisedField(self, 'Rpt', DetailedTransactionStatistics26, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DataSetActn', type=ReportPeriodActivity1Code, min=0, max=1, mutex_group=1, array=False),

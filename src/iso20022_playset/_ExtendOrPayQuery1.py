@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BankInstructions1 import BankInstructions1
-from ._Contacts3 import Contacts3
-from ._Demand2 import Demand2
-from ._Document9 import Document9
-from ._ISODate import ISODate
-from ._Max2000Text import Max2000Text
-from ._Undertaking9 import Undertaking9
+from . import BankInstructions1
+from . import Contacts3
+from . import Demand2
+from . import Document9
+from . import ISODate
+from . import Max2000Text
+from . import Undertaking9
 
 class ExtendOrPayQuery1(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class ExtendOrPayQuery1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max2000Text, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max2000Text, True)
 
 	@property
 	def BkCtct(self):
@@ -32,12 +32,12 @@ class ExtendOrPayQuery1(base_types._BaseFieldType):
 
 	@BkCtct.setter
 	def BkCtct(self, value):
-		self._BkCtct = value if type(value) != base_types.auto else self.make_default("BkCtct")
+		self._BkCtct = value if value is not None else base_types.UninitialisedField(self, 'BkCtct', Contacts3, True)
 
 	@BkCtct.deleter
 	def BkCtct(self):
 		del self._BkCtct
-		self._BkCtct = None
+		self._BkCtct = base_types.UninitialisedField(self, 'BkCtct', Contacts3, True)
 
 	@property
 	def BkInstrs(self):
@@ -45,12 +45,12 @@ class ExtendOrPayQuery1(base_types._BaseFieldType):
 
 	@BkInstrs.setter
 	def BkInstrs(self, value):
-		self._BkInstrs = value if type(value) != base_types.auto else self.make_default("BkInstrs")
+		self._BkInstrs = value if value is not None else base_types.UninitialisedField(self, 'BkInstrs', BankInstructions1, False)
 
 	@BkInstrs.deleter
 	def BkInstrs(self):
 		del self._BkInstrs
-		self._BkInstrs = None
+		self._BkInstrs = base_types.UninitialisedField(self, 'BkInstrs', BankInstructions1, False)
 
 	@property
 	def DmndDtls(self):
@@ -58,12 +58,12 @@ class ExtendOrPayQuery1(base_types._BaseFieldType):
 
 	@DmndDtls.setter
 	def DmndDtls(self, value):
-		self._DmndDtls = value if type(value) != base_types.auto else self.make_default("DmndDtls")
+		self._DmndDtls = value if value is not None else base_types.UninitialisedField(self, 'DmndDtls', Demand2, False)
 
 	@DmndDtls.deleter
 	def DmndDtls(self):
 		del self._DmndDtls
-		self._DmndDtls = None
+		self._DmndDtls = base_types.UninitialisedField(self, 'DmndDtls', Demand2, False)
 
 	@property
 	def NclsdFile(self):
@@ -71,12 +71,12 @@ class ExtendOrPayQuery1(base_types._BaseFieldType):
 
 	@NclsdFile.setter
 	def NclsdFile(self, value):
-		self._NclsdFile = value if type(value) != base_types.auto else self.make_default("NclsdFile")
+		self._NclsdFile = value if value is not None else base_types.UninitialisedField(self, 'NclsdFile', Document9, True)
 
 	@NclsdFile.deleter
 	def NclsdFile(self):
 		del self._NclsdFile
-		self._NclsdFile = None
+		self._NclsdFile = base_types.UninitialisedField(self, 'NclsdFile', Document9, True)
 
 	@property
 	def ReqdXpryDt(self):
@@ -84,12 +84,12 @@ class ExtendOrPayQuery1(base_types._BaseFieldType):
 
 	@ReqdXpryDt.setter
 	def ReqdXpryDt(self, value):
-		self._ReqdXpryDt = value if type(value) != base_types.auto else self.make_default("ReqdXpryDt")
+		self._ReqdXpryDt = value if value is not None else base_types.UninitialisedField(self, 'ReqdXpryDt', ISODate, False)
 
 	@ReqdXpryDt.deleter
 	def ReqdXpryDt(self):
 		del self._ReqdXpryDt
-		self._ReqdXpryDt = None
+		self._ReqdXpryDt = base_types.UninitialisedField(self, 'ReqdXpryDt', ISODate, False)
 
 	@property
 	def UdrtkgId(self):
@@ -97,12 +97,12 @@ class ExtendOrPayQuery1(base_types._BaseFieldType):
 
 	@UdrtkgId.setter
 	def UdrtkgId(self, value):
-		self._UdrtkgId = value if type(value) != base_types.auto else self.make_default("UdrtkgId")
+		self._UdrtkgId = value if value is not None else base_types.UninitialisedField(self, 'UdrtkgId', Undertaking9, False)
 
 	@UdrtkgId.deleter
 	def UdrtkgId(self):
 		del self._UdrtkgId
-		self._UdrtkgId = None
+		self._UdrtkgId = base_types.UninitialisedField(self, 'UdrtkgId', Undertaking9, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification36 import GenericIdentification36
+from . import GenericIdentification36
 
 class OtherAccountStatus1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class OtherAccountStatus1(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', GenericIdentification36, False)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', GenericIdentification36, False)
 
 	@property
 	def Sts(self):
@@ -26,12 +26,12 @@ class OtherAccountStatus1(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', GenericIdentification36, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', GenericIdentification36, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Rsn', type=GenericIdentification36, min=0, max=1, mutex_group=None, array=False),

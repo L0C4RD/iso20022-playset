@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ProcessingStatus71Choice import ProcessingStatus71Choice
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._SecuritiesModificationTransaction2 import SecuritiesModificationTransaction2
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
+from . import ProcessingStatus71Choice
+from . import SecuritiesAccount19
+from . import SecuritiesModificationTransaction2
+from . import SystemPartyIdentification8
 
 class SecuritiesModification2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class SecuritiesModification2(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', SystemPartyIdentification8, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', SystemPartyIdentification8, False)
 
 	@property
 	def Mod(self):
@@ -29,12 +29,12 @@ class SecuritiesModification2(base_types._BaseFieldType):
 
 	@Mod.setter
 	def Mod(self, value):
-		self._Mod = value if type(value) != base_types.auto else self.make_default("Mod")
+		self._Mod = value if value is not None else base_types.UninitialisedField(self, 'Mod', SecuritiesModificationTransaction2, True)
 
 	@Mod.deleter
 	def Mod(self):
 		del self._Mod
-		self._Mod = None
+		self._Mod = base_types.UninitialisedField(self, 'Mod', SecuritiesModificationTransaction2, True)
 
 	@property
 	def PrcgSts(self):
@@ -42,12 +42,12 @@ class SecuritiesModification2(base_types._BaseFieldType):
 
 	@PrcgSts.setter
 	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != base_types.auto else self.make_default("PrcgSts")
+		self._PrcgSts = value if value is not None else base_types.UninitialisedField(self, 'PrcgSts', ProcessingStatus71Choice, False)
 
 	@PrcgSts.deleter
 	def PrcgSts(self):
 		del self._PrcgSts
-		self._PrcgSts = None
+		self._PrcgSts = base_types.UninitialisedField(self, 'PrcgSts', ProcessingStatus71Choice, False)
 
 	@property
 	def SfkpgAcct(self):
@@ -55,12 +55,12 @@ class SecuritiesModification2(base_types._BaseFieldType):
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
-		self._SfkpgAcct = None
+		self._SfkpgAcct = base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),

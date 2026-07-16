@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._AggregatedIndependentAmount1 import AggregatedIndependentAmount1
-from ._CollateralBalance1Choice import CollateralBalance1Choice
-from ._ExposureConventionType1Code import ExposureConventionType1Code
-from ._MarginTerms1Choice import MarginTerms1Choice
+from . import ActiveCurrencyAndAmount
+from . import AggregatedIndependentAmount1
+from . import CollateralBalance1Choice
+from . import ExposureConventionType1Code
+from . import MarginTerms1Choice
 
 class MarginCall1(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class MarginCall1(base_types._BaseFieldType):
 
 	@CollBal.setter
 	def CollBal(self, value):
-		self._CollBal = value if type(value) != base_types.auto else self.make_default("CollBal")
+		self._CollBal = value if value is not None else base_types.UninitialisedField(self, 'CollBal', CollateralBalance1Choice, False)
 
 	@CollBal.deleter
 	def CollBal(self):
 		del self._CollBal
-		self._CollBal = None
+		self._CollBal = base_types.UninitialisedField(self, 'CollBal', CollateralBalance1Choice, False)
 
 	@property
 	def IndpdntAmtPtyA(self):
@@ -30,12 +30,12 @@ class MarginCall1(base_types._BaseFieldType):
 
 	@IndpdntAmtPtyA.setter
 	def IndpdntAmtPtyA(self, value):
-		self._IndpdntAmtPtyA = value if type(value) != base_types.auto else self.make_default("IndpdntAmtPtyA")
+		self._IndpdntAmtPtyA = value if value is not None else base_types.UninitialisedField(self, 'IndpdntAmtPtyA', AggregatedIndependentAmount1, False)
 
 	@IndpdntAmtPtyA.deleter
 	def IndpdntAmtPtyA(self):
 		del self._IndpdntAmtPtyA
-		self._IndpdntAmtPtyA = None
+		self._IndpdntAmtPtyA = base_types.UninitialisedField(self, 'IndpdntAmtPtyA', AggregatedIndependentAmount1, False)
 
 	@property
 	def IndpdntAmtPtyB(self):
@@ -43,12 +43,12 @@ class MarginCall1(base_types._BaseFieldType):
 
 	@IndpdntAmtPtyB.setter
 	def IndpdntAmtPtyB(self, value):
-		self._IndpdntAmtPtyB = value if type(value) != base_types.auto else self.make_default("IndpdntAmtPtyB")
+		self._IndpdntAmtPtyB = value if value is not None else base_types.UninitialisedField(self, 'IndpdntAmtPtyB', AggregatedIndependentAmount1, False)
 
 	@IndpdntAmtPtyB.deleter
 	def IndpdntAmtPtyB(self):
 		del self._IndpdntAmtPtyB
-		self._IndpdntAmtPtyB = None
+		self._IndpdntAmtPtyB = base_types.UninitialisedField(self, 'IndpdntAmtPtyB', AggregatedIndependentAmount1, False)
 
 	@property
 	def MrgnTerms(self):
@@ -56,12 +56,12 @@ class MarginCall1(base_types._BaseFieldType):
 
 	@MrgnTerms.setter
 	def MrgnTerms(self, value):
-		self._MrgnTerms = value if type(value) != base_types.auto else self.make_default("MrgnTerms")
+		self._MrgnTerms = value if value is not None else base_types.UninitialisedField(self, 'MrgnTerms', MarginTerms1Choice, False)
 
 	@MrgnTerms.deleter
 	def MrgnTerms(self):
 		del self._MrgnTerms
-		self._MrgnTerms = None
+		self._MrgnTerms = base_types.UninitialisedField(self, 'MrgnTerms', MarginTerms1Choice, False)
 
 	@property
 	def XpsdAmtPtyA(self):
@@ -69,12 +69,12 @@ class MarginCall1(base_types._BaseFieldType):
 
 	@XpsdAmtPtyA.setter
 	def XpsdAmtPtyA(self, value):
-		self._XpsdAmtPtyA = value if type(value) != base_types.auto else self.make_default("XpsdAmtPtyA")
+		self._XpsdAmtPtyA = value if value is not None else base_types.UninitialisedField(self, 'XpsdAmtPtyA', ActiveCurrencyAndAmount, False)
 
 	@XpsdAmtPtyA.deleter
 	def XpsdAmtPtyA(self):
 		del self._XpsdAmtPtyA
-		self._XpsdAmtPtyA = None
+		self._XpsdAmtPtyA = base_types.UninitialisedField(self, 'XpsdAmtPtyA', ActiveCurrencyAndAmount, False)
 
 	@property
 	def XpsdAmtPtyB(self):
@@ -82,12 +82,12 @@ class MarginCall1(base_types._BaseFieldType):
 
 	@XpsdAmtPtyB.setter
 	def XpsdAmtPtyB(self, value):
-		self._XpsdAmtPtyB = value if type(value) != base_types.auto else self.make_default("XpsdAmtPtyB")
+		self._XpsdAmtPtyB = value if value is not None else base_types.UninitialisedField(self, 'XpsdAmtPtyB', ActiveCurrencyAndAmount, False)
 
 	@XpsdAmtPtyB.deleter
 	def XpsdAmtPtyB(self):
 		del self._XpsdAmtPtyB
-		self._XpsdAmtPtyB = None
+		self._XpsdAmtPtyB = base_types.UninitialisedField(self, 'XpsdAmtPtyB', ActiveCurrencyAndAmount, False)
 
 	@property
 	def XpsrCnvntn(self):
@@ -95,12 +95,12 @@ class MarginCall1(base_types._BaseFieldType):
 
 	@XpsrCnvntn.setter
 	def XpsrCnvntn(self, value):
-		self._XpsrCnvntn = value if type(value) != base_types.auto else self.make_default("XpsrCnvntn")
+		self._XpsrCnvntn = value if value is not None else base_types.UninitialisedField(self, 'XpsrCnvntn', ExposureConventionType1Code, False)
 
 	@XpsrCnvntn.deleter
 	def XpsrCnvntn(self):
 		del self._XpsrCnvntn
-		self._XpsrCnvntn = None
+		self._XpsrCnvntn = base_types.UninitialisedField(self, 'XpsrCnvntn', ExposureConventionType1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollBal', type=CollateralBalance1Choice, min=0, max=1, mutex_group=None, array=False),

@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardPaymentDataSet41 import CardPaymentDataSet41
-from ._DataSetIdentification5 import DataSetIdentification5
-from ._GenericIdentification176 import GenericIdentification176
-from ._ResponseType10 import ResponseType10
-from ._TransactionTotals12 import TransactionTotals12
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import CardPaymentDataSet41
+from . import DataSetIdentification5
+from . import GenericIdentification176
+from . import ResponseType10
+from . import TransactionTotals12
+from . import TrueFalseIndicator
 
 class CardPaymentDataSet42(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class CardPaymentDataSet42(base_types._BaseFieldType):
 
 	@DataSetId.setter
 	def DataSetId(self, value):
-		self._DataSetId = value if type(value) != base_types.auto else self.make_default("DataSetId")
+		self._DataSetId = value if value is not None else base_types.UninitialisedField(self, 'DataSetId', DataSetIdentification5, False)
 
 	@DataSetId.deleter
 	def DataSetId(self):
 		del self._DataSetId
-		self._DataSetId = None
+		self._DataSetId = base_types.UninitialisedField(self, 'DataSetId', DataSetIdentification5, False)
 
 	@property
 	def DataSetInitr(self):
@@ -31,12 +31,12 @@ class CardPaymentDataSet42(base_types._BaseFieldType):
 
 	@DataSetInitr.setter
 	def DataSetInitr(self, value):
-		self._DataSetInitr = value if type(value) != base_types.auto else self.make_default("DataSetInitr")
+		self._DataSetInitr = value if value is not None else base_types.UninitialisedField(self, 'DataSetInitr', GenericIdentification176, False)
 
 	@DataSetInitr.deleter
 	def DataSetInitr(self):
 		del self._DataSetInitr
-		self._DataSetInitr = None
+		self._DataSetInitr = base_types.UninitialisedField(self, 'DataSetInitr', GenericIdentification176, False)
 
 	@property
 	def DataSetRslt(self):
@@ -44,12 +44,12 @@ class CardPaymentDataSet42(base_types._BaseFieldType):
 
 	@DataSetRslt.setter
 	def DataSetRslt(self, value):
-		self._DataSetRslt = value if type(value) != base_types.auto else self.make_default("DataSetRslt")
+		self._DataSetRslt = value if value is not None else base_types.UninitialisedField(self, 'DataSetRslt', ResponseType10, False)
 
 	@DataSetRslt.deleter
 	def DataSetRslt(self):
 		del self._DataSetRslt
-		self._DataSetRslt = None
+		self._DataSetRslt = base_types.UninitialisedField(self, 'DataSetRslt', ResponseType10, False)
 
 	@property
 	def RjctdTx(self):
@@ -57,12 +57,12 @@ class CardPaymentDataSet42(base_types._BaseFieldType):
 
 	@RjctdTx.setter
 	def RjctdTx(self, value):
-		self._RjctdTx = value if type(value) != base_types.auto else self.make_default("RjctdTx")
+		self._RjctdTx = value if value is not None else base_types.UninitialisedField(self, 'RjctdTx', CardPaymentDataSet41, True)
 
 	@RjctdTx.deleter
 	def RjctdTx(self):
 		del self._RjctdTx
-		self._RjctdTx = None
+		self._RjctdTx = base_types.UninitialisedField(self, 'RjctdTx', CardPaymentDataSet41, True)
 
 	@property
 	def RmvDataSet(self):
@@ -70,12 +70,12 @@ class CardPaymentDataSet42(base_types._BaseFieldType):
 
 	@RmvDataSet.setter
 	def RmvDataSet(self, value):
-		self._RmvDataSet = value if type(value) != base_types.auto else self.make_default("RmvDataSet")
+		self._RmvDataSet = value if value is not None else base_types.UninitialisedField(self, 'RmvDataSet', TrueFalseIndicator, False)
 
 	@RmvDataSet.deleter
 	def RmvDataSet(self):
 		del self._RmvDataSet
-		self._RmvDataSet = None
+		self._RmvDataSet = base_types.UninitialisedField(self, 'RmvDataSet', TrueFalseIndicator, False)
 
 	@property
 	def RsmdApprvl(self):
@@ -83,12 +83,12 @@ class CardPaymentDataSet42(base_types._BaseFieldType):
 
 	@RsmdApprvl.setter
 	def RsmdApprvl(self, value):
-		self._RsmdApprvl = value if type(value) != base_types.auto else self.make_default("RsmdApprvl")
+		self._RsmdApprvl = value if value is not None else base_types.UninitialisedField(self, 'RsmdApprvl', CardPaymentDataSet41, True)
 
 	@RsmdApprvl.deleter
 	def RsmdApprvl(self):
 		del self._RsmdApprvl
-		self._RsmdApprvl = None
+		self._RsmdApprvl = base_types.UninitialisedField(self, 'RsmdApprvl', CardPaymentDataSet41, True)
 
 	@property
 	def RsmdRjctn(self):
@@ -96,12 +96,12 @@ class CardPaymentDataSet42(base_types._BaseFieldType):
 
 	@RsmdRjctn.setter
 	def RsmdRjctn(self, value):
-		self._RsmdRjctn = value if type(value) != base_types.auto else self.make_default("RsmdRjctn")
+		self._RsmdRjctn = value if value is not None else base_types.UninitialisedField(self, 'RsmdRjctn', CardPaymentDataSet41, True)
 
 	@RsmdRjctn.deleter
 	def RsmdRjctn(self):
 		del self._RsmdRjctn
-		self._RsmdRjctn = None
+		self._RsmdRjctn = base_types.UninitialisedField(self, 'RsmdRjctn', CardPaymentDataSet41, True)
 
 	@property
 	def SspdTx(self):
@@ -109,12 +109,12 @@ class CardPaymentDataSet42(base_types._BaseFieldType):
 
 	@SspdTx.setter
 	def SspdTx(self, value):
-		self._SspdTx = value if type(value) != base_types.auto else self.make_default("SspdTx")
+		self._SspdTx = value if value is not None else base_types.UninitialisedField(self, 'SspdTx', CardPaymentDataSet41, True)
 
 	@SspdTx.deleter
 	def SspdTx(self):
 		del self._SspdTx
-		self._SspdTx = None
+		self._SspdTx = base_types.UninitialisedField(self, 'SspdTx', CardPaymentDataSet41, True)
 
 	@property
 	def TxTtls(self):
@@ -122,12 +122,12 @@ class CardPaymentDataSet42(base_types._BaseFieldType):
 
 	@TxTtls.setter
 	def TxTtls(self, value):
-		self._TxTtls = value if type(value) != base_types.auto else self.make_default("TxTtls")
+		self._TxTtls = value if value is not None else base_types.UninitialisedField(self, 'TxTtls', TransactionTotals12, True)
 
 	@TxTtls.deleter
 	def TxTtls(self):
 		del self._TxTtls
-		self._TxTtls = None
+		self._TxTtls = base_types.UninitialisedField(self, 'TxTtls', TransactionTotals12, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DataSetId', type=DataSetIdentification5, min=1, max=1, mutex_group=None, array=False),

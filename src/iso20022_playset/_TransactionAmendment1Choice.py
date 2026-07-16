@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
-from ._BICFIDec2014Identifier import BICFIDec2014Identifier
-from ._BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
-from ._CashAccount40 import CashAccount40
-from ._ISODate import ISODate
-from ._ISODateTime import ISODateTime
-from ._Max140Text import Max140Text
-from ._Max4Text import Max4Text
-from ._PartyIdentification135 import PartyIdentification135
-from ._Remittance1 import Remittance1
+from . import ActiveCurrencyAndAmount
+from . import AnyBICDec2014Identifier
+from . import BICFIDec2014Identifier
+from . import BranchAndFinancialInstitutionIdentification6
+from . import CashAccount40
+from . import ISODate
+from . import ISODateTime
+from . import Max140Text
+from . import Max4Text
+from . import PartyIdentification135
+from . import Remittance1
 
 class TransactionAmendment1Choice(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class TransactionAmendment1Choice(base_types._BaseFieldType):
 
 	@Agt.setter
 	def Agt(self, value):
-		self._Agt = value if type(value) != base_types.auto else self.make_default("Agt")
+		self._Agt = value if value is not None else base_types.UninitialisedField(self, 'Agt', BranchAndFinancialInstitutionIdentification6, False)
 
 	@Agt.deleter
 	def Agt(self):
 		del self._Agt
-		self._Agt = None
+		self._Agt = base_types.UninitialisedField(self, 'Agt', BranchAndFinancialInstitutionIdentification6, False)
 
 	@property
 	def Amt(self):
@@ -36,12 +36,12 @@ class TransactionAmendment1Choice(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def AnyBIC(self):
@@ -49,12 +49,12 @@ class TransactionAmendment1Choice(base_types._BaseFieldType):
 
 	@AnyBIC.setter
 	def AnyBIC(self, value):
-		self._AnyBIC = value if type(value) != base_types.auto else self.make_default("AnyBIC")
+		self._AnyBIC = value if value is not None else base_types.UninitialisedField(self, 'AnyBIC', AnyBICDec2014Identifier, False)
 
 	@AnyBIC.deleter
 	def AnyBIC(self):
 		del self._AnyBIC
-		self._AnyBIC = None
+		self._AnyBIC = base_types.UninitialisedField(self, 'AnyBIC', AnyBICDec2014Identifier, False)
 
 	@property
 	def BICFI(self):
@@ -62,12 +62,12 @@ class TransactionAmendment1Choice(base_types._BaseFieldType):
 
 	@BICFI.setter
 	def BICFI(self, value):
-		self._BICFI = value if type(value) != base_types.auto else self.make_default("BICFI")
+		self._BICFI = value if value is not None else base_types.UninitialisedField(self, 'BICFI', BICFIDec2014Identifier, False)
 
 	@BICFI.deleter
 	def BICFI(self):
 		del self._BICFI
-		self._BICFI = None
+		self._BICFI = base_types.UninitialisedField(self, 'BICFI', BICFIDec2014Identifier, False)
 
 	@property
 	def Cd(self):
@@ -75,12 +75,12 @@ class TransactionAmendment1Choice(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
+		self._Cd = value if value is not None else base_types.UninitialisedField(self, 'Cd', Max4Text, False)
 
 	@Cd.deleter
 	def Cd(self):
 		del self._Cd
-		self._Cd = None
+		self._Cd = base_types.UninitialisedField(self, 'Cd', Max4Text, False)
 
 	@property
 	def CshAcct(self):
@@ -88,12 +88,12 @@ class TransactionAmendment1Choice(base_types._BaseFieldType):
 
 	@CshAcct.setter
 	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != base_types.auto else self.make_default("CshAcct")
+		self._CshAcct = value if value is not None else base_types.UninitialisedField(self, 'CshAcct', CashAccount40, False)
 
 	@CshAcct.deleter
 	def CshAcct(self):
 		del self._CshAcct
-		self._CshAcct = None
+		self._CshAcct = base_types.UninitialisedField(self, 'CshAcct', CashAccount40, False)
 
 	@property
 	def Dt(self):
@@ -101,12 +101,12 @@ class TransactionAmendment1Choice(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@property
 	def DtTm(self):
@@ -114,12 +114,12 @@ class TransactionAmendment1Choice(base_types._BaseFieldType):
 
 	@DtTm.setter
 	def DtTm(self, value):
-		self._DtTm = value if type(value) != base_types.auto else self.make_default("DtTm")
+		self._DtTm = value if value is not None else base_types.UninitialisedField(self, 'DtTm', ISODateTime, False)
 
 	@DtTm.deleter
 	def DtTm(self):
 		del self._DtTm
-		self._DtTm = None
+		self._DtTm = base_types.UninitialisedField(self, 'DtTm', ISODateTime, False)
 
 	@property
 	def Othr(self):
@@ -127,12 +127,12 @@ class TransactionAmendment1Choice(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', Max140Text, False)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', Max140Text, False)
 
 	@property
 	def Pty(self):
@@ -140,12 +140,12 @@ class TransactionAmendment1Choice(base_types._BaseFieldType):
 
 	@Pty.setter
 	def Pty(self, value):
-		self._Pty = value if type(value) != base_types.auto else self.make_default("Pty")
+		self._Pty = value if value is not None else base_types.UninitialisedField(self, 'Pty', PartyIdentification135, False)
 
 	@Pty.deleter
 	def Pty(self):
 		del self._Pty
-		self._Pty = None
+		self._Pty = base_types.UninitialisedField(self, 'Pty', PartyIdentification135, False)
 
 	@property
 	def Rmt(self):
@@ -153,12 +153,12 @@ class TransactionAmendment1Choice(base_types._BaseFieldType):
 
 	@Rmt.setter
 	def Rmt(self, value):
-		self._Rmt = value if type(value) != base_types.auto else self.make_default("Rmt")
+		self._Rmt = value if value is not None else base_types.UninitialisedField(self, 'Rmt', Remittance1, False)
 
 	@Rmt.deleter
 	def Rmt(self):
 		del self._Rmt
-		self._Rmt = None
+		self._Rmt = base_types.UninitialisedField(self, 'Rmt', Remittance1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Agt', type=BranchAndFinancialInstitutionIdentification6, min=0, max=1, mutex_group=1, array=False),

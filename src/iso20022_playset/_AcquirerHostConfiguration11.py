@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max1025Text import Max1025Text
-from ._Max35Text import Max35Text
-from ._Max8Text import Max8Text
-from ._MessageFunction47Code import MessageFunction47Code
+from . import Max1025Text
+from . import Max35Text
+from . import Max8Text
+from . import MessageFunction47Code
 
 class AcquirerHostConfiguration11(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class AcquirerHostConfiguration11(base_types._BaseFieldType):
 
 	@HstId.setter
 	def HstId(self, value):
-		self._HstId = value if type(value) != base_types.auto else self.make_default("HstId")
+		self._HstId = value if value is not None else base_types.UninitialisedField(self, 'HstId', Max35Text, False)
 
 	@HstId.deleter
 	def HstId(self):
 		del self._HstId
-		self._HstId = None
+		self._HstId = base_types.UninitialisedField(self, 'HstId', Max35Text, False)
 
 	@property
 	def MsgToSnd(self):
@@ -29,12 +29,12 @@ class AcquirerHostConfiguration11(base_types._BaseFieldType):
 
 	@MsgToSnd.setter
 	def MsgToSnd(self, value):
-		self._MsgToSnd = value if type(value) != base_types.auto else self.make_default("MsgToSnd")
+		self._MsgToSnd = value if value is not None else base_types.UninitialisedField(self, 'MsgToSnd', MessageFunction47Code, True)
 
 	@MsgToSnd.deleter
 	def MsgToSnd(self):
 		del self._MsgToSnd
-		self._MsgToSnd = None
+		self._MsgToSnd = base_types.UninitialisedField(self, 'MsgToSnd', MessageFunction47Code, True)
 
 	@property
 	def PrtcolVrsn(self):
@@ -42,12 +42,12 @@ class AcquirerHostConfiguration11(base_types._BaseFieldType):
 
 	@PrtcolVrsn.setter
 	def PrtcolVrsn(self, value):
-		self._PrtcolVrsn = value if type(value) != base_types.auto else self.make_default("PrtcolVrsn")
+		self._PrtcolVrsn = value if value is not None else base_types.UninitialisedField(self, 'PrtcolVrsn', Max8Text, False)
 
 	@PrtcolVrsn.deleter
 	def PrtcolVrsn(self):
 		del self._PrtcolVrsn
-		self._PrtcolVrsn = None
+		self._PrtcolVrsn = base_types.UninitialisedField(self, 'PrtcolVrsn', Max8Text, False)
 
 	@property
 	def XtrnlyTpSpprtd(self):
@@ -55,12 +55,12 @@ class AcquirerHostConfiguration11(base_types._BaseFieldType):
 
 	@XtrnlyTpSpprtd.setter
 	def XtrnlyTpSpprtd(self, value):
-		self._XtrnlyTpSpprtd = value if type(value) != base_types.auto else self.make_default("XtrnlyTpSpprtd")
+		self._XtrnlyTpSpprtd = value if value is not None else base_types.UninitialisedField(self, 'XtrnlyTpSpprtd', Max1025Text, True)
 
 	@XtrnlyTpSpprtd.deleter
 	def XtrnlyTpSpprtd(self):
 		del self._XtrnlyTpSpprtd
-		self._XtrnlyTpSpprtd = None
+		self._XtrnlyTpSpprtd = base_types.UninitialisedField(self, 'XtrnlyTpSpprtd', Max1025Text, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='HstId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

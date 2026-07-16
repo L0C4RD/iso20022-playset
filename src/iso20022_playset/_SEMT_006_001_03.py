@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._StatementOfInvestmentFundTransactionsV03 import StatementOfInvestmentFundTransactionsV03
+from . import StatementOfInvestmentFundTransactionsV03
 
 class SEMT_006_001_03():
 
@@ -18,12 +18,12 @@ class SEMT_006_001_03():
 
 		@StmtOfInvstmtFndTxs.setter
 		def StmtOfInvstmtFndTxs(self, value):
-			self._StmtOfInvstmtFndTxs = value if type(value) != base_types.auto else self.make_default("StmtOfInvstmtFndTxs")
+			self._StmtOfInvstmtFndTxs = value if value is not None else base_types.UninitialisedField(self, 'StmtOfInvstmtFndTxs', StatementOfInvestmentFundTransactionsV03, False)
 
 		@StmtOfInvstmtFndTxs.deleter
 		def StmtOfInvstmtFndTxs(self):
 			del self._StmtOfInvstmtFndTxs
-			self._StmtOfInvstmtFndTxs = None
+			self._StmtOfInvstmtFndTxs = base_types.UninitialisedField(self, 'StmtOfInvstmtFndTxs', StatementOfInvestmentFundTransactionsV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='StmtOfInvstmtFndTxs', type=StatementOfInvestmentFundTransactionsV03, min=1, max=1, mutex_group=None, array=False),

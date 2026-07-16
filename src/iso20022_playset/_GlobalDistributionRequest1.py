@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashMovement1 import CashMovement1
-from ._CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
-from ._DateFormat4Choice import DateFormat4Choice
-from ._Exact3NumericText import Exact3NumericText
-from ._SecurityMovement1 import SecurityMovement1
-from ._YesNoIndicator import YesNoIndicator
+from . import CashMovement1
+from . import CorporateActionOption1FormatChoice
+from . import DateFormat4Choice
+from . import Exact3NumericText
+from . import SecurityMovement1
+from . import YesNoIndicator
 
 class GlobalDistributionRequest1(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class GlobalDistributionRequest1(base_types._BaseFieldType):
 
 	@CshMvmnt.setter
 	def CshMvmnt(self, value):
-		self._CshMvmnt = value if type(value) != base_types.auto else self.make_default("CshMvmnt")
+		self._CshMvmnt = value if value is not None else base_types.UninitialisedField(self, 'CshMvmnt', CashMovement1, True)
 
 	@CshMvmnt.deleter
 	def CshMvmnt(self):
 		del self._CshMvmnt
-		self._CshMvmnt = None
+		self._CshMvmnt = base_types.UninitialisedField(self, 'CshMvmnt', CashMovement1, True)
 
 	@property
 	def OptnNb(self):
@@ -31,12 +31,12 @@ class GlobalDistributionRequest1(base_types._BaseFieldType):
 
 	@OptnNb.setter
 	def OptnNb(self, value):
-		self._OptnNb = value if type(value) != base_types.auto else self.make_default("OptnNb")
+		self._OptnNb = value if value is not None else base_types.UninitialisedField(self, 'OptnNb', Exact3NumericText, False)
 
 	@OptnNb.deleter
 	def OptnNb(self):
 		del self._OptnNb
-		self._OptnNb = None
+		self._OptnNb = base_types.UninitialisedField(self, 'OptnNb', Exact3NumericText, False)
 
 	@property
 	def OptnTp(self):
@@ -44,12 +44,12 @@ class GlobalDistributionRequest1(base_types._BaseFieldType):
 
 	@OptnTp.setter
 	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != base_types.auto else self.make_default("OptnTp")
+		self._OptnTp = value if value is not None else base_types.UninitialisedField(self, 'OptnTp', CorporateActionOption1FormatChoice, False)
 
 	@OptnTp.deleter
 	def OptnTp(self):
 		del self._OptnTp
-		self._OptnTp = None
+		self._OptnTp = base_types.UninitialisedField(self, 'OptnTp', CorporateActionOption1FormatChoice, False)
 
 	@property
 	def PmtDt(self):
@@ -57,12 +57,12 @@ class GlobalDistributionRequest1(base_types._BaseFieldType):
 
 	@PmtDt.setter
 	def PmtDt(self, value):
-		self._PmtDt = value if type(value) != base_types.auto else self.make_default("PmtDt")
+		self._PmtDt = value if value is not None else base_types.UninitialisedField(self, 'PmtDt', DateFormat4Choice, False)
 
 	@PmtDt.deleter
 	def PmtDt(self):
 		del self._PmtDt
-		self._PmtDt = None
+		self._PmtDt = base_types.UninitialisedField(self, 'PmtDt', DateFormat4Choice, False)
 
 	@property
 	def PradvcInd(self):
@@ -70,12 +70,12 @@ class GlobalDistributionRequest1(base_types._BaseFieldType):
 
 	@PradvcInd.setter
 	def PradvcInd(self, value):
-		self._PradvcInd = value if type(value) != base_types.auto else self.make_default("PradvcInd")
+		self._PradvcInd = value if value is not None else base_types.UninitialisedField(self, 'PradvcInd', YesNoIndicator, False)
 
 	@PradvcInd.deleter
 	def PradvcInd(self):
 		del self._PradvcInd
-		self._PradvcInd = None
+		self._PradvcInd = base_types.UninitialisedField(self, 'PradvcInd', YesNoIndicator, False)
 
 	@property
 	def RcrdDt(self):
@@ -83,12 +83,12 @@ class GlobalDistributionRequest1(base_types._BaseFieldType):
 
 	@RcrdDt.setter
 	def RcrdDt(self, value):
-		self._RcrdDt = value if type(value) != base_types.auto else self.make_default("RcrdDt")
+		self._RcrdDt = value if value is not None else base_types.UninitialisedField(self, 'RcrdDt', DateFormat4Choice, False)
 
 	@RcrdDt.deleter
 	def RcrdDt(self):
 		del self._RcrdDt
-		self._RcrdDt = None
+		self._RcrdDt = base_types.UninitialisedField(self, 'RcrdDt', DateFormat4Choice, False)
 
 	@property
 	def SctiesMvmnt(self):
@@ -96,12 +96,12 @@ class GlobalDistributionRequest1(base_types._BaseFieldType):
 
 	@SctiesMvmnt.setter
 	def SctiesMvmnt(self, value):
-		self._SctiesMvmnt = value if type(value) != base_types.auto else self.make_default("SctiesMvmnt")
+		self._SctiesMvmnt = value if value is not None else base_types.UninitialisedField(self, 'SctiesMvmnt', SecurityMovement1, True)
 
 	@SctiesMvmnt.deleter
 	def SctiesMvmnt(self):
 		del self._SctiesMvmnt
-		self._SctiesMvmnt = None
+		self._SctiesMvmnt = base_types.UninitialisedField(self, 'SctiesMvmnt', SecurityMovement1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshMvmnt', type=CashMovement1, min=0, max=None, mutex_group=None, array=True),

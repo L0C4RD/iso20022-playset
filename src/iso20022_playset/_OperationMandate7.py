@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BankTransactionCodeStructure4 import BankTransactionCodeStructure4
-from ._Channel2Choice import Channel2Choice
-from ._ISODate import ISODate
-from ._Max15PlusSignedNumericText import Max15PlusSignedNumericText
-from ._Max35Text import Max35Text
-from ._PartyAndAuthorisation7 import PartyAndAuthorisation7
-from ._YesNoIndicator import YesNoIndicator
+from . import BankTransactionCodeStructure4
+from . import Channel2Choice
+from . import ISODate
+from . import Max15PlusSignedNumericText
+from . import Max35Text
+from . import PartyAndAuthorisation7
+from . import YesNoIndicator
 
 class OperationMandate7(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class OperationMandate7(base_types._BaseFieldType):
 
 	@AplblChanl.setter
 	def AplblChanl(self, value):
-		self._AplblChanl = value if type(value) != base_types.auto else self.make_default("AplblChanl")
+		self._AplblChanl = value if value is not None else base_types.UninitialisedField(self, 'AplblChanl', Channel2Choice, True)
 
 	@AplblChanl.deleter
 	def AplblChanl(self):
 		del self._AplblChanl
-		self._AplblChanl = None
+		self._AplblChanl = base_types.UninitialisedField(self, 'AplblChanl', Channel2Choice, True)
 
 	@property
 	def BkOpr(self):
@@ -32,12 +32,12 @@ class OperationMandate7(base_types._BaseFieldType):
 
 	@BkOpr.setter
 	def BkOpr(self, value):
-		self._BkOpr = value if type(value) != base_types.auto else self.make_default("BkOpr")
+		self._BkOpr = value if value is not None else base_types.UninitialisedField(self, 'BkOpr', BankTransactionCodeStructure4, True)
 
 	@BkOpr.deleter
 	def BkOpr(self):
 		del self._BkOpr
-		self._BkOpr = None
+		self._BkOpr = base_types.UninitialisedField(self, 'BkOpr', BankTransactionCodeStructure4, True)
 
 	@property
 	def EndDt(self):
@@ -45,12 +45,12 @@ class OperationMandate7(base_types._BaseFieldType):
 
 	@EndDt.setter
 	def EndDt(self, value):
-		self._EndDt = value if type(value) != base_types.auto else self.make_default("EndDt")
+		self._EndDt = value if value is not None else base_types.UninitialisedField(self, 'EndDt', ISODate, False)
 
 	@EndDt.deleter
 	def EndDt(self):
 		del self._EndDt
-		self._EndDt = None
+		self._EndDt = base_types.UninitialisedField(self, 'EndDt', ISODate, False)
 
 	@property
 	def Id(self):
@@ -58,12 +58,12 @@ class OperationMandate7(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def MndtHldr(self):
@@ -71,12 +71,12 @@ class OperationMandate7(base_types._BaseFieldType):
 
 	@MndtHldr.setter
 	def MndtHldr(self, value):
-		self._MndtHldr = value if type(value) != base_types.auto else self.make_default("MndtHldr")
+		self._MndtHldr = value if value is not None else base_types.UninitialisedField(self, 'MndtHldr', PartyAndAuthorisation7, True)
 
 	@MndtHldr.deleter
 	def MndtHldr(self):
 		del self._MndtHldr
-		self._MndtHldr = None
+		self._MndtHldr = base_types.UninitialisedField(self, 'MndtHldr', PartyAndAuthorisation7, True)
 
 	@property
 	def ReqrdSgntrNb(self):
@@ -84,12 +84,12 @@ class OperationMandate7(base_types._BaseFieldType):
 
 	@ReqrdSgntrNb.setter
 	def ReqrdSgntrNb(self, value):
-		self._ReqrdSgntrNb = value if type(value) != base_types.auto else self.make_default("ReqrdSgntrNb")
+		self._ReqrdSgntrNb = value if value is not None else base_types.UninitialisedField(self, 'ReqrdSgntrNb', Max15PlusSignedNumericText, False)
 
 	@ReqrdSgntrNb.deleter
 	def ReqrdSgntrNb(self):
 		del self._ReqrdSgntrNb
-		self._ReqrdSgntrNb = None
+		self._ReqrdSgntrNb = base_types.UninitialisedField(self, 'ReqrdSgntrNb', Max15PlusSignedNumericText, False)
 
 	@property
 	def SgntrOrdrInd(self):
@@ -97,12 +97,12 @@ class OperationMandate7(base_types._BaseFieldType):
 
 	@SgntrOrdrInd.setter
 	def SgntrOrdrInd(self, value):
-		self._SgntrOrdrInd = value if type(value) != base_types.auto else self.make_default("SgntrOrdrInd")
+		self._SgntrOrdrInd = value if value is not None else base_types.UninitialisedField(self, 'SgntrOrdrInd', YesNoIndicator, False)
 
 	@SgntrOrdrInd.deleter
 	def SgntrOrdrInd(self):
 		del self._SgntrOrdrInd
-		self._SgntrOrdrInd = None
+		self._SgntrOrdrInd = base_types.UninitialisedField(self, 'SgntrOrdrInd', YesNoIndicator, False)
 
 	@property
 	def StartDt(self):
@@ -110,12 +110,12 @@ class OperationMandate7(base_types._BaseFieldType):
 
 	@StartDt.setter
 	def StartDt(self, value):
-		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
+		self._StartDt = value if value is not None else base_types.UninitialisedField(self, 'StartDt', ISODate, False)
 
 	@StartDt.deleter
 	def StartDt(self):
 		del self._StartDt
-		self._StartDt = None
+		self._StartDt = base_types.UninitialisedField(self, 'StartDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AplblChanl', type=Channel2Choice, min=1, max=None, mutex_group=None, array=True),

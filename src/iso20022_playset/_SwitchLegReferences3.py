@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Fee12 import Fee12
-from ._FinancialInstrument107 import FinancialInstrument107
-from ._InvestmentAccount81 import InvestmentAccount81
-from ._LegIdentification1Choice import LegIdentification1Choice
-from ._Max350Text import Max350Text
+from . import Fee12
+from . import FinancialInstrument107
+from . import InvestmentAccount81
+from . import LegIdentification1Choice
+from . import Max350Text
 
 class SwitchLegReferences3(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class SwitchLegReferences3(base_types._BaseFieldType):
 
 	@FinInstrmDtls.setter
 	def FinInstrmDtls(self, value):
-		self._FinInstrmDtls = value if type(value) != base_types.auto else self.make_default("FinInstrmDtls")
+		self._FinInstrmDtls = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmDtls', FinancialInstrument107, False)
 
 	@FinInstrmDtls.deleter
 	def FinInstrmDtls(self):
 		del self._FinInstrmDtls
-		self._FinInstrmDtls = None
+		self._FinInstrmDtls = base_types.UninitialisedField(self, 'FinInstrmDtls', FinancialInstrument107, False)
 
 	@property
 	def InvstmtAcctDtls(self):
@@ -30,12 +30,12 @@ class SwitchLegReferences3(base_types._BaseFieldType):
 
 	@InvstmtAcctDtls.setter
 	def InvstmtAcctDtls(self, value):
-		self._InvstmtAcctDtls = value if type(value) != base_types.auto else self.make_default("InvstmtAcctDtls")
+		self._InvstmtAcctDtls = value if value is not None else base_types.UninitialisedField(self, 'InvstmtAcctDtls', InvestmentAccount81, False)
 
 	@InvstmtAcctDtls.deleter
 	def InvstmtAcctDtls(self):
 		del self._InvstmtAcctDtls
-		self._InvstmtAcctDtls = None
+		self._InvstmtAcctDtls = base_types.UninitialisedField(self, 'InvstmtAcctDtls', InvestmentAccount81, False)
 
 	@property
 	def LegId(self):
@@ -43,12 +43,12 @@ class SwitchLegReferences3(base_types._BaseFieldType):
 
 	@LegId.setter
 	def LegId(self, value):
-		self._LegId = value if type(value) != base_types.auto else self.make_default("LegId")
+		self._LegId = value if value is not None else base_types.UninitialisedField(self, 'LegId', LegIdentification1Choice, False)
 
 	@LegId.deleter
 	def LegId(self):
 		del self._LegId
-		self._LegId = None
+		self._LegId = base_types.UninitialisedField(self, 'LegId', LegIdentification1Choice, False)
 
 	@property
 	def LegRjctnRsn(self):
@@ -56,12 +56,12 @@ class SwitchLegReferences3(base_types._BaseFieldType):
 
 	@LegRjctnRsn.setter
 	def LegRjctnRsn(self, value):
-		self._LegRjctnRsn = value if type(value) != base_types.auto else self.make_default("LegRjctnRsn")
+		self._LegRjctnRsn = value if value is not None else base_types.UninitialisedField(self, 'LegRjctnRsn', Max350Text, False)
 
 	@LegRjctnRsn.deleter
 	def LegRjctnRsn(self):
 		del self._LegRjctnRsn
-		self._LegRjctnRsn = None
+		self._LegRjctnRsn = base_types.UninitialisedField(self, 'LegRjctnRsn', Max350Text, False)
 
 	@property
 	def RprdFee(self):
@@ -69,12 +69,12 @@ class SwitchLegReferences3(base_types._BaseFieldType):
 
 	@RprdFee.setter
 	def RprdFee(self, value):
-		self._RprdFee = value if type(value) != base_types.auto else self.make_default("RprdFee")
+		self._RprdFee = value if value is not None else base_types.UninitialisedField(self, 'RprdFee', Fee12, True)
 
 	@RprdFee.deleter
 	def RprdFee(self):
 		del self._RprdFee
-		self._RprdFee = None
+		self._RprdFee = base_types.UninitialisedField(self, 'RprdFee', Fee12, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrument107, min=0, max=1, mutex_group=None, array=False),

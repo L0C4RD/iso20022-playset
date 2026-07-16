@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CurrencyControlRequestOrLetterV04 import CurrencyControlRequestOrLetterV04
+from . import CurrencyControlRequestOrLetterV04
 
 class AUTH_026_001_04():
 
@@ -18,12 +18,12 @@ class AUTH_026_001_04():
 
 		@CcyCtrlReqOrLttr.setter
 		def CcyCtrlReqOrLttr(self, value):
-			self._CcyCtrlReqOrLttr = value if type(value) != base_types.auto else self.make_default("CcyCtrlReqOrLttr")
+			self._CcyCtrlReqOrLttr = value if value is not None else base_types.UninitialisedField(self, 'CcyCtrlReqOrLttr', CurrencyControlRequestOrLetterV04, False)
 
 		@CcyCtrlReqOrLttr.deleter
 		def CcyCtrlReqOrLttr(self):
 			del self._CcyCtrlReqOrLttr
-			self._CcyCtrlReqOrLttr = None
+			self._CcyCtrlReqOrLttr = base_types.UninitialisedField(self, 'CcyCtrlReqOrLttr', CurrencyControlRequestOrLetterV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CcyCtrlReqOrLttr', type=CurrencyControlRequestOrLetterV04, min=1, max=1, mutex_group=None, array=False),

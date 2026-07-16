@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorrespondenceNotification1 import CorrespondenceNotification1
-from ._GroupHeader129 import GroupHeader129
-from ._SupplementaryData1 import SupplementaryData1
+from . import CorrespondenceNotification1
+from . import GroupHeader129
+from . import SupplementaryData1
 
 class NotificationOfCorrespondenceV01(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class NotificationOfCorrespondenceV01(base_types._BaseFieldType):
 
 	@GrpHdr.setter
 	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
+		self._GrpHdr = value if value is not None else base_types.UninitialisedField(self, 'GrpHdr', GroupHeader129, False)
 
 	@GrpHdr.deleter
 	def GrpHdr(self):
 		del self._GrpHdr
-		self._GrpHdr = None
+		self._GrpHdr = base_types.UninitialisedField(self, 'GrpHdr', GroupHeader129, False)
 
 	@property
 	def NtfctnData(self):
@@ -28,12 +28,12 @@ class NotificationOfCorrespondenceV01(base_types._BaseFieldType):
 
 	@NtfctnData.setter
 	def NtfctnData(self, value):
-		self._NtfctnData = value if type(value) != base_types.auto else self.make_default("NtfctnData")
+		self._NtfctnData = value if value is not None else base_types.UninitialisedField(self, 'NtfctnData', CorrespondenceNotification1, True)
 
 	@NtfctnData.deleter
 	def NtfctnData(self):
 		del self._NtfctnData
-		self._NtfctnData = None
+		self._NtfctnData = base_types.UninitialisedField(self, 'NtfctnData', CorrespondenceNotification1, True)
 
 	@property
 	def SplmtryData(self):
@@ -41,12 +41,12 @@ class NotificationOfCorrespondenceV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='GrpHdr', type=GroupHeader129, min=0, max=1, mutex_group=None, array=False),

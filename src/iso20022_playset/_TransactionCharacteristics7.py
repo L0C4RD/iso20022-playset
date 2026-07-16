@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._Exact1NumericText import Exact1NumericText
-from ._ISO8583MessageReasonCode import ISO8583MessageReasonCode
-from ._ISO8583TransactionTypeCode import ISO8583TransactionTypeCode
-from ._LocalData22 import LocalData22
-from ._Max1000Text import Max1000Text
-from ._Max256Text import Max256Text
-from ._Max35Text import Max35Text
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ATICALaxProcessing
+from . import Exact1NumericText
+from . import ISO8583MessageReasonCode
+from . import ISO8583TransactionTypeCode
+from . import LocalData22
+from . import Max1000Text
+from . import Max256Text
+from . import Max35Text
+from . import TrueFalseIndicator
 
 class TransactionCharacteristics7(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class TransactionCharacteristics7(base_types._BaseFieldType):
 
 	@AltrnMsgRsn.setter
 	def AltrnMsgRsn(self, value):
-		self._AltrnMsgRsn = value if type(value) != base_types.auto else self.make_default("AltrnMsgRsn")
+		self._AltrnMsgRsn = value if value is not None else base_types.UninitialisedField(self, 'AltrnMsgRsn', Max256Text, True)
 
 	@AltrnMsgRsn.deleter
 	def AltrnMsgRsn(self):
 		del self._AltrnMsgRsn
-		self._AltrnMsgRsn = None
+		self._AltrnMsgRsn = base_types.UninitialisedField(self, 'AltrnMsgRsn', Max256Text, True)
 
 	@property
 	def Cxl(self):
@@ -34,12 +34,12 @@ class TransactionCharacteristics7(base_types._BaseFieldType):
 
 	@Cxl.setter
 	def Cxl(self, value):
-		self._Cxl = value if type(value) != base_types.auto else self.make_default("Cxl")
+		self._Cxl = value if value is not None else base_types.UninitialisedField(self, 'Cxl', TrueFalseIndicator, False)
 
 	@Cxl.deleter
 	def Cxl(self):
 		del self._Cxl
-		self._Cxl = None
+		self._Cxl = base_types.UninitialisedField(self, 'Cxl', TrueFalseIndicator, False)
 
 	@property
 	def FeeColltnCycl(self):
@@ -47,12 +47,12 @@ class TransactionCharacteristics7(base_types._BaseFieldType):
 
 	@FeeColltnCycl.setter
 	def FeeColltnCycl(self, value):
-		self._FeeColltnCycl = value if type(value) != base_types.auto else self.make_default("FeeColltnCycl")
+		self._FeeColltnCycl = value if value is not None else base_types.UninitialisedField(self, 'FeeColltnCycl', Exact1NumericText, False)
 
 	@FeeColltnCycl.deleter
 	def FeeColltnCycl(self):
 		del self._FeeColltnCycl
-		self._FeeColltnCycl = None
+		self._FeeColltnCycl = base_types.UninitialisedField(self, 'FeeColltnCycl', Exact1NumericText, False)
 
 	@property
 	def LclData(self):
@@ -60,12 +60,12 @@ class TransactionCharacteristics7(base_types._BaseFieldType):
 
 	@LclData.setter
 	def LclData(self, value):
-		self._LclData = value if type(value) != base_types.auto else self.make_default("LclData")
+		self._LclData = value if value is not None else base_types.UninitialisedField(self, 'LclData', LocalData22, True)
 
 	@LclData.deleter
 	def LclData(self):
 		del self._LclData
-		self._LclData = None
+		self._LclData = base_types.UninitialisedField(self, 'LclData', LocalData22, True)
 
 	@property
 	def MsgRsn(self):
@@ -73,12 +73,12 @@ class TransactionCharacteristics7(base_types._BaseFieldType):
 
 	@MsgRsn.setter
 	def MsgRsn(self, value):
-		self._MsgRsn = value if type(value) != base_types.auto else self.make_default("MsgRsn")
+		self._MsgRsn = value if value is not None else base_types.UninitialisedField(self, 'MsgRsn', ISO8583MessageReasonCode, True)
 
 	@MsgRsn.deleter
 	def MsgRsn(self):
 		del self._MsgRsn
-		self._MsgRsn = None
+		self._MsgRsn = base_types.UninitialisedField(self, 'MsgRsn', ISO8583MessageReasonCode, True)
 
 	@property
 	def NtlData(self):
@@ -86,12 +86,12 @@ class TransactionCharacteristics7(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def PrvtData(self):
@@ -99,12 +99,12 @@ class TransactionCharacteristics7(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def TxDesc(self):
@@ -112,12 +112,12 @@ class TransactionCharacteristics7(base_types._BaseFieldType):
 
 	@TxDesc.setter
 	def TxDesc(self, value):
-		self._TxDesc = value if type(value) != base_types.auto else self.make_default("TxDesc")
+		self._TxDesc = value if value is not None else base_types.UninitialisedField(self, 'TxDesc', Max1000Text, False)
 
 	@TxDesc.deleter
 	def TxDesc(self):
 		del self._TxDesc
-		self._TxDesc = None
+		self._TxDesc = base_types.UninitialisedField(self, 'TxDesc', Max1000Text, False)
 
 	@property
 	def TxSubTp(self):
@@ -125,12 +125,12 @@ class TransactionCharacteristics7(base_types._BaseFieldType):
 
 	@TxSubTp.setter
 	def TxSubTp(self, value):
-		self._TxSubTp = value if type(value) != base_types.auto else self.make_default("TxSubTp")
+		self._TxSubTp = value if value is not None else base_types.UninitialisedField(self, 'TxSubTp', Max35Text, False)
 
 	@TxSubTp.deleter
 	def TxSubTp(self):
 		del self._TxSubTp
-		self._TxSubTp = None
+		self._TxSubTp = base_types.UninitialisedField(self, 'TxSubTp', Max35Text, False)
 
 	@property
 	def TxTp(self):
@@ -138,12 +138,12 @@ class TransactionCharacteristics7(base_types._BaseFieldType):
 
 	@TxTp.setter
 	def TxTp(self, value):
-		self._TxTp = value if type(value) != base_types.auto else self.make_default("TxTp")
+		self._TxTp = value if value is not None else base_types.UninitialisedField(self, 'TxTp', ISO8583TransactionTypeCode, False)
 
 	@TxTp.deleter
 	def TxTp(self):
 		del self._TxTp
-		self._TxTp = None
+		self._TxTp = base_types.UninitialisedField(self, 'TxTp', ISO8583TransactionTypeCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AltrnMsgRsn', type=Max256Text, min=0, max=None, mutex_group=None, array=True),

@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContractBalance1 import ContractBalance1
-from ._DocumentGeneralInformation5 import DocumentGeneralInformation5
-from ._DocumentIdentification22 import DocumentIdentification22
-from ._Max1025Text import Max1025Text
-from ._Max35Text import Max35Text
-from ._PaymentScheduleType2Choice import PaymentScheduleType2Choice
-from ._Priority2Code import Priority2Code
-from ._SupplementaryData1 import SupplementaryData1
-from ._UnderlyingContract4Choice import UnderlyingContract4Choice
+from . import ContractBalance1
+from . import DocumentGeneralInformation5
+from . import DocumentIdentification22
+from . import Max1025Text
+from . import Max35Text
+from . import PaymentScheduleType2Choice
+from . import Priority2Code
+from . import SupplementaryData1
+from . import UnderlyingContract4Choice
 
 class ContractRegistration8(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class ContractRegistration8(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max1025Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max1025Text, False)
 
 	@property
 	def Attchmnt(self):
@@ -34,12 +34,12 @@ class ContractRegistration8(base_types._BaseFieldType):
 
 	@Attchmnt.setter
 	def Attchmnt(self, value):
-		self._Attchmnt = value if type(value) != base_types.auto else self.make_default("Attchmnt")
+		self._Attchmnt = value if value is not None else base_types.UninitialisedField(self, 'Attchmnt', DocumentGeneralInformation5, True)
 
 	@Attchmnt.deleter
 	def Attchmnt(self):
 		del self._Attchmnt
-		self._Attchmnt = None
+		self._Attchmnt = base_types.UninitialisedField(self, 'Attchmnt', DocumentGeneralInformation5, True)
 
 	@property
 	def Ctrct(self):
@@ -47,12 +47,12 @@ class ContractRegistration8(base_types._BaseFieldType):
 
 	@Ctrct.setter
 	def Ctrct(self, value):
-		self._Ctrct = value if type(value) != base_types.auto else self.make_default("Ctrct")
+		self._Ctrct = value if value is not None else base_types.UninitialisedField(self, 'Ctrct', UnderlyingContract4Choice, False)
 
 	@Ctrct.deleter
 	def Ctrct(self):
 		del self._Ctrct
-		self._Ctrct = None
+		self._Ctrct = base_types.UninitialisedField(self, 'Ctrct', UnderlyingContract4Choice, False)
 
 	@property
 	def CtrctBal(self):
@@ -60,12 +60,12 @@ class ContractRegistration8(base_types._BaseFieldType):
 
 	@CtrctBal.setter
 	def CtrctBal(self, value):
-		self._CtrctBal = value if type(value) != base_types.auto else self.make_default("CtrctBal")
+		self._CtrctBal = value if value is not None else base_types.UninitialisedField(self, 'CtrctBal', ContractBalance1, True)
 
 	@CtrctBal.deleter
 	def CtrctBal(self):
 		del self._CtrctBal
-		self._CtrctBal = None
+		self._CtrctBal = base_types.UninitialisedField(self, 'CtrctBal', ContractBalance1, True)
 
 	@property
 	def CtrctRegnOpngId(self):
@@ -73,12 +73,12 @@ class ContractRegistration8(base_types._BaseFieldType):
 
 	@CtrctRegnOpngId.setter
 	def CtrctRegnOpngId(self, value):
-		self._CtrctRegnOpngId = value if type(value) != base_types.auto else self.make_default("CtrctRegnOpngId")
+		self._CtrctRegnOpngId = value if value is not None else base_types.UninitialisedField(self, 'CtrctRegnOpngId', Max35Text, False)
 
 	@CtrctRegnOpngId.deleter
 	def CtrctRegnOpngId(self):
 		del self._CtrctRegnOpngId
-		self._CtrctRegnOpngId = None
+		self._CtrctRegnOpngId = base_types.UninitialisedField(self, 'CtrctRegnOpngId', Max35Text, False)
 
 	@property
 	def PmtSchdlTp(self):
@@ -86,12 +86,12 @@ class ContractRegistration8(base_types._BaseFieldType):
 
 	@PmtSchdlTp.setter
 	def PmtSchdlTp(self, value):
-		self._PmtSchdlTp = value if type(value) != base_types.auto else self.make_default("PmtSchdlTp")
+		self._PmtSchdlTp = value if value is not None else base_types.UninitialisedField(self, 'PmtSchdlTp', PaymentScheduleType2Choice, False)
 
 	@PmtSchdlTp.deleter
 	def PmtSchdlTp(self):
 		del self._PmtSchdlTp
-		self._PmtSchdlTp = None
+		self._PmtSchdlTp = base_types.UninitialisedField(self, 'PmtSchdlTp', PaymentScheduleType2Choice, False)
 
 	@property
 	def Prty(self):
@@ -99,12 +99,12 @@ class ContractRegistration8(base_types._BaseFieldType):
 
 	@Prty.setter
 	def Prty(self, value):
-		self._Prty = value if type(value) != base_types.auto else self.make_default("Prty")
+		self._Prty = value if value is not None else base_types.UninitialisedField(self, 'Prty', Priority2Code, False)
 
 	@Prty.deleter
 	def Prty(self):
 		del self._Prty
-		self._Prty = None
+		self._Prty = base_types.UninitialisedField(self, 'Prty', Priority2Code, False)
 
 	@property
 	def PrvsRegnId(self):
@@ -112,12 +112,12 @@ class ContractRegistration8(base_types._BaseFieldType):
 
 	@PrvsRegnId.setter
 	def PrvsRegnId(self, value):
-		self._PrvsRegnId = value if type(value) != base_types.auto else self.make_default("PrvsRegnId")
+		self._PrvsRegnId = value if value is not None else base_types.UninitialisedField(self, 'PrvsRegnId', DocumentIdentification22, True)
 
 	@PrvsRegnId.deleter
 	def PrvsRegnId(self):
 		del self._PrvsRegnId
-		self._PrvsRegnId = None
+		self._PrvsRegnId = base_types.UninitialisedField(self, 'PrvsRegnId', DocumentIdentification22, True)
 
 	@property
 	def SplmtryData(self):
@@ -125,12 +125,12 @@ class ContractRegistration8(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),

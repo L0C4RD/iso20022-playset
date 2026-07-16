@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Header23 import Header23
-from ._Max35Text import Max35Text
-from ._MessageIdentification1 import MessageIdentification1
-from ._SupplementaryData1 import SupplementaryData1
-from ._TradePartyIdentification9 import TradePartyIdentification9
-from ._UnderlyingProductIdentifier1Code import UnderlyingProductIdentifier1Code
+from . import Header23
+from . import Max35Text
+from . import MessageIdentification1
+from . import SupplementaryData1
+from . import TradePartyIdentification9
+from . import UnderlyingProductIdentifier1Code
 
 class ForeignExchangeTradeConfirmationRequestCancellationRequestV02(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class ForeignExchangeTradeConfirmationRequestCancellationRequestV02(base_types._
 
 	@CtrPtyRoleId.setter
 	def CtrPtyRoleId(self, value):
-		self._CtrPtyRoleId = value if type(value) != base_types.auto else self.make_default("CtrPtyRoleId")
+		self._CtrPtyRoleId = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyRoleId', TradePartyIdentification9, False)
 
 	@CtrPtyRoleId.deleter
 	def CtrPtyRoleId(self):
 		del self._CtrPtyRoleId
-		self._CtrPtyRoleId = None
+		self._CtrPtyRoleId = base_types.UninitialisedField(self, 'CtrPtyRoleId', TradePartyIdentification9, False)
 
 	@property
 	def CxlReqId(self):
@@ -31,12 +31,12 @@ class ForeignExchangeTradeConfirmationRequestCancellationRequestV02(base_types._
 
 	@CxlReqId.setter
 	def CxlReqId(self, value):
-		self._CxlReqId = value if type(value) != base_types.auto else self.make_default("CxlReqId")
+		self._CxlReqId = value if value is not None else base_types.UninitialisedField(self, 'CxlReqId', MessageIdentification1, False)
 
 	@CxlReqId.deleter
 	def CxlReqId(self):
 		del self._CxlReqId
-		self._CxlReqId = None
+		self._CxlReqId = base_types.UninitialisedField(self, 'CxlReqId', MessageIdentification1, False)
 
 	@property
 	def Hdr(self):
@@ -44,12 +44,12 @@ class ForeignExchangeTradeConfirmationRequestCancellationRequestV02(base_types._
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header23, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header23, False)
 
 	@property
 	def SplmtryData(self):
@@ -57,12 +57,12 @@ class ForeignExchangeTradeConfirmationRequestCancellationRequestV02(base_types._
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TradId(self):
@@ -70,12 +70,12 @@ class ForeignExchangeTradeConfirmationRequestCancellationRequestV02(base_types._
 
 	@TradId.setter
 	def TradId(self, value):
-		self._TradId = value if type(value) != base_types.auto else self.make_default("TradId")
+		self._TradId = value if value is not None else base_types.UninitialisedField(self, 'TradId', Max35Text, False)
 
 	@TradId.deleter
 	def TradId(self):
 		del self._TradId
-		self._TradId = None
+		self._TradId = base_types.UninitialisedField(self, 'TradId', Max35Text, False)
 
 	@property
 	def TradgSdId(self):
@@ -83,12 +83,12 @@ class ForeignExchangeTradeConfirmationRequestCancellationRequestV02(base_types._
 
 	@TradgSdId.setter
 	def TradgSdId(self, value):
-		self._TradgSdId = value if type(value) != base_types.auto else self.make_default("TradgSdId")
+		self._TradgSdId = value if value is not None else base_types.UninitialisedField(self, 'TradgSdId', TradePartyIdentification9, False)
 
 	@TradgSdId.deleter
 	def TradgSdId(self):
 		del self._TradgSdId
-		self._TradgSdId = None
+		self._TradgSdId = base_types.UninitialisedField(self, 'TradgSdId', TradePartyIdentification9, False)
 
 	@property
 	def UndrlygPdctTp(self):
@@ -96,12 +96,12 @@ class ForeignExchangeTradeConfirmationRequestCancellationRequestV02(base_types._
 
 	@UndrlygPdctTp.setter
 	def UndrlygPdctTp(self, value):
-		self._UndrlygPdctTp = value if type(value) != base_types.auto else self.make_default("UndrlygPdctTp")
+		self._UndrlygPdctTp = value if value is not None else base_types.UninitialisedField(self, 'UndrlygPdctTp', UnderlyingProductIdentifier1Code, False)
 
 	@UndrlygPdctTp.deleter
 	def UndrlygPdctTp(self):
 		del self._UndrlygPdctTp
-		self._UndrlygPdctTp = None
+		self._UndrlygPdctTp = base_types.UninitialisedField(self, 'UndrlygPdctTp', UnderlyingProductIdentifier1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrPtyRoleId', type=TradePartyIdentification9, min=1, max=1, mutex_group=None, array=False),

@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCode import CountryCode
-from ._OtherParties46 import OtherParties46
-from ._PartyIdentification136 import PartyIdentification136
-from ._SecuritiesAccount2Choice import SecuritiesAccount2Choice
-from ._SecuritiesBalanceType7Choice import SecuritiesBalanceType7Choice
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import CountryCode
+from . import OtherParties46
+from . import PartyIdentification136
+from . import SecuritiesAccount2Choice
+from . import SecuritiesBalanceType7Choice
+from . import SecurityIdentification19
+from . import TrueFalseIndicator
 
 class PositionSearchCriteria4(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class PositionSearchCriteria4(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification136, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification136, False)
 
 	@property
 	def AcctSvcr(self):
@@ -32,12 +32,12 @@ class PositionSearchCriteria4(base_types._BaseFieldType):
 
 	@AcctSvcr.setter
 	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
+		self._AcctSvcr = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcr', PartyIdentification136, False)
 
 	@AcctSvcr.deleter
 	def AcctSvcr(self):
 		del self._AcctSvcr
-		self._AcctSvcr = None
+		self._AcctSvcr = base_types.UninitialisedField(self, 'AcctSvcr', PartyIdentification136, False)
 
 	@property
 	def CtryOfIsse(self):
@@ -45,12 +45,12 @@ class PositionSearchCriteria4(base_types._BaseFieldType):
 
 	@CtryOfIsse.setter
 	def CtryOfIsse(self, value):
-		self._CtryOfIsse = value if type(value) != base_types.auto else self.make_default("CtryOfIsse")
+		self._CtryOfIsse = value if value is not None else base_types.UninitialisedField(self, 'CtryOfIsse', CountryCode, False)
 
 	@CtryOfIsse.deleter
 	def CtryOfIsse(self):
 		del self._CtryOfIsse
-		self._CtryOfIsse = None
+		self._CtryOfIsse = base_types.UninitialisedField(self, 'CtryOfIsse', CountryCode, False)
 
 	@property
 	def FinInstrm(self):
@@ -58,12 +58,12 @@ class PositionSearchCriteria4(base_types._BaseFieldType):
 
 	@FinInstrm.setter
 	def FinInstrm(self, value):
-		self._FinInstrm = value if type(value) != base_types.auto else self.make_default("FinInstrm")
+		self._FinInstrm = value if value is not None else base_types.UninitialisedField(self, 'FinInstrm', SecurityIdentification19, False)
 
 	@FinInstrm.deleter
 	def FinInstrm(self):
 		del self._FinInstrm
-		self._FinInstrm = None
+		self._FinInstrm = base_types.UninitialisedField(self, 'FinInstrm', SecurityIdentification19, False)
 
 	@property
 	def OthrBizPties(self):
@@ -71,12 +71,12 @@ class PositionSearchCriteria4(base_types._BaseFieldType):
 
 	@OthrBizPties.setter
 	def OthrBizPties(self, value):
-		self._OthrBizPties = value if type(value) != base_types.auto else self.make_default("OthrBizPties")
+		self._OthrBizPties = value if value is not None else base_types.UninitialisedField(self, 'OthrBizPties', OtherParties46, False)
 
 	@OthrBizPties.deleter
 	def OthrBizPties(self):
 		del self._OthrBizPties
-		self._OthrBizPties = None
+		self._OthrBizPties = base_types.UninitialisedField(self, 'OthrBizPties', OtherParties46, False)
 
 	@property
 	def RtrZeroPos(self):
@@ -84,12 +84,12 @@ class PositionSearchCriteria4(base_types._BaseFieldType):
 
 	@RtrZeroPos.setter
 	def RtrZeroPos(self, value):
-		self._RtrZeroPos = value if type(value) != base_types.auto else self.make_default("RtrZeroPos")
+		self._RtrZeroPos = value if value is not None else base_types.UninitialisedField(self, 'RtrZeroPos', TrueFalseIndicator, False)
 
 	@RtrZeroPos.deleter
 	def RtrZeroPos(self):
 		del self._RtrZeroPos
-		self._RtrZeroPos = None
+		self._RtrZeroPos = base_types.UninitialisedField(self, 'RtrZeroPos', TrueFalseIndicator, False)
 
 	@property
 	def SfkpgAcct(self):
@@ -97,12 +97,12 @@ class PositionSearchCriteria4(base_types._BaseFieldType):
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount2Choice, False)
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
-		self._SfkpgAcct = None
+		self._SfkpgAcct = base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount2Choice, False)
 
 	@property
 	def SubBalTp(self):
@@ -110,12 +110,12 @@ class PositionSearchCriteria4(base_types._BaseFieldType):
 
 	@SubBalTp.setter
 	def SubBalTp(self, value):
-		self._SubBalTp = value if type(value) != base_types.auto else self.make_default("SubBalTp")
+		self._SubBalTp = value if value is not None else base_types.UninitialisedField(self, 'SubBalTp', SecuritiesBalanceType7Choice, False)
 
 	@SubBalTp.deleter
 	def SubBalTp(self):
 		del self._SubBalTp
-		self._SubBalTp = None
+		self._SubBalTp = base_types.UninitialisedField(self, 'SubBalTp', SecuritiesBalanceType7Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification136, min=0, max=1, mutex_group=None, array=False),

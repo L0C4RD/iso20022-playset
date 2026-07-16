@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AirportName1Choice import AirportName1Choice
-from ._Max35Text import Max35Text
+from . import AirportName1Choice
+from . import Max35Text
 
 class TransportByAir2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TransportByAir2(base_types._BaseFieldType):
 
 	@AirCrrierNm.setter
 	def AirCrrierNm(self, value):
-		self._AirCrrierNm = value if type(value) != base_types.auto else self.make_default("AirCrrierNm")
+		self._AirCrrierNm = value if value is not None else base_types.UninitialisedField(self, 'AirCrrierNm', Max35Text, False)
 
 	@AirCrrierNm.deleter
 	def AirCrrierNm(self):
 		del self._AirCrrierNm
-		self._AirCrrierNm = None
+		self._AirCrrierNm = base_types.UninitialisedField(self, 'AirCrrierNm', Max35Text, False)
 
 	@property
 	def DprtureAirprt(self):
@@ -27,12 +27,12 @@ class TransportByAir2(base_types._BaseFieldType):
 
 	@DprtureAirprt.setter
 	def DprtureAirprt(self, value):
-		self._DprtureAirprt = value if type(value) != base_types.auto else self.make_default("DprtureAirprt")
+		self._DprtureAirprt = value if value is not None else base_types.UninitialisedField(self, 'DprtureAirprt', AirportName1Choice, False)
 
 	@DprtureAirprt.deleter
 	def DprtureAirprt(self):
 		del self._DprtureAirprt
-		self._DprtureAirprt = None
+		self._DprtureAirprt = base_types.UninitialisedField(self, 'DprtureAirprt', AirportName1Choice, False)
 
 	@property
 	def DstnAirprt(self):
@@ -40,12 +40,12 @@ class TransportByAir2(base_types._BaseFieldType):
 
 	@DstnAirprt.setter
 	def DstnAirprt(self, value):
-		self._DstnAirprt = value if type(value) != base_types.auto else self.make_default("DstnAirprt")
+		self._DstnAirprt = value if value is not None else base_types.UninitialisedField(self, 'DstnAirprt', AirportName1Choice, False)
 
 	@DstnAirprt.deleter
 	def DstnAirprt(self):
 		del self._DstnAirprt
-		self._DstnAirprt = None
+		self._DstnAirprt = base_types.UninitialisedField(self, 'DstnAirprt', AirportName1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AirCrrierNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

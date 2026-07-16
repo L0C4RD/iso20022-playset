@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DatePeriod3Choice import DatePeriod3Choice
-from ._PartyAuditTrailOrError4Choice import PartyAuditTrailOrError4Choice
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
+from . import DatePeriod3Choice
+from . import PartyAuditTrailOrError4Choice
+from . import SystemPartyIdentification8
 
 class PartyAuditTrailReport4(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PartyAuditTrailReport4(base_types._BaseFieldType):
 
 	@DtPrd.setter
 	def DtPrd(self, value):
-		self._DtPrd = value if type(value) != base_types.auto else self.make_default("DtPrd")
+		self._DtPrd = value if value is not None else base_types.UninitialisedField(self, 'DtPrd', DatePeriod3Choice, False)
 
 	@DtPrd.deleter
 	def DtPrd(self):
 		del self._DtPrd
-		self._DtPrd = None
+		self._DtPrd = base_types.UninitialisedField(self, 'DtPrd', DatePeriod3Choice, False)
 
 	@property
 	def PtyAudtTrlOrErr(self):
@@ -28,12 +28,12 @@ class PartyAuditTrailReport4(base_types._BaseFieldType):
 
 	@PtyAudtTrlOrErr.setter
 	def PtyAudtTrlOrErr(self, value):
-		self._PtyAudtTrlOrErr = value if type(value) != base_types.auto else self.make_default("PtyAudtTrlOrErr")
+		self._PtyAudtTrlOrErr = value if value is not None else base_types.UninitialisedField(self, 'PtyAudtTrlOrErr', PartyAuditTrailOrError4Choice, False)
 
 	@PtyAudtTrlOrErr.deleter
 	def PtyAudtTrlOrErr(self):
 		del self._PtyAudtTrlOrErr
-		self._PtyAudtTrlOrErr = None
+		self._PtyAudtTrlOrErr = base_types.UninitialisedField(self, 'PtyAudtTrlOrErr', PartyAuditTrailOrError4Choice, False)
 
 	@property
 	def PtyId(self):
@@ -41,12 +41,12 @@ class PartyAuditTrailReport4(base_types._BaseFieldType):
 
 	@PtyId.setter
 	def PtyId(self, value):
-		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
+		self._PtyId = value if value is not None else base_types.UninitialisedField(self, 'PtyId', SystemPartyIdentification8, False)
 
 	@PtyId.deleter
 	def PtyId(self):
 		del self._PtyId
-		self._PtyId = None
+		self._PtyId = base_types.UninitialisedField(self, 'PtyId', SystemPartyIdentification8, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DtPrd', type=DatePeriod3Choice, min=0, max=1, mutex_group=None, array=False),

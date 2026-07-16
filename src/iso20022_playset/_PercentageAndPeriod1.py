@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._PercentageBoundedRate import PercentageBoundedRate
+from . import ISODate
+from . import PercentageBoundedRate
 
 class PercentageAndPeriod1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PercentageAndPeriod1(base_types._BaseFieldType):
 
 	@EndDt.setter
 	def EndDt(self, value):
-		self._EndDt = value if type(value) != base_types.auto else self.make_default("EndDt")
+		self._EndDt = value if value is not None else base_types.UninitialisedField(self, 'EndDt', ISODate, False)
 
 	@EndDt.deleter
 	def EndDt(self):
 		del self._EndDt
-		self._EndDt = None
+		self._EndDt = base_types.UninitialisedField(self, 'EndDt', ISODate, False)
 
 	@property
 	def Pctg(self):
@@ -27,12 +27,12 @@ class PercentageAndPeriod1(base_types._BaseFieldType):
 
 	@Pctg.setter
 	def Pctg(self, value):
-		self._Pctg = value if type(value) != base_types.auto else self.make_default("Pctg")
+		self._Pctg = value if value is not None else base_types.UninitialisedField(self, 'Pctg', PercentageBoundedRate, False)
 
 	@Pctg.deleter
 	def Pctg(self):
 		del self._Pctg
-		self._Pctg = None
+		self._Pctg = base_types.UninitialisedField(self, 'Pctg', PercentageBoundedRate, False)
 
 	@property
 	def StartDt(self):
@@ -40,12 +40,12 @@ class PercentageAndPeriod1(base_types._BaseFieldType):
 
 	@StartDt.setter
 	def StartDt(self, value):
-		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
+		self._StartDt = value if value is not None else base_types.UninitialisedField(self, 'StartDt', ISODate, False)
 
 	@StartDt.deleter
 	def StartDt(self):
 		del self._StartDt
-		self._StartDt = None
+		self._StartDt = base_types.UninitialisedField(self, 'StartDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),

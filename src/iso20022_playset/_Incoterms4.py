@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Incoterms4Choice import Incoterms4Choice
-from ._Max70Text import Max70Text
+from . import Incoterms4Choice
+from . import Max70Text
 
 class Incoterms4(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Incoterms4(base_types._BaseFieldType):
 
 	@IncotrmsCd.setter
 	def IncotrmsCd(self, value):
-		self._IncotrmsCd = value if type(value) != base_types.auto else self.make_default("IncotrmsCd")
+		self._IncotrmsCd = value if value is not None else base_types.UninitialisedField(self, 'IncotrmsCd', Incoterms4Choice, False)
 
 	@IncotrmsCd.deleter
 	def IncotrmsCd(self):
 		del self._IncotrmsCd
-		self._IncotrmsCd = None
+		self._IncotrmsCd = base_types.UninitialisedField(self, 'IncotrmsCd', Incoterms4Choice, False)
 
 	@property
 	def Lctn(self):
@@ -27,12 +27,12 @@ class Incoterms4(base_types._BaseFieldType):
 
 	@Lctn.setter
 	def Lctn(self, value):
-		self._Lctn = value if type(value) != base_types.auto else self.make_default("Lctn")
+		self._Lctn = value if value is not None else base_types.UninitialisedField(self, 'Lctn', Max70Text, False)
 
 	@Lctn.deleter
 	def Lctn(self):
 		del self._Lctn
-		self._Lctn = None
+		self._Lctn = base_types.UninitialisedField(self, 'Lctn', Max70Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IncotrmsCd', type=Incoterms4Choice, min=1, max=1, mutex_group=None, array=False),

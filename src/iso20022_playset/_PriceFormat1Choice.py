@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountPrice1 import AmountPrice1
-from ._AmountPricePerAmount1 import AmountPricePerAmount1
-from ._AmountPricePerFinancialInstrumentQuantity1 import AmountPricePerFinancialInstrumentQuantity1
-from ._PercentageRate import PercentageRate
-from ._PriceValueType6FormatChoice import PriceValueType6FormatChoice
+from . import AmountPrice1
+from . import AmountPricePerAmount1
+from . import AmountPricePerFinancialInstrumentQuantity1
+from . import PercentageRate
+from . import PriceValueType6FormatChoice
 
 class PriceFormat1Choice(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class PriceFormat1Choice(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', AmountPrice1, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', AmountPrice1, False)
 
 	@property
 	def AmtPricPerAmt(self):
@@ -30,12 +30,12 @@ class PriceFormat1Choice(base_types._BaseFieldType):
 
 	@AmtPricPerAmt.setter
 	def AmtPricPerAmt(self, value):
-		self._AmtPricPerAmt = value if type(value) != base_types.auto else self.make_default("AmtPricPerAmt")
+		self._AmtPricPerAmt = value if value is not None else base_types.UninitialisedField(self, 'AmtPricPerAmt', AmountPricePerAmount1, False)
 
 	@AmtPricPerAmt.deleter
 	def AmtPricPerAmt(self):
 		del self._AmtPricPerAmt
-		self._AmtPricPerAmt = None
+		self._AmtPricPerAmt = base_types.UninitialisedField(self, 'AmtPricPerAmt', AmountPricePerAmount1, False)
 
 	@property
 	def AmtPricPerFinInstrmQty(self):
@@ -43,12 +43,12 @@ class PriceFormat1Choice(base_types._BaseFieldType):
 
 	@AmtPricPerFinInstrmQty.setter
 	def AmtPricPerFinInstrmQty(self, value):
-		self._AmtPricPerFinInstrmQty = value if type(value) != base_types.auto else self.make_default("AmtPricPerFinInstrmQty")
+		self._AmtPricPerFinInstrmQty = value if value is not None else base_types.UninitialisedField(self, 'AmtPricPerFinInstrmQty', AmountPricePerFinancialInstrumentQuantity1, False)
 
 	@AmtPricPerFinInstrmQty.deleter
 	def AmtPricPerFinInstrmQty(self):
 		del self._AmtPricPerFinInstrmQty
-		self._AmtPricPerFinInstrmQty = None
+		self._AmtPricPerFinInstrmQty = base_types.UninitialisedField(self, 'AmtPricPerFinInstrmQty', AmountPricePerFinancialInstrumentQuantity1, False)
 
 	@property
 	def NotSpcfd(self):
@@ -56,12 +56,12 @@ class PriceFormat1Choice(base_types._BaseFieldType):
 
 	@NotSpcfd.setter
 	def NotSpcfd(self, value):
-		self._NotSpcfd = value if type(value) != base_types.auto else self.make_default("NotSpcfd")
+		self._NotSpcfd = value if value is not None else base_types.UninitialisedField(self, 'NotSpcfd', PriceValueType6FormatChoice, False)
 
 	@NotSpcfd.deleter
 	def NotSpcfd(self):
 		del self._NotSpcfd
-		self._NotSpcfd = None
+		self._NotSpcfd = base_types.UninitialisedField(self, 'NotSpcfd', PriceValueType6FormatChoice, False)
 
 	@property
 	def Rate(self):
@@ -69,12 +69,12 @@ class PriceFormat1Choice(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+		self._Rate = value if value is not None else base_types.UninitialisedField(self, 'Rate', PercentageRate, False)
 
 	@Rate.deleter
 	def Rate(self):
 		del self._Rate
-		self._Rate = None
+		self._Rate = base_types.UninitialisedField(self, 'Rate', PercentageRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=AmountPrice1, min=0, max=1, mutex_group=1, array=False),

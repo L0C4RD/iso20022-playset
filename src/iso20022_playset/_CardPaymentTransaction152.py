@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Action18 import Action18
-from ._AmountAndDirection93 import AmountAndDirection93
-from ._AuthorisationResult17 import AuthorisationResult17
-from ._ContentInformationType40 import ContentInformationType40
-from ._CurrencyConversion34 import CurrencyConversion34
-from ._Product4 import Product4
-from ._Product5 import Product5
+from . import Action18
+from . import AmountAndDirection93
+from . import AuthorisationResult17
+from . import ContentInformationType40
+from . import CurrencyConversion34
+from . import Product4
+from . import Product5
 
 class CardPaymentTransaction152(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class CardPaymentTransaction152(base_types._BaseFieldType):
 
 	@Actn.setter
 	def Actn(self, value):
-		self._Actn = value if type(value) != base_types.auto else self.make_default("Actn")
+		self._Actn = value if value is not None else base_types.UninitialisedField(self, 'Actn', Action18, True)
 
 	@Actn.deleter
 	def Actn(self):
 		del self._Actn
-		self._Actn = None
+		self._Actn = base_types.UninitialisedField(self, 'Actn', Action18, True)
 
 	@property
 	def AddtlAvlblPdct(self):
@@ -32,12 +32,12 @@ class CardPaymentTransaction152(base_types._BaseFieldType):
 
 	@AddtlAvlblPdct.setter
 	def AddtlAvlblPdct(self, value):
-		self._AddtlAvlblPdct = value if type(value) != base_types.auto else self.make_default("AddtlAvlblPdct")
+		self._AddtlAvlblPdct = value if value is not None else base_types.UninitialisedField(self, 'AddtlAvlblPdct', Product5, True)
 
 	@AddtlAvlblPdct.deleter
 	def AddtlAvlblPdct(self):
 		del self._AddtlAvlblPdct
-		self._AddtlAvlblPdct = None
+		self._AddtlAvlblPdct = base_types.UninitialisedField(self, 'AddtlAvlblPdct', Product5, True)
 
 	@property
 	def AllwdPdctCd(self):
@@ -45,12 +45,12 @@ class CardPaymentTransaction152(base_types._BaseFieldType):
 
 	@AllwdPdctCd.setter
 	def AllwdPdctCd(self, value):
-		self._AllwdPdctCd = value if type(value) != base_types.auto else self.make_default("AllwdPdctCd")
+		self._AllwdPdctCd = value if value is not None else base_types.UninitialisedField(self, 'AllwdPdctCd', Product4, True)
 
 	@AllwdPdctCd.deleter
 	def AllwdPdctCd(self):
 		del self._AllwdPdctCd
-		self._AllwdPdctCd = None
+		self._AllwdPdctCd = base_types.UninitialisedField(self, 'AllwdPdctCd', Product4, True)
 
 	@property
 	def AuthstnRslt(self):
@@ -58,12 +58,12 @@ class CardPaymentTransaction152(base_types._BaseFieldType):
 
 	@AuthstnRslt.setter
 	def AuthstnRslt(self, value):
-		self._AuthstnRslt = value if type(value) != base_types.auto else self.make_default("AuthstnRslt")
+		self._AuthstnRslt = value if value is not None else base_types.UninitialisedField(self, 'AuthstnRslt', AuthorisationResult17, False)
 
 	@AuthstnRslt.deleter
 	def AuthstnRslt(self):
 		del self._AuthstnRslt
-		self._AuthstnRslt = None
+		self._AuthstnRslt = base_types.UninitialisedField(self, 'AuthstnRslt', AuthorisationResult17, False)
 
 	@property
 	def Bal(self):
@@ -71,12 +71,12 @@ class CardPaymentTransaction152(base_types._BaseFieldType):
 
 	@Bal.setter
 	def Bal(self, value):
-		self._Bal = value if type(value) != base_types.auto else self.make_default("Bal")
+		self._Bal = value if value is not None else base_types.UninitialisedField(self, 'Bal', AmountAndDirection93, False)
 
 	@Bal.deleter
 	def Bal(self):
 		del self._Bal
-		self._Bal = None
+		self._Bal = base_types.UninitialisedField(self, 'Bal', AmountAndDirection93, False)
 
 	@property
 	def CcyConvsElgblty(self):
@@ -84,12 +84,12 @@ class CardPaymentTransaction152(base_types._BaseFieldType):
 
 	@CcyConvsElgblty.setter
 	def CcyConvsElgblty(self, value):
-		self._CcyConvsElgblty = value if type(value) != base_types.auto else self.make_default("CcyConvsElgblty")
+		self._CcyConvsElgblty = value if value is not None else base_types.UninitialisedField(self, 'CcyConvsElgblty', CurrencyConversion34, False)
 
 	@CcyConvsElgblty.deleter
 	def CcyConvsElgblty(self):
 		del self._CcyConvsElgblty
-		self._CcyConvsElgblty = None
+		self._CcyConvsElgblty = base_types.UninitialisedField(self, 'CcyConvsElgblty', CurrencyConversion34, False)
 
 	@property
 	def NotAllwdPdctCd(self):
@@ -97,12 +97,12 @@ class CardPaymentTransaction152(base_types._BaseFieldType):
 
 	@NotAllwdPdctCd.setter
 	def NotAllwdPdctCd(self, value):
-		self._NotAllwdPdctCd = value if type(value) != base_types.auto else self.make_default("NotAllwdPdctCd")
+		self._NotAllwdPdctCd = value if value is not None else base_types.UninitialisedField(self, 'NotAllwdPdctCd', Product4, True)
 
 	@NotAllwdPdctCd.deleter
 	def NotAllwdPdctCd(self):
 		del self._NotAllwdPdctCd
-		self._NotAllwdPdctCd = None
+		self._NotAllwdPdctCd = base_types.UninitialisedField(self, 'NotAllwdPdctCd', Product4, True)
 
 	@property
 	def PrtctdBal(self):
@@ -110,12 +110,12 @@ class CardPaymentTransaction152(base_types._BaseFieldType):
 
 	@PrtctdBal.setter
 	def PrtctdBal(self, value):
-		self._PrtctdBal = value if type(value) != base_types.auto else self.make_default("PrtctdBal")
+		self._PrtctdBal = value if value is not None else base_types.UninitialisedField(self, 'PrtctdBal', ContentInformationType40, False)
 
 	@PrtctdBal.deleter
 	def PrtctdBal(self):
 		del self._PrtctdBal
-		self._PrtctdBal = None
+		self._PrtctdBal = base_types.UninitialisedField(self, 'PrtctdBal', ContentInformationType40, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Actn', type=Action18, min=0, max=None, mutex_group=None, array=True),

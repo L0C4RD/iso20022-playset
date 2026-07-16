@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DatePeriodSearch1Choice import DatePeriodSearch1Choice
-from ._DateTimeSearch2Choice import DateTimeSearch2Choice
+from . import DatePeriodSearch1Choice
+from . import DateTimeSearch2Choice
 
 class DateAndDateTimeSearch4Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DateAndDateTimeSearch4Choice(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', DatePeriodSearch1Choice, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', DatePeriodSearch1Choice, False)
 
 	@property
 	def DtTm(self):
@@ -27,12 +27,12 @@ class DateAndDateTimeSearch4Choice(base_types._BaseFieldType):
 
 	@DtTm.setter
 	def DtTm(self, value):
-		self._DtTm = value if type(value) != base_types.auto else self.make_default("DtTm")
+		self._DtTm = value if value is not None else base_types.UninitialisedField(self, 'DtTm', DateTimeSearch2Choice, False)
 
 	@DtTm.deleter
 	def DtTm(self):
 		del self._DtTm
-		self._DtTm = None
+		self._DtTm = base_types.UninitialisedField(self, 'DtTm', DateTimeSearch2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dt', type=DatePeriodSearch1Choice, min=0, max=1, mutex_group=1, array=False),

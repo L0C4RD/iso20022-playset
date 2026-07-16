@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardDataReading10Code import CardDataReading10Code
-from ._Max35Text import Max35Text
+from . import CardDataReading10Code
+from . import Max35Text
 
 class CardReadingCapabilities1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CardReadingCapabilities1(base_types._BaseFieldType):
 
 	@Cpblty.setter
 	def Cpblty(self, value):
-		self._Cpblty = value if type(value) != base_types.auto else self.make_default("Cpblty")
+		self._Cpblty = value if value is not None else base_types.UninitialisedField(self, 'Cpblty', CardDataReading10Code, False)
 
 	@Cpblty.deleter
 	def Cpblty(self):
 		del self._Cpblty
-		self._Cpblty = None
+		self._Cpblty = base_types.UninitialisedField(self, 'Cpblty', CardDataReading10Code, False)
 
 	@property
 	def OthrCpblty(self):
@@ -27,12 +27,12 @@ class CardReadingCapabilities1(base_types._BaseFieldType):
 
 	@OthrCpblty.setter
 	def OthrCpblty(self, value):
-		self._OthrCpblty = value if type(value) != base_types.auto else self.make_default("OthrCpblty")
+		self._OthrCpblty = value if value is not None else base_types.UninitialisedField(self, 'OthrCpblty', Max35Text, False)
 
 	@OthrCpblty.deleter
 	def OthrCpblty(self):
 		del self._OthrCpblty
-		self._OthrCpblty = None
+		self._OthrCpblty = base_types.UninitialisedField(self, 'OthrCpblty', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cpblty', type=CardDataReading10Code, min=1, max=1, mutex_group=None, array=False),

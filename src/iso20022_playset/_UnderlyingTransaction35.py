@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._OriginalGroupHeader23 import OriginalGroupHeader23
-from ._OriginalPaymentInstruction54 import OriginalPaymentInstruction54
-from ._PaymentTransaction170 import PaymentTransaction170
+from . import OriginalGroupHeader23
+from . import OriginalPaymentInstruction54
+from . import PaymentTransaction170
 
 class UnderlyingTransaction35(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class UnderlyingTransaction35(base_types._BaseFieldType):
 
 	@OrgnlGrpInfAndSts.setter
 	def OrgnlGrpInfAndSts(self, value):
-		self._OrgnlGrpInfAndSts = value if type(value) != base_types.auto else self.make_default("OrgnlGrpInfAndSts")
+		self._OrgnlGrpInfAndSts = value if value is not None else base_types.UninitialisedField(self, 'OrgnlGrpInfAndSts', OriginalGroupHeader23, False)
 
 	@OrgnlGrpInfAndSts.deleter
 	def OrgnlGrpInfAndSts(self):
 		del self._OrgnlGrpInfAndSts
-		self._OrgnlGrpInfAndSts = None
+		self._OrgnlGrpInfAndSts = base_types.UninitialisedField(self, 'OrgnlGrpInfAndSts', OriginalGroupHeader23, False)
 
 	@property
 	def OrgnlPmtInfAndSts(self):
@@ -28,12 +28,12 @@ class UnderlyingTransaction35(base_types._BaseFieldType):
 
 	@OrgnlPmtInfAndSts.setter
 	def OrgnlPmtInfAndSts(self, value):
-		self._OrgnlPmtInfAndSts = value if type(value) != base_types.auto else self.make_default("OrgnlPmtInfAndSts")
+		self._OrgnlPmtInfAndSts = value if value is not None else base_types.UninitialisedField(self, 'OrgnlPmtInfAndSts', OriginalPaymentInstruction54, True)
 
 	@OrgnlPmtInfAndSts.deleter
 	def OrgnlPmtInfAndSts(self):
 		del self._OrgnlPmtInfAndSts
-		self._OrgnlPmtInfAndSts = None
+		self._OrgnlPmtInfAndSts = base_types.UninitialisedField(self, 'OrgnlPmtInfAndSts', OriginalPaymentInstruction54, True)
 
 	@property
 	def TxInfAndSts(self):
@@ -41,12 +41,12 @@ class UnderlyingTransaction35(base_types._BaseFieldType):
 
 	@TxInfAndSts.setter
 	def TxInfAndSts(self, value):
-		self._TxInfAndSts = value if type(value) != base_types.auto else self.make_default("TxInfAndSts")
+		self._TxInfAndSts = value if value is not None else base_types.UninitialisedField(self, 'TxInfAndSts', PaymentTransaction170, True)
 
 	@TxInfAndSts.deleter
 	def TxInfAndSts(self):
 		del self._TxInfAndSts
-		self._TxInfAndSts = None
+		self._TxInfAndSts = base_types.UninitialisedField(self, 'TxInfAndSts', PaymentTransaction170, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlGrpInfAndSts', type=OriginalGroupHeader23, min=0, max=1, mutex_group=None, array=False),

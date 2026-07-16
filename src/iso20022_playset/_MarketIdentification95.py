@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCodeAndName3 import CountryCodeAndName3
-from ._ISODate import ISODate
-from ._ISODateTime import ISODateTime
-from ._MICEntityType1Code import MICEntityType1Code
-from ._MICIdentifier import MICIdentifier
-from ._MarketIdentification1Code import MarketIdentification1Code
-from ._Max210Text import Max210Text
-from ._Max35Text import Max35Text
-from ._Max450Text import Max450Text
-from ._Modification1Code import Modification1Code
-from ._Period4Choice import Period4Choice
+from . import CountryCodeAndName3
+from . import ISODate
+from . import ISODateTime
+from . import MICEntityType1Code
+from . import MICIdentifier
+from . import MarketIdentification1Code
+from . import Max210Text
+from . import Max35Text
+from . import Max450Text
+from . import Modification1Code
+from . import Period4Choice
 
 class MarketIdentification95(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class MarketIdentification95(base_types._BaseFieldType):
 
 	@Acrnm.setter
 	def Acrnm(self, value):
-		self._Acrnm = value if type(value) != base_types.auto else self.make_default("Acrnm")
+		self._Acrnm = value if value is not None else base_types.UninitialisedField(self, 'Acrnm', Max35Text, False)
 
 	@Acrnm.deleter
 	def Acrnm(self):
 		del self._Acrnm
-		self._Acrnm = None
+		self._Acrnm = base_types.UninitialisedField(self, 'Acrnm', Max35Text, False)
 
 	@property
 	def AuthrtyNm(self):
@@ -36,12 +36,12 @@ class MarketIdentification95(base_types._BaseFieldType):
 
 	@AuthrtyNm.setter
 	def AuthrtyNm(self, value):
-		self._AuthrtyNm = value if type(value) != base_types.auto else self.make_default("AuthrtyNm")
+		self._AuthrtyNm = value if value is not None else base_types.UninitialisedField(self, 'AuthrtyNm', Max450Text, False)
 
 	@AuthrtyNm.deleter
 	def AuthrtyNm(self):
 		del self._AuthrtyNm
-		self._AuthrtyNm = None
+		self._AuthrtyNm = base_types.UninitialisedField(self, 'AuthrtyNm', Max450Text, False)
 
 	@property
 	def City(self):
@@ -49,12 +49,12 @@ class MarketIdentification95(base_types._BaseFieldType):
 
 	@City.setter
 	def City(self, value):
-		self._City = value if type(value) != base_types.auto else self.make_default("City")
+		self._City = value if value is not None else base_types.UninitialisedField(self, 'City', Max35Text, False)
 
 	@City.deleter
 	def City(self):
 		del self._City
-		self._City = None
+		self._City = base_types.UninitialisedField(self, 'City', Max35Text, False)
 
 	@property
 	def CreDt(self):
@@ -62,12 +62,12 @@ class MarketIdentification95(base_types._BaseFieldType):
 
 	@CreDt.setter
 	def CreDt(self, value):
-		self._CreDt = value if type(value) != base_types.auto else self.make_default("CreDt")
+		self._CreDt = value if value is not None else base_types.UninitialisedField(self, 'CreDt', ISODate, False)
 
 	@CreDt.deleter
 	def CreDt(self):
 		del self._CreDt
-		self._CreDt = None
+		self._CreDt = base_types.UninitialisedField(self, 'CreDt', ISODate, False)
 
 	@property
 	def Ctgy(self):
@@ -75,12 +75,12 @@ class MarketIdentification95(base_types._BaseFieldType):
 
 	@Ctgy.setter
 	def Ctgy(self, value):
-		self._Ctgy = value if type(value) != base_types.auto else self.make_default("Ctgy")
+		self._Ctgy = value if value is not None else base_types.UninitialisedField(self, 'Ctgy', MICEntityType1Code, False)
 
 	@Ctgy.deleter
 	def Ctgy(self):
 		del self._Ctgy
-		self._Ctgy = None
+		self._Ctgy = base_types.UninitialisedField(self, 'Ctgy', MICEntityType1Code, False)
 
 	@property
 	def Ctry(self):
@@ -88,12 +88,12 @@ class MarketIdentification95(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', CountryCodeAndName3, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', CountryCodeAndName3, False)
 
 	@property
 	def InstnNm(self):
@@ -101,12 +101,12 @@ class MarketIdentification95(base_types._BaseFieldType):
 
 	@InstnNm.setter
 	def InstnNm(self, value):
-		self._InstnNm = value if type(value) != base_types.auto else self.make_default("InstnNm")
+		self._InstnNm = value if value is not None else base_types.UninitialisedField(self, 'InstnNm', Max450Text, False)
 
 	@InstnNm.deleter
 	def InstnNm(self):
 		del self._InstnNm
-		self._InstnNm = None
+		self._InstnNm = base_types.UninitialisedField(self, 'InstnNm', Max450Text, False)
 
 	@property
 	def LastUpdtdDt(self):
@@ -114,12 +114,12 @@ class MarketIdentification95(base_types._BaseFieldType):
 
 	@LastUpdtdDt.setter
 	def LastUpdtdDt(self, value):
-		self._LastUpdtdDt = value if type(value) != base_types.auto else self.make_default("LastUpdtdDt")
+		self._LastUpdtdDt = value if value is not None else base_types.UninitialisedField(self, 'LastUpdtdDt', ISODateTime, False)
 
 	@LastUpdtdDt.deleter
 	def LastUpdtdDt(self):
 		del self._LastUpdtdDt
-		self._LastUpdtdDt = None
+		self._LastUpdtdDt = base_types.UninitialisedField(self, 'LastUpdtdDt', ISODateTime, False)
 
 	@property
 	def Mod(self):
@@ -127,12 +127,12 @@ class MarketIdentification95(base_types._BaseFieldType):
 
 	@Mod.setter
 	def Mod(self, value):
-		self._Mod = value if type(value) != base_types.auto else self.make_default("Mod")
+		self._Mod = value if value is not None else base_types.UninitialisedField(self, 'Mod', Modification1Code, False)
 
 	@Mod.deleter
 	def Mod(self):
 		del self._Mod
-		self._Mod = None
+		self._Mod = base_types.UninitialisedField(self, 'Mod', Modification1Code, False)
 
 	@property
 	def Note(self):
@@ -140,12 +140,12 @@ class MarketIdentification95(base_types._BaseFieldType):
 
 	@Note.setter
 	def Note(self, value):
-		self._Note = value if type(value) != base_types.auto else self.make_default("Note")
+		self._Note = value if value is not None else base_types.UninitialisedField(self, 'Note', Max450Text, False)
 
 	@Note.deleter
 	def Note(self):
 		del self._Note
-		self._Note = None
+		self._Note = base_types.UninitialisedField(self, 'Note', Max450Text, False)
 
 	@property
 	def Oprg(self):
@@ -153,12 +153,12 @@ class MarketIdentification95(base_types._BaseFieldType):
 
 	@Oprg.setter
 	def Oprg(self, value):
-		self._Oprg = value if type(value) != base_types.auto else self.make_default("Oprg")
+		self._Oprg = value if value is not None else base_types.UninitialisedField(self, 'Oprg', MICIdentifier, False)
 
 	@Oprg.deleter
 	def Oprg(self):
 		del self._Oprg
-		self._Oprg = None
+		self._Oprg = base_types.UninitialisedField(self, 'Oprg', MICIdentifier, False)
 
 	@property
 	def Sgmt(self):
@@ -166,12 +166,12 @@ class MarketIdentification95(base_types._BaseFieldType):
 
 	@Sgmt.setter
 	def Sgmt(self, value):
-		self._Sgmt = value if type(value) != base_types.auto else self.make_default("Sgmt")
+		self._Sgmt = value if value is not None else base_types.UninitialisedField(self, 'Sgmt', MICIdentifier, False)
 
 	@Sgmt.deleter
 	def Sgmt(self):
 		del self._Sgmt
-		self._Sgmt = None
+		self._Sgmt = base_types.UninitialisedField(self, 'Sgmt', MICIdentifier, False)
 
 	@property
 	def StsDt(self):
@@ -179,12 +179,12 @@ class MarketIdentification95(base_types._BaseFieldType):
 
 	@StsDt.setter
 	def StsDt(self, value):
-		self._StsDt = value if type(value) != base_types.auto else self.make_default("StsDt")
+		self._StsDt = value if value is not None else base_types.UninitialisedField(self, 'StsDt', ISODate, False)
 
 	@StsDt.deleter
 	def StsDt(self):
 		del self._StsDt
-		self._StsDt = None
+		self._StsDt = base_types.UninitialisedField(self, 'StsDt', ISODate, False)
 
 	@property
 	def Tp(self):
@@ -192,12 +192,12 @@ class MarketIdentification95(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', MarketIdentification1Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', MarketIdentification1Code, False)
 
 	@property
 	def VldtyPrd(self):
@@ -205,12 +205,12 @@ class MarketIdentification95(base_types._BaseFieldType):
 
 	@VldtyPrd.setter
 	def VldtyPrd(self, value):
-		self._VldtyPrd = value if type(value) != base_types.auto else self.make_default("VldtyPrd")
+		self._VldtyPrd = value if value is not None else base_types.UninitialisedField(self, 'VldtyPrd', Period4Choice, False)
 
 	@VldtyPrd.deleter
 	def VldtyPrd(self):
 		del self._VldtyPrd
-		self._VldtyPrd = None
+		self._VldtyPrd = base_types.UninitialisedField(self, 'VldtyPrd', Period4Choice, False)
 
 	@property
 	def WebSite(self):
@@ -218,12 +218,12 @@ class MarketIdentification95(base_types._BaseFieldType):
 
 	@WebSite.setter
 	def WebSite(self, value):
-		self._WebSite = value if type(value) != base_types.auto else self.make_default("WebSite")
+		self._WebSite = value if value is not None else base_types.UninitialisedField(self, 'WebSite', Max210Text, False)
 
 	@WebSite.deleter
 	def WebSite(self):
 		del self._WebSite
-		self._WebSite = None
+		self._WebSite = base_types.UninitialisedField(self, 'WebSite', Max210Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acrnm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

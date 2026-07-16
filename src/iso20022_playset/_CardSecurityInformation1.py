@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CSCManagement1Code import CSCManagement1Code
-from ._Min3Max4NumericText import Min3Max4NumericText
+from . import CSCManagement1Code
+from . import Min3Max4NumericText
 
 class CardSecurityInformation1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CardSecurityInformation1(base_types._BaseFieldType):
 
 	@CSCMgmt.setter
 	def CSCMgmt(self, value):
-		self._CSCMgmt = value if type(value) != base_types.auto else self.make_default("CSCMgmt")
+		self._CSCMgmt = value if value is not None else base_types.UninitialisedField(self, 'CSCMgmt', CSCManagement1Code, False)
 
 	@CSCMgmt.deleter
 	def CSCMgmt(self):
 		del self._CSCMgmt
-		self._CSCMgmt = None
+		self._CSCMgmt = base_types.UninitialisedField(self, 'CSCMgmt', CSCManagement1Code, False)
 
 	@property
 	def CSCVal(self):
@@ -27,12 +27,12 @@ class CardSecurityInformation1(base_types._BaseFieldType):
 
 	@CSCVal.setter
 	def CSCVal(self, value):
-		self._CSCVal = value if type(value) != base_types.auto else self.make_default("CSCVal")
+		self._CSCVal = value if value is not None else base_types.UninitialisedField(self, 'CSCVal', Min3Max4NumericText, False)
 
 	@CSCVal.deleter
 	def CSCVal(self):
 		del self._CSCVal
-		self._CSCVal = None
+		self._CSCVal = base_types.UninitialisedField(self, 'CSCVal', Min3Max4NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CSCMgmt', type=CSCManagement1Code, min=1, max=1, mutex_group=None, array=False),

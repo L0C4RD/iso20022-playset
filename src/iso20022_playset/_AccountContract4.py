@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._YesNoIndicator import YesNoIndicator
+from . import ISODate
+from . import YesNoIndicator
 
 class AccountContract4(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AccountContract4(base_types._BaseFieldType):
 
 	@RmvlInd.setter
 	def RmvlInd(self, value):
-		self._RmvlInd = value if type(value) != base_types.auto else self.make_default("RmvlInd")
+		self._RmvlInd = value if value is not None else base_types.UninitialisedField(self, 'RmvlInd', YesNoIndicator, False)
 
 	@RmvlInd.deleter
 	def RmvlInd(self):
 		del self._RmvlInd
-		self._RmvlInd = None
+		self._RmvlInd = base_types.UninitialisedField(self, 'RmvlInd', YesNoIndicator, False)
 
 	@property
 	def TrgtClsgDt(self):
@@ -27,12 +27,12 @@ class AccountContract4(base_types._BaseFieldType):
 
 	@TrgtClsgDt.setter
 	def TrgtClsgDt(self, value):
-		self._TrgtClsgDt = value if type(value) != base_types.auto else self.make_default("TrgtClsgDt")
+		self._TrgtClsgDt = value if value is not None else base_types.UninitialisedField(self, 'TrgtClsgDt', ISODate, False)
 
 	@TrgtClsgDt.deleter
 	def TrgtClsgDt(self):
 		del self._TrgtClsgDt
-		self._TrgtClsgDt = None
+		self._TrgtClsgDt = base_types.UninitialisedField(self, 'TrgtClsgDt', ISODate, False)
 
 	@property
 	def UrgcyFlg(self):
@@ -40,12 +40,12 @@ class AccountContract4(base_types._BaseFieldType):
 
 	@UrgcyFlg.setter
 	def UrgcyFlg(self, value):
-		self._UrgcyFlg = value if type(value) != base_types.auto else self.make_default("UrgcyFlg")
+		self._UrgcyFlg = value if value is not None else base_types.UninitialisedField(self, 'UrgcyFlg', YesNoIndicator, False)
 
 	@UrgcyFlg.deleter
 	def UrgcyFlg(self):
 		del self._UrgcyFlg
-		self._UrgcyFlg = None
+		self._UrgcyFlg = base_types.UninitialisedField(self, 'UrgcyFlg', YesNoIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RmvlInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),

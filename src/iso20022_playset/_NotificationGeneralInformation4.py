@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._EventStatus1 import EventStatus1
-from ._Max35Text import Max35Text
-from ._NotificationType3Code import NotificationType3Code
-from ._YesNoIndicator import YesNoIndicator
+from . import EventStatus1
+from . import Max35Text
+from . import NotificationType3Code
+from . import YesNoIndicator
 
 class NotificationGeneralInformation4(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class NotificationGeneralInformation4(base_types._BaseFieldType):
 
 	@ConfOfHldgReqrd.setter
 	def ConfOfHldgReqrd(self, value):
-		self._ConfOfHldgReqrd = value if type(value) != base_types.auto else self.make_default("ConfOfHldgReqrd")
+		self._ConfOfHldgReqrd = value if value is not None else base_types.UninitialisedField(self, 'ConfOfHldgReqrd', YesNoIndicator, False)
 
 	@ConfOfHldgReqrd.deleter
 	def ConfOfHldgReqrd(self):
 		del self._ConfOfHldgReqrd
-		self._ConfOfHldgReqrd = None
+		self._ConfOfHldgReqrd = base_types.UninitialisedField(self, 'ConfOfHldgReqrd', YesNoIndicator, False)
 
 	@property
 	def NtfctnId(self):
@@ -29,12 +29,12 @@ class NotificationGeneralInformation4(base_types._BaseFieldType):
 
 	@NtfctnId.setter
 	def NtfctnId(self, value):
-		self._NtfctnId = value if type(value) != base_types.auto else self.make_default("NtfctnId")
+		self._NtfctnId = value if value is not None else base_types.UninitialisedField(self, 'NtfctnId', Max35Text, False)
 
 	@NtfctnId.deleter
 	def NtfctnId(self):
 		del self._NtfctnId
-		self._NtfctnId = None
+		self._NtfctnId = base_types.UninitialisedField(self, 'NtfctnId', Max35Text, False)
 
 	@property
 	def NtfctnSts(self):
@@ -42,12 +42,12 @@ class NotificationGeneralInformation4(base_types._BaseFieldType):
 
 	@NtfctnSts.setter
 	def NtfctnSts(self, value):
-		self._NtfctnSts = value if type(value) != base_types.auto else self.make_default("NtfctnSts")
+		self._NtfctnSts = value if value is not None else base_types.UninitialisedField(self, 'NtfctnSts', EventStatus1, False)
 
 	@NtfctnSts.deleter
 	def NtfctnSts(self):
 		del self._NtfctnSts
-		self._NtfctnSts = None
+		self._NtfctnSts = base_types.UninitialisedField(self, 'NtfctnSts', EventStatus1, False)
 
 	@property
 	def NtfctnTp(self):
@@ -55,12 +55,12 @@ class NotificationGeneralInformation4(base_types._BaseFieldType):
 
 	@NtfctnTp.setter
 	def NtfctnTp(self, value):
-		self._NtfctnTp = value if type(value) != base_types.auto else self.make_default("NtfctnTp")
+		self._NtfctnTp = value if value is not None else base_types.UninitialisedField(self, 'NtfctnTp', NotificationType3Code, False)
 
 	@NtfctnTp.deleter
 	def NtfctnTp(self):
 		del self._NtfctnTp
-		self._NtfctnTp = None
+		self._NtfctnTp = base_types.UninitialisedField(self, 'NtfctnTp', NotificationType3Code, False)
 
 	@property
 	def ShrhldrRghtsDrctvInd(self):
@@ -68,12 +68,12 @@ class NotificationGeneralInformation4(base_types._BaseFieldType):
 
 	@ShrhldrRghtsDrctvInd.setter
 	def ShrhldrRghtsDrctvInd(self, value):
-		self._ShrhldrRghtsDrctvInd = value if type(value) != base_types.auto else self.make_default("ShrhldrRghtsDrctvInd")
+		self._ShrhldrRghtsDrctvInd = value if value is not None else base_types.UninitialisedField(self, 'ShrhldrRghtsDrctvInd', YesNoIndicator, False)
 
 	@ShrhldrRghtsDrctvInd.deleter
 	def ShrhldrRghtsDrctvInd(self):
 		del self._ShrhldrRghtsDrctvInd
-		self._ShrhldrRghtsDrctvInd = None
+		self._ShrhldrRghtsDrctvInd = base_types.UninitialisedField(self, 'ShrhldrRghtsDrctvInd', YesNoIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ConfOfHldgReqrd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),

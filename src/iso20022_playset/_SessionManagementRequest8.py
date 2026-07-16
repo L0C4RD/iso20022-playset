@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
-from ._DiagnosisRequest1 import DiagnosisRequest1
-from ._LoginRequest7 import LoginRequest7
-from ._LogoutRequest1 import LogoutRequest1
-from ._PaymentContext30 import PaymentContext30
-from ._RetailerService4Code import RetailerService4Code
-from ._SupplementaryData1 import SupplementaryData1
+from . import CardPaymentEnvironment81
+from . import DiagnosisRequest1
+from . import LoginRequest7
+from . import LogoutRequest1
+from . import PaymentContext30
+from . import RetailerService4Code
+from . import SupplementaryData1
 
 class SessionManagementRequest8(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class SessionManagementRequest8(base_types._BaseFieldType):
 
 	@Cntxt.setter
 	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != base_types.auto else self.make_default("Cntxt")
+		self._Cntxt = value if value is not None else base_types.UninitialisedField(self, 'Cntxt', PaymentContext30, False)
 
 	@Cntxt.deleter
 	def Cntxt(self):
 		del self._Cntxt
-		self._Cntxt = None
+		self._Cntxt = base_types.UninitialisedField(self, 'Cntxt', PaymentContext30, False)
 
 	@property
 	def DgnssReq(self):
@@ -32,12 +32,12 @@ class SessionManagementRequest8(base_types._BaseFieldType):
 
 	@DgnssReq.setter
 	def DgnssReq(self, value):
-		self._DgnssReq = value if type(value) != base_types.auto else self.make_default("DgnssReq")
+		self._DgnssReq = value if value is not None else base_types.UninitialisedField(self, 'DgnssReq', DiagnosisRequest1, False)
 
 	@DgnssReq.deleter
 	def DgnssReq(self):
 		del self._DgnssReq
-		self._DgnssReq = None
+		self._DgnssReq = base_types.UninitialisedField(self, 'DgnssReq', DiagnosisRequest1, False)
 
 	@property
 	def Envt(self):
@@ -45,12 +45,12 @@ class SessionManagementRequest8(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+		self._Envt = value if value is not None else base_types.UninitialisedField(self, 'Envt', CardPaymentEnvironment81, False)
 
 	@Envt.deleter
 	def Envt(self):
 		del self._Envt
-		self._Envt = None
+		self._Envt = base_types.UninitialisedField(self, 'Envt', CardPaymentEnvironment81, False)
 
 	@property
 	def LgnReq(self):
@@ -58,12 +58,12 @@ class SessionManagementRequest8(base_types._BaseFieldType):
 
 	@LgnReq.setter
 	def LgnReq(self, value):
-		self._LgnReq = value if type(value) != base_types.auto else self.make_default("LgnReq")
+		self._LgnReq = value if value is not None else base_types.UninitialisedField(self, 'LgnReq', LoginRequest7, False)
 
 	@LgnReq.deleter
 	def LgnReq(self):
 		del self._LgnReq
-		self._LgnReq = None
+		self._LgnReq = base_types.UninitialisedField(self, 'LgnReq', LoginRequest7, False)
 
 	@property
 	def LgtReq(self):
@@ -71,12 +71,12 @@ class SessionManagementRequest8(base_types._BaseFieldType):
 
 	@LgtReq.setter
 	def LgtReq(self, value):
-		self._LgtReq = value if type(value) != base_types.auto else self.make_default("LgtReq")
+		self._LgtReq = value if value is not None else base_types.UninitialisedField(self, 'LgtReq', LogoutRequest1, False)
 
 	@LgtReq.deleter
 	def LgtReq(self):
 		del self._LgtReq
-		self._LgtReq = None
+		self._LgtReq = base_types.UninitialisedField(self, 'LgtReq', LogoutRequest1, False)
 
 	@property
 	def SplmtryData(self):
@@ -84,12 +84,12 @@ class SessionManagementRequest8(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def SvcCntt(self):
@@ -97,12 +97,12 @@ class SessionManagementRequest8(base_types._BaseFieldType):
 
 	@SvcCntt.setter
 	def SvcCntt(self, value):
-		self._SvcCntt = value if type(value) != base_types.auto else self.make_default("SvcCntt")
+		self._SvcCntt = value if value is not None else base_types.UninitialisedField(self, 'SvcCntt', RetailerService4Code, False)
 
 	@SvcCntt.deleter
 	def SvcCntt(self):
 		del self._SvcCntt
-		self._SvcCntt = None
+		self._SvcCntt = base_types.UninitialisedField(self, 'SvcCntt', RetailerService4Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),

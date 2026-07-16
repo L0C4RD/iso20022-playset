@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CCPDailyCashFlowsReportV02 import CCPDailyCashFlowsReportV02
+from . import CCPDailyCashFlowsReportV02
 
 class AUTH_060_001_02():
 
@@ -18,12 +18,12 @@ class AUTH_060_001_02():
 
 		@CCPDalyCshFlowsRpt.setter
 		def CCPDalyCshFlowsRpt(self, value):
-			self._CCPDalyCshFlowsRpt = value if type(value) != base_types.auto else self.make_default("CCPDalyCshFlowsRpt")
+			self._CCPDalyCshFlowsRpt = value if value is not None else base_types.UninitialisedField(self, 'CCPDalyCshFlowsRpt', CCPDailyCashFlowsReportV02, False)
 
 		@CCPDalyCshFlowsRpt.deleter
 		def CCPDalyCshFlowsRpt(self):
 			del self._CCPDalyCshFlowsRpt
-			self._CCPDalyCshFlowsRpt = None
+			self._CCPDalyCshFlowsRpt = base_types.UninitialisedField(self, 'CCPDalyCshFlowsRpt', CCPDailyCashFlowsReportV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CCPDalyCshFlowsRpt', type=CCPDailyCashFlowsReportV02, min=1, max=1, mutex_group=None, array=False),

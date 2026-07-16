@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateOrDateTimePeriod3Choice import DateOrDateTimePeriod3Choice
-from ._GenericIdentification30 import GenericIdentification30
-from ._Removal1Choice import Removal1Choice
+from . import DateOrDateTimePeriod3Choice
+from . import GenericIdentification30
+from . import Removal1Choice
 
 class RemovalTypeAndReason1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class RemovalTypeAndReason1(base_types._BaseFieldType):
 
 	@ExclsnPrd.setter
 	def ExclsnPrd(self, value):
-		self._ExclsnPrd = value if type(value) != base_types.auto else self.make_default("ExclsnPrd")
+		self._ExclsnPrd = value if value is not None else base_types.UninitialisedField(self, 'ExclsnPrd', DateOrDateTimePeriod3Choice, False)
 
 	@ExclsnPrd.deleter
 	def ExclsnPrd(self):
 		del self._ExclsnPrd
-		self._ExclsnPrd = None
+		self._ExclsnPrd = base_types.UninitialisedField(self, 'ExclsnPrd', DateOrDateTimePeriod3Choice, False)
 
 	@property
 	def RmvlTp(self):
@@ -28,12 +28,12 @@ class RemovalTypeAndReason1(base_types._BaseFieldType):
 
 	@RmvlTp.setter
 	def RmvlTp(self, value):
-		self._RmvlTp = value if type(value) != base_types.auto else self.make_default("RmvlTp")
+		self._RmvlTp = value if value is not None else base_types.UninitialisedField(self, 'RmvlTp', Removal1Choice, False)
 
 	@RmvlTp.deleter
 	def RmvlTp(self):
 		del self._RmvlTp
-		self._RmvlTp = None
+		self._RmvlTp = base_types.UninitialisedField(self, 'RmvlTp', Removal1Choice, False)
 
 	@property
 	def Rsn(self):
@@ -41,12 +41,12 @@ class RemovalTypeAndReason1(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', GenericIdentification30, False)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', GenericIdentification30, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ExclsnPrd', type=DateOrDateTimePeriod3Choice, min=0, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._OtherTargetMarketLossBearing1 import OtherTargetMarketLossBearing1
-from ._PercentageRate import PercentageRate
-from ._TargetMarket1Code import TargetMarket1Code
+from . import OtherTargetMarketLossBearing1
+from . import PercentageRate
+from . import TargetMarket1Code
 
 class LossBearing2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class LossBearing2(base_types._BaseFieldType):
 
 	@LossByndCptl.setter
 	def LossByndCptl(self, value):
-		self._LossByndCptl = value if type(value) != base_types.auto else self.make_default("LossByndCptl")
+		self._LossByndCptl = value if value is not None else base_types.UninitialisedField(self, 'LossByndCptl', TargetMarket1Code, False)
 
 	@LossByndCptl.deleter
 	def LossByndCptl(self):
 		del self._LossByndCptl
-		self._LossByndCptl = None
+		self._LossByndCptl = base_types.UninitialisedField(self, 'LossByndCptl', TargetMarket1Code, False)
 
 	@property
 	def LtdCptlLoss(self):
@@ -28,12 +28,12 @@ class LossBearing2(base_types._BaseFieldType):
 
 	@LtdCptlLoss.setter
 	def LtdCptlLoss(self, value):
-		self._LtdCptlLoss = value if type(value) != base_types.auto else self.make_default("LtdCptlLoss")
+		self._LtdCptlLoss = value if value is not None else base_types.UninitialisedField(self, 'LtdCptlLoss', TargetMarket1Code, False)
 
 	@LtdCptlLoss.deleter
 	def LtdCptlLoss(self):
 		del self._LtdCptlLoss
-		self._LtdCptlLoss = None
+		self._LtdCptlLoss = base_types.UninitialisedField(self, 'LtdCptlLoss', TargetMarket1Code, False)
 
 	@property
 	def LtdCptlLossLvl(self):
@@ -41,12 +41,12 @@ class LossBearing2(base_types._BaseFieldType):
 
 	@LtdCptlLossLvl.setter
 	def LtdCptlLossLvl(self, value):
-		self._LtdCptlLossLvl = value if type(value) != base_types.auto else self.make_default("LtdCptlLossLvl")
+		self._LtdCptlLossLvl = value if value is not None else base_types.UninitialisedField(self, 'LtdCptlLossLvl', PercentageRate, False)
 
 	@LtdCptlLossLvl.deleter
 	def LtdCptlLossLvl(self):
 		del self._LtdCptlLossLvl
-		self._LtdCptlLossLvl = None
+		self._LtdCptlLossLvl = base_types.UninitialisedField(self, 'LtdCptlLossLvl', PercentageRate, False)
 
 	@property
 	def NoCptlGrnt(self):
@@ -54,12 +54,12 @@ class LossBearing2(base_types._BaseFieldType):
 
 	@NoCptlGrnt.setter
 	def NoCptlGrnt(self, value):
-		self._NoCptlGrnt = value if type(value) != base_types.auto else self.make_default("NoCptlGrnt")
+		self._NoCptlGrnt = value if value is not None else base_types.UninitialisedField(self, 'NoCptlGrnt', TargetMarket1Code, False)
 
 	@NoCptlGrnt.deleter
 	def NoCptlGrnt(self):
 		del self._NoCptlGrnt
-		self._NoCptlGrnt = None
+		self._NoCptlGrnt = base_types.UninitialisedField(self, 'NoCptlGrnt', TargetMarket1Code, False)
 
 	@property
 	def NoCptlLoss(self):
@@ -67,12 +67,12 @@ class LossBearing2(base_types._BaseFieldType):
 
 	@NoCptlLoss.setter
 	def NoCptlLoss(self, value):
-		self._NoCptlLoss = value if type(value) != base_types.auto else self.make_default("NoCptlLoss")
+		self._NoCptlLoss = value if value is not None else base_types.UninitialisedField(self, 'NoCptlLoss', TargetMarket1Code, False)
 
 	@NoCptlLoss.deleter
 	def NoCptlLoss(self):
 		del self._NoCptlLoss
-		self._NoCptlLoss = None
+		self._NoCptlLoss = base_types.UninitialisedField(self, 'NoCptlLoss', TargetMarket1Code, False)
 
 	@property
 	def Othr(self):
@@ -80,12 +80,12 @@ class LossBearing2(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', OtherTargetMarketLossBearing1, True)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', OtherTargetMarketLossBearing1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LossByndCptl', type=TargetMarket1Code, min=0, max=1, mutex_group=None, array=False),

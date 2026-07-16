@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
-from ._PartyIdentification272 import PartyIdentification272
+from . import BranchAndFinancialInstitutionIdentification8
+from . import ISODateTime
+from . import Max35Text
+from . import PartyIdentification272
 
 class GroupHeader128(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class GroupHeader128(base_types._BaseFieldType):
 
 	@CdtrAgt.setter
 	def CdtrAgt(self, value):
-		self._CdtrAgt = value if type(value) != base_types.auto else self.make_default("CdtrAgt")
+		self._CdtrAgt = value if value is not None else base_types.UninitialisedField(self, 'CdtrAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@CdtrAgt.deleter
 	def CdtrAgt(self):
 		del self._CdtrAgt
-		self._CdtrAgt = None
+		self._CdtrAgt = base_types.UninitialisedField(self, 'CdtrAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def CreDtTm(self):
@@ -29,12 +29,12 @@ class GroupHeader128(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if value is not None else base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
 		del self._CreDtTm
-		self._CreDtTm = None
+		self._CreDtTm = base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@property
 	def DbtrAgt(self):
@@ -42,12 +42,12 @@ class GroupHeader128(base_types._BaseFieldType):
 
 	@DbtrAgt.setter
 	def DbtrAgt(self, value):
-		self._DbtrAgt = value if type(value) != base_types.auto else self.make_default("DbtrAgt")
+		self._DbtrAgt = value if value is not None else base_types.UninitialisedField(self, 'DbtrAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@DbtrAgt.deleter
 	def DbtrAgt(self):
 		del self._DbtrAgt
-		self._DbtrAgt = None
+		self._DbtrAgt = base_types.UninitialisedField(self, 'DbtrAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def FwdgAgt(self):
@@ -55,12 +55,12 @@ class GroupHeader128(base_types._BaseFieldType):
 
 	@FwdgAgt.setter
 	def FwdgAgt(self, value):
-		self._FwdgAgt = value if type(value) != base_types.auto else self.make_default("FwdgAgt")
+		self._FwdgAgt = value if value is not None else base_types.UninitialisedField(self, 'FwdgAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@FwdgAgt.deleter
 	def FwdgAgt(self):
 		del self._FwdgAgt
-		self._FwdgAgt = None
+		self._FwdgAgt = base_types.UninitialisedField(self, 'FwdgAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def InitgPty(self):
@@ -68,12 +68,12 @@ class GroupHeader128(base_types._BaseFieldType):
 
 	@InitgPty.setter
 	def InitgPty(self, value):
-		self._InitgPty = value if type(value) != base_types.auto else self.make_default("InitgPty")
+		self._InitgPty = value if value is not None else base_types.UninitialisedField(self, 'InitgPty', PartyIdentification272, False)
 
 	@InitgPty.deleter
 	def InitgPty(self):
 		del self._InitgPty
-		self._InitgPty = None
+		self._InitgPty = base_types.UninitialisedField(self, 'InitgPty', PartyIdentification272, False)
 
 	@property
 	def MsgId(self):
@@ -81,12 +81,12 @@ class GroupHeader128(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtrAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DocumentIdentification28 import DocumentIdentification28
-from ._Number import Number
+from . import DocumentIdentification28
+from . import Number
 
 class DocumentEntryAmendment1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DocumentEntryAmendment1(base_types._BaseFieldType):
 
 	@CrrctgNtryNb.setter
 	def CrrctgNtryNb(self, value):
-		self._CrrctgNtryNb = value if type(value) != base_types.auto else self.make_default("CrrctgNtryNb")
+		self._CrrctgNtryNb = value if value is not None else base_types.UninitialisedField(self, 'CrrctgNtryNb', Number, False)
 
 	@CrrctgNtryNb.deleter
 	def CrrctgNtryNb(self):
 		del self._CrrctgNtryNb
-		self._CrrctgNtryNb = None
+		self._CrrctgNtryNb = base_types.UninitialisedField(self, 'CrrctgNtryNb', Number, False)
 
 	@property
 	def OrgnlDoc(self):
@@ -27,12 +27,12 @@ class DocumentEntryAmendment1(base_types._BaseFieldType):
 
 	@OrgnlDoc.setter
 	def OrgnlDoc(self, value):
-		self._OrgnlDoc = value if type(value) != base_types.auto else self.make_default("OrgnlDoc")
+		self._OrgnlDoc = value if value is not None else base_types.UninitialisedField(self, 'OrgnlDoc', DocumentIdentification28, False)
 
 	@OrgnlDoc.deleter
 	def OrgnlDoc(self):
 		del self._OrgnlDoc
-		self._OrgnlDoc = None
+		self._OrgnlDoc = base_types.UninitialisedField(self, 'OrgnlDoc', DocumentIdentification28, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CrrctgNtryNb', type=Number, min=1, max=1, mutex_group=None, array=False),

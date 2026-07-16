@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PriceReportV05 import PriceReportV05
+from . import PriceReportV05
 
 class REDA_001_001_05():
 
@@ -18,12 +18,12 @@ class REDA_001_001_05():
 
 		@PricRpt.setter
 		def PricRpt(self, value):
-			self._PricRpt = value if type(value) != base_types.auto else self.make_default("PricRpt")
+			self._PricRpt = value if value is not None else base_types.UninitialisedField(self, 'PricRpt', PriceReportV05, False)
 
 		@PricRpt.deleter
 		def PricRpt(self):
 			del self._PricRpt
-			self._PricRpt = None
+			self._PricRpt = base_types.UninitialisedField(self, 'PricRpt', PriceReportV05, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='PricRpt', type=PriceReportV05, min=1, max=1, mutex_group=None, array=False),

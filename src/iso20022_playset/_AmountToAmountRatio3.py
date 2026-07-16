@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
+from . import RestrictedFINActiveCurrencyAnd13DecimalAmount
 
 class AmountToAmountRatio3(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class AmountToAmountRatio3(base_types._BaseFieldType):
 
 	@Amt1.setter
 	def Amt1(self, value):
-		self._Amt1 = value if type(value) != base_types.auto else self.make_default("Amt1")
+		self._Amt1 = value if value is not None else base_types.UninitialisedField(self, 'Amt1', RestrictedFINActiveCurrencyAnd13DecimalAmount, False)
 
 	@Amt1.deleter
 	def Amt1(self):
 		del self._Amt1
-		self._Amt1 = None
+		self._Amt1 = base_types.UninitialisedField(self, 'Amt1', RestrictedFINActiveCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def Amt2(self):
@@ -26,12 +26,12 @@ class AmountToAmountRatio3(base_types._BaseFieldType):
 
 	@Amt2.setter
 	def Amt2(self, value):
-		self._Amt2 = value if type(value) != base_types.auto else self.make_default("Amt2")
+		self._Amt2 = value if value is not None else base_types.UninitialisedField(self, 'Amt2', RestrictedFINActiveCurrencyAnd13DecimalAmount, False)
 
 	@Amt2.deleter
 	def Amt2(self):
 		del self._Amt2
-		self._Amt2 = None
+		self._Amt2 = base_types.UninitialisedField(self, 'Amt2', RestrictedFINActiveCurrencyAnd13DecimalAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt1', type=RestrictedFINActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),

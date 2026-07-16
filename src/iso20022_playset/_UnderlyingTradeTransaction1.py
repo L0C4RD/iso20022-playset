@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ISODate import ISODate
-from ._Max2000Text import Max2000Text
-from ._Max35Text import Max35Text
-from ._PercentageRate import PercentageRate
-from ._UnderlyingTradeTransactionType1Choice import UnderlyingTradeTransactionType1Choice
+from . import ActiveCurrencyAndAmount
+from . import ISODate
+from . import Max2000Text
+from . import Max35Text
+from . import PercentageRate
+from . import UnderlyingTradeTransactionType1Choice
 
 class UnderlyingTradeTransaction1(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class UnderlyingTradeTransaction1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max2000Text, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max2000Text, True)
 
 	@property
 	def CtrctAmtPctg(self):
@@ -31,12 +31,12 @@ class UnderlyingTradeTransaction1(base_types._BaseFieldType):
 
 	@CtrctAmtPctg.setter
 	def CtrctAmtPctg(self, value):
-		self._CtrctAmtPctg = value if type(value) != base_types.auto else self.make_default("CtrctAmtPctg")
+		self._CtrctAmtPctg = value if value is not None else base_types.UninitialisedField(self, 'CtrctAmtPctg', PercentageRate, False)
 
 	@CtrctAmtPctg.deleter
 	def CtrctAmtPctg(self):
 		del self._CtrctAmtPctg
-		self._CtrctAmtPctg = None
+		self._CtrctAmtPctg = base_types.UninitialisedField(self, 'CtrctAmtPctg', PercentageRate, False)
 
 	@property
 	def Id(self):
@@ -44,12 +44,12 @@ class UnderlyingTradeTransaction1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def TndrClsgDt(self):
@@ -57,12 +57,12 @@ class UnderlyingTradeTransaction1(base_types._BaseFieldType):
 
 	@TndrClsgDt.setter
 	def TndrClsgDt(self, value):
-		self._TndrClsgDt = value if type(value) != base_types.auto else self.make_default("TndrClsgDt")
+		self._TndrClsgDt = value if value is not None else base_types.UninitialisedField(self, 'TndrClsgDt', ISODate, False)
 
 	@TndrClsgDt.deleter
 	def TndrClsgDt(self):
 		del self._TndrClsgDt
-		self._TndrClsgDt = None
+		self._TndrClsgDt = base_types.UninitialisedField(self, 'TndrClsgDt', ISODate, False)
 
 	@property
 	def Tp(self):
@@ -70,12 +70,12 @@ class UnderlyingTradeTransaction1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', UnderlyingTradeTransactionType1Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', UnderlyingTradeTransactionType1Choice, False)
 
 	@property
 	def TxAmt(self):
@@ -83,12 +83,12 @@ class UnderlyingTradeTransaction1(base_types._BaseFieldType):
 
 	@TxAmt.setter
 	def TxAmt(self, value):
-		self._TxAmt = value if type(value) != base_types.auto else self.make_default("TxAmt")
+		self._TxAmt = value if value is not None else base_types.UninitialisedField(self, 'TxAmt', ActiveCurrencyAndAmount, False)
 
 	@TxAmt.deleter
 	def TxAmt(self):
 		del self._TxAmt
-		self._TxAmt = None
+		self._TxAmt = base_types.UninitialisedField(self, 'TxAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def TxDt(self):
@@ -96,12 +96,12 @@ class UnderlyingTradeTransaction1(base_types._BaseFieldType):
 
 	@TxDt.setter
 	def TxDt(self, value):
-		self._TxDt = value if type(value) != base_types.auto else self.make_default("TxDt")
+		self._TxDt = value if value is not None else base_types.UninitialisedField(self, 'TxDt', ISODate, False)
 
 	@TxDt.deleter
 	def TxDt(self):
 		del self._TxDt
-		self._TxDt = None
+		self._TxDt = base_types.UninitialisedField(self, 'TxDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),

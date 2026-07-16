@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._SequenceRange1 import SequenceRange1
+from . import Max35Text
+from . import SequenceRange1
 
 class SequenceRange1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SequenceRange1Choice(base_types._BaseFieldType):
 
 	@EQSeq.setter
 	def EQSeq(self, value):
-		self._EQSeq = value if type(value) != base_types.auto else self.make_default("EQSeq")
+		self._EQSeq = value if value is not None else base_types.UninitialisedField(self, 'EQSeq', Max35Text, True)
 
 	@EQSeq.deleter
 	def EQSeq(self):
 		del self._EQSeq
-		self._EQSeq = None
+		self._EQSeq = base_types.UninitialisedField(self, 'EQSeq', Max35Text, True)
 
 	@property
 	def FrSeq(self):
@@ -27,12 +27,12 @@ class SequenceRange1Choice(base_types._BaseFieldType):
 
 	@FrSeq.setter
 	def FrSeq(self, value):
-		self._FrSeq = value if type(value) != base_types.auto else self.make_default("FrSeq")
+		self._FrSeq = value if value is not None else base_types.UninitialisedField(self, 'FrSeq', Max35Text, False)
 
 	@FrSeq.deleter
 	def FrSeq(self):
 		del self._FrSeq
-		self._FrSeq = None
+		self._FrSeq = base_types.UninitialisedField(self, 'FrSeq', Max35Text, False)
 
 	@property
 	def FrToSeq(self):
@@ -40,12 +40,12 @@ class SequenceRange1Choice(base_types._BaseFieldType):
 
 	@FrToSeq.setter
 	def FrToSeq(self, value):
-		self._FrToSeq = value if type(value) != base_types.auto else self.make_default("FrToSeq")
+		self._FrToSeq = value if value is not None else base_types.UninitialisedField(self, 'FrToSeq', SequenceRange1, True)
 
 	@FrToSeq.deleter
 	def FrToSeq(self):
 		del self._FrToSeq
-		self._FrToSeq = None
+		self._FrToSeq = base_types.UninitialisedField(self, 'FrToSeq', SequenceRange1, True)
 
 	@property
 	def NEQSeq(self):
@@ -53,12 +53,12 @@ class SequenceRange1Choice(base_types._BaseFieldType):
 
 	@NEQSeq.setter
 	def NEQSeq(self, value):
-		self._NEQSeq = value if type(value) != base_types.auto else self.make_default("NEQSeq")
+		self._NEQSeq = value if value is not None else base_types.UninitialisedField(self, 'NEQSeq', Max35Text, True)
 
 	@NEQSeq.deleter
 	def NEQSeq(self):
 		del self._NEQSeq
-		self._NEQSeq = None
+		self._NEQSeq = base_types.UninitialisedField(self, 'NEQSeq', Max35Text, True)
 
 	@property
 	def ToSeq(self):
@@ -66,12 +66,12 @@ class SequenceRange1Choice(base_types._BaseFieldType):
 
 	@ToSeq.setter
 	def ToSeq(self, value):
-		self._ToSeq = value if type(value) != base_types.auto else self.make_default("ToSeq")
+		self._ToSeq = value if value is not None else base_types.UninitialisedField(self, 'ToSeq', Max35Text, False)
 
 	@ToSeq.deleter
 	def ToSeq(self):
 		del self._ToSeq
-		self._ToSeq = None
+		self._ToSeq = base_types.UninitialisedField(self, 'ToSeq', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EQSeq', type=Max35Text, min=1, max=None, mutex_group=1, array=True),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max140Text import Max140Text
-from ._Response2Code import Response2Code
-from ._ResultDetail3Code import ResultDetail3Code
+from . import Max140Text
+from . import Response2Code
+from . import ResultDetail3Code
 
 class ResponseType6(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ResponseType6(base_types._BaseFieldType):
 
 	@AddtlRspn.setter
 	def AddtlRspn(self, value):
-		self._AddtlRspn = value if type(value) != base_types.auto else self.make_default("AddtlRspn")
+		self._AddtlRspn = value if value is not None else base_types.UninitialisedField(self, 'AddtlRspn', Max140Text, False)
 
 	@AddtlRspn.deleter
 	def AddtlRspn(self):
 		del self._AddtlRspn
-		self._AddtlRspn = None
+		self._AddtlRspn = base_types.UninitialisedField(self, 'AddtlRspn', Max140Text, False)
 
 	@property
 	def Rspn(self):
@@ -28,12 +28,12 @@ class ResponseType6(base_types._BaseFieldType):
 
 	@Rspn.setter
 	def Rspn(self, value):
-		self._Rspn = value if type(value) != base_types.auto else self.make_default("Rspn")
+		self._Rspn = value if value is not None else base_types.UninitialisedField(self, 'Rspn', Response2Code, False)
 
 	@Rspn.deleter
 	def Rspn(self):
 		del self._Rspn
-		self._Rspn = None
+		self._Rspn = base_types.UninitialisedField(self, 'Rspn', Response2Code, False)
 
 	@property
 	def RspnDtl(self):
@@ -41,12 +41,12 @@ class ResponseType6(base_types._BaseFieldType):
 
 	@RspnDtl.setter
 	def RspnDtl(self, value):
-		self._RspnDtl = value if type(value) != base_types.auto else self.make_default("RspnDtl")
+		self._RspnDtl = value if value is not None else base_types.UninitialisedField(self, 'RspnDtl', ResultDetail3Code, False)
 
 	@RspnDtl.deleter
 	def RspnDtl(self):
 		del self._RspnDtl
-		self._RspnDtl = None
+		self._RspnDtl = base_types.UninitialisedField(self, 'RspnDtl', ResultDetail3Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlRspn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),

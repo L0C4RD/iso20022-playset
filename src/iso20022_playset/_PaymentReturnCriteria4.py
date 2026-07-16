@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InstructionStatusReturnCriteria1 import InstructionStatusReturnCriteria1
-from ._RequestedIndicator import RequestedIndicator
+from . import InstructionStatusReturnCriteria1
+from . import RequestedIndicator
 
 class PaymentReturnCriteria4(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 
 	@CdtDbtInd.setter
 	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+		self._CdtDbtInd = value if value is not None else base_types.UninitialisedField(self, 'CdtDbtInd', RequestedIndicator, False)
 
 	@CdtDbtInd.deleter
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
-		self._CdtDbtInd = None
+		self._CdtDbtInd = base_types.UninitialisedField(self, 'CdtDbtInd', RequestedIndicator, False)
 
 	@property
 	def CdtrAgtInd(self):
@@ -27,12 +27,12 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 
 	@CdtrAgtInd.setter
 	def CdtrAgtInd(self, value):
-		self._CdtrAgtInd = value if type(value) != base_types.auto else self.make_default("CdtrAgtInd")
+		self._CdtrAgtInd = value if value is not None else base_types.UninitialisedField(self, 'CdtrAgtInd', RequestedIndicator, False)
 
 	@CdtrAgtInd.deleter
 	def CdtrAgtInd(self):
 		del self._CdtrAgtInd
-		self._CdtrAgtInd = None
+		self._CdtrAgtInd = base_types.UninitialisedField(self, 'CdtrAgtInd', RequestedIndicator, False)
 
 	@property
 	def CdtrInd(self):
@@ -40,12 +40,12 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 
 	@CdtrInd.setter
 	def CdtrInd(self, value):
-		self._CdtrInd = value if type(value) != base_types.auto else self.make_default("CdtrInd")
+		self._CdtrInd = value if value is not None else base_types.UninitialisedField(self, 'CdtrInd', RequestedIndicator, False)
 
 	@CdtrInd.deleter
 	def CdtrInd(self):
 		del self._CdtrInd
-		self._CdtrInd = None
+		self._CdtrInd = base_types.UninitialisedField(self, 'CdtrInd', RequestedIndicator, False)
 
 	@property
 	def DbtrAgtInd(self):
@@ -53,12 +53,12 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 
 	@DbtrAgtInd.setter
 	def DbtrAgtInd(self, value):
-		self._DbtrAgtInd = value if type(value) != base_types.auto else self.make_default("DbtrAgtInd")
+		self._DbtrAgtInd = value if value is not None else base_types.UninitialisedField(self, 'DbtrAgtInd', RequestedIndicator, False)
 
 	@DbtrAgtInd.deleter
 	def DbtrAgtInd(self):
 		del self._DbtrAgtInd
-		self._DbtrAgtInd = None
+		self._DbtrAgtInd = base_types.UninitialisedField(self, 'DbtrAgtInd', RequestedIndicator, False)
 
 	@property
 	def DbtrInd(self):
@@ -66,12 +66,12 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 
 	@DbtrInd.setter
 	def DbtrInd(self, value):
-		self._DbtrInd = value if type(value) != base_types.auto else self.make_default("DbtrInd")
+		self._DbtrInd = value if value is not None else base_types.UninitialisedField(self, 'DbtrInd', RequestedIndicator, False)
 
 	@DbtrInd.deleter
 	def DbtrInd(self):
 		del self._DbtrInd
-		self._DbtrInd = None
+		self._DbtrInd = base_types.UninitialisedField(self, 'DbtrInd', RequestedIndicator, False)
 
 	@property
 	def EndToEndIdInd(self):
@@ -79,12 +79,12 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 
 	@EndToEndIdInd.setter
 	def EndToEndIdInd(self, value):
-		self._EndToEndIdInd = value if type(value) != base_types.auto else self.make_default("EndToEndIdInd")
+		self._EndToEndIdInd = value if value is not None else base_types.UninitialisedField(self, 'EndToEndIdInd', RequestedIndicator, False)
 
 	@EndToEndIdInd.deleter
 	def EndToEndIdInd(self):
 		del self._EndToEndIdInd
-		self._EndToEndIdInd = None
+		self._EndToEndIdInd = base_types.UninitialisedField(self, 'EndToEndIdInd', RequestedIndicator, False)
 
 	@property
 	def InstdAmtInd(self):
@@ -92,12 +92,12 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 
 	@InstdAmtInd.setter
 	def InstdAmtInd(self, value):
-		self._InstdAmtInd = value if type(value) != base_types.auto else self.make_default("InstdAmtInd")
+		self._InstdAmtInd = value if value is not None else base_types.UninitialisedField(self, 'InstdAmtInd', RequestedIndicator, False)
 
 	@InstdAmtInd.deleter
 	def InstdAmtInd(self):
 		del self._InstdAmtInd
-		self._InstdAmtInd = None
+		self._InstdAmtInd = base_types.UninitialisedField(self, 'InstdAmtInd', RequestedIndicator, False)
 
 	@property
 	def InstdRmbrsmntAgtInd(self):
@@ -105,12 +105,12 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 
 	@InstdRmbrsmntAgtInd.setter
 	def InstdRmbrsmntAgtInd(self, value):
-		self._InstdRmbrsmntAgtInd = value if type(value) != base_types.auto else self.make_default("InstdRmbrsmntAgtInd")
+		self._InstdRmbrsmntAgtInd = value if value is not None else base_types.UninitialisedField(self, 'InstdRmbrsmntAgtInd', RequestedIndicator, False)
 
 	@InstdRmbrsmntAgtInd.deleter
 	def InstdRmbrsmntAgtInd(self):
 		del self._InstdRmbrsmntAgtInd
-		self._InstdRmbrsmntAgtInd = None
+		self._InstdRmbrsmntAgtInd = base_types.UninitialisedField(self, 'InstdRmbrsmntAgtInd', RequestedIndicator, False)
 
 	@property
 	def InstgRmbrsmntAgtInd(self):
@@ -118,12 +118,12 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 
 	@InstgRmbrsmntAgtInd.setter
 	def InstgRmbrsmntAgtInd(self, value):
-		self._InstgRmbrsmntAgtInd = value if type(value) != base_types.auto else self.make_default("InstgRmbrsmntAgtInd")
+		self._InstgRmbrsmntAgtInd = value if value is not None else base_types.UninitialisedField(self, 'InstgRmbrsmntAgtInd', RequestedIndicator, False)
 
 	@InstgRmbrsmntAgtInd.deleter
 	def InstgRmbrsmntAgtInd(self):
 		del self._InstgRmbrsmntAgtInd
-		self._InstgRmbrsmntAgtInd = None
+		self._InstgRmbrsmntAgtInd = base_types.UninitialisedField(self, 'InstgRmbrsmntAgtInd', RequestedIndicator, False)
 
 	@property
 	def InstrCpyInd(self):
@@ -131,12 +131,12 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 
 	@InstrCpyInd.setter
 	def InstrCpyInd(self, value):
-		self._InstrCpyInd = value if type(value) != base_types.auto else self.make_default("InstrCpyInd")
+		self._InstrCpyInd = value if value is not None else base_types.UninitialisedField(self, 'InstrCpyInd', RequestedIndicator, False)
 
 	@InstrCpyInd.deleter
 	def InstrCpyInd(self):
 		del self._InstrCpyInd
-		self._InstrCpyInd = None
+		self._InstrCpyInd = base_types.UninitialisedField(self, 'InstrCpyInd', RequestedIndicator, False)
 
 	@property
 	def InstrInd(self):
@@ -144,12 +144,12 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 
 	@InstrInd.setter
 	def InstrInd(self, value):
-		self._InstrInd = value if type(value) != base_types.auto else self.make_default("InstrInd")
+		self._InstrInd = value if value is not None else base_types.UninitialisedField(self, 'InstrInd', RequestedIndicator, False)
 
 	@InstrInd.deleter
 	def InstrInd(self):
 		del self._InstrInd
-		self._InstrInd = None
+		self._InstrInd = base_types.UninitialisedField(self, 'InstrInd', RequestedIndicator, False)
 
 	@property
 	def InstrStsRtrCrit(self):
@@ -157,12 +157,12 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 
 	@InstrStsRtrCrit.setter
 	def InstrStsRtrCrit(self, value):
-		self._InstrStsRtrCrit = value if type(value) != base_types.auto else self.make_default("InstrStsRtrCrit")
+		self._InstrStsRtrCrit = value if value is not None else base_types.UninitialisedField(self, 'InstrStsRtrCrit', InstructionStatusReturnCriteria1, False)
 
 	@InstrStsRtrCrit.deleter
 	def InstrStsRtrCrit(self):
 		del self._InstrStsRtrCrit
-		self._InstrStsRtrCrit = None
+		self._InstrStsRtrCrit = base_types.UninitialisedField(self, 'InstrStsRtrCrit', InstructionStatusReturnCriteria1, False)
 
 	@property
 	def IntrBkSttlmAmtInd(self):
@@ -170,12 +170,12 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 
 	@IntrBkSttlmAmtInd.setter
 	def IntrBkSttlmAmtInd(self, value):
-		self._IntrBkSttlmAmtInd = value if type(value) != base_types.auto else self.make_default("IntrBkSttlmAmtInd")
+		self._IntrBkSttlmAmtInd = value if value is not None else base_types.UninitialisedField(self, 'IntrBkSttlmAmtInd', RequestedIndicator, False)
 
 	@IntrBkSttlmAmtInd.deleter
 	def IntrBkSttlmAmtInd(self):
 		del self._IntrBkSttlmAmtInd
-		self._IntrBkSttlmAmtInd = None
+		self._IntrBkSttlmAmtInd = base_types.UninitialisedField(self, 'IntrBkSttlmAmtInd', RequestedIndicator, False)
 
 	@property
 	def IntrBkSttlmDtInd(self):
@@ -183,12 +183,12 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 
 	@IntrBkSttlmDtInd.setter
 	def IntrBkSttlmDtInd(self, value):
-		self._IntrBkSttlmDtInd = value if type(value) != base_types.auto else self.make_default("IntrBkSttlmDtInd")
+		self._IntrBkSttlmDtInd = value if value is not None else base_types.UninitialisedField(self, 'IntrBkSttlmDtInd', RequestedIndicator, False)
 
 	@IntrBkSttlmDtInd.deleter
 	def IntrBkSttlmDtInd(self):
 		del self._IntrBkSttlmDtInd
-		self._IntrBkSttlmDtInd = None
+		self._IntrBkSttlmDtInd = base_types.UninitialisedField(self, 'IntrBkSttlmDtInd', RequestedIndicator, False)
 
 	@property
 	def IntrmyInd(self):
@@ -196,12 +196,12 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 
 	@IntrmyInd.setter
 	def IntrmyInd(self, value):
-		self._IntrmyInd = value if type(value) != base_types.auto else self.make_default("IntrmyInd")
+		self._IntrmyInd = value if value is not None else base_types.UninitialisedField(self, 'IntrmyInd', RequestedIndicator, False)
 
 	@IntrmyInd.deleter
 	def IntrmyInd(self):
 		del self._IntrmyInd
-		self._IntrmyInd = None
+		self._IntrmyInd = base_types.UninitialisedField(self, 'IntrmyInd', RequestedIndicator, False)
 
 	@property
 	def MsgIdInd(self):
@@ -209,12 +209,12 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 
 	@MsgIdInd.setter
 	def MsgIdInd(self, value):
-		self._MsgIdInd = value if type(value) != base_types.auto else self.make_default("MsgIdInd")
+		self._MsgIdInd = value if value is not None else base_types.UninitialisedField(self, 'MsgIdInd', RequestedIndicator, False)
 
 	@MsgIdInd.deleter
 	def MsgIdInd(self):
 		del self._MsgIdInd
-		self._MsgIdInd = None
+		self._MsgIdInd = base_types.UninitialisedField(self, 'MsgIdInd', RequestedIndicator, False)
 
 	@property
 	def PmtMTInd(self):
@@ -222,12 +222,12 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 
 	@PmtMTInd.setter
 	def PmtMTInd(self, value):
-		self._PmtMTInd = value if type(value) != base_types.auto else self.make_default("PmtMTInd")
+		self._PmtMTInd = value if value is not None else base_types.UninitialisedField(self, 'PmtMTInd', RequestedIndicator, False)
 
 	@PmtMTInd.deleter
 	def PmtMTInd(self):
 		del self._PmtMTInd
-		self._PmtMTInd = None
+		self._PmtMTInd = base_types.UninitialisedField(self, 'PmtMTInd', RequestedIndicator, False)
 
 	@property
 	def PmtMtdInd(self):
@@ -235,12 +235,12 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 
 	@PmtMtdInd.setter
 	def PmtMtdInd(self, value):
-		self._PmtMtdInd = value if type(value) != base_types.auto else self.make_default("PmtMtdInd")
+		self._PmtMtdInd = value if value is not None else base_types.UninitialisedField(self, 'PmtMtdInd', RequestedIndicator, False)
 
 	@PmtMtdInd.deleter
 	def PmtMtdInd(self):
 		del self._PmtMtdInd
-		self._PmtMtdInd = None
+		self._PmtMtdInd = base_types.UninitialisedField(self, 'PmtMtdInd', RequestedIndicator, False)
 
 	@property
 	def PmtTpInd(self):
@@ -248,12 +248,12 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 
 	@PmtTpInd.setter
 	def PmtTpInd(self, value):
-		self._PmtTpInd = value if type(value) != base_types.auto else self.make_default("PmtTpInd")
+		self._PmtTpInd = value if value is not None else base_types.UninitialisedField(self, 'PmtTpInd', RequestedIndicator, False)
 
 	@PmtTpInd.deleter
 	def PmtTpInd(self):
 		del self._PmtTpInd
-		self._PmtTpInd = None
+		self._PmtTpInd = base_types.UninitialisedField(self, 'PmtTpInd', RequestedIndicator, False)
 
 	@property
 	def PrcgVldtyTmInd(self):
@@ -261,12 +261,12 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 
 	@PrcgVldtyTmInd.setter
 	def PrcgVldtyTmInd(self, value):
-		self._PrcgVldtyTmInd = value if type(value) != base_types.auto else self.make_default("PrcgVldtyTmInd")
+		self._PrcgVldtyTmInd = value if value is not None else base_types.UninitialisedField(self, 'PrcgVldtyTmInd', RequestedIndicator, False)
 
 	@PrcgVldtyTmInd.deleter
 	def PrcgVldtyTmInd(self):
 		del self._PrcgVldtyTmInd
-		self._PrcgVldtyTmInd = None
+		self._PrcgVldtyTmInd = base_types.UninitialisedField(self, 'PrcgVldtyTmInd', RequestedIndicator, False)
 
 	@property
 	def PrtyInd(self):
@@ -274,12 +274,12 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 
 	@PrtyInd.setter
 	def PrtyInd(self, value):
-		self._PrtyInd = value if type(value) != base_types.auto else self.make_default("PrtyInd")
+		self._PrtyInd = value if value is not None else base_types.UninitialisedField(self, 'PrtyInd', RequestedIndicator, False)
 
 	@PrtyInd.deleter
 	def PrtyInd(self):
 		del self._PrtyInd
-		self._PrtyInd = None
+		self._PrtyInd = base_types.UninitialisedField(self, 'PrtyInd', RequestedIndicator, False)
 
 	@property
 	def PurpInd(self):
@@ -287,12 +287,12 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 
 	@PurpInd.setter
 	def PurpInd(self, value):
-		self._PurpInd = value if type(value) != base_types.auto else self.make_default("PurpInd")
+		self._PurpInd = value if value is not None else base_types.UninitialisedField(self, 'PurpInd', RequestedIndicator, False)
 
 	@PurpInd.deleter
 	def PurpInd(self):
 		del self._PurpInd
-		self._PurpInd = None
+		self._PurpInd = base_types.UninitialisedField(self, 'PurpInd', RequestedIndicator, False)
 
 	@property
 	def ReqdExctnDtInd(self):
@@ -300,12 +300,12 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 
 	@ReqdExctnDtInd.setter
 	def ReqdExctnDtInd(self, value):
-		self._ReqdExctnDtInd = value if type(value) != base_types.auto else self.make_default("ReqdExctnDtInd")
+		self._ReqdExctnDtInd = value if value is not None else base_types.UninitialisedField(self, 'ReqdExctnDtInd', RequestedIndicator, False)
 
 	@ReqdExctnDtInd.deleter
 	def ReqdExctnDtInd(self):
 		del self._ReqdExctnDtInd
-		self._ReqdExctnDtInd = None
+		self._ReqdExctnDtInd = base_types.UninitialisedField(self, 'ReqdExctnDtInd', RequestedIndicator, False)
 
 	@property
 	def TxIdInd(self):
@@ -313,12 +313,12 @@ class PaymentReturnCriteria4(base_types._BaseFieldType):
 
 	@TxIdInd.setter
 	def TxIdInd(self, value):
-		self._TxIdInd = value if type(value) != base_types.auto else self.make_default("TxIdInd")
+		self._TxIdInd = value if value is not None else base_types.UninitialisedField(self, 'TxIdInd', RequestedIndicator, False)
 
 	@TxIdInd.deleter
 	def TxIdInd(self):
 		del self._TxIdInd
-		self._TxIdInd = None
+		self._TxIdInd = base_types.UninitialisedField(self, 'TxIdInd', RequestedIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtDbtInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),

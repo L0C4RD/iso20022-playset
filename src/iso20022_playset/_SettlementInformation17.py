@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
-from ._ISOYearMonth import ISOYearMonth
-from ._SettlementUnitType3Choice import SettlementUnitType3Choice
+from . import FinancialInstrumentQuantity1Choice
+from . import ISOYearMonth
+from . import SettlementUnitType3Choice
 
 class SettlementInformation17(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SettlementInformation17(base_types._BaseFieldType):
 
 	@CtrctSttlmMnth.setter
 	def CtrctSttlmMnth(self, value):
-		self._CtrctSttlmMnth = value if type(value) != base_types.auto else self.make_default("CtrctSttlmMnth")
+		self._CtrctSttlmMnth = value if value is not None else base_types.UninitialisedField(self, 'CtrctSttlmMnth', ISOYearMonth, False)
 
 	@CtrctSttlmMnth.deleter
 	def CtrctSttlmMnth(self):
 		del self._CtrctSttlmMnth
-		self._CtrctSttlmMnth = None
+		self._CtrctSttlmMnth = base_types.UninitialisedField(self, 'CtrctSttlmMnth', ISOYearMonth, False)
 
 	@property
 	def DevtgSttlmUnit(self):
@@ -28,12 +28,12 @@ class SettlementInformation17(base_types._BaseFieldType):
 
 	@DevtgSttlmUnit.setter
 	def DevtgSttlmUnit(self, value):
-		self._DevtgSttlmUnit = value if type(value) != base_types.auto else self.make_default("DevtgSttlmUnit")
+		self._DevtgSttlmUnit = value if value is not None else base_types.UninitialisedField(self, 'DevtgSttlmUnit', FinancialInstrumentQuantity1Choice, True)
 
 	@DevtgSttlmUnit.deleter
 	def DevtgSttlmUnit(self):
 		del self._DevtgSttlmUnit
-		self._DevtgSttlmUnit = None
+		self._DevtgSttlmUnit = base_types.UninitialisedField(self, 'DevtgSttlmUnit', FinancialInstrumentQuantity1Choice, True)
 
 	@property
 	def MinDnmtn(self):
@@ -41,12 +41,12 @@ class SettlementInformation17(base_types._BaseFieldType):
 
 	@MinDnmtn.setter
 	def MinDnmtn(self, value):
-		self._MinDnmtn = value if type(value) != base_types.auto else self.make_default("MinDnmtn")
+		self._MinDnmtn = value if value is not None else base_types.UninitialisedField(self, 'MinDnmtn', FinancialInstrumentQuantity1Choice, False)
 
 	@MinDnmtn.deleter
 	def MinDnmtn(self):
 		del self._MinDnmtn
-		self._MinDnmtn = None
+		self._MinDnmtn = base_types.UninitialisedField(self, 'MinDnmtn', FinancialInstrumentQuantity1Choice, False)
 
 	@property
 	def MinMltplQty(self):
@@ -54,12 +54,12 @@ class SettlementInformation17(base_types._BaseFieldType):
 
 	@MinMltplQty.setter
 	def MinMltplQty(self, value):
-		self._MinMltplQty = value if type(value) != base_types.auto else self.make_default("MinMltplQty")
+		self._MinMltplQty = value if value is not None else base_types.UninitialisedField(self, 'MinMltplQty', FinancialInstrumentQuantity1Choice, False)
 
 	@MinMltplQty.deleter
 	def MinMltplQty(self):
 		del self._MinMltplQty
-		self._MinMltplQty = None
+		self._MinMltplQty = base_types.UninitialisedField(self, 'MinMltplQty', FinancialInstrumentQuantity1Choice, False)
 
 	@property
 	def SctiesQtyTp(self):
@@ -67,12 +67,12 @@ class SettlementInformation17(base_types._BaseFieldType):
 
 	@SctiesQtyTp.setter
 	def SctiesQtyTp(self, value):
-		self._SctiesQtyTp = value if type(value) != base_types.auto else self.make_default("SctiesQtyTp")
+		self._SctiesQtyTp = value if value is not None else base_types.UninitialisedField(self, 'SctiesQtyTp', SettlementUnitType3Choice, False)
 
 	@SctiesQtyTp.deleter
 	def SctiesQtyTp(self):
 		del self._SctiesQtyTp
-		self._SctiesQtyTp = None
+		self._SctiesQtyTp = base_types.UninitialisedField(self, 'SctiesQtyTp', SettlementUnitType3Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrctSttlmMnth', type=ISOYearMonth, min=0, max=1, mutex_group=None, array=False),

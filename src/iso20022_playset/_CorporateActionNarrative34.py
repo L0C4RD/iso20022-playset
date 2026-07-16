@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
+from . import RestrictedFINXMax350Text
 
 class CorporateActionNarrative34(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class CorporateActionNarrative34(base_types._BaseFieldType):
 
 	@CertfctnBrkdwn.setter
 	def CertfctnBrkdwn(self, value):
-		self._CertfctnBrkdwn = value if type(value) != base_types.auto else self.make_default("CertfctnBrkdwn")
+		self._CertfctnBrkdwn = value if value is not None else base_types.UninitialisedField(self, 'CertfctnBrkdwn', RestrictedFINXMax350Text, True)
 
 	@CertfctnBrkdwn.deleter
 	def CertfctnBrkdwn(self):
 		del self._CertfctnBrkdwn
-		self._CertfctnBrkdwn = None
+		self._CertfctnBrkdwn = base_types.UninitialisedField(self, 'CertfctnBrkdwn', RestrictedFINXMax350Text, True)
 
 	@property
 	def PtyCtctNrrtv(self):
@@ -26,12 +26,12 @@ class CorporateActionNarrative34(base_types._BaseFieldType):
 
 	@PtyCtctNrrtv.setter
 	def PtyCtctNrrtv(self, value):
-		self._PtyCtctNrrtv = value if type(value) != base_types.auto else self.make_default("PtyCtctNrrtv")
+		self._PtyCtctNrrtv = value if value is not None else base_types.UninitialisedField(self, 'PtyCtctNrrtv', RestrictedFINXMax350Text, True)
 
 	@PtyCtctNrrtv.deleter
 	def PtyCtctNrrtv(self):
 		del self._PtyCtctNrrtv
-		self._PtyCtctNrrtv = None
+		self._PtyCtctNrrtv = base_types.UninitialisedField(self, 'PtyCtctNrrtv', RestrictedFINXMax350Text, True)
 
 	@property
 	def RegnDtls(self):
@@ -39,12 +39,12 @@ class CorporateActionNarrative34(base_types._BaseFieldType):
 
 	@RegnDtls.setter
 	def RegnDtls(self, value):
-		self._RegnDtls = value if type(value) != base_types.auto else self.make_default("RegnDtls")
+		self._RegnDtls = value if value is not None else base_types.UninitialisedField(self, 'RegnDtls', RestrictedFINXMax350Text, True)
 
 	@RegnDtls.deleter
 	def RegnDtls(self):
 		del self._RegnDtls
-		self._RegnDtls = None
+		self._RegnDtls = base_types.UninitialisedField(self, 'RegnDtls', RestrictedFINXMax350Text, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CertfctnBrkdwn', type=RestrictedFINXMax350Text, min=0, max=None, mutex_group=None, array=True),

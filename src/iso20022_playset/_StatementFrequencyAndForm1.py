@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CommunicationFormat1Choice import CommunicationFormat1Choice
-from ._CommunicationMethod2Choice import CommunicationMethod2Choice
-from ._Frequency7Code import Frequency7Code
-from ._Max350Text import Max350Text
+from . import CommunicationFormat1Choice
+from . import CommunicationMethod2Choice
+from . import Frequency7Code
+from . import Max350Text
 
 class StatementFrequencyAndForm1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class StatementFrequencyAndForm1(base_types._BaseFieldType):
 
 	@ComMtd.setter
 	def ComMtd(self, value):
-		self._ComMtd = value if type(value) != base_types.auto else self.make_default("ComMtd")
+		self._ComMtd = value if value is not None else base_types.UninitialisedField(self, 'ComMtd', CommunicationMethod2Choice, False)
 
 	@ComMtd.deleter
 	def ComMtd(self):
 		del self._ComMtd
-		self._ComMtd = None
+		self._ComMtd = base_types.UninitialisedField(self, 'ComMtd', CommunicationMethod2Choice, False)
 
 	@property
 	def DlvryAdr(self):
@@ -29,12 +29,12 @@ class StatementFrequencyAndForm1(base_types._BaseFieldType):
 
 	@DlvryAdr.setter
 	def DlvryAdr(self, value):
-		self._DlvryAdr = value if type(value) != base_types.auto else self.make_default("DlvryAdr")
+		self._DlvryAdr = value if value is not None else base_types.UninitialisedField(self, 'DlvryAdr', Max350Text, False)
 
 	@DlvryAdr.deleter
 	def DlvryAdr(self):
 		del self._DlvryAdr
-		self._DlvryAdr = None
+		self._DlvryAdr = base_types.UninitialisedField(self, 'DlvryAdr', Max350Text, False)
 
 	@property
 	def Frmt(self):
@@ -42,12 +42,12 @@ class StatementFrequencyAndForm1(base_types._BaseFieldType):
 
 	@Frmt.setter
 	def Frmt(self, value):
-		self._Frmt = value if type(value) != base_types.auto else self.make_default("Frmt")
+		self._Frmt = value if value is not None else base_types.UninitialisedField(self, 'Frmt', CommunicationFormat1Choice, False)
 
 	@Frmt.deleter
 	def Frmt(self):
 		del self._Frmt
-		self._Frmt = None
+		self._Frmt = base_types.UninitialisedField(self, 'Frmt', CommunicationFormat1Choice, False)
 
 	@property
 	def Frqcy(self):
@@ -55,12 +55,12 @@ class StatementFrequencyAndForm1(base_types._BaseFieldType):
 
 	@Frqcy.setter
 	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
+		self._Frqcy = value if value is not None else base_types.UninitialisedField(self, 'Frqcy', Frequency7Code, False)
 
 	@Frqcy.deleter
 	def Frqcy(self):
 		del self._Frqcy
-		self._Frqcy = None
+		self._Frqcy = base_types.UninitialisedField(self, 'Frqcy', Frequency7Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ComMtd', type=CommunicationMethod2Choice, min=1, max=1, mutex_group=None, array=False),

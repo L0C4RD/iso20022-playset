@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PriceFormat74Choice import PriceFormat74Choice
+from . import PriceFormat74Choice
 
 class IndicativeOrMarketPrice12Choice(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class IndicativeOrMarketPrice12Choice(base_types._BaseFieldType):
 
 	@IndctvPric.setter
 	def IndctvPric(self, value):
-		self._IndctvPric = value if type(value) != base_types.auto else self.make_default("IndctvPric")
+		self._IndctvPric = value if value is not None else base_types.UninitialisedField(self, 'IndctvPric', PriceFormat74Choice, False)
 
 	@IndctvPric.deleter
 	def IndctvPric(self):
 		del self._IndctvPric
-		self._IndctvPric = None
+		self._IndctvPric = base_types.UninitialisedField(self, 'IndctvPric', PriceFormat74Choice, False)
 
 	@property
 	def MktPric(self):
@@ -26,12 +26,12 @@ class IndicativeOrMarketPrice12Choice(base_types._BaseFieldType):
 
 	@MktPric.setter
 	def MktPric(self, value):
-		self._MktPric = value if type(value) != base_types.auto else self.make_default("MktPric")
+		self._MktPric = value if value is not None else base_types.UninitialisedField(self, 'MktPric', PriceFormat74Choice, False)
 
 	@MktPric.deleter
 	def MktPric(self):
 		del self._MktPric
-		self._MktPric = None
+		self._MktPric = base_types.UninitialisedField(self, 'MktPric', PriceFormat74Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IndctvPric', type=PriceFormat74Choice, min=0, max=1, mutex_group=1, array=False),

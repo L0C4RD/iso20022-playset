@@ -2,18 +2,18 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BaseOneRate import BaseOneRate
-from ._CashCollateral4 import CashCollateral4
-from ._CollateralAmount1 import CollateralAmount1
-from ._CollateralAppliedExcess1Code import CollateralAppliedExcess1Code
-from ._CollateralDirection1Code import CollateralDirection1Code
-from ._CollateralType8Code import CollateralType8Code
-from ._InterestComputationMethod2Code import InterestComputationMethod2Code
-from ._Max35Text import Max35Text
-from ._Number import Number
-from ._OtherCollateral10 import OtherCollateral10
-from ._SecuritiesCollateral13 import SecuritiesCollateral13
-from ._SettlementStatus3Code import SettlementStatus3Code
+from . import BaseOneRate
+from . import CashCollateral4
+from . import CollateralAmount1
+from . import CollateralAppliedExcess1Code
+from . import CollateralDirection1Code
+from . import CollateralType8Code
+from . import InterestComputationMethod2Code
+from . import Max35Text
+from . import Number
+from . import OtherCollateral10
+from . import SecuritiesCollateral13
+from . import SettlementStatus3Code
 
 class CollateralValuation13(base_types._BaseFieldType):
 
@@ -24,12 +24,12 @@ class CollateralValuation13(base_types._BaseFieldType):
 
 	@AdjstdRate.setter
 	def AdjstdRate(self, value):
-		self._AdjstdRate = value if type(value) != base_types.auto else self.make_default("AdjstdRate")
+		self._AdjstdRate = value if value is not None else base_types.UninitialisedField(self, 'AdjstdRate', BaseOneRate, False)
 
 	@AdjstdRate.deleter
 	def AdjstdRate(self):
 		del self._AdjstdRate
-		self._AdjstdRate = None
+		self._AdjstdRate = base_types.UninitialisedField(self, 'AdjstdRate', BaseOneRate, False)
 
 	@property
 	def ApldXcssInd(self):
@@ -37,12 +37,12 @@ class CollateralValuation13(base_types._BaseFieldType):
 
 	@ApldXcssInd.setter
 	def ApldXcssInd(self, value):
-		self._ApldXcssInd = value if type(value) != base_types.auto else self.make_default("ApldXcssInd")
+		self._ApldXcssInd = value if value is not None else base_types.UninitialisedField(self, 'ApldXcssInd', CollateralAppliedExcess1Code, False)
 
 	@ApldXcssInd.deleter
 	def ApldXcssInd(self):
 		del self._ApldXcssInd
-		self._ApldXcssInd = None
+		self._ApldXcssInd = base_types.UninitialisedField(self, 'ApldXcssInd', CollateralAppliedExcess1Code, False)
 
 	@property
 	def CcyHrcut(self):
@@ -50,12 +50,12 @@ class CollateralValuation13(base_types._BaseFieldType):
 
 	@CcyHrcut.setter
 	def CcyHrcut(self, value):
-		self._CcyHrcut = value if type(value) != base_types.auto else self.make_default("CcyHrcut")
+		self._CcyHrcut = value if value is not None else base_types.UninitialisedField(self, 'CcyHrcut', BaseOneRate, False)
 
 	@CcyHrcut.deleter
 	def CcyHrcut(self):
 		del self._CcyHrcut
-		self._CcyHrcut = None
+		self._CcyHrcut = base_types.UninitialisedField(self, 'CcyHrcut', BaseOneRate, False)
 
 	@property
 	def CollDrctn(self):
@@ -63,12 +63,12 @@ class CollateralValuation13(base_types._BaseFieldType):
 
 	@CollDrctn.setter
 	def CollDrctn(self, value):
-		self._CollDrctn = value if type(value) != base_types.auto else self.make_default("CollDrctn")
+		self._CollDrctn = value if value is not None else base_types.UninitialisedField(self, 'CollDrctn', CollateralDirection1Code, False)
 
 	@CollDrctn.deleter
 	def CollDrctn(self):
 		del self._CollDrctn
-		self._CollDrctn = None
+		self._CollDrctn = base_types.UninitialisedField(self, 'CollDrctn', CollateralDirection1Code, False)
 
 	@property
 	def CollId(self):
@@ -76,12 +76,12 @@ class CollateralValuation13(base_types._BaseFieldType):
 
 	@CollId.setter
 	def CollId(self, value):
-		self._CollId = value if type(value) != base_types.auto else self.make_default("CollId")
+		self._CollId = value if value is not None else base_types.UninitialisedField(self, 'CollId', Max35Text, False)
 
 	@CollId.deleter
 	def CollId(self):
 		del self._CollId
-		self._CollId = None
+		self._CollId = base_types.UninitialisedField(self, 'CollId', Max35Text, False)
 
 	@property
 	def CollTp(self):
@@ -89,12 +89,12 @@ class CollateralValuation13(base_types._BaseFieldType):
 
 	@CollTp.setter
 	def CollTp(self, value):
-		self._CollTp = value if type(value) != base_types.auto else self.make_default("CollTp")
+		self._CollTp = value if value is not None else base_types.UninitialisedField(self, 'CollTp', CollateralType8Code, False)
 
 	@CollTp.deleter
 	def CollTp(self):
 		del self._CollTp
-		self._CollTp = None
+		self._CollTp = base_types.UninitialisedField(self, 'CollTp', CollateralType8Code, False)
 
 	@property
 	def CshColl(self):
@@ -102,12 +102,12 @@ class CollateralValuation13(base_types._BaseFieldType):
 
 	@CshColl.setter
 	def CshColl(self, value):
-		self._CshColl = value if type(value) != base_types.auto else self.make_default("CshColl")
+		self._CshColl = value if value is not None else base_types.UninitialisedField(self, 'CshColl', CashCollateral4, False)
 
 	@CshColl.deleter
 	def CshColl(self):
 		del self._CshColl
-		self._CshColl = None
+		self._CshColl = base_types.UninitialisedField(self, 'CshColl', CashCollateral4, False)
 
 	@property
 	def DayCntBsis(self):
@@ -115,12 +115,12 @@ class CollateralValuation13(base_types._BaseFieldType):
 
 	@DayCntBsis.setter
 	def DayCntBsis(self, value):
-		self._DayCntBsis = value if type(value) != base_types.auto else self.make_default("DayCntBsis")
+		self._DayCntBsis = value if value is not None else base_types.UninitialisedField(self, 'DayCntBsis', InterestComputationMethod2Code, False)
 
 	@DayCntBsis.deleter
 	def DayCntBsis(self):
 		del self._DayCntBsis
-		self._DayCntBsis = None
+		self._DayCntBsis = base_types.UninitialisedField(self, 'DayCntBsis', InterestComputationMethod2Code, False)
 
 	@property
 	def NbOfDaysAcrd(self):
@@ -128,12 +128,12 @@ class CollateralValuation13(base_types._BaseFieldType):
 
 	@NbOfDaysAcrd.setter
 	def NbOfDaysAcrd(self, value):
-		self._NbOfDaysAcrd = value if type(value) != base_types.auto else self.make_default("NbOfDaysAcrd")
+		self._NbOfDaysAcrd = value if value is not None else base_types.UninitialisedField(self, 'NbOfDaysAcrd', Number, False)
 
 	@NbOfDaysAcrd.deleter
 	def NbOfDaysAcrd(self):
 		del self._NbOfDaysAcrd
-		self._NbOfDaysAcrd = None
+		self._NbOfDaysAcrd = base_types.UninitialisedField(self, 'NbOfDaysAcrd', Number, False)
 
 	@property
 	def OthrColl(self):
@@ -141,12 +141,12 @@ class CollateralValuation13(base_types._BaseFieldType):
 
 	@OthrColl.setter
 	def OthrColl(self, value):
-		self._OthrColl = value if type(value) != base_types.auto else self.make_default("OthrColl")
+		self._OthrColl = value if value is not None else base_types.UninitialisedField(self, 'OthrColl', OtherCollateral10, False)
 
 	@OthrColl.deleter
 	def OthrColl(self):
 		del self._OthrColl
-		self._OthrColl = None
+		self._OthrColl = base_types.UninitialisedField(self, 'OthrColl', OtherCollateral10, False)
 
 	@property
 	def SctiesColl(self):
@@ -154,12 +154,12 @@ class CollateralValuation13(base_types._BaseFieldType):
 
 	@SctiesColl.setter
 	def SctiesColl(self, value):
-		self._SctiesColl = value if type(value) != base_types.auto else self.make_default("SctiesColl")
+		self._SctiesColl = value if value is not None else base_types.UninitialisedField(self, 'SctiesColl', SecuritiesCollateral13, False)
 
 	@SctiesColl.deleter
 	def SctiesColl(self):
 		del self._SctiesColl
-		self._SctiesColl = None
+		self._SctiesColl = base_types.UninitialisedField(self, 'SctiesColl', SecuritiesCollateral13, False)
 
 	@property
 	def SttlmSts(self):
@@ -167,12 +167,12 @@ class CollateralValuation13(base_types._BaseFieldType):
 
 	@SttlmSts.setter
 	def SttlmSts(self, value):
-		self._SttlmSts = value if type(value) != base_types.auto else self.make_default("SttlmSts")
+		self._SttlmSts = value if value is not None else base_types.UninitialisedField(self, 'SttlmSts', SettlementStatus3Code, False)
 
 	@SttlmSts.deleter
 	def SttlmSts(self):
 		del self._SttlmSts
-		self._SttlmSts = None
+		self._SttlmSts = base_types.UninitialisedField(self, 'SttlmSts', SettlementStatus3Code, False)
 
 	@property
 	def ValtnAmts(self):
@@ -180,12 +180,12 @@ class CollateralValuation13(base_types._BaseFieldType):
 
 	@ValtnAmts.setter
 	def ValtnAmts(self, value):
-		self._ValtnAmts = value if type(value) != base_types.auto else self.make_default("ValtnAmts")
+		self._ValtnAmts = value if value is not None else base_types.UninitialisedField(self, 'ValtnAmts', CollateralAmount1, False)
 
 	@ValtnAmts.deleter
 	def ValtnAmts(self):
 		del self._ValtnAmts
-		self._ValtnAmts = None
+		self._ValtnAmts = base_types.UninitialisedField(self, 'ValtnAmts', CollateralAmount1, False)
 
 	@property
 	def XchgRate(self):
@@ -193,12 +193,12 @@ class CollateralValuation13(base_types._BaseFieldType):
 
 	@XchgRate.setter
 	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != base_types.auto else self.make_default("XchgRate")
+		self._XchgRate = value if value is not None else base_types.UninitialisedField(self, 'XchgRate', BaseOneRate, False)
 
 	@XchgRate.deleter
 	def XchgRate(self):
 		del self._XchgRate
-		self._XchgRate = None
+		self._XchgRate = base_types.UninitialisedField(self, 'XchgRate', BaseOneRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AdjstdRate', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),

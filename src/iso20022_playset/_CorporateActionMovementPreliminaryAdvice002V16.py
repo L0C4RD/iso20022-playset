@@ -2,21 +2,21 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountIdentification76Choice import AccountIdentification76Choice
-from ._CorporateAction77 import CorporateAction77
-from ._CorporateActionEventReference4 import CorporateActionEventReference4
-from ._CorporateActionGeneralInformation192 import CorporateActionGeneralInformation192
-from ._CorporateActionNarrative62 import CorporateActionNarrative62
-from ._CorporateActionOption245 import CorporateActionOption245
-from ._CorporateActionPreliminaryAdviceType5 import CorporateActionPreliminaryAdviceType5
-from ._CorporateActionReversalReason9 import CorporateActionReversalReason9
-from ._DocumentIdentification17 import DocumentIdentification17
-from ._DocumentIdentification37 import DocumentIdentification37
-from ._DocumentIdentification38 import DocumentIdentification38
-from ._Pagination1 import Pagination1
-from ._PartyIdentification137Choice import PartyIdentification137Choice
-from ._PartyIdentification151Choice import PartyIdentification151Choice
-from ._SupplementaryData1 import SupplementaryData1
+from . import AccountIdentification76Choice
+from . import CorporateAction77
+from . import CorporateActionEventReference4
+from . import CorporateActionGeneralInformation192
+from . import CorporateActionNarrative62
+from . import CorporateActionOption245
+from . import CorporateActionPreliminaryAdviceType5
+from . import CorporateActionReversalReason9
+from . import DocumentIdentification17
+from . import DocumentIdentification37
+from . import DocumentIdentification38
+from . import Pagination1
+from . import PartyIdentification137Choice
+from . import PartyIdentification151Choice
+from . import SupplementaryData1
 
 class CorporateActionMovementPreliminaryAdvice002V16(base_types._BaseFieldType):
 
@@ -27,12 +27,12 @@ class CorporateActionMovementPreliminaryAdvice002V16(base_types._BaseFieldType):
 
 	@AcctDtls.setter
 	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != base_types.auto else self.make_default("AcctDtls")
+		self._AcctDtls = value if value is not None else base_types.UninitialisedField(self, 'AcctDtls', AccountIdentification76Choice, False)
 
 	@AcctDtls.deleter
 	def AcctDtls(self):
 		del self._AcctDtls
-		self._AcctDtls = None
+		self._AcctDtls = base_types.UninitialisedField(self, 'AcctDtls', AccountIdentification76Choice, False)
 
 	@property
 	def AddtlInf(self):
@@ -40,12 +40,12 @@ class CorporateActionMovementPreliminaryAdvice002V16(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', CorporateActionNarrative62, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', CorporateActionNarrative62, False)
 
 	@property
 	def CorpActnDtls(self):
@@ -53,12 +53,12 @@ class CorporateActionMovementPreliminaryAdvice002V16(base_types._BaseFieldType):
 
 	@CorpActnDtls.setter
 	def CorpActnDtls(self, value):
-		self._CorpActnDtls = value if type(value) != base_types.auto else self.make_default("CorpActnDtls")
+		self._CorpActnDtls = value if value is not None else base_types.UninitialisedField(self, 'CorpActnDtls', CorporateAction77, False)
 
 	@CorpActnDtls.deleter
 	def CorpActnDtls(self):
 		del self._CorpActnDtls
-		self._CorpActnDtls = None
+		self._CorpActnDtls = base_types.UninitialisedField(self, 'CorpActnDtls', CorporateAction77, False)
 
 	@property
 	def CorpActnGnlInf(self):
@@ -66,12 +66,12 @@ class CorporateActionMovementPreliminaryAdvice002V16(base_types._BaseFieldType):
 
 	@CorpActnGnlInf.setter
 	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != base_types.auto else self.make_default("CorpActnGnlInf")
+		self._CorpActnGnlInf = value if value is not None else base_types.UninitialisedField(self, 'CorpActnGnlInf', CorporateActionGeneralInformation192, False)
 
 	@CorpActnGnlInf.deleter
 	def CorpActnGnlInf(self):
 		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
+		self._CorpActnGnlInf = base_types.UninitialisedField(self, 'CorpActnGnlInf', CorporateActionGeneralInformation192, False)
 
 	@property
 	def CorpActnMvmntDtls(self):
@@ -79,12 +79,12 @@ class CorporateActionMovementPreliminaryAdvice002V16(base_types._BaseFieldType):
 
 	@CorpActnMvmntDtls.setter
 	def CorpActnMvmntDtls(self, value):
-		self._CorpActnMvmntDtls = value if type(value) != base_types.auto else self.make_default("CorpActnMvmntDtls")
+		self._CorpActnMvmntDtls = value if value is not None else base_types.UninitialisedField(self, 'CorpActnMvmntDtls', CorporateActionOption245, True)
 
 	@CorpActnMvmntDtls.deleter
 	def CorpActnMvmntDtls(self):
 		del self._CorpActnMvmntDtls
-		self._CorpActnMvmntDtls = None
+		self._CorpActnMvmntDtls = base_types.UninitialisedField(self, 'CorpActnMvmntDtls', CorporateActionOption245, True)
 
 	@property
 	def DrpAgt(self):
@@ -92,12 +92,12 @@ class CorporateActionMovementPreliminaryAdvice002V16(base_types._BaseFieldType):
 
 	@DrpAgt.setter
 	def DrpAgt(self, value):
-		self._DrpAgt = value if type(value) != base_types.auto else self.make_default("DrpAgt")
+		self._DrpAgt = value if value is not None else base_types.UninitialisedField(self, 'DrpAgt', PartyIdentification137Choice, False)
 
 	@DrpAgt.deleter
 	def DrpAgt(self):
 		del self._DrpAgt
-		self._DrpAgt = None
+		self._DrpAgt = base_types.UninitialisedField(self, 'DrpAgt', PartyIdentification137Choice, False)
 
 	@property
 	def EvtsLkg(self):
@@ -105,12 +105,12 @@ class CorporateActionMovementPreliminaryAdvice002V16(base_types._BaseFieldType):
 
 	@EvtsLkg.setter
 	def EvtsLkg(self, value):
-		self._EvtsLkg = value if type(value) != base_types.auto else self.make_default("EvtsLkg")
+		self._EvtsLkg = value if value is not None else base_types.UninitialisedField(self, 'EvtsLkg', CorporateActionEventReference4, True)
 
 	@EvtsLkg.deleter
 	def EvtsLkg(self):
 		del self._EvtsLkg
-		self._EvtsLkg = None
+		self._EvtsLkg = base_types.UninitialisedField(self, 'EvtsLkg', CorporateActionEventReference4, True)
 
 	@property
 	def InfAgt(self):
@@ -118,12 +118,12 @@ class CorporateActionMovementPreliminaryAdvice002V16(base_types._BaseFieldType):
 
 	@InfAgt.setter
 	def InfAgt(self, value):
-		self._InfAgt = value if type(value) != base_types.auto else self.make_default("InfAgt")
+		self._InfAgt = value if value is not None else base_types.UninitialisedField(self, 'InfAgt', PartyIdentification137Choice, False)
 
 	@InfAgt.deleter
 	def InfAgt(self):
 		del self._InfAgt
-		self._InfAgt = None
+		self._InfAgt = base_types.UninitialisedField(self, 'InfAgt', PartyIdentification137Choice, False)
 
 	@property
 	def InstrId(self):
@@ -131,12 +131,12 @@ class CorporateActionMovementPreliminaryAdvice002V16(base_types._BaseFieldType):
 
 	@InstrId.setter
 	def InstrId(self, value):
-		self._InstrId = value if type(value) != base_types.auto else self.make_default("InstrId")
+		self._InstrId = value if value is not None else base_types.UninitialisedField(self, 'InstrId', DocumentIdentification17, False)
 
 	@InstrId.deleter
 	def InstrId(self):
 		del self._InstrId
-		self._InstrId = None
+		self._InstrId = base_types.UninitialisedField(self, 'InstrId', DocumentIdentification17, False)
 
 	@property
 	def Issr(self):
@@ -144,12 +144,12 @@ class CorporateActionMovementPreliminaryAdvice002V16(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+		self._Issr = value if value is not None else base_types.UninitialisedField(self, 'Issr', PartyIdentification151Choice, False)
 
 	@Issr.deleter
 	def Issr(self):
 		del self._Issr
-		self._Issr = None
+		self._Issr = base_types.UninitialisedField(self, 'Issr', PartyIdentification151Choice, False)
 
 	@property
 	def IssrAgt(self):
@@ -157,12 +157,12 @@ class CorporateActionMovementPreliminaryAdvice002V16(base_types._BaseFieldType):
 
 	@IssrAgt.setter
 	def IssrAgt(self, value):
-		self._IssrAgt = value if type(value) != base_types.auto else self.make_default("IssrAgt")
+		self._IssrAgt = value if value is not None else base_types.UninitialisedField(self, 'IssrAgt', PartyIdentification151Choice, True)
 
 	@IssrAgt.deleter
 	def IssrAgt(self):
 		del self._IssrAgt
-		self._IssrAgt = None
+		self._IssrAgt = base_types.UninitialisedField(self, 'IssrAgt', PartyIdentification151Choice, True)
 
 	@property
 	def MvmntConfId(self):
@@ -170,12 +170,12 @@ class CorporateActionMovementPreliminaryAdvice002V16(base_types._BaseFieldType):
 
 	@MvmntConfId.setter
 	def MvmntConfId(self, value):
-		self._MvmntConfId = value if type(value) != base_types.auto else self.make_default("MvmntConfId")
+		self._MvmntConfId = value if value is not None else base_types.UninitialisedField(self, 'MvmntConfId', DocumentIdentification37, False)
 
 	@MvmntConfId.deleter
 	def MvmntConfId(self):
 		del self._MvmntConfId
-		self._MvmntConfId = None
+		self._MvmntConfId = base_types.UninitialisedField(self, 'MvmntConfId', DocumentIdentification37, False)
 
 	@property
 	def MvmntPrlimryAdvcGnlInf(self):
@@ -183,12 +183,12 @@ class CorporateActionMovementPreliminaryAdvice002V16(base_types._BaseFieldType):
 
 	@MvmntPrlimryAdvcGnlInf.setter
 	def MvmntPrlimryAdvcGnlInf(self, value):
-		self._MvmntPrlimryAdvcGnlInf = value if type(value) != base_types.auto else self.make_default("MvmntPrlimryAdvcGnlInf")
+		self._MvmntPrlimryAdvcGnlInf = value if value is not None else base_types.UninitialisedField(self, 'MvmntPrlimryAdvcGnlInf', CorporateActionPreliminaryAdviceType5, False)
 
 	@MvmntPrlimryAdvcGnlInf.deleter
 	def MvmntPrlimryAdvcGnlInf(self):
 		del self._MvmntPrlimryAdvcGnlInf
-		self._MvmntPrlimryAdvcGnlInf = None
+		self._MvmntPrlimryAdvcGnlInf = base_types.UninitialisedField(self, 'MvmntPrlimryAdvcGnlInf', CorporateActionPreliminaryAdviceType5, False)
 
 	@property
 	def NtfctnId(self):
@@ -196,12 +196,12 @@ class CorporateActionMovementPreliminaryAdvice002V16(base_types._BaseFieldType):
 
 	@NtfctnId.setter
 	def NtfctnId(self, value):
-		self._NtfctnId = value if type(value) != base_types.auto else self.make_default("NtfctnId")
+		self._NtfctnId = value if value is not None else base_types.UninitialisedField(self, 'NtfctnId', DocumentIdentification37, False)
 
 	@NtfctnId.deleter
 	def NtfctnId(self):
 		del self._NtfctnId
-		self._NtfctnId = None
+		self._NtfctnId = base_types.UninitialisedField(self, 'NtfctnId', DocumentIdentification37, False)
 
 	@property
 	def Offerr(self):
@@ -209,12 +209,12 @@ class CorporateActionMovementPreliminaryAdvice002V16(base_types._BaseFieldType):
 
 	@Offerr.setter
 	def Offerr(self, value):
-		self._Offerr = value if type(value) != base_types.auto else self.make_default("Offerr")
+		self._Offerr = value if value is not None else base_types.UninitialisedField(self, 'Offerr', PartyIdentification151Choice, True)
 
 	@Offerr.deleter
 	def Offerr(self):
 		del self._Offerr
-		self._Offerr = None
+		self._Offerr = base_types.UninitialisedField(self, 'Offerr', PartyIdentification151Choice, True)
 
 	@property
 	def OthrDocId(self):
@@ -222,12 +222,12 @@ class CorporateActionMovementPreliminaryAdvice002V16(base_types._BaseFieldType):
 
 	@OthrDocId.setter
 	def OthrDocId(self, value):
-		self._OthrDocId = value if type(value) != base_types.auto else self.make_default("OthrDocId")
+		self._OthrDocId = value if value is not None else base_types.UninitialisedField(self, 'OthrDocId', DocumentIdentification38, True)
 
 	@OthrDocId.deleter
 	def OthrDocId(self):
 		del self._OthrDocId
-		self._OthrDocId = None
+		self._OthrDocId = base_types.UninitialisedField(self, 'OthrDocId', DocumentIdentification38, True)
 
 	@property
 	def Pgntn(self):
@@ -235,12 +235,12 @@ class CorporateActionMovementPreliminaryAdvice002V16(base_types._BaseFieldType):
 
 	@Pgntn.setter
 	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+		self._Pgntn = value if value is not None else base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@Pgntn.deleter
 	def Pgntn(self):
 		del self._Pgntn
-		self._Pgntn = None
+		self._Pgntn = base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@property
 	def PhysSctiesAgt(self):
@@ -248,12 +248,12 @@ class CorporateActionMovementPreliminaryAdvice002V16(base_types._BaseFieldType):
 
 	@PhysSctiesAgt.setter
 	def PhysSctiesAgt(self, value):
-		self._PhysSctiesAgt = value if type(value) != base_types.auto else self.make_default("PhysSctiesAgt")
+		self._PhysSctiesAgt = value if value is not None else base_types.UninitialisedField(self, 'PhysSctiesAgt', PartyIdentification137Choice, False)
 
 	@PhysSctiesAgt.deleter
 	def PhysSctiesAgt(self):
 		del self._PhysSctiesAgt
-		self._PhysSctiesAgt = None
+		self._PhysSctiesAgt = base_types.UninitialisedField(self, 'PhysSctiesAgt', PartyIdentification137Choice, False)
 
 	@property
 	def PngAgt(self):
@@ -261,12 +261,12 @@ class CorporateActionMovementPreliminaryAdvice002V16(base_types._BaseFieldType):
 
 	@PngAgt.setter
 	def PngAgt(self, value):
-		self._PngAgt = value if type(value) != base_types.auto else self.make_default("PngAgt")
+		self._PngAgt = value if value is not None else base_types.UninitialisedField(self, 'PngAgt', PartyIdentification137Choice, True)
 
 	@PngAgt.deleter
 	def PngAgt(self):
 		del self._PngAgt
-		self._PngAgt = None
+		self._PngAgt = base_types.UninitialisedField(self, 'PngAgt', PartyIdentification137Choice, True)
 
 	@property
 	def PrvsMvmntPrlimryAdvcId(self):
@@ -274,12 +274,12 @@ class CorporateActionMovementPreliminaryAdvice002V16(base_types._BaseFieldType):
 
 	@PrvsMvmntPrlimryAdvcId.setter
 	def PrvsMvmntPrlimryAdvcId(self, value):
-		self._PrvsMvmntPrlimryAdvcId = value if type(value) != base_types.auto else self.make_default("PrvsMvmntPrlimryAdvcId")
+		self._PrvsMvmntPrlimryAdvcId = value if value is not None else base_types.UninitialisedField(self, 'PrvsMvmntPrlimryAdvcId', DocumentIdentification37, False)
 
 	@PrvsMvmntPrlimryAdvcId.deleter
 	def PrvsMvmntPrlimryAdvcId(self):
 		del self._PrvsMvmntPrlimryAdvcId
-		self._PrvsMvmntPrlimryAdvcId = None
+		self._PrvsMvmntPrlimryAdvcId = base_types.UninitialisedField(self, 'PrvsMvmntPrlimryAdvcId', DocumentIdentification37, False)
 
 	@property
 	def Regar(self):
@@ -287,12 +287,12 @@ class CorporateActionMovementPreliminaryAdvice002V16(base_types._BaseFieldType):
 
 	@Regar.setter
 	def Regar(self, value):
-		self._Regar = value if type(value) != base_types.auto else self.make_default("Regar")
+		self._Regar = value if value is not None else base_types.UninitialisedField(self, 'Regar', PartyIdentification137Choice, False)
 
 	@Regar.deleter
 	def Regar(self):
 		del self._Regar
-		self._Regar = None
+		self._Regar = base_types.UninitialisedField(self, 'Regar', PartyIdentification137Choice, False)
 
 	@property
 	def RsellngAgt(self):
@@ -300,12 +300,12 @@ class CorporateActionMovementPreliminaryAdvice002V16(base_types._BaseFieldType):
 
 	@RsellngAgt.setter
 	def RsellngAgt(self, value):
-		self._RsellngAgt = value if type(value) != base_types.auto else self.make_default("RsellngAgt")
+		self._RsellngAgt = value if value is not None else base_types.UninitialisedField(self, 'RsellngAgt', PartyIdentification137Choice, True)
 
 	@RsellngAgt.deleter
 	def RsellngAgt(self):
 		del self._RsellngAgt
-		self._RsellngAgt = None
+		self._RsellngAgt = base_types.UninitialisedField(self, 'RsellngAgt', PartyIdentification137Choice, True)
 
 	@property
 	def RvslRsn(self):
@@ -313,12 +313,12 @@ class CorporateActionMovementPreliminaryAdvice002V16(base_types._BaseFieldType):
 
 	@RvslRsn.setter
 	def RvslRsn(self, value):
-		self._RvslRsn = value if type(value) != base_types.auto else self.make_default("RvslRsn")
+		self._RvslRsn = value if value is not None else base_types.UninitialisedField(self, 'RvslRsn', CorporateActionReversalReason9, False)
 
 	@RvslRsn.deleter
 	def RvslRsn(self):
 		del self._RvslRsn
-		self._RvslRsn = None
+		self._RvslRsn = base_types.UninitialisedField(self, 'RvslRsn', CorporateActionReversalReason9, False)
 
 	@property
 	def SlctnAgt(self):
@@ -326,12 +326,12 @@ class CorporateActionMovementPreliminaryAdvice002V16(base_types._BaseFieldType):
 
 	@SlctnAgt.setter
 	def SlctnAgt(self, value):
-		self._SlctnAgt = value if type(value) != base_types.auto else self.make_default("SlctnAgt")
+		self._SlctnAgt = value if value is not None else base_types.UninitialisedField(self, 'SlctnAgt', PartyIdentification137Choice, True)
 
 	@SlctnAgt.deleter
 	def SlctnAgt(self):
 		del self._SlctnAgt
-		self._SlctnAgt = None
+		self._SlctnAgt = base_types.UninitialisedField(self, 'SlctnAgt', PartyIdentification137Choice, True)
 
 	@property
 	def SplmtryData(self):
@@ -339,12 +339,12 @@ class CorporateActionMovementPreliminaryAdvice002V16(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def SubPngAgt(self):
@@ -352,12 +352,12 @@ class CorporateActionMovementPreliminaryAdvice002V16(base_types._BaseFieldType):
 
 	@SubPngAgt.setter
 	def SubPngAgt(self, value):
-		self._SubPngAgt = value if type(value) != base_types.auto else self.make_default("SubPngAgt")
+		self._SubPngAgt = value if value is not None else base_types.UninitialisedField(self, 'SubPngAgt', PartyIdentification137Choice, True)
 
 	@SubPngAgt.deleter
 	def SubPngAgt(self):
 		del self._SubPngAgt
-		self._SubPngAgt = None
+		self._SubPngAgt = base_types.UninitialisedField(self, 'SubPngAgt', PartyIdentification137Choice, True)
 
 	@property
 	def TrfAgt(self):
@@ -365,12 +365,12 @@ class CorporateActionMovementPreliminaryAdvice002V16(base_types._BaseFieldType):
 
 	@TrfAgt.setter
 	def TrfAgt(self, value):
-		self._TrfAgt = value if type(value) != base_types.auto else self.make_default("TrfAgt")
+		self._TrfAgt = value if value is not None else base_types.UninitialisedField(self, 'TrfAgt', PartyIdentification151Choice, False)
 
 	@TrfAgt.deleter
 	def TrfAgt(self):
 		del self._TrfAgt
-		self._TrfAgt = None
+		self._TrfAgt = base_types.UninitialisedField(self, 'TrfAgt', PartyIdentification151Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctDtls', type=AccountIdentification76Choice, min=1, max=1, mutex_group=None, array=False),

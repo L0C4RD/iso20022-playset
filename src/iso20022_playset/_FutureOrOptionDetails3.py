@@ -2,20 +2,20 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Appearance1Code import Appearance1Code
-from ._DateAndDateTime1Choice import DateAndDateTime1Choice
-from ._FutureAndOptionContractType1Code import FutureAndOptionContractType1Code
-from ._ISODateTime import ISODateTime
-from ._ISOYearMonth import ISOYearMonth
-from ._Max256Text import Max256Text
-from ._Number import Number
-from ._OptionRight2Choice import OptionRight2Choice
-from ._Price14 import Price14
-from ._Rating1 import Rating1
-from ._UnderlyingRatio2 import UnderlyingRatio2
-from ._UnitOfMeasure1Code import UnitOfMeasure1Code
-from ._YesNoIndicator import YesNoIndicator
+from . import ActiveCurrencyAndAmount
+from . import Appearance1Code
+from . import DateAndDateTime1Choice
+from . import FutureAndOptionContractType1Code
+from . import ISODateTime
+from . import ISOYearMonth
+from . import Max256Text
+from . import Number
+from . import OptionRight2Choice
+from . import Price14
+from . import Rating1
+from . import UnderlyingRatio2
+from . import UnitOfMeasure1Code
+from . import YesNoIndicator
 
 class FutureOrOptionDetails3(base_types._BaseFieldType):
 
@@ -26,12 +26,12 @@ class FutureOrOptionDetails3(base_types._BaseFieldType):
 
 	@AnncmntDt.setter
 	def AnncmntDt(self, value):
-		self._AnncmntDt = value if type(value) != base_types.auto else self.make_default("AnncmntDt")
+		self._AnncmntDt = value if value is not None else base_types.UninitialisedField(self, 'AnncmntDt', ISODateTime, False)
 
 	@AnncmntDt.deleter
 	def AnncmntDt(self):
 		del self._AnncmntDt
-		self._AnncmntDt = None
+		self._AnncmntDt = base_types.UninitialisedField(self, 'AnncmntDt', ISODateTime, False)
 
 	@property
 	def Apprnc(self):
@@ -39,12 +39,12 @@ class FutureOrOptionDetails3(base_types._BaseFieldType):
 
 	@Apprnc.setter
 	def Apprnc(self, value):
-		self._Apprnc = value if type(value) != base_types.auto else self.make_default("Apprnc")
+		self._Apprnc = value if value is not None else base_types.UninitialisedField(self, 'Apprnc', Appearance1Code, False)
 
 	@Apprnc.deleter
 	def Apprnc(self):
 		del self._Apprnc
-		self._Apprnc = None
+		self._Apprnc = base_types.UninitialisedField(self, 'Apprnc', Appearance1Code, False)
 
 	@property
 	def CtrctSttlmMnth(self):
@@ -52,12 +52,12 @@ class FutureOrOptionDetails3(base_types._BaseFieldType):
 
 	@CtrctSttlmMnth.setter
 	def CtrctSttlmMnth(self, value):
-		self._CtrctSttlmMnth = value if type(value) != base_types.auto else self.make_default("CtrctSttlmMnth")
+		self._CtrctSttlmMnth = value if value is not None else base_types.UninitialisedField(self, 'CtrctSttlmMnth', ISOYearMonth, False)
 
 	@CtrctSttlmMnth.deleter
 	def CtrctSttlmMnth(self):
 		del self._CtrctSttlmMnth
-		self._CtrctSttlmMnth = None
+		self._CtrctSttlmMnth = base_types.UninitialisedField(self, 'CtrctSttlmMnth', ISOYearMonth, False)
 
 	@property
 	def FrstDealgDt(self):
@@ -65,12 +65,12 @@ class FutureOrOptionDetails3(base_types._BaseFieldType):
 
 	@FrstDealgDt.setter
 	def FrstDealgDt(self, value):
-		self._FrstDealgDt = value if type(value) != base_types.auto else self.make_default("FrstDealgDt")
+		self._FrstDealgDt = value if value is not None else base_types.UninitialisedField(self, 'FrstDealgDt', DateAndDateTime1Choice, False)
 
 	@FrstDealgDt.deleter
 	def FrstDealgDt(self):
 		del self._FrstDealgDt
-		self._FrstDealgDt = None
+		self._FrstDealgDt = base_types.UninitialisedField(self, 'FrstDealgDt', DateAndDateTime1Choice, False)
 
 	@property
 	def FutrAndOptnCtrctTp(self):
@@ -78,12 +78,12 @@ class FutureOrOptionDetails3(base_types._BaseFieldType):
 
 	@FutrAndOptnCtrctTp.setter
 	def FutrAndOptnCtrctTp(self, value):
-		self._FutrAndOptnCtrctTp = value if type(value) != base_types.auto else self.make_default("FutrAndOptnCtrctTp")
+		self._FutrAndOptnCtrctTp = value if value is not None else base_types.UninitialisedField(self, 'FutrAndOptnCtrctTp', FutureAndOptionContractType1Code, False)
 
 	@FutrAndOptnCtrctTp.deleter
 	def FutrAndOptnCtrctTp(self):
 		del self._FutrAndOptnCtrctTp
-		self._FutrAndOptnCtrctTp = None
+		self._FutrAndOptnCtrctTp = base_types.UninitialisedField(self, 'FutrAndOptnCtrctTp', FutureAndOptionContractType1Code, False)
 
 	@property
 	def FutrDt(self):
@@ -91,12 +91,12 @@ class FutureOrOptionDetails3(base_types._BaseFieldType):
 
 	@FutrDt.setter
 	def FutrDt(self, value):
-		self._FutrDt = value if type(value) != base_types.auto else self.make_default("FutrDt")
+		self._FutrDt = value if value is not None else base_types.UninitialisedField(self, 'FutrDt', ISODateTime, False)
 
 	@FutrDt.deleter
 	def FutrDt(self):
 		del self._FutrDt
-		self._FutrDt = None
+		self._FutrDt = base_types.UninitialisedField(self, 'FutrDt', ISODateTime, False)
 
 	@property
 	def IssePric(self):
@@ -104,12 +104,12 @@ class FutureOrOptionDetails3(base_types._BaseFieldType):
 
 	@IssePric.setter
 	def IssePric(self, value):
-		self._IssePric = value if type(value) != base_types.auto else self.make_default("IssePric")
+		self._IssePric = value if value is not None else base_types.UninitialisedField(self, 'IssePric', Price14, False)
 
 	@IssePric.deleter
 	def IssePric(self):
 		del self._IssePric
-		self._IssePric = None
+		self._IssePric = base_types.UninitialisedField(self, 'IssePric', Price14, False)
 
 	@property
 	def LastDlvryDt(self):
@@ -117,12 +117,12 @@ class FutureOrOptionDetails3(base_types._BaseFieldType):
 
 	@LastDlvryDt.setter
 	def LastDlvryDt(self, value):
-		self._LastDlvryDt = value if type(value) != base_types.auto else self.make_default("LastDlvryDt")
+		self._LastDlvryDt = value if value is not None else base_types.UninitialisedField(self, 'LastDlvryDt', ISODateTime, False)
 
 	@LastDlvryDt.deleter
 	def LastDlvryDt(self):
 		del self._LastDlvryDt
-		self._LastDlvryDt = None
+		self._LastDlvryDt = base_types.UninitialisedField(self, 'LastDlvryDt', ISODateTime, False)
 
 	@property
 	def LastTx(self):
@@ -130,12 +130,12 @@ class FutureOrOptionDetails3(base_types._BaseFieldType):
 
 	@LastTx.setter
 	def LastTx(self, value):
-		self._LastTx = value if type(value) != base_types.auto else self.make_default("LastTx")
+		self._LastTx = value if value is not None else base_types.UninitialisedField(self, 'LastTx', YesNoIndicator, False)
 
 	@LastTx.deleter
 	def LastTx(self):
 		del self._LastTx
-		self._LastTx = None
+		self._LastTx = base_types.UninitialisedField(self, 'LastTx', YesNoIndicator, False)
 
 	@property
 	def MinSz(self):
@@ -143,12 +143,12 @@ class FutureOrOptionDetails3(base_types._BaseFieldType):
 
 	@MinSz.setter
 	def MinSz(self, value):
-		self._MinSz = value if type(value) != base_types.auto else self.make_default("MinSz")
+		self._MinSz = value if value is not None else base_types.UninitialisedField(self, 'MinSz', ActiveCurrencyAndAmount, False)
 
 	@MinSz.deleter
 	def MinSz(self):
 		del self._MinSz
-		self._MinSz = None
+		self._MinSz = base_types.UninitialisedField(self, 'MinSz', ActiveCurrencyAndAmount, False)
 
 	@property
 	def MinTradgPricgIncrmt(self):
@@ -156,12 +156,12 @@ class FutureOrOptionDetails3(base_types._BaseFieldType):
 
 	@MinTradgPricgIncrmt.setter
 	def MinTradgPricgIncrmt(self, value):
-		self._MinTradgPricgIncrmt = value if type(value) != base_types.auto else self.make_default("MinTradgPricgIncrmt")
+		self._MinTradgPricgIncrmt = value if value is not None else base_types.UninitialisedField(self, 'MinTradgPricgIncrmt', Number, False)
 
 	@MinTradgPricgIncrmt.deleter
 	def MinTradgPricgIncrmt(self):
 		del self._MinTradgPricgIncrmt
-		self._MinTradgPricgIncrmt = None
+		self._MinTradgPricgIncrmt = base_types.UninitialisedField(self, 'MinTradgPricgIncrmt', Number, False)
 
 	@property
 	def NearTermPosLmt(self):
@@ -169,12 +169,12 @@ class FutureOrOptionDetails3(base_types._BaseFieldType):
 
 	@NearTermPosLmt.setter
 	def NearTermPosLmt(self, value):
-		self._NearTermPosLmt = value if type(value) != base_types.auto else self.make_default("NearTermPosLmt")
+		self._NearTermPosLmt = value if value is not None else base_types.UninitialisedField(self, 'NearTermPosLmt', Number, False)
 
 	@NearTermPosLmt.deleter
 	def NearTermPosLmt(self):
 		del self._NearTermPosLmt
-		self._NearTermPosLmt = None
+		self._NearTermPosLmt = base_types.UninitialisedField(self, 'NearTermPosLmt', Number, False)
 
 	@property
 	def OptnRghts(self):
@@ -182,12 +182,12 @@ class FutureOrOptionDetails3(base_types._BaseFieldType):
 
 	@OptnRghts.setter
 	def OptnRghts(self, value):
-		self._OptnRghts = value if type(value) != base_types.auto else self.make_default("OptnRghts")
+		self._OptnRghts = value if value is not None else base_types.UninitialisedField(self, 'OptnRghts', OptionRight2Choice, False)
 
 	@OptnRghts.deleter
 	def OptnRghts(self):
 		del self._OptnRghts
-		self._OptnRghts = None
+		self._OptnRghts = base_types.UninitialisedField(self, 'OptnRghts', OptionRight2Choice, False)
 
 	@property
 	def PosLmt(self):
@@ -195,12 +195,12 @@ class FutureOrOptionDetails3(base_types._BaseFieldType):
 
 	@PosLmt.setter
 	def PosLmt(self, value):
-		self._PosLmt = value if type(value) != base_types.auto else self.make_default("PosLmt")
+		self._PosLmt = value if value is not None else base_types.UninitialisedField(self, 'PosLmt', Number, False)
 
 	@PosLmt.deleter
 	def PosLmt(self):
 		del self._PosLmt
-		self._PosLmt = None
+		self._PosLmt = base_types.UninitialisedField(self, 'PosLmt', Number, False)
 
 	@property
 	def Purp(self):
@@ -208,12 +208,12 @@ class FutureOrOptionDetails3(base_types._BaseFieldType):
 
 	@Purp.setter
 	def Purp(self, value):
-		self._Purp = value if type(value) != base_types.auto else self.make_default("Purp")
+		self._Purp = value if value is not None else base_types.UninitialisedField(self, 'Purp', Max256Text, False)
 
 	@Purp.deleter
 	def Purp(self):
 		del self._Purp
-		self._Purp = None
+		self._Purp = base_types.UninitialisedField(self, 'Purp', Max256Text, False)
 
 	@property
 	def Ratg(self):
@@ -221,12 +221,12 @@ class FutureOrOptionDetails3(base_types._BaseFieldType):
 
 	@Ratg.setter
 	def Ratg(self, value):
-		self._Ratg = value if type(value) != base_types.auto else self.make_default("Ratg")
+		self._Ratg = value if value is not None else base_types.UninitialisedField(self, 'Ratg', Rating1, True)
 
 	@Ratg.deleter
 	def Ratg(self):
 		del self._Ratg
-		self._Ratg = None
+		self._Ratg = base_types.UninitialisedField(self, 'Ratg', Rating1, True)
 
 	@property
 	def Ratio(self):
@@ -234,12 +234,12 @@ class FutureOrOptionDetails3(base_types._BaseFieldType):
 
 	@Ratio.setter
 	def Ratio(self, value):
-		self._Ratio = value if type(value) != base_types.auto else self.make_default("Ratio")
+		self._Ratio = value if value is not None else base_types.UninitialisedField(self, 'Ratio', UnderlyingRatio2, True)
 
 	@Ratio.deleter
 	def Ratio(self):
 		del self._Ratio
-		self._Ratio = None
+		self._Ratio = base_types.UninitialisedField(self, 'Ratio', UnderlyingRatio2, True)
 
 	@property
 	def SprdTx(self):
@@ -247,12 +247,12 @@ class FutureOrOptionDetails3(base_types._BaseFieldType):
 
 	@SprdTx.setter
 	def SprdTx(self, value):
-		self._SprdTx = value if type(value) != base_types.auto else self.make_default("SprdTx")
+		self._SprdTx = value if value is not None else base_types.UninitialisedField(self, 'SprdTx', YesNoIndicator, False)
 
 	@SprdTx.deleter
 	def SprdTx(self):
 		del self._SprdTx
-		self._SprdTx = None
+		self._SprdTx = base_types.UninitialisedField(self, 'SprdTx', YesNoIndicator, False)
 
 	@property
 	def StrpblInd(self):
@@ -260,12 +260,12 @@ class FutureOrOptionDetails3(base_types._BaseFieldType):
 
 	@StrpblInd.setter
 	def StrpblInd(self, value):
-		self._StrpblInd = value if type(value) != base_types.auto else self.make_default("StrpblInd")
+		self._StrpblInd = value if value is not None else base_types.UninitialisedField(self, 'StrpblInd', YesNoIndicator, False)
 
 	@StrpblInd.deleter
 	def StrpblInd(self):
 		del self._StrpblInd
-		self._StrpblInd = None
+		self._StrpblInd = base_types.UninitialisedField(self, 'StrpblInd', YesNoIndicator, False)
 
 	@property
 	def UnitOfMeasr(self):
@@ -273,12 +273,12 @@ class FutureOrOptionDetails3(base_types._BaseFieldType):
 
 	@UnitOfMeasr.setter
 	def UnitOfMeasr(self, value):
-		self._UnitOfMeasr = value if type(value) != base_types.auto else self.make_default("UnitOfMeasr")
+		self._UnitOfMeasr = value if value is not None else base_types.UninitialisedField(self, 'UnitOfMeasr', UnitOfMeasure1Code, False)
 
 	@UnitOfMeasr.deleter
 	def UnitOfMeasr(self):
 		del self._UnitOfMeasr
-		self._UnitOfMeasr = None
+		self._UnitOfMeasr = base_types.UninitialisedField(self, 'UnitOfMeasr', UnitOfMeasure1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AnncmntDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),

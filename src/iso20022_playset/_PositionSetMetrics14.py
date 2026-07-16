@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PositionSetBuyerAndSeller2 import PositionSetBuyerAndSeller2
+from . import PositionSetBuyerAndSeller2
 
 class PositionSetMetrics14(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class PositionSetMetrics14(base_types._BaseFieldType):
 
 	@Clean.setter
 	def Clean(self, value):
-		self._Clean = value if type(value) != base_types.auto else self.make_default("Clean")
+		self._Clean = value if value is not None else base_types.UninitialisedField(self, 'Clean', PositionSetBuyerAndSeller2, False)
 
 	@Clean.deleter
 	def Clean(self):
 		del self._Clean
-		self._Clean = None
+		self._Clean = base_types.UninitialisedField(self, 'Clean', PositionSetBuyerAndSeller2, False)
 
 	@property
 	def Ttl(self):
@@ -26,12 +26,12 @@ class PositionSetMetrics14(base_types._BaseFieldType):
 
 	@Ttl.setter
 	def Ttl(self, value):
-		self._Ttl = value if type(value) != base_types.auto else self.make_default("Ttl")
+		self._Ttl = value if value is not None else base_types.UninitialisedField(self, 'Ttl', PositionSetBuyerAndSeller2, False)
 
 	@Ttl.deleter
 	def Ttl(self):
 		del self._Ttl
-		self._Ttl = None
+		self._Ttl = base_types.UninitialisedField(self, 'Ttl', PositionSetBuyerAndSeller2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Clean', type=PositionSetBuyerAndSeller2, min=0, max=1, mutex_group=None, array=False),

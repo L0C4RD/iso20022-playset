@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max350Text import Max350Text
-from ._PostalAddress1 import PostalAddress1
+from . import Max350Text
+from . import PostalAddress1
 
 class LongPostalAddress2Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class LongPostalAddress2Choice(base_types._BaseFieldType):
 
 	@Strd.setter
 	def Strd(self, value):
-		self._Strd = value if type(value) != base_types.auto else self.make_default("Strd")
+		self._Strd = value if value is not None else base_types.UninitialisedField(self, 'Strd', PostalAddress1, False)
 
 	@Strd.deleter
 	def Strd(self):
 		del self._Strd
-		self._Strd = None
+		self._Strd = base_types.UninitialisedField(self, 'Strd', PostalAddress1, False)
 
 	@property
 	def Ustrd(self):
@@ -27,12 +27,12 @@ class LongPostalAddress2Choice(base_types._BaseFieldType):
 
 	@Ustrd.setter
 	def Ustrd(self, value):
-		self._Ustrd = value if type(value) != base_types.auto else self.make_default("Ustrd")
+		self._Ustrd = value if value is not None else base_types.UninitialisedField(self, 'Ustrd', Max350Text, False)
 
 	@Ustrd.deleter
 	def Ustrd(self):
 		del self._Ustrd
-		self._Ustrd = None
+		self._Ustrd = base_types.UninitialisedField(self, 'Ustrd', Max350Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Strd', type=PostalAddress1, min=0, max=1, mutex_group=1, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InvestmentFundReportRequestV03 import InvestmentFundReportRequestV03
+from . import InvestmentFundReportRequestV03
 
 class REDA_005_001_03():
 
@@ -18,12 +18,12 @@ class REDA_005_001_03():
 
 		@InvstmtFndRptReq.setter
 		def InvstmtFndRptReq(self, value):
-			self._InvstmtFndRptReq = value if type(value) != base_types.auto else self.make_default("InvstmtFndRptReq")
+			self._InvstmtFndRptReq = value if value is not None else base_types.UninitialisedField(self, 'InvstmtFndRptReq', InvestmentFundReportRequestV03, False)
 
 		@InvstmtFndRptReq.deleter
 		def InvstmtFndRptReq(self):
 			del self._InvstmtFndRptReq
-			self._InvstmtFndRptReq = None
+			self._InvstmtFndRptReq = base_types.UninitialisedField(self, 'InvstmtFndRptReq', InvestmentFundReportRequestV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='InvstmtFndRptReq', type=InvestmentFundReportRequestV03, min=1, max=1, mutex_group=None, array=False),

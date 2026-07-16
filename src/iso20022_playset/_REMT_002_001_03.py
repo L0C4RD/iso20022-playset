@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RemittanceLocationAdviceV03 import RemittanceLocationAdviceV03
+from . import RemittanceLocationAdviceV03
 
 class REMT_002_001_03():
 
@@ -18,12 +18,12 @@ class REMT_002_001_03():
 
 		@RmtLctnAdvc.setter
 		def RmtLctnAdvc(self, value):
-			self._RmtLctnAdvc = value if type(value) != base_types.auto else self.make_default("RmtLctnAdvc")
+			self._RmtLctnAdvc = value if value is not None else base_types.UninitialisedField(self, 'RmtLctnAdvc', RemittanceLocationAdviceV03, False)
 
 		@RmtLctnAdvc.deleter
 		def RmtLctnAdvc(self):
 			del self._RmtLctnAdvc
-			self._RmtLctnAdvc = None
+			self._RmtLctnAdvc = base_types.UninitialisedField(self, 'RmtLctnAdvc', RemittanceLocationAdviceV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='RmtLctnAdvc', type=RemittanceLocationAdviceV03, min=1, max=1, mutex_group=None, array=False),

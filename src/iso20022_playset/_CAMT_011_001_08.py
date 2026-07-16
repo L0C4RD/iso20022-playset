@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ModifyLimitV08 import ModifyLimitV08
+from . import ModifyLimitV08
 
 class CAMT_011_001_08():
 
@@ -18,12 +18,12 @@ class CAMT_011_001_08():
 
 		@ModfyLmt.setter
 		def ModfyLmt(self, value):
-			self._ModfyLmt = value if type(value) != base_types.auto else self.make_default("ModfyLmt")
+			self._ModfyLmt = value if value is not None else base_types.UninitialisedField(self, 'ModfyLmt', ModifyLimitV08, False)
 
 		@ModfyLmt.deleter
 		def ModfyLmt(self):
 			del self._ModfyLmt
-			self._ModfyLmt = None
+			self._ModfyLmt = base_types.UninitialisedField(self, 'ModfyLmt', ModifyLimitV08, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ModfyLmt', type=ModifyLimitV08, min=1, max=1, mutex_group=None, array=False),

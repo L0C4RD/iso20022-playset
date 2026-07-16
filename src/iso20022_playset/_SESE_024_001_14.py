@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesSettlementTransactionStatusAdviceV14 import SecuritiesSettlementTransactionStatusAdviceV14
+from . import SecuritiesSettlementTransactionStatusAdviceV14
 
 class SESE_024_001_14():
 
@@ -18,12 +18,12 @@ class SESE_024_001_14():
 
 		@SctiesSttlmTxStsAdvc.setter
 		def SctiesSttlmTxStsAdvc(self, value):
-			self._SctiesSttlmTxStsAdvc = value if type(value) != base_types.auto else self.make_default("SctiesSttlmTxStsAdvc")
+			self._SctiesSttlmTxStsAdvc = value if value is not None else base_types.UninitialisedField(self, 'SctiesSttlmTxStsAdvc', SecuritiesSettlementTransactionStatusAdviceV14, False)
 
 		@SctiesSttlmTxStsAdvc.deleter
 		def SctiesSttlmTxStsAdvc(self):
 			del self._SctiesSttlmTxStsAdvc
-			self._SctiesSttlmTxStsAdvc = None
+			self._SctiesSttlmTxStsAdvc = base_types.UninitialisedField(self, 'SctiesSttlmTxStsAdvc', SecuritiesSettlementTransactionStatusAdviceV14, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesSttlmTxStsAdvc', type=SecuritiesSettlementTransactionStatusAdviceV14, min=1, max=1, mutex_group=None, array=False),

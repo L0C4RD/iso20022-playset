@@ -2,20 +2,20 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._AmountAndTax1 import AmountAndTax1
-from ._AncillaryPurchase4 import AncillaryPurchase4
-from ._Customer10 import Customer10
-from ._CustomerReference1 import CustomerReference1
-from ._DepartureOrArrival1 import DepartureOrArrival1
-from ._HiredVehicle4 import HiredVehicle4
-from ._LoyaltyProgramme4 import LoyaltyProgramme4
-from ._Max35Text import Max35Text
-from ._Max4NumericText import Max4NumericText
-from ._Max4Text import Max4Text
-from ._Max70Text import Max70Text
-from ._TripLeg4 import TripLeg4
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ATICALaxProcessing
+from . import AmountAndTax1
+from . import AncillaryPurchase4
+from . import Customer10
+from . import CustomerReference1
+from . import DepartureOrArrival1
+from . import HiredVehicle4
+from . import LoyaltyProgramme4
+from . import Max35Text
+from . import Max4NumericText
+from . import Max4Text
+from . import Max70Text
+from . import TripLeg4
+from . import TrueFalseIndicator
 
 class PassengerTransport4(base_types._BaseFieldType):
 
@@ -26,12 +26,12 @@ class PassengerTransport4(base_types._BaseFieldType):
 
 	@AncllryPurchs.setter
 	def AncllryPurchs(self, value):
-		self._AncllryPurchs = value if type(value) != base_types.auto else self.make_default("AncllryPurchs")
+		self._AncllryPurchs = value if value is not None else base_types.UninitialisedField(self, 'AncllryPurchs', AncillaryPurchase4, True)
 
 	@AncllryPurchs.deleter
 	def AncllryPurchs(self):
 		del self._AncllryPurchs
-		self._AncllryPurchs = None
+		self._AncllryPurchs = base_types.UninitialisedField(self, 'AncllryPurchs', AncillaryPurchase4, True)
 
 	@property
 	def CstmrRef(self):
@@ -39,12 +39,12 @@ class PassengerTransport4(base_types._BaseFieldType):
 
 	@CstmrRef.setter
 	def CstmrRef(self, value):
-		self._CstmrRef = value if type(value) != base_types.auto else self.make_default("CstmrRef")
+		self._CstmrRef = value if value is not None else base_types.UninitialisedField(self, 'CstmrRef', CustomerReference1, True)
 
 	@CstmrRef.deleter
 	def CstmrRef(self):
 		del self._CstmrRef
-		self._CstmrRef = None
+		self._CstmrRef = base_types.UninitialisedField(self, 'CstmrRef', CustomerReference1, True)
 
 	@property
 	def DocNb(self):
@@ -52,12 +52,12 @@ class PassengerTransport4(base_types._BaseFieldType):
 
 	@DocNb.setter
 	def DocNb(self, value):
-		self._DocNb = value if type(value) != base_types.auto else self.make_default("DocNb")
+		self._DocNb = value if value is not None else base_types.UninitialisedField(self, 'DocNb', Max35Text, False)
 
 	@DocNb.deleter
 	def DocNb(self):
 		del self._DocNb
-		self._DocNb = None
+		self._DocNb = base_types.UninitialisedField(self, 'DocNb', Max35Text, False)
 
 	@property
 	def Dprture(self):
@@ -65,12 +65,12 @@ class PassengerTransport4(base_types._BaseFieldType):
 
 	@Dprture.setter
 	def Dprture(self, value):
-		self._Dprture = value if type(value) != base_types.auto else self.make_default("Dprture")
+		self._Dprture = value if value is not None else base_types.UninitialisedField(self, 'Dprture', DepartureOrArrival1, False)
 
 	@Dprture.deleter
 	def Dprture(self):
 		del self._Dprture
-		self._Dprture = None
+		self._Dprture = base_types.UninitialisedField(self, 'Dprture', DepartureOrArrival1, False)
 
 	@property
 	def Drtn(self):
@@ -78,12 +78,12 @@ class PassengerTransport4(base_types._BaseFieldType):
 
 	@Drtn.setter
 	def Drtn(self, value):
-		self._Drtn = value if type(value) != base_types.auto else self.make_default("Drtn")
+		self._Drtn = value if value is not None else base_types.UninitialisedField(self, 'Drtn', Max4NumericText, False)
 
 	@Drtn.deleter
 	def Drtn(self):
 		del self._Drtn
-		self._Drtn = None
+		self._Drtn = base_types.UninitialisedField(self, 'Drtn', Max4NumericText, False)
 
 	@property
 	def HirdVhclDtls(self):
@@ -91,12 +91,12 @@ class PassengerTransport4(base_types._BaseFieldType):
 
 	@HirdVhclDtls.setter
 	def HirdVhclDtls(self, value):
-		self._HirdVhclDtls = value if type(value) != base_types.auto else self.make_default("HirdVhclDtls")
+		self._HirdVhclDtls = value if value is not None else base_types.UninitialisedField(self, 'HirdVhclDtls', HiredVehicle4, True)
 
 	@HirdVhclDtls.deleter
 	def HirdVhclDtls(self):
 		del self._HirdVhclDtls
-		self._HirdVhclDtls = None
+		self._HirdVhclDtls = base_types.UninitialisedField(self, 'HirdVhclDtls', HiredVehicle4, True)
 
 	@property
 	def Insrnc(self):
@@ -104,12 +104,12 @@ class PassengerTransport4(base_types._BaseFieldType):
 
 	@Insrnc.setter
 	def Insrnc(self, value):
-		self._Insrnc = value if type(value) != base_types.auto else self.make_default("Insrnc")
+		self._Insrnc = value if value is not None else base_types.UninitialisedField(self, 'Insrnc', TrueFalseIndicator, False)
 
 	@Insrnc.deleter
 	def Insrnc(self):
 		del self._Insrnc
-		self._Insrnc = None
+		self._Insrnc = base_types.UninitialisedField(self, 'Insrnc', TrueFalseIndicator, False)
 
 	@property
 	def LltyPrgrmm(self):
@@ -117,12 +117,12 @@ class PassengerTransport4(base_types._BaseFieldType):
 
 	@LltyPrgrmm.setter
 	def LltyPrgrmm(self, value):
-		self._LltyPrgrmm = value if type(value) != base_types.auto else self.make_default("LltyPrgrmm")
+		self._LltyPrgrmm = value if value is not None else base_types.UninitialisedField(self, 'LltyPrgrmm', LoyaltyProgramme4, False)
 
 	@LltyPrgrmm.deleter
 	def LltyPrgrmm(self):
 		del self._LltyPrgrmm
-		self._LltyPrgrmm = None
+		self._LltyPrgrmm = base_types.UninitialisedField(self, 'LltyPrgrmm', LoyaltyProgramme4, False)
 
 	@property
 	def NtlData(self):
@@ -130,12 +130,12 @@ class PassengerTransport4(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def OpnTckt(self):
@@ -143,12 +143,12 @@ class PassengerTransport4(base_types._BaseFieldType):
 
 	@OpnTckt.setter
 	def OpnTckt(self, value):
-		self._OpnTckt = value if type(value) != base_types.auto else self.make_default("OpnTckt")
+		self._OpnTckt = value if value is not None else base_types.UninitialisedField(self, 'OpnTckt', TrueFalseIndicator, False)
 
 	@OpnTckt.deleter
 	def OpnTckt(self):
 		del self._OpnTckt
-		self._OpnTckt = None
+		self._OpnTckt = base_types.UninitialisedField(self, 'OpnTckt', TrueFalseIndicator, False)
 
 	@property
 	def OrgnlRsvatnNb(self):
@@ -156,12 +156,12 @@ class PassengerTransport4(base_types._BaseFieldType):
 
 	@OrgnlRsvatnNb.setter
 	def OrgnlRsvatnNb(self, value):
-		self._OrgnlRsvatnNb = value if type(value) != base_types.auto else self.make_default("OrgnlRsvatnNb")
+		self._OrgnlRsvatnNb = value if value is not None else base_types.UninitialisedField(self, 'OrgnlRsvatnNb', Max35Text, False)
 
 	@OrgnlRsvatnNb.deleter
 	def OrgnlRsvatnNb(self):
 		del self._OrgnlRsvatnNb
-		self._OrgnlRsvatnNb = None
+		self._OrgnlRsvatnNb = base_types.UninitialisedField(self, 'OrgnlRsvatnNb', Max35Text, False)
 
 	@property
 	def OrgnlRsvatnSys(self):
@@ -169,12 +169,12 @@ class PassengerTransport4(base_types._BaseFieldType):
 
 	@OrgnlRsvatnSys.setter
 	def OrgnlRsvatnSys(self, value):
-		self._OrgnlRsvatnSys = value if type(value) != base_types.auto else self.make_default("OrgnlRsvatnSys")
+		self._OrgnlRsvatnSys = value if value is not None else base_types.UninitialisedField(self, 'OrgnlRsvatnSys', Max4Text, False)
 
 	@OrgnlRsvatnSys.deleter
 	def OrgnlRsvatnSys(self):
 		del self._OrgnlRsvatnSys
-		self._OrgnlRsvatnSys = None
+		self._OrgnlRsvatnSys = base_types.UninitialisedField(self, 'OrgnlRsvatnSys', Max4Text, False)
 
 	@property
 	def PrvtData(self):
@@ -182,12 +182,12 @@ class PassengerTransport4(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def Pssngr(self):
@@ -195,12 +195,12 @@ class PassengerTransport4(base_types._BaseFieldType):
 
 	@Pssngr.setter
 	def Pssngr(self, value):
-		self._Pssngr = value if type(value) != base_types.auto else self.make_default("Pssngr")
+		self._Pssngr = value if value is not None else base_types.UninitialisedField(self, 'Pssngr', Customer10, True)
 
 	@Pssngr.deleter
 	def Pssngr(self):
 		del self._Pssngr
-		self._Pssngr = None
+		self._Pssngr = base_types.UninitialisedField(self, 'Pssngr', Customer10, True)
 
 	@property
 	def RsvatnNb(self):
@@ -208,12 +208,12 @@ class PassengerTransport4(base_types._BaseFieldType):
 
 	@RsvatnNb.setter
 	def RsvatnNb(self, value):
-		self._RsvatnNb = value if type(value) != base_types.auto else self.make_default("RsvatnNb")
+		self._RsvatnNb = value if value is not None else base_types.UninitialisedField(self, 'RsvatnNb', Max35Text, False)
 
 	@RsvatnNb.deleter
 	def RsvatnNb(self):
 		del self._RsvatnNb
-		self._RsvatnNb = None
+		self._RsvatnNb = base_types.UninitialisedField(self, 'RsvatnNb', Max35Text, False)
 
 	@property
 	def RsvatnSys(self):
@@ -221,12 +221,12 @@ class PassengerTransport4(base_types._BaseFieldType):
 
 	@RsvatnSys.setter
 	def RsvatnSys(self, value):
-		self._RsvatnSys = value if type(value) != base_types.auto else self.make_default("RsvatnSys")
+		self._RsvatnSys = value if value is not None else base_types.UninitialisedField(self, 'RsvatnSys', Max4Text, False)
 
 	@RsvatnSys.deleter
 	def RsvatnSys(self):
 		del self._RsvatnSys
-		self._RsvatnSys = None
+		self._RsvatnSys = base_types.UninitialisedField(self, 'RsvatnSys', Max4Text, False)
 
 	@property
 	def SummryCmmdtyId(self):
@@ -234,12 +234,12 @@ class PassengerTransport4(base_types._BaseFieldType):
 
 	@SummryCmmdtyId.setter
 	def SummryCmmdtyId(self, value):
-		self._SummryCmmdtyId = value if type(value) != base_types.auto else self.make_default("SummryCmmdtyId")
+		self._SummryCmmdtyId = value if value is not None else base_types.UninitialisedField(self, 'SummryCmmdtyId', Max35Text, False)
 
 	@SummryCmmdtyId.deleter
 	def SummryCmmdtyId(self):
 		del self._SummryCmmdtyId
-		self._SummryCmmdtyId = None
+		self._SummryCmmdtyId = base_types.UninitialisedField(self, 'SummryCmmdtyId', Max35Text, False)
 
 	@property
 	def TcktIssr(self):
@@ -247,12 +247,12 @@ class PassengerTransport4(base_types._BaseFieldType):
 
 	@TcktIssr.setter
 	def TcktIssr(self, value):
-		self._TcktIssr = value if type(value) != base_types.auto else self.make_default("TcktIssr")
+		self._TcktIssr = value if value is not None else base_types.UninitialisedField(self, 'TcktIssr', Max35Text, False)
 
 	@TcktIssr.deleter
 	def TcktIssr(self):
 		del self._TcktIssr
-		self._TcktIssr = None
+		self._TcktIssr = base_types.UninitialisedField(self, 'TcktIssr', Max35Text, False)
 
 	@property
 	def TripLeg(self):
@@ -260,12 +260,12 @@ class PassengerTransport4(base_types._BaseFieldType):
 
 	@TripLeg.setter
 	def TripLeg(self, value):
-		self._TripLeg = value if type(value) != base_types.auto else self.make_default("TripLeg")
+		self._TripLeg = value if value is not None else base_types.UninitialisedField(self, 'TripLeg', TripLeg4, True)
 
 	@TripLeg.deleter
 	def TripLeg(self):
 		del self._TripLeg
-		self._TripLeg = None
+		self._TripLeg = base_types.UninitialisedField(self, 'TripLeg', TripLeg4, True)
 
 	@property
 	def TrvlAuthstnCd(self):
@@ -273,12 +273,12 @@ class PassengerTransport4(base_types._BaseFieldType):
 
 	@TrvlAuthstnCd.setter
 	def TrvlAuthstnCd(self, value):
-		self._TrvlAuthstnCd = value if type(value) != base_types.auto else self.make_default("TrvlAuthstnCd")
+		self._TrvlAuthstnCd = value if value is not None else base_types.UninitialisedField(self, 'TrvlAuthstnCd', Max70Text, False)
 
 	@TrvlAuthstnCd.deleter
 	def TrvlAuthstnCd(self):
 		del self._TrvlAuthstnCd
-		self._TrvlAuthstnCd = None
+		self._TrvlAuthstnCd = base_types.UninitialisedField(self, 'TrvlAuthstnCd', Max70Text, False)
 
 	@property
 	def TtlAmt(self):
@@ -286,12 +286,12 @@ class PassengerTransport4(base_types._BaseFieldType):
 
 	@TtlAmt.setter
 	def TtlAmt(self, value):
-		self._TtlAmt = value if type(value) != base_types.auto else self.make_default("TtlAmt")
+		self._TtlAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlAmt', AmountAndTax1, True)
 
 	@TtlAmt.deleter
 	def TtlAmt(self):
 		del self._TtlAmt
-		self._TtlAmt = None
+		self._TtlAmt = base_types.UninitialisedField(self, 'TtlAmt', AmountAndTax1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AncllryPurchs', type=AncillaryPurchase4, min=0, max=None, mutex_group=None, array=True),

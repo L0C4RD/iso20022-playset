@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max140Text import Max140Text
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
+from . import Max140Text
+from . import Max350Text
+from . import Max35Text
 
 class ElementIdentification3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ElementIdentification3(base_types._BaseFieldType):
 
 	@ElmtNm.setter
 	def ElmtNm(self, value):
-		self._ElmtNm = value if type(value) != base_types.auto else self.make_default("ElmtNm")
+		self._ElmtNm = value if value is not None else base_types.UninitialisedField(self, 'ElmtNm', Max35Text, False)
 
 	@ElmtNm.deleter
 	def ElmtNm(self):
 		del self._ElmtNm
-		self._ElmtNm = None
+		self._ElmtNm = base_types.UninitialisedField(self, 'ElmtNm', Max35Text, False)
 
 	@property
 	def ElmtPth(self):
@@ -28,12 +28,12 @@ class ElementIdentification3(base_types._BaseFieldType):
 
 	@ElmtPth.setter
 	def ElmtPth(self, value):
-		self._ElmtPth = value if type(value) != base_types.auto else self.make_default("ElmtPth")
+		self._ElmtPth = value if value is not None else base_types.UninitialisedField(self, 'ElmtPth', Max350Text, False)
 
 	@ElmtPth.deleter
 	def ElmtPth(self):
 		del self._ElmtPth
-		self._ElmtPth = None
+		self._ElmtPth = base_types.UninitialisedField(self, 'ElmtPth', Max350Text, False)
 
 	@property
 	def ElmtVal(self):
@@ -41,12 +41,12 @@ class ElementIdentification3(base_types._BaseFieldType):
 
 	@ElmtVal.setter
 	def ElmtVal(self, value):
-		self._ElmtVal = value if type(value) != base_types.auto else self.make_default("ElmtVal")
+		self._ElmtVal = value if value is not None else base_types.UninitialisedField(self, 'ElmtVal', Max140Text, False)
 
 	@ElmtVal.deleter
 	def ElmtVal(self):
 		del self._ElmtVal
-		self._ElmtVal = None
+		self._ElmtVal = base_types.UninitialisedField(self, 'ElmtVal', Max140Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ElmtNm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

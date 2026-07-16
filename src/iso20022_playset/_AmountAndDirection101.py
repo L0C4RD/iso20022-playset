@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CreditDebitCode import CreditDebitCode
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._ForeignExchangeTerms27 import ForeignExchangeTerms27
-from ._RestrictedFINActiveCurrencyAndAmount import RestrictedFINActiveCurrencyAndAmount
-from ._RestrictedFINActiveOrHistoricCurrencyAndAmount import RestrictedFINActiveOrHistoricCurrencyAndAmount
-from ._YesNoIndicator import YesNoIndicator
+from . import CreditDebitCode
+from . import DateAndDateTime2Choice
+from . import ForeignExchangeTerms27
+from . import RestrictedFINActiveCurrencyAndAmount
+from . import RestrictedFINActiveOrHistoricCurrencyAndAmount
+from . import YesNoIndicator
 
 class AmountAndDirection101(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class AmountAndDirection101(base_types._BaseFieldType):
 
 	@AcrdIntrstInd.setter
 	def AcrdIntrstInd(self, value):
-		self._AcrdIntrstInd = value if type(value) != base_types.auto else self.make_default("AcrdIntrstInd")
+		self._AcrdIntrstInd = value if value is not None else base_types.UninitialisedField(self, 'AcrdIntrstInd', YesNoIndicator, False)
 
 	@AcrdIntrstInd.deleter
 	def AcrdIntrstInd(self):
 		del self._AcrdIntrstInd
-		self._AcrdIntrstInd = None
+		self._AcrdIntrstInd = base_types.UninitialisedField(self, 'AcrdIntrstInd', YesNoIndicator, False)
 
 	@property
 	def Amt(self):
@@ -31,12 +31,12 @@ class AmountAndDirection101(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', RestrictedFINActiveCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', RestrictedFINActiveCurrencyAndAmount, False)
 
 	@property
 	def BrkrgAmtInd(self):
@@ -44,12 +44,12 @@ class AmountAndDirection101(base_types._BaseFieldType):
 
 	@BrkrgAmtInd.setter
 	def BrkrgAmtInd(self, value):
-		self._BrkrgAmtInd = value if type(value) != base_types.auto else self.make_default("BrkrgAmtInd")
+		self._BrkrgAmtInd = value if value is not None else base_types.UninitialisedField(self, 'BrkrgAmtInd', YesNoIndicator, False)
 
 	@BrkrgAmtInd.deleter
 	def BrkrgAmtInd(self):
 		del self._BrkrgAmtInd
-		self._BrkrgAmtInd = None
+		self._BrkrgAmtInd = base_types.UninitialisedField(self, 'BrkrgAmtInd', YesNoIndicator, False)
 
 	@property
 	def CdtDbtInd(self):
@@ -57,12 +57,12 @@ class AmountAndDirection101(base_types._BaseFieldType):
 
 	@CdtDbtInd.setter
 	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+		self._CdtDbtInd = value if value is not None else base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@CdtDbtInd.deleter
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
-		self._CdtDbtInd = None
+		self._CdtDbtInd = base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@property
 	def FXDtls(self):
@@ -70,12 +70,12 @@ class AmountAndDirection101(base_types._BaseFieldType):
 
 	@FXDtls.setter
 	def FXDtls(self, value):
-		self._FXDtls = value if type(value) != base_types.auto else self.make_default("FXDtls")
+		self._FXDtls = value if value is not None else base_types.UninitialisedField(self, 'FXDtls', ForeignExchangeTerms27, False)
 
 	@FXDtls.deleter
 	def FXDtls(self):
 		del self._FXDtls
-		self._FXDtls = None
+		self._FXDtls = base_types.UninitialisedField(self, 'FXDtls', ForeignExchangeTerms27, False)
 
 	@property
 	def OrgnlCcyAndOrdrdAmt(self):
@@ -83,12 +83,12 @@ class AmountAndDirection101(base_types._BaseFieldType):
 
 	@OrgnlCcyAndOrdrdAmt.setter
 	def OrgnlCcyAndOrdrdAmt(self, value):
-		self._OrgnlCcyAndOrdrdAmt = value if type(value) != base_types.auto else self.make_default("OrgnlCcyAndOrdrdAmt")
+		self._OrgnlCcyAndOrdrdAmt = value if value is not None else base_types.UninitialisedField(self, 'OrgnlCcyAndOrdrdAmt', RestrictedFINActiveOrHistoricCurrencyAndAmount, False)
 
 	@OrgnlCcyAndOrdrdAmt.deleter
 	def OrgnlCcyAndOrdrdAmt(self):
 		del self._OrgnlCcyAndOrdrdAmt
-		self._OrgnlCcyAndOrdrdAmt = None
+		self._OrgnlCcyAndOrdrdAmt = base_types.UninitialisedField(self, 'OrgnlCcyAndOrdrdAmt', RestrictedFINActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def RsrchFeeInd(self):
@@ -96,12 +96,12 @@ class AmountAndDirection101(base_types._BaseFieldType):
 
 	@RsrchFeeInd.setter
 	def RsrchFeeInd(self, value):
-		self._RsrchFeeInd = value if type(value) != base_types.auto else self.make_default("RsrchFeeInd")
+		self._RsrchFeeInd = value if value is not None else base_types.UninitialisedField(self, 'RsrchFeeInd', YesNoIndicator, False)
 
 	@RsrchFeeInd.deleter
 	def RsrchFeeInd(self):
 		del self._RsrchFeeInd
-		self._RsrchFeeInd = None
+		self._RsrchFeeInd = base_types.UninitialisedField(self, 'RsrchFeeInd', YesNoIndicator, False)
 
 	@property
 	def StmpDtyInd(self):
@@ -109,12 +109,12 @@ class AmountAndDirection101(base_types._BaseFieldType):
 
 	@StmpDtyInd.setter
 	def StmpDtyInd(self, value):
-		self._StmpDtyInd = value if type(value) != base_types.auto else self.make_default("StmpDtyInd")
+		self._StmpDtyInd = value if value is not None else base_types.UninitialisedField(self, 'StmpDtyInd', YesNoIndicator, False)
 
 	@StmpDtyInd.deleter
 	def StmpDtyInd(self):
 		del self._StmpDtyInd
-		self._StmpDtyInd = None
+		self._StmpDtyInd = base_types.UninitialisedField(self, 'StmpDtyInd', YesNoIndicator, False)
 
 	@property
 	def ValDt(self):
@@ -122,12 +122,12 @@ class AmountAndDirection101(base_types._BaseFieldType):
 
 	@ValDt.setter
 	def ValDt(self, value):
-		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
+		self._ValDt = value if value is not None else base_types.UninitialisedField(self, 'ValDt', DateAndDateTime2Choice, False)
 
 	@ValDt.deleter
 	def ValDt(self):
 		del self._ValDt
-		self._ValDt = None
+		self._ValDt = base_types.UninitialisedField(self, 'ValDt', DateAndDateTime2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcrdIntrstInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),

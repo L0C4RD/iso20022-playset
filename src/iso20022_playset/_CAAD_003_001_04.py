@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BatchTransferInitiationV04 import BatchTransferInitiationV04
+from . import BatchTransferInitiationV04
 
 class CAAD_003_001_04():
 
@@ -18,12 +18,12 @@ class CAAD_003_001_04():
 
 		@BtchTrfInitn.setter
 		def BtchTrfInitn(self, value):
-			self._BtchTrfInitn = value if type(value) != base_types.auto else self.make_default("BtchTrfInitn")
+			self._BtchTrfInitn = value if value is not None else base_types.UninitialisedField(self, 'BtchTrfInitn', BatchTransferInitiationV04, False)
 
 		@BtchTrfInitn.deleter
 		def BtchTrfInitn(self):
 			del self._BtchTrfInitn
-			self._BtchTrfInitn = None
+			self._BtchTrfInitn = base_types.UninitialisedField(self, 'BtchTrfInitn', BatchTransferInitiationV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='BtchTrfInitn', type=BatchTransferInitiationV04, min=1, max=1, mutex_group=None, array=False),

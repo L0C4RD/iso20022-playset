@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BusinessDayConvention2Code import BusinessDayConvention2Code
-from ._EndPoint2Choice import EndPoint2Choice
-from ._Frequency37Choice import Frequency37Choice
-from ._ISODate import ISODate
-from ._Max3NumericText import Max3NumericText
+from . import BusinessDayConvention2Code
+from . import EndPoint2Choice
+from . import Frequency37Choice
+from . import ISODate
+from . import Max3NumericText
 
 class Frequency2(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class Frequency2(base_types._BaseFieldType):
 
 	@EndPtChc.setter
 	def EndPtChc(self, value):
-		self._EndPtChc = value if type(value) != base_types.auto else self.make_default("EndPtChc")
+		self._EndPtChc = value if value is not None else base_types.UninitialisedField(self, 'EndPtChc', EndPoint2Choice, False)
 
 	@EndPtChc.deleter
 	def EndPtChc(self):
 		del self._EndPtChc
-		self._EndPtChc = None
+		self._EndPtChc = base_types.UninitialisedField(self, 'EndPtChc', EndPoint2Choice, False)
 
 	@property
 	def NonWorkgDayAdjstmnt(self):
@@ -30,12 +30,12 @@ class Frequency2(base_types._BaseFieldType):
 
 	@NonWorkgDayAdjstmnt.setter
 	def NonWorkgDayAdjstmnt(self, value):
-		self._NonWorkgDayAdjstmnt = value if type(value) != base_types.auto else self.make_default("NonWorkgDayAdjstmnt")
+		self._NonWorkgDayAdjstmnt = value if value is not None else base_types.UninitialisedField(self, 'NonWorkgDayAdjstmnt', BusinessDayConvention2Code, False)
 
 	@NonWorkgDayAdjstmnt.deleter
 	def NonWorkgDayAdjstmnt(self):
 		del self._NonWorkgDayAdjstmnt
-		self._NonWorkgDayAdjstmnt = None
+		self._NonWorkgDayAdjstmnt = base_types.UninitialisedField(self, 'NonWorkgDayAdjstmnt', BusinessDayConvention2Code, False)
 
 	@property
 	def ReqdFrqcyPttrn(self):
@@ -43,12 +43,12 @@ class Frequency2(base_types._BaseFieldType):
 
 	@ReqdFrqcyPttrn.setter
 	def ReqdFrqcyPttrn(self, value):
-		self._ReqdFrqcyPttrn = value if type(value) != base_types.auto else self.make_default("ReqdFrqcyPttrn")
+		self._ReqdFrqcyPttrn = value if value is not None else base_types.UninitialisedField(self, 'ReqdFrqcyPttrn', Frequency37Choice, False)
 
 	@ReqdFrqcyPttrn.deleter
 	def ReqdFrqcyPttrn(self):
 		del self._ReqdFrqcyPttrn
-		self._ReqdFrqcyPttrn = None
+		self._ReqdFrqcyPttrn = base_types.UninitialisedField(self, 'ReqdFrqcyPttrn', Frequency37Choice, False)
 
 	@property
 	def Seq(self):
@@ -56,12 +56,12 @@ class Frequency2(base_types._BaseFieldType):
 
 	@Seq.setter
 	def Seq(self, value):
-		self._Seq = value if type(value) != base_types.auto else self.make_default("Seq")
+		self._Seq = value if value is not None else base_types.UninitialisedField(self, 'Seq', Max3NumericText, False)
 
 	@Seq.deleter
 	def Seq(self):
 		del self._Seq
-		self._Seq = None
+		self._Seq = base_types.UninitialisedField(self, 'Seq', Max3NumericText, False)
 
 	@property
 	def StartDt(self):
@@ -69,12 +69,12 @@ class Frequency2(base_types._BaseFieldType):
 
 	@StartDt.setter
 	def StartDt(self, value):
-		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
+		self._StartDt = value if value is not None else base_types.UninitialisedField(self, 'StartDt', ISODate, False)
 
 	@StartDt.deleter
 	def StartDt(self):
 		del self._StartDt
-		self._StartDt = None
+		self._StartDt = base_types.UninitialisedField(self, 'StartDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EndPtChc', type=EndPoint2Choice, min=1, max=1, mutex_group=None, array=False),

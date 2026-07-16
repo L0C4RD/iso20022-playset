@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionEventReference4Choice import CorporateActionEventReference4Choice
-from ._ProcessingPosition10Choice import ProcessingPosition10Choice
+from . import CorporateActionEventReference4Choice
+from . import ProcessingPosition10Choice
 
 class CorporateActionEventReference4(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CorporateActionEventReference4(base_types._BaseFieldType):
 
 	@EvtId.setter
 	def EvtId(self, value):
-		self._EvtId = value if type(value) != base_types.auto else self.make_default("EvtId")
+		self._EvtId = value if value is not None else base_types.UninitialisedField(self, 'EvtId', CorporateActionEventReference4Choice, False)
 
 	@EvtId.deleter
 	def EvtId(self):
 		del self._EvtId
-		self._EvtId = None
+		self._EvtId = base_types.UninitialisedField(self, 'EvtId', CorporateActionEventReference4Choice, False)
 
 	@property
 	def LkgTp(self):
@@ -27,12 +27,12 @@ class CorporateActionEventReference4(base_types._BaseFieldType):
 
 	@LkgTp.setter
 	def LkgTp(self, value):
-		self._LkgTp = value if type(value) != base_types.auto else self.make_default("LkgTp")
+		self._LkgTp = value if value is not None else base_types.UninitialisedField(self, 'LkgTp', ProcessingPosition10Choice, False)
 
 	@LkgTp.deleter
 	def LkgTp(self):
 		del self._LkgTp
-		self._LkgTp = None
+		self._LkgTp = base_types.UninitialisedField(self, 'LkgTp', ProcessingPosition10Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EvtId', type=CorporateActionEventReference4Choice, min=1, max=1, mutex_group=None, array=False),

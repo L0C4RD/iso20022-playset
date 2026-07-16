@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Pagination1 import Pagination1
-from ._SupplementaryData1 import SupplementaryData1
-from ._TradeData45 import TradeData45
-from ._TradeDataReport2 import TradeDataReport2
+from . import Pagination1
+from . import SupplementaryData1
+from . import TradeData45
+from . import TradeDataReport2
 
 class ForeignExchangeTradeBulkStatusNotificationV06(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ForeignExchangeTradeBulkStatusNotificationV06(base_types._BaseFieldType):
 
 	@MsgPgntn.setter
 	def MsgPgntn(self, value):
-		self._MsgPgntn = value if type(value) != base_types.auto else self.make_default("MsgPgntn")
+		self._MsgPgntn = value if value is not None else base_types.UninitialisedField(self, 'MsgPgntn', Pagination1, False)
 
 	@MsgPgntn.deleter
 	def MsgPgntn(self):
 		del self._MsgPgntn
-		self._MsgPgntn = None
+		self._MsgPgntn = base_types.UninitialisedField(self, 'MsgPgntn', Pagination1, False)
 
 	@property
 	def SplmtryData(self):
@@ -29,12 +29,12 @@ class ForeignExchangeTradeBulkStatusNotificationV06(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def StsDtls(self):
@@ -42,12 +42,12 @@ class ForeignExchangeTradeBulkStatusNotificationV06(base_types._BaseFieldType):
 
 	@StsDtls.setter
 	def StsDtls(self, value):
-		self._StsDtls = value if type(value) != base_types.auto else self.make_default("StsDtls")
+		self._StsDtls = value if value is not None else base_types.UninitialisedField(self, 'StsDtls', TradeData45, False)
 
 	@StsDtls.deleter
 	def StsDtls(self):
 		del self._StsDtls
-		self._StsDtls = None
+		self._StsDtls = base_types.UninitialisedField(self, 'StsDtls', TradeData45, False)
 
 	@property
 	def TradDataRpt(self):
@@ -55,12 +55,12 @@ class ForeignExchangeTradeBulkStatusNotificationV06(base_types._BaseFieldType):
 
 	@TradDataRpt.setter
 	def TradDataRpt(self, value):
-		self._TradDataRpt = value if type(value) != base_types.auto else self.make_default("TradDataRpt")
+		self._TradDataRpt = value if value is not None else base_types.UninitialisedField(self, 'TradDataRpt', TradeDataReport2, True)
 
 	@TradDataRpt.deleter
 	def TradDataRpt(self):
 		del self._TradDataRpt
-		self._TradDataRpt = None
+		self._TradDataRpt = base_types.UninitialisedField(self, 'TradDataRpt', TradeDataReport2, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgPgntn', type=Pagination1, min=0, max=1, mutex_group=None, array=False),

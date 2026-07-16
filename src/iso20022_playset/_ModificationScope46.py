@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DataModification1Code import DataModification1Code
-from ._InvestorProfile2 import InvestorProfile2
+from . import DataModification1Code
+from . import InvestorProfile2
 
 class ModificationScope46(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ModificationScope46(base_types._BaseFieldType):
 
 	@InvstrPrfl.setter
 	def InvstrPrfl(self, value):
-		self._InvstrPrfl = value if type(value) != base_types.auto else self.make_default("InvstrPrfl")
+		self._InvstrPrfl = value if value is not None else base_types.UninitialisedField(self, 'InvstrPrfl', InvestorProfile2, False)
 
 	@InvstrPrfl.deleter
 	def InvstrPrfl(self):
 		del self._InvstrPrfl
-		self._InvstrPrfl = None
+		self._InvstrPrfl = base_types.UninitialisedField(self, 'InvstrPrfl', InvestorProfile2, False)
 
 	@property
 	def ModScpIndctn(self):
@@ -27,12 +27,12 @@ class ModificationScope46(base_types._BaseFieldType):
 
 	@ModScpIndctn.setter
 	def ModScpIndctn(self, value):
-		self._ModScpIndctn = value if type(value) != base_types.auto else self.make_default("ModScpIndctn")
+		self._ModScpIndctn = value if value is not None else base_types.UninitialisedField(self, 'ModScpIndctn', DataModification1Code, False)
 
 	@ModScpIndctn.deleter
 	def ModScpIndctn(self):
 		del self._ModScpIndctn
-		self._ModScpIndctn = None
+		self._ModScpIndctn = base_types.UninitialisedField(self, 'ModScpIndctn', DataModification1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InvstrPrfl', type=InvestorProfile2, min=1, max=1, mutex_group=None, array=False),

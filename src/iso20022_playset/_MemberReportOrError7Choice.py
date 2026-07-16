@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ErrorHandling3 import ErrorHandling3
-from ._MemberReport6 import MemberReport6
+from . import ErrorHandling3
+from . import MemberReport6
 
 class MemberReportOrError7Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class MemberReportOrError7Choice(base_types._BaseFieldType):
 
 	@OprlErr.setter
 	def OprlErr(self, value):
-		self._OprlErr = value if type(value) != base_types.auto else self.make_default("OprlErr")
+		self._OprlErr = value if value is not None else base_types.UninitialisedField(self, 'OprlErr', ErrorHandling3, True)
 
 	@OprlErr.deleter
 	def OprlErr(self):
 		del self._OprlErr
-		self._OprlErr = None
+		self._OprlErr = base_types.UninitialisedField(self, 'OprlErr', ErrorHandling3, True)
 
 	@property
 	def Rpt(self):
@@ -27,12 +27,12 @@ class MemberReportOrError7Choice(base_types._BaseFieldType):
 
 	@Rpt.setter
 	def Rpt(self, value):
-		self._Rpt = value if type(value) != base_types.auto else self.make_default("Rpt")
+		self._Rpt = value if value is not None else base_types.UninitialisedField(self, 'Rpt', MemberReport6, True)
 
 	@Rpt.deleter
 	def Rpt(self):
 		del self._Rpt
-		self._Rpt = None
+		self._Rpt = base_types.UninitialisedField(self, 'Rpt', MemberReport6, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OprlErr', type=ErrorHandling3, min=1, max=None, mutex_group=1, array=True),

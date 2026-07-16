@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AgentCAInformationStatusAdviceV01 import AgentCAInformationStatusAdviceV01
+from . import AgentCAInformationStatusAdviceV01
 
 class SEEV_024_001_01():
 
@@ -18,12 +18,12 @@ class SEEV_024_001_01():
 
 		@AgtCAInfStsAdvc.setter
 		def AgtCAInfStsAdvc(self, value):
-			self._AgtCAInfStsAdvc = value if type(value) != base_types.auto else self.make_default("AgtCAInfStsAdvc")
+			self._AgtCAInfStsAdvc = value if value is not None else base_types.UninitialisedField(self, 'AgtCAInfStsAdvc', AgentCAInformationStatusAdviceV01, False)
 
 		@AgtCAInfStsAdvc.deleter
 		def AgtCAInfStsAdvc(self):
 			del self._AgtCAInfStsAdvc
-			self._AgtCAInfStsAdvc = None
+			self._AgtCAInfStsAdvc = base_types.UninitialisedField(self, 'AgtCAInfStsAdvc', AgentCAInformationStatusAdviceV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AgtCAInfStsAdvc', type=AgentCAInformationStatusAdviceV01, min=1, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BICFIDec2014Identifier import BICFIDec2014Identifier
-from ._Max256Text import Max256Text
+from . import BICFIDec2014Identifier
+from . import Max256Text
 
 class TechnicalIdentification2Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TechnicalIdentification2Choice(base_types._BaseFieldType):
 
 	@BICFI.setter
 	def BICFI(self, value):
-		self._BICFI = value if type(value) != base_types.auto else self.make_default("BICFI")
+		self._BICFI = value if value is not None else base_types.UninitialisedField(self, 'BICFI', BICFIDec2014Identifier, False)
 
 	@BICFI.deleter
 	def BICFI(self):
 		del self._BICFI
-		self._BICFI = None
+		self._BICFI = base_types.UninitialisedField(self, 'BICFI', BICFIDec2014Identifier, False)
 
 	@property
 	def TechAdr(self):
@@ -27,12 +27,12 @@ class TechnicalIdentification2Choice(base_types._BaseFieldType):
 
 	@TechAdr.setter
 	def TechAdr(self, value):
-		self._TechAdr = value if type(value) != base_types.auto else self.make_default("TechAdr")
+		self._TechAdr = value if value is not None else base_types.UninitialisedField(self, 'TechAdr', Max256Text, False)
 
 	@TechAdr.deleter
 	def TechAdr(self):
 		del self._TechAdr
-		self._TechAdr = None
+		self._TechAdr = base_types.UninitialisedField(self, 'TechAdr', Max256Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BICFI', type=BICFIDec2014Identifier, min=0, max=1, mutex_group=1, array=False),

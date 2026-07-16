@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashAccount40 import CashAccount40
-from ._ContentInformationType39 import ContentInformationType39
-from ._MandateRelatedInformation17 import MandateRelatedInformation17
-from ._PartyIdentification272 import PartyIdentification272
+from . import CashAccount40
+from . import ContentInformationType39
+from . import MandateRelatedInformation17
+from . import PartyIdentification272
 
 class DirectDebitContext1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class DirectDebitContext1(base_types._BaseFieldType):
 
 	@Cdtr.setter
 	def Cdtr(self, value):
-		self._Cdtr = value if type(value) != base_types.auto else self.make_default("Cdtr")
+		self._Cdtr = value if value is not None else base_types.UninitialisedField(self, 'Cdtr', PartyIdentification272, False)
 
 	@Cdtr.deleter
 	def Cdtr(self):
 		del self._Cdtr
-		self._Cdtr = None
+		self._Cdtr = base_types.UninitialisedField(self, 'Cdtr', PartyIdentification272, False)
 
 	@property
 	def CdtrAcct(self):
@@ -29,12 +29,12 @@ class DirectDebitContext1(base_types._BaseFieldType):
 
 	@CdtrAcct.setter
 	def CdtrAcct(self, value):
-		self._CdtrAcct = value if type(value) != base_types.auto else self.make_default("CdtrAcct")
+		self._CdtrAcct = value if value is not None else base_types.UninitialisedField(self, 'CdtrAcct', CashAccount40, False)
 
 	@CdtrAcct.deleter
 	def CdtrAcct(self):
 		del self._CdtrAcct
-		self._CdtrAcct = None
+		self._CdtrAcct = base_types.UninitialisedField(self, 'CdtrAcct', CashAccount40, False)
 
 	@property
 	def Dbtr(self):
@@ -42,12 +42,12 @@ class DirectDebitContext1(base_types._BaseFieldType):
 
 	@Dbtr.setter
 	def Dbtr(self, value):
-		self._Dbtr = value if type(value) != base_types.auto else self.make_default("Dbtr")
+		self._Dbtr = value if value is not None else base_types.UninitialisedField(self, 'Dbtr', PartyIdentification272, False)
 
 	@Dbtr.deleter
 	def Dbtr(self):
 		del self._Dbtr
-		self._Dbtr = None
+		self._Dbtr = base_types.UninitialisedField(self, 'Dbtr', PartyIdentification272, False)
 
 	@property
 	def DbtrAcct(self):
@@ -55,12 +55,12 @@ class DirectDebitContext1(base_types._BaseFieldType):
 
 	@DbtrAcct.setter
 	def DbtrAcct(self, value):
-		self._DbtrAcct = value if type(value) != base_types.auto else self.make_default("DbtrAcct")
+		self._DbtrAcct = value if value is not None else base_types.UninitialisedField(self, 'DbtrAcct', CashAccount40, False)
 
 	@DbtrAcct.deleter
 	def DbtrAcct(self):
 		del self._DbtrAcct
-		self._DbtrAcct = None
+		self._DbtrAcct = base_types.UninitialisedField(self, 'DbtrAcct', CashAccount40, False)
 
 	@property
 	def MndtRltdInf(self):
@@ -68,12 +68,12 @@ class DirectDebitContext1(base_types._BaseFieldType):
 
 	@MndtRltdInf.setter
 	def MndtRltdInf(self, value):
-		self._MndtRltdInf = value if type(value) != base_types.auto else self.make_default("MndtRltdInf")
+		self._MndtRltdInf = value if value is not None else base_types.UninitialisedField(self, 'MndtRltdInf', MandateRelatedInformation17, False)
 
 	@MndtRltdInf.deleter
 	def MndtRltdInf(self):
 		del self._MndtRltdInf
-		self._MndtRltdInf = None
+		self._MndtRltdInf = base_types.UninitialisedField(self, 'MndtRltdInf', MandateRelatedInformation17, False)
 
 	@property
 	def PrtctdCdtrAcct(self):
@@ -81,12 +81,12 @@ class DirectDebitContext1(base_types._BaseFieldType):
 
 	@PrtctdCdtrAcct.setter
 	def PrtctdCdtrAcct(self, value):
-		self._PrtctdCdtrAcct = value if type(value) != base_types.auto else self.make_default("PrtctdCdtrAcct")
+		self._PrtctdCdtrAcct = value if value is not None else base_types.UninitialisedField(self, 'PrtctdCdtrAcct', ContentInformationType39, False)
 
 	@PrtctdCdtrAcct.deleter
 	def PrtctdCdtrAcct(self):
 		del self._PrtctdCdtrAcct
-		self._PrtctdCdtrAcct = None
+		self._PrtctdCdtrAcct = base_types.UninitialisedField(self, 'PrtctdCdtrAcct', ContentInformationType39, False)
 
 	@property
 	def PrtctdDbtrAcct(self):
@@ -94,12 +94,12 @@ class DirectDebitContext1(base_types._BaseFieldType):
 
 	@PrtctdDbtrAcct.setter
 	def PrtctdDbtrAcct(self, value):
-		self._PrtctdDbtrAcct = value if type(value) != base_types.auto else self.make_default("PrtctdDbtrAcct")
+		self._PrtctdDbtrAcct = value if value is not None else base_types.UninitialisedField(self, 'PrtctdDbtrAcct', ContentInformationType39, False)
 
 	@PrtctdDbtrAcct.deleter
 	def PrtctdDbtrAcct(self):
 		del self._PrtctdDbtrAcct
-		self._PrtctdDbtrAcct = None
+		self._PrtctdDbtrAcct = base_types.UninitialisedField(self, 'PrtctdDbtrAcct', ContentInformationType39, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cdtr', type=PartyIdentification272, min=0, max=1, mutex_group=None, array=False),

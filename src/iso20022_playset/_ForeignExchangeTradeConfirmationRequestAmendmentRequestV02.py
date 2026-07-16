@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Header23 import Header23
-from ._Max35NumericText import Max35NumericText
-from ._MessageIdentification1 import MessageIdentification1
-from ._Period12 import Period12
-from ._QueryTradeStatus1Code import QueryTradeStatus1Code
-from ._SupplementaryData1 import SupplementaryData1
-from ._Trade9 import Trade9
-from ._TradePartyIdentification9 import TradePartyIdentification9
+from . import Header23
+from . import Max35NumericText
+from . import MessageIdentification1
+from . import Period12
+from . import QueryTradeStatus1Code
+from . import SupplementaryData1
+from . import Trade9
+from . import TradePartyIdentification9
 
 class ForeignExchangeTradeConfirmationRequestAmendmentRequestV02(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class ForeignExchangeTradeConfirmationRequestAmendmentRequestV02(base_types._Bas
 
 	@AmdmntReqId.setter
 	def AmdmntReqId(self, value):
-		self._AmdmntReqId = value if type(value) != base_types.auto else self.make_default("AmdmntReqId")
+		self._AmdmntReqId = value if value is not None else base_types.UninitialisedField(self, 'AmdmntReqId', MessageIdentification1, False)
 
 	@AmdmntReqId.deleter
 	def AmdmntReqId(self):
 		del self._AmdmntReqId
-		self._AmdmntReqId = None
+		self._AmdmntReqId = base_types.UninitialisedField(self, 'AmdmntReqId', MessageIdentification1, False)
 
 	@property
 	def CtrPtySdId(self):
@@ -33,12 +33,12 @@ class ForeignExchangeTradeConfirmationRequestAmendmentRequestV02(base_types._Bas
 
 	@CtrPtySdId.setter
 	def CtrPtySdId(self, value):
-		self._CtrPtySdId = value if type(value) != base_types.auto else self.make_default("CtrPtySdId")
+		self._CtrPtySdId = value if value is not None else base_types.UninitialisedField(self, 'CtrPtySdId', TradePartyIdentification9, False)
 
 	@CtrPtySdId.deleter
 	def CtrPtySdId(self):
 		del self._CtrPtySdId
-		self._CtrPtySdId = None
+		self._CtrPtySdId = base_types.UninitialisedField(self, 'CtrPtySdId', TradePartyIdentification9, False)
 
 	@property
 	def Hdr(self):
@@ -46,12 +46,12 @@ class ForeignExchangeTradeConfirmationRequestAmendmentRequestV02(base_types._Bas
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header23, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header23, False)
 
 	@property
 	def QryPrd(self):
@@ -59,12 +59,12 @@ class ForeignExchangeTradeConfirmationRequestAmendmentRequestV02(base_types._Bas
 
 	@QryPrd.setter
 	def QryPrd(self, value):
-		self._QryPrd = value if type(value) != base_types.auto else self.make_default("QryPrd")
+		self._QryPrd = value if value is not None else base_types.UninitialisedField(self, 'QryPrd', Period12, False)
 
 	@QryPrd.deleter
 	def QryPrd(self):
 		del self._QryPrd
-		self._QryPrd = None
+		self._QryPrd = base_types.UninitialisedField(self, 'QryPrd', Period12, False)
 
 	@property
 	def QryStartNb(self):
@@ -72,12 +72,12 @@ class ForeignExchangeTradeConfirmationRequestAmendmentRequestV02(base_types._Bas
 
 	@QryStartNb.setter
 	def QryStartNb(self, value):
-		self._QryStartNb = value if type(value) != base_types.auto else self.make_default("QryStartNb")
+		self._QryStartNb = value if value is not None else base_types.UninitialisedField(self, 'QryStartNb', Max35NumericText, False)
 
 	@QryStartNb.deleter
 	def QryStartNb(self):
 		del self._QryStartNb
-		self._QryStartNb = None
+		self._QryStartNb = base_types.UninitialisedField(self, 'QryStartNb', Max35NumericText, False)
 
 	@property
 	def QryTradSts(self):
@@ -85,12 +85,12 @@ class ForeignExchangeTradeConfirmationRequestAmendmentRequestV02(base_types._Bas
 
 	@QryTradSts.setter
 	def QryTradSts(self, value):
-		self._QryTradSts = value if type(value) != base_types.auto else self.make_default("QryTradSts")
+		self._QryTradSts = value if value is not None else base_types.UninitialisedField(self, 'QryTradSts', QueryTradeStatus1Code, False)
 
 	@QryTradSts.deleter
 	def QryTradSts(self):
 		del self._QryTradSts
-		self._QryTradSts = None
+		self._QryTradSts = base_types.UninitialisedField(self, 'QryTradSts', QueryTradeStatus1Code, False)
 
 	@property
 	def SplmtryData(self):
@@ -98,12 +98,12 @@ class ForeignExchangeTradeConfirmationRequestAmendmentRequestV02(base_types._Bas
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TradDtl(self):
@@ -111,12 +111,12 @@ class ForeignExchangeTradeConfirmationRequestAmendmentRequestV02(base_types._Bas
 
 	@TradDtl.setter
 	def TradDtl(self, value):
-		self._TradDtl = value if type(value) != base_types.auto else self.make_default("TradDtl")
+		self._TradDtl = value if value is not None else base_types.UninitialisedField(self, 'TradDtl', Trade9, False)
 
 	@TradDtl.deleter
 	def TradDtl(self):
 		del self._TradDtl
-		self._TradDtl = None
+		self._TradDtl = base_types.UninitialisedField(self, 'TradDtl', Trade9, False)
 
 	@property
 	def TradgSdId(self):
@@ -124,12 +124,12 @@ class ForeignExchangeTradeConfirmationRequestAmendmentRequestV02(base_types._Bas
 
 	@TradgSdId.setter
 	def TradgSdId(self, value):
-		self._TradgSdId = value if type(value) != base_types.auto else self.make_default("TradgSdId")
+		self._TradgSdId = value if value is not None else base_types.UninitialisedField(self, 'TradgSdId', TradePartyIdentification9, False)
 
 	@TradgSdId.deleter
 	def TradgSdId(self):
 		del self._TradgSdId
-		self._TradgSdId = None
+		self._TradgSdId = base_types.UninitialisedField(self, 'TradgSdId', TradePartyIdentification9, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmdmntReqId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),

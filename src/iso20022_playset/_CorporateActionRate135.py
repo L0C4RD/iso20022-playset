@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RateAndAmountFormat57Choice import RateAndAmountFormat57Choice
-from ._RateAndAmountFormat72Choice import RateAndAmountFormat72Choice
-from ._RateAndAmountFormat73Choice import RateAndAmountFormat73Choice
-from ._RateAndAmountFormat74Choice import RateAndAmountFormat74Choice
-from ._RateFormat12Choice import RateFormat12Choice
-from ._RateFormat24Choice import RateFormat24Choice
-from ._RateFormat25Choice import RateFormat25Choice
+from . import RateAndAmountFormat57Choice
+from . import RateAndAmountFormat72Choice
+from . import RateAndAmountFormat73Choice
+from . import RateAndAmountFormat74Choice
+from . import RateFormat12Choice
+from . import RateFormat24Choice
+from . import RateFormat25Choice
 
 class CorporateActionRate135(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class CorporateActionRate135(base_types._BaseFieldType):
 
 	@BidIntrvl.setter
 	def BidIntrvl(self, value):
-		self._BidIntrvl = value if type(value) != base_types.auto else self.make_default("BidIntrvl")
+		self._BidIntrvl = value if value is not None else base_types.UninitialisedField(self, 'BidIntrvl', RateAndAmountFormat73Choice, False)
 
 	@BidIntrvl.deleter
 	def BidIntrvl(self):
 		del self._BidIntrvl
-		self._BidIntrvl = None
+		self._BidIntrvl = base_types.UninitialisedField(self, 'BidIntrvl', RateAndAmountFormat73Choice, False)
 
 	@property
 	def DclrdRate(self):
@@ -32,12 +32,12 @@ class CorporateActionRate135(base_types._BaseFieldType):
 
 	@DclrdRate.setter
 	def DclrdRate(self, value):
-		self._DclrdRate = value if type(value) != base_types.auto else self.make_default("DclrdRate")
+		self._DclrdRate = value if value is not None else base_types.UninitialisedField(self, 'DclrdRate', RateAndAmountFormat74Choice, False)
 
 	@DclrdRate.deleter
 	def DclrdRate(self):
 		del self._DclrdRate
-		self._DclrdRate = None
+		self._DclrdRate = base_types.UninitialisedField(self, 'DclrdRate', RateAndAmountFormat74Choice, False)
 
 	@property
 	def IndxFctr(self):
@@ -45,12 +45,12 @@ class CorporateActionRate135(base_types._BaseFieldType):
 
 	@IndxFctr.setter
 	def IndxFctr(self, value):
-		self._IndxFctr = value if type(value) != base_types.auto else self.make_default("IndxFctr")
+		self._IndxFctr = value if value is not None else base_types.UninitialisedField(self, 'IndxFctr', RateAndAmountFormat57Choice, False)
 
 	@IndxFctr.deleter
 	def IndxFctr(self):
 		del self._IndxFctr
-		self._IndxFctr = None
+		self._IndxFctr = base_types.UninitialisedField(self, 'IndxFctr', RateAndAmountFormat57Choice, False)
 
 	@property
 	def IntrstRate(self):
@@ -58,12 +58,12 @@ class CorporateActionRate135(base_types._BaseFieldType):
 
 	@IntrstRate.setter
 	def IntrstRate(self, value):
-		self._IntrstRate = value if type(value) != base_types.auto else self.make_default("IntrstRate")
+		self._IntrstRate = value if value is not None else base_types.UninitialisedField(self, 'IntrstRate', RateAndAmountFormat72Choice, False)
 
 	@IntrstRate.deleter
 	def IntrstRate(self):
 		del self._IntrstRate
-		self._IntrstRate = None
+		self._IntrstRate = base_types.UninitialisedField(self, 'IntrstRate', RateAndAmountFormat72Choice, False)
 
 	@property
 	def IntrstShrtfll(self):
@@ -71,12 +71,12 @@ class CorporateActionRate135(base_types._BaseFieldType):
 
 	@IntrstShrtfll.setter
 	def IntrstShrtfll(self, value):
-		self._IntrstShrtfll = value if type(value) != base_types.auto else self.make_default("IntrstShrtfll")
+		self._IntrstShrtfll = value if value is not None else base_types.UninitialisedField(self, 'IntrstShrtfll', RateAndAmountFormat74Choice, False)
 
 	@IntrstShrtfll.deleter
 	def IntrstShrtfll(self):
 		del self._IntrstShrtfll
-		self._IntrstShrtfll = None
+		self._IntrstShrtfll = base_types.UninitialisedField(self, 'IntrstShrtfll', RateAndAmountFormat74Choice, False)
 
 	@property
 	def NxtFctr(self):
@@ -84,12 +84,12 @@ class CorporateActionRate135(base_types._BaseFieldType):
 
 	@NxtFctr.setter
 	def NxtFctr(self, value):
-		self._NxtFctr = value if type(value) != base_types.auto else self.make_default("NxtFctr")
+		self._NxtFctr = value if value is not None else base_types.UninitialisedField(self, 'NxtFctr', RateFormat12Choice, False)
 
 	@NxtFctr.deleter
 	def NxtFctr(self):
 		del self._NxtFctr
-		self._NxtFctr = None
+		self._NxtFctr = base_types.UninitialisedField(self, 'NxtFctr', RateFormat12Choice, False)
 
 	@property
 	def PctgSght(self):
@@ -97,12 +97,12 @@ class CorporateActionRate135(base_types._BaseFieldType):
 
 	@PctgSght.setter
 	def PctgSght(self, value):
-		self._PctgSght = value if type(value) != base_types.auto else self.make_default("PctgSght")
+		self._PctgSght = value if value is not None else base_types.UninitialisedField(self, 'PctgSght', RateFormat25Choice, False)
 
 	@PctgSght.deleter
 	def PctgSght(self):
 		del self._PctgSght
-		self._PctgSght = None
+		self._PctgSght = base_types.UninitialisedField(self, 'PctgSght', RateFormat25Choice, False)
 
 	@property
 	def PrvsFctr(self):
@@ -110,12 +110,12 @@ class CorporateActionRate135(base_types._BaseFieldType):
 
 	@PrvsFctr.setter
 	def PrvsFctr(self, value):
-		self._PrvsFctr = value if type(value) != base_types.auto else self.make_default("PrvsFctr")
+		self._PrvsFctr = value if value is not None else base_types.UninitialisedField(self, 'PrvsFctr', RateFormat12Choice, False)
 
 	@PrvsFctr.deleter
 	def PrvsFctr(self):
 		del self._PrvsFctr
-		self._PrvsFctr = None
+		self._PrvsFctr = base_types.UninitialisedField(self, 'PrvsFctr', RateFormat12Choice, False)
 
 	@property
 	def RealsdLoss(self):
@@ -123,12 +123,12 @@ class CorporateActionRate135(base_types._BaseFieldType):
 
 	@RealsdLoss.setter
 	def RealsdLoss(self, value):
-		self._RealsdLoss = value if type(value) != base_types.auto else self.make_default("RealsdLoss")
+		self._RealsdLoss = value if value is not None else base_types.UninitialisedField(self, 'RealsdLoss', RateAndAmountFormat74Choice, False)
 
 	@RealsdLoss.deleter
 	def RealsdLoss(self):
 		del self._RealsdLoss
-		self._RealsdLoss = None
+		self._RealsdLoss = base_types.UninitialisedField(self, 'RealsdLoss', RateAndAmountFormat74Choice, False)
 
 	@property
 	def RinvstmtDscntRateToMkt(self):
@@ -136,12 +136,12 @@ class CorporateActionRate135(base_types._BaseFieldType):
 
 	@RinvstmtDscntRateToMkt.setter
 	def RinvstmtDscntRateToMkt(self, value):
-		self._RinvstmtDscntRateToMkt = value if type(value) != base_types.auto else self.make_default("RinvstmtDscntRateToMkt")
+		self._RinvstmtDscntRateToMkt = value if value is not None else base_types.UninitialisedField(self, 'RinvstmtDscntRateToMkt', RateFormat24Choice, False)
 
 	@RinvstmtDscntRateToMkt.deleter
 	def RinvstmtDscntRateToMkt(self):
 		del self._RinvstmtDscntRateToMkt
-		self._RinvstmtDscntRateToMkt = None
+		self._RinvstmtDscntRateToMkt = base_types.UninitialisedField(self, 'RinvstmtDscntRateToMkt', RateFormat24Choice, False)
 
 	@property
 	def RltdIndx(self):
@@ -149,12 +149,12 @@ class CorporateActionRate135(base_types._BaseFieldType):
 
 	@RltdIndx.setter
 	def RltdIndx(self, value):
-		self._RltdIndx = value if type(value) != base_types.auto else self.make_default("RltdIndx")
+		self._RltdIndx = value if value is not None else base_types.UninitialisedField(self, 'RltdIndx', RateFormat24Choice, False)
 
 	@RltdIndx.deleter
 	def RltdIndx(self):
 		del self._RltdIndx
-		self._RltdIndx = None
+		self._RltdIndx = base_types.UninitialisedField(self, 'RltdIndx', RateFormat24Choice, False)
 
 	@property
 	def Sprd(self):
@@ -162,12 +162,12 @@ class CorporateActionRate135(base_types._BaseFieldType):
 
 	@Sprd.setter
 	def Sprd(self, value):
-		self._Sprd = value if type(value) != base_types.auto else self.make_default("Sprd")
+		self._Sprd = value if value is not None else base_types.UninitialisedField(self, 'Sprd', RateFormat24Choice, False)
 
 	@Sprd.deleter
 	def Sprd(self):
 		del self._Sprd
-		self._Sprd = None
+		self._Sprd = base_types.UninitialisedField(self, 'Sprd', RateFormat24Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BidIntrvl', type=RateAndAmountFormat73Choice, min=0, max=1, mutex_group=None, array=False),

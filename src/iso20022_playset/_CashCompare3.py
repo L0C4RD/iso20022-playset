@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CompareAmountAndDirection2 import CompareAmountAndDirection2
-from ._ComparePercentageRate3 import ComparePercentageRate3
+from . import CompareAmountAndDirection2
+from . import ComparePercentageRate3
 
 class CashCompare3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CashCompare3(base_types._BaseFieldType):
 
 	@HrcutOrMrgn.setter
 	def HrcutOrMrgn(self, value):
-		self._HrcutOrMrgn = value if type(value) != base_types.auto else self.make_default("HrcutOrMrgn")
+		self._HrcutOrMrgn = value if value is not None else base_types.UninitialisedField(self, 'HrcutOrMrgn', ComparePercentageRate3, False)
 
 	@HrcutOrMrgn.deleter
 	def HrcutOrMrgn(self):
 		del self._HrcutOrMrgn
-		self._HrcutOrMrgn = None
+		self._HrcutOrMrgn = base_types.UninitialisedField(self, 'HrcutOrMrgn', ComparePercentageRate3, False)
 
 	@property
 	def Val(self):
@@ -27,12 +27,12 @@ class CashCompare3(base_types._BaseFieldType):
 
 	@Val.setter
 	def Val(self, value):
-		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
+		self._Val = value if value is not None else base_types.UninitialisedField(self, 'Val', CompareAmountAndDirection2, False)
 
 	@Val.deleter
 	def Val(self):
 		del self._Val
-		self._Val = None
+		self._Val = base_types.UninitialisedField(self, 'Val', CompareAmountAndDirection2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='HrcutOrMrgn', type=ComparePercentageRate3, min=0, max=1, mutex_group=None, array=False),

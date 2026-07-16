@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._BaseOneRate import BaseOneRate
-from ._ExchangeRateOrPercentage1Choice import ExchangeRateOrPercentage1Choice
-from ._ISODateTime import ISODateTime
+from . import ActiveOrHistoricCurrencyCode
+from . import BaseOneRate
+from . import ExchangeRateOrPercentage1Choice
+from . import ISODateTime
 
 class CurrencyExchange20(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CurrencyExchange20(base_types._BaseFieldType):
 
 	@HghLmt.setter
 	def HghLmt(self, value):
-		self._HghLmt = value if type(value) != base_types.auto else self.make_default("HghLmt")
+		self._HghLmt = value if value is not None else base_types.UninitialisedField(self, 'HghLmt', ExchangeRateOrPercentage1Choice, False)
 
 	@HghLmt.deleter
 	def HghLmt(self):
 		del self._HghLmt
-		self._HghLmt = None
+		self._HghLmt = base_types.UninitialisedField(self, 'HghLmt', ExchangeRateOrPercentage1Choice, False)
 
 	@property
 	def LwLmt(self):
@@ -29,12 +29,12 @@ class CurrencyExchange20(base_types._BaseFieldType):
 
 	@LwLmt.setter
 	def LwLmt(self, value):
-		self._LwLmt = value if type(value) != base_types.auto else self.make_default("LwLmt")
+		self._LwLmt = value if value is not None else base_types.UninitialisedField(self, 'LwLmt', ExchangeRateOrPercentage1Choice, False)
 
 	@LwLmt.deleter
 	def LwLmt(self):
 		del self._LwLmt
-		self._LwLmt = None
+		self._LwLmt = base_types.UninitialisedField(self, 'LwLmt', ExchangeRateOrPercentage1Choice, False)
 
 	@property
 	def QtdCcy(self):
@@ -42,12 +42,12 @@ class CurrencyExchange20(base_types._BaseFieldType):
 
 	@QtdCcy.setter
 	def QtdCcy(self, value):
-		self._QtdCcy = value if type(value) != base_types.auto else self.make_default("QtdCcy")
+		self._QtdCcy = value if value is not None else base_types.UninitialisedField(self, 'QtdCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@QtdCcy.deleter
 	def QtdCcy(self):
 		del self._QtdCcy
-		self._QtdCcy = None
+		self._QtdCcy = base_types.UninitialisedField(self, 'QtdCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def QtnDt(self):
@@ -55,12 +55,12 @@ class CurrencyExchange20(base_types._BaseFieldType):
 
 	@QtnDt.setter
 	def QtnDt(self, value):
-		self._QtnDt = value if type(value) != base_types.auto else self.make_default("QtnDt")
+		self._QtnDt = value if value is not None else base_types.UninitialisedField(self, 'QtnDt', ISODateTime, False)
 
 	@QtnDt.deleter
 	def QtnDt(self):
 		del self._QtnDt
-		self._QtnDt = None
+		self._QtnDt = base_types.UninitialisedField(self, 'QtnDt', ISODateTime, False)
 
 	@property
 	def XchgRate(self):
@@ -68,12 +68,12 @@ class CurrencyExchange20(base_types._BaseFieldType):
 
 	@XchgRate.setter
 	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != base_types.auto else self.make_default("XchgRate")
+		self._XchgRate = value if value is not None else base_types.UninitialisedField(self, 'XchgRate', BaseOneRate, False)
 
 	@XchgRate.deleter
 	def XchgRate(self):
 		del self._XchgRate
-		self._XchgRate = None
+		self._XchgRate = base_types.UninitialisedField(self, 'XchgRate', BaseOneRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='HghLmt', type=ExchangeRateOrPercentage1Choice, min=0, max=1, mutex_group=None, array=False),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashEntitlement1 import CashEntitlement1
-from ._Max35Text import Max35Text
-from ._PartyIdentification2Choice import PartyIdentification2Choice
-from ._SecuritiesEntitlement1 import SecuritiesEntitlement1
+from . import CashEntitlement1
+from . import Max35Text
+from . import PartyIdentification2Choice
+from . import SecuritiesEntitlement1
 
 class Entitlement1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class Entitlement1(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', Max35Text, False)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', Max35Text, False)
 
 	@property
 	def AcctOwnrId(self):
@@ -29,12 +29,12 @@ class Entitlement1(base_types._BaseFieldType):
 
 	@AcctOwnrId.setter
 	def AcctOwnrId(self, value):
-		self._AcctOwnrId = value if type(value) != base_types.auto else self.make_default("AcctOwnrId")
+		self._AcctOwnrId = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnrId', PartyIdentification2Choice, False)
 
 	@AcctOwnrId.deleter
 	def AcctOwnrId(self):
 		del self._AcctOwnrId
-		self._AcctOwnrId = None
+		self._AcctOwnrId = base_types.UninitialisedField(self, 'AcctOwnrId', PartyIdentification2Choice, False)
 
 	@property
 	def CshDstrbtnDtls(self):
@@ -42,12 +42,12 @@ class Entitlement1(base_types._BaseFieldType):
 
 	@CshDstrbtnDtls.setter
 	def CshDstrbtnDtls(self, value):
-		self._CshDstrbtnDtls = value if type(value) != base_types.auto else self.make_default("CshDstrbtnDtls")
+		self._CshDstrbtnDtls = value if value is not None else base_types.UninitialisedField(self, 'CshDstrbtnDtls', CashEntitlement1, True)
 
 	@CshDstrbtnDtls.deleter
 	def CshDstrbtnDtls(self):
 		del self._CshDstrbtnDtls
-		self._CshDstrbtnDtls = None
+		self._CshDstrbtnDtls = base_types.UninitialisedField(self, 'CshDstrbtnDtls', CashEntitlement1, True)
 
 	@property
 	def SctiesDstrbtnDtls(self):
@@ -55,12 +55,12 @@ class Entitlement1(base_types._BaseFieldType):
 
 	@SctiesDstrbtnDtls.setter
 	def SctiesDstrbtnDtls(self, value):
-		self._SctiesDstrbtnDtls = value if type(value) != base_types.auto else self.make_default("SctiesDstrbtnDtls")
+		self._SctiesDstrbtnDtls = value if value is not None else base_types.UninitialisedField(self, 'SctiesDstrbtnDtls', SecuritiesEntitlement1, True)
 
 	@SctiesDstrbtnDtls.deleter
 	def SctiesDstrbtnDtls(self):
 		del self._SctiesDstrbtnDtls
-		self._SctiesDstrbtnDtls = None
+		self._SctiesDstrbtnDtls = base_types.UninitialisedField(self, 'SctiesDstrbtnDtls', SecuritiesEntitlement1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

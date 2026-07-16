@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCode import CountryCode
-from ._MarketInfrastructureIdentification1Choice import MarketInfrastructureIdentification1Choice
+from . import CountryCode
+from . import MarketInfrastructureIdentification1Choice
 
 class SystemIdentification2Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SystemIdentification2Choice(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@property
 	def MktInfrstrctrId(self):
@@ -27,12 +27,12 @@ class SystemIdentification2Choice(base_types._BaseFieldType):
 
 	@MktInfrstrctrId.setter
 	def MktInfrstrctrId(self, value):
-		self._MktInfrstrctrId = value if type(value) != base_types.auto else self.make_default("MktInfrstrctrId")
+		self._MktInfrstrctrId = value if value is not None else base_types.UninitialisedField(self, 'MktInfrstrctrId', MarketInfrastructureIdentification1Choice, False)
 
 	@MktInfrstrctrId.deleter
 	def MktInfrstrctrId(self):
 		del self._MktInfrstrctrId
-		self._MktInfrstrctrId = None
+		self._MktInfrstrctrId = base_types.UninitialisedField(self, 'MktInfrstrctrId', MarketInfrastructureIdentification1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=0, max=1, mutex_group=1, array=False),

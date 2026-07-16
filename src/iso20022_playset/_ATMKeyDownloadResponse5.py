@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMCommand17 import ATMCommand17
-from ._ATMEnvironment7 import ATMEnvironment7
-from ._ATMSecurityContext3 import ATMSecurityContext3
-from ._Max140Binary import Max140Binary
-from ._SecurityParameters10 import SecurityParameters10
+from . import ATMCommand17
+from . import ATMEnvironment7
+from . import ATMSecurityContext3
+from . import Max140Binary
+from . import SecurityParameters10
 
 class ATMKeyDownloadResponse5(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class ATMKeyDownloadResponse5(base_types._BaseFieldType):
 
 	@ATMChllng.setter
 	def ATMChllng(self, value):
-		self._ATMChllng = value if type(value) != base_types.auto else self.make_default("ATMChllng")
+		self._ATMChllng = value if value is not None else base_types.UninitialisedField(self, 'ATMChllng', Max140Binary, False)
 
 	@ATMChllng.deleter
 	def ATMChllng(self):
 		del self._ATMChllng
-		self._ATMChllng = None
+		self._ATMChllng = base_types.UninitialisedField(self, 'ATMChllng', Max140Binary, False)
 
 	@property
 	def ATMSctyCntxt(self):
@@ -30,12 +30,12 @@ class ATMKeyDownloadResponse5(base_types._BaseFieldType):
 
 	@ATMSctyCntxt.setter
 	def ATMSctyCntxt(self, value):
-		self._ATMSctyCntxt = value if type(value) != base_types.auto else self.make_default("ATMSctyCntxt")
+		self._ATMSctyCntxt = value if value is not None else base_types.UninitialisedField(self, 'ATMSctyCntxt', ATMSecurityContext3, False)
 
 	@ATMSctyCntxt.deleter
 	def ATMSctyCntxt(self):
 		del self._ATMSctyCntxt
-		self._ATMSctyCntxt = None
+		self._ATMSctyCntxt = base_types.UninitialisedField(self, 'ATMSctyCntxt', ATMSecurityContext3, False)
 
 	@property
 	def Cmd(self):
@@ -43,12 +43,12 @@ class ATMKeyDownloadResponse5(base_types._BaseFieldType):
 
 	@Cmd.setter
 	def Cmd(self, value):
-		self._Cmd = value if type(value) != base_types.auto else self.make_default("Cmd")
+		self._Cmd = value if value is not None else base_types.UninitialisedField(self, 'Cmd', ATMCommand17, True)
 
 	@Cmd.deleter
 	def Cmd(self):
 		del self._Cmd
-		self._Cmd = None
+		self._Cmd = base_types.UninitialisedField(self, 'Cmd', ATMCommand17, True)
 
 	@property
 	def Envt(self):
@@ -56,12 +56,12 @@ class ATMKeyDownloadResponse5(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+		self._Envt = value if value is not None else base_types.UninitialisedField(self, 'Envt', ATMEnvironment7, False)
 
 	@Envt.deleter
 	def Envt(self):
 		del self._Envt
-		self._Envt = None
+		self._Envt = base_types.UninitialisedField(self, 'Envt', ATMEnvironment7, False)
 
 	@property
 	def HstSctyParams(self):
@@ -69,12 +69,12 @@ class ATMKeyDownloadResponse5(base_types._BaseFieldType):
 
 	@HstSctyParams.setter
 	def HstSctyParams(self, value):
-		self._HstSctyParams = value if type(value) != base_types.auto else self.make_default("HstSctyParams")
+		self._HstSctyParams = value if value is not None else base_types.UninitialisedField(self, 'HstSctyParams', SecurityParameters10, False)
 
 	@HstSctyParams.deleter
 	def HstSctyParams(self):
 		del self._HstSctyParams
-		self._HstSctyParams = None
+		self._HstSctyParams = base_types.UninitialisedField(self, 'HstSctyParams', SecurityParameters10, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ATMChllng', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max3NumericText import Max3NumericText
-from ._UserInterface2Code import UserInterface2Code
+from . import Max3NumericText
+from . import UserInterface2Code
 
 class DisplayCapabilities1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DisplayCapabilities1(base_types._BaseFieldType):
 
 	@DispTp.setter
 	def DispTp(self, value):
-		self._DispTp = value if type(value) != base_types.auto else self.make_default("DispTp")
+		self._DispTp = value if value is not None else base_types.UninitialisedField(self, 'DispTp', UserInterface2Code, False)
 
 	@DispTp.deleter
 	def DispTp(self):
 		del self._DispTp
-		self._DispTp = None
+		self._DispTp = base_types.UninitialisedField(self, 'DispTp', UserInterface2Code, False)
 
 	@property
 	def LineWidth(self):
@@ -27,12 +27,12 @@ class DisplayCapabilities1(base_types._BaseFieldType):
 
 	@LineWidth.setter
 	def LineWidth(self, value):
-		self._LineWidth = value if type(value) != base_types.auto else self.make_default("LineWidth")
+		self._LineWidth = value if value is not None else base_types.UninitialisedField(self, 'LineWidth', Max3NumericText, False)
 
 	@LineWidth.deleter
 	def LineWidth(self):
 		del self._LineWidth
-		self._LineWidth = None
+		self._LineWidth = base_types.UninitialisedField(self, 'LineWidth', Max3NumericText, False)
 
 	@property
 	def NbOfLines(self):
@@ -40,12 +40,12 @@ class DisplayCapabilities1(base_types._BaseFieldType):
 
 	@NbOfLines.setter
 	def NbOfLines(self, value):
-		self._NbOfLines = value if type(value) != base_types.auto else self.make_default("NbOfLines")
+		self._NbOfLines = value if value is not None else base_types.UninitialisedField(self, 'NbOfLines', Max3NumericText, False)
 
 	@NbOfLines.deleter
 	def NbOfLines(self):
 		del self._NbOfLines
-		self._NbOfLines = None
+		self._NbOfLines = base_types.UninitialisedField(self, 'NbOfLines', Max3NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DispTp', type=UserInterface2Code, min=1, max=1, mutex_group=None, array=False),

@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PairingStatus1Code import PairingStatus1Code
-from ._ReconciliationStatus1Code import ReconciliationStatus1Code
-from ._ReconciliationStatus2Code import ReconciliationStatus2Code
-from ._TradeRepositoryReportingType1Code import TradeRepositoryReportingType1Code
-from ._YesNoIndicator import YesNoIndicator
+from . import PairingStatus1Code
+from . import ReconciliationStatus1Code
+from . import ReconciliationStatus2Code
+from . import TradeRepositoryReportingType1Code
+from . import YesNoIndicator
 
 class ReconciliationCategory5(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class ReconciliationCategory5(base_types._BaseFieldType):
 
 	@FrthrMod.setter
 	def FrthrMod(self, value):
-		self._FrthrMod = value if type(value) != base_types.auto else self.make_default("FrthrMod")
+		self._FrthrMod = value if value is not None else base_types.UninitialisedField(self, 'FrthrMod', YesNoIndicator, False)
 
 	@FrthrMod.deleter
 	def FrthrMod(self):
 		del self._FrthrMod
-		self._FrthrMod = None
+		self._FrthrMod = base_types.UninitialisedField(self, 'FrthrMod', YesNoIndicator, False)
 
 	@property
 	def Pairg(self):
@@ -30,12 +30,12 @@ class ReconciliationCategory5(base_types._BaseFieldType):
 
 	@Pairg.setter
 	def Pairg(self, value):
-		self._Pairg = value if type(value) != base_types.auto else self.make_default("Pairg")
+		self._Pairg = value if value is not None else base_types.UninitialisedField(self, 'Pairg', PairingStatus1Code, False)
 
 	@Pairg.deleter
 	def Pairg(self):
 		del self._Pairg
-		self._Pairg = None
+		self._Pairg = base_types.UninitialisedField(self, 'Pairg', PairingStatus1Code, False)
 
 	@property
 	def Rcncltn(self):
@@ -43,12 +43,12 @@ class ReconciliationCategory5(base_types._BaseFieldType):
 
 	@Rcncltn.setter
 	def Rcncltn(self, value):
-		self._Rcncltn = value if type(value) != base_types.auto else self.make_default("Rcncltn")
+		self._Rcncltn = value if value is not None else base_types.UninitialisedField(self, 'Rcncltn', ReconciliationStatus1Code, False)
 
 	@Rcncltn.deleter
 	def Rcncltn(self):
 		del self._Rcncltn
-		self._Rcncltn = None
+		self._Rcncltn = base_types.UninitialisedField(self, 'Rcncltn', ReconciliationStatus1Code, False)
 
 	@property
 	def RptgTp(self):
@@ -56,12 +56,12 @@ class ReconciliationCategory5(base_types._BaseFieldType):
 
 	@RptgTp.setter
 	def RptgTp(self, value):
-		self._RptgTp = value if type(value) != base_types.auto else self.make_default("RptgTp")
+		self._RptgTp = value if value is not None else base_types.UninitialisedField(self, 'RptgTp', TradeRepositoryReportingType1Code, False)
 
 	@RptgTp.deleter
 	def RptgTp(self):
 		del self._RptgTp
-		self._RptgTp = None
+		self._RptgTp = base_types.UninitialisedField(self, 'RptgTp', TradeRepositoryReportingType1Code, False)
 
 	@property
 	def Rvvd(self):
@@ -69,12 +69,12 @@ class ReconciliationCategory5(base_types._BaseFieldType):
 
 	@Rvvd.setter
 	def Rvvd(self, value):
-		self._Rvvd = value if type(value) != base_types.auto else self.make_default("Rvvd")
+		self._Rvvd = value if value is not None else base_types.UninitialisedField(self, 'Rvvd', YesNoIndicator, False)
 
 	@Rvvd.deleter
 	def Rvvd(self):
 		del self._Rvvd
-		self._Rvvd = None
+		self._Rvvd = base_types.UninitialisedField(self, 'Rvvd', YesNoIndicator, False)
 
 	@property
 	def ValtnRcncltn(self):
@@ -82,12 +82,12 @@ class ReconciliationCategory5(base_types._BaseFieldType):
 
 	@ValtnRcncltn.setter
 	def ValtnRcncltn(self, value):
-		self._ValtnRcncltn = value if type(value) != base_types.auto else self.make_default("ValtnRcncltn")
+		self._ValtnRcncltn = value if value is not None else base_types.UninitialisedField(self, 'ValtnRcncltn', ReconciliationStatus2Code, False)
 
 	@ValtnRcncltn.deleter
 	def ValtnRcncltn(self):
 		del self._ValtnRcncltn
-		self._ValtnRcncltn = None
+		self._ValtnRcncltn = base_types.UninitialisedField(self, 'ValtnRcncltn', ReconciliationStatus2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FrthrMod', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),

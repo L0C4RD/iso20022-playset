@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
-from ._PartyIdentification136 import PartyIdentification136
-from ._PartyIdentification232 import PartyIdentification232
-from ._SecuritiesAccount19 import SecuritiesAccount19
+from . import BlockChainAddressWallet3
+from . import PartyIdentification136
+from . import PartyIdentification232
+from . import SecuritiesAccount19
 
 class CollateralParties11(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CollateralParties11(base_types._BaseFieldType):
 
 	@BlckChainAdrOrWllt.setter
 	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
+		self._BlckChainAdrOrWllt = value if value is not None else base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet3, False)
 
 	@BlckChainAdrOrWllt.deleter
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+		self._BlckChainAdrOrWllt = base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet3, False)
 
 	@property
 	def ClntPtyB(self):
@@ -29,12 +29,12 @@ class CollateralParties11(base_types._BaseFieldType):
 
 	@ClntPtyB.setter
 	def ClntPtyB(self, value):
-		self._ClntPtyB = value if type(value) != base_types.auto else self.make_default("ClntPtyB")
+		self._ClntPtyB = value if value is not None else base_types.UninitialisedField(self, 'ClntPtyB', PartyIdentification232, False)
 
 	@ClntPtyB.deleter
 	def ClntPtyB(self):
 		del self._ClntPtyB
-		self._ClntPtyB = None
+		self._ClntPtyB = base_types.UninitialisedField(self, 'ClntPtyB', PartyIdentification232, False)
 
 	@property
 	def CollAcct(self):
@@ -42,12 +42,12 @@ class CollateralParties11(base_types._BaseFieldType):
 
 	@CollAcct.setter
 	def CollAcct(self, value):
-		self._CollAcct = value if type(value) != base_types.auto else self.make_default("CollAcct")
+		self._CollAcct = value if value is not None else base_types.UninitialisedField(self, 'CollAcct', SecuritiesAccount19, False)
 
 	@CollAcct.deleter
 	def CollAcct(self):
 		del self._CollAcct
-		self._CollAcct = None
+		self._CollAcct = base_types.UninitialisedField(self, 'CollAcct', SecuritiesAccount19, False)
 
 	@property
 	def PtyB(self):
@@ -55,12 +55,12 @@ class CollateralParties11(base_types._BaseFieldType):
 
 	@PtyB.setter
 	def PtyB(self, value):
-		self._PtyB = value if type(value) != base_types.auto else self.make_default("PtyB")
+		self._PtyB = value if value is not None else base_types.UninitialisedField(self, 'PtyB', PartyIdentification232, False)
 
 	@PtyB.deleter
 	def PtyB(self):
 		del self._PtyB
-		self._PtyB = None
+		self._PtyB = base_types.UninitialisedField(self, 'PtyB', PartyIdentification232, False)
 
 	@property
 	def TrptyAgt(self):
@@ -68,12 +68,12 @@ class CollateralParties11(base_types._BaseFieldType):
 
 	@TrptyAgt.setter
 	def TrptyAgt(self, value):
-		self._TrptyAgt = value if type(value) != base_types.auto else self.make_default("TrptyAgt")
+		self._TrptyAgt = value if value is not None else base_types.UninitialisedField(self, 'TrptyAgt', PartyIdentification136, False)
 
 	@TrptyAgt.deleter
 	def TrptyAgt(self):
 		del self._TrptyAgt
-		self._TrptyAgt = None
+		self._TrptyAgt = base_types.UninitialisedField(self, 'TrptyAgt', PartyIdentification136, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet3, min=0, max=1, mutex_group=None, array=False),

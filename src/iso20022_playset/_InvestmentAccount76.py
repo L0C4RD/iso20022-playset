@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountOwner3Choice import AccountOwner3Choice
-from ._FinancialInstrument55 import FinancialInstrument55
-from ._Intermediary47 import Intermediary47
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
-from ._PartyIdentification125Choice import PartyIdentification125Choice
+from . import AccountOwner3Choice
+from . import FinancialInstrument55
+from . import Intermediary47
+from . import Max350Text
+from . import Max35Text
+from . import PartyIdentification125Choice
 
 class InvestmentAccount76(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class InvestmentAccount76(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', AccountOwner3Choice, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', AccountOwner3Choice, False)
 
 	@property
 	def AcctSvcr(self):
@@ -31,12 +31,12 @@ class InvestmentAccount76(base_types._BaseFieldType):
 
 	@AcctSvcr.setter
 	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
+		self._AcctSvcr = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcr', PartyIdentification125Choice, False)
 
 	@AcctSvcr.deleter
 	def AcctSvcr(self):
 		del self._AcctSvcr
-		self._AcctSvcr = None
+		self._AcctSvcr = base_types.UninitialisedField(self, 'AcctSvcr', PartyIdentification125Choice, False)
 
 	@property
 	def Dsgnt(self):
@@ -44,12 +44,12 @@ class InvestmentAccount76(base_types._BaseFieldType):
 
 	@Dsgnt.setter
 	def Dsgnt(self, value):
-		self._Dsgnt = value if type(value) != base_types.auto else self.make_default("Dsgnt")
+		self._Dsgnt = value if value is not None else base_types.UninitialisedField(self, 'Dsgnt', Max35Text, False)
 
 	@Dsgnt.deleter
 	def Dsgnt(self):
 		del self._Dsgnt
-		self._Dsgnt = None
+		self._Dsgnt = base_types.UninitialisedField(self, 'Dsgnt', Max35Text, False)
 
 	@property
 	def FndFmlyNm(self):
@@ -57,12 +57,12 @@ class InvestmentAccount76(base_types._BaseFieldType):
 
 	@FndFmlyNm.setter
 	def FndFmlyNm(self, value):
-		self._FndFmlyNm = value if type(value) != base_types.auto else self.make_default("FndFmlyNm")
+		self._FndFmlyNm = value if value is not None else base_types.UninitialisedField(self, 'FndFmlyNm', Max350Text, False)
 
 	@FndFmlyNm.deleter
 	def FndFmlyNm(self):
 		del self._FndFmlyNm
-		self._FndFmlyNm = None
+		self._FndFmlyNm = base_types.UninitialisedField(self, 'FndFmlyNm', Max350Text, False)
 
 	@property
 	def FndTp(self):
@@ -70,12 +70,12 @@ class InvestmentAccount76(base_types._BaseFieldType):
 
 	@FndTp.setter
 	def FndTp(self, value):
-		self._FndTp = value if type(value) != base_types.auto else self.make_default("FndTp")
+		self._FndTp = value if value is not None else base_types.UninitialisedField(self, 'FndTp', Max35Text, False)
 
 	@FndTp.deleter
 	def FndTp(self):
 		del self._FndTp
-		self._FndTp = None
+		self._FndTp = base_types.UninitialisedField(self, 'FndTp', Max35Text, False)
 
 	@property
 	def Intrmy(self):
@@ -83,12 +83,12 @@ class InvestmentAccount76(base_types._BaseFieldType):
 
 	@Intrmy.setter
 	def Intrmy(self, value):
-		self._Intrmy = value if type(value) != base_types.auto else self.make_default("Intrmy")
+		self._Intrmy = value if value is not None else base_types.UninitialisedField(self, 'Intrmy', Intermediary47, True)
 
 	@Intrmy.deleter
 	def Intrmy(self):
 		del self._Intrmy
-		self._Intrmy = None
+		self._Intrmy = base_types.UninitialisedField(self, 'Intrmy', Intermediary47, True)
 
 	@property
 	def Nm(self):
@@ -96,12 +96,12 @@ class InvestmentAccount76(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max35Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max35Text, False)
 
 	@property
 	def SctyDtls(self):
@@ -109,12 +109,12 @@ class InvestmentAccount76(base_types._BaseFieldType):
 
 	@SctyDtls.setter
 	def SctyDtls(self, value):
-		self._SctyDtls = value if type(value) != base_types.auto else self.make_default("SctyDtls")
+		self._SctyDtls = value if value is not None else base_types.UninitialisedField(self, 'SctyDtls', FinancialInstrument55, False)
 
 	@SctyDtls.deleter
 	def SctyDtls(self):
 		del self._SctyDtls
-		self._SctyDtls = None
+		self._SctyDtls = base_types.UninitialisedField(self, 'SctyDtls', FinancialInstrument55, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnr', type=AccountOwner3Choice, min=0, max=1, mutex_group=None, array=False),

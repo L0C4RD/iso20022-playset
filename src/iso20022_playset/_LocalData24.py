@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._CardholderName2 import CardholderName2
-from ._ISOMax3ALanguageCode import ISOMax3ALanguageCode
-from ._LocalAddress1 import LocalAddress1
-from ._LocalAddress2 import LocalAddress2
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
+from . import ATICALaxProcessing
+from . import CardholderName2
+from . import ISOMax3ALanguageCode
+from . import LocalAddress1
+from . import LocalAddress2
+from . import Max140Text
+from . import Max35Text
+from . import Max70Text
 
 class LocalData24(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class LocalData24(base_types._BaseFieldType):
 
 	@Adr.setter
 	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+		self._Adr = value if value is not None else base_types.UninitialisedField(self, 'Adr', LocalAddress2, False)
 
 	@Adr.deleter
 	def Adr(self):
 		del self._Adr
-		self._Adr = None
+		self._Adr = base_types.UninitialisedField(self, 'Adr', LocalAddress2, False)
 
 	@property
 	def AliasNm(self):
@@ -33,12 +33,12 @@ class LocalData24(base_types._BaseFieldType):
 
 	@AliasNm.setter
 	def AliasNm(self, value):
-		self._AliasNm = value if type(value) != base_types.auto else self.make_default("AliasNm")
+		self._AliasNm = value if value is not None else base_types.UninitialisedField(self, 'AliasNm', Max140Text, False)
 
 	@AliasNm.deleter
 	def AliasNm(self):
 		del self._AliasNm
-		self._AliasNm = None
+		self._AliasNm = base_types.UninitialisedField(self, 'AliasNm', Max140Text, False)
 
 	@property
 	def Lang(self):
@@ -46,12 +46,12 @@ class LocalData24(base_types._BaseFieldType):
 
 	@Lang.setter
 	def Lang(self, value):
-		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
+		self._Lang = value if value is not None else base_types.UninitialisedField(self, 'Lang', ISOMax3ALanguageCode, False)
 
 	@Lang.deleter
 	def Lang(self):
 		del self._Lang
-		self._Lang = None
+		self._Lang = base_types.UninitialisedField(self, 'Lang', ISOMax3ALanguageCode, False)
 
 	@property
 	def NcodgFrmt(self):
@@ -59,12 +59,12 @@ class LocalData24(base_types._BaseFieldType):
 
 	@NcodgFrmt.setter
 	def NcodgFrmt(self, value):
-		self._NcodgFrmt = value if type(value) != base_types.auto else self.make_default("NcodgFrmt")
+		self._NcodgFrmt = value if value is not None else base_types.UninitialisedField(self, 'NcodgFrmt', Max35Text, False)
 
 	@NcodgFrmt.deleter
 	def NcodgFrmt(self):
 		del self._NcodgFrmt
-		self._NcodgFrmt = None
+		self._NcodgFrmt = base_types.UninitialisedField(self, 'NcodgFrmt', Max35Text, False)
 
 	@property
 	def Nm(self):
@@ -72,12 +72,12 @@ class LocalData24(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', CardholderName2, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', CardholderName2, False)
 
 	@property
 	def NtlData(self):
@@ -85,12 +85,12 @@ class LocalData24(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def Ocptn(self):
@@ -98,12 +98,12 @@ class LocalData24(base_types._BaseFieldType):
 
 	@Ocptn.setter
 	def Ocptn(self, value):
-		self._Ocptn = value if type(value) != base_types.auto else self.make_default("Ocptn")
+		self._Ocptn = value if value is not None else base_types.UninitialisedField(self, 'Ocptn', Max70Text, False)
 
 	@Ocptn.deleter
 	def Ocptn(self):
 		del self._Ocptn
-		self._Ocptn = None
+		self._Ocptn = base_types.UninitialisedField(self, 'Ocptn', Max70Text, False)
 
 	@property
 	def PrvtData(self):
@@ -111,12 +111,12 @@ class LocalData24(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def ShppgAdr(self):
@@ -124,12 +124,12 @@ class LocalData24(base_types._BaseFieldType):
 
 	@ShppgAdr.setter
 	def ShppgAdr(self, value):
-		self._ShppgAdr = value if type(value) != base_types.auto else self.make_default("ShppgAdr")
+		self._ShppgAdr = value if value is not None else base_types.UninitialisedField(self, 'ShppgAdr', LocalAddress1, True)
 
 	@ShppgAdr.deleter
 	def ShppgAdr(self):
 		del self._ShppgAdr
-		self._ShppgAdr = None
+		self._ShppgAdr = base_types.UninitialisedField(self, 'ShppgAdr', LocalAddress1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Adr', type=LocalAddress2, min=0, max=1, mutex_group=None, array=False),

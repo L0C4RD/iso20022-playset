@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max210Text import Max210Text
-from ._PartyIdentification272 import PartyIdentification272
-from ._PaymentMethod3Choice import PaymentMethod3Choice
+from . import Max210Text
+from . import PartyIdentification272
+from . import PaymentMethod3Choice
 
 class InvoiceLegalIssue5(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class InvoiceLegalIssue5(base_types._BaseFieldType):
 
 	@InvcLglStmt.setter
 	def InvcLglStmt(self, value):
-		self._InvcLglStmt = value if type(value) != base_types.auto else self.make_default("InvcLglStmt")
+		self._InvcLglStmt = value if value is not None else base_types.UninitialisedField(self, 'InvcLglStmt', Max210Text, False)
 
 	@InvcLglStmt.deleter
 	def InvcLglStmt(self):
 		del self._InvcLglStmt
-		self._InvcLglStmt = None
+		self._InvcLglStmt = base_types.UninitialisedField(self, 'InvcLglStmt', Max210Text, False)
 
 	@property
 	def Invcee(self):
@@ -28,12 +28,12 @@ class InvoiceLegalIssue5(base_types._BaseFieldType):
 
 	@Invcee.setter
 	def Invcee(self, value):
-		self._Invcee = value if type(value) != base_types.auto else self.make_default("Invcee")
+		self._Invcee = value if value is not None else base_types.UninitialisedField(self, 'Invcee', PartyIdentification272, False)
 
 	@Invcee.deleter
 	def Invcee(self):
 		del self._Invcee
-		self._Invcee = None
+		self._Invcee = base_types.UninitialisedField(self, 'Invcee', PartyIdentification272, False)
 
 	@property
 	def Invcr(self):
@@ -41,12 +41,12 @@ class InvoiceLegalIssue5(base_types._BaseFieldType):
 
 	@Invcr.setter
 	def Invcr(self, value):
-		self._Invcr = value if type(value) != base_types.auto else self.make_default("Invcr")
+		self._Invcr = value if value is not None else base_types.UninitialisedField(self, 'Invcr', PartyIdentification272, False)
 
 	@Invcr.deleter
 	def Invcr(self):
 		del self._Invcr
-		self._Invcr = None
+		self._Invcr = base_types.UninitialisedField(self, 'Invcr', PartyIdentification272, False)
 
 	@property
 	def PmtMtd(self):
@@ -54,12 +54,12 @@ class InvoiceLegalIssue5(base_types._BaseFieldType):
 
 	@PmtMtd.setter
 	def PmtMtd(self, value):
-		self._PmtMtd = value if type(value) != base_types.auto else self.make_default("PmtMtd")
+		self._PmtMtd = value if value is not None else base_types.UninitialisedField(self, 'PmtMtd', PaymentMethod3Choice, False)
 
 	@PmtMtd.deleter
 	def PmtMtd(self):
 		del self._PmtMtd
-		self._PmtMtd = None
+		self._PmtMtd = base_types.UninitialisedField(self, 'PmtMtd', PaymentMethod3Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InvcLglStmt', type=Max210Text, min=0, max=1, mutex_group=None, array=False),

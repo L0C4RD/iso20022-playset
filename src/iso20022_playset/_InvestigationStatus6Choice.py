@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Case6 import Case6
-from ._ExternalInvestigationExecutionConfirmation1Code import ExternalInvestigationExecutionConfirmation1Code
-from ._ModificationStatusReason1Choice import ModificationStatusReason1Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import Case6
+from . import ExternalInvestigationExecutionConfirmation1Code
+from . import ModificationStatusReason1Choice
+from . import YesNoIndicator
 
 class InvestigationStatus6Choice(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class InvestigationStatus6Choice(base_types._BaseFieldType):
 
 	@AssgnmtCxlConf.setter
 	def AssgnmtCxlConf(self, value):
-		self._AssgnmtCxlConf = value if type(value) != base_types.auto else self.make_default("AssgnmtCxlConf")
+		self._AssgnmtCxlConf = value if value is not None else base_types.UninitialisedField(self, 'AssgnmtCxlConf', YesNoIndicator, False)
 
 	@AssgnmtCxlConf.deleter
 	def AssgnmtCxlConf(self):
 		del self._AssgnmtCxlConf
-		self._AssgnmtCxlConf = None
+		self._AssgnmtCxlConf = base_types.UninitialisedField(self, 'AssgnmtCxlConf', YesNoIndicator, False)
 
 	@property
 	def Conf(self):
@@ -29,12 +29,12 @@ class InvestigationStatus6Choice(base_types._BaseFieldType):
 
 	@Conf.setter
 	def Conf(self, value):
-		self._Conf = value if type(value) != base_types.auto else self.make_default("Conf")
+		self._Conf = value if value is not None else base_types.UninitialisedField(self, 'Conf', ExternalInvestigationExecutionConfirmation1Code, False)
 
 	@Conf.deleter
 	def Conf(self):
 		del self._Conf
-		self._Conf = None
+		self._Conf = base_types.UninitialisedField(self, 'Conf', ExternalInvestigationExecutionConfirmation1Code, False)
 
 	@property
 	def DplctOf(self):
@@ -42,12 +42,12 @@ class InvestigationStatus6Choice(base_types._BaseFieldType):
 
 	@DplctOf.setter
 	def DplctOf(self, value):
-		self._DplctOf = value if type(value) != base_types.auto else self.make_default("DplctOf")
+		self._DplctOf = value if value is not None else base_types.UninitialisedField(self, 'DplctOf', Case6, False)
 
 	@DplctOf.deleter
 	def DplctOf(self):
 		del self._DplctOf
-		self._DplctOf = None
+		self._DplctOf = base_types.UninitialisedField(self, 'DplctOf', Case6, False)
 
 	@property
 	def RjctdMod(self):
@@ -55,12 +55,12 @@ class InvestigationStatus6Choice(base_types._BaseFieldType):
 
 	@RjctdMod.setter
 	def RjctdMod(self, value):
-		self._RjctdMod = value if type(value) != base_types.auto else self.make_default("RjctdMod")
+		self._RjctdMod = value if value is not None else base_types.UninitialisedField(self, 'RjctdMod', ModificationStatusReason1Choice, True)
 
 	@RjctdMod.deleter
 	def RjctdMod(self):
 		del self._RjctdMod
-		self._RjctdMod = None
+		self._RjctdMod = base_types.UninitialisedField(self, 'RjctdMod', ModificationStatusReason1Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AssgnmtCxlConf', type=YesNoIndicator, min=0, max=1, mutex_group=1, array=False),

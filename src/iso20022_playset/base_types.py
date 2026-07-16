@@ -18,6 +18,25 @@ AttributeEntry = namedtuple("AttributeEntry", ["name", "type", "required"])
 class auto(object):
 	pass
 
+class UninitialisedField(object):
+
+	parent=None
+	relative_name:str=None
+	auto_type=None
+	is_array=None
+
+	def __init__(self, parent, relative_name, auto_type, is_array):
+		self.parent=parent
+		self.relative_name=relative_name
+		self.auto_type = auto_type
+		self.is_array=is_array
+		
+	def auto(self):
+		replacement = self.auto_type()
+		if self.is_array:
+			replacement = [replacement,]
+		setattr(self.parent, self.relative_name, replacement)
+
 class _BaseElemType(object):
 
 	_tag = None
@@ -31,10 +50,19 @@ class _BaseElemType(object):
 		self._ns=ns
 
 		# If we have any slots, set them to None
-		if hasattr(self, "__slots__"):
-			for slot in self.__slots__:
-				if not hasattr(self, slot):  # avoid overwriting already-set slots
-					object.__setattr__(self, slot, None)
+		#if hasattr(self, "__slots__"):
+		#	for slot in self.__slots__:
+		#		if not hasattr(self, slot):  # avoid overwriting already-set slots
+		#			object.__setattr__(self, slot, None)
+		
+		# If we have any fields, initialise them to UninitialisedField
+		if self._field_defs is not None:
+			for field_def in self._field_defs:
+				setattr(self, field_def.name, UninitialisedField(self, field_def.name, field_def.type, field_def.array))
+				
+		# If we have any attributes, make a dictionary of them.
+		if self._attrib_defs is not None:
+			self.attrib = { ad.name: None for ad in self._attrib_defs }
 
 	def _whoami(self, path_in=None):
 
@@ -86,25 +114,14 @@ class _BaseElemType(object):
 
 				try:
 
-					if attrib_def.name == "xmlns":
-						assert(self.__class__.__name__ == "Document")
-						outer_name = self.__class__.__qualname__.rsplit(".", 1)[0]
-						expected_xmlns = "urn:iso:std:iso:20022:tech:xsd:" + outer_name.lower().replace("_", ".")
+					assert(attrib_def.name in self.attrib)
+					this_attrib = self.attrib[attrib_def.name]
+					assert(type(this_attrib) == attrib_def.type)
 
-						xmlns_obj = self.attrib.get("xmlns", None)
-						assert(type(xmlns_obj) == _BaseDataType_String)
-						assert(xmlns_obj.get() == expected_xmlns)
-
-					else:
-
-						assert(attrib_def.name in self.attrib)
-						this_attrib = self.attrib[attrib_def.name]
-						assert(type(this_attrib) == attrib_def.type)
-
-						try:
-							this_attrib.validate(this_path)
-						except ValidateError as e:
-							raise AssertionError(str(e))
+					try:
+						this_attrib.validate(this_path)
+					except ValidateError as e:
+						raise AssertionError(str(e))
 
 				except AssertionError as e:
 					raise ValidateError(f"{this_path}[{attrib_def.name}] : Invalid value")
@@ -294,18 +311,18 @@ class _BaseFieldType(_BaseElemType):
 
 			# Check field is within size limits
 			if field_def.array:
-				field_length = 0 if field is None else len(field)
+				field_length = 0 if isinstance(field, UninitialisedField) else len(field)
 				if field_def.min is not None and field_length < field_def.min:
 					raise ValidateError(f"{self._whoami()} : length of {field_def.name} has lower size bound {field_def.min}, but is defined as length {field_length}.")
 				if field_def.max is not None and field_length > field_def.max:
 					raise ValidateError(f"{self._whoami()} : length of {field_def.name} has upper size bound {field_def.max}, but is defined as length {field_length}.")
 			else:
 				# (This is basically checking that mandatory fields are defined)
-				if field_def.min > 0 and field is None:
+				if field_def.min > 0 and isinstance(field, UninitialisedField):
 					raise ValidateError(f"{self._whoami()} : Missing required field {field_def.name}")
 
 			# Check mutex groups
-			if field is not None and field_def.mutex_group is not None:
+			if not isinstance(field, UninitialisedField) and field_def.mutex_group is not None:
 				if field_def.mutex_group in seen_mutex_groups:
 					fields_in_mutex_group = {fd for fd in self._field_defs if fd.mutex_group == field_def.mutex_group}
 					raise ValidateError(f"{self._whoami()} : Can only contain one from this list: " + ", ".join(fd.name for fd in fields_in_mutex_group))
@@ -314,13 +331,13 @@ class _BaseFieldType(_BaseElemType):
 
 			# Check type
 			if field_def.array:
-				if field is not None:
+				if not isinstance(field, UninitialisedField):
 					if (type(field) != list):
 						raise ValidateError(f"{self._whoami()} : {field_def.name} expected value of type list, got {type(field).__name__}") 
 					elif any(type(f) != field_def.type for f in field):
 						raise ValidateError(f"{self._whoami()} : {field_def.name} expected list of entries of type {field_def.type}, got [{', '.join(type(f).__name__ for f in field)}]")
 			else:
-				if field is not None:
+				if not isinstance(field, UninitialisedField):
 					if type(field) != field_def.type:
 						raise ValidateError(f"{self._whoami()} : {field_def.name} expected value of type {field_def.type}, got {type(field).__name__}")
 
@@ -328,7 +345,7 @@ class _BaseFieldType(_BaseElemType):
 		# validate each field
 		for field_def in self._field_defs:
 			field = getattr(self, field_def.name)
-			if field is None:
+			if isinstance(field, UninitialisedField):
 				pass
 			elif field_def.array:
 				for x in field:
@@ -370,7 +387,7 @@ class _BaseFieldType(_BaseElemType):
 			new_item.parse(n, f"{path_in}.{tagname}")
 
 			if field_def.array:
-				if getattr(self, field_def.name) is None:
+				if isinstance(getattr(self, field_def.name), UninitialisedField):
 					setattr(self, field_def.name, [])
 				getattr(self, field_def.name).append(new_item)
 			else:
@@ -386,7 +403,7 @@ class _BaseFieldType(_BaseElemType):
 		for field_def in self._field_defs:
 			field = getattr(self, field_def.name)
 
-			if field is not None:
+			if not isinstance(field, UninitialisedField):
 				if field_def.array:
 					for f in field:
 						content.append(f.to_xml(indentlevel=indentlevel, indent=indent))
@@ -407,10 +424,10 @@ class _BaseFieldType(_BaseElemType):
 			selected_field_def = gen_utils.choose_one(field_defs)
 			self._generate_single_field(selected_field_def)
 
-			# Set the other items to None
+			# Set the other items to UninitalisedField
 			field_defs.remove(selected_field_def)
 			for field_def in field_defs:
-				setattr(self, field_def.name, None)
+				setattr(self, field_def.name, UninitialisedField(self, field_def.name, field_def.type, field_def.array))
 
 		# Now do all the other items
 		for field_def in self._field_defs:

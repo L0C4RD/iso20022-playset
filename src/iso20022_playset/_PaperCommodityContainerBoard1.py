@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AssetClassProductType8Code import AssetClassProductType8Code
-from ._AssetClassSubProductType35Code import AssetClassSubProductType35Code
+from . import AssetClassProductType8Code
+from . import AssetClassSubProductType35Code
 
 class PaperCommodityContainerBoard1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PaperCommodityContainerBoard1(base_types._BaseFieldType):
 
 	@BasePdct.setter
 	def BasePdct(self, value):
-		self._BasePdct = value if type(value) != base_types.auto else self.make_default("BasePdct")
+		self._BasePdct = value if value is not None else base_types.UninitialisedField(self, 'BasePdct', AssetClassProductType8Code, False)
 
 	@BasePdct.deleter
 	def BasePdct(self):
 		del self._BasePdct
-		self._BasePdct = None
+		self._BasePdct = base_types.UninitialisedField(self, 'BasePdct', AssetClassProductType8Code, False)
 
 	@property
 	def SubPdct(self):
@@ -27,12 +27,12 @@ class PaperCommodityContainerBoard1(base_types._BaseFieldType):
 
 	@SubPdct.setter
 	def SubPdct(self, value):
-		self._SubPdct = value if type(value) != base_types.auto else self.make_default("SubPdct")
+		self._SubPdct = value if value is not None else base_types.UninitialisedField(self, 'SubPdct', AssetClassSubProductType35Code, False)
 
 	@SubPdct.deleter
 	def SubPdct(self):
 		del self._SubPdct
-		self._SubPdct = None
+		self._SubPdct = base_types.UninitialisedField(self, 'SubPdct', AssetClassSubProductType35Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BasePdct', type=AssetClassProductType8Code, min=1, max=1, mutex_group=None, array=False),

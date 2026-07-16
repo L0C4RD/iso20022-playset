@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Contact13 import Contact13
-from ._Max35Text import Max35Text
+from . import Contact13
+from . import Max35Text
 
 class BillingTaxIdentification3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class BillingTaxIdentification3(base_types._BaseFieldType):
 
 	@TaxCtct.setter
 	def TaxCtct(self, value):
-		self._TaxCtct = value if type(value) != base_types.auto else self.make_default("TaxCtct")
+		self._TaxCtct = value if value is not None else base_types.UninitialisedField(self, 'TaxCtct', Contact13, False)
 
 	@TaxCtct.deleter
 	def TaxCtct(self):
 		del self._TaxCtct
-		self._TaxCtct = None
+		self._TaxCtct = base_types.UninitialisedField(self, 'TaxCtct', Contact13, False)
 
 	@property
 	def TaxRegnNb(self):
@@ -27,12 +27,12 @@ class BillingTaxIdentification3(base_types._BaseFieldType):
 
 	@TaxRegnNb.setter
 	def TaxRegnNb(self, value):
-		self._TaxRegnNb = value if type(value) != base_types.auto else self.make_default("TaxRegnNb")
+		self._TaxRegnNb = value if value is not None else base_types.UninitialisedField(self, 'TaxRegnNb', Max35Text, False)
 
 	@TaxRegnNb.deleter
 	def TaxRegnNb(self):
 		del self._TaxRegnNb
-		self._TaxRegnNb = None
+		self._TaxRegnNb = base_types.UninitialisedField(self, 'TaxRegnNb', Max35Text, False)
 
 	@property
 	def VATRegnNb(self):
@@ -40,12 +40,12 @@ class BillingTaxIdentification3(base_types._BaseFieldType):
 
 	@VATRegnNb.setter
 	def VATRegnNb(self, value):
-		self._VATRegnNb = value if type(value) != base_types.auto else self.make_default("VATRegnNb")
+		self._VATRegnNb = value if value is not None else base_types.UninitialisedField(self, 'VATRegnNb', Max35Text, False)
 
 	@VATRegnNb.deleter
 	def VATRegnNb(self):
 		del self._VATRegnNb
-		self._VATRegnNb = None
+		self._VATRegnNb = base_types.UninitialisedField(self, 'VATRegnNb', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TaxCtct', type=Contact13, min=0, max=1, mutex_group=None, array=False),

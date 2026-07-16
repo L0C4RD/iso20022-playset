@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AuthorityRequestType1 import AuthorityRequestType1
-from ._DateOrDateTimePeriod1Choice import DateOrDateTimePeriod1Choice
-from ._InvestigationResult1Choice import InvestigationResult1Choice
-from ._Max500Text import Max500Text
+from . import AuthorityRequestType1
+from . import DateOrDateTimePeriod1Choice
+from . import InvestigationResult1Choice
+from . import Max500Text
 
 class ReturnIndicator2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ReturnIndicator2(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max500Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max500Text, False)
 
 	@property
 	def AuthrtyReqTp(self):
@@ -29,12 +29,12 @@ class ReturnIndicator2(base_types._BaseFieldType):
 
 	@AuthrtyReqTp.setter
 	def AuthrtyReqTp(self, value):
-		self._AuthrtyReqTp = value if type(value) != base_types.auto else self.make_default("AuthrtyReqTp")
+		self._AuthrtyReqTp = value if value is not None else base_types.UninitialisedField(self, 'AuthrtyReqTp', AuthorityRequestType1, False)
 
 	@AuthrtyReqTp.deleter
 	def AuthrtyReqTp(self):
 		del self._AuthrtyReqTp
-		self._AuthrtyReqTp = None
+		self._AuthrtyReqTp = base_types.UninitialisedField(self, 'AuthrtyReqTp', AuthorityRequestType1, False)
 
 	@property
 	def InvstgtnRslt(self):
@@ -42,12 +42,12 @@ class ReturnIndicator2(base_types._BaseFieldType):
 
 	@InvstgtnRslt.setter
 	def InvstgtnRslt(self, value):
-		self._InvstgtnRslt = value if type(value) != base_types.auto else self.make_default("InvstgtnRslt")
+		self._InvstgtnRslt = value if value is not None else base_types.UninitialisedField(self, 'InvstgtnRslt', InvestigationResult1Choice, False)
 
 	@InvstgtnRslt.deleter
 	def InvstgtnRslt(self):
 		del self._InvstgtnRslt
-		self._InvstgtnRslt = None
+		self._InvstgtnRslt = base_types.UninitialisedField(self, 'InvstgtnRslt', InvestigationResult1Choice, False)
 
 	@property
 	def RspnPrd(self):
@@ -55,12 +55,12 @@ class ReturnIndicator2(base_types._BaseFieldType):
 
 	@RspnPrd.setter
 	def RspnPrd(self, value):
-		self._RspnPrd = value if type(value) != base_types.auto else self.make_default("RspnPrd")
+		self._RspnPrd = value if value is not None else base_types.UninitialisedField(self, 'RspnPrd', DateOrDateTimePeriod1Choice, False)
 
 	@RspnPrd.deleter
 	def RspnPrd(self):
 		del self._RspnPrd
-		self._RspnPrd = None
+		self._RspnPrd = base_types.UninitialisedField(self, 'RspnPrd', DateOrDateTimePeriod1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),

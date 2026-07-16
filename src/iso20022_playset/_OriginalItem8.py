@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
-from ._OriginalItemReference7 import OriginalItemReference7
-from ._UUIDv4Identifier import UUIDv4Identifier
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import ISODate
+from . import Max35Text
+from . import OriginalItemReference7
+from . import UUIDv4Identifier
 
 class OriginalItem8(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class OriginalItem8(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def OrgnlEndToEndId(self):
@@ -30,12 +30,12 @@ class OriginalItem8(base_types._BaseFieldType):
 
 	@OrgnlEndToEndId.setter
 	def OrgnlEndToEndId(self, value):
-		self._OrgnlEndToEndId = value if type(value) != base_types.auto else self.make_default("OrgnlEndToEndId")
+		self._OrgnlEndToEndId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlEndToEndId', Max35Text, False)
 
 	@OrgnlEndToEndId.deleter
 	def OrgnlEndToEndId(self):
 		del self._OrgnlEndToEndId
-		self._OrgnlEndToEndId = None
+		self._OrgnlEndToEndId = base_types.UninitialisedField(self, 'OrgnlEndToEndId', Max35Text, False)
 
 	@property
 	def OrgnlItmId(self):
@@ -43,12 +43,12 @@ class OriginalItem8(base_types._BaseFieldType):
 
 	@OrgnlItmId.setter
 	def OrgnlItmId(self, value):
-		self._OrgnlItmId = value if type(value) != base_types.auto else self.make_default("OrgnlItmId")
+		self._OrgnlItmId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlItmId', Max35Text, False)
 
 	@OrgnlItmId.deleter
 	def OrgnlItmId(self):
 		del self._OrgnlItmId
-		self._OrgnlItmId = None
+		self._OrgnlItmId = base_types.UninitialisedField(self, 'OrgnlItmId', Max35Text, False)
 
 	@property
 	def OrgnlItmRef(self):
@@ -56,12 +56,12 @@ class OriginalItem8(base_types._BaseFieldType):
 
 	@OrgnlItmRef.setter
 	def OrgnlItmRef(self, value):
-		self._OrgnlItmRef = value if type(value) != base_types.auto else self.make_default("OrgnlItmRef")
+		self._OrgnlItmRef = value if value is not None else base_types.UninitialisedField(self, 'OrgnlItmRef', OriginalItemReference7, False)
 
 	@OrgnlItmRef.deleter
 	def OrgnlItmRef(self):
 		del self._OrgnlItmRef
-		self._OrgnlItmRef = None
+		self._OrgnlItmRef = base_types.UninitialisedField(self, 'OrgnlItmRef', OriginalItemReference7, False)
 
 	@property
 	def UETR(self):
@@ -69,12 +69,12 @@ class OriginalItem8(base_types._BaseFieldType):
 
 	@UETR.setter
 	def UETR(self, value):
-		self._UETR = value if type(value) != base_types.auto else self.make_default("UETR")
+		self._UETR = value if value is not None else base_types.UninitialisedField(self, 'UETR', UUIDv4Identifier, False)
 
 	@UETR.deleter
 	def UETR(self):
 		del self._UETR
-		self._UETR = None
+		self._UETR = base_types.UninitialisedField(self, 'UETR', UUIDv4Identifier, False)
 
 	@property
 	def XpctdValDt(self):
@@ -82,12 +82,12 @@ class OriginalItem8(base_types._BaseFieldType):
 
 	@XpctdValDt.setter
 	def XpctdValDt(self, value):
-		self._XpctdValDt = value if type(value) != base_types.auto else self.make_default("XpctdValDt")
+		self._XpctdValDt = value if value is not None else base_types.UninitialisedField(self, 'XpctdValDt', ISODate, False)
 
 	@XpctdValDt.deleter
 	def XpctdValDt(self):
 		del self._XpctdValDt
-		self._XpctdValDt = None
+		self._XpctdValDt = base_types.UninitialisedField(self, 'XpctdValDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._BaseOneRate import BaseOneRate
-from ._ForeignExchangeTerms9 import ForeignExchangeTerms9
-from ._ISODate import ISODate
-from ._PercentageRate import PercentageRate
-from ._PriceValue1 import PriceValue1
-from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
+from . import ActiveCurrencyAndAmount
+from . import BaseOneRate
+from . import ForeignExchangeTerms9
+from . import ISODate
+from . import PercentageRate
+from . import PriceValue1
+from . import UnitOrFaceAmount1Choice
 
 class TaxVoucher1(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class TaxVoucher1(base_types._BaseFieldType):
 
 	@AlltdShrsCost.setter
 	def AlltdShrsCost(self, value):
-		self._AlltdShrsCost = value if type(value) != base_types.auto else self.make_default("AlltdShrsCost")
+		self._AlltdShrsCost = value if value is not None else base_types.UninitialisedField(self, 'AlltdShrsCost', PriceValue1, False)
 
 	@AlltdShrsCost.deleter
 	def AlltdShrsCost(self):
 		del self._AlltdShrsCost
-		self._AlltdShrsCost = None
+		self._AlltdShrsCost = base_types.UninitialisedField(self, 'AlltdShrsCost', PriceValue1, False)
 
 	@property
 	def BrgnDt(self):
@@ -32,12 +32,12 @@ class TaxVoucher1(base_types._BaseFieldType):
 
 	@BrgnDt.setter
 	def BrgnDt(self, value):
-		self._BrgnDt = value if type(value) != base_types.auto else self.make_default("BrgnDt")
+		self._BrgnDt = value if value is not None else base_types.UninitialisedField(self, 'BrgnDt', ISODate, False)
 
 	@BrgnDt.deleter
 	def BrgnDt(self):
 		del self._BrgnDt
-		self._BrgnDt = None
+		self._BrgnDt = base_types.UninitialisedField(self, 'BrgnDt', ISODate, False)
 
 	@property
 	def BrgnSttlmDt(self):
@@ -45,12 +45,12 @@ class TaxVoucher1(base_types._BaseFieldType):
 
 	@BrgnSttlmDt.setter
 	def BrgnSttlmDt(self, value):
-		self._BrgnSttlmDt = value if type(value) != base_types.auto else self.make_default("BrgnSttlmDt")
+		self._BrgnSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'BrgnSttlmDt', ISODate, False)
 
 	@BrgnSttlmDt.deleter
 	def BrgnSttlmDt(self):
 		del self._BrgnSttlmDt
-		self._BrgnSttlmDt = None
+		self._BrgnSttlmDt = base_types.UninitialisedField(self, 'BrgnSttlmDt', ISODate, False)
 
 	@property
 	def ChrgAmt(self):
@@ -58,12 +58,12 @@ class TaxVoucher1(base_types._BaseFieldType):
 
 	@ChrgAmt.setter
 	def ChrgAmt(self, value):
-		self._ChrgAmt = value if type(value) != base_types.auto else self.make_default("ChrgAmt")
+		self._ChrgAmt = value if value is not None else base_types.UninitialisedField(self, 'ChrgAmt', ActiveCurrencyAndAmount, False)
 
 	@ChrgAmt.deleter
 	def ChrgAmt(self):
 		del self._ChrgAmt
-		self._ChrgAmt = None
+		self._ChrgAmt = base_types.UninitialisedField(self, 'ChrgAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def ComssnAmt(self):
@@ -71,12 +71,12 @@ class TaxVoucher1(base_types._BaseFieldType):
 
 	@ComssnAmt.setter
 	def ComssnAmt(self, value):
-		self._ComssnAmt = value if type(value) != base_types.auto else self.make_default("ComssnAmt")
+		self._ComssnAmt = value if value is not None else base_types.UninitialisedField(self, 'ComssnAmt', ActiveCurrencyAndAmount, False)
 
 	@ComssnAmt.deleter
 	def ComssnAmt(self):
 		del self._ComssnAmt
-		self._ComssnAmt = None
+		self._ComssnAmt = base_types.UninitialisedField(self, 'ComssnAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def CshAmtBrghtFwd(self):
@@ -84,12 +84,12 @@ class TaxVoucher1(base_types._BaseFieldType):
 
 	@CshAmtBrghtFwd.setter
 	def CshAmtBrghtFwd(self, value):
-		self._CshAmtBrghtFwd = value if type(value) != base_types.auto else self.make_default("CshAmtBrghtFwd")
+		self._CshAmtBrghtFwd = value if value is not None else base_types.UninitialisedField(self, 'CshAmtBrghtFwd', ActiveCurrencyAndAmount, False)
 
 	@CshAmtBrghtFwd.deleter
 	def CshAmtBrghtFwd(self):
 		del self._CshAmtBrghtFwd
-		self._CshAmtBrghtFwd = None
+		self._CshAmtBrghtFwd = base_types.UninitialisedField(self, 'CshAmtBrghtFwd', ActiveCurrencyAndAmount, False)
 
 	@property
 	def CshAmtCrrdFwd(self):
@@ -97,12 +97,12 @@ class TaxVoucher1(base_types._BaseFieldType):
 
 	@CshAmtCrrdFwd.setter
 	def CshAmtCrrdFwd(self, value):
-		self._CshAmtCrrdFwd = value if type(value) != base_types.auto else self.make_default("CshAmtCrrdFwd")
+		self._CshAmtCrrdFwd = value if value is not None else base_types.UninitialisedField(self, 'CshAmtCrrdFwd', ActiveCurrencyAndAmount, False)
 
 	@CshAmtCrrdFwd.deleter
 	def CshAmtCrrdFwd(self):
 		del self._CshAmtCrrdFwd
-		self._CshAmtCrrdFwd = None
+		self._CshAmtCrrdFwd = base_types.UninitialisedField(self, 'CshAmtCrrdFwd', ActiveCurrencyAndAmount, False)
 
 	@property
 	def FXDtls(self):
@@ -110,12 +110,12 @@ class TaxVoucher1(base_types._BaseFieldType):
 
 	@FXDtls.setter
 	def FXDtls(self, value):
-		self._FXDtls = value if type(value) != base_types.auto else self.make_default("FXDtls")
+		self._FXDtls = value if value is not None else base_types.UninitialisedField(self, 'FXDtls', ForeignExchangeTerms9, False)
 
 	@FXDtls.deleter
 	def FXDtls(self):
 		del self._FXDtls
-		self._FXDtls = None
+		self._FXDtls = base_types.UninitialisedField(self, 'FXDtls', ForeignExchangeTerms9, False)
 
 	@property
 	def GrssAmt(self):
@@ -123,12 +123,12 @@ class TaxVoucher1(base_types._BaseFieldType):
 
 	@GrssAmt.setter
 	def GrssAmt(self, value):
-		self._GrssAmt = value if type(value) != base_types.auto else self.make_default("GrssAmt")
+		self._GrssAmt = value if value is not None else base_types.UninitialisedField(self, 'GrssAmt', ActiveCurrencyAndAmount, False)
 
 	@GrssAmt.deleter
 	def GrssAmt(self):
 		del self._GrssAmt
-		self._GrssAmt = None
+		self._GrssAmt = base_types.UninitialisedField(self, 'GrssAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def NetAmt(self):
@@ -136,12 +136,12 @@ class TaxVoucher1(base_types._BaseFieldType):
 
 	@NetAmt.setter
 	def NetAmt(self, value):
-		self._NetAmt = value if type(value) != base_types.auto else self.make_default("NetAmt")
+		self._NetAmt = value if value is not None else base_types.UninitialisedField(self, 'NetAmt', ActiveCurrencyAndAmount, False)
 
 	@NetAmt.deleter
 	def NetAmt(self):
 		del self._NetAmt
-		self._NetAmt = None
+		self._NetAmt = base_types.UninitialisedField(self, 'NetAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def NtnlDvddPybl(self):
@@ -149,12 +149,12 @@ class TaxVoucher1(base_types._BaseFieldType):
 
 	@NtnlDvddPybl.setter
 	def NtnlDvddPybl(self, value):
-		self._NtnlDvddPybl = value if type(value) != base_types.auto else self.make_default("NtnlDvddPybl")
+		self._NtnlDvddPybl = value if value is not None else base_types.UninitialisedField(self, 'NtnlDvddPybl', ActiveCurrencyAndAmount, False)
 
 	@NtnlDvddPybl.deleter
 	def NtnlDvddPybl(self):
 		del self._NtnlDvddPybl
-		self._NtnlDvddPybl = None
+		self._NtnlDvddPybl = base_types.UninitialisedField(self, 'NtnlDvddPybl', ActiveCurrencyAndAmount, False)
 
 	@property
 	def NtnlTax(self):
@@ -162,12 +162,12 @@ class TaxVoucher1(base_types._BaseFieldType):
 
 	@NtnlTax.setter
 	def NtnlTax(self, value):
-		self._NtnlTax = value if type(value) != base_types.auto else self.make_default("NtnlTax")
+		self._NtnlTax = value if value is not None else base_types.UninitialisedField(self, 'NtnlTax', ActiveCurrencyAndAmount, False)
 
 	@NtnlTax.deleter
 	def NtnlTax(self):
 		del self._NtnlTax
-		self._NtnlTax = None
+		self._NtnlTax = base_types.UninitialisedField(self, 'NtnlTax', ActiveCurrencyAndAmount, False)
 
 	@property
 	def RcrdDtHldg(self):
@@ -175,12 +175,12 @@ class TaxVoucher1(base_types._BaseFieldType):
 
 	@RcrdDtHldg.setter
 	def RcrdDtHldg(self, value):
-		self._RcrdDtHldg = value if type(value) != base_types.auto else self.make_default("RcrdDtHldg")
+		self._RcrdDtHldg = value if value is not None else base_types.UninitialisedField(self, 'RcrdDtHldg', UnitOrFaceAmount1Choice, False)
 
 	@RcrdDtHldg.deleter
 	def RcrdDtHldg(self):
 		del self._RcrdDtHldg
-		self._RcrdDtHldg = None
+		self._RcrdDtHldg = base_types.UninitialisedField(self, 'RcrdDtHldg', UnitOrFaceAmount1Choice, False)
 
 	@property
 	def ScripDvddRinvstmtPricPerShr(self):
@@ -188,12 +188,12 @@ class TaxVoucher1(base_types._BaseFieldType):
 
 	@ScripDvddRinvstmtPricPerShr.setter
 	def ScripDvddRinvstmtPricPerShr(self, value):
-		self._ScripDvddRinvstmtPricPerShr = value if type(value) != base_types.auto else self.make_default("ScripDvddRinvstmtPricPerShr")
+		self._ScripDvddRinvstmtPricPerShr = value if value is not None else base_types.UninitialisedField(self, 'ScripDvddRinvstmtPricPerShr', PriceValue1, False)
 
 	@ScripDvddRinvstmtPricPerShr.deleter
 	def ScripDvddRinvstmtPricPerShr(self):
 		del self._ScripDvddRinvstmtPricPerShr
-		self._ScripDvddRinvstmtPricPerShr = None
+		self._ScripDvddRinvstmtPricPerShr = base_types.UninitialisedField(self, 'ScripDvddRinvstmtPricPerShr', PriceValue1, False)
 
 	@property
 	def StmpDtyAmt(self):
@@ -201,12 +201,12 @@ class TaxVoucher1(base_types._BaseFieldType):
 
 	@StmpDtyAmt.setter
 	def StmpDtyAmt(self, value):
-		self._StmpDtyAmt = value if type(value) != base_types.auto else self.make_default("StmpDtyAmt")
+		self._StmpDtyAmt = value if value is not None else base_types.UninitialisedField(self, 'StmpDtyAmt', ActiveCurrencyAndAmount, False)
 
 	@StmpDtyAmt.deleter
 	def StmpDtyAmt(self):
 		del self._StmpDtyAmt
-		self._StmpDtyAmt = None
+		self._StmpDtyAmt = base_types.UninitialisedField(self, 'StmpDtyAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def TaxCdt(self):
@@ -214,12 +214,12 @@ class TaxVoucher1(base_types._BaseFieldType):
 
 	@TaxCdt.setter
 	def TaxCdt(self, value):
-		self._TaxCdt = value if type(value) != base_types.auto else self.make_default("TaxCdt")
+		self._TaxCdt = value if value is not None else base_types.UninitialisedField(self, 'TaxCdt', ActiveCurrencyAndAmount, False)
 
 	@TaxCdt.deleter
 	def TaxCdt(self):
 		del self._TaxCdt
-		self._TaxCdt = None
+		self._TaxCdt = base_types.UninitialisedField(self, 'TaxCdt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def TaxCdtRate(self):
@@ -227,12 +227,12 @@ class TaxVoucher1(base_types._BaseFieldType):
 
 	@TaxCdtRate.setter
 	def TaxCdtRate(self, value):
-		self._TaxCdtRate = value if type(value) != base_types.auto else self.make_default("TaxCdtRate")
+		self._TaxCdtRate = value if value is not None else base_types.UninitialisedField(self, 'TaxCdtRate', PercentageRate, False)
 
 	@TaxCdtRate.deleter
 	def TaxCdtRate(self):
 		del self._TaxCdtRate
-		self._TaxCdtRate = None
+		self._TaxCdtRate = base_types.UninitialisedField(self, 'TaxCdtRate', PercentageRate, False)
 
 	@property
 	def TaxDdctn(self):
@@ -240,12 +240,12 @@ class TaxVoucher1(base_types._BaseFieldType):
 
 	@TaxDdctn.setter
 	def TaxDdctn(self, value):
-		self._TaxDdctn = value if type(value) != base_types.auto else self.make_default("TaxDdctn")
+		self._TaxDdctn = value if value is not None else base_types.UninitialisedField(self, 'TaxDdctn', ActiveCurrencyAndAmount, False)
 
 	@TaxDdctn.deleter
 	def TaxDdctn(self):
 		del self._TaxDdctn
-		self._TaxDdctn = None
+		self._TaxDdctn = base_types.UninitialisedField(self, 'TaxDdctn', ActiveCurrencyAndAmount, False)
 
 	@property
 	def TaxVchrRate(self):
@@ -253,12 +253,12 @@ class TaxVoucher1(base_types._BaseFieldType):
 
 	@TaxVchrRate.setter
 	def TaxVchrRate(self, value):
-		self._TaxVchrRate = value if type(value) != base_types.auto else self.make_default("TaxVchrRate")
+		self._TaxVchrRate = value if value is not None else base_types.UninitialisedField(self, 'TaxVchrRate', BaseOneRate, False)
 
 	@TaxVchrRate.deleter
 	def TaxVchrRate(self):
 		del self._TaxVchrRate
-		self._TaxVchrRate = None
+		self._TaxVchrRate = base_types.UninitialisedField(self, 'TaxVchrRate', BaseOneRate, False)
 
 	@property
 	def WhldgTaxAmt(self):
@@ -266,12 +266,12 @@ class TaxVoucher1(base_types._BaseFieldType):
 
 	@WhldgTaxAmt.setter
 	def WhldgTaxAmt(self, value):
-		self._WhldgTaxAmt = value if type(value) != base_types.auto else self.make_default("WhldgTaxAmt")
+		self._WhldgTaxAmt = value if value is not None else base_types.UninitialisedField(self, 'WhldgTaxAmt', ActiveCurrencyAndAmount, False)
 
 	@WhldgTaxAmt.deleter
 	def WhldgTaxAmt(self):
 		del self._WhldgTaxAmt
-		self._WhldgTaxAmt = None
+		self._WhldgTaxAmt = base_types.UninitialisedField(self, 'WhldgTaxAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def WhldgTaxRate(self):
@@ -279,12 +279,12 @@ class TaxVoucher1(base_types._BaseFieldType):
 
 	@WhldgTaxRate.setter
 	def WhldgTaxRate(self, value):
-		self._WhldgTaxRate = value if type(value) != base_types.auto else self.make_default("WhldgTaxRate")
+		self._WhldgTaxRate = value if value is not None else base_types.UninitialisedField(self, 'WhldgTaxRate', PercentageRate, False)
 
 	@WhldgTaxRate.deleter
 	def WhldgTaxRate(self):
 		del self._WhldgTaxRate
-		self._WhldgTaxRate = None
+		self._WhldgTaxRate = base_types.UninitialisedField(self, 'WhldgTaxRate', PercentageRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AlltdShrsCost', type=PriceValue1, min=0, max=1, mutex_group=None, array=False),

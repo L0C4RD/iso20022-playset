@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CurrencyConversion34 import CurrencyConversion34
-from ._CurrencyConversionResponse3Code import CurrencyConversionResponse3Code
-from ._Max35Text import Max35Text
+from . import CurrencyConversion34
+from . import CurrencyConversionResponse3Code
+from . import Max35Text
 
 class CurrencyConversion36(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CurrencyConversion36(base_types._BaseFieldType):
 
 	@ConvsDtls.setter
 	def ConvsDtls(self, value):
-		self._ConvsDtls = value if type(value) != base_types.auto else self.make_default("ConvsDtls")
+		self._ConvsDtls = value if value is not None else base_types.UninitialisedField(self, 'ConvsDtls', CurrencyConversion34, True)
 
 	@ConvsDtls.deleter
 	def ConvsDtls(self):
 		del self._ConvsDtls
-		self._ConvsDtls = None
+		self._ConvsDtls = base_types.UninitialisedField(self, 'ConvsDtls', CurrencyConversion34, True)
 
 	@property
 	def Rslt(self):
@@ -28,12 +28,12 @@ class CurrencyConversion36(base_types._BaseFieldType):
 
 	@Rslt.setter
 	def Rslt(self, value):
-		self._Rslt = value if type(value) != base_types.auto else self.make_default("Rslt")
+		self._Rslt = value if value is not None else base_types.UninitialisedField(self, 'Rslt', CurrencyConversionResponse3Code, False)
 
 	@Rslt.deleter
 	def Rslt(self):
 		del self._Rslt
-		self._Rslt = None
+		self._Rslt = base_types.UninitialisedField(self, 'Rslt', CurrencyConversionResponse3Code, False)
 
 	@property
 	def RsltRsn(self):
@@ -41,12 +41,12 @@ class CurrencyConversion36(base_types._BaseFieldType):
 
 	@RsltRsn.setter
 	def RsltRsn(self, value):
-		self._RsltRsn = value if type(value) != base_types.auto else self.make_default("RsltRsn")
+		self._RsltRsn = value if value is not None else base_types.UninitialisedField(self, 'RsltRsn', Max35Text, False)
 
 	@RsltRsn.deleter
 	def RsltRsn(self):
 		del self._RsltRsn
-		self._RsltRsn = None
+		self._RsltRsn = base_types.UninitialisedField(self, 'RsltRsn', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ConvsDtls', type=CurrencyConversion34, min=0, max=None, mutex_group=None, array=True),

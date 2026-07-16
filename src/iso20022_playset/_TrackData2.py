@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max140Text import Max140Text
-from ._Number import Number
-from ._TrackFormat1Code import TrackFormat1Code
+from . import Max140Text
+from . import Number
+from . import TrackFormat1Code
 
 class TrackData2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TrackData2(base_types._BaseFieldType):
 
 	@TrckFrmt.setter
 	def TrckFrmt(self, value):
-		self._TrckFrmt = value if type(value) != base_types.auto else self.make_default("TrckFrmt")
+		self._TrckFrmt = value if value is not None else base_types.UninitialisedField(self, 'TrckFrmt', TrackFormat1Code, False)
 
 	@TrckFrmt.deleter
 	def TrckFrmt(self):
 		del self._TrckFrmt
-		self._TrckFrmt = None
+		self._TrckFrmt = base_types.UninitialisedField(self, 'TrckFrmt', TrackFormat1Code, False)
 
 	@property
 	def TrckNb(self):
@@ -28,12 +28,12 @@ class TrackData2(base_types._BaseFieldType):
 
 	@TrckNb.setter
 	def TrckNb(self, value):
-		self._TrckNb = value if type(value) != base_types.auto else self.make_default("TrckNb")
+		self._TrckNb = value if value is not None else base_types.UninitialisedField(self, 'TrckNb', Number, False)
 
 	@TrckNb.deleter
 	def TrckNb(self):
 		del self._TrckNb
-		self._TrckNb = None
+		self._TrckNb = base_types.UninitialisedField(self, 'TrckNb', Number, False)
 
 	@property
 	def TrckVal(self):
@@ -41,12 +41,12 @@ class TrackData2(base_types._BaseFieldType):
 
 	@TrckVal.setter
 	def TrckVal(self, value):
-		self._TrckVal = value if type(value) != base_types.auto else self.make_default("TrckVal")
+		self._TrckVal = value if value is not None else base_types.UninitialisedField(self, 'TrckVal', Max140Text, False)
 
 	@TrckVal.deleter
 	def TrckVal(self):
 		del self._TrckVal
-		self._TrckVal = None
+		self._TrckVal = base_types.UninitialisedField(self, 'TrckVal', Max140Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TrckFrmt', type=TrackFormat1Code, min=0, max=1, mutex_group=None, array=False),

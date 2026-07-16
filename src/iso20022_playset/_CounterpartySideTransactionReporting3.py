@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._PartyIdentification242Choice import PartyIdentification242Choice
-from ._UniqueTransactionIdentifier3 import UniqueTransactionIdentifier3
+from . import Max35Text
+from . import PartyIdentification242Choice
+from . import UniqueTransactionIdentifier3
 
 class CounterpartySideTransactionReporting3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CounterpartySideTransactionReporting3(base_types._BaseFieldType):
 
 	@CtrPtySdUnqTxIdr.setter
 	def CtrPtySdUnqTxIdr(self, value):
-		self._CtrPtySdUnqTxIdr = value if type(value) != base_types.auto else self.make_default("CtrPtySdUnqTxIdr")
+		self._CtrPtySdUnqTxIdr = value if value is not None else base_types.UninitialisedField(self, 'CtrPtySdUnqTxIdr', UniqueTransactionIdentifier3, True)
 
 	@CtrPtySdUnqTxIdr.deleter
 	def CtrPtySdUnqTxIdr(self):
 		del self._CtrPtySdUnqTxIdr
-		self._CtrPtySdUnqTxIdr = None
+		self._CtrPtySdUnqTxIdr = base_types.UninitialisedField(self, 'CtrPtySdUnqTxIdr', UniqueTransactionIdentifier3, True)
 
 	@property
 	def RptgJursdctn(self):
@@ -28,12 +28,12 @@ class CounterpartySideTransactionReporting3(base_types._BaseFieldType):
 
 	@RptgJursdctn.setter
 	def RptgJursdctn(self, value):
-		self._RptgJursdctn = value if type(value) != base_types.auto else self.make_default("RptgJursdctn")
+		self._RptgJursdctn = value if value is not None else base_types.UninitialisedField(self, 'RptgJursdctn', Max35Text, False)
 
 	@RptgJursdctn.deleter
 	def RptgJursdctn(self):
 		del self._RptgJursdctn
-		self._RptgJursdctn = None
+		self._RptgJursdctn = base_types.UninitialisedField(self, 'RptgJursdctn', Max35Text, False)
 
 	@property
 	def RptgPty(self):
@@ -41,12 +41,12 @@ class CounterpartySideTransactionReporting3(base_types._BaseFieldType):
 
 	@RptgPty.setter
 	def RptgPty(self, value):
-		self._RptgPty = value if type(value) != base_types.auto else self.make_default("RptgPty")
+		self._RptgPty = value if value is not None else base_types.UninitialisedField(self, 'RptgPty', PartyIdentification242Choice, False)
 
 	@RptgPty.deleter
 	def RptgPty(self):
 		del self._RptgPty
-		self._RptgPty = None
+		self._RptgPty = base_types.UninitialisedField(self, 'RptgPty', PartyIdentification242Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrPtySdUnqTxIdr', type=UniqueTransactionIdentifier3, min=0, max=None, mutex_group=None, array=True),

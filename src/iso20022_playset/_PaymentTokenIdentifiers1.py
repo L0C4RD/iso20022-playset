@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
+from . import Max35Text
 
 class PaymentTokenIdentifiers1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class PaymentTokenIdentifiers1(base_types._BaseFieldType):
 
 	@PrvdrId.setter
 	def PrvdrId(self, value):
-		self._PrvdrId = value if type(value) != base_types.auto else self.make_default("PrvdrId")
+		self._PrvdrId = value if value is not None else base_types.UninitialisedField(self, 'PrvdrId', Max35Text, False)
 
 	@PrvdrId.deleter
 	def PrvdrId(self):
 		del self._PrvdrId
-		self._PrvdrId = None
+		self._PrvdrId = base_types.UninitialisedField(self, 'PrvdrId', Max35Text, False)
 
 	@property
 	def RqstrId(self):
@@ -26,12 +26,12 @@ class PaymentTokenIdentifiers1(base_types._BaseFieldType):
 
 	@RqstrId.setter
 	def RqstrId(self, value):
-		self._RqstrId = value if type(value) != base_types.auto else self.make_default("RqstrId")
+		self._RqstrId = value if value is not None else base_types.UninitialisedField(self, 'RqstrId', Max35Text, False)
 
 	@RqstrId.deleter
 	def RqstrId(self):
 		del self._RqstrId
-		self._RqstrId = None
+		self._RqstrId = base_types.UninitialisedField(self, 'RqstrId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrvdrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification30 import GenericIdentification30
-from ._RestrictionType1Code import RestrictionType1Code
+from . import GenericIdentification30
+from . import RestrictionType1Code
 
 class SecurityRestrictionType2Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SecurityRestrictionType2Choice(base_types._BaseFieldType):
 
 	@PrtryRstrctn.setter
 	def PrtryRstrctn(self, value):
-		self._PrtryRstrctn = value if type(value) != base_types.auto else self.make_default("PrtryRstrctn")
+		self._PrtryRstrctn = value if value is not None else base_types.UninitialisedField(self, 'PrtryRstrctn', GenericIdentification30, False)
 
 	@PrtryRstrctn.deleter
 	def PrtryRstrctn(self):
 		del self._PrtryRstrctn
-		self._PrtryRstrctn = None
+		self._PrtryRstrctn = base_types.UninitialisedField(self, 'PrtryRstrctn', GenericIdentification30, False)
 
 	@property
 	def RstrctnTp(self):
@@ -27,12 +27,12 @@ class SecurityRestrictionType2Choice(base_types._BaseFieldType):
 
 	@RstrctnTp.setter
 	def RstrctnTp(self, value):
-		self._RstrctnTp = value if type(value) != base_types.auto else self.make_default("RstrctnTp")
+		self._RstrctnTp = value if value is not None else base_types.UninitialisedField(self, 'RstrctnTp', RestrictionType1Code, False)
 
 	@RstrctnTp.deleter
 	def RstrctnTp(self):
 		del self._RstrctnTp
-		self._RstrctnTp = None
+		self._RstrctnTp = base_types.UninitialisedField(self, 'RstrctnTp', RestrictionType1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrtryRstrctn', type=GenericIdentification30, min=0, max=1, mutex_group=1, array=False),

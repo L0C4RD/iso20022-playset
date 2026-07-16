@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._CashAccountIdentification5Choice import CashAccountIdentification5Choice
-from ._ForeignExchangeTerms19 import ForeignExchangeTerms19
-from ._GenericIdentification178 import GenericIdentification178
-from ._ValuationsDetails2 import ValuationsDetails2
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import CashAccountIdentification5Choice
+from . import ForeignExchangeTerms19
+from . import GenericIdentification178
+from . import ValuationsDetails2
 
 class CashBalance15(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class CashBalance15(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def CshAcct(self):
@@ -30,12 +30,12 @@ class CashBalance15(base_types._BaseFieldType):
 
 	@CshAcct.setter
 	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != base_types.auto else self.make_default("CshAcct")
+		self._CshAcct = value if value is not None else base_types.UninitialisedField(self, 'CshAcct', CashAccountIdentification5Choice, False)
 
 	@CshAcct.deleter
 	def CshAcct(self):
 		del self._CshAcct
-		self._CshAcct = None
+		self._CshAcct = base_types.UninitialisedField(self, 'CshAcct', CashAccountIdentification5Choice, False)
 
 	@property
 	def FXDtls(self):
@@ -43,12 +43,12 @@ class CashBalance15(base_types._BaseFieldType):
 
 	@FXDtls.setter
 	def FXDtls(self, value):
-		self._FXDtls = value if type(value) != base_types.auto else self.make_default("FXDtls")
+		self._FXDtls = value if value is not None else base_types.UninitialisedField(self, 'FXDtls', ForeignExchangeTerms19, False)
 
 	@FXDtls.deleter
 	def FXDtls(self):
 		del self._FXDtls
-		self._FXDtls = None
+		self._FXDtls = base_types.UninitialisedField(self, 'FXDtls', ForeignExchangeTerms19, False)
 
 	@property
 	def TxLotNb(self):
@@ -56,12 +56,12 @@ class CashBalance15(base_types._BaseFieldType):
 
 	@TxLotNb.setter
 	def TxLotNb(self, value):
-		self._TxLotNb = value if type(value) != base_types.auto else self.make_default("TxLotNb")
+		self._TxLotNb = value if value is not None else base_types.UninitialisedField(self, 'TxLotNb', GenericIdentification178, True)
 
 	@TxLotNb.deleter
 	def TxLotNb(self):
 		del self._TxLotNb
-		self._TxLotNb = None
+		self._TxLotNb = base_types.UninitialisedField(self, 'TxLotNb', GenericIdentification178, True)
 
 	@property
 	def ValtnDtls(self):
@@ -69,12 +69,12 @@ class CashBalance15(base_types._BaseFieldType):
 
 	@ValtnDtls.setter
 	def ValtnDtls(self, value):
-		self._ValtnDtls = value if type(value) != base_types.auto else self.make_default("ValtnDtls")
+		self._ValtnDtls = value if value is not None else base_types.UninitialisedField(self, 'ValtnDtls', ValuationsDetails2, False)
 
 	@ValtnDtls.deleter
 	def ValtnDtls(self):
 		del self._ValtnDtls
-		self._ValtnDtls = None
+		self._ValtnDtls = base_types.UninitialisedField(self, 'ValtnDtls', ValuationsDetails2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

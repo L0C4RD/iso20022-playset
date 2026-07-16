@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MarginCalculation1 import MarginCalculation1
-from ._MarginReport2 import MarginReport2
-from ._Pagination import Pagination
-from ._PartyIdentification35Choice import PartyIdentification35Choice
-from ._ReportParameters3 import ReportParameters3
-from ._SupplementaryData1 import SupplementaryData1
+from . import MarginCalculation1
+from . import MarginReport2
+from . import Pagination
+from . import PartyIdentification35Choice
+from . import ReportParameters3
+from . import SupplementaryData1
 
 class MarginReportV02(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class MarginReportV02(base_types._BaseFieldType):
 
 	@ClrMmb.setter
 	def ClrMmb(self, value):
-		self._ClrMmb = value if type(value) != base_types.auto else self.make_default("ClrMmb")
+		self._ClrMmb = value if value is not None else base_types.UninitialisedField(self, 'ClrMmb', PartyIdentification35Choice, False)
 
 	@ClrMmb.deleter
 	def ClrMmb(self):
 		del self._ClrMmb
-		self._ClrMmb = None
+		self._ClrMmb = base_types.UninitialisedField(self, 'ClrMmb', PartyIdentification35Choice, False)
 
 	@property
 	def Pgntn(self):
@@ -31,12 +31,12 @@ class MarginReportV02(base_types._BaseFieldType):
 
 	@Pgntn.setter
 	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+		self._Pgntn = value if value is not None else base_types.UninitialisedField(self, 'Pgntn', Pagination, False)
 
 	@Pgntn.deleter
 	def Pgntn(self):
 		del self._Pgntn
-		self._Pgntn = None
+		self._Pgntn = base_types.UninitialisedField(self, 'Pgntn', Pagination, False)
 
 	@property
 	def RptDtls(self):
@@ -44,12 +44,12 @@ class MarginReportV02(base_types._BaseFieldType):
 
 	@RptDtls.setter
 	def RptDtls(self, value):
-		self._RptDtls = value if type(value) != base_types.auto else self.make_default("RptDtls")
+		self._RptDtls = value if value is not None else base_types.UninitialisedField(self, 'RptDtls', MarginReport2, True)
 
 	@RptDtls.deleter
 	def RptDtls(self):
 		del self._RptDtls
-		self._RptDtls = None
+		self._RptDtls = base_types.UninitialisedField(self, 'RptDtls', MarginReport2, True)
 
 	@property
 	def RptParams(self):
@@ -57,12 +57,12 @@ class MarginReportV02(base_types._BaseFieldType):
 
 	@RptParams.setter
 	def RptParams(self, value):
-		self._RptParams = value if type(value) != base_types.auto else self.make_default("RptParams")
+		self._RptParams = value if value is not None else base_types.UninitialisedField(self, 'RptParams', ReportParameters3, False)
 
 	@RptParams.deleter
 	def RptParams(self):
 		del self._RptParams
-		self._RptParams = None
+		self._RptParams = base_types.UninitialisedField(self, 'RptParams', ReportParameters3, False)
 
 	@property
 	def RptSummry(self):
@@ -70,12 +70,12 @@ class MarginReportV02(base_types._BaseFieldType):
 
 	@RptSummry.setter
 	def RptSummry(self, value):
-		self._RptSummry = value if type(value) != base_types.auto else self.make_default("RptSummry")
+		self._RptSummry = value if value is not None else base_types.UninitialisedField(self, 'RptSummry', MarginCalculation1, False)
 
 	@RptSummry.deleter
 	def RptSummry(self):
 		del self._RptSummry
-		self._RptSummry = None
+		self._RptSummry = base_types.UninitialisedField(self, 'RptSummry', MarginCalculation1, False)
 
 	@property
 	def SplmtryData(self):
@@ -83,12 +83,12 @@ class MarginReportV02(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClrMmb', type=PartyIdentification35Choice, min=1, max=1, mutex_group=None, array=False),

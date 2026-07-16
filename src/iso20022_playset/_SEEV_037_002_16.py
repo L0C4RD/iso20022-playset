@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionMovementReversalAdvice002V16 import CorporateActionMovementReversalAdvice002V16
+from . import CorporateActionMovementReversalAdvice002V16
 
 class SEEV_037_002_16():
 
@@ -18,12 +18,12 @@ class SEEV_037_002_16():
 
 		@CorpActnMvmntRvslAdvc.setter
 		def CorpActnMvmntRvslAdvc(self, value):
-			self._CorpActnMvmntRvslAdvc = value if type(value) != base_types.auto else self.make_default("CorpActnMvmntRvslAdvc")
+			self._CorpActnMvmntRvslAdvc = value if value is not None else base_types.UninitialisedField(self, 'CorpActnMvmntRvslAdvc', CorporateActionMovementReversalAdvice002V16, False)
 
 		@CorpActnMvmntRvslAdvc.deleter
 		def CorpActnMvmntRvslAdvc(self):
 			del self._CorpActnMvmntRvslAdvc
-			self._CorpActnMvmntRvslAdvc = None
+			self._CorpActnMvmntRvslAdvc = base_types.UninitialisedField(self, 'CorpActnMvmntRvslAdvc', CorporateActionMovementReversalAdvice002V16, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CorpActnMvmntRvslAdvc', type=CorporateActionMovementReversalAdvice002V16, min=1, max=1, mutex_group=None, array=False),

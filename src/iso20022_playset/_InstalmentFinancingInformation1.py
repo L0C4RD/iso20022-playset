@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._FinancingResult1 import FinancingResult1
-from ._Max70Text import Max70Text
+from . import ActiveCurrencyAndAmount
+from . import FinancingResult1
+from . import Max70Text
 
 class InstalmentFinancingInformation1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class InstalmentFinancingInformation1(base_types._BaseFieldType):
 
 	@InstlmtFincgRslt.setter
 	def InstlmtFincgRslt(self, value):
-		self._InstlmtFincgRslt = value if type(value) != base_types.auto else self.make_default("InstlmtFincgRslt")
+		self._InstlmtFincgRslt = value if value is not None else base_types.UninitialisedField(self, 'InstlmtFincgRslt', FinancingResult1, False)
 
 	@InstlmtFincgRslt.deleter
 	def InstlmtFincgRslt(self):
 		del self._InstlmtFincgRslt
-		self._InstlmtFincgRslt = None
+		self._InstlmtFincgRslt = base_types.UninitialisedField(self, 'InstlmtFincgRslt', FinancingResult1, False)
 
 	@property
 	def InstlmtSeqId(self):
@@ -28,12 +28,12 @@ class InstalmentFinancingInformation1(base_types._BaseFieldType):
 
 	@InstlmtSeqId.setter
 	def InstlmtSeqId(self, value):
-		self._InstlmtSeqId = value if type(value) != base_types.auto else self.make_default("InstlmtSeqId")
+		self._InstlmtSeqId = value if value is not None else base_types.UninitialisedField(self, 'InstlmtSeqId', Max70Text, False)
 
 	@InstlmtSeqId.deleter
 	def InstlmtSeqId(self):
 		del self._InstlmtSeqId
-		self._InstlmtSeqId = None
+		self._InstlmtSeqId = base_types.UninitialisedField(self, 'InstlmtSeqId', Max70Text, False)
 
 	@property
 	def InstlmtTtlAmt(self):
@@ -41,12 +41,12 @@ class InstalmentFinancingInformation1(base_types._BaseFieldType):
 
 	@InstlmtTtlAmt.setter
 	def InstlmtTtlAmt(self, value):
-		self._InstlmtTtlAmt = value if type(value) != base_types.auto else self.make_default("InstlmtTtlAmt")
+		self._InstlmtTtlAmt = value if value is not None else base_types.UninitialisedField(self, 'InstlmtTtlAmt', ActiveCurrencyAndAmount, False)
 
 	@InstlmtTtlAmt.deleter
 	def InstlmtTtlAmt(self):
 		del self._InstlmtTtlAmt
-		self._InstlmtTtlAmt = None
+		self._InstlmtTtlAmt = base_types.UninitialisedField(self, 'InstlmtTtlAmt', ActiveCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InstlmtFincgRslt', type=FinancingResult1, min=1, max=1, mutex_group=None, array=False),

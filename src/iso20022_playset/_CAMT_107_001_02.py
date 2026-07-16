@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ChequePresentmentNotificationV02 import ChequePresentmentNotificationV02
+from . import ChequePresentmentNotificationV02
 
 class CAMT_107_001_02():
 
@@ -18,12 +18,12 @@ class CAMT_107_001_02():
 
 		@ChqPresntmntNtfctn.setter
 		def ChqPresntmntNtfctn(self, value):
-			self._ChqPresntmntNtfctn = value if type(value) != base_types.auto else self.make_default("ChqPresntmntNtfctn")
+			self._ChqPresntmntNtfctn = value if value is not None else base_types.UninitialisedField(self, 'ChqPresntmntNtfctn', ChequePresentmentNotificationV02, False)
 
 		@ChqPresntmntNtfctn.deleter
 		def ChqPresntmntNtfctn(self):
 			del self._ChqPresntmntNtfctn
-			self._ChqPresntmntNtfctn = None
+			self._ChqPresntmntNtfctn = base_types.UninitialisedField(self, 'ChqPresntmntNtfctn', ChequePresentmentNotificationV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ChqPresntmntNtfctn', type=ChequePresentmentNotificationV02, min=1, max=1, mutex_group=None, array=False),

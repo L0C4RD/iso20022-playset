@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCode import CountryCode
-from ._Max35Text import Max35Text
+from . import CountryCode
+from . import Max35Text
 
 class PostalAddress12(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PostalAddress12(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@property
 	def CtrySubDvsn(self):
@@ -27,12 +27,12 @@ class PostalAddress12(base_types._BaseFieldType):
 
 	@CtrySubDvsn.setter
 	def CtrySubDvsn(self, value):
-		self._CtrySubDvsn = value if type(value) != base_types.auto else self.make_default("CtrySubDvsn")
+		self._CtrySubDvsn = value if value is not None else base_types.UninitialisedField(self, 'CtrySubDvsn', Max35Text, False)
 
 	@CtrySubDvsn.deleter
 	def CtrySubDvsn(self):
 		del self._CtrySubDvsn
-		self._CtrySubDvsn = None
+		self._CtrySubDvsn = base_types.UninitialisedField(self, 'CtrySubDvsn', Max35Text, False)
 
 	@property
 	def TwnNm(self):
@@ -40,12 +40,12 @@ class PostalAddress12(base_types._BaseFieldType):
 
 	@TwnNm.setter
 	def TwnNm(self, value):
-		self._TwnNm = value if type(value) != base_types.auto else self.make_default("TwnNm")
+		self._TwnNm = value if value is not None else base_types.UninitialisedField(self, 'TwnNm', Max35Text, False)
 
 	@TwnNm.deleter
 	def TwnNm(self):
 		del self._TwnNm
-		self._TwnNm = None
+		self._TwnNm = base_types.UninitialisedField(self, 'TwnNm', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),

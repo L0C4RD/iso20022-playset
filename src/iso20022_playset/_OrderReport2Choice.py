@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CancelOrderReport1 import CancelOrderReport1
-from ._NewOrderReport2 import NewOrderReport2
+from . import CancelOrderReport1
+from . import NewOrderReport2
 
 class OrderReport2Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class OrderReport2Choice(base_types._BaseFieldType):
 
 	@Cxl.setter
 	def Cxl(self, value):
-		self._Cxl = value if type(value) != base_types.auto else self.make_default("Cxl")
+		self._Cxl = value if value is not None else base_types.UninitialisedField(self, 'Cxl', CancelOrderReport1, False)
 
 	@Cxl.deleter
 	def Cxl(self):
 		del self._Cxl
-		self._Cxl = None
+		self._Cxl = base_types.UninitialisedField(self, 'Cxl', CancelOrderReport1, False)
 
 	@property
 	def New(self):
@@ -27,12 +27,12 @@ class OrderReport2Choice(base_types._BaseFieldType):
 
 	@New.setter
 	def New(self, value):
-		self._New = value if type(value) != base_types.auto else self.make_default("New")
+		self._New = value if value is not None else base_types.UninitialisedField(self, 'New', NewOrderReport2, False)
 
 	@New.deleter
 	def New(self):
 		del self._New
-		self._New = None
+		self._New = base_types.UninitialisedField(self, 'New', NewOrderReport2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cxl', type=CancelOrderReport1, min=0, max=1, mutex_group=1, array=False),

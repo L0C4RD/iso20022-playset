@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTimeSearch4Choice import DateAndDateTimeSearch4Choice
-from ._DatePeriodSearch1Choice import DatePeriodSearch1Choice
-from ._Max35Text import Max35Text
-from ._PartyIdentification136 import PartyIdentification136
-from ._PartyLockStatus1 import PartyLockStatus1
-from ._ResidenceType1Code import ResidenceType1Code
-from ._SystemPartyType1Choice import SystemPartyType1Choice
+from . import DateAndDateTimeSearch4Choice
+from . import DatePeriodSearch1Choice
+from . import Max35Text
+from . import PartyIdentification136
+from . import PartyLockStatus1
+from . import ResidenceType1Code
+from . import SystemPartyType1Choice
 
 class PartyDataSearchCriteria2(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class PartyDataSearchCriteria2(base_types._BaseFieldType):
 
 	@ClsgDt.setter
 	def ClsgDt(self, value):
-		self._ClsgDt = value if type(value) != base_types.auto else self.make_default("ClsgDt")
+		self._ClsgDt = value if value is not None else base_types.UninitialisedField(self, 'ClsgDt', DatePeriodSearch1Choice, False)
 
 	@ClsgDt.deleter
 	def ClsgDt(self):
 		del self._ClsgDt
-		self._ClsgDt = None
+		self._ClsgDt = base_types.UninitialisedField(self, 'ClsgDt', DatePeriodSearch1Choice, False)
 
 	@property
 	def LckSts(self):
@@ -32,12 +32,12 @@ class PartyDataSearchCriteria2(base_types._BaseFieldType):
 
 	@LckSts.setter
 	def LckSts(self, value):
-		self._LckSts = value if type(value) != base_types.auto else self.make_default("LckSts")
+		self._LckSts = value if value is not None else base_types.UninitialisedField(self, 'LckSts', PartyLockStatus1, False)
 
 	@LckSts.deleter
 	def LckSts(self):
 		del self._LckSts
-		self._LckSts = None
+		self._LckSts = base_types.UninitialisedField(self, 'LckSts', PartyLockStatus1, False)
 
 	@property
 	def OpngDt(self):
@@ -45,12 +45,12 @@ class PartyDataSearchCriteria2(base_types._BaseFieldType):
 
 	@OpngDt.setter
 	def OpngDt(self, value):
-		self._OpngDt = value if type(value) != base_types.auto else self.make_default("OpngDt")
+		self._OpngDt = value if value is not None else base_types.UninitialisedField(self, 'OpngDt', DatePeriodSearch1Choice, False)
 
 	@OpngDt.deleter
 	def OpngDt(self):
 		del self._OpngDt
-		self._OpngDt = None
+		self._OpngDt = base_types.UninitialisedField(self, 'OpngDt', DatePeriodSearch1Choice, False)
 
 	@property
 	def PtyId(self):
@@ -58,12 +58,12 @@ class PartyDataSearchCriteria2(base_types._BaseFieldType):
 
 	@PtyId.setter
 	def PtyId(self, value):
-		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
+		self._PtyId = value if value is not None else base_types.UninitialisedField(self, 'PtyId', PartyIdentification136, False)
 
 	@PtyId.deleter
 	def PtyId(self):
 		del self._PtyId
-		self._PtyId = None
+		self._PtyId = base_types.UninitialisedField(self, 'PtyId', PartyIdentification136, False)
 
 	@property
 	def ResTp(self):
@@ -71,12 +71,12 @@ class PartyDataSearchCriteria2(base_types._BaseFieldType):
 
 	@ResTp.setter
 	def ResTp(self, value):
-		self._ResTp = value if type(value) != base_types.auto else self.make_default("ResTp")
+		self._ResTp = value if value is not None else base_types.UninitialisedField(self, 'ResTp', ResidenceType1Code, False)
 
 	@ResTp.deleter
 	def ResTp(self):
 		del self._ResTp
-		self._ResTp = None
+		self._ResTp = base_types.UninitialisedField(self, 'ResTp', ResidenceType1Code, False)
 
 	@property
 	def RspnsblPtyId(self):
@@ -84,12 +84,12 @@ class PartyDataSearchCriteria2(base_types._BaseFieldType):
 
 	@RspnsblPtyId.setter
 	def RspnsblPtyId(self, value):
-		self._RspnsblPtyId = value if type(value) != base_types.auto else self.make_default("RspnsblPtyId")
+		self._RspnsblPtyId = value if value is not None else base_types.UninitialisedField(self, 'RspnsblPtyId', PartyIdentification136, False)
 
 	@RspnsblPtyId.deleter
 	def RspnsblPtyId(self):
 		del self._RspnsblPtyId
-		self._RspnsblPtyId = None
+		self._RspnsblPtyId = base_types.UninitialisedField(self, 'RspnsblPtyId', PartyIdentification136, False)
 
 	@property
 	def RstrctnId(self):
@@ -97,12 +97,12 @@ class PartyDataSearchCriteria2(base_types._BaseFieldType):
 
 	@RstrctnId.setter
 	def RstrctnId(self, value):
-		self._RstrctnId = value if type(value) != base_types.auto else self.make_default("RstrctnId")
+		self._RstrctnId = value if value is not None else base_types.UninitialisedField(self, 'RstrctnId', Max35Text, False)
 
 	@RstrctnId.deleter
 	def RstrctnId(self):
 		del self._RstrctnId
-		self._RstrctnId = None
+		self._RstrctnId = base_types.UninitialisedField(self, 'RstrctnId', Max35Text, False)
 
 	@property
 	def RstrctnIsseDt(self):
@@ -110,12 +110,12 @@ class PartyDataSearchCriteria2(base_types._BaseFieldType):
 
 	@RstrctnIsseDt.setter
 	def RstrctnIsseDt(self, value):
-		self._RstrctnIsseDt = value if type(value) != base_types.auto else self.make_default("RstrctnIsseDt")
+		self._RstrctnIsseDt = value if value is not None else base_types.UninitialisedField(self, 'RstrctnIsseDt', DateAndDateTimeSearch4Choice, False)
 
 	@RstrctnIsseDt.deleter
 	def RstrctnIsseDt(self):
 		del self._RstrctnIsseDt
-		self._RstrctnIsseDt = None
+		self._RstrctnIsseDt = base_types.UninitialisedField(self, 'RstrctnIsseDt', DateAndDateTimeSearch4Choice, False)
 
 	@property
 	def Tp(self):
@@ -123,12 +123,12 @@ class PartyDataSearchCriteria2(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', SystemPartyType1Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', SystemPartyType1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClsgDt', type=DatePeriodSearch1Choice, min=0, max=1, mutex_group=None, array=False),

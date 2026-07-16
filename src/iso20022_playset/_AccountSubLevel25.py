@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._PartyIdentification276 import PartyIdentification276
-from ._ShareholdingBalance1 import ShareholdingBalance1
+from . import Max35Text
+from . import PartyIdentification276
+from . import ShareholdingBalance1
 
 class AccountSubLevel25(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AccountSubLevel25(base_types._BaseFieldType):
 
 	@AcctHldr.setter
 	def AcctHldr(self, value):
-		self._AcctHldr = value if type(value) != base_types.auto else self.make_default("AcctHldr")
+		self._AcctHldr = value if value is not None else base_types.UninitialisedField(self, 'AcctHldr', PartyIdentification276, False)
 
 	@AcctHldr.deleter
 	def AcctHldr(self):
 		del self._AcctHldr
-		self._AcctHldr = None
+		self._AcctHldr = base_types.UninitialisedField(self, 'AcctHldr', PartyIdentification276, False)
 
 	@property
 	def SfkpgAcct(self):
@@ -28,12 +28,12 @@ class AccountSubLevel25(base_types._BaseFieldType):
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcct', Max35Text, False)
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
-		self._SfkpgAcct = None
+		self._SfkpgAcct = base_types.UninitialisedField(self, 'SfkpgAcct', Max35Text, False)
 
 	@property
 	def ShrhldgBal(self):
@@ -41,12 +41,12 @@ class AccountSubLevel25(base_types._BaseFieldType):
 
 	@ShrhldgBal.setter
 	def ShrhldgBal(self, value):
-		self._ShrhldgBal = value if type(value) != base_types.auto else self.make_default("ShrhldgBal")
+		self._ShrhldgBal = value if value is not None else base_types.UninitialisedField(self, 'ShrhldgBal', ShareholdingBalance1, True)
 
 	@ShrhldgBal.deleter
 	def ShrhldgBal(self):
 		del self._ShrhldgBal
-		self._ShrhldgBal = None
+		self._ShrhldgBal = base_types.UninitialisedField(self, 'ShrhldgBal', ShareholdingBalance1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctHldr', type=PartyIdentification276, min=1, max=1, mutex_group=None, array=False),

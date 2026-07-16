@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICAPartyType1Code import ATICAPartyType1Code
-from ._ISODateTime import ISODateTime
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max140Text import Max140Text
-from ._Max256Text import Max256Text
-from ._Max35Text import Max35Text
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ATICAPartyType1Code
+from . import ISODateTime
+from . import ImpliedCurrencyAndAmount
+from . import Max140Text
+from . import Max256Text
+from . import Max35Text
+from . import TrueFalseIndicator
 
 class PromotionData1(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class PromotionData1(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ImpliedCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def Cd(self):
@@ -32,12 +32,12 @@ class PromotionData1(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
+		self._Cd = value if value is not None else base_types.UninitialisedField(self, 'Cd', Max35Text, False)
 
 	@Cd.deleter
 	def Cd(self):
 		del self._Cd
-		self._Cd = None
+		self._Cd = base_types.UninitialisedField(self, 'Cd', Max35Text, False)
 
 	@property
 	def Chanl(self):
@@ -45,12 +45,12 @@ class PromotionData1(base_types._BaseFieldType):
 
 	@Chanl.setter
 	def Chanl(self, value):
-		self._Chanl = value if type(value) != base_types.auto else self.make_default("Chanl")
+		self._Chanl = value if value is not None else base_types.UninitialisedField(self, 'Chanl', Max35Text, False)
 
 	@Chanl.deleter
 	def Chanl(self):
 		del self._Chanl
-		self._Chanl = None
+		self._Chanl = base_types.UninitialisedField(self, 'Chanl', Max35Text, False)
 
 	@property
 	def Ctgy(self):
@@ -58,12 +58,12 @@ class PromotionData1(base_types._BaseFieldType):
 
 	@Ctgy.setter
 	def Ctgy(self, value):
-		self._Ctgy = value if type(value) != base_types.auto else self.make_default("Ctgy")
+		self._Ctgy = value if value is not None else base_types.UninitialisedField(self, 'Ctgy', Max35Text, False)
 
 	@Ctgy.deleter
 	def Ctgy(self):
 		del self._Ctgy
-		self._Ctgy = None
+		self._Ctgy = base_types.UninitialisedField(self, 'Ctgy', Max35Text, False)
 
 	@property
 	def Desc(self):
@@ -71,12 +71,12 @@ class PromotionData1(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', Max140Text, False)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', Max140Text, False)
 
 	@property
 	def End(self):
@@ -84,12 +84,12 @@ class PromotionData1(base_types._BaseFieldType):
 
 	@End.setter
 	def End(self, value):
-		self._End = value if type(value) != base_types.auto else self.make_default("End")
+		self._End = value if value is not None else base_types.UninitialisedField(self, 'End', ISODateTime, False)
 
 	@End.deleter
 	def End(self):
 		del self._End
-		self._End = None
+		self._End = base_types.UninitialisedField(self, 'End', ISODateTime, False)
 
 	@property
 	def Prvdr(self):
@@ -97,12 +97,12 @@ class PromotionData1(base_types._BaseFieldType):
 
 	@Prvdr.setter
 	def Prvdr(self, value):
-		self._Prvdr = value if type(value) != base_types.auto else self.make_default("Prvdr")
+		self._Prvdr = value if value is not None else base_types.UninitialisedField(self, 'Prvdr', ATICAPartyType1Code, False)
 
 	@Prvdr.deleter
 	def Prvdr(self):
 		del self._Prvdr
-		self._Prvdr = None
+		self._Prvdr = base_types.UninitialisedField(self, 'Prvdr', ATICAPartyType1Code, False)
 
 	@property
 	def RedMtd(self):
@@ -110,12 +110,12 @@ class PromotionData1(base_types._BaseFieldType):
 
 	@RedMtd.setter
 	def RedMtd(self, value):
-		self._RedMtd = value if type(value) != base_types.auto else self.make_default("RedMtd")
+		self._RedMtd = value if value is not None else base_types.UninitialisedField(self, 'RedMtd', Max35Text, False)
 
 	@RedMtd.deleter
 	def RedMtd(self):
 		del self._RedMtd
-		self._RedMtd = None
+		self._RedMtd = base_types.UninitialisedField(self, 'RedMtd', Max35Text, False)
 
 	@property
 	def Start(self):
@@ -123,12 +123,12 @@ class PromotionData1(base_types._BaseFieldType):
 
 	@Start.setter
 	def Start(self, value):
-		self._Start = value if type(value) != base_types.auto else self.make_default("Start")
+		self._Start = value if value is not None else base_types.UninitialisedField(self, 'Start', ISODateTime, False)
 
 	@Start.deleter
 	def Start(self):
 		del self._Start
-		self._Start = None
+		self._Start = base_types.UninitialisedField(self, 'Start', ISODateTime, False)
 
 	@property
 	def Stckbl(self):
@@ -136,12 +136,12 @@ class PromotionData1(base_types._BaseFieldType):
 
 	@Stckbl.setter
 	def Stckbl(self, value):
-		self._Stckbl = value if type(value) != base_types.auto else self.make_default("Stckbl")
+		self._Stckbl = value if value is not None else base_types.UninitialisedField(self, 'Stckbl', TrueFalseIndicator, False)
 
 	@Stckbl.deleter
 	def Stckbl(self):
 		del self._Stckbl
-		self._Stckbl = None
+		self._Stckbl = base_types.UninitialisedField(self, 'Stckbl', TrueFalseIndicator, False)
 
 	@property
 	def TermsURL(self):
@@ -149,12 +149,12 @@ class PromotionData1(base_types._BaseFieldType):
 
 	@TermsURL.setter
 	def TermsURL(self, value):
-		self._TermsURL = value if type(value) != base_types.auto else self.make_default("TermsURL")
+		self._TermsURL = value if value is not None else base_types.UninitialisedField(self, 'TermsURL', Max256Text, False)
 
 	@TermsURL.deleter
 	def TermsURL(self):
 		del self._TermsURL
-		self._TermsURL = None
+		self._TermsURL = base_types.UninitialisedField(self, 'TermsURL', Max256Text, False)
 
 	@property
 	def Tp(self):
@@ -162,12 +162,12 @@ class PromotionData1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', Max35Text, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

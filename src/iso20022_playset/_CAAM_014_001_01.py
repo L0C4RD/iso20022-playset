@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMConfigurationControlV01 import ATMConfigurationControlV01
+from . import ATMConfigurationControlV01
 
 class CAAM_014_001_01():
 
@@ -18,12 +18,12 @@ class CAAM_014_001_01():
 
 		@ATMCfgtnCtrl.setter
 		def ATMCfgtnCtrl(self, value):
-			self._ATMCfgtnCtrl = value if type(value) != base_types.auto else self.make_default("ATMCfgtnCtrl")
+			self._ATMCfgtnCtrl = value if value is not None else base_types.UninitialisedField(self, 'ATMCfgtnCtrl', ATMConfigurationControlV01, False)
 
 		@ATMCfgtnCtrl.deleter
 		def ATMCfgtnCtrl(self):
 			del self._ATMCfgtnCtrl
-			self._ATMCfgtnCtrl = None
+			self._ATMCfgtnCtrl = base_types.UninitialisedField(self, 'ATMCfgtnCtrl', ATMConfigurationControlV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ATMCfgtnCtrl', type=ATMConfigurationControlV01, min=1, max=1, mutex_group=None, array=False),

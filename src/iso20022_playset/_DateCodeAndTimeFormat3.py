@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateCode21Choice import DateCode21Choice
-from ._ISOTime import ISOTime
+from . import DateCode21Choice
+from . import ISOTime
 
 class DateCodeAndTimeFormat3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DateCodeAndTimeFormat3(base_types._BaseFieldType):
 
 	@DtCd.setter
 	def DtCd(self, value):
-		self._DtCd = value if type(value) != base_types.auto else self.make_default("DtCd")
+		self._DtCd = value if value is not None else base_types.UninitialisedField(self, 'DtCd', DateCode21Choice, False)
 
 	@DtCd.deleter
 	def DtCd(self):
 		del self._DtCd
-		self._DtCd = None
+		self._DtCd = base_types.UninitialisedField(self, 'DtCd', DateCode21Choice, False)
 
 	@property
 	def Tm(self):
@@ -27,12 +27,12 @@ class DateCodeAndTimeFormat3(base_types._BaseFieldType):
 
 	@Tm.setter
 	def Tm(self, value):
-		self._Tm = value if type(value) != base_types.auto else self.make_default("Tm")
+		self._Tm = value if value is not None else base_types.UninitialisedField(self, 'Tm', ISOTime, False)
 
 	@Tm.deleter
 	def Tm(self):
 		del self._Tm
-		self._Tm = None
+		self._Tm = base_types.UninitialisedField(self, 'Tm', ISOTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DtCd', type=DateCode21Choice, min=1, max=1, mutex_group=None, array=False),

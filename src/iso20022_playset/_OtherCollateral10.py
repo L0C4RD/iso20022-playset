@@ -2,20 +2,20 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._BaseOneRate import BaseOneRate
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
-from ._CollateralOwnership3 import CollateralOwnership3
-from ._DateFormat14Choice import DateFormat14Choice
-from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
-from ._OtherTypeOfCollateral3 import OtherTypeOfCollateral3
-from ._PartyIdentification178Choice import PartyIdentification178Choice
-from ._PercentageRate import PercentageRate
-from ._SafekeepingPlaceFormat29Choice import SafekeepingPlaceFormat29Choice
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._YesNoIndicator import YesNoIndicator
+from . import ActiveCurrencyAndAmount
+from . import BaseOneRate
+from . import BlockChainAddressWallet3
+from . import CollateralOwnership3
+from . import DateFormat14Choice
+from . import FinancialInstrumentQuantity33Choice
+from . import ISODate
+from . import Max35Text
+from . import OtherTypeOfCollateral3
+from . import PartyIdentification178Choice
+from . import PercentageRate
+from . import SafekeepingPlaceFormat29Choice
+from . import SecuritiesAccount19
+from . import YesNoIndicator
 
 class OtherCollateral10(base_types._BaseFieldType):
 
@@ -26,12 +26,12 @@ class OtherCollateral10(base_types._BaseFieldType):
 
 	@AsstNb.setter
 	def AsstNb(self, value):
-		self._AsstNb = value if type(value) != base_types.auto else self.make_default("AsstNb")
+		self._AsstNb = value if value is not None else base_types.UninitialisedField(self, 'AsstNb', Max35Text, False)
 
 	@AsstNb.deleter
 	def AsstNb(self):
 		del self._AsstNb
-		self._AsstNb = None
+		self._AsstNb = base_types.UninitialisedField(self, 'AsstNb', Max35Text, False)
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -39,12 +39,12 @@ class OtherCollateral10(base_types._BaseFieldType):
 
 	@BlckChainAdrOrWllt.setter
 	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
+		self._BlckChainAdrOrWllt = value if value is not None else base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet3, False)
 
 	@BlckChainAdrOrWllt.deleter
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+		self._BlckChainAdrOrWllt = base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet3, False)
 
 	@property
 	def BlckdQty(self):
@@ -52,12 +52,12 @@ class OtherCollateral10(base_types._BaseFieldType):
 
 	@BlckdQty.setter
 	def BlckdQty(self, value):
-		self._BlckdQty = value if type(value) != base_types.auto else self.make_default("BlckdQty")
+		self._BlckdQty = value if value is not None else base_types.UninitialisedField(self, 'BlckdQty', FinancialInstrumentQuantity33Choice, False)
 
 	@BlckdQty.deleter
 	def BlckdQty(self):
 		del self._BlckdQty
-		self._BlckdQty = None
+		self._BlckdQty = base_types.UninitialisedField(self, 'BlckdQty', FinancialInstrumentQuantity33Choice, False)
 
 	@property
 	def CollOwnrsh(self):
@@ -65,12 +65,12 @@ class OtherCollateral10(base_types._BaseFieldType):
 
 	@CollOwnrsh.setter
 	def CollOwnrsh(self, value):
-		self._CollOwnrsh = value if type(value) != base_types.auto else self.make_default("CollOwnrsh")
+		self._CollOwnrsh = value if value is not None else base_types.UninitialisedField(self, 'CollOwnrsh', CollateralOwnership3, False)
 
 	@CollOwnrsh.deleter
 	def CollOwnrsh(self):
 		del self._CollOwnrsh
-		self._CollOwnrsh = None
+		self._CollOwnrsh = base_types.UninitialisedField(self, 'CollOwnrsh', CollateralOwnership3, False)
 
 	@property
 	def CollVal(self):
@@ -78,12 +78,12 @@ class OtherCollateral10(base_types._BaseFieldType):
 
 	@CollVal.setter
 	def CollVal(self, value):
-		self._CollVal = value if type(value) != base_types.auto else self.make_default("CollVal")
+		self._CollVal = value if value is not None else base_types.UninitialisedField(self, 'CollVal', ActiveCurrencyAndAmount, False)
 
 	@CollVal.deleter
 	def CollVal(self):
 		del self._CollVal
-		self._CollVal = None
+		self._CollVal = base_types.UninitialisedField(self, 'CollVal', ActiveCurrencyAndAmount, False)
 
 	@property
 	def GrntAmt(self):
@@ -91,12 +91,12 @@ class OtherCollateral10(base_types._BaseFieldType):
 
 	@GrntAmt.setter
 	def GrntAmt(self, value):
-		self._GrntAmt = value if type(value) != base_types.auto else self.make_default("GrntAmt")
+		self._GrntAmt = value if value is not None else base_types.UninitialisedField(self, 'GrntAmt', ActiveCurrencyAndAmount, False)
 
 	@GrntAmt.deleter
 	def GrntAmt(self):
 		del self._GrntAmt
-		self._GrntAmt = None
+		self._GrntAmt = base_types.UninitialisedField(self, 'GrntAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def Hrcut(self):
@@ -104,12 +104,12 @@ class OtherCollateral10(base_types._BaseFieldType):
 
 	@Hrcut.setter
 	def Hrcut(self, value):
-		self._Hrcut = value if type(value) != base_types.auto else self.make_default("Hrcut")
+		self._Hrcut = value if value is not None else base_types.UninitialisedField(self, 'Hrcut', PercentageRate, False)
 
 	@Hrcut.deleter
 	def Hrcut(self):
 		del self._Hrcut
-		self._Hrcut = None
+		self._Hrcut = base_types.UninitialisedField(self, 'Hrcut', PercentageRate, False)
 
 	@property
 	def IsseDt(self):
@@ -117,12 +117,12 @@ class OtherCollateral10(base_types._BaseFieldType):
 
 	@IsseDt.setter
 	def IsseDt(self, value):
-		self._IsseDt = value if type(value) != base_types.auto else self.make_default("IsseDt")
+		self._IsseDt = value if value is not None else base_types.UninitialisedField(self, 'IsseDt', DateFormat14Choice, False)
 
 	@IsseDt.deleter
 	def IsseDt(self):
 		del self._IsseDt
-		self._IsseDt = None
+		self._IsseDt = base_types.UninitialisedField(self, 'IsseDt', DateFormat14Choice, False)
 
 	@property
 	def Issr(self):
@@ -130,12 +130,12 @@ class OtherCollateral10(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+		self._Issr = value if value is not None else base_types.UninitialisedField(self, 'Issr', PartyIdentification178Choice, False)
 
 	@Issr.deleter
 	def Issr(self):
 		del self._Issr
-		self._Issr = None
+		self._Issr = base_types.UninitialisedField(self, 'Issr', PartyIdentification178Choice, False)
 
 	@property
 	def LtdCvrgInd(self):
@@ -143,12 +143,12 @@ class OtherCollateral10(base_types._BaseFieldType):
 
 	@LtdCvrgInd.setter
 	def LtdCvrgInd(self, value):
-		self._LtdCvrgInd = value if type(value) != base_types.auto else self.make_default("LtdCvrgInd")
+		self._LtdCvrgInd = value if value is not None else base_types.UninitialisedField(self, 'LtdCvrgInd', YesNoIndicator, False)
 
 	@LtdCvrgInd.deleter
 	def LtdCvrgInd(self):
 		del self._LtdCvrgInd
-		self._LtdCvrgInd = None
+		self._LtdCvrgInd = base_types.UninitialisedField(self, 'LtdCvrgInd', YesNoIndicator, False)
 
 	@property
 	def LttrOfCdtAmt(self):
@@ -156,12 +156,12 @@ class OtherCollateral10(base_types._BaseFieldType):
 
 	@LttrOfCdtAmt.setter
 	def LttrOfCdtAmt(self, value):
-		self._LttrOfCdtAmt = value if type(value) != base_types.auto else self.make_default("LttrOfCdtAmt")
+		self._LttrOfCdtAmt = value if value is not None else base_types.UninitialisedField(self, 'LttrOfCdtAmt', ActiveCurrencyAndAmount, False)
 
 	@LttrOfCdtAmt.deleter
 	def LttrOfCdtAmt(self):
 		del self._LttrOfCdtAmt
-		self._LttrOfCdtAmt = None
+		self._LttrOfCdtAmt = base_types.UninitialisedField(self, 'LttrOfCdtAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def LttrOfCdtId(self):
@@ -169,12 +169,12 @@ class OtherCollateral10(base_types._BaseFieldType):
 
 	@LttrOfCdtId.setter
 	def LttrOfCdtId(self, value):
-		self._LttrOfCdtId = value if type(value) != base_types.auto else self.make_default("LttrOfCdtId")
+		self._LttrOfCdtId = value if value is not None else base_types.UninitialisedField(self, 'LttrOfCdtId', Max35Text, False)
 
 	@LttrOfCdtId.deleter
 	def LttrOfCdtId(self):
 		del self._LttrOfCdtId
-		self._LttrOfCdtId = None
+		self._LttrOfCdtId = base_types.UninitialisedField(self, 'LttrOfCdtId', Max35Text, False)
 
 	@property
 	def MktVal(self):
@@ -182,12 +182,12 @@ class OtherCollateral10(base_types._BaseFieldType):
 
 	@MktVal.setter
 	def MktVal(self, value):
-		self._MktVal = value if type(value) != base_types.auto else self.make_default("MktVal")
+		self._MktVal = value if value is not None else base_types.UninitialisedField(self, 'MktVal', ActiveCurrencyAndAmount, False)
 
 	@MktVal.deleter
 	def MktVal(self):
 		del self._MktVal
-		self._MktVal = None
+		self._MktVal = base_types.UninitialisedField(self, 'MktVal', ActiveCurrencyAndAmount, False)
 
 	@property
 	def OthrTpOfColl(self):
@@ -195,12 +195,12 @@ class OtherCollateral10(base_types._BaseFieldType):
 
 	@OthrTpOfColl.setter
 	def OthrTpOfColl(self, value):
-		self._OthrTpOfColl = value if type(value) != base_types.auto else self.make_default("OthrTpOfColl")
+		self._OthrTpOfColl = value if value is not None else base_types.UninitialisedField(self, 'OthrTpOfColl', OtherTypeOfCollateral3, False)
 
 	@OthrTpOfColl.deleter
 	def OthrTpOfColl(self):
 		del self._OthrTpOfColl
-		self._OthrTpOfColl = None
+		self._OthrTpOfColl = base_types.UninitialisedField(self, 'OthrTpOfColl', OtherTypeOfCollateral3, False)
 
 	@property
 	def SfkpgAcct(self):
@@ -208,12 +208,12 @@ class OtherCollateral10(base_types._BaseFieldType):
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
-		self._SfkpgAcct = None
+		self._SfkpgAcct = base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@property
 	def SfkpgPlc(self):
@@ -221,12 +221,12 @@ class OtherCollateral10(base_types._BaseFieldType):
 
 	@SfkpgPlc.setter
 	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
+		self._SfkpgPlc = value if value is not None else base_types.UninitialisedField(self, 'SfkpgPlc', SafekeepingPlaceFormat29Choice, False)
 
 	@SfkpgPlc.deleter
 	def SfkpgPlc(self):
 		del self._SfkpgPlc
-		self._SfkpgPlc = None
+		self._SfkpgPlc = base_types.UninitialisedField(self, 'SfkpgPlc', SafekeepingPlaceFormat29Choice, False)
 
 	@property
 	def ValDt(self):
@@ -234,12 +234,12 @@ class OtherCollateral10(base_types._BaseFieldType):
 
 	@ValDt.setter
 	def ValDt(self, value):
-		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
+		self._ValDt = value if value is not None else base_types.UninitialisedField(self, 'ValDt', ISODate, False)
 
 	@ValDt.deleter
 	def ValDt(self):
 		del self._ValDt
-		self._ValDt = None
+		self._ValDt = base_types.UninitialisedField(self, 'ValDt', ISODate, False)
 
 	@property
 	def XchgRate(self):
@@ -247,12 +247,12 @@ class OtherCollateral10(base_types._BaseFieldType):
 
 	@XchgRate.setter
 	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != base_types.auto else self.make_default("XchgRate")
+		self._XchgRate = value if value is not None else base_types.UninitialisedField(self, 'XchgRate', BaseOneRate, False)
 
 	@XchgRate.deleter
 	def XchgRate(self):
 		del self._XchgRate
-		self._XchgRate = None
+		self._XchgRate = base_types.UninitialisedField(self, 'XchgRate', BaseOneRate, False)
 
 	@property
 	def XpryDt(self):
@@ -260,12 +260,12 @@ class OtherCollateral10(base_types._BaseFieldType):
 
 	@XpryDt.setter
 	def XpryDt(self, value):
-		self._XpryDt = value if type(value) != base_types.auto else self.make_default("XpryDt")
+		self._XpryDt = value if value is not None else base_types.UninitialisedField(self, 'XpryDt', DateFormat14Choice, False)
 
 	@XpryDt.deleter
 	def XpryDt(self):
 		del self._XpryDt
-		self._XpryDt = None
+		self._XpryDt = base_types.UninitialisedField(self, 'XpryDt', DateFormat14Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AsstNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

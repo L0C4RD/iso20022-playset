@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISO2ALanguageCode import ISO2ALanguageCode
-from ._Max105Text import Max105Text
-from ._Max256Text import Max256Text
-from ._Max35Text import Max35Text
-from ._PhoneNumber import PhoneNumber
+from . import ISO2ALanguageCode
+from . import Max105Text
+from . import Max256Text
+from . import Max35Text
+from . import PhoneNumber
 
 class ContactBusiness2(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class ContactBusiness2(base_types._BaseFieldType):
 
 	@Email.setter
 	def Email(self, value):
-		self._Email = value if type(value) != base_types.auto else self.make_default("Email")
+		self._Email = value if value is not None else base_types.UninitialisedField(self, 'Email', Max256Text, False)
 
 	@Email.deleter
 	def Email(self):
 		del self._Email
-		self._Email = None
+		self._Email = base_types.UninitialisedField(self, 'Email', Max256Text, False)
 
 	@property
 	def Fax(self):
@@ -30,12 +30,12 @@ class ContactBusiness2(base_types._BaseFieldType):
 
 	@Fax.setter
 	def Fax(self, value):
-		self._Fax = value if type(value) != base_types.auto else self.make_default("Fax")
+		self._Fax = value if value is not None else base_types.UninitialisedField(self, 'Fax', PhoneNumber, False)
 
 	@Fax.deleter
 	def Fax(self):
 		del self._Fax
-		self._Fax = None
+		self._Fax = base_types.UninitialisedField(self, 'Fax', PhoneNumber, False)
 
 	@property
 	def GvnNm(self):
@@ -43,12 +43,12 @@ class ContactBusiness2(base_types._BaseFieldType):
 
 	@GvnNm.setter
 	def GvnNm(self, value):
-		self._GvnNm = value if type(value) != base_types.auto else self.make_default("GvnNm")
+		self._GvnNm = value if value is not None else base_types.UninitialisedField(self, 'GvnNm', Max35Text, False)
 
 	@GvnNm.deleter
 	def GvnNm(self):
 		del self._GvnNm
-		self._GvnNm = None
+		self._GvnNm = base_types.UninitialisedField(self, 'GvnNm', Max35Text, False)
 
 	@property
 	def Lang(self):
@@ -56,12 +56,12 @@ class ContactBusiness2(base_types._BaseFieldType):
 
 	@Lang.setter
 	def Lang(self, value):
-		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
+		self._Lang = value if value is not None else base_types.UninitialisedField(self, 'Lang', ISO2ALanguageCode, False)
 
 	@Lang.deleter
 	def Lang(self):
 		del self._Lang
-		self._Lang = None
+		self._Lang = base_types.UninitialisedField(self, 'Lang', ISO2ALanguageCode, False)
 
 	@property
 	def LastNm(self):
@@ -69,12 +69,12 @@ class ContactBusiness2(base_types._BaseFieldType):
 
 	@LastNm.setter
 	def LastNm(self, value):
-		self._LastNm = value if type(value) != base_types.auto else self.make_default("LastNm")
+		self._LastNm = value if value is not None else base_types.UninitialisedField(self, 'LastNm', Max35Text, False)
 
 	@LastNm.deleter
 	def LastNm(self):
 		del self._LastNm
-		self._LastNm = None
+		self._LastNm = base_types.UninitialisedField(self, 'LastNm', Max35Text, False)
 
 	@property
 	def MddlNm(self):
@@ -82,12 +82,12 @@ class ContactBusiness2(base_types._BaseFieldType):
 
 	@MddlNm.setter
 	def MddlNm(self, value):
-		self._MddlNm = value if type(value) != base_types.auto else self.make_default("MddlNm")
+		self._MddlNm = value if value is not None else base_types.UninitialisedField(self, 'MddlNm', Max35Text, False)
 
 	@MddlNm.deleter
 	def MddlNm(self):
 		del self._MddlNm
-		self._MddlNm = None
+		self._MddlNm = base_types.UninitialisedField(self, 'MddlNm', Max35Text, False)
 
 	@property
 	def Nm(self):
@@ -95,12 +95,12 @@ class ContactBusiness2(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max105Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max105Text, False)
 
 	@property
 	def Phne(self):
@@ -108,12 +108,12 @@ class ContactBusiness2(base_types._BaseFieldType):
 
 	@Phne.setter
 	def Phne(self, value):
-		self._Phne = value if type(value) != base_types.auto else self.make_default("Phne")
+		self._Phne = value if value is not None else base_types.UninitialisedField(self, 'Phne', PhoneNumber, False)
 
 	@Phne.deleter
 	def Phne(self):
 		del self._Phne
-		self._Phne = None
+		self._Phne = base_types.UninitialisedField(self, 'Phne', PhoneNumber, False)
 
 	@property
 	def PrprtyPhne(self):
@@ -121,12 +121,12 @@ class ContactBusiness2(base_types._BaseFieldType):
 
 	@PrprtyPhne.setter
 	def PrprtyPhne(self, value):
-		self._PrprtyPhne = value if type(value) != base_types.auto else self.make_default("PrprtyPhne")
+		self._PrprtyPhne = value if value is not None else base_types.UninitialisedField(self, 'PrprtyPhne', PhoneNumber, False)
 
 	@PrprtyPhne.deleter
 	def PrprtyPhne(self):
 		del self._PrprtyPhne
-		self._PrprtyPhne = None
+		self._PrprtyPhne = base_types.UninitialisedField(self, 'PrprtyPhne', PhoneNumber, False)
 
 	@property
 	def TollFreePhne(self):
@@ -134,12 +134,12 @@ class ContactBusiness2(base_types._BaseFieldType):
 
 	@TollFreePhne.setter
 	def TollFreePhne(self, value):
-		self._TollFreePhne = value if type(value) != base_types.auto else self.make_default("TollFreePhne")
+		self._TollFreePhne = value if value is not None else base_types.UninitialisedField(self, 'TollFreePhne', PhoneNumber, False)
 
 	@TollFreePhne.deleter
 	def TollFreePhne(self):
 		del self._TollFreePhne
-		self._TollFreePhne = None
+		self._TollFreePhne = base_types.UninitialisedField(self, 'TollFreePhne', PhoneNumber, False)
 
 	@property
 	def URL(self):
@@ -147,12 +147,12 @@ class ContactBusiness2(base_types._BaseFieldType):
 
 	@URL.setter
 	def URL(self, value):
-		self._URL = value if type(value) != base_types.auto else self.make_default("URL")
+		self._URL = value if value is not None else base_types.UninitialisedField(self, 'URL', Max256Text, False)
 
 	@URL.deleter
 	def URL(self):
 		del self._URL
-		self._URL = None
+		self._URL = base_types.UninitialisedField(self, 'URL', Max256Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Email', type=Max256Text, min=0, max=1, mutex_group=None, array=False),

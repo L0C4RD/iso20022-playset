@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._SystemClosure2 import SystemClosure2
-from ._SystemEvent3 import SystemEvent3
-from ._TimePeriod1 import TimePeriod1
+from . import ActiveCurrencyCode
+from . import SystemClosure2
+from . import SystemEvent3
+from . import TimePeriod1
 
 class SystemAvailabilityAndEvents3(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class SystemAvailabilityAndEvents3(base_types._BaseFieldType):
 
 	@ClsrInf.setter
 	def ClsrInf(self, value):
-		self._ClsrInf = value if type(value) != base_types.auto else self.make_default("ClsrInf")
+		self._ClsrInf = value if value is not None else base_types.UninitialisedField(self, 'ClsrInf', SystemClosure2, True)
 
 	@ClsrInf.deleter
 	def ClsrInf(self):
 		del self._ClsrInf
-		self._ClsrInf = None
+		self._ClsrInf = base_types.UninitialisedField(self, 'ClsrInf', SystemClosure2, True)
 
 	@property
 	def Evt(self):
@@ -29,12 +29,12 @@ class SystemAvailabilityAndEvents3(base_types._BaseFieldType):
 
 	@Evt.setter
 	def Evt(self, value):
-		self._Evt = value if type(value) != base_types.auto else self.make_default("Evt")
+		self._Evt = value if value is not None else base_types.UninitialisedField(self, 'Evt', SystemEvent3, True)
 
 	@Evt.deleter
 	def Evt(self):
 		del self._Evt
-		self._Evt = None
+		self._Evt = base_types.UninitialisedField(self, 'Evt', SystemEvent3, True)
 
 	@property
 	def SsnPrd(self):
@@ -42,12 +42,12 @@ class SystemAvailabilityAndEvents3(base_types._BaseFieldType):
 
 	@SsnPrd.setter
 	def SsnPrd(self, value):
-		self._SsnPrd = value if type(value) != base_types.auto else self.make_default("SsnPrd")
+		self._SsnPrd = value if value is not None else base_types.UninitialisedField(self, 'SsnPrd', TimePeriod1, False)
 
 	@SsnPrd.deleter
 	def SsnPrd(self):
 		del self._SsnPrd
-		self._SsnPrd = None
+		self._SsnPrd = base_types.UninitialisedField(self, 'SsnPrd', TimePeriod1, False)
 
 	@property
 	def SysCcy(self):
@@ -55,12 +55,12 @@ class SystemAvailabilityAndEvents3(base_types._BaseFieldType):
 
 	@SysCcy.setter
 	def SysCcy(self, value):
-		self._SysCcy = value if type(value) != base_types.auto else self.make_default("SysCcy")
+		self._SysCcy = value if value is not None else base_types.UninitialisedField(self, 'SysCcy', ActiveCurrencyCode, False)
 
 	@SysCcy.deleter
 	def SysCcy(self):
 		del self._SysCcy
-		self._SysCcy = None
+		self._SysCcy = base_types.UninitialisedField(self, 'SysCcy', ActiveCurrencyCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClsrInf', type=SystemClosure2, min=0, max=None, mutex_group=None, array=True),

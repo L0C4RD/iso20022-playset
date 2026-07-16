@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._CashAccountIdentification9Choice import CashAccountIdentification9Choice
-from ._CreditDebitCode import CreditDebitCode
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._DateFormat43Choice import DateFormat43Choice
-from ._RateAndAmountFormat55Choice import RateAndAmountFormat55Choice
+from . import ActiveCurrencyAndAmount
+from . import CashAccountIdentification9Choice
+from . import CreditDebitCode
+from . import DateAndDateTime2Choice
+from . import DateFormat43Choice
+from . import RateAndAmountFormat55Choice
 
 class CashOption106(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class CashOption106(base_types._BaseFieldType):
 
 	@CdtDbtInd.setter
 	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+		self._CdtDbtInd = value if value is not None else base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@CdtDbtInd.deleter
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
-		self._CdtDbtInd = None
+		self._CdtDbtInd = base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@property
 	def CshAcctId(self):
@@ -31,12 +31,12 @@ class CashOption106(base_types._BaseFieldType):
 
 	@CshAcctId.setter
 	def CshAcctId(self, value):
-		self._CshAcctId = value if type(value) != base_types.auto else self.make_default("CshAcctId")
+		self._CshAcctId = value if value is not None else base_types.UninitialisedField(self, 'CshAcctId', CashAccountIdentification9Choice, False)
 
 	@CshAcctId.deleter
 	def CshAcctId(self):
 		del self._CshAcctId
-		self._CshAcctId = None
+		self._CshAcctId = base_types.UninitialisedField(self, 'CshAcctId', CashAccountIdentification9Choice, False)
 
 	@property
 	def EarlstPmtDt(self):
@@ -44,12 +44,12 @@ class CashOption106(base_types._BaseFieldType):
 
 	@EarlstPmtDt.setter
 	def EarlstPmtDt(self, value):
-		self._EarlstPmtDt = value if type(value) != base_types.auto else self.make_default("EarlstPmtDt")
+		self._EarlstPmtDt = value if value is not None else base_types.UninitialisedField(self, 'EarlstPmtDt', DateAndDateTime2Choice, False)
 
 	@EarlstPmtDt.deleter
 	def EarlstPmtDt(self):
 		del self._EarlstPmtDt
-		self._EarlstPmtDt = None
+		self._EarlstPmtDt = base_types.UninitialisedField(self, 'EarlstPmtDt', DateAndDateTime2Choice, False)
 
 	@property
 	def EntitldAmt(self):
@@ -57,12 +57,12 @@ class CashOption106(base_types._BaseFieldType):
 
 	@EntitldAmt.setter
 	def EntitldAmt(self, value):
-		self._EntitldAmt = value if type(value) != base_types.auto else self.make_default("EntitldAmt")
+		self._EntitldAmt = value if value is not None else base_types.UninitialisedField(self, 'EntitldAmt', ActiveCurrencyAndAmount, False)
 
 	@EntitldAmt.deleter
 	def EntitldAmt(self):
 		del self._EntitldAmt
-		self._EntitldAmt = None
+		self._EntitldAmt = base_types.UninitialisedField(self, 'EntitldAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def GrssCshAmt(self):
@@ -70,12 +70,12 @@ class CashOption106(base_types._BaseFieldType):
 
 	@GrssCshAmt.setter
 	def GrssCshAmt(self, value):
-		self._GrssCshAmt = value if type(value) != base_types.auto else self.make_default("GrssCshAmt")
+		self._GrssCshAmt = value if value is not None else base_types.UninitialisedField(self, 'GrssCshAmt', ActiveCurrencyAndAmount, False)
 
 	@GrssCshAmt.deleter
 	def GrssCshAmt(self):
 		del self._GrssCshAmt
-		self._GrssCshAmt = None
+		self._GrssCshAmt = base_types.UninitialisedField(self, 'GrssCshAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def NetCshAmt(self):
@@ -83,12 +83,12 @@ class CashOption106(base_types._BaseFieldType):
 
 	@NetCshAmt.setter
 	def NetCshAmt(self, value):
-		self._NetCshAmt = value if type(value) != base_types.auto else self.make_default("NetCshAmt")
+		self._NetCshAmt = value if value is not None else base_types.UninitialisedField(self, 'NetCshAmt', ActiveCurrencyAndAmount, False)
 
 	@NetCshAmt.deleter
 	def NetCshAmt(self):
 		del self._NetCshAmt
-		self._NetCshAmt = None
+		self._NetCshAmt = base_types.UninitialisedField(self, 'NetCshAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def PmtDt(self):
@@ -96,12 +96,12 @@ class CashOption106(base_types._BaseFieldType):
 
 	@PmtDt.setter
 	def PmtDt(self, value):
-		self._PmtDt = value if type(value) != base_types.auto else self.make_default("PmtDt")
+		self._PmtDt = value if value is not None else base_types.UninitialisedField(self, 'PmtDt', DateFormat43Choice, False)
 
 	@PmtDt.deleter
 	def PmtDt(self):
 		del self._PmtDt
-		self._PmtDt = None
+		self._PmtDt = base_types.UninitialisedField(self, 'PmtDt', DateFormat43Choice, False)
 
 	@property
 	def WhldgTaxAmt(self):
@@ -109,12 +109,12 @@ class CashOption106(base_types._BaseFieldType):
 
 	@WhldgTaxAmt.setter
 	def WhldgTaxAmt(self, value):
-		self._WhldgTaxAmt = value if type(value) != base_types.auto else self.make_default("WhldgTaxAmt")
+		self._WhldgTaxAmt = value if value is not None else base_types.UninitialisedField(self, 'WhldgTaxAmt', ActiveCurrencyAndAmount, False)
 
 	@WhldgTaxAmt.deleter
 	def WhldgTaxAmt(self):
 		del self._WhldgTaxAmt
-		self._WhldgTaxAmt = None
+		self._WhldgTaxAmt = base_types.UninitialisedField(self, 'WhldgTaxAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def WhldgTaxRate(self):
@@ -122,12 +122,12 @@ class CashOption106(base_types._BaseFieldType):
 
 	@WhldgTaxRate.setter
 	def WhldgTaxRate(self, value):
-		self._WhldgTaxRate = value if type(value) != base_types.auto else self.make_default("WhldgTaxRate")
+		self._WhldgTaxRate = value if value is not None else base_types.UninitialisedField(self, 'WhldgTaxRate', RateAndAmountFormat55Choice, True)
 
 	@WhldgTaxRate.deleter
 	def WhldgTaxRate(self):
 		del self._WhldgTaxRate
-		self._WhldgTaxRate = None
+		self._WhldgTaxRate = base_types.UninitialisedField(self, 'WhldgTaxRate', RateAndAmountFormat55Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),

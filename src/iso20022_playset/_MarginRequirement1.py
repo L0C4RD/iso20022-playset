@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from . import ActiveCurrencyAndAmount
 
 class MarginRequirement1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class MarginRequirement1(base_types._BaseFieldType):
 
 	@DlvrMrgnAmt.setter
 	def DlvrMrgnAmt(self, value):
-		self._DlvrMrgnAmt = value if type(value) != base_types.auto else self.make_default("DlvrMrgnAmt")
+		self._DlvrMrgnAmt = value if value is not None else base_types.UninitialisedField(self, 'DlvrMrgnAmt', ActiveCurrencyAndAmount, False)
 
 	@DlvrMrgnAmt.deleter
 	def DlvrMrgnAmt(self):
 		del self._DlvrMrgnAmt
-		self._DlvrMrgnAmt = None
+		self._DlvrMrgnAmt = base_types.UninitialisedField(self, 'DlvrMrgnAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def RtrMrgnAmt(self):
@@ -26,12 +26,12 @@ class MarginRequirement1(base_types._BaseFieldType):
 
 	@RtrMrgnAmt.setter
 	def RtrMrgnAmt(self, value):
-		self._RtrMrgnAmt = value if type(value) != base_types.auto else self.make_default("RtrMrgnAmt")
+		self._RtrMrgnAmt = value if value is not None else base_types.UninitialisedField(self, 'RtrMrgnAmt', ActiveCurrencyAndAmount, False)
 
 	@RtrMrgnAmt.deleter
 	def RtrMrgnAmt(self):
 		del self._RtrMrgnAmt
-		self._RtrMrgnAmt = None
+		self._RtrMrgnAmt = base_types.UninitialisedField(self, 'RtrMrgnAmt', ActiveCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DlvrMrgnAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

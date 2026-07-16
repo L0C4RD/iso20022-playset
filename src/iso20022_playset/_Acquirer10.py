@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification177 import GenericIdentification177
-from ._Max256Text import Max256Text
+from . import GenericIdentification177
+from . import Max256Text
 
 class Acquirer10(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Acquirer10(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', GenericIdentification177, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', GenericIdentification177, False)
 
 	@property
 	def ParamsVrsn(self):
@@ -27,12 +27,12 @@ class Acquirer10(base_types._BaseFieldType):
 
 	@ParamsVrsn.setter
 	def ParamsVrsn(self, value):
-		self._ParamsVrsn = value if type(value) != base_types.auto else self.make_default("ParamsVrsn")
+		self._ParamsVrsn = value if value is not None else base_types.UninitialisedField(self, 'ParamsVrsn', Max256Text, False)
 
 	@ParamsVrsn.deleter
 	def ParamsVrsn(self):
 		del self._ParamsVrsn
-		self._ParamsVrsn = None
+		self._ParamsVrsn = base_types.UninitialisedField(self, 'ParamsVrsn', Max256Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=GenericIdentification177, min=0, max=1, mutex_group=None, array=False),

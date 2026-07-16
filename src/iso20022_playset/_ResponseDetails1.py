@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
+from . import Max350Text
+from . import Max35Text
 
 class ResponseDetails1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ResponseDetails1(base_types._BaseFieldType):
 
 	@AddtlDtls.setter
 	def AddtlDtls(self, value):
-		self._AddtlDtls = value if type(value) != base_types.auto else self.make_default("AddtlDtls")
+		self._AddtlDtls = value if value is not None else base_types.UninitialisedField(self, 'AddtlDtls', Max350Text, False)
 
 	@AddtlDtls.deleter
 	def AddtlDtls(self):
 		del self._AddtlDtls
-		self._AddtlDtls = None
+		self._AddtlDtls = base_types.UninitialisedField(self, 'AddtlDtls', Max350Text, False)
 
 	@property
 	def RspnCd(self):
@@ -27,12 +27,12 @@ class ResponseDetails1(base_types._BaseFieldType):
 
 	@RspnCd.setter
 	def RspnCd(self, value):
-		self._RspnCd = value if type(value) != base_types.auto else self.make_default("RspnCd")
+		self._RspnCd = value if value is not None else base_types.UninitialisedField(self, 'RspnCd', Max35Text, False)
 
 	@RspnCd.deleter
 	def RspnCd(self):
 		del self._RspnCd
-		self._RspnCd = None
+		self._RspnCd = base_types.UninitialisedField(self, 'RspnCd', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),

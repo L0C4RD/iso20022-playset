@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MarginCalculation1 import MarginCalculation1
-from ._MarginCalculation2 import MarginCalculation2
-from ._MarginProductType1Choice import MarginProductType1Choice
-from ._PartyIdentificationAndAccount31 import PartyIdentificationAndAccount31
-from ._SecuritiesAccount18 import SecuritiesAccount18
-from ._YesNoIndicator import YesNoIndicator
+from . import MarginCalculation1
+from . import MarginCalculation2
+from . import MarginProductType1Choice
+from . import PartyIdentificationAndAccount31
+from . import SecuritiesAccount18
+from . import YesNoIndicator
 
 class MarginReport2(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class MarginReport2(base_types._BaseFieldType):
 
 	@CollsdMrgnAcctInd.setter
 	def CollsdMrgnAcctInd(self, value):
-		self._CollsdMrgnAcctInd = value if type(value) != base_types.auto else self.make_default("CollsdMrgnAcctInd")
+		self._CollsdMrgnAcctInd = value if value is not None else base_types.UninitialisedField(self, 'CollsdMrgnAcctInd', YesNoIndicator, False)
 
 	@CollsdMrgnAcctInd.deleter
 	def CollsdMrgnAcctInd(self):
 		del self._CollsdMrgnAcctInd
-		self._CollsdMrgnAcctInd = None
+		self._CollsdMrgnAcctInd = base_types.UninitialisedField(self, 'CollsdMrgnAcctInd', YesNoIndicator, False)
 
 	@property
 	def MrgnAcct(self):
@@ -31,12 +31,12 @@ class MarginReport2(base_types._BaseFieldType):
 
 	@MrgnAcct.setter
 	def MrgnAcct(self, value):
-		self._MrgnAcct = value if type(value) != base_types.auto else self.make_default("MrgnAcct")
+		self._MrgnAcct = value if value is not None else base_types.UninitialisedField(self, 'MrgnAcct', SecuritiesAccount18, False)
 
 	@MrgnAcct.deleter
 	def MrgnAcct(self):
 		del self._MrgnAcct
-		self._MrgnAcct = None
+		self._MrgnAcct = base_types.UninitialisedField(self, 'MrgnAcct', SecuritiesAccount18, False)
 
 	@property
 	def MrgnClctn(self):
@@ -44,12 +44,12 @@ class MarginReport2(base_types._BaseFieldType):
 
 	@MrgnClctn.setter
 	def MrgnClctn(self, value):
-		self._MrgnClctn = value if type(value) != base_types.auto else self.make_default("MrgnClctn")
+		self._MrgnClctn = value if value is not None else base_types.UninitialisedField(self, 'MrgnClctn', MarginCalculation2, True)
 
 	@MrgnClctn.deleter
 	def MrgnClctn(self):
 		del self._MrgnClctn
-		self._MrgnClctn = None
+		self._MrgnClctn = base_types.UninitialisedField(self, 'MrgnClctn', MarginCalculation2, True)
 
 	@property
 	def MrgnClctnSummry(self):
@@ -57,12 +57,12 @@ class MarginReport2(base_types._BaseFieldType):
 
 	@MrgnClctnSummry.setter
 	def MrgnClctnSummry(self, value):
-		self._MrgnClctnSummry = value if type(value) != base_types.auto else self.make_default("MrgnClctnSummry")
+		self._MrgnClctnSummry = value if value is not None else base_types.UninitialisedField(self, 'MrgnClctnSummry', MarginCalculation1, False)
 
 	@MrgnClctnSummry.deleter
 	def MrgnClctnSummry(self):
 		del self._MrgnClctnSummry
-		self._MrgnClctnSummry = None
+		self._MrgnClctnSummry = base_types.UninitialisedField(self, 'MrgnClctnSummry', MarginCalculation1, False)
 
 	@property
 	def MrgnPdct(self):
@@ -70,12 +70,12 @@ class MarginReport2(base_types._BaseFieldType):
 
 	@MrgnPdct.setter
 	def MrgnPdct(self, value):
-		self._MrgnPdct = value if type(value) != base_types.auto else self.make_default("MrgnPdct")
+		self._MrgnPdct = value if value is not None else base_types.UninitialisedField(self, 'MrgnPdct', MarginProductType1Choice, True)
 
 	@MrgnPdct.deleter
 	def MrgnPdct(self):
 		del self._MrgnPdct
-		self._MrgnPdct = None
+		self._MrgnPdct = base_types.UninitialisedField(self, 'MrgnPdct', MarginProductType1Choice, True)
 
 	@property
 	def NonClrMmb(self):
@@ -83,12 +83,12 @@ class MarginReport2(base_types._BaseFieldType):
 
 	@NonClrMmb.setter
 	def NonClrMmb(self, value):
-		self._NonClrMmb = value if type(value) != base_types.auto else self.make_default("NonClrMmb")
+		self._NonClrMmb = value if value is not None else base_types.UninitialisedField(self, 'NonClrMmb', PartyIdentificationAndAccount31, True)
 
 	@NonClrMmb.deleter
 	def NonClrMmb(self):
 		del self._NonClrMmb
-		self._NonClrMmb = None
+		self._NonClrMmb = base_types.UninitialisedField(self, 'NonClrMmb', PartyIdentificationAndAccount31, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollsdMrgnAcctInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),

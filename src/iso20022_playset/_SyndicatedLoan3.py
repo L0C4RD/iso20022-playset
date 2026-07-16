@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ExchangeRate1 import ExchangeRate1
-from ._PercentageRate import PercentageRate
-from ._TradeParty6 import TradeParty6
+from . import ActiveCurrencyAndAmount
+from . import ExchangeRate1
+from . import PercentageRate
+from . import TradeParty6
 
 class SyndicatedLoan3(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class SyndicatedLoan3(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def Brrwr(self):
@@ -29,12 +29,12 @@ class SyndicatedLoan3(base_types._BaseFieldType):
 
 	@Brrwr.setter
 	def Brrwr(self, value):
-		self._Brrwr = value if type(value) != base_types.auto else self.make_default("Brrwr")
+		self._Brrwr = value if value is not None else base_types.UninitialisedField(self, 'Brrwr', TradeParty6, False)
 
 	@Brrwr.deleter
 	def Brrwr(self):
 		del self._Brrwr
-		self._Brrwr = None
+		self._Brrwr = base_types.UninitialisedField(self, 'Brrwr', TradeParty6, False)
 
 	@property
 	def Lndr(self):
@@ -42,12 +42,12 @@ class SyndicatedLoan3(base_types._BaseFieldType):
 
 	@Lndr.setter
 	def Lndr(self, value):
-		self._Lndr = value if type(value) != base_types.auto else self.make_default("Lndr")
+		self._Lndr = value if value is not None else base_types.UninitialisedField(self, 'Lndr', TradeParty6, False)
 
 	@Lndr.deleter
 	def Lndr(self):
 		del self._Lndr
-		self._Lndr = None
+		self._Lndr = base_types.UninitialisedField(self, 'Lndr', TradeParty6, False)
 
 	@property
 	def Shr(self):
@@ -55,12 +55,12 @@ class SyndicatedLoan3(base_types._BaseFieldType):
 
 	@Shr.setter
 	def Shr(self, value):
-		self._Shr = value if type(value) != base_types.auto else self.make_default("Shr")
+		self._Shr = value if value is not None else base_types.UninitialisedField(self, 'Shr', PercentageRate, False)
 
 	@Shr.deleter
 	def Shr(self):
 		del self._Shr
-		self._Shr = None
+		self._Shr = base_types.UninitialisedField(self, 'Shr', PercentageRate, False)
 
 	@property
 	def XchgRateInf(self):
@@ -68,12 +68,12 @@ class SyndicatedLoan3(base_types._BaseFieldType):
 
 	@XchgRateInf.setter
 	def XchgRateInf(self, value):
-		self._XchgRateInf = value if type(value) != base_types.auto else self.make_default("XchgRateInf")
+		self._XchgRateInf = value if value is not None else base_types.UninitialisedField(self, 'XchgRateInf', ExchangeRate1, False)
 
 	@XchgRateInf.deleter
 	def XchgRateInf(self):
 		del self._XchgRateInf
-		self._XchgRateInf = None
+		self._XchgRateInf = base_types.UninitialisedField(self, 'XchgRateInf', ExchangeRate1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

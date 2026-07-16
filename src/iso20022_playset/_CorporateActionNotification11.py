@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionNotificationType1Code import CorporateActionNotificationType1Code
-from ._CorporateActionProcessingStatus6Choice import CorporateActionProcessingStatus6Choice
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from . import CorporateActionNotificationType1Code
+from . import CorporateActionProcessingStatus6Choice
+from . import RestrictedFINXMax16Text
 
 class CorporateActionNotification11(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CorporateActionNotification11(base_types._BaseFieldType):
 
 	@NtfctnId.setter
 	def NtfctnId(self, value):
-		self._NtfctnId = value if type(value) != base_types.auto else self.make_default("NtfctnId")
+		self._NtfctnId = value if value is not None else base_types.UninitialisedField(self, 'NtfctnId', RestrictedFINXMax16Text, False)
 
 	@NtfctnId.deleter
 	def NtfctnId(self):
 		del self._NtfctnId
-		self._NtfctnId = None
+		self._NtfctnId = base_types.UninitialisedField(self, 'NtfctnId', RestrictedFINXMax16Text, False)
 
 	@property
 	def NtfctnTp(self):
@@ -28,12 +28,12 @@ class CorporateActionNotification11(base_types._BaseFieldType):
 
 	@NtfctnTp.setter
 	def NtfctnTp(self, value):
-		self._NtfctnTp = value if type(value) != base_types.auto else self.make_default("NtfctnTp")
+		self._NtfctnTp = value if value is not None else base_types.UninitialisedField(self, 'NtfctnTp', CorporateActionNotificationType1Code, False)
 
 	@NtfctnTp.deleter
 	def NtfctnTp(self):
 		del self._NtfctnTp
-		self._NtfctnTp = None
+		self._NtfctnTp = base_types.UninitialisedField(self, 'NtfctnTp', CorporateActionNotificationType1Code, False)
 
 	@property
 	def PrcgSts(self):
@@ -41,12 +41,12 @@ class CorporateActionNotification11(base_types._BaseFieldType):
 
 	@PrcgSts.setter
 	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != base_types.auto else self.make_default("PrcgSts")
+		self._PrcgSts = value if value is not None else base_types.UninitialisedField(self, 'PrcgSts', CorporateActionProcessingStatus6Choice, False)
 
 	@PrcgSts.deleter
 	def PrcgSts(self):
 		del self._PrcgSts
-		self._PrcgSts = None
+		self._PrcgSts = base_types.UninitialisedField(self, 'PrcgSts', CorporateActionProcessingStatus6Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NtfctnId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=None, array=False),

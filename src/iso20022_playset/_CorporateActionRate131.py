@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GrossDividendRateFormat39Choice import GrossDividendRateFormat39Choice
-from ._InterestRateUsedForPaymentFormat19Choice import InterestRateUsedForPaymentFormat19Choice
-from ._NetDividendRateFormat41Choice import NetDividendRateFormat41Choice
-from ._Percentage14Rate import Percentage14Rate
-from ._RateAndAmountFormat66Choice import RateAndAmountFormat66Choice
-from ._RateAndAmountFormat67Choice import RateAndAmountFormat67Choice
-from ._RateTypeAndAmountAndStatus33 import RateTypeAndAmountAndStatus33
+from . import GrossDividendRateFormat39Choice
+from . import InterestRateUsedForPaymentFormat19Choice
+from . import NetDividendRateFormat41Choice
+from . import Percentage14Rate
+from . import RateAndAmountFormat66Choice
+from . import RateAndAmountFormat67Choice
+from . import RateTypeAndAmountAndStatus33
 
 class CorporateActionRate131(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class CorporateActionRate131(base_types._BaseFieldType):
 
 	@AddtlTax.setter
 	def AddtlTax(self, value):
-		self._AddtlTax = value if type(value) != base_types.auto else self.make_default("AddtlTax")
+		self._AddtlTax = value if value is not None else base_types.UninitialisedField(self, 'AddtlTax', RateAndAmountFormat67Choice, False)
 
 	@AddtlTax.deleter
 	def AddtlTax(self):
 		del self._AddtlTax
-		self._AddtlTax = None
+		self._AddtlTax = base_types.UninitialisedField(self, 'AddtlTax', RateAndAmountFormat67Choice, False)
 
 	@property
 	def GrssDstrbtnRate(self):
@@ -32,12 +32,12 @@ class CorporateActionRate131(base_types._BaseFieldType):
 
 	@GrssDstrbtnRate.setter
 	def GrssDstrbtnRate(self, value):
-		self._GrssDstrbtnRate = value if type(value) != base_types.auto else self.make_default("GrssDstrbtnRate")
+		self._GrssDstrbtnRate = value if value is not None else base_types.UninitialisedField(self, 'GrssDstrbtnRate', GrossDividendRateFormat39Choice, True)
 
 	@GrssDstrbtnRate.deleter
 	def GrssDstrbtnRate(self):
 		del self._GrssDstrbtnRate
-		self._GrssDstrbtnRate = None
+		self._GrssDstrbtnRate = base_types.UninitialisedField(self, 'GrssDstrbtnRate', GrossDividendRateFormat39Choice, True)
 
 	@property
 	def GrssIntrstRateUsdForPmt(self):
@@ -45,12 +45,12 @@ class CorporateActionRate131(base_types._BaseFieldType):
 
 	@GrssIntrstRateUsdForPmt.setter
 	def GrssIntrstRateUsdForPmt(self, value):
-		self._GrssIntrstRateUsdForPmt = value if type(value) != base_types.auto else self.make_default("GrssIntrstRateUsdForPmt")
+		self._GrssIntrstRateUsdForPmt = value if value is not None else base_types.UninitialisedField(self, 'GrssIntrstRateUsdForPmt', InterestRateUsedForPaymentFormat19Choice, True)
 
 	@GrssIntrstRateUsdForPmt.deleter
 	def GrssIntrstRateUsdForPmt(self):
 		del self._GrssIntrstRateUsdForPmt
-		self._GrssIntrstRateUsdForPmt = None
+		self._GrssIntrstRateUsdForPmt = base_types.UninitialisedField(self, 'GrssIntrstRateUsdForPmt', InterestRateUsedForPaymentFormat19Choice, True)
 
 	@property
 	def MaxAllwdOvrsbcptRate(self):
@@ -58,12 +58,12 @@ class CorporateActionRate131(base_types._BaseFieldType):
 
 	@MaxAllwdOvrsbcptRate.setter
 	def MaxAllwdOvrsbcptRate(self, value):
-		self._MaxAllwdOvrsbcptRate = value if type(value) != base_types.auto else self.make_default("MaxAllwdOvrsbcptRate")
+		self._MaxAllwdOvrsbcptRate = value if value is not None else base_types.UninitialisedField(self, 'MaxAllwdOvrsbcptRate', Percentage14Rate, False)
 
 	@MaxAllwdOvrsbcptRate.deleter
 	def MaxAllwdOvrsbcptRate(self):
 		del self._MaxAllwdOvrsbcptRate
-		self._MaxAllwdOvrsbcptRate = None
+		self._MaxAllwdOvrsbcptRate = base_types.UninitialisedField(self, 'MaxAllwdOvrsbcptRate', Percentage14Rate, False)
 
 	@property
 	def NetDstrbtnRate(self):
@@ -71,12 +71,12 @@ class CorporateActionRate131(base_types._BaseFieldType):
 
 	@NetDstrbtnRate.setter
 	def NetDstrbtnRate(self, value):
-		self._NetDstrbtnRate = value if type(value) != base_types.auto else self.make_default("NetDstrbtnRate")
+		self._NetDstrbtnRate = value if value is not None else base_types.UninitialisedField(self, 'NetDstrbtnRate', NetDividendRateFormat41Choice, True)
 
 	@NetDstrbtnRate.deleter
 	def NetDstrbtnRate(self):
 		del self._NetDstrbtnRate
-		self._NetDstrbtnRate = None
+		self._NetDstrbtnRate = base_types.UninitialisedField(self, 'NetDstrbtnRate', NetDividendRateFormat41Choice, True)
 
 	@property
 	def PrratnRate(self):
@@ -84,12 +84,12 @@ class CorporateActionRate131(base_types._BaseFieldType):
 
 	@PrratnRate.setter
 	def PrratnRate(self, value):
-		self._PrratnRate = value if type(value) != base_types.auto else self.make_default("PrratnRate")
+		self._PrratnRate = value if value is not None else base_types.UninitialisedField(self, 'PrratnRate', Percentage14Rate, False)
 
 	@PrratnRate.deleter
 	def PrratnRate(self):
 		del self._PrratnRate
-		self._PrratnRate = None
+		self._PrratnRate = base_types.UninitialisedField(self, 'PrratnRate', Percentage14Rate, False)
 
 	@property
 	def ScndLvlTax(self):
@@ -97,12 +97,12 @@ class CorporateActionRate131(base_types._BaseFieldType):
 
 	@ScndLvlTax.setter
 	def ScndLvlTax(self, value):
-		self._ScndLvlTax = value if type(value) != base_types.auto else self.make_default("ScndLvlTax")
+		self._ScndLvlTax = value if value is not None else base_types.UninitialisedField(self, 'ScndLvlTax', RateAndAmountFormat66Choice, True)
 
 	@ScndLvlTax.deleter
 	def ScndLvlTax(self):
 		del self._ScndLvlTax
-		self._ScndLvlTax = None
+		self._ScndLvlTax = base_types.UninitialisedField(self, 'ScndLvlTax', RateAndAmountFormat66Choice, True)
 
 	@property
 	def TaxblIncmPerDvddShr(self):
@@ -110,12 +110,12 @@ class CorporateActionRate131(base_types._BaseFieldType):
 
 	@TaxblIncmPerDvddShr.setter
 	def TaxblIncmPerDvddShr(self, value):
-		self._TaxblIncmPerDvddShr = value if type(value) != base_types.auto else self.make_default("TaxblIncmPerDvddShr")
+		self._TaxblIncmPerDvddShr = value if value is not None else base_types.UninitialisedField(self, 'TaxblIncmPerDvddShr', RateTypeAndAmountAndStatus33, True)
 
 	@TaxblIncmPerDvddShr.deleter
 	def TaxblIncmPerDvddShr(self):
 		del self._TaxblIncmPerDvddShr
-		self._TaxblIncmPerDvddShr = None
+		self._TaxblIncmPerDvddShr = base_types.UninitialisedField(self, 'TaxblIncmPerDvddShr', RateTypeAndAmountAndStatus33, True)
 
 	@property
 	def WhldgTaxRate(self):
@@ -123,12 +123,12 @@ class CorporateActionRate131(base_types._BaseFieldType):
 
 	@WhldgTaxRate.setter
 	def WhldgTaxRate(self, value):
-		self._WhldgTaxRate = value if type(value) != base_types.auto else self.make_default("WhldgTaxRate")
+		self._WhldgTaxRate = value if value is not None else base_types.UninitialisedField(self, 'WhldgTaxRate', RateAndAmountFormat66Choice, True)
 
 	@WhldgTaxRate.deleter
 	def WhldgTaxRate(self):
 		del self._WhldgTaxRate
-		self._WhldgTaxRate = None
+		self._WhldgTaxRate = base_types.UninitialisedField(self, 'WhldgTaxRate', RateAndAmountFormat66Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlTax', type=RateAndAmountFormat67Choice, min=0, max=1, mutex_group=None, array=False),

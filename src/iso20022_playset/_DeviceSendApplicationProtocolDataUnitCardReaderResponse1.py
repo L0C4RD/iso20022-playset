@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Min1Max256Binary import Min1Max256Binary
+from . import Min1Max256Binary
 
 class DeviceSendApplicationProtocolDataUnitCardReaderResponse1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class DeviceSendApplicationProtocolDataUnitCardReaderResponse1(base_types._BaseF
 
 	@CardSts.setter
 	def CardSts(self, value):
-		self._CardSts = value if type(value) != base_types.auto else self.make_default("CardSts")
+		self._CardSts = value if value is not None else base_types.UninitialisedField(self, 'CardSts', Min1Max256Binary, False)
 
 	@CardSts.deleter
 	def CardSts(self):
 		del self._CardSts
-		self._CardSts = None
+		self._CardSts = base_types.UninitialisedField(self, 'CardSts', Min1Max256Binary, False)
 
 	@property
 	def Data(self):
@@ -26,12 +26,12 @@ class DeviceSendApplicationProtocolDataUnitCardReaderResponse1(base_types._BaseF
 
 	@Data.setter
 	def Data(self, value):
-		self._Data = value if type(value) != base_types.auto else self.make_default("Data")
+		self._Data = value if value is not None else base_types.UninitialisedField(self, 'Data', Min1Max256Binary, False)
 
 	@Data.deleter
 	def Data(self):
 		del self._Data
-		self._Data = None
+		self._Data = base_types.UninitialisedField(self, 'Data', Min1Max256Binary, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CardSts', type=Min1Max256Binary, min=1, max=1, mutex_group=None, array=False),

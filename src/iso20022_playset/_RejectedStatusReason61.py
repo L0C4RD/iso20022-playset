@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max210Text import Max210Text
-from ._RejectedReason64Choice import RejectedReason64Choice
+from . import Max210Text
+from . import RejectedReason64Choice
 
 class RejectedStatusReason61(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class RejectedStatusReason61(base_types._BaseFieldType):
 
 	@AddtlRsnInf.setter
 	def AddtlRsnInf(self, value):
-		self._AddtlRsnInf = value if type(value) != base_types.auto else self.make_default("AddtlRsnInf")
+		self._AddtlRsnInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlRsnInf', Max210Text, False)
 
 	@AddtlRsnInf.deleter
 	def AddtlRsnInf(self):
 		del self._AddtlRsnInf
-		self._AddtlRsnInf = None
+		self._AddtlRsnInf = base_types.UninitialisedField(self, 'AddtlRsnInf', Max210Text, False)
 
 	@property
 	def RsnCd(self):
@@ -27,12 +27,12 @@ class RejectedStatusReason61(base_types._BaseFieldType):
 
 	@RsnCd.setter
 	def RsnCd(self, value):
-		self._RsnCd = value if type(value) != base_types.auto else self.make_default("RsnCd")
+		self._RsnCd = value if value is not None else base_types.UninitialisedField(self, 'RsnCd', RejectedReason64Choice, False)
 
 	@RsnCd.deleter
 	def RsnCd(self):
 		del self._RsnCd
-		self._RsnCd = None
+		self._RsnCd = base_types.UninitialisedField(self, 'RsnCd', RejectedReason64Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlRsnInf', type=Max210Text, min=0, max=1, mutex_group=None, array=False),

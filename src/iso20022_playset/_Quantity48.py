@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
-from ._Max210Text import Max210Text
-from ._QuantityBreakdown62 import QuantityBreakdown62
-from ._SecuritiesCertificate4 import SecuritiesCertificate4
+from . import FinancialInstrumentQuantity33Choice
+from . import Max210Text
+from . import QuantityBreakdown62
+from . import SecuritiesCertificate4
 
 class Quantity48(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class Quantity48(base_types._BaseFieldType):
 
 	@CertNb.setter
 	def CertNb(self, value):
-		self._CertNb = value if type(value) != base_types.auto else self.make_default("CertNb")
+		self._CertNb = value if value is not None else base_types.UninitialisedField(self, 'CertNb', SecuritiesCertificate4, True)
 
 	@CertNb.deleter
 	def CertNb(self):
 		del self._CertNb
-		self._CertNb = None
+		self._CertNb = base_types.UninitialisedField(self, 'CertNb', SecuritiesCertificate4, True)
 
 	@property
 	def DnmtnChc(self):
@@ -29,12 +29,12 @@ class Quantity48(base_types._BaseFieldType):
 
 	@DnmtnChc.setter
 	def DnmtnChc(self, value):
-		self._DnmtnChc = value if type(value) != base_types.auto else self.make_default("DnmtnChc")
+		self._DnmtnChc = value if value is not None else base_types.UninitialisedField(self, 'DnmtnChc', Max210Text, False)
 
 	@DnmtnChc.deleter
 	def DnmtnChc(self):
 		del self._DnmtnChc
-		self._DnmtnChc = None
+		self._DnmtnChc = base_types.UninitialisedField(self, 'DnmtnChc', Max210Text, False)
 
 	@property
 	def QtyBrkdwn(self):
@@ -42,12 +42,12 @@ class Quantity48(base_types._BaseFieldType):
 
 	@QtyBrkdwn.setter
 	def QtyBrkdwn(self, value):
-		self._QtyBrkdwn = value if type(value) != base_types.auto else self.make_default("QtyBrkdwn")
+		self._QtyBrkdwn = value if value is not None else base_types.UninitialisedField(self, 'QtyBrkdwn', QuantityBreakdown62, True)
 
 	@QtyBrkdwn.deleter
 	def QtyBrkdwn(self):
 		del self._QtyBrkdwn
-		self._QtyBrkdwn = None
+		self._QtyBrkdwn = base_types.UninitialisedField(self, 'QtyBrkdwn', QuantityBreakdown62, True)
 
 	@property
 	def SttlmQty(self):
@@ -55,12 +55,12 @@ class Quantity48(base_types._BaseFieldType):
 
 	@SttlmQty.setter
 	def SttlmQty(self, value):
-		self._SttlmQty = value if type(value) != base_types.auto else self.make_default("SttlmQty")
+		self._SttlmQty = value if value is not None else base_types.UninitialisedField(self, 'SttlmQty', FinancialInstrumentQuantity33Choice, False)
 
 	@SttlmQty.deleter
 	def SttlmQty(self):
 		del self._SttlmQty
-		self._SttlmQty = None
+		self._SttlmQty = base_types.UninitialisedField(self, 'SttlmQty', FinancialInstrumentQuantity33Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CertNb', type=SecuritiesCertificate4, min=0, max=None, mutex_group=None, array=True),

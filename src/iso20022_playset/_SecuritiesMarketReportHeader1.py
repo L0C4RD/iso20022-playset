@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._Period4Choice import Period4Choice
-from ._TradingVenueIdentification1Choice import TradingVenueIdentification1Choice
+from . import ISODateTime
+from . import Period4Choice
+from . import TradingVenueIdentification1Choice
 
 class SecuritiesMarketReportHeader1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SecuritiesMarketReportHeader1(base_types._BaseFieldType):
 
 	@RptgNtty.setter
 	def RptgNtty(self, value):
-		self._RptgNtty = value if type(value) != base_types.auto else self.make_default("RptgNtty")
+		self._RptgNtty = value if value is not None else base_types.UninitialisedField(self, 'RptgNtty', TradingVenueIdentification1Choice, False)
 
 	@RptgNtty.deleter
 	def RptgNtty(self):
 		del self._RptgNtty
-		self._RptgNtty = None
+		self._RptgNtty = base_types.UninitialisedField(self, 'RptgNtty', TradingVenueIdentification1Choice, False)
 
 	@property
 	def RptgPrd(self):
@@ -28,12 +28,12 @@ class SecuritiesMarketReportHeader1(base_types._BaseFieldType):
 
 	@RptgPrd.setter
 	def RptgPrd(self, value):
-		self._RptgPrd = value if type(value) != base_types.auto else self.make_default("RptgPrd")
+		self._RptgPrd = value if value is not None else base_types.UninitialisedField(self, 'RptgPrd', Period4Choice, False)
 
 	@RptgPrd.deleter
 	def RptgPrd(self):
 		del self._RptgPrd
-		self._RptgPrd = None
+		self._RptgPrd = base_types.UninitialisedField(self, 'RptgPrd', Period4Choice, False)
 
 	@property
 	def SubmissnDtTm(self):
@@ -41,12 +41,12 @@ class SecuritiesMarketReportHeader1(base_types._BaseFieldType):
 
 	@SubmissnDtTm.setter
 	def SubmissnDtTm(self, value):
-		self._SubmissnDtTm = value if type(value) != base_types.auto else self.make_default("SubmissnDtTm")
+		self._SubmissnDtTm = value if value is not None else base_types.UninitialisedField(self, 'SubmissnDtTm', ISODateTime, False)
 
 	@SubmissnDtTm.deleter
 	def SubmissnDtTm(self):
 		del self._SubmissnDtTm
-		self._SubmissnDtTm = None
+		self._SubmissnDtTm = base_types.UninitialisedField(self, 'SubmissnDtTm', ISODateTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RptgNtty', type=TradingVenueIdentification1Choice, min=1, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CustomerOrder1 import CustomerOrder1
-from ._Max35Text import Max35Text
-from ._PaymentTransaction183 import PaymentTransaction183
+from . import CustomerOrder1
+from . import Max35Text
+from . import PaymentTransaction183
 
 class RetailerReversalResult8(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class RetailerReversalResult8(base_types._BaseFieldType):
 
 	@CstmrOrdr.setter
 	def CstmrOrdr(self, value):
-		self._CstmrOrdr = value if type(value) != base_types.auto else self.make_default("CstmrOrdr")
+		self._CstmrOrdr = value if value is not None else base_types.UninitialisedField(self, 'CstmrOrdr', CustomerOrder1, True)
 
 	@CstmrOrdr.deleter
 	def CstmrOrdr(self):
 		del self._CstmrOrdr
-		self._CstmrOrdr = None
+		self._CstmrOrdr = base_types.UninitialisedField(self, 'CstmrOrdr', CustomerOrder1, True)
 
 	@property
 	def OrgnlPmtTx(self):
@@ -28,12 +28,12 @@ class RetailerReversalResult8(base_types._BaseFieldType):
 
 	@OrgnlPmtTx.setter
 	def OrgnlPmtTx(self, value):
-		self._OrgnlPmtTx = value if type(value) != base_types.auto else self.make_default("OrgnlPmtTx")
+		self._OrgnlPmtTx = value if value is not None else base_types.UninitialisedField(self, 'OrgnlPmtTx', PaymentTransaction183, False)
 
 	@OrgnlPmtTx.deleter
 	def OrgnlPmtTx(self):
 		del self._OrgnlPmtTx
-		self._OrgnlPmtTx = None
+		self._OrgnlPmtTx = base_types.UninitialisedField(self, 'OrgnlPmtTx', PaymentTransaction183, False)
 
 	@property
 	def POIRcncltnId(self):
@@ -41,12 +41,12 @@ class RetailerReversalResult8(base_types._BaseFieldType):
 
 	@POIRcncltnId.setter
 	def POIRcncltnId(self, value):
-		self._POIRcncltnId = value if type(value) != base_types.auto else self.make_default("POIRcncltnId")
+		self._POIRcncltnId = value if value is not None else base_types.UninitialisedField(self, 'POIRcncltnId', Max35Text, False)
 
 	@POIRcncltnId.deleter
 	def POIRcncltnId(self):
 		del self._POIRcncltnId
-		self._POIRcncltnId = None
+		self._POIRcncltnId = base_types.UninitialisedField(self, 'POIRcncltnId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CstmrOrdr', type=CustomerOrder1, min=0, max=None, mutex_group=None, array=True),

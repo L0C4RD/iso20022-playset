@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CreditDebitCode import CreditDebitCode
-from ._DateFormat58Choice import DateFormat58Choice
-from ._Quantity6Choice import Quantity6Choice
-from ._SecurityIdentification19 import SecurityIdentification19
+from . import CreditDebitCode
+from . import DateFormat58Choice
+from . import Quantity6Choice
+from . import SecurityIdentification19
 
 class SecuritiesOption76(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class SecuritiesOption76(base_types._BaseFieldType):
 
 	@CdtDbtInd.setter
 	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+		self._CdtDbtInd = value if value is not None else base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@CdtDbtInd.deleter
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
-		self._CdtDbtInd = None
+		self._CdtDbtInd = base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@property
 	def EntitldQty(self):
@@ -29,12 +29,12 @@ class SecuritiesOption76(base_types._BaseFieldType):
 
 	@EntitldQty.setter
 	def EntitldQty(self, value):
-		self._EntitldQty = value if type(value) != base_types.auto else self.make_default("EntitldQty")
+		self._EntitldQty = value if value is not None else base_types.UninitialisedField(self, 'EntitldQty', Quantity6Choice, False)
 
 	@EntitldQty.deleter
 	def EntitldQty(self):
 		del self._EntitldQty
-		self._EntitldQty = None
+		self._EntitldQty = base_types.UninitialisedField(self, 'EntitldQty', Quantity6Choice, False)
 
 	@property
 	def FinInstrmId(self):
@@ -42,12 +42,12 @@ class SecuritiesOption76(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
 		del self._FinInstrmId
-		self._FinInstrmId = None
+		self._FinInstrmId = base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@property
 	def PmtDt(self):
@@ -55,12 +55,12 @@ class SecuritiesOption76(base_types._BaseFieldType):
 
 	@PmtDt.setter
 	def PmtDt(self, value):
-		self._PmtDt = value if type(value) != base_types.auto else self.make_default("PmtDt")
+		self._PmtDt = value if value is not None else base_types.UninitialisedField(self, 'PmtDt', DateFormat58Choice, False)
 
 	@PmtDt.deleter
 	def PmtDt(self):
 		del self._PmtDt
-		self._PmtDt = None
+		self._PmtDt = base_types.UninitialisedField(self, 'PmtDt', DateFormat58Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),

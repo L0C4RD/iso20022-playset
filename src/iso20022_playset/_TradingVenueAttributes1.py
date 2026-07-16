@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._MICIdentifier import MICIdentifier
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ISODateTime
+from . import MICIdentifier
+from . import TrueFalseIndicator
 
 class TradingVenueAttributes1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TradingVenueAttributes1(base_types._BaseFieldType):
 
 	@AdmssnApprvlDtByIssr.setter
 	def AdmssnApprvlDtByIssr(self, value):
-		self._AdmssnApprvlDtByIssr = value if type(value) != base_types.auto else self.make_default("AdmssnApprvlDtByIssr")
+		self._AdmssnApprvlDtByIssr = value if value is not None else base_types.UninitialisedField(self, 'AdmssnApprvlDtByIssr', ISODateTime, False)
 
 	@AdmssnApprvlDtByIssr.deleter
 	def AdmssnApprvlDtByIssr(self):
 		del self._AdmssnApprvlDtByIssr
-		self._AdmssnApprvlDtByIssr = None
+		self._AdmssnApprvlDtByIssr = base_types.UninitialisedField(self, 'AdmssnApprvlDtByIssr', ISODateTime, False)
 
 	@property
 	def FrstTradDt(self):
@@ -28,12 +28,12 @@ class TradingVenueAttributes1(base_types._BaseFieldType):
 
 	@FrstTradDt.setter
 	def FrstTradDt(self, value):
-		self._FrstTradDt = value if type(value) != base_types.auto else self.make_default("FrstTradDt")
+		self._FrstTradDt = value if value is not None else base_types.UninitialisedField(self, 'FrstTradDt', ISODateTime, False)
 
 	@FrstTradDt.deleter
 	def FrstTradDt(self):
 		del self._FrstTradDt
-		self._FrstTradDt = None
+		self._FrstTradDt = base_types.UninitialisedField(self, 'FrstTradDt', ISODateTime, False)
 
 	@property
 	def Id(self):
@@ -41,12 +41,12 @@ class TradingVenueAttributes1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', MICIdentifier, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', MICIdentifier, False)
 
 	@property
 	def IssrReq(self):
@@ -54,12 +54,12 @@ class TradingVenueAttributes1(base_types._BaseFieldType):
 
 	@IssrReq.setter
 	def IssrReq(self, value):
-		self._IssrReq = value if type(value) != base_types.auto else self.make_default("IssrReq")
+		self._IssrReq = value if value is not None else base_types.UninitialisedField(self, 'IssrReq', TrueFalseIndicator, False)
 
 	@IssrReq.deleter
 	def IssrReq(self):
 		del self._IssrReq
-		self._IssrReq = None
+		self._IssrReq = base_types.UninitialisedField(self, 'IssrReq', TrueFalseIndicator, False)
 
 	@property
 	def ReqForAdmssnDt(self):
@@ -67,12 +67,12 @@ class TradingVenueAttributes1(base_types._BaseFieldType):
 
 	@ReqForAdmssnDt.setter
 	def ReqForAdmssnDt(self, value):
-		self._ReqForAdmssnDt = value if type(value) != base_types.auto else self.make_default("ReqForAdmssnDt")
+		self._ReqForAdmssnDt = value if value is not None else base_types.UninitialisedField(self, 'ReqForAdmssnDt', ISODateTime, False)
 
 	@ReqForAdmssnDt.deleter
 	def ReqForAdmssnDt(self):
 		del self._ReqForAdmssnDt
-		self._ReqForAdmssnDt = None
+		self._ReqForAdmssnDt = base_types.UninitialisedField(self, 'ReqForAdmssnDt', ISODateTime, False)
 
 	@property
 	def TermntnDt(self):
@@ -80,12 +80,12 @@ class TradingVenueAttributes1(base_types._BaseFieldType):
 
 	@TermntnDt.setter
 	def TermntnDt(self, value):
-		self._TermntnDt = value if type(value) != base_types.auto else self.make_default("TermntnDt")
+		self._TermntnDt = value if value is not None else base_types.UninitialisedField(self, 'TermntnDt', ISODateTime, False)
 
 	@TermntnDt.deleter
 	def TermntnDt(self):
 		del self._TermntnDt
-		self._TermntnDt = None
+		self._TermntnDt = base_types.UninitialisedField(self, 'TermntnDt', ISODateTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AdmssnApprvlDtByIssr', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),

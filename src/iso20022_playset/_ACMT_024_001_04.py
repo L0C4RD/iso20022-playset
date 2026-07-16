@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IdentificationVerificationReportV04 import IdentificationVerificationReportV04
+from . import IdentificationVerificationReportV04
 
 class ACMT_024_001_04():
 
@@ -18,12 +18,12 @@ class ACMT_024_001_04():
 
 		@IdVrfctnRpt.setter
 		def IdVrfctnRpt(self, value):
-			self._IdVrfctnRpt = value if type(value) != base_types.auto else self.make_default("IdVrfctnRpt")
+			self._IdVrfctnRpt = value if value is not None else base_types.UninitialisedField(self, 'IdVrfctnRpt', IdentificationVerificationReportV04, False)
 
 		@IdVrfctnRpt.deleter
 		def IdVrfctnRpt(self):
 			del self._IdVrfctnRpt
-			self._IdVrfctnRpt = None
+			self._IdVrfctnRpt = base_types.UninitialisedField(self, 'IdVrfctnRpt', IdentificationVerificationReportV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='IdVrfctnRpt', type=IdentificationVerificationReportV04, min=1, max=1, mutex_group=None, array=False),

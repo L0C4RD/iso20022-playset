@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._OwnershipType3Choice import OwnershipType3Choice
-from ._PercentageRate import PercentageRate
+from . import OwnershipType3Choice
+from . import PercentageRate
 
 class Ownership1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Ownership1(base_types._BaseFieldType):
 
 	@OwnrshPctg.setter
 	def OwnrshPctg(self, value):
-		self._OwnrshPctg = value if type(value) != base_types.auto else self.make_default("OwnrshPctg")
+		self._OwnrshPctg = value if value is not None else base_types.UninitialisedField(self, 'OwnrshPctg', PercentageRate, False)
 
 	@OwnrshPctg.deleter
 	def OwnrshPctg(self):
 		del self._OwnrshPctg
-		self._OwnrshPctg = None
+		self._OwnrshPctg = base_types.UninitialisedField(self, 'OwnrshPctg', PercentageRate, False)
 
 	@property
 	def OwnrshTp(self):
@@ -27,12 +27,12 @@ class Ownership1(base_types._BaseFieldType):
 
 	@OwnrshTp.setter
 	def OwnrshTp(self, value):
-		self._OwnrshTp = value if type(value) != base_types.auto else self.make_default("OwnrshTp")
+		self._OwnrshTp = value if value is not None else base_types.UninitialisedField(self, 'OwnrshTp', OwnershipType3Choice, False)
 
 	@OwnrshTp.deleter
 	def OwnrshTp(self):
 		del self._OwnrshTp
-		self._OwnrshTp = None
+		self._OwnrshTp = base_types.UninitialisedField(self, 'OwnrshTp', OwnershipType3Choice, False)
 
 	@property
 	def UsfrctPctg(self):
@@ -40,12 +40,12 @@ class Ownership1(base_types._BaseFieldType):
 
 	@UsfrctPctg.setter
 	def UsfrctPctg(self, value):
-		self._UsfrctPctg = value if type(value) != base_types.auto else self.make_default("UsfrctPctg")
+		self._UsfrctPctg = value if value is not None else base_types.UninitialisedField(self, 'UsfrctPctg', PercentageRate, False)
 
 	@UsfrctPctg.deleter
 	def UsfrctPctg(self):
 		del self._UsfrctPctg
-		self._UsfrctPctg = None
+		self._UsfrctPctg = base_types.UninitialisedField(self, 'UsfrctPctg', PercentageRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OwnrshPctg', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),

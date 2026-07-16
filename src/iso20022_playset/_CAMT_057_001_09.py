@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NotificationToReceiveV09 import NotificationToReceiveV09
+from . import NotificationToReceiveV09
 
 class CAMT_057_001_09():
 
@@ -18,12 +18,12 @@ class CAMT_057_001_09():
 
 		@NtfctnToRcv.setter
 		def NtfctnToRcv(self, value):
-			self._NtfctnToRcv = value if type(value) != base_types.auto else self.make_default("NtfctnToRcv")
+			self._NtfctnToRcv = value if value is not None else base_types.UninitialisedField(self, 'NtfctnToRcv', NotificationToReceiveV09, False)
 
 		@NtfctnToRcv.deleter
 		def NtfctnToRcv(self):
 			del self._NtfctnToRcv
-			self._NtfctnToRcv = None
+			self._NtfctnToRcv = base_types.UninitialisedField(self, 'NtfctnToRcv', NotificationToReceiveV09, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='NtfctnToRcv', type=NotificationToReceiveV09, min=1, max=1, mutex_group=None, array=False),

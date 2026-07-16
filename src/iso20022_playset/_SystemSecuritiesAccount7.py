@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Exact4AlphaNumericText import Exact4AlphaNumericText
-from ._ISODate import ISODate
-from ._MarketSpecificAttribute1 import MarketSpecificAttribute1
-from ._Max35Text import Max35Text
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
-from ._SystemRestriction1 import SystemRestriction1
-from ._SystemSecuritiesAccountType1Choice import SystemSecuritiesAccountType1Choice
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import Exact4AlphaNumericText
+from . import ISODate
+from . import MarketSpecificAttribute1
+from . import Max35Text
+from . import SystemPartyIdentification8
+from . import SystemRestriction1
+from . import SystemSecuritiesAccountType1Choice
+from . import TrueFalseIndicator
 
 class SystemSecuritiesAccount7(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class SystemSecuritiesAccount7(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', SystemPartyIdentification8, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', SystemPartyIdentification8, False)
 
 	@property
 	def ClsgDt(self):
@@ -33,12 +33,12 @@ class SystemSecuritiesAccount7(base_types._BaseFieldType):
 
 	@ClsgDt.setter
 	def ClsgDt(self, value):
-		self._ClsgDt = value if type(value) != base_types.auto else self.make_default("ClsgDt")
+		self._ClsgDt = value if value is not None else base_types.UninitialisedField(self, 'ClsgDt', ISODate, False)
 
 	@ClsgDt.deleter
 	def ClsgDt(self):
 		del self._ClsgDt
-		self._ClsgDt = None
+		self._ClsgDt = base_types.UninitialisedField(self, 'ClsgDt', ISODate, False)
 
 	@property
 	def EndInvstrFlg(self):
@@ -46,12 +46,12 @@ class SystemSecuritiesAccount7(base_types._BaseFieldType):
 
 	@EndInvstrFlg.setter
 	def EndInvstrFlg(self, value):
-		self._EndInvstrFlg = value if type(value) != base_types.auto else self.make_default("EndInvstrFlg")
+		self._EndInvstrFlg = value if value is not None else base_types.UninitialisedField(self, 'EndInvstrFlg', Exact4AlphaNumericText, False)
 
 	@EndInvstrFlg.deleter
 	def EndInvstrFlg(self):
 		del self._EndInvstrFlg
-		self._EndInvstrFlg = None
+		self._EndInvstrFlg = base_types.UninitialisedField(self, 'EndInvstrFlg', Exact4AlphaNumericText, False)
 
 	@property
 	def HldInd(self):
@@ -59,12 +59,12 @@ class SystemSecuritiesAccount7(base_types._BaseFieldType):
 
 	@HldInd.setter
 	def HldInd(self, value):
-		self._HldInd = value if type(value) != base_types.auto else self.make_default("HldInd")
+		self._HldInd = value if value is not None else base_types.UninitialisedField(self, 'HldInd', TrueFalseIndicator, False)
 
 	@HldInd.deleter
 	def HldInd(self):
 		del self._HldInd
-		self._HldInd = None
+		self._HldInd = base_types.UninitialisedField(self, 'HldInd', TrueFalseIndicator, False)
 
 	@property
 	def Id(self):
@@ -72,12 +72,12 @@ class SystemSecuritiesAccount7(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def MktSpcfcAttr(self):
@@ -85,12 +85,12 @@ class SystemSecuritiesAccount7(base_types._BaseFieldType):
 
 	@MktSpcfcAttr.setter
 	def MktSpcfcAttr(self, value):
-		self._MktSpcfcAttr = value if type(value) != base_types.auto else self.make_default("MktSpcfcAttr")
+		self._MktSpcfcAttr = value if value is not None else base_types.UninitialisedField(self, 'MktSpcfcAttr', MarketSpecificAttribute1, True)
 
 	@MktSpcfcAttr.deleter
 	def MktSpcfcAttr(self):
 		del self._MktSpcfcAttr
-		self._MktSpcfcAttr = None
+		self._MktSpcfcAttr = base_types.UninitialisedField(self, 'MktSpcfcAttr', MarketSpecificAttribute1, True)
 
 	@property
 	def NegPos(self):
@@ -98,12 +98,12 @@ class SystemSecuritiesAccount7(base_types._BaseFieldType):
 
 	@NegPos.setter
 	def NegPos(self, value):
-		self._NegPos = value if type(value) != base_types.auto else self.make_default("NegPos")
+		self._NegPos = value if value is not None else base_types.UninitialisedField(self, 'NegPos', TrueFalseIndicator, False)
 
 	@NegPos.deleter
 	def NegPos(self):
 		del self._NegPos
-		self._NegPos = None
+		self._NegPos = base_types.UninitialisedField(self, 'NegPos', TrueFalseIndicator, False)
 
 	@property
 	def OpngDt(self):
@@ -111,12 +111,12 @@ class SystemSecuritiesAccount7(base_types._BaseFieldType):
 
 	@OpngDt.setter
 	def OpngDt(self, value):
-		self._OpngDt = value if type(value) != base_types.auto else self.make_default("OpngDt")
+		self._OpngDt = value if value is not None else base_types.UninitialisedField(self, 'OpngDt', ISODate, False)
 
 	@OpngDt.deleter
 	def OpngDt(self):
 		del self._OpngDt
-		self._OpngDt = None
+		self._OpngDt = base_types.UninitialisedField(self, 'OpngDt', ISODate, False)
 
 	@property
 	def PricgSchme(self):
@@ -124,12 +124,12 @@ class SystemSecuritiesAccount7(base_types._BaseFieldType):
 
 	@PricgSchme.setter
 	def PricgSchme(self, value):
-		self._PricgSchme = value if type(value) != base_types.auto else self.make_default("PricgSchme")
+		self._PricgSchme = value if value is not None else base_types.UninitialisedField(self, 'PricgSchme', Exact4AlphaNumericText, False)
 
 	@PricgSchme.deleter
 	def PricgSchme(self):
 		del self._PricgSchme
-		self._PricgSchme = None
+		self._PricgSchme = base_types.UninitialisedField(self, 'PricgSchme', Exact4AlphaNumericText, False)
 
 	@property
 	def Rstrctn(self):
@@ -137,12 +137,12 @@ class SystemSecuritiesAccount7(base_types._BaseFieldType):
 
 	@Rstrctn.setter
 	def Rstrctn(self, value):
-		self._Rstrctn = value if type(value) != base_types.auto else self.make_default("Rstrctn")
+		self._Rstrctn = value if value is not None else base_types.UninitialisedField(self, 'Rstrctn', SystemRestriction1, True)
 
 	@Rstrctn.deleter
 	def Rstrctn(self):
 		del self._Rstrctn
-		self._Rstrctn = None
+		self._Rstrctn = base_types.UninitialisedField(self, 'Rstrctn', SystemRestriction1, True)
 
 	@property
 	def Tp(self):
@@ -150,12 +150,12 @@ class SystemSecuritiesAccount7(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', SystemSecuritiesAccountType1Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', SystemSecuritiesAccountType1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnr', type=SystemPartyIdentification8, min=1, max=1, mutex_group=None, array=False),

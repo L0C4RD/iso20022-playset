@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTimeChoice import DateAndDateTimeChoice
-from ._Max35Text import Max35Text
-from ._SecuritiesAccount9 import SecuritiesAccount9
-from ._SecurityIdentification7 import SecurityIdentification7
-from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
+from . import DateAndDateTimeChoice
+from . import Max35Text
+from . import SecuritiesAccount9
+from . import SecurityIdentification7
+from . import UnitOrFaceAmount1Choice
 
 class CorporateActionSecuritiesMovement2(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class CorporateActionSecuritiesMovement2(base_types._BaseFieldType):
 
 	@AcctDtls.setter
 	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != base_types.auto else self.make_default("AcctDtls")
+		self._AcctDtls = value if value is not None else base_types.UninitialisedField(self, 'AcctDtls', SecuritiesAccount9, False)
 
 	@AcctDtls.deleter
 	def AcctDtls(self):
 		del self._AcctDtls
-		self._AcctDtls = None
+		self._AcctDtls = base_types.UninitialisedField(self, 'AcctDtls', SecuritiesAccount9, False)
 
 	@property
 	def PstngDtTm(self):
@@ -30,12 +30,12 @@ class CorporateActionSecuritiesMovement2(base_types._BaseFieldType):
 
 	@PstngDtTm.setter
 	def PstngDtTm(self, value):
-		self._PstngDtTm = value if type(value) != base_types.auto else self.make_default("PstngDtTm")
+		self._PstngDtTm = value if value is not None else base_types.UninitialisedField(self, 'PstngDtTm', DateAndDateTimeChoice, False)
 
 	@PstngDtTm.deleter
 	def PstngDtTm(self):
 		del self._PstngDtTm
-		self._PstngDtTm = None
+		self._PstngDtTm = base_types.UninitialisedField(self, 'PstngDtTm', DateAndDateTimeChoice, False)
 
 	@property
 	def PstngId(self):
@@ -43,12 +43,12 @@ class CorporateActionSecuritiesMovement2(base_types._BaseFieldType):
 
 	@PstngId.setter
 	def PstngId(self, value):
-		self._PstngId = value if type(value) != base_types.auto else self.make_default("PstngId")
+		self._PstngId = value if value is not None else base_types.UninitialisedField(self, 'PstngId', Max35Text, False)
 
 	@PstngId.deleter
 	def PstngId(self):
 		del self._PstngId
-		self._PstngId = None
+		self._PstngId = base_types.UninitialisedField(self, 'PstngId', Max35Text, False)
 
 	@property
 	def PstngQty(self):
@@ -56,12 +56,12 @@ class CorporateActionSecuritiesMovement2(base_types._BaseFieldType):
 
 	@PstngQty.setter
 	def PstngQty(self, value):
-		self._PstngQty = value if type(value) != base_types.auto else self.make_default("PstngQty")
+		self._PstngQty = value if value is not None else base_types.UninitialisedField(self, 'PstngQty', UnitOrFaceAmount1Choice, False)
 
 	@PstngQty.deleter
 	def PstngQty(self):
 		del self._PstngQty
-		self._PstngQty = None
+		self._PstngQty = base_types.UninitialisedField(self, 'PstngQty', UnitOrFaceAmount1Choice, False)
 
 	@property
 	def SctyId(self):
@@ -69,12 +69,12 @@ class CorporateActionSecuritiesMovement2(base_types._BaseFieldType):
 
 	@SctyId.setter
 	def SctyId(self, value):
-		self._SctyId = value if type(value) != base_types.auto else self.make_default("SctyId")
+		self._SctyId = value if value is not None else base_types.UninitialisedField(self, 'SctyId', SecurityIdentification7, False)
 
 	@SctyId.deleter
 	def SctyId(self):
 		del self._SctyId
-		self._SctyId = None
+		self._SctyId = base_types.UninitialisedField(self, 'SctyId', SecurityIdentification7, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctDtls', type=SecuritiesAccount9, min=1, max=2, mutex_group=None, array=False),

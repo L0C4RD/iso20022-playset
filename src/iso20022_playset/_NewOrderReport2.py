@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max140Text import Max140Text
-from ._OrderData3 import OrderData3
+from . import Max140Text
+from . import OrderData3
 
 class NewOrderReport2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class NewOrderReport2(base_types._BaseFieldType):
 
 	@Ordr.setter
 	def Ordr(self, value):
-		self._Ordr = value if type(value) != base_types.auto else self.make_default("Ordr")
+		self._Ordr = value if value is not None else base_types.UninitialisedField(self, 'Ordr', OrderData3, True)
 
 	@Ordr.deleter
 	def Ordr(self):
 		del self._Ordr
-		self._Ordr = None
+		self._Ordr = base_types.UninitialisedField(self, 'Ordr', OrderData3, True)
 
 	@property
 	def RptId(self):
@@ -27,12 +27,12 @@ class NewOrderReport2(base_types._BaseFieldType):
 
 	@RptId.setter
 	def RptId(self, value):
-		self._RptId = value if type(value) != base_types.auto else self.make_default("RptId")
+		self._RptId = value if value is not None else base_types.UninitialisedField(self, 'RptId', Max140Text, False)
 
 	@RptId.deleter
 	def RptId(self):
 		del self._RptId
-		self._RptId = None
+		self._RptId = base_types.UninitialisedField(self, 'RptId', Max140Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ordr', type=OrderData3, min=1, max=None, mutex_group=None, array=True),

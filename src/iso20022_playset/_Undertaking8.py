@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._PartyIdentification43 import PartyIdentification43
+from . import Max35Text
+from . import PartyIdentification43
 
 class Undertaking8(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Undertaking8(base_types._BaseFieldType):
 
 	@ApplcntRefNb.setter
 	def ApplcntRefNb(self, value):
-		self._ApplcntRefNb = value if type(value) != base_types.auto else self.make_default("ApplcntRefNb")
+		self._ApplcntRefNb = value if value is not None else base_types.UninitialisedField(self, 'ApplcntRefNb', Max35Text, False)
 
 	@ApplcntRefNb.deleter
 	def ApplcntRefNb(self):
 		del self._ApplcntRefNb
-		self._ApplcntRefNb = None
+		self._ApplcntRefNb = base_types.UninitialisedField(self, 'ApplcntRefNb', Max35Text, False)
 
 	@property
 	def BnfcryRefNb(self):
@@ -27,12 +27,12 @@ class Undertaking8(base_types._BaseFieldType):
 
 	@BnfcryRefNb.setter
 	def BnfcryRefNb(self, value):
-		self._BnfcryRefNb = value if type(value) != base_types.auto else self.make_default("BnfcryRefNb")
+		self._BnfcryRefNb = value if value is not None else base_types.UninitialisedField(self, 'BnfcryRefNb', Max35Text, False)
 
 	@BnfcryRefNb.deleter
 	def BnfcryRefNb(self):
 		del self._BnfcryRefNb
-		self._BnfcryRefNb = None
+		self._BnfcryRefNb = base_types.UninitialisedField(self, 'BnfcryRefNb', Max35Text, False)
 
 	@property
 	def Id(self):
@@ -40,12 +40,12 @@ class Undertaking8(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def Issr(self):
@@ -53,12 +53,12 @@ class Undertaking8(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+		self._Issr = value if value is not None else base_types.UninitialisedField(self, 'Issr', PartyIdentification43, False)
 
 	@Issr.deleter
 	def Issr(self):
 		del self._Issr
-		self._Issr = None
+		self._Issr = base_types.UninitialisedField(self, 'Issr', PartyIdentification43, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ApplcntRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

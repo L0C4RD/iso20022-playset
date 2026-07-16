@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CollateralType6Code import CollateralType6Code
-from ._ExposureType10Code import ExposureType10Code
-from ._Operation3Code import Operation3Code
+from . import CollateralType6Code
+from . import ExposureType10Code
+from . import Operation3Code
 
 class TradeTypeQueryCriteria2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TradeTypeQueryCriteria2(base_types._BaseFieldType):
 
 	@CollCmpntTp.setter
 	def CollCmpntTp(self, value):
-		self._CollCmpntTp = value if type(value) != base_types.auto else self.make_default("CollCmpntTp")
+		self._CollCmpntTp = value if value is not None else base_types.UninitialisedField(self, 'CollCmpntTp', CollateralType6Code, True)
 
 	@CollCmpntTp.deleter
 	def CollCmpntTp(self):
 		del self._CollCmpntTp
-		self._CollCmpntTp = None
+		self._CollCmpntTp = base_types.UninitialisedField(self, 'CollCmpntTp', CollateralType6Code, True)
 
 	@property
 	def Oprtr(self):
@@ -28,12 +28,12 @@ class TradeTypeQueryCriteria2(base_types._BaseFieldType):
 
 	@Oprtr.setter
 	def Oprtr(self, value):
-		self._Oprtr = value if type(value) != base_types.auto else self.make_default("Oprtr")
+		self._Oprtr = value if value is not None else base_types.UninitialisedField(self, 'Oprtr', Operation3Code, False)
 
 	@Oprtr.deleter
 	def Oprtr(self):
 		del self._Oprtr
-		self._Oprtr = None
+		self._Oprtr = base_types.UninitialisedField(self, 'Oprtr', Operation3Code, False)
 
 	@property
 	def SctiesFincgTxTp(self):
@@ -41,12 +41,12 @@ class TradeTypeQueryCriteria2(base_types._BaseFieldType):
 
 	@SctiesFincgTxTp.setter
 	def SctiesFincgTxTp(self, value):
-		self._SctiesFincgTxTp = value if type(value) != base_types.auto else self.make_default("SctiesFincgTxTp")
+		self._SctiesFincgTxTp = value if value is not None else base_types.UninitialisedField(self, 'SctiesFincgTxTp', ExposureType10Code, True)
 
 	@SctiesFincgTxTp.deleter
 	def SctiesFincgTxTp(self):
 		del self._SctiesFincgTxTp
-		self._SctiesFincgTxTp = None
+		self._SctiesFincgTxTp = base_types.UninitialisedField(self, 'SctiesFincgTxTp', ExposureType10Code, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollCmpntTp', type=CollateralType6Code, min=0, max=None, mutex_group=None, array=True),

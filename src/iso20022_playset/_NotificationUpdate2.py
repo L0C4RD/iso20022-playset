@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._YesNoIndicator import YesNoIndicator
+from . import Max35Text
+from . import YesNoIndicator
 
 class NotificationUpdate2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class NotificationUpdate2(base_types._BaseFieldType):
 
 	@PrvsNtfctnId.setter
 	def PrvsNtfctnId(self, value):
-		self._PrvsNtfctnId = value if type(value) != base_types.auto else self.make_default("PrvsNtfctnId")
+		self._PrvsNtfctnId = value if value is not None else base_types.UninitialisedField(self, 'PrvsNtfctnId', Max35Text, False)
 
 	@PrvsNtfctnId.deleter
 	def PrvsNtfctnId(self):
 		del self._PrvsNtfctnId
-		self._PrvsNtfctnId = None
+		self._PrvsNtfctnId = base_types.UninitialisedField(self, 'PrvsNtfctnId', Max35Text, False)
 
 	@property
 	def RcnfrmInstrs(self):
@@ -27,12 +27,12 @@ class NotificationUpdate2(base_types._BaseFieldType):
 
 	@RcnfrmInstrs.setter
 	def RcnfrmInstrs(self, value):
-		self._RcnfrmInstrs = value if type(value) != base_types.auto else self.make_default("RcnfrmInstrs")
+		self._RcnfrmInstrs = value if value is not None else base_types.UninitialisedField(self, 'RcnfrmInstrs', YesNoIndicator, False)
 
 	@RcnfrmInstrs.deleter
 	def RcnfrmInstrs(self):
 		del self._RcnfrmInstrs
-		self._RcnfrmInstrs = None
+		self._RcnfrmInstrs = base_types.UninitialisedField(self, 'RcnfrmInstrs', YesNoIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrvsNtfctnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

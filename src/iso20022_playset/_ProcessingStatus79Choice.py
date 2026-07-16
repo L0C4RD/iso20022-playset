@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcknowledgedAcceptedStatus33Choice import AcknowledgedAcceptedStatus33Choice
-from ._RejectionOrRepairStatus31Choice import RejectionOrRepairStatus31Choice
+from . import AcknowledgedAcceptedStatus33Choice
+from . import RejectionOrRepairStatus31Choice
 
 class ProcessingStatus79Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ProcessingStatus79Choice(base_types._BaseFieldType):
 
 	@AckdAccptd.setter
 	def AckdAccptd(self, value):
-		self._AckdAccptd = value if type(value) != base_types.auto else self.make_default("AckdAccptd")
+		self._AckdAccptd = value if value is not None else base_types.UninitialisedField(self, 'AckdAccptd', AcknowledgedAcceptedStatus33Choice, False)
 
 	@AckdAccptd.deleter
 	def AckdAccptd(self):
 		del self._AckdAccptd
-		self._AckdAccptd = None
+		self._AckdAccptd = base_types.UninitialisedField(self, 'AckdAccptd', AcknowledgedAcceptedStatus33Choice, False)
 
 	@property
 	def Rjctd(self):
@@ -27,12 +27,12 @@ class ProcessingStatus79Choice(base_types._BaseFieldType):
 
 	@Rjctd.setter
 	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
+		self._Rjctd = value if value is not None else base_types.UninitialisedField(self, 'Rjctd', RejectionOrRepairStatus31Choice, False)
 
 	@Rjctd.deleter
 	def Rjctd(self):
 		del self._Rjctd
-		self._Rjctd = None
+		self._Rjctd = base_types.UninitialisedField(self, 'Rjctd', RejectionOrRepairStatus31Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus33Choice, min=0, max=1, mutex_group=1, array=False),

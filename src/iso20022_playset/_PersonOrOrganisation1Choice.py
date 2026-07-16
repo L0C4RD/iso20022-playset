@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InternalPartyRole1Code import InternalPartyRole1Code
-from ._LEIIdentifier import LEIIdentifier
-from ._MICIdentifier import MICIdentifier
-from ._PersonIdentification10 import PersonIdentification10
+from . import InternalPartyRole1Code
+from . import LEIIdentifier
+from . import MICIdentifier
+from . import PersonIdentification10
 
 class PersonOrOrganisation1Choice(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class PersonOrOrganisation1Choice(base_types._BaseFieldType):
 
 	@Intl.setter
 	def Intl(self, value):
-		self._Intl = value if type(value) != base_types.auto else self.make_default("Intl")
+		self._Intl = value if value is not None else base_types.UninitialisedField(self, 'Intl', InternalPartyRole1Code, False)
 
 	@Intl.deleter
 	def Intl(self):
 		del self._Intl
-		self._Intl = None
+		self._Intl = base_types.UninitialisedField(self, 'Intl', InternalPartyRole1Code, False)
 
 	@property
 	def LEI(self):
@@ -29,12 +29,12 @@ class PersonOrOrganisation1Choice(base_types._BaseFieldType):
 
 	@LEI.setter
 	def LEI(self, value):
-		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
+		self._LEI = value if value is not None else base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	@LEI.deleter
 	def LEI(self):
 		del self._LEI
-		self._LEI = None
+		self._LEI = base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	@property
 	def MIC(self):
@@ -42,12 +42,12 @@ class PersonOrOrganisation1Choice(base_types._BaseFieldType):
 
 	@MIC.setter
 	def MIC(self, value):
-		self._MIC = value if type(value) != base_types.auto else self.make_default("MIC")
+		self._MIC = value if value is not None else base_types.UninitialisedField(self, 'MIC', MICIdentifier, False)
 
 	@MIC.deleter
 	def MIC(self):
 		del self._MIC
-		self._MIC = None
+		self._MIC = base_types.UninitialisedField(self, 'MIC', MICIdentifier, False)
 
 	@property
 	def Prsn(self):
@@ -55,12 +55,12 @@ class PersonOrOrganisation1Choice(base_types._BaseFieldType):
 
 	@Prsn.setter
 	def Prsn(self, value):
-		self._Prsn = value if type(value) != base_types.auto else self.make_default("Prsn")
+		self._Prsn = value if value is not None else base_types.UninitialisedField(self, 'Prsn', PersonIdentification10, False)
 
 	@Prsn.deleter
 	def Prsn(self):
 		del self._Prsn
-		self._Prsn = None
+		self._Prsn = base_types.UninitialisedField(self, 'Prsn', PersonIdentification10, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Intl', type=InternalPartyRole1Code, min=0, max=1, mutex_group=1, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CertificateManagementRequest3 import CertificateManagementRequest3
-from ._ContentInformationType38 import ContentInformationType38
-from ._TMSHeader1 import TMSHeader1
+from . import CertificateManagementRequest3
+from . import ContentInformationType38
+from . import TMSHeader1
 
 class CertificateManagementRequestV07(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CertificateManagementRequestV07(base_types._BaseFieldType):
 
 	@CertMgmtReq.setter
 	def CertMgmtReq(self, value):
-		self._CertMgmtReq = value if type(value) != base_types.auto else self.make_default("CertMgmtReq")
+		self._CertMgmtReq = value if value is not None else base_types.UninitialisedField(self, 'CertMgmtReq', CertificateManagementRequest3, False)
 
 	@CertMgmtReq.deleter
 	def CertMgmtReq(self):
 		del self._CertMgmtReq
-		self._CertMgmtReq = None
+		self._CertMgmtReq = base_types.UninitialisedField(self, 'CertMgmtReq', CertificateManagementRequest3, False)
 
 	@property
 	def Hdr(self):
@@ -28,12 +28,12 @@ class CertificateManagementRequestV07(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', TMSHeader1, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', TMSHeader1, False)
 
 	@property
 	def SctyTrlr(self):
@@ -41,12 +41,12 @@ class CertificateManagementRequestV07(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType38, False)
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
 		del self._SctyTrlr
-		self._SctyTrlr = None
+		self._SctyTrlr = base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType38, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CertMgmtReq', type=CertificateManagementRequest3, min=1, max=1, mutex_group=None, array=False),

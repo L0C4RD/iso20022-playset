@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContentInformationType37 import ContentInformationType37
-from ._Header70 import Header70
-from ._NonFinancialRequestComponent5 import NonFinancialRequestComponent5
+from . import ContentInformationType37
+from . import Header70
+from . import NonFinancialRequestComponent5
 
 class AcceptorNonFinancialRequestV05(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AcceptorNonFinancialRequestV05(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header70, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header70, False)
 
 	@property
 	def NonFinReq(self):
@@ -28,12 +28,12 @@ class AcceptorNonFinancialRequestV05(base_types._BaseFieldType):
 
 	@NonFinReq.setter
 	def NonFinReq(self, value):
-		self._NonFinReq = value if type(value) != base_types.auto else self.make_default("NonFinReq")
+		self._NonFinReq = value if value is not None else base_types.UninitialisedField(self, 'NonFinReq', NonFinancialRequestComponent5, False)
 
 	@NonFinReq.deleter
 	def NonFinReq(self):
 		del self._NonFinReq
-		self._NonFinReq = None
+		self._NonFinReq = base_types.UninitialisedField(self, 'NonFinReq', NonFinancialRequestComponent5, False)
 
 	@property
 	def SctyTrlr(self):
@@ -41,12 +41,12 @@ class AcceptorNonFinancialRequestV05(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType37, False)
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
 		del self._SctyTrlr
-		self._SctyTrlr = None
+		self._SctyTrlr = base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType37, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Hdr', type=Header70, min=1, max=1, mutex_group=None, array=False),

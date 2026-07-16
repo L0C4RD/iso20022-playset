@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AuthenticatedData10 import AuthenticatedData10
-from ._ContentType2Code import ContentType2Code
-from ._SignedData9 import SignedData9
+from . import AuthenticatedData10
+from . import ContentType2Code
+from . import SignedData9
 
 class ContentInformationType38(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ContentInformationType38(base_types._BaseFieldType):
 
 	@AuthntcdData.setter
 	def AuthntcdData(self, value):
-		self._AuthntcdData = value if type(value) != base_types.auto else self.make_default("AuthntcdData")
+		self._AuthntcdData = value if value is not None else base_types.UninitialisedField(self, 'AuthntcdData', AuthenticatedData10, False)
 
 	@AuthntcdData.deleter
 	def AuthntcdData(self):
 		del self._AuthntcdData
-		self._AuthntcdData = None
+		self._AuthntcdData = base_types.UninitialisedField(self, 'AuthntcdData', AuthenticatedData10, False)
 
 	@property
 	def CnttTp(self):
@@ -28,12 +28,12 @@ class ContentInformationType38(base_types._BaseFieldType):
 
 	@CnttTp.setter
 	def CnttTp(self, value):
-		self._CnttTp = value if type(value) != base_types.auto else self.make_default("CnttTp")
+		self._CnttTp = value if value is not None else base_types.UninitialisedField(self, 'CnttTp', ContentType2Code, False)
 
 	@CnttTp.deleter
 	def CnttTp(self):
 		del self._CnttTp
-		self._CnttTp = None
+		self._CnttTp = base_types.UninitialisedField(self, 'CnttTp', ContentType2Code, False)
 
 	@property
 	def SgndData(self):
@@ -41,12 +41,12 @@ class ContentInformationType38(base_types._BaseFieldType):
 
 	@SgndData.setter
 	def SgndData(self, value):
-		self._SgndData = value if type(value) != base_types.auto else self.make_default("SgndData")
+		self._SgndData = value if value is not None else base_types.UninitialisedField(self, 'SgndData', SignedData9, False)
 
 	@SgndData.deleter
 	def SgndData(self):
 		del self._SgndData
-		self._SgndData = None
+		self._SgndData = base_types.UninitialisedField(self, 'SgndData', SignedData9, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AuthntcdData', type=AuthenticatedData10, min=0, max=1, mutex_group=None, array=False),

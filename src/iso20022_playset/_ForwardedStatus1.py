@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NoSpecifiedReason1 import NoSpecifiedReason1
-from ._Quantity51Choice import Quantity51Choice
+from . import NoSpecifiedReason1
+from . import Quantity51Choice
 
 class ForwardedStatus1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ForwardedStatus1(base_types._BaseFieldType):
 
 	@FwddQty.setter
 	def FwddQty(self, value):
-		self._FwddQty = value if type(value) != base_types.auto else self.make_default("FwddQty")
+		self._FwddQty = value if value is not None else base_types.UninitialisedField(self, 'FwddQty', Quantity51Choice, False)
 
 	@FwddQty.deleter
 	def FwddQty(self):
 		del self._FwddQty
-		self._FwddQty = None
+		self._FwddQty = base_types.UninitialisedField(self, 'FwddQty', Quantity51Choice, False)
 
 	@property
 	def FwddRsn(self):
@@ -27,12 +27,12 @@ class ForwardedStatus1(base_types._BaseFieldType):
 
 	@FwddRsn.setter
 	def FwddRsn(self, value):
-		self._FwddRsn = value if type(value) != base_types.auto else self.make_default("FwddRsn")
+		self._FwddRsn = value if value is not None else base_types.UninitialisedField(self, 'FwddRsn', NoSpecifiedReason1, False)
 
 	@FwddRsn.deleter
 	def FwddRsn(self):
 		del self._FwddRsn
-		self._FwddRsn = None
+		self._FwddRsn = base_types.UninitialisedField(self, 'FwddRsn', NoSpecifiedReason1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FwddQty', type=Quantity51Choice, min=0, max=1, mutex_group=None, array=False),

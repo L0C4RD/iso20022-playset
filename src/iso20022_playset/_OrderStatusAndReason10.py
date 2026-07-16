@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._OrderStatus3Choice import OrderStatus3Choice
-from ._PartyIdentification113 import PartyIdentification113
+from . import Max35Text
+from . import OrderStatus3Choice
+from . import PartyIdentification113
 
 class OrderStatusAndReason10(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class OrderStatusAndReason10(base_types._BaseFieldType):
 
 	@MstrRef.setter
 	def MstrRef(self, value):
-		self._MstrRef = value if type(value) != base_types.auto else self.make_default("MstrRef")
+		self._MstrRef = value if value is not None else base_types.UninitialisedField(self, 'MstrRef', Max35Text, False)
 
 	@MstrRef.deleter
 	def MstrRef(self):
 		del self._MstrRef
-		self._MstrRef = None
+		self._MstrRef = base_types.UninitialisedField(self, 'MstrRef', Max35Text, False)
 
 	@property
 	def OrdrSts(self):
@@ -28,12 +28,12 @@ class OrderStatusAndReason10(base_types._BaseFieldType):
 
 	@OrdrSts.setter
 	def OrdrSts(self, value):
-		self._OrdrSts = value if type(value) != base_types.auto else self.make_default("OrdrSts")
+		self._OrdrSts = value if value is not None else base_types.UninitialisedField(self, 'OrdrSts', OrderStatus3Choice, False)
 
 	@OrdrSts.deleter
 	def OrdrSts(self):
 		del self._OrdrSts
-		self._OrdrSts = None
+		self._OrdrSts = base_types.UninitialisedField(self, 'OrdrSts', OrderStatus3Choice, False)
 
 	@property
 	def StsInitr(self):
@@ -41,12 +41,12 @@ class OrderStatusAndReason10(base_types._BaseFieldType):
 
 	@StsInitr.setter
 	def StsInitr(self, value):
-		self._StsInitr = value if type(value) != base_types.auto else self.make_default("StsInitr")
+		self._StsInitr = value if value is not None else base_types.UninitialisedField(self, 'StsInitr', PartyIdentification113, False)
 
 	@StsInitr.deleter
 	def StsInitr(self):
 		del self._StsInitr
-		self._StsInitr = None
+		self._StsInitr = base_types.UninitialisedField(self, 'StsInitr', PartyIdentification113, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MstrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

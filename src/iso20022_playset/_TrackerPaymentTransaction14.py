@@ -2,44 +2,44 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._BICFIDec2014Identifier import BICFIDec2014Identifier
-from ._BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
-from ._CashAccount38 import CashAccount38
-from ._ChargeBearerType1Code import ChargeBearerType1Code
-from ._Charges7 import Charges7
-from ._CreditTransferTransaction46 import CreditTransferTransaction46
-from ._CurrencyExchange15 import CurrencyExchange15
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._EquivalentAmount2 import EquivalentAmount2
-from ._ISODate import ISODate
-from ._ISODateTime import ISODateTime
-from ._InstructionForCreditorAgent3 import InstructionForCreditorAgent3
-from ._InstructionForNextAgent1 import InstructionForNextAgent1
-from ._Max2048Text import Max2048Text
-from ._Max35Text import Max35Text
-from ._OriginalBusinessInstruction4 import OriginalBusinessInstruction4
-from ._Party40Choice import Party40Choice
-from ._PartyIdentification135 import PartyIdentification135
-from ._PaymentIdentification10 import PaymentIdentification10
-from ._PaymentRejectReturnReason1 import PaymentRejectReturnReason1
-from ._PaymentScenario1Choice import PaymentScenario1Choice
-from ._PaymentTypeInformation28 import PaymentTypeInformation28
-from ._Priority3Code import Priority3Code
-from ._Purpose2Choice import Purpose2Choice
-from ._RegulatoryReporting3 import RegulatoryReporting3
-from ._RelatedTransactionData1 import RelatedTransactionData1
-from ._RemittanceInformation16 import RemittanceInformation16
-from ._RemittanceLocation7 import RemittanceLocation7
-from ._SettlementDateTimeIndication1 import SettlementDateTimeIndication1
-from ._SettlementInstruction9 import SettlementInstruction9
-from ._SettlementTimeRequest2 import SettlementTimeRequest2
-from ._TaxInformation8 import TaxInformation8
-from ._TrackerData8 import TrackerData8
-from ._TrackerPartyIdentification2 import TrackerPartyIdentification2
-from ._TrackerRecord8 import TrackerRecord8
-from ._TransactionParties8 import TransactionParties8
+from . import ActiveCurrencyAndAmount
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import BICFIDec2014Identifier
+from . import BranchAndFinancialInstitutionIdentification6
+from . import CashAccount38
+from . import ChargeBearerType1Code
+from . import Charges7
+from . import CreditTransferTransaction46
+from . import CurrencyExchange15
+from . import DateAndDateTime2Choice
+from . import EquivalentAmount2
+from . import ISODate
+from . import ISODateTime
+from . import InstructionForCreditorAgent3
+from . import InstructionForNextAgent1
+from . import Max2048Text
+from . import Max35Text
+from . import OriginalBusinessInstruction4
+from . import Party40Choice
+from . import PartyIdentification135
+from . import PaymentIdentification10
+from . import PaymentRejectReturnReason1
+from . import PaymentScenario1Choice
+from . import PaymentTypeInformation28
+from . import Priority3Code
+from . import Purpose2Choice
+from . import RegulatoryReporting3
+from . import RelatedTransactionData1
+from . import RemittanceInformation16
+from . import RemittanceLocation7
+from . import SettlementDateTimeIndication1
+from . import SettlementInstruction9
+from . import SettlementTimeRequest2
+from . import TaxInformation8
+from . import TrackerData8
+from . import TrackerPartyIdentification2
+from . import TrackerRecord8
+from . import TransactionParties8
 
 class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
@@ -50,12 +50,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@AccptncDtTm.setter
 	def AccptncDtTm(self, value):
-		self._AccptncDtTm = value if type(value) != base_types.auto else self.make_default("AccptncDtTm")
+		self._AccptncDtTm = value if value is not None else base_types.UninitialisedField(self, 'AccptncDtTm', ISODateTime, False)
 
 	@AccptncDtTm.deleter
 	def AccptncDtTm(self):
 		del self._AccptncDtTm
-		self._AccptncDtTm = None
+		self._AccptncDtTm = base_types.UninitialisedField(self, 'AccptncDtTm', ISODateTime, False)
 
 	@property
 	def Cdtr(self):
@@ -63,12 +63,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@Cdtr.setter
 	def Cdtr(self, value):
-		self._Cdtr = value if type(value) != base_types.auto else self.make_default("Cdtr")
+		self._Cdtr = value if value is not None else base_types.UninitialisedField(self, 'Cdtr', Party40Choice, False)
 
 	@Cdtr.deleter
 	def Cdtr(self):
 		del self._Cdtr
-		self._Cdtr = None
+		self._Cdtr = base_types.UninitialisedField(self, 'Cdtr', Party40Choice, False)
 
 	@property
 	def CdtrAcct(self):
@@ -76,12 +76,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@CdtrAcct.setter
 	def CdtrAcct(self, value):
-		self._CdtrAcct = value if type(value) != base_types.auto else self.make_default("CdtrAcct")
+		self._CdtrAcct = value if value is not None else base_types.UninitialisedField(self, 'CdtrAcct', CashAccount38, False)
 
 	@CdtrAcct.deleter
 	def CdtrAcct(self):
 		del self._CdtrAcct
-		self._CdtrAcct = None
+		self._CdtrAcct = base_types.UninitialisedField(self, 'CdtrAcct', CashAccount38, False)
 
 	@property
 	def CdtrAgt(self):
@@ -89,12 +89,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@CdtrAgt.setter
 	def CdtrAgt(self, value):
-		self._CdtrAgt = value if type(value) != base_types.auto else self.make_default("CdtrAgt")
+		self._CdtrAgt = value if value is not None else base_types.UninitialisedField(self, 'CdtrAgt', BranchAndFinancialInstitutionIdentification6, False)
 
 	@CdtrAgt.deleter
 	def CdtrAgt(self):
 		del self._CdtrAgt
-		self._CdtrAgt = None
+		self._CdtrAgt = base_types.UninitialisedField(self, 'CdtrAgt', BranchAndFinancialInstitutionIdentification6, False)
 
 	@property
 	def CdtrAgtAcct(self):
@@ -102,12 +102,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@CdtrAgtAcct.setter
 	def CdtrAgtAcct(self, value):
-		self._CdtrAgtAcct = value if type(value) != base_types.auto else self.make_default("CdtrAgtAcct")
+		self._CdtrAgtAcct = value if value is not None else base_types.UninitialisedField(self, 'CdtrAgtAcct', CashAccount38, False)
 
 	@CdtrAgtAcct.deleter
 	def CdtrAgtAcct(self):
 		del self._CdtrAgtAcct
-		self._CdtrAgtAcct = None
+		self._CdtrAgtAcct = base_types.UninitialisedField(self, 'CdtrAgtAcct', CashAccount38, False)
 
 	@property
 	def ChrgBr(self):
@@ -115,12 +115,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@ChrgBr.setter
 	def ChrgBr(self, value):
-		self._ChrgBr = value if type(value) != base_types.auto else self.make_default("ChrgBr")
+		self._ChrgBr = value if value is not None else base_types.UninitialisedField(self, 'ChrgBr', ChargeBearerType1Code, False)
 
 	@ChrgBr.deleter
 	def ChrgBr(self):
 		del self._ChrgBr
-		self._ChrgBr = None
+		self._ChrgBr = base_types.UninitialisedField(self, 'ChrgBr', ChargeBearerType1Code, False)
 
 	@property
 	def ChrgsInf(self):
@@ -128,12 +128,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@ChrgsInf.setter
 	def ChrgsInf(self, value):
-		self._ChrgsInf = value if type(value) != base_types.auto else self.make_default("ChrgsInf")
+		self._ChrgsInf = value if value is not None else base_types.UninitialisedField(self, 'ChrgsInf', Charges7, True)
 
 	@ChrgsInf.deleter
 	def ChrgsInf(self):
 		del self._ChrgsInf
-		self._ChrgsInf = None
+		self._ChrgsInf = base_types.UninitialisedField(self, 'ChrgsInf', Charges7, True)
 
 	@property
 	def DbtConfURLAdr(self):
@@ -141,12 +141,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@DbtConfURLAdr.setter
 	def DbtConfURLAdr(self, value):
-		self._DbtConfURLAdr = value if type(value) != base_types.auto else self.make_default("DbtConfURLAdr")
+		self._DbtConfURLAdr = value if value is not None else base_types.UninitialisedField(self, 'DbtConfURLAdr', Max2048Text, False)
 
 	@DbtConfURLAdr.deleter
 	def DbtConfURLAdr(self):
 		del self._DbtConfURLAdr
-		self._DbtConfURLAdr = None
+		self._DbtConfURLAdr = base_types.UninitialisedField(self, 'DbtConfURLAdr', Max2048Text, False)
 
 	@property
 	def Dbtr(self):
@@ -154,12 +154,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@Dbtr.setter
 	def Dbtr(self, value):
-		self._Dbtr = value if type(value) != base_types.auto else self.make_default("Dbtr")
+		self._Dbtr = value if value is not None else base_types.UninitialisedField(self, 'Dbtr', Party40Choice, False)
 
 	@Dbtr.deleter
 	def Dbtr(self):
 		del self._Dbtr
-		self._Dbtr = None
+		self._Dbtr = base_types.UninitialisedField(self, 'Dbtr', Party40Choice, False)
 
 	@property
 	def DbtrAcct(self):
@@ -167,12 +167,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@DbtrAcct.setter
 	def DbtrAcct(self, value):
-		self._DbtrAcct = value if type(value) != base_types.auto else self.make_default("DbtrAcct")
+		self._DbtrAcct = value if value is not None else base_types.UninitialisedField(self, 'DbtrAcct', CashAccount38, False)
 
 	@DbtrAcct.deleter
 	def DbtrAcct(self):
 		del self._DbtrAcct
-		self._DbtrAcct = None
+		self._DbtrAcct = base_types.UninitialisedField(self, 'DbtrAcct', CashAccount38, False)
 
 	@property
 	def DbtrAgt(self):
@@ -180,12 +180,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@DbtrAgt.setter
 	def DbtrAgt(self, value):
-		self._DbtrAgt = value if type(value) != base_types.auto else self.make_default("DbtrAgt")
+		self._DbtrAgt = value if value is not None else base_types.UninitialisedField(self, 'DbtrAgt', BranchAndFinancialInstitutionIdentification6, False)
 
 	@DbtrAgt.deleter
 	def DbtrAgt(self):
 		del self._DbtrAgt
-		self._DbtrAgt = None
+		self._DbtrAgt = base_types.UninitialisedField(self, 'DbtrAgt', BranchAndFinancialInstitutionIdentification6, False)
 
 	@property
 	def DbtrAgtAcct(self):
@@ -193,12 +193,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@DbtrAgtAcct.setter
 	def DbtrAgtAcct(self, value):
-		self._DbtrAgtAcct = value if type(value) != base_types.auto else self.make_default("DbtrAgtAcct")
+		self._DbtrAgtAcct = value if value is not None else base_types.UninitialisedField(self, 'DbtrAgtAcct', CashAccount38, False)
 
 	@DbtrAgtAcct.deleter
 	def DbtrAgtAcct(self):
 		del self._DbtrAgtAcct
-		self._DbtrAgtAcct = None
+		self._DbtrAgtAcct = base_types.UninitialisedField(self, 'DbtrAgtAcct', CashAccount38, False)
 
 	@property
 	def EqvtAmt(self):
@@ -206,12 +206,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@EqvtAmt.setter
 	def EqvtAmt(self, value):
-		self._EqvtAmt = value if type(value) != base_types.auto else self.make_default("EqvtAmt")
+		self._EqvtAmt = value if value is not None else base_types.UninitialisedField(self, 'EqvtAmt', EquivalentAmount2, False)
 
 	@EqvtAmt.deleter
 	def EqvtAmt(self):
 		del self._EqvtAmt
-		self._EqvtAmt = None
+		self._EqvtAmt = base_types.UninitialisedField(self, 'EqvtAmt', EquivalentAmount2, False)
 
 	@property
 	def InitgPty(self):
@@ -219,12 +219,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@InitgPty.setter
 	def InitgPty(self, value):
-		self._InitgPty = value if type(value) != base_types.auto else self.make_default("InitgPty")
+		self._InitgPty = value if value is not None else base_types.UninitialisedField(self, 'InitgPty', PartyIdentification135, False)
 
 	@InitgPty.deleter
 	def InitgPty(self):
 		del self._InitgPty
-		self._InitgPty = None
+		self._InitgPty = base_types.UninitialisedField(self, 'InitgPty', PartyIdentification135, False)
 
 	@property
 	def InstdAgt(self):
@@ -232,12 +232,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@InstdAgt.setter
 	def InstdAgt(self, value):
-		self._InstdAgt = value if type(value) != base_types.auto else self.make_default("InstdAgt")
+		self._InstdAgt = value if value is not None else base_types.UninitialisedField(self, 'InstdAgt', BranchAndFinancialInstitutionIdentification6, False)
 
 	@InstdAgt.deleter
 	def InstdAgt(self):
 		del self._InstdAgt
-		self._InstdAgt = None
+		self._InstdAgt = base_types.UninitialisedField(self, 'InstdAgt', BranchAndFinancialInstitutionIdentification6, False)
 
 	@property
 	def InstdAmt(self):
@@ -245,12 +245,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@InstdAmt.setter
 	def InstdAmt(self, value):
-		self._InstdAmt = value if type(value) != base_types.auto else self.make_default("InstdAmt")
+		self._InstdAmt = value if value is not None else base_types.UninitialisedField(self, 'InstdAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@InstdAmt.deleter
 	def InstdAmt(self):
 		del self._InstdAmt
-		self._InstdAmt = None
+		self._InstdAmt = base_types.UninitialisedField(self, 'InstdAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def InstgAgt(self):
@@ -258,12 +258,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@InstgAgt.setter
 	def InstgAgt(self, value):
-		self._InstgAgt = value if type(value) != base_types.auto else self.make_default("InstgAgt")
+		self._InstgAgt = value if value is not None else base_types.UninitialisedField(self, 'InstgAgt', BranchAndFinancialInstitutionIdentification6, False)
 
 	@InstgAgt.deleter
 	def InstgAgt(self):
 		del self._InstgAgt
-		self._InstgAgt = None
+		self._InstgAgt = base_types.UninitialisedField(self, 'InstgAgt', BranchAndFinancialInstitutionIdentification6, False)
 
 	@property
 	def InstrForCdtrAgt(self):
@@ -271,12 +271,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@InstrForCdtrAgt.setter
 	def InstrForCdtrAgt(self, value):
-		self._InstrForCdtrAgt = value if type(value) != base_types.auto else self.make_default("InstrForCdtrAgt")
+		self._InstrForCdtrAgt = value if value is not None else base_types.UninitialisedField(self, 'InstrForCdtrAgt', InstructionForCreditorAgent3, True)
 
 	@InstrForCdtrAgt.deleter
 	def InstrForCdtrAgt(self):
 		del self._InstrForCdtrAgt
-		self._InstrForCdtrAgt = None
+		self._InstrForCdtrAgt = base_types.UninitialisedField(self, 'InstrForCdtrAgt', InstructionForCreditorAgent3, True)
 
 	@property
 	def InstrForNxtAgt(self):
@@ -284,12 +284,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@InstrForNxtAgt.setter
 	def InstrForNxtAgt(self, value):
-		self._InstrForNxtAgt = value if type(value) != base_types.auto else self.make_default("InstrForNxtAgt")
+		self._InstrForNxtAgt = value if value is not None else base_types.UninitialisedField(self, 'InstrForNxtAgt', InstructionForNextAgent1, True)
 
 	@InstrForNxtAgt.deleter
 	def InstrForNxtAgt(self):
 		del self._InstrForNxtAgt
-		self._InstrForNxtAgt = None
+		self._InstrForNxtAgt = base_types.UninitialisedField(self, 'InstrForNxtAgt', InstructionForNextAgent1, True)
 
 	@property
 	def IntrBkSttlmAmt(self):
@@ -297,12 +297,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@IntrBkSttlmAmt.setter
 	def IntrBkSttlmAmt(self, value):
-		self._IntrBkSttlmAmt = value if type(value) != base_types.auto else self.make_default("IntrBkSttlmAmt")
+		self._IntrBkSttlmAmt = value if value is not None else base_types.UninitialisedField(self, 'IntrBkSttlmAmt', ActiveCurrencyAndAmount, False)
 
 	@IntrBkSttlmAmt.deleter
 	def IntrBkSttlmAmt(self):
 		del self._IntrBkSttlmAmt
-		self._IntrBkSttlmAmt = None
+		self._IntrBkSttlmAmt = base_types.UninitialisedField(self, 'IntrBkSttlmAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def IntrBkSttlmDt(self):
@@ -310,12 +310,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@IntrBkSttlmDt.setter
 	def IntrBkSttlmDt(self, value):
-		self._IntrBkSttlmDt = value if type(value) != base_types.auto else self.make_default("IntrBkSttlmDt")
+		self._IntrBkSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'IntrBkSttlmDt', ISODate, False)
 
 	@IntrBkSttlmDt.deleter
 	def IntrBkSttlmDt(self):
 		del self._IntrBkSttlmDt
-		self._IntrBkSttlmDt = None
+		self._IntrBkSttlmDt = base_types.UninitialisedField(self, 'IntrBkSttlmDt', ISODate, False)
 
 	@property
 	def IntrmyAgt1(self):
@@ -323,12 +323,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@IntrmyAgt1.setter
 	def IntrmyAgt1(self, value):
-		self._IntrmyAgt1 = value if type(value) != base_types.auto else self.make_default("IntrmyAgt1")
+		self._IntrmyAgt1 = value if value is not None else base_types.UninitialisedField(self, 'IntrmyAgt1', BranchAndFinancialInstitutionIdentification6, False)
 
 	@IntrmyAgt1.deleter
 	def IntrmyAgt1(self):
 		del self._IntrmyAgt1
-		self._IntrmyAgt1 = None
+		self._IntrmyAgt1 = base_types.UninitialisedField(self, 'IntrmyAgt1', BranchAndFinancialInstitutionIdentification6, False)
 
 	@property
 	def IntrmyAgt1Acct(self):
@@ -336,12 +336,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@IntrmyAgt1Acct.setter
 	def IntrmyAgt1Acct(self, value):
-		self._IntrmyAgt1Acct = value if type(value) != base_types.auto else self.make_default("IntrmyAgt1Acct")
+		self._IntrmyAgt1Acct = value if value is not None else base_types.UninitialisedField(self, 'IntrmyAgt1Acct', CashAccount38, False)
 
 	@IntrmyAgt1Acct.deleter
 	def IntrmyAgt1Acct(self):
 		del self._IntrmyAgt1Acct
-		self._IntrmyAgt1Acct = None
+		self._IntrmyAgt1Acct = base_types.UninitialisedField(self, 'IntrmyAgt1Acct', CashAccount38, False)
 
 	@property
 	def IntrmyAgt2(self):
@@ -349,12 +349,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@IntrmyAgt2.setter
 	def IntrmyAgt2(self, value):
-		self._IntrmyAgt2 = value if type(value) != base_types.auto else self.make_default("IntrmyAgt2")
+		self._IntrmyAgt2 = value if value is not None else base_types.UninitialisedField(self, 'IntrmyAgt2', BranchAndFinancialInstitutionIdentification6, False)
 
 	@IntrmyAgt2.deleter
 	def IntrmyAgt2(self):
 		del self._IntrmyAgt2
-		self._IntrmyAgt2 = None
+		self._IntrmyAgt2 = base_types.UninitialisedField(self, 'IntrmyAgt2', BranchAndFinancialInstitutionIdentification6, False)
 
 	@property
 	def IntrmyAgt2Acct(self):
@@ -362,12 +362,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@IntrmyAgt2Acct.setter
 	def IntrmyAgt2Acct(self, value):
-		self._IntrmyAgt2Acct = value if type(value) != base_types.auto else self.make_default("IntrmyAgt2Acct")
+		self._IntrmyAgt2Acct = value if value is not None else base_types.UninitialisedField(self, 'IntrmyAgt2Acct', CashAccount38, False)
 
 	@IntrmyAgt2Acct.deleter
 	def IntrmyAgt2Acct(self):
 		del self._IntrmyAgt2Acct
-		self._IntrmyAgt2Acct = None
+		self._IntrmyAgt2Acct = base_types.UninitialisedField(self, 'IntrmyAgt2Acct', CashAccount38, False)
 
 	@property
 	def IntrmyAgt3(self):
@@ -375,12 +375,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@IntrmyAgt3.setter
 	def IntrmyAgt3(self, value):
-		self._IntrmyAgt3 = value if type(value) != base_types.auto else self.make_default("IntrmyAgt3")
+		self._IntrmyAgt3 = value if value is not None else base_types.UninitialisedField(self, 'IntrmyAgt3', BranchAndFinancialInstitutionIdentification6, False)
 
 	@IntrmyAgt3.deleter
 	def IntrmyAgt3(self):
 		del self._IntrmyAgt3
-		self._IntrmyAgt3 = None
+		self._IntrmyAgt3 = base_types.UninitialisedField(self, 'IntrmyAgt3', BranchAndFinancialInstitutionIdentification6, False)
 
 	@property
 	def IntrmyAgt3Acct(self):
@@ -388,12 +388,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@IntrmyAgt3Acct.setter
 	def IntrmyAgt3Acct(self, value):
-		self._IntrmyAgt3Acct = value if type(value) != base_types.auto else self.make_default("IntrmyAgt3Acct")
+		self._IntrmyAgt3Acct = value if value is not None else base_types.UninitialisedField(self, 'IntrmyAgt3Acct', CashAccount38, False)
 
 	@IntrmyAgt3Acct.deleter
 	def IntrmyAgt3Acct(self):
 		del self._IntrmyAgt3Acct
-		self._IntrmyAgt3Acct = None
+		self._IntrmyAgt3Acct = base_types.UninitialisedField(self, 'IntrmyAgt3Acct', CashAccount38, False)
 
 	@property
 	def OrgnlEndToEndId(self):
@@ -401,12 +401,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@OrgnlEndToEndId.setter
 	def OrgnlEndToEndId(self, value):
-		self._OrgnlEndToEndId = value if type(value) != base_types.auto else self.make_default("OrgnlEndToEndId")
+		self._OrgnlEndToEndId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlEndToEndId', Max35Text, False)
 
 	@OrgnlEndToEndId.deleter
 	def OrgnlEndToEndId(self):
 		del self._OrgnlEndToEndId
-		self._OrgnlEndToEndId = None
+		self._OrgnlEndToEndId = base_types.UninitialisedField(self, 'OrgnlEndToEndId', Max35Text, False)
 
 	@property
 	def OrgnlInstrId(self):
@@ -414,12 +414,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@OrgnlInstrId.setter
 	def OrgnlInstrId(self, value):
-		self._OrgnlInstrId = value if type(value) != base_types.auto else self.make_default("OrgnlInstrId")
+		self._OrgnlInstrId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlInstrId', Max35Text, False)
 
 	@OrgnlInstrId.deleter
 	def OrgnlInstrId(self):
 		del self._OrgnlInstrId
-		self._OrgnlInstrId = None
+		self._OrgnlInstrId = base_types.UninitialisedField(self, 'OrgnlInstrId', Max35Text, False)
 
 	@property
 	def PmtId(self):
@@ -427,12 +427,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@PmtId.setter
 	def PmtId(self, value):
-		self._PmtId = value if type(value) != base_types.auto else self.make_default("PmtId")
+		self._PmtId = value if value is not None else base_types.UninitialisedField(self, 'PmtId', PaymentIdentification10, False)
 
 	@PmtId.deleter
 	def PmtId(self):
 		del self._PmtId
-		self._PmtId = None
+		self._PmtId = base_types.UninitialisedField(self, 'PmtId', PaymentIdentification10, False)
 
 	@property
 	def PmtScnro(self):
@@ -440,12 +440,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@PmtScnro.setter
 	def PmtScnro(self, value):
-		self._PmtScnro = value if type(value) != base_types.auto else self.make_default("PmtScnro")
+		self._PmtScnro = value if value is not None else base_types.UninitialisedField(self, 'PmtScnro', PaymentScenario1Choice, False)
 
 	@PmtScnro.deleter
 	def PmtScnro(self):
 		del self._PmtScnro
-		self._PmtScnro = None
+		self._PmtScnro = base_types.UninitialisedField(self, 'PmtScnro', PaymentScenario1Choice, False)
 
 	@property
 	def PmtTpInf(self):
@@ -453,12 +453,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@PmtTpInf.setter
 	def PmtTpInf(self, value):
-		self._PmtTpInf = value if type(value) != base_types.auto else self.make_default("PmtTpInf")
+		self._PmtTpInf = value if value is not None else base_types.UninitialisedField(self, 'PmtTpInf', PaymentTypeInformation28, False)
 
 	@PmtTpInf.deleter
 	def PmtTpInf(self):
 		del self._PmtTpInf
-		self._PmtTpInf = None
+		self._PmtTpInf = base_types.UninitialisedField(self, 'PmtTpInf', PaymentTypeInformation28, False)
 
 	@property
 	def PoolgAdjstmntDt(self):
@@ -466,12 +466,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@PoolgAdjstmntDt.setter
 	def PoolgAdjstmntDt(self, value):
-		self._PoolgAdjstmntDt = value if type(value) != base_types.auto else self.make_default("PoolgAdjstmntDt")
+		self._PoolgAdjstmntDt = value if value is not None else base_types.UninitialisedField(self, 'PoolgAdjstmntDt', ISODate, False)
 
 	@PoolgAdjstmntDt.deleter
 	def PoolgAdjstmntDt(self):
 		del self._PoolgAdjstmntDt
-		self._PoolgAdjstmntDt = None
+		self._PoolgAdjstmntDt = base_types.UninitialisedField(self, 'PoolgAdjstmntDt', ISODate, False)
 
 	@property
 	def PrvsInstgAgt1(self):
@@ -479,12 +479,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@PrvsInstgAgt1.setter
 	def PrvsInstgAgt1(self, value):
-		self._PrvsInstgAgt1 = value if type(value) != base_types.auto else self.make_default("PrvsInstgAgt1")
+		self._PrvsInstgAgt1 = value if value is not None else base_types.UninitialisedField(self, 'PrvsInstgAgt1', BranchAndFinancialInstitutionIdentification6, False)
 
 	@PrvsInstgAgt1.deleter
 	def PrvsInstgAgt1(self):
 		del self._PrvsInstgAgt1
-		self._PrvsInstgAgt1 = None
+		self._PrvsInstgAgt1 = base_types.UninitialisedField(self, 'PrvsInstgAgt1', BranchAndFinancialInstitutionIdentification6, False)
 
 	@property
 	def PrvsInstgAgt1Acct(self):
@@ -492,12 +492,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@PrvsInstgAgt1Acct.setter
 	def PrvsInstgAgt1Acct(self, value):
-		self._PrvsInstgAgt1Acct = value if type(value) != base_types.auto else self.make_default("PrvsInstgAgt1Acct")
+		self._PrvsInstgAgt1Acct = value if value is not None else base_types.UninitialisedField(self, 'PrvsInstgAgt1Acct', CashAccount38, False)
 
 	@PrvsInstgAgt1Acct.deleter
 	def PrvsInstgAgt1Acct(self):
 		del self._PrvsInstgAgt1Acct
-		self._PrvsInstgAgt1Acct = None
+		self._PrvsInstgAgt1Acct = base_types.UninitialisedField(self, 'PrvsInstgAgt1Acct', CashAccount38, False)
 
 	@property
 	def PrvsInstgAgt2(self):
@@ -505,12 +505,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@PrvsInstgAgt2.setter
 	def PrvsInstgAgt2(self, value):
-		self._PrvsInstgAgt2 = value if type(value) != base_types.auto else self.make_default("PrvsInstgAgt2")
+		self._PrvsInstgAgt2 = value if value is not None else base_types.UninitialisedField(self, 'PrvsInstgAgt2', BranchAndFinancialInstitutionIdentification6, False)
 
 	@PrvsInstgAgt2.deleter
 	def PrvsInstgAgt2(self):
 		del self._PrvsInstgAgt2
-		self._PrvsInstgAgt2 = None
+		self._PrvsInstgAgt2 = base_types.UninitialisedField(self, 'PrvsInstgAgt2', BranchAndFinancialInstitutionIdentification6, False)
 
 	@property
 	def PrvsInstgAgt2Acct(self):
@@ -518,12 +518,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@PrvsInstgAgt2Acct.setter
 	def PrvsInstgAgt2Acct(self, value):
-		self._PrvsInstgAgt2Acct = value if type(value) != base_types.auto else self.make_default("PrvsInstgAgt2Acct")
+		self._PrvsInstgAgt2Acct = value if value is not None else base_types.UninitialisedField(self, 'PrvsInstgAgt2Acct', CashAccount38, False)
 
 	@PrvsInstgAgt2Acct.deleter
 	def PrvsInstgAgt2Acct(self):
 		del self._PrvsInstgAgt2Acct
-		self._PrvsInstgAgt2Acct = None
+		self._PrvsInstgAgt2Acct = base_types.UninitialisedField(self, 'PrvsInstgAgt2Acct', CashAccount38, False)
 
 	@property
 	def PrvsInstgAgt3(self):
@@ -531,12 +531,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@PrvsInstgAgt3.setter
 	def PrvsInstgAgt3(self, value):
-		self._PrvsInstgAgt3 = value if type(value) != base_types.auto else self.make_default("PrvsInstgAgt3")
+		self._PrvsInstgAgt3 = value if value is not None else base_types.UninitialisedField(self, 'PrvsInstgAgt3', BranchAndFinancialInstitutionIdentification6, False)
 
 	@PrvsInstgAgt3.deleter
 	def PrvsInstgAgt3(self):
 		del self._PrvsInstgAgt3
-		self._PrvsInstgAgt3 = None
+		self._PrvsInstgAgt3 = base_types.UninitialisedField(self, 'PrvsInstgAgt3', BranchAndFinancialInstitutionIdentification6, False)
 
 	@property
 	def PrvsInstgAgt3Acct(self):
@@ -544,12 +544,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@PrvsInstgAgt3Acct.setter
 	def PrvsInstgAgt3Acct(self, value):
-		self._PrvsInstgAgt3Acct = value if type(value) != base_types.auto else self.make_default("PrvsInstgAgt3Acct")
+		self._PrvsInstgAgt3Acct = value if value is not None else base_types.UninitialisedField(self, 'PrvsInstgAgt3Acct', CashAccount38, False)
 
 	@PrvsInstgAgt3Acct.deleter
 	def PrvsInstgAgt3Acct(self):
 		del self._PrvsInstgAgt3Acct
-		self._PrvsInstgAgt3Acct = None
+		self._PrvsInstgAgt3Acct = base_types.UninitialisedField(self, 'PrvsInstgAgt3Acct', CashAccount38, False)
 
 	@property
 	def Purp(self):
@@ -557,12 +557,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@Purp.setter
 	def Purp(self, value):
-		self._Purp = value if type(value) != base_types.auto else self.make_default("Purp")
+		self._Purp = value if value is not None else base_types.UninitialisedField(self, 'Purp', Purpose2Choice, False)
 
 	@Purp.deleter
 	def Purp(self):
 		del self._Purp
-		self._Purp = None
+		self._Purp = base_types.UninitialisedField(self, 'Purp', Purpose2Choice, False)
 
 	@property
 	def ReqdExctnDt(self):
@@ -570,12 +570,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@ReqdExctnDt.setter
 	def ReqdExctnDt(self, value):
-		self._ReqdExctnDt = value if type(value) != base_types.auto else self.make_default("ReqdExctnDt")
+		self._ReqdExctnDt = value if value is not None else base_types.UninitialisedField(self, 'ReqdExctnDt', DateAndDateTime2Choice, False)
 
 	@ReqdExctnDt.deleter
 	def ReqdExctnDt(self):
 		del self._ReqdExctnDt
-		self._ReqdExctnDt = None
+		self._ReqdExctnDt = base_types.UninitialisedField(self, 'ReqdExctnDt', DateAndDateTime2Choice, False)
 
 	@property
 	def RgltryRptg(self):
@@ -583,12 +583,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@RgltryRptg.setter
 	def RgltryRptg(self, value):
-		self._RgltryRptg = value if type(value) != base_types.auto else self.make_default("RgltryRptg")
+		self._RgltryRptg = value if value is not None else base_types.UninitialisedField(self, 'RgltryRptg', RegulatoryReporting3, True)
 
 	@RgltryRptg.deleter
 	def RgltryRptg(self):
 		del self._RgltryRptg
-		self._RgltryRptg = None
+		self._RgltryRptg = base_types.UninitialisedField(self, 'RgltryRptg', RegulatoryReporting3, True)
 
 	@property
 	def RjctRtrRsn(self):
@@ -596,12 +596,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@RjctRtrRsn.setter
 	def RjctRtrRsn(self, value):
-		self._RjctRtrRsn = value if type(value) != base_types.auto else self.make_default("RjctRtrRsn")
+		self._RjctRtrRsn = value if value is not None else base_types.UninitialisedField(self, 'RjctRtrRsn', PaymentRejectReturnReason1, True)
 
 	@RjctRtrRsn.deleter
 	def RjctRtrRsn(self):
 		del self._RjctRtrRsn
-		self._RjctRtrRsn = None
+		self._RjctRtrRsn = base_types.UninitialisedField(self, 'RjctRtrRsn', PaymentRejectReturnReason1, True)
 
 	@property
 	def RltdPmtId(self):
@@ -609,12 +609,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@RltdPmtId.setter
 	def RltdPmtId(self, value):
-		self._RltdPmtId = value if type(value) != base_types.auto else self.make_default("RltdPmtId")
+		self._RltdPmtId = value if value is not None else base_types.UninitialisedField(self, 'RltdPmtId', RelatedTransactionData1, False)
 
 	@RltdPmtId.deleter
 	def RltdPmtId(self):
 		del self._RltdPmtId
-		self._RltdPmtId = None
+		self._RltdPmtId = base_types.UninitialisedField(self, 'RltdPmtId', RelatedTransactionData1, False)
 
 	@property
 	def RltdRmtInf(self):
@@ -622,12 +622,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@RltdRmtInf.setter
 	def RltdRmtInf(self, value):
-		self._RltdRmtInf = value if type(value) != base_types.auto else self.make_default("RltdRmtInf")
+		self._RltdRmtInf = value if value is not None else base_types.UninitialisedField(self, 'RltdRmtInf', RemittanceLocation7, True)
 
 	@RltdRmtInf.deleter
 	def RltdRmtInf(self):
 		del self._RltdRmtInf
-		self._RltdRmtInf = None
+		self._RltdRmtInf = base_types.UninitialisedField(self, 'RltdRmtInf', RemittanceLocation7, True)
 
 	@property
 	def RmtInf(self):
@@ -635,12 +635,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@RmtInf.setter
 	def RmtInf(self, value):
-		self._RmtInf = value if type(value) != base_types.auto else self.make_default("RmtInf")
+		self._RmtInf = value if value is not None else base_types.UninitialisedField(self, 'RmtInf', RemittanceInformation16, False)
 
 	@RmtInf.deleter
 	def RmtInf(self):
 		del self._RmtInf
-		self._RmtInf = None
+		self._RmtInf = base_types.UninitialisedField(self, 'RmtInf', RemittanceInformation16, False)
 
 	@property
 	def RtrChain(self):
@@ -648,12 +648,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@RtrChain.setter
 	def RtrChain(self, value):
-		self._RtrChain = value if type(value) != base_types.auto else self.make_default("RtrChain")
+		self._RtrChain = value if value is not None else base_types.UninitialisedField(self, 'RtrChain', TransactionParties8, False)
 
 	@RtrChain.deleter
 	def RtrChain(self):
 		del self._RtrChain
-		self._RtrChain = None
+		self._RtrChain = base_types.UninitialisedField(self, 'RtrChain', TransactionParties8, False)
 
 	@property
 	def RtrdInstdAmt(self):
@@ -661,12 +661,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@RtrdInstdAmt.setter
 	def RtrdInstdAmt(self, value):
-		self._RtrdInstdAmt = value if type(value) != base_types.auto else self.make_default("RtrdInstdAmt")
+		self._RtrdInstdAmt = value if value is not None else base_types.UninitialisedField(self, 'RtrdInstdAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@RtrdInstdAmt.deleter
 	def RtrdInstdAmt(self):
 		del self._RtrdInstdAmt
-		self._RtrdInstdAmt = None
+		self._RtrdInstdAmt = base_types.UninitialisedField(self, 'RtrdInstdAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def RtrdIntrBkSttlmAmt(self):
@@ -674,12 +674,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@RtrdIntrBkSttlmAmt.setter
 	def RtrdIntrBkSttlmAmt(self, value):
-		self._RtrdIntrBkSttlmAmt = value if type(value) != base_types.auto else self.make_default("RtrdIntrBkSttlmAmt")
+		self._RtrdIntrBkSttlmAmt = value if value is not None else base_types.UninitialisedField(self, 'RtrdIntrBkSttlmAmt', ActiveCurrencyAndAmount, False)
 
 	@RtrdIntrBkSttlmAmt.deleter
 	def RtrdIntrBkSttlmAmt(self):
 		del self._RtrdIntrBkSttlmAmt
-		self._RtrdIntrBkSttlmAmt = None
+		self._RtrdIntrBkSttlmAmt = base_types.UninitialisedField(self, 'RtrdIntrBkSttlmAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def SttlmInf(self):
@@ -687,12 +687,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@SttlmInf.setter
 	def SttlmInf(self, value):
-		self._SttlmInf = value if type(value) != base_types.auto else self.make_default("SttlmInf")
+		self._SttlmInf = value if value is not None else base_types.UninitialisedField(self, 'SttlmInf', SettlementInstruction9, False)
 
 	@SttlmInf.deleter
 	def SttlmInf(self):
 		del self._SttlmInf
-		self._SttlmInf = None
+		self._SttlmInf = base_types.UninitialisedField(self, 'SttlmInf', SettlementInstruction9, False)
 
 	@property
 	def SttlmPrty(self):
@@ -700,12 +700,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@SttlmPrty.setter
 	def SttlmPrty(self, value):
-		self._SttlmPrty = value if type(value) != base_types.auto else self.make_default("SttlmPrty")
+		self._SttlmPrty = value if value is not None else base_types.UninitialisedField(self, 'SttlmPrty', Priority3Code, False)
 
 	@SttlmPrty.deleter
 	def SttlmPrty(self):
 		del self._SttlmPrty
-		self._SttlmPrty = None
+		self._SttlmPrty = base_types.UninitialisedField(self, 'SttlmPrty', Priority3Code, False)
 
 	@property
 	def SttlmTmIndctn(self):
@@ -713,12 +713,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@SttlmTmIndctn.setter
 	def SttlmTmIndctn(self, value):
-		self._SttlmTmIndctn = value if type(value) != base_types.auto else self.make_default("SttlmTmIndctn")
+		self._SttlmTmIndctn = value if value is not None else base_types.UninitialisedField(self, 'SttlmTmIndctn', SettlementDateTimeIndication1, False)
 
 	@SttlmTmIndctn.deleter
 	def SttlmTmIndctn(self):
 		del self._SttlmTmIndctn
-		self._SttlmTmIndctn = None
+		self._SttlmTmIndctn = base_types.UninitialisedField(self, 'SttlmTmIndctn', SettlementDateTimeIndication1, False)
 
 	@property
 	def SttlmTmReq(self):
@@ -726,12 +726,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@SttlmTmReq.setter
 	def SttlmTmReq(self, value):
-		self._SttlmTmReq = value if type(value) != base_types.auto else self.make_default("SttlmTmReq")
+		self._SttlmTmReq = value if value is not None else base_types.UninitialisedField(self, 'SttlmTmReq', SettlementTimeRequest2, False)
 
 	@SttlmTmReq.deleter
 	def SttlmTmReq(self):
 		del self._SttlmTmReq
-		self._SttlmTmReq = None
+		self._SttlmTmReq = base_types.UninitialisedField(self, 'SttlmTmReq', SettlementTimeRequest2, False)
 
 	@property
 	def Tax(self):
@@ -739,12 +739,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@Tax.setter
 	def Tax(self, value):
-		self._Tax = value if type(value) != base_types.auto else self.make_default("Tax")
+		self._Tax = value if value is not None else base_types.UninitialisedField(self, 'Tax', TaxInformation8, False)
 
 	@Tax.deleter
 	def Tax(self):
 		del self._Tax
-		self._Tax = None
+		self._Tax = base_types.UninitialisedField(self, 'Tax', TaxInformation8, False)
 
 	@property
 	def TechRcvr(self):
@@ -752,12 +752,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@TechRcvr.setter
 	def TechRcvr(self, value):
-		self._TechRcvr = value if type(value) != base_types.auto else self.make_default("TechRcvr")
+		self._TechRcvr = value if value is not None else base_types.UninitialisedField(self, 'TechRcvr', BICFIDec2014Identifier, False)
 
 	@TechRcvr.deleter
 	def TechRcvr(self):
 		del self._TechRcvr
-		self._TechRcvr = None
+		self._TechRcvr = base_types.UninitialisedField(self, 'TechRcvr', BICFIDec2014Identifier, False)
 
 	@property
 	def TechSndr(self):
@@ -765,12 +765,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@TechSndr.setter
 	def TechSndr(self, value):
-		self._TechSndr = value if type(value) != base_types.auto else self.make_default("TechSndr")
+		self._TechSndr = value if value is not None else base_types.UninitialisedField(self, 'TechSndr', BICFIDec2014Identifier, False)
 
 	@TechSndr.deleter
 	def TechSndr(self):
 		del self._TechSndr
-		self._TechSndr = None
+		self._TechSndr = base_types.UninitialisedField(self, 'TechSndr', BICFIDec2014Identifier, False)
 
 	@property
 	def TrckdMsgId(self):
@@ -778,12 +778,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@TrckdMsgId.setter
 	def TrckdMsgId(self, value):
-		self._TrckdMsgId = value if type(value) != base_types.auto else self.make_default("TrckdMsgId")
+		self._TrckdMsgId = value if value is not None else base_types.UninitialisedField(self, 'TrckdMsgId', OriginalBusinessInstruction4, False)
 
 	@TrckdMsgId.deleter
 	def TrckdMsgId(self):
 		del self._TrckdMsgId
-		self._TrckdMsgId = None
+		self._TrckdMsgId = base_types.UninitialisedField(self, 'TrckdMsgId', OriginalBusinessInstruction4, False)
 
 	@property
 	def TrckrData(self):
@@ -791,12 +791,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@TrckrData.setter
 	def TrckrData(self, value):
-		self._TrckrData = value if type(value) != base_types.auto else self.make_default("TrckrData")
+		self._TrckrData = value if value is not None else base_types.UninitialisedField(self, 'TrckrData', TrackerData8, False)
 
 	@TrckrData.deleter
 	def TrckrData(self):
 		del self._TrckrData
-		self._TrckrData = None
+		self._TrckrData = base_types.UninitialisedField(self, 'TrckrData', TrackerData8, False)
 
 	@property
 	def TrckrInfrmdPty(self):
@@ -804,12 +804,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@TrckrInfrmdPty.setter
 	def TrckrInfrmdPty(self, value):
-		self._TrckrInfrmdPty = value if type(value) != base_types.auto else self.make_default("TrckrInfrmdPty")
+		self._TrckrInfrmdPty = value if value is not None else base_types.UninitialisedField(self, 'TrckrInfrmdPty', TrackerPartyIdentification2, False)
 
 	@TrckrInfrmdPty.deleter
 	def TrckrInfrmdPty(self):
 		del self._TrckrInfrmdPty
-		self._TrckrInfrmdPty = None
+		self._TrckrInfrmdPty = base_types.UninitialisedField(self, 'TrckrInfrmdPty', TrackerPartyIdentification2, False)
 
 	@property
 	def TrckrInfrmgPty(self):
@@ -817,12 +817,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@TrckrInfrmgPty.setter
 	def TrckrInfrmgPty(self, value):
-		self._TrckrInfrmgPty = value if type(value) != base_types.auto else self.make_default("TrckrInfrmgPty")
+		self._TrckrInfrmgPty = value if value is not None else base_types.UninitialisedField(self, 'TrckrInfrmgPty', TrackerPartyIdentification2, False)
 
 	@TrckrInfrmgPty.deleter
 	def TrckrInfrmgPty(self):
 		del self._TrckrInfrmgPty
-		self._TrckrInfrmgPty = None
+		self._TrckrInfrmgPty = base_types.UninitialisedField(self, 'TrckrInfrmgPty', TrackerPartyIdentification2, False)
 
 	@property
 	def TrckrRcrd(self):
@@ -830,12 +830,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@TrckrRcrd.setter
 	def TrckrRcrd(self, value):
-		self._TrckrRcrd = value if type(value) != base_types.auto else self.make_default("TrckrRcrd")
+		self._TrckrRcrd = value if value is not None else base_types.UninitialisedField(self, 'TrckrRcrd', TrackerRecord8, True)
 
 	@TrckrRcrd.deleter
 	def TrckrRcrd(self):
 		del self._TrckrRcrd
-		self._TrckrRcrd = None
+		self._TrckrRcrd = base_types.UninitialisedField(self, 'TrckrRcrd', TrackerRecord8, True)
 
 	@property
 	def UltmtCdtr(self):
@@ -843,12 +843,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@UltmtCdtr.setter
 	def UltmtCdtr(self, value):
-		self._UltmtCdtr = value if type(value) != base_types.auto else self.make_default("UltmtCdtr")
+		self._UltmtCdtr = value if value is not None else base_types.UninitialisedField(self, 'UltmtCdtr', PartyIdentification135, False)
 
 	@UltmtCdtr.deleter
 	def UltmtCdtr(self):
 		del self._UltmtCdtr
-		self._UltmtCdtr = None
+		self._UltmtCdtr = base_types.UninitialisedField(self, 'UltmtCdtr', PartyIdentification135, False)
 
 	@property
 	def UltmtDbtr(self):
@@ -856,12 +856,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@UltmtDbtr.setter
 	def UltmtDbtr(self, value):
-		self._UltmtDbtr = value if type(value) != base_types.auto else self.make_default("UltmtDbtr")
+		self._UltmtDbtr = value if value is not None else base_types.UninitialisedField(self, 'UltmtDbtr', PartyIdentification135, False)
 
 	@UltmtDbtr.deleter
 	def UltmtDbtr(self):
 		del self._UltmtDbtr
-		self._UltmtDbtr = None
+		self._UltmtDbtr = base_types.UninitialisedField(self, 'UltmtDbtr', PartyIdentification135, False)
 
 	@property
 	def UndrlygCstmrCdtTrf(self):
@@ -869,12 +869,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@UndrlygCstmrCdtTrf.setter
 	def UndrlygCstmrCdtTrf(self, value):
-		self._UndrlygCstmrCdtTrf = value if type(value) != base_types.auto else self.make_default("UndrlygCstmrCdtTrf")
+		self._UndrlygCstmrCdtTrf = value if value is not None else base_types.UninitialisedField(self, 'UndrlygCstmrCdtTrf', CreditTransferTransaction46, False)
 
 	@UndrlygCstmrCdtTrf.deleter
 	def UndrlygCstmrCdtTrf(self):
 		del self._UndrlygCstmrCdtTrf
-		self._UndrlygCstmrCdtTrf = None
+		self._UndrlygCstmrCdtTrf = base_types.UninitialisedField(self, 'UndrlygCstmrCdtTrf', CreditTransferTransaction46, False)
 
 	@property
 	def XchgRateData(self):
@@ -882,12 +882,12 @@ class TrackerPaymentTransaction14(base_types._BaseFieldType):
 
 	@XchgRateData.setter
 	def XchgRateData(self, value):
-		self._XchgRateData = value if type(value) != base_types.auto else self.make_default("XchgRateData")
+		self._XchgRateData = value if value is not None else base_types.UninitialisedField(self, 'XchgRateData', CurrencyExchange15, False)
 
 	@XchgRateData.deleter
 	def XchgRateData(self):
 		del self._XchgRateData
-		self._XchgRateData = None
+		self._XchgRateData = base_types.UninitialisedField(self, 'XchgRateData', CurrencyExchange15, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AccptncDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),

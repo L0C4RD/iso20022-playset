@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DataModification2Code import DataModification2Code
-from ._FinancialInstrument87 import FinancialInstrument87
+from . import DataModification2Code
+from . import FinancialInstrument87
 
 class ModificationScope42(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ModificationScope42(base_types._BaseFieldType):
 
 	@FinInstrmDtls.setter
 	def FinInstrmDtls(self, value):
-		self._FinInstrmDtls = value if type(value) != base_types.auto else self.make_default("FinInstrmDtls")
+		self._FinInstrmDtls = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmDtls', FinancialInstrument87, False)
 
 	@FinInstrmDtls.deleter
 	def FinInstrmDtls(self):
 		del self._FinInstrmDtls
-		self._FinInstrmDtls = None
+		self._FinInstrmDtls = base_types.UninitialisedField(self, 'FinInstrmDtls', FinancialInstrument87, False)
 
 	@property
 	def ModScpIndctn(self):
@@ -27,12 +27,12 @@ class ModificationScope42(base_types._BaseFieldType):
 
 	@ModScpIndctn.setter
 	def ModScpIndctn(self, value):
-		self._ModScpIndctn = value if type(value) != base_types.auto else self.make_default("ModScpIndctn")
+		self._ModScpIndctn = value if value is not None else base_types.UninitialisedField(self, 'ModScpIndctn', DataModification2Code, False)
 
 	@ModScpIndctn.deleter
 	def ModScpIndctn(self):
 		del self._ModScpIndctn
-		self._ModScpIndctn = None
+		self._ModScpIndctn = base_types.UninitialisedField(self, 'ModScpIndctn', DataModification2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FinInstrmDtls', type=FinancialInstrument87, min=1, max=1, mutex_group=None, array=False),

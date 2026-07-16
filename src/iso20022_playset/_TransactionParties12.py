@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashAccount40 import CashAccount40
-from ._Party50Choice import Party50Choice
-from ._ProprietaryParty6 import ProprietaryParty6
+from . import CashAccount40
+from . import Party50Choice
+from . import ProprietaryParty6
 
 class TransactionParties12(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TransactionParties12(base_types._BaseFieldType):
 
 	@Cdtr.setter
 	def Cdtr(self, value):
-		self._Cdtr = value if type(value) != base_types.auto else self.make_default("Cdtr")
+		self._Cdtr = value if value is not None else base_types.UninitialisedField(self, 'Cdtr', Party50Choice, False)
 
 	@Cdtr.deleter
 	def Cdtr(self):
 		del self._Cdtr
-		self._Cdtr = None
+		self._Cdtr = base_types.UninitialisedField(self, 'Cdtr', Party50Choice, False)
 
 	@property
 	def CdtrAcct(self):
@@ -28,12 +28,12 @@ class TransactionParties12(base_types._BaseFieldType):
 
 	@CdtrAcct.setter
 	def CdtrAcct(self, value):
-		self._CdtrAcct = value if type(value) != base_types.auto else self.make_default("CdtrAcct")
+		self._CdtrAcct = value if value is not None else base_types.UninitialisedField(self, 'CdtrAcct', CashAccount40, False)
 
 	@CdtrAcct.deleter
 	def CdtrAcct(self):
 		del self._CdtrAcct
-		self._CdtrAcct = None
+		self._CdtrAcct = base_types.UninitialisedField(self, 'CdtrAcct', CashAccount40, False)
 
 	@property
 	def Dbtr(self):
@@ -41,12 +41,12 @@ class TransactionParties12(base_types._BaseFieldType):
 
 	@Dbtr.setter
 	def Dbtr(self, value):
-		self._Dbtr = value if type(value) != base_types.auto else self.make_default("Dbtr")
+		self._Dbtr = value if value is not None else base_types.UninitialisedField(self, 'Dbtr', Party50Choice, False)
 
 	@Dbtr.deleter
 	def Dbtr(self):
 		del self._Dbtr
-		self._Dbtr = None
+		self._Dbtr = base_types.UninitialisedField(self, 'Dbtr', Party50Choice, False)
 
 	@property
 	def DbtrAcct(self):
@@ -54,12 +54,12 @@ class TransactionParties12(base_types._BaseFieldType):
 
 	@DbtrAcct.setter
 	def DbtrAcct(self, value):
-		self._DbtrAcct = value if type(value) != base_types.auto else self.make_default("DbtrAcct")
+		self._DbtrAcct = value if value is not None else base_types.UninitialisedField(self, 'DbtrAcct', CashAccount40, False)
 
 	@DbtrAcct.deleter
 	def DbtrAcct(self):
 		del self._DbtrAcct
-		self._DbtrAcct = None
+		self._DbtrAcct = base_types.UninitialisedField(self, 'DbtrAcct', CashAccount40, False)
 
 	@property
 	def InitgPty(self):
@@ -67,12 +67,12 @@ class TransactionParties12(base_types._BaseFieldType):
 
 	@InitgPty.setter
 	def InitgPty(self, value):
-		self._InitgPty = value if type(value) != base_types.auto else self.make_default("InitgPty")
+		self._InitgPty = value if value is not None else base_types.UninitialisedField(self, 'InitgPty', Party50Choice, False)
 
 	@InitgPty.deleter
 	def InitgPty(self):
 		del self._InitgPty
-		self._InitgPty = None
+		self._InitgPty = base_types.UninitialisedField(self, 'InitgPty', Party50Choice, False)
 
 	@property
 	def Prtry(self):
@@ -80,12 +80,12 @@ class TransactionParties12(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+		self._Prtry = value if value is not None else base_types.UninitialisedField(self, 'Prtry', ProprietaryParty6, True)
 
 	@Prtry.deleter
 	def Prtry(self):
 		del self._Prtry
-		self._Prtry = None
+		self._Prtry = base_types.UninitialisedField(self, 'Prtry', ProprietaryParty6, True)
 
 	@property
 	def TradgPty(self):
@@ -93,12 +93,12 @@ class TransactionParties12(base_types._BaseFieldType):
 
 	@TradgPty.setter
 	def TradgPty(self, value):
-		self._TradgPty = value if type(value) != base_types.auto else self.make_default("TradgPty")
+		self._TradgPty = value if value is not None else base_types.UninitialisedField(self, 'TradgPty', Party50Choice, False)
 
 	@TradgPty.deleter
 	def TradgPty(self):
 		del self._TradgPty
-		self._TradgPty = None
+		self._TradgPty = base_types.UninitialisedField(self, 'TradgPty', Party50Choice, False)
 
 	@property
 	def UltmtCdtr(self):
@@ -106,12 +106,12 @@ class TransactionParties12(base_types._BaseFieldType):
 
 	@UltmtCdtr.setter
 	def UltmtCdtr(self, value):
-		self._UltmtCdtr = value if type(value) != base_types.auto else self.make_default("UltmtCdtr")
+		self._UltmtCdtr = value if value is not None else base_types.UninitialisedField(self, 'UltmtCdtr', Party50Choice, False)
 
 	@UltmtCdtr.deleter
 	def UltmtCdtr(self):
 		del self._UltmtCdtr
-		self._UltmtCdtr = None
+		self._UltmtCdtr = base_types.UninitialisedField(self, 'UltmtCdtr', Party50Choice, False)
 
 	@property
 	def UltmtDbtr(self):
@@ -119,12 +119,12 @@ class TransactionParties12(base_types._BaseFieldType):
 
 	@UltmtDbtr.setter
 	def UltmtDbtr(self, value):
-		self._UltmtDbtr = value if type(value) != base_types.auto else self.make_default("UltmtDbtr")
+		self._UltmtDbtr = value if value is not None else base_types.UninitialisedField(self, 'UltmtDbtr', Party50Choice, False)
 
 	@UltmtDbtr.deleter
 	def UltmtDbtr(self):
 		del self._UltmtDbtr
-		self._UltmtDbtr = None
+		self._UltmtDbtr = base_types.UninitialisedField(self, 'UltmtDbtr', Party50Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cdtr', type=Party50Choice, min=0, max=1, mutex_group=None, array=False),

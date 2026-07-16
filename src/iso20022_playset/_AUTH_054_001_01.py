@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CCPClearingMemberReportV01 import CCPClearingMemberReportV01
+from . import CCPClearingMemberReportV01
 
 class AUTH_054_001_01():
 
@@ -18,12 +18,12 @@ class AUTH_054_001_01():
 
 		@CCPClrMmbRpt.setter
 		def CCPClrMmbRpt(self, value):
-			self._CCPClrMmbRpt = value if type(value) != base_types.auto else self.make_default("CCPClrMmbRpt")
+			self._CCPClrMmbRpt = value if value is not None else base_types.UninitialisedField(self, 'CCPClrMmbRpt', CCPClearingMemberReportV01, False)
 
 		@CCPClrMmbRpt.deleter
 		def CCPClrMmbRpt(self):
 			del self._CCPClrMmbRpt
-			self._CCPClrMmbRpt = None
+			self._CCPClrMmbRpt = base_types.UninitialisedField(self, 'CCPClrMmbRpt', CCPClearingMemberReportV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CCPClrMmbRpt', type=CCPClearingMemberReportV01, min=1, max=1, mutex_group=None, array=False),

@@ -2,35 +2,35 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalBusinessProcessFormat22Choice import AdditionalBusinessProcessFormat22Choice
-from ._CapitalGainFormat4Choice import CapitalGainFormat4Choice
-from ._CertificationTypeFormat4Choice import CertificationTypeFormat4Choice
-from ._ConsentTypeFormat5Choice import ConsentTypeFormat5Choice
-from ._CorporateActionChangeTypeFormat8Choice import CorporateActionChangeTypeFormat8Choice
-from ._CorporateActionDate96 import CorporateActionDate96
-from ._CorporateActionEventStageFormat20Choice import CorporateActionEventStageFormat20Choice
-from ._CorporateActionNarrative63 import CorporateActionNarrative63
-from ._CorporateActionPeriod16 import CorporateActionPeriod16
-from ._CorporateActionPrice96 import CorporateActionPrice96
-from ._CorporateActionQuantity14 import CorporateActionQuantity14
-from ._CorporateActionRate135 import CorporateActionRate135
-from ._DistributionTypeFormat8Choice import DistributionTypeFormat8Choice
-from ._DividendTypeFormat10Choice import DividendTypeFormat10Choice
-from ._DutchAuctionTypeFormat2Choice import DutchAuctionTypeFormat2Choice
-from ._ElectionTypeFormat4Choice import ElectionTypeFormat4Choice
-from ._EventSequenceTypeFormat2Choice import EventSequenceTypeFormat2Choice
-from ._Exact3UpperCaseAlphaNumericText import Exact3UpperCaseAlphaNumericText
-from ._GenericIdentification47 import GenericIdentification47
-from ._IdentificationFormat4Choice import IdentificationFormat4Choice
-from ._InformationTypeFormat5Choice import InformationTypeFormat5Choice
-from ._IntermediateSecuritiesDistributionTypeFormat18Choice import IntermediateSecuritiesDistributionTypeFormat18Choice
-from ._LotteryTypeFormat5Choice import LotteryTypeFormat5Choice
-from ._Max3Number import Max3Number
-from ._OfferTypeFormat16Choice import OfferTypeFormat16Choice
-from ._RenounceableEntitlementStatusTypeFormat4Choice import RenounceableEntitlementStatusTypeFormat4Choice
-from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
-from ._TaxableIncomePerShareCalculatedFormat4Choice import TaxableIncomePerShareCalculatedFormat4Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import AdditionalBusinessProcessFormat22Choice
+from . import CapitalGainFormat4Choice
+from . import CertificationTypeFormat4Choice
+from . import ConsentTypeFormat5Choice
+from . import CorporateActionChangeTypeFormat8Choice
+from . import CorporateActionDate96
+from . import CorporateActionEventStageFormat20Choice
+from . import CorporateActionNarrative63
+from . import CorporateActionPeriod16
+from . import CorporateActionPrice96
+from . import CorporateActionQuantity14
+from . import CorporateActionRate135
+from . import DistributionTypeFormat8Choice
+from . import DividendTypeFormat10Choice
+from . import DutchAuctionTypeFormat2Choice
+from . import ElectionTypeFormat4Choice
+from . import EventSequenceTypeFormat2Choice
+from . import Exact3UpperCaseAlphaNumericText
+from . import GenericIdentification47
+from . import IdentificationFormat4Choice
+from . import InformationTypeFormat5Choice
+from . import IntermediateSecuritiesDistributionTypeFormat18Choice
+from . import LotteryTypeFormat5Choice
+from . import Max3Number
+from . import OfferTypeFormat16Choice
+from . import RenounceableEntitlementStatusTypeFormat4Choice
+from . import RestrictedFINXMax350Text
+from . import TaxableIncomePerShareCalculatedFormat4Choice
+from . import YesNoIndicator
 
 class CorporateAction87(base_types._BaseFieldType):
 
@@ -41,12 +41,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@AccptncPrtyLvl.setter
 	def AccptncPrtyLvl(self, value):
-		self._AccptncPrtyLvl = value if type(value) != base_types.auto else self.make_default("AccptncPrtyLvl")
+		self._AccptncPrtyLvl = value if value is not None else base_types.UninitialisedField(self, 'AccptncPrtyLvl', Exact3UpperCaseAlphaNumericText, False)
 
 	@AccptncPrtyLvl.deleter
 	def AccptncPrtyLvl(self):
 		del self._AccptncPrtyLvl
-		self._AccptncPrtyLvl = None
+		self._AccptncPrtyLvl = base_types.UninitialisedField(self, 'AccptncPrtyLvl', Exact3UpperCaseAlphaNumericText, False)
 
 	@property
 	def AcrdIntrstInd(self):
@@ -54,12 +54,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@AcrdIntrstInd.setter
 	def AcrdIntrstInd(self, value):
-		self._AcrdIntrstInd = value if type(value) != base_types.auto else self.make_default("AcrdIntrstInd")
+		self._AcrdIntrstInd = value if value is not None else base_types.UninitialisedField(self, 'AcrdIntrstInd', YesNoIndicator, False)
 
 	@AcrdIntrstInd.deleter
 	def AcrdIntrstInd(self):
 		del self._AcrdIntrstInd
-		self._AcrdIntrstInd = None
+		self._AcrdIntrstInd = base_types.UninitialisedField(self, 'AcrdIntrstInd', YesNoIndicator, False)
 
 	@property
 	def AddtlBizPrcInd(self):
@@ -67,12 +67,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@AddtlBizPrcInd.setter
 	def AddtlBizPrcInd(self, value):
-		self._AddtlBizPrcInd = value if type(value) != base_types.auto else self.make_default("AddtlBizPrcInd")
+		self._AddtlBizPrcInd = value if value is not None else base_types.UninitialisedField(self, 'AddtlBizPrcInd', AdditionalBusinessProcessFormat22Choice, True)
 
 	@AddtlBizPrcInd.deleter
 	def AddtlBizPrcInd(self):
 		del self._AddtlBizPrcInd
-		self._AddtlBizPrcInd = None
+		self._AddtlBizPrcInd = base_types.UninitialisedField(self, 'AddtlBizPrcInd', AdditionalBusinessProcessFormat22Choice, True)
 
 	@property
 	def AddtlInf(self):
@@ -80,12 +80,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', CorporateActionNarrative63, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', CorporateActionNarrative63, False)
 
 	@property
 	def CertfctnBrkdwnInd(self):
@@ -93,12 +93,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@CertfctnBrkdwnInd.setter
 	def CertfctnBrkdwnInd(self, value):
-		self._CertfctnBrkdwnInd = value if type(value) != base_types.auto else self.make_default("CertfctnBrkdwnInd")
+		self._CertfctnBrkdwnInd = value if value is not None else base_types.UninitialisedField(self, 'CertfctnBrkdwnInd', YesNoIndicator, False)
 
 	@CertfctnBrkdwnInd.deleter
 	def CertfctnBrkdwnInd(self):
 		del self._CertfctnBrkdwnInd
-		self._CertfctnBrkdwnInd = None
+		self._CertfctnBrkdwnInd = base_types.UninitialisedField(self, 'CertfctnBrkdwnInd', YesNoIndicator, False)
 
 	@property
 	def CertfctnTp(self):
@@ -106,12 +106,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@CertfctnTp.setter
 	def CertfctnTp(self, value):
-		self._CertfctnTp = value if type(value) != base_types.auto else self.make_default("CertfctnTp")
+		self._CertfctnTp = value if value is not None else base_types.UninitialisedField(self, 'CertfctnTp', CertificationTypeFormat4Choice, False)
 
 	@CertfctnTp.deleter
 	def CertfctnTp(self):
 		del self._CertfctnTp
-		self._CertfctnTp = None
+		self._CertfctnTp = base_types.UninitialisedField(self, 'CertfctnTp', CertificationTypeFormat4Choice, False)
 
 	@property
 	def ChngTp(self):
@@ -119,12 +119,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@ChngTp.setter
 	def ChngTp(self, value):
-		self._ChngTp = value if type(value) != base_types.auto else self.make_default("ChngTp")
+		self._ChngTp = value if value is not None else base_types.UninitialisedField(self, 'ChngTp', CorporateActionChangeTypeFormat8Choice, True)
 
 	@ChngTp.deleter
 	def ChngTp(self):
 		del self._ChngTp
-		self._ChngTp = None
+		self._ChngTp = base_types.UninitialisedField(self, 'ChngTp', CorporateActionChangeTypeFormat8Choice, True)
 
 	@property
 	def ChrgsApldInd(self):
@@ -132,12 +132,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@ChrgsApldInd.setter
 	def ChrgsApldInd(self, value):
-		self._ChrgsApldInd = value if type(value) != base_types.auto else self.make_default("ChrgsApldInd")
+		self._ChrgsApldInd = value if value is not None else base_types.UninitialisedField(self, 'ChrgsApldInd', YesNoIndicator, False)
 
 	@ChrgsApldInd.deleter
 	def ChrgsApldInd(self):
 		del self._ChrgsApldInd
-		self._ChrgsApldInd = None
+		self._ChrgsApldInd = base_types.UninitialisedField(self, 'ChrgsApldInd', YesNoIndicator, False)
 
 	@property
 	def CnsntTp(self):
@@ -145,12 +145,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@CnsntTp.setter
 	def CnsntTp(self, value):
-		self._CnsntTp = value if type(value) != base_types.auto else self.make_default("CnsntTp")
+		self._CnsntTp = value if value is not None else base_types.UninitialisedField(self, 'CnsntTp', ConsentTypeFormat5Choice, False)
 
 	@CnsntTp.deleter
 	def CnsntTp(self):
 		del self._CnsntTp
-		self._CnsntTp = None
+		self._CnsntTp = base_types.UninitialisedField(self, 'CnsntTp', ConsentTypeFormat5Choice, False)
 
 	@property
 	def CpnNb(self):
@@ -158,12 +158,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@CpnNb.setter
 	def CpnNb(self, value):
-		self._CpnNb = value if type(value) != base_types.auto else self.make_default("CpnNb")
+		self._CpnNb = value if value is not None else base_types.UninitialisedField(self, 'CpnNb', IdentificationFormat4Choice, True)
 
 	@CpnNb.deleter
 	def CpnNb(self):
 		del self._CpnNb
-		self._CpnNb = None
+		self._CpnNb = base_types.UninitialisedField(self, 'CpnNb', IdentificationFormat4Choice, True)
 
 	@property
 	def CptlGnInOutInd(self):
@@ -171,12 +171,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@CptlGnInOutInd.setter
 	def CptlGnInOutInd(self, value):
-		self._CptlGnInOutInd = value if type(value) != base_types.auto else self.make_default("CptlGnInOutInd")
+		self._CptlGnInOutInd = value if value is not None else base_types.UninitialisedField(self, 'CptlGnInOutInd', CapitalGainFormat4Choice, False)
 
 	@CptlGnInOutInd.deleter
 	def CptlGnInOutInd(self):
 		del self._CptlGnInOutInd
-		self._CptlGnInOutInd = None
+		self._CptlGnInOutInd = base_types.UninitialisedField(self, 'CptlGnInOutInd', CapitalGainFormat4Choice, False)
 
 	@property
 	def DtDtls(self):
@@ -184,12 +184,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@DtDtls.setter
 	def DtDtls(self, value):
-		self._DtDtls = value if type(value) != base_types.auto else self.make_default("DtDtls")
+		self._DtDtls = value if value is not None else base_types.UninitialisedField(self, 'DtDtls', CorporateActionDate96, False)
 
 	@DtDtls.deleter
 	def DtDtls(self):
 		del self._DtDtls
-		self._DtDtls = None
+		self._DtDtls = base_types.UninitialisedField(self, 'DtDtls', CorporateActionDate96, False)
 
 	@property
 	def DtchAuctnTp(self):
@@ -197,12 +197,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@DtchAuctnTp.setter
 	def DtchAuctnTp(self, value):
-		self._DtchAuctnTp = value if type(value) != base_types.auto else self.make_default("DtchAuctnTp")
+		self._DtchAuctnTp = value if value is not None else base_types.UninitialisedField(self, 'DtchAuctnTp', DutchAuctionTypeFormat2Choice, False)
 
 	@DtchAuctnTp.deleter
 	def DtchAuctnTp(self):
 		del self._DtchAuctnTp
-		self._DtchAuctnTp = None
+		self._DtchAuctnTp = base_types.UninitialisedField(self, 'DtchAuctnTp', DutchAuctionTypeFormat2Choice, False)
 
 	@property
 	def DvddTp(self):
@@ -210,12 +210,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@DvddTp.setter
 	def DvddTp(self, value):
-		self._DvddTp = value if type(value) != base_types.auto else self.make_default("DvddTp")
+		self._DvddTp = value if value is not None else base_types.UninitialisedField(self, 'DvddTp', DividendTypeFormat10Choice, False)
 
 	@DvddTp.deleter
 	def DvddTp(self):
 		del self._DvddTp
-		self._DvddTp = None
+		self._DvddTp = base_types.UninitialisedField(self, 'DvddTp', DividendTypeFormat10Choice, False)
 
 	@property
 	def ElctnTp(self):
@@ -223,12 +223,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@ElctnTp.setter
 	def ElctnTp(self, value):
-		self._ElctnTp = value if type(value) != base_types.auto else self.make_default("ElctnTp")
+		self._ElctnTp = value if value is not None else base_types.UninitialisedField(self, 'ElctnTp', ElectionTypeFormat4Choice, False)
 
 	@ElctnTp.deleter
 	def ElctnTp(self):
 		del self._ElctnTp
-		self._ElctnTp = None
+		self._ElctnTp = base_types.UninitialisedField(self, 'ElctnTp', ElectionTypeFormat4Choice, False)
 
 	@property
 	def EvtSeqTp(self):
@@ -236,12 +236,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@EvtSeqTp.setter
 	def EvtSeqTp(self, value):
-		self._EvtSeqTp = value if type(value) != base_types.auto else self.make_default("EvtSeqTp")
+		self._EvtSeqTp = value if value is not None else base_types.UninitialisedField(self, 'EvtSeqTp', EventSequenceTypeFormat2Choice, False)
 
 	@EvtSeqTp.deleter
 	def EvtSeqTp(self):
 		del self._EvtSeqTp
-		self._EvtSeqTp = None
+		self._EvtSeqTp = base_types.UninitialisedField(self, 'EvtSeqTp', EventSequenceTypeFormat2Choice, False)
 
 	@property
 	def EvtStag(self):
@@ -249,12 +249,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@EvtStag.setter
 	def EvtStag(self, value):
-		self._EvtStag = value if type(value) != base_types.auto else self.make_default("EvtStag")
+		self._EvtStag = value if value is not None else base_types.UninitialisedField(self, 'EvtStag', CorporateActionEventStageFormat20Choice, True)
 
 	@EvtStag.deleter
 	def EvtStag(self):
 		del self._EvtStag
-		self._EvtStag = None
+		self._EvtStag = base_types.UninitialisedField(self, 'EvtStag', CorporateActionEventStageFormat20Choice, True)
 
 	@property
 	def FrftrOfIntrstInd(self):
@@ -262,12 +262,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@FrftrOfIntrstInd.setter
 	def FrftrOfIntrstInd(self, value):
-		self._FrftrOfIntrstInd = value if type(value) != base_types.auto else self.make_default("FrftrOfIntrstInd")
+		self._FrftrOfIntrstInd = value if value is not None else base_types.UninitialisedField(self, 'FrftrOfIntrstInd', YesNoIndicator, False)
 
 	@FrftrOfIntrstInd.deleter
 	def FrftrOfIntrstInd(self):
 		del self._FrftrOfIntrstInd
-		self._FrftrOfIntrstInd = None
+		self._FrftrOfIntrstInd = base_types.UninitialisedField(self, 'FrftrOfIntrstInd', YesNoIndicator, False)
 
 	@property
 	def InfTp(self):
@@ -275,12 +275,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@InfTp.setter
 	def InfTp(self, value):
-		self._InfTp = value if type(value) != base_types.auto else self.make_default("InfTp")
+		self._InfTp = value if value is not None else base_types.UninitialisedField(self, 'InfTp', InformationTypeFormat5Choice, False)
 
 	@InfTp.deleter
 	def InfTp(self):
 		del self._InfTp
-		self._InfTp = None
+		self._InfTp = base_types.UninitialisedField(self, 'InfTp', InformationTypeFormat5Choice, False)
 
 	@property
 	def IntrmdtSctiesDstrbtnTp(self):
@@ -288,12 +288,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@IntrmdtSctiesDstrbtnTp.setter
 	def IntrmdtSctiesDstrbtnTp(self, value):
-		self._IntrmdtSctiesDstrbtnTp = value if type(value) != base_types.auto else self.make_default("IntrmdtSctiesDstrbtnTp")
+		self._IntrmdtSctiesDstrbtnTp = value if value is not None else base_types.UninitialisedField(self, 'IntrmdtSctiesDstrbtnTp', IntermediateSecuritiesDistributionTypeFormat18Choice, False)
 
 	@IntrmdtSctiesDstrbtnTp.deleter
 	def IntrmdtSctiesDstrbtnTp(self):
 		del self._IntrmdtSctiesDstrbtnTp
-		self._IntrmdtSctiesDstrbtnTp = None
+		self._IntrmdtSctiesDstrbtnTp = base_types.UninitialisedField(self, 'IntrmdtSctiesDstrbtnTp', IntermediateSecuritiesDistributionTypeFormat18Choice, False)
 
 	@property
 	def IntrstAcrdNbOfDays(self):
@@ -301,12 +301,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@IntrstAcrdNbOfDays.setter
 	def IntrstAcrdNbOfDays(self, value):
-		self._IntrstAcrdNbOfDays = value if type(value) != base_types.auto else self.make_default("IntrstAcrdNbOfDays")
+		self._IntrstAcrdNbOfDays = value if value is not None else base_types.UninitialisedField(self, 'IntrstAcrdNbOfDays', Max3Number, False)
 
 	@IntrstAcrdNbOfDays.deleter
 	def IntrstAcrdNbOfDays(self):
 		del self._IntrstAcrdNbOfDays
-		self._IntrstAcrdNbOfDays = None
+		self._IntrstAcrdNbOfDays = base_types.UninitialisedField(self, 'IntrstAcrdNbOfDays', Max3Number, False)
 
 	@property
 	def LtryTp(self):
@@ -314,12 +314,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@LtryTp.setter
 	def LtryTp(self, value):
-		self._LtryTp = value if type(value) != base_types.auto else self.make_default("LtryTp")
+		self._LtryTp = value if value is not None else base_types.UninitialisedField(self, 'LtryTp', LotteryTypeFormat5Choice, False)
 
 	@LtryTp.deleter
 	def LtryTp(self):
 		del self._LtryTp
-		self._LtryTp = None
+		self._LtryTp = base_types.UninitialisedField(self, 'LtryTp', LotteryTypeFormat5Choice, False)
 
 	@property
 	def LttrOfGrntedDlvryInd(self):
@@ -327,12 +327,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@LttrOfGrntedDlvryInd.setter
 	def LttrOfGrntedDlvryInd(self, value):
-		self._LttrOfGrntedDlvryInd = value if type(value) != base_types.auto else self.make_default("LttrOfGrntedDlvryInd")
+		self._LttrOfGrntedDlvryInd = value if value is not None else base_types.UninitialisedField(self, 'LttrOfGrntedDlvryInd', YesNoIndicator, False)
 
 	@LttrOfGrntedDlvryInd.deleter
 	def LttrOfGrntedDlvryInd(self):
 		del self._LttrOfGrntedDlvryInd
-		self._LttrOfGrntedDlvryInd = None
+		self._LttrOfGrntedDlvryInd = base_types.UninitialisedField(self, 'LttrOfGrntedDlvryInd', YesNoIndicator, False)
 
 	@property
 	def NewPlcOfIncorprtn(self):
@@ -340,12 +340,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@NewPlcOfIncorprtn.setter
 	def NewPlcOfIncorprtn(self, value):
-		self._NewPlcOfIncorprtn = value if type(value) != base_types.auto else self.make_default("NewPlcOfIncorprtn")
+		self._NewPlcOfIncorprtn = value if value is not None else base_types.UninitialisedField(self, 'NewPlcOfIncorprtn', RestrictedFINXMax350Text, False)
 
 	@NewPlcOfIncorprtn.deleter
 	def NewPlcOfIncorprtn(self):
 		del self._NewPlcOfIncorprtn
-		self._NewPlcOfIncorprtn = None
+		self._NewPlcOfIncorprtn = base_types.UninitialisedField(self, 'NewPlcOfIncorprtn', RestrictedFINXMax350Text, False)
 
 	@property
 	def OcrncTp(self):
@@ -353,12 +353,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@OcrncTp.setter
 	def OcrncTp(self, value):
-		self._OcrncTp = value if type(value) != base_types.auto else self.make_default("OcrncTp")
+		self._OcrncTp = value if value is not None else base_types.UninitialisedField(self, 'OcrncTp', DistributionTypeFormat8Choice, False)
 
 	@OcrncTp.deleter
 	def OcrncTp(self):
 		del self._OcrncTp
-		self._OcrncTp = None
+		self._OcrncTp = base_types.UninitialisedField(self, 'OcrncTp', DistributionTypeFormat8Choice, False)
 
 	@property
 	def OfferTp(self):
@@ -366,12 +366,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@OfferTp.setter
 	def OfferTp(self, value):
-		self._OfferTp = value if type(value) != base_types.auto else self.make_default("OfferTp")
+		self._OfferTp = value if value is not None else base_types.UninitialisedField(self, 'OfferTp', OfferTypeFormat16Choice, True)
 
 	@OfferTp.deleter
 	def OfferTp(self):
 		del self._OfferTp
-		self._OfferTp = None
+		self._OfferTp = base_types.UninitialisedField(self, 'OfferTp', OfferTypeFormat16Choice, True)
 
 	@property
 	def PrdDtls(self):
@@ -379,12 +379,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@PrdDtls.setter
 	def PrdDtls(self, value):
-		self._PrdDtls = value if type(value) != base_types.auto else self.make_default("PrdDtls")
+		self._PrdDtls = value if value is not None else base_types.UninitialisedField(self, 'PrdDtls', CorporateActionPeriod16, False)
 
 	@PrdDtls.deleter
 	def PrdDtls(self):
 		del self._PrdDtls
-		self._PrdDtls = None
+		self._PrdDtls = base_types.UninitialisedField(self, 'PrdDtls', CorporateActionPeriod16, False)
 
 	@property
 	def PricDtls(self):
@@ -392,12 +392,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@PricDtls.setter
 	def PricDtls(self, value):
-		self._PricDtls = value if type(value) != base_types.auto else self.make_default("PricDtls")
+		self._PricDtls = value if value is not None else base_types.UninitialisedField(self, 'PricDtls', CorporateActionPrice96, False)
 
 	@PricDtls.deleter
 	def PricDtls(self):
 		del self._PricDtls
-		self._PricDtls = None
+		self._PricDtls = base_types.UninitialisedField(self, 'PricDtls', CorporateActionPrice96, False)
 
 	@property
 	def RateAndAmtDtls(self):
@@ -405,12 +405,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@RateAndAmtDtls.setter
 	def RateAndAmtDtls(self, value):
-		self._RateAndAmtDtls = value if type(value) != base_types.auto else self.make_default("RateAndAmtDtls")
+		self._RateAndAmtDtls = value if value is not None else base_types.UninitialisedField(self, 'RateAndAmtDtls', CorporateActionRate135, False)
 
 	@RateAndAmtDtls.deleter
 	def RateAndAmtDtls(self):
 		del self._RateAndAmtDtls
-		self._RateAndAmtDtls = None
+		self._RateAndAmtDtls = base_types.UninitialisedField(self, 'RateAndAmtDtls', CorporateActionRate135, False)
 
 	@property
 	def RnncblEntitlmntStsTp(self):
@@ -418,12 +418,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@RnncblEntitlmntStsTp.setter
 	def RnncblEntitlmntStsTp(self, value):
-		self._RnncblEntitlmntStsTp = value if type(value) != base_types.auto else self.make_default("RnncblEntitlmntStsTp")
+		self._RnncblEntitlmntStsTp = value if value is not None else base_types.UninitialisedField(self, 'RnncblEntitlmntStsTp', RenounceableEntitlementStatusTypeFormat4Choice, False)
 
 	@RnncblEntitlmntStsTp.deleter
 	def RnncblEntitlmntStsTp(self):
 		del self._RnncblEntitlmntStsTp
-		self._RnncblEntitlmntStsTp = None
+		self._RnncblEntitlmntStsTp = base_types.UninitialisedField(self, 'RnncblEntitlmntStsTp', RenounceableEntitlementStatusTypeFormat4Choice, False)
 
 	@property
 	def RstrctnInd(self):
@@ -431,12 +431,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@RstrctnInd.setter
 	def RstrctnInd(self, value):
-		self._RstrctnInd = value if type(value) != base_types.auto else self.make_default("RstrctnInd")
+		self._RstrctnInd = value if value is not None else base_types.UninitialisedField(self, 'RstrctnInd', YesNoIndicator, False)
 
 	@RstrctnInd.deleter
 	def RstrctnInd(self):
 		del self._RstrctnInd
-		self._RstrctnInd = None
+		self._RstrctnInd = base_types.UninitialisedField(self, 'RstrctnInd', YesNoIndicator, False)
 
 	@property
 	def SctiesQty(self):
@@ -444,12 +444,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@SctiesQty.setter
 	def SctiesQty(self, value):
-		self._SctiesQty = value if type(value) != base_types.auto else self.make_default("SctiesQty")
+		self._SctiesQty = value if value is not None else base_types.UninitialisedField(self, 'SctiesQty', CorporateActionQuantity14, False)
 
 	@SctiesQty.deleter
 	def SctiesQty(self):
 		del self._SctiesQty
-		self._SctiesQty = None
+		self._SctiesQty = base_types.UninitialisedField(self, 'SctiesQty', CorporateActionQuantity14, False)
 
 	@property
 	def ShrhldrRghtsDrctvInd(self):
@@ -457,12 +457,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@ShrhldrRghtsDrctvInd.setter
 	def ShrhldrRghtsDrctvInd(self, value):
-		self._ShrhldrRghtsDrctvInd = value if type(value) != base_types.auto else self.make_default("ShrhldrRghtsDrctvInd")
+		self._ShrhldrRghtsDrctvInd = value if value is not None else base_types.UninitialisedField(self, 'ShrhldrRghtsDrctvInd', YesNoIndicator, False)
 
 	@ShrhldrRghtsDrctvInd.deleter
 	def ShrhldrRghtsDrctvInd(self):
 		del self._ShrhldrRghtsDrctvInd
-		self._ShrhldrRghtsDrctvInd = None
+		self._ShrhldrRghtsDrctvInd = base_types.UninitialisedField(self, 'ShrhldrRghtsDrctvInd', YesNoIndicator, False)
 
 	@property
 	def TaxOnNonDstrbtdPrcdsInd(self):
@@ -470,12 +470,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@TaxOnNonDstrbtdPrcdsInd.setter
 	def TaxOnNonDstrbtdPrcdsInd(self, value):
-		self._TaxOnNonDstrbtdPrcdsInd = value if type(value) != base_types.auto else self.make_default("TaxOnNonDstrbtdPrcdsInd")
+		self._TaxOnNonDstrbtdPrcdsInd = value if value is not None else base_types.UninitialisedField(self, 'TaxOnNonDstrbtdPrcdsInd', GenericIdentification47, True)
 
 	@TaxOnNonDstrbtdPrcdsInd.deleter
 	def TaxOnNonDstrbtdPrcdsInd(self):
 		del self._TaxOnNonDstrbtdPrcdsInd
-		self._TaxOnNonDstrbtdPrcdsInd = None
+		self._TaxOnNonDstrbtdPrcdsInd = base_types.UninitialisedField(self, 'TaxOnNonDstrbtdPrcdsInd', GenericIdentification47, True)
 
 	@property
 	def TaxblIncmPerShrClctd(self):
@@ -483,12 +483,12 @@ class CorporateAction87(base_types._BaseFieldType):
 
 	@TaxblIncmPerShrClctd.setter
 	def TaxblIncmPerShrClctd(self, value):
-		self._TaxblIncmPerShrClctd = value if type(value) != base_types.auto else self.make_default("TaxblIncmPerShrClctd")
+		self._TaxblIncmPerShrClctd = value if value is not None else base_types.UninitialisedField(self, 'TaxblIncmPerShrClctd', TaxableIncomePerShareCalculatedFormat4Choice, False)
 
 	@TaxblIncmPerShrClctd.deleter
 	def TaxblIncmPerShrClctd(self):
 		del self._TaxblIncmPerShrClctd
-		self._TaxblIncmPerShrClctd = None
+		self._TaxblIncmPerShrClctd = base_types.UninitialisedField(self, 'TaxblIncmPerShrClctd', TaxableIncomePerShareCalculatedFormat4Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AccptncPrtyLvl', type=Exact3UpperCaseAlphaNumericText, min=0, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._DigitalTokenAmount2 import DigitalTokenAmount2
-from ._PriceStatus1Code import PriceStatus1Code
+from . import ActiveOrHistoricCurrencyCode
+from . import DigitalTokenAmount2
+from . import PriceStatus1Code
 
 class SecuritiesTransactionPrice6(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SecuritiesTransactionPrice6(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveOrHistoricCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def DgtlTkn(self):
@@ -28,12 +28,12 @@ class SecuritiesTransactionPrice6(base_types._BaseFieldType):
 
 	@DgtlTkn.setter
 	def DgtlTkn(self, value):
-		self._DgtlTkn = value if type(value) != base_types.auto else self.make_default("DgtlTkn")
+		self._DgtlTkn = value if value is not None else base_types.UninitialisedField(self, 'DgtlTkn', DigitalTokenAmount2, True)
 
 	@DgtlTkn.deleter
 	def DgtlTkn(self):
 		del self._DgtlTkn
-		self._DgtlTkn = None
+		self._DgtlTkn = base_types.UninitialisedField(self, 'DgtlTkn', DigitalTokenAmount2, True)
 
 	@property
 	def Pdg(self):
@@ -41,12 +41,12 @@ class SecuritiesTransactionPrice6(base_types._BaseFieldType):
 
 	@Pdg.setter
 	def Pdg(self, value):
-		self._Pdg = value if type(value) != base_types.auto else self.make_default("Pdg")
+		self._Pdg = value if value is not None else base_types.UninitialisedField(self, 'Pdg', PriceStatus1Code, False)
 
 	@Pdg.deleter
 	def Pdg(self):
 		del self._Pdg
-		self._Pdg = None
+		self._Pdg = base_types.UninitialisedField(self, 'Pdg', PriceStatus1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),

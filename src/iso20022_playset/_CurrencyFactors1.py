@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AgreedRate2 import AgreedRate2
-from ._CurrencyCode import CurrencyCode
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._PercentageRate import PercentageRate
+from . import AgreedRate2
+from . import CurrencyCode
+from . import ImpliedCurrencyAndAmount
+from . import PercentageRate
 
 class CurrencyFactors1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CurrencyFactors1(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', CurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', CurrencyCode, False)
 
 	@property
 	def MinPayInAmt(self):
@@ -29,12 +29,12 @@ class CurrencyFactors1(base_types._BaseFieldType):
 
 	@MinPayInAmt.setter
 	def MinPayInAmt(self, value):
-		self._MinPayInAmt = value if type(value) != base_types.auto else self.make_default("MinPayInAmt")
+		self._MinPayInAmt = value if value is not None else base_types.UninitialisedField(self, 'MinPayInAmt', ImpliedCurrencyAndAmount, False)
 
 	@MinPayInAmt.deleter
 	def MinPayInAmt(self):
 		del self._MinPayInAmt
-		self._MinPayInAmt = None
+		self._MinPayInAmt = base_types.UninitialisedField(self, 'MinPayInAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def Rate(self):
@@ -42,12 +42,12 @@ class CurrencyFactors1(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+		self._Rate = value if value is not None else base_types.UninitialisedField(self, 'Rate', AgreedRate2, False)
 
 	@Rate.deleter
 	def Rate(self):
 		del self._Rate
-		self._Rate = None
+		self._Rate = base_types.UninitialisedField(self, 'Rate', AgreedRate2, False)
 
 	@property
 	def ShrtPosLmt(self):
@@ -55,12 +55,12 @@ class CurrencyFactors1(base_types._BaseFieldType):
 
 	@ShrtPosLmt.setter
 	def ShrtPosLmt(self, value):
-		self._ShrtPosLmt = value if type(value) != base_types.auto else self.make_default("ShrtPosLmt")
+		self._ShrtPosLmt = value if value is not None else base_types.UninitialisedField(self, 'ShrtPosLmt', ImpliedCurrencyAndAmount, False)
 
 	@ShrtPosLmt.deleter
 	def ShrtPosLmt(self):
 		del self._ShrtPosLmt
-		self._ShrtPosLmt = None
+		self._ShrtPosLmt = base_types.UninitialisedField(self, 'ShrtPosLmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def VoltlyMrgn(self):
@@ -68,12 +68,12 @@ class CurrencyFactors1(base_types._BaseFieldType):
 
 	@VoltlyMrgn.setter
 	def VoltlyMrgn(self, value):
-		self._VoltlyMrgn = value if type(value) != base_types.auto else self.make_default("VoltlyMrgn")
+		self._VoltlyMrgn = value if value is not None else base_types.UninitialisedField(self, 'VoltlyMrgn', PercentageRate, False)
 
 	@VoltlyMrgn.deleter
 	def VoltlyMrgn(self):
 		del self._VoltlyMrgn
-		self._VoltlyMrgn = None
+		self._VoltlyMrgn = base_types.UninitialisedField(self, 'VoltlyMrgn', PercentageRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ccy', type=CurrencyCode, min=1, max=1, mutex_group=None, array=False),

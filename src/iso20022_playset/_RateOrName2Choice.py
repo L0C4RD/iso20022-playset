@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Rate2 import Rate2
-from ._RateName2 import RateName2
+from . import Rate2
+from . import RateName2
 
 class RateOrName2Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class RateOrName2Choice(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+		self._Rate = value if value is not None else base_types.UninitialisedField(self, 'Rate', Rate2, False)
 
 	@Rate.deleter
 	def Rate(self):
 		del self._Rate
-		self._Rate = None
+		self._Rate = base_types.UninitialisedField(self, 'Rate', Rate2, False)
 
 	@property
 	def RateNm(self):
@@ -27,12 +27,12 @@ class RateOrName2Choice(base_types._BaseFieldType):
 
 	@RateNm.setter
 	def RateNm(self, value):
-		self._RateNm = value if type(value) != base_types.auto else self.make_default("RateNm")
+		self._RateNm = value if value is not None else base_types.UninitialisedField(self, 'RateNm', RateName2, False)
 
 	@RateNm.deleter
 	def RateNm(self):
 		del self._RateNm
-		self._RateNm = None
+		self._RateNm = base_types.UninitialisedField(self, 'RateNm', RateName2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Rate', type=Rate2, min=0, max=1, mutex_group=1, array=False),

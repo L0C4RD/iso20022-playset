@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max35Text import Max35Text
-from ._Max3NumericText import Max3NumericText
-from ._Max70Text import Max70Text
+from . import ImpliedCurrencyAndAmount
+from . import Max35Text
+from . import Max3NumericText
+from . import Max70Text
 
 class LodgingRoom2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class LodgingRoom2(base_types._BaseFieldType):
 
 	@Adlts.setter
 	def Adlts(self, value):
-		self._Adlts = value if type(value) != base_types.auto else self.make_default("Adlts")
+		self._Adlts = value if value is not None else base_types.UninitialisedField(self, 'Adlts', Max3NumericText, False)
 
 	@Adlts.deleter
 	def Adlts(self):
 		del self._Adlts
-		self._Adlts = None
+		self._Adlts = base_types.UninitialisedField(self, 'Adlts', Max3NumericText, False)
 
 	@property
 	def BedTp(self):
@@ -29,12 +29,12 @@ class LodgingRoom2(base_types._BaseFieldType):
 
 	@BedTp.setter
 	def BedTp(self, value):
-		self._BedTp = value if type(value) != base_types.auto else self.make_default("BedTp")
+		self._BedTp = value if value is not None else base_types.UninitialisedField(self, 'BedTp', Max70Text, False)
 
 	@BedTp.deleter
 	def BedTp(self):
 		del self._BedTp
-		self._BedTp = None
+		self._BedTp = base_types.UninitialisedField(self, 'BedTp', Max70Text, False)
 
 	@property
 	def Chldrn(self):
@@ -42,12 +42,12 @@ class LodgingRoom2(base_types._BaseFieldType):
 
 	@Chldrn.setter
 	def Chldrn(self, value):
-		self._Chldrn = value if type(value) != base_types.auto else self.make_default("Chldrn")
+		self._Chldrn = value if value is not None else base_types.UninitialisedField(self, 'Chldrn', Max3NumericText, False)
 
 	@Chldrn.deleter
 	def Chldrn(self):
 		del self._Chldrn
-		self._Chldrn = None
+		self._Chldrn = base_types.UninitialisedField(self, 'Chldrn', Max3NumericText, False)
 
 	@property
 	def DalyRate(self):
@@ -55,12 +55,12 @@ class LodgingRoom2(base_types._BaseFieldType):
 
 	@DalyRate.setter
 	def DalyRate(self, value):
-		self._DalyRate = value if type(value) != base_types.auto else self.make_default("DalyRate")
+		self._DalyRate = value if value is not None else base_types.UninitialisedField(self, 'DalyRate', ImpliedCurrencyAndAmount, False)
 
 	@DalyRate.deleter
 	def DalyRate(self):
 		del self._DalyRate
-		self._DalyRate = None
+		self._DalyRate = base_types.UninitialisedField(self, 'DalyRate', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def Gsts(self):
@@ -68,12 +68,12 @@ class LodgingRoom2(base_types._BaseFieldType):
 
 	@Gsts.setter
 	def Gsts(self, value):
-		self._Gsts = value if type(value) != base_types.auto else self.make_default("Gsts")
+		self._Gsts = value if value is not None else base_types.UninitialisedField(self, 'Gsts', Max3NumericText, False)
 
 	@Gsts.deleter
 	def Gsts(self):
 		del self._Gsts
-		self._Gsts = None
+		self._Gsts = base_types.UninitialisedField(self, 'Gsts', Max3NumericText, False)
 
 	@property
 	def Lctn(self):
@@ -81,12 +81,12 @@ class LodgingRoom2(base_types._BaseFieldType):
 
 	@Lctn.setter
 	def Lctn(self, value):
-		self._Lctn = value if type(value) != base_types.auto else self.make_default("Lctn")
+		self._Lctn = value if value is not None else base_types.UninitialisedField(self, 'Lctn', Max35Text, False)
 
 	@Lctn.deleter
 	def Lctn(self):
 		del self._Lctn
-		self._Lctn = None
+		self._Lctn = base_types.UninitialisedField(self, 'Lctn', Max35Text, False)
 
 	@property
 	def Tp(self):
@@ -94,12 +94,12 @@ class LodgingRoom2(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', Max35Text, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Adlts', type=Max3NumericText, min=0, max=1, mutex_group=None, array=False),

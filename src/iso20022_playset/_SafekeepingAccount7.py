@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountSubLevel11 import AccountSubLevel11
-from ._AggregateHoldingBalance2 import AggregateHoldingBalance2
-from ._AggregateHoldingBalance3 import AggregateHoldingBalance3
-from ._BeneficialOwner2 import BeneficialOwner2
-from ._PartyIdentification100 import PartyIdentification100
-from ._SecuritiesAccount19 import SecuritiesAccount19
+from . import AccountSubLevel11
+from . import AggregateHoldingBalance2
+from . import AggregateHoldingBalance3
+from . import BeneficialOwner2
+from . import PartyIdentification100
+from . import SecuritiesAccount19
 
 class SafekeepingAccount7(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class SafekeepingAccount7(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', SecuritiesAccount19, False)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', SecuritiesAccount19, False)
 
 	@property
 	def AcctOwnr(self):
@@ -31,12 +31,12 @@ class SafekeepingAccount7(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification100, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification100, False)
 
 	@property
 	def AcctSubLvl1(self):
@@ -44,12 +44,12 @@ class SafekeepingAccount7(base_types._BaseFieldType):
 
 	@AcctSubLvl1.setter
 	def AcctSubLvl1(self, value):
-		self._AcctSubLvl1 = value if type(value) != base_types.auto else self.make_default("AcctSubLvl1")
+		self._AcctSubLvl1 = value if value is not None else base_types.UninitialisedField(self, 'AcctSubLvl1', AccountSubLevel11, True)
 
 	@AcctSubLvl1.deleter
 	def AcctSubLvl1(self):
 		del self._AcctSubLvl1
-		self._AcctSubLvl1 = None
+		self._AcctSubLvl1 = base_types.UninitialisedField(self, 'AcctSubLvl1', AccountSubLevel11, True)
 
 	@property
 	def AcctSubLvl1Diff(self):
@@ -57,12 +57,12 @@ class SafekeepingAccount7(base_types._BaseFieldType):
 
 	@AcctSubLvl1Diff.setter
 	def AcctSubLvl1Diff(self, value):
-		self._AcctSubLvl1Diff = value if type(value) != base_types.auto else self.make_default("AcctSubLvl1Diff")
+		self._AcctSubLvl1Diff = value if value is not None else base_types.UninitialisedField(self, 'AcctSubLvl1Diff', AggregateHoldingBalance2, True)
 
 	@AcctSubLvl1Diff.deleter
 	def AcctSubLvl1Diff(self):
 		del self._AcctSubLvl1Diff
-		self._AcctSubLvl1Diff = None
+		self._AcctSubLvl1Diff = base_types.UninitialisedField(self, 'AcctSubLvl1Diff', AggregateHoldingBalance2, True)
 
 	@property
 	def AcctSvcr(self):
@@ -70,12 +70,12 @@ class SafekeepingAccount7(base_types._BaseFieldType):
 
 	@AcctSvcr.setter
 	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
+		self._AcctSvcr = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcr', PartyIdentification100, False)
 
 	@AcctSvcr.deleter
 	def AcctSvcr(self):
 		del self._AcctSvcr
-		self._AcctSvcr = None
+		self._AcctSvcr = base_types.UninitialisedField(self, 'AcctSvcr', PartyIdentification100, False)
 
 	@property
 	def BalDtls(self):
@@ -83,12 +83,12 @@ class SafekeepingAccount7(base_types._BaseFieldType):
 
 	@BalDtls.setter
 	def BalDtls(self, value):
-		self._BalDtls = value if type(value) != base_types.auto else self.make_default("BalDtls")
+		self._BalDtls = value if value is not None else base_types.UninitialisedField(self, 'BalDtls', AggregateHoldingBalance3, True)
 
 	@BalDtls.deleter
 	def BalDtls(self):
 		del self._BalDtls
-		self._BalDtls = None
+		self._BalDtls = base_types.UninitialisedField(self, 'BalDtls', AggregateHoldingBalance3, True)
 
 	@property
 	def BnfclOwnr(self):
@@ -96,12 +96,12 @@ class SafekeepingAccount7(base_types._BaseFieldType):
 
 	@BnfclOwnr.setter
 	def BnfclOwnr(self, value):
-		self._BnfclOwnr = value if type(value) != base_types.auto else self.make_default("BnfclOwnr")
+		self._BnfclOwnr = value if value is not None else base_types.UninitialisedField(self, 'BnfclOwnr', BeneficialOwner2, True)
 
 	@BnfclOwnr.deleter
 	def BnfclOwnr(self):
 		del self._BnfclOwnr
-		self._BnfclOwnr = None
+		self._BnfclOwnr = base_types.UninitialisedField(self, 'BnfclOwnr', BeneficialOwner2, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=SecuritiesAccount19, min=1, max=1, mutex_group=None, array=False),

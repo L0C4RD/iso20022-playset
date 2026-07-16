@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CCPPortfolioStressTestingResultReportV01 import CCPPortfolioStressTestingResultReportV01
+from . import CCPPortfolioStressTestingResultReportV01
 
 class AUTH_058_001_01():
 
@@ -18,12 +18,12 @@ class AUTH_058_001_01():
 
 		@CCPPrtflStrssTstgRsltRpt.setter
 		def CCPPrtflStrssTstgRsltRpt(self, value):
-			self._CCPPrtflStrssTstgRsltRpt = value if type(value) != base_types.auto else self.make_default("CCPPrtflStrssTstgRsltRpt")
+			self._CCPPrtflStrssTstgRsltRpt = value if value is not None else base_types.UninitialisedField(self, 'CCPPrtflStrssTstgRsltRpt', CCPPortfolioStressTestingResultReportV01, False)
 
 		@CCPPrtflStrssTstgRsltRpt.deleter
 		def CCPPrtflStrssTstgRsltRpt(self):
 			del self._CCPPrtflStrssTstgRsltRpt
-			self._CCPPrtflStrssTstgRsltRpt = None
+			self._CCPPrtflStrssTstgRsltRpt = base_types.UninitialisedField(self, 'CCPPrtflStrssTstgRsltRpt', CCPPortfolioStressTestingResultReportV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CCPPrtflStrssTstgRsltRpt', type=CCPPortfolioStressTestingResultReportV01, min=1, max=1, mutex_group=None, array=False),

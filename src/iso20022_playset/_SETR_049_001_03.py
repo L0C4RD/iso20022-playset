@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SubscriptionBulkOrderConfirmationCancellationInstructionV03 import SubscriptionBulkOrderConfirmationCancellationInstructionV03
+from . import SubscriptionBulkOrderConfirmationCancellationInstructionV03
 
 class SETR_049_001_03():
 
@@ -18,12 +18,12 @@ class SETR_049_001_03():
 
 		@SbcptBlkOrdrConfCxlInstr.setter
 		def SbcptBlkOrdrConfCxlInstr(self, value):
-			self._SbcptBlkOrdrConfCxlInstr = value if type(value) != base_types.auto else self.make_default("SbcptBlkOrdrConfCxlInstr")
+			self._SbcptBlkOrdrConfCxlInstr = value if value is not None else base_types.UninitialisedField(self, 'SbcptBlkOrdrConfCxlInstr', SubscriptionBulkOrderConfirmationCancellationInstructionV03, False)
 
 		@SbcptBlkOrdrConfCxlInstr.deleter
 		def SbcptBlkOrdrConfCxlInstr(self):
 			del self._SbcptBlkOrdrConfCxlInstr
-			self._SbcptBlkOrdrConfCxlInstr = None
+			self._SbcptBlkOrdrConfCxlInstr = base_types.UninitialisedField(self, 'SbcptBlkOrdrConfCxlInstr', SubscriptionBulkOrderConfirmationCancellationInstructionV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SbcptBlkOrdrConfCxlInstr', type=SubscriptionBulkOrderConfirmationCancellationInstructionV03, min=1, max=1, mutex_group=None, array=False),

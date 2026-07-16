@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._CountryCode import CountryCode
-from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
-from ._ISODate import ISODate
-from ._ISODateTime import ISODateTime
-from ._Jurisdiction1 import Jurisdiction1
-from ._MICIdentifier import MICIdentifier
-from ._Number import Number
-from ._Organisation38 import Organisation38
-from ._PriceValue1 import PriceValue1
-from ._SecuritiesTransactionType31Choice import SecuritiesTransactionType31Choice
+from . import ActiveCurrencyAndAmount
+from . import CountryCode
+from . import FinancialInstrumentQuantity1Choice
+from . import ISODate
+from . import ISODateTime
+from . import Jurisdiction1
+from . import MICIdentifier
+from . import Number
+from . import Organisation38
+from . import PriceValue1
+from . import SecuritiesTransactionType31Choice
 
 class Issuance6(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class Issuance6(base_types._BaseFieldType):
 
 	@AnncmntDt.setter
 	def AnncmntDt(self, value):
-		self._AnncmntDt = value if type(value) != base_types.auto else self.make_default("AnncmntDt")
+		self._AnncmntDt = value if value is not None else base_types.UninitialisedField(self, 'AnncmntDt', ISODateTime, False)
 
 	@AnncmntDt.deleter
 	def AnncmntDt(self):
 		del self._AnncmntDt
-		self._AnncmntDt = None
+		self._AnncmntDt = base_types.UninitialisedField(self, 'AnncmntDt', ISODateTime, False)
 
 	@property
 	def CtryOfIsse(self):
@@ -36,12 +36,12 @@ class Issuance6(base_types._BaseFieldType):
 
 	@CtryOfIsse.setter
 	def CtryOfIsse(self, value):
-		self._CtryOfIsse = value if type(value) != base_types.auto else self.make_default("CtryOfIsse")
+		self._CtryOfIsse = value if value is not None else base_types.UninitialisedField(self, 'CtryOfIsse', CountryCode, False)
 
 	@CtryOfIsse.deleter
 	def CtryOfIsse(self):
 		del self._CtryOfIsse
-		self._CtryOfIsse = None
+		self._CtryOfIsse = base_types.UninitialisedField(self, 'CtryOfIsse', CountryCode, False)
 
 	@property
 	def FullIssdAmt(self):
@@ -49,12 +49,12 @@ class Issuance6(base_types._BaseFieldType):
 
 	@FullIssdAmt.setter
 	def FullIssdAmt(self, value):
-		self._FullIssdAmt = value if type(value) != base_types.auto else self.make_default("FullIssdAmt")
+		self._FullIssdAmt = value if value is not None else base_types.UninitialisedField(self, 'FullIssdAmt', ActiveCurrencyAndAmount, False)
 
 	@FullIssdAmt.deleter
 	def FullIssdAmt(self):
 		del self._FullIssdAmt
-		self._FullIssdAmt = None
+		self._FullIssdAmt = base_types.UninitialisedField(self, 'FullIssdAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def GovngLaw(self):
@@ -62,12 +62,12 @@ class Issuance6(base_types._BaseFieldType):
 
 	@GovngLaw.setter
 	def GovngLaw(self, value):
-		self._GovngLaw = value if type(value) != base_types.auto else self.make_default("GovngLaw")
+		self._GovngLaw = value if value is not None else base_types.UninitialisedField(self, 'GovngLaw', Jurisdiction1, True)
 
 	@GovngLaw.deleter
 	def GovngLaw(self):
 		del self._GovngLaw
-		self._GovngLaw = None
+		self._GovngLaw = base_types.UninitialisedField(self, 'GovngLaw', Jurisdiction1, True)
 
 	@property
 	def IsseDt(self):
@@ -75,12 +75,12 @@ class Issuance6(base_types._BaseFieldType):
 
 	@IsseDt.setter
 	def IsseDt(self, value):
-		self._IsseDt = value if type(value) != base_types.auto else self.make_default("IsseDt")
+		self._IsseDt = value if value is not None else base_types.UninitialisedField(self, 'IsseDt', ISODate, False)
 
 	@IsseDt.deleter
 	def IsseDt(self):
 		del self._IsseDt
-		self._IsseDt = None
+		self._IsseDt = base_types.UninitialisedField(self, 'IsseDt', ISODate, False)
 
 	@property
 	def IsseNmnlAmt(self):
@@ -88,12 +88,12 @@ class Issuance6(base_types._BaseFieldType):
 
 	@IsseNmnlAmt.setter
 	def IsseNmnlAmt(self, value):
-		self._IsseNmnlAmt = value if type(value) != base_types.auto else self.make_default("IsseNmnlAmt")
+		self._IsseNmnlAmt = value if value is not None else base_types.UninitialisedField(self, 'IsseNmnlAmt', FinancialInstrumentQuantity1Choice, False)
 
 	@IsseNmnlAmt.deleter
 	def IsseNmnlAmt(self):
 		del self._IsseNmnlAmt
-		self._IsseNmnlAmt = None
+		self._IsseNmnlAmt = base_types.UninitialisedField(self, 'IsseNmnlAmt', FinancialInstrumentQuantity1Choice, False)
 
 	@property
 	def IssePlc(self):
@@ -101,12 +101,12 @@ class Issuance6(base_types._BaseFieldType):
 
 	@IssePlc.setter
 	def IssePlc(self, value):
-		self._IssePlc = value if type(value) != base_types.auto else self.make_default("IssePlc")
+		self._IssePlc = value if value is not None else base_types.UninitialisedField(self, 'IssePlc', MICIdentifier, False)
 
 	@IssePlc.deleter
 	def IssePlc(self):
 		del self._IssePlc
-		self._IssePlc = None
+		self._IssePlc = base_types.UninitialisedField(self, 'IssePlc', MICIdentifier, False)
 
 	@property
 	def IssePric(self):
@@ -114,12 +114,12 @@ class Issuance6(base_types._BaseFieldType):
 
 	@IssePric.setter
 	def IssePric(self, value):
-		self._IssePric = value if type(value) != base_types.auto else self.make_default("IssePric")
+		self._IssePric = value if value is not None else base_types.UninitialisedField(self, 'IssePric', PriceValue1, False)
 
 	@IssePric.deleter
 	def IssePric(self):
 		del self._IssePric
-		self._IssePric = None
+		self._IssePric = base_types.UninitialisedField(self, 'IssePric', PriceValue1, False)
 
 	@property
 	def IsseSz(self):
@@ -127,12 +127,12 @@ class Issuance6(base_types._BaseFieldType):
 
 	@IsseSz.setter
 	def IsseSz(self, value):
-		self._IsseSz = value if type(value) != base_types.auto else self.make_default("IsseSz")
+		self._IsseSz = value if value is not None else base_types.UninitialisedField(self, 'IsseSz', Number, False)
 
 	@IsseSz.deleter
 	def IsseSz(self):
 		del self._IsseSz
-		self._IsseSz = None
+		self._IsseSz = base_types.UninitialisedField(self, 'IsseSz', Number, False)
 
 	@property
 	def IssncDstrbtn(self):
@@ -140,12 +140,12 @@ class Issuance6(base_types._BaseFieldType):
 
 	@IssncDstrbtn.setter
 	def IssncDstrbtn(self, value):
-		self._IssncDstrbtn = value if type(value) != base_types.auto else self.make_default("IssncDstrbtn")
+		self._IssncDstrbtn = value if value is not None else base_types.UninitialisedField(self, 'IssncDstrbtn', SecuritiesTransactionType31Choice, False)
 
 	@IssncDstrbtn.deleter
 	def IssncDstrbtn(self):
 		del self._IssncDstrbtn
-		self._IssncDstrbtn = None
+		self._IssncDstrbtn = base_types.UninitialisedField(self, 'IssncDstrbtn', SecuritiesTransactionType31Choice, False)
 
 	@property
 	def IssrOrg(self):
@@ -153,12 +153,12 @@ class Issuance6(base_types._BaseFieldType):
 
 	@IssrOrg.setter
 	def IssrOrg(self, value):
-		self._IssrOrg = value if type(value) != base_types.auto else self.make_default("IssrOrg")
+		self._IssrOrg = value if value is not None else base_types.UninitialisedField(self, 'IssrOrg', Organisation38, False)
 
 	@IssrOrg.deleter
 	def IssrOrg(self):
 		del self._IssrOrg
-		self._IssrOrg = None
+		self._IssrOrg = base_types.UninitialisedField(self, 'IssrOrg', Organisation38, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AnncmntDt', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),

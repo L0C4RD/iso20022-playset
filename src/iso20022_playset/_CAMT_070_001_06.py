@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ReturnStandingOrderV06 import ReturnStandingOrderV06
+from . import ReturnStandingOrderV06
 
 class CAMT_070_001_06():
 
@@ -18,12 +18,12 @@ class CAMT_070_001_06():
 
 		@RtrStgOrdr.setter
 		def RtrStgOrdr(self, value):
-			self._RtrStgOrdr = value if type(value) != base_types.auto else self.make_default("RtrStgOrdr")
+			self._RtrStgOrdr = value if value is not None else base_types.UninitialisedField(self, 'RtrStgOrdr', ReturnStandingOrderV06, False)
 
 		@RtrStgOrdr.deleter
 		def RtrStgOrdr(self):
 			del self._RtrStgOrdr
-			self._RtrStgOrdr = None
+			self._RtrStgOrdr = base_types.UninitialisedField(self, 'RtrStgOrdr', ReturnStandingOrderV06, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='RtrStgOrdr', type=ReturnStandingOrderV06, min=1, max=1, mutex_group=None, array=False),

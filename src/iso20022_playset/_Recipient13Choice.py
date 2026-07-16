@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IssuerAndSerialNumber2 import IssuerAndSerialNumber2
-from ._Max140Binary import Max140Binary
+from . import IssuerAndSerialNumber2
+from . import Max140Binary
 
 class Recipient13Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Recipient13Choice(base_types._BaseFieldType):
 
 	@IssrAndSrlNb.setter
 	def IssrAndSrlNb(self, value):
-		self._IssrAndSrlNb = value if type(value) != base_types.auto else self.make_default("IssrAndSrlNb")
+		self._IssrAndSrlNb = value if value is not None else base_types.UninitialisedField(self, 'IssrAndSrlNb', IssuerAndSerialNumber2, False)
 
 	@IssrAndSrlNb.deleter
 	def IssrAndSrlNb(self):
 		del self._IssrAndSrlNb
-		self._IssrAndSrlNb = None
+		self._IssrAndSrlNb = base_types.UninitialisedField(self, 'IssrAndSrlNb', IssuerAndSerialNumber2, False)
 
 	@property
 	def SbjtKeyIdr(self):
@@ -27,12 +27,12 @@ class Recipient13Choice(base_types._BaseFieldType):
 
 	@SbjtKeyIdr.setter
 	def SbjtKeyIdr(self, value):
-		self._SbjtKeyIdr = value if type(value) != base_types.auto else self.make_default("SbjtKeyIdr")
+		self._SbjtKeyIdr = value if value is not None else base_types.UninitialisedField(self, 'SbjtKeyIdr', Max140Binary, False)
 
 	@SbjtKeyIdr.deleter
 	def SbjtKeyIdr(self):
 		del self._SbjtKeyIdr
-		self._SbjtKeyIdr = None
+		self._SbjtKeyIdr = base_types.UninitialisedField(self, 'SbjtKeyIdr', Max140Binary, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IssrAndSrlNb', type=IssuerAndSerialNumber2, min=0, max=1, mutex_group=1, array=False),

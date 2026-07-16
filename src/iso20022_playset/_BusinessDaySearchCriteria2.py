@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._DateTimePeriod1Choice import DateTimePeriod1Choice
-from ._ISODate import ISODate
-from ._SystemEventType2Choice import SystemEventType2Choice
-from ._SystemIdentification2Choice import SystemIdentification2Choice
+from . import ActiveCurrencyCode
+from . import DateTimePeriod1Choice
+from . import ISODate
+from . import SystemEventType2Choice
+from . import SystemIdentification2Choice
 
 class BusinessDaySearchCriteria2(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class BusinessDaySearchCriteria2(base_types._BaseFieldType):
 
 	@ClsrPrd.setter
 	def ClsrPrd(self, value):
-		self._ClsrPrd = value if type(value) != base_types.auto else self.make_default("ClsrPrd")
+		self._ClsrPrd = value if value is not None else base_types.UninitialisedField(self, 'ClsrPrd', DateTimePeriod1Choice, False)
 
 	@ClsrPrd.deleter
 	def ClsrPrd(self):
 		del self._ClsrPrd
-		self._ClsrPrd = None
+		self._ClsrPrd = base_types.UninitialisedField(self, 'ClsrPrd', DateTimePeriod1Choice, False)
 
 	@property
 	def EvtTp(self):
@@ -30,12 +30,12 @@ class BusinessDaySearchCriteria2(base_types._BaseFieldType):
 
 	@EvtTp.setter
 	def EvtTp(self, value):
-		self._EvtTp = value if type(value) != base_types.auto else self.make_default("EvtTp")
+		self._EvtTp = value if value is not None else base_types.UninitialisedField(self, 'EvtTp', SystemEventType2Choice, False)
 
 	@EvtTp.deleter
 	def EvtTp(self):
 		del self._EvtTp
-		self._EvtTp = None
+		self._EvtTp = base_types.UninitialisedField(self, 'EvtTp', SystemEventType2Choice, False)
 
 	@property
 	def SysCcy(self):
@@ -43,12 +43,12 @@ class BusinessDaySearchCriteria2(base_types._BaseFieldType):
 
 	@SysCcy.setter
 	def SysCcy(self, value):
-		self._SysCcy = value if type(value) != base_types.auto else self.make_default("SysCcy")
+		self._SysCcy = value if value is not None else base_types.UninitialisedField(self, 'SysCcy', ActiveCurrencyCode, True)
 
 	@SysCcy.deleter
 	def SysCcy(self):
 		del self._SysCcy
-		self._SysCcy = None
+		self._SysCcy = base_types.UninitialisedField(self, 'SysCcy', ActiveCurrencyCode, True)
 
 	@property
 	def SysDt(self):
@@ -56,12 +56,12 @@ class BusinessDaySearchCriteria2(base_types._BaseFieldType):
 
 	@SysDt.setter
 	def SysDt(self, value):
-		self._SysDt = value if type(value) != base_types.auto else self.make_default("SysDt")
+		self._SysDt = value if value is not None else base_types.UninitialisedField(self, 'SysDt', ISODate, False)
 
 	@SysDt.deleter
 	def SysDt(self):
 		del self._SysDt
-		self._SysDt = None
+		self._SysDt = base_types.UninitialisedField(self, 'SysDt', ISODate, False)
 
 	@property
 	def SysId(self):
@@ -69,12 +69,12 @@ class BusinessDaySearchCriteria2(base_types._BaseFieldType):
 
 	@SysId.setter
 	def SysId(self, value):
-		self._SysId = value if type(value) != base_types.auto else self.make_default("SysId")
+		self._SysId = value if value is not None else base_types.UninitialisedField(self, 'SysId', SystemIdentification2Choice, True)
 
 	@SysId.deleter
 	def SysId(self):
 		del self._SysId
-		self._SysId = None
+		self._SysId = base_types.UninitialisedField(self, 'SysId', SystemIdentification2Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClsrPrd', type=DateTimePeriod1Choice, min=0, max=1, mutex_group=None, array=False),

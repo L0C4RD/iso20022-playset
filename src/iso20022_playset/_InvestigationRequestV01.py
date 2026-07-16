@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InvestigationReason2 import InvestigationReason2
-from ._InvestigationRequest2 import InvestigationRequest2
-from ._SupplementaryData1 import SupplementaryData1
+from . import InvestigationReason2
+from . import InvestigationRequest2
+from . import SupplementaryData1
 
 class InvestigationRequestV01(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class InvestigationRequestV01(base_types._BaseFieldType):
 
 	@InvstgtnData.setter
 	def InvstgtnData(self, value):
-		self._InvstgtnData = value if type(value) != base_types.auto else self.make_default("InvstgtnData")
+		self._InvstgtnData = value if value is not None else base_types.UninitialisedField(self, 'InvstgtnData', InvestigationReason2, True)
 
 	@InvstgtnData.deleter
 	def InvstgtnData(self):
 		del self._InvstgtnData
-		self._InvstgtnData = None
+		self._InvstgtnData = base_types.UninitialisedField(self, 'InvstgtnData', InvestigationReason2, True)
 
 	@property
 	def InvstgtnReq(self):
@@ -28,12 +28,12 @@ class InvestigationRequestV01(base_types._BaseFieldType):
 
 	@InvstgtnReq.setter
 	def InvstgtnReq(self, value):
-		self._InvstgtnReq = value if type(value) != base_types.auto else self.make_default("InvstgtnReq")
+		self._InvstgtnReq = value if value is not None else base_types.UninitialisedField(self, 'InvstgtnReq', InvestigationRequest2, False)
 
 	@InvstgtnReq.deleter
 	def InvstgtnReq(self):
 		del self._InvstgtnReq
-		self._InvstgtnReq = None
+		self._InvstgtnReq = base_types.UninitialisedField(self, 'InvstgtnReq', InvestigationRequest2, False)
 
 	@property
 	def SplmtryData(self):
@@ -41,12 +41,12 @@ class InvestigationRequestV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InvstgtnData', type=InvestigationReason2, min=1, max=None, mutex_group=None, array=True),

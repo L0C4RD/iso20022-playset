@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CommunicationMethod3Choice import CommunicationMethod3Choice
-from ._Max140Text import Max140Text
-from ._PartyIdentification125Choice import PartyIdentification125Choice
+from . import CommunicationMethod3Choice
+from . import Max140Text
+from . import PartyIdentification125Choice
 
 class DocumentToSend4(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class DocumentToSend4(base_types._BaseFieldType):
 
 	@MtdOfTrnsmssn.setter
 	def MtdOfTrnsmssn(self, value):
-		self._MtdOfTrnsmssn = value if type(value) != base_types.auto else self.make_default("MtdOfTrnsmssn")
+		self._MtdOfTrnsmssn = value if value is not None else base_types.UninitialisedField(self, 'MtdOfTrnsmssn', CommunicationMethod3Choice, False)
 
 	@MtdOfTrnsmssn.deleter
 	def MtdOfTrnsmssn(self):
 		del self._MtdOfTrnsmssn
-		self._MtdOfTrnsmssn = None
+		self._MtdOfTrnsmssn = base_types.UninitialisedField(self, 'MtdOfTrnsmssn', CommunicationMethod3Choice, False)
 
 	@property
 	def Rcpt(self):
@@ -28,12 +28,12 @@ class DocumentToSend4(base_types._BaseFieldType):
 
 	@Rcpt.setter
 	def Rcpt(self, value):
-		self._Rcpt = value if type(value) != base_types.auto else self.make_default("Rcpt")
+		self._Rcpt = value if value is not None else base_types.UninitialisedField(self, 'Rcpt', PartyIdentification125Choice, False)
 
 	@Rcpt.deleter
 	def Rcpt(self):
 		del self._Rcpt
-		self._Rcpt = None
+		self._Rcpt = base_types.UninitialisedField(self, 'Rcpt', PartyIdentification125Choice, False)
 
 	@property
 	def Tp(self):
@@ -41,12 +41,12 @@ class DocumentToSend4(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', Max140Text, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', Max140Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MtdOfTrnsmssn', type=CommunicationMethod3Choice, min=1, max=1, mutex_group=None, array=False),

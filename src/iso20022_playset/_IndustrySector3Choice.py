@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ExternalIndustrySectorClassification1Code import ExternalIndustrySectorClassification1Code
-from ._NACEDomain2025Identifier import NACEDomain2025Identifier
+from . import ExternalIndustrySectorClassification1Code
+from . import NACEDomain2025Identifier
 
 class IndustrySector3Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class IndustrySector3Choice(base_types._BaseFieldType):
 
 	@NACETxnmySctr.setter
 	def NACETxnmySctr(self, value):
-		self._NACETxnmySctr = value if type(value) != base_types.auto else self.make_default("NACETxnmySctr")
+		self._NACETxnmySctr = value if value is not None else base_types.UninitialisedField(self, 'NACETxnmySctr', NACEDomain2025Identifier, False)
 
 	@NACETxnmySctr.deleter
 	def NACETxnmySctr(self):
 		del self._NACETxnmySctr
-		self._NACETxnmySctr = None
+		self._NACETxnmySctr = base_types.UninitialisedField(self, 'NACETxnmySctr', NACEDomain2025Identifier, False)
 
 	@property
 	def RgltryTxnmySctr(self):
@@ -27,12 +27,12 @@ class IndustrySector3Choice(base_types._BaseFieldType):
 
 	@RgltryTxnmySctr.setter
 	def RgltryTxnmySctr(self, value):
-		self._RgltryTxnmySctr = value if type(value) != base_types.auto else self.make_default("RgltryTxnmySctr")
+		self._RgltryTxnmySctr = value if value is not None else base_types.UninitialisedField(self, 'RgltryTxnmySctr', ExternalIndustrySectorClassification1Code, False)
 
 	@RgltryTxnmySctr.deleter
 	def RgltryTxnmySctr(self):
 		del self._RgltryTxnmySctr
-		self._RgltryTxnmySctr = None
+		self._RgltryTxnmySctr = base_types.UninitialisedField(self, 'RgltryTxnmySctr', ExternalIndustrySectorClassification1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NACETxnmySctr', type=NACEDomain2025Identifier, min=0, max=1, mutex_group=1, array=False),

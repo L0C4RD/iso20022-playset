@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndPeriod3Choice import DateAndPeriod3Choice
-from ._StatementType7Choice import StatementType7Choice
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import DateAndPeriod3Choice
+from . import StatementType7Choice
+from . import TrueFalseIndicator
 
 class Statement89(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Statement89(base_types._BaseFieldType):
 
 	@DtOrPrd.setter
 	def DtOrPrd(self, value):
-		self._DtOrPrd = value if type(value) != base_types.auto else self.make_default("DtOrPrd")
+		self._DtOrPrd = value if value is not None else base_types.UninitialisedField(self, 'DtOrPrd', DateAndPeriod3Choice, False)
 
 	@DtOrPrd.deleter
 	def DtOrPrd(self):
 		del self._DtOrPrd
-		self._DtOrPrd = None
+		self._DtOrPrd = base_types.UninitialisedField(self, 'DtOrPrd', DateAndPeriod3Choice, False)
 
 	@property
 	def HstrcData(self):
@@ -28,12 +28,12 @@ class Statement89(base_types._BaseFieldType):
 
 	@HstrcData.setter
 	def HstrcData(self, value):
-		self._HstrcData = value if type(value) != base_types.auto else self.make_default("HstrcData")
+		self._HstrcData = value if value is not None else base_types.UninitialisedField(self, 'HstrcData', TrueFalseIndicator, False)
 
 	@HstrcData.deleter
 	def HstrcData(self):
 		del self._HstrcData
-		self._HstrcData = None
+		self._HstrcData = base_types.UninitialisedField(self, 'HstrcData', TrueFalseIndicator, False)
 
 	@property
 	def StmtTp(self):
@@ -41,12 +41,12 @@ class Statement89(base_types._BaseFieldType):
 
 	@StmtTp.setter
 	def StmtTp(self, value):
-		self._StmtTp = value if type(value) != base_types.auto else self.make_default("StmtTp")
+		self._StmtTp = value if value is not None else base_types.UninitialisedField(self, 'StmtTp', StatementType7Choice, False)
 
 	@StmtTp.deleter
 	def StmtTp(self):
 		del self._StmtTp
-		self._StmtTp = None
+		self._StmtTp = base_types.UninitialisedField(self, 'StmtTp', StatementType7Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DtOrPrd', type=DateAndPeriod3Choice, min=0, max=1, mutex_group=None, array=False),

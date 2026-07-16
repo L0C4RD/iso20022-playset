@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContentInformationType10 import ContentInformationType10
-from ._ContentInformationType15 import ContentInformationType15
-from ._Header20 import Header20
-from ._HostToATMRequest1 import HostToATMRequest1
+from . import ContentInformationType10
+from . import ContentInformationType15
+from . import Header20
+from . import HostToATMRequest1
 
 class HostToATMRequestV01(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class HostToATMRequestV01(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header20, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header20, False)
 
 	@property
 	def HstToATMReq(self):
@@ -29,12 +29,12 @@ class HostToATMRequestV01(base_types._BaseFieldType):
 
 	@HstToATMReq.setter
 	def HstToATMReq(self, value):
-		self._HstToATMReq = value if type(value) != base_types.auto else self.make_default("HstToATMReq")
+		self._HstToATMReq = value if value is not None else base_types.UninitialisedField(self, 'HstToATMReq', HostToATMRequest1, False)
 
 	@HstToATMReq.deleter
 	def HstToATMReq(self):
 		del self._HstToATMReq
-		self._HstToATMReq = None
+		self._HstToATMReq = base_types.UninitialisedField(self, 'HstToATMReq', HostToATMRequest1, False)
 
 	@property
 	def PrtctdHstToATMReq(self):
@@ -42,12 +42,12 @@ class HostToATMRequestV01(base_types._BaseFieldType):
 
 	@PrtctdHstToATMReq.setter
 	def PrtctdHstToATMReq(self, value):
-		self._PrtctdHstToATMReq = value if type(value) != base_types.auto else self.make_default("PrtctdHstToATMReq")
+		self._PrtctdHstToATMReq = value if value is not None else base_types.UninitialisedField(self, 'PrtctdHstToATMReq', ContentInformationType10, False)
 
 	@PrtctdHstToATMReq.deleter
 	def PrtctdHstToATMReq(self):
 		del self._PrtctdHstToATMReq
-		self._PrtctdHstToATMReq = None
+		self._PrtctdHstToATMReq = base_types.UninitialisedField(self, 'PrtctdHstToATMReq', ContentInformationType10, False)
 
 	@property
 	def SctyTrlr(self):
@@ -55,12 +55,12 @@ class HostToATMRequestV01(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType15, False)
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
 		del self._SctyTrlr
-		self._SctyTrlr = None
+		self._SctyTrlr = base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType15, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Hdr', type=Header20, min=1, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActionTaken2Code import ActionTaken2Code
-from ._Max256Text import Max256Text
+from . import ActionTaken2Code
+from . import Max256Text
 
 class FraudDispositionStatus3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class FraudDispositionStatus3(base_types._BaseFieldType):
 
 	@ActnTaken.setter
 	def ActnTaken(self, value):
-		self._ActnTaken = value if type(value) != base_types.auto else self.make_default("ActnTaken")
+		self._ActnTaken = value if value is not None else base_types.UninitialisedField(self, 'ActnTaken', ActionTaken2Code, False)
 
 	@ActnTaken.deleter
 	def ActnTaken(self):
 		del self._ActnTaken
-		self._ActnTaken = None
+		self._ActnTaken = base_types.UninitialisedField(self, 'ActnTaken', ActionTaken2Code, False)
 
 	@property
 	def ErrData(self):
@@ -27,12 +27,12 @@ class FraudDispositionStatus3(base_types._BaseFieldType):
 
 	@ErrData.setter
 	def ErrData(self, value):
-		self._ErrData = value if type(value) != base_types.auto else self.make_default("ErrData")
+		self._ErrData = value if value is not None else base_types.UninitialisedField(self, 'ErrData', Max256Text, True)
 
 	@ErrData.deleter
 	def ErrData(self):
 		del self._ErrData
-		self._ErrData = None
+		self._ErrData = base_types.UninitialisedField(self, 'ErrData', Max256Text, True)
 
 	@property
 	def WrngData(self):
@@ -40,12 +40,12 @@ class FraudDispositionStatus3(base_types._BaseFieldType):
 
 	@WrngData.setter
 	def WrngData(self, value):
-		self._WrngData = value if type(value) != base_types.auto else self.make_default("WrngData")
+		self._WrngData = value if value is not None else base_types.UninitialisedField(self, 'WrngData', Max256Text, True)
 
 	@WrngData.deleter
 	def WrngData(self):
 		del self._WrngData
-		self._WrngData = None
+		self._WrngData = base_types.UninitialisedField(self, 'WrngData', Max256Text, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActnTaken', type=ActionTaken2Code, min=1, max=1, mutex_group=None, array=False),

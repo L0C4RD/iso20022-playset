@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MessageHeader6 import MessageHeader6
-from ._StandingOrderOrError9Choice import StandingOrderOrError9Choice
-from ._SupplementaryData1 import SupplementaryData1
+from . import MessageHeader6
+from . import StandingOrderOrError9Choice
+from . import SupplementaryData1
 
 class ReturnStandingOrderV06(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ReturnStandingOrderV06(base_types._BaseFieldType):
 
 	@MsgHdr.setter
 	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
+		self._MsgHdr = value if value is not None else base_types.UninitialisedField(self, 'MsgHdr', MessageHeader6, False)
 
 	@MsgHdr.deleter
 	def MsgHdr(self):
 		del self._MsgHdr
-		self._MsgHdr = None
+		self._MsgHdr = base_types.UninitialisedField(self, 'MsgHdr', MessageHeader6, False)
 
 	@property
 	def RptOrErr(self):
@@ -28,12 +28,12 @@ class ReturnStandingOrderV06(base_types._BaseFieldType):
 
 	@RptOrErr.setter
 	def RptOrErr(self, value):
-		self._RptOrErr = value if type(value) != base_types.auto else self.make_default("RptOrErr")
+		self._RptOrErr = value if value is not None else base_types.UninitialisedField(self, 'RptOrErr', StandingOrderOrError9Choice, False)
 
 	@RptOrErr.deleter
 	def RptOrErr(self):
 		del self._RptOrErr
-		self._RptOrErr = None
+		self._RptOrErr = base_types.UninitialisedField(self, 'RptOrErr', StandingOrderOrError9Choice, False)
 
 	@property
 	def SplmtryData(self):
@@ -41,12 +41,12 @@ class ReturnStandingOrderV06(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader6, min=1, max=1, mutex_group=None, array=False),

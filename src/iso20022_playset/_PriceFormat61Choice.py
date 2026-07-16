@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountPrice6 import AmountPrice6
-from ._PriceValueType10Code import PriceValueType10Code
+from . import AmountPrice6
+from . import PriceValueType10Code
 
 class PriceFormat61Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PriceFormat61Choice(base_types._BaseFieldType):
 
 	@AmtPric.setter
 	def AmtPric(self, value):
-		self._AmtPric = value if type(value) != base_types.auto else self.make_default("AmtPric")
+		self._AmtPric = value if value is not None else base_types.UninitialisedField(self, 'AmtPric', AmountPrice6, False)
 
 	@AmtPric.deleter
 	def AmtPric(self):
 		del self._AmtPric
-		self._AmtPric = None
+		self._AmtPric = base_types.UninitialisedField(self, 'AmtPric', AmountPrice6, False)
 
 	@property
 	def NotSpcfdPric(self):
@@ -27,12 +27,12 @@ class PriceFormat61Choice(base_types._BaseFieldType):
 
 	@NotSpcfdPric.setter
 	def NotSpcfdPric(self, value):
-		self._NotSpcfdPric = value if type(value) != base_types.auto else self.make_default("NotSpcfdPric")
+		self._NotSpcfdPric = value if value is not None else base_types.UninitialisedField(self, 'NotSpcfdPric', PriceValueType10Code, False)
 
 	@NotSpcfdPric.deleter
 	def NotSpcfdPric(self):
 		del self._NotSpcfdPric
-		self._NotSpcfdPric = None
+		self._NotSpcfdPric = base_types.UninitialisedField(self, 'NotSpcfdPric', PriceValueType10Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmtPric', type=AmountPrice6, min=0, max=1, mutex_group=1, array=False),

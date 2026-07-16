@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISOMax3ALanguageCode import ISOMax3ALanguageCode
-from ._Max35Text import Max35Text
-from ._Max40KText import Max40KText
+from . import ISOMax3ALanguageCode
+from . import Max35Text
+from . import Max40KText
 
 class LocalData17(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class LocalData17(base_types._BaseFieldType):
 
 	@Lang.setter
 	def Lang(self, value):
-		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
+		self._Lang = value if value is not None else base_types.UninitialisedField(self, 'Lang', ISOMax3ALanguageCode, False)
 
 	@Lang.deleter
 	def Lang(self):
 		del self._Lang
-		self._Lang = None
+		self._Lang = base_types.UninitialisedField(self, 'Lang', ISOMax3ALanguageCode, False)
 
 	@property
 	def NcodgFrmt(self):
@@ -28,12 +28,12 @@ class LocalData17(base_types._BaseFieldType):
 
 	@NcodgFrmt.setter
 	def NcodgFrmt(self, value):
-		self._NcodgFrmt = value if type(value) != base_types.auto else self.make_default("NcodgFrmt")
+		self._NcodgFrmt = value if value is not None else base_types.UninitialisedField(self, 'NcodgFrmt', Max35Text, False)
 
 	@NcodgFrmt.deleter
 	def NcodgFrmt(self):
 		del self._NcodgFrmt
-		self._NcodgFrmt = None
+		self._NcodgFrmt = base_types.UninitialisedField(self, 'NcodgFrmt', Max35Text, False)
 
 	@property
 	def TxtMsg(self):
@@ -41,12 +41,12 @@ class LocalData17(base_types._BaseFieldType):
 
 	@TxtMsg.setter
 	def TxtMsg(self, value):
-		self._TxtMsg = value if type(value) != base_types.auto else self.make_default("TxtMsg")
+		self._TxtMsg = value if value is not None else base_types.UninitialisedField(self, 'TxtMsg', Max40KText, False)
 
 	@TxtMsg.deleter
 	def TxtMsg(self):
 		del self._TxtMsg
-		self._TxtMsg = None
+		self._TxtMsg = base_types.UninitialisedField(self, 'TxtMsg', Max40KText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Lang', type=ISOMax3ALanguageCode, min=1, max=1, mutex_group=None, array=False),

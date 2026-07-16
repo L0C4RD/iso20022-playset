@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._BeneficiaryType1Choice import BeneficiaryType1Choice
-from ._ISODate import ISODate
-from ._YesNoIndicator import YesNoIndicator
+from . import AdditionalInformation15
+from . import BeneficiaryType1Choice
+from . import ISODate
+from . import YesNoIndicator
 
 class BeneficiaryDrawdown2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class BeneficiaryDrawdown2(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@property
 	def BnfcryTp(self):
@@ -29,12 +29,12 @@ class BeneficiaryDrawdown2(base_types._BaseFieldType):
 
 	@BnfcryTp.setter
 	def BnfcryTp(self, value):
-		self._BnfcryTp = value if type(value) != base_types.auto else self.make_default("BnfcryTp")
+		self._BnfcryTp = value if value is not None else base_types.UninitialisedField(self, 'BnfcryTp', BeneficiaryType1Choice, False)
 
 	@BnfcryTp.deleter
 	def BnfcryTp(self):
 		del self._BnfcryTp
-		self._BnfcryTp = None
+		self._BnfcryTp = base_types.UninitialisedField(self, 'BnfcryTp', BeneficiaryType1Choice, False)
 
 	@property
 	def DtDsgntdToBnfcry(self):
@@ -42,12 +42,12 @@ class BeneficiaryDrawdown2(base_types._BaseFieldType):
 
 	@DtDsgntdToBnfcry.setter
 	def DtDsgntdToBnfcry(self, value):
-		self._DtDsgntdToBnfcry = value if type(value) != base_types.auto else self.make_default("DtDsgntdToBnfcry")
+		self._DtDsgntdToBnfcry = value if value is not None else base_types.UninitialisedField(self, 'DtDsgntdToBnfcry', ISODate, False)
 
 	@DtDsgntdToBnfcry.deleter
 	def DtDsgntdToBnfcry(self):
 		del self._DtDsgntdToBnfcry
-		self._DtDsgntdToBnfcry = None
+		self._DtDsgntdToBnfcry = base_types.UninitialisedField(self, 'DtDsgntdToBnfcry', ISODate, False)
 
 	@property
 	def DtOfDth(self):
@@ -55,12 +55,12 @@ class BeneficiaryDrawdown2(base_types._BaseFieldType):
 
 	@DtOfDth.setter
 	def DtOfDth(self, value):
-		self._DtOfDth = value if type(value) != base_types.auto else self.make_default("DtOfDth")
+		self._DtOfDth = value if value is not None else base_types.UninitialisedField(self, 'DtOfDth', ISODate, False)
 
 	@DtOfDth.deleter
 	def DtOfDth(self):
 		del self._DtOfDth
-		self._DtOfDth = None
+		self._DtOfDth = base_types.UninitialisedField(self, 'DtOfDth', ISODate, False)
 
 	@property
 	def DthUdrLmt(self):
@@ -68,12 +68,12 @@ class BeneficiaryDrawdown2(base_types._BaseFieldType):
 
 	@DthUdrLmt.setter
 	def DthUdrLmt(self, value):
-		self._DthUdrLmt = value if type(value) != base_types.auto else self.make_default("DthUdrLmt")
+		self._DthUdrLmt = value if value is not None else base_types.UninitialisedField(self, 'DthUdrLmt', YesNoIndicator, False)
 
 	@DthUdrLmt.deleter
 	def DthUdrLmt(self):
 		del self._DthUdrLmt
-		self._DthUdrLmt = None
+		self._DthUdrLmt = base_types.UninitialisedField(self, 'DthUdrLmt', YesNoIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),

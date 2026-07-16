@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CreditorEnrolment5 import CreditorEnrolment5
-from ._CreditorInvoice6 import CreditorInvoice6
-from ._EnrolmentHeader3 import EnrolmentHeader3
-from ._SupplementaryData1 import SupplementaryData1
+from . import CreditorEnrolment5
+from . import CreditorInvoice6
+from . import EnrolmentHeader3
+from . import SupplementaryData1
 
 class RequestToPayCreditorEnrolmentRequestV02(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class RequestToPayCreditorEnrolmentRequestV02(base_types._BaseFieldType):
 
 	@ActvtnData.setter
 	def ActvtnData(self, value):
-		self._ActvtnData = value if type(value) != base_types.auto else self.make_default("ActvtnData")
+		self._ActvtnData = value if value is not None else base_types.UninitialisedField(self, 'ActvtnData', CreditorInvoice6, False)
 
 	@ActvtnData.deleter
 	def ActvtnData(self):
 		del self._ActvtnData
-		self._ActvtnData = None
+		self._ActvtnData = base_types.UninitialisedField(self, 'ActvtnData', CreditorInvoice6, False)
 
 	@property
 	def CdtrEnrlmnt(self):
@@ -29,12 +29,12 @@ class RequestToPayCreditorEnrolmentRequestV02(base_types._BaseFieldType):
 
 	@CdtrEnrlmnt.setter
 	def CdtrEnrlmnt(self, value):
-		self._CdtrEnrlmnt = value if type(value) != base_types.auto else self.make_default("CdtrEnrlmnt")
+		self._CdtrEnrlmnt = value if value is not None else base_types.UninitialisedField(self, 'CdtrEnrlmnt', CreditorEnrolment5, True)
 
 	@CdtrEnrlmnt.deleter
 	def CdtrEnrlmnt(self):
 		del self._CdtrEnrlmnt
-		self._CdtrEnrlmnt = None
+		self._CdtrEnrlmnt = base_types.UninitialisedField(self, 'CdtrEnrlmnt', CreditorEnrolment5, True)
 
 	@property
 	def Hdr(self):
@@ -42,12 +42,12 @@ class RequestToPayCreditorEnrolmentRequestV02(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', EnrolmentHeader3, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', EnrolmentHeader3, False)
 
 	@property
 	def SplmtryData(self):
@@ -55,12 +55,12 @@ class RequestToPayCreditorEnrolmentRequestV02(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActvtnData', type=CreditorInvoice6, min=1, max=1, mutex_group=None, array=False),

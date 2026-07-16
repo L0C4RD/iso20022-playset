@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesStatusOrStatementQueryStatusAdviceV08 import SecuritiesStatusOrStatementQueryStatusAdviceV08
+from . import SecuritiesStatusOrStatementQueryStatusAdviceV08
 
 class SESE_022_001_08():
 
@@ -18,12 +18,12 @@ class SESE_022_001_08():
 
 		@SctiesStsOrStmtQryStsAdvc.setter
 		def SctiesStsOrStmtQryStsAdvc(self, value):
-			self._SctiesStsOrStmtQryStsAdvc = value if type(value) != base_types.auto else self.make_default("SctiesStsOrStmtQryStsAdvc")
+			self._SctiesStsOrStmtQryStsAdvc = value if value is not None else base_types.UninitialisedField(self, 'SctiesStsOrStmtQryStsAdvc', SecuritiesStatusOrStatementQueryStatusAdviceV08, False)
 
 		@SctiesStsOrStmtQryStsAdvc.deleter
 		def SctiesStsOrStmtQryStsAdvc(self):
 			del self._SctiesStsOrStmtQryStsAdvc
-			self._SctiesStsOrStmtQryStsAdvc = None
+			self._SctiesStsOrStmtQryStsAdvc = base_types.UninitialisedField(self, 'SctiesStsOrStmtQryStsAdvc', SecuritiesStatusOrStatementQueryStatusAdviceV08, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesStsOrStmtQryStsAdvc', type=SecuritiesStatusOrStatementQueryStatusAdviceV08, min=1, max=1, mutex_group=None, array=False),

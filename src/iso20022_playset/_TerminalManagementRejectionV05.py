@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcceptorRejection3 import AcceptorRejection3
-from ._TMSHeader1 import TMSHeader1
+from . import AcceptorRejection3
+from . import TMSHeader1
 
 class TerminalManagementRejectionV05(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TerminalManagementRejectionV05(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', TMSHeader1, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', TMSHeader1, False)
 
 	@property
 	def Rjct(self):
@@ -27,12 +27,12 @@ class TerminalManagementRejectionV05(base_types._BaseFieldType):
 
 	@Rjct.setter
 	def Rjct(self, value):
-		self._Rjct = value if type(value) != base_types.auto else self.make_default("Rjct")
+		self._Rjct = value if value is not None else base_types.UninitialisedField(self, 'Rjct', AcceptorRejection3, False)
 
 	@Rjct.deleter
 	def Rjct(self):
 		del self._Rjct
-		self._Rjct = None
+		self._Rjct = base_types.UninitialisedField(self, 'Rjct', AcceptorRejection3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Hdr', type=TMSHeader1, min=1, max=1, mutex_group=None, array=False),

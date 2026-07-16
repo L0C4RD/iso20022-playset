@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Branch5Choice import Branch5Choice
-from ._CollateralRole1Code import CollateralRole1Code
-from ._CounterpartyTradeNature7Choice import CounterpartyTradeNature7Choice
-from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from . import Branch5Choice
+from . import CollateralRole1Code
+from . import CounterpartyTradeNature7Choice
+from . import OrganisationIdentification15Choice
 
 class CounterpartyIdentification11(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CounterpartyIdentification11(base_types._BaseFieldType):
 
 	@Brnch.setter
 	def Brnch(self, value):
-		self._Brnch = value if type(value) != base_types.auto else self.make_default("Brnch")
+		self._Brnch = value if value is not None else base_types.UninitialisedField(self, 'Brnch', Branch5Choice, False)
 
 	@Brnch.deleter
 	def Brnch(self):
 		del self._Brnch
-		self._Brnch = None
+		self._Brnch = base_types.UninitialisedField(self, 'Brnch', Branch5Choice, False)
 
 	@property
 	def Id(self):
@@ -29,12 +29,12 @@ class CounterpartyIdentification11(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', OrganisationIdentification15Choice, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', OrganisationIdentification15Choice, False)
 
 	@property
 	def Ntr(self):
@@ -42,12 +42,12 @@ class CounterpartyIdentification11(base_types._BaseFieldType):
 
 	@Ntr.setter
 	def Ntr(self, value):
-		self._Ntr = value if type(value) != base_types.auto else self.make_default("Ntr")
+		self._Ntr = value if value is not None else base_types.UninitialisedField(self, 'Ntr', CounterpartyTradeNature7Choice, False)
 
 	@Ntr.deleter
 	def Ntr(self):
 		del self._Ntr
-		self._Ntr = None
+		self._Ntr = base_types.UninitialisedField(self, 'Ntr', CounterpartyTradeNature7Choice, False)
 
 	@property
 	def Sd(self):
@@ -55,12 +55,12 @@ class CounterpartyIdentification11(base_types._BaseFieldType):
 
 	@Sd.setter
 	def Sd(self, value):
-		self._Sd = value if type(value) != base_types.auto else self.make_default("Sd")
+		self._Sd = value if value is not None else base_types.UninitialisedField(self, 'Sd', CollateralRole1Code, False)
 
 	@Sd.deleter
 	def Sd(self):
 		del self._Sd
-		self._Sd = None
+		self._Sd = base_types.UninitialisedField(self, 'Sd', CollateralRole1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Brnch', type=Branch5Choice, min=0, max=1, mutex_group=None, array=False),

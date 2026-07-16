@@ -2,26 +2,26 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Account36 import Account36
-from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._AdditionalReference10 import AdditionalReference10
-from ._BenefitCrystallisationEvent2 import BenefitCrystallisationEvent2
-from ._Conversion4 import Conversion4
-from ._DecimalNumber import DecimalNumber
-from ._Drawdown04 import Drawdown04
-from ._Drawdown3 import Drawdown3
-from ._FinancialInstrument101Choice import FinancialInstrument101Choice
-from ._ISODate import ISODate
-from ._Intermediary48 import Intermediary48
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
-from ._PartyIdentification139 import PartyIdentification139
-from ._PaymentInstrument23 import PaymentInstrument23
-from ._TransferStatus5Choice import TransferStatus5Choice
-from ._TransferStatusType3Choice import TransferStatusType3Choice
-from ._Unit14 import Unit14
+from . import Account36
+from . import ActiveCurrencyAnd13DecimalAmount
+from . import ActiveOrHistoricCurrencyAnd13DecimalAmount
+from . import AdditionalInformation15
+from . import AdditionalReference10
+from . import BenefitCrystallisationEvent2
+from . import Conversion4
+from . import DecimalNumber
+from . import Drawdown04
+from . import Drawdown3
+from . import FinancialInstrument101Choice
+from . import ISODate
+from . import Intermediary48
+from . import Max350Text
+from . import Max35Text
+from . import PartyIdentification139
+from . import PaymentInstrument23
+from . import TransferStatus5Choice
+from . import TransferStatusType3Choice
+from . import Unit14
 
 class TransferStatusAndReason09(base_types._BaseFieldType):
 
@@ -32,12 +32,12 @@ class TransferStatusAndReason09(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@property
 	def AvrgPric(self):
@@ -45,12 +45,12 @@ class TransferStatusAndReason09(base_types._BaseFieldType):
 
 	@AvrgPric.setter
 	def AvrgPric(self, value):
-		self._AvrgPric = value if type(value) != base_types.auto else self.make_default("AvrgPric")
+		self._AvrgPric = value if value is not None else base_types.UninitialisedField(self, 'AvrgPric', ActiveOrHistoricCurrencyAnd13DecimalAmount, False)
 
 	@AvrgPric.deleter
 	def AvrgPric(self):
 		del self._AvrgPric
-		self._AvrgPric = None
+		self._AvrgPric = base_types.UninitialisedField(self, 'AvrgPric', ActiveOrHistoricCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def BnftCrstllstnEvt(self):
@@ -58,12 +58,12 @@ class TransferStatusAndReason09(base_types._BaseFieldType):
 
 	@BnftCrstllstnEvt.setter
 	def BnftCrstllstnEvt(self, value):
-		self._BnftCrstllstnEvt = value if type(value) != base_types.auto else self.make_default("BnftCrstllstnEvt")
+		self._BnftCrstllstnEvt = value if value is not None else base_types.UninitialisedField(self, 'BnftCrstllstnEvt', BenefitCrystallisationEvent2, True)
 
 	@BnftCrstllstnEvt.deleter
 	def BnftCrstllstnEvt(self):
 		del self._BnftCrstllstnEvt
-		self._BnftCrstllstnEvt = None
+		self._BnftCrstllstnEvt = base_types.UninitialisedField(self, 'BnftCrstllstnEvt', BenefitCrystallisationEvent2, True)
 
 	@property
 	def ClntRef(self):
@@ -71,12 +71,12 @@ class TransferStatusAndReason09(base_types._BaseFieldType):
 
 	@ClntRef.setter
 	def ClntRef(self, value):
-		self._ClntRef = value if type(value) != base_types.auto else self.make_default("ClntRef")
+		self._ClntRef = value if value is not None else base_types.UninitialisedField(self, 'ClntRef', AdditionalReference10, False)
 
 	@ClntRef.deleter
 	def ClntRef(self):
 		del self._ClntRef
-		self._ClntRef = None
+		self._ClntRef = base_types.UninitialisedField(self, 'ClntRef', AdditionalReference10, False)
 
 	@property
 	def Convs(self):
@@ -84,12 +84,12 @@ class TransferStatusAndReason09(base_types._BaseFieldType):
 
 	@Convs.setter
 	def Convs(self, value):
-		self._Convs = value if type(value) != base_types.auto else self.make_default("Convs")
+		self._Convs = value if value is not None else base_types.UninitialisedField(self, 'Convs', Conversion4, False)
 
 	@Convs.deleter
 	def Convs(self):
 		del self._Convs
-		self._Convs = None
+		self._Convs = base_types.UninitialisedField(self, 'Convs', Conversion4, False)
 
 	@property
 	def CshSttlmDt(self):
@@ -97,12 +97,12 @@ class TransferStatusAndReason09(base_types._BaseFieldType):
 
 	@CshSttlmDt.setter
 	def CshSttlmDt(self, value):
-		self._CshSttlmDt = value if type(value) != base_types.auto else self.make_default("CshSttlmDt")
+		self._CshSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'CshSttlmDt', ISODate, False)
 
 	@CshSttlmDt.deleter
 	def CshSttlmDt(self):
 		del self._CshSttlmDt
-		self._CshSttlmDt = None
+		self._CshSttlmDt = base_types.UninitialisedField(self, 'CshSttlmDt', ISODate, False)
 
 	@property
 	def CxlRef(self):
@@ -110,12 +110,12 @@ class TransferStatusAndReason09(base_types._BaseFieldType):
 
 	@CxlRef.setter
 	def CxlRef(self, value):
-		self._CxlRef = value if type(value) != base_types.auto else self.make_default("CxlRef")
+		self._CxlRef = value if value is not None else base_types.UninitialisedField(self, 'CxlRef', Max35Text, False)
 
 	@CxlRef.deleter
 	def CxlRef(self):
 		del self._CxlRef
-		self._CxlRef = None
+		self._CxlRef = base_types.UninitialisedField(self, 'CxlRef', Max35Text, False)
 
 	@property
 	def DrwdwnTrch(self):
@@ -123,12 +123,12 @@ class TransferStatusAndReason09(base_types._BaseFieldType):
 
 	@DrwdwnTrch.setter
 	def DrwdwnTrch(self, value):
-		self._DrwdwnTrch = value if type(value) != base_types.auto else self.make_default("DrwdwnTrch")
+		self._DrwdwnTrch = value if value is not None else base_types.UninitialisedField(self, 'DrwdwnTrch', Drawdown04, True)
 
 	@DrwdwnTrch.deleter
 	def DrwdwnTrch(self):
 		del self._DrwdwnTrch
-		self._DrwdwnTrch = None
+		self._DrwdwnTrch = base_types.UninitialisedField(self, 'DrwdwnTrch', Drawdown04, True)
 
 	@property
 	def Instrm(self):
@@ -136,12 +136,12 @@ class TransferStatusAndReason09(base_types._BaseFieldType):
 
 	@Instrm.setter
 	def Instrm(self, value):
-		self._Instrm = value if type(value) != base_types.auto else self.make_default("Instrm")
+		self._Instrm = value if value is not None else base_types.UninitialisedField(self, 'Instrm', FinancialInstrument101Choice, False)
 
 	@Instrm.deleter
 	def Instrm(self):
 		del self._Instrm
-		self._Instrm = None
+		self._Instrm = base_types.UninitialisedField(self, 'Instrm', FinancialInstrument101Choice, False)
 
 	@property
 	def IntrmyInf(self):
@@ -149,12 +149,12 @@ class TransferStatusAndReason09(base_types._BaseFieldType):
 
 	@IntrmyInf.setter
 	def IntrmyInf(self, value):
-		self._IntrmyInf = value if type(value) != base_types.auto else self.make_default("IntrmyInf")
+		self._IntrmyInf = value if value is not None else base_types.UninitialisedField(self, 'IntrmyInf', Intermediary48, True)
 
 	@IntrmyInf.deleter
 	def IntrmyInf(self):
 		del self._IntrmyInf
-		self._IntrmyInf = None
+		self._IntrmyInf = base_types.UninitialisedField(self, 'IntrmyInf', Intermediary48, True)
 
 	@property
 	def InvstmtAcctDtls(self):
@@ -162,12 +162,12 @@ class TransferStatusAndReason09(base_types._BaseFieldType):
 
 	@InvstmtAcctDtls.setter
 	def InvstmtAcctDtls(self, value):
-		self._InvstmtAcctDtls = value if type(value) != base_types.auto else self.make_default("InvstmtAcctDtls")
+		self._InvstmtAcctDtls = value if value is not None else base_types.UninitialisedField(self, 'InvstmtAcctDtls', Account36, False)
 
 	@InvstmtAcctDtls.deleter
 	def InvstmtAcctDtls(self):
 		del self._InvstmtAcctDtls
-		self._InvstmtAcctDtls = None
+		self._InvstmtAcctDtls = base_types.UninitialisedField(self, 'InvstmtAcctDtls', Account36, False)
 
 	@property
 	def MstrRef(self):
@@ -175,12 +175,12 @@ class TransferStatusAndReason09(base_types._BaseFieldType):
 
 	@MstrRef.setter
 	def MstrRef(self, value):
-		self._MstrRef = value if type(value) != base_types.auto else self.make_default("MstrRef")
+		self._MstrRef = value if value is not None else base_types.UninitialisedField(self, 'MstrRef', Max35Text, False)
 
 	@MstrRef.deleter
 	def MstrRef(self):
 		del self._MstrRef
-		self._MstrRef = None
+		self._MstrRef = base_types.UninitialisedField(self, 'MstrRef', Max35Text, False)
 
 	@property
 	def OthrDrwdwnInf(self):
@@ -188,12 +188,12 @@ class TransferStatusAndReason09(base_types._BaseFieldType):
 
 	@OthrDrwdwnInf.setter
 	def OthrDrwdwnInf(self, value):
-		self._OthrDrwdwnInf = value if type(value) != base_types.auto else self.make_default("OthrDrwdwnInf")
+		self._OthrDrwdwnInf = value if value is not None else base_types.UninitialisedField(self, 'OthrDrwdwnInf', Drawdown3, False)
 
 	@OthrDrwdwnInf.deleter
 	def OthrDrwdwnInf(self):
 		del self._OthrDrwdwnInf
-		self._OthrDrwdwnInf = None
+		self._OthrDrwdwnInf = base_types.UninitialisedField(self, 'OthrDrwdwnInf', Drawdown3, False)
 
 	@property
 	def PmtDtls(self):
@@ -201,12 +201,12 @@ class TransferStatusAndReason09(base_types._BaseFieldType):
 
 	@PmtDtls.setter
 	def PmtDtls(self, value):
-		self._PmtDtls = value if type(value) != base_types.auto else self.make_default("PmtDtls")
+		self._PmtDtls = value if value is not None else base_types.UninitialisedField(self, 'PmtDtls', PaymentInstrument23, True)
 
 	@PmtDtls.deleter
 	def PmtDtls(self):
 		del self._PmtDtls
-		self._PmtDtls = None
+		self._PmtDtls = base_types.UninitialisedField(self, 'PmtDtls', PaymentInstrument23, True)
 
 	@property
 	def QryRspn(self):
@@ -214,12 +214,12 @@ class TransferStatusAndReason09(base_types._BaseFieldType):
 
 	@QryRspn.setter
 	def QryRspn(self, value):
-		self._QryRspn = value if type(value) != base_types.auto else self.make_default("QryRspn")
+		self._QryRspn = value if value is not None else base_types.UninitialisedField(self, 'QryRspn', Max350Text, True)
 
 	@QryRspn.deleter
 	def QryRspn(self):
 		del self._QryRspn
-		self._QryRspn = None
+		self._QryRspn = base_types.UninitialisedField(self, 'QryRspn', Max350Text, True)
 
 	@property
 	def SndOutDt(self):
@@ -227,12 +227,12 @@ class TransferStatusAndReason09(base_types._BaseFieldType):
 
 	@SndOutDt.setter
 	def SndOutDt(self, value):
-		self._SndOutDt = value if type(value) != base_types.auto else self.make_default("SndOutDt")
+		self._SndOutDt = value if value is not None else base_types.UninitialisedField(self, 'SndOutDt', ISODate, False)
 
 	@SndOutDt.deleter
 	def SndOutDt(self):
 		del self._SndOutDt
-		self._SndOutDt = None
+		self._SndOutDt = base_types.UninitialisedField(self, 'SndOutDt', ISODate, False)
 
 	@property
 	def StsInitr(self):
@@ -240,12 +240,12 @@ class TransferStatusAndReason09(base_types._BaseFieldType):
 
 	@StsInitr.setter
 	def StsInitr(self, value):
-		self._StsInitr = value if type(value) != base_types.auto else self.make_default("StsInitr")
+		self._StsInitr = value if value is not None else base_types.UninitialisedField(self, 'StsInitr', PartyIdentification139, False)
 
 	@StsInitr.deleter
 	def StsInitr(self):
 		del self._StsInitr
-		self._StsInitr = None
+		self._StsInitr = base_types.UninitialisedField(self, 'StsInitr', PartyIdentification139, False)
 
 	@property
 	def StsIssr(self):
@@ -253,12 +253,12 @@ class TransferStatusAndReason09(base_types._BaseFieldType):
 
 	@StsIssr.setter
 	def StsIssr(self, value):
-		self._StsIssr = value if type(value) != base_types.auto else self.make_default("StsIssr")
+		self._StsIssr = value if value is not None else base_types.UninitialisedField(self, 'StsIssr', PartyIdentification139, False)
 
 	@StsIssr.deleter
 	def StsIssr(self):
 		del self._StsIssr
-		self._StsIssr = None
+		self._StsIssr = base_types.UninitialisedField(self, 'StsIssr', PartyIdentification139, False)
 
 	@property
 	def StsRcpt(self):
@@ -266,12 +266,12 @@ class TransferStatusAndReason09(base_types._BaseFieldType):
 
 	@StsRcpt.setter
 	def StsRcpt(self, value):
-		self._StsRcpt = value if type(value) != base_types.auto else self.make_default("StsRcpt")
+		self._StsRcpt = value if value is not None else base_types.UninitialisedField(self, 'StsRcpt', PartyIdentification139, False)
 
 	@StsRcpt.deleter
 	def StsRcpt(self):
 		del self._StsRcpt
-		self._StsRcpt = None
+		self._StsRcpt = base_types.UninitialisedField(self, 'StsRcpt', PartyIdentification139, False)
 
 	@property
 	def SttlmDt(self):
@@ -279,12 +279,12 @@ class TransferStatusAndReason09(base_types._BaseFieldType):
 
 	@SttlmDt.setter
 	def SttlmDt(self, value):
-		self._SttlmDt = value if type(value) != base_types.auto else self.make_default("SttlmDt")
+		self._SttlmDt = value if value is not None else base_types.UninitialisedField(self, 'SttlmDt', ISODate, False)
 
 	@SttlmDt.deleter
 	def SttlmDt(self):
 		del self._SttlmDt
-		self._SttlmDt = None
+		self._SttlmDt = base_types.UninitialisedField(self, 'SttlmDt', ISODate, False)
 
 	@property
 	def TradDt(self):
@@ -292,12 +292,12 @@ class TransferStatusAndReason09(base_types._BaseFieldType):
 
 	@TradDt.setter
 	def TradDt(self, value):
-		self._TradDt = value if type(value) != base_types.auto else self.make_default("TradDt")
+		self._TradDt = value if value is not None else base_types.UninitialisedField(self, 'TradDt', ISODate, False)
 
 	@TradDt.deleter
 	def TradDt(self):
 		del self._TradDt
-		self._TradDt = None
+		self._TradDt = base_types.UninitialisedField(self, 'TradDt', ISODate, False)
 
 	@property
 	def TrfEvtTp(self):
@@ -305,12 +305,12 @@ class TransferStatusAndReason09(base_types._BaseFieldType):
 
 	@TrfEvtTp.setter
 	def TrfEvtTp(self, value):
-		self._TrfEvtTp = value if type(value) != base_types.auto else self.make_default("TrfEvtTp")
+		self._TrfEvtTp = value if value is not None else base_types.UninitialisedField(self, 'TrfEvtTp', TransferStatusType3Choice, True)
 
 	@TrfEvtTp.deleter
 	def TrfEvtTp(self):
 		del self._TrfEvtTp
-		self._TrfEvtTp = None
+		self._TrfEvtTp = base_types.UninitialisedField(self, 'TrfEvtTp', TransferStatusType3Choice, True)
 
 	@property
 	def TrfRef(self):
@@ -318,12 +318,12 @@ class TransferStatusAndReason09(base_types._BaseFieldType):
 
 	@TrfRef.setter
 	def TrfRef(self, value):
-		self._TrfRef = value if type(value) != base_types.auto else self.make_default("TrfRef")
+		self._TrfRef = value if value is not None else base_types.UninitialisedField(self, 'TrfRef', AdditionalReference10, False)
 
 	@TrfRef.deleter
 	def TrfRef(self):
 		del self._TrfRef
-		self._TrfRef = None
+		self._TrfRef = base_types.UninitialisedField(self, 'TrfRef', AdditionalReference10, False)
 
 	@property
 	def TrfSts(self):
@@ -331,12 +331,12 @@ class TransferStatusAndReason09(base_types._BaseFieldType):
 
 	@TrfSts.setter
 	def TrfSts(self, value):
-		self._TrfSts = value if type(value) != base_types.auto else self.make_default("TrfSts")
+		self._TrfSts = value if value is not None else base_types.UninitialisedField(self, 'TrfSts', TransferStatus5Choice, False)
 
 	@TrfSts.deleter
 	def TrfSts(self):
 		del self._TrfSts
-		self._TrfSts = None
+		self._TrfSts = base_types.UninitialisedField(self, 'TrfSts', TransferStatus5Choice, False)
 
 	@property
 	def TtlTrfVal(self):
@@ -344,12 +344,12 @@ class TransferStatusAndReason09(base_types._BaseFieldType):
 
 	@TtlTrfVal.setter
 	def TtlTrfVal(self, value):
-		self._TtlTrfVal = value if type(value) != base_types.auto else self.make_default("TtlTrfVal")
+		self._TtlTrfVal = value if value is not None else base_types.UninitialisedField(self, 'TtlTrfVal', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@TtlTrfVal.deleter
 	def TtlTrfVal(self):
 		del self._TtlTrfVal
-		self._TtlTrfVal = None
+		self._TtlTrfVal = base_types.UninitialisedField(self, 'TtlTrfVal', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def TtlUnitsNb(self):
@@ -357,12 +357,12 @@ class TransferStatusAndReason09(base_types._BaseFieldType):
 
 	@TtlUnitsNb.setter
 	def TtlUnitsNb(self, value):
-		self._TtlUnitsNb = value if type(value) != base_types.auto else self.make_default("TtlUnitsNb")
+		self._TtlUnitsNb = value if value is not None else base_types.UninitialisedField(self, 'TtlUnitsNb', DecimalNumber, False)
 
 	@TtlUnitsNb.deleter
 	def TtlUnitsNb(self):
 		del self._TtlUnitsNb
-		self._TtlUnitsNb = None
+		self._TtlUnitsNb = base_types.UninitialisedField(self, 'TtlUnitsNb', DecimalNumber, False)
 
 	@property
 	def UnitsDtls(self):
@@ -370,12 +370,12 @@ class TransferStatusAndReason09(base_types._BaseFieldType):
 
 	@UnitsDtls.setter
 	def UnitsDtls(self, value):
-		self._UnitsDtls = value if type(value) != base_types.auto else self.make_default("UnitsDtls")
+		self._UnitsDtls = value if value is not None else base_types.UninitialisedField(self, 'UnitsDtls', Unit14, True)
 
 	@UnitsDtls.deleter
 	def UnitsDtls(self):
 		del self._UnitsDtls
-		self._UnitsDtls = None
+		self._UnitsDtls = base_types.UninitialisedField(self, 'UnitsDtls', Unit14, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),

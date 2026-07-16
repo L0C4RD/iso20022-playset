@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._ISOMax3ACountryCode import ISOMax3ACountryCode
-from ._Max70Text import Max70Text
-from ._OfficialDocumentType1Code import OfficialDocumentType1Code
-from ._PresentationMedium2Code import PresentationMedium2Code
+from . import ISODate
+from . import ISOMax3ACountryCode
+from . import Max70Text
+from . import OfficialDocumentType1Code
+from . import PresentationMedium2Code
 
 class TravelDocument2(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class TravelDocument2(base_types._BaseFieldType):
 
 	@Assgnr.setter
 	def Assgnr(self, value):
-		self._Assgnr = value if type(value) != base_types.auto else self.make_default("Assgnr")
+		self._Assgnr = value if value is not None else base_types.UninitialisedField(self, 'Assgnr', Max70Text, False)
 
 	@Assgnr.deleter
 	def Assgnr(self):
 		del self._Assgnr
-		self._Assgnr = None
+		self._Assgnr = base_types.UninitialisedField(self, 'Assgnr', Max70Text, False)
 
 	@property
 	def Ctry(self):
@@ -30,12 +30,12 @@ class TravelDocument2(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', ISOMax3ACountryCode, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', ISOMax3ACountryCode, False)
 
 	@property
 	def Form(self):
@@ -43,12 +43,12 @@ class TravelDocument2(base_types._BaseFieldType):
 
 	@Form.setter
 	def Form(self, value):
-		self._Form = value if type(value) != base_types.auto else self.make_default("Form")
+		self._Form = value if value is not None else base_types.UninitialisedField(self, 'Form', PresentationMedium2Code, False)
 
 	@Form.deleter
 	def Form(self):
 		del self._Form
-		self._Form = None
+		self._Form = base_types.UninitialisedField(self, 'Form', PresentationMedium2Code, False)
 
 	@property
 	def Id(self):
@@ -56,12 +56,12 @@ class TravelDocument2(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max70Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max70Text, False)
 
 	@property
 	def IssncDt(self):
@@ -69,12 +69,12 @@ class TravelDocument2(base_types._BaseFieldType):
 
 	@IssncDt.setter
 	def IssncDt(self, value):
-		self._IssncDt = value if type(value) != base_types.auto else self.make_default("IssncDt")
+		self._IssncDt = value if value is not None else base_types.UninitialisedField(self, 'IssncDt', ISODate, False)
 
 	@IssncDt.deleter
 	def IssncDt(self):
 		del self._IssncDt
-		self._IssncDt = None
+		self._IssncDt = base_types.UninitialisedField(self, 'IssncDt', ISODate, False)
 
 	@property
 	def Tp(self):
@@ -82,12 +82,12 @@ class TravelDocument2(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', OfficialDocumentType1Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', OfficialDocumentType1Code, False)
 
 	@property
 	def XprtnDt(self):
@@ -95,12 +95,12 @@ class TravelDocument2(base_types._BaseFieldType):
 
 	@XprtnDt.setter
 	def XprtnDt(self, value):
-		self._XprtnDt = value if type(value) != base_types.auto else self.make_default("XprtnDt")
+		self._XprtnDt = value if value is not None else base_types.UninitialisedField(self, 'XprtnDt', ISODate, False)
 
 	@XprtnDt.deleter
 	def XprtnDt(self):
 		del self._XprtnDt
-		self._XprtnDt = None
+		self._XprtnDt = base_types.UninitialisedField(self, 'XprtnDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Assgnr', type=Max70Text, min=0, max=1, mutex_group=None, array=False),

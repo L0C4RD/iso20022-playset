@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Extension1 import Extension1
-from ._MessageIdentification1 import MessageIdentification1
-from ._References61Choice import References61Choice
-from ._Status24Choice import Status24Choice
+from . import Extension1
+from . import MessageIdentification1
+from . import References61Choice
+from . import Status24Choice
 
 class OrderInstructionStatusReportV04(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class OrderInstructionStatusReportV04(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@property
 	def Ref(self):
@@ -29,12 +29,12 @@ class OrderInstructionStatusReportV04(base_types._BaseFieldType):
 
 	@Ref.setter
 	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+		self._Ref = value if value is not None else base_types.UninitialisedField(self, 'Ref', References61Choice, False)
 
 	@Ref.deleter
 	def Ref(self):
 		del self._Ref
-		self._Ref = None
+		self._Ref = base_types.UninitialisedField(self, 'Ref', References61Choice, False)
 
 	@property
 	def StsRpt(self):
@@ -42,12 +42,12 @@ class OrderInstructionStatusReportV04(base_types._BaseFieldType):
 
 	@StsRpt.setter
 	def StsRpt(self, value):
-		self._StsRpt = value if type(value) != base_types.auto else self.make_default("StsRpt")
+		self._StsRpt = value if value is not None else base_types.UninitialisedField(self, 'StsRpt', Status24Choice, False)
 
 	@StsRpt.deleter
 	def StsRpt(self):
 		del self._StsRpt
-		self._StsRpt = None
+		self._StsRpt = base_types.UninitialisedField(self, 'StsRpt', Status24Choice, False)
 
 	@property
 	def Xtnsn(self):
@@ -55,12 +55,12 @@ class OrderInstructionStatusReportV04(base_types._BaseFieldType):
 
 	@Xtnsn.setter
 	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
+		self._Xtnsn = value if value is not None else base_types.UninitialisedField(self, 'Xtnsn', Extension1, True)
 
 	@Xtnsn.deleter
 	def Xtnsn(self):
 		del self._Xtnsn
-		self._Xtnsn = None
+		self._Xtnsn = base_types.UninitialisedField(self, 'Xtnsn', Extension1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),

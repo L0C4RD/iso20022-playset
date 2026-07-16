@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._StaticDataRequestV02 import StaticDataRequestV02
+from . import StaticDataRequestV02
 
 class ADMI_009_001_02():
 
@@ -18,12 +18,12 @@ class ADMI_009_001_02():
 
 		@StatcDataReq.setter
 		def StatcDataReq(self, value):
-			self._StatcDataReq = value if type(value) != base_types.auto else self.make_default("StatcDataReq")
+			self._StatcDataReq = value if value is not None else base_types.UninitialisedField(self, 'StatcDataReq', StaticDataRequestV02, False)
 
 		@StatcDataReq.deleter
 		def StatcDataReq(self):
 			del self._StatcDataReq
-			self._StatcDataReq = None
+			self._StatcDataReq = base_types.UninitialisedField(self, 'StatcDataReq', StaticDataRequestV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='StatcDataReq', type=StaticDataRequestV02, min=1, max=1, mutex_group=None, array=False),

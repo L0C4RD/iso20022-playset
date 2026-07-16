@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalReference8 import AdditionalReference8
+from . import AdditionalReference8
 
 class References61Choice(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class References61Choice(base_types._BaseFieldType):
 
 	@OthrRef.setter
 	def OthrRef(self, value):
-		self._OthrRef = value if type(value) != base_types.auto else self.make_default("OthrRef")
+		self._OthrRef = value if value is not None else base_types.UninitialisedField(self, 'OthrRef', AdditionalReference8, False)
 
 	@OthrRef.deleter
 	def OthrRef(self):
 		del self._OthrRef
-		self._OthrRef = None
+		self._OthrRef = base_types.UninitialisedField(self, 'OthrRef', AdditionalReference8, False)
 
 	@property
 	def RltdRef(self):
@@ -26,12 +26,12 @@ class References61Choice(base_types._BaseFieldType):
 
 	@RltdRef.setter
 	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
+		self._RltdRef = value if value is not None else base_types.UninitialisedField(self, 'RltdRef', AdditionalReference8, False)
 
 	@RltdRef.deleter
 	def RltdRef(self):
 		del self._RltdRef
-		self._RltdRef = None
+		self._RltdRef = base_types.UninitialisedField(self, 'RltdRef', AdditionalReference8, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OthrRef', type=AdditionalReference8, min=1, max=2, mutex_group=1, array=False),

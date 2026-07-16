@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActionMessage11 import ActionMessage11
-from ._Max35Text import Max35Text
+from . import ActionMessage11
+from . import Max35Text
 
 class DeviceInputNotification6(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DeviceInputNotification6(base_types._BaseFieldType):
 
 	@OutptCntt.setter
 	def OutptCntt(self, value):
-		self._OutptCntt = value if type(value) != base_types.auto else self.make_default("OutptCntt")
+		self._OutptCntt = value if value is not None else base_types.UninitialisedField(self, 'OutptCntt', ActionMessage11, False)
 
 	@OutptCntt.deleter
 	def OutptCntt(self):
 		del self._OutptCntt
-		self._OutptCntt = None
+		self._OutptCntt = base_types.UninitialisedField(self, 'OutptCntt', ActionMessage11, False)
 
 	@property
 	def XchgId(self):
@@ -27,12 +27,12 @@ class DeviceInputNotification6(base_types._BaseFieldType):
 
 	@XchgId.setter
 	def XchgId(self, value):
-		self._XchgId = value if type(value) != base_types.auto else self.make_default("XchgId")
+		self._XchgId = value if value is not None else base_types.UninitialisedField(self, 'XchgId', Max35Text, False)
 
 	@XchgId.deleter
 	def XchgId(self):
 		del self._XchgId
-		self._XchgId = None
+		self._XchgId = base_types.UninitialisedField(self, 'XchgId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OutptCntt', type=ActionMessage11, min=1, max=1, mutex_group=None, array=False),

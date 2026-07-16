@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CharacterSearch1Choice import CharacterSearch1Choice
-from ._InformationQualifierType1 import InformationQualifierType1
-from ._Max35Text import Max35Text
+from . import CharacterSearch1Choice
+from . import InformationQualifierType1
+from . import Max35Text
 
 class GeneralBusinessInformationSearchCriteria1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class GeneralBusinessInformationSearchCriteria1(base_types._BaseFieldType):
 
 	@Qlfr.setter
 	def Qlfr(self, value):
-		self._Qlfr = value if type(value) != base_types.auto else self.make_default("Qlfr")
+		self._Qlfr = value if value is not None else base_types.UninitialisedField(self, 'Qlfr', InformationQualifierType1, True)
 
 	@Qlfr.deleter
 	def Qlfr(self):
 		del self._Qlfr
-		self._Qlfr = None
+		self._Qlfr = base_types.UninitialisedField(self, 'Qlfr', InformationQualifierType1, True)
 
 	@property
 	def Ref(self):
@@ -28,12 +28,12 @@ class GeneralBusinessInformationSearchCriteria1(base_types._BaseFieldType):
 
 	@Ref.setter
 	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+		self._Ref = value if value is not None else base_types.UninitialisedField(self, 'Ref', Max35Text, True)
 
 	@Ref.deleter
 	def Ref(self):
 		del self._Ref
-		self._Ref = None
+		self._Ref = base_types.UninitialisedField(self, 'Ref', Max35Text, True)
 
 	@property
 	def Sbjt(self):
@@ -41,12 +41,12 @@ class GeneralBusinessInformationSearchCriteria1(base_types._BaseFieldType):
 
 	@Sbjt.setter
 	def Sbjt(self, value):
-		self._Sbjt = value if type(value) != base_types.auto else self.make_default("Sbjt")
+		self._Sbjt = value if value is not None else base_types.UninitialisedField(self, 'Sbjt', CharacterSearch1Choice, True)
 
 	@Sbjt.deleter
 	def Sbjt(self):
 		del self._Sbjt
-		self._Sbjt = None
+		self._Sbjt = base_types.UninitialisedField(self, 'Sbjt', CharacterSearch1Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Qlfr', type=InformationQualifierType1, min=0, max=None, mutex_group=None, array=True),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._Max35Text import Max35Text
-from ._OtherAsset2Choice import OtherAsset2Choice
+from . import AdditionalInformation15
+from . import Max35Text
+from . import OtherAsset2Choice
 
 class OtherAsset2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class OtherAsset2(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@property
 	def Desc(self):
@@ -28,12 +28,12 @@ class OtherAsset2(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', Max35Text, False)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', Max35Text, False)
 
 	@property
 	def Id(self):
@@ -41,12 +41,12 @@ class OtherAsset2(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def Nm(self):
@@ -54,12 +54,12 @@ class OtherAsset2(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max35Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max35Text, False)
 
 	@property
 	def OthrAsstTp(self):
@@ -67,12 +67,12 @@ class OtherAsset2(base_types._BaseFieldType):
 
 	@OthrAsstTp.setter
 	def OthrAsstTp(self, value):
-		self._OthrAsstTp = value if type(value) != base_types.auto else self.make_default("OthrAsstTp")
+		self._OthrAsstTp = value if value is not None else base_types.UninitialisedField(self, 'OthrAsstTp', OtherAsset2Choice, False)
 
 	@OthrAsstTp.deleter
 	def OthrAsstTp(self):
 		del self._OthrAsstTp
-		self._OthrAsstTp = None
+		self._OthrAsstTp = base_types.UninitialisedField(self, 'OthrAsstTp', OtherAsset2Choice, False)
 
 	@property
 	def OthrId(self):
@@ -80,12 +80,12 @@ class OtherAsset2(base_types._BaseFieldType):
 
 	@OthrId.setter
 	def OthrId(self, value):
-		self._OthrId = value if type(value) != base_types.auto else self.make_default("OthrId")
+		self._OthrId = value if value is not None else base_types.UninitialisedField(self, 'OthrId', Max35Text, True)
 
 	@OthrId.deleter
 	def OthrId(self):
 		del self._OthrId
-		self._OthrId = None
+		self._OthrId = base_types.UninitialisedField(self, 'OthrId', Max35Text, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),

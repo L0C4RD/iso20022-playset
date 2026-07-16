@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalData1 import AdditionalData1
-from ._AdditionalServiceResult1Code import AdditionalServiceResult1Code
-from ._AdditionalServiceType2Code import AdditionalServiceType2Code
-from ._Max35Text import Max35Text
+from . import AdditionalData1
+from . import AdditionalServiceResult1Code
+from . import AdditionalServiceType2Code
+from . import Max35Text
 
 class AdditionalService2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class AdditionalService2(base_types._BaseFieldType):
 
 	@OthrRslt.setter
 	def OthrRslt(self, value):
-		self._OthrRslt = value if type(value) != base_types.auto else self.make_default("OthrRslt")
+		self._OthrRslt = value if value is not None else base_types.UninitialisedField(self, 'OthrRslt', Max35Text, False)
 
 	@OthrRslt.deleter
 	def OthrRslt(self):
 		del self._OthrRslt
-		self._OthrRslt = None
+		self._OthrRslt = base_types.UninitialisedField(self, 'OthrRslt', Max35Text, False)
 
 	@property
 	def OthrTp(self):
@@ -29,12 +29,12 @@ class AdditionalService2(base_types._BaseFieldType):
 
 	@OthrTp.setter
 	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != base_types.auto else self.make_default("OthrTp")
+		self._OthrTp = value if value is not None else base_types.UninitialisedField(self, 'OthrTp', Max35Text, False)
 
 	@OthrTp.deleter
 	def OthrTp(self):
 		del self._OthrTp
-		self._OthrTp = None
+		self._OthrTp = base_types.UninitialisedField(self, 'OthrTp', Max35Text, False)
 
 	@property
 	def Rslt(self):
@@ -42,12 +42,12 @@ class AdditionalService2(base_types._BaseFieldType):
 
 	@Rslt.setter
 	def Rslt(self, value):
-		self._Rslt = value if type(value) != base_types.auto else self.make_default("Rslt")
+		self._Rslt = value if value is not None else base_types.UninitialisedField(self, 'Rslt', AdditionalServiceResult1Code, False)
 
 	@Rslt.deleter
 	def Rslt(self):
 		del self._Rslt
-		self._Rslt = None
+		self._Rslt = base_types.UninitialisedField(self, 'Rslt', AdditionalServiceResult1Code, False)
 
 	@property
 	def SvcDtl(self):
@@ -55,12 +55,12 @@ class AdditionalService2(base_types._BaseFieldType):
 
 	@SvcDtl.setter
 	def SvcDtl(self, value):
-		self._SvcDtl = value if type(value) != base_types.auto else self.make_default("SvcDtl")
+		self._SvcDtl = value if value is not None else base_types.UninitialisedField(self, 'SvcDtl', AdditionalData1, True)
 
 	@SvcDtl.deleter
 	def SvcDtl(self):
 		del self._SvcDtl
-		self._SvcDtl = None
+		self._SvcDtl = base_types.UninitialisedField(self, 'SvcDtl', AdditionalData1, True)
 
 	@property
 	def Tp(self):
@@ -68,12 +68,12 @@ class AdditionalService2(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', AdditionalServiceType2Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', AdditionalServiceType2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OthrRslt', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

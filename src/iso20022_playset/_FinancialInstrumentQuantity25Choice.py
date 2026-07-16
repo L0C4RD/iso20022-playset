@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._DecimalNumber import DecimalNumber
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import DecimalNumber
 
 class FinancialInstrumentQuantity25Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class FinancialInstrumentQuantity25Choice(base_types._BaseFieldType):
 
 	@MntryVal.setter
 	def MntryVal(self, value):
-		self._MntryVal = value if type(value) != base_types.auto else self.make_default("MntryVal")
+		self._MntryVal = value if value is not None else base_types.UninitialisedField(self, 'MntryVal', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@MntryVal.deleter
 	def MntryVal(self):
 		del self._MntryVal
-		self._MntryVal = None
+		self._MntryVal = base_types.UninitialisedField(self, 'MntryVal', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def NmnlVal(self):
@@ -27,12 +27,12 @@ class FinancialInstrumentQuantity25Choice(base_types._BaseFieldType):
 
 	@NmnlVal.setter
 	def NmnlVal(self, value):
-		self._NmnlVal = value if type(value) != base_types.auto else self.make_default("NmnlVal")
+		self._NmnlVal = value if value is not None else base_types.UninitialisedField(self, 'NmnlVal', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@NmnlVal.deleter
 	def NmnlVal(self):
 		del self._NmnlVal
-		self._NmnlVal = None
+		self._NmnlVal = base_types.UninitialisedField(self, 'NmnlVal', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def Unit(self):
@@ -40,12 +40,12 @@ class FinancialInstrumentQuantity25Choice(base_types._BaseFieldType):
 
 	@Unit.setter
 	def Unit(self, value):
-		self._Unit = value if type(value) != base_types.auto else self.make_default("Unit")
+		self._Unit = value if value is not None else base_types.UninitialisedField(self, 'Unit', DecimalNumber, False)
 
 	@Unit.deleter
 	def Unit(self):
 		del self._Unit
-		self._Unit = None
+		self._Unit = base_types.UninitialisedField(self, 'Unit', DecimalNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MntryVal', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),

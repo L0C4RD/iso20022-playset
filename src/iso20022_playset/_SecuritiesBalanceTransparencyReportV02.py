@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MessageIdentification1 import MessageIdentification1
-from ._Pagination import Pagination
-from ._PartyIdentification100 import PartyIdentification100
-from ._SafekeepingAccount7 import SafekeepingAccount7
-from ._Statement59 import Statement59
-from ._SupplementaryData1 import SupplementaryData1
+from . import MessageIdentification1
+from . import Pagination
+from . import PartyIdentification100
+from . import SafekeepingAccount7
+from . import Statement59
+from . import SupplementaryData1
 
 class SecuritiesBalanceTransparencyReportV02(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class SecuritiesBalanceTransparencyReportV02(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@property
 	def Pgntn(self):
@@ -31,12 +31,12 @@ class SecuritiesBalanceTransparencyReportV02(base_types._BaseFieldType):
 
 	@Pgntn.setter
 	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+		self._Pgntn = value if value is not None else base_types.UninitialisedField(self, 'Pgntn', Pagination, False)
 
 	@Pgntn.deleter
 	def Pgntn(self):
 		del self._Pgntn
-		self._Pgntn = None
+		self._Pgntn = base_types.UninitialisedField(self, 'Pgntn', Pagination, False)
 
 	@property
 	def RcvrId(self):
@@ -44,12 +44,12 @@ class SecuritiesBalanceTransparencyReportV02(base_types._BaseFieldType):
 
 	@RcvrId.setter
 	def RcvrId(self, value):
-		self._RcvrId = value if type(value) != base_types.auto else self.make_default("RcvrId")
+		self._RcvrId = value if value is not None else base_types.UninitialisedField(self, 'RcvrId', PartyIdentification100, False)
 
 	@RcvrId.deleter
 	def RcvrId(self):
 		del self._RcvrId
-		self._RcvrId = None
+		self._RcvrId = base_types.UninitialisedField(self, 'RcvrId', PartyIdentification100, False)
 
 	@property
 	def SfkpgAcctAndHldgs(self):
@@ -57,12 +57,12 @@ class SecuritiesBalanceTransparencyReportV02(base_types._BaseFieldType):
 
 	@SfkpgAcctAndHldgs.setter
 	def SfkpgAcctAndHldgs(self, value):
-		self._SfkpgAcctAndHldgs = value if type(value) != base_types.auto else self.make_default("SfkpgAcctAndHldgs")
+		self._SfkpgAcctAndHldgs = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcctAndHldgs', SafekeepingAccount7, True)
 
 	@SfkpgAcctAndHldgs.deleter
 	def SfkpgAcctAndHldgs(self):
 		del self._SfkpgAcctAndHldgs
-		self._SfkpgAcctAndHldgs = None
+		self._SfkpgAcctAndHldgs = base_types.UninitialisedField(self, 'SfkpgAcctAndHldgs', SafekeepingAccount7, True)
 
 	@property
 	def SndrId(self):
@@ -70,12 +70,12 @@ class SecuritiesBalanceTransparencyReportV02(base_types._BaseFieldType):
 
 	@SndrId.setter
 	def SndrId(self, value):
-		self._SndrId = value if type(value) != base_types.auto else self.make_default("SndrId")
+		self._SndrId = value if value is not None else base_types.UninitialisedField(self, 'SndrId', PartyIdentification100, False)
 
 	@SndrId.deleter
 	def SndrId(self):
 		del self._SndrId
-		self._SndrId = None
+		self._SndrId = base_types.UninitialisedField(self, 'SndrId', PartyIdentification100, False)
 
 	@property
 	def SplmtryData(self):
@@ -83,12 +83,12 @@ class SecuritiesBalanceTransparencyReportV02(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def StmtGnlDtls(self):
@@ -96,12 +96,12 @@ class SecuritiesBalanceTransparencyReportV02(base_types._BaseFieldType):
 
 	@StmtGnlDtls.setter
 	def StmtGnlDtls(self, value):
-		self._StmtGnlDtls = value if type(value) != base_types.auto else self.make_default("StmtGnlDtls")
+		self._StmtGnlDtls = value if value is not None else base_types.UninitialisedField(self, 'StmtGnlDtls', Statement59, False)
 
 	@StmtGnlDtls.deleter
 	def StmtGnlDtls(self):
 		del self._StmtGnlDtls
-		self._StmtGnlDtls = None
+		self._StmtGnlDtls = base_types.UninitialisedField(self, 'StmtGnlDtls', Statement59, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),

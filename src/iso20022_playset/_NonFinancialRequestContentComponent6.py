@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardPaymentTransaction146 import CardPaymentTransaction146
-from ._ExternallyDefinedData5 import ExternallyDefinedData5
-from ._NonFinancialRequestType2Code import NonFinancialRequestType2Code
+from . import CardPaymentTransaction146
+from . import ExternallyDefinedData5
+from . import NonFinancialRequestType2Code
 
 class NonFinancialRequestContentComponent6(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class NonFinancialRequestContentComponent6(base_types._BaseFieldType):
 
 	@AddtlReq.setter
 	def AddtlReq(self, value):
-		self._AddtlReq = value if type(value) != base_types.auto else self.make_default("AddtlReq")
+		self._AddtlReq = value if value is not None else base_types.UninitialisedField(self, 'AddtlReq', ExternallyDefinedData5, True)
 
 	@AddtlReq.deleter
 	def AddtlReq(self):
 		del self._AddtlReq
-		self._AddtlReq = None
+		self._AddtlReq = base_types.UninitialisedField(self, 'AddtlReq', ExternallyDefinedData5, True)
 
 	@property
 	def NonFinReqTp(self):
@@ -28,12 +28,12 @@ class NonFinancialRequestContentComponent6(base_types._BaseFieldType):
 
 	@NonFinReqTp.setter
 	def NonFinReqTp(self, value):
-		self._NonFinReqTp = value if type(value) != base_types.auto else self.make_default("NonFinReqTp")
+		self._NonFinReqTp = value if value is not None else base_types.UninitialisedField(self, 'NonFinReqTp', NonFinancialRequestType2Code, True)
 
 	@NonFinReqTp.deleter
 	def NonFinReqTp(self):
 		del self._NonFinReqTp
-		self._NonFinReqTp = None
+		self._NonFinReqTp = base_types.UninitialisedField(self, 'NonFinReqTp', NonFinancialRequestType2Code, True)
 
 	@property
 	def Tx(self):
@@ -41,12 +41,12 @@ class NonFinancialRequestContentComponent6(base_types._BaseFieldType):
 
 	@Tx.setter
 	def Tx(self, value):
-		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
+		self._Tx = value if value is not None else base_types.UninitialisedField(self, 'Tx', CardPaymentTransaction146, False)
 
 	@Tx.deleter
 	def Tx(self):
 		del self._Tx
-		self._Tx = None
+		self._Tx = base_types.UninitialisedField(self, 'Tx', CardPaymentTransaction146, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlReq', type=ExternallyDefinedData5, min=0, max=8, mutex_group=None, array=True),

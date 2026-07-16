@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesFinancingReportingTransactionStatusAdviceV02 import SecuritiesFinancingReportingTransactionStatusAdviceV02
+from . import SecuritiesFinancingReportingTransactionStatusAdviceV02
 
 class AUTH_084_001_02():
 
@@ -18,12 +18,12 @@ class AUTH_084_001_02():
 
 		@SctiesFincgRptgTxStsAdvc.setter
 		def SctiesFincgRptgTxStsAdvc(self, value):
-			self._SctiesFincgRptgTxStsAdvc = value if type(value) != base_types.auto else self.make_default("SctiesFincgRptgTxStsAdvc")
+			self._SctiesFincgRptgTxStsAdvc = value if value is not None else base_types.UninitialisedField(self, 'SctiesFincgRptgTxStsAdvc', SecuritiesFinancingReportingTransactionStatusAdviceV02, False)
 
 		@SctiesFincgRptgTxStsAdvc.deleter
 		def SctiesFincgRptgTxStsAdvc(self):
 			del self._SctiesFincgRptgTxStsAdvc
-			self._SctiesFincgRptgTxStsAdvc = None
+			self._SctiesFincgRptgTxStsAdvc = base_types.UninitialisedField(self, 'SctiesFincgRptgTxStsAdvc', SecuritiesFinancingReportingTransactionStatusAdviceV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesFincgRptgTxStsAdvc', type=SecuritiesFinancingReportingTransactionStatusAdviceV02, min=1, max=1, mutex_group=None, array=False),

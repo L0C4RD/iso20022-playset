@@ -2,20 +2,20 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalData1 import AdditionalData1
-from ._AmountDetails3 import AmountDetails3
-from ._DepartureOrArrival1 import DepartureOrArrival1
-from ._DocumentReference1 import DocumentReference1
-from ._ISODate import ISODate
-from ._LoyaltyProgramme4 import LoyaltyProgramme4
-from ._Max140Text import Max140Text
-from ._Max35NumericText import Max35NumericText
-from ._Max35Text import Max35Text
-from ._Max4NumericText import Max4NumericText
-from ._Max4Text import Max4Text
-from ._Max70Text import Max70Text
-from ._TransportType1Code import TransportType1Code
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import AdditionalData1
+from . import AmountDetails3
+from . import DepartureOrArrival1
+from . import DocumentReference1
+from . import ISODate
+from . import LoyaltyProgramme4
+from . import Max140Text
+from . import Max35NumericText
+from . import Max35Text
+from . import Max4NumericText
+from . import Max4Text
+from . import Max70Text
+from . import TransportType1Code
+from . import TrueFalseIndicator
 
 class TripLeg3(base_types._BaseFieldType):
 
@@ -26,12 +26,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@AddtlData.setter
 	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+		self._AddtlData = value if value is not None else base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@AddtlData.deleter
 	def AddtlData(self):
 		del self._AddtlData
-		self._AddtlData = None
+		self._AddtlData = base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@property
 	def Amt(self):
@@ -39,12 +39,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', AmountDetails3, True)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', AmountDetails3, True)
 
 	@property
 	def Arrvl(self):
@@ -52,12 +52,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@Arrvl.setter
 	def Arrvl(self, value):
-		self._Arrvl = value if type(value) != base_types.auto else self.make_default("Arrvl")
+		self._Arrvl = value if value is not None else base_types.UninitialisedField(self, 'Arrvl', DepartureOrArrival1, False)
 
 	@Arrvl.deleter
 	def Arrvl(self):
 		del self._Arrvl
-		self._Arrvl = None
+		self._Arrvl = base_types.UninitialisedField(self, 'Arrvl', DepartureOrArrival1, False)
 
 	@property
 	def CdtRsnCd(self):
@@ -65,12 +65,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@CdtRsnCd.setter
 	def CdtRsnCd(self, value):
-		self._CdtRsnCd = value if type(value) != base_types.auto else self.make_default("CdtRsnCd")
+		self._CdtRsnCd = value if value is not None else base_types.UninitialisedField(self, 'CdtRsnCd', Max35Text, False)
 
 	@CdtRsnCd.deleter
 	def CdtRsnCd(self):
 		del self._CdtRsnCd
-		self._CdtRsnCd = None
+		self._CdtRsnCd = base_types.UninitialisedField(self, 'CdtRsnCd', Max35Text, False)
 
 	@property
 	def CmmdtyCd(self):
@@ -78,12 +78,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@CmmdtyCd.setter
 	def CmmdtyCd(self, value):
-		self._CmmdtyCd = value if type(value) != base_types.auto else self.make_default("CmmdtyCd")
+		self._CmmdtyCd = value if value is not None else base_types.UninitialisedField(self, 'CmmdtyCd', Max4Text, False)
 
 	@CmmdtyCd.deleter
 	def CmmdtyCd(self):
 		del self._CmmdtyCd
-		self._CmmdtyCd = None
+		self._CmmdtyCd = base_types.UninitialisedField(self, 'CmmdtyCd', Max4Text, False)
 
 	@property
 	def CnjnctnTcktNb(self):
@@ -91,12 +91,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@CnjnctnTcktNb.setter
 	def CnjnctnTcktNb(self, value):
-		self._CnjnctnTcktNb = value if type(value) != base_types.auto else self.make_default("CnjnctnTcktNb")
+		self._CnjnctnTcktNb = value if value is not None else base_types.UninitialisedField(self, 'CnjnctnTcktNb', Max35Text, False)
 
 	@CnjnctnTcktNb.deleter
 	def CnjnctnTcktNb(self):
 		del self._CnjnctnTcktNb
-		self._CnjnctnTcktNb = None
+		self._CnjnctnTcktNb = base_types.UninitialisedField(self, 'CnjnctnTcktNb', Max35Text, False)
 
 	@property
 	def CrrierCd(self):
@@ -104,12 +104,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@CrrierCd.setter
 	def CrrierCd(self, value):
-		self._CrrierCd = value if type(value) != base_types.auto else self.make_default("CrrierCd")
+		self._CrrierCd = value if value is not None else base_types.UninitialisedField(self, 'CrrierCd', Max35Text, False)
 
 	@CrrierCd.deleter
 	def CrrierCd(self):
 		del self._CrrierCd
-		self._CrrierCd = None
+		self._CrrierCd = base_types.UninitialisedField(self, 'CrrierCd', Max35Text, False)
 
 	@property
 	def CrrierNm(self):
@@ -117,12 +117,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@CrrierNm.setter
 	def CrrierNm(self, value):
-		self._CrrierNm = value if type(value) != base_types.auto else self.make_default("CrrierNm")
+		self._CrrierNm = value if value is not None else base_types.UninitialisedField(self, 'CrrierNm', Max70Text, False)
 
 	@CrrierNm.deleter
 	def CrrierNm(self):
 		del self._CrrierNm
-		self._CrrierNm = None
+		self._CrrierNm = base_types.UninitialisedField(self, 'CrrierNm', Max70Text, False)
 
 	@property
 	def Doc(self):
@@ -130,12 +130,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@Doc.setter
 	def Doc(self, value):
-		self._Doc = value if type(value) != base_types.auto else self.make_default("Doc")
+		self._Doc = value if value is not None else base_types.UninitialisedField(self, 'Doc', DocumentReference1, True)
 
 	@Doc.deleter
 	def Doc(self):
 		del self._Doc
-		self._Doc = None
+		self._Doc = base_types.UninitialisedField(self, 'Doc', DocumentReference1, True)
 
 	@property
 	def Dprture(self):
@@ -143,12 +143,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@Dprture.setter
 	def Dprture(self, value):
-		self._Dprture = value if type(value) != base_types.auto else self.make_default("Dprture")
+		self._Dprture = value if value is not None else base_types.UninitialisedField(self, 'Dprture', DepartureOrArrival1, False)
 
 	@Dprture.deleter
 	def Dprture(self):
 		del self._Dprture
-		self._Dprture = None
+		self._Dprture = base_types.UninitialisedField(self, 'Dprture', DepartureOrArrival1, False)
 
 	@property
 	def Drtn(self):
@@ -156,12 +156,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@Drtn.setter
 	def Drtn(self, value):
-		self._Drtn = value if type(value) != base_types.auto else self.make_default("Drtn")
+		self._Drtn = value if value is not None else base_types.UninitialisedField(self, 'Drtn', Max4NumericText, False)
 
 	@Drtn.deleter
 	def Drtn(self):
 		del self._Drtn
-		self._Drtn = None
+		self._Drtn = base_types.UninitialisedField(self, 'Drtn', Max4NumericText, False)
 
 	@property
 	def FairBsisCd(self):
@@ -169,12 +169,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@FairBsisCd.setter
 	def FairBsisCd(self, value):
-		self._FairBsisCd = value if type(value) != base_types.auto else self.make_default("FairBsisCd")
+		self._FairBsisCd = value if value is not None else base_types.UninitialisedField(self, 'FairBsisCd', Max35Text, False)
 
 	@FairBsisCd.deleter
 	def FairBsisCd(self):
 		del self._FairBsisCd
-		self._FairBsisCd = None
+		self._FairBsisCd = base_types.UninitialisedField(self, 'FairBsisCd', Max35Text, False)
 
 	@property
 	def IATACd(self):
@@ -182,12 +182,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@IATACd.setter
 	def IATACd(self, value):
-		self._IATACd = value if type(value) != base_types.auto else self.make_default("IATACd")
+		self._IATACd = value if value is not None else base_types.UninitialisedField(self, 'IATACd', Max35Text, False)
 
 	@IATACd.deleter
 	def IATACd(self):
 		del self._IATACd
-		self._IATACd = None
+		self._IATACd = base_types.UninitialisedField(self, 'IATACd', Max35Text, False)
 
 	@property
 	def Insrnc(self):
@@ -195,12 +195,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@Insrnc.setter
 	def Insrnc(self, value):
-		self._Insrnc = value if type(value) != base_types.auto else self.make_default("Insrnc")
+		self._Insrnc = value if value is not None else base_types.UninitialisedField(self, 'Insrnc', TrueFalseIndicator, False)
 
 	@Insrnc.deleter
 	def Insrnc(self):
 		del self._Insrnc
-		self._Insrnc = None
+		self._Insrnc = base_types.UninitialisedField(self, 'Insrnc', TrueFalseIndicator, False)
 
 	@property
 	def LltyPrgrmm(self):
@@ -208,12 +208,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@LltyPrgrmm.setter
 	def LltyPrgrmm(self, value):
-		self._LltyPrgrmm = value if type(value) != base_types.auto else self.make_default("LltyPrgrmm")
+		self._LltyPrgrmm = value if value is not None else base_types.UninitialisedField(self, 'LltyPrgrmm', LoyaltyProgramme4, False)
 
 	@LltyPrgrmm.deleter
 	def LltyPrgrmm(self):
 		del self._LltyPrgrmm
-		self._LltyPrgrmm = None
+		self._LltyPrgrmm = base_types.UninitialisedField(self, 'LltyPrgrmm', LoyaltyProgramme4, False)
 
 	@property
 	def NonDrctRouteCd(self):
@@ -221,12 +221,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@NonDrctRouteCd.setter
 	def NonDrctRouteCd(self, value):
-		self._NonDrctRouteCd = value if type(value) != base_types.auto else self.make_default("NonDrctRouteCd")
+		self._NonDrctRouteCd = value if value is not None else base_types.UninitialisedField(self, 'NonDrctRouteCd', Max35Text, False)
 
 	@NonDrctRouteCd.deleter
 	def NonDrctRouteCd(self):
 		del self._NonDrctRouteCd
-		self._NonDrctRouteCd = None
+		self._NonDrctRouteCd = base_types.UninitialisedField(self, 'NonDrctRouteCd', Max35Text, False)
 
 	@property
 	def OpnTckt(self):
@@ -234,12 +234,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@OpnTckt.setter
 	def OpnTckt(self, value):
-		self._OpnTckt = value if type(value) != base_types.auto else self.make_default("OpnTckt")
+		self._OpnTckt = value if value is not None else base_types.UninitialisedField(self, 'OpnTckt', TrueFalseIndicator, False)
 
 	@OpnTckt.deleter
 	def OpnTckt(self):
 		del self._OpnTckt
-		self._OpnTckt = None
+		self._OpnTckt = base_types.UninitialisedField(self, 'OpnTckt', TrueFalseIndicator, False)
 
 	@property
 	def OrgnlRsvatnNb(self):
@@ -247,12 +247,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@OrgnlRsvatnNb.setter
 	def OrgnlRsvatnNb(self, value):
-		self._OrgnlRsvatnNb = value if type(value) != base_types.auto else self.make_default("OrgnlRsvatnNb")
+		self._OrgnlRsvatnNb = value if value is not None else base_types.UninitialisedField(self, 'OrgnlRsvatnNb', Max35Text, False)
 
 	@OrgnlRsvatnNb.deleter
 	def OrgnlRsvatnNb(self):
 		del self._OrgnlRsvatnNb
-		self._OrgnlRsvatnNb = None
+		self._OrgnlRsvatnNb = base_types.UninitialisedField(self, 'OrgnlRsvatnNb', Max35Text, False)
 
 	@property
 	def OrgnlRsvatnSys(self):
@@ -260,12 +260,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@OrgnlRsvatnSys.setter
 	def OrgnlRsvatnSys(self, value):
-		self._OrgnlRsvatnSys = value if type(value) != base_types.auto else self.make_default("OrgnlRsvatnSys")
+		self._OrgnlRsvatnSys = value if value is not None else base_types.UninitialisedField(self, 'OrgnlRsvatnSys', Max4Text, False)
 
 	@OrgnlRsvatnSys.deleter
 	def OrgnlRsvatnSys(self):
 		del self._OrgnlRsvatnSys
-		self._OrgnlRsvatnSys = None
+		self._OrgnlRsvatnSys = base_types.UninitialisedField(self, 'OrgnlRsvatnSys', Max4Text, False)
 
 	@property
 	def OthrTrnsprtTp(self):
@@ -273,12 +273,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@OthrTrnsprtTp.setter
 	def OthrTrnsprtTp(self, value):
-		self._OthrTrnsprtTp = value if type(value) != base_types.auto else self.make_default("OthrTrnsprtTp")
+		self._OthrTrnsprtTp = value if value is not None else base_types.UninitialisedField(self, 'OthrTrnsprtTp', Max35Text, False)
 
 	@OthrTrnsprtTp.deleter
 	def OthrTrnsprtTp(self):
 		del self._OthrTrnsprtTp
-		self._OthrTrnsprtTp = None
+		self._OthrTrnsprtTp = base_types.UninitialisedField(self, 'OthrTrnsprtTp', Max35Text, False)
 
 	@property
 	def PrcdrId(self):
@@ -286,12 +286,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@PrcdrId.setter
 	def PrcdrId(self, value):
-		self._PrcdrId = value if type(value) != base_types.auto else self.make_default("PrcdrId")
+		self._PrcdrId = value if value is not None else base_types.UninitialisedField(self, 'PrcdrId', Max35Text, False)
 
 	@PrcdrId.deleter
 	def PrcdrId(self):
 		del self._PrcdrId
-		self._PrcdrId = None
+		self._PrcdrId = base_types.UninitialisedField(self, 'PrcdrId', Max35Text, False)
 
 	@property
 	def RcrdLctrNb(self):
@@ -299,12 +299,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@RcrdLctrNb.setter
 	def RcrdLctrNb(self, value):
-		self._RcrdLctrNb = value if type(value) != base_types.auto else self.make_default("RcrdLctrNb")
+		self._RcrdLctrNb = value if value is not None else base_types.UninitialisedField(self, 'RcrdLctrNb', Max35Text, False)
 
 	@RcrdLctrNb.deleter
 	def RcrdLctrNb(self):
 		del self._RcrdLctrNb
-		self._RcrdLctrNb = None
+		self._RcrdLctrNb = base_types.UninitialisedField(self, 'RcrdLctrNb', Max35Text, False)
 
 	@property
 	def RouteNb(self):
@@ -312,12 +312,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@RouteNb.setter
 	def RouteNb(self, value):
-		self._RouteNb = value if type(value) != base_types.auto else self.make_default("RouteNb")
+		self._RouteNb = value if value is not None else base_types.UninitialisedField(self, 'RouteNb', Max35Text, False)
 
 	@RouteNb.deleter
 	def RouteNb(self):
 		del self._RouteNb
-		self._RouteNb = None
+		self._RouteNb = base_types.UninitialisedField(self, 'RouteNb', Max35Text, False)
 
 	@property
 	def RstrctdTckt(self):
@@ -325,12 +325,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@RstrctdTckt.setter
 	def RstrctdTckt(self, value):
-		self._RstrctdTckt = value if type(value) != base_types.auto else self.make_default("RstrctdTckt")
+		self._RstrctdTckt = value if value is not None else base_types.UninitialisedField(self, 'RstrctdTckt', TrueFalseIndicator, False)
 
 	@RstrctdTckt.deleter
 	def RstrctdTckt(self):
 		del self._RstrctdTckt
-		self._RstrctdTckt = None
+		self._RstrctdTckt = base_types.UninitialisedField(self, 'RstrctdTckt', TrueFalseIndicator, False)
 
 	@property
 	def RsvatnNb(self):
@@ -338,12 +338,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@RsvatnNb.setter
 	def RsvatnNb(self, value):
-		self._RsvatnNb = value if type(value) != base_types.auto else self.make_default("RsvatnNb")
+		self._RsvatnNb = value if value is not None else base_types.UninitialisedField(self, 'RsvatnNb', Max35Text, False)
 
 	@RsvatnNb.deleter
 	def RsvatnNb(self):
 		del self._RsvatnNb
-		self._RsvatnNb = None
+		self._RsvatnNb = base_types.UninitialisedField(self, 'RsvatnNb', Max35Text, False)
 
 	@property
 	def RsvatnSys(self):
@@ -351,12 +351,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@RsvatnSys.setter
 	def RsvatnSys(self, value):
-		self._RsvatnSys = value if type(value) != base_types.auto else self.make_default("RsvatnSys")
+		self._RsvatnSys = value if value is not None else base_types.UninitialisedField(self, 'RsvatnSys', Max4Text, False)
 
 	@RsvatnSys.deleter
 	def RsvatnSys(self):
 		del self._RsvatnSys
-		self._RsvatnSys = None
+		self._RsvatnSys = base_types.UninitialisedField(self, 'RsvatnSys', Max4Text, False)
 
 	@property
 	def SeqNb(self):
@@ -364,12 +364,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@SeqNb.setter
 	def SeqNb(self, value):
-		self._SeqNb = value if type(value) != base_types.auto else self.make_default("SeqNb")
+		self._SeqNb = value if value is not None else base_types.UninitialisedField(self, 'SeqNb', Max35NumericText, False)
 
 	@SeqNb.deleter
 	def SeqNb(self):
 		del self._SeqNb
-		self._SeqNb = None
+		self._SeqNb = base_types.UninitialisedField(self, 'SeqNb', Max35NumericText, False)
 
 	@property
 	def StopOver(self):
@@ -377,12 +377,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@StopOver.setter
 	def StopOver(self, value):
-		self._StopOver = value if type(value) != base_types.auto else self.make_default("StopOver")
+		self._StopOver = value if value is not None else base_types.UninitialisedField(self, 'StopOver', TrueFalseIndicator, False)
 
 	@StopOver.deleter
 	def StopOver(self):
 		del self._StopOver
-		self._StopOver = None
+		self._StopOver = base_types.UninitialisedField(self, 'StopOver', TrueFalseIndicator, False)
 
 	@property
 	def SvcClss(self):
@@ -390,12 +390,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@SvcClss.setter
 	def SvcClss(self, value):
-		self._SvcClss = value if type(value) != base_types.auto else self.make_default("SvcClss")
+		self._SvcClss = value if value is not None else base_types.UninitialisedField(self, 'SvcClss', Max35Text, False)
 
 	@SvcClss.deleter
 	def SvcClss(self):
 		del self._SvcClss
-		self._SvcClss = None
+		self._SvcClss = base_types.UninitialisedField(self, 'SvcClss', Max35Text, False)
 
 	@property
 	def TcktIsseDt(self):
@@ -403,12 +403,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@TcktIsseDt.setter
 	def TcktIsseDt(self, value):
-		self._TcktIsseDt = value if type(value) != base_types.auto else self.make_default("TcktIsseDt")
+		self._TcktIsseDt = value if value is not None else base_types.UninitialisedField(self, 'TcktIsseDt', ISODate, False)
 
 	@TcktIsseDt.deleter
 	def TcktIsseDt(self):
 		del self._TcktIsseDt
-		self._TcktIsseDt = None
+		self._TcktIsseDt = base_types.UninitialisedField(self, 'TcktIsseDt', ISODate, False)
 
 	@property
 	def TcktIsseLctn(self):
@@ -416,12 +416,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@TcktIsseLctn.setter
 	def TcktIsseLctn(self, value):
-		self._TcktIsseLctn = value if type(value) != base_types.auto else self.make_default("TcktIsseLctn")
+		self._TcktIsseLctn = value if value is not None else base_types.UninitialisedField(self, 'TcktIsseLctn', Max140Text, False)
 
 	@TcktIsseLctn.deleter
 	def TcktIsseLctn(self):
 		del self._TcktIsseLctn
-		self._TcktIsseLctn = None
+		self._TcktIsseLctn = base_types.UninitialisedField(self, 'TcktIsseLctn', Max140Text, False)
 
 	@property
 	def TcktIssr(self):
@@ -429,12 +429,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@TcktIssr.setter
 	def TcktIssr(self, value):
-		self._TcktIssr = value if type(value) != base_types.auto else self.make_default("TcktIssr")
+		self._TcktIssr = value if value is not None else base_types.UninitialisedField(self, 'TcktIssr', Max35Text, False)
 
 	@TcktIssr.deleter
 	def TcktIssr(self):
 		del self._TcktIssr
-		self._TcktIssr = None
+		self._TcktIssr = base_types.UninitialisedField(self, 'TcktIssr', Max35Text, False)
 
 	@property
 	def TcktNb(self):
@@ -442,12 +442,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@TcktNb.setter
 	def TcktNb(self, value):
-		self._TcktNb = value if type(value) != base_types.auto else self.make_default("TcktNb")
+		self._TcktNb = value if value is not None else base_types.UninitialisedField(self, 'TcktNb', Max35Text, False)
 
 	@TcktNb.deleter
 	def TcktNb(self):
 		del self._TcktNb
-		self._TcktNb = None
+		self._TcktNb = base_types.UninitialisedField(self, 'TcktNb', Max35Text, False)
 
 	@property
 	def TcktRstrctns(self):
@@ -455,12 +455,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@TcktRstrctns.setter
 	def TcktRstrctns(self, value):
-		self._TcktRstrctns = value if type(value) != base_types.auto else self.make_default("TcktRstrctns")
+		self._TcktRstrctns = value if value is not None else base_types.UninitialisedField(self, 'TcktRstrctns', Max70Text, False)
 
 	@TcktRstrctns.deleter
 	def TcktRstrctns(self):
 		del self._TcktRstrctns
-		self._TcktRstrctns = None
+		self._TcktRstrctns = base_types.UninitialisedField(self, 'TcktRstrctns', Max70Text, False)
 
 	@property
 	def TrnsprtTp(self):
@@ -468,12 +468,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@TrnsprtTp.setter
 	def TrnsprtTp(self, value):
-		self._TrnsprtTp = value if type(value) != base_types.auto else self.make_default("TrnsprtTp")
+		self._TrnsprtTp = value if value is not None else base_types.UninitialisedField(self, 'TrnsprtTp', TransportType1Code, False)
 
 	@TrnsprtTp.deleter
 	def TrnsprtTp(self):
 		del self._TrnsprtTp
-		self._TrnsprtTp = None
+		self._TrnsprtTp = base_types.UninitialisedField(self, 'TrnsprtTp', TransportType1Code, False)
 
 	@property
 	def XchgdTckt(self):
@@ -481,12 +481,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@XchgdTckt.setter
 	def XchgdTckt(self, value):
-		self._XchgdTckt = value if type(value) != base_types.auto else self.make_default("XchgdTckt")
+		self._XchgdTckt = value if value is not None else base_types.UninitialisedField(self, 'XchgdTckt', TrueFalseIndicator, False)
 
 	@XchgdTckt.deleter
 	def XchgdTckt(self):
 		del self._XchgdTckt
-		self._XchgdTckt = None
+		self._XchgdTckt = base_types.UninitialisedField(self, 'XchgdTckt', TrueFalseIndicator, False)
 
 	@property
 	def XchgdTcktNb(self):
@@ -494,12 +494,12 @@ class TripLeg3(base_types._BaseFieldType):
 
 	@XchgdTcktNb.setter
 	def XchgdTcktNb(self, value):
-		self._XchgdTcktNb = value if type(value) != base_types.auto else self.make_default("XchgdTcktNb")
+		self._XchgdTcktNb = value if value is not None else base_types.UninitialisedField(self, 'XchgdTcktNb', Max35Text, False)
 
 	@XchgdTcktNb.deleter
 	def XchgdTcktNb(self):
 		del self._XchgdTcktNb
-		self._XchgdTcktNb = None
+		self._XchgdTcktNb = base_types.UninitialisedField(self, 'XchgdTcktNb', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),

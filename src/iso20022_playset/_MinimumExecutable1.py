@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentQuantity25Choice import FinancialInstrumentQuantity25Choice
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import FinancialInstrumentQuantity25Choice
+from . import TrueFalseIndicator
 
 class MinimumExecutable1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class MinimumExecutable1(base_types._BaseFieldType):
 
 	@FrstExctnOnly.setter
 	def FrstExctnOnly(self, value):
-		self._FrstExctnOnly = value if type(value) != base_types.auto else self.make_default("FrstExctnOnly")
+		self._FrstExctnOnly = value if value is not None else base_types.UninitialisedField(self, 'FrstExctnOnly', TrueFalseIndicator, False)
 
 	@FrstExctnOnly.deleter
 	def FrstExctnOnly(self):
 		del self._FrstExctnOnly
-		self._FrstExctnOnly = None
+		self._FrstExctnOnly = base_types.UninitialisedField(self, 'FrstExctnOnly', TrueFalseIndicator, False)
 
 	@property
 	def Sz(self):
@@ -27,12 +27,12 @@ class MinimumExecutable1(base_types._BaseFieldType):
 
 	@Sz.setter
 	def Sz(self, value):
-		self._Sz = value if type(value) != base_types.auto else self.make_default("Sz")
+		self._Sz = value if value is not None else base_types.UninitialisedField(self, 'Sz', FinancialInstrumentQuantity25Choice, False)
 
 	@Sz.deleter
 	def Sz(self):
 		del self._Sz
-		self._Sz = None
+		self._Sz = base_types.UninitialisedField(self, 'Sz', FinancialInstrumentQuantity25Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FrstExctnOnly', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),

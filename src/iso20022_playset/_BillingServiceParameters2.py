@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection34 import AmountAndDirection34
-from ._BillingServiceIdentification2 import BillingServiceIdentification2
-from ._DecimalNumber import DecimalNumber
+from . import AmountAndDirection34
+from . import BillingServiceIdentification2
+from . import DecimalNumber
 
 class BillingServiceParameters2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class BillingServiceParameters2(base_types._BaseFieldType):
 
 	@BkSvc.setter
 	def BkSvc(self, value):
-		self._BkSvc = value if type(value) != base_types.auto else self.make_default("BkSvc")
+		self._BkSvc = value if value is not None else base_types.UninitialisedField(self, 'BkSvc', BillingServiceIdentification2, False)
 
 	@BkSvc.deleter
 	def BkSvc(self):
 		del self._BkSvc
-		self._BkSvc = None
+		self._BkSvc = base_types.UninitialisedField(self, 'BkSvc', BillingServiceIdentification2, False)
 
 	@property
 	def SvcChrgAmt(self):
@@ -28,12 +28,12 @@ class BillingServiceParameters2(base_types._BaseFieldType):
 
 	@SvcChrgAmt.setter
 	def SvcChrgAmt(self, value):
-		self._SvcChrgAmt = value if type(value) != base_types.auto else self.make_default("SvcChrgAmt")
+		self._SvcChrgAmt = value if value is not None else base_types.UninitialisedField(self, 'SvcChrgAmt', AmountAndDirection34, False)
 
 	@SvcChrgAmt.deleter
 	def SvcChrgAmt(self):
 		del self._SvcChrgAmt
-		self._SvcChrgAmt = None
+		self._SvcChrgAmt = base_types.UninitialisedField(self, 'SvcChrgAmt', AmountAndDirection34, False)
 
 	@property
 	def UnitPric(self):
@@ -41,12 +41,12 @@ class BillingServiceParameters2(base_types._BaseFieldType):
 
 	@UnitPric.setter
 	def UnitPric(self, value):
-		self._UnitPric = value if type(value) != base_types.auto else self.make_default("UnitPric")
+		self._UnitPric = value if value is not None else base_types.UninitialisedField(self, 'UnitPric', AmountAndDirection34, False)
 
 	@UnitPric.deleter
 	def UnitPric(self):
 		del self._UnitPric
-		self._UnitPric = None
+		self._UnitPric = base_types.UninitialisedField(self, 'UnitPric', AmountAndDirection34, False)
 
 	@property
 	def Vol(self):
@@ -54,12 +54,12 @@ class BillingServiceParameters2(base_types._BaseFieldType):
 
 	@Vol.setter
 	def Vol(self, value):
-		self._Vol = value if type(value) != base_types.auto else self.make_default("Vol")
+		self._Vol = value if value is not None else base_types.UninitialisedField(self, 'Vol', DecimalNumber, False)
 
 	@Vol.deleter
 	def Vol(self):
 		del self._Vol
-		self._Vol = None
+		self._Vol = base_types.UninitialisedField(self, 'Vol', DecimalNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BkSvc', type=BillingServiceIdentification2, min=1, max=1, mutex_group=None, array=False),

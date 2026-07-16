@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalData1 import AdditionalData1
-from ._ISO8583MessageReasonCode import ISO8583MessageReasonCode
-from ._ISO8583TransactionTypeCode import ISO8583TransactionTypeCode
-from ._Max1000Text import Max1000Text
-from ._Max256Text import Max256Text
-from ._Max35Text import Max35Text
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import AdditionalData1
+from . import ISO8583MessageReasonCode
+from . import ISO8583TransactionTypeCode
+from . import Max1000Text
+from . import Max256Text
+from . import Max35Text
+from . import TrueFalseIndicator
 
 class TransactionCharacteristics2(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class TransactionCharacteristics2(base_types._BaseFieldType):
 
 	@AddtlData.setter
 	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+		self._AddtlData = value if value is not None else base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@AddtlData.deleter
 	def AddtlData(self):
 		del self._AddtlData
-		self._AddtlData = None
+		self._AddtlData = base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@property
 	def AltrnMsgRsn(self):
@@ -32,12 +32,12 @@ class TransactionCharacteristics2(base_types._BaseFieldType):
 
 	@AltrnMsgRsn.setter
 	def AltrnMsgRsn(self, value):
-		self._AltrnMsgRsn = value if type(value) != base_types.auto else self.make_default("AltrnMsgRsn")
+		self._AltrnMsgRsn = value if value is not None else base_types.UninitialisedField(self, 'AltrnMsgRsn', Max256Text, True)
 
 	@AltrnMsgRsn.deleter
 	def AltrnMsgRsn(self):
 		del self._AltrnMsgRsn
-		self._AltrnMsgRsn = None
+		self._AltrnMsgRsn = base_types.UninitialisedField(self, 'AltrnMsgRsn', Max256Text, True)
 
 	@property
 	def Cxl(self):
@@ -45,12 +45,12 @@ class TransactionCharacteristics2(base_types._BaseFieldType):
 
 	@Cxl.setter
 	def Cxl(self, value):
-		self._Cxl = value if type(value) != base_types.auto else self.make_default("Cxl")
+		self._Cxl = value if value is not None else base_types.UninitialisedField(self, 'Cxl', TrueFalseIndicator, False)
 
 	@Cxl.deleter
 	def Cxl(self):
 		del self._Cxl
-		self._Cxl = None
+		self._Cxl = base_types.UninitialisedField(self, 'Cxl', TrueFalseIndicator, False)
 
 	@property
 	def MsgRsn(self):
@@ -58,12 +58,12 @@ class TransactionCharacteristics2(base_types._BaseFieldType):
 
 	@MsgRsn.setter
 	def MsgRsn(self, value):
-		self._MsgRsn = value if type(value) != base_types.auto else self.make_default("MsgRsn")
+		self._MsgRsn = value if value is not None else base_types.UninitialisedField(self, 'MsgRsn', ISO8583MessageReasonCode, True)
 
 	@MsgRsn.deleter
 	def MsgRsn(self):
 		del self._MsgRsn
-		self._MsgRsn = None
+		self._MsgRsn = base_types.UninitialisedField(self, 'MsgRsn', ISO8583MessageReasonCode, True)
 
 	@property
 	def TxDesc(self):
@@ -71,12 +71,12 @@ class TransactionCharacteristics2(base_types._BaseFieldType):
 
 	@TxDesc.setter
 	def TxDesc(self, value):
-		self._TxDesc = value if type(value) != base_types.auto else self.make_default("TxDesc")
+		self._TxDesc = value if value is not None else base_types.UninitialisedField(self, 'TxDesc', Max1000Text, False)
 
 	@TxDesc.deleter
 	def TxDesc(self):
 		del self._TxDesc
-		self._TxDesc = None
+		self._TxDesc = base_types.UninitialisedField(self, 'TxDesc', Max1000Text, False)
 
 	@property
 	def TxSubTp(self):
@@ -84,12 +84,12 @@ class TransactionCharacteristics2(base_types._BaseFieldType):
 
 	@TxSubTp.setter
 	def TxSubTp(self, value):
-		self._TxSubTp = value if type(value) != base_types.auto else self.make_default("TxSubTp")
+		self._TxSubTp = value if value is not None else base_types.UninitialisedField(self, 'TxSubTp', Max35Text, False)
 
 	@TxSubTp.deleter
 	def TxSubTp(self):
 		del self._TxSubTp
-		self._TxSubTp = None
+		self._TxSubTp = base_types.UninitialisedField(self, 'TxSubTp', Max35Text, False)
 
 	@property
 	def TxTp(self):
@@ -97,12 +97,12 @@ class TransactionCharacteristics2(base_types._BaseFieldType):
 
 	@TxTp.setter
 	def TxTp(self, value):
-		self._TxTp = value if type(value) != base_types.auto else self.make_default("TxTp")
+		self._TxTp = value if value is not None else base_types.UninitialisedField(self, 'TxTp', ISO8583TransactionTypeCode, False)
 
 	@TxTp.deleter
 	def TxTp(self):
 		del self._TxTp
-		self._TxTp = None
+		self._TxTp = base_types.UninitialisedField(self, 'TxTp', ISO8583TransactionTypeCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),

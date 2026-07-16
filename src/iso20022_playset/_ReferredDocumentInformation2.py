@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
-from ._ReferredDocumentType1 import ReferredDocumentType1
+from . import ActiveCurrencyAndAmount
+from . import ISODate
+from . import Max35Text
+from . import ReferredDocumentType1
 
 class ReferredDocumentInformation2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ReferredDocumentInformation2(base_types._BaseFieldType):
 
 	@DocAmt.setter
 	def DocAmt(self, value):
-		self._DocAmt = value if type(value) != base_types.auto else self.make_default("DocAmt")
+		self._DocAmt = value if value is not None else base_types.UninitialisedField(self, 'DocAmt', ActiveCurrencyAndAmount, False)
 
 	@DocAmt.deleter
 	def DocAmt(self):
 		del self._DocAmt
-		self._DocAmt = None
+		self._DocAmt = base_types.UninitialisedField(self, 'DocAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def DocNb(self):
@@ -29,12 +29,12 @@ class ReferredDocumentInformation2(base_types._BaseFieldType):
 
 	@DocNb.setter
 	def DocNb(self, value):
-		self._DocNb = value if type(value) != base_types.auto else self.make_default("DocNb")
+		self._DocNb = value if value is not None else base_types.UninitialisedField(self, 'DocNb', Max35Text, False)
 
 	@DocNb.deleter
 	def DocNb(self):
 		del self._DocNb
-		self._DocNb = None
+		self._DocNb = base_types.UninitialisedField(self, 'DocNb', Max35Text, False)
 
 	@property
 	def RltdDt(self):
@@ -42,12 +42,12 @@ class ReferredDocumentInformation2(base_types._BaseFieldType):
 
 	@RltdDt.setter
 	def RltdDt(self, value):
-		self._RltdDt = value if type(value) != base_types.auto else self.make_default("RltdDt")
+		self._RltdDt = value if value is not None else base_types.UninitialisedField(self, 'RltdDt', ISODate, False)
 
 	@RltdDt.deleter
 	def RltdDt(self):
 		del self._RltdDt
-		self._RltdDt = None
+		self._RltdDt = base_types.UninitialisedField(self, 'RltdDt', ISODate, False)
 
 	@property
 	def Tp(self):
@@ -55,12 +55,12 @@ class ReferredDocumentInformation2(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', ReferredDocumentType1, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', ReferredDocumentType1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DocAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

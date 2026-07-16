@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._ISODateTime import ISODateTime
-from ._ProprietaryDate3 import ProprietaryDate3
+from . import ISODate
+from . import ISODateTime
+from . import ProprietaryDate3
 
 class TransactionDates3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TransactionDates3(base_types._BaseFieldType):
 
 	@AccptncDtTm.setter
 	def AccptncDtTm(self, value):
-		self._AccptncDtTm = value if type(value) != base_types.auto else self.make_default("AccptncDtTm")
+		self._AccptncDtTm = value if value is not None else base_types.UninitialisedField(self, 'AccptncDtTm', ISODateTime, False)
 
 	@AccptncDtTm.deleter
 	def AccptncDtTm(self):
 		del self._AccptncDtTm
-		self._AccptncDtTm = None
+		self._AccptncDtTm = base_types.UninitialisedField(self, 'AccptncDtTm', ISODateTime, False)
 
 	@property
 	def EndDt(self):
@@ -28,12 +28,12 @@ class TransactionDates3(base_types._BaseFieldType):
 
 	@EndDt.setter
 	def EndDt(self, value):
-		self._EndDt = value if type(value) != base_types.auto else self.make_default("EndDt")
+		self._EndDt = value if value is not None else base_types.UninitialisedField(self, 'EndDt', ISODate, False)
 
 	@EndDt.deleter
 	def EndDt(self):
 		del self._EndDt
-		self._EndDt = None
+		self._EndDt = base_types.UninitialisedField(self, 'EndDt', ISODate, False)
 
 	@property
 	def IntrBkSttlmDt(self):
@@ -41,12 +41,12 @@ class TransactionDates3(base_types._BaseFieldType):
 
 	@IntrBkSttlmDt.setter
 	def IntrBkSttlmDt(self, value):
-		self._IntrBkSttlmDt = value if type(value) != base_types.auto else self.make_default("IntrBkSttlmDt")
+		self._IntrBkSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'IntrBkSttlmDt', ISODate, False)
 
 	@IntrBkSttlmDt.deleter
 	def IntrBkSttlmDt(self):
 		del self._IntrBkSttlmDt
-		self._IntrBkSttlmDt = None
+		self._IntrBkSttlmDt = base_types.UninitialisedField(self, 'IntrBkSttlmDt', ISODate, False)
 
 	@property
 	def Prtry(self):
@@ -54,12 +54,12 @@ class TransactionDates3(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+		self._Prtry = value if value is not None else base_types.UninitialisedField(self, 'Prtry', ProprietaryDate3, True)
 
 	@Prtry.deleter
 	def Prtry(self):
 		del self._Prtry
-		self._Prtry = None
+		self._Prtry = base_types.UninitialisedField(self, 'Prtry', ProprietaryDate3, True)
 
 	@property
 	def StartDt(self):
@@ -67,12 +67,12 @@ class TransactionDates3(base_types._BaseFieldType):
 
 	@StartDt.setter
 	def StartDt(self, value):
-		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
+		self._StartDt = value if value is not None else base_types.UninitialisedField(self, 'StartDt', ISODate, False)
 
 	@StartDt.deleter
 	def StartDt(self):
 		del self._StartDt
-		self._StartDt = None
+		self._StartDt = base_types.UninitialisedField(self, 'StartDt', ISODate, False)
 
 	@property
 	def TradActvtyCtrctlSttlmDt(self):
@@ -80,12 +80,12 @@ class TransactionDates3(base_types._BaseFieldType):
 
 	@TradActvtyCtrctlSttlmDt.setter
 	def TradActvtyCtrctlSttlmDt(self, value):
-		self._TradActvtyCtrctlSttlmDt = value if type(value) != base_types.auto else self.make_default("TradActvtyCtrctlSttlmDt")
+		self._TradActvtyCtrctlSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'TradActvtyCtrctlSttlmDt', ISODate, False)
 
 	@TradActvtyCtrctlSttlmDt.deleter
 	def TradActvtyCtrctlSttlmDt(self):
 		del self._TradActvtyCtrctlSttlmDt
-		self._TradActvtyCtrctlSttlmDt = None
+		self._TradActvtyCtrctlSttlmDt = base_types.UninitialisedField(self, 'TradActvtyCtrctlSttlmDt', ISODate, False)
 
 	@property
 	def TradDt(self):
@@ -93,12 +93,12 @@ class TransactionDates3(base_types._BaseFieldType):
 
 	@TradDt.setter
 	def TradDt(self, value):
-		self._TradDt = value if type(value) != base_types.auto else self.make_default("TradDt")
+		self._TradDt = value if value is not None else base_types.UninitialisedField(self, 'TradDt', ISODate, False)
 
 	@TradDt.deleter
 	def TradDt(self):
 		del self._TradDt
-		self._TradDt = None
+		self._TradDt = base_types.UninitialisedField(self, 'TradDt', ISODate, False)
 
 	@property
 	def TxDtTm(self):
@@ -106,12 +106,12 @@ class TransactionDates3(base_types._BaseFieldType):
 
 	@TxDtTm.setter
 	def TxDtTm(self, value):
-		self._TxDtTm = value if type(value) != base_types.auto else self.make_default("TxDtTm")
+		self._TxDtTm = value if value is not None else base_types.UninitialisedField(self, 'TxDtTm', ISODateTime, False)
 
 	@TxDtTm.deleter
 	def TxDtTm(self):
 		del self._TxDtTm
-		self._TxDtTm = None
+		self._TxDtTm = base_types.UninitialisedField(self, 'TxDtTm', ISODateTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AccptncDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),

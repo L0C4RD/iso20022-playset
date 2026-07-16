@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification36 import GenericIdentification36
-from ._Max350Text import Max350Text
+from . import GenericIdentification36
+from . import Max350Text
 
 class AdditionalInformation15(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AdditionalInformation15(base_types._BaseFieldType):
 
 	@InfTp.setter
 	def InfTp(self, value):
-		self._InfTp = value if type(value) != base_types.auto else self.make_default("InfTp")
+		self._InfTp = value if value is not None else base_types.UninitialisedField(self, 'InfTp', GenericIdentification36, False)
 
 	@InfTp.deleter
 	def InfTp(self):
 		del self._InfTp
-		self._InfTp = None
+		self._InfTp = base_types.UninitialisedField(self, 'InfTp', GenericIdentification36, False)
 
 	@property
 	def InfVal(self):
@@ -27,12 +27,12 @@ class AdditionalInformation15(base_types._BaseFieldType):
 
 	@InfVal.setter
 	def InfVal(self, value):
-		self._InfVal = value if type(value) != base_types.auto else self.make_default("InfVal")
+		self._InfVal = value if value is not None else base_types.UninitialisedField(self, 'InfVal', Max350Text, False)
 
 	@InfVal.deleter
 	def InfVal(self):
 		del self._InfVal
-		self._InfVal = None
+		self._InfVal = base_types.UninitialisedField(self, 'InfVal', Max350Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InfTp', type=GenericIdentification36, min=1, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GetMemberV04 import GetMemberV04
+from . import GetMemberV04
 
 class CAMT_013_001_04():
 
@@ -18,12 +18,12 @@ class CAMT_013_001_04():
 
 		@GetMmb.setter
 		def GetMmb(self, value):
-			self._GetMmb = value if type(value) != base_types.auto else self.make_default("GetMmb")
+			self._GetMmb = value if value is not None else base_types.UninitialisedField(self, 'GetMmb', GetMemberV04, False)
 
 		@GetMmb.deleter
 		def GetMmb(self):
 			del self._GetMmb
-			self._GetMmb = None
+			self._GetMmb = base_types.UninitialisedField(self, 'GetMmb', GetMemberV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='GetMmb', type=GetMemberV04, min=1, max=1, mutex_group=None, array=False),

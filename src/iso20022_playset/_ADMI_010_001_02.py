@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._StaticDataReportV02 import StaticDataReportV02
+from . import StaticDataReportV02
 
 class ADMI_010_001_02():
 
@@ -18,12 +18,12 @@ class ADMI_010_001_02():
 
 		@StatcDataRpt.setter
 		def StatcDataRpt(self, value):
-			self._StatcDataRpt = value if type(value) != base_types.auto else self.make_default("StatcDataRpt")
+			self._StatcDataRpt = value if value is not None else base_types.UninitialisedField(self, 'StatcDataRpt', StaticDataReportV02, False)
 
 		@StatcDataRpt.deleter
 		def StatcDataRpt(self):
 			del self._StatcDataRpt
-			self._StatcDataRpt = None
+			self._StatcDataRpt = base_types.UninitialisedField(self, 'StatcDataRpt', StaticDataReportV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='StatcDataRpt', type=StaticDataReportV02, min=1, max=1, mutex_group=None, array=False),

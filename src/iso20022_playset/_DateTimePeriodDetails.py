@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
+from . import ISODateTime
 
 class DateTimePeriodDetails(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class DateTimePeriodDetails(base_types._BaseFieldType):
 
 	@FrDtTm.setter
 	def FrDtTm(self, value):
-		self._FrDtTm = value if type(value) != base_types.auto else self.make_default("FrDtTm")
+		self._FrDtTm = value if value is not None else base_types.UninitialisedField(self, 'FrDtTm', ISODateTime, False)
 
 	@FrDtTm.deleter
 	def FrDtTm(self):
 		del self._FrDtTm
-		self._FrDtTm = None
+		self._FrDtTm = base_types.UninitialisedField(self, 'FrDtTm', ISODateTime, False)
 
 	@property
 	def ToDtTm(self):
@@ -26,12 +26,12 @@ class DateTimePeriodDetails(base_types._BaseFieldType):
 
 	@ToDtTm.setter
 	def ToDtTm(self, value):
-		self._ToDtTm = value if type(value) != base_types.auto else self.make_default("ToDtTm")
+		self._ToDtTm = value if value is not None else base_types.UninitialisedField(self, 'ToDtTm', ISODateTime, False)
 
 	@ToDtTm.deleter
 	def ToDtTm(self):
 		del self._ToDtTm
-		self._ToDtTm = None
+		self._ToDtTm = base_types.UninitialisedField(self, 'ToDtTm', ISODateTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FrDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),

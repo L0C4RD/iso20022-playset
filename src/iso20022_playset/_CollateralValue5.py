@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._AmountOrCoefficientPrice2Choice import AmountOrCoefficientPrice2Choice
-from ._ForeignExchangeTerms23 import ForeignExchangeTerms23
-from ._ISODate import ISODate
-from ._PercentageRate import PercentageRate
-from ._PriceRateOrAmount6Choice import PriceRateOrAmount6Choice
-from ._SecurityIdentification19 import SecurityIdentification19
+from . import ActiveCurrencyCode
+from . import AmountOrCoefficientPrice2Choice
+from . import ForeignExchangeTerms23
+from . import ISODate
+from . import PercentageRate
+from . import PriceRateOrAmount6Choice
+from . import SecurityIdentification19
 
 class CollateralValue5(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class CollateralValue5(base_types._BaseFieldType):
 
 	@AcrdIntrst.setter
 	def AcrdIntrst(self, value):
-		self._AcrdIntrst = value if type(value) != base_types.auto else self.make_default("AcrdIntrst")
+		self._AcrdIntrst = value if value is not None else base_types.UninitialisedField(self, 'AcrdIntrst', PriceRateOrAmount6Choice, False)
 
 	@AcrdIntrst.deleter
 	def AcrdIntrst(self):
 		del self._AcrdIntrst
-		self._AcrdIntrst = None
+		self._AcrdIntrst = base_types.UninitialisedField(self, 'AcrdIntrst', PriceRateOrAmount6Choice, False)
 
 	@property
 	def CleanPric(self):
@@ -32,12 +32,12 @@ class CollateralValue5(base_types._BaseFieldType):
 
 	@CleanPric.setter
 	def CleanPric(self, value):
-		self._CleanPric = value if type(value) != base_types.auto else self.make_default("CleanPric")
+		self._CleanPric = value if value is not None else base_types.UninitialisedField(self, 'CleanPric', PriceRateOrAmount6Choice, False)
 
 	@CleanPric.deleter
 	def CleanPric(self):
 		del self._CleanPric
-		self._CleanPric = None
+		self._CleanPric = base_types.UninitialisedField(self, 'CleanPric', PriceRateOrAmount6Choice, False)
 
 	@property
 	def ClsLkHrcut(self):
@@ -45,12 +45,12 @@ class CollateralValue5(base_types._BaseFieldType):
 
 	@ClsLkHrcut.setter
 	def ClsLkHrcut(self, value):
-		self._ClsLkHrcut = value if type(value) != base_types.auto else self.make_default("ClsLkHrcut")
+		self._ClsLkHrcut = value if value is not None else base_types.UninitialisedField(self, 'ClsLkHrcut', PercentageRate, False)
 
 	@ClsLkHrcut.deleter
 	def ClsLkHrcut(self):
 		del self._ClsLkHrcut
-		self._ClsLkHrcut = None
+		self._ClsLkHrcut = base_types.UninitialisedField(self, 'ClsLkHrcut', PercentageRate, False)
 
 	@property
 	def FX(self):
@@ -58,12 +58,12 @@ class CollateralValue5(base_types._BaseFieldType):
 
 	@FX.setter
 	def FX(self, value):
-		self._FX = value if type(value) != base_types.auto else self.make_default("FX")
+		self._FX = value if value is not None else base_types.UninitialisedField(self, 'FX', ForeignExchangeTerms23, False)
 
 	@FX.deleter
 	def FX(self):
 		del self._FX
-		self._FX = None
+		self._FX = base_types.UninitialisedField(self, 'FX', ForeignExchangeTerms23, False)
 
 	@property
 	def Hrcut(self):
@@ -71,12 +71,12 @@ class CollateralValue5(base_types._BaseFieldType):
 
 	@Hrcut.setter
 	def Hrcut(self, value):
-		self._Hrcut = value if type(value) != base_types.auto else self.make_default("Hrcut")
+		self._Hrcut = value if value is not None else base_types.UninitialisedField(self, 'Hrcut', PercentageRate, False)
 
 	@Hrcut.deleter
 	def Hrcut(self):
 		del self._Hrcut
-		self._Hrcut = None
+		self._Hrcut = base_types.UninitialisedField(self, 'Hrcut', PercentageRate, False)
 
 	@property
 	def PoolFctr(self):
@@ -84,12 +84,12 @@ class CollateralValue5(base_types._BaseFieldType):
 
 	@PoolFctr.setter
 	def PoolFctr(self, value):
-		self._PoolFctr = value if type(value) != base_types.auto else self.make_default("PoolFctr")
+		self._PoolFctr = value if value is not None else base_types.UninitialisedField(self, 'PoolFctr', PercentageRate, False)
 
 	@PoolFctr.deleter
 	def PoolFctr(self):
 		del self._PoolFctr
-		self._PoolFctr = None
+		self._PoolFctr = base_types.UninitialisedField(self, 'PoolFctr', PercentageRate, False)
 
 	@property
 	def SctyId(self):
@@ -97,12 +97,12 @@ class CollateralValue5(base_types._BaseFieldType):
 
 	@SctyId.setter
 	def SctyId(self, value):
-		self._SctyId = value if type(value) != base_types.auto else self.make_default("SctyId")
+		self._SctyId = value if value is not None else base_types.UninitialisedField(self, 'SctyId', SecurityIdentification19, False)
 
 	@SctyId.deleter
 	def SctyId(self):
 		del self._SctyId
-		self._SctyId = None
+		self._SctyId = base_types.UninitialisedField(self, 'SctyId', SecurityIdentification19, False)
 
 	@property
 	def ValtnCcy(self):
@@ -110,12 +110,12 @@ class CollateralValue5(base_types._BaseFieldType):
 
 	@ValtnCcy.setter
 	def ValtnCcy(self, value):
-		self._ValtnCcy = value if type(value) != base_types.auto else self.make_default("ValtnCcy")
+		self._ValtnCcy = value if value is not None else base_types.UninitialisedField(self, 'ValtnCcy', ActiveCurrencyCode, False)
 
 	@ValtnCcy.deleter
 	def ValtnCcy(self):
 		del self._ValtnCcy
-		self._ValtnCcy = None
+		self._ValtnCcy = base_types.UninitialisedField(self, 'ValtnCcy', ActiveCurrencyCode, False)
 
 	@property
 	def ValtnClsLkPric(self):
@@ -123,12 +123,12 @@ class CollateralValue5(base_types._BaseFieldType):
 
 	@ValtnClsLkPric.setter
 	def ValtnClsLkPric(self, value):
-		self._ValtnClsLkPric = value if type(value) != base_types.auto else self.make_default("ValtnClsLkPric")
+		self._ValtnClsLkPric = value if value is not None else base_types.UninitialisedField(self, 'ValtnClsLkPric', AmountOrCoefficientPrice2Choice, False)
 
 	@ValtnClsLkPric.deleter
 	def ValtnClsLkPric(self):
 		del self._ValtnClsLkPric
-		self._ValtnClsLkPric = None
+		self._ValtnClsLkPric = base_types.UninitialisedField(self, 'ValtnClsLkPric', AmountOrCoefficientPrice2Choice, False)
 
 	@property
 	def ValtnDt(self):
@@ -136,12 +136,12 @@ class CollateralValue5(base_types._BaseFieldType):
 
 	@ValtnDt.setter
 	def ValtnDt(self, value):
-		self._ValtnDt = value if type(value) != base_types.auto else self.make_default("ValtnDt")
+		self._ValtnDt = value if value is not None else base_types.UninitialisedField(self, 'ValtnDt', ISODate, False)
 
 	@ValtnDt.deleter
 	def ValtnDt(self):
 		del self._ValtnDt
-		self._ValtnDt = None
+		self._ValtnDt = base_types.UninitialisedField(self, 'ValtnDt', ISODate, False)
 
 	@property
 	def ValtnPric(self):
@@ -149,12 +149,12 @@ class CollateralValue5(base_types._BaseFieldType):
 
 	@ValtnPric.setter
 	def ValtnPric(self, value):
-		self._ValtnPric = value if type(value) != base_types.auto else self.make_default("ValtnPric")
+		self._ValtnPric = value if value is not None else base_types.UninitialisedField(self, 'ValtnPric', AmountOrCoefficientPrice2Choice, False)
 
 	@ValtnPric.deleter
 	def ValtnPric(self):
 		del self._ValtnPric
-		self._ValtnPric = None
+		self._ValtnPric = base_types.UninitialisedField(self, 'ValtnPric', AmountOrCoefficientPrice2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcrdIntrst', type=PriceRateOrAmount6Choice, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._EligiblePosition21 import EligiblePosition21
-from ._SecurityIdentification19 import SecurityIdentification19
+from . import EligiblePosition21
+from . import SecurityIdentification19
 
 class SecurityPosition23(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SecurityPosition23(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
 		del self._FinInstrmId
-		self._FinInstrmId = None
+		self._FinInstrmId = base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@property
 	def Pos(self):
@@ -27,12 +27,12 @@ class SecurityPosition23(base_types._BaseFieldType):
 
 	@Pos.setter
 	def Pos(self, value):
-		self._Pos = value if type(value) != base_types.auto else self.make_default("Pos")
+		self._Pos = value if value is not None else base_types.UninitialisedField(self, 'Pos', EligiblePosition21, True)
 
 	@Pos.deleter
 	def Pos(self):
 		del self._Pos
-		self._Pos = None
+		self._Pos = base_types.UninitialisedField(self, 'Pos', EligiblePosition21, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),

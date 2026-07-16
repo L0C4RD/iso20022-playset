@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContentType2Code import ContentType2Code
-from ._SignedData4 import SignedData4
+from . import ContentType2Code
+from . import SignedData4
 
 class ContentInformationType14(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ContentInformationType14(base_types._BaseFieldType):
 
 	@CnttTp.setter
 	def CnttTp(self, value):
-		self._CnttTp = value if type(value) != base_types.auto else self.make_default("CnttTp")
+		self._CnttTp = value if value is not None else base_types.UninitialisedField(self, 'CnttTp', ContentType2Code, False)
 
 	@CnttTp.deleter
 	def CnttTp(self):
 		del self._CnttTp
-		self._CnttTp = None
+		self._CnttTp = base_types.UninitialisedField(self, 'CnttTp', ContentType2Code, False)
 
 	@property
 	def SgndData(self):
@@ -27,12 +27,12 @@ class ContentInformationType14(base_types._BaseFieldType):
 
 	@SgndData.setter
 	def SgndData(self, value):
-		self._SgndData = value if type(value) != base_types.auto else self.make_default("SgndData")
+		self._SgndData = value if value is not None else base_types.UninitialisedField(self, 'SgndData', SignedData4, False)
 
 	@SgndData.deleter
 	def SgndData(self):
 		del self._SgndData
-		self._SgndData = None
+		self._SgndData = base_types.UninitialisedField(self, 'SgndData', SignedData4, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CnttTp', type=ContentType2Code, min=1, max=1, mutex_group=None, array=False),

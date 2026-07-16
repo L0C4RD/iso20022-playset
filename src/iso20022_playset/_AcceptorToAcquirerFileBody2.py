@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcceptorCancellationAdvice14 import AcceptorCancellationAdvice14
-from ._AcceptorCompletionAdvice14 import AcceptorCompletionAdvice14
-from ._CardPaymentBatchTransfer13 import CardPaymentBatchTransfer13
+from . import AcceptorCancellationAdvice14
+from . import AcceptorCompletionAdvice14
+from . import CardPaymentBatchTransfer13
 
 class AcceptorToAcquirerFileBody2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AcceptorToAcquirerFileBody2(base_types._BaseFieldType):
 
 	@BtchTrf.setter
 	def BtchTrf(self, value):
-		self._BtchTrf = value if type(value) != base_types.auto else self.make_default("BtchTrf")
+		self._BtchTrf = value if value is not None else base_types.UninitialisedField(self, 'BtchTrf', CardPaymentBatchTransfer13, False)
 
 	@BtchTrf.deleter
 	def BtchTrf(self):
 		del self._BtchTrf
-		self._BtchTrf = None
+		self._BtchTrf = base_types.UninitialisedField(self, 'BtchTrf', CardPaymentBatchTransfer13, False)
 
 	@property
 	def CmpltnAdvc(self):
@@ -28,12 +28,12 @@ class AcceptorToAcquirerFileBody2(base_types._BaseFieldType):
 
 	@CmpltnAdvc.setter
 	def CmpltnAdvc(self, value):
-		self._CmpltnAdvc = value if type(value) != base_types.auto else self.make_default("CmpltnAdvc")
+		self._CmpltnAdvc = value if value is not None else base_types.UninitialisedField(self, 'CmpltnAdvc', AcceptorCompletionAdvice14, False)
 
 	@CmpltnAdvc.deleter
 	def CmpltnAdvc(self):
 		del self._CmpltnAdvc
-		self._CmpltnAdvc = None
+		self._CmpltnAdvc = base_types.UninitialisedField(self, 'CmpltnAdvc', AcceptorCompletionAdvice14, False)
 
 	@property
 	def CxlAdvc(self):
@@ -41,12 +41,12 @@ class AcceptorToAcquirerFileBody2(base_types._BaseFieldType):
 
 	@CxlAdvc.setter
 	def CxlAdvc(self, value):
-		self._CxlAdvc = value if type(value) != base_types.auto else self.make_default("CxlAdvc")
+		self._CxlAdvc = value if value is not None else base_types.UninitialisedField(self, 'CxlAdvc', AcceptorCancellationAdvice14, False)
 
 	@CxlAdvc.deleter
 	def CxlAdvc(self):
 		del self._CxlAdvc
-		self._CxlAdvc = None
+		self._CxlAdvc = base_types.UninitialisedField(self, 'CxlAdvc', AcceptorCancellationAdvice14, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BtchTrf', type=CardPaymentBatchTransfer13, min=0, max=1, mutex_group=None, array=False),

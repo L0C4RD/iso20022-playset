@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
-from ._ItemDescription2 import ItemDescription2
-from ._Max35Text import Max35Text
-from ._ProprietaryVote2 import ProprietaryVote2
-from ._ResolutionSubStatus1Code import ResolutionSubStatus1Code
-from ._YesNoIndicator import YesNoIndicator
+from . import FinancialInstrumentQuantity18Choice
+from . import ItemDescription2
+from . import Max35Text
+from . import ProprietaryVote2
+from . import ResolutionSubStatus1Code
+from . import YesNoIndicator
 
 class Vote19(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class Vote19(base_types._BaseFieldType):
 
 	@Abstn.setter
 	def Abstn(self, value):
-		self._Abstn = value if type(value) != base_types.auto else self.make_default("Abstn")
+		self._Abstn = value if value is not None else base_types.UninitialisedField(self, 'Abstn', FinancialInstrumentQuantity18Choice, False)
 
 	@Abstn.deleter
 	def Abstn(self):
 		del self._Abstn
-		self._Abstn = None
+		self._Abstn = base_types.UninitialisedField(self, 'Abstn', FinancialInstrumentQuantity18Choice, False)
 
 	@property
 	def Agnst(self):
@@ -31,12 +31,12 @@ class Vote19(base_types._BaseFieldType):
 
 	@Agnst.setter
 	def Agnst(self, value):
-		self._Agnst = value if type(value) != base_types.auto else self.make_default("Agnst")
+		self._Agnst = value if value is not None else base_types.UninitialisedField(self, 'Agnst', FinancialInstrumentQuantity18Choice, False)
 
 	@Agnst.deleter
 	def Agnst(self):
 		del self._Agnst
-		self._Agnst = None
+		self._Agnst = base_types.UninitialisedField(self, 'Agnst', FinancialInstrumentQuantity18Choice, False)
 
 	@property
 	def AgnstMgmt(self):
@@ -44,12 +44,12 @@ class Vote19(base_types._BaseFieldType):
 
 	@AgnstMgmt.setter
 	def AgnstMgmt(self, value):
-		self._AgnstMgmt = value if type(value) != base_types.auto else self.make_default("AgnstMgmt")
+		self._AgnstMgmt = value if value is not None else base_types.UninitialisedField(self, 'AgnstMgmt', FinancialInstrumentQuantity18Choice, False)
 
 	@AgnstMgmt.deleter
 	def AgnstMgmt(self):
 		del self._AgnstMgmt
-		self._AgnstMgmt = None
+		self._AgnstMgmt = base_types.UninitialisedField(self, 'AgnstMgmt', FinancialInstrumentQuantity18Choice, False)
 
 	@property
 	def Blnk(self):
@@ -57,12 +57,12 @@ class Vote19(base_types._BaseFieldType):
 
 	@Blnk.setter
 	def Blnk(self, value):
-		self._Blnk = value if type(value) != base_types.auto else self.make_default("Blnk")
+		self._Blnk = value if value is not None else base_types.UninitialisedField(self, 'Blnk', FinancialInstrumentQuantity18Choice, False)
 
 	@Blnk.deleter
 	def Blnk(self):
 		del self._Blnk
-		self._Blnk = None
+		self._Blnk = base_types.UninitialisedField(self, 'Blnk', FinancialInstrumentQuantity18Choice, False)
 
 	@property
 	def Desc(self):
@@ -70,12 +70,12 @@ class Vote19(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', ItemDescription2, True)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', ItemDescription2, True)
 
 	@property
 	def Dscrtnry(self):
@@ -83,12 +83,12 @@ class Vote19(base_types._BaseFieldType):
 
 	@Dscrtnry.setter
 	def Dscrtnry(self, value):
-		self._Dscrtnry = value if type(value) != base_types.auto else self.make_default("Dscrtnry")
+		self._Dscrtnry = value if value is not None else base_types.UninitialisedField(self, 'Dscrtnry', FinancialInstrumentQuantity18Choice, False)
 
 	@Dscrtnry.deleter
 	def Dscrtnry(self):
 		del self._Dscrtnry
-		self._Dscrtnry = None
+		self._Dscrtnry = base_types.UninitialisedField(self, 'Dscrtnry', FinancialInstrumentQuantity18Choice, False)
 
 	@property
 	def For(self):
@@ -96,12 +96,12 @@ class Vote19(base_types._BaseFieldType):
 
 	@For.setter
 	def For(self, value):
-		self._For = value if type(value) != base_types.auto else self.make_default("For")
+		self._For = value if value is not None else base_types.UninitialisedField(self, 'For', FinancialInstrumentQuantity18Choice, False)
 
 	@For.deleter
 	def For(self):
 		del self._For
-		self._For = None
+		self._For = base_types.UninitialisedField(self, 'For', FinancialInstrumentQuantity18Choice, False)
 
 	@property
 	def IssrLabl(self):
@@ -109,12 +109,12 @@ class Vote19(base_types._BaseFieldType):
 
 	@IssrLabl.setter
 	def IssrLabl(self, value):
-		self._IssrLabl = value if type(value) != base_types.auto else self.make_default("IssrLabl")
+		self._IssrLabl = value if value is not None else base_types.UninitialisedField(self, 'IssrLabl', Max35Text, False)
 
 	@IssrLabl.deleter
 	def IssrLabl(self):
 		del self._IssrLabl
-		self._IssrLabl = None
+		self._IssrLabl = base_types.UninitialisedField(self, 'IssrLabl', Max35Text, False)
 
 	@property
 	def NoActn(self):
@@ -122,12 +122,12 @@ class Vote19(base_types._BaseFieldType):
 
 	@NoActn.setter
 	def NoActn(self, value):
-		self._NoActn = value if type(value) != base_types.auto else self.make_default("NoActn")
+		self._NoActn = value if value is not None else base_types.UninitialisedField(self, 'NoActn', FinancialInstrumentQuantity18Choice, False)
 
 	@NoActn.deleter
 	def NoActn(self):
 		del self._NoActn
-		self._NoActn = None
+		self._NoActn = base_types.UninitialisedField(self, 'NoActn', FinancialInstrumentQuantity18Choice, False)
 
 	@property
 	def OneYr(self):
@@ -135,12 +135,12 @@ class Vote19(base_types._BaseFieldType):
 
 	@OneYr.setter
 	def OneYr(self, value):
-		self._OneYr = value if type(value) != base_types.auto else self.make_default("OneYr")
+		self._OneYr = value if value is not None else base_types.UninitialisedField(self, 'OneYr', FinancialInstrumentQuantity18Choice, False)
 
 	@OneYr.deleter
 	def OneYr(self):
 		del self._OneYr
-		self._OneYr = None
+		self._OneYr = base_types.UninitialisedField(self, 'OneYr', FinancialInstrumentQuantity18Choice, False)
 
 	@property
 	def Prtry(self):
@@ -148,12 +148,12 @@ class Vote19(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+		self._Prtry = value if value is not None else base_types.UninitialisedField(self, 'Prtry', ProprietaryVote2, True)
 
 	@Prtry.deleter
 	def Prtry(self):
 		del self._Prtry
-		self._Prtry = None
+		self._Prtry = base_types.UninitialisedField(self, 'Prtry', ProprietaryVote2, True)
 
 	@property
 	def SubSts(self):
@@ -161,12 +161,12 @@ class Vote19(base_types._BaseFieldType):
 
 	@SubSts.setter
 	def SubSts(self, value):
-		self._SubSts = value if type(value) != base_types.auto else self.make_default("SubSts")
+		self._SubSts = value if value is not None else base_types.UninitialisedField(self, 'SubSts', ResolutionSubStatus1Code, False)
 
 	@SubSts.deleter
 	def SubSts(self):
 		del self._SubSts
-		self._SubSts = None
+		self._SubSts = base_types.UninitialisedField(self, 'SubSts', ResolutionSubStatus1Code, False)
 
 	@property
 	def ThreeYrs(self):
@@ -174,12 +174,12 @@ class Vote19(base_types._BaseFieldType):
 
 	@ThreeYrs.setter
 	def ThreeYrs(self, value):
-		self._ThreeYrs = value if type(value) != base_types.auto else self.make_default("ThreeYrs")
+		self._ThreeYrs = value if value is not None else base_types.UninitialisedField(self, 'ThreeYrs', FinancialInstrumentQuantity18Choice, False)
 
 	@ThreeYrs.deleter
 	def ThreeYrs(self):
 		del self._ThreeYrs
-		self._ThreeYrs = None
+		self._ThreeYrs = base_types.UninitialisedField(self, 'ThreeYrs', FinancialInstrumentQuantity18Choice, False)
 
 	@property
 	def TwoYrs(self):
@@ -187,12 +187,12 @@ class Vote19(base_types._BaseFieldType):
 
 	@TwoYrs.setter
 	def TwoYrs(self, value):
-		self._TwoYrs = value if type(value) != base_types.auto else self.make_default("TwoYrs")
+		self._TwoYrs = value if value is not None else base_types.UninitialisedField(self, 'TwoYrs', FinancialInstrumentQuantity18Choice, False)
 
 	@TwoYrs.deleter
 	def TwoYrs(self):
 		del self._TwoYrs
-		self._TwoYrs = None
+		self._TwoYrs = base_types.UninitialisedField(self, 'TwoYrs', FinancialInstrumentQuantity18Choice, False)
 
 	@property
 	def Wdrwn(self):
@@ -200,12 +200,12 @@ class Vote19(base_types._BaseFieldType):
 
 	@Wdrwn.setter
 	def Wdrwn(self, value):
-		self._Wdrwn = value if type(value) != base_types.auto else self.make_default("Wdrwn")
+		self._Wdrwn = value if value is not None else base_types.UninitialisedField(self, 'Wdrwn', YesNoIndicator, False)
 
 	@Wdrwn.deleter
 	def Wdrwn(self):
 		del self._Wdrwn
-		self._Wdrwn = None
+		self._Wdrwn = base_types.UninitialisedField(self, 'Wdrwn', YesNoIndicator, False)
 
 	@property
 	def WthMgmt(self):
@@ -213,12 +213,12 @@ class Vote19(base_types._BaseFieldType):
 
 	@WthMgmt.setter
 	def WthMgmt(self, value):
-		self._WthMgmt = value if type(value) != base_types.auto else self.make_default("WthMgmt")
+		self._WthMgmt = value if value is not None else base_types.UninitialisedField(self, 'WthMgmt', FinancialInstrumentQuantity18Choice, False)
 
 	@WthMgmt.deleter
 	def WthMgmt(self):
 		del self._WthMgmt
-		self._WthMgmt = None
+		self._WthMgmt = base_types.UninitialisedField(self, 'WthMgmt', FinancialInstrumentQuantity18Choice, False)
 
 	@property
 	def Wthhld(self):
@@ -226,12 +226,12 @@ class Vote19(base_types._BaseFieldType):
 
 	@Wthhld.setter
 	def Wthhld(self, value):
-		self._Wthhld = value if type(value) != base_types.auto else self.make_default("Wthhld")
+		self._Wthhld = value if value is not None else base_types.UninitialisedField(self, 'Wthhld', FinancialInstrumentQuantity18Choice, False)
 
 	@Wthhld.deleter
 	def Wthhld(self):
 		del self._Wthhld
-		self._Wthhld = None
+		self._Wthhld = base_types.UninitialisedField(self, 'Wthhld', FinancialInstrumentQuantity18Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Abstn', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),

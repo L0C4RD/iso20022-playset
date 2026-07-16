@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NoReasonCode import NoReasonCode
-from ._UnmatchedReason19 import UnmatchedReason19
+from . import NoReasonCode
+from . import UnmatchedReason19
 
 class UnmatchedStatus20Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class UnmatchedStatus20Choice(base_types._BaseFieldType):
 
 	@NoSpcfdRsn.setter
 	def NoSpcfdRsn(self, value):
-		self._NoSpcfdRsn = value if type(value) != base_types.auto else self.make_default("NoSpcfdRsn")
+		self._NoSpcfdRsn = value if value is not None else base_types.UninitialisedField(self, 'NoSpcfdRsn', NoReasonCode, False)
 
 	@NoSpcfdRsn.deleter
 	def NoSpcfdRsn(self):
 		del self._NoSpcfdRsn
-		self._NoSpcfdRsn = None
+		self._NoSpcfdRsn = base_types.UninitialisedField(self, 'NoSpcfdRsn', NoReasonCode, False)
 
 	@property
 	def Rsn(self):
@@ -27,12 +27,12 @@ class UnmatchedStatus20Choice(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', UnmatchedReason19, True)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', UnmatchedReason19, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NoSpcfdRsn', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),

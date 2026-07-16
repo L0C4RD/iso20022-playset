@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcceptorCancellationAdvice15 import AcceptorCancellationAdvice15
-from ._ContentInformationType37 import ContentInformationType37
-from ._Header70 import Header70
+from . import AcceptorCancellationAdvice15
+from . import ContentInformationType37
+from . import Header70
 
 class AcceptorCancellationAdviceV15(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AcceptorCancellationAdviceV15(base_types._BaseFieldType):
 
 	@CxlAdvc.setter
 	def CxlAdvc(self, value):
-		self._CxlAdvc = value if type(value) != base_types.auto else self.make_default("CxlAdvc")
+		self._CxlAdvc = value if value is not None else base_types.UninitialisedField(self, 'CxlAdvc', AcceptorCancellationAdvice15, False)
 
 	@CxlAdvc.deleter
 	def CxlAdvc(self):
 		del self._CxlAdvc
-		self._CxlAdvc = None
+		self._CxlAdvc = base_types.UninitialisedField(self, 'CxlAdvc', AcceptorCancellationAdvice15, False)
 
 	@property
 	def Hdr(self):
@@ -28,12 +28,12 @@ class AcceptorCancellationAdviceV15(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header70, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header70, False)
 
 	@property
 	def SctyTrlr(self):
@@ -41,12 +41,12 @@ class AcceptorCancellationAdviceV15(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType37, False)
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
 		del self._SctyTrlr
-		self._SctyTrlr = None
+		self._SctyTrlr = base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType37, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CxlAdvc', type=AcceptorCancellationAdvice15, min=1, max=1, mutex_group=None, array=False),

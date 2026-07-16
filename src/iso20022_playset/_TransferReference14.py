@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalReference10 import AdditionalReference10
-from ._Max35Text import Max35Text
+from . import AdditionalReference10
+from . import Max35Text
 
 class TransferReference14(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TransferReference14(base_types._BaseFieldType):
 
 	@ClntRef.setter
 	def ClntRef(self, value):
-		self._ClntRef = value if type(value) != base_types.auto else self.make_default("ClntRef")
+		self._ClntRef = value if value is not None else base_types.UninitialisedField(self, 'ClntRef', AdditionalReference10, False)
 
 	@ClntRef.deleter
 	def ClntRef(self):
 		del self._ClntRef
-		self._ClntRef = None
+		self._ClntRef = base_types.UninitialisedField(self, 'ClntRef', AdditionalReference10, False)
 
 	@property
 	def CtrPtyRef(self):
@@ -27,12 +27,12 @@ class TransferReference14(base_types._BaseFieldType):
 
 	@CtrPtyRef.setter
 	def CtrPtyRef(self, value):
-		self._CtrPtyRef = value if type(value) != base_types.auto else self.make_default("CtrPtyRef")
+		self._CtrPtyRef = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyRef', AdditionalReference10, False)
 
 	@CtrPtyRef.deleter
 	def CtrPtyRef(self):
 		del self._CtrPtyRef
-		self._CtrPtyRef = None
+		self._CtrPtyRef = base_types.UninitialisedField(self, 'CtrPtyRef', AdditionalReference10, False)
 
 	@property
 	def CxlRef(self):
@@ -40,12 +40,12 @@ class TransferReference14(base_types._BaseFieldType):
 
 	@CxlRef.setter
 	def CxlRef(self, value):
-		self._CxlRef = value if type(value) != base_types.auto else self.make_default("CxlRef")
+		self._CxlRef = value if value is not None else base_types.UninitialisedField(self, 'CxlRef', Max35Text, False)
 
 	@CxlRef.deleter
 	def CxlRef(self):
 		del self._CxlRef
-		self._CxlRef = None
+		self._CxlRef = base_types.UninitialisedField(self, 'CxlRef', Max35Text, False)
 
 	@property
 	def CxlRsn(self):
@@ -53,12 +53,12 @@ class TransferReference14(base_types._BaseFieldType):
 
 	@CxlRsn.setter
 	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != base_types.auto else self.make_default("CxlRsn")
+		self._CxlRsn = value if value is not None else base_types.UninitialisedField(self, 'CxlRsn', Max35Text, False)
 
 	@CxlRsn.deleter
 	def CxlRsn(self):
 		del self._CxlRsn
-		self._CxlRsn = None
+		self._CxlRsn = base_types.UninitialisedField(self, 'CxlRsn', Max35Text, False)
 
 	@property
 	def TrfConfRef(self):
@@ -66,12 +66,12 @@ class TransferReference14(base_types._BaseFieldType):
 
 	@TrfConfRef.setter
 	def TrfConfRef(self, value):
-		self._TrfConfRef = value if type(value) != base_types.auto else self.make_default("TrfConfRef")
+		self._TrfConfRef = value if value is not None else base_types.UninitialisedField(self, 'TrfConfRef', Max35Text, False)
 
 	@TrfConfRef.deleter
 	def TrfConfRef(self):
 		del self._TrfConfRef
-		self._TrfConfRef = None
+		self._TrfConfRef = base_types.UninitialisedField(self, 'TrfConfRef', Max35Text, False)
 
 	@property
 	def TrfRef(self):
@@ -79,12 +79,12 @@ class TransferReference14(base_types._BaseFieldType):
 
 	@TrfRef.setter
 	def TrfRef(self, value):
-		self._TrfRef = value if type(value) != base_types.auto else self.make_default("TrfRef")
+		self._TrfRef = value if value is not None else base_types.UninitialisedField(self, 'TrfRef', Max35Text, False)
 
 	@TrfRef.deleter
 	def TrfRef(self):
 		del self._TrfRef
-		self._TrfRef = None
+		self._TrfRef = base_types.UninitialisedField(self, 'TrfRef', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClntRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._PartyReferenceDataChange3 import PartyReferenceDataChange3
+from . import ISODate
+from . import PartyReferenceDataChange3
 
 class PartyStatement3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PartyStatement3(base_types._BaseFieldType):
 
 	@Chng.setter
 	def Chng(self, value):
-		self._Chng = value if type(value) != base_types.auto else self.make_default("Chng")
+		self._Chng = value if value is not None else base_types.UninitialisedField(self, 'Chng', PartyReferenceDataChange3, True)
 
 	@Chng.deleter
 	def Chng(self):
 		del self._Chng
-		self._Chng = None
+		self._Chng = base_types.UninitialisedField(self, 'Chng', PartyReferenceDataChange3, True)
 
 	@property
 	def SysDt(self):
@@ -27,12 +27,12 @@ class PartyStatement3(base_types._BaseFieldType):
 
 	@SysDt.setter
 	def SysDt(self, value):
-		self._SysDt = value if type(value) != base_types.auto else self.make_default("SysDt")
+		self._SysDt = value if value is not None else base_types.UninitialisedField(self, 'SysDt', ISODate, False)
 
 	@SysDt.deleter
 	def SysDt(self):
 		del self._SysDt
-		self._SysDt = None
+		self._SysDt = base_types.UninitialisedField(self, 'SysDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Chng', type=PartyReferenceDataChange3, min=0, max=None, mutex_group=None, array=True),

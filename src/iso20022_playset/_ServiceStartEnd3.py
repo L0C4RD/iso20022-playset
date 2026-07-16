@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Address2 import Address2
-from ._ContactBusiness1 import ContactBusiness1
-from ._ISODateTime import ISODateTime
-from ._JourneyType1Code import JourneyType1Code
-from ._Max35Text import Max35Text
-from ._TimeSegment1Code import TimeSegment1Code
+from . import Address2
+from . import ContactBusiness1
+from . import ISODateTime
+from . import JourneyType1Code
+from . import Max35Text
+from . import TimeSegment1Code
 
 class ServiceStartEnd3(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class ServiceStartEnd3(base_types._BaseFieldType):
 
 	@Adr.setter
 	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+		self._Adr = value if value is not None else base_types.UninitialisedField(self, 'Adr', Address2, False)
 
 	@Adr.deleter
 	def Adr(self):
 		del self._Adr
-		self._Adr = None
+		self._Adr = base_types.UninitialisedField(self, 'Adr', Address2, False)
 
 	@property
 	def Ctct(self):
@@ -31,12 +31,12 @@ class ServiceStartEnd3(base_types._BaseFieldType):
 
 	@Ctct.setter
 	def Ctct(self, value):
-		self._Ctct = value if type(value) != base_types.auto else self.make_default("Ctct")
+		self._Ctct = value if value is not None else base_types.UninitialisedField(self, 'Ctct', ContactBusiness1, False)
 
 	@Ctct.deleter
 	def Ctct(self):
 		del self._Ctct
-		self._Ctct = None
+		self._Ctct = base_types.UninitialisedField(self, 'Ctct', ContactBusiness1, False)
 
 	@property
 	def DtAndTm(self):
@@ -44,12 +44,12 @@ class ServiceStartEnd3(base_types._BaseFieldType):
 
 	@DtAndTm.setter
 	def DtAndTm(self, value):
-		self._DtAndTm = value if type(value) != base_types.auto else self.make_default("DtAndTm")
+		self._DtAndTm = value if value is not None else base_types.UninitialisedField(self, 'DtAndTm', ISODateTime, False)
 
 	@DtAndTm.deleter
 	def DtAndTm(self):
 		del self._DtAndTm
-		self._DtAndTm = None
+		self._DtAndTm = base_types.UninitialisedField(self, 'DtAndTm', ISODateTime, False)
 
 	@property
 	def JrnyData(self):
@@ -57,12 +57,12 @@ class ServiceStartEnd3(base_types._BaseFieldType):
 
 	@JrnyData.setter
 	def JrnyData(self, value):
-		self._JrnyData = value if type(value) != base_types.auto else self.make_default("JrnyData")
+		self._JrnyData = value if value is not None else base_types.UninitialisedField(self, 'JrnyData', Max35Text, False)
 
 	@JrnyData.deleter
 	def JrnyData(self):
 		del self._JrnyData
-		self._JrnyData = None
+		self._JrnyData = base_types.UninitialisedField(self, 'JrnyData', Max35Text, False)
 
 	@property
 	def JrnyDtAndTm(self):
@@ -70,12 +70,12 @@ class ServiceStartEnd3(base_types._BaseFieldType):
 
 	@JrnyDtAndTm.setter
 	def JrnyDtAndTm(self, value):
-		self._JrnyDtAndTm = value if type(value) != base_types.auto else self.make_default("JrnyDtAndTm")
+		self._JrnyDtAndTm = value if value is not None else base_types.UninitialisedField(self, 'JrnyDtAndTm', ISODateTime, False)
 
 	@JrnyDtAndTm.deleter
 	def JrnyDtAndTm(self):
 		del self._JrnyDtAndTm
-		self._JrnyDtAndTm = None
+		self._JrnyDtAndTm = base_types.UninitialisedField(self, 'JrnyDtAndTm', ISODateTime, False)
 
 	@property
 	def JrnyTp(self):
@@ -83,12 +83,12 @@ class ServiceStartEnd3(base_types._BaseFieldType):
 
 	@JrnyTp.setter
 	def JrnyTp(self, value):
-		self._JrnyTp = value if type(value) != base_types.auto else self.make_default("JrnyTp")
+		self._JrnyTp = value if value is not None else base_types.UninitialisedField(self, 'JrnyTp', JourneyType1Code, False)
 
 	@JrnyTp.deleter
 	def JrnyTp(self):
 		del self._JrnyTp
-		self._JrnyTp = None
+		self._JrnyTp = base_types.UninitialisedField(self, 'JrnyTp', JourneyType1Code, False)
 
 	@property
 	def Lctn(self):
@@ -96,12 +96,12 @@ class ServiceStartEnd3(base_types._BaseFieldType):
 
 	@Lctn.setter
 	def Lctn(self, value):
-		self._Lctn = value if type(value) != base_types.auto else self.make_default("Lctn")
+		self._Lctn = value if value is not None else base_types.UninitialisedField(self, 'Lctn', Max35Text, False)
 
 	@Lctn.deleter
 	def Lctn(self):
 		del self._Lctn
-		self._Lctn = None
+		self._Lctn = base_types.UninitialisedField(self, 'Lctn', Max35Text, False)
 
 	@property
 	def LctnCd(self):
@@ -109,12 +109,12 @@ class ServiceStartEnd3(base_types._BaseFieldType):
 
 	@LctnCd.setter
 	def LctnCd(self, value):
-		self._LctnCd = value if type(value) != base_types.auto else self.make_default("LctnCd")
+		self._LctnCd = value if value is not None else base_types.UninitialisedField(self, 'LctnCd', Max35Text, False)
 
 	@LctnCd.deleter
 	def LctnCd(self):
 		del self._LctnCd
-		self._LctnCd = None
+		self._LctnCd = base_types.UninitialisedField(self, 'LctnCd', Max35Text, False)
 
 	@property
 	def TmSgmt(self):
@@ -122,12 +122,12 @@ class ServiceStartEnd3(base_types._BaseFieldType):
 
 	@TmSgmt.setter
 	def TmSgmt(self, value):
-		self._TmSgmt = value if type(value) != base_types.auto else self.make_default("TmSgmt")
+		self._TmSgmt = value if value is not None else base_types.UninitialisedField(self, 'TmSgmt', TimeSegment1Code, False)
 
 	@TmSgmt.deleter
 	def TmSgmt(self):
 		del self._TmSgmt
-		self._TmSgmt = None
+		self._TmSgmt = base_types.UninitialisedField(self, 'TmSgmt', TimeSegment1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Adr', type=Address2, min=0, max=1, mutex_group=None, array=False),

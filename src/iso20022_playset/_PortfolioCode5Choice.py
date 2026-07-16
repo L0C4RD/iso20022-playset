@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NotApplicable1Code import NotApplicable1Code
-from ._PortfolioIdentification3 import PortfolioIdentification3
+from . import NotApplicable1Code
+from . import PortfolioIdentification3
 
 class PortfolioCode5Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PortfolioCode5Choice(base_types._BaseFieldType):
 
 	@NoPrtfl.setter
 	def NoPrtfl(self, value):
-		self._NoPrtfl = value if type(value) != base_types.auto else self.make_default("NoPrtfl")
+		self._NoPrtfl = value if value is not None else base_types.UninitialisedField(self, 'NoPrtfl', NotApplicable1Code, False)
 
 	@NoPrtfl.deleter
 	def NoPrtfl(self):
 		del self._NoPrtfl
-		self._NoPrtfl = None
+		self._NoPrtfl = base_types.UninitialisedField(self, 'NoPrtfl', NotApplicable1Code, False)
 
 	@property
 	def Prtfl(self):
@@ -27,12 +27,12 @@ class PortfolioCode5Choice(base_types._BaseFieldType):
 
 	@Prtfl.setter
 	def Prtfl(self, value):
-		self._Prtfl = value if type(value) != base_types.auto else self.make_default("Prtfl")
+		self._Prtfl = value if value is not None else base_types.UninitialisedField(self, 'Prtfl', PortfolioIdentification3, False)
 
 	@Prtfl.deleter
 	def Prtfl(self):
 		del self._Prtfl
-		self._Prtfl = None
+		self._Prtfl = base_types.UninitialisedField(self, 'Prtfl', PortfolioIdentification3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NoPrtfl', type=NotApplicable1Code, min=0, max=1, mutex_group=1, array=False),

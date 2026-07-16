@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CustomerReference1 import CustomerReference1
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max10NumericText import Max10NumericText
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import CustomerReference1
+from . import ImpliedCurrencyAndAmount
+from . import Max10NumericText
+from . import Max35Text
+from . import Max70Text
+from . import TrueFalseIndicator
 
 class TravelAgencyPackage2(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class TravelAgencyPackage2(base_types._BaseFieldType):
 
 	@CdtCardSlipNb.setter
 	def CdtCardSlipNb(self, value):
-		self._CdtCardSlipNb = value if type(value) != base_types.auto else self.make_default("CdtCardSlipNb")
+		self._CdtCardSlipNb = value if value is not None else base_types.UninitialisedField(self, 'CdtCardSlipNb', Max35Text, False)
 
 	@CdtCardSlipNb.deleter
 	def CdtCardSlipNb(self):
 		del self._CdtCardSlipNb
-		self._CdtCardSlipNb = None
+		self._CdtCardSlipNb = base_types.UninitialisedField(self, 'CdtCardSlipNb', Max35Text, False)
 
 	@property
 	def CstmrRef(self):
@@ -31,12 +31,12 @@ class TravelAgencyPackage2(base_types._BaseFieldType):
 
 	@CstmrRef.setter
 	def CstmrRef(self, value):
-		self._CstmrRef = value if type(value) != base_types.auto else self.make_default("CstmrRef")
+		self._CstmrRef = value if value is not None else base_types.UninitialisedField(self, 'CstmrRef', CustomerReference1, True)
 
 	@CstmrRef.deleter
 	def CstmrRef(self):
 		del self._CstmrRef
-		self._CstmrRef = None
+		self._CstmrRef = base_types.UninitialisedField(self, 'CstmrRef', CustomerReference1, True)
 
 	@property
 	def DataSrc(self):
@@ -44,12 +44,12 @@ class TravelAgencyPackage2(base_types._BaseFieldType):
 
 	@DataSrc.setter
 	def DataSrc(self, value):
-		self._DataSrc = value if type(value) != base_types.auto else self.make_default("DataSrc")
+		self._DataSrc = value if value is not None else base_types.UninitialisedField(self, 'DataSrc', Max35Text, False)
 
 	@DataSrc.deleter
 	def DataSrc(self):
 		del self._DataSrc
-		self._DataSrc = None
+		self._DataSrc = base_types.UninitialisedField(self, 'DataSrc', Max35Text, False)
 
 	@property
 	def DlvryOrdrNb(self):
@@ -57,12 +57,12 @@ class TravelAgencyPackage2(base_types._BaseFieldType):
 
 	@DlvryOrdrNb.setter
 	def DlvryOrdrNb(self, value):
-		self._DlvryOrdrNb = value if type(value) != base_types.auto else self.make_default("DlvryOrdrNb")
+		self._DlvryOrdrNb = value if value is not None else base_types.UninitialisedField(self, 'DlvryOrdrNb', Max35Text, False)
 
 	@DlvryOrdrNb.deleter
 	def DlvryOrdrNb(self):
 		del self._DlvryOrdrNb
-		self._DlvryOrdrNb = None
+		self._DlvryOrdrNb = base_types.UninitialisedField(self, 'DlvryOrdrNb', Max35Text, False)
 
 	@property
 	def Fee(self):
@@ -70,12 +70,12 @@ class TravelAgencyPackage2(base_types._BaseFieldType):
 
 	@Fee.setter
 	def Fee(self, value):
-		self._Fee = value if type(value) != base_types.auto else self.make_default("Fee")
+		self._Fee = value if value is not None else base_types.UninitialisedField(self, 'Fee', ImpliedCurrencyAndAmount, False)
 
 	@Fee.deleter
 	def Fee(self):
 		del self._Fee
-		self._Fee = None
+		self._Fee = base_types.UninitialisedField(self, 'Fee', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def Insrnc(self):
@@ -83,12 +83,12 @@ class TravelAgencyPackage2(base_types._BaseFieldType):
 
 	@Insrnc.setter
 	def Insrnc(self, value):
-		self._Insrnc = value if type(value) != base_types.auto else self.make_default("Insrnc")
+		self._Insrnc = value if value is not None else base_types.UninitialisedField(self, 'Insrnc', TrueFalseIndicator, False)
 
 	@Insrnc.deleter
 	def Insrnc(self):
 		del self._Insrnc
-		self._Insrnc = None
+		self._Insrnc = base_types.UninitialisedField(self, 'Insrnc', TrueFalseIndicator, False)
 
 	@property
 	def InsrncAmt(self):
@@ -96,12 +96,12 @@ class TravelAgencyPackage2(base_types._BaseFieldType):
 
 	@InsrncAmt.setter
 	def InsrncAmt(self, value):
-		self._InsrncAmt = value if type(value) != base_types.auto else self.make_default("InsrncAmt")
+		self._InsrncAmt = value if value is not None else base_types.UninitialisedField(self, 'InsrncAmt', ImpliedCurrencyAndAmount, False)
 
 	@InsrncAmt.deleter
 	def InsrncAmt(self):
 		del self._InsrncAmt
-		self._InsrncAmt = None
+		self._InsrncAmt = base_types.UninitialisedField(self, 'InsrncAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def NbInPty(self):
@@ -109,12 +109,12 @@ class TravelAgencyPackage2(base_types._BaseFieldType):
 
 	@NbInPty.setter
 	def NbInPty(self, value):
-		self._NbInPty = value if type(value) != base_types.auto else self.make_default("NbInPty")
+		self._NbInPty = value if value is not None else base_types.UninitialisedField(self, 'NbInPty', Max10NumericText, False)
 
 	@NbInPty.deleter
 	def NbInPty(self):
 		del self._NbInPty
-		self._NbInPty = None
+		self._NbInPty = base_types.UninitialisedField(self, 'NbInPty', Max10NumericText, False)
 
 	@property
 	def RsvatnNb(self):
@@ -122,12 +122,12 @@ class TravelAgencyPackage2(base_types._BaseFieldType):
 
 	@RsvatnNb.setter
 	def RsvatnNb(self, value):
-		self._RsvatnNb = value if type(value) != base_types.auto else self.make_default("RsvatnNb")
+		self._RsvatnNb = value if value is not None else base_types.UninitialisedField(self, 'RsvatnNb', Max35Text, False)
 
 	@RsvatnNb.deleter
 	def RsvatnNb(self):
 		del self._RsvatnNb
-		self._RsvatnNb = None
+		self._RsvatnNb = base_types.UninitialisedField(self, 'RsvatnNb', Max35Text, False)
 
 	@property
 	def Tp(self):
@@ -135,12 +135,12 @@ class TravelAgencyPackage2(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', Max70Text, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', Max70Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtCardSlipNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

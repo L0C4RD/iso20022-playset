@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionInstructionCancellationRequestStatusAdviceV15 import CorporateActionInstructionCancellationRequestStatusAdviceV15
+from . import CorporateActionInstructionCancellationRequestStatusAdviceV15
 
 class SEEV_041_001_15():
 
@@ -18,12 +18,12 @@ class SEEV_041_001_15():
 
 		@CorpActnInstrCxlReqStsAdvc.setter
 		def CorpActnInstrCxlReqStsAdvc(self, value):
-			self._CorpActnInstrCxlReqStsAdvc = value if type(value) != base_types.auto else self.make_default("CorpActnInstrCxlReqStsAdvc")
+			self._CorpActnInstrCxlReqStsAdvc = value if value is not None else base_types.UninitialisedField(self, 'CorpActnInstrCxlReqStsAdvc', CorporateActionInstructionCancellationRequestStatusAdviceV15, False)
 
 		@CorpActnInstrCxlReqStsAdvc.deleter
 		def CorpActnInstrCxlReqStsAdvc(self):
 			del self._CorpActnInstrCxlReqStsAdvc
-			self._CorpActnInstrCxlReqStsAdvc = None
+			self._CorpActnInstrCxlReqStsAdvc = base_types.UninitialisedField(self, 'CorpActnInstrCxlReqStsAdvc', CorporateActionInstructionCancellationRequestStatusAdviceV15, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CorpActnInstrCxlReqStsAdvc', type=CorporateActionInstructionCancellationRequestStatusAdviceV15, min=1, max=1, mutex_group=None, array=False),

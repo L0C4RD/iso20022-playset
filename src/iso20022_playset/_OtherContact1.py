@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max128Text import Max128Text
-from ._Max4Text import Max4Text
+from . import Max128Text
+from . import Max4Text
 
 class OtherContact1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class OtherContact1(base_types._BaseFieldType):
 
 	@ChanlTp.setter
 	def ChanlTp(self, value):
-		self._ChanlTp = value if type(value) != base_types.auto else self.make_default("ChanlTp")
+		self._ChanlTp = value if value is not None else base_types.UninitialisedField(self, 'ChanlTp', Max4Text, False)
 
 	@ChanlTp.deleter
 	def ChanlTp(self):
 		del self._ChanlTp
-		self._ChanlTp = None
+		self._ChanlTp = base_types.UninitialisedField(self, 'ChanlTp', Max4Text, False)
 
 	@property
 	def Id(self):
@@ -27,12 +27,12 @@ class OtherContact1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max128Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max128Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ChanlTp', type=Max4Text, min=1, max=1, mutex_group=None, array=False),

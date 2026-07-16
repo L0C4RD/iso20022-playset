@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CalculationType1Code import CalculationType1Code
-from ._DateTimePeriod1Choice import DateTimePeriod1Choice
-from ._ISODate import ISODate
-from ._PercentageRate import PercentageRate
-from ._Price14 import Price14
+from . import CalculationType1Code
+from . import DateTimePeriod1Choice
+from . import ISODate
+from . import PercentageRate
+from . import Price14
 
 class YieldCalculation7(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class YieldCalculation7(base_types._BaseFieldType):
 
 	@ClctnDt.setter
 	def ClctnDt(self, value):
-		self._ClctnDt = value if type(value) != base_types.auto else self.make_default("ClctnDt")
+		self._ClctnDt = value if value is not None else base_types.UninitialisedField(self, 'ClctnDt', ISODate, False)
 
 	@ClctnDt.deleter
 	def ClctnDt(self):
 		del self._ClctnDt
-		self._ClctnDt = None
+		self._ClctnDt = base_types.UninitialisedField(self, 'ClctnDt', ISODate, False)
 
 	@property
 	def ClctnTp(self):
@@ -30,12 +30,12 @@ class YieldCalculation7(base_types._BaseFieldType):
 
 	@ClctnTp.setter
 	def ClctnTp(self, value):
-		self._ClctnTp = value if type(value) != base_types.auto else self.make_default("ClctnTp")
+		self._ClctnTp = value if value is not None else base_types.UninitialisedField(self, 'ClctnTp', CalculationType1Code, False)
 
 	@ClctnTp.deleter
 	def ClctnTp(self):
 		del self._ClctnTp
-		self._ClctnTp = None
+		self._ClctnTp = base_types.UninitialisedField(self, 'ClctnTp', CalculationType1Code, False)
 
 	@property
 	def RedPric(self):
@@ -43,12 +43,12 @@ class YieldCalculation7(base_types._BaseFieldType):
 
 	@RedPric.setter
 	def RedPric(self, value):
-		self._RedPric = value if type(value) != base_types.auto else self.make_default("RedPric")
+		self._RedPric = value if value is not None else base_types.UninitialisedField(self, 'RedPric', Price14, False)
 
 	@RedPric.deleter
 	def RedPric(self):
 		del self._RedPric
-		self._RedPric = None
+		self._RedPric = base_types.UninitialisedField(self, 'RedPric', Price14, False)
 
 	@property
 	def Val(self):
@@ -56,12 +56,12 @@ class YieldCalculation7(base_types._BaseFieldType):
 
 	@Val.setter
 	def Val(self, value):
-		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
+		self._Val = value if value is not None else base_types.UninitialisedField(self, 'Val', PercentageRate, False)
 
 	@Val.deleter
 	def Val(self):
 		del self._Val
-		self._Val = None
+		self._Val = base_types.UninitialisedField(self, 'Val', PercentageRate, False)
 
 	@property
 	def ValDt(self):
@@ -69,12 +69,12 @@ class YieldCalculation7(base_types._BaseFieldType):
 
 	@ValDt.setter
 	def ValDt(self, value):
-		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
+		self._ValDt = value if value is not None else base_types.UninitialisedField(self, 'ValDt', ISODate, False)
 
 	@ValDt.deleter
 	def ValDt(self):
 		del self._ValDt
-		self._ValDt = None
+		self._ValDt = base_types.UninitialisedField(self, 'ValDt', ISODate, False)
 
 	@property
 	def ValPrd(self):
@@ -82,12 +82,12 @@ class YieldCalculation7(base_types._BaseFieldType):
 
 	@ValPrd.setter
 	def ValPrd(self, value):
-		self._ValPrd = value if type(value) != base_types.auto else self.make_default("ValPrd")
+		self._ValPrd = value if value is not None else base_types.UninitialisedField(self, 'ValPrd', DateTimePeriod1Choice, False)
 
 	@ValPrd.deleter
 	def ValPrd(self):
 		del self._ValPrd
-		self._ValPrd = None
+		self._ValPrd = base_types.UninitialisedField(self, 'ValPrd', DateTimePeriod1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClctnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),

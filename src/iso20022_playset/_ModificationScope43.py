@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DataModification1Code import DataModification1Code
-from ._ReferredAgent3 import ReferredAgent3
+from . import DataModification1Code
+from . import ReferredAgent3
 
 class ModificationScope43(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ModificationScope43(base_types._BaseFieldType):
 
 	@ModScpIndctn.setter
 	def ModScpIndctn(self, value):
-		self._ModScpIndctn = value if type(value) != base_types.auto else self.make_default("ModScpIndctn")
+		self._ModScpIndctn = value if value is not None else base_types.UninitialisedField(self, 'ModScpIndctn', DataModification1Code, False)
 
 	@ModScpIndctn.deleter
 	def ModScpIndctn(self):
 		del self._ModScpIndctn
-		self._ModScpIndctn = None
+		self._ModScpIndctn = base_types.UninitialisedField(self, 'ModScpIndctn', DataModification1Code, False)
 
 	@property
 	def Plcmnt(self):
@@ -27,12 +27,12 @@ class ModificationScope43(base_types._BaseFieldType):
 
 	@Plcmnt.setter
 	def Plcmnt(self, value):
-		self._Plcmnt = value if type(value) != base_types.auto else self.make_default("Plcmnt")
+		self._Plcmnt = value if value is not None else base_types.UninitialisedField(self, 'Plcmnt', ReferredAgent3, False)
 
 	@Plcmnt.deleter
 	def Plcmnt(self):
 		del self._Plcmnt
-		self._Plcmnt = None
+		self._Plcmnt = base_types.UninitialisedField(self, 'Plcmnt', ReferredAgent3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ModScpIndctn', type=DataModification1Code, min=1, max=1, mutex_group=None, array=False),

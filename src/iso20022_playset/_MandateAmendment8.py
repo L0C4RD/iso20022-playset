@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Mandate21 import Mandate21
-from ._MandateAmendmentReason3 import MandateAmendmentReason3
-from ._OriginalMandate10Choice import OriginalMandate10Choice
-from ._OriginalMessageInformation1 import OriginalMessageInformation1
-from ._SupplementaryData1 import SupplementaryData1
+from . import Mandate21
+from . import MandateAmendmentReason3
+from . import OriginalMandate10Choice
+from . import OriginalMessageInformation1
+from . import SupplementaryData1
 
 class MandateAmendment8(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class MandateAmendment8(base_types._BaseFieldType):
 
 	@AmdmntRsn.setter
 	def AmdmntRsn(self, value):
-		self._AmdmntRsn = value if type(value) != base_types.auto else self.make_default("AmdmntRsn")
+		self._AmdmntRsn = value if value is not None else base_types.UninitialisedField(self, 'AmdmntRsn', MandateAmendmentReason3, False)
 
 	@AmdmntRsn.deleter
 	def AmdmntRsn(self):
 		del self._AmdmntRsn
-		self._AmdmntRsn = None
+		self._AmdmntRsn = base_types.UninitialisedField(self, 'AmdmntRsn', MandateAmendmentReason3, False)
 
 	@property
 	def Mndt(self):
@@ -30,12 +30,12 @@ class MandateAmendment8(base_types._BaseFieldType):
 
 	@Mndt.setter
 	def Mndt(self, value):
-		self._Mndt = value if type(value) != base_types.auto else self.make_default("Mndt")
+		self._Mndt = value if value is not None else base_types.UninitialisedField(self, 'Mndt', Mandate21, False)
 
 	@Mndt.deleter
 	def Mndt(self):
 		del self._Mndt
-		self._Mndt = None
+		self._Mndt = base_types.UninitialisedField(self, 'Mndt', Mandate21, False)
 
 	@property
 	def OrgnlMndt(self):
@@ -43,12 +43,12 @@ class MandateAmendment8(base_types._BaseFieldType):
 
 	@OrgnlMndt.setter
 	def OrgnlMndt(self, value):
-		self._OrgnlMndt = value if type(value) != base_types.auto else self.make_default("OrgnlMndt")
+		self._OrgnlMndt = value if value is not None else base_types.UninitialisedField(self, 'OrgnlMndt', OriginalMandate10Choice, False)
 
 	@OrgnlMndt.deleter
 	def OrgnlMndt(self):
 		del self._OrgnlMndt
-		self._OrgnlMndt = None
+		self._OrgnlMndt = base_types.UninitialisedField(self, 'OrgnlMndt', OriginalMandate10Choice, False)
 
 	@property
 	def OrgnlMsgInf(self):
@@ -56,12 +56,12 @@ class MandateAmendment8(base_types._BaseFieldType):
 
 	@OrgnlMsgInf.setter
 	def OrgnlMsgInf(self, value):
-		self._OrgnlMsgInf = value if type(value) != base_types.auto else self.make_default("OrgnlMsgInf")
+		self._OrgnlMsgInf = value if value is not None else base_types.UninitialisedField(self, 'OrgnlMsgInf', OriginalMessageInformation1, False)
 
 	@OrgnlMsgInf.deleter
 	def OrgnlMsgInf(self):
 		del self._OrgnlMsgInf
-		self._OrgnlMsgInf = None
+		self._OrgnlMsgInf = base_types.UninitialisedField(self, 'OrgnlMsgInf', OriginalMessageInformation1, False)
 
 	@property
 	def SplmtryData(self):
@@ -69,12 +69,12 @@ class MandateAmendment8(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmdmntRsn', type=MandateAmendmentReason3, min=1, max=1, mutex_group=None, array=False),

@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AttendanceContext2Code import AttendanceContext2Code
-from ._DecimalNumber import DecimalNumber
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max10Text import Max10Text
-from ._Max140Text import Max140Text
-from ._Max256Text import Max256Text
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
-from ._PlusOrMinusIndicator import PlusOrMinusIndicator
-from ._UnitOfMeasure6Code import UnitOfMeasure6Code
+from . import AttendanceContext2Code
+from . import DecimalNumber
+from . import ImpliedCurrencyAndAmount
+from . import Max10Text
+from . import Max140Text
+from . import Max256Text
+from . import Max35Text
+from . import Max70Text
+from . import PlusOrMinusIndicator
+from . import UnitOfMeasure6Code
 
 class Product6(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class Product6(base_types._BaseFieldType):
 
 	@AddtlPdctCd.setter
 	def AddtlPdctCd(self, value):
-		self._AddtlPdctCd = value if type(value) != base_types.auto else self.make_default("AddtlPdctCd")
+		self._AddtlPdctCd = value if value is not None else base_types.UninitialisedField(self, 'AddtlPdctCd', Max70Text, False)
 
 	@AddtlPdctCd.deleter
 	def AddtlPdctCd(self):
 		del self._AddtlPdctCd
-		self._AddtlPdctCd = None
+		self._AddtlPdctCd = base_types.UninitialisedField(self, 'AddtlPdctCd', Max70Text, False)
 
 	@property
 	def AddtlPdctDesc(self):
@@ -35,12 +35,12 @@ class Product6(base_types._BaseFieldType):
 
 	@AddtlPdctDesc.setter
 	def AddtlPdctDesc(self, value):
-		self._AddtlPdctDesc = value if type(value) != base_types.auto else self.make_default("AddtlPdctDesc")
+		self._AddtlPdctDesc = value if value is not None else base_types.UninitialisedField(self, 'AddtlPdctDesc', Max256Text, False)
 
 	@AddtlPdctDesc.deleter
 	def AddtlPdctDesc(self):
 		del self._AddtlPdctDesc
-		self._AddtlPdctDesc = None
+		self._AddtlPdctDesc = base_types.UninitialisedField(self, 'AddtlPdctDesc', Max256Text, False)
 
 	@property
 	def DlvryLctn(self):
@@ -48,12 +48,12 @@ class Product6(base_types._BaseFieldType):
 
 	@DlvryLctn.setter
 	def DlvryLctn(self, value):
-		self._DlvryLctn = value if type(value) != base_types.auto else self.make_default("DlvryLctn")
+		self._DlvryLctn = value if value is not None else base_types.UninitialisedField(self, 'DlvryLctn', Max10Text, False)
 
 	@DlvryLctn.deleter
 	def DlvryLctn(self):
 		del self._DlvryLctn
-		self._DlvryLctn = None
+		self._DlvryLctn = base_types.UninitialisedField(self, 'DlvryLctn', Max10Text, False)
 
 	@property
 	def DlvrySvc(self):
@@ -61,12 +61,12 @@ class Product6(base_types._BaseFieldType):
 
 	@DlvrySvc.setter
 	def DlvrySvc(self, value):
-		self._DlvrySvc = value if type(value) != base_types.auto else self.make_default("DlvrySvc")
+		self._DlvrySvc = value if value is not None else base_types.UninitialisedField(self, 'DlvrySvc', AttendanceContext2Code, False)
 
 	@DlvrySvc.deleter
 	def DlvrySvc(self):
 		del self._DlvrySvc
-		self._DlvrySvc = None
+		self._DlvrySvc = base_types.UninitialisedField(self, 'DlvrySvc', AttendanceContext2Code, False)
 
 	@property
 	def ItmId(self):
@@ -74,12 +74,12 @@ class Product6(base_types._BaseFieldType):
 
 	@ItmId.setter
 	def ItmId(self, value):
-		self._ItmId = value if type(value) != base_types.auto else self.make_default("ItmId")
+		self._ItmId = value if value is not None else base_types.UninitialisedField(self, 'ItmId', Max35Text, False)
 
 	@ItmId.deleter
 	def ItmId(self):
 		del self._ItmId
-		self._ItmId = None
+		self._ItmId = base_types.UninitialisedField(self, 'ItmId', Max35Text, False)
 
 	@property
 	def PdctAmt(self):
@@ -87,12 +87,12 @@ class Product6(base_types._BaseFieldType):
 
 	@PdctAmt.setter
 	def PdctAmt(self, value):
-		self._PdctAmt = value if type(value) != base_types.auto else self.make_default("PdctAmt")
+		self._PdctAmt = value if value is not None else base_types.UninitialisedField(self, 'PdctAmt', ImpliedCurrencyAndAmount, False)
 
 	@PdctAmt.deleter
 	def PdctAmt(self):
 		del self._PdctAmt
-		self._PdctAmt = None
+		self._PdctAmt = base_types.UninitialisedField(self, 'PdctAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def PdctAmtSgn(self):
@@ -100,12 +100,12 @@ class Product6(base_types._BaseFieldType):
 
 	@PdctAmtSgn.setter
 	def PdctAmtSgn(self, value):
-		self._PdctAmtSgn = value if type(value) != base_types.auto else self.make_default("PdctAmtSgn")
+		self._PdctAmtSgn = value if value is not None else base_types.UninitialisedField(self, 'PdctAmtSgn', PlusOrMinusIndicator, False)
 
 	@PdctAmtSgn.deleter
 	def PdctAmtSgn(self):
 		del self._PdctAmtSgn
-		self._PdctAmtSgn = None
+		self._PdctAmtSgn = base_types.UninitialisedField(self, 'PdctAmtSgn', PlusOrMinusIndicator, False)
 
 	@property
 	def PdctCd(self):
@@ -113,12 +113,12 @@ class Product6(base_types._BaseFieldType):
 
 	@PdctCd.setter
 	def PdctCd(self, value):
-		self._PdctCd = value if type(value) != base_types.auto else self.make_default("PdctCd")
+		self._PdctCd = value if value is not None else base_types.UninitialisedField(self, 'PdctCd', Max70Text, False)
 
 	@PdctCd.deleter
 	def PdctCd(self):
 		del self._PdctCd
-		self._PdctCd = None
+		self._PdctCd = base_types.UninitialisedField(self, 'PdctCd', Max70Text, False)
 
 	@property
 	def PdctDesc(self):
@@ -126,12 +126,12 @@ class Product6(base_types._BaseFieldType):
 
 	@PdctDesc.setter
 	def PdctDesc(self, value):
-		self._PdctDesc = value if type(value) != base_types.auto else self.make_default("PdctDesc")
+		self._PdctDesc = value if value is not None else base_types.UninitialisedField(self, 'PdctDesc', Max140Text, False)
 
 	@PdctDesc.deleter
 	def PdctDesc(self):
 		del self._PdctDesc
-		self._PdctDesc = None
+		self._PdctDesc = base_types.UninitialisedField(self, 'PdctDesc', Max140Text, False)
 
 	@property
 	def PdctQty(self):
@@ -139,12 +139,12 @@ class Product6(base_types._BaseFieldType):
 
 	@PdctQty.setter
 	def PdctQty(self, value):
-		self._PdctQty = value if type(value) != base_types.auto else self.make_default("PdctQty")
+		self._PdctQty = value if value is not None else base_types.UninitialisedField(self, 'PdctQty', DecimalNumber, False)
 
 	@PdctQty.deleter
 	def PdctQty(self):
 		del self._PdctQty
-		self._PdctQty = None
+		self._PdctQty = base_types.UninitialisedField(self, 'PdctQty', DecimalNumber, False)
 
 	@property
 	def SaleChanl(self):
@@ -152,12 +152,12 @@ class Product6(base_types._BaseFieldType):
 
 	@SaleChanl.setter
 	def SaleChanl(self, value):
-		self._SaleChanl = value if type(value) != base_types.auto else self.make_default("SaleChanl")
+		self._SaleChanl = value if value is not None else base_types.UninitialisedField(self, 'SaleChanl', Max70Text, False)
 
 	@SaleChanl.deleter
 	def SaleChanl(self):
 		del self._SaleChanl
-		self._SaleChanl = None
+		self._SaleChanl = base_types.UninitialisedField(self, 'SaleChanl', Max70Text, False)
 
 	@property
 	def TaxTp(self):
@@ -165,12 +165,12 @@ class Product6(base_types._BaseFieldType):
 
 	@TaxTp.setter
 	def TaxTp(self, value):
-		self._TaxTp = value if type(value) != base_types.auto else self.make_default("TaxTp")
+		self._TaxTp = value if value is not None else base_types.UninitialisedField(self, 'TaxTp', Max35Text, False)
 
 	@TaxTp.deleter
 	def TaxTp(self):
 		del self._TaxTp
-		self._TaxTp = None
+		self._TaxTp = base_types.UninitialisedField(self, 'TaxTp', Max35Text, False)
 
 	@property
 	def UnitOfMeasr(self):
@@ -178,12 +178,12 @@ class Product6(base_types._BaseFieldType):
 
 	@UnitOfMeasr.setter
 	def UnitOfMeasr(self, value):
-		self._UnitOfMeasr = value if type(value) != base_types.auto else self.make_default("UnitOfMeasr")
+		self._UnitOfMeasr = value if value is not None else base_types.UninitialisedField(self, 'UnitOfMeasr', UnitOfMeasure6Code, False)
 
 	@UnitOfMeasr.deleter
 	def UnitOfMeasr(self):
 		del self._UnitOfMeasr
-		self._UnitOfMeasr = None
+		self._UnitOfMeasr = base_types.UninitialisedField(self, 'UnitOfMeasr', UnitOfMeasure6Code, False)
 
 	@property
 	def UnitPric(self):
@@ -191,12 +191,12 @@ class Product6(base_types._BaseFieldType):
 
 	@UnitPric.setter
 	def UnitPric(self, value):
-		self._UnitPric = value if type(value) != base_types.auto else self.make_default("UnitPric")
+		self._UnitPric = value if value is not None else base_types.UninitialisedField(self, 'UnitPric', ImpliedCurrencyAndAmount, False)
 
 	@UnitPric.deleter
 	def UnitPric(self):
 		del self._UnitPric
-		self._UnitPric = None
+		self._UnitPric = base_types.UninitialisedField(self, 'UnitPric', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def UnitPricSgn(self):
@@ -204,12 +204,12 @@ class Product6(base_types._BaseFieldType):
 
 	@UnitPricSgn.setter
 	def UnitPricSgn(self, value):
-		self._UnitPricSgn = value if type(value) != base_types.auto else self.make_default("UnitPricSgn")
+		self._UnitPricSgn = value if value is not None else base_types.UninitialisedField(self, 'UnitPricSgn', PlusOrMinusIndicator, False)
 
 	@UnitPricSgn.deleter
 	def UnitPricSgn(self):
 		del self._UnitPricSgn
-		self._UnitPricSgn = None
+		self._UnitPricSgn = base_types.UninitialisedField(self, 'UnitPricSgn', PlusOrMinusIndicator, False)
 
 	@property
 	def ValAddedTax(self):
@@ -217,12 +217,12 @@ class Product6(base_types._BaseFieldType):
 
 	@ValAddedTax.setter
 	def ValAddedTax(self, value):
-		self._ValAddedTax = value if type(value) != base_types.auto else self.make_default("ValAddedTax")
+		self._ValAddedTax = value if value is not None else base_types.UninitialisedField(self, 'ValAddedTax', ImpliedCurrencyAndAmount, False)
 
 	@ValAddedTax.deleter
 	def ValAddedTax(self):
 		del self._ValAddedTax
-		self._ValAddedTax = None
+		self._ValAddedTax = base_types.UninitialisedField(self, 'ValAddedTax', ImpliedCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlPdctCd', type=Max70Text, min=0, max=1, mutex_group=None, array=False),

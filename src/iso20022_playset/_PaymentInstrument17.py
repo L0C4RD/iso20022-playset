@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._PaymentInstrument19Choice import PaymentInstrument19Choice
-from ._PaymentInstrument24Choice import PaymentInstrument24Choice
-from ._PercentageBoundedRate import PercentageBoundedRate
+from . import ActiveCurrencyCode
+from . import PaymentInstrument19Choice
+from . import PaymentInstrument24Choice
+from . import PercentageBoundedRate
 
 class PaymentInstrument17(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class PaymentInstrument17(base_types._BaseFieldType):
 
 	@DvddPctg.setter
 	def DvddPctg(self, value):
-		self._DvddPctg = value if type(value) != base_types.auto else self.make_default("DvddPctg")
+		self._DvddPctg = value if value is not None else base_types.UninitialisedField(self, 'DvddPctg', PercentageBoundedRate, False)
 
 	@DvddPctg.deleter
 	def DvddPctg(self):
 		del self._DvddPctg
-		self._DvddPctg = None
+		self._DvddPctg = base_types.UninitialisedField(self, 'DvddPctg', PercentageBoundedRate, False)
 
 	@property
 	def DvddPmtInstrm(self):
@@ -29,12 +29,12 @@ class PaymentInstrument17(base_types._BaseFieldType):
 
 	@DvddPmtInstrm.setter
 	def DvddPmtInstrm(self, value):
-		self._DvddPmtInstrm = value if type(value) != base_types.auto else self.make_default("DvddPmtInstrm")
+		self._DvddPmtInstrm = value if value is not None else base_types.UninitialisedField(self, 'DvddPmtInstrm', PaymentInstrument19Choice, False)
 
 	@DvddPmtInstrm.deleter
 	def DvddPmtInstrm(self):
 		del self._DvddPmtInstrm
-		self._DvddPmtInstrm = None
+		self._DvddPmtInstrm = base_types.UninitialisedField(self, 'DvddPmtInstrm', PaymentInstrument19Choice, False)
 
 	@property
 	def IntrstPmtInstrm(self):
@@ -42,12 +42,12 @@ class PaymentInstrument17(base_types._BaseFieldType):
 
 	@IntrstPmtInstrm.setter
 	def IntrstPmtInstrm(self, value):
-		self._IntrstPmtInstrm = value if type(value) != base_types.auto else self.make_default("IntrstPmtInstrm")
+		self._IntrstPmtInstrm = value if value is not None else base_types.UninitialisedField(self, 'IntrstPmtInstrm', PaymentInstrument19Choice, False)
 
 	@IntrstPmtInstrm.deleter
 	def IntrstPmtInstrm(self):
 		del self._IntrstPmtInstrm
-		self._IntrstPmtInstrm = None
+		self._IntrstPmtInstrm = base_types.UninitialisedField(self, 'IntrstPmtInstrm', PaymentInstrument19Choice, False)
 
 	@property
 	def RedPmtInstrm(self):
@@ -55,12 +55,12 @@ class PaymentInstrument17(base_types._BaseFieldType):
 
 	@RedPmtInstrm.setter
 	def RedPmtInstrm(self, value):
-		self._RedPmtInstrm = value if type(value) != base_types.auto else self.make_default("RedPmtInstrm")
+		self._RedPmtInstrm = value if value is not None else base_types.UninitialisedField(self, 'RedPmtInstrm', PaymentInstrument19Choice, False)
 
 	@RedPmtInstrm.deleter
 	def RedPmtInstrm(self):
 		del self._RedPmtInstrm
-		self._RedPmtInstrm = None
+		self._RedPmtInstrm = base_types.UninitialisedField(self, 'RedPmtInstrm', PaymentInstrument19Choice, False)
 
 	@property
 	def SbcptPmtInstrm(self):
@@ -68,12 +68,12 @@ class PaymentInstrument17(base_types._BaseFieldType):
 
 	@SbcptPmtInstrm.setter
 	def SbcptPmtInstrm(self, value):
-		self._SbcptPmtInstrm = value if type(value) != base_types.auto else self.make_default("SbcptPmtInstrm")
+		self._SbcptPmtInstrm = value if value is not None else base_types.UninitialisedField(self, 'SbcptPmtInstrm', PaymentInstrument24Choice, False)
 
 	@SbcptPmtInstrm.deleter
 	def SbcptPmtInstrm(self):
 		del self._SbcptPmtInstrm
-		self._SbcptPmtInstrm = None
+		self._SbcptPmtInstrm = base_types.UninitialisedField(self, 'SbcptPmtInstrm', PaymentInstrument24Choice, False)
 
 	@property
 	def SttlmCcy(self):
@@ -81,12 +81,12 @@ class PaymentInstrument17(base_types._BaseFieldType):
 
 	@SttlmCcy.setter
 	def SttlmCcy(self, value):
-		self._SttlmCcy = value if type(value) != base_types.auto else self.make_default("SttlmCcy")
+		self._SttlmCcy = value if value is not None else base_types.UninitialisedField(self, 'SttlmCcy', ActiveCurrencyCode, False)
 
 	@SttlmCcy.deleter
 	def SttlmCcy(self):
 		del self._SttlmCcy
-		self._SttlmCcy = None
+		self._SttlmCcy = base_types.UninitialisedField(self, 'SttlmCcy', ActiveCurrencyCode, False)
 
 	@property
 	def SvgsPlanPmtInstrm(self):
@@ -94,12 +94,12 @@ class PaymentInstrument17(base_types._BaseFieldType):
 
 	@SvgsPlanPmtInstrm.setter
 	def SvgsPlanPmtInstrm(self, value):
-		self._SvgsPlanPmtInstrm = value if type(value) != base_types.auto else self.make_default("SvgsPlanPmtInstrm")
+		self._SvgsPlanPmtInstrm = value if value is not None else base_types.UninitialisedField(self, 'SvgsPlanPmtInstrm', PaymentInstrument24Choice, False)
 
 	@SvgsPlanPmtInstrm.deleter
 	def SvgsPlanPmtInstrm(self):
 		del self._SvgsPlanPmtInstrm
-		self._SvgsPlanPmtInstrm = None
+		self._SvgsPlanPmtInstrm = base_types.UninitialisedField(self, 'SvgsPlanPmtInstrm', PaymentInstrument24Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DvddPctg', type=PercentageBoundedRate, min=0, max=1, mutex_group=None, array=False),

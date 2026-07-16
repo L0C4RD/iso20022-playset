@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Exact4AlphaNumericText import Exact4AlphaNumericText
-from ._ISODate import ISODate
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import Exact4AlphaNumericText
+from . import ISODate
+from . import TrueFalseIndicator
 
 class SystemSecuritiesAccount5(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SystemSecuritiesAccount5(base_types._BaseFieldType):
 
 	@ClsgDt.setter
 	def ClsgDt(self, value):
-		self._ClsgDt = value if type(value) != base_types.auto else self.make_default("ClsgDt")
+		self._ClsgDt = value if value is not None else base_types.UninitialisedField(self, 'ClsgDt', ISODate, False)
 
 	@ClsgDt.deleter
 	def ClsgDt(self):
 		del self._ClsgDt
-		self._ClsgDt = None
+		self._ClsgDt = base_types.UninitialisedField(self, 'ClsgDt', ISODate, False)
 
 	@property
 	def EndInvstrFlg(self):
@@ -28,12 +28,12 @@ class SystemSecuritiesAccount5(base_types._BaseFieldType):
 
 	@EndInvstrFlg.setter
 	def EndInvstrFlg(self, value):
-		self._EndInvstrFlg = value if type(value) != base_types.auto else self.make_default("EndInvstrFlg")
+		self._EndInvstrFlg = value if value is not None else base_types.UninitialisedField(self, 'EndInvstrFlg', Exact4AlphaNumericText, False)
 
 	@EndInvstrFlg.deleter
 	def EndInvstrFlg(self):
 		del self._EndInvstrFlg
-		self._EndInvstrFlg = None
+		self._EndInvstrFlg = base_types.UninitialisedField(self, 'EndInvstrFlg', Exact4AlphaNumericText, False)
 
 	@property
 	def HldInd(self):
@@ -41,12 +41,12 @@ class SystemSecuritiesAccount5(base_types._BaseFieldType):
 
 	@HldInd.setter
 	def HldInd(self, value):
-		self._HldInd = value if type(value) != base_types.auto else self.make_default("HldInd")
+		self._HldInd = value if value is not None else base_types.UninitialisedField(self, 'HldInd', TrueFalseIndicator, False)
 
 	@HldInd.deleter
 	def HldInd(self):
 		del self._HldInd
-		self._HldInd = None
+		self._HldInd = base_types.UninitialisedField(self, 'HldInd', TrueFalseIndicator, False)
 
 	@property
 	def NegPos(self):
@@ -54,12 +54,12 @@ class SystemSecuritiesAccount5(base_types._BaseFieldType):
 
 	@NegPos.setter
 	def NegPos(self, value):
-		self._NegPos = value if type(value) != base_types.auto else self.make_default("NegPos")
+		self._NegPos = value if value is not None else base_types.UninitialisedField(self, 'NegPos', TrueFalseIndicator, False)
 
 	@NegPos.deleter
 	def NegPos(self):
 		del self._NegPos
-		self._NegPos = None
+		self._NegPos = base_types.UninitialisedField(self, 'NegPos', TrueFalseIndicator, False)
 
 	@property
 	def PricgSchme(self):
@@ -67,12 +67,12 @@ class SystemSecuritiesAccount5(base_types._BaseFieldType):
 
 	@PricgSchme.setter
 	def PricgSchme(self, value):
-		self._PricgSchme = value if type(value) != base_types.auto else self.make_default("PricgSchme")
+		self._PricgSchme = value if value is not None else base_types.UninitialisedField(self, 'PricgSchme', Exact4AlphaNumericText, False)
 
 	@PricgSchme.deleter
 	def PricgSchme(self):
 		del self._PricgSchme
-		self._PricgSchme = None
+		self._PricgSchme = base_types.UninitialisedField(self, 'PricgSchme', Exact4AlphaNumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClsgDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),

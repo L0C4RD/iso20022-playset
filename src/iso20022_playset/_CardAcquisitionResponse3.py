@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CustomerOrder1 import CustomerOrder1
-from ._LanguageCode import LanguageCode
-from ._LoyaltyAccount3 import LoyaltyAccount3
-from ._Max35Text import Max35Text
-from ._TransactionIdentifier1 import TransactionIdentifier1
+from . import CustomerOrder1
+from . import LanguageCode
+from . import LoyaltyAccount3
+from . import Max35Text
+from . import TransactionIdentifier1
 
 class CardAcquisitionResponse3(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class CardAcquisitionResponse3(base_types._BaseFieldType):
 
 	@CstmrLang.setter
 	def CstmrLang(self, value):
-		self._CstmrLang = value if type(value) != base_types.auto else self.make_default("CstmrLang")
+		self._CstmrLang = value if value is not None else base_types.UninitialisedField(self, 'CstmrLang', LanguageCode, False)
 
 	@CstmrLang.deleter
 	def CstmrLang(self):
 		del self._CstmrLang
-		self._CstmrLang = None
+		self._CstmrLang = base_types.UninitialisedField(self, 'CstmrLang', LanguageCode, False)
 
 	@property
 	def CstmrOrdr(self):
@@ -30,12 +30,12 @@ class CardAcquisitionResponse3(base_types._BaseFieldType):
 
 	@CstmrOrdr.setter
 	def CstmrOrdr(self, value):
-		self._CstmrOrdr = value if type(value) != base_types.auto else self.make_default("CstmrOrdr")
+		self._CstmrOrdr = value if value is not None else base_types.UninitialisedField(self, 'CstmrOrdr', CustomerOrder1, True)
 
 	@CstmrOrdr.deleter
 	def CstmrOrdr(self):
 		del self._CstmrOrdr
-		self._CstmrOrdr = None
+		self._CstmrOrdr = base_types.UninitialisedField(self, 'CstmrOrdr', CustomerOrder1, True)
 
 	@property
 	def LltyAcct(self):
@@ -43,12 +43,12 @@ class CardAcquisitionResponse3(base_types._BaseFieldType):
 
 	@LltyAcct.setter
 	def LltyAcct(self, value):
-		self._LltyAcct = value if type(value) != base_types.auto else self.make_default("LltyAcct")
+		self._LltyAcct = value if value is not None else base_types.UninitialisedField(self, 'LltyAcct', LoyaltyAccount3, True)
 
 	@LltyAcct.deleter
 	def LltyAcct(self):
 		del self._LltyAcct
-		self._LltyAcct = None
+		self._LltyAcct = base_types.UninitialisedField(self, 'LltyAcct', LoyaltyAccount3, True)
 
 	@property
 	def POITxId(self):
@@ -56,12 +56,12 @@ class CardAcquisitionResponse3(base_types._BaseFieldType):
 
 	@POITxId.setter
 	def POITxId(self, value):
-		self._POITxId = value if type(value) != base_types.auto else self.make_default("POITxId")
+		self._POITxId = value if value is not None else base_types.UninitialisedField(self, 'POITxId', TransactionIdentifier1, False)
 
 	@POITxId.deleter
 	def POITxId(self):
 		del self._POITxId
-		self._POITxId = None
+		self._POITxId = base_types.UninitialisedField(self, 'POITxId', TransactionIdentifier1, False)
 
 	@property
 	def PmtBrnd(self):
@@ -69,12 +69,12 @@ class CardAcquisitionResponse3(base_types._BaseFieldType):
 
 	@PmtBrnd.setter
 	def PmtBrnd(self, value):
-		self._PmtBrnd = value if type(value) != base_types.auto else self.make_default("PmtBrnd")
+		self._PmtBrnd = value if value is not None else base_types.UninitialisedField(self, 'PmtBrnd', Max35Text, True)
 
 	@PmtBrnd.deleter
 	def PmtBrnd(self):
 		del self._PmtBrnd
-		self._PmtBrnd = None
+		self._PmtBrnd = base_types.UninitialisedField(self, 'PmtBrnd', Max35Text, True)
 
 	@property
 	def SaleTxId(self):
@@ -82,12 +82,12 @@ class CardAcquisitionResponse3(base_types._BaseFieldType):
 
 	@SaleTxId.setter
 	def SaleTxId(self, value):
-		self._SaleTxId = value if type(value) != base_types.auto else self.make_default("SaleTxId")
+		self._SaleTxId = value if value is not None else base_types.UninitialisedField(self, 'SaleTxId', TransactionIdentifier1, False)
 
 	@SaleTxId.deleter
 	def SaleTxId(self):
 		del self._SaleTxId
-		self._SaleTxId = None
+		self._SaleTxId = base_types.UninitialisedField(self, 'SaleTxId', TransactionIdentifier1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CstmrLang', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),

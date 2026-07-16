@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContactIdentification4 import ContactIdentification4
-from ._PartyIdentification2Choice import PartyIdentification2Choice
+from . import ContactIdentification4
+from . import PartyIdentification2Choice
 
 class ContactPerson1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ContactPerson1(base_types._BaseFieldType):
 
 	@CtctPrsn.setter
 	def CtctPrsn(self, value):
-		self._CtctPrsn = value if type(value) != base_types.auto else self.make_default("CtctPrsn")
+		self._CtctPrsn = value if value is not None else base_types.UninitialisedField(self, 'CtctPrsn', ContactIdentification4, False)
 
 	@CtctPrsn.deleter
 	def CtctPrsn(self):
 		del self._CtctPrsn
-		self._CtctPrsn = None
+		self._CtctPrsn = base_types.UninitialisedField(self, 'CtctPrsn', ContactIdentification4, False)
 
 	@property
 	def InstnId(self):
@@ -27,12 +27,12 @@ class ContactPerson1(base_types._BaseFieldType):
 
 	@InstnId.setter
 	def InstnId(self, value):
-		self._InstnId = value if type(value) != base_types.auto else self.make_default("InstnId")
+		self._InstnId = value if value is not None else base_types.UninitialisedField(self, 'InstnId', PartyIdentification2Choice, False)
 
 	@InstnId.deleter
 	def InstnId(self):
 		del self._InstnId
-		self._InstnId = None
+		self._InstnId = base_types.UninitialisedField(self, 'InstnId', PartyIdentification2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtctPrsn', type=ContactIdentification4, min=1, max=1, mutex_group=None, array=False),

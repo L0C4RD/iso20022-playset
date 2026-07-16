@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionDeactivationInstructionProcessingStatus1 import CorporateActionDeactivationInstructionProcessingStatus1
-from ._CorporateActionDeactivationInstructionRejectionStatus1 import CorporateActionDeactivationInstructionRejectionStatus1
-from ._CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
-from ._Exact3NumericText import Exact3NumericText
+from . import CorporateActionDeactivationInstructionProcessingStatus1
+from . import CorporateActionDeactivationInstructionRejectionStatus1
+from . import CorporateActionOption1FormatChoice
+from . import Exact3NumericText
 
 class CorporateActionDeactivationInstructionStatus1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CorporateActionDeactivationInstructionStatus1(base_types._BaseFieldType):
 
 	@OptnNb.setter
 	def OptnNb(self, value):
-		self._OptnNb = value if type(value) != base_types.auto else self.make_default("OptnNb")
+		self._OptnNb = value if value is not None else base_types.UninitialisedField(self, 'OptnNb', Exact3NumericText, False)
 
 	@OptnNb.deleter
 	def OptnNb(self):
 		del self._OptnNb
-		self._OptnNb = None
+		self._OptnNb = base_types.UninitialisedField(self, 'OptnNb', Exact3NumericText, False)
 
 	@property
 	def OptnTp(self):
@@ -29,12 +29,12 @@ class CorporateActionDeactivationInstructionStatus1(base_types._BaseFieldType):
 
 	@OptnTp.setter
 	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != base_types.auto else self.make_default("OptnTp")
+		self._OptnTp = value if value is not None else base_types.UninitialisedField(self, 'OptnTp', CorporateActionOption1FormatChoice, False)
 
 	@OptnTp.deleter
 	def OptnTp(self):
 		del self._OptnTp
-		self._OptnTp = None
+		self._OptnTp = base_types.UninitialisedField(self, 'OptnTp', CorporateActionOption1FormatChoice, False)
 
 	@property
 	def PrcdSts(self):
@@ -42,12 +42,12 @@ class CorporateActionDeactivationInstructionStatus1(base_types._BaseFieldType):
 
 	@PrcdSts.setter
 	def PrcdSts(self, value):
-		self._PrcdSts = value if type(value) != base_types.auto else self.make_default("PrcdSts")
+		self._PrcdSts = value if value is not None else base_types.UninitialisedField(self, 'PrcdSts', CorporateActionDeactivationInstructionProcessingStatus1, False)
 
 	@PrcdSts.deleter
 	def PrcdSts(self):
 		del self._PrcdSts
-		self._PrcdSts = None
+		self._PrcdSts = base_types.UninitialisedField(self, 'PrcdSts', CorporateActionDeactivationInstructionProcessingStatus1, False)
 
 	@property
 	def RjctdSts(self):
@@ -55,12 +55,12 @@ class CorporateActionDeactivationInstructionStatus1(base_types._BaseFieldType):
 
 	@RjctdSts.setter
 	def RjctdSts(self, value):
-		self._RjctdSts = value if type(value) != base_types.auto else self.make_default("RjctdSts")
+		self._RjctdSts = value if value is not None else base_types.UninitialisedField(self, 'RjctdSts', CorporateActionDeactivationInstructionRejectionStatus1, False)
 
 	@RjctdSts.deleter
 	def RjctdSts(self):
 		del self._RjctdSts
-		self._RjctdSts = None
+		self._RjctdSts = base_types.UninitialisedField(self, 'RjctdSts', CorporateActionDeactivationInstructionRejectionStatus1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=0, max=1, mutex_group=None, array=False),

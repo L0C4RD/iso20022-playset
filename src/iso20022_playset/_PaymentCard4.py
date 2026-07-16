@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Exact3NumericText import Exact3NumericText
-from ._GenericIdentification1 import GenericIdentification1
-from ._Max70Text import Max70Text
-from ._PlainCardData1 import PlainCardData1
+from . import Exact3NumericText
+from . import GenericIdentification1
+from . import Max70Text
+from . import PlainCardData1
 
 class PaymentCard4(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class PaymentCard4(base_types._BaseFieldType):
 
 	@AddtlCardData.setter
 	def AddtlCardData(self, value):
-		self._AddtlCardData = value if type(value) != base_types.auto else self.make_default("AddtlCardData")
+		self._AddtlCardData = value if value is not None else base_types.UninitialisedField(self, 'AddtlCardData', Max70Text, False)
 
 	@AddtlCardData.deleter
 	def AddtlCardData(self):
 		del self._AddtlCardData
-		self._AddtlCardData = None
+		self._AddtlCardData = base_types.UninitialisedField(self, 'AddtlCardData', Max70Text, False)
 
 	@property
 	def CardBrnd(self):
@@ -29,12 +29,12 @@ class PaymentCard4(base_types._BaseFieldType):
 
 	@CardBrnd.setter
 	def CardBrnd(self, value):
-		self._CardBrnd = value if type(value) != base_types.auto else self.make_default("CardBrnd")
+		self._CardBrnd = value if value is not None else base_types.UninitialisedField(self, 'CardBrnd', GenericIdentification1, False)
 
 	@CardBrnd.deleter
 	def CardBrnd(self):
 		del self._CardBrnd
-		self._CardBrnd = None
+		self._CardBrnd = base_types.UninitialisedField(self, 'CardBrnd', GenericIdentification1, False)
 
 	@property
 	def CardCtryCd(self):
@@ -42,12 +42,12 @@ class PaymentCard4(base_types._BaseFieldType):
 
 	@CardCtryCd.setter
 	def CardCtryCd(self, value):
-		self._CardCtryCd = value if type(value) != base_types.auto else self.make_default("CardCtryCd")
+		self._CardCtryCd = value if value is not None else base_types.UninitialisedField(self, 'CardCtryCd', Exact3NumericText, False)
 
 	@CardCtryCd.deleter
 	def CardCtryCd(self):
 		del self._CardCtryCd
-		self._CardCtryCd = None
+		self._CardCtryCd = base_types.UninitialisedField(self, 'CardCtryCd', Exact3NumericText, False)
 
 	@property
 	def PlainCardData(self):
@@ -55,12 +55,12 @@ class PaymentCard4(base_types._BaseFieldType):
 
 	@PlainCardData.setter
 	def PlainCardData(self, value):
-		self._PlainCardData = value if type(value) != base_types.auto else self.make_default("PlainCardData")
+		self._PlainCardData = value if value is not None else base_types.UninitialisedField(self, 'PlainCardData', PlainCardData1, False)
 
 	@PlainCardData.deleter
 	def PlainCardData(self):
 		del self._PlainCardData
-		self._PlainCardData = None
+		self._PlainCardData = base_types.UninitialisedField(self, 'PlainCardData', PlainCardData1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlCardData', type=Max70Text, min=0, max=1, mutex_group=None, array=False),

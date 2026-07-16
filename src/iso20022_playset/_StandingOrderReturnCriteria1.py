@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RequestedIndicator import RequestedIndicator
+from . import RequestedIndicator
 
 class StandingOrderReturnCriteria1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class StandingOrderReturnCriteria1(base_types._BaseFieldType):
 
 	@AssoctdPoolAcct.setter
 	def AssoctdPoolAcct(self, value):
-		self._AssoctdPoolAcct = value if type(value) != base_types.auto else self.make_default("AssoctdPoolAcct")
+		self._AssoctdPoolAcct = value if value is not None else base_types.UninitialisedField(self, 'AssoctdPoolAcct', RequestedIndicator, False)
 
 	@AssoctdPoolAcct.deleter
 	def AssoctdPoolAcct(self):
 		del self._AssoctdPoolAcct
-		self._AssoctdPoolAcct = None
+		self._AssoctdPoolAcct = base_types.UninitialisedField(self, 'AssoctdPoolAcct', RequestedIndicator, False)
 
 	@property
 	def CcyInd(self):
@@ -26,12 +26,12 @@ class StandingOrderReturnCriteria1(base_types._BaseFieldType):
 
 	@CcyInd.setter
 	def CcyInd(self, value):
-		self._CcyInd = value if type(value) != base_types.auto else self.make_default("CcyInd")
+		self._CcyInd = value if value is not None else base_types.UninitialisedField(self, 'CcyInd', RequestedIndicator, False)
 
 	@CcyInd.deleter
 	def CcyInd(self):
 		del self._CcyInd
-		self._CcyInd = None
+		self._CcyInd = base_types.UninitialisedField(self, 'CcyInd', RequestedIndicator, False)
 
 	@property
 	def CdtrAcctInd(self):
@@ -39,12 +39,12 @@ class StandingOrderReturnCriteria1(base_types._BaseFieldType):
 
 	@CdtrAcctInd.setter
 	def CdtrAcctInd(self, value):
-		self._CdtrAcctInd = value if type(value) != base_types.auto else self.make_default("CdtrAcctInd")
+		self._CdtrAcctInd = value if value is not None else base_types.UninitialisedField(self, 'CdtrAcctInd', RequestedIndicator, False)
 
 	@CdtrAcctInd.deleter
 	def CdtrAcctInd(self):
 		del self._CdtrAcctInd
-		self._CdtrAcctInd = None
+		self._CdtrAcctInd = base_types.UninitialisedField(self, 'CdtrAcctInd', RequestedIndicator, False)
 
 	@property
 	def DbtrAcctInd(self):
@@ -52,12 +52,12 @@ class StandingOrderReturnCriteria1(base_types._BaseFieldType):
 
 	@DbtrAcctInd.setter
 	def DbtrAcctInd(self, value):
-		self._DbtrAcctInd = value if type(value) != base_types.auto else self.make_default("DbtrAcctInd")
+		self._DbtrAcctInd = value if value is not None else base_types.UninitialisedField(self, 'DbtrAcctInd', RequestedIndicator, False)
 
 	@DbtrAcctInd.deleter
 	def DbtrAcctInd(self):
 		del self._DbtrAcctInd
-		self._DbtrAcctInd = None
+		self._DbtrAcctInd = base_types.UninitialisedField(self, 'DbtrAcctInd', RequestedIndicator, False)
 
 	@property
 	def ExctnTpInd(self):
@@ -65,12 +65,12 @@ class StandingOrderReturnCriteria1(base_types._BaseFieldType):
 
 	@ExctnTpInd.setter
 	def ExctnTpInd(self, value):
-		self._ExctnTpInd = value if type(value) != base_types.auto else self.make_default("ExctnTpInd")
+		self._ExctnTpInd = value if value is not None else base_types.UninitialisedField(self, 'ExctnTpInd', RequestedIndicator, False)
 
 	@ExctnTpInd.deleter
 	def ExctnTpInd(self):
 		del self._ExctnTpInd
-		self._ExctnTpInd = None
+		self._ExctnTpInd = base_types.UninitialisedField(self, 'ExctnTpInd', RequestedIndicator, False)
 
 	@property
 	def FrqcyInd(self):
@@ -78,12 +78,12 @@ class StandingOrderReturnCriteria1(base_types._BaseFieldType):
 
 	@FrqcyInd.setter
 	def FrqcyInd(self, value):
-		self._FrqcyInd = value if type(value) != base_types.auto else self.make_default("FrqcyInd")
+		self._FrqcyInd = value if value is not None else base_types.UninitialisedField(self, 'FrqcyInd', RequestedIndicator, False)
 
 	@FrqcyInd.deleter
 	def FrqcyInd(self):
 		del self._FrqcyInd
-		self._FrqcyInd = None
+		self._FrqcyInd = base_types.UninitialisedField(self, 'FrqcyInd', RequestedIndicator, False)
 
 	@property
 	def LkSetIdInd(self):
@@ -91,12 +91,12 @@ class StandingOrderReturnCriteria1(base_types._BaseFieldType):
 
 	@LkSetIdInd.setter
 	def LkSetIdInd(self, value):
-		self._LkSetIdInd = value if type(value) != base_types.auto else self.make_default("LkSetIdInd")
+		self._LkSetIdInd = value if value is not None else base_types.UninitialisedField(self, 'LkSetIdInd', RequestedIndicator, False)
 
 	@LkSetIdInd.deleter
 	def LkSetIdInd(self):
 		del self._LkSetIdInd
-		self._LkSetIdInd = None
+		self._LkSetIdInd = base_types.UninitialisedField(self, 'LkSetIdInd', RequestedIndicator, False)
 
 	@property
 	def LkSetOrdrIdInd(self):
@@ -104,12 +104,12 @@ class StandingOrderReturnCriteria1(base_types._BaseFieldType):
 
 	@LkSetOrdrIdInd.setter
 	def LkSetOrdrIdInd(self, value):
-		self._LkSetOrdrIdInd = value if type(value) != base_types.auto else self.make_default("LkSetOrdrIdInd")
+		self._LkSetOrdrIdInd = value if value is not None else base_types.UninitialisedField(self, 'LkSetOrdrIdInd', RequestedIndicator, False)
 
 	@LkSetOrdrIdInd.deleter
 	def LkSetOrdrIdInd(self):
 		del self._LkSetOrdrIdInd
-		self._LkSetOrdrIdInd = None
+		self._LkSetOrdrIdInd = base_types.UninitialisedField(self, 'LkSetOrdrIdInd', RequestedIndicator, False)
 
 	@property
 	def LkSetOrdrSeqInd(self):
@@ -117,12 +117,12 @@ class StandingOrderReturnCriteria1(base_types._BaseFieldType):
 
 	@LkSetOrdrSeqInd.setter
 	def LkSetOrdrSeqInd(self, value):
-		self._LkSetOrdrSeqInd = value if type(value) != base_types.auto else self.make_default("LkSetOrdrSeqInd")
+		self._LkSetOrdrSeqInd = value if value is not None else base_types.UninitialisedField(self, 'LkSetOrdrSeqInd', RequestedIndicator, False)
 
 	@LkSetOrdrSeqInd.deleter
 	def LkSetOrdrSeqInd(self):
 		del self._LkSetOrdrSeqInd
-		self._LkSetOrdrSeqInd = None
+		self._LkSetOrdrSeqInd = base_types.UninitialisedField(self, 'LkSetOrdrSeqInd', RequestedIndicator, False)
 
 	@property
 	def RspnsblPtyInd(self):
@@ -130,12 +130,12 @@ class StandingOrderReturnCriteria1(base_types._BaseFieldType):
 
 	@RspnsblPtyInd.setter
 	def RspnsblPtyInd(self, value):
-		self._RspnsblPtyInd = value if type(value) != base_types.auto else self.make_default("RspnsblPtyInd")
+		self._RspnsblPtyInd = value if value is not None else base_types.UninitialisedField(self, 'RspnsblPtyInd', RequestedIndicator, False)
 
 	@RspnsblPtyInd.deleter
 	def RspnsblPtyInd(self):
 		del self._RspnsblPtyInd
-		self._RspnsblPtyInd = None
+		self._RspnsblPtyInd = base_types.UninitialisedField(self, 'RspnsblPtyInd', RequestedIndicator, False)
 
 	@property
 	def StgOrdrIdInd(self):
@@ -143,12 +143,12 @@ class StandingOrderReturnCriteria1(base_types._BaseFieldType):
 
 	@StgOrdrIdInd.setter
 	def StgOrdrIdInd(self, value):
-		self._StgOrdrIdInd = value if type(value) != base_types.auto else self.make_default("StgOrdrIdInd")
+		self._StgOrdrIdInd = value if value is not None else base_types.UninitialisedField(self, 'StgOrdrIdInd', RequestedIndicator, False)
 
 	@StgOrdrIdInd.deleter
 	def StgOrdrIdInd(self):
 		del self._StgOrdrIdInd
-		self._StgOrdrIdInd = None
+		self._StgOrdrIdInd = base_types.UninitialisedField(self, 'StgOrdrIdInd', RequestedIndicator, False)
 
 	@property
 	def SysMmbInd(self):
@@ -156,12 +156,12 @@ class StandingOrderReturnCriteria1(base_types._BaseFieldType):
 
 	@SysMmbInd.setter
 	def SysMmbInd(self, value):
-		self._SysMmbInd = value if type(value) != base_types.auto else self.make_default("SysMmbInd")
+		self._SysMmbInd = value if value is not None else base_types.UninitialisedField(self, 'SysMmbInd', RequestedIndicator, False)
 
 	@SysMmbInd.deleter
 	def SysMmbInd(self):
 		del self._SysMmbInd
-		self._SysMmbInd = None
+		self._SysMmbInd = base_types.UninitialisedField(self, 'SysMmbInd', RequestedIndicator, False)
 
 	@property
 	def TpInd(self):
@@ -169,12 +169,12 @@ class StandingOrderReturnCriteria1(base_types._BaseFieldType):
 
 	@TpInd.setter
 	def TpInd(self, value):
-		self._TpInd = value if type(value) != base_types.auto else self.make_default("TpInd")
+		self._TpInd = value if value is not None else base_types.UninitialisedField(self, 'TpInd', RequestedIndicator, False)
 
 	@TpInd.deleter
 	def TpInd(self):
 		del self._TpInd
-		self._TpInd = None
+		self._TpInd = base_types.UninitialisedField(self, 'TpInd', RequestedIndicator, False)
 
 	@property
 	def TtlAmtInd(self):
@@ -182,12 +182,12 @@ class StandingOrderReturnCriteria1(base_types._BaseFieldType):
 
 	@TtlAmtInd.setter
 	def TtlAmtInd(self, value):
-		self._TtlAmtInd = value if type(value) != base_types.auto else self.make_default("TtlAmtInd")
+		self._TtlAmtInd = value if value is not None else base_types.UninitialisedField(self, 'TtlAmtInd', RequestedIndicator, False)
 
 	@TtlAmtInd.deleter
 	def TtlAmtInd(self):
 		del self._TtlAmtInd
-		self._TtlAmtInd = None
+		self._TtlAmtInd = base_types.UninitialisedField(self, 'TtlAmtInd', RequestedIndicator, False)
 
 	@property
 	def VldToInd(self):
@@ -195,12 +195,12 @@ class StandingOrderReturnCriteria1(base_types._BaseFieldType):
 
 	@VldToInd.setter
 	def VldToInd(self, value):
-		self._VldToInd = value if type(value) != base_types.auto else self.make_default("VldToInd")
+		self._VldToInd = value if value is not None else base_types.UninitialisedField(self, 'VldToInd', RequestedIndicator, False)
 
 	@VldToInd.deleter
 	def VldToInd(self):
 		del self._VldToInd
-		self._VldToInd = None
+		self._VldToInd = base_types.UninitialisedField(self, 'VldToInd', RequestedIndicator, False)
 
 	@property
 	def VldtyFrInd(self):
@@ -208,12 +208,12 @@ class StandingOrderReturnCriteria1(base_types._BaseFieldType):
 
 	@VldtyFrInd.setter
 	def VldtyFrInd(self, value):
-		self._VldtyFrInd = value if type(value) != base_types.auto else self.make_default("VldtyFrInd")
+		self._VldtyFrInd = value if value is not None else base_types.UninitialisedField(self, 'VldtyFrInd', RequestedIndicator, False)
 
 	@VldtyFrInd.deleter
 	def VldtyFrInd(self):
 		del self._VldtyFrInd
-		self._VldtyFrInd = None
+		self._VldtyFrInd = base_types.UninitialisedField(self, 'VldtyFrInd', RequestedIndicator, False)
 
 	@property
 	def ZeroSweepInd(self):
@@ -221,12 +221,12 @@ class StandingOrderReturnCriteria1(base_types._BaseFieldType):
 
 	@ZeroSweepInd.setter
 	def ZeroSweepInd(self, value):
-		self._ZeroSweepInd = value if type(value) != base_types.auto else self.make_default("ZeroSweepInd")
+		self._ZeroSweepInd = value if value is not None else base_types.UninitialisedField(self, 'ZeroSweepInd', RequestedIndicator, False)
 
 	@ZeroSweepInd.deleter
 	def ZeroSweepInd(self):
 		del self._ZeroSweepInd
-		self._ZeroSweepInd = None
+		self._ZeroSweepInd = base_types.UninitialisedField(self, 'ZeroSweepInd', RequestedIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AssoctdPoolAcct', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),

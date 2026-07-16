@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NetworkParameters7 import NetworkParameters7
-from ._POICommunicationType2Code import POICommunicationType2Code
-from ._PartyType7Code import PartyType7Code
-from ._PhysicalInterfaceParameter1 import PhysicalInterfaceParameter1
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import NetworkParameters7
+from . import POICommunicationType2Code
+from . import PartyType7Code
+from . import PhysicalInterfaceParameter1
+from . import TrueFalseIndicator
 
 class CommunicationCharacteristics5(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class CommunicationCharacteristics5(base_types._BaseFieldType):
 
 	@Actv.setter
 	def Actv(self, value):
-		self._Actv = value if type(value) != base_types.auto else self.make_default("Actv")
+		self._Actv = value if value is not None else base_types.UninitialisedField(self, 'Actv', TrueFalseIndicator, False)
 
 	@Actv.deleter
 	def Actv(self):
 		del self._Actv
-		self._Actv = None
+		self._Actv = base_types.UninitialisedField(self, 'Actv', TrueFalseIndicator, False)
 
 	@property
 	def ComTp(self):
@@ -30,12 +30,12 @@ class CommunicationCharacteristics5(base_types._BaseFieldType):
 
 	@ComTp.setter
 	def ComTp(self, value):
-		self._ComTp = value if type(value) != base_types.auto else self.make_default("ComTp")
+		self._ComTp = value if value is not None else base_types.UninitialisedField(self, 'ComTp', POICommunicationType2Code, False)
 
 	@ComTp.deleter
 	def ComTp(self):
 		del self._ComTp
-		self._ComTp = None
+		self._ComTp = base_types.UninitialisedField(self, 'ComTp', POICommunicationType2Code, False)
 
 	@property
 	def Params(self):
@@ -43,12 +43,12 @@ class CommunicationCharacteristics5(base_types._BaseFieldType):
 
 	@Params.setter
 	def Params(self, value):
-		self._Params = value if type(value) != base_types.auto else self.make_default("Params")
+		self._Params = value if value is not None else base_types.UninitialisedField(self, 'Params', NetworkParameters7, False)
 
 	@Params.deleter
 	def Params(self):
 		del self._Params
-		self._Params = None
+		self._Params = base_types.UninitialisedField(self, 'Params', NetworkParameters7, False)
 
 	@property
 	def PhysIntrfc(self):
@@ -56,12 +56,12 @@ class CommunicationCharacteristics5(base_types._BaseFieldType):
 
 	@PhysIntrfc.setter
 	def PhysIntrfc(self, value):
-		self._PhysIntrfc = value if type(value) != base_types.auto else self.make_default("PhysIntrfc")
+		self._PhysIntrfc = value if value is not None else base_types.UninitialisedField(self, 'PhysIntrfc', PhysicalInterfaceParameter1, False)
 
 	@PhysIntrfc.deleter
 	def PhysIntrfc(self):
 		del self._PhysIntrfc
-		self._PhysIntrfc = None
+		self._PhysIntrfc = base_types.UninitialisedField(self, 'PhysIntrfc', PhysicalInterfaceParameter1, False)
 
 	@property
 	def RmotPty(self):
@@ -69,12 +69,12 @@ class CommunicationCharacteristics5(base_types._BaseFieldType):
 
 	@RmotPty.setter
 	def RmotPty(self, value):
-		self._RmotPty = value if type(value) != base_types.auto else self.make_default("RmotPty")
+		self._RmotPty = value if value is not None else base_types.UninitialisedField(self, 'RmotPty', PartyType7Code, True)
 
 	@RmotPty.deleter
 	def RmotPty(self):
 		del self._RmotPty
-		self._RmotPty = None
+		self._RmotPty = base_types.UninitialisedField(self, 'RmotPty', PartyType7Code, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Actv', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),

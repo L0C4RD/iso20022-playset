@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalReferences2 import AdditionalReferences2
-from ._Confirmation1 import Confirmation1
-from ._Header23 import Header23
-from ._MessageIdentification1 import MessageIdentification1
-from ._SupplementaryData1 import SupplementaryData1
-from ._Trade8 import Trade8
-from ._TradePartyIdentification10 import TradePartyIdentification10
-from ._TradePartyIdentification9 import TradePartyIdentification9
+from . import AdditionalReferences2
+from . import Confirmation1
+from . import Header23
+from . import MessageIdentification1
+from . import SupplementaryData1
+from . import Trade8
+from . import TradePartyIdentification10
+from . import TradePartyIdentification9
 
 class ForeignExchangeTradeConfirmationStatusAdviceV02(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class ForeignExchangeTradeConfirmationStatusAdviceV02(base_types._BaseFieldType)
 
 	@AdvcId.setter
 	def AdvcId(self, value):
-		self._AdvcId = value if type(value) != base_types.auto else self.make_default("AdvcId")
+		self._AdvcId = value if value is not None else base_types.UninitialisedField(self, 'AdvcId', MessageIdentification1, False)
 
 	@AdvcId.deleter
 	def AdvcId(self):
 		del self._AdvcId
-		self._AdvcId = None
+		self._AdvcId = base_types.UninitialisedField(self, 'AdvcId', MessageIdentification1, False)
 
 	@property
 	def ConfInf(self):
@@ -33,12 +33,12 @@ class ForeignExchangeTradeConfirmationStatusAdviceV02(base_types._BaseFieldType)
 
 	@ConfInf.setter
 	def ConfInf(self, value):
-		self._ConfInf = value if type(value) != base_types.auto else self.make_default("ConfInf")
+		self._ConfInf = value if value is not None else base_types.UninitialisedField(self, 'ConfInf', Confirmation1, False)
 
 	@ConfInf.deleter
 	def ConfInf(self):
 		del self._ConfInf
-		self._ConfInf = None
+		self._ConfInf = base_types.UninitialisedField(self, 'ConfInf', Confirmation1, False)
 
 	@property
 	def CtrPtySdId(self):
@@ -46,12 +46,12 @@ class ForeignExchangeTradeConfirmationStatusAdviceV02(base_types._BaseFieldType)
 
 	@CtrPtySdId.setter
 	def CtrPtySdId(self, value):
-		self._CtrPtySdId = value if type(value) != base_types.auto else self.make_default("CtrPtySdId")
+		self._CtrPtySdId = value if value is not None else base_types.UninitialisedField(self, 'CtrPtySdId', TradePartyIdentification10, False)
 
 	@CtrPtySdId.deleter
 	def CtrPtySdId(self):
 		del self._CtrPtySdId
-		self._CtrPtySdId = None
+		self._CtrPtySdId = base_types.UninitialisedField(self, 'CtrPtySdId', TradePartyIdentification10, False)
 
 	@property
 	def Hdr(self):
@@ -59,12 +59,12 @@ class ForeignExchangeTradeConfirmationStatusAdviceV02(base_types._BaseFieldType)
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header23, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header23, False)
 
 	@property
 	def Ref(self):
@@ -72,12 +72,12 @@ class ForeignExchangeTradeConfirmationStatusAdviceV02(base_types._BaseFieldType)
 
 	@Ref.setter
 	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+		self._Ref = value if value is not None else base_types.UninitialisedField(self, 'Ref', AdditionalReferences2, False)
 
 	@Ref.deleter
 	def Ref(self):
 		del self._Ref
-		self._Ref = None
+		self._Ref = base_types.UninitialisedField(self, 'Ref', AdditionalReferences2, False)
 
 	@property
 	def SplmtryData(self):
@@ -85,12 +85,12 @@ class ForeignExchangeTradeConfirmationStatusAdviceV02(base_types._BaseFieldType)
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TradDtl(self):
@@ -98,12 +98,12 @@ class ForeignExchangeTradeConfirmationStatusAdviceV02(base_types._BaseFieldType)
 
 	@TradDtl.setter
 	def TradDtl(self, value):
-		self._TradDtl = value if type(value) != base_types.auto else self.make_default("TradDtl")
+		self._TradDtl = value if value is not None else base_types.UninitialisedField(self, 'TradDtl', Trade8, False)
 
 	@TradDtl.deleter
 	def TradDtl(self):
 		del self._TradDtl
-		self._TradDtl = None
+		self._TradDtl = base_types.UninitialisedField(self, 'TradDtl', Trade8, False)
 
 	@property
 	def TradgSdId(self):
@@ -111,12 +111,12 @@ class ForeignExchangeTradeConfirmationStatusAdviceV02(base_types._BaseFieldType)
 
 	@TradgSdId.setter
 	def TradgSdId(self, value):
-		self._TradgSdId = value if type(value) != base_types.auto else self.make_default("TradgSdId")
+		self._TradgSdId = value if value is not None else base_types.UninitialisedField(self, 'TradgSdId', TradePartyIdentification9, False)
 
 	@TradgSdId.deleter
 	def TradgSdId(self):
 		del self._TradgSdId
-		self._TradgSdId = None
+		self._TradgSdId = base_types.UninitialisedField(self, 'TradgSdId', TradePartyIdentification9, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AdvcId', type=MessageIdentification1, min=0, max=1, mutex_group=None, array=False),

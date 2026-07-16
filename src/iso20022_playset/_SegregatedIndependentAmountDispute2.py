@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Dispute1 import Dispute1
-from ._DisputeResolutionType1Choice import DisputeResolutionType1Choice
+from . import Dispute1
+from . import DisputeResolutionType1Choice
 
 class SegregatedIndependentAmountDispute2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SegregatedIndependentAmountDispute2(base_types._BaseFieldType):
 
 	@DsptDtls.setter
 	def DsptDtls(self, value):
-		self._DsptDtls = value if type(value) != base_types.auto else self.make_default("DsptDtls")
+		self._DsptDtls = value if value is not None else base_types.UninitialisedField(self, 'DsptDtls', Dispute1, False)
 
 	@DsptDtls.deleter
 	def DsptDtls(self):
 		del self._DsptDtls
-		self._DsptDtls = None
+		self._DsptDtls = base_types.UninitialisedField(self, 'DsptDtls', Dispute1, False)
 
 	@property
 	def DsptRsltnTp1Chc(self):
@@ -27,12 +27,12 @@ class SegregatedIndependentAmountDispute2(base_types._BaseFieldType):
 
 	@DsptRsltnTp1Chc.setter
 	def DsptRsltnTp1Chc(self, value):
-		self._DsptRsltnTp1Chc = value if type(value) != base_types.auto else self.make_default("DsptRsltnTp1Chc")
+		self._DsptRsltnTp1Chc = value if value is not None else base_types.UninitialisedField(self, 'DsptRsltnTp1Chc', DisputeResolutionType1Choice, True)
 
 	@DsptRsltnTp1Chc.deleter
 	def DsptRsltnTp1Chc(self):
 		del self._DsptRsltnTp1Chc
-		self._DsptRsltnTp1Chc = None
+		self._DsptRsltnTp1Chc = base_types.UninitialisedField(self, 'DsptRsltnTp1Chc', DisputeResolutionType1Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DsptDtls', type=Dispute1, min=1, max=1, mutex_group=None, array=False),

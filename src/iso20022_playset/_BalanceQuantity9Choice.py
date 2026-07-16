@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification56 import GenericIdentification56
-from ._Quantity6Choice import Quantity6Choice
+from . import GenericIdentification56
+from . import Quantity6Choice
 
 class BalanceQuantity9Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class BalanceQuantity9Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+		self._Prtry = value if value is not None else base_types.UninitialisedField(self, 'Prtry', GenericIdentification56, False)
 
 	@Prtry.deleter
 	def Prtry(self):
 		del self._Prtry
-		self._Prtry = None
+		self._Prtry = base_types.UninitialisedField(self, 'Prtry', GenericIdentification56, False)
 
 	@property
 	def Qty(self):
@@ -27,12 +27,12 @@ class BalanceQuantity9Choice(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+		self._Qty = value if value is not None else base_types.UninitialisedField(self, 'Qty', Quantity6Choice, False)
 
 	@Qty.deleter
 	def Qty(self):
 		del self._Qty
-		self._Qty = None
+		self._Qty = base_types.UninitialisedField(self, 'Qty', Quantity6Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification56, min=0, max=1, mutex_group=1, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PriceRateOrAmountChoice import PriceRateOrAmountChoice
-from ._PriceSource2Code import PriceSource2Code
-from ._TypeOfPrice13Code import TypeOfPrice13Code
+from . import PriceRateOrAmountChoice
+from . import PriceSource2Code
+from . import TypeOfPrice13Code
 
 class Price6(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Price6(base_types._BaseFieldType):
 
 	@RateOrAmt.setter
 	def RateOrAmt(self, value):
-		self._RateOrAmt = value if type(value) != base_types.auto else self.make_default("RateOrAmt")
+		self._RateOrAmt = value if value is not None else base_types.UninitialisedField(self, 'RateOrAmt', PriceRateOrAmountChoice, False)
 
 	@RateOrAmt.deleter
 	def RateOrAmt(self):
 		del self._RateOrAmt
-		self._RateOrAmt = None
+		self._RateOrAmt = base_types.UninitialisedField(self, 'RateOrAmt', PriceRateOrAmountChoice, False)
 
 	@property
 	def Src(self):
@@ -28,12 +28,12 @@ class Price6(base_types._BaseFieldType):
 
 	@Src.setter
 	def Src(self, value):
-		self._Src = value if type(value) != base_types.auto else self.make_default("Src")
+		self._Src = value if value is not None else base_types.UninitialisedField(self, 'Src', PriceSource2Code, False)
 
 	@Src.deleter
 	def Src(self):
 		del self._Src
-		self._Src = None
+		self._Src = base_types.UninitialisedField(self, 'Src', PriceSource2Code, False)
 
 	@property
 	def Tp(self):
@@ -41,12 +41,12 @@ class Price6(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', TypeOfPrice13Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', TypeOfPrice13Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RateOrAmt', type=PriceRateOrAmountChoice, min=1, max=1, mutex_group=None, array=False),

@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcceptorConfigurationDataSet6 import AcceptorConfigurationDataSet6
-from ._DataSetCategory19Code import DataSetCategory19Code
-from ._KEKIdentifier5 import KEKIdentifier5
-from ._MaintenanceDelegateAction10 import MaintenanceDelegateAction10
-from ._MaintenanceIdentificationAssociation1 import MaintenanceIdentificationAssociation1
-from ._Max10KBinary import Max10KBinary
-from ._Max3000Binary import Max3000Binary
-from ._Max35Text import Max35Text
-from ._TerminalManagementAction3Code import TerminalManagementAction3Code
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import AcceptorConfigurationDataSet6
+from . import DataSetCategory19Code
+from . import KEKIdentifier5
+from . import MaintenanceDelegateAction10
+from . import MaintenanceIdentificationAssociation1
+from . import Max10KBinary
+from . import Max3000Binary
+from . import Max35Text
+from . import TerminalManagementAction3Code
+from . import TrueFalseIndicator
 
 class MaintenanceDelegation19(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class MaintenanceDelegation19(base_types._BaseFieldType):
 
 	@Cert.setter
 	def Cert(self, value):
-		self._Cert = value if type(value) != base_types.auto else self.make_default("Cert")
+		self._Cert = value if value is not None else base_types.UninitialisedField(self, 'Cert', Max10KBinary, True)
 
 	@Cert.deleter
 	def Cert(self):
 		del self._Cert
-		self._Cert = None
+		self._Cert = base_types.UninitialisedField(self, 'Cert', Max10KBinary, True)
 
 	@property
 	def DlgtdActn(self):
@@ -35,12 +35,12 @@ class MaintenanceDelegation19(base_types._BaseFieldType):
 
 	@DlgtdActn.setter
 	def DlgtdActn(self, value):
-		self._DlgtdActn = value if type(value) != base_types.auto else self.make_default("DlgtdActn")
+		self._DlgtdActn = value if value is not None else base_types.UninitialisedField(self, 'DlgtdActn', MaintenanceDelegateAction10, False)
 
 	@DlgtdActn.deleter
 	def DlgtdActn(self):
 		del self._DlgtdActn
-		self._DlgtdActn = None
+		self._DlgtdActn = base_types.UninitialisedField(self, 'DlgtdActn', MaintenanceDelegateAction10, False)
 
 	@property
 	def DlgtnScpDef(self):
@@ -48,12 +48,12 @@ class MaintenanceDelegation19(base_types._BaseFieldType):
 
 	@DlgtnScpDef.setter
 	def DlgtnScpDef(self, value):
-		self._DlgtnScpDef = value if type(value) != base_types.auto else self.make_default("DlgtnScpDef")
+		self._DlgtnScpDef = value if value is not None else base_types.UninitialisedField(self, 'DlgtnScpDef', Max3000Binary, False)
 
 	@DlgtnScpDef.deleter
 	def DlgtnScpDef(self):
 		del self._DlgtnScpDef
-		self._DlgtnScpDef = None
+		self._DlgtnScpDef = base_types.UninitialisedField(self, 'DlgtnScpDef', Max3000Binary, False)
 
 	@property
 	def DlgtnScpId(self):
@@ -61,12 +61,12 @@ class MaintenanceDelegation19(base_types._BaseFieldType):
 
 	@DlgtnScpId.setter
 	def DlgtnScpId(self, value):
-		self._DlgtnScpId = value if type(value) != base_types.auto else self.make_default("DlgtnScpId")
+		self._DlgtnScpId = value if value is not None else base_types.UninitialisedField(self, 'DlgtnScpId', Max35Text, False)
 
 	@DlgtnScpId.deleter
 	def DlgtnScpId(self):
 		del self._DlgtnScpId
-		self._DlgtnScpId = None
+		self._DlgtnScpId = base_types.UninitialisedField(self, 'DlgtnScpId', Max35Text, False)
 
 	@property
 	def DlgtnTp(self):
@@ -74,12 +74,12 @@ class MaintenanceDelegation19(base_types._BaseFieldType):
 
 	@DlgtnTp.setter
 	def DlgtnTp(self, value):
-		self._DlgtnTp = value if type(value) != base_types.auto else self.make_default("DlgtnTp")
+		self._DlgtnTp = value if value is not None else base_types.UninitialisedField(self, 'DlgtnTp', TerminalManagementAction3Code, False)
 
 	@DlgtnTp.deleter
 	def DlgtnTp(self):
 		del self._DlgtnTp
-		self._DlgtnTp = None
+		self._DlgtnTp = base_types.UninitialisedField(self, 'DlgtnTp', TerminalManagementAction3Code, False)
 
 	@property
 	def MntncSvc(self):
@@ -87,12 +87,12 @@ class MaintenanceDelegation19(base_types._BaseFieldType):
 
 	@MntncSvc.setter
 	def MntncSvc(self, value):
-		self._MntncSvc = value if type(value) != base_types.auto else self.make_default("MntncSvc")
+		self._MntncSvc = value if value is not None else base_types.UninitialisedField(self, 'MntncSvc', DataSetCategory19Code, True)
 
 	@MntncSvc.deleter
 	def MntncSvc(self):
 		del self._MntncSvc
-		self._MntncSvc = None
+		self._MntncSvc = base_types.UninitialisedField(self, 'MntncSvc', DataSetCategory19Code, True)
 
 	@property
 	def POIIdAssoctn(self):
@@ -100,12 +100,12 @@ class MaintenanceDelegation19(base_types._BaseFieldType):
 
 	@POIIdAssoctn.setter
 	def POIIdAssoctn(self, value):
-		self._POIIdAssoctn = value if type(value) != base_types.auto else self.make_default("POIIdAssoctn")
+		self._POIIdAssoctn = value if value is not None else base_types.UninitialisedField(self, 'POIIdAssoctn', MaintenanceIdentificationAssociation1, True)
 
 	@POIIdAssoctn.deleter
 	def POIIdAssoctn(self):
 		del self._POIIdAssoctn
-		self._POIIdAssoctn = None
+		self._POIIdAssoctn = base_types.UninitialisedField(self, 'POIIdAssoctn', MaintenanceIdentificationAssociation1, True)
 
 	@property
 	def POISubset(self):
@@ -113,12 +113,12 @@ class MaintenanceDelegation19(base_types._BaseFieldType):
 
 	@POISubset.setter
 	def POISubset(self, value):
-		self._POISubset = value if type(value) != base_types.auto else self.make_default("POISubset")
+		self._POISubset = value if value is not None else base_types.UninitialisedField(self, 'POISubset', Max35Text, True)
 
 	@POISubset.deleter
 	def POISubset(self):
 		del self._POISubset
-		self._POISubset = None
+		self._POISubset = base_types.UninitialisedField(self, 'POISubset', Max35Text, True)
 
 	@property
 	def ParamDataSet(self):
@@ -126,12 +126,12 @@ class MaintenanceDelegation19(base_types._BaseFieldType):
 
 	@ParamDataSet.setter
 	def ParamDataSet(self, value):
-		self._ParamDataSet = value if type(value) != base_types.auto else self.make_default("ParamDataSet")
+		self._ParamDataSet = value if value is not None else base_types.UninitialisedField(self, 'ParamDataSet', AcceptorConfigurationDataSet6, False)
 
 	@ParamDataSet.deleter
 	def ParamDataSet(self):
 		del self._ParamDataSet
-		self._ParamDataSet = None
+		self._ParamDataSet = base_types.UninitialisedField(self, 'ParamDataSet', AcceptorConfigurationDataSet6, False)
 
 	@property
 	def PrtlDlgtn(self):
@@ -139,12 +139,12 @@ class MaintenanceDelegation19(base_types._BaseFieldType):
 
 	@PrtlDlgtn.setter
 	def PrtlDlgtn(self, value):
-		self._PrtlDlgtn = value if type(value) != base_types.auto else self.make_default("PrtlDlgtn")
+		self._PrtlDlgtn = value if value is not None else base_types.UninitialisedField(self, 'PrtlDlgtn', TrueFalseIndicator, False)
 
 	@PrtlDlgtn.deleter
 	def PrtlDlgtn(self):
 		del self._PrtlDlgtn
-		self._PrtlDlgtn = None
+		self._PrtlDlgtn = base_types.UninitialisedField(self, 'PrtlDlgtn', TrueFalseIndicator, False)
 
 	@property
 	def SmmtrcKey(self):
@@ -152,12 +152,12 @@ class MaintenanceDelegation19(base_types._BaseFieldType):
 
 	@SmmtrcKey.setter
 	def SmmtrcKey(self, value):
-		self._SmmtrcKey = value if type(value) != base_types.auto else self.make_default("SmmtrcKey")
+		self._SmmtrcKey = value if value is not None else base_types.UninitialisedField(self, 'SmmtrcKey', KEKIdentifier5, True)
 
 	@SmmtrcKey.deleter
 	def SmmtrcKey(self):
 		del self._SmmtrcKey
-		self._SmmtrcKey = None
+		self._SmmtrcKey = base_types.UninitialisedField(self, 'SmmtrcKey', KEKIdentifier5, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cert', type=Max10KBinary, min=0, max=None, mutex_group=None, array=True),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DecimalNumber import DecimalNumber
-from ._Number import Number
+from . import DecimalNumber
+from . import Number
 
 class StatisticsTransparency2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class StatisticsTransparency2(base_types._BaseFieldType):
 
 	@TtlNbOfTxsExctd.setter
 	def TtlNbOfTxsExctd(self, value):
-		self._TtlNbOfTxsExctd = value if type(value) != base_types.auto else self.make_default("TtlNbOfTxsExctd")
+		self._TtlNbOfTxsExctd = value if value is not None else base_types.UninitialisedField(self, 'TtlNbOfTxsExctd', Number, False)
 
 	@TtlNbOfTxsExctd.deleter
 	def TtlNbOfTxsExctd(self):
 		del self._TtlNbOfTxsExctd
-		self._TtlNbOfTxsExctd = None
+		self._TtlNbOfTxsExctd = base_types.UninitialisedField(self, 'TtlNbOfTxsExctd', Number, False)
 
 	@property
 	def TtlVolOfTxsExctd(self):
@@ -27,12 +27,12 @@ class StatisticsTransparency2(base_types._BaseFieldType):
 
 	@TtlVolOfTxsExctd.setter
 	def TtlVolOfTxsExctd(self, value):
-		self._TtlVolOfTxsExctd = value if type(value) != base_types.auto else self.make_default("TtlVolOfTxsExctd")
+		self._TtlVolOfTxsExctd = value if value is not None else base_types.UninitialisedField(self, 'TtlVolOfTxsExctd', DecimalNumber, False)
 
 	@TtlVolOfTxsExctd.deleter
 	def TtlVolOfTxsExctd(self):
 		del self._TtlVolOfTxsExctd
-		self._TtlVolOfTxsExctd = None
+		self._TtlVolOfTxsExctd = base_types.UninitialisedField(self, 'TtlVolOfTxsExctd', DecimalNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TtlNbOfTxsExctd', type=Number, min=1, max=1, mutex_group=None, array=False),

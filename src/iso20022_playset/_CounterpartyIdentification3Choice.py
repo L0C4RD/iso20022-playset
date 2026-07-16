@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
-from ._NameAndLocation1 import NameAndLocation1
-from ._SectorAndLocation1 import SectorAndLocation1
+from . import LEIIdentifier
+from . import NameAndLocation1
+from . import SectorAndLocation1
 
 class CounterpartyIdentification3Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CounterpartyIdentification3Choice(base_types._BaseFieldType):
 
 	@LEI.setter
 	def LEI(self, value):
-		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
+		self._LEI = value if value is not None else base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	@LEI.deleter
 	def LEI(self):
 		del self._LEI
-		self._LEI = None
+		self._LEI = base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	@property
 	def NmAndLctn(self):
@@ -28,12 +28,12 @@ class CounterpartyIdentification3Choice(base_types._BaseFieldType):
 
 	@NmAndLctn.setter
 	def NmAndLctn(self, value):
-		self._NmAndLctn = value if type(value) != base_types.auto else self.make_default("NmAndLctn")
+		self._NmAndLctn = value if value is not None else base_types.UninitialisedField(self, 'NmAndLctn', NameAndLocation1, False)
 
 	@NmAndLctn.deleter
 	def NmAndLctn(self):
 		del self._NmAndLctn
-		self._NmAndLctn = None
+		self._NmAndLctn = base_types.UninitialisedField(self, 'NmAndLctn', NameAndLocation1, False)
 
 	@property
 	def SctrAndLctn(self):
@@ -41,12 +41,12 @@ class CounterpartyIdentification3Choice(base_types._BaseFieldType):
 
 	@SctrAndLctn.setter
 	def SctrAndLctn(self, value):
-		self._SctrAndLctn = value if type(value) != base_types.auto else self.make_default("SctrAndLctn")
+		self._SctrAndLctn = value if value is not None else base_types.UninitialisedField(self, 'SctrAndLctn', SectorAndLocation1, False)
 
 	@SctrAndLctn.deleter
 	def SctrAndLctn(self):
 		del self._SctrAndLctn
-		self._SctrAndLctn = None
+		self._SctrAndLctn = base_types.UninitialisedField(self, 'SctrAndLctn', SectorAndLocation1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LEI', type=LEIIdentifier, min=0, max=1, mutex_group=1, array=False),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActionMessage11 import ActionMessage11
-from ._LanguageCode import LanguageCode
-from ._RetailerEvent7 import RetailerEvent7
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ActionMessage11
+from . import LanguageCode
+from . import RetailerEvent7
+from . import TrueFalseIndicator
 
 class EventNotificationData7(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class EventNotificationData7(base_types._BaseFieldType):
 
 	@CstmrLang.setter
 	def CstmrLang(self, value):
-		self._CstmrLang = value if type(value) != base_types.auto else self.make_default("CstmrLang")
+		self._CstmrLang = value if value is not None else base_types.UninitialisedField(self, 'CstmrLang', LanguageCode, False)
 
 	@CstmrLang.deleter
 	def CstmrLang(self):
 		del self._CstmrLang
-		self._CstmrLang = None
+		self._CstmrLang = base_types.UninitialisedField(self, 'CstmrLang', LanguageCode, False)
 
 	@property
 	def DispOutpt(self):
@@ -29,12 +29,12 @@ class EventNotificationData7(base_types._BaseFieldType):
 
 	@DispOutpt.setter
 	def DispOutpt(self, value):
-		self._DispOutpt = value if type(value) != base_types.auto else self.make_default("DispOutpt")
+		self._DispOutpt = value if value is not None else base_types.UninitialisedField(self, 'DispOutpt', ActionMessage11, False)
 
 	@DispOutpt.deleter
 	def DispOutpt(self):
 		del self._DispOutpt
-		self._DispOutpt = None
+		self._DispOutpt = base_types.UninitialisedField(self, 'DispOutpt', ActionMessage11, False)
 
 	@property
 	def MntncReqrdFlg(self):
@@ -42,12 +42,12 @@ class EventNotificationData7(base_types._BaseFieldType):
 
 	@MntncReqrdFlg.setter
 	def MntncReqrdFlg(self, value):
-		self._MntncReqrdFlg = value if type(value) != base_types.auto else self.make_default("MntncReqrdFlg")
+		self._MntncReqrdFlg = value if value is not None else base_types.UninitialisedField(self, 'MntncReqrdFlg', TrueFalseIndicator, False)
 
 	@MntncReqrdFlg.deleter
 	def MntncReqrdFlg(self):
 		del self._MntncReqrdFlg
-		self._MntncReqrdFlg = None
+		self._MntncReqrdFlg = base_types.UninitialisedField(self, 'MntncReqrdFlg', TrueFalseIndicator, False)
 
 	@property
 	def RtlrEvt(self):
@@ -55,12 +55,12 @@ class EventNotificationData7(base_types._BaseFieldType):
 
 	@RtlrEvt.setter
 	def RtlrEvt(self, value):
-		self._RtlrEvt = value if type(value) != base_types.auto else self.make_default("RtlrEvt")
+		self._RtlrEvt = value if value is not None else base_types.UninitialisedField(self, 'RtlrEvt', RetailerEvent7, False)
 
 	@RtlrEvt.deleter
 	def RtlrEvt(self):
 		del self._RtlrEvt
-		self._RtlrEvt = None
+		self._RtlrEvt = base_types.UninitialisedField(self, 'RtlrEvt', RetailerEvent7, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CstmrLang', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),

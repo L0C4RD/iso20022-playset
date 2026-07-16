@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._Max140Text import Max140Text
-from ._Max2048Text import Max2048Text
-from ._Max256Text import Max256Text
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
-from ._NamePrefix2Code import NamePrefix2Code
-from ._OtherContact1 import OtherContact1
-from ._PhoneNumber import PhoneNumber
-from ._PreferredContactMethod2Code import PreferredContactMethod2Code
+from . import ISODate
+from . import Max140Text
+from . import Max2048Text
+from . import Max256Text
+from . import Max35Text
+from . import Max70Text
+from . import NamePrefix2Code
+from . import OtherContact1
+from . import PhoneNumber
+from . import PreferredContactMethod2Code
 
 class Contact14(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class Contact14(base_types._BaseFieldType):
 
 	@Dept.setter
 	def Dept(self, value):
-		self._Dept = value if type(value) != base_types.auto else self.make_default("Dept")
+		self._Dept = value if value is not None else base_types.UninitialisedField(self, 'Dept', Max70Text, False)
 
 	@Dept.deleter
 	def Dept(self):
 		del self._Dept
-		self._Dept = None
+		self._Dept = base_types.UninitialisedField(self, 'Dept', Max70Text, False)
 
 	@property
 	def EmailAdr(self):
@@ -35,12 +35,12 @@ class Contact14(base_types._BaseFieldType):
 
 	@EmailAdr.setter
 	def EmailAdr(self, value):
-		self._EmailAdr = value if type(value) != base_types.auto else self.make_default("EmailAdr")
+		self._EmailAdr = value if value is not None else base_types.UninitialisedField(self, 'EmailAdr', Max256Text, False)
 
 	@EmailAdr.deleter
 	def EmailAdr(self):
 		del self._EmailAdr
-		self._EmailAdr = None
+		self._EmailAdr = base_types.UninitialisedField(self, 'EmailAdr', Max256Text, False)
 
 	@property
 	def EmailPurp(self):
@@ -48,12 +48,12 @@ class Contact14(base_types._BaseFieldType):
 
 	@EmailPurp.setter
 	def EmailPurp(self, value):
-		self._EmailPurp = value if type(value) != base_types.auto else self.make_default("EmailPurp")
+		self._EmailPurp = value if value is not None else base_types.UninitialisedField(self, 'EmailPurp', Max35Text, False)
 
 	@EmailPurp.deleter
 	def EmailPurp(self):
 		del self._EmailPurp
-		self._EmailPurp = None
+		self._EmailPurp = base_types.UninitialisedField(self, 'EmailPurp', Max35Text, False)
 
 	@property
 	def FaxNb(self):
@@ -61,12 +61,12 @@ class Contact14(base_types._BaseFieldType):
 
 	@FaxNb.setter
 	def FaxNb(self, value):
-		self._FaxNb = value if type(value) != base_types.auto else self.make_default("FaxNb")
+		self._FaxNb = value if value is not None else base_types.UninitialisedField(self, 'FaxNb', PhoneNumber, False)
 
 	@FaxNb.deleter
 	def FaxNb(self):
 		del self._FaxNb
-		self._FaxNb = None
+		self._FaxNb = base_types.UninitialisedField(self, 'FaxNb', PhoneNumber, False)
 
 	@property
 	def JobTitl(self):
@@ -74,12 +74,12 @@ class Contact14(base_types._BaseFieldType):
 
 	@JobTitl.setter
 	def JobTitl(self, value):
-		self._JobTitl = value if type(value) != base_types.auto else self.make_default("JobTitl")
+		self._JobTitl = value if value is not None else base_types.UninitialisedField(self, 'JobTitl', Max35Text, False)
 
 	@JobTitl.deleter
 	def JobTitl(self):
 		del self._JobTitl
-		self._JobTitl = None
+		self._JobTitl = base_types.UninitialisedField(self, 'JobTitl', Max35Text, False)
 
 	@property
 	def MobNb(self):
@@ -87,12 +87,12 @@ class Contact14(base_types._BaseFieldType):
 
 	@MobNb.setter
 	def MobNb(self, value):
-		self._MobNb = value if type(value) != base_types.auto else self.make_default("MobNb")
+		self._MobNb = value if value is not None else base_types.UninitialisedField(self, 'MobNb', PhoneNumber, False)
 
 	@MobNb.deleter
 	def MobNb(self):
 		del self._MobNb
-		self._MobNb = None
+		self._MobNb = base_types.UninitialisedField(self, 'MobNb', PhoneNumber, False)
 
 	@property
 	def Nm(self):
@@ -100,12 +100,12 @@ class Contact14(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max140Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max140Text, False)
 
 	@property
 	def NmPrfx(self):
@@ -113,12 +113,12 @@ class Contact14(base_types._BaseFieldType):
 
 	@NmPrfx.setter
 	def NmPrfx(self, value):
-		self._NmPrfx = value if type(value) != base_types.auto else self.make_default("NmPrfx")
+		self._NmPrfx = value if value is not None else base_types.UninitialisedField(self, 'NmPrfx', NamePrefix2Code, False)
 
 	@NmPrfx.deleter
 	def NmPrfx(self):
 		del self._NmPrfx
-		self._NmPrfx = None
+		self._NmPrfx = base_types.UninitialisedField(self, 'NmPrfx', NamePrefix2Code, False)
 
 	@property
 	def Othr(self):
@@ -126,12 +126,12 @@ class Contact14(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', OtherContact1, True)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', OtherContact1, True)
 
 	@property
 	def PhneNb(self):
@@ -139,12 +139,12 @@ class Contact14(base_types._BaseFieldType):
 
 	@PhneNb.setter
 	def PhneNb(self, value):
-		self._PhneNb = value if type(value) != base_types.auto else self.make_default("PhneNb")
+		self._PhneNb = value if value is not None else base_types.UninitialisedField(self, 'PhneNb', PhoneNumber, False)
 
 	@PhneNb.deleter
 	def PhneNb(self):
 		del self._PhneNb
-		self._PhneNb = None
+		self._PhneNb = base_types.UninitialisedField(self, 'PhneNb', PhoneNumber, False)
 
 	@property
 	def PrefrdMtd(self):
@@ -152,12 +152,12 @@ class Contact14(base_types._BaseFieldType):
 
 	@PrefrdMtd.setter
 	def PrefrdMtd(self, value):
-		self._PrefrdMtd = value if type(value) != base_types.auto else self.make_default("PrefrdMtd")
+		self._PrefrdMtd = value if value is not None else base_types.UninitialisedField(self, 'PrefrdMtd', PreferredContactMethod2Code, False)
 
 	@PrefrdMtd.deleter
 	def PrefrdMtd(self):
 		del self._PrefrdMtd
-		self._PrefrdMtd = None
+		self._PrefrdMtd = base_types.UninitialisedField(self, 'PrefrdMtd', PreferredContactMethod2Code, False)
 
 	@property
 	def Rspnsblty(self):
@@ -165,12 +165,12 @@ class Contact14(base_types._BaseFieldType):
 
 	@Rspnsblty.setter
 	def Rspnsblty(self, value):
-		self._Rspnsblty = value if type(value) != base_types.auto else self.make_default("Rspnsblty")
+		self._Rspnsblty = value if value is not None else base_types.UninitialisedField(self, 'Rspnsblty', Max35Text, False)
 
 	@Rspnsblty.deleter
 	def Rspnsblty(self):
 		del self._Rspnsblty
-		self._Rspnsblty = None
+		self._Rspnsblty = base_types.UninitialisedField(self, 'Rspnsblty', Max35Text, False)
 
 	@property
 	def URLAdr(self):
@@ -178,12 +178,12 @@ class Contact14(base_types._BaseFieldType):
 
 	@URLAdr.setter
 	def URLAdr(self, value):
-		self._URLAdr = value if type(value) != base_types.auto else self.make_default("URLAdr")
+		self._URLAdr = value if value is not None else base_types.UninitialisedField(self, 'URLAdr', Max2048Text, False)
 
 	@URLAdr.deleter
 	def URLAdr(self):
 		del self._URLAdr
-		self._URLAdr = None
+		self._URLAdr = base_types.UninitialisedField(self, 'URLAdr', Max2048Text, False)
 
 	@property
 	def VldFr(self):
@@ -191,12 +191,12 @@ class Contact14(base_types._BaseFieldType):
 
 	@VldFr.setter
 	def VldFr(self, value):
-		self._VldFr = value if type(value) != base_types.auto else self.make_default("VldFr")
+		self._VldFr = value if value is not None else base_types.UninitialisedField(self, 'VldFr', ISODate, False)
 
 	@VldFr.deleter
 	def VldFr(self):
 		del self._VldFr
-		self._VldFr = None
+		self._VldFr = base_types.UninitialisedField(self, 'VldFr', ISODate, False)
 
 	@property
 	def VldTo(self):
@@ -204,12 +204,12 @@ class Contact14(base_types._BaseFieldType):
 
 	@VldTo.setter
 	def VldTo(self, value):
-		self._VldTo = value if type(value) != base_types.auto else self.make_default("VldTo")
+		self._VldTo = value if value is not None else base_types.UninitialisedField(self, 'VldTo', ISODate, False)
 
 	@VldTo.deleter
 	def VldTo(self):
 		del self._VldTo
-		self._VldTo = None
+		self._VldTo = base_types.UninitialisedField(self, 'VldTo', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dept', type=Max70Text, min=0, max=1, mutex_group=None, array=False),

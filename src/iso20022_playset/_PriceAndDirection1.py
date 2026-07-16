@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
-from ._PlusOrMinusIndicator import PlusOrMinusIndicator
+from . import ActiveOrHistoricCurrencyAnd13DecimalAmount
+from . import PlusOrMinusIndicator
 
 class PriceAndDirection1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PriceAndDirection1(base_types._BaseFieldType):
 
 	@Sgn.setter
 	def Sgn(self, value):
-		self._Sgn = value if type(value) != base_types.auto else self.make_default("Sgn")
+		self._Sgn = value if value is not None else base_types.UninitialisedField(self, 'Sgn', PlusOrMinusIndicator, False)
 
 	@Sgn.deleter
 	def Sgn(self):
 		del self._Sgn
-		self._Sgn = None
+		self._Sgn = base_types.UninitialisedField(self, 'Sgn', PlusOrMinusIndicator, False)
 
 	@property
 	def Val(self):
@@ -27,12 +27,12 @@ class PriceAndDirection1(base_types._BaseFieldType):
 
 	@Val.setter
 	def Val(self, value):
-		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
+		self._Val = value if value is not None else base_types.UninitialisedField(self, 'Val', ActiveOrHistoricCurrencyAnd13DecimalAmount, False)
 
 	@Val.deleter
 	def Val(self):
 		del self._Val
-		self._Val = None
+		self._Val = base_types.UninitialisedField(self, 'Val', ActiveOrHistoricCurrencyAnd13DecimalAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Sgn', type=PlusOrMinusIndicator, min=0, max=1, mutex_group=None, array=False),

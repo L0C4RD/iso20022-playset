@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._DecimalNumber import DecimalNumber
-from ._Max30DecimalNumber import Max30DecimalNumber
-from ._PercentageRate import PercentageRate
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import DecimalNumber
+from . import Max30DecimalNumber
+from . import PercentageRate
 
 class FinancialInstrumentQuantity51Choice(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class FinancialInstrumentQuantity51Choice(base_types._BaseFieldType):
 
 	@DgtlTknUnit.setter
 	def DgtlTknUnit(self, value):
-		self._DgtlTknUnit = value if type(value) != base_types.auto else self.make_default("DgtlTknUnit")
+		self._DgtlTknUnit = value if value is not None else base_types.UninitialisedField(self, 'DgtlTknUnit', Max30DecimalNumber, False)
 
 	@DgtlTknUnit.deleter
 	def DgtlTknUnit(self):
 		del self._DgtlTknUnit
-		self._DgtlTknUnit = None
+		self._DgtlTknUnit = base_types.UninitialisedField(self, 'DgtlTknUnit', Max30DecimalNumber, False)
 
 	@property
 	def GrssAmt(self):
@@ -29,12 +29,12 @@ class FinancialInstrumentQuantity51Choice(base_types._BaseFieldType):
 
 	@GrssAmt.setter
 	def GrssAmt(self, value):
-		self._GrssAmt = value if type(value) != base_types.auto else self.make_default("GrssAmt")
+		self._GrssAmt = value if value is not None else base_types.UninitialisedField(self, 'GrssAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@GrssAmt.deleter
 	def GrssAmt(self):
 		del self._GrssAmt
-		self._GrssAmt = None
+		self._GrssAmt = base_types.UninitialisedField(self, 'GrssAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def NetAmt(self):
@@ -42,12 +42,12 @@ class FinancialInstrumentQuantity51Choice(base_types._BaseFieldType):
 
 	@NetAmt.setter
 	def NetAmt(self, value):
-		self._NetAmt = value if type(value) != base_types.auto else self.make_default("NetAmt")
+		self._NetAmt = value if value is not None else base_types.UninitialisedField(self, 'NetAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@NetAmt.deleter
 	def NetAmt(self):
 		del self._NetAmt
-		self._NetAmt = None
+		self._NetAmt = base_types.UninitialisedField(self, 'NetAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def PctgOfTtlRedAmt(self):
@@ -55,12 +55,12 @@ class FinancialInstrumentQuantity51Choice(base_types._BaseFieldType):
 
 	@PctgOfTtlRedAmt.setter
 	def PctgOfTtlRedAmt(self, value):
-		self._PctgOfTtlRedAmt = value if type(value) != base_types.auto else self.make_default("PctgOfTtlRedAmt")
+		self._PctgOfTtlRedAmt = value if value is not None else base_types.UninitialisedField(self, 'PctgOfTtlRedAmt', PercentageRate, False)
 
 	@PctgOfTtlRedAmt.deleter
 	def PctgOfTtlRedAmt(self):
 		del self._PctgOfTtlRedAmt
-		self._PctgOfTtlRedAmt = None
+		self._PctgOfTtlRedAmt = base_types.UninitialisedField(self, 'PctgOfTtlRedAmt', PercentageRate, False)
 
 	@property
 	def UnitsNb(self):
@@ -68,12 +68,12 @@ class FinancialInstrumentQuantity51Choice(base_types._BaseFieldType):
 
 	@UnitsNb.setter
 	def UnitsNb(self, value):
-		self._UnitsNb = value if type(value) != base_types.auto else self.make_default("UnitsNb")
+		self._UnitsNb = value if value is not None else base_types.UninitialisedField(self, 'UnitsNb', DecimalNumber, False)
 
 	@UnitsNb.deleter
 	def UnitsNb(self):
 		del self._UnitsNb
-		self._UnitsNb = None
+		self._UnitsNb = base_types.UninitialisedField(self, 'UnitsNb', DecimalNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DgtlTknUnit', type=Max30DecimalNumber, min=0, max=1, mutex_group=1, array=False),

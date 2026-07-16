@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BillingReportRequestV01 import BillingReportRequestV01
+from . import BillingReportRequestV01
 
 class CAMT_076_001_01():
 
@@ -18,12 +18,12 @@ class CAMT_076_001_01():
 
 		@BllgRptReq.setter
 		def BllgRptReq(self, value):
-			self._BllgRptReq = value if type(value) != base_types.auto else self.make_default("BllgRptReq")
+			self._BllgRptReq = value if value is not None else base_types.UninitialisedField(self, 'BllgRptReq', BillingReportRequestV01, False)
 
 		@BllgRptReq.deleter
 		def BllgRptReq(self):
 			del self._BllgRptReq
-			self._BllgRptReq = None
+			self._BllgRptReq = base_types.UninitialisedField(self, 'BllgRptReq', BillingReportRequestV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='BllgRptReq', type=BillingReportRequestV01, min=1, max=1, mutex_group=None, array=False),

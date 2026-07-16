@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._PaymentStatusCode6Choice import PaymentStatusCode6Choice
-from ._PaymentStatusReason1Choice import PaymentStatusReason1Choice
+from . import DateAndDateTime2Choice
+from . import PaymentStatusCode6Choice
+from . import PaymentStatusReason1Choice
 
 class PaymentStatus6(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PaymentStatus6(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
+		self._Cd = value if value is not None else base_types.UninitialisedField(self, 'Cd', PaymentStatusCode6Choice, False)
 
 	@Cd.deleter
 	def Cd(self):
 		del self._Cd
-		self._Cd = None
+		self._Cd = base_types.UninitialisedField(self, 'Cd', PaymentStatusCode6Choice, False)
 
 	@property
 	def DtTm(self):
@@ -28,12 +28,12 @@ class PaymentStatus6(base_types._BaseFieldType):
 
 	@DtTm.setter
 	def DtTm(self, value):
-		self._DtTm = value if type(value) != base_types.auto else self.make_default("DtTm")
+		self._DtTm = value if value is not None else base_types.UninitialisedField(self, 'DtTm', DateAndDateTime2Choice, False)
 
 	@DtTm.deleter
 	def DtTm(self):
 		del self._DtTm
-		self._DtTm = None
+		self._DtTm = base_types.UninitialisedField(self, 'DtTm', DateAndDateTime2Choice, False)
 
 	@property
 	def Rsn(self):
@@ -41,12 +41,12 @@ class PaymentStatus6(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', PaymentStatusReason1Choice, True)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', PaymentStatusReason1Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cd', type=PaymentStatusCode6Choice, min=0, max=1, mutex_group=None, array=False),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateFormat58Choice import DateFormat58Choice
-from ._InvestorTypeIdentification1 import InvestorTypeIdentification1
-from ._ParticipationMethod3Choice import ParticipationMethod3Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import DateFormat58Choice
+from . import InvestorTypeIdentification1
+from . import ParticipationMethod3Choice
+from . import YesNoIndicator
 
 class ParticipationMethod3(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ParticipationMethod3(base_types._BaseFieldType):
 
 	@AttndeeEmailReqrdInd.setter
 	def AttndeeEmailReqrdInd(self, value):
-		self._AttndeeEmailReqrdInd = value if type(value) != base_types.auto else self.make_default("AttndeeEmailReqrdInd")
+		self._AttndeeEmailReqrdInd = value if value is not None else base_types.UninitialisedField(self, 'AttndeeEmailReqrdInd', YesNoIndicator, False)
 
 	@AttndeeEmailReqrdInd.deleter
 	def AttndeeEmailReqrdInd(self):
 		del self._AttndeeEmailReqrdInd
-		self._AttndeeEmailReqrdInd = None
+		self._AttndeeEmailReqrdInd = base_types.UninitialisedField(self, 'AttndeeEmailReqrdInd', YesNoIndicator, False)
 
 	@property
 	def InvstrTpId(self):
@@ -29,12 +29,12 @@ class ParticipationMethod3(base_types._BaseFieldType):
 
 	@InvstrTpId.setter
 	def InvstrTpId(self, value):
-		self._InvstrTpId = value if type(value) != base_types.auto else self.make_default("InvstrTpId")
+		self._InvstrTpId = value if value is not None else base_types.UninitialisedField(self, 'InvstrTpId', InvestorTypeIdentification1, True)
 
 	@InvstrTpId.deleter
 	def InvstrTpId(self):
 		del self._InvstrTpId
-		self._InvstrTpId = None
+		self._InvstrTpId = base_types.UninitialisedField(self, 'InvstrTpId', InvestorTypeIdentification1, True)
 
 	@property
 	def IssrDdlnForVtng(self):
@@ -42,12 +42,12 @@ class ParticipationMethod3(base_types._BaseFieldType):
 
 	@IssrDdlnForVtng.setter
 	def IssrDdlnForVtng(self, value):
-		self._IssrDdlnForVtng = value if type(value) != base_types.auto else self.make_default("IssrDdlnForVtng")
+		self._IssrDdlnForVtng = value if value is not None else base_types.UninitialisedField(self, 'IssrDdlnForVtng', DateFormat58Choice, False)
 
 	@IssrDdlnForVtng.deleter
 	def IssrDdlnForVtng(self):
 		del self._IssrDdlnForVtng
-		self._IssrDdlnForVtng = None
+		self._IssrDdlnForVtng = base_types.UninitialisedField(self, 'IssrDdlnForVtng', DateFormat58Choice, False)
 
 	@property
 	def PrtcptnMtd(self):
@@ -55,12 +55,12 @@ class ParticipationMethod3(base_types._BaseFieldType):
 
 	@PrtcptnMtd.setter
 	def PrtcptnMtd(self, value):
-		self._PrtcptnMtd = value if type(value) != base_types.auto else self.make_default("PrtcptnMtd")
+		self._PrtcptnMtd = value if value is not None else base_types.UninitialisedField(self, 'PrtcptnMtd', ParticipationMethod3Choice, False)
 
 	@PrtcptnMtd.deleter
 	def PrtcptnMtd(self):
 		del self._PrtcptnMtd
-		self._PrtcptnMtd = None
+		self._PrtcptnMtd = base_types.UninitialisedField(self, 'PrtcptnMtd', ParticipationMethod3Choice, False)
 
 	@property
 	def RspnDdlnForVtng(self):
@@ -68,12 +68,12 @@ class ParticipationMethod3(base_types._BaseFieldType):
 
 	@RspnDdlnForVtng.setter
 	def RspnDdlnForVtng(self, value):
-		self._RspnDdlnForVtng = value if type(value) != base_types.auto else self.make_default("RspnDdlnForVtng")
+		self._RspnDdlnForVtng = value if value is not None else base_types.UninitialisedField(self, 'RspnDdlnForVtng', DateFormat58Choice, False)
 
 	@RspnDdlnForVtng.deleter
 	def RspnDdlnForVtng(self):
 		del self._RspnDdlnForVtng
-		self._RspnDdlnForVtng = None
+		self._RspnDdlnForVtng = base_types.UninitialisedField(self, 'RspnDdlnForVtng', DateFormat58Choice, False)
 
 	@property
 	def SpprtdByAcctSvcr(self):
@@ -81,12 +81,12 @@ class ParticipationMethod3(base_types._BaseFieldType):
 
 	@SpprtdByAcctSvcr.setter
 	def SpprtdByAcctSvcr(self, value):
-		self._SpprtdByAcctSvcr = value if type(value) != base_types.auto else self.make_default("SpprtdByAcctSvcr")
+		self._SpprtdByAcctSvcr = value if value is not None else base_types.UninitialisedField(self, 'SpprtdByAcctSvcr', YesNoIndicator, False)
 
 	@SpprtdByAcctSvcr.deleter
 	def SpprtdByAcctSvcr(self):
 		del self._SpprtdByAcctSvcr
-		self._SpprtdByAcctSvcr = None
+		self._SpprtdByAcctSvcr = base_types.UninitialisedField(self, 'SpprtdByAcctSvcr', YesNoIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AttndeeEmailReqrdInd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),

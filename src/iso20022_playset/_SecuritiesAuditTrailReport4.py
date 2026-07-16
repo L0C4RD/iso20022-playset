@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AuditTrailOrBusinessError6Choice import AuditTrailOrBusinessError6Choice
-from ._DatePeriodSearch1Choice import DatePeriodSearch1Choice
-from ._SecurityIdentification39 import SecurityIdentification39
+from . import AuditTrailOrBusinessError6Choice
+from . import DatePeriodSearch1Choice
+from . import SecurityIdentification39
 
 class SecuritiesAuditTrailReport4(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SecuritiesAuditTrailReport4(base_types._BaseFieldType):
 
 	@DtPrd.setter
 	def DtPrd(self, value):
-		self._DtPrd = value if type(value) != base_types.auto else self.make_default("DtPrd")
+		self._DtPrd = value if value is not None else base_types.UninitialisedField(self, 'DtPrd', DatePeriodSearch1Choice, False)
 
 	@DtPrd.deleter
 	def DtPrd(self):
 		del self._DtPrd
-		self._DtPrd = None
+		self._DtPrd = base_types.UninitialisedField(self, 'DtPrd', DatePeriodSearch1Choice, False)
 
 	@property
 	def FinInstrmId(self):
@@ -28,12 +28,12 @@ class SecuritiesAuditTrailReport4(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification39, False)
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
 		del self._FinInstrmId
-		self._FinInstrmId = None
+		self._FinInstrmId = base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification39, False)
 
 	@property
 	def SctiesAudtTrlOrErr(self):
@@ -41,12 +41,12 @@ class SecuritiesAuditTrailReport4(base_types._BaseFieldType):
 
 	@SctiesAudtTrlOrErr.setter
 	def SctiesAudtTrlOrErr(self, value):
-		self._SctiesAudtTrlOrErr = value if type(value) != base_types.auto else self.make_default("SctiesAudtTrlOrErr")
+		self._SctiesAudtTrlOrErr = value if value is not None else base_types.UninitialisedField(self, 'SctiesAudtTrlOrErr', AuditTrailOrBusinessError6Choice, False)
 
 	@SctiesAudtTrlOrErr.deleter
 	def SctiesAudtTrlOrErr(self):
 		del self._SctiesAudtTrlOrErr
-		self._SctiesAudtTrlOrErr = None
+		self._SctiesAudtTrlOrErr = base_types.UninitialisedField(self, 'SctiesAudtTrlOrErr', AuditTrailOrBusinessError6Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DtPrd', type=DatePeriodSearch1Choice, min=0, max=1, mutex_group=None, array=False),

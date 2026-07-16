@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection14 import AmountAndDirection14
+from . import AmountAndDirection14
 
 class BalanceAmounts6(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class BalanceAmounts6(base_types._BaseFieldType):
 
 	@BookVal.setter
 	def BookVal(self, value):
-		self._BookVal = value if type(value) != base_types.auto else self.make_default("BookVal")
+		self._BookVal = value if value is not None else base_types.UninitialisedField(self, 'BookVal', AmountAndDirection14, False)
 
 	@BookVal.deleter
 	def BookVal(self):
 		del self._BookVal
-		self._BookVal = None
+		self._BookVal = base_types.UninitialisedField(self, 'BookVal', AmountAndDirection14, False)
 
 	@property
 	def HldgVal(self):
@@ -26,12 +26,12 @@ class BalanceAmounts6(base_types._BaseFieldType):
 
 	@HldgVal.setter
 	def HldgVal(self, value):
-		self._HldgVal = value if type(value) != base_types.auto else self.make_default("HldgVal")
+		self._HldgVal = value if value is not None else base_types.UninitialisedField(self, 'HldgVal', AmountAndDirection14, False)
 
 	@HldgVal.deleter
 	def HldgVal(self):
 		del self._HldgVal
-		self._HldgVal = None
+		self._HldgVal = base_types.UninitialisedField(self, 'HldgVal', AmountAndDirection14, False)
 
 	@property
 	def UrlsdGnLoss(self):
@@ -39,12 +39,12 @@ class BalanceAmounts6(base_types._BaseFieldType):
 
 	@UrlsdGnLoss.setter
 	def UrlsdGnLoss(self, value):
-		self._UrlsdGnLoss = value if type(value) != base_types.auto else self.make_default("UrlsdGnLoss")
+		self._UrlsdGnLoss = value if value is not None else base_types.UninitialisedField(self, 'UrlsdGnLoss', AmountAndDirection14, False)
 
 	@UrlsdGnLoss.deleter
 	def UrlsdGnLoss(self):
 		del self._UrlsdGnLoss
-		self._UrlsdGnLoss = None
+		self._UrlsdGnLoss = base_types.UninitialisedField(self, 'UrlsdGnLoss', AmountAndDirection14, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BookVal', type=AmountAndDirection14, min=0, max=1, mutex_group=None, array=False),

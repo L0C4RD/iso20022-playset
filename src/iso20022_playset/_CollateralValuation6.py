@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ISINOct2015Identifier import ISINOct2015Identifier
+from . import ActiveCurrencyAndAmount
+from . import ISINOct2015Identifier
 
 class CollateralValuation6(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CollateralValuation6(base_types._BaseFieldType):
 
 	@ISIN.setter
 	def ISIN(self, value):
-		self._ISIN = value if type(value) != base_types.auto else self.make_default("ISIN")
+		self._ISIN = value if value is not None else base_types.UninitialisedField(self, 'ISIN', ISINOct2015Identifier, False)
 
 	@ISIN.deleter
 	def ISIN(self):
 		del self._ISIN
-		self._ISIN = None
+		self._ISIN = base_types.UninitialisedField(self, 'ISIN', ISINOct2015Identifier, False)
 
 	@property
 	def NmnlAmt(self):
@@ -27,12 +27,12 @@ class CollateralValuation6(base_types._BaseFieldType):
 
 	@NmnlAmt.setter
 	def NmnlAmt(self, value):
-		self._NmnlAmt = value if type(value) != base_types.auto else self.make_default("NmnlAmt")
+		self._NmnlAmt = value if value is not None else base_types.UninitialisedField(self, 'NmnlAmt', ActiveCurrencyAndAmount, False)
 
 	@NmnlAmt.deleter
 	def NmnlAmt(self):
 		del self._NmnlAmt
-		self._NmnlAmt = None
+		self._NmnlAmt = base_types.UninitialisedField(self, 'NmnlAmt', ActiveCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),

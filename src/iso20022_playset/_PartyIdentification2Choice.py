@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AnyBICIdentifier import AnyBICIdentifier
-from ._GenericIdentification1 import GenericIdentification1
-from ._NameAndAddress5 import NameAndAddress5
+from . import AnyBICIdentifier
+from . import GenericIdentification1
+from . import NameAndAddress5
 
 class PartyIdentification2Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PartyIdentification2Choice(base_types._BaseFieldType):
 
 	@BICOrBEI.setter
 	def BICOrBEI(self, value):
-		self._BICOrBEI = value if type(value) != base_types.auto else self.make_default("BICOrBEI")
+		self._BICOrBEI = value if value is not None else base_types.UninitialisedField(self, 'BICOrBEI', AnyBICIdentifier, False)
 
 	@BICOrBEI.deleter
 	def BICOrBEI(self):
 		del self._BICOrBEI
-		self._BICOrBEI = None
+		self._BICOrBEI = base_types.UninitialisedField(self, 'BICOrBEI', AnyBICIdentifier, False)
 
 	@property
 	def NmAndAdr(self):
@@ -28,12 +28,12 @@ class PartyIdentification2Choice(base_types._BaseFieldType):
 
 	@NmAndAdr.setter
 	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
+		self._NmAndAdr = value if value is not None else base_types.UninitialisedField(self, 'NmAndAdr', NameAndAddress5, False)
 
 	@NmAndAdr.deleter
 	def NmAndAdr(self):
 		del self._NmAndAdr
-		self._NmAndAdr = None
+		self._NmAndAdr = base_types.UninitialisedField(self, 'NmAndAdr', NameAndAddress5, False)
 
 	@property
 	def PrtryId(self):
@@ -41,12 +41,12 @@ class PartyIdentification2Choice(base_types._BaseFieldType):
 
 	@PrtryId.setter
 	def PrtryId(self, value):
-		self._PrtryId = value if type(value) != base_types.auto else self.make_default("PrtryId")
+		self._PrtryId = value if value is not None else base_types.UninitialisedField(self, 'PrtryId', GenericIdentification1, False)
 
 	@PrtryId.deleter
 	def PrtryId(self):
 		del self._PrtryId
-		self._PrtryId = None
+		self._PrtryId = base_types.UninitialisedField(self, 'PrtryId', GenericIdentification1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BICOrBEI', type=AnyBICIdentifier, min=0, max=1, mutex_group=1, array=False),

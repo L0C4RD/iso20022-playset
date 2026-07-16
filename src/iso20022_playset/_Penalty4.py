@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountIdentification4Choice import AccountIdentification4Choice
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._AggregatedPenaltyAmount1 import AggregatedPenaltyAmount1
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
-from ._Number import Number
-from ._PartyIdentification136 import PartyIdentification136
-from ._PenaltyPartyIdentification1 import PenaltyPartyIdentification1
-from ._PenaltyPerCounterparty4 import PenaltyPerCounterparty4
+from . import AccountIdentification4Choice
+from . import ActiveCurrencyCode
+from . import AggregatedPenaltyAmount1
+from . import DateAndDateTime2Choice
+from . import ISODate
+from . import Max35Text
+from . import Number
+from . import PartyIdentification136
+from . import PenaltyPartyIdentification1
+from . import PenaltyPerCounterparty4
 
 class Penalty4(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class Penalty4(base_types._BaseFieldType):
 
 	@AggtdAmt.setter
 	def AggtdAmt(self, value):
-		self._AggtdAmt = value if type(value) != base_types.auto else self.make_default("AggtdAmt")
+		self._AggtdAmt = value if value is not None else base_types.UninitialisedField(self, 'AggtdAmt', AggregatedPenaltyAmount1, False)
 
 	@AggtdAmt.deleter
 	def AggtdAmt(self):
 		del self._AggtdAmt
-		self._AggtdAmt = None
+		self._AggtdAmt = base_types.UninitialisedField(self, 'AggtdAmt', AggregatedPenaltyAmount1, False)
 
 	@property
 	def CSDDpstry(self):
@@ -35,12 +35,12 @@ class Penalty4(base_types._BaseFieldType):
 
 	@CSDDpstry.setter
 	def CSDDpstry(self, value):
-		self._CSDDpstry = value if type(value) != base_types.auto else self.make_default("CSDDpstry")
+		self._CSDDpstry = value if value is not None else base_types.UninitialisedField(self, 'CSDDpstry', PartyIdentification136, False)
 
 	@CSDDpstry.deleter
 	def CSDDpstry(self):
 		del self._CSDDpstry
-		self._CSDDpstry = None
+		self._CSDDpstry = base_types.UninitialisedField(self, 'CSDDpstry', PartyIdentification136, False)
 
 	@property
 	def Ccy(self):
@@ -48,12 +48,12 @@ class Penalty4(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@property
 	def CshAcct(self):
@@ -61,12 +61,12 @@ class Penalty4(base_types._BaseFieldType):
 
 	@CshAcct.setter
 	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != base_types.auto else self.make_default("CshAcct")
+		self._CshAcct = value if value is not None else base_types.UninitialisedField(self, 'CshAcct', AccountIdentification4Choice, False)
 
 	@CshAcct.deleter
 	def CshAcct(self):
 		del self._CshAcct
-		self._CshAcct = None
+		self._CshAcct = base_types.UninitialisedField(self, 'CshAcct', AccountIdentification4Choice, False)
 
 	@property
 	def CshPnltyId(self):
@@ -74,12 +74,12 @@ class Penalty4(base_types._BaseFieldType):
 
 	@CshPnltyId.setter
 	def CshPnltyId(self, value):
-		self._CshPnltyId = value if type(value) != base_types.auto else self.make_default("CshPnltyId")
+		self._CshPnltyId = value if value is not None else base_types.UninitialisedField(self, 'CshPnltyId', Max35Text, False)
 
 	@CshPnltyId.deleter
 	def CshPnltyId(self):
 		del self._CshPnltyId
-		self._CshPnltyId = None
+		self._CshPnltyId = base_types.UninitialisedField(self, 'CshPnltyId', Max35Text, False)
 
 	@property
 	def CshSttlmDt(self):
@@ -87,12 +87,12 @@ class Penalty4(base_types._BaseFieldType):
 
 	@CshSttlmDt.setter
 	def CshSttlmDt(self, value):
-		self._CshSttlmDt = value if type(value) != base_types.auto else self.make_default("CshSttlmDt")
+		self._CshSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'CshSttlmDt', ISODate, False)
 
 	@CshSttlmDt.deleter
 	def CshSttlmDt(self):
 		del self._CshSttlmDt
-		self._CshSttlmDt = None
+		self._CshSttlmDt = base_types.UninitialisedField(self, 'CshSttlmDt', ISODate, False)
 
 	@property
 	def CtrPtyCSD(self):
@@ -100,12 +100,12 @@ class Penalty4(base_types._BaseFieldType):
 
 	@CtrPtyCSD.setter
 	def CtrPtyCSD(self, value):
-		self._CtrPtyCSD = value if type(value) != base_types.auto else self.make_default("CtrPtyCSD")
+		self._CtrPtyCSD = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyCSD', PartyIdentification136, False)
 
 	@CtrPtyCSD.deleter
 	def CtrPtyCSD(self):
 		del self._CtrPtyCSD
-		self._CtrPtyCSD = None
+		self._CtrPtyCSD = base_types.UninitialisedField(self, 'CtrPtyCSD', PartyIdentification136, False)
 
 	@property
 	def Dt(self):
@@ -113,12 +113,12 @@ class Penalty4(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', DateAndDateTime2Choice, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', DateAndDateTime2Choice, False)
 
 	@property
 	def NbOfCtrPties(self):
@@ -126,12 +126,12 @@ class Penalty4(base_types._BaseFieldType):
 
 	@NbOfCtrPties.setter
 	def NbOfCtrPties(self, value):
-		self._NbOfCtrPties = value if type(value) != base_types.auto else self.make_default("NbOfCtrPties")
+		self._NbOfCtrPties = value if value is not None else base_types.UninitialisedField(self, 'NbOfCtrPties', Number, False)
 
 	@NbOfCtrPties.deleter
 	def NbOfCtrPties(self):
 		del self._NbOfCtrPties
-		self._NbOfCtrPties = None
+		self._NbOfCtrPties = base_types.UninitialisedField(self, 'NbOfCtrPties', Number, False)
 
 	@property
 	def PnltyPerCtrPty(self):
@@ -139,12 +139,12 @@ class Penalty4(base_types._BaseFieldType):
 
 	@PnltyPerCtrPty.setter
 	def PnltyPerCtrPty(self, value):
-		self._PnltyPerCtrPty = value if type(value) != base_types.auto else self.make_default("PnltyPerCtrPty")
+		self._PnltyPerCtrPty = value if value is not None else base_types.UninitialisedField(self, 'PnltyPerCtrPty', PenaltyPerCounterparty4, True)
 
 	@PnltyPerCtrPty.deleter
 	def PnltyPerCtrPty(self):
 		del self._PnltyPerCtrPty
-		self._PnltyPerCtrPty = None
+		self._PnltyPerCtrPty = base_types.UninitialisedField(self, 'PnltyPerCtrPty', PenaltyPerCounterparty4, True)
 
 	@property
 	def PtyId(self):
@@ -152,12 +152,12 @@ class Penalty4(base_types._BaseFieldType):
 
 	@PtyId.setter
 	def PtyId(self, value):
-		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
+		self._PtyId = value if value is not None else base_types.UninitialisedField(self, 'PtyId', PenaltyPartyIdentification1, False)
 
 	@PtyId.deleter
 	def PtyId(self):
 		del self._PtyId
-		self._PtyId = None
+		self._PtyId = base_types.UninitialisedField(self, 'PtyId', PenaltyPartyIdentification1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AggtdAmt', type=AggregatedPenaltyAmount1, min=0, max=1, mutex_group=None, array=False),

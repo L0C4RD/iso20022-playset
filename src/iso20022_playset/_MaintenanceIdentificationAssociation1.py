@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
+from . import Max35Text
 
 class MaintenanceIdentificationAssociation1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class MaintenanceIdentificationAssociation1(base_types._BaseFieldType):
 
 	@MstrTMId.setter
 	def MstrTMId(self, value):
-		self._MstrTMId = value if type(value) != base_types.auto else self.make_default("MstrTMId")
+		self._MstrTMId = value if value is not None else base_types.UninitialisedField(self, 'MstrTMId', Max35Text, False)
 
 	@MstrTMId.deleter
 	def MstrTMId(self):
 		del self._MstrTMId
-		self._MstrTMId = None
+		self._MstrTMId = base_types.UninitialisedField(self, 'MstrTMId', Max35Text, False)
 
 	@property
 	def TMId(self):
@@ -26,12 +26,12 @@ class MaintenanceIdentificationAssociation1(base_types._BaseFieldType):
 
 	@TMId.setter
 	def TMId(self, value):
-		self._TMId = value if type(value) != base_types.auto else self.make_default("TMId")
+		self._TMId = value if value is not None else base_types.UninitialisedField(self, 'TMId', Max35Text, False)
 
 	@TMId.deleter
 	def TMId(self):
 		del self._TMId
-		self._TMId = None
+		self._TMId = base_types.UninitialisedField(self, 'TMId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MstrTMId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

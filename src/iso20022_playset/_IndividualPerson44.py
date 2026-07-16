@@ -2,18 +2,18 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CitizenshipInformation1 import CitizenshipInformation1
-from ._CommunicationAddress3 import CommunicationAddress3
-from ._CountryAndResidentialStatusType1 import CountryAndResidentialStatusType1
-from ._CountryCode import CountryCode
-from ._Gender1Code import Gender1Code
-from ._GenericIdentification44 import GenericIdentification44
-from ._ISODate import ISODate
-from ._IndividualPersonNameLong2 import IndividualPersonNameLong2
-from ._LanguageCode import LanguageCode
-from ._Max35Text import Max35Text
-from ._PostalAddress27 import PostalAddress27
-from ._TransferInstruction1 import TransferInstruction1
+from . import CitizenshipInformation1
+from . import CommunicationAddress3
+from . import CountryAndResidentialStatusType1
+from . import CountryCode
+from . import Gender1Code
+from . import GenericIdentification44
+from . import ISODate
+from . import IndividualPersonNameLong2
+from . import LanguageCode
+from . import Max35Text
+from . import PostalAddress27
+from . import TransferInstruction1
 
 class IndividualPerson44(base_types._BaseFieldType):
 
@@ -24,12 +24,12 @@ class IndividualPerson44(base_types._BaseFieldType):
 
 	@BirthDt.setter
 	def BirthDt(self, value):
-		self._BirthDt = value if type(value) != base_types.auto else self.make_default("BirthDt")
+		self._BirthDt = value if value is not None else base_types.UninitialisedField(self, 'BirthDt', ISODate, False)
 
 	@BirthDt.deleter
 	def BirthDt(self):
 		del self._BirthDt
-		self._BirthDt = None
+		self._BirthDt = base_types.UninitialisedField(self, 'BirthDt', ISODate, False)
 
 	@property
 	def CityOfBirth(self):
@@ -37,12 +37,12 @@ class IndividualPerson44(base_types._BaseFieldType):
 
 	@CityOfBirth.setter
 	def CityOfBirth(self, value):
-		self._CityOfBirth = value if type(value) != base_types.auto else self.make_default("CityOfBirth")
+		self._CityOfBirth = value if value is not None else base_types.UninitialisedField(self, 'CityOfBirth', Max35Text, False)
 
 	@CityOfBirth.deleter
 	def CityOfBirth(self):
 		del self._CityOfBirth
-		self._CityOfBirth = None
+		self._CityOfBirth = base_types.UninitialisedField(self, 'CityOfBirth', Max35Text, False)
 
 	@property
 	def CtryAndResdtlSts(self):
@@ -50,12 +50,12 @@ class IndividualPerson44(base_types._BaseFieldType):
 
 	@CtryAndResdtlSts.setter
 	def CtryAndResdtlSts(self, value):
-		self._CtryAndResdtlSts = value if type(value) != base_types.auto else self.make_default("CtryAndResdtlSts")
+		self._CtryAndResdtlSts = value if value is not None else base_types.UninitialisedField(self, 'CtryAndResdtlSts', CountryAndResidentialStatusType1, False)
 
 	@CtryAndResdtlSts.deleter
 	def CtryAndResdtlSts(self):
 		del self._CtryAndResdtlSts
-		self._CtryAndResdtlSts = None
+		self._CtryAndResdtlSts = base_types.UninitialisedField(self, 'CtryAndResdtlSts', CountryAndResidentialStatusType1, False)
 
 	@property
 	def CtryOfBirth(self):
@@ -63,12 +63,12 @@ class IndividualPerson44(base_types._BaseFieldType):
 
 	@CtryOfBirth.setter
 	def CtryOfBirth(self, value):
-		self._CtryOfBirth = value if type(value) != base_types.auto else self.make_default("CtryOfBirth")
+		self._CtryOfBirth = value if value is not None else base_types.UninitialisedField(self, 'CtryOfBirth', CountryCode, False)
 
 	@CtryOfBirth.deleter
 	def CtryOfBirth(self):
 		del self._CtryOfBirth
-		self._CtryOfBirth = None
+		self._CtryOfBirth = base_types.UninitialisedField(self, 'CtryOfBirth', CountryCode, False)
 
 	@property
 	def CtznshInf(self):
@@ -76,12 +76,12 @@ class IndividualPerson44(base_types._BaseFieldType):
 
 	@CtznshInf.setter
 	def CtznshInf(self, value):
-		self._CtznshInf = value if type(value) != base_types.auto else self.make_default("CtznshInf")
+		self._CtznshInf = value if value is not None else base_types.UninitialisedField(self, 'CtznshInf', CitizenshipInformation1, True)
 
 	@CtznshInf.deleter
 	def CtznshInf(self):
 		del self._CtznshInf
-		self._CtznshInf = None
+		self._CtznshInf = base_types.UninitialisedField(self, 'CtznshInf', CitizenshipInformation1, True)
 
 	@property
 	def CurNm(self):
@@ -89,12 +89,12 @@ class IndividualPerson44(base_types._BaseFieldType):
 
 	@CurNm.setter
 	def CurNm(self, value):
-		self._CurNm = value if type(value) != base_types.auto else self.make_default("CurNm")
+		self._CurNm = value if value is not None else base_types.UninitialisedField(self, 'CurNm', IndividualPersonNameLong2, False)
 
 	@CurNm.deleter
 	def CurNm(self):
 		del self._CurNm
-		self._CurNm = None
+		self._CurNm = base_types.UninitialisedField(self, 'CurNm', IndividualPersonNameLong2, False)
 
 	@property
 	def Gndr(self):
@@ -102,12 +102,12 @@ class IndividualPerson44(base_types._BaseFieldType):
 
 	@Gndr.setter
 	def Gndr(self, value):
-		self._Gndr = value if type(value) != base_types.auto else self.make_default("Gndr")
+		self._Gndr = value if value is not None else base_types.UninitialisedField(self, 'Gndr', Gender1Code, False)
 
 	@Gndr.deleter
 	def Gndr(self):
 		del self._Gndr
-		self._Gndr = None
+		self._Gndr = base_types.UninitialisedField(self, 'Gndr', Gender1Code, False)
 
 	@property
 	def Lang(self):
@@ -115,12 +115,12 @@ class IndividualPerson44(base_types._BaseFieldType):
 
 	@Lang.setter
 	def Lang(self, value):
-		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
+		self._Lang = value if value is not None else base_types.UninitialisedField(self, 'Lang', LanguageCode, False)
 
 	@Lang.deleter
 	def Lang(self):
 		del self._Lang
-		self._Lang = None
+		self._Lang = base_types.UninitialisedField(self, 'Lang', LanguageCode, False)
 
 	@property
 	def OthrDtls(self):
@@ -128,12 +128,12 @@ class IndividualPerson44(base_types._BaseFieldType):
 
 	@OthrDtls.setter
 	def OthrDtls(self, value):
-		self._OthrDtls = value if type(value) != base_types.auto else self.make_default("OthrDtls")
+		self._OthrDtls = value if value is not None else base_types.UninitialisedField(self, 'OthrDtls', TransferInstruction1, True)
 
 	@OthrDtls.deleter
 	def OthrDtls(self):
 		del self._OthrDtls
-		self._OthrDtls = None
+		self._OthrDtls = base_types.UninitialisedField(self, 'OthrDtls', TransferInstruction1, True)
 
 	@property
 	def OthrId(self):
@@ -141,12 +141,12 @@ class IndividualPerson44(base_types._BaseFieldType):
 
 	@OthrId.setter
 	def OthrId(self, value):
-		self._OthrId = value if type(value) != base_types.auto else self.make_default("OthrId")
+		self._OthrId = value if value is not None else base_types.UninitialisedField(self, 'OthrId', GenericIdentification44, True)
 
 	@OthrId.deleter
 	def OthrId(self):
 		del self._OthrId
-		self._OthrId = None
+		self._OthrId = base_types.UninitialisedField(self, 'OthrId', GenericIdentification44, True)
 
 	@property
 	def PmryComAdr(self):
@@ -154,12 +154,12 @@ class IndividualPerson44(base_types._BaseFieldType):
 
 	@PmryComAdr.setter
 	def PmryComAdr(self, value):
-		self._PmryComAdr = value if type(value) != base_types.auto else self.make_default("PmryComAdr")
+		self._PmryComAdr = value if value is not None else base_types.UninitialisedField(self, 'PmryComAdr', CommunicationAddress3, False)
 
 	@PmryComAdr.deleter
 	def PmryComAdr(self):
 		del self._PmryComAdr
-		self._PmryComAdr = None
+		self._PmryComAdr = base_types.UninitialisedField(self, 'PmryComAdr', CommunicationAddress3, False)
 
 	@property
 	def PrvcOfBirth(self):
@@ -167,12 +167,12 @@ class IndividualPerson44(base_types._BaseFieldType):
 
 	@PrvcOfBirth.setter
 	def PrvcOfBirth(self, value):
-		self._PrvcOfBirth = value if type(value) != base_types.auto else self.make_default("PrvcOfBirth")
+		self._PrvcOfBirth = value if value is not None else base_types.UninitialisedField(self, 'PrvcOfBirth', Max35Text, False)
 
 	@PrvcOfBirth.deleter
 	def PrvcOfBirth(self):
 		del self._PrvcOfBirth
-		self._PrvcOfBirth = None
+		self._PrvcOfBirth = base_types.UninitialisedField(self, 'PrvcOfBirth', Max35Text, False)
 
 	@property
 	def PrvsNm(self):
@@ -180,12 +180,12 @@ class IndividualPerson44(base_types._BaseFieldType):
 
 	@PrvsNm.setter
 	def PrvsNm(self, value):
-		self._PrvsNm = value if type(value) != base_types.auto else self.make_default("PrvsNm")
+		self._PrvsNm = value if value is not None else base_types.UninitialisedField(self, 'PrvsNm', IndividualPersonNameLong2, True)
 
 	@PrvsNm.deleter
 	def PrvsNm(self):
 		del self._PrvsNm
-		self._PrvsNm = None
+		self._PrvsNm = base_types.UninitialisedField(self, 'PrvsNm', IndividualPersonNameLong2, True)
 
 	@property
 	def PstlAdr(self):
@@ -193,12 +193,12 @@ class IndividualPerson44(base_types._BaseFieldType):
 
 	@PstlAdr.setter
 	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != base_types.auto else self.make_default("PstlAdr")
+		self._PstlAdr = value if value is not None else base_types.UninitialisedField(self, 'PstlAdr', PostalAddress27, True)
 
 	@PstlAdr.deleter
 	def PstlAdr(self):
 		del self._PstlAdr
-		self._PstlAdr = None
+		self._PstlAdr = base_types.UninitialisedField(self, 'PstlAdr', PostalAddress27, True)
 
 	@property
 	def SclSctyNb(self):
@@ -206,12 +206,12 @@ class IndividualPerson44(base_types._BaseFieldType):
 
 	@SclSctyNb.setter
 	def SclSctyNb(self, value):
-		self._SclSctyNb = value if type(value) != base_types.auto else self.make_default("SclSctyNb")
+		self._SclSctyNb = value if value is not None else base_types.UninitialisedField(self, 'SclSctyNb', Max35Text, False)
 
 	@SclSctyNb.deleter
 	def SclSctyNb(self):
 		del self._SclSctyNb
-		self._SclSctyNb = None
+		self._SclSctyNb = base_types.UninitialisedField(self, 'SclSctyNb', Max35Text, False)
 
 	@property
 	def ScndryComAdr(self):
@@ -219,12 +219,12 @@ class IndividualPerson44(base_types._BaseFieldType):
 
 	@ScndryComAdr.setter
 	def ScndryComAdr(self, value):
-		self._ScndryComAdr = value if type(value) != base_types.auto else self.make_default("ScndryComAdr")
+		self._ScndryComAdr = value if value is not None else base_types.UninitialisedField(self, 'ScndryComAdr', CommunicationAddress3, False)
 
 	@ScndryComAdr.deleter
 	def ScndryComAdr(self):
 		del self._ScndryComAdr
-		self._ScndryComAdr = None
+		self._ScndryComAdr = base_types.UninitialisedField(self, 'ScndryComAdr', CommunicationAddress3, False)
 
 	@property
 	def TaxtnCtry(self):
@@ -232,12 +232,12 @@ class IndividualPerson44(base_types._BaseFieldType):
 
 	@TaxtnCtry.setter
 	def TaxtnCtry(self, value):
-		self._TaxtnCtry = value if type(value) != base_types.auto else self.make_default("TaxtnCtry")
+		self._TaxtnCtry = value if value is not None else base_types.UninitialisedField(self, 'TaxtnCtry', CountryCode, False)
 
 	@TaxtnCtry.deleter
 	def TaxtnCtry(self):
 		del self._TaxtnCtry
-		self._TaxtnCtry = None
+		self._TaxtnCtry = base_types.UninitialisedField(self, 'TaxtnCtry', CountryCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BirthDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),

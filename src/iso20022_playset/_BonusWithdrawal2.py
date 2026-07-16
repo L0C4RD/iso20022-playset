@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._Max35Text import Max35Text
-from ._TypeOfAmount1Choice import TypeOfAmount1Choice
-from ._WithdrawalReason1Choice import WithdrawalReason1Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import ActiveOrHistoricCurrencyAnd13DecimalAmount
+from . import AdditionalInformation15
+from . import Max35Text
+from . import TypeOfAmount1Choice
+from . import WithdrawalReason1Choice
+from . import YesNoIndicator
 
 class BonusWithdrawal2(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class BonusWithdrawal2(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@property
 	def Amt(self):
@@ -31,12 +31,12 @@ class BonusWithdrawal2(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAnd13DecimalAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def Outsdng(self):
@@ -44,12 +44,12 @@ class BonusWithdrawal2(base_types._BaseFieldType):
 
 	@Outsdng.setter
 	def Outsdng(self, value):
-		self._Outsdng = value if type(value) != base_types.auto else self.make_default("Outsdng")
+		self._Outsdng = value if value is not None else base_types.UninitialisedField(self, 'Outsdng', YesNoIndicator, False)
 
 	@Outsdng.deleter
 	def Outsdng(self):
 		del self._Outsdng
-		self._Outsdng = None
+		self._Outsdng = base_types.UninitialisedField(self, 'Outsdng', YesNoIndicator, False)
 
 	@property
 	def Ref(self):
@@ -57,12 +57,12 @@ class BonusWithdrawal2(base_types._BaseFieldType):
 
 	@Ref.setter
 	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+		self._Ref = value if value is not None else base_types.UninitialisedField(self, 'Ref', Max35Text, False)
 
 	@Ref.deleter
 	def Ref(self):
 		del self._Ref
-		self._Ref = None
+		self._Ref = base_types.UninitialisedField(self, 'Ref', Max35Text, False)
 
 	@property
 	def Rsn(self):
@@ -70,12 +70,12 @@ class BonusWithdrawal2(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', WithdrawalReason1Choice, False)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', WithdrawalReason1Choice, False)
 
 	@property
 	def TpOfAmt(self):
@@ -83,12 +83,12 @@ class BonusWithdrawal2(base_types._BaseFieldType):
 
 	@TpOfAmt.setter
 	def TpOfAmt(self, value):
-		self._TpOfAmt = value if type(value) != base_types.auto else self.make_default("TpOfAmt")
+		self._TpOfAmt = value if value is not None else base_types.UninitialisedField(self, 'TpOfAmt', TypeOfAmount1Choice, False)
 
 	@TpOfAmt.deleter
 	def TpOfAmt(self):
 		del self._TpOfAmt
-		self._TpOfAmt = None
+		self._TpOfAmt = base_types.UninitialisedField(self, 'TpOfAmt', TypeOfAmount1Choice, False)
 
 	@property
 	def UclmdAmt(self):
@@ -96,12 +96,12 @@ class BonusWithdrawal2(base_types._BaseFieldType):
 
 	@UclmdAmt.setter
 	def UclmdAmt(self, value):
-		self._UclmdAmt = value if type(value) != base_types.auto else self.make_default("UclmdAmt")
+		self._UclmdAmt = value if value is not None else base_types.UninitialisedField(self, 'UclmdAmt', ActiveOrHistoricCurrencyAnd13DecimalAmount, False)
 
 	@UclmdAmt.deleter
 	def UclmdAmt(self):
 		del self._UclmdAmt
-		self._UclmdAmt = None
+		self._UclmdAmt = base_types.UninitialisedField(self, 'UclmdAmt', ActiveOrHistoricCurrencyAnd13DecimalAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),

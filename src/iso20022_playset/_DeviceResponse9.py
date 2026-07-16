@@ -2,18 +2,18 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardPaymentEnvironment82 import CardPaymentEnvironment82
-from ._DeviceDisplayResponse3 import DeviceDisplayResponse3
-from ._DeviceInitialisationCardReaderResponse2 import DeviceInitialisationCardReaderResponse2
-from ._DeviceInputResponse7 import DeviceInputResponse7
-from ._DevicePrintResponse1 import DevicePrintResponse1
-from ._DeviceSecureInputResponse6 import DeviceSecureInputResponse6
-from ._DeviceSendApplicationProtocolDataUnitCardReaderResponse1 import DeviceSendApplicationProtocolDataUnitCardReaderResponse1
-from ._DeviceTransmitMessageResponse1 import DeviceTransmitMessageResponse1
-from ._PaymentContext30 import PaymentContext30
-from ._ResponseType11 import ResponseType11
-from ._RetailerService9Code import RetailerService9Code
-from ._SupplementaryData1 import SupplementaryData1
+from . import CardPaymentEnvironment82
+from . import DeviceDisplayResponse3
+from . import DeviceInitialisationCardReaderResponse2
+from . import DeviceInputResponse7
+from . import DevicePrintResponse1
+from . import DeviceSecureInputResponse6
+from . import DeviceSendApplicationProtocolDataUnitCardReaderResponse1
+from . import DeviceTransmitMessageResponse1
+from . import PaymentContext30
+from . import ResponseType11
+from . import RetailerService9Code
+from . import SupplementaryData1
 
 class DeviceResponse9(base_types._BaseFieldType):
 
@@ -24,12 +24,12 @@ class DeviceResponse9(base_types._BaseFieldType):
 
 	@CardRdrApplPrtcolDataUnitRspn.setter
 	def CardRdrApplPrtcolDataUnitRspn(self, value):
-		self._CardRdrApplPrtcolDataUnitRspn = value if type(value) != base_types.auto else self.make_default("CardRdrApplPrtcolDataUnitRspn")
+		self._CardRdrApplPrtcolDataUnitRspn = value if value is not None else base_types.UninitialisedField(self, 'CardRdrApplPrtcolDataUnitRspn', DeviceSendApplicationProtocolDataUnitCardReaderResponse1, False)
 
 	@CardRdrApplPrtcolDataUnitRspn.deleter
 	def CardRdrApplPrtcolDataUnitRspn(self):
 		del self._CardRdrApplPrtcolDataUnitRspn
-		self._CardRdrApplPrtcolDataUnitRspn = None
+		self._CardRdrApplPrtcolDataUnitRspn = base_types.UninitialisedField(self, 'CardRdrApplPrtcolDataUnitRspn', DeviceSendApplicationProtocolDataUnitCardReaderResponse1, False)
 
 	@property
 	def Cntxt(self):
@@ -37,12 +37,12 @@ class DeviceResponse9(base_types._BaseFieldType):
 
 	@Cntxt.setter
 	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != base_types.auto else self.make_default("Cntxt")
+		self._Cntxt = value if value is not None else base_types.UninitialisedField(self, 'Cntxt', PaymentContext30, False)
 
 	@Cntxt.deleter
 	def Cntxt(self):
 		del self._Cntxt
-		self._Cntxt = None
+		self._Cntxt = base_types.UninitialisedField(self, 'Cntxt', PaymentContext30, False)
 
 	@property
 	def DispRspn(self):
@@ -50,12 +50,12 @@ class DeviceResponse9(base_types._BaseFieldType):
 
 	@DispRspn.setter
 	def DispRspn(self, value):
-		self._DispRspn = value if type(value) != base_types.auto else self.make_default("DispRspn")
+		self._DispRspn = value if value is not None else base_types.UninitialisedField(self, 'DispRspn', DeviceDisplayResponse3, False)
 
 	@DispRspn.deleter
 	def DispRspn(self):
 		del self._DispRspn
-		self._DispRspn = None
+		self._DispRspn = base_types.UninitialisedField(self, 'DispRspn', DeviceDisplayResponse3, False)
 
 	@property
 	def Envt(self):
@@ -63,12 +63,12 @@ class DeviceResponse9(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+		self._Envt = value if value is not None else base_types.UninitialisedField(self, 'Envt', CardPaymentEnvironment82, False)
 
 	@Envt.deleter
 	def Envt(self):
 		del self._Envt
-		self._Envt = None
+		self._Envt = base_types.UninitialisedField(self, 'Envt', CardPaymentEnvironment82, False)
 
 	@property
 	def InitlstnCardRdrRspn(self):
@@ -76,12 +76,12 @@ class DeviceResponse9(base_types._BaseFieldType):
 
 	@InitlstnCardRdrRspn.setter
 	def InitlstnCardRdrRspn(self, value):
-		self._InitlstnCardRdrRspn = value if type(value) != base_types.auto else self.make_default("InitlstnCardRdrRspn")
+		self._InitlstnCardRdrRspn = value if value is not None else base_types.UninitialisedField(self, 'InitlstnCardRdrRspn', DeviceInitialisationCardReaderResponse2, False)
 
 	@InitlstnCardRdrRspn.deleter
 	def InitlstnCardRdrRspn(self):
 		del self._InitlstnCardRdrRspn
-		self._InitlstnCardRdrRspn = None
+		self._InitlstnCardRdrRspn = base_types.UninitialisedField(self, 'InitlstnCardRdrRspn', DeviceInitialisationCardReaderResponse2, False)
 
 	@property
 	def InptRspn(self):
@@ -89,12 +89,12 @@ class DeviceResponse9(base_types._BaseFieldType):
 
 	@InptRspn.setter
 	def InptRspn(self, value):
-		self._InptRspn = value if type(value) != base_types.auto else self.make_default("InptRspn")
+		self._InptRspn = value if value is not None else base_types.UninitialisedField(self, 'InptRspn', DeviceInputResponse7, False)
 
 	@InptRspn.deleter
 	def InptRspn(self):
 		del self._InptRspn
-		self._InptRspn = None
+		self._InptRspn = base_types.UninitialisedField(self, 'InptRspn', DeviceInputResponse7, False)
 
 	@property
 	def PrtRspn(self):
@@ -102,12 +102,12 @@ class DeviceResponse9(base_types._BaseFieldType):
 
 	@PrtRspn.setter
 	def PrtRspn(self, value):
-		self._PrtRspn = value if type(value) != base_types.auto else self.make_default("PrtRspn")
+		self._PrtRspn = value if value is not None else base_types.UninitialisedField(self, 'PrtRspn', DevicePrintResponse1, False)
 
 	@PrtRspn.deleter
 	def PrtRspn(self):
 		del self._PrtRspn
-		self._PrtRspn = None
+		self._PrtRspn = base_types.UninitialisedField(self, 'PrtRspn', DevicePrintResponse1, False)
 
 	@property
 	def Rspn(self):
@@ -115,12 +115,12 @@ class DeviceResponse9(base_types._BaseFieldType):
 
 	@Rspn.setter
 	def Rspn(self, value):
-		self._Rspn = value if type(value) != base_types.auto else self.make_default("Rspn")
+		self._Rspn = value if value is not None else base_types.UninitialisedField(self, 'Rspn', ResponseType11, False)
 
 	@Rspn.deleter
 	def Rspn(self):
 		del self._Rspn
-		self._Rspn = None
+		self._Rspn = base_types.UninitialisedField(self, 'Rspn', ResponseType11, False)
 
 	@property
 	def ScrInptRspn(self):
@@ -128,12 +128,12 @@ class DeviceResponse9(base_types._BaseFieldType):
 
 	@ScrInptRspn.setter
 	def ScrInptRspn(self, value):
-		self._ScrInptRspn = value if type(value) != base_types.auto else self.make_default("ScrInptRspn")
+		self._ScrInptRspn = value if value is not None else base_types.UninitialisedField(self, 'ScrInptRspn', DeviceSecureInputResponse6, False)
 
 	@ScrInptRspn.deleter
 	def ScrInptRspn(self):
 		del self._ScrInptRspn
-		self._ScrInptRspn = None
+		self._ScrInptRspn = base_types.UninitialisedField(self, 'ScrInptRspn', DeviceSecureInputResponse6, False)
 
 	@property
 	def SplmtryData(self):
@@ -141,12 +141,12 @@ class DeviceResponse9(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def SvcCntt(self):
@@ -154,12 +154,12 @@ class DeviceResponse9(base_types._BaseFieldType):
 
 	@SvcCntt.setter
 	def SvcCntt(self, value):
-		self._SvcCntt = value if type(value) != base_types.auto else self.make_default("SvcCntt")
+		self._SvcCntt = value if value is not None else base_types.UninitialisedField(self, 'SvcCntt', RetailerService9Code, False)
 
 	@SvcCntt.deleter
 	def SvcCntt(self):
 		del self._SvcCntt
-		self._SvcCntt = None
+		self._SvcCntt = base_types.UninitialisedField(self, 'SvcCntt', RetailerService9Code, False)
 
 	@property
 	def TrnsmssnRspn(self):
@@ -167,12 +167,12 @@ class DeviceResponse9(base_types._BaseFieldType):
 
 	@TrnsmssnRspn.setter
 	def TrnsmssnRspn(self, value):
-		self._TrnsmssnRspn = value if type(value) != base_types.auto else self.make_default("TrnsmssnRspn")
+		self._TrnsmssnRspn = value if value is not None else base_types.UninitialisedField(self, 'TrnsmssnRspn', DeviceTransmitMessageResponse1, False)
 
 	@TrnsmssnRspn.deleter
 	def TrnsmssnRspn(self):
 		del self._TrnsmssnRspn
-		self._TrnsmssnRspn = None
+		self._TrnsmssnRspn = base_types.UninitialisedField(self, 'TrnsmssnRspn', DeviceTransmitMessageResponse1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CardRdrApplPrtcolDataUnitRspn', type=DeviceSendApplicationProtocolDataUnitCardReaderResponse1, min=0, max=1, mutex_group=None, array=False),

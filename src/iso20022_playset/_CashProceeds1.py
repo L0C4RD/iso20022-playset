@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._CashAccount19 import CashAccount19
-from ._Max350Text import Max350Text
+from . import ActiveCurrencyAndAmount
+from . import CashAccount19
+from . import Max350Text
 
 class CashProceeds1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CashProceeds1(base_types._BaseFieldType):
 
 	@AcctDtls.setter
 	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != base_types.auto else self.make_default("AcctDtls")
+		self._AcctDtls = value if value is not None else base_types.UninitialisedField(self, 'AcctDtls', CashAccount19, False)
 
 	@AcctDtls.deleter
 	def AcctDtls(self):
 		del self._AcctDtls
-		self._AcctDtls = None
+		self._AcctDtls = base_types.UninitialisedField(self, 'AcctDtls', CashAccount19, False)
 
 	@property
 	def PstngAmt(self):
@@ -28,12 +28,12 @@ class CashProceeds1(base_types._BaseFieldType):
 
 	@PstngAmt.setter
 	def PstngAmt(self, value):
-		self._PstngAmt = value if type(value) != base_types.auto else self.make_default("PstngAmt")
+		self._PstngAmt = value if value is not None else base_types.UninitialisedField(self, 'PstngAmt', ActiveCurrencyAndAmount, False)
 
 	@PstngAmt.deleter
 	def PstngAmt(self):
 		del self._PstngAmt
-		self._PstngAmt = None
+		self._PstngAmt = base_types.UninitialisedField(self, 'PstngAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def RcncltnDtls(self):
@@ -41,12 +41,12 @@ class CashProceeds1(base_types._BaseFieldType):
 
 	@RcncltnDtls.setter
 	def RcncltnDtls(self, value):
-		self._RcncltnDtls = value if type(value) != base_types.auto else self.make_default("RcncltnDtls")
+		self._RcncltnDtls = value if value is not None else base_types.UninitialisedField(self, 'RcncltnDtls', Max350Text, False)
 
 	@RcncltnDtls.deleter
 	def RcncltnDtls(self):
 		del self._RcncltnDtls
-		self._RcncltnDtls = None
+		self._RcncltnDtls = base_types.UninitialisedField(self, 'RcncltnDtls', Max350Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctDtls', type=CashAccount19, min=1, max=2, mutex_group=None, array=False),

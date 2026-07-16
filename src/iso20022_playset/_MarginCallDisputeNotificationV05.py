@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DisputeNotification2Choice import DisputeNotification2Choice
-from ._Max35Text import Max35Text
-from ._Obligation9 import Obligation9
-from ._SupplementaryData1 import SupplementaryData1
+from . import DisputeNotification2Choice
+from . import Max35Text
+from . import Obligation9
+from . import SupplementaryData1
 
 class MarginCallDisputeNotificationV05(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class MarginCallDisputeNotificationV05(base_types._BaseFieldType):
 
 	@DsptNtfctn.setter
 	def DsptNtfctn(self, value):
-		self._DsptNtfctn = value if type(value) != base_types.auto else self.make_default("DsptNtfctn")
+		self._DsptNtfctn = value if value is not None else base_types.UninitialisedField(self, 'DsptNtfctn', DisputeNotification2Choice, False)
 
 	@DsptNtfctn.deleter
 	def DsptNtfctn(self):
 		del self._DsptNtfctn
-		self._DsptNtfctn = None
+		self._DsptNtfctn = base_types.UninitialisedField(self, 'DsptNtfctn', DisputeNotification2Choice, False)
 
 	@property
 	def Oblgtn(self):
@@ -29,12 +29,12 @@ class MarginCallDisputeNotificationV05(base_types._BaseFieldType):
 
 	@Oblgtn.setter
 	def Oblgtn(self, value):
-		self._Oblgtn = value if type(value) != base_types.auto else self.make_default("Oblgtn")
+		self._Oblgtn = value if value is not None else base_types.UninitialisedField(self, 'Oblgtn', Obligation9, False)
 
 	@Oblgtn.deleter
 	def Oblgtn(self):
 		del self._Oblgtn
-		self._Oblgtn = None
+		self._Oblgtn = base_types.UninitialisedField(self, 'Oblgtn', Obligation9, False)
 
 	@property
 	def SplmtryData(self):
@@ -42,12 +42,12 @@ class MarginCallDisputeNotificationV05(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TxId(self):
@@ -55,12 +55,12 @@ class MarginCallDisputeNotificationV05(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DsptNtfctn', type=DisputeNotification2Choice, min=1, max=1, mutex_group=None, array=False),

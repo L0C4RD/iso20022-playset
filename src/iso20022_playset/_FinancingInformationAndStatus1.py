@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancingAllowedSummary1 import FinancingAllowedSummary1
-from ._InvoiceFinancingDetails1 import InvoiceFinancingDetails1
+from . import FinancingAllowedSummary1
+from . import InvoiceFinancingDetails1
 
 class FinancingInformationAndStatus1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class FinancingInformationAndStatus1(base_types._BaseFieldType):
 
 	@FincgAllwdSummry.setter
 	def FincgAllwdSummry(self, value):
-		self._FincgAllwdSummry = value if type(value) != base_types.auto else self.make_default("FincgAllwdSummry")
+		self._FincgAllwdSummry = value if value is not None else base_types.UninitialisedField(self, 'FincgAllwdSummry', FinancingAllowedSummary1, False)
 
 	@FincgAllwdSummry.deleter
 	def FincgAllwdSummry(self):
 		del self._FincgAllwdSummry
-		self._FincgAllwdSummry = None
+		self._FincgAllwdSummry = base_types.UninitialisedField(self, 'FincgAllwdSummry', FinancingAllowedSummary1, False)
 
 	@property
 	def InvcFincgDtls(self):
@@ -27,12 +27,12 @@ class FinancingInformationAndStatus1(base_types._BaseFieldType):
 
 	@InvcFincgDtls.setter
 	def InvcFincgDtls(self, value):
-		self._InvcFincgDtls = value if type(value) != base_types.auto else self.make_default("InvcFincgDtls")
+		self._InvcFincgDtls = value if value is not None else base_types.UninitialisedField(self, 'InvcFincgDtls', InvoiceFinancingDetails1, True)
 
 	@InvcFincgDtls.deleter
 	def InvcFincgDtls(self):
 		del self._InvcFincgDtls
-		self._InvcFincgDtls = None
+		self._InvcFincgDtls = base_types.UninitialisedField(self, 'InvcFincgDtls', InvoiceFinancingDetails1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FincgAllwdSummry', type=FinancingAllowedSummary1, min=1, max=1, mutex_group=None, array=False),

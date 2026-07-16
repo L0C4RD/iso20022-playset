@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateFormat49Choice import DateFormat49Choice
-from ._DateFormat54Choice import DateFormat54Choice
+from . import DateFormat49Choice
+from . import DateFormat54Choice
 
 class CorporateActionEventDeadlines4(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CorporateActionEventDeadlines4(base_types._BaseFieldType):
 
 	@CoverPrtctDdln.setter
 	def CoverPrtctDdln(self, value):
-		self._CoverPrtctDdln = value if type(value) != base_types.auto else self.make_default("CoverPrtctDdln")
+		self._CoverPrtctDdln = value if value is not None else base_types.UninitialisedField(self, 'CoverPrtctDdln', DateFormat49Choice, False)
 
 	@CoverPrtctDdln.deleter
 	def CoverPrtctDdln(self):
 		del self._CoverPrtctDdln
-		self._CoverPrtctDdln = None
+		self._CoverPrtctDdln = base_types.UninitialisedField(self, 'CoverPrtctDdln', DateFormat49Choice, False)
 
 	@property
 	def EarlyRspnDdln(self):
@@ -27,12 +27,12 @@ class CorporateActionEventDeadlines4(base_types._BaseFieldType):
 
 	@EarlyRspnDdln.setter
 	def EarlyRspnDdln(self, value):
-		self._EarlyRspnDdln = value if type(value) != base_types.auto else self.make_default("EarlyRspnDdln")
+		self._EarlyRspnDdln = value if value is not None else base_types.UninitialisedField(self, 'EarlyRspnDdln', DateFormat49Choice, False)
 
 	@EarlyRspnDdln.deleter
 	def EarlyRspnDdln(self):
 		del self._EarlyRspnDdln
-		self._EarlyRspnDdln = None
+		self._EarlyRspnDdln = base_types.UninitialisedField(self, 'EarlyRspnDdln', DateFormat49Choice, False)
 
 	@property
 	def MktDdln(self):
@@ -40,12 +40,12 @@ class CorporateActionEventDeadlines4(base_types._BaseFieldType):
 
 	@MktDdln.setter
 	def MktDdln(self, value):
-		self._MktDdln = value if type(value) != base_types.auto else self.make_default("MktDdln")
+		self._MktDdln = value if value is not None else base_types.UninitialisedField(self, 'MktDdln', DateFormat49Choice, False)
 
 	@MktDdln.deleter
 	def MktDdln(self):
 		del self._MktDdln
-		self._MktDdln = None
+		self._MktDdln = base_types.UninitialisedField(self, 'MktDdln', DateFormat49Choice, False)
 
 	@property
 	def PrtctDdln(self):
@@ -53,12 +53,12 @@ class CorporateActionEventDeadlines4(base_types._BaseFieldType):
 
 	@PrtctDdln.setter
 	def PrtctDdln(self, value):
-		self._PrtctDdln = value if type(value) != base_types.auto else self.make_default("PrtctDdln")
+		self._PrtctDdln = value if value is not None else base_types.UninitialisedField(self, 'PrtctDdln', DateFormat49Choice, False)
 
 	@PrtctDdln.deleter
 	def PrtctDdln(self):
 		del self._PrtctDdln
-		self._PrtctDdln = None
+		self._PrtctDdln = base_types.UninitialisedField(self, 'PrtctDdln', DateFormat49Choice, False)
 
 	@property
 	def RspnDdln(self):
@@ -66,12 +66,12 @@ class CorporateActionEventDeadlines4(base_types._BaseFieldType):
 
 	@RspnDdln.setter
 	def RspnDdln(self, value):
-		self._RspnDdln = value if type(value) != base_types.auto else self.make_default("RspnDdln")
+		self._RspnDdln = value if value is not None else base_types.UninitialisedField(self, 'RspnDdln', DateFormat54Choice, False)
 
 	@RspnDdln.deleter
 	def RspnDdln(self):
 		del self._RspnDdln
-		self._RspnDdln = None
+		self._RspnDdln = base_types.UninitialisedField(self, 'RspnDdln', DateFormat54Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CoverPrtctDdln', type=DateFormat49Choice, min=0, max=1, mutex_group=None, array=False),

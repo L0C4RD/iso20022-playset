@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CancellationRequestInformation1 import CancellationRequestInformation1
-from ._MessageIdentification1 import MessageIdentification1
+from . import CancellationRequestInformation1
+from . import MessageIdentification1
 
 class InvoiceFinancingCancellationRequestV01(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class InvoiceFinancingCancellationRequestV01(base_types._BaseFieldType):
 
 	@CxlReqId.setter
 	def CxlReqId(self, value):
-		self._CxlReqId = value if type(value) != base_types.auto else self.make_default("CxlReqId")
+		self._CxlReqId = value if value is not None else base_types.UninitialisedField(self, 'CxlReqId', MessageIdentification1, False)
 
 	@CxlReqId.deleter
 	def CxlReqId(self):
 		del self._CxlReqId
-		self._CxlReqId = None
+		self._CxlReqId = base_types.UninitialisedField(self, 'CxlReqId', MessageIdentification1, False)
 
 	@property
 	def CxlReqInf(self):
@@ -27,12 +27,12 @@ class InvoiceFinancingCancellationRequestV01(base_types._BaseFieldType):
 
 	@CxlReqInf.setter
 	def CxlReqInf(self, value):
-		self._CxlReqInf = value if type(value) != base_types.auto else self.make_default("CxlReqInf")
+		self._CxlReqInf = value if value is not None else base_types.UninitialisedField(self, 'CxlReqInf', CancellationRequestInformation1, False)
 
 	@CxlReqInf.deleter
 	def CxlReqInf(self):
 		del self._CxlReqInf
-		self._CxlReqInf = None
+		self._CxlReqInf = base_types.UninitialisedField(self, 'CxlReqInf', CancellationRequestInformation1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CxlReqId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),

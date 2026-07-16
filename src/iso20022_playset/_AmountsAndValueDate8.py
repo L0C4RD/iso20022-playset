@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CurrencyOrDigitalTokenAmount2Choice import CurrencyOrDigitalTokenAmount2Choice
-from ._ISODate import ISODate
+from . import CurrencyOrDigitalTokenAmount2Choice
+from . import ISODate
 
 class AmountsAndValueDate8(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AmountsAndValueDate8(base_types._BaseFieldType):
 
 	@SttlmDt.setter
 	def SttlmDt(self, value):
-		self._SttlmDt = value if type(value) != base_types.auto else self.make_default("SttlmDt")
+		self._SttlmDt = value if value is not None else base_types.UninitialisedField(self, 'SttlmDt', ISODate, False)
 
 	@SttlmDt.deleter
 	def SttlmDt(self):
 		del self._SttlmDt
-		self._SttlmDt = None
+		self._SttlmDt = base_types.UninitialisedField(self, 'SttlmDt', ISODate, False)
 
 	@property
 	def TradgSdBuyAmt(self):
@@ -27,12 +27,12 @@ class AmountsAndValueDate8(base_types._BaseFieldType):
 
 	@TradgSdBuyAmt.setter
 	def TradgSdBuyAmt(self, value):
-		self._TradgSdBuyAmt = value if type(value) != base_types.auto else self.make_default("TradgSdBuyAmt")
+		self._TradgSdBuyAmt = value if value is not None else base_types.UninitialisedField(self, 'TradgSdBuyAmt', CurrencyOrDigitalTokenAmount2Choice, False)
 
 	@TradgSdBuyAmt.deleter
 	def TradgSdBuyAmt(self):
 		del self._TradgSdBuyAmt
-		self._TradgSdBuyAmt = None
+		self._TradgSdBuyAmt = base_types.UninitialisedField(self, 'TradgSdBuyAmt', CurrencyOrDigitalTokenAmount2Choice, False)
 
 	@property
 	def TradgSdSellAmt(self):
@@ -40,12 +40,12 @@ class AmountsAndValueDate8(base_types._BaseFieldType):
 
 	@TradgSdSellAmt.setter
 	def TradgSdSellAmt(self, value):
-		self._TradgSdSellAmt = value if type(value) != base_types.auto else self.make_default("TradgSdSellAmt")
+		self._TradgSdSellAmt = value if value is not None else base_types.UninitialisedField(self, 'TradgSdSellAmt', CurrencyOrDigitalTokenAmount2Choice, False)
 
 	@TradgSdSellAmt.deleter
 	def TradgSdSellAmt(self):
 		del self._TradgSdSellAmt
-		self._TradgSdSellAmt = None
+		self._TradgSdSellAmt = base_types.UninitialisedField(self, 'TradgSdSellAmt', CurrencyOrDigitalTokenAmount2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SttlmDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),

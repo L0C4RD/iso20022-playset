@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BranchData5 import BranchData5
-from ._FinancialInstitutionIdentification23 import FinancialInstitutionIdentification23
+from . import BranchData5
+from . import FinancialInstitutionIdentification23
 
 class BranchAndFinancialInstitutionIdentification8(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class BranchAndFinancialInstitutionIdentification8(base_types._BaseFieldType):
 
 	@BrnchId.setter
 	def BrnchId(self, value):
-		self._BrnchId = value if type(value) != base_types.auto else self.make_default("BrnchId")
+		self._BrnchId = value if value is not None else base_types.UninitialisedField(self, 'BrnchId', BranchData5, False)
 
 	@BrnchId.deleter
 	def BrnchId(self):
 		del self._BrnchId
-		self._BrnchId = None
+		self._BrnchId = base_types.UninitialisedField(self, 'BrnchId', BranchData5, False)
 
 	@property
 	def FinInstnId(self):
@@ -27,12 +27,12 @@ class BranchAndFinancialInstitutionIdentification8(base_types._BaseFieldType):
 
 	@FinInstnId.setter
 	def FinInstnId(self, value):
-		self._FinInstnId = value if type(value) != base_types.auto else self.make_default("FinInstnId")
+		self._FinInstnId = value if value is not None else base_types.UninitialisedField(self, 'FinInstnId', FinancialInstitutionIdentification23, False)
 
 	@FinInstnId.deleter
 	def FinInstnId(self):
 		del self._FinInstnId
-		self._FinInstnId = None
+		self._FinInstnId = base_types.UninitialisedField(self, 'FinInstnId', FinancialInstitutionIdentification23, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BrnchId', type=BranchData5, min=0, max=1, mutex_group=None, array=False),

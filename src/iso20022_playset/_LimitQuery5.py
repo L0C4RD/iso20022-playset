@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LimitCriteria7Choice import LimitCriteria7Choice
-from ._QueryType2Code import QueryType2Code
+from . import LimitCriteria7Choice
+from . import QueryType2Code
 
 class LimitQuery5(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class LimitQuery5(base_types._BaseFieldType):
 
 	@LmtCrit.setter
 	def LmtCrit(self, value):
-		self._LmtCrit = value if type(value) != base_types.auto else self.make_default("LmtCrit")
+		self._LmtCrit = value if value is not None else base_types.UninitialisedField(self, 'LmtCrit', LimitCriteria7Choice, False)
 
 	@LmtCrit.deleter
 	def LmtCrit(self):
 		del self._LmtCrit
-		self._LmtCrit = None
+		self._LmtCrit = base_types.UninitialisedField(self, 'LmtCrit', LimitCriteria7Choice, False)
 
 	@property
 	def QryTp(self):
@@ -27,12 +27,12 @@ class LimitQuery5(base_types._BaseFieldType):
 
 	@QryTp.setter
 	def QryTp(self, value):
-		self._QryTp = value if type(value) != base_types.auto else self.make_default("QryTp")
+		self._QryTp = value if value is not None else base_types.UninitialisedField(self, 'QryTp', QueryType2Code, False)
 
 	@QryTp.deleter
 	def QryTp(self):
 		del self._QryTp
-		self._QryTp = None
+		self._QryTp = base_types.UninitialisedField(self, 'QryTp', QueryType2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LmtCrit', type=LimitCriteria7Choice, min=0, max=1, mutex_group=None, array=False),

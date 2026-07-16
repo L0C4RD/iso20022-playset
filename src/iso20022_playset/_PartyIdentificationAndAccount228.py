@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContactIdentification2 import ContactIdentification2
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._Max35Text import Max35Text
-from ._PartyIdentification254Choice import PartyIdentification254Choice
-from ._SubAccount4 import SubAccount4
+from . import ContactIdentification2
+from . import DateAndDateTime2Choice
+from . import Max35Text
+from . import PartyIdentification254Choice
+from . import SubAccount4
 
 class PartyIdentificationAndAccount228(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class PartyIdentificationAndAccount228(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', Max35Text, False)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', Max35Text, False)
 
 	@property
 	def CtctPrsn(self):
@@ -30,12 +30,12 @@ class PartyIdentificationAndAccount228(base_types._BaseFieldType):
 
 	@CtctPrsn.setter
 	def CtctPrsn(self, value):
-		self._CtctPrsn = value if type(value) != base_types.auto else self.make_default("CtctPrsn")
+		self._CtctPrsn = value if value is not None else base_types.UninitialisedField(self, 'CtctPrsn', ContactIdentification2, False)
 
 	@CtctPrsn.deleter
 	def CtctPrsn(self):
 		del self._CtctPrsn
-		self._CtctPrsn = None
+		self._CtctPrsn = base_types.UninitialisedField(self, 'CtctPrsn', ContactIdentification2, False)
 
 	@property
 	def PrcgDt(self):
@@ -43,12 +43,12 @@ class PartyIdentificationAndAccount228(base_types._BaseFieldType):
 
 	@PrcgDt.setter
 	def PrcgDt(self, value):
-		self._PrcgDt = value if type(value) != base_types.auto else self.make_default("PrcgDt")
+		self._PrcgDt = value if value is not None else base_types.UninitialisedField(self, 'PrcgDt', DateAndDateTime2Choice, False)
 
 	@PrcgDt.deleter
 	def PrcgDt(self):
 		del self._PrcgDt
-		self._PrcgDt = None
+		self._PrcgDt = base_types.UninitialisedField(self, 'PrcgDt', DateAndDateTime2Choice, False)
 
 	@property
 	def PrcgId(self):
@@ -56,12 +56,12 @@ class PartyIdentificationAndAccount228(base_types._BaseFieldType):
 
 	@PrcgId.setter
 	def PrcgId(self, value):
-		self._PrcgId = value if type(value) != base_types.auto else self.make_default("PrcgId")
+		self._PrcgId = value if value is not None else base_types.UninitialisedField(self, 'PrcgId', Max35Text, False)
 
 	@PrcgId.deleter
 	def PrcgId(self):
 		del self._PrcgId
-		self._PrcgId = None
+		self._PrcgId = base_types.UninitialisedField(self, 'PrcgId', Max35Text, False)
 
 	@property
 	def PtyId(self):
@@ -69,12 +69,12 @@ class PartyIdentificationAndAccount228(base_types._BaseFieldType):
 
 	@PtyId.setter
 	def PtyId(self, value):
-		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
+		self._PtyId = value if value is not None else base_types.UninitialisedField(self, 'PtyId', PartyIdentification254Choice, False)
 
 	@PtyId.deleter
 	def PtyId(self):
 		del self._PtyId
-		self._PtyId = None
+		self._PtyId = base_types.UninitialisedField(self, 'PtyId', PartyIdentification254Choice, False)
 
 	@property
 	def SubAcctDtls(self):
@@ -82,12 +82,12 @@ class PartyIdentificationAndAccount228(base_types._BaseFieldType):
 
 	@SubAcctDtls.setter
 	def SubAcctDtls(self, value):
-		self._SubAcctDtls = value if type(value) != base_types.auto else self.make_default("SubAcctDtls")
+		self._SubAcctDtls = value if value is not None else base_types.UninitialisedField(self, 'SubAcctDtls', SubAccount4, False)
 
 	@SubAcctDtls.deleter
 	def SubAcctDtls(self):
 		del self._SubAcctDtls
-		self._SubAcctDtls = None
+		self._SubAcctDtls = base_types.UninitialisedField(self, 'SubAcctDtls', SubAccount4, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

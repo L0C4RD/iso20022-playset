@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Max52Text import Max52Text
+from . import Max35Text
+from . import Max52Text
 
 class Reference3Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Reference3Choice(base_types._BaseFieldType):
 
 	@ClntCollInstrId.setter
 	def ClntCollInstrId(self, value):
-		self._ClntCollInstrId = value if type(value) != base_types.auto else self.make_default("ClntCollInstrId")
+		self._ClntCollInstrId = value if value is not None else base_types.UninitialisedField(self, 'ClntCollInstrId', Max35Text, False)
 
 	@ClntCollInstrId.deleter
 	def ClntCollInstrId(self):
 		del self._ClntCollInstrId
-		self._ClntCollInstrId = None
+		self._ClntCollInstrId = base_types.UninitialisedField(self, 'ClntCollInstrId', Max35Text, False)
 
 	@property
 	def ClntCollTxId(self):
@@ -27,12 +27,12 @@ class Reference3Choice(base_types._BaseFieldType):
 
 	@ClntCollTxId.setter
 	def ClntCollTxId(self, value):
-		self._ClntCollTxId = value if type(value) != base_types.auto else self.make_default("ClntCollTxId")
+		self._ClntCollTxId = value if value is not None else base_types.UninitialisedField(self, 'ClntCollTxId', Max35Text, False)
 
 	@ClntCollTxId.deleter
 	def ClntCollTxId(self):
 		del self._ClntCollTxId
-		self._ClntCollTxId = None
+		self._ClntCollTxId = base_types.UninitialisedField(self, 'ClntCollTxId', Max35Text, False)
 
 	@property
 	def CmonTxId(self):
@@ -40,12 +40,12 @@ class Reference3Choice(base_types._BaseFieldType):
 
 	@CmonTxId.setter
 	def CmonTxId(self, value):
-		self._CmonTxId = value if type(value) != base_types.auto else self.make_default("CmonTxId")
+		self._CmonTxId = value if value is not None else base_types.UninitialisedField(self, 'CmonTxId', Max52Text, False)
 
 	@CmonTxId.deleter
 	def CmonTxId(self):
 		del self._CmonTxId
-		self._CmonTxId = None
+		self._CmonTxId = base_types.UninitialisedField(self, 'CmonTxId', Max52Text, False)
 
 	@property
 	def CollPrpslId(self):
@@ -53,12 +53,12 @@ class Reference3Choice(base_types._BaseFieldType):
 
 	@CollPrpslId.setter
 	def CollPrpslId(self, value):
-		self._CollPrpslId = value if type(value) != base_types.auto else self.make_default("CollPrpslId")
+		self._CollPrpslId = value if value is not None else base_types.UninitialisedField(self, 'CollPrpslId', Max35Text, False)
 
 	@CollPrpslId.deleter
 	def CollPrpslId(self):
 		del self._CollPrpslId
-		self._CollPrpslId = None
+		self._CollPrpslId = base_types.UninitialisedField(self, 'CollPrpslId', Max35Text, False)
 
 	@property
 	def CollPrpslRspnId(self):
@@ -66,12 +66,12 @@ class Reference3Choice(base_types._BaseFieldType):
 
 	@CollPrpslRspnId.setter
 	def CollPrpslRspnId(self, value):
-		self._CollPrpslRspnId = value if type(value) != base_types.auto else self.make_default("CollPrpslRspnId")
+		self._CollPrpslRspnId = value if value is not None else base_types.UninitialisedField(self, 'CollPrpslRspnId', Max35Text, False)
 
 	@CollPrpslRspnId.deleter
 	def CollPrpslRspnId(self):
 		del self._CollPrpslRspnId
-		self._CollPrpslRspnId = None
+		self._CollPrpslRspnId = base_types.UninitialisedField(self, 'CollPrpslRspnId', Max35Text, False)
 
 	@property
 	def CollSbstitnConfId(self):
@@ -79,12 +79,12 @@ class Reference3Choice(base_types._BaseFieldType):
 
 	@CollSbstitnConfId.setter
 	def CollSbstitnConfId(self, value):
-		self._CollSbstitnConfId = value if type(value) != base_types.auto else self.make_default("CollSbstitnConfId")
+		self._CollSbstitnConfId = value if value is not None else base_types.UninitialisedField(self, 'CollSbstitnConfId', Max35Text, False)
 
 	@CollSbstitnConfId.deleter
 	def CollSbstitnConfId(self):
 		del self._CollSbstitnConfId
-		self._CollSbstitnConfId = None
+		self._CollSbstitnConfId = base_types.UninitialisedField(self, 'CollSbstitnConfId', Max35Text, False)
 
 	@property
 	def CollSbstitnReqId(self):
@@ -92,12 +92,12 @@ class Reference3Choice(base_types._BaseFieldType):
 
 	@CollSbstitnReqId.setter
 	def CollSbstitnReqId(self, value):
-		self._CollSbstitnReqId = value if type(value) != base_types.auto else self.make_default("CollSbstitnReqId")
+		self._CollSbstitnReqId = value if value is not None else base_types.UninitialisedField(self, 'CollSbstitnReqId', Max35Text, False)
 
 	@CollSbstitnReqId.deleter
 	def CollSbstitnReqId(self):
 		del self._CollSbstitnReqId
-		self._CollSbstitnReqId = None
+		self._CollSbstitnReqId = base_types.UninitialisedField(self, 'CollSbstitnReqId', Max35Text, False)
 
 	@property
 	def CollSbstitnRspnId(self):
@@ -105,12 +105,12 @@ class Reference3Choice(base_types._BaseFieldType):
 
 	@CollSbstitnRspnId.setter
 	def CollSbstitnRspnId(self, value):
-		self._CollSbstitnRspnId = value if type(value) != base_types.auto else self.make_default("CollSbstitnRspnId")
+		self._CollSbstitnRspnId = value if value is not None else base_types.UninitialisedField(self, 'CollSbstitnRspnId', Max35Text, False)
 
 	@CollSbstitnRspnId.deleter
 	def CollSbstitnRspnId(self):
 		del self._CollSbstitnRspnId
-		self._CollSbstitnRspnId = None
+		self._CollSbstitnRspnId = base_types.UninitialisedField(self, 'CollSbstitnRspnId', Max35Text, False)
 
 	@property
 	def DsptNtfctnId(self):
@@ -118,12 +118,12 @@ class Reference3Choice(base_types._BaseFieldType):
 
 	@DsptNtfctnId.setter
 	def DsptNtfctnId(self, value):
-		self._DsptNtfctnId = value if type(value) != base_types.auto else self.make_default("DsptNtfctnId")
+		self._DsptNtfctnId = value if value is not None else base_types.UninitialisedField(self, 'DsptNtfctnId', Max35Text, False)
 
 	@DsptNtfctnId.deleter
 	def DsptNtfctnId(self):
 		del self._DsptNtfctnId
-		self._DsptNtfctnId = None
+		self._DsptNtfctnId = base_types.UninitialisedField(self, 'DsptNtfctnId', Max35Text, False)
 
 	@property
 	def IntrstPmtReqId(self):
@@ -131,12 +131,12 @@ class Reference3Choice(base_types._BaseFieldType):
 
 	@IntrstPmtReqId.setter
 	def IntrstPmtReqId(self, value):
-		self._IntrstPmtReqId = value if type(value) != base_types.auto else self.make_default("IntrstPmtReqId")
+		self._IntrstPmtReqId = value if value is not None else base_types.UninitialisedField(self, 'IntrstPmtReqId', Max35Text, False)
 
 	@IntrstPmtReqId.deleter
 	def IntrstPmtReqId(self):
 		del self._IntrstPmtReqId
-		self._IntrstPmtReqId = None
+		self._IntrstPmtReqId = base_types.UninitialisedField(self, 'IntrstPmtReqId', Max35Text, False)
 
 	@property
 	def IntrstPmtRspnId(self):
@@ -144,12 +144,12 @@ class Reference3Choice(base_types._BaseFieldType):
 
 	@IntrstPmtRspnId.setter
 	def IntrstPmtRspnId(self, value):
-		self._IntrstPmtRspnId = value if type(value) != base_types.auto else self.make_default("IntrstPmtRspnId")
+		self._IntrstPmtRspnId = value if value is not None else base_types.UninitialisedField(self, 'IntrstPmtRspnId', Max35Text, False)
 
 	@IntrstPmtRspnId.deleter
 	def IntrstPmtRspnId(self):
 		del self._IntrstPmtRspnId
-		self._IntrstPmtRspnId = None
+		self._IntrstPmtRspnId = base_types.UninitialisedField(self, 'IntrstPmtRspnId', Max35Text, False)
 
 	@property
 	def IntrstPmtStmtId(self):
@@ -157,12 +157,12 @@ class Reference3Choice(base_types._BaseFieldType):
 
 	@IntrstPmtStmtId.setter
 	def IntrstPmtStmtId(self, value):
-		self._IntrstPmtStmtId = value if type(value) != base_types.auto else self.make_default("IntrstPmtStmtId")
+		self._IntrstPmtStmtId = value if value is not None else base_types.UninitialisedField(self, 'IntrstPmtStmtId', Max35Text, False)
 
 	@IntrstPmtStmtId.deleter
 	def IntrstPmtStmtId(self):
 		del self._IntrstPmtStmtId
-		self._IntrstPmtStmtId = None
+		self._IntrstPmtStmtId = base_types.UninitialisedField(self, 'IntrstPmtStmtId', Max35Text, False)
 
 	@property
 	def MrgnCallReqId(self):
@@ -170,12 +170,12 @@ class Reference3Choice(base_types._BaseFieldType):
 
 	@MrgnCallReqId.setter
 	def MrgnCallReqId(self, value):
-		self._MrgnCallReqId = value if type(value) != base_types.auto else self.make_default("MrgnCallReqId")
+		self._MrgnCallReqId = value if value is not None else base_types.UninitialisedField(self, 'MrgnCallReqId', Max35Text, False)
 
 	@MrgnCallReqId.deleter
 	def MrgnCallReqId(self):
 		del self._MrgnCallReqId
-		self._MrgnCallReqId = None
+		self._MrgnCallReqId = base_types.UninitialisedField(self, 'MrgnCallReqId', Max35Text, False)
 
 	@property
 	def MrgnCallRspnId(self):
@@ -183,12 +183,12 @@ class Reference3Choice(base_types._BaseFieldType):
 
 	@MrgnCallRspnId.setter
 	def MrgnCallRspnId(self, value):
-		self._MrgnCallRspnId = value if type(value) != base_types.auto else self.make_default("MrgnCallRspnId")
+		self._MrgnCallRspnId = value if value is not None else base_types.UninitialisedField(self, 'MrgnCallRspnId', Max35Text, False)
 
 	@MrgnCallRspnId.deleter
 	def MrgnCallRspnId(self):
 		del self._MrgnCallRspnId
-		self._MrgnCallRspnId = None
+		self._MrgnCallRspnId = base_types.UninitialisedField(self, 'MrgnCallRspnId', Max35Text, False)
 
 	@property
 	def TrptyAgtSvcPrvdrCollInstrId(self):
@@ -196,12 +196,12 @@ class Reference3Choice(base_types._BaseFieldType):
 
 	@TrptyAgtSvcPrvdrCollInstrId.setter
 	def TrptyAgtSvcPrvdrCollInstrId(self, value):
-		self._TrptyAgtSvcPrvdrCollInstrId = value if type(value) != base_types.auto else self.make_default("TrptyAgtSvcPrvdrCollInstrId")
+		self._TrptyAgtSvcPrvdrCollInstrId = value if value is not None else base_types.UninitialisedField(self, 'TrptyAgtSvcPrvdrCollInstrId', Max35Text, False)
 
 	@TrptyAgtSvcPrvdrCollInstrId.deleter
 	def TrptyAgtSvcPrvdrCollInstrId(self):
 		del self._TrptyAgtSvcPrvdrCollInstrId
-		self._TrptyAgtSvcPrvdrCollInstrId = None
+		self._TrptyAgtSvcPrvdrCollInstrId = base_types.UninitialisedField(self, 'TrptyAgtSvcPrvdrCollInstrId', Max35Text, False)
 
 	@property
 	def TrptyAgtSvcPrvdrCollTxId(self):
@@ -209,12 +209,12 @@ class Reference3Choice(base_types._BaseFieldType):
 
 	@TrptyAgtSvcPrvdrCollTxId.setter
 	def TrptyAgtSvcPrvdrCollTxId(self, value):
-		self._TrptyAgtSvcPrvdrCollTxId = value if type(value) != base_types.auto else self.make_default("TrptyAgtSvcPrvdrCollTxId")
+		self._TrptyAgtSvcPrvdrCollTxId = value if value is not None else base_types.UninitialisedField(self, 'TrptyAgtSvcPrvdrCollTxId', Max35Text, False)
 
 	@TrptyAgtSvcPrvdrCollTxId.deleter
 	def TrptyAgtSvcPrvdrCollTxId(self):
 		del self._TrptyAgtSvcPrvdrCollTxId
-		self._TrptyAgtSvcPrvdrCollTxId = None
+		self._TrptyAgtSvcPrvdrCollTxId = base_types.UninitialisedField(self, 'TrptyAgtSvcPrvdrCollTxId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClntCollInstrId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DecimalNumber import DecimalNumber
-from ._YesNoIndicator import YesNoIndicator
+from . import DecimalNumber
+from . import YesNoIndicator
 
 class QuantityRangeBoundary1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class QuantityRangeBoundary1(base_types._BaseFieldType):
 
 	@Bdry.setter
 	def Bdry(self, value):
-		self._Bdry = value if type(value) != base_types.auto else self.make_default("Bdry")
+		self._Bdry = value if value is not None else base_types.UninitialisedField(self, 'Bdry', DecimalNumber, False)
 
 	@Bdry.deleter
 	def Bdry(self):
 		del self._Bdry
-		self._Bdry = None
+		self._Bdry = base_types.UninitialisedField(self, 'Bdry', DecimalNumber, False)
 
 	@property
 	def Incl(self):
@@ -27,12 +27,12 @@ class QuantityRangeBoundary1(base_types._BaseFieldType):
 
 	@Incl.setter
 	def Incl(self, value):
-		self._Incl = value if type(value) != base_types.auto else self.make_default("Incl")
+		self._Incl = value if value is not None else base_types.UninitialisedField(self, 'Incl', YesNoIndicator, False)
 
 	@Incl.deleter
 	def Incl(self):
 		del self._Incl
-		self._Incl = None
+		self._Incl = base_types.UninitialisedField(self, 'Incl', YesNoIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Bdry', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),

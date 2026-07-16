@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._MarketIdentification98 import MarketIdentification98
-from ._PriceRateOrAmountOrUnknown2Choice import PriceRateOrAmountOrUnknown2Choice
-from ._TypeOfPrice48Choice import TypeOfPrice48Choice
-from ._YieldedOrValueType1Choice import YieldedOrValueType1Choice
+from . import DateAndDateTime2Choice
+from . import MarketIdentification98
+from . import PriceRateOrAmountOrUnknown2Choice
+from . import TypeOfPrice48Choice
+from . import YieldedOrValueType1Choice
 
 class PriceInformation30(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class PriceInformation30(base_types._BaseFieldType):
 
 	@QtnDt.setter
 	def QtnDt(self, value):
-		self._QtnDt = value if type(value) != base_types.auto else self.make_default("QtnDt")
+		self._QtnDt = value if value is not None else base_types.UninitialisedField(self, 'QtnDt', DateAndDateTime2Choice, False)
 
 	@QtnDt.deleter
 	def QtnDt(self):
 		del self._QtnDt
-		self._QtnDt = None
+		self._QtnDt = base_types.UninitialisedField(self, 'QtnDt', DateAndDateTime2Choice, False)
 
 	@property
 	def SrcOfPric(self):
@@ -30,12 +30,12 @@ class PriceInformation30(base_types._BaseFieldType):
 
 	@SrcOfPric.setter
 	def SrcOfPric(self, value):
-		self._SrcOfPric = value if type(value) != base_types.auto else self.make_default("SrcOfPric")
+		self._SrcOfPric = value if value is not None else base_types.UninitialisedField(self, 'SrcOfPric', MarketIdentification98, False)
 
 	@SrcOfPric.deleter
 	def SrcOfPric(self):
 		del self._SrcOfPric
-		self._SrcOfPric = None
+		self._SrcOfPric = base_types.UninitialisedField(self, 'SrcOfPric', MarketIdentification98, False)
 
 	@property
 	def Tp(self):
@@ -43,12 +43,12 @@ class PriceInformation30(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', TypeOfPrice48Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', TypeOfPrice48Choice, False)
 
 	@property
 	def Val(self):
@@ -56,12 +56,12 @@ class PriceInformation30(base_types._BaseFieldType):
 
 	@Val.setter
 	def Val(self, value):
-		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
+		self._Val = value if value is not None else base_types.UninitialisedField(self, 'Val', PriceRateOrAmountOrUnknown2Choice, False)
 
 	@Val.deleter
 	def Val(self):
 		del self._Val
-		self._Val = None
+		self._Val = base_types.UninitialisedField(self, 'Val', PriceRateOrAmountOrUnknown2Choice, False)
 
 	@property
 	def ValTp(self):
@@ -69,12 +69,12 @@ class PriceInformation30(base_types._BaseFieldType):
 
 	@ValTp.setter
 	def ValTp(self, value):
-		self._ValTp = value if type(value) != base_types.auto else self.make_default("ValTp")
+		self._ValTp = value if value is not None else base_types.UninitialisedField(self, 'ValTp', YieldedOrValueType1Choice, False)
 
 	@ValTp.deleter
 	def ValTp(self):
 		del self._ValTp
-		self._ValTp = None
+		self._ValTp = base_types.UninitialisedField(self, 'ValTp', YieldedOrValueType1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='QtnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),

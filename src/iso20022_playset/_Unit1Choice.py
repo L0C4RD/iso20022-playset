@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DecimalNumber import DecimalNumber
-from ._Max30DecimalNumber import Max30DecimalNumber
+from . import DecimalNumber
+from . import Max30DecimalNumber
 
 class Unit1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Unit1Choice(base_types._BaseFieldType):
 
 	@DgtlTknUnit.setter
 	def DgtlTknUnit(self, value):
-		self._DgtlTknUnit = value if type(value) != base_types.auto else self.make_default("DgtlTknUnit")
+		self._DgtlTknUnit = value if value is not None else base_types.UninitialisedField(self, 'DgtlTknUnit', Max30DecimalNumber, False)
 
 	@DgtlTknUnit.deleter
 	def DgtlTknUnit(self):
 		del self._DgtlTknUnit
-		self._DgtlTknUnit = None
+		self._DgtlTknUnit = base_types.UninitialisedField(self, 'DgtlTknUnit', Max30DecimalNumber, False)
 
 	@property
 	def UnitsNb(self):
@@ -27,12 +27,12 @@ class Unit1Choice(base_types._BaseFieldType):
 
 	@UnitsNb.setter
 	def UnitsNb(self, value):
-		self._UnitsNb = value if type(value) != base_types.auto else self.make_default("UnitsNb")
+		self._UnitsNb = value if value is not None else base_types.UninitialisedField(self, 'UnitsNb', DecimalNumber, False)
 
 	@UnitsNb.deleter
 	def UnitsNb(self):
 		del self._UnitsNb
-		self._UnitsNb = None
+		self._UnitsNb = base_types.UninitialisedField(self, 'UnitsNb', DecimalNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DgtlTknUnit', type=Max30DecimalNumber, min=0, max=1, mutex_group=1, array=False),

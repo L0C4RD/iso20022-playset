@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
-from ._Charge33 import Charge33
-from ._EUDividendStatusType3Choice import EUDividendStatusType3Choice
-from ._Number import Number
-from ._PercentageRate import PercentageRate
-from ._PriceMethod1Code import PriceMethod1Code
-from ._PriceType6Choice import PriceType6Choice
-from ._PriceValue1 import PriceValue1
-from ._Tax43 import Tax43
-from ._TaxableIncomePerShareCalculated3Choice import TaxableIncomePerShareCalculated3Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import ActiveOrHistoricCurrencyAnd13DecimalAmount
+from . import Charge33
+from . import EUDividendStatusType3Choice
+from . import Number
+from . import PercentageRate
+from . import PriceMethod1Code
+from . import PriceType6Choice
+from . import PriceValue1
+from . import Tax43
+from . import TaxableIncomePerShareCalculated3Choice
+from . import YesNoIndicator
 
 class UnitPrice24(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class UnitPrice24(base_types._BaseFieldType):
 
 	@ChrgDtls.setter
 	def ChrgDtls(self, value):
-		self._ChrgDtls = value if type(value) != base_types.auto else self.make_default("ChrgDtls")
+		self._ChrgDtls = value if value is not None else base_types.UninitialisedField(self, 'ChrgDtls', Charge33, True)
 
 	@ChrgDtls.deleter
 	def ChrgDtls(self):
 		del self._ChrgDtls
-		self._ChrgDtls = None
+		self._ChrgDtls = base_types.UninitialisedField(self, 'ChrgDtls', Charge33, True)
 
 	@property
 	def ClctnBsis(self):
@@ -36,12 +36,12 @@ class UnitPrice24(base_types._BaseFieldType):
 
 	@ClctnBsis.setter
 	def ClctnBsis(self, value):
-		self._ClctnBsis = value if type(value) != base_types.auto else self.make_default("ClctnBsis")
+		self._ClctnBsis = value if value is not None else base_types.UninitialisedField(self, 'ClctnBsis', PercentageRate, False)
 
 	@ClctnBsis.deleter
 	def ClctnBsis(self):
 		del self._ClctnBsis
-		self._ClctnBsis = None
+		self._ClctnBsis = base_types.UninitialisedField(self, 'ClctnBsis', PercentageRate, False)
 
 	@property
 	def CumDvddInd(self):
@@ -49,12 +49,12 @@ class UnitPrice24(base_types._BaseFieldType):
 
 	@CumDvddInd.setter
 	def CumDvddInd(self, value):
-		self._CumDvddInd = value if type(value) != base_types.auto else self.make_default("CumDvddInd")
+		self._CumDvddInd = value if value is not None else base_types.UninitialisedField(self, 'CumDvddInd', YesNoIndicator, False)
 
 	@CumDvddInd.deleter
 	def CumDvddInd(self):
 		del self._CumDvddInd
-		self._CumDvddInd = None
+		self._CumDvddInd = base_types.UninitialisedField(self, 'CumDvddInd', YesNoIndicator, False)
 
 	@property
 	def EUDvddSts(self):
@@ -62,12 +62,12 @@ class UnitPrice24(base_types._BaseFieldType):
 
 	@EUDvddSts.setter
 	def EUDvddSts(self, value):
-		self._EUDvddSts = value if type(value) != base_types.auto else self.make_default("EUDvddSts")
+		self._EUDvddSts = value if value is not None else base_types.UninitialisedField(self, 'EUDvddSts', EUDividendStatusType3Choice, False)
 
 	@EUDvddSts.deleter
 	def EUDvddSts(self):
 		del self._EUDvddSts
-		self._EUDvddSts = None
+		self._EUDvddSts = base_types.UninitialisedField(self, 'EUDvddSts', EUDividendStatusType3Choice, False)
 
 	@property
 	def EstmtdPricInd(self):
@@ -75,12 +75,12 @@ class UnitPrice24(base_types._BaseFieldType):
 
 	@EstmtdPricInd.setter
 	def EstmtdPricInd(self, value):
-		self._EstmtdPricInd = value if type(value) != base_types.auto else self.make_default("EstmtdPricInd")
+		self._EstmtdPricInd = value if value is not None else base_types.UninitialisedField(self, 'EstmtdPricInd', YesNoIndicator, False)
 
 	@EstmtdPricInd.deleter
 	def EstmtdPricInd(self):
 		del self._EstmtdPricInd
-		self._EstmtdPricInd = None
+		self._EstmtdPricInd = base_types.UninitialisedField(self, 'EstmtdPricInd', YesNoIndicator, False)
 
 	@property
 	def ForExctnInd(self):
@@ -88,12 +88,12 @@ class UnitPrice24(base_types._BaseFieldType):
 
 	@ForExctnInd.setter
 	def ForExctnInd(self, value):
-		self._ForExctnInd = value if type(value) != base_types.auto else self.make_default("ForExctnInd")
+		self._ForExctnInd = value if value is not None else base_types.UninitialisedField(self, 'ForExctnInd', YesNoIndicator, False)
 
 	@ForExctnInd.deleter
 	def ForExctnInd(self):
 		del self._ForExctnInd
-		self._ForExctnInd = None
+		self._ForExctnInd = base_types.UninitialisedField(self, 'ForExctnInd', YesNoIndicator, False)
 
 	@property
 	def NbOfDaysAcrd(self):
@@ -101,12 +101,12 @@ class UnitPrice24(base_types._BaseFieldType):
 
 	@NbOfDaysAcrd.setter
 	def NbOfDaysAcrd(self, value):
-		self._NbOfDaysAcrd = value if type(value) != base_types.auto else self.make_default("NbOfDaysAcrd")
+		self._NbOfDaysAcrd = value if value is not None else base_types.UninitialisedField(self, 'NbOfDaysAcrd', Number, False)
 
 	@NbOfDaysAcrd.deleter
 	def NbOfDaysAcrd(self):
 		del self._NbOfDaysAcrd
-		self._NbOfDaysAcrd = None
+		self._NbOfDaysAcrd = base_types.UninitialisedField(self, 'NbOfDaysAcrd', Number, False)
 
 	@property
 	def PricMtd(self):
@@ -114,12 +114,12 @@ class UnitPrice24(base_types._BaseFieldType):
 
 	@PricMtd.setter
 	def PricMtd(self, value):
-		self._PricMtd = value if type(value) != base_types.auto else self.make_default("PricMtd")
+		self._PricMtd = value if value is not None else base_types.UninitialisedField(self, 'PricMtd', PriceMethod1Code, False)
 
 	@PricMtd.deleter
 	def PricMtd(self):
 		del self._PricMtd
-		self._PricMtd = None
+		self._PricMtd = base_types.UninitialisedField(self, 'PricMtd', PriceMethod1Code, False)
 
 	@property
 	def PricTp(self):
@@ -127,12 +127,12 @@ class UnitPrice24(base_types._BaseFieldType):
 
 	@PricTp.setter
 	def PricTp(self, value):
-		self._PricTp = value if type(value) != base_types.auto else self.make_default("PricTp")
+		self._PricTp = value if value is not None else base_types.UninitialisedField(self, 'PricTp', PriceType6Choice, False)
 
 	@PricTp.deleter
 	def PricTp(self):
 		del self._PricTp
-		self._PricTp = None
+		self._PricTp = base_types.UninitialisedField(self, 'PricTp', PriceType6Choice, False)
 
 	@property
 	def TaxLbltyDtls(self):
@@ -140,12 +140,12 @@ class UnitPrice24(base_types._BaseFieldType):
 
 	@TaxLbltyDtls.setter
 	def TaxLbltyDtls(self, value):
-		self._TaxLbltyDtls = value if type(value) != base_types.auto else self.make_default("TaxLbltyDtls")
+		self._TaxLbltyDtls = value if value is not None else base_types.UninitialisedField(self, 'TaxLbltyDtls', Tax43, True)
 
 	@TaxLbltyDtls.deleter
 	def TaxLbltyDtls(self):
 		del self._TaxLbltyDtls
-		self._TaxLbltyDtls = None
+		self._TaxLbltyDtls = base_types.UninitialisedField(self, 'TaxLbltyDtls', Tax43, True)
 
 	@property
 	def TaxRfndDtls(self):
@@ -153,12 +153,12 @@ class UnitPrice24(base_types._BaseFieldType):
 
 	@TaxRfndDtls.setter
 	def TaxRfndDtls(self, value):
-		self._TaxRfndDtls = value if type(value) != base_types.auto else self.make_default("TaxRfndDtls")
+		self._TaxRfndDtls = value if value is not None else base_types.UninitialisedField(self, 'TaxRfndDtls', Tax43, True)
 
 	@TaxRfndDtls.deleter
 	def TaxRfndDtls(self):
 		del self._TaxRfndDtls
-		self._TaxRfndDtls = None
+		self._TaxRfndDtls = base_types.UninitialisedField(self, 'TaxRfndDtls', Tax43, True)
 
 	@property
 	def TaxblIncmPerDvdd(self):
@@ -166,12 +166,12 @@ class UnitPrice24(base_types._BaseFieldType):
 
 	@TaxblIncmPerDvdd.setter
 	def TaxblIncmPerDvdd(self, value):
-		self._TaxblIncmPerDvdd = value if type(value) != base_types.auto else self.make_default("TaxblIncmPerDvdd")
+		self._TaxblIncmPerDvdd = value if value is not None else base_types.UninitialisedField(self, 'TaxblIncmPerDvdd', ActiveOrHistoricCurrencyAnd13DecimalAmount, False)
 
 	@TaxblIncmPerDvdd.deleter
 	def TaxblIncmPerDvdd(self):
 		del self._TaxblIncmPerDvdd
-		self._TaxblIncmPerDvdd = None
+		self._TaxblIncmPerDvdd = base_types.UninitialisedField(self, 'TaxblIncmPerDvdd', ActiveOrHistoricCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def TaxblIncmPerShr(self):
@@ -179,12 +179,12 @@ class UnitPrice24(base_types._BaseFieldType):
 
 	@TaxblIncmPerShr.setter
 	def TaxblIncmPerShr(self, value):
-		self._TaxblIncmPerShr = value if type(value) != base_types.auto else self.make_default("TaxblIncmPerShr")
+		self._TaxblIncmPerShr = value if value is not None else base_types.UninitialisedField(self, 'TaxblIncmPerShr', ActiveOrHistoricCurrencyAnd13DecimalAmount, False)
 
 	@TaxblIncmPerShr.deleter
 	def TaxblIncmPerShr(self):
 		del self._TaxblIncmPerShr
-		self._TaxblIncmPerShr = None
+		self._TaxblIncmPerShr = base_types.UninitialisedField(self, 'TaxblIncmPerShr', ActiveOrHistoricCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def TaxblIncmPerShrClctd(self):
@@ -192,12 +192,12 @@ class UnitPrice24(base_types._BaseFieldType):
 
 	@TaxblIncmPerShrClctd.setter
 	def TaxblIncmPerShrClctd(self, value):
-		self._TaxblIncmPerShrClctd = value if type(value) != base_types.auto else self.make_default("TaxblIncmPerShrClctd")
+		self._TaxblIncmPerShrClctd = value if value is not None else base_types.UninitialisedField(self, 'TaxblIncmPerShrClctd', TaxableIncomePerShareCalculated3Choice, False)
 
 	@TaxblIncmPerShrClctd.deleter
 	def TaxblIncmPerShrClctd(self):
 		del self._TaxblIncmPerShrClctd
-		self._TaxblIncmPerShrClctd = None
+		self._TaxblIncmPerShrClctd = base_types.UninitialisedField(self, 'TaxblIncmPerShrClctd', TaxableIncomePerShareCalculated3Choice, False)
 
 	@property
 	def ValInAltrntvCcy(self):
@@ -205,12 +205,12 @@ class UnitPrice24(base_types._BaseFieldType):
 
 	@ValInAltrntvCcy.setter
 	def ValInAltrntvCcy(self, value):
-		self._ValInAltrntvCcy = value if type(value) != base_types.auto else self.make_default("ValInAltrntvCcy")
+		self._ValInAltrntvCcy = value if value is not None else base_types.UninitialisedField(self, 'ValInAltrntvCcy', PriceValue1, True)
 
 	@ValInAltrntvCcy.deleter
 	def ValInAltrntvCcy(self):
 		del self._ValInAltrntvCcy
-		self._ValInAltrntvCcy = None
+		self._ValInAltrntvCcy = base_types.UninitialisedField(self, 'ValInAltrntvCcy', PriceValue1, True)
 
 	@property
 	def ValInInvstmtCcy(self):
@@ -218,12 +218,12 @@ class UnitPrice24(base_types._BaseFieldType):
 
 	@ValInInvstmtCcy.setter
 	def ValInInvstmtCcy(self, value):
-		self._ValInInvstmtCcy = value if type(value) != base_types.auto else self.make_default("ValInInvstmtCcy")
+		self._ValInInvstmtCcy = value if value is not None else base_types.UninitialisedField(self, 'ValInInvstmtCcy', PriceValue1, True)
 
 	@ValInInvstmtCcy.deleter
 	def ValInInvstmtCcy(self):
 		del self._ValInInvstmtCcy
-		self._ValInInvstmtCcy = None
+		self._ValInInvstmtCcy = base_types.UninitialisedField(self, 'ValInInvstmtCcy', PriceValue1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ChrgDtls', type=Charge33, min=0, max=None, mutex_group=None, array=True),

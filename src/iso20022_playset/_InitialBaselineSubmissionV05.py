@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BankContactPerson1Choice import BankContactPerson1Choice
-from ._Baseline5 import Baseline5
-from ._ContactIdentification1 import ContactIdentification1
-from ._ContactIdentification3 import ContactIdentification3
-from ._InstructionType1 import InstructionType1
-from ._MessageIdentification1 import MessageIdentification1
-from ._SimpleIdentificationInformation import SimpleIdentificationInformation
+from . import BankContactPerson1Choice
+from . import Baseline5
+from . import ContactIdentification1
+from . import ContactIdentification3
+from . import InstructionType1
+from . import MessageIdentification1
+from . import SimpleIdentificationInformation
 
 class InitialBaselineSubmissionV05(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class InitialBaselineSubmissionV05(base_types._BaseFieldType):
 
 	@Baseln.setter
 	def Baseln(self, value):
-		self._Baseln = value if type(value) != base_types.auto else self.make_default("Baseln")
+		self._Baseln = value if value is not None else base_types.UninitialisedField(self, 'Baseln', Baseline5, False)
 
 	@Baseln.deleter
 	def Baseln(self):
 		del self._Baseln
-		self._Baseln = None
+		self._Baseln = base_types.UninitialisedField(self, 'Baseln', Baseline5, False)
 
 	@property
 	def BkCtctPrsn(self):
@@ -32,12 +32,12 @@ class InitialBaselineSubmissionV05(base_types._BaseFieldType):
 
 	@BkCtctPrsn.setter
 	def BkCtctPrsn(self, value):
-		self._BkCtctPrsn = value if type(value) != base_types.auto else self.make_default("BkCtctPrsn")
+		self._BkCtctPrsn = value if value is not None else base_types.UninitialisedField(self, 'BkCtctPrsn', BankContactPerson1Choice, False)
 
 	@BkCtctPrsn.deleter
 	def BkCtctPrsn(self):
 		del self._BkCtctPrsn
-		self._BkCtctPrsn = None
+		self._BkCtctPrsn = base_types.UninitialisedField(self, 'BkCtctPrsn', BankContactPerson1Choice, False)
 
 	@property
 	def BuyrCtctPrsn(self):
@@ -45,12 +45,12 @@ class InitialBaselineSubmissionV05(base_types._BaseFieldType):
 
 	@BuyrCtctPrsn.setter
 	def BuyrCtctPrsn(self, value):
-		self._BuyrCtctPrsn = value if type(value) != base_types.auto else self.make_default("BuyrCtctPrsn")
+		self._BuyrCtctPrsn = value if value is not None else base_types.UninitialisedField(self, 'BuyrCtctPrsn', ContactIdentification1, True)
 
 	@BuyrCtctPrsn.deleter
 	def BuyrCtctPrsn(self):
 		del self._BuyrCtctPrsn
-		self._BuyrCtctPrsn = None
+		self._BuyrCtctPrsn = base_types.UninitialisedField(self, 'BuyrCtctPrsn', ContactIdentification1, True)
 
 	@property
 	def Instr(self):
@@ -58,12 +58,12 @@ class InitialBaselineSubmissionV05(base_types._BaseFieldType):
 
 	@Instr.setter
 	def Instr(self, value):
-		self._Instr = value if type(value) != base_types.auto else self.make_default("Instr")
+		self._Instr = value if value is not None else base_types.UninitialisedField(self, 'Instr', InstructionType1, False)
 
 	@Instr.deleter
 	def Instr(self):
 		del self._Instr
-		self._Instr = None
+		self._Instr = base_types.UninitialisedField(self, 'Instr', InstructionType1, False)
 
 	@property
 	def OthrBkCtctPrsn(self):
@@ -71,12 +71,12 @@ class InitialBaselineSubmissionV05(base_types._BaseFieldType):
 
 	@OthrBkCtctPrsn.setter
 	def OthrBkCtctPrsn(self, value):
-		self._OthrBkCtctPrsn = value if type(value) != base_types.auto else self.make_default("OthrBkCtctPrsn")
+		self._OthrBkCtctPrsn = value if value is not None else base_types.UninitialisedField(self, 'OthrBkCtctPrsn', ContactIdentification3, True)
 
 	@OthrBkCtctPrsn.deleter
 	def OthrBkCtctPrsn(self):
 		del self._OthrBkCtctPrsn
-		self._OthrBkCtctPrsn = None
+		self._OthrBkCtctPrsn = base_types.UninitialisedField(self, 'OthrBkCtctPrsn', ContactIdentification3, True)
 
 	@property
 	def SellrCtctPrsn(self):
@@ -84,12 +84,12 @@ class InitialBaselineSubmissionV05(base_types._BaseFieldType):
 
 	@SellrCtctPrsn.setter
 	def SellrCtctPrsn(self, value):
-		self._SellrCtctPrsn = value if type(value) != base_types.auto else self.make_default("SellrCtctPrsn")
+		self._SellrCtctPrsn = value if value is not None else base_types.UninitialisedField(self, 'SellrCtctPrsn', ContactIdentification1, True)
 
 	@SellrCtctPrsn.deleter
 	def SellrCtctPrsn(self):
 		del self._SellrCtctPrsn
-		self._SellrCtctPrsn = None
+		self._SellrCtctPrsn = base_types.UninitialisedField(self, 'SellrCtctPrsn', ContactIdentification1, True)
 
 	@property
 	def SubmissnId(self):
@@ -97,12 +97,12 @@ class InitialBaselineSubmissionV05(base_types._BaseFieldType):
 
 	@SubmissnId.setter
 	def SubmissnId(self, value):
-		self._SubmissnId = value if type(value) != base_types.auto else self.make_default("SubmissnId")
+		self._SubmissnId = value if value is not None else base_types.UninitialisedField(self, 'SubmissnId', MessageIdentification1, False)
 
 	@SubmissnId.deleter
 	def SubmissnId(self):
 		del self._SubmissnId
-		self._SubmissnId = None
+		self._SubmissnId = base_types.UninitialisedField(self, 'SubmissnId', MessageIdentification1, False)
 
 	@property
 	def SubmitrTxRef(self):
@@ -110,12 +110,12 @@ class InitialBaselineSubmissionV05(base_types._BaseFieldType):
 
 	@SubmitrTxRef.setter
 	def SubmitrTxRef(self, value):
-		self._SubmitrTxRef = value if type(value) != base_types.auto else self.make_default("SubmitrTxRef")
+		self._SubmitrTxRef = value if value is not None else base_types.UninitialisedField(self, 'SubmitrTxRef', SimpleIdentificationInformation, False)
 
 	@SubmitrTxRef.deleter
 	def SubmitrTxRef(self):
 		del self._SubmitrTxRef
-		self._SubmitrTxRef = None
+		self._SubmitrTxRef = base_types.UninitialisedField(self, 'SubmitrTxRef', SimpleIdentificationInformation, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Baseln', type=Baseline5, min=1, max=1, mutex_group=None, array=False),

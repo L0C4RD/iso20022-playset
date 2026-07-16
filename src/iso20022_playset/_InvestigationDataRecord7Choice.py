@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdjustmentCompensation1 import AdjustmentCompensation1
-from ._BookingConfirmation5 import BookingConfirmation5
-from ._CompensationResponse1 import CompensationResponse1
-from ._DebitAuthorisationConfirmation3 import DebitAuthorisationConfirmation3
-from ._Max500Text import Max500Text
-from ._PaymentTransactionStatus1 import PaymentTransactionStatus1
-from ._TransactionAmendment1 import TransactionAmendment1
+from . import AdjustmentCompensation1
+from . import BookingConfirmation5
+from . import CompensationResponse1
+from . import DebitAuthorisationConfirmation3
+from . import Max500Text
+from . import PaymentTransactionStatus1
+from . import TransactionAmendment1
 
 class InvestigationDataRecord7Choice(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class InvestigationDataRecord7Choice(base_types._BaseFieldType):
 
 	@Compstn.setter
 	def Compstn(self, value):
-		self._Compstn = value if type(value) != base_types.auto else self.make_default("Compstn")
+		self._Compstn = value if value is not None else base_types.UninitialisedField(self, 'Compstn', CompensationResponse1, False)
 
 	@Compstn.deleter
 	def Compstn(self):
 		del self._Compstn
-		self._Compstn = None
+		self._Compstn = base_types.UninitialisedField(self, 'Compstn', CompensationResponse1, False)
 
 	@property
 	def Conf(self):
@@ -32,12 +32,12 @@ class InvestigationDataRecord7Choice(base_types._BaseFieldType):
 
 	@Conf.setter
 	def Conf(self, value):
-		self._Conf = value if type(value) != base_types.auto else self.make_default("Conf")
+		self._Conf = value if value is not None else base_types.UninitialisedField(self, 'Conf', BookingConfirmation5, False)
 
 	@Conf.deleter
 	def Conf(self):
 		del self._Conf
-		self._Conf = None
+		self._Conf = base_types.UninitialisedField(self, 'Conf', BookingConfirmation5, False)
 
 	@property
 	def DbtAuthstn(self):
@@ -45,12 +45,12 @@ class InvestigationDataRecord7Choice(base_types._BaseFieldType):
 
 	@DbtAuthstn.setter
 	def DbtAuthstn(self, value):
-		self._DbtAuthstn = value if type(value) != base_types.auto else self.make_default("DbtAuthstn")
+		self._DbtAuthstn = value if value is not None else base_types.UninitialisedField(self, 'DbtAuthstn', DebitAuthorisationConfirmation3, False)
 
 	@DbtAuthstn.deleter
 	def DbtAuthstn(self):
 		del self._DbtAuthstn
-		self._DbtAuthstn = None
+		self._DbtAuthstn = base_types.UninitialisedField(self, 'DbtAuthstn', DebitAuthorisationConfirmation3, False)
 
 	@property
 	def RspnNrrtv(self):
@@ -58,12 +58,12 @@ class InvestigationDataRecord7Choice(base_types._BaseFieldType):
 
 	@RspnNrrtv.setter
 	def RspnNrrtv(self, value):
-		self._RspnNrrtv = value if type(value) != base_types.auto else self.make_default("RspnNrrtv")
+		self._RspnNrrtv = value if value is not None else base_types.UninitialisedField(self, 'RspnNrrtv', Max500Text, False)
 
 	@RspnNrrtv.deleter
 	def RspnNrrtv(self):
 		del self._RspnNrrtv
-		self._RspnNrrtv = None
+		self._RspnNrrtv = base_types.UninitialisedField(self, 'RspnNrrtv', Max500Text, False)
 
 	@property
 	def TxData(self):
@@ -71,12 +71,12 @@ class InvestigationDataRecord7Choice(base_types._BaseFieldType):
 
 	@TxData.setter
 	def TxData(self, value):
-		self._TxData = value if type(value) != base_types.auto else self.make_default("TxData")
+		self._TxData = value if value is not None else base_types.UninitialisedField(self, 'TxData', TransactionAmendment1, True)
 
 	@TxData.deleter
 	def TxData(self):
 		del self._TxData
-		self._TxData = None
+		self._TxData = base_types.UninitialisedField(self, 'TxData', TransactionAmendment1, True)
 
 	@property
 	def TxSts(self):
@@ -84,12 +84,12 @@ class InvestigationDataRecord7Choice(base_types._BaseFieldType):
 
 	@TxSts.setter
 	def TxSts(self, value):
-		self._TxSts = value if type(value) != base_types.auto else self.make_default("TxSts")
+		self._TxSts = value if value is not None else base_types.UninitialisedField(self, 'TxSts', PaymentTransactionStatus1, False)
 
 	@TxSts.deleter
 	def TxSts(self):
 		del self._TxSts
-		self._TxSts = None
+		self._TxSts = base_types.UninitialisedField(self, 'TxSts', PaymentTransactionStatus1, False)
 
 	@property
 	def Valtn(self):
@@ -97,12 +97,12 @@ class InvestigationDataRecord7Choice(base_types._BaseFieldType):
 
 	@Valtn.setter
 	def Valtn(self, value):
-		self._Valtn = value if type(value) != base_types.auto else self.make_default("Valtn")
+		self._Valtn = value if value is not None else base_types.UninitialisedField(self, 'Valtn', AdjustmentCompensation1, False)
 
 	@Valtn.deleter
 	def Valtn(self):
 		del self._Valtn
-		self._Valtn = None
+		self._Valtn = base_types.UninitialisedField(self, 'Valtn', AdjustmentCompensation1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Compstn', type=CompensationResponse1, min=0, max=1, mutex_group=1, array=False),

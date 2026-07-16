@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentIdentification7Choice import FinancialInstrumentIdentification7Choice
+from . import FinancialInstrumentIdentification7Choice
 
 class SwapLegIdentification2(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class SwapLegIdentification2(base_types._BaseFieldType):
 
 	@SwpIn.setter
 	def SwpIn(self, value):
-		self._SwpIn = value if type(value) != base_types.auto else self.make_default("SwpIn")
+		self._SwpIn = value if value is not None else base_types.UninitialisedField(self, 'SwpIn', FinancialInstrumentIdentification7Choice, False)
 
 	@SwpIn.deleter
 	def SwpIn(self):
 		del self._SwpIn
-		self._SwpIn = None
+		self._SwpIn = base_types.UninitialisedField(self, 'SwpIn', FinancialInstrumentIdentification7Choice, False)
 
 	@property
 	def SwpOut(self):
@@ -26,12 +26,12 @@ class SwapLegIdentification2(base_types._BaseFieldType):
 
 	@SwpOut.setter
 	def SwpOut(self, value):
-		self._SwpOut = value if type(value) != base_types.auto else self.make_default("SwpOut")
+		self._SwpOut = value if value is not None else base_types.UninitialisedField(self, 'SwpOut', FinancialInstrumentIdentification7Choice, False)
 
 	@SwpOut.deleter
 	def SwpOut(self):
 		del self._SwpOut
-		self._SwpOut = None
+		self._SwpOut = base_types.UninitialisedField(self, 'SwpOut', FinancialInstrumentIdentification7Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SwpIn', type=FinancialInstrumentIdentification7Choice, min=0, max=1, mutex_group=None, array=False),

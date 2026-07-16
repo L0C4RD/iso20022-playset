@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RequestToPayDebtorActivationCancellationRequestV02 import RequestToPayDebtorActivationCancellationRequestV02
+from . import RequestToPayDebtorActivationCancellationRequestV02
 
 class REDA_072_001_02():
 
@@ -18,12 +18,12 @@ class REDA_072_001_02():
 
 		@ReqToPayDbtrActvtnCxlReq.setter
 		def ReqToPayDbtrActvtnCxlReq(self, value):
-			self._ReqToPayDbtrActvtnCxlReq = value if type(value) != base_types.auto else self.make_default("ReqToPayDbtrActvtnCxlReq")
+			self._ReqToPayDbtrActvtnCxlReq = value if value is not None else base_types.UninitialisedField(self, 'ReqToPayDbtrActvtnCxlReq', RequestToPayDebtorActivationCancellationRequestV02, False)
 
 		@ReqToPayDbtrActvtnCxlReq.deleter
 		def ReqToPayDbtrActvtnCxlReq(self):
 			del self._ReqToPayDbtrActvtnCxlReq
-			self._ReqToPayDbtrActvtnCxlReq = None
+			self._ReqToPayDbtrActvtnCxlReq = base_types.UninitialisedField(self, 'ReqToPayDbtrActvtnCxlReq', RequestToPayDebtorActivationCancellationRequestV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ReqToPayDbtrActvtnCxlReq', type=RequestToPayDebtorActivationCancellationRequestV02, min=1, max=1, mutex_group=None, array=False),

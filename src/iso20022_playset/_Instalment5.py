@@ -2,18 +2,18 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActionMessage11 import ActionMessage11
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Frequency3Code import Frequency3Code
-from ._GracePeriod1 import GracePeriod1
-from ._ISODate import ISODate
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._InstalmentAmountDetails1 import InstalmentAmountDetails1
-from ._InstalmentPlan1Code import InstalmentPlan1Code
-from ._InterestRateDetails1 import InterestRateDetails1
-from ._Max35Text import Max35Text
-from ._Number import Number
-from ._PlanOwner1Code import PlanOwner1Code
+from . import ActionMessage11
+from . import ActiveCurrencyAndAmount
+from . import Frequency3Code
+from . import GracePeriod1
+from . import ISODate
+from . import ImpliedCurrencyAndAmount
+from . import InstalmentAmountDetails1
+from . import InstalmentPlan1Code
+from . import InterestRateDetails1
+from . import Max35Text
+from . import Number
+from . import PlanOwner1Code
 
 class Instalment5(base_types._BaseFieldType):
 
@@ -24,12 +24,12 @@ class Instalment5(base_types._BaseFieldType):
 
 	@Chrgs.setter
 	def Chrgs(self, value):
-		self._Chrgs = value if type(value) != base_types.auto else self.make_default("Chrgs")
+		self._Chrgs = value if value is not None else base_types.UninitialisedField(self, 'Chrgs', ImpliedCurrencyAndAmount, False)
 
 	@Chrgs.deleter
 	def Chrgs(self):
 		del self._Chrgs
-		self._Chrgs = None
+		self._Chrgs = base_types.UninitialisedField(self, 'Chrgs', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def DtldChrgs(self):
@@ -37,12 +37,12 @@ class Instalment5(base_types._BaseFieldType):
 
 	@DtldChrgs.setter
 	def DtldChrgs(self, value):
-		self._DtldChrgs = value if type(value) != base_types.auto else self.make_default("DtldChrgs")
+		self._DtldChrgs = value if value is not None else base_types.UninitialisedField(self, 'DtldChrgs', InstalmentAmountDetails1, True)
 
 	@DtldChrgs.deleter
 	def DtldChrgs(self):
 		del self._DtldChrgs
-		self._DtldChrgs = None
+		self._DtldChrgs = base_types.UninitialisedField(self, 'DtldChrgs', InstalmentAmountDetails1, True)
 
 	@property
 	def FrstAmt(self):
@@ -50,12 +50,12 @@ class Instalment5(base_types._BaseFieldType):
 
 	@FrstAmt.setter
 	def FrstAmt(self, value):
-		self._FrstAmt = value if type(value) != base_types.auto else self.make_default("FrstAmt")
+		self._FrstAmt = value if value is not None else base_types.UninitialisedField(self, 'FrstAmt', ImpliedCurrencyAndAmount, False)
 
 	@FrstAmt.deleter
 	def FrstAmt(self):
 		del self._FrstAmt
-		self._FrstAmt = None
+		self._FrstAmt = base_types.UninitialisedField(self, 'FrstAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def FrstPmtDt(self):
@@ -63,12 +63,12 @@ class Instalment5(base_types._BaseFieldType):
 
 	@FrstPmtDt.setter
 	def FrstPmtDt(self, value):
-		self._FrstPmtDt = value if type(value) != base_types.auto else self.make_default("FrstPmtDt")
+		self._FrstPmtDt = value if value is not None else base_types.UninitialisedField(self, 'FrstPmtDt', ISODate, False)
 
 	@FrstPmtDt.deleter
 	def FrstPmtDt(self):
 		del self._FrstPmtDt
-		self._FrstPmtDt = None
+		self._FrstPmtDt = base_types.UninitialisedField(self, 'FrstPmtDt', ISODate, False)
 
 	@property
 	def GracePrd(self):
@@ -76,12 +76,12 @@ class Instalment5(base_types._BaseFieldType):
 
 	@GracePrd.setter
 	def GracePrd(self, value):
-		self._GracePrd = value if type(value) != base_types.auto else self.make_default("GracePrd")
+		self._GracePrd = value if value is not None else base_types.UninitialisedField(self, 'GracePrd', GracePeriod1, True)
 
 	@GracePrd.deleter
 	def GracePrd(self):
 		del self._GracePrd
-		self._GracePrd = None
+		self._GracePrd = base_types.UninitialisedField(self, 'GracePrd', GracePeriod1, True)
 
 	@property
 	def InstlmtPlan(self):
@@ -89,12 +89,12 @@ class Instalment5(base_types._BaseFieldType):
 
 	@InstlmtPlan.setter
 	def InstlmtPlan(self, value):
-		self._InstlmtPlan = value if type(value) != base_types.auto else self.make_default("InstlmtPlan")
+		self._InstlmtPlan = value if value is not None else base_types.UninitialisedField(self, 'InstlmtPlan', InstalmentPlan1Code, True)
 
 	@InstlmtPlan.deleter
 	def InstlmtPlan(self):
 		del self._InstlmtPlan
-		self._InstlmtPlan = None
+		self._InstlmtPlan = base_types.UninitialisedField(self, 'InstlmtPlan', InstalmentPlan1Code, True)
 
 	@property
 	def InstlmtPrd(self):
@@ -102,12 +102,12 @@ class Instalment5(base_types._BaseFieldType):
 
 	@InstlmtPrd.setter
 	def InstlmtPrd(self, value):
-		self._InstlmtPrd = value if type(value) != base_types.auto else self.make_default("InstlmtPrd")
+		self._InstlmtPrd = value if value is not None else base_types.UninitialisedField(self, 'InstlmtPrd', Number, False)
 
 	@InstlmtPrd.deleter
 	def InstlmtPrd(self):
 		del self._InstlmtPrd
-		self._InstlmtPrd = None
+		self._InstlmtPrd = base_types.UninitialisedField(self, 'InstlmtPrd', Number, False)
 
 	@property
 	def IntrstRate(self):
@@ -115,12 +115,12 @@ class Instalment5(base_types._BaseFieldType):
 
 	@IntrstRate.setter
 	def IntrstRate(self, value):
-		self._IntrstRate = value if type(value) != base_types.auto else self.make_default("IntrstRate")
+		self._IntrstRate = value if value is not None else base_types.UninitialisedField(self, 'IntrstRate', InterestRateDetails1, True)
 
 	@IntrstRate.deleter
 	def IntrstRate(self):
 		del self._IntrstRate
-		self._IntrstRate = None
+		self._IntrstRate = base_types.UninitialisedField(self, 'IntrstRate', InterestRateDetails1, True)
 
 	@property
 	def LastAmt(self):
@@ -128,12 +128,12 @@ class Instalment5(base_types._BaseFieldType):
 
 	@LastAmt.setter
 	def LastAmt(self, value):
-		self._LastAmt = value if type(value) != base_types.auto else self.make_default("LastAmt")
+		self._LastAmt = value if value is not None else base_types.UninitialisedField(self, 'LastAmt', ImpliedCurrencyAndAmount, False)
 
 	@LastAmt.deleter
 	def LastAmt(self):
 		del self._LastAmt
-		self._LastAmt = None
+		self._LastAmt = base_types.UninitialisedField(self, 'LastAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def PlanId(self):
@@ -141,12 +141,12 @@ class Instalment5(base_types._BaseFieldType):
 
 	@PlanId.setter
 	def PlanId(self, value):
-		self._PlanId = value if type(value) != base_types.auto else self.make_default("PlanId")
+		self._PlanId = value if value is not None else base_types.UninitialisedField(self, 'PlanId', Max35Text, False)
 
 	@PlanId.deleter
 	def PlanId(self):
 		del self._PlanId
-		self._PlanId = None
+		self._PlanId = base_types.UninitialisedField(self, 'PlanId', Max35Text, False)
 
 	@property
 	def PlanNtce(self):
@@ -154,12 +154,12 @@ class Instalment5(base_types._BaseFieldType):
 
 	@PlanNtce.setter
 	def PlanNtce(self, value):
-		self._PlanNtce = value if type(value) != base_types.auto else self.make_default("PlanNtce")
+		self._PlanNtce = value if value is not None else base_types.UninitialisedField(self, 'PlanNtce', ActionMessage11, True)
 
 	@PlanNtce.deleter
 	def PlanNtce(self):
 		del self._PlanNtce
-		self._PlanNtce = None
+		self._PlanNtce = base_types.UninitialisedField(self, 'PlanNtce', ActionMessage11, True)
 
 	@property
 	def PlanOwnr(self):
@@ -167,12 +167,12 @@ class Instalment5(base_types._BaseFieldType):
 
 	@PlanOwnr.setter
 	def PlanOwnr(self, value):
-		self._PlanOwnr = value if type(value) != base_types.auto else self.make_default("PlanOwnr")
+		self._PlanOwnr = value if value is not None else base_types.UninitialisedField(self, 'PlanOwnr', PlanOwner1Code, False)
 
 	@PlanOwnr.deleter
 	def PlanOwnr(self):
 		del self._PlanOwnr
-		self._PlanOwnr = None
+		self._PlanOwnr = base_types.UninitialisedField(self, 'PlanOwnr', PlanOwner1Code, False)
 
 	@property
 	def PrdUnit(self):
@@ -180,12 +180,12 @@ class Instalment5(base_types._BaseFieldType):
 
 	@PrdUnit.setter
 	def PrdUnit(self, value):
-		self._PrdUnit = value if type(value) != base_types.auto else self.make_default("PrdUnit")
+		self._PrdUnit = value if value is not None else base_types.UninitialisedField(self, 'PrdUnit', Frequency3Code, False)
 
 	@PrdUnit.deleter
 	def PrdUnit(self):
 		del self._PrdUnit
-		self._PrdUnit = None
+		self._PrdUnit = base_types.UninitialisedField(self, 'PrdUnit', Frequency3Code, False)
 
 	@property
 	def SbsqntAmt(self):
@@ -193,12 +193,12 @@ class Instalment5(base_types._BaseFieldType):
 
 	@SbsqntAmt.setter
 	def SbsqntAmt(self, value):
-		self._SbsqntAmt = value if type(value) != base_types.auto else self.make_default("SbsqntAmt")
+		self._SbsqntAmt = value if value is not None else base_types.UninitialisedField(self, 'SbsqntAmt', ImpliedCurrencyAndAmount, False)
 
 	@SbsqntAmt.deleter
 	def SbsqntAmt(self):
 		del self._SbsqntAmt
-		self._SbsqntAmt = None
+		self._SbsqntAmt = base_types.UninitialisedField(self, 'SbsqntAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def SeqNb(self):
@@ -206,12 +206,12 @@ class Instalment5(base_types._BaseFieldType):
 
 	@SeqNb.setter
 	def SeqNb(self, value):
-		self._SeqNb = value if type(value) != base_types.auto else self.make_default("SeqNb")
+		self._SeqNb = value if value is not None else base_types.UninitialisedField(self, 'SeqNb', Number, False)
 
 	@SeqNb.deleter
 	def SeqNb(self):
 		del self._SeqNb
-		self._SeqNb = None
+		self._SeqNb = base_types.UninitialisedField(self, 'SeqNb', Number, False)
 
 	@property
 	def TtlAmt(self):
@@ -219,12 +219,12 @@ class Instalment5(base_types._BaseFieldType):
 
 	@TtlAmt.setter
 	def TtlAmt(self, value):
-		self._TtlAmt = value if type(value) != base_types.auto else self.make_default("TtlAmt")
+		self._TtlAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlAmt', ActiveCurrencyAndAmount, False)
 
 	@TtlAmt.deleter
 	def TtlAmt(self):
 		del self._TtlAmt
-		self._TtlAmt = None
+		self._TtlAmt = base_types.UninitialisedField(self, 'TtlAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def TtlNbOfPmts(self):
@@ -232,12 +232,12 @@ class Instalment5(base_types._BaseFieldType):
 
 	@TtlNbOfPmts.setter
 	def TtlNbOfPmts(self, value):
-		self._TtlNbOfPmts = value if type(value) != base_types.auto else self.make_default("TtlNbOfPmts")
+		self._TtlNbOfPmts = value if value is not None else base_types.UninitialisedField(self, 'TtlNbOfPmts', Number, False)
 
 	@TtlNbOfPmts.deleter
 	def TtlNbOfPmts(self):
 		del self._TtlNbOfPmts
-		self._TtlNbOfPmts = None
+		self._TtlNbOfPmts = base_types.UninitialisedField(self, 'TtlNbOfPmts', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Chrgs', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

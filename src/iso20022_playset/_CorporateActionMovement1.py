@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
-from ._DistributionInstructionType1Code import DistributionInstructionType1Code
-from ._Exact3NumericText import Exact3NumericText
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
-from ._PartyIdentification2Choice import PartyIdentification2Choice
-from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import CorporateActionOption1FormatChoice
+from . import DistributionInstructionType1Code
+from . import Exact3NumericText
+from . import ISODate
+from . import Max35Text
+from . import PartyIdentification2Choice
+from . import UnitOrFaceAmount1Choice
+from . import YesNoIndicator
 
 class CorporateActionMovement1(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class CorporateActionMovement1(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', Max35Text, False)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', Max35Text, False)
 
 	@property
 	def AcctOwnrId(self):
@@ -33,12 +33,12 @@ class CorporateActionMovement1(base_types._BaseFieldType):
 
 	@AcctOwnrId.setter
 	def AcctOwnrId(self, value):
-		self._AcctOwnrId = value if type(value) != base_types.auto else self.make_default("AcctOwnrId")
+		self._AcctOwnrId = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnrId', PartyIdentification2Choice, False)
 
 	@AcctOwnrId.deleter
 	def AcctOwnrId(self):
 		del self._AcctOwnrId
-		self._AcctOwnrId = None
+		self._AcctOwnrId = base_types.UninitialisedField(self, 'AcctOwnrId', PartyIdentification2Choice, False)
 
 	@property
 	def ConfdBalSctiesQty(self):
@@ -46,12 +46,12 @@ class CorporateActionMovement1(base_types._BaseFieldType):
 
 	@ConfdBalSctiesQty.setter
 	def ConfdBalSctiesQty(self, value):
-		self._ConfdBalSctiesQty = value if type(value) != base_types.auto else self.make_default("ConfdBalSctiesQty")
+		self._ConfdBalSctiesQty = value if value is not None else base_types.UninitialisedField(self, 'ConfdBalSctiesQty', UnitOrFaceAmount1Choice, False)
 
 	@ConfdBalSctiesQty.deleter
 	def ConfdBalSctiesQty(self):
 		del self._ConfdBalSctiesQty
-		self._ConfdBalSctiesQty = None
+		self._ConfdBalSctiesQty = base_types.UninitialisedField(self, 'ConfdBalSctiesQty', UnitOrFaceAmount1Choice, False)
 
 	@property
 	def HghPrtyInd(self):
@@ -59,12 +59,12 @@ class CorporateActionMovement1(base_types._BaseFieldType):
 
 	@HghPrtyInd.setter
 	def HghPrtyInd(self, value):
-		self._HghPrtyInd = value if type(value) != base_types.auto else self.make_default("HghPrtyInd")
+		self._HghPrtyInd = value if value is not None else base_types.UninitialisedField(self, 'HghPrtyInd', YesNoIndicator, False)
 
 	@HghPrtyInd.deleter
 	def HghPrtyInd(self):
 		del self._HghPrtyInd
-		self._HghPrtyInd = None
+		self._HghPrtyInd = base_types.UninitialisedField(self, 'HghPrtyInd', YesNoIndicator, False)
 
 	@property
 	def OptnNb(self):
@@ -72,12 +72,12 @@ class CorporateActionMovement1(base_types._BaseFieldType):
 
 	@OptnNb.setter
 	def OptnNb(self, value):
-		self._OptnNb = value if type(value) != base_types.auto else self.make_default("OptnNb")
+		self._OptnNb = value if value is not None else base_types.UninitialisedField(self, 'OptnNb', Exact3NumericText, False)
 
 	@OptnNb.deleter
 	def OptnNb(self):
 		del self._OptnNb
-		self._OptnNb = None
+		self._OptnNb = base_types.UninitialisedField(self, 'OptnNb', Exact3NumericText, False)
 
 	@property
 	def OptnTp(self):
@@ -85,12 +85,12 @@ class CorporateActionMovement1(base_types._BaseFieldType):
 
 	@OptnTp.setter
 	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != base_types.auto else self.make_default("OptnTp")
+		self._OptnTp = value if value is not None else base_types.UninitialisedField(self, 'OptnTp', CorporateActionOption1FormatChoice, False)
 
 	@OptnTp.deleter
 	def OptnTp(self):
 		del self._OptnTp
-		self._OptnTp = None
+		self._OptnTp = base_types.UninitialisedField(self, 'OptnTp', CorporateActionOption1FormatChoice, False)
 
 	@property
 	def OrdrTp(self):
@@ -98,12 +98,12 @@ class CorporateActionMovement1(base_types._BaseFieldType):
 
 	@OrdrTp.setter
 	def OrdrTp(self, value):
-		self._OrdrTp = value if type(value) != base_types.auto else self.make_default("OrdrTp")
+		self._OrdrTp = value if value is not None else base_types.UninitialisedField(self, 'OrdrTp', DistributionInstructionType1Code, False)
 
 	@OrdrTp.deleter
 	def OrdrTp(self):
 		del self._OrdrTp
-		self._OrdrTp = None
+		self._OrdrTp = base_types.UninitialisedField(self, 'OrdrTp', DistributionInstructionType1Code, False)
 
 	@property
 	def ReqdExctnDt(self):
@@ -111,12 +111,12 @@ class CorporateActionMovement1(base_types._BaseFieldType):
 
 	@ReqdExctnDt.setter
 	def ReqdExctnDt(self, value):
-		self._ReqdExctnDt = value if type(value) != base_types.auto else self.make_default("ReqdExctnDt")
+		self._ReqdExctnDt = value if value is not None else base_types.UninitialisedField(self, 'ReqdExctnDt', ISODate, False)
 
 	@ReqdExctnDt.deleter
 	def ReqdExctnDt(self):
 		del self._ReqdExctnDt
-		self._ReqdExctnDt = None
+		self._ReqdExctnDt = base_types.UninitialisedField(self, 'ReqdExctnDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

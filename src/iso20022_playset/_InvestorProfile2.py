@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._HighFrequencyTradingProfile1 import HighFrequencyTradingProfile1
-from ._InvestorProfileStatus1Choice import InvestorProfileStatus1Choice
-from ._MarketMakerProfile2 import MarketMakerProfile2
-from ._ProfileType1Choice import ProfileType1Choice
-from ._TreasuryProfile1 import TreasuryProfile1
+from . import HighFrequencyTradingProfile1
+from . import InvestorProfileStatus1Choice
+from . import MarketMakerProfile2
+from . import ProfileType1Choice
+from . import TreasuryProfile1
 
 class InvestorProfile2(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class InvestorProfile2(base_types._BaseFieldType):
 
 	@HghFrqcyTradg.setter
 	def HghFrqcyTradg(self, value):
-		self._HghFrqcyTradg = value if type(value) != base_types.auto else self.make_default("HghFrqcyTradg")
+		self._HghFrqcyTradg = value if value is not None else base_types.UninitialisedField(self, 'HghFrqcyTradg', HighFrequencyTradingProfile1, False)
 
 	@HghFrqcyTradg.deleter
 	def HghFrqcyTradg(self):
 		del self._HghFrqcyTradg
-		self._HghFrqcyTradg = None
+		self._HghFrqcyTradg = base_types.UninitialisedField(self, 'HghFrqcyTradg', HighFrequencyTradingProfile1, False)
 
 	@property
 	def MktMakr(self):
@@ -30,12 +30,12 @@ class InvestorProfile2(base_types._BaseFieldType):
 
 	@MktMakr.setter
 	def MktMakr(self, value):
-		self._MktMakr = value if type(value) != base_types.auto else self.make_default("MktMakr")
+		self._MktMakr = value if value is not None else base_types.UninitialisedField(self, 'MktMakr', MarketMakerProfile2, False)
 
 	@MktMakr.deleter
 	def MktMakr(self):
 		del self._MktMakr
-		self._MktMakr = None
+		self._MktMakr = base_types.UninitialisedField(self, 'MktMakr', MarketMakerProfile2, False)
 
 	@property
 	def Sts(self):
@@ -43,12 +43,12 @@ class InvestorProfile2(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', InvestorProfileStatus1Choice, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', InvestorProfileStatus1Choice, False)
 
 	@property
 	def Tp(self):
@@ -56,12 +56,12 @@ class InvestorProfile2(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', ProfileType1Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', ProfileType1Choice, False)
 
 	@property
 	def Trsr(self):
@@ -69,12 +69,12 @@ class InvestorProfile2(base_types._BaseFieldType):
 
 	@Trsr.setter
 	def Trsr(self, value):
-		self._Trsr = value if type(value) != base_types.auto else self.make_default("Trsr")
+		self._Trsr = value if value is not None else base_types.UninitialisedField(self, 'Trsr', TreasuryProfile1, False)
 
 	@Trsr.deleter
 	def Trsr(self):
 		del self._Trsr
-		self._Trsr = None
+		self._Trsr = base_types.UninitialisedField(self, 'Trsr', TreasuryProfile1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='HghFrqcyTradg', type=HighFrequencyTradingProfile1, min=0, max=1, mutex_group=None, array=False),

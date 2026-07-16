@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Mandate20 import Mandate20
-from ._Max35Text import Max35Text
+from . import Mandate20
+from . import Max35Text
 
 class OriginalMandate10Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class OriginalMandate10Choice(base_types._BaseFieldType):
 
 	@OrgnlMndt.setter
 	def OrgnlMndt(self, value):
-		self._OrgnlMndt = value if type(value) != base_types.auto else self.make_default("OrgnlMndt")
+		self._OrgnlMndt = value if value is not None else base_types.UninitialisedField(self, 'OrgnlMndt', Mandate20, False)
 
 	@OrgnlMndt.deleter
 	def OrgnlMndt(self):
 		del self._OrgnlMndt
-		self._OrgnlMndt = None
+		self._OrgnlMndt = base_types.UninitialisedField(self, 'OrgnlMndt', Mandate20, False)
 
 	@property
 	def OrgnlMndtId(self):
@@ -27,12 +27,12 @@ class OriginalMandate10Choice(base_types._BaseFieldType):
 
 	@OrgnlMndtId.setter
 	def OrgnlMndtId(self, value):
-		self._OrgnlMndtId = value if type(value) != base_types.auto else self.make_default("OrgnlMndtId")
+		self._OrgnlMndtId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlMndtId', Max35Text, False)
 
 	@OrgnlMndtId.deleter
 	def OrgnlMndtId(self):
 		del self._OrgnlMndtId
-		self._OrgnlMndtId = None
+		self._OrgnlMndtId = base_types.UninitialisedField(self, 'OrgnlMndtId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlMndt', type=Mandate20, min=0, max=1, mutex_group=1, array=False),

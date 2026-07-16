@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._StatisticsPerCounterparty16Choice import StatisticsPerCounterparty16Choice
-from ._SupplementaryData1 import SupplementaryData1
+from . import StatisticsPerCounterparty16Choice
+from . import SupplementaryData1
 
 class DerivativesTradeWarningsReportV01(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DerivativesTradeWarningsReportV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def WrnngsSttstcs(self):
@@ -27,12 +27,12 @@ class DerivativesTradeWarningsReportV01(base_types._BaseFieldType):
 
 	@WrnngsSttstcs.setter
 	def WrnngsSttstcs(self, value):
-		self._WrnngsSttstcs = value if type(value) != base_types.auto else self.make_default("WrnngsSttstcs")
+		self._WrnngsSttstcs = value if value is not None else base_types.UninitialisedField(self, 'WrnngsSttstcs', StatisticsPerCounterparty16Choice, False)
 
 	@WrnngsSttstcs.deleter
 	def WrnngsSttstcs(self):
 		del self._WrnngsSttstcs
-		self._WrnngsSttstcs = None
+		self._WrnngsSttstcs = base_types.UninitialisedField(self, 'WrnngsSttstcs', StatisticsPerCounterparty16Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),

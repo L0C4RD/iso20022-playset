@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalData1 import AdditionalData1
-from ._Address2 import Address2
-from ._GeographicPointInDecimalDegrees import GeographicPointInDecimalDegrees
-from ._ISO3NumericCountryCode import ISO3NumericCountryCode
-from ._LocalData12 import LocalData12
-from ._Max140Text import Max140Text
-from ._Max256Text import Max256Text
-from ._Max35Text import Max35Text
-from ._Max99Text import Max99Text
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import AdditionalData1
+from . import Address2
+from . import GeographicPointInDecimalDegrees
+from . import ISO3NumericCountryCode
+from . import LocalData12
+from . import Max140Text
+from . import Max256Text
+from . import Max35Text
+from . import Max99Text
+from . import TrueFalseIndicator
 
 class SponsoredMerchant3(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class SponsoredMerchant3(base_types._BaseFieldType):
 
 	@AddtlAdr.setter
 	def AddtlAdr(self, value):
-		self._AddtlAdr = value if type(value) != base_types.auto else self.make_default("AddtlAdr")
+		self._AddtlAdr = value if value is not None else base_types.UninitialisedField(self, 'AddtlAdr', Max256Text, False)
 
 	@AddtlAdr.deleter
 	def AddtlAdr(self):
 		del self._AddtlAdr
-		self._AddtlAdr = None
+		self._AddtlAdr = base_types.UninitialisedField(self, 'AddtlAdr', Max256Text, False)
 
 	@property
 	def AddtlData(self):
@@ -35,12 +35,12 @@ class SponsoredMerchant3(base_types._BaseFieldType):
 
 	@AddtlData.setter
 	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+		self._AddtlData = value if value is not None else base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@AddtlData.deleter
 	def AddtlData(self):
 		del self._AddtlData
-		self._AddtlData = None
+		self._AddtlData = base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@property
 	def AddtlId(self):
@@ -48,12 +48,12 @@ class SponsoredMerchant3(base_types._BaseFieldType):
 
 	@AddtlId.setter
 	def AddtlId(self, value):
-		self._AddtlId = value if type(value) != base_types.auto else self.make_default("AddtlId")
+		self._AddtlId = value if value is not None else base_types.UninitialisedField(self, 'AddtlId', AdditionalData1, True)
 
 	@AddtlId.deleter
 	def AddtlId(self):
 		del self._AddtlId
-		self._AddtlId = None
+		self._AddtlId = base_types.UninitialisedField(self, 'AddtlId', AdditionalData1, True)
 
 	@property
 	def Adr(self):
@@ -61,12 +61,12 @@ class SponsoredMerchant3(base_types._BaseFieldType):
 
 	@Adr.setter
 	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+		self._Adr = value if value is not None else base_types.UninitialisedField(self, 'Adr', Address2, False)
 
 	@Adr.deleter
 	def Adr(self):
 		del self._Adr
-		self._Adr = None
+		self._Adr = base_types.UninitialisedField(self, 'Adr', Address2, False)
 
 	@property
 	def Assgnr(self):
@@ -74,12 +74,12 @@ class SponsoredMerchant3(base_types._BaseFieldType):
 
 	@Assgnr.setter
 	def Assgnr(self, value):
-		self._Assgnr = value if type(value) != base_types.auto else self.make_default("Assgnr")
+		self._Assgnr = value if value is not None else base_types.UninitialisedField(self, 'Assgnr', Max35Text, False)
 
 	@Assgnr.deleter
 	def Assgnr(self):
 		del self._Assgnr
-		self._Assgnr = None
+		self._Assgnr = base_types.UninitialisedField(self, 'Assgnr', Max35Text, False)
 
 	@property
 	def CmonNm(self):
@@ -87,12 +87,12 @@ class SponsoredMerchant3(base_types._BaseFieldType):
 
 	@CmonNm.setter
 	def CmonNm(self, value):
-		self._CmonNm = value if type(value) != base_types.auto else self.make_default("CmonNm")
+		self._CmonNm = value if value is not None else base_types.UninitialisedField(self, 'CmonNm', Max140Text, False)
 
 	@CmonNm.deleter
 	def CmonNm(self):
 		del self._CmonNm
-		self._CmonNm = None
+		self._CmonNm = base_types.UninitialisedField(self, 'CmonNm', Max140Text, False)
 
 	@property
 	def Ctry(self):
@@ -100,12 +100,12 @@ class SponsoredMerchant3(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', ISO3NumericCountryCode, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', ISO3NumericCountryCode, False)
 
 	@property
 	def Frgn(self):
@@ -113,12 +113,12 @@ class SponsoredMerchant3(base_types._BaseFieldType):
 
 	@Frgn.setter
 	def Frgn(self, value):
-		self._Frgn = value if type(value) != base_types.auto else self.make_default("Frgn")
+		self._Frgn = value if value is not None else base_types.UninitialisedField(self, 'Frgn', TrueFalseIndicator, False)
 
 	@Frgn.deleter
 	def Frgn(self):
 		del self._Frgn
-		self._Frgn = None
+		self._Frgn = base_types.UninitialisedField(self, 'Frgn', TrueFalseIndicator, False)
 
 	@property
 	def GeogcLctn(self):
@@ -126,12 +126,12 @@ class SponsoredMerchant3(base_types._BaseFieldType):
 
 	@GeogcLctn.setter
 	def GeogcLctn(self, value):
-		self._GeogcLctn = value if type(value) != base_types.auto else self.make_default("GeogcLctn")
+		self._GeogcLctn = value if value is not None else base_types.UninitialisedField(self, 'GeogcLctn', GeographicPointInDecimalDegrees, False)
 
 	@GeogcLctn.deleter
 	def GeogcLctn(self):
 		del self._GeogcLctn
-		self._GeogcLctn = None
+		self._GeogcLctn = base_types.UninitialisedField(self, 'GeogcLctn', GeographicPointInDecimalDegrees, False)
 
 	@property
 	def Id(self):
@@ -139,12 +139,12 @@ class SponsoredMerchant3(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def LclData(self):
@@ -152,12 +152,12 @@ class SponsoredMerchant3(base_types._BaseFieldType):
 
 	@LclData.setter
 	def LclData(self, value):
-		self._LclData = value if type(value) != base_types.auto else self.make_default("LclData")
+		self._LclData = value if value is not None else base_types.UninitialisedField(self, 'LclData', LocalData12, True)
 
 	@LclData.deleter
 	def LclData(self):
 		del self._LclData
-		self._LclData = None
+		self._LclData = base_types.UninitialisedField(self, 'LclData', LocalData12, True)
 
 	@property
 	def LglCorpNm(self):
@@ -165,12 +165,12 @@ class SponsoredMerchant3(base_types._BaseFieldType):
 
 	@LglCorpNm.setter
 	def LglCorpNm(self, value):
-		self._LglCorpNm = value if type(value) != base_types.auto else self.make_default("LglCorpNm")
+		self._LglCorpNm = value if value is not None else base_types.UninitialisedField(self, 'LglCorpNm', Max99Text, False)
 
 	@LglCorpNm.deleter
 	def LglCorpNm(self):
 		del self._LglCorpNm
-		self._LglCorpNm = None
+		self._LglCorpNm = base_types.UninitialisedField(self, 'LglCorpNm', Max99Text, False)
 
 	@property
 	def ShrtNm(self):
@@ -178,12 +178,12 @@ class SponsoredMerchant3(base_types._BaseFieldType):
 
 	@ShrtNm.setter
 	def ShrtNm(self, value):
-		self._ShrtNm = value if type(value) != base_types.auto else self.make_default("ShrtNm")
+		self._ShrtNm = value if value is not None else base_types.UninitialisedField(self, 'ShrtNm', Max35Text, False)
 
 	@ShrtNm.deleter
 	def ShrtNm(self):
 		del self._ShrtNm
-		self._ShrtNm = None
+		self._ShrtNm = base_types.UninitialisedField(self, 'ShrtNm', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BankTransactionCodeStructure4 import BankTransactionCodeStructure4
-from ._BillingServiceCommonIdentification1 import BillingServiceCommonIdentification1
-from ._BillingSubServiceIdentification1 import BillingSubServiceIdentification1
-from ._Max12Text import Max12Text
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
+from . import BankTransactionCodeStructure4
+from . import BillingServiceCommonIdentification1
+from . import BillingSubServiceIdentification1
+from . import Max12Text
+from . import Max35Text
+from . import Max70Text
 
 class BillingServiceIdentification3(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class BillingServiceIdentification3(base_types._BaseFieldType):
 
 	@BkTxCd.setter
 	def BkTxCd(self, value):
-		self._BkTxCd = value if type(value) != base_types.auto else self.make_default("BkTxCd")
+		self._BkTxCd = value if value is not None else base_types.UninitialisedField(self, 'BkTxCd', BankTransactionCodeStructure4, False)
 
 	@BkTxCd.deleter
 	def BkTxCd(self):
 		del self._BkTxCd
-		self._BkTxCd = None
+		self._BkTxCd = base_types.UninitialisedField(self, 'BkTxCd', BankTransactionCodeStructure4, False)
 
 	@property
 	def CmonCd(self):
@@ -31,12 +31,12 @@ class BillingServiceIdentification3(base_types._BaseFieldType):
 
 	@CmonCd.setter
 	def CmonCd(self, value):
-		self._CmonCd = value if type(value) != base_types.auto else self.make_default("CmonCd")
+		self._CmonCd = value if value is not None else base_types.UninitialisedField(self, 'CmonCd', BillingServiceCommonIdentification1, False)
 
 	@CmonCd.deleter
 	def CmonCd(self):
 		del self._CmonCd
-		self._CmonCd = None
+		self._CmonCd = base_types.UninitialisedField(self, 'CmonCd', BillingServiceCommonIdentification1, False)
 
 	@property
 	def Desc(self):
@@ -44,12 +44,12 @@ class BillingServiceIdentification3(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', Max70Text, False)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', Max70Text, False)
 
 	@property
 	def Id(self):
@@ -57,12 +57,12 @@ class BillingServiceIdentification3(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def SubSvc(self):
@@ -70,12 +70,12 @@ class BillingServiceIdentification3(base_types._BaseFieldType):
 
 	@SubSvc.setter
 	def SubSvc(self, value):
-		self._SubSvc = value if type(value) != base_types.auto else self.make_default("SubSvc")
+		self._SubSvc = value if value is not None else base_types.UninitialisedField(self, 'SubSvc', BillingSubServiceIdentification1, False)
 
 	@SubSvc.deleter
 	def SubSvc(self):
 		del self._SubSvc
-		self._SubSvc = None
+		self._SubSvc = base_types.UninitialisedField(self, 'SubSvc', BillingSubServiceIdentification1, False)
 
 	@property
 	def SvcTp(self):
@@ -83,12 +83,12 @@ class BillingServiceIdentification3(base_types._BaseFieldType):
 
 	@SvcTp.setter
 	def SvcTp(self, value):
-		self._SvcTp = value if type(value) != base_types.auto else self.make_default("SvcTp")
+		self._SvcTp = value if value is not None else base_types.UninitialisedField(self, 'SvcTp', Max12Text, False)
 
 	@SvcTp.deleter
 	def SvcTp(self):
 		del self._SvcTp
-		self._SvcTp = None
+		self._SvcTp = base_types.UninitialisedField(self, 'SvcTp', Max12Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BkTxCd', type=BankTransactionCodeStructure4, min=0, max=1, mutex_group=None, array=False),

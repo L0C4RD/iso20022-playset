@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
-from ._SafekeepingPlace1Code import SafekeepingPlace1Code
+from . import AnyBICDec2014Identifier
+from . import SafekeepingPlace1Code
 
 class SafekeepingPlaceTypeAndAnyBICIdentifier4(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SafekeepingPlaceTypeAndAnyBICIdentifier4(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', AnyBICDec2014Identifier, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', AnyBICDec2014Identifier, False)
 
 	@property
 	def SfkpgPlcTp(self):
@@ -27,12 +27,12 @@ class SafekeepingPlaceTypeAndAnyBICIdentifier4(base_types._BaseFieldType):
 
 	@SfkpgPlcTp.setter
 	def SfkpgPlcTp(self, value):
-		self._SfkpgPlcTp = value if type(value) != base_types.auto else self.make_default("SfkpgPlcTp")
+		self._SfkpgPlcTp = value if value is not None else base_types.UninitialisedField(self, 'SfkpgPlcTp', SafekeepingPlace1Code, False)
 
 	@SfkpgPlcTp.deleter
 	def SfkpgPlcTp(self):
 		del self._SfkpgPlcTp
-		self._SfkpgPlcTp = None
+		self._SfkpgPlcTp = base_types.UninitialisedField(self, 'SfkpgPlcTp', SafekeepingPlace1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=AnyBICDec2014Identifier, min=1, max=1, mutex_group=None, array=False),

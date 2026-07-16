@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._TradeConfirmationType1Code import TradeConfirmationType1Code
+from . import ISODateTime
+from . import TradeConfirmationType1Code
 
 class TradeConfirmation5(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TradeConfirmation5(base_types._BaseFieldType):
 
 	@TmStmp.setter
 	def TmStmp(self, value):
-		self._TmStmp = value if type(value) != base_types.auto else self.make_default("TmStmp")
+		self._TmStmp = value if value is not None else base_types.UninitialisedField(self, 'TmStmp', ISODateTime, False)
 
 	@TmStmp.deleter
 	def TmStmp(self):
 		del self._TmStmp
-		self._TmStmp = None
+		self._TmStmp = base_types.UninitialisedField(self, 'TmStmp', ISODateTime, False)
 
 	@property
 	def Tp(self):
@@ -27,12 +27,12 @@ class TradeConfirmation5(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', TradeConfirmationType1Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', TradeConfirmationType1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TmStmp', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),

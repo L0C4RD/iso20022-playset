@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._PositiveNumber import PositiveNumber
+from . import ISODateTime
+from . import PositiveNumber
 
 class OrderPriority1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class OrderPriority1(base_types._BaseFieldType):
 
 	@Sz.setter
 	def Sz(self, value):
-		self._Sz = value if type(value) != base_types.auto else self.make_default("Sz")
+		self._Sz = value if value is not None else base_types.UninitialisedField(self, 'Sz', PositiveNumber, False)
 
 	@Sz.deleter
 	def Sz(self):
 		del self._Sz
-		self._Sz = None
+		self._Sz = base_types.UninitialisedField(self, 'Sz', PositiveNumber, False)
 
 	@property
 	def TmStmp(self):
@@ -27,12 +27,12 @@ class OrderPriority1(base_types._BaseFieldType):
 
 	@TmStmp.setter
 	def TmStmp(self, value):
-		self._TmStmp = value if type(value) != base_types.auto else self.make_default("TmStmp")
+		self._TmStmp = value if value is not None else base_types.UninitialisedField(self, 'TmStmp', ISODateTime, False)
 
 	@TmStmp.deleter
 	def TmStmp(self):
 		del self._TmStmp
-		self._TmStmp = None
+		self._TmStmp = base_types.UninitialisedField(self, 'TmStmp', ISODateTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Sz', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),

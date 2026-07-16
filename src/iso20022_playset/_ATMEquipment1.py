@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMConfigurationParameter1 import ATMConfigurationParameter1
-from ._Max35Text import Max35Text
+from . import ATMConfigurationParameter1
+from . import Max35Text
 
 class ATMEquipment1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ATMEquipment1(base_types._BaseFieldType):
 
 	@ApplNm.setter
 	def ApplNm(self, value):
-		self._ApplNm = value if type(value) != base_types.auto else self.make_default("ApplNm")
+		self._ApplNm = value if value is not None else base_types.UninitialisedField(self, 'ApplNm', Max35Text, False)
 
 	@ApplNm.deleter
 	def ApplNm(self):
 		del self._ApplNm
-		self._ApplNm = None
+		self._ApplNm = base_types.UninitialisedField(self, 'ApplNm', Max35Text, False)
 
 	@property
 	def ApplPrvdr(self):
@@ -27,12 +27,12 @@ class ATMEquipment1(base_types._BaseFieldType):
 
 	@ApplPrvdr.setter
 	def ApplPrvdr(self, value):
-		self._ApplPrvdr = value if type(value) != base_types.auto else self.make_default("ApplPrvdr")
+		self._ApplPrvdr = value if value is not None else base_types.UninitialisedField(self, 'ApplPrvdr', Max35Text, False)
 
 	@ApplPrvdr.deleter
 	def ApplPrvdr(self):
 		del self._ApplPrvdr
-		self._ApplPrvdr = None
+		self._ApplPrvdr = base_types.UninitialisedField(self, 'ApplPrvdr', Max35Text, False)
 
 	@property
 	def ApplVrsn(self):
@@ -40,12 +40,12 @@ class ATMEquipment1(base_types._BaseFieldType):
 
 	@ApplVrsn.setter
 	def ApplVrsn(self, value):
-		self._ApplVrsn = value if type(value) != base_types.auto else self.make_default("ApplVrsn")
+		self._ApplVrsn = value if value is not None else base_types.UninitialisedField(self, 'ApplVrsn', Max35Text, False)
 
 	@ApplVrsn.deleter
 	def ApplVrsn(self):
 		del self._ApplVrsn
-		self._ApplVrsn = None
+		self._ApplVrsn = base_types.UninitialisedField(self, 'ApplVrsn', Max35Text, False)
 
 	@property
 	def ApprvlNb(self):
@@ -53,12 +53,12 @@ class ATMEquipment1(base_types._BaseFieldType):
 
 	@ApprvlNb.setter
 	def ApprvlNb(self, value):
-		self._ApprvlNb = value if type(value) != base_types.auto else self.make_default("ApprvlNb")
+		self._ApprvlNb = value if value is not None else base_types.UninitialisedField(self, 'ApprvlNb', Max35Text, False)
 
 	@ApprvlNb.deleter
 	def ApprvlNb(self):
 		del self._ApprvlNb
-		self._ApprvlNb = None
+		self._ApprvlNb = base_types.UninitialisedField(self, 'ApprvlNb', Max35Text, False)
 
 	@property
 	def CfgtnParam(self):
@@ -66,12 +66,12 @@ class ATMEquipment1(base_types._BaseFieldType):
 
 	@CfgtnParam.setter
 	def CfgtnParam(self, value):
-		self._CfgtnParam = value if type(value) != base_types.auto else self.make_default("CfgtnParam")
+		self._CfgtnParam = value if value is not None else base_types.UninitialisedField(self, 'CfgtnParam', ATMConfigurationParameter1, True)
 
 	@CfgtnParam.deleter
 	def CfgtnParam(self):
 		del self._CfgtnParam
-		self._CfgtnParam = None
+		self._CfgtnParam = base_types.UninitialisedField(self, 'CfgtnParam', ATMConfigurationParameter1, True)
 
 	@property
 	def Manfctr(self):
@@ -79,12 +79,12 @@ class ATMEquipment1(base_types._BaseFieldType):
 
 	@Manfctr.setter
 	def Manfctr(self, value):
-		self._Manfctr = value if type(value) != base_types.auto else self.make_default("Manfctr")
+		self._Manfctr = value if value is not None else base_types.UninitialisedField(self, 'Manfctr', Max35Text, False)
 
 	@Manfctr.deleter
 	def Manfctr(self):
 		del self._Manfctr
-		self._Manfctr = None
+		self._Manfctr = base_types.UninitialisedField(self, 'Manfctr', Max35Text, False)
 
 	@property
 	def Mdl(self):
@@ -92,12 +92,12 @@ class ATMEquipment1(base_types._BaseFieldType):
 
 	@Mdl.setter
 	def Mdl(self, value):
-		self._Mdl = value if type(value) != base_types.auto else self.make_default("Mdl")
+		self._Mdl = value if value is not None else base_types.UninitialisedField(self, 'Mdl', Max35Text, False)
 
 	@Mdl.deleter
 	def Mdl(self):
 		del self._Mdl
-		self._Mdl = None
+		self._Mdl = base_types.UninitialisedField(self, 'Mdl', Max35Text, False)
 
 	@property
 	def SrlNb(self):
@@ -105,12 +105,12 @@ class ATMEquipment1(base_types._BaseFieldType):
 
 	@SrlNb.setter
 	def SrlNb(self, value):
-		self._SrlNb = value if type(value) != base_types.auto else self.make_default("SrlNb")
+		self._SrlNb = value if value is not None else base_types.UninitialisedField(self, 'SrlNb', Max35Text, False)
 
 	@SrlNb.deleter
 	def SrlNb(self):
 		del self._SrlNb
-		self._SrlNb = None
+		self._SrlNb = base_types.UninitialisedField(self, 'SrlNb', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ApplNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

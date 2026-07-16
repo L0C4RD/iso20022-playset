@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CertificationType1Choice import CertificationType1Choice
-from ._CustomerConductClassification1Choice import CustomerConductClassification1Choice
-from ._DataBaseCheck1 import DataBaseCheck1
-from ._EventFrequency1Code import EventFrequency1Code
-from ._ISODate import ISODate
-from ._KYCCheckType1Choice import KYCCheckType1Choice
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
-from ._RiskLevel2Choice import RiskLevel2Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import CertificationType1Choice
+from . import CustomerConductClassification1Choice
+from . import DataBaseCheck1
+from . import EventFrequency1Code
+from . import ISODate
+from . import KYCCheckType1Choice
+from . import Max140Text
+from . import Max35Text
+from . import RiskLevel2Choice
+from . import YesNoIndicator
 
 class PartyProfileInformation5(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class PartyProfileInformation5(base_types._BaseFieldType):
 
 	@CertTp.setter
 	def CertTp(self, value):
-		self._CertTp = value if type(value) != base_types.auto else self.make_default("CertTp")
+		self._CertTp = value if value is not None else base_types.UninitialisedField(self, 'CertTp', CertificationType1Choice, False)
 
 	@CertTp.deleter
 	def CertTp(self):
 		del self._CertTp
-		self._CertTp = None
+		self._CertTp = base_types.UninitialisedField(self, 'CertTp', CertificationType1Choice, False)
 
 	@property
 	def CertfctnInd(self):
@@ -35,12 +35,12 @@ class PartyProfileInformation5(base_types._BaseFieldType):
 
 	@CertfctnInd.setter
 	def CertfctnInd(self, value):
-		self._CertfctnInd = value if type(value) != base_types.auto else self.make_default("CertfctnInd")
+		self._CertfctnInd = value if value is not None else base_types.UninitialisedField(self, 'CertfctnInd', YesNoIndicator, False)
 
 	@CertfctnInd.deleter
 	def CertfctnInd(self):
 		del self._CertfctnInd
-		self._CertfctnInd = None
+		self._CertfctnInd = base_types.UninitialisedField(self, 'CertfctnInd', YesNoIndicator, False)
 
 	@property
 	def ChckngDt(self):
@@ -48,12 +48,12 @@ class PartyProfileInformation5(base_types._BaseFieldType):
 
 	@ChckngDt.setter
 	def ChckngDt(self, value):
-		self._ChckngDt = value if type(value) != base_types.auto else self.make_default("ChckngDt")
+		self._ChckngDt = value if value is not None else base_types.UninitialisedField(self, 'ChckngDt', ISODate, False)
 
 	@ChckngDt.deleter
 	def ChckngDt(self):
 		del self._ChckngDt
-		self._ChckngDt = None
+		self._ChckngDt = base_types.UninitialisedField(self, 'ChckngDt', ISODate, False)
 
 	@property
 	def ChckngFrqcy(self):
@@ -61,12 +61,12 @@ class PartyProfileInformation5(base_types._BaseFieldType):
 
 	@ChckngFrqcy.setter
 	def ChckngFrqcy(self, value):
-		self._ChckngFrqcy = value if type(value) != base_types.auto else self.make_default("ChckngFrqcy")
+		self._ChckngFrqcy = value if value is not None else base_types.UninitialisedField(self, 'ChckngFrqcy', EventFrequency1Code, False)
 
 	@ChckngFrqcy.deleter
 	def ChckngFrqcy(self):
 		del self._ChckngFrqcy
-		self._ChckngFrqcy = None
+		self._ChckngFrqcy = base_types.UninitialisedField(self, 'ChckngFrqcy', EventFrequency1Code, False)
 
 	@property
 	def ChckngPty(self):
@@ -74,12 +74,12 @@ class PartyProfileInformation5(base_types._BaseFieldType):
 
 	@ChckngPty.setter
 	def ChckngPty(self, value):
-		self._ChckngPty = value if type(value) != base_types.auto else self.make_default("ChckngPty")
+		self._ChckngPty = value if value is not None else base_types.UninitialisedField(self, 'ChckngPty', Max140Text, False)
 
 	@ChckngPty.deleter
 	def ChckngPty(self):
 		del self._ChckngPty
-		self._ChckngPty = None
+		self._ChckngPty = base_types.UninitialisedField(self, 'ChckngPty', Max140Text, False)
 
 	@property
 	def CstmrCndctClssfctn(self):
@@ -87,12 +87,12 @@ class PartyProfileInformation5(base_types._BaseFieldType):
 
 	@CstmrCndctClssfctn.setter
 	def CstmrCndctClssfctn(self, value):
-		self._CstmrCndctClssfctn = value if type(value) != base_types.auto else self.make_default("CstmrCndctClssfctn")
+		self._CstmrCndctClssfctn = value if value is not None else base_types.UninitialisedField(self, 'CstmrCndctClssfctn', CustomerConductClassification1Choice, False)
 
 	@CstmrCndctClssfctn.deleter
 	def CstmrCndctClssfctn(self):
 		del self._CstmrCndctClssfctn
-		self._CstmrCndctClssfctn = None
+		self._CstmrCndctClssfctn = base_types.UninitialisedField(self, 'CstmrCndctClssfctn', CustomerConductClassification1Choice, False)
 
 	@property
 	def KnowYourCstmrChckTp(self):
@@ -100,12 +100,12 @@ class PartyProfileInformation5(base_types._BaseFieldType):
 
 	@KnowYourCstmrChckTp.setter
 	def KnowYourCstmrChckTp(self, value):
-		self._KnowYourCstmrChckTp = value if type(value) != base_types.auto else self.make_default("KnowYourCstmrChckTp")
+		self._KnowYourCstmrChckTp = value if value is not None else base_types.UninitialisedField(self, 'KnowYourCstmrChckTp', KYCCheckType1Choice, False)
 
 	@KnowYourCstmrChckTp.deleter
 	def KnowYourCstmrChckTp(self):
 		del self._KnowYourCstmrChckTp
-		self._KnowYourCstmrChckTp = None
+		self._KnowYourCstmrChckTp = base_types.UninitialisedField(self, 'KnowYourCstmrChckTp', KYCCheckType1Choice, False)
 
 	@property
 	def KnowYourCstmrDBChck(self):
@@ -113,12 +113,12 @@ class PartyProfileInformation5(base_types._BaseFieldType):
 
 	@KnowYourCstmrDBChck.setter
 	def KnowYourCstmrDBChck(self, value):
-		self._KnowYourCstmrDBChck = value if type(value) != base_types.auto else self.make_default("KnowYourCstmrDBChck")
+		self._KnowYourCstmrDBChck = value if value is not None else base_types.UninitialisedField(self, 'KnowYourCstmrDBChck', DataBaseCheck1, False)
 
 	@KnowYourCstmrDBChck.deleter
 	def KnowYourCstmrDBChck(self):
 		del self._KnowYourCstmrDBChck
-		self._KnowYourCstmrDBChck = None
+		self._KnowYourCstmrDBChck = base_types.UninitialisedField(self, 'KnowYourCstmrDBChck', DataBaseCheck1, False)
 
 	@property
 	def NxtRvsnDt(self):
@@ -126,12 +126,12 @@ class PartyProfileInformation5(base_types._BaseFieldType):
 
 	@NxtRvsnDt.setter
 	def NxtRvsnDt(self, value):
-		self._NxtRvsnDt = value if type(value) != base_types.auto else self.make_default("NxtRvsnDt")
+		self._NxtRvsnDt = value if value is not None else base_types.UninitialisedField(self, 'NxtRvsnDt', ISODate, False)
 
 	@NxtRvsnDt.deleter
 	def NxtRvsnDt(self):
 		del self._NxtRvsnDt
-		self._NxtRvsnDt = None
+		self._NxtRvsnDt = base_types.UninitialisedField(self, 'NxtRvsnDt', ISODate, False)
 
 	@property
 	def RskLvl(self):
@@ -139,12 +139,12 @@ class PartyProfileInformation5(base_types._BaseFieldType):
 
 	@RskLvl.setter
 	def RskLvl(self, value):
-		self._RskLvl = value if type(value) != base_types.auto else self.make_default("RskLvl")
+		self._RskLvl = value if value is not None else base_types.UninitialisedField(self, 'RskLvl', RiskLevel2Choice, False)
 
 	@RskLvl.deleter
 	def RskLvl(self):
 		del self._RskLvl
-		self._RskLvl = None
+		self._RskLvl = base_types.UninitialisedField(self, 'RskLvl', RiskLevel2Choice, False)
 
 	@property
 	def RspnsblPty(self):
@@ -152,12 +152,12 @@ class PartyProfileInformation5(base_types._BaseFieldType):
 
 	@RspnsblPty.setter
 	def RspnsblPty(self, value):
-		self._RspnsblPty = value if type(value) != base_types.auto else self.make_default("RspnsblPty")
+		self._RspnsblPty = value if value is not None else base_types.UninitialisedField(self, 'RspnsblPty', Max140Text, False)
 
 	@RspnsblPty.deleter
 	def RspnsblPty(self):
 		del self._RspnsblPty
-		self._RspnsblPty = None
+		self._RspnsblPty = base_types.UninitialisedField(self, 'RspnsblPty', Max140Text, False)
 
 	@property
 	def SlryRg(self):
@@ -165,12 +165,12 @@ class PartyProfileInformation5(base_types._BaseFieldType):
 
 	@SlryRg.setter
 	def SlryRg(self, value):
-		self._SlryRg = value if type(value) != base_types.auto else self.make_default("SlryRg")
+		self._SlryRg = value if value is not None else base_types.UninitialisedField(self, 'SlryRg', Max35Text, False)
 
 	@SlryRg.deleter
 	def SlryRg(self):
 		del self._SlryRg
-		self._SlryRg = None
+		self._SlryRg = base_types.UninitialisedField(self, 'SlryRg', Max35Text, False)
 
 	@property
 	def SrcOfWlth(self):
@@ -178,12 +178,12 @@ class PartyProfileInformation5(base_types._BaseFieldType):
 
 	@SrcOfWlth.setter
 	def SrcOfWlth(self, value):
-		self._SrcOfWlth = value if type(value) != base_types.auto else self.make_default("SrcOfWlth")
+		self._SrcOfWlth = value if value is not None else base_types.UninitialisedField(self, 'SrcOfWlth', Max140Text, False)
 
 	@SrcOfWlth.deleter
 	def SrcOfWlth(self):
 		del self._SrcOfWlth
-		self._SrcOfWlth = None
+		self._SrcOfWlth = base_types.UninitialisedField(self, 'SrcOfWlth', Max140Text, False)
 
 	@property
 	def VldtngPty(self):
@@ -191,12 +191,12 @@ class PartyProfileInformation5(base_types._BaseFieldType):
 
 	@VldtngPty.setter
 	def VldtngPty(self, value):
-		self._VldtngPty = value if type(value) != base_types.auto else self.make_default("VldtngPty")
+		self._VldtngPty = value if value is not None else base_types.UninitialisedField(self, 'VldtngPty', Max140Text, False)
 
 	@VldtngPty.deleter
 	def VldtngPty(self):
 		del self._VldtngPty
-		self._VldtngPty = None
+		self._VldtngPty = base_types.UninitialisedField(self, 'VldtngPty', Max140Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CertTp', type=CertificationType1Choice, min=0, max=1, mutex_group=None, array=False),

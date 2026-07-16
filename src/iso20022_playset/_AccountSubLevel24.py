@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountSubLevel25 import AccountSubLevel25
-from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
+from . import AccountSubLevel25
+from . import FinancialInstrumentQuantity18Choice
 
 class AccountSubLevel24(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AccountSubLevel24(base_types._BaseFieldType):
 
 	@BlwThrshldShrhldgQty.setter
 	def BlwThrshldShrhldgQty(self, value):
-		self._BlwThrshldShrhldgQty = value if type(value) != base_types.auto else self.make_default("BlwThrshldShrhldgQty")
+		self._BlwThrshldShrhldgQty = value if value is not None else base_types.UninitialisedField(self, 'BlwThrshldShrhldgQty', FinancialInstrumentQuantity18Choice, False)
 
 	@BlwThrshldShrhldgQty.deleter
 	def BlwThrshldShrhldgQty(self):
 		del self._BlwThrshldShrhldgQty
-		self._BlwThrshldShrhldgQty = None
+		self._BlwThrshldShrhldgQty = base_types.UninitialisedField(self, 'BlwThrshldShrhldgQty', FinancialInstrumentQuantity18Choice, False)
 
 	@property
 	def Dsclsr(self):
@@ -27,12 +27,12 @@ class AccountSubLevel24(base_types._BaseFieldType):
 
 	@Dsclsr.setter
 	def Dsclsr(self, value):
-		self._Dsclsr = value if type(value) != base_types.auto else self.make_default("Dsclsr")
+		self._Dsclsr = value if value is not None else base_types.UninitialisedField(self, 'Dsclsr', AccountSubLevel25, True)
 
 	@Dsclsr.deleter
 	def Dsclsr(self):
 		del self._Dsclsr
-		self._Dsclsr = None
+		self._Dsclsr = base_types.UninitialisedField(self, 'Dsclsr', AccountSubLevel25, True)
 
 	@property
 	def NonDscldShrhldgQty(self):
@@ -40,12 +40,12 @@ class AccountSubLevel24(base_types._BaseFieldType):
 
 	@NonDscldShrhldgQty.setter
 	def NonDscldShrhldgQty(self, value):
-		self._NonDscldShrhldgQty = value if type(value) != base_types.auto else self.make_default("NonDscldShrhldgQty")
+		self._NonDscldShrhldgQty = value if value is not None else base_types.UninitialisedField(self, 'NonDscldShrhldgQty', FinancialInstrumentQuantity18Choice, False)
 
 	@NonDscldShrhldgQty.deleter
 	def NonDscldShrhldgQty(self):
 		del self._NonDscldShrhldgQty
-		self._NonDscldShrhldgQty = None
+		self._NonDscldShrhldgQty = base_types.UninitialisedField(self, 'NonDscldShrhldgQty', FinancialInstrumentQuantity18Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BlwThrshldShrhldgQty', type=FinancialInstrumentQuantity18Choice, min=0, max=1, mutex_group=None, array=False),

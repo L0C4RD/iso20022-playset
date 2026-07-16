@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountPrice1 import AmountPrice1
-from ._DecimalNumber import DecimalNumber
-from ._PriceRate1 import PriceRate1
-from ._PriceValueType5FormatChoice import PriceValueType5FormatChoice
+from . import AmountPrice1
+from . import DecimalNumber
+from . import PriceRate1
+from . import PriceValueType5FormatChoice
 
 class PriceFormat4Choice(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class PriceFormat4Choice(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', AmountPrice1, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', AmountPrice1, False)
 
 	@property
 	def IndxPts(self):
@@ -29,12 +29,12 @@ class PriceFormat4Choice(base_types._BaseFieldType):
 
 	@IndxPts.setter
 	def IndxPts(self, value):
-		self._IndxPts = value if type(value) != base_types.auto else self.make_default("IndxPts")
+		self._IndxPts = value if value is not None else base_types.UninitialisedField(self, 'IndxPts', DecimalNumber, False)
 
 	@IndxPts.deleter
 	def IndxPts(self):
 		del self._IndxPts
-		self._IndxPts = None
+		self._IndxPts = base_types.UninitialisedField(self, 'IndxPts', DecimalNumber, False)
 
 	@property
 	def NotSpcfd(self):
@@ -42,12 +42,12 @@ class PriceFormat4Choice(base_types._BaseFieldType):
 
 	@NotSpcfd.setter
 	def NotSpcfd(self, value):
-		self._NotSpcfd = value if type(value) != base_types.auto else self.make_default("NotSpcfd")
+		self._NotSpcfd = value if value is not None else base_types.UninitialisedField(self, 'NotSpcfd', PriceValueType5FormatChoice, False)
 
 	@NotSpcfd.deleter
 	def NotSpcfd(self):
 		del self._NotSpcfd
-		self._NotSpcfd = None
+		self._NotSpcfd = base_types.UninitialisedField(self, 'NotSpcfd', PriceValueType5FormatChoice, False)
 
 	@property
 	def Rate(self):
@@ -55,12 +55,12 @@ class PriceFormat4Choice(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+		self._Rate = value if value is not None else base_types.UninitialisedField(self, 'Rate', PriceRate1, False)
 
 	@Rate.deleter
 	def Rate(self):
 		del self._Rate
-		self._Rate = None
+		self._Rate = base_types.UninitialisedField(self, 'Rate', PriceRate1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=AmountPrice1, min=0, max=1, mutex_group=1, array=False),

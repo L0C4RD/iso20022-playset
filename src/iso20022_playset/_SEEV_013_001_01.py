@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AgentCAElectionAmendmentRequestV01 import AgentCAElectionAmendmentRequestV01
+from . import AgentCAElectionAmendmentRequestV01
 
 class SEEV_013_001_01():
 
@@ -18,12 +18,12 @@ class SEEV_013_001_01():
 
 		@AgtCAElctnAmdmntReq.setter
 		def AgtCAElctnAmdmntReq(self, value):
-			self._AgtCAElctnAmdmntReq = value if type(value) != base_types.auto else self.make_default("AgtCAElctnAmdmntReq")
+			self._AgtCAElctnAmdmntReq = value if value is not None else base_types.UninitialisedField(self, 'AgtCAElctnAmdmntReq', AgentCAElectionAmendmentRequestV01, False)
 
 		@AgtCAElctnAmdmntReq.deleter
 		def AgtCAElctnAmdmntReq(self):
 			del self._AgtCAElctnAmdmntReq
-			self._AgtCAElctnAmdmntReq = None
+			self._AgtCAElctnAmdmntReq = base_types.UninitialisedField(self, 'AgtCAElctnAmdmntReq', AgentCAElectionAmendmentRequestV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AgtCAElctnAmdmntReq', type=AgentCAElectionAmendmentRequestV01, min=1, max=1, mutex_group=None, array=False),

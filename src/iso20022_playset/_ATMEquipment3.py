@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContentInformationType14 import ContentInformationType14
-from ._Max35Text import Max35Text
+from . import ContentInformationType14
+from . import Max35Text
 
 class ATMEquipment3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ATMEquipment3(base_types._BaseFieldType):
 
 	@FrmwrId.setter
 	def FrmwrId(self, value):
-		self._FrmwrId = value if type(value) != base_types.auto else self.make_default("FrmwrId")
+		self._FrmwrId = value if value is not None else base_types.UninitialisedField(self, 'FrmwrId', Max35Text, False)
 
 	@FrmwrId.deleter
 	def FrmwrId(self):
 		del self._FrmwrId
-		self._FrmwrId = None
+		self._FrmwrId = base_types.UninitialisedField(self, 'FrmwrId', Max35Text, False)
 
 	@property
 	def FrmwrPrvdr(self):
@@ -27,12 +27,12 @@ class ATMEquipment3(base_types._BaseFieldType):
 
 	@FrmwrPrvdr.setter
 	def FrmwrPrvdr(self, value):
-		self._FrmwrPrvdr = value if type(value) != base_types.auto else self.make_default("FrmwrPrvdr")
+		self._FrmwrPrvdr = value if value is not None else base_types.UninitialisedField(self, 'FrmwrPrvdr', Max35Text, False)
 
 	@FrmwrPrvdr.deleter
 	def FrmwrPrvdr(self):
 		del self._FrmwrPrvdr
-		self._FrmwrPrvdr = None
+		self._FrmwrPrvdr = base_types.UninitialisedField(self, 'FrmwrPrvdr', Max35Text, False)
 
 	@property
 	def FrmwrVrsn(self):
@@ -40,12 +40,12 @@ class ATMEquipment3(base_types._BaseFieldType):
 
 	@FrmwrVrsn.setter
 	def FrmwrVrsn(self, value):
-		self._FrmwrVrsn = value if type(value) != base_types.auto else self.make_default("FrmwrVrsn")
+		self._FrmwrVrsn = value if value is not None else base_types.UninitialisedField(self, 'FrmwrVrsn', Max35Text, False)
 
 	@FrmwrVrsn.deleter
 	def FrmwrVrsn(self):
 		del self._FrmwrVrsn
-		self._FrmwrVrsn = None
+		self._FrmwrVrsn = base_types.UninitialisedField(self, 'FrmwrVrsn', Max35Text, False)
 
 	@property
 	def Manfctr(self):
@@ -53,12 +53,12 @@ class ATMEquipment3(base_types._BaseFieldType):
 
 	@Manfctr.setter
 	def Manfctr(self, value):
-		self._Manfctr = value if type(value) != base_types.auto else self.make_default("Manfctr")
+		self._Manfctr = value if value is not None else base_types.UninitialisedField(self, 'Manfctr', Max35Text, False)
 
 	@Manfctr.deleter
 	def Manfctr(self):
 		del self._Manfctr
-		self._Manfctr = None
+		self._Manfctr = base_types.UninitialisedField(self, 'Manfctr', Max35Text, False)
 
 	@property
 	def Mdl(self):
@@ -66,12 +66,12 @@ class ATMEquipment3(base_types._BaseFieldType):
 
 	@Mdl.setter
 	def Mdl(self, value):
-		self._Mdl = value if type(value) != base_types.auto else self.make_default("Mdl")
+		self._Mdl = value if value is not None else base_types.UninitialisedField(self, 'Mdl', Max35Text, False)
 
 	@Mdl.deleter
 	def Mdl(self):
 		del self._Mdl
-		self._Mdl = None
+		self._Mdl = base_types.UninitialisedField(self, 'Mdl', Max35Text, False)
 
 	@property
 	def SgndSrlNb(self):
@@ -79,12 +79,12 @@ class ATMEquipment3(base_types._BaseFieldType):
 
 	@SgndSrlNb.setter
 	def SgndSrlNb(self, value):
-		self._SgndSrlNb = value if type(value) != base_types.auto else self.make_default("SgndSrlNb")
+		self._SgndSrlNb = value if value is not None else base_types.UninitialisedField(self, 'SgndSrlNb', ContentInformationType14, False)
 
 	@SgndSrlNb.deleter
 	def SgndSrlNb(self):
 		del self._SgndSrlNb
-		self._SgndSrlNb = None
+		self._SgndSrlNb = base_types.UninitialisedField(self, 'SgndSrlNb', ContentInformationType14, False)
 
 	@property
 	def SrlNb(self):
@@ -92,12 +92,12 @@ class ATMEquipment3(base_types._BaseFieldType):
 
 	@SrlNb.setter
 	def SrlNb(self, value):
-		self._SrlNb = value if type(value) != base_types.auto else self.make_default("SrlNb")
+		self._SrlNb = value if value is not None else base_types.UninitialisedField(self, 'SrlNb', Max35Text, False)
 
 	@SrlNb.deleter
 	def SrlNb(self):
 		del self._SrlNb
-		self._SrlNb = None
+		self._SrlNb = base_types.UninitialisedField(self, 'SrlNb', Max35Text, False)
 
 	@property
 	def Vrsn(self):
@@ -105,12 +105,12 @@ class ATMEquipment3(base_types._BaseFieldType):
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+		self._Vrsn = value if value is not None else base_types.UninitialisedField(self, 'Vrsn', Max35Text, False)
 
 	@Vrsn.deleter
 	def Vrsn(self):
 		del self._Vrsn
-		self._Vrsn = None
+		self._Vrsn = base_types.UninitialisedField(self, 'Vrsn', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FrmwrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

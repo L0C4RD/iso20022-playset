@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MessageIdentification1 import MessageIdentification1
-from ._SimpleIdentificationInformation import SimpleIdentificationInformation
-from ._TransactionStatus5 import TransactionStatus5
+from . import MessageIdentification1
+from . import SimpleIdentificationInformation
+from . import TransactionStatus5
 
 class StatusExtensionRequestV03(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class StatusExtensionRequestV03(base_types._BaseFieldType):
 
 	@ReqId.setter
 	def ReqId(self, value):
-		self._ReqId = value if type(value) != base_types.auto else self.make_default("ReqId")
+		self._ReqId = value if value is not None else base_types.UninitialisedField(self, 'ReqId', MessageIdentification1, False)
 
 	@ReqId.deleter
 	def ReqId(self):
 		del self._ReqId
-		self._ReqId = None
+		self._ReqId = base_types.UninitialisedField(self, 'ReqId', MessageIdentification1, False)
 
 	@property
 	def StsToBeXtnded(self):
@@ -28,12 +28,12 @@ class StatusExtensionRequestV03(base_types._BaseFieldType):
 
 	@StsToBeXtnded.setter
 	def StsToBeXtnded(self, value):
-		self._StsToBeXtnded = value if type(value) != base_types.auto else self.make_default("StsToBeXtnded")
+		self._StsToBeXtnded = value if value is not None else base_types.UninitialisedField(self, 'StsToBeXtnded', TransactionStatus5, False)
 
 	@StsToBeXtnded.deleter
 	def StsToBeXtnded(self):
 		del self._StsToBeXtnded
-		self._StsToBeXtnded = None
+		self._StsToBeXtnded = base_types.UninitialisedField(self, 'StsToBeXtnded', TransactionStatus5, False)
 
 	@property
 	def SubmitrTxRef(self):
@@ -41,12 +41,12 @@ class StatusExtensionRequestV03(base_types._BaseFieldType):
 
 	@SubmitrTxRef.setter
 	def SubmitrTxRef(self, value):
-		self._SubmitrTxRef = value if type(value) != base_types.auto else self.make_default("SubmitrTxRef")
+		self._SubmitrTxRef = value if value is not None else base_types.UninitialisedField(self, 'SubmitrTxRef', SimpleIdentificationInformation, False)
 
 	@SubmitrTxRef.deleter
 	def SubmitrTxRef(self):
 		del self._SubmitrTxRef
-		self._SubmitrTxRef = None
+		self._SubmitrTxRef = base_types.UninitialisedField(self, 'SubmitrTxRef', SimpleIdentificationInformation, False)
 
 	@property
 	def TxId(self):
@@ -54,12 +54,12 @@ class StatusExtensionRequestV03(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', SimpleIdentificationInformation, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', SimpleIdentificationInformation, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ReqId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),

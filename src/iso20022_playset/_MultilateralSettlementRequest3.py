@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._MovementRecord2 import MovementRecord2
-from ._Number import Number
-from ._Priority3Code import Priority3Code
-from ._SettlementTimeRequest2 import SettlementTimeRequest2
+from . import Max35Text
+from . import MovementRecord2
+from . import Number
+from . import Priority3Code
+from . import SettlementTimeRequest2
 
 class MultilateralSettlementRequest3(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class MultilateralSettlementRequest3(base_types._BaseFieldType):
 
 	@InstrId.setter
 	def InstrId(self, value):
-		self._InstrId = value if type(value) != base_types.auto else self.make_default("InstrId")
+		self._InstrId = value if value is not None else base_types.UninitialisedField(self, 'InstrId', Max35Text, False)
 
 	@InstrId.deleter
 	def InstrId(self):
 		del self._InstrId
-		self._InstrId = None
+		self._InstrId = base_types.UninitialisedField(self, 'InstrId', Max35Text, False)
 
 	@property
 	def InstrPrty(self):
@@ -30,12 +30,12 @@ class MultilateralSettlementRequest3(base_types._BaseFieldType):
 
 	@InstrPrty.setter
 	def InstrPrty(self, value):
-		self._InstrPrty = value if type(value) != base_types.auto else self.make_default("InstrPrty")
+		self._InstrPrty = value if value is not None else base_types.UninitialisedField(self, 'InstrPrty', Priority3Code, False)
 
 	@InstrPrty.deleter
 	def InstrPrty(self):
 		del self._InstrPrty
-		self._InstrPrty = None
+		self._InstrPrty = base_types.UninitialisedField(self, 'InstrPrty', Priority3Code, False)
 
 	@property
 	def MvmntRcrd(self):
@@ -43,12 +43,12 @@ class MultilateralSettlementRequest3(base_types._BaseFieldType):
 
 	@MvmntRcrd.setter
 	def MvmntRcrd(self, value):
-		self._MvmntRcrd = value if type(value) != base_types.auto else self.make_default("MvmntRcrd")
+		self._MvmntRcrd = value if value is not None else base_types.UninitialisedField(self, 'MvmntRcrd', MovementRecord2, True)
 
 	@MvmntRcrd.deleter
 	def MvmntRcrd(self):
 		del self._MvmntRcrd
-		self._MvmntRcrd = None
+		self._MvmntRcrd = base_types.UninitialisedField(self, 'MvmntRcrd', MovementRecord2, True)
 
 	@property
 	def NbOfMvmntRcrds(self):
@@ -56,12 +56,12 @@ class MultilateralSettlementRequest3(base_types._BaseFieldType):
 
 	@NbOfMvmntRcrds.setter
 	def NbOfMvmntRcrds(self, value):
-		self._NbOfMvmntRcrds = value if type(value) != base_types.auto else self.make_default("NbOfMvmntRcrds")
+		self._NbOfMvmntRcrds = value if value is not None else base_types.UninitialisedField(self, 'NbOfMvmntRcrds', Number, False)
 
 	@NbOfMvmntRcrds.deleter
 	def NbOfMvmntRcrds(self):
 		del self._NbOfMvmntRcrds
-		self._NbOfMvmntRcrds = None
+		self._NbOfMvmntRcrds = base_types.UninitialisedField(self, 'NbOfMvmntRcrds', Number, False)
 
 	@property
 	def SttlmCycl(self):
@@ -69,12 +69,12 @@ class MultilateralSettlementRequest3(base_types._BaseFieldType):
 
 	@SttlmCycl.setter
 	def SttlmCycl(self, value):
-		self._SttlmCycl = value if type(value) != base_types.auto else self.make_default("SttlmCycl")
+		self._SttlmCycl = value if value is not None else base_types.UninitialisedField(self, 'SttlmCycl', Max35Text, False)
 
 	@SttlmCycl.deleter
 	def SttlmCycl(self):
 		del self._SttlmCycl
-		self._SttlmCycl = None
+		self._SttlmCycl = base_types.UninitialisedField(self, 'SttlmCycl', Max35Text, False)
 
 	@property
 	def SttlmPrty(self):
@@ -82,12 +82,12 @@ class MultilateralSettlementRequest3(base_types._BaseFieldType):
 
 	@SttlmPrty.setter
 	def SttlmPrty(self, value):
-		self._SttlmPrty = value if type(value) != base_types.auto else self.make_default("SttlmPrty")
+		self._SttlmPrty = value if value is not None else base_types.UninitialisedField(self, 'SttlmPrty', Priority3Code, False)
 
 	@SttlmPrty.deleter
 	def SttlmPrty(self):
 		del self._SttlmPrty
-		self._SttlmPrty = None
+		self._SttlmPrty = base_types.UninitialisedField(self, 'SttlmPrty', Priority3Code, False)
 
 	@property
 	def SttlmTmReq(self):
@@ -95,12 +95,12 @@ class MultilateralSettlementRequest3(base_types._BaseFieldType):
 
 	@SttlmTmReq.setter
 	def SttlmTmReq(self, value):
-		self._SttlmTmReq = value if type(value) != base_types.auto else self.make_default("SttlmTmReq")
+		self._SttlmTmReq = value if value is not None else base_types.UninitialisedField(self, 'SttlmTmReq', SettlementTimeRequest2, False)
 
 	@SttlmTmReq.deleter
 	def SttlmTmReq(self):
 		del self._SttlmTmReq
-		self._SttlmTmReq = None
+		self._SttlmTmReq = base_types.UninitialisedField(self, 'SttlmTmReq', SettlementTimeRequest2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InstrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

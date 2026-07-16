@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CategoryPurpose1Choice import CategoryPurpose1Choice
-from ._ClearingChannel2Code import ClearingChannel2Code
-from ._LocalInstrument2Choice import LocalInstrument2Choice
-from ._Priority2Code import Priority2Code
-from ._ServiceLevel8Choice import ServiceLevel8Choice
+from . import CategoryPurpose1Choice
+from . import ClearingChannel2Code
+from . import LocalInstrument2Choice
+from . import Priority2Code
+from . import ServiceLevel8Choice
 
 class PaymentTypeInformation28(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class PaymentTypeInformation28(base_types._BaseFieldType):
 
 	@ClrChanl.setter
 	def ClrChanl(self, value):
-		self._ClrChanl = value if type(value) != base_types.auto else self.make_default("ClrChanl")
+		self._ClrChanl = value if value is not None else base_types.UninitialisedField(self, 'ClrChanl', ClearingChannel2Code, False)
 
 	@ClrChanl.deleter
 	def ClrChanl(self):
 		del self._ClrChanl
-		self._ClrChanl = None
+		self._ClrChanl = base_types.UninitialisedField(self, 'ClrChanl', ClearingChannel2Code, False)
 
 	@property
 	def CtgyPurp(self):
@@ -30,12 +30,12 @@ class PaymentTypeInformation28(base_types._BaseFieldType):
 
 	@CtgyPurp.setter
 	def CtgyPurp(self, value):
-		self._CtgyPurp = value if type(value) != base_types.auto else self.make_default("CtgyPurp")
+		self._CtgyPurp = value if value is not None else base_types.UninitialisedField(self, 'CtgyPurp', CategoryPurpose1Choice, False)
 
 	@CtgyPurp.deleter
 	def CtgyPurp(self):
 		del self._CtgyPurp
-		self._CtgyPurp = None
+		self._CtgyPurp = base_types.UninitialisedField(self, 'CtgyPurp', CategoryPurpose1Choice, False)
 
 	@property
 	def InstrPrty(self):
@@ -43,12 +43,12 @@ class PaymentTypeInformation28(base_types._BaseFieldType):
 
 	@InstrPrty.setter
 	def InstrPrty(self, value):
-		self._InstrPrty = value if type(value) != base_types.auto else self.make_default("InstrPrty")
+		self._InstrPrty = value if value is not None else base_types.UninitialisedField(self, 'InstrPrty', Priority2Code, False)
 
 	@InstrPrty.deleter
 	def InstrPrty(self):
 		del self._InstrPrty
-		self._InstrPrty = None
+		self._InstrPrty = base_types.UninitialisedField(self, 'InstrPrty', Priority2Code, False)
 
 	@property
 	def LclInstrm(self):
@@ -56,12 +56,12 @@ class PaymentTypeInformation28(base_types._BaseFieldType):
 
 	@LclInstrm.setter
 	def LclInstrm(self, value):
-		self._LclInstrm = value if type(value) != base_types.auto else self.make_default("LclInstrm")
+		self._LclInstrm = value if value is not None else base_types.UninitialisedField(self, 'LclInstrm', LocalInstrument2Choice, False)
 
 	@LclInstrm.deleter
 	def LclInstrm(self):
 		del self._LclInstrm
-		self._LclInstrm = None
+		self._LclInstrm = base_types.UninitialisedField(self, 'LclInstrm', LocalInstrument2Choice, False)
 
 	@property
 	def SvcLvl(self):
@@ -69,12 +69,12 @@ class PaymentTypeInformation28(base_types._BaseFieldType):
 
 	@SvcLvl.setter
 	def SvcLvl(self, value):
-		self._SvcLvl = value if type(value) != base_types.auto else self.make_default("SvcLvl")
+		self._SvcLvl = value if value is not None else base_types.UninitialisedField(self, 'SvcLvl', ServiceLevel8Choice, True)
 
 	@SvcLvl.deleter
 	def SvcLvl(self):
 		del self._SvcLvl
-		self._SvcLvl = None
+		self._SvcLvl = base_types.UninitialisedField(self, 'SvcLvl', ServiceLevel8Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClrChanl', type=ClearingChannel2Code, min=0, max=1, mutex_group=None, array=False),

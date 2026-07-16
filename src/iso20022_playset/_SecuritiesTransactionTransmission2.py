@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import LEIIdentifier
+from . import TrueFalseIndicator
 
 class SecuritiesTransactionTransmission2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SecuritiesTransactionTransmission2(base_types._BaseFieldType):
 
 	@TrnsmssnInd.setter
 	def TrnsmssnInd(self, value):
-		self._TrnsmssnInd = value if type(value) != base_types.auto else self.make_default("TrnsmssnInd")
+		self._TrnsmssnInd = value if value is not None else base_types.UninitialisedField(self, 'TrnsmssnInd', TrueFalseIndicator, False)
 
 	@TrnsmssnInd.deleter
 	def TrnsmssnInd(self):
 		del self._TrnsmssnInd
-		self._TrnsmssnInd = None
+		self._TrnsmssnInd = base_types.UninitialisedField(self, 'TrnsmssnInd', TrueFalseIndicator, False)
 
 	@property
 	def TrnsmttgBuyr(self):
@@ -27,12 +27,12 @@ class SecuritiesTransactionTransmission2(base_types._BaseFieldType):
 
 	@TrnsmttgBuyr.setter
 	def TrnsmttgBuyr(self, value):
-		self._TrnsmttgBuyr = value if type(value) != base_types.auto else self.make_default("TrnsmttgBuyr")
+		self._TrnsmttgBuyr = value if value is not None else base_types.UninitialisedField(self, 'TrnsmttgBuyr', LEIIdentifier, False)
 
 	@TrnsmttgBuyr.deleter
 	def TrnsmttgBuyr(self):
 		del self._TrnsmttgBuyr
-		self._TrnsmttgBuyr = None
+		self._TrnsmttgBuyr = base_types.UninitialisedField(self, 'TrnsmttgBuyr', LEIIdentifier, False)
 
 	@property
 	def TrnsmttgSellr(self):
@@ -40,12 +40,12 @@ class SecuritiesTransactionTransmission2(base_types._BaseFieldType):
 
 	@TrnsmttgSellr.setter
 	def TrnsmttgSellr(self, value):
-		self._TrnsmttgSellr = value if type(value) != base_types.auto else self.make_default("TrnsmttgSellr")
+		self._TrnsmttgSellr = value if value is not None else base_types.UninitialisedField(self, 'TrnsmttgSellr', LEIIdentifier, False)
 
 	@TrnsmttgSellr.deleter
 	def TrnsmttgSellr(self):
 		del self._TrnsmttgSellr
-		self._TrnsmttgSellr = None
+		self._TrnsmttgSellr = base_types.UninitialisedField(self, 'TrnsmttgSellr', LEIIdentifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TrnsmssnInd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),

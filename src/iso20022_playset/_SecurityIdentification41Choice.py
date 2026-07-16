@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CustomBasket4 import CustomBasket4
-from ._GenericIdentification184 import GenericIdentification184
-from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._IndexIdentification1 import IndexIdentification1
-from ._Max52Text import Max52Text
-from ._UnderlyingIdentification1Code import UnderlyingIdentification1Code
-from ._UniqueProductIdentifier2Choice import UniqueProductIdentifier2Choice
+from . import CustomBasket4
+from . import GenericIdentification184
+from . import ISINOct2015Identifier
+from . import IndexIdentification1
+from . import Max52Text
+from . import UnderlyingIdentification1Code
+from . import UniqueProductIdentifier2Choice
 
 class SecurityIdentification41Choice(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class SecurityIdentification41Choice(base_types._BaseFieldType):
 
 	@AltrntvInstrmId.setter
 	def AltrntvInstrmId(self, value):
-		self._AltrntvInstrmId = value if type(value) != base_types.auto else self.make_default("AltrntvInstrmId")
+		self._AltrntvInstrmId = value if value is not None else base_types.UninitialisedField(self, 'AltrntvInstrmId', Max52Text, False)
 
 	@AltrntvInstrmId.deleter
 	def AltrntvInstrmId(self):
 		del self._AltrntvInstrmId
-		self._AltrntvInstrmId = None
+		self._AltrntvInstrmId = base_types.UninitialisedField(self, 'AltrntvInstrmId', Max52Text, False)
 
 	@property
 	def Bskt(self):
@@ -32,12 +32,12 @@ class SecurityIdentification41Choice(base_types._BaseFieldType):
 
 	@Bskt.setter
 	def Bskt(self, value):
-		self._Bskt = value if type(value) != base_types.auto else self.make_default("Bskt")
+		self._Bskt = value if value is not None else base_types.UninitialisedField(self, 'Bskt', CustomBasket4, False)
 
 	@Bskt.deleter
 	def Bskt(self):
 		del self._Bskt
-		self._Bskt = None
+		self._Bskt = base_types.UninitialisedField(self, 'Bskt', CustomBasket4, False)
 
 	@property
 	def ISIN(self):
@@ -45,12 +45,12 @@ class SecurityIdentification41Choice(base_types._BaseFieldType):
 
 	@ISIN.setter
 	def ISIN(self, value):
-		self._ISIN = value if type(value) != base_types.auto else self.make_default("ISIN")
+		self._ISIN = value if value is not None else base_types.UninitialisedField(self, 'ISIN', ISINOct2015Identifier, False)
 
 	@ISIN.deleter
 	def ISIN(self):
 		del self._ISIN
-		self._ISIN = None
+		self._ISIN = base_types.UninitialisedField(self, 'ISIN', ISINOct2015Identifier, False)
 
 	@property
 	def IdNotAvlbl(self):
@@ -58,12 +58,12 @@ class SecurityIdentification41Choice(base_types._BaseFieldType):
 
 	@IdNotAvlbl.setter
 	def IdNotAvlbl(self, value):
-		self._IdNotAvlbl = value if type(value) != base_types.auto else self.make_default("IdNotAvlbl")
+		self._IdNotAvlbl = value if value is not None else base_types.UninitialisedField(self, 'IdNotAvlbl', UnderlyingIdentification1Code, False)
 
 	@IdNotAvlbl.deleter
 	def IdNotAvlbl(self):
 		del self._IdNotAvlbl
-		self._IdNotAvlbl = None
+		self._IdNotAvlbl = base_types.UninitialisedField(self, 'IdNotAvlbl', UnderlyingIdentification1Code, False)
 
 	@property
 	def Indx(self):
@@ -71,12 +71,12 @@ class SecurityIdentification41Choice(base_types._BaseFieldType):
 
 	@Indx.setter
 	def Indx(self, value):
-		self._Indx = value if type(value) != base_types.auto else self.make_default("Indx")
+		self._Indx = value if value is not None else base_types.UninitialisedField(self, 'Indx', IndexIdentification1, False)
 
 	@Indx.deleter
 	def Indx(self):
 		del self._Indx
-		self._Indx = None
+		self._Indx = base_types.UninitialisedField(self, 'Indx', IndexIdentification1, False)
 
 	@property
 	def Othr(self):
@@ -84,12 +84,12 @@ class SecurityIdentification41Choice(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', GenericIdentification184, False)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', GenericIdentification184, False)
 
 	@property
 	def UnqPdctIdr(self):
@@ -97,12 +97,12 @@ class SecurityIdentification41Choice(base_types._BaseFieldType):
 
 	@UnqPdctIdr.setter
 	def UnqPdctIdr(self, value):
-		self._UnqPdctIdr = value if type(value) != base_types.auto else self.make_default("UnqPdctIdr")
+		self._UnqPdctIdr = value if value is not None else base_types.UninitialisedField(self, 'UnqPdctIdr', UniqueProductIdentifier2Choice, False)
 
 	@UnqPdctIdr.deleter
 	def UnqPdctIdr(self):
 		del self._UnqPdctIdr
-		self._UnqPdctIdr = None
+		self._UnqPdctIdr = base_types.UninitialisedField(self, 'UnqPdctIdr', UniqueProductIdentifier2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AltrntvInstrmId', type=Max52Text, min=0, max=1, mutex_group=1, array=False),

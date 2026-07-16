@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
-from ._UKTaxGroupUnit1Code import UKTaxGroupUnit1Code
-from ._Unit1Choice import Unit1Choice
+from . import ISODate
+from . import Max35Text
+from . import UKTaxGroupUnit1Code
+from . import Unit1Choice
 
 class Unit15(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class Unit15(base_types._BaseFieldType):
 
 	@AcqstnDt.setter
 	def AcqstnDt(self, value):
-		self._AcqstnDt = value if type(value) != base_types.auto else self.make_default("AcqstnDt")
+		self._AcqstnDt = value if value is not None else base_types.UninitialisedField(self, 'AcqstnDt', ISODate, False)
 
 	@AcqstnDt.deleter
 	def AcqstnDt(self):
 		del self._AcqstnDt
-		self._AcqstnDt = None
+		self._AcqstnDt = base_types.UninitialisedField(self, 'AcqstnDt', ISODate, False)
 
 	@property
 	def CertNb(self):
@@ -29,12 +29,12 @@ class Unit15(base_types._BaseFieldType):
 
 	@CertNb.setter
 	def CertNb(self, value):
-		self._CertNb = value if type(value) != base_types.auto else self.make_default("CertNb")
+		self._CertNb = value if value is not None else base_types.UninitialisedField(self, 'CertNb', Max35Text, True)
 
 	@CertNb.deleter
 	def CertNb(self):
 		del self._CertNb
-		self._CertNb = None
+		self._CertNb = base_types.UninitialisedField(self, 'CertNb', Max35Text, True)
 
 	@property
 	def Grp1Or2Units(self):
@@ -42,12 +42,12 @@ class Unit15(base_types._BaseFieldType):
 
 	@Grp1Or2Units.setter
 	def Grp1Or2Units(self, value):
-		self._Grp1Or2Units = value if type(value) != base_types.auto else self.make_default("Grp1Or2Units")
+		self._Grp1Or2Units = value if value is not None else base_types.UninitialisedField(self, 'Grp1Or2Units', UKTaxGroupUnit1Code, False)
 
 	@Grp1Or2Units.deleter
 	def Grp1Or2Units(self):
 		del self._Grp1Or2Units
-		self._Grp1Or2Units = None
+		self._Grp1Or2Units = base_types.UninitialisedField(self, 'Grp1Or2Units', UKTaxGroupUnit1Code, False)
 
 	@property
 	def OrdrDt(self):
@@ -55,12 +55,12 @@ class Unit15(base_types._BaseFieldType):
 
 	@OrdrDt.setter
 	def OrdrDt(self, value):
-		self._OrdrDt = value if type(value) != base_types.auto else self.make_default("OrdrDt")
+		self._OrdrDt = value if value is not None else base_types.UninitialisedField(self, 'OrdrDt', ISODate, False)
 
 	@OrdrDt.deleter
 	def OrdrDt(self):
 		del self._OrdrDt
-		self._OrdrDt = None
+		self._OrdrDt = base_types.UninitialisedField(self, 'OrdrDt', ISODate, False)
 
 	@property
 	def Ref(self):
@@ -68,12 +68,12 @@ class Unit15(base_types._BaseFieldType):
 
 	@Ref.setter
 	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+		self._Ref = value if value is not None else base_types.UninitialisedField(self, 'Ref', Max35Text, False)
 
 	@Ref.deleter
 	def Ref(self):
 		del self._Ref
-		self._Ref = None
+		self._Ref = base_types.UninitialisedField(self, 'Ref', Max35Text, False)
 
 	@property
 	def Units(self):
@@ -81,12 +81,12 @@ class Unit15(base_types._BaseFieldType):
 
 	@Units.setter
 	def Units(self, value):
-		self._Units = value if type(value) != base_types.auto else self.make_default("Units")
+		self._Units = value if value is not None else base_types.UninitialisedField(self, 'Units', Unit1Choice, False)
 
 	@Units.deleter
 	def Units(self):
 		del self._Units
-		self._Units = None
+		self._Units = base_types.UninitialisedField(self, 'Units', Unit1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcqstnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),

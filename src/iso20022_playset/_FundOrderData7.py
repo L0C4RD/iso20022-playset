@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._DecimalNumber import DecimalNumber
-from ._FinancialInstrument107 import FinancialInstrument107
-from ._InvestmentAccount81 import InvestmentAccount81
-from ._Max30DecimalNumber import Max30DecimalNumber
-from ._PercentageRate import PercentageRate
+from . import ActiveCurrencyAndAmount
+from . import ActiveCurrencyCode
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import DecimalNumber
+from . import FinancialInstrument107
+from . import InvestmentAccount81
+from . import Max30DecimalNumber
+from . import PercentageRate
 
 class FundOrderData7(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class FundOrderData7(base_types._BaseFieldType):
 
 	@DgtlTknUnit.setter
 	def DgtlTknUnit(self, value):
-		self._DgtlTknUnit = value if type(value) != base_types.auto else self.make_default("DgtlTknUnit")
+		self._DgtlTknUnit = value if value is not None else base_types.UninitialisedField(self, 'DgtlTknUnit', Max30DecimalNumber, False)
 
 	@DgtlTknUnit.deleter
 	def DgtlTknUnit(self):
 		del self._DgtlTknUnit
-		self._DgtlTknUnit = None
+		self._DgtlTknUnit = base_types.UninitialisedField(self, 'DgtlTknUnit', Max30DecimalNumber, False)
 
 	@property
 	def FinInstrmDtls(self):
@@ -33,12 +33,12 @@ class FundOrderData7(base_types._BaseFieldType):
 
 	@FinInstrmDtls.setter
 	def FinInstrmDtls(self, value):
-		self._FinInstrmDtls = value if type(value) != base_types.auto else self.make_default("FinInstrmDtls")
+		self._FinInstrmDtls = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmDtls', FinancialInstrument107, False)
 
 	@FinInstrmDtls.deleter
 	def FinInstrmDtls(self):
 		del self._FinInstrmDtls
-		self._FinInstrmDtls = None
+		self._FinInstrmDtls = base_types.UninitialisedField(self, 'FinInstrmDtls', FinancialInstrument107, False)
 
 	@property
 	def GrssAmt(self):
@@ -46,12 +46,12 @@ class FundOrderData7(base_types._BaseFieldType):
 
 	@GrssAmt.setter
 	def GrssAmt(self, value):
-		self._GrssAmt = value if type(value) != base_types.auto else self.make_default("GrssAmt")
+		self._GrssAmt = value if value is not None else base_types.UninitialisedField(self, 'GrssAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@GrssAmt.deleter
 	def GrssAmt(self):
 		del self._GrssAmt
-		self._GrssAmt = None
+		self._GrssAmt = base_types.UninitialisedField(self, 'GrssAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def HldgsRedRate(self):
@@ -59,12 +59,12 @@ class FundOrderData7(base_types._BaseFieldType):
 
 	@HldgsRedRate.setter
 	def HldgsRedRate(self, value):
-		self._HldgsRedRate = value if type(value) != base_types.auto else self.make_default("HldgsRedRate")
+		self._HldgsRedRate = value if value is not None else base_types.UninitialisedField(self, 'HldgsRedRate', PercentageRate, False)
 
 	@HldgsRedRate.deleter
 	def HldgsRedRate(self):
 		del self._HldgsRedRate
-		self._HldgsRedRate = None
+		self._HldgsRedRate = base_types.UninitialisedField(self, 'HldgsRedRate', PercentageRate, False)
 
 	@property
 	def InvstmtAcctDtls(self):
@@ -72,12 +72,12 @@ class FundOrderData7(base_types._BaseFieldType):
 
 	@InvstmtAcctDtls.setter
 	def InvstmtAcctDtls(self, value):
-		self._InvstmtAcctDtls = value if type(value) != base_types.auto else self.make_default("InvstmtAcctDtls")
+		self._InvstmtAcctDtls = value if value is not None else base_types.UninitialisedField(self, 'InvstmtAcctDtls', InvestmentAccount81, False)
 
 	@InvstmtAcctDtls.deleter
 	def InvstmtAcctDtls(self):
 		del self._InvstmtAcctDtls
-		self._InvstmtAcctDtls = None
+		self._InvstmtAcctDtls = base_types.UninitialisedField(self, 'InvstmtAcctDtls', InvestmentAccount81, False)
 
 	@property
 	def NetAmt(self):
@@ -85,12 +85,12 @@ class FundOrderData7(base_types._BaseFieldType):
 
 	@NetAmt.setter
 	def NetAmt(self, value):
-		self._NetAmt = value if type(value) != base_types.auto else self.make_default("NetAmt")
+		self._NetAmt = value if value is not None else base_types.UninitialisedField(self, 'NetAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@NetAmt.deleter
 	def NetAmt(self):
 		del self._NetAmt
-		self._NetAmt = None
+		self._NetAmt = base_types.UninitialisedField(self, 'NetAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def QtdCcy(self):
@@ -98,12 +98,12 @@ class FundOrderData7(base_types._BaseFieldType):
 
 	@QtdCcy.setter
 	def QtdCcy(self, value):
-		self._QtdCcy = value if type(value) != base_types.auto else self.make_default("QtdCcy")
+		self._QtdCcy = value if value is not None else base_types.UninitialisedField(self, 'QtdCcy', ActiveCurrencyCode, False)
 
 	@QtdCcy.deleter
 	def QtdCcy(self):
 		del self._QtdCcy
-		self._QtdCcy = None
+		self._QtdCcy = base_types.UninitialisedField(self, 'QtdCcy', ActiveCurrencyCode, False)
 
 	@property
 	def SttlmAmt(self):
@@ -111,12 +111,12 @@ class FundOrderData7(base_types._BaseFieldType):
 
 	@SttlmAmt.setter
 	def SttlmAmt(self, value):
-		self._SttlmAmt = value if type(value) != base_types.auto else self.make_default("SttlmAmt")
+		self._SttlmAmt = value if value is not None else base_types.UninitialisedField(self, 'SttlmAmt', ActiveCurrencyAndAmount, False)
 
 	@SttlmAmt.deleter
 	def SttlmAmt(self):
 		del self._SttlmAmt
-		self._SttlmAmt = None
+		self._SttlmAmt = base_types.UninitialisedField(self, 'SttlmAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def UnitCcy(self):
@@ -124,12 +124,12 @@ class FundOrderData7(base_types._BaseFieldType):
 
 	@UnitCcy.setter
 	def UnitCcy(self, value):
-		self._UnitCcy = value if type(value) != base_types.auto else self.make_default("UnitCcy")
+		self._UnitCcy = value if value is not None else base_types.UninitialisedField(self, 'UnitCcy', ActiveCurrencyCode, False)
 
 	@UnitCcy.deleter
 	def UnitCcy(self):
 		del self._UnitCcy
-		self._UnitCcy = None
+		self._UnitCcy = base_types.UninitialisedField(self, 'UnitCcy', ActiveCurrencyCode, False)
 
 	@property
 	def UnitsNb(self):
@@ -137,12 +137,12 @@ class FundOrderData7(base_types._BaseFieldType):
 
 	@UnitsNb.setter
 	def UnitsNb(self, value):
-		self._UnitsNb = value if type(value) != base_types.auto else self.make_default("UnitsNb")
+		self._UnitsNb = value if value is not None else base_types.UninitialisedField(self, 'UnitsNb', DecimalNumber, False)
 
 	@UnitsNb.deleter
 	def UnitsNb(self):
 		del self._UnitsNb
-		self._UnitsNb = None
+		self._UnitsNb = base_types.UninitialisedField(self, 'UnitsNb', DecimalNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DgtlTknUnit', type=Max30DecimalNumber, min=0, max=1, mutex_group=None, array=False),

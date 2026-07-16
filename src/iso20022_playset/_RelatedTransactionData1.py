@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._UUIDv4Identifier import UUIDv4Identifier
+from . import UUIDv4Identifier
 
 class RelatedTransactionData1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class RelatedTransactionData1(base_types._BaseFieldType):
 
 	@MstrUETR.setter
 	def MstrUETR(self, value):
-		self._MstrUETR = value if type(value) != base_types.auto else self.make_default("MstrUETR")
+		self._MstrUETR = value if value is not None else base_types.UninitialisedField(self, 'MstrUETR', UUIDv4Identifier, False)
 
 	@MstrUETR.deleter
 	def MstrUETR(self):
 		del self._MstrUETR
-		self._MstrUETR = None
+		self._MstrUETR = base_types.UninitialisedField(self, 'MstrUETR', UUIDv4Identifier, False)
 
 	@property
 	def SubUETR(self):
@@ -26,12 +26,12 @@ class RelatedTransactionData1(base_types._BaseFieldType):
 
 	@SubUETR.setter
 	def SubUETR(self, value):
-		self._SubUETR = value if type(value) != base_types.auto else self.make_default("SubUETR")
+		self._SubUETR = value if value is not None else base_types.UninitialisedField(self, 'SubUETR', UUIDv4Identifier, True)
 
 	@SubUETR.deleter
 	def SubUETR(self):
 		del self._SubUETR
-		self._SubUETR = None
+		self._SubUETR = base_types.UninitialisedField(self, 'SubUETR', UUIDv4Identifier, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MstrUETR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),

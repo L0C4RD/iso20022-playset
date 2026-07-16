@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcceptorConfigurationDataSet7 import AcceptorConfigurationDataSet7
-from ._GenericIdentification176 import GenericIdentification176
-from ._Max35Text import Max35Text
+from . import AcceptorConfigurationDataSet7
+from . import GenericIdentification176
+from . import Max35Text
 
 class AcceptorConfiguration15(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AcceptorConfiguration15(base_types._BaseFieldType):
 
 	@DataSet.setter
 	def DataSet(self, value):
-		self._DataSet = value if type(value) != base_types.auto else self.make_default("DataSet")
+		self._DataSet = value if value is not None else base_types.UninitialisedField(self, 'DataSet', AcceptorConfigurationDataSet7, True)
 
 	@DataSet.deleter
 	def DataSet(self):
 		del self._DataSet
-		self._DataSet = None
+		self._DataSet = base_types.UninitialisedField(self, 'DataSet', AcceptorConfigurationDataSet7, True)
 
 	@property
 	def POIGrpId(self):
@@ -28,12 +28,12 @@ class AcceptorConfiguration15(base_types._BaseFieldType):
 
 	@POIGrpId.setter
 	def POIGrpId(self, value):
-		self._POIGrpId = value if type(value) != base_types.auto else self.make_default("POIGrpId")
+		self._POIGrpId = value if value is not None else base_types.UninitialisedField(self, 'POIGrpId', Max35Text, True)
 
 	@POIGrpId.deleter
 	def POIGrpId(self):
 		del self._POIGrpId
-		self._POIGrpId = None
+		self._POIGrpId = base_types.UninitialisedField(self, 'POIGrpId', Max35Text, True)
 
 	@property
 	def TermnlMgrId(self):
@@ -41,12 +41,12 @@ class AcceptorConfiguration15(base_types._BaseFieldType):
 
 	@TermnlMgrId.setter
 	def TermnlMgrId(self, value):
-		self._TermnlMgrId = value if type(value) != base_types.auto else self.make_default("TermnlMgrId")
+		self._TermnlMgrId = value if value is not None else base_types.UninitialisedField(self, 'TermnlMgrId', GenericIdentification176, False)
 
 	@TermnlMgrId.deleter
 	def TermnlMgrId(self):
 		del self._TermnlMgrId
-		self._TermnlMgrId = None
+		self._TermnlMgrId = base_types.UninitialisedField(self, 'TermnlMgrId', GenericIdentification176, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DataSet', type=AcceptorConfigurationDataSet7, min=1, max=None, mutex_group=None, array=True),

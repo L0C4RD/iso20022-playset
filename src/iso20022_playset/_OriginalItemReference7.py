@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CashAccount40 import CashAccount40
-from ._Party50Choice import Party50Choice
-from ._Purpose2Choice import Purpose2Choice
-from ._RemittanceInformation22 import RemittanceInformation22
-from ._RemittanceLocation8 import RemittanceLocation8
+from . import BranchAndFinancialInstitutionIdentification8
+from . import CashAccount40
+from . import Party50Choice
+from . import Purpose2Choice
+from . import RemittanceInformation22
+from . import RemittanceLocation8
 
 class OriginalItemReference7(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class OriginalItemReference7(base_types._BaseFieldType):
 
 	@Acct.setter
 	def Acct(self, value):
-		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
+		self._Acct = value if value is not None else base_types.UninitialisedField(self, 'Acct', CashAccount40, False)
 
 	@Acct.deleter
 	def Acct(self):
 		del self._Acct
-		self._Acct = None
+		self._Acct = base_types.UninitialisedField(self, 'Acct', CashAccount40, False)
 
 	@property
 	def AcctOwnr(self):
@@ -31,12 +31,12 @@ class OriginalItemReference7(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', Party50Choice, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', Party50Choice, False)
 
 	@property
 	def AcctSvcr(self):
@@ -44,12 +44,12 @@ class OriginalItemReference7(base_types._BaseFieldType):
 
 	@AcctSvcr.setter
 	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
+		self._AcctSvcr = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@AcctSvcr.deleter
 	def AcctSvcr(self):
 		del self._AcctSvcr
-		self._AcctSvcr = None
+		self._AcctSvcr = base_types.UninitialisedField(self, 'AcctSvcr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def Dbtr(self):
@@ -57,12 +57,12 @@ class OriginalItemReference7(base_types._BaseFieldType):
 
 	@Dbtr.setter
 	def Dbtr(self, value):
-		self._Dbtr = value if type(value) != base_types.auto else self.make_default("Dbtr")
+		self._Dbtr = value if value is not None else base_types.UninitialisedField(self, 'Dbtr', Party50Choice, False)
 
 	@Dbtr.deleter
 	def Dbtr(self):
 		del self._Dbtr
-		self._Dbtr = None
+		self._Dbtr = base_types.UninitialisedField(self, 'Dbtr', Party50Choice, False)
 
 	@property
 	def DbtrAgt(self):
@@ -70,12 +70,12 @@ class OriginalItemReference7(base_types._BaseFieldType):
 
 	@DbtrAgt.setter
 	def DbtrAgt(self, value):
-		self._DbtrAgt = value if type(value) != base_types.auto else self.make_default("DbtrAgt")
+		self._DbtrAgt = value if value is not None else base_types.UninitialisedField(self, 'DbtrAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@DbtrAgt.deleter
 	def DbtrAgt(self):
 		del self._DbtrAgt
-		self._DbtrAgt = None
+		self._DbtrAgt = base_types.UninitialisedField(self, 'DbtrAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def IntrmyAgt(self):
@@ -83,12 +83,12 @@ class OriginalItemReference7(base_types._BaseFieldType):
 
 	@IntrmyAgt.setter
 	def IntrmyAgt(self, value):
-		self._IntrmyAgt = value if type(value) != base_types.auto else self.make_default("IntrmyAgt")
+		self._IntrmyAgt = value if value is not None else base_types.UninitialisedField(self, 'IntrmyAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@IntrmyAgt.deleter
 	def IntrmyAgt(self):
 		del self._IntrmyAgt
-		self._IntrmyAgt = None
+		self._IntrmyAgt = base_types.UninitialisedField(self, 'IntrmyAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def Purp(self):
@@ -96,12 +96,12 @@ class OriginalItemReference7(base_types._BaseFieldType):
 
 	@Purp.setter
 	def Purp(self, value):
-		self._Purp = value if type(value) != base_types.auto else self.make_default("Purp")
+		self._Purp = value if value is not None else base_types.UninitialisedField(self, 'Purp', Purpose2Choice, False)
 
 	@Purp.deleter
 	def Purp(self):
 		del self._Purp
-		self._Purp = None
+		self._Purp = base_types.UninitialisedField(self, 'Purp', Purpose2Choice, False)
 
 	@property
 	def RltdAcct(self):
@@ -109,12 +109,12 @@ class OriginalItemReference7(base_types._BaseFieldType):
 
 	@RltdAcct.setter
 	def RltdAcct(self, value):
-		self._RltdAcct = value if type(value) != base_types.auto else self.make_default("RltdAcct")
+		self._RltdAcct = value if value is not None else base_types.UninitialisedField(self, 'RltdAcct', CashAccount40, False)
 
 	@RltdAcct.deleter
 	def RltdAcct(self):
 		del self._RltdAcct
-		self._RltdAcct = None
+		self._RltdAcct = base_types.UninitialisedField(self, 'RltdAcct', CashAccount40, False)
 
 	@property
 	def RltdRmtInf(self):
@@ -122,12 +122,12 @@ class OriginalItemReference7(base_types._BaseFieldType):
 
 	@RltdRmtInf.setter
 	def RltdRmtInf(self, value):
-		self._RltdRmtInf = value if type(value) != base_types.auto else self.make_default("RltdRmtInf")
+		self._RltdRmtInf = value if value is not None else base_types.UninitialisedField(self, 'RltdRmtInf', RemittanceLocation8, False)
 
 	@RltdRmtInf.deleter
 	def RltdRmtInf(self):
 		del self._RltdRmtInf
-		self._RltdRmtInf = None
+		self._RltdRmtInf = base_types.UninitialisedField(self, 'RltdRmtInf', RemittanceLocation8, False)
 
 	@property
 	def RmtInf(self):
@@ -135,12 +135,12 @@ class OriginalItemReference7(base_types._BaseFieldType):
 
 	@RmtInf.setter
 	def RmtInf(self, value):
-		self._RmtInf = value if type(value) != base_types.auto else self.make_default("RmtInf")
+		self._RmtInf = value if value is not None else base_types.UninitialisedField(self, 'RmtInf', RemittanceInformation22, False)
 
 	@RmtInf.deleter
 	def RmtInf(self):
 		del self._RmtInf
-		self._RmtInf = None
+		self._RmtInf = base_types.UninitialisedField(self, 'RmtInf', RemittanceInformation22, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),

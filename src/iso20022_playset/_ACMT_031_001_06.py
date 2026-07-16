@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountSwitchRequestBalanceTransferV06 import AccountSwitchRequestBalanceTransferV06
+from . import AccountSwitchRequestBalanceTransferV06
 
 class ACMT_031_001_06():
 
@@ -18,12 +18,12 @@ class ACMT_031_001_06():
 
 		@AcctSwtchReqBalTrf.setter
 		def AcctSwtchReqBalTrf(self, value):
-			self._AcctSwtchReqBalTrf = value if type(value) != base_types.auto else self.make_default("AcctSwtchReqBalTrf")
+			self._AcctSwtchReqBalTrf = value if value is not None else base_types.UninitialisedField(self, 'AcctSwtchReqBalTrf', AccountSwitchRequestBalanceTransferV06, False)
 
 		@AcctSwtchReqBalTrf.deleter
 		def AcctSwtchReqBalTrf(self):
 			del self._AcctSwtchReqBalTrf
-			self._AcctSwtchReqBalTrf = None
+			self._AcctSwtchReqBalTrf = base_types.UninitialisedField(self, 'AcctSwtchReqBalTrf', AccountSwitchRequestBalanceTransferV06, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AcctSwtchReqBalTrf', type=AccountSwitchRequestBalanceTransferV06, min=1, max=1, mutex_group=None, array=False),

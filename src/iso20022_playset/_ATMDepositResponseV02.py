@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMDepositResponse2 import ATMDepositResponse2
-from ._ContentInformationType10 import ContentInformationType10
-from ._ContentInformationType15 import ContentInformationType15
-from ._Header31 import Header31
+from . import ATMDepositResponse2
+from . import ContentInformationType10
+from . import ContentInformationType15
+from . import Header31
 
 class ATMDepositResponseV02(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ATMDepositResponseV02(base_types._BaseFieldType):
 
 	@ATMDpstRspn.setter
 	def ATMDpstRspn(self, value):
-		self._ATMDpstRspn = value if type(value) != base_types.auto else self.make_default("ATMDpstRspn")
+		self._ATMDpstRspn = value if value is not None else base_types.UninitialisedField(self, 'ATMDpstRspn', ATMDepositResponse2, False)
 
 	@ATMDpstRspn.deleter
 	def ATMDpstRspn(self):
 		del self._ATMDpstRspn
-		self._ATMDpstRspn = None
+		self._ATMDpstRspn = base_types.UninitialisedField(self, 'ATMDpstRspn', ATMDepositResponse2, False)
 
 	@property
 	def Hdr(self):
@@ -29,12 +29,12 @@ class ATMDepositResponseV02(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header31, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header31, False)
 
 	@property
 	def PrtctdATMDpstRspn(self):
@@ -42,12 +42,12 @@ class ATMDepositResponseV02(base_types._BaseFieldType):
 
 	@PrtctdATMDpstRspn.setter
 	def PrtctdATMDpstRspn(self, value):
-		self._PrtctdATMDpstRspn = value if type(value) != base_types.auto else self.make_default("PrtctdATMDpstRspn")
+		self._PrtctdATMDpstRspn = value if value is not None else base_types.UninitialisedField(self, 'PrtctdATMDpstRspn', ContentInformationType10, False)
 
 	@PrtctdATMDpstRspn.deleter
 	def PrtctdATMDpstRspn(self):
 		del self._PrtctdATMDpstRspn
-		self._PrtctdATMDpstRspn = None
+		self._PrtctdATMDpstRspn = base_types.UninitialisedField(self, 'PrtctdATMDpstRspn', ContentInformationType10, False)
 
 	@property
 	def SctyTrlr(self):
@@ -55,12 +55,12 @@ class ATMDepositResponseV02(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType15, False)
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
 		del self._SctyTrlr
-		self._SctyTrlr = None
+		self._SctyTrlr = base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType15, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ATMDpstRspn', type=ATMDepositResponse2, min=0, max=1, mutex_group=None, array=False),

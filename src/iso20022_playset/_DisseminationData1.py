@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._Max52Text import Max52Text
+from . import ISODateTime
+from . import Max52Text
 
 class DisseminationData1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DisseminationData1(base_types._BaseFieldType):
 
 	@DssmntnIdr.setter
 	def DssmntnIdr(self, value):
-		self._DssmntnIdr = value if type(value) != base_types.auto else self.make_default("DssmntnIdr")
+		self._DssmntnIdr = value if value is not None else base_types.UninitialisedField(self, 'DssmntnIdr', Max52Text, False)
 
 	@DssmntnIdr.deleter
 	def DssmntnIdr(self):
 		del self._DssmntnIdr
-		self._DssmntnIdr = None
+		self._DssmntnIdr = base_types.UninitialisedField(self, 'DssmntnIdr', Max52Text, False)
 
 	@property
 	def OrgnlDssmntnIdr(self):
@@ -27,12 +27,12 @@ class DisseminationData1(base_types._BaseFieldType):
 
 	@OrgnlDssmntnIdr.setter
 	def OrgnlDssmntnIdr(self, value):
-		self._OrgnlDssmntnIdr = value if type(value) != base_types.auto else self.make_default("OrgnlDssmntnIdr")
+		self._OrgnlDssmntnIdr = value if value is not None else base_types.UninitialisedField(self, 'OrgnlDssmntnIdr', Max52Text, False)
 
 	@OrgnlDssmntnIdr.deleter
 	def OrgnlDssmntnIdr(self):
 		del self._OrgnlDssmntnIdr
-		self._OrgnlDssmntnIdr = None
+		self._OrgnlDssmntnIdr = base_types.UninitialisedField(self, 'OrgnlDssmntnIdr', Max52Text, False)
 
 	@property
 	def TmStmp(self):
@@ -40,12 +40,12 @@ class DisseminationData1(base_types._BaseFieldType):
 
 	@TmStmp.setter
 	def TmStmp(self, value):
-		self._TmStmp = value if type(value) != base_types.auto else self.make_default("TmStmp")
+		self._TmStmp = value if value is not None else base_types.UninitialisedField(self, 'TmStmp', ISODateTime, False)
 
 	@TmStmp.deleter
 	def TmStmp(self):
 		del self._TmStmp
-		self._TmStmp = None
+		self._TmStmp = base_types.UninitialisedField(self, 'TmStmp', ISODateTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DssmntnIdr', type=Max52Text, min=1, max=1, mutex_group=None, array=False),

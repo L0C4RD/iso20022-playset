@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._AmountAndDirection5 import AmountAndDirection5
-from ._PartyIdentification136 import PartyIdentification136
+from . import ActiveCurrencyAndAmount
+from . import AmountAndDirection5
+from . import PartyIdentification136
 
 class AggregatedPenaltyAmount2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AggregatedPenaltyAmount2(base_types._BaseFieldType):
 
 	@AggtdCdtAmt.setter
 	def AggtdCdtAmt(self, value):
-		self._AggtdCdtAmt = value if type(value) != base_types.auto else self.make_default("AggtdCdtAmt")
+		self._AggtdCdtAmt = value if value is not None else base_types.UninitialisedField(self, 'AggtdCdtAmt', ActiveCurrencyAndAmount, False)
 
 	@AggtdCdtAmt.deleter
 	def AggtdCdtAmt(self):
 		del self._AggtdCdtAmt
-		self._AggtdCdtAmt = None
+		self._AggtdCdtAmt = base_types.UninitialisedField(self, 'AggtdCdtAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def AggtdDbtAmt(self):
@@ -28,12 +28,12 @@ class AggregatedPenaltyAmount2(base_types._BaseFieldType):
 
 	@AggtdDbtAmt.setter
 	def AggtdDbtAmt(self, value):
-		self._AggtdDbtAmt = value if type(value) != base_types.auto else self.make_default("AggtdDbtAmt")
+		self._AggtdDbtAmt = value if value is not None else base_types.UninitialisedField(self, 'AggtdDbtAmt', ActiveCurrencyAndAmount, False)
 
 	@AggtdDbtAmt.deleter
 	def AggtdDbtAmt(self):
 		del self._AggtdDbtAmt
-		self._AggtdDbtAmt = None
+		self._AggtdDbtAmt = base_types.UninitialisedField(self, 'AggtdDbtAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def GblNetAmt(self):
@@ -41,12 +41,12 @@ class AggregatedPenaltyAmount2(base_types._BaseFieldType):
 
 	@GblNetAmt.setter
 	def GblNetAmt(self, value):
-		self._GblNetAmt = value if type(value) != base_types.auto else self.make_default("GblNetAmt")
+		self._GblNetAmt = value if value is not None else base_types.UninitialisedField(self, 'GblNetAmt', AmountAndDirection5, False)
 
 	@GblNetAmt.deleter
 	def GblNetAmt(self):
 		del self._GblNetAmt
-		self._GblNetAmt = None
+		self._GblNetAmt = base_types.UninitialisedField(self, 'GblNetAmt', AmountAndDirection5, False)
 
 	@property
 	def PtyId(self):
@@ -54,12 +54,12 @@ class AggregatedPenaltyAmount2(base_types._BaseFieldType):
 
 	@PtyId.setter
 	def PtyId(self, value):
-		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
+		self._PtyId = value if value is not None else base_types.UninitialisedField(self, 'PtyId', PartyIdentification136, False)
 
 	@PtyId.deleter
 	def PtyId(self):
 		del self._PtyId
-		self._PtyId = None
+		self._PtyId = base_types.UninitialisedField(self, 'PtyId', PartyIdentification136, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AggtdCdtAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

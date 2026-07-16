@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RequestedIndicator import RequestedIndicator
+from . import RequestedIndicator
 
 class AccountCashEntryReturnCriteria3(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class AccountCashEntryReturnCriteria3(base_types._BaseFieldType):
 
 	@AcctCcyInd.setter
 	def AcctCcyInd(self, value):
-		self._AcctCcyInd = value if type(value) != base_types.auto else self.make_default("AcctCcyInd")
+		self._AcctCcyInd = value if value is not None else base_types.UninitialisedField(self, 'AcctCcyInd', RequestedIndicator, False)
 
 	@AcctCcyInd.deleter
 	def AcctCcyInd(self):
 		del self._AcctCcyInd
-		self._AcctCcyInd = None
+		self._AcctCcyInd = base_types.UninitialisedField(self, 'AcctCcyInd', RequestedIndicator, False)
 
 	@property
 	def AcctOwnrInd(self):
@@ -26,12 +26,12 @@ class AccountCashEntryReturnCriteria3(base_types._BaseFieldType):
 
 	@AcctOwnrInd.setter
 	def AcctOwnrInd(self, value):
-		self._AcctOwnrInd = value if type(value) != base_types.auto else self.make_default("AcctOwnrInd")
+		self._AcctOwnrInd = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnrInd', RequestedIndicator, False)
 
 	@AcctOwnrInd.deleter
 	def AcctOwnrInd(self):
 		del self._AcctOwnrInd
-		self._AcctOwnrInd = None
+		self._AcctOwnrInd = base_types.UninitialisedField(self, 'AcctOwnrInd', RequestedIndicator, False)
 
 	@property
 	def AcctSvcrInd(self):
@@ -39,12 +39,12 @@ class AccountCashEntryReturnCriteria3(base_types._BaseFieldType):
 
 	@AcctSvcrInd.setter
 	def AcctSvcrInd(self, value):
-		self._AcctSvcrInd = value if type(value) != base_types.auto else self.make_default("AcctSvcrInd")
+		self._AcctSvcrInd = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcrInd', RequestedIndicator, False)
 
 	@AcctSvcrInd.deleter
 	def AcctSvcrInd(self):
 		del self._AcctSvcrInd
-		self._AcctSvcrInd = None
+		self._AcctSvcrInd = base_types.UninitialisedField(self, 'AcctSvcrInd', RequestedIndicator, False)
 
 	@property
 	def AcctTpInd(self):
@@ -52,12 +52,12 @@ class AccountCashEntryReturnCriteria3(base_types._BaseFieldType):
 
 	@AcctTpInd.setter
 	def AcctTpInd(self, value):
-		self._AcctTpInd = value if type(value) != base_types.auto else self.make_default("AcctTpInd")
+		self._AcctTpInd = value if value is not None else base_types.UninitialisedField(self, 'AcctTpInd', RequestedIndicator, False)
 
 	@AcctTpInd.deleter
 	def AcctTpInd(self):
 		del self._AcctTpInd
-		self._AcctTpInd = None
+		self._AcctTpInd = base_types.UninitialisedField(self, 'AcctTpInd', RequestedIndicator, False)
 
 	@property
 	def NtryAmtInd(self):
@@ -65,12 +65,12 @@ class AccountCashEntryReturnCriteria3(base_types._BaseFieldType):
 
 	@NtryAmtInd.setter
 	def NtryAmtInd(self, value):
-		self._NtryAmtInd = value if type(value) != base_types.auto else self.make_default("NtryAmtInd")
+		self._NtryAmtInd = value if value is not None else base_types.UninitialisedField(self, 'NtryAmtInd', RequestedIndicator, False)
 
 	@NtryAmtInd.deleter
 	def NtryAmtInd(self):
 		del self._NtryAmtInd
-		self._NtryAmtInd = None
+		self._NtryAmtInd = base_types.UninitialisedField(self, 'NtryAmtInd', RequestedIndicator, False)
 
 	@property
 	def NtryDtInd(self):
@@ -78,12 +78,12 @@ class AccountCashEntryReturnCriteria3(base_types._BaseFieldType):
 
 	@NtryDtInd.setter
 	def NtryDtInd(self, value):
-		self._NtryDtInd = value if type(value) != base_types.auto else self.make_default("NtryDtInd")
+		self._NtryDtInd = value if value is not None else base_types.UninitialisedField(self, 'NtryDtInd', RequestedIndicator, False)
 
 	@NtryDtInd.deleter
 	def NtryDtInd(self):
 		del self._NtryDtInd
-		self._NtryDtInd = None
+		self._NtryDtInd = base_types.UninitialisedField(self, 'NtryDtInd', RequestedIndicator, False)
 
 	@property
 	def NtryRefInd(self):
@@ -91,12 +91,12 @@ class AccountCashEntryReturnCriteria3(base_types._BaseFieldType):
 
 	@NtryRefInd.setter
 	def NtryRefInd(self, value):
-		self._NtryRefInd = value if type(value) != base_types.auto else self.make_default("NtryRefInd")
+		self._NtryRefInd = value if value is not None else base_types.UninitialisedField(self, 'NtryRefInd', RequestedIndicator, False)
 
 	@NtryRefInd.deleter
 	def NtryRefInd(self):
 		del self._NtryRefInd
-		self._NtryRefInd = None
+		self._NtryRefInd = base_types.UninitialisedField(self, 'NtryRefInd', RequestedIndicator, False)
 
 	@property
 	def NtryStsInd(self):
@@ -104,12 +104,12 @@ class AccountCashEntryReturnCriteria3(base_types._BaseFieldType):
 
 	@NtryStsInd.setter
 	def NtryStsInd(self, value):
-		self._NtryStsInd = value if type(value) != base_types.auto else self.make_default("NtryStsInd")
+		self._NtryStsInd = value if value is not None else base_types.UninitialisedField(self, 'NtryStsInd', RequestedIndicator, False)
 
 	@NtryStsInd.deleter
 	def NtryStsInd(self):
 		del self._NtryStsInd
-		self._NtryStsInd = None
+		self._NtryStsInd = base_types.UninitialisedField(self, 'NtryStsInd', RequestedIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctCcyInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),

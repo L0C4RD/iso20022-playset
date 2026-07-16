@@ -2,19 +2,19 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._ContractBalance1 import ContractBalance1
-from ._DocumentIdentification22 import DocumentIdentification22
-from ._DocumentIdentification29 import DocumentIdentification29
-from ._Max1025Text import Max1025Text
-from ._Max35Text import Max35Text
-from ._PaymentScheduleType2Choice import PaymentScheduleType2Choice
-from ._RegisteredContractAmendment1 import RegisteredContractAmendment1
-from ._RegisteredContractCommunication1 import RegisteredContractCommunication1
-from ._RegisteredContractJournal3 import RegisteredContractJournal3
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._UnderlyingContract4Choice import UnderlyingContract4Choice
+from . import ActiveCurrencyAndAmount
+from . import BranchAndFinancialInstitutionIdentification8
+from . import ContractBalance1
+from . import DocumentIdentification22
+from . import DocumentIdentification29
+from . import Max1025Text
+from . import Max35Text
+from . import PaymentScheduleType2Choice
+from . import RegisteredContractAmendment1
+from . import RegisteredContractCommunication1
+from . import RegisteredContractJournal3
+from . import TrueFalseIndicator
+from . import UnderlyingContract4Choice
 
 class RegisteredContract18(base_types._BaseFieldType):
 
@@ -25,12 +25,12 @@ class RegisteredContract18(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max1025Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max1025Text, False)
 
 	@property
 	def Amdmnt(self):
@@ -38,12 +38,12 @@ class RegisteredContract18(base_types._BaseFieldType):
 
 	@Amdmnt.setter
 	def Amdmnt(self, value):
-		self._Amdmnt = value if type(value) != base_types.auto else self.make_default("Amdmnt")
+		self._Amdmnt = value if value is not None else base_types.UninitialisedField(self, 'Amdmnt', RegisteredContractAmendment1, True)
 
 	@Amdmnt.deleter
 	def Amdmnt(self):
 		del self._Amdmnt
-		self._Amdmnt = None
+		self._Amdmnt = base_types.UninitialisedField(self, 'Amdmnt', RegisteredContractAmendment1, True)
 
 	@property
 	def Ctrct(self):
@@ -51,12 +51,12 @@ class RegisteredContract18(base_types._BaseFieldType):
 
 	@Ctrct.setter
 	def Ctrct(self, value):
-		self._Ctrct = value if type(value) != base_types.auto else self.make_default("Ctrct")
+		self._Ctrct = value if value is not None else base_types.UninitialisedField(self, 'Ctrct', UnderlyingContract4Choice, False)
 
 	@Ctrct.deleter
 	def Ctrct(self):
 		del self._Ctrct
-		self._Ctrct = None
+		self._Ctrct = base_types.UninitialisedField(self, 'Ctrct', UnderlyingContract4Choice, False)
 
 	@property
 	def CtrctBal(self):
@@ -64,12 +64,12 @@ class RegisteredContract18(base_types._BaseFieldType):
 
 	@CtrctBal.setter
 	def CtrctBal(self, value):
-		self._CtrctBal = value if type(value) != base_types.auto else self.make_default("CtrctBal")
+		self._CtrctBal = value if value is not None else base_types.UninitialisedField(self, 'CtrctBal', ContractBalance1, True)
 
 	@CtrctBal.deleter
 	def CtrctBal(self):
 		del self._CtrctBal
-		self._CtrctBal = None
+		self._CtrctBal = base_types.UninitialisedField(self, 'CtrctBal', ContractBalance1, True)
 
 	@property
 	def Dlvry(self):
@@ -77,12 +77,12 @@ class RegisteredContract18(base_types._BaseFieldType):
 
 	@Dlvry.setter
 	def Dlvry(self, value):
-		self._Dlvry = value if type(value) != base_types.auto else self.make_default("Dlvry")
+		self._Dlvry = value if value is not None else base_types.UninitialisedField(self, 'Dlvry', RegisteredContractCommunication1, False)
 
 	@Dlvry.deleter
 	def Dlvry(self):
 		del self._Dlvry
-		self._Dlvry = None
+		self._Dlvry = base_types.UninitialisedField(self, 'Dlvry', RegisteredContractCommunication1, False)
 
 	@property
 	def EstmtdDtInd(self):
@@ -90,12 +90,12 @@ class RegisteredContract18(base_types._BaseFieldType):
 
 	@EstmtdDtInd.setter
 	def EstmtdDtInd(self, value):
-		self._EstmtdDtInd = value if type(value) != base_types.auto else self.make_default("EstmtdDtInd")
+		self._EstmtdDtInd = value if value is not None else base_types.UninitialisedField(self, 'EstmtdDtInd', TrueFalseIndicator, False)
 
 	@EstmtdDtInd.deleter
 	def EstmtdDtInd(self):
 		del self._EstmtdDtInd
-		self._EstmtdDtInd = None
+		self._EstmtdDtInd = base_types.UninitialisedField(self, 'EstmtdDtInd', TrueFalseIndicator, False)
 
 	@property
 	def IntrCpnyLn(self):
@@ -103,12 +103,12 @@ class RegisteredContract18(base_types._BaseFieldType):
 
 	@IntrCpnyLn.setter
 	def IntrCpnyLn(self, value):
-		self._IntrCpnyLn = value if type(value) != base_types.auto else self.make_default("IntrCpnyLn")
+		self._IntrCpnyLn = value if value is not None else base_types.UninitialisedField(self, 'IntrCpnyLn', TrueFalseIndicator, False)
 
 	@IntrCpnyLn.deleter
 	def IntrCpnyLn(self):
 		del self._IntrCpnyLn
-		self._IntrCpnyLn = None
+		self._IntrCpnyLn = base_types.UninitialisedField(self, 'IntrCpnyLn', TrueFalseIndicator, False)
 
 	@property
 	def IssrFI(self):
@@ -116,12 +116,12 @@ class RegisteredContract18(base_types._BaseFieldType):
 
 	@IssrFI.setter
 	def IssrFI(self, value):
-		self._IssrFI = value if type(value) != base_types.auto else self.make_default("IssrFI")
+		self._IssrFI = value if value is not None else base_types.UninitialisedField(self, 'IssrFI', BranchAndFinancialInstitutionIdentification8, False)
 
 	@IssrFI.deleter
 	def IssrFI(self):
 		del self._IssrFI
-		self._IssrFI = None
+		self._IssrFI = base_types.UninitialisedField(self, 'IssrFI', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def LnPrncplAmt(self):
@@ -129,12 +129,12 @@ class RegisteredContract18(base_types._BaseFieldType):
 
 	@LnPrncplAmt.setter
 	def LnPrncplAmt(self, value):
-		self._LnPrncplAmt = value if type(value) != base_types.auto else self.make_default("LnPrncplAmt")
+		self._LnPrncplAmt = value if value is not None else base_types.UninitialisedField(self, 'LnPrncplAmt', ActiveCurrencyAndAmount, False)
 
 	@LnPrncplAmt.deleter
 	def LnPrncplAmt(self):
 		del self._LnPrncplAmt
-		self._LnPrncplAmt = None
+		self._LnPrncplAmt = base_types.UninitialisedField(self, 'LnPrncplAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def OrgnlCtrctRegnReq(self):
@@ -142,12 +142,12 @@ class RegisteredContract18(base_types._BaseFieldType):
 
 	@OrgnlCtrctRegnReq.setter
 	def OrgnlCtrctRegnReq(self, value):
-		self._OrgnlCtrctRegnReq = value if type(value) != base_types.auto else self.make_default("OrgnlCtrctRegnReq")
+		self._OrgnlCtrctRegnReq = value if value is not None else base_types.UninitialisedField(self, 'OrgnlCtrctRegnReq', Max35Text, False)
 
 	@OrgnlCtrctRegnReq.deleter
 	def OrgnlCtrctRegnReq(self):
 		del self._OrgnlCtrctRegnReq
-		self._OrgnlCtrctRegnReq = None
+		self._OrgnlCtrctRegnReq = base_types.UninitialisedField(self, 'OrgnlCtrctRegnReq', Max35Text, False)
 
 	@property
 	def PmtSchdlTp(self):
@@ -155,12 +155,12 @@ class RegisteredContract18(base_types._BaseFieldType):
 
 	@PmtSchdlTp.setter
 	def PmtSchdlTp(self, value):
-		self._PmtSchdlTp = value if type(value) != base_types.auto else self.make_default("PmtSchdlTp")
+		self._PmtSchdlTp = value if value is not None else base_types.UninitialisedField(self, 'PmtSchdlTp', PaymentScheduleType2Choice, False)
 
 	@PmtSchdlTp.deleter
 	def PmtSchdlTp(self):
 		del self._PmtSchdlTp
-		self._PmtSchdlTp = None
+		self._PmtSchdlTp = base_types.UninitialisedField(self, 'PmtSchdlTp', PaymentScheduleType2Choice, False)
 
 	@property
 	def PrvsRegdCtrctId(self):
@@ -168,12 +168,12 @@ class RegisteredContract18(base_types._BaseFieldType):
 
 	@PrvsRegdCtrctId.setter
 	def PrvsRegdCtrctId(self, value):
-		self._PrvsRegdCtrctId = value if type(value) != base_types.auto else self.make_default("PrvsRegdCtrctId")
+		self._PrvsRegdCtrctId = value if value is not None else base_types.UninitialisedField(self, 'PrvsRegdCtrctId', DocumentIdentification22, False)
 
 	@PrvsRegdCtrctId.deleter
 	def PrvsRegdCtrctId(self):
 		del self._PrvsRegdCtrctId
-		self._PrvsRegdCtrctId = None
+		self._PrvsRegdCtrctId = base_types.UninitialisedField(self, 'PrvsRegdCtrctId', DocumentIdentification22, False)
 
 	@property
 	def RegdCtrctId(self):
@@ -181,12 +181,12 @@ class RegisteredContract18(base_types._BaseFieldType):
 
 	@RegdCtrctId.setter
 	def RegdCtrctId(self, value):
-		self._RegdCtrctId = value if type(value) != base_types.auto else self.make_default("RegdCtrctId")
+		self._RegdCtrctId = value if value is not None else base_types.UninitialisedField(self, 'RegdCtrctId', DocumentIdentification29, False)
 
 	@RegdCtrctId.deleter
 	def RegdCtrctId(self):
 		del self._RegdCtrctId
-		self._RegdCtrctId = None
+		self._RegdCtrctId = base_types.UninitialisedField(self, 'RegdCtrctId', DocumentIdentification29, False)
 
 	@property
 	def RegdCtrctJrnl(self):
@@ -194,12 +194,12 @@ class RegisteredContract18(base_types._BaseFieldType):
 
 	@RegdCtrctJrnl.setter
 	def RegdCtrctJrnl(self, value):
-		self._RegdCtrctJrnl = value if type(value) != base_types.auto else self.make_default("RegdCtrctJrnl")
+		self._RegdCtrctJrnl = value if value is not None else base_types.UninitialisedField(self, 'RegdCtrctJrnl', RegisteredContractJournal3, True)
 
 	@RegdCtrctJrnl.deleter
 	def RegdCtrctJrnl(self):
 		del self._RegdCtrctJrnl
-		self._RegdCtrctJrnl = None
+		self._RegdCtrctJrnl = base_types.UninitialisedField(self, 'RegdCtrctJrnl', RegisteredContractJournal3, True)
 
 	@property
 	def Submissn(self):
@@ -207,12 +207,12 @@ class RegisteredContract18(base_types._BaseFieldType):
 
 	@Submissn.setter
 	def Submissn(self, value):
-		self._Submissn = value if type(value) != base_types.auto else self.make_default("Submissn")
+		self._Submissn = value if value is not None else base_types.UninitialisedField(self, 'Submissn', RegisteredContractCommunication1, False)
 
 	@Submissn.deleter
 	def Submissn(self):
 		del self._Submissn
-		self._Submissn = None
+		self._Submissn = base_types.UninitialisedField(self, 'Submissn', RegisteredContractCommunication1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),

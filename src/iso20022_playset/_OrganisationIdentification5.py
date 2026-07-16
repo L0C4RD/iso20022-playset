@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
+from . import Max35Text
 
 class OrganisationIdentification5(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class OrganisationIdentification5(base_types._BaseFieldType):
 
 	@RegnNb.setter
 	def RegnNb(self, value):
-		self._RegnNb = value if type(value) != base_types.auto else self.make_default("RegnNb")
+		self._RegnNb = value if value is not None else base_types.UninitialisedField(self, 'RegnNb', Max35Text, False)
 
 	@RegnNb.deleter
 	def RegnNb(self):
 		del self._RegnNb
-		self._RegnNb = None
+		self._RegnNb = base_types.UninitialisedField(self, 'RegnNb', Max35Text, False)
 
 	@property
 	def RegrNm(self):
@@ -26,12 +26,12 @@ class OrganisationIdentification5(base_types._BaseFieldType):
 
 	@RegrNm.setter
 	def RegrNm(self, value):
-		self._RegrNm = value if type(value) != base_types.auto else self.make_default("RegrNm")
+		self._RegrNm = value if value is not None else base_types.UninitialisedField(self, 'RegrNm', Max35Text, False)
 
 	@RegrNm.deleter
 	def RegrNm(self):
 		del self._RegrNm
-		self._RegrNm = None
+		self._RegrNm = base_types.UninitialisedField(self, 'RegrNm', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RegnNb', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

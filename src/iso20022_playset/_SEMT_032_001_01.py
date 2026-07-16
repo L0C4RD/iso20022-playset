@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesTransactionCancellationRequestQueryV01 import SecuritiesTransactionCancellationRequestQueryV01
+from . import SecuritiesTransactionCancellationRequestQueryV01
 
 class SEMT_032_001_01():
 
@@ -18,12 +18,12 @@ class SEMT_032_001_01():
 
 		@SctiesTxCxlReqQry.setter
 		def SctiesTxCxlReqQry(self, value):
-			self._SctiesTxCxlReqQry = value if type(value) != base_types.auto else self.make_default("SctiesTxCxlReqQry")
+			self._SctiesTxCxlReqQry = value if value is not None else base_types.UninitialisedField(self, 'SctiesTxCxlReqQry', SecuritiesTransactionCancellationRequestQueryV01, False)
 
 		@SctiesTxCxlReqQry.deleter
 		def SctiesTxCxlReqQry(self):
 			del self._SctiesTxCxlReqQry
-			self._SctiesTxCxlReqQry = None
+			self._SctiesTxCxlReqQry = base_types.UninitialisedField(self, 'SctiesTxCxlReqQry', SecuritiesTransactionCancellationRequestQueryV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesTxCxlReqQry', type=SecuritiesTransactionCancellationRequestQueryV01, min=1, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesTradeConfirmationResponseV03 import SecuritiesTradeConfirmationResponseV03
+from . import SecuritiesTradeConfirmationResponseV03
 
 class SETR_030_001_03():
 
@@ -18,12 +18,12 @@ class SETR_030_001_03():
 
 		@SctiesTradConfRspn.setter
 		def SctiesTradConfRspn(self, value):
-			self._SctiesTradConfRspn = value if type(value) != base_types.auto else self.make_default("SctiesTradConfRspn")
+			self._SctiesTradConfRspn = value if value is not None else base_types.UninitialisedField(self, 'SctiesTradConfRspn', SecuritiesTradeConfirmationResponseV03, False)
 
 		@SctiesTradConfRspn.deleter
 		def SctiesTradConfRspn(self):
 			del self._SctiesTradConfRspn
-			self._SctiesTradConfRspn = None
+			self._SctiesTradConfRspn = base_types.UninitialisedField(self, 'SctiesTradConfRspn', SecuritiesTradeConfirmationResponseV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesTradConfRspn', type=SecuritiesTradeConfirmationResponseV03, min=1, max=1, mutex_group=None, array=False),

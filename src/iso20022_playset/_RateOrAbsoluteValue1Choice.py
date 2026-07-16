@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Number import Number
-from ._PercentageRate import PercentageRate
+from . import Number
+from . import PercentageRate
 
 class RateOrAbsoluteValue1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class RateOrAbsoluteValue1Choice(base_types._BaseFieldType):
 
 	@AbsVal.setter
 	def AbsVal(self, value):
-		self._AbsVal = value if type(value) != base_types.auto else self.make_default("AbsVal")
+		self._AbsVal = value if value is not None else base_types.UninitialisedField(self, 'AbsVal', Number, False)
 
 	@AbsVal.deleter
 	def AbsVal(self):
 		del self._AbsVal
-		self._AbsVal = None
+		self._AbsVal = base_types.UninitialisedField(self, 'AbsVal', Number, False)
 
 	@property
 	def RateVal(self):
@@ -27,12 +27,12 @@ class RateOrAbsoluteValue1Choice(base_types._BaseFieldType):
 
 	@RateVal.setter
 	def RateVal(self, value):
-		self._RateVal = value if type(value) != base_types.auto else self.make_default("RateVal")
+		self._RateVal = value if value is not None else base_types.UninitialisedField(self, 'RateVal', PercentageRate, False)
 
 	@RateVal.deleter
 	def RateVal(self):
 		del self._RateVal
-		self._RateVal = None
+		self._RateVal = base_types.UninitialisedField(self, 'RateVal', PercentageRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AbsVal', type=Number, min=0, max=1, mutex_group=1, array=False),

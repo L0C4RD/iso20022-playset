@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FreightCommodityContainerShip1 import FreightCommodityContainerShip1
-from ._FreightCommodityDry1 import FreightCommodityDry1
-from ._FreightCommodityWet1 import FreightCommodityWet1
+from . import FreightCommodityContainerShip1
+from . import FreightCommodityDry1
+from . import FreightCommodityWet1
 
 class AssetClassCommodityFreight1Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AssetClassCommodityFreight1Choice(base_types._BaseFieldType):
 
 	@CntnrShip.setter
 	def CntnrShip(self, value):
-		self._CntnrShip = value if type(value) != base_types.auto else self.make_default("CntnrShip")
+		self._CntnrShip = value if value is not None else base_types.UninitialisedField(self, 'CntnrShip', FreightCommodityContainerShip1, False)
 
 	@CntnrShip.deleter
 	def CntnrShip(self):
 		del self._CntnrShip
-		self._CntnrShip = None
+		self._CntnrShip = base_types.UninitialisedField(self, 'CntnrShip', FreightCommodityContainerShip1, False)
 
 	@property
 	def Dry(self):
@@ -28,12 +28,12 @@ class AssetClassCommodityFreight1Choice(base_types._BaseFieldType):
 
 	@Dry.setter
 	def Dry(self, value):
-		self._Dry = value if type(value) != base_types.auto else self.make_default("Dry")
+		self._Dry = value if value is not None else base_types.UninitialisedField(self, 'Dry', FreightCommodityDry1, False)
 
 	@Dry.deleter
 	def Dry(self):
 		del self._Dry
-		self._Dry = None
+		self._Dry = base_types.UninitialisedField(self, 'Dry', FreightCommodityDry1, False)
 
 	@property
 	def Wet(self):
@@ -41,12 +41,12 @@ class AssetClassCommodityFreight1Choice(base_types._BaseFieldType):
 
 	@Wet.setter
 	def Wet(self, value):
-		self._Wet = value if type(value) != base_types.auto else self.make_default("Wet")
+		self._Wet = value if value is not None else base_types.UninitialisedField(self, 'Wet', FreightCommodityWet1, False)
 
 	@Wet.deleter
 	def Wet(self):
 		del self._Wet
-		self._Wet = None
+		self._Wet = base_types.UninitialisedField(self, 'Wet', FreightCommodityWet1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CntnrShip', type=FreightCommodityContainerShip1, min=0, max=1, mutex_group=1, array=False),

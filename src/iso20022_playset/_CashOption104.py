@@ -2,18 +2,18 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashAccountIdentification9Choice import CashAccountIdentification9Choice
-from ._CorporateActionAmounts72 import CorporateActionAmounts72
-from ._CorporateActionDate84 import CorporateActionDate84
-from ._CountryCode import CountryCode
-from ._CreditDebitCode import CreditDebitCode
-from ._ForeignExchangeTerms39 import ForeignExchangeTerms39
-from ._GenericIdentification30 import GenericIdentification30
-from ._IssuerOfferorTaxabilityIndicator2Choice import IssuerOfferorTaxabilityIndicator2Choice
-from ._NonEligibleProceedsIndicator3Choice import NonEligibleProceedsIndicator3Choice
-from ._Payment1Code import Payment1Code
-from ._PriceDetails38 import PriceDetails38
-from ._Rate42 import Rate42
+from . import CashAccountIdentification9Choice
+from . import CorporateActionAmounts72
+from . import CorporateActionDate84
+from . import CountryCode
+from . import CreditDebitCode
+from . import ForeignExchangeTerms39
+from . import GenericIdentification30
+from . import IssuerOfferorTaxabilityIndicator2Choice
+from . import NonEligibleProceedsIndicator3Choice
+from . import Payment1Code
+from . import PriceDetails38
+from . import Rate42
 
 class CashOption104(base_types._BaseFieldType):
 
@@ -24,12 +24,12 @@ class CashOption104(base_types._BaseFieldType):
 
 	@AmtDtls.setter
 	def AmtDtls(self, value):
-		self._AmtDtls = value if type(value) != base_types.auto else self.make_default("AmtDtls")
+		self._AmtDtls = value if value is not None else base_types.UninitialisedField(self, 'AmtDtls', CorporateActionAmounts72, False)
 
 	@AmtDtls.deleter
 	def AmtDtls(self):
 		del self._AmtDtls
-		self._AmtDtls = None
+		self._AmtDtls = base_types.UninitialisedField(self, 'AmtDtls', CorporateActionAmounts72, False)
 
 	@property
 	def CdtDbtInd(self):
@@ -37,12 +37,12 @@ class CashOption104(base_types._BaseFieldType):
 
 	@CdtDbtInd.setter
 	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+		self._CdtDbtInd = value if value is not None else base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@CdtDbtInd.deleter
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
-		self._CdtDbtInd = None
+		self._CdtDbtInd = base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@property
 	def CshAcctId(self):
@@ -50,12 +50,12 @@ class CashOption104(base_types._BaseFieldType):
 
 	@CshAcctId.setter
 	def CshAcctId(self, value):
-		self._CshAcctId = value if type(value) != base_types.auto else self.make_default("CshAcctId")
+		self._CshAcctId = value if value is not None else base_types.UninitialisedField(self, 'CshAcctId', CashAccountIdentification9Choice, False)
 
 	@CshAcctId.deleter
 	def CshAcctId(self):
 		del self._CshAcctId
-		self._CshAcctId = None
+		self._CshAcctId = base_types.UninitialisedField(self, 'CshAcctId', CashAccountIdentification9Choice, False)
 
 	@property
 	def CtrctlPmtInd(self):
@@ -63,12 +63,12 @@ class CashOption104(base_types._BaseFieldType):
 
 	@CtrctlPmtInd.setter
 	def CtrctlPmtInd(self, value):
-		self._CtrctlPmtInd = value if type(value) != base_types.auto else self.make_default("CtrctlPmtInd")
+		self._CtrctlPmtInd = value if value is not None else base_types.UninitialisedField(self, 'CtrctlPmtInd', Payment1Code, False)
 
 	@CtrctlPmtInd.deleter
 	def CtrctlPmtInd(self):
 		del self._CtrctlPmtInd
-		self._CtrctlPmtInd = None
+		self._CtrctlPmtInd = base_types.UninitialisedField(self, 'CtrctlPmtInd', Payment1Code, False)
 
 	@property
 	def CtryOfIncmSrc(self):
@@ -76,12 +76,12 @@ class CashOption104(base_types._BaseFieldType):
 
 	@CtryOfIncmSrc.setter
 	def CtryOfIncmSrc(self, value):
-		self._CtryOfIncmSrc = value if type(value) != base_types.auto else self.make_default("CtryOfIncmSrc")
+		self._CtryOfIncmSrc = value if value is not None else base_types.UninitialisedField(self, 'CtryOfIncmSrc', CountryCode, False)
 
 	@CtryOfIncmSrc.deleter
 	def CtryOfIncmSrc(self):
 		del self._CtryOfIncmSrc
-		self._CtryOfIncmSrc = None
+		self._CtryOfIncmSrc = base_types.UninitialisedField(self, 'CtryOfIncmSrc', CountryCode, False)
 
 	@property
 	def DtDtls(self):
@@ -89,12 +89,12 @@ class CashOption104(base_types._BaseFieldType):
 
 	@DtDtls.setter
 	def DtDtls(self, value):
-		self._DtDtls = value if type(value) != base_types.auto else self.make_default("DtDtls")
+		self._DtDtls = value if value is not None else base_types.UninitialisedField(self, 'DtDtls', CorporateActionDate84, False)
 
 	@DtDtls.deleter
 	def DtDtls(self):
 		del self._DtDtls
-		self._DtDtls = None
+		self._DtDtls = base_types.UninitialisedField(self, 'DtDtls', CorporateActionDate84, False)
 
 	@property
 	def FXDtls(self):
@@ -102,12 +102,12 @@ class CashOption104(base_types._BaseFieldType):
 
 	@FXDtls.setter
 	def FXDtls(self, value):
-		self._FXDtls = value if type(value) != base_types.auto else self.make_default("FXDtls")
+		self._FXDtls = value if value is not None else base_types.UninitialisedField(self, 'FXDtls', ForeignExchangeTerms39, False)
 
 	@FXDtls.deleter
 	def FXDtls(self):
 		del self._FXDtls
-		self._FXDtls = None
+		self._FXDtls = base_types.UninitialisedField(self, 'FXDtls', ForeignExchangeTerms39, False)
 
 	@property
 	def IncmTp(self):
@@ -115,12 +115,12 @@ class CashOption104(base_types._BaseFieldType):
 
 	@IncmTp.setter
 	def IncmTp(self, value):
-		self._IncmTp = value if type(value) != base_types.auto else self.make_default("IncmTp")
+		self._IncmTp = value if value is not None else base_types.UninitialisedField(self, 'IncmTp', GenericIdentification30, False)
 
 	@IncmTp.deleter
 	def IncmTp(self):
 		del self._IncmTp
-		self._IncmTp = None
+		self._IncmTp = base_types.UninitialisedField(self, 'IncmTp', GenericIdentification30, False)
 
 	@property
 	def IssrOfferrTaxbltyInd(self):
@@ -128,12 +128,12 @@ class CashOption104(base_types._BaseFieldType):
 
 	@IssrOfferrTaxbltyInd.setter
 	def IssrOfferrTaxbltyInd(self, value):
-		self._IssrOfferrTaxbltyInd = value if type(value) != base_types.auto else self.make_default("IssrOfferrTaxbltyInd")
+		self._IssrOfferrTaxbltyInd = value if value is not None else base_types.UninitialisedField(self, 'IssrOfferrTaxbltyInd', IssuerOfferorTaxabilityIndicator2Choice, False)
 
 	@IssrOfferrTaxbltyInd.deleter
 	def IssrOfferrTaxbltyInd(self):
 		del self._IssrOfferrTaxbltyInd
-		self._IssrOfferrTaxbltyInd = None
+		self._IssrOfferrTaxbltyInd = base_types.UninitialisedField(self, 'IssrOfferrTaxbltyInd', IssuerOfferorTaxabilityIndicator2Choice, False)
 
 	@property
 	def NonElgblPrcdsInd(self):
@@ -141,12 +141,12 @@ class CashOption104(base_types._BaseFieldType):
 
 	@NonElgblPrcdsInd.setter
 	def NonElgblPrcdsInd(self, value):
-		self._NonElgblPrcdsInd = value if type(value) != base_types.auto else self.make_default("NonElgblPrcdsInd")
+		self._NonElgblPrcdsInd = value if value is not None else base_types.UninitialisedField(self, 'NonElgblPrcdsInd', NonEligibleProceedsIndicator3Choice, False)
 
 	@NonElgblPrcdsInd.deleter
 	def NonElgblPrcdsInd(self):
 		del self._NonElgblPrcdsInd
-		self._NonElgblPrcdsInd = None
+		self._NonElgblPrcdsInd = base_types.UninitialisedField(self, 'NonElgblPrcdsInd', NonEligibleProceedsIndicator3Choice, False)
 
 	@property
 	def OthrIncmTp(self):
@@ -154,12 +154,12 @@ class CashOption104(base_types._BaseFieldType):
 
 	@OthrIncmTp.setter
 	def OthrIncmTp(self, value):
-		self._OthrIncmTp = value if type(value) != base_types.auto else self.make_default("OthrIncmTp")
+		self._OthrIncmTp = value if value is not None else base_types.UninitialisedField(self, 'OthrIncmTp', GenericIdentification30, True)
 
 	@OthrIncmTp.deleter
 	def OthrIncmTp(self):
 		del self._OthrIncmTp
-		self._OthrIncmTp = None
+		self._OthrIncmTp = base_types.UninitialisedField(self, 'OthrIncmTp', GenericIdentification30, True)
 
 	@property
 	def PricDtls(self):
@@ -167,12 +167,12 @@ class CashOption104(base_types._BaseFieldType):
 
 	@PricDtls.setter
 	def PricDtls(self, value):
-		self._PricDtls = value if type(value) != base_types.auto else self.make_default("PricDtls")
+		self._PricDtls = value if value is not None else base_types.UninitialisedField(self, 'PricDtls', PriceDetails38, False)
 
 	@PricDtls.deleter
 	def PricDtls(self):
 		del self._PricDtls
-		self._PricDtls = None
+		self._PricDtls = base_types.UninitialisedField(self, 'PricDtls', PriceDetails38, False)
 
 	@property
 	def RateAndAmtDtls(self):
@@ -180,12 +180,12 @@ class CashOption104(base_types._BaseFieldType):
 
 	@RateAndAmtDtls.setter
 	def RateAndAmtDtls(self, value):
-		self._RateAndAmtDtls = value if type(value) != base_types.auto else self.make_default("RateAndAmtDtls")
+		self._RateAndAmtDtls = value if value is not None else base_types.UninitialisedField(self, 'RateAndAmtDtls', Rate42, False)
 
 	@RateAndAmtDtls.deleter
 	def RateAndAmtDtls(self):
 		del self._RateAndAmtDtls
-		self._RateAndAmtDtls = None
+		self._RateAndAmtDtls = base_types.UninitialisedField(self, 'RateAndAmtDtls', Rate42, False)
 
 	@property
 	def XmptnTp(self):
@@ -193,12 +193,12 @@ class CashOption104(base_types._BaseFieldType):
 
 	@XmptnTp.setter
 	def XmptnTp(self, value):
-		self._XmptnTp = value if type(value) != base_types.auto else self.make_default("XmptnTp")
+		self._XmptnTp = value if value is not None else base_types.UninitialisedField(self, 'XmptnTp', GenericIdentification30, True)
 
 	@XmptnTp.deleter
 	def XmptnTp(self):
 		del self._XmptnTp
-		self._XmptnTp = None
+		self._XmptnTp = base_types.UninitialisedField(self, 'XmptnTp', GenericIdentification30, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmtDtls', type=CorporateActionAmounts72, min=0, max=1, mutex_group=None, array=False),

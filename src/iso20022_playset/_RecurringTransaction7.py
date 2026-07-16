@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActionMessage12 import ActionMessage12
-from ._Frequency3Code import Frequency3Code
-from ._GracePeriod1 import GracePeriod1
-from ._Max35Text import Max35Text
-from ._Number import Number
+from . import ActionMessage12
+from . import Frequency3Code
+from . import GracePeriod1
+from . import Max35Text
+from . import Number
 
 class RecurringTransaction7(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class RecurringTransaction7(base_types._BaseFieldType):
 
 	@GracePrd.setter
 	def GracePrd(self, value):
-		self._GracePrd = value if type(value) != base_types.auto else self.make_default("GracePrd")
+		self._GracePrd = value if value is not None else base_types.UninitialisedField(self, 'GracePrd', GracePeriod1, True)
 
 	@GracePrd.deleter
 	def GracePrd(self):
 		del self._GracePrd
-		self._GracePrd = None
+		self._GracePrd = base_types.UninitialisedField(self, 'GracePrd', GracePeriod1, True)
 
 	@property
 	def PlanId(self):
@@ -30,12 +30,12 @@ class RecurringTransaction7(base_types._BaseFieldType):
 
 	@PlanId.setter
 	def PlanId(self, value):
-		self._PlanId = value if type(value) != base_types.auto else self.make_default("PlanId")
+		self._PlanId = value if value is not None else base_types.UninitialisedField(self, 'PlanId', Max35Text, False)
 
 	@PlanId.deleter
 	def PlanId(self):
 		del self._PlanId
-		self._PlanId = None
+		self._PlanId = base_types.UninitialisedField(self, 'PlanId', Max35Text, False)
 
 	@property
 	def PlanNtce(self):
@@ -43,12 +43,12 @@ class RecurringTransaction7(base_types._BaseFieldType):
 
 	@PlanNtce.setter
 	def PlanNtce(self, value):
-		self._PlanNtce = value if type(value) != base_types.auto else self.make_default("PlanNtce")
+		self._PlanNtce = value if value is not None else base_types.UninitialisedField(self, 'PlanNtce', ActionMessage12, True)
 
 	@PlanNtce.deleter
 	def PlanNtce(self):
 		del self._PlanNtce
-		self._PlanNtce = None
+		self._PlanNtce = base_types.UninitialisedField(self, 'PlanNtce', ActionMessage12, True)
 
 	@property
 	def PrdUnit(self):
@@ -56,12 +56,12 @@ class RecurringTransaction7(base_types._BaseFieldType):
 
 	@PrdUnit.setter
 	def PrdUnit(self, value):
-		self._PrdUnit = value if type(value) != base_types.auto else self.make_default("PrdUnit")
+		self._PrdUnit = value if value is not None else base_types.UninitialisedField(self, 'PrdUnit', Frequency3Code, False)
 
 	@PrdUnit.deleter
 	def PrdUnit(self):
 		del self._PrdUnit
-		self._PrdUnit = None
+		self._PrdUnit = base_types.UninitialisedField(self, 'PrdUnit', Frequency3Code, False)
 
 	@property
 	def SeqNb(self):
@@ -69,12 +69,12 @@ class RecurringTransaction7(base_types._BaseFieldType):
 
 	@SeqNb.setter
 	def SeqNb(self, value):
-		self._SeqNb = value if type(value) != base_types.auto else self.make_default("SeqNb")
+		self._SeqNb = value if value is not None else base_types.UninitialisedField(self, 'SeqNb', Number, False)
 
 	@SeqNb.deleter
 	def SeqNb(self):
 		del self._SeqNb
-		self._SeqNb = None
+		self._SeqNb = base_types.UninitialisedField(self, 'SeqNb', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='GracePrd', type=GracePeriod1, min=0, max=None, mutex_group=None, array=True),

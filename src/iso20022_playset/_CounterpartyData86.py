@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CounterpartyIdentification10 import CounterpartyIdentification10
-from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import CounterpartyIdentification10
+from . import OrganisationIdentification15Choice
+from . import TrueFalseIndicator
 
 class CounterpartyData86(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CounterpartyData86(base_types._BaseFieldType):
 
 	@AgtLndr.setter
 	def AgtLndr(self, value):
-		self._AgtLndr = value if type(value) != base_types.auto else self.make_default("AgtLndr")
+		self._AgtLndr = value if value is not None else base_types.UninitialisedField(self, 'AgtLndr', TrueFalseIndicator, False)
 
 	@AgtLndr.deleter
 	def AgtLndr(self):
 		del self._AgtLndr
-		self._AgtLndr = None
+		self._AgtLndr = base_types.UninitialisedField(self, 'AgtLndr', TrueFalseIndicator, False)
 
 	@property
 	def OthrCtrPty(self):
@@ -28,12 +28,12 @@ class CounterpartyData86(base_types._BaseFieldType):
 
 	@OthrCtrPty.setter
 	def OthrCtrPty(self, value):
-		self._OthrCtrPty = value if type(value) != base_types.auto else self.make_default("OthrCtrPty")
+		self._OthrCtrPty = value if value is not None else base_types.UninitialisedField(self, 'OthrCtrPty', OrganisationIdentification15Choice, False)
 
 	@OthrCtrPty.deleter
 	def OthrCtrPty(self):
 		del self._OthrCtrPty
-		self._OthrCtrPty = None
+		self._OthrCtrPty = base_types.UninitialisedField(self, 'OthrCtrPty', OrganisationIdentification15Choice, False)
 
 	@property
 	def RptgCtrPty(self):
@@ -41,12 +41,12 @@ class CounterpartyData86(base_types._BaseFieldType):
 
 	@RptgCtrPty.setter
 	def RptgCtrPty(self, value):
-		self._RptgCtrPty = value if type(value) != base_types.auto else self.make_default("RptgCtrPty")
+		self._RptgCtrPty = value if value is not None else base_types.UninitialisedField(self, 'RptgCtrPty', CounterpartyIdentification10, False)
 
 	@RptgCtrPty.deleter
 	def RptgCtrPty(self):
 		del self._RptgCtrPty
-		self._RptgCtrPty = None
+		self._RptgCtrPty = base_types.UninitialisedField(self, 'RptgCtrPty', CounterpartyIdentification10, False)
 
 	@property
 	def TrptyAgt(self):
@@ -54,12 +54,12 @@ class CounterpartyData86(base_types._BaseFieldType):
 
 	@TrptyAgt.setter
 	def TrptyAgt(self, value):
-		self._TrptyAgt = value if type(value) != base_types.auto else self.make_default("TrptyAgt")
+		self._TrptyAgt = value if value is not None else base_types.UninitialisedField(self, 'TrptyAgt', TrueFalseIndicator, False)
 
 	@TrptyAgt.deleter
 	def TrptyAgt(self):
 		del self._TrptyAgt
-		self._TrptyAgt = None
+		self._TrptyAgt = base_types.UninitialisedField(self, 'TrptyAgt', TrueFalseIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AgtLndr', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),

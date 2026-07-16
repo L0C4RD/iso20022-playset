@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalReference2 import AdditionalReference2
-from ._MessageIdentification1 import MessageIdentification1
-from ._Pagination import Pagination
-from ._StatementOfInvestmentFundTransactions3 import StatementOfInvestmentFundTransactions3
+from . import AdditionalReference2
+from . import MessageIdentification1
+from . import Pagination
+from . import StatementOfInvestmentFundTransactions3
 
 class StatementOfInvestmentFundTransactionsCancellationV03(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class StatementOfInvestmentFundTransactionsCancellationV03(base_types._BaseField
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@property
 	def MsgPgntn(self):
@@ -29,12 +29,12 @@ class StatementOfInvestmentFundTransactionsCancellationV03(base_types._BaseField
 
 	@MsgPgntn.setter
 	def MsgPgntn(self, value):
-		self._MsgPgntn = value if type(value) != base_types.auto else self.make_default("MsgPgntn")
+		self._MsgPgntn = value if value is not None else base_types.UninitialisedField(self, 'MsgPgntn', Pagination, False)
 
 	@MsgPgntn.deleter
 	def MsgPgntn(self):
 		del self._MsgPgntn
-		self._MsgPgntn = None
+		self._MsgPgntn = base_types.UninitialisedField(self, 'MsgPgntn', Pagination, False)
 
 	@property
 	def PrvsRef(self):
@@ -42,12 +42,12 @@ class StatementOfInvestmentFundTransactionsCancellationV03(base_types._BaseField
 
 	@PrvsRef.setter
 	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
+		self._PrvsRef = value if value is not None else base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference2, False)
 
 	@PrvsRef.deleter
 	def PrvsRef(self):
 		del self._PrvsRef
-		self._PrvsRef = None
+		self._PrvsRef = base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference2, False)
 
 	@property
 	def RltdRef(self):
@@ -55,12 +55,12 @@ class StatementOfInvestmentFundTransactionsCancellationV03(base_types._BaseField
 
 	@RltdRef.setter
 	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
+		self._RltdRef = value if value is not None else base_types.UninitialisedField(self, 'RltdRef', AdditionalReference2, False)
 
 	@RltdRef.deleter
 	def RltdRef(self):
 		del self._RltdRef
-		self._RltdRef = None
+		self._RltdRef = base_types.UninitialisedField(self, 'RltdRef', AdditionalReference2, False)
 
 	@property
 	def StmtToBeCanc(self):
@@ -68,12 +68,12 @@ class StatementOfInvestmentFundTransactionsCancellationV03(base_types._BaseField
 
 	@StmtToBeCanc.setter
 	def StmtToBeCanc(self, value):
-		self._StmtToBeCanc = value if type(value) != base_types.auto else self.make_default("StmtToBeCanc")
+		self._StmtToBeCanc = value if value is not None else base_types.UninitialisedField(self, 'StmtToBeCanc', StatementOfInvestmentFundTransactions3, False)
 
 	@StmtToBeCanc.deleter
 	def StmtToBeCanc(self):
 		del self._StmtToBeCanc
-		self._StmtToBeCanc = None
+		self._StmtToBeCanc = base_types.UninitialisedField(self, 'StmtToBeCanc', StatementOfInvestmentFundTransactions3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),

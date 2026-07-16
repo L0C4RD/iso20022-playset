@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._UnderlyingContractForDifferenceType3Code import UnderlyingContractForDifferenceType3Code
+from . import ActiveOrHistoricCurrencyCode
+from . import UnderlyingContractForDifferenceType3Code
 
 class ContractForDifference2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ContractForDifference2(base_types._BaseFieldType):
 
 	@NtnlCcy1.setter
 	def NtnlCcy1(self, value):
-		self._NtnlCcy1 = value if type(value) != base_types.auto else self.make_default("NtnlCcy1")
+		self._NtnlCcy1 = value if value is not None else base_types.UninitialisedField(self, 'NtnlCcy1', ActiveOrHistoricCurrencyCode, False)
 
 	@NtnlCcy1.deleter
 	def NtnlCcy1(self):
 		del self._NtnlCcy1
-		self._NtnlCcy1 = None
+		self._NtnlCcy1 = base_types.UninitialisedField(self, 'NtnlCcy1', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def NtnlCcy2(self):
@@ -27,12 +27,12 @@ class ContractForDifference2(base_types._BaseFieldType):
 
 	@NtnlCcy2.setter
 	def NtnlCcy2(self, value):
-		self._NtnlCcy2 = value if type(value) != base_types.auto else self.make_default("NtnlCcy2")
+		self._NtnlCcy2 = value if value is not None else base_types.UninitialisedField(self, 'NtnlCcy2', ActiveOrHistoricCurrencyCode, False)
 
 	@NtnlCcy2.deleter
 	def NtnlCcy2(self):
 		del self._NtnlCcy2
-		self._NtnlCcy2 = None
+		self._NtnlCcy2 = base_types.UninitialisedField(self, 'NtnlCcy2', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def UndrlygTp(self):
@@ -40,12 +40,12 @@ class ContractForDifference2(base_types._BaseFieldType):
 
 	@UndrlygTp.setter
 	def UndrlygTp(self, value):
-		self._UndrlygTp = value if type(value) != base_types.auto else self.make_default("UndrlygTp")
+		self._UndrlygTp = value if value is not None else base_types.UninitialisedField(self, 'UndrlygTp', UnderlyingContractForDifferenceType3Code, False)
 
 	@UndrlygTp.deleter
 	def UndrlygTp(self):
 		del self._UndrlygTp
-		self._UndrlygTp = None
+		self._UndrlygTp = base_types.UninitialisedField(self, 'UndrlygTp', UnderlyingContractForDifferenceType3Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NtnlCcy1', type=ActiveOrHistoricCurrencyCode, min=0, max=1, mutex_group=None, array=False),

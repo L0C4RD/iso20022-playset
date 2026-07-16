@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentReportingTransactionReportV03 import FinancialInstrumentReportingTransactionReportV03
+from . import FinancialInstrumentReportingTransactionReportV03
 
 class AUTH_016_001_03():
 
@@ -18,12 +18,12 @@ class AUTH_016_001_03():
 
 		@FinInstrmRptgTxRpt.setter
 		def FinInstrmRptgTxRpt(self, value):
-			self._FinInstrmRptgTxRpt = value if type(value) != base_types.auto else self.make_default("FinInstrmRptgTxRpt")
+			self._FinInstrmRptgTxRpt = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmRptgTxRpt', FinancialInstrumentReportingTransactionReportV03, False)
 
 		@FinInstrmRptgTxRpt.deleter
 		def FinInstrmRptgTxRpt(self):
 			del self._FinInstrmRptgTxRpt
-			self._FinInstrmRptgTxRpt = None
+			self._FinInstrmRptgTxRpt = base_types.UninitialisedField(self, 'FinInstrmRptgTxRpt', FinancialInstrumentReportingTransactionReportV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='FinInstrmRptgTxRpt', type=FinancialInstrumentReportingTransactionReportV03, min=1, max=1, mutex_group=None, array=False),

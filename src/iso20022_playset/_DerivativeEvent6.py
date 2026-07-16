@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._DerivativeEventType3Code import DerivativeEventType3Code
-from ._EventIdentifier1Choice import EventIdentifier1Choice
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import DateAndDateTime2Choice
+from . import DerivativeEventType3Code
+from . import EventIdentifier1Choice
+from . import TrueFalseIndicator
 
 class DerivativeEvent6(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class DerivativeEvent6(base_types._BaseFieldType):
 
 	@AmdmntInd.setter
 	def AmdmntInd(self, value):
-		self._AmdmntInd = value if type(value) != base_types.auto else self.make_default("AmdmntInd")
+		self._AmdmntInd = value if value is not None else base_types.UninitialisedField(self, 'AmdmntInd', TrueFalseIndicator, False)
 
 	@AmdmntInd.deleter
 	def AmdmntInd(self):
 		del self._AmdmntInd
-		self._AmdmntInd = None
+		self._AmdmntInd = base_types.UninitialisedField(self, 'AmdmntInd', TrueFalseIndicator, False)
 
 	@property
 	def Id(self):
@@ -29,12 +29,12 @@ class DerivativeEvent6(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', EventIdentifier1Choice, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', EventIdentifier1Choice, False)
 
 	@property
 	def TmStmp(self):
@@ -42,12 +42,12 @@ class DerivativeEvent6(base_types._BaseFieldType):
 
 	@TmStmp.setter
 	def TmStmp(self, value):
-		self._TmStmp = value if type(value) != base_types.auto else self.make_default("TmStmp")
+		self._TmStmp = value if value is not None else base_types.UninitialisedField(self, 'TmStmp', DateAndDateTime2Choice, False)
 
 	@TmStmp.deleter
 	def TmStmp(self):
 		del self._TmStmp
-		self._TmStmp = None
+		self._TmStmp = base_types.UninitialisedField(self, 'TmStmp', DateAndDateTime2Choice, False)
 
 	@property
 	def Tp(self):
@@ -55,12 +55,12 @@ class DerivativeEvent6(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', DerivativeEventType3Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', DerivativeEventType3Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmdmntInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),

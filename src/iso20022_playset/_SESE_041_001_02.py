@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BuyInRegulatoryAdviceV02 import BuyInRegulatoryAdviceV02
+from . import BuyInRegulatoryAdviceV02
 
 class SESE_041_001_02():
 
@@ -18,12 +18,12 @@ class SESE_041_001_02():
 
 		@BuyInRgltryAdvc.setter
 		def BuyInRgltryAdvc(self, value):
-			self._BuyInRgltryAdvc = value if type(value) != base_types.auto else self.make_default("BuyInRgltryAdvc")
+			self._BuyInRgltryAdvc = value if value is not None else base_types.UninitialisedField(self, 'BuyInRgltryAdvc', BuyInRegulatoryAdviceV02, False)
 
 		@BuyInRgltryAdvc.deleter
 		def BuyInRgltryAdvc(self):
 			del self._BuyInRgltryAdvc
-			self._BuyInRgltryAdvc = None
+			self._BuyInRgltryAdvc = base_types.UninitialisedField(self, 'BuyInRgltryAdvc', BuyInRegulatoryAdviceV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='BuyInRgltryAdvc', type=BuyInRegulatoryAdviceV02, min=1, max=1, mutex_group=None, array=False),

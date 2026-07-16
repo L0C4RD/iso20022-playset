@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max20000Text import Max20000Text
-from ._Presentation3 import Presentation3
-from ._PresentationDocumentFormat1Choice import PresentationDocumentFormat1Choice
+from . import Max20000Text
+from . import Presentation3
+from . import PresentationDocumentFormat1Choice
 
 class Document11(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Document11(base_types._BaseFieldType):
 
 	@ElctrncDtls.setter
 	def ElctrncDtls(self, value):
-		self._ElctrncDtls = value if type(value) != base_types.auto else self.make_default("ElctrncDtls")
+		self._ElctrncDtls = value if value is not None else base_types.UninitialisedField(self, 'ElctrncDtls', Presentation3, True)
 
 	@ElctrncDtls.deleter
 	def ElctrncDtls(self):
 		del self._ElctrncDtls
-		self._ElctrncDtls = None
+		self._ElctrncDtls = base_types.UninitialisedField(self, 'ElctrncDtls', Presentation3, True)
 
 	@property
 	def Tp(self):
@@ -28,12 +28,12 @@ class Document11(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', PresentationDocumentFormat1Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', PresentationDocumentFormat1Choice, False)
 
 	@property
 	def Wrdg(self):
@@ -41,12 +41,12 @@ class Document11(base_types._BaseFieldType):
 
 	@Wrdg.setter
 	def Wrdg(self, value):
-		self._Wrdg = value if type(value) != base_types.auto else self.make_default("Wrdg")
+		self._Wrdg = value if value is not None else base_types.UninitialisedField(self, 'Wrdg', Max20000Text, False)
 
 	@Wrdg.deleter
 	def Wrdg(self):
 		del self._Wrdg
-		self._Wrdg = None
+		self._Wrdg = base_types.UninitialisedField(self, 'Wrdg', Max20000Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ElctrncDtls', type=Presentation3, min=0, max=None, mutex_group=None, array=True),

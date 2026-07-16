@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection5 import AmountAndDirection5
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
-from ._CashAccountIdentification9Choice import CashAccountIdentification9Choice
-from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
-from ._PartyIdentification144 import PartyIdentification144
-from ._Quantity51Choice import Quantity51Choice
-from ._SafeKeepingPlace5 import SafeKeepingPlace5
-from ._SecuritiesAccount19 import SecuritiesAccount19
+from . import AmountAndDirection5
+from . import BlockChainAddressWallet3
+from . import CashAccountIdentification9Choice
+from . import FinancialInstrumentQuantity33Choice
+from . import PartyIdentification144
+from . import Quantity51Choice
+from . import SafeKeepingPlace5
+from . import SecuritiesAccount19
 
 class QuantityAndAccount120(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class QuantityAndAccount120(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification144, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification144, False)
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -33,12 +33,12 @@ class QuantityAndAccount120(base_types._BaseFieldType):
 
 	@BlckChainAdrOrWllt.setter
 	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
+		self._BlckChainAdrOrWllt = value if value is not None else base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet3, False)
 
 	@BlckChainAdrOrWllt.deleter
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+		self._BlckChainAdrOrWllt = base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet3, False)
 
 	@property
 	def CshAcct(self):
@@ -46,12 +46,12 @@ class QuantityAndAccount120(base_types._BaseFieldType):
 
 	@CshAcct.setter
 	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != base_types.auto else self.make_default("CshAcct")
+		self._CshAcct = value if value is not None else base_types.UninitialisedField(self, 'CshAcct', CashAccountIdentification9Choice, False)
 
 	@CshAcct.deleter
 	def CshAcct(self):
 		del self._CshAcct
-		self._CshAcct = None
+		self._CshAcct = base_types.UninitialisedField(self, 'CshAcct', CashAccountIdentification9Choice, False)
 
 	@property
 	def PrevslySttldAmt(self):
@@ -59,12 +59,12 @@ class QuantityAndAccount120(base_types._BaseFieldType):
 
 	@PrevslySttldAmt.setter
 	def PrevslySttldAmt(self, value):
-		self._PrevslySttldAmt = value if type(value) != base_types.auto else self.make_default("PrevslySttldAmt")
+		self._PrevslySttldAmt = value if value is not None else base_types.UninitialisedField(self, 'PrevslySttldAmt', AmountAndDirection5, False)
 
 	@PrevslySttldAmt.deleter
 	def PrevslySttldAmt(self):
 		del self._PrevslySttldAmt
-		self._PrevslySttldAmt = None
+		self._PrevslySttldAmt = base_types.UninitialisedField(self, 'PrevslySttldAmt', AmountAndDirection5, False)
 
 	@property
 	def PrevslySttldQty(self):
@@ -72,12 +72,12 @@ class QuantityAndAccount120(base_types._BaseFieldType):
 
 	@PrevslySttldQty.setter
 	def PrevslySttldQty(self, value):
-		self._PrevslySttldQty = value if type(value) != base_types.auto else self.make_default("PrevslySttldQty")
+		self._PrevslySttldQty = value if value is not None else base_types.UninitialisedField(self, 'PrevslySttldQty', FinancialInstrumentQuantity33Choice, False)
 
 	@PrevslySttldQty.deleter
 	def PrevslySttldQty(self):
 		del self._PrevslySttldQty
-		self._PrevslySttldQty = None
+		self._PrevslySttldQty = base_types.UninitialisedField(self, 'PrevslySttldQty', FinancialInstrumentQuantity33Choice, False)
 
 	@property
 	def RmngToBeSttldAmt(self):
@@ -85,12 +85,12 @@ class QuantityAndAccount120(base_types._BaseFieldType):
 
 	@RmngToBeSttldAmt.setter
 	def RmngToBeSttldAmt(self, value):
-		self._RmngToBeSttldAmt = value if type(value) != base_types.auto else self.make_default("RmngToBeSttldAmt")
+		self._RmngToBeSttldAmt = value if value is not None else base_types.UninitialisedField(self, 'RmngToBeSttldAmt', AmountAndDirection5, False)
 
 	@RmngToBeSttldAmt.deleter
 	def RmngToBeSttldAmt(self):
 		del self._RmngToBeSttldAmt
-		self._RmngToBeSttldAmt = None
+		self._RmngToBeSttldAmt = base_types.UninitialisedField(self, 'RmngToBeSttldAmt', AmountAndDirection5, False)
 
 	@property
 	def RmngToBeSttldQty(self):
@@ -98,12 +98,12 @@ class QuantityAndAccount120(base_types._BaseFieldType):
 
 	@RmngToBeSttldQty.setter
 	def RmngToBeSttldQty(self, value):
-		self._RmngToBeSttldQty = value if type(value) != base_types.auto else self.make_default("RmngToBeSttldQty")
+		self._RmngToBeSttldQty = value if value is not None else base_types.UninitialisedField(self, 'RmngToBeSttldQty', FinancialInstrumentQuantity33Choice, False)
 
 	@RmngToBeSttldQty.deleter
 	def RmngToBeSttldQty(self):
 		del self._RmngToBeSttldQty
-		self._RmngToBeSttldQty = None
+		self._RmngToBeSttldQty = base_types.UninitialisedField(self, 'RmngToBeSttldQty', FinancialInstrumentQuantity33Choice, False)
 
 	@property
 	def SfkpgAcct(self):
@@ -111,12 +111,12 @@ class QuantityAndAccount120(base_types._BaseFieldType):
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
-		self._SfkpgAcct = None
+		self._SfkpgAcct = base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@property
 	def SfkpgPlc(self):
@@ -124,12 +124,12 @@ class QuantityAndAccount120(base_types._BaseFieldType):
 
 	@SfkpgPlc.setter
 	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
+		self._SfkpgPlc = value if value is not None else base_types.UninitialisedField(self, 'SfkpgPlc', SafeKeepingPlace5, False)
 
 	@SfkpgPlc.deleter
 	def SfkpgPlc(self):
 		del self._SfkpgPlc
-		self._SfkpgPlc = None
+		self._SfkpgPlc = base_types.UninitialisedField(self, 'SfkpgPlc', SafeKeepingPlace5, False)
 
 	@property
 	def SttldQty(self):
@@ -137,12 +137,12 @@ class QuantityAndAccount120(base_types._BaseFieldType):
 
 	@SttldQty.setter
 	def SttldQty(self, value):
-		self._SttldQty = value if type(value) != base_types.auto else self.make_default("SttldQty")
+		self._SttldQty = value if value is not None else base_types.UninitialisedField(self, 'SttldQty', Quantity51Choice, False)
 
 	@SttldQty.deleter
 	def SttldQty(self):
 		del self._SttldQty
-		self._SttldQty = None
+		self._SttldQty = base_types.UninitialisedField(self, 'SttldQty', Quantity51Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),

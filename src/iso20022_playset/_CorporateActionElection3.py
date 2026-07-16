@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionCashMovements2 import CorporateActionCashMovements2
-from ._CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
-from ._CorporateActionSecuritiesMovement2 import CorporateActionSecuritiesMovement2
-from ._Exact3NumericText import Exact3NumericText
-from ._PercentageRate import PercentageRate
-from ._SecuritiesAccount7 import SecuritiesAccount7
-from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
+from . import CorporateActionCashMovements2
+from . import CorporateActionOption1FormatChoice
+from . import CorporateActionSecuritiesMovement2
+from . import Exact3NumericText
+from . import PercentageRate
+from . import SecuritiesAccount7
+from . import UnitOrFaceAmount1Choice
 
 class CorporateActionElection3(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class CorporateActionElection3(base_types._BaseFieldType):
 
 	@AcctDtls.setter
 	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != base_types.auto else self.make_default("AcctDtls")
+		self._AcctDtls = value if value is not None else base_types.UninitialisedField(self, 'AcctDtls', SecuritiesAccount7, False)
 
 	@AcctDtls.deleter
 	def AcctDtls(self):
 		del self._AcctDtls
-		self._AcctDtls = None
+		self._AcctDtls = base_types.UninitialisedField(self, 'AcctDtls', SecuritiesAccount7, False)
 
 	@property
 	def CshMvmntDtls(self):
@@ -32,12 +32,12 @@ class CorporateActionElection3(base_types._BaseFieldType):
 
 	@CshMvmntDtls.setter
 	def CshMvmntDtls(self, value):
-		self._CshMvmntDtls = value if type(value) != base_types.auto else self.make_default("CshMvmntDtls")
+		self._CshMvmntDtls = value if value is not None else base_types.UninitialisedField(self, 'CshMvmntDtls', CorporateActionCashMovements2, True)
 
 	@CshMvmntDtls.deleter
 	def CshMvmntDtls(self):
 		del self._CshMvmntDtls
-		self._CshMvmntDtls = None
+		self._CshMvmntDtls = base_types.UninitialisedField(self, 'CshMvmntDtls', CorporateActionCashMovements2, True)
 
 	@property
 	def InstdSctiesQtyToRcv(self):
@@ -45,12 +45,12 @@ class CorporateActionElection3(base_types._BaseFieldType):
 
 	@InstdSctiesQtyToRcv.setter
 	def InstdSctiesQtyToRcv(self, value):
-		self._InstdSctiesQtyToRcv = value if type(value) != base_types.auto else self.make_default("InstdSctiesQtyToRcv")
+		self._InstdSctiesQtyToRcv = value if value is not None else base_types.UninitialisedField(self, 'InstdSctiesQtyToRcv', UnitOrFaceAmount1Choice, False)
 
 	@InstdSctiesQtyToRcv.deleter
 	def InstdSctiesQtyToRcv(self):
 		del self._InstdSctiesQtyToRcv
-		self._InstdSctiesQtyToRcv = None
+		self._InstdSctiesQtyToRcv = base_types.UninitialisedField(self, 'InstdSctiesQtyToRcv', UnitOrFaceAmount1Choice, False)
 
 	@property
 	def InstdUndrlygSctiesQty(self):
@@ -58,12 +58,12 @@ class CorporateActionElection3(base_types._BaseFieldType):
 
 	@InstdUndrlygSctiesQty.setter
 	def InstdUndrlygSctiesQty(self, value):
-		self._InstdUndrlygSctiesQty = value if type(value) != base_types.auto else self.make_default("InstdUndrlygSctiesQty")
+		self._InstdUndrlygSctiesQty = value if value is not None else base_types.UninitialisedField(self, 'InstdUndrlygSctiesQty', UnitOrFaceAmount1Choice, False)
 
 	@InstdUndrlygSctiesQty.deleter
 	def InstdUndrlygSctiesQty(self):
 		del self._InstdUndrlygSctiesQty
-		self._InstdUndrlygSctiesQty = None
+		self._InstdUndrlygSctiesQty = base_types.UninitialisedField(self, 'InstdUndrlygSctiesQty', UnitOrFaceAmount1Choice, False)
 
 	@property
 	def OptnNb(self):
@@ -71,12 +71,12 @@ class CorporateActionElection3(base_types._BaseFieldType):
 
 	@OptnNb.setter
 	def OptnNb(self, value):
-		self._OptnNb = value if type(value) != base_types.auto else self.make_default("OptnNb")
+		self._OptnNb = value if value is not None else base_types.UninitialisedField(self, 'OptnNb', Exact3NumericText, False)
 
 	@OptnNb.deleter
 	def OptnNb(self):
 		del self._OptnNb
-		self._OptnNb = None
+		self._OptnNb = base_types.UninitialisedField(self, 'OptnNb', Exact3NumericText, False)
 
 	@property
 	def OptnTp(self):
@@ -84,12 +84,12 @@ class CorporateActionElection3(base_types._BaseFieldType):
 
 	@OptnTp.setter
 	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != base_types.auto else self.make_default("OptnTp")
+		self._OptnTp = value if value is not None else base_types.UninitialisedField(self, 'OptnTp', CorporateActionOption1FormatChoice, False)
 
 	@OptnTp.deleter
 	def OptnTp(self):
 		del self._OptnTp
-		self._OptnTp = None
+		self._OptnTp = base_types.UninitialisedField(self, 'OptnTp', CorporateActionOption1FormatChoice, False)
 
 	@property
 	def PropsdRate(self):
@@ -97,12 +97,12 @@ class CorporateActionElection3(base_types._BaseFieldType):
 
 	@PropsdRate.setter
 	def PropsdRate(self, value):
-		self._PropsdRate = value if type(value) != base_types.auto else self.make_default("PropsdRate")
+		self._PropsdRate = value if value is not None else base_types.UninitialisedField(self, 'PropsdRate', PercentageRate, False)
 
 	@PropsdRate.deleter
 	def PropsdRate(self):
 		del self._PropsdRate
-		self._PropsdRate = None
+		self._PropsdRate = base_types.UninitialisedField(self, 'PropsdRate', PercentageRate, False)
 
 	@property
 	def SctiesMvmntDtls(self):
@@ -110,12 +110,12 @@ class CorporateActionElection3(base_types._BaseFieldType):
 
 	@SctiesMvmntDtls.setter
 	def SctiesMvmntDtls(self, value):
-		self._SctiesMvmntDtls = value if type(value) != base_types.auto else self.make_default("SctiesMvmntDtls")
+		self._SctiesMvmntDtls = value if value is not None else base_types.UninitialisedField(self, 'SctiesMvmntDtls', CorporateActionSecuritiesMovement2, True)
 
 	@SctiesMvmntDtls.deleter
 	def SctiesMvmntDtls(self):
 		del self._SctiesMvmntDtls
-		self._SctiesMvmntDtls = None
+		self._SctiesMvmntDtls = base_types.UninitialisedField(self, 'SctiesMvmntDtls', CorporateActionSecuritiesMovement2, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctDtls', type=SecuritiesAccount7, min=0, max=1, mutex_group=None, array=False),

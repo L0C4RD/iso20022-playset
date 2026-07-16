@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._OriginalGroupInformation29 import OriginalGroupInformation29
-from ._UUIDv4Identifier import UUIDv4Identifier
+from . import Max35Text
+from . import OriginalGroupInformation29
+from . import UUIDv4Identifier
 
 class UnderlyingStatementEntry3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class UnderlyingStatementEntry3(base_types._BaseFieldType):
 
 	@OrgnlGrpInf.setter
 	def OrgnlGrpInf(self, value):
-		self._OrgnlGrpInf = value if type(value) != base_types.auto else self.make_default("OrgnlGrpInf")
+		self._OrgnlGrpInf = value if value is not None else base_types.UninitialisedField(self, 'OrgnlGrpInf', OriginalGroupInformation29, False)
 
 	@OrgnlGrpInf.deleter
 	def OrgnlGrpInf(self):
 		del self._OrgnlGrpInf
-		self._OrgnlGrpInf = None
+		self._OrgnlGrpInf = base_types.UninitialisedField(self, 'OrgnlGrpInf', OriginalGroupInformation29, False)
 
 	@property
 	def OrgnlNtryId(self):
@@ -28,12 +28,12 @@ class UnderlyingStatementEntry3(base_types._BaseFieldType):
 
 	@OrgnlNtryId.setter
 	def OrgnlNtryId(self, value):
-		self._OrgnlNtryId = value if type(value) != base_types.auto else self.make_default("OrgnlNtryId")
+		self._OrgnlNtryId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlNtryId', Max35Text, False)
 
 	@OrgnlNtryId.deleter
 	def OrgnlNtryId(self):
 		del self._OrgnlNtryId
-		self._OrgnlNtryId = None
+		self._OrgnlNtryId = base_types.UninitialisedField(self, 'OrgnlNtryId', Max35Text, False)
 
 	@property
 	def OrgnlStmtId(self):
@@ -41,12 +41,12 @@ class UnderlyingStatementEntry3(base_types._BaseFieldType):
 
 	@OrgnlStmtId.setter
 	def OrgnlStmtId(self, value):
-		self._OrgnlStmtId = value if type(value) != base_types.auto else self.make_default("OrgnlStmtId")
+		self._OrgnlStmtId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlStmtId', Max35Text, False)
 
 	@OrgnlStmtId.deleter
 	def OrgnlStmtId(self):
 		del self._OrgnlStmtId
-		self._OrgnlStmtId = None
+		self._OrgnlStmtId = base_types.UninitialisedField(self, 'OrgnlStmtId', Max35Text, False)
 
 	@property
 	def OrgnlUETR(self):
@@ -54,12 +54,12 @@ class UnderlyingStatementEntry3(base_types._BaseFieldType):
 
 	@OrgnlUETR.setter
 	def OrgnlUETR(self, value):
-		self._OrgnlUETR = value if type(value) != base_types.auto else self.make_default("OrgnlUETR")
+		self._OrgnlUETR = value if value is not None else base_types.UninitialisedField(self, 'OrgnlUETR', UUIDv4Identifier, False)
 
 	@OrgnlUETR.deleter
 	def OrgnlUETR(self):
 		del self._OrgnlUETR
-		self._OrgnlUETR = None
+		self._OrgnlUETR = base_types.UninitialisedField(self, 'OrgnlUETR', UUIDv4Identifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlGrpInf', type=OriginalGroupInformation29, min=0, max=1, mutex_group=None, array=False),

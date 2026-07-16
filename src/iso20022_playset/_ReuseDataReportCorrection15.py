@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CollateralType19 import CollateralType19
-from ._ContractModification3 import ContractModification3
-from ._CounterpartyData87 import CounterpartyData87
-from ._FundingSource3 import FundingSource3
-from ._ISODate import ISODate
-from ._ISODateTime import ISODateTime
-from ._Max140Text import Max140Text
-from ._ReconciliationFlag2 import ReconciliationFlag2
-from ._SupplementaryData1 import SupplementaryData1
+from . import CollateralType19
+from . import ContractModification3
+from . import CounterpartyData87
+from . import FundingSource3
+from . import ISODate
+from . import ISODateTime
+from . import Max140Text
+from . import ReconciliationFlag2
+from . import SupplementaryData1
 
 class ReuseDataReportCorrection15(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class ReuseDataReportCorrection15(base_types._BaseFieldType):
 
 	@CollCmpnt.setter
 	def CollCmpnt(self, value):
-		self._CollCmpnt = value if type(value) != base_types.auto else self.make_default("CollCmpnt")
+		self._CollCmpnt = value if value is not None else base_types.UninitialisedField(self, 'CollCmpnt', CollateralType19, True)
 
 	@CollCmpnt.deleter
 	def CollCmpnt(self):
 		del self._CollCmpnt
-		self._CollCmpnt = None
+		self._CollCmpnt = base_types.UninitialisedField(self, 'CollCmpnt', CollateralType19, True)
 
 	@property
 	def CtrPty(self):
@@ -34,12 +34,12 @@ class ReuseDataReportCorrection15(base_types._BaseFieldType):
 
 	@CtrPty.setter
 	def CtrPty(self, value):
-		self._CtrPty = value if type(value) != base_types.auto else self.make_default("CtrPty")
+		self._CtrPty = value if value is not None else base_types.UninitialisedField(self, 'CtrPty', CounterpartyData87, False)
 
 	@CtrPty.deleter
 	def CtrPty(self):
 		del self._CtrPty
-		self._CtrPty = None
+		self._CtrPty = base_types.UninitialisedField(self, 'CtrPty', CounterpartyData87, False)
 
 	@property
 	def CtrctMod(self):
@@ -47,12 +47,12 @@ class ReuseDataReportCorrection15(base_types._BaseFieldType):
 
 	@CtrctMod.setter
 	def CtrctMod(self, value):
-		self._CtrctMod = value if type(value) != base_types.auto else self.make_default("CtrctMod")
+		self._CtrctMod = value if value is not None else base_types.UninitialisedField(self, 'CtrctMod', ContractModification3, False)
 
 	@CtrctMod.deleter
 	def CtrctMod(self):
 		del self._CtrctMod
-		self._CtrctMod = None
+		self._CtrctMod = base_types.UninitialisedField(self, 'CtrctMod', ContractModification3, False)
 
 	@property
 	def EvtDay(self):
@@ -60,12 +60,12 @@ class ReuseDataReportCorrection15(base_types._BaseFieldType):
 
 	@EvtDay.setter
 	def EvtDay(self, value):
-		self._EvtDay = value if type(value) != base_types.auto else self.make_default("EvtDay")
+		self._EvtDay = value if value is not None else base_types.UninitialisedField(self, 'EvtDay', ISODate, False)
 
 	@EvtDay.deleter
 	def EvtDay(self):
 		del self._EvtDay
-		self._EvtDay = None
+		self._EvtDay = base_types.UninitialisedField(self, 'EvtDay', ISODate, False)
 
 	@property
 	def FndgSrc(self):
@@ -73,12 +73,12 @@ class ReuseDataReportCorrection15(base_types._BaseFieldType):
 
 	@FndgSrc.setter
 	def FndgSrc(self, value):
-		self._FndgSrc = value if type(value) != base_types.auto else self.make_default("FndgSrc")
+		self._FndgSrc = value if value is not None else base_types.UninitialisedField(self, 'FndgSrc', FundingSource3, True)
 
 	@FndgSrc.deleter
 	def FndgSrc(self):
 		del self._FndgSrc
-		self._FndgSrc = None
+		self._FndgSrc = base_types.UninitialisedField(self, 'FndgSrc', FundingSource3, True)
 
 	@property
 	def RcncltnFlg(self):
@@ -86,12 +86,12 @@ class ReuseDataReportCorrection15(base_types._BaseFieldType):
 
 	@RcncltnFlg.setter
 	def RcncltnFlg(self, value):
-		self._RcncltnFlg = value if type(value) != base_types.auto else self.make_default("RcncltnFlg")
+		self._RcncltnFlg = value if value is not None else base_types.UninitialisedField(self, 'RcncltnFlg', ReconciliationFlag2, False)
 
 	@RcncltnFlg.deleter
 	def RcncltnFlg(self):
 		del self._RcncltnFlg
-		self._RcncltnFlg = None
+		self._RcncltnFlg = base_types.UninitialisedField(self, 'RcncltnFlg', ReconciliationFlag2, False)
 
 	@property
 	def RptgDtTm(self):
@@ -99,12 +99,12 @@ class ReuseDataReportCorrection15(base_types._BaseFieldType):
 
 	@RptgDtTm.setter
 	def RptgDtTm(self, value):
-		self._RptgDtTm = value if type(value) != base_types.auto else self.make_default("RptgDtTm")
+		self._RptgDtTm = value if value is not None else base_types.UninitialisedField(self, 'RptgDtTm', ISODateTime, False)
 
 	@RptgDtTm.deleter
 	def RptgDtTm(self):
 		del self._RptgDtTm
-		self._RptgDtTm = None
+		self._RptgDtTm = base_types.UninitialisedField(self, 'RptgDtTm', ISODateTime, False)
 
 	@property
 	def SplmtryData(self):
@@ -112,12 +112,12 @@ class ReuseDataReportCorrection15(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TechRcrdId(self):
@@ -125,12 +125,12 @@ class ReuseDataReportCorrection15(base_types._BaseFieldType):
 
 	@TechRcrdId.setter
 	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
+		self._TechRcrdId = value if value is not None else base_types.UninitialisedField(self, 'TechRcrdId', Max140Text, False)
 
 	@TechRcrdId.deleter
 	def TechRcrdId(self):
 		del self._TechRcrdId
-		self._TechRcrdId = None
+		self._TechRcrdId = base_types.UninitialisedField(self, 'TechRcrdId', Max140Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollCmpnt', type=CollateralType19, min=0, max=None, mutex_group=None, array=True),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISO3NumericCountryCode import ISO3NumericCountryCode
-from ._ISOCountrySubDivisionCode import ISOCountrySubDivisionCode
-from ._Max50Text import Max50Text
+from . import ISO3NumericCountryCode
+from . import ISOCountrySubDivisionCode
+from . import Max50Text
 
 class Authority1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Authority1(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', ISO3NumericCountryCode, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', ISO3NumericCountryCode, False)
 
 	@property
 	def CtrySubDvsnMjr(self):
@@ -28,12 +28,12 @@ class Authority1(base_types._BaseFieldType):
 
 	@CtrySubDvsnMjr.setter
 	def CtrySubDvsnMjr(self, value):
-		self._CtrySubDvsnMjr = value if type(value) != base_types.auto else self.make_default("CtrySubDvsnMjr")
+		self._CtrySubDvsnMjr = value if value is not None else base_types.UninitialisedField(self, 'CtrySubDvsnMjr', ISOCountrySubDivisionCode, False)
 
 	@CtrySubDvsnMjr.deleter
 	def CtrySubDvsnMjr(self):
 		del self._CtrySubDvsnMjr
-		self._CtrySubDvsnMjr = None
+		self._CtrySubDvsnMjr = base_types.UninitialisedField(self, 'CtrySubDvsnMjr', ISOCountrySubDivisionCode, False)
 
 	@property
 	def CtrySubDvsnMjrNm(self):
@@ -41,12 +41,12 @@ class Authority1(base_types._BaseFieldType):
 
 	@CtrySubDvsnMjrNm.setter
 	def CtrySubDvsnMjrNm(self, value):
-		self._CtrySubDvsnMjrNm = value if type(value) != base_types.auto else self.make_default("CtrySubDvsnMjrNm")
+		self._CtrySubDvsnMjrNm = value if value is not None else base_types.UninitialisedField(self, 'CtrySubDvsnMjrNm', Max50Text, False)
 
 	@CtrySubDvsnMjrNm.deleter
 	def CtrySubDvsnMjrNm(self):
 		del self._CtrySubDvsnMjrNm
-		self._CtrySubDvsnMjrNm = None
+		self._CtrySubDvsnMjrNm = base_types.UninitialisedField(self, 'CtrySubDvsnMjrNm', Max50Text, False)
 
 	@property
 	def CtrySubDvsnMnr(self):
@@ -54,12 +54,12 @@ class Authority1(base_types._BaseFieldType):
 
 	@CtrySubDvsnMnr.setter
 	def CtrySubDvsnMnr(self, value):
-		self._CtrySubDvsnMnr = value if type(value) != base_types.auto else self.make_default("CtrySubDvsnMnr")
+		self._CtrySubDvsnMnr = value if value is not None else base_types.UninitialisedField(self, 'CtrySubDvsnMnr', ISOCountrySubDivisionCode, False)
 
 	@CtrySubDvsnMnr.deleter
 	def CtrySubDvsnMnr(self):
 		del self._CtrySubDvsnMnr
-		self._CtrySubDvsnMnr = None
+		self._CtrySubDvsnMnr = base_types.UninitialisedField(self, 'CtrySubDvsnMnr', ISOCountrySubDivisionCode, False)
 
 	@property
 	def CtrySubDvsnMnrNm(self):
@@ -67,12 +67,12 @@ class Authority1(base_types._BaseFieldType):
 
 	@CtrySubDvsnMnrNm.setter
 	def CtrySubDvsnMnrNm(self, value):
-		self._CtrySubDvsnMnrNm = value if type(value) != base_types.auto else self.make_default("CtrySubDvsnMnrNm")
+		self._CtrySubDvsnMnrNm = value if value is not None else base_types.UninitialisedField(self, 'CtrySubDvsnMnrNm', Max50Text, False)
 
 	@CtrySubDvsnMnrNm.deleter
 	def CtrySubDvsnMnrNm(self):
 		del self._CtrySubDvsnMnrNm
-		self._CtrySubDvsnMnrNm = None
+		self._CtrySubDvsnMnrNm = base_types.UninitialisedField(self, 'CtrySubDvsnMnrNm', Max50Text, False)
 
 	@property
 	def Nm(self):
@@ -80,12 +80,12 @@ class Authority1(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max50Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max50Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ctry', type=ISO3NumericCountryCode, min=0, max=1, mutex_group=None, array=False),

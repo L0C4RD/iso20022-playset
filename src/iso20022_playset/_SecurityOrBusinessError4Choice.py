@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BusinessError4 import BusinessError4
-from ._SecurityAttributes11 import SecurityAttributes11
+from . import BusinessError4
+from . import SecurityAttributes11
 
 class SecurityOrBusinessError4Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SecurityOrBusinessError4Choice(base_types._BaseFieldType):
 
 	@BizErr.setter
 	def BizErr(self, value):
-		self._BizErr = value if type(value) != base_types.auto else self.make_default("BizErr")
+		self._BizErr = value if value is not None else base_types.UninitialisedField(self, 'BizErr', BusinessError4, True)
 
 	@BizErr.deleter
 	def BizErr(self):
 		del self._BizErr
-		self._BizErr = None
+		self._BizErr = base_types.UninitialisedField(self, 'BizErr', BusinessError4, True)
 
 	@property
 	def SctyRpt(self):
@@ -27,12 +27,12 @@ class SecurityOrBusinessError4Choice(base_types._BaseFieldType):
 
 	@SctyRpt.setter
 	def SctyRpt(self, value):
-		self._SctyRpt = value if type(value) != base_types.auto else self.make_default("SctyRpt")
+		self._SctyRpt = value if value is not None else base_types.UninitialisedField(self, 'SctyRpt', SecurityAttributes11, True)
 
 	@SctyRpt.deleter
 	def SctyRpt(self):
 		del self._SctyRpt
-		self._SctyRpt = None
+		self._SctyRpt = base_types.UninitialisedField(self, 'SctyRpt', SecurityAttributes11, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BizErr', type=BusinessError4, min=1, max=None, mutex_group=1, array=True),

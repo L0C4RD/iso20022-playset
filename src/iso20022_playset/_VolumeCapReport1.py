@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MICIdentifier import MICIdentifier
-from ._Period4Choice import Period4Choice
-from ._VolumeCapReport2 import VolumeCapReport2
+from . import MICIdentifier
+from . import Period4Choice
+from . import VolumeCapReport2
 
 class VolumeCapReport1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class VolumeCapReport1(base_types._BaseFieldType):
 
 	@InstrmRpt.setter
 	def InstrmRpt(self, value):
-		self._InstrmRpt = value if type(value) != base_types.auto else self.make_default("InstrmRpt")
+		self._InstrmRpt = value if value is not None else base_types.UninitialisedField(self, 'InstrmRpt', VolumeCapReport2, True)
 
 	@InstrmRpt.deleter
 	def InstrmRpt(self):
 		del self._InstrmRpt
-		self._InstrmRpt = None
+		self._InstrmRpt = base_types.UninitialisedField(self, 'InstrmRpt', VolumeCapReport2, True)
 
 	@property
 	def RptgPrd(self):
@@ -28,12 +28,12 @@ class VolumeCapReport1(base_types._BaseFieldType):
 
 	@RptgPrd.setter
 	def RptgPrd(self, value):
-		self._RptgPrd = value if type(value) != base_types.auto else self.make_default("RptgPrd")
+		self._RptgPrd = value if value is not None else base_types.UninitialisedField(self, 'RptgPrd', Period4Choice, False)
 
 	@RptgPrd.deleter
 	def RptgPrd(self):
 		del self._RptgPrd
-		self._RptgPrd = None
+		self._RptgPrd = base_types.UninitialisedField(self, 'RptgPrd', Period4Choice, False)
 
 	@property
 	def TradgVn(self):
@@ -41,12 +41,12 @@ class VolumeCapReport1(base_types._BaseFieldType):
 
 	@TradgVn.setter
 	def TradgVn(self, value):
-		self._TradgVn = value if type(value) != base_types.auto else self.make_default("TradgVn")
+		self._TradgVn = value if value is not None else base_types.UninitialisedField(self, 'TradgVn', MICIdentifier, False)
 
 	@TradgVn.deleter
 	def TradgVn(self):
 		del self._TradgVn
-		self._TradgVn = None
+		self._TradgVn = base_types.UninitialisedField(self, 'TradgVn', MICIdentifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InstrmRpt', type=VolumeCapReport2, min=1, max=None, mutex_group=None, array=True),

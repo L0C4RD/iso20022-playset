@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._UTIIdentifier import UTIIdentifier
+from . import UTIIdentifier
 
 class UniqueTransactionIdentifier3(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class UniqueTransactionIdentifier3(base_types._BaseFieldType):
 
 	@PrrUnqTxIdr.setter
 	def PrrUnqTxIdr(self, value):
-		self._PrrUnqTxIdr = value if type(value) != base_types.auto else self.make_default("PrrUnqTxIdr")
+		self._PrrUnqTxIdr = value if value is not None else base_types.UninitialisedField(self, 'PrrUnqTxIdr', UTIIdentifier, True)
 
 	@PrrUnqTxIdr.deleter
 	def PrrUnqTxIdr(self):
 		del self._PrrUnqTxIdr
-		self._PrrUnqTxIdr = None
+		self._PrrUnqTxIdr = base_types.UninitialisedField(self, 'PrrUnqTxIdr', UTIIdentifier, True)
 
 	@property
 	def UnqTxIdr(self):
@@ -26,12 +26,12 @@ class UniqueTransactionIdentifier3(base_types._BaseFieldType):
 
 	@UnqTxIdr.setter
 	def UnqTxIdr(self, value):
-		self._UnqTxIdr = value if type(value) != base_types.auto else self.make_default("UnqTxIdr")
+		self._UnqTxIdr = value if value is not None else base_types.UninitialisedField(self, 'UnqTxIdr', UTIIdentifier, False)
 
 	@UnqTxIdr.deleter
 	def UnqTxIdr(self):
 		del self._UnqTxIdr
-		self._UnqTxIdr = None
+		self._UnqTxIdr = base_types.UninitialisedField(self, 'UnqTxIdr', UTIIdentifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrrUnqTxIdr', type=UTIIdentifier, min=0, max=None, mutex_group=None, array=True),

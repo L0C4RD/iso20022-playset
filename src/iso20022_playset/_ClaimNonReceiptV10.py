@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Case6 import Case6
-from ._CaseAssignment6 import CaseAssignment6
-from ._InstructionForAssignee1 import InstructionForAssignee1
-from ._MissingCover6 import MissingCover6
-from ._SupplementaryData1 import SupplementaryData1
-from ._UnderlyingTransaction8Choice import UnderlyingTransaction8Choice
+from . import Case6
+from . import CaseAssignment6
+from . import InstructionForAssignee1
+from . import MissingCover6
+from . import SupplementaryData1
+from . import UnderlyingTransaction8Choice
 
 class ClaimNonReceiptV10(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class ClaimNonReceiptV10(base_types._BaseFieldType):
 
 	@Assgnmt.setter
 	def Assgnmt(self, value):
-		self._Assgnmt = value if type(value) != base_types.auto else self.make_default("Assgnmt")
+		self._Assgnmt = value if value is not None else base_types.UninitialisedField(self, 'Assgnmt', CaseAssignment6, False)
 
 	@Assgnmt.deleter
 	def Assgnmt(self):
 		del self._Assgnmt
-		self._Assgnmt = None
+		self._Assgnmt = base_types.UninitialisedField(self, 'Assgnmt', CaseAssignment6, False)
 
 	@property
 	def Case(self):
@@ -31,12 +31,12 @@ class ClaimNonReceiptV10(base_types._BaseFieldType):
 
 	@Case.setter
 	def Case(self, value):
-		self._Case = value if type(value) != base_types.auto else self.make_default("Case")
+		self._Case = value if value is not None else base_types.UninitialisedField(self, 'Case', Case6, False)
 
 	@Case.deleter
 	def Case(self):
 		del self._Case
-		self._Case = None
+		self._Case = base_types.UninitialisedField(self, 'Case', Case6, False)
 
 	@property
 	def CoverDtls(self):
@@ -44,12 +44,12 @@ class ClaimNonReceiptV10(base_types._BaseFieldType):
 
 	@CoverDtls.setter
 	def CoverDtls(self, value):
-		self._CoverDtls = value if type(value) != base_types.auto else self.make_default("CoverDtls")
+		self._CoverDtls = value if value is not None else base_types.UninitialisedField(self, 'CoverDtls', MissingCover6, False)
 
 	@CoverDtls.deleter
 	def CoverDtls(self):
 		del self._CoverDtls
-		self._CoverDtls = None
+		self._CoverDtls = base_types.UninitialisedField(self, 'CoverDtls', MissingCover6, False)
 
 	@property
 	def InstrForAssgne(self):
@@ -57,12 +57,12 @@ class ClaimNonReceiptV10(base_types._BaseFieldType):
 
 	@InstrForAssgne.setter
 	def InstrForAssgne(self, value):
-		self._InstrForAssgne = value if type(value) != base_types.auto else self.make_default("InstrForAssgne")
+		self._InstrForAssgne = value if value is not None else base_types.UninitialisedField(self, 'InstrForAssgne', InstructionForAssignee1, False)
 
 	@InstrForAssgne.deleter
 	def InstrForAssgne(self):
 		del self._InstrForAssgne
-		self._InstrForAssgne = None
+		self._InstrForAssgne = base_types.UninitialisedField(self, 'InstrForAssgne', InstructionForAssignee1, False)
 
 	@property
 	def SplmtryData(self):
@@ -70,12 +70,12 @@ class ClaimNonReceiptV10(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def Undrlyg(self):
@@ -83,12 +83,12 @@ class ClaimNonReceiptV10(base_types._BaseFieldType):
 
 	@Undrlyg.setter
 	def Undrlyg(self, value):
-		self._Undrlyg = value if type(value) != base_types.auto else self.make_default("Undrlyg")
+		self._Undrlyg = value if value is not None else base_types.UninitialisedField(self, 'Undrlyg', UnderlyingTransaction8Choice, False)
 
 	@Undrlyg.deleter
 	def Undrlyg(self):
 		del self._Undrlyg
-		self._Undrlyg = None
+		self._Undrlyg = base_types.UninitialisedField(self, 'Undrlyg', UnderlyingTransaction8Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Assgnmt', type=CaseAssignment6, min=1, max=1, mutex_group=None, array=False),

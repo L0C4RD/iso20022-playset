@@ -2,20 +2,20 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AssignmentMethod2Choice import AssignmentMethod2Choice
-from ._BaseOneRate import BaseOneRate
-from ._DateTimePeriod1Choice import DateTimePeriod1Choice
-from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
-from ._ISODateTime import ISODateTime
-from ._Max4AlphaNumericText import Max4AlphaNumericText
-from ._Number import Number
-from ._OptionParty3Choice import OptionParty3Choice
-from ._OptionStyle1Choice import OptionStyle1Choice
-from ._OptionType8Choice import OptionType8Choice
-from ._Price8 import Price8
-from ._SettleStyle2Choice import SettleStyle2Choice
-from ._Standardisation3Choice import Standardisation3Choice
-from ._UnderlyingAttributes4 import UnderlyingAttributes4
+from . import AssignmentMethod2Choice
+from . import BaseOneRate
+from . import DateTimePeriod1Choice
+from . import FinancialInstrumentQuantity1Choice
+from . import ISODateTime
+from . import Max4AlphaNumericText
+from . import Number
+from . import OptionParty3Choice
+from . import OptionStyle1Choice
+from . import OptionType8Choice
+from . import Price8
+from . import SettleStyle2Choice
+from . import Standardisation3Choice
+from . import UnderlyingAttributes4
 
 class Option15(base_types._BaseFieldType):
 
@@ -26,12 +26,12 @@ class Option15(base_types._BaseFieldType):
 
 	@AddtlUndrlygAttrbts.setter
 	def AddtlUndrlygAttrbts(self, value):
-		self._AddtlUndrlygAttrbts = value if type(value) != base_types.auto else self.make_default("AddtlUndrlygAttrbts")
+		self._AddtlUndrlygAttrbts = value if value is not None else base_types.UninitialisedField(self, 'AddtlUndrlygAttrbts', UnderlyingAttributes4, True)
 
 	@AddtlUndrlygAttrbts.deleter
 	def AddtlUndrlygAttrbts(self):
 		del self._AddtlUndrlygAttrbts
-		self._AddtlUndrlygAttrbts = None
+		self._AddtlUndrlygAttrbts = base_types.UninitialisedField(self, 'AddtlUndrlygAttrbts', UnderlyingAttributes4, True)
 
 	@property
 	def ConvsDt(self):
@@ -39,12 +39,12 @@ class Option15(base_types._BaseFieldType):
 
 	@ConvsDt.setter
 	def ConvsDt(self, value):
-		self._ConvsDt = value if type(value) != base_types.auto else self.make_default("ConvsDt")
+		self._ConvsDt = value if value is not None else base_types.UninitialisedField(self, 'ConvsDt', ISODateTime, False)
 
 	@ConvsDt.deleter
 	def ConvsDt(self):
 		del self._ConvsDt
-		self._ConvsDt = None
+		self._ConvsDt = base_types.UninitialisedField(self, 'ConvsDt', ISODateTime, False)
 
 	@property
 	def ConvsPrd(self):
@@ -52,12 +52,12 @@ class Option15(base_types._BaseFieldType):
 
 	@ConvsPrd.setter
 	def ConvsPrd(self, value):
-		self._ConvsPrd = value if type(value) != base_types.auto else self.make_default("ConvsPrd")
+		self._ConvsPrd = value if value is not None else base_types.UninitialisedField(self, 'ConvsPrd', DateTimePeriod1Choice, False)
 
 	@ConvsPrd.deleter
 	def ConvsPrd(self):
 		del self._ConvsPrd
-		self._ConvsPrd = None
+		self._ConvsPrd = base_types.UninitialisedField(self, 'ConvsPrd', DateTimePeriod1Choice, False)
 
 	@property
 	def CtrctSz(self):
@@ -65,12 +65,12 @@ class Option15(base_types._BaseFieldType):
 
 	@CtrctSz.setter
 	def CtrctSz(self, value):
-		self._CtrctSz = value if type(value) != base_types.auto else self.make_default("CtrctSz")
+		self._CtrctSz = value if value is not None else base_types.UninitialisedField(self, 'CtrctSz', BaseOneRate, False)
 
 	@CtrctSz.deleter
 	def CtrctSz(self):
 		del self._CtrctSz
-		self._CtrctSz = None
+		self._CtrctSz = base_types.UninitialisedField(self, 'CtrctSz', BaseOneRate, False)
 
 	@property
 	def InstrmAssgnmtMtd(self):
@@ -78,12 +78,12 @@ class Option15(base_types._BaseFieldType):
 
 	@InstrmAssgnmtMtd.setter
 	def InstrmAssgnmtMtd(self, value):
-		self._InstrmAssgnmtMtd = value if type(value) != base_types.auto else self.make_default("InstrmAssgnmtMtd")
+		self._InstrmAssgnmtMtd = value if value is not None else base_types.UninitialisedField(self, 'InstrmAssgnmtMtd', AssignmentMethod2Choice, False)
 
 	@InstrmAssgnmtMtd.deleter
 	def InstrmAssgnmtMtd(self):
 		del self._InstrmAssgnmtMtd
-		self._InstrmAssgnmtMtd = None
+		self._InstrmAssgnmtMtd = base_types.UninitialisedField(self, 'InstrmAssgnmtMtd', AssignmentMethod2Choice, False)
 
 	@property
 	def MinExrcblQty(self):
@@ -91,12 +91,12 @@ class Option15(base_types._BaseFieldType):
 
 	@MinExrcblQty.setter
 	def MinExrcblQty(self, value):
-		self._MinExrcblQty = value if type(value) != base_types.auto else self.make_default("MinExrcblQty")
+		self._MinExrcblQty = value if value is not None else base_types.UninitialisedField(self, 'MinExrcblQty', FinancialInstrumentQuantity1Choice, False)
 
 	@MinExrcblQty.deleter
 	def MinExrcblQty(self):
 		del self._MinExrcblQty
-		self._MinExrcblQty = None
+		self._MinExrcblQty = base_types.UninitialisedField(self, 'MinExrcblQty', FinancialInstrumentQuantity1Choice, False)
 
 	@property
 	def OptnSttlmStyle(self):
@@ -104,12 +104,12 @@ class Option15(base_types._BaseFieldType):
 
 	@OptnSttlmStyle.setter
 	def OptnSttlmStyle(self, value):
-		self._OptnSttlmStyle = value if type(value) != base_types.auto else self.make_default("OptnSttlmStyle")
+		self._OptnSttlmStyle = value if value is not None else base_types.UninitialisedField(self, 'OptnSttlmStyle', SettleStyle2Choice, False)
 
 	@OptnSttlmStyle.deleter
 	def OptnSttlmStyle(self):
 		del self._OptnSttlmStyle
-		self._OptnSttlmStyle = None
+		self._OptnSttlmStyle = base_types.UninitialisedField(self, 'OptnSttlmStyle', SettleStyle2Choice, False)
 
 	@property
 	def OptnStyle(self):
@@ -117,12 +117,12 @@ class Option15(base_types._BaseFieldType):
 
 	@OptnStyle.setter
 	def OptnStyle(self, value):
-		self._OptnStyle = value if type(value) != base_types.auto else self.make_default("OptnStyle")
+		self._OptnStyle = value if value is not None else base_types.UninitialisedField(self, 'OptnStyle', OptionStyle1Choice, False)
 
 	@OptnStyle.deleter
 	def OptnStyle(self):
 		del self._OptnStyle
-		self._OptnStyle = None
+		self._OptnStyle = base_types.UninitialisedField(self, 'OptnStyle', OptionStyle1Choice, False)
 
 	@property
 	def OptnTp(self):
@@ -130,12 +130,12 @@ class Option15(base_types._BaseFieldType):
 
 	@OptnTp.setter
 	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != base_types.auto else self.make_default("OptnTp")
+		self._OptnTp = value if value is not None else base_types.UninitialisedField(self, 'OptnTp', OptionType8Choice, False)
 
 	@OptnTp.deleter
 	def OptnTp(self):
 		del self._OptnTp
-		self._OptnTp = None
+		self._OptnTp = base_types.UninitialisedField(self, 'OptnTp', OptionType8Choice, False)
 
 	@property
 	def Stdstn(self):
@@ -143,12 +143,12 @@ class Option15(base_types._BaseFieldType):
 
 	@Stdstn.setter
 	def Stdstn(self, value):
-		self._Stdstn = value if type(value) != base_types.auto else self.make_default("Stdstn")
+		self._Stdstn = value if value is not None else base_types.UninitialisedField(self, 'Stdstn', Standardisation3Choice, False)
 
 	@Stdstn.deleter
 	def Stdstn(self):
 		del self._Stdstn
-		self._Stdstn = None
+		self._Stdstn = base_types.UninitialisedField(self, 'Stdstn', Standardisation3Choice, False)
 
 	@property
 	def StrkMltplr(self):
@@ -156,12 +156,12 @@ class Option15(base_types._BaseFieldType):
 
 	@StrkMltplr.setter
 	def StrkMltplr(self, value):
-		self._StrkMltplr = value if type(value) != base_types.auto else self.make_default("StrkMltplr")
+		self._StrkMltplr = value if value is not None else base_types.UninitialisedField(self, 'StrkMltplr', Number, False)
 
 	@StrkMltplr.deleter
 	def StrkMltplr(self):
 		del self._StrkMltplr
-		self._StrkMltplr = None
+		self._StrkMltplr = base_types.UninitialisedField(self, 'StrkMltplr', Number, False)
 
 	@property
 	def StrkPric(self):
@@ -169,12 +169,12 @@ class Option15(base_types._BaseFieldType):
 
 	@StrkPric.setter
 	def StrkPric(self, value):
-		self._StrkPric = value if type(value) != base_types.auto else self.make_default("StrkPric")
+		self._StrkPric = value if value is not None else base_types.UninitialisedField(self, 'StrkPric', Price8, False)
 
 	@StrkPric.deleter
 	def StrkPric(self):
 		del self._StrkPric
-		self._StrkPric = None
+		self._StrkPric = base_types.UninitialisedField(self, 'StrkPric', Price8, False)
 
 	@property
 	def StrkVal(self):
@@ -182,12 +182,12 @@ class Option15(base_types._BaseFieldType):
 
 	@StrkVal.setter
 	def StrkVal(self, value):
-		self._StrkVal = value if type(value) != base_types.auto else self.make_default("StrkVal")
+		self._StrkVal = value if value is not None else base_types.UninitialisedField(self, 'StrkVal', Number, False)
 
 	@StrkVal.deleter
 	def StrkVal(self):
 		del self._StrkVal
-		self._StrkVal = None
+		self._StrkVal = base_types.UninitialisedField(self, 'StrkVal', Number, False)
 
 	@property
 	def TradgPtyRole(self):
@@ -195,12 +195,12 @@ class Option15(base_types._BaseFieldType):
 
 	@TradgPtyRole.setter
 	def TradgPtyRole(self, value):
-		self._TradgPtyRole = value if type(value) != base_types.auto else self.make_default("TradgPtyRole")
+		self._TradgPtyRole = value if value is not None else base_types.UninitialisedField(self, 'TradgPtyRole', OptionParty3Choice, False)
 
 	@TradgPtyRole.deleter
 	def TradgPtyRole(self):
 		del self._TradgPtyRole
-		self._TradgPtyRole = None
+		self._TradgPtyRole = base_types.UninitialisedField(self, 'TradgPtyRole', OptionParty3Choice, False)
 
 	@property
 	def VrsnNb(self):
@@ -208,12 +208,12 @@ class Option15(base_types._BaseFieldType):
 
 	@VrsnNb.setter
 	def VrsnNb(self, value):
-		self._VrsnNb = value if type(value) != base_types.auto else self.make_default("VrsnNb")
+		self._VrsnNb = value if value is not None else base_types.UninitialisedField(self, 'VrsnNb', Number, False)
 
 	@VrsnNb.deleter
 	def VrsnNb(self):
 		del self._VrsnNb
-		self._VrsnNb = None
+		self._VrsnNb = base_types.UninitialisedField(self, 'VrsnNb', Number, False)
 
 	@property
 	def XpryLctn(self):
@@ -221,12 +221,12 @@ class Option15(base_types._BaseFieldType):
 
 	@XpryLctn.setter
 	def XpryLctn(self, value):
-		self._XpryLctn = value if type(value) != base_types.auto else self.make_default("XpryLctn")
+		self._XpryLctn = value if value is not None else base_types.UninitialisedField(self, 'XpryLctn', Max4AlphaNumericText, False)
 
 	@XpryLctn.deleter
 	def XpryLctn(self):
 		del self._XpryLctn
-		self._XpryLctn = None
+		self._XpryLctn = base_types.UninitialisedField(self, 'XpryLctn', Max4AlphaNumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlUndrlygAttrbts', type=UnderlyingAttributes4, min=0, max=None, mutex_group=None, array=True),

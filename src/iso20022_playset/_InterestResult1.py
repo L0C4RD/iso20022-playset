@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._CollateralBalance1 import CollateralBalance1
-from ._ISODate import ISODate
-from ._InterestMethod1Code import InterestMethod1Code
+from . import ActiveCurrencyAndAmount
+from . import CollateralBalance1
+from . import ISODate
+from . import InterestMethod1Code
 
 class InterestResult1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class InterestResult1(base_types._BaseFieldType):
 
 	@ClsgCollBal.setter
 	def ClsgCollBal(self, value):
-		self._ClsgCollBal = value if type(value) != base_types.auto else self.make_default("ClsgCollBal")
+		self._ClsgCollBal = value if value is not None else base_types.UninitialisedField(self, 'ClsgCollBal', CollateralBalance1, False)
 
 	@ClsgCollBal.deleter
 	def ClsgCollBal(self):
 		del self._ClsgCollBal
-		self._ClsgCollBal = None
+		self._ClsgCollBal = base_types.UninitialisedField(self, 'ClsgCollBal', CollateralBalance1, False)
 
 	@property
 	def IntrstDueToA(self):
@@ -29,12 +29,12 @@ class InterestResult1(base_types._BaseFieldType):
 
 	@IntrstDueToA.setter
 	def IntrstDueToA(self, value):
-		self._IntrstDueToA = value if type(value) != base_types.auto else self.make_default("IntrstDueToA")
+		self._IntrstDueToA = value if value is not None else base_types.UninitialisedField(self, 'IntrstDueToA', ActiveCurrencyAndAmount, False)
 
 	@IntrstDueToA.deleter
 	def IntrstDueToA(self):
 		del self._IntrstDueToA
-		self._IntrstDueToA = None
+		self._IntrstDueToA = base_types.UninitialisedField(self, 'IntrstDueToA', ActiveCurrencyAndAmount, False)
 
 	@property
 	def IntrstDueToB(self):
@@ -42,12 +42,12 @@ class InterestResult1(base_types._BaseFieldType):
 
 	@IntrstDueToB.setter
 	def IntrstDueToB(self, value):
-		self._IntrstDueToB = value if type(value) != base_types.auto else self.make_default("IntrstDueToB")
+		self._IntrstDueToB = value if value is not None else base_types.UninitialisedField(self, 'IntrstDueToB', ActiveCurrencyAndAmount, False)
 
 	@IntrstDueToB.deleter
 	def IntrstDueToB(self):
 		del self._IntrstDueToB
-		self._IntrstDueToB = None
+		self._IntrstDueToB = base_types.UninitialisedField(self, 'IntrstDueToB', ActiveCurrencyAndAmount, False)
 
 	@property
 	def IntrstMtd(self):
@@ -55,12 +55,12 @@ class InterestResult1(base_types._BaseFieldType):
 
 	@IntrstMtd.setter
 	def IntrstMtd(self, value):
-		self._IntrstMtd = value if type(value) != base_types.auto else self.make_default("IntrstMtd")
+		self._IntrstMtd = value if value is not None else base_types.UninitialisedField(self, 'IntrstMtd', InterestMethod1Code, False)
 
 	@IntrstMtd.deleter
 	def IntrstMtd(self):
 		del self._IntrstMtd
-		self._IntrstMtd = None
+		self._IntrstMtd = base_types.UninitialisedField(self, 'IntrstMtd', InterestMethod1Code, False)
 
 	@property
 	def OpngCollBal(self):
@@ -68,12 +68,12 @@ class InterestResult1(base_types._BaseFieldType):
 
 	@OpngCollBal.setter
 	def OpngCollBal(self, value):
-		self._OpngCollBal = value if type(value) != base_types.auto else self.make_default("OpngCollBal")
+		self._OpngCollBal = value if value is not None else base_types.UninitialisedField(self, 'OpngCollBal', CollateralBalance1, False)
 
 	@OpngCollBal.deleter
 	def OpngCollBal(self):
 		del self._OpngCollBal
-		self._OpngCollBal = None
+		self._OpngCollBal = base_types.UninitialisedField(self, 'OpngCollBal', CollateralBalance1, False)
 
 	@property
 	def ValDt(self):
@@ -81,12 +81,12 @@ class InterestResult1(base_types._BaseFieldType):
 
 	@ValDt.setter
 	def ValDt(self, value):
-		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
+		self._ValDt = value if value is not None else base_types.UninitialisedField(self, 'ValDt', ISODate, False)
 
 	@ValDt.deleter
 	def ValDt(self):
 		del self._ValDt
-		self._ValDt = None
+		self._ValDt = base_types.UninitialisedField(self, 'ValDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClsgCollBal', type=CollateralBalance1, min=1, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from . import ActiveOrHistoricCurrencyAndAmount
 
 class Value(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class Value(base_types._BaseFieldType):
 
 	@AltrnCcyItm.setter
 	def AltrnCcyItm(self, value):
-		self._AltrnCcyItm = value if type(value) != base_types.auto else self.make_default("AltrnCcyItm")
+		self._AltrnCcyItm = value if value is not None else base_types.UninitialisedField(self, 'AltrnCcyItm', ActiveOrHistoricCurrencyAndAmount, True)
 
 	@AltrnCcyItm.deleter
 	def AltrnCcyItm(self):
 		del self._AltrnCcyItm
-		self._AltrnCcyItm = None
+		self._AltrnCcyItm = base_types.UninitialisedField(self, 'AltrnCcyItm', ActiveOrHistoricCurrencyAndAmount, True)
 
 	@property
 	def BaseCcyItm(self):
@@ -26,12 +26,12 @@ class Value(base_types._BaseFieldType):
 
 	@BaseCcyItm.setter
 	def BaseCcyItm(self, value):
-		self._BaseCcyItm = value if type(value) != base_types.auto else self.make_default("BaseCcyItm")
+		self._BaseCcyItm = value if value is not None else base_types.UninitialisedField(self, 'BaseCcyItm', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@BaseCcyItm.deleter
 	def BaseCcyItm(self):
 		del self._BaseCcyItm
-		self._BaseCcyItm = None
+		self._BaseCcyItm = base_types.UninitialisedField(self, 'BaseCcyItm', ActiveOrHistoricCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AltrnCcyItm', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=None, mutex_group=None, array=True),

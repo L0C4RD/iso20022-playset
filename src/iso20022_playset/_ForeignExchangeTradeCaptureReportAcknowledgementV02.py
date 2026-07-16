@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalReferences2 import AdditionalReferences2
-from ._Max35Text import Max35Text
-from ._MessageIdentification1 import MessageIdentification1
-from ._Status5Code import Status5Code
-from ._SupplementaryData1 import SupplementaryData1
+from . import AdditionalReferences2
+from . import Max35Text
+from . import MessageIdentification1
+from . import Status5Code
+from . import SupplementaryData1
 
 class ForeignExchangeTradeCaptureReportAcknowledgementV02(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class ForeignExchangeTradeCaptureReportAcknowledgementV02(base_types._BaseFieldT
 
 	@AckId.setter
 	def AckId(self, value):
-		self._AckId = value if type(value) != base_types.auto else self.make_default("AckId")
+		self._AckId = value if value is not None else base_types.UninitialisedField(self, 'AckId', MessageIdentification1, False)
 
 	@AckId.deleter
 	def AckId(self):
 		del self._AckId
-		self._AckId = None
+		self._AckId = base_types.UninitialisedField(self, 'AckId', MessageIdentification1, False)
 
 	@property
 	def DealTcktId(self):
@@ -30,12 +30,12 @@ class ForeignExchangeTradeCaptureReportAcknowledgementV02(base_types._BaseFieldT
 
 	@DealTcktId.setter
 	def DealTcktId(self, value):
-		self._DealTcktId = value if type(value) != base_types.auto else self.make_default("DealTcktId")
+		self._DealTcktId = value if value is not None else base_types.UninitialisedField(self, 'DealTcktId', Max35Text, False)
 
 	@DealTcktId.deleter
 	def DealTcktId(self):
 		del self._DealTcktId
-		self._DealTcktId = None
+		self._DealTcktId = base_types.UninitialisedField(self, 'DealTcktId', Max35Text, False)
 
 	@property
 	def Ref(self):
@@ -43,12 +43,12 @@ class ForeignExchangeTradeCaptureReportAcknowledgementV02(base_types._BaseFieldT
 
 	@Ref.setter
 	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+		self._Ref = value if value is not None else base_types.UninitialisedField(self, 'Ref', AdditionalReferences2, False)
 
 	@Ref.deleter
 	def Ref(self):
 		del self._Ref
-		self._Ref = None
+		self._Ref = base_types.UninitialisedField(self, 'Ref', AdditionalReferences2, False)
 
 	@property
 	def SplmtryData(self):
@@ -56,12 +56,12 @@ class ForeignExchangeTradeCaptureReportAcknowledgementV02(base_types._BaseFieldT
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def Sts(self):
@@ -69,12 +69,12 @@ class ForeignExchangeTradeCaptureReportAcknowledgementV02(base_types._BaseFieldT
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', Status5Code, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', Status5Code, False)
 
 	@property
 	def TradId(self):
@@ -82,12 +82,12 @@ class ForeignExchangeTradeCaptureReportAcknowledgementV02(base_types._BaseFieldT
 
 	@TradId.setter
 	def TradId(self, value):
-		self._TradId = value if type(value) != base_types.auto else self.make_default("TradId")
+		self._TradId = value if value is not None else base_types.UninitialisedField(self, 'TradId', Max35Text, False)
 
 	@TradId.deleter
 	def TradId(self):
 		del self._TradId
-		self._TradId = None
+		self._TradId = base_types.UninitialisedField(self, 'TradId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AckId', type=MessageIdentification1, min=0, max=1, mutex_group=None, array=False),

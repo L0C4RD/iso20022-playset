@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification175 import GenericIdentification175
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import GenericIdentification175
+from . import TrueFalseIndicator
 
 class NonFinancialInstitutionSector10(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class NonFinancialInstitutionSector10(base_types._BaseFieldType):
 
 	@ClrThrshld.setter
 	def ClrThrshld(self, value):
-		self._ClrThrshld = value if type(value) != base_types.auto else self.make_default("ClrThrshld")
+		self._ClrThrshld = value if value is not None else base_types.UninitialisedField(self, 'ClrThrshld', TrueFalseIndicator, False)
 
 	@ClrThrshld.deleter
 	def ClrThrshld(self):
 		del self._ClrThrshld
-		self._ClrThrshld = None
+		self._ClrThrshld = base_types.UninitialisedField(self, 'ClrThrshld', TrueFalseIndicator, False)
 
 	@property
 	def DrctlyLkdActvty(self):
@@ -27,12 +27,12 @@ class NonFinancialInstitutionSector10(base_types._BaseFieldType):
 
 	@DrctlyLkdActvty.setter
 	def DrctlyLkdActvty(self, value):
-		self._DrctlyLkdActvty = value if type(value) != base_types.auto else self.make_default("DrctlyLkdActvty")
+		self._DrctlyLkdActvty = value if value is not None else base_types.UninitialisedField(self, 'DrctlyLkdActvty', TrueFalseIndicator, False)
 
 	@DrctlyLkdActvty.deleter
 	def DrctlyLkdActvty(self):
 		del self._DrctlyLkdActvty
-		self._DrctlyLkdActvty = None
+		self._DrctlyLkdActvty = base_types.UninitialisedField(self, 'DrctlyLkdActvty', TrueFalseIndicator, False)
 
 	@property
 	def FdrlInstn(self):
@@ -40,12 +40,12 @@ class NonFinancialInstitutionSector10(base_types._BaseFieldType):
 
 	@FdrlInstn.setter
 	def FdrlInstn(self, value):
-		self._FdrlInstn = value if type(value) != base_types.auto else self.make_default("FdrlInstn")
+		self._FdrlInstn = value if value is not None else base_types.UninitialisedField(self, 'FdrlInstn', TrueFalseIndicator, False)
 
 	@FdrlInstn.deleter
 	def FdrlInstn(self):
 		del self._FdrlInstn
-		self._FdrlInstn = None
+		self._FdrlInstn = base_types.UninitialisedField(self, 'FdrlInstn', TrueFalseIndicator, False)
 
 	@property
 	def Sctr(self):
@@ -53,12 +53,12 @@ class NonFinancialInstitutionSector10(base_types._BaseFieldType):
 
 	@Sctr.setter
 	def Sctr(self, value):
-		self._Sctr = value if type(value) != base_types.auto else self.make_default("Sctr")
+		self._Sctr = value if value is not None else base_types.UninitialisedField(self, 'Sctr', GenericIdentification175, True)
 
 	@Sctr.deleter
 	def Sctr(self):
 		del self._Sctr
-		self._Sctr = None
+		self._Sctr = base_types.UninitialisedField(self, 'Sctr', GenericIdentification175, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClrThrshld', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),

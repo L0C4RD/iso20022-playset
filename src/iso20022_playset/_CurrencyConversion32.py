@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMExchangeRateComponent1 import ATMExchangeRateComponent1
-from ._ActionMessage5 import ActionMessage5
-from ._Commission18 import Commission18
-from ._Commission19 import Commission19
-from ._CurrencyDetails2 import CurrencyDetails2
-from ._ISODateTime import ISODateTime
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max35Text import Max35Text
-from ._PercentageRate import PercentageRate
+from . import ATMExchangeRateComponent1
+from . import ActionMessage5
+from . import Commission18
+from . import Commission19
+from . import CurrencyDetails2
+from . import ISODateTime
+from . import ImpliedCurrencyAndAmount
+from . import Max35Text
+from . import PercentageRate
 
 class CurrencyConversion32(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class CurrencyConversion32(base_types._BaseFieldType):
 
 	@CcyConvsId.setter
 	def CcyConvsId(self, value):
-		self._CcyConvsId = value if type(value) != base_types.auto else self.make_default("CcyConvsId")
+		self._CcyConvsId = value if value is not None else base_types.UninitialisedField(self, 'CcyConvsId', Max35Text, False)
 
 	@CcyConvsId.deleter
 	def CcyConvsId(self):
 		del self._CcyConvsId
-		self._CcyConvsId = None
+		self._CcyConvsId = base_types.UninitialisedField(self, 'CcyConvsId', Max35Text, False)
 
 	@property
 	def ComssnDtls(self):
@@ -34,12 +34,12 @@ class CurrencyConversion32(base_types._BaseFieldType):
 
 	@ComssnDtls.setter
 	def ComssnDtls(self, value):
-		self._ComssnDtls = value if type(value) != base_types.auto else self.make_default("ComssnDtls")
+		self._ComssnDtls = value if value is not None else base_types.UninitialisedField(self, 'ComssnDtls', Commission19, True)
 
 	@ComssnDtls.deleter
 	def ComssnDtls(self):
 		del self._ComssnDtls
-		self._ComssnDtls = None
+		self._ComssnDtls = base_types.UninitialisedField(self, 'ComssnDtls', Commission19, True)
 
 	@property
 	def DclrtnDtls(self):
@@ -47,12 +47,12 @@ class CurrencyConversion32(base_types._BaseFieldType):
 
 	@DclrtnDtls.setter
 	def DclrtnDtls(self, value):
-		self._DclrtnDtls = value if type(value) != base_types.auto else self.make_default("DclrtnDtls")
+		self._DclrtnDtls = value if value is not None else base_types.UninitialisedField(self, 'DclrtnDtls', ActionMessage5, False)
 
 	@DclrtnDtls.deleter
 	def DclrtnDtls(self):
 		del self._DclrtnDtls
-		self._DclrtnDtls = None
+		self._DclrtnDtls = base_types.UninitialisedField(self, 'DclrtnDtls', ActionMessage5, False)
 
 	@property
 	def MrkUpDtls(self):
@@ -60,12 +60,12 @@ class CurrencyConversion32(base_types._BaseFieldType):
 
 	@MrkUpDtls.setter
 	def MrkUpDtls(self, value):
-		self._MrkUpDtls = value if type(value) != base_types.auto else self.make_default("MrkUpDtls")
+		self._MrkUpDtls = value if value is not None else base_types.UninitialisedField(self, 'MrkUpDtls', Commission18, True)
 
 	@MrkUpDtls.deleter
 	def MrkUpDtls(self):
 		del self._MrkUpDtls
-		self._MrkUpDtls = None
+		self._MrkUpDtls = base_types.UninitialisedField(self, 'MrkUpDtls', Commission18, True)
 
 	@property
 	def NvrtdXchgRate(self):
@@ -73,12 +73,12 @@ class CurrencyConversion32(base_types._BaseFieldType):
 
 	@NvrtdXchgRate.setter
 	def NvrtdXchgRate(self, value):
-		self._NvrtdXchgRate = value if type(value) != base_types.auto else self.make_default("NvrtdXchgRate")
+		self._NvrtdXchgRate = value if value is not None else base_types.UninitialisedField(self, 'NvrtdXchgRate', PercentageRate, False)
 
 	@NvrtdXchgRate.deleter
 	def NvrtdXchgRate(self):
 		del self._NvrtdXchgRate
-		self._NvrtdXchgRate = None
+		self._NvrtdXchgRate = base_types.UninitialisedField(self, 'NvrtdXchgRate', PercentageRate, False)
 
 	@property
 	def OrgnlAmt(self):
@@ -86,12 +86,12 @@ class CurrencyConversion32(base_types._BaseFieldType):
 
 	@OrgnlAmt.setter
 	def OrgnlAmt(self, value):
-		self._OrgnlAmt = value if type(value) != base_types.auto else self.make_default("OrgnlAmt")
+		self._OrgnlAmt = value if value is not None else base_types.UninitialisedField(self, 'OrgnlAmt', ImpliedCurrencyAndAmount, False)
 
 	@OrgnlAmt.deleter
 	def OrgnlAmt(self):
 		del self._OrgnlAmt
-		self._OrgnlAmt = None
+		self._OrgnlAmt = base_types.UninitialisedField(self, 'OrgnlAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def QtnDt(self):
@@ -99,12 +99,12 @@ class CurrencyConversion32(base_types._BaseFieldType):
 
 	@QtnDt.setter
 	def QtnDt(self, value):
-		self._QtnDt = value if type(value) != base_types.auto else self.make_default("QtnDt")
+		self._QtnDt = value if value is not None else base_types.UninitialisedField(self, 'QtnDt', ISODateTime, False)
 
 	@QtnDt.deleter
 	def QtnDt(self):
 		del self._QtnDt
-		self._QtnDt = None
+		self._QtnDt = base_types.UninitialisedField(self, 'QtnDt', ISODateTime, False)
 
 	@property
 	def RefRate(self):
@@ -112,12 +112,12 @@ class CurrencyConversion32(base_types._BaseFieldType):
 
 	@RefRate.setter
 	def RefRate(self, value):
-		self._RefRate = value if type(value) != base_types.auto else self.make_default("RefRate")
+		self._RefRate = value if value is not None else base_types.UninitialisedField(self, 'RefRate', ATMExchangeRateComponent1, False)
 
 	@RefRate.deleter
 	def RefRate(self):
 		del self._RefRate
-		self._RefRate = None
+		self._RefRate = base_types.UninitialisedField(self, 'RefRate', ATMExchangeRateComponent1, False)
 
 	@property
 	def RsltgAmt(self):
@@ -125,12 +125,12 @@ class CurrencyConversion32(base_types._BaseFieldType):
 
 	@RsltgAmt.setter
 	def RsltgAmt(self, value):
-		self._RsltgAmt = value if type(value) != base_types.auto else self.make_default("RsltgAmt")
+		self._RsltgAmt = value if value is not None else base_types.UninitialisedField(self, 'RsltgAmt', ImpliedCurrencyAndAmount, False)
 
 	@RsltgAmt.deleter
 	def RsltgAmt(self):
 		del self._RsltgAmt
-		self._RsltgAmt = None
+		self._RsltgAmt = base_types.UninitialisedField(self, 'RsltgAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def SrcCcy(self):
@@ -138,12 +138,12 @@ class CurrencyConversion32(base_types._BaseFieldType):
 
 	@SrcCcy.setter
 	def SrcCcy(self, value):
-		self._SrcCcy = value if type(value) != base_types.auto else self.make_default("SrcCcy")
+		self._SrcCcy = value if value is not None else base_types.UninitialisedField(self, 'SrcCcy', CurrencyDetails2, False)
 
 	@SrcCcy.deleter
 	def SrcCcy(self):
 		del self._SrcCcy
-		self._SrcCcy = None
+		self._SrcCcy = base_types.UninitialisedField(self, 'SrcCcy', CurrencyDetails2, False)
 
 	@property
 	def TrgtCcy(self):
@@ -151,12 +151,12 @@ class CurrencyConversion32(base_types._BaseFieldType):
 
 	@TrgtCcy.setter
 	def TrgtCcy(self, value):
-		self._TrgtCcy = value if type(value) != base_types.auto else self.make_default("TrgtCcy")
+		self._TrgtCcy = value if value is not None else base_types.UninitialisedField(self, 'TrgtCcy', CurrencyDetails2, False)
 
 	@TrgtCcy.deleter
 	def TrgtCcy(self):
 		del self._TrgtCcy
-		self._TrgtCcy = None
+		self._TrgtCcy = base_types.UninitialisedField(self, 'TrgtCcy', CurrencyDetails2, False)
 
 	@property
 	def VldUntil(self):
@@ -164,12 +164,12 @@ class CurrencyConversion32(base_types._BaseFieldType):
 
 	@VldUntil.setter
 	def VldUntil(self, value):
-		self._VldUntil = value if type(value) != base_types.auto else self.make_default("VldUntil")
+		self._VldUntil = value if value is not None else base_types.UninitialisedField(self, 'VldUntil', ISODateTime, False)
 
 	@VldUntil.deleter
 	def VldUntil(self):
 		del self._VldUntil
-		self._VldUntil = None
+		self._VldUntil = base_types.UninitialisedField(self, 'VldUntil', ISODateTime, False)
 
 	@property
 	def XchgRate(self):
@@ -177,12 +177,12 @@ class CurrencyConversion32(base_types._BaseFieldType):
 
 	@XchgRate.setter
 	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != base_types.auto else self.make_default("XchgRate")
+		self._XchgRate = value if value is not None else base_types.UninitialisedField(self, 'XchgRate', PercentageRate, False)
 
 	@XchgRate.deleter
 	def XchgRate(self):
 		del self._XchgRate
-		self._XchgRate = None
+		self._XchgRate = base_types.UninitialisedField(self, 'XchgRate', PercentageRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CcyConvsId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

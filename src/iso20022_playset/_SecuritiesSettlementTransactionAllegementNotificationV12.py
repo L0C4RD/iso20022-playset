@@ -2,21 +2,21 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection88 import AmountAndDirection88
-from ._CashParties42 import CashParties42
-from ._DigitalPaymentSettlement1 import DigitalPaymentSettlement1
-from ._FinancialInstrumentAttributes111 import FinancialInstrumentAttributes111
-from ._Max35Text import Max35Text
-from ._OtherAmounts32 import OtherAmounts32
-from ._OtherParties34 import OtherParties34
-from ._QuantityAndAccount116 import QuantityAndAccount116
-from ._SecuritiesFinancingTransactionDetails55 import SecuritiesFinancingTransactionDetails55
-from ._SecuritiesTradeDetails151 import SecuritiesTradeDetails151
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._SettlementDetails224 import SettlementDetails224
-from ._SettlementParties126 import SettlementParties126
-from ._SettlementTypeAndAdditionalParameters12 import SettlementTypeAndAdditionalParameters12
-from ._SupplementaryData1 import SupplementaryData1
+from . import AmountAndDirection88
+from . import CashParties42
+from . import DigitalPaymentSettlement1
+from . import FinancialInstrumentAttributes111
+from . import Max35Text
+from . import OtherAmounts32
+from . import OtherParties34
+from . import QuantityAndAccount116
+from . import SecuritiesFinancingTransactionDetails55
+from . import SecuritiesTradeDetails151
+from . import SecurityIdentification19
+from . import SettlementDetails224
+from . import SettlementParties126
+from . import SettlementTypeAndAdditionalParameters12
+from . import SupplementaryData1
 
 class SecuritiesSettlementTransactionAllegementNotificationV12(base_types._BaseFieldType):
 
@@ -27,12 +27,12 @@ class SecuritiesSettlementTransactionAllegementNotificationV12(base_types._BaseF
 
 	@CshPties.setter
 	def CshPties(self, value):
-		self._CshPties = value if type(value) != base_types.auto else self.make_default("CshPties")
+		self._CshPties = value if value is not None else base_types.UninitialisedField(self, 'CshPties', CashParties42, False)
 
 	@CshPties.deleter
 	def CshPties(self):
 		del self._CshPties
-		self._CshPties = None
+		self._CshPties = base_types.UninitialisedField(self, 'CshPties', CashParties42, False)
 
 	@property
 	def CtrPtyMktInfrstrctrTxId(self):
@@ -40,12 +40,12 @@ class SecuritiesSettlementTransactionAllegementNotificationV12(base_types._BaseF
 
 	@CtrPtyMktInfrstrctrTxId.setter
 	def CtrPtyMktInfrstrctrTxId(self, value):
-		self._CtrPtyMktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("CtrPtyMktInfrstrctrTxId")
+		self._CtrPtyMktInfrstrctrTxId = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyMktInfrstrctrTxId', Max35Text, False)
 
 	@CtrPtyMktInfrstrctrTxId.deleter
 	def CtrPtyMktInfrstrctrTxId(self):
 		del self._CtrPtyMktInfrstrctrTxId
-		self._CtrPtyMktInfrstrctrTxId = None
+		self._CtrPtyMktInfrstrctrTxId = base_types.UninitialisedField(self, 'CtrPtyMktInfrstrctrTxId', Max35Text, False)
 
 	@property
 	def DgtlPmtSttlm(self):
@@ -53,12 +53,12 @@ class SecuritiesSettlementTransactionAllegementNotificationV12(base_types._BaseF
 
 	@DgtlPmtSttlm.setter
 	def DgtlPmtSttlm(self, value):
-		self._DgtlPmtSttlm = value if type(value) != base_types.auto else self.make_default("DgtlPmtSttlm")
+		self._DgtlPmtSttlm = value if value is not None else base_types.UninitialisedField(self, 'DgtlPmtSttlm', DigitalPaymentSettlement1, True)
 
 	@DgtlPmtSttlm.deleter
 	def DgtlPmtSttlm(self):
 		del self._DgtlPmtSttlm
-		self._DgtlPmtSttlm = None
+		self._DgtlPmtSttlm = base_types.UninitialisedField(self, 'DgtlPmtSttlm', DigitalPaymentSettlement1, True)
 
 	@property
 	def DlvrgSttlmPties(self):
@@ -66,12 +66,12 @@ class SecuritiesSettlementTransactionAllegementNotificationV12(base_types._BaseF
 
 	@DlvrgSttlmPties.setter
 	def DlvrgSttlmPties(self, value):
-		self._DlvrgSttlmPties = value if type(value) != base_types.auto else self.make_default("DlvrgSttlmPties")
+		self._DlvrgSttlmPties = value if value is not None else base_types.UninitialisedField(self, 'DlvrgSttlmPties', SettlementParties126, False)
 
 	@DlvrgSttlmPties.deleter
 	def DlvrgSttlmPties(self):
 		del self._DlvrgSttlmPties
-		self._DlvrgSttlmPties = None
+		self._DlvrgSttlmPties = base_types.UninitialisedField(self, 'DlvrgSttlmPties', SettlementParties126, False)
 
 	@property
 	def FinInstrmAttrbts(self):
@@ -79,12 +79,12 @@ class SecuritiesSettlementTransactionAllegementNotificationV12(base_types._BaseF
 
 	@FinInstrmAttrbts.setter
 	def FinInstrmAttrbts(self, value):
-		self._FinInstrmAttrbts = value if type(value) != base_types.auto else self.make_default("FinInstrmAttrbts")
+		self._FinInstrmAttrbts = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmAttrbts', FinancialInstrumentAttributes111, False)
 
 	@FinInstrmAttrbts.deleter
 	def FinInstrmAttrbts(self):
 		del self._FinInstrmAttrbts
-		self._FinInstrmAttrbts = None
+		self._FinInstrmAttrbts = base_types.UninitialisedField(self, 'FinInstrmAttrbts', FinancialInstrumentAttributes111, False)
 
 	@property
 	def FinInstrmId(self):
@@ -92,12 +92,12 @@ class SecuritiesSettlementTransactionAllegementNotificationV12(base_types._BaseF
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
 		del self._FinInstrmId
-		self._FinInstrmId = None
+		self._FinInstrmId = base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@property
 	def MktInfrstrctrTxId(self):
@@ -105,12 +105,12 @@ class SecuritiesSettlementTransactionAllegementNotificationV12(base_types._BaseF
 
 	@MktInfrstrctrTxId.setter
 	def MktInfrstrctrTxId(self, value):
-		self._MktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("MktInfrstrctrTxId")
+		self._MktInfrstrctrTxId = value if value is not None else base_types.UninitialisedField(self, 'MktInfrstrctrTxId', Max35Text, False)
 
 	@MktInfrstrctrTxId.deleter
 	def MktInfrstrctrTxId(self):
 		del self._MktInfrstrctrTxId
-		self._MktInfrstrctrTxId = None
+		self._MktInfrstrctrTxId = base_types.UninitialisedField(self, 'MktInfrstrctrTxId', Max35Text, False)
 
 	@property
 	def OthrAmts(self):
@@ -118,12 +118,12 @@ class SecuritiesSettlementTransactionAllegementNotificationV12(base_types._BaseF
 
 	@OthrAmts.setter
 	def OthrAmts(self, value):
-		self._OthrAmts = value if type(value) != base_types.auto else self.make_default("OthrAmts")
+		self._OthrAmts = value if value is not None else base_types.UninitialisedField(self, 'OthrAmts', OtherAmounts32, False)
 
 	@OthrAmts.deleter
 	def OthrAmts(self):
 		del self._OthrAmts
-		self._OthrAmts = None
+		self._OthrAmts = base_types.UninitialisedField(self, 'OthrAmts', OtherAmounts32, False)
 
 	@property
 	def OthrBizPties(self):
@@ -131,12 +131,12 @@ class SecuritiesSettlementTransactionAllegementNotificationV12(base_types._BaseF
 
 	@OthrBizPties.setter
 	def OthrBizPties(self, value):
-		self._OthrBizPties = value if type(value) != base_types.auto else self.make_default("OthrBizPties")
+		self._OthrBizPties = value if value is not None else base_types.UninitialisedField(self, 'OthrBizPties', OtherParties34, False)
 
 	@OthrBizPties.deleter
 	def OthrBizPties(self):
 		del self._OthrBizPties
-		self._OthrBizPties = None
+		self._OthrBizPties = base_types.UninitialisedField(self, 'OthrBizPties', OtherParties34, False)
 
 	@property
 	def QtyAndAcctDtls(self):
@@ -144,12 +144,12 @@ class SecuritiesSettlementTransactionAllegementNotificationV12(base_types._BaseF
 
 	@QtyAndAcctDtls.setter
 	def QtyAndAcctDtls(self, value):
-		self._QtyAndAcctDtls = value if type(value) != base_types.auto else self.make_default("QtyAndAcctDtls")
+		self._QtyAndAcctDtls = value if value is not None else base_types.UninitialisedField(self, 'QtyAndAcctDtls', QuantityAndAccount116, False)
 
 	@QtyAndAcctDtls.deleter
 	def QtyAndAcctDtls(self):
 		del self._QtyAndAcctDtls
-		self._QtyAndAcctDtls = None
+		self._QtyAndAcctDtls = base_types.UninitialisedField(self, 'QtyAndAcctDtls', QuantityAndAccount116, False)
 
 	@property
 	def RcvgSttlmPties(self):
@@ -157,12 +157,12 @@ class SecuritiesSettlementTransactionAllegementNotificationV12(base_types._BaseF
 
 	@RcvgSttlmPties.setter
 	def RcvgSttlmPties(self, value):
-		self._RcvgSttlmPties = value if type(value) != base_types.auto else self.make_default("RcvgSttlmPties")
+		self._RcvgSttlmPties = value if value is not None else base_types.UninitialisedField(self, 'RcvgSttlmPties', SettlementParties126, False)
 
 	@RcvgSttlmPties.deleter
 	def RcvgSttlmPties(self):
 		del self._RcvgSttlmPties
-		self._RcvgSttlmPties = None
+		self._RcvgSttlmPties = base_types.UninitialisedField(self, 'RcvgSttlmPties', SettlementParties126, False)
 
 	@property
 	def SctiesFincgDtls(self):
@@ -170,12 +170,12 @@ class SecuritiesSettlementTransactionAllegementNotificationV12(base_types._BaseF
 
 	@SctiesFincgDtls.setter
 	def SctiesFincgDtls(self, value):
-		self._SctiesFincgDtls = value if type(value) != base_types.auto else self.make_default("SctiesFincgDtls")
+		self._SctiesFincgDtls = value if value is not None else base_types.UninitialisedField(self, 'SctiesFincgDtls', SecuritiesFinancingTransactionDetails55, False)
 
 	@SctiesFincgDtls.deleter
 	def SctiesFincgDtls(self):
 		del self._SctiesFincgDtls
-		self._SctiesFincgDtls = None
+		self._SctiesFincgDtls = base_types.UninitialisedField(self, 'SctiesFincgDtls', SecuritiesFinancingTransactionDetails55, False)
 
 	@property
 	def SplmtryData(self):
@@ -183,12 +183,12 @@ class SecuritiesSettlementTransactionAllegementNotificationV12(base_types._BaseF
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def SttlmAmt(self):
@@ -196,12 +196,12 @@ class SecuritiesSettlementTransactionAllegementNotificationV12(base_types._BaseF
 
 	@SttlmAmt.setter
 	def SttlmAmt(self, value):
-		self._SttlmAmt = value if type(value) != base_types.auto else self.make_default("SttlmAmt")
+		self._SttlmAmt = value if value is not None else base_types.UninitialisedField(self, 'SttlmAmt', AmountAndDirection88, False)
 
 	@SttlmAmt.deleter
 	def SttlmAmt(self):
 		del self._SttlmAmt
-		self._SttlmAmt = None
+		self._SttlmAmt = base_types.UninitialisedField(self, 'SttlmAmt', AmountAndDirection88, False)
 
 	@property
 	def SttlmParams(self):
@@ -209,12 +209,12 @@ class SecuritiesSettlementTransactionAllegementNotificationV12(base_types._BaseF
 
 	@SttlmParams.setter
 	def SttlmParams(self, value):
-		self._SttlmParams = value if type(value) != base_types.auto else self.make_default("SttlmParams")
+		self._SttlmParams = value if value is not None else base_types.UninitialisedField(self, 'SttlmParams', SettlementDetails224, False)
 
 	@SttlmParams.deleter
 	def SttlmParams(self):
 		del self._SttlmParams
-		self._SttlmParams = None
+		self._SttlmParams = base_types.UninitialisedField(self, 'SttlmParams', SettlementDetails224, False)
 
 	@property
 	def SttlmTpAndAddtlParams(self):
@@ -222,12 +222,12 @@ class SecuritiesSettlementTransactionAllegementNotificationV12(base_types._BaseF
 
 	@SttlmTpAndAddtlParams.setter
 	def SttlmTpAndAddtlParams(self, value):
-		self._SttlmTpAndAddtlParams = value if type(value) != base_types.auto else self.make_default("SttlmTpAndAddtlParams")
+		self._SttlmTpAndAddtlParams = value if value is not None else base_types.UninitialisedField(self, 'SttlmTpAndAddtlParams', SettlementTypeAndAdditionalParameters12, False)
 
 	@SttlmTpAndAddtlParams.deleter
 	def SttlmTpAndAddtlParams(self):
 		del self._SttlmTpAndAddtlParams
-		self._SttlmTpAndAddtlParams = None
+		self._SttlmTpAndAddtlParams = base_types.UninitialisedField(self, 'SttlmTpAndAddtlParams', SettlementTypeAndAdditionalParameters12, False)
 
 	@property
 	def TradDtls(self):
@@ -235,12 +235,12 @@ class SecuritiesSettlementTransactionAllegementNotificationV12(base_types._BaseF
 
 	@TradDtls.setter
 	def TradDtls(self, value):
-		self._TradDtls = value if type(value) != base_types.auto else self.make_default("TradDtls")
+		self._TradDtls = value if value is not None else base_types.UninitialisedField(self, 'TradDtls', SecuritiesTradeDetails151, False)
 
 	@TradDtls.deleter
 	def TradDtls(self):
 		del self._TradDtls
-		self._TradDtls = None
+		self._TradDtls = base_types.UninitialisedField(self, 'TradDtls', SecuritiesTradeDetails151, False)
 
 	@property
 	def TxId(self):
@@ -248,12 +248,12 @@ class SecuritiesSettlementTransactionAllegementNotificationV12(base_types._BaseF
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshPties', type=CashParties42, min=0, max=1, mutex_group=None, array=False),

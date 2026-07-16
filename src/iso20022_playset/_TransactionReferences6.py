@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._ProprietaryReference1 import ProprietaryReference1
-from ._UUIDv4Identifier import UUIDv4Identifier
+from . import Max35Text
+from . import ProprietaryReference1
+from . import UUIDv4Identifier
 
 class TransactionReferences6(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TransactionReferences6(base_types._BaseFieldType):
 
 	@AcctOwnrTxId.setter
 	def AcctOwnrTxId(self, value):
-		self._AcctOwnrTxId = value if type(value) != base_types.auto else self.make_default("AcctOwnrTxId")
+		self._AcctOwnrTxId = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnrTxId', Max35Text, False)
 
 	@AcctOwnrTxId.deleter
 	def AcctOwnrTxId(self):
 		del self._AcctOwnrTxId
-		self._AcctOwnrTxId = None
+		self._AcctOwnrTxId = base_types.UninitialisedField(self, 'AcctOwnrTxId', Max35Text, False)
 
 	@property
 	def AcctSvcrRef(self):
@@ -28,12 +28,12 @@ class TransactionReferences6(base_types._BaseFieldType):
 
 	@AcctSvcrRef.setter
 	def AcctSvcrRef(self, value):
-		self._AcctSvcrRef = value if type(value) != base_types.auto else self.make_default("AcctSvcrRef")
+		self._AcctSvcrRef = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcrRef', Max35Text, False)
 
 	@AcctSvcrRef.deleter
 	def AcctSvcrRef(self):
 		del self._AcctSvcrRef
-		self._AcctSvcrRef = None
+		self._AcctSvcrRef = base_types.UninitialisedField(self, 'AcctSvcrRef', Max35Text, False)
 
 	@property
 	def AcctSvcrTxId(self):
@@ -41,12 +41,12 @@ class TransactionReferences6(base_types._BaseFieldType):
 
 	@AcctSvcrTxId.setter
 	def AcctSvcrTxId(self, value):
-		self._AcctSvcrTxId = value if type(value) != base_types.auto else self.make_default("AcctSvcrTxId")
+		self._AcctSvcrTxId = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcrTxId', Max35Text, False)
 
 	@AcctSvcrTxId.deleter
 	def AcctSvcrTxId(self):
 		del self._AcctSvcrTxId
-		self._AcctSvcrTxId = None
+		self._AcctSvcrTxId = base_types.UninitialisedField(self, 'AcctSvcrTxId', Max35Text, False)
 
 	@property
 	def ChqNb(self):
@@ -54,12 +54,12 @@ class TransactionReferences6(base_types._BaseFieldType):
 
 	@ChqNb.setter
 	def ChqNb(self, value):
-		self._ChqNb = value if type(value) != base_types.auto else self.make_default("ChqNb")
+		self._ChqNb = value if value is not None else base_types.UninitialisedField(self, 'ChqNb', Max35Text, False)
 
 	@ChqNb.deleter
 	def ChqNb(self):
 		del self._ChqNb
-		self._ChqNb = None
+		self._ChqNb = base_types.UninitialisedField(self, 'ChqNb', Max35Text, False)
 
 	@property
 	def ClrSysRef(self):
@@ -67,12 +67,12 @@ class TransactionReferences6(base_types._BaseFieldType):
 
 	@ClrSysRef.setter
 	def ClrSysRef(self, value):
-		self._ClrSysRef = value if type(value) != base_types.auto else self.make_default("ClrSysRef")
+		self._ClrSysRef = value if value is not None else base_types.UninitialisedField(self, 'ClrSysRef', Max35Text, False)
 
 	@ClrSysRef.deleter
 	def ClrSysRef(self):
 		del self._ClrSysRef
-		self._ClrSysRef = None
+		self._ClrSysRef = base_types.UninitialisedField(self, 'ClrSysRef', Max35Text, False)
 
 	@property
 	def EndToEndId(self):
@@ -80,12 +80,12 @@ class TransactionReferences6(base_types._BaseFieldType):
 
 	@EndToEndId.setter
 	def EndToEndId(self, value):
-		self._EndToEndId = value if type(value) != base_types.auto else self.make_default("EndToEndId")
+		self._EndToEndId = value if value is not None else base_types.UninitialisedField(self, 'EndToEndId', Max35Text, False)
 
 	@EndToEndId.deleter
 	def EndToEndId(self):
 		del self._EndToEndId
-		self._EndToEndId = None
+		self._EndToEndId = base_types.UninitialisedField(self, 'EndToEndId', Max35Text, False)
 
 	@property
 	def InstrId(self):
@@ -93,12 +93,12 @@ class TransactionReferences6(base_types._BaseFieldType):
 
 	@InstrId.setter
 	def InstrId(self, value):
-		self._InstrId = value if type(value) != base_types.auto else self.make_default("InstrId")
+		self._InstrId = value if value is not None else base_types.UninitialisedField(self, 'InstrId', Max35Text, False)
 
 	@InstrId.deleter
 	def InstrId(self):
 		del self._InstrId
-		self._InstrId = None
+		self._InstrId = base_types.UninitialisedField(self, 'InstrId', Max35Text, False)
 
 	@property
 	def MktInfrstrctrTxId(self):
@@ -106,12 +106,12 @@ class TransactionReferences6(base_types._BaseFieldType):
 
 	@MktInfrstrctrTxId.setter
 	def MktInfrstrctrTxId(self, value):
-		self._MktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("MktInfrstrctrTxId")
+		self._MktInfrstrctrTxId = value if value is not None else base_types.UninitialisedField(self, 'MktInfrstrctrTxId', Max35Text, False)
 
 	@MktInfrstrctrTxId.deleter
 	def MktInfrstrctrTxId(self):
 		del self._MktInfrstrctrTxId
-		self._MktInfrstrctrTxId = None
+		self._MktInfrstrctrTxId = base_types.UninitialisedField(self, 'MktInfrstrctrTxId', Max35Text, False)
 
 	@property
 	def MndtId(self):
@@ -119,12 +119,12 @@ class TransactionReferences6(base_types._BaseFieldType):
 
 	@MndtId.setter
 	def MndtId(self, value):
-		self._MndtId = value if type(value) != base_types.auto else self.make_default("MndtId")
+		self._MndtId = value if value is not None else base_types.UninitialisedField(self, 'MndtId', Max35Text, False)
 
 	@MndtId.deleter
 	def MndtId(self):
 		del self._MndtId
-		self._MndtId = None
+		self._MndtId = base_types.UninitialisedField(self, 'MndtId', Max35Text, False)
 
 	@property
 	def MsgId(self):
@@ -132,12 +132,12 @@ class TransactionReferences6(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@property
 	def PmtInfId(self):
@@ -145,12 +145,12 @@ class TransactionReferences6(base_types._BaseFieldType):
 
 	@PmtInfId.setter
 	def PmtInfId(self, value):
-		self._PmtInfId = value if type(value) != base_types.auto else self.make_default("PmtInfId")
+		self._PmtInfId = value if value is not None else base_types.UninitialisedField(self, 'PmtInfId', Max35Text, False)
 
 	@PmtInfId.deleter
 	def PmtInfId(self):
 		del self._PmtInfId
-		self._PmtInfId = None
+		self._PmtInfId = base_types.UninitialisedField(self, 'PmtInfId', Max35Text, False)
 
 	@property
 	def PrcgId(self):
@@ -158,12 +158,12 @@ class TransactionReferences6(base_types._BaseFieldType):
 
 	@PrcgId.setter
 	def PrcgId(self, value):
-		self._PrcgId = value if type(value) != base_types.auto else self.make_default("PrcgId")
+		self._PrcgId = value if value is not None else base_types.UninitialisedField(self, 'PrcgId', Max35Text, False)
 
 	@PrcgId.deleter
 	def PrcgId(self):
 		del self._PrcgId
-		self._PrcgId = None
+		self._PrcgId = base_types.UninitialisedField(self, 'PrcgId', Max35Text, False)
 
 	@property
 	def Prtry(self):
@@ -171,12 +171,12 @@ class TransactionReferences6(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+		self._Prtry = value if value is not None else base_types.UninitialisedField(self, 'Prtry', ProprietaryReference1, True)
 
 	@Prtry.deleter
 	def Prtry(self):
 		del self._Prtry
-		self._Prtry = None
+		self._Prtry = base_types.UninitialisedField(self, 'Prtry', ProprietaryReference1, True)
 
 	@property
 	def TxId(self):
@@ -184,12 +184,12 @@ class TransactionReferences6(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	@property
 	def UETR(self):
@@ -197,12 +197,12 @@ class TransactionReferences6(base_types._BaseFieldType):
 
 	@UETR.setter
 	def UETR(self, value):
-		self._UETR = value if type(value) != base_types.auto else self.make_default("UETR")
+		self._UETR = value if value is not None else base_types.UninitialisedField(self, 'UETR', UUIDv4Identifier, False)
 
 	@UETR.deleter
 	def UETR(self):
 		del self._UETR
-		self._UETR = None
+		self._UETR = base_types.UninitialisedField(self, 'UETR', UUIDv4Identifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

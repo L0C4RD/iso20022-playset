@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionEventProcessingStatusAdvice002V09 import CorporateActionEventProcessingStatusAdvice002V09
+from . import CorporateActionEventProcessingStatusAdvice002V09
 
 class SEEV_032_002_09():
 
@@ -18,12 +18,12 @@ class SEEV_032_002_09():
 
 		@CorpActnEvtPrcgStsAdvc.setter
 		def CorpActnEvtPrcgStsAdvc(self, value):
-			self._CorpActnEvtPrcgStsAdvc = value if type(value) != base_types.auto else self.make_default("CorpActnEvtPrcgStsAdvc")
+			self._CorpActnEvtPrcgStsAdvc = value if value is not None else base_types.UninitialisedField(self, 'CorpActnEvtPrcgStsAdvc', CorporateActionEventProcessingStatusAdvice002V09, False)
 
 		@CorpActnEvtPrcgStsAdvc.deleter
 		def CorpActnEvtPrcgStsAdvc(self):
 			del self._CorpActnEvtPrcgStsAdvc
-			self._CorpActnEvtPrcgStsAdvc = None
+			self._CorpActnEvtPrcgStsAdvc = base_types.UninitialisedField(self, 'CorpActnEvtPrcgStsAdvc', CorporateActionEventProcessingStatusAdvice002V09, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CorpActnEvtPrcgStsAdvc', type=CorporateActionEventProcessingStatusAdvice002V09, min=1, max=1, mutex_group=None, array=False),

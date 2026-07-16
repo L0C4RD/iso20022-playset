@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BeneficialOwner1 import BeneficialOwner1
-from ._BeneficiaryCertificationType1FormatChoice import BeneficiaryCertificationType1FormatChoice
-from ._Max350Text import Max350Text
-from ._PartyIdentification2Choice import PartyIdentification2Choice
-from ._ProceedsDelivery1 import ProceedsDelivery1
-from ._YesNoIndicator import YesNoIndicator
+from . import BeneficialOwner1
+from . import BeneficiaryCertificationType1FormatChoice
+from . import Max350Text
+from . import PartyIdentification2Choice
+from . import ProceedsDelivery1
+from . import YesNoIndicator
 
 class CorporateActionAdditionalInformation1(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class CorporateActionAdditionalInformation1(base_types._BaseFieldType):
 
 	@AddtlInstr.setter
 	def AddtlInstr(self, value):
-		self._AddtlInstr = value if type(value) != base_types.auto else self.make_default("AddtlInstr")
+		self._AddtlInstr = value if value is not None else base_types.UninitialisedField(self, 'AddtlInstr', Max350Text, False)
 
 	@AddtlInstr.deleter
 	def AddtlInstr(self):
 		del self._AddtlInstr
-		self._AddtlInstr = None
+		self._AddtlInstr = base_types.UninitialisedField(self, 'AddtlInstr', Max350Text, False)
 
 	@property
 	def BnfclOwnrDtls(self):
@@ -31,12 +31,12 @@ class CorporateActionAdditionalInformation1(base_types._BaseFieldType):
 
 	@BnfclOwnrDtls.setter
 	def BnfclOwnrDtls(self, value):
-		self._BnfclOwnrDtls = value if type(value) != base_types.auto else self.make_default("BnfclOwnrDtls")
+		self._BnfclOwnrDtls = value if value is not None else base_types.UninitialisedField(self, 'BnfclOwnrDtls', BeneficialOwner1, True)
 
 	@BnfclOwnrDtls.deleter
 	def BnfclOwnrDtls(self):
 		del self._BnfclOwnrDtls
-		self._BnfclOwnrDtls = None
+		self._BnfclOwnrDtls = base_types.UninitialisedField(self, 'BnfclOwnrDtls', BeneficialOwner1, True)
 
 	@property
 	def CertfctnInd(self):
@@ -44,12 +44,12 @@ class CorporateActionAdditionalInformation1(base_types._BaseFieldType):
 
 	@CertfctnInd.setter
 	def CertfctnInd(self, value):
-		self._CertfctnInd = value if type(value) != base_types.auto else self.make_default("CertfctnInd")
+		self._CertfctnInd = value if value is not None else base_types.UninitialisedField(self, 'CertfctnInd', YesNoIndicator, False)
 
 	@CertfctnInd.deleter
 	def CertfctnInd(self):
 		del self._CertfctnInd
-		self._CertfctnInd = None
+		self._CertfctnInd = base_types.UninitialisedField(self, 'CertfctnInd', YesNoIndicator, False)
 
 	@property
 	def CertfctnTp(self):
@@ -57,12 +57,12 @@ class CorporateActionAdditionalInformation1(base_types._BaseFieldType):
 
 	@CertfctnTp.setter
 	def CertfctnTp(self, value):
-		self._CertfctnTp = value if type(value) != base_types.auto else self.make_default("CertfctnTp")
+		self._CertfctnTp = value if value is not None else base_types.UninitialisedField(self, 'CertfctnTp', BeneficiaryCertificationType1FormatChoice, False)
 
 	@CertfctnTp.deleter
 	def CertfctnTp(self):
 		del self._CertfctnTp
-		self._CertfctnTp = None
+		self._CertfctnTp = base_types.UninitialisedField(self, 'CertfctnTp', BeneficiaryCertificationType1FormatChoice, False)
 
 	@property
 	def DlvryDtls(self):
@@ -70,12 +70,12 @@ class CorporateActionAdditionalInformation1(base_types._BaseFieldType):
 
 	@DlvryDtls.setter
 	def DlvryDtls(self, value):
-		self._DlvryDtls = value if type(value) != base_types.auto else self.make_default("DlvryDtls")
+		self._DlvryDtls = value if value is not None else base_types.UninitialisedField(self, 'DlvryDtls', ProceedsDelivery1, True)
 
 	@DlvryDtls.deleter
 	def DlvryDtls(self):
 		del self._DlvryDtls
-		self._DlvryDtls = None
+		self._DlvryDtls = base_types.UninitialisedField(self, 'DlvryDtls', ProceedsDelivery1, True)
 
 	@property
 	def RcvrId(self):
@@ -83,12 +83,12 @@ class CorporateActionAdditionalInformation1(base_types._BaseFieldType):
 
 	@RcvrId.setter
 	def RcvrId(self, value):
-		self._RcvrId = value if type(value) != base_types.auto else self.make_default("RcvrId")
+		self._RcvrId = value if value is not None else base_types.UninitialisedField(self, 'RcvrId', PartyIdentification2Choice, False)
 
 	@RcvrId.deleter
 	def RcvrId(self):
 		del self._RcvrId
-		self._RcvrId = None
+		self._RcvrId = base_types.UninitialisedField(self, 'RcvrId', PartyIdentification2Choice, False)
 
 	@property
 	def RegnDtls(self):
@@ -96,12 +96,12 @@ class CorporateActionAdditionalInformation1(base_types._BaseFieldType):
 
 	@RegnDtls.setter
 	def RegnDtls(self, value):
-		self._RegnDtls = value if type(value) != base_types.auto else self.make_default("RegnDtls")
+		self._RegnDtls = value if value is not None else base_types.UninitialisedField(self, 'RegnDtls', Max350Text, False)
 
 	@RegnDtls.deleter
 	def RegnDtls(self):
 		del self._RegnDtls
-		self._RegnDtls = None
+		self._RegnDtls = base_types.UninitialisedField(self, 'RegnDtls', Max350Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInstr', type=Max350Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMInquiryRequest3 import ATMInquiryRequest3
-from ._ContentInformationType10 import ContentInformationType10
-from ._ContentInformationType15 import ContentInformationType15
-from ._Header31 import Header31
+from . import ATMInquiryRequest3
+from . import ContentInformationType10
+from . import ContentInformationType15
+from . import Header31
 
 class ATMInquiryRequestV03(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ATMInquiryRequestV03(base_types._BaseFieldType):
 
 	@ATMNqryReq.setter
 	def ATMNqryReq(self, value):
-		self._ATMNqryReq = value if type(value) != base_types.auto else self.make_default("ATMNqryReq")
+		self._ATMNqryReq = value if value is not None else base_types.UninitialisedField(self, 'ATMNqryReq', ATMInquiryRequest3, False)
 
 	@ATMNqryReq.deleter
 	def ATMNqryReq(self):
 		del self._ATMNqryReq
-		self._ATMNqryReq = None
+		self._ATMNqryReq = base_types.UninitialisedField(self, 'ATMNqryReq', ATMInquiryRequest3, False)
 
 	@property
 	def Hdr(self):
@@ -29,12 +29,12 @@ class ATMInquiryRequestV03(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header31, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header31, False)
 
 	@property
 	def PrtctdATMNqryReq(self):
@@ -42,12 +42,12 @@ class ATMInquiryRequestV03(base_types._BaseFieldType):
 
 	@PrtctdATMNqryReq.setter
 	def PrtctdATMNqryReq(self, value):
-		self._PrtctdATMNqryReq = value if type(value) != base_types.auto else self.make_default("PrtctdATMNqryReq")
+		self._PrtctdATMNqryReq = value if value is not None else base_types.UninitialisedField(self, 'PrtctdATMNqryReq', ContentInformationType10, False)
 
 	@PrtctdATMNqryReq.deleter
 	def PrtctdATMNqryReq(self):
 		del self._PrtctdATMNqryReq
-		self._PrtctdATMNqryReq = None
+		self._PrtctdATMNqryReq = base_types.UninitialisedField(self, 'PrtctdATMNqryReq', ContentInformationType10, False)
 
 	@property
 	def SctyTrlr(self):
@@ -55,12 +55,12 @@ class ATMInquiryRequestV03(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType15, False)
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
 		del self._SctyTrlr
-		self._SctyTrlr = None
+		self._SctyTrlr = base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType15, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ATMNqryReq', type=ATMInquiryRequest3, min=0, max=1, mutex_group=None, array=False),

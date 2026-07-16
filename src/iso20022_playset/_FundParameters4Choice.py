@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FundParameters5 import FundParameters5
-from ._NoCriteria1Code import NoCriteria1Code
+from . import FundParameters5
+from . import NoCriteria1Code
 
 class FundParameters4Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class FundParameters4Choice(base_types._BaseFieldType):
 
 	@NoCrit.setter
 	def NoCrit(self, value):
-		self._NoCrit = value if type(value) != base_types.auto else self.make_default("NoCrit")
+		self._NoCrit = value if value is not None else base_types.UninitialisedField(self, 'NoCrit', NoCriteria1Code, False)
 
 	@NoCrit.deleter
 	def NoCrit(self):
 		del self._NoCrit
-		self._NoCrit = None
+		self._NoCrit = base_types.UninitialisedField(self, 'NoCrit', NoCriteria1Code, False)
 
 	@property
 	def Params(self):
@@ -27,12 +27,12 @@ class FundParameters4Choice(base_types._BaseFieldType):
 
 	@Params.setter
 	def Params(self, value):
-		self._Params = value if type(value) != base_types.auto else self.make_default("Params")
+		self._Params = value if value is not None else base_types.UninitialisedField(self, 'Params', FundParameters5, False)
 
 	@Params.deleter
 	def Params(self):
 		del self._Params
-		self._Params = None
+		self._Params = base_types.UninitialisedField(self, 'Params', FundParameters5, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NoCrit', type=NoCriteria1Code, min=0, max=1, mutex_group=1, array=False),

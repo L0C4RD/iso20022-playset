@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection53 import AmountAndDirection53
-from ._CFIOct2015Identifier import CFIOct2015Identifier
-from ._CollateralQualityType1Code import CollateralQualityType1Code
-from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._ISODate import ISODate
-from ._QuantityNominalValue2Choice import QuantityNominalValue2Choice
-from ._SecuritiesLendingType3Choice import SecuritiesLendingType3Choice
-from ._SecuritiesTransactionPrice19Choice import SecuritiesTransactionPrice19Choice
-from ._SecurityIssuer4 import SecurityIssuer4
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import AmountAndDirection53
+from . import CFIOct2015Identifier
+from . import CollateralQualityType1Code
+from . import ISINOct2015Identifier
+from . import ISODate
+from . import QuantityNominalValue2Choice
+from . import SecuritiesLendingType3Choice
+from . import SecuritiesTransactionPrice19Choice
+from . import SecurityIssuer4
+from . import TrueFalseIndicator
 
 class Security49(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class Security49(base_types._BaseFieldType):
 
 	@ClssfctnTp.setter
 	def ClssfctnTp(self, value):
-		self._ClssfctnTp = value if type(value) != base_types.auto else self.make_default("ClssfctnTp")
+		self._ClssfctnTp = value if value is not None else base_types.UninitialisedField(self, 'ClssfctnTp', CFIOct2015Identifier, False)
 
 	@ClssfctnTp.deleter
 	def ClssfctnTp(self):
 		del self._ClssfctnTp
-		self._ClssfctnTp = None
+		self._ClssfctnTp = base_types.UninitialisedField(self, 'ClssfctnTp', CFIOct2015Identifier, False)
 
 	@property
 	def ExclsvArrgmnt(self):
@@ -35,12 +35,12 @@ class Security49(base_types._BaseFieldType):
 
 	@ExclsvArrgmnt.setter
 	def ExclsvArrgmnt(self, value):
-		self._ExclsvArrgmnt = value if type(value) != base_types.auto else self.make_default("ExclsvArrgmnt")
+		self._ExclsvArrgmnt = value if value is not None else base_types.UninitialisedField(self, 'ExclsvArrgmnt', TrueFalseIndicator, False)
 
 	@ExclsvArrgmnt.deleter
 	def ExclsvArrgmnt(self):
 		del self._ExclsvArrgmnt
-		self._ExclsvArrgmnt = None
+		self._ExclsvArrgmnt = base_types.UninitialisedField(self, 'ExclsvArrgmnt', TrueFalseIndicator, False)
 
 	@property
 	def Id(self):
@@ -48,12 +48,12 @@ class Security49(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', ISINOct2015Identifier, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', ISINOct2015Identifier, False)
 
 	@property
 	def Issr(self):
@@ -61,12 +61,12 @@ class Security49(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+		self._Issr = value if value is not None else base_types.UninitialisedField(self, 'Issr', SecurityIssuer4, False)
 
 	@Issr.deleter
 	def Issr(self):
 		del self._Issr
-		self._Issr = None
+		self._Issr = base_types.UninitialisedField(self, 'Issr', SecurityIssuer4, False)
 
 	@property
 	def MktVal(self):
@@ -74,12 +74,12 @@ class Security49(base_types._BaseFieldType):
 
 	@MktVal.setter
 	def MktVal(self, value):
-		self._MktVal = value if type(value) != base_types.auto else self.make_default("MktVal")
+		self._MktVal = value if value is not None else base_types.UninitialisedField(self, 'MktVal', AmountAndDirection53, False)
 
 	@MktVal.deleter
 	def MktVal(self):
 		del self._MktVal
-		self._MktVal = None
+		self._MktVal = base_types.UninitialisedField(self, 'MktVal', AmountAndDirection53, False)
 
 	@property
 	def Mtrty(self):
@@ -87,12 +87,12 @@ class Security49(base_types._BaseFieldType):
 
 	@Mtrty.setter
 	def Mtrty(self, value):
-		self._Mtrty = value if type(value) != base_types.auto else self.make_default("Mtrty")
+		self._Mtrty = value if value is not None else base_types.UninitialisedField(self, 'Mtrty', ISODate, False)
 
 	@Mtrty.deleter
 	def Mtrty(self):
 		del self._Mtrty
-		self._Mtrty = None
+		self._Mtrty = base_types.UninitialisedField(self, 'Mtrty', ISODate, False)
 
 	@property
 	def Qlty(self):
@@ -100,12 +100,12 @@ class Security49(base_types._BaseFieldType):
 
 	@Qlty.setter
 	def Qlty(self, value):
-		self._Qlty = value if type(value) != base_types.auto else self.make_default("Qlty")
+		self._Qlty = value if value is not None else base_types.UninitialisedField(self, 'Qlty', CollateralQualityType1Code, False)
 
 	@Qlty.deleter
 	def Qlty(self):
 		del self._Qlty
-		self._Qlty = None
+		self._Qlty = base_types.UninitialisedField(self, 'Qlty', CollateralQualityType1Code, False)
 
 	@property
 	def QtyOrNmnlVal(self):
@@ -113,12 +113,12 @@ class Security49(base_types._BaseFieldType):
 
 	@QtyOrNmnlVal.setter
 	def QtyOrNmnlVal(self, value):
-		self._QtyOrNmnlVal = value if type(value) != base_types.auto else self.make_default("QtyOrNmnlVal")
+		self._QtyOrNmnlVal = value if value is not None else base_types.UninitialisedField(self, 'QtyOrNmnlVal', QuantityNominalValue2Choice, False)
 
 	@QtyOrNmnlVal.deleter
 	def QtyOrNmnlVal(self):
 		del self._QtyOrNmnlVal
-		self._QtyOrNmnlVal = None
+		self._QtyOrNmnlVal = base_types.UninitialisedField(self, 'QtyOrNmnlVal', QuantityNominalValue2Choice, False)
 
 	@property
 	def Tp(self):
@@ -126,12 +126,12 @@ class Security49(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', SecuritiesLendingType3Choice, True)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', SecuritiesLendingType3Choice, True)
 
 	@property
 	def UnitPric(self):
@@ -139,12 +139,12 @@ class Security49(base_types._BaseFieldType):
 
 	@UnitPric.setter
 	def UnitPric(self, value):
-		self._UnitPric = value if type(value) != base_types.auto else self.make_default("UnitPric")
+		self._UnitPric = value if value is not None else base_types.UninitialisedField(self, 'UnitPric', SecuritiesTransactionPrice19Choice, False)
 
 	@UnitPric.deleter
 	def UnitPric(self):
 		del self._UnitPric
-		self._UnitPric = None
+		self._UnitPric = base_types.UninitialisedField(self, 'UnitPric', SecuritiesTransactionPrice19Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClssfctnTp', type=CFIOct2015Identifier, min=0, max=1, mutex_group=None, array=False),

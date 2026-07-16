@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import Max35Text
+from . import TrueFalseIndicator
 
 class DiagnosisRequest1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DiagnosisRequest1(base_types._BaseFieldType):
 
 	@AcqrrId.setter
 	def AcqrrId(self, value):
-		self._AcqrrId = value if type(value) != base_types.auto else self.make_default("AcqrrId")
+		self._AcqrrId = value if value is not None else base_types.UninitialisedField(self, 'AcqrrId', Max35Text, True)
 
 	@AcqrrId.deleter
 	def AcqrrId(self):
 		del self._AcqrrId
-		self._AcqrrId = None
+		self._AcqrrId = base_types.UninitialisedField(self, 'AcqrrId', Max35Text, True)
 
 	@property
 	def HstDgnssFlg(self):
@@ -27,12 +27,12 @@ class DiagnosisRequest1(base_types._BaseFieldType):
 
 	@HstDgnssFlg.setter
 	def HstDgnssFlg(self, value):
-		self._HstDgnssFlg = value if type(value) != base_types.auto else self.make_default("HstDgnssFlg")
+		self._HstDgnssFlg = value if value is not None else base_types.UninitialisedField(self, 'HstDgnssFlg', TrueFalseIndicator, False)
 
 	@HstDgnssFlg.deleter
 	def HstDgnssFlg(self):
 		del self._HstDgnssFlg
-		self._HstDgnssFlg = None
+		self._HstDgnssFlg = base_types.UninitialisedField(self, 'HstDgnssFlg', TrueFalseIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcqrrId', type=Max35Text, min=0, max=None, mutex_group=None, array=True),

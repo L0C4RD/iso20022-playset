@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ForeignExchangeTradeConfirmationRequestCancellationRequestV02 import ForeignExchangeTradeConfirmationRequestCancellationRequestV02
+from . import ForeignExchangeTradeConfirmationRequestCancellationRequestV02
 
 class FXTR_036_001_02():
 
@@ -18,12 +18,12 @@ class FXTR_036_001_02():
 
 		@FXTradConfReqCxlReq.setter
 		def FXTradConfReqCxlReq(self, value):
-			self._FXTradConfReqCxlReq = value if type(value) != base_types.auto else self.make_default("FXTradConfReqCxlReq")
+			self._FXTradConfReqCxlReq = value if value is not None else base_types.UninitialisedField(self, 'FXTradConfReqCxlReq', ForeignExchangeTradeConfirmationRequestCancellationRequestV02, False)
 
 		@FXTradConfReqCxlReq.deleter
 		def FXTradConfReqCxlReq(self):
 			del self._FXTradConfReqCxlReq
-			self._FXTradConfReqCxlReq = None
+			self._FXTradConfReqCxlReq = base_types.UninitialisedField(self, 'FXTradConfReqCxlReq', ForeignExchangeTradeConfirmationRequestCancellationRequestV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='FXTradConfReqCxlReq', type=ForeignExchangeTradeConfirmationRequestCancellationRequestV02, min=1, max=1, mutex_group=None, array=False),

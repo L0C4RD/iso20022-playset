@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CryptographicKeyType3Code import CryptographicKeyType3Code
-from ._KeyUsage1Code import KeyUsage1Code
-from ._Max140Text import Max140Text
-from ._Min5Max16Binary import Min5Max16Binary
-from ._Number import Number
+from . import CryptographicKeyType3Code
+from . import KeyUsage1Code
+from . import Max140Text
+from . import Min5Max16Binary
+from . import Number
 
 class KEKIdentifier5(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class KEKIdentifier5(base_types._BaseFieldType):
 
 	@DerivtnId.setter
 	def DerivtnId(self, value):
-		self._DerivtnId = value if type(value) != base_types.auto else self.make_default("DerivtnId")
+		self._DerivtnId = value if value is not None else base_types.UninitialisedField(self, 'DerivtnId', Min5Max16Binary, False)
 
 	@DerivtnId.deleter
 	def DerivtnId(self):
 		del self._DerivtnId
-		self._DerivtnId = None
+		self._DerivtnId = base_types.UninitialisedField(self, 'DerivtnId', Min5Max16Binary, False)
 
 	@property
 	def Fctn(self):
@@ -30,12 +30,12 @@ class KEKIdentifier5(base_types._BaseFieldType):
 
 	@Fctn.setter
 	def Fctn(self, value):
-		self._Fctn = value if type(value) != base_types.auto else self.make_default("Fctn")
+		self._Fctn = value if value is not None else base_types.UninitialisedField(self, 'Fctn', KeyUsage1Code, True)
 
 	@Fctn.deleter
 	def Fctn(self):
 		del self._Fctn
-		self._Fctn = None
+		self._Fctn = base_types.UninitialisedField(self, 'Fctn', KeyUsage1Code, True)
 
 	@property
 	def KeyId(self):
@@ -43,12 +43,12 @@ class KEKIdentifier5(base_types._BaseFieldType):
 
 	@KeyId.setter
 	def KeyId(self, value):
-		self._KeyId = value if type(value) != base_types.auto else self.make_default("KeyId")
+		self._KeyId = value if value is not None else base_types.UninitialisedField(self, 'KeyId', Max140Text, False)
 
 	@KeyId.deleter
 	def KeyId(self):
 		del self._KeyId
-		self._KeyId = None
+		self._KeyId = base_types.UninitialisedField(self, 'KeyId', Max140Text, False)
 
 	@property
 	def KeyVrsn(self):
@@ -56,12 +56,12 @@ class KEKIdentifier5(base_types._BaseFieldType):
 
 	@KeyVrsn.setter
 	def KeyVrsn(self, value):
-		self._KeyVrsn = value if type(value) != base_types.auto else self.make_default("KeyVrsn")
+		self._KeyVrsn = value if value is not None else base_types.UninitialisedField(self, 'KeyVrsn', Max140Text, False)
 
 	@KeyVrsn.deleter
 	def KeyVrsn(self):
 		del self._KeyVrsn
-		self._KeyVrsn = None
+		self._KeyVrsn = base_types.UninitialisedField(self, 'KeyVrsn', Max140Text, False)
 
 	@property
 	def SeqNb(self):
@@ -69,12 +69,12 @@ class KEKIdentifier5(base_types._BaseFieldType):
 
 	@SeqNb.setter
 	def SeqNb(self, value):
-		self._SeqNb = value if type(value) != base_types.auto else self.make_default("SeqNb")
+		self._SeqNb = value if value is not None else base_types.UninitialisedField(self, 'SeqNb', Number, False)
 
 	@SeqNb.deleter
 	def SeqNb(self):
 		del self._SeqNb
-		self._SeqNb = None
+		self._SeqNb = base_types.UninitialisedField(self, 'SeqNb', Number, False)
 
 	@property
 	def Tp(self):
@@ -82,12 +82,12 @@ class KEKIdentifier5(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', CryptographicKeyType3Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', CryptographicKeyType3Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DerivtnId', type=Min5Max16Binary, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._SecuritiesTransactionPrice17Choice import SecuritiesTransactionPrice17Choice
+from . import ISODate
+from . import SecuritiesTransactionPrice17Choice
 
 class Schedule4(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Schedule4(base_types._BaseFieldType):
 
 	@Pric.setter
 	def Pric(self, value):
-		self._Pric = value if type(value) != base_types.auto else self.make_default("Pric")
+		self._Pric = value if value is not None else base_types.UninitialisedField(self, 'Pric', SecuritiesTransactionPrice17Choice, False)
 
 	@Pric.deleter
 	def Pric(self):
 		del self._Pric
-		self._Pric = None
+		self._Pric = base_types.UninitialisedField(self, 'Pric', SecuritiesTransactionPrice17Choice, False)
 
 	@property
 	def UadjstdEndDt(self):
@@ -27,12 +27,12 @@ class Schedule4(base_types._BaseFieldType):
 
 	@UadjstdEndDt.setter
 	def UadjstdEndDt(self, value):
-		self._UadjstdEndDt = value if type(value) != base_types.auto else self.make_default("UadjstdEndDt")
+		self._UadjstdEndDt = value if value is not None else base_types.UninitialisedField(self, 'UadjstdEndDt', ISODate, False)
 
 	@UadjstdEndDt.deleter
 	def UadjstdEndDt(self):
 		del self._UadjstdEndDt
-		self._UadjstdEndDt = None
+		self._UadjstdEndDt = base_types.UninitialisedField(self, 'UadjstdEndDt', ISODate, False)
 
 	@property
 	def UadjstdFctvDt(self):
@@ -40,12 +40,12 @@ class Schedule4(base_types._BaseFieldType):
 
 	@UadjstdFctvDt.setter
 	def UadjstdFctvDt(self, value):
-		self._UadjstdFctvDt = value if type(value) != base_types.auto else self.make_default("UadjstdFctvDt")
+		self._UadjstdFctvDt = value if value is not None else base_types.UninitialisedField(self, 'UadjstdFctvDt', ISODate, False)
 
 	@UadjstdFctvDt.deleter
 	def UadjstdFctvDt(self):
 		del self._UadjstdFctvDt
-		self._UadjstdFctvDt = None
+		self._UadjstdFctvDt = base_types.UninitialisedField(self, 'UadjstdFctvDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Pric', type=SecuritiesTransactionPrice17Choice, min=1, max=1, mutex_group=None, array=False),

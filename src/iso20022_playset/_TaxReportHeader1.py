@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MessageIdentification1 import MessageIdentification1
-from ._Number import Number
-from ._TaxOrganisationIdentification1 import TaxOrganisationIdentification1
+from . import MessageIdentification1
+from . import Number
+from . import TaxOrganisationIdentification1
 
 class TaxReportHeader1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TaxReportHeader1(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@property
 	def NbOfTaxRpts(self):
@@ -28,12 +28,12 @@ class TaxReportHeader1(base_types._BaseFieldType):
 
 	@NbOfTaxRpts.setter
 	def NbOfTaxRpts(self, value):
-		self._NbOfTaxRpts = value if type(value) != base_types.auto else self.make_default("NbOfTaxRpts")
+		self._NbOfTaxRpts = value if value is not None else base_types.UninitialisedField(self, 'NbOfTaxRpts', Number, False)
 
 	@NbOfTaxRpts.deleter
 	def NbOfTaxRpts(self):
 		del self._NbOfTaxRpts
-		self._NbOfTaxRpts = None
+		self._NbOfTaxRpts = base_types.UninitialisedField(self, 'NbOfTaxRpts', Number, False)
 
 	@property
 	def TaxAuthrty(self):
@@ -41,12 +41,12 @@ class TaxReportHeader1(base_types._BaseFieldType):
 
 	@TaxAuthrty.setter
 	def TaxAuthrty(self, value):
-		self._TaxAuthrty = value if type(value) != base_types.auto else self.make_default("TaxAuthrty")
+		self._TaxAuthrty = value if value is not None else base_types.UninitialisedField(self, 'TaxAuthrty', TaxOrganisationIdentification1, True)
 
 	@TaxAuthrty.deleter
 	def TaxAuthrty(self):
 		del self._TaxAuthrty
-		self._TaxAuthrty = None
+		self._TaxAuthrty = base_types.UninitialisedField(self, 'TaxAuthrty', TaxOrganisationIdentification1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),

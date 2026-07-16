@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._OriginalGroupHeader21 import OriginalGroupHeader21
-from ._PaymentTransaction155 import PaymentTransaction155
+from . import OriginalGroupHeader21
+from . import PaymentTransaction155
 
 class UnderlyingTransaction34(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class UnderlyingTransaction34(base_types._BaseFieldType):
 
 	@OrgnlGrpInfAndCxl.setter
 	def OrgnlGrpInfAndCxl(self, value):
-		self._OrgnlGrpInfAndCxl = value if type(value) != base_types.auto else self.make_default("OrgnlGrpInfAndCxl")
+		self._OrgnlGrpInfAndCxl = value if value is not None else base_types.UninitialisedField(self, 'OrgnlGrpInfAndCxl', OriginalGroupHeader21, False)
 
 	@OrgnlGrpInfAndCxl.deleter
 	def OrgnlGrpInfAndCxl(self):
 		del self._OrgnlGrpInfAndCxl
-		self._OrgnlGrpInfAndCxl = None
+		self._OrgnlGrpInfAndCxl = base_types.UninitialisedField(self, 'OrgnlGrpInfAndCxl', OriginalGroupHeader21, False)
 
 	@property
 	def TxInf(self):
@@ -27,12 +27,12 @@ class UnderlyingTransaction34(base_types._BaseFieldType):
 
 	@TxInf.setter
 	def TxInf(self, value):
-		self._TxInf = value if type(value) != base_types.auto else self.make_default("TxInf")
+		self._TxInf = value if value is not None else base_types.UninitialisedField(self, 'TxInf', PaymentTransaction155, True)
 
 	@TxInf.deleter
 	def TxInf(self):
 		del self._TxInf
-		self._TxInf = None
+		self._TxInf = base_types.UninitialisedField(self, 'TxInf', PaymentTransaction155, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlGrpInfAndCxl', type=OriginalGroupHeader21, min=0, max=1, mutex_group=None, array=False),

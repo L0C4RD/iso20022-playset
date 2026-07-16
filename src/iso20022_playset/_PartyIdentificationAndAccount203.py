@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AlternatePartyIdentification7 import AlternatePartyIdentification7
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
-from ._LEIIdentifier import LEIIdentifier
-from ._PartyIdentification120Choice import PartyIdentification120Choice
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._TradingPartyCapacity5Choice import TradingPartyCapacity5Choice
+from . import AlternatePartyIdentification7
+from . import BlockChainAddressWallet3
+from . import LEIIdentifier
+from . import PartyIdentification120Choice
+from . import SecuritiesAccount19
+from . import TradingPartyCapacity5Choice
 
 class PartyIdentificationAndAccount203(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class PartyIdentificationAndAccount203(base_types._BaseFieldType):
 
 	@AltrnId.setter
 	def AltrnId(self, value):
-		self._AltrnId = value if type(value) != base_types.auto else self.make_default("AltrnId")
+		self._AltrnId = value if value is not None else base_types.UninitialisedField(self, 'AltrnId', AlternatePartyIdentification7, False)
 
 	@AltrnId.deleter
 	def AltrnId(self):
 		del self._AltrnId
-		self._AltrnId = None
+		self._AltrnId = base_types.UninitialisedField(self, 'AltrnId', AlternatePartyIdentification7, False)
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -31,12 +31,12 @@ class PartyIdentificationAndAccount203(base_types._BaseFieldType):
 
 	@BlckChainAdrOrWllt.setter
 	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
+		self._BlckChainAdrOrWllt = value if value is not None else base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet3, False)
 
 	@BlckChainAdrOrWllt.deleter
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+		self._BlckChainAdrOrWllt = base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet3, False)
 
 	@property
 	def Id(self):
@@ -44,12 +44,12 @@ class PartyIdentificationAndAccount203(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', PartyIdentification120Choice, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', PartyIdentification120Choice, False)
 
 	@property
 	def LEI(self):
@@ -57,12 +57,12 @@ class PartyIdentificationAndAccount203(base_types._BaseFieldType):
 
 	@LEI.setter
 	def LEI(self, value):
-		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
+		self._LEI = value if value is not None else base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	@LEI.deleter
 	def LEI(self):
 		del self._LEI
-		self._LEI = None
+		self._LEI = base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	@property
 	def PtyCpcty(self):
@@ -70,12 +70,12 @@ class PartyIdentificationAndAccount203(base_types._BaseFieldType):
 
 	@PtyCpcty.setter
 	def PtyCpcty(self, value):
-		self._PtyCpcty = value if type(value) != base_types.auto else self.make_default("PtyCpcty")
+		self._PtyCpcty = value if value is not None else base_types.UninitialisedField(self, 'PtyCpcty', TradingPartyCapacity5Choice, False)
 
 	@PtyCpcty.deleter
 	def PtyCpcty(self):
 		del self._PtyCpcty
-		self._PtyCpcty = None
+		self._PtyCpcty = base_types.UninitialisedField(self, 'PtyCpcty', TradingPartyCapacity5Choice, False)
 
 	@property
 	def SfkpgAcct(self):
@@ -83,12 +83,12 @@ class PartyIdentificationAndAccount203(base_types._BaseFieldType):
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
-		self._SfkpgAcct = None
+		self._SfkpgAcct = base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AltrnId', type=AlternatePartyIdentification7, min=0, max=1, mutex_group=None, array=False),

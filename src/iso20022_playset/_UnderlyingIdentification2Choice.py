@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentIdentification7Choice import FinancialInstrumentIdentification7Choice
-from ._SwapLegIdentification2 import SwapLegIdentification2
+from . import FinancialInstrumentIdentification7Choice
+from . import SwapLegIdentification2
 
 class UnderlyingIdentification2Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class UnderlyingIdentification2Choice(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', FinancialInstrumentIdentification7Choice, False)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', FinancialInstrumentIdentification7Choice, False)
 
 	@property
 	def Swp(self):
@@ -27,12 +27,12 @@ class UnderlyingIdentification2Choice(base_types._BaseFieldType):
 
 	@Swp.setter
 	def Swp(self, value):
-		self._Swp = value if type(value) != base_types.auto else self.make_default("Swp")
+		self._Swp = value if value is not None else base_types.UninitialisedField(self, 'Swp', SwapLegIdentification2, False)
 
 	@Swp.deleter
 	def Swp(self):
 		del self._Swp
-		self._Swp = None
+		self._Swp = base_types.UninitialisedField(self, 'Swp', SwapLegIdentification2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Othr', type=FinancialInstrumentIdentification7Choice, min=0, max=1, mutex_group=1, array=False),

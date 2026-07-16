@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BaselineMatchReportV03 import BaselineMatchReportV03
+from . import BaselineMatchReportV03
 
 class TSMT_010_001_03():
 
@@ -18,12 +18,12 @@ class TSMT_010_001_03():
 
 		@BaselnMtchRpt.setter
 		def BaselnMtchRpt(self, value):
-			self._BaselnMtchRpt = value if type(value) != base_types.auto else self.make_default("BaselnMtchRpt")
+			self._BaselnMtchRpt = value if value is not None else base_types.UninitialisedField(self, 'BaselnMtchRpt', BaselineMatchReportV03, False)
 
 		@BaselnMtchRpt.deleter
 		def BaselnMtchRpt(self):
 			del self._BaselnMtchRpt
-			self._BaselnMtchRpt = None
+			self._BaselnMtchRpt = base_types.UninitialisedField(self, 'BaselnMtchRpt', BaselineMatchReportV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='BaselnMtchRpt', type=BaselineMatchReportV03, min=1, max=1, mutex_group=None, array=False),

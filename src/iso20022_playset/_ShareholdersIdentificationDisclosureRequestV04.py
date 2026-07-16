@@ -2,18 +2,18 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCode import CountryCode
-from ._DateFormat46Choice import DateFormat46Choice
-from ._DecimalNumber import DecimalNumber
-from ._DisclosureRequestType1Code import DisclosureRequestType1Code
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
-from ._PartyIdentification129Choice import PartyIdentification129Choice
-from ._PartyIdentification214 import PartyIdentification214
-from ._RequestShareHeldDate1Choice import RequestShareHeldDate1Choice
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._SupplementaryData1 import SupplementaryData1
-from ._YesNoIndicator import YesNoIndicator
+from . import CountryCode
+from . import DateFormat46Choice
+from . import DecimalNumber
+from . import DisclosureRequestType1Code
+from . import Max140Text
+from . import Max35Text
+from . import PartyIdentification129Choice
+from . import PartyIdentification214
+from . import RequestShareHeldDate1Choice
+from . import SecurityIdentification19
+from . import SupplementaryData1
+from . import YesNoIndicator
 
 class ShareholdersIdentificationDisclosureRequestV04(base_types._BaseFieldType):
 
@@ -24,12 +24,12 @@ class ShareholdersIdentificationDisclosureRequestV04(base_types._BaseFieldType):
 
 	@AplblLaw.setter
 	def AplblLaw(self, value):
-		self._AplblLaw = value if type(value) != base_types.auto else self.make_default("AplblLaw")
+		self._AplblLaw = value if value is not None else base_types.UninitialisedField(self, 'AplblLaw', Max140Text, False)
 
 	@AplblLaw.deleter
 	def AplblLaw(self):
 		del self._AplblLaw
-		self._AplblLaw = None
+		self._AplblLaw = base_types.UninitialisedField(self, 'AplblLaw', Max140Text, False)
 
 	@property
 	def DsclsrReqTp(self):
@@ -37,12 +37,12 @@ class ShareholdersIdentificationDisclosureRequestV04(base_types._BaseFieldType):
 
 	@DsclsrReqTp.setter
 	def DsclsrReqTp(self, value):
-		self._DsclsrReqTp = value if type(value) != base_types.auto else self.make_default("DsclsrReqTp")
+		self._DsclsrReqTp = value if value is not None else base_types.UninitialisedField(self, 'DsclsrReqTp', DisclosureRequestType1Code, False)
 
 	@DsclsrReqTp.deleter
 	def DsclsrReqTp(self):
 		del self._DsclsrReqTp
-		self._DsclsrReqTp = None
+		self._DsclsrReqTp = base_types.UninitialisedField(self, 'DsclsrReqTp', DisclosureRequestType1Code, False)
 
 	@property
 	def DsclsrRspnDdln(self):
@@ -50,12 +50,12 @@ class ShareholdersIdentificationDisclosureRequestV04(base_types._BaseFieldType):
 
 	@DsclsrRspnDdln.setter
 	def DsclsrRspnDdln(self, value):
-		self._DsclsrRspnDdln = value if type(value) != base_types.auto else self.make_default("DsclsrRspnDdln")
+		self._DsclsrRspnDdln = value if value is not None else base_types.UninitialisedField(self, 'DsclsrRspnDdln', DateFormat46Choice, False)
 
 	@DsclsrRspnDdln.deleter
 	def DsclsrRspnDdln(self):
 		del self._DsclsrRspnDdln
-		self._DsclsrRspnDdln = None
+		self._DsclsrRspnDdln = base_types.UninitialisedField(self, 'DsclsrRspnDdln', DateFormat46Choice, False)
 
 	@property
 	def DsclsrRspnRcpt(self):
@@ -63,12 +63,12 @@ class ShareholdersIdentificationDisclosureRequestV04(base_types._BaseFieldType):
 
 	@DsclsrRspnRcpt.setter
 	def DsclsrRspnRcpt(self, value):
-		self._DsclsrRspnRcpt = value if type(value) != base_types.auto else self.make_default("DsclsrRspnRcpt")
+		self._DsclsrRspnRcpt = value if value is not None else base_types.UninitialisedField(self, 'DsclsrRspnRcpt', PartyIdentification214, False)
 
 	@DsclsrRspnRcpt.deleter
 	def DsclsrRspnRcpt(self):
 		del self._DsclsrRspnRcpt
-		self._DsclsrRspnRcpt = None
+		self._DsclsrRspnRcpt = base_types.UninitialisedField(self, 'DsclsrRspnRcpt', PartyIdentification214, False)
 
 	@property
 	def FinInstrmId(self):
@@ -76,12 +76,12 @@ class ShareholdersIdentificationDisclosureRequestV04(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
 		del self._FinInstrmId
-		self._FinInstrmId = None
+		self._FinInstrmId = base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@property
 	def FwdReqInd(self):
@@ -89,12 +89,12 @@ class ShareholdersIdentificationDisclosureRequestV04(base_types._BaseFieldType):
 
 	@FwdReqInd.setter
 	def FwdReqInd(self, value):
-		self._FwdReqInd = value if type(value) != base_types.auto else self.make_default("FwdReqInd")
+		self._FwdReqInd = value if value is not None else base_types.UninitialisedField(self, 'FwdReqInd', YesNoIndicator, False)
 
 	@FwdReqInd.deleter
 	def FwdReqInd(self):
 		del self._FwdReqInd
-		self._FwdReqInd = None
+		self._FwdReqInd = base_types.UninitialisedField(self, 'FwdReqInd', YesNoIndicator, False)
 
 	@property
 	def Issr(self):
@@ -102,12 +102,12 @@ class ShareholdersIdentificationDisclosureRequestV04(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+		self._Issr = value if value is not None else base_types.UninitialisedField(self, 'Issr', PartyIdentification129Choice, False)
 
 	@Issr.deleter
 	def Issr(self):
 		del self._Issr
-		self._Issr = None
+		self._Issr = base_types.UninitialisedField(self, 'Issr', PartyIdentification129Choice, False)
 
 	@property
 	def IssrDsclsrDdln(self):
@@ -115,12 +115,12 @@ class ShareholdersIdentificationDisclosureRequestV04(base_types._BaseFieldType):
 
 	@IssrDsclsrDdln.setter
 	def IssrDsclsrDdln(self, value):
-		self._IssrDsclsrDdln = value if type(value) != base_types.auto else self.make_default("IssrDsclsrDdln")
+		self._IssrDsclsrDdln = value if value is not None else base_types.UninitialisedField(self, 'IssrDsclsrDdln', DateFormat46Choice, False)
 
 	@IssrDsclsrDdln.deleter
 	def IssrDsclsrDdln(self):
 		del self._IssrDsclsrDdln
-		self._IssrDsclsrDdln = None
+		self._IssrDsclsrDdln = base_types.UninitialisedField(self, 'IssrDsclsrDdln', DateFormat46Choice, False)
 
 	@property
 	def IssrDsclsrReqId(self):
@@ -128,12 +128,12 @@ class ShareholdersIdentificationDisclosureRequestV04(base_types._BaseFieldType):
 
 	@IssrDsclsrReqId.setter
 	def IssrDsclsrReqId(self, value):
-		self._IssrDsclsrReqId = value if type(value) != base_types.auto else self.make_default("IssrDsclsrReqId")
+		self._IssrDsclsrReqId = value if value is not None else base_types.UninitialisedField(self, 'IssrDsclsrReqId', Max35Text, False)
 
 	@IssrDsclsrReqId.deleter
 	def IssrDsclsrReqId(self):
 		del self._IssrDsclsrReqId
-		self._IssrDsclsrReqId = None
+		self._IssrDsclsrReqId = base_types.UninitialisedField(self, 'IssrDsclsrReqId', Max35Text, False)
 
 	@property
 	def PlcOfJursdctn(self):
@@ -141,12 +141,12 @@ class ShareholdersIdentificationDisclosureRequestV04(base_types._BaseFieldType):
 
 	@PlcOfJursdctn.setter
 	def PlcOfJursdctn(self, value):
-		self._PlcOfJursdctn = value if type(value) != base_types.auto else self.make_default("PlcOfJursdctn")
+		self._PlcOfJursdctn = value if value is not None else base_types.UninitialisedField(self, 'PlcOfJursdctn', CountryCode, False)
 
 	@PlcOfJursdctn.deleter
 	def PlcOfJursdctn(self):
 		del self._PlcOfJursdctn
-		self._PlcOfJursdctn = None
+		self._PlcOfJursdctn = base_types.UninitialisedField(self, 'PlcOfJursdctn', CountryCode, False)
 
 	@property
 	def PrvsDsclsrReqId(self):
@@ -154,12 +154,12 @@ class ShareholdersIdentificationDisclosureRequestV04(base_types._BaseFieldType):
 
 	@PrvsDsclsrReqId.setter
 	def PrvsDsclsrReqId(self, value):
-		self._PrvsDsclsrReqId = value if type(value) != base_types.auto else self.make_default("PrvsDsclsrReqId")
+		self._PrvsDsclsrReqId = value if value is not None else base_types.UninitialisedField(self, 'PrvsDsclsrReqId', Max35Text, False)
 
 	@PrvsDsclsrReqId.deleter
 	def PrvsDsclsrReqId(self):
 		del self._PrvsDsclsrReqId
-		self._PrvsDsclsrReqId = None
+		self._PrvsDsclsrReqId = base_types.UninitialisedField(self, 'PrvsDsclsrReqId', Max35Text, False)
 
 	@property
 	def ReqShrHeldDt(self):
@@ -167,12 +167,12 @@ class ShareholdersIdentificationDisclosureRequestV04(base_types._BaseFieldType):
 
 	@ReqShrHeldDt.setter
 	def ReqShrHeldDt(self, value):
-		self._ReqShrHeldDt = value if type(value) != base_types.auto else self.make_default("ReqShrHeldDt")
+		self._ReqShrHeldDt = value if value is not None else base_types.UninitialisedField(self, 'ReqShrHeldDt', RequestShareHeldDate1Choice, False)
 
 	@ReqShrHeldDt.deleter
 	def ReqShrHeldDt(self):
 		del self._ReqShrHeldDt
-		self._ReqShrHeldDt = None
+		self._ReqShrHeldDt = base_types.UninitialisedField(self, 'ReqShrHeldDt', RequestShareHeldDate1Choice, False)
 
 	@property
 	def RspnThrghChainInd(self):
@@ -180,12 +180,12 @@ class ShareholdersIdentificationDisclosureRequestV04(base_types._BaseFieldType):
 
 	@RspnThrghChainInd.setter
 	def RspnThrghChainInd(self, value):
-		self._RspnThrghChainInd = value if type(value) != base_types.auto else self.make_default("RspnThrghChainInd")
+		self._RspnThrghChainInd = value if value is not None else base_types.UninitialisedField(self, 'RspnThrghChainInd', YesNoIndicator, False)
 
 	@RspnThrghChainInd.deleter
 	def RspnThrghChainInd(self):
 		del self._RspnThrghChainInd
-		self._RspnThrghChainInd = None
+		self._RspnThrghChainInd = base_types.UninitialisedField(self, 'RspnThrghChainInd', YesNoIndicator, False)
 
 	@property
 	def ShrhldrRghtsDrctvInd(self):
@@ -193,12 +193,12 @@ class ShareholdersIdentificationDisclosureRequestV04(base_types._BaseFieldType):
 
 	@ShrhldrRghtsDrctvInd.setter
 	def ShrhldrRghtsDrctvInd(self, value):
-		self._ShrhldrRghtsDrctvInd = value if type(value) != base_types.auto else self.make_default("ShrhldrRghtsDrctvInd")
+		self._ShrhldrRghtsDrctvInd = value if value is not None else base_types.UninitialisedField(self, 'ShrhldrRghtsDrctvInd', YesNoIndicator, False)
 
 	@ShrhldrRghtsDrctvInd.deleter
 	def ShrhldrRghtsDrctvInd(self):
 		del self._ShrhldrRghtsDrctvInd
-		self._ShrhldrRghtsDrctvInd = None
+		self._ShrhldrRghtsDrctvInd = base_types.UninitialisedField(self, 'ShrhldrRghtsDrctvInd', YesNoIndicator, False)
 
 	@property
 	def ShrhldrsDsclsrRcrdDt(self):
@@ -206,12 +206,12 @@ class ShareholdersIdentificationDisclosureRequestV04(base_types._BaseFieldType):
 
 	@ShrhldrsDsclsrRcrdDt.setter
 	def ShrhldrsDsclsrRcrdDt(self, value):
-		self._ShrhldrsDsclsrRcrdDt = value if type(value) != base_types.auto else self.make_default("ShrhldrsDsclsrRcrdDt")
+		self._ShrhldrsDsclsrRcrdDt = value if value is not None else base_types.UninitialisedField(self, 'ShrhldrsDsclsrRcrdDt', DateFormat46Choice, False)
 
 	@ShrhldrsDsclsrRcrdDt.deleter
 	def ShrhldrsDsclsrRcrdDt(self):
 		del self._ShrhldrsDsclsrRcrdDt
-		self._ShrhldrsDsclsrRcrdDt = None
+		self._ShrhldrsDsclsrRcrdDt = base_types.UninitialisedField(self, 'ShrhldrsDsclsrRcrdDt', DateFormat46Choice, False)
 
 	@property
 	def ShrsQtyThrshld(self):
@@ -219,12 +219,12 @@ class ShareholdersIdentificationDisclosureRequestV04(base_types._BaseFieldType):
 
 	@ShrsQtyThrshld.setter
 	def ShrsQtyThrshld(self, value):
-		self._ShrsQtyThrshld = value if type(value) != base_types.auto else self.make_default("ShrsQtyThrshld")
+		self._ShrsQtyThrshld = value if value is not None else base_types.UninitialisedField(self, 'ShrsQtyThrshld', DecimalNumber, False)
 
 	@ShrsQtyThrshld.deleter
 	def ShrsQtyThrshld(self):
 		del self._ShrsQtyThrshld
-		self._ShrsQtyThrshld = None
+		self._ShrsQtyThrshld = base_types.UninitialisedField(self, 'ShrsQtyThrshld', DecimalNumber, False)
 
 	@property
 	def SplmtryData(self):
@@ -232,12 +232,12 @@ class ShareholdersIdentificationDisclosureRequestV04(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AplblLaw', type=Max140Text, min=0, max=1, mutex_group=None, array=False),

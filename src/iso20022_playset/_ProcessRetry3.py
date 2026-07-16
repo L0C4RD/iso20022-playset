@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max9NumericText import Max9NumericText
-from ._Number import Number
-from ._TimeUnit1Code import TimeUnit1Code
+from . import Max9NumericText
+from . import Number
+from . import TimeUnit1Code
 
 class ProcessRetry3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ProcessRetry3(base_types._BaseFieldType):
 
 	@Dely.setter
 	def Dely(self, value):
-		self._Dely = value if type(value) != base_types.auto else self.make_default("Dely")
+		self._Dely = value if value is not None else base_types.UninitialisedField(self, 'Dely', Max9NumericText, False)
 
 	@Dely.deleter
 	def Dely(self):
 		del self._Dely
-		self._Dely = None
+		self._Dely = base_types.UninitialisedField(self, 'Dely', Max9NumericText, False)
 
 	@property
 	def MaxNb(self):
@@ -28,12 +28,12 @@ class ProcessRetry3(base_types._BaseFieldType):
 
 	@MaxNb.setter
 	def MaxNb(self, value):
-		self._MaxNb = value if type(value) != base_types.auto else self.make_default("MaxNb")
+		self._MaxNb = value if value is not None else base_types.UninitialisedField(self, 'MaxNb', Number, False)
 
 	@MaxNb.deleter
 	def MaxNb(self):
 		del self._MaxNb
-		self._MaxNb = None
+		self._MaxNb = base_types.UninitialisedField(self, 'MaxNb', Number, False)
 
 	@property
 	def UnitOfTm(self):
@@ -41,12 +41,12 @@ class ProcessRetry3(base_types._BaseFieldType):
 
 	@UnitOfTm.setter
 	def UnitOfTm(self, value):
-		self._UnitOfTm = value if type(value) != base_types.auto else self.make_default("UnitOfTm")
+		self._UnitOfTm = value if value is not None else base_types.UninitialisedField(self, 'UnitOfTm', TimeUnit1Code, False)
 
 	@UnitOfTm.deleter
 	def UnitOfTm(self):
 		del self._UnitOfTm
-		self._UnitOfTm = None
+		self._UnitOfTm = base_types.UninitialisedField(self, 'UnitOfTm', TimeUnit1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dely', type=Max9NumericText, min=1, max=1, mutex_group=None, array=False),

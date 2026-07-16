@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GetAccountV08 import GetAccountV08
+from . import GetAccountV08
 
 class CAMT_003_001_08():
 
@@ -18,12 +18,12 @@ class CAMT_003_001_08():
 
 		@GetAcct.setter
 		def GetAcct(self, value):
-			self._GetAcct = value if type(value) != base_types.auto else self.make_default("GetAcct")
+			self._GetAcct = value if value is not None else base_types.UninitialisedField(self, 'GetAcct', GetAccountV08, False)
 
 		@GetAcct.deleter
 		def GetAcct(self):
 			del self._GetAcct
-			self._GetAcct = None
+			self._GetAcct = base_types.UninitialisedField(self, 'GetAcct', GetAccountV08, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='GetAcct', type=GetAccountV08, min=1, max=1, mutex_group=None, array=False),

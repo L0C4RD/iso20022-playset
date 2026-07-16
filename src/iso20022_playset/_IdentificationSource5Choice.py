@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCode import CountryCode
-from ._Max35Text import Max35Text
+from . import CountryCode
+from . import Max35Text
 
 class IdentificationSource5Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class IdentificationSource5Choice(base_types._BaseFieldType):
 
 	@DmstIdSrc.setter
 	def DmstIdSrc(self, value):
-		self._DmstIdSrc = value if type(value) != base_types.auto else self.make_default("DmstIdSrc")
+		self._DmstIdSrc = value if value is not None else base_types.UninitialisedField(self, 'DmstIdSrc', CountryCode, False)
 
 	@DmstIdSrc.deleter
 	def DmstIdSrc(self):
 		del self._DmstIdSrc
-		self._DmstIdSrc = None
+		self._DmstIdSrc = base_types.UninitialisedField(self, 'DmstIdSrc', CountryCode, False)
 
 	@property
 	def PrtryIdSrc(self):
@@ -27,12 +27,12 @@ class IdentificationSource5Choice(base_types._BaseFieldType):
 
 	@PrtryIdSrc.setter
 	def PrtryIdSrc(self, value):
-		self._PrtryIdSrc = value if type(value) != base_types.auto else self.make_default("PrtryIdSrc")
+		self._PrtryIdSrc = value if value is not None else base_types.UninitialisedField(self, 'PrtryIdSrc', Max35Text, False)
 
 	@PrtryIdSrc.deleter
 	def PrtryIdSrc(self):
 		del self._PrtryIdSrc
-		self._PrtryIdSrc = None
+		self._PrtryIdSrc = base_types.UninitialisedField(self, 'PrtryIdSrc', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DmstIdSrc', type=CountryCode, min=0, max=1, mutex_group=1, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Number import Number
+from . import ImpliedCurrencyAndAmount
+from . import Number
 
 class ATMMediaMix2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ATMMediaMix2(base_types._BaseFieldType):
 
 	@Nb.setter
 	def Nb(self, value):
-		self._Nb = value if type(value) != base_types.auto else self.make_default("Nb")
+		self._Nb = value if value is not None else base_types.UninitialisedField(self, 'Nb', Number, False)
 
 	@Nb.deleter
 	def Nb(self):
 		del self._Nb
-		self._Nb = None
+		self._Nb = base_types.UninitialisedField(self, 'Nb', Number, False)
 
 	@property
 	def UnitVal(self):
@@ -27,12 +27,12 @@ class ATMMediaMix2(base_types._BaseFieldType):
 
 	@UnitVal.setter
 	def UnitVal(self, value):
-		self._UnitVal = value if type(value) != base_types.auto else self.make_default("UnitVal")
+		self._UnitVal = value if value is not None else base_types.UninitialisedField(self, 'UnitVal', ImpliedCurrencyAndAmount, False)
 
 	@UnitVal.deleter
 	def UnitVal(self):
 		del self._UnitVal
-		self._UnitVal = None
+		self._UnitVal = base_types.UninitialisedField(self, 'UnitVal', ImpliedCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Nb', type=Number, min=1, max=1, mutex_group=None, array=False),

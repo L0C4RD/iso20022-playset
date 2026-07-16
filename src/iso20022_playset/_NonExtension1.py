@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CommunicationMethod1Choice import CommunicationMethod1Choice
-from ._Max140Text import Max140Text
-from ._Number import Number
-from ._PartyType1Choice import PartyType1Choice
-from ._PostalAddress6 import PostalAddress6
+from . import CommunicationMethod1Choice
+from . import Max140Text
+from . import Number
+from . import PartyType1Choice
+from . import PostalAddress6
 
 class NonExtension1(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class NonExtension1(base_types._BaseFieldType):
 
 	@NtfctnMtd.setter
 	def NtfctnMtd(self, value):
-		self._NtfctnMtd = value if type(value) != base_types.auto else self.make_default("NtfctnMtd")
+		self._NtfctnMtd = value if value is not None else base_types.UninitialisedField(self, 'NtfctnMtd', CommunicationMethod1Choice, False)
 
 	@NtfctnMtd.deleter
 	def NtfctnMtd(self):
 		del self._NtfctnMtd
-		self._NtfctnMtd = None
+		self._NtfctnMtd = base_types.UninitialisedField(self, 'NtfctnMtd', CommunicationMethod1Choice, False)
 
 	@property
 	def NtfctnPrd(self):
@@ -30,12 +30,12 @@ class NonExtension1(base_types._BaseFieldType):
 
 	@NtfctnPrd.setter
 	def NtfctnPrd(self, value):
-		self._NtfctnPrd = value if type(value) != base_types.auto else self.make_default("NtfctnPrd")
+		self._NtfctnPrd = value if value is not None else base_types.UninitialisedField(self, 'NtfctnPrd', Number, False)
 
 	@NtfctnPrd.deleter
 	def NtfctnPrd(self):
 		del self._NtfctnPrd
-		self._NtfctnPrd = None
+		self._NtfctnPrd = base_types.UninitialisedField(self, 'NtfctnPrd', Number, False)
 
 	@property
 	def NtfctnRcptAdr(self):
@@ -43,12 +43,12 @@ class NonExtension1(base_types._BaseFieldType):
 
 	@NtfctnRcptAdr.setter
 	def NtfctnRcptAdr(self, value):
-		self._NtfctnRcptAdr = value if type(value) != base_types.auto else self.make_default("NtfctnRcptAdr")
+		self._NtfctnRcptAdr = value if value is not None else base_types.UninitialisedField(self, 'NtfctnRcptAdr', PostalAddress6, False)
 
 	@NtfctnRcptAdr.deleter
 	def NtfctnRcptAdr(self):
 		del self._NtfctnRcptAdr
-		self._NtfctnRcptAdr = None
+		self._NtfctnRcptAdr = base_types.UninitialisedField(self, 'NtfctnRcptAdr', PostalAddress6, False)
 
 	@property
 	def NtfctnRcptNm(self):
@@ -56,12 +56,12 @@ class NonExtension1(base_types._BaseFieldType):
 
 	@NtfctnRcptNm.setter
 	def NtfctnRcptNm(self, value):
-		self._NtfctnRcptNm = value if type(value) != base_types.auto else self.make_default("NtfctnRcptNm")
+		self._NtfctnRcptNm = value if value is not None else base_types.UninitialisedField(self, 'NtfctnRcptNm', Max140Text, False)
 
 	@NtfctnRcptNm.deleter
 	def NtfctnRcptNm(self):
 		del self._NtfctnRcptNm
-		self._NtfctnRcptNm = None
+		self._NtfctnRcptNm = base_types.UninitialisedField(self, 'NtfctnRcptNm', Max140Text, False)
 
 	@property
 	def NtfctnRcptTp(self):
@@ -69,12 +69,12 @@ class NonExtension1(base_types._BaseFieldType):
 
 	@NtfctnRcptTp.setter
 	def NtfctnRcptTp(self, value):
-		self._NtfctnRcptTp = value if type(value) != base_types.auto else self.make_default("NtfctnRcptTp")
+		self._NtfctnRcptTp = value if value is not None else base_types.UninitialisedField(self, 'NtfctnRcptTp', PartyType1Choice, False)
 
 	@NtfctnRcptTp.deleter
 	def NtfctnRcptTp(self):
 		del self._NtfctnRcptTp
-		self._NtfctnRcptTp = None
+		self._NtfctnRcptTp = base_types.UninitialisedField(self, 'NtfctnRcptTp', PartyType1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NtfctnMtd', type=CommunicationMethod1Choice, min=0, max=1, mutex_group=None, array=False),

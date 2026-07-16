@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdviceType1 import AdviceType1
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CashAccount40 import CashAccount40
-from ._ChargeBearerType1Code import ChargeBearerType1Code
-from ._CreditTransferTransaction65 import CreditTransferTransaction65
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._Max35Text import Max35Text
-from ._PartyIdentification272 import PartyIdentification272
-from ._PaymentCondition2 import PaymentCondition2
-from ._PaymentMethod7Code import PaymentMethod7Code
-from ._PaymentTypeInformation29 import PaymentTypeInformation29
+from . import AdviceType1
+from . import BranchAndFinancialInstitutionIdentification8
+from . import CashAccount40
+from . import ChargeBearerType1Code
+from . import CreditTransferTransaction65
+from . import DateAndDateTime2Choice
+from . import Max35Text
+from . import PartyIdentification272
+from . import PaymentCondition2
+from . import PaymentMethod7Code
+from . import PaymentTypeInformation29
 
 class PaymentInstruction46(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class PaymentInstruction46(base_types._BaseFieldType):
 
 	@CdtTrfTx.setter
 	def CdtTrfTx(self, value):
-		self._CdtTrfTx = value if type(value) != base_types.auto else self.make_default("CdtTrfTx")
+		self._CdtTrfTx = value if value is not None else base_types.UninitialisedField(self, 'CdtTrfTx', CreditTransferTransaction65, True)
 
 	@CdtTrfTx.deleter
 	def CdtTrfTx(self):
 		del self._CdtTrfTx
-		self._CdtTrfTx = None
+		self._CdtTrfTx = base_types.UninitialisedField(self, 'CdtTrfTx', CreditTransferTransaction65, True)
 
 	@property
 	def ChrgBr(self):
@@ -36,12 +36,12 @@ class PaymentInstruction46(base_types._BaseFieldType):
 
 	@ChrgBr.setter
 	def ChrgBr(self, value):
-		self._ChrgBr = value if type(value) != base_types.auto else self.make_default("ChrgBr")
+		self._ChrgBr = value if value is not None else base_types.UninitialisedField(self, 'ChrgBr', ChargeBearerType1Code, False)
 
 	@ChrgBr.deleter
 	def ChrgBr(self):
 		del self._ChrgBr
-		self._ChrgBr = None
+		self._ChrgBr = base_types.UninitialisedField(self, 'ChrgBr', ChargeBearerType1Code, False)
 
 	@property
 	def Dbtr(self):
@@ -49,12 +49,12 @@ class PaymentInstruction46(base_types._BaseFieldType):
 
 	@Dbtr.setter
 	def Dbtr(self, value):
-		self._Dbtr = value if type(value) != base_types.auto else self.make_default("Dbtr")
+		self._Dbtr = value if value is not None else base_types.UninitialisedField(self, 'Dbtr', PartyIdentification272, False)
 
 	@Dbtr.deleter
 	def Dbtr(self):
 		del self._Dbtr
-		self._Dbtr = None
+		self._Dbtr = base_types.UninitialisedField(self, 'Dbtr', PartyIdentification272, False)
 
 	@property
 	def DbtrAcct(self):
@@ -62,12 +62,12 @@ class PaymentInstruction46(base_types._BaseFieldType):
 
 	@DbtrAcct.setter
 	def DbtrAcct(self, value):
-		self._DbtrAcct = value if type(value) != base_types.auto else self.make_default("DbtrAcct")
+		self._DbtrAcct = value if value is not None else base_types.UninitialisedField(self, 'DbtrAcct', CashAccount40, False)
 
 	@DbtrAcct.deleter
 	def DbtrAcct(self):
 		del self._DbtrAcct
-		self._DbtrAcct = None
+		self._DbtrAcct = base_types.UninitialisedField(self, 'DbtrAcct', CashAccount40, False)
 
 	@property
 	def DbtrAgt(self):
@@ -75,12 +75,12 @@ class PaymentInstruction46(base_types._BaseFieldType):
 
 	@DbtrAgt.setter
 	def DbtrAgt(self, value):
-		self._DbtrAgt = value if type(value) != base_types.auto else self.make_default("DbtrAgt")
+		self._DbtrAgt = value if value is not None else base_types.UninitialisedField(self, 'DbtrAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@DbtrAgt.deleter
 	def DbtrAgt(self):
 		del self._DbtrAgt
-		self._DbtrAgt = None
+		self._DbtrAgt = base_types.UninitialisedField(self, 'DbtrAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def DbtrAgtAcct(self):
@@ -88,12 +88,12 @@ class PaymentInstruction46(base_types._BaseFieldType):
 
 	@DbtrAgtAcct.setter
 	def DbtrAgtAcct(self, value):
-		self._DbtrAgtAcct = value if type(value) != base_types.auto else self.make_default("DbtrAgtAcct")
+		self._DbtrAgtAcct = value if value is not None else base_types.UninitialisedField(self, 'DbtrAgtAcct', CashAccount40, False)
 
 	@DbtrAgtAcct.deleter
 	def DbtrAgtAcct(self):
 		del self._DbtrAgtAcct
-		self._DbtrAgtAcct = None
+		self._DbtrAgtAcct = base_types.UninitialisedField(self, 'DbtrAgtAcct', CashAccount40, False)
 
 	@property
 	def PmtCond(self):
@@ -101,12 +101,12 @@ class PaymentInstruction46(base_types._BaseFieldType):
 
 	@PmtCond.setter
 	def PmtCond(self, value):
-		self._PmtCond = value if type(value) != base_types.auto else self.make_default("PmtCond")
+		self._PmtCond = value if value is not None else base_types.UninitialisedField(self, 'PmtCond', PaymentCondition2, False)
 
 	@PmtCond.deleter
 	def PmtCond(self):
 		del self._PmtCond
-		self._PmtCond = None
+		self._PmtCond = base_types.UninitialisedField(self, 'PmtCond', PaymentCondition2, False)
 
 	@property
 	def PmtInfId(self):
@@ -114,12 +114,12 @@ class PaymentInstruction46(base_types._BaseFieldType):
 
 	@PmtInfId.setter
 	def PmtInfId(self, value):
-		self._PmtInfId = value if type(value) != base_types.auto else self.make_default("PmtInfId")
+		self._PmtInfId = value if value is not None else base_types.UninitialisedField(self, 'PmtInfId', Max35Text, False)
 
 	@PmtInfId.deleter
 	def PmtInfId(self):
 		del self._PmtInfId
-		self._PmtInfId = None
+		self._PmtInfId = base_types.UninitialisedField(self, 'PmtInfId', Max35Text, False)
 
 	@property
 	def PmtMtd(self):
@@ -127,12 +127,12 @@ class PaymentInstruction46(base_types._BaseFieldType):
 
 	@PmtMtd.setter
 	def PmtMtd(self, value):
-		self._PmtMtd = value if type(value) != base_types.auto else self.make_default("PmtMtd")
+		self._PmtMtd = value if value is not None else base_types.UninitialisedField(self, 'PmtMtd', PaymentMethod7Code, False)
 
 	@PmtMtd.deleter
 	def PmtMtd(self):
 		del self._PmtMtd
-		self._PmtMtd = None
+		self._PmtMtd = base_types.UninitialisedField(self, 'PmtMtd', PaymentMethod7Code, False)
 
 	@property
 	def PmtTpInf(self):
@@ -140,12 +140,12 @@ class PaymentInstruction46(base_types._BaseFieldType):
 
 	@PmtTpInf.setter
 	def PmtTpInf(self, value):
-		self._PmtTpInf = value if type(value) != base_types.auto else self.make_default("PmtTpInf")
+		self._PmtTpInf = value if value is not None else base_types.UninitialisedField(self, 'PmtTpInf', PaymentTypeInformation29, False)
 
 	@PmtTpInf.deleter
 	def PmtTpInf(self):
 		del self._PmtTpInf
-		self._PmtTpInf = None
+		self._PmtTpInf = base_types.UninitialisedField(self, 'PmtTpInf', PaymentTypeInformation29, False)
 
 	@property
 	def ReqdAdvcTp(self):
@@ -153,12 +153,12 @@ class PaymentInstruction46(base_types._BaseFieldType):
 
 	@ReqdAdvcTp.setter
 	def ReqdAdvcTp(self, value):
-		self._ReqdAdvcTp = value if type(value) != base_types.auto else self.make_default("ReqdAdvcTp")
+		self._ReqdAdvcTp = value if value is not None else base_types.UninitialisedField(self, 'ReqdAdvcTp', AdviceType1, False)
 
 	@ReqdAdvcTp.deleter
 	def ReqdAdvcTp(self):
 		del self._ReqdAdvcTp
-		self._ReqdAdvcTp = None
+		self._ReqdAdvcTp = base_types.UninitialisedField(self, 'ReqdAdvcTp', AdviceType1, False)
 
 	@property
 	def ReqdExctnDt(self):
@@ -166,12 +166,12 @@ class PaymentInstruction46(base_types._BaseFieldType):
 
 	@ReqdExctnDt.setter
 	def ReqdExctnDt(self, value):
-		self._ReqdExctnDt = value if type(value) != base_types.auto else self.make_default("ReqdExctnDt")
+		self._ReqdExctnDt = value if value is not None else base_types.UninitialisedField(self, 'ReqdExctnDt', DateAndDateTime2Choice, False)
 
 	@ReqdExctnDt.deleter
 	def ReqdExctnDt(self):
 		del self._ReqdExctnDt
-		self._ReqdExctnDt = None
+		self._ReqdExctnDt = base_types.UninitialisedField(self, 'ReqdExctnDt', DateAndDateTime2Choice, False)
 
 	@property
 	def UltmtDbtr(self):
@@ -179,12 +179,12 @@ class PaymentInstruction46(base_types._BaseFieldType):
 
 	@UltmtDbtr.setter
 	def UltmtDbtr(self, value):
-		self._UltmtDbtr = value if type(value) != base_types.auto else self.make_default("UltmtDbtr")
+		self._UltmtDbtr = value if value is not None else base_types.UninitialisedField(self, 'UltmtDbtr', PartyIdentification272, False)
 
 	@UltmtDbtr.deleter
 	def UltmtDbtr(self):
 		del self._UltmtDbtr
-		self._UltmtDbtr = None
+		self._UltmtDbtr = base_types.UninitialisedField(self, 'UltmtDbtr', PartyIdentification272, False)
 
 	@property
 	def XpryDt(self):
@@ -192,12 +192,12 @@ class PaymentInstruction46(base_types._BaseFieldType):
 
 	@XpryDt.setter
 	def XpryDt(self, value):
-		self._XpryDt = value if type(value) != base_types.auto else self.make_default("XpryDt")
+		self._XpryDt = value if value is not None else base_types.UninitialisedField(self, 'XpryDt', DateAndDateTime2Choice, False)
 
 	@XpryDt.deleter
 	def XpryDt(self):
 		del self._XpryDt
-		self._XpryDt = None
+		self._XpryDt = base_types.UninitialisedField(self, 'XpryDt', DateAndDateTime2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtTrfTx', type=CreditTransferTransaction65, min=1, max=None, mutex_group=None, array=True),

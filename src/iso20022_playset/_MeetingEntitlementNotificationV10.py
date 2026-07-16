@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._EligibilityDates1 import EligibilityDates1
-from ._Max35Text import Max35Text
-from ._MeetingReference10 import MeetingReference10
-from ._NotificationType2Code import NotificationType2Code
-from ._PartyIdentification129Choice import PartyIdentification129Choice
-from ._PartyIdentification232Choice import PartyIdentification232Choice
-from ._SecurityPosition21 import SecurityPosition21
-from ._SupplementaryData1 import SupplementaryData1
+from . import EligibilityDates1
+from . import Max35Text
+from . import MeetingReference10
+from . import NotificationType2Code
+from . import PartyIdentification129Choice
+from . import PartyIdentification232Choice
+from . import SecurityPosition21
+from . import SupplementaryData1
 
 class MeetingEntitlementNotificationV10(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class MeetingEntitlementNotificationV10(base_types._BaseFieldType):
 
 	@Elgblty.setter
 	def Elgblty(self, value):
-		self._Elgblty = value if type(value) != base_types.auto else self.make_default("Elgblty")
+		self._Elgblty = value if value is not None else base_types.UninitialisedField(self, 'Elgblty', EligibilityDates1, False)
 
 	@Elgblty.deleter
 	def Elgblty(self):
 		del self._Elgblty
-		self._Elgblty = None
+		self._Elgblty = base_types.UninitialisedField(self, 'Elgblty', EligibilityDates1, False)
 
 	@property
 	def Issr(self):
@@ -33,12 +33,12 @@ class MeetingEntitlementNotificationV10(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+		self._Issr = value if value is not None else base_types.UninitialisedField(self, 'Issr', PartyIdentification129Choice, False)
 
 	@Issr.deleter
 	def Issr(self):
 		del self._Issr
-		self._Issr = None
+		self._Issr = base_types.UninitialisedField(self, 'Issr', PartyIdentification129Choice, False)
 
 	@property
 	def MtgAttndee(self):
@@ -46,12 +46,12 @@ class MeetingEntitlementNotificationV10(base_types._BaseFieldType):
 
 	@MtgAttndee.setter
 	def MtgAttndee(self, value):
-		self._MtgAttndee = value if type(value) != base_types.auto else self.make_default("MtgAttndee")
+		self._MtgAttndee = value if value is not None else base_types.UninitialisedField(self, 'MtgAttndee', PartyIdentification232Choice, False)
 
 	@MtgAttndee.deleter
 	def MtgAttndee(self):
 		del self._MtgAttndee
-		self._MtgAttndee = None
+		self._MtgAttndee = base_types.UninitialisedField(self, 'MtgAttndee', PartyIdentification232Choice, False)
 
 	@property
 	def MtgRef(self):
@@ -59,12 +59,12 @@ class MeetingEntitlementNotificationV10(base_types._BaseFieldType):
 
 	@MtgRef.setter
 	def MtgRef(self, value):
-		self._MtgRef = value if type(value) != base_types.auto else self.make_default("MtgRef")
+		self._MtgRef = value if value is not None else base_types.UninitialisedField(self, 'MtgRef', MeetingReference10, False)
 
 	@MtgRef.deleter
 	def MtgRef(self):
 		del self._MtgRef
-		self._MtgRef = None
+		self._MtgRef = base_types.UninitialisedField(self, 'MtgRef', MeetingReference10, False)
 
 	@property
 	def NtfctnTp(self):
@@ -72,12 +72,12 @@ class MeetingEntitlementNotificationV10(base_types._BaseFieldType):
 
 	@NtfctnTp.setter
 	def NtfctnTp(self, value):
-		self._NtfctnTp = value if type(value) != base_types.auto else self.make_default("NtfctnTp")
+		self._NtfctnTp = value if value is not None else base_types.UninitialisedField(self, 'NtfctnTp', NotificationType2Code, False)
 
 	@NtfctnTp.deleter
 	def NtfctnTp(self):
 		del self._NtfctnTp
-		self._NtfctnTp = None
+		self._NtfctnTp = base_types.UninitialisedField(self, 'NtfctnTp', NotificationType2Code, False)
 
 	@property
 	def PrvsEntitlmntNtfctnId(self):
@@ -85,12 +85,12 @@ class MeetingEntitlementNotificationV10(base_types._BaseFieldType):
 
 	@PrvsEntitlmntNtfctnId.setter
 	def PrvsEntitlmntNtfctnId(self, value):
-		self._PrvsEntitlmntNtfctnId = value if type(value) != base_types.auto else self.make_default("PrvsEntitlmntNtfctnId")
+		self._PrvsEntitlmntNtfctnId = value if value is not None else base_types.UninitialisedField(self, 'PrvsEntitlmntNtfctnId', Max35Text, False)
 
 	@PrvsEntitlmntNtfctnId.deleter
 	def PrvsEntitlmntNtfctnId(self):
 		del self._PrvsEntitlmntNtfctnId
-		self._PrvsEntitlmntNtfctnId = None
+		self._PrvsEntitlmntNtfctnId = base_types.UninitialisedField(self, 'PrvsEntitlmntNtfctnId', Max35Text, False)
 
 	@property
 	def Prxy(self):
@@ -98,12 +98,12 @@ class MeetingEntitlementNotificationV10(base_types._BaseFieldType):
 
 	@Prxy.setter
 	def Prxy(self, value):
-		self._Prxy = value if type(value) != base_types.auto else self.make_default("Prxy")
+		self._Prxy = value if value is not None else base_types.UninitialisedField(self, 'Prxy', PartyIdentification232Choice, False)
 
 	@Prxy.deleter
 	def Prxy(self):
 		del self._Prxy
-		self._Prxy = None
+		self._Prxy = base_types.UninitialisedField(self, 'Prxy', PartyIdentification232Choice, False)
 
 	@property
 	def Scty(self):
@@ -111,12 +111,12 @@ class MeetingEntitlementNotificationV10(base_types._BaseFieldType):
 
 	@Scty.setter
 	def Scty(self, value):
-		self._Scty = value if type(value) != base_types.auto else self.make_default("Scty")
+		self._Scty = value if value is not None else base_types.UninitialisedField(self, 'Scty', SecurityPosition21, True)
 
 	@Scty.deleter
 	def Scty(self):
 		del self._Scty
-		self._Scty = None
+		self._Scty = base_types.UninitialisedField(self, 'Scty', SecurityPosition21, True)
 
 	@property
 	def SplmtryData(self):
@@ -124,12 +124,12 @@ class MeetingEntitlementNotificationV10(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Elgblty', type=EligibilityDates1, min=1, max=1, mutex_group=None, array=False),

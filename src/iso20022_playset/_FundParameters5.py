@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCode import CountryCode
-from ._FinancialInstrument71 import FinancialInstrument71
-from ._ISODate import ISODate
-from ._PartyIdentification139 import PartyIdentification139
+from . import CountryCode
+from . import FinancialInstrument71
+from . import ISODate
+from . import PartyIdentification139
 
 class FundParameters5(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class FundParameters5(base_types._BaseFieldType):
 
 	@CtryOfDmcl.setter
 	def CtryOfDmcl(self, value):
-		self._CtryOfDmcl = value if type(value) != base_types.auto else self.make_default("CtryOfDmcl")
+		self._CtryOfDmcl = value if value is not None else base_types.UninitialisedField(self, 'CtryOfDmcl', CountryCode, False)
 
 	@CtryOfDmcl.deleter
 	def CtryOfDmcl(self):
 		del self._CtryOfDmcl
-		self._CtryOfDmcl = None
+		self._CtryOfDmcl = base_types.UninitialisedField(self, 'CtryOfDmcl', CountryCode, False)
 
 	@property
 	def DtFr(self):
@@ -29,12 +29,12 @@ class FundParameters5(base_types._BaseFieldType):
 
 	@DtFr.setter
 	def DtFr(self, value):
-		self._DtFr = value if type(value) != base_types.auto else self.make_default("DtFr")
+		self._DtFr = value if value is not None else base_types.UninitialisedField(self, 'DtFr', ISODate, False)
 
 	@DtFr.deleter
 	def DtFr(self):
 		del self._DtFr
-		self._DtFr = None
+		self._DtFr = base_types.UninitialisedField(self, 'DtFr', ISODate, False)
 
 	@property
 	def FinInstrmDtls(self):
@@ -42,12 +42,12 @@ class FundParameters5(base_types._BaseFieldType):
 
 	@FinInstrmDtls.setter
 	def FinInstrmDtls(self, value):
-		self._FinInstrmDtls = value if type(value) != base_types.auto else self.make_default("FinInstrmDtls")
+		self._FinInstrmDtls = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmDtls', FinancialInstrument71, True)
 
 	@FinInstrmDtls.deleter
 	def FinInstrmDtls(self):
 		del self._FinInstrmDtls
-		self._FinInstrmDtls = None
+		self._FinInstrmDtls = base_types.UninitialisedField(self, 'FinInstrmDtls', FinancialInstrument71, True)
 
 	@property
 	def FndMgmtCpny(self):
@@ -55,12 +55,12 @@ class FundParameters5(base_types._BaseFieldType):
 
 	@FndMgmtCpny.setter
 	def FndMgmtCpny(self, value):
-		self._FndMgmtCpny = value if type(value) != base_types.auto else self.make_default("FndMgmtCpny")
+		self._FndMgmtCpny = value if value is not None else base_types.UninitialisedField(self, 'FndMgmtCpny', PartyIdentification139, True)
 
 	@FndMgmtCpny.deleter
 	def FndMgmtCpny(self):
 		del self._FndMgmtCpny
-		self._FndMgmtCpny = None
+		self._FndMgmtCpny = base_types.UninitialisedField(self, 'FndMgmtCpny', PartyIdentification139, True)
 
 	@property
 	def RegdDstrbtnCtry(self):
@@ -68,12 +68,12 @@ class FundParameters5(base_types._BaseFieldType):
 
 	@RegdDstrbtnCtry.setter
 	def RegdDstrbtnCtry(self, value):
-		self._RegdDstrbtnCtry = value if type(value) != base_types.auto else self.make_default("RegdDstrbtnCtry")
+		self._RegdDstrbtnCtry = value if value is not None else base_types.UninitialisedField(self, 'RegdDstrbtnCtry', CountryCode, True)
 
 	@RegdDstrbtnCtry.deleter
 	def RegdDstrbtnCtry(self):
 		del self._RegdDstrbtnCtry
-		self._RegdDstrbtnCtry = None
+		self._RegdDstrbtnCtry = base_types.UninitialisedField(self, 'RegdDstrbtnCtry', CountryCode, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtryOfDmcl', type=CountryCode, min=0, max=1, mutex_group=None, array=False),

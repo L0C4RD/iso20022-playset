@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CounterpartyData89 import CounterpartyData89
-from ._ISODateTime import ISODateTime
-from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from . import CounterpartyData89
+from . import ISODateTime
+from . import OrganisationIdentification15Choice
 
 class CounterpartyData88(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CounterpartyData88(base_types._BaseFieldType):
 
 	@CtrPty.setter
 	def CtrPty(self, value):
-		self._CtrPty = value if type(value) != base_types.auto else self.make_default("CtrPty")
+		self._CtrPty = value if value is not None else base_types.UninitialisedField(self, 'CtrPty', CounterpartyData89, False)
 
 	@CtrPty.deleter
 	def CtrPty(self):
 		del self._CtrPty
-		self._CtrPty = None
+		self._CtrPty = base_types.UninitialisedField(self, 'CtrPty', CounterpartyData89, False)
 
 	@property
 	def RptSubmitgNtty(self):
@@ -28,12 +28,12 @@ class CounterpartyData88(base_types._BaseFieldType):
 
 	@RptSubmitgNtty.setter
 	def RptSubmitgNtty(self, value):
-		self._RptSubmitgNtty = value if type(value) != base_types.auto else self.make_default("RptSubmitgNtty")
+		self._RptSubmitgNtty = value if value is not None else base_types.UninitialisedField(self, 'RptSubmitgNtty', OrganisationIdentification15Choice, False)
 
 	@RptSubmitgNtty.deleter
 	def RptSubmitgNtty(self):
 		del self._RptSubmitgNtty
-		self._RptSubmitgNtty = None
+		self._RptSubmitgNtty = base_types.UninitialisedField(self, 'RptSubmitgNtty', OrganisationIdentification15Choice, False)
 
 	@property
 	def RptgDtTm(self):
@@ -41,12 +41,12 @@ class CounterpartyData88(base_types._BaseFieldType):
 
 	@RptgDtTm.setter
 	def RptgDtTm(self, value):
-		self._RptgDtTm = value if type(value) != base_types.auto else self.make_default("RptgDtTm")
+		self._RptgDtTm = value if value is not None else base_types.UninitialisedField(self, 'RptgDtTm', ISODateTime, False)
 
 	@RptgDtTm.deleter
 	def RptgDtTm(self):
 		del self._RptgDtTm
-		self._RptgDtTm = None
+		self._RptgDtTm = base_types.UninitialisedField(self, 'RptgDtTm', ISODateTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrPty', type=CounterpartyData89, min=1, max=2, mutex_group=None, array=False),

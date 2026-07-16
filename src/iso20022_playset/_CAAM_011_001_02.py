@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMExceptionAdviceV02 import ATMExceptionAdviceV02
+from . import ATMExceptionAdviceV02
 
 class CAAM_011_001_02():
 
@@ -18,12 +18,12 @@ class CAAM_011_001_02():
 
 		@ATMXcptnAdvc.setter
 		def ATMXcptnAdvc(self, value):
-			self._ATMXcptnAdvc = value if type(value) != base_types.auto else self.make_default("ATMXcptnAdvc")
+			self._ATMXcptnAdvc = value if value is not None else base_types.UninitialisedField(self, 'ATMXcptnAdvc', ATMExceptionAdviceV02, False)
 
 		@ATMXcptnAdvc.deleter
 		def ATMXcptnAdvc(self):
 			del self._ATMXcptnAdvc
-			self._ATMXcptnAdvc = None
+			self._ATMXcptnAdvc = base_types.UninitialisedField(self, 'ATMXcptnAdvc', ATMExceptionAdviceV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ATMXcptnAdvc', type=ATMExceptionAdviceV02, min=1, max=1, mutex_group=None, array=False),

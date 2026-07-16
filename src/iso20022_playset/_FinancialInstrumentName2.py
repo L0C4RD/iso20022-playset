@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
+from . import DateAndDateTime2Choice
+from . import Max350Text
+from . import Max35Text
 
 class FinancialInstrumentName2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class FinancialInstrumentName2(base_types._BaseFieldType):
 
 	@ISOLngNm.setter
 	def ISOLngNm(self, value):
-		self._ISOLngNm = value if type(value) != base_types.auto else self.make_default("ISOLngNm")
+		self._ISOLngNm = value if value is not None else base_types.UninitialisedField(self, 'ISOLngNm', Max350Text, False)
 
 	@ISOLngNm.deleter
 	def ISOLngNm(self):
 		del self._ISOLngNm
-		self._ISOLngNm = None
+		self._ISOLngNm = base_types.UninitialisedField(self, 'ISOLngNm', Max350Text, False)
 
 	@property
 	def ISOShrtNm(self):
@@ -28,12 +28,12 @@ class FinancialInstrumentName2(base_types._BaseFieldType):
 
 	@ISOShrtNm.setter
 	def ISOShrtNm(self, value):
-		self._ISOShrtNm = value if type(value) != base_types.auto else self.make_default("ISOShrtNm")
+		self._ISOShrtNm = value if value is not None else base_types.UninitialisedField(self, 'ISOShrtNm', Max35Text, False)
 
 	@ISOShrtNm.deleter
 	def ISOShrtNm(self):
 		del self._ISOShrtNm
-		self._ISOShrtNm = None
+		self._ISOShrtNm = base_types.UninitialisedField(self, 'ISOShrtNm', Max35Text, False)
 
 	@property
 	def VldFr(self):
@@ -41,12 +41,12 @@ class FinancialInstrumentName2(base_types._BaseFieldType):
 
 	@VldFr.setter
 	def VldFr(self, value):
-		self._VldFr = value if type(value) != base_types.auto else self.make_default("VldFr")
+		self._VldFr = value if value is not None else base_types.UninitialisedField(self, 'VldFr', DateAndDateTime2Choice, False)
 
 	@VldFr.deleter
 	def VldFr(self):
 		del self._VldFr
-		self._VldFr = None
+		self._VldFr = base_types.UninitialisedField(self, 'VldFr', DateAndDateTime2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ISOLngNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max350Text import Max350Text
-from ._ProcessedStatus6FormatChoice import ProcessedStatus6FormatChoice
+from . import Max350Text
+from . import ProcessedStatus6FormatChoice
 
 class CorporateActionDeactivationInstructionProcessingStatus1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CorporateActionDeactivationInstructionProcessingStatus1(base_types._BaseFi
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max350Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max350Text, False)
 
 	@property
 	def Sts(self):
@@ -27,12 +27,12 @@ class CorporateActionDeactivationInstructionProcessingStatus1(base_types._BaseFi
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', ProcessedStatus6FormatChoice, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', ProcessedStatus6FormatChoice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max350Text, min=0, max=1, mutex_group=None, array=False),

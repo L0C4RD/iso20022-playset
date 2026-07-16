@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Account23 import Account23
-from ._AccountManagementType3Code import AccountManagementType3Code
-from ._InvestmentAccount77 import InvestmentAccount77
-from ._LinkedMessage5Choice import LinkedMessage5Choice
-from ._Max35Text import Max35Text
+from . import Account23
+from . import AccountManagementType3Code
+from . import InvestmentAccount77
+from . import LinkedMessage5Choice
+from . import Max35Text
 
 class AccountManagementMessageReference5(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class AccountManagementMessageReference5(base_types._BaseFieldType):
 
 	@AcctApplId.setter
 	def AcctApplId(self, value):
-		self._AcctApplId = value if type(value) != base_types.auto else self.make_default("AcctApplId")
+		self._AcctApplId = value if value is not None else base_types.UninitialisedField(self, 'AcctApplId', Max35Text, False)
 
 	@AcctApplId.deleter
 	def AcctApplId(self):
 		del self._AcctApplId
-		self._AcctApplId = None
+		self._AcctApplId = base_types.UninitialisedField(self, 'AcctApplId', Max35Text, False)
 
 	@property
 	def ExstgAcctId(self):
@@ -30,12 +30,12 @@ class AccountManagementMessageReference5(base_types._BaseFieldType):
 
 	@ExstgAcctId.setter
 	def ExstgAcctId(self, value):
-		self._ExstgAcctId = value if type(value) != base_types.auto else self.make_default("ExstgAcctId")
+		self._ExstgAcctId = value if value is not None else base_types.UninitialisedField(self, 'ExstgAcctId', Account23, False)
 
 	@ExstgAcctId.deleter
 	def ExstgAcctId(self):
 		del self._ExstgAcctId
-		self._ExstgAcctId = None
+		self._ExstgAcctId = base_types.UninitialisedField(self, 'ExstgAcctId', Account23, False)
 
 	@property
 	def InvstmtAcct(self):
@@ -43,12 +43,12 @@ class AccountManagementMessageReference5(base_types._BaseFieldType):
 
 	@InvstmtAcct.setter
 	def InvstmtAcct(self, value):
-		self._InvstmtAcct = value if type(value) != base_types.auto else self.make_default("InvstmtAcct")
+		self._InvstmtAcct = value if value is not None else base_types.UninitialisedField(self, 'InvstmtAcct', InvestmentAccount77, False)
 
 	@InvstmtAcct.deleter
 	def InvstmtAcct(self):
 		del self._InvstmtAcct
-		self._InvstmtAcct = None
+		self._InvstmtAcct = base_types.UninitialisedField(self, 'InvstmtAcct', InvestmentAccount77, False)
 
 	@property
 	def LkdRef(self):
@@ -56,12 +56,12 @@ class AccountManagementMessageReference5(base_types._BaseFieldType):
 
 	@LkdRef.setter
 	def LkdRef(self, value):
-		self._LkdRef = value if type(value) != base_types.auto else self.make_default("LkdRef")
+		self._LkdRef = value if value is not None else base_types.UninitialisedField(self, 'LkdRef', LinkedMessage5Choice, False)
 
 	@LkdRef.deleter
 	def LkdRef(self):
 		del self._LkdRef
-		self._LkdRef = None
+		self._LkdRef = base_types.UninitialisedField(self, 'LkdRef', LinkedMessage5Choice, False)
 
 	@property
 	def StsReqTp(self):
@@ -69,12 +69,12 @@ class AccountManagementMessageReference5(base_types._BaseFieldType):
 
 	@StsReqTp.setter
 	def StsReqTp(self, value):
-		self._StsReqTp = value if type(value) != base_types.auto else self.make_default("StsReqTp")
+		self._StsReqTp = value if value is not None else base_types.UninitialisedField(self, 'StsReqTp', AccountManagementType3Code, False)
 
 	@StsReqTp.deleter
 	def StsReqTp(self):
 		del self._StsReqTp
-		self._StsReqTp = None
+		self._StsReqTp = base_types.UninitialisedField(self, 'StsReqTp', AccountManagementType3Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctApplId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

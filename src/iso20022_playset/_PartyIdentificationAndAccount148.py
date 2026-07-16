@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AlternatePartyIdentification8 import AlternatePartyIdentification8
-from ._CashAccountIdentification5Choice import CashAccountIdentification5Choice
-from ._PartyIdentification117Choice import PartyIdentification117Choice
-from ._PartyTextInformation2 import PartyTextInformation2
+from . import AlternatePartyIdentification8
+from . import CashAccountIdentification5Choice
+from . import PartyIdentification117Choice
+from . import PartyTextInformation2
 
 class PartyIdentificationAndAccount148(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class PartyIdentificationAndAccount148(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', PartyTextInformation2, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', PartyTextInformation2, False)
 
 	@property
 	def AltrnId(self):
@@ -29,12 +29,12 @@ class PartyIdentificationAndAccount148(base_types._BaseFieldType):
 
 	@AltrnId.setter
 	def AltrnId(self, value):
-		self._AltrnId = value if type(value) != base_types.auto else self.make_default("AltrnId")
+		self._AltrnId = value if value is not None else base_types.UninitialisedField(self, 'AltrnId', AlternatePartyIdentification8, False)
 
 	@AltrnId.deleter
 	def AltrnId(self):
 		del self._AltrnId
-		self._AltrnId = None
+		self._AltrnId = base_types.UninitialisedField(self, 'AltrnId', AlternatePartyIdentification8, False)
 
 	@property
 	def ChrgsAcct(self):
@@ -42,12 +42,12 @@ class PartyIdentificationAndAccount148(base_types._BaseFieldType):
 
 	@ChrgsAcct.setter
 	def ChrgsAcct(self, value):
-		self._ChrgsAcct = value if type(value) != base_types.auto else self.make_default("ChrgsAcct")
+		self._ChrgsAcct = value if value is not None else base_types.UninitialisedField(self, 'ChrgsAcct', CashAccountIdentification5Choice, False)
 
 	@ChrgsAcct.deleter
 	def ChrgsAcct(self):
 		del self._ChrgsAcct
-		self._ChrgsAcct = None
+		self._ChrgsAcct = base_types.UninitialisedField(self, 'ChrgsAcct', CashAccountIdentification5Choice, False)
 
 	@property
 	def ComssnAcct(self):
@@ -55,12 +55,12 @@ class PartyIdentificationAndAccount148(base_types._BaseFieldType):
 
 	@ComssnAcct.setter
 	def ComssnAcct(self, value):
-		self._ComssnAcct = value if type(value) != base_types.auto else self.make_default("ComssnAcct")
+		self._ComssnAcct = value if value is not None else base_types.UninitialisedField(self, 'ComssnAcct', CashAccountIdentification5Choice, False)
 
 	@ComssnAcct.deleter
 	def ComssnAcct(self):
 		del self._ComssnAcct
-		self._ComssnAcct = None
+		self._ComssnAcct = base_types.UninitialisedField(self, 'ComssnAcct', CashAccountIdentification5Choice, False)
 
 	@property
 	def CshAcct(self):
@@ -68,12 +68,12 @@ class PartyIdentificationAndAccount148(base_types._BaseFieldType):
 
 	@CshAcct.setter
 	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != base_types.auto else self.make_default("CshAcct")
+		self._CshAcct = value if value is not None else base_types.UninitialisedField(self, 'CshAcct', CashAccountIdentification5Choice, False)
 
 	@CshAcct.deleter
 	def CshAcct(self):
 		del self._CshAcct
-		self._CshAcct = None
+		self._CshAcct = base_types.UninitialisedField(self, 'CshAcct', CashAccountIdentification5Choice, False)
 
 	@property
 	def Id(self):
@@ -81,12 +81,12 @@ class PartyIdentificationAndAccount148(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', PartyIdentification117Choice, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', PartyIdentification117Choice, False)
 
 	@property
 	def TaxAcct(self):
@@ -94,12 +94,12 @@ class PartyIdentificationAndAccount148(base_types._BaseFieldType):
 
 	@TaxAcct.setter
 	def TaxAcct(self, value):
-		self._TaxAcct = value if type(value) != base_types.auto else self.make_default("TaxAcct")
+		self._TaxAcct = value if value is not None else base_types.UninitialisedField(self, 'TaxAcct', CashAccountIdentification5Choice, False)
 
 	@TaxAcct.deleter
 	def TaxAcct(self):
 		del self._TaxAcct
-		self._TaxAcct = None
+		self._TaxAcct = base_types.UninitialisedField(self, 'TaxAcct', CashAccountIdentification5Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=PartyTextInformation2, min=0, max=1, mutex_group=None, array=False),

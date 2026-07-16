@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MemberIdentification3Choice import MemberIdentification3Choice
-from ._SystemIdentification2Choice import SystemIdentification2Choice
+from . import MemberIdentification3Choice
+from . import SystemIdentification2Choice
 
 class SystemMember3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SystemMember3(base_types._BaseFieldType):
 
 	@MmbId.setter
 	def MmbId(self, value):
-		self._MmbId = value if type(value) != base_types.auto else self.make_default("MmbId")
+		self._MmbId = value if value is not None else base_types.UninitialisedField(self, 'MmbId', MemberIdentification3Choice, False)
 
 	@MmbId.deleter
 	def MmbId(self):
 		del self._MmbId
-		self._MmbId = None
+		self._MmbId = base_types.UninitialisedField(self, 'MmbId', MemberIdentification3Choice, False)
 
 	@property
 	def SysId(self):
@@ -27,12 +27,12 @@ class SystemMember3(base_types._BaseFieldType):
 
 	@SysId.setter
 	def SysId(self, value):
-		self._SysId = value if type(value) != base_types.auto else self.make_default("SysId")
+		self._SysId = value if value is not None else base_types.UninitialisedField(self, 'SysId', SystemIdentification2Choice, False)
 
 	@SysId.deleter
 	def SysId(self):
 		del self._SysId
-		self._SysId = None
+		self._SysId = base_types.UninitialisedField(self, 'SysId', SystemIdentification2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MmbId', type=MemberIdentification3Choice, min=1, max=1, mutex_group=None, array=False),

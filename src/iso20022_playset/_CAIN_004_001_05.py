@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialResponseV05 import FinancialResponseV05
+from . import FinancialResponseV05
 
 class CAIN_004_001_05():
 
@@ -18,12 +18,12 @@ class CAIN_004_001_05():
 
 		@FinRspn.setter
 		def FinRspn(self, value):
-			self._FinRspn = value if type(value) != base_types.auto else self.make_default("FinRspn")
+			self._FinRspn = value if value is not None else base_types.UninitialisedField(self, 'FinRspn', FinancialResponseV05, False)
 
 		@FinRspn.deleter
 		def FinRspn(self):
 			del self._FinRspn
-			self._FinRspn = None
+			self._FinRspn = base_types.UninitialisedField(self, 'FinRspn', FinancialResponseV05, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='FinRspn', type=FinancialResponseV05, min=1, max=1, mutex_group=None, array=False),

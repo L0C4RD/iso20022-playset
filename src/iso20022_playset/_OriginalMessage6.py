@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
-from ._Party50Choice import Party50Choice
+from . import ISODateTime
+from . import Max35Text
+from . import Party50Choice
 
 class OriginalMessage6(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class OriginalMessage6(base_types._BaseFieldType):
 
 	@OrgnlCreDtTm.setter
 	def OrgnlCreDtTm(self, value):
-		self._OrgnlCreDtTm = value if type(value) != base_types.auto else self.make_default("OrgnlCreDtTm")
+		self._OrgnlCreDtTm = value if value is not None else base_types.UninitialisedField(self, 'OrgnlCreDtTm', ISODateTime, False)
 
 	@OrgnlCreDtTm.deleter
 	def OrgnlCreDtTm(self):
 		del self._OrgnlCreDtTm
-		self._OrgnlCreDtTm = None
+		self._OrgnlCreDtTm = base_types.UninitialisedField(self, 'OrgnlCreDtTm', ISODateTime, False)
 
 	@property
 	def OrgnlMsgId(self):
@@ -28,12 +28,12 @@ class OriginalMessage6(base_types._BaseFieldType):
 
 	@OrgnlMsgId.setter
 	def OrgnlMsgId(self, value):
-		self._OrgnlMsgId = value if type(value) != base_types.auto else self.make_default("OrgnlMsgId")
+		self._OrgnlMsgId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlMsgId', Max35Text, False)
 
 	@OrgnlMsgId.deleter
 	def OrgnlMsgId(self):
 		del self._OrgnlMsgId
-		self._OrgnlMsgId = None
+		self._OrgnlMsgId = base_types.UninitialisedField(self, 'OrgnlMsgId', Max35Text, False)
 
 	@property
 	def OrgnlMsgNmId(self):
@@ -41,12 +41,12 @@ class OriginalMessage6(base_types._BaseFieldType):
 
 	@OrgnlMsgNmId.setter
 	def OrgnlMsgNmId(self, value):
-		self._OrgnlMsgNmId = value if type(value) != base_types.auto else self.make_default("OrgnlMsgNmId")
+		self._OrgnlMsgNmId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlMsgNmId', Max35Text, False)
 
 	@OrgnlMsgNmId.deleter
 	def OrgnlMsgNmId(self):
 		del self._OrgnlMsgNmId
-		self._OrgnlMsgNmId = None
+		self._OrgnlMsgNmId = base_types.UninitialisedField(self, 'OrgnlMsgNmId', Max35Text, False)
 
 	@property
 	def OrgnlPackgId(self):
@@ -54,12 +54,12 @@ class OriginalMessage6(base_types._BaseFieldType):
 
 	@OrgnlPackgId.setter
 	def OrgnlPackgId(self, value):
-		self._OrgnlPackgId = value if type(value) != base_types.auto else self.make_default("OrgnlPackgId")
+		self._OrgnlPackgId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlPackgId', Max35Text, False)
 
 	@OrgnlPackgId.deleter
 	def OrgnlPackgId(self):
 		del self._OrgnlPackgId
-		self._OrgnlPackgId = None
+		self._OrgnlPackgId = base_types.UninitialisedField(self, 'OrgnlPackgId', Max35Text, False)
 
 	@property
 	def OrgnlRcrdId(self):
@@ -67,12 +67,12 @@ class OriginalMessage6(base_types._BaseFieldType):
 
 	@OrgnlRcrdId.setter
 	def OrgnlRcrdId(self, value):
-		self._OrgnlRcrdId = value if type(value) != base_types.auto else self.make_default("OrgnlRcrdId")
+		self._OrgnlRcrdId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlRcrdId', Max35Text, False)
 
 	@OrgnlRcrdId.deleter
 	def OrgnlRcrdId(self):
 		del self._OrgnlRcrdId
-		self._OrgnlRcrdId = None
+		self._OrgnlRcrdId = base_types.UninitialisedField(self, 'OrgnlRcrdId', Max35Text, False)
 
 	@property
 	def OrgnlSndr(self):
@@ -80,12 +80,12 @@ class OriginalMessage6(base_types._BaseFieldType):
 
 	@OrgnlSndr.setter
 	def OrgnlSndr(self, value):
-		self._OrgnlSndr = value if type(value) != base_types.auto else self.make_default("OrgnlSndr")
+		self._OrgnlSndr = value if value is not None else base_types.UninitialisedField(self, 'OrgnlSndr', Party50Choice, False)
 
 	@OrgnlSndr.deleter
 	def OrgnlSndr(self):
 		del self._OrgnlSndr
-		self._OrgnlSndr = None
+		self._OrgnlSndr = base_types.UninitialisedField(self, 'OrgnlSndr', Party50Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlCreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),

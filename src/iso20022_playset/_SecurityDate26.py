@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._DateFormat41Choice import DateFormat41Choice
+from . import DateAndDateTime2Choice
+from . import DateFormat41Choice
 
 class SecurityDate26(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SecurityDate26(base_types._BaseFieldType):
 
 	@AvlblDt.setter
 	def AvlblDt(self, value):
-		self._AvlblDt = value if type(value) != base_types.auto else self.make_default("AvlblDt")
+		self._AvlblDt = value if value is not None else base_types.UninitialisedField(self, 'AvlblDt', DateFormat41Choice, False)
 
 	@AvlblDt.deleter
 	def AvlblDt(self):
 		del self._AvlblDt
-		self._AvlblDt = None
+		self._AvlblDt = base_types.UninitialisedField(self, 'AvlblDt', DateFormat41Choice, False)
 
 	@property
 	def DvddRnkgDt(self):
@@ -27,12 +27,12 @@ class SecurityDate26(base_types._BaseFieldType):
 
 	@DvddRnkgDt.setter
 	def DvddRnkgDt(self, value):
-		self._DvddRnkgDt = value if type(value) != base_types.auto else self.make_default("DvddRnkgDt")
+		self._DvddRnkgDt = value if value is not None else base_types.UninitialisedField(self, 'DvddRnkgDt', DateFormat41Choice, False)
 
 	@DvddRnkgDt.deleter
 	def DvddRnkgDt(self):
 		del self._DvddRnkgDt
-		self._DvddRnkgDt = None
+		self._DvddRnkgDt = base_types.UninitialisedField(self, 'DvddRnkgDt', DateFormat41Choice, False)
 
 	@property
 	def EarlstPmtDt(self):
@@ -40,12 +40,12 @@ class SecurityDate26(base_types._BaseFieldType):
 
 	@EarlstPmtDt.setter
 	def EarlstPmtDt(self, value):
-		self._EarlstPmtDt = value if type(value) != base_types.auto else self.make_default("EarlstPmtDt")
+		self._EarlstPmtDt = value if value is not None else base_types.UninitialisedField(self, 'EarlstPmtDt', DateFormat41Choice, False)
 
 	@EarlstPmtDt.deleter
 	def EarlstPmtDt(self):
 		del self._EarlstPmtDt
-		self._EarlstPmtDt = None
+		self._EarlstPmtDt = base_types.UninitialisedField(self, 'EarlstPmtDt', DateFormat41Choice, False)
 
 	@property
 	def PmtDt(self):
@@ -53,12 +53,12 @@ class SecurityDate26(base_types._BaseFieldType):
 
 	@PmtDt.setter
 	def PmtDt(self, value):
-		self._PmtDt = value if type(value) != base_types.auto else self.make_default("PmtDt")
+		self._PmtDt = value if value is not None else base_types.UninitialisedField(self, 'PmtDt', DateFormat41Choice, False)
 
 	@PmtDt.deleter
 	def PmtDt(self):
 		del self._PmtDt
-		self._PmtDt = None
+		self._PmtDt = base_types.UninitialisedField(self, 'PmtDt', DateFormat41Choice, False)
 
 	@property
 	def PrpssDt(self):
@@ -66,12 +66,12 @@ class SecurityDate26(base_types._BaseFieldType):
 
 	@PrpssDt.setter
 	def PrpssDt(self, value):
-		self._PrpssDt = value if type(value) != base_types.auto else self.make_default("PrpssDt")
+		self._PrpssDt = value if value is not None else base_types.UninitialisedField(self, 'PrpssDt', DateFormat41Choice, False)
 
 	@PrpssDt.deleter
 	def PrpssDt(self):
 		del self._PrpssDt
-		self._PrpssDt = None
+		self._PrpssDt = base_types.UninitialisedField(self, 'PrpssDt', DateFormat41Choice, False)
 
 	@property
 	def PstngDt(self):
@@ -79,12 +79,12 @@ class SecurityDate26(base_types._BaseFieldType):
 
 	@PstngDt.setter
 	def PstngDt(self, value):
-		self._PstngDt = value if type(value) != base_types.auto else self.make_default("PstngDt")
+		self._PstngDt = value if value is not None else base_types.UninitialisedField(self, 'PstngDt', DateAndDateTime2Choice, False)
 
 	@PstngDt.deleter
 	def PstngDt(self):
 		del self._PstngDt
-		self._PstngDt = None
+		self._PstngDt = base_types.UninitialisedField(self, 'PstngDt', DateAndDateTime2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AvlblDt', type=DateFormat41Choice, min=0, max=1, mutex_group=None, array=False),

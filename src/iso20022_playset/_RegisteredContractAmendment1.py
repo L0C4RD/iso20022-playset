@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DocumentIdentification28 import DocumentIdentification28
-from ._ISODate import ISODate
-from ._Max1025Text import Max1025Text
-from ._Max35Text import Max35Text
+from . import DocumentIdentification28
+from . import ISODate
+from . import Max1025Text
+from . import Max35Text
 
 class RegisteredContractAmendment1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class RegisteredContractAmendment1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max1025Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max1025Text, False)
 
 	@property
 	def AmdmntDt(self):
@@ -29,12 +29,12 @@ class RegisteredContractAmendment1(base_types._BaseFieldType):
 
 	@AmdmntDt.setter
 	def AmdmntDt(self, value):
-		self._AmdmntDt = value if type(value) != base_types.auto else self.make_default("AmdmntDt")
+		self._AmdmntDt = value if value is not None else base_types.UninitialisedField(self, 'AmdmntDt', ISODate, False)
 
 	@AmdmntDt.deleter
 	def AmdmntDt(self):
 		del self._AmdmntDt
-		self._AmdmntDt = None
+		self._AmdmntDt = base_types.UninitialisedField(self, 'AmdmntDt', ISODate, False)
 
 	@property
 	def AmdmntRsn(self):
@@ -42,12 +42,12 @@ class RegisteredContractAmendment1(base_types._BaseFieldType):
 
 	@AmdmntRsn.setter
 	def AmdmntRsn(self, value):
-		self._AmdmntRsn = value if type(value) != base_types.auto else self.make_default("AmdmntRsn")
+		self._AmdmntRsn = value if value is not None else base_types.UninitialisedField(self, 'AmdmntRsn', Max35Text, False)
 
 	@AmdmntRsn.deleter
 	def AmdmntRsn(self):
 		del self._AmdmntRsn
-		self._AmdmntRsn = None
+		self._AmdmntRsn = base_types.UninitialisedField(self, 'AmdmntRsn', Max35Text, False)
 
 	@property
 	def Doc(self):
@@ -55,12 +55,12 @@ class RegisteredContractAmendment1(base_types._BaseFieldType):
 
 	@Doc.setter
 	def Doc(self, value):
-		self._Doc = value if type(value) != base_types.auto else self.make_default("Doc")
+		self._Doc = value if value is not None else base_types.UninitialisedField(self, 'Doc', DocumentIdentification28, False)
 
 	@Doc.deleter
 	def Doc(self):
 		del self._Doc
-		self._Doc = None
+		self._Doc = base_types.UninitialisedField(self, 'Doc', DocumentIdentification28, False)
 
 	@property
 	def StartDt(self):
@@ -68,12 +68,12 @@ class RegisteredContractAmendment1(base_types._BaseFieldType):
 
 	@StartDt.setter
 	def StartDt(self, value):
-		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
+		self._StartDt = value if value is not None else base_types.UninitialisedField(self, 'StartDt', ISODate, False)
 
 	@StartDt.deleter
 	def StartDt(self):
 		del self._StartDt
-		self._StartDt = None
+		self._StartDt = base_types.UninitialisedField(self, 'StartDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),

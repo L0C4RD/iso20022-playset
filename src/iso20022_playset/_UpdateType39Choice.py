@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesSettlementTransactionDetails56 import SecuritiesSettlementTransactionDetails56
-from ._SecuritiesSettlementTransactionDetails57 import SecuritiesSettlementTransactionDetails57
-from ._SecuritiesSettlementTransactionDetails58 import SecuritiesSettlementTransactionDetails58
+from . import SecuritiesSettlementTransactionDetails56
+from . import SecuritiesSettlementTransactionDetails57
+from . import SecuritiesSettlementTransactionDetails58
 
 class UpdateType39Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class UpdateType39Choice(base_types._BaseFieldType):
 
 	@Addtn.setter
 	def Addtn(self, value):
-		self._Addtn = value if type(value) != base_types.auto else self.make_default("Addtn")
+		self._Addtn = value if value is not None else base_types.UninitialisedField(self, 'Addtn', SecuritiesSettlementTransactionDetails56, False)
 
 	@Addtn.deleter
 	def Addtn(self):
 		del self._Addtn
-		self._Addtn = None
+		self._Addtn = base_types.UninitialisedField(self, 'Addtn', SecuritiesSettlementTransactionDetails56, False)
 
 	@property
 	def Deltn(self):
@@ -28,12 +28,12 @@ class UpdateType39Choice(base_types._BaseFieldType):
 
 	@Deltn.setter
 	def Deltn(self, value):
-		self._Deltn = value if type(value) != base_types.auto else self.make_default("Deltn")
+		self._Deltn = value if value is not None else base_types.UninitialisedField(self, 'Deltn', SecuritiesSettlementTransactionDetails58, False)
 
 	@Deltn.deleter
 	def Deltn(self):
 		del self._Deltn
-		self._Deltn = None
+		self._Deltn = base_types.UninitialisedField(self, 'Deltn', SecuritiesSettlementTransactionDetails58, False)
 
 	@property
 	def Mod(self):
@@ -41,12 +41,12 @@ class UpdateType39Choice(base_types._BaseFieldType):
 
 	@Mod.setter
 	def Mod(self, value):
-		self._Mod = value if type(value) != base_types.auto else self.make_default("Mod")
+		self._Mod = value if value is not None else base_types.UninitialisedField(self, 'Mod', SecuritiesSettlementTransactionDetails57, False)
 
 	@Mod.deleter
 	def Mod(self):
 		del self._Mod
-		self._Mod = None
+		self._Mod = base_types.UninitialisedField(self, 'Mod', SecuritiesSettlementTransactionDetails57, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Addtn', type=SecuritiesSettlementTransactionDetails56, min=0, max=1, mutex_group=1, array=False),

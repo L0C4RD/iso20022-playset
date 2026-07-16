@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DeliveryPlace3Code import DeliveryPlace3Code
-from ._Max105Text import Max105Text
-from ._NameAndAddress9 import NameAndAddress9
+from . import DeliveryPlace3Code
+from . import Max105Text
+from . import NameAndAddress9
 
 class AttendanceCard3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AttendanceCard3(base_types._BaseFieldType):
 
 	@AttndncCardLbllg.setter
 	def AttndncCardLbllg(self, value):
-		self._AttndncCardLbllg = value if type(value) != base_types.auto else self.make_default("AttndncCardLbllg")
+		self._AttndncCardLbllg = value if value is not None else base_types.UninitialisedField(self, 'AttndncCardLbllg', Max105Text, False)
 
 	@AttndncCardLbllg.deleter
 	def AttndncCardLbllg(self):
 		del self._AttndncCardLbllg
-		self._AttndncCardLbllg = None
+		self._AttndncCardLbllg = base_types.UninitialisedField(self, 'AttndncCardLbllg', Max105Text, False)
 
 	@property
 	def DlvryMtd(self):
@@ -28,12 +28,12 @@ class AttendanceCard3(base_types._BaseFieldType):
 
 	@DlvryMtd.setter
 	def DlvryMtd(self, value):
-		self._DlvryMtd = value if type(value) != base_types.auto else self.make_default("DlvryMtd")
+		self._DlvryMtd = value if value is not None else base_types.UninitialisedField(self, 'DlvryMtd', DeliveryPlace3Code, False)
 
 	@DlvryMtd.deleter
 	def DlvryMtd(self):
 		del self._DlvryMtd
-		self._DlvryMtd = None
+		self._DlvryMtd = base_types.UninitialisedField(self, 'DlvryMtd', DeliveryPlace3Code, False)
 
 	@property
 	def OthrAdr(self):
@@ -41,12 +41,12 @@ class AttendanceCard3(base_types._BaseFieldType):
 
 	@OthrAdr.setter
 	def OthrAdr(self, value):
-		self._OthrAdr = value if type(value) != base_types.auto else self.make_default("OthrAdr")
+		self._OthrAdr = value if value is not None else base_types.UninitialisedField(self, 'OthrAdr', NameAndAddress9, False)
 
 	@OthrAdr.deleter
 	def OthrAdr(self):
 		del self._OthrAdr
-		self._OthrAdr = None
+		self._OthrAdr = base_types.UninitialisedField(self, 'OthrAdr', NameAndAddress9, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AttndncCardLbllg', type=Max105Text, min=0, max=1, mutex_group=None, array=False),

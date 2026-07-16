@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max350Text import Max350Text
-from ._OrganisationIdentification39 import OrganisationIdentification39
+from . import Max350Text
+from . import OrganisationIdentification39
 
 class Organisation44(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Organisation44(base_types._BaseFieldType):
 
 	@FullLglNm.setter
 	def FullLglNm(self, value):
-		self._FullLglNm = value if type(value) != base_types.auto else self.make_default("FullLglNm")
+		self._FullLglNm = value if value is not None else base_types.UninitialisedField(self, 'FullLglNm', Max350Text, False)
 
 	@FullLglNm.deleter
 	def FullLglNm(self):
 		del self._FullLglNm
-		self._FullLglNm = None
+		self._FullLglNm = base_types.UninitialisedField(self, 'FullLglNm', Max350Text, False)
 
 	@property
 	def OrgId(self):
@@ -27,12 +27,12 @@ class Organisation44(base_types._BaseFieldType):
 
 	@OrgId.setter
 	def OrgId(self, value):
-		self._OrgId = value if type(value) != base_types.auto else self.make_default("OrgId")
+		self._OrgId = value if value is not None else base_types.UninitialisedField(self, 'OrgId', OrganisationIdentification39, False)
 
 	@OrgId.deleter
 	def OrgId(self):
 		del self._OrgId
-		self._OrgId = None
+		self._OrgId = base_types.UninitialisedField(self, 'OrgId', OrganisationIdentification39, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FullLglNm', type=Max350Text, min=0, max=1, mutex_group=None, array=False),

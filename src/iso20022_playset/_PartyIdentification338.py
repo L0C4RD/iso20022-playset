@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._PartyIdentification335Choice import PartyIdentification335Choice
+from . import Max35Text
+from . import PartyIdentification335Choice
 
 class PartyIdentification338(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PartyIdentification338(base_types._BaseFieldType):
 
 	@BlckgRef.setter
 	def BlckgRef(self, value):
-		self._BlckgRef = value if type(value) != base_types.auto else self.make_default("BlckgRef")
+		self._BlckgRef = value if value is not None else base_types.UninitialisedField(self, 'BlckgRef', Max35Text, False)
 
 	@BlckgRef.deleter
 	def BlckgRef(self):
 		del self._BlckgRef
-		self._BlckgRef = None
+		self._BlckgRef = base_types.UninitialisedField(self, 'BlckgRef', Max35Text, False)
 
 	@property
 	def LglPrsn(self):
@@ -27,12 +27,12 @@ class PartyIdentification338(base_types._BaseFieldType):
 
 	@LglPrsn.setter
 	def LglPrsn(self, value):
-		self._LglPrsn = value if type(value) != base_types.auto else self.make_default("LglPrsn")
+		self._LglPrsn = value if value is not None else base_types.UninitialisedField(self, 'LglPrsn', PartyIdentification335Choice, False)
 
 	@LglPrsn.deleter
 	def LglPrsn(self):
 		del self._LglPrsn
-		self._LglPrsn = None
+		self._LglPrsn = base_types.UninitialisedField(self, 'LglPrsn', PartyIdentification335Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BlckgRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

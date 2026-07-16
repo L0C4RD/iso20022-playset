@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._UndertakingNonExtensionRequestV01 import UndertakingNonExtensionRequestV01
+from . import UndertakingNonExtensionRequestV01
 
 class TSRV_010_001_01():
 
@@ -18,12 +18,12 @@ class TSRV_010_001_01():
 
 		@UdrtkgNonXtnsnReq.setter
 		def UdrtkgNonXtnsnReq(self, value):
-			self._UdrtkgNonXtnsnReq = value if type(value) != base_types.auto else self.make_default("UdrtkgNonXtnsnReq")
+			self._UdrtkgNonXtnsnReq = value if value is not None else base_types.UninitialisedField(self, 'UdrtkgNonXtnsnReq', UndertakingNonExtensionRequestV01, False)
 
 		@UdrtkgNonXtnsnReq.deleter
 		def UdrtkgNonXtnsnReq(self):
 			del self._UdrtkgNonXtnsnReq
-			self._UdrtkgNonXtnsnReq = None
+			self._UdrtkgNonXtnsnReq = base_types.UninitialisedField(self, 'UdrtkgNonXtnsnReq', UndertakingNonExtensionRequestV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='UdrtkgNonXtnsnReq', type=UndertakingNonExtensionRequestV01, min=1, max=1, mutex_group=None, array=False),

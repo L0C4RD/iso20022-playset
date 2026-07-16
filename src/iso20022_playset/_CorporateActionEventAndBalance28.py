@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionBalance52 import CorporateActionBalance52
-from ._EventInformation17 import EventInformation17
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._SupplementaryData1 import SupplementaryData1
+from . import CorporateActionBalance52
+from . import EventInformation17
+from . import SecurityIdentification19
+from . import SupplementaryData1
 
 class CorporateActionEventAndBalance28(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CorporateActionEventAndBalance28(base_types._BaseFieldType):
 
 	@Bal.setter
 	def Bal(self, value):
-		self._Bal = value if type(value) != base_types.auto else self.make_default("Bal")
+		self._Bal = value if value is not None else base_types.UninitialisedField(self, 'Bal', CorporateActionBalance52, False)
 
 	@Bal.deleter
 	def Bal(self):
 		del self._Bal
-		self._Bal = None
+		self._Bal = base_types.UninitialisedField(self, 'Bal', CorporateActionBalance52, False)
 
 	@property
 	def GnlInf(self):
@@ -29,12 +29,12 @@ class CorporateActionEventAndBalance28(base_types._BaseFieldType):
 
 	@GnlInf.setter
 	def GnlInf(self, value):
-		self._GnlInf = value if type(value) != base_types.auto else self.make_default("GnlInf")
+		self._GnlInf = value if value is not None else base_types.UninitialisedField(self, 'GnlInf', EventInformation17, False)
 
 	@GnlInf.deleter
 	def GnlInf(self):
 		del self._GnlInf
-		self._GnlInf = None
+		self._GnlInf = base_types.UninitialisedField(self, 'GnlInf', EventInformation17, False)
 
 	@property
 	def SplmtryData(self):
@@ -42,12 +42,12 @@ class CorporateActionEventAndBalance28(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def UndrlygScty(self):
@@ -55,12 +55,12 @@ class CorporateActionEventAndBalance28(base_types._BaseFieldType):
 
 	@UndrlygScty.setter
 	def UndrlygScty(self, value):
-		self._UndrlygScty = value if type(value) != base_types.auto else self.make_default("UndrlygScty")
+		self._UndrlygScty = value if value is not None else base_types.UninitialisedField(self, 'UndrlygScty', SecurityIdentification19, False)
 
 	@UndrlygScty.deleter
 	def UndrlygScty(self):
 		del self._UndrlygScty
-		self._UndrlygScty = None
+		self._UndrlygScty = base_types.UninitialisedField(self, 'UndrlygScty', SecurityIdentification19, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Bal', type=CorporateActionBalance52, min=0, max=1, mutex_group=None, array=False),

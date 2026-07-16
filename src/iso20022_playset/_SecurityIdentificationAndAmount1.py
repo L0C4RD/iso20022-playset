@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
-from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._ProductType7Code import ProductType7Code
+from . import ActiveCurrencyAnd24Amount
+from . import ISINOct2015Identifier
+from . import ProductType7Code
 
 class SecurityIdentificationAndAmount1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SecurityIdentificationAndAmount1(base_types._BaseFieldType):
 
 	@FinInstrmTp.setter
 	def FinInstrmTp(self, value):
-		self._FinInstrmTp = value if type(value) != base_types.auto else self.make_default("FinInstrmTp")
+		self._FinInstrmTp = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmTp', ProductType7Code, False)
 
 	@FinInstrmTp.deleter
 	def FinInstrmTp(self):
 		del self._FinInstrmTp
-		self._FinInstrmTp = None
+		self._FinInstrmTp = base_types.UninitialisedField(self, 'FinInstrmTp', ProductType7Code, False)
 
 	@property
 	def Id(self):
@@ -28,12 +28,12 @@ class SecurityIdentificationAndAmount1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', ISINOct2015Identifier, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', ISINOct2015Identifier, False)
 
 	@property
 	def MktVal(self):
@@ -41,12 +41,12 @@ class SecurityIdentificationAndAmount1(base_types._BaseFieldType):
 
 	@MktVal.setter
 	def MktVal(self, value):
-		self._MktVal = value if type(value) != base_types.auto else self.make_default("MktVal")
+		self._MktVal = value if value is not None else base_types.UninitialisedField(self, 'MktVal', ActiveCurrencyAnd24Amount, False)
 
 	@MktVal.deleter
 	def MktVal(self):
 		del self._MktVal
-		self._MktVal = None
+		self._MktVal = base_types.UninitialisedField(self, 'MktVal', ActiveCurrencyAnd24Amount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FinInstrmTp', type=ProductType7Code, min=1, max=1, mutex_group=None, array=False),

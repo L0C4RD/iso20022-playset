@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CollateralMarginCorrection6 import CollateralMarginCorrection6
-from ._CollateralMarginError4 import CollateralMarginError4
-from ._CollateralMarginMarginUpdate5 import CollateralMarginMarginUpdate5
+from . import CollateralMarginCorrection6
+from . import CollateralMarginError4
+from . import CollateralMarginMarginUpdate5
 
 class TradeReport21Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TradeReport21Choice(base_types._BaseFieldType):
 
 	@Crrctn.setter
 	def Crrctn(self, value):
-		self._Crrctn = value if type(value) != base_types.auto else self.make_default("Crrctn")
+		self._Crrctn = value if value is not None else base_types.UninitialisedField(self, 'Crrctn', CollateralMarginCorrection6, False)
 
 	@Crrctn.deleter
 	def Crrctn(self):
 		del self._Crrctn
-		self._Crrctn = None
+		self._Crrctn = base_types.UninitialisedField(self, 'Crrctn', CollateralMarginCorrection6, False)
 
 	@property
 	def Err(self):
@@ -28,12 +28,12 @@ class TradeReport21Choice(base_types._BaseFieldType):
 
 	@Err.setter
 	def Err(self, value):
-		self._Err = value if type(value) != base_types.auto else self.make_default("Err")
+		self._Err = value if value is not None else base_types.UninitialisedField(self, 'Err', CollateralMarginError4, False)
 
 	@Err.deleter
 	def Err(self):
 		del self._Err
-		self._Err = None
+		self._Err = base_types.UninitialisedField(self, 'Err', CollateralMarginError4, False)
 
 	@property
 	def New(self):
@@ -41,12 +41,12 @@ class TradeReport21Choice(base_types._BaseFieldType):
 
 	@New.setter
 	def New(self, value):
-		self._New = value if type(value) != base_types.auto else self.make_default("New")
+		self._New = value if value is not None else base_types.UninitialisedField(self, 'New', CollateralMarginCorrection6, False)
 
 	@New.deleter
 	def New(self):
 		del self._New
-		self._New = None
+		self._New = base_types.UninitialisedField(self, 'New', CollateralMarginCorrection6, False)
 
 	@property
 	def TradUpd(self):
@@ -54,12 +54,12 @@ class TradeReport21Choice(base_types._BaseFieldType):
 
 	@TradUpd.setter
 	def TradUpd(self, value):
-		self._TradUpd = value if type(value) != base_types.auto else self.make_default("TradUpd")
+		self._TradUpd = value if value is not None else base_types.UninitialisedField(self, 'TradUpd', CollateralMarginMarginUpdate5, False)
 
 	@TradUpd.deleter
 	def TradUpd(self):
 		del self._TradUpd
-		self._TradUpd = None
+		self._TradUpd = base_types.UninitialisedField(self, 'TradUpd', CollateralMarginMarginUpdate5, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Crrctn', type=CollateralMarginCorrection6, min=0, max=1, mutex_group=1, array=False),

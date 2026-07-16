@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BICIdentification1 import BICIdentification1
-from ._Max35Text import Max35Text
+from . import BICIdentification1
+from . import Max35Text
 
 class DocumentIdentification5(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DocumentIdentification5(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def IdIssr(self):
@@ -27,12 +27,12 @@ class DocumentIdentification5(base_types._BaseFieldType):
 
 	@IdIssr.setter
 	def IdIssr(self, value):
-		self._IdIssr = value if type(value) != base_types.auto else self.make_default("IdIssr")
+		self._IdIssr = value if value is not None else base_types.UninitialisedField(self, 'IdIssr', BICIdentification1, False)
 
 	@IdIssr.deleter
 	def IdIssr(self):
 		del self._IdIssr
-		self._IdIssr = None
+		self._IdIssr = base_types.UninitialisedField(self, 'IdIssr', BICIdentification1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateAction1Choice import CorporateAction1Choice
-from ._TransactionType2Choice import TransactionType2Choice
+from . import CorporateAction1Choice
+from . import TransactionType2Choice
 
 class TransactionType1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TransactionType1Choice(base_types._BaseFieldType):
 
 	@CorpActnTp.setter
 	def CorpActnTp(self, value):
-		self._CorpActnTp = value if type(value) != base_types.auto else self.make_default("CorpActnTp")
+		self._CorpActnTp = value if value is not None else base_types.UninitialisedField(self, 'CorpActnTp', CorporateAction1Choice, False)
 
 	@CorpActnTp.deleter
 	def CorpActnTp(self):
 		del self._CorpActnTp
-		self._CorpActnTp = None
+		self._CorpActnTp = base_types.UninitialisedField(self, 'CorpActnTp', CorporateAction1Choice, False)
 
 	@property
 	def TxTp(self):
@@ -27,12 +27,12 @@ class TransactionType1Choice(base_types._BaseFieldType):
 
 	@TxTp.setter
 	def TxTp(self, value):
-		self._TxTp = value if type(value) != base_types.auto else self.make_default("TxTp")
+		self._TxTp = value if value is not None else base_types.UninitialisedField(self, 'TxTp', TransactionType2Choice, False)
 
 	@TxTp.deleter
 	def TxTp(self):
 		del self._TxTp
-		self._TxTp = None
+		self._TxTp = base_types.UninitialisedField(self, 'TxTp', TransactionType2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CorpActnTp', type=CorporateAction1Choice, min=0, max=1, mutex_group=1, array=False),

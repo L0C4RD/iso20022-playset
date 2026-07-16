@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMCommand7 import ATMCommand7
-from ._ATMEnvironment6 import ATMEnvironment6
+from . import ATMCommand7
+from . import ATMEnvironment6
 
 class ATMDiagnosticResponse2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ATMDiagnosticResponse2(base_types._BaseFieldType):
 
 	@Cmd.setter
 	def Cmd(self, value):
-		self._Cmd = value if type(value) != base_types.auto else self.make_default("Cmd")
+		self._Cmd = value if value is not None else base_types.UninitialisedField(self, 'Cmd', ATMCommand7, True)
 
 	@Cmd.deleter
 	def Cmd(self):
 		del self._Cmd
-		self._Cmd = None
+		self._Cmd = base_types.UninitialisedField(self, 'Cmd', ATMCommand7, True)
 
 	@property
 	def Envt(self):
@@ -27,12 +27,12 @@ class ATMDiagnosticResponse2(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+		self._Envt = value if value is not None else base_types.UninitialisedField(self, 'Envt', ATMEnvironment6, False)
 
 	@Envt.deleter
 	def Envt(self):
 		del self._Envt
-		self._Envt = None
+		self._Envt = base_types.UninitialisedField(self, 'Envt', ATMEnvironment6, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cmd', type=ATMCommand7, min=0, max=None, mutex_group=None, array=True),

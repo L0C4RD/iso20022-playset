@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ClosedStatusReason1Choice import ClosedStatusReason1Choice
-from ._ClosurePendingStatusReason1Choice import ClosurePendingStatusReason1Choice
-from ._DisabledStatusReason1Choice import DisabledStatusReason1Choice
-from ._EnabledStatusReason1Choice import EnabledStatusReason1Choice
-from ._OtherAccountStatus1 import OtherAccountStatus1
-from ._PendingOpeningStatusReason1Choice import PendingOpeningStatusReason1Choice
-from ._PendingStatusReason1Choice import PendingStatusReason1Choice
-from ._ProformaStatusReason1Choice import ProformaStatusReason1Choice
+from . import ClosedStatusReason1Choice
+from . import ClosurePendingStatusReason1Choice
+from . import DisabledStatusReason1Choice
+from . import EnabledStatusReason1Choice
+from . import OtherAccountStatus1
+from . import PendingOpeningStatusReason1Choice
+from . import PendingStatusReason1Choice
+from . import ProformaStatusReason1Choice
 
 class AccountStatus2(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class AccountStatus2(base_types._BaseFieldType):
 
 	@Clsd.setter
 	def Clsd(self, value):
-		self._Clsd = value if type(value) != base_types.auto else self.make_default("Clsd")
+		self._Clsd = value if value is not None else base_types.UninitialisedField(self, 'Clsd', ClosedStatusReason1Choice, False)
 
 	@Clsd.deleter
 	def Clsd(self):
 		del self._Clsd
-		self._Clsd = None
+		self._Clsd = base_types.UninitialisedField(self, 'Clsd', ClosedStatusReason1Choice, False)
 
 	@property
 	def ClsrPdg(self):
@@ -33,12 +33,12 @@ class AccountStatus2(base_types._BaseFieldType):
 
 	@ClsrPdg.setter
 	def ClsrPdg(self, value):
-		self._ClsrPdg = value if type(value) != base_types.auto else self.make_default("ClsrPdg")
+		self._ClsrPdg = value if value is not None else base_types.UninitialisedField(self, 'ClsrPdg', ClosurePendingStatusReason1Choice, False)
 
 	@ClsrPdg.deleter
 	def ClsrPdg(self):
 		del self._ClsrPdg
-		self._ClsrPdg = None
+		self._ClsrPdg = base_types.UninitialisedField(self, 'ClsrPdg', ClosurePendingStatusReason1Choice, False)
 
 	@property
 	def Dsbld(self):
@@ -46,12 +46,12 @@ class AccountStatus2(base_types._BaseFieldType):
 
 	@Dsbld.setter
 	def Dsbld(self, value):
-		self._Dsbld = value if type(value) != base_types.auto else self.make_default("Dsbld")
+		self._Dsbld = value if value is not None else base_types.UninitialisedField(self, 'Dsbld', DisabledStatusReason1Choice, False)
 
 	@Dsbld.deleter
 	def Dsbld(self):
 		del self._Dsbld
-		self._Dsbld = None
+		self._Dsbld = base_types.UninitialisedField(self, 'Dsbld', DisabledStatusReason1Choice, False)
 
 	@property
 	def Nbld(self):
@@ -59,12 +59,12 @@ class AccountStatus2(base_types._BaseFieldType):
 
 	@Nbld.setter
 	def Nbld(self, value):
-		self._Nbld = value if type(value) != base_types.auto else self.make_default("Nbld")
+		self._Nbld = value if value is not None else base_types.UninitialisedField(self, 'Nbld', EnabledStatusReason1Choice, False)
 
 	@Nbld.deleter
 	def Nbld(self):
 		del self._Nbld
-		self._Nbld = None
+		self._Nbld = base_types.UninitialisedField(self, 'Nbld', EnabledStatusReason1Choice, False)
 
 	@property
 	def Othr(self):
@@ -72,12 +72,12 @@ class AccountStatus2(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', OtherAccountStatus1, True)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', OtherAccountStatus1, True)
 
 	@property
 	def Pdg(self):
@@ -85,12 +85,12 @@ class AccountStatus2(base_types._BaseFieldType):
 
 	@Pdg.setter
 	def Pdg(self, value):
-		self._Pdg = value if type(value) != base_types.auto else self.make_default("Pdg")
+		self._Pdg = value if value is not None else base_types.UninitialisedField(self, 'Pdg', PendingStatusReason1Choice, False)
 
 	@Pdg.deleter
 	def Pdg(self):
 		del self._Pdg
-		self._Pdg = None
+		self._Pdg = base_types.UninitialisedField(self, 'Pdg', PendingStatusReason1Choice, False)
 
 	@property
 	def PdgOpng(self):
@@ -98,12 +98,12 @@ class AccountStatus2(base_types._BaseFieldType):
 
 	@PdgOpng.setter
 	def PdgOpng(self, value):
-		self._PdgOpng = value if type(value) != base_types.auto else self.make_default("PdgOpng")
+		self._PdgOpng = value if value is not None else base_types.UninitialisedField(self, 'PdgOpng', PendingOpeningStatusReason1Choice, False)
 
 	@PdgOpng.deleter
 	def PdgOpng(self):
 		del self._PdgOpng
-		self._PdgOpng = None
+		self._PdgOpng = base_types.UninitialisedField(self, 'PdgOpng', PendingOpeningStatusReason1Choice, False)
 
 	@property
 	def Profrm(self):
@@ -111,12 +111,12 @@ class AccountStatus2(base_types._BaseFieldType):
 
 	@Profrm.setter
 	def Profrm(self, value):
-		self._Profrm = value if type(value) != base_types.auto else self.make_default("Profrm")
+		self._Profrm = value if value is not None else base_types.UninitialisedField(self, 'Profrm', ProformaStatusReason1Choice, False)
 
 	@Profrm.deleter
 	def Profrm(self):
 		del self._Profrm
-		self._Profrm = None
+		self._Profrm = base_types.UninitialisedField(self, 'Profrm', ProformaStatusReason1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Clsd', type=ClosedStatusReason1Choice, min=0, max=1, mutex_group=None, array=False),

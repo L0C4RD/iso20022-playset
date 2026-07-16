@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max10Text import Max10Text
-from ._Max2NumericText import Max2NumericText
-from ._Max35Text import Max35Text
-from ._Max500Binary import Max500Binary
-from ._Min2Max3NumericText import Min2Max3NumericText
-from ._Min8Max28NumericText import Min8Max28NumericText
-from ._Number import Number
-from ._PaymentTokenIdentifiers1 import PaymentTokenIdentifiers1
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import Max10Text
+from . import Max2NumericText
+from . import Max35Text
+from . import Max500Binary
+from . import Min2Max3NumericText
+from . import Min8Max28NumericText
+from . import Number
+from . import PaymentTokenIdentifiers1
+from . import TrueFalseIndicator
 
 class CardPaymentToken5(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class CardPaymentToken5(base_types._BaseFieldType):
 
 	@CardSeqNb.setter
 	def CardSeqNb(self, value):
-		self._CardSeqNb = value if type(value) != base_types.auto else self.make_default("CardSeqNb")
+		self._CardSeqNb = value if value is not None else base_types.UninitialisedField(self, 'CardSeqNb', Min2Max3NumericText, False)
 
 	@CardSeqNb.deleter
 	def CardSeqNb(self):
 		del self._CardSeqNb
-		self._CardSeqNb = None
+		self._CardSeqNb = base_types.UninitialisedField(self, 'CardSeqNb', Min2Max3NumericText, False)
 
 	@property
 	def Tkn(self):
@@ -34,12 +34,12 @@ class CardPaymentToken5(base_types._BaseFieldType):
 
 	@Tkn.setter
 	def Tkn(self, value):
-		self._Tkn = value if type(value) != base_types.auto else self.make_default("Tkn")
+		self._Tkn = value if value is not None else base_types.UninitialisedField(self, 'Tkn', Min8Max28NumericText, False)
 
 	@Tkn.deleter
 	def Tkn(self):
 		del self._Tkn
-		self._Tkn = None
+		self._Tkn = base_types.UninitialisedField(self, 'Tkn', Min8Max28NumericText, False)
 
 	@property
 	def TknAssrncData(self):
@@ -47,12 +47,12 @@ class CardPaymentToken5(base_types._BaseFieldType):
 
 	@TknAssrncData.setter
 	def TknAssrncData(self, value):
-		self._TknAssrncData = value if type(value) != base_types.auto else self.make_default("TknAssrncData")
+		self._TknAssrncData = value if value is not None else base_types.UninitialisedField(self, 'TknAssrncData', Max500Binary, False)
 
 	@TknAssrncData.deleter
 	def TknAssrncData(self):
 		del self._TknAssrncData
-		self._TknAssrncData = None
+		self._TknAssrncData = base_types.UninitialisedField(self, 'TknAssrncData', Max500Binary, False)
 
 	@property
 	def TknAssrncLvl(self):
@@ -60,12 +60,12 @@ class CardPaymentToken5(base_types._BaseFieldType):
 
 	@TknAssrncLvl.setter
 	def TknAssrncLvl(self, value):
-		self._TknAssrncLvl = value if type(value) != base_types.auto else self.make_default("TknAssrncLvl")
+		self._TknAssrncLvl = value if value is not None else base_types.UninitialisedField(self, 'TknAssrncLvl', Number, False)
 
 	@TknAssrncLvl.deleter
 	def TknAssrncLvl(self):
 		del self._TknAssrncLvl
-		self._TknAssrncLvl = None
+		self._TknAssrncLvl = base_types.UninitialisedField(self, 'TknAssrncLvl', Number, False)
 
 	@property
 	def TknAssrncMtd(self):
@@ -73,12 +73,12 @@ class CardPaymentToken5(base_types._BaseFieldType):
 
 	@TknAssrncMtd.setter
 	def TknAssrncMtd(self, value):
-		self._TknAssrncMtd = value if type(value) != base_types.auto else self.make_default("TknAssrncMtd")
+		self._TknAssrncMtd = value if value is not None else base_types.UninitialisedField(self, 'TknAssrncMtd', Max2NumericText, False)
 
 	@TknAssrncMtd.deleter
 	def TknAssrncMtd(self):
 		del self._TknAssrncMtd
-		self._TknAssrncMtd = None
+		self._TknAssrncMtd = base_types.UninitialisedField(self, 'TknAssrncMtd', Max2NumericText, False)
 
 	@property
 	def TknChrtc(self):
@@ -86,12 +86,12 @@ class CardPaymentToken5(base_types._BaseFieldType):
 
 	@TknChrtc.setter
 	def TknChrtc(self, value):
-		self._TknChrtc = value if type(value) != base_types.auto else self.make_default("TknChrtc")
+		self._TknChrtc = value if value is not None else base_types.UninitialisedField(self, 'TknChrtc', Max35Text, True)
 
 	@TknChrtc.deleter
 	def TknChrtc(self):
 		del self._TknChrtc
-		self._TknChrtc = None
+		self._TknChrtc = base_types.UninitialisedField(self, 'TknChrtc', Max35Text, True)
 
 	@property
 	def TknInittdInd(self):
@@ -99,12 +99,12 @@ class CardPaymentToken5(base_types._BaseFieldType):
 
 	@TknInittdInd.setter
 	def TknInittdInd(self, value):
-		self._TknInittdInd = value if type(value) != base_types.auto else self.make_default("TknInittdInd")
+		self._TknInittdInd = value if value is not None else base_types.UninitialisedField(self, 'TknInittdInd', TrueFalseIndicator, False)
 
 	@TknInittdInd.deleter
 	def TknInittdInd(self):
 		del self._TknInittdInd
-		self._TknInittdInd = None
+		self._TknInittdInd = base_types.UninitialisedField(self, 'TknInittdInd', TrueFalseIndicator, False)
 
 	@property
 	def TknRqstr(self):
@@ -112,12 +112,12 @@ class CardPaymentToken5(base_types._BaseFieldType):
 
 	@TknRqstr.setter
 	def TknRqstr(self, value):
-		self._TknRqstr = value if type(value) != base_types.auto else self.make_default("TknRqstr")
+		self._TknRqstr = value if value is not None else base_types.UninitialisedField(self, 'TknRqstr', PaymentTokenIdentifiers1, False)
 
 	@TknRqstr.deleter
 	def TknRqstr(self):
 		del self._TknRqstr
-		self._TknRqstr = None
+		self._TknRqstr = base_types.UninitialisedField(self, 'TknRqstr', PaymentTokenIdentifiers1, False)
 
 	@property
 	def TknXpryDt(self):
@@ -125,12 +125,12 @@ class CardPaymentToken5(base_types._BaseFieldType):
 
 	@TknXpryDt.setter
 	def TknXpryDt(self, value):
-		self._TknXpryDt = value if type(value) != base_types.auto else self.make_default("TknXpryDt")
+		self._TknXpryDt = value if value is not None else base_types.UninitialisedField(self, 'TknXpryDt', Max10Text, False)
 
 	@TknXpryDt.deleter
 	def TknXpryDt(self):
 		del self._TknXpryDt
-		self._TknXpryDt = None
+		self._TknXpryDt = base_types.UninitialisedField(self, 'TknXpryDt', Max10Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CardSeqNb', type=Min2Max3NumericText, min=0, max=1, mutex_group=None, array=False),

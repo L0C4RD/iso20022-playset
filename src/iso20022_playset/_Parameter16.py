@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Algorithm26Code import Algorithm26Code
-from ._AlgorithmIdentification34 import AlgorithmIdentification34
-from ._Max140Text import Max140Text
-from ._Number import Number
+from . import Algorithm26Code
+from . import AlgorithmIdentification34
+from . import Max140Text
+from . import Number
 
 class Parameter16(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class Parameter16(base_types._BaseFieldType):
 
 	@DgstAlgo.setter
 	def DgstAlgo(self, value):
-		self._DgstAlgo = value if type(value) != base_types.auto else self.make_default("DgstAlgo")
+		self._DgstAlgo = value if value is not None else base_types.UninitialisedField(self, 'DgstAlgo', Algorithm26Code, False)
 
 	@DgstAlgo.deleter
 	def DgstAlgo(self):
 		del self._DgstAlgo
-		self._DgstAlgo = None
+		self._DgstAlgo = base_types.UninitialisedField(self, 'DgstAlgo', Algorithm26Code, False)
 
 	@property
 	def MskGnrtrAlgo(self):
@@ -29,12 +29,12 @@ class Parameter16(base_types._BaseFieldType):
 
 	@MskGnrtrAlgo.setter
 	def MskGnrtrAlgo(self, value):
-		self._MskGnrtrAlgo = value if type(value) != base_types.auto else self.make_default("MskGnrtrAlgo")
+		self._MskGnrtrAlgo = value if value is not None else base_types.UninitialisedField(self, 'MskGnrtrAlgo', AlgorithmIdentification34, False)
 
 	@MskGnrtrAlgo.deleter
 	def MskGnrtrAlgo(self):
 		del self._MskGnrtrAlgo
-		self._MskGnrtrAlgo = None
+		self._MskGnrtrAlgo = base_types.UninitialisedField(self, 'MskGnrtrAlgo', AlgorithmIdentification34, False)
 
 	@property
 	def OIDCrvNm(self):
@@ -42,12 +42,12 @@ class Parameter16(base_types._BaseFieldType):
 
 	@OIDCrvNm.setter
 	def OIDCrvNm(self, value):
-		self._OIDCrvNm = value if type(value) != base_types.auto else self.make_default("OIDCrvNm")
+		self._OIDCrvNm = value if value is not None else base_types.UninitialisedField(self, 'OIDCrvNm', Max140Text, False)
 
 	@OIDCrvNm.deleter
 	def OIDCrvNm(self):
 		del self._OIDCrvNm
-		self._OIDCrvNm = None
+		self._OIDCrvNm = base_types.UninitialisedField(self, 'OIDCrvNm', Max140Text, False)
 
 	@property
 	def SaltLngth(self):
@@ -55,12 +55,12 @@ class Parameter16(base_types._BaseFieldType):
 
 	@SaltLngth.setter
 	def SaltLngth(self, value):
-		self._SaltLngth = value if type(value) != base_types.auto else self.make_default("SaltLngth")
+		self._SaltLngth = value if value is not None else base_types.UninitialisedField(self, 'SaltLngth', Number, False)
 
 	@SaltLngth.deleter
 	def SaltLngth(self):
 		del self._SaltLngth
-		self._SaltLngth = None
+		self._SaltLngth = base_types.UninitialisedField(self, 'SaltLngth', Number, False)
 
 	@property
 	def TrlrFld(self):
@@ -68,12 +68,12 @@ class Parameter16(base_types._BaseFieldType):
 
 	@TrlrFld.setter
 	def TrlrFld(self, value):
-		self._TrlrFld = value if type(value) != base_types.auto else self.make_default("TrlrFld")
+		self._TrlrFld = value if value is not None else base_types.UninitialisedField(self, 'TrlrFld', Number, False)
 
 	@TrlrFld.deleter
 	def TrlrFld(self):
 		del self._TrlrFld
-		self._TrlrFld = None
+		self._TrlrFld = base_types.UninitialisedField(self, 'TrlrFld', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DgstAlgo', type=Algorithm26Code, min=0, max=1, mutex_group=None, array=False),

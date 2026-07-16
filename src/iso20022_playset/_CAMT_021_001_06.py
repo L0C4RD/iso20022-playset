@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ReturnGeneralBusinessInformationV06 import ReturnGeneralBusinessInformationV06
+from . import ReturnGeneralBusinessInformationV06
 
 class CAMT_021_001_06():
 
@@ -18,12 +18,12 @@ class CAMT_021_001_06():
 
 		@RtrGnlBizInf.setter
 		def RtrGnlBizInf(self, value):
-			self._RtrGnlBizInf = value if type(value) != base_types.auto else self.make_default("RtrGnlBizInf")
+			self._RtrGnlBizInf = value if value is not None else base_types.UninitialisedField(self, 'RtrGnlBizInf', ReturnGeneralBusinessInformationV06, False)
 
 		@RtrGnlBizInf.deleter
 		def RtrGnlBizInf(self):
 			del self._RtrGnlBizInf
-			self._RtrGnlBizInf = None
+			self._RtrGnlBizInf = base_types.UninitialisedField(self, 'RtrGnlBizInf', ReturnGeneralBusinessInformationV06, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='RtrGnlBizInf', type=ReturnGeneralBusinessInformationV06, min=1, max=1, mutex_group=None, array=False),

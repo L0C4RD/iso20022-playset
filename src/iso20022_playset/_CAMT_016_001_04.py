@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GetCurrencyExchangeRateV04 import GetCurrencyExchangeRateV04
+from . import GetCurrencyExchangeRateV04
 
 class CAMT_016_001_04():
 
@@ -18,12 +18,12 @@ class CAMT_016_001_04():
 
 		@GetCcyXchgRate.setter
 		def GetCcyXchgRate(self, value):
-			self._GetCcyXchgRate = value if type(value) != base_types.auto else self.make_default("GetCcyXchgRate")
+			self._GetCcyXchgRate = value if value is not None else base_types.UninitialisedField(self, 'GetCcyXchgRate', GetCurrencyExchangeRateV04, False)
 
 		@GetCcyXchgRate.deleter
 		def GetCcyXchgRate(self):
 			del self._GetCcyXchgRate
-			self._GetCcyXchgRate = None
+			self._GetCcyXchgRate = base_types.UninitialisedField(self, 'GetCcyXchgRate', GetCurrencyExchangeRateV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='GetCcyXchgRate', type=GetCurrencyExchangeRateV04, min=1, max=1, mutex_group=None, array=False),

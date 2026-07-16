@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AgentCAGlobalDistributionAuthorisationRequestV01 import AgentCAGlobalDistributionAuthorisationRequestV01
+from . import AgentCAGlobalDistributionAuthorisationRequestV01
 
 class SEEV_017_001_01():
 
@@ -18,12 +18,12 @@ class SEEV_017_001_01():
 
 		@AgtCAGblDstrbtnAuthstnReq.setter
 		def AgtCAGblDstrbtnAuthstnReq(self, value):
-			self._AgtCAGblDstrbtnAuthstnReq = value if type(value) != base_types.auto else self.make_default("AgtCAGblDstrbtnAuthstnReq")
+			self._AgtCAGblDstrbtnAuthstnReq = value if value is not None else base_types.UninitialisedField(self, 'AgtCAGblDstrbtnAuthstnReq', AgentCAGlobalDistributionAuthorisationRequestV01, False)
 
 		@AgtCAGblDstrbtnAuthstnReq.deleter
 		def AgtCAGblDstrbtnAuthstnReq(self):
 			del self._AgtCAGblDstrbtnAuthstnReq
-			self._AgtCAGblDstrbtnAuthstnReq = None
+			self._AgtCAGblDstrbtnAuthstnReq = base_types.UninitialisedField(self, 'AgtCAGblDstrbtnAuthstnReq', AgentCAGlobalDistributionAuthorisationRequestV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AgtCAGblDstrbtnAuthstnReq', type=AgentCAGlobalDistributionAuthorisationRequestV01, min=1, max=1, mutex_group=None, array=False),

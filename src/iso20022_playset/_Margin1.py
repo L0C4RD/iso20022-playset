@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SegregatedIndependentAmountMargin1 import SegregatedIndependentAmountMargin1
-from ._VariationMargin1 import VariationMargin1
+from . import SegregatedIndependentAmountMargin1
+from . import VariationMargin1
 
 class Margin1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Margin1(base_types._BaseFieldType):
 
 	@SgrtdIndpdntAmtMrgn.setter
 	def SgrtdIndpdntAmtMrgn(self, value):
-		self._SgrtdIndpdntAmtMrgn = value if type(value) != base_types.auto else self.make_default("SgrtdIndpdntAmtMrgn")
+		self._SgrtdIndpdntAmtMrgn = value if value is not None else base_types.UninitialisedField(self, 'SgrtdIndpdntAmtMrgn', SegregatedIndependentAmountMargin1, False)
 
 	@SgrtdIndpdntAmtMrgn.deleter
 	def SgrtdIndpdntAmtMrgn(self):
 		del self._SgrtdIndpdntAmtMrgn
-		self._SgrtdIndpdntAmtMrgn = None
+		self._SgrtdIndpdntAmtMrgn = base_types.UninitialisedField(self, 'SgrtdIndpdntAmtMrgn', SegregatedIndependentAmountMargin1, False)
 
 	@property
 	def VartnMrgn(self):
@@ -27,12 +27,12 @@ class Margin1(base_types._BaseFieldType):
 
 	@VartnMrgn.setter
 	def VartnMrgn(self, value):
-		self._VartnMrgn = value if type(value) != base_types.auto else self.make_default("VartnMrgn")
+		self._VartnMrgn = value if value is not None else base_types.UninitialisedField(self, 'VartnMrgn', VariationMargin1, False)
 
 	@VartnMrgn.deleter
 	def VartnMrgn(self):
 		del self._VartnMrgn
-		self._VartnMrgn = None
+		self._VartnMrgn = base_types.UninitialisedField(self, 'VartnMrgn', VariationMargin1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SgrtdIndpdntAmtMrgn', type=SegregatedIndependentAmountMargin1, min=0, max=1, mutex_group=None, array=False),

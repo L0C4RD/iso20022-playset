@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification30 import GenericIdentification30
-from ._ValidityPeriodType1Code import ValidityPeriodType1Code
+from . import GenericIdentification30
+from . import ValidityPeriodType1Code
 
 class ValidityPeriod1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ValidityPeriod1Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+		self._Prtry = value if value is not None else base_types.UninitialisedField(self, 'Prtry', GenericIdentification30, False)
 
 	@Prtry.deleter
 	def Prtry(self):
 		del self._Prtry
-		self._Prtry = None
+		self._Prtry = base_types.UninitialisedField(self, 'Prtry', GenericIdentification30, False)
 
 	@property
 	def VldtyPrdCd(self):
@@ -27,12 +27,12 @@ class ValidityPeriod1Choice(base_types._BaseFieldType):
 
 	@VldtyPrdCd.setter
 	def VldtyPrdCd(self, value):
-		self._VldtyPrdCd = value if type(value) != base_types.auto else self.make_default("VldtyPrdCd")
+		self._VldtyPrdCd = value if value is not None else base_types.UninitialisedField(self, 'VldtyPrdCd', ValidityPeriodType1Code, False)
 
 	@VldtyPrdCd.deleter
 	def VldtyPrdCd(self):
 		del self._VldtyPrdCd
-		self._VldtyPrdCd = None
+		self._VldtyPrdCd = base_types.UninitialisedField(self, 'VldtyPrdCd', ValidityPeriodType1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Prtry', type=GenericIdentification30, min=0, max=1, mutex_group=1, array=False),

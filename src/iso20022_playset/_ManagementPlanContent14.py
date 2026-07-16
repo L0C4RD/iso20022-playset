@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max10KBinary import Max10KBinary
-from ._Max140Binary import Max140Binary
-from ._TMSAction14 import TMSAction14
+from . import Max10KBinary
+from . import Max140Binary
+from . import TMSAction14
 
 class ManagementPlanContent14(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ManagementPlanContent14(base_types._BaseFieldType):
 
 	@Actn.setter
 	def Actn(self, value):
-		self._Actn = value if type(value) != base_types.auto else self.make_default("Actn")
+		self._Actn = value if value is not None else base_types.UninitialisedField(self, 'Actn', TMSAction14, True)
 
 	@Actn.deleter
 	def Actn(self):
 		del self._Actn
-		self._Actn = None
+		self._Actn = base_types.UninitialisedField(self, 'Actn', TMSAction14, True)
 
 	@property
 	def KeyNcphrmntCert(self):
@@ -28,12 +28,12 @@ class ManagementPlanContent14(base_types._BaseFieldType):
 
 	@KeyNcphrmntCert.setter
 	def KeyNcphrmntCert(self, value):
-		self._KeyNcphrmntCert = value if type(value) != base_types.auto else self.make_default("KeyNcphrmntCert")
+		self._KeyNcphrmntCert = value if value is not None else base_types.UninitialisedField(self, 'KeyNcphrmntCert', Max10KBinary, True)
 
 	@KeyNcphrmntCert.deleter
 	def KeyNcphrmntCert(self):
 		del self._KeyNcphrmntCert
-		self._KeyNcphrmntCert = None
+		self._KeyNcphrmntCert = base_types.UninitialisedField(self, 'KeyNcphrmntCert', Max10KBinary, True)
 
 	@property
 	def TMChllng(self):
@@ -41,12 +41,12 @@ class ManagementPlanContent14(base_types._BaseFieldType):
 
 	@TMChllng.setter
 	def TMChllng(self, value):
-		self._TMChllng = value if type(value) != base_types.auto else self.make_default("TMChllng")
+		self._TMChllng = value if value is not None else base_types.UninitialisedField(self, 'TMChllng', Max140Binary, False)
 
 	@TMChllng.deleter
 	def TMChllng(self):
 		del self._TMChllng
-		self._TMChllng = None
+		self._TMChllng = base_types.UninitialisedField(self, 'TMChllng', Max140Binary, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Actn', type=TMSAction14, min=1, max=None, mutex_group=None, array=True),

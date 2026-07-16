@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CriteriaOrder1 import CriteriaOrder1
+from . import CriteriaOrder1
 
 class SearchOutputOrder1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class SearchOutputOrder1(base_types._BaseFieldType):
 
 	@CritOrdr.setter
 	def CritOrdr(self, value):
-		self._CritOrdr = value if type(value) != base_types.auto else self.make_default("CritOrdr")
+		self._CritOrdr = value if value is not None else base_types.UninitialisedField(self, 'CritOrdr', CriteriaOrder1, True)
 
 	@CritOrdr.deleter
 	def CritOrdr(self):
 		del self._CritOrdr
-		self._CritOrdr = None
+		self._CritOrdr = base_types.UninitialisedField(self, 'CritOrdr', CriteriaOrder1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CritOrdr', type=CriteriaOrder1, min=1, max=None, mutex_group=None, array=True),

@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._ISODateTime import ISODateTime
-from ._OriginalMessage7 import OriginalMessage7
-from ._Period4Choice import Period4Choice
-from ._StatisticalReportingStatus1Code import StatisticalReportingStatus1Code
-from ._TradeParty6 import TradeParty6
-from ._ValidationStatusReason3 import ValidationStatusReason3
+from . import BranchAndFinancialInstitutionIdentification8
+from . import ISODateTime
+from . import OriginalMessage7
+from . import Period4Choice
+from . import StatisticalReportingStatus1Code
+from . import TradeParty6
+from . import ValidationStatusReason3
 
 class CurrencyControlGroupStatus3(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class CurrencyControlGroupStatus3(base_types._BaseFieldType):
 
 	@OrgnlRefs.setter
 	def OrgnlRefs(self, value):
-		self._OrgnlRefs = value if type(value) != base_types.auto else self.make_default("OrgnlRefs")
+		self._OrgnlRefs = value if value is not None else base_types.UninitialisedField(self, 'OrgnlRefs', OriginalMessage7, False)
 
 	@OrgnlRefs.deleter
 	def OrgnlRefs(self):
 		del self._OrgnlRefs
-		self._OrgnlRefs = None
+		self._OrgnlRefs = base_types.UninitialisedField(self, 'OrgnlRefs', OriginalMessage7, False)
 
 	@property
 	def RegnAgt(self):
@@ -32,12 +32,12 @@ class CurrencyControlGroupStatus3(base_types._BaseFieldType):
 
 	@RegnAgt.setter
 	def RegnAgt(self, value):
-		self._RegnAgt = value if type(value) != base_types.auto else self.make_default("RegnAgt")
+		self._RegnAgt = value if value is not None else base_types.UninitialisedField(self, 'RegnAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@RegnAgt.deleter
 	def RegnAgt(self):
 		del self._RegnAgt
-		self._RegnAgt = None
+		self._RegnAgt = base_types.UninitialisedField(self, 'RegnAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def RptgPrd(self):
@@ -45,12 +45,12 @@ class CurrencyControlGroupStatus3(base_types._BaseFieldType):
 
 	@RptgPrd.setter
 	def RptgPrd(self, value):
-		self._RptgPrd = value if type(value) != base_types.auto else self.make_default("RptgPrd")
+		self._RptgPrd = value if value is not None else base_types.UninitialisedField(self, 'RptgPrd', Period4Choice, False)
 
 	@RptgPrd.deleter
 	def RptgPrd(self):
 		del self._RptgPrd
-		self._RptgPrd = None
+		self._RptgPrd = base_types.UninitialisedField(self, 'RptgPrd', Period4Choice, False)
 
 	@property
 	def RptgPty(self):
@@ -58,12 +58,12 @@ class CurrencyControlGroupStatus3(base_types._BaseFieldType):
 
 	@RptgPty.setter
 	def RptgPty(self, value):
-		self._RptgPty = value if type(value) != base_types.auto else self.make_default("RptgPty")
+		self._RptgPty = value if value is not None else base_types.UninitialisedField(self, 'RptgPty', TradeParty6, False)
 
 	@RptgPty.deleter
 	def RptgPty(self):
 		del self._RptgPty
-		self._RptgPty = None
+		self._RptgPty = base_types.UninitialisedField(self, 'RptgPty', TradeParty6, False)
 
 	@property
 	def Sts(self):
@@ -71,12 +71,12 @@ class CurrencyControlGroupStatus3(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', StatisticalReportingStatus1Code, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', StatisticalReportingStatus1Code, False)
 
 	@property
 	def StsDtTm(self):
@@ -84,12 +84,12 @@ class CurrencyControlGroupStatus3(base_types._BaseFieldType):
 
 	@StsDtTm.setter
 	def StsDtTm(self, value):
-		self._StsDtTm = value if type(value) != base_types.auto else self.make_default("StsDtTm")
+		self._StsDtTm = value if value is not None else base_types.UninitialisedField(self, 'StsDtTm', ISODateTime, False)
 
 	@StsDtTm.deleter
 	def StsDtTm(self):
 		del self._StsDtTm
-		self._StsDtTm = None
+		self._StsDtTm = base_types.UninitialisedField(self, 'StsDtTm', ISODateTime, False)
 
 	@property
 	def StsRsn(self):
@@ -97,12 +97,12 @@ class CurrencyControlGroupStatus3(base_types._BaseFieldType):
 
 	@StsRsn.setter
 	def StsRsn(self, value):
-		self._StsRsn = value if type(value) != base_types.auto else self.make_default("StsRsn")
+		self._StsRsn = value if value is not None else base_types.UninitialisedField(self, 'StsRsn', ValidationStatusReason3, True)
 
 	@StsRsn.deleter
 	def StsRsn(self):
 		del self._StsRsn
-		self._StsRsn = None
+		self._StsRsn = base_types.UninitialisedField(self, 'StsRsn', ValidationStatusReason3, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlRefs', type=OriginalMessage7, min=1, max=1, mutex_group=None, array=False),

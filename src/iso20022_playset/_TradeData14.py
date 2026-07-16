@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
-from ._Status28Choice import Status28Choice
-from ._StatusAndSubStatus2 import StatusAndSubStatus2
-from ._StatusSubType2Code import StatusSubType2Code
-from ._YesNoIndicator import YesNoIndicator
+from . import ISODateTime
+from . import Max35Text
+from . import Status28Choice
+from . import StatusAndSubStatus2
+from . import StatusSubType2Code
+from . import YesNoIndicator
 
 class TradeData14(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class TradeData14(base_types._BaseFieldType):
 
 	@AllgdTrad.setter
 	def AllgdTrad(self, value):
-		self._AllgdTrad = value if type(value) != base_types.auto else self.make_default("AllgdTrad")
+		self._AllgdTrad = value if value is not None else base_types.UninitialisedField(self, 'AllgdTrad', YesNoIndicator, False)
 
 	@AllgdTrad.deleter
 	def AllgdTrad(self):
 		del self._AllgdTrad
-		self._AllgdTrad = None
+		self._AllgdTrad = base_types.UninitialisedField(self, 'AllgdTrad', YesNoIndicator, False)
 
 	@property
 	def CurSts(self):
@@ -31,12 +31,12 @@ class TradeData14(base_types._BaseFieldType):
 
 	@CurSts.setter
 	def CurSts(self, value):
-		self._CurSts = value if type(value) != base_types.auto else self.make_default("CurSts")
+		self._CurSts = value if value is not None else base_types.UninitialisedField(self, 'CurSts', StatusAndSubStatus2, False)
 
 	@CurSts.deleter
 	def CurSts(self):
 		del self._CurSts
-		self._CurSts = None
+		self._CurSts = base_types.UninitialisedField(self, 'CurSts', StatusAndSubStatus2, False)
 
 	@property
 	def CurStsDtTm(self):
@@ -44,12 +44,12 @@ class TradeData14(base_types._BaseFieldType):
 
 	@CurStsDtTm.setter
 	def CurStsDtTm(self, value):
-		self._CurStsDtTm = value if type(value) != base_types.auto else self.make_default("CurStsDtTm")
+		self._CurStsDtTm = value if value is not None else base_types.UninitialisedField(self, 'CurStsDtTm', ISODateTime, False)
 
 	@CurStsDtTm.deleter
 	def CurStsDtTm(self):
 		del self._CurStsDtTm
-		self._CurStsDtTm = None
+		self._CurStsDtTm = base_types.UninitialisedField(self, 'CurStsDtTm', ISODateTime, False)
 
 	@property
 	def CurStsSubTp(self):
@@ -57,12 +57,12 @@ class TradeData14(base_types._BaseFieldType):
 
 	@CurStsSubTp.setter
 	def CurStsSubTp(self, value):
-		self._CurStsSubTp = value if type(value) != base_types.auto else self.make_default("CurStsSubTp")
+		self._CurStsSubTp = value if value is not None else base_types.UninitialisedField(self, 'CurStsSubTp', StatusSubType2Code, False)
 
 	@CurStsSubTp.deleter
 	def CurStsSubTp(self):
 		del self._CurStsSubTp
-		self._CurStsSubTp = None
+		self._CurStsSubTp = base_types.UninitialisedField(self, 'CurStsSubTp', StatusSubType2Code, False)
 
 	@property
 	def MtchgSysMtchdSdRef(self):
@@ -70,12 +70,12 @@ class TradeData14(base_types._BaseFieldType):
 
 	@MtchgSysMtchdSdRef.setter
 	def MtchgSysMtchdSdRef(self, value):
-		self._MtchgSysMtchdSdRef = value if type(value) != base_types.auto else self.make_default("MtchgSysMtchdSdRef")
+		self._MtchgSysMtchdSdRef = value if value is not None else base_types.UninitialisedField(self, 'MtchgSysMtchdSdRef', Max35Text, False)
 
 	@MtchgSysMtchdSdRef.deleter
 	def MtchgSysMtchdSdRef(self):
 		del self._MtchgSysMtchdSdRef
-		self._MtchgSysMtchdSdRef = None
+		self._MtchgSysMtchdSdRef = base_types.UninitialisedField(self, 'MtchgSysMtchdSdRef', Max35Text, False)
 
 	@property
 	def MtchgSysMtchgRef(self):
@@ -83,12 +83,12 @@ class TradeData14(base_types._BaseFieldType):
 
 	@MtchgSysMtchgRef.setter
 	def MtchgSysMtchgRef(self, value):
-		self._MtchgSysMtchgRef = value if type(value) != base_types.auto else self.make_default("MtchgSysMtchgRef")
+		self._MtchgSysMtchgRef = value if value is not None else base_types.UninitialisedField(self, 'MtchgSysMtchgRef', Max35Text, False)
 
 	@MtchgSysMtchgRef.deleter
 	def MtchgSysMtchgRef(self):
 		del self._MtchgSysMtchgRef
-		self._MtchgSysMtchgRef = None
+		self._MtchgSysMtchgRef = base_types.UninitialisedField(self, 'MtchgSysMtchgRef', Max35Text, False)
 
 	@property
 	def MtchgSysUnqRef(self):
@@ -96,12 +96,12 @@ class TradeData14(base_types._BaseFieldType):
 
 	@MtchgSysUnqRef.setter
 	def MtchgSysUnqRef(self, value):
-		self._MtchgSysUnqRef = value if type(value) != base_types.auto else self.make_default("MtchgSysUnqRef")
+		self._MtchgSysUnqRef = value if value is not None else base_types.UninitialisedField(self, 'MtchgSysUnqRef', Max35Text, False)
 
 	@MtchgSysUnqRef.deleter
 	def MtchgSysUnqRef(self):
 		del self._MtchgSysUnqRef
-		self._MtchgSysUnqRef = None
+		self._MtchgSysUnqRef = base_types.UninitialisedField(self, 'MtchgSysUnqRef', Max35Text, False)
 
 	@property
 	def PrvsSts(self):
@@ -109,12 +109,12 @@ class TradeData14(base_types._BaseFieldType):
 
 	@PrvsSts.setter
 	def PrvsSts(self, value):
-		self._PrvsSts = value if type(value) != base_types.auto else self.make_default("PrvsSts")
+		self._PrvsSts = value if value is not None else base_types.UninitialisedField(self, 'PrvsSts', Status28Choice, False)
 
 	@PrvsSts.deleter
 	def PrvsSts(self):
 		del self._PrvsSts
-		self._PrvsSts = None
+		self._PrvsSts = base_types.UninitialisedField(self, 'PrvsSts', Status28Choice, False)
 
 	@property
 	def PrvsStsSubTp(self):
@@ -122,12 +122,12 @@ class TradeData14(base_types._BaseFieldType):
 
 	@PrvsStsSubTp.setter
 	def PrvsStsSubTp(self, value):
-		self._PrvsStsSubTp = value if type(value) != base_types.auto else self.make_default("PrvsStsSubTp")
+		self._PrvsStsSubTp = value if value is not None else base_types.UninitialisedField(self, 'PrvsStsSubTp', StatusSubType2Code, False)
 
 	@PrvsStsSubTp.deleter
 	def PrvsStsSubTp(self):
 		del self._PrvsStsSubTp
-		self._PrvsStsSubTp = None
+		self._PrvsStsSubTp = base_types.UninitialisedField(self, 'PrvsStsSubTp', StatusSubType2Code, False)
 
 	@property
 	def StsOrgtr(self):
@@ -135,12 +135,12 @@ class TradeData14(base_types._BaseFieldType):
 
 	@StsOrgtr.setter
 	def StsOrgtr(self, value):
-		self._StsOrgtr = value if type(value) != base_types.auto else self.make_default("StsOrgtr")
+		self._StsOrgtr = value if value is not None else base_types.UninitialisedField(self, 'StsOrgtr', Max35Text, False)
 
 	@StsOrgtr.deleter
 	def StsOrgtr(self):
 		del self._StsOrgtr
-		self._StsOrgtr = None
+		self._StsOrgtr = base_types.UninitialisedField(self, 'StsOrgtr', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AllgdTrad', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),

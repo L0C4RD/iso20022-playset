@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTimeSearch5Choice import DateAndDateTimeSearch5Choice
-from ._SettlementTransactionStatusType2 import SettlementTransactionStatusType2
+from . import DateAndDateTimeSearch5Choice
+from . import SettlementTransactionStatusType2
 
 class SettlementInstructionQueryStatus3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SettlementInstructionQueryStatus3(base_types._BaseFieldType):
 
 	@DtPrd.setter
 	def DtPrd(self, value):
-		self._DtPrd = value if type(value) != base_types.auto else self.make_default("DtPrd")
+		self._DtPrd = value if value is not None else base_types.UninitialisedField(self, 'DtPrd', DateAndDateTimeSearch5Choice, False)
 
 	@DtPrd.deleter
 	def DtPrd(self):
 		del self._DtPrd
-		self._DtPrd = None
+		self._DtPrd = base_types.UninitialisedField(self, 'DtPrd', DateAndDateTimeSearch5Choice, False)
 
 	@property
 	def Tp(self):
@@ -27,12 +27,12 @@ class SettlementInstructionQueryStatus3(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', SettlementTransactionStatusType2, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', SettlementTransactionStatusType2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DtPrd', type=DateAndDateTimeSearch5Choice, min=0, max=1, mutex_group=None, array=False),

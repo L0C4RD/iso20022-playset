@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._AmountUnit1Code import AmountUnit1Code
-from ._CardDataReading8Code import CardDataReading8Code
-from ._CardIdentificationType1Code import CardIdentificationType1Code
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max35Text import Max35Text
-from ._Max45Text import Max45Text
+from . import ActiveCurrencyCode
+from . import AmountUnit1Code
+from . import CardDataReading8Code
+from . import CardIdentificationType1Code
+from . import ImpliedCurrencyAndAmount
+from . import Max35Text
+from . import Max45Text
 
 class LoyaltyAccount3(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class LoyaltyAccount3(base_types._BaseFieldType):
 
 	@Bal.setter
 	def Bal(self, value):
-		self._Bal = value if type(value) != base_types.auto else self.make_default("Bal")
+		self._Bal = value if value is not None else base_types.UninitialisedField(self, 'Bal', ImpliedCurrencyAndAmount, False)
 
 	@Bal.deleter
 	def Bal(self):
 		del self._Bal
-		self._Bal = None
+		self._Bal = base_types.UninitialisedField(self, 'Bal', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def Brnd(self):
@@ -32,12 +32,12 @@ class LoyaltyAccount3(base_types._BaseFieldType):
 
 	@Brnd.setter
 	def Brnd(self, value):
-		self._Brnd = value if type(value) != base_types.auto else self.make_default("Brnd")
+		self._Brnd = value if value is not None else base_types.UninitialisedField(self, 'Brnd', Max35Text, False)
 
 	@Brnd.deleter
 	def Brnd(self):
 		del self._Brnd
-		self._Brnd = None
+		self._Brnd = base_types.UninitialisedField(self, 'Brnd', Max35Text, False)
 
 	@property
 	def Ccy(self):
@@ -45,12 +45,12 @@ class LoyaltyAccount3(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@property
 	def IdTp(self):
@@ -58,12 +58,12 @@ class LoyaltyAccount3(base_types._BaseFieldType):
 
 	@IdTp.setter
 	def IdTp(self, value):
-		self._IdTp = value if type(value) != base_types.auto else self.make_default("IdTp")
+		self._IdTp = value if value is not None else base_types.UninitialisedField(self, 'IdTp', CardIdentificationType1Code, False)
 
 	@IdTp.deleter
 	def IdTp(self):
 		del self._IdTp
-		self._IdTp = None
+		self._IdTp = base_types.UninitialisedField(self, 'IdTp', CardIdentificationType1Code, False)
 
 	@property
 	def LltyId(self):
@@ -71,12 +71,12 @@ class LoyaltyAccount3(base_types._BaseFieldType):
 
 	@LltyId.setter
 	def LltyId(self, value):
-		self._LltyId = value if type(value) != base_types.auto else self.make_default("LltyId")
+		self._LltyId = value if value is not None else base_types.UninitialisedField(self, 'LltyId', Max35Text, False)
 
 	@LltyId.deleter
 	def LltyId(self):
 		del self._LltyId
-		self._LltyId = None
+		self._LltyId = base_types.UninitialisedField(self, 'LltyId', Max35Text, False)
 
 	@property
 	def NtryMd(self):
@@ -84,12 +84,12 @@ class LoyaltyAccount3(base_types._BaseFieldType):
 
 	@NtryMd.setter
 	def NtryMd(self, value):
-		self._NtryMd = value if type(value) != base_types.auto else self.make_default("NtryMd")
+		self._NtryMd = value if value is not None else base_types.UninitialisedField(self, 'NtryMd', CardDataReading8Code, False)
 
 	@NtryMd.deleter
 	def NtryMd(self):
 		del self._NtryMd
-		self._NtryMd = None
+		self._NtryMd = base_types.UninitialisedField(self, 'NtryMd', CardDataReading8Code, False)
 
 	@property
 	def OwnrNm(self):
@@ -97,12 +97,12 @@ class LoyaltyAccount3(base_types._BaseFieldType):
 
 	@OwnrNm.setter
 	def OwnrNm(self, value):
-		self._OwnrNm = value if type(value) != base_types.auto else self.make_default("OwnrNm")
+		self._OwnrNm = value if value is not None else base_types.UninitialisedField(self, 'OwnrNm', Max45Text, False)
 
 	@OwnrNm.deleter
 	def OwnrNm(self):
 		del self._OwnrNm
-		self._OwnrNm = None
+		self._OwnrNm = base_types.UninitialisedField(self, 'OwnrNm', Max45Text, False)
 
 	@property
 	def Prvdr(self):
@@ -110,12 +110,12 @@ class LoyaltyAccount3(base_types._BaseFieldType):
 
 	@Prvdr.setter
 	def Prvdr(self, value):
-		self._Prvdr = value if type(value) != base_types.auto else self.make_default("Prvdr")
+		self._Prvdr = value if value is not None else base_types.UninitialisedField(self, 'Prvdr', Max35Text, False)
 
 	@Prvdr.deleter
 	def Prvdr(self):
 		del self._Prvdr
-		self._Prvdr = None
+		self._Prvdr = base_types.UninitialisedField(self, 'Prvdr', Max35Text, False)
 
 	@property
 	def Unit(self):
@@ -123,12 +123,12 @@ class LoyaltyAccount3(base_types._BaseFieldType):
 
 	@Unit.setter
 	def Unit(self, value):
-		self._Unit = value if type(value) != base_types.auto else self.make_default("Unit")
+		self._Unit = value if value is not None else base_types.UninitialisedField(self, 'Unit', AmountUnit1Code, False)
 
 	@Unit.deleter
 	def Unit(self):
 		del self._Unit
-		self._Unit = None
+		self._Unit = base_types.UninitialisedField(self, 'Unit', AmountUnit1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Bal', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

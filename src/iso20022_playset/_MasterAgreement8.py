@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AgreementType2Choice import AgreementType2Choice
-from ._Max350Text import Max350Text
-from ._Max50Text import Max50Text
+from . import AgreementType2Choice
+from . import Max350Text
+from . import Max50Text
 
 class MasterAgreement8(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class MasterAgreement8(base_types._BaseFieldType):
 
 	@OthrMstrAgrmtDtls.setter
 	def OthrMstrAgrmtDtls(self, value):
-		self._OthrMstrAgrmtDtls = value if type(value) != base_types.auto else self.make_default("OthrMstrAgrmtDtls")
+		self._OthrMstrAgrmtDtls = value if value is not None else base_types.UninitialisedField(self, 'OthrMstrAgrmtDtls', Max350Text, False)
 
 	@OthrMstrAgrmtDtls.deleter
 	def OthrMstrAgrmtDtls(self):
 		del self._OthrMstrAgrmtDtls
-		self._OthrMstrAgrmtDtls = None
+		self._OthrMstrAgrmtDtls = base_types.UninitialisedField(self, 'OthrMstrAgrmtDtls', Max350Text, False)
 
 	@property
 	def Tp(self):
@@ -28,12 +28,12 @@ class MasterAgreement8(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', AgreementType2Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', AgreementType2Choice, False)
 
 	@property
 	def Vrsn(self):
@@ -41,12 +41,12 @@ class MasterAgreement8(base_types._BaseFieldType):
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+		self._Vrsn = value if value is not None else base_types.UninitialisedField(self, 'Vrsn', Max50Text, False)
 
 	@Vrsn.deleter
 	def Vrsn(self):
 		del self._Vrsn
-		self._Vrsn = None
+		self._Vrsn = base_types.UninitialisedField(self, 'Vrsn', Max50Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OthrMstrAgrmtDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),

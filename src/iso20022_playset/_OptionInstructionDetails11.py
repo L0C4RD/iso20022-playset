@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
-from ._ISODate import ISODate
-from ._InstructionProcessingStatus56Choice import InstructionProcessingStatus56Choice
-from ._Max15Text import Max15Text
-from ._Max350Text import Max350Text
-from ._Max3NumericText import Max3NumericText
-from ._Max50Text import Max50Text
-from ._PriceFormat74Choice import PriceFormat74Choice
-from ._ProtectTransactionType2Code import ProtectTransactionType2Code
+from . import FinancialInstrumentQuantity33Choice
+from . import ISODate
+from . import InstructionProcessingStatus56Choice
+from . import Max15Text
+from . import Max350Text
+from . import Max3NumericText
+from . import Max50Text
+from . import PriceFormat74Choice
+from . import ProtectTransactionType2Code
 
 class OptionInstructionDetails11(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class OptionInstructionDetails11(base_types._BaseFieldType):
 
 	@BidPric.setter
 	def BidPric(self, value):
-		self._BidPric = value if type(value) != base_types.auto else self.make_default("BidPric")
+		self._BidPric = value if value is not None else base_types.UninitialisedField(self, 'BidPric', PriceFormat74Choice, False)
 
 	@BidPric.deleter
 	def BidPric(self):
 		del self._BidPric
-		self._BidPric = None
+		self._BidPric = base_types.UninitialisedField(self, 'BidPric', PriceFormat74Choice, False)
 
 	@property
 	def CondlQty(self):
@@ -34,12 +34,12 @@ class OptionInstructionDetails11(base_types._BaseFieldType):
 
 	@CondlQty.setter
 	def CondlQty(self, value):
-		self._CondlQty = value if type(value) != base_types.auto else self.make_default("CondlQty")
+		self._CondlQty = value if value is not None else base_types.UninitialisedField(self, 'CondlQty', FinancialInstrumentQuantity33Choice, False)
 
 	@CondlQty.deleter
 	def CondlQty(self):
 		del self._CondlQty
-		self._CondlQty = None
+		self._CondlQty = base_types.UninitialisedField(self, 'CondlQty', FinancialInstrumentQuantity33Choice, False)
 
 	@property
 	def CoverPrtctDt(self):
@@ -47,12 +47,12 @@ class OptionInstructionDetails11(base_types._BaseFieldType):
 
 	@CoverPrtctDt.setter
 	def CoverPrtctDt(self, value):
-		self._CoverPrtctDt = value if type(value) != base_types.auto else self.make_default("CoverPrtctDt")
+		self._CoverPrtctDt = value if value is not None else base_types.UninitialisedField(self, 'CoverPrtctDt', ISODate, False)
 
 	@CoverPrtctDt.deleter
 	def CoverPrtctDt(self):
 		del self._CoverPrtctDt
-		self._CoverPrtctDt = None
+		self._CoverPrtctDt = base_types.UninitialisedField(self, 'CoverPrtctDt', ISODate, False)
 
 	@property
 	def CstmrRef(self):
@@ -60,12 +60,12 @@ class OptionInstructionDetails11(base_types._BaseFieldType):
 
 	@CstmrRef.setter
 	def CstmrRef(self, value):
-		self._CstmrRef = value if type(value) != base_types.auto else self.make_default("CstmrRef")
+		self._CstmrRef = value if value is not None else base_types.UninitialisedField(self, 'CstmrRef', Max50Text, False)
 
 	@CstmrRef.deleter
 	def CstmrRef(self):
 		del self._CstmrRef
-		self._CstmrRef = None
+		self._CstmrRef = base_types.UninitialisedField(self, 'CstmrRef', Max50Text, False)
 
 	@property
 	def InstrDt(self):
@@ -73,12 +73,12 @@ class OptionInstructionDetails11(base_types._BaseFieldType):
 
 	@InstrDt.setter
 	def InstrDt(self, value):
-		self._InstrDt = value if type(value) != base_types.auto else self.make_default("InstrDt")
+		self._InstrDt = value if value is not None else base_types.UninitialisedField(self, 'InstrDt', ISODate, False)
 
 	@InstrDt.deleter
 	def InstrDt(self):
 		del self._InstrDt
-		self._InstrDt = None
+		self._InstrDt = base_types.UninitialisedField(self, 'InstrDt', ISODate, False)
 
 	@property
 	def InstrId(self):
@@ -86,12 +86,12 @@ class OptionInstructionDetails11(base_types._BaseFieldType):
 
 	@InstrId.setter
 	def InstrId(self, value):
-		self._InstrId = value if type(value) != base_types.auto else self.make_default("InstrId")
+		self._InstrId = value if value is not None else base_types.UninitialisedField(self, 'InstrId', Max15Text, False)
 
 	@InstrId.deleter
 	def InstrId(self):
 		del self._InstrId
-		self._InstrId = None
+		self._InstrId = base_types.UninitialisedField(self, 'InstrId', Max15Text, False)
 
 	@property
 	def InstrNrrtv(self):
@@ -99,12 +99,12 @@ class OptionInstructionDetails11(base_types._BaseFieldType):
 
 	@InstrNrrtv.setter
 	def InstrNrrtv(self, value):
-		self._InstrNrrtv = value if type(value) != base_types.auto else self.make_default("InstrNrrtv")
+		self._InstrNrrtv = value if value is not None else base_types.UninitialisedField(self, 'InstrNrrtv', Max350Text, False)
 
 	@InstrNrrtv.deleter
 	def InstrNrrtv(self):
 		del self._InstrNrrtv
-		self._InstrNrrtv = None
+		self._InstrNrrtv = base_types.UninitialisedField(self, 'InstrNrrtv', Max350Text, False)
 
 	@property
 	def InstrQty(self):
@@ -112,12 +112,12 @@ class OptionInstructionDetails11(base_types._BaseFieldType):
 
 	@InstrQty.setter
 	def InstrQty(self, value):
-		self._InstrQty = value if type(value) != base_types.auto else self.make_default("InstrQty")
+		self._InstrQty = value if value is not None else base_types.UninitialisedField(self, 'InstrQty', FinancialInstrumentQuantity33Choice, False)
 
 	@InstrQty.deleter
 	def InstrQty(self):
 		del self._InstrQty
-		self._InstrQty = None
+		self._InstrQty = base_types.UninitialisedField(self, 'InstrQty', FinancialInstrumentQuantity33Choice, False)
 
 	@property
 	def InstrSeqNb(self):
@@ -125,12 +125,12 @@ class OptionInstructionDetails11(base_types._BaseFieldType):
 
 	@InstrSeqNb.setter
 	def InstrSeqNb(self, value):
-		self._InstrSeqNb = value if type(value) != base_types.auto else self.make_default("InstrSeqNb")
+		self._InstrSeqNb = value if value is not None else base_types.UninitialisedField(self, 'InstrSeqNb', Max3NumericText, False)
 
 	@InstrSeqNb.deleter
 	def InstrSeqNb(self):
 		del self._InstrSeqNb
-		self._InstrSeqNb = None
+		self._InstrSeqNb = base_types.UninitialisedField(self, 'InstrSeqNb', Max3NumericText, False)
 
 	@property
 	def InstrSts(self):
@@ -138,12 +138,12 @@ class OptionInstructionDetails11(base_types._BaseFieldType):
 
 	@InstrSts.setter
 	def InstrSts(self, value):
-		self._InstrSts = value if type(value) != base_types.auto else self.make_default("InstrSts")
+		self._InstrSts = value if value is not None else base_types.UninitialisedField(self, 'InstrSts', InstructionProcessingStatus56Choice, False)
 
 	@InstrSts.deleter
 	def InstrSts(self):
 		del self._InstrSts
-		self._InstrSts = None
+		self._InstrSts = base_types.UninitialisedField(self, 'InstrSts', InstructionProcessingStatus56Choice, False)
 
 	@property
 	def PrtctDt(self):
@@ -151,12 +151,12 @@ class OptionInstructionDetails11(base_types._BaseFieldType):
 
 	@PrtctDt.setter
 	def PrtctDt(self, value):
-		self._PrtctDt = value if type(value) != base_types.auto else self.make_default("PrtctDt")
+		self._PrtctDt = value if value is not None else base_types.UninitialisedField(self, 'PrtctDt', ISODate, False)
 
 	@PrtctDt.deleter
 	def PrtctDt(self):
 		del self._PrtctDt
-		self._PrtctDt = None
+		self._PrtctDt = base_types.UninitialisedField(self, 'PrtctDt', ISODate, False)
 
 	@property
 	def PrtctInd(self):
@@ -164,12 +164,12 @@ class OptionInstructionDetails11(base_types._BaseFieldType):
 
 	@PrtctInd.setter
 	def PrtctInd(self, value):
-		self._PrtctInd = value if type(value) != base_types.auto else self.make_default("PrtctInd")
+		self._PrtctInd = value if value is not None else base_types.UninitialisedField(self, 'PrtctInd', ProtectTransactionType2Code, False)
 
 	@PrtctInd.deleter
 	def PrtctInd(self):
 		del self._PrtctInd
-		self._PrtctInd = None
+		self._PrtctInd = base_types.UninitialisedField(self, 'PrtctInd', ProtectTransactionType2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BidPric', type=PriceFormat74Choice, min=0, max=1, mutex_group=None, array=False),

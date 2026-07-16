@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountOpeningAmendmentRequestV05 import AccountOpeningAmendmentRequestV05
+from . import AccountOpeningAmendmentRequestV05
 
 class ACMT_008_001_05():
 
@@ -18,12 +18,12 @@ class ACMT_008_001_05():
 
 		@AcctOpngAmdmntReq.setter
 		def AcctOpngAmdmntReq(self, value):
-			self._AcctOpngAmdmntReq = value if type(value) != base_types.auto else self.make_default("AcctOpngAmdmntReq")
+			self._AcctOpngAmdmntReq = value if value is not None else base_types.UninitialisedField(self, 'AcctOpngAmdmntReq', AccountOpeningAmendmentRequestV05, False)
 
 		@AcctOpngAmdmntReq.deleter
 		def AcctOpngAmdmntReq(self):
 			del self._AcctOpngAmdmntReq
-			self._AcctOpngAmdmntReq = None
+			self._AcctOpngAmdmntReq = base_types.UninitialisedField(self, 'AcctOpngAmdmntReq', AccountOpeningAmendmentRequestV05, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AcctOpngAmdmntReq', type=AccountOpeningAmendmentRequestV05, min=1, max=1, mutex_group=None, array=False),

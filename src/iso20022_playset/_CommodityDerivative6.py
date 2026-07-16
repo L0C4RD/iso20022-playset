@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max25Text import Max25Text
+from . import Max25Text
 
 class CommodityDerivative6(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class CommodityDerivative6(base_types._BaseFieldType):
 
 	@SttlmLctn.setter
 	def SttlmLctn(self, value):
-		self._SttlmLctn = value if type(value) != base_types.auto else self.make_default("SttlmLctn")
+		self._SttlmLctn = value if value is not None else base_types.UninitialisedField(self, 'SttlmLctn', Max25Text, False)
 
 	@SttlmLctn.deleter
 	def SttlmLctn(self):
 		del self._SttlmLctn
-		self._SttlmLctn = None
+		self._SttlmLctn = base_types.UninitialisedField(self, 'SttlmLctn', Max25Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SttlmLctn', type=Max25Text, min=1, max=1, mutex_group=None, array=False),

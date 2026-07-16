@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActionMessage12 import ActionMessage12
-from ._ISODateTime import ISODateTime
-from ._PointOfInteractionCapabilities9 import PointOfInteractionCapabilities9
-from ._PointOfInteractionComponent18 import PointOfInteractionComponent18
+from . import ActionMessage12
+from . import ISODateTime
+from . import PointOfInteractionCapabilities9
+from . import PointOfInteractionComponent18
 
 class LoginResponse8(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class LoginResponse8(base_types._BaseFieldType):
 
 	@OutptDisp.setter
 	def OutptDisp(self, value):
-		self._OutptDisp = value if type(value) != base_types.auto else self.make_default("OutptDisp")
+		self._OutptDisp = value if value is not None else base_types.UninitialisedField(self, 'OutptDisp', ActionMessage12, False)
 
 	@OutptDisp.deleter
 	def OutptDisp(self):
 		del self._OutptDisp
-		self._OutptDisp = None
+		self._OutptDisp = base_types.UninitialisedField(self, 'OutptDisp', ActionMessage12, False)
 
 	@property
 	def POICpblties(self):
@@ -29,12 +29,12 @@ class LoginResponse8(base_types._BaseFieldType):
 
 	@POICpblties.setter
 	def POICpblties(self, value):
-		self._POICpblties = value if type(value) != base_types.auto else self.make_default("POICpblties")
+		self._POICpblties = value if value is not None else base_types.UninitialisedField(self, 'POICpblties', PointOfInteractionCapabilities9, False)
 
 	@POICpblties.deleter
 	def POICpblties(self):
 		del self._POICpblties
-		self._POICpblties = None
+		self._POICpblties = base_types.UninitialisedField(self, 'POICpblties', PointOfInteractionCapabilities9, False)
 
 	@property
 	def POIDtTm(self):
@@ -42,12 +42,12 @@ class LoginResponse8(base_types._BaseFieldType):
 
 	@POIDtTm.setter
 	def POIDtTm(self, value):
-		self._POIDtTm = value if type(value) != base_types.auto else self.make_default("POIDtTm")
+		self._POIDtTm = value if value is not None else base_types.UninitialisedField(self, 'POIDtTm', ISODateTime, False)
 
 	@POIDtTm.deleter
 	def POIDtTm(self):
 		del self._POIDtTm
-		self._POIDtTm = None
+		self._POIDtTm = base_types.UninitialisedField(self, 'POIDtTm', ISODateTime, False)
 
 	@property
 	def POISftwr(self):
@@ -55,12 +55,12 @@ class LoginResponse8(base_types._BaseFieldType):
 
 	@POISftwr.setter
 	def POISftwr(self, value):
-		self._POISftwr = value if type(value) != base_types.auto else self.make_default("POISftwr")
+		self._POISftwr = value if value is not None else base_types.UninitialisedField(self, 'POISftwr', PointOfInteractionComponent18, True)
 
 	@POISftwr.deleter
 	def POISftwr(self):
 		del self._POISftwr
-		self._POISftwr = None
+		self._POISftwr = base_types.UninitialisedField(self, 'POISftwr', PointOfInteractionComponent18, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OutptDisp', type=ActionMessage12, min=0, max=1, mutex_group=None, array=False),

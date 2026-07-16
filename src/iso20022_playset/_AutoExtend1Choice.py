@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._Number import Number
+from . import ISODate
+from . import Number
 
 class AutoExtend1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AutoExtend1Choice(base_types._BaseFieldType):
 
 	@Days.setter
 	def Days(self, value):
-		self._Days = value if type(value) != base_types.auto else self.make_default("Days")
+		self._Days = value if value is not None else base_types.UninitialisedField(self, 'Days', Number, False)
 
 	@Days.deleter
 	def Days(self):
 		del self._Days
-		self._Days = None
+		self._Days = base_types.UninitialisedField(self, 'Days', Number, False)
 
 	@property
 	def Dt(self):
@@ -27,12 +27,12 @@ class AutoExtend1Choice(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@property
 	def Mnths(self):
@@ -40,12 +40,12 @@ class AutoExtend1Choice(base_types._BaseFieldType):
 
 	@Mnths.setter
 	def Mnths(self, value):
-		self._Mnths = value if type(value) != base_types.auto else self.make_default("Mnths")
+		self._Mnths = value if value is not None else base_types.UninitialisedField(self, 'Mnths', Number, False)
 
 	@Mnths.deleter
 	def Mnths(self):
 		del self._Mnths
-		self._Mnths = None
+		self._Mnths = base_types.UninitialisedField(self, 'Mnths', Number, False)
 
 	@property
 	def Yrs(self):
@@ -53,12 +53,12 @@ class AutoExtend1Choice(base_types._BaseFieldType):
 
 	@Yrs.setter
 	def Yrs(self, value):
-		self._Yrs = value if type(value) != base_types.auto else self.make_default("Yrs")
+		self._Yrs = value if value is not None else base_types.UninitialisedField(self, 'Yrs', Number, False)
 
 	@Yrs.deleter
 	def Yrs(self):
 		del self._Yrs
-		self._Yrs = None
+		self._Yrs = base_types.UninitialisedField(self, 'Yrs', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Days', type=Number, min=0, max=1, mutex_group=1, array=False),

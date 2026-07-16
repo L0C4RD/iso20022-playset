@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountIdentification4Choice import AccountIdentification4Choice
-from ._AccountStatusModification1 import AccountStatusModification1
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._AmountModification1 import AmountModification1
-from ._DateModification1 import DateModification1
-from ._NameModification1 import NameModification1
-from ._NumberModification1 import NumberModification1
-from ._PurposeModification1 import PurposeModification1
-from ._RestrictionModification1 import RestrictionModification1
-from ._StatementFrequencyAndFormModification1 import StatementFrequencyAndFormModification1
-from ._TypeModification1 import TypeModification1
+from . import AccountIdentification4Choice
+from . import AccountStatusModification1
+from . import ActiveCurrencyCode
+from . import AmountModification1
+from . import DateModification1
+from . import NameModification1
+from . import NumberModification1
+from . import PurposeModification1
+from . import RestrictionModification1
+from . import StatementFrequencyAndFormModification1
+from . import TypeModification1
 
 class CustomerAccountModification1(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class CustomerAccountModification1(base_types._BaseFieldType):
 
 	@AcctPurp.setter
 	def AcctPurp(self, value):
-		self._AcctPurp = value if type(value) != base_types.auto else self.make_default("AcctPurp")
+		self._AcctPurp = value if value is not None else base_types.UninitialisedField(self, 'AcctPurp', PurposeModification1, False)
 
 	@AcctPurp.deleter
 	def AcctPurp(self):
 		del self._AcctPurp
-		self._AcctPurp = None
+		self._AcctPurp = base_types.UninitialisedField(self, 'AcctPurp', PurposeModification1, False)
 
 	@property
 	def AvrgBal(self):
@@ -36,12 +36,12 @@ class CustomerAccountModification1(base_types._BaseFieldType):
 
 	@AvrgBal.setter
 	def AvrgBal(self, value):
-		self._AvrgBal = value if type(value) != base_types.auto else self.make_default("AvrgBal")
+		self._AvrgBal = value if value is not None else base_types.UninitialisedField(self, 'AvrgBal', AmountModification1, False)
 
 	@AvrgBal.deleter
 	def AvrgBal(self):
 		del self._AvrgBal
-		self._AvrgBal = None
+		self._AvrgBal = base_types.UninitialisedField(self, 'AvrgBal', AmountModification1, False)
 
 	@property
 	def Ccy(self):
@@ -49,12 +49,12 @@ class CustomerAccountModification1(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@property
 	def ClngNtfctnAmt(self):
@@ -62,12 +62,12 @@ class CustomerAccountModification1(base_types._BaseFieldType):
 
 	@ClngNtfctnAmt.setter
 	def ClngNtfctnAmt(self, value):
-		self._ClngNtfctnAmt = value if type(value) != base_types.auto else self.make_default("ClngNtfctnAmt")
+		self._ClngNtfctnAmt = value if value is not None else base_types.UninitialisedField(self, 'ClngNtfctnAmt', AmountModification1, False)
 
 	@ClngNtfctnAmt.deleter
 	def ClngNtfctnAmt(self):
 		del self._ClngNtfctnAmt
-		self._ClngNtfctnAmt = None
+		self._ClngNtfctnAmt = base_types.UninitialisedField(self, 'ClngNtfctnAmt', AmountModification1, False)
 
 	@property
 	def ClsgDt(self):
@@ -75,12 +75,12 @@ class CustomerAccountModification1(base_types._BaseFieldType):
 
 	@ClsgDt.setter
 	def ClsgDt(self, value):
-		self._ClsgDt = value if type(value) != base_types.auto else self.make_default("ClsgDt")
+		self._ClsgDt = value if value is not None else base_types.UninitialisedField(self, 'ClsgDt', DateModification1, False)
 
 	@ClsgDt.deleter
 	def ClsgDt(self):
 		del self._ClsgDt
-		self._ClsgDt = None
+		self._ClsgDt = base_types.UninitialisedField(self, 'ClsgDt', DateModification1, False)
 
 	@property
 	def FlrNtfctnAmt(self):
@@ -88,12 +88,12 @@ class CustomerAccountModification1(base_types._BaseFieldType):
 
 	@FlrNtfctnAmt.setter
 	def FlrNtfctnAmt(self, value):
-		self._FlrNtfctnAmt = value if type(value) != base_types.auto else self.make_default("FlrNtfctnAmt")
+		self._FlrNtfctnAmt = value if value is not None else base_types.UninitialisedField(self, 'FlrNtfctnAmt', AmountModification1, False)
 
 	@FlrNtfctnAmt.deleter
 	def FlrNtfctnAmt(self):
 		del self._FlrNtfctnAmt
-		self._FlrNtfctnAmt = None
+		self._FlrNtfctnAmt = base_types.UninitialisedField(self, 'FlrNtfctnAmt', AmountModification1, False)
 
 	@property
 	def Id(self):
@@ -101,12 +101,12 @@ class CustomerAccountModification1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', AccountIdentification4Choice, True)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', AccountIdentification4Choice, True)
 
 	@property
 	def MnthlyPmtVal(self):
@@ -114,12 +114,12 @@ class CustomerAccountModification1(base_types._BaseFieldType):
 
 	@MnthlyPmtVal.setter
 	def MnthlyPmtVal(self, value):
-		self._MnthlyPmtVal = value if type(value) != base_types.auto else self.make_default("MnthlyPmtVal")
+		self._MnthlyPmtVal = value if value is not None else base_types.UninitialisedField(self, 'MnthlyPmtVal', AmountModification1, False)
 
 	@MnthlyPmtVal.deleter
 	def MnthlyPmtVal(self):
 		del self._MnthlyPmtVal
-		self._MnthlyPmtVal = None
+		self._MnthlyPmtVal = base_types.UninitialisedField(self, 'MnthlyPmtVal', AmountModification1, False)
 
 	@property
 	def MnthlyRcvdVal(self):
@@ -127,12 +127,12 @@ class CustomerAccountModification1(base_types._BaseFieldType):
 
 	@MnthlyRcvdVal.setter
 	def MnthlyRcvdVal(self, value):
-		self._MnthlyRcvdVal = value if type(value) != base_types.auto else self.make_default("MnthlyRcvdVal")
+		self._MnthlyRcvdVal = value if value is not None else base_types.UninitialisedField(self, 'MnthlyRcvdVal', AmountModification1, False)
 
 	@MnthlyRcvdVal.deleter
 	def MnthlyRcvdVal(self):
 		del self._MnthlyRcvdVal
-		self._MnthlyRcvdVal = None
+		self._MnthlyRcvdVal = base_types.UninitialisedField(self, 'MnthlyRcvdVal', AmountModification1, False)
 
 	@property
 	def MnthlyTxNb(self):
@@ -140,12 +140,12 @@ class CustomerAccountModification1(base_types._BaseFieldType):
 
 	@MnthlyTxNb.setter
 	def MnthlyTxNb(self, value):
-		self._MnthlyTxNb = value if type(value) != base_types.auto else self.make_default("MnthlyTxNb")
+		self._MnthlyTxNb = value if value is not None else base_types.UninitialisedField(self, 'MnthlyTxNb', NumberModification1, False)
 
 	@MnthlyTxNb.deleter
 	def MnthlyTxNb(self):
 		del self._MnthlyTxNb
-		self._MnthlyTxNb = None
+		self._MnthlyTxNb = base_types.UninitialisedField(self, 'MnthlyTxNb', NumberModification1, False)
 
 	@property
 	def Nm(self):
@@ -153,12 +153,12 @@ class CustomerAccountModification1(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', NameModification1, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', NameModification1, False)
 
 	@property
 	def Rstrctn(self):
@@ -166,12 +166,12 @@ class CustomerAccountModification1(base_types._BaseFieldType):
 
 	@Rstrctn.setter
 	def Rstrctn(self, value):
-		self._Rstrctn = value if type(value) != base_types.auto else self.make_default("Rstrctn")
+		self._Rstrctn = value if value is not None else base_types.UninitialisedField(self, 'Rstrctn', RestrictionModification1, True)
 
 	@Rstrctn.deleter
 	def Rstrctn(self):
 		del self._Rstrctn
-		self._Rstrctn = None
+		self._Rstrctn = base_types.UninitialisedField(self, 'Rstrctn', RestrictionModification1, True)
 
 	@property
 	def StmtFrqcyAndFrmt(self):
@@ -179,12 +179,12 @@ class CustomerAccountModification1(base_types._BaseFieldType):
 
 	@StmtFrqcyAndFrmt.setter
 	def StmtFrqcyAndFrmt(self, value):
-		self._StmtFrqcyAndFrmt = value if type(value) != base_types.auto else self.make_default("StmtFrqcyAndFrmt")
+		self._StmtFrqcyAndFrmt = value if value is not None else base_types.UninitialisedField(self, 'StmtFrqcyAndFrmt', StatementFrequencyAndFormModification1, True)
 
 	@StmtFrqcyAndFrmt.deleter
 	def StmtFrqcyAndFrmt(self):
 		del self._StmtFrqcyAndFrmt
-		self._StmtFrqcyAndFrmt = None
+		self._StmtFrqcyAndFrmt = base_types.UninitialisedField(self, 'StmtFrqcyAndFrmt', StatementFrequencyAndFormModification1, True)
 
 	@property
 	def Sts(self):
@@ -192,12 +192,12 @@ class CustomerAccountModification1(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', AccountStatusModification1, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', AccountStatusModification1, False)
 
 	@property
 	def Tp(self):
@@ -205,12 +205,12 @@ class CustomerAccountModification1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', TypeModification1, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', TypeModification1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctPurp', type=PurposeModification1, min=0, max=1, mutex_group=None, array=False),

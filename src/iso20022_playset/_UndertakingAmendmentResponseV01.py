@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Amendment7 import Amendment7
-from ._PartyAndSignature2 import PartyAndSignature2
+from . import Amendment7
+from . import PartyAndSignature2
 
 class UndertakingAmendmentResponseV01(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class UndertakingAmendmentResponseV01(base_types._BaseFieldType):
 
 	@DgtlSgntr.setter
 	def DgtlSgntr(self, value):
-		self._DgtlSgntr = value if type(value) != base_types.auto else self.make_default("DgtlSgntr")
+		self._DgtlSgntr = value if value is not None else base_types.UninitialisedField(self, 'DgtlSgntr', PartyAndSignature2, False)
 
 	@DgtlSgntr.deleter
 	def DgtlSgntr(self):
 		del self._DgtlSgntr
-		self._DgtlSgntr = None
+		self._DgtlSgntr = base_types.UninitialisedField(self, 'DgtlSgntr', PartyAndSignature2, False)
 
 	@property
 	def UdrtkgAmdmntRspnDtls(self):
@@ -27,12 +27,12 @@ class UndertakingAmendmentResponseV01(base_types._BaseFieldType):
 
 	@UdrtkgAmdmntRspnDtls.setter
 	def UdrtkgAmdmntRspnDtls(self, value):
-		self._UdrtkgAmdmntRspnDtls = value if type(value) != base_types.auto else self.make_default("UdrtkgAmdmntRspnDtls")
+		self._UdrtkgAmdmntRspnDtls = value if value is not None else base_types.UninitialisedField(self, 'UdrtkgAmdmntRspnDtls', Amendment7, False)
 
 	@UdrtkgAmdmntRspnDtls.deleter
 	def UdrtkgAmdmntRspnDtls(self):
 		del self._UdrtkgAmdmntRspnDtls
-		self._UdrtkgAmdmntRspnDtls = None
+		self._UdrtkgAmdmntRspnDtls = base_types.UninitialisedField(self, 'UdrtkgAmdmntRspnDtls', Amendment7, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature2, min=0, max=1, mutex_group=None, array=False),

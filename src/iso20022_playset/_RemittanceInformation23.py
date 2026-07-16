@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
-from ._OriginalPaymentInformation10 import OriginalPaymentInformation10
-from ._StructuredRemittanceInformation18 import StructuredRemittanceInformation18
+from . import Max140Text
+from . import Max35Text
+from . import OriginalPaymentInformation10
+from . import StructuredRemittanceInformation18
 
 class RemittanceInformation23(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class RemittanceInformation23(base_types._BaseFieldType):
 
 	@OrgnlPmtInf.setter
 	def OrgnlPmtInf(self, value):
-		self._OrgnlPmtInf = value if type(value) != base_types.auto else self.make_default("OrgnlPmtInf")
+		self._OrgnlPmtInf = value if value is not None else base_types.UninitialisedField(self, 'OrgnlPmtInf', OriginalPaymentInformation10, False)
 
 	@OrgnlPmtInf.deleter
 	def OrgnlPmtInf(self):
 		del self._OrgnlPmtInf
-		self._OrgnlPmtInf = None
+		self._OrgnlPmtInf = base_types.UninitialisedField(self, 'OrgnlPmtInf', OriginalPaymentInformation10, False)
 
 	@property
 	def RmtId(self):
@@ -29,12 +29,12 @@ class RemittanceInformation23(base_types._BaseFieldType):
 
 	@RmtId.setter
 	def RmtId(self, value):
-		self._RmtId = value if type(value) != base_types.auto else self.make_default("RmtId")
+		self._RmtId = value if value is not None else base_types.UninitialisedField(self, 'RmtId', Max35Text, False)
 
 	@RmtId.deleter
 	def RmtId(self):
 		del self._RmtId
-		self._RmtId = None
+		self._RmtId = base_types.UninitialisedField(self, 'RmtId', Max35Text, False)
 
 	@property
 	def Strd(self):
@@ -42,12 +42,12 @@ class RemittanceInformation23(base_types._BaseFieldType):
 
 	@Strd.setter
 	def Strd(self, value):
-		self._Strd = value if type(value) != base_types.auto else self.make_default("Strd")
+		self._Strd = value if value is not None else base_types.UninitialisedField(self, 'Strd', StructuredRemittanceInformation18, True)
 
 	@Strd.deleter
 	def Strd(self):
 		del self._Strd
-		self._Strd = None
+		self._Strd = base_types.UninitialisedField(self, 'Strd', StructuredRemittanceInformation18, True)
 
 	@property
 	def Ustrd(self):
@@ -55,12 +55,12 @@ class RemittanceInformation23(base_types._BaseFieldType):
 
 	@Ustrd.setter
 	def Ustrd(self, value):
-		self._Ustrd = value if type(value) != base_types.auto else self.make_default("Ustrd")
+		self._Ustrd = value if value is not None else base_types.UninitialisedField(self, 'Ustrd', Max140Text, True)
 
 	@Ustrd.deleter
 	def Ustrd(self):
 		del self._Ustrd
-		self._Ustrd = None
+		self._Ustrd = base_types.UninitialisedField(self, 'Ustrd', Max140Text, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlPmtInf', type=OriginalPaymentInformation10, min=1, max=1, mutex_group=None, array=False),

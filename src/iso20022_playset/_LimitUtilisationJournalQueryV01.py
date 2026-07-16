@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LimitUtilisationJournalSearchCriteria2 import LimitUtilisationJournalSearchCriteria2
-from ._MessageHeader1 import MessageHeader1
-from ._SupplementaryData1 import SupplementaryData1
+from . import LimitUtilisationJournalSearchCriteria2
+from . import MessageHeader1
+from . import SupplementaryData1
 
 class LimitUtilisationJournalQueryV01(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class LimitUtilisationJournalQueryV01(base_types._BaseFieldType):
 
 	@MsgHdr.setter
 	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
+		self._MsgHdr = value if value is not None else base_types.UninitialisedField(self, 'MsgHdr', MessageHeader1, False)
 
 	@MsgHdr.deleter
 	def MsgHdr(self):
 		del self._MsgHdr
-		self._MsgHdr = None
+		self._MsgHdr = base_types.UninitialisedField(self, 'MsgHdr', MessageHeader1, False)
 
 	@property
 	def SchCrit(self):
@@ -28,12 +28,12 @@ class LimitUtilisationJournalQueryV01(base_types._BaseFieldType):
 
 	@SchCrit.setter
 	def SchCrit(self, value):
-		self._SchCrit = value if type(value) != base_types.auto else self.make_default("SchCrit")
+		self._SchCrit = value if value is not None else base_types.UninitialisedField(self, 'SchCrit', LimitUtilisationJournalSearchCriteria2, False)
 
 	@SchCrit.deleter
 	def SchCrit(self):
 		del self._SchCrit
-		self._SchCrit = None
+		self._SchCrit = base_types.UninitialisedField(self, 'SchCrit', LimitUtilisationJournalSearchCriteria2, False)
 
 	@property
 	def SplmtryData(self):
@@ -41,12 +41,12 @@ class LimitUtilisationJournalQueryV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgHdr', type=MessageHeader1, min=0, max=1, mutex_group=None, array=False),

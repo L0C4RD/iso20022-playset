@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PlaceType1Code import PlaceType1Code
-from ._PostalAddress1 import PostalAddress1
+from . import PlaceType1Code
+from . import PostalAddress1
 
 class LocationFormat1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class LocationFormat1Choice(base_types._BaseFieldType):
 
 	@Adr.setter
 	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+		self._Adr = value if value is not None else base_types.UninitialisedField(self, 'Adr', PostalAddress1, False)
 
 	@Adr.deleter
 	def Adr(self):
 		del self._Adr
-		self._Adr = None
+		self._Adr = base_types.UninitialisedField(self, 'Adr', PostalAddress1, False)
 
 	@property
 	def LctnCd(self):
@@ -27,12 +27,12 @@ class LocationFormat1Choice(base_types._BaseFieldType):
 
 	@LctnCd.setter
 	def LctnCd(self, value):
-		self._LctnCd = value if type(value) != base_types.auto else self.make_default("LctnCd")
+		self._LctnCd = value if value is not None else base_types.UninitialisedField(self, 'LctnCd', PlaceType1Code, False)
 
 	@LctnCd.deleter
 	def LctnCd(self):
 		del self._LctnCd
-		self._LctnCd = None
+		self._LctnCd = base_types.UninitialisedField(self, 'LctnCd', PlaceType1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Adr', type=PostalAddress1, min=0, max=1, mutex_group=1, array=False),

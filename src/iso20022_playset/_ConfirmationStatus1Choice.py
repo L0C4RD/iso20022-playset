@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ConfirmationRejectedStatus2 import ConfirmationRejectedStatus2
-from ._OrderConfirmationStatus1Code import OrderConfirmationStatus1Code
+from . import ConfirmationRejectedStatus2
+from . import OrderConfirmationStatus1Code
 
 class ConfirmationStatus1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ConfirmationStatus1Choice(base_types._BaseFieldType):
 
 	@AmdmntRjctd.setter
 	def AmdmntRjctd(self, value):
-		self._AmdmntRjctd = value if type(value) != base_types.auto else self.make_default("AmdmntRjctd")
+		self._AmdmntRjctd = value if value is not None else base_types.UninitialisedField(self, 'AmdmntRjctd', ConfirmationRejectedStatus2, True)
 
 	@AmdmntRjctd.deleter
 	def AmdmntRjctd(self):
 		del self._AmdmntRjctd
-		self._AmdmntRjctd = None
+		self._AmdmntRjctd = base_types.UninitialisedField(self, 'AmdmntRjctd', ConfirmationRejectedStatus2, True)
 
 	@property
 	def ConfRjctd(self):
@@ -27,12 +27,12 @@ class ConfirmationStatus1Choice(base_types._BaseFieldType):
 
 	@ConfRjctd.setter
 	def ConfRjctd(self, value):
-		self._ConfRjctd = value if type(value) != base_types.auto else self.make_default("ConfRjctd")
+		self._ConfRjctd = value if value is not None else base_types.UninitialisedField(self, 'ConfRjctd', ConfirmationRejectedStatus2, True)
 
 	@ConfRjctd.deleter
 	def ConfRjctd(self):
 		del self._ConfRjctd
-		self._ConfRjctd = None
+		self._ConfRjctd = base_types.UninitialisedField(self, 'ConfRjctd', ConfirmationRejectedStatus2, True)
 
 	@property
 	def Sts(self):
@@ -40,12 +40,12 @@ class ConfirmationStatus1Choice(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', OrderConfirmationStatus1Code, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', OrderConfirmationStatus1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmdmntRjctd', type=ConfirmationRejectedStatus2, min=1, max=10, mutex_group=1, array=True),

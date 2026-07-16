@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SaleToPOISessionManagementRequestV07 import SaleToPOISessionManagementRequestV07
+from . import SaleToPOISessionManagementRequestV07
 
 class CASP_005_001_07():
 
@@ -18,12 +18,12 @@ class CASP_005_001_07():
 
 		@SaleToPOISsnMgmtReq.setter
 		def SaleToPOISsnMgmtReq(self, value):
-			self._SaleToPOISsnMgmtReq = value if type(value) != base_types.auto else self.make_default("SaleToPOISsnMgmtReq")
+			self._SaleToPOISsnMgmtReq = value if value is not None else base_types.UninitialisedField(self, 'SaleToPOISsnMgmtReq', SaleToPOISessionManagementRequestV07, False)
 
 		@SaleToPOISsnMgmtReq.deleter
 		def SaleToPOISsnMgmtReq(self):
 			del self._SaleToPOISsnMgmtReq
-			self._SaleToPOISsnMgmtReq = None
+			self._SaleToPOISsnMgmtReq = base_types.UninitialisedField(self, 'SaleToPOISsnMgmtReq', SaleToPOISessionManagementRequestV07, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SaleToPOISsnMgmtReq', type=SaleToPOISessionManagementRequestV07, min=1, max=1, mutex_group=None, array=False),

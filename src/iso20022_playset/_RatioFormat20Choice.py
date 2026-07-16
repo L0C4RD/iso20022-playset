@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountToAmountRatio2 import AmountToAmountRatio2
-from ._QuantityToQuantityRatio1 import QuantityToQuantityRatio1
+from . import AmountToAmountRatio2
+from . import QuantityToQuantityRatio1
 
 class RatioFormat20Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class RatioFormat20Choice(base_types._BaseFieldType):
 
 	@AmtToAmt.setter
 	def AmtToAmt(self, value):
-		self._AmtToAmt = value if type(value) != base_types.auto else self.make_default("AmtToAmt")
+		self._AmtToAmt = value if value is not None else base_types.UninitialisedField(self, 'AmtToAmt', AmountToAmountRatio2, False)
 
 	@AmtToAmt.deleter
 	def AmtToAmt(self):
 		del self._AmtToAmt
-		self._AmtToAmt = None
+		self._AmtToAmt = base_types.UninitialisedField(self, 'AmtToAmt', AmountToAmountRatio2, False)
 
 	@property
 	def QtyToQty(self):
@@ -27,12 +27,12 @@ class RatioFormat20Choice(base_types._BaseFieldType):
 
 	@QtyToQty.setter
 	def QtyToQty(self, value):
-		self._QtyToQty = value if type(value) != base_types.auto else self.make_default("QtyToQty")
+		self._QtyToQty = value if value is not None else base_types.UninitialisedField(self, 'QtyToQty', QuantityToQuantityRatio1, False)
 
 	@QtyToQty.deleter
 	def QtyToQty(self):
 		del self._QtyToQty
-		self._QtyToQty = None
+		self._QtyToQty = base_types.UninitialisedField(self, 'QtyToQty', QuantityToQuantityRatio1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmtToAmt', type=AmountToAmountRatio2, min=0, max=1, mutex_group=1, array=False),

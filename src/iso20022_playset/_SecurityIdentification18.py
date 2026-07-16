@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IdentificationType2Code import IdentificationType2Code
-from ._Max35Text import Max35Text
+from . import IdentificationType2Code
+from . import Max35Text
 
 class SecurityIdentification18(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SecurityIdentification18(base_types._BaseFieldType):
 
 	@SctyId.setter
 	def SctyId(self, value):
-		self._SctyId = value if type(value) != base_types.auto else self.make_default("SctyId")
+		self._SctyId = value if value is not None else base_types.UninitialisedField(self, 'SctyId', Max35Text, False)
 
 	@SctyId.deleter
 	def SctyId(self):
 		del self._SctyId
-		self._SctyId = None
+		self._SctyId = base_types.UninitialisedField(self, 'SctyId', Max35Text, False)
 
 	@property
 	def SctyIdSrc(self):
@@ -27,12 +27,12 @@ class SecurityIdentification18(base_types._BaseFieldType):
 
 	@SctyIdSrc.setter
 	def SctyIdSrc(self, value):
-		self._SctyIdSrc = value if type(value) != base_types.auto else self.make_default("SctyIdSrc")
+		self._SctyIdSrc = value if value is not None else base_types.UninitialisedField(self, 'SctyIdSrc', IdentificationType2Code, False)
 
 	@SctyIdSrc.deleter
 	def SctyIdSrc(self):
 		del self._SctyIdSrc
-		self._SctyIdSrc = None
+		self._SctyIdSrc = base_types.UninitialisedField(self, 'SctyIdSrc', IdentificationType2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SctyId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

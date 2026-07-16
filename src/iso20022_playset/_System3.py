@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountIdentification4Choice import AccountIdentification4Choice
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CountryCode import CountryCode
-from ._MarketInfrastructureIdentification1Choice import MarketInfrastructureIdentification1Choice
+from . import AccountIdentification4Choice
+from . import BranchAndFinancialInstitutionIdentification8
+from . import CountryCode
+from . import MarketInfrastructureIdentification1Choice
 
 class System3(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class System3(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', AccountIdentification4Choice, False)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', AccountIdentification4Choice, False)
 
 	@property
 	def Ctry(self):
@@ -29,12 +29,12 @@ class System3(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@property
 	def MmbId(self):
@@ -42,12 +42,12 @@ class System3(base_types._BaseFieldType):
 
 	@MmbId.setter
 	def MmbId(self, value):
-		self._MmbId = value if type(value) != base_types.auto else self.make_default("MmbId")
+		self._MmbId = value if value is not None else base_types.UninitialisedField(self, 'MmbId', BranchAndFinancialInstitutionIdentification8, False)
 
 	@MmbId.deleter
 	def MmbId(self):
 		del self._MmbId
-		self._MmbId = None
+		self._MmbId = base_types.UninitialisedField(self, 'MmbId', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def SysId(self):
@@ -55,12 +55,12 @@ class System3(base_types._BaseFieldType):
 
 	@SysId.setter
 	def SysId(self, value):
-		self._SysId = value if type(value) != base_types.auto else self.make_default("SysId")
+		self._SysId = value if value is not None else base_types.UninitialisedField(self, 'SysId', MarketInfrastructureIdentification1Choice, False)
 
 	@SysId.deleter
 	def SysId(self):
 		del self._SysId
-		self._SysId = None
+		self._SysId = base_types.UninitialisedField(self, 'SysId', MarketInfrastructureIdentification1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),

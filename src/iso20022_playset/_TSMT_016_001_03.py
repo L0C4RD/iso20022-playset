@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ErrorReportV03 import ErrorReportV03
+from . import ErrorReportV03
 
 class TSMT_016_001_03():
 
@@ -18,12 +18,12 @@ class TSMT_016_001_03():
 
 		@ErrRpt.setter
 		def ErrRpt(self, value):
-			self._ErrRpt = value if type(value) != base_types.auto else self.make_default("ErrRpt")
+			self._ErrRpt = value if value is not None else base_types.UninitialisedField(self, 'ErrRpt', ErrorReportV03, False)
 
 		@ErrRpt.deleter
 		def ErrRpt(self):
 			del self._ErrRpt
-			self._ErrRpt = None
+			self._ErrRpt = base_types.UninitialisedField(self, 'ErrRpt', ErrorReportV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ErrRpt', type=ErrorReportV03, min=1, max=1, mutex_group=None, array=False),

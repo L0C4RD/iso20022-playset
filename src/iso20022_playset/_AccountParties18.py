@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountParties13Choice import AccountParties13Choice
-from ._DataModification1Code import DataModification1Code
-from ._ExtendedParty15 import ExtendedParty15
-from ._InvestmentAccountOwnershipInformation17 import InvestmentAccountOwnershipInformation17
-from ._RegisteredShareholderName1Choice import RegisteredShareholderName1Choice
+from . import AccountParties13Choice
+from . import DataModification1Code
+from . import ExtendedParty15
+from . import InvestmentAccountOwnershipInformation17
+from . import RegisteredShareholderName1Choice
 
 class AccountParties18(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class AccountParties18(base_types._BaseFieldType):
 
 	@Admstr.setter
 	def Admstr(self, value):
-		self._Admstr = value if type(value) != base_types.auto else self.make_default("Admstr")
+		self._Admstr = value if value is not None else base_types.UninitialisedField(self, 'Admstr', InvestmentAccountOwnershipInformation17, True)
 
 	@Admstr.deleter
 	def Admstr(self):
 		del self._Admstr
-		self._Admstr = None
+		self._Admstr = base_types.UninitialisedField(self, 'Admstr', InvestmentAccountOwnershipInformation17, True)
 
 	@property
 	def Bnfcry(self):
@@ -30,12 +30,12 @@ class AccountParties18(base_types._BaseFieldType):
 
 	@Bnfcry.setter
 	def Bnfcry(self, value):
-		self._Bnfcry = value if type(value) != base_types.auto else self.make_default("Bnfcry")
+		self._Bnfcry = value if value is not None else base_types.UninitialisedField(self, 'Bnfcry', InvestmentAccountOwnershipInformation17, True)
 
 	@Bnfcry.deleter
 	def Bnfcry(self):
 		del self._Bnfcry
-		self._Bnfcry = None
+		self._Bnfcry = base_types.UninitialisedField(self, 'Bnfcry', InvestmentAccountOwnershipInformation17, True)
 
 	@property
 	def CtdnForMnr(self):
@@ -43,12 +43,12 @@ class AccountParties18(base_types._BaseFieldType):
 
 	@CtdnForMnr.setter
 	def CtdnForMnr(self, value):
-		self._CtdnForMnr = value if type(value) != base_types.auto else self.make_default("CtdnForMnr")
+		self._CtdnForMnr = value if value is not None else base_types.UninitialisedField(self, 'CtdnForMnr', InvestmentAccountOwnershipInformation17, True)
 
 	@CtdnForMnr.deleter
 	def CtdnForMnr(self):
 		del self._CtdnForMnr
-		self._CtdnForMnr = None
+		self._CtdnForMnr = base_types.UninitialisedField(self, 'CtdnForMnr', InvestmentAccountOwnershipInformation17, True)
 
 	@property
 	def Grntr(self):
@@ -56,12 +56,12 @@ class AccountParties18(base_types._BaseFieldType):
 
 	@Grntr.setter
 	def Grntr(self, value):
-		self._Grntr = value if type(value) != base_types.auto else self.make_default("Grntr")
+		self._Grntr = value if value is not None else base_types.UninitialisedField(self, 'Grntr', InvestmentAccountOwnershipInformation17, True)
 
 	@Grntr.deleter
 	def Grntr(self):
 		del self._Grntr
-		self._Grntr = None
+		self._Grntr = base_types.UninitialisedField(self, 'Grntr', InvestmentAccountOwnershipInformation17, True)
 
 	@property
 	def LglGuardn(self):
@@ -69,12 +69,12 @@ class AccountParties18(base_types._BaseFieldType):
 
 	@LglGuardn.setter
 	def LglGuardn(self, value):
-		self._LglGuardn = value if type(value) != base_types.auto else self.make_default("LglGuardn")
+		self._LglGuardn = value if value is not None else base_types.UninitialisedField(self, 'LglGuardn', InvestmentAccountOwnershipInformation17, True)
 
 	@LglGuardn.deleter
 	def LglGuardn(self):
 		del self._LglGuardn
-		self._LglGuardn = None
+		self._LglGuardn = base_types.UninitialisedField(self, 'LglGuardn', InvestmentAccountOwnershipInformation17, True)
 
 	@property
 	def ModScpIndctn(self):
@@ -82,12 +82,12 @@ class AccountParties18(base_types._BaseFieldType):
 
 	@ModScpIndctn.setter
 	def ModScpIndctn(self, value):
-		self._ModScpIndctn = value if type(value) != base_types.auto else self.make_default("ModScpIndctn")
+		self._ModScpIndctn = value if value is not None else base_types.UninitialisedField(self, 'ModScpIndctn', DataModification1Code, False)
 
 	@ModScpIndctn.deleter
 	def ModScpIndctn(self):
 		del self._ModScpIndctn
-		self._ModScpIndctn = None
+		self._ModScpIndctn = base_types.UninitialisedField(self, 'ModScpIndctn', DataModification1Code, False)
 
 	@property
 	def OthrPty(self):
@@ -95,12 +95,12 @@ class AccountParties18(base_types._BaseFieldType):
 
 	@OthrPty.setter
 	def OthrPty(self, value):
-		self._OthrPty = value if type(value) != base_types.auto else self.make_default("OthrPty")
+		self._OthrPty = value if value is not None else base_types.UninitialisedField(self, 'OthrPty', ExtendedParty15, True)
 
 	@OthrPty.deleter
 	def OthrPty(self):
 		del self._OthrPty
-		self._OthrPty = None
+		self._OthrPty = base_types.UninitialisedField(self, 'OthrPty', ExtendedParty15, True)
 
 	@property
 	def PrncplAcctPty(self):
@@ -108,12 +108,12 @@ class AccountParties18(base_types._BaseFieldType):
 
 	@PrncplAcctPty.setter
 	def PrncplAcctPty(self, value):
-		self._PrncplAcctPty = value if type(value) != base_types.auto else self.make_default("PrncplAcctPty")
+		self._PrncplAcctPty = value if value is not None else base_types.UninitialisedField(self, 'PrncplAcctPty', AccountParties13Choice, False)
 
 	@PrncplAcctPty.deleter
 	def PrncplAcctPty(self):
 		del self._PrncplAcctPty
-		self._PrncplAcctPty = None
+		self._PrncplAcctPty = base_types.UninitialisedField(self, 'PrncplAcctPty', AccountParties13Choice, False)
 
 	@property
 	def Prtctr(self):
@@ -121,12 +121,12 @@ class AccountParties18(base_types._BaseFieldType):
 
 	@Prtctr.setter
 	def Prtctr(self, value):
-		self._Prtctr = value if type(value) != base_types.auto else self.make_default("Prtctr")
+		self._Prtctr = value if value is not None else base_types.UninitialisedField(self, 'Prtctr', InvestmentAccountOwnershipInformation17, True)
 
 	@Prtctr.deleter
 	def Prtctr(self):
 		del self._Prtctr
-		self._Prtctr = None
+		self._Prtctr = base_types.UninitialisedField(self, 'Prtctr', InvestmentAccountOwnershipInformation17, True)
 
 	@property
 	def PwrOfAttny(self):
@@ -134,12 +134,12 @@ class AccountParties18(base_types._BaseFieldType):
 
 	@PwrOfAttny.setter
 	def PwrOfAttny(self, value):
-		self._PwrOfAttny = value if type(value) != base_types.auto else self.make_default("PwrOfAttny")
+		self._PwrOfAttny = value if value is not None else base_types.UninitialisedField(self, 'PwrOfAttny', InvestmentAccountOwnershipInformation17, True)
 
 	@PwrOfAttny.deleter
 	def PwrOfAttny(self):
 		del self._PwrOfAttny
-		self._PwrOfAttny = None
+		self._PwrOfAttny = base_types.UninitialisedField(self, 'PwrOfAttny', InvestmentAccountOwnershipInformation17, True)
 
 	@property
 	def RegdShrhldrNm(self):
@@ -147,12 +147,12 @@ class AccountParties18(base_types._BaseFieldType):
 
 	@RegdShrhldrNm.setter
 	def RegdShrhldrNm(self, value):
-		self._RegdShrhldrNm = value if type(value) != base_types.auto else self.make_default("RegdShrhldrNm")
+		self._RegdShrhldrNm = value if value is not None else base_types.UninitialisedField(self, 'RegdShrhldrNm', RegisteredShareholderName1Choice, False)
 
 	@RegdShrhldrNm.deleter
 	def RegdShrhldrNm(self):
 		del self._RegdShrhldrNm
-		self._RegdShrhldrNm = None
+		self._RegdShrhldrNm = base_types.UninitialisedField(self, 'RegdShrhldrNm', RegisteredShareholderName1Choice, False)
 
 	@property
 	def ScndryOwnr(self):
@@ -160,12 +160,12 @@ class AccountParties18(base_types._BaseFieldType):
 
 	@ScndryOwnr.setter
 	def ScndryOwnr(self, value):
-		self._ScndryOwnr = value if type(value) != base_types.auto else self.make_default("ScndryOwnr")
+		self._ScndryOwnr = value if value is not None else base_types.UninitialisedField(self, 'ScndryOwnr', InvestmentAccountOwnershipInformation17, True)
 
 	@ScndryOwnr.deleter
 	def ScndryOwnr(self):
 		del self._ScndryOwnr
-		self._ScndryOwnr = None
+		self._ScndryOwnr = base_types.UninitialisedField(self, 'ScndryOwnr', InvestmentAccountOwnershipInformation17, True)
 
 	@property
 	def SnrMggOffcl(self):
@@ -173,12 +173,12 @@ class AccountParties18(base_types._BaseFieldType):
 
 	@SnrMggOffcl.setter
 	def SnrMggOffcl(self, value):
-		self._SnrMggOffcl = value if type(value) != base_types.auto else self.make_default("SnrMggOffcl")
+		self._SnrMggOffcl = value if value is not None else base_types.UninitialisedField(self, 'SnrMggOffcl', InvestmentAccountOwnershipInformation17, True)
 
 	@SnrMggOffcl.deleter
 	def SnrMggOffcl(self):
 		del self._SnrMggOffcl
-		self._SnrMggOffcl = None
+		self._SnrMggOffcl = base_types.UninitialisedField(self, 'SnrMggOffcl', InvestmentAccountOwnershipInformation17, True)
 
 	@property
 	def Sttlr(self):
@@ -186,12 +186,12 @@ class AccountParties18(base_types._BaseFieldType):
 
 	@Sttlr.setter
 	def Sttlr(self, value):
-		self._Sttlr = value if type(value) != base_types.auto else self.make_default("Sttlr")
+		self._Sttlr = value if value is not None else base_types.UninitialisedField(self, 'Sttlr', InvestmentAccountOwnershipInformation17, True)
 
 	@Sttlr.deleter
 	def Sttlr(self):
 		del self._Sttlr
-		self._Sttlr = None
+		self._Sttlr = base_types.UninitialisedField(self, 'Sttlr', InvestmentAccountOwnershipInformation17, True)
 
 	@property
 	def SucssrOnDth(self):
@@ -199,12 +199,12 @@ class AccountParties18(base_types._BaseFieldType):
 
 	@SucssrOnDth.setter
 	def SucssrOnDth(self, value):
-		self._SucssrOnDth = value if type(value) != base_types.auto else self.make_default("SucssrOnDth")
+		self._SucssrOnDth = value if value is not None else base_types.UninitialisedField(self, 'SucssrOnDth', InvestmentAccountOwnershipInformation17, True)
 
 	@SucssrOnDth.deleter
 	def SucssrOnDth(self):
 		del self._SucssrOnDth
-		self._SucssrOnDth = None
+		self._SucssrOnDth = base_types.UninitialisedField(self, 'SucssrOnDth', InvestmentAccountOwnershipInformation17, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Admstr', type=InvestmentAccountOwnershipInformation17, min=0, max=None, mutex_group=None, array=True),

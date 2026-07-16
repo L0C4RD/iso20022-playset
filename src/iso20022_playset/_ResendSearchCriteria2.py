@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
-from ._PartyIdentification136 import PartyIdentification136
-from ._SequenceRange1Choice import SequenceRange1Choice
+from . import ISODate
+from . import Max35Text
+from . import PartyIdentification136
+from . import SequenceRange1Choice
 
 class ResendSearchCriteria2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ResendSearchCriteria2(base_types._BaseFieldType):
 
 	@BizDt.setter
 	def BizDt(self, value):
-		self._BizDt = value if type(value) != base_types.auto else self.make_default("BizDt")
+		self._BizDt = value if value is not None else base_types.UninitialisedField(self, 'BizDt', ISODate, False)
 
 	@BizDt.deleter
 	def BizDt(self):
 		del self._BizDt
-		self._BizDt = None
+		self._BizDt = base_types.UninitialisedField(self, 'BizDt', ISODate, False)
 
 	@property
 	def FileRef(self):
@@ -29,12 +29,12 @@ class ResendSearchCriteria2(base_types._BaseFieldType):
 
 	@FileRef.setter
 	def FileRef(self, value):
-		self._FileRef = value if type(value) != base_types.auto else self.make_default("FileRef")
+		self._FileRef = value if value is not None else base_types.UninitialisedField(self, 'FileRef', Max35Text, False)
 
 	@FileRef.deleter
 	def FileRef(self):
 		del self._FileRef
-		self._FileRef = None
+		self._FileRef = base_types.UninitialisedField(self, 'FileRef', Max35Text, False)
 
 	@property
 	def OrgnlMsgNmId(self):
@@ -42,12 +42,12 @@ class ResendSearchCriteria2(base_types._BaseFieldType):
 
 	@OrgnlMsgNmId.setter
 	def OrgnlMsgNmId(self, value):
-		self._OrgnlMsgNmId = value if type(value) != base_types.auto else self.make_default("OrgnlMsgNmId")
+		self._OrgnlMsgNmId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlMsgNmId', Max35Text, False)
 
 	@OrgnlMsgNmId.deleter
 	def OrgnlMsgNmId(self):
 		del self._OrgnlMsgNmId
-		self._OrgnlMsgNmId = None
+		self._OrgnlMsgNmId = base_types.UninitialisedField(self, 'OrgnlMsgNmId', Max35Text, False)
 
 	@property
 	def Rcpt(self):
@@ -55,12 +55,12 @@ class ResendSearchCriteria2(base_types._BaseFieldType):
 
 	@Rcpt.setter
 	def Rcpt(self, value):
-		self._Rcpt = value if type(value) != base_types.auto else self.make_default("Rcpt")
+		self._Rcpt = value if value is not None else base_types.UninitialisedField(self, 'Rcpt', PartyIdentification136, False)
 
 	@Rcpt.deleter
 	def Rcpt(self):
 		del self._Rcpt
-		self._Rcpt = None
+		self._Rcpt = base_types.UninitialisedField(self, 'Rcpt', PartyIdentification136, False)
 
 	@property
 	def SeqNb(self):
@@ -68,12 +68,12 @@ class ResendSearchCriteria2(base_types._BaseFieldType):
 
 	@SeqNb.setter
 	def SeqNb(self, value):
-		self._SeqNb = value if type(value) != base_types.auto else self.make_default("SeqNb")
+		self._SeqNb = value if value is not None else base_types.UninitialisedField(self, 'SeqNb', Max35Text, False)
 
 	@SeqNb.deleter
 	def SeqNb(self):
 		del self._SeqNb
-		self._SeqNb = None
+		self._SeqNb = base_types.UninitialisedField(self, 'SeqNb', Max35Text, False)
 
 	@property
 	def SeqRg(self):
@@ -81,12 +81,12 @@ class ResendSearchCriteria2(base_types._BaseFieldType):
 
 	@SeqRg.setter
 	def SeqRg(self, value):
-		self._SeqRg = value if type(value) != base_types.auto else self.make_default("SeqRg")
+		self._SeqRg = value if value is not None else base_types.UninitialisedField(self, 'SeqRg', SequenceRange1Choice, False)
 
 	@SeqRg.deleter
 	def SeqRg(self):
 		del self._SeqRg
-		self._SeqRg = None
+		self._SeqRg = base_types.UninitialisedField(self, 'SeqRg', SequenceRange1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BizDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),

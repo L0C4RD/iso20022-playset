@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._ISODate import ISODate
-from ._MICIdentifier import MICIdentifier
-from ._Max35Text import Max35Text
-from ._NumberAndVolume2 import NumberAndVolume2
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ISINOct2015Identifier
+from . import ISODate
+from . import MICIdentifier
+from . import Max35Text
+from . import NumberAndVolume2
+from . import TrueFalseIndicator
 
 class TransparencyDataReport13(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class TransparencyDataReport13(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', ISINOct2015Identifier, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', ISINOct2015Identifier, False)
 
 	@property
 	def RptgDt(self):
@@ -31,12 +31,12 @@ class TransparencyDataReport13(base_types._BaseFieldType):
 
 	@RptgDt.setter
 	def RptgDt(self, value):
-		self._RptgDt = value if type(value) != base_types.auto else self.make_default("RptgDt")
+		self._RptgDt = value if value is not None else base_types.UninitialisedField(self, 'RptgDt', ISODate, False)
 
 	@RptgDt.deleter
 	def RptgDt(self):
 		del self._RptgDt
-		self._RptgDt = None
+		self._RptgDt = base_types.UninitialisedField(self, 'RptgDt', ISODate, False)
 
 	@property
 	def Sspnsn(self):
@@ -44,12 +44,12 @@ class TransparencyDataReport13(base_types._BaseFieldType):
 
 	@Sspnsn.setter
 	def Sspnsn(self, value):
-		self._Sspnsn = value if type(value) != base_types.auto else self.make_default("Sspnsn")
+		self._Sspnsn = value if value is not None else base_types.UninitialisedField(self, 'Sspnsn', TrueFalseIndicator, False)
 
 	@Sspnsn.deleter
 	def Sspnsn(self):
 		del self._Sspnsn
-		self._Sspnsn = None
+		self._Sspnsn = base_types.UninitialisedField(self, 'Sspnsn', TrueFalseIndicator, False)
 
 	@property
 	def TechRcrdId(self):
@@ -57,12 +57,12 @@ class TransparencyDataReport13(base_types._BaseFieldType):
 
 	@TechRcrdId.setter
 	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
+		self._TechRcrdId = value if value is not None else base_types.UninitialisedField(self, 'TechRcrdId', Max35Text, False)
 
 	@TechRcrdId.deleter
 	def TechRcrdId(self):
 		del self._TechRcrdId
-		self._TechRcrdId = None
+		self._TechRcrdId = base_types.UninitialisedField(self, 'TechRcrdId', Max35Text, False)
 
 	@property
 	def TradgVn(self):
@@ -70,12 +70,12 @@ class TransparencyDataReport13(base_types._BaseFieldType):
 
 	@TradgVn.setter
 	def TradgVn(self, value):
-		self._TradgVn = value if type(value) != base_types.auto else self.make_default("TradgVn")
+		self._TradgVn = value if value is not None else base_types.UninitialisedField(self, 'TradgVn', MICIdentifier, False)
 
 	@TradgVn.deleter
 	def TradgVn(self):
 		del self._TradgVn
-		self._TradgVn = None
+		self._TradgVn = base_types.UninitialisedField(self, 'TradgVn', MICIdentifier, False)
 
 	@property
 	def TxsExctd(self):
@@ -83,12 +83,12 @@ class TransparencyDataReport13(base_types._BaseFieldType):
 
 	@TxsExctd.setter
 	def TxsExctd(self, value):
-		self._TxsExctd = value if type(value) != base_types.auto else self.make_default("TxsExctd")
+		self._TxsExctd = value if value is not None else base_types.UninitialisedField(self, 'TxsExctd', NumberAndVolume2, False)
 
 	@TxsExctd.deleter
 	def TxsExctd(self):
 		del self._TxsExctd
-		self._TxsExctd = None
+		self._TxsExctd = base_types.UninitialisedField(self, 'TxsExctd', NumberAndVolume2, False)
 
 	@property
 	def TxsExctdExclgPreTradWvr(self):
@@ -96,12 +96,12 @@ class TransparencyDataReport13(base_types._BaseFieldType):
 
 	@TxsExctdExclgPreTradWvr.setter
 	def TxsExctdExclgPreTradWvr(self, value):
-		self._TxsExctdExclgPreTradWvr = value if type(value) != base_types.auto else self.make_default("TxsExctdExclgPreTradWvr")
+		self._TxsExctdExclgPreTradWvr = value if value is not None else base_types.UninitialisedField(self, 'TxsExctdExclgPreTradWvr', NumberAndVolume2, False)
 
 	@TxsExctdExclgPreTradWvr.deleter
 	def TxsExctdExclgPreTradWvr(self):
 		del self._TxsExctdExclgPreTradWvr
-		self._TxsExctdExclgPreTradWvr = None
+		self._TxsExctdExclgPreTradWvr = base_types.UninitialisedField(self, 'TxsExctdExclgPreTradWvr', NumberAndVolume2, False)
 
 	@property
 	def TxsExctdExclgPstTradLrgInScaleWvr(self):
@@ -109,12 +109,12 @@ class TransparencyDataReport13(base_types._BaseFieldType):
 
 	@TxsExctdExclgPstTradLrgInScaleWvr.setter
 	def TxsExctdExclgPstTradLrgInScaleWvr(self, value):
-		self._TxsExctdExclgPstTradLrgInScaleWvr = value if type(value) != base_types.auto else self.make_default("TxsExctdExclgPstTradLrgInScaleWvr")
+		self._TxsExctdExclgPstTradLrgInScaleWvr = value if value is not None else base_types.UninitialisedField(self, 'TxsExctdExclgPstTradLrgInScaleWvr', NumberAndVolume2, False)
 
 	@TxsExctdExclgPstTradLrgInScaleWvr.deleter
 	def TxsExctdExclgPstTradLrgInScaleWvr(self):
 		del self._TxsExctdExclgPstTradLrgInScaleWvr
-		self._TxsExctdExclgPstTradLrgInScaleWvr = None
+		self._TxsExctdExclgPstTradLrgInScaleWvr = base_types.UninitialisedField(self, 'TxsExctdExclgPstTradLrgInScaleWvr', NumberAndVolume2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FIToFICustomerCreditTransferV14 import FIToFICustomerCreditTransferV14
+from . import FIToFICustomerCreditTransferV14
 
 class PACS_008_001_14():
 
@@ -18,12 +18,12 @@ class PACS_008_001_14():
 
 		@FIToFICstmrCdtTrf.setter
 		def FIToFICstmrCdtTrf(self, value):
-			self._FIToFICstmrCdtTrf = value if type(value) != base_types.auto else self.make_default("FIToFICstmrCdtTrf")
+			self._FIToFICstmrCdtTrf = value if value is not None else base_types.UninitialisedField(self, 'FIToFICstmrCdtTrf', FIToFICustomerCreditTransferV14, False)
 
 		@FIToFICstmrCdtTrf.deleter
 		def FIToFICstmrCdtTrf(self):
 			del self._FIToFICstmrCdtTrf
-			self._FIToFICstmrCdtTrf = None
+			self._FIToFICstmrCdtTrf = base_types.UninitialisedField(self, 'FIToFICstmrCdtTrf', FIToFICustomerCreditTransferV14, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='FIToFICstmrCdtTrf', type=FIToFICustomerCreditTransferV14, min=1, max=1, mutex_group=None, array=False),

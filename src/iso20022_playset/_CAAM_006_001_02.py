@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMDiagnosticResponseV02 import ATMDiagnosticResponseV02
+from . import ATMDiagnosticResponseV02
 
 class CAAM_006_001_02():
 
@@ -18,12 +18,12 @@ class CAAM_006_001_02():
 
 		@ATMDgnstcRspn.setter
 		def ATMDgnstcRspn(self, value):
-			self._ATMDgnstcRspn = value if type(value) != base_types.auto else self.make_default("ATMDgnstcRspn")
+			self._ATMDgnstcRspn = value if value is not None else base_types.UninitialisedField(self, 'ATMDgnstcRspn', ATMDiagnosticResponseV02, False)
 
 		@ATMDgnstcRspn.deleter
 		def ATMDgnstcRspn(self):
 			del self._ATMDgnstcRspn
-			self._ATMDgnstcRspn = None
+			self._ATMDgnstcRspn = base_types.UninitialisedField(self, 'ATMDgnstcRspn', ATMDiagnosticResponseV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ATMDgnstcRspn', type=ATMDiagnosticResponseV02, min=1, max=1, mutex_group=None, array=False),

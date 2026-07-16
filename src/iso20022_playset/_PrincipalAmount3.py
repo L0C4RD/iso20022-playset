@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from . import ActiveOrHistoricCurrencyAndAmount
 
 class PrincipalAmount3(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class PrincipalAmount3(base_types._BaseFieldType):
 
 	@MtrtyDtAmt.setter
 	def MtrtyDtAmt(self, value):
-		self._MtrtyDtAmt = value if type(value) != base_types.auto else self.make_default("MtrtyDtAmt")
+		self._MtrtyDtAmt = value if value is not None else base_types.UninitialisedField(self, 'MtrtyDtAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@MtrtyDtAmt.deleter
 	def MtrtyDtAmt(self):
 		del self._MtrtyDtAmt
-		self._MtrtyDtAmt = None
+		self._MtrtyDtAmt = base_types.UninitialisedField(self, 'MtrtyDtAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def ValDtAmt(self):
@@ -26,12 +26,12 @@ class PrincipalAmount3(base_types._BaseFieldType):
 
 	@ValDtAmt.setter
 	def ValDtAmt(self, value):
-		self._ValDtAmt = value if type(value) != base_types.auto else self.make_default("ValDtAmt")
+		self._ValDtAmt = value if value is not None else base_types.UninitialisedField(self, 'ValDtAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@ValDtAmt.deleter
 	def ValDtAmt(self):
 		del self._ValDtAmt
-		self._ValDtAmt = None
+		self._ValDtAmt = base_types.UninitialisedField(self, 'ValDtAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MtrtyDtAmt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

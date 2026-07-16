@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ErrorHandling5 import ErrorHandling5
-from ._PartyAuditTrail2 import PartyAuditTrail2
+from . import ErrorHandling5
+from . import PartyAuditTrail2
 
 class PartyAuditTrailOrError4Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PartyAuditTrailOrError4Choice(base_types._BaseFieldType):
 
 	@AudtTrl.setter
 	def AudtTrl(self, value):
-		self._AudtTrl = value if type(value) != base_types.auto else self.make_default("AudtTrl")
+		self._AudtTrl = value if value is not None else base_types.UninitialisedField(self, 'AudtTrl', PartyAuditTrail2, True)
 
 	@AudtTrl.deleter
 	def AudtTrl(self):
 		del self._AudtTrl
-		self._AudtTrl = None
+		self._AudtTrl = base_types.UninitialisedField(self, 'AudtTrl', PartyAuditTrail2, True)
 
 	@property
 	def BizErr(self):
@@ -27,12 +27,12 @@ class PartyAuditTrailOrError4Choice(base_types._BaseFieldType):
 
 	@BizErr.setter
 	def BizErr(self, value):
-		self._BizErr = value if type(value) != base_types.auto else self.make_default("BizErr")
+		self._BizErr = value if value is not None else base_types.UninitialisedField(self, 'BizErr', ErrorHandling5, True)
 
 	@BizErr.deleter
 	def BizErr(self):
 		del self._BizErr
-		self._BizErr = None
+		self._BizErr = base_types.UninitialisedField(self, 'BizErr', ErrorHandling5, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AudtTrl', type=PartyAuditTrail2, min=1, max=None, mutex_group=1, array=True),

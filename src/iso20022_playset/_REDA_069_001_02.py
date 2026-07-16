@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RequestToPayCreditorEnrolmentStatusReportV02 import RequestToPayCreditorEnrolmentStatusReportV02
+from . import RequestToPayCreditorEnrolmentStatusReportV02
 
 class REDA_069_001_02():
 
@@ -18,12 +18,12 @@ class REDA_069_001_02():
 
 		@ReqToPayCdtrEnrlmntStsRpt.setter
 		def ReqToPayCdtrEnrlmntStsRpt(self, value):
-			self._ReqToPayCdtrEnrlmntStsRpt = value if type(value) != base_types.auto else self.make_default("ReqToPayCdtrEnrlmntStsRpt")
+			self._ReqToPayCdtrEnrlmntStsRpt = value if value is not None else base_types.UninitialisedField(self, 'ReqToPayCdtrEnrlmntStsRpt', RequestToPayCreditorEnrolmentStatusReportV02, False)
 
 		@ReqToPayCdtrEnrlmntStsRpt.deleter
 		def ReqToPayCdtrEnrlmntStsRpt(self):
 			del self._ReqToPayCdtrEnrlmntStsRpt
-			self._ReqToPayCdtrEnrlmntStsRpt = None
+			self._ReqToPayCdtrEnrlmntStsRpt = base_types.UninitialisedField(self, 'ReqToPayCdtrEnrlmntStsRpt', RequestToPayCreditorEnrolmentStatusReportV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ReqToPayCdtrEnrlmntStsRpt', type=RequestToPayCreditorEnrolmentStatusReportV02, min=1, max=1, mutex_group=None, array=False),

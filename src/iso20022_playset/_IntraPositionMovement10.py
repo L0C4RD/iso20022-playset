@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IntraPositionMovement8 import IntraPositionMovement8
-from ._IntraPositionStatusAndReason4 import IntraPositionStatusAndReason4
-from ._Max35Text import Max35Text
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
+from . import IntraPositionMovement8
+from . import IntraPositionStatusAndReason4
+from . import Max35Text
+from . import SecuritiesAccount19
+from . import SystemPartyIdentification8
 
 class IntraPositionMovement10(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class IntraPositionMovement10(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', SystemPartyIdentification8, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', SystemPartyIdentification8, False)
 
 	@property
 	def AcctOwnrTxId(self):
@@ -30,12 +30,12 @@ class IntraPositionMovement10(base_types._BaseFieldType):
 
 	@AcctOwnrTxId.setter
 	def AcctOwnrTxId(self, value):
-		self._AcctOwnrTxId = value if type(value) != base_types.auto else self.make_default("AcctOwnrTxId")
+		self._AcctOwnrTxId = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnrTxId', Max35Text, False)
 
 	@AcctOwnrTxId.deleter
 	def AcctOwnrTxId(self):
 		del self._AcctOwnrTxId
-		self._AcctOwnrTxId = None
+		self._AcctOwnrTxId = base_types.UninitialisedField(self, 'AcctOwnrTxId', Max35Text, False)
 
 	@property
 	def AcctSvcrTxId(self):
@@ -43,12 +43,12 @@ class IntraPositionMovement10(base_types._BaseFieldType):
 
 	@AcctSvcrTxId.setter
 	def AcctSvcrTxId(self, value):
-		self._AcctSvcrTxId = value if type(value) != base_types.auto else self.make_default("AcctSvcrTxId")
+		self._AcctSvcrTxId = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcrTxId', Max35Text, False)
 
 	@AcctSvcrTxId.deleter
 	def AcctSvcrTxId(self):
 		del self._AcctSvcrTxId
-		self._AcctSvcrTxId = None
+		self._AcctSvcrTxId = base_types.UninitialisedField(self, 'AcctSvcrTxId', Max35Text, False)
 
 	@property
 	def CorpActnEvtId(self):
@@ -56,12 +56,12 @@ class IntraPositionMovement10(base_types._BaseFieldType):
 
 	@CorpActnEvtId.setter
 	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
+		self._CorpActnEvtId = value if value is not None else base_types.UninitialisedField(self, 'CorpActnEvtId', Max35Text, False)
 
 	@CorpActnEvtId.deleter
 	def CorpActnEvtId(self):
 		del self._CorpActnEvtId
-		self._CorpActnEvtId = None
+		self._CorpActnEvtId = base_types.UninitialisedField(self, 'CorpActnEvtId', Max35Text, False)
 
 	@property
 	def MktInfrstrctrTxId(self):
@@ -69,12 +69,12 @@ class IntraPositionMovement10(base_types._BaseFieldType):
 
 	@MktInfrstrctrTxId.setter
 	def MktInfrstrctrTxId(self, value):
-		self._MktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("MktInfrstrctrTxId")
+		self._MktInfrstrctrTxId = value if value is not None else base_types.UninitialisedField(self, 'MktInfrstrctrTxId', Max35Text, False)
 
 	@MktInfrstrctrTxId.deleter
 	def MktInfrstrctrTxId(self):
 		del self._MktInfrstrctrTxId
-		self._MktInfrstrctrTxId = None
+		self._MktInfrstrctrTxId = base_types.UninitialisedField(self, 'MktInfrstrctrTxId', Max35Text, False)
 
 	@property
 	def MvmntDtls(self):
@@ -82,12 +82,12 @@ class IntraPositionMovement10(base_types._BaseFieldType):
 
 	@MvmntDtls.setter
 	def MvmntDtls(self, value):
-		self._MvmntDtls = value if type(value) != base_types.auto else self.make_default("MvmntDtls")
+		self._MvmntDtls = value if value is not None else base_types.UninitialisedField(self, 'MvmntDtls', IntraPositionMovement8, False)
 
 	@MvmntDtls.deleter
 	def MvmntDtls(self):
 		del self._MvmntDtls
-		self._MvmntDtls = None
+		self._MvmntDtls = base_types.UninitialisedField(self, 'MvmntDtls', IntraPositionMovement8, False)
 
 	@property
 	def PoolId(self):
@@ -95,12 +95,12 @@ class IntraPositionMovement10(base_types._BaseFieldType):
 
 	@PoolId.setter
 	def PoolId(self, value):
-		self._PoolId = value if type(value) != base_types.auto else self.make_default("PoolId")
+		self._PoolId = value if value is not None else base_types.UninitialisedField(self, 'PoolId', Max35Text, False)
 
 	@PoolId.deleter
 	def PoolId(self):
 		del self._PoolId
-		self._PoolId = None
+		self._PoolId = base_types.UninitialisedField(self, 'PoolId', Max35Text, False)
 
 	@property
 	def PrcrTxId(self):
@@ -108,12 +108,12 @@ class IntraPositionMovement10(base_types._BaseFieldType):
 
 	@PrcrTxId.setter
 	def PrcrTxId(self, value):
-		self._PrcrTxId = value if type(value) != base_types.auto else self.make_default("PrcrTxId")
+		self._PrcrTxId = value if value is not None else base_types.UninitialisedField(self, 'PrcrTxId', Max35Text, False)
 
 	@PrcrTxId.deleter
 	def PrcrTxId(self):
 		del self._PrcrTxId
-		self._PrcrTxId = None
+		self._PrcrTxId = base_types.UninitialisedField(self, 'PrcrTxId', Max35Text, False)
 
 	@property
 	def SfkpgAcct(self):
@@ -121,12 +121,12 @@ class IntraPositionMovement10(base_types._BaseFieldType):
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
-		self._SfkpgAcct = None
+		self._SfkpgAcct = base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@property
 	def StsAndRsn(self):
@@ -134,12 +134,12 @@ class IntraPositionMovement10(base_types._BaseFieldType):
 
 	@StsAndRsn.setter
 	def StsAndRsn(self, value):
-		self._StsAndRsn = value if type(value) != base_types.auto else self.make_default("StsAndRsn")
+		self._StsAndRsn = value if value is not None else base_types.UninitialisedField(self, 'StsAndRsn', IntraPositionStatusAndReason4, False)
 
 	@StsAndRsn.deleter
 	def StsAndRsn(self):
 		del self._StsAndRsn
-		self._StsAndRsn = None
+		self._StsAndRsn = base_types.UninitialisedField(self, 'StsAndRsn', IntraPositionStatusAndReason4, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),

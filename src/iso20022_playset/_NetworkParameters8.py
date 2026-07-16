@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NetworkParameters7 import NetworkParameters7
-from ._NetworkType2Code import NetworkType2Code
+from . import NetworkParameters7
+from . import NetworkType2Code
 
 class NetworkParameters8(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class NetworkParameters8(base_types._BaseFieldType):
 
 	@Accs.setter
 	def Accs(self, value):
-		self._Accs = value if type(value) != base_types.auto else self.make_default("Accs")
+		self._Accs = value if value is not None else base_types.UninitialisedField(self, 'Accs', NetworkParameters7, False)
 
 	@Accs.deleter
 	def Accs(self):
 		del self._Accs
-		self._Accs = None
+		self._Accs = base_types.UninitialisedField(self, 'Accs', NetworkParameters7, False)
 
 	@property
 	def Tp(self):
@@ -27,12 +27,12 @@ class NetworkParameters8(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', NetworkType2Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', NetworkType2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Accs', type=NetworkParameters7, min=1, max=1, mutex_group=None, array=False),

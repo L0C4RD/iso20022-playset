@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountOpeningRequestV05 import AccountOpeningRequestV05
+from . import AccountOpeningRequestV05
 
 class ACMT_007_001_05():
 
@@ -18,12 +18,12 @@ class ACMT_007_001_05():
 
 		@AcctOpngReq.setter
 		def AcctOpngReq(self, value):
-			self._AcctOpngReq = value if type(value) != base_types.auto else self.make_default("AcctOpngReq")
+			self._AcctOpngReq = value if value is not None else base_types.UninitialisedField(self, 'AcctOpngReq', AccountOpeningRequestV05, False)
 
 		@AcctOpngReq.deleter
 		def AcctOpngReq(self):
 			del self._AcctOpngReq
-			self._AcctOpngReq = None
+			self._AcctOpngReq = base_types.UninitialisedField(self, 'AcctOpngReq', AccountOpeningRequestV05, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AcctOpngReq', type=AccountOpeningRequestV05, min=1, max=1, mutex_group=None, array=False),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MessageIdentification1 import MessageIdentification1
-from ._Reason2 import Reason2
-from ._SimpleIdentificationInformation import SimpleIdentificationInformation
-from ._TransactionStatus3 import TransactionStatus3
+from . import MessageIdentification1
+from . import Reason2
+from . import SimpleIdentificationInformation
+from . import TransactionStatus3
 
 class StatusChangeRequestV02(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class StatusChangeRequestV02(base_types._BaseFieldType):
 
 	@ReqId.setter
 	def ReqId(self, value):
-		self._ReqId = value if type(value) != base_types.auto else self.make_default("ReqId")
+		self._ReqId = value if value is not None else base_types.UninitialisedField(self, 'ReqId', MessageIdentification1, False)
 
 	@ReqId.deleter
 	def ReqId(self):
 		del self._ReqId
-		self._ReqId = None
+		self._ReqId = base_types.UninitialisedField(self, 'ReqId', MessageIdentification1, False)
 
 	@property
 	def ReqRsn(self):
@@ -29,12 +29,12 @@ class StatusChangeRequestV02(base_types._BaseFieldType):
 
 	@ReqRsn.setter
 	def ReqRsn(self, value):
-		self._ReqRsn = value if type(value) != base_types.auto else self.make_default("ReqRsn")
+		self._ReqRsn = value if value is not None else base_types.UninitialisedField(self, 'ReqRsn', Reason2, False)
 
 	@ReqRsn.deleter
 	def ReqRsn(self):
 		del self._ReqRsn
-		self._ReqRsn = None
+		self._ReqRsn = base_types.UninitialisedField(self, 'ReqRsn', Reason2, False)
 
 	@property
 	def ReqdSts(self):
@@ -42,12 +42,12 @@ class StatusChangeRequestV02(base_types._BaseFieldType):
 
 	@ReqdSts.setter
 	def ReqdSts(self, value):
-		self._ReqdSts = value if type(value) != base_types.auto else self.make_default("ReqdSts")
+		self._ReqdSts = value if value is not None else base_types.UninitialisedField(self, 'ReqdSts', TransactionStatus3, False)
 
 	@ReqdSts.deleter
 	def ReqdSts(self):
 		del self._ReqdSts
-		self._ReqdSts = None
+		self._ReqdSts = base_types.UninitialisedField(self, 'ReqdSts', TransactionStatus3, False)
 
 	@property
 	def SubmitrTxRef(self):
@@ -55,12 +55,12 @@ class StatusChangeRequestV02(base_types._BaseFieldType):
 
 	@SubmitrTxRef.setter
 	def SubmitrTxRef(self, value):
-		self._SubmitrTxRef = value if type(value) != base_types.auto else self.make_default("SubmitrTxRef")
+		self._SubmitrTxRef = value if value is not None else base_types.UninitialisedField(self, 'SubmitrTxRef', SimpleIdentificationInformation, False)
 
 	@SubmitrTxRef.deleter
 	def SubmitrTxRef(self):
 		del self._SubmitrTxRef
-		self._SubmitrTxRef = None
+		self._SubmitrTxRef = base_types.UninitialisedField(self, 'SubmitrTxRef', SimpleIdentificationInformation, False)
 
 	@property
 	def TxId(self):
@@ -68,12 +68,12 @@ class StatusChangeRequestV02(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', SimpleIdentificationInformation, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', SimpleIdentificationInformation, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ReqId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),

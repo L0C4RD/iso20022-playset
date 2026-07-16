@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BICIdentification1 import BICIdentification1
-from ._DateTimePeriodDetails1 import DateTimePeriodDetails1
-from ._MessageIdentification1 import MessageIdentification1
+from . import BICIdentification1
+from . import DateTimePeriodDetails1
+from . import MessageIdentification1
 
 class ActivityReportRequestV03(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ActivityReportRequestV03(base_types._BaseFieldType):
 
 	@NttiesToBeRptd.setter
 	def NttiesToBeRptd(self, value):
-		self._NttiesToBeRptd = value if type(value) != base_types.auto else self.make_default("NttiesToBeRptd")
+		self._NttiesToBeRptd = value if value is not None else base_types.UninitialisedField(self, 'NttiesToBeRptd', BICIdentification1, True)
 
 	@NttiesToBeRptd.deleter
 	def NttiesToBeRptd(self):
 		del self._NttiesToBeRptd
-		self._NttiesToBeRptd = None
+		self._NttiesToBeRptd = base_types.UninitialisedField(self, 'NttiesToBeRptd', BICIdentification1, True)
 
 	@property
 	def ReqId(self):
@@ -28,12 +28,12 @@ class ActivityReportRequestV03(base_types._BaseFieldType):
 
 	@ReqId.setter
 	def ReqId(self, value):
-		self._ReqId = value if type(value) != base_types.auto else self.make_default("ReqId")
+		self._ReqId = value if value is not None else base_types.UninitialisedField(self, 'ReqId', MessageIdentification1, False)
 
 	@ReqId.deleter
 	def ReqId(self):
 		del self._ReqId
-		self._ReqId = None
+		self._ReqId = base_types.UninitialisedField(self, 'ReqId', MessageIdentification1, False)
 
 	@property
 	def RptPrd(self):
@@ -41,12 +41,12 @@ class ActivityReportRequestV03(base_types._BaseFieldType):
 
 	@RptPrd.setter
 	def RptPrd(self, value):
-		self._RptPrd = value if type(value) != base_types.auto else self.make_default("RptPrd")
+		self._RptPrd = value if value is not None else base_types.UninitialisedField(self, 'RptPrd', DateTimePeriodDetails1, False)
 
 	@RptPrd.deleter
 	def RptPrd(self):
 		del self._RptPrd
-		self._RptPrd = None
+		self._RptPrd = base_types.UninitialisedField(self, 'RptPrd', DateTimePeriodDetails1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NttiesToBeRptd', type=BICIdentification1, min=0, max=None, mutex_group=None, array=True),

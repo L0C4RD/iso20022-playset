@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CaseForwardingNotification3Code import CaseForwardingNotification3Code
+from . import CaseForwardingNotification3Code
 
 class CaseForwardingNotification3(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class CaseForwardingNotification3(base_types._BaseFieldType):
 
 	@Justfn.setter
 	def Justfn(self, value):
-		self._Justfn = value if type(value) != base_types.auto else self.make_default("Justfn")
+		self._Justfn = value if value is not None else base_types.UninitialisedField(self, 'Justfn', CaseForwardingNotification3Code, False)
 
 	@Justfn.deleter
 	def Justfn(self):
 		del self._Justfn
-		self._Justfn = None
+		self._Justfn = base_types.UninitialisedField(self, 'Justfn', CaseForwardingNotification3Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Justfn', type=CaseForwardingNotification3Code, min=1, max=1, mutex_group=None, array=False),

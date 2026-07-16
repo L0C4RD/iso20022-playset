@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CreditDebit3Code import CreditDebit3Code
-from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
-from ._ISODate import ISODate
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max256Text import Max256Text
-from ._Max70Text import Max70Text
-from ._Max99Text import Max99Text
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import CreditDebit3Code
+from . import ISO3NumericCurrencyCode
+from . import ISODate
+from . import ImpliedCurrencyAndAmount
+from . import Max256Text
+from . import Max70Text
+from . import Max99Text
+from . import TrueFalseIndicator
 
 class AccountStatementDetails3(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class AccountStatementDetails3(base_types._BaseFieldType):
 
 	@AccptrNmAndLctn.setter
 	def AccptrNmAndLctn(self, value):
-		self._AccptrNmAndLctn = value if type(value) != base_types.auto else self.make_default("AccptrNmAndLctn")
+		self._AccptrNmAndLctn = value if value is not None else base_types.UninitialisedField(self, 'AccptrNmAndLctn', Max99Text, False)
 
 	@AccptrNmAndLctn.deleter
 	def AccptrNmAndLctn(self):
 		del self._AccptrNmAndLctn
-		self._AccptrNmAndLctn = None
+		self._AccptrNmAndLctn = base_types.UninitialisedField(self, 'AccptrNmAndLctn', Max99Text, False)
 
 	@property
 	def Amt(self):
@@ -33,12 +33,12 @@ class AccountStatementDetails3(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ImpliedCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def Ccy(self):
@@ -46,12 +46,12 @@ class AccountStatementDetails3(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ISO3NumericCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ISO3NumericCurrencyCode, False)
 
 	@property
 	def CdtDbt(self):
@@ -59,12 +59,12 @@ class AccountStatementDetails3(base_types._BaseFieldType):
 
 	@CdtDbt.setter
 	def CdtDbt(self, value):
-		self._CdtDbt = value if type(value) != base_types.auto else self.make_default("CdtDbt")
+		self._CdtDbt = value if value is not None else base_types.UninitialisedField(self, 'CdtDbt', CreditDebit3Code, False)
 
 	@CdtDbt.deleter
 	def CdtDbt(self):
 		del self._CdtDbt
-		self._CdtDbt = None
+		self._CdtDbt = base_types.UninitialisedField(self, 'CdtDbt', CreditDebit3Code, False)
 
 	@property
 	def CrdhldrBllgAmt(self):
@@ -72,12 +72,12 @@ class AccountStatementDetails3(base_types._BaseFieldType):
 
 	@CrdhldrBllgAmt.setter
 	def CrdhldrBllgAmt(self, value):
-		self._CrdhldrBllgAmt = value if type(value) != base_types.auto else self.make_default("CrdhldrBllgAmt")
+		self._CrdhldrBllgAmt = value if value is not None else base_types.UninitialisedField(self, 'CrdhldrBllgAmt', ImpliedCurrencyAndAmount, False)
 
 	@CrdhldrBllgAmt.deleter
 	def CrdhldrBllgAmt(self):
 		del self._CrdhldrBllgAmt
-		self._CrdhldrBllgAmt = None
+		self._CrdhldrBllgAmt = base_types.UninitialisedField(self, 'CrdhldrBllgAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def CrdhldrBllgCcy(self):
@@ -85,12 +85,12 @@ class AccountStatementDetails3(base_types._BaseFieldType):
 
 	@CrdhldrBllgCcy.setter
 	def CrdhldrBllgCcy(self, value):
-		self._CrdhldrBllgCcy = value if type(value) != base_types.auto else self.make_default("CrdhldrBllgCcy")
+		self._CrdhldrBllgCcy = value if value is not None else base_types.UninitialisedField(self, 'CrdhldrBllgCcy', ISO3NumericCurrencyCode, False)
 
 	@CrdhldrBllgCcy.deleter
 	def CrdhldrBllgCcy(self):
 		del self._CrdhldrBllgCcy
-		self._CrdhldrBllgCcy = None
+		self._CrdhldrBllgCcy = base_types.UninitialisedField(self, 'CrdhldrBllgCcy', ISO3NumericCurrencyCode, False)
 
 	@property
 	def LngDesc(self):
@@ -98,12 +98,12 @@ class AccountStatementDetails3(base_types._BaseFieldType):
 
 	@LngDesc.setter
 	def LngDesc(self, value):
-		self._LngDesc = value if type(value) != base_types.auto else self.make_default("LngDesc")
+		self._LngDesc = value if value is not None else base_types.UninitialisedField(self, 'LngDesc', Max256Text, False)
 
 	@LngDesc.deleter
 	def LngDesc(self):
 		del self._LngDesc
-		self._LngDesc = None
+		self._LngDesc = base_types.UninitialisedField(self, 'LngDesc', Max256Text, False)
 
 	@property
 	def Pdg(self):
@@ -111,12 +111,12 @@ class AccountStatementDetails3(base_types._BaseFieldType):
 
 	@Pdg.setter
 	def Pdg(self, value):
-		self._Pdg = value if type(value) != base_types.auto else self.make_default("Pdg")
+		self._Pdg = value if value is not None else base_types.UninitialisedField(self, 'Pdg', TrueFalseIndicator, False)
 
 	@Pdg.deleter
 	def Pdg(self):
 		del self._Pdg
-		self._Pdg = None
+		self._Pdg = base_types.UninitialisedField(self, 'Pdg', TrueFalseIndicator, False)
 
 	@property
 	def PstngDt(self):
@@ -124,12 +124,12 @@ class AccountStatementDetails3(base_types._BaseFieldType):
 
 	@PstngDt.setter
 	def PstngDt(self, value):
-		self._PstngDt = value if type(value) != base_types.auto else self.make_default("PstngDt")
+		self._PstngDt = value if value is not None else base_types.UninitialisedField(self, 'PstngDt', ISODate, False)
 
 	@PstngDt.deleter
 	def PstngDt(self):
 		del self._PstngDt
-		self._PstngDt = None
+		self._PstngDt = base_types.UninitialisedField(self, 'PstngDt', ISODate, False)
 
 	@property
 	def ShrtDesc(self):
@@ -137,12 +137,12 @@ class AccountStatementDetails3(base_types._BaseFieldType):
 
 	@ShrtDesc.setter
 	def ShrtDesc(self, value):
-		self._ShrtDesc = value if type(value) != base_types.auto else self.make_default("ShrtDesc")
+		self._ShrtDesc = value if value is not None else base_types.UninitialisedField(self, 'ShrtDesc', Max70Text, False)
 
 	@ShrtDesc.deleter
 	def ShrtDesc(self):
 		del self._ShrtDesc
-		self._ShrtDesc = None
+		self._ShrtDesc = base_types.UninitialisedField(self, 'ShrtDesc', Max70Text, False)
 
 	@property
 	def TxDt(self):
@@ -150,12 +150,12 @@ class AccountStatementDetails3(base_types._BaseFieldType):
 
 	@TxDt.setter
 	def TxDt(self, value):
-		self._TxDt = value if type(value) != base_types.auto else self.make_default("TxDt")
+		self._TxDt = value if value is not None else base_types.UninitialisedField(self, 'TxDt', ISODate, False)
 
 	@TxDt.deleter
 	def TxDt(self):
 		del self._TxDt
-		self._TxDt = None
+		self._TxDt = base_types.UninitialisedField(self, 'TxDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AccptrNmAndLctn', type=Max99Text, min=0, max=1, mutex_group=None, array=False),

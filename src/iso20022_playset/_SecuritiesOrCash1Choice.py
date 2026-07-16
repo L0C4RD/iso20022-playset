@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashParties24 import CashParties24
-from ._SettlementParties35 import SettlementParties35
+from . import CashParties24
+from . import SettlementParties35
 
 class SecuritiesOrCash1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SecuritiesOrCash1Choice(base_types._BaseFieldType):
 
 	@CshPtiesDtls.setter
 	def CshPtiesDtls(self, value):
-		self._CshPtiesDtls = value if type(value) != base_types.auto else self.make_default("CshPtiesDtls")
+		self._CshPtiesDtls = value if value is not None else base_types.UninitialisedField(self, 'CshPtiesDtls', CashParties24, False)
 
 	@CshPtiesDtls.deleter
 	def CshPtiesDtls(self):
 		del self._CshPtiesDtls
-		self._CshPtiesDtls = None
+		self._CshPtiesDtls = base_types.UninitialisedField(self, 'CshPtiesDtls', CashParties24, False)
 
 	@property
 	def SctiesDtls(self):
@@ -27,12 +27,12 @@ class SecuritiesOrCash1Choice(base_types._BaseFieldType):
 
 	@SctiesDtls.setter
 	def SctiesDtls(self, value):
-		self._SctiesDtls = value if type(value) != base_types.auto else self.make_default("SctiesDtls")
+		self._SctiesDtls = value if value is not None else base_types.UninitialisedField(self, 'SctiesDtls', SettlementParties35, False)
 
 	@SctiesDtls.deleter
 	def SctiesDtls(self):
 		del self._SctiesDtls
-		self._SctiesDtls = None
+		self._SctiesDtls = base_types.UninitialisedField(self, 'SctiesDtls', SettlementParties35, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshPtiesDtls', type=CashParties24, min=0, max=1, mutex_group=1, array=False),

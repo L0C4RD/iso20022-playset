@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GroupHeader110 import GroupHeader110
-from ._MandateCancellation8 import MandateCancellation8
-from ._SupplementaryData1 import SupplementaryData1
+from . import GroupHeader110
+from . import MandateCancellation8
+from . import SupplementaryData1
 
 class MandateCancellationRequestV08(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class MandateCancellationRequestV08(base_types._BaseFieldType):
 
 	@GrpHdr.setter
 	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
+		self._GrpHdr = value if value is not None else base_types.UninitialisedField(self, 'GrpHdr', GroupHeader110, False)
 
 	@GrpHdr.deleter
 	def GrpHdr(self):
 		del self._GrpHdr
-		self._GrpHdr = None
+		self._GrpHdr = base_types.UninitialisedField(self, 'GrpHdr', GroupHeader110, False)
 
 	@property
 	def SplmtryData(self):
@@ -28,12 +28,12 @@ class MandateCancellationRequestV08(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def UndrlygCxlDtls(self):
@@ -41,12 +41,12 @@ class MandateCancellationRequestV08(base_types._BaseFieldType):
 
 	@UndrlygCxlDtls.setter
 	def UndrlygCxlDtls(self, value):
-		self._UndrlygCxlDtls = value if type(value) != base_types.auto else self.make_default("UndrlygCxlDtls")
+		self._UndrlygCxlDtls = value if value is not None else base_types.UninitialisedField(self, 'UndrlygCxlDtls', MandateCancellation8, True)
 
 	@UndrlygCxlDtls.deleter
 	def UndrlygCxlDtls(self):
 		del self._UndrlygCxlDtls
-		self._UndrlygCxlDtls = None
+		self._UndrlygCxlDtls = base_types.UninitialisedField(self, 'UndrlygCxlDtls', MandateCancellation8, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='GrpHdr', type=GroupHeader110, min=1, max=1, mutex_group=None, array=False),

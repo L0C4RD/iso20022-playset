@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NoSpecifiedReason1 import NoSpecifiedReason1
-from ._Quantity51Choice import Quantity51Choice
+from . import NoSpecifiedReason1
+from . import Quantity51Choice
 
 class ReceivedByIssuerOrOfferorStatus1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ReceivedByIssuerOrOfferorStatus1(base_types._BaseFieldType):
 
 	@AccptdByIssrQty.setter
 	def AccptdByIssrQty(self, value):
-		self._AccptdByIssrQty = value if type(value) != base_types.auto else self.make_default("AccptdByIssrQty")
+		self._AccptdByIssrQty = value if value is not None else base_types.UninitialisedField(self, 'AccptdByIssrQty', Quantity51Choice, False)
 
 	@AccptdByIssrQty.deleter
 	def AccptdByIssrQty(self):
 		del self._AccptdByIssrQty
-		self._AccptdByIssrQty = None
+		self._AccptdByIssrQty = base_types.UninitialisedField(self, 'AccptdByIssrQty', Quantity51Choice, False)
 
 	@property
 	def RcvdByIssrOrOfferrRsn(self):
@@ -27,12 +27,12 @@ class ReceivedByIssuerOrOfferorStatus1(base_types._BaseFieldType):
 
 	@RcvdByIssrOrOfferrRsn.setter
 	def RcvdByIssrOrOfferrRsn(self, value):
-		self._RcvdByIssrOrOfferrRsn = value if type(value) != base_types.auto else self.make_default("RcvdByIssrOrOfferrRsn")
+		self._RcvdByIssrOrOfferrRsn = value if value is not None else base_types.UninitialisedField(self, 'RcvdByIssrOrOfferrRsn', NoSpecifiedReason1, False)
 
 	@RcvdByIssrOrOfferrRsn.deleter
 	def RcvdByIssrOrOfferrRsn(self):
 		del self._RcvdByIssrOrOfferrRsn
-		self._RcvdByIssrOrOfferrRsn = None
+		self._RcvdByIssrOrOfferrRsn = base_types.UninitialisedField(self, 'RcvdByIssrOrOfferrRsn', NoSpecifiedReason1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AccptdByIssrQty', type=Quantity51Choice, min=0, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Frequency3Code import Frequency3Code
-from ._ISODate import ISODate
-from ._Number import Number
+from . import Frequency3Code
+from . import ISODate
+from . import Number
 
 class RecurringTransaction3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class RecurringTransaction3(base_types._BaseFieldType):
 
 	@EndDt.setter
 	def EndDt(self, value):
-		self._EndDt = value if type(value) != base_types.auto else self.make_default("EndDt")
+		self._EndDt = value if value is not None else base_types.UninitialisedField(self, 'EndDt', ISODate, False)
 
 	@EndDt.deleter
 	def EndDt(self):
 		del self._EndDt
-		self._EndDt = None
+		self._EndDt = base_types.UninitialisedField(self, 'EndDt', ISODate, False)
 
 	@property
 	def IntrvlDay(self):
@@ -28,12 +28,12 @@ class RecurringTransaction3(base_types._BaseFieldType):
 
 	@IntrvlDay.setter
 	def IntrvlDay(self, value):
-		self._IntrvlDay = value if type(value) != base_types.auto else self.make_default("IntrvlDay")
+		self._IntrvlDay = value if value is not None else base_types.UninitialisedField(self, 'IntrvlDay', Number, False)
 
 	@IntrvlDay.deleter
 	def IntrvlDay(self):
 		del self._IntrvlDay
-		self._IntrvlDay = None
+		self._IntrvlDay = base_types.UninitialisedField(self, 'IntrvlDay', Number, False)
 
 	@property
 	def NbOfOcrncs(self):
@@ -41,12 +41,12 @@ class RecurringTransaction3(base_types._BaseFieldType):
 
 	@NbOfOcrncs.setter
 	def NbOfOcrncs(self, value):
-		self._NbOfOcrncs = value if type(value) != base_types.auto else self.make_default("NbOfOcrncs")
+		self._NbOfOcrncs = value if value is not None else base_types.UninitialisedField(self, 'NbOfOcrncs', Number, False)
 
 	@NbOfOcrncs.deleter
 	def NbOfOcrncs(self):
 		del self._NbOfOcrncs
-		self._NbOfOcrncs = None
+		self._NbOfOcrncs = base_types.UninitialisedField(self, 'NbOfOcrncs', Number, False)
 
 	@property
 	def PrdUnit(self):
@@ -54,12 +54,12 @@ class RecurringTransaction3(base_types._BaseFieldType):
 
 	@PrdUnit.setter
 	def PrdUnit(self, value):
-		self._PrdUnit = value if type(value) != base_types.auto else self.make_default("PrdUnit")
+		self._PrdUnit = value if value is not None else base_types.UninitialisedField(self, 'PrdUnit', Frequency3Code, False)
 
 	@PrdUnit.deleter
 	def PrdUnit(self):
 		del self._PrdUnit
-		self._PrdUnit = None
+		self._PrdUnit = base_types.UninitialisedField(self, 'PrdUnit', Frequency3Code, False)
 
 	@property
 	def StartDt(self):
@@ -67,12 +67,12 @@ class RecurringTransaction3(base_types._BaseFieldType):
 
 	@StartDt.setter
 	def StartDt(self, value):
-		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
+		self._StartDt = value if value is not None else base_types.UninitialisedField(self, 'StartDt', ISODate, False)
 
 	@StartDt.deleter
 	def StartDt(self):
 		del self._StartDt
-		self._StartDt = None
+		self._StartDt = base_types.UninitialisedField(self, 'StartDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EndDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),

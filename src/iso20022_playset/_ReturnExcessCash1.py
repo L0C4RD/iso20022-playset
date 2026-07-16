@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._ReturnExcessCash1Choice import ReturnExcessCash1Choice
+from . import ActiveOrHistoricCurrencyCode
+from . import ReturnExcessCash1Choice
 
 class ReturnExcessCash1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ReturnExcessCash1(base_types._BaseFieldType):
 
 	@CshCollCcy.setter
 	def CshCollCcy(self, value):
-		self._CshCollCcy = value if type(value) != base_types.auto else self.make_default("CshCollCcy")
+		self._CshCollCcy = value if value is not None else base_types.UninitialisedField(self, 'CshCollCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@CshCollCcy.deleter
 	def CshCollCcy(self):
 		del self._CshCollCcy
-		self._CshCollCcy = None
+		self._CshCollCcy = base_types.UninitialisedField(self, 'CshCollCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def RtrXcssCshTp(self):
@@ -27,12 +27,12 @@ class ReturnExcessCash1(base_types._BaseFieldType):
 
 	@RtrXcssCshTp.setter
 	def RtrXcssCshTp(self, value):
-		self._RtrXcssCshTp = value if type(value) != base_types.auto else self.make_default("RtrXcssCshTp")
+		self._RtrXcssCshTp = value if value is not None else base_types.UninitialisedField(self, 'RtrXcssCshTp', ReturnExcessCash1Choice, False)
 
 	@RtrXcssCshTp.deleter
 	def RtrXcssCshTp(self):
 		del self._RtrXcssCshTp
-		self._RtrXcssCshTp = None
+		self._RtrXcssCshTp = base_types.UninitialisedField(self, 'RtrXcssCshTp', ReturnExcessCash1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshCollCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),

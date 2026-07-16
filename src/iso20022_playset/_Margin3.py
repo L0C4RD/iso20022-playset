@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Amount2 import Amount2
-from ._Margin4 import Margin4
-from ._VariationMargin3 import VariationMargin3
+from . import Amount2
+from . import Margin4
+from . import VariationMargin3
 
 class Margin3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Margin3(base_types._BaseFieldType):
 
 	@InitlMrgn.setter
 	def InitlMrgn(self, value):
-		self._InitlMrgn = value if type(value) != base_types.auto else self.make_default("InitlMrgn")
+		self._InitlMrgn = value if value is not None else base_types.UninitialisedField(self, 'InitlMrgn', Amount2, False)
 
 	@InitlMrgn.deleter
 	def InitlMrgn(self):
 		del self._InitlMrgn
-		self._InitlMrgn = None
+		self._InitlMrgn = base_types.UninitialisedField(self, 'InitlMrgn', Amount2, False)
 
 	@property
 	def OthrMrgn(self):
@@ -28,12 +28,12 @@ class Margin3(base_types._BaseFieldType):
 
 	@OthrMrgn.setter
 	def OthrMrgn(self, value):
-		self._OthrMrgn = value if type(value) != base_types.auto else self.make_default("OthrMrgn")
+		self._OthrMrgn = value if value is not None else base_types.UninitialisedField(self, 'OthrMrgn', Margin4, True)
 
 	@OthrMrgn.deleter
 	def OthrMrgn(self):
 		del self._OthrMrgn
-		self._OthrMrgn = None
+		self._OthrMrgn = base_types.UninitialisedField(self, 'OthrMrgn', Margin4, True)
 
 	@property
 	def VartnMrgn(self):
@@ -41,12 +41,12 @@ class Margin3(base_types._BaseFieldType):
 
 	@VartnMrgn.setter
 	def VartnMrgn(self, value):
-		self._VartnMrgn = value if type(value) != base_types.auto else self.make_default("VartnMrgn")
+		self._VartnMrgn = value if value is not None else base_types.UninitialisedField(self, 'VartnMrgn', VariationMargin3, True)
 
 	@VartnMrgn.deleter
 	def VartnMrgn(self):
 		del self._VartnMrgn
-		self._VartnMrgn = None
+		self._VartnMrgn = base_types.UninitialisedField(self, 'VartnMrgn', VariationMargin3, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InitlMrgn', type=Amount2, min=0, max=1, mutex_group=None, array=False),

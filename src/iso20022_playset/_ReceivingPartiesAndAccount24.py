@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PartyIdentificationAndAccount235 import PartyIdentificationAndAccount235
+from . import PartyIdentificationAndAccount235
 
 class ReceivingPartiesAndAccount24(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class ReceivingPartiesAndAccount24(base_types._BaseFieldType):
 
 	@RcvgAgtDtls.setter
 	def RcvgAgtDtls(self, value):
-		self._RcvgAgtDtls = value if type(value) != base_types.auto else self.make_default("RcvgAgtDtls")
+		self._RcvgAgtDtls = value if value is not None else base_types.UninitialisedField(self, 'RcvgAgtDtls', PartyIdentificationAndAccount235, False)
 
 	@RcvgAgtDtls.deleter
 	def RcvgAgtDtls(self):
 		del self._RcvgAgtDtls
-		self._RcvgAgtDtls = None
+		self._RcvgAgtDtls = base_types.UninitialisedField(self, 'RcvgAgtDtls', PartyIdentificationAndAccount235, False)
 
 	@property
 	def RcvrsCtdnDtls(self):
@@ -26,12 +26,12 @@ class ReceivingPartiesAndAccount24(base_types._BaseFieldType):
 
 	@RcvrsCtdnDtls.setter
 	def RcvrsCtdnDtls(self, value):
-		self._RcvrsCtdnDtls = value if type(value) != base_types.auto else self.make_default("RcvrsCtdnDtls")
+		self._RcvrsCtdnDtls = value if value is not None else base_types.UninitialisedField(self, 'RcvrsCtdnDtls', PartyIdentificationAndAccount235, False)
 
 	@RcvrsCtdnDtls.deleter
 	def RcvrsCtdnDtls(self):
 		del self._RcvrsCtdnDtls
-		self._RcvrsCtdnDtls = None
+		self._RcvrsCtdnDtls = base_types.UninitialisedField(self, 'RcvrsCtdnDtls', PartyIdentificationAndAccount235, False)
 
 	@property
 	def RcvrsIntrmy1Dtls(self):
@@ -39,12 +39,12 @@ class ReceivingPartiesAndAccount24(base_types._BaseFieldType):
 
 	@RcvrsIntrmy1Dtls.setter
 	def RcvrsIntrmy1Dtls(self, value):
-		self._RcvrsIntrmy1Dtls = value if type(value) != base_types.auto else self.make_default("RcvrsIntrmy1Dtls")
+		self._RcvrsIntrmy1Dtls = value if value is not None else base_types.UninitialisedField(self, 'RcvrsIntrmy1Dtls', PartyIdentificationAndAccount235, False)
 
 	@RcvrsIntrmy1Dtls.deleter
 	def RcvrsIntrmy1Dtls(self):
 		del self._RcvrsIntrmy1Dtls
-		self._RcvrsIntrmy1Dtls = None
+		self._RcvrsIntrmy1Dtls = base_types.UninitialisedField(self, 'RcvrsIntrmy1Dtls', PartyIdentificationAndAccount235, False)
 
 	@property
 	def RcvrsIntrmy2Dtls(self):
@@ -52,12 +52,12 @@ class ReceivingPartiesAndAccount24(base_types._BaseFieldType):
 
 	@RcvrsIntrmy2Dtls.setter
 	def RcvrsIntrmy2Dtls(self, value):
-		self._RcvrsIntrmy2Dtls = value if type(value) != base_types.auto else self.make_default("RcvrsIntrmy2Dtls")
+		self._RcvrsIntrmy2Dtls = value if value is not None else base_types.UninitialisedField(self, 'RcvrsIntrmy2Dtls', PartyIdentificationAndAccount235, False)
 
 	@RcvrsIntrmy2Dtls.deleter
 	def RcvrsIntrmy2Dtls(self):
 		del self._RcvrsIntrmy2Dtls
-		self._RcvrsIntrmy2Dtls = None
+		self._RcvrsIntrmy2Dtls = base_types.UninitialisedField(self, 'RcvrsIntrmy2Dtls', PartyIdentificationAndAccount235, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RcvgAgtDtls', type=PartyIdentificationAndAccount235, min=1, max=1, mutex_group=None, array=False),

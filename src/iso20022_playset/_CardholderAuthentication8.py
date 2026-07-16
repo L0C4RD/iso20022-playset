@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AuthenticationMethod7Code import AuthenticationMethod7Code
-from ._ContentInformationType10 import ContentInformationType10
-from ._Max5000Binary import Max5000Binary
-from ._OnLinePIN5 import OnLinePIN5
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import AuthenticationMethod7Code
+from . import ContentInformationType10
+from . import Max5000Binary
+from . import OnLinePIN5
+from . import TrueFalseIndicator
 
 class CardholderAuthentication8(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class CardholderAuthentication8(base_types._BaseFieldType):
 
 	@AuthntcnMtd.setter
 	def AuthntcnMtd(self, value):
-		self._AuthntcnMtd = value if type(value) != base_types.auto else self.make_default("AuthntcnMtd")
+		self._AuthntcnMtd = value if value is not None else base_types.UninitialisedField(self, 'AuthntcnMtd', AuthenticationMethod7Code, False)
 
 	@AuthntcnMtd.deleter
 	def AuthntcnMtd(self):
 		del self._AuthntcnMtd
-		self._AuthntcnMtd = None
+		self._AuthntcnMtd = base_types.UninitialisedField(self, 'AuthntcnMtd', AuthenticationMethod7Code, False)
 
 	@property
 	def AuthntcnVal(self):
@@ -30,12 +30,12 @@ class CardholderAuthentication8(base_types._BaseFieldType):
 
 	@AuthntcnVal.setter
 	def AuthntcnVal(self, value):
-		self._AuthntcnVal = value if type(value) != base_types.auto else self.make_default("AuthntcnVal")
+		self._AuthntcnVal = value if value is not None else base_types.UninitialisedField(self, 'AuthntcnVal', Max5000Binary, False)
 
 	@AuthntcnVal.deleter
 	def AuthntcnVal(self):
 		del self._AuthntcnVal
-		self._AuthntcnVal = None
+		self._AuthntcnVal = base_types.UninitialisedField(self, 'AuthntcnVal', Max5000Binary, False)
 
 	@property
 	def CrdhldrOnLinePIN(self):
@@ -43,12 +43,12 @@ class CardholderAuthentication8(base_types._BaseFieldType):
 
 	@CrdhldrOnLinePIN.setter
 	def CrdhldrOnLinePIN(self, value):
-		self._CrdhldrOnLinePIN = value if type(value) != base_types.auto else self.make_default("CrdhldrOnLinePIN")
+		self._CrdhldrOnLinePIN = value if value is not None else base_types.UninitialisedField(self, 'CrdhldrOnLinePIN', OnLinePIN5, False)
 
 	@CrdhldrOnLinePIN.deleter
 	def CrdhldrOnLinePIN(self):
 		del self._CrdhldrOnLinePIN
-		self._CrdhldrOnLinePIN = None
+		self._CrdhldrOnLinePIN = base_types.UninitialisedField(self, 'CrdhldrOnLinePIN', OnLinePIN5, False)
 
 	@property
 	def PrtctdAuthntcnVal(self):
@@ -56,12 +56,12 @@ class CardholderAuthentication8(base_types._BaseFieldType):
 
 	@PrtctdAuthntcnVal.setter
 	def PrtctdAuthntcnVal(self, value):
-		self._PrtctdAuthntcnVal = value if type(value) != base_types.auto else self.make_default("PrtctdAuthntcnVal")
+		self._PrtctdAuthntcnVal = value if value is not None else base_types.UninitialisedField(self, 'PrtctdAuthntcnVal', ContentInformationType10, False)
 
 	@PrtctdAuthntcnVal.deleter
 	def PrtctdAuthntcnVal(self):
 		del self._PrtctdAuthntcnVal
-		self._PrtctdAuthntcnVal = None
+		self._PrtctdAuthntcnVal = base_types.UninitialisedField(self, 'PrtctdAuthntcnVal', ContentInformationType10, False)
 
 	@property
 	def TknReqd(self):
@@ -69,12 +69,12 @@ class CardholderAuthentication8(base_types._BaseFieldType):
 
 	@TknReqd.setter
 	def TknReqd(self, value):
-		self._TknReqd = value if type(value) != base_types.auto else self.make_default("TknReqd")
+		self._TknReqd = value if value is not None else base_types.UninitialisedField(self, 'TknReqd', TrueFalseIndicator, False)
 
 	@TknReqd.deleter
 	def TknReqd(self):
 		del self._TknReqd
-		self._TknReqd = None
+		self._TknReqd = base_types.UninitialisedField(self, 'TknReqd', TrueFalseIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AuthntcnMtd', type=AuthenticationMethod7Code, min=1, max=1, mutex_group=None, array=False),

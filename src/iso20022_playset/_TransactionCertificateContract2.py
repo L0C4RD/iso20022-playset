@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ContractRegistrationReference2Choice import ContractRegistrationReference2Choice
-from ._ISODate import ISODate
-from ._Max1025Text import Max1025Text
+from . import ActiveCurrencyAndAmount
+from . import ContractRegistrationReference2Choice
+from . import ISODate
+from . import Max1025Text
 
 class TransactionCertificateContract2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class TransactionCertificateContract2(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max1025Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max1025Text, False)
 
 	@property
 	def CtrctRef(self):
@@ -29,12 +29,12 @@ class TransactionCertificateContract2(base_types._BaseFieldType):
 
 	@CtrctRef.setter
 	def CtrctRef(self, value):
-		self._CtrctRef = value if type(value) != base_types.auto else self.make_default("CtrctRef")
+		self._CtrctRef = value if value is not None else base_types.UninitialisedField(self, 'CtrctRef', ContractRegistrationReference2Choice, False)
 
 	@CtrctRef.deleter
 	def CtrctRef(self):
 		del self._CtrctRef
-		self._CtrctRef = None
+		self._CtrctRef = base_types.UninitialisedField(self, 'CtrctRef', ContractRegistrationReference2Choice, False)
 
 	@property
 	def TxAmtInCtrctCcy(self):
@@ -42,12 +42,12 @@ class TransactionCertificateContract2(base_types._BaseFieldType):
 
 	@TxAmtInCtrctCcy.setter
 	def TxAmtInCtrctCcy(self, value):
-		self._TxAmtInCtrctCcy = value if type(value) != base_types.auto else self.make_default("TxAmtInCtrctCcy")
+		self._TxAmtInCtrctCcy = value if value is not None else base_types.UninitialisedField(self, 'TxAmtInCtrctCcy', ActiveCurrencyAndAmount, False)
 
 	@TxAmtInCtrctCcy.deleter
 	def TxAmtInCtrctCcy(self):
 		del self._TxAmtInCtrctCcy
-		self._TxAmtInCtrctCcy = None
+		self._TxAmtInCtrctCcy = base_types.UninitialisedField(self, 'TxAmtInCtrctCcy', ActiveCurrencyAndAmount, False)
 
 	@property
 	def XpctdAdvncPmtRtrDt(self):
@@ -55,12 +55,12 @@ class TransactionCertificateContract2(base_types._BaseFieldType):
 
 	@XpctdAdvncPmtRtrDt.setter
 	def XpctdAdvncPmtRtrDt(self, value):
-		self._XpctdAdvncPmtRtrDt = value if type(value) != base_types.auto else self.make_default("XpctdAdvncPmtRtrDt")
+		self._XpctdAdvncPmtRtrDt = value if value is not None else base_types.UninitialisedField(self, 'XpctdAdvncPmtRtrDt', ISODate, False)
 
 	@XpctdAdvncPmtRtrDt.deleter
 	def XpctdAdvncPmtRtrDt(self):
 		del self._XpctdAdvncPmtRtrDt
-		self._XpctdAdvncPmtRtrDt = None
+		self._XpctdAdvncPmtRtrDt = base_types.UninitialisedField(self, 'XpctdAdvncPmtRtrDt', ISODate, False)
 
 	@property
 	def XpctdShipmntDt(self):
@@ -68,12 +68,12 @@ class TransactionCertificateContract2(base_types._BaseFieldType):
 
 	@XpctdShipmntDt.setter
 	def XpctdShipmntDt(self, value):
-		self._XpctdShipmntDt = value if type(value) != base_types.auto else self.make_default("XpctdShipmntDt")
+		self._XpctdShipmntDt = value if value is not None else base_types.UninitialisedField(self, 'XpctdShipmntDt', ISODate, False)
 
 	@XpctdShipmntDt.deleter
 	def XpctdShipmntDt(self):
 		del self._XpctdShipmntDt
-		self._XpctdShipmntDt = None
+		self._XpctdShipmntDt = base_types.UninitialisedField(self, 'XpctdShipmntDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max1025Text, min=0, max=1, mutex_group=None, array=False),

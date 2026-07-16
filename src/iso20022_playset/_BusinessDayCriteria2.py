@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BusinessDayReturnCriteria2 import BusinessDayReturnCriteria2
-from ._BusinessDaySearchCriteria2 import BusinessDaySearchCriteria2
-from ._Max35Text import Max35Text
+from . import BusinessDayReturnCriteria2
+from . import BusinessDaySearchCriteria2
+from . import Max35Text
 
 class BusinessDayCriteria2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class BusinessDayCriteria2(base_types._BaseFieldType):
 
 	@NewQryNm.setter
 	def NewQryNm(self, value):
-		self._NewQryNm = value if type(value) != base_types.auto else self.make_default("NewQryNm")
+		self._NewQryNm = value if value is not None else base_types.UninitialisedField(self, 'NewQryNm', Max35Text, False)
 
 	@NewQryNm.deleter
 	def NewQryNm(self):
 		del self._NewQryNm
-		self._NewQryNm = None
+		self._NewQryNm = base_types.UninitialisedField(self, 'NewQryNm', Max35Text, False)
 
 	@property
 	def RtrCrit(self):
@@ -28,12 +28,12 @@ class BusinessDayCriteria2(base_types._BaseFieldType):
 
 	@RtrCrit.setter
 	def RtrCrit(self, value):
-		self._RtrCrit = value if type(value) != base_types.auto else self.make_default("RtrCrit")
+		self._RtrCrit = value if value is not None else base_types.UninitialisedField(self, 'RtrCrit', BusinessDayReturnCriteria2, False)
 
 	@RtrCrit.deleter
 	def RtrCrit(self):
 		del self._RtrCrit
-		self._RtrCrit = None
+		self._RtrCrit = base_types.UninitialisedField(self, 'RtrCrit', BusinessDayReturnCriteria2, False)
 
 	@property
 	def SchCrit(self):
@@ -41,12 +41,12 @@ class BusinessDayCriteria2(base_types._BaseFieldType):
 
 	@SchCrit.setter
 	def SchCrit(self, value):
-		self._SchCrit = value if type(value) != base_types.auto else self.make_default("SchCrit")
+		self._SchCrit = value if value is not None else base_types.UninitialisedField(self, 'SchCrit', BusinessDaySearchCriteria2, True)
 
 	@SchCrit.deleter
 	def SchCrit(self):
 		del self._SchCrit
-		self._SchCrit = None
+		self._SchCrit = base_types.UninitialisedField(self, 'SchCrit', BusinessDaySearchCriteria2, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NewQryNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

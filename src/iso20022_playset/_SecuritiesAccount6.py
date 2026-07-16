@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
-from ._PartyIdentification2Choice import PartyIdentification2Choice
-from ._SecurityIdentification7 import SecurityIdentification7
+from . import Max350Text
+from . import Max35Text
+from . import PartyIdentification2Choice
+from . import SecurityIdentification7
 
 class SecuritiesAccount6(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class SecuritiesAccount6(base_types._BaseFieldType):
 
 	@AcctOwnrId.setter
 	def AcctOwnrId(self, value):
-		self._AcctOwnrId = value if type(value) != base_types.auto else self.make_default("AcctOwnrId")
+		self._AcctOwnrId = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnrId', PartyIdentification2Choice, False)
 
 	@AcctOwnrId.deleter
 	def AcctOwnrId(self):
 		del self._AcctOwnrId
-		self._AcctOwnrId = None
+		self._AcctOwnrId = base_types.UninitialisedField(self, 'AcctOwnrId', PartyIdentification2Choice, False)
 
 	@property
 	def RegnDtls(self):
@@ -29,12 +29,12 @@ class SecuritiesAccount6(base_types._BaseFieldType):
 
 	@RegnDtls.setter
 	def RegnDtls(self, value):
-		self._RegnDtls = value if type(value) != base_types.auto else self.make_default("RegnDtls")
+		self._RegnDtls = value if value is not None else base_types.UninitialisedField(self, 'RegnDtls', Max350Text, False)
 
 	@RegnDtls.deleter
 	def RegnDtls(self):
 		del self._RegnDtls
-		self._RegnDtls = None
+		self._RegnDtls = base_types.UninitialisedField(self, 'RegnDtls', Max350Text, False)
 
 	@property
 	def SctiesAcctId(self):
@@ -42,12 +42,12 @@ class SecuritiesAccount6(base_types._BaseFieldType):
 
 	@SctiesAcctId.setter
 	def SctiesAcctId(self, value):
-		self._SctiesAcctId = value if type(value) != base_types.auto else self.make_default("SctiesAcctId")
+		self._SctiesAcctId = value if value is not None else base_types.UninitialisedField(self, 'SctiesAcctId', Max35Text, False)
 
 	@SctiesAcctId.deleter
 	def SctiesAcctId(self):
 		del self._SctiesAcctId
-		self._SctiesAcctId = None
+		self._SctiesAcctId = base_types.UninitialisedField(self, 'SctiesAcctId', Max35Text, False)
 
 	@property
 	def SctyId(self):
@@ -55,12 +55,12 @@ class SecuritiesAccount6(base_types._BaseFieldType):
 
 	@SctyId.setter
 	def SctyId(self, value):
-		self._SctyId = value if type(value) != base_types.auto else self.make_default("SctyId")
+		self._SctyId = value if value is not None else base_types.UninitialisedField(self, 'SctyId', SecurityIdentification7, False)
 
 	@SctyId.deleter
 	def SctyId(self):
 		del self._SctyId
-		self._SctyId = None
+		self._SctyId = base_types.UninitialisedField(self, 'SctyId', SecurityIdentification7, False)
 
 	@property
 	def SfkpgPlc(self):
@@ -68,12 +68,12 @@ class SecuritiesAccount6(base_types._BaseFieldType):
 
 	@SfkpgPlc.setter
 	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
+		self._SfkpgPlc = value if value is not None else base_types.UninitialisedField(self, 'SfkpgPlc', PartyIdentification2Choice, False)
 
 	@SfkpgPlc.deleter
 	def SfkpgPlc(self):
 		del self._SfkpgPlc
-		self._SfkpgPlc = None
+		self._SfkpgPlc = base_types.UninitialisedField(self, 'SfkpgPlc', PartyIdentification2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnrId', type=PartyIdentification2Choice, min=0, max=1, mutex_group=None, array=False),

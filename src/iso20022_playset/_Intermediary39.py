@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Account22 import Account22
-from ._InvestmentFundRole2Choice import InvestmentFundRole2Choice
-from ._OrderOriginatorEligibility1Code import OrderOriginatorEligibility1Code
-from ._PartyIdentification113 import PartyIdentification113
-from ._TradingCapacity8Code import TradingCapacity8Code
+from . import Account22
+from . import InvestmentFundRole2Choice
+from . import OrderOriginatorEligibility1Code
+from . import PartyIdentification113
+from . import TradingCapacity8Code
 
 class Intermediary39(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class Intermediary39(base_types._BaseFieldType):
 
 	@Acct.setter
 	def Acct(self, value):
-		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
+		self._Acct = value if value is not None else base_types.UninitialisedField(self, 'Acct', Account22, False)
 
 	@Acct.deleter
 	def Acct(self):
 		del self._Acct
-		self._Acct = None
+		self._Acct = base_types.UninitialisedField(self, 'Acct', Account22, False)
 
 	@property
 	def Id(self):
@@ -30,12 +30,12 @@ class Intermediary39(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', PartyIdentification113, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', PartyIdentification113, False)
 
 	@property
 	def OrdrOrgtrElgblty(self):
@@ -43,12 +43,12 @@ class Intermediary39(base_types._BaseFieldType):
 
 	@OrdrOrgtrElgblty.setter
 	def OrdrOrgtrElgblty(self, value):
-		self._OrdrOrgtrElgblty = value if type(value) != base_types.auto else self.make_default("OrdrOrgtrElgblty")
+		self._OrdrOrgtrElgblty = value if value is not None else base_types.UninitialisedField(self, 'OrdrOrgtrElgblty', OrderOriginatorEligibility1Code, False)
 
 	@OrdrOrgtrElgblty.deleter
 	def OrdrOrgtrElgblty(self):
 		del self._OrdrOrgtrElgblty
-		self._OrdrOrgtrElgblty = None
+		self._OrdrOrgtrElgblty = base_types.UninitialisedField(self, 'OrdrOrgtrElgblty', OrderOriginatorEligibility1Code, False)
 
 	@property
 	def Role(self):
@@ -56,12 +56,12 @@ class Intermediary39(base_types._BaseFieldType):
 
 	@Role.setter
 	def Role(self, value):
-		self._Role = value if type(value) != base_types.auto else self.make_default("Role")
+		self._Role = value if value is not None else base_types.UninitialisedField(self, 'Role', InvestmentFundRole2Choice, False)
 
 	@Role.deleter
 	def Role(self):
 		del self._Role
-		self._Role = None
+		self._Role = base_types.UninitialisedField(self, 'Role', InvestmentFundRole2Choice, False)
 
 	@property
 	def TradgPtyCpcty(self):
@@ -69,12 +69,12 @@ class Intermediary39(base_types._BaseFieldType):
 
 	@TradgPtyCpcty.setter
 	def TradgPtyCpcty(self, value):
-		self._TradgPtyCpcty = value if type(value) != base_types.auto else self.make_default("TradgPtyCpcty")
+		self._TradgPtyCpcty = value if value is not None else base_types.UninitialisedField(self, 'TradgPtyCpcty', TradingCapacity8Code, False)
 
 	@TradgPtyCpcty.deleter
 	def TradgPtyCpcty(self):
 		del self._TradgPtyCpcty
-		self._TradgPtyCpcty = None
+		self._TradgPtyCpcty = base_types.UninitialisedField(self, 'TradgPtyCpcty', TradingCapacity8Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acct', type=Account22, min=0, max=1, mutex_group=None, array=False),

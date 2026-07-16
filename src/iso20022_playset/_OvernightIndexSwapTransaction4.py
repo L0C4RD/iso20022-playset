@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._CounterpartyIdentification3Choice import CounterpartyIdentification3Choice
-from ._DateAndDateTimeChoice import DateAndDateTimeChoice
-from ._ISODate import ISODate
-from ._LEIIdentifier import LEIIdentifier
-from ._Max105Text import Max105Text
-from ._NovationStatus1Code import NovationStatus1Code
-from ._OvernightIndexSwapType1Code import OvernightIndexSwapType1Code
-from ._PercentageRate import PercentageRate
-from ._SupplementaryData1 import SupplementaryData1
-from ._TransactionOperationType1Code import TransactionOperationType1Code
+from . import ActiveCurrencyAndAmount
+from . import CounterpartyIdentification3Choice
+from . import DateAndDateTimeChoice
+from . import ISODate
+from . import LEIIdentifier
+from . import Max105Text
+from . import NovationStatus1Code
+from . import OvernightIndexSwapType1Code
+from . import PercentageRate
+from . import SupplementaryData1
+from . import TransactionOperationType1Code
 
 class OvernightIndexSwapTransaction4(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class OvernightIndexSwapTransaction4(base_types._BaseFieldType):
 
 	@BrnchId.setter
 	def BrnchId(self, value):
-		self._BrnchId = value if type(value) != base_types.auto else self.make_default("BrnchId")
+		self._BrnchId = value if value is not None else base_types.UninitialisedField(self, 'BrnchId', LEIIdentifier, False)
 
 	@BrnchId.deleter
 	def BrnchId(self):
 		del self._BrnchId
-		self._BrnchId = None
+		self._BrnchId = base_types.UninitialisedField(self, 'BrnchId', LEIIdentifier, False)
 
 	@property
 	def CtrPtyId(self):
@@ -36,12 +36,12 @@ class OvernightIndexSwapTransaction4(base_types._BaseFieldType):
 
 	@CtrPtyId.setter
 	def CtrPtyId(self, value):
-		self._CtrPtyId = value if type(value) != base_types.auto else self.make_default("CtrPtyId")
+		self._CtrPtyId = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyId', CounterpartyIdentification3Choice, False)
 
 	@CtrPtyId.deleter
 	def CtrPtyId(self):
 		del self._CtrPtyId
-		self._CtrPtyId = None
+		self._CtrPtyId = base_types.UninitialisedField(self, 'CtrPtyId', CounterpartyIdentification3Choice, False)
 
 	@property
 	def CtrPtyPrtryTxId(self):
@@ -49,12 +49,12 @@ class OvernightIndexSwapTransaction4(base_types._BaseFieldType):
 
 	@CtrPtyPrtryTxId.setter
 	def CtrPtyPrtryTxId(self, value):
-		self._CtrPtyPrtryTxId = value if type(value) != base_types.auto else self.make_default("CtrPtyPrtryTxId")
+		self._CtrPtyPrtryTxId = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyPrtryTxId', Max105Text, False)
 
 	@CtrPtyPrtryTxId.deleter
 	def CtrPtyPrtryTxId(self):
 		del self._CtrPtyPrtryTxId
-		self._CtrPtyPrtryTxId = None
+		self._CtrPtyPrtryTxId = base_types.UninitialisedField(self, 'CtrPtyPrtryTxId', Max105Text, False)
 
 	@property
 	def FxdIntrstRate(self):
@@ -62,12 +62,12 @@ class OvernightIndexSwapTransaction4(base_types._BaseFieldType):
 
 	@FxdIntrstRate.setter
 	def FxdIntrstRate(self, value):
-		self._FxdIntrstRate = value if type(value) != base_types.auto else self.make_default("FxdIntrstRate")
+		self._FxdIntrstRate = value if value is not None else base_types.UninitialisedField(self, 'FxdIntrstRate', PercentageRate, False)
 
 	@FxdIntrstRate.deleter
 	def FxdIntrstRate(self):
 		del self._FxdIntrstRate
-		self._FxdIntrstRate = None
+		self._FxdIntrstRate = base_types.UninitialisedField(self, 'FxdIntrstRate', PercentageRate, False)
 
 	@property
 	def MtrtyDt(self):
@@ -75,12 +75,12 @@ class OvernightIndexSwapTransaction4(base_types._BaseFieldType):
 
 	@MtrtyDt.setter
 	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != base_types.auto else self.make_default("MtrtyDt")
+		self._MtrtyDt = value if value is not None else base_types.UninitialisedField(self, 'MtrtyDt', ISODate, False)
 
 	@MtrtyDt.deleter
 	def MtrtyDt(self):
 		del self._MtrtyDt
-		self._MtrtyDt = None
+		self._MtrtyDt = base_types.UninitialisedField(self, 'MtrtyDt', ISODate, False)
 
 	@property
 	def NvtnSts(self):
@@ -88,12 +88,12 @@ class OvernightIndexSwapTransaction4(base_types._BaseFieldType):
 
 	@NvtnSts.setter
 	def NvtnSts(self, value):
-		self._NvtnSts = value if type(value) != base_types.auto else self.make_default("NvtnSts")
+		self._NvtnSts = value if value is not None else base_types.UninitialisedField(self, 'NvtnSts', NovationStatus1Code, False)
 
 	@NvtnSts.deleter
 	def NvtnSts(self):
 		del self._NvtnSts
-		self._NvtnSts = None
+		self._NvtnSts = base_types.UninitialisedField(self, 'NvtnSts', NovationStatus1Code, False)
 
 	@property
 	def PrtryTxId(self):
@@ -101,12 +101,12 @@ class OvernightIndexSwapTransaction4(base_types._BaseFieldType):
 
 	@PrtryTxId.setter
 	def PrtryTxId(self, value):
-		self._PrtryTxId = value if type(value) != base_types.auto else self.make_default("PrtryTxId")
+		self._PrtryTxId = value if value is not None else base_types.UninitialisedField(self, 'PrtryTxId', Max105Text, False)
 
 	@PrtryTxId.deleter
 	def PrtryTxId(self):
 		del self._PrtryTxId
-		self._PrtryTxId = None
+		self._PrtryTxId = base_types.UninitialisedField(self, 'PrtryTxId', Max105Text, False)
 
 	@property
 	def RltdPrtryTxId(self):
@@ -114,12 +114,12 @@ class OvernightIndexSwapTransaction4(base_types._BaseFieldType):
 
 	@RltdPrtryTxId.setter
 	def RltdPrtryTxId(self, value):
-		self._RltdPrtryTxId = value if type(value) != base_types.auto else self.make_default("RltdPrtryTxId")
+		self._RltdPrtryTxId = value if value is not None else base_types.UninitialisedField(self, 'RltdPrtryTxId', Max105Text, False)
 
 	@RltdPrtryTxId.deleter
 	def RltdPrtryTxId(self):
 		del self._RltdPrtryTxId
-		self._RltdPrtryTxId = None
+		self._RltdPrtryTxId = base_types.UninitialisedField(self, 'RltdPrtryTxId', Max105Text, False)
 
 	@property
 	def RptdTxSts(self):
@@ -127,12 +127,12 @@ class OvernightIndexSwapTransaction4(base_types._BaseFieldType):
 
 	@RptdTxSts.setter
 	def RptdTxSts(self, value):
-		self._RptdTxSts = value if type(value) != base_types.auto else self.make_default("RptdTxSts")
+		self._RptdTxSts = value if value is not None else base_types.UninitialisedField(self, 'RptdTxSts', TransactionOperationType1Code, False)
 
 	@RptdTxSts.deleter
 	def RptdTxSts(self):
 		del self._RptdTxSts
-		self._RptdTxSts = None
+		self._RptdTxSts = base_types.UninitialisedField(self, 'RptdTxSts', TransactionOperationType1Code, False)
 
 	@property
 	def SplmtryData(self):
@@ -140,12 +140,12 @@ class OvernightIndexSwapTransaction4(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def StartDt(self):
@@ -153,12 +153,12 @@ class OvernightIndexSwapTransaction4(base_types._BaseFieldType):
 
 	@StartDt.setter
 	def StartDt(self, value):
-		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
+		self._StartDt = value if value is not None else base_types.UninitialisedField(self, 'StartDt', ISODate, False)
 
 	@StartDt.deleter
 	def StartDt(self):
 		del self._StartDt
-		self._StartDt = None
+		self._StartDt = base_types.UninitialisedField(self, 'StartDt', ISODate, False)
 
 	@property
 	def TradDt(self):
@@ -166,12 +166,12 @@ class OvernightIndexSwapTransaction4(base_types._BaseFieldType):
 
 	@TradDt.setter
 	def TradDt(self, value):
-		self._TradDt = value if type(value) != base_types.auto else self.make_default("TradDt")
+		self._TradDt = value if value is not None else base_types.UninitialisedField(self, 'TradDt', DateAndDateTimeChoice, False)
 
 	@TradDt.deleter
 	def TradDt(self):
 		del self._TradDt
-		self._TradDt = None
+		self._TradDt = base_types.UninitialisedField(self, 'TradDt', DateAndDateTimeChoice, False)
 
 	@property
 	def TxNmnlAmt(self):
@@ -179,12 +179,12 @@ class OvernightIndexSwapTransaction4(base_types._BaseFieldType):
 
 	@TxNmnlAmt.setter
 	def TxNmnlAmt(self, value):
-		self._TxNmnlAmt = value if type(value) != base_types.auto else self.make_default("TxNmnlAmt")
+		self._TxNmnlAmt = value if value is not None else base_types.UninitialisedField(self, 'TxNmnlAmt', ActiveCurrencyAndAmount, False)
 
 	@TxNmnlAmt.deleter
 	def TxNmnlAmt(self):
 		del self._TxNmnlAmt
-		self._TxNmnlAmt = None
+		self._TxNmnlAmt = base_types.UninitialisedField(self, 'TxNmnlAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def TxTp(self):
@@ -192,12 +192,12 @@ class OvernightIndexSwapTransaction4(base_types._BaseFieldType):
 
 	@TxTp.setter
 	def TxTp(self, value):
-		self._TxTp = value if type(value) != base_types.auto else self.make_default("TxTp")
+		self._TxTp = value if value is not None else base_types.UninitialisedField(self, 'TxTp', OvernightIndexSwapType1Code, False)
 
 	@TxTp.deleter
 	def TxTp(self):
 		del self._TxTp
-		self._TxTp = None
+		self._TxTp = base_types.UninitialisedField(self, 'TxTp', OvernightIndexSwapType1Code, False)
 
 	@property
 	def UnqTxIdr(self):
@@ -205,12 +205,12 @@ class OvernightIndexSwapTransaction4(base_types._BaseFieldType):
 
 	@UnqTxIdr.setter
 	def UnqTxIdr(self, value):
-		self._UnqTxIdr = value if type(value) != base_types.auto else self.make_default("UnqTxIdr")
+		self._UnqTxIdr = value if value is not None else base_types.UninitialisedField(self, 'UnqTxIdr', Max105Text, False)
 
 	@UnqTxIdr.deleter
 	def UnqTxIdr(self):
 		del self._UnqTxIdr
-		self._UnqTxIdr = None
+		self._UnqTxIdr = base_types.UninitialisedField(self, 'UnqTxIdr', Max105Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BrnchId', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),

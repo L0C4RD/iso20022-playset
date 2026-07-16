@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ProcessingStatus96Choice import ProcessingStatus96Choice
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from ._SupplementaryData1 import SupplementaryData1
-from ._TransactionDetails162 import TransactionDetails162
-from ._TransactionIdentifications50 import TransactionIdentifications50
+from . import ProcessingStatus96Choice
+from . import RestrictedFINXMax16Text
+from . import SupplementaryData1
+from . import TransactionDetails162
+from . import TransactionIdentifications50
 
 class SecuritiesTransactionCancellationRequestStatusAdvice002V07(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class SecuritiesTransactionCancellationRequestStatusAdvice002V07(base_types._Bas
 
 	@CxlReqRef.setter
 	def CxlReqRef(self, value):
-		self._CxlReqRef = value if type(value) != base_types.auto else self.make_default("CxlReqRef")
+		self._CxlReqRef = value if value is not None else base_types.UninitialisedField(self, 'CxlReqRef', RestrictedFINXMax16Text, False)
 
 	@CxlReqRef.deleter
 	def CxlReqRef(self):
 		del self._CxlReqRef
-		self._CxlReqRef = None
+		self._CxlReqRef = base_types.UninitialisedField(self, 'CxlReqRef', RestrictedFINXMax16Text, False)
 
 	@property
 	def PrcgSts(self):
@@ -30,12 +30,12 @@ class SecuritiesTransactionCancellationRequestStatusAdvice002V07(base_types._Bas
 
 	@PrcgSts.setter
 	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != base_types.auto else self.make_default("PrcgSts")
+		self._PrcgSts = value if value is not None else base_types.UninitialisedField(self, 'PrcgSts', ProcessingStatus96Choice, False)
 
 	@PrcgSts.deleter
 	def PrcgSts(self):
 		del self._PrcgSts
-		self._PrcgSts = None
+		self._PrcgSts = base_types.UninitialisedField(self, 'PrcgSts', ProcessingStatus96Choice, False)
 
 	@property
 	def SplmtryData(self):
@@ -43,12 +43,12 @@ class SecuritiesTransactionCancellationRequestStatusAdvice002V07(base_types._Bas
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TxDtls(self):
@@ -56,12 +56,12 @@ class SecuritiesTransactionCancellationRequestStatusAdvice002V07(base_types._Bas
 
 	@TxDtls.setter
 	def TxDtls(self, value):
-		self._TxDtls = value if type(value) != base_types.auto else self.make_default("TxDtls")
+		self._TxDtls = value if value is not None else base_types.UninitialisedField(self, 'TxDtls', TransactionDetails162, False)
 
 	@TxDtls.deleter
 	def TxDtls(self):
 		del self._TxDtls
-		self._TxDtls = None
+		self._TxDtls = base_types.UninitialisedField(self, 'TxDtls', TransactionDetails162, False)
 
 	@property
 	def TxId(self):
@@ -69,12 +69,12 @@ class SecuritiesTransactionCancellationRequestStatusAdvice002V07(base_types._Bas
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', TransactionIdentifications50, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', TransactionIdentifications50, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CxlReqRef', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),

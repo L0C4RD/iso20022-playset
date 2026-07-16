@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._DecimalNumber import DecimalNumber
-from ._Max35Text import Max35Text
+from . import ActiveCurrencyAnd13DecimalAmount
+from . import AdditionalInformation15
+from . import DecimalNumber
+from . import Max35Text
 
 class Crystallisation2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class Crystallisation2(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@property
 	def CrstllsdAmt(self):
@@ -29,12 +29,12 @@ class Crystallisation2(base_types._BaseFieldType):
 
 	@CrstllsdAmt.setter
 	def CrstllsdAmt(self, value):
-		self._CrstllsdAmt = value if type(value) != base_types.auto else self.make_default("CrstllsdAmt")
+		self._CrstllsdAmt = value if value is not None else base_types.UninitialisedField(self, 'CrstllsdAmt', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@CrstllsdAmt.deleter
 	def CrstllsdAmt(self):
 		del self._CrstllsdAmt
-		self._CrstllsdAmt = None
+		self._CrstllsdAmt = base_types.UninitialisedField(self, 'CrstllsdAmt', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def CrstllsdUnitsNb(self):
@@ -42,12 +42,12 @@ class Crystallisation2(base_types._BaseFieldType):
 
 	@CrstllsdUnitsNb.setter
 	def CrstllsdUnitsNb(self, value):
-		self._CrstllsdUnitsNb = value if type(value) != base_types.auto else self.make_default("CrstllsdUnitsNb")
+		self._CrstllsdUnitsNb = value if value is not None else base_types.UninitialisedField(self, 'CrstllsdUnitsNb', DecimalNumber, False)
 
 	@CrstllsdUnitsNb.deleter
 	def CrstllsdUnitsNb(self):
 		del self._CrstllsdUnitsNb
-		self._CrstllsdUnitsNb = None
+		self._CrstllsdUnitsNb = base_types.UninitialisedField(self, 'CrstllsdUnitsNb', DecimalNumber, False)
 
 	@property
 	def TrchId(self):
@@ -55,12 +55,12 @@ class Crystallisation2(base_types._BaseFieldType):
 
 	@TrchId.setter
 	def TrchId(self, value):
-		self._TrchId = value if type(value) != base_types.auto else self.make_default("TrchId")
+		self._TrchId = value if value is not None else base_types.UninitialisedField(self, 'TrchId', Max35Text, False)
 
 	@TrchId.deleter
 	def TrchId(self):
 		del self._TrchId
-		self._TrchId = None
+		self._TrchId = base_types.UninitialisedField(self, 'TrchId', Max35Text, False)
 
 	@property
 	def UcrstllsdAmt(self):
@@ -68,12 +68,12 @@ class Crystallisation2(base_types._BaseFieldType):
 
 	@UcrstllsdAmt.setter
 	def UcrstllsdAmt(self, value):
-		self._UcrstllsdAmt = value if type(value) != base_types.auto else self.make_default("UcrstllsdAmt")
+		self._UcrstllsdAmt = value if value is not None else base_types.UninitialisedField(self, 'UcrstllsdAmt', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@UcrstllsdAmt.deleter
 	def UcrstllsdAmt(self):
 		del self._UcrstllsdAmt
-		self._UcrstllsdAmt = None
+		self._UcrstllsdAmt = base_types.UninitialisedField(self, 'UcrstllsdAmt', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def UcrstllsdUnitsNb(self):
@@ -81,12 +81,12 @@ class Crystallisation2(base_types._BaseFieldType):
 
 	@UcrstllsdUnitsNb.setter
 	def UcrstllsdUnitsNb(self, value):
-		self._UcrstllsdUnitsNb = value if type(value) != base_types.auto else self.make_default("UcrstllsdUnitsNb")
+		self._UcrstllsdUnitsNb = value if value is not None else base_types.UninitialisedField(self, 'UcrstllsdUnitsNb', DecimalNumber, False)
 
 	@UcrstllsdUnitsNb.deleter
 	def UcrstllsdUnitsNb(self):
 		del self._UcrstllsdUnitsNb
-		self._UcrstllsdUnitsNb = None
+		self._UcrstllsdUnitsNb = base_types.UninitialisedField(self, 'UcrstllsdUnitsNb', DecimalNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),

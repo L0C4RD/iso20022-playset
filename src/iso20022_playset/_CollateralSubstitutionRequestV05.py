@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Agreement4 import Agreement4
-from ._CollateralSubstitution7 import CollateralSubstitution7
-from ._CollateralSubstitution8 import CollateralSubstitution8
-from ._Max35Text import Max35Text
-from ._Obligation9 import Obligation9
-from ._SupplementaryData1 import SupplementaryData1
+from . import Agreement4
+from . import CollateralSubstitution7
+from . import CollateralSubstitution8
+from . import Max35Text
+from . import Obligation9
+from . import SupplementaryData1
 
 class CollateralSubstitutionRequestV05(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class CollateralSubstitutionRequestV05(base_types._BaseFieldType):
 
 	@Agrmt.setter
 	def Agrmt(self, value):
-		self._Agrmt = value if type(value) != base_types.auto else self.make_default("Agrmt")
+		self._Agrmt = value if value is not None else base_types.UninitialisedField(self, 'Agrmt', Agreement4, False)
 
 	@Agrmt.deleter
 	def Agrmt(self):
 		del self._Agrmt
-		self._Agrmt = None
+		self._Agrmt = base_types.UninitialisedField(self, 'Agrmt', Agreement4, False)
 
 	@property
 	def CollSbstitnDlvr(self):
@@ -31,12 +31,12 @@ class CollateralSubstitutionRequestV05(base_types._BaseFieldType):
 
 	@CollSbstitnDlvr.setter
 	def CollSbstitnDlvr(self, value):
-		self._CollSbstitnDlvr = value if type(value) != base_types.auto else self.make_default("CollSbstitnDlvr")
+		self._CollSbstitnDlvr = value if value is not None else base_types.UninitialisedField(self, 'CollSbstitnDlvr', CollateralSubstitution8, False)
 
 	@CollSbstitnDlvr.deleter
 	def CollSbstitnDlvr(self):
 		del self._CollSbstitnDlvr
-		self._CollSbstitnDlvr = None
+		self._CollSbstitnDlvr = base_types.UninitialisedField(self, 'CollSbstitnDlvr', CollateralSubstitution8, False)
 
 	@property
 	def CollSbstitnRtr(self):
@@ -44,12 +44,12 @@ class CollateralSubstitutionRequestV05(base_types._BaseFieldType):
 
 	@CollSbstitnRtr.setter
 	def CollSbstitnRtr(self, value):
-		self._CollSbstitnRtr = value if type(value) != base_types.auto else self.make_default("CollSbstitnRtr")
+		self._CollSbstitnRtr = value if value is not None else base_types.UninitialisedField(self, 'CollSbstitnRtr', CollateralSubstitution7, False)
 
 	@CollSbstitnRtr.deleter
 	def CollSbstitnRtr(self):
 		del self._CollSbstitnRtr
-		self._CollSbstitnRtr = None
+		self._CollSbstitnRtr = base_types.UninitialisedField(self, 'CollSbstitnRtr', CollateralSubstitution7, False)
 
 	@property
 	def Oblgtn(self):
@@ -57,12 +57,12 @@ class CollateralSubstitutionRequestV05(base_types._BaseFieldType):
 
 	@Oblgtn.setter
 	def Oblgtn(self, value):
-		self._Oblgtn = value if type(value) != base_types.auto else self.make_default("Oblgtn")
+		self._Oblgtn = value if value is not None else base_types.UninitialisedField(self, 'Oblgtn', Obligation9, False)
 
 	@Oblgtn.deleter
 	def Oblgtn(self):
 		del self._Oblgtn
-		self._Oblgtn = None
+		self._Oblgtn = base_types.UninitialisedField(self, 'Oblgtn', Obligation9, False)
 
 	@property
 	def SplmtryData(self):
@@ -70,12 +70,12 @@ class CollateralSubstitutionRequestV05(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TxId(self):
@@ -83,12 +83,12 @@ class CollateralSubstitutionRequestV05(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Agrmt', type=Agreement4, min=0, max=1, mutex_group=None, array=False),

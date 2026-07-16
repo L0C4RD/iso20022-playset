@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._VerificationInitiationV03 import VerificationInitiationV03
+from . import VerificationInitiationV03
 
 class CAIN_018_001_03():
 
@@ -18,12 +18,12 @@ class CAIN_018_001_03():
 
 		@VrfctnInitn.setter
 		def VrfctnInitn(self, value):
-			self._VrfctnInitn = value if type(value) != base_types.auto else self.make_default("VrfctnInitn")
+			self._VrfctnInitn = value if value is not None else base_types.UninitialisedField(self, 'VrfctnInitn', VerificationInitiationV03, False)
 
 		@VrfctnInitn.deleter
 		def VrfctnInitn(self):
 			del self._VrfctnInitn
-			self._VrfctnInitn = None
+			self._VrfctnInitn = base_types.UninitialisedField(self, 'VrfctnInitn', VerificationInitiationV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='VrfctnInitn', type=VerificationInitiationV03, min=1, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ReconciliationInitiationV05 import ReconciliationInitiationV05
+from . import ReconciliationInitiationV05
 
 class CAAD_005_001_05():
 
@@ -18,12 +18,12 @@ class CAAD_005_001_05():
 
 		@RcncltnInitn.setter
 		def RcncltnInitn(self, value):
-			self._RcncltnInitn = value if type(value) != base_types.auto else self.make_default("RcncltnInitn")
+			self._RcncltnInitn = value if value is not None else base_types.UninitialisedField(self, 'RcncltnInitn', ReconciliationInitiationV05, False)
 
 		@RcncltnInitn.deleter
 		def RcncltnInitn(self):
 			del self._RcncltnInitn
-			self._RcncltnInitn = None
+			self._RcncltnInitn = base_types.UninitialisedField(self, 'RcncltnInitn', ReconciliationInitiationV05, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='RcncltnInitn', type=ReconciliationInitiationV05, min=1, max=1, mutex_group=None, array=False),

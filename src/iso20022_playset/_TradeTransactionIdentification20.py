@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MasterAgreement7 import MasterAgreement7
-from ._Max140Text import Max140Text
-from ._Max52Text import Max52Text
-from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
-from ._PartyIdentification236Choice import PartyIdentification236Choice
+from . import MasterAgreement7
+from . import Max140Text
+from . import Max52Text
+from . import OrganisationIdentification15Choice
+from . import PartyIdentification236Choice
 
 class TradeTransactionIdentification20(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class TradeTransactionIdentification20(base_types._BaseFieldType):
 
 	@AgtLndr.setter
 	def AgtLndr(self, value):
-		self._AgtLndr = value if type(value) != base_types.auto else self.make_default("AgtLndr")
+		self._AgtLndr = value if value is not None else base_types.UninitialisedField(self, 'AgtLndr', OrganisationIdentification15Choice, False)
 
 	@AgtLndr.deleter
 	def AgtLndr(self):
 		del self._AgtLndr
-		self._AgtLndr = None
+		self._AgtLndr = base_types.UninitialisedField(self, 'AgtLndr', OrganisationIdentification15Choice, False)
 
 	@property
 	def MstrAgrmt(self):
@@ -30,12 +30,12 @@ class TradeTransactionIdentification20(base_types._BaseFieldType):
 
 	@MstrAgrmt.setter
 	def MstrAgrmt(self, value):
-		self._MstrAgrmt = value if type(value) != base_types.auto else self.make_default("MstrAgrmt")
+		self._MstrAgrmt = value if value is not None else base_types.UninitialisedField(self, 'MstrAgrmt', MasterAgreement7, False)
 
 	@MstrAgrmt.deleter
 	def MstrAgrmt(self):
 		del self._MstrAgrmt
-		self._MstrAgrmt = None
+		self._MstrAgrmt = base_types.UninitialisedField(self, 'MstrAgrmt', MasterAgreement7, False)
 
 	@property
 	def NttyRspnsblForRpt(self):
@@ -43,12 +43,12 @@ class TradeTransactionIdentification20(base_types._BaseFieldType):
 
 	@NttyRspnsblForRpt.setter
 	def NttyRspnsblForRpt(self, value):
-		self._NttyRspnsblForRpt = value if type(value) != base_types.auto else self.make_default("NttyRspnsblForRpt")
+		self._NttyRspnsblForRpt = value if value is not None else base_types.UninitialisedField(self, 'NttyRspnsblForRpt', OrganisationIdentification15Choice, False)
 
 	@NttyRspnsblForRpt.deleter
 	def NttyRspnsblForRpt(self):
 		del self._NttyRspnsblForRpt
-		self._NttyRspnsblForRpt = None
+		self._NttyRspnsblForRpt = base_types.UninitialisedField(self, 'NttyRspnsblForRpt', OrganisationIdentification15Choice, False)
 
 	@property
 	def OthrCtrPty(self):
@@ -56,12 +56,12 @@ class TradeTransactionIdentification20(base_types._BaseFieldType):
 
 	@OthrCtrPty.setter
 	def OthrCtrPty(self, value):
-		self._OthrCtrPty = value if type(value) != base_types.auto else self.make_default("OthrCtrPty")
+		self._OthrCtrPty = value if value is not None else base_types.UninitialisedField(self, 'OthrCtrPty', PartyIdentification236Choice, False)
 
 	@OthrCtrPty.deleter
 	def OthrCtrPty(self):
 		del self._OthrCtrPty
-		self._OthrCtrPty = None
+		self._OthrCtrPty = base_types.UninitialisedField(self, 'OthrCtrPty', PartyIdentification236Choice, False)
 
 	@property
 	def RptgCtrPty(self):
@@ -69,12 +69,12 @@ class TradeTransactionIdentification20(base_types._BaseFieldType):
 
 	@RptgCtrPty.setter
 	def RptgCtrPty(self, value):
-		self._RptgCtrPty = value if type(value) != base_types.auto else self.make_default("RptgCtrPty")
+		self._RptgCtrPty = value if value is not None else base_types.UninitialisedField(self, 'RptgCtrPty', OrganisationIdentification15Choice, False)
 
 	@RptgCtrPty.deleter
 	def RptgCtrPty(self):
 		del self._RptgCtrPty
-		self._RptgCtrPty = None
+		self._RptgCtrPty = base_types.UninitialisedField(self, 'RptgCtrPty', OrganisationIdentification15Choice, False)
 
 	@property
 	def TechRcrdId(self):
@@ -82,12 +82,12 @@ class TradeTransactionIdentification20(base_types._BaseFieldType):
 
 	@TechRcrdId.setter
 	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
+		self._TechRcrdId = value if value is not None else base_types.UninitialisedField(self, 'TechRcrdId', Max140Text, False)
 
 	@TechRcrdId.deleter
 	def TechRcrdId(self):
 		del self._TechRcrdId
-		self._TechRcrdId = None
+		self._TechRcrdId = base_types.UninitialisedField(self, 'TechRcrdId', Max140Text, False)
 
 	@property
 	def TrptyAgt(self):
@@ -95,12 +95,12 @@ class TradeTransactionIdentification20(base_types._BaseFieldType):
 
 	@TrptyAgt.setter
 	def TrptyAgt(self, value):
-		self._TrptyAgt = value if type(value) != base_types.auto else self.make_default("TrptyAgt")
+		self._TrptyAgt = value if value is not None else base_types.UninitialisedField(self, 'TrptyAgt', OrganisationIdentification15Choice, False)
 
 	@TrptyAgt.deleter
 	def TrptyAgt(self):
 		del self._TrptyAgt
-		self._TrptyAgt = None
+		self._TrptyAgt = base_types.UninitialisedField(self, 'TrptyAgt', OrganisationIdentification15Choice, False)
 
 	@property
 	def UnqTradIdr(self):
@@ -108,12 +108,12 @@ class TradeTransactionIdentification20(base_types._BaseFieldType):
 
 	@UnqTradIdr.setter
 	def UnqTradIdr(self, value):
-		self._UnqTradIdr = value if type(value) != base_types.auto else self.make_default("UnqTradIdr")
+		self._UnqTradIdr = value if value is not None else base_types.UninitialisedField(self, 'UnqTradIdr', Max52Text, False)
 
 	@UnqTradIdr.deleter
 	def UnqTradIdr(self):
 		del self._UnqTradIdr
-		self._UnqTradIdr = None
+		self._UnqTradIdr = base_types.UninitialisedField(self, 'UnqTradIdr', Max52Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AgtLndr', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),

@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AssessmentOfValueRequiredUnderCOLLUKType1Code import AssessmentOfValueRequiredUnderCOLLUKType1Code
-from ._EMTDataReportingVFMUKType1Code import EMTDataReportingVFMUKType1Code
-from ._ISODate import ISODate
-from ._Max350Text import Max350Text
-from ._OtherReviewRelatedToValueAndOrChargesUKType1Code import OtherReviewRelatedToValueAndOrChargesUKType1Code
-from ._OutcomeOfCOLLAssessmentOfValueUKType1Code import OutcomeOfCOLLAssessmentOfValueUKType1Code
-from ._OutcomeOfPRINValueAssessmentOrReviewUKType1Code import OutcomeOfPRINValueAssessmentOrReviewUKType1Code
+from . import AssessmentOfValueRequiredUnderCOLLUKType1Code
+from . import EMTDataReportingVFMUKType1Code
+from . import ISODate
+from . import Max350Text
+from . import OtherReviewRelatedToValueAndOrChargesUKType1Code
+from . import OutcomeOfCOLLAssessmentOfValueUKType1Code
+from . import OutcomeOfPRINValueAssessmentOrReviewUKType1Code
 
 class ValueForMoney1(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class ValueForMoney1(base_types._BaseFieldType):
 
 	@AssmntOfValReqrdUdrCOLLUK.setter
 	def AssmntOfValReqrdUdrCOLLUK(self, value):
-		self._AssmntOfValReqrdUdrCOLLUK = value if type(value) != base_types.auto else self.make_default("AssmntOfValReqrdUdrCOLLUK")
+		self._AssmntOfValReqrdUdrCOLLUK = value if value is not None else base_types.UninitialisedField(self, 'AssmntOfValReqrdUdrCOLLUK', AssessmentOfValueRequiredUnderCOLLUKType1Code, False)
 
 	@AssmntOfValReqrdUdrCOLLUK.deleter
 	def AssmntOfValReqrdUdrCOLLUK(self):
 		del self._AssmntOfValReqrdUdrCOLLUK
-		self._AssmntOfValReqrdUdrCOLLUK = None
+		self._AssmntOfValReqrdUdrCOLLUK = base_types.UninitialisedField(self, 'AssmntOfValReqrdUdrCOLLUK', AssessmentOfValueRequiredUnderCOLLUKType1Code, False)
 
 	@property
 	def EMTDataRptgVFMUK(self):
@@ -32,12 +32,12 @@ class ValueForMoney1(base_types._BaseFieldType):
 
 	@EMTDataRptgVFMUK.setter
 	def EMTDataRptgVFMUK(self, value):
-		self._EMTDataRptgVFMUK = value if type(value) != base_types.auto else self.make_default("EMTDataRptgVFMUK")
+		self._EMTDataRptgVFMUK = value if value is not None else base_types.UninitialisedField(self, 'EMTDataRptgVFMUK', EMTDataReportingVFMUKType1Code, False)
 
 	@EMTDataRptgVFMUK.deleter
 	def EMTDataRptgVFMUK(self):
 		del self._EMTDataRptgVFMUK
-		self._EMTDataRptgVFMUK = None
+		self._EMTDataRptgVFMUK = base_types.UninitialisedField(self, 'EMTDataRptgVFMUK', EMTDataReportingVFMUKType1Code, False)
 
 	@property
 	def FrthrInfUK(self):
@@ -45,12 +45,12 @@ class ValueForMoney1(base_types._BaseFieldType):
 
 	@FrthrInfUK.setter
 	def FrthrInfUK(self, value):
-		self._FrthrInfUK = value if type(value) != base_types.auto else self.make_default("FrthrInfUK")
+		self._FrthrInfUK = value if value is not None else base_types.UninitialisedField(self, 'FrthrInfUK', Max350Text, False)
 
 	@FrthrInfUK.deleter
 	def FrthrInfUK(self):
 		del self._FrthrInfUK
-		self._FrthrInfUK = None
+		self._FrthrInfUK = base_types.UninitialisedField(self, 'FrthrInfUK', Max350Text, False)
 
 	@property
 	def OthrRvwRltdToValAndOrChrgsUK(self):
@@ -58,12 +58,12 @@ class ValueForMoney1(base_types._BaseFieldType):
 
 	@OthrRvwRltdToValAndOrChrgsUK.setter
 	def OthrRvwRltdToValAndOrChrgsUK(self, value):
-		self._OthrRvwRltdToValAndOrChrgsUK = value if type(value) != base_types.auto else self.make_default("OthrRvwRltdToValAndOrChrgsUK")
+		self._OthrRvwRltdToValAndOrChrgsUK = value if value is not None else base_types.UninitialisedField(self, 'OthrRvwRltdToValAndOrChrgsUK', OtherReviewRelatedToValueAndOrChargesUKType1Code, False)
 
 	@OthrRvwRltdToValAndOrChrgsUK.deleter
 	def OthrRvwRltdToValAndOrChrgsUK(self):
 		del self._OthrRvwRltdToValAndOrChrgsUK
-		self._OthrRvwRltdToValAndOrChrgsUK = None
+		self._OthrRvwRltdToValAndOrChrgsUK = base_types.UninitialisedField(self, 'OthrRvwRltdToValAndOrChrgsUK', OtherReviewRelatedToValueAndOrChargesUKType1Code, False)
 
 	@property
 	def OutcmOfCOLLAssmntOfValUK(self):
@@ -71,12 +71,12 @@ class ValueForMoney1(base_types._BaseFieldType):
 
 	@OutcmOfCOLLAssmntOfValUK.setter
 	def OutcmOfCOLLAssmntOfValUK(self, value):
-		self._OutcmOfCOLLAssmntOfValUK = value if type(value) != base_types.auto else self.make_default("OutcmOfCOLLAssmntOfValUK")
+		self._OutcmOfCOLLAssmntOfValUK = value if value is not None else base_types.UninitialisedField(self, 'OutcmOfCOLLAssmntOfValUK', OutcomeOfCOLLAssessmentOfValueUKType1Code, False)
 
 	@OutcmOfCOLLAssmntOfValUK.deleter
 	def OutcmOfCOLLAssmntOfValUK(self):
 		del self._OutcmOfCOLLAssmntOfValUK
-		self._OutcmOfCOLLAssmntOfValUK = None
+		self._OutcmOfCOLLAssmntOfValUK = base_types.UninitialisedField(self, 'OutcmOfCOLLAssmntOfValUK', OutcomeOfCOLLAssessmentOfValueUKType1Code, False)
 
 	@property
 	def OutcmOfPRINValAssmntOrRvwUK(self):
@@ -84,12 +84,12 @@ class ValueForMoney1(base_types._BaseFieldType):
 
 	@OutcmOfPRINValAssmntOrRvwUK.setter
 	def OutcmOfPRINValAssmntOrRvwUK(self, value):
-		self._OutcmOfPRINValAssmntOrRvwUK = value if type(value) != base_types.auto else self.make_default("OutcmOfPRINValAssmntOrRvwUK")
+		self._OutcmOfPRINValAssmntOrRvwUK = value if value is not None else base_types.UninitialisedField(self, 'OutcmOfPRINValAssmntOrRvwUK', OutcomeOfPRINValueAssessmentOrReviewUKType1Code, False)
 
 	@OutcmOfPRINValAssmntOrRvwUK.deleter
 	def OutcmOfPRINValAssmntOrRvwUK(self):
 		del self._OutcmOfPRINValAssmntOrRvwUK
-		self._OutcmOfPRINValAssmntOrRvwUK = None
+		self._OutcmOfPRINValAssmntOrRvwUK = base_types.UninitialisedField(self, 'OutcmOfPRINValAssmntOrRvwUK', OutcomeOfPRINValueAssessmentOrReviewUKType1Code, False)
 
 	@property
 	def RvwDtUK(self):
@@ -97,12 +97,12 @@ class ValueForMoney1(base_types._BaseFieldType):
 
 	@RvwDtUK.setter
 	def RvwDtUK(self, value):
-		self._RvwDtUK = value if type(value) != base_types.auto else self.make_default("RvwDtUK")
+		self._RvwDtUK = value if value is not None else base_types.UninitialisedField(self, 'RvwDtUK', ISODate, False)
 
 	@RvwDtUK.deleter
 	def RvwDtUK(self):
 		del self._RvwDtUK
-		self._RvwDtUK = None
+		self._RvwDtUK = base_types.UninitialisedField(self, 'RvwDtUK', ISODate, False)
 
 	@property
 	def RvwNxtDueUK(self):
@@ -110,12 +110,12 @@ class ValueForMoney1(base_types._BaseFieldType):
 
 	@RvwNxtDueUK.setter
 	def RvwNxtDueUK(self, value):
-		self._RvwNxtDueUK = value if type(value) != base_types.auto else self.make_default("RvwNxtDueUK")
+		self._RvwNxtDueUK = value if value is not None else base_types.UninitialisedField(self, 'RvwNxtDueUK', ISODate, False)
 
 	@RvwNxtDueUK.deleter
 	def RvwNxtDueUK(self):
 		del self._RvwNxtDueUK
-		self._RvwNxtDueUK = None
+		self._RvwNxtDueUK = base_types.UninitialisedField(self, 'RvwNxtDueUK', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AssmntOfValReqrdUdrCOLLUK', type=AssessmentOfValueRequiredUnderCOLLUKType1Code, min=0, max=1, mutex_group=None, array=False),

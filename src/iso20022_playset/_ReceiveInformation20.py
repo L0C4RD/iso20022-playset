@@ -2,24 +2,24 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Account31 import Account31
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._AdditionalReference10 import AdditionalReference10
-from ._BeneficiaryCertificationCompletion1Code import BeneficiaryCertificationCompletion1Code
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._DeliveryParameters4 import DeliveryParameters4
-from ._Fees2 import Fees2
-from ._ForeignExchangeTerms37 import ForeignExchangeTerms37
-from ._FormOfSecurity1Code import FormOfSecurity1Code
-from ._FundSettlementParameters16 import FundSettlementParameters16
-from ._ISODate import ISODate
-from ._IncomePreference2Code import IncomePreference2Code
-from ._Intermediary43 import Intermediary43
-from ._PartyIdentification139 import PartyIdentification139
-from ._PhysicalTransferType1Code import PhysicalTransferType1Code
-from ._StampDutyType2Code import StampDutyType2Code
-from ._Tax38 import Tax38
-from ._YesNoIndicator import YesNoIndicator
+from . import Account31
+from . import ActiveCurrencyAndAmount
+from . import AdditionalReference10
+from . import BeneficiaryCertificationCompletion1Code
+from . import DateAndDateTime2Choice
+from . import DeliveryParameters4
+from . import Fees2
+from . import ForeignExchangeTerms37
+from . import FormOfSecurity1Code
+from . import FundSettlementParameters16
+from . import ISODate
+from . import IncomePreference2Code
+from . import Intermediary43
+from . import PartyIdentification139
+from . import PhysicalTransferType1Code
+from . import StampDutyType2Code
+from . import Tax38
+from . import YesNoIndicator
 
 class ReceiveInformation20(base_types._BaseFieldType):
 
@@ -30,12 +30,12 @@ class ReceiveInformation20(base_types._BaseFieldType):
 
 	@BnfcryCertfctnCmpltn.setter
 	def BnfcryCertfctnCmpltn(self, value):
-		self._BnfcryCertfctnCmpltn = value if type(value) != base_types.auto else self.make_default("BnfcryCertfctnCmpltn")
+		self._BnfcryCertfctnCmpltn = value if value is not None else base_types.UninitialisedField(self, 'BnfcryCertfctnCmpltn', BeneficiaryCertificationCompletion1Code, False)
 
 	@BnfcryCertfctnCmpltn.deleter
 	def BnfcryCertfctnCmpltn(self):
 		del self._BnfcryCertfctnCmpltn
-		self._BnfcryCertfctnCmpltn = None
+		self._BnfcryCertfctnCmpltn = base_types.UninitialisedField(self, 'BnfcryCertfctnCmpltn', BeneficiaryCertificationCompletion1Code, False)
 
 	@property
 	def ClntRef(self):
@@ -43,12 +43,12 @@ class ReceiveInformation20(base_types._BaseFieldType):
 
 	@ClntRef.setter
 	def ClntRef(self, value):
-		self._ClntRef = value if type(value) != base_types.auto else self.make_default("ClntRef")
+		self._ClntRef = value if value is not None else base_types.UninitialisedField(self, 'ClntRef', AdditionalReference10, False)
 
 	@ClntRef.deleter
 	def ClntRef(self):
 		del self._ClntRef
-		self._ClntRef = None
+		self._ClntRef = base_types.UninitialisedField(self, 'ClntRef', AdditionalReference10, False)
 
 	@property
 	def DmtrlsdInd(self):
@@ -56,12 +56,12 @@ class ReceiveInformation20(base_types._BaseFieldType):
 
 	@DmtrlsdInd.setter
 	def DmtrlsdInd(self, value):
-		self._DmtrlsdInd = value if type(value) != base_types.auto else self.make_default("DmtrlsdInd")
+		self._DmtrlsdInd = value if value is not None else base_types.UninitialisedField(self, 'DmtrlsdInd', YesNoIndicator, False)
 
 	@DmtrlsdInd.deleter
 	def DmtrlsdInd(self):
 		del self._DmtrlsdInd
-		self._DmtrlsdInd = None
+		self._DmtrlsdInd = base_types.UninitialisedField(self, 'DmtrlsdInd', YesNoIndicator, False)
 
 	@property
 	def FXDtls(self):
@@ -69,12 +69,12 @@ class ReceiveInformation20(base_types._BaseFieldType):
 
 	@FXDtls.setter
 	def FXDtls(self, value):
-		self._FXDtls = value if type(value) != base_types.auto else self.make_default("FXDtls")
+		self._FXDtls = value if value is not None else base_types.UninitialisedField(self, 'FXDtls', ForeignExchangeTerms37, True)
 
 	@FXDtls.deleter
 	def FXDtls(self):
 		del self._FXDtls
-		self._FXDtls = None
+		self._FXDtls = base_types.UninitialisedField(self, 'FXDtls', ForeignExchangeTerms37, True)
 
 	@property
 	def FctvSttlmDt(self):
@@ -82,12 +82,12 @@ class ReceiveInformation20(base_types._BaseFieldType):
 
 	@FctvSttlmDt.setter
 	def FctvSttlmDt(self, value):
-		self._FctvSttlmDt = value if type(value) != base_types.auto else self.make_default("FctvSttlmDt")
+		self._FctvSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'FctvSttlmDt', DateAndDateTime2Choice, False)
 
 	@FctvSttlmDt.deleter
 	def FctvSttlmDt(self):
 		del self._FctvSttlmDt
-		self._FctvSttlmDt = None
+		self._FctvSttlmDt = base_types.UninitialisedField(self, 'FctvSttlmDt', DateAndDateTime2Choice, False)
 
 	@property
 	def Fees(self):
@@ -95,12 +95,12 @@ class ReceiveInformation20(base_types._BaseFieldType):
 
 	@Fees.setter
 	def Fees(self, value):
-		self._Fees = value if type(value) != base_types.auto else self.make_default("Fees")
+		self._Fees = value if value is not None else base_types.UninitialisedField(self, 'Fees', Fees2, True)
 
 	@Fees.deleter
 	def Fees(self):
 		del self._Fees
-		self._Fees = None
+		self._Fees = base_types.UninitialisedField(self, 'Fees', Fees2, True)
 
 	@property
 	def IncmPref(self):
@@ -108,12 +108,12 @@ class ReceiveInformation20(base_types._BaseFieldType):
 
 	@IncmPref.setter
 	def IncmPref(self, value):
-		self._IncmPref = value if type(value) != base_types.auto else self.make_default("IncmPref")
+		self._IncmPref = value if value is not None else base_types.UninitialisedField(self, 'IncmPref', IncomePreference2Code, False)
 
 	@IncmPref.deleter
 	def IncmPref(self):
 		del self._IncmPref
-		self._IncmPref = None
+		self._IncmPref = base_types.UninitialisedField(self, 'IncmPref', IncomePreference2Code, False)
 
 	@property
 	def IndvTax(self):
@@ -121,12 +121,12 @@ class ReceiveInformation20(base_types._BaseFieldType):
 
 	@IndvTax.setter
 	def IndvTax(self, value):
-		self._IndvTax = value if type(value) != base_types.auto else self.make_default("IndvTax")
+		self._IndvTax = value if value is not None else base_types.UninitialisedField(self, 'IndvTax', Tax38, True)
 
 	@IndvTax.deleter
 	def IndvTax(self):
 		del self._IndvTax
-		self._IndvTax = None
+		self._IndvTax = base_types.UninitialisedField(self, 'IndvTax', Tax38, True)
 
 	@property
 	def IntrmyInf(self):
@@ -134,12 +134,12 @@ class ReceiveInformation20(base_types._BaseFieldType):
 
 	@IntrmyInf.setter
 	def IntrmyInf(self, value):
-		self._IntrmyInf = value if type(value) != base_types.auto else self.make_default("IntrmyInf")
+		self._IntrmyInf = value if value is not None else base_types.UninitialisedField(self, 'IntrmyInf', Intermediary43, True)
 
 	@IntrmyInf.deleter
 	def IntrmyInf(self):
 		del self._IntrmyInf
-		self._IntrmyInf = None
+		self._IntrmyInf = base_types.UninitialisedField(self, 'IntrmyInf', Intermediary43, True)
 
 	@property
 	def NetAmt(self):
@@ -147,12 +147,12 @@ class ReceiveInformation20(base_types._BaseFieldType):
 
 	@NetAmt.setter
 	def NetAmt(self, value):
-		self._NetAmt = value if type(value) != base_types.auto else self.make_default("NetAmt")
+		self._NetAmt = value if value is not None else base_types.UninitialisedField(self, 'NetAmt', ActiveCurrencyAndAmount, False)
 
 	@NetAmt.deleter
 	def NetAmt(self):
 		del self._NetAmt
-		self._NetAmt = None
+		self._NetAmt = base_types.UninitialisedField(self, 'NetAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def PhysTrf(self):
@@ -160,12 +160,12 @@ class ReceiveInformation20(base_types._BaseFieldType):
 
 	@PhysTrf.setter
 	def PhysTrf(self, value):
-		self._PhysTrf = value if type(value) != base_types.auto else self.make_default("PhysTrf")
+		self._PhysTrf = value if value is not None else base_types.UninitialisedField(self, 'PhysTrf', PhysicalTransferType1Code, False)
 
 	@PhysTrf.deleter
 	def PhysTrf(self):
 		del self._PhysTrf
-		self._PhysTrf = None
+		self._PhysTrf = base_types.UninitialisedField(self, 'PhysTrf', PhysicalTransferType1Code, False)
 
 	@property
 	def PhysTrfDtls(self):
@@ -173,12 +173,12 @@ class ReceiveInformation20(base_types._BaseFieldType):
 
 	@PhysTrfDtls.setter
 	def PhysTrfDtls(self, value):
-		self._PhysTrfDtls = value if type(value) != base_types.auto else self.make_default("PhysTrfDtls")
+		self._PhysTrfDtls = value if value is not None else base_types.UninitialisedField(self, 'PhysTrfDtls', DeliveryParameters4, False)
 
 	@PhysTrfDtls.deleter
 	def PhysTrfDtls(self):
 		del self._PhysTrfDtls
-		self._PhysTrfDtls = None
+		self._PhysTrfDtls = base_types.UninitialisedField(self, 'PhysTrfDtls', DeliveryParameters4, False)
 
 	@property
 	def ReqdSttlmDt(self):
@@ -186,12 +186,12 @@ class ReceiveInformation20(base_types._BaseFieldType):
 
 	@ReqdSttlmDt.setter
 	def ReqdSttlmDt(self, value):
-		self._ReqdSttlmDt = value if type(value) != base_types.auto else self.make_default("ReqdSttlmDt")
+		self._ReqdSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'ReqdSttlmDt', ISODate, False)
 
 	@ReqdSttlmDt.deleter
 	def ReqdSttlmDt(self):
 		del self._ReqdSttlmDt
-		self._ReqdSttlmDt = None
+		self._ReqdSttlmDt = base_types.UninitialisedField(self, 'ReqdSttlmDt', ISODate, False)
 
 	@property
 	def ReqdTradDt(self):
@@ -199,12 +199,12 @@ class ReceiveInformation20(base_types._BaseFieldType):
 
 	@ReqdTradDt.setter
 	def ReqdTradDt(self, value):
-		self._ReqdTradDt = value if type(value) != base_types.auto else self.make_default("ReqdTradDt")
+		self._ReqdTradDt = value if value is not None else base_types.UninitialisedField(self, 'ReqdTradDt', ISODate, False)
 
 	@ReqdTradDt.deleter
 	def ReqdTradDt(self):
 		del self._ReqdTradDt
-		self._ReqdTradDt = None
+		self._ReqdTradDt = base_types.UninitialisedField(self, 'ReqdTradDt', ISODate, False)
 
 	@property
 	def SctiesForm(self):
@@ -212,12 +212,12 @@ class ReceiveInformation20(base_types._BaseFieldType):
 
 	@SctiesForm.setter
 	def SctiesForm(self, value):
-		self._SctiesForm = value if type(value) != base_types.auto else self.make_default("SctiesForm")
+		self._SctiesForm = value if value is not None else base_types.UninitialisedField(self, 'SctiesForm', FormOfSecurity1Code, False)
 
 	@SctiesForm.deleter
 	def SctiesForm(self):
 		del self._SctiesForm
-		self._SctiesForm = None
+		self._SctiesForm = base_types.UninitialisedField(self, 'SctiesForm', FormOfSecurity1Code, False)
 
 	@property
 	def StmpDty(self):
@@ -225,12 +225,12 @@ class ReceiveInformation20(base_types._BaseFieldType):
 
 	@StmpDty.setter
 	def StmpDty(self, value):
-		self._StmpDty = value if type(value) != base_types.auto else self.make_default("StmpDty")
+		self._StmpDty = value if value is not None else base_types.UninitialisedField(self, 'StmpDty', StampDutyType2Code, False)
 
 	@StmpDty.deleter
 	def StmpDty(self):
 		del self._StmpDty
-		self._StmpDty = None
+		self._StmpDty = base_types.UninitialisedField(self, 'StmpDty', StampDutyType2Code, False)
 
 	@property
 	def SttlmAmt(self):
@@ -238,12 +238,12 @@ class ReceiveInformation20(base_types._BaseFieldType):
 
 	@SttlmAmt.setter
 	def SttlmAmt(self, value):
-		self._SttlmAmt = value if type(value) != base_types.auto else self.make_default("SttlmAmt")
+		self._SttlmAmt = value if value is not None else base_types.UninitialisedField(self, 'SttlmAmt', ActiveCurrencyAndAmount, False)
 
 	@SttlmAmt.deleter
 	def SttlmAmt(self):
 		del self._SttlmAmt
-		self._SttlmAmt = None
+		self._SttlmAmt = base_types.UninitialisedField(self, 'SttlmAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def SttlmPtiesDtls(self):
@@ -251,12 +251,12 @@ class ReceiveInformation20(base_types._BaseFieldType):
 
 	@SttlmPtiesDtls.setter
 	def SttlmPtiesDtls(self, value):
-		self._SttlmPtiesDtls = value if type(value) != base_types.auto else self.make_default("SttlmPtiesDtls")
+		self._SttlmPtiesDtls = value if value is not None else base_types.UninitialisedField(self, 'SttlmPtiesDtls', FundSettlementParameters16, False)
 
 	@SttlmPtiesDtls.deleter
 	def SttlmPtiesDtls(self):
 		del self._SttlmPtiesDtls
-		self._SttlmPtiesDtls = None
+		self._SttlmPtiesDtls = base_types.UninitialisedField(self, 'SttlmPtiesDtls', FundSettlementParameters16, False)
 
 	@property
 	def Trfee(self):
@@ -264,12 +264,12 @@ class ReceiveInformation20(base_types._BaseFieldType):
 
 	@Trfee.setter
 	def Trfee(self, value):
-		self._Trfee = value if type(value) != base_types.auto else self.make_default("Trfee")
+		self._Trfee = value if value is not None else base_types.UninitialisedField(self, 'Trfee', PartyIdentification139, False)
 
 	@Trfee.deleter
 	def Trfee(self):
 		del self._Trfee
-		self._Trfee = None
+		self._Trfee = base_types.UninitialisedField(self, 'Trfee', PartyIdentification139, False)
 
 	@property
 	def TrfeeRegdAcct(self):
@@ -277,12 +277,12 @@ class ReceiveInformation20(base_types._BaseFieldType):
 
 	@TrfeeRegdAcct.setter
 	def TrfeeRegdAcct(self, value):
-		self._TrfeeRegdAcct = value if type(value) != base_types.auto else self.make_default("TrfeeRegdAcct")
+		self._TrfeeRegdAcct = value if value is not None else base_types.UninitialisedField(self, 'TrfeeRegdAcct', Account31, False)
 
 	@TrfeeRegdAcct.deleter
 	def TrfeeRegdAcct(self):
 		del self._TrfeeRegdAcct
-		self._TrfeeRegdAcct = None
+		self._TrfeeRegdAcct = base_types.UninitialisedField(self, 'TrfeeRegdAcct', Account31, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BnfcryCertfctnCmpltn', type=BeneficiaryCertificationCompletion1Code, min=0, max=1, mutex_group=None, array=False),

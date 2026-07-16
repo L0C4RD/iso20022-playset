@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardPaymentServiceType2Code import CardPaymentServiceType2Code
-from ._CardSequenceNumberRange1 import CardSequenceNumberRange1
-from ._DateOrDateTimePeriod1Choice import DateOrDateTimePeriod1Choice
-from ._ExternalCardTransactionCategory1Code import ExternalCardTransactionCategory1Code
-from ._Max35Text import Max35Text
+from . import CardPaymentServiceType2Code
+from . import CardSequenceNumberRange1
+from . import DateOrDateTimePeriod1Choice
+from . import ExternalCardTransactionCategory1Code
+from . import Max35Text
 
 class CardAggregated2(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class CardAggregated2(base_types._BaseFieldType):
 
 	@AddtlSvc.setter
 	def AddtlSvc(self, value):
-		self._AddtlSvc = value if type(value) != base_types.auto else self.make_default("AddtlSvc")
+		self._AddtlSvc = value if value is not None else base_types.UninitialisedField(self, 'AddtlSvc', CardPaymentServiceType2Code, False)
 
 	@AddtlSvc.deleter
 	def AddtlSvc(self):
 		del self._AddtlSvc
-		self._AddtlSvc = None
+		self._AddtlSvc = base_types.UninitialisedField(self, 'AddtlSvc', CardPaymentServiceType2Code, False)
 
 	@property
 	def SaleRcncltnId(self):
@@ -30,12 +30,12 @@ class CardAggregated2(base_types._BaseFieldType):
 
 	@SaleRcncltnId.setter
 	def SaleRcncltnId(self, value):
-		self._SaleRcncltnId = value if type(value) != base_types.auto else self.make_default("SaleRcncltnId")
+		self._SaleRcncltnId = value if value is not None else base_types.UninitialisedField(self, 'SaleRcncltnId', Max35Text, False)
 
 	@SaleRcncltnId.deleter
 	def SaleRcncltnId(self):
 		del self._SaleRcncltnId
-		self._SaleRcncltnId = None
+		self._SaleRcncltnId = base_types.UninitialisedField(self, 'SaleRcncltnId', Max35Text, False)
 
 	@property
 	def SeqNbRg(self):
@@ -43,12 +43,12 @@ class CardAggregated2(base_types._BaseFieldType):
 
 	@SeqNbRg.setter
 	def SeqNbRg(self, value):
-		self._SeqNbRg = value if type(value) != base_types.auto else self.make_default("SeqNbRg")
+		self._SeqNbRg = value if value is not None else base_types.UninitialisedField(self, 'SeqNbRg', CardSequenceNumberRange1, False)
 
 	@SeqNbRg.deleter
 	def SeqNbRg(self):
 		del self._SeqNbRg
-		self._SeqNbRg = None
+		self._SeqNbRg = base_types.UninitialisedField(self, 'SeqNbRg', CardSequenceNumberRange1, False)
 
 	@property
 	def TxCtgy(self):
@@ -56,12 +56,12 @@ class CardAggregated2(base_types._BaseFieldType):
 
 	@TxCtgy.setter
 	def TxCtgy(self, value):
-		self._TxCtgy = value if type(value) != base_types.auto else self.make_default("TxCtgy")
+		self._TxCtgy = value if value is not None else base_types.UninitialisedField(self, 'TxCtgy', ExternalCardTransactionCategory1Code, False)
 
 	@TxCtgy.deleter
 	def TxCtgy(self):
 		del self._TxCtgy
-		self._TxCtgy = None
+		self._TxCtgy = base_types.UninitialisedField(self, 'TxCtgy', ExternalCardTransactionCategory1Code, False)
 
 	@property
 	def TxDtRg(self):
@@ -69,12 +69,12 @@ class CardAggregated2(base_types._BaseFieldType):
 
 	@TxDtRg.setter
 	def TxDtRg(self, value):
-		self._TxDtRg = value if type(value) != base_types.auto else self.make_default("TxDtRg")
+		self._TxDtRg = value if value is not None else base_types.UninitialisedField(self, 'TxDtRg', DateOrDateTimePeriod1Choice, False)
 
 	@TxDtRg.deleter
 	def TxDtRg(self):
 		del self._TxDtRg
-		self._TxDtRg = None
+		self._TxDtRg = base_types.UninitialisedField(self, 'TxDtRg', DateOrDateTimePeriod1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlSvc', type=CardPaymentServiceType2Code, min=0, max=1, mutex_group=None, array=False),

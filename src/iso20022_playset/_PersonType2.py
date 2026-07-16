@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericPersonType1 import GenericPersonType1
-from ._RequestedIndicator import RequestedIndicator
+from . import GenericPersonType1
+from . import RequestedIndicator
 
 class PersonType2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PersonType2(base_types._BaseFieldType):
 
 	@DtAndPlcOfBirth.setter
 	def DtAndPlcOfBirth(self, value):
-		self._DtAndPlcOfBirth = value if type(value) != base_types.auto else self.make_default("DtAndPlcOfBirth")
+		self._DtAndPlcOfBirth = value if value is not None else base_types.UninitialisedField(self, 'DtAndPlcOfBirth', RequestedIndicator, False)
 
 	@DtAndPlcOfBirth.deleter
 	def DtAndPlcOfBirth(self):
 		del self._DtAndPlcOfBirth
-		self._DtAndPlcOfBirth = None
+		self._DtAndPlcOfBirth = base_types.UninitialisedField(self, 'DtAndPlcOfBirth', RequestedIndicator, False)
 
 	@property
 	def EmailAdr(self):
@@ -27,12 +27,12 @@ class PersonType2(base_types._BaseFieldType):
 
 	@EmailAdr.setter
 	def EmailAdr(self, value):
-		self._EmailAdr = value if type(value) != base_types.auto else self.make_default("EmailAdr")
+		self._EmailAdr = value if value is not None else base_types.UninitialisedField(self, 'EmailAdr', RequestedIndicator, False)
 
 	@EmailAdr.deleter
 	def EmailAdr(self):
 		del self._EmailAdr
-		self._EmailAdr = None
+		self._EmailAdr = base_types.UninitialisedField(self, 'EmailAdr', RequestedIndicator, False)
 
 	@property
 	def Othr(self):
@@ -40,12 +40,12 @@ class PersonType2(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', GenericPersonType1, True)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', GenericPersonType1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DtAndPlcOfBirth', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),

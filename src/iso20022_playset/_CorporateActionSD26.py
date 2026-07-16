@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DecimalNumber import DecimalNumber
-from ._Max15AlphaNumericText import Max15AlphaNumericText
-from ._Max4AlphaNumericText import Max4AlphaNumericText
+from . import DecimalNumber
+from . import Max15AlphaNumericText
+from . import Max4AlphaNumericText
 
 class CorporateActionSD26(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CorporateActionSD26(base_types._BaseFieldType):
 
 	@CertClldAmt.setter
 	def CertClldAmt(self, value):
-		self._CertClldAmt = value if type(value) != base_types.auto else self.make_default("CertClldAmt")
+		self._CertClldAmt = value if value is not None else base_types.UninitialisedField(self, 'CertClldAmt', DecimalNumber, False)
 
 	@CertClldAmt.deleter
 	def CertClldAmt(self):
 		del self._CertClldAmt
-		self._CertClldAmt = None
+		self._CertClldAmt = base_types.UninitialisedField(self, 'CertClldAmt', DecimalNumber, False)
 
 	@property
 	def CertNb(self):
@@ -28,12 +28,12 @@ class CorporateActionSD26(base_types._BaseFieldType):
 
 	@CertNb.setter
 	def CertNb(self, value):
-		self._CertNb = value if type(value) != base_types.auto else self.make_default("CertNb")
+		self._CertNb = value if value is not None else base_types.UninitialisedField(self, 'CertNb', Max15AlphaNumericText, False)
 
 	@CertNb.deleter
 	def CertNb(self):
 		del self._CertNb
-		self._CertNb = None
+		self._CertNb = base_types.UninitialisedField(self, 'CertNb', Max15AlphaNumericText, False)
 
 	@property
 	def CertPrfx(self):
@@ -41,12 +41,12 @@ class CorporateActionSD26(base_types._BaseFieldType):
 
 	@CertPrfx.setter
 	def CertPrfx(self, value):
-		self._CertPrfx = value if type(value) != base_types.auto else self.make_default("CertPrfx")
+		self._CertPrfx = value if value is not None else base_types.UninitialisedField(self, 'CertPrfx', Max4AlphaNumericText, False)
 
 	@CertPrfx.deleter
 	def CertPrfx(self):
 		del self._CertPrfx
-		self._CertPrfx = None
+		self._CertPrfx = base_types.UninitialisedField(self, 'CertPrfx', Max4AlphaNumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CertClldAmt', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._GenericIdentification168 import GenericIdentification168
-from ._InterestComputationMethod2Code import InterestComputationMethod2Code
-from ._Max35Text import Max35Text
+from . import ActiveCurrencyAndAmount
+from . import GenericIdentification168
+from . import InterestComputationMethod2Code
+from . import Max35Text
 
 class FinancialInstrumentAttributes90(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class FinancialInstrumentAttributes90(base_types._BaseFieldType):
 
 	@IndxId.setter
 	def IndxId(self, value):
-		self._IndxId = value if type(value) != base_types.auto else self.make_default("IndxId")
+		self._IndxId = value if value is not None else base_types.UninitialisedField(self, 'IndxId', GenericIdentification168, False)
 
 	@IndxId.deleter
 	def IndxId(self):
 		del self._IndxId
-		self._IndxId = None
+		self._IndxId = base_types.UninitialisedField(self, 'IndxId', GenericIdentification168, False)
 
 	@property
 	def IndxUnit(self):
@@ -29,12 +29,12 @@ class FinancialInstrumentAttributes90(base_types._BaseFieldType):
 
 	@IndxUnit.setter
 	def IndxUnit(self, value):
-		self._IndxUnit = value if type(value) != base_types.auto else self.make_default("IndxUnit")
+		self._IndxUnit = value if value is not None else base_types.UninitialisedField(self, 'IndxUnit', Max35Text, False)
 
 	@IndxUnit.deleter
 	def IndxUnit(self):
 		del self._IndxUnit
-		self._IndxUnit = None
+		self._IndxUnit = base_types.UninitialisedField(self, 'IndxUnit', Max35Text, False)
 
 	@property
 	def IntrstRateTerms(self):
@@ -42,12 +42,12 @@ class FinancialInstrumentAttributes90(base_types._BaseFieldType):
 
 	@IntrstRateTerms.setter
 	def IntrstRateTerms(self, value):
-		self._IntrstRateTerms = value if type(value) != base_types.auto else self.make_default("IntrstRateTerms")
+		self._IntrstRateTerms = value if value is not None else base_types.UninitialisedField(self, 'IntrstRateTerms', InterestComputationMethod2Code, False)
 
 	@IntrstRateTerms.deleter
 	def IntrstRateTerms(self):
 		del self._IntrstRateTerms
-		self._IntrstRateTerms = None
+		self._IntrstRateTerms = base_types.UninitialisedField(self, 'IntrstRateTerms', InterestComputationMethod2Code, False)
 
 	@property
 	def Ntnl(self):
@@ -55,12 +55,12 @@ class FinancialInstrumentAttributes90(base_types._BaseFieldType):
 
 	@Ntnl.setter
 	def Ntnl(self, value):
-		self._Ntnl = value if type(value) != base_types.auto else self.make_default("Ntnl")
+		self._Ntnl = value if value is not None else base_types.UninitialisedField(self, 'Ntnl', ActiveCurrencyAndAmount, False)
 
 	@Ntnl.deleter
 	def Ntnl(self):
 		del self._Ntnl
-		self._Ntnl = None
+		self._Ntnl = base_types.UninitialisedField(self, 'Ntnl', ActiveCurrencyAndAmount, False)
 
 	@property
 	def UnitVal(self):
@@ -68,12 +68,12 @@ class FinancialInstrumentAttributes90(base_types._BaseFieldType):
 
 	@UnitVal.setter
 	def UnitVal(self, value):
-		self._UnitVal = value if type(value) != base_types.auto else self.make_default("UnitVal")
+		self._UnitVal = value if value is not None else base_types.UninitialisedField(self, 'UnitVal', ActiveCurrencyAndAmount, False)
 
 	@UnitVal.deleter
 	def UnitVal(self):
 		del self._UnitVal
-		self._UnitVal = None
+		self._UnitVal = base_types.UninitialisedField(self, 'UnitVal', ActiveCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IndxId', type=GenericIdentification168, min=1, max=1, mutex_group=None, array=False),

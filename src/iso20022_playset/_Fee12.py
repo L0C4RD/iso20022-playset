@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ChargeType10Choice import ChargeType10Choice
-from ._Max35Text import Max35Text
-from ._PercentageRate import PercentageRate
-from ._YesNoIndicator import YesNoIndicator
+from . import ActiveCurrencyAndAmount
+from . import ChargeType10Choice
+from . import Max35Text
+from . import PercentageRate
+from . import YesNoIndicator
 
 class Fee12(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class Fee12(base_types._BaseFieldType):
 
 	@ComrclAgrmtRef.setter
 	def ComrclAgrmtRef(self, value):
-		self._ComrclAgrmtRef = value if type(value) != base_types.auto else self.make_default("ComrclAgrmtRef")
+		self._ComrclAgrmtRef = value if value is not None else base_types.UninitialisedField(self, 'ComrclAgrmtRef', Max35Text, False)
 
 	@ComrclAgrmtRef.deleter
 	def ComrclAgrmtRef(self):
 		del self._ComrclAgrmtRef
-		self._ComrclAgrmtRef = None
+		self._ComrclAgrmtRef = base_types.UninitialisedField(self, 'ComrclAgrmtRef', Max35Text, False)
 
 	@property
 	def NewComrclAgrmtRefInd(self):
@@ -30,12 +30,12 @@ class Fee12(base_types._BaseFieldType):
 
 	@NewComrclAgrmtRefInd.setter
 	def NewComrclAgrmtRefInd(self, value):
-		self._NewComrclAgrmtRefInd = value if type(value) != base_types.auto else self.make_default("NewComrclAgrmtRefInd")
+		self._NewComrclAgrmtRefInd = value if value is not None else base_types.UninitialisedField(self, 'NewComrclAgrmtRefInd', YesNoIndicator, False)
 
 	@NewComrclAgrmtRefInd.deleter
 	def NewComrclAgrmtRefInd(self):
 		del self._NewComrclAgrmtRefInd
-		self._NewComrclAgrmtRefInd = None
+		self._NewComrclAgrmtRefInd = base_types.UninitialisedField(self, 'NewComrclAgrmtRefInd', YesNoIndicator, False)
 
 	@property
 	def RprdDscntAmt(self):
@@ -43,12 +43,12 @@ class Fee12(base_types._BaseFieldType):
 
 	@RprdDscntAmt.setter
 	def RprdDscntAmt(self, value):
-		self._RprdDscntAmt = value if type(value) != base_types.auto else self.make_default("RprdDscntAmt")
+		self._RprdDscntAmt = value if value is not None else base_types.UninitialisedField(self, 'RprdDscntAmt', ActiveCurrencyAndAmount, False)
 
 	@RprdDscntAmt.deleter
 	def RprdDscntAmt(self):
 		del self._RprdDscntAmt
-		self._RprdDscntAmt = None
+		self._RprdDscntAmt = base_types.UninitialisedField(self, 'RprdDscntAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def RprdDscntRate(self):
@@ -56,12 +56,12 @@ class Fee12(base_types._BaseFieldType):
 
 	@RprdDscntRate.setter
 	def RprdDscntRate(self, value):
-		self._RprdDscntRate = value if type(value) != base_types.auto else self.make_default("RprdDscntRate")
+		self._RprdDscntRate = value if value is not None else base_types.UninitialisedField(self, 'RprdDscntRate', PercentageRate, False)
 
 	@RprdDscntRate.deleter
 	def RprdDscntRate(self):
 		del self._RprdDscntRate
-		self._RprdDscntRate = None
+		self._RprdDscntRate = base_types.UninitialisedField(self, 'RprdDscntRate', PercentageRate, False)
 
 	@property
 	def RprdReqdAmt(self):
@@ -69,12 +69,12 @@ class Fee12(base_types._BaseFieldType):
 
 	@RprdReqdAmt.setter
 	def RprdReqdAmt(self, value):
-		self._RprdReqdAmt = value if type(value) != base_types.auto else self.make_default("RprdReqdAmt")
+		self._RprdReqdAmt = value if value is not None else base_types.UninitialisedField(self, 'RprdReqdAmt', ActiveCurrencyAndAmount, False)
 
 	@RprdReqdAmt.deleter
 	def RprdReqdAmt(self):
 		del self._RprdReqdAmt
-		self._RprdReqdAmt = None
+		self._RprdReqdAmt = base_types.UninitialisedField(self, 'RprdReqdAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def RprdReqdRate(self):
@@ -82,12 +82,12 @@ class Fee12(base_types._BaseFieldType):
 
 	@RprdReqdRate.setter
 	def RprdReqdRate(self, value):
-		self._RprdReqdRate = value if type(value) != base_types.auto else self.make_default("RprdReqdRate")
+		self._RprdReqdRate = value if value is not None else base_types.UninitialisedField(self, 'RprdReqdRate', PercentageRate, False)
 
 	@RprdReqdRate.deleter
 	def RprdReqdRate(self):
 		del self._RprdReqdRate
-		self._RprdReqdRate = None
+		self._RprdReqdRate = base_types.UninitialisedField(self, 'RprdReqdRate', PercentageRate, False)
 
 	@property
 	def RprdStdAmt(self):
@@ -95,12 +95,12 @@ class Fee12(base_types._BaseFieldType):
 
 	@RprdStdAmt.setter
 	def RprdStdAmt(self, value):
-		self._RprdStdAmt = value if type(value) != base_types.auto else self.make_default("RprdStdAmt")
+		self._RprdStdAmt = value if value is not None else base_types.UninitialisedField(self, 'RprdStdAmt', ActiveCurrencyAndAmount, False)
 
 	@RprdStdAmt.deleter
 	def RprdStdAmt(self):
 		del self._RprdStdAmt
-		self._RprdStdAmt = None
+		self._RprdStdAmt = base_types.UninitialisedField(self, 'RprdStdAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def RprdStdRate(self):
@@ -108,12 +108,12 @@ class Fee12(base_types._BaseFieldType):
 
 	@RprdStdRate.setter
 	def RprdStdRate(self, value):
-		self._RprdStdRate = value if type(value) != base_types.auto else self.make_default("RprdStdRate")
+		self._RprdStdRate = value if value is not None else base_types.UninitialisedField(self, 'RprdStdRate', PercentageRate, False)
 
 	@RprdStdRate.deleter
 	def RprdStdRate(self):
 		del self._RprdStdRate
-		self._RprdStdRate = None
+		self._RprdStdRate = base_types.UninitialisedField(self, 'RprdStdRate', PercentageRate, False)
 
 	@property
 	def Tp(self):
@@ -121,12 +121,12 @@ class Fee12(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', ChargeType10Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', ChargeType10Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ComrclAgrmtRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

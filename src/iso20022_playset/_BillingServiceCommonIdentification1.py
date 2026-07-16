@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max6Text import Max6Text
-from ._Max8Text import Max8Text
+from . import Max6Text
+from . import Max8Text
 
 class BillingServiceCommonIdentification1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class BillingServiceCommonIdentification1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max8Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max8Text, False)
 
 	@property
 	def Issr(self):
@@ -27,12 +27,12 @@ class BillingServiceCommonIdentification1(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+		self._Issr = value if value is not None else base_types.UninitialisedField(self, 'Issr', Max6Text, False)
 
 	@Issr.deleter
 	def Issr(self):
 		del self._Issr
-		self._Issr = None
+		self._Issr = base_types.UninitialisedField(self, 'Issr', Max6Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=Max8Text, min=1, max=1, mutex_group=None, array=False),

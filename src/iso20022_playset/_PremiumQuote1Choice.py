@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BaseOneRate import BaseOneRate
-from ._PercentageRate import PercentageRate
+from . import BaseOneRate
+from . import PercentageRate
 
 class PremiumQuote1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PremiumQuote1Choice(base_types._BaseFieldType):
 
 	@PctgOfCallAmt.setter
 	def PctgOfCallAmt(self, value):
-		self._PctgOfCallAmt = value if type(value) != base_types.auto else self.make_default("PctgOfCallAmt")
+		self._PctgOfCallAmt = value if value is not None else base_types.UninitialisedField(self, 'PctgOfCallAmt', PercentageRate, False)
 
 	@PctgOfCallAmt.deleter
 	def PctgOfCallAmt(self):
 		del self._PctgOfCallAmt
-		self._PctgOfCallAmt = None
+		self._PctgOfCallAmt = base_types.UninitialisedField(self, 'PctgOfCallAmt', PercentageRate, False)
 
 	@property
 	def PctgOfPutAmt(self):
@@ -27,12 +27,12 @@ class PremiumQuote1Choice(base_types._BaseFieldType):
 
 	@PctgOfPutAmt.setter
 	def PctgOfPutAmt(self, value):
-		self._PctgOfPutAmt = value if type(value) != base_types.auto else self.make_default("PctgOfPutAmt")
+		self._PctgOfPutAmt = value if value is not None else base_types.UninitialisedField(self, 'PctgOfPutAmt', PercentageRate, False)
 
 	@PctgOfPutAmt.deleter
 	def PctgOfPutAmt(self):
 		del self._PctgOfPutAmt
-		self._PctgOfPutAmt = None
+		self._PctgOfPutAmt = base_types.UninitialisedField(self, 'PctgOfPutAmt', PercentageRate, False)
 
 	@property
 	def PtsOfCallAmt(self):
@@ -40,12 +40,12 @@ class PremiumQuote1Choice(base_types._BaseFieldType):
 
 	@PtsOfCallAmt.setter
 	def PtsOfCallAmt(self, value):
-		self._PtsOfCallAmt = value if type(value) != base_types.auto else self.make_default("PtsOfCallAmt")
+		self._PtsOfCallAmt = value if value is not None else base_types.UninitialisedField(self, 'PtsOfCallAmt', BaseOneRate, False)
 
 	@PtsOfCallAmt.deleter
 	def PtsOfCallAmt(self):
 		del self._PtsOfCallAmt
-		self._PtsOfCallAmt = None
+		self._PtsOfCallAmt = base_types.UninitialisedField(self, 'PtsOfCallAmt', BaseOneRate, False)
 
 	@property
 	def PtsOfPutAmt(self):
@@ -53,12 +53,12 @@ class PremiumQuote1Choice(base_types._BaseFieldType):
 
 	@PtsOfPutAmt.setter
 	def PtsOfPutAmt(self, value):
-		self._PtsOfPutAmt = value if type(value) != base_types.auto else self.make_default("PtsOfPutAmt")
+		self._PtsOfPutAmt = value if value is not None else base_types.UninitialisedField(self, 'PtsOfPutAmt', BaseOneRate, False)
 
 	@PtsOfPutAmt.deleter
 	def PtsOfPutAmt(self):
 		del self._PtsOfPutAmt
-		self._PtsOfPutAmt = None
+		self._PtsOfPutAmt = base_types.UninitialisedField(self, 'PtsOfPutAmt', BaseOneRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PctgOfCallAmt', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),

@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Acquirer10 import Acquirer10
-from ._Action17 import Action17
-from ._ExternallyDefinedData5 import ExternallyDefinedData5
-from ._NonFinancialRequestType2Code import NonFinancialRequestType2Code
-from ._NonFinancialResponseRisk1Code import NonFinancialResponseRisk1Code
-from ._RecurringTransaction6 import RecurringTransaction6
-from ._ResponseType11 import ResponseType11
+from . import Acquirer10
+from . import Action17
+from . import ExternallyDefinedData5
+from . import NonFinancialRequestType2Code
+from . import NonFinancialResponseRisk1Code
+from . import RecurringTransaction6
+from . import ResponseType11
 
 class NonFinancialResponseContentComponent5(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class NonFinancialResponseContentComponent5(base_types._BaseFieldType):
 
 	@AcqrrSelctd.setter
 	def AcqrrSelctd(self, value):
-		self._AcqrrSelctd = value if type(value) != base_types.auto else self.make_default("AcqrrSelctd")
+		self._AcqrrSelctd = value if value is not None else base_types.UninitialisedField(self, 'AcqrrSelctd', Acquirer10, False)
 
 	@AcqrrSelctd.deleter
 	def AcqrrSelctd(self):
 		del self._AcqrrSelctd
-		self._AcqrrSelctd = None
+		self._AcqrrSelctd = base_types.UninitialisedField(self, 'AcqrrSelctd', Acquirer10, False)
 
 	@property
 	def Actn(self):
@@ -32,12 +32,12 @@ class NonFinancialResponseContentComponent5(base_types._BaseFieldType):
 
 	@Actn.setter
 	def Actn(self, value):
-		self._Actn = value if type(value) != base_types.auto else self.make_default("Actn")
+		self._Actn = value if value is not None else base_types.UninitialisedField(self, 'Actn', Action17, True)
 
 	@Actn.deleter
 	def Actn(self):
 		del self._Actn
-		self._Actn = None
+		self._Actn = base_types.UninitialisedField(self, 'Actn', Action17, True)
 
 	@property
 	def AddtlRspn(self):
@@ -45,12 +45,12 @@ class NonFinancialResponseContentComponent5(base_types._BaseFieldType):
 
 	@AddtlRspn.setter
 	def AddtlRspn(self, value):
-		self._AddtlRspn = value if type(value) != base_types.auto else self.make_default("AddtlRspn")
+		self._AddtlRspn = value if value is not None else base_types.UninitialisedField(self, 'AddtlRspn', ExternallyDefinedData5, True)
 
 	@AddtlRspn.deleter
 	def AddtlRspn(self):
 		del self._AddtlRspn
-		self._AddtlRspn = None
+		self._AddtlRspn = base_types.UninitialisedField(self, 'AddtlRspn', ExternallyDefinedData5, True)
 
 	@property
 	def Instlmt(self):
@@ -58,12 +58,12 @@ class NonFinancialResponseContentComponent5(base_types._BaseFieldType):
 
 	@Instlmt.setter
 	def Instlmt(self, value):
-		self._Instlmt = value if type(value) != base_types.auto else self.make_default("Instlmt")
+		self._Instlmt = value if value is not None else base_types.UninitialisedField(self, 'Instlmt', RecurringTransaction6, True)
 
 	@Instlmt.deleter
 	def Instlmt(self):
 		del self._Instlmt
-		self._Instlmt = None
+		self._Instlmt = base_types.UninitialisedField(self, 'Instlmt', RecurringTransaction6, True)
 
 	@property
 	def NonFinReqTp(self):
@@ -71,12 +71,12 @@ class NonFinancialResponseContentComponent5(base_types._BaseFieldType):
 
 	@NonFinReqTp.setter
 	def NonFinReqTp(self, value):
-		self._NonFinReqTp = value if type(value) != base_types.auto else self.make_default("NonFinReqTp")
+		self._NonFinReqTp = value if value is not None else base_types.UninitialisedField(self, 'NonFinReqTp', NonFinancialRequestType2Code, False)
 
 	@NonFinReqTp.deleter
 	def NonFinReqTp(self):
 		del self._NonFinReqTp
-		self._NonFinReqTp = None
+		self._NonFinReqTp = base_types.UninitialisedField(self, 'NonFinReqTp', NonFinancialRequestType2Code, False)
 
 	@property
 	def RskMgmtRslt(self):
@@ -84,12 +84,12 @@ class NonFinancialResponseContentComponent5(base_types._BaseFieldType):
 
 	@RskMgmtRslt.setter
 	def RskMgmtRslt(self, value):
-		self._RskMgmtRslt = value if type(value) != base_types.auto else self.make_default("RskMgmtRslt")
+		self._RskMgmtRslt = value if value is not None else base_types.UninitialisedField(self, 'RskMgmtRslt', NonFinancialResponseRisk1Code, False)
 
 	@RskMgmtRslt.deleter
 	def RskMgmtRslt(self):
 		del self._RskMgmtRslt
-		self._RskMgmtRslt = None
+		self._RskMgmtRslt = base_types.UninitialisedField(self, 'RskMgmtRslt', NonFinancialResponseRisk1Code, False)
 
 	@property
 	def Rspn(self):
@@ -97,12 +97,12 @@ class NonFinancialResponseContentComponent5(base_types._BaseFieldType):
 
 	@Rspn.setter
 	def Rspn(self, value):
-		self._Rspn = value if type(value) != base_types.auto else self.make_default("Rspn")
+		self._Rspn = value if value is not None else base_types.UninitialisedField(self, 'Rspn', ResponseType11, False)
 
 	@Rspn.deleter
 	def Rspn(self):
 		del self._Rspn
-		self._Rspn = None
+		self._Rspn = base_types.UninitialisedField(self, 'Rspn', ResponseType11, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcqrrSelctd', type=Acquirer10, min=0, max=1, mutex_group=None, array=False),

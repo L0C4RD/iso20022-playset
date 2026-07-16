@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Pagination import Pagination
-from ._PortfolioBalance1 import PortfolioBalance1
-from ._Report4 import Report4
-from ._SecuritiesAccount21 import SecuritiesAccount21
-from ._SupplementaryData1 import SupplementaryData1
-from ._TotalPortfolioValuation1 import TotalPortfolioValuation1
+from . import Pagination
+from . import PortfolioBalance1
+from . import Report4
+from . import SecuritiesAccount21
+from . import SupplementaryData1
+from . import TotalPortfolioValuation1
 
 class TotalPortfolioValuationReportV01(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class TotalPortfolioValuationReportV01(base_types._BaseFieldType):
 
 	@AcctDtls.setter
 	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != base_types.auto else self.make_default("AcctDtls")
+		self._AcctDtls = value if value is not None else base_types.UninitialisedField(self, 'AcctDtls', SecuritiesAccount21, False)
 
 	@AcctDtls.deleter
 	def AcctDtls(self):
 		del self._AcctDtls
-		self._AcctDtls = None
+		self._AcctDtls = base_types.UninitialisedField(self, 'AcctDtls', SecuritiesAccount21, False)
 
 	@property
 	def Bal(self):
@@ -31,12 +31,12 @@ class TotalPortfolioValuationReportV01(base_types._BaseFieldType):
 
 	@Bal.setter
 	def Bal(self, value):
-		self._Bal = value if type(value) != base_types.auto else self.make_default("Bal")
+		self._Bal = value if value is not None else base_types.UninitialisedField(self, 'Bal', PortfolioBalance1, False)
 
 	@Bal.deleter
 	def Bal(self):
 		del self._Bal
-		self._Bal = None
+		self._Bal = base_types.UninitialisedField(self, 'Bal', PortfolioBalance1, False)
 
 	@property
 	def Pgntn(self):
@@ -44,12 +44,12 @@ class TotalPortfolioValuationReportV01(base_types._BaseFieldType):
 
 	@Pgntn.setter
 	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+		self._Pgntn = value if value is not None else base_types.UninitialisedField(self, 'Pgntn', Pagination, False)
 
 	@Pgntn.deleter
 	def Pgntn(self):
 		del self._Pgntn
-		self._Pgntn = None
+		self._Pgntn = base_types.UninitialisedField(self, 'Pgntn', Pagination, False)
 
 	@property
 	def RptGnlDtls(self):
@@ -57,12 +57,12 @@ class TotalPortfolioValuationReportV01(base_types._BaseFieldType):
 
 	@RptGnlDtls.setter
 	def RptGnlDtls(self, value):
-		self._RptGnlDtls = value if type(value) != base_types.auto else self.make_default("RptGnlDtls")
+		self._RptGnlDtls = value if value is not None else base_types.UninitialisedField(self, 'RptGnlDtls', Report4, False)
 
 	@RptGnlDtls.deleter
 	def RptGnlDtls(self):
 		del self._RptGnlDtls
-		self._RptGnlDtls = None
+		self._RptGnlDtls = base_types.UninitialisedField(self, 'RptGnlDtls', Report4, False)
 
 	@property
 	def SplmtryData(self):
@@ -70,12 +70,12 @@ class TotalPortfolioValuationReportV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, False)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, False)
 
 	@property
 	def TtlPrtflValtn(self):
@@ -83,12 +83,12 @@ class TotalPortfolioValuationReportV01(base_types._BaseFieldType):
 
 	@TtlPrtflValtn.setter
 	def TtlPrtflValtn(self, value):
-		self._TtlPrtflValtn = value if type(value) != base_types.auto else self.make_default("TtlPrtflValtn")
+		self._TtlPrtflValtn = value if value is not None else base_types.UninitialisedField(self, 'TtlPrtflValtn', TotalPortfolioValuation1, False)
 
 	@TtlPrtflValtn.deleter
 	def TtlPrtflValtn(self):
 		del self._TtlPrtflValtn
-		self._TtlPrtflValtn = None
+		self._TtlPrtflValtn = base_types.UninitialisedField(self, 'TtlPrtflValtn', TotalPortfolioValuation1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctDtls', type=SecuritiesAccount21, min=1, max=1, mutex_group=None, array=False),

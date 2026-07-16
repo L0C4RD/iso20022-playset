@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CancellationStatus35Choice import CancellationStatus35Choice
-from ._DetailedInstructionCancellationStatus16 import DetailedInstructionCancellationStatus16
+from . import CancellationStatus35Choice
+from . import DetailedInstructionCancellationStatus16
 
 class CancellationStatus34Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CancellationStatus34Choice(base_types._BaseFieldType):
 
 	@DtldCxlSts.setter
 	def DtldCxlSts(self, value):
-		self._DtldCxlSts = value if type(value) != base_types.auto else self.make_default("DtldCxlSts")
+		self._DtldCxlSts = value if value is not None else base_types.UninitialisedField(self, 'DtldCxlSts', DetailedInstructionCancellationStatus16, True)
 
 	@DtldCxlSts.deleter
 	def DtldCxlSts(self):
 		del self._DtldCxlSts
-		self._DtldCxlSts = None
+		self._DtldCxlSts = base_types.UninitialisedField(self, 'DtldCxlSts', DetailedInstructionCancellationStatus16, True)
 
 	@property
 	def GblCxlSts(self):
@@ -27,12 +27,12 @@ class CancellationStatus34Choice(base_types._BaseFieldType):
 
 	@GblCxlSts.setter
 	def GblCxlSts(self, value):
-		self._GblCxlSts = value if type(value) != base_types.auto else self.make_default("GblCxlSts")
+		self._GblCxlSts = value if value is not None else base_types.UninitialisedField(self, 'GblCxlSts', CancellationStatus35Choice, False)
 
 	@GblCxlSts.deleter
 	def GblCxlSts(self):
 		del self._GblCxlSts
-		self._GblCxlSts = None
+		self._GblCxlSts = base_types.UninitialisedField(self, 'GblCxlSts', CancellationStatus35Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DtldCxlSts', type=DetailedInstructionCancellationStatus16, min=1, max=None, mutex_group=1, array=True),

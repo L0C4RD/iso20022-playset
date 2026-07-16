@@ -2,18 +2,18 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BalanceInquiryRequest9 import BalanceInquiryRequest9
-from ._BatchRequest8 import BatchRequest8
-from ._CardAcquisitionRequest3 import CardAcquisitionRequest3
-from ._CardPaymentEnvironment82 import CardPaymentEnvironment82
-from ._EnableServiceRequest7 import EnableServiceRequest7
-from ._LoyaltyRequest8 import LoyaltyRequest8
-from ._PaymentContext30 import PaymentContext30
-from ._PaymentRequest8 import PaymentRequest8
-from ._RetailerService2Code import RetailerService2Code
-from ._ReversalRequest8 import ReversalRequest8
-from ._StoredValueRequest9 import StoredValueRequest9
-from ._SupplementaryData1 import SupplementaryData1
+from . import BalanceInquiryRequest9
+from . import BatchRequest8
+from . import CardAcquisitionRequest3
+from . import CardPaymentEnvironment82
+from . import EnableServiceRequest7
+from . import LoyaltyRequest8
+from . import PaymentContext30
+from . import PaymentRequest8
+from . import RetailerService2Code
+from . import ReversalRequest8
+from . import StoredValueRequest9
+from . import SupplementaryData1
 
 class ServiceRequest9(base_types._BaseFieldType):
 
@@ -24,12 +24,12 @@ class ServiceRequest9(base_types._BaseFieldType):
 
 	@BalNqryReq.setter
 	def BalNqryReq(self, value):
-		self._BalNqryReq = value if type(value) != base_types.auto else self.make_default("BalNqryReq")
+		self._BalNqryReq = value if value is not None else base_types.UninitialisedField(self, 'BalNqryReq', BalanceInquiryRequest9, False)
 
 	@BalNqryReq.deleter
 	def BalNqryReq(self):
 		del self._BalNqryReq
-		self._BalNqryReq = None
+		self._BalNqryReq = base_types.UninitialisedField(self, 'BalNqryReq', BalanceInquiryRequest9, False)
 
 	@property
 	def BtchReq(self):
@@ -37,12 +37,12 @@ class ServiceRequest9(base_types._BaseFieldType):
 
 	@BtchReq.setter
 	def BtchReq(self, value):
-		self._BtchReq = value if type(value) != base_types.auto else self.make_default("BtchReq")
+		self._BtchReq = value if value is not None else base_types.UninitialisedField(self, 'BtchReq', BatchRequest8, False)
 
 	@BtchReq.deleter
 	def BtchReq(self):
 		del self._BtchReq
-		self._BtchReq = None
+		self._BtchReq = base_types.UninitialisedField(self, 'BtchReq', BatchRequest8, False)
 
 	@property
 	def CardAcqstnReq(self):
@@ -50,12 +50,12 @@ class ServiceRequest9(base_types._BaseFieldType):
 
 	@CardAcqstnReq.setter
 	def CardAcqstnReq(self, value):
-		self._CardAcqstnReq = value if type(value) != base_types.auto else self.make_default("CardAcqstnReq")
+		self._CardAcqstnReq = value if value is not None else base_types.UninitialisedField(self, 'CardAcqstnReq', CardAcquisitionRequest3, False)
 
 	@CardAcqstnReq.deleter
 	def CardAcqstnReq(self):
 		del self._CardAcqstnReq
-		self._CardAcqstnReq = None
+		self._CardAcqstnReq = base_types.UninitialisedField(self, 'CardAcqstnReq', CardAcquisitionRequest3, False)
 
 	@property
 	def Cntxt(self):
@@ -63,12 +63,12 @@ class ServiceRequest9(base_types._BaseFieldType):
 
 	@Cntxt.setter
 	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != base_types.auto else self.make_default("Cntxt")
+		self._Cntxt = value if value is not None else base_types.UninitialisedField(self, 'Cntxt', PaymentContext30, False)
 
 	@Cntxt.deleter
 	def Cntxt(self):
 		del self._Cntxt
-		self._Cntxt = None
+		self._Cntxt = base_types.UninitialisedField(self, 'Cntxt', PaymentContext30, False)
 
 	@property
 	def Envt(self):
@@ -76,12 +76,12 @@ class ServiceRequest9(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+		self._Envt = value if value is not None else base_types.UninitialisedField(self, 'Envt', CardPaymentEnvironment82, False)
 
 	@Envt.deleter
 	def Envt(self):
 		del self._Envt
-		self._Envt = None
+		self._Envt = base_types.UninitialisedField(self, 'Envt', CardPaymentEnvironment82, False)
 
 	@property
 	def LltyReq(self):
@@ -89,12 +89,12 @@ class ServiceRequest9(base_types._BaseFieldType):
 
 	@LltyReq.setter
 	def LltyReq(self, value):
-		self._LltyReq = value if type(value) != base_types.auto else self.make_default("LltyReq")
+		self._LltyReq = value if value is not None else base_types.UninitialisedField(self, 'LltyReq', LoyaltyRequest8, False)
 
 	@LltyReq.deleter
 	def LltyReq(self):
 		del self._LltyReq
-		self._LltyReq = None
+		self._LltyReq = base_types.UninitialisedField(self, 'LltyReq', LoyaltyRequest8, False)
 
 	@property
 	def NblSvcReq(self):
@@ -102,12 +102,12 @@ class ServiceRequest9(base_types._BaseFieldType):
 
 	@NblSvcReq.setter
 	def NblSvcReq(self, value):
-		self._NblSvcReq = value if type(value) != base_types.auto else self.make_default("NblSvcReq")
+		self._NblSvcReq = value if value is not None else base_types.UninitialisedField(self, 'NblSvcReq', EnableServiceRequest7, False)
 
 	@NblSvcReq.deleter
 	def NblSvcReq(self):
 		del self._NblSvcReq
-		self._NblSvcReq = None
+		self._NblSvcReq = base_types.UninitialisedField(self, 'NblSvcReq', EnableServiceRequest7, False)
 
 	@property
 	def PmtReq(self):
@@ -115,12 +115,12 @@ class ServiceRequest9(base_types._BaseFieldType):
 
 	@PmtReq.setter
 	def PmtReq(self, value):
-		self._PmtReq = value if type(value) != base_types.auto else self.make_default("PmtReq")
+		self._PmtReq = value if value is not None else base_types.UninitialisedField(self, 'PmtReq', PaymentRequest8, False)
 
 	@PmtReq.deleter
 	def PmtReq(self):
 		del self._PmtReq
-		self._PmtReq = None
+		self._PmtReq = base_types.UninitialisedField(self, 'PmtReq', PaymentRequest8, False)
 
 	@property
 	def RvslReq(self):
@@ -128,12 +128,12 @@ class ServiceRequest9(base_types._BaseFieldType):
 
 	@RvslReq.setter
 	def RvslReq(self, value):
-		self._RvslReq = value if type(value) != base_types.auto else self.make_default("RvslReq")
+		self._RvslReq = value if value is not None else base_types.UninitialisedField(self, 'RvslReq', ReversalRequest8, False)
 
 	@RvslReq.deleter
 	def RvslReq(self):
 		del self._RvslReq
-		self._RvslReq = None
+		self._RvslReq = base_types.UninitialisedField(self, 'RvslReq', ReversalRequest8, False)
 
 	@property
 	def SplmtryData(self):
@@ -141,12 +141,12 @@ class ServiceRequest9(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def StordValReq(self):
@@ -154,12 +154,12 @@ class ServiceRequest9(base_types._BaseFieldType):
 
 	@StordValReq.setter
 	def StordValReq(self, value):
-		self._StordValReq = value if type(value) != base_types.auto else self.make_default("StordValReq")
+		self._StordValReq = value if value is not None else base_types.UninitialisedField(self, 'StordValReq', StoredValueRequest9, False)
 
 	@StordValReq.deleter
 	def StordValReq(self):
 		del self._StordValReq
-		self._StordValReq = None
+		self._StordValReq = base_types.UninitialisedField(self, 'StordValReq', StoredValueRequest9, False)
 
 	@property
 	def SvcCntt(self):
@@ -167,12 +167,12 @@ class ServiceRequest9(base_types._BaseFieldType):
 
 	@SvcCntt.setter
 	def SvcCntt(self, value):
-		self._SvcCntt = value if type(value) != base_types.auto else self.make_default("SvcCntt")
+		self._SvcCntt = value if value is not None else base_types.UninitialisedField(self, 'SvcCntt', RetailerService2Code, False)
 
 	@SvcCntt.deleter
 	def SvcCntt(self):
 		del self._SvcCntt
-		self._SvcCntt = None
+		self._SvcCntt = base_types.UninitialisedField(self, 'SvcCntt', RetailerService2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BalNqryReq', type=BalanceInquiryRequest9, min=0, max=1, mutex_group=None, array=False),

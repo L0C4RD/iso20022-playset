@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentAttributes119 import FinancialInstrumentAttributes119
-from ._IntraPositionDetails63 import IntraPositionDetails63
-from ._SecurityIdentification20 import SecurityIdentification20
+from . import FinancialInstrumentAttributes119
+from . import IntraPositionDetails63
+from . import SecurityIdentification20
 
 class FinancialInstrumentDetails44(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class FinancialInstrumentDetails44(base_types._BaseFieldType):
 
 	@FinInstrmAttrbts.setter
 	def FinInstrmAttrbts(self, value):
-		self._FinInstrmAttrbts = value if type(value) != base_types.auto else self.make_default("FinInstrmAttrbts")
+		self._FinInstrmAttrbts = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmAttrbts', FinancialInstrumentAttributes119, False)
 
 	@FinInstrmAttrbts.deleter
 	def FinInstrmAttrbts(self):
 		del self._FinInstrmAttrbts
-		self._FinInstrmAttrbts = None
+		self._FinInstrmAttrbts = base_types.UninitialisedField(self, 'FinInstrmAttrbts', FinancialInstrumentAttributes119, False)
 
 	@property
 	def FinInstrmId(self):
@@ -28,12 +28,12 @@ class FinancialInstrumentDetails44(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification20, False)
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
 		del self._FinInstrmId
-		self._FinInstrmId = None
+		self._FinInstrmId = base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification20, False)
 
 	@property
 	def SubBal(self):
@@ -41,12 +41,12 @@ class FinancialInstrumentDetails44(base_types._BaseFieldType):
 
 	@SubBal.setter
 	def SubBal(self, value):
-		self._SubBal = value if type(value) != base_types.auto else self.make_default("SubBal")
+		self._SubBal = value if value is not None else base_types.UninitialisedField(self, 'SubBal', IntraPositionDetails63, True)
 
 	@SubBal.deleter
 	def SubBal(self):
 		del self._SubBal
-		self._SubBal = None
+		self._SubBal = base_types.UninitialisedField(self, 'SubBal', IntraPositionDetails63, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FinInstrmAttrbts', type=FinancialInstrumentAttributes119, min=0, max=1, mutex_group=None, array=False),

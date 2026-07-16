@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardPaymentEnvironment82 import CardPaymentEnvironment82
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import CardPaymentEnvironment82
+from . import TrueFalseIndicator
 
 class AcceptorDiagnosticRequest14(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AcceptorDiagnosticRequest14(base_types._BaseFieldType):
 
 	@AcqrrAvlbtyReqd.setter
 	def AcqrrAvlbtyReqd(self, value):
-		self._AcqrrAvlbtyReqd = value if type(value) != base_types.auto else self.make_default("AcqrrAvlbtyReqd")
+		self._AcqrrAvlbtyReqd = value if value is not None else base_types.UninitialisedField(self, 'AcqrrAvlbtyReqd', TrueFalseIndicator, False)
 
 	@AcqrrAvlbtyReqd.deleter
 	def AcqrrAvlbtyReqd(self):
 		del self._AcqrrAvlbtyReqd
-		self._AcqrrAvlbtyReqd = None
+		self._AcqrrAvlbtyReqd = base_types.UninitialisedField(self, 'AcqrrAvlbtyReqd', TrueFalseIndicator, False)
 
 	@property
 	def Envt(self):
@@ -27,12 +27,12 @@ class AcceptorDiagnosticRequest14(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+		self._Envt = value if value is not None else base_types.UninitialisedField(self, 'Envt', CardPaymentEnvironment82, False)
 
 	@Envt.deleter
 	def Envt(self):
 		del self._Envt
-		self._Envt = None
+		self._Envt = base_types.UninitialisedField(self, 'Envt', CardPaymentEnvironment82, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcqrrAvlbtyReqd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),

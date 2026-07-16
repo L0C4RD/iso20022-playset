@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ReportQueryRequestV02 import ReportQueryRequestV02
+from . import ReportQueryRequestV02
 
 class ADMI_005_001_02():
 
@@ -18,12 +18,12 @@ class ADMI_005_001_02():
 
 		@RptQryReq.setter
 		def RptQryReq(self, value):
-			self._RptQryReq = value if type(value) != base_types.auto else self.make_default("RptQryReq")
+			self._RptQryReq = value if value is not None else base_types.UninitialisedField(self, 'RptQryReq', ReportQueryRequestV02, False)
 
 		@RptQryReq.deleter
 		def RptQryReq(self):
 			del self._RptQryReq
-			self._RptQryReq = None
+			self._RptQryReq = base_types.UninitialisedField(self, 'RptQryReq', ReportQueryRequestV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='RptQryReq', type=ReportQueryRequestV02, min=1, max=1, mutex_group=None, array=False),

@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMCustomer9 import ATMCustomer9
-from ._Acquirer7 import Acquirer7
-from ._Acquirer8 import Acquirer8
-from ._AutomatedTellerMachine2 import AutomatedTellerMachine2
-from ._ContentInformationType10 import ContentInformationType10
-from ._PlainCardData24 import PlainCardData24
-from ._TerminalHosting1 import TerminalHosting1
+from . import ATMCustomer9
+from . import Acquirer7
+from . import Acquirer8
+from . import AutomatedTellerMachine2
+from . import ContentInformationType10
+from . import PlainCardData24
+from . import TerminalHosting1
 
 class ATMEnvironment21(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class ATMEnvironment21(base_types._BaseFieldType):
 
 	@ATM.setter
 	def ATM(self, value):
-		self._ATM = value if type(value) != base_types.auto else self.make_default("ATM")
+		self._ATM = value if value is not None else base_types.UninitialisedField(self, 'ATM', AutomatedTellerMachine2, False)
 
 	@ATM.deleter
 	def ATM(self):
 		del self._ATM
-		self._ATM = None
+		self._ATM = base_types.UninitialisedField(self, 'ATM', AutomatedTellerMachine2, False)
 
 	@property
 	def ATMMgr(self):
@@ -32,12 +32,12 @@ class ATMEnvironment21(base_types._BaseFieldType):
 
 	@ATMMgr.setter
 	def ATMMgr(self, value):
-		self._ATMMgr = value if type(value) != base_types.auto else self.make_default("ATMMgr")
+		self._ATMMgr = value if value is not None else base_types.UninitialisedField(self, 'ATMMgr', Acquirer8, False)
 
 	@ATMMgr.deleter
 	def ATMMgr(self):
 		del self._ATMMgr
-		self._ATMMgr = None
+		self._ATMMgr = base_types.UninitialisedField(self, 'ATMMgr', Acquirer8, False)
 
 	@property
 	def Acqrr(self):
@@ -45,12 +45,12 @@ class ATMEnvironment21(base_types._BaseFieldType):
 
 	@Acqrr.setter
 	def Acqrr(self, value):
-		self._Acqrr = value if type(value) != base_types.auto else self.make_default("Acqrr")
+		self._Acqrr = value if value is not None else base_types.UninitialisedField(self, 'Acqrr', Acquirer7, False)
 
 	@Acqrr.deleter
 	def Acqrr(self):
 		del self._Acqrr
-		self._Acqrr = None
+		self._Acqrr = base_types.UninitialisedField(self, 'Acqrr', Acquirer7, False)
 
 	@property
 	def Cstmr(self):
@@ -58,12 +58,12 @@ class ATMEnvironment21(base_types._BaseFieldType):
 
 	@Cstmr.setter
 	def Cstmr(self, value):
-		self._Cstmr = value if type(value) != base_types.auto else self.make_default("Cstmr")
+		self._Cstmr = value if value is not None else base_types.UninitialisedField(self, 'Cstmr', ATMCustomer9, False)
 
 	@Cstmr.deleter
 	def Cstmr(self):
 		del self._Cstmr
-		self._Cstmr = None
+		self._Cstmr = base_types.UninitialisedField(self, 'Cstmr', ATMCustomer9, False)
 
 	@property
 	def HstgNtty(self):
@@ -71,12 +71,12 @@ class ATMEnvironment21(base_types._BaseFieldType):
 
 	@HstgNtty.setter
 	def HstgNtty(self, value):
-		self._HstgNtty = value if type(value) != base_types.auto else self.make_default("HstgNtty")
+		self._HstgNtty = value if value is not None else base_types.UninitialisedField(self, 'HstgNtty', TerminalHosting1, False)
 
 	@HstgNtty.deleter
 	def HstgNtty(self):
 		del self._HstgNtty
-		self._HstgNtty = None
+		self._HstgNtty = base_types.UninitialisedField(self, 'HstgNtty', TerminalHosting1, False)
 
 	@property
 	def PlainCardData(self):
@@ -84,12 +84,12 @@ class ATMEnvironment21(base_types._BaseFieldType):
 
 	@PlainCardData.setter
 	def PlainCardData(self, value):
-		self._PlainCardData = value if type(value) != base_types.auto else self.make_default("PlainCardData")
+		self._PlainCardData = value if value is not None else base_types.UninitialisedField(self, 'PlainCardData', PlainCardData24, False)
 
 	@PlainCardData.deleter
 	def PlainCardData(self):
 		del self._PlainCardData
-		self._PlainCardData = None
+		self._PlainCardData = base_types.UninitialisedField(self, 'PlainCardData', PlainCardData24, False)
 
 	@property
 	def PrtctdCardData(self):
@@ -97,12 +97,12 @@ class ATMEnvironment21(base_types._BaseFieldType):
 
 	@PrtctdCardData.setter
 	def PrtctdCardData(self, value):
-		self._PrtctdCardData = value if type(value) != base_types.auto else self.make_default("PrtctdCardData")
+		self._PrtctdCardData = value if value is not None else base_types.UninitialisedField(self, 'PrtctdCardData', ContentInformationType10, False)
 
 	@PrtctdCardData.deleter
 	def PrtctdCardData(self):
 		del self._PrtctdCardData
-		self._PrtctdCardData = None
+		self._PrtctdCardData = base_types.UninitialisedField(self, 'PrtctdCardData', ContentInformationType10, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ATM', type=AutomatedTellerMachine2, min=1, max=1, mutex_group=None, array=False),

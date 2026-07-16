@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMCassetteCounters5 import ATMCassetteCounters5
-from ._ATMMediaType3Code import ATMMediaType3Code
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Number import Number
+from . import ATMCassetteCounters5
+from . import ATMMediaType3Code
+from . import ActiveCurrencyCode
+from . import ImpliedCurrencyAndAmount
+from . import Number
 
 class ATMCassetteCounters6(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class ATMCassetteCounters6(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@property
 	def CurAmt(self):
@@ -30,12 +30,12 @@ class ATMCassetteCounters6(base_types._BaseFieldType):
 
 	@CurAmt.setter
 	def CurAmt(self, value):
-		self._CurAmt = value if type(value) != base_types.auto else self.make_default("CurAmt")
+		self._CurAmt = value if value is not None else base_types.UninitialisedField(self, 'CurAmt', ImpliedCurrencyAndAmount, False)
 
 	@CurAmt.deleter
 	def CurAmt(self):
 		del self._CurAmt
-		self._CurAmt = None
+		self._CurAmt = base_types.UninitialisedField(self, 'CurAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def CurNb(self):
@@ -43,12 +43,12 @@ class ATMCassetteCounters6(base_types._BaseFieldType):
 
 	@CurNb.setter
 	def CurNb(self, value):
-		self._CurNb = value if type(value) != base_types.auto else self.make_default("CurNb")
+		self._CurNb = value if value is not None else base_types.UninitialisedField(self, 'CurNb', Number, False)
 
 	@CurNb.deleter
 	def CurNb(self):
 		del self._CurNb
-		self._CurNb = None
+		self._CurNb = base_types.UninitialisedField(self, 'CurNb', Number, False)
 
 	@property
 	def FlowTtls(self):
@@ -56,12 +56,12 @@ class ATMCassetteCounters6(base_types._BaseFieldType):
 
 	@FlowTtls.setter
 	def FlowTtls(self, value):
-		self._FlowTtls = value if type(value) != base_types.auto else self.make_default("FlowTtls")
+		self._FlowTtls = value if value is not None else base_types.UninitialisedField(self, 'FlowTtls', ATMCassetteCounters5, True)
 
 	@FlowTtls.deleter
 	def FlowTtls(self):
 		del self._FlowTtls
-		self._FlowTtls = None
+		self._FlowTtls = base_types.UninitialisedField(self, 'FlowTtls', ATMCassetteCounters5, True)
 
 	@property
 	def InitlCnt(self):
@@ -69,12 +69,12 @@ class ATMCassetteCounters6(base_types._BaseFieldType):
 
 	@InitlCnt.setter
 	def InitlCnt(self, value):
-		self._InitlCnt = value if type(value) != base_types.auto else self.make_default("InitlCnt")
+		self._InitlCnt = value if value is not None else base_types.UninitialisedField(self, 'InitlCnt', Number, False)
 
 	@InitlCnt.deleter
 	def InitlCnt(self):
 		del self._InitlCnt
-		self._InitlCnt = None
+		self._InitlCnt = base_types.UninitialisedField(self, 'InitlCnt', Number, False)
 
 	@property
 	def MdiaCtgy(self):
@@ -82,12 +82,12 @@ class ATMCassetteCounters6(base_types._BaseFieldType):
 
 	@MdiaCtgy.setter
 	def MdiaCtgy(self, value):
-		self._MdiaCtgy = value if type(value) != base_types.auto else self.make_default("MdiaCtgy")
+		self._MdiaCtgy = value if value is not None else base_types.UninitialisedField(self, 'MdiaCtgy', ATMMediaType3Code, False)
 
 	@MdiaCtgy.deleter
 	def MdiaCtgy(self):
 		del self._MdiaCtgy
-		self._MdiaCtgy = None
+		self._MdiaCtgy = base_types.UninitialisedField(self, 'MdiaCtgy', ATMMediaType3Code, False)
 
 	@property
 	def UnitVal(self):
@@ -95,12 +95,12 @@ class ATMCassetteCounters6(base_types._BaseFieldType):
 
 	@UnitVal.setter
 	def UnitVal(self, value):
-		self._UnitVal = value if type(value) != base_types.auto else self.make_default("UnitVal")
+		self._UnitVal = value if value is not None else base_types.UninitialisedField(self, 'UnitVal', ImpliedCurrencyAndAmount, False)
 
 	@UnitVal.deleter
 	def UnitVal(self):
 		del self._UnitVal
-		self._UnitVal = None
+		self._UnitVal = base_types.UninitialisedField(self, 'UnitVal', ImpliedCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PlaceOfPresentation1 import PlaceOfPresentation1
-from ._PresentationParty1Code import PresentationParty1Code
+from . import PlaceOfPresentation1
+from . import PresentationParty1Code
 
 class PlaceOrUnderConfirmationChoice1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PlaceOrUnderConfirmationChoice1(base_types._BaseFieldType):
 
 	@PlcOfPresntn.setter
 	def PlcOfPresntn(self, value):
-		self._PlcOfPresntn = value if type(value) != base_types.auto else self.make_default("PlcOfPresntn")
+		self._PlcOfPresntn = value if value is not None else base_types.UninitialisedField(self, 'PlcOfPresntn', PlaceOfPresentation1, False)
 
 	@PlcOfPresntn.deleter
 	def PlcOfPresntn(self):
 		del self._PlcOfPresntn
-		self._PlcOfPresntn = None
+		self._PlcOfPresntn = base_types.UninitialisedField(self, 'PlcOfPresntn', PlaceOfPresentation1, False)
 
 	@property
 	def PresntnUdrConf(self):
@@ -27,12 +27,12 @@ class PlaceOrUnderConfirmationChoice1(base_types._BaseFieldType):
 
 	@PresntnUdrConf.setter
 	def PresntnUdrConf(self, value):
-		self._PresntnUdrConf = value if type(value) != base_types.auto else self.make_default("PresntnUdrConf")
+		self._PresntnUdrConf = value if value is not None else base_types.UninitialisedField(self, 'PresntnUdrConf', PresentationParty1Code, False)
 
 	@PresntnUdrConf.deleter
 	def PresntnUdrConf(self):
 		del self._PresntnUdrConf
-		self._PresntnUdrConf = None
+		self._PresntnUdrConf = base_types.UninitialisedField(self, 'PresntnUdrConf', PresentationParty1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PlcOfPresntn', type=PlaceOfPresentation1, min=0, max=1, mutex_group=1, array=False),

@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalData1 import AdditionalData1
-from ._DisputeReference1 import DisputeReference1
-from ._Exact1NumericText import Exact1NumericText
-from ._Max35Text import Max35Text
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import AdditionalData1
+from . import DisputeReference1
+from . import Exact1NumericText
+from . import Max35Text
+from . import TrueFalseIndicator
 
 class DisputeData4(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class DisputeData4(base_types._BaseFieldType):
 
 	@AddtlData.setter
 	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+		self._AddtlData = value if value is not None else base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@AddtlData.deleter
 	def AddtlData(self):
 		del self._AddtlData
-		self._AddtlData = None
+		self._AddtlData = base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@property
 	def ChrgbckElgblty(self):
@@ -30,12 +30,12 @@ class DisputeData4(base_types._BaseFieldType):
 
 	@ChrgbckElgblty.setter
 	def ChrgbckElgblty(self, value):
-		self._ChrgbckElgblty = value if type(value) != base_types.auto else self.make_default("ChrgbckElgblty")
+		self._ChrgbckElgblty = value if value is not None else base_types.UninitialisedField(self, 'ChrgbckElgblty', Max35Text, False)
 
 	@ChrgbckElgblty.deleter
 	def ChrgbckElgblty(self):
 		del self._ChrgbckElgblty
-		self._ChrgbckElgblty = None
+		self._ChrgbckElgblty = base_types.UninitialisedField(self, 'ChrgbckElgblty', Max35Text, False)
 
 	@property
 	def Cond(self):
@@ -43,12 +43,12 @@ class DisputeData4(base_types._BaseFieldType):
 
 	@Cond.setter
 	def Cond(self, value):
-		self._Cond = value if type(value) != base_types.auto else self.make_default("Cond")
+		self._Cond = value if value is not None else base_types.UninitialisedField(self, 'Cond', Max35Text, False)
 
 	@Cond.deleter
 	def Cond(self):
 		del self._Cond
-		self._Cond = None
+		self._Cond = base_types.UninitialisedField(self, 'Cond', Max35Text, False)
 
 	@property
 	def Cycl(self):
@@ -56,12 +56,12 @@ class DisputeData4(base_types._BaseFieldType):
 
 	@Cycl.setter
 	def Cycl(self, value):
-		self._Cycl = value if type(value) != base_types.auto else self.make_default("Cycl")
+		self._Cycl = value if value is not None else base_types.UninitialisedField(self, 'Cycl', Exact1NumericText, False)
 
 	@Cycl.deleter
 	def Cycl(self):
 		del self._Cycl
-		self._Cycl = None
+		self._Cycl = base_types.UninitialisedField(self, 'Cycl', Exact1NumericText, False)
 
 	@property
 	def DcmnttnSts(self):
@@ -69,12 +69,12 @@ class DisputeData4(base_types._BaseFieldType):
 
 	@DcmnttnSts.setter
 	def DcmnttnSts(self, value):
-		self._DcmnttnSts = value if type(value) != base_types.auto else self.make_default("DcmnttnSts")
+		self._DcmnttnSts = value if value is not None else base_types.UninitialisedField(self, 'DcmnttnSts', Max35Text, False)
 
 	@DcmnttnSts.deleter
 	def DcmnttnSts(self):
 		del self._DcmnttnSts
-		self._DcmnttnSts = None
+		self._DcmnttnSts = base_types.UninitialisedField(self, 'DcmnttnSts', Max35Text, False)
 
 	@property
 	def Prtl(self):
@@ -82,12 +82,12 @@ class DisputeData4(base_types._BaseFieldType):
 
 	@Prtl.setter
 	def Prtl(self, value):
-		self._Prtl = value if type(value) != base_types.auto else self.make_default("Prtl")
+		self._Prtl = value if value is not None else base_types.UninitialisedField(self, 'Prtl', TrueFalseIndicator, False)
 
 	@Prtl.deleter
 	def Prtl(self):
 		del self._Prtl
-		self._Prtl = None
+		self._Prtl = base_types.UninitialisedField(self, 'Prtl', TrueFalseIndicator, False)
 
 	@property
 	def Ref(self):
@@ -95,12 +95,12 @@ class DisputeData4(base_types._BaseFieldType):
 
 	@Ref.setter
 	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+		self._Ref = value if value is not None else base_types.UninitialisedField(self, 'Ref', DisputeReference1, True)
 
 	@Ref.deleter
 	def Ref(self):
 		del self._Ref
-		self._Ref = None
+		self._Ref = base_types.UninitialisedField(self, 'Ref', DisputeReference1, True)
 
 	@property
 	def RjctRsn(self):
@@ -108,12 +108,12 @@ class DisputeData4(base_types._BaseFieldType):
 
 	@RjctRsn.setter
 	def RjctRsn(self, value):
-		self._RjctRsn = value if type(value) != base_types.auto else self.make_default("RjctRsn")
+		self._RjctRsn = value if value is not None else base_types.UninitialisedField(self, 'RjctRsn', Max35Text, True)
 
 	@RjctRsn.deleter
 	def RjctRsn(self):
 		del self._RjctRsn
-		self._RjctRsn = None
+		self._RjctRsn = base_types.UninitialisedField(self, 'RjctRsn', Max35Text, True)
 
 	@property
 	def Sts(self):
@@ -121,12 +121,12 @@ class DisputeData4(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', Max35Text, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),

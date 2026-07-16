@@ -2,48 +2,48 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CompareActiveOrHistoricCurrencyAndAmount4 import CompareActiveOrHistoricCurrencyAndAmount4
-from ._CompareAmountAndDirection3 import CompareAmountAndDirection3
-from ._CompareBenchmarkCode1 import CompareBenchmarkCode1
-from ._CompareCommodityAssetClass4 import CompareCommodityAssetClass4
-from ._CompareDate3 import CompareDate3
-from ._CompareDateTime3 import CompareDateTime3
-from ._CompareDayCount1 import CompareDayCount1
-from ._CompareDeliveryInterconnectionPoint1 import CompareDeliveryInterconnectionPoint1
-from ._CompareDeliveryType1 import CompareDeliveryType1
-from ._CompareDerivativeEvent1 import CompareDerivativeEvent1
-from ._CompareEnergyDeliveryAttribute1 import CompareEnergyDeliveryAttribute1
-from ._CompareEnergyLoadType1 import CompareEnergyLoadType1
-from ._CompareExchangeRate1 import CompareExchangeRate1
-from ._CompareExchangeRateBasis1 import CompareExchangeRateBasis1
-from ._CompareFrequencyUnit1 import CompareFrequencyUnit1
-from ._CompareISINIdentifier4 import CompareISINIdentifier4
-from ._CompareLongFraction19DecimalNumber1 import CompareLongFraction19DecimalNumber1
-from ._CompareMICIdentifier3 import CompareMICIdentifier3
-from ._CompareMasterAgreementType1 import CompareMasterAgreementType1
-from ._CompareMax350Text1 import CompareMax350Text1
-from ._CompareMax50Text1 import CompareMax50Text1
-from ._CompareNumber5 import CompareNumber5
-from ._CompareNumber7 import CompareNumber7
-from ._CompareOptionStyle1 import CompareOptionStyle1
-from ._CompareOptionType1 import CompareOptionType1
-from ._CompareOtherPayment1 import CompareOtherPayment1
-from ._ComparePercentageRate3 import ComparePercentageRate3
-from ._ComparePostTradeRiskReduction2 import ComparePostTradeRiskReduction2
-from ._CompareReferenceParty1 import CompareReferenceParty1
-from ._CompareReportingLevelType2 import CompareReportingLevelType2
-from ._CompareSeniorityType1 import CompareSeniorityType1
-from ._CompareText2 import CompareText2
-from ._CompareTradeClearingObligation1 import CompareTradeClearingObligation1
-from ._CompareTradeClearingStatus3 import CompareTradeClearingStatus3
-from ._CompareTradeConfirmation2 import CompareTradeConfirmation2
-from ._CompareTrancheIndicator1 import CompareTrancheIndicator1
-from ._CompareTrueFalseIndicator3 import CompareTrueFalseIndicator3
-from ._CompareUniqueTransactionIdentifier2 import CompareUniqueTransactionIdentifier2
-from ._CompareUnitPrice4 import CompareUnitPrice4
-from ._CompareUnitPrice5 import CompareUnitPrice5
-from ._CompareUnitPrice7 import CompareUnitPrice7
-from ._CompareUnitPrice8 import CompareUnitPrice8
+from . import CompareActiveOrHistoricCurrencyAndAmount4
+from . import CompareAmountAndDirection3
+from . import CompareBenchmarkCode1
+from . import CompareCommodityAssetClass4
+from . import CompareDate3
+from . import CompareDateTime3
+from . import CompareDayCount1
+from . import CompareDeliveryInterconnectionPoint1
+from . import CompareDeliveryType1
+from . import CompareDerivativeEvent1
+from . import CompareEnergyDeliveryAttribute1
+from . import CompareEnergyLoadType1
+from . import CompareExchangeRate1
+from . import CompareExchangeRateBasis1
+from . import CompareFrequencyUnit1
+from . import CompareISINIdentifier4
+from . import CompareLongFraction19DecimalNumber1
+from . import CompareMICIdentifier3
+from . import CompareMasterAgreementType1
+from . import CompareMax350Text1
+from . import CompareMax50Text1
+from . import CompareNumber5
+from . import CompareNumber7
+from . import CompareOptionStyle1
+from . import CompareOptionType1
+from . import CompareOtherPayment1
+from . import ComparePercentageRate3
+from . import ComparePostTradeRiskReduction2
+from . import CompareReferenceParty1
+from . import CompareReportingLevelType2
+from . import CompareSeniorityType1
+from . import CompareText2
+from . import CompareTradeClearingObligation1
+from . import CompareTradeClearingStatus3
+from . import CompareTradeConfirmation2
+from . import CompareTrancheIndicator1
+from . import CompareTrueFalseIndicator3
+from . import CompareUniqueTransactionIdentifier2
+from . import CompareUnitPrice4
+from . import CompareUnitPrice5
+from . import CompareUnitPrice7
+from . import CompareUnitPrice8
 
 class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
@@ -54,12 +54,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@CcyFwdXchgRate.setter
 	def CcyFwdXchgRate(self, value):
-		self._CcyFwdXchgRate = value if type(value) != base_types.auto else self.make_default("CcyFwdXchgRate")
+		self._CcyFwdXchgRate = value if value is not None else base_types.UninitialisedField(self, 'CcyFwdXchgRate', CompareExchangeRate1, False)
 
 	@CcyFwdXchgRate.deleter
 	def CcyFwdXchgRate(self):
 		del self._CcyFwdXchgRate
-		self._CcyFwdXchgRate = None
+		self._CcyFwdXchgRate = base_types.UninitialisedField(self, 'CcyFwdXchgRate', CompareExchangeRate1, False)
 
 	@property
 	def CcyXchgRate(self):
@@ -67,12 +67,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@CcyXchgRate.setter
 	def CcyXchgRate(self, value):
-		self._CcyXchgRate = value if type(value) != base_types.auto else self.make_default("CcyXchgRate")
+		self._CcyXchgRate = value if value is not None else base_types.UninitialisedField(self, 'CcyXchgRate', CompareExchangeRate1, False)
 
 	@CcyXchgRate.deleter
 	def CcyXchgRate(self):
 		del self._CcyXchgRate
-		self._CcyXchgRate = None
+		self._CcyXchgRate = base_types.UninitialisedField(self, 'CcyXchgRate', CompareExchangeRate1, False)
 
 	@property
 	def CcyXchgRateBsis(self):
@@ -80,12 +80,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@CcyXchgRateBsis.setter
 	def CcyXchgRateBsis(self, value):
-		self._CcyXchgRateBsis = value if type(value) != base_types.auto else self.make_default("CcyXchgRateBsis")
+		self._CcyXchgRateBsis = value if value is not None else base_types.UninitialisedField(self, 'CcyXchgRateBsis', CompareExchangeRateBasis1, False)
 
 	@CcyXchgRateBsis.deleter
 	def CcyXchgRateBsis(self):
 		del self._CcyXchgRateBsis
-		self._CcyXchgRateBsis = None
+		self._CcyXchgRateBsis = base_types.UninitialisedField(self, 'CcyXchgRateBsis', CompareExchangeRateBasis1, False)
 
 	@property
 	def CdtIndxFctr(self):
@@ -93,12 +93,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@CdtIndxFctr.setter
 	def CdtIndxFctr(self, value):
-		self._CdtIndxFctr = value if type(value) != base_types.auto else self.make_default("CdtIndxFctr")
+		self._CdtIndxFctr = value if value is not None else base_types.UninitialisedField(self, 'CdtIndxFctr', ComparePercentageRate3, False)
 
 	@CdtIndxFctr.deleter
 	def CdtIndxFctr(self):
 		del self._CdtIndxFctr
-		self._CdtIndxFctr = None
+		self._CdtIndxFctr = base_types.UninitialisedField(self, 'CdtIndxFctr', ComparePercentageRate3, False)
 
 	@property
 	def CdtRefPty(self):
@@ -106,12 +106,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@CdtRefPty.setter
 	def CdtRefPty(self, value):
-		self._CdtRefPty = value if type(value) != base_types.auto else self.make_default("CdtRefPty")
+		self._CdtRefPty = value if value is not None else base_types.UninitialisedField(self, 'CdtRefPty', CompareReferenceParty1, False)
 
 	@CdtRefPty.deleter
 	def CdtRefPty(self):
 		del self._CdtRefPty
-		self._CdtRefPty = None
+		self._CdtRefPty = base_types.UninitialisedField(self, 'CdtRefPty', CompareReferenceParty1, False)
 
 	@property
 	def CdtSnrty(self):
@@ -119,12 +119,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@CdtSnrty.setter
 	def CdtSnrty(self, value):
-		self._CdtSnrty = value if type(value) != base_types.auto else self.make_default("CdtSnrty")
+		self._CdtSnrty = value if value is not None else base_types.UninitialisedField(self, 'CdtSnrty', CompareSeniorityType1, False)
 
 	@CdtSnrty.deleter
 	def CdtSnrty(self):
 		del self._CdtSnrty
-		self._CdtSnrty = None
+		self._CdtSnrty = base_types.UninitialisedField(self, 'CdtSnrty', CompareSeniorityType1, False)
 
 	@property
 	def CdtSrs(self):
@@ -132,12 +132,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@CdtSrs.setter
 	def CdtSrs(self, value):
-		self._CdtSrs = value if type(value) != base_types.auto else self.make_default("CdtSrs")
+		self._CdtSrs = value if value is not None else base_types.UninitialisedField(self, 'CdtSrs', CompareNumber7, False)
 
 	@CdtSrs.deleter
 	def CdtSrs(self):
 		del self._CdtSrs
-		self._CdtSrs = None
+		self._CdtSrs = base_types.UninitialisedField(self, 'CdtSrs', CompareNumber7, False)
 
 	@property
 	def CdtTrch(self):
@@ -145,12 +145,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@CdtTrch.setter
 	def CdtTrch(self, value):
-		self._CdtTrch = value if type(value) != base_types.auto else self.make_default("CdtTrch")
+		self._CdtTrch = value if value is not None else base_types.UninitialisedField(self, 'CdtTrch', CompareTrancheIndicator1, False)
 
 	@CdtTrch.deleter
 	def CdtTrch(self):
 		del self._CdtTrch
-		self._CdtTrch = None
+		self._CdtTrch = base_types.UninitialisedField(self, 'CdtTrch', CompareTrancheIndicator1, False)
 
 	@property
 	def CdtVrsn(self):
@@ -158,12 +158,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@CdtVrsn.setter
 	def CdtVrsn(self, value):
-		self._CdtVrsn = value if type(value) != base_types.auto else self.make_default("CdtVrsn")
+		self._CdtVrsn = value if value is not None else base_types.UninitialisedField(self, 'CdtVrsn', CompareNumber7, False)
 
 	@CdtVrsn.deleter
 	def CdtVrsn(self):
 		del self._CdtVrsn
-		self._CdtVrsn = None
+		self._CdtVrsn = base_types.UninitialisedField(self, 'CdtVrsn', CompareNumber7, False)
 
 	@property
 	def Cmmdty(self):
@@ -171,12 +171,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@Cmmdty.setter
 	def Cmmdty(self, value):
-		self._Cmmdty = value if type(value) != base_types.auto else self.make_default("Cmmdty")
+		self._Cmmdty = value if value is not None else base_types.UninitialisedField(self, 'Cmmdty', CompareCommodityAssetClass4, False)
 
 	@Cmmdty.deleter
 	def Cmmdty(self):
 		del self._Cmmdty
-		self._Cmmdty = None
+		self._Cmmdty = base_types.UninitialisedField(self, 'Cmmdty', CompareCommodityAssetClass4, False)
 
 	@property
 	def DerivEvt(self):
@@ -184,12 +184,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@DerivEvt.setter
 	def DerivEvt(self, value):
-		self._DerivEvt = value if type(value) != base_types.auto else self.make_default("DerivEvt")
+		self._DerivEvt = value if value is not None else base_types.UninitialisedField(self, 'DerivEvt', CompareDerivativeEvent1, False)
 
 	@DerivEvt.deleter
 	def DerivEvt(self):
 		del self._DerivEvt
-		self._DerivEvt = None
+		self._DerivEvt = base_types.UninitialisedField(self, 'DerivEvt', CompareDerivativeEvent1, False)
 
 	@property
 	def Dlta(self):
@@ -197,12 +197,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@Dlta.setter
 	def Dlta(self, value):
-		self._Dlta = value if type(value) != base_types.auto else self.make_default("Dlta")
+		self._Dlta = value if value is not None else base_types.UninitialisedField(self, 'Dlta', CompareLongFraction19DecimalNumber1, False)
 
 	@Dlta.deleter
 	def Dlta(self):
 		del self._Dlta
-		self._Dlta = None
+		self._Dlta = base_types.UninitialisedField(self, 'Dlta', CompareLongFraction19DecimalNumber1, False)
 
 	@property
 	def DlvryAttr(self):
@@ -210,12 +210,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@DlvryAttr.setter
 	def DlvryAttr(self, value):
-		self._DlvryAttr = value if type(value) != base_types.auto else self.make_default("DlvryAttr")
+		self._DlvryAttr = value if value is not None else base_types.UninitialisedField(self, 'DlvryAttr', CompareEnergyDeliveryAttribute1, True)
 
 	@DlvryAttr.deleter
 	def DlvryAttr(self):
 		del self._DlvryAttr
-		self._DlvryAttr = None
+		self._DlvryAttr = base_types.UninitialisedField(self, 'DlvryAttr', CompareEnergyDeliveryAttribute1, True)
 
 	@property
 	def DlvryTp(self):
@@ -223,12 +223,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@DlvryTp.setter
 	def DlvryTp(self, value):
-		self._DlvryTp = value if type(value) != base_types.auto else self.make_default("DlvryTp")
+		self._DlvryTp = value if value is not None else base_types.UninitialisedField(self, 'DlvryTp', CompareDeliveryType1, False)
 
 	@DlvryTp.deleter
 	def DlvryTp(self):
 		del self._DlvryTp
-		self._DlvryTp = None
+		self._DlvryTp = base_types.UninitialisedField(self, 'DlvryTp', CompareDeliveryType1, False)
 
 	@property
 	def EarlyTermntnDt(self):
@@ -236,12 +236,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@EarlyTermntnDt.setter
 	def EarlyTermntnDt(self, value):
-		self._EarlyTermntnDt = value if type(value) != base_types.auto else self.make_default("EarlyTermntnDt")
+		self._EarlyTermntnDt = value if value is not None else base_types.UninitialisedField(self, 'EarlyTermntnDt', CompareDate3, False)
 
 	@EarlyTermntnDt.deleter
 	def EarlyTermntnDt(self):
 		del self._EarlyTermntnDt
-		self._EarlyTermntnDt = None
+		self._EarlyTermntnDt = base_types.UninitialisedField(self, 'EarlyTermntnDt', CompareDate3, False)
 
 	@property
 	def ExctnTmStmp(self):
@@ -249,12 +249,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@ExctnTmStmp.setter
 	def ExctnTmStmp(self, value):
-		self._ExctnTmStmp = value if type(value) != base_types.auto else self.make_default("ExctnTmStmp")
+		self._ExctnTmStmp = value if value is not None else base_types.UninitialisedField(self, 'ExctnTmStmp', CompareDateTime3, False)
 
 	@ExctnTmStmp.deleter
 	def ExctnTmStmp(self):
 		del self._ExctnTmStmp
-		self._ExctnTmStmp = None
+		self._ExctnTmStmp = base_types.UninitialisedField(self, 'ExctnTmStmp', CompareDateTime3, False)
 
 	@property
 	def FctvDt(self):
@@ -262,12 +262,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@FctvDt.setter
 	def FctvDt(self, value):
-		self._FctvDt = value if type(value) != base_types.auto else self.make_default("FctvDt")
+		self._FctvDt = value if value is not None else base_types.UninitialisedField(self, 'FctvDt', CompareDate3, False)
 
 	@FctvDt.deleter
 	def FctvDt(self):
 		del self._FctvDt
-		self._FctvDt = None
+		self._FctvDt = base_types.UninitialisedField(self, 'FctvDt', CompareDate3, False)
 
 	@property
 	def IntraGrp(self):
@@ -275,12 +275,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntraGrp.setter
 	def IntraGrp(self, value):
-		self._IntraGrp = value if type(value) != base_types.auto else self.make_default("IntraGrp")
+		self._IntraGrp = value if value is not None else base_types.UninitialisedField(self, 'IntraGrp', CompareTrueFalseIndicator3, False)
 
 	@IntraGrp.deleter
 	def IntraGrp(self):
 		del self._IntraGrp
-		self._IntraGrp = None
+		self._IntraGrp = base_types.UninitialisedField(self, 'IntraGrp', CompareTrueFalseIndicator3, False)
 
 	@property
 	def IntrstFltgRateFrstLegCd(self):
@@ -288,12 +288,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFltgRateFrstLegCd.setter
 	def IntrstFltgRateFrstLegCd(self, value):
-		self._IntrstFltgRateFrstLegCd = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateFrstLegCd")
+		self._IntrstFltgRateFrstLegCd = value if value is not None else base_types.UninitialisedField(self, 'IntrstFltgRateFrstLegCd', CompareBenchmarkCode1, False)
 
 	@IntrstFltgRateFrstLegCd.deleter
 	def IntrstFltgRateFrstLegCd(self):
 		del self._IntrstFltgRateFrstLegCd
-		self._IntrstFltgRateFrstLegCd = None
+		self._IntrstFltgRateFrstLegCd = base_types.UninitialisedField(self, 'IntrstFltgRateFrstLegCd', CompareBenchmarkCode1, False)
 
 	@property
 	def IntrstFltgRateFrstLegDayCnt(self):
@@ -301,12 +301,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFltgRateFrstLegDayCnt.setter
 	def IntrstFltgRateFrstLegDayCnt(self, value):
-		self._IntrstFltgRateFrstLegDayCnt = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateFrstLegDayCnt")
+		self._IntrstFltgRateFrstLegDayCnt = value if value is not None else base_types.UninitialisedField(self, 'IntrstFltgRateFrstLegDayCnt', CompareDayCount1, False)
 
 	@IntrstFltgRateFrstLegDayCnt.deleter
 	def IntrstFltgRateFrstLegDayCnt(self):
 		del self._IntrstFltgRateFrstLegDayCnt
-		self._IntrstFltgRateFrstLegDayCnt = None
+		self._IntrstFltgRateFrstLegDayCnt = base_types.UninitialisedField(self, 'IntrstFltgRateFrstLegDayCnt', CompareDayCount1, False)
 
 	@property
 	def IntrstFltgRateFrstLegId(self):
@@ -314,12 +314,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFltgRateFrstLegId.setter
 	def IntrstFltgRateFrstLegId(self, value):
-		self._IntrstFltgRateFrstLegId = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateFrstLegId")
+		self._IntrstFltgRateFrstLegId = value if value is not None else base_types.UninitialisedField(self, 'IntrstFltgRateFrstLegId', CompareISINIdentifier4, False)
 
 	@IntrstFltgRateFrstLegId.deleter
 	def IntrstFltgRateFrstLegId(self):
 		del self._IntrstFltgRateFrstLegId
-		self._IntrstFltgRateFrstLegId = None
+		self._IntrstFltgRateFrstLegId = base_types.UninitialisedField(self, 'IntrstFltgRateFrstLegId', CompareISINIdentifier4, False)
 
 	@property
 	def IntrstFltgRateFrstLegNm(self):
@@ -327,12 +327,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFltgRateFrstLegNm.setter
 	def IntrstFltgRateFrstLegNm(self, value):
-		self._IntrstFltgRateFrstLegNm = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateFrstLegNm")
+		self._IntrstFltgRateFrstLegNm = value if value is not None else base_types.UninitialisedField(self, 'IntrstFltgRateFrstLegNm', CompareMax350Text1, False)
 
 	@IntrstFltgRateFrstLegNm.deleter
 	def IntrstFltgRateFrstLegNm(self):
 		del self._IntrstFltgRateFrstLegNm
-		self._IntrstFltgRateFrstLegNm = None
+		self._IntrstFltgRateFrstLegNm = base_types.UninitialisedField(self, 'IntrstFltgRateFrstLegNm', CompareMax350Text1, False)
 
 	@property
 	def IntrstFltgRateFrstLegPmtFrqcyUnit(self):
@@ -340,12 +340,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFltgRateFrstLegPmtFrqcyUnit.setter
 	def IntrstFltgRateFrstLegPmtFrqcyUnit(self, value):
-		self._IntrstFltgRateFrstLegPmtFrqcyUnit = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateFrstLegPmtFrqcyUnit")
+		self._IntrstFltgRateFrstLegPmtFrqcyUnit = value if value is not None else base_types.UninitialisedField(self, 'IntrstFltgRateFrstLegPmtFrqcyUnit', CompareFrequencyUnit1, False)
 
 	@IntrstFltgRateFrstLegPmtFrqcyUnit.deleter
 	def IntrstFltgRateFrstLegPmtFrqcyUnit(self):
 		del self._IntrstFltgRateFrstLegPmtFrqcyUnit
-		self._IntrstFltgRateFrstLegPmtFrqcyUnit = None
+		self._IntrstFltgRateFrstLegPmtFrqcyUnit = base_types.UninitialisedField(self, 'IntrstFltgRateFrstLegPmtFrqcyUnit', CompareFrequencyUnit1, False)
 
 	@property
 	def IntrstFltgRateFrstLegPmtFrqcyVal(self):
@@ -353,12 +353,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFltgRateFrstLegPmtFrqcyVal.setter
 	def IntrstFltgRateFrstLegPmtFrqcyVal(self, value):
-		self._IntrstFltgRateFrstLegPmtFrqcyVal = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateFrstLegPmtFrqcyVal")
+		self._IntrstFltgRateFrstLegPmtFrqcyVal = value if value is not None else base_types.UninitialisedField(self, 'IntrstFltgRateFrstLegPmtFrqcyVal', CompareNumber5, False)
 
 	@IntrstFltgRateFrstLegPmtFrqcyVal.deleter
 	def IntrstFltgRateFrstLegPmtFrqcyVal(self):
 		del self._IntrstFltgRateFrstLegPmtFrqcyVal
-		self._IntrstFltgRateFrstLegPmtFrqcyVal = None
+		self._IntrstFltgRateFrstLegPmtFrqcyVal = base_types.UninitialisedField(self, 'IntrstFltgRateFrstLegPmtFrqcyVal', CompareNumber5, False)
 
 	@property
 	def IntrstFltgRateFrstLegRefPrdUnit(self):
@@ -366,12 +366,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFltgRateFrstLegRefPrdUnit.setter
 	def IntrstFltgRateFrstLegRefPrdUnit(self, value):
-		self._IntrstFltgRateFrstLegRefPrdUnit = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateFrstLegRefPrdUnit")
+		self._IntrstFltgRateFrstLegRefPrdUnit = value if value is not None else base_types.UninitialisedField(self, 'IntrstFltgRateFrstLegRefPrdUnit', CompareFrequencyUnit1, False)
 
 	@IntrstFltgRateFrstLegRefPrdUnit.deleter
 	def IntrstFltgRateFrstLegRefPrdUnit(self):
 		del self._IntrstFltgRateFrstLegRefPrdUnit
-		self._IntrstFltgRateFrstLegRefPrdUnit = None
+		self._IntrstFltgRateFrstLegRefPrdUnit = base_types.UninitialisedField(self, 'IntrstFltgRateFrstLegRefPrdUnit', CompareFrequencyUnit1, False)
 
 	@property
 	def IntrstFltgRateFrstLegRefPrdVal(self):
@@ -379,12 +379,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFltgRateFrstLegRefPrdVal.setter
 	def IntrstFltgRateFrstLegRefPrdVal(self, value):
-		self._IntrstFltgRateFrstLegRefPrdVal = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateFrstLegRefPrdVal")
+		self._IntrstFltgRateFrstLegRefPrdVal = value if value is not None else base_types.UninitialisedField(self, 'IntrstFltgRateFrstLegRefPrdVal', CompareNumber5, False)
 
 	@IntrstFltgRateFrstLegRefPrdVal.deleter
 	def IntrstFltgRateFrstLegRefPrdVal(self):
 		del self._IntrstFltgRateFrstLegRefPrdVal
-		self._IntrstFltgRateFrstLegRefPrdVal = None
+		self._IntrstFltgRateFrstLegRefPrdVal = base_types.UninitialisedField(self, 'IntrstFltgRateFrstLegRefPrdVal', CompareNumber5, False)
 
 	@property
 	def IntrstFltgRateFrstLegRstFrqcyUnit(self):
@@ -392,12 +392,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFltgRateFrstLegRstFrqcyUnit.setter
 	def IntrstFltgRateFrstLegRstFrqcyUnit(self, value):
-		self._IntrstFltgRateFrstLegRstFrqcyUnit = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateFrstLegRstFrqcyUnit")
+		self._IntrstFltgRateFrstLegRstFrqcyUnit = value if value is not None else base_types.UninitialisedField(self, 'IntrstFltgRateFrstLegRstFrqcyUnit', CompareFrequencyUnit1, False)
 
 	@IntrstFltgRateFrstLegRstFrqcyUnit.deleter
 	def IntrstFltgRateFrstLegRstFrqcyUnit(self):
 		del self._IntrstFltgRateFrstLegRstFrqcyUnit
-		self._IntrstFltgRateFrstLegRstFrqcyUnit = None
+		self._IntrstFltgRateFrstLegRstFrqcyUnit = base_types.UninitialisedField(self, 'IntrstFltgRateFrstLegRstFrqcyUnit', CompareFrequencyUnit1, False)
 
 	@property
 	def IntrstFltgRateFrstLegRstFrqcyVal(self):
@@ -405,12 +405,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFltgRateFrstLegRstFrqcyVal.setter
 	def IntrstFltgRateFrstLegRstFrqcyVal(self, value):
-		self._IntrstFltgRateFrstLegRstFrqcyVal = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateFrstLegRstFrqcyVal")
+		self._IntrstFltgRateFrstLegRstFrqcyVal = value if value is not None else base_types.UninitialisedField(self, 'IntrstFltgRateFrstLegRstFrqcyVal', CompareNumber5, False)
 
 	@IntrstFltgRateFrstLegRstFrqcyVal.deleter
 	def IntrstFltgRateFrstLegRstFrqcyVal(self):
 		del self._IntrstFltgRateFrstLegRstFrqcyVal
-		self._IntrstFltgRateFrstLegRstFrqcyVal = None
+		self._IntrstFltgRateFrstLegRstFrqcyVal = base_types.UninitialisedField(self, 'IntrstFltgRateFrstLegRstFrqcyVal', CompareNumber5, False)
 
 	@property
 	def IntrstFltgRateFrstLegSprd(self):
@@ -418,12 +418,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFltgRateFrstLegSprd.setter
 	def IntrstFltgRateFrstLegSprd(self, value):
-		self._IntrstFltgRateFrstLegSprd = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateFrstLegSprd")
+		self._IntrstFltgRateFrstLegSprd = value if value is not None else base_types.UninitialisedField(self, 'IntrstFltgRateFrstLegSprd', CompareUnitPrice8, False)
 
 	@IntrstFltgRateFrstLegSprd.deleter
 	def IntrstFltgRateFrstLegSprd(self):
 		del self._IntrstFltgRateFrstLegSprd
-		self._IntrstFltgRateFrstLegSprd = None
+		self._IntrstFltgRateFrstLegSprd = base_types.UninitialisedField(self, 'IntrstFltgRateFrstLegSprd', CompareUnitPrice8, False)
 
 	@property
 	def IntrstFltgRateScndLegCd(self):
@@ -431,12 +431,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFltgRateScndLegCd.setter
 	def IntrstFltgRateScndLegCd(self, value):
-		self._IntrstFltgRateScndLegCd = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateScndLegCd")
+		self._IntrstFltgRateScndLegCd = value if value is not None else base_types.UninitialisedField(self, 'IntrstFltgRateScndLegCd', CompareBenchmarkCode1, False)
 
 	@IntrstFltgRateScndLegCd.deleter
 	def IntrstFltgRateScndLegCd(self):
 		del self._IntrstFltgRateScndLegCd
-		self._IntrstFltgRateScndLegCd = None
+		self._IntrstFltgRateScndLegCd = base_types.UninitialisedField(self, 'IntrstFltgRateScndLegCd', CompareBenchmarkCode1, False)
 
 	@property
 	def IntrstFltgRateScndLegDayCnt(self):
@@ -444,12 +444,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFltgRateScndLegDayCnt.setter
 	def IntrstFltgRateScndLegDayCnt(self, value):
-		self._IntrstFltgRateScndLegDayCnt = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateScndLegDayCnt")
+		self._IntrstFltgRateScndLegDayCnt = value if value is not None else base_types.UninitialisedField(self, 'IntrstFltgRateScndLegDayCnt', CompareDayCount1, False)
 
 	@IntrstFltgRateScndLegDayCnt.deleter
 	def IntrstFltgRateScndLegDayCnt(self):
 		del self._IntrstFltgRateScndLegDayCnt
-		self._IntrstFltgRateScndLegDayCnt = None
+		self._IntrstFltgRateScndLegDayCnt = base_types.UninitialisedField(self, 'IntrstFltgRateScndLegDayCnt', CompareDayCount1, False)
 
 	@property
 	def IntrstFltgRateScndLegId(self):
@@ -457,12 +457,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFltgRateScndLegId.setter
 	def IntrstFltgRateScndLegId(self, value):
-		self._IntrstFltgRateScndLegId = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateScndLegId")
+		self._IntrstFltgRateScndLegId = value if value is not None else base_types.UninitialisedField(self, 'IntrstFltgRateScndLegId', CompareISINIdentifier4, False)
 
 	@IntrstFltgRateScndLegId.deleter
 	def IntrstFltgRateScndLegId(self):
 		del self._IntrstFltgRateScndLegId
-		self._IntrstFltgRateScndLegId = None
+		self._IntrstFltgRateScndLegId = base_types.UninitialisedField(self, 'IntrstFltgRateScndLegId', CompareISINIdentifier4, False)
 
 	@property
 	def IntrstFltgRateScndLegNm(self):
@@ -470,12 +470,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFltgRateScndLegNm.setter
 	def IntrstFltgRateScndLegNm(self, value):
-		self._IntrstFltgRateScndLegNm = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateScndLegNm")
+		self._IntrstFltgRateScndLegNm = value if value is not None else base_types.UninitialisedField(self, 'IntrstFltgRateScndLegNm', CompareMax350Text1, False)
 
 	@IntrstFltgRateScndLegNm.deleter
 	def IntrstFltgRateScndLegNm(self):
 		del self._IntrstFltgRateScndLegNm
-		self._IntrstFltgRateScndLegNm = None
+		self._IntrstFltgRateScndLegNm = base_types.UninitialisedField(self, 'IntrstFltgRateScndLegNm', CompareMax350Text1, False)
 
 	@property
 	def IntrstFltgRateScndLegPmtFrqcyUnit(self):
@@ -483,12 +483,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFltgRateScndLegPmtFrqcyUnit.setter
 	def IntrstFltgRateScndLegPmtFrqcyUnit(self, value):
-		self._IntrstFltgRateScndLegPmtFrqcyUnit = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateScndLegPmtFrqcyUnit")
+		self._IntrstFltgRateScndLegPmtFrqcyUnit = value if value is not None else base_types.UninitialisedField(self, 'IntrstFltgRateScndLegPmtFrqcyUnit', CompareFrequencyUnit1, False)
 
 	@IntrstFltgRateScndLegPmtFrqcyUnit.deleter
 	def IntrstFltgRateScndLegPmtFrqcyUnit(self):
 		del self._IntrstFltgRateScndLegPmtFrqcyUnit
-		self._IntrstFltgRateScndLegPmtFrqcyUnit = None
+		self._IntrstFltgRateScndLegPmtFrqcyUnit = base_types.UninitialisedField(self, 'IntrstFltgRateScndLegPmtFrqcyUnit', CompareFrequencyUnit1, False)
 
 	@property
 	def IntrstFltgRateScndLegPmtFrqcyVal(self):
@@ -496,12 +496,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFltgRateScndLegPmtFrqcyVal.setter
 	def IntrstFltgRateScndLegPmtFrqcyVal(self, value):
-		self._IntrstFltgRateScndLegPmtFrqcyVal = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateScndLegPmtFrqcyVal")
+		self._IntrstFltgRateScndLegPmtFrqcyVal = value if value is not None else base_types.UninitialisedField(self, 'IntrstFltgRateScndLegPmtFrqcyVal', CompareNumber5, False)
 
 	@IntrstFltgRateScndLegPmtFrqcyVal.deleter
 	def IntrstFltgRateScndLegPmtFrqcyVal(self):
 		del self._IntrstFltgRateScndLegPmtFrqcyVal
-		self._IntrstFltgRateScndLegPmtFrqcyVal = None
+		self._IntrstFltgRateScndLegPmtFrqcyVal = base_types.UninitialisedField(self, 'IntrstFltgRateScndLegPmtFrqcyVal', CompareNumber5, False)
 
 	@property
 	def IntrstFltgRateScndLegRefPrdUnit(self):
@@ -509,12 +509,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFltgRateScndLegRefPrdUnit.setter
 	def IntrstFltgRateScndLegRefPrdUnit(self, value):
-		self._IntrstFltgRateScndLegRefPrdUnit = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateScndLegRefPrdUnit")
+		self._IntrstFltgRateScndLegRefPrdUnit = value if value is not None else base_types.UninitialisedField(self, 'IntrstFltgRateScndLegRefPrdUnit', CompareFrequencyUnit1, False)
 
 	@IntrstFltgRateScndLegRefPrdUnit.deleter
 	def IntrstFltgRateScndLegRefPrdUnit(self):
 		del self._IntrstFltgRateScndLegRefPrdUnit
-		self._IntrstFltgRateScndLegRefPrdUnit = None
+		self._IntrstFltgRateScndLegRefPrdUnit = base_types.UninitialisedField(self, 'IntrstFltgRateScndLegRefPrdUnit', CompareFrequencyUnit1, False)
 
 	@property
 	def IntrstFltgRateScndLegRefPrdVal(self):
@@ -522,12 +522,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFltgRateScndLegRefPrdVal.setter
 	def IntrstFltgRateScndLegRefPrdVal(self, value):
-		self._IntrstFltgRateScndLegRefPrdVal = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateScndLegRefPrdVal")
+		self._IntrstFltgRateScndLegRefPrdVal = value if value is not None else base_types.UninitialisedField(self, 'IntrstFltgRateScndLegRefPrdVal', CompareNumber5, False)
 
 	@IntrstFltgRateScndLegRefPrdVal.deleter
 	def IntrstFltgRateScndLegRefPrdVal(self):
 		del self._IntrstFltgRateScndLegRefPrdVal
-		self._IntrstFltgRateScndLegRefPrdVal = None
+		self._IntrstFltgRateScndLegRefPrdVal = base_types.UninitialisedField(self, 'IntrstFltgRateScndLegRefPrdVal', CompareNumber5, False)
 
 	@property
 	def IntrstFltgRateScndLegRstFrqcyUnit(self):
@@ -535,12 +535,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFltgRateScndLegRstFrqcyUnit.setter
 	def IntrstFltgRateScndLegRstFrqcyUnit(self, value):
-		self._IntrstFltgRateScndLegRstFrqcyUnit = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateScndLegRstFrqcyUnit")
+		self._IntrstFltgRateScndLegRstFrqcyUnit = value if value is not None else base_types.UninitialisedField(self, 'IntrstFltgRateScndLegRstFrqcyUnit', CompareFrequencyUnit1, False)
 
 	@IntrstFltgRateScndLegRstFrqcyUnit.deleter
 	def IntrstFltgRateScndLegRstFrqcyUnit(self):
 		del self._IntrstFltgRateScndLegRstFrqcyUnit
-		self._IntrstFltgRateScndLegRstFrqcyUnit = None
+		self._IntrstFltgRateScndLegRstFrqcyUnit = base_types.UninitialisedField(self, 'IntrstFltgRateScndLegRstFrqcyUnit', CompareFrequencyUnit1, False)
 
 	@property
 	def IntrstFltgRateScndLegRstFrqcyVal(self):
@@ -548,12 +548,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFltgRateScndLegRstFrqcyVal.setter
 	def IntrstFltgRateScndLegRstFrqcyVal(self, value):
-		self._IntrstFltgRateScndLegRstFrqcyVal = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateScndLegRstFrqcyVal")
+		self._IntrstFltgRateScndLegRstFrqcyVal = value if value is not None else base_types.UninitialisedField(self, 'IntrstFltgRateScndLegRstFrqcyVal', CompareNumber5, False)
 
 	@IntrstFltgRateScndLegRstFrqcyVal.deleter
 	def IntrstFltgRateScndLegRstFrqcyVal(self):
 		del self._IntrstFltgRateScndLegRstFrqcyVal
-		self._IntrstFltgRateScndLegRstFrqcyVal = None
+		self._IntrstFltgRateScndLegRstFrqcyVal = base_types.UninitialisedField(self, 'IntrstFltgRateScndLegRstFrqcyVal', CompareNumber5, False)
 
 	@property
 	def IntrstFltgRateScndLegSprd(self):
@@ -561,12 +561,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFltgRateScndLegSprd.setter
 	def IntrstFltgRateScndLegSprd(self, value):
-		self._IntrstFltgRateScndLegSprd = value if type(value) != base_types.auto else self.make_default("IntrstFltgRateScndLegSprd")
+		self._IntrstFltgRateScndLegSprd = value if value is not None else base_types.UninitialisedField(self, 'IntrstFltgRateScndLegSprd', CompareUnitPrice8, False)
 
 	@IntrstFltgRateScndLegSprd.deleter
 	def IntrstFltgRateScndLegSprd(self):
 		del self._IntrstFltgRateScndLegSprd
-		self._IntrstFltgRateScndLegSprd = None
+		self._IntrstFltgRateScndLegSprd = base_types.UninitialisedField(self, 'IntrstFltgRateScndLegSprd', CompareUnitPrice8, False)
 
 	@property
 	def IntrstFxdRateFrstLeg(self):
@@ -574,12 +574,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFxdRateFrstLeg.setter
 	def IntrstFxdRateFrstLeg(self, value):
-		self._IntrstFxdRateFrstLeg = value if type(value) != base_types.auto else self.make_default("IntrstFxdRateFrstLeg")
+		self._IntrstFxdRateFrstLeg = value if value is not None else base_types.UninitialisedField(self, 'IntrstFxdRateFrstLeg', CompareUnitPrice7, False)
 
 	@IntrstFxdRateFrstLeg.deleter
 	def IntrstFxdRateFrstLeg(self):
 		del self._IntrstFxdRateFrstLeg
-		self._IntrstFxdRateFrstLeg = None
+		self._IntrstFxdRateFrstLeg = base_types.UninitialisedField(self, 'IntrstFxdRateFrstLeg', CompareUnitPrice7, False)
 
 	@property
 	def IntrstFxdRateFrstLegDayCnt(self):
@@ -587,12 +587,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFxdRateFrstLegDayCnt.setter
 	def IntrstFxdRateFrstLegDayCnt(self, value):
-		self._IntrstFxdRateFrstLegDayCnt = value if type(value) != base_types.auto else self.make_default("IntrstFxdRateFrstLegDayCnt")
+		self._IntrstFxdRateFrstLegDayCnt = value if value is not None else base_types.UninitialisedField(self, 'IntrstFxdRateFrstLegDayCnt', CompareDayCount1, False)
 
 	@IntrstFxdRateFrstLegDayCnt.deleter
 	def IntrstFxdRateFrstLegDayCnt(self):
 		del self._IntrstFxdRateFrstLegDayCnt
-		self._IntrstFxdRateFrstLegDayCnt = None
+		self._IntrstFxdRateFrstLegDayCnt = base_types.UninitialisedField(self, 'IntrstFxdRateFrstLegDayCnt', CompareDayCount1, False)
 
 	@property
 	def IntrstFxdRateFrstLegPmtFrqcyUnit(self):
@@ -600,12 +600,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFxdRateFrstLegPmtFrqcyUnit.setter
 	def IntrstFxdRateFrstLegPmtFrqcyUnit(self, value):
-		self._IntrstFxdRateFrstLegPmtFrqcyUnit = value if type(value) != base_types.auto else self.make_default("IntrstFxdRateFrstLegPmtFrqcyUnit")
+		self._IntrstFxdRateFrstLegPmtFrqcyUnit = value if value is not None else base_types.UninitialisedField(self, 'IntrstFxdRateFrstLegPmtFrqcyUnit', CompareFrequencyUnit1, False)
 
 	@IntrstFxdRateFrstLegPmtFrqcyUnit.deleter
 	def IntrstFxdRateFrstLegPmtFrqcyUnit(self):
 		del self._IntrstFxdRateFrstLegPmtFrqcyUnit
-		self._IntrstFxdRateFrstLegPmtFrqcyUnit = None
+		self._IntrstFxdRateFrstLegPmtFrqcyUnit = base_types.UninitialisedField(self, 'IntrstFxdRateFrstLegPmtFrqcyUnit', CompareFrequencyUnit1, False)
 
 	@property
 	def IntrstFxdRateFrstLegPmtFrqcyVal(self):
@@ -613,12 +613,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFxdRateFrstLegPmtFrqcyVal.setter
 	def IntrstFxdRateFrstLegPmtFrqcyVal(self, value):
-		self._IntrstFxdRateFrstLegPmtFrqcyVal = value if type(value) != base_types.auto else self.make_default("IntrstFxdRateFrstLegPmtFrqcyVal")
+		self._IntrstFxdRateFrstLegPmtFrqcyVal = value if value is not None else base_types.UninitialisedField(self, 'IntrstFxdRateFrstLegPmtFrqcyVal', CompareNumber5, False)
 
 	@IntrstFxdRateFrstLegPmtFrqcyVal.deleter
 	def IntrstFxdRateFrstLegPmtFrqcyVal(self):
 		del self._IntrstFxdRateFrstLegPmtFrqcyVal
-		self._IntrstFxdRateFrstLegPmtFrqcyVal = None
+		self._IntrstFxdRateFrstLegPmtFrqcyVal = base_types.UninitialisedField(self, 'IntrstFxdRateFrstLegPmtFrqcyVal', CompareNumber5, False)
 
 	@property
 	def IntrstFxdRateScndLegDayCnt(self):
@@ -626,12 +626,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFxdRateScndLegDayCnt.setter
 	def IntrstFxdRateScndLegDayCnt(self, value):
-		self._IntrstFxdRateScndLegDayCnt = value if type(value) != base_types.auto else self.make_default("IntrstFxdRateScndLegDayCnt")
+		self._IntrstFxdRateScndLegDayCnt = value if value is not None else base_types.UninitialisedField(self, 'IntrstFxdRateScndLegDayCnt', CompareDayCount1, False)
 
 	@IntrstFxdRateScndLegDayCnt.deleter
 	def IntrstFxdRateScndLegDayCnt(self):
 		del self._IntrstFxdRateScndLegDayCnt
-		self._IntrstFxdRateScndLegDayCnt = None
+		self._IntrstFxdRateScndLegDayCnt = base_types.UninitialisedField(self, 'IntrstFxdRateScndLegDayCnt', CompareDayCount1, False)
 
 	@property
 	def IntrstFxdRateScndLegPmtFrqcyUnit(self):
@@ -639,12 +639,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFxdRateScndLegPmtFrqcyUnit.setter
 	def IntrstFxdRateScndLegPmtFrqcyUnit(self, value):
-		self._IntrstFxdRateScndLegPmtFrqcyUnit = value if type(value) != base_types.auto else self.make_default("IntrstFxdRateScndLegPmtFrqcyUnit")
+		self._IntrstFxdRateScndLegPmtFrqcyUnit = value if value is not None else base_types.UninitialisedField(self, 'IntrstFxdRateScndLegPmtFrqcyUnit', CompareFrequencyUnit1, False)
 
 	@IntrstFxdRateScndLegPmtFrqcyUnit.deleter
 	def IntrstFxdRateScndLegPmtFrqcyUnit(self):
 		del self._IntrstFxdRateScndLegPmtFrqcyUnit
-		self._IntrstFxdRateScndLegPmtFrqcyUnit = None
+		self._IntrstFxdRateScndLegPmtFrqcyUnit = base_types.UninitialisedField(self, 'IntrstFxdRateScndLegPmtFrqcyUnit', CompareFrequencyUnit1, False)
 
 	@property
 	def IntrstFxdRateScndLegPmtFrqcyVal(self):
@@ -652,12 +652,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstFxdRateScndLegPmtFrqcyVal.setter
 	def IntrstFxdRateScndLegPmtFrqcyVal(self, value):
-		self._IntrstFxdRateScndLegPmtFrqcyVal = value if type(value) != base_types.auto else self.make_default("IntrstFxdRateScndLegPmtFrqcyVal")
+		self._IntrstFxdRateScndLegPmtFrqcyVal = value if value is not None else base_types.UninitialisedField(self, 'IntrstFxdRateScndLegPmtFrqcyVal', CompareNumber5, False)
 
 	@IntrstFxdRateScndLegPmtFrqcyVal.deleter
 	def IntrstFxdRateScndLegPmtFrqcyVal(self):
 		del self._IntrstFxdRateScndLegPmtFrqcyVal
-		self._IntrstFxdRateScndLegPmtFrqcyVal = None
+		self._IntrstFxdRateScndLegPmtFrqcyVal = base_types.UninitialisedField(self, 'IntrstFxdRateScndLegPmtFrqcyVal', CompareNumber5, False)
 
 	@property
 	def IntrstRateFxdScndLeg(self):
@@ -665,12 +665,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@IntrstRateFxdScndLeg.setter
 	def IntrstRateFxdScndLeg(self, value):
-		self._IntrstRateFxdScndLeg = value if type(value) != base_types.auto else self.make_default("IntrstRateFxdScndLeg")
+		self._IntrstRateFxdScndLeg = value if value is not None else base_types.UninitialisedField(self, 'IntrstRateFxdScndLeg', CompareUnitPrice7, False)
 
 	@IntrstRateFxdScndLeg.deleter
 	def IntrstRateFxdScndLeg(self):
 		del self._IntrstRateFxdScndLeg
-		self._IntrstRateFxdScndLeg = None
+		self._IntrstRateFxdScndLeg = base_types.UninitialisedField(self, 'IntrstRateFxdScndLeg', CompareUnitPrice7, False)
 
 	@property
 	def Lvl(self):
@@ -678,12 +678,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@Lvl.setter
 	def Lvl(self, value):
-		self._Lvl = value if type(value) != base_types.auto else self.make_default("Lvl")
+		self._Lvl = value if value is not None else base_types.UninitialisedField(self, 'Lvl', CompareReportingLevelType2, False)
 
 	@Lvl.deleter
 	def Lvl(self):
 		del self._Lvl
-		self._Lvl = None
+		self._Lvl = base_types.UninitialisedField(self, 'Lvl', CompareReportingLevelType2, False)
 
 	@property
 	def MstrAgrmtTp(self):
@@ -691,12 +691,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@MstrAgrmtTp.setter
 	def MstrAgrmtTp(self, value):
-		self._MstrAgrmtTp = value if type(value) != base_types.auto else self.make_default("MstrAgrmtTp")
+		self._MstrAgrmtTp = value if value is not None else base_types.UninitialisedField(self, 'MstrAgrmtTp', CompareMasterAgreementType1, False)
 
 	@MstrAgrmtTp.deleter
 	def MstrAgrmtTp(self):
 		del self._MstrAgrmtTp
-		self._MstrAgrmtTp = None
+		self._MstrAgrmtTp = base_types.UninitialisedField(self, 'MstrAgrmtTp', CompareMasterAgreementType1, False)
 
 	@property
 	def MstrAgrmtVrsn(self):
@@ -704,12 +704,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@MstrAgrmtVrsn.setter
 	def MstrAgrmtVrsn(self, value):
-		self._MstrAgrmtVrsn = value if type(value) != base_types.auto else self.make_default("MstrAgrmtVrsn")
+		self._MstrAgrmtVrsn = value if value is not None else base_types.UninitialisedField(self, 'MstrAgrmtVrsn', CompareMax50Text1, False)
 
 	@MstrAgrmtVrsn.deleter
 	def MstrAgrmtVrsn(self):
 		del self._MstrAgrmtVrsn
-		self._MstrAgrmtVrsn = None
+		self._MstrAgrmtVrsn = base_types.UninitialisedField(self, 'MstrAgrmtVrsn', CompareMax50Text1, False)
 
 	@property
 	def NrgyDlvryPtOrZone(self):
@@ -717,12 +717,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@NrgyDlvryPtOrZone.setter
 	def NrgyDlvryPtOrZone(self, value):
-		self._NrgyDlvryPtOrZone = value if type(value) != base_types.auto else self.make_default("NrgyDlvryPtOrZone")
+		self._NrgyDlvryPtOrZone = value if value is not None else base_types.UninitialisedField(self, 'NrgyDlvryPtOrZone', CompareDeliveryInterconnectionPoint1, True)
 
 	@NrgyDlvryPtOrZone.deleter
 	def NrgyDlvryPtOrZone(self):
 		del self._NrgyDlvryPtOrZone
-		self._NrgyDlvryPtOrZone = None
+		self._NrgyDlvryPtOrZone = base_types.UninitialisedField(self, 'NrgyDlvryPtOrZone', CompareDeliveryInterconnectionPoint1, True)
 
 	@property
 	def NrgyIntrCnnctnPt(self):
@@ -730,12 +730,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@NrgyIntrCnnctnPt.setter
 	def NrgyIntrCnnctnPt(self, value):
-		self._NrgyIntrCnnctnPt = value if type(value) != base_types.auto else self.make_default("NrgyIntrCnnctnPt")
+		self._NrgyIntrCnnctnPt = value if value is not None else base_types.UninitialisedField(self, 'NrgyIntrCnnctnPt', CompareDeliveryInterconnectionPoint1, False)
 
 	@NrgyIntrCnnctnPt.deleter
 	def NrgyIntrCnnctnPt(self):
 		del self._NrgyIntrCnnctnPt
-		self._NrgyIntrCnnctnPt = None
+		self._NrgyIntrCnnctnPt = base_types.UninitialisedField(self, 'NrgyIntrCnnctnPt', CompareDeliveryInterconnectionPoint1, False)
 
 	@property
 	def NrgyLdTp(self):
@@ -743,12 +743,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@NrgyLdTp.setter
 	def NrgyLdTp(self, value):
-		self._NrgyLdTp = value if type(value) != base_types.auto else self.make_default("NrgyLdTp")
+		self._NrgyLdTp = value if value is not None else base_types.UninitialisedField(self, 'NrgyLdTp', CompareEnergyLoadType1, False)
 
 	@NrgyLdTp.deleter
 	def NrgyLdTp(self):
 		del self._NrgyLdTp
-		self._NrgyLdTp = None
+		self._NrgyLdTp = base_types.UninitialisedField(self, 'NrgyLdTp', CompareEnergyLoadType1, False)
 
 	@property
 	def NtnlAmtFrstLeg(self):
@@ -756,12 +756,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@NtnlAmtFrstLeg.setter
 	def NtnlAmtFrstLeg(self, value):
-		self._NtnlAmtFrstLeg = value if type(value) != base_types.auto else self.make_default("NtnlAmtFrstLeg")
+		self._NtnlAmtFrstLeg = value if value is not None else base_types.UninitialisedField(self, 'NtnlAmtFrstLeg', CompareAmountAndDirection3, False)
 
 	@NtnlAmtFrstLeg.deleter
 	def NtnlAmtFrstLeg(self):
 		del self._NtnlAmtFrstLeg
-		self._NtnlAmtFrstLeg = None
+		self._NtnlAmtFrstLeg = base_types.UninitialisedField(self, 'NtnlAmtFrstLeg', CompareAmountAndDirection3, False)
 
 	@property
 	def NtnlAmtFrstLegSchdlAmt(self):
@@ -769,12 +769,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@NtnlAmtFrstLegSchdlAmt.setter
 	def NtnlAmtFrstLegSchdlAmt(self, value):
-		self._NtnlAmtFrstLegSchdlAmt = value if type(value) != base_types.auto else self.make_default("NtnlAmtFrstLegSchdlAmt")
+		self._NtnlAmtFrstLegSchdlAmt = value if value is not None else base_types.UninitialisedField(self, 'NtnlAmtFrstLegSchdlAmt', CompareAmountAndDirection3, True)
 
 	@NtnlAmtFrstLegSchdlAmt.deleter
 	def NtnlAmtFrstLegSchdlAmt(self):
 		del self._NtnlAmtFrstLegSchdlAmt
-		self._NtnlAmtFrstLegSchdlAmt = None
+		self._NtnlAmtFrstLegSchdlAmt = base_types.UninitialisedField(self, 'NtnlAmtFrstLegSchdlAmt', CompareAmountAndDirection3, True)
 
 	@property
 	def NtnlAmtFrstLegUadjstdEndDt(self):
@@ -782,12 +782,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@NtnlAmtFrstLegUadjstdEndDt.setter
 	def NtnlAmtFrstLegUadjstdEndDt(self, value):
-		self._NtnlAmtFrstLegUadjstdEndDt = value if type(value) != base_types.auto else self.make_default("NtnlAmtFrstLegUadjstdEndDt")
+		self._NtnlAmtFrstLegUadjstdEndDt = value if value is not None else base_types.UninitialisedField(self, 'NtnlAmtFrstLegUadjstdEndDt', CompareDate3, True)
 
 	@NtnlAmtFrstLegUadjstdEndDt.deleter
 	def NtnlAmtFrstLegUadjstdEndDt(self):
 		del self._NtnlAmtFrstLegUadjstdEndDt
-		self._NtnlAmtFrstLegUadjstdEndDt = None
+		self._NtnlAmtFrstLegUadjstdEndDt = base_types.UninitialisedField(self, 'NtnlAmtFrstLegUadjstdEndDt', CompareDate3, True)
 
 	@property
 	def NtnlAmtFrstLegUadjstdFctvDt(self):
@@ -795,12 +795,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@NtnlAmtFrstLegUadjstdFctvDt.setter
 	def NtnlAmtFrstLegUadjstdFctvDt(self, value):
-		self._NtnlAmtFrstLegUadjstdFctvDt = value if type(value) != base_types.auto else self.make_default("NtnlAmtFrstLegUadjstdFctvDt")
+		self._NtnlAmtFrstLegUadjstdFctvDt = value if value is not None else base_types.UninitialisedField(self, 'NtnlAmtFrstLegUadjstdFctvDt', CompareDate3, True)
 
 	@NtnlAmtFrstLegUadjstdFctvDt.deleter
 	def NtnlAmtFrstLegUadjstdFctvDt(self):
 		del self._NtnlAmtFrstLegUadjstdFctvDt
-		self._NtnlAmtFrstLegUadjstdFctvDt = None
+		self._NtnlAmtFrstLegUadjstdFctvDt = base_types.UninitialisedField(self, 'NtnlAmtFrstLegUadjstdFctvDt', CompareDate3, True)
 
 	@property
 	def NtnlAmtScndLeg(self):
@@ -808,12 +808,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@NtnlAmtScndLeg.setter
 	def NtnlAmtScndLeg(self, value):
-		self._NtnlAmtScndLeg = value if type(value) != base_types.auto else self.make_default("NtnlAmtScndLeg")
+		self._NtnlAmtScndLeg = value if value is not None else base_types.UninitialisedField(self, 'NtnlAmtScndLeg', CompareAmountAndDirection3, False)
 
 	@NtnlAmtScndLeg.deleter
 	def NtnlAmtScndLeg(self):
 		del self._NtnlAmtScndLeg
-		self._NtnlAmtScndLeg = None
+		self._NtnlAmtScndLeg = base_types.UninitialisedField(self, 'NtnlAmtScndLeg', CompareAmountAndDirection3, False)
 
 	@property
 	def NtnlAmtScndLegSchdlAmt(self):
@@ -821,12 +821,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@NtnlAmtScndLegSchdlAmt.setter
 	def NtnlAmtScndLegSchdlAmt(self, value):
-		self._NtnlAmtScndLegSchdlAmt = value if type(value) != base_types.auto else self.make_default("NtnlAmtScndLegSchdlAmt")
+		self._NtnlAmtScndLegSchdlAmt = value if value is not None else base_types.UninitialisedField(self, 'NtnlAmtScndLegSchdlAmt', CompareAmountAndDirection3, True)
 
 	@NtnlAmtScndLegSchdlAmt.deleter
 	def NtnlAmtScndLegSchdlAmt(self):
 		del self._NtnlAmtScndLegSchdlAmt
-		self._NtnlAmtScndLegSchdlAmt = None
+		self._NtnlAmtScndLegSchdlAmt = base_types.UninitialisedField(self, 'NtnlAmtScndLegSchdlAmt', CompareAmountAndDirection3, True)
 
 	@property
 	def NtnlAmtScndLegUadjstdEndDt(self):
@@ -834,12 +834,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@NtnlAmtScndLegUadjstdEndDt.setter
 	def NtnlAmtScndLegUadjstdEndDt(self, value):
-		self._NtnlAmtScndLegUadjstdEndDt = value if type(value) != base_types.auto else self.make_default("NtnlAmtScndLegUadjstdEndDt")
+		self._NtnlAmtScndLegUadjstdEndDt = value if value is not None else base_types.UninitialisedField(self, 'NtnlAmtScndLegUadjstdEndDt', CompareDate3, True)
 
 	@NtnlAmtScndLegUadjstdEndDt.deleter
 	def NtnlAmtScndLegUadjstdEndDt(self):
 		del self._NtnlAmtScndLegUadjstdEndDt
-		self._NtnlAmtScndLegUadjstdEndDt = None
+		self._NtnlAmtScndLegUadjstdEndDt = base_types.UninitialisedField(self, 'NtnlAmtScndLegUadjstdEndDt', CompareDate3, True)
 
 	@property
 	def NtnlAmtScndLegUadjstdFctvDt(self):
@@ -847,12 +847,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@NtnlAmtScndLegUadjstdFctvDt.setter
 	def NtnlAmtScndLegUadjstdFctvDt(self, value):
-		self._NtnlAmtScndLegUadjstdFctvDt = value if type(value) != base_types.auto else self.make_default("NtnlAmtScndLegUadjstdFctvDt")
+		self._NtnlAmtScndLegUadjstdFctvDt = value if value is not None else base_types.UninitialisedField(self, 'NtnlAmtScndLegUadjstdFctvDt', CompareDate3, True)
 
 	@NtnlAmtScndLegUadjstdFctvDt.deleter
 	def NtnlAmtScndLegUadjstdFctvDt(self):
 		del self._NtnlAmtScndLegUadjstdFctvDt
-		self._NtnlAmtScndLegUadjstdFctvDt = None
+		self._NtnlAmtScndLegUadjstdFctvDt = base_types.UninitialisedField(self, 'NtnlAmtScndLegUadjstdFctvDt', CompareDate3, True)
 
 	@property
 	def NtnlQtyFrstLeg(self):
@@ -860,12 +860,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@NtnlQtyFrstLeg.setter
 	def NtnlQtyFrstLeg(self, value):
-		self._NtnlQtyFrstLeg = value if type(value) != base_types.auto else self.make_default("NtnlQtyFrstLeg")
+		self._NtnlQtyFrstLeg = value if value is not None else base_types.UninitialisedField(self, 'NtnlQtyFrstLeg', CompareLongFraction19DecimalNumber1, False)
 
 	@NtnlQtyFrstLeg.deleter
 	def NtnlQtyFrstLeg(self):
 		del self._NtnlQtyFrstLeg
-		self._NtnlQtyFrstLeg = None
+		self._NtnlQtyFrstLeg = base_types.UninitialisedField(self, 'NtnlQtyFrstLeg', CompareLongFraction19DecimalNumber1, False)
 
 	@property
 	def NtnlQtyFrstLegSchdlQty(self):
@@ -873,12 +873,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@NtnlQtyFrstLegSchdlQty.setter
 	def NtnlQtyFrstLegSchdlQty(self, value):
-		self._NtnlQtyFrstLegSchdlQty = value if type(value) != base_types.auto else self.make_default("NtnlQtyFrstLegSchdlQty")
+		self._NtnlQtyFrstLegSchdlQty = value if value is not None else base_types.UninitialisedField(self, 'NtnlQtyFrstLegSchdlQty', CompareLongFraction19DecimalNumber1, True)
 
 	@NtnlQtyFrstLegSchdlQty.deleter
 	def NtnlQtyFrstLegSchdlQty(self):
 		del self._NtnlQtyFrstLegSchdlQty
-		self._NtnlQtyFrstLegSchdlQty = None
+		self._NtnlQtyFrstLegSchdlQty = base_types.UninitialisedField(self, 'NtnlQtyFrstLegSchdlQty', CompareLongFraction19DecimalNumber1, True)
 
 	@property
 	def NtnlQtyFrstLegUadjstdEndDt(self):
@@ -886,12 +886,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@NtnlQtyFrstLegUadjstdEndDt.setter
 	def NtnlQtyFrstLegUadjstdEndDt(self, value):
-		self._NtnlQtyFrstLegUadjstdEndDt = value if type(value) != base_types.auto else self.make_default("NtnlQtyFrstLegUadjstdEndDt")
+		self._NtnlQtyFrstLegUadjstdEndDt = value if value is not None else base_types.UninitialisedField(self, 'NtnlQtyFrstLegUadjstdEndDt', CompareDate3, True)
 
 	@NtnlQtyFrstLegUadjstdEndDt.deleter
 	def NtnlQtyFrstLegUadjstdEndDt(self):
 		del self._NtnlQtyFrstLegUadjstdEndDt
-		self._NtnlQtyFrstLegUadjstdEndDt = None
+		self._NtnlQtyFrstLegUadjstdEndDt = base_types.UninitialisedField(self, 'NtnlQtyFrstLegUadjstdEndDt', CompareDate3, True)
 
 	@property
 	def NtnlQtyFrstLegUadjstdFctvDt(self):
@@ -899,12 +899,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@NtnlQtyFrstLegUadjstdFctvDt.setter
 	def NtnlQtyFrstLegUadjstdFctvDt(self, value):
-		self._NtnlQtyFrstLegUadjstdFctvDt = value if type(value) != base_types.auto else self.make_default("NtnlQtyFrstLegUadjstdFctvDt")
+		self._NtnlQtyFrstLegUadjstdFctvDt = value if value is not None else base_types.UninitialisedField(self, 'NtnlQtyFrstLegUadjstdFctvDt', CompareDate3, True)
 
 	@NtnlQtyFrstLegUadjstdFctvDt.deleter
 	def NtnlQtyFrstLegUadjstdFctvDt(self):
 		del self._NtnlQtyFrstLegUadjstdFctvDt
-		self._NtnlQtyFrstLegUadjstdFctvDt = None
+		self._NtnlQtyFrstLegUadjstdFctvDt = base_types.UninitialisedField(self, 'NtnlQtyFrstLegUadjstdFctvDt', CompareDate3, True)
 
 	@property
 	def NtnlQtyScndLeg(self):
@@ -912,12 +912,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@NtnlQtyScndLeg.setter
 	def NtnlQtyScndLeg(self, value):
-		self._NtnlQtyScndLeg = value if type(value) != base_types.auto else self.make_default("NtnlQtyScndLeg")
+		self._NtnlQtyScndLeg = value if value is not None else base_types.UninitialisedField(self, 'NtnlQtyScndLeg', CompareLongFraction19DecimalNumber1, False)
 
 	@NtnlQtyScndLeg.deleter
 	def NtnlQtyScndLeg(self):
 		del self._NtnlQtyScndLeg
-		self._NtnlQtyScndLeg = None
+		self._NtnlQtyScndLeg = base_types.UninitialisedField(self, 'NtnlQtyScndLeg', CompareLongFraction19DecimalNumber1, False)
 
 	@property
 	def NtnlQtyScndLegSchdlQty(self):
@@ -925,12 +925,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@NtnlQtyScndLegSchdlQty.setter
 	def NtnlQtyScndLegSchdlQty(self, value):
-		self._NtnlQtyScndLegSchdlQty = value if type(value) != base_types.auto else self.make_default("NtnlQtyScndLegSchdlQty")
+		self._NtnlQtyScndLegSchdlQty = value if value is not None else base_types.UninitialisedField(self, 'NtnlQtyScndLegSchdlQty', CompareLongFraction19DecimalNumber1, True)
 
 	@NtnlQtyScndLegSchdlQty.deleter
 	def NtnlQtyScndLegSchdlQty(self):
 		del self._NtnlQtyScndLegSchdlQty
-		self._NtnlQtyScndLegSchdlQty = None
+		self._NtnlQtyScndLegSchdlQty = base_types.UninitialisedField(self, 'NtnlQtyScndLegSchdlQty', CompareLongFraction19DecimalNumber1, True)
 
 	@property
 	def NtnlQtyScndLegUadjstdEndDt(self):
@@ -938,12 +938,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@NtnlQtyScndLegUadjstdEndDt.setter
 	def NtnlQtyScndLegUadjstdEndDt(self, value):
-		self._NtnlQtyScndLegUadjstdEndDt = value if type(value) != base_types.auto else self.make_default("NtnlQtyScndLegUadjstdEndDt")
+		self._NtnlQtyScndLegUadjstdEndDt = value if value is not None else base_types.UninitialisedField(self, 'NtnlQtyScndLegUadjstdEndDt', CompareDate3, True)
 
 	@NtnlQtyScndLegUadjstdEndDt.deleter
 	def NtnlQtyScndLegUadjstdEndDt(self):
 		del self._NtnlQtyScndLegUadjstdEndDt
-		self._NtnlQtyScndLegUadjstdEndDt = None
+		self._NtnlQtyScndLegUadjstdEndDt = base_types.UninitialisedField(self, 'NtnlQtyScndLegUadjstdEndDt', CompareDate3, True)
 
 	@property
 	def NtnlQtyScndLegUadjstdFctvDt(self):
@@ -951,12 +951,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@NtnlQtyScndLegUadjstdFctvDt.setter
 	def NtnlQtyScndLegUadjstdFctvDt(self, value):
-		self._NtnlQtyScndLegUadjstdFctvDt = value if type(value) != base_types.auto else self.make_default("NtnlQtyScndLegUadjstdFctvDt")
+		self._NtnlQtyScndLegUadjstdFctvDt = value if value is not None else base_types.UninitialisedField(self, 'NtnlQtyScndLegUadjstdFctvDt', CompareDate3, True)
 
 	@NtnlQtyScndLegUadjstdFctvDt.deleter
 	def NtnlQtyScndLegUadjstdFctvDt(self):
 		del self._NtnlQtyScndLegUadjstdFctvDt
-		self._NtnlQtyScndLegUadjstdFctvDt = None
+		self._NtnlQtyScndLegUadjstdFctvDt = base_types.UninitialisedField(self, 'NtnlQtyScndLegUadjstdFctvDt', CompareDate3, True)
 
 	@property
 	def OptnExrcStyle(self):
@@ -964,12 +964,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@OptnExrcStyle.setter
 	def OptnExrcStyle(self, value):
-		self._OptnExrcStyle = value if type(value) != base_types.auto else self.make_default("OptnExrcStyle")
+		self._OptnExrcStyle = value if value is not None else base_types.UninitialisedField(self, 'OptnExrcStyle', CompareOptionStyle1, True)
 
 	@OptnExrcStyle.deleter
 	def OptnExrcStyle(self):
 		del self._OptnExrcStyle
-		self._OptnExrcStyle = None
+		self._OptnExrcStyle = base_types.UninitialisedField(self, 'OptnExrcStyle', CompareOptionStyle1, True)
 
 	@property
 	def OptnMtrtyDtOfUndrlyg(self):
@@ -977,12 +977,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@OptnMtrtyDtOfUndrlyg.setter
 	def OptnMtrtyDtOfUndrlyg(self, value):
-		self._OptnMtrtyDtOfUndrlyg = value if type(value) != base_types.auto else self.make_default("OptnMtrtyDtOfUndrlyg")
+		self._OptnMtrtyDtOfUndrlyg = value if value is not None else base_types.UninitialisedField(self, 'OptnMtrtyDtOfUndrlyg', CompareDate3, False)
 
 	@OptnMtrtyDtOfUndrlyg.deleter
 	def OptnMtrtyDtOfUndrlyg(self):
 		del self._OptnMtrtyDtOfUndrlyg
-		self._OptnMtrtyDtOfUndrlyg = None
+		self._OptnMtrtyDtOfUndrlyg = base_types.UninitialisedField(self, 'OptnMtrtyDtOfUndrlyg', CompareDate3, False)
 
 	@property
 	def OptnPrmAmt(self):
@@ -990,12 +990,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@OptnPrmAmt.setter
 	def OptnPrmAmt(self, value):
-		self._OptnPrmAmt = value if type(value) != base_types.auto else self.make_default("OptnPrmAmt")
+		self._OptnPrmAmt = value if value is not None else base_types.UninitialisedField(self, 'OptnPrmAmt', CompareActiveOrHistoricCurrencyAndAmount4, False)
 
 	@OptnPrmAmt.deleter
 	def OptnPrmAmt(self):
 		del self._OptnPrmAmt
-		self._OptnPrmAmt = None
+		self._OptnPrmAmt = base_types.UninitialisedField(self, 'OptnPrmAmt', CompareActiveOrHistoricCurrencyAndAmount4, False)
 
 	@property
 	def OptnPrmPmtDt(self):
@@ -1003,12 +1003,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@OptnPrmPmtDt.setter
 	def OptnPrmPmtDt(self, value):
-		self._OptnPrmPmtDt = value if type(value) != base_types.auto else self.make_default("OptnPrmPmtDt")
+		self._OptnPrmPmtDt = value if value is not None else base_types.UninitialisedField(self, 'OptnPrmPmtDt', CompareDate3, False)
 
 	@OptnPrmPmtDt.deleter
 	def OptnPrmPmtDt(self):
 		del self._OptnPrmPmtDt
-		self._OptnPrmPmtDt = None
+		self._OptnPrmPmtDt = base_types.UninitialisedField(self, 'OptnPrmPmtDt', CompareDate3, False)
 
 	@property
 	def OptnStrkPric(self):
@@ -1016,12 +1016,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@OptnStrkPric.setter
 	def OptnStrkPric(self, value):
-		self._OptnStrkPric = value if type(value) != base_types.auto else self.make_default("OptnStrkPric")
+		self._OptnStrkPric = value if value is not None else base_types.UninitialisedField(self, 'OptnStrkPric', CompareUnitPrice4, False)
 
 	@OptnStrkPric.deleter
 	def OptnStrkPric(self):
 		del self._OptnStrkPric
-		self._OptnStrkPric = None
+		self._OptnStrkPric = base_types.UninitialisedField(self, 'OptnStrkPric', CompareUnitPrice4, False)
 
 	@property
 	def OptnStrkPricSchdlAmt(self):
@@ -1029,12 +1029,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@OptnStrkPricSchdlAmt.setter
 	def OptnStrkPricSchdlAmt(self, value):
-		self._OptnStrkPricSchdlAmt = value if type(value) != base_types.auto else self.make_default("OptnStrkPricSchdlAmt")
+		self._OptnStrkPricSchdlAmt = value if value is not None else base_types.UninitialisedField(self, 'OptnStrkPricSchdlAmt', CompareUnitPrice4, True)
 
 	@OptnStrkPricSchdlAmt.deleter
 	def OptnStrkPricSchdlAmt(self):
 		del self._OptnStrkPricSchdlAmt
-		self._OptnStrkPricSchdlAmt = None
+		self._OptnStrkPricSchdlAmt = base_types.UninitialisedField(self, 'OptnStrkPricSchdlAmt', CompareUnitPrice4, True)
 
 	@property
 	def OptnStrkPricSchdlUadjstdEndDt(self):
@@ -1042,12 +1042,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@OptnStrkPricSchdlUadjstdEndDt.setter
 	def OptnStrkPricSchdlUadjstdEndDt(self, value):
-		self._OptnStrkPricSchdlUadjstdEndDt = value if type(value) != base_types.auto else self.make_default("OptnStrkPricSchdlUadjstdEndDt")
+		self._OptnStrkPricSchdlUadjstdEndDt = value if value is not None else base_types.UninitialisedField(self, 'OptnStrkPricSchdlUadjstdEndDt', CompareDate3, True)
 
 	@OptnStrkPricSchdlUadjstdEndDt.deleter
 	def OptnStrkPricSchdlUadjstdEndDt(self):
 		del self._OptnStrkPricSchdlUadjstdEndDt
-		self._OptnStrkPricSchdlUadjstdEndDt = None
+		self._OptnStrkPricSchdlUadjstdEndDt = base_types.UninitialisedField(self, 'OptnStrkPricSchdlUadjstdEndDt', CompareDate3, True)
 
 	@property
 	def OptnStrkPricSchdlUadjstdFctvDt(self):
@@ -1055,12 +1055,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@OptnStrkPricSchdlUadjstdFctvDt.setter
 	def OptnStrkPricSchdlUadjstdFctvDt(self, value):
-		self._OptnStrkPricSchdlUadjstdFctvDt = value if type(value) != base_types.auto else self.make_default("OptnStrkPricSchdlUadjstdFctvDt")
+		self._OptnStrkPricSchdlUadjstdFctvDt = value if value is not None else base_types.UninitialisedField(self, 'OptnStrkPricSchdlUadjstdFctvDt', CompareDate3, True)
 
 	@OptnStrkPricSchdlUadjstdFctvDt.deleter
 	def OptnStrkPricSchdlUadjstdFctvDt(self):
 		del self._OptnStrkPricSchdlUadjstdFctvDt
-		self._OptnStrkPricSchdlUadjstdFctvDt = None
+		self._OptnStrkPricSchdlUadjstdFctvDt = base_types.UninitialisedField(self, 'OptnStrkPricSchdlUadjstdFctvDt', CompareDate3, True)
 
 	@property
 	def OptnTp(self):
@@ -1068,12 +1068,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@OptnTp.setter
 	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != base_types.auto else self.make_default("OptnTp")
+		self._OptnTp = value if value is not None else base_types.UninitialisedField(self, 'OptnTp', CompareOptionType1, False)
 
 	@OptnTp.deleter
 	def OptnTp(self):
 		del self._OptnTp
-		self._OptnTp = None
+		self._OptnTp = base_types.UninitialisedField(self, 'OptnTp', CompareOptionType1, False)
 
 	@property
 	def OthrPmt(self):
@@ -1081,12 +1081,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@OthrPmt.setter
 	def OthrPmt(self, value):
-		self._OthrPmt = value if type(value) != base_types.auto else self.make_default("OthrPmt")
+		self._OthrPmt = value if value is not None else base_types.UninitialisedField(self, 'OthrPmt', CompareOtherPayment1, True)
 
 	@OthrPmt.deleter
 	def OthrPmt(self):
 		del self._OthrPmt
-		self._OthrPmt = None
+		self._OthrPmt = base_types.UninitialisedField(self, 'OthrPmt', CompareOtherPayment1, True)
 
 	@property
 	def PackgPric(self):
@@ -1094,12 +1094,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@PackgPric.setter
 	def PackgPric(self, value):
-		self._PackgPric = value if type(value) != base_types.auto else self.make_default("PackgPric")
+		self._PackgPric = value if value is not None else base_types.UninitialisedField(self, 'PackgPric', CompareUnitPrice5, False)
 
 	@PackgPric.deleter
 	def PackgPric(self):
 		del self._PackgPric
-		self._PackgPric = None
+		self._PackgPric = base_types.UninitialisedField(self, 'PackgPric', CompareUnitPrice5, False)
 
 	@property
 	def PackgSprd(self):
@@ -1107,12 +1107,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@PackgSprd.setter
 	def PackgSprd(self, value):
-		self._PackgSprd = value if type(value) != base_types.auto else self.make_default("PackgSprd")
+		self._PackgSprd = value if value is not None else base_types.UninitialisedField(self, 'PackgSprd', CompareUnitPrice8, False)
 
 	@PackgSprd.deleter
 	def PackgSprd(self):
 		del self._PackgSprd
-		self._PackgSprd = None
+		self._PackgSprd = base_types.UninitialisedField(self, 'PackgSprd', CompareUnitPrice8, False)
 
 	@property
 	def PltfmIdr(self):
@@ -1120,12 +1120,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@PltfmIdr.setter
 	def PltfmIdr(self, value):
-		self._PltfmIdr = value if type(value) != base_types.auto else self.make_default("PltfmIdr")
+		self._PltfmIdr = value if value is not None else base_types.UninitialisedField(self, 'PltfmIdr', CompareMICIdentifier3, False)
 
 	@PltfmIdr.deleter
 	def PltfmIdr(self):
 		del self._PltfmIdr
-		self._PltfmIdr = None
+		self._PltfmIdr = base_types.UninitialisedField(self, 'PltfmIdr', CompareMICIdentifier3, False)
 
 	@property
 	def PricSchdlUadjstdEndDt(self):
@@ -1133,12 +1133,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@PricSchdlUadjstdEndDt.setter
 	def PricSchdlUadjstdEndDt(self, value):
-		self._PricSchdlUadjstdEndDt = value if type(value) != base_types.auto else self.make_default("PricSchdlUadjstdEndDt")
+		self._PricSchdlUadjstdEndDt = value if value is not None else base_types.UninitialisedField(self, 'PricSchdlUadjstdEndDt', CompareDate3, True)
 
 	@PricSchdlUadjstdEndDt.deleter
 	def PricSchdlUadjstdEndDt(self):
 		del self._PricSchdlUadjstdEndDt
-		self._PricSchdlUadjstdEndDt = None
+		self._PricSchdlUadjstdEndDt = base_types.UninitialisedField(self, 'PricSchdlUadjstdEndDt', CompareDate3, True)
 
 	@property
 	def PricSchdlUadjstdFctvDt(self):
@@ -1146,12 +1146,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@PricSchdlUadjstdFctvDt.setter
 	def PricSchdlUadjstdFctvDt(self, value):
-		self._PricSchdlUadjstdFctvDt = value if type(value) != base_types.auto else self.make_default("PricSchdlUadjstdFctvDt")
+		self._PricSchdlUadjstdFctvDt = value if value is not None else base_types.UninitialisedField(self, 'PricSchdlUadjstdFctvDt', CompareDate3, True)
 
 	@PricSchdlUadjstdFctvDt.deleter
 	def PricSchdlUadjstdFctvDt(self):
 		del self._PricSchdlUadjstdFctvDt
-		self._PricSchdlUadjstdFctvDt = None
+		self._PricSchdlUadjstdFctvDt = base_types.UninitialisedField(self, 'PricSchdlUadjstdFctvDt', CompareDate3, True)
 
 	@property
 	def PrrUnqTxIdr(self):
@@ -1159,12 +1159,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@PrrUnqTxIdr.setter
 	def PrrUnqTxIdr(self, value):
-		self._PrrUnqTxIdr = value if type(value) != base_types.auto else self.make_default("PrrUnqTxIdr")
+		self._PrrUnqTxIdr = value if value is not None else base_types.UninitialisedField(self, 'PrrUnqTxIdr', CompareUniqueTransactionIdentifier2, False)
 
 	@PrrUnqTxIdr.deleter
 	def PrrUnqTxIdr(self):
 		del self._PrrUnqTxIdr
-		self._PrrUnqTxIdr = None
+		self._PrrUnqTxIdr = base_types.UninitialisedField(self, 'PrrUnqTxIdr', CompareUniqueTransactionIdentifier2, False)
 
 	@property
 	def PstTradRskRdctn(self):
@@ -1172,12 +1172,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@PstTradRskRdctn.setter
 	def PstTradRskRdctn(self, value):
-		self._PstTradRskRdctn = value if type(value) != base_types.auto else self.make_default("PstTradRskRdctn")
+		self._PstTradRskRdctn = value if value is not None else base_types.UninitialisedField(self, 'PstTradRskRdctn', ComparePostTradeRiskReduction2, False)
 
 	@PstTradRskRdctn.deleter
 	def PstTradRskRdctn(self):
 		del self._PstTradRskRdctn
-		self._PstTradRskRdctn = None
+		self._PstTradRskRdctn = base_types.UninitialisedField(self, 'PstTradRskRdctn', ComparePostTradeRiskReduction2, False)
 
 	@property
 	def RptTrckgNb(self):
@@ -1185,12 +1185,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@RptTrckgNb.setter
 	def RptTrckgNb(self, value):
-		self._RptTrckgNb = value if type(value) != base_types.auto else self.make_default("RptTrckgNb")
+		self._RptTrckgNb = value if value is not None else base_types.UninitialisedField(self, 'RptTrckgNb', CompareText2, False)
 
 	@RptTrckgNb.deleter
 	def RptTrckgNb(self):
 		del self._RptTrckgNb
-		self._RptTrckgNb = None
+		self._RptTrckgNb = base_types.UninitialisedField(self, 'RptTrckgNb', CompareText2, False)
 
 	@property
 	def SbsqntPosUnqTxIdr(self):
@@ -1198,12 +1198,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@SbsqntPosUnqTxIdr.setter
 	def SbsqntPosUnqTxIdr(self, value):
-		self._SbsqntPosUnqTxIdr = value if type(value) != base_types.auto else self.make_default("SbsqntPosUnqTxIdr")
+		self._SbsqntPosUnqTxIdr = value if value is not None else base_types.UninitialisedField(self, 'SbsqntPosUnqTxIdr', CompareUniqueTransactionIdentifier2, False)
 
 	@SbsqntPosUnqTxIdr.deleter
 	def SbsqntPosUnqTxIdr(self):
 		del self._SbsqntPosUnqTxIdr
-		self._SbsqntPosUnqTxIdr = None
+		self._SbsqntPosUnqTxIdr = base_types.UninitialisedField(self, 'SbsqntPosUnqTxIdr', CompareUniqueTransactionIdentifier2, False)
 
 	@property
 	def SttlmDt(self):
@@ -1211,12 +1211,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@SttlmDt.setter
 	def SttlmDt(self, value):
-		self._SttlmDt = value if type(value) != base_types.auto else self.make_default("SttlmDt")
+		self._SttlmDt = value if value is not None else base_types.UninitialisedField(self, 'SttlmDt', CompareDate3, True)
 
 	@SttlmDt.deleter
 	def SttlmDt(self):
 		del self._SttlmDt
-		self._SttlmDt = None
+		self._SttlmDt = base_types.UninitialisedField(self, 'SttlmDt', CompareDate3, True)
 
 	@property
 	def TradClrOblgtn(self):
@@ -1224,12 +1224,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@TradClrOblgtn.setter
 	def TradClrOblgtn(self, value):
-		self._TradClrOblgtn = value if type(value) != base_types.auto else self.make_default("TradClrOblgtn")
+		self._TradClrOblgtn = value if value is not None else base_types.UninitialisedField(self, 'TradClrOblgtn', CompareTradeClearingObligation1, False)
 
 	@TradClrOblgtn.deleter
 	def TradClrOblgtn(self):
 		del self._TradClrOblgtn
-		self._TradClrOblgtn = None
+		self._TradClrOblgtn = base_types.UninitialisedField(self, 'TradClrOblgtn', CompareTradeClearingObligation1, False)
 
 	@property
 	def TradClrSts(self):
@@ -1237,12 +1237,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@TradClrSts.setter
 	def TradClrSts(self, value):
-		self._TradClrSts = value if type(value) != base_types.auto else self.make_default("TradClrSts")
+		self._TradClrSts = value if value is not None else base_types.UninitialisedField(self, 'TradClrSts', CompareTradeClearingStatus3, False)
 
 	@TradClrSts.deleter
 	def TradClrSts(self):
 		del self._TradClrSts
-		self._TradClrSts = None
+		self._TradClrSts = base_types.UninitialisedField(self, 'TradClrSts', CompareTradeClearingStatus3, False)
 
 	@property
 	def TradConf(self):
@@ -1250,12 +1250,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@TradConf.setter
 	def TradConf(self, value):
-		self._TradConf = value if type(value) != base_types.auto else self.make_default("TradConf")
+		self._TradConf = value if value is not None else base_types.UninitialisedField(self, 'TradConf', CompareTradeConfirmation2, False)
 
 	@TradConf.deleter
 	def TradConf(self):
 		del self._TradConf
-		self._TradConf = None
+		self._TradConf = base_types.UninitialisedField(self, 'TradConf', CompareTradeConfirmation2, False)
 
 	@property
 	def TxPric(self):
@@ -1263,12 +1263,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@TxPric.setter
 	def TxPric(self, value):
-		self._TxPric = value if type(value) != base_types.auto else self.make_default("TxPric")
+		self._TxPric = value if value is not None else base_types.UninitialisedField(self, 'TxPric', CompareUnitPrice5, False)
 
 	@TxPric.deleter
 	def TxPric(self):
 		del self._TxPric
-		self._TxPric = None
+		self._TxPric = base_types.UninitialisedField(self, 'TxPric', CompareUnitPrice5, False)
 
 	@property
 	def TxSchdlPric(self):
@@ -1276,12 +1276,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@TxSchdlPric.setter
 	def TxSchdlPric(self, value):
-		self._TxSchdlPric = value if type(value) != base_types.auto else self.make_default("TxSchdlPric")
+		self._TxSchdlPric = value if value is not None else base_types.UninitialisedField(self, 'TxSchdlPric', CompareUnitPrice5, True)
 
 	@TxSchdlPric.deleter
 	def TxSchdlPric(self):
 		del self._TxSchdlPric
-		self._TxSchdlPric = None
+		self._TxSchdlPric = base_types.UninitialisedField(self, 'TxSchdlPric', CompareUnitPrice5, True)
 
 	@property
 	def UnqTxIdr(self):
@@ -1289,12 +1289,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@UnqTxIdr.setter
 	def UnqTxIdr(self, value):
-		self._UnqTxIdr = value if type(value) != base_types.auto else self.make_default("UnqTxIdr")
+		self._UnqTxIdr = value if value is not None else base_types.UninitialisedField(self, 'UnqTxIdr', CompareUniqueTransactionIdentifier2, False)
 
 	@UnqTxIdr.deleter
 	def UnqTxIdr(self):
 		del self._UnqTxIdr
-		self._UnqTxIdr = None
+		self._UnqTxIdr = base_types.UninitialisedField(self, 'UnqTxIdr', CompareUniqueTransactionIdentifier2, False)
 
 	@property
 	def XprtnDt(self):
@@ -1302,12 +1302,12 @@ class TransactionMatchingCriteria7(base_types._BaseFieldType):
 
 	@XprtnDt.setter
 	def XprtnDt(self, value):
-		self._XprtnDt = value if type(value) != base_types.auto else self.make_default("XprtnDt")
+		self._XprtnDt = value if value is not None else base_types.UninitialisedField(self, 'XprtnDt', CompareDate3, False)
 
 	@XprtnDt.deleter
 	def XprtnDt(self):
 		del self._XprtnDt
-		self._XprtnDt = None
+		self._XprtnDt = base_types.UninitialisedField(self, 'XprtnDt', CompareDate3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CcyFwdXchgRate', type=CompareExchangeRate1, min=0, max=1, mutex_group=None, array=False),

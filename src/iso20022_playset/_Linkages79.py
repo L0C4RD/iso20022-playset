@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DocumentNumber5Choice import DocumentNumber5Choice
-from ._PairedOrTurnedQuantity7Choice import PairedOrTurnedQuantity7Choice
-from ._PartyIdentification127Choice import PartyIdentification127Choice
-from ._ProcessingPosition7Choice import ProcessingPosition7Choice
-from ._References41Choice import References41Choice
+from . import DocumentNumber5Choice
+from . import PairedOrTurnedQuantity7Choice
+from . import PartyIdentification127Choice
+from . import ProcessingPosition7Choice
+from . import References41Choice
 
 class Linkages79(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class Linkages79(base_types._BaseFieldType):
 
 	@LkdQty.setter
 	def LkdQty(self, value):
-		self._LkdQty = value if type(value) != base_types.auto else self.make_default("LkdQty")
+		self._LkdQty = value if value is not None else base_types.UninitialisedField(self, 'LkdQty', PairedOrTurnedQuantity7Choice, False)
 
 	@LkdQty.deleter
 	def LkdQty(self):
 		del self._LkdQty
-		self._LkdQty = None
+		self._LkdQty = base_types.UninitialisedField(self, 'LkdQty', PairedOrTurnedQuantity7Choice, False)
 
 	@property
 	def MsgNb(self):
@@ -30,12 +30,12 @@ class Linkages79(base_types._BaseFieldType):
 
 	@MsgNb.setter
 	def MsgNb(self, value):
-		self._MsgNb = value if type(value) != base_types.auto else self.make_default("MsgNb")
+		self._MsgNb = value if value is not None else base_types.UninitialisedField(self, 'MsgNb', DocumentNumber5Choice, False)
 
 	@MsgNb.deleter
 	def MsgNb(self):
 		del self._MsgNb
-		self._MsgNb = None
+		self._MsgNb = base_types.UninitialisedField(self, 'MsgNb', DocumentNumber5Choice, False)
 
 	@property
 	def PrcgPos(self):
@@ -43,12 +43,12 @@ class Linkages79(base_types._BaseFieldType):
 
 	@PrcgPos.setter
 	def PrcgPos(self, value):
-		self._PrcgPos = value if type(value) != base_types.auto else self.make_default("PrcgPos")
+		self._PrcgPos = value if value is not None else base_types.UninitialisedField(self, 'PrcgPos', ProcessingPosition7Choice, False)
 
 	@PrcgPos.deleter
 	def PrcgPos(self):
 		del self._PrcgPos
-		self._PrcgPos = None
+		self._PrcgPos = base_types.UninitialisedField(self, 'PrcgPos', ProcessingPosition7Choice, False)
 
 	@property
 	def Ref(self):
@@ -56,12 +56,12 @@ class Linkages79(base_types._BaseFieldType):
 
 	@Ref.setter
 	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+		self._Ref = value if value is not None else base_types.UninitialisedField(self, 'Ref', References41Choice, False)
 
 	@Ref.deleter
 	def Ref(self):
 		del self._Ref
-		self._Ref = None
+		self._Ref = base_types.UninitialisedField(self, 'Ref', References41Choice, False)
 
 	@property
 	def RefOwnr(self):
@@ -69,12 +69,12 @@ class Linkages79(base_types._BaseFieldType):
 
 	@RefOwnr.setter
 	def RefOwnr(self, value):
-		self._RefOwnr = value if type(value) != base_types.auto else self.make_default("RefOwnr")
+		self._RefOwnr = value if value is not None else base_types.UninitialisedField(self, 'RefOwnr', PartyIdentification127Choice, False)
 
 	@RefOwnr.deleter
 	def RefOwnr(self):
 		del self._RefOwnr
-		self._RefOwnr = None
+		self._RefOwnr = base_types.UninitialisedField(self, 'RefOwnr', PartyIdentification127Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LkdQty', type=PairedOrTurnedQuantity7Choice, min=0, max=1, mutex_group=None, array=False),

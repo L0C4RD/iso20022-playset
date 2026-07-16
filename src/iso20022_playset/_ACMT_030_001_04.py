@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountSwitchRequestRedirectionV04 import AccountSwitchRequestRedirectionV04
+from . import AccountSwitchRequestRedirectionV04
 
 class ACMT_030_001_04():
 
@@ -18,12 +18,12 @@ class ACMT_030_001_04():
 
 		@AcctSwtchReqRdrctn.setter
 		def AcctSwtchReqRdrctn(self, value):
-			self._AcctSwtchReqRdrctn = value if type(value) != base_types.auto else self.make_default("AcctSwtchReqRdrctn")
+			self._AcctSwtchReqRdrctn = value if value is not None else base_types.UninitialisedField(self, 'AcctSwtchReqRdrctn', AccountSwitchRequestRedirectionV04, False)
 
 		@AcctSwtchReqRdrctn.deleter
 		def AcctSwtchReqRdrctn(self):
 			del self._AcctSwtchReqRdrctn
-			self._AcctSwtchReqRdrctn = None
+			self._AcctSwtchReqRdrctn = base_types.UninitialisedField(self, 'AcctSwtchReqRdrctn', AccountSwitchRequestRedirectionV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AcctSwtchReqRdrctn', type=AccountSwitchRequestRedirectionV04, min=1, max=1, mutex_group=None, array=False),

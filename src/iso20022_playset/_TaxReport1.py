@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalInformation1 import AdditionalInformation1
-from ._DocumentGeneralInformation2 import DocumentGeneralInformation2
-from ._GroupHeader69 import GroupHeader69
-from ._PartyIdentification72 import PartyIdentification72
-from ._SupplementaryData1 import SupplementaryData1
-from ._TradeSettlement2 import TradeSettlement2
+from . import AdditionalInformation1
+from . import DocumentGeneralInformation2
+from . import GroupHeader69
+from . import PartyIdentification72
+from . import SupplementaryData1
+from . import TradeSettlement2
 
 class TaxReport1(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class TaxReport1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation1, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation1, True)
 
 	@property
 	def AddtlRef(self):
@@ -31,12 +31,12 @@ class TaxReport1(base_types._BaseFieldType):
 
 	@AddtlRef.setter
 	def AddtlRef(self, value):
-		self._AddtlRef = value if type(value) != base_types.auto else self.make_default("AddtlRef")
+		self._AddtlRef = value if value is not None else base_types.UninitialisedField(self, 'AddtlRef', DocumentGeneralInformation2, True)
 
 	@AddtlRef.deleter
 	def AddtlRef(self):
 		del self._AddtlRef
-		self._AddtlRef = None
+		self._AddtlRef = base_types.UninitialisedField(self, 'AddtlRef', DocumentGeneralInformation2, True)
 
 	@property
 	def Buyr(self):
@@ -44,12 +44,12 @@ class TaxReport1(base_types._BaseFieldType):
 
 	@Buyr.setter
 	def Buyr(self, value):
-		self._Buyr = value if type(value) != base_types.auto else self.make_default("Buyr")
+		self._Buyr = value if value is not None else base_types.UninitialisedField(self, 'Buyr', PartyIdentification72, False)
 
 	@Buyr.deleter
 	def Buyr(self):
 		del self._Buyr
-		self._Buyr = None
+		self._Buyr = base_types.UninitialisedField(self, 'Buyr', PartyIdentification72, False)
 
 	@property
 	def OthrPty(self):
@@ -57,12 +57,12 @@ class TaxReport1(base_types._BaseFieldType):
 
 	@OthrPty.setter
 	def OthrPty(self, value):
-		self._OthrPty = value if type(value) != base_types.auto else self.make_default("OthrPty")
+		self._OthrPty = value if value is not None else base_types.UninitialisedField(self, 'OthrPty', PartyIdentification72, True)
 
 	@OthrPty.deleter
 	def OthrPty(self):
 		del self._OthrPty
-		self._OthrPty = None
+		self._OthrPty = base_types.UninitialisedField(self, 'OthrPty', PartyIdentification72, True)
 
 	@property
 	def Sellr(self):
@@ -70,12 +70,12 @@ class TaxReport1(base_types._BaseFieldType):
 
 	@Sellr.setter
 	def Sellr(self, value):
-		self._Sellr = value if type(value) != base_types.auto else self.make_default("Sellr")
+		self._Sellr = value if value is not None else base_types.UninitialisedField(self, 'Sellr', PartyIdentification72, False)
 
 	@Sellr.deleter
 	def Sellr(self):
 		del self._Sellr
-		self._Sellr = None
+		self._Sellr = base_types.UninitialisedField(self, 'Sellr', PartyIdentification72, False)
 
 	@property
 	def SplmtryData(self):
@@ -83,12 +83,12 @@ class TaxReport1(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TaxRptHdr(self):
@@ -96,12 +96,12 @@ class TaxReport1(base_types._BaseFieldType):
 
 	@TaxRptHdr.setter
 	def TaxRptHdr(self, value):
-		self._TaxRptHdr = value if type(value) != base_types.auto else self.make_default("TaxRptHdr")
+		self._TaxRptHdr = value if value is not None else base_types.UninitialisedField(self, 'TaxRptHdr', GroupHeader69, False)
 
 	@TaxRptHdr.deleter
 	def TaxRptHdr(self):
 		del self._TaxRptHdr
-		self._TaxRptHdr = None
+		self._TaxRptHdr = base_types.UninitialisedField(self, 'TaxRptHdr', GroupHeader69, False)
 
 	@property
 	def TradSttlm(self):
@@ -109,12 +109,12 @@ class TaxReport1(base_types._BaseFieldType):
 
 	@TradSttlm.setter
 	def TradSttlm(self, value):
-		self._TradSttlm = value if type(value) != base_types.auto else self.make_default("TradSttlm")
+		self._TradSttlm = value if value is not None else base_types.UninitialisedField(self, 'TradSttlm', TradeSettlement2, False)
 
 	@TradSttlm.deleter
 	def TradSttlm(self):
 		del self._TradSttlm
-		self._TradSttlm = None
+		self._TradSttlm = base_types.UninitialisedField(self, 'TradSttlm', TradeSettlement2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation1, min=0, max=None, mutex_group=None, array=True),

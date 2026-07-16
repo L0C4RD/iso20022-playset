@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max70Text import Max70Text
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ActiveCurrencyCode
+from . import ImpliedCurrencyAndAmount
+from . import Max70Text
+from . import TrueFalseIndicator
 
 class DetailedAmount18(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class DetailedAmount18(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ImpliedCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def Ccy(self):
@@ -29,12 +29,12 @@ class DetailedAmount18(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@property
 	def ChrgAcctTo(self):
@@ -42,12 +42,12 @@ class DetailedAmount18(base_types._BaseFieldType):
 
 	@ChrgAcctTo.setter
 	def ChrgAcctTo(self, value):
-		self._ChrgAcctTo = value if type(value) != base_types.auto else self.make_default("ChrgAcctTo")
+		self._ChrgAcctTo = value if value is not None else base_types.UninitialisedField(self, 'ChrgAcctTo', TrueFalseIndicator, False)
 
 	@ChrgAcctTo.deleter
 	def ChrgAcctTo(self):
 		del self._ChrgAcctTo
-		self._ChrgAcctTo = None
+		self._ChrgAcctTo = base_types.UninitialisedField(self, 'ChrgAcctTo', TrueFalseIndicator, False)
 
 	@property
 	def Labl(self):
@@ -55,12 +55,12 @@ class DetailedAmount18(base_types._BaseFieldType):
 
 	@Labl.setter
 	def Labl(self, value):
-		self._Labl = value if type(value) != base_types.auto else self.make_default("Labl")
+		self._Labl = value if value is not None else base_types.UninitialisedField(self, 'Labl', Max70Text, False)
 
 	@Labl.deleter
 	def Labl(self):
 		del self._Labl
-		self._Labl = None
+		self._Labl = base_types.UninitialisedField(self, 'Labl', Max70Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

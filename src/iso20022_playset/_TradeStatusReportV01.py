@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PartyAndSignature2 import PartyAndSignature2
-from ._TradeStatusReport1 import TradeStatusReport1
+from . import PartyAndSignature2
+from . import TradeStatusReport1
 
 class TradeStatusReportV01(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TradeStatusReportV01(base_types._BaseFieldType):
 
 	@DgtlSgntr.setter
 	def DgtlSgntr(self, value):
-		self._DgtlSgntr = value if type(value) != base_types.auto else self.make_default("DgtlSgntr")
+		self._DgtlSgntr = value if value is not None else base_types.UninitialisedField(self, 'DgtlSgntr', PartyAndSignature2, False)
 
 	@DgtlSgntr.deleter
 	def DgtlSgntr(self):
 		del self._DgtlSgntr
-		self._DgtlSgntr = None
+		self._DgtlSgntr = base_types.UninitialisedField(self, 'DgtlSgntr', PartyAndSignature2, False)
 
 	@property
 	def TradStsAdvcDtls(self):
@@ -27,12 +27,12 @@ class TradeStatusReportV01(base_types._BaseFieldType):
 
 	@TradStsAdvcDtls.setter
 	def TradStsAdvcDtls(self, value):
-		self._TradStsAdvcDtls = value if type(value) != base_types.auto else self.make_default("TradStsAdvcDtls")
+		self._TradStsAdvcDtls = value if value is not None else base_types.UninitialisedField(self, 'TradStsAdvcDtls', TradeStatusReport1, False)
 
 	@TradStsAdvcDtls.deleter
 	def TradStsAdvcDtls(self):
 		del self._TradStsAdvcDtls
-		self._TradStsAdvcDtls = None
+		self._TradStsAdvcDtls = base_types.UninitialisedField(self, 'TradStsAdvcDtls', TradeStatusReport1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature2, min=0, max=1, mutex_group=None, array=False),

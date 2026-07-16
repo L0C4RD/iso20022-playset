@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
-from ._ValidationRuleSchemeName1Choice import ValidationRuleSchemeName1Choice
+from . import Max350Text
+from . import Max35Text
+from . import ValidationRuleSchemeName1Choice
 
 class GenericValidationRuleIdentification1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class GenericValidationRuleIdentification1(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', Max350Text, False)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', Max350Text, False)
 
 	@property
 	def Id(self):
@@ -28,12 +28,12 @@ class GenericValidationRuleIdentification1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def Issr(self):
@@ -41,12 +41,12 @@ class GenericValidationRuleIdentification1(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+		self._Issr = value if value is not None else base_types.UninitialisedField(self, 'Issr', Max35Text, False)
 
 	@Issr.deleter
 	def Issr(self):
 		del self._Issr
-		self._Issr = None
+		self._Issr = base_types.UninitialisedField(self, 'Issr', Max35Text, False)
 
 	@property
 	def SchmeNm(self):
@@ -54,12 +54,12 @@ class GenericValidationRuleIdentification1(base_types._BaseFieldType):
 
 	@SchmeNm.setter
 	def SchmeNm(self, value):
-		self._SchmeNm = value if type(value) != base_types.auto else self.make_default("SchmeNm")
+		self._SchmeNm = value if value is not None else base_types.UninitialisedField(self, 'SchmeNm', ValidationRuleSchemeName1Choice, False)
 
 	@SchmeNm.deleter
 	def SchmeNm(self):
 		del self._SchmeNm
-		self._SchmeNm = None
+		self._SchmeNm = base_types.UninitialisedField(self, 'SchmeNm', ValidationRuleSchemeName1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Desc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMSignature2Choice import ATMSignature2Choice
-from ._CryptographicKey12 import CryptographicKey12
-from ._Max140Binary import Max140Binary
-from ._Max35Text import Max35Text
-from ._Max5000Binary import Max5000Binary
+from . import ATMSignature2Choice
+from . import CryptographicKey12
+from . import Max140Binary
+from . import Max35Text
+from . import Max5000Binary
 
 class SecurityParameters9(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class SecurityParameters9(base_types._BaseFieldType):
 
 	@ATMChllng.setter
 	def ATMChllng(self, value):
-		self._ATMChllng = value if type(value) != base_types.auto else self.make_default("ATMChllng")
+		self._ATMChllng = value if value is not None else base_types.UninitialisedField(self, 'ATMChllng', Max140Binary, False)
 
 	@ATMChllng.deleter
 	def ATMChllng(self):
 		del self._ATMChllng
-		self._ATMChllng = None
+		self._ATMChllng = base_types.UninitialisedField(self, 'ATMChllng', Max140Binary, False)
 
 	@property
 	def Cert(self):
@@ -30,12 +30,12 @@ class SecurityParameters9(base_types._BaseFieldType):
 
 	@Cert.setter
 	def Cert(self, value):
-		self._Cert = value if type(value) != base_types.auto else self.make_default("Cert")
+		self._Cert = value if value is not None else base_types.UninitialisedField(self, 'Cert', Max5000Binary, True)
 
 	@Cert.deleter
 	def Cert(self):
 		del self._Cert
-		self._Cert = None
+		self._Cert = base_types.UninitialisedField(self, 'Cert', Max5000Binary, True)
 
 	@property
 	def Key(self):
@@ -43,12 +43,12 @@ class SecurityParameters9(base_types._BaseFieldType):
 
 	@Key.setter
 	def Key(self, value):
-		self._Key = value if type(value) != base_types.auto else self.make_default("Key")
+		self._Key = value if value is not None else base_types.UninitialisedField(self, 'Key', CryptographicKey12, False)
 
 	@Key.deleter
 	def Key(self):
 		del self._Key
-		self._Key = None
+		self._Key = base_types.UninitialisedField(self, 'Key', CryptographicKey12, False)
 
 	@property
 	def ReqdKey(self):
@@ -56,12 +56,12 @@ class SecurityParameters9(base_types._BaseFieldType):
 
 	@ReqdKey.setter
 	def ReqdKey(self, value):
-		self._ReqdKey = value if type(value) != base_types.auto else self.make_default("ReqdKey")
+		self._ReqdKey = value if value is not None else base_types.UninitialisedField(self, 'ReqdKey', Max35Text, False)
 
 	@ReqdKey.deleter
 	def ReqdKey(self):
 		del self._ReqdKey
-		self._ReqdKey = None
+		self._ReqdKey = base_types.UninitialisedField(self, 'ReqdKey', Max35Text, False)
 
 	@property
 	def SgntrChc(self):
@@ -69,12 +69,12 @@ class SecurityParameters9(base_types._BaseFieldType):
 
 	@SgntrChc.setter
 	def SgntrChc(self, value):
-		self._SgntrChc = value if type(value) != base_types.auto else self.make_default("SgntrChc")
+		self._SgntrChc = value if value is not None else base_types.UninitialisedField(self, 'SgntrChc', ATMSignature2Choice, False)
 
 	@SgntrChc.deleter
 	def SgntrChc(self):
 		del self._SgntrChc
-		self._SgntrChc = None
+		self._SgntrChc = base_types.UninitialisedField(self, 'SgntrChc', ATMSignature2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ATMChllng', type=Max140Binary, min=0, max=1, mutex_group=None, array=False),

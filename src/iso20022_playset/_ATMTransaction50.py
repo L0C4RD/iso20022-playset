@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMDepositComponent1 import ATMDepositComponent1
-from ._AmountAndCurrency1 import AmountAndCurrency1
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max10000Binary import Max10000Binary
-from ._Max35Text import Max35Text
-from ._TransactionIdentifier3 import TransactionIdentifier3
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ATMDepositComponent1
+from . import AmountAndCurrency1
+from . import ImpliedCurrencyAndAmount
+from . import Max10000Binary
+from . import Max35Text
+from . import TransactionIdentifier3
+from . import TrueFalseIndicator
 
 class ATMTransaction50(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class ATMTransaction50(base_types._BaseFieldType):
 
 	@ICCRltdData.setter
 	def ICCRltdData(self, value):
-		self._ICCRltdData = value if type(value) != base_types.auto else self.make_default("ICCRltdData")
+		self._ICCRltdData = value if value is not None else base_types.UninitialisedField(self, 'ICCRltdData', Max10000Binary, False)
 
 	@ICCRltdData.deleter
 	def ICCRltdData(self):
 		del self._ICCRltdData
-		self._ICCRltdData = None
+		self._ICCRltdData = base_types.UninitialisedField(self, 'ICCRltdData', Max10000Binary, False)
 
 	@property
 	def RcncltnId(self):
@@ -32,12 +32,12 @@ class ATMTransaction50(base_types._BaseFieldType):
 
 	@RcncltnId.setter
 	def RcncltnId(self, value):
-		self._RcncltnId = value if type(value) != base_types.auto else self.make_default("RcncltnId")
+		self._RcncltnId = value if value is not None else base_types.UninitialisedField(self, 'RcncltnId', Max35Text, False)
 
 	@RcncltnId.deleter
 	def RcncltnId(self):
 		del self._RcncltnId
-		self._RcncltnId = None
+		self._RcncltnId = base_types.UninitialisedField(self, 'RcncltnId', Max35Text, False)
 
 	@property
 	def ReqdRct(self):
@@ -45,12 +45,12 @@ class ATMTransaction50(base_types._BaseFieldType):
 
 	@ReqdRct.setter
 	def ReqdRct(self, value):
-		self._ReqdRct = value if type(value) != base_types.auto else self.make_default("ReqdRct")
+		self._ReqdRct = value if value is not None else base_types.UninitialisedField(self, 'ReqdRct', TrueFalseIndicator, False)
 
 	@ReqdRct.deleter
 	def ReqdRct(self):
 		del self._ReqdRct
-		self._ReqdRct = None
+		self._ReqdRct = base_types.UninitialisedField(self, 'ReqdRct', TrueFalseIndicator, False)
 
 	@property
 	def SubDpst(self):
@@ -58,12 +58,12 @@ class ATMTransaction50(base_types._BaseFieldType):
 
 	@SubDpst.setter
 	def SubDpst(self, value):
-		self._SubDpst = value if type(value) != base_types.auto else self.make_default("SubDpst")
+		self._SubDpst = value if value is not None else base_types.UninitialisedField(self, 'SubDpst', ATMDepositComponent1, True)
 
 	@SubDpst.deleter
 	def SubDpst(self):
 		del self._SubDpst
-		self._SubDpst = None
+		self._SubDpst = base_types.UninitialisedField(self, 'SubDpst', ATMDepositComponent1, True)
 
 	@property
 	def TtlAmt(self):
@@ -71,12 +71,12 @@ class ATMTransaction50(base_types._BaseFieldType):
 
 	@TtlAmt.setter
 	def TtlAmt(self, value):
-		self._TtlAmt = value if type(value) != base_types.auto else self.make_default("TtlAmt")
+		self._TtlAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlAmt', AmountAndCurrency1, False)
 
 	@TtlAmt.deleter
 	def TtlAmt(self):
 		del self._TtlAmt
-		self._TtlAmt = None
+		self._TtlAmt = base_types.UninitialisedField(self, 'TtlAmt', AmountAndCurrency1, False)
 
 	@property
 	def TtlReqdAmt(self):
@@ -84,12 +84,12 @@ class ATMTransaction50(base_types._BaseFieldType):
 
 	@TtlReqdAmt.setter
 	def TtlReqdAmt(self, value):
-		self._TtlReqdAmt = value if type(value) != base_types.auto else self.make_default("TtlReqdAmt")
+		self._TtlReqdAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlReqdAmt', ImpliedCurrencyAndAmount, False)
 
 	@TtlReqdAmt.deleter
 	def TtlReqdAmt(self):
 		del self._TtlReqdAmt
-		self._TtlReqdAmt = None
+		self._TtlReqdAmt = base_types.UninitialisedField(self, 'TtlReqdAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def TxId(self):
@@ -97,12 +97,12 @@ class ATMTransaction50(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', TransactionIdentifier3, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', TransactionIdentifier3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ICCRltdData', type=Max10000Binary, min=0, max=1, mutex_group=None, array=False),

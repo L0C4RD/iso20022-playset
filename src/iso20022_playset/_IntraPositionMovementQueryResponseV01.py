@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IntraPositionMovements6 import IntraPositionMovements6
-from ._IntraPositionReport4 import IntraPositionReport4
-from ._Pagination1 import Pagination1
+from . import IntraPositionMovements6
+from . import IntraPositionReport4
+from . import Pagination1
 
 class IntraPositionMovementQueryResponseV01(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class IntraPositionMovementQueryResponseV01(base_types._BaseFieldType):
 
 	@Mvmnts.setter
 	def Mvmnts(self, value):
-		self._Mvmnts = value if type(value) != base_types.auto else self.make_default("Mvmnts")
+		self._Mvmnts = value if value is not None else base_types.UninitialisedField(self, 'Mvmnts', IntraPositionMovements6, True)
 
 	@Mvmnts.deleter
 	def Mvmnts(self):
 		del self._Mvmnts
-		self._Mvmnts = None
+		self._Mvmnts = base_types.UninitialisedField(self, 'Mvmnts', IntraPositionMovements6, True)
 
 	@property
 	def Pgntn(self):
@@ -28,12 +28,12 @@ class IntraPositionMovementQueryResponseV01(base_types._BaseFieldType):
 
 	@Pgntn.setter
 	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+		self._Pgntn = value if value is not None else base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@Pgntn.deleter
 	def Pgntn(self):
 		del self._Pgntn
-		self._Pgntn = None
+		self._Pgntn = base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@property
 	def RptGnlDtls(self):
@@ -41,12 +41,12 @@ class IntraPositionMovementQueryResponseV01(base_types._BaseFieldType):
 
 	@RptGnlDtls.setter
 	def RptGnlDtls(self, value):
-		self._RptGnlDtls = value if type(value) != base_types.auto else self.make_default("RptGnlDtls")
+		self._RptGnlDtls = value if value is not None else base_types.UninitialisedField(self, 'RptGnlDtls', IntraPositionReport4, False)
 
 	@RptGnlDtls.deleter
 	def RptGnlDtls(self):
 		del self._RptGnlDtls
-		self._RptGnlDtls = None
+		self._RptGnlDtls = base_types.UninitialisedField(self, 'RptGnlDtls', IntraPositionReport4, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Mvmnts', type=IntraPositionMovements6, min=0, max=None, mutex_group=None, array=True),

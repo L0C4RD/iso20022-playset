@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max5NumericText import Max5NumericText
-from ._Modification1Code import Modification1Code
+from . import Max5NumericText
+from . import Modification1Code
 
 class NumberModification1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class NumberModification1(base_types._BaseFieldType):
 
 	@ModCd.setter
 	def ModCd(self, value):
-		self._ModCd = value if type(value) != base_types.auto else self.make_default("ModCd")
+		self._ModCd = value if value is not None else base_types.UninitialisedField(self, 'ModCd', Modification1Code, False)
 
 	@ModCd.deleter
 	def ModCd(self):
 		del self._ModCd
-		self._ModCd = None
+		self._ModCd = base_types.UninitialisedField(self, 'ModCd', Modification1Code, False)
 
 	@property
 	def Nb(self):
@@ -27,12 +27,12 @@ class NumberModification1(base_types._BaseFieldType):
 
 	@Nb.setter
 	def Nb(self, value):
-		self._Nb = value if type(value) != base_types.auto else self.make_default("Nb")
+		self._Nb = value if value is not None else base_types.UninitialisedField(self, 'Nb', Max5NumericText, False)
 
 	@Nb.deleter
 	def Nb(self):
 		del self._Nb
-		self._Nb = None
+		self._Nb = base_types.UninitialisedField(self, 'Nb', Max5NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ModCd', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),

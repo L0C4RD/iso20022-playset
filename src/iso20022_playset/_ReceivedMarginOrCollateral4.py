@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from . import ActiveOrHistoricCurrencyAndAmount
 
 class ReceivedMarginOrCollateral4(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class ReceivedMarginOrCollateral4(base_types._BaseFieldType):
 
 	@InitlMrgnRcvd.setter
 	def InitlMrgnRcvd(self, value):
-		self._InitlMrgnRcvd = value if type(value) != base_types.auto else self.make_default("InitlMrgnRcvd")
+		self._InitlMrgnRcvd = value if value is not None else base_types.UninitialisedField(self, 'InitlMrgnRcvd', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@InitlMrgnRcvd.deleter
 	def InitlMrgnRcvd(self):
 		del self._InitlMrgnRcvd
-		self._InitlMrgnRcvd = None
+		self._InitlMrgnRcvd = base_types.UninitialisedField(self, 'InitlMrgnRcvd', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def VartnMrgnRcvd(self):
@@ -26,12 +26,12 @@ class ReceivedMarginOrCollateral4(base_types._BaseFieldType):
 
 	@VartnMrgnRcvd.setter
 	def VartnMrgnRcvd(self, value):
-		self._VartnMrgnRcvd = value if type(value) != base_types.auto else self.make_default("VartnMrgnRcvd")
+		self._VartnMrgnRcvd = value if value is not None else base_types.UninitialisedField(self, 'VartnMrgnRcvd', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@VartnMrgnRcvd.deleter
 	def VartnMrgnRcvd(self):
 		del self._VartnMrgnRcvd
-		self._VartnMrgnRcvd = None
+		self._VartnMrgnRcvd = base_types.UninitialisedField(self, 'VartnMrgnRcvd', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def XcssCollRcvd(self):
@@ -39,12 +39,12 @@ class ReceivedMarginOrCollateral4(base_types._BaseFieldType):
 
 	@XcssCollRcvd.setter
 	def XcssCollRcvd(self, value):
-		self._XcssCollRcvd = value if type(value) != base_types.auto else self.make_default("XcssCollRcvd")
+		self._XcssCollRcvd = value if value is not None else base_types.UninitialisedField(self, 'XcssCollRcvd', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@XcssCollRcvd.deleter
 	def XcssCollRcvd(self):
 		del self._XcssCollRcvd
-		self._XcssCollRcvd = None
+		self._XcssCollRcvd = base_types.UninitialisedField(self, 'XcssCollRcvd', ActiveOrHistoricCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InitlMrgnRcvd', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

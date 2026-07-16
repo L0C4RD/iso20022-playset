@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification4 import BranchAndFinancialInstitutionIdentification4
-from ._CashAccount16 import CashAccount16
-from ._PaymentMethod4Code import PaymentMethod4Code
-from ._PaymentTypeInformation19 import PaymentTypeInformation19
+from . import BranchAndFinancialInstitutionIdentification4
+from . import CashAccount16
+from . import PaymentMethod4Code
+from . import PaymentTypeInformation19
 
 class PaymentMeans1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class PaymentMeans1(base_types._BaseFieldType):
 
 	@PmtMtdCd.setter
 	def PmtMtdCd(self, value):
-		self._PmtMtdCd = value if type(value) != base_types.auto else self.make_default("PmtMtdCd")
+		self._PmtMtdCd = value if value is not None else base_types.UninitialisedField(self, 'PmtMtdCd', PaymentMethod4Code, False)
 
 	@PmtMtdCd.deleter
 	def PmtMtdCd(self):
 		del self._PmtMtdCd
-		self._PmtMtdCd = None
+		self._PmtMtdCd = base_types.UninitialisedField(self, 'PmtMtdCd', PaymentMethod4Code, False)
 
 	@property
 	def PmtTp(self):
@@ -29,12 +29,12 @@ class PaymentMeans1(base_types._BaseFieldType):
 
 	@PmtTp.setter
 	def PmtTp(self, value):
-		self._PmtTp = value if type(value) != base_types.auto else self.make_default("PmtTp")
+		self._PmtTp = value if value is not None else base_types.UninitialisedField(self, 'PmtTp', PaymentTypeInformation19, False)
 
 	@PmtTp.deleter
 	def PmtTp(self):
 		del self._PmtTp
-		self._PmtTp = None
+		self._PmtTp = base_types.UninitialisedField(self, 'PmtTp', PaymentTypeInformation19, False)
 
 	@property
 	def PyeeCdtrAcct(self):
@@ -42,12 +42,12 @@ class PaymentMeans1(base_types._BaseFieldType):
 
 	@PyeeCdtrAcct.setter
 	def PyeeCdtrAcct(self, value):
-		self._PyeeCdtrAcct = value if type(value) != base_types.auto else self.make_default("PyeeCdtrAcct")
+		self._PyeeCdtrAcct = value if value is not None else base_types.UninitialisedField(self, 'PyeeCdtrAcct', CashAccount16, False)
 
 	@PyeeCdtrAcct.deleter
 	def PyeeCdtrAcct(self):
 		del self._PyeeCdtrAcct
-		self._PyeeCdtrAcct = None
+		self._PyeeCdtrAcct = base_types.UninitialisedField(self, 'PyeeCdtrAcct', CashAccount16, False)
 
 	@property
 	def PyeeFI(self):
@@ -55,12 +55,12 @@ class PaymentMeans1(base_types._BaseFieldType):
 
 	@PyeeFI.setter
 	def PyeeFI(self, value):
-		self._PyeeFI = value if type(value) != base_types.auto else self.make_default("PyeeFI")
+		self._PyeeFI = value if value is not None else base_types.UninitialisedField(self, 'PyeeFI', BranchAndFinancialInstitutionIdentification4, False)
 
 	@PyeeFI.deleter
 	def PyeeFI(self):
 		del self._PyeeFI
-		self._PyeeFI = None
+		self._PyeeFI = base_types.UninitialisedField(self, 'PyeeFI', BranchAndFinancialInstitutionIdentification4, False)
 
 	@property
 	def PyerDbtrAcct(self):
@@ -68,12 +68,12 @@ class PaymentMeans1(base_types._BaseFieldType):
 
 	@PyerDbtrAcct.setter
 	def PyerDbtrAcct(self, value):
-		self._PyerDbtrAcct = value if type(value) != base_types.auto else self.make_default("PyerDbtrAcct")
+		self._PyerDbtrAcct = value if value is not None else base_types.UninitialisedField(self, 'PyerDbtrAcct', CashAccount16, False)
 
 	@PyerDbtrAcct.deleter
 	def PyerDbtrAcct(self):
 		del self._PyerDbtrAcct
-		self._PyerDbtrAcct = None
+		self._PyerDbtrAcct = base_types.UninitialisedField(self, 'PyerDbtrAcct', CashAccount16, False)
 
 	@property
 	def PyerFI(self):
@@ -81,12 +81,12 @@ class PaymentMeans1(base_types._BaseFieldType):
 
 	@PyerFI.setter
 	def PyerFI(self, value):
-		self._PyerFI = value if type(value) != base_types.auto else self.make_default("PyerFI")
+		self._PyerFI = value if value is not None else base_types.UninitialisedField(self, 'PyerFI', BranchAndFinancialInstitutionIdentification4, False)
 
 	@PyerFI.deleter
 	def PyerFI(self):
 		del self._PyerFI
-		self._PyerFI = None
+		self._PyerFI = base_types.UninitialisedField(self, 'PyerFI', BranchAndFinancialInstitutionIdentification4, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PmtMtdCd', type=PaymentMethod4Code, min=1, max=1, mutex_group=None, array=False),

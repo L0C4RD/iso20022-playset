@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BankToCustomerDebitCreditNotificationV13 import BankToCustomerDebitCreditNotificationV13
+from . import BankToCustomerDebitCreditNotificationV13
 
 class CAMT_054_001_13():
 
@@ -18,12 +18,12 @@ class CAMT_054_001_13():
 
 		@BkToCstmrDbtCdtNtfctn.setter
 		def BkToCstmrDbtCdtNtfctn(self, value):
-			self._BkToCstmrDbtCdtNtfctn = value if type(value) != base_types.auto else self.make_default("BkToCstmrDbtCdtNtfctn")
+			self._BkToCstmrDbtCdtNtfctn = value if value is not None else base_types.UninitialisedField(self, 'BkToCstmrDbtCdtNtfctn', BankToCustomerDebitCreditNotificationV13, False)
 
 		@BkToCstmrDbtCdtNtfctn.deleter
 		def BkToCstmrDbtCdtNtfctn(self):
 			del self._BkToCstmrDbtCdtNtfctn
-			self._BkToCstmrDbtCdtNtfctn = None
+			self._BkToCstmrDbtCdtNtfctn = base_types.UninitialisedField(self, 'BkToCstmrDbtCdtNtfctn', BankToCustomerDebitCreditNotificationV13, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='BkToCstmrDbtCdtNtfctn', type=BankToCustomerDebitCreditNotificationV13, min=1, max=1, mutex_group=None, array=False),

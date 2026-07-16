@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Commodity2 import Commodity2
-from ._Guarantee1 import Guarantee1
-from ._SecurityIdentificationAndAmount1 import SecurityIdentificationAndAmount1
-from ._TripartyCollateralAndAmount1 import TripartyCollateralAndAmount1
+from . import ActiveCurrencyAndAmount
+from . import Commodity2
+from . import Guarantee1
+from . import SecurityIdentificationAndAmount1
+from . import TripartyCollateralAndAmount1
 
 class AssetHolding3Choice(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class AssetHolding3Choice(base_types._BaseFieldType):
 
 	@Cmmdty.setter
 	def Cmmdty(self, value):
-		self._Cmmdty = value if type(value) != base_types.auto else self.make_default("Cmmdty")
+		self._Cmmdty = value if value is not None else base_types.UninitialisedField(self, 'Cmmdty', Commodity2, False)
 
 	@Cmmdty.deleter
 	def Cmmdty(self):
 		del self._Cmmdty
-		self._Cmmdty = None
+		self._Cmmdty = base_types.UninitialisedField(self, 'Cmmdty', Commodity2, False)
 
 	@property
 	def Csh(self):
@@ -30,12 +30,12 @@ class AssetHolding3Choice(base_types._BaseFieldType):
 
 	@Csh.setter
 	def Csh(self, value):
-		self._Csh = value if type(value) != base_types.auto else self.make_default("Csh")
+		self._Csh = value if value is not None else base_types.UninitialisedField(self, 'Csh', ActiveCurrencyAndAmount, False)
 
 	@Csh.deleter
 	def Csh(self):
 		del self._Csh
-		self._Csh = None
+		self._Csh = base_types.UninitialisedField(self, 'Csh', ActiveCurrencyAndAmount, False)
 
 	@property
 	def Gold(self):
@@ -43,12 +43,12 @@ class AssetHolding3Choice(base_types._BaseFieldType):
 
 	@Gold.setter
 	def Gold(self, value):
-		self._Gold = value if type(value) != base_types.auto else self.make_default("Gold")
+		self._Gold = value if value is not None else base_types.UninitialisedField(self, 'Gold', ActiveCurrencyAndAmount, False)
 
 	@Gold.deleter
 	def Gold(self):
 		del self._Gold
-		self._Gold = None
+		self._Gold = base_types.UninitialisedField(self, 'Gold', ActiveCurrencyAndAmount, False)
 
 	@property
 	def Grnt(self):
@@ -56,12 +56,12 @@ class AssetHolding3Choice(base_types._BaseFieldType):
 
 	@Grnt.setter
 	def Grnt(self, value):
-		self._Grnt = value if type(value) != base_types.auto else self.make_default("Grnt")
+		self._Grnt = value if value is not None else base_types.UninitialisedField(self, 'Grnt', Guarantee1, False)
 
 	@Grnt.deleter
 	def Grnt(self):
 		del self._Grnt
-		self._Grnt = None
+		self._Grnt = base_types.UninitialisedField(self, 'Grnt', Guarantee1, False)
 
 	@property
 	def Scty(self):
@@ -69,12 +69,12 @@ class AssetHolding3Choice(base_types._BaseFieldType):
 
 	@Scty.setter
 	def Scty(self, value):
-		self._Scty = value if type(value) != base_types.auto else self.make_default("Scty")
+		self._Scty = value if value is not None else base_types.UninitialisedField(self, 'Scty', SecurityIdentificationAndAmount1, False)
 
 	@Scty.deleter
 	def Scty(self):
 		del self._Scty
-		self._Scty = None
+		self._Scty = base_types.UninitialisedField(self, 'Scty', SecurityIdentificationAndAmount1, False)
 
 	@property
 	def Trpty(self):
@@ -82,12 +82,12 @@ class AssetHolding3Choice(base_types._BaseFieldType):
 
 	@Trpty.setter
 	def Trpty(self, value):
-		self._Trpty = value if type(value) != base_types.auto else self.make_default("Trpty")
+		self._Trpty = value if value is not None else base_types.UninitialisedField(self, 'Trpty', TripartyCollateralAndAmount1, False)
 
 	@Trpty.deleter
 	def Trpty(self):
 		del self._Trpty
-		self._Trpty = None
+		self._Trpty = base_types.UninitialisedField(self, 'Trpty', TripartyCollateralAndAmount1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cmmdty', type=Commodity2, min=0, max=1, mutex_group=1, array=False),

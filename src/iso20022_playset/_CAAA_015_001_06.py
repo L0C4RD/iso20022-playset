@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcceptorRejectionV06 import AcceptorRejectionV06
+from . import AcceptorRejectionV06
 
 class CAAA_015_001_06():
 
@@ -18,12 +18,12 @@ class CAAA_015_001_06():
 
 		@AccptrRjctn.setter
 		def AccptrRjctn(self, value):
-			self._AccptrRjctn = value if type(value) != base_types.auto else self.make_default("AccptrRjctn")
+			self._AccptrRjctn = value if value is not None else base_types.UninitialisedField(self, 'AccptrRjctn', AcceptorRejectionV06, False)
 
 		@AccptrRjctn.deleter
 		def AccptrRjctn(self):
 			del self._AccptrRjctn
-			self._AccptrRjctn = None
+			self._AccptrRjctn = base_types.UninitialisedField(self, 'AccptrRjctn', AcceptorRejectionV06, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AccptrRjctn', type=AcceptorRejectionV06, min=1, max=1, mutex_group=None, array=False),

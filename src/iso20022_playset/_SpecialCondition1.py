@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from . import ActiveCurrencyAndAmount
 
 class SpecialCondition1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class SpecialCondition1(base_types._BaseFieldType):
 
 	@IncmgAmt.setter
 	def IncmgAmt(self, value):
-		self._IncmgAmt = value if type(value) != base_types.auto else self.make_default("IncmgAmt")
+		self._IncmgAmt = value if value is not None else base_types.UninitialisedField(self, 'IncmgAmt', ActiveCurrencyAndAmount, False)
 
 	@IncmgAmt.deleter
 	def IncmgAmt(self):
 		del self._IncmgAmt
-		self._IncmgAmt = None
+		self._IncmgAmt = base_types.UninitialisedField(self, 'IncmgAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def IncmgAmtToOthrAcct(self):
@@ -26,12 +26,12 @@ class SpecialCondition1(base_types._BaseFieldType):
 
 	@IncmgAmtToOthrAcct.setter
 	def IncmgAmtToOthrAcct(self, value):
-		self._IncmgAmtToOthrAcct = value if type(value) != base_types.auto else self.make_default("IncmgAmtToOthrAcct")
+		self._IncmgAmtToOthrAcct = value if value is not None else base_types.UninitialisedField(self, 'IncmgAmtToOthrAcct', ActiveCurrencyAndAmount, False)
 
 	@IncmgAmtToOthrAcct.deleter
 	def IncmgAmtToOthrAcct(self):
 		del self._IncmgAmtToOthrAcct
-		self._IncmgAmtToOthrAcct = None
+		self._IncmgAmtToOthrAcct = base_types.UninitialisedField(self, 'IncmgAmtToOthrAcct', ActiveCurrencyAndAmount, False)
 
 	@property
 	def OutgngAmt(self):
@@ -39,12 +39,12 @@ class SpecialCondition1(base_types._BaseFieldType):
 
 	@OutgngAmt.setter
 	def OutgngAmt(self, value):
-		self._OutgngAmt = value if type(value) != base_types.auto else self.make_default("OutgngAmt")
+		self._OutgngAmt = value if value is not None else base_types.UninitialisedField(self, 'OutgngAmt', ActiveCurrencyAndAmount, False)
 
 	@OutgngAmt.deleter
 	def OutgngAmt(self):
 		del self._OutgngAmt
-		self._OutgngAmt = None
+		self._OutgngAmt = base_types.UninitialisedField(self, 'OutgngAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def PmtFrOthrAcct(self):
@@ -52,12 +52,12 @@ class SpecialCondition1(base_types._BaseFieldType):
 
 	@PmtFrOthrAcct.setter
 	def PmtFrOthrAcct(self, value):
-		self._PmtFrOthrAcct = value if type(value) != base_types.auto else self.make_default("PmtFrOthrAcct")
+		self._PmtFrOthrAcct = value if value is not None else base_types.UninitialisedField(self, 'PmtFrOthrAcct', ActiveCurrencyAndAmount, False)
 
 	@PmtFrOthrAcct.deleter
 	def PmtFrOthrAcct(self):
 		del self._PmtFrOthrAcct
-		self._PmtFrOthrAcct = None
+		self._PmtFrOthrAcct = base_types.UninitialisedField(self, 'PmtFrOthrAcct', ActiveCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IncmgAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

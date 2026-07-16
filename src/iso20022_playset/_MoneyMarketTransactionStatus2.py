@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
-from ._LEIIdentifier import LEIIdentifier
-from ._Max105Text import Max105Text
-from ._StatisticalReportingStatus2Code import StatisticalReportingStatus2Code
-from ._SupplementaryData1 import SupplementaryData1
+from . import GenericValidationRuleIdentification1
+from . import LEIIdentifier
+from . import Max105Text
+from . import StatisticalReportingStatus2Code
+from . import SupplementaryData1
 
 class MoneyMarketTransactionStatus2(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class MoneyMarketTransactionStatus2(base_types._BaseFieldType):
 
 	@BrnchId.setter
 	def BrnchId(self, value):
-		self._BrnchId = value if type(value) != base_types.auto else self.make_default("BrnchId")
+		self._BrnchId = value if value is not None else base_types.UninitialisedField(self, 'BrnchId', LEIIdentifier, False)
 
 	@BrnchId.deleter
 	def BrnchId(self):
 		del self._BrnchId
-		self._BrnchId = None
+		self._BrnchId = base_types.UninitialisedField(self, 'BrnchId', LEIIdentifier, False)
 
 	@property
 	def PrtryTxId(self):
@@ -30,12 +30,12 @@ class MoneyMarketTransactionStatus2(base_types._BaseFieldType):
 
 	@PrtryTxId.setter
 	def PrtryTxId(self, value):
-		self._PrtryTxId = value if type(value) != base_types.auto else self.make_default("PrtryTxId")
+		self._PrtryTxId = value if value is not None else base_types.UninitialisedField(self, 'PrtryTxId', Max105Text, False)
 
 	@PrtryTxId.deleter
 	def PrtryTxId(self):
 		del self._PrtryTxId
-		self._PrtryTxId = None
+		self._PrtryTxId = base_types.UninitialisedField(self, 'PrtryTxId', Max105Text, False)
 
 	@property
 	def SplmtryData(self):
@@ -43,12 +43,12 @@ class MoneyMarketTransactionStatus2(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def Sts(self):
@@ -56,12 +56,12 @@ class MoneyMarketTransactionStatus2(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', StatisticalReportingStatus2Code, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', StatisticalReportingStatus2Code, False)
 
 	@property
 	def UnqTxIdr(self):
@@ -69,12 +69,12 @@ class MoneyMarketTransactionStatus2(base_types._BaseFieldType):
 
 	@UnqTxIdr.setter
 	def UnqTxIdr(self, value):
-		self._UnqTxIdr = value if type(value) != base_types.auto else self.make_default("UnqTxIdr")
+		self._UnqTxIdr = value if value is not None else base_types.UninitialisedField(self, 'UnqTxIdr', Max105Text, False)
 
 	@UnqTxIdr.deleter
 	def UnqTxIdr(self):
 		del self._UnqTxIdr
-		self._UnqTxIdr = None
+		self._UnqTxIdr = base_types.UninitialisedField(self, 'UnqTxIdr', Max105Text, False)
 
 	@property
 	def VldtnRule(self):
@@ -82,12 +82,12 @@ class MoneyMarketTransactionStatus2(base_types._BaseFieldType):
 
 	@VldtnRule.setter
 	def VldtnRule(self, value):
-		self._VldtnRule = value if type(value) != base_types.auto else self.make_default("VldtnRule")
+		self._VldtnRule = value if value is not None else base_types.UninitialisedField(self, 'VldtnRule', GenericValidationRuleIdentification1, True)
 
 	@VldtnRule.deleter
 	def VldtnRule(self):
 		del self._VldtnRule
-		self._VldtnRule = None
+		self._VldtnRule = base_types.UninitialisedField(self, 'VldtnRule', GenericValidationRuleIdentification1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BrnchId', type=LEIIdentifier, min=0, max=1, mutex_group=None, array=False),

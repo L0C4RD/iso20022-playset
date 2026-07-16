@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._PointOfInteractionComponent17 import PointOfInteractionComponent17
-from ._RetailerService1Code import RetailerService1Code
+from . import Max35Text
+from . import PointOfInteractionComponent17
+from . import RetailerService1Code
 
 class EventContext7(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class EventContext7(base_types._BaseFieldType):
 
 	@CmpntId.setter
 	def CmpntId(self, value):
-		self._CmpntId = value if type(value) != base_types.auto else self.make_default("CmpntId")
+		self._CmpntId = value if value is not None else base_types.UninitialisedField(self, 'CmpntId', PointOfInteractionComponent17, False)
 
 	@CmpntId.deleter
 	def CmpntId(self):
 		del self._CmpntId
-		self._CmpntId = None
+		self._CmpntId = base_types.UninitialisedField(self, 'CmpntId', PointOfInteractionComponent17, False)
 
 	@property
 	def SaleId(self):
@@ -28,12 +28,12 @@ class EventContext7(base_types._BaseFieldType):
 
 	@SaleId.setter
 	def SaleId(self, value):
-		self._SaleId = value if type(value) != base_types.auto else self.make_default("SaleId")
+		self._SaleId = value if value is not None else base_types.UninitialisedField(self, 'SaleId', Max35Text, False)
 
 	@SaleId.deleter
 	def SaleId(self):
 		del self._SaleId
-		self._SaleId = None
+		self._SaleId = base_types.UninitialisedField(self, 'SaleId', Max35Text, False)
 
 	@property
 	def SvcTp(self):
@@ -41,12 +41,12 @@ class EventContext7(base_types._BaseFieldType):
 
 	@SvcTp.setter
 	def SvcTp(self, value):
-		self._SvcTp = value if type(value) != base_types.auto else self.make_default("SvcTp")
+		self._SvcTp = value if value is not None else base_types.UninitialisedField(self, 'SvcTp', RetailerService1Code, False)
 
 	@SvcTp.deleter
 	def SvcTp(self):
 		del self._SvcTp
-		self._SvcTp = None
+		self._SvcTp = base_types.UninitialisedField(self, 'SvcTp', RetailerService1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CmpntId', type=PointOfInteractionComponent17, min=0, max=1, mutex_group=None, array=False),

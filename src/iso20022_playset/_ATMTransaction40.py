@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CurrencyAndAmount import CurrencyAndAmount
-from ._FailureReason8Code import FailureReason8Code
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
-from ._TransactionIdentifier3 import TransactionIdentifier3
+from . import CurrencyAndAmount
+from . import FailureReason8Code
+from . import Max35Text
+from . import Max70Text
+from . import TransactionIdentifier3
 
 class ATMTransaction40(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class ATMTransaction40(base_types._BaseFieldType):
 
 	@ElctrncPrsBal.setter
 	def ElctrncPrsBal(self, value):
-		self._ElctrncPrsBal = value if type(value) != base_types.auto else self.make_default("ElctrncPrsBal")
+		self._ElctrncPrsBal = value if value is not None else base_types.UninitialisedField(self, 'ElctrncPrsBal', CurrencyAndAmount, False)
 
 	@ElctrncPrsBal.deleter
 	def ElctrncPrsBal(self):
 		del self._ElctrncPrsBal
-		self._ElctrncPrsBal = None
+		self._ElctrncPrsBal = base_types.UninitialisedField(self, 'ElctrncPrsBal', CurrencyAndAmount, False)
 
 	@property
 	def RcncltnId(self):
@@ -30,12 +30,12 @@ class ATMTransaction40(base_types._BaseFieldType):
 
 	@RcncltnId.setter
 	def RcncltnId(self, value):
-		self._RcncltnId = value if type(value) != base_types.auto else self.make_default("RcncltnId")
+		self._RcncltnId = value if value is not None else base_types.UninitialisedField(self, 'RcncltnId', Max35Text, False)
 
 	@RcncltnId.deleter
 	def RcncltnId(self):
 		del self._RcncltnId
-		self._RcncltnId = None
+		self._RcncltnId = base_types.UninitialisedField(self, 'RcncltnId', Max35Text, False)
 
 	@property
 	def TxId(self):
@@ -43,12 +43,12 @@ class ATMTransaction40(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', TransactionIdentifier3, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', TransactionIdentifier3, False)
 
 	@property
 	def Xcptn(self):
@@ -56,12 +56,12 @@ class ATMTransaction40(base_types._BaseFieldType):
 
 	@Xcptn.setter
 	def Xcptn(self, value):
-		self._Xcptn = value if type(value) != base_types.auto else self.make_default("Xcptn")
+		self._Xcptn = value if value is not None else base_types.UninitialisedField(self, 'Xcptn', FailureReason8Code, True)
 
 	@Xcptn.deleter
 	def Xcptn(self):
 		del self._Xcptn
-		self._Xcptn = None
+		self._Xcptn = base_types.UninitialisedField(self, 'Xcptn', FailureReason8Code, True)
 
 	@property
 	def XcptnDtl(self):
@@ -69,12 +69,12 @@ class ATMTransaction40(base_types._BaseFieldType):
 
 	@XcptnDtl.setter
 	def XcptnDtl(self, value):
-		self._XcptnDtl = value if type(value) != base_types.auto else self.make_default("XcptnDtl")
+		self._XcptnDtl = value if value is not None else base_types.UninitialisedField(self, 'XcptnDtl', Max70Text, True)
 
 	@XcptnDtl.deleter
 	def XcptnDtl(self):
 		del self._XcptnDtl
-		self._XcptnDtl = None
+		self._XcptnDtl = base_types.UninitialisedField(self, 'XcptnDtl', Max70Text, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ElctrncPrsBal', type=CurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

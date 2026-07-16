@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection30 import AmountAndDirection30
-from ._AmountAndDirection31 import AmountAndDirection31
-from ._AmountAndRate2 import AmountAndRate2
-from ._InvestmentFund1 import InvestmentFund1
+from . import AmountAndDirection30
+from . import AmountAndDirection31
+from . import AmountAndRate2
+from . import InvestmentFund1
 
 class TotalPortfolioValuation1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class TotalPortfolioValuation1(base_types._BaseFieldType):
 
 	@AcrdIncm.setter
 	def AcrdIncm(self, value):
-		self._AcrdIncm = value if type(value) != base_types.auto else self.make_default("AcrdIncm")
+		self._AcrdIncm = value if value is not None else base_types.UninitialisedField(self, 'AcrdIncm', AmountAndDirection30, False)
 
 	@AcrdIncm.deleter
 	def AcrdIncm(self):
 		del self._AcrdIncm
-		self._AcrdIncm = None
+		self._AcrdIncm = base_types.UninitialisedField(self, 'AcrdIncm', AmountAndDirection30, False)
 
 	@property
 	def ExpnssPd(self):
@@ -29,12 +29,12 @@ class TotalPortfolioValuation1(base_types._BaseFieldType):
 
 	@ExpnssPd.setter
 	def ExpnssPd(self, value):
-		self._ExpnssPd = value if type(value) != base_types.auto else self.make_default("ExpnssPd")
+		self._ExpnssPd = value if value is not None else base_types.UninitialisedField(self, 'ExpnssPd', AmountAndDirection30, False)
 
 	@ExpnssPd.deleter
 	def ExpnssPd(self):
 		del self._ExpnssPd
-		self._ExpnssPd = None
+		self._ExpnssPd = base_types.UninitialisedField(self, 'ExpnssPd', AmountAndDirection30, False)
 
 	@property
 	def IncmRcvd(self):
@@ -42,12 +42,12 @@ class TotalPortfolioValuation1(base_types._BaseFieldType):
 
 	@IncmRcvd.setter
 	def IncmRcvd(self, value):
-		self._IncmRcvd = value if type(value) != base_types.auto else self.make_default("IncmRcvd")
+		self._IncmRcvd = value if value is not None else base_types.UninitialisedField(self, 'IncmRcvd', AmountAndDirection30, False)
 
 	@IncmRcvd.deleter
 	def IncmRcvd(self):
 		del self._IncmRcvd
-		self._IncmRcvd = None
+		self._IncmRcvd = base_types.UninitialisedField(self, 'IncmRcvd', AmountAndDirection30, False)
 
 	@property
 	def InvstmtFndDtls(self):
@@ -55,12 +55,12 @@ class TotalPortfolioValuation1(base_types._BaseFieldType):
 
 	@InvstmtFndDtls.setter
 	def InvstmtFndDtls(self, value):
-		self._InvstmtFndDtls = value if type(value) != base_types.auto else self.make_default("InvstmtFndDtls")
+		self._InvstmtFndDtls = value if value is not None else base_types.UninitialisedField(self, 'InvstmtFndDtls', InvestmentFund1, True)
 
 	@InvstmtFndDtls.deleter
 	def InvstmtFndDtls(self):
 		del self._InvstmtFndDtls
-		self._InvstmtFndDtls = None
+		self._InvstmtFndDtls = base_types.UninitialisedField(self, 'InvstmtFndDtls', InvestmentFund1, True)
 
 	@property
 	def PrvsTtlBookVal(self):
@@ -68,12 +68,12 @@ class TotalPortfolioValuation1(base_types._BaseFieldType):
 
 	@PrvsTtlBookVal.setter
 	def PrvsTtlBookVal(self, value):
-		self._PrvsTtlBookVal = value if type(value) != base_types.auto else self.make_default("PrvsTtlBookVal")
+		self._PrvsTtlBookVal = value if value is not None else base_types.UninitialisedField(self, 'PrvsTtlBookVal', AmountAndDirection30, False)
 
 	@PrvsTtlBookVal.deleter
 	def PrvsTtlBookVal(self):
 		del self._PrvsTtlBookVal
-		self._PrvsTtlBookVal = None
+		self._PrvsTtlBookVal = base_types.UninitialisedField(self, 'PrvsTtlBookVal', AmountAndDirection30, False)
 
 	@property
 	def PrvsTtlPrtflVal(self):
@@ -81,12 +81,12 @@ class TotalPortfolioValuation1(base_types._BaseFieldType):
 
 	@PrvsTtlPrtflVal.setter
 	def PrvsTtlPrtflVal(self, value):
-		self._PrvsTtlPrtflVal = value if type(value) != base_types.auto else self.make_default("PrvsTtlPrtflVal")
+		self._PrvsTtlPrtflVal = value if value is not None else base_types.UninitialisedField(self, 'PrvsTtlPrtflVal', AmountAndDirection30, False)
 
 	@PrvsTtlPrtflVal.deleter
 	def PrvsTtlPrtflVal(self):
 		del self._PrvsTtlPrtflVal
-		self._PrvsTtlPrtflVal = None
+		self._PrvsTtlPrtflVal = base_types.UninitialisedField(self, 'PrvsTtlPrtflVal', AmountAndDirection30, False)
 
 	@property
 	def RealsdGnOrLoss(self):
@@ -94,12 +94,12 @@ class TotalPortfolioValuation1(base_types._BaseFieldType):
 
 	@RealsdGnOrLoss.setter
 	def RealsdGnOrLoss(self, value):
-		self._RealsdGnOrLoss = value if type(value) != base_types.auto else self.make_default("RealsdGnOrLoss")
+		self._RealsdGnOrLoss = value if value is not None else base_types.UninitialisedField(self, 'RealsdGnOrLoss', AmountAndDirection31, False)
 
 	@RealsdGnOrLoss.deleter
 	def RealsdGnOrLoss(self):
 		del self._RealsdGnOrLoss
-		self._RealsdGnOrLoss = None
+		self._RealsdGnOrLoss = base_types.UninitialisedField(self, 'RealsdGnOrLoss', AmountAndDirection31, False)
 
 	@property
 	def TtlBookVal(self):
@@ -107,12 +107,12 @@ class TotalPortfolioValuation1(base_types._BaseFieldType):
 
 	@TtlBookVal.setter
 	def TtlBookVal(self, value):
-		self._TtlBookVal = value if type(value) != base_types.auto else self.make_default("TtlBookVal")
+		self._TtlBookVal = value if value is not None else base_types.UninitialisedField(self, 'TtlBookVal', AmountAndDirection30, False)
 
 	@TtlBookVal.deleter
 	def TtlBookVal(self):
 		del self._TtlBookVal
-		self._TtlBookVal = None
+		self._TtlBookVal = base_types.UninitialisedField(self, 'TtlBookVal', AmountAndDirection30, False)
 
 	@property
 	def TtlBookValChng(self):
@@ -120,12 +120,12 @@ class TotalPortfolioValuation1(base_types._BaseFieldType):
 
 	@TtlBookValChng.setter
 	def TtlBookValChng(self, value):
-		self._TtlBookValChng = value if type(value) != base_types.auto else self.make_default("TtlBookValChng")
+		self._TtlBookValChng = value if value is not None else base_types.UninitialisedField(self, 'TtlBookValChng', AmountAndRate2, False)
 
 	@TtlBookValChng.deleter
 	def TtlBookValChng(self):
 		del self._TtlBookValChng
-		self._TtlBookValChng = None
+		self._TtlBookValChng = base_types.UninitialisedField(self, 'TtlBookValChng', AmountAndRate2, False)
 
 	@property
 	def TtlDsbrsmnts(self):
@@ -133,12 +133,12 @@ class TotalPortfolioValuation1(base_types._BaseFieldType):
 
 	@TtlDsbrsmnts.setter
 	def TtlDsbrsmnts(self, value):
-		self._TtlDsbrsmnts = value if type(value) != base_types.auto else self.make_default("TtlDsbrsmnts")
+		self._TtlDsbrsmnts = value if value is not None else base_types.UninitialisedField(self, 'TtlDsbrsmnts', AmountAndDirection30, False)
 
 	@TtlDsbrsmnts.deleter
 	def TtlDsbrsmnts(self):
 		del self._TtlDsbrsmnts
-		self._TtlDsbrsmnts = None
+		self._TtlDsbrsmnts = base_types.UninitialisedField(self, 'TtlDsbrsmnts', AmountAndDirection30, False)
 
 	@property
 	def TtlPrtflVal(self):
@@ -146,12 +146,12 @@ class TotalPortfolioValuation1(base_types._BaseFieldType):
 
 	@TtlPrtflVal.setter
 	def TtlPrtflVal(self, value):
-		self._TtlPrtflVal = value if type(value) != base_types.auto else self.make_default("TtlPrtflVal")
+		self._TtlPrtflVal = value if value is not None else base_types.UninitialisedField(self, 'TtlPrtflVal', AmountAndDirection30, False)
 
 	@TtlPrtflVal.deleter
 	def TtlPrtflVal(self):
 		del self._TtlPrtflVal
-		self._TtlPrtflVal = None
+		self._TtlPrtflVal = base_types.UninitialisedField(self, 'TtlPrtflVal', AmountAndDirection30, False)
 
 	@property
 	def TtlPrtflValChng(self):
@@ -159,12 +159,12 @@ class TotalPortfolioValuation1(base_types._BaseFieldType):
 
 	@TtlPrtflValChng.setter
 	def TtlPrtflValChng(self, value):
-		self._TtlPrtflValChng = value if type(value) != base_types.auto else self.make_default("TtlPrtflValChng")
+		self._TtlPrtflValChng = value if value is not None else base_types.UninitialisedField(self, 'TtlPrtflValChng', AmountAndRate2, False)
 
 	@TtlPrtflValChng.deleter
 	def TtlPrtflValChng(self):
 		del self._TtlPrtflValChng
-		self._TtlPrtflValChng = None
+		self._TtlPrtflValChng = base_types.UninitialisedField(self, 'TtlPrtflValChng', AmountAndRate2, False)
 
 	@property
 	def TtlRcts(self):
@@ -172,12 +172,12 @@ class TotalPortfolioValuation1(base_types._BaseFieldType):
 
 	@TtlRcts.setter
 	def TtlRcts(self, value):
-		self._TtlRcts = value if type(value) != base_types.auto else self.make_default("TtlRcts")
+		self._TtlRcts = value if value is not None else base_types.UninitialisedField(self, 'TtlRcts', AmountAndDirection30, False)
 
 	@TtlRcts.deleter
 	def TtlRcts(self):
 		del self._TtlRcts
-		self._TtlRcts = None
+		self._TtlRcts = base_types.UninitialisedField(self, 'TtlRcts', AmountAndDirection30, False)
 
 	@property
 	def UrlsdGnOrLoss(self):
@@ -185,12 +185,12 @@ class TotalPortfolioValuation1(base_types._BaseFieldType):
 
 	@UrlsdGnOrLoss.setter
 	def UrlsdGnOrLoss(self, value):
-		self._UrlsdGnOrLoss = value if type(value) != base_types.auto else self.make_default("UrlsdGnOrLoss")
+		self._UrlsdGnOrLoss = value if value is not None else base_types.UninitialisedField(self, 'UrlsdGnOrLoss', AmountAndDirection31, False)
 
 	@UrlsdGnOrLoss.deleter
 	def UrlsdGnOrLoss(self):
 		del self._UrlsdGnOrLoss
-		self._UrlsdGnOrLoss = None
+		self._UrlsdGnOrLoss = base_types.UninitialisedField(self, 'UrlsdGnOrLoss', AmountAndDirection31, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcrdIncm', type=AmountAndDirection30, min=0, max=1, mutex_group=None, array=False),

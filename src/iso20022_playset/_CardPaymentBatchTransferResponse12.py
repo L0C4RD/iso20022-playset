@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardPaymentDataSet39 import CardPaymentDataSet39
-from ._TransactionTotals12 import TransactionTotals12
+from . import CardPaymentDataSet39
+from . import TransactionTotals12
 
 class CardPaymentBatchTransferResponse12(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CardPaymentBatchTransferResponse12(base_types._BaseFieldType):
 
 	@DataSet.setter
 	def DataSet(self, value):
-		self._DataSet = value if type(value) != base_types.auto else self.make_default("DataSet")
+		self._DataSet = value if value is not None else base_types.UninitialisedField(self, 'DataSet', CardPaymentDataSet39, True)
 
 	@DataSet.deleter
 	def DataSet(self):
 		del self._DataSet
-		self._DataSet = None
+		self._DataSet = base_types.UninitialisedField(self, 'DataSet', CardPaymentDataSet39, True)
 
 	@property
 	def TxTtls(self):
@@ -27,12 +27,12 @@ class CardPaymentBatchTransferResponse12(base_types._BaseFieldType):
 
 	@TxTtls.setter
 	def TxTtls(self, value):
-		self._TxTtls = value if type(value) != base_types.auto else self.make_default("TxTtls")
+		self._TxTtls = value if value is not None else base_types.UninitialisedField(self, 'TxTtls', TransactionTotals12, True)
 
 	@TxTtls.deleter
 	def TxTtls(self):
 		del self._TxTtls
-		self._TxTtls = None
+		self._TxTtls = base_types.UninitialisedField(self, 'TxTtls', TransactionTotals12, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DataSet', type=CardPaymentDataSet39, min=0, max=None, mutex_group=None, array=True),

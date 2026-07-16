@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ActiveCurrencyAndAmount
+from . import TrueFalseIndicator
 
 class PaymentConditionStatus2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PaymentConditionStatus2(base_types._BaseFieldType):
 
 	@AccptdAmt.setter
 	def AccptdAmt(self, value):
-		self._AccptdAmt = value if type(value) != base_types.auto else self.make_default("AccptdAmt")
+		self._AccptdAmt = value if value is not None else base_types.UninitialisedField(self, 'AccptdAmt', ActiveCurrencyAndAmount, False)
 
 	@AccptdAmt.deleter
 	def AccptdAmt(self):
 		del self._AccptdAmt
-		self._AccptdAmt = None
+		self._AccptdAmt = base_types.UninitialisedField(self, 'AccptdAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def EarlyPmt(self):
@@ -27,12 +27,12 @@ class PaymentConditionStatus2(base_types._BaseFieldType):
 
 	@EarlyPmt.setter
 	def EarlyPmt(self, value):
-		self._EarlyPmt = value if type(value) != base_types.auto else self.make_default("EarlyPmt")
+		self._EarlyPmt = value if value is not None else base_types.UninitialisedField(self, 'EarlyPmt', TrueFalseIndicator, False)
 
 	@EarlyPmt.deleter
 	def EarlyPmt(self):
 		del self._EarlyPmt
-		self._EarlyPmt = None
+		self._EarlyPmt = base_types.UninitialisedField(self, 'EarlyPmt', TrueFalseIndicator, False)
 
 	@property
 	def GrntedPmt(self):
@@ -40,12 +40,12 @@ class PaymentConditionStatus2(base_types._BaseFieldType):
 
 	@GrntedPmt.setter
 	def GrntedPmt(self, value):
-		self._GrntedPmt = value if type(value) != base_types.auto else self.make_default("GrntedPmt")
+		self._GrntedPmt = value if value is not None else base_types.UninitialisedField(self, 'GrntedPmt', TrueFalseIndicator, False)
 
 	@GrntedPmt.deleter
 	def GrntedPmt(self):
 		del self._GrntedPmt
-		self._GrntedPmt = None
+		self._GrntedPmt = base_types.UninitialisedField(self, 'GrntedPmt', TrueFalseIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AccptdAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

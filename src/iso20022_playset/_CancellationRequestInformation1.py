@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._FinancialInstitutionIdentification6 import FinancialInstitutionIdentification6
-from ._ISODateTime import ISODateTime
-from ._Max105Text import Max105Text
-from ._Max15NumericText import Max15NumericText
-from ._Max35Text import Max35Text
-from ._PartyIdentificationAndAccount6 import PartyIdentificationAndAccount6
+from . import ActiveCurrencyAndAmount
+from . import FinancialInstitutionIdentification6
+from . import ISODateTime
+from . import Max105Text
+from . import Max15NumericText
+from . import Max35Text
+from . import PartyIdentificationAndAccount6
 
 class CancellationRequestInformation1(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class CancellationRequestInformation1(base_types._BaseFieldType):
 
 	@CxlRsn.setter
 	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != base_types.auto else self.make_default("CxlRsn")
+		self._CxlRsn = value if value is not None else base_types.UninitialisedField(self, 'CxlRsn', Max105Text, False)
 
 	@CxlRsn.deleter
 	def CxlRsn(self):
 		del self._CxlRsn
-		self._CxlRsn = None
+		self._CxlRsn = base_types.UninitialisedField(self, 'CxlRsn', Max105Text, False)
 
 	@property
 	def FincgRqstr(self):
@@ -32,12 +32,12 @@ class CancellationRequestInformation1(base_types._BaseFieldType):
 
 	@FincgRqstr.setter
 	def FincgRqstr(self, value):
-		self._FincgRqstr = value if type(value) != base_types.auto else self.make_default("FincgRqstr")
+		self._FincgRqstr = value if value is not None else base_types.UninitialisedField(self, 'FincgRqstr', PartyIdentificationAndAccount6, False)
 
 	@FincgRqstr.deleter
 	def FincgRqstr(self):
 		del self._FincgRqstr
-		self._FincgRqstr = None
+		self._FincgRqstr = base_types.UninitialisedField(self, 'FincgRqstr', PartyIdentificationAndAccount6, False)
 
 	@property
 	def FrstAgt(self):
@@ -45,12 +45,12 @@ class CancellationRequestInformation1(base_types._BaseFieldType):
 
 	@FrstAgt.setter
 	def FrstAgt(self, value):
-		self._FrstAgt = value if type(value) != base_types.auto else self.make_default("FrstAgt")
+		self._FrstAgt = value if value is not None else base_types.UninitialisedField(self, 'FrstAgt', FinancialInstitutionIdentification6, False)
 
 	@FrstAgt.deleter
 	def FrstAgt(self):
 		del self._FrstAgt
-		self._FrstAgt = None
+		self._FrstAgt = base_types.UninitialisedField(self, 'FrstAgt', FinancialInstitutionIdentification6, False)
 
 	@property
 	def IntrmyAgt(self):
@@ -58,12 +58,12 @@ class CancellationRequestInformation1(base_types._BaseFieldType):
 
 	@IntrmyAgt.setter
 	def IntrmyAgt(self, value):
-		self._IntrmyAgt = value if type(value) != base_types.auto else self.make_default("IntrmyAgt")
+		self._IntrmyAgt = value if value is not None else base_types.UninitialisedField(self, 'IntrmyAgt', FinancialInstitutionIdentification6, False)
 
 	@IntrmyAgt.deleter
 	def IntrmyAgt(self):
 		del self._IntrmyAgt
-		self._IntrmyAgt = None
+		self._IntrmyAgt = base_types.UninitialisedField(self, 'IntrmyAgt', FinancialInstitutionIdentification6, False)
 
 	@property
 	def NbOfInvcReqs(self):
@@ -71,12 +71,12 @@ class CancellationRequestInformation1(base_types._BaseFieldType):
 
 	@NbOfInvcReqs.setter
 	def NbOfInvcReqs(self, value):
-		self._NbOfInvcReqs = value if type(value) != base_types.auto else self.make_default("NbOfInvcReqs")
+		self._NbOfInvcReqs = value if value is not None else base_types.UninitialisedField(self, 'NbOfInvcReqs', Max15NumericText, False)
 
 	@NbOfInvcReqs.deleter
 	def NbOfInvcReqs(self):
 		del self._NbOfInvcReqs
-		self._NbOfInvcReqs = None
+		self._NbOfInvcReqs = base_types.UninitialisedField(self, 'NbOfInvcReqs', Max15NumericText, False)
 
 	@property
 	def OrgnlCreDtTm(self):
@@ -84,12 +84,12 @@ class CancellationRequestInformation1(base_types._BaseFieldType):
 
 	@OrgnlCreDtTm.setter
 	def OrgnlCreDtTm(self, value):
-		self._OrgnlCreDtTm = value if type(value) != base_types.auto else self.make_default("OrgnlCreDtTm")
+		self._OrgnlCreDtTm = value if value is not None else base_types.UninitialisedField(self, 'OrgnlCreDtTm', ISODateTime, False)
 
 	@OrgnlCreDtTm.deleter
 	def OrgnlCreDtTm(self):
 		del self._OrgnlCreDtTm
-		self._OrgnlCreDtTm = None
+		self._OrgnlCreDtTm = base_types.UninitialisedField(self, 'OrgnlCreDtTm', ISODateTime, False)
 
 	@property
 	def OrgnlGrpId(self):
@@ -97,12 +97,12 @@ class CancellationRequestInformation1(base_types._BaseFieldType):
 
 	@OrgnlGrpId.setter
 	def OrgnlGrpId(self, value):
-		self._OrgnlGrpId = value if type(value) != base_types.auto else self.make_default("OrgnlGrpId")
+		self._OrgnlGrpId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlGrpId', Max35Text, False)
 
 	@OrgnlGrpId.deleter
 	def OrgnlGrpId(self):
 		del self._OrgnlGrpId
-		self._OrgnlGrpId = None
+		self._OrgnlGrpId = base_types.UninitialisedField(self, 'OrgnlGrpId', Max35Text, False)
 
 	@property
 	def TtlBlkInvcAmt(self):
@@ -110,12 +110,12 @@ class CancellationRequestInformation1(base_types._BaseFieldType):
 
 	@TtlBlkInvcAmt.setter
 	def TtlBlkInvcAmt(self, value):
-		self._TtlBlkInvcAmt = value if type(value) != base_types.auto else self.make_default("TtlBlkInvcAmt")
+		self._TtlBlkInvcAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlBlkInvcAmt', ActiveCurrencyAndAmount, False)
 
 	@TtlBlkInvcAmt.deleter
 	def TtlBlkInvcAmt(self):
 		del self._TtlBlkInvcAmt
-		self._TtlBlkInvcAmt = None
+		self._TtlBlkInvcAmt = base_types.UninitialisedField(self, 'TtlBlkInvcAmt', ActiveCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CxlRsn', type=Max105Text, min=1, max=1, mutex_group=None, array=False),

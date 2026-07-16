@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._EnrolmentHeader3 import EnrolmentHeader3
-from ._EnrolmentStatus3 import EnrolmentStatus3
-from ._SupplementaryData1 import SupplementaryData1
+from . import EnrolmentHeader3
+from . import EnrolmentStatus3
+from . import SupplementaryData1
 
 class RequestToPayCreditorEnrolmentStatusReportV02(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class RequestToPayCreditorEnrolmentStatusReportV02(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', EnrolmentHeader3, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', EnrolmentHeader3, False)
 
 	@property
 	def OrgnlEnrlmntAndSts(self):
@@ -28,12 +28,12 @@ class RequestToPayCreditorEnrolmentStatusReportV02(base_types._BaseFieldType):
 
 	@OrgnlEnrlmntAndSts.setter
 	def OrgnlEnrlmntAndSts(self, value):
-		self._OrgnlEnrlmntAndSts = value if type(value) != base_types.auto else self.make_default("OrgnlEnrlmntAndSts")
+		self._OrgnlEnrlmntAndSts = value if value is not None else base_types.UninitialisedField(self, 'OrgnlEnrlmntAndSts', EnrolmentStatus3, True)
 
 	@OrgnlEnrlmntAndSts.deleter
 	def OrgnlEnrlmntAndSts(self):
 		del self._OrgnlEnrlmntAndSts
-		self._OrgnlEnrlmntAndSts = None
+		self._OrgnlEnrlmntAndSts = base_types.UninitialisedField(self, 'OrgnlEnrlmntAndSts', EnrolmentStatus3, True)
 
 	@property
 	def SplmtryData(self):
@@ -41,12 +41,12 @@ class RequestToPayCreditorEnrolmentStatusReportV02(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Hdr', type=EnrolmentHeader3, min=1, max=1, mutex_group=None, array=False),

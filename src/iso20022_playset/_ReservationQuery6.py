@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._QueryType2Code import QueryType2Code
-from ._ReservationCriteria6Choice import ReservationCriteria6Choice
+from . import QueryType2Code
+from . import ReservationCriteria6Choice
 
 class ReservationQuery6(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ReservationQuery6(base_types._BaseFieldType):
 
 	@QryTp.setter
 	def QryTp(self, value):
-		self._QryTp = value if type(value) != base_types.auto else self.make_default("QryTp")
+		self._QryTp = value if value is not None else base_types.UninitialisedField(self, 'QryTp', QueryType2Code, False)
 
 	@QryTp.deleter
 	def QryTp(self):
 		del self._QryTp
-		self._QryTp = None
+		self._QryTp = base_types.UninitialisedField(self, 'QryTp', QueryType2Code, False)
 
 	@property
 	def RsvatnCrit(self):
@@ -27,12 +27,12 @@ class ReservationQuery6(base_types._BaseFieldType):
 
 	@RsvatnCrit.setter
 	def RsvatnCrit(self, value):
-		self._RsvatnCrit = value if type(value) != base_types.auto else self.make_default("RsvatnCrit")
+		self._RsvatnCrit = value if value is not None else base_types.UninitialisedField(self, 'RsvatnCrit', ReservationCriteria6Choice, False)
 
 	@RsvatnCrit.deleter
 	def RsvatnCrit(self):
 		del self._RsvatnCrit
-		self._RsvatnCrit = None
+		self._RsvatnCrit = base_types.UninitialisedField(self, 'RsvatnCrit', ReservationCriteria6Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='QryTp', type=QueryType2Code, min=0, max=1, mutex_group=None, array=False),

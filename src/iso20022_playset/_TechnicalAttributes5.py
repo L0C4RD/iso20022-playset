@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._Max140Text import Max140Text
-from ._Reconciliation3Code import Reconciliation3Code
+from . import ISODateTime
+from . import Max140Text
+from . import Reconciliation3Code
 
 class TechnicalAttributes5(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TechnicalAttributes5(base_types._BaseFieldType):
 
 	@RcncltnFlg.setter
 	def RcncltnFlg(self, value):
-		self._RcncltnFlg = value if type(value) != base_types.auto else self.make_default("RcncltnFlg")
+		self._RcncltnFlg = value if value is not None else base_types.UninitialisedField(self, 'RcncltnFlg', Reconciliation3Code, False)
 
 	@RcncltnFlg.deleter
 	def RcncltnFlg(self):
 		del self._RcncltnFlg
-		self._RcncltnFlg = None
+		self._RcncltnFlg = base_types.UninitialisedField(self, 'RcncltnFlg', Reconciliation3Code, False)
 
 	@property
 	def RptRctTmStmp(self):
@@ -28,12 +28,12 @@ class TechnicalAttributes5(base_types._BaseFieldType):
 
 	@RptRctTmStmp.setter
 	def RptRctTmStmp(self, value):
-		self._RptRctTmStmp = value if type(value) != base_types.auto else self.make_default("RptRctTmStmp")
+		self._RptRctTmStmp = value if value is not None else base_types.UninitialisedField(self, 'RptRctTmStmp', ISODateTime, False)
 
 	@RptRctTmStmp.deleter
 	def RptRctTmStmp(self):
 		del self._RptRctTmStmp
-		self._RptRctTmStmp = None
+		self._RptRctTmStmp = base_types.UninitialisedField(self, 'RptRctTmStmp', ISODateTime, False)
 
 	@property
 	def TechRcrdId(self):
@@ -41,12 +41,12 @@ class TechnicalAttributes5(base_types._BaseFieldType):
 
 	@TechRcrdId.setter
 	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
+		self._TechRcrdId = value if value is not None else base_types.UninitialisedField(self, 'TechRcrdId', Max140Text, False)
 
 	@TechRcrdId.deleter
 	def TechRcrdId(self):
 		del self._TechRcrdId
-		self._TechRcrdId = None
+		self._TechRcrdId = base_types.UninitialisedField(self, 'TechRcrdId', Max140Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RcncltnFlg', type=Reconciliation3Code, min=0, max=1, mutex_group=None, array=False),

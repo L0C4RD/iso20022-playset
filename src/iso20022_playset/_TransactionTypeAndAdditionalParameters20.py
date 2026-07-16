@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
-from ._RepurchaseType31Choice import RepurchaseType31Choice
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from ._SecuritiesFinancingTransactionType2Code import SecuritiesFinancingTransactionType2Code
+from . import DeliveryReceiptType2Code
+from . import RepurchaseType31Choice
+from . import RestrictedFINXMax16Text
+from . import SecuritiesFinancingTransactionType2Code
 
 class TransactionTypeAndAdditionalParameters20(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class TransactionTypeAndAdditionalParameters20(base_types._BaseFieldType):
 
 	@AcctOwnrTxId.setter
 	def AcctOwnrTxId(self, value):
-		self._AcctOwnrTxId = value if type(value) != base_types.auto else self.make_default("AcctOwnrTxId")
+		self._AcctOwnrTxId = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnrTxId', RestrictedFINXMax16Text, False)
 
 	@AcctOwnrTxId.deleter
 	def AcctOwnrTxId(self):
 		del self._AcctOwnrTxId
-		self._AcctOwnrTxId = None
+		self._AcctOwnrTxId = base_types.UninitialisedField(self, 'AcctOwnrTxId', RestrictedFINXMax16Text, False)
 
 	@property
 	def AcctSvcrTxId(self):
@@ -29,12 +29,12 @@ class TransactionTypeAndAdditionalParameters20(base_types._BaseFieldType):
 
 	@AcctSvcrTxId.setter
 	def AcctSvcrTxId(self, value):
-		self._AcctSvcrTxId = value if type(value) != base_types.auto else self.make_default("AcctSvcrTxId")
+		self._AcctSvcrTxId = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcrTxId', RestrictedFINXMax16Text, False)
 
 	@AcctSvcrTxId.deleter
 	def AcctSvcrTxId(self):
 		del self._AcctSvcrTxId
-		self._AcctSvcrTxId = None
+		self._AcctSvcrTxId = base_types.UninitialisedField(self, 'AcctSvcrTxId', RestrictedFINXMax16Text, False)
 
 	@property
 	def CmonId(self):
@@ -42,12 +42,12 @@ class TransactionTypeAndAdditionalParameters20(base_types._BaseFieldType):
 
 	@CmonId.setter
 	def CmonId(self, value):
-		self._CmonId = value if type(value) != base_types.auto else self.make_default("CmonId")
+		self._CmonId = value if value is not None else base_types.UninitialisedField(self, 'CmonId', RestrictedFINXMax16Text, False)
 
 	@CmonId.deleter
 	def CmonId(self):
 		del self._CmonId
-		self._CmonId = None
+		self._CmonId = base_types.UninitialisedField(self, 'CmonId', RestrictedFINXMax16Text, False)
 
 	@property
 	def ModTp(self):
@@ -55,12 +55,12 @@ class TransactionTypeAndAdditionalParameters20(base_types._BaseFieldType):
 
 	@ModTp.setter
 	def ModTp(self, value):
-		self._ModTp = value if type(value) != base_types.auto else self.make_default("ModTp")
+		self._ModTp = value if value is not None else base_types.UninitialisedField(self, 'ModTp', RepurchaseType31Choice, False)
 
 	@ModTp.deleter
 	def ModTp(self):
 		del self._ModTp
-		self._ModTp = None
+		self._ModTp = base_types.UninitialisedField(self, 'ModTp', RepurchaseType31Choice, False)
 
 	@property
 	def Pmt(self):
@@ -68,12 +68,12 @@ class TransactionTypeAndAdditionalParameters20(base_types._BaseFieldType):
 
 	@Pmt.setter
 	def Pmt(self, value):
-		self._Pmt = value if type(value) != base_types.auto else self.make_default("Pmt")
+		self._Pmt = value if value is not None else base_types.UninitialisedField(self, 'Pmt', DeliveryReceiptType2Code, False)
 
 	@Pmt.deleter
 	def Pmt(self):
 		del self._Pmt
-		self._Pmt = None
+		self._Pmt = base_types.UninitialisedField(self, 'Pmt', DeliveryReceiptType2Code, False)
 
 	@property
 	def PoolId(self):
@@ -81,12 +81,12 @@ class TransactionTypeAndAdditionalParameters20(base_types._BaseFieldType):
 
 	@PoolId.setter
 	def PoolId(self, value):
-		self._PoolId = value if type(value) != base_types.auto else self.make_default("PoolId")
+		self._PoolId = value if value is not None else base_types.UninitialisedField(self, 'PoolId', RestrictedFINXMax16Text, False)
 
 	@PoolId.deleter
 	def PoolId(self):
 		del self._PoolId
-		self._PoolId = None
+		self._PoolId = base_types.UninitialisedField(self, 'PoolId', RestrictedFINXMax16Text, False)
 
 	@property
 	def SctiesFincgTxTp(self):
@@ -94,12 +94,12 @@ class TransactionTypeAndAdditionalParameters20(base_types._BaseFieldType):
 
 	@SctiesFincgTxTp.setter
 	def SctiesFincgTxTp(self, value):
-		self._SctiesFincgTxTp = value if type(value) != base_types.auto else self.make_default("SctiesFincgTxTp")
+		self._SctiesFincgTxTp = value if value is not None else base_types.UninitialisedField(self, 'SctiesFincgTxTp', SecuritiesFinancingTransactionType2Code, False)
 
 	@SctiesFincgTxTp.deleter
 	def SctiesFincgTxTp(self):
 		del self._SctiesFincgTxTp
-		self._SctiesFincgTxTp = None
+		self._SctiesFincgTxTp = base_types.UninitialisedField(self, 'SctiesFincgTxTp', SecuritiesFinancingTransactionType2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnrTxId', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),

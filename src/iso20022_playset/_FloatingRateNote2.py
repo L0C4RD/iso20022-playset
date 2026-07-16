@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._Number import Number
+from . import ISINOct2015Identifier
+from . import Number
 
 class FloatingRateNote2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class FloatingRateNote2(base_types._BaseFieldType):
 
 	@BsisPtSprd.setter
 	def BsisPtSprd(self, value):
-		self._BsisPtSprd = value if type(value) != base_types.auto else self.make_default("BsisPtSprd")
+		self._BsisPtSprd = value if value is not None else base_types.UninitialisedField(self, 'BsisPtSprd', Number, False)
 
 	@BsisPtSprd.deleter
 	def BsisPtSprd(self):
 		del self._BsisPtSprd
-		self._BsisPtSprd = None
+		self._BsisPtSprd = base_types.UninitialisedField(self, 'BsisPtSprd', Number, False)
 
 	@property
 	def RefRateIndx(self):
@@ -27,12 +27,12 @@ class FloatingRateNote2(base_types._BaseFieldType):
 
 	@RefRateIndx.setter
 	def RefRateIndx(self, value):
-		self._RefRateIndx = value if type(value) != base_types.auto else self.make_default("RefRateIndx")
+		self._RefRateIndx = value if value is not None else base_types.UninitialisedField(self, 'RefRateIndx', ISINOct2015Identifier, False)
 
 	@RefRateIndx.deleter
 	def RefRateIndx(self):
 		del self._RefRateIndx
-		self._RefRateIndx = None
+		self._RefRateIndx = base_types.UninitialisedField(self, 'RefRateIndx', ISINOct2015Identifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BsisPtSprd', type=Number, min=1, max=1, mutex_group=None, array=False),

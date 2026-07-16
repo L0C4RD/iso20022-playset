@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActivityReportSetUpRequestV02 import ActivityReportSetUpRequestV02
+from . import ActivityReportSetUpRequestV02
 
 class TSMT_004_001_02():
 
@@ -18,12 +18,12 @@ class TSMT_004_001_02():
 
 		@ActvtyRptSetUpReq.setter
 		def ActvtyRptSetUpReq(self, value):
-			self._ActvtyRptSetUpReq = value if type(value) != base_types.auto else self.make_default("ActvtyRptSetUpReq")
+			self._ActvtyRptSetUpReq = value if value is not None else base_types.UninitialisedField(self, 'ActvtyRptSetUpReq', ActivityReportSetUpRequestV02, False)
 
 		@ActvtyRptSetUpReq.deleter
 		def ActvtyRptSetUpReq(self):
 			del self._ActvtyRptSetUpReq
-			self._ActvtyRptSetUpReq = None
+			self._ActvtyRptSetUpReq = base_types.UninitialisedField(self, 'ActvtyRptSetUpReq', ActivityReportSetUpRequestV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ActvtyRptSetUpReq', type=ActivityReportSetUpRequestV02, min=1, max=1, mutex_group=None, array=False),

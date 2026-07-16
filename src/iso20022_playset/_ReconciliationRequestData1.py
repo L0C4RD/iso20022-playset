@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._ReconciliationType1Code import ReconciliationType1Code
+from . import Max35Text
+from . import ReconciliationType1Code
 
 class ReconciliationRequestData1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ReconciliationRequestData1(base_types._BaseFieldType):
 
 	@AcqrrId.setter
 	def AcqrrId(self, value):
-		self._AcqrrId = value if type(value) != base_types.auto else self.make_default("AcqrrId")
+		self._AcqrrId = value if value is not None else base_types.UninitialisedField(self, 'AcqrrId', Max35Text, False)
 
 	@AcqrrId.deleter
 	def AcqrrId(self):
 		del self._AcqrrId
-		self._AcqrrId = None
+		self._AcqrrId = base_types.UninitialisedField(self, 'AcqrrId', Max35Text, False)
 
 	@property
 	def POIRcncltnId(self):
@@ -27,12 +27,12 @@ class ReconciliationRequestData1(base_types._BaseFieldType):
 
 	@POIRcncltnId.setter
 	def POIRcncltnId(self, value):
-		self._POIRcncltnId = value if type(value) != base_types.auto else self.make_default("POIRcncltnId")
+		self._POIRcncltnId = value if value is not None else base_types.UninitialisedField(self, 'POIRcncltnId', Max35Text, False)
 
 	@POIRcncltnId.deleter
 	def POIRcncltnId(self):
 		del self._POIRcncltnId
-		self._POIRcncltnId = None
+		self._POIRcncltnId = base_types.UninitialisedField(self, 'POIRcncltnId', Max35Text, False)
 
 	@property
 	def RcncltnTp(self):
@@ -40,12 +40,12 @@ class ReconciliationRequestData1(base_types._BaseFieldType):
 
 	@RcncltnTp.setter
 	def RcncltnTp(self, value):
-		self._RcncltnTp = value if type(value) != base_types.auto else self.make_default("RcncltnTp")
+		self._RcncltnTp = value if value is not None else base_types.UninitialisedField(self, 'RcncltnTp', ReconciliationType1Code, False)
 
 	@RcncltnTp.deleter
 	def RcncltnTp(self):
 		del self._RcncltnTp
-		self._RcncltnTp = None
+		self._RcncltnTp = base_types.UninitialisedField(self, 'RcncltnTp', ReconciliationType1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcqrrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

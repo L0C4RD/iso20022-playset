@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCode import CountryCode
-from ._PersonOrOrganisation1Choice import PersonOrOrganisation1Choice
+from . import CountryCode
+from . import PersonOrOrganisation1Choice
 
 class PartyIdentification76(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PartyIdentification76(base_types._BaseFieldType):
 
 	@CtryOfBrnch.setter
 	def CtryOfBrnch(self, value):
-		self._CtryOfBrnch = value if type(value) != base_types.auto else self.make_default("CtryOfBrnch")
+		self._CtryOfBrnch = value if value is not None else base_types.UninitialisedField(self, 'CtryOfBrnch', CountryCode, False)
 
 	@CtryOfBrnch.deleter
 	def CtryOfBrnch(self):
 		del self._CtryOfBrnch
-		self._CtryOfBrnch = None
+		self._CtryOfBrnch = base_types.UninitialisedField(self, 'CtryOfBrnch', CountryCode, False)
 
 	@property
 	def Id(self):
@@ -27,12 +27,12 @@ class PartyIdentification76(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', PersonOrOrganisation1Choice, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', PersonOrOrganisation1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtryOfBrnch', type=CountryCode, min=0, max=1, mutex_group=None, array=False),

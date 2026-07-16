@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContentInformationType39 import ContentInformationType39
-from ._ISODate import ISODate
-from ._Max2MBBinary import Max2MBBinary
-from ._Max35Text import Max35Text
+from . import ContentInformationType39
+from . import ISODate
+from . import Max2MBBinary
+from . import Max35Text
 
 class MandateRelatedInformation17(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class MandateRelatedInformation17(base_types._BaseFieldType):
 
 	@DtOfSgntr.setter
 	def DtOfSgntr(self, value):
-		self._DtOfSgntr = value if type(value) != base_types.auto else self.make_default("DtOfSgntr")
+		self._DtOfSgntr = value if value is not None else base_types.UninitialisedField(self, 'DtOfSgntr', ISODate, False)
 
 	@DtOfSgntr.deleter
 	def DtOfSgntr(self):
 		del self._DtOfSgntr
-		self._DtOfSgntr = None
+		self._DtOfSgntr = base_types.UninitialisedField(self, 'DtOfSgntr', ISODate, False)
 
 	@property
 	def MndtId(self):
@@ -29,12 +29,12 @@ class MandateRelatedInformation17(base_types._BaseFieldType):
 
 	@MndtId.setter
 	def MndtId(self, value):
-		self._MndtId = value if type(value) != base_types.auto else self.make_default("MndtId")
+		self._MndtId = value if value is not None else base_types.UninitialisedField(self, 'MndtId', Max35Text, False)
 
 	@MndtId.deleter
 	def MndtId(self):
 		del self._MndtId
-		self._MndtId = None
+		self._MndtId = base_types.UninitialisedField(self, 'MndtId', Max35Text, False)
 
 	@property
 	def MndtImg(self):
@@ -42,12 +42,12 @@ class MandateRelatedInformation17(base_types._BaseFieldType):
 
 	@MndtImg.setter
 	def MndtImg(self, value):
-		self._MndtImg = value if type(value) != base_types.auto else self.make_default("MndtImg")
+		self._MndtImg = value if value is not None else base_types.UninitialisedField(self, 'MndtImg', Max2MBBinary, False)
 
 	@MndtImg.deleter
 	def MndtImg(self):
 		del self._MndtImg
-		self._MndtImg = None
+		self._MndtImg = base_types.UninitialisedField(self, 'MndtImg', Max2MBBinary, False)
 
 	@property
 	def PrtctdMndtImg(self):
@@ -55,12 +55,12 @@ class MandateRelatedInformation17(base_types._BaseFieldType):
 
 	@PrtctdMndtImg.setter
 	def PrtctdMndtImg(self, value):
-		self._PrtctdMndtImg = value if type(value) != base_types.auto else self.make_default("PrtctdMndtImg")
+		self._PrtctdMndtImg = value if value is not None else base_types.UninitialisedField(self, 'PrtctdMndtImg', ContentInformationType39, False)
 
 	@PrtctdMndtImg.deleter
 	def PrtctdMndtImg(self):
 		del self._PrtctdMndtImg
-		self._PrtctdMndtImg = None
+		self._PrtctdMndtImg = base_types.UninitialisedField(self, 'PrtctdMndtImg', ContentInformationType39, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DtOfSgntr', type=ISODate, min=0, max=1, mutex_group=None, array=False),

@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndPeriod1 import AmountAndPeriod1
-from ._Max2000Text import Max2000Text
-from ._PercentageAndPeriod1 import PercentageAndPeriod1
-from ._xs:IDREF import xs:IDREF
-from ._xs:positiveInteger import xs:positiveInteger
+from . import AmountAndPeriod1
+from . import Max2000Text
+from . import PercentageAndPeriod1
+from . import xs:IDREF
+from . import xs:positiveInteger
 
 class GuaranteeDetails1(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class GuaranteeDetails1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max2000Text, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max2000Text, True)
 
 	@property
 	def AssoctdDoc(self):
@@ -30,12 +30,12 @@ class GuaranteeDetails1(base_types._BaseFieldType):
 
 	@AssoctdDoc.setter
 	def AssoctdDoc(self, value):
-		self._AssoctdDoc = value if type(value) != base_types.auto else self.make_default("AssoctdDoc")
+		self._AssoctdDoc = value if value is not None else base_types.UninitialisedField(self, 'AssoctdDoc', xs:IDREF, True)
 
 	@AssoctdDoc.deleter
 	def AssoctdDoc(self):
 		del self._AssoctdDoc
-		self._AssoctdDoc = None
+		self._AssoctdDoc = base_types.UninitialisedField(self, 'AssoctdDoc', xs:IDREF, True)
 
 	@property
 	def CvrdPctg(self):
@@ -43,12 +43,12 @@ class GuaranteeDetails1(base_types._BaseFieldType):
 
 	@CvrdPctg.setter
 	def CvrdPctg(self, value):
-		self._CvrdPctg = value if type(value) != base_types.auto else self.make_default("CvrdPctg")
+		self._CvrdPctg = value if value is not None else base_types.UninitialisedField(self, 'CvrdPctg', PercentageAndPeriod1, True)
 
 	@CvrdPctg.deleter
 	def CvrdPctg(self):
 		del self._CvrdPctg
-		self._CvrdPctg = None
+		self._CvrdPctg = base_types.UninitialisedField(self, 'CvrdPctg', PercentageAndPeriod1, True)
 
 	@property
 	def Desc(self):
@@ -56,12 +56,12 @@ class GuaranteeDetails1(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', Max2000Text, False)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', Max2000Text, False)
 
 	@property
 	def GrntedAmt(self):
@@ -69,12 +69,12 @@ class GuaranteeDetails1(base_types._BaseFieldType):
 
 	@GrntedAmt.setter
 	def GrntedAmt(self, value):
-		self._GrntedAmt = value if type(value) != base_types.auto else self.make_default("GrntedAmt")
+		self._GrntedAmt = value if value is not None else base_types.UninitialisedField(self, 'GrntedAmt', AmountAndPeriod1, True)
 
 	@GrntedAmt.deleter
 	def GrntedAmt(self):
 		del self._GrntedAmt
-		self._GrntedAmt = None
+		self._GrntedAmt = base_types.UninitialisedField(self, 'GrntedAmt', AmountAndPeriod1, True)
 
 	@property
 	def Issr(self):
@@ -82,12 +82,12 @@ class GuaranteeDetails1(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+		self._Issr = value if value is not None else base_types.UninitialisedField(self, 'Issr', xs:IDREF, False)
 
 	@Issr.deleter
 	def Issr(self):
 		del self._Issr
-		self._Issr = None
+		self._Issr = base_types.UninitialisedField(self, 'Issr', xs:IDREF, False)
 
 	@property
 	def Pos(self):
@@ -95,12 +95,12 @@ class GuaranteeDetails1(base_types._BaseFieldType):
 
 	@Pos.setter
 	def Pos(self, value):
-		self._Pos = value if type(value) != base_types.auto else self.make_default("Pos")
+		self._Pos = value if value is not None else base_types.UninitialisedField(self, 'Pos', xs:positiveInteger, False)
 
 	@Pos.deleter
 	def Pos(self):
 		del self._Pos
-		self._Pos = None
+		self._Pos = base_types.UninitialisedField(self, 'Pos', xs:positiveInteger, False)
 
 	@property
 	def Xcss(self):
@@ -108,12 +108,12 @@ class GuaranteeDetails1(base_types._BaseFieldType):
 
 	@Xcss.setter
 	def Xcss(self, value):
-		self._Xcss = value if type(value) != base_types.auto else self.make_default("Xcss")
+		self._Xcss = value if value is not None else base_types.UninitialisedField(self, 'Xcss', AmountAndPeriod1, True)
 
 	@Xcss.deleter
 	def Xcss(self):
 		del self._Xcss
-		self._Xcss = None
+		self._Xcss = base_types.UninitialisedField(self, 'Xcss', AmountAndPeriod1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),

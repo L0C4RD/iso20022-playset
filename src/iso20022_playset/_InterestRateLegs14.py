@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InterestRate33Choice import InterestRate33Choice
+from . import InterestRate33Choice
 
 class InterestRateLegs14(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class InterestRateLegs14(base_types._BaseFieldType):
 
 	@FrstLeg.setter
 	def FrstLeg(self, value):
-		self._FrstLeg = value if type(value) != base_types.auto else self.make_default("FrstLeg")
+		self._FrstLeg = value if value is not None else base_types.UninitialisedField(self, 'FrstLeg', InterestRate33Choice, False)
 
 	@FrstLeg.deleter
 	def FrstLeg(self):
 		del self._FrstLeg
-		self._FrstLeg = None
+		self._FrstLeg = base_types.UninitialisedField(self, 'FrstLeg', InterestRate33Choice, False)
 
 	@property
 	def ScndLeg(self):
@@ -26,12 +26,12 @@ class InterestRateLegs14(base_types._BaseFieldType):
 
 	@ScndLeg.setter
 	def ScndLeg(self, value):
-		self._ScndLeg = value if type(value) != base_types.auto else self.make_default("ScndLeg")
+		self._ScndLeg = value if value is not None else base_types.UninitialisedField(self, 'ScndLeg', InterestRate33Choice, False)
 
 	@ScndLeg.deleter
 	def ScndLeg(self):
 		del self._ScndLeg
-		self._ScndLeg = None
+		self._ScndLeg = base_types.UninitialisedField(self, 'ScndLeg', InterestRate33Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FrstLeg', type=InterestRate33Choice, min=0, max=1, mutex_group=None, array=False),

@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashAccount40 import CashAccount40
-from ._GenericIdentification1 import GenericIdentification1
-from ._UnderlyingPaymentInstruction8 import UnderlyingPaymentInstruction8
-from ._UnderlyingPaymentTransaction7 import UnderlyingPaymentTransaction7
-from ._UnderlyingStatementEntry5 import UnderlyingStatementEntry5
+from . import CashAccount40
+from . import GenericIdentification1
+from . import UnderlyingPaymentInstruction8
+from . import UnderlyingPaymentTransaction7
+from . import UnderlyingStatementEntry5
 
 class UnderlyingData2Choice(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class UnderlyingData2Choice(base_types._BaseFieldType):
 
 	@Acct.setter
 	def Acct(self, value):
-		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
+		self._Acct = value if value is not None else base_types.UninitialisedField(self, 'Acct', CashAccount40, False)
 
 	@Acct.deleter
 	def Acct(self):
 		del self._Acct
-		self._Acct = None
+		self._Acct = base_types.UninitialisedField(self, 'Acct', CashAccount40, False)
 
 	@property
 	def Initn(self):
@@ -30,12 +30,12 @@ class UnderlyingData2Choice(base_types._BaseFieldType):
 
 	@Initn.setter
 	def Initn(self, value):
-		self._Initn = value if type(value) != base_types.auto else self.make_default("Initn")
+		self._Initn = value if value is not None else base_types.UninitialisedField(self, 'Initn', UnderlyingPaymentInstruction8, False)
 
 	@Initn.deleter
 	def Initn(self):
 		del self._Initn
-		self._Initn = None
+		self._Initn = base_types.UninitialisedField(self, 'Initn', UnderlyingPaymentInstruction8, False)
 
 	@property
 	def IntrBk(self):
@@ -43,12 +43,12 @@ class UnderlyingData2Choice(base_types._BaseFieldType):
 
 	@IntrBk.setter
 	def IntrBk(self, value):
-		self._IntrBk = value if type(value) != base_types.auto else self.make_default("IntrBk")
+		self._IntrBk = value if value is not None else base_types.UninitialisedField(self, 'IntrBk', UnderlyingPaymentTransaction7, False)
 
 	@IntrBk.deleter
 	def IntrBk(self):
 		del self._IntrBk
-		self._IntrBk = None
+		self._IntrBk = base_types.UninitialisedField(self, 'IntrBk', UnderlyingPaymentTransaction7, False)
 
 	@property
 	def Othr(self):
@@ -56,12 +56,12 @@ class UnderlyingData2Choice(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', GenericIdentification1, False)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', GenericIdentification1, False)
 
 	@property
 	def StmtNtry(self):
@@ -69,12 +69,12 @@ class UnderlyingData2Choice(base_types._BaseFieldType):
 
 	@StmtNtry.setter
 	def StmtNtry(self, value):
-		self._StmtNtry = value if type(value) != base_types.auto else self.make_default("StmtNtry")
+		self._StmtNtry = value if value is not None else base_types.UninitialisedField(self, 'StmtNtry', UnderlyingStatementEntry5, False)
 
 	@StmtNtry.deleter
 	def StmtNtry(self):
 		del self._StmtNtry
-		self._StmtNtry = None
+		self._StmtNtry = base_types.UninitialisedField(self, 'StmtNtry', UnderlyingStatementEntry5, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=1, mutex_group=1, array=False),

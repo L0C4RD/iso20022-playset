@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Min6Max8Text import Min6Max8Text
-from ._TransactionIdentifier1 import TransactionIdentifier1
+from . import Max35Text
+from . import Min6Max8Text
+from . import TransactionIdentifier1
 
 class LoyaltyServerData1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class LoyaltyServerData1(base_types._BaseFieldType):
 
 	@ApprvlCd.setter
 	def ApprvlCd(self, value):
-		self._ApprvlCd = value if type(value) != base_types.auto else self.make_default("ApprvlCd")
+		self._ApprvlCd = value if value is not None else base_types.UninitialisedField(self, 'ApprvlCd', Min6Max8Text, False)
 
 	@ApprvlCd.deleter
 	def ApprvlCd(self):
 		del self._ApprvlCd
-		self._ApprvlCd = None
+		self._ApprvlCd = base_types.UninitialisedField(self, 'ApprvlCd', Min6Max8Text, False)
 
 	@property
 	def HstRcncltnId(self):
@@ -28,12 +28,12 @@ class LoyaltyServerData1(base_types._BaseFieldType):
 
 	@HstRcncltnId.setter
 	def HstRcncltnId(self, value):
-		self._HstRcncltnId = value if type(value) != base_types.auto else self.make_default("HstRcncltnId")
+		self._HstRcncltnId = value if value is not None else base_types.UninitialisedField(self, 'HstRcncltnId', Max35Text, False)
 
 	@HstRcncltnId.deleter
 	def HstRcncltnId(self):
 		del self._HstRcncltnId
-		self._HstRcncltnId = None
+		self._HstRcncltnId = base_types.UninitialisedField(self, 'HstRcncltnId', Max35Text, False)
 
 	@property
 	def LltySvrId(self):
@@ -41,12 +41,12 @@ class LoyaltyServerData1(base_types._BaseFieldType):
 
 	@LltySvrId.setter
 	def LltySvrId(self, value):
-		self._LltySvrId = value if type(value) != base_types.auto else self.make_default("LltySvrId")
+		self._LltySvrId = value if value is not None else base_types.UninitialisedField(self, 'LltySvrId', Max35Text, False)
 
 	@LltySvrId.deleter
 	def LltySvrId(self):
 		del self._LltySvrId
-		self._LltySvrId = None
+		self._LltySvrId = base_types.UninitialisedField(self, 'LltySvrId', Max35Text, False)
 
 	@property
 	def LltyTxId(self):
@@ -54,12 +54,12 @@ class LoyaltyServerData1(base_types._BaseFieldType):
 
 	@LltyTxId.setter
 	def LltyTxId(self, value):
-		self._LltyTxId = value if type(value) != base_types.auto else self.make_default("LltyTxId")
+		self._LltyTxId = value if value is not None else base_types.UninitialisedField(self, 'LltyTxId', TransactionIdentifier1, False)
 
 	@LltyTxId.deleter
 	def LltyTxId(self):
 		del self._LltyTxId
-		self._LltyTxId = None
+		self._LltyTxId = base_types.UninitialisedField(self, 'LltyTxId', TransactionIdentifier1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ApprvlCd', type=Min6Max8Text, min=0, max=1, mutex_group=None, array=False),

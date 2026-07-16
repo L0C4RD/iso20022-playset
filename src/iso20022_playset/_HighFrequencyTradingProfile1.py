@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ConsolidationType1Choice import ConsolidationType1Choice
-from ._ISODate import ISODate
-from ._SettlementFrequency1Choice import SettlementFrequency1Choice
+from . import ConsolidationType1Choice
+from . import ISODate
+from . import SettlementFrequency1Choice
 
 class HighFrequencyTradingProfile1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class HighFrequencyTradingProfile1(base_types._BaseFieldType):
 
 	@CnsldtnTp.setter
 	def CnsldtnTp(self, value):
-		self._CnsldtnTp = value if type(value) != base_types.auto else self.make_default("CnsldtnTp")
+		self._CnsldtnTp = value if value is not None else base_types.UninitialisedField(self, 'CnsldtnTp', ConsolidationType1Choice, False)
 
 	@CnsldtnTp.deleter
 	def CnsldtnTp(self):
 		del self._CnsldtnTp
-		self._CnsldtnTp = None
+		self._CnsldtnTp = base_types.UninitialisedField(self, 'CnsldtnTp', ConsolidationType1Choice, False)
 
 	@property
 	def Dt(self):
@@ -28,12 +28,12 @@ class HighFrequencyTradingProfile1(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@property
 	def SttlmFrqcy(self):
@@ -41,12 +41,12 @@ class HighFrequencyTradingProfile1(base_types._BaseFieldType):
 
 	@SttlmFrqcy.setter
 	def SttlmFrqcy(self, value):
-		self._SttlmFrqcy = value if type(value) != base_types.auto else self.make_default("SttlmFrqcy")
+		self._SttlmFrqcy = value if value is not None else base_types.UninitialisedField(self, 'SttlmFrqcy', SettlementFrequency1Choice, False)
 
 	@SttlmFrqcy.deleter
 	def SttlmFrqcy(self):
 		del self._SttlmFrqcy
-		self._SttlmFrqcy = None
+		self._SttlmFrqcy = base_types.UninitialisedField(self, 'SttlmFrqcy', SettlementFrequency1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CnsldtnTp', type=ConsolidationType1Choice, min=0, max=1, mutex_group=None, array=False),

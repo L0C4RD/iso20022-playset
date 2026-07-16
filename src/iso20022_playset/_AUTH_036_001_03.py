@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentReportingReferenceDataDeltaReportV03 import FinancialInstrumentReportingReferenceDataDeltaReportV03
+from . import FinancialInstrumentReportingReferenceDataDeltaReportV03
 
 class AUTH_036_001_03():
 
@@ -18,12 +18,12 @@ class AUTH_036_001_03():
 
 		@FinInstrmRptgRefDataDltaRpt.setter
 		def FinInstrmRptgRefDataDltaRpt(self, value):
-			self._FinInstrmRptgRefDataDltaRpt = value if type(value) != base_types.auto else self.make_default("FinInstrmRptgRefDataDltaRpt")
+			self._FinInstrmRptgRefDataDltaRpt = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmRptgRefDataDltaRpt', FinancialInstrumentReportingReferenceDataDeltaReportV03, False)
 
 		@FinInstrmRptgRefDataDltaRpt.deleter
 		def FinInstrmRptgRefDataDltaRpt(self):
 			del self._FinInstrmRptgRefDataDltaRpt
-			self._FinInstrmRptgRefDataDltaRpt = None
+			self._FinInstrmRptgRefDataDltaRpt = base_types.UninitialisedField(self, 'FinInstrmRptgRefDataDltaRpt', FinancialInstrumentReportingReferenceDataDeltaReportV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='FinInstrmRptgRefDataDltaRpt', type=FinancialInstrumentReportingReferenceDataDeltaReportV03, min=1, max=1, mutex_group=None, array=False),

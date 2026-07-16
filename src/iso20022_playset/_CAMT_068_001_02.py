@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IntraBalanceMovementConfirmationV02 import IntraBalanceMovementConfirmationV02
+from . import IntraBalanceMovementConfirmationV02
 
 class CAMT_068_001_02():
 
@@ -18,12 +18,12 @@ class CAMT_068_001_02():
 
 		@IntraBalMvmntConf.setter
 		def IntraBalMvmntConf(self, value):
-			self._IntraBalMvmntConf = value if type(value) != base_types.auto else self.make_default("IntraBalMvmntConf")
+			self._IntraBalMvmntConf = value if value is not None else base_types.UninitialisedField(self, 'IntraBalMvmntConf', IntraBalanceMovementConfirmationV02, False)
 
 		@IntraBalMvmntConf.deleter
 		def IntraBalMvmntConf(self):
 			del self._IntraBalMvmntConf
-			self._IntraBalMvmntConf = None
+			self._IntraBalMvmntConf = base_types.UninitialisedField(self, 'IntraBalMvmntConf', IntraBalanceMovementConfirmationV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='IntraBalMvmntConf', type=IntraBalanceMovementConfirmationV02, min=1, max=1, mutex_group=None, array=False),

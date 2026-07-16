@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CollateralData33 import CollateralData33
-from ._CounterpartyData86 import CounterpartyData86
-from ._LoanData134 import LoanData134
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import CollateralData33
+from . import CounterpartyData86
+from . import LoanData134
+from . import TrueFalseIndicator
 
 class PositionSetDimensions14(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class PositionSetDimensions14(base_types._BaseFieldType):
 
 	@CollData.setter
 	def CollData(self, value):
-		self._CollData = value if type(value) != base_types.auto else self.make_default("CollData")
+		self._CollData = value if value is not None else base_types.UninitialisedField(self, 'CollData', CollateralData33, False)
 
 	@CollData.deleter
 	def CollData(self):
 		del self._CollData
-		self._CollData = None
+		self._CollData = base_types.UninitialisedField(self, 'CollData', CollateralData33, False)
 
 	@property
 	def CtrPtyData(self):
@@ -29,12 +29,12 @@ class PositionSetDimensions14(base_types._BaseFieldType):
 
 	@CtrPtyData.setter
 	def CtrPtyData(self, value):
-		self._CtrPtyData = value if type(value) != base_types.auto else self.make_default("CtrPtyData")
+		self._CtrPtyData = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyData', CounterpartyData86, False)
 
 	@CtrPtyData.deleter
 	def CtrPtyData(self):
 		del self._CtrPtyData
-		self._CtrPtyData = None
+		self._CtrPtyData = base_types.UninitialisedField(self, 'CtrPtyData', CounterpartyData86, False)
 
 	@property
 	def LnData(self):
@@ -42,12 +42,12 @@ class PositionSetDimensions14(base_types._BaseFieldType):
 
 	@LnData.setter
 	def LnData(self, value):
-		self._LnData = value if type(value) != base_types.auto else self.make_default("LnData")
+		self._LnData = value if value is not None else base_types.UninitialisedField(self, 'LnData', LoanData134, False)
 
 	@LnData.deleter
 	def LnData(self):
 		del self._LnData
-		self._LnData = None
+		self._LnData = base_types.UninitialisedField(self, 'LnData', LoanData134, False)
 
 	@property
 	def OtlrsIncl(self):
@@ -55,12 +55,12 @@ class PositionSetDimensions14(base_types._BaseFieldType):
 
 	@OtlrsIncl.setter
 	def OtlrsIncl(self, value):
-		self._OtlrsIncl = value if type(value) != base_types.auto else self.make_default("OtlrsIncl")
+		self._OtlrsIncl = value if value is not None else base_types.UninitialisedField(self, 'OtlrsIncl', TrueFalseIndicator, False)
 
 	@OtlrsIncl.deleter
 	def OtlrsIncl(self):
 		del self._OtlrsIncl
-		self._OtlrsIncl = None
+		self._OtlrsIncl = base_types.UninitialisedField(self, 'OtlrsIncl', TrueFalseIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollData', type=CollateralData33, min=0, max=1, mutex_group=None, array=False),

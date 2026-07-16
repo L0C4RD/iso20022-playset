@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MatchingCriteria10 import MatchingCriteria10
-from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from . import MatchingCriteria10
+from . import OrganisationIdentification15Choice
 
 class ReconciliationResult10(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ReconciliationResult10(base_types._BaseFieldType):
 
 	@CtrPty1.setter
 	def CtrPty1(self, value):
-		self._CtrPty1 = value if type(value) != base_types.auto else self.make_default("CtrPty1")
+		self._CtrPty1 = value if value is not None else base_types.UninitialisedField(self, 'CtrPty1', OrganisationIdentification15Choice, False)
 
 	@CtrPty1.deleter
 	def CtrPty1(self):
 		del self._CtrPty1
-		self._CtrPty1 = None
+		self._CtrPty1 = base_types.UninitialisedField(self, 'CtrPty1', OrganisationIdentification15Choice, False)
 
 	@property
 	def CtrPty2(self):
@@ -27,12 +27,12 @@ class ReconciliationResult10(base_types._BaseFieldType):
 
 	@CtrPty2.setter
 	def CtrPty2(self, value):
-		self._CtrPty2 = value if type(value) != base_types.auto else self.make_default("CtrPty2")
+		self._CtrPty2 = value if value is not None else base_types.UninitialisedField(self, 'CtrPty2', OrganisationIdentification15Choice, False)
 
 	@CtrPty2.deleter
 	def CtrPty2(self):
 		del self._CtrPty2
-		self._CtrPty2 = None
+		self._CtrPty2 = base_types.UninitialisedField(self, 'CtrPty2', OrganisationIdentification15Choice, False)
 
 	@property
 	def MtchgCrit(self):
@@ -40,12 +40,12 @@ class ReconciliationResult10(base_types._BaseFieldType):
 
 	@MtchgCrit.setter
 	def MtchgCrit(self, value):
-		self._MtchgCrit = value if type(value) != base_types.auto else self.make_default("MtchgCrit")
+		self._MtchgCrit = value if value is not None else base_types.UninitialisedField(self, 'MtchgCrit', MatchingCriteria10, False)
 
 	@MtchgCrit.deleter
 	def MtchgCrit(self):
 		del self._MtchgCrit
-		self._MtchgCrit = None
+		self._MtchgCrit = base_types.UninitialisedField(self, 'MtchgCrit', MatchingCriteria10, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrPty1', type=OrganisationIdentification15Choice, min=1, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CitizenshipInformation2 import CitizenshipInformation2
-from ._DataModification2Code import DataModification2Code
+from . import CitizenshipInformation2
+from . import DataModification2Code
 
 class ModificationScope39(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ModificationScope39(base_types._BaseFieldType):
 
 	@Ctznsh.setter
 	def Ctznsh(self, value):
-		self._Ctznsh = value if type(value) != base_types.auto else self.make_default("Ctznsh")
+		self._Ctznsh = value if value is not None else base_types.UninitialisedField(self, 'Ctznsh', CitizenshipInformation2, False)
 
 	@Ctznsh.deleter
 	def Ctznsh(self):
 		del self._Ctznsh
-		self._Ctznsh = None
+		self._Ctznsh = base_types.UninitialisedField(self, 'Ctznsh', CitizenshipInformation2, False)
 
 	@property
 	def ModScpIndctn(self):
@@ -27,12 +27,12 @@ class ModificationScope39(base_types._BaseFieldType):
 
 	@ModScpIndctn.setter
 	def ModScpIndctn(self, value):
-		self._ModScpIndctn = value if type(value) != base_types.auto else self.make_default("ModScpIndctn")
+		self._ModScpIndctn = value if value is not None else base_types.UninitialisedField(self, 'ModScpIndctn', DataModification2Code, False)
 
 	@ModScpIndctn.deleter
 	def ModScpIndctn(self):
 		del self._ModScpIndctn
-		self._ModScpIndctn = None
+		self._ModScpIndctn = base_types.UninitialisedField(self, 'ModScpIndctn', DataModification2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ctznsh', type=CitizenshipInformation2, min=1, max=1, mutex_group=None, array=False),

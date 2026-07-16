@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BillingStatement5 import BillingStatement5
-from ._Contact13 import Contact13
-from ._Max35Text import Max35Text
-from ._PartyIdentification273 import PartyIdentification273
+from . import BillingStatement5
+from . import Contact13
+from . import Max35Text
+from . import PartyIdentification273
 
 class StatementGroup5(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class StatementGroup5(base_types._BaseFieldType):
 
 	@BllgStmt.setter
 	def BllgStmt(self, value):
-		self._BllgStmt = value if type(value) != base_types.auto else self.make_default("BllgStmt")
+		self._BllgStmt = value if value is not None else base_types.UninitialisedField(self, 'BllgStmt', BillingStatement5, True)
 
 	@BllgStmt.deleter
 	def BllgStmt(self):
 		del self._BllgStmt
-		self._BllgStmt = None
+		self._BllgStmt = base_types.UninitialisedField(self, 'BllgStmt', BillingStatement5, True)
 
 	@property
 	def GrpId(self):
@@ -29,12 +29,12 @@ class StatementGroup5(base_types._BaseFieldType):
 
 	@GrpId.setter
 	def GrpId(self, value):
-		self._GrpId = value if type(value) != base_types.auto else self.make_default("GrpId")
+		self._GrpId = value if value is not None else base_types.UninitialisedField(self, 'GrpId', Max35Text, False)
 
 	@GrpId.deleter
 	def GrpId(self):
 		del self._GrpId
-		self._GrpId = None
+		self._GrpId = base_types.UninitialisedField(self, 'GrpId', Max35Text, False)
 
 	@property
 	def Rcvr(self):
@@ -42,12 +42,12 @@ class StatementGroup5(base_types._BaseFieldType):
 
 	@Rcvr.setter
 	def Rcvr(self, value):
-		self._Rcvr = value if type(value) != base_types.auto else self.make_default("Rcvr")
+		self._Rcvr = value if value is not None else base_types.UninitialisedField(self, 'Rcvr', PartyIdentification273, False)
 
 	@Rcvr.deleter
 	def Rcvr(self):
 		del self._Rcvr
-		self._Rcvr = None
+		self._Rcvr = base_types.UninitialisedField(self, 'Rcvr', PartyIdentification273, False)
 
 	@property
 	def RcvrIndvCtct(self):
@@ -55,12 +55,12 @@ class StatementGroup5(base_types._BaseFieldType):
 
 	@RcvrIndvCtct.setter
 	def RcvrIndvCtct(self, value):
-		self._RcvrIndvCtct = value if type(value) != base_types.auto else self.make_default("RcvrIndvCtct")
+		self._RcvrIndvCtct = value if value is not None else base_types.UninitialisedField(self, 'RcvrIndvCtct', Contact13, True)
 
 	@RcvrIndvCtct.deleter
 	def RcvrIndvCtct(self):
 		del self._RcvrIndvCtct
-		self._RcvrIndvCtct = None
+		self._RcvrIndvCtct = base_types.UninitialisedField(self, 'RcvrIndvCtct', Contact13, True)
 
 	@property
 	def Sndr(self):
@@ -68,12 +68,12 @@ class StatementGroup5(base_types._BaseFieldType):
 
 	@Sndr.setter
 	def Sndr(self, value):
-		self._Sndr = value if type(value) != base_types.auto else self.make_default("Sndr")
+		self._Sndr = value if value is not None else base_types.UninitialisedField(self, 'Sndr', PartyIdentification273, False)
 
 	@Sndr.deleter
 	def Sndr(self):
 		del self._Sndr
-		self._Sndr = None
+		self._Sndr = base_types.UninitialisedField(self, 'Sndr', PartyIdentification273, False)
 
 	@property
 	def SndrIndvCtct(self):
@@ -81,12 +81,12 @@ class StatementGroup5(base_types._BaseFieldType):
 
 	@SndrIndvCtct.setter
 	def SndrIndvCtct(self, value):
-		self._SndrIndvCtct = value if type(value) != base_types.auto else self.make_default("SndrIndvCtct")
+		self._SndrIndvCtct = value if value is not None else base_types.UninitialisedField(self, 'SndrIndvCtct', Contact13, True)
 
 	@SndrIndvCtct.deleter
 	def SndrIndvCtct(self):
 		del self._SndrIndvCtct
-		self._SndrIndvCtct = None
+		self._SndrIndvCtct = base_types.UninitialisedField(self, 'SndrIndvCtct', Contact13, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BllgStmt', type=BillingStatement5, min=1, max=None, mutex_group=None, array=True),

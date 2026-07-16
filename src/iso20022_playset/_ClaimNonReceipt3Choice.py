@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ClaimNonReceipt3 import ClaimNonReceipt3
-from ._ClaimNonReceiptRejectReason1Choice import ClaimNonReceiptRejectReason1Choice
+from . import ClaimNonReceipt3
+from . import ClaimNonReceiptRejectReason1Choice
 
 class ClaimNonReceipt3Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ClaimNonReceipt3Choice(base_types._BaseFieldType):
 
 	@Accptd.setter
 	def Accptd(self, value):
-		self._Accptd = value if type(value) != base_types.auto else self.make_default("Accptd")
+		self._Accptd = value if value is not None else base_types.UninitialisedField(self, 'Accptd', ClaimNonReceipt3, False)
 
 	@Accptd.deleter
 	def Accptd(self):
 		del self._Accptd
-		self._Accptd = None
+		self._Accptd = base_types.UninitialisedField(self, 'Accptd', ClaimNonReceipt3, False)
 
 	@property
 	def Rjctd(self):
@@ -27,12 +27,12 @@ class ClaimNonReceipt3Choice(base_types._BaseFieldType):
 
 	@Rjctd.setter
 	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
+		self._Rjctd = value if value is not None else base_types.UninitialisedField(self, 'Rjctd', ClaimNonReceiptRejectReason1Choice, False)
 
 	@Rjctd.deleter
 	def Rjctd(self):
 		del self._Rjctd
-		self._Rjctd = None
+		self._Rjctd = base_types.UninitialisedField(self, 'Rjctd', ClaimNonReceiptRejectReason1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Accptd', type=ClaimNonReceipt3, min=0, max=1, mutex_group=1, array=False),

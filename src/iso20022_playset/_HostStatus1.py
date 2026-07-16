@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import Max35Text
+from . import TrueFalseIndicator
 
 class HostStatus1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class HostStatus1(base_types._BaseFieldType):
 
 	@AcqrrId.setter
 	def AcqrrId(self, value):
-		self._AcqrrId = value if type(value) != base_types.auto else self.make_default("AcqrrId")
+		self._AcqrrId = value if value is not None else base_types.UninitialisedField(self, 'AcqrrId', Max35Text, False)
 
 	@AcqrrId.deleter
 	def AcqrrId(self):
 		del self._AcqrrId
-		self._AcqrrId = None
+		self._AcqrrId = base_types.UninitialisedField(self, 'AcqrrId', Max35Text, False)
 
 	@property
 	def Rchbl(self):
@@ -27,12 +27,12 @@ class HostStatus1(base_types._BaseFieldType):
 
 	@Rchbl.setter
 	def Rchbl(self, value):
-		self._Rchbl = value if type(value) != base_types.auto else self.make_default("Rchbl")
+		self._Rchbl = value if value is not None else base_types.UninitialisedField(self, 'Rchbl', TrueFalseIndicator, False)
 
 	@Rchbl.deleter
 	def Rchbl(self):
 		del self._Rchbl
-		self._Rchbl = None
+		self._Rchbl = base_types.UninitialisedField(self, 'Rchbl', TrueFalseIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcqrrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

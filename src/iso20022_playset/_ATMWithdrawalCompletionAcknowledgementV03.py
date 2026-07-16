@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMWithdrawalCompletionAcknowledgement3 import ATMWithdrawalCompletionAcknowledgement3
-from ._ContentInformationType10 import ContentInformationType10
-from ._ContentInformationType15 import ContentInformationType15
-from ._Header32 import Header32
+from . import ATMWithdrawalCompletionAcknowledgement3
+from . import ContentInformationType10
+from . import ContentInformationType15
+from . import Header32
 
 class ATMWithdrawalCompletionAcknowledgementV03(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ATMWithdrawalCompletionAcknowledgementV03(base_types._BaseFieldType):
 
 	@ATMWdrwlCmpltnAck.setter
 	def ATMWdrwlCmpltnAck(self, value):
-		self._ATMWdrwlCmpltnAck = value if type(value) != base_types.auto else self.make_default("ATMWdrwlCmpltnAck")
+		self._ATMWdrwlCmpltnAck = value if value is not None else base_types.UninitialisedField(self, 'ATMWdrwlCmpltnAck', ATMWithdrawalCompletionAcknowledgement3, False)
 
 	@ATMWdrwlCmpltnAck.deleter
 	def ATMWdrwlCmpltnAck(self):
 		del self._ATMWdrwlCmpltnAck
-		self._ATMWdrwlCmpltnAck = None
+		self._ATMWdrwlCmpltnAck = base_types.UninitialisedField(self, 'ATMWdrwlCmpltnAck', ATMWithdrawalCompletionAcknowledgement3, False)
 
 	@property
 	def Hdr(self):
@@ -29,12 +29,12 @@ class ATMWithdrawalCompletionAcknowledgementV03(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header32, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header32, False)
 
 	@property
 	def PrtctdATMWdrwlCmpltnAck(self):
@@ -42,12 +42,12 @@ class ATMWithdrawalCompletionAcknowledgementV03(base_types._BaseFieldType):
 
 	@PrtctdATMWdrwlCmpltnAck.setter
 	def PrtctdATMWdrwlCmpltnAck(self, value):
-		self._PrtctdATMWdrwlCmpltnAck = value if type(value) != base_types.auto else self.make_default("PrtctdATMWdrwlCmpltnAck")
+		self._PrtctdATMWdrwlCmpltnAck = value if value is not None else base_types.UninitialisedField(self, 'PrtctdATMWdrwlCmpltnAck', ContentInformationType10, False)
 
 	@PrtctdATMWdrwlCmpltnAck.deleter
 	def PrtctdATMWdrwlCmpltnAck(self):
 		del self._PrtctdATMWdrwlCmpltnAck
-		self._PrtctdATMWdrwlCmpltnAck = None
+		self._PrtctdATMWdrwlCmpltnAck = base_types.UninitialisedField(self, 'PrtctdATMWdrwlCmpltnAck', ContentInformationType10, False)
 
 	@property
 	def SctyTrlr(self):
@@ -55,12 +55,12 @@ class ATMWithdrawalCompletionAcknowledgementV03(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType15, False)
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
 		del self._SctyTrlr
-		self._SctyTrlr = None
+		self._SctyTrlr = base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType15, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ATMWdrwlCmpltnAck', type=ATMWithdrawalCompletionAcknowledgement3, min=0, max=1, mutex_group=None, array=False),

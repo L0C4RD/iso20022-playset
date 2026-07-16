@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcquirerToAcceptorFileBody3 import AcquirerToAcceptorFileBody3
-from ._ContentInformationType38 import ContentInformationType38
-from ._Header56 import Header56
-from ._ResponseType11 import ResponseType11
+from . import AcquirerToAcceptorFileBody3
+from . import ContentInformationType38
+from . import Header56
+from . import ResponseType11
 
 class AcquirerToAcceptorBatchFileExchangeV03(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class AcquirerToAcceptorBatchFileExchangeV03(base_types._BaseFieldType):
 
 	@BodyElmt.setter
 	def BodyElmt(self, value):
-		self._BodyElmt = value if type(value) != base_types.auto else self.make_default("BodyElmt")
+		self._BodyElmt = value if value is not None else base_types.UninitialisedField(self, 'BodyElmt', AcquirerToAcceptorFileBody3, True)
 
 	@BodyElmt.deleter
 	def BodyElmt(self):
 		del self._BodyElmt
-		self._BodyElmt = None
+		self._BodyElmt = base_types.UninitialisedField(self, 'BodyElmt', AcquirerToAcceptorFileBody3, True)
 
 	@property
 	def Hdr(self):
@@ -29,12 +29,12 @@ class AcquirerToAcceptorBatchFileExchangeV03(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header56, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header56, False)
 
 	@property
 	def Rspn(self):
@@ -42,12 +42,12 @@ class AcquirerToAcceptorBatchFileExchangeV03(base_types._BaseFieldType):
 
 	@Rspn.setter
 	def Rspn(self, value):
-		self._Rspn = value if type(value) != base_types.auto else self.make_default("Rspn")
+		self._Rspn = value if value is not None else base_types.UninitialisedField(self, 'Rspn', ResponseType11, False)
 
 	@Rspn.deleter
 	def Rspn(self):
 		del self._Rspn
-		self._Rspn = None
+		self._Rspn = base_types.UninitialisedField(self, 'Rspn', ResponseType11, False)
 
 	@property
 	def SctyTrlr(self):
@@ -55,12 +55,12 @@ class AcquirerToAcceptorBatchFileExchangeV03(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType38, False)
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
 		del self._SctyTrlr
-		self._SctyTrlr = None
+		self._SctyTrlr = base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType38, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BodyElmt', type=AcquirerToAcceptorFileBody3, min=0, max=None, mutex_group=None, array=True),

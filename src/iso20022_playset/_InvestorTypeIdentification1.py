@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InvestorClassificationType1Code import InvestorClassificationType1Code
-from ._Max1025Text import Max1025Text
+from . import InvestorClassificationType1Code
+from . import Max1025Text
 
 class InvestorTypeIdentification1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class InvestorTypeIdentification1(base_types._BaseFieldType):
 
 	@InvstrTpId.setter
 	def InvstrTpId(self, value):
-		self._InvstrTpId = value if type(value) != base_types.auto else self.make_default("InvstrTpId")
+		self._InvstrTpId = value if value is not None else base_types.UninitialisedField(self, 'InvstrTpId', InvestorClassificationType1Code, False)
 
 	@InvstrTpId.deleter
 	def InvstrTpId(self):
 		del self._InvstrTpId
-		self._InvstrTpId = None
+		self._InvstrTpId = base_types.UninitialisedField(self, 'InvstrTpId', InvestorClassificationType1Code, False)
 
 	@property
 	def InvstrTpIdNrrtv(self):
@@ -27,12 +27,12 @@ class InvestorTypeIdentification1(base_types._BaseFieldType):
 
 	@InvstrTpIdNrrtv.setter
 	def InvstrTpIdNrrtv(self, value):
-		self._InvstrTpIdNrrtv = value if type(value) != base_types.auto else self.make_default("InvstrTpIdNrrtv")
+		self._InvstrTpIdNrrtv = value if value is not None else base_types.UninitialisedField(self, 'InvstrTpIdNrrtv', Max1025Text, False)
 
 	@InvstrTpIdNrrtv.deleter
 	def InvstrTpIdNrrtv(self):
 		del self._InvstrTpIdNrrtv
-		self._InvstrTpIdNrrtv = None
+		self._InvstrTpIdNrrtv = base_types.UninitialisedField(self, 'InvstrTpIdNrrtv', Max1025Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InvstrTpId', type=InvestorClassificationType1Code, min=1, max=1, mutex_group=None, array=False),

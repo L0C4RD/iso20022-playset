@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountOrPercentage2Choice import AmountOrPercentage2Choice
-from ._TaxType2Choice import TaxType2Choice
+from . import AmountOrPercentage2Choice
+from . import TaxType2Choice
 
 class Tax23(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Tax23(base_types._BaseFieldType):
 
 	@AmtOrPctg.setter
 	def AmtOrPctg(self, value):
-		self._AmtOrPctg = value if type(value) != base_types.auto else self.make_default("AmtOrPctg")
+		self._AmtOrPctg = value if value is not None else base_types.UninitialisedField(self, 'AmtOrPctg', AmountOrPercentage2Choice, False)
 
 	@AmtOrPctg.deleter
 	def AmtOrPctg(self):
 		del self._AmtOrPctg
-		self._AmtOrPctg = None
+		self._AmtOrPctg = base_types.UninitialisedField(self, 'AmtOrPctg', AmountOrPercentage2Choice, False)
 
 	@property
 	def Tp(self):
@@ -27,12 +27,12 @@ class Tax23(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', TaxType2Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', TaxType2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmtOrPctg', type=AmountOrPercentage2Choice, min=1, max=1, mutex_group=None, array=False),

@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCodeAndName3 import CountryCodeAndName3
-from ._CurrencyCodeAndName1 import CurrencyCodeAndName1
-from ._ISODate import ISODate
-from ._Max1Number import Max1Number
-from ._Modification1Code import Modification1Code
-from ._Period4Choice import Period4Choice
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import CountryCodeAndName3
+from . import CurrencyCodeAndName1
+from . import ISODate
+from . import Max1Number
+from . import Modification1Code
+from . import Period4Choice
+from . import TrueFalseIndicator
 
 class SecuritiesCurrencyIdentification2(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class SecuritiesCurrencyIdentification2(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', CurrencyCodeAndName1, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', CurrencyCodeAndName1, False)
 
 	@property
 	def CtryDtls(self):
@@ -32,12 +32,12 @@ class SecuritiesCurrencyIdentification2(base_types._BaseFieldType):
 
 	@CtryDtls.setter
 	def CtryDtls(self, value):
-		self._CtryDtls = value if type(value) != base_types.auto else self.make_default("CtryDtls")
+		self._CtryDtls = value if value is not None else base_types.UninitialisedField(self, 'CtryDtls', CountryCodeAndName3, False)
 
 	@CtryDtls.deleter
 	def CtryDtls(self):
 		del self._CtryDtls
-		self._CtryDtls = None
+		self._CtryDtls = base_types.UninitialisedField(self, 'CtryDtls', CountryCodeAndName3, False)
 
 	@property
 	def FrctnlDgt(self):
@@ -45,12 +45,12 @@ class SecuritiesCurrencyIdentification2(base_types._BaseFieldType):
 
 	@FrctnlDgt.setter
 	def FrctnlDgt(self, value):
-		self._FrctnlDgt = value if type(value) != base_types.auto else self.make_default("FrctnlDgt")
+		self._FrctnlDgt = value if value is not None else base_types.UninitialisedField(self, 'FrctnlDgt', Max1Number, False)
 
 	@FrctnlDgt.deleter
 	def FrctnlDgt(self):
 		del self._FrctnlDgt
-		self._FrctnlDgt = None
+		self._FrctnlDgt = base_types.UninitialisedField(self, 'FrctnlDgt', Max1Number, False)
 
 	@property
 	def LastUpdtd(self):
@@ -58,12 +58,12 @@ class SecuritiesCurrencyIdentification2(base_types._BaseFieldType):
 
 	@LastUpdtd.setter
 	def LastUpdtd(self, value):
-		self._LastUpdtd = value if type(value) != base_types.auto else self.make_default("LastUpdtd")
+		self._LastUpdtd = value if value is not None else base_types.UninitialisedField(self, 'LastUpdtd', ISODate, False)
 
 	@LastUpdtd.deleter
 	def LastUpdtd(self):
 		del self._LastUpdtd
-		self._LastUpdtd = None
+		self._LastUpdtd = base_types.UninitialisedField(self, 'LastUpdtd', ISODate, False)
 
 	@property
 	def Mod(self):
@@ -71,12 +71,12 @@ class SecuritiesCurrencyIdentification2(base_types._BaseFieldType):
 
 	@Mod.setter
 	def Mod(self, value):
-		self._Mod = value if type(value) != base_types.auto else self.make_default("Mod")
+		self._Mod = value if value is not None else base_types.UninitialisedField(self, 'Mod', Modification1Code, False)
 
 	@Mod.deleter
 	def Mod(self):
 		del self._Mod
-		self._Mod = None
+		self._Mod = base_types.UninitialisedField(self, 'Mod', Modification1Code, False)
 
 	@property
 	def PreEuro(self):
@@ -84,12 +84,12 @@ class SecuritiesCurrencyIdentification2(base_types._BaseFieldType):
 
 	@PreEuro.setter
 	def PreEuro(self, value):
-		self._PreEuro = value if type(value) != base_types.auto else self.make_default("PreEuro")
+		self._PreEuro = value if value is not None else base_types.UninitialisedField(self, 'PreEuro', TrueFalseIndicator, False)
 
 	@PreEuro.deleter
 	def PreEuro(self):
 		del self._PreEuro
-		self._PreEuro = None
+		self._PreEuro = base_types.UninitialisedField(self, 'PreEuro', TrueFalseIndicator, False)
 
 	@property
 	def VldtyPrd(self):
@@ -97,12 +97,12 @@ class SecuritiesCurrencyIdentification2(base_types._BaseFieldType):
 
 	@VldtyPrd.setter
 	def VldtyPrd(self, value):
-		self._VldtyPrd = value if type(value) != base_types.auto else self.make_default("VldtyPrd")
+		self._VldtyPrd = value if value is not None else base_types.UninitialisedField(self, 'VldtyPrd', Period4Choice, False)
 
 	@VldtyPrd.deleter
 	def VldtyPrd(self):
 		del self._VldtyPrd
-		self._VldtyPrd = None
+		self._VldtyPrd = base_types.UninitialisedField(self, 'VldtyPrd', Period4Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ccy', type=CurrencyCodeAndName1, min=1, max=1, mutex_group=None, array=False),

@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._PercentageRate import PercentageRate
-from ._PriceType2 import PriceType2
-from ._PriceValueChange1 import PriceValueChange1
-from ._StatisticsByPredefinedTimePeriods2 import StatisticsByPredefinedTimePeriods2
-from ._StatisticsByUserDefinedTimePeriod3 import StatisticsByUserDefinedTimePeriod3
+from . import ActiveOrHistoricCurrencyCode
+from . import PercentageRate
+from . import PriceType2
+from . import PriceValueChange1
+from . import StatisticsByPredefinedTimePeriods2
+from . import StatisticsByUserDefinedTimePeriod3
 
 class ValuationStatistics4(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class ValuationStatistics4(base_types._BaseFieldType):
 
 	@ByPrdfndTmPrds.setter
 	def ByPrdfndTmPrds(self, value):
-		self._ByPrdfndTmPrds = value if type(value) != base_types.auto else self.make_default("ByPrdfndTmPrds")
+		self._ByPrdfndTmPrds = value if value is not None else base_types.UninitialisedField(self, 'ByPrdfndTmPrds', StatisticsByPredefinedTimePeriods2, False)
 
 	@ByPrdfndTmPrds.deleter
 	def ByPrdfndTmPrds(self):
 		del self._ByPrdfndTmPrds
-		self._ByPrdfndTmPrds = None
+		self._ByPrdfndTmPrds = base_types.UninitialisedField(self, 'ByPrdfndTmPrds', StatisticsByPredefinedTimePeriods2, False)
 
 	@property
 	def ByUsrDfndTmPrd(self):
@@ -31,12 +31,12 @@ class ValuationStatistics4(base_types._BaseFieldType):
 
 	@ByUsrDfndTmPrd.setter
 	def ByUsrDfndTmPrd(self, value):
-		self._ByUsrDfndTmPrd = value if type(value) != base_types.auto else self.make_default("ByUsrDfndTmPrd")
+		self._ByUsrDfndTmPrd = value if value is not None else base_types.UninitialisedField(self, 'ByUsrDfndTmPrd', StatisticsByUserDefinedTimePeriod3, True)
 
 	@ByUsrDfndTmPrd.deleter
 	def ByUsrDfndTmPrd(self):
 		del self._ByUsrDfndTmPrd
-		self._ByUsrDfndTmPrd = None
+		self._ByUsrDfndTmPrd = base_types.UninitialisedField(self, 'ByUsrDfndTmPrd', StatisticsByUserDefinedTimePeriod3, True)
 
 	@property
 	def Ccy(self):
@@ -44,12 +44,12 @@ class ValuationStatistics4(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveOrHistoricCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def PricChng(self):
@@ -57,12 +57,12 @@ class ValuationStatistics4(base_types._BaseFieldType):
 
 	@PricChng.setter
 	def PricChng(self, value):
-		self._PricChng = value if type(value) != base_types.auto else self.make_default("PricChng")
+		self._PricChng = value if value is not None else base_types.UninitialisedField(self, 'PricChng', PriceValueChange1, False)
 
 	@PricChng.deleter
 	def PricChng(self):
 		del self._PricChng
-		self._PricChng = None
+		self._PricChng = base_types.UninitialisedField(self, 'PricChng', PriceValueChange1, False)
 
 	@property
 	def PricTpChngBsis(self):
@@ -70,12 +70,12 @@ class ValuationStatistics4(base_types._BaseFieldType):
 
 	@PricTpChngBsis.setter
 	def PricTpChngBsis(self, value):
-		self._PricTpChngBsis = value if type(value) != base_types.auto else self.make_default("PricTpChngBsis")
+		self._PricTpChngBsis = value if value is not None else base_types.UninitialisedField(self, 'PricTpChngBsis', PriceType2, False)
 
 	@PricTpChngBsis.deleter
 	def PricTpChngBsis(self):
 		del self._PricTpChngBsis
-		self._PricTpChngBsis = None
+		self._PricTpChngBsis = base_types.UninitialisedField(self, 'PricTpChngBsis', PriceType2, False)
 
 	@property
 	def Yld(self):
@@ -83,12 +83,12 @@ class ValuationStatistics4(base_types._BaseFieldType):
 
 	@Yld.setter
 	def Yld(self, value):
-		self._Yld = value if type(value) != base_types.auto else self.make_default("Yld")
+		self._Yld = value if value is not None else base_types.UninitialisedField(self, 'Yld', PercentageRate, False)
 
 	@Yld.deleter
 	def Yld(self):
 		del self._Yld
-		self._Yld = None
+		self._Yld = base_types.UninitialisedField(self, 'Yld', PercentageRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ByPrdfndTmPrds', type=StatisticsByPredefinedTimePeriods2, min=0, max=1, mutex_group=None, array=False),

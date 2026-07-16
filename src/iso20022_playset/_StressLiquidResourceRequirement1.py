@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection102 import AmountAndDirection102
+from . import AmountAndDirection102
 
 class StressLiquidResourceRequirement1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class StressLiquidResourceRequirement1(base_types._BaseFieldType):
 
 	@OprlOutflw.setter
 	def OprlOutflw(self, value):
-		self._OprlOutflw = value if type(value) != base_types.auto else self.make_default("OprlOutflw")
+		self._OprlOutflw = value if value is not None else base_types.UninitialisedField(self, 'OprlOutflw', AmountAndDirection102, False)
 
 	@OprlOutflw.deleter
 	def OprlOutflw(self):
 		del self._OprlOutflw
-		self._OprlOutflw = None
+		self._OprlOutflw = base_types.UninitialisedField(self, 'OprlOutflw', AmountAndDirection102, False)
 
 	@property
 	def Othr(self):
@@ -26,12 +26,12 @@ class StressLiquidResourceRequirement1(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', AmountAndDirection102, False)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', AmountAndDirection102, False)
 
 	@property
 	def SttlmOrDlvry(self):
@@ -39,12 +39,12 @@ class StressLiquidResourceRequirement1(base_types._BaseFieldType):
 
 	@SttlmOrDlvry.setter
 	def SttlmOrDlvry(self, value):
-		self._SttlmOrDlvry = value if type(value) != base_types.auto else self.make_default("SttlmOrDlvry")
+		self._SttlmOrDlvry = value if value is not None else base_types.UninitialisedField(self, 'SttlmOrDlvry', AmountAndDirection102, False)
 
 	@SttlmOrDlvry.deleter
 	def SttlmOrDlvry(self):
 		del self._SttlmOrDlvry
-		self._SttlmOrDlvry = None
+		self._SttlmOrDlvry = base_types.UninitialisedField(self, 'SttlmOrDlvry', AmountAndDirection102, False)
 
 	@property
 	def VartnMrgnPmtOblgtn(self):
@@ -52,12 +52,12 @@ class StressLiquidResourceRequirement1(base_types._BaseFieldType):
 
 	@VartnMrgnPmtOblgtn.setter
 	def VartnMrgnPmtOblgtn(self, value):
-		self._VartnMrgnPmtOblgtn = value if type(value) != base_types.auto else self.make_default("VartnMrgnPmtOblgtn")
+		self._VartnMrgnPmtOblgtn = value if value is not None else base_types.UninitialisedField(self, 'VartnMrgnPmtOblgtn', AmountAndDirection102, False)
 
 	@VartnMrgnPmtOblgtn.deleter
 	def VartnMrgnPmtOblgtn(self):
 		del self._VartnMrgnPmtOblgtn
-		self._VartnMrgnPmtOblgtn = None
+		self._VartnMrgnPmtOblgtn = base_types.UninitialisedField(self, 'VartnMrgnPmtOblgtn', AmountAndDirection102, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OprlOutflw', type=AmountAndDirection102, min=1, max=1, mutex_group=None, array=False),

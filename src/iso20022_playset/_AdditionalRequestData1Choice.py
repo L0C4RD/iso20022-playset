@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdjustmentRequest1 import AdjustmentRequest1
-from ._CompensationRequest1 import CompensationRequest1
-from ._DebitAuthorisation3 import DebitAuthorisation3
-from ._Max500Text import Max500Text
+from . import AdjustmentRequest1
+from . import CompensationRequest1
+from . import DebitAuthorisation3
+from . import Max500Text
 
 class AdditionalRequestData1Choice(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class AdditionalRequestData1Choice(base_types._BaseFieldType):
 
 	@ReqNrrtv.setter
 	def ReqNrrtv(self, value):
-		self._ReqNrrtv = value if type(value) != base_types.auto else self.make_default("ReqNrrtv")
+		self._ReqNrrtv = value if value is not None else base_types.UninitialisedField(self, 'ReqNrrtv', Max500Text, False)
 
 	@ReqNrrtv.deleter
 	def ReqNrrtv(self):
 		del self._ReqNrrtv
-		self._ReqNrrtv = None
+		self._ReqNrrtv = base_types.UninitialisedField(self, 'ReqNrrtv', Max500Text, False)
 
 	@property
 	def ReqdCompstn(self):
@@ -29,12 +29,12 @@ class AdditionalRequestData1Choice(base_types._BaseFieldType):
 
 	@ReqdCompstn.setter
 	def ReqdCompstn(self, value):
-		self._ReqdCompstn = value if type(value) != base_types.auto else self.make_default("ReqdCompstn")
+		self._ReqdCompstn = value if value is not None else base_types.UninitialisedField(self, 'ReqdCompstn', CompensationRequest1, False)
 
 	@ReqdCompstn.deleter
 	def ReqdCompstn(self):
 		del self._ReqdCompstn
-		self._ReqdCompstn = None
+		self._ReqdCompstn = base_types.UninitialisedField(self, 'ReqdCompstn', CompensationRequest1, False)
 
 	@property
 	def ReqdDbtAuthstn(self):
@@ -42,12 +42,12 @@ class AdditionalRequestData1Choice(base_types._BaseFieldType):
 
 	@ReqdDbtAuthstn.setter
 	def ReqdDbtAuthstn(self, value):
-		self._ReqdDbtAuthstn = value if type(value) != base_types.auto else self.make_default("ReqdDbtAuthstn")
+		self._ReqdDbtAuthstn = value if value is not None else base_types.UninitialisedField(self, 'ReqdDbtAuthstn', DebitAuthorisation3, False)
 
 	@ReqdDbtAuthstn.deleter
 	def ReqdDbtAuthstn(self):
 		del self._ReqdDbtAuthstn
-		self._ReqdDbtAuthstn = None
+		self._ReqdDbtAuthstn = base_types.UninitialisedField(self, 'ReqdDbtAuthstn', DebitAuthorisation3, False)
 
 	@property
 	def ReqdValtn(self):
@@ -55,12 +55,12 @@ class AdditionalRequestData1Choice(base_types._BaseFieldType):
 
 	@ReqdValtn.setter
 	def ReqdValtn(self, value):
-		self._ReqdValtn = value if type(value) != base_types.auto else self.make_default("ReqdValtn")
+		self._ReqdValtn = value if value is not None else base_types.UninitialisedField(self, 'ReqdValtn', AdjustmentRequest1, False)
 
 	@ReqdValtn.deleter
 	def ReqdValtn(self):
 		del self._ReqdValtn
-		self._ReqdValtn = None
+		self._ReqdValtn = base_types.UninitialisedField(self, 'ReqdValtn', AdjustmentRequest1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ReqNrrtv', type=Max500Text, min=0, max=1, mutex_group=1, array=False),

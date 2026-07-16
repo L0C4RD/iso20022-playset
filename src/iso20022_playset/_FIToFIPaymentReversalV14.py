@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GroupHeader127 import GroupHeader127
-from ._OriginalGroupHeader20 import OriginalGroupHeader20
-from ._PaymentTransaction182 import PaymentTransaction182
-from ._SupplementaryData1 import SupplementaryData1
+from . import GroupHeader127
+from . import OriginalGroupHeader20
+from . import PaymentTransaction182
+from . import SupplementaryData1
 
 class FIToFIPaymentReversalV14(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class FIToFIPaymentReversalV14(base_types._BaseFieldType):
 
 	@GrpHdr.setter
 	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
+		self._GrpHdr = value if value is not None else base_types.UninitialisedField(self, 'GrpHdr', GroupHeader127, False)
 
 	@GrpHdr.deleter
 	def GrpHdr(self):
 		del self._GrpHdr
-		self._GrpHdr = None
+		self._GrpHdr = base_types.UninitialisedField(self, 'GrpHdr', GroupHeader127, False)
 
 	@property
 	def OrgnlGrpInf(self):
@@ -29,12 +29,12 @@ class FIToFIPaymentReversalV14(base_types._BaseFieldType):
 
 	@OrgnlGrpInf.setter
 	def OrgnlGrpInf(self, value):
-		self._OrgnlGrpInf = value if type(value) != base_types.auto else self.make_default("OrgnlGrpInf")
+		self._OrgnlGrpInf = value if value is not None else base_types.UninitialisedField(self, 'OrgnlGrpInf', OriginalGroupHeader20, False)
 
 	@OrgnlGrpInf.deleter
 	def OrgnlGrpInf(self):
 		del self._OrgnlGrpInf
-		self._OrgnlGrpInf = None
+		self._OrgnlGrpInf = base_types.UninitialisedField(self, 'OrgnlGrpInf', OriginalGroupHeader20, False)
 
 	@property
 	def SplmtryData(self):
@@ -42,12 +42,12 @@ class FIToFIPaymentReversalV14(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TxInf(self):
@@ -55,12 +55,12 @@ class FIToFIPaymentReversalV14(base_types._BaseFieldType):
 
 	@TxInf.setter
 	def TxInf(self, value):
-		self._TxInf = value if type(value) != base_types.auto else self.make_default("TxInf")
+		self._TxInf = value if value is not None else base_types.UninitialisedField(self, 'TxInf', PaymentTransaction182, True)
 
 	@TxInf.deleter
 	def TxInf(self):
 		del self._TxInf
-		self._TxInf = None
+		self._TxInf = base_types.UninitialisedField(self, 'TxInf', PaymentTransaction182, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='GrpHdr', type=GroupHeader127, min=1, max=1, mutex_group=None, array=False),

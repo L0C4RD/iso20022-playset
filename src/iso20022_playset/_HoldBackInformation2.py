@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._GateHoldBack1Code import GateHoldBack1Code
-from ._ISODate import ISODate
-from ._Max350Text import Max350Text
-from ._RedemptionCompletion1Code import RedemptionCompletion1Code
-from ._SecurityIdentification25Choice import SecurityIdentification25Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import ActiveCurrencyAndAmount
+from . import GateHoldBack1Code
+from . import ISODate
+from . import Max350Text
+from . import RedemptionCompletion1Code
+from . import SecurityIdentification25Choice
+from . import YesNoIndicator
 
 class HoldBackInformation2(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class HoldBackInformation2(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def FinInstrmId(self):
@@ -32,12 +32,12 @@ class HoldBackInformation2(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification25Choice, False)
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
 		del self._FinInstrmId
-		self._FinInstrmId = None
+		self._FinInstrmId = base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification25Choice, False)
 
 	@property
 	def FinInstrmNm(self):
@@ -45,12 +45,12 @@ class HoldBackInformation2(base_types._BaseFieldType):
 
 	@FinInstrmNm.setter
 	def FinInstrmNm(self, value):
-		self._FinInstrmNm = value if type(value) != base_types.auto else self.make_default("FinInstrmNm")
+		self._FinInstrmNm = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmNm', Max350Text, False)
 
 	@FinInstrmNm.deleter
 	def FinInstrmNm(self):
 		del self._FinInstrmNm
-		self._FinInstrmNm = None
+		self._FinInstrmNm = base_types.UninitialisedField(self, 'FinInstrmNm', Max350Text, False)
 
 	@property
 	def FnlConf(self):
@@ -58,12 +58,12 @@ class HoldBackInformation2(base_types._BaseFieldType):
 
 	@FnlConf.setter
 	def FnlConf(self, value):
-		self._FnlConf = value if type(value) != base_types.auto else self.make_default("FnlConf")
+		self._FnlConf = value if value is not None else base_types.UninitialisedField(self, 'FnlConf', YesNoIndicator, False)
 
 	@FnlConf.deleter
 	def FnlConf(self):
 		del self._FnlConf
-		self._FnlConf = None
+		self._FnlConf = base_types.UninitialisedField(self, 'FnlConf', YesNoIndicator, False)
 
 	@property
 	def RedCmpltn(self):
@@ -71,12 +71,12 @@ class HoldBackInformation2(base_types._BaseFieldType):
 
 	@RedCmpltn.setter
 	def RedCmpltn(self, value):
-		self._RedCmpltn = value if type(value) != base_types.auto else self.make_default("RedCmpltn")
+		self._RedCmpltn = value if value is not None else base_types.UninitialisedField(self, 'RedCmpltn', RedemptionCompletion1Code, False)
 
 	@RedCmpltn.deleter
 	def RedCmpltn(self):
 		del self._RedCmpltn
-		self._RedCmpltn = None
+		self._RedCmpltn = base_types.UninitialisedField(self, 'RedCmpltn', RedemptionCompletion1Code, False)
 
 	@property
 	def Tp(self):
@@ -84,12 +84,12 @@ class HoldBackInformation2(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', GateHoldBack1Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', GateHoldBack1Code, False)
 
 	@property
 	def XpctdRlsDt(self):
@@ -97,12 +97,12 @@ class HoldBackInformation2(base_types._BaseFieldType):
 
 	@XpctdRlsDt.setter
 	def XpctdRlsDt(self, value):
-		self._XpctdRlsDt = value if type(value) != base_types.auto else self.make_default("XpctdRlsDt")
+		self._XpctdRlsDt = value if value is not None else base_types.UninitialisedField(self, 'XpctdRlsDt', ISODate, False)
 
 	@XpctdRlsDt.deleter
 	def XpctdRlsDt(self):
 		del self._XpctdRlsDt
-		self._XpctdRlsDt = None
+		self._XpctdRlsDt = base_types.UninitialisedField(self, 'XpctdRlsDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

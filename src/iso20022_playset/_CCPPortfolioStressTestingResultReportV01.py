@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ScenarioStressTestResult1 import ScenarioStressTestResult1
-from ._SupplementaryData1 import SupplementaryData1
+from . import ScenarioStressTestResult1
+from . import SupplementaryData1
 
 class CCPPortfolioStressTestingResultReportV01(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CCPPortfolioStressTestingResultReportV01(base_types._BaseFieldType):
 
 	@ScnroStrssTstRslt.setter
 	def ScnroStrssTstRslt(self, value):
-		self._ScnroStrssTstRslt = value if type(value) != base_types.auto else self.make_default("ScnroStrssTstRslt")
+		self._ScnroStrssTstRslt = value if value is not None else base_types.UninitialisedField(self, 'ScnroStrssTstRslt', ScenarioStressTestResult1, True)
 
 	@ScnroStrssTstRslt.deleter
 	def ScnroStrssTstRslt(self):
 		del self._ScnroStrssTstRslt
-		self._ScnroStrssTstRslt = None
+		self._ScnroStrssTstRslt = base_types.UninitialisedField(self, 'ScnroStrssTstRslt', ScenarioStressTestResult1, True)
 
 	@property
 	def SplmtryData(self):
@@ -27,12 +27,12 @@ class CCPPortfolioStressTestingResultReportV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ScnroStrssTstRslt', type=ScenarioStressTestResult1, min=1, max=None, mutex_group=None, array=True),

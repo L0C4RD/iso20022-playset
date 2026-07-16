@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Number import Number
-from ._ValidationResult5 import ValidationResult5
+from . import Number
+from . import ValidationResult5
 
 class MisMatchReport3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class MisMatchReport3(base_types._BaseFieldType):
 
 	@MisMtchInf.setter
 	def MisMtchInf(self, value):
-		self._MisMtchInf = value if type(value) != base_types.auto else self.make_default("MisMtchInf")
+		self._MisMtchInf = value if value is not None else base_types.UninitialisedField(self, 'MisMtchInf', ValidationResult5, True)
 
 	@MisMtchInf.deleter
 	def MisMtchInf(self):
 		del self._MisMtchInf
-		self._MisMtchInf = None
+		self._MisMtchInf = base_types.UninitialisedField(self, 'MisMtchInf', ValidationResult5, True)
 
 	@property
 	def NbOfMisMtchs(self):
@@ -27,12 +27,12 @@ class MisMatchReport3(base_types._BaseFieldType):
 
 	@NbOfMisMtchs.setter
 	def NbOfMisMtchs(self, value):
-		self._NbOfMisMtchs = value if type(value) != base_types.auto else self.make_default("NbOfMisMtchs")
+		self._NbOfMisMtchs = value if value is not None else base_types.UninitialisedField(self, 'NbOfMisMtchs', Number, False)
 
 	@NbOfMisMtchs.deleter
 	def NbOfMisMtchs(self):
 		del self._NbOfMisMtchs
-		self._NbOfMisMtchs = None
+		self._NbOfMisMtchs = base_types.UninitialisedField(self, 'NbOfMisMtchs', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MisMtchInf', type=ValidationResult5, min=0, max=None, mutex_group=None, array=True),

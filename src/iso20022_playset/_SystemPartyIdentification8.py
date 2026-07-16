@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PartyIdentification136 import PartyIdentification136
+from . import PartyIdentification136
 
 class SystemPartyIdentification8(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class SystemPartyIdentification8(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', PartyIdentification136, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', PartyIdentification136, False)
 
 	@property
 	def RspnsblPtyId(self):
@@ -26,12 +26,12 @@ class SystemPartyIdentification8(base_types._BaseFieldType):
 
 	@RspnsblPtyId.setter
 	def RspnsblPtyId(self, value):
-		self._RspnsblPtyId = value if type(value) != base_types.auto else self.make_default("RspnsblPtyId")
+		self._RspnsblPtyId = value if value is not None else base_types.UninitialisedField(self, 'RspnsblPtyId', PartyIdentification136, False)
 
 	@RspnsblPtyId.deleter
 	def RspnsblPtyId(self):
 		del self._RspnsblPtyId
-		self._RspnsblPtyId = None
+		self._RspnsblPtyId = base_types.UninitialisedField(self, 'RspnsblPtyId', PartyIdentification136, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=PartyIdentification136, min=1, max=1, mutex_group=None, array=False),

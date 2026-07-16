@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMCommand4Code import ATMCommand4Code
-from ._ATMCommandIdentification1 import ATMCommandIdentification1
-from ._ATMCommandParameters1Choice import ATMCommandParameters1Choice
-from ._ISODateTime import ISODateTime
-from ._TMSContactLevel2Code import TMSContactLevel2Code
+from . import ATMCommand4Code
+from . import ATMCommandIdentification1
+from . import ATMCommandParameters1Choice
+from . import ISODateTime
+from . import TMSContactLevel2Code
 
 class ATMCommand7(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class ATMCommand7(base_types._BaseFieldType):
 
 	@CmdId.setter
 	def CmdId(self, value):
-		self._CmdId = value if type(value) != base_types.auto else self.make_default("CmdId")
+		self._CmdId = value if value is not None else base_types.UninitialisedField(self, 'CmdId', ATMCommandIdentification1, False)
 
 	@CmdId.deleter
 	def CmdId(self):
 		del self._CmdId
-		self._CmdId = None
+		self._CmdId = base_types.UninitialisedField(self, 'CmdId', ATMCommandIdentification1, False)
 
 	@property
 	def CmdParams(self):
@@ -30,12 +30,12 @@ class ATMCommand7(base_types._BaseFieldType):
 
 	@CmdParams.setter
 	def CmdParams(self, value):
-		self._CmdParams = value if type(value) != base_types.auto else self.make_default("CmdParams")
+		self._CmdParams = value if value is not None else base_types.UninitialisedField(self, 'CmdParams', ATMCommandParameters1Choice, False)
 
 	@CmdParams.deleter
 	def CmdParams(self):
 		del self._CmdParams
-		self._CmdParams = None
+		self._CmdParams = base_types.UninitialisedField(self, 'CmdParams', ATMCommandParameters1Choice, False)
 
 	@property
 	def DtTm(self):
@@ -43,12 +43,12 @@ class ATMCommand7(base_types._BaseFieldType):
 
 	@DtTm.setter
 	def DtTm(self, value):
-		self._DtTm = value if type(value) != base_types.auto else self.make_default("DtTm")
+		self._DtTm = value if value is not None else base_types.UninitialisedField(self, 'DtTm', ISODateTime, False)
 
 	@DtTm.deleter
 	def DtTm(self):
 		del self._DtTm
-		self._DtTm = None
+		self._DtTm = base_types.UninitialisedField(self, 'DtTm', ISODateTime, False)
 
 	@property
 	def Tp(self):
@@ -56,12 +56,12 @@ class ATMCommand7(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', ATMCommand4Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', ATMCommand4Code, False)
 
 	@property
 	def Urgcy(self):
@@ -69,12 +69,12 @@ class ATMCommand7(base_types._BaseFieldType):
 
 	@Urgcy.setter
 	def Urgcy(self, value):
-		self._Urgcy = value if type(value) != base_types.auto else self.make_default("Urgcy")
+		self._Urgcy = value if value is not None else base_types.UninitialisedField(self, 'Urgcy', TMSContactLevel2Code, False)
 
 	@Urgcy.deleter
 	def Urgcy(self):
 		del self._Urgcy
-		self._Urgcy = None
+		self._Urgcy = base_types.UninitialisedField(self, 'Urgcy', TMSContactLevel2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CmdId', type=ATMCommandIdentification1, min=0, max=1, mutex_group=None, array=False),

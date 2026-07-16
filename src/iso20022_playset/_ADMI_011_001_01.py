@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SystemEventAcknowledgementV01 import SystemEventAcknowledgementV01
+from . import SystemEventAcknowledgementV01
 
 class ADMI_011_001_01():
 
@@ -18,12 +18,12 @@ class ADMI_011_001_01():
 
 		@SysEvtAck.setter
 		def SysEvtAck(self, value):
-			self._SysEvtAck = value if type(value) != base_types.auto else self.make_default("SysEvtAck")
+			self._SysEvtAck = value if value is not None else base_types.UninitialisedField(self, 'SysEvtAck', SystemEventAcknowledgementV01, False)
 
 		@SysEvtAck.deleter
 		def SysEvtAck(self):
 			del self._SysEvtAck
-			self._SysEvtAck = None
+			self._SysEvtAck = base_types.UninitialisedField(self, 'SysEvtAck', SystemEventAcknowledgementV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SysEvtAck', type=SystemEventAcknowledgementV01, min=1, max=1, mutex_group=None, array=False),

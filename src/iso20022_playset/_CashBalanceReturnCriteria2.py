@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RequestedIndicator import RequestedIndicator
+from . import RequestedIndicator
 
 class CashBalanceReturnCriteria2(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class CashBalanceReturnCriteria2(base_types._BaseFieldType):
 
 	@NbOfPmtsInd.setter
 	def NbOfPmtsInd(self, value):
-		self._NbOfPmtsInd = value if type(value) != base_types.auto else self.make_default("NbOfPmtsInd")
+		self._NbOfPmtsInd = value if value is not None else base_types.UninitialisedField(self, 'NbOfPmtsInd', RequestedIndicator, False)
 
 	@NbOfPmtsInd.deleter
 	def NbOfPmtsInd(self):
 		del self._NbOfPmtsInd
-		self._NbOfPmtsInd = None
+		self._NbOfPmtsInd = base_types.UninitialisedField(self, 'NbOfPmtsInd', RequestedIndicator, False)
 
 	@property
 	def PrcgDtInd(self):
@@ -26,12 +26,12 @@ class CashBalanceReturnCriteria2(base_types._BaseFieldType):
 
 	@PrcgDtInd.setter
 	def PrcgDtInd(self, value):
-		self._PrcgDtInd = value if type(value) != base_types.auto else self.make_default("PrcgDtInd")
+		self._PrcgDtInd = value if value is not None else base_types.UninitialisedField(self, 'PrcgDtInd', RequestedIndicator, False)
 
 	@PrcgDtInd.deleter
 	def PrcgDtInd(self):
 		del self._PrcgDtInd
-		self._PrcgDtInd = None
+		self._PrcgDtInd = base_types.UninitialisedField(self, 'PrcgDtInd', RequestedIndicator, False)
 
 	@property
 	def StsInd(self):
@@ -39,12 +39,12 @@ class CashBalanceReturnCriteria2(base_types._BaseFieldType):
 
 	@StsInd.setter
 	def StsInd(self, value):
-		self._StsInd = value if type(value) != base_types.auto else self.make_default("StsInd")
+		self._StsInd = value if value is not None else base_types.UninitialisedField(self, 'StsInd', RequestedIndicator, False)
 
 	@StsInd.deleter
 	def StsInd(self):
 		del self._StsInd
-		self._StsInd = None
+		self._StsInd = base_types.UninitialisedField(self, 'StsInd', RequestedIndicator, False)
 
 	@property
 	def TpInd(self):
@@ -52,12 +52,12 @@ class CashBalanceReturnCriteria2(base_types._BaseFieldType):
 
 	@TpInd.setter
 	def TpInd(self, value):
-		self._TpInd = value if type(value) != base_types.auto else self.make_default("TpInd")
+		self._TpInd = value if value is not None else base_types.UninitialisedField(self, 'TpInd', RequestedIndicator, False)
 
 	@TpInd.deleter
 	def TpInd(self):
 		del self._TpInd
-		self._TpInd = None
+		self._TpInd = base_types.UninitialisedField(self, 'TpInd', RequestedIndicator, False)
 
 	@property
 	def ValDtInd(self):
@@ -65,12 +65,12 @@ class CashBalanceReturnCriteria2(base_types._BaseFieldType):
 
 	@ValDtInd.setter
 	def ValDtInd(self, value):
-		self._ValDtInd = value if type(value) != base_types.auto else self.make_default("ValDtInd")
+		self._ValDtInd = value if value is not None else base_types.UninitialisedField(self, 'ValDtInd', RequestedIndicator, False)
 
 	@ValDtInd.deleter
 	def ValDtInd(self):
 		del self._ValDtInd
-		self._ValDtInd = None
+		self._ValDtInd = base_types.UninitialisedField(self, 'ValDtInd', RequestedIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NbOfPmtsInd', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),

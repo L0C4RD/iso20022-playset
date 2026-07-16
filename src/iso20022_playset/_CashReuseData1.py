@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PercentageRate import PercentageRate
-from ._ReinvestedCashTypeAndAmount1 import ReinvestedCashTypeAndAmount1
+from . import PercentageRate
+from . import ReinvestedCashTypeAndAmount1
 
 class CashReuseData1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CashReuseData1(base_types._BaseFieldType):
 
 	@CshRinvstmtRate.setter
 	def CshRinvstmtRate(self, value):
-		self._CshRinvstmtRate = value if type(value) != base_types.auto else self.make_default("CshRinvstmtRate")
+		self._CshRinvstmtRate = value if value is not None else base_types.UninitialisedField(self, 'CshRinvstmtRate', PercentageRate, False)
 
 	@CshRinvstmtRate.deleter
 	def CshRinvstmtRate(self):
 		del self._CshRinvstmtRate
-		self._CshRinvstmtRate = None
+		self._CshRinvstmtRate = base_types.UninitialisedField(self, 'CshRinvstmtRate', PercentageRate, False)
 
 	@property
 	def RinvstdCsh(self):
@@ -27,12 +27,12 @@ class CashReuseData1(base_types._BaseFieldType):
 
 	@RinvstdCsh.setter
 	def RinvstdCsh(self, value):
-		self._RinvstdCsh = value if type(value) != base_types.auto else self.make_default("RinvstdCsh")
+		self._RinvstdCsh = value if value is not None else base_types.UninitialisedField(self, 'RinvstdCsh', ReinvestedCashTypeAndAmount1, True)
 
 	@RinvstdCsh.deleter
 	def RinvstdCsh(self):
 		del self._RinvstdCsh
-		self._RinvstdCsh = None
+		self._RinvstdCsh = base_types.UninitialisedField(self, 'RinvstdCsh', ReinvestedCashTypeAndAmount1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshRinvstmtRate', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),

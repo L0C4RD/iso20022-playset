@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashOption109 import CashOption109
-from ._CorporateActionOption33Choice import CorporateActionOption33Choice
-from ._OptionNumber1Choice import OptionNumber1Choice
-from ._SecuritiesOption80 import SecuritiesOption80
+from . import CashOption109
+from . import CorporateActionOption33Choice
+from . import OptionNumber1Choice
+from . import SecuritiesOption80
 
 class CorporateActionOption240(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CorporateActionOption240(base_types._BaseFieldType):
 
 	@CshMvmntDtls.setter
 	def CshMvmntDtls(self, value):
-		self._CshMvmntDtls = value if type(value) != base_types.auto else self.make_default("CshMvmntDtls")
+		self._CshMvmntDtls = value if value is not None else base_types.UninitialisedField(self, 'CshMvmntDtls', CashOption109, True)
 
 	@CshMvmntDtls.deleter
 	def CshMvmntDtls(self):
 		del self._CshMvmntDtls
-		self._CshMvmntDtls = None
+		self._CshMvmntDtls = base_types.UninitialisedField(self, 'CshMvmntDtls', CashOption109, True)
 
 	@property
 	def OptnNb(self):
@@ -29,12 +29,12 @@ class CorporateActionOption240(base_types._BaseFieldType):
 
 	@OptnNb.setter
 	def OptnNb(self, value):
-		self._OptnNb = value if type(value) != base_types.auto else self.make_default("OptnNb")
+		self._OptnNb = value if value is not None else base_types.UninitialisedField(self, 'OptnNb', OptionNumber1Choice, False)
 
 	@OptnNb.deleter
 	def OptnNb(self):
 		del self._OptnNb
-		self._OptnNb = None
+		self._OptnNb = base_types.UninitialisedField(self, 'OptnNb', OptionNumber1Choice, False)
 
 	@property
 	def OptnTp(self):
@@ -42,12 +42,12 @@ class CorporateActionOption240(base_types._BaseFieldType):
 
 	@OptnTp.setter
 	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != base_types.auto else self.make_default("OptnTp")
+		self._OptnTp = value if value is not None else base_types.UninitialisedField(self, 'OptnTp', CorporateActionOption33Choice, False)
 
 	@OptnTp.deleter
 	def OptnTp(self):
 		del self._OptnTp
-		self._OptnTp = None
+		self._OptnTp = base_types.UninitialisedField(self, 'OptnTp', CorporateActionOption33Choice, False)
 
 	@property
 	def SctiesMvmntDtls(self):
@@ -55,12 +55,12 @@ class CorporateActionOption240(base_types._BaseFieldType):
 
 	@SctiesMvmntDtls.setter
 	def SctiesMvmntDtls(self, value):
-		self._SctiesMvmntDtls = value if type(value) != base_types.auto else self.make_default("SctiesMvmntDtls")
+		self._SctiesMvmntDtls = value if value is not None else base_types.UninitialisedField(self, 'SctiesMvmntDtls', SecuritiesOption80, True)
 
 	@SctiesMvmntDtls.deleter
 	def SctiesMvmntDtls(self):
 		del self._SctiesMvmntDtls
-		self._SctiesMvmntDtls = None
+		self._SctiesMvmntDtls = base_types.UninitialisedField(self, 'SctiesMvmntDtls', SecuritiesOption80, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshMvmntDtls', type=CashOption109, min=0, max=None, mutex_group=None, array=True),

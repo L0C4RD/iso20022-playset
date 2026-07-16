@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DecimalNumber import DecimalNumber
+from . import DecimalNumber
 
 class QuantityToQuantityRatio1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class QuantityToQuantityRatio1(base_types._BaseFieldType):
 
 	@Qty1.setter
 	def Qty1(self, value):
-		self._Qty1 = value if type(value) != base_types.auto else self.make_default("Qty1")
+		self._Qty1 = value if value is not None else base_types.UninitialisedField(self, 'Qty1', DecimalNumber, False)
 
 	@Qty1.deleter
 	def Qty1(self):
 		del self._Qty1
-		self._Qty1 = None
+		self._Qty1 = base_types.UninitialisedField(self, 'Qty1', DecimalNumber, False)
 
 	@property
 	def Qty2(self):
@@ -26,12 +26,12 @@ class QuantityToQuantityRatio1(base_types._BaseFieldType):
 
 	@Qty2.setter
 	def Qty2(self, value):
-		self._Qty2 = value if type(value) != base_types.auto else self.make_default("Qty2")
+		self._Qty2 = value if value is not None else base_types.UninitialisedField(self, 'Qty2', DecimalNumber, False)
 
 	@Qty2.deleter
 	def Qty2(self):
 		del self._Qty2
-		self._Qty2 = None
+		self._Qty2 = base_types.UninitialisedField(self, 'Qty2', DecimalNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Qty1', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),

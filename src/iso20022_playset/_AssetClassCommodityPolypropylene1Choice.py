@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PolypropyleneCommodityPlastic1 import PolypropyleneCommodityPlastic1
+from . import PolypropyleneCommodityPlastic1
 
 class AssetClassCommodityPolypropylene1Choice(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class AssetClassCommodityPolypropylene1Choice(base_types._BaseFieldType):
 
 	@Plstc.setter
 	def Plstc(self, value):
-		self._Plstc = value if type(value) != base_types.auto else self.make_default("Plstc")
+		self._Plstc = value if value is not None else base_types.UninitialisedField(self, 'Plstc', PolypropyleneCommodityPlastic1, False)
 
 	@Plstc.deleter
 	def Plstc(self):
 		del self._Plstc
-		self._Plstc = None
+		self._Plstc = base_types.UninitialisedField(self, 'Plstc', PolypropyleneCommodityPlastic1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Plstc', type=PolypropyleneCommodityPlastic1, min=0, max=1, mutex_group=1, array=False),

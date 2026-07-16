@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Address2 import Address2
-from ._ContactBusiness1 import ContactBusiness1
-from ._Max20KText import Max20KText
-from ._Max35Text import Max35Text
-from ._OutputFormat4Code import OutputFormat4Code
-from ._PartyType19Code import PartyType19Code
-from ._UserInterface8Code import UserInterface8Code
+from . import Address2
+from . import ContactBusiness1
+from . import Max20KText
+from . import Max35Text
+from . import OutputFormat4Code
+from . import PartyType19Code
+from . import UserInterface8Code
 
 class RetrievalFulfilmentInstructions3(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class RetrievalFulfilmentInstructions3(base_types._BaseFieldType):
 
 	@ActlDlvryMtd.setter
 	def ActlDlvryMtd(self, value):
-		self._ActlDlvryMtd = value if type(value) != base_types.auto else self.make_default("ActlDlvryMtd")
+		self._ActlDlvryMtd = value if value is not None else base_types.UninitialisedField(self, 'ActlDlvryMtd', Max35Text, False)
 
 	@ActlDlvryMtd.deleter
 	def ActlDlvryMtd(self):
 		del self._ActlDlvryMtd
-		self._ActlDlvryMtd = None
+		self._ActlDlvryMtd = base_types.UninitialisedField(self, 'ActlDlvryMtd', Max35Text, False)
 
 	@property
 	def Ctct(self):
@@ -32,12 +32,12 @@ class RetrievalFulfilmentInstructions3(base_types._BaseFieldType):
 
 	@Ctct.setter
 	def Ctct(self, value):
-		self._Ctct = value if type(value) != base_types.auto else self.make_default("Ctct")
+		self._Ctct = value if value is not None else base_types.UninitialisedField(self, 'Ctct', ContactBusiness1, False)
 
 	@Ctct.deleter
 	def Ctct(self):
 		del self._Ctct
-		self._Ctct = None
+		self._Ctct = base_types.UninitialisedField(self, 'Ctct', ContactBusiness1, False)
 
 	@property
 	def EstblishdMtd(self):
@@ -45,12 +45,12 @@ class RetrievalFulfilmentInstructions3(base_types._BaseFieldType):
 
 	@EstblishdMtd.setter
 	def EstblishdMtd(self, value):
-		self._EstblishdMtd = value if type(value) != base_types.auto else self.make_default("EstblishdMtd")
+		self._EstblishdMtd = value if value is not None else base_types.UninitialisedField(self, 'EstblishdMtd', Max35Text, True)
 
 	@EstblishdMtd.deleter
 	def EstblishdMtd(self):
 		del self._EstblishdMtd
-		self._EstblishdMtd = None
+		self._EstblishdMtd = base_types.UninitialisedField(self, 'EstblishdMtd', Max35Text, True)
 
 	@property
 	def Frmt(self):
@@ -58,12 +58,12 @@ class RetrievalFulfilmentInstructions3(base_types._BaseFieldType):
 
 	@Frmt.setter
 	def Frmt(self, value):
-		self._Frmt = value if type(value) != base_types.auto else self.make_default("Frmt")
+		self._Frmt = value if value is not None else base_types.UninitialisedField(self, 'Frmt', OutputFormat4Code, False)
 
 	@Frmt.deleter
 	def Frmt(self):
 		del self._Frmt
-		self._Frmt = None
+		self._Frmt = base_types.UninitialisedField(self, 'Frmt', OutputFormat4Code, False)
 
 	@property
 	def PstlAdr(self):
@@ -71,12 +71,12 @@ class RetrievalFulfilmentInstructions3(base_types._BaseFieldType):
 
 	@PstlAdr.setter
 	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != base_types.auto else self.make_default("PstlAdr")
+		self._PstlAdr = value if value is not None else base_types.UninitialisedField(self, 'PstlAdr', Address2, False)
 
 	@PstlAdr.deleter
 	def PstlAdr(self):
 		del self._PstlAdr
-		self._PstlAdr = None
+		self._PstlAdr = base_types.UninitialisedField(self, 'PstlAdr', Address2, False)
 
 	@property
 	def Rcpt(self):
@@ -84,12 +84,12 @@ class RetrievalFulfilmentInstructions3(base_types._BaseFieldType):
 
 	@Rcpt.setter
 	def Rcpt(self, value):
-		self._Rcpt = value if type(value) != base_types.auto else self.make_default("Rcpt")
+		self._Rcpt = value if value is not None else base_types.UninitialisedField(self, 'Rcpt', PartyType19Code, False)
 
 	@Rcpt.deleter
 	def Rcpt(self):
 		del self._Rcpt
-		self._Rcpt = None
+		self._Rcpt = base_types.UninitialisedField(self, 'Rcpt', PartyType19Code, False)
 
 	@property
 	def ReqdMtd(self):
@@ -97,12 +97,12 @@ class RetrievalFulfilmentInstructions3(base_types._BaseFieldType):
 
 	@ReqdMtd.setter
 	def ReqdMtd(self, value):
-		self._ReqdMtd = value if type(value) != base_types.auto else self.make_default("ReqdMtd")
+		self._ReqdMtd = value if value is not None else base_types.UninitialisedField(self, 'ReqdMtd', Max35Text, True)
 
 	@ReqdMtd.deleter
 	def ReqdMtd(self):
 		del self._ReqdMtd
-		self._ReqdMtd = None
+		self._ReqdMtd = base_types.UninitialisedField(self, 'ReqdMtd', Max35Text, True)
 
 	@property
 	def Tp(self):
@@ -110,12 +110,12 @@ class RetrievalFulfilmentInstructions3(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', Max35Text, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', Max35Text, False)
 
 	@property
 	def Trgt(self):
@@ -123,12 +123,12 @@ class RetrievalFulfilmentInstructions3(base_types._BaseFieldType):
 
 	@Trgt.setter
 	def Trgt(self, value):
-		self._Trgt = value if type(value) != base_types.auto else self.make_default("Trgt")
+		self._Trgt = value if value is not None else base_types.UninitialisedField(self, 'Trgt', UserInterface8Code, True)
 
 	@Trgt.deleter
 	def Trgt(self):
 		del self._Trgt
-		self._Trgt = None
+		self._Trgt = base_types.UninitialisedField(self, 'Trgt', UserInterface8Code, True)
 
 	@property
 	def Val(self):
@@ -136,12 +136,12 @@ class RetrievalFulfilmentInstructions3(base_types._BaseFieldType):
 
 	@Val.setter
 	def Val(self, value):
-		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
+		self._Val = value if value is not None else base_types.UninitialisedField(self, 'Val', Max20KText, False)
 
 	@Val.deleter
 	def Val(self):
 		del self._Val
-		self._Val = None
+		self._Val = base_types.UninitialisedField(self, 'Val', Max20KText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActlDlvryMtd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

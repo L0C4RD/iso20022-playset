@@ -2,21 +2,21 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AlternateSecurityIdentification7 import AlternateSecurityIdentification7
-from ._BelgianIdentifier import BelgianIdentifier
-from ._Bloomberg2Identifier import Bloomberg2Identifier
-from ._CUSIPIdentifier import CUSIPIdentifier
-from ._ConsolidatedTapeAssociationIdentifier import ConsolidatedTapeAssociationIdentifier
-from ._DutchIdentifier import DutchIdentifier
-from ._EuroclearClearstreamIdentifier import EuroclearClearstreamIdentifier
-from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._QUICKIdentifier import QUICKIdentifier
-from ._RICIdentifier import RICIdentifier
-from ._SEDOLIdentifier import SEDOLIdentifier
-from ._SicovamIdentifier import SicovamIdentifier
-from ._TickerIdentifier import TickerIdentifier
-from ._ValorenIdentifier import ValorenIdentifier
-from ._WertpapierIdentifier import WertpapierIdentifier
+from . import AlternateSecurityIdentification7
+from . import BelgianIdentifier
+from . import Bloomberg2Identifier
+from . import CUSIPIdentifier
+from . import ConsolidatedTapeAssociationIdentifier
+from . import DutchIdentifier
+from . import EuroclearClearstreamIdentifier
+from . import ISINOct2015Identifier
+from . import QUICKIdentifier
+from . import RICIdentifier
+from . import SEDOLIdentifier
+from . import SicovamIdentifier
+from . import TickerIdentifier
+from . import ValorenIdentifier
+from . import WertpapierIdentifier
 
 class SecurityIdentification25Choice(base_types._BaseFieldType):
 
@@ -27,12 +27,12 @@ class SecurityIdentification25Choice(base_types._BaseFieldType):
 
 	@Belgn.setter
 	def Belgn(self, value):
-		self._Belgn = value if type(value) != base_types.auto else self.make_default("Belgn")
+		self._Belgn = value if value is not None else base_types.UninitialisedField(self, 'Belgn', BelgianIdentifier, False)
 
 	@Belgn.deleter
 	def Belgn(self):
 		del self._Belgn
-		self._Belgn = None
+		self._Belgn = base_types.UninitialisedField(self, 'Belgn', BelgianIdentifier, False)
 
 	@property
 	def Blmbrg(self):
@@ -40,12 +40,12 @@ class SecurityIdentification25Choice(base_types._BaseFieldType):
 
 	@Blmbrg.setter
 	def Blmbrg(self, value):
-		self._Blmbrg = value if type(value) != base_types.auto else self.make_default("Blmbrg")
+		self._Blmbrg = value if value is not None else base_types.UninitialisedField(self, 'Blmbrg', Bloomberg2Identifier, False)
 
 	@Blmbrg.deleter
 	def Blmbrg(self):
 		del self._Blmbrg
-		self._Blmbrg = None
+		self._Blmbrg = base_types.UninitialisedField(self, 'Blmbrg', Bloomberg2Identifier, False)
 
 	@property
 	def CTA(self):
@@ -53,12 +53,12 @@ class SecurityIdentification25Choice(base_types._BaseFieldType):
 
 	@CTA.setter
 	def CTA(self, value):
-		self._CTA = value if type(value) != base_types.auto else self.make_default("CTA")
+		self._CTA = value if value is not None else base_types.UninitialisedField(self, 'CTA', ConsolidatedTapeAssociationIdentifier, False)
 
 	@CTA.deleter
 	def CTA(self):
 		del self._CTA
-		self._CTA = None
+		self._CTA = base_types.UninitialisedField(self, 'CTA', ConsolidatedTapeAssociationIdentifier, False)
 
 	@property
 	def CUSIP(self):
@@ -66,12 +66,12 @@ class SecurityIdentification25Choice(base_types._BaseFieldType):
 
 	@CUSIP.setter
 	def CUSIP(self, value):
-		self._CUSIP = value if type(value) != base_types.auto else self.make_default("CUSIP")
+		self._CUSIP = value if value is not None else base_types.UninitialisedField(self, 'CUSIP', CUSIPIdentifier, False)
 
 	@CUSIP.deleter
 	def CUSIP(self):
 		del self._CUSIP
-		self._CUSIP = None
+		self._CUSIP = base_types.UninitialisedField(self, 'CUSIP', CUSIPIdentifier, False)
 
 	@property
 	def Cmon(self):
@@ -79,12 +79,12 @@ class SecurityIdentification25Choice(base_types._BaseFieldType):
 
 	@Cmon.setter
 	def Cmon(self, value):
-		self._Cmon = value if type(value) != base_types.auto else self.make_default("Cmon")
+		self._Cmon = value if value is not None else base_types.UninitialisedField(self, 'Cmon', EuroclearClearstreamIdentifier, False)
 
 	@Cmon.deleter
 	def Cmon(self):
 		del self._Cmon
-		self._Cmon = None
+		self._Cmon = base_types.UninitialisedField(self, 'Cmon', EuroclearClearstreamIdentifier, False)
 
 	@property
 	def Dtch(self):
@@ -92,12 +92,12 @@ class SecurityIdentification25Choice(base_types._BaseFieldType):
 
 	@Dtch.setter
 	def Dtch(self, value):
-		self._Dtch = value if type(value) != base_types.auto else self.make_default("Dtch")
+		self._Dtch = value if value is not None else base_types.UninitialisedField(self, 'Dtch', DutchIdentifier, False)
 
 	@Dtch.deleter
 	def Dtch(self):
 		del self._Dtch
-		self._Dtch = None
+		self._Dtch = base_types.UninitialisedField(self, 'Dtch', DutchIdentifier, False)
 
 	@property
 	def ISIN(self):
@@ -105,12 +105,12 @@ class SecurityIdentification25Choice(base_types._BaseFieldType):
 
 	@ISIN.setter
 	def ISIN(self, value):
-		self._ISIN = value if type(value) != base_types.auto else self.make_default("ISIN")
+		self._ISIN = value if value is not None else base_types.UninitialisedField(self, 'ISIN', ISINOct2015Identifier, False)
 
 	@ISIN.deleter
 	def ISIN(self):
 		del self._ISIN
-		self._ISIN = None
+		self._ISIN = base_types.UninitialisedField(self, 'ISIN', ISINOct2015Identifier, False)
 
 	@property
 	def OthrPrtryId(self):
@@ -118,12 +118,12 @@ class SecurityIdentification25Choice(base_types._BaseFieldType):
 
 	@OthrPrtryId.setter
 	def OthrPrtryId(self, value):
-		self._OthrPrtryId = value if type(value) != base_types.auto else self.make_default("OthrPrtryId")
+		self._OthrPrtryId = value if value is not None else base_types.UninitialisedField(self, 'OthrPrtryId', AlternateSecurityIdentification7, False)
 
 	@OthrPrtryId.deleter
 	def OthrPrtryId(self):
 		del self._OthrPrtryId
-		self._OthrPrtryId = None
+		self._OthrPrtryId = base_types.UninitialisedField(self, 'OthrPrtryId', AlternateSecurityIdentification7, False)
 
 	@property
 	def QUICK(self):
@@ -131,12 +131,12 @@ class SecurityIdentification25Choice(base_types._BaseFieldType):
 
 	@QUICK.setter
 	def QUICK(self, value):
-		self._QUICK = value if type(value) != base_types.auto else self.make_default("QUICK")
+		self._QUICK = value if value is not None else base_types.UninitialisedField(self, 'QUICK', QUICKIdentifier, False)
 
 	@QUICK.deleter
 	def QUICK(self):
 		del self._QUICK
-		self._QUICK = None
+		self._QUICK = base_types.UninitialisedField(self, 'QUICK', QUICKIdentifier, False)
 
 	@property
 	def RIC(self):
@@ -144,12 +144,12 @@ class SecurityIdentification25Choice(base_types._BaseFieldType):
 
 	@RIC.setter
 	def RIC(self, value):
-		self._RIC = value if type(value) != base_types.auto else self.make_default("RIC")
+		self._RIC = value if value is not None else base_types.UninitialisedField(self, 'RIC', RICIdentifier, False)
 
 	@RIC.deleter
 	def RIC(self):
 		del self._RIC
-		self._RIC = None
+		self._RIC = base_types.UninitialisedField(self, 'RIC', RICIdentifier, False)
 
 	@property
 	def SCVM(self):
@@ -157,12 +157,12 @@ class SecurityIdentification25Choice(base_types._BaseFieldType):
 
 	@SCVM.setter
 	def SCVM(self, value):
-		self._SCVM = value if type(value) != base_types.auto else self.make_default("SCVM")
+		self._SCVM = value if value is not None else base_types.UninitialisedField(self, 'SCVM', SicovamIdentifier, False)
 
 	@SCVM.deleter
 	def SCVM(self):
 		del self._SCVM
-		self._SCVM = None
+		self._SCVM = base_types.UninitialisedField(self, 'SCVM', SicovamIdentifier, False)
 
 	@property
 	def SEDOL(self):
@@ -170,12 +170,12 @@ class SecurityIdentification25Choice(base_types._BaseFieldType):
 
 	@SEDOL.setter
 	def SEDOL(self, value):
-		self._SEDOL = value if type(value) != base_types.auto else self.make_default("SEDOL")
+		self._SEDOL = value if value is not None else base_types.UninitialisedField(self, 'SEDOL', SEDOLIdentifier, False)
 
 	@SEDOL.deleter
 	def SEDOL(self):
 		del self._SEDOL
-		self._SEDOL = None
+		self._SEDOL = base_types.UninitialisedField(self, 'SEDOL', SEDOLIdentifier, False)
 
 	@property
 	def TckrSymb(self):
@@ -183,12 +183,12 @@ class SecurityIdentification25Choice(base_types._BaseFieldType):
 
 	@TckrSymb.setter
 	def TckrSymb(self, value):
-		self._TckrSymb = value if type(value) != base_types.auto else self.make_default("TckrSymb")
+		self._TckrSymb = value if value is not None else base_types.UninitialisedField(self, 'TckrSymb', TickerIdentifier, False)
 
 	@TckrSymb.deleter
 	def TckrSymb(self):
 		del self._TckrSymb
-		self._TckrSymb = None
+		self._TckrSymb = base_types.UninitialisedField(self, 'TckrSymb', TickerIdentifier, False)
 
 	@property
 	def Vlrn(self):
@@ -196,12 +196,12 @@ class SecurityIdentification25Choice(base_types._BaseFieldType):
 
 	@Vlrn.setter
 	def Vlrn(self, value):
-		self._Vlrn = value if type(value) != base_types.auto else self.make_default("Vlrn")
+		self._Vlrn = value if value is not None else base_types.UninitialisedField(self, 'Vlrn', ValorenIdentifier, False)
 
 	@Vlrn.deleter
 	def Vlrn(self):
 		del self._Vlrn
-		self._Vlrn = None
+		self._Vlrn = base_types.UninitialisedField(self, 'Vlrn', ValorenIdentifier, False)
 
 	@property
 	def Wrtppr(self):
@@ -209,12 +209,12 @@ class SecurityIdentification25Choice(base_types._BaseFieldType):
 
 	@Wrtppr.setter
 	def Wrtppr(self, value):
-		self._Wrtppr = value if type(value) != base_types.auto else self.make_default("Wrtppr")
+		self._Wrtppr = value if value is not None else base_types.UninitialisedField(self, 'Wrtppr', WertpapierIdentifier, False)
 
 	@Wrtppr.deleter
 	def Wrtppr(self):
 		del self._Wrtppr
-		self._Wrtppr = None
+		self._Wrtppr = base_types.UninitialisedField(self, 'Wrtppr', WertpapierIdentifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Belgn', type=BelgianIdentifier, min=0, max=1, mutex_group=1, array=False),

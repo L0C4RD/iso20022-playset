@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PartyIdentification129Choice import PartyIdentification129Choice
-from ._PartyIdentification232Choice import PartyIdentification232Choice
+from . import PartyIdentification129Choice
+from . import PartyIdentification232Choice
 
 class IndividualPerson43(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class IndividualPerson43(base_types._BaseFieldType):
 
 	@EmplngPty.setter
 	def EmplngPty(self, value):
-		self._EmplngPty = value if type(value) != base_types.auto else self.make_default("EmplngPty")
+		self._EmplngPty = value if value is not None else base_types.UninitialisedField(self, 'EmplngPty', PartyIdentification129Choice, False)
 
 	@EmplngPty.deleter
 	def EmplngPty(self):
 		del self._EmplngPty
-		self._EmplngPty = None
+		self._EmplngPty = base_types.UninitialisedField(self, 'EmplngPty', PartyIdentification129Choice, False)
 
 	@property
 	def PrssgndPrxy(self):
@@ -27,12 +27,12 @@ class IndividualPerson43(base_types._BaseFieldType):
 
 	@PrssgndPrxy.setter
 	def PrssgndPrxy(self, value):
-		self._PrssgndPrxy = value if type(value) != base_types.auto else self.make_default("PrssgndPrxy")
+		self._PrssgndPrxy = value if value is not None else base_types.UninitialisedField(self, 'PrssgndPrxy', PartyIdentification232Choice, False)
 
 	@PrssgndPrxy.deleter
 	def PrssgndPrxy(self):
 		del self._PrssgndPrxy
-		self._PrssgndPrxy = None
+		self._PrssgndPrxy = base_types.UninitialisedField(self, 'PrssgndPrxy', PartyIdentification232Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EmplngPty', type=PartyIdentification129Choice, min=0, max=1, mutex_group=None, array=False),

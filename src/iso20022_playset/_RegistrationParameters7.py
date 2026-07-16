@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
-from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
-from ._SecuritiesCertificate5 import SecuritiesCertificate5
+from . import DateAndDateTime2Choice
+from . import RestrictedFINXMax16Text
+from . import RestrictedFINXMax35Text
+from . import SecuritiesCertificate5
 
 class RegistrationParameters7(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class RegistrationParameters7(base_types._BaseFieldType):
 
 	@CertNb.setter
 	def CertNb(self, value):
-		self._CertNb = value if type(value) != base_types.auto else self.make_default("CertNb")
+		self._CertNb = value if value is not None else base_types.UninitialisedField(self, 'CertNb', SecuritiesCertificate5, True)
 
 	@CertNb.deleter
 	def CertNb(self):
 		del self._CertNb
-		self._CertNb = None
+		self._CertNb = base_types.UninitialisedField(self, 'CertNb', SecuritiesCertificate5, True)
 
 	@property
 	def CertfctnDtTm(self):
@@ -29,12 +29,12 @@ class RegistrationParameters7(base_types._BaseFieldType):
 
 	@CertfctnDtTm.setter
 	def CertfctnDtTm(self, value):
-		self._CertfctnDtTm = value if type(value) != base_types.auto else self.make_default("CertfctnDtTm")
+		self._CertfctnDtTm = value if value is not None else base_types.UninitialisedField(self, 'CertfctnDtTm', DateAndDateTime2Choice, False)
 
 	@CertfctnDtTm.deleter
 	def CertfctnDtTm(self):
 		del self._CertfctnDtTm
-		self._CertfctnDtTm = None
+		self._CertfctnDtTm = base_types.UninitialisedField(self, 'CertfctnDtTm', DateAndDateTime2Choice, False)
 
 	@property
 	def CertfctnId(self):
@@ -42,12 +42,12 @@ class RegistrationParameters7(base_types._BaseFieldType):
 
 	@CertfctnId.setter
 	def CertfctnId(self, value):
-		self._CertfctnId = value if type(value) != base_types.auto else self.make_default("CertfctnId")
+		self._CertfctnId = value if value is not None else base_types.UninitialisedField(self, 'CertfctnId', RestrictedFINXMax16Text, False)
 
 	@CertfctnId.deleter
 	def CertfctnId(self):
 		del self._CertfctnId
-		self._CertfctnId = None
+		self._CertfctnId = base_types.UninitialisedField(self, 'CertfctnId', RestrictedFINXMax16Text, False)
 
 	@property
 	def RegarAcct(self):
@@ -55,12 +55,12 @@ class RegistrationParameters7(base_types._BaseFieldType):
 
 	@RegarAcct.setter
 	def RegarAcct(self, value):
-		self._RegarAcct = value if type(value) != base_types.auto else self.make_default("RegarAcct")
+		self._RegarAcct = value if value is not None else base_types.UninitialisedField(self, 'RegarAcct', RestrictedFINXMax35Text, False)
 
 	@RegarAcct.deleter
 	def RegarAcct(self):
 		del self._RegarAcct
-		self._RegarAcct = None
+		self._RegarAcct = base_types.UninitialisedField(self, 'RegarAcct', RestrictedFINXMax35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CertNb', type=SecuritiesCertificate5, min=0, max=None, mutex_group=None, array=True),

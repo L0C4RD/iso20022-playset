@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NoSpecifiedReason1 import NoSpecifiedReason1
-from ._PendingStatus75Choice import PendingStatus75Choice
-from ._ProprietaryStatusAndReason7 import ProprietaryStatusAndReason7
+from . import NoSpecifiedReason1
+from . import PendingStatus75Choice
+from . import ProprietaryStatusAndReason7
 
 class EventProcessingStatus8Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class EventProcessingStatus8Choice(base_types._BaseFieldType):
 
 	@Cmplt.setter
 	def Cmplt(self, value):
-		self._Cmplt = value if type(value) != base_types.auto else self.make_default("Cmplt")
+		self._Cmplt = value if value is not None else base_types.UninitialisedField(self, 'Cmplt', NoSpecifiedReason1, False)
 
 	@Cmplt.deleter
 	def Cmplt(self):
 		del self._Cmplt
-		self._Cmplt = None
+		self._Cmplt = base_types.UninitialisedField(self, 'Cmplt', NoSpecifiedReason1, False)
 
 	@property
 	def Pdg(self):
@@ -28,12 +28,12 @@ class EventProcessingStatus8Choice(base_types._BaseFieldType):
 
 	@Pdg.setter
 	def Pdg(self, value):
-		self._Pdg = value if type(value) != base_types.auto else self.make_default("Pdg")
+		self._Pdg = value if value is not None else base_types.UninitialisedField(self, 'Pdg', PendingStatus75Choice, False)
 
 	@Pdg.deleter
 	def Pdg(self):
 		del self._Pdg
-		self._Pdg = None
+		self._Pdg = base_types.UninitialisedField(self, 'Pdg', PendingStatus75Choice, False)
 
 	@property
 	def PrtrySts(self):
@@ -41,12 +41,12 @@ class EventProcessingStatus8Choice(base_types._BaseFieldType):
 
 	@PrtrySts.setter
 	def PrtrySts(self, value):
-		self._PrtrySts = value if type(value) != base_types.auto else self.make_default("PrtrySts")
+		self._PrtrySts = value if value is not None else base_types.UninitialisedField(self, 'PrtrySts', ProprietaryStatusAndReason7, False)
 
 	@PrtrySts.deleter
 	def PrtrySts(self):
 		del self._PrtrySts
-		self._PrtrySts = None
+		self._PrtrySts = base_types.UninitialisedField(self, 'PrtrySts', ProprietaryStatusAndReason7, False)
 
 	@property
 	def Rcncld(self):
@@ -54,12 +54,12 @@ class EventProcessingStatus8Choice(base_types._BaseFieldType):
 
 	@Rcncld.setter
 	def Rcncld(self, value):
-		self._Rcncld = value if type(value) != base_types.auto else self.make_default("Rcncld")
+		self._Rcncld = value if value is not None else base_types.UninitialisedField(self, 'Rcncld', NoSpecifiedReason1, False)
 
 	@Rcncld.deleter
 	def Rcncld(self):
 		del self._Rcncld
-		self._Rcncld = None
+		self._Rcncld = base_types.UninitialisedField(self, 'Rcncld', NoSpecifiedReason1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cmplt', type=NoSpecifiedReason1, min=0, max=1, mutex_group=1, array=False),

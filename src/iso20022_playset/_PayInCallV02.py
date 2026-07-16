@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Exact4AlphaNumericText import Exact4AlphaNumericText
-from ._PartyIdentification73Choice import PartyIdentification73Choice
-from ._ReportData5 import ReportData5
-from ._SupplementaryData1 import SupplementaryData1
+from . import Exact4AlphaNumericText
+from . import PartyIdentification73Choice
+from . import ReportData5
+from . import SupplementaryData1
 
 class PayInCallV02(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class PayInCallV02(base_types._BaseFieldType):
 
 	@PtyId.setter
 	def PtyId(self, value):
-		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
+		self._PtyId = value if value is not None else base_types.UninitialisedField(self, 'PtyId', PartyIdentification73Choice, False)
 
 	@PtyId.deleter
 	def PtyId(self):
 		del self._PtyId
-		self._PtyId = None
+		self._PtyId = base_types.UninitialisedField(self, 'PtyId', PartyIdentification73Choice, False)
 
 	@property
 	def RptData(self):
@@ -29,12 +29,12 @@ class PayInCallV02(base_types._BaseFieldType):
 
 	@RptData.setter
 	def RptData(self, value):
-		self._RptData = value if type(value) != base_types.auto else self.make_default("RptData")
+		self._RptData = value if value is not None else base_types.UninitialisedField(self, 'RptData', ReportData5, False)
 
 	@RptData.deleter
 	def RptData(self):
 		del self._RptData
-		self._RptData = None
+		self._RptData = base_types.UninitialisedField(self, 'RptData', ReportData5, False)
 
 	@property
 	def SplmtryData(self):
@@ -42,12 +42,12 @@ class PayInCallV02(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def SttlmSsnIdr(self):
@@ -55,12 +55,12 @@ class PayInCallV02(base_types._BaseFieldType):
 
 	@SttlmSsnIdr.setter
 	def SttlmSsnIdr(self, value):
-		self._SttlmSsnIdr = value if type(value) != base_types.auto else self.make_default("SttlmSsnIdr")
+		self._SttlmSsnIdr = value if value is not None else base_types.UninitialisedField(self, 'SttlmSsnIdr', Exact4AlphaNumericText, False)
 
 	@SttlmSsnIdr.deleter
 	def SttlmSsnIdr(self):
 		del self._SttlmSsnIdr
-		self._SttlmSsnIdr = None
+		self._SttlmSsnIdr = base_types.UninitialisedField(self, 'SttlmSsnIdr', Exact4AlphaNumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PtyId', type=PartyIdentification73Choice, min=1, max=1, mutex_group=None, array=False),

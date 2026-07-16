@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AnyBICIdentifier import AnyBICIdentifier
-from ._GenericOrganisationIdentification1 import GenericOrganisationIdentification1
+from . import AnyBICIdentifier
+from . import GenericOrganisationIdentification1
 
 class OrganisationIdentification7(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class OrganisationIdentification7(base_types._BaseFieldType):
 
 	@AnyBIC.setter
 	def AnyBIC(self, value):
-		self._AnyBIC = value if type(value) != base_types.auto else self.make_default("AnyBIC")
+		self._AnyBIC = value if value is not None else base_types.UninitialisedField(self, 'AnyBIC', AnyBICIdentifier, False)
 
 	@AnyBIC.deleter
 	def AnyBIC(self):
 		del self._AnyBIC
-		self._AnyBIC = None
+		self._AnyBIC = base_types.UninitialisedField(self, 'AnyBIC', AnyBICIdentifier, False)
 
 	@property
 	def Othr(self):
@@ -27,12 +27,12 @@ class OrganisationIdentification7(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', GenericOrganisationIdentification1, True)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', GenericOrganisationIdentification1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AnyBIC', type=AnyBICIdentifier, min=0, max=1, mutex_group=None, array=False),

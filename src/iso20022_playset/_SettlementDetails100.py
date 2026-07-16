@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification30 import GenericIdentification30
-from ._Registration9Choice import Registration9Choice
-from ._Restriction5Choice import Restriction5Choice
-from ._SecuritiesRTGS4Choice import SecuritiesRTGS4Choice
-from ._SettlementSystemMethod4Choice import SettlementSystemMethod4Choice
-from ._SettlementTransactionCondition19Choice import SettlementTransactionCondition19Choice
-from ._TaxCapacityParty4Choice import TaxCapacityParty4Choice
+from . import GenericIdentification30
+from . import Registration9Choice
+from . import Restriction5Choice
+from . import SecuritiesRTGS4Choice
+from . import SettlementSystemMethod4Choice
+from . import SettlementTransactionCondition19Choice
+from . import TaxCapacityParty4Choice
 
 class SettlementDetails100(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class SettlementDetails100(base_types._BaseFieldType):
 
 	@LglRstrctns.setter
 	def LglRstrctns(self, value):
-		self._LglRstrctns = value if type(value) != base_types.auto else self.make_default("LglRstrctns")
+		self._LglRstrctns = value if value is not None else base_types.UninitialisedField(self, 'LglRstrctns', Restriction5Choice, False)
 
 	@LglRstrctns.deleter
 	def LglRstrctns(self):
 		del self._LglRstrctns
-		self._LglRstrctns = None
+		self._LglRstrctns = base_types.UninitialisedField(self, 'LglRstrctns', Restriction5Choice, False)
 
 	@property
 	def Regn(self):
@@ -32,12 +32,12 @@ class SettlementDetails100(base_types._BaseFieldType):
 
 	@Regn.setter
 	def Regn(self, value):
-		self._Regn = value if type(value) != base_types.auto else self.make_default("Regn")
+		self._Regn = value if value is not None else base_types.UninitialisedField(self, 'Regn', Registration9Choice, False)
 
 	@Regn.deleter
 	def Regn(self):
 		del self._Regn
-		self._Regn = None
+		self._Regn = base_types.UninitialisedField(self, 'Regn', Registration9Choice, False)
 
 	@property
 	def SctiesRTGS(self):
@@ -45,12 +45,12 @@ class SettlementDetails100(base_types._BaseFieldType):
 
 	@SctiesRTGS.setter
 	def SctiesRTGS(self, value):
-		self._SctiesRTGS = value if type(value) != base_types.auto else self.make_default("SctiesRTGS")
+		self._SctiesRTGS = value if value is not None else base_types.UninitialisedField(self, 'SctiesRTGS', SecuritiesRTGS4Choice, False)
 
 	@SctiesRTGS.deleter
 	def SctiesRTGS(self):
 		del self._SctiesRTGS
-		self._SctiesRTGS = None
+		self._SctiesRTGS = base_types.UninitialisedField(self, 'SctiesRTGS', SecuritiesRTGS4Choice, False)
 
 	@property
 	def StmpDtyTaxBsis(self):
@@ -58,12 +58,12 @@ class SettlementDetails100(base_types._BaseFieldType):
 
 	@StmpDtyTaxBsis.setter
 	def StmpDtyTaxBsis(self, value):
-		self._StmpDtyTaxBsis = value if type(value) != base_types.auto else self.make_default("StmpDtyTaxBsis")
+		self._StmpDtyTaxBsis = value if value is not None else base_types.UninitialisedField(self, 'StmpDtyTaxBsis', GenericIdentification30, False)
 
 	@StmpDtyTaxBsis.deleter
 	def StmpDtyTaxBsis(self):
 		del self._StmpDtyTaxBsis
-		self._StmpDtyTaxBsis = None
+		self._StmpDtyTaxBsis = base_types.UninitialisedField(self, 'StmpDtyTaxBsis', GenericIdentification30, False)
 
 	@property
 	def SttlmSysMtd(self):
@@ -71,12 +71,12 @@ class SettlementDetails100(base_types._BaseFieldType):
 
 	@SttlmSysMtd.setter
 	def SttlmSysMtd(self, value):
-		self._SttlmSysMtd = value if type(value) != base_types.auto else self.make_default("SttlmSysMtd")
+		self._SttlmSysMtd = value if value is not None else base_types.UninitialisedField(self, 'SttlmSysMtd', SettlementSystemMethod4Choice, False)
 
 	@SttlmSysMtd.deleter
 	def SttlmSysMtd(self):
 		del self._SttlmSysMtd
-		self._SttlmSysMtd = None
+		self._SttlmSysMtd = base_types.UninitialisedField(self, 'SttlmSysMtd', SettlementSystemMethod4Choice, False)
 
 	@property
 	def SttlmTxCond(self):
@@ -84,12 +84,12 @@ class SettlementDetails100(base_types._BaseFieldType):
 
 	@SttlmTxCond.setter
 	def SttlmTxCond(self, value):
-		self._SttlmTxCond = value if type(value) != base_types.auto else self.make_default("SttlmTxCond")
+		self._SttlmTxCond = value if value is not None else base_types.UninitialisedField(self, 'SttlmTxCond', SettlementTransactionCondition19Choice, True)
 
 	@SttlmTxCond.deleter
 	def SttlmTxCond(self):
 		del self._SttlmTxCond
-		self._SttlmTxCond = None
+		self._SttlmTxCond = base_types.UninitialisedField(self, 'SttlmTxCond', SettlementTransactionCondition19Choice, True)
 
 	@property
 	def TaxCpcty(self):
@@ -97,12 +97,12 @@ class SettlementDetails100(base_types._BaseFieldType):
 
 	@TaxCpcty.setter
 	def TaxCpcty(self, value):
-		self._TaxCpcty = value if type(value) != base_types.auto else self.make_default("TaxCpcty")
+		self._TaxCpcty = value if value is not None else base_types.UninitialisedField(self, 'TaxCpcty', TaxCapacityParty4Choice, False)
 
 	@TaxCpcty.deleter
 	def TaxCpcty(self):
 		del self._TaxCpcty
-		self._TaxCpcty = None
+		self._TaxCpcty = base_types.UninitialisedField(self, 'TaxCpcty', TaxCapacityParty4Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LglRstrctns', type=Restriction5Choice, min=0, max=1, mutex_group=None, array=False),

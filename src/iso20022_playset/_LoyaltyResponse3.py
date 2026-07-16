@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LoyaltyResult3 import LoyaltyResult3
-from ._Max35Text import Max35Text
-from ._TransactionIdentifier1 import TransactionIdentifier1
+from . import LoyaltyResult3
+from . import Max35Text
+from . import TransactionIdentifier1
 
 class LoyaltyResponse3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class LoyaltyResponse3(base_types._BaseFieldType):
 
 	@POIRcncltnId.setter
 	def POIRcncltnId(self, value):
-		self._POIRcncltnId = value if type(value) != base_types.auto else self.make_default("POIRcncltnId")
+		self._POIRcncltnId = value if value is not None else base_types.UninitialisedField(self, 'POIRcncltnId', Max35Text, False)
 
 	@POIRcncltnId.deleter
 	def POIRcncltnId(self):
 		del self._POIRcncltnId
-		self._POIRcncltnId = None
+		self._POIRcncltnId = base_types.UninitialisedField(self, 'POIRcncltnId', Max35Text, False)
 
 	@property
 	def POITxId(self):
@@ -28,12 +28,12 @@ class LoyaltyResponse3(base_types._BaseFieldType):
 
 	@POITxId.setter
 	def POITxId(self, value):
-		self._POITxId = value if type(value) != base_types.auto else self.make_default("POITxId")
+		self._POITxId = value if value is not None else base_types.UninitialisedField(self, 'POITxId', TransactionIdentifier1, False)
 
 	@POITxId.deleter
 	def POITxId(self):
 		del self._POITxId
-		self._POITxId = None
+		self._POITxId = base_types.UninitialisedField(self, 'POITxId', TransactionIdentifier1, False)
 
 	@property
 	def Rslt(self):
@@ -41,12 +41,12 @@ class LoyaltyResponse3(base_types._BaseFieldType):
 
 	@Rslt.setter
 	def Rslt(self, value):
-		self._Rslt = value if type(value) != base_types.auto else self.make_default("Rslt")
+		self._Rslt = value if value is not None else base_types.UninitialisedField(self, 'Rslt', LoyaltyResult3, True)
 
 	@Rslt.deleter
 	def Rslt(self):
 		del self._Rslt
-		self._Rslt = None
+		self._Rslt = base_types.UninitialisedField(self, 'Rslt', LoyaltyResult3, True)
 
 	@property
 	def SaleTxId(self):
@@ -54,12 +54,12 @@ class LoyaltyResponse3(base_types._BaseFieldType):
 
 	@SaleTxId.setter
 	def SaleTxId(self, value):
-		self._SaleTxId = value if type(value) != base_types.auto else self.make_default("SaleTxId")
+		self._SaleTxId = value if value is not None else base_types.UninitialisedField(self, 'SaleTxId', TransactionIdentifier1, False)
 
 	@SaleTxId.deleter
 	def SaleTxId(self):
 		del self._SaleTxId
-		self._SaleTxId = None
+		self._SaleTxId = base_types.UninitialisedField(self, 'SaleTxId', TransactionIdentifier1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='POIRcncltnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

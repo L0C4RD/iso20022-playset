@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MarketIdentification89 import MarketIdentification89
-from ._Max10Text import Max10Text
+from . import MarketIdentification89
+from . import Max10Text
 
 class Rating2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Rating2(base_types._BaseFieldType):
 
 	@Ratg.setter
 	def Ratg(self, value):
-		self._Ratg = value if type(value) != base_types.auto else self.make_default("Ratg")
+		self._Ratg = value if value is not None else base_types.UninitialisedField(self, 'Ratg', Max10Text, False)
 
 	@Ratg.deleter
 	def Ratg(self):
 		del self._Ratg
-		self._Ratg = None
+		self._Ratg = base_types.UninitialisedField(self, 'Ratg', Max10Text, False)
 
 	@property
 	def SrcOfRatg(self):
@@ -27,12 +27,12 @@ class Rating2(base_types._BaseFieldType):
 
 	@SrcOfRatg.setter
 	def SrcOfRatg(self, value):
-		self._SrcOfRatg = value if type(value) != base_types.auto else self.make_default("SrcOfRatg")
+		self._SrcOfRatg = value if value is not None else base_types.UninitialisedField(self, 'SrcOfRatg', MarketIdentification89, False)
 
 	@SrcOfRatg.deleter
 	def SrcOfRatg(self):
 		del self._SrcOfRatg
-		self._SrcOfRatg = None
+		self._SrcOfRatg = base_types.UninitialisedField(self, 'SrcOfRatg', MarketIdentification89, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ratg', type=Max10Text, min=1, max=1, mutex_group=None, array=False),

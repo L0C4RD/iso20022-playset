@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Exact4AlphaNumericText import Exact4AlphaNumericText
-from ._Status27Choice import Status27Choice
+from . import Exact4AlphaNumericText
+from . import Status27Choice
 
 class StatusAndSubStatus2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class StatusAndSubStatus2(base_types._BaseFieldType):
 
 	@StsCd.setter
 	def StsCd(self, value):
-		self._StsCd = value if type(value) != base_types.auto else self.make_default("StsCd")
+		self._StsCd = value if value is not None else base_types.UninitialisedField(self, 'StsCd', Status27Choice, False)
 
 	@StsCd.deleter
 	def StsCd(self):
 		del self._StsCd
-		self._StsCd = None
+		self._StsCd = base_types.UninitialisedField(self, 'StsCd', Status27Choice, False)
 
 	@property
 	def SubStsCd(self):
@@ -27,12 +27,12 @@ class StatusAndSubStatus2(base_types._BaseFieldType):
 
 	@SubStsCd.setter
 	def SubStsCd(self, value):
-		self._SubStsCd = value if type(value) != base_types.auto else self.make_default("SubStsCd")
+		self._SubStsCd = value if value is not None else base_types.UninitialisedField(self, 'SubStsCd', Exact4AlphaNumericText, False)
 
 	@SubStsCd.deleter
 	def SubStsCd(self):
 		del self._SubStsCd
-		self._SubStsCd = None
+		self._SubStsCd = base_types.UninitialisedField(self, 'SubStsCd', Exact4AlphaNumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='StsCd', type=Status27Choice, min=1, max=1, mutex_group=None, array=False),

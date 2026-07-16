@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardPaymentEnvironment82 import CardPaymentEnvironment82
-from ._NonFinancialResponseContentComponent6 import NonFinancialResponseContentComponent6
-from ._ResponseType11 import ResponseType11
-from ._SupplementaryData1 import SupplementaryData1
+from . import CardPaymentEnvironment82
+from . import NonFinancialResponseContentComponent6
+from . import ResponseType11
+from . import SupplementaryData1
 
 class NonFinancialResponseComponent6(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class NonFinancialResponseComponent6(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+		self._Envt = value if value is not None else base_types.UninitialisedField(self, 'Envt', CardPaymentEnvironment82, False)
 
 	@Envt.deleter
 	def Envt(self):
 		del self._Envt
-		self._Envt = None
+		self._Envt = base_types.UninitialisedField(self, 'Envt', CardPaymentEnvironment82, False)
 
 	@property
 	def Rspn(self):
@@ -29,12 +29,12 @@ class NonFinancialResponseComponent6(base_types._BaseFieldType):
 
 	@Rspn.setter
 	def Rspn(self, value):
-		self._Rspn = value if type(value) != base_types.auto else self.make_default("Rspn")
+		self._Rspn = value if value is not None else base_types.UninitialisedField(self, 'Rspn', ResponseType11, False)
 
 	@Rspn.deleter
 	def Rspn(self):
 		del self._Rspn
-		self._Rspn = None
+		self._Rspn = base_types.UninitialisedField(self, 'Rspn', ResponseType11, False)
 
 	@property
 	def RspnCntt(self):
@@ -42,12 +42,12 @@ class NonFinancialResponseComponent6(base_types._BaseFieldType):
 
 	@RspnCntt.setter
 	def RspnCntt(self, value):
-		self._RspnCntt = value if type(value) != base_types.auto else self.make_default("RspnCntt")
+		self._RspnCntt = value if value is not None else base_types.UninitialisedField(self, 'RspnCntt', NonFinancialResponseContentComponent6, True)
 
 	@RspnCntt.deleter
 	def RspnCntt(self):
 		del self._RspnCntt
-		self._RspnCntt = None
+		self._RspnCntt = base_types.UninitialisedField(self, 'RspnCntt', NonFinancialResponseContentComponent6, True)
 
 	@property
 	def SplmtryData(self):
@@ -55,12 +55,12 @@ class NonFinancialResponseComponent6(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment82, min=1, max=1, mutex_group=None, array=False),

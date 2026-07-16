@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CommunicationAddress11 import CommunicationAddress11
-from ._Max35Text import Max35Text
-from ._MeetingReference10 import MeetingReference10
-from ._NotificationType2Code import NotificationType2Code
-from ._Pagination1 import Pagination1
-from ._Participation6 import Participation6
-from ._SecurityPosition22 import SecurityPosition22
-from ._SupplementaryData1 import SupplementaryData1
-from ._Vote20 import Vote20
+from . import CommunicationAddress11
+from . import Max35Text
+from . import MeetingReference10
+from . import NotificationType2Code
+from . import Pagination1
+from . import Participation6
+from . import SecurityPosition22
+from . import SupplementaryData1
+from . import Vote20
 
 class MeetingResultDisseminationV10(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class MeetingResultDisseminationV10(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', CommunicationAddress11, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', CommunicationAddress11, False)
 
 	@property
 	def MtgRef(self):
@@ -34,12 +34,12 @@ class MeetingResultDisseminationV10(base_types._BaseFieldType):
 
 	@MtgRef.setter
 	def MtgRef(self, value):
-		self._MtgRef = value if type(value) != base_types.auto else self.make_default("MtgRef")
+		self._MtgRef = value if value is not None else base_types.UninitialisedField(self, 'MtgRef', MeetingReference10, False)
 
 	@MtgRef.deleter
 	def MtgRef(self):
 		del self._MtgRef
-		self._MtgRef = None
+		self._MtgRef = base_types.UninitialisedField(self, 'MtgRef', MeetingReference10, False)
 
 	@property
 	def MtgRsltDssmntnId(self):
@@ -47,12 +47,12 @@ class MeetingResultDisseminationV10(base_types._BaseFieldType):
 
 	@MtgRsltDssmntnId.setter
 	def MtgRsltDssmntnId(self, value):
-		self._MtgRsltDssmntnId = value if type(value) != base_types.auto else self.make_default("MtgRsltDssmntnId")
+		self._MtgRsltDssmntnId = value if value is not None else base_types.UninitialisedField(self, 'MtgRsltDssmntnId', Max35Text, False)
 
 	@MtgRsltDssmntnId.deleter
 	def MtgRsltDssmntnId(self):
 		del self._MtgRsltDssmntnId
-		self._MtgRsltDssmntnId = None
+		self._MtgRsltDssmntnId = base_types.UninitialisedField(self, 'MtgRsltDssmntnId', Max35Text, False)
 
 	@property
 	def MtgRsltsDssmntnTp(self):
@@ -60,12 +60,12 @@ class MeetingResultDisseminationV10(base_types._BaseFieldType):
 
 	@MtgRsltsDssmntnTp.setter
 	def MtgRsltsDssmntnTp(self, value):
-		self._MtgRsltsDssmntnTp = value if type(value) != base_types.auto else self.make_default("MtgRsltsDssmntnTp")
+		self._MtgRsltsDssmntnTp = value if value is not None else base_types.UninitialisedField(self, 'MtgRsltsDssmntnTp', NotificationType2Code, False)
 
 	@MtgRsltsDssmntnTp.deleter
 	def MtgRsltsDssmntnTp(self):
 		del self._MtgRsltsDssmntnTp
-		self._MtgRsltsDssmntnTp = None
+		self._MtgRsltsDssmntnTp = base_types.UninitialisedField(self, 'MtgRsltsDssmntnTp', NotificationType2Code, False)
 
 	@property
 	def Pgntn(self):
@@ -73,12 +73,12 @@ class MeetingResultDisseminationV10(base_types._BaseFieldType):
 
 	@Pgntn.setter
 	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+		self._Pgntn = value if value is not None else base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@Pgntn.deleter
 	def Pgntn(self):
 		del self._Pgntn
-		self._Pgntn = None
+		self._Pgntn = base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@property
 	def Prtcptn(self):
@@ -86,12 +86,12 @@ class MeetingResultDisseminationV10(base_types._BaseFieldType):
 
 	@Prtcptn.setter
 	def Prtcptn(self, value):
-		self._Prtcptn = value if type(value) != base_types.auto else self.make_default("Prtcptn")
+		self._Prtcptn = value if value is not None else base_types.UninitialisedField(self, 'Prtcptn', Participation6, False)
 
 	@Prtcptn.deleter
 	def Prtcptn(self):
 		del self._Prtcptn
-		self._Prtcptn = None
+		self._Prtcptn = base_types.UninitialisedField(self, 'Prtcptn', Participation6, False)
 
 	@property
 	def PrvsMtgRsltsDssmntnId(self):
@@ -99,12 +99,12 @@ class MeetingResultDisseminationV10(base_types._BaseFieldType):
 
 	@PrvsMtgRsltsDssmntnId.setter
 	def PrvsMtgRsltsDssmntnId(self, value):
-		self._PrvsMtgRsltsDssmntnId = value if type(value) != base_types.auto else self.make_default("PrvsMtgRsltsDssmntnId")
+		self._PrvsMtgRsltsDssmntnId = value if value is not None else base_types.UninitialisedField(self, 'PrvsMtgRsltsDssmntnId', Max35Text, False)
 
 	@PrvsMtgRsltsDssmntnId.deleter
 	def PrvsMtgRsltsDssmntnId(self):
 		del self._PrvsMtgRsltsDssmntnId
-		self._PrvsMtgRsltsDssmntnId = None
+		self._PrvsMtgRsltsDssmntnId = base_types.UninitialisedField(self, 'PrvsMtgRsltsDssmntnId', Max35Text, False)
 
 	@property
 	def Scty(self):
@@ -112,12 +112,12 @@ class MeetingResultDisseminationV10(base_types._BaseFieldType):
 
 	@Scty.setter
 	def Scty(self, value):
-		self._Scty = value if type(value) != base_types.auto else self.make_default("Scty")
+		self._Scty = value if value is not None else base_types.UninitialisedField(self, 'Scty', SecurityPosition22, True)
 
 	@Scty.deleter
 	def Scty(self):
 		del self._Scty
-		self._Scty = None
+		self._Scty = base_types.UninitialisedField(self, 'Scty', SecurityPosition22, True)
 
 	@property
 	def SplmtryData(self):
@@ -125,12 +125,12 @@ class MeetingResultDisseminationV10(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def VoteRslt(self):
@@ -138,12 +138,12 @@ class MeetingResultDisseminationV10(base_types._BaseFieldType):
 
 	@VoteRslt.setter
 	def VoteRslt(self, value):
-		self._VoteRslt = value if type(value) != base_types.auto else self.make_default("VoteRslt")
+		self._VoteRslt = value if value is not None else base_types.UninitialisedField(self, 'VoteRslt', Vote20, True)
 
 	@VoteRslt.deleter
 	def VoteRslt(self):
 		del self._VoteRslt
-		self._VoteRslt = None
+		self._VoteRslt = base_types.UninitialisedField(self, 'VoteRslt', Vote20, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=CommunicationAddress11, min=0, max=1, mutex_group=None, array=False),

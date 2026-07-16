@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
+from . import ActiveCurrencyAnd13DecimalAmount
+from . import ISODate
+from . import Max35Text
 
 class LetterIntent1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class LetterIntent1(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def EndDt(self):
@@ -28,12 +28,12 @@ class LetterIntent1(base_types._BaseFieldType):
 
 	@EndDt.setter
 	def EndDt(self, value):
-		self._EndDt = value if type(value) != base_types.auto else self.make_default("EndDt")
+		self._EndDt = value if value is not None else base_types.UninitialisedField(self, 'EndDt', ISODate, False)
 
 	@EndDt.deleter
 	def EndDt(self):
 		del self._EndDt
-		self._EndDt = None
+		self._EndDt = base_types.UninitialisedField(self, 'EndDt', ISODate, False)
 
 	@property
 	def LttrInttRef(self):
@@ -41,12 +41,12 @@ class LetterIntent1(base_types._BaseFieldType):
 
 	@LttrInttRef.setter
 	def LttrInttRef(self, value):
-		self._LttrInttRef = value if type(value) != base_types.auto else self.make_default("LttrInttRef")
+		self._LttrInttRef = value if value is not None else base_types.UninitialisedField(self, 'LttrInttRef', Max35Text, False)
 
 	@LttrInttRef.deleter
 	def LttrInttRef(self):
 		del self._LttrInttRef
-		self._LttrInttRef = None
+		self._LttrInttRef = base_types.UninitialisedField(self, 'LttrInttRef', Max35Text, False)
 
 	@property
 	def StartDt(self):
@@ -54,12 +54,12 @@ class LetterIntent1(base_types._BaseFieldType):
 
 	@StartDt.setter
 	def StartDt(self, value):
-		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
+		self._StartDt = value if value is not None else base_types.UninitialisedField(self, 'StartDt', ISODate, False)
 
 	@StartDt.deleter
 	def StartDt(self):
 		del self._StartDt
-		self._StartDt = None
+		self._StartDt = base_types.UninitialisedField(self, 'StartDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),

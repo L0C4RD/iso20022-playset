@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._CorporateActionOption47Choice import CorporateActionOption47Choice
-from ._CorporateActionPrice99 import CorporateActionPrice99
-from ._Exact3NumericText import Exact3NumericText
-from ._SecurityIdentification19 import SecurityIdentification19
+from . import ActiveCurrencyCode
+from . import CorporateActionOption47Choice
+from . import CorporateActionPrice99
+from . import Exact3NumericText
+from . import SecurityIdentification19
 
 class CorporateActionElection4(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class CorporateActionElection4(base_types._BaseFieldType):
 
 	@CcyOptn.setter
 	def CcyOptn(self, value):
-		self._CcyOptn = value if type(value) != base_types.auto else self.make_default("CcyOptn")
+		self._CcyOptn = value if value is not None else base_types.UninitialisedField(self, 'CcyOptn', ActiveCurrencyCode, False)
 
 	@CcyOptn.deleter
 	def CcyOptn(self):
 		del self._CcyOptn
-		self._CcyOptn = None
+		self._CcyOptn = base_types.UninitialisedField(self, 'CcyOptn', ActiveCurrencyCode, False)
 
 	@property
 	def FinInstrmId(self):
@@ -30,12 +30,12 @@ class CorporateActionElection4(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
 		del self._FinInstrmId
-		self._FinInstrmId = None
+		self._FinInstrmId = base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@property
 	def OptnNb(self):
@@ -43,12 +43,12 @@ class CorporateActionElection4(base_types._BaseFieldType):
 
 	@OptnNb.setter
 	def OptnNb(self, value):
-		self._OptnNb = value if type(value) != base_types.auto else self.make_default("OptnNb")
+		self._OptnNb = value if value is not None else base_types.UninitialisedField(self, 'OptnNb', Exact3NumericText, False)
 
 	@OptnNb.deleter
 	def OptnNb(self):
 		del self._OptnNb
-		self._OptnNb = None
+		self._OptnNb = base_types.UninitialisedField(self, 'OptnNb', Exact3NumericText, False)
 
 	@property
 	def OptnTp(self):
@@ -56,12 +56,12 @@ class CorporateActionElection4(base_types._BaseFieldType):
 
 	@OptnTp.setter
 	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != base_types.auto else self.make_default("OptnTp")
+		self._OptnTp = value if value is not None else base_types.UninitialisedField(self, 'OptnTp', CorporateActionOption47Choice, False)
 
 	@OptnTp.deleter
 	def OptnTp(self):
 		del self._OptnTp
-		self._OptnTp = None
+		self._OptnTp = base_types.UninitialisedField(self, 'OptnTp', CorporateActionOption47Choice, False)
 
 	@property
 	def PricDtls(self):
@@ -69,12 +69,12 @@ class CorporateActionElection4(base_types._BaseFieldType):
 
 	@PricDtls.setter
 	def PricDtls(self, value):
-		self._PricDtls = value if type(value) != base_types.auto else self.make_default("PricDtls")
+		self._PricDtls = value if value is not None else base_types.UninitialisedField(self, 'PricDtls', CorporateActionPrice99, False)
 
 	@PricDtls.deleter
 	def PricDtls(self):
 		del self._PricDtls
-		self._PricDtls = None
+		self._PricDtls = base_types.UninitialisedField(self, 'PricDtls', CorporateActionPrice99, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CcyOptn', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),

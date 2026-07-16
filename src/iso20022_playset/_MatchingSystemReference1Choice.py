@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
+from . import Max35Text
 
 class MatchingSystemReference1Choice(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class MatchingSystemReference1Choice(base_types._BaseFieldType):
 
 	@MtchgSysUnqRef.setter
 	def MtchgSysUnqRef(self, value):
-		self._MtchgSysUnqRef = value if type(value) != base_types.auto else self.make_default("MtchgSysUnqRef")
+		self._MtchgSysUnqRef = value if value is not None else base_types.UninitialisedField(self, 'MtchgSysUnqRef', Max35Text, False)
 
 	@MtchgSysUnqRef.deleter
 	def MtchgSysUnqRef(self):
 		del self._MtchgSysUnqRef
-		self._MtchgSysUnqRef = None
+		self._MtchgSysUnqRef = base_types.UninitialisedField(self, 'MtchgSysUnqRef', Max35Text, False)
 
 	@property
 	def RltdRef(self):
@@ -26,12 +26,12 @@ class MatchingSystemReference1Choice(base_types._BaseFieldType):
 
 	@RltdRef.setter
 	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
+		self._RltdRef = value if value is not None else base_types.UninitialisedField(self, 'RltdRef', Max35Text, False)
 
 	@RltdRef.deleter
 	def RltdRef(self):
 		del self._RltdRef
-		self._RltdRef = None
+		self._RltdRef = base_types.UninitialisedField(self, 'RltdRef', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MtchgSysUnqRef', type=Max35Text, min=0, max=1, mutex_group=1, array=False),

@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CancelledStatusReason16 import CancelledStatusReason16
-from ._ConditionallyAcceptedStatus3Choice import ConditionallyAcceptedStatus3Choice
-from ._OrderStatus4Code import OrderStatus4Code
-from ._PartiallySettledStatus10 import PartiallySettledStatus10
-from ._RejectedStatus9 import RejectedStatus9
-from ._SuspendedStatusReason4Choice import SuspendedStatusReason4Choice
+from . import CancelledStatusReason16
+from . import ConditionallyAcceptedStatus3Choice
+from . import OrderStatus4Code
+from . import PartiallySettledStatus10
+from . import RejectedStatus9
+from . import SuspendedStatusReason4Choice
 
 class OrderStatus3Choice(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class OrderStatus3Choice(base_types._BaseFieldType):
 
 	@Canc.setter
 	def Canc(self, value):
-		self._Canc = value if type(value) != base_types.auto else self.make_default("Canc")
+		self._Canc = value if value is not None else base_types.UninitialisedField(self, 'Canc', CancelledStatusReason16, False)
 
 	@Canc.deleter
 	def Canc(self):
 		del self._Canc
-		self._Canc = None
+		self._Canc = base_types.UninitialisedField(self, 'Canc', CancelledStatusReason16, False)
 
 	@property
 	def CondlyAccptd(self):
@@ -31,12 +31,12 @@ class OrderStatus3Choice(base_types._BaseFieldType):
 
 	@CondlyAccptd.setter
 	def CondlyAccptd(self, value):
-		self._CondlyAccptd = value if type(value) != base_types.auto else self.make_default("CondlyAccptd")
+		self._CondlyAccptd = value if value is not None else base_types.UninitialisedField(self, 'CondlyAccptd', ConditionallyAcceptedStatus3Choice, False)
 
 	@CondlyAccptd.deleter
 	def CondlyAccptd(self):
 		del self._CondlyAccptd
-		self._CondlyAccptd = None
+		self._CondlyAccptd = base_types.UninitialisedField(self, 'CondlyAccptd', ConditionallyAcceptedStatus3Choice, False)
 
 	@property
 	def PrtlySttld(self):
@@ -44,12 +44,12 @@ class OrderStatus3Choice(base_types._BaseFieldType):
 
 	@PrtlySttld.setter
 	def PrtlySttld(self, value):
-		self._PrtlySttld = value if type(value) != base_types.auto else self.make_default("PrtlySttld")
+		self._PrtlySttld = value if value is not None else base_types.UninitialisedField(self, 'PrtlySttld', PartiallySettledStatus10, False)
 
 	@PrtlySttld.deleter
 	def PrtlySttld(self):
 		del self._PrtlySttld
-		self._PrtlySttld = None
+		self._PrtlySttld = base_types.UninitialisedField(self, 'PrtlySttld', PartiallySettledStatus10, False)
 
 	@property
 	def Rjctd(self):
@@ -57,12 +57,12 @@ class OrderStatus3Choice(base_types._BaseFieldType):
 
 	@Rjctd.setter
 	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
+		self._Rjctd = value if value is not None else base_types.UninitialisedField(self, 'Rjctd', RejectedStatus9, True)
 
 	@Rjctd.deleter
 	def Rjctd(self):
 		del self._Rjctd
-		self._Rjctd = None
+		self._Rjctd = base_types.UninitialisedField(self, 'Rjctd', RejectedStatus9, True)
 
 	@property
 	def Sspd(self):
@@ -70,12 +70,12 @@ class OrderStatus3Choice(base_types._BaseFieldType):
 
 	@Sspd.setter
 	def Sspd(self, value):
-		self._Sspd = value if type(value) != base_types.auto else self.make_default("Sspd")
+		self._Sspd = value if value is not None else base_types.UninitialisedField(self, 'Sspd', SuspendedStatusReason4Choice, False)
 
 	@Sspd.deleter
 	def Sspd(self):
 		del self._Sspd
-		self._Sspd = None
+		self._Sspd = base_types.UninitialisedField(self, 'Sspd', SuspendedStatusReason4Choice, False)
 
 	@property
 	def Sts(self):
@@ -83,12 +83,12 @@ class OrderStatus3Choice(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', OrderStatus4Code, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', OrderStatus4Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Canc', type=CancelledStatusReason16, min=0, max=1, mutex_group=1, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
-from ._AssetClassDetailedSubProductType1Choice import AssetClassDetailedSubProductType1Choice
+from . import ActiveCurrencyAnd24Amount
+from . import AssetClassDetailedSubProductType1Choice
 
 class Commodity2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Commodity2(base_types._BaseFieldType):
 
 	@CmmdtyTp.setter
 	def CmmdtyTp(self, value):
-		self._CmmdtyTp = value if type(value) != base_types.auto else self.make_default("CmmdtyTp")
+		self._CmmdtyTp = value if value is not None else base_types.UninitialisedField(self, 'CmmdtyTp', AssetClassDetailedSubProductType1Choice, False)
 
 	@CmmdtyTp.deleter
 	def CmmdtyTp(self):
 		del self._CmmdtyTp
-		self._CmmdtyTp = None
+		self._CmmdtyTp = base_types.UninitialisedField(self, 'CmmdtyTp', AssetClassDetailedSubProductType1Choice, False)
 
 	@property
 	def MktVal(self):
@@ -27,12 +27,12 @@ class Commodity2(base_types._BaseFieldType):
 
 	@MktVal.setter
 	def MktVal(self, value):
-		self._MktVal = value if type(value) != base_types.auto else self.make_default("MktVal")
+		self._MktVal = value if value is not None else base_types.UninitialisedField(self, 'MktVal', ActiveCurrencyAnd24Amount, False)
 
 	@MktVal.deleter
 	def MktVal(self):
 		del self._MktVal
-		self._MktVal = None
+		self._MktVal = base_types.UninitialisedField(self, 'MktVal', ActiveCurrencyAnd24Amount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CmmdtyTp', type=AssetClassDetailedSubProductType1Choice, min=1, max=1, mutex_group=None, array=False),

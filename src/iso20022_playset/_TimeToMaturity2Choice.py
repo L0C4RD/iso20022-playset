@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SpecialPurpose2Code import SpecialPurpose2Code
-from ._TimeToMaturityPeriod2 import TimeToMaturityPeriod2
+from . import SpecialPurpose2Code
+from . import TimeToMaturityPeriod2
 
 class TimeToMaturity2Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TimeToMaturity2Choice(base_types._BaseFieldType):
 
 	@Prd.setter
 	def Prd(self, value):
-		self._Prd = value if type(value) != base_types.auto else self.make_default("Prd")
+		self._Prd = value if value is not None else base_types.UninitialisedField(self, 'Prd', TimeToMaturityPeriod2, False)
 
 	@Prd.deleter
 	def Prd(self):
 		del self._Prd
-		self._Prd = None
+		self._Prd = base_types.UninitialisedField(self, 'Prd', TimeToMaturityPeriod2, False)
 
 	@property
 	def Spcl(self):
@@ -27,12 +27,12 @@ class TimeToMaturity2Choice(base_types._BaseFieldType):
 
 	@Spcl.setter
 	def Spcl(self, value):
-		self._Spcl = value if type(value) != base_types.auto else self.make_default("Spcl")
+		self._Spcl = value if value is not None else base_types.UninitialisedField(self, 'Spcl', SpecialPurpose2Code, False)
 
 	@Spcl.deleter
 	def Spcl(self):
 		del self._Spcl
-		self._Spcl = None
+		self._Spcl = base_types.UninitialisedField(self, 'Spcl', SpecialPurpose2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Prd', type=TimeToMaturityPeriod2, min=0, max=1, mutex_group=1, array=False),

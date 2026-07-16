@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InteroperabilityCCP1 import InteroperabilityCCP1
-from ._SupplementaryData1 import SupplementaryData1
+from . import InteroperabilityCCP1
+from . import SupplementaryData1
 
 class CCPInteroperabilityReportV01(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CCPInteroperabilityReportV01(base_types._BaseFieldType):
 
 	@IntrprbltyCCP.setter
 	def IntrprbltyCCP(self, value):
-		self._IntrprbltyCCP = value if type(value) != base_types.auto else self.make_default("IntrprbltyCCP")
+		self._IntrprbltyCCP = value if value is not None else base_types.UninitialisedField(self, 'IntrprbltyCCP', InteroperabilityCCP1, True)
 
 	@IntrprbltyCCP.deleter
 	def IntrprbltyCCP(self):
 		del self._IntrprbltyCCP
-		self._IntrprbltyCCP = None
+		self._IntrprbltyCCP = base_types.UninitialisedField(self, 'IntrprbltyCCP', InteroperabilityCCP1, True)
 
 	@property
 	def SplmtryData(self):
@@ -27,12 +27,12 @@ class CCPInteroperabilityReportV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IntrprbltyCCP', type=InteroperabilityCCP1, min=1, max=None, mutex_group=None, array=True),

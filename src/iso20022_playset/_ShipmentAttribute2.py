@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCode import CountryCode
-from ._ISODate import ISODate
-from ._ShipmentCondition1Choice import ShipmentCondition1Choice
+from . import CountryCode
+from . import ISODate
+from . import ShipmentCondition1Choice
 
 class ShipmentAttribute2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ShipmentAttribute2(base_types._BaseFieldType):
 
 	@Conds.setter
 	def Conds(self, value):
-		self._Conds = value if type(value) != base_types.auto else self.make_default("Conds")
+		self._Conds = value if value is not None else base_types.UninitialisedField(self, 'Conds', ShipmentCondition1Choice, False)
 
 	@Conds.deleter
 	def Conds(self):
 		del self._Conds
-		self._Conds = None
+		self._Conds = base_types.UninitialisedField(self, 'Conds', ShipmentCondition1Choice, False)
 
 	@property
 	def CtryOfCntrPty(self):
@@ -28,12 +28,12 @@ class ShipmentAttribute2(base_types._BaseFieldType):
 
 	@CtryOfCntrPty.setter
 	def CtryOfCntrPty(self, value):
-		self._CtryOfCntrPty = value if type(value) != base_types.auto else self.make_default("CtryOfCntrPty")
+		self._CtryOfCntrPty = value if value is not None else base_types.UninitialisedField(self, 'CtryOfCntrPty', CountryCode, False)
 
 	@CtryOfCntrPty.deleter
 	def CtryOfCntrPty(self):
 		del self._CtryOfCntrPty
-		self._CtryOfCntrPty = None
+		self._CtryOfCntrPty = base_types.UninitialisedField(self, 'CtryOfCntrPty', CountryCode, False)
 
 	@property
 	def XpctdDt(self):
@@ -41,12 +41,12 @@ class ShipmentAttribute2(base_types._BaseFieldType):
 
 	@XpctdDt.setter
 	def XpctdDt(self, value):
-		self._XpctdDt = value if type(value) != base_types.auto else self.make_default("XpctdDt")
+		self._XpctdDt = value if value is not None else base_types.UninitialisedField(self, 'XpctdDt', ISODate, False)
 
 	@XpctdDt.deleter
 	def XpctdDt(self):
 		del self._XpctdDt
-		self._XpctdDt = None
+		self._XpctdDt = base_types.UninitialisedField(self, 'XpctdDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Conds', type=ShipmentCondition1Choice, min=0, max=1, mutex_group=None, array=False),

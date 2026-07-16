@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountIdentification3Choice import AccountIdentification3Choice
-from ._CashAccountType2 import CashAccountType2
-from ._CurrencyCode import CurrencyCode
-from ._Max70Text import Max70Text
+from . import AccountIdentification3Choice
+from . import CashAccountType2
+from . import CurrencyCode
+from . import Max70Text
 
 class CashAccount7(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CashAccount7(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', CurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', CurrencyCode, False)
 
 	@property
 	def Id(self):
@@ -29,12 +29,12 @@ class CashAccount7(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', AccountIdentification3Choice, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', AccountIdentification3Choice, False)
 
 	@property
 	def Nm(self):
@@ -42,12 +42,12 @@ class CashAccount7(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max70Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max70Text, False)
 
 	@property
 	def Tp(self):
@@ -55,12 +55,12 @@ class CashAccount7(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', CashAccountType2, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', CashAccountType2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ccy', type=CurrencyCode, min=0, max=1, mutex_group=None, array=False),

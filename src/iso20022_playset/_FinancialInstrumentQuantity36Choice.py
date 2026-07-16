@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max30DecimalNumber import Max30DecimalNumber
-from ._RestrictedFINDecimalNumber import RestrictedFINDecimalNumber
-from ._RestrictedFINImpliedCurrencyAndAmount import RestrictedFINImpliedCurrencyAndAmount
+from . import Max30DecimalNumber
+from . import RestrictedFINDecimalNumber
+from . import RestrictedFINImpliedCurrencyAndAmount
 
 class FinancialInstrumentQuantity36Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class FinancialInstrumentQuantity36Choice(base_types._BaseFieldType):
 
 	@AmtsdVal.setter
 	def AmtsdVal(self, value):
-		self._AmtsdVal = value if type(value) != base_types.auto else self.make_default("AmtsdVal")
+		self._AmtsdVal = value if value is not None else base_types.UninitialisedField(self, 'AmtsdVal', RestrictedFINImpliedCurrencyAndAmount, False)
 
 	@AmtsdVal.deleter
 	def AmtsdVal(self):
 		del self._AmtsdVal
-		self._AmtsdVal = None
+		self._AmtsdVal = base_types.UninitialisedField(self, 'AmtsdVal', RestrictedFINImpliedCurrencyAndAmount, False)
 
 	@property
 	def DgtlTknUnit(self):
@@ -28,12 +28,12 @@ class FinancialInstrumentQuantity36Choice(base_types._BaseFieldType):
 
 	@DgtlTknUnit.setter
 	def DgtlTknUnit(self, value):
-		self._DgtlTknUnit = value if type(value) != base_types.auto else self.make_default("DgtlTknUnit")
+		self._DgtlTknUnit = value if value is not None else base_types.UninitialisedField(self, 'DgtlTknUnit', Max30DecimalNumber, False)
 
 	@DgtlTknUnit.deleter
 	def DgtlTknUnit(self):
 		del self._DgtlTknUnit
-		self._DgtlTknUnit = None
+		self._DgtlTknUnit = base_types.UninitialisedField(self, 'DgtlTknUnit', Max30DecimalNumber, False)
 
 	@property
 	def FaceAmt(self):
@@ -41,12 +41,12 @@ class FinancialInstrumentQuantity36Choice(base_types._BaseFieldType):
 
 	@FaceAmt.setter
 	def FaceAmt(self, value):
-		self._FaceAmt = value if type(value) != base_types.auto else self.make_default("FaceAmt")
+		self._FaceAmt = value if value is not None else base_types.UninitialisedField(self, 'FaceAmt', RestrictedFINImpliedCurrencyAndAmount, False)
 
 	@FaceAmt.deleter
 	def FaceAmt(self):
 		del self._FaceAmt
-		self._FaceAmt = None
+		self._FaceAmt = base_types.UninitialisedField(self, 'FaceAmt', RestrictedFINImpliedCurrencyAndAmount, False)
 
 	@property
 	def Unit(self):
@@ -54,12 +54,12 @@ class FinancialInstrumentQuantity36Choice(base_types._BaseFieldType):
 
 	@Unit.setter
 	def Unit(self, value):
-		self._Unit = value if type(value) != base_types.auto else self.make_default("Unit")
+		self._Unit = value if value is not None else base_types.UninitialisedField(self, 'Unit', RestrictedFINDecimalNumber, False)
 
 	@Unit.deleter
 	def Unit(self):
 		del self._Unit
-		self._Unit = None
+		self._Unit = base_types.UninitialisedField(self, 'Unit', RestrictedFINDecimalNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmtsdVal', type=RestrictedFINImpliedCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),

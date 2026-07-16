@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._DocumentGeneralInformation5 import DocumentGeneralInformation5
-from ._DocumentIdentification22 import DocumentIdentification22
-from ._ExchangeRate1 import ExchangeRate1
-from ._ISODate import ISODate
-from ._InterestPaymentDateRange1 import InterestPaymentDateRange1
-from ._Max35Text import Max35Text
-from ._ShipmentSchedule2Choice import ShipmentSchedule2Choice
-from ._TradeParty6 import TradeParty6
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ActiveCurrencyAndAmount
+from . import ActiveCurrencyCode
+from . import DocumentGeneralInformation5
+from . import DocumentIdentification22
+from . import ExchangeRate1
+from . import ISODate
+from . import InterestPaymentDateRange1
+from . import Max35Text
+from . import ShipmentSchedule2Choice
+from . import TradeParty6
+from . import TrueFalseIndicator
 
 class TradeContract4(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class TradeContract4(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def Attchmnt(self):
@@ -36,12 +36,12 @@ class TradeContract4(base_types._BaseFieldType):
 
 	@Attchmnt.setter
 	def Attchmnt(self, value):
-		self._Attchmnt = value if type(value) != base_types.auto else self.make_default("Attchmnt")
+		self._Attchmnt = value if value is not None else base_types.UninitialisedField(self, 'Attchmnt', DocumentGeneralInformation5, True)
 
 	@Attchmnt.deleter
 	def Attchmnt(self):
 		del self._Attchmnt
-		self._Attchmnt = None
+		self._Attchmnt = base_types.UninitialisedField(self, 'Attchmnt', DocumentGeneralInformation5, True)
 
 	@property
 	def Buyr(self):
@@ -49,12 +49,12 @@ class TradeContract4(base_types._BaseFieldType):
 
 	@Buyr.setter
 	def Buyr(self, value):
-		self._Buyr = value if type(value) != base_types.auto else self.make_default("Buyr")
+		self._Buyr = value if value is not None else base_types.UninitialisedField(self, 'Buyr', TradeParty6, True)
 
 	@Buyr.deleter
 	def Buyr(self):
 		del self._Buyr
-		self._Buyr = None
+		self._Buyr = base_types.UninitialisedField(self, 'Buyr', TradeParty6, True)
 
 	@property
 	def CtrctDocId(self):
@@ -62,12 +62,12 @@ class TradeContract4(base_types._BaseFieldType):
 
 	@CtrctDocId.setter
 	def CtrctDocId(self, value):
-		self._CtrctDocId = value if type(value) != base_types.auto else self.make_default("CtrctDocId")
+		self._CtrctDocId = value if value is not None else base_types.UninitialisedField(self, 'CtrctDocId', DocumentIdentification22, False)
 
 	@CtrctDocId.deleter
 	def CtrctDocId(self):
 		del self._CtrctDocId
-		self._CtrctDocId = None
+		self._CtrctDocId = base_types.UninitialisedField(self, 'CtrctDocId', DocumentIdentification22, False)
 
 	@property
 	def MtrtyDt(self):
@@ -75,12 +75,12 @@ class TradeContract4(base_types._BaseFieldType):
 
 	@MtrtyDt.setter
 	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != base_types.auto else self.make_default("MtrtyDt")
+		self._MtrtyDt = value if value is not None else base_types.UninitialisedField(self, 'MtrtyDt', ISODate, False)
 
 	@MtrtyDt.deleter
 	def MtrtyDt(self):
 		del self._MtrtyDt
-		self._MtrtyDt = None
+		self._MtrtyDt = base_types.UninitialisedField(self, 'MtrtyDt', ISODate, False)
 
 	@property
 	def PmtSchdl(self):
@@ -88,12 +88,12 @@ class TradeContract4(base_types._BaseFieldType):
 
 	@PmtSchdl.setter
 	def PmtSchdl(self, value):
-		self._PmtSchdl = value if type(value) != base_types.auto else self.make_default("PmtSchdl")
+		self._PmtSchdl = value if value is not None else base_types.UninitialisedField(self, 'PmtSchdl', InterestPaymentDateRange1, False)
 
 	@PmtSchdl.deleter
 	def PmtSchdl(self):
 		del self._PmtSchdl
-		self._PmtSchdl = None
+		self._PmtSchdl = base_types.UninitialisedField(self, 'PmtSchdl', InterestPaymentDateRange1, False)
 
 	@property
 	def PrlngtnFlg(self):
@@ -101,12 +101,12 @@ class TradeContract4(base_types._BaseFieldType):
 
 	@PrlngtnFlg.setter
 	def PrlngtnFlg(self, value):
-		self._PrlngtnFlg = value if type(value) != base_types.auto else self.make_default("PrlngtnFlg")
+		self._PrlngtnFlg = value if value is not None else base_types.UninitialisedField(self, 'PrlngtnFlg', TrueFalseIndicator, False)
 
 	@PrlngtnFlg.deleter
 	def PrlngtnFlg(self):
 		del self._PrlngtnFlg
-		self._PrlngtnFlg = None
+		self._PrlngtnFlg = base_types.UninitialisedField(self, 'PrlngtnFlg', TrueFalseIndicator, False)
 
 	@property
 	def Sellr(self):
@@ -114,12 +114,12 @@ class TradeContract4(base_types._BaseFieldType):
 
 	@Sellr.setter
 	def Sellr(self, value):
-		self._Sellr = value if type(value) != base_types.auto else self.make_default("Sellr")
+		self._Sellr = value if value is not None else base_types.UninitialisedField(self, 'Sellr', TradeParty6, True)
 
 	@Sellr.deleter
 	def Sellr(self):
 		del self._Sellr
-		self._Sellr = None
+		self._Sellr = base_types.UninitialisedField(self, 'Sellr', TradeParty6, True)
 
 	@property
 	def ShipmntSchdl(self):
@@ -127,12 +127,12 @@ class TradeContract4(base_types._BaseFieldType):
 
 	@ShipmntSchdl.setter
 	def ShipmntSchdl(self, value):
-		self._ShipmntSchdl = value if type(value) != base_types.auto else self.make_default("ShipmntSchdl")
+		self._ShipmntSchdl = value if value is not None else base_types.UninitialisedField(self, 'ShipmntSchdl', ShipmentSchedule2Choice, False)
 
 	@ShipmntSchdl.deleter
 	def ShipmntSchdl(self):
 		del self._ShipmntSchdl
-		self._ShipmntSchdl = None
+		self._ShipmntSchdl = base_types.UninitialisedField(self, 'ShipmntSchdl', ShipmentSchedule2Choice, False)
 
 	@property
 	def StartDt(self):
@@ -140,12 +140,12 @@ class TradeContract4(base_types._BaseFieldType):
 
 	@StartDt.setter
 	def StartDt(self, value):
-		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
+		self._StartDt = value if value is not None else base_types.UninitialisedField(self, 'StartDt', ISODate, False)
 
 	@StartDt.deleter
 	def StartDt(self):
 		del self._StartDt
-		self._StartDt = None
+		self._StartDt = base_types.UninitialisedField(self, 'StartDt', ISODate, False)
 
 	@property
 	def SttlmCcy(self):
@@ -153,12 +153,12 @@ class TradeContract4(base_types._BaseFieldType):
 
 	@SttlmCcy.setter
 	def SttlmCcy(self, value):
-		self._SttlmCcy = value if type(value) != base_types.auto else self.make_default("SttlmCcy")
+		self._SttlmCcy = value if value is not None else base_types.UninitialisedField(self, 'SttlmCcy', ActiveCurrencyCode, False)
 
 	@SttlmCcy.deleter
 	def SttlmCcy(self):
 		del self._SttlmCcy
-		self._SttlmCcy = None
+		self._SttlmCcy = base_types.UninitialisedField(self, 'SttlmCcy', ActiveCurrencyCode, False)
 
 	@property
 	def TradTpId(self):
@@ -166,12 +166,12 @@ class TradeContract4(base_types._BaseFieldType):
 
 	@TradTpId.setter
 	def TradTpId(self, value):
-		self._TradTpId = value if type(value) != base_types.auto else self.make_default("TradTpId")
+		self._TradTpId = value if value is not None else base_types.UninitialisedField(self, 'TradTpId', Max35Text, False)
 
 	@TradTpId.deleter
 	def TradTpId(self):
 		del self._TradTpId
-		self._TradTpId = None
+		self._TradTpId = base_types.UninitialisedField(self, 'TradTpId', Max35Text, False)
 
 	@property
 	def XchgRateInf(self):
@@ -179,12 +179,12 @@ class TradeContract4(base_types._BaseFieldType):
 
 	@XchgRateInf.setter
 	def XchgRateInf(self, value):
-		self._XchgRateInf = value if type(value) != base_types.auto else self.make_default("XchgRateInf")
+		self._XchgRateInf = value if value is not None else base_types.UninitialisedField(self, 'XchgRateInf', ExchangeRate1, False)
 
 	@XchgRateInf.deleter
 	def XchgRateInf(self):
 		del self._XchgRateInf
-		self._XchgRateInf = None
+		self._XchgRateInf = base_types.UninitialisedField(self, 'XchgRateInf', ExchangeRate1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

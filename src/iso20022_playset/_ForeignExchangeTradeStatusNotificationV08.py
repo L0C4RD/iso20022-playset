@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RegulatoryReporting8 import RegulatoryReporting8
-from ._SupplementaryData1 import SupplementaryData1
-from ._TradeData15 import TradeData15
+from . import RegulatoryReporting8
+from . import SupplementaryData1
+from . import TradeData15
 
 class ForeignExchangeTradeStatusNotificationV08(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ForeignExchangeTradeStatusNotificationV08(base_types._BaseFieldType):
 
 	@RgltryRptg.setter
 	def RgltryRptg(self, value):
-		self._RgltryRptg = value if type(value) != base_types.auto else self.make_default("RgltryRptg")
+		self._RgltryRptg = value if value is not None else base_types.UninitialisedField(self, 'RgltryRptg', RegulatoryReporting8, False)
 
 	@RgltryRptg.deleter
 	def RgltryRptg(self):
 		del self._RgltryRptg
-		self._RgltryRptg = None
+		self._RgltryRptg = base_types.UninitialisedField(self, 'RgltryRptg', RegulatoryReporting8, False)
 
 	@property
 	def SplmtryData(self):
@@ -28,12 +28,12 @@ class ForeignExchangeTradeStatusNotificationV08(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TradData(self):
@@ -41,12 +41,12 @@ class ForeignExchangeTradeStatusNotificationV08(base_types._BaseFieldType):
 
 	@TradData.setter
 	def TradData(self, value):
-		self._TradData = value if type(value) != base_types.auto else self.make_default("TradData")
+		self._TradData = value if value is not None else base_types.UninitialisedField(self, 'TradData', TradeData15, False)
 
 	@TradData.deleter
 	def TradData(self):
 		del self._TradData
-		self._TradData = None
+		self._TradData = base_types.UninitialisedField(self, 'TradData', TradeData15, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RgltryRptg', type=RegulatoryReporting8, min=0, max=1, mutex_group=None, array=False),

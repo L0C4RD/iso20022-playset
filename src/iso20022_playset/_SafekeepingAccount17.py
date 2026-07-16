@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountSubLevel24 import AccountSubLevel24
-from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
-from ._Max35Text import Max35Text
-from ._PartyIdentification195Choice import PartyIdentification195Choice
+from . import AccountSubLevel24
+from . import FinancialInstrumentQuantity18Choice
+from . import Max35Text
+from . import PartyIdentification195Choice
 
 class SafekeepingAccount17(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class SafekeepingAccount17(base_types._BaseFieldType):
 
 	@AcctSubLvl.setter
 	def AcctSubLvl(self, value):
-		self._AcctSubLvl = value if type(value) != base_types.auto else self.make_default("AcctSubLvl")
+		self._AcctSubLvl = value if value is not None else base_types.UninitialisedField(self, 'AcctSubLvl', AccountSubLevel24, False)
 
 	@AcctSubLvl.deleter
 	def AcctSubLvl(self):
 		del self._AcctSubLvl
-		self._AcctSubLvl = None
+		self._AcctSubLvl = base_types.UninitialisedField(self, 'AcctSubLvl', AccountSubLevel24, False)
 
 	@property
 	def AcctSvcr(self):
@@ -29,12 +29,12 @@ class SafekeepingAccount17(base_types._BaseFieldType):
 
 	@AcctSvcr.setter
 	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
+		self._AcctSvcr = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcr', PartyIdentification195Choice, False)
 
 	@AcctSvcr.deleter
 	def AcctSvcr(self):
 		del self._AcctSvcr
-		self._AcctSvcr = None
+		self._AcctSvcr = base_types.UninitialisedField(self, 'AcctSvcr', PartyIdentification195Choice, False)
 
 	@property
 	def SfkpgAcct(self):
@@ -42,12 +42,12 @@ class SafekeepingAccount17(base_types._BaseFieldType):
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcct', Max35Text, False)
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
-		self._SfkpgAcct = None
+		self._SfkpgAcct = base_types.UninitialisedField(self, 'SfkpgAcct', Max35Text, False)
 
 	@property
 	def ShrhldgBalOnClntAcct(self):
@@ -55,12 +55,12 @@ class SafekeepingAccount17(base_types._BaseFieldType):
 
 	@ShrhldgBalOnClntAcct.setter
 	def ShrhldgBalOnClntAcct(self, value):
-		self._ShrhldgBalOnClntAcct = value if type(value) != base_types.auto else self.make_default("ShrhldgBalOnClntAcct")
+		self._ShrhldgBalOnClntAcct = value if value is not None else base_types.UninitialisedField(self, 'ShrhldgBalOnClntAcct', FinancialInstrumentQuantity18Choice, False)
 
 	@ShrhldgBalOnClntAcct.deleter
 	def ShrhldgBalOnClntAcct(self):
 		del self._ShrhldgBalOnClntAcct
-		self._ShrhldgBalOnClntAcct = None
+		self._ShrhldgBalOnClntAcct = base_types.UninitialisedField(self, 'ShrhldgBalOnClntAcct', FinancialInstrumentQuantity18Choice, False)
 
 	@property
 	def ShrhldgBalOnOwnAcct(self):
@@ -68,12 +68,12 @@ class SafekeepingAccount17(base_types._BaseFieldType):
 
 	@ShrhldgBalOnOwnAcct.setter
 	def ShrhldgBalOnOwnAcct(self, value):
-		self._ShrhldgBalOnOwnAcct = value if type(value) != base_types.auto else self.make_default("ShrhldgBalOnOwnAcct")
+		self._ShrhldgBalOnOwnAcct = value if value is not None else base_types.UninitialisedField(self, 'ShrhldgBalOnOwnAcct', FinancialInstrumentQuantity18Choice, False)
 
 	@ShrhldgBalOnOwnAcct.deleter
 	def ShrhldgBalOnOwnAcct(self):
 		del self._ShrhldgBalOnOwnAcct
-		self._ShrhldgBalOnOwnAcct = None
+		self._ShrhldgBalOnOwnAcct = base_types.UninitialisedField(self, 'ShrhldgBalOnOwnAcct', FinancialInstrumentQuantity18Choice, False)
 
 	@property
 	def TtlShrhldgBal(self):
@@ -81,12 +81,12 @@ class SafekeepingAccount17(base_types._BaseFieldType):
 
 	@TtlShrhldgBal.setter
 	def TtlShrhldgBal(self, value):
-		self._TtlShrhldgBal = value if type(value) != base_types.auto else self.make_default("TtlShrhldgBal")
+		self._TtlShrhldgBal = value if value is not None else base_types.UninitialisedField(self, 'TtlShrhldgBal', FinancialInstrumentQuantity18Choice, False)
 
 	@TtlShrhldgBal.deleter
 	def TtlShrhldgBal(self):
 		del self._TtlShrhldgBal
-		self._TtlShrhldgBal = None
+		self._TtlShrhldgBal = base_types.UninitialisedField(self, 'TtlShrhldgBal', FinancialInstrumentQuantity18Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctSubLvl', type=AccountSubLevel24, min=0, max=1, mutex_group=None, array=False),

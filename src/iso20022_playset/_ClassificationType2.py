@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CFIOct2015Identifier import CFIOct2015Identifier
-from ._ExternalFinancialInstrumentProductType1Code import ExternalFinancialInstrumentProductType1Code
-from ._GenericIdentification36 import GenericIdentification36
+from . import CFIOct2015Identifier
+from . import ExternalFinancialInstrumentProductType1Code
+from . import GenericIdentification36
 
 class ClassificationType2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ClassificationType2(base_types._BaseFieldType):
 
 	@AltrnClssfctn.setter
 	def AltrnClssfctn(self, value):
-		self._AltrnClssfctn = value if type(value) != base_types.auto else self.make_default("AltrnClssfctn")
+		self._AltrnClssfctn = value if value is not None else base_types.UninitialisedField(self, 'AltrnClssfctn', GenericIdentification36, True)
 
 	@AltrnClssfctn.deleter
 	def AltrnClssfctn(self):
 		del self._AltrnClssfctn
-		self._AltrnClssfctn = None
+		self._AltrnClssfctn = base_types.UninitialisedField(self, 'AltrnClssfctn', GenericIdentification36, True)
 
 	@property
 	def ClssfctnFinInstrm(self):
@@ -28,12 +28,12 @@ class ClassificationType2(base_types._BaseFieldType):
 
 	@ClssfctnFinInstrm.setter
 	def ClssfctnFinInstrm(self, value):
-		self._ClssfctnFinInstrm = value if type(value) != base_types.auto else self.make_default("ClssfctnFinInstrm")
+		self._ClssfctnFinInstrm = value if value is not None else base_types.UninitialisedField(self, 'ClssfctnFinInstrm', CFIOct2015Identifier, False)
 
 	@ClssfctnFinInstrm.deleter
 	def ClssfctnFinInstrm(self):
 		del self._ClssfctnFinInstrm
-		self._ClssfctnFinInstrm = None
+		self._ClssfctnFinInstrm = base_types.UninitialisedField(self, 'ClssfctnFinInstrm', CFIOct2015Identifier, False)
 
 	@property
 	def FinInstrmPdctTpCd(self):
@@ -41,12 +41,12 @@ class ClassificationType2(base_types._BaseFieldType):
 
 	@FinInstrmPdctTpCd.setter
 	def FinInstrmPdctTpCd(self, value):
-		self._FinInstrmPdctTpCd = value if type(value) != base_types.auto else self.make_default("FinInstrmPdctTpCd")
+		self._FinInstrmPdctTpCd = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmPdctTpCd', ExternalFinancialInstrumentProductType1Code, False)
 
 	@FinInstrmPdctTpCd.deleter
 	def FinInstrmPdctTpCd(self):
 		del self._FinInstrmPdctTpCd
-		self._FinInstrmPdctTpCd = None
+		self._FinInstrmPdctTpCd = base_types.UninitialisedField(self, 'FinInstrmPdctTpCd', ExternalFinancialInstrumentProductType1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AltrnClssfctn', type=GenericIdentification36, min=0, max=None, mutex_group=None, array=True),

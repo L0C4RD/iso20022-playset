@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
-from ._Exact3NumericText import Exact3NumericText
-from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
+from . import CorporateActionOption1FormatChoice
+from . import Exact3NumericText
+from . import UnitOrFaceAmount1Choice
 
 class CorporateActionElection1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CorporateActionElection1(base_types._BaseFieldType):
 
 	@OptnNb.setter
 	def OptnNb(self, value):
-		self._OptnNb = value if type(value) != base_types.auto else self.make_default("OptnNb")
+		self._OptnNb = value if value is not None else base_types.UninitialisedField(self, 'OptnNb', Exact3NumericText, False)
 
 	@OptnNb.deleter
 	def OptnNb(self):
 		del self._OptnNb
-		self._OptnNb = None
+		self._OptnNb = base_types.UninitialisedField(self, 'OptnNb', Exact3NumericText, False)
 
 	@property
 	def OptnTp(self):
@@ -28,12 +28,12 @@ class CorporateActionElection1(base_types._BaseFieldType):
 
 	@OptnTp.setter
 	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != base_types.auto else self.make_default("OptnTp")
+		self._OptnTp = value if value is not None else base_types.UninitialisedField(self, 'OptnTp', CorporateActionOption1FormatChoice, False)
 
 	@OptnTp.deleter
 	def OptnTp(self):
 		del self._OptnTp
-		self._OptnTp = None
+		self._OptnTp = base_types.UninitialisedField(self, 'OptnTp', CorporateActionOption1FormatChoice, False)
 
 	@property
 	def OrgnlInstdQty(self):
@@ -41,12 +41,12 @@ class CorporateActionElection1(base_types._BaseFieldType):
 
 	@OrgnlInstdQty.setter
 	def OrgnlInstdQty(self, value):
-		self._OrgnlInstdQty = value if type(value) != base_types.auto else self.make_default("OrgnlInstdQty")
+		self._OrgnlInstdQty = value if value is not None else base_types.UninitialisedField(self, 'OrgnlInstdQty', UnitOrFaceAmount1Choice, False)
 
 	@OrgnlInstdQty.deleter
 	def OrgnlInstdQty(self):
 		del self._OrgnlInstdQty
-		self._OrgnlInstdQty = None
+		self._OrgnlInstdQty = base_types.UninitialisedField(self, 'OrgnlInstdQty', UnitOrFaceAmount1Choice, False)
 
 	@property
 	def RmngQty(self):
@@ -54,12 +54,12 @@ class CorporateActionElection1(base_types._BaseFieldType):
 
 	@RmngQty.setter
 	def RmngQty(self, value):
-		self._RmngQty = value if type(value) != base_types.auto else self.make_default("RmngQty")
+		self._RmngQty = value if value is not None else base_types.UninitialisedField(self, 'RmngQty', UnitOrFaceAmount1Choice, False)
 
 	@RmngQty.deleter
 	def RmngQty(self):
 		del self._RmngQty
-		self._RmngQty = None
+		self._RmngQty = base_types.UninitialisedField(self, 'RmngQty', UnitOrFaceAmount1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OptnNb', type=Exact3NumericText, min=1, max=1, mutex_group=None, array=False),

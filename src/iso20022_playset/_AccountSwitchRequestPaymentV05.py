@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountSwitchDetails1 import AccountSwitchDetails1
-from ._CashAccount43 import CashAccount43
-from ._CreditTransferTransaction59 import CreditTransferTransaction59
-from ._MessageIdentification1 import MessageIdentification1
-from ._SupplementaryData1 import SupplementaryData1
+from . import AccountSwitchDetails1
+from . import CashAccount43
+from . import CreditTransferTransaction59
+from . import MessageIdentification1
+from . import SupplementaryData1
 
 class AccountSwitchRequestPaymentV05(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class AccountSwitchRequestPaymentV05(base_types._BaseFieldType):
 
 	@AcctSwtchDtls.setter
 	def AcctSwtchDtls(self, value):
-		self._AcctSwtchDtls = value if type(value) != base_types.auto else self.make_default("AcctSwtchDtls")
+		self._AcctSwtchDtls = value if value is not None else base_types.UninitialisedField(self, 'AcctSwtchDtls', AccountSwitchDetails1, False)
 
 	@AcctSwtchDtls.deleter
 	def AcctSwtchDtls(self):
 		del self._AcctSwtchDtls
-		self._AcctSwtchDtls = None
+		self._AcctSwtchDtls = base_types.UninitialisedField(self, 'AcctSwtchDtls', AccountSwitchDetails1, False)
 
 	@property
 	def CdtInstr(self):
@@ -30,12 +30,12 @@ class AccountSwitchRequestPaymentV05(base_types._BaseFieldType):
 
 	@CdtInstr.setter
 	def CdtInstr(self, value):
-		self._CdtInstr = value if type(value) != base_types.auto else self.make_default("CdtInstr")
+		self._CdtInstr = value if value is not None else base_types.UninitialisedField(self, 'CdtInstr', CreditTransferTransaction59, False)
 
 	@CdtInstr.deleter
 	def CdtInstr(self):
 		del self._CdtInstr
-		self._CdtInstr = None
+		self._CdtInstr = base_types.UninitialisedField(self, 'CdtInstr', CreditTransferTransaction59, False)
 
 	@property
 	def MsgId(self):
@@ -43,12 +43,12 @@ class AccountSwitchRequestPaymentV05(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@property
 	def OdAcct(self):
@@ -56,12 +56,12 @@ class AccountSwitchRequestPaymentV05(base_types._BaseFieldType):
 
 	@OdAcct.setter
 	def OdAcct(self, value):
-		self._OdAcct = value if type(value) != base_types.auto else self.make_default("OdAcct")
+		self._OdAcct = value if value is not None else base_types.UninitialisedField(self, 'OdAcct', CashAccount43, False)
 
 	@OdAcct.deleter
 	def OdAcct(self):
 		del self._OdAcct
-		self._OdAcct = None
+		self._OdAcct = base_types.UninitialisedField(self, 'OdAcct', CashAccount43, False)
 
 	@property
 	def SplmtryData(self):
@@ -69,12 +69,12 @@ class AccountSwitchRequestPaymentV05(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctSwtchDtls', type=AccountSwitchDetails1, min=1, max=1, mutex_group=None, array=False),

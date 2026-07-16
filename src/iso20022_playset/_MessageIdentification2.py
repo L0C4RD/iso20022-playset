@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
+from . import Max35Text
 
 class MessageIdentification2(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class MessageIdentification2(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@property
 	def MsgNmId(self):
@@ -26,12 +26,12 @@ class MessageIdentification2(base_types._BaseFieldType):
 
 	@MsgNmId.setter
 	def MsgNmId(self, value):
-		self._MsgNmId = value if type(value) != base_types.auto else self.make_default("MsgNmId")
+		self._MsgNmId = value if value is not None else base_types.UninitialisedField(self, 'MsgNmId', Max35Text, False)
 
 	@MsgNmId.deleter
 	def MsgNmId(self):
 		del self._MsgNmId
-		self._MsgNmId = None
+		self._MsgNmId = base_types.UninitialisedField(self, 'MsgNmId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

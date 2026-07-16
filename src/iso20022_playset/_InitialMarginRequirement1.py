@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._InitialMarginExposure1 import InitialMarginExposure1
+from . import ActiveCurrencyAndAmount
+from . import InitialMarginExposure1
 
 class InitialMarginRequirement1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class InitialMarginRequirement1(base_types._BaseFieldType):
 
 	@Cdt.setter
 	def Cdt(self, value):
-		self._Cdt = value if type(value) != base_types.auto else self.make_default("Cdt")
+		self._Cdt = value if value is not None else base_types.UninitialisedField(self, 'Cdt', ActiveCurrencyAndAmount, False)
 
 	@Cdt.deleter
 	def Cdt(self):
 		del self._Cdt
-		self._Cdt = None
+		self._Cdt = base_types.UninitialisedField(self, 'Cdt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def InitlMrgnXpsr(self):
@@ -27,12 +27,12 @@ class InitialMarginRequirement1(base_types._BaseFieldType):
 
 	@InitlMrgnXpsr.setter
 	def InitlMrgnXpsr(self, value):
-		self._InitlMrgnXpsr = value if type(value) != base_types.auto else self.make_default("InitlMrgnXpsr")
+		self._InitlMrgnXpsr = value if value is not None else base_types.UninitialisedField(self, 'InitlMrgnXpsr', InitialMarginExposure1, True)
 
 	@InitlMrgnXpsr.deleter
 	def InitlMrgnXpsr(self):
 		del self._InitlMrgnXpsr
-		self._InitlMrgnXpsr = None
+		self._InitlMrgnXpsr = base_types.UninitialisedField(self, 'InitlMrgnXpsr', InitialMarginExposure1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cdt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

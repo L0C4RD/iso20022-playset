@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MarketClaimStatusAdviceV03 import MarketClaimStatusAdviceV03
+from . import MarketClaimStatusAdviceV03
 
 class SEEV_052_001_03():
 
@@ -18,12 +18,12 @@ class SEEV_052_001_03():
 
 		@MktClmStsAdvc.setter
 		def MktClmStsAdvc(self, value):
-			self._MktClmStsAdvc = value if type(value) != base_types.auto else self.make_default("MktClmStsAdvc")
+			self._MktClmStsAdvc = value if value is not None else base_types.UninitialisedField(self, 'MktClmStsAdvc', MarketClaimStatusAdviceV03, False)
 
 		@MktClmStsAdvc.deleter
 		def MktClmStsAdvc(self):
 			del self._MktClmStsAdvc
-			self._MktClmStsAdvc = None
+			self._MktClmStsAdvc = base_types.UninitialisedField(self, 'MktClmStsAdvc', MarketClaimStatusAdviceV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='MktClmStsAdvc', type=MarketClaimStatusAdviceV03, min=1, max=1, mutex_group=None, array=False),

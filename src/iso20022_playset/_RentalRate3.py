@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max4NumericText import Max4NumericText
-from ._PeriodUnit5Code import PeriodUnit5Code
+from . import ImpliedCurrencyAndAmount
+from . import Max4NumericText
+from . import PeriodUnit5Code
 
 class RentalRate3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class RentalRate3(base_types._BaseFieldType):
 
 	@Prd.setter
 	def Prd(self, value):
-		self._Prd = value if type(value) != base_types.auto else self.make_default("Prd")
+		self._Prd = value if value is not None else base_types.UninitialisedField(self, 'Prd', PeriodUnit5Code, False)
 
 	@Prd.deleter
 	def Prd(self):
 		del self._Prd
-		self._Prd = None
+		self._Prd = base_types.UninitialisedField(self, 'Prd', PeriodUnit5Code, False)
 
 	@property
 	def PrdCnt(self):
@@ -28,12 +28,12 @@ class RentalRate3(base_types._BaseFieldType):
 
 	@PrdCnt.setter
 	def PrdCnt(self, value):
-		self._PrdCnt = value if type(value) != base_types.auto else self.make_default("PrdCnt")
+		self._PrdCnt = value if value is not None else base_types.UninitialisedField(self, 'PrdCnt', Max4NumericText, False)
 
 	@PrdCnt.deleter
 	def PrdCnt(self):
 		del self._PrdCnt
-		self._PrdCnt = None
+		self._PrdCnt = base_types.UninitialisedField(self, 'PrdCnt', Max4NumericText, False)
 
 	@property
 	def Rate(self):
@@ -41,12 +41,12 @@ class RentalRate3(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+		self._Rate = value if value is not None else base_types.UninitialisedField(self, 'Rate', ImpliedCurrencyAndAmount, False)
 
 	@Rate.deleter
 	def Rate(self):
 		del self._Rate
-		self._Rate = None
+		self._Rate = base_types.UninitialisedField(self, 'Rate', ImpliedCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Prd', type=PeriodUnit5Code, min=0, max=1, mutex_group=None, array=False),

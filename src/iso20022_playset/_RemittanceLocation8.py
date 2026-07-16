@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._RemittanceLocationData2 import RemittanceLocationData2
+from . import Max35Text
+from . import RemittanceLocationData2
 
 class RemittanceLocation8(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class RemittanceLocation8(base_types._BaseFieldType):
 
 	@RmtId.setter
 	def RmtId(self, value):
-		self._RmtId = value if type(value) != base_types.auto else self.make_default("RmtId")
+		self._RmtId = value if value is not None else base_types.UninitialisedField(self, 'RmtId', Max35Text, False)
 
 	@RmtId.deleter
 	def RmtId(self):
 		del self._RmtId
-		self._RmtId = None
+		self._RmtId = base_types.UninitialisedField(self, 'RmtId', Max35Text, False)
 
 	@property
 	def RmtLctnDtls(self):
@@ -27,12 +27,12 @@ class RemittanceLocation8(base_types._BaseFieldType):
 
 	@RmtLctnDtls.setter
 	def RmtLctnDtls(self, value):
-		self._RmtLctnDtls = value if type(value) != base_types.auto else self.make_default("RmtLctnDtls")
+		self._RmtLctnDtls = value if value is not None else base_types.UninitialisedField(self, 'RmtLctnDtls', RemittanceLocationData2, True)
 
 	@RmtLctnDtls.deleter
 	def RmtLctnDtls(self):
 		del self._RmtLctnDtls
-		self._RmtLctnDtls = None
+		self._RmtLctnDtls = base_types.UninitialisedField(self, 'RmtLctnDtls', RemittanceLocationData2, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RmtId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

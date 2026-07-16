@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._ReturnIndicator2 import ReturnIndicator2
-from ._SearchCriteria2Choice import SearchCriteria2Choice
-from ._StatusResponse1Code import StatusResponse1Code
-from ._SupplementaryData1 import SupplementaryData1
+from . import Max35Text
+from . import ReturnIndicator2
+from . import SearchCriteria2Choice
+from . import StatusResponse1Code
+from . import SupplementaryData1
 
 class InformationRequestResponseV02(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class InformationRequestResponseV02(base_types._BaseFieldType):
 
 	@InvstgtnId.setter
 	def InvstgtnId(self, value):
-		self._InvstgtnId = value if type(value) != base_types.auto else self.make_default("InvstgtnId")
+		self._InvstgtnId = value if value is not None else base_types.UninitialisedField(self, 'InvstgtnId', Max35Text, False)
 
 	@InvstgtnId.deleter
 	def InvstgtnId(self):
 		del self._InvstgtnId
-		self._InvstgtnId = None
+		self._InvstgtnId = base_types.UninitialisedField(self, 'InvstgtnId', Max35Text, False)
 
 	@property
 	def RspnId(self):
@@ -30,12 +30,12 @@ class InformationRequestResponseV02(base_types._BaseFieldType):
 
 	@RspnId.setter
 	def RspnId(self, value):
-		self._RspnId = value if type(value) != base_types.auto else self.make_default("RspnId")
+		self._RspnId = value if value is not None else base_types.UninitialisedField(self, 'RspnId', Max35Text, False)
 
 	@RspnId.deleter
 	def RspnId(self):
 		del self._RspnId
-		self._RspnId = None
+		self._RspnId = base_types.UninitialisedField(self, 'RspnId', Max35Text, False)
 
 	@property
 	def RspnSts(self):
@@ -43,12 +43,12 @@ class InformationRequestResponseV02(base_types._BaseFieldType):
 
 	@RspnSts.setter
 	def RspnSts(self, value):
-		self._RspnSts = value if type(value) != base_types.auto else self.make_default("RspnSts")
+		self._RspnSts = value if value is not None else base_types.UninitialisedField(self, 'RspnSts', StatusResponse1Code, False)
 
 	@RspnSts.deleter
 	def RspnSts(self):
 		del self._RspnSts
-		self._RspnSts = None
+		self._RspnSts = base_types.UninitialisedField(self, 'RspnSts', StatusResponse1Code, False)
 
 	@property
 	def RtrInd(self):
@@ -56,12 +56,12 @@ class InformationRequestResponseV02(base_types._BaseFieldType):
 
 	@RtrInd.setter
 	def RtrInd(self, value):
-		self._RtrInd = value if type(value) != base_types.auto else self.make_default("RtrInd")
+		self._RtrInd = value if value is not None else base_types.UninitialisedField(self, 'RtrInd', ReturnIndicator2, True)
 
 	@RtrInd.deleter
 	def RtrInd(self):
 		del self._RtrInd
-		self._RtrInd = None
+		self._RtrInd = base_types.UninitialisedField(self, 'RtrInd', ReturnIndicator2, True)
 
 	@property
 	def SchCrit(self):
@@ -69,12 +69,12 @@ class InformationRequestResponseV02(base_types._BaseFieldType):
 
 	@SchCrit.setter
 	def SchCrit(self, value):
-		self._SchCrit = value if type(value) != base_types.auto else self.make_default("SchCrit")
+		self._SchCrit = value if value is not None else base_types.UninitialisedField(self, 'SchCrit', SearchCriteria2Choice, False)
 
 	@SchCrit.deleter
 	def SchCrit(self):
 		del self._SchCrit
-		self._SchCrit = None
+		self._SchCrit = base_types.UninitialisedField(self, 'SchCrit', SearchCriteria2Choice, False)
 
 	@property
 	def SplmtryData(self):
@@ -82,12 +82,12 @@ class InformationRequestResponseV02(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InvstgtnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._TradeQueryCriteria10 import TradeQueryCriteria10
-from ._TradeRecurrentQuery5 import TradeRecurrentQuery5
+from . import TradeQueryCriteria10
+from . import TradeRecurrentQuery5
 
 class TradeReportQuery13Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TradeReportQuery13Choice(base_types._BaseFieldType):
 
 	@AdHocQry.setter
 	def AdHocQry(self, value):
-		self._AdHocQry = value if type(value) != base_types.auto else self.make_default("AdHocQry")
+		self._AdHocQry = value if value is not None else base_types.UninitialisedField(self, 'AdHocQry', TradeQueryCriteria10, False)
 
 	@AdHocQry.deleter
 	def AdHocQry(self):
 		del self._AdHocQry
-		self._AdHocQry = None
+		self._AdHocQry = base_types.UninitialisedField(self, 'AdHocQry', TradeQueryCriteria10, False)
 
 	@property
 	def RcrntQry(self):
@@ -27,12 +27,12 @@ class TradeReportQuery13Choice(base_types._BaseFieldType):
 
 	@RcrntQry.setter
 	def RcrntQry(self, value):
-		self._RcrntQry = value if type(value) != base_types.auto else self.make_default("RcrntQry")
+		self._RcrntQry = value if value is not None else base_types.UninitialisedField(self, 'RcrntQry', TradeRecurrentQuery5, False)
 
 	@RcrntQry.deleter
 	def RcrntQry(self):
 		del self._RcrntQry
-		self._RcrntQry = None
+		self._RcrntQry = base_types.UninitialisedField(self, 'RcrntQry', TradeRecurrentQuery5, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AdHocQry', type=TradeQueryCriteria10, min=0, max=1, mutex_group=1, array=False),

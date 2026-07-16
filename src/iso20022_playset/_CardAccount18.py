@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMAccountUsage1Code import ATMAccountUsage1Code
-from ._ATMService29 import ATMService29
-from ._AccountIdentification80Choice import AccountIdentification80Choice
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._AmountAndDirection111 import AmountAndDirection111
-from ._CardAccountType3Code import CardAccountType3Code
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
-from ._PartyIdentification177Choice import PartyIdentification177Choice
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ATMAccountUsage1Code
+from . import ATMService29
+from . import AccountIdentification80Choice
+from . import ActiveCurrencyCode
+from . import AmountAndDirection111
+from . import CardAccountType3Code
+from . import Max35Text
+from . import Max70Text
+from . import PartyIdentification177Choice
+from . import TrueFalseIndicator
 
 class CardAccount18(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class CardAccount18(base_types._BaseFieldType):
 
 	@AcctIdr.setter
 	def AcctIdr(self, value):
-		self._AcctIdr = value if type(value) != base_types.auto else self.make_default("AcctIdr")
+		self._AcctIdr = value if value is not None else base_types.UninitialisedField(self, 'AcctIdr', AccountIdentification80Choice, False)
 
 	@AcctIdr.deleter
 	def AcctIdr(self):
 		del self._AcctIdr
-		self._AcctIdr = None
+		self._AcctIdr = base_types.UninitialisedField(self, 'AcctIdr', AccountIdentification80Choice, False)
 
 	@property
 	def AcctNm(self):
@@ -35,12 +35,12 @@ class CardAccount18(base_types._BaseFieldType):
 
 	@AcctNm.setter
 	def AcctNm(self, value):
-		self._AcctNm = value if type(value) != base_types.auto else self.make_default("AcctNm")
+		self._AcctNm = value if value is not None else base_types.UninitialisedField(self, 'AcctNm', Max70Text, False)
 
 	@AcctNm.deleter
 	def AcctNm(self):
 		del self._AcctNm
-		self._AcctNm = None
+		self._AcctNm = base_types.UninitialisedField(self, 'AcctNm', Max70Text, False)
 
 	@property
 	def AcctTp(self):
@@ -48,12 +48,12 @@ class CardAccount18(base_types._BaseFieldType):
 
 	@AcctTp.setter
 	def AcctTp(self, value):
-		self._AcctTp = value if type(value) != base_types.auto else self.make_default("AcctTp")
+		self._AcctTp = value if value is not None else base_types.UninitialisedField(self, 'AcctTp', CardAccountType3Code, False)
 
 	@AcctTp.deleter
 	def AcctTp(self):
 		del self._AcctTp
-		self._AcctTp = None
+		self._AcctTp = base_types.UninitialisedField(self, 'AcctTp', CardAccountType3Code, False)
 
 	@property
 	def AcctUsgCd(self):
@@ -61,12 +61,12 @@ class CardAccount18(base_types._BaseFieldType):
 
 	@AcctUsgCd.setter
 	def AcctUsgCd(self, value):
-		self._AcctUsgCd = value if type(value) != base_types.auto else self.make_default("AcctUsgCd")
+		self._AcctUsgCd = value if value is not None else base_types.UninitialisedField(self, 'AcctUsgCd', ATMAccountUsage1Code, False)
 
 	@AcctUsgCd.deleter
 	def AcctUsgCd(self):
 		del self._AcctUsgCd
-		self._AcctUsgCd = None
+		self._AcctUsgCd = base_types.UninitialisedField(self, 'AcctUsgCd', ATMAccountUsage1Code, False)
 
 	@property
 	def AllwdSvc(self):
@@ -74,12 +74,12 @@ class CardAccount18(base_types._BaseFieldType):
 
 	@AllwdSvc.setter
 	def AllwdSvc(self, value):
-		self._AllwdSvc = value if type(value) != base_types.auto else self.make_default("AllwdSvc")
+		self._AllwdSvc = value if value is not None else base_types.UninitialisedField(self, 'AllwdSvc', ATMService29, True)
 
 	@AllwdSvc.deleter
 	def AllwdSvc(self):
 		del self._AllwdSvc
-		self._AllwdSvc = None
+		self._AllwdSvc = base_types.UninitialisedField(self, 'AllwdSvc', ATMService29, True)
 
 	@property
 	def Bal(self):
@@ -87,12 +87,12 @@ class CardAccount18(base_types._BaseFieldType):
 
 	@Bal.setter
 	def Bal(self, value):
-		self._Bal = value if type(value) != base_types.auto else self.make_default("Bal")
+		self._Bal = value if value is not None else base_types.UninitialisedField(self, 'Bal', AmountAndDirection111, True)
 
 	@Bal.deleter
 	def Bal(self):
 		del self._Bal
-		self._Bal = None
+		self._Bal = base_types.UninitialisedField(self, 'Bal', AmountAndDirection111, True)
 
 	@property
 	def BalDispFlg(self):
@@ -100,12 +100,12 @@ class CardAccount18(base_types._BaseFieldType):
 
 	@BalDispFlg.setter
 	def BalDispFlg(self, value):
-		self._BalDispFlg = value if type(value) != base_types.auto else self.make_default("BalDispFlg")
+		self._BalDispFlg = value if value is not None else base_types.UninitialisedField(self, 'BalDispFlg', TrueFalseIndicator, False)
 
 	@BalDispFlg.deleter
 	def BalDispFlg(self):
 		del self._BalDispFlg
-		self._BalDispFlg = None
+		self._BalDispFlg = base_types.UninitialisedField(self, 'BalDispFlg', TrueFalseIndicator, False)
 
 	@property
 	def Ccy(self):
@@ -113,12 +113,12 @@ class CardAccount18(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@property
 	def CdtRef(self):
@@ -126,12 +126,12 @@ class CardAccount18(base_types._BaseFieldType):
 
 	@CdtRef.setter
 	def CdtRef(self, value):
-		self._CdtRef = value if type(value) != base_types.auto else self.make_default("CdtRef")
+		self._CdtRef = value if value is not None else base_types.UninitialisedField(self, 'CdtRef', Max35Text, False)
 
 	@CdtRef.deleter
 	def CdtRef(self):
 		del self._CdtRef
-		self._CdtRef = None
+		self._CdtRef = base_types.UninitialisedField(self, 'CdtRef', Max35Text, False)
 
 	@property
 	def DfltAcctInd(self):
@@ -139,12 +139,12 @@ class CardAccount18(base_types._BaseFieldType):
 
 	@DfltAcctInd.setter
 	def DfltAcctInd(self, value):
-		self._DfltAcctInd = value if type(value) != base_types.auto else self.make_default("DfltAcctInd")
+		self._DfltAcctInd = value if value is not None else base_types.UninitialisedField(self, 'DfltAcctInd', TrueFalseIndicator, False)
 
 	@DfltAcctInd.deleter
 	def DfltAcctInd(self):
 		del self._DfltAcctInd
-		self._DfltAcctInd = None
+		self._DfltAcctInd = base_types.UninitialisedField(self, 'DfltAcctInd', TrueFalseIndicator, False)
 
 	@property
 	def Svcr(self):
@@ -152,12 +152,12 @@ class CardAccount18(base_types._BaseFieldType):
 
 	@Svcr.setter
 	def Svcr(self, value):
-		self._Svcr = value if type(value) != base_types.auto else self.make_default("Svcr")
+		self._Svcr = value if value is not None else base_types.UninitialisedField(self, 'Svcr', PartyIdentification177Choice, False)
 
 	@Svcr.deleter
 	def Svcr(self):
 		del self._Svcr
-		self._Svcr = None
+		self._Svcr = base_types.UninitialisedField(self, 'Svcr', PartyIdentification177Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctIdr', type=AccountIdentification80Choice, min=0, max=1, mutex_group=None, array=False),

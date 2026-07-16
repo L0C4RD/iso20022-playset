@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._CountryCode import CountryCode
-from ._DistributionPolicy1Code import DistributionPolicy1Code
-from ._FormOfSecurity1Code import FormOfSecurity1Code
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
-from ._YesNoIndicator import YesNoIndicator
+from . import ActiveCurrencyCode
+from . import ActiveOrHistoricCurrencyCode
+from . import CountryCode
+from . import DistributionPolicy1Code
+from . import FormOfSecurity1Code
+from . import Max140Text
+from . import Max35Text
+from . import YesNoIndicator
 
 class FinancialInstrument21(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class FinancialInstrument21(base_types._BaseFieldType):
 
 	@BaseCcy.setter
 	def BaseCcy(self, value):
-		self._BaseCcy = value if type(value) != base_types.auto else self.make_default("BaseCcy")
+		self._BaseCcy = value if value is not None else base_types.UninitialisedField(self, 'BaseCcy', ActiveCurrencyCode, False)
 
 	@BaseCcy.deleter
 	def BaseCcy(self):
 		del self._BaseCcy
-		self._BaseCcy = None
+		self._BaseCcy = base_types.UninitialisedField(self, 'BaseCcy', ActiveCurrencyCode, False)
 
 	@property
 	def ClssTp(self):
@@ -33,12 +33,12 @@ class FinancialInstrument21(base_types._BaseFieldType):
 
 	@ClssTp.setter
 	def ClssTp(self, value):
-		self._ClssTp = value if type(value) != base_types.auto else self.make_default("ClssTp")
+		self._ClssTp = value if value is not None else base_types.UninitialisedField(self, 'ClssTp', Max35Text, False)
 
 	@ClssTp.deleter
 	def ClssTp(self):
 		del self._ClssTp
-		self._ClssTp = None
+		self._ClssTp = base_types.UninitialisedField(self, 'ClssTp', Max35Text, False)
 
 	@property
 	def CtryOfDmcl(self):
@@ -46,12 +46,12 @@ class FinancialInstrument21(base_types._BaseFieldType):
 
 	@CtryOfDmcl.setter
 	def CtryOfDmcl(self, value):
-		self._CtryOfDmcl = value if type(value) != base_types.auto else self.make_default("CtryOfDmcl")
+		self._CtryOfDmcl = value if value is not None else base_types.UninitialisedField(self, 'CtryOfDmcl', CountryCode, False)
 
 	@CtryOfDmcl.deleter
 	def CtryOfDmcl(self):
 		del self._CtryOfDmcl
-		self._CtryOfDmcl = None
+		self._CtryOfDmcl = base_types.UninitialisedField(self, 'CtryOfDmcl', CountryCode, False)
 
 	@property
 	def DnmtnCcy(self):
@@ -59,12 +59,12 @@ class FinancialInstrument21(base_types._BaseFieldType):
 
 	@DnmtnCcy.setter
 	def DnmtnCcy(self, value):
-		self._DnmtnCcy = value if type(value) != base_types.auto else self.make_default("DnmtnCcy")
+		self._DnmtnCcy = value if value is not None else base_types.UninitialisedField(self, 'DnmtnCcy', ActiveCurrencyCode, False)
 
 	@DnmtnCcy.deleter
 	def DnmtnCcy(self):
 		del self._DnmtnCcy
-		self._DnmtnCcy = None
+		self._DnmtnCcy = base_types.UninitialisedField(self, 'DnmtnCcy', ActiveCurrencyCode, False)
 
 	@property
 	def DstrbtnPlcy(self):
@@ -72,12 +72,12 @@ class FinancialInstrument21(base_types._BaseFieldType):
 
 	@DstrbtnPlcy.setter
 	def DstrbtnPlcy(self, value):
-		self._DstrbtnPlcy = value if type(value) != base_types.auto else self.make_default("DstrbtnPlcy")
+		self._DstrbtnPlcy = value if value is not None else base_types.UninitialisedField(self, 'DstrbtnPlcy', DistributionPolicy1Code, False)
 
 	@DstrbtnPlcy.deleter
 	def DstrbtnPlcy(self):
 		del self._DstrbtnPlcy
-		self._DstrbtnPlcy = None
+		self._DstrbtnPlcy = base_types.UninitialisedField(self, 'DstrbtnPlcy', DistributionPolicy1Code, False)
 
 	@property
 	def DualFndInd(self):
@@ -85,12 +85,12 @@ class FinancialInstrument21(base_types._BaseFieldType):
 
 	@DualFndInd.setter
 	def DualFndInd(self, value):
-		self._DualFndInd = value if type(value) != base_types.auto else self.make_default("DualFndInd")
+		self._DualFndInd = value if value is not None else base_types.UninitialisedField(self, 'DualFndInd', YesNoIndicator, False)
 
 	@DualFndInd.deleter
 	def DualFndInd(self):
 		del self._DualFndInd
-		self._DualFndInd = None
+		self._DualFndInd = base_types.UninitialisedField(self, 'DualFndInd', YesNoIndicator, False)
 
 	@property
 	def PdctGrp(self):
@@ -98,12 +98,12 @@ class FinancialInstrument21(base_types._BaseFieldType):
 
 	@PdctGrp.setter
 	def PdctGrp(self, value):
-		self._PdctGrp = value if type(value) != base_types.auto else self.make_default("PdctGrp")
+		self._PdctGrp = value if value is not None else base_types.UninitialisedField(self, 'PdctGrp', Max140Text, False)
 
 	@PdctGrp.deleter
 	def PdctGrp(self):
 		del self._PdctGrp
-		self._PdctGrp = None
+		self._PdctGrp = base_types.UninitialisedField(self, 'PdctGrp', Max140Text, False)
 
 	@property
 	def RegdDstrbtnCtry(self):
@@ -111,12 +111,12 @@ class FinancialInstrument21(base_types._BaseFieldType):
 
 	@RegdDstrbtnCtry.setter
 	def RegdDstrbtnCtry(self, value):
-		self._RegdDstrbtnCtry = value if type(value) != base_types.auto else self.make_default("RegdDstrbtnCtry")
+		self._RegdDstrbtnCtry = value if value is not None else base_types.UninitialisedField(self, 'RegdDstrbtnCtry', CountryCode, True)
 
 	@RegdDstrbtnCtry.deleter
 	def RegdDstrbtnCtry(self):
 		del self._RegdDstrbtnCtry
-		self._RegdDstrbtnCtry = None
+		self._RegdDstrbtnCtry = base_types.UninitialisedField(self, 'RegdDstrbtnCtry', CountryCode, True)
 
 	@property
 	def ReqdNAVCcy(self):
@@ -124,12 +124,12 @@ class FinancialInstrument21(base_types._BaseFieldType):
 
 	@ReqdNAVCcy.setter
 	def ReqdNAVCcy(self, value):
-		self._ReqdNAVCcy = value if type(value) != base_types.auto else self.make_default("ReqdNAVCcy")
+		self._ReqdNAVCcy = value if value is not None else base_types.UninitialisedField(self, 'ReqdNAVCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@ReqdNAVCcy.deleter
 	def ReqdNAVCcy(self):
 		del self._ReqdNAVCcy
-		self._ReqdNAVCcy = None
+		self._ReqdNAVCcy = base_types.UninitialisedField(self, 'ReqdNAVCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def SctiesForm(self):
@@ -137,12 +137,12 @@ class FinancialInstrument21(base_types._BaseFieldType):
 
 	@SctiesForm.setter
 	def SctiesForm(self, value):
-		self._SctiesForm = value if type(value) != base_types.auto else self.make_default("SctiesForm")
+		self._SctiesForm = value if value is not None else base_types.UninitialisedField(self, 'SctiesForm', FormOfSecurity1Code, False)
 
 	@SctiesForm.deleter
 	def SctiesForm(self):
 		del self._SctiesForm
-		self._SctiesForm = None
+		self._SctiesForm = base_types.UninitialisedField(self, 'SctiesForm', FormOfSecurity1Code, False)
 
 	@property
 	def UmbrllNm(self):
@@ -150,12 +150,12 @@ class FinancialInstrument21(base_types._BaseFieldType):
 
 	@UmbrllNm.setter
 	def UmbrllNm(self, value):
-		self._UmbrllNm = value if type(value) != base_types.auto else self.make_default("UmbrllNm")
+		self._UmbrllNm = value if value is not None else base_types.UninitialisedField(self, 'UmbrllNm', Max35Text, False)
 
 	@UmbrllNm.deleter
 	def UmbrllNm(self):
 		del self._UmbrllNm
-		self._UmbrllNm = None
+		self._UmbrllNm = base_types.UninitialisedField(self, 'UmbrllNm', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BaseCcy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),

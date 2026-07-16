@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
-from ._Max35Text import Max35Text
-from ._ProceedsQuantityBreakdown1 import ProceedsQuantityBreakdown1
-from ._TransferOfProceedsType1Code import TransferOfProceedsType1Code
+from . import FinancialInstrumentQuantity18Choice
+from . import Max35Text
+from . import ProceedsQuantityBreakdown1
+from . import TransferOfProceedsType1Code
 
 class RelatedSettlementInstruction2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class RelatedSettlementInstruction2(base_types._BaseFieldType):
 
 	@PrcdsQtyBrkdwn.setter
 	def PrcdsQtyBrkdwn(self, value):
-		self._PrcdsQtyBrkdwn = value if type(value) != base_types.auto else self.make_default("PrcdsQtyBrkdwn")
+		self._PrcdsQtyBrkdwn = value if value is not None else base_types.UninitialisedField(self, 'PrcdsQtyBrkdwn', ProceedsQuantityBreakdown1, False)
 
 	@PrcdsQtyBrkdwn.deleter
 	def PrcdsQtyBrkdwn(self):
 		del self._PrcdsQtyBrkdwn
-		self._PrcdsQtyBrkdwn = None
+		self._PrcdsQtyBrkdwn = base_types.UninitialisedField(self, 'PrcdsQtyBrkdwn', ProceedsQuantityBreakdown1, False)
 
 	@property
 	def RltdSttlmInstrId(self):
@@ -29,12 +29,12 @@ class RelatedSettlementInstruction2(base_types._BaseFieldType):
 
 	@RltdSttlmInstrId.setter
 	def RltdSttlmInstrId(self, value):
-		self._RltdSttlmInstrId = value if type(value) != base_types.auto else self.make_default("RltdSttlmInstrId")
+		self._RltdSttlmInstrId = value if value is not None else base_types.UninitialisedField(self, 'RltdSttlmInstrId', Max35Text, False)
 
 	@RltdSttlmInstrId.deleter
 	def RltdSttlmInstrId(self):
 		del self._RltdSttlmInstrId
-		self._RltdSttlmInstrId = None
+		self._RltdSttlmInstrId = base_types.UninitialisedField(self, 'RltdSttlmInstrId', Max35Text, False)
 
 	@property
 	def RltdSttlmQty(self):
@@ -42,12 +42,12 @@ class RelatedSettlementInstruction2(base_types._BaseFieldType):
 
 	@RltdSttlmQty.setter
 	def RltdSttlmQty(self, value):
-		self._RltdSttlmQty = value if type(value) != base_types.auto else self.make_default("RltdSttlmQty")
+		self._RltdSttlmQty = value if value is not None else base_types.UninitialisedField(self, 'RltdSttlmQty', FinancialInstrumentQuantity18Choice, False)
 
 	@RltdSttlmQty.deleter
 	def RltdSttlmQty(self):
 		del self._RltdSttlmQty
-		self._RltdSttlmQty = None
+		self._RltdSttlmQty = base_types.UninitialisedField(self, 'RltdSttlmQty', FinancialInstrumentQuantity18Choice, False)
 
 	@property
 	def TrfOfPrcdsTpInd(self):
@@ -55,12 +55,12 @@ class RelatedSettlementInstruction2(base_types._BaseFieldType):
 
 	@TrfOfPrcdsTpInd.setter
 	def TrfOfPrcdsTpInd(self, value):
-		self._TrfOfPrcdsTpInd = value if type(value) != base_types.auto else self.make_default("TrfOfPrcdsTpInd")
+		self._TrfOfPrcdsTpInd = value if value is not None else base_types.UninitialisedField(self, 'TrfOfPrcdsTpInd', TransferOfProceedsType1Code, False)
 
 	@TrfOfPrcdsTpInd.deleter
 	def TrfOfPrcdsTpInd(self):
 		del self._TrfOfPrcdsTpInd
-		self._TrfOfPrcdsTpInd = None
+		self._TrfOfPrcdsTpInd = base_types.UninitialisedField(self, 'TrfOfPrcdsTpInd', TransferOfProceedsType1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrcdsQtyBrkdwn', type=ProceedsQuantityBreakdown1, min=0, max=1, mutex_group=None, array=False),

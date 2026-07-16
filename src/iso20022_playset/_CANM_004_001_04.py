@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._KeyExchangeResponseV04 import KeyExchangeResponseV04
+from . import KeyExchangeResponseV04
 
 class CANM_004_001_04():
 
@@ -18,12 +18,12 @@ class CANM_004_001_04():
 
 		@KeyXchgRspn.setter
 		def KeyXchgRspn(self, value):
-			self._KeyXchgRspn = value if type(value) != base_types.auto else self.make_default("KeyXchgRspn")
+			self._KeyXchgRspn = value if value is not None else base_types.UninitialisedField(self, 'KeyXchgRspn', KeyExchangeResponseV04, False)
 
 		@KeyXchgRspn.deleter
 		def KeyXchgRspn(self):
 			del self._KeyXchgRspn
-			self._KeyXchgRspn = None
+			self._KeyXchgRspn = base_types.UninitialisedField(self, 'KeyXchgRspn', KeyExchangeResponseV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='KeyXchgRspn', type=KeyExchangeResponseV04, min=1, max=1, mutex_group=None, array=False),

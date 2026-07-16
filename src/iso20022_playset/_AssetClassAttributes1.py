@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DerivativeForeignExchange2 import DerivativeForeignExchange2
-from ._DerivativeInterest2 import DerivativeInterest2
+from . import DerivativeForeignExchange2
+from . import DerivativeInterest2
 
 class AssetClassAttributes1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AssetClassAttributes1(base_types._BaseFieldType):
 
 	@FX.setter
 	def FX(self, value):
-		self._FX = value if type(value) != base_types.auto else self.make_default("FX")
+		self._FX = value if value is not None else base_types.UninitialisedField(self, 'FX', DerivativeForeignExchange2, False)
 
 	@FX.deleter
 	def FX(self):
 		del self._FX
-		self._FX = None
+		self._FX = base_types.UninitialisedField(self, 'FX', DerivativeForeignExchange2, False)
 
 	@property
 	def Intrst(self):
@@ -27,12 +27,12 @@ class AssetClassAttributes1(base_types._BaseFieldType):
 
 	@Intrst.setter
 	def Intrst(self, value):
-		self._Intrst = value if type(value) != base_types.auto else self.make_default("Intrst")
+		self._Intrst = value if value is not None else base_types.UninitialisedField(self, 'Intrst', DerivativeInterest2, False)
 
 	@Intrst.deleter
 	def Intrst(self):
 		del self._Intrst
-		self._Intrst = None
+		self._Intrst = base_types.UninitialisedField(self, 'Intrst', DerivativeInterest2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FX', type=DerivativeForeignExchange2, min=1, max=1, mutex_group=None, array=False),

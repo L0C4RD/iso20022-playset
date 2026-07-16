@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CollateralAndExposureReportV05 import CollateralAndExposureReportV05
+from . import CollateralAndExposureReportV05
 
 class COLR_016_001_05():
 
@@ -18,12 +18,12 @@ class COLR_016_001_05():
 
 		@CollAndXpsrRpt.setter
 		def CollAndXpsrRpt(self, value):
-			self._CollAndXpsrRpt = value if type(value) != base_types.auto else self.make_default("CollAndXpsrRpt")
+			self._CollAndXpsrRpt = value if value is not None else base_types.UninitialisedField(self, 'CollAndXpsrRpt', CollateralAndExposureReportV05, False)
 
 		@CollAndXpsrRpt.deleter
 		def CollAndXpsrRpt(self):
 			del self._CollAndXpsrRpt
-			self._CollAndXpsrRpt = None
+			self._CollAndXpsrRpt = base_types.UninitialisedField(self, 'CollAndXpsrRpt', CollateralAndExposureReportV05, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CollAndXpsrRpt', type=CollateralAndExposureReportV05, min=1, max=1, mutex_group=None, array=False),

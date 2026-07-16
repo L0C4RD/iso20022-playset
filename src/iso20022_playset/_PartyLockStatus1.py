@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._LockStatus1Code import LockStatus1Code
-from ._Max35Text import Max35Text
+from . import ISODate
+from . import LockStatus1Code
+from . import Max35Text
 
 class PartyLockStatus1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PartyLockStatus1(base_types._BaseFieldType):
 
 	@LckRsn.setter
 	def LckRsn(self, value):
-		self._LckRsn = value if type(value) != base_types.auto else self.make_default("LckRsn")
+		self._LckRsn = value if value is not None else base_types.UninitialisedField(self, 'LckRsn', Max35Text, True)
 
 	@LckRsn.deleter
 	def LckRsn(self):
 		del self._LckRsn
-		self._LckRsn = None
+		self._LckRsn = base_types.UninitialisedField(self, 'LckRsn', Max35Text, True)
 
 	@property
 	def Sts(self):
@@ -28,12 +28,12 @@ class PartyLockStatus1(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', LockStatus1Code, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', LockStatus1Code, False)
 
 	@property
 	def VldFr(self):
@@ -41,12 +41,12 @@ class PartyLockStatus1(base_types._BaseFieldType):
 
 	@VldFr.setter
 	def VldFr(self, value):
-		self._VldFr = value if type(value) != base_types.auto else self.make_default("VldFr")
+		self._VldFr = value if value is not None else base_types.UninitialisedField(self, 'VldFr', ISODate, False)
 
 	@VldFr.deleter
 	def VldFr(self):
 		del self._VldFr
-		self._VldFr = None
+		self._VldFr = base_types.UninitialisedField(self, 'VldFr', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LckRsn', type=Max35Text, min=0, max=None, mutex_group=None, array=True),

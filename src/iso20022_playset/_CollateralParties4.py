@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification37 import GenericIdentification37
-from ._PartyIdentification232 import PartyIdentification232
+from . import GenericIdentification37
+from . import PartyIdentification232
 
 class CollateralParties4(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CollateralParties4(base_types._BaseFieldType):
 
 	@ClntPtyB.setter
 	def ClntPtyB(self, value):
-		self._ClntPtyB = value if type(value) != base_types.auto else self.make_default("ClntPtyB")
+		self._ClntPtyB = value if value is not None else base_types.UninitialisedField(self, 'ClntPtyB', PartyIdentification232, False)
 
 	@ClntPtyB.deleter
 	def ClntPtyB(self):
 		del self._ClntPtyB
-		self._ClntPtyB = None
+		self._ClntPtyB = base_types.UninitialisedField(self, 'ClntPtyB', PartyIdentification232, False)
 
 	@property
 	def ElgbltySetPrfl(self):
@@ -27,12 +27,12 @@ class CollateralParties4(base_types._BaseFieldType):
 
 	@ElgbltySetPrfl.setter
 	def ElgbltySetPrfl(self, value):
-		self._ElgbltySetPrfl = value if type(value) != base_types.auto else self.make_default("ElgbltySetPrfl")
+		self._ElgbltySetPrfl = value if value is not None else base_types.UninitialisedField(self, 'ElgbltySetPrfl', GenericIdentification37, False)
 
 	@ElgbltySetPrfl.deleter
 	def ElgbltySetPrfl(self):
 		del self._ElgbltySetPrfl
-		self._ElgbltySetPrfl = None
+		self._ElgbltySetPrfl = base_types.UninitialisedField(self, 'ElgbltySetPrfl', GenericIdentification37, False)
 
 	@property
 	def PtyB(self):
@@ -40,12 +40,12 @@ class CollateralParties4(base_types._BaseFieldType):
 
 	@PtyB.setter
 	def PtyB(self, value):
-		self._PtyB = value if type(value) != base_types.auto else self.make_default("PtyB")
+		self._PtyB = value if value is not None else base_types.UninitialisedField(self, 'PtyB', PartyIdentification232, False)
 
 	@PtyB.deleter
 	def PtyB(self):
 		del self._PtyB
-		self._PtyB = None
+		self._PtyB = base_types.UninitialisedField(self, 'PtyB', PartyIdentification232, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClntPtyB', type=PartyIdentification232, min=0, max=1, mutex_group=None, array=False),

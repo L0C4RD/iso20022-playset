@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ClosureReason2Choice import ClosureReason2Choice
-from ._DateTimePeriod1Choice import DateTimePeriod1Choice
+from . import ClosureReason2Choice
+from . import DateTimePeriod1Choice
 
 class SystemClosure2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SystemClosure2(base_types._BaseFieldType):
 
 	@Prd.setter
 	def Prd(self, value):
-		self._Prd = value if type(value) != base_types.auto else self.make_default("Prd")
+		self._Prd = value if value is not None else base_types.UninitialisedField(self, 'Prd', DateTimePeriod1Choice, False)
 
 	@Prd.deleter
 	def Prd(self):
 		del self._Prd
-		self._Prd = None
+		self._Prd = base_types.UninitialisedField(self, 'Prd', DateTimePeriod1Choice, False)
 
 	@property
 	def Rsn(self):
@@ -27,12 +27,12 @@ class SystemClosure2(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', ClosureReason2Choice, False)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', ClosureReason2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Prd', type=DateTimePeriod1Choice, min=0, max=1, mutex_group=None, array=False),

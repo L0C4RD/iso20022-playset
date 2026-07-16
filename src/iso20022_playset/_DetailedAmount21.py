@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardDataReading8Code import CardDataReading8Code
-from ._ISODateTime import ISODateTime
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max10000Binary import Max10000Binary
-from ._Max140Text import Max140Text
+from . import CardDataReading8Code
+from . import ISODateTime
+from . import ImpliedCurrencyAndAmount
+from . import Max10000Binary
+from . import Max140Text
 
 class DetailedAmount21(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class DetailedAmount21(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ImpliedCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def CardDataNtryMd(self):
@@ -30,12 +30,12 @@ class DetailedAmount21(base_types._BaseFieldType):
 
 	@CardDataNtryMd.setter
 	def CardDataNtryMd(self, value):
-		self._CardDataNtryMd = value if type(value) != base_types.auto else self.make_default("CardDataNtryMd")
+		self._CardDataNtryMd = value if value is not None else base_types.UninitialisedField(self, 'CardDataNtryMd', CardDataReading8Code, False)
 
 	@CardDataNtryMd.deleter
 	def CardDataNtryMd(self):
 		del self._CardDataNtryMd
-		self._CardDataNtryMd = None
+		self._CardDataNtryMd = base_types.UninitialisedField(self, 'CardDataNtryMd', CardDataReading8Code, False)
 
 	@property
 	def DtTm(self):
@@ -43,12 +43,12 @@ class DetailedAmount21(base_types._BaseFieldType):
 
 	@DtTm.setter
 	def DtTm(self, value):
-		self._DtTm = value if type(value) != base_types.auto else self.make_default("DtTm")
+		self._DtTm = value if value is not None else base_types.UninitialisedField(self, 'DtTm', ISODateTime, False)
 
 	@DtTm.deleter
 	def DtTm(self):
 		del self._DtTm
-		self._DtTm = None
+		self._DtTm = base_types.UninitialisedField(self, 'DtTm', ISODateTime, False)
 
 	@property
 	def ICCRltdData(self):
@@ -56,12 +56,12 @@ class DetailedAmount21(base_types._BaseFieldType):
 
 	@ICCRltdData.setter
 	def ICCRltdData(self, value):
-		self._ICCRltdData = value if type(value) != base_types.auto else self.make_default("ICCRltdData")
+		self._ICCRltdData = value if value is not None else base_types.UninitialisedField(self, 'ICCRltdData', Max10000Binary, False)
 
 	@ICCRltdData.deleter
 	def ICCRltdData(self):
 		del self._ICCRltdData
-		self._ICCRltdData = None
+		self._ICCRltdData = base_types.UninitialisedField(self, 'ICCRltdData', Max10000Binary, False)
 
 	@property
 	def Labl(self):
@@ -69,12 +69,12 @@ class DetailedAmount21(base_types._BaseFieldType):
 
 	@Labl.setter
 	def Labl(self, value):
-		self._Labl = value if type(value) != base_types.auto else self.make_default("Labl")
+		self._Labl = value if value is not None else base_types.UninitialisedField(self, 'Labl', Max140Text, False)
 
 	@Labl.deleter
 	def Labl(self):
 		del self._Labl
-		self._Labl = None
+		self._Labl = base_types.UninitialisedField(self, 'Labl', Max140Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountReport35 import AccountReport35
-from ._ErrorHandling5 import ErrorHandling5
+from . import AccountReport35
+from . import ErrorHandling5
 
 class AccountOrOperationalError6Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AccountOrOperationalError6Choice(base_types._BaseFieldType):
 
 	@AcctRpt.setter
 	def AcctRpt(self, value):
-		self._AcctRpt = value if type(value) != base_types.auto else self.make_default("AcctRpt")
+		self._AcctRpt = value if value is not None else base_types.UninitialisedField(self, 'AcctRpt', AccountReport35, True)
 
 	@AcctRpt.deleter
 	def AcctRpt(self):
 		del self._AcctRpt
-		self._AcctRpt = None
+		self._AcctRpt = base_types.UninitialisedField(self, 'AcctRpt', AccountReport35, True)
 
 	@property
 	def OprlErr(self):
@@ -27,12 +27,12 @@ class AccountOrOperationalError6Choice(base_types._BaseFieldType):
 
 	@OprlErr.setter
 	def OprlErr(self, value):
-		self._OprlErr = value if type(value) != base_types.auto else self.make_default("OprlErr")
+		self._OprlErr = value if value is not None else base_types.UninitialisedField(self, 'OprlErr', ErrorHandling5, True)
 
 	@OprlErr.deleter
 	def OprlErr(self):
 		del self._OprlErr
-		self._OprlErr = None
+		self._OprlErr = base_types.UninitialisedField(self, 'OprlErr', ErrorHandling5, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctRpt', type=AccountReport35, min=1, max=None, mutex_group=1, array=True),

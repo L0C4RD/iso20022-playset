@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndPlaceOfBirth1 import DateAndPlaceOfBirth1
-from ._GenericPersonIdentification2 import GenericPersonIdentification2
-from ._Max256Text import Max256Text
+from . import DateAndPlaceOfBirth1
+from . import GenericPersonIdentification2
+from . import Max256Text
 
 class PersonIdentification20(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PersonIdentification20(base_types._BaseFieldType):
 
 	@DtAndPlcOfBirth.setter
 	def DtAndPlcOfBirth(self, value):
-		self._DtAndPlcOfBirth = value if type(value) != base_types.auto else self.make_default("DtAndPlcOfBirth")
+		self._DtAndPlcOfBirth = value if value is not None else base_types.UninitialisedField(self, 'DtAndPlcOfBirth', DateAndPlaceOfBirth1, False)
 
 	@DtAndPlcOfBirth.deleter
 	def DtAndPlcOfBirth(self):
 		del self._DtAndPlcOfBirth
-		self._DtAndPlcOfBirth = None
+		self._DtAndPlcOfBirth = base_types.UninitialisedField(self, 'DtAndPlcOfBirth', DateAndPlaceOfBirth1, False)
 
 	@property
 	def EmailAdr(self):
@@ -28,12 +28,12 @@ class PersonIdentification20(base_types._BaseFieldType):
 
 	@EmailAdr.setter
 	def EmailAdr(self, value):
-		self._EmailAdr = value if type(value) != base_types.auto else self.make_default("EmailAdr")
+		self._EmailAdr = value if value is not None else base_types.UninitialisedField(self, 'EmailAdr', Max256Text, False)
 
 	@EmailAdr.deleter
 	def EmailAdr(self):
 		del self._EmailAdr
-		self._EmailAdr = None
+		self._EmailAdr = base_types.UninitialisedField(self, 'EmailAdr', Max256Text, False)
 
 	@property
 	def Othr(self):
@@ -41,12 +41,12 @@ class PersonIdentification20(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', GenericPersonIdentification2, True)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', GenericPersonIdentification2, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DtAndPlcOfBirth', type=DateAndPlaceOfBirth1, min=0, max=1, mutex_group=None, array=False),

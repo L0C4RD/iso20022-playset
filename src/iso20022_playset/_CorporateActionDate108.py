@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BorrowerLendingDeadline6 import BorrowerLendingDeadline6
-from ._DateFormat49Choice import DateFormat49Choice
-from ._DateFormat54Choice import DateFormat54Choice
-from ._DateFormat71Choice import DateFormat71Choice
+from . import BorrowerLendingDeadline6
+from . import DateFormat49Choice
+from . import DateFormat54Choice
+from . import DateFormat71Choice
 
 class CorporateActionDate108(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CorporateActionDate108(base_types._BaseFieldType):
 
 	@BrrwrStockLndgDdln.setter
 	def BrrwrStockLndgDdln(self, value):
-		self._BrrwrStockLndgDdln = value if type(value) != base_types.auto else self.make_default("BrrwrStockLndgDdln")
+		self._BrrwrStockLndgDdln = value if value is not None else base_types.UninitialisedField(self, 'BrrwrStockLndgDdln', BorrowerLendingDeadline6, True)
 
 	@BrrwrStockLndgDdln.deleter
 	def BrrwrStockLndgDdln(self):
 		del self._BrrwrStockLndgDdln
-		self._BrrwrStockLndgDdln = None
+		self._BrrwrStockLndgDdln = base_types.UninitialisedField(self, 'BrrwrStockLndgDdln', BorrowerLendingDeadline6, True)
 
 	@property
 	def CoverXprtnDdln(self):
@@ -29,12 +29,12 @@ class CorporateActionDate108(base_types._BaseFieldType):
 
 	@CoverXprtnDdln.setter
 	def CoverXprtnDdln(self, value):
-		self._CoverXprtnDdln = value if type(value) != base_types.auto else self.make_default("CoverXprtnDdln")
+		self._CoverXprtnDdln = value if value is not None else base_types.UninitialisedField(self, 'CoverXprtnDdln', DateFormat49Choice, False)
 
 	@CoverXprtnDdln.deleter
 	def CoverXprtnDdln(self):
 		del self._CoverXprtnDdln
-		self._CoverXprtnDdln = None
+		self._CoverXprtnDdln = base_types.UninitialisedField(self, 'CoverXprtnDdln', DateFormat49Choice, False)
 
 	@property
 	def DcmnttnDdln(self):
@@ -42,12 +42,12 @@ class CorporateActionDate108(base_types._BaseFieldType):
 
 	@DcmnttnDdln.setter
 	def DcmnttnDdln(self, value):
-		self._DcmnttnDdln = value if type(value) != base_types.auto else self.make_default("DcmnttnDdln")
+		self._DcmnttnDdln = value if value is not None else base_types.UninitialisedField(self, 'DcmnttnDdln', DateFormat49Choice, False)
 
 	@DcmnttnDdln.deleter
 	def DcmnttnDdln(self):
 		del self._DcmnttnDdln
-		self._DcmnttnDdln = None
+		self._DcmnttnDdln = base_types.UninitialisedField(self, 'DcmnttnDdln', DateFormat49Choice, False)
 
 	@property
 	def DpstryCoverXprtnDt(self):
@@ -55,12 +55,12 @@ class CorporateActionDate108(base_types._BaseFieldType):
 
 	@DpstryCoverXprtnDt.setter
 	def DpstryCoverXprtnDt(self, value):
-		self._DpstryCoverXprtnDt = value if type(value) != base_types.auto else self.make_default("DpstryCoverXprtnDt")
+		self._DpstryCoverXprtnDt = value if value is not None else base_types.UninitialisedField(self, 'DpstryCoverXprtnDt', DateFormat49Choice, False)
 
 	@DpstryCoverXprtnDt.deleter
 	def DpstryCoverXprtnDt(self):
 		del self._DpstryCoverXprtnDt
-		self._DpstryCoverXprtnDt = None
+		self._DpstryCoverXprtnDt = base_types.UninitialisedField(self, 'DpstryCoverXprtnDt', DateFormat49Choice, False)
 
 	@property
 	def EarlyRspnDdln(self):
@@ -68,12 +68,12 @@ class CorporateActionDate108(base_types._BaseFieldType):
 
 	@EarlyRspnDdln.setter
 	def EarlyRspnDdln(self, value):
-		self._EarlyRspnDdln = value if type(value) != base_types.auto else self.make_default("EarlyRspnDdln")
+		self._EarlyRspnDdln = value if value is not None else base_types.UninitialisedField(self, 'EarlyRspnDdln', DateFormat49Choice, False)
 
 	@EarlyRspnDdln.deleter
 	def EarlyRspnDdln(self):
 		del self._EarlyRspnDdln
-		self._EarlyRspnDdln = None
+		self._EarlyRspnDdln = base_types.UninitialisedField(self, 'EarlyRspnDdln', DateFormat49Choice, False)
 
 	@property
 	def EndOfSctiesBlckgPrd(self):
@@ -81,12 +81,12 @@ class CorporateActionDate108(base_types._BaseFieldType):
 
 	@EndOfSctiesBlckgPrd.setter
 	def EndOfSctiesBlckgPrd(self, value):
-		self._EndOfSctiesBlckgPrd = value if type(value) != base_types.auto else self.make_default("EndOfSctiesBlckgPrd")
+		self._EndOfSctiesBlckgPrd = value if value is not None else base_types.UninitialisedField(self, 'EndOfSctiesBlckgPrd', DateFormat71Choice, False)
 
 	@EndOfSctiesBlckgPrd.deleter
 	def EndOfSctiesBlckgPrd(self):
 		del self._EndOfSctiesBlckgPrd
-		self._EndOfSctiesBlckgPrd = None
+		self._EndOfSctiesBlckgPrd = base_types.UninitialisedField(self, 'EndOfSctiesBlckgPrd', DateFormat71Choice, False)
 
 	@property
 	def MktDdln(self):
@@ -94,12 +94,12 @@ class CorporateActionDate108(base_types._BaseFieldType):
 
 	@MktDdln.setter
 	def MktDdln(self, value):
-		self._MktDdln = value if type(value) != base_types.auto else self.make_default("MktDdln")
+		self._MktDdln = value if value is not None else base_types.UninitialisedField(self, 'MktDdln', DateFormat49Choice, False)
 
 	@MktDdln.deleter
 	def MktDdln(self):
 		del self._MktDdln
-		self._MktDdln = None
+		self._MktDdln = base_types.UninitialisedField(self, 'MktDdln', DateFormat49Choice, False)
 
 	@property
 	def PrtctDdln(self):
@@ -107,12 +107,12 @@ class CorporateActionDate108(base_types._BaseFieldType):
 
 	@PrtctDdln.setter
 	def PrtctDdln(self, value):
-		self._PrtctDdln = value if type(value) != base_types.auto else self.make_default("PrtctDdln")
+		self._PrtctDdln = value if value is not None else base_types.UninitialisedField(self, 'PrtctDdln', DateFormat49Choice, False)
 
 	@PrtctDdln.deleter
 	def PrtctDdln(self):
 		del self._PrtctDdln
-		self._PrtctDdln = None
+		self._PrtctDdln = base_types.UninitialisedField(self, 'PrtctDdln', DateFormat49Choice, False)
 
 	@property
 	def RspnDdln(self):
@@ -120,12 +120,12 @@ class CorporateActionDate108(base_types._BaseFieldType):
 
 	@RspnDdln.setter
 	def RspnDdln(self, value):
-		self._RspnDdln = value if type(value) != base_types.auto else self.make_default("RspnDdln")
+		self._RspnDdln = value if value is not None else base_types.UninitialisedField(self, 'RspnDdln', DateFormat54Choice, False)
 
 	@RspnDdln.deleter
 	def RspnDdln(self):
 		del self._RspnDdln
-		self._RspnDdln = None
+		self._RspnDdln = base_types.UninitialisedField(self, 'RspnDdln', DateFormat54Choice, False)
 
 	@property
 	def SbcptCostDbtDt(self):
@@ -133,12 +133,12 @@ class CorporateActionDate108(base_types._BaseFieldType):
 
 	@SbcptCostDbtDt.setter
 	def SbcptCostDbtDt(self, value):
-		self._SbcptCostDbtDt = value if type(value) != base_types.auto else self.make_default("SbcptCostDbtDt")
+		self._SbcptCostDbtDt = value if value is not None else base_types.UninitialisedField(self, 'SbcptCostDbtDt', DateFormat49Choice, False)
 
 	@SbcptCostDbtDt.deleter
 	def SbcptCostDbtDt(self):
 		del self._SbcptCostDbtDt
-		self._SbcptCostDbtDt = None
+		self._SbcptCostDbtDt = base_types.UninitialisedField(self, 'SbcptCostDbtDt', DateFormat49Choice, False)
 
 	@property
 	def StockLndgDdln(self):
@@ -146,12 +146,12 @@ class CorporateActionDate108(base_types._BaseFieldType):
 
 	@StockLndgDdln.setter
 	def StockLndgDdln(self, value):
-		self._StockLndgDdln = value if type(value) != base_types.auto else self.make_default("StockLndgDdln")
+		self._StockLndgDdln = value if value is not None else base_types.UninitialisedField(self, 'StockLndgDdln', DateFormat49Choice, False)
 
 	@StockLndgDdln.deleter
 	def StockLndgDdln(self):
 		del self._StockLndgDdln
-		self._StockLndgDdln = None
+		self._StockLndgDdln = base_types.UninitialisedField(self, 'StockLndgDdln', DateFormat49Choice, False)
 
 	@property
 	def XpryDt(self):
@@ -159,12 +159,12 @@ class CorporateActionDate108(base_types._BaseFieldType):
 
 	@XpryDt.setter
 	def XpryDt(self, value):
-		self._XpryDt = value if type(value) != base_types.auto else self.make_default("XpryDt")
+		self._XpryDt = value if value is not None else base_types.UninitialisedField(self, 'XpryDt', DateFormat49Choice, False)
 
 	@XpryDt.deleter
 	def XpryDt(self):
 		del self._XpryDt
-		self._XpryDt = None
+		self._XpryDt = base_types.UninitialisedField(self, 'XpryDt', DateFormat49Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BrrwrStockLndgDdln', type=BorrowerLendingDeadline6, min=0, max=None, mutex_group=None, array=True),

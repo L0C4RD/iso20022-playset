@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NettingCutOff2 import NettingCutOff2
-from ._PartyIdentification242Choice import PartyIdentification242Choice
+from . import NettingCutOff2
+from . import PartyIdentification242Choice
 
 class CutOffData2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CutOffData2(base_types._BaseFieldType):
 
 	@NetgCutOffDtls.setter
 	def NetgCutOffDtls(self, value):
-		self._NetgCutOffDtls = value if type(value) != base_types.auto else self.make_default("NetgCutOffDtls")
+		self._NetgCutOffDtls = value if value is not None else base_types.UninitialisedField(self, 'NetgCutOffDtls', NettingCutOff2, True)
 
 	@NetgCutOffDtls.deleter
 	def NetgCutOffDtls(self):
 		del self._NetgCutOffDtls
-		self._NetgCutOffDtls = None
+		self._NetgCutOffDtls = base_types.UninitialisedField(self, 'NetgCutOffDtls', NettingCutOff2, True)
 
 	@property
 	def PtcptId(self):
@@ -27,12 +27,12 @@ class CutOffData2(base_types._BaseFieldType):
 
 	@PtcptId.setter
 	def PtcptId(self, value):
-		self._PtcptId = value if type(value) != base_types.auto else self.make_default("PtcptId")
+		self._PtcptId = value if value is not None else base_types.UninitialisedField(self, 'PtcptId', PartyIdentification242Choice, False)
 
 	@PtcptId.deleter
 	def PtcptId(self):
 		del self._PtcptId
-		self._PtcptId = None
+		self._PtcptId = base_types.UninitialisedField(self, 'PtcptId', PartyIdentification242Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NetgCutOffDtls', type=NettingCutOff2, min=1, max=None, mutex_group=None, array=True),

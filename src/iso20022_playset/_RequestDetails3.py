@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
+from . import Max35Text
 
 class RequestDetails3(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class RequestDetails3(base_types._BaseFieldType):
 
 	@Key.setter
 	def Key(self, value):
-		self._Key = value if type(value) != base_types.auto else self.make_default("Key")
+		self._Key = value if value is not None else base_types.UninitialisedField(self, 'Key', Max35Text, False)
 
 	@Key.deleter
 	def Key(self):
 		del self._Key
-		self._Key = None
+		self._Key = base_types.UninitialisedField(self, 'Key', Max35Text, False)
 
 	@property
 	def Tp(self):
@@ -26,12 +26,12 @@ class RequestDetails3(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', Max35Text, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Key', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

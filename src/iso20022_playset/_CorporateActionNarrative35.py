@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
+from . import RestrictedFINXMax350Text
 
 class CorporateActionNarrative35(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class CorporateActionNarrative35(base_types._BaseFieldType):
 
 	@AddtlTxt.setter
 	def AddtlTxt(self, value):
-		self._AddtlTxt = value if type(value) != base_types.auto else self.make_default("AddtlTxt")
+		self._AddtlTxt = value if value is not None else base_types.UninitialisedField(self, 'AddtlTxt', RestrictedFINXMax350Text, True)
 
 	@AddtlTxt.deleter
 	def AddtlTxt(self):
 		del self._AddtlTxt
-		self._AddtlTxt = None
+		self._AddtlTxt = base_types.UninitialisedField(self, 'AddtlTxt', RestrictedFINXMax350Text, True)
 
 	@property
 	def NrrtvVrsn(self):
@@ -26,12 +26,12 @@ class CorporateActionNarrative35(base_types._BaseFieldType):
 
 	@NrrtvVrsn.setter
 	def NrrtvVrsn(self, value):
-		self._NrrtvVrsn = value if type(value) != base_types.auto else self.make_default("NrrtvVrsn")
+		self._NrrtvVrsn = value if value is not None else base_types.UninitialisedField(self, 'NrrtvVrsn', RestrictedFINXMax350Text, True)
 
 	@NrrtvVrsn.deleter
 	def NrrtvVrsn(self):
 		del self._NrrtvVrsn
-		self._NrrtvVrsn = None
+		self._NrrtvVrsn = base_types.UninitialisedField(self, 'NrrtvVrsn', RestrictedFINXMax350Text, True)
 
 	@property
 	def PtyCtctNrrtv(self):
@@ -39,12 +39,12 @@ class CorporateActionNarrative35(base_types._BaseFieldType):
 
 	@PtyCtctNrrtv.setter
 	def PtyCtctNrrtv(self, value):
-		self._PtyCtctNrrtv = value if type(value) != base_types.auto else self.make_default("PtyCtctNrrtv")
+		self._PtyCtctNrrtv = value if value is not None else base_types.UninitialisedField(self, 'PtyCtctNrrtv', RestrictedFINXMax350Text, True)
 
 	@PtyCtctNrrtv.deleter
 	def PtyCtctNrrtv(self):
 		del self._PtyCtctNrrtv
-		self._PtyCtctNrrtv = None
+		self._PtyCtctNrrtv = base_types.UninitialisedField(self, 'PtyCtctNrrtv', RestrictedFINXMax350Text, True)
 
 	@property
 	def TaxtnConds(self):
@@ -52,12 +52,12 @@ class CorporateActionNarrative35(base_types._BaseFieldType):
 
 	@TaxtnConds.setter
 	def TaxtnConds(self, value):
-		self._TaxtnConds = value if type(value) != base_types.auto else self.make_default("TaxtnConds")
+		self._TaxtnConds = value if value is not None else base_types.UninitialisedField(self, 'TaxtnConds', RestrictedFINXMax350Text, True)
 
 	@TaxtnConds.deleter
 	def TaxtnConds(self):
 		del self._TaxtnConds
-		self._TaxtnConds = None
+		self._TaxtnConds = base_types.UninitialisedField(self, 'TaxtnConds', RestrictedFINXMax350Text, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlTxt', type=RestrictedFINXMax350Text, min=0, max=None, mutex_group=None, array=True),

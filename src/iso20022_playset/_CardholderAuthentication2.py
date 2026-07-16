@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AuthenticationEntity1Code import AuthenticationEntity1Code
-from ._AuthenticationMethod1Code import AuthenticationMethod1Code
+from . import AuthenticationEntity1Code
+from . import AuthenticationMethod1Code
 
 class CardholderAuthentication2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CardholderAuthentication2(base_types._BaseFieldType):
 
 	@AuthntcnMtd.setter
 	def AuthntcnMtd(self, value):
-		self._AuthntcnMtd = value if type(value) != base_types.auto else self.make_default("AuthntcnMtd")
+		self._AuthntcnMtd = value if value is not None else base_types.UninitialisedField(self, 'AuthntcnMtd', AuthenticationMethod1Code, False)
 
 	@AuthntcnMtd.deleter
 	def AuthntcnMtd(self):
 		del self._AuthntcnMtd
-		self._AuthntcnMtd = None
+		self._AuthntcnMtd = base_types.UninitialisedField(self, 'AuthntcnMtd', AuthenticationMethod1Code, False)
 
 	@property
 	def AuthntcnNtty(self):
@@ -27,12 +27,12 @@ class CardholderAuthentication2(base_types._BaseFieldType):
 
 	@AuthntcnNtty.setter
 	def AuthntcnNtty(self, value):
-		self._AuthntcnNtty = value if type(value) != base_types.auto else self.make_default("AuthntcnNtty")
+		self._AuthntcnNtty = value if value is not None else base_types.UninitialisedField(self, 'AuthntcnNtty', AuthenticationEntity1Code, False)
 
 	@AuthntcnNtty.deleter
 	def AuthntcnNtty(self):
 		del self._AuthntcnNtty
-		self._AuthntcnNtty = None
+		self._AuthntcnNtty = base_types.UninitialisedField(self, 'AuthntcnNtty', AuthenticationEntity1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AuthntcnMtd', type=AuthenticationMethod1Code, min=1, max=1, mutex_group=None, array=False),

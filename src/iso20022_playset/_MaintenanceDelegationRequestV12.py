@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContentInformationType38 import ContentInformationType38
-from ._MaintenanceDelegationRequest12 import MaintenanceDelegationRequest12
-from ._TMSHeader1 import TMSHeader1
+from . import ContentInformationType38
+from . import MaintenanceDelegationRequest12
+from . import TMSHeader1
 
 class MaintenanceDelegationRequestV12(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class MaintenanceDelegationRequestV12(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', TMSHeader1, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', TMSHeader1, False)
 
 	@property
 	def MntncDlgtnReq(self):
@@ -28,12 +28,12 @@ class MaintenanceDelegationRequestV12(base_types._BaseFieldType):
 
 	@MntncDlgtnReq.setter
 	def MntncDlgtnReq(self, value):
-		self._MntncDlgtnReq = value if type(value) != base_types.auto else self.make_default("MntncDlgtnReq")
+		self._MntncDlgtnReq = value if value is not None else base_types.UninitialisedField(self, 'MntncDlgtnReq', MaintenanceDelegationRequest12, False)
 
 	@MntncDlgtnReq.deleter
 	def MntncDlgtnReq(self):
 		del self._MntncDlgtnReq
-		self._MntncDlgtnReq = None
+		self._MntncDlgtnReq = base_types.UninitialisedField(self, 'MntncDlgtnReq', MaintenanceDelegationRequest12, False)
 
 	@property
 	def SctyTrlr(self):
@@ -41,12 +41,12 @@ class MaintenanceDelegationRequestV12(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType38, False)
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
 		del self._SctyTrlr
-		self._SctyTrlr = None
+		self._SctyTrlr = base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType38, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Hdr', type=TMSHeader1, min=0, max=1, mutex_group=None, array=False),

@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._Charges14 import Charges14
-from ._ClearingChannel2Code import ClearingChannel2Code
-from ._Compensation5 import Compensation5
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
-from ._UUIDv4Identifier import UUIDv4Identifier
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import Charges14
+from . import ClearingChannel2Code
+from . import Compensation5
+from . import ISODate
+from . import Max35Text
+from . import UUIDv4Identifier
 
 class ResolutionData5(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class ResolutionData5(base_types._BaseFieldType):
 
 	@ChrgsInf.setter
 	def ChrgsInf(self, value):
-		self._ChrgsInf = value if type(value) != base_types.auto else self.make_default("ChrgsInf")
+		self._ChrgsInf = value if value is not None else base_types.UninitialisedField(self, 'ChrgsInf', Charges14, True)
 
 	@ChrgsInf.deleter
 	def ChrgsInf(self):
 		del self._ChrgsInf
-		self._ChrgsInf = None
+		self._ChrgsInf = base_types.UninitialisedField(self, 'ChrgsInf', Charges14, True)
 
 	@property
 	def ClrChanl(self):
@@ -32,12 +32,12 @@ class ResolutionData5(base_types._BaseFieldType):
 
 	@ClrChanl.setter
 	def ClrChanl(self, value):
-		self._ClrChanl = value if type(value) != base_types.auto else self.make_default("ClrChanl")
+		self._ClrChanl = value if value is not None else base_types.UninitialisedField(self, 'ClrChanl', ClearingChannel2Code, False)
 
 	@ClrChanl.deleter
 	def ClrChanl(self):
 		del self._ClrChanl
-		self._ClrChanl = None
+		self._ClrChanl = base_types.UninitialisedField(self, 'ClrChanl', ClearingChannel2Code, False)
 
 	@property
 	def Compstn(self):
@@ -45,12 +45,12 @@ class ResolutionData5(base_types._BaseFieldType):
 
 	@Compstn.setter
 	def Compstn(self, value):
-		self._Compstn = value if type(value) != base_types.auto else self.make_default("Compstn")
+		self._Compstn = value if value is not None else base_types.UninitialisedField(self, 'Compstn', Compensation5, False)
 
 	@Compstn.deleter
 	def Compstn(self):
 		del self._Compstn
-		self._Compstn = None
+		self._Compstn = base_types.UninitialisedField(self, 'Compstn', Compensation5, False)
 
 	@property
 	def EndToEndId(self):
@@ -58,12 +58,12 @@ class ResolutionData5(base_types._BaseFieldType):
 
 	@EndToEndId.setter
 	def EndToEndId(self, value):
-		self._EndToEndId = value if type(value) != base_types.auto else self.make_default("EndToEndId")
+		self._EndToEndId = value if value is not None else base_types.UninitialisedField(self, 'EndToEndId', Max35Text, False)
 
 	@EndToEndId.deleter
 	def EndToEndId(self):
 		del self._EndToEndId
-		self._EndToEndId = None
+		self._EndToEndId = base_types.UninitialisedField(self, 'EndToEndId', Max35Text, False)
 
 	@property
 	def IntrBkSttlmAmt(self):
@@ -71,12 +71,12 @@ class ResolutionData5(base_types._BaseFieldType):
 
 	@IntrBkSttlmAmt.setter
 	def IntrBkSttlmAmt(self, value):
-		self._IntrBkSttlmAmt = value if type(value) != base_types.auto else self.make_default("IntrBkSttlmAmt")
+		self._IntrBkSttlmAmt = value if value is not None else base_types.UninitialisedField(self, 'IntrBkSttlmAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@IntrBkSttlmAmt.deleter
 	def IntrBkSttlmAmt(self):
 		del self._IntrBkSttlmAmt
-		self._IntrBkSttlmAmt = None
+		self._IntrBkSttlmAmt = base_types.UninitialisedField(self, 'IntrBkSttlmAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def IntrBkSttlmDt(self):
@@ -84,12 +84,12 @@ class ResolutionData5(base_types._BaseFieldType):
 
 	@IntrBkSttlmDt.setter
 	def IntrBkSttlmDt(self, value):
-		self._IntrBkSttlmDt = value if type(value) != base_types.auto else self.make_default("IntrBkSttlmDt")
+		self._IntrBkSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'IntrBkSttlmDt', ISODate, False)
 
 	@IntrBkSttlmDt.deleter
 	def IntrBkSttlmDt(self):
 		del self._IntrBkSttlmDt
-		self._IntrBkSttlmDt = None
+		self._IntrBkSttlmDt = base_types.UninitialisedField(self, 'IntrBkSttlmDt', ISODate, False)
 
 	@property
 	def TxId(self):
@@ -97,12 +97,12 @@ class ResolutionData5(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	@property
 	def UETR(self):
@@ -110,12 +110,12 @@ class ResolutionData5(base_types._BaseFieldType):
 
 	@UETR.setter
 	def UETR(self, value):
-		self._UETR = value if type(value) != base_types.auto else self.make_default("UETR")
+		self._UETR = value if value is not None else base_types.UninitialisedField(self, 'UETR', UUIDv4Identifier, False)
 
 	@UETR.deleter
 	def UETR(self):
 		del self._UETR
-		self._UETR = None
+		self._UETR = base_types.UninitialisedField(self, 'UETR', UUIDv4Identifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ChrgsInf', type=Charges14, min=0, max=None, mutex_group=None, array=True),

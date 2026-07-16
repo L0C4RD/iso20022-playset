@@ -2,21 +2,21 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BICIdentification1 import BICIdentification1
-from ._DocumentIdentification1 import DocumentIdentification1
-from ._DocumentIdentification7 import DocumentIdentification7
-from ._ISODate import ISODate
-from ._LineItem13 import LineItem13
-from ._PartyIdentification26 import PartyIdentification26
-from ._PaymentObligation2 import PaymentObligation2
-from ._PaymentTerms5 import PaymentTerms5
-from ._RequiredSubmission2 import RequiredSubmission2
-from ._RequiredSubmission3 import RequiredSubmission3
-from ._RequiredSubmission4 import RequiredSubmission4
-from ._RequiredSubmission6 import RequiredSubmission6
-from ._SettlementTerms3 import SettlementTerms3
-from ._TradeFinanceService2Code import TradeFinanceService2Code
-from ._YesNoIndicator import YesNoIndicator
+from . import BICIdentification1
+from . import DocumentIdentification1
+from . import DocumentIdentification7
+from . import ISODate
+from . import LineItem13
+from . import PartyIdentification26
+from . import PaymentObligation2
+from . import PaymentTerms5
+from . import RequiredSubmission2
+from . import RequiredSubmission3
+from . import RequiredSubmission4
+from . import RequiredSubmission6
+from . import SettlementTerms3
+from . import TradeFinanceService2Code
+from . import YesNoIndicator
 
 class Baseline5(base_types._BaseFieldType):
 
@@ -27,12 +27,12 @@ class Baseline5(base_types._BaseFieldType):
 
 	@BllTo.setter
 	def BllTo(self, value):
-		self._BllTo = value if type(value) != base_types.auto else self.make_default("BllTo")
+		self._BllTo = value if value is not None else base_types.UninitialisedField(self, 'BllTo', PartyIdentification26, False)
 
 	@BllTo.deleter
 	def BllTo(self):
 		del self._BllTo
-		self._BllTo = None
+		self._BllTo = base_types.UninitialisedField(self, 'BllTo', PartyIdentification26, False)
 
 	@property
 	def Buyr(self):
@@ -40,12 +40,12 @@ class Baseline5(base_types._BaseFieldType):
 
 	@Buyr.setter
 	def Buyr(self, value):
-		self._Buyr = value if type(value) != base_types.auto else self.make_default("Buyr")
+		self._Buyr = value if value is not None else base_types.UninitialisedField(self, 'Buyr', PartyIdentification26, False)
 
 	@Buyr.deleter
 	def Buyr(self):
 		del self._Buyr
-		self._Buyr = None
+		self._Buyr = base_types.UninitialisedField(self, 'Buyr', PartyIdentification26, False)
 
 	@property
 	def BuyrBk(self):
@@ -53,12 +53,12 @@ class Baseline5(base_types._BaseFieldType):
 
 	@BuyrBk.setter
 	def BuyrBk(self, value):
-		self._BuyrBk = value if type(value) != base_types.auto else self.make_default("BuyrBk")
+		self._BuyrBk = value if value is not None else base_types.UninitialisedField(self, 'BuyrBk', BICIdentification1, False)
 
 	@BuyrBk.deleter
 	def BuyrBk(self):
 		del self._BuyrBk
-		self._BuyrBk = None
+		self._BuyrBk = base_types.UninitialisedField(self, 'BuyrBk', BICIdentification1, False)
 
 	@property
 	def BuyrSdSubmitgBk(self):
@@ -66,12 +66,12 @@ class Baseline5(base_types._BaseFieldType):
 
 	@BuyrSdSubmitgBk.setter
 	def BuyrSdSubmitgBk(self, value):
-		self._BuyrSdSubmitgBk = value if type(value) != base_types.auto else self.make_default("BuyrSdSubmitgBk")
+		self._BuyrSdSubmitgBk = value if value is not None else base_types.UninitialisedField(self, 'BuyrSdSubmitgBk', BICIdentification1, True)
 
 	@BuyrSdSubmitgBk.deleter
 	def BuyrSdSubmitgBk(self):
 		del self._BuyrSdSubmitgBk
-		self._BuyrSdSubmitgBk = None
+		self._BuyrSdSubmitgBk = base_types.UninitialisedField(self, 'BuyrSdSubmitgBk', BICIdentification1, True)
 
 	@property
 	def CertDataSetReqrd(self):
@@ -79,12 +79,12 @@ class Baseline5(base_types._BaseFieldType):
 
 	@CertDataSetReqrd.setter
 	def CertDataSetReqrd(self, value):
-		self._CertDataSetReqrd = value if type(value) != base_types.auto else self.make_default("CertDataSetReqrd")
+		self._CertDataSetReqrd = value if value is not None else base_types.UninitialisedField(self, 'CertDataSetReqrd', RequiredSubmission4, True)
 
 	@CertDataSetReqrd.deleter
 	def CertDataSetReqrd(self):
 		del self._CertDataSetReqrd
-		self._CertDataSetReqrd = None
+		self._CertDataSetReqrd = base_types.UninitialisedField(self, 'CertDataSetReqrd', RequiredSubmission4, True)
 
 	@property
 	def ComrclDataSetReqrd(self):
@@ -92,12 +92,12 @@ class Baseline5(base_types._BaseFieldType):
 
 	@ComrclDataSetReqrd.setter
 	def ComrclDataSetReqrd(self, value):
-		self._ComrclDataSetReqrd = value if type(value) != base_types.auto else self.make_default("ComrclDataSetReqrd")
+		self._ComrclDataSetReqrd = value if value is not None else base_types.UninitialisedField(self, 'ComrclDataSetReqrd', RequiredSubmission2, False)
 
 	@ComrclDataSetReqrd.deleter
 	def ComrclDataSetReqrd(self):
 		del self._ComrclDataSetReqrd
-		self._ComrclDataSetReqrd = None
+		self._ComrclDataSetReqrd = base_types.UninitialisedField(self, 'ComrclDataSetReqrd', RequiredSubmission2, False)
 
 	@property
 	def Consgn(self):
@@ -105,12 +105,12 @@ class Baseline5(base_types._BaseFieldType):
 
 	@Consgn.setter
 	def Consgn(self, value):
-		self._Consgn = value if type(value) != base_types.auto else self.make_default("Consgn")
+		self._Consgn = value if value is not None else base_types.UninitialisedField(self, 'Consgn', PartyIdentification26, False)
 
 	@Consgn.deleter
 	def Consgn(self):
 		del self._Consgn
-		self._Consgn = None
+		self._Consgn = base_types.UninitialisedField(self, 'Consgn', PartyIdentification26, False)
 
 	@property
 	def Goods(self):
@@ -118,12 +118,12 @@ class Baseline5(base_types._BaseFieldType):
 
 	@Goods.setter
 	def Goods(self, value):
-		self._Goods = value if type(value) != base_types.auto else self.make_default("Goods")
+		self._Goods = value if value is not None else base_types.UninitialisedField(self, 'Goods', LineItem13, False)
 
 	@Goods.deleter
 	def Goods(self):
 		del self._Goods
-		self._Goods = None
+		self._Goods = base_types.UninitialisedField(self, 'Goods', LineItem13, False)
 
 	@property
 	def InsrncDataSetReqrd(self):
@@ -131,12 +131,12 @@ class Baseline5(base_types._BaseFieldType):
 
 	@InsrncDataSetReqrd.setter
 	def InsrncDataSetReqrd(self, value):
-		self._InsrncDataSetReqrd = value if type(value) != base_types.auto else self.make_default("InsrncDataSetReqrd")
+		self._InsrncDataSetReqrd = value if value is not None else base_types.UninitialisedField(self, 'InsrncDataSetReqrd', RequiredSubmission3, False)
 
 	@InsrncDataSetReqrd.deleter
 	def InsrncDataSetReqrd(self):
 		del self._InsrncDataSetReqrd
-		self._InsrncDataSetReqrd = None
+		self._InsrncDataSetReqrd = base_types.UninitialisedField(self, 'InsrncDataSetReqrd', RequiredSubmission3, False)
 
 	@property
 	def InttToPayXpctd(self):
@@ -144,12 +144,12 @@ class Baseline5(base_types._BaseFieldType):
 
 	@InttToPayXpctd.setter
 	def InttToPayXpctd(self, value):
-		self._InttToPayXpctd = value if type(value) != base_types.auto else self.make_default("InttToPayXpctd")
+		self._InttToPayXpctd = value if value is not None else base_types.UninitialisedField(self, 'InttToPayXpctd', YesNoIndicator, False)
 
 	@InttToPayXpctd.deleter
 	def InttToPayXpctd(self):
 		del self._InttToPayXpctd
-		self._InttToPayXpctd = None
+		self._InttToPayXpctd = base_types.UninitialisedField(self, 'InttToPayXpctd', YesNoIndicator, False)
 
 	@property
 	def LatstMtchDt(self):
@@ -157,12 +157,12 @@ class Baseline5(base_types._BaseFieldType):
 
 	@LatstMtchDt.setter
 	def LatstMtchDt(self, value):
-		self._LatstMtchDt = value if type(value) != base_types.auto else self.make_default("LatstMtchDt")
+		self._LatstMtchDt = value if value is not None else base_types.UninitialisedField(self, 'LatstMtchDt', ISODate, False)
 
 	@LatstMtchDt.deleter
 	def LatstMtchDt(self):
 		del self._LatstMtchDt
-		self._LatstMtchDt = None
+		self._LatstMtchDt = base_types.UninitialisedField(self, 'LatstMtchDt', ISODate, False)
 
 	@property
 	def OthrCertDataSetReqrd(self):
@@ -170,12 +170,12 @@ class Baseline5(base_types._BaseFieldType):
 
 	@OthrCertDataSetReqrd.setter
 	def OthrCertDataSetReqrd(self, value):
-		self._OthrCertDataSetReqrd = value if type(value) != base_types.auto else self.make_default("OthrCertDataSetReqrd")
+		self._OthrCertDataSetReqrd = value if value is not None else base_types.UninitialisedField(self, 'OthrCertDataSetReqrd', RequiredSubmission6, True)
 
 	@OthrCertDataSetReqrd.deleter
 	def OthrCertDataSetReqrd(self):
 		del self._OthrCertDataSetReqrd
-		self._OthrCertDataSetReqrd = None
+		self._OthrCertDataSetReqrd = base_types.UninitialisedField(self, 'OthrCertDataSetReqrd', RequiredSubmission6, True)
 
 	@property
 	def PmtOblgtn(self):
@@ -183,12 +183,12 @@ class Baseline5(base_types._BaseFieldType):
 
 	@PmtOblgtn.setter
 	def PmtOblgtn(self, value):
-		self._PmtOblgtn = value if type(value) != base_types.auto else self.make_default("PmtOblgtn")
+		self._PmtOblgtn = value if value is not None else base_types.UninitialisedField(self, 'PmtOblgtn', PaymentObligation2, True)
 
 	@PmtOblgtn.deleter
 	def PmtOblgtn(self):
 		del self._PmtOblgtn
-		self._PmtOblgtn = None
+		self._PmtOblgtn = base_types.UninitialisedField(self, 'PmtOblgtn', PaymentObligation2, True)
 
 	@property
 	def PmtTerms(self):
@@ -196,12 +196,12 @@ class Baseline5(base_types._BaseFieldType):
 
 	@PmtTerms.setter
 	def PmtTerms(self, value):
-		self._PmtTerms = value if type(value) != base_types.auto else self.make_default("PmtTerms")
+		self._PmtTerms = value if value is not None else base_types.UninitialisedField(self, 'PmtTerms', PaymentTerms5, True)
 
 	@PmtTerms.deleter
 	def PmtTerms(self):
 		del self._PmtTerms
-		self._PmtTerms = None
+		self._PmtTerms = base_types.UninitialisedField(self, 'PmtTerms', PaymentTerms5, True)
 
 	@property
 	def PurchsOrdrRef(self):
@@ -209,12 +209,12 @@ class Baseline5(base_types._BaseFieldType):
 
 	@PurchsOrdrRef.setter
 	def PurchsOrdrRef(self, value):
-		self._PurchsOrdrRef = value if type(value) != base_types.auto else self.make_default("PurchsOrdrRef")
+		self._PurchsOrdrRef = value if value is not None else base_types.UninitialisedField(self, 'PurchsOrdrRef', DocumentIdentification7, False)
 
 	@PurchsOrdrRef.deleter
 	def PurchsOrdrRef(self):
 		del self._PurchsOrdrRef
-		self._PurchsOrdrRef = None
+		self._PurchsOrdrRef = base_types.UninitialisedField(self, 'PurchsOrdrRef', DocumentIdentification7, False)
 
 	@property
 	def Sellr(self):
@@ -222,12 +222,12 @@ class Baseline5(base_types._BaseFieldType):
 
 	@Sellr.setter
 	def Sellr(self, value):
-		self._Sellr = value if type(value) != base_types.auto else self.make_default("Sellr")
+		self._Sellr = value if value is not None else base_types.UninitialisedField(self, 'Sellr', PartyIdentification26, False)
 
 	@Sellr.deleter
 	def Sellr(self):
 		del self._Sellr
-		self._Sellr = None
+		self._Sellr = base_types.UninitialisedField(self, 'Sellr', PartyIdentification26, False)
 
 	@property
 	def SellrBk(self):
@@ -235,12 +235,12 @@ class Baseline5(base_types._BaseFieldType):
 
 	@SellrBk.setter
 	def SellrBk(self, value):
-		self._SellrBk = value if type(value) != base_types.auto else self.make_default("SellrBk")
+		self._SellrBk = value if value is not None else base_types.UninitialisedField(self, 'SellrBk', BICIdentification1, False)
 
 	@SellrBk.deleter
 	def SellrBk(self):
 		del self._SellrBk
-		self._SellrBk = None
+		self._SellrBk = base_types.UninitialisedField(self, 'SellrBk', BICIdentification1, False)
 
 	@property
 	def SellrSdSubmitgBk(self):
@@ -248,12 +248,12 @@ class Baseline5(base_types._BaseFieldType):
 
 	@SellrSdSubmitgBk.setter
 	def SellrSdSubmitgBk(self, value):
-		self._SellrSdSubmitgBk = value if type(value) != base_types.auto else self.make_default("SellrSdSubmitgBk")
+		self._SellrSdSubmitgBk = value if value is not None else base_types.UninitialisedField(self, 'SellrSdSubmitgBk', BICIdentification1, True)
 
 	@SellrSdSubmitgBk.deleter
 	def SellrSdSubmitgBk(self):
 		del self._SellrSdSubmitgBk
-		self._SellrSdSubmitgBk = None
+		self._SellrSdSubmitgBk = base_types.UninitialisedField(self, 'SellrSdSubmitgBk', BICIdentification1, True)
 
 	@property
 	def ShipTo(self):
@@ -261,12 +261,12 @@ class Baseline5(base_types._BaseFieldType):
 
 	@ShipTo.setter
 	def ShipTo(self, value):
-		self._ShipTo = value if type(value) != base_types.auto else self.make_default("ShipTo")
+		self._ShipTo = value if value is not None else base_types.UninitialisedField(self, 'ShipTo', PartyIdentification26, False)
 
 	@ShipTo.deleter
 	def ShipTo(self):
 		del self._ShipTo
-		self._ShipTo = None
+		self._ShipTo = base_types.UninitialisedField(self, 'ShipTo', PartyIdentification26, False)
 
 	@property
 	def SttlmTerms(self):
@@ -274,12 +274,12 @@ class Baseline5(base_types._BaseFieldType):
 
 	@SttlmTerms.setter
 	def SttlmTerms(self, value):
-		self._SttlmTerms = value if type(value) != base_types.auto else self.make_default("SttlmTerms")
+		self._SttlmTerms = value if value is not None else base_types.UninitialisedField(self, 'SttlmTerms', SettlementTerms3, False)
 
 	@SttlmTerms.deleter
 	def SttlmTerms(self):
 		del self._SttlmTerms
-		self._SttlmTerms = None
+		self._SttlmTerms = base_types.UninitialisedField(self, 'SttlmTerms', SettlementTerms3, False)
 
 	@property
 	def SubmitrBaselnId(self):
@@ -287,12 +287,12 @@ class Baseline5(base_types._BaseFieldType):
 
 	@SubmitrBaselnId.setter
 	def SubmitrBaselnId(self, value):
-		self._SubmitrBaselnId = value if type(value) != base_types.auto else self.make_default("SubmitrBaselnId")
+		self._SubmitrBaselnId = value if value is not None else base_types.UninitialisedField(self, 'SubmitrBaselnId', DocumentIdentification1, False)
 
 	@SubmitrBaselnId.deleter
 	def SubmitrBaselnId(self):
 		del self._SubmitrBaselnId
-		self._SubmitrBaselnId = None
+		self._SubmitrBaselnId = base_types.UninitialisedField(self, 'SubmitrBaselnId', DocumentIdentification1, False)
 
 	@property
 	def SvcCd(self):
@@ -300,12 +300,12 @@ class Baseline5(base_types._BaseFieldType):
 
 	@SvcCd.setter
 	def SvcCd(self, value):
-		self._SvcCd = value if type(value) != base_types.auto else self.make_default("SvcCd")
+		self._SvcCd = value if value is not None else base_types.UninitialisedField(self, 'SvcCd', TradeFinanceService2Code, False)
 
 	@SvcCd.deleter
 	def SvcCd(self):
 		del self._SvcCd
-		self._SvcCd = None
+		self._SvcCd = base_types.UninitialisedField(self, 'SvcCd', TradeFinanceService2Code, False)
 
 	@property
 	def TrnsprtDataSetReqrd(self):
@@ -313,12 +313,12 @@ class Baseline5(base_types._BaseFieldType):
 
 	@TrnsprtDataSetReqrd.setter
 	def TrnsprtDataSetReqrd(self, value):
-		self._TrnsprtDataSetReqrd = value if type(value) != base_types.auto else self.make_default("TrnsprtDataSetReqrd")
+		self._TrnsprtDataSetReqrd = value if value is not None else base_types.UninitialisedField(self, 'TrnsprtDataSetReqrd', RequiredSubmission2, False)
 
 	@TrnsprtDataSetReqrd.deleter
 	def TrnsprtDataSetReqrd(self):
 		del self._TrnsprtDataSetReqrd
-		self._TrnsprtDataSetReqrd = None
+		self._TrnsprtDataSetReqrd = base_types.UninitialisedField(self, 'TrnsprtDataSetReqrd', RequiredSubmission2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BllTo', type=PartyIdentification26, min=0, max=1, mutex_group=None, array=False),

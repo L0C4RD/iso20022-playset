@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DebtInstrumentSeniorityType2Code import DebtInstrumentSeniorityType2Code
-from ._DerivativePartyIdentification1Choice import DerivativePartyIdentification1Choice
-from ._Frequency13Code import Frequency13Code
-from ._Max35Text import Max35Text
-from ._Number import Number
-from ._PercentageRate import PercentageRate
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import DebtInstrumentSeniorityType2Code
+from . import DerivativePartyIdentification1Choice
+from . import Frequency13Code
+from . import Max35Text
+from . import Number
+from . import PercentageRate
+from . import TrueFalseIndicator
 
 class CreditDerivative7(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class CreditDerivative7(base_types._BaseFieldType):
 
 	@ClctnBsis.setter
 	def ClctnBsis(self, value):
-		self._ClctnBsis = value if type(value) != base_types.auto else self.make_default("ClctnBsis")
+		self._ClctnBsis = value if value is not None else base_types.UninitialisedField(self, 'ClctnBsis', Max35Text, False)
 
 	@ClctnBsis.deleter
 	def ClctnBsis(self):
 		del self._ClctnBsis
-		self._ClctnBsis = None
+		self._ClctnBsis = base_types.UninitialisedField(self, 'ClctnBsis', Max35Text, False)
 
 	@property
 	def IndxFctr(self):
@@ -32,12 +32,12 @@ class CreditDerivative7(base_types._BaseFieldType):
 
 	@IndxFctr.setter
 	def IndxFctr(self, value):
-		self._IndxFctr = value if type(value) != base_types.auto else self.make_default("IndxFctr")
+		self._IndxFctr = value if value is not None else base_types.UninitialisedField(self, 'IndxFctr', PercentageRate, False)
 
 	@IndxFctr.deleter
 	def IndxFctr(self):
 		del self._IndxFctr
-		self._IndxFctr = None
+		self._IndxFctr = base_types.UninitialisedField(self, 'IndxFctr', PercentageRate, False)
 
 	@property
 	def PmtFrqcy(self):
@@ -45,12 +45,12 @@ class CreditDerivative7(base_types._BaseFieldType):
 
 	@PmtFrqcy.setter
 	def PmtFrqcy(self, value):
-		self._PmtFrqcy = value if type(value) != base_types.auto else self.make_default("PmtFrqcy")
+		self._PmtFrqcy = value if value is not None else base_types.UninitialisedField(self, 'PmtFrqcy', Frequency13Code, False)
 
 	@PmtFrqcy.deleter
 	def PmtFrqcy(self):
 		del self._PmtFrqcy
-		self._PmtFrqcy = None
+		self._PmtFrqcy = base_types.UninitialisedField(self, 'PmtFrqcy', Frequency13Code, False)
 
 	@property
 	def RefPty(self):
@@ -58,12 +58,12 @@ class CreditDerivative7(base_types._BaseFieldType):
 
 	@RefPty.setter
 	def RefPty(self, value):
-		self._RefPty = value if type(value) != base_types.auto else self.make_default("RefPty")
+		self._RefPty = value if value is not None else base_types.UninitialisedField(self, 'RefPty', DerivativePartyIdentification1Choice, False)
 
 	@RefPty.deleter
 	def RefPty(self):
 		del self._RefPty
-		self._RefPty = None
+		self._RefPty = base_types.UninitialisedField(self, 'RefPty', DerivativePartyIdentification1Choice, False)
 
 	@property
 	def Snrty(self):
@@ -71,12 +71,12 @@ class CreditDerivative7(base_types._BaseFieldType):
 
 	@Snrty.setter
 	def Snrty(self, value):
-		self._Snrty = value if type(value) != base_types.auto else self.make_default("Snrty")
+		self._Snrty = value if value is not None else base_types.UninitialisedField(self, 'Snrty', DebtInstrumentSeniorityType2Code, False)
 
 	@Snrty.deleter
 	def Snrty(self):
 		del self._Snrty
-		self._Snrty = None
+		self._Snrty = base_types.UninitialisedField(self, 'Snrty', DebtInstrumentSeniorityType2Code, False)
 
 	@property
 	def Srs(self):
@@ -84,12 +84,12 @@ class CreditDerivative7(base_types._BaseFieldType):
 
 	@Srs.setter
 	def Srs(self, value):
-		self._Srs = value if type(value) != base_types.auto else self.make_default("Srs")
+		self._Srs = value if value is not None else base_types.UninitialisedField(self, 'Srs', Number, False)
 
 	@Srs.deleter
 	def Srs(self):
 		del self._Srs
-		self._Srs = None
+		self._Srs = base_types.UninitialisedField(self, 'Srs', Number, False)
 
 	@property
 	def TrchInd(self):
@@ -97,12 +97,12 @@ class CreditDerivative7(base_types._BaseFieldType):
 
 	@TrchInd.setter
 	def TrchInd(self, value):
-		self._TrchInd = value if type(value) != base_types.auto else self.make_default("TrchInd")
+		self._TrchInd = value if value is not None else base_types.UninitialisedField(self, 'TrchInd', TrueFalseIndicator, False)
 
 	@TrchInd.deleter
 	def TrchInd(self):
 		del self._TrchInd
-		self._TrchInd = None
+		self._TrchInd = base_types.UninitialisedField(self, 'TrchInd', TrueFalseIndicator, False)
 
 	@property
 	def Vrsn(self):
@@ -110,12 +110,12 @@ class CreditDerivative7(base_types._BaseFieldType):
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+		self._Vrsn = value if value is not None else base_types.UninitialisedField(self, 'Vrsn', Number, False)
 
 	@Vrsn.deleter
 	def Vrsn(self):
 		del self._Vrsn
-		self._Vrsn = None
+		self._Vrsn = base_types.UninitialisedField(self, 'Vrsn', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClctnBsis', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

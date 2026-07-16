@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._ISOTime import ISOTime
+from . import ISODate
+from . import ISOTime
 
 class DateTime2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DateTime2(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@property
 	def Tm(self):
@@ -27,12 +27,12 @@ class DateTime2(base_types._BaseFieldType):
 
 	@Tm.setter
 	def Tm(self, value):
-		self._Tm = value if type(value) != base_types.auto else self.make_default("Tm")
+		self._Tm = value if value is not None else base_types.UninitialisedField(self, 'Tm', ISOTime, False)
 
 	@Tm.deleter
 	def Tm(self):
 		del self._Tm
-		self._Tm = None
+		self._Tm = base_types.UninitialisedField(self, 'Tm', ISOTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dt', type=ISODate, min=1, max=1, mutex_group=None, array=False),

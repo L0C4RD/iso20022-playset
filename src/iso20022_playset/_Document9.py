@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DocumentFormat1Choice import DocumentFormat1Choice
-from ._Max2MBBinary import Max2MBBinary
-from ._Max35Text import Max35Text
-from ._PartyAndSignature2 import PartyAndSignature2
-from ._UndertakingDocumentType1Choice import UndertakingDocumentType1Choice
+from . import DocumentFormat1Choice
+from . import Max2MBBinary
+from . import Max35Text
+from . import PartyAndSignature2
+from . import UndertakingDocumentType1Choice
 
 class Document9(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class Document9(base_types._BaseFieldType):
 
 	@DgtlSgntr.setter
 	def DgtlSgntr(self, value):
-		self._DgtlSgntr = value if type(value) != base_types.auto else self.make_default("DgtlSgntr")
+		self._DgtlSgntr = value if value is not None else base_types.UninitialisedField(self, 'DgtlSgntr', PartyAndSignature2, False)
 
 	@DgtlSgntr.deleter
 	def DgtlSgntr(self):
 		del self._DgtlSgntr
-		self._DgtlSgntr = None
+		self._DgtlSgntr = base_types.UninitialisedField(self, 'DgtlSgntr', PartyAndSignature2, False)
 
 	@property
 	def Frmt(self):
@@ -30,12 +30,12 @@ class Document9(base_types._BaseFieldType):
 
 	@Frmt.setter
 	def Frmt(self, value):
-		self._Frmt = value if type(value) != base_types.auto else self.make_default("Frmt")
+		self._Frmt = value if value is not None else base_types.UninitialisedField(self, 'Frmt', DocumentFormat1Choice, False)
 
 	@Frmt.deleter
 	def Frmt(self):
 		del self._Frmt
-		self._Frmt = None
+		self._Frmt = base_types.UninitialisedField(self, 'Frmt', DocumentFormat1Choice, False)
 
 	@property
 	def Id(self):
@@ -43,12 +43,12 @@ class Document9(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def Nclsr(self):
@@ -56,12 +56,12 @@ class Document9(base_types._BaseFieldType):
 
 	@Nclsr.setter
 	def Nclsr(self, value):
-		self._Nclsr = value if type(value) != base_types.auto else self.make_default("Nclsr")
+		self._Nclsr = value if value is not None else base_types.UninitialisedField(self, 'Nclsr', Max2MBBinary, False)
 
 	@Nclsr.deleter
 	def Nclsr(self):
 		del self._Nclsr
-		self._Nclsr = None
+		self._Nclsr = base_types.UninitialisedField(self, 'Nclsr', Max2MBBinary, False)
 
 	@property
 	def Tp(self):
@@ -69,12 +69,12 @@ class Document9(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', UndertakingDocumentType1Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', UndertakingDocumentType1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DgtlSgntr', type=PartyAndSignature2, min=0, max=1, mutex_group=None, array=False),

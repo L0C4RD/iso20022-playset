@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IndividualPerson42 import IndividualPerson42
-from ._ProxyType3Code import ProxyType3Code
+from . import IndividualPerson42
+from . import ProxyType3Code
 
 class Proxy12(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Proxy12(base_types._BaseFieldType):
 
 	@PrsnDtls.setter
 	def PrsnDtls(self, value):
-		self._PrsnDtls = value if type(value) != base_types.auto else self.make_default("PrsnDtls")
+		self._PrsnDtls = value if value is not None else base_types.UninitialisedField(self, 'PrsnDtls', IndividualPerson42, False)
 
 	@PrsnDtls.deleter
 	def PrsnDtls(self):
 		del self._PrsnDtls
-		self._PrsnDtls = None
+		self._PrsnDtls = base_types.UninitialisedField(self, 'PrsnDtls', IndividualPerson42, False)
 
 	@property
 	def PrxyTp(self):
@@ -27,12 +27,12 @@ class Proxy12(base_types._BaseFieldType):
 
 	@PrxyTp.setter
 	def PrxyTp(self, value):
-		self._PrxyTp = value if type(value) != base_types.auto else self.make_default("PrxyTp")
+		self._PrxyTp = value if value is not None else base_types.UninitialisedField(self, 'PrxyTp', ProxyType3Code, False)
 
 	@PrxyTp.deleter
 	def PrxyTp(self):
 		del self._PrxyTp
-		self._PrxyTp = None
+		self._PrxyTp = base_types.UninitialisedField(self, 'PrxyTp', ProxyType3Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrsnDtls', type=IndividualPerson42, min=0, max=1, mutex_group=None, array=False),

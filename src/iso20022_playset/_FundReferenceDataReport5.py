@@ -2,31 +2,31 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalProductInformation3 import AdditionalProductInformation3
-from ._CashAccount205 import CashAccount205
-from ._ContactAttributes5 import ContactAttributes5
-from ._ContactAttributes6 import ContactAttributes6
-from ._CostsAndCharges2 import CostsAndCharges2
-from ._DistributionStrategy1 import DistributionStrategy1
-from ._Extension1 import Extension1
-from ._FinancialInstrument96 import FinancialInstrument96
-from ._FundParties1 import FundParties1
-from ._ISODate import ISODate
-from ._InvestmentPlanCharacteristics1 import InvestmentPlanCharacteristics1
-from ._InvestmentRestrictions3 import InvestmentRestrictions3
-from ._LocalMarketAnnex6 import LocalMarketAnnex6
-from ._MarketPracticeVersion1 import MarketPracticeVersion1
-from ._Max35Text import Max35Text
-from ._OrderDesk1 import OrderDesk1
-from ._PaymentInstrument16 import PaymentInstrument16
-from ._ProcessingCharacteristics11 import ProcessingCharacteristics11
-from ._ProcessingCharacteristics12 import ProcessingCharacteristics12
-from ._ProcessingCharacteristics9 import ProcessingCharacteristics9
-from ._SecurityIdentification47 import SecurityIdentification47
-from ._TargetMarket4 import TargetMarket4
-from ._ValuationDealingProcessingCharacteristics3 import ValuationDealingProcessingCharacteristics3
-from ._ValueForMoney1 import ValueForMoney1
-from ._YesNoIndicator import YesNoIndicator
+from . import AdditionalProductInformation3
+from . import CashAccount205
+from . import ContactAttributes5
+from . import ContactAttributes6
+from . import CostsAndCharges2
+from . import DistributionStrategy1
+from . import Extension1
+from . import FinancialInstrument96
+from . import FundParties1
+from . import ISODate
+from . import InvestmentPlanCharacteristics1
+from . import InvestmentRestrictions3
+from . import LocalMarketAnnex6
+from . import MarketPracticeVersion1
+from . import Max35Text
+from . import OrderDesk1
+from . import PaymentInstrument16
+from . import ProcessingCharacteristics11
+from . import ProcessingCharacteristics12
+from . import ProcessingCharacteristics9
+from . import SecurityIdentification47
+from . import TargetMarket4
+from . import ValuationDealingProcessingCharacteristics3
+from . import ValueForMoney1
+from . import YesNoIndicator
 
 class FundReferenceDataReport5(base_types._BaseFieldType):
 
@@ -37,12 +37,12 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 
 	@AddtlInfUKMkt.setter
 	def AddtlInfUKMkt(self, value):
-		self._AddtlInfUKMkt = value if type(value) != base_types.auto else self.make_default("AddtlInfUKMkt")
+		self._AddtlInfUKMkt = value if value is not None else base_types.UninitialisedField(self, 'AddtlInfUKMkt', AdditionalProductInformation3, False)
 
 	@AddtlInfUKMkt.deleter
 	def AddtlInfUKMkt(self):
 		del self._AddtlInfUKMkt
-		self._AddtlInfUKMkt = None
+		self._AddtlInfUKMkt = base_types.UninitialisedField(self, 'AddtlInfUKMkt', AdditionalProductInformation3, False)
 
 	@property
 	def AuthrsdPrxy(self):
@@ -50,12 +50,12 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 
 	@AuthrsdPrxy.setter
 	def AuthrsdPrxy(self, value):
-		self._AuthrsdPrxy = value if type(value) != base_types.auto else self.make_default("AuthrsdPrxy")
+		self._AuthrsdPrxy = value if value is not None else base_types.UninitialisedField(self, 'AuthrsdPrxy', ContactAttributes6, False)
 
 	@AuthrsdPrxy.deleter
 	def AuthrsdPrxy(self):
 		del self._AuthrsdPrxy
-		self._AuthrsdPrxy = None
+		self._AuthrsdPrxy = base_types.UninitialisedField(self, 'AuthrsdPrxy', ContactAttributes6, False)
 
 	@property
 	def CostsAndChrgs(self):
@@ -63,12 +63,12 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 
 	@CostsAndChrgs.setter
 	def CostsAndChrgs(self, value):
-		self._CostsAndChrgs = value if type(value) != base_types.auto else self.make_default("CostsAndChrgs")
+		self._CostsAndChrgs = value if value is not None else base_types.UninitialisedField(self, 'CostsAndChrgs', CostsAndCharges2, True)
 
 	@CostsAndChrgs.deleter
 	def CostsAndChrgs(self):
 		del self._CostsAndChrgs
-		self._CostsAndChrgs = None
+		self._CostsAndChrgs = base_types.UninitialisedField(self, 'CostsAndChrgs', CostsAndCharges2, True)
 
 	@property
 	def CshSttlmDtls(self):
@@ -76,12 +76,12 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 
 	@CshSttlmDtls.setter
 	def CshSttlmDtls(self, value):
-		self._CshSttlmDtls = value if type(value) != base_types.auto else self.make_default("CshSttlmDtls")
+		self._CshSttlmDtls = value if value is not None else base_types.UninitialisedField(self, 'CshSttlmDtls', CashAccount205, True)
 
 	@CshSttlmDtls.deleter
 	def CshSttlmDtls(self):
 		del self._CshSttlmDtls
-		self._CshSttlmDtls = None
+		self._CshSttlmDtls = base_types.UninitialisedField(self, 'CshSttlmDtls', CashAccount205, True)
 
 	@property
 	def DstrbtnStrtgy(self):
@@ -89,12 +89,12 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 
 	@DstrbtnStrtgy.setter
 	def DstrbtnStrtgy(self, value):
-		self._DstrbtnStrtgy = value if type(value) != base_types.auto else self.make_default("DstrbtnStrtgy")
+		self._DstrbtnStrtgy = value if value is not None else base_types.UninitialisedField(self, 'DstrbtnStrtgy', DistributionStrategy1, False)
 
 	@DstrbtnStrtgy.deleter
 	def DstrbtnStrtgy(self):
 		del self._DstrbtnStrtgy
-		self._DstrbtnStrtgy = None
+		self._DstrbtnStrtgy = base_types.UninitialisedField(self, 'DstrbtnStrtgy', DistributionStrategy1, False)
 
 	@property
 	def ExAnteInd(self):
@@ -102,12 +102,12 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 
 	@ExAnteInd.setter
 	def ExAnteInd(self, value):
-		self._ExAnteInd = value if type(value) != base_types.auto else self.make_default("ExAnteInd")
+		self._ExAnteInd = value if value is not None else base_types.UninitialisedField(self, 'ExAnteInd', YesNoIndicator, False)
 
 	@ExAnteInd.deleter
 	def ExAnteInd(self):
 		del self._ExAnteInd
-		self._ExAnteInd = None
+		self._ExAnteInd = base_types.UninitialisedField(self, 'ExAnteInd', YesNoIndicator, False)
 
 	@property
 	def ExPstInd(self):
@@ -115,12 +115,12 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 
 	@ExPstInd.setter
 	def ExPstInd(self, value):
-		self._ExPstInd = value if type(value) != base_types.auto else self.make_default("ExPstInd")
+		self._ExPstInd = value if value is not None else base_types.UninitialisedField(self, 'ExPstInd', YesNoIndicator, False)
 
 	@ExPstInd.deleter
 	def ExPstInd(self):
 		del self._ExPstInd
-		self._ExPstInd = None
+		self._ExPstInd = base_types.UninitialisedField(self, 'ExPstInd', YesNoIndicator, False)
 
 	@property
 	def FndDtls(self):
@@ -128,12 +128,12 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 
 	@FndDtls.setter
 	def FndDtls(self, value):
-		self._FndDtls = value if type(value) != base_types.auto else self.make_default("FndDtls")
+		self._FndDtls = value if value is not None else base_types.UninitialisedField(self, 'FndDtls', FinancialInstrument96, False)
 
 	@FndDtls.deleter
 	def FndDtls(self):
 		del self._FndDtls
-		self._FndDtls = None
+		self._FndDtls = base_types.UninitialisedField(self, 'FndDtls', FinancialInstrument96, False)
 
 	@property
 	def FndMgmtCpny(self):
@@ -141,12 +141,12 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 
 	@FndMgmtCpny.setter
 	def FndMgmtCpny(self, value):
-		self._FndMgmtCpny = value if type(value) != base_types.auto else self.make_default("FndMgmtCpny")
+		self._FndMgmtCpny = value if value is not None else base_types.UninitialisedField(self, 'FndMgmtCpny', ContactAttributes5, False)
 
 	@FndMgmtCpny.deleter
 	def FndMgmtCpny(self):
 		del self._FndMgmtCpny
-		self._FndMgmtCpny = None
+		self._FndMgmtCpny = base_types.UninitialisedField(self, 'FndMgmtCpny', ContactAttributes5, False)
 
 	@property
 	def FndPties(self):
@@ -154,12 +154,12 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 
 	@FndPties.setter
 	def FndPties(self, value):
-		self._FndPties = value if type(value) != base_types.auto else self.make_default("FndPties")
+		self._FndPties = value if value is not None else base_types.UninitialisedField(self, 'FndPties', FundParties1, False)
 
 	@FndPties.deleter
 	def FndPties(self):
 		del self._FndPties
-		self._FndPties = None
+		self._FndPties = base_types.UninitialisedField(self, 'FndPties', FundParties1, False)
 
 	@property
 	def GnlRefDt(self):
@@ -167,12 +167,12 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 
 	@GnlRefDt.setter
 	def GnlRefDt(self, value):
-		self._GnlRefDt = value if type(value) != base_types.auto else self.make_default("GnlRefDt")
+		self._GnlRefDt = value if value is not None else base_types.UninitialisedField(self, 'GnlRefDt', ISODate, False)
 
 	@GnlRefDt.deleter
 	def GnlRefDt(self):
 		del self._GnlRefDt
-		self._GnlRefDt = None
+		self._GnlRefDt = base_types.UninitialisedField(self, 'GnlRefDt', ISODate, False)
 
 	@property
 	def Id(self):
@@ -180,12 +180,12 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def InvstmtRstrctns(self):
@@ -193,12 +193,12 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 
 	@InvstmtRstrctns.setter
 	def InvstmtRstrctns(self, value):
-		self._InvstmtRstrctns = value if type(value) != base_types.auto else self.make_default("InvstmtRstrctns")
+		self._InvstmtRstrctns = value if value is not None else base_types.UninitialisedField(self, 'InvstmtRstrctns', InvestmentRestrictions3, False)
 
 	@InvstmtRstrctns.deleter
 	def InvstmtRstrctns(self):
 		del self._InvstmtRstrctns
-		self._InvstmtRstrctns = None
+		self._InvstmtRstrctns = base_types.UninitialisedField(self, 'InvstmtRstrctns', InvestmentRestrictions3, False)
 
 	@property
 	def LclMktAnx(self):
@@ -206,12 +206,12 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 
 	@LclMktAnx.setter
 	def LclMktAnx(self, value):
-		self._LclMktAnx = value if type(value) != base_types.auto else self.make_default("LclMktAnx")
+		self._LclMktAnx = value if value is not None else base_types.UninitialisedField(self, 'LclMktAnx', LocalMarketAnnex6, True)
 
 	@LclMktAnx.deleter
 	def LclMktAnx(self):
 		del self._LclMktAnx
-		self._LclMktAnx = None
+		self._LclMktAnx = base_types.UninitialisedField(self, 'LclMktAnx', LocalMarketAnnex6, True)
 
 	@property
 	def MainFndOrdrDsk(self):
@@ -219,12 +219,12 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 
 	@MainFndOrdrDsk.setter
 	def MainFndOrdrDsk(self, value):
-		self._MainFndOrdrDsk = value if type(value) != base_types.auto else self.make_default("MainFndOrdrDsk")
+		self._MainFndOrdrDsk = value if value is not None else base_types.UninitialisedField(self, 'MainFndOrdrDsk', OrderDesk1, False)
 
 	@MainFndOrdrDsk.deleter
 	def MainFndOrdrDsk(self):
 		del self._MainFndOrdrDsk
-		self._MainFndOrdrDsk = None
+		self._MainFndOrdrDsk = base_types.UninitialisedField(self, 'MainFndOrdrDsk', OrderDesk1, False)
 
 	@property
 	def PlanChrtcs(self):
@@ -232,12 +232,12 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 
 	@PlanChrtcs.setter
 	def PlanChrtcs(self, value):
-		self._PlanChrtcs = value if type(value) != base_types.auto else self.make_default("PlanChrtcs")
+		self._PlanChrtcs = value if value is not None else base_types.UninitialisedField(self, 'PlanChrtcs', InvestmentPlanCharacteristics1, True)
 
 	@PlanChrtcs.deleter
 	def PlanChrtcs(self):
 		del self._PlanChrtcs
-		self._PlanChrtcs = None
+		self._PlanChrtcs = base_types.UninitialisedField(self, 'PlanChrtcs', InvestmentPlanCharacteristics1, True)
 
 	@property
 	def PmtInstrm(self):
@@ -245,12 +245,12 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 
 	@PmtInstrm.setter
 	def PmtInstrm(self, value):
-		self._PmtInstrm = value if type(value) != base_types.auto else self.make_default("PmtInstrm")
+		self._PmtInstrm = value if value is not None else base_types.UninitialisedField(self, 'PmtInstrm', PaymentInstrument16, True)
 
 	@PmtInstrm.deleter
 	def PmtInstrm(self):
 		del self._PmtInstrm
-		self._PmtInstrm = None
+		self._PmtInstrm = base_types.UninitialisedField(self, 'PmtInstrm', PaymentInstrument16, True)
 
 	@property
 	def RedPrcgChrtcs(self):
@@ -258,12 +258,12 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 
 	@RedPrcgChrtcs.setter
 	def RedPrcgChrtcs(self, value):
-		self._RedPrcgChrtcs = value if type(value) != base_types.auto else self.make_default("RedPrcgChrtcs")
+		self._RedPrcgChrtcs = value if value is not None else base_types.UninitialisedField(self, 'RedPrcgChrtcs', ProcessingCharacteristics12, False)
 
 	@RedPrcgChrtcs.deleter
 	def RedPrcgChrtcs(self):
 		del self._RedPrcgChrtcs
-		self._RedPrcgChrtcs = None
+		self._RedPrcgChrtcs = base_types.UninitialisedField(self, 'RedPrcgChrtcs', ProcessingCharacteristics12, False)
 
 	@property
 	def SbcptPrcgChrtcs(self):
@@ -271,12 +271,12 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 
 	@SbcptPrcgChrtcs.setter
 	def SbcptPrcgChrtcs(self, value):
-		self._SbcptPrcgChrtcs = value if type(value) != base_types.auto else self.make_default("SbcptPrcgChrtcs")
+		self._SbcptPrcgChrtcs = value if value is not None else base_types.UninitialisedField(self, 'SbcptPrcgChrtcs', ProcessingCharacteristics11, False)
 
 	@SbcptPrcgChrtcs.deleter
 	def SbcptPrcgChrtcs(self):
 		del self._SbcptPrcgChrtcs
-		self._SbcptPrcgChrtcs = None
+		self._SbcptPrcgChrtcs = base_types.UninitialisedField(self, 'SbcptPrcgChrtcs', ProcessingCharacteristics11, False)
 
 	@property
 	def SctyId(self):
@@ -284,12 +284,12 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 
 	@SctyId.setter
 	def SctyId(self, value):
-		self._SctyId = value if type(value) != base_types.auto else self.make_default("SctyId")
+		self._SctyId = value if value is not None else base_types.UninitialisedField(self, 'SctyId', SecurityIdentification47, False)
 
 	@SctyId.deleter
 	def SctyId(self):
 		del self._SctyId
-		self._SctyId = None
+		self._SctyId = base_types.UninitialisedField(self, 'SctyId', SecurityIdentification47, False)
 
 	@property
 	def SwtchPrcgChrtcs(self):
@@ -297,12 +297,12 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 
 	@SwtchPrcgChrtcs.setter
 	def SwtchPrcgChrtcs(self, value):
-		self._SwtchPrcgChrtcs = value if type(value) != base_types.auto else self.make_default("SwtchPrcgChrtcs")
+		self._SwtchPrcgChrtcs = value if value is not None else base_types.UninitialisedField(self, 'SwtchPrcgChrtcs', ProcessingCharacteristics9, False)
 
 	@SwtchPrcgChrtcs.deleter
 	def SwtchPrcgChrtcs(self):
 		del self._SwtchPrcgChrtcs
-		self._SwtchPrcgChrtcs = None
+		self._SwtchPrcgChrtcs = base_types.UninitialisedField(self, 'SwtchPrcgChrtcs', ProcessingCharacteristics9, False)
 
 	@property
 	def TrgtMkt(self):
@@ -310,12 +310,12 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 
 	@TrgtMkt.setter
 	def TrgtMkt(self, value):
-		self._TrgtMkt = value if type(value) != base_types.auto else self.make_default("TrgtMkt")
+		self._TrgtMkt = value if value is not None else base_types.UninitialisedField(self, 'TrgtMkt', TargetMarket4, False)
 
 	@TrgtMkt.deleter
 	def TrgtMkt(self):
 		del self._TrgtMkt
-		self._TrgtMkt = None
+		self._TrgtMkt = base_types.UninitialisedField(self, 'TrgtMkt', TargetMarket4, False)
 
 	@property
 	def TrgtMktInd(self):
@@ -323,12 +323,12 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 
 	@TrgtMktInd.setter
 	def TrgtMktInd(self, value):
-		self._TrgtMktInd = value if type(value) != base_types.auto else self.make_default("TrgtMktInd")
+		self._TrgtMktInd = value if value is not None else base_types.UninitialisedField(self, 'TrgtMktInd', YesNoIndicator, False)
 
 	@TrgtMktInd.deleter
 	def TrgtMktInd(self):
 		del self._TrgtMktInd
-		self._TrgtMktInd = None
+		self._TrgtMktInd = base_types.UninitialisedField(self, 'TrgtMktInd', YesNoIndicator, False)
 
 	@property
 	def ValForMny(self):
@@ -336,12 +336,12 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 
 	@ValForMny.setter
 	def ValForMny(self, value):
-		self._ValForMny = value if type(value) != base_types.auto else self.make_default("ValForMny")
+		self._ValForMny = value if value is not None else base_types.UninitialisedField(self, 'ValForMny', ValueForMoney1, False)
 
 	@ValForMny.deleter
 	def ValForMny(self):
 		del self._ValForMny
-		self._ValForMny = None
+		self._ValForMny = base_types.UninitialisedField(self, 'ValForMny', ValueForMoney1, False)
 
 	@property
 	def ValtnDealgChrtcs(self):
@@ -349,12 +349,12 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 
 	@ValtnDealgChrtcs.setter
 	def ValtnDealgChrtcs(self, value):
-		self._ValtnDealgChrtcs = value if type(value) != base_types.auto else self.make_default("ValtnDealgChrtcs")
+		self._ValtnDealgChrtcs = value if value is not None else base_types.UninitialisedField(self, 'ValtnDealgChrtcs', ValuationDealingProcessingCharacteristics3, False)
 
 	@ValtnDealgChrtcs.deleter
 	def ValtnDealgChrtcs(self):
 		del self._ValtnDealgChrtcs
-		self._ValtnDealgChrtcs = None
+		self._ValtnDealgChrtcs = base_types.UninitialisedField(self, 'ValtnDealgChrtcs', ValuationDealingProcessingCharacteristics3, False)
 
 	@property
 	def Vrsn(self):
@@ -362,12 +362,12 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+		self._Vrsn = value if value is not None else base_types.UninitialisedField(self, 'Vrsn', MarketPracticeVersion1, False)
 
 	@Vrsn.deleter
 	def Vrsn(self):
 		del self._Vrsn
-		self._Vrsn = None
+		self._Vrsn = base_types.UninitialisedField(self, 'Vrsn', MarketPracticeVersion1, False)
 
 	@property
 	def Xtnsn(self):
@@ -375,12 +375,12 @@ class FundReferenceDataReport5(base_types._BaseFieldType):
 
 	@Xtnsn.setter
 	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
+		self._Xtnsn = value if value is not None else base_types.UninitialisedField(self, 'Xtnsn', Extension1, True)
 
 	@Xtnsn.deleter
 	def Xtnsn(self):
 		del self._Xtnsn
-		self._Xtnsn = None
+		self._Xtnsn = base_types.UninitialisedField(self, 'Xtnsn', Extension1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInfUKMkt', type=AdditionalProductInformation3, min=0, max=1, mutex_group=None, array=False),

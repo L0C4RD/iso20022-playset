@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._FinancialInstrumentQuantity33Choice import FinancialInstrumentQuantity33Choice
-from ._GenericIdentification30 import GenericIdentification30
-from ._GenericIdentification37 import GenericIdentification37
-from ._Price7 import Price7
-from ._TypeOfPrice29Choice import TypeOfPrice29Choice
+from . import DateAndDateTime2Choice
+from . import FinancialInstrumentQuantity33Choice
+from . import GenericIdentification30
+from . import GenericIdentification37
+from . import Price7
+from . import TypeOfPrice29Choice
 
 class QuantityBreakdown63(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class QuantityBreakdown63(base_types._BaseFieldType):
 
 	@LotDtTm.setter
 	def LotDtTm(self, value):
-		self._LotDtTm = value if type(value) != base_types.auto else self.make_default("LotDtTm")
+		self._LotDtTm = value if value is not None else base_types.UninitialisedField(self, 'LotDtTm', DateAndDateTime2Choice, False)
 
 	@LotDtTm.deleter
 	def LotDtTm(self):
 		del self._LotDtTm
-		self._LotDtTm = None
+		self._LotDtTm = base_types.UninitialisedField(self, 'LotDtTm', DateAndDateTime2Choice, False)
 
 	@property
 	def LotNb(self):
@@ -31,12 +31,12 @@ class QuantityBreakdown63(base_types._BaseFieldType):
 
 	@LotNb.setter
 	def LotNb(self, value):
-		self._LotNb = value if type(value) != base_types.auto else self.make_default("LotNb")
+		self._LotNb = value if value is not None else base_types.UninitialisedField(self, 'LotNb', GenericIdentification37, False)
 
 	@LotNb.deleter
 	def LotNb(self):
 		del self._LotNb
-		self._LotNb = None
+		self._LotNb = base_types.UninitialisedField(self, 'LotNb', GenericIdentification37, False)
 
 	@property
 	def LotPric(self):
@@ -44,12 +44,12 @@ class QuantityBreakdown63(base_types._BaseFieldType):
 
 	@LotPric.setter
 	def LotPric(self, value):
-		self._LotPric = value if type(value) != base_types.auto else self.make_default("LotPric")
+		self._LotPric = value if value is not None else base_types.UninitialisedField(self, 'LotPric', Price7, False)
 
 	@LotPric.deleter
 	def LotPric(self):
 		del self._LotPric
-		self._LotPric = None
+		self._LotPric = base_types.UninitialisedField(self, 'LotPric', Price7, False)
 
 	@property
 	def LotQty(self):
@@ -57,12 +57,12 @@ class QuantityBreakdown63(base_types._BaseFieldType):
 
 	@LotQty.setter
 	def LotQty(self, value):
-		self._LotQty = value if type(value) != base_types.auto else self.make_default("LotQty")
+		self._LotQty = value if value is not None else base_types.UninitialisedField(self, 'LotQty', FinancialInstrumentQuantity33Choice, False)
 
 	@LotQty.deleter
 	def LotQty(self):
 		del self._LotQty
-		self._LotQty = None
+		self._LotQty = base_types.UninitialisedField(self, 'LotQty', FinancialInstrumentQuantity33Choice, False)
 
 	@property
 	def SctiesSubBalTp(self):
@@ -70,12 +70,12 @@ class QuantityBreakdown63(base_types._BaseFieldType):
 
 	@SctiesSubBalTp.setter
 	def SctiesSubBalTp(self, value):
-		self._SctiesSubBalTp = value if type(value) != base_types.auto else self.make_default("SctiesSubBalTp")
+		self._SctiesSubBalTp = value if value is not None else base_types.UninitialisedField(self, 'SctiesSubBalTp', GenericIdentification30, False)
 
 	@SctiesSubBalTp.deleter
 	def SctiesSubBalTp(self):
 		del self._SctiesSubBalTp
-		self._SctiesSubBalTp = None
+		self._SctiesSubBalTp = base_types.UninitialisedField(self, 'SctiesSubBalTp', GenericIdentification30, False)
 
 	@property
 	def TpOfPric(self):
@@ -83,12 +83,12 @@ class QuantityBreakdown63(base_types._BaseFieldType):
 
 	@TpOfPric.setter
 	def TpOfPric(self, value):
-		self._TpOfPric = value if type(value) != base_types.auto else self.make_default("TpOfPric")
+		self._TpOfPric = value if value is not None else base_types.UninitialisedField(self, 'TpOfPric', TypeOfPrice29Choice, False)
 
 	@TpOfPric.deleter
 	def TpOfPric(self):
 		del self._TpOfPric
-		self._TpOfPric = None
+		self._TpOfPric = base_types.UninitialisedField(self, 'TpOfPric', TypeOfPrice29Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LotDtTm', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),

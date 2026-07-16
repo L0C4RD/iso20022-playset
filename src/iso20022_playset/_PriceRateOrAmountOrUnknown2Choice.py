@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAnd13DecimalAmount import ActiveOrHistoricCurrencyAnd13DecimalAmount
-from ._PercentageRate import PercentageRate
-from ._YesNoIndicator import YesNoIndicator
+from . import ActiveOrHistoricCurrencyAnd13DecimalAmount
+from . import PercentageRate
+from . import YesNoIndicator
 
 class PriceRateOrAmountOrUnknown2Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PriceRateOrAmountOrUnknown2Choice(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAnd13DecimalAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def Rate(self):
@@ -28,12 +28,12 @@ class PriceRateOrAmountOrUnknown2Choice(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+		self._Rate = value if value is not None else base_types.UninitialisedField(self, 'Rate', PercentageRate, False)
 
 	@Rate.deleter
 	def Rate(self):
 		del self._Rate
-		self._Rate = None
+		self._Rate = base_types.UninitialisedField(self, 'Rate', PercentageRate, False)
 
 	@property
 	def UknwnInd(self):
@@ -41,12 +41,12 @@ class PriceRateOrAmountOrUnknown2Choice(base_types._BaseFieldType):
 
 	@UknwnInd.setter
 	def UknwnInd(self, value):
-		self._UknwnInd = value if type(value) != base_types.auto else self.make_default("UknwnInd")
+		self._UknwnInd = value if value is not None else base_types.UninitialisedField(self, 'UknwnInd', YesNoIndicator, False)
 
 	@UknwnInd.deleter
 	def UknwnInd(self):
 		del self._UknwnInd
-		self._UknwnInd = None
+		self._UknwnInd = base_types.UninitialisedField(self, 'UknwnInd', YesNoIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=1, array=False),

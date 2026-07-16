@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BusinessDayCriteria3Choice import BusinessDayCriteria3Choice
-from ._QueryType2Code import QueryType2Code
+from . import BusinessDayCriteria3Choice
+from . import QueryType2Code
 
 class BusinessDayQuery2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class BusinessDayQuery2(base_types._BaseFieldType):
 
 	@Crit.setter
 	def Crit(self, value):
-		self._Crit = value if type(value) != base_types.auto else self.make_default("Crit")
+		self._Crit = value if value is not None else base_types.UninitialisedField(self, 'Crit', BusinessDayCriteria3Choice, False)
 
 	@Crit.deleter
 	def Crit(self):
 		del self._Crit
-		self._Crit = None
+		self._Crit = base_types.UninitialisedField(self, 'Crit', BusinessDayCriteria3Choice, False)
 
 	@property
 	def QryTp(self):
@@ -27,12 +27,12 @@ class BusinessDayQuery2(base_types._BaseFieldType):
 
 	@QryTp.setter
 	def QryTp(self, value):
-		self._QryTp = value if type(value) != base_types.auto else self.make_default("QryTp")
+		self._QryTp = value if value is not None else base_types.UninitialisedField(self, 'QryTp', QueryType2Code, False)
 
 	@QryTp.deleter
 	def QryTp(self):
 		del self._QryTp
-		self._QryTp = None
+		self._QryTp = base_types.UninitialisedField(self, 'QryTp', QueryType2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Crit', type=BusinessDayCriteria3Choice, min=0, max=1, mutex_group=None, array=False),

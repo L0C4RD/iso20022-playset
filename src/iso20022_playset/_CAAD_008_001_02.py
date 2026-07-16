@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdministrativeInitiationV02 import AdministrativeInitiationV02
+from . import AdministrativeInitiationV02
 
 class CAAD_008_001_02():
 
@@ -18,12 +18,12 @@ class CAAD_008_001_02():
 
 		@AdmstvInitn.setter
 		def AdmstvInitn(self, value):
-			self._AdmstvInitn = value if type(value) != base_types.auto else self.make_default("AdmstvInitn")
+			self._AdmstvInitn = value if value is not None else base_types.UninitialisedField(self, 'AdmstvInitn', AdministrativeInitiationV02, False)
 
 		@AdmstvInitn.deleter
 		def AdmstvInitn(self):
 			del self._AdmstvInitn
-			self._AdmstvInitn = None
+			self._AdmstvInitn = base_types.UninitialisedField(self, 'AdmstvInitn', AdministrativeInitiationV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AdmstvInitn', type=AdministrativeInitiationV02, min=1, max=1, mutex_group=None, array=False),

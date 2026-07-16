@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountIdentificationSearchCriteria2Choice import AccountIdentificationSearchCriteria2Choice
-from ._ActiveOrHistoricAmountRange2Choice import ActiveOrHistoricAmountRange2Choice
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CreditDebitCode import CreditDebitCode
-from ._DateAndDateTimeSearch3Choice import DateAndDateTimeSearch3Choice
-from ._EntryStatus1Code import EntryStatus1Code
-from ._PartyIdentification272 import PartyIdentification272
+from . import AccountIdentificationSearchCriteria2Choice
+from . import ActiveOrHistoricAmountRange2Choice
+from . import ActiveOrHistoricCurrencyCode
+from . import BranchAndFinancialInstitutionIdentification8
+from . import CreditDebitCode
+from . import DateAndDateTimeSearch3Choice
+from . import EntryStatus1Code
+from . import PartyIdentification272
 
 class CashAccountEntrySearch8(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class CashAccountEntrySearch8(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', AccountIdentificationSearchCriteria2Choice, True)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', AccountIdentificationSearchCriteria2Choice, True)
 
 	@property
 	def AcctOwnr(self):
@@ -33,12 +33,12 @@ class CashAccountEntrySearch8(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification272, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification272, False)
 
 	@property
 	def AcctSvcr(self):
@@ -46,12 +46,12 @@ class CashAccountEntrySearch8(base_types._BaseFieldType):
 
 	@AcctSvcr.setter
 	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
+		self._AcctSvcr = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@AcctSvcr.deleter
 	def AcctSvcr(self):
 		del self._AcctSvcr
-		self._AcctSvcr = None
+		self._AcctSvcr = base_types.UninitialisedField(self, 'AcctSvcr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def CdtDbtInd(self):
@@ -59,12 +59,12 @@ class CashAccountEntrySearch8(base_types._BaseFieldType):
 
 	@CdtDbtInd.setter
 	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+		self._CdtDbtInd = value if value is not None else base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@CdtDbtInd.deleter
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
-		self._CdtDbtInd = None
+		self._CdtDbtInd = base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@property
 	def NtryAmt(self):
@@ -72,12 +72,12 @@ class CashAccountEntrySearch8(base_types._BaseFieldType):
 
 	@NtryAmt.setter
 	def NtryAmt(self, value):
-		self._NtryAmt = value if type(value) != base_types.auto else self.make_default("NtryAmt")
+		self._NtryAmt = value if value is not None else base_types.UninitialisedField(self, 'NtryAmt', ActiveOrHistoricAmountRange2Choice, True)
 
 	@NtryAmt.deleter
 	def NtryAmt(self):
 		del self._NtryAmt
-		self._NtryAmt = None
+		self._NtryAmt = base_types.UninitialisedField(self, 'NtryAmt', ActiveOrHistoricAmountRange2Choice, True)
 
 	@property
 	def NtryAmtCcy(self):
@@ -85,12 +85,12 @@ class CashAccountEntrySearch8(base_types._BaseFieldType):
 
 	@NtryAmtCcy.setter
 	def NtryAmtCcy(self, value):
-		self._NtryAmtCcy = value if type(value) != base_types.auto else self.make_default("NtryAmtCcy")
+		self._NtryAmtCcy = value if value is not None else base_types.UninitialisedField(self, 'NtryAmtCcy', ActiveOrHistoricCurrencyCode, True)
 
 	@NtryAmtCcy.deleter
 	def NtryAmtCcy(self):
 		del self._NtryAmtCcy
-		self._NtryAmtCcy = None
+		self._NtryAmtCcy = base_types.UninitialisedField(self, 'NtryAmtCcy', ActiveOrHistoricCurrencyCode, True)
 
 	@property
 	def NtryDt(self):
@@ -98,12 +98,12 @@ class CashAccountEntrySearch8(base_types._BaseFieldType):
 
 	@NtryDt.setter
 	def NtryDt(self, value):
-		self._NtryDt = value if type(value) != base_types.auto else self.make_default("NtryDt")
+		self._NtryDt = value if value is not None else base_types.UninitialisedField(self, 'NtryDt', DateAndDateTimeSearch3Choice, True)
 
 	@NtryDt.deleter
 	def NtryDt(self):
 		del self._NtryDt
-		self._NtryDt = None
+		self._NtryDt = base_types.UninitialisedField(self, 'NtryDt', DateAndDateTimeSearch3Choice, True)
 
 	@property
 	def NtrySts(self):
@@ -111,12 +111,12 @@ class CashAccountEntrySearch8(base_types._BaseFieldType):
 
 	@NtrySts.setter
 	def NtrySts(self, value):
-		self._NtrySts = value if type(value) != base_types.auto else self.make_default("NtrySts")
+		self._NtrySts = value if value is not None else base_types.UninitialisedField(self, 'NtrySts', EntryStatus1Code, True)
 
 	@NtrySts.deleter
 	def NtrySts(self):
 		del self._NtrySts
-		self._NtrySts = None
+		self._NtrySts = base_types.UninitialisedField(self, 'NtrySts', EntryStatus1Code, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=AccountIdentificationSearchCriteria2Choice, min=0, max=None, mutex_group=None, array=True),

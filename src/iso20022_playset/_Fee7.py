@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ChargeBasis2Choice import ChargeBasis2Choice
-from ._ChargeBearer1Code import ChargeBearer1Code
-from ._ChargeOrCommissionDiscount2 import ChargeOrCommissionDiscount2
-from ._ChargeType6Choice import ChargeType6Choice
-from ._PartyIdentification139 import PartyIdentification139
+from . import ActiveCurrencyAndAmount
+from . import ChargeBasis2Choice
+from . import ChargeBearer1Code
+from . import ChargeOrCommissionDiscount2
+from . import ChargeType6Choice
+from . import PartyIdentification139
 
 class Fee7(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class Fee7(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def Bsis(self):
@@ -31,12 +31,12 @@ class Fee7(base_types._BaseFieldType):
 
 	@Bsis.setter
 	def Bsis(self, value):
-		self._Bsis = value if type(value) != base_types.auto else self.make_default("Bsis")
+		self._Bsis = value if value is not None else base_types.UninitialisedField(self, 'Bsis', ChargeBasis2Choice, False)
 
 	@Bsis.deleter
 	def Bsis(self):
 		del self._Bsis
-		self._Bsis = None
+		self._Bsis = base_types.UninitialisedField(self, 'Bsis', ChargeBasis2Choice, False)
 
 	@property
 	def ChrgBr(self):
@@ -44,12 +44,12 @@ class Fee7(base_types._BaseFieldType):
 
 	@ChrgBr.setter
 	def ChrgBr(self, value):
-		self._ChrgBr = value if type(value) != base_types.auto else self.make_default("ChrgBr")
+		self._ChrgBr = value if value is not None else base_types.UninitialisedField(self, 'ChrgBr', ChargeBearer1Code, False)
 
 	@ChrgBr.deleter
 	def ChrgBr(self):
 		del self._ChrgBr
-		self._ChrgBr = None
+		self._ChrgBr = base_types.UninitialisedField(self, 'ChrgBr', ChargeBearer1Code, False)
 
 	@property
 	def DscntDtls(self):
@@ -57,12 +57,12 @@ class Fee7(base_types._BaseFieldType):
 
 	@DscntDtls.setter
 	def DscntDtls(self, value):
-		self._DscntDtls = value if type(value) != base_types.auto else self.make_default("DscntDtls")
+		self._DscntDtls = value if value is not None else base_types.UninitialisedField(self, 'DscntDtls', ChargeOrCommissionDiscount2, False)
 
 	@DscntDtls.deleter
 	def DscntDtls(self):
 		del self._DscntDtls
-		self._DscntDtls = None
+		self._DscntDtls = base_types.UninitialisedField(self, 'DscntDtls', ChargeOrCommissionDiscount2, False)
 
 	@property
 	def RcptId(self):
@@ -70,12 +70,12 @@ class Fee7(base_types._BaseFieldType):
 
 	@RcptId.setter
 	def RcptId(self, value):
-		self._RcptId = value if type(value) != base_types.auto else self.make_default("RcptId")
+		self._RcptId = value if value is not None else base_types.UninitialisedField(self, 'RcptId', PartyIdentification139, False)
 
 	@RcptId.deleter
 	def RcptId(self):
 		del self._RcptId
-		self._RcptId = None
+		self._RcptId = base_types.UninitialisedField(self, 'RcptId', PartyIdentification139, False)
 
 	@property
 	def Tp(self):
@@ -83,12 +83,12 @@ class Fee7(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', ChargeType6Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', ChargeType6Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

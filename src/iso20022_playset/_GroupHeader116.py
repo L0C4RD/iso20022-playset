@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
-from ._Max500Text import Max500Text
-from ._OriginalBusinessQuery1 import OriginalBusinessQuery1
-from ._Pagination1 import Pagination1
-from ._PartyIdentification272 import PartyIdentification272
+from . import ISODateTime
+from . import Max35Text
+from . import Max500Text
+from . import OriginalBusinessQuery1
+from . import Pagination1
+from . import PartyIdentification272
 
 class GroupHeader116(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class GroupHeader116(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max500Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max500Text, False)
 
 	@property
 	def CreDtTm(self):
@@ -31,12 +31,12 @@ class GroupHeader116(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if value is not None else base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
 		del self._CreDtTm
-		self._CreDtTm = None
+		self._CreDtTm = base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@property
 	def MsgId(self):
@@ -44,12 +44,12 @@ class GroupHeader116(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@property
 	def MsgPgntn(self):
@@ -57,12 +57,12 @@ class GroupHeader116(base_types._BaseFieldType):
 
 	@MsgPgntn.setter
 	def MsgPgntn(self, value):
-		self._MsgPgntn = value if type(value) != base_types.auto else self.make_default("MsgPgntn")
+		self._MsgPgntn = value if value is not None else base_types.UninitialisedField(self, 'MsgPgntn', Pagination1, False)
 
 	@MsgPgntn.deleter
 	def MsgPgntn(self):
 		del self._MsgPgntn
-		self._MsgPgntn = None
+		self._MsgPgntn = base_types.UninitialisedField(self, 'MsgPgntn', Pagination1, False)
 
 	@property
 	def MsgRcpt(self):
@@ -70,12 +70,12 @@ class GroupHeader116(base_types._BaseFieldType):
 
 	@MsgRcpt.setter
 	def MsgRcpt(self, value):
-		self._MsgRcpt = value if type(value) != base_types.auto else self.make_default("MsgRcpt")
+		self._MsgRcpt = value if value is not None else base_types.UninitialisedField(self, 'MsgRcpt', PartyIdentification272, False)
 
 	@MsgRcpt.deleter
 	def MsgRcpt(self):
 		del self._MsgRcpt
-		self._MsgRcpt = None
+		self._MsgRcpt = base_types.UninitialisedField(self, 'MsgRcpt', PartyIdentification272, False)
 
 	@property
 	def OrgnlBizQry(self):
@@ -83,12 +83,12 @@ class GroupHeader116(base_types._BaseFieldType):
 
 	@OrgnlBizQry.setter
 	def OrgnlBizQry(self, value):
-		self._OrgnlBizQry = value if type(value) != base_types.auto else self.make_default("OrgnlBizQry")
+		self._OrgnlBizQry = value if value is not None else base_types.UninitialisedField(self, 'OrgnlBizQry', OriginalBusinessQuery1, False)
 
 	@OrgnlBizQry.deleter
 	def OrgnlBizQry(self):
 		del self._OrgnlBizQry
-		self._OrgnlBizQry = None
+		self._OrgnlBizQry = base_types.UninitialisedField(self, 'OrgnlBizQry', OriginalBusinessQuery1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max500Text, min=0, max=1, mutex_group=None, array=False),

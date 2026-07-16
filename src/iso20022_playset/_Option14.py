@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ExoticOptionStyle1Code import ExoticOptionStyle1Code
-from ._OptionEvent2 import OptionEvent2
-from ._OptionStyle5Code import OptionStyle5Code
-from ._OptionType1Code import OptionType1Code
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ExoticOptionStyle1Code
+from . import OptionEvent2
+from . import OptionStyle5Code
+from . import OptionType1Code
+from . import TrueFalseIndicator
 
 class Option14(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class Option14(base_types._BaseFieldType):
 
 	@BrrrInd.setter
 	def BrrrInd(self, value):
-		self._BrrrInd = value if type(value) != base_types.auto else self.make_default("BrrrInd")
+		self._BrrrInd = value if value is not None else base_types.UninitialisedField(self, 'BrrrInd', TrueFalseIndicator, False)
 
 	@BrrrInd.deleter
 	def BrrrInd(self):
 		del self._BrrrInd
-		self._BrrrInd = None
+		self._BrrrInd = base_types.UninitialisedField(self, 'BrrrInd', TrueFalseIndicator, False)
 
 	@property
 	def EvtTp(self):
@@ -30,12 +30,12 @@ class Option14(base_types._BaseFieldType):
 
 	@EvtTp.setter
 	def EvtTp(self, value):
-		self._EvtTp = value if type(value) != base_types.auto else self.make_default("EvtTp")
+		self._EvtTp = value if value is not None else base_types.UninitialisedField(self, 'EvtTp', OptionEvent2, False)
 
 	@EvtTp.deleter
 	def EvtTp(self):
 		del self._EvtTp
-		self._EvtTp = None
+		self._EvtTp = base_types.UninitialisedField(self, 'EvtTp', OptionEvent2, False)
 
 	@property
 	def OptnStyle(self):
@@ -43,12 +43,12 @@ class Option14(base_types._BaseFieldType):
 
 	@OptnStyle.setter
 	def OptnStyle(self, value):
-		self._OptnStyle = value if type(value) != base_types.auto else self.make_default("OptnStyle")
+		self._OptnStyle = value if value is not None else base_types.UninitialisedField(self, 'OptnStyle', ExoticOptionStyle1Code, False)
 
 	@OptnStyle.deleter
 	def OptnStyle(self):
 		del self._OptnStyle
-		self._OptnStyle = None
+		self._OptnStyle = base_types.UninitialisedField(self, 'OptnStyle', ExoticOptionStyle1Code, False)
 
 	@property
 	def OptnTp(self):
@@ -56,12 +56,12 @@ class Option14(base_types._BaseFieldType):
 
 	@OptnTp.setter
 	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != base_types.auto else self.make_default("OptnTp")
+		self._OptnTp = value if value is not None else base_types.UninitialisedField(self, 'OptnTp', OptionType1Code, False)
 
 	@OptnTp.deleter
 	def OptnTp(self):
 		del self._OptnTp
-		self._OptnTp = None
+		self._OptnTp = base_types.UninitialisedField(self, 'OptnTp', OptionType1Code, False)
 
 	@property
 	def XprtnStyle(self):
@@ -69,12 +69,12 @@ class Option14(base_types._BaseFieldType):
 
 	@XprtnStyle.setter
 	def XprtnStyle(self, value):
-		self._XprtnStyle = value if type(value) != base_types.auto else self.make_default("XprtnStyle")
+		self._XprtnStyle = value if value is not None else base_types.UninitialisedField(self, 'XprtnStyle', OptionStyle5Code, True)
 
 	@XprtnStyle.deleter
 	def XprtnStyle(self):
 		del self._XprtnStyle
-		self._XprtnStyle = None
+		self._XprtnStyle = base_types.UninitialisedField(self, 'XprtnStyle', OptionStyle5Code, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BrrrInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),

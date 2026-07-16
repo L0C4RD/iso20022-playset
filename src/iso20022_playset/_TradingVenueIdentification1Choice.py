@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCode import CountryCode
-from ._MICIdentifier import MICIdentifier
-from ._TradingVenueIdentification2 import TradingVenueIdentification2
+from . import CountryCode
+from . import MICIdentifier
+from . import TradingVenueIdentification2
 
 class TradingVenueIdentification1Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TradingVenueIdentification1Choice(base_types._BaseFieldType):
 
 	@MktIdCd.setter
 	def MktIdCd(self, value):
-		self._MktIdCd = value if type(value) != base_types.auto else self.make_default("MktIdCd")
+		self._MktIdCd = value if value is not None else base_types.UninitialisedField(self, 'MktIdCd', MICIdentifier, False)
 
 	@MktIdCd.deleter
 	def MktIdCd(self):
 		del self._MktIdCd
-		self._MktIdCd = None
+		self._MktIdCd = base_types.UninitialisedField(self, 'MktIdCd', MICIdentifier, False)
 
 	@property
 	def NtlCmptntAuthrty(self):
@@ -28,12 +28,12 @@ class TradingVenueIdentification1Choice(base_types._BaseFieldType):
 
 	@NtlCmptntAuthrty.setter
 	def NtlCmptntAuthrty(self, value):
-		self._NtlCmptntAuthrty = value if type(value) != base_types.auto else self.make_default("NtlCmptntAuthrty")
+		self._NtlCmptntAuthrty = value if value is not None else base_types.UninitialisedField(self, 'NtlCmptntAuthrty', CountryCode, False)
 
 	@NtlCmptntAuthrty.deleter
 	def NtlCmptntAuthrty(self):
 		del self._NtlCmptntAuthrty
-		self._NtlCmptntAuthrty = None
+		self._NtlCmptntAuthrty = base_types.UninitialisedField(self, 'NtlCmptntAuthrty', CountryCode, False)
 
 	@property
 	def Othr(self):
@@ -41,12 +41,12 @@ class TradingVenueIdentification1Choice(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', TradingVenueIdentification2, False)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', TradingVenueIdentification2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MktIdCd', type=MICIdentifier, min=0, max=1, mutex_group=1, array=False),

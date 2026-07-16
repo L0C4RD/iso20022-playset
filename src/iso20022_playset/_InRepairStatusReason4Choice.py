@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InRepairStatusReason4 import InRepairStatusReason4
-from ._NoReasonCode import NoReasonCode
+from . import InRepairStatusReason4
+from . import NoReasonCode
 
 class InRepairStatusReason4Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class InRepairStatusReason4Choice(base_types._BaseFieldType):
 
 	@NoSpcfdRsn.setter
 	def NoSpcfdRsn(self, value):
-		self._NoSpcfdRsn = value if type(value) != base_types.auto else self.make_default("NoSpcfdRsn")
+		self._NoSpcfdRsn = value if value is not None else base_types.UninitialisedField(self, 'NoSpcfdRsn', NoReasonCode, False)
 
 	@NoSpcfdRsn.deleter
 	def NoSpcfdRsn(self):
 		del self._NoSpcfdRsn
-		self._NoSpcfdRsn = None
+		self._NoSpcfdRsn = base_types.UninitialisedField(self, 'NoSpcfdRsn', NoReasonCode, False)
 
 	@property
 	def RsnDtls(self):
@@ -27,12 +27,12 @@ class InRepairStatusReason4Choice(base_types._BaseFieldType):
 
 	@RsnDtls.setter
 	def RsnDtls(self, value):
-		self._RsnDtls = value if type(value) != base_types.auto else self.make_default("RsnDtls")
+		self._RsnDtls = value if value is not None else base_types.UninitialisedField(self, 'RsnDtls', InRepairStatusReason4, True)
 
 	@RsnDtls.deleter
 	def RsnDtls(self):
 		del self._RsnDtls
-		self._RsnDtls = None
+		self._RsnDtls = base_types.UninitialisedField(self, 'RsnDtls', InRepairStatusReason4, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NoSpcfdRsn', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),

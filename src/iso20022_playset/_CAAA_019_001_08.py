@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcceptorCurrencyConversionAdviceResponseV08 import AcceptorCurrencyConversionAdviceResponseV08
+from . import AcceptorCurrencyConversionAdviceResponseV08
 
 class CAAA_019_001_08():
 
@@ -18,12 +18,12 @@ class CAAA_019_001_08():
 
 		@AccptrCcyConvsAdvcRspn.setter
 		def AccptrCcyConvsAdvcRspn(self, value):
-			self._AccptrCcyConvsAdvcRspn = value if type(value) != base_types.auto else self.make_default("AccptrCcyConvsAdvcRspn")
+			self._AccptrCcyConvsAdvcRspn = value if value is not None else base_types.UninitialisedField(self, 'AccptrCcyConvsAdvcRspn', AcceptorCurrencyConversionAdviceResponseV08, False)
 
 		@AccptrCcyConvsAdvcRspn.deleter
 		def AccptrCcyConvsAdvcRspn(self):
 			del self._AccptrCcyConvsAdvcRspn
-			self._AccptrCcyConvsAdvcRspn = None
+			self._AccptrCcyConvsAdvcRspn = base_types.UninitialisedField(self, 'AccptrCcyConvsAdvcRspn', AcceptorCurrencyConversionAdviceResponseV08, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AccptrCcyConvsAdvcRspn', type=AcceptorCurrencyConversionAdviceResponseV08, min=1, max=1, mutex_group=None, array=False),

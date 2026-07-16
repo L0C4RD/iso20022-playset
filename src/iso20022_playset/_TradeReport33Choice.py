@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._TradeData43 import TradeData43
+from . import TradeData43
 
 class TradeReport33Choice(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class TradeReport33Choice(base_types._BaseFieldType):
 
 	@Cmprssn.setter
 	def Cmprssn(self, value):
-		self._Cmprssn = value if type(value) != base_types.auto else self.make_default("Cmprssn")
+		self._Cmprssn = value if value is not None else base_types.UninitialisedField(self, 'Cmprssn', TradeData43, False)
 
 	@Cmprssn.deleter
 	def Cmprssn(self):
 		del self._Cmprssn
-		self._Cmprssn = None
+		self._Cmprssn = base_types.UninitialisedField(self, 'Cmprssn', TradeData43, False)
 
 	@property
 	def Crrctn(self):
@@ -26,12 +26,12 @@ class TradeReport33Choice(base_types._BaseFieldType):
 
 	@Crrctn.setter
 	def Crrctn(self, value):
-		self._Crrctn = value if type(value) != base_types.auto else self.make_default("Crrctn")
+		self._Crrctn = value if value is not None else base_types.UninitialisedField(self, 'Crrctn', TradeData43, False)
 
 	@Crrctn.deleter
 	def Crrctn(self):
 		del self._Crrctn
-		self._Crrctn = None
+		self._Crrctn = base_types.UninitialisedField(self, 'Crrctn', TradeData43, False)
 
 	@property
 	def Err(self):
@@ -39,12 +39,12 @@ class TradeReport33Choice(base_types._BaseFieldType):
 
 	@Err.setter
 	def Err(self, value):
-		self._Err = value if type(value) != base_types.auto else self.make_default("Err")
+		self._Err = value if value is not None else base_types.UninitialisedField(self, 'Err', TradeData43, False)
 
 	@Err.deleter
 	def Err(self):
 		del self._Err
-		self._Err = None
+		self._Err = base_types.UninitialisedField(self, 'Err', TradeData43, False)
 
 	@property
 	def Mod(self):
@@ -52,12 +52,12 @@ class TradeReport33Choice(base_types._BaseFieldType):
 
 	@Mod.setter
 	def Mod(self, value):
-		self._Mod = value if type(value) != base_types.auto else self.make_default("Mod")
+		self._Mod = value if value is not None else base_types.UninitialisedField(self, 'Mod', TradeData43, False)
 
 	@Mod.deleter
 	def Mod(self):
 		del self._Mod
-		self._Mod = None
+		self._Mod = base_types.UninitialisedField(self, 'Mod', TradeData43, False)
 
 	@property
 	def New(self):
@@ -65,12 +65,12 @@ class TradeReport33Choice(base_types._BaseFieldType):
 
 	@New.setter
 	def New(self, value):
-		self._New = value if type(value) != base_types.auto else self.make_default("New")
+		self._New = value if value is not None else base_types.UninitialisedField(self, 'New', TradeData43, False)
 
 	@New.deleter
 	def New(self):
 		del self._New
-		self._New = None
+		self._New = base_types.UninitialisedField(self, 'New', TradeData43, False)
 
 	@property
 	def Othr(self):
@@ -78,12 +78,12 @@ class TradeReport33Choice(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', TradeData43, False)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', TradeData43, False)
 
 	@property
 	def PortOut(self):
@@ -91,12 +91,12 @@ class TradeReport33Choice(base_types._BaseFieldType):
 
 	@PortOut.setter
 	def PortOut(self, value):
-		self._PortOut = value if type(value) != base_types.auto else self.make_default("PortOut")
+		self._PortOut = value if value is not None else base_types.UninitialisedField(self, 'PortOut', TradeData43, False)
 
 	@PortOut.deleter
 	def PortOut(self):
 		del self._PortOut
-		self._PortOut = None
+		self._PortOut = base_types.UninitialisedField(self, 'PortOut', TradeData43, False)
 
 	@property
 	def PosCmpnt(self):
@@ -104,12 +104,12 @@ class TradeReport33Choice(base_types._BaseFieldType):
 
 	@PosCmpnt.setter
 	def PosCmpnt(self, value):
-		self._PosCmpnt = value if type(value) != base_types.auto else self.make_default("PosCmpnt")
+		self._PosCmpnt = value if value is not None else base_types.UninitialisedField(self, 'PosCmpnt', TradeData43, False)
 
 	@PosCmpnt.deleter
 	def PosCmpnt(self):
 		del self._PosCmpnt
-		self._PosCmpnt = None
+		self._PosCmpnt = base_types.UninitialisedField(self, 'PosCmpnt', TradeData43, False)
 
 	@property
 	def Rvv(self):
@@ -117,12 +117,12 @@ class TradeReport33Choice(base_types._BaseFieldType):
 
 	@Rvv.setter
 	def Rvv(self, value):
-		self._Rvv = value if type(value) != base_types.auto else self.make_default("Rvv")
+		self._Rvv = value if value is not None else base_types.UninitialisedField(self, 'Rvv', TradeData43, False)
 
 	@Rvv.deleter
 	def Rvv(self):
 		del self._Rvv
-		self._Rvv = None
+		self._Rvv = base_types.UninitialisedField(self, 'Rvv', TradeData43, False)
 
 	@property
 	def Termntn(self):
@@ -130,12 +130,12 @@ class TradeReport33Choice(base_types._BaseFieldType):
 
 	@Termntn.setter
 	def Termntn(self, value):
-		self._Termntn = value if type(value) != base_types.auto else self.make_default("Termntn")
+		self._Termntn = value if value is not None else base_types.UninitialisedField(self, 'Termntn', TradeData43, False)
 
 	@Termntn.deleter
 	def Termntn(self):
 		del self._Termntn
-		self._Termntn = None
+		self._Termntn = base_types.UninitialisedField(self, 'Termntn', TradeData43, False)
 
 	@property
 	def ValtnUpd(self):
@@ -143,12 +143,12 @@ class TradeReport33Choice(base_types._BaseFieldType):
 
 	@ValtnUpd.setter
 	def ValtnUpd(self, value):
-		self._ValtnUpd = value if type(value) != base_types.auto else self.make_default("ValtnUpd")
+		self._ValtnUpd = value if value is not None else base_types.UninitialisedField(self, 'ValtnUpd', TradeData43, False)
 
 	@ValtnUpd.deleter
 	def ValtnUpd(self):
 		del self._ValtnUpd
-		self._ValtnUpd = None
+		self._ValtnUpd = base_types.UninitialisedField(self, 'ValtnUpd', TradeData43, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cmprssn', type=TradeData43, min=0, max=1, mutex_group=1, array=False),

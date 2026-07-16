@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ReportHeader6 import ReportHeader6
-from ._StatementGroup5 import StatementGroup5
+from . import ReportHeader6
+from . import StatementGroup5
 
 class BankServicesBillingStatementV05(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class BankServicesBillingStatementV05(base_types._BaseFieldType):
 
 	@BllgStmtGrp.setter
 	def BllgStmtGrp(self, value):
-		self._BllgStmtGrp = value if type(value) != base_types.auto else self.make_default("BllgStmtGrp")
+		self._BllgStmtGrp = value if value is not None else base_types.UninitialisedField(self, 'BllgStmtGrp', StatementGroup5, True)
 
 	@BllgStmtGrp.deleter
 	def BllgStmtGrp(self):
 		del self._BllgStmtGrp
-		self._BllgStmtGrp = None
+		self._BllgStmtGrp = base_types.UninitialisedField(self, 'BllgStmtGrp', StatementGroup5, True)
 
 	@property
 	def RptHdr(self):
@@ -27,12 +27,12 @@ class BankServicesBillingStatementV05(base_types._BaseFieldType):
 
 	@RptHdr.setter
 	def RptHdr(self, value):
-		self._RptHdr = value if type(value) != base_types.auto else self.make_default("RptHdr")
+		self._RptHdr = value if value is not None else base_types.UninitialisedField(self, 'RptHdr', ReportHeader6, False)
 
 	@RptHdr.deleter
 	def RptHdr(self):
 		del self._RptHdr
-		self._RptHdr = None
+		self._RptHdr = base_types.UninitialisedField(self, 'RptHdr', ReportHeader6, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BllgStmtGrp', type=StatementGroup5, min=1, max=None, mutex_group=None, array=True),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._YesNoIndicator import YesNoIndicator
+from . import ImpliedCurrencyAndAmount
+from . import YesNoIndicator
 
 class AmountRangeBoundary1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AmountRangeBoundary1(base_types._BaseFieldType):
 
 	@BdryAmt.setter
 	def BdryAmt(self, value):
-		self._BdryAmt = value if type(value) != base_types.auto else self.make_default("BdryAmt")
+		self._BdryAmt = value if value is not None else base_types.UninitialisedField(self, 'BdryAmt', ImpliedCurrencyAndAmount, False)
 
 	@BdryAmt.deleter
 	def BdryAmt(self):
 		del self._BdryAmt
-		self._BdryAmt = None
+		self._BdryAmt = base_types.UninitialisedField(self, 'BdryAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def Incl(self):
@@ -27,12 +27,12 @@ class AmountRangeBoundary1(base_types._BaseFieldType):
 
 	@Incl.setter
 	def Incl(self, value):
-		self._Incl = value if type(value) != base_types.auto else self.make_default("Incl")
+		self._Incl = value if value is not None else base_types.UninitialisedField(self, 'Incl', YesNoIndicator, False)
 
 	@Incl.deleter
 	def Incl(self):
 		del self._Incl
-		self._Incl = None
+		self._Incl = base_types.UninitialisedField(self, 'Incl', YesNoIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BdryAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

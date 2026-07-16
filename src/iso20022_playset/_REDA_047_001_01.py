@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecurityCSDLinkStatusAdviceV01 import SecurityCSDLinkStatusAdviceV01
+from . import SecurityCSDLinkStatusAdviceV01
 
 class REDA_047_001_01():
 
@@ -18,12 +18,12 @@ class REDA_047_001_01():
 
 		@SctyCSDLkStsAdvc.setter
 		def SctyCSDLkStsAdvc(self, value):
-			self._SctyCSDLkStsAdvc = value if type(value) != base_types.auto else self.make_default("SctyCSDLkStsAdvc")
+			self._SctyCSDLkStsAdvc = value if value is not None else base_types.UninitialisedField(self, 'SctyCSDLkStsAdvc', SecurityCSDLinkStatusAdviceV01, False)
 
 		@SctyCSDLkStsAdvc.deleter
 		def SctyCSDLkStsAdvc(self):
 			del self._SctyCSDLkStsAdvc
-			self._SctyCSDLkStsAdvc = None
+			self._SctyCSDLkStsAdvc = base_types.UninitialisedField(self, 'SctyCSDLkStsAdvc', SecurityCSDLinkStatusAdviceV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctyCSDLkStsAdvc', type=SecurityCSDLinkStatusAdviceV01, min=1, max=1, mutex_group=None, array=False),

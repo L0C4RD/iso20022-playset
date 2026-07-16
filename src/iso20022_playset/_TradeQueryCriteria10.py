@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._TradeAdditionalQueryCriteria7 import TradeAdditionalQueryCriteria7
-from ._TradeDateTimeQueryCriteria2 import TradeDateTimeQueryCriteria2
-from ._TradePartyQueryCriteria5 import TradePartyQueryCriteria5
-from ._TradeTypeQueryCriteria2 import TradeTypeQueryCriteria2
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import TradeAdditionalQueryCriteria7
+from . import TradeDateTimeQueryCriteria2
+from . import TradePartyQueryCriteria5
+from . import TradeTypeQueryCriteria2
+from . import TrueFalseIndicator
 
 class TradeQueryCriteria10(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class TradeQueryCriteria10(base_types._BaseFieldType):
 
 	@OthrCrit.setter
 	def OthrCrit(self, value):
-		self._OthrCrit = value if type(value) != base_types.auto else self.make_default("OthrCrit")
+		self._OthrCrit = value if value is not None else base_types.UninitialisedField(self, 'OthrCrit', TradeAdditionalQueryCriteria7, False)
 
 	@OthrCrit.deleter
 	def OthrCrit(self):
 		del self._OthrCrit
-		self._OthrCrit = None
+		self._OthrCrit = base_types.UninitialisedField(self, 'OthrCrit', TradeAdditionalQueryCriteria7, False)
 
 	@property
 	def OutsdngTradInd(self):
@@ -30,12 +30,12 @@ class TradeQueryCriteria10(base_types._BaseFieldType):
 
 	@OutsdngTradInd.setter
 	def OutsdngTradInd(self, value):
-		self._OutsdngTradInd = value if type(value) != base_types.auto else self.make_default("OutsdngTradInd")
+		self._OutsdngTradInd = value if value is not None else base_types.UninitialisedField(self, 'OutsdngTradInd', TrueFalseIndicator, False)
 
 	@OutsdngTradInd.deleter
 	def OutsdngTradInd(self):
 		del self._OutsdngTradInd
-		self._OutsdngTradInd = None
+		self._OutsdngTradInd = base_types.UninitialisedField(self, 'OutsdngTradInd', TrueFalseIndicator, False)
 
 	@property
 	def TmCrit(self):
@@ -43,12 +43,12 @@ class TradeQueryCriteria10(base_types._BaseFieldType):
 
 	@TmCrit.setter
 	def TmCrit(self, value):
-		self._TmCrit = value if type(value) != base_types.auto else self.make_default("TmCrit")
+		self._TmCrit = value if value is not None else base_types.UninitialisedField(self, 'TmCrit', TradeDateTimeQueryCriteria2, False)
 
 	@TmCrit.deleter
 	def TmCrit(self):
 		del self._TmCrit
-		self._TmCrit = None
+		self._TmCrit = base_types.UninitialisedField(self, 'TmCrit', TradeDateTimeQueryCriteria2, False)
 
 	@property
 	def TradLifeCyclHstry(self):
@@ -56,12 +56,12 @@ class TradeQueryCriteria10(base_types._BaseFieldType):
 
 	@TradLifeCyclHstry.setter
 	def TradLifeCyclHstry(self, value):
-		self._TradLifeCyclHstry = value if type(value) != base_types.auto else self.make_default("TradLifeCyclHstry")
+		self._TradLifeCyclHstry = value if value is not None else base_types.UninitialisedField(self, 'TradLifeCyclHstry', TrueFalseIndicator, False)
 
 	@TradLifeCyclHstry.deleter
 	def TradLifeCyclHstry(self):
 		del self._TradLifeCyclHstry
-		self._TradLifeCyclHstry = None
+		self._TradLifeCyclHstry = base_types.UninitialisedField(self, 'TradLifeCyclHstry', TrueFalseIndicator, False)
 
 	@property
 	def TradPtyCrit(self):
@@ -69,12 +69,12 @@ class TradeQueryCriteria10(base_types._BaseFieldType):
 
 	@TradPtyCrit.setter
 	def TradPtyCrit(self, value):
-		self._TradPtyCrit = value if type(value) != base_types.auto else self.make_default("TradPtyCrit")
+		self._TradPtyCrit = value if value is not None else base_types.UninitialisedField(self, 'TradPtyCrit', TradePartyQueryCriteria5, False)
 
 	@TradPtyCrit.deleter
 	def TradPtyCrit(self):
 		del self._TradPtyCrit
-		self._TradPtyCrit = None
+		self._TradPtyCrit = base_types.UninitialisedField(self, 'TradPtyCrit', TradePartyQueryCriteria5, False)
 
 	@property
 	def TradTpCrit(self):
@@ -82,12 +82,12 @@ class TradeQueryCriteria10(base_types._BaseFieldType):
 
 	@TradTpCrit.setter
 	def TradTpCrit(self, value):
-		self._TradTpCrit = value if type(value) != base_types.auto else self.make_default("TradTpCrit")
+		self._TradTpCrit = value if value is not None else base_types.UninitialisedField(self, 'TradTpCrit', TradeTypeQueryCriteria2, False)
 
 	@TradTpCrit.deleter
 	def TradTpCrit(self):
 		del self._TradTpCrit
-		self._TradTpCrit = None
+		self._TradTpCrit = base_types.UninitialisedField(self, 'TradTpCrit', TradeTypeQueryCriteria2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OthrCrit', type=TradeAdditionalQueryCriteria7, min=0, max=1, mutex_group=None, array=False),

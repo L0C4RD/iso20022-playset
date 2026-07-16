@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max140Text import Max140Text
-from ._StatusAdviceReport3 import StatusAdviceReport3
-from ._StatusReportRecord3 import StatusReportRecord3
-from ._SupplementaryData1 import SupplementaryData1
+from . import Max140Text
+from . import StatusAdviceReport3
+from . import StatusReportRecord3
+from . import SupplementaryData1
 
 class MessageReportHeader4(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class MessageReportHeader4(base_types._BaseFieldType):
 
 	@MsgRptIdr.setter
 	def MsgRptIdr(self, value):
-		self._MsgRptIdr = value if type(value) != base_types.auto else self.make_default("MsgRptIdr")
+		self._MsgRptIdr = value if value is not None else base_types.UninitialisedField(self, 'MsgRptIdr', Max140Text, False)
 
 	@MsgRptIdr.deleter
 	def MsgRptIdr(self):
 		del self._MsgRptIdr
-		self._MsgRptIdr = None
+		self._MsgRptIdr = base_types.UninitialisedField(self, 'MsgRptIdr', Max140Text, False)
 
 	@property
 	def MsgSts(self):
@@ -29,12 +29,12 @@ class MessageReportHeader4(base_types._BaseFieldType):
 
 	@MsgSts.setter
 	def MsgSts(self, value):
-		self._MsgSts = value if type(value) != base_types.auto else self.make_default("MsgSts")
+		self._MsgSts = value if value is not None else base_types.UninitialisedField(self, 'MsgSts', StatusAdviceReport3, False)
 
 	@MsgSts.deleter
 	def MsgSts(self):
 		del self._MsgSts
-		self._MsgSts = None
+		self._MsgSts = base_types.UninitialisedField(self, 'MsgSts', StatusAdviceReport3, False)
 
 	@property
 	def RcrdSts(self):
@@ -42,12 +42,12 @@ class MessageReportHeader4(base_types._BaseFieldType):
 
 	@RcrdSts.setter
 	def RcrdSts(self, value):
-		self._RcrdSts = value if type(value) != base_types.auto else self.make_default("RcrdSts")
+		self._RcrdSts = value if value is not None else base_types.UninitialisedField(self, 'RcrdSts', StatusReportRecord3, True)
 
 	@RcrdSts.deleter
 	def RcrdSts(self):
 		del self._RcrdSts
-		self._RcrdSts = None
+		self._RcrdSts = base_types.UninitialisedField(self, 'RcrdSts', StatusReportRecord3, True)
 
 	@property
 	def SplmtryData(self):
@@ -55,12 +55,12 @@ class MessageReportHeader4(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgRptIdr', type=Max140Text, min=0, max=1, mutex_group=None, array=False),

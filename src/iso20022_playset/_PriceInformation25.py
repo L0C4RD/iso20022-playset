@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._MarketIdentification89 import MarketIdentification89
-from ._PriceRateOrAmount4Choice import PriceRateOrAmount4Choice
+from . import DateAndDateTime2Choice
+from . import MarketIdentification89
+from . import PriceRateOrAmount4Choice
 
 class PriceInformation25(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PriceInformation25(base_types._BaseFieldType):
 
 	@QtnDt.setter
 	def QtnDt(self, value):
-		self._QtnDt = value if type(value) != base_types.auto else self.make_default("QtnDt")
+		self._QtnDt = value if value is not None else base_types.UninitialisedField(self, 'QtnDt', DateAndDateTime2Choice, False)
 
 	@QtnDt.deleter
 	def QtnDt(self):
 		del self._QtnDt
-		self._QtnDt = None
+		self._QtnDt = base_types.UninitialisedField(self, 'QtnDt', DateAndDateTime2Choice, False)
 
 	@property
 	def SrcOfPric(self):
@@ -28,12 +28,12 @@ class PriceInformation25(base_types._BaseFieldType):
 
 	@SrcOfPric.setter
 	def SrcOfPric(self, value):
-		self._SrcOfPric = value if type(value) != base_types.auto else self.make_default("SrcOfPric")
+		self._SrcOfPric = value if value is not None else base_types.UninitialisedField(self, 'SrcOfPric', MarketIdentification89, False)
 
 	@SrcOfPric.deleter
 	def SrcOfPric(self):
 		del self._SrcOfPric
-		self._SrcOfPric = None
+		self._SrcOfPric = base_types.UninitialisedField(self, 'SrcOfPric', MarketIdentification89, False)
 
 	@property
 	def Val(self):
@@ -41,12 +41,12 @@ class PriceInformation25(base_types._BaseFieldType):
 
 	@Val.setter
 	def Val(self, value):
-		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
+		self._Val = value if value is not None else base_types.UninitialisedField(self, 'Val', PriceRateOrAmount4Choice, False)
 
 	@Val.deleter
 	def Val(self):
 		del self._Val
-		self._Val = None
+		self._Val = base_types.UninitialisedField(self, 'Val', PriceRateOrAmount4Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='QtnDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),

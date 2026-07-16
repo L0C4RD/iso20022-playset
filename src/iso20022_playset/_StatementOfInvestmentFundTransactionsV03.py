@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalReference2 import AdditionalReference2
-from ._Extension1 import Extension1
-from ._InvestmentAccount43 import InvestmentAccount43
-from ._InvestmentFundTransactionsByFund3 import InvestmentFundTransactionsByFund3
-from ._MessageIdentification1 import MessageIdentification1
-from ._Pagination import Pagination
-from ._Statement8 import Statement8
-from ._SubAccountIdentification36 import SubAccountIdentification36
+from . import AdditionalReference2
+from . import Extension1
+from . import InvestmentAccount43
+from . import InvestmentFundTransactionsByFund3
+from . import MessageIdentification1
+from . import Pagination
+from . import Statement8
+from . import SubAccountIdentification36
 
 class StatementOfInvestmentFundTransactionsV03(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class StatementOfInvestmentFundTransactionsV03(base_types._BaseFieldType):
 
 	@InvstmtAcctDtls.setter
 	def InvstmtAcctDtls(self, value):
-		self._InvstmtAcctDtls = value if type(value) != base_types.auto else self.make_default("InvstmtAcctDtls")
+		self._InvstmtAcctDtls = value if value is not None else base_types.UninitialisedField(self, 'InvstmtAcctDtls', InvestmentAccount43, False)
 
 	@InvstmtAcctDtls.deleter
 	def InvstmtAcctDtls(self):
 		del self._InvstmtAcctDtls
-		self._InvstmtAcctDtls = None
+		self._InvstmtAcctDtls = base_types.UninitialisedField(self, 'InvstmtAcctDtls', InvestmentAccount43, False)
 
 	@property
 	def MsgId(self):
@@ -33,12 +33,12 @@ class StatementOfInvestmentFundTransactionsV03(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@property
 	def MsgPgntn(self):
@@ -46,12 +46,12 @@ class StatementOfInvestmentFundTransactionsV03(base_types._BaseFieldType):
 
 	@MsgPgntn.setter
 	def MsgPgntn(self, value):
-		self._MsgPgntn = value if type(value) != base_types.auto else self.make_default("MsgPgntn")
+		self._MsgPgntn = value if value is not None else base_types.UninitialisedField(self, 'MsgPgntn', Pagination, False)
 
 	@MsgPgntn.deleter
 	def MsgPgntn(self):
 		del self._MsgPgntn
-		self._MsgPgntn = None
+		self._MsgPgntn = base_types.UninitialisedField(self, 'MsgPgntn', Pagination, False)
 
 	@property
 	def PrvsRef(self):
@@ -59,12 +59,12 @@ class StatementOfInvestmentFundTransactionsV03(base_types._BaseFieldType):
 
 	@PrvsRef.setter
 	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
+		self._PrvsRef = value if value is not None else base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference2, True)
 
 	@PrvsRef.deleter
 	def PrvsRef(self):
 		del self._PrvsRef
-		self._PrvsRef = None
+		self._PrvsRef = base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference2, True)
 
 	@property
 	def RltdRef(self):
@@ -72,12 +72,12 @@ class StatementOfInvestmentFundTransactionsV03(base_types._BaseFieldType):
 
 	@RltdRef.setter
 	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
+		self._RltdRef = value if value is not None else base_types.UninitialisedField(self, 'RltdRef', AdditionalReference2, True)
 
 	@RltdRef.deleter
 	def RltdRef(self):
 		del self._RltdRef
-		self._RltdRef = None
+		self._RltdRef = base_types.UninitialisedField(self, 'RltdRef', AdditionalReference2, True)
 
 	@property
 	def StmtGnlDtls(self):
@@ -85,12 +85,12 @@ class StatementOfInvestmentFundTransactionsV03(base_types._BaseFieldType):
 
 	@StmtGnlDtls.setter
 	def StmtGnlDtls(self, value):
-		self._StmtGnlDtls = value if type(value) != base_types.auto else self.make_default("StmtGnlDtls")
+		self._StmtGnlDtls = value if value is not None else base_types.UninitialisedField(self, 'StmtGnlDtls', Statement8, False)
 
 	@StmtGnlDtls.deleter
 	def StmtGnlDtls(self):
 		del self._StmtGnlDtls
-		self._StmtGnlDtls = None
+		self._StmtGnlDtls = base_types.UninitialisedField(self, 'StmtGnlDtls', Statement8, False)
 
 	@property
 	def SubAcctDtls(self):
@@ -98,12 +98,12 @@ class StatementOfInvestmentFundTransactionsV03(base_types._BaseFieldType):
 
 	@SubAcctDtls.setter
 	def SubAcctDtls(self, value):
-		self._SubAcctDtls = value if type(value) != base_types.auto else self.make_default("SubAcctDtls")
+		self._SubAcctDtls = value if value is not None else base_types.UninitialisedField(self, 'SubAcctDtls', SubAccountIdentification36, True)
 
 	@SubAcctDtls.deleter
 	def SubAcctDtls(self):
 		del self._SubAcctDtls
-		self._SubAcctDtls = None
+		self._SubAcctDtls = base_types.UninitialisedField(self, 'SubAcctDtls', SubAccountIdentification36, True)
 
 	@property
 	def TxOnAcct(self):
@@ -111,12 +111,12 @@ class StatementOfInvestmentFundTransactionsV03(base_types._BaseFieldType):
 
 	@TxOnAcct.setter
 	def TxOnAcct(self, value):
-		self._TxOnAcct = value if type(value) != base_types.auto else self.make_default("TxOnAcct")
+		self._TxOnAcct = value if value is not None else base_types.UninitialisedField(self, 'TxOnAcct', InvestmentFundTransactionsByFund3, True)
 
 	@TxOnAcct.deleter
 	def TxOnAcct(self):
 		del self._TxOnAcct
-		self._TxOnAcct = None
+		self._TxOnAcct = base_types.UninitialisedField(self, 'TxOnAcct', InvestmentFundTransactionsByFund3, True)
 
 	@property
 	def Xtnsn(self):
@@ -124,12 +124,12 @@ class StatementOfInvestmentFundTransactionsV03(base_types._BaseFieldType):
 
 	@Xtnsn.setter
 	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
+		self._Xtnsn = value if value is not None else base_types.UninitialisedField(self, 'Xtnsn', Extension1, True)
 
 	@Xtnsn.deleter
 	def Xtnsn(self):
 		del self._Xtnsn
-		self._Xtnsn = None
+		self._Xtnsn = base_types.UninitialisedField(self, 'Xtnsn', Extension1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InvstmtAcctDtls', type=InvestmentAccount43, min=1, max=1, mutex_group=None, array=False),

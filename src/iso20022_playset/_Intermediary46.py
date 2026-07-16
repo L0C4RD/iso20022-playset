@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Account32 import Account32
-from ._CommunicationAddress6 import CommunicationAddress6
-from ._LEIIdentifier import LEIIdentifier
-from ._NameAndAddress4 import NameAndAddress4
-from ._PartyIdentification177Choice import PartyIdentification177Choice
-from ._PartyRole2Choice import PartyRole2Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import Account32
+from . import CommunicationAddress6
+from . import LEIIdentifier
+from . import NameAndAddress4
+from . import PartyIdentification177Choice
+from . import PartyRole2Choice
+from . import YesNoIndicator
 
 class Intermediary46(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class Intermediary46(base_types._BaseFieldType):
 
 	@Acct.setter
 	def Acct(self, value):
-		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
+		self._Acct = value if value is not None else base_types.UninitialisedField(self, 'Acct', Account32, False)
 
 	@Acct.deleter
 	def Acct(self):
 		del self._Acct
-		self._Acct = None
+		self._Acct = base_types.UninitialisedField(self, 'Acct', Account32, False)
 
 	@property
 	def Id(self):
@@ -32,12 +32,12 @@ class Intermediary46(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', PartyIdentification177Choice, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', PartyIdentification177Choice, False)
 
 	@property
 	def LglNttyIdr(self):
@@ -45,12 +45,12 @@ class Intermediary46(base_types._BaseFieldType):
 
 	@LglNttyIdr.setter
 	def LglNttyIdr(self, value):
-		self._LglNttyIdr = value if type(value) != base_types.auto else self.make_default("LglNttyIdr")
+		self._LglNttyIdr = value if value is not None else base_types.UninitialisedField(self, 'LglNttyIdr', LEIIdentifier, False)
 
 	@LglNttyIdr.deleter
 	def LglNttyIdr(self):
 		del self._LglNttyIdr
-		self._LglNttyIdr = None
+		self._LglNttyIdr = base_types.UninitialisedField(self, 'LglNttyIdr', LEIIdentifier, False)
 
 	@property
 	def NmAndAdr(self):
@@ -58,12 +58,12 @@ class Intermediary46(base_types._BaseFieldType):
 
 	@NmAndAdr.setter
 	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
+		self._NmAndAdr = value if value is not None else base_types.UninitialisedField(self, 'NmAndAdr', NameAndAddress4, False)
 
 	@NmAndAdr.deleter
 	def NmAndAdr(self):
 		del self._NmAndAdr
-		self._NmAndAdr = None
+		self._NmAndAdr = base_types.UninitialisedField(self, 'NmAndAdr', NameAndAddress4, False)
 
 	@property
 	def PmryComAdr(self):
@@ -71,12 +71,12 @@ class Intermediary46(base_types._BaseFieldType):
 
 	@PmryComAdr.setter
 	def PmryComAdr(self, value):
-		self._PmryComAdr = value if type(value) != base_types.auto else self.make_default("PmryComAdr")
+		self._PmryComAdr = value if value is not None else base_types.UninitialisedField(self, 'PmryComAdr', CommunicationAddress6, True)
 
 	@PmryComAdr.deleter
 	def PmryComAdr(self):
 		del self._PmryComAdr
-		self._PmryComAdr = None
+		self._PmryComAdr = base_types.UninitialisedField(self, 'PmryComAdr', CommunicationAddress6, True)
 
 	@property
 	def Role(self):
@@ -84,12 +84,12 @@ class Intermediary46(base_types._BaseFieldType):
 
 	@Role.setter
 	def Role(self, value):
-		self._Role = value if type(value) != base_types.auto else self.make_default("Role")
+		self._Role = value if value is not None else base_types.UninitialisedField(self, 'Role', PartyRole2Choice, False)
 
 	@Role.deleter
 	def Role(self):
 		del self._Role
-		self._Role = None
+		self._Role = base_types.UninitialisedField(self, 'Role', PartyRole2Choice, False)
 
 	@property
 	def ScndryComAdr(self):
@@ -97,12 +97,12 @@ class Intermediary46(base_types._BaseFieldType):
 
 	@ScndryComAdr.setter
 	def ScndryComAdr(self, value):
-		self._ScndryComAdr = value if type(value) != base_types.auto else self.make_default("ScndryComAdr")
+		self._ScndryComAdr = value if value is not None else base_types.UninitialisedField(self, 'ScndryComAdr', CommunicationAddress6, True)
 
 	@ScndryComAdr.deleter
 	def ScndryComAdr(self):
 		del self._ScndryComAdr
-		self._ScndryComAdr = None
+		self._ScndryComAdr = base_types.UninitialisedField(self, 'ScndryComAdr', CommunicationAddress6, True)
 
 	@property
 	def WvdTrlrComssnInd(self):
@@ -110,12 +110,12 @@ class Intermediary46(base_types._BaseFieldType):
 
 	@WvdTrlrComssnInd.setter
 	def WvdTrlrComssnInd(self, value):
-		self._WvdTrlrComssnInd = value if type(value) != base_types.auto else self.make_default("WvdTrlrComssnInd")
+		self._WvdTrlrComssnInd = value if value is not None else base_types.UninitialisedField(self, 'WvdTrlrComssnInd', YesNoIndicator, False)
 
 	@WvdTrlrComssnInd.deleter
 	def WvdTrlrComssnInd(self):
 		del self._WvdTrlrComssnInd
-		self._WvdTrlrComssnInd = None
+		self._WvdTrlrComssnInd = base_types.UninitialisedField(self, 'WvdTrlrComssnInd', YesNoIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acct', type=Account32, min=0, max=1, mutex_group=None, array=False),

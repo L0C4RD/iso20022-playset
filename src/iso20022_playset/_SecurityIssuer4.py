@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCode import CountryCode
-from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
+from . import CountryCode
+from . import OrganisationIdentification15Choice
 
 class SecurityIssuer4(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SecurityIssuer4(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', OrganisationIdentification15Choice, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', OrganisationIdentification15Choice, False)
 
 	@property
 	def JursdctnCtry(self):
@@ -27,12 +27,12 @@ class SecurityIssuer4(base_types._BaseFieldType):
 
 	@JursdctnCtry.setter
 	def JursdctnCtry(self, value):
-		self._JursdctnCtry = value if type(value) != base_types.auto else self.make_default("JursdctnCtry")
+		self._JursdctnCtry = value if value is not None else base_types.UninitialisedField(self, 'JursdctnCtry', CountryCode, False)
 
 	@JursdctnCtry.deleter
 	def JursdctnCtry(self):
 		del self._JursdctnCtry
-		self._JursdctnCtry = None
+		self._JursdctnCtry = base_types.UninitialisedField(self, 'JursdctnCtry', CountryCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),

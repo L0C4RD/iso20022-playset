@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CreditorServiceEnrolment1 import CreditorServiceEnrolment1
-from ._Max10KBinary import Max10KBinary
-from ._Max140Text import Max140Text
-from ._MerchantCategoryCodeIdentifier import MerchantCategoryCodeIdentifier
-from ._RTPPartyIdentification2 import RTPPartyIdentification2
+from . import CreditorServiceEnrolment1
+from . import Max10KBinary
+from . import Max140Text
+from . import MerchantCategoryCodeIdentifier
+from . import RTPPartyIdentification2
 
 class CreditorEnrolment5(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class CreditorEnrolment5(base_types._BaseFieldType):
 
 	@Cdtr.setter
 	def Cdtr(self, value):
-		self._Cdtr = value if type(value) != base_types.auto else self.make_default("Cdtr")
+		self._Cdtr = value if value is not None else base_types.UninitialisedField(self, 'Cdtr', RTPPartyIdentification2, False)
 
 	@Cdtr.deleter
 	def Cdtr(self):
 		del self._Cdtr
-		self._Cdtr = None
+		self._Cdtr = base_types.UninitialisedField(self, 'Cdtr', RTPPartyIdentification2, False)
 
 	@property
 	def CdtrLogo(self):
@@ -30,12 +30,12 @@ class CreditorEnrolment5(base_types._BaseFieldType):
 
 	@CdtrLogo.setter
 	def CdtrLogo(self, value):
-		self._CdtrLogo = value if type(value) != base_types.auto else self.make_default("CdtrLogo")
+		self._CdtrLogo = value if value is not None else base_types.UninitialisedField(self, 'CdtrLogo', Max10KBinary, False)
 
 	@CdtrLogo.deleter
 	def CdtrLogo(self):
 		del self._CdtrLogo
-		self._CdtrLogo = None
+		self._CdtrLogo = base_types.UninitialisedField(self, 'CdtrLogo', Max10KBinary, False)
 
 	@property
 	def CdtrTradgNm(self):
@@ -43,12 +43,12 @@ class CreditorEnrolment5(base_types._BaseFieldType):
 
 	@CdtrTradgNm.setter
 	def CdtrTradgNm(self, value):
-		self._CdtrTradgNm = value if type(value) != base_types.auto else self.make_default("CdtrTradgNm")
+		self._CdtrTradgNm = value if value is not None else base_types.UninitialisedField(self, 'CdtrTradgNm', Max140Text, False)
 
 	@CdtrTradgNm.deleter
 	def CdtrTradgNm(self):
 		del self._CdtrTradgNm
-		self._CdtrTradgNm = None
+		self._CdtrTradgNm = base_types.UninitialisedField(self, 'CdtrTradgNm', Max140Text, False)
 
 	@property
 	def Enrlmnt(self):
@@ -56,12 +56,12 @@ class CreditorEnrolment5(base_types._BaseFieldType):
 
 	@Enrlmnt.setter
 	def Enrlmnt(self, value):
-		self._Enrlmnt = value if type(value) != base_types.auto else self.make_default("Enrlmnt")
+		self._Enrlmnt = value if value is not None else base_types.UninitialisedField(self, 'Enrlmnt', CreditorServiceEnrolment1, False)
 
 	@Enrlmnt.deleter
 	def Enrlmnt(self):
 		del self._Enrlmnt
-		self._Enrlmnt = None
+		self._Enrlmnt = base_types.UninitialisedField(self, 'Enrlmnt', CreditorServiceEnrolment1, False)
 
 	@property
 	def MrchntCtgyCd(self):
@@ -69,12 +69,12 @@ class CreditorEnrolment5(base_types._BaseFieldType):
 
 	@MrchntCtgyCd.setter
 	def MrchntCtgyCd(self, value):
-		self._MrchntCtgyCd = value if type(value) != base_types.auto else self.make_default("MrchntCtgyCd")
+		self._MrchntCtgyCd = value if value is not None else base_types.UninitialisedField(self, 'MrchntCtgyCd', MerchantCategoryCodeIdentifier, False)
 
 	@MrchntCtgyCd.deleter
 	def MrchntCtgyCd(self):
 		del self._MrchntCtgyCd
-		self._MrchntCtgyCd = None
+		self._MrchntCtgyCd = base_types.UninitialisedField(self, 'MrchntCtgyCd', MerchantCategoryCodeIdentifier, False)
 
 	@property
 	def UltmtCdtr(self):
@@ -82,12 +82,12 @@ class CreditorEnrolment5(base_types._BaseFieldType):
 
 	@UltmtCdtr.setter
 	def UltmtCdtr(self, value):
-		self._UltmtCdtr = value if type(value) != base_types.auto else self.make_default("UltmtCdtr")
+		self._UltmtCdtr = value if value is not None else base_types.UninitialisedField(self, 'UltmtCdtr', RTPPartyIdentification2, False)
 
 	@UltmtCdtr.deleter
 	def UltmtCdtr(self):
 		del self._UltmtCdtr
-		self._UltmtCdtr = None
+		self._UltmtCdtr = base_types.UninitialisedField(self, 'UltmtCdtr', RTPPartyIdentification2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cdtr', type=RTPPartyIdentification2, min=1, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._DetailedAmount13 import DetailedAmount13
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from . import ActiveCurrencyCode
+from . import DetailedAmount13
+from . import ImpliedCurrencyAndAmount
 
 class DetailedAmount12(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class DetailedAmount12(base_types._BaseFieldType):
 
 	@AmtToDspns.setter
 	def AmtToDspns(self, value):
-		self._AmtToDspns = value if type(value) != base_types.auto else self.make_default("AmtToDspns")
+		self._AmtToDspns = value if value is not None else base_types.UninitialisedField(self, 'AmtToDspns', ImpliedCurrencyAndAmount, False)
 
 	@AmtToDspns.deleter
 	def AmtToDspns(self):
 		del self._AmtToDspns
-		self._AmtToDspns = None
+		self._AmtToDspns = base_types.UninitialisedField(self, 'AmtToDspns', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def Ccy(self):
@@ -28,12 +28,12 @@ class DetailedAmount12(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@property
 	def Dontn(self):
@@ -41,12 +41,12 @@ class DetailedAmount12(base_types._BaseFieldType):
 
 	@Dontn.setter
 	def Dontn(self, value):
-		self._Dontn = value if type(value) != base_types.auto else self.make_default("Dontn")
+		self._Dontn = value if value is not None else base_types.UninitialisedField(self, 'Dontn', DetailedAmount13, True)
 
 	@Dontn.deleter
 	def Dontn(self):
 		del self._Dontn
-		self._Dontn = None
+		self._Dontn = base_types.UninitialisedField(self, 'Dontn', DetailedAmount13, True)
 
 	@property
 	def Fees(self):
@@ -54,12 +54,12 @@ class DetailedAmount12(base_types._BaseFieldType):
 
 	@Fees.setter
 	def Fees(self, value):
-		self._Fees = value if type(value) != base_types.auto else self.make_default("Fees")
+		self._Fees = value if value is not None else base_types.UninitialisedField(self, 'Fees', DetailedAmount13, True)
 
 	@Fees.deleter
 	def Fees(self):
 		del self._Fees
-		self._Fees = None
+		self._Fees = base_types.UninitialisedField(self, 'Fees', DetailedAmount13, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmtToDspns', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

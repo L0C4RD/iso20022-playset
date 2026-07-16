@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMReconciliationAcknowledgement3 import ATMReconciliationAcknowledgement3
-from ._ContentInformationType10 import ContentInformationType10
-from ._ContentInformationType15 import ContentInformationType15
-from ._Header32 import Header32
+from . import ATMReconciliationAcknowledgement3
+from . import ContentInformationType10
+from . import ContentInformationType15
+from . import Header32
 
 class ATMReconciliationAcknowledgementV03(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ATMReconciliationAcknowledgementV03(base_types._BaseFieldType):
 
 	@ATMRcncltnAck.setter
 	def ATMRcncltnAck(self, value):
-		self._ATMRcncltnAck = value if type(value) != base_types.auto else self.make_default("ATMRcncltnAck")
+		self._ATMRcncltnAck = value if value is not None else base_types.UninitialisedField(self, 'ATMRcncltnAck', ATMReconciliationAcknowledgement3, False)
 
 	@ATMRcncltnAck.deleter
 	def ATMRcncltnAck(self):
 		del self._ATMRcncltnAck
-		self._ATMRcncltnAck = None
+		self._ATMRcncltnAck = base_types.UninitialisedField(self, 'ATMRcncltnAck', ATMReconciliationAcknowledgement3, False)
 
 	@property
 	def Hdr(self):
@@ -29,12 +29,12 @@ class ATMReconciliationAcknowledgementV03(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header32, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header32, False)
 
 	@property
 	def PrtctdATMRcncltnAck(self):
@@ -42,12 +42,12 @@ class ATMReconciliationAcknowledgementV03(base_types._BaseFieldType):
 
 	@PrtctdATMRcncltnAck.setter
 	def PrtctdATMRcncltnAck(self, value):
-		self._PrtctdATMRcncltnAck = value if type(value) != base_types.auto else self.make_default("PrtctdATMRcncltnAck")
+		self._PrtctdATMRcncltnAck = value if value is not None else base_types.UninitialisedField(self, 'PrtctdATMRcncltnAck', ContentInformationType10, False)
 
 	@PrtctdATMRcncltnAck.deleter
 	def PrtctdATMRcncltnAck(self):
 		del self._PrtctdATMRcncltnAck
-		self._PrtctdATMRcncltnAck = None
+		self._PrtctdATMRcncltnAck = base_types.UninitialisedField(self, 'PrtctdATMRcncltnAck', ContentInformationType10, False)
 
 	@property
 	def SctyTrlr(self):
@@ -55,12 +55,12 @@ class ATMReconciliationAcknowledgementV03(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType15, False)
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
 		del self._SctyTrlr
-		self._SctyTrlr = None
+		self._SctyTrlr = base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType15, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ATMRcncltnAck', type=ATMReconciliationAcknowledgement3, min=0, max=1, mutex_group=None, array=False),

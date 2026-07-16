@@ -2,24 +2,24 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AllocationIndicator1Code import AllocationIndicator1Code
-from ._ClearingBrokerIdentification1 import ClearingBrokerIdentification1
-from ._CollateralisationIndicator1Code import CollateralisationIndicator1Code
-from ._CorporateSectorIdentifier1Code import CorporateSectorIdentifier1Code
-from ._CounterpartySideTransactionReporting3 import CounterpartySideTransactionReporting3
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._Exact42Text import Exact42Text
-from ._FXCommissionOrFee1 import FXCommissionOrFee1
-from ._ISODateTime import ISODateTime
-from ._ISOTime import ISOTime
-from ._Max10Text import Max10Text
-from ._Max210Text import Max210Text
-from ._Max35Text import Max35Text
-from ._PartyIdentification242Choice import PartyIdentification242Choice
-from ._ProductIdentifier3Choice import ProductIdentifier3Choice
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._TradingSideTransactionReporting3 import TradingSideTransactionReporting3
-from ._YesNoIndicator import YesNoIndicator
+from . import AllocationIndicator1Code
+from . import ClearingBrokerIdentification1
+from . import CollateralisationIndicator1Code
+from . import CorporateSectorIdentifier1Code
+from . import CounterpartySideTransactionReporting3
+from . import DateAndDateTime2Choice
+from . import Exact42Text
+from . import FXCommissionOrFee1
+from . import ISODateTime
+from . import ISOTime
+from . import Max10Text
+from . import Max210Text
+from . import Max35Text
+from . import PartyIdentification242Choice
+from . import ProductIdentifier3Choice
+from . import SecurityIdentification19
+from . import TradingSideTransactionReporting3
+from . import YesNoIndicator
 
 class RegulatoryReporting8(base_types._BaseFieldType):
 
@@ -30,12 +30,12 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 
 	@AddtlRptgInf.setter
 	def AddtlRptgInf(self, value):
-		self._AddtlRptgInf = value if type(value) != base_types.auto else self.make_default("AddtlRptgInf")
+		self._AddtlRptgInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlRptgInf', Max210Text, False)
 
 	@AddtlRptgInf.deleter
 	def AddtlRptgInf(self):
 		del self._AddtlRptgInf
-		self._AddtlRptgInf = None
+		self._AddtlRptgInf = base_types.UninitialisedField(self, 'AddtlRptgInf', Max210Text, False)
 
 	@property
 	def AllcnInd(self):
@@ -43,12 +43,12 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 
 	@AllcnInd.setter
 	def AllcnInd(self, value):
-		self._AllcnInd = value if type(value) != base_types.auto else self.make_default("AllcnInd")
+		self._AllcnInd = value if value is not None else base_types.UninitialisedField(self, 'AllcnInd', AllocationIndicator1Code, False)
 
 	@AllcnInd.deleter
 	def AllcnInd(self):
 		del self._AllcnInd
-		self._AllcnInd = None
+		self._AllcnInd = base_types.UninitialisedField(self, 'AllcnInd', AllocationIndicator1Code, False)
 
 	@property
 	def ClrBrkr(self):
@@ -56,12 +56,12 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 
 	@ClrBrkr.setter
 	def ClrBrkr(self, value):
-		self._ClrBrkr = value if type(value) != base_types.auto else self.make_default("ClrBrkr")
+		self._ClrBrkr = value if value is not None else base_types.UninitialisedField(self, 'ClrBrkr', PartyIdentification242Choice, False)
 
 	@ClrBrkr.deleter
 	def ClrBrkr(self):
 		del self._ClrBrkr
-		self._ClrBrkr = None
+		self._ClrBrkr = base_types.UninitialisedField(self, 'ClrBrkr', PartyIdentification242Choice, False)
 
 	@property
 	def ClrBrkrId(self):
@@ -69,12 +69,12 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 
 	@ClrBrkrId.setter
 	def ClrBrkrId(self, value):
-		self._ClrBrkrId = value if type(value) != base_types.auto else self.make_default("ClrBrkrId")
+		self._ClrBrkrId = value if value is not None else base_types.UninitialisedField(self, 'ClrBrkrId', ClearingBrokerIdentification1, False)
 
 	@ClrBrkrId.deleter
 	def ClrBrkrId(self):
 		del self._ClrBrkrId
-		self._ClrBrkrId = None
+		self._ClrBrkrId = base_types.UninitialisedField(self, 'ClrBrkrId', ClearingBrokerIdentification1, False)
 
 	@property
 	def ClrThrshldInd(self):
@@ -82,12 +82,12 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 
 	@ClrThrshldInd.setter
 	def ClrThrshldInd(self, value):
-		self._ClrThrshldInd = value if type(value) != base_types.auto else self.make_default("ClrThrshldInd")
+		self._ClrThrshldInd = value if value is not None else base_types.UninitialisedField(self, 'ClrThrshldInd', YesNoIndicator, False)
 
 	@ClrThrshldInd.deleter
 	def ClrThrshldInd(self):
 		del self._ClrThrshldInd
-		self._ClrThrshldInd = None
+		self._ClrThrshldInd = base_types.UninitialisedField(self, 'ClrThrshldInd', YesNoIndicator, False)
 
 	@property
 	def ClrTmstmp(self):
@@ -95,12 +95,12 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 
 	@ClrTmstmp.setter
 	def ClrTmstmp(self, value):
-		self._ClrTmstmp = value if type(value) != base_types.auto else self.make_default("ClrTmstmp")
+		self._ClrTmstmp = value if value is not None else base_types.UninitialisedField(self, 'ClrTmstmp', ISOTime, False)
 
 	@ClrTmstmp.deleter
 	def ClrTmstmp(self):
 		del self._ClrTmstmp
-		self._ClrTmstmp = None
+		self._ClrTmstmp = base_types.UninitialisedField(self, 'ClrTmstmp', ISOTime, False)
 
 	@property
 	def ClrXcptnPty(self):
@@ -108,12 +108,12 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 
 	@ClrXcptnPty.setter
 	def ClrXcptnPty(self, value):
-		self._ClrXcptnPty = value if type(value) != base_types.auto else self.make_default("ClrXcptnPty")
+		self._ClrXcptnPty = value if value is not None else base_types.UninitialisedField(self, 'ClrXcptnPty', PartyIdentification242Choice, False)
 
 	@ClrXcptnPty.deleter
 	def ClrXcptnPty(self):
 		del self._ClrXcptnPty
-		self._ClrXcptnPty = None
+		self._ClrXcptnPty = base_types.UninitialisedField(self, 'ClrXcptnPty', PartyIdentification242Choice, False)
 
 	@property
 	def ClrdPdctId(self):
@@ -121,12 +121,12 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 
 	@ClrdPdctId.setter
 	def ClrdPdctId(self, value):
-		self._ClrdPdctId = value if type(value) != base_types.auto else self.make_default("ClrdPdctId")
+		self._ClrdPdctId = value if value is not None else base_types.UninitialisedField(self, 'ClrdPdctId', Max35Text, False)
 
 	@ClrdPdctId.deleter
 	def ClrdPdctId(self):
 		del self._ClrdPdctId
-		self._ClrdPdctId = None
+		self._ClrdPdctId = base_types.UninitialisedField(self, 'ClrdPdctId', Max35Text, False)
 
 	@property
 	def CntrlCtrPtyClrHs(self):
@@ -134,12 +134,12 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 
 	@CntrlCtrPtyClrHs.setter
 	def CntrlCtrPtyClrHs(self, value):
-		self._CntrlCtrPtyClrHs = value if type(value) != base_types.auto else self.make_default("CntrlCtrPtyClrHs")
+		self._CntrlCtrPtyClrHs = value if value is not None else base_types.UninitialisedField(self, 'CntrlCtrPtyClrHs', PartyIdentification242Choice, False)
 
 	@CntrlCtrPtyClrHs.deleter
 	def CntrlCtrPtyClrHs(self):
 		del self._CntrlCtrPtyClrHs
-		self._CntrlCtrPtyClrHs = None
+		self._CntrlCtrPtyClrHs = base_types.UninitialisedField(self, 'CntrlCtrPtyClrHs', PartyIdentification242Choice, False)
 
 	@property
 	def CollPrtflCd(self):
@@ -147,12 +147,12 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 
 	@CollPrtflCd.setter
 	def CollPrtflCd(self, value):
-		self._CollPrtflCd = value if type(value) != base_types.auto else self.make_default("CollPrtflCd")
+		self._CollPrtflCd = value if value is not None else base_types.UninitialisedField(self, 'CollPrtflCd', Max10Text, False)
 
 	@CollPrtflCd.deleter
 	def CollPrtflCd(self):
 		del self._CollPrtflCd
-		self._CollPrtflCd = None
+		self._CollPrtflCd = base_types.UninitialisedField(self, 'CollPrtflCd', Max10Text, False)
 
 	@property
 	def CollPrtflInd(self):
@@ -160,12 +160,12 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 
 	@CollPrtflInd.setter
 	def CollPrtflInd(self, value):
-		self._CollPrtflInd = value if type(value) != base_types.auto else self.make_default("CollPrtflInd")
+		self._CollPrtflInd = value if value is not None else base_types.UninitialisedField(self, 'CollPrtflInd', YesNoIndicator, False)
 
 	@CollPrtflInd.deleter
 	def CollPrtflInd(self):
 		del self._CollPrtflInd
-		self._CollPrtflInd = None
+		self._CollPrtflInd = base_types.UninitialisedField(self, 'CollPrtflInd', YesNoIndicator, False)
 
 	@property
 	def CollstnInd(self):
@@ -173,12 +173,12 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 
 	@CollstnInd.setter
 	def CollstnInd(self, value):
-		self._CollstnInd = value if type(value) != base_types.auto else self.make_default("CollstnInd")
+		self._CollstnInd = value if value is not None else base_types.UninitialisedField(self, 'CollstnInd', CollateralisationIndicator1Code, False)
 
 	@CollstnInd.deleter
 	def CollstnInd(self):
 		del self._CollstnInd
-		self._CollstnInd = None
+		self._CollstnInd = base_types.UninitialisedField(self, 'CollstnInd', CollateralisationIndicator1Code, False)
 
 	@property
 	def ComrclOrTrsrFincgInd(self):
@@ -186,12 +186,12 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 
 	@ComrclOrTrsrFincgInd.setter
 	def ComrclOrTrsrFincgInd(self, value):
-		self._ComrclOrTrsrFincgInd = value if type(value) != base_types.auto else self.make_default("ComrclOrTrsrFincgInd")
+		self._ComrclOrTrsrFincgInd = value if value is not None else base_types.UninitialisedField(self, 'ComrclOrTrsrFincgInd', YesNoIndicator, False)
 
 	@ComrclOrTrsrFincgInd.deleter
 	def ComrclOrTrsrFincgInd(self):
 		del self._ComrclOrTrsrFincgInd
-		self._ComrclOrTrsrFincgInd = None
+		self._ComrclOrTrsrFincgInd = base_types.UninitialisedField(self, 'ComrclOrTrsrFincgInd', YesNoIndicator, False)
 
 	@property
 	def ComssnsAndFees(self):
@@ -199,12 +199,12 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 
 	@ComssnsAndFees.setter
 	def ComssnsAndFees(self, value):
-		self._ComssnsAndFees = value if type(value) != base_types.auto else self.make_default("ComssnsAndFees")
+		self._ComssnsAndFees = value if value is not None else base_types.UninitialisedField(self, 'ComssnsAndFees', FXCommissionOrFee1, True)
 
 	@ComssnsAndFees.deleter
 	def ComssnsAndFees(self):
 		del self._ComssnsAndFees
-		self._ComssnsAndFees = None
+		self._ComssnsAndFees = base_types.UninitialisedField(self, 'ComssnsAndFees', FXCommissionOrFee1, True)
 
 	@property
 	def ConfDtAndTmstmp(self):
@@ -212,12 +212,12 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 
 	@ConfDtAndTmstmp.setter
 	def ConfDtAndTmstmp(self, value):
-		self._ConfDtAndTmstmp = value if type(value) != base_types.auto else self.make_default("ConfDtAndTmstmp")
+		self._ConfDtAndTmstmp = value if value is not None else base_types.UninitialisedField(self, 'ConfDtAndTmstmp', ISODateTime, False)
 
 	@ConfDtAndTmstmp.deleter
 	def ConfDtAndTmstmp(self):
 		del self._ConfDtAndTmstmp
-		self._ConfDtAndTmstmp = None
+		self._ConfDtAndTmstmp = base_types.UninitialisedField(self, 'ConfDtAndTmstmp', ISODateTime, False)
 
 	@property
 	def CorpSctrInd(self):
@@ -225,12 +225,12 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 
 	@CorpSctrInd.setter
 	def CorpSctrInd(self, value):
-		self._CorpSctrInd = value if type(value) != base_types.auto else self.make_default("CorpSctrInd")
+		self._CorpSctrInd = value if value is not None else base_types.UninitialisedField(self, 'CorpSctrInd', CorporateSectorIdentifier1Code, False)
 
 	@CorpSctrInd.deleter
 	def CorpSctrInd(self):
 		del self._CorpSctrInd
-		self._CorpSctrInd = None
+		self._CorpSctrInd = base_types.UninitialisedField(self, 'CorpSctrInd', CorporateSectorIdentifier1Code, False)
 
 	@property
 	def CtrPtySdTxRptg(self):
@@ -238,12 +238,12 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 
 	@CtrPtySdTxRptg.setter
 	def CtrPtySdTxRptg(self, value):
-		self._CtrPtySdTxRptg = value if type(value) != base_types.auto else self.make_default("CtrPtySdTxRptg")
+		self._CtrPtySdTxRptg = value if value is not None else base_types.UninitialisedField(self, 'CtrPtySdTxRptg', CounterpartySideTransactionReporting3, True)
 
 	@CtrPtySdTxRptg.deleter
 	def CtrPtySdTxRptg(self):
 		del self._CtrPtySdTxRptg
-		self._CtrPtySdTxRptg = None
+		self._CtrPtySdTxRptg = base_types.UninitialisedField(self, 'CtrPtySdTxRptg', CounterpartySideTransactionReporting3, True)
 
 	@property
 	def ExctnTmstmp(self):
@@ -251,12 +251,12 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 
 	@ExctnTmstmp.setter
 	def ExctnTmstmp(self, value):
-		self._ExctnTmstmp = value if type(value) != base_types.auto else self.make_default("ExctnTmstmp")
+		self._ExctnTmstmp = value if value is not None else base_types.UninitialisedField(self, 'ExctnTmstmp', DateAndDateTime2Choice, False)
 
 	@ExctnTmstmp.deleter
 	def ExctnTmstmp(self):
 		del self._ExctnTmstmp
-		self._ExctnTmstmp = None
+		self._ExctnTmstmp = base_types.UninitialisedField(self, 'ExctnTmstmp', DateAndDateTime2Choice, False)
 
 	@property
 	def ExctnVn(self):
@@ -264,12 +264,12 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 
 	@ExctnVn.setter
 	def ExctnVn(self, value):
-		self._ExctnVn = value if type(value) != base_types.auto else self.make_default("ExctnVn")
+		self._ExctnVn = value if value is not None else base_types.UninitialisedField(self, 'ExctnVn', Max35Text, False)
 
 	@ExctnVn.deleter
 	def ExctnVn(self):
 		del self._ExctnVn
-		self._ExctnVn = None
+		self._ExctnVn = base_types.UninitialisedField(self, 'ExctnVn', Max35Text, False)
 
 	@property
 	def FinInstrmId(self):
@@ -277,12 +277,12 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
 		del self._FinInstrmId
-		self._FinInstrmId = None
+		self._FinInstrmId = base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@property
 	def FinNtrOfTheCtrPtyInd(self):
@@ -290,12 +290,12 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 
 	@FinNtrOfTheCtrPtyInd.setter
 	def FinNtrOfTheCtrPtyInd(self, value):
-		self._FinNtrOfTheCtrPtyInd = value if type(value) != base_types.auto else self.make_default("FinNtrOfTheCtrPtyInd")
+		self._FinNtrOfTheCtrPtyInd = value if value is not None else base_types.UninitialisedField(self, 'FinNtrOfTheCtrPtyInd', YesNoIndicator, False)
 
 	@FinNtrOfTheCtrPtyInd.deleter
 	def FinNtrOfTheCtrPtyInd(self):
 		del self._FinNtrOfTheCtrPtyInd
-		self._FinNtrOfTheCtrPtyInd = None
+		self._FinNtrOfTheCtrPtyInd = base_types.UninitialisedField(self, 'FinNtrOfTheCtrPtyInd', YesNoIndicator, False)
 
 	@property
 	def LkSwpId(self):
@@ -303,12 +303,12 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 
 	@LkSwpId.setter
 	def LkSwpId(self, value):
-		self._LkSwpId = value if type(value) != base_types.auto else self.make_default("LkSwpId")
+		self._LkSwpId = value if value is not None else base_types.UninitialisedField(self, 'LkSwpId', Exact42Text, False)
 
 	@LkSwpId.deleter
 	def LkSwpId(self):
 		del self._LkSwpId
-		self._LkSwpId = None
+		self._LkSwpId = base_types.UninitialisedField(self, 'LkSwpId', Exact42Text, False)
 
 	@property
 	def NonStdFlg(self):
@@ -316,12 +316,12 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 
 	@NonStdFlg.setter
 	def NonStdFlg(self, value):
-		self._NonStdFlg = value if type(value) != base_types.auto else self.make_default("NonStdFlg")
+		self._NonStdFlg = value if value is not None else base_types.UninitialisedField(self, 'NonStdFlg', YesNoIndicator, False)
 
 	@NonStdFlg.deleter
 	def NonStdFlg(self):
 		del self._NonStdFlg
-		self._NonStdFlg = None
+		self._NonStdFlg = base_types.UninitialisedField(self, 'NonStdFlg', YesNoIndicator, False)
 
 	@property
 	def NtrgrpTradInd(self):
@@ -329,12 +329,12 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 
 	@NtrgrpTradInd.setter
 	def NtrgrpTradInd(self, value):
-		self._NtrgrpTradInd = value if type(value) != base_types.auto else self.make_default("NtrgrpTradInd")
+		self._NtrgrpTradInd = value if value is not None else base_types.UninitialisedField(self, 'NtrgrpTradInd', YesNoIndicator, False)
 
 	@NtrgrpTradInd.deleter
 	def NtrgrpTradInd(self):
 		del self._NtrgrpTradInd
-		self._NtrgrpTradInd = None
+		self._NtrgrpTradInd = base_types.UninitialisedField(self, 'NtrgrpTradInd', YesNoIndicator, False)
 
 	@property
 	def PdctIdr(self):
@@ -342,12 +342,12 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 
 	@PdctIdr.setter
 	def PdctIdr(self, value):
-		self._PdctIdr = value if type(value) != base_types.auto else self.make_default("PdctIdr")
+		self._PdctIdr = value if value is not None else base_types.UninitialisedField(self, 'PdctIdr', ProductIdentifier3Choice, False)
 
 	@PdctIdr.deleter
 	def PdctIdr(self):
 		del self._PdctIdr
-		self._PdctIdr = None
+		self._PdctIdr = base_types.UninitialisedField(self, 'PdctIdr', ProductIdentifier3Choice, False)
 
 	@property
 	def PrtflCmprssnInd(self):
@@ -355,12 +355,12 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 
 	@PrtflCmprssnInd.setter
 	def PrtflCmprssnInd(self, value):
-		self._PrtflCmprssnInd = value if type(value) != base_types.auto else self.make_default("PrtflCmprssnInd")
+		self._PrtflCmprssnInd = value if value is not None else base_types.UninitialisedField(self, 'PrtflCmprssnInd', YesNoIndicator, False)
 
 	@PrtflCmprssnInd.deleter
 	def PrtflCmprssnInd(self):
 		del self._PrtflCmprssnInd
-		self._PrtflCmprssnInd = None
+		self._PrtflCmprssnInd = base_types.UninitialisedField(self, 'PrtflCmprssnInd', YesNoIndicator, False)
 
 	@property
 	def TradWthNonEEACtrPtyInd(self):
@@ -368,12 +368,12 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 
 	@TradWthNonEEACtrPtyInd.setter
 	def TradWthNonEEACtrPtyInd(self, value):
-		self._TradWthNonEEACtrPtyInd = value if type(value) != base_types.auto else self.make_default("TradWthNonEEACtrPtyInd")
+		self._TradWthNonEEACtrPtyInd = value if value is not None else base_types.UninitialisedField(self, 'TradWthNonEEACtrPtyInd', YesNoIndicator, False)
 
 	@TradWthNonEEACtrPtyInd.deleter
 	def TradWthNonEEACtrPtyInd(self):
 		del self._TradWthNonEEACtrPtyInd
-		self._TradWthNonEEACtrPtyInd = None
+		self._TradWthNonEEACtrPtyInd = base_types.UninitialisedField(self, 'TradWthNonEEACtrPtyInd', YesNoIndicator, False)
 
 	@property
 	def TradgSdTxRptg(self):
@@ -381,12 +381,12 @@ class RegulatoryReporting8(base_types._BaseFieldType):
 
 	@TradgSdTxRptg.setter
 	def TradgSdTxRptg(self, value):
-		self._TradgSdTxRptg = value if type(value) != base_types.auto else self.make_default("TradgSdTxRptg")
+		self._TradgSdTxRptg = value if value is not None else base_types.UninitialisedField(self, 'TradgSdTxRptg', TradingSideTransactionReporting3, True)
 
 	@TradgSdTxRptg.deleter
 	def TradgSdTxRptg(self):
 		del self._TradgSdTxRptg
-		self._TradgSdTxRptg = None
+		self._TradgSdTxRptg = base_types.UninitialisedField(self, 'TradgSdTxRptg', TradingSideTransactionReporting3, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlRptgInf', type=Max210Text, min=0, max=1, mutex_group=None, array=False),

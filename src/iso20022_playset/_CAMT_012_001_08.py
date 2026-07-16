@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DeleteLimitV08 import DeleteLimitV08
+from . import DeleteLimitV08
 
 class CAMT_012_001_08():
 
@@ -18,12 +18,12 @@ class CAMT_012_001_08():
 
 		@DelLmt.setter
 		def DelLmt(self, value):
-			self._DelLmt = value if type(value) != base_types.auto else self.make_default("DelLmt")
+			self._DelLmt = value if value is not None else base_types.UninitialisedField(self, 'DelLmt', DeleteLimitV08, False)
 
 		@DelLmt.deleter
 		def DelLmt(self):
 			del self._DelLmt
-			self._DelLmt = None
+			self._DelLmt = base_types.UninitialisedField(self, 'DelLmt', DeleteLimitV08, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='DelLmt', type=DeleteLimitV08, min=1, max=1, mutex_group=None, array=False),

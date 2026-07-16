@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RegistrationReason5 import RegistrationReason5
-from ._YesNoIndicator import YesNoIndicator
+from . import RegistrationReason5
+from . import YesNoIndicator
 
 class HoldIndicator6(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class HoldIndicator6(base_types._BaseFieldType):
 
 	@Ind.setter
 	def Ind(self, value):
-		self._Ind = value if type(value) != base_types.auto else self.make_default("Ind")
+		self._Ind = value if value is not None else base_types.UninitialisedField(self, 'Ind', YesNoIndicator, False)
 
 	@Ind.deleter
 	def Ind(self):
 		del self._Ind
-		self._Ind = None
+		self._Ind = base_types.UninitialisedField(self, 'Ind', YesNoIndicator, False)
 
 	@property
 	def Rsn(self):
@@ -27,12 +27,12 @@ class HoldIndicator6(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', RegistrationReason5, True)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', RegistrationReason5, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ind', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),

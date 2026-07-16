@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._Max1000Text import Max1000Text
-from ._Max105Text import Max105Text
-from ._UniqueProductIdentifier2Choice import UniqueProductIdentifier2Choice
+from . import ISINOct2015Identifier
+from . import Max1000Text
+from . import Max105Text
+from . import UniqueProductIdentifier2Choice
 
 class SecurityIdentification46(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class SecurityIdentification46(base_types._BaseFieldType):
 
 	@AltrntvInstrmId.setter
 	def AltrntvInstrmId(self, value):
-		self._AltrntvInstrmId = value if type(value) != base_types.auto else self.make_default("AltrntvInstrmId")
+		self._AltrntvInstrmId = value if value is not None else base_types.UninitialisedField(self, 'AltrntvInstrmId', Max105Text, False)
 
 	@AltrntvInstrmId.deleter
 	def AltrntvInstrmId(self):
 		del self._AltrntvInstrmId
-		self._AltrntvInstrmId = None
+		self._AltrntvInstrmId = base_types.UninitialisedField(self, 'AltrntvInstrmId', Max105Text, False)
 
 	@property
 	def ISIN(self):
@@ -29,12 +29,12 @@ class SecurityIdentification46(base_types._BaseFieldType):
 
 	@ISIN.setter
 	def ISIN(self, value):
-		self._ISIN = value if type(value) != base_types.auto else self.make_default("ISIN")
+		self._ISIN = value if value is not None else base_types.UninitialisedField(self, 'ISIN', ISINOct2015Identifier, False)
 
 	@ISIN.deleter
 	def ISIN(self):
 		del self._ISIN
-		self._ISIN = None
+		self._ISIN = base_types.UninitialisedField(self, 'ISIN', ISINOct2015Identifier, False)
 
 	@property
 	def PdctDesc(self):
@@ -42,12 +42,12 @@ class SecurityIdentification46(base_types._BaseFieldType):
 
 	@PdctDesc.setter
 	def PdctDesc(self, value):
-		self._PdctDesc = value if type(value) != base_types.auto else self.make_default("PdctDesc")
+		self._PdctDesc = value if value is not None else base_types.UninitialisedField(self, 'PdctDesc', Max1000Text, False)
 
 	@PdctDesc.deleter
 	def PdctDesc(self):
 		del self._PdctDesc
-		self._PdctDesc = None
+		self._PdctDesc = base_types.UninitialisedField(self, 'PdctDesc', Max1000Text, False)
 
 	@property
 	def UnqPdctIdr(self):
@@ -55,12 +55,12 @@ class SecurityIdentification46(base_types._BaseFieldType):
 
 	@UnqPdctIdr.setter
 	def UnqPdctIdr(self, value):
-		self._UnqPdctIdr = value if type(value) != base_types.auto else self.make_default("UnqPdctIdr")
+		self._UnqPdctIdr = value if value is not None else base_types.UninitialisedField(self, 'UnqPdctIdr', UniqueProductIdentifier2Choice, False)
 
 	@UnqPdctIdr.deleter
 	def UnqPdctIdr(self):
 		del self._UnqPdctIdr
-		self._UnqPdctIdr = None
+		self._UnqPdctIdr = base_types.UninitialisedField(self, 'UnqPdctIdr', UniqueProductIdentifier2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AltrntvInstrmId', type=Max105Text, min=0, max=1, mutex_group=None, array=False),

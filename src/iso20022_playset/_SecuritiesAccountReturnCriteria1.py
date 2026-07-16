@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RequestedIndicator import RequestedIndicator
+from . import RequestedIndicator
 
 class SecuritiesAccountReturnCriteria1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class SecuritiesAccountReturnCriteria1(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', RequestedIndicator, False)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', RequestedIndicator, False)
 
 	@property
 	def AcctSvcr(self):
@@ -26,12 +26,12 @@ class SecuritiesAccountReturnCriteria1(base_types._BaseFieldType):
 
 	@AcctSvcr.setter
 	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
+		self._AcctSvcr = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcr', RequestedIndicator, False)
 
 	@AcctSvcr.deleter
 	def AcctSvcr(self):
 		del self._AcctSvcr
-		self._AcctSvcr = None
+		self._AcctSvcr = base_types.UninitialisedField(self, 'AcctSvcr', RequestedIndicator, False)
 
 	@property
 	def AcctTp(self):
@@ -39,12 +39,12 @@ class SecuritiesAccountReturnCriteria1(base_types._BaseFieldType):
 
 	@AcctTp.setter
 	def AcctTp(self, value):
-		self._AcctTp = value if type(value) != base_types.auto else self.make_default("AcctTp")
+		self._AcctTp = value if value is not None else base_types.UninitialisedField(self, 'AcctTp', RequestedIndicator, False)
 
 	@AcctTp.deleter
 	def AcctTp(self):
 		del self._AcctTp
-		self._AcctTp = None
+		self._AcctTp = base_types.UninitialisedField(self, 'AcctTp', RequestedIndicator, False)
 
 	@property
 	def ClsgDt(self):
@@ -52,12 +52,12 @@ class SecuritiesAccountReturnCriteria1(base_types._BaseFieldType):
 
 	@ClsgDt.setter
 	def ClsgDt(self, value):
-		self._ClsgDt = value if type(value) != base_types.auto else self.make_default("ClsgDt")
+		self._ClsgDt = value if value is not None else base_types.UninitialisedField(self, 'ClsgDt', RequestedIndicator, False)
 
 	@ClsgDt.deleter
 	def ClsgDt(self):
 		del self._ClsgDt
-		self._ClsgDt = None
+		self._ClsgDt = base_types.UninitialisedField(self, 'ClsgDt', RequestedIndicator, False)
 
 	@property
 	def EndInvstrFlg(self):
@@ -65,12 +65,12 @@ class SecuritiesAccountReturnCriteria1(base_types._BaseFieldType):
 
 	@EndInvstrFlg.setter
 	def EndInvstrFlg(self, value):
-		self._EndInvstrFlg = value if type(value) != base_types.auto else self.make_default("EndInvstrFlg")
+		self._EndInvstrFlg = value if value is not None else base_types.UninitialisedField(self, 'EndInvstrFlg', RequestedIndicator, False)
 
 	@EndInvstrFlg.deleter
 	def EndInvstrFlg(self):
 		del self._EndInvstrFlg
-		self._EndInvstrFlg = None
+		self._EndInvstrFlg = base_types.UninitialisedField(self, 'EndInvstrFlg', RequestedIndicator, False)
 
 	@property
 	def OpngDt(self):
@@ -78,12 +78,12 @@ class SecuritiesAccountReturnCriteria1(base_types._BaseFieldType):
 
 	@OpngDt.setter
 	def OpngDt(self, value):
-		self._OpngDt = value if type(value) != base_types.auto else self.make_default("OpngDt")
+		self._OpngDt = value if value is not None else base_types.UninitialisedField(self, 'OpngDt', RequestedIndicator, False)
 
 	@OpngDt.deleter
 	def OpngDt(self):
 		del self._OpngDt
-		self._OpngDt = None
+		self._OpngDt = base_types.UninitialisedField(self, 'OpngDt', RequestedIndicator, False)
 
 	@property
 	def PricgSchme(self):
@@ -91,12 +91,12 @@ class SecuritiesAccountReturnCriteria1(base_types._BaseFieldType):
 
 	@PricgSchme.setter
 	def PricgSchme(self, value):
-		self._PricgSchme = value if type(value) != base_types.auto else self.make_default("PricgSchme")
+		self._PricgSchme = value if value is not None else base_types.UninitialisedField(self, 'PricgSchme', RequestedIndicator, False)
 
 	@PricgSchme.deleter
 	def PricgSchme(self):
 		del self._PricgSchme
-		self._PricgSchme = None
+		self._PricgSchme = base_types.UninitialisedField(self, 'PricgSchme', RequestedIndicator, False)
 
 	@property
 	def PtyId(self):
@@ -104,12 +104,12 @@ class SecuritiesAccountReturnCriteria1(base_types._BaseFieldType):
 
 	@PtyId.setter
 	def PtyId(self, value):
-		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
+		self._PtyId = value if value is not None else base_types.UninitialisedField(self, 'PtyId', RequestedIndicator, False)
 
 	@PtyId.deleter
 	def PtyId(self):
 		del self._PtyId
-		self._PtyId = None
+		self._PtyId = base_types.UninitialisedField(self, 'PtyId', RequestedIndicator, False)
 
 	@property
 	def PtyTp(self):
@@ -117,12 +117,12 @@ class SecuritiesAccountReturnCriteria1(base_types._BaseFieldType):
 
 	@PtyTp.setter
 	def PtyTp(self, value):
-		self._PtyTp = value if type(value) != base_types.auto else self.make_default("PtyTp")
+		self._PtyTp = value if value is not None else base_types.UninitialisedField(self, 'PtyTp', RequestedIndicator, False)
 
 	@PtyTp.deleter
 	def PtyTp(self):
 		del self._PtyTp
-		self._PtyTp = None
+		self._PtyTp = base_types.UninitialisedField(self, 'PtyTp', RequestedIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._CashAccount18 import CashAccount18
-from ._Charges1 import Charges1
-from ._Max35Text import Max35Text
+from . import ActiveCurrencyAndAmount
+from . import CashAccount18
+from . import Charges1
+from . import Max35Text
 
 class CashMovement1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CashMovement1(base_types._BaseFieldType):
 
 	@AcctDtls.setter
 	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != base_types.auto else self.make_default("AcctDtls")
+		self._AcctDtls = value if value is not None else base_types.UninitialisedField(self, 'AcctDtls', CashAccount18, False)
 
 	@AcctDtls.deleter
 	def AcctDtls(self):
 		del self._AcctDtls
-		self._AcctDtls = None
+		self._AcctDtls = base_types.UninitialisedField(self, 'AcctDtls', CashAccount18, False)
 
 	@property
 	def Amt(self):
@@ -29,12 +29,12 @@ class CashMovement1(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def Chrgs(self):
@@ -42,12 +42,12 @@ class CashMovement1(base_types._BaseFieldType):
 
 	@Chrgs.setter
 	def Chrgs(self, value):
-		self._Chrgs = value if type(value) != base_types.auto else self.make_default("Chrgs")
+		self._Chrgs = value if value is not None else base_types.UninitialisedField(self, 'Chrgs', Charges1, True)
 
 	@Chrgs.deleter
 	def Chrgs(self):
 		del self._Chrgs
-		self._Chrgs = None
+		self._Chrgs = base_types.UninitialisedField(self, 'Chrgs', Charges1, True)
 
 	@property
 	def MvmntId(self):
@@ -55,12 +55,12 @@ class CashMovement1(base_types._BaseFieldType):
 
 	@MvmntId.setter
 	def MvmntId(self, value):
-		self._MvmntId = value if type(value) != base_types.auto else self.make_default("MvmntId")
+		self._MvmntId = value if value is not None else base_types.UninitialisedField(self, 'MvmntId', Max35Text, False)
 
 	@MvmntId.deleter
 	def MvmntId(self):
 		del self._MvmntId
-		self._MvmntId = None
+		self._MvmntId = base_types.UninitialisedField(self, 'MvmntId', Max35Text, False)
 
 	@property
 	def TaxAmt(self):
@@ -68,12 +68,12 @@ class CashMovement1(base_types._BaseFieldType):
 
 	@TaxAmt.setter
 	def TaxAmt(self, value):
-		self._TaxAmt = value if type(value) != base_types.auto else self.make_default("TaxAmt")
+		self._TaxAmt = value if value is not None else base_types.UninitialisedField(self, 'TaxAmt', ActiveCurrencyAndAmount, False)
 
 	@TaxAmt.deleter
 	def TaxAmt(self):
 		del self._TaxAmt
-		self._TaxAmt = None
+		self._TaxAmt = base_types.UninitialisedField(self, 'TaxAmt', ActiveCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctDtls', type=CashAccount18, min=1, max=2, mutex_group=None, array=False),

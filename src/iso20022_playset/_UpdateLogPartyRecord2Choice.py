@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._UpdateLogAddress2 import UpdateLogAddress2
-from ._UpdateLogContact2 import UpdateLogContact2
-from ._UpdateLogDate1 import UpdateLogDate1
-from ._UpdateLogMarketSpecificAttribute1 import UpdateLogMarketSpecificAttribute1
-from ._UpdateLogPartyLockStatus1 import UpdateLogPartyLockStatus1
-from ._UpdateLogPartyName1 import UpdateLogPartyName1
-from ._UpdateLogProprietary1 import UpdateLogProprietary1
-from ._UpdateLogResidenceType1 import UpdateLogResidenceType1
-from ._UpdateLogRestriction1 import UpdateLogRestriction1
-from ._UpdateLogSystemPartyType1 import UpdateLogSystemPartyType1
-from ._UpdateLogTechnicalAddress1 import UpdateLogTechnicalAddress1
+from . import UpdateLogAddress2
+from . import UpdateLogContact2
+from . import UpdateLogDate1
+from . import UpdateLogMarketSpecificAttribute1
+from . import UpdateLogPartyLockStatus1
+from . import UpdateLogPartyName1
+from . import UpdateLogProprietary1
+from . import UpdateLogResidenceType1
+from . import UpdateLogRestriction1
+from . import UpdateLogSystemPartyType1
+from . import UpdateLogTechnicalAddress1
 
 class UpdateLogPartyRecord2Choice(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class UpdateLogPartyRecord2Choice(base_types._BaseFieldType):
 
 	@Adr.setter
 	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+		self._Adr = value if value is not None else base_types.UninitialisedField(self, 'Adr', UpdateLogAddress2, False)
 
 	@Adr.deleter
 	def Adr(self):
 		del self._Adr
-		self._Adr = None
+		self._Adr = base_types.UninitialisedField(self, 'Adr', UpdateLogAddress2, False)
 
 	@property
 	def ClsgDt(self):
@@ -36,12 +36,12 @@ class UpdateLogPartyRecord2Choice(base_types._BaseFieldType):
 
 	@ClsgDt.setter
 	def ClsgDt(self, value):
-		self._ClsgDt = value if type(value) != base_types.auto else self.make_default("ClsgDt")
+		self._ClsgDt = value if value is not None else base_types.UninitialisedField(self, 'ClsgDt', UpdateLogDate1, False)
 
 	@ClsgDt.deleter
 	def ClsgDt(self):
 		del self._ClsgDt
-		self._ClsgDt = None
+		self._ClsgDt = base_types.UninitialisedField(self, 'ClsgDt', UpdateLogDate1, False)
 
 	@property
 	def CtctDtls(self):
@@ -49,12 +49,12 @@ class UpdateLogPartyRecord2Choice(base_types._BaseFieldType):
 
 	@CtctDtls.setter
 	def CtctDtls(self, value):
-		self._CtctDtls = value if type(value) != base_types.auto else self.make_default("CtctDtls")
+		self._CtctDtls = value if value is not None else base_types.UninitialisedField(self, 'CtctDtls', UpdateLogContact2, False)
 
 	@CtctDtls.deleter
 	def CtctDtls(self):
 		del self._CtctDtls
-		self._CtctDtls = None
+		self._CtctDtls = base_types.UninitialisedField(self, 'CtctDtls', UpdateLogContact2, False)
 
 	@property
 	def LckSts(self):
@@ -62,12 +62,12 @@ class UpdateLogPartyRecord2Choice(base_types._BaseFieldType):
 
 	@LckSts.setter
 	def LckSts(self, value):
-		self._LckSts = value if type(value) != base_types.auto else self.make_default("LckSts")
+		self._LckSts = value if value is not None else base_types.UninitialisedField(self, 'LckSts', UpdateLogPartyLockStatus1, False)
 
 	@LckSts.deleter
 	def LckSts(self):
 		del self._LckSts
-		self._LckSts = None
+		self._LckSts = base_types.UninitialisedField(self, 'LckSts', UpdateLogPartyLockStatus1, False)
 
 	@property
 	def MktSpcfcAttr(self):
@@ -75,12 +75,12 @@ class UpdateLogPartyRecord2Choice(base_types._BaseFieldType):
 
 	@MktSpcfcAttr.setter
 	def MktSpcfcAttr(self, value):
-		self._MktSpcfcAttr = value if type(value) != base_types.auto else self.make_default("MktSpcfcAttr")
+		self._MktSpcfcAttr = value if value is not None else base_types.UninitialisedField(self, 'MktSpcfcAttr', UpdateLogMarketSpecificAttribute1, False)
 
 	@MktSpcfcAttr.deleter
 	def MktSpcfcAttr(self):
 		del self._MktSpcfcAttr
-		self._MktSpcfcAttr = None
+		self._MktSpcfcAttr = base_types.UninitialisedField(self, 'MktSpcfcAttr', UpdateLogMarketSpecificAttribute1, False)
 
 	@property
 	def Nm(self):
@@ -88,12 +88,12 @@ class UpdateLogPartyRecord2Choice(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', UpdateLogPartyName1, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', UpdateLogPartyName1, False)
 
 	@property
 	def OpngDt(self):
@@ -101,12 +101,12 @@ class UpdateLogPartyRecord2Choice(base_types._BaseFieldType):
 
 	@OpngDt.setter
 	def OpngDt(self, value):
-		self._OpngDt = value if type(value) != base_types.auto else self.make_default("OpngDt")
+		self._OpngDt = value if value is not None else base_types.UninitialisedField(self, 'OpngDt', UpdateLogDate1, False)
 
 	@OpngDt.deleter
 	def OpngDt(self):
 		del self._OpngDt
-		self._OpngDt = None
+		self._OpngDt = base_types.UninitialisedField(self, 'OpngDt', UpdateLogDate1, False)
 
 	@property
 	def Othr(self):
@@ -114,12 +114,12 @@ class UpdateLogPartyRecord2Choice(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', UpdateLogProprietary1, True)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', UpdateLogProprietary1, True)
 
 	@property
 	def ResTp(self):
@@ -127,12 +127,12 @@ class UpdateLogPartyRecord2Choice(base_types._BaseFieldType):
 
 	@ResTp.setter
 	def ResTp(self, value):
-		self._ResTp = value if type(value) != base_types.auto else self.make_default("ResTp")
+		self._ResTp = value if value is not None else base_types.UninitialisedField(self, 'ResTp', UpdateLogResidenceType1, False)
 
 	@ResTp.deleter
 	def ResTp(self):
 		del self._ResTp
-		self._ResTp = None
+		self._ResTp = base_types.UninitialisedField(self, 'ResTp', UpdateLogResidenceType1, False)
 
 	@property
 	def Rstrctn(self):
@@ -140,12 +140,12 @@ class UpdateLogPartyRecord2Choice(base_types._BaseFieldType):
 
 	@Rstrctn.setter
 	def Rstrctn(self, value):
-		self._Rstrctn = value if type(value) != base_types.auto else self.make_default("Rstrctn")
+		self._Rstrctn = value if value is not None else base_types.UninitialisedField(self, 'Rstrctn', UpdateLogRestriction1, False)
 
 	@Rstrctn.deleter
 	def Rstrctn(self):
 		del self._Rstrctn
-		self._Rstrctn = None
+		self._Rstrctn = base_types.UninitialisedField(self, 'Rstrctn', UpdateLogRestriction1, False)
 
 	@property
 	def TechAdr(self):
@@ -153,12 +153,12 @@ class UpdateLogPartyRecord2Choice(base_types._BaseFieldType):
 
 	@TechAdr.setter
 	def TechAdr(self, value):
-		self._TechAdr = value if type(value) != base_types.auto else self.make_default("TechAdr")
+		self._TechAdr = value if value is not None else base_types.UninitialisedField(self, 'TechAdr', UpdateLogTechnicalAddress1, False)
 
 	@TechAdr.deleter
 	def TechAdr(self):
 		del self._TechAdr
-		self._TechAdr = None
+		self._TechAdr = base_types.UninitialisedField(self, 'TechAdr', UpdateLogTechnicalAddress1, False)
 
 	@property
 	def Tp(self):
@@ -166,12 +166,12 @@ class UpdateLogPartyRecord2Choice(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', UpdateLogSystemPartyType1, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', UpdateLogSystemPartyType1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Adr', type=UpdateLogAddress2, min=0, max=1, mutex_group=1, array=False),

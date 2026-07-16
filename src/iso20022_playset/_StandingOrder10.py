@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Amount2Choice import Amount2Choice
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CashAccount40 import CashAccount40
-from ._DatePeriod2Choice import DatePeriod2Choice
-from ._ExecutionType1Choice import ExecutionType1Choice
-from ._Frequency2Code import Frequency2Code
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import Amount2Choice
+from . import BranchAndFinancialInstitutionIdentification8
+from . import CashAccount40
+from . import DatePeriod2Choice
+from . import ExecutionType1Choice
+from . import Frequency2Code
+from . import TrueFalseIndicator
 
 class StandingOrder10(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class StandingOrder10(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', Amount2Choice, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', Amount2Choice, False)
 
 	@property
 	def Cdtr(self):
@@ -32,12 +32,12 @@ class StandingOrder10(base_types._BaseFieldType):
 
 	@Cdtr.setter
 	def Cdtr(self, value):
-		self._Cdtr = value if type(value) != base_types.auto else self.make_default("Cdtr")
+		self._Cdtr = value if value is not None else base_types.UninitialisedField(self, 'Cdtr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@Cdtr.deleter
 	def Cdtr(self):
 		del self._Cdtr
-		self._Cdtr = None
+		self._Cdtr = base_types.UninitialisedField(self, 'Cdtr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def CdtrAcct(self):
@@ -45,12 +45,12 @@ class StandingOrder10(base_types._BaseFieldType):
 
 	@CdtrAcct.setter
 	def CdtrAcct(self, value):
-		self._CdtrAcct = value if type(value) != base_types.auto else self.make_default("CdtrAcct")
+		self._CdtrAcct = value if value is not None else base_types.UninitialisedField(self, 'CdtrAcct', CashAccount40, False)
 
 	@CdtrAcct.deleter
 	def CdtrAcct(self):
 		del self._CdtrAcct
-		self._CdtrAcct = None
+		self._CdtrAcct = base_types.UninitialisedField(self, 'CdtrAcct', CashAccount40, False)
 
 	@property
 	def Dbtr(self):
@@ -58,12 +58,12 @@ class StandingOrder10(base_types._BaseFieldType):
 
 	@Dbtr.setter
 	def Dbtr(self, value):
-		self._Dbtr = value if type(value) != base_types.auto else self.make_default("Dbtr")
+		self._Dbtr = value if value is not None else base_types.UninitialisedField(self, 'Dbtr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@Dbtr.deleter
 	def Dbtr(self):
 		del self._Dbtr
-		self._Dbtr = None
+		self._Dbtr = base_types.UninitialisedField(self, 'Dbtr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def DbtrAcct(self):
@@ -71,12 +71,12 @@ class StandingOrder10(base_types._BaseFieldType):
 
 	@DbtrAcct.setter
 	def DbtrAcct(self, value):
-		self._DbtrAcct = value if type(value) != base_types.auto else self.make_default("DbtrAcct")
+		self._DbtrAcct = value if value is not None else base_types.UninitialisedField(self, 'DbtrAcct', CashAccount40, False)
 
 	@DbtrAcct.deleter
 	def DbtrAcct(self):
 		del self._DbtrAcct
-		self._DbtrAcct = None
+		self._DbtrAcct = base_types.UninitialisedField(self, 'DbtrAcct', CashAccount40, False)
 
 	@property
 	def ExctnTp(self):
@@ -84,12 +84,12 @@ class StandingOrder10(base_types._BaseFieldType):
 
 	@ExctnTp.setter
 	def ExctnTp(self, value):
-		self._ExctnTp = value if type(value) != base_types.auto else self.make_default("ExctnTp")
+		self._ExctnTp = value if value is not None else base_types.UninitialisedField(self, 'ExctnTp', ExecutionType1Choice, False)
 
 	@ExctnTp.deleter
 	def ExctnTp(self):
 		del self._ExctnTp
-		self._ExctnTp = None
+		self._ExctnTp = base_types.UninitialisedField(self, 'ExctnTp', ExecutionType1Choice, False)
 
 	@property
 	def Frqcy(self):
@@ -97,12 +97,12 @@ class StandingOrder10(base_types._BaseFieldType):
 
 	@Frqcy.setter
 	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
+		self._Frqcy = value if value is not None else base_types.UninitialisedField(self, 'Frqcy', Frequency2Code, False)
 
 	@Frqcy.deleter
 	def Frqcy(self):
 		del self._Frqcy
-		self._Frqcy = None
+		self._Frqcy = base_types.UninitialisedField(self, 'Frqcy', Frequency2Code, False)
 
 	@property
 	def VldtyPrd(self):
@@ -110,12 +110,12 @@ class StandingOrder10(base_types._BaseFieldType):
 
 	@VldtyPrd.setter
 	def VldtyPrd(self, value):
-		self._VldtyPrd = value if type(value) != base_types.auto else self.make_default("VldtyPrd")
+		self._VldtyPrd = value if value is not None else base_types.UninitialisedField(self, 'VldtyPrd', DatePeriod2Choice, False)
 
 	@VldtyPrd.deleter
 	def VldtyPrd(self):
 		del self._VldtyPrd
-		self._VldtyPrd = None
+		self._VldtyPrd = base_types.UninitialisedField(self, 'VldtyPrd', DatePeriod2Choice, False)
 
 	@property
 	def ZeroSweepInd(self):
@@ -123,12 +123,12 @@ class StandingOrder10(base_types._BaseFieldType):
 
 	@ZeroSweepInd.setter
 	def ZeroSweepInd(self, value):
-		self._ZeroSweepInd = value if type(value) != base_types.auto else self.make_default("ZeroSweepInd")
+		self._ZeroSweepInd = value if value is not None else base_types.UninitialisedField(self, 'ZeroSweepInd', TrueFalseIndicator, False)
 
 	@ZeroSweepInd.deleter
 	def ZeroSweepInd(self):
 		del self._ZeroSweepInd
-		self._ZeroSweepInd = None
+		self._ZeroSweepInd = base_types.UninitialisedField(self, 'ZeroSweepInd', TrueFalseIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=Amount2Choice, min=0, max=1, mutex_group=None, array=False),

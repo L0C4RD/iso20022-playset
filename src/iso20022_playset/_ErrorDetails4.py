@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISO8583MessageErrorCode import ISO8583MessageErrorCode
-from ._Max2NumericText import Max2NumericText
-from ._Max4000Text import Max4000Text
-from ._Max500Text import Max500Text
+from . import ISO8583MessageErrorCode
+from . import Max2NumericText
+from . import Max4000Text
+from . import Max500Text
 
 class ErrorDetails4(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ErrorDetails4(base_types._BaseFieldType):
 
 	@DataElmtInErr.setter
 	def DataElmtInErr(self, value):
-		self._DataElmtInErr = value if type(value) != base_types.auto else self.make_default("DataElmtInErr")
+		self._DataElmtInErr = value if value is not None else base_types.UninitialisedField(self, 'DataElmtInErr', Max4000Text, True)
 
 	@DataElmtInErr.deleter
 	def DataElmtInErr(self):
 		del self._DataElmtInErr
-		self._DataElmtInErr = None
+		self._DataElmtInErr = base_types.UninitialisedField(self, 'DataElmtInErr', Max4000Text, True)
 
 	@property
 	def Desc(self):
@@ -29,12 +29,12 @@ class ErrorDetails4(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', Max500Text, False)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', Max500Text, False)
 
 	@property
 	def ErrCd(self):
@@ -42,12 +42,12 @@ class ErrorDetails4(base_types._BaseFieldType):
 
 	@ErrCd.setter
 	def ErrCd(self, value):
-		self._ErrCd = value if type(value) != base_types.auto else self.make_default("ErrCd")
+		self._ErrCd = value if value is not None else base_types.UninitialisedField(self, 'ErrCd', ISO8583MessageErrorCode, False)
 
 	@ErrCd.deleter
 	def ErrCd(self):
 		del self._ErrCd
-		self._ErrCd = None
+		self._ErrCd = base_types.UninitialisedField(self, 'ErrCd', ISO8583MessageErrorCode, False)
 
 	@property
 	def svrtyCd(self):
@@ -55,12 +55,12 @@ class ErrorDetails4(base_types._BaseFieldType):
 
 	@svrtyCd.setter
 	def svrtyCd(self, value):
-		self._svrtyCd = value if type(value) != base_types.auto else self.make_default("svrtyCd")
+		self._svrtyCd = value if value is not None else base_types.UninitialisedField(self, 'svrtyCd', Max2NumericText, False)
 
 	@svrtyCd.deleter
 	def svrtyCd(self):
 		del self._svrtyCd
-		self._svrtyCd = None
+		self._svrtyCd = base_types.UninitialisedField(self, 'svrtyCd', Max2NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DataElmtInErr', type=Max4000Text, min=0, max=None, mutex_group=None, array=True),

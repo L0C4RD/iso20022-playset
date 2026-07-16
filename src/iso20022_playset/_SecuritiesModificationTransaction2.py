@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
-from ._ProcessingStatus71Choice import ProcessingStatus71Choice
-from ._RequestDetails33 import RequestDetails33
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._SettlementOrIntraPosition3Choice import SettlementOrIntraPosition3Choice
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
+from . import ISODateTime
+from . import Max35Text
+from . import ProcessingStatus71Choice
+from . import RequestDetails33
+from . import SecuritiesAccount19
+from . import SettlementOrIntraPosition3Choice
+from . import SystemPartyIdentification8
 
 class SecuritiesModificationTransaction2(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class SecuritiesModificationTransaction2(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', SystemPartyIdentification8, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', SystemPartyIdentification8, False)
 
 	@property
 	def PrcgSts(self):
@@ -32,12 +32,12 @@ class SecuritiesModificationTransaction2(base_types._BaseFieldType):
 
 	@PrcgSts.setter
 	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != base_types.auto else self.make_default("PrcgSts")
+		self._PrcgSts = value if value is not None else base_types.UninitialisedField(self, 'PrcgSts', ProcessingStatus71Choice, False)
 
 	@PrcgSts.deleter
 	def PrcgSts(self):
 		del self._PrcgSts
-		self._PrcgSts = None
+		self._PrcgSts = base_types.UninitialisedField(self, 'PrcgSts', ProcessingStatus71Choice, False)
 
 	@property
 	def ReqDtls(self):
@@ -45,12 +45,12 @@ class SecuritiesModificationTransaction2(base_types._BaseFieldType):
 
 	@ReqDtls.setter
 	def ReqDtls(self, value):
-		self._ReqDtls = value if type(value) != base_types.auto else self.make_default("ReqDtls")
+		self._ReqDtls = value if value is not None else base_types.UninitialisedField(self, 'ReqDtls', RequestDetails33, False)
 
 	@ReqDtls.deleter
 	def ReqDtls(self):
 		del self._ReqDtls
-		self._ReqDtls = None
+		self._ReqDtls = base_types.UninitialisedField(self, 'ReqDtls', RequestDetails33, False)
 
 	@property
 	def ReqRef(self):
@@ -58,12 +58,12 @@ class SecuritiesModificationTransaction2(base_types._BaseFieldType):
 
 	@ReqRef.setter
 	def ReqRef(self, value):
-		self._ReqRef = value if type(value) != base_types.auto else self.make_default("ReqRef")
+		self._ReqRef = value if value is not None else base_types.UninitialisedField(self, 'ReqRef', Max35Text, False)
 
 	@ReqRef.deleter
 	def ReqRef(self):
 		del self._ReqRef
-		self._ReqRef = None
+		self._ReqRef = base_types.UninitialisedField(self, 'ReqRef', Max35Text, False)
 
 	@property
 	def SfkpgAcct(self):
@@ -71,12 +71,12 @@ class SecuritiesModificationTransaction2(base_types._BaseFieldType):
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
-		self._SfkpgAcct = None
+		self._SfkpgAcct = base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@property
 	def StsDt(self):
@@ -84,12 +84,12 @@ class SecuritiesModificationTransaction2(base_types._BaseFieldType):
 
 	@StsDt.setter
 	def StsDt(self, value):
-		self._StsDt = value if type(value) != base_types.auto else self.make_default("StsDt")
+		self._StsDt = value if value is not None else base_types.UninitialisedField(self, 'StsDt', ISODateTime, False)
 
 	@StsDt.deleter
 	def StsDt(self):
 		del self._StsDt
-		self._StsDt = None
+		self._StsDt = base_types.UninitialisedField(self, 'StsDt', ISODateTime, False)
 
 	@property
 	def Undrlyg(self):
@@ -97,12 +97,12 @@ class SecuritiesModificationTransaction2(base_types._BaseFieldType):
 
 	@Undrlyg.setter
 	def Undrlyg(self, value):
-		self._Undrlyg = value if type(value) != base_types.auto else self.make_default("Undrlyg")
+		self._Undrlyg = value if value is not None else base_types.UninitialisedField(self, 'Undrlyg', SettlementOrIntraPosition3Choice, False)
 
 	@Undrlyg.deleter
 	def Undrlyg(self):
 		del self._Undrlyg
-		self._Undrlyg = None
+		self._Undrlyg = base_types.UninitialisedField(self, 'Undrlyg', SettlementOrIntraPosition3Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),

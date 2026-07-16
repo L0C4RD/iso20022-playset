@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashCollateralResponse3 import CashCollateralResponse3
-from ._OtherCollateralResponse3 import OtherCollateralResponse3
-from ._SecuritiesCollateralResponse2 import SecuritiesCollateralResponse2
+from . import CashCollateralResponse3
+from . import OtherCollateralResponse3
+from . import SecuritiesCollateralResponse2
 
 class CollateralResponse3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CollateralResponse3(base_types._BaseFieldType):
 
 	@CshCollRspn.setter
 	def CshCollRspn(self, value):
-		self._CshCollRspn = value if type(value) != base_types.auto else self.make_default("CshCollRspn")
+		self._CshCollRspn = value if value is not None else base_types.UninitialisedField(self, 'CshCollRspn', CashCollateralResponse3, True)
 
 	@CshCollRspn.deleter
 	def CshCollRspn(self):
 		del self._CshCollRspn
-		self._CshCollRspn = None
+		self._CshCollRspn = base_types.UninitialisedField(self, 'CshCollRspn', CashCollateralResponse3, True)
 
 	@property
 	def OthrCollRspn(self):
@@ -28,12 +28,12 @@ class CollateralResponse3(base_types._BaseFieldType):
 
 	@OthrCollRspn.setter
 	def OthrCollRspn(self, value):
-		self._OthrCollRspn = value if type(value) != base_types.auto else self.make_default("OthrCollRspn")
+		self._OthrCollRspn = value if value is not None else base_types.UninitialisedField(self, 'OthrCollRspn', OtherCollateralResponse3, True)
 
 	@OthrCollRspn.deleter
 	def OthrCollRspn(self):
 		del self._OthrCollRspn
-		self._OthrCollRspn = None
+		self._OthrCollRspn = base_types.UninitialisedField(self, 'OthrCollRspn', OtherCollateralResponse3, True)
 
 	@property
 	def SctiesCollRspn(self):
@@ -41,12 +41,12 @@ class CollateralResponse3(base_types._BaseFieldType):
 
 	@SctiesCollRspn.setter
 	def SctiesCollRspn(self, value):
-		self._SctiesCollRspn = value if type(value) != base_types.auto else self.make_default("SctiesCollRspn")
+		self._SctiesCollRspn = value if value is not None else base_types.UninitialisedField(self, 'SctiesCollRspn', SecuritiesCollateralResponse2, True)
 
 	@SctiesCollRspn.deleter
 	def SctiesCollRspn(self):
 		del self._SctiesCollRspn
-		self._SctiesCollRspn = None
+		self._SctiesCollRspn = base_types.UninitialisedField(self, 'SctiesCollRspn', SecuritiesCollateralResponse2, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshCollRspn', type=CashCollateralResponse3, min=0, max=None, mutex_group=None, array=True),

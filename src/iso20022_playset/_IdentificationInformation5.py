@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CashAccount40 import CashAccount40
-from ._PartyIdentification272 import PartyIdentification272
+from . import BranchAndFinancialInstitutionIdentification8
+from . import CashAccount40
+from . import PartyIdentification272
 
 class IdentificationInformation5(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class IdentificationInformation5(base_types._BaseFieldType):
 
 	@Acct.setter
 	def Acct(self, value):
-		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
+		self._Acct = value if value is not None else base_types.UninitialisedField(self, 'Acct', CashAccount40, False)
 
 	@Acct.deleter
 	def Acct(self):
 		del self._Acct
-		self._Acct = None
+		self._Acct = base_types.UninitialisedField(self, 'Acct', CashAccount40, False)
 
 	@property
 	def Agt(self):
@@ -28,12 +28,12 @@ class IdentificationInformation5(base_types._BaseFieldType):
 
 	@Agt.setter
 	def Agt(self, value):
-		self._Agt = value if type(value) != base_types.auto else self.make_default("Agt")
+		self._Agt = value if value is not None else base_types.UninitialisedField(self, 'Agt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@Agt.deleter
 	def Agt(self):
 		del self._Agt
-		self._Agt = None
+		self._Agt = base_types.UninitialisedField(self, 'Agt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def Pty(self):
@@ -41,12 +41,12 @@ class IdentificationInformation5(base_types._BaseFieldType):
 
 	@Pty.setter
 	def Pty(self, value):
-		self._Pty = value if type(value) != base_types.auto else self.make_default("Pty")
+		self._Pty = value if value is not None else base_types.UninitialisedField(self, 'Pty', PartyIdentification272, False)
 
 	@Pty.deleter
 	def Pty(self):
 		del self._Pty
-		self._Pty = None
+		self._Pty = base_types.UninitialisedField(self, 'Pty', PartyIdentification272, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),

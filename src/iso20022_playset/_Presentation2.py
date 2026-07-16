@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._PartyIdentification43 import PartyIdentification43
+from . import ISODate
+from . import PartyIdentification43
 
 class Presentation2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Presentation2(base_types._BaseFieldType):
 
 	@BnfcryPresntnDt.setter
 	def BnfcryPresntnDt(self, value):
-		self._BnfcryPresntnDt = value if type(value) != base_types.auto else self.make_default("BnfcryPresntnDt")
+		self._BnfcryPresntnDt = value if value is not None else base_types.UninitialisedField(self, 'BnfcryPresntnDt', ISODate, False)
 
 	@BnfcryPresntnDt.deleter
 	def BnfcryPresntnDt(self):
 		del self._BnfcryPresntnDt
-		self._BnfcryPresntnDt = None
+		self._BnfcryPresntnDt = base_types.UninitialisedField(self, 'BnfcryPresntnDt', ISODate, False)
 
 	@property
 	def Presntr(self):
@@ -27,12 +27,12 @@ class Presentation2(base_types._BaseFieldType):
 
 	@Presntr.setter
 	def Presntr(self, value):
-		self._Presntr = value if type(value) != base_types.auto else self.make_default("Presntr")
+		self._Presntr = value if value is not None else base_types.UninitialisedField(self, 'Presntr', PartyIdentification43, False)
 
 	@Presntr.deleter
 	def Presntr(self):
 		del self._Presntr
-		self._Presntr = None
+		self._Presntr = base_types.UninitialisedField(self, 'Presntr', PartyIdentification43, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BnfcryPresntnDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),

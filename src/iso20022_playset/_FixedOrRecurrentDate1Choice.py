@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateInformation1 import DateInformation1
-from ._ISODate import ISODate
+from . import DateInformation1
+from . import ISODate
 
 class FixedOrRecurrentDate1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class FixedOrRecurrentDate1Choice(base_types._BaseFieldType):
 
 	@FxdDt.setter
 	def FxdDt(self, value):
-		self._FxdDt = value if type(value) != base_types.auto else self.make_default("FxdDt")
+		self._FxdDt = value if value is not None else base_types.UninitialisedField(self, 'FxdDt', ISODate, False)
 
 	@FxdDt.deleter
 	def FxdDt(self):
 		del self._FxdDt
-		self._FxdDt = None
+		self._FxdDt = base_types.UninitialisedField(self, 'FxdDt', ISODate, False)
 
 	@property
 	def RcrntDt(self):
@@ -27,12 +27,12 @@ class FixedOrRecurrentDate1Choice(base_types._BaseFieldType):
 
 	@RcrntDt.setter
 	def RcrntDt(self, value):
-		self._RcrntDt = value if type(value) != base_types.auto else self.make_default("RcrntDt")
+		self._RcrntDt = value if value is not None else base_types.UninitialisedField(self, 'RcrntDt', DateInformation1, False)
 
 	@RcrntDt.deleter
 	def RcrntDt(self):
 		del self._RcrntDt
-		self._RcrntDt = None
+		self._RcrntDt = base_types.UninitialisedField(self, 'RcrntDt', DateInformation1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FxdDt', type=ISODate, min=0, max=1, mutex_group=1, array=False),

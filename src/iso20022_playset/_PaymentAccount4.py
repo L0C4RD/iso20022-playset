@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._AmountAndDirection86 import AmountAndDirection86
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max10NumericText import Max10NumericText
+from . import ActiveCurrencyCode
+from . import AmountAndDirection86
+from . import ImpliedCurrencyAndAmount
+from . import Max10NumericText
 
 class PaymentAccount4(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class PaymentAccount4(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@property
 	def GrssCdts(self):
@@ -29,12 +29,12 @@ class PaymentAccount4(base_types._BaseFieldType):
 
 	@GrssCdts.setter
 	def GrssCdts(self, value):
-		self._GrssCdts = value if type(value) != base_types.auto else self.make_default("GrssCdts")
+		self._GrssCdts = value if value is not None else base_types.UninitialisedField(self, 'GrssCdts', ImpliedCurrencyAndAmount, False)
 
 	@GrssCdts.deleter
 	def GrssCdts(self):
 		del self._GrssCdts
-		self._GrssCdts = None
+		self._GrssCdts = base_types.UninitialisedField(self, 'GrssCdts', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def GrssDbts(self):
@@ -42,12 +42,12 @@ class PaymentAccount4(base_types._BaseFieldType):
 
 	@GrssDbts.setter
 	def GrssDbts(self, value):
-		self._GrssDbts = value if type(value) != base_types.auto else self.make_default("GrssDbts")
+		self._GrssDbts = value if value is not None else base_types.UninitialisedField(self, 'GrssDbts', ImpliedCurrencyAndAmount, False)
 
 	@GrssDbts.deleter
 	def GrssDbts(self):
 		del self._GrssDbts
-		self._GrssDbts = None
+		self._GrssDbts = base_types.UninitialisedField(self, 'GrssDbts', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def LatePmtConf(self):
@@ -55,12 +55,12 @@ class PaymentAccount4(base_types._BaseFieldType):
 
 	@LatePmtConf.setter
 	def LatePmtConf(self, value):
-		self._LatePmtConf = value if type(value) != base_types.auto else self.make_default("LatePmtConf")
+		self._LatePmtConf = value if value is not None else base_types.UninitialisedField(self, 'LatePmtConf', Max10NumericText, False)
 
 	@LatePmtConf.deleter
 	def LatePmtConf(self):
 		del self._LatePmtConf
-		self._LatePmtConf = None
+		self._LatePmtConf = base_types.UninitialisedField(self, 'LatePmtConf', Max10NumericText, False)
 
 	@property
 	def NetPmt(self):
@@ -68,12 +68,12 @@ class PaymentAccount4(base_types._BaseFieldType):
 
 	@NetPmt.setter
 	def NetPmt(self, value):
-		self._NetPmt = value if type(value) != base_types.auto else self.make_default("NetPmt")
+		self._NetPmt = value if value is not None else base_types.UninitialisedField(self, 'NetPmt', AmountAndDirection86, False)
 
 	@NetPmt.deleter
 	def NetPmt(self):
 		del self._NetPmt
-		self._NetPmt = None
+		self._NetPmt = base_types.UninitialisedField(self, 'NetPmt', AmountAndDirection86, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),

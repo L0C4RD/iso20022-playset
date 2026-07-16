@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SupplementaryData1 import SupplementaryData1
-from ._TaxReport1 import TaxReport1
-from ._TaxReportHeader1 import TaxReportHeader1
+from . import SupplementaryData1
+from . import TaxReport1
+from . import TaxReportHeader1
 
 class InvoiceTaxReportV01(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class InvoiceTaxReportV01(base_types._BaseFieldType):
 
 	@InvcTaxRptHdr.setter
 	def InvcTaxRptHdr(self, value):
-		self._InvcTaxRptHdr = value if type(value) != base_types.auto else self.make_default("InvcTaxRptHdr")
+		self._InvcTaxRptHdr = value if value is not None else base_types.UninitialisedField(self, 'InvcTaxRptHdr', TaxReportHeader1, False)
 
 	@InvcTaxRptHdr.deleter
 	def InvcTaxRptHdr(self):
 		del self._InvcTaxRptHdr
-		self._InvcTaxRptHdr = None
+		self._InvcTaxRptHdr = base_types.UninitialisedField(self, 'InvcTaxRptHdr', TaxReportHeader1, False)
 
 	@property
 	def SplmtryData(self):
@@ -28,12 +28,12 @@ class InvoiceTaxReportV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TaxRpt(self):
@@ -41,12 +41,12 @@ class InvoiceTaxReportV01(base_types._BaseFieldType):
 
 	@TaxRpt.setter
 	def TaxRpt(self, value):
-		self._TaxRpt = value if type(value) != base_types.auto else self.make_default("TaxRpt")
+		self._TaxRpt = value if value is not None else base_types.UninitialisedField(self, 'TaxRpt', TaxReport1, True)
 
 	@TaxRpt.deleter
 	def TaxRpt(self):
 		del self._TaxRpt
-		self._TaxRpt = None
+		self._TaxRpt = base_types.UninitialisedField(self, 'TaxRpt', TaxReport1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InvcTaxRptHdr', type=TaxReportHeader1, min=1, max=1, mutex_group=None, array=False),

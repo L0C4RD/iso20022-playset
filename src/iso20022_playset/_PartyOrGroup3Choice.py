@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max4AlphaNumericText import Max4AlphaNumericText
-from ._PartyAndCertificate6 import PartyAndCertificate6
+from . import Max4AlphaNumericText
+from . import PartyAndCertificate6
 
 class PartyOrGroup3Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PartyOrGroup3Choice(base_types._BaseFieldType):
 
 	@GrpId.setter
 	def GrpId(self, value):
-		self._GrpId = value if type(value) != base_types.auto else self.make_default("GrpId")
+		self._GrpId = value if value is not None else base_types.UninitialisedField(self, 'GrpId', Max4AlphaNumericText, False)
 
 	@GrpId.deleter
 	def GrpId(self):
 		del self._GrpId
-		self._GrpId = None
+		self._GrpId = base_types.UninitialisedField(self, 'GrpId', Max4AlphaNumericText, False)
 
 	@property
 	def Pty(self):
@@ -27,12 +27,12 @@ class PartyOrGroup3Choice(base_types._BaseFieldType):
 
 	@Pty.setter
 	def Pty(self, value):
-		self._Pty = value if type(value) != base_types.auto else self.make_default("Pty")
+		self._Pty = value if value is not None else base_types.UninitialisedField(self, 'Pty', PartyAndCertificate6, False)
 
 	@Pty.deleter
 	def Pty(self):
 		del self._Pty
-		self._Pty = None
+		self._Pty = base_types.UninitialisedField(self, 'Pty', PartyAndCertificate6, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='GrpId', type=Max4AlphaNumericText, min=0, max=1, mutex_group=1, array=False),

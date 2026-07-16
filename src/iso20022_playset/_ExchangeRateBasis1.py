@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
+from . import ActiveCurrencyCode
 
 class ExchangeRateBasis1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class ExchangeRateBasis1(base_types._BaseFieldType):
 
 	@BaseCcy.setter
 	def BaseCcy(self, value):
-		self._BaseCcy = value if type(value) != base_types.auto else self.make_default("BaseCcy")
+		self._BaseCcy = value if value is not None else base_types.UninitialisedField(self, 'BaseCcy', ActiveCurrencyCode, False)
 
 	@BaseCcy.deleter
 	def BaseCcy(self):
 		del self._BaseCcy
-		self._BaseCcy = None
+		self._BaseCcy = base_types.UninitialisedField(self, 'BaseCcy', ActiveCurrencyCode, False)
 
 	@property
 	def QtdCcy(self):
@@ -26,12 +26,12 @@ class ExchangeRateBasis1(base_types._BaseFieldType):
 
 	@QtdCcy.setter
 	def QtdCcy(self, value):
-		self._QtdCcy = value if type(value) != base_types.auto else self.make_default("QtdCcy")
+		self._QtdCcy = value if value is not None else base_types.UninitialisedField(self, 'QtdCcy', ActiveCurrencyCode, False)
 
 	@QtdCcy.deleter
 	def QtdCcy(self):
 		del self._QtdCcy
-		self._QtdCcy = None
+		self._QtdCcy = base_types.UninitialisedField(self, 'QtdCcy', ActiveCurrencyCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BaseCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),

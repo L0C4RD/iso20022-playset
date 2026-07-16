@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMMediaType1Code import ATMMediaType1Code
-from ._ATMMediaType4Code import ATMMediaType4Code
-from ._CardDataReading4Code import CardDataReading4Code
-from ._CardholderVerificationCapability3Code import CardholderVerificationCapability3Code
-from ._DisplayCapabilities5 import DisplayCapabilities5
-from ._Max256Text import Max256Text
-from ._Number import Number
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ATMMediaType1Code
+from . import ATMMediaType4Code
+from . import CardDataReading4Code
+from . import CardholderVerificationCapability3Code
+from . import DisplayCapabilities5
+from . import Max256Text
+from . import Number
+from . import TrueFalseIndicator
 
 class PointOfInteractionCapabilities10(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class PointOfInteractionCapabilities10(base_types._BaseFieldType):
 
 	@ApprvlCdLngth.setter
 	def ApprvlCdLngth(self, value):
-		self._ApprvlCdLngth = value if type(value) != base_types.auto else self.make_default("ApprvlCdLngth")
+		self._ApprvlCdLngth = value if value is not None else base_types.UninitialisedField(self, 'ApprvlCdLngth', Number, False)
 
 	@ApprvlCdLngth.deleter
 	def ApprvlCdLngth(self):
 		del self._ApprvlCdLngth
-		self._ApprvlCdLngth = None
+		self._ApprvlCdLngth = base_types.UninitialisedField(self, 'ApprvlCdLngth', Number, False)
 
 	@property
 	def Authntcn(self):
@@ -33,12 +33,12 @@ class PointOfInteractionCapabilities10(base_types._BaseFieldType):
 
 	@Authntcn.setter
 	def Authntcn(self, value):
-		self._Authntcn = value if type(value) != base_types.auto else self.make_default("Authntcn")
+		self._Authntcn = value if value is not None else base_types.UninitialisedField(self, 'Authntcn', CardholderVerificationCapability3Code, True)
 
 	@Authntcn.deleter
 	def Authntcn(self):
 		del self._Authntcn
-		self._Authntcn = None
+		self._Authntcn = base_types.UninitialisedField(self, 'Authntcn', CardholderVerificationCapability3Code, True)
 
 	@property
 	def CardCaptrCpbl(self):
@@ -46,12 +46,12 @@ class PointOfInteractionCapabilities10(base_types._BaseFieldType):
 
 	@CardCaptrCpbl.setter
 	def CardCaptrCpbl(self, value):
-		self._CardCaptrCpbl = value if type(value) != base_types.auto else self.make_default("CardCaptrCpbl")
+		self._CardCaptrCpbl = value if value is not None else base_types.UninitialisedField(self, 'CardCaptrCpbl', TrueFalseIndicator, False)
 
 	@CardCaptrCpbl.deleter
 	def CardCaptrCpbl(self):
 		del self._CardCaptrCpbl
-		self._CardCaptrCpbl = None
+		self._CardCaptrCpbl = base_types.UninitialisedField(self, 'CardCaptrCpbl', TrueFalseIndicator, False)
 
 	@property
 	def CardRdData(self):
@@ -59,12 +59,12 @@ class PointOfInteractionCapabilities10(base_types._BaseFieldType):
 
 	@CardRdData.setter
 	def CardRdData(self, value):
-		self._CardRdData = value if type(value) != base_types.auto else self.make_default("CardRdData")
+		self._CardRdData = value if value is not None else base_types.UninitialisedField(self, 'CardRdData', CardDataReading4Code, True)
 
 	@CardRdData.deleter
 	def CardRdData(self):
 		del self._CardRdData
-		self._CardRdData = None
+		self._CardRdData = base_types.UninitialisedField(self, 'CardRdData', CardDataReading4Code, True)
 
 	@property
 	def CardWrtData(self):
@@ -72,12 +72,12 @@ class PointOfInteractionCapabilities10(base_types._BaseFieldType):
 
 	@CardWrtData.setter
 	def CardWrtData(self, value):
-		self._CardWrtData = value if type(value) != base_types.auto else self.make_default("CardWrtData")
+		self._CardWrtData = value if value is not None else base_types.UninitialisedField(self, 'CardWrtData', CardDataReading4Code, True)
 
 	@CardWrtData.deleter
 	def CardWrtData(self):
 		del self._CardWrtData
-		self._CardWrtData = None
+		self._CardWrtData = base_types.UninitialisedField(self, 'CardWrtData', CardDataReading4Code, True)
 
 	@property
 	def DpstdMdia(self):
@@ -85,12 +85,12 @@ class PointOfInteractionCapabilities10(base_types._BaseFieldType):
 
 	@DpstdMdia.setter
 	def DpstdMdia(self, value):
-		self._DpstdMdia = value if type(value) != base_types.auto else self.make_default("DpstdMdia")
+		self._DpstdMdia = value if value is not None else base_types.UninitialisedField(self, 'DpstdMdia', ATMMediaType4Code, True)
 
 	@DpstdMdia.deleter
 	def DpstdMdia(self):
 		del self._DpstdMdia
-		self._DpstdMdia = None
+		self._DpstdMdia = base_types.UninitialisedField(self, 'DpstdMdia', ATMMediaType4Code, True)
 
 	@property
 	def IntractvTxs(self):
@@ -98,12 +98,12 @@ class PointOfInteractionCapabilities10(base_types._BaseFieldType):
 
 	@IntractvTxs.setter
 	def IntractvTxs(self, value):
-		self._IntractvTxs = value if type(value) != base_types.auto else self.make_default("IntractvTxs")
+		self._IntractvTxs = value if value is not None else base_types.UninitialisedField(self, 'IntractvTxs', Max256Text, True)
 
 	@IntractvTxs.deleter
 	def IntractvTxs(self):
 		del self._IntractvTxs
-		self._IntractvTxs = None
+		self._IntractvTxs = base_types.UninitialisedField(self, 'IntractvTxs', Max256Text, True)
 
 	@property
 	def MsgCpblties(self):
@@ -111,12 +111,12 @@ class PointOfInteractionCapabilities10(base_types._BaseFieldType):
 
 	@MsgCpblties.setter
 	def MsgCpblties(self, value):
-		self._MsgCpblties = value if type(value) != base_types.auto else self.make_default("MsgCpblties")
+		self._MsgCpblties = value if value is not None else base_types.UninitialisedField(self, 'MsgCpblties', DisplayCapabilities5, True)
 
 	@MsgCpblties.deleter
 	def MsgCpblties(self):
 		del self._MsgCpblties
-		self._MsgCpblties = None
+		self._MsgCpblties = base_types.UninitialisedField(self, 'MsgCpblties', DisplayCapabilities5, True)
 
 	@property
 	def MxScrptLngth(self):
@@ -124,12 +124,12 @@ class PointOfInteractionCapabilities10(base_types._BaseFieldType):
 
 	@MxScrptLngth.setter
 	def MxScrptLngth(self, value):
-		self._MxScrptLngth = value if type(value) != base_types.auto else self.make_default("MxScrptLngth")
+		self._MxScrptLngth = value if value is not None else base_types.UninitialisedField(self, 'MxScrptLngth', Number, False)
 
 	@MxScrptLngth.deleter
 	def MxScrptLngth(self):
 		del self._MxScrptLngth
-		self._MxScrptLngth = None
+		self._MxScrptLngth = base_types.UninitialisedField(self, 'MxScrptLngth', Number, False)
 
 	@property
 	def PINLngthCpblties(self):
@@ -137,12 +137,12 @@ class PointOfInteractionCapabilities10(base_types._BaseFieldType):
 
 	@PINLngthCpblties.setter
 	def PINLngthCpblties(self, value):
-		self._PINLngthCpblties = value if type(value) != base_types.auto else self.make_default("PINLngthCpblties")
+		self._PINLngthCpblties = value if value is not None else base_types.UninitialisedField(self, 'PINLngthCpblties', Number, False)
 
 	@PINLngthCpblties.deleter
 	def PINLngthCpblties(self):
 		del self._PINLngthCpblties
-		self._PINLngthCpblties = None
+		self._PINLngthCpblties = base_types.UninitialisedField(self, 'PINLngthCpblties', Number, False)
 
 	@property
 	def RctPrtg(self):
@@ -150,12 +150,12 @@ class PointOfInteractionCapabilities10(base_types._BaseFieldType):
 
 	@RctPrtg.setter
 	def RctPrtg(self, value):
-		self._RctPrtg = value if type(value) != base_types.auto else self.make_default("RctPrtg")
+		self._RctPrtg = value if value is not None else base_types.UninitialisedField(self, 'RctPrtg', TrueFalseIndicator, False)
 
 	@RctPrtg.deleter
 	def RctPrtg(self):
 		del self._RctPrtg
-		self._RctPrtg = None
+		self._RctPrtg = base_types.UninitialisedField(self, 'RctPrtg', TrueFalseIndicator, False)
 
 	@property
 	def WdrwlMdia(self):
@@ -163,12 +163,12 @@ class PointOfInteractionCapabilities10(base_types._BaseFieldType):
 
 	@WdrwlMdia.setter
 	def WdrwlMdia(self, value):
-		self._WdrwlMdia = value if type(value) != base_types.auto else self.make_default("WdrwlMdia")
+		self._WdrwlMdia = value if value is not None else base_types.UninitialisedField(self, 'WdrwlMdia', ATMMediaType1Code, True)
 
 	@WdrwlMdia.deleter
 	def WdrwlMdia(self):
 		del self._WdrwlMdia
-		self._WdrwlMdia = None
+		self._WdrwlMdia = base_types.UninitialisedField(self, 'WdrwlMdia', ATMMediaType1Code, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ApprvlCdLngth', type=Number, min=0, max=1, mutex_group=None, array=False),

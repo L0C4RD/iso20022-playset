@@ -2,19 +2,19 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcknowledgementReason12Choice import AcknowledgementReason12Choice
-from ._AcknowledgementReason13Choice import AcknowledgementReason13Choice
-from ._CancellationReason20Choice import CancellationReason20Choice
-from ._DeniedReason14Choice import DeniedReason14Choice
-from ._FailingReason9Choice import FailingReason9Choice
-from ._GeneratedReasons5Choice import GeneratedReasons5Choice
-from ._PendingCancellationReasons6Choice import PendingCancellationReasons6Choice
-from ._PendingProcessingReason20Choice import PendingProcessingReason20Choice
-from ._PendingReason28Choice import PendingReason28Choice
-from ._PendingReason78Choice import PendingReason78Choice
-from ._RejectionReason45Choice import RejectionReason45Choice
-from ._RepairReason11Choice import RepairReason11Choice
-from ._UnmatchedReason22Choice import UnmatchedReason22Choice
+from . import AcknowledgementReason12Choice
+from . import AcknowledgementReason13Choice
+from . import CancellationReason20Choice
+from . import DeniedReason14Choice
+from . import FailingReason9Choice
+from . import GeneratedReasons5Choice
+from . import PendingCancellationReasons6Choice
+from . import PendingProcessingReason20Choice
+from . import PendingReason28Choice
+from . import PendingReason78Choice
+from . import RejectionReason45Choice
+from . import RepairReason11Choice
+from . import UnmatchedReason22Choice
 
 class Reason21Choice(base_types._BaseFieldType):
 
@@ -25,12 +25,12 @@ class Reason21Choice(base_types._BaseFieldType):
 
 	@AckdAccptdRsn.setter
 	def AckdAccptdRsn(self, value):
-		self._AckdAccptdRsn = value if type(value) != base_types.auto else self.make_default("AckdAccptdRsn")
+		self._AckdAccptdRsn = value if value is not None else base_types.UninitialisedField(self, 'AckdAccptdRsn', AcknowledgementReason12Choice, False)
 
 	@AckdAccptdRsn.deleter
 	def AckdAccptdRsn(self):
 		del self._AckdAccptdRsn
-		self._AckdAccptdRsn = None
+		self._AckdAccptdRsn = base_types.UninitialisedField(self, 'AckdAccptdRsn', AcknowledgementReason12Choice, False)
 
 	@property
 	def CxlRsn(self):
@@ -38,12 +38,12 @@ class Reason21Choice(base_types._BaseFieldType):
 
 	@CxlRsn.setter
 	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != base_types.auto else self.make_default("CxlRsn")
+		self._CxlRsn = value if value is not None else base_types.UninitialisedField(self, 'CxlRsn', CancellationReason20Choice, False)
 
 	@CxlRsn.deleter
 	def CxlRsn(self):
 		del self._CxlRsn
-		self._CxlRsn = None
+		self._CxlRsn = base_types.UninitialisedField(self, 'CxlRsn', CancellationReason20Choice, False)
 
 	@property
 	def DndRsn(self):
@@ -51,12 +51,12 @@ class Reason21Choice(base_types._BaseFieldType):
 
 	@DndRsn.setter
 	def DndRsn(self, value):
-		self._DndRsn = value if type(value) != base_types.auto else self.make_default("DndRsn")
+		self._DndRsn = value if value is not None else base_types.UninitialisedField(self, 'DndRsn', DeniedReason14Choice, False)
 
 	@DndRsn.deleter
 	def DndRsn(self):
 		del self._DndRsn
-		self._DndRsn = None
+		self._DndRsn = base_types.UninitialisedField(self, 'DndRsn', DeniedReason14Choice, False)
 
 	@property
 	def FlngRsn(self):
@@ -64,12 +64,12 @@ class Reason21Choice(base_types._BaseFieldType):
 
 	@FlngRsn.setter
 	def FlngRsn(self, value):
-		self._FlngRsn = value if type(value) != base_types.auto else self.make_default("FlngRsn")
+		self._FlngRsn = value if value is not None else base_types.UninitialisedField(self, 'FlngRsn', FailingReason9Choice, False)
 
 	@FlngRsn.deleter
 	def FlngRsn(self):
 		del self._FlngRsn
-		self._FlngRsn = None
+		self._FlngRsn = base_types.UninitialisedField(self, 'FlngRsn', FailingReason9Choice, False)
 
 	@property
 	def GnrtdRsn(self):
@@ -77,12 +77,12 @@ class Reason21Choice(base_types._BaseFieldType):
 
 	@GnrtdRsn.setter
 	def GnrtdRsn(self, value):
-		self._GnrtdRsn = value if type(value) != base_types.auto else self.make_default("GnrtdRsn")
+		self._GnrtdRsn = value if value is not None else base_types.UninitialisedField(self, 'GnrtdRsn', GeneratedReasons5Choice, False)
 
 	@GnrtdRsn.deleter
 	def GnrtdRsn(self):
 		del self._GnrtdRsn
-		self._GnrtdRsn = None
+		self._GnrtdRsn = base_types.UninitialisedField(self, 'GnrtdRsn', GeneratedReasons5Choice, False)
 
 	@property
 	def PdgCxlRsn(self):
@@ -90,12 +90,12 @@ class Reason21Choice(base_types._BaseFieldType):
 
 	@PdgCxlRsn.setter
 	def PdgCxlRsn(self, value):
-		self._PdgCxlRsn = value if type(value) != base_types.auto else self.make_default("PdgCxlRsn")
+		self._PdgCxlRsn = value if value is not None else base_types.UninitialisedField(self, 'PdgCxlRsn', PendingCancellationReasons6Choice, False)
 
 	@PdgCxlRsn.deleter
 	def PdgCxlRsn(self):
 		del self._PdgCxlRsn
-		self._PdgCxlRsn = None
+		self._PdgCxlRsn = base_types.UninitialisedField(self, 'PdgCxlRsn', PendingCancellationReasons6Choice, False)
 
 	@property
 	def PdgModRsn(self):
@@ -103,12 +103,12 @@ class Reason21Choice(base_types._BaseFieldType):
 
 	@PdgModRsn.setter
 	def PdgModRsn(self, value):
-		self._PdgModRsn = value if type(value) != base_types.auto else self.make_default("PdgModRsn")
+		self._PdgModRsn = value if value is not None else base_types.UninitialisedField(self, 'PdgModRsn', PendingReason28Choice, False)
 
 	@PdgModRsn.deleter
 	def PdgModRsn(self):
 		del self._PdgModRsn
-		self._PdgModRsn = None
+		self._PdgModRsn = base_types.UninitialisedField(self, 'PdgModRsn', PendingReason28Choice, False)
 
 	@property
 	def PdgPrcgRsn(self):
@@ -116,12 +116,12 @@ class Reason21Choice(base_types._BaseFieldType):
 
 	@PdgPrcgRsn.setter
 	def PdgPrcgRsn(self, value):
-		self._PdgPrcgRsn = value if type(value) != base_types.auto else self.make_default("PdgPrcgRsn")
+		self._PdgPrcgRsn = value if value is not None else base_types.UninitialisedField(self, 'PdgPrcgRsn', PendingProcessingReason20Choice, False)
 
 	@PdgPrcgRsn.deleter
 	def PdgPrcgRsn(self):
 		del self._PdgPrcgRsn
-		self._PdgPrcgRsn = None
+		self._PdgPrcgRsn = base_types.UninitialisedField(self, 'PdgPrcgRsn', PendingProcessingReason20Choice, False)
 
 	@property
 	def PdgRsn(self):
@@ -129,12 +129,12 @@ class Reason21Choice(base_types._BaseFieldType):
 
 	@PdgRsn.setter
 	def PdgRsn(self, value):
-		self._PdgRsn = value if type(value) != base_types.auto else self.make_default("PdgRsn")
+		self._PdgRsn = value if value is not None else base_types.UninitialisedField(self, 'PdgRsn', PendingReason78Choice, False)
 
 	@PdgRsn.deleter
 	def PdgRsn(self):
 		del self._PdgRsn
-		self._PdgRsn = None
+		self._PdgRsn = base_types.UninitialisedField(self, 'PdgRsn', PendingReason78Choice, False)
 
 	@property
 	def RepoCallAckRsn(self):
@@ -142,12 +142,12 @@ class Reason21Choice(base_types._BaseFieldType):
 
 	@RepoCallAckRsn.setter
 	def RepoCallAckRsn(self, value):
-		self._RepoCallAckRsn = value if type(value) != base_types.auto else self.make_default("RepoCallAckRsn")
+		self._RepoCallAckRsn = value if value is not None else base_types.UninitialisedField(self, 'RepoCallAckRsn', AcknowledgementReason13Choice, False)
 
 	@RepoCallAckRsn.deleter
 	def RepoCallAckRsn(self):
 		del self._RepoCallAckRsn
-		self._RepoCallAckRsn = None
+		self._RepoCallAckRsn = base_types.UninitialisedField(self, 'RepoCallAckRsn', AcknowledgementReason13Choice, False)
 
 	@property
 	def RjctnRsn(self):
@@ -155,12 +155,12 @@ class Reason21Choice(base_types._BaseFieldType):
 
 	@RjctnRsn.setter
 	def RjctnRsn(self, value):
-		self._RjctnRsn = value if type(value) != base_types.auto else self.make_default("RjctnRsn")
+		self._RjctnRsn = value if value is not None else base_types.UninitialisedField(self, 'RjctnRsn', RejectionReason45Choice, False)
 
 	@RjctnRsn.deleter
 	def RjctnRsn(self):
 		del self._RjctnRsn
-		self._RjctnRsn = None
+		self._RjctnRsn = base_types.UninitialisedField(self, 'RjctnRsn', RejectionReason45Choice, False)
 
 	@property
 	def RprRsn(self):
@@ -168,12 +168,12 @@ class Reason21Choice(base_types._BaseFieldType):
 
 	@RprRsn.setter
 	def RprRsn(self, value):
-		self._RprRsn = value if type(value) != base_types.auto else self.make_default("RprRsn")
+		self._RprRsn = value if value is not None else base_types.UninitialisedField(self, 'RprRsn', RepairReason11Choice, False)
 
 	@RprRsn.deleter
 	def RprRsn(self):
 		del self._RprRsn
-		self._RprRsn = None
+		self._RprRsn = base_types.UninitialisedField(self, 'RprRsn', RepairReason11Choice, False)
 
 	@property
 	def UmtchdRsn(self):
@@ -181,12 +181,12 @@ class Reason21Choice(base_types._BaseFieldType):
 
 	@UmtchdRsn.setter
 	def UmtchdRsn(self, value):
-		self._UmtchdRsn = value if type(value) != base_types.auto else self.make_default("UmtchdRsn")
+		self._UmtchdRsn = value if value is not None else base_types.UninitialisedField(self, 'UmtchdRsn', UnmatchedReason22Choice, False)
 
 	@UmtchdRsn.deleter
 	def UmtchdRsn(self):
 		del self._UmtchdRsn
-		self._UmtchdRsn = None
+		self._UmtchdRsn = base_types.UninitialisedField(self, 'UmtchdRsn', UnmatchedReason22Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AckdAccptdRsn', type=AcknowledgementReason12Choice, min=0, max=1, mutex_group=1, array=False),

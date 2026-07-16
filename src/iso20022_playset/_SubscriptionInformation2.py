@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from ._ISODate import ISODate
+from . import ActiveCurrencyAnd13DecimalAmount
+from . import ISODate
 
 class SubscriptionInformation2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SubscriptionInformation2(base_types._BaseFieldType):
 
 	@CshCmpnt.setter
 	def CshCmpnt(self, value):
-		self._CshCmpnt = value if type(value) != base_types.auto else self.make_default("CshCmpnt")
+		self._CshCmpnt = value if value is not None else base_types.UninitialisedField(self, 'CshCmpnt', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@CshCmpnt.deleter
 	def CshCmpnt(self):
 		del self._CshCmpnt
-		self._CshCmpnt = None
+		self._CshCmpnt = base_types.UninitialisedField(self, 'CshCmpnt', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def DtOfFrstSbcpt(self):
@@ -27,12 +27,12 @@ class SubscriptionInformation2(base_types._BaseFieldType):
 
 	@DtOfFrstSbcpt.setter
 	def DtOfFrstSbcpt(self, value):
-		self._DtOfFrstSbcpt = value if type(value) != base_types.auto else self.make_default("DtOfFrstSbcpt")
+		self._DtOfFrstSbcpt = value if value is not None else base_types.UninitialisedField(self, 'DtOfFrstSbcpt', ISODate, False)
 
 	@DtOfFrstSbcpt.deleter
 	def DtOfFrstSbcpt(self):
 		del self._DtOfFrstSbcpt
-		self._DtOfFrstSbcpt = None
+		self._DtOfFrstSbcpt = base_types.UninitialisedField(self, 'DtOfFrstSbcpt', ISODate, False)
 
 	@property
 	def EqtyCmpnt(self):
@@ -40,12 +40,12 @@ class SubscriptionInformation2(base_types._BaseFieldType):
 
 	@EqtyCmpnt.setter
 	def EqtyCmpnt(self, value):
-		self._EqtyCmpnt = value if type(value) != base_types.auto else self.make_default("EqtyCmpnt")
+		self._EqtyCmpnt = value if value is not None else base_types.UninitialisedField(self, 'EqtyCmpnt', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@EqtyCmpnt.deleter
 	def EqtyCmpnt(self):
 		del self._EqtyCmpnt
-		self._EqtyCmpnt = None
+		self._EqtyCmpnt = base_types.UninitialisedField(self, 'EqtyCmpnt', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def TtlAmtYrToDt(self):
@@ -53,12 +53,12 @@ class SubscriptionInformation2(base_types._BaseFieldType):
 
 	@TtlAmtYrToDt.setter
 	def TtlAmtYrToDt(self, value):
-		self._TtlAmtYrToDt = value if type(value) != base_types.auto else self.make_default("TtlAmtYrToDt")
+		self._TtlAmtYrToDt = value if value is not None else base_types.UninitialisedField(self, 'TtlAmtYrToDt', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@TtlAmtYrToDt.deleter
 	def TtlAmtYrToDt(self):
 		del self._TtlAmtYrToDt
-		self._TtlAmtYrToDt = None
+		self._TtlAmtYrToDt = base_types.UninitialisedField(self, 'TtlAmtYrToDt', ActiveCurrencyAnd13DecimalAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshCmpnt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=None, array=False),

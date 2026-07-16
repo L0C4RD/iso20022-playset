@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountQuery4 import AccountQuery4
-from ._MessageHeader9 import MessageHeader9
-from ._SupplementaryData1 import SupplementaryData1
+from . import AccountQuery4
+from . import MessageHeader9
+from . import SupplementaryData1
 
 class GetAccountV08(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class GetAccountV08(base_types._BaseFieldType):
 
 	@AcctQryDef.setter
 	def AcctQryDef(self, value):
-		self._AcctQryDef = value if type(value) != base_types.auto else self.make_default("AcctQryDef")
+		self._AcctQryDef = value if value is not None else base_types.UninitialisedField(self, 'AcctQryDef', AccountQuery4, False)
 
 	@AcctQryDef.deleter
 	def AcctQryDef(self):
 		del self._AcctQryDef
-		self._AcctQryDef = None
+		self._AcctQryDef = base_types.UninitialisedField(self, 'AcctQryDef', AccountQuery4, False)
 
 	@property
 	def MsgHdr(self):
@@ -28,12 +28,12 @@ class GetAccountV08(base_types._BaseFieldType):
 
 	@MsgHdr.setter
 	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
+		self._MsgHdr = value if value is not None else base_types.UninitialisedField(self, 'MsgHdr', MessageHeader9, False)
 
 	@MsgHdr.deleter
 	def MsgHdr(self):
 		del self._MsgHdr
-		self._MsgHdr = None
+		self._MsgHdr = base_types.UninitialisedField(self, 'MsgHdr', MessageHeader9, False)
 
 	@property
 	def SplmtryData(self):
@@ -41,12 +41,12 @@ class GetAccountV08(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctQryDef', type=AccountQuery4, min=0, max=1, mutex_group=None, array=False),

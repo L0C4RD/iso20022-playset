@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashAccount7 import CashAccount7
-from ._ContactIdentification1 import ContactIdentification1
-from ._PartyIdentification8 import PartyIdentification8
+from . import CashAccount7
+from . import ContactIdentification1
+from . import PartyIdentification8
 
 class PartyAndAccountIdentificationAndContactInformation1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PartyAndAccountIdentificationAndContactInformation1(base_types._BaseFieldT
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', CashAccount7, False)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', CashAccount7, False)
 
 	@property
 	def CtctInf(self):
@@ -28,12 +28,12 @@ class PartyAndAccountIdentificationAndContactInformation1(base_types._BaseFieldT
 
 	@CtctInf.setter
 	def CtctInf(self, value):
-		self._CtctInf = value if type(value) != base_types.auto else self.make_default("CtctInf")
+		self._CtctInf = value if value is not None else base_types.UninitialisedField(self, 'CtctInf', ContactIdentification1, False)
 
 	@CtctInf.deleter
 	def CtctInf(self):
 		del self._CtctInf
-		self._CtctInf = None
+		self._CtctInf = base_types.UninitialisedField(self, 'CtctInf', ContactIdentification1, False)
 
 	@property
 	def PtyId(self):
@@ -41,12 +41,12 @@ class PartyAndAccountIdentificationAndContactInformation1(base_types._BaseFieldT
 
 	@PtyId.setter
 	def PtyId(self, value):
-		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
+		self._PtyId = value if value is not None else base_types.UninitialisedField(self, 'PtyId', PartyIdentification8, False)
 
 	@PtyId.deleter
 	def PtyId(self):
 		del self._PtyId
-		self._PtyId = None
+		self._PtyId = base_types.UninitialisedField(self, 'PtyId', PartyIdentification8, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=CashAccount7, min=0, max=1, mutex_group=None, array=False),

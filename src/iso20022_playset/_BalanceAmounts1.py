@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection6 import AmountAndDirection6
+from . import AmountAndDirection6
 
 class BalanceAmounts1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class BalanceAmounts1(base_types._BaseFieldType):
 
 	@AcrdIntrstAmt.setter
 	def AcrdIntrstAmt(self, value):
-		self._AcrdIntrstAmt = value if type(value) != base_types.auto else self.make_default("AcrdIntrstAmt")
+		self._AcrdIntrstAmt = value if value is not None else base_types.UninitialisedField(self, 'AcrdIntrstAmt', AmountAndDirection6, False)
 
 	@AcrdIntrstAmt.deleter
 	def AcrdIntrstAmt(self):
 		del self._AcrdIntrstAmt
-		self._AcrdIntrstAmt = None
+		self._AcrdIntrstAmt = base_types.UninitialisedField(self, 'AcrdIntrstAmt', AmountAndDirection6, False)
 
 	@property
 	def BookVal(self):
@@ -26,12 +26,12 @@ class BalanceAmounts1(base_types._BaseFieldType):
 
 	@BookVal.setter
 	def BookVal(self, value):
-		self._BookVal = value if type(value) != base_types.auto else self.make_default("BookVal")
+		self._BookVal = value if value is not None else base_types.UninitialisedField(self, 'BookVal', AmountAndDirection6, False)
 
 	@BookVal.deleter
 	def BookVal(self):
 		del self._BookVal
-		self._BookVal = None
+		self._BookVal = base_types.UninitialisedField(self, 'BookVal', AmountAndDirection6, False)
 
 	@property
 	def HldgVal(self):
@@ -39,12 +39,12 @@ class BalanceAmounts1(base_types._BaseFieldType):
 
 	@HldgVal.setter
 	def HldgVal(self, value):
-		self._HldgVal = value if type(value) != base_types.auto else self.make_default("HldgVal")
+		self._HldgVal = value if value is not None else base_types.UninitialisedField(self, 'HldgVal', AmountAndDirection6, False)
 
 	@HldgVal.deleter
 	def HldgVal(self):
 		del self._HldgVal
-		self._HldgVal = None
+		self._HldgVal = base_types.UninitialisedField(self, 'HldgVal', AmountAndDirection6, False)
 
 	@property
 	def PrvsHldgVal(self):
@@ -52,12 +52,12 @@ class BalanceAmounts1(base_types._BaseFieldType):
 
 	@PrvsHldgVal.setter
 	def PrvsHldgVal(self, value):
-		self._PrvsHldgVal = value if type(value) != base_types.auto else self.make_default("PrvsHldgVal")
+		self._PrvsHldgVal = value if value is not None else base_types.UninitialisedField(self, 'PrvsHldgVal', AmountAndDirection6, False)
 
 	@PrvsHldgVal.deleter
 	def PrvsHldgVal(self):
 		del self._PrvsHldgVal
-		self._PrvsHldgVal = None
+		self._PrvsHldgVal = base_types.UninitialisedField(self, 'PrvsHldgVal', AmountAndDirection6, False)
 
 	@property
 	def UrlsdGnLoss(self):
@@ -65,12 +65,12 @@ class BalanceAmounts1(base_types._BaseFieldType):
 
 	@UrlsdGnLoss.setter
 	def UrlsdGnLoss(self, value):
-		self._UrlsdGnLoss = value if type(value) != base_types.auto else self.make_default("UrlsdGnLoss")
+		self._UrlsdGnLoss = value if value is not None else base_types.UninitialisedField(self, 'UrlsdGnLoss', AmountAndDirection6, False)
 
 	@UrlsdGnLoss.deleter
 	def UrlsdGnLoss(self):
 		del self._UrlsdGnLoss
-		self._UrlsdGnLoss = None
+		self._UrlsdGnLoss = base_types.UninitialisedField(self, 'UrlsdGnLoss', AmountAndDirection6, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcrdIntrstAmt', type=AmountAndDirection6, min=0, max=1, mutex_group=None, array=False),

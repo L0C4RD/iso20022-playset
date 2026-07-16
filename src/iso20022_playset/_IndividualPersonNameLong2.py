@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
-from ._Max6Text import Max6Text
-from ._NamePrefix2Code import NamePrefix2Code
+from . import ISODate
+from . import Max350Text
+from . import Max35Text
+from . import Max6Text
+from . import NamePrefix2Code
 
 class IndividualPersonNameLong2(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class IndividualPersonNameLong2(base_types._BaseFieldType):
 
 	@EndDt.setter
 	def EndDt(self, value):
-		self._EndDt = value if type(value) != base_types.auto else self.make_default("EndDt")
+		self._EndDt = value if value is not None else base_types.UninitialisedField(self, 'EndDt', ISODate, False)
 
 	@EndDt.deleter
 	def EndDt(self):
 		del self._EndDt
-		self._EndDt = None
+		self._EndDt = base_types.UninitialisedField(self, 'EndDt', ISODate, False)
 
 	@property
 	def GvnNm(self):
@@ -30,12 +30,12 @@ class IndividualPersonNameLong2(base_types._BaseFieldType):
 
 	@GvnNm.setter
 	def GvnNm(self, value):
-		self._GvnNm = value if type(value) != base_types.auto else self.make_default("GvnNm")
+		self._GvnNm = value if value is not None else base_types.UninitialisedField(self, 'GvnNm', Max35Text, False)
 
 	@GvnNm.deleter
 	def GvnNm(self):
 		del self._GvnNm
-		self._GvnNm = None
+		self._GvnNm = base_types.UninitialisedField(self, 'GvnNm', Max35Text, False)
 
 	@property
 	def Initls(self):
@@ -43,12 +43,12 @@ class IndividualPersonNameLong2(base_types._BaseFieldType):
 
 	@Initls.setter
 	def Initls(self, value):
-		self._Initls = value if type(value) != base_types.auto else self.make_default("Initls")
+		self._Initls = value if value is not None else base_types.UninitialisedField(self, 'Initls', Max6Text, False)
 
 	@Initls.deleter
 	def Initls(self):
 		del self._Initls
-		self._Initls = None
+		self._Initls = base_types.UninitialisedField(self, 'Initls', Max6Text, False)
 
 	@property
 	def MddlNm(self):
@@ -56,12 +56,12 @@ class IndividualPersonNameLong2(base_types._BaseFieldType):
 
 	@MddlNm.setter
 	def MddlNm(self, value):
-		self._MddlNm = value if type(value) != base_types.auto else self.make_default("MddlNm")
+		self._MddlNm = value if value is not None else base_types.UninitialisedField(self, 'MddlNm', Max35Text, False)
 
 	@MddlNm.deleter
 	def MddlNm(self):
 		del self._MddlNm
-		self._MddlNm = None
+		self._MddlNm = base_types.UninitialisedField(self, 'MddlNm', Max35Text, False)
 
 	@property
 	def Nm(self):
@@ -69,12 +69,12 @@ class IndividualPersonNameLong2(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max350Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max350Text, False)
 
 	@property
 	def NmPrfx(self):
@@ -82,12 +82,12 @@ class IndividualPersonNameLong2(base_types._BaseFieldType):
 
 	@NmPrfx.setter
 	def NmPrfx(self, value):
-		self._NmPrfx = value if type(value) != base_types.auto else self.make_default("NmPrfx")
+		self._NmPrfx = value if value is not None else base_types.UninitialisedField(self, 'NmPrfx', NamePrefix2Code, False)
 
 	@NmPrfx.deleter
 	def NmPrfx(self):
 		del self._NmPrfx
-		self._NmPrfx = None
+		self._NmPrfx = base_types.UninitialisedField(self, 'NmPrfx', NamePrefix2Code, False)
 
 	@property
 	def NmSfx(self):
@@ -95,12 +95,12 @@ class IndividualPersonNameLong2(base_types._BaseFieldType):
 
 	@NmSfx.setter
 	def NmSfx(self, value):
-		self._NmSfx = value if type(value) != base_types.auto else self.make_default("NmSfx")
+		self._NmSfx = value if value is not None else base_types.UninitialisedField(self, 'NmSfx', Max350Text, False)
 
 	@NmSfx.deleter
 	def NmSfx(self):
 		del self._NmSfx
-		self._NmSfx = None
+		self._NmSfx = base_types.UninitialisedField(self, 'NmSfx', Max350Text, False)
 
 	@property
 	def Srnm(self):
@@ -108,12 +108,12 @@ class IndividualPersonNameLong2(base_types._BaseFieldType):
 
 	@Srnm.setter
 	def Srnm(self, value):
-		self._Srnm = value if type(value) != base_types.auto else self.make_default("Srnm")
+		self._Srnm = value if value is not None else base_types.UninitialisedField(self, 'Srnm', Max35Text, False)
 
 	@Srnm.deleter
 	def Srnm(self):
 		del self._Srnm
-		self._Srnm = None
+		self._Srnm = base_types.UninitialisedField(self, 'Srnm', Max35Text, False)
 
 	@property
 	def StartDt(self):
@@ -121,12 +121,12 @@ class IndividualPersonNameLong2(base_types._BaseFieldType):
 
 	@StartDt.setter
 	def StartDt(self, value):
-		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
+		self._StartDt = value if value is not None else base_types.UninitialisedField(self, 'StartDt', ISODate, False)
 
 	@StartDt.deleter
 	def StartDt(self):
 		del self._StartDt
-		self._StartDt = None
+		self._StartDt = base_types.UninitialisedField(self, 'StartDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EndDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),

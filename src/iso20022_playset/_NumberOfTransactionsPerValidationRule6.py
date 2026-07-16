@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max15NumericText import Max15NumericText
-from ._RejectionReason70 import RejectionReason70
+from . import Max15NumericText
+from . import RejectionReason70
 
 class NumberOfTransactionsPerValidationRule6(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class NumberOfTransactionsPerValidationRule6(base_types._BaseFieldType):
 
 	@DtldNb.setter
 	def DtldNb(self, value):
-		self._DtldNb = value if type(value) != base_types.auto else self.make_default("DtldNb")
+		self._DtldNb = value if value is not None else base_types.UninitialisedField(self, 'DtldNb', Max15NumericText, False)
 
 	@DtldNb.deleter
 	def DtldNb(self):
 		del self._DtldNb
-		self._DtldNb = None
+		self._DtldNb = base_types.UninitialisedField(self, 'DtldNb', Max15NumericText, False)
 
 	@property
 	def RptSts(self):
@@ -27,12 +27,12 @@ class NumberOfTransactionsPerValidationRule6(base_types._BaseFieldType):
 
 	@RptSts.setter
 	def RptSts(self, value):
-		self._RptSts = value if type(value) != base_types.auto else self.make_default("RptSts")
+		self._RptSts = value if value is not None else base_types.UninitialisedField(self, 'RptSts', RejectionReason70, True)
 
 	@RptSts.deleter
 	def RptSts(self):
 		del self._RptSts
-		self._RptSts = None
+		self._RptSts = base_types.UninitialisedField(self, 'RptSts', RejectionReason70, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DtldNb', type=Max15NumericText, min=1, max=1, mutex_group=None, array=False),

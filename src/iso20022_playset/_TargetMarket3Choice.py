@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification47 import GenericIdentification47
-from ._InvestorType2Code import InvestorType2Code
-from ._TargetMarket1Code import TargetMarket1Code
+from . import GenericIdentification47
+from . import InvestorType2Code
+from . import TargetMarket1Code
 
 class TargetMarket3Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TargetMarket3Choice(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', TargetMarket1Code, False)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', TargetMarket1Code, False)
 
 	@property
 	def Prtry(self):
@@ -28,12 +28,12 @@ class TargetMarket3Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+		self._Prtry = value if value is not None else base_types.UninitialisedField(self, 'Prtry', GenericIdentification47, False)
 
 	@Prtry.deleter
 	def Prtry(self):
 		del self._Prtry
-		self._Prtry = None
+		self._Prtry = base_types.UninitialisedField(self, 'Prtry', GenericIdentification47, False)
 
 	@property
 	def Tp(self):
@@ -41,12 +41,12 @@ class TargetMarket3Choice(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', InvestorType2Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', InvestorType2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Othr', type=TargetMarket1Code, min=0, max=1, mutex_group=1, array=False),

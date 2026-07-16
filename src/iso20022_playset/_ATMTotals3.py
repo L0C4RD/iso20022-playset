@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMCounterType2Code import ATMCounterType2Code
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max70Text import Max70Text
-from ._Number import Number
+from . import ATMCounterType2Code
+from . import ActiveCurrencyCode
+from . import ImpliedCurrencyAndAmount
+from . import Max70Text
+from . import Number
 
 class ATMTotals3(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class ATMTotals3(base_types._BaseFieldType):
 
 	@AddtlId.setter
 	def AddtlId(self, value):
-		self._AddtlId = value if type(value) != base_types.auto else self.make_default("AddtlId")
+		self._AddtlId = value if value is not None else base_types.UninitialisedField(self, 'AddtlId', Max70Text, False)
 
 	@AddtlId.deleter
 	def AddtlId(self):
 		del self._AddtlId
-		self._AddtlId = None
+		self._AddtlId = base_types.UninitialisedField(self, 'AddtlId', Max70Text, False)
 
 	@property
 	def Amt(self):
@@ -30,12 +30,12 @@ class ATMTotals3(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ImpliedCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def Ccy(self):
@@ -43,12 +43,12 @@ class ATMTotals3(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@property
 	def Cnt(self):
@@ -56,12 +56,12 @@ class ATMTotals3(base_types._BaseFieldType):
 
 	@Cnt.setter
 	def Cnt(self, value):
-		self._Cnt = value if type(value) != base_types.auto else self.make_default("Cnt")
+		self._Cnt = value if value is not None else base_types.UninitialisedField(self, 'Cnt', Number, False)
 
 	@Cnt.deleter
 	def Cnt(self):
 		del self._Cnt
-		self._Cnt = None
+		self._Cnt = base_types.UninitialisedField(self, 'Cnt', Number, False)
 
 	@property
 	def Id(self):
@@ -69,12 +69,12 @@ class ATMTotals3(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max70Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max70Text, False)
 
 	@property
 	def Prd(self):
@@ -82,12 +82,12 @@ class ATMTotals3(base_types._BaseFieldType):
 
 	@Prd.setter
 	def Prd(self, value):
-		self._Prd = value if type(value) != base_types.auto else self.make_default("Prd")
+		self._Prd = value if value is not None else base_types.UninitialisedField(self, 'Prd', ATMCounterType2Code, False)
 
 	@Prd.deleter
 	def Prd(self):
 		del self._Prd
-		self._Prd = None
+		self._Prd = base_types.UninitialisedField(self, 'Prd', ATMCounterType2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlId', type=Max70Text, min=0, max=1, mutex_group=None, array=False),

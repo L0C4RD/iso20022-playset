@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Number import Number
+from . import Max35Text
+from . import Number
 
 class VariableInterest1Rate(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class VariableInterest1Rate(base_types._BaseFieldType):
 
 	@BsisPtSprd.setter
 	def BsisPtSprd(self, value):
-		self._BsisPtSprd = value if type(value) != base_types.auto else self.make_default("BsisPtSprd")
+		self._BsisPtSprd = value if value is not None else base_types.UninitialisedField(self, 'BsisPtSprd', Number, False)
 
 	@BsisPtSprd.deleter
 	def BsisPtSprd(self):
 		del self._BsisPtSprd
-		self._BsisPtSprd = None
+		self._BsisPtSprd = base_types.UninitialisedField(self, 'BsisPtSprd', Number, False)
 
 	@property
 	def Indx(self):
@@ -27,12 +27,12 @@ class VariableInterest1Rate(base_types._BaseFieldType):
 
 	@Indx.setter
 	def Indx(self, value):
-		self._Indx = value if type(value) != base_types.auto else self.make_default("Indx")
+		self._Indx = value if value is not None else base_types.UninitialisedField(self, 'Indx', Max35Text, False)
 
 	@Indx.deleter
 	def Indx(self):
 		del self._Indx
-		self._Indx = None
+		self._Indx = base_types.UninitialisedField(self, 'Indx', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BsisPtSprd', type=Number, min=0, max=1, mutex_group=None, array=False),

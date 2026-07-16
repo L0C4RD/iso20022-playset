@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionMovementPreliminaryAdvice002V16 import CorporateActionMovementPreliminaryAdvice002V16
+from . import CorporateActionMovementPreliminaryAdvice002V16
 
 class SEEV_035_002_16():
 
@@ -18,12 +18,12 @@ class SEEV_035_002_16():
 
 		@CorpActnMvmntPrlimryAdvc.setter
 		def CorpActnMvmntPrlimryAdvc(self, value):
-			self._CorpActnMvmntPrlimryAdvc = value if type(value) != base_types.auto else self.make_default("CorpActnMvmntPrlimryAdvc")
+			self._CorpActnMvmntPrlimryAdvc = value if value is not None else base_types.UninitialisedField(self, 'CorpActnMvmntPrlimryAdvc', CorporateActionMovementPreliminaryAdvice002V16, False)
 
 		@CorpActnMvmntPrlimryAdvc.deleter
 		def CorpActnMvmntPrlimryAdvc(self):
 			del self._CorpActnMvmntPrlimryAdvc
-			self._CorpActnMvmntPrlimryAdvc = None
+			self._CorpActnMvmntPrlimryAdvc = base_types.UninitialisedField(self, 'CorpActnMvmntPrlimryAdvc', CorporateActionMovementPreliminaryAdvice002V16, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CorpActnMvmntPrlimryAdvc', type=CorporateActionMovementPreliminaryAdvice002V16, min=1, max=1, mutex_group=None, array=False),

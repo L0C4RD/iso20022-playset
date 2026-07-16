@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DefinedAttributes1Choice import DefinedAttributes1Choice
-from ._FinancialInstrumentAttributes88 import FinancialInstrumentAttributes88
+from . import DefinedAttributes1Choice
+from . import FinancialInstrumentAttributes88
 
 class DerivativeUnderlyingLeg1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DerivativeUnderlyingLeg1(base_types._BaseFieldType):
 
 	@CtrctAttrbts.setter
 	def CtrctAttrbts(self, value):
-		self._CtrctAttrbts = value if type(value) != base_types.auto else self.make_default("CtrctAttrbts")
+		self._CtrctAttrbts = value if value is not None else base_types.UninitialisedField(self, 'CtrctAttrbts', FinancialInstrumentAttributes88, False)
 
 	@CtrctAttrbts.deleter
 	def CtrctAttrbts(self):
 		del self._CtrctAttrbts
-		self._CtrctAttrbts = None
+		self._CtrctAttrbts = base_types.UninitialisedField(self, 'CtrctAttrbts', FinancialInstrumentAttributes88, False)
 
 	@property
 	def DfndAttrbts(self):
@@ -27,12 +27,12 @@ class DerivativeUnderlyingLeg1(base_types._BaseFieldType):
 
 	@DfndAttrbts.setter
 	def DfndAttrbts(self, value):
-		self._DfndAttrbts = value if type(value) != base_types.auto else self.make_default("DfndAttrbts")
+		self._DfndAttrbts = value if value is not None else base_types.UninitialisedField(self, 'DfndAttrbts', DefinedAttributes1Choice, False)
 
 	@DfndAttrbts.deleter
 	def DfndAttrbts(self):
 		del self._DfndAttrbts
-		self._DfndAttrbts = None
+		self._DfndAttrbts = base_types.UninitialisedField(self, 'DfndAttrbts', DefinedAttributes1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrctAttrbts', type=FinancialInstrumentAttributes88, min=1, max=1, mutex_group=None, array=False),

@@ -2,21 +2,21 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._ContactAttributes5 import ContactAttributes5
-from ._CountryCode import CountryCode
-from ._ExPostCostCalculationBasis1Choice import ExPostCostCalculationBasis1Choice
-from ._GovernanceProcess1Choice import GovernanceProcess1Choice
-from ._Max140Text import Max140Text
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
-from ._NotionalOrUnitBased1Choice import NotionalOrUnitBased1Choice
-from ._ProductStructure1Choice import ProductStructure1Choice
-from ._QuotationType1Choice import QuotationType1Choice
-from ._SecurityClassificationType2Choice import SecurityClassificationType2Choice
-from ._SecurityIdentification40 import SecurityIdentification40
-from ._YesNoIndicator import YesNoIndicator
+from . import ActiveCurrencyCode
+from . import AdditionalInformation15
+from . import ContactAttributes5
+from . import CountryCode
+from . import ExPostCostCalculationBasis1Choice
+from . import GovernanceProcess1Choice
+from . import Max140Text
+from . import Max350Text
+from . import Max35Text
+from . import NotionalOrUnitBased1Choice
+from . import ProductStructure1Choice
+from . import QuotationType1Choice
+from . import SecurityClassificationType2Choice
+from . import SecurityIdentification40
+from . import YesNoIndicator
 
 class SecurityIdentification47(base_types._BaseFieldType):
 
@@ -27,12 +27,12 @@ class SecurityIdentification47(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@property
 	def BaseCcy(self):
@@ -40,12 +40,12 @@ class SecurityIdentification47(base_types._BaseFieldType):
 
 	@BaseCcy.setter
 	def BaseCcy(self, value):
-		self._BaseCcy = value if type(value) != base_types.auto else self.make_default("BaseCcy")
+		self._BaseCcy = value if value is not None else base_types.UninitialisedField(self, 'BaseCcy', ActiveCurrencyCode, False)
 
 	@BaseCcy.deleter
 	def BaseCcy(self):
 		del self._BaseCcy
-		self._BaseCcy = None
+		self._BaseCcy = base_types.UninitialisedField(self, 'BaseCcy', ActiveCurrencyCode, False)
 
 	@property
 	def ClssTp(self):
@@ -53,12 +53,12 @@ class SecurityIdentification47(base_types._BaseFieldType):
 
 	@ClssTp.setter
 	def ClssTp(self, value):
-		self._ClssTp = value if type(value) != base_types.auto else self.make_default("ClssTp")
+		self._ClssTp = value if value is not None else base_types.UninitialisedField(self, 'ClssTp', Max35Text, False)
 
 	@ClssTp.deleter
 	def ClssTp(self):
 		del self._ClssTp
-		self._ClssTp = None
+		self._ClssTp = base_types.UninitialisedField(self, 'ClssTp', Max35Text, False)
 
 	@property
 	def ClssfctnTp(self):
@@ -66,12 +66,12 @@ class SecurityIdentification47(base_types._BaseFieldType):
 
 	@ClssfctnTp.setter
 	def ClssfctnTp(self, value):
-		self._ClssfctnTp = value if type(value) != base_types.auto else self.make_default("ClssfctnTp")
+		self._ClssfctnTp = value if value is not None else base_types.UninitialisedField(self, 'ClssfctnTp', SecurityClassificationType2Choice, False)
 
 	@ClssfctnTp.deleter
 	def ClssfctnTp(self):
 		del self._ClssfctnTp
-		self._ClssfctnTp = None
+		self._ClssfctnTp = base_types.UninitialisedField(self, 'ClssfctnTp', SecurityClassificationType2Choice, False)
 
 	@property
 	def CtryOfDmcl(self):
@@ -79,12 +79,12 @@ class SecurityIdentification47(base_types._BaseFieldType):
 
 	@CtryOfDmcl.setter
 	def CtryOfDmcl(self, value):
-		self._CtryOfDmcl = value if type(value) != base_types.auto else self.make_default("CtryOfDmcl")
+		self._CtryOfDmcl = value if value is not None else base_types.UninitialisedField(self, 'CtryOfDmcl', CountryCode, False)
 
 	@CtryOfDmcl.deleter
 	def CtryOfDmcl(self):
 		del self._CtryOfDmcl
-		self._CtryOfDmcl = None
+		self._CtryOfDmcl = base_types.UninitialisedField(self, 'CtryOfDmcl', CountryCode, False)
 
 	@property
 	def ExPstCostClctnBsis(self):
@@ -92,12 +92,12 @@ class SecurityIdentification47(base_types._BaseFieldType):
 
 	@ExPstCostClctnBsis.setter
 	def ExPstCostClctnBsis(self, value):
-		self._ExPstCostClctnBsis = value if type(value) != base_types.auto else self.make_default("ExPstCostClctnBsis")
+		self._ExPstCostClctnBsis = value if value is not None else base_types.UninitialisedField(self, 'ExPstCostClctnBsis', ExPostCostCalculationBasis1Choice, False)
 
 	@ExPstCostClctnBsis.deleter
 	def ExPstCostClctnBsis(self):
 		del self._ExPstCostClctnBsis
-		self._ExPstCostClctnBsis = None
+		self._ExPstCostClctnBsis = base_types.UninitialisedField(self, 'ExPstCostClctnBsis', ExPostCostCalculationBasis1Choice, False)
 
 	@property
 	def Id(self):
@@ -105,12 +105,12 @@ class SecurityIdentification47(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', SecurityIdentification40, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', SecurityIdentification40, False)
 
 	@property
 	def Issr(self):
@@ -118,12 +118,12 @@ class SecurityIdentification47(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+		self._Issr = value if value is not None else base_types.UninitialisedField(self, 'Issr', ContactAttributes5, False)
 
 	@Issr.deleter
 	def Issr(self):
 		del self._Issr
-		self._Issr = None
+		self._Issr = base_types.UninitialisedField(self, 'Issr', ContactAttributes5, False)
 
 	@property
 	def IssrPdctGovncPrc(self):
@@ -131,12 +131,12 @@ class SecurityIdentification47(base_types._BaseFieldType):
 
 	@IssrPdctGovncPrc.setter
 	def IssrPdctGovncPrc(self, value):
-		self._IssrPdctGovncPrc = value if type(value) != base_types.auto else self.make_default("IssrPdctGovncPrc")
+		self._IssrPdctGovncPrc = value if value is not None else base_types.UninitialisedField(self, 'IssrPdctGovncPrc', GovernanceProcess1Choice, False)
 
 	@IssrPdctGovncPrc.deleter
 	def IssrPdctGovncPrc(self):
 		del self._IssrPdctGovncPrc
-		self._IssrPdctGovncPrc = None
+		self._IssrPdctGovncPrc = base_types.UninitialisedField(self, 'IssrPdctGovncPrc', GovernanceProcess1Choice, False)
 
 	@property
 	def LvrgdOrCntngntLblty(self):
@@ -144,12 +144,12 @@ class SecurityIdentification47(base_types._BaseFieldType):
 
 	@LvrgdOrCntngntLblty.setter
 	def LvrgdOrCntngntLblty(self, value):
-		self._LvrgdOrCntngntLblty = value if type(value) != base_types.auto else self.make_default("LvrgdOrCntngntLblty")
+		self._LvrgdOrCntngntLblty = value if value is not None else base_types.UninitialisedField(self, 'LvrgdOrCntngntLblty', YesNoIndicator, False)
 
 	@LvrgdOrCntngntLblty.deleter
 	def LvrgdOrCntngntLblty(self):
 		del self._LvrgdOrCntngntLblty
-		self._LvrgdOrCntngntLblty = None
+		self._LvrgdOrCntngntLblty = base_types.UninitialisedField(self, 'LvrgdOrCntngntLblty', YesNoIndicator, False)
 
 	@property
 	def NewUmbrll(self):
@@ -157,12 +157,12 @@ class SecurityIdentification47(base_types._BaseFieldType):
 
 	@NewUmbrll.setter
 	def NewUmbrll(self, value):
-		self._NewUmbrll = value if type(value) != base_types.auto else self.make_default("NewUmbrll")
+		self._NewUmbrll = value if value is not None else base_types.UninitialisedField(self, 'NewUmbrll', YesNoIndicator, False)
 
 	@NewUmbrll.deleter
 	def NewUmbrll(self):
 		del self._NewUmbrll
-		self._NewUmbrll = None
+		self._NewUmbrll = base_types.UninitialisedField(self, 'NewUmbrll', YesNoIndicator, False)
 
 	@property
 	def Nm(self):
@@ -170,12 +170,12 @@ class SecurityIdentification47(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max350Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max350Text, False)
 
 	@property
 	def NoRtrcssnInd(self):
@@ -183,12 +183,12 @@ class SecurityIdentification47(base_types._BaseFieldType):
 
 	@NoRtrcssnInd.setter
 	def NoRtrcssnInd(self, value):
-		self._NoRtrcssnInd = value if type(value) != base_types.auto else self.make_default("NoRtrcssnInd")
+		self._NoRtrcssnInd = value if value is not None else base_types.UninitialisedField(self, 'NoRtrcssnInd', YesNoIndicator, False)
 
 	@NoRtrcssnInd.deleter
 	def NoRtrcssnInd(self):
 		del self._NoRtrcssnInd
-		self._NoRtrcssnInd = None
+		self._NoRtrcssnInd = base_types.UninitialisedField(self, 'NoRtrcssnInd', YesNoIndicator, False)
 
 	@property
 	def NtnlOrUnitBased(self):
@@ -196,12 +196,12 @@ class SecurityIdentification47(base_types._BaseFieldType):
 
 	@NtnlOrUnitBased.setter
 	def NtnlOrUnitBased(self, value):
-		self._NtnlOrUnitBased = value if type(value) != base_types.auto else self.make_default("NtnlOrUnitBased")
+		self._NtnlOrUnitBased = value if value is not None else base_types.UninitialisedField(self, 'NtnlOrUnitBased', NotionalOrUnitBased1Choice, False)
 
 	@NtnlOrUnitBased.deleter
 	def NtnlOrUnitBased(self):
 		del self._NtnlOrUnitBased
-		self._NtnlOrUnitBased = None
+		self._NtnlOrUnitBased = base_types.UninitialisedField(self, 'NtnlOrUnitBased', NotionalOrUnitBased1Choice, False)
 
 	@property
 	def PdctCtgy(self):
@@ -209,12 +209,12 @@ class SecurityIdentification47(base_types._BaseFieldType):
 
 	@PdctCtgy.setter
 	def PdctCtgy(self, value):
-		self._PdctCtgy = value if type(value) != base_types.auto else self.make_default("PdctCtgy")
+		self._PdctCtgy = value if value is not None else base_types.UninitialisedField(self, 'PdctCtgy', Max140Text, False)
 
 	@PdctCtgy.deleter
 	def PdctCtgy(self):
 		del self._PdctCtgy
-		self._PdctCtgy = None
+		self._PdctCtgy = base_types.UninitialisedField(self, 'PdctCtgy', Max140Text, False)
 
 	@property
 	def PdctCtgyDE(self):
@@ -222,12 +222,12 @@ class SecurityIdentification47(base_types._BaseFieldType):
 
 	@PdctCtgyDE.setter
 	def PdctCtgyDE(self, value):
-		self._PdctCtgyDE = value if type(value) != base_types.auto else self.make_default("PdctCtgyDE")
+		self._PdctCtgyDE = value if value is not None else base_types.UninitialisedField(self, 'PdctCtgyDE', Max140Text, False)
 
 	@PdctCtgyDE.deleter
 	def PdctCtgyDE(self):
 		del self._PdctCtgyDE
-		self._PdctCtgyDE = None
+		self._PdctCtgyDE = base_types.UninitialisedField(self, 'PdctCtgyDE', Max140Text, False)
 
 	@property
 	def PdctTp(self):
@@ -235,12 +235,12 @@ class SecurityIdentification47(base_types._BaseFieldType):
 
 	@PdctTp.setter
 	def PdctTp(self, value):
-		self._PdctTp = value if type(value) != base_types.auto else self.make_default("PdctTp")
+		self._PdctTp = value if value is not None else base_types.UninitialisedField(self, 'PdctTp', ProductStructure1Choice, False)
 
 	@PdctTp.deleter
 	def PdctTp(self):
 		del self._PdctTp
-		self._PdctTp = None
+		self._PdctTp = base_types.UninitialisedField(self, 'PdctTp', ProductStructure1Choice, False)
 
 	@property
 	def QtnTp(self):
@@ -248,12 +248,12 @@ class SecurityIdentification47(base_types._BaseFieldType):
 
 	@QtnTp.setter
 	def QtnTp(self, value):
-		self._QtnTp = value if type(value) != base_types.auto else self.make_default("QtnTp")
+		self._QtnTp = value if value is not None else base_types.UninitialisedField(self, 'QtnTp', QuotationType1Choice, False)
 
 	@QtnTp.deleter
 	def QtnTp(self):
 		del self._QtnTp
-		self._QtnTp = None
+		self._QtnTp = base_types.UninitialisedField(self, 'QtnTp', QuotationType1Choice, False)
 
 	@property
 	def RegdDstrbtnCtry(self):
@@ -261,12 +261,12 @@ class SecurityIdentification47(base_types._BaseFieldType):
 
 	@RegdDstrbtnCtry.setter
 	def RegdDstrbtnCtry(self, value):
-		self._RegdDstrbtnCtry = value if type(value) != base_types.auto else self.make_default("RegdDstrbtnCtry")
+		self._RegdDstrbtnCtry = value if value is not None else base_types.UninitialisedField(self, 'RegdDstrbtnCtry', CountryCode, True)
 
 	@RegdDstrbtnCtry.deleter
 	def RegdDstrbtnCtry(self):
 		del self._RegdDstrbtnCtry
-		self._RegdDstrbtnCtry = None
+		self._RegdDstrbtnCtry = base_types.UninitialisedField(self, 'RegdDstrbtnCtry', CountryCode, True)
 
 	@property
 	def ShrtNm(self):
@@ -274,12 +274,12 @@ class SecurityIdentification47(base_types._BaseFieldType):
 
 	@ShrtNm.setter
 	def ShrtNm(self, value):
-		self._ShrtNm = value if type(value) != base_types.auto else self.make_default("ShrtNm")
+		self._ShrtNm = value if value is not None else base_types.UninitialisedField(self, 'ShrtNm', Max35Text, False)
 
 	@ShrtNm.deleter
 	def ShrtNm(self):
 		del self._ShrtNm
-		self._ShrtNm = None
+		self._ShrtNm = base_types.UninitialisedField(self, 'ShrtNm', Max35Text, False)
 
 	@property
 	def UmbrllNm(self):
@@ -287,12 +287,12 @@ class SecurityIdentification47(base_types._BaseFieldType):
 
 	@UmbrllNm.setter
 	def UmbrllNm(self, value):
-		self._UmbrllNm = value if type(value) != base_types.auto else self.make_default("UmbrllNm")
+		self._UmbrllNm = value if value is not None else base_types.UninitialisedField(self, 'UmbrllNm', Max35Text, False)
 
 	@UmbrllNm.deleter
 	def UmbrllNm(self):
 		del self._UmbrllNm
-		self._UmbrllNm = None
+		self._UmbrllNm = base_types.UninitialisedField(self, 'UmbrllNm', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),

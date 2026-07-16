@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FixedOpenTermContract2 import FixedOpenTermContract2
+from . import FixedOpenTermContract2
 
 class ContractTerm7Choice(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class ContractTerm7Choice(base_types._BaseFieldType):
 
 	@Fxd.setter
 	def Fxd(self, value):
-		self._Fxd = value if type(value) != base_types.auto else self.make_default("Fxd")
+		self._Fxd = value if value is not None else base_types.UninitialisedField(self, 'Fxd', FixedOpenTermContract2, False)
 
 	@Fxd.deleter
 	def Fxd(self):
 		del self._Fxd
-		self._Fxd = None
+		self._Fxd = base_types.UninitialisedField(self, 'Fxd', FixedOpenTermContract2, False)
 
 	@property
 	def Opn(self):
@@ -26,12 +26,12 @@ class ContractTerm7Choice(base_types._BaseFieldType):
 
 	@Opn.setter
 	def Opn(self, value):
-		self._Opn = value if type(value) != base_types.auto else self.make_default("Opn")
+		self._Opn = value if value is not None else base_types.UninitialisedField(self, 'Opn', FixedOpenTermContract2, False)
 
 	@Opn.deleter
 	def Opn(self):
 		del self._Opn
-		self._Opn = None
+		self._Opn = base_types.UninitialisedField(self, 'Opn', FixedOpenTermContract2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Fxd', type=FixedOpenTermContract2, min=0, max=1, mutex_group=1, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PercentageRate import PercentageRate
-from ._VariableInterest1Rate import VariableInterest1Rate
+from . import PercentageRate
+from . import VariableInterest1Rate
 
 class InterestRate1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class InterestRate1Choice(base_types._BaseFieldType):
 
 	@FxdIntrstRate.setter
 	def FxdIntrstRate(self, value):
-		self._FxdIntrstRate = value if type(value) != base_types.auto else self.make_default("FxdIntrstRate")
+		self._FxdIntrstRate = value if value is not None else base_types.UninitialisedField(self, 'FxdIntrstRate', PercentageRate, False)
 
 	@FxdIntrstRate.deleter
 	def FxdIntrstRate(self):
 		del self._FxdIntrstRate
-		self._FxdIntrstRate = None
+		self._FxdIntrstRate = base_types.UninitialisedField(self, 'FxdIntrstRate', PercentageRate, False)
 
 	@property
 	def VarblIntrstRate(self):
@@ -27,12 +27,12 @@ class InterestRate1Choice(base_types._BaseFieldType):
 
 	@VarblIntrstRate.setter
 	def VarblIntrstRate(self, value):
-		self._VarblIntrstRate = value if type(value) != base_types.auto else self.make_default("VarblIntrstRate")
+		self._VarblIntrstRate = value if value is not None else base_types.UninitialisedField(self, 'VarblIntrstRate', VariableInterest1Rate, False)
 
 	@VarblIntrstRate.deleter
 	def VarblIntrstRate(self):
 		del self._VarblIntrstRate
-		self._VarblIntrstRate = None
+		self._VarblIntrstRate = base_types.UninitialisedField(self, 'VarblIntrstRate', VariableInterest1Rate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FxdIntrstRate', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),

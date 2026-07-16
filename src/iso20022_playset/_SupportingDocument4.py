@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._ContractRegistrationReference2Choice import ContractRegistrationReference2Choice
-from ._DocumentAmendment1 import DocumentAmendment1
-from ._DocumentIdentification28 import DocumentIdentification28
-from ._Max35Text import Max35Text
-from ._PartyIdentification272 import PartyIdentification272
-from ._SupplementaryData1 import SupplementaryData1
-from ._SupportingDocumentEntry2 import SupportingDocumentEntry2
+from . import BranchAndFinancialInstitutionIdentification8
+from . import ContractRegistrationReference2Choice
+from . import DocumentAmendment1
+from . import DocumentIdentification28
+from . import Max35Text
+from . import PartyIdentification272
+from . import SupplementaryData1
+from . import SupportingDocumentEntry2
 
 class SupportingDocument4(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class SupportingDocument4(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification272, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification272, False)
 
 	@property
 	def AcctSvcr(self):
@@ -33,12 +33,12 @@ class SupportingDocument4(base_types._BaseFieldType):
 
 	@AcctSvcr.setter
 	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
+		self._AcctSvcr = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@AcctSvcr.deleter
 	def AcctSvcr(self):
 		del self._AcctSvcr
-		self._AcctSvcr = None
+		self._AcctSvcr = base_types.UninitialisedField(self, 'AcctSvcr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def Amdmnt(self):
@@ -46,12 +46,12 @@ class SupportingDocument4(base_types._BaseFieldType):
 
 	@Amdmnt.setter
 	def Amdmnt(self, value):
-		self._Amdmnt = value if type(value) != base_types.auto else self.make_default("Amdmnt")
+		self._Amdmnt = value if value is not None else base_types.UninitialisedField(self, 'Amdmnt', DocumentAmendment1, False)
 
 	@Amdmnt.deleter
 	def Amdmnt(self):
 		del self._Amdmnt
-		self._Amdmnt = None
+		self._Amdmnt = base_types.UninitialisedField(self, 'Amdmnt', DocumentAmendment1, False)
 
 	@property
 	def Cert(self):
@@ -59,12 +59,12 @@ class SupportingDocument4(base_types._BaseFieldType):
 
 	@Cert.setter
 	def Cert(self, value):
-		self._Cert = value if type(value) != base_types.auto else self.make_default("Cert")
+		self._Cert = value if value is not None else base_types.UninitialisedField(self, 'Cert', DocumentIdentification28, False)
 
 	@Cert.deleter
 	def Cert(self):
 		del self._Cert
-		self._Cert = None
+		self._Cert = base_types.UninitialisedField(self, 'Cert', DocumentIdentification28, False)
 
 	@property
 	def CtrctRef(self):
@@ -72,12 +72,12 @@ class SupportingDocument4(base_types._BaseFieldType):
 
 	@CtrctRef.setter
 	def CtrctRef(self, value):
-		self._CtrctRef = value if type(value) != base_types.auto else self.make_default("CtrctRef")
+		self._CtrctRef = value if value is not None else base_types.UninitialisedField(self, 'CtrctRef', ContractRegistrationReference2Choice, False)
 
 	@CtrctRef.deleter
 	def CtrctRef(self):
 		del self._CtrctRef
-		self._CtrctRef = None
+		self._CtrctRef = base_types.UninitialisedField(self, 'CtrctRef', ContractRegistrationReference2Choice, False)
 
 	@property
 	def Ntry(self):
@@ -85,12 +85,12 @@ class SupportingDocument4(base_types._BaseFieldType):
 
 	@Ntry.setter
 	def Ntry(self, value):
-		self._Ntry = value if type(value) != base_types.auto else self.make_default("Ntry")
+		self._Ntry = value if value is not None else base_types.UninitialisedField(self, 'Ntry', SupportingDocumentEntry2, True)
 
 	@Ntry.deleter
 	def Ntry(self):
 		del self._Ntry
-		self._Ntry = None
+		self._Ntry = base_types.UninitialisedField(self, 'Ntry', SupportingDocumentEntry2, True)
 
 	@property
 	def OrgnlReqId(self):
@@ -98,12 +98,12 @@ class SupportingDocument4(base_types._BaseFieldType):
 
 	@OrgnlReqId.setter
 	def OrgnlReqId(self, value):
-		self._OrgnlReqId = value if type(value) != base_types.auto else self.make_default("OrgnlReqId")
+		self._OrgnlReqId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlReqId', Max35Text, False)
 
 	@OrgnlReqId.deleter
 	def OrgnlReqId(self):
 		del self._OrgnlReqId
-		self._OrgnlReqId = None
+		self._OrgnlReqId = base_types.UninitialisedField(self, 'OrgnlReqId', Max35Text, False)
 
 	@property
 	def SplmtryData(self):
@@ -111,12 +111,12 @@ class SupportingDocument4(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def SpprtgDocId(self):
@@ -124,12 +124,12 @@ class SupportingDocument4(base_types._BaseFieldType):
 
 	@SpprtgDocId.setter
 	def SpprtgDocId(self, value):
-		self._SpprtgDocId = value if type(value) != base_types.auto else self.make_default("SpprtgDocId")
+		self._SpprtgDocId = value if value is not None else base_types.UninitialisedField(self, 'SpprtgDocId', Max35Text, False)
 
 	@SpprtgDocId.deleter
 	def SpprtgDocId(self):
 		del self._SpprtgDocId
-		self._SpprtgDocId = None
+		self._SpprtgDocId = base_types.UninitialisedField(self, 'SpprtgDocId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification272, min=1, max=1, mutex_group=None, array=False),

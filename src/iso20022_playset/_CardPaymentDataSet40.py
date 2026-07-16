@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardPaymentDataSetTransaction13Choice import CardPaymentDataSetTransaction13Choice
-from ._CommonData14 import CommonData14
-from ._DataSetIdentification5 import DataSetIdentification5
-from ._GenericIdentification176 import GenericIdentification176
-from ._Traceability8 import Traceability8
-from ._TransactionTotals12 import TransactionTotals12
+from . import CardPaymentDataSetTransaction13Choice
+from . import CommonData14
+from . import DataSetIdentification5
+from . import GenericIdentification176
+from . import Traceability8
+from . import TransactionTotals12
 
 class CardPaymentDataSet40(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class CardPaymentDataSet40(base_types._BaseFieldType):
 
 	@CmonData.setter
 	def CmonData(self, value):
-		self._CmonData = value if type(value) != base_types.auto else self.make_default("CmonData")
+		self._CmonData = value if value is not None else base_types.UninitialisedField(self, 'CmonData', CommonData14, False)
 
 	@CmonData.deleter
 	def CmonData(self):
 		del self._CmonData
-		self._CmonData = None
+		self._CmonData = base_types.UninitialisedField(self, 'CmonData', CommonData14, False)
 
 	@property
 	def DataSetId(self):
@@ -31,12 +31,12 @@ class CardPaymentDataSet40(base_types._BaseFieldType):
 
 	@DataSetId.setter
 	def DataSetId(self, value):
-		self._DataSetId = value if type(value) != base_types.auto else self.make_default("DataSetId")
+		self._DataSetId = value if value is not None else base_types.UninitialisedField(self, 'DataSetId', DataSetIdentification5, False)
 
 	@DataSetId.deleter
 	def DataSetId(self):
 		del self._DataSetId
-		self._DataSetId = None
+		self._DataSetId = base_types.UninitialisedField(self, 'DataSetId', DataSetIdentification5, False)
 
 	@property
 	def DataSetInitr(self):
@@ -44,12 +44,12 @@ class CardPaymentDataSet40(base_types._BaseFieldType):
 
 	@DataSetInitr.setter
 	def DataSetInitr(self, value):
-		self._DataSetInitr = value if type(value) != base_types.auto else self.make_default("DataSetInitr")
+		self._DataSetInitr = value if value is not None else base_types.UninitialisedField(self, 'DataSetInitr', GenericIdentification176, False)
 
 	@DataSetInitr.deleter
 	def DataSetInitr(self):
 		del self._DataSetInitr
-		self._DataSetInitr = None
+		self._DataSetInitr = base_types.UninitialisedField(self, 'DataSetInitr', GenericIdentification176, False)
 
 	@property
 	def Tracblt(self):
@@ -57,12 +57,12 @@ class CardPaymentDataSet40(base_types._BaseFieldType):
 
 	@Tracblt.setter
 	def Tracblt(self, value):
-		self._Tracblt = value if type(value) != base_types.auto else self.make_default("Tracblt")
+		self._Tracblt = value if value is not None else base_types.UninitialisedField(self, 'Tracblt', Traceability8, True)
 
 	@Tracblt.deleter
 	def Tracblt(self):
 		del self._Tracblt
-		self._Tracblt = None
+		self._Tracblt = base_types.UninitialisedField(self, 'Tracblt', Traceability8, True)
 
 	@property
 	def Tx(self):
@@ -70,12 +70,12 @@ class CardPaymentDataSet40(base_types._BaseFieldType):
 
 	@Tx.setter
 	def Tx(self, value):
-		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
+		self._Tx = value if value is not None else base_types.UninitialisedField(self, 'Tx', CardPaymentDataSetTransaction13Choice, True)
 
 	@Tx.deleter
 	def Tx(self):
 		del self._Tx
-		self._Tx = None
+		self._Tx = base_types.UninitialisedField(self, 'Tx', CardPaymentDataSetTransaction13Choice, True)
 
 	@property
 	def TxTtls(self):
@@ -83,12 +83,12 @@ class CardPaymentDataSet40(base_types._BaseFieldType):
 
 	@TxTtls.setter
 	def TxTtls(self, value):
-		self._TxTtls = value if type(value) != base_types.auto else self.make_default("TxTtls")
+		self._TxTtls = value if value is not None else base_types.UninitialisedField(self, 'TxTtls', TransactionTotals12, True)
 
 	@TxTtls.deleter
 	def TxTtls(self):
 		del self._TxTtls
-		self._TxTtls = None
+		self._TxTtls = base_types.UninitialisedField(self, 'TxTtls', TransactionTotals12, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CmonData', type=CommonData14, min=0, max=1, mutex_group=None, array=False),

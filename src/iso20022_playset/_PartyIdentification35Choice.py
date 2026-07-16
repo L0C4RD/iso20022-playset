@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AnyBICIdentifier import AnyBICIdentifier
-from ._GenericIdentification29 import GenericIdentification29
+from . import AnyBICIdentifier
+from . import GenericIdentification29
 
 class PartyIdentification35Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PartyIdentification35Choice(base_types._BaseFieldType):
 
 	@BIC.setter
 	def BIC(self, value):
-		self._BIC = value if type(value) != base_types.auto else self.make_default("BIC")
+		self._BIC = value if value is not None else base_types.UninitialisedField(self, 'BIC', AnyBICIdentifier, False)
 
 	@BIC.deleter
 	def BIC(self):
 		del self._BIC
-		self._BIC = None
+		self._BIC = base_types.UninitialisedField(self, 'BIC', AnyBICIdentifier, False)
 
 	@property
 	def PrtryId(self):
@@ -27,12 +27,12 @@ class PartyIdentification35Choice(base_types._BaseFieldType):
 
 	@PrtryId.setter
 	def PrtryId(self, value):
-		self._PrtryId = value if type(value) != base_types.auto else self.make_default("PrtryId")
+		self._PrtryId = value if value is not None else base_types.UninitialisedField(self, 'PrtryId', GenericIdentification29, False)
 
 	@PrtryId.deleter
 	def PrtryId(self):
 		del self._PrtryId
-		self._PrtryId = None
+		self._PrtryId = base_types.UninitialisedField(self, 'PrtryId', GenericIdentification29, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BIC', type=AnyBICIdentifier, min=0, max=1, mutex_group=1, array=False),

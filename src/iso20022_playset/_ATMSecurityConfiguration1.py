@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMSecurityConfiguration2 import ATMSecurityConfiguration2
-from ._ATMSecurityConfiguration3 import ATMSecurityConfiguration3
-from ._ATMSecurityConfiguration4 import ATMSecurityConfiguration4
-from ._ATMSecurityConfiguration5 import ATMSecurityConfiguration5
-from ._Algorithm11Code import Algorithm11Code
-from ._Algorithm12Code import Algorithm12Code
-from ._MessageProtection1Code import MessageProtection1Code
+from . import ATMSecurityConfiguration2
+from . import ATMSecurityConfiguration3
+from . import ATMSecurityConfiguration4
+from . import ATMSecurityConfiguration5
+from . import Algorithm11Code
+from . import Algorithm12Code
+from . import MessageProtection1Code
 
 class ATMSecurityConfiguration1(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class ATMSecurityConfiguration1(base_types._BaseFieldType):
 
 	@DgstAlgo.setter
 	def DgstAlgo(self, value):
-		self._DgstAlgo = value if type(value) != base_types.auto else self.make_default("DgstAlgo")
+		self._DgstAlgo = value if value is not None else base_types.UninitialisedField(self, 'DgstAlgo', Algorithm11Code, True)
 
 	@DgstAlgo.deleter
 	def DgstAlgo(self):
 		del self._DgstAlgo
-		self._DgstAlgo = None
+		self._DgstAlgo = base_types.UninitialisedField(self, 'DgstAlgo', Algorithm11Code, True)
 
 	@property
 	def DgtlSgntr(self):
@@ -32,12 +32,12 @@ class ATMSecurityConfiguration1(base_types._BaseFieldType):
 
 	@DgtlSgntr.setter
 	def DgtlSgntr(self, value):
-		self._DgtlSgntr = value if type(value) != base_types.auto else self.make_default("DgtlSgntr")
+		self._DgtlSgntr = value if value is not None else base_types.UninitialisedField(self, 'DgtlSgntr', ATMSecurityConfiguration4, False)
 
 	@DgtlSgntr.deleter
 	def DgtlSgntr(self):
 		del self._DgtlSgntr
-		self._DgtlSgntr = None
+		self._DgtlSgntr = base_types.UninitialisedField(self, 'DgtlSgntr', ATMSecurityConfiguration4, False)
 
 	@property
 	def Keys(self):
@@ -45,12 +45,12 @@ class ATMSecurityConfiguration1(base_types._BaseFieldType):
 
 	@Keys.setter
 	def Keys(self, value):
-		self._Keys = value if type(value) != base_types.auto else self.make_default("Keys")
+		self._Keys = value if value is not None else base_types.UninitialisedField(self, 'Keys', ATMSecurityConfiguration2, False)
 
 	@Keys.deleter
 	def Keys(self):
 		del self._Keys
-		self._Keys = None
+		self._Keys = base_types.UninitialisedField(self, 'Keys', ATMSecurityConfiguration2, False)
 
 	@property
 	def MACAlgo(self):
@@ -58,12 +58,12 @@ class ATMSecurityConfiguration1(base_types._BaseFieldType):
 
 	@MACAlgo.setter
 	def MACAlgo(self, value):
-		self._MACAlgo = value if type(value) != base_types.auto else self.make_default("MACAlgo")
+		self._MACAlgo = value if value is not None else base_types.UninitialisedField(self, 'MACAlgo', Algorithm12Code, True)
 
 	@MACAlgo.deleter
 	def MACAlgo(self):
 		del self._MACAlgo
-		self._MACAlgo = None
+		self._MACAlgo = base_types.UninitialisedField(self, 'MACAlgo', Algorithm12Code, True)
 
 	@property
 	def MsgPrtcn(self):
@@ -71,12 +71,12 @@ class ATMSecurityConfiguration1(base_types._BaseFieldType):
 
 	@MsgPrtcn.setter
 	def MsgPrtcn(self, value):
-		self._MsgPrtcn = value if type(value) != base_types.auto else self.make_default("MsgPrtcn")
+		self._MsgPrtcn = value if value is not None else base_types.UninitialisedField(self, 'MsgPrtcn', MessageProtection1Code, True)
 
 	@MsgPrtcn.deleter
 	def MsgPrtcn(self):
 		del self._MsgPrtcn
-		self._MsgPrtcn = None
+		self._MsgPrtcn = base_types.UninitialisedField(self, 'MsgPrtcn', MessageProtection1Code, True)
 
 	@property
 	def Ncrptn(self):
@@ -84,12 +84,12 @@ class ATMSecurityConfiguration1(base_types._BaseFieldType):
 
 	@Ncrptn.setter
 	def Ncrptn(self, value):
-		self._Ncrptn = value if type(value) != base_types.auto else self.make_default("Ncrptn")
+		self._Ncrptn = value if value is not None else base_types.UninitialisedField(self, 'Ncrptn', ATMSecurityConfiguration3, False)
 
 	@Ncrptn.deleter
 	def Ncrptn(self):
 		del self._Ncrptn
-		self._Ncrptn = None
+		self._Ncrptn = base_types.UninitialisedField(self, 'Ncrptn', ATMSecurityConfiguration3, False)
 
 	@property
 	def PIN(self):
@@ -97,12 +97,12 @@ class ATMSecurityConfiguration1(base_types._BaseFieldType):
 
 	@PIN.setter
 	def PIN(self, value):
-		self._PIN = value if type(value) != base_types.auto else self.make_default("PIN")
+		self._PIN = value if value is not None else base_types.UninitialisedField(self, 'PIN', ATMSecurityConfiguration5, False)
 
 	@PIN.deleter
 	def PIN(self):
 		del self._PIN
-		self._PIN = None
+		self._PIN = base_types.UninitialisedField(self, 'PIN', ATMSecurityConfiguration5, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DgstAlgo', type=Algorithm11Code, min=0, max=None, mutex_group=None, array=True),

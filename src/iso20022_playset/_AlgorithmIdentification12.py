@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Algorithm8Code import Algorithm8Code
-from ._Parameter5 import Parameter5
+from . import Algorithm8Code
+from . import Parameter5
 
 class AlgorithmIdentification12(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AlgorithmIdentification12(base_types._BaseFieldType):
 
 	@Algo.setter
 	def Algo(self, value):
-		self._Algo = value if type(value) != base_types.auto else self.make_default("Algo")
+		self._Algo = value if value is not None else base_types.UninitialisedField(self, 'Algo', Algorithm8Code, False)
 
 	@Algo.deleter
 	def Algo(self):
 		del self._Algo
-		self._Algo = None
+		self._Algo = base_types.UninitialisedField(self, 'Algo', Algorithm8Code, False)
 
 	@property
 	def Param(self):
@@ -27,12 +27,12 @@ class AlgorithmIdentification12(base_types._BaseFieldType):
 
 	@Param.setter
 	def Param(self, value):
-		self._Param = value if type(value) != base_types.auto else self.make_default("Param")
+		self._Param = value if value is not None else base_types.UninitialisedField(self, 'Param', Parameter5, False)
 
 	@Param.deleter
 	def Param(self):
 		del self._Param
-		self._Param = None
+		self._Param = base_types.UninitialisedField(self, 'Param', Parameter5, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Algo', type=Algorithm8Code, min=1, max=1, mutex_group=None, array=False),

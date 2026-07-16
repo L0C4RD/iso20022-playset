@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BalanceQuantity14Choice import BalanceQuantity14Choice
+from . import BalanceQuantity14Choice
 
 class OpeningBalance6Choice(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class OpeningBalance6Choice(base_types._BaseFieldType):
 
 	@Frst.setter
 	def Frst(self, value):
-		self._Frst = value if type(value) != base_types.auto else self.make_default("Frst")
+		self._Frst = value if value is not None else base_types.UninitialisedField(self, 'Frst', BalanceQuantity14Choice, False)
 
 	@Frst.deleter
 	def Frst(self):
 		del self._Frst
-		self._Frst = None
+		self._Frst = base_types.UninitialisedField(self, 'Frst', BalanceQuantity14Choice, False)
 
 	@property
 	def Intrmy(self):
@@ -26,12 +26,12 @@ class OpeningBalance6Choice(base_types._BaseFieldType):
 
 	@Intrmy.setter
 	def Intrmy(self, value):
-		self._Intrmy = value if type(value) != base_types.auto else self.make_default("Intrmy")
+		self._Intrmy = value if value is not None else base_types.UninitialisedField(self, 'Intrmy', BalanceQuantity14Choice, False)
 
 	@Intrmy.deleter
 	def Intrmy(self):
 		del self._Intrmy
-		self._Intrmy = None
+		self._Intrmy = base_types.UninitialisedField(self, 'Intrmy', BalanceQuantity14Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Frst', type=BalanceQuantity14Choice, min=0, max=1, mutex_group=1, array=False),

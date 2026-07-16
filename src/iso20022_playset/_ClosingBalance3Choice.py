@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
+from . import FinancialInstrumentQuantity1
 
 class ClosingBalance3Choice(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class ClosingBalance3Choice(base_types._BaseFieldType):
 
 	@FnlClsgBal.setter
 	def FnlClsgBal(self, value):
-		self._FnlClsgBal = value if type(value) != base_types.auto else self.make_default("FnlClsgBal")
+		self._FnlClsgBal = value if value is not None else base_types.UninitialisedField(self, 'FnlClsgBal', FinancialInstrumentQuantity1, False)
 
 	@FnlClsgBal.deleter
 	def FnlClsgBal(self):
 		del self._FnlClsgBal
-		self._FnlClsgBal = None
+		self._FnlClsgBal = base_types.UninitialisedField(self, 'FnlClsgBal', FinancialInstrumentQuantity1, False)
 
 	@property
 	def IntrmyClsgBal(self):
@@ -26,12 +26,12 @@ class ClosingBalance3Choice(base_types._BaseFieldType):
 
 	@IntrmyClsgBal.setter
 	def IntrmyClsgBal(self, value):
-		self._IntrmyClsgBal = value if type(value) != base_types.auto else self.make_default("IntrmyClsgBal")
+		self._IntrmyClsgBal = value if value is not None else base_types.UninitialisedField(self, 'IntrmyClsgBal', FinancialInstrumentQuantity1, False)
 
 	@IntrmyClsgBal.deleter
 	def IntrmyClsgBal(self):
 		del self._IntrmyClsgBal
-		self._IntrmyClsgBal = None
+		self._IntrmyClsgBal = base_types.UninitialisedField(self, 'IntrmyClsgBal', FinancialInstrumentQuantity1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FnlClsgBal', type=FinancialInstrumentQuantity1, min=0, max=1, mutex_group=1, array=False),

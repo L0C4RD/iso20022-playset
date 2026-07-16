@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._Frequency20Choice import Frequency20Choice
-from ._InvestmentFundPlanType1Choice import InvestmentFundPlanType1Choice
-from ._Number import Number
-from ._UnitsOrAmount1Choice import UnitsOrAmount1Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import AdditionalInformation15
+from . import Frequency20Choice
+from . import InvestmentFundPlanType1Choice
+from . import Number
+from . import UnitsOrAmount1Choice
+from . import YesNoIndicator
 
 class InvestmentPlanCharacteristics1(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class InvestmentPlanCharacteristics1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@property
 	def AddtlSbcpt(self):
@@ -31,12 +31,12 @@ class InvestmentPlanCharacteristics1(base_types._BaseFieldType):
 
 	@AddtlSbcpt.setter
 	def AddtlSbcpt(self, value):
-		self._AddtlSbcpt = value if type(value) != base_types.auto else self.make_default("AddtlSbcpt")
+		self._AddtlSbcpt = value if value is not None else base_types.UninitialisedField(self, 'AddtlSbcpt', YesNoIndicator, False)
 
 	@AddtlSbcpt.deleter
 	def AddtlSbcpt(self):
 		del self._AddtlSbcpt
-		self._AddtlSbcpt = None
+		self._AddtlSbcpt = base_types.UninitialisedField(self, 'AddtlSbcpt', YesNoIndicator, False)
 
 	@property
 	def AddtlSbcptFctn(self):
@@ -44,12 +44,12 @@ class InvestmentPlanCharacteristics1(base_types._BaseFieldType):
 
 	@AddtlSbcptFctn.setter
 	def AddtlSbcptFctn(self, value):
-		self._AddtlSbcptFctn = value if type(value) != base_types.auto else self.make_default("AddtlSbcptFctn")
+		self._AddtlSbcptFctn = value if value is not None else base_types.UninitialisedField(self, 'AddtlSbcptFctn', YesNoIndicator, False)
 
 	@AddtlSbcptFctn.deleter
 	def AddtlSbcptFctn(self):
 		del self._AddtlSbcptFctn
-		self._AddtlSbcptFctn = None
+		self._AddtlSbcptFctn = base_types.UninitialisedField(self, 'AddtlSbcptFctn', YesNoIndicator, False)
 
 	@property
 	def Frqcy(self):
@@ -57,12 +57,12 @@ class InvestmentPlanCharacteristics1(base_types._BaseFieldType):
 
 	@Frqcy.setter
 	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
+		self._Frqcy = value if value is not None else base_types.UninitialisedField(self, 'Frqcy', Frequency20Choice, False)
 
 	@Frqcy.deleter
 	def Frqcy(self):
 		del self._Frqcy
-		self._Frqcy = None
+		self._Frqcy = base_types.UninitialisedField(self, 'Frqcy', Frequency20Choice, False)
 
 	@property
 	def PlanConttn(self):
@@ -70,12 +70,12 @@ class InvestmentPlanCharacteristics1(base_types._BaseFieldType):
 
 	@PlanConttn.setter
 	def PlanConttn(self, value):
-		self._PlanConttn = value if type(value) != base_types.auto else self.make_default("PlanConttn")
+		self._PlanConttn = value if value is not None else base_types.UninitialisedField(self, 'PlanConttn', YesNoIndicator, False)
 
 	@PlanConttn.deleter
 	def PlanConttn(self):
 		del self._PlanConttn
-		self._PlanConttn = None
+		self._PlanConttn = base_types.UninitialisedField(self, 'PlanConttn', YesNoIndicator, False)
 
 	@property
 	def PlanTp(self):
@@ -83,12 +83,12 @@ class InvestmentPlanCharacteristics1(base_types._BaseFieldType):
 
 	@PlanTp.setter
 	def PlanTp(self, value):
-		self._PlanTp = value if type(value) != base_types.auto else self.make_default("PlanTp")
+		self._PlanTp = value if value is not None else base_types.UninitialisedField(self, 'PlanTp', InvestmentFundPlanType1Choice, False)
 
 	@PlanTp.deleter
 	def PlanTp(self):
 		del self._PlanTp
-		self._PlanTp = None
+		self._PlanTp = base_types.UninitialisedField(self, 'PlanTp', InvestmentFundPlanType1Choice, False)
 
 	@property
 	def Qty(self):
@@ -96,12 +96,12 @@ class InvestmentPlanCharacteristics1(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+		self._Qty = value if value is not None else base_types.UninitialisedField(self, 'Qty', UnitsOrAmount1Choice, False)
 
 	@Qty.deleter
 	def Qty(self):
 		del self._Qty
-		self._Qty = None
+		self._Qty = base_types.UninitialisedField(self, 'Qty', UnitsOrAmount1Choice, False)
 
 	@property
 	def TtlNbOfInstlmts(self):
@@ -109,12 +109,12 @@ class InvestmentPlanCharacteristics1(base_types._BaseFieldType):
 
 	@TtlNbOfInstlmts.setter
 	def TtlNbOfInstlmts(self, value):
-		self._TtlNbOfInstlmts = value if type(value) != base_types.auto else self.make_default("TtlNbOfInstlmts")
+		self._TtlNbOfInstlmts = value if value is not None else base_types.UninitialisedField(self, 'TtlNbOfInstlmts', Number, False)
 
 	@TtlNbOfInstlmts.deleter
 	def TtlNbOfInstlmts(self):
 		del self._TtlNbOfInstlmts
-		self._TtlNbOfInstlmts = None
+		self._TtlNbOfInstlmts = base_types.UninitialisedField(self, 'TtlNbOfInstlmts', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),

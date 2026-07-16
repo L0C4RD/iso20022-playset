@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NotionalAmountLegs5 import NotionalAmountLegs5
-from ._NotionalQuantityLegs5 import NotionalQuantityLegs5
-from ._TradeTransactionIdentification24 import TradeTransactionIdentification24
+from . import NotionalAmountLegs5
+from . import NotionalQuantityLegs5
+from . import TradeTransactionIdentification24
 
 class AbnormalValuesTransactionData2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AbnormalValuesTransactionData2(base_types._BaseFieldType):
 
 	@NtnlAmt.setter
 	def NtnlAmt(self, value):
-		self._NtnlAmt = value if type(value) != base_types.auto else self.make_default("NtnlAmt")
+		self._NtnlAmt = value if value is not None else base_types.UninitialisedField(self, 'NtnlAmt', NotionalAmountLegs5, False)
 
 	@NtnlAmt.deleter
 	def NtnlAmt(self):
 		del self._NtnlAmt
-		self._NtnlAmt = None
+		self._NtnlAmt = base_types.UninitialisedField(self, 'NtnlAmt', NotionalAmountLegs5, False)
 
 	@property
 	def NtnlQty(self):
@@ -28,12 +28,12 @@ class AbnormalValuesTransactionData2(base_types._BaseFieldType):
 
 	@NtnlQty.setter
 	def NtnlQty(self, value):
-		self._NtnlQty = value if type(value) != base_types.auto else self.make_default("NtnlQty")
+		self._NtnlQty = value if value is not None else base_types.UninitialisedField(self, 'NtnlQty', NotionalQuantityLegs5, False)
 
 	@NtnlQty.deleter
 	def NtnlQty(self):
 		del self._NtnlQty
-		self._NtnlQty = None
+		self._NtnlQty = base_types.UninitialisedField(self, 'NtnlQty', NotionalQuantityLegs5, False)
 
 	@property
 	def TxId(self):
@@ -41,12 +41,12 @@ class AbnormalValuesTransactionData2(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', TradeTransactionIdentification24, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', TradeTransactionIdentification24, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NtnlAmt', type=NotionalAmountLegs5, min=0, max=1, mutex_group=None, array=False),

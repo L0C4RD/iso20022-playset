@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ChequeDeliveryMethod1Choice import ChequeDeliveryMethod1Choice
-from ._ChequeType2Code import ChequeType2Code
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
-from ._NameAndAddress18 import NameAndAddress18
-from ._Priority2Code import Priority2Code
+from . import ChequeDeliveryMethod1Choice
+from . import ChequeType2Code
+from . import ISODate
+from . import Max35Text
+from . import Max70Text
+from . import NameAndAddress18
+from . import Priority2Code
 
 class Cheque19(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class Cheque19(base_types._BaseFieldType):
 
 	@ChqFr.setter
 	def ChqFr(self, value):
-		self._ChqFr = value if type(value) != base_types.auto else self.make_default("ChqFr")
+		self._ChqFr = value if value is not None else base_types.UninitialisedField(self, 'ChqFr', NameAndAddress18, False)
 
 	@ChqFr.deleter
 	def ChqFr(self):
 		del self._ChqFr
-		self._ChqFr = None
+		self._ChqFr = base_types.UninitialisedField(self, 'ChqFr', NameAndAddress18, False)
 
 	@property
 	def ChqMtrtyDt(self):
@@ -32,12 +32,12 @@ class Cheque19(base_types._BaseFieldType):
 
 	@ChqMtrtyDt.setter
 	def ChqMtrtyDt(self, value):
-		self._ChqMtrtyDt = value if type(value) != base_types.auto else self.make_default("ChqMtrtyDt")
+		self._ChqMtrtyDt = value if value is not None else base_types.UninitialisedField(self, 'ChqMtrtyDt', ISODate, False)
 
 	@ChqMtrtyDt.deleter
 	def ChqMtrtyDt(self):
 		del self._ChqMtrtyDt
-		self._ChqMtrtyDt = None
+		self._ChqMtrtyDt = base_types.UninitialisedField(self, 'ChqMtrtyDt', ISODate, False)
 
 	@property
 	def ChqNb(self):
@@ -45,12 +45,12 @@ class Cheque19(base_types._BaseFieldType):
 
 	@ChqNb.setter
 	def ChqNb(self, value):
-		self._ChqNb = value if type(value) != base_types.auto else self.make_default("ChqNb")
+		self._ChqNb = value if value is not None else base_types.UninitialisedField(self, 'ChqNb', Max35Text, False)
 
 	@ChqNb.deleter
 	def ChqNb(self):
 		del self._ChqNb
-		self._ChqNb = None
+		self._ChqNb = base_types.UninitialisedField(self, 'ChqNb', Max35Text, False)
 
 	@property
 	def ChqTp(self):
@@ -58,12 +58,12 @@ class Cheque19(base_types._BaseFieldType):
 
 	@ChqTp.setter
 	def ChqTp(self, value):
-		self._ChqTp = value if type(value) != base_types.auto else self.make_default("ChqTp")
+		self._ChqTp = value if value is not None else base_types.UninitialisedField(self, 'ChqTp', ChequeType2Code, False)
 
 	@ChqTp.deleter
 	def ChqTp(self):
 		del self._ChqTp
-		self._ChqTp = None
+		self._ChqTp = base_types.UninitialisedField(self, 'ChqTp', ChequeType2Code, False)
 
 	@property
 	def DlvrTo(self):
@@ -71,12 +71,12 @@ class Cheque19(base_types._BaseFieldType):
 
 	@DlvrTo.setter
 	def DlvrTo(self, value):
-		self._DlvrTo = value if type(value) != base_types.auto else self.make_default("DlvrTo")
+		self._DlvrTo = value if value is not None else base_types.UninitialisedField(self, 'DlvrTo', NameAndAddress18, False)
 
 	@DlvrTo.deleter
 	def DlvrTo(self):
 		del self._DlvrTo
-		self._DlvrTo = None
+		self._DlvrTo = base_types.UninitialisedField(self, 'DlvrTo', NameAndAddress18, False)
 
 	@property
 	def DlvryMtd(self):
@@ -84,12 +84,12 @@ class Cheque19(base_types._BaseFieldType):
 
 	@DlvryMtd.setter
 	def DlvryMtd(self, value):
-		self._DlvryMtd = value if type(value) != base_types.auto else self.make_default("DlvryMtd")
+		self._DlvryMtd = value if value is not None else base_types.UninitialisedField(self, 'DlvryMtd', ChequeDeliveryMethod1Choice, False)
 
 	@DlvryMtd.deleter
 	def DlvryMtd(self):
 		del self._DlvryMtd
-		self._DlvryMtd = None
+		self._DlvryMtd = base_types.UninitialisedField(self, 'DlvryMtd', ChequeDeliveryMethod1Choice, False)
 
 	@property
 	def FrmsCd(self):
@@ -97,12 +97,12 @@ class Cheque19(base_types._BaseFieldType):
 
 	@FrmsCd.setter
 	def FrmsCd(self, value):
-		self._FrmsCd = value if type(value) != base_types.auto else self.make_default("FrmsCd")
+		self._FrmsCd = value if value is not None else base_types.UninitialisedField(self, 'FrmsCd', Max35Text, False)
 
 	@FrmsCd.deleter
 	def FrmsCd(self):
 		del self._FrmsCd
-		self._FrmsCd = None
+		self._FrmsCd = base_types.UninitialisedField(self, 'FrmsCd', Max35Text, False)
 
 	@property
 	def InstrPrty(self):
@@ -110,12 +110,12 @@ class Cheque19(base_types._BaseFieldType):
 
 	@InstrPrty.setter
 	def InstrPrty(self, value):
-		self._InstrPrty = value if type(value) != base_types.auto else self.make_default("InstrPrty")
+		self._InstrPrty = value if value is not None else base_types.UninitialisedField(self, 'InstrPrty', Priority2Code, False)
 
 	@InstrPrty.deleter
 	def InstrPrty(self):
 		del self._InstrPrty
-		self._InstrPrty = None
+		self._InstrPrty = base_types.UninitialisedField(self, 'InstrPrty', Priority2Code, False)
 
 	@property
 	def MemoFld(self):
@@ -123,12 +123,12 @@ class Cheque19(base_types._BaseFieldType):
 
 	@MemoFld.setter
 	def MemoFld(self, value):
-		self._MemoFld = value if type(value) != base_types.auto else self.make_default("MemoFld")
+		self._MemoFld = value if value is not None else base_types.UninitialisedField(self, 'MemoFld', Max35Text, True)
 
 	@MemoFld.deleter
 	def MemoFld(self):
 		del self._MemoFld
-		self._MemoFld = None
+		self._MemoFld = base_types.UninitialisedField(self, 'MemoFld', Max35Text, True)
 
 	@property
 	def PrtLctn(self):
@@ -136,12 +136,12 @@ class Cheque19(base_types._BaseFieldType):
 
 	@PrtLctn.setter
 	def PrtLctn(self, value):
-		self._PrtLctn = value if type(value) != base_types.auto else self.make_default("PrtLctn")
+		self._PrtLctn = value if value is not None else base_types.UninitialisedField(self, 'PrtLctn', Max35Text, False)
 
 	@PrtLctn.deleter
 	def PrtLctn(self):
 		del self._PrtLctn
-		self._PrtLctn = None
+		self._PrtLctn = base_types.UninitialisedField(self, 'PrtLctn', Max35Text, False)
 
 	@property
 	def RgnlClrZone(self):
@@ -149,12 +149,12 @@ class Cheque19(base_types._BaseFieldType):
 
 	@RgnlClrZone.setter
 	def RgnlClrZone(self, value):
-		self._RgnlClrZone = value if type(value) != base_types.auto else self.make_default("RgnlClrZone")
+		self._RgnlClrZone = value if value is not None else base_types.UninitialisedField(self, 'RgnlClrZone', Max35Text, False)
 
 	@RgnlClrZone.deleter
 	def RgnlClrZone(self):
 		del self._RgnlClrZone
-		self._RgnlClrZone = None
+		self._RgnlClrZone = base_types.UninitialisedField(self, 'RgnlClrZone', Max35Text, False)
 
 	@property
 	def Sgntr(self):
@@ -162,12 +162,12 @@ class Cheque19(base_types._BaseFieldType):
 
 	@Sgntr.setter
 	def Sgntr(self, value):
-		self._Sgntr = value if type(value) != base_types.auto else self.make_default("Sgntr")
+		self._Sgntr = value if value is not None else base_types.UninitialisedField(self, 'Sgntr', Max70Text, True)
 
 	@Sgntr.deleter
 	def Sgntr(self):
 		del self._Sgntr
-		self._Sgntr = None
+		self._Sgntr = base_types.UninitialisedField(self, 'Sgntr', Max70Text, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ChqFr', type=NameAndAddress18, min=0, max=1, mutex_group=None, array=False),

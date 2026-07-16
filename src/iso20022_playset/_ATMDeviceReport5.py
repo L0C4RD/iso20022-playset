@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMCommand15 import ATMCommand15
-from ._ATMCommand16 import ATMCommand16
-from ._ATMEnvironment6 import ATMEnvironment6
-from ._ATMSecurityContext6 import ATMSecurityContext6
-from ._ATMStatus2 import ATMStatus2
+from . import ATMCommand15
+from . import ATMCommand16
+from . import ATMEnvironment6
+from . import ATMSecurityContext6
+from . import ATMStatus2
 
 class ATMDeviceReport5(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class ATMDeviceReport5(base_types._BaseFieldType):
 
 	@ATMGblSts.setter
 	def ATMGblSts(self, value):
-		self._ATMGblSts = value if type(value) != base_types.auto else self.make_default("ATMGblSts")
+		self._ATMGblSts = value if value is not None else base_types.UninitialisedField(self, 'ATMGblSts', ATMStatus2, False)
 
 	@ATMGblSts.deleter
 	def ATMGblSts(self):
 		del self._ATMGblSts
-		self._ATMGblSts = None
+		self._ATMGblSts = base_types.UninitialisedField(self, 'ATMGblSts', ATMStatus2, False)
 
 	@property
 	def ATMSctyCntxt(self):
@@ -30,12 +30,12 @@ class ATMDeviceReport5(base_types._BaseFieldType):
 
 	@ATMSctyCntxt.setter
 	def ATMSctyCntxt(self, value):
-		self._ATMSctyCntxt = value if type(value) != base_types.auto else self.make_default("ATMSctyCntxt")
+		self._ATMSctyCntxt = value if value is not None else base_types.UninitialisedField(self, 'ATMSctyCntxt', ATMSecurityContext6, False)
 
 	@ATMSctyCntxt.deleter
 	def ATMSctyCntxt(self):
 		del self._ATMSctyCntxt
-		self._ATMSctyCntxt = None
+		self._ATMSctyCntxt = base_types.UninitialisedField(self, 'ATMSctyCntxt', ATMSecurityContext6, False)
 
 	@property
 	def CmdCntxt(self):
@@ -43,12 +43,12 @@ class ATMDeviceReport5(base_types._BaseFieldType):
 
 	@CmdCntxt.setter
 	def CmdCntxt(self, value):
-		self._CmdCntxt = value if type(value) != base_types.auto else self.make_default("CmdCntxt")
+		self._CmdCntxt = value if value is not None else base_types.UninitialisedField(self, 'CmdCntxt', ATMCommand16, False)
 
 	@CmdCntxt.deleter
 	def CmdCntxt(self):
 		del self._CmdCntxt
-		self._CmdCntxt = None
+		self._CmdCntxt = base_types.UninitialisedField(self, 'CmdCntxt', ATMCommand16, False)
 
 	@property
 	def CmdRslt(self):
@@ -56,12 +56,12 @@ class ATMDeviceReport5(base_types._BaseFieldType):
 
 	@CmdRslt.setter
 	def CmdRslt(self, value):
-		self._CmdRslt = value if type(value) != base_types.auto else self.make_default("CmdRslt")
+		self._CmdRslt = value if value is not None else base_types.UninitialisedField(self, 'CmdRslt', ATMCommand15, True)
 
 	@CmdRslt.deleter
 	def CmdRslt(self):
 		del self._CmdRslt
-		self._CmdRslt = None
+		self._CmdRslt = base_types.UninitialisedField(self, 'CmdRslt', ATMCommand15, True)
 
 	@property
 	def Envt(self):
@@ -69,12 +69,12 @@ class ATMDeviceReport5(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+		self._Envt = value if value is not None else base_types.UninitialisedField(self, 'Envt', ATMEnvironment6, False)
 
 	@Envt.deleter
 	def Envt(self):
 		del self._Envt
-		self._Envt = None
+		self._Envt = base_types.UninitialisedField(self, 'Envt', ATMEnvironment6, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ATMGblSts', type=ATMStatus2, min=1, max=1, mutex_group=None, array=False),

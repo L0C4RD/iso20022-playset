@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AssuredType1Code import AssuredType1Code
-from ._BICIdentification1 import BICIdentification1
-from ._InsuranceClauses1Code import InsuranceClauses1Code
-from ._PartyIdentification27 import PartyIdentification27
-from ._YesNoIndicator import YesNoIndicator
+from . import AssuredType1Code
+from . import BICIdentification1
+from . import InsuranceClauses1Code
+from . import PartyIdentification27
+from . import YesNoIndicator
 
 class RequiredSubmission3(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class RequiredSubmission3(base_types._BaseFieldType):
 
 	@ClausesReqrd.setter
 	def ClausesReqrd(self, value):
-		self._ClausesReqrd = value if type(value) != base_types.auto else self.make_default("ClausesReqrd")
+		self._ClausesReqrd = value if value is not None else base_types.UninitialisedField(self, 'ClausesReqrd', InsuranceClauses1Code, True)
 
 	@ClausesReqrd.deleter
 	def ClausesReqrd(self):
 		del self._ClausesReqrd
-		self._ClausesReqrd = None
+		self._ClausesReqrd = base_types.UninitialisedField(self, 'ClausesReqrd', InsuranceClauses1Code, True)
 
 	@property
 	def MtchAmt(self):
@@ -30,12 +30,12 @@ class RequiredSubmission3(base_types._BaseFieldType):
 
 	@MtchAmt.setter
 	def MtchAmt(self, value):
-		self._MtchAmt = value if type(value) != base_types.auto else self.make_default("MtchAmt")
+		self._MtchAmt = value if value is not None else base_types.UninitialisedField(self, 'MtchAmt', YesNoIndicator, False)
 
 	@MtchAmt.deleter
 	def MtchAmt(self):
 		del self._MtchAmt
-		self._MtchAmt = None
+		self._MtchAmt = base_types.UninitialisedField(self, 'MtchAmt', YesNoIndicator, False)
 
 	@property
 	def MtchAssrdPty(self):
@@ -43,12 +43,12 @@ class RequiredSubmission3(base_types._BaseFieldType):
 
 	@MtchAssrdPty.setter
 	def MtchAssrdPty(self, value):
-		self._MtchAssrdPty = value if type(value) != base_types.auto else self.make_default("MtchAssrdPty")
+		self._MtchAssrdPty = value if value is not None else base_types.UninitialisedField(self, 'MtchAssrdPty', AssuredType1Code, False)
 
 	@MtchAssrdPty.deleter
 	def MtchAssrdPty(self):
 		del self._MtchAssrdPty
-		self._MtchAssrdPty = None
+		self._MtchAssrdPty = base_types.UninitialisedField(self, 'MtchAssrdPty', AssuredType1Code, False)
 
 	@property
 	def MtchIsseDt(self):
@@ -56,12 +56,12 @@ class RequiredSubmission3(base_types._BaseFieldType):
 
 	@MtchIsseDt.setter
 	def MtchIsseDt(self, value):
-		self._MtchIsseDt = value if type(value) != base_types.auto else self.make_default("MtchIsseDt")
+		self._MtchIsseDt = value if value is not None else base_types.UninitialisedField(self, 'MtchIsseDt', YesNoIndicator, False)
 
 	@MtchIsseDt.deleter
 	def MtchIsseDt(self):
 		del self._MtchIsseDt
-		self._MtchIsseDt = None
+		self._MtchIsseDt = base_types.UninitialisedField(self, 'MtchIsseDt', YesNoIndicator, False)
 
 	@property
 	def MtchIssr(self):
@@ -69,12 +69,12 @@ class RequiredSubmission3(base_types._BaseFieldType):
 
 	@MtchIssr.setter
 	def MtchIssr(self, value):
-		self._MtchIssr = value if type(value) != base_types.auto else self.make_default("MtchIssr")
+		self._MtchIssr = value if value is not None else base_types.UninitialisedField(self, 'MtchIssr', PartyIdentification27, False)
 
 	@MtchIssr.deleter
 	def MtchIssr(self):
 		del self._MtchIssr
-		self._MtchIssr = None
+		self._MtchIssr = base_types.UninitialisedField(self, 'MtchIssr', PartyIdentification27, False)
 
 	@property
 	def MtchTrnsprt(self):
@@ -82,12 +82,12 @@ class RequiredSubmission3(base_types._BaseFieldType):
 
 	@MtchTrnsprt.setter
 	def MtchTrnsprt(self, value):
-		self._MtchTrnsprt = value if type(value) != base_types.auto else self.make_default("MtchTrnsprt")
+		self._MtchTrnsprt = value if value is not None else base_types.UninitialisedField(self, 'MtchTrnsprt', YesNoIndicator, False)
 
 	@MtchTrnsprt.deleter
 	def MtchTrnsprt(self):
 		del self._MtchTrnsprt
-		self._MtchTrnsprt = None
+		self._MtchTrnsprt = base_types.UninitialisedField(self, 'MtchTrnsprt', YesNoIndicator, False)
 
 	@property
 	def Submitr(self):
@@ -95,12 +95,12 @@ class RequiredSubmission3(base_types._BaseFieldType):
 
 	@Submitr.setter
 	def Submitr(self, value):
-		self._Submitr = value if type(value) != base_types.auto else self.make_default("Submitr")
+		self._Submitr = value if value is not None else base_types.UninitialisedField(self, 'Submitr', BICIdentification1, True)
 
 	@Submitr.deleter
 	def Submitr(self):
 		del self._Submitr
-		self._Submitr = None
+		self._Submitr = base_types.UninitialisedField(self, 'Submitr', BICIdentification1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClausesReqrd', type=InsuranceClauses1Code, min=0, max=None, mutex_group=None, array=True),

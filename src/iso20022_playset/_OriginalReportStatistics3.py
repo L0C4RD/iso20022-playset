@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max15NumericText import Max15NumericText
-from ._NumberOfRecordsPerStatus1 import NumberOfRecordsPerStatus1
+from . import Max15NumericText
+from . import NumberOfRecordsPerStatus1
 
 class OriginalReportStatistics3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class OriginalReportStatistics3(base_types._BaseFieldType):
 
 	@NbOfRcrdsPerSts.setter
 	def NbOfRcrdsPerSts(self, value):
-		self._NbOfRcrdsPerSts = value if type(value) != base_types.auto else self.make_default("NbOfRcrdsPerSts")
+		self._NbOfRcrdsPerSts = value if value is not None else base_types.UninitialisedField(self, 'NbOfRcrdsPerSts', NumberOfRecordsPerStatus1, True)
 
 	@NbOfRcrdsPerSts.deleter
 	def NbOfRcrdsPerSts(self):
 		del self._NbOfRcrdsPerSts
-		self._NbOfRcrdsPerSts = None
+		self._NbOfRcrdsPerSts = base_types.UninitialisedField(self, 'NbOfRcrdsPerSts', NumberOfRecordsPerStatus1, True)
 
 	@property
 	def TtlNbOfRcrds(self):
@@ -27,12 +27,12 @@ class OriginalReportStatistics3(base_types._BaseFieldType):
 
 	@TtlNbOfRcrds.setter
 	def TtlNbOfRcrds(self, value):
-		self._TtlNbOfRcrds = value if type(value) != base_types.auto else self.make_default("TtlNbOfRcrds")
+		self._TtlNbOfRcrds = value if value is not None else base_types.UninitialisedField(self, 'TtlNbOfRcrds', Max15NumericText, False)
 
 	@TtlNbOfRcrds.deleter
 	def TtlNbOfRcrds(self):
 		del self._TtlNbOfRcrds
-		self._TtlNbOfRcrds = None
+		self._TtlNbOfRcrds = base_types.UninitialisedField(self, 'TtlNbOfRcrds', Max15NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NbOfRcrdsPerSts', type=NumberOfRecordsPerStatus1, min=1, max=None, mutex_group=None, array=True),

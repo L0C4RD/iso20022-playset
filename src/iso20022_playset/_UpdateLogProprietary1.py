@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
+from . import Max350Text
+from . import Max35Text
 
 class UpdateLogProprietary1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class UpdateLogProprietary1(base_types._BaseFieldType):
 
 	@FldNm.setter
 	def FldNm(self, value):
-		self._FldNm = value if type(value) != base_types.auto else self.make_default("FldNm")
+		self._FldNm = value if value is not None else base_types.UninitialisedField(self, 'FldNm', Max35Text, False)
 
 	@FldNm.deleter
 	def FldNm(self):
 		del self._FldNm
-		self._FldNm = None
+		self._FldNm = base_types.UninitialisedField(self, 'FldNm', Max35Text, False)
 
 	@property
 	def NewFldVal(self):
@@ -27,12 +27,12 @@ class UpdateLogProprietary1(base_types._BaseFieldType):
 
 	@NewFldVal.setter
 	def NewFldVal(self, value):
-		self._NewFldVal = value if type(value) != base_types.auto else self.make_default("NewFldVal")
+		self._NewFldVal = value if value is not None else base_types.UninitialisedField(self, 'NewFldVal', Max350Text, False)
 
 	@NewFldVal.deleter
 	def NewFldVal(self):
 		del self._NewFldVal
-		self._NewFldVal = None
+		self._NewFldVal = base_types.UninitialisedField(self, 'NewFldVal', Max350Text, False)
 
 	@property
 	def OdFldVal(self):
@@ -40,12 +40,12 @@ class UpdateLogProprietary1(base_types._BaseFieldType):
 
 	@OdFldVal.setter
 	def OdFldVal(self, value):
-		self._OdFldVal = value if type(value) != base_types.auto else self.make_default("OdFldVal")
+		self._OdFldVal = value if value is not None else base_types.UninitialisedField(self, 'OdFldVal', Max350Text, False)
 
 	@OdFldVal.deleter
 	def OdFldVal(self):
 		del self._OdFldVal
-		self._OdFldVal = None
+		self._OdFldVal = base_types.UninitialisedField(self, 'OdFldVal', Max350Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FldNm', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

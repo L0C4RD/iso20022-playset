@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
-from ._Max4Text import Max4Text
-from ._Pagination1 import Pagination1
-from ._PartyIdentification242Choice import PartyIdentification242Choice
+from . import ISODate
+from . import ISODateTime
+from . import Max35Text
+from . import Max4Text
+from . import Pagination1
+from . import PartyIdentification242Choice
 
 class NettingCutOffReportData2(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class NettingCutOffReportData2(base_types._BaseFieldType):
 
 	@ActvtnDt.setter
 	def ActvtnDt(self, value):
-		self._ActvtnDt = value if type(value) != base_types.auto else self.make_default("ActvtnDt")
+		self._ActvtnDt = value if value is not None else base_types.UninitialisedField(self, 'ActvtnDt', ISODate, False)
 
 	@ActvtnDt.deleter
 	def ActvtnDt(self):
 		del self._ActvtnDt
-		self._ActvtnDt = None
+		self._ActvtnDt = base_types.UninitialisedField(self, 'ActvtnDt', ISODate, False)
 
 	@property
 	def CreDtTm(self):
@@ -31,12 +31,12 @@ class NettingCutOffReportData2(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if value is not None else base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
 		del self._CreDtTm
-		self._CreDtTm = None
+		self._CreDtTm = base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@property
 	def MsgId(self):
@@ -44,12 +44,12 @@ class NettingCutOffReportData2(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@property
 	def MsgPgntn(self):
@@ -57,12 +57,12 @@ class NettingCutOffReportData2(base_types._BaseFieldType):
 
 	@MsgPgntn.setter
 	def MsgPgntn(self, value):
-		self._MsgPgntn = value if type(value) != base_types.auto else self.make_default("MsgPgntn")
+		self._MsgPgntn = value if value is not None else base_types.UninitialisedField(self, 'MsgPgntn', Pagination1, False)
 
 	@MsgPgntn.deleter
 	def MsgPgntn(self):
 		del self._MsgPgntn
-		self._MsgPgntn = None
+		self._MsgPgntn = base_types.UninitialisedField(self, 'MsgPgntn', Pagination1, False)
 
 	@property
 	def NetSvcPtcptId(self):
@@ -70,12 +70,12 @@ class NettingCutOffReportData2(base_types._BaseFieldType):
 
 	@NetSvcPtcptId.setter
 	def NetSvcPtcptId(self, value):
-		self._NetSvcPtcptId = value if type(value) != base_types.auto else self.make_default("NetSvcPtcptId")
+		self._NetSvcPtcptId = value if value is not None else base_types.UninitialisedField(self, 'NetSvcPtcptId', PartyIdentification242Choice, False)
 
 	@NetSvcPtcptId.deleter
 	def NetSvcPtcptId(self):
 		del self._NetSvcPtcptId
-		self._NetSvcPtcptId = None
+		self._NetSvcPtcptId = base_types.UninitialisedField(self, 'NetSvcPtcptId', PartyIdentification242Choice, False)
 
 	@property
 	def NetSvcTp(self):
@@ -83,12 +83,12 @@ class NettingCutOffReportData2(base_types._BaseFieldType):
 
 	@NetSvcTp.setter
 	def NetSvcTp(self, value):
-		self._NetSvcTp = value if type(value) != base_types.auto else self.make_default("NetSvcTp")
+		self._NetSvcTp = value if value is not None else base_types.UninitialisedField(self, 'NetSvcTp', Max35Text, False)
 
 	@NetSvcTp.deleter
 	def NetSvcTp(self):
 		del self._NetSvcTp
-		self._NetSvcTp = None
+		self._NetSvcTp = base_types.UninitialisedField(self, 'NetSvcTp', Max35Text, False)
 
 	@property
 	def RptSvcr(self):
@@ -96,12 +96,12 @@ class NettingCutOffReportData2(base_types._BaseFieldType):
 
 	@RptSvcr.setter
 	def RptSvcr(self, value):
-		self._RptSvcr = value if type(value) != base_types.auto else self.make_default("RptSvcr")
+		self._RptSvcr = value if value is not None else base_types.UninitialisedField(self, 'RptSvcr', PartyIdentification242Choice, False)
 
 	@RptSvcr.deleter
 	def RptSvcr(self):
 		del self._RptSvcr
-		self._RptSvcr = None
+		self._RptSvcr = base_types.UninitialisedField(self, 'RptSvcr', PartyIdentification242Choice, False)
 
 	@property
 	def RptTp(self):
@@ -109,12 +109,12 @@ class NettingCutOffReportData2(base_types._BaseFieldType):
 
 	@RptTp.setter
 	def RptTp(self, value):
-		self._RptTp = value if type(value) != base_types.auto else self.make_default("RptTp")
+		self._RptTp = value if value is not None else base_types.UninitialisedField(self, 'RptTp', Max4Text, False)
 
 	@RptTp.deleter
 	def RptTp(self):
 		del self._RptTp
-		self._RptTp = None
+		self._RptTp = base_types.UninitialisedField(self, 'RptTp', Max4Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActvtnDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),

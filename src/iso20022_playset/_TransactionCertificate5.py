@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._CertificateReference2 import CertificateReference2
-from ._Exact1NumericText import Exact1NumericText
-from ._Exact5NumericText import Exact5NumericText
-from ._ISODate import ISODate
+from . import ActiveCurrencyAndAmount
+from . import CertificateReference2
+from . import Exact1NumericText
+from . import Exact5NumericText
+from . import ISODate
 
 class TransactionCertificate5(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class TransactionCertificate5(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def LclInstrm(self):
@@ -30,12 +30,12 @@ class TransactionCertificate5(base_types._BaseFieldType):
 
 	@LclInstrm.setter
 	def LclInstrm(self, value):
-		self._LclInstrm = value if type(value) != base_types.auto else self.make_default("LclInstrm")
+		self._LclInstrm = value if value is not None else base_types.UninitialisedField(self, 'LclInstrm', Exact5NumericText, False)
 
 	@LclInstrm.deleter
 	def LclInstrm(self):
 		del self._LclInstrm
-		self._LclInstrm = None
+		self._LclInstrm = base_types.UninitialisedField(self, 'LclInstrm', Exact5NumericText, False)
 
 	@property
 	def RfrdDoc(self):
@@ -43,12 +43,12 @@ class TransactionCertificate5(base_types._BaseFieldType):
 
 	@RfrdDoc.setter
 	def RfrdDoc(self, value):
-		self._RfrdDoc = value if type(value) != base_types.auto else self.make_default("RfrdDoc")
+		self._RfrdDoc = value if value is not None else base_types.UninitialisedField(self, 'RfrdDoc', CertificateReference2, False)
 
 	@RfrdDoc.deleter
 	def RfrdDoc(self):
 		del self._RfrdDoc
-		self._RfrdDoc = None
+		self._RfrdDoc = base_types.UninitialisedField(self, 'RfrdDoc', CertificateReference2, False)
 
 	@property
 	def TxDt(self):
@@ -56,12 +56,12 @@ class TransactionCertificate5(base_types._BaseFieldType):
 
 	@TxDt.setter
 	def TxDt(self, value):
-		self._TxDt = value if type(value) != base_types.auto else self.make_default("TxDt")
+		self._TxDt = value if value is not None else base_types.UninitialisedField(self, 'TxDt', ISODate, False)
 
 	@TxDt.deleter
 	def TxDt(self):
 		del self._TxDt
-		self._TxDt = None
+		self._TxDt = base_types.UninitialisedField(self, 'TxDt', ISODate, False)
 
 	@property
 	def TxTp(self):
@@ -69,12 +69,12 @@ class TransactionCertificate5(base_types._BaseFieldType):
 
 	@TxTp.setter
 	def TxTp(self, value):
-		self._TxTp = value if type(value) != base_types.auto else self.make_default("TxTp")
+		self._TxTp = value if value is not None else base_types.UninitialisedField(self, 'TxTp', Exact1NumericText, False)
 
 	@TxTp.deleter
 	def TxTp(self):
 		del self._TxTp
-		self._TxTp = None
+		self._TxTp = base_types.UninitialisedField(self, 'TxTp', Exact1NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

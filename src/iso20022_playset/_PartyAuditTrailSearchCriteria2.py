@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DatePeriodSearch1Choice import DatePeriodSearch1Choice
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
+from . import DatePeriodSearch1Choice
+from . import SystemPartyIdentification8
 
 class PartyAuditTrailSearchCriteria2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PartyAuditTrailSearchCriteria2(base_types._BaseFieldType):
 
 	@DtPrd.setter
 	def DtPrd(self, value):
-		self._DtPrd = value if type(value) != base_types.auto else self.make_default("DtPrd")
+		self._DtPrd = value if value is not None else base_types.UninitialisedField(self, 'DtPrd', DatePeriodSearch1Choice, False)
 
 	@DtPrd.deleter
 	def DtPrd(self):
 		del self._DtPrd
-		self._DtPrd = None
+		self._DtPrd = base_types.UninitialisedField(self, 'DtPrd', DatePeriodSearch1Choice, False)
 
 	@property
 	def PtyId(self):
@@ -27,12 +27,12 @@ class PartyAuditTrailSearchCriteria2(base_types._BaseFieldType):
 
 	@PtyId.setter
 	def PtyId(self, value):
-		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
+		self._PtyId = value if value is not None else base_types.UninitialisedField(self, 'PtyId', SystemPartyIdentification8, False)
 
 	@PtyId.deleter
 	def PtyId(self):
 		del self._PtyId
-		self._PtyId = None
+		self._PtyId = base_types.UninitialisedField(self, 'PtyId', SystemPartyIdentification8, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DtPrd', type=DatePeriodSearch1Choice, min=0, max=1, mutex_group=None, array=False),

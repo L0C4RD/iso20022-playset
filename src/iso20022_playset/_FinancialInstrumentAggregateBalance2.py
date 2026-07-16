@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
-from ._SubBalanceBreakdown1 import SubBalanceBreakdown1
+from . import FinancialInstrumentQuantity1Choice
+from . import SubBalanceBreakdown1
 
 class FinancialInstrumentAggregateBalance2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class FinancialInstrumentAggregateBalance2(base_types._BaseFieldType):
 
 	@BalBrkdwn.setter
 	def BalBrkdwn(self, value):
-		self._BalBrkdwn = value if type(value) != base_types.auto else self.make_default("BalBrkdwn")
+		self._BalBrkdwn = value if value is not None else base_types.UninitialisedField(self, 'BalBrkdwn', SubBalanceBreakdown1, True)
 
 	@BalBrkdwn.deleter
 	def BalBrkdwn(self):
 		del self._BalBrkdwn
-		self._BalBrkdwn = None
+		self._BalBrkdwn = base_types.UninitialisedField(self, 'BalBrkdwn', SubBalanceBreakdown1, True)
 
 	@property
 	def SttldBal(self):
@@ -27,12 +27,12 @@ class FinancialInstrumentAggregateBalance2(base_types._BaseFieldType):
 
 	@SttldBal.setter
 	def SttldBal(self, value):
-		self._SttldBal = value if type(value) != base_types.auto else self.make_default("SttldBal")
+		self._SttldBal = value if value is not None else base_types.UninitialisedField(self, 'SttldBal', FinancialInstrumentQuantity1Choice, False)
 
 	@SttldBal.deleter
 	def SttldBal(self):
 		del self._SttldBal
-		self._SttldBal = None
+		self._SttldBal = base_types.UninitialisedField(self, 'SttldBal', FinancialInstrumentQuantity1Choice, False)
 
 	@property
 	def TraddBal(self):
@@ -40,12 +40,12 @@ class FinancialInstrumentAggregateBalance2(base_types._BaseFieldType):
 
 	@TraddBal.setter
 	def TraddBal(self, value):
-		self._TraddBal = value if type(value) != base_types.auto else self.make_default("TraddBal")
+		self._TraddBal = value if value is not None else base_types.UninitialisedField(self, 'TraddBal', FinancialInstrumentQuantity1Choice, False)
 
 	@TraddBal.deleter
 	def TraddBal(self):
 		del self._TraddBal
-		self._TraddBal = None
+		self._TraddBal = base_types.UninitialisedField(self, 'TraddBal', FinancialInstrumentQuantity1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BalBrkdwn', type=SubBalanceBreakdown1, min=0, max=None, mutex_group=None, array=True),

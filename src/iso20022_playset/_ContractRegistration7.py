@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._ContractRegistration8 import ContractRegistration8
-from ._Max35Text import Max35Text
-from ._SupplementaryData1 import SupplementaryData1
-from ._TradeParty6 import TradeParty6
+from . import BranchAndFinancialInstitutionIdentification8
+from . import ContractRegistration8
+from . import Max35Text
+from . import SupplementaryData1
+from . import TradeParty6
 
 class ContractRegistration7(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class ContractRegistration7(base_types._BaseFieldType):
 
 	@CtrctRegnId.setter
 	def CtrctRegnId(self, value):
-		self._CtrctRegnId = value if type(value) != base_types.auto else self.make_default("CtrctRegnId")
+		self._CtrctRegnId = value if value is not None else base_types.UninitialisedField(self, 'CtrctRegnId', Max35Text, False)
 
 	@CtrctRegnId.deleter
 	def CtrctRegnId(self):
 		del self._CtrctRegnId
-		self._CtrctRegnId = None
+		self._CtrctRegnId = base_types.UninitialisedField(self, 'CtrctRegnId', Max35Text, False)
 
 	@property
 	def CtrctRegnOpng(self):
@@ -30,12 +30,12 @@ class ContractRegistration7(base_types._BaseFieldType):
 
 	@CtrctRegnOpng.setter
 	def CtrctRegnOpng(self, value):
-		self._CtrctRegnOpng = value if type(value) != base_types.auto else self.make_default("CtrctRegnOpng")
+		self._CtrctRegnOpng = value if value is not None else base_types.UninitialisedField(self, 'CtrctRegnOpng', ContractRegistration8, True)
 
 	@CtrctRegnOpng.deleter
 	def CtrctRegnOpng(self):
 		del self._CtrctRegnOpng
-		self._CtrctRegnOpng = None
+		self._CtrctRegnOpng = base_types.UninitialisedField(self, 'CtrctRegnOpng', ContractRegistration8, True)
 
 	@property
 	def RegnAgt(self):
@@ -43,12 +43,12 @@ class ContractRegistration7(base_types._BaseFieldType):
 
 	@RegnAgt.setter
 	def RegnAgt(self, value):
-		self._RegnAgt = value if type(value) != base_types.auto else self.make_default("RegnAgt")
+		self._RegnAgt = value if value is not None else base_types.UninitialisedField(self, 'RegnAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@RegnAgt.deleter
 	def RegnAgt(self):
 		del self._RegnAgt
-		self._RegnAgt = None
+		self._RegnAgt = base_types.UninitialisedField(self, 'RegnAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def RptgPty(self):
@@ -56,12 +56,12 @@ class ContractRegistration7(base_types._BaseFieldType):
 
 	@RptgPty.setter
 	def RptgPty(self, value):
-		self._RptgPty = value if type(value) != base_types.auto else self.make_default("RptgPty")
+		self._RptgPty = value if value is not None else base_types.UninitialisedField(self, 'RptgPty', TradeParty6, False)
 
 	@RptgPty.deleter
 	def RptgPty(self):
 		del self._RptgPty
-		self._RptgPty = None
+		self._RptgPty = base_types.UninitialisedField(self, 'RptgPty', TradeParty6, False)
 
 	@property
 	def SplmtryData(self):
@@ -69,12 +69,12 @@ class ContractRegistration7(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrctRegnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

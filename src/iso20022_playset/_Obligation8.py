@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._BlockChainAddressWallet5 import BlockChainAddressWallet5
-from ._ClosingDate4Choice import ClosingDate4Choice
-from ._CollateralAccount3 import CollateralAccount3
-from ._CollateralRole1Code import CollateralRole1Code
-from ._CollateralTransactionType1Choice import CollateralTransactionType1Choice
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._ExposureType21Choice import ExposureType21Choice
-from ._GenericIdentification30 import GenericIdentification30
-from ._PartyIdentification178Choice import PartyIdentification178Choice
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import BlockChainAddressWallet5
+from . import ClosingDate4Choice
+from . import CollateralAccount3
+from . import CollateralRole1Code
+from . import CollateralTransactionType1Choice
+from . import DateAndDateTime2Choice
+from . import ExposureType21Choice
+from . import GenericIdentification30
+from . import PartyIdentification178Choice
 
 class Obligation8(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class Obligation8(base_types._BaseFieldType):
 
 	@BlckChainAdrOrWllt.setter
 	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
+		self._BlckChainAdrOrWllt = value if value is not None else base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet5, False)
 
 	@BlckChainAdrOrWllt.deleter
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+		self._BlckChainAdrOrWllt = base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet5, False)
 
 	@property
 	def ClsgDt(self):
@@ -35,12 +35,12 @@ class Obligation8(base_types._BaseFieldType):
 
 	@ClsgDt.setter
 	def ClsgDt(self, value):
-		self._ClsgDt = value if type(value) != base_types.auto else self.make_default("ClsgDt")
+		self._ClsgDt = value if value is not None else base_types.UninitialisedField(self, 'ClsgDt', ClosingDate4Choice, False)
 
 	@ClsgDt.deleter
 	def ClsgDt(self):
 		del self._ClsgDt
-		self._ClsgDt = None
+		self._ClsgDt = base_types.UninitialisedField(self, 'ClsgDt', ClosingDate4Choice, False)
 
 	@property
 	def CollAcctId(self):
@@ -48,12 +48,12 @@ class Obligation8(base_types._BaseFieldType):
 
 	@CollAcctId.setter
 	def CollAcctId(self, value):
-		self._CollAcctId = value if type(value) != base_types.auto else self.make_default("CollAcctId")
+		self._CollAcctId = value if value is not None else base_types.UninitialisedField(self, 'CollAcctId', CollateralAccount3, False)
 
 	@CollAcctId.deleter
 	def CollAcctId(self):
 		del self._CollAcctId
-		self._CollAcctId = None
+		self._CollAcctId = base_types.UninitialisedField(self, 'CollAcctId', CollateralAccount3, False)
 
 	@property
 	def CollSd(self):
@@ -61,12 +61,12 @@ class Obligation8(base_types._BaseFieldType):
 
 	@CollSd.setter
 	def CollSd(self, value):
-		self._CollSd = value if type(value) != base_types.auto else self.make_default("CollSd")
+		self._CollSd = value if value is not None else base_types.UninitialisedField(self, 'CollSd', CollateralRole1Code, False)
 
 	@CollSd.deleter
 	def CollSd(self):
 		del self._CollSd
-		self._CollSd = None
+		self._CollSd = base_types.UninitialisedField(self, 'CollSd', CollateralRole1Code, False)
 
 	@property
 	def CollTxTp(self):
@@ -74,12 +74,12 @@ class Obligation8(base_types._BaseFieldType):
 
 	@CollTxTp.setter
 	def CollTxTp(self, value):
-		self._CollTxTp = value if type(value) != base_types.auto else self.make_default("CollTxTp")
+		self._CollTxTp = value if value is not None else base_types.UninitialisedField(self, 'CollTxTp', CollateralTransactionType1Choice, False)
 
 	@CollTxTp.deleter
 	def CollTxTp(self):
 		del self._CollTxTp
-		self._CollTxTp = None
+		self._CollTxTp = base_types.UninitialisedField(self, 'CollTxTp', CollateralTransactionType1Choice, False)
 
 	@property
 	def PtyA(self):
@@ -87,12 +87,12 @@ class Obligation8(base_types._BaseFieldType):
 
 	@PtyA.setter
 	def PtyA(self, value):
-		self._PtyA = value if type(value) != base_types.auto else self.make_default("PtyA")
+		self._PtyA = value if value is not None else base_types.UninitialisedField(self, 'PtyA', PartyIdentification178Choice, False)
 
 	@PtyA.deleter
 	def PtyA(self):
 		del self._PtyA
-		self._PtyA = None
+		self._PtyA = base_types.UninitialisedField(self, 'PtyA', PartyIdentification178Choice, False)
 
 	@property
 	def PtyB(self):
@@ -100,12 +100,12 @@ class Obligation8(base_types._BaseFieldType):
 
 	@PtyB.setter
 	def PtyB(self, value):
-		self._PtyB = value if type(value) != base_types.auto else self.make_default("PtyB")
+		self._PtyB = value if value is not None else base_types.UninitialisedField(self, 'PtyB', PartyIdentification178Choice, False)
 
 	@PtyB.deleter
 	def PtyB(self):
 		del self._PtyB
-		self._PtyB = None
+		self._PtyB = base_types.UninitialisedField(self, 'PtyB', PartyIdentification178Choice, False)
 
 	@property
 	def ReqdExctnDt(self):
@@ -113,12 +113,12 @@ class Obligation8(base_types._BaseFieldType):
 
 	@ReqdExctnDt.setter
 	def ReqdExctnDt(self, value):
-		self._ReqdExctnDt = value if type(value) != base_types.auto else self.make_default("ReqdExctnDt")
+		self._ReqdExctnDt = value if value is not None else base_types.UninitialisedField(self, 'ReqdExctnDt', DateAndDateTime2Choice, False)
 
 	@ReqdExctnDt.deleter
 	def ReqdExctnDt(self):
 		del self._ReqdExctnDt
-		self._ReqdExctnDt = None
+		self._ReqdExctnDt = base_types.UninitialisedField(self, 'ReqdExctnDt', DateAndDateTime2Choice, False)
 
 	@property
 	def SttlmPrc(self):
@@ -126,12 +126,12 @@ class Obligation8(base_types._BaseFieldType):
 
 	@SttlmPrc.setter
 	def SttlmPrc(self, value):
-		self._SttlmPrc = value if type(value) != base_types.auto else self.make_default("SttlmPrc")
+		self._SttlmPrc = value if value is not None else base_types.UninitialisedField(self, 'SttlmPrc', GenericIdentification30, False)
 
 	@SttlmPrc.deleter
 	def SttlmPrc(self):
 		del self._SttlmPrc
-		self._SttlmPrc = None
+		self._SttlmPrc = base_types.UninitialisedField(self, 'SttlmPrc', GenericIdentification30, False)
 
 	@property
 	def SvcgPtyA(self):
@@ -139,12 +139,12 @@ class Obligation8(base_types._BaseFieldType):
 
 	@SvcgPtyA.setter
 	def SvcgPtyA(self, value):
-		self._SvcgPtyA = value if type(value) != base_types.auto else self.make_default("SvcgPtyA")
+		self._SvcgPtyA = value if value is not None else base_types.UninitialisedField(self, 'SvcgPtyA', PartyIdentification178Choice, False)
 
 	@SvcgPtyA.deleter
 	def SvcgPtyA(self):
 		del self._SvcgPtyA
-		self._SvcgPtyA = None
+		self._SvcgPtyA = base_types.UninitialisedField(self, 'SvcgPtyA', PartyIdentification178Choice, False)
 
 	@property
 	def SvcgPtyB(self):
@@ -152,12 +152,12 @@ class Obligation8(base_types._BaseFieldType):
 
 	@SvcgPtyB.setter
 	def SvcgPtyB(self, value):
-		self._SvcgPtyB = value if type(value) != base_types.auto else self.make_default("SvcgPtyB")
+		self._SvcgPtyB = value if value is not None else base_types.UninitialisedField(self, 'SvcgPtyB', PartyIdentification178Choice, False)
 
 	@SvcgPtyB.deleter
 	def SvcgPtyB(self):
 		del self._SvcgPtyB
-		self._SvcgPtyB = None
+		self._SvcgPtyB = base_types.UninitialisedField(self, 'SvcgPtyB', PartyIdentification178Choice, False)
 
 	@property
 	def ValtnDt(self):
@@ -165,12 +165,12 @@ class Obligation8(base_types._BaseFieldType):
 
 	@ValtnDt.setter
 	def ValtnDt(self, value):
-		self._ValtnDt = value if type(value) != base_types.auto else self.make_default("ValtnDt")
+		self._ValtnDt = value if value is not None else base_types.UninitialisedField(self, 'ValtnDt', DateAndDateTime2Choice, False)
 
 	@ValtnDt.deleter
 	def ValtnDt(self):
 		del self._ValtnDt
-		self._ValtnDt = None
+		self._ValtnDt = base_types.UninitialisedField(self, 'ValtnDt', DateAndDateTime2Choice, False)
 
 	@property
 	def XpsrAmt(self):
@@ -178,12 +178,12 @@ class Obligation8(base_types._BaseFieldType):
 
 	@XpsrAmt.setter
 	def XpsrAmt(self, value):
-		self._XpsrAmt = value if type(value) != base_types.auto else self.make_default("XpsrAmt")
+		self._XpsrAmt = value if value is not None else base_types.UninitialisedField(self, 'XpsrAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@XpsrAmt.deleter
 	def XpsrAmt(self):
 		del self._XpsrAmt
-		self._XpsrAmt = None
+		self._XpsrAmt = base_types.UninitialisedField(self, 'XpsrAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def XpsrTp(self):
@@ -191,12 +191,12 @@ class Obligation8(base_types._BaseFieldType):
 
 	@XpsrTp.setter
 	def XpsrTp(self, value):
-		self._XpsrTp = value if type(value) != base_types.auto else self.make_default("XpsrTp")
+		self._XpsrTp = value if value is not None else base_types.UninitialisedField(self, 'XpsrTp', ExposureType21Choice, False)
 
 	@XpsrTp.deleter
 	def XpsrTp(self):
 		del self._XpsrTp
-		self._XpsrTp = None
+		self._XpsrTp = base_types.UninitialisedField(self, 'XpsrTp', ExposureType21Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet5, min=0, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection106 import AmountAndDirection106
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._TradeTransactionIdentification24 import TradeTransactionIdentification24
+from . import AmountAndDirection106
+from . import DateAndDateTime2Choice
+from . import TradeTransactionIdentification24
 
 class MissingValuationsTransactionData2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class MissingValuationsTransactionData2(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', TradeTransactionIdentification24, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', TradeTransactionIdentification24, False)
 
 	@property
 	def ValtnAmt(self):
@@ -28,12 +28,12 @@ class MissingValuationsTransactionData2(base_types._BaseFieldType):
 
 	@ValtnAmt.setter
 	def ValtnAmt(self, value):
-		self._ValtnAmt = value if type(value) != base_types.auto else self.make_default("ValtnAmt")
+		self._ValtnAmt = value if value is not None else base_types.UninitialisedField(self, 'ValtnAmt', AmountAndDirection106, False)
 
 	@ValtnAmt.deleter
 	def ValtnAmt(self):
 		del self._ValtnAmt
-		self._ValtnAmt = None
+		self._ValtnAmt = base_types.UninitialisedField(self, 'ValtnAmt', AmountAndDirection106, False)
 
 	@property
 	def ValtnTmStmp(self):
@@ -41,12 +41,12 @@ class MissingValuationsTransactionData2(base_types._BaseFieldType):
 
 	@ValtnTmStmp.setter
 	def ValtnTmStmp(self, value):
-		self._ValtnTmStmp = value if type(value) != base_types.auto else self.make_default("ValtnTmStmp")
+		self._ValtnTmStmp = value if value is not None else base_types.UninitialisedField(self, 'ValtnTmStmp', DateAndDateTime2Choice, False)
 
 	@ValtnTmStmp.deleter
 	def ValtnTmStmp(self):
 		del self._ValtnTmStmp
-		self._ValtnTmStmp = None
+		self._ValtnTmStmp = base_types.UninitialisedField(self, 'ValtnTmStmp', DateAndDateTime2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TxId', type=TradeTransactionIdentification24, min=1, max=1, mutex_group=None, array=False),

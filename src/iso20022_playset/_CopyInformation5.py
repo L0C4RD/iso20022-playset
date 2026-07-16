@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
-from ._YesNoIndicator import YesNoIndicator
+from . import AnyBICDec2014Identifier
+from . import YesNoIndicator
 
 class CopyInformation5(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CopyInformation5(base_types._BaseFieldType):
 
 	@CpyInd.setter
 	def CpyInd(self, value):
-		self._CpyInd = value if type(value) != base_types.auto else self.make_default("CpyInd")
+		self._CpyInd = value if value is not None else base_types.UninitialisedField(self, 'CpyInd', YesNoIndicator, False)
 
 	@CpyInd.deleter
 	def CpyInd(self):
 		del self._CpyInd
-		self._CpyInd = None
+		self._CpyInd = base_types.UninitialisedField(self, 'CpyInd', YesNoIndicator, False)
 
 	@property
 	def OrgnlRcvr(self):
@@ -27,12 +27,12 @@ class CopyInformation5(base_types._BaseFieldType):
 
 	@OrgnlRcvr.setter
 	def OrgnlRcvr(self, value):
-		self._OrgnlRcvr = value if type(value) != base_types.auto else self.make_default("OrgnlRcvr")
+		self._OrgnlRcvr = value if value is not None else base_types.UninitialisedField(self, 'OrgnlRcvr', AnyBICDec2014Identifier, False)
 
 	@OrgnlRcvr.deleter
 	def OrgnlRcvr(self):
 		del self._OrgnlRcvr
-		self._OrgnlRcvr = None
+		self._OrgnlRcvr = base_types.UninitialisedField(self, 'OrgnlRcvr', AnyBICDec2014Identifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CpyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),

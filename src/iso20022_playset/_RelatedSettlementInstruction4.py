@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._UTIIdentifier import UTIIdentifier
+from . import Max35Text
+from . import UTIIdentifier
 
 class RelatedSettlementInstruction4(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class RelatedSettlementInstruction4(base_types._BaseFieldType):
 
 	@MktInfrstrctrTxId.setter
 	def MktInfrstrctrTxId(self, value):
-		self._MktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("MktInfrstrctrTxId")
+		self._MktInfrstrctrTxId = value if value is not None else base_types.UninitialisedField(self, 'MktInfrstrctrTxId', Max35Text, False)
 
 	@MktInfrstrctrTxId.deleter
 	def MktInfrstrctrTxId(self):
 		del self._MktInfrstrctrTxId
-		self._MktInfrstrctrTxId = None
+		self._MktInfrstrctrTxId = base_types.UninitialisedField(self, 'MktInfrstrctrTxId', Max35Text, False)
 
 	@property
 	def PrcrTxId(self):
@@ -27,12 +27,12 @@ class RelatedSettlementInstruction4(base_types._BaseFieldType):
 
 	@PrcrTxId.setter
 	def PrcrTxId(self, value):
-		self._PrcrTxId = value if type(value) != base_types.auto else self.make_default("PrcrTxId")
+		self._PrcrTxId = value if value is not None else base_types.UninitialisedField(self, 'PrcrTxId', Max35Text, False)
 
 	@PrcrTxId.deleter
 	def PrcrTxId(self):
 		del self._PrcrTxId
-		self._PrcrTxId = None
+		self._PrcrTxId = base_types.UninitialisedField(self, 'PrcrTxId', Max35Text, False)
 
 	@property
 	def RltdSttlmInstrId(self):
@@ -40,12 +40,12 @@ class RelatedSettlementInstruction4(base_types._BaseFieldType):
 
 	@RltdSttlmInstrId.setter
 	def RltdSttlmInstrId(self, value):
-		self._RltdSttlmInstrId = value if type(value) != base_types.auto else self.make_default("RltdSttlmInstrId")
+		self._RltdSttlmInstrId = value if value is not None else base_types.UninitialisedField(self, 'RltdSttlmInstrId', Max35Text, False)
 
 	@RltdSttlmInstrId.deleter
 	def RltdSttlmInstrId(self):
 		del self._RltdSttlmInstrId
-		self._RltdSttlmInstrId = None
+		self._RltdSttlmInstrId = base_types.UninitialisedField(self, 'RltdSttlmInstrId', Max35Text, False)
 
 	@property
 	def UnqTxIdr(self):
@@ -53,12 +53,12 @@ class RelatedSettlementInstruction4(base_types._BaseFieldType):
 
 	@UnqTxIdr.setter
 	def UnqTxIdr(self, value):
-		self._UnqTxIdr = value if type(value) != base_types.auto else self.make_default("UnqTxIdr")
+		self._UnqTxIdr = value if value is not None else base_types.UninitialisedField(self, 'UnqTxIdr', UTIIdentifier, False)
 
 	@UnqTxIdr.deleter
 	def UnqTxIdr(self):
 		del self._UnqTxIdr
-		self._UnqTxIdr = None
+		self._UnqTxIdr = base_types.UninitialisedField(self, 'UnqTxIdr', UTIIdentifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MktInfrstrctrTxId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

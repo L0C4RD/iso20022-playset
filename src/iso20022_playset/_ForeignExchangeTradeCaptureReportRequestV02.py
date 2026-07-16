@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35NumericText import Max35NumericText
-from ._Max35Text import Max35Text
-from ._MessageIdentification1 import MessageIdentification1
-from ._Period12 import Period12
-from ._QueryDataType1Code import QueryDataType1Code
-from ._QueryOrderStatus1Code import QueryOrderStatus1Code
-from ._SupplementaryData1 import SupplementaryData1
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import Max35NumericText
+from . import Max35Text
+from . import MessageIdentification1
+from . import Period12
+from . import QueryDataType1Code
+from . import QueryOrderStatus1Code
+from . import SupplementaryData1
+from . import TrueFalseIndicator
 
 class ForeignExchangeTradeCaptureReportRequestV02(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class ForeignExchangeTradeCaptureReportRequestV02(base_types._BaseFieldType):
 
 	@QryByPrd.setter
 	def QryByPrd(self, value):
-		self._QryByPrd = value if type(value) != base_types.auto else self.make_default("QryByPrd")
+		self._QryByPrd = value if value is not None else base_types.UninitialisedField(self, 'QryByPrd', TrueFalseIndicator, False)
 
 	@QryByPrd.deleter
 	def QryByPrd(self):
 		del self._QryByPrd
-		self._QryByPrd = None
+		self._QryByPrd = base_types.UninitialisedField(self, 'QryByPrd', TrueFalseIndicator, False)
 
 	@property
 	def QryEndId(self):
@@ -33,12 +33,12 @@ class ForeignExchangeTradeCaptureReportRequestV02(base_types._BaseFieldType):
 
 	@QryEndId.setter
 	def QryEndId(self, value):
-		self._QryEndId = value if type(value) != base_types.auto else self.make_default("QryEndId")
+		self._QryEndId = value if value is not None else base_types.UninitialisedField(self, 'QryEndId', Max35Text, False)
 
 	@QryEndId.deleter
 	def QryEndId(self):
 		del self._QryEndId
-		self._QryEndId = None
+		self._QryEndId = base_types.UninitialisedField(self, 'QryEndId', Max35Text, False)
 
 	@property
 	def QryOrdrSts(self):
@@ -46,12 +46,12 @@ class ForeignExchangeTradeCaptureReportRequestV02(base_types._BaseFieldType):
 
 	@QryOrdrSts.setter
 	def QryOrdrSts(self, value):
-		self._QryOrdrSts = value if type(value) != base_types.auto else self.make_default("QryOrdrSts")
+		self._QryOrdrSts = value if value is not None else base_types.UninitialisedField(self, 'QryOrdrSts', QueryOrderStatus1Code, False)
 
 	@QryOrdrSts.deleter
 	def QryOrdrSts(self):
 		del self._QryOrdrSts
-		self._QryOrdrSts = None
+		self._QryOrdrSts = base_types.UninitialisedField(self, 'QryOrdrSts', QueryOrderStatus1Code, False)
 
 	@property
 	def QryParamVal(self):
@@ -59,12 +59,12 @@ class ForeignExchangeTradeCaptureReportRequestV02(base_types._BaseFieldType):
 
 	@QryParamVal.setter
 	def QryParamVal(self, value):
-		self._QryParamVal = value if type(value) != base_types.auto else self.make_default("QryParamVal")
+		self._QryParamVal = value if value is not None else base_types.UninitialisedField(self, 'QryParamVal', Max35Text, False)
 
 	@QryParamVal.deleter
 	def QryParamVal(self):
 		del self._QryParamVal
-		self._QryParamVal = None
+		self._QryParamVal = base_types.UninitialisedField(self, 'QryParamVal', Max35Text, False)
 
 	@property
 	def QryPgSz(self):
@@ -72,12 +72,12 @@ class ForeignExchangeTradeCaptureReportRequestV02(base_types._BaseFieldType):
 
 	@QryPgSz.setter
 	def QryPgSz(self, value):
-		self._QryPgSz = value if type(value) != base_types.auto else self.make_default("QryPgSz")
+		self._QryPgSz = value if value is not None else base_types.UninitialisedField(self, 'QryPgSz', Max35NumericText, False)
 
 	@QryPgSz.deleter
 	def QryPgSz(self):
 		del self._QryPgSz
-		self._QryPgSz = None
+		self._QryPgSz = base_types.UninitialisedField(self, 'QryPgSz', Max35NumericText, False)
 
 	@property
 	def QryPrd(self):
@@ -85,12 +85,12 @@ class ForeignExchangeTradeCaptureReportRequestV02(base_types._BaseFieldType):
 
 	@QryPrd.setter
 	def QryPrd(self, value):
-		self._QryPrd = value if type(value) != base_types.auto else self.make_default("QryPrd")
+		self._QryPrd = value if value is not None else base_types.UninitialisedField(self, 'QryPrd', Period12, False)
 
 	@QryPrd.deleter
 	def QryPrd(self):
 		del self._QryPrd
-		self._QryPrd = None
+		self._QryPrd = base_types.UninitialisedField(self, 'QryPrd', Period12, False)
 
 	@property
 	def QryReqId(self):
@@ -98,12 +98,12 @@ class ForeignExchangeTradeCaptureReportRequestV02(base_types._BaseFieldType):
 
 	@QryReqId.setter
 	def QryReqId(self, value):
-		self._QryReqId = value if type(value) != base_types.auto else self.make_default("QryReqId")
+		self._QryReqId = value if value is not None else base_types.UninitialisedField(self, 'QryReqId', MessageIdentification1, False)
 
 	@QryReqId.deleter
 	def QryReqId(self):
 		del self._QryReqId
-		self._QryReqId = None
+		self._QryReqId = base_types.UninitialisedField(self, 'QryReqId', MessageIdentification1, False)
 
 	@property
 	def QryStartNb(self):
@@ -111,12 +111,12 @@ class ForeignExchangeTradeCaptureReportRequestV02(base_types._BaseFieldType):
 
 	@QryStartNb.setter
 	def QryStartNb(self, value):
-		self._QryStartNb = value if type(value) != base_types.auto else self.make_default("QryStartNb")
+		self._QryStartNb = value if value is not None else base_types.UninitialisedField(self, 'QryStartNb', Max35NumericText, False)
 
 	@QryStartNb.deleter
 	def QryStartNb(self):
 		del self._QryStartNb
-		self._QryStartNb = None
+		self._QryStartNb = base_types.UninitialisedField(self, 'QryStartNb', Max35NumericText, False)
 
 	@property
 	def QryTp(self):
@@ -124,12 +124,12 @@ class ForeignExchangeTradeCaptureReportRequestV02(base_types._BaseFieldType):
 
 	@QryTp.setter
 	def QryTp(self, value):
-		self._QryTp = value if type(value) != base_types.auto else self.make_default("QryTp")
+		self._QryTp = value if value is not None else base_types.UninitialisedField(self, 'QryTp', QueryDataType1Code, False)
 
 	@QryTp.deleter
 	def QryTp(self):
 		del self._QryTp
-		self._QryTp = None
+		self._QryTp = base_types.UninitialisedField(self, 'QryTp', QueryDataType1Code, False)
 
 	@property
 	def QryTradId(self):
@@ -137,12 +137,12 @@ class ForeignExchangeTradeCaptureReportRequestV02(base_types._BaseFieldType):
 
 	@QryTradId.setter
 	def QryTradId(self, value):
-		self._QryTradId = value if type(value) != base_types.auto else self.make_default("QryTradId")
+		self._QryTradId = value if value is not None else base_types.UninitialisedField(self, 'QryTradId', Max35Text, False)
 
 	@QryTradId.deleter
 	def QryTradId(self):
 		del self._QryTradId
-		self._QryTradId = None
+		self._QryTradId = base_types.UninitialisedField(self, 'QryTradId', Max35Text, False)
 
 	@property
 	def SplmtryData(self):
@@ -150,12 +150,12 @@ class ForeignExchangeTradeCaptureReportRequestV02(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='QryByPrd', type=TrueFalseIndicator, min=1, max=1, mutex_group=None, array=False),

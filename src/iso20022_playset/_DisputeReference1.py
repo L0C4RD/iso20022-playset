@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DisputeIdentification1 import DisputeIdentification1
-from ._Max35Text import Max35Text
-from ._PartyType32Code import PartyType32Code
+from . import DisputeIdentification1
+from . import Max35Text
+from . import PartyType32Code
 
 class DisputeReference1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class DisputeReference1(base_types._BaseFieldType):
 
 	@AssgnrNtty.setter
 	def AssgnrNtty(self, value):
-		self._AssgnrNtty = value if type(value) != base_types.auto else self.make_default("AssgnrNtty")
+		self._AssgnrNtty = value if value is not None else base_types.UninitialisedField(self, 'AssgnrNtty', PartyType32Code, False)
 
 	@AssgnrNtty.deleter
 	def AssgnrNtty(self):
 		del self._AssgnrNtty
-		self._AssgnrNtty = None
+		self._AssgnrNtty = base_types.UninitialisedField(self, 'AssgnrNtty', PartyType32Code, False)
 
 	@property
 	def DsptId(self):
@@ -28,12 +28,12 @@ class DisputeReference1(base_types._BaseFieldType):
 
 	@DsptId.setter
 	def DsptId(self, value):
-		self._DsptId = value if type(value) != base_types.auto else self.make_default("DsptId")
+		self._DsptId = value if value is not None else base_types.UninitialisedField(self, 'DsptId', DisputeIdentification1, True)
 
 	@DsptId.deleter
 	def DsptId(self):
 		del self._DsptId
-		self._DsptId = None
+		self._DsptId = base_types.UninitialisedField(self, 'DsptId', DisputeIdentification1, True)
 
 	@property
 	def OthrAssgnrNtty(self):
@@ -41,12 +41,12 @@ class DisputeReference1(base_types._BaseFieldType):
 
 	@OthrAssgnrNtty.setter
 	def OthrAssgnrNtty(self, value):
-		self._OthrAssgnrNtty = value if type(value) != base_types.auto else self.make_default("OthrAssgnrNtty")
+		self._OthrAssgnrNtty = value if value is not None else base_types.UninitialisedField(self, 'OthrAssgnrNtty', Max35Text, False)
 
 	@OthrAssgnrNtty.deleter
 	def OthrAssgnrNtty(self):
 		del self._OthrAssgnrNtty
-		self._OthrAssgnrNtty = None
+		self._OthrAssgnrNtty = base_types.UninitialisedField(self, 'OthrAssgnrNtty', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AssgnrNtty', type=PartyType32Code, min=0, max=1, mutex_group=None, array=False),

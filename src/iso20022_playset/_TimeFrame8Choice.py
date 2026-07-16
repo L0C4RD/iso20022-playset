@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Number import Number
+from . import Number
 
 class TimeFrame8Choice(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class TimeFrame8Choice(base_types._BaseFieldType):
 
 	@RPlus.setter
 	def RPlus(self, value):
-		self._RPlus = value if type(value) != base_types.auto else self.make_default("RPlus")
+		self._RPlus = value if value is not None else base_types.UninitialisedField(self, 'RPlus', Number, False)
 
 	@RPlus.deleter
 	def RPlus(self):
 		del self._RPlus
-		self._RPlus = None
+		self._RPlus = base_types.UninitialisedField(self, 'RPlus', Number, False)
 
 	@property
 	def TPlus(self):
@@ -26,12 +26,12 @@ class TimeFrame8Choice(base_types._BaseFieldType):
 
 	@TPlus.setter
 	def TPlus(self, value):
-		self._TPlus = value if type(value) != base_types.auto else self.make_default("TPlus")
+		self._TPlus = value if value is not None else base_types.UninitialisedField(self, 'TPlus', Number, False)
 
 	@TPlus.deleter
 	def TPlus(self):
 		del self._TPlus
-		self._TPlus = None
+		self._TPlus = base_types.UninitialisedField(self, 'TPlus', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RPlus', type=Number, min=0, max=1, mutex_group=1, array=False),

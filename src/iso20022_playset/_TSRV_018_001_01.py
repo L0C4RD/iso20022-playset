@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._TradeStatusReportV01 import TradeStatusReportV01
+from . import TradeStatusReportV01
 
 class TSRV_018_001_01():
 
@@ -18,12 +18,12 @@ class TSRV_018_001_01():
 
 		@TradStsRpt.setter
 		def TradStsRpt(self, value):
-			self._TradStsRpt = value if type(value) != base_types.auto else self.make_default("TradStsRpt")
+			self._TradStsRpt = value if value is not None else base_types.UninitialisedField(self, 'TradStsRpt', TradeStatusReportV01, False)
 
 		@TradStsRpt.deleter
 		def TradStsRpt(self):
 			del self._TradStsRpt
-			self._TradStsRpt = None
+			self._TradStsRpt = base_types.UninitialisedField(self, 'TradStsRpt', TradeStatusReportV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='TradStsRpt', type=TradeStatusReportV01, min=1, max=1, mutex_group=None, array=False),

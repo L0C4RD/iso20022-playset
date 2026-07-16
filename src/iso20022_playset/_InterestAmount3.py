@@ -2,19 +2,19 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._CalculationMethod1Code import CalculationMethod1Code
-from ._CollateralBalance1 import CollateralBalance1
-from ._CollateralPurpose1Choice import CollateralPurpose1Choice
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._DatePeriod2 import DatePeriod2
-from ._Frequency1Code import Frequency1Code
-from ._InterestComputationMethod2Code import InterestComputationMethod2Code
-from ._InterestMethod1Code import InterestMethod1Code
-from ._InterestRate1Choice import InterestRate1Choice
-from ._Max140Text import Max140Text
-from ._Max210Text import Max210Text
-from ._YesNoIndicator import YesNoIndicator
+from . import ActiveCurrencyAndAmount
+from . import CalculationMethod1Code
+from . import CollateralBalance1
+from . import CollateralPurpose1Choice
+from . import DateAndDateTime2Choice
+from . import DatePeriod2
+from . import Frequency1Code
+from . import InterestComputationMethod2Code
+from . import InterestMethod1Code
+from . import InterestRate1Choice
+from . import Max140Text
+from . import Max210Text
+from . import YesNoIndicator
 
 class InterestAmount3(base_types._BaseFieldType):
 
@@ -25,12 +25,12 @@ class InterestAmount3(base_types._BaseFieldType):
 
 	@AcrdIntrstAmt.setter
 	def AcrdIntrstAmt(self, value):
-		self._AcrdIntrstAmt = value if type(value) != base_types.auto else self.make_default("AcrdIntrstAmt")
+		self._AcrdIntrstAmt = value if value is not None else base_types.UninitialisedField(self, 'AcrdIntrstAmt', ActiveCurrencyAndAmount, False)
 
 	@AcrdIntrstAmt.deleter
 	def AcrdIntrstAmt(self):
 		del self._AcrdIntrstAmt
-		self._AcrdIntrstAmt = None
+		self._AcrdIntrstAmt = base_types.UninitialisedField(self, 'AcrdIntrstAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def AddtlInf(self):
@@ -38,12 +38,12 @@ class InterestAmount3(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max210Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max210Text, False)
 
 	@property
 	def ApldWhldgTax(self):
@@ -51,12 +51,12 @@ class InterestAmount3(base_types._BaseFieldType):
 
 	@ApldWhldgTax.setter
 	def ApldWhldgTax(self, value):
-		self._ApldWhldgTax = value if type(value) != base_types.auto else self.make_default("ApldWhldgTax")
+		self._ApldWhldgTax = value if value is not None else base_types.UninitialisedField(self, 'ApldWhldgTax', YesNoIndicator, False)
 
 	@ApldWhldgTax.deleter
 	def ApldWhldgTax(self):
 		del self._ApldWhldgTax
-		self._ApldWhldgTax = None
+		self._ApldWhldgTax = base_types.UninitialisedField(self, 'ApldWhldgTax', YesNoIndicator, False)
 
 	@property
 	def ClctnFrqcy(self):
@@ -64,12 +64,12 @@ class InterestAmount3(base_types._BaseFieldType):
 
 	@ClctnFrqcy.setter
 	def ClctnFrqcy(self, value):
-		self._ClctnFrqcy = value if type(value) != base_types.auto else self.make_default("ClctnFrqcy")
+		self._ClctnFrqcy = value if value is not None else base_types.UninitialisedField(self, 'ClctnFrqcy', Frequency1Code, False)
 
 	@ClctnFrqcy.deleter
 	def ClctnFrqcy(self):
 		del self._ClctnFrqcy
-		self._ClctnFrqcy = None
+		self._ClctnFrqcy = base_types.UninitialisedField(self, 'ClctnFrqcy', Frequency1Code, False)
 
 	@property
 	def ClctnMtd(self):
@@ -77,12 +77,12 @@ class InterestAmount3(base_types._BaseFieldType):
 
 	@ClctnMtd.setter
 	def ClctnMtd(self, value):
-		self._ClctnMtd = value if type(value) != base_types.auto else self.make_default("ClctnMtd")
+		self._ClctnMtd = value if value is not None else base_types.UninitialisedField(self, 'ClctnMtd', CalculationMethod1Code, False)
 
 	@ClctnMtd.deleter
 	def ClctnMtd(self):
 		del self._ClctnMtd
-		self._ClctnMtd = None
+		self._ClctnMtd = base_types.UninitialisedField(self, 'ClctnMtd', CalculationMethod1Code, False)
 
 	@property
 	def ClsgCollBal(self):
@@ -90,12 +90,12 @@ class InterestAmount3(base_types._BaseFieldType):
 
 	@ClsgCollBal.setter
 	def ClsgCollBal(self, value):
-		self._ClsgCollBal = value if type(value) != base_types.auto else self.make_default("ClsgCollBal")
+		self._ClsgCollBal = value if value is not None else base_types.UninitialisedField(self, 'ClsgCollBal', CollateralBalance1, False)
 
 	@ClsgCollBal.deleter
 	def ClsgCollBal(self):
 		del self._ClsgCollBal
-		self._ClsgCollBal = None
+		self._ClsgCollBal = base_types.UninitialisedField(self, 'ClsgCollBal', CollateralBalance1, False)
 
 	@property
 	def CollPurp(self):
@@ -103,12 +103,12 @@ class InterestAmount3(base_types._BaseFieldType):
 
 	@CollPurp.setter
 	def CollPurp(self, value):
-		self._CollPurp = value if type(value) != base_types.auto else self.make_default("CollPurp")
+		self._CollPurp = value if value is not None else base_types.UninitialisedField(self, 'CollPurp', CollateralPurpose1Choice, False)
 
 	@CollPurp.deleter
 	def CollPurp(self):
 		del self._CollPurp
-		self._CollPurp = None
+		self._CollPurp = base_types.UninitialisedField(self, 'CollPurp', CollateralPurpose1Choice, False)
 
 	@property
 	def DayCntBsis(self):
@@ -116,12 +116,12 @@ class InterestAmount3(base_types._BaseFieldType):
 
 	@DayCntBsis.setter
 	def DayCntBsis(self, value):
-		self._DayCntBsis = value if type(value) != base_types.auto else self.make_default("DayCntBsis")
+		self._DayCntBsis = value if value is not None else base_types.UninitialisedField(self, 'DayCntBsis', InterestComputationMethod2Code, False)
 
 	@DayCntBsis.deleter
 	def DayCntBsis(self):
 		del self._DayCntBsis
-		self._DayCntBsis = None
+		self._DayCntBsis = base_types.UninitialisedField(self, 'DayCntBsis', InterestComputationMethod2Code, False)
 
 	@property
 	def IntrstMtd(self):
@@ -129,12 +129,12 @@ class InterestAmount3(base_types._BaseFieldType):
 
 	@IntrstMtd.setter
 	def IntrstMtd(self, value):
-		self._IntrstMtd = value if type(value) != base_types.auto else self.make_default("IntrstMtd")
+		self._IntrstMtd = value if value is not None else base_types.UninitialisedField(self, 'IntrstMtd', InterestMethod1Code, False)
 
 	@IntrstMtd.deleter
 	def IntrstMtd(self):
 		del self._IntrstMtd
-		self._IntrstMtd = None
+		self._IntrstMtd = base_types.UninitialisedField(self, 'IntrstMtd', InterestMethod1Code, False)
 
 	@property
 	def IntrstPrd(self):
@@ -142,12 +142,12 @@ class InterestAmount3(base_types._BaseFieldType):
 
 	@IntrstPrd.setter
 	def IntrstPrd(self, value):
-		self._IntrstPrd = value if type(value) != base_types.auto else self.make_default("IntrstPrd")
+		self._IntrstPrd = value if value is not None else base_types.UninitialisedField(self, 'IntrstPrd', DatePeriod2, False)
 
 	@IntrstPrd.deleter
 	def IntrstPrd(self):
 		del self._IntrstPrd
-		self._IntrstPrd = None
+		self._IntrstPrd = base_types.UninitialisedField(self, 'IntrstPrd', DatePeriod2, False)
 
 	@property
 	def IntrstRate(self):
@@ -155,12 +155,12 @@ class InterestAmount3(base_types._BaseFieldType):
 
 	@IntrstRate.setter
 	def IntrstRate(self, value):
-		self._IntrstRate = value if type(value) != base_types.auto else self.make_default("IntrstRate")
+		self._IntrstRate = value if value is not None else base_types.UninitialisedField(self, 'IntrstRate', InterestRate1Choice, False)
 
 	@IntrstRate.deleter
 	def IntrstRate(self):
 		del self._IntrstRate
-		self._IntrstRate = None
+		self._IntrstRate = base_types.UninitialisedField(self, 'IntrstRate', InterestRate1Choice, False)
 
 	@property
 	def OpngCollBal(self):
@@ -168,12 +168,12 @@ class InterestAmount3(base_types._BaseFieldType):
 
 	@OpngCollBal.setter
 	def OpngCollBal(self, value):
-		self._OpngCollBal = value if type(value) != base_types.auto else self.make_default("OpngCollBal")
+		self._OpngCollBal = value if value is not None else base_types.UninitialisedField(self, 'OpngCollBal', CollateralBalance1, False)
 
 	@OpngCollBal.deleter
 	def OpngCollBal(self):
 		del self._OpngCollBal
-		self._OpngCollBal = None
+		self._OpngCollBal = base_types.UninitialisedField(self, 'OpngCollBal', CollateralBalance1, False)
 
 	@property
 	def StdSttlmInstrs(self):
@@ -181,12 +181,12 @@ class InterestAmount3(base_types._BaseFieldType):
 
 	@StdSttlmInstrs.setter
 	def StdSttlmInstrs(self, value):
-		self._StdSttlmInstrs = value if type(value) != base_types.auto else self.make_default("StdSttlmInstrs")
+		self._StdSttlmInstrs = value if value is not None else base_types.UninitialisedField(self, 'StdSttlmInstrs', Max140Text, False)
 
 	@StdSttlmInstrs.deleter
 	def StdSttlmInstrs(self):
 		del self._StdSttlmInstrs
-		self._StdSttlmInstrs = None
+		self._StdSttlmInstrs = base_types.UninitialisedField(self, 'StdSttlmInstrs', Max140Text, False)
 
 	@property
 	def ValDt(self):
@@ -194,12 +194,12 @@ class InterestAmount3(base_types._BaseFieldType):
 
 	@ValDt.setter
 	def ValDt(self, value):
-		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
+		self._ValDt = value if value is not None else base_types.UninitialisedField(self, 'ValDt', DateAndDateTime2Choice, False)
 
 	@ValDt.deleter
 	def ValDt(self):
 		del self._ValDt
-		self._ValDt = None
+		self._ValDt = base_types.UninitialisedField(self, 'ValDt', DateAndDateTime2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcrdIntrstAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

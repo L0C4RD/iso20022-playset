@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max2048Text import Max2048Text
-from ._PartyIdentification129Choice import PartyIdentification129Choice
+from . import Max2048Text
+from . import PartyIdentification129Choice
 
 class IssuerInformation3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class IssuerInformation3(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', PartyIdentification129Choice, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', PartyIdentification129Choice, False)
 
 	@property
 	def URLAdr(self):
@@ -27,12 +27,12 @@ class IssuerInformation3(base_types._BaseFieldType):
 
 	@URLAdr.setter
 	def URLAdr(self, value):
-		self._URLAdr = value if type(value) != base_types.auto else self.make_default("URLAdr")
+		self._URLAdr = value if value is not None else base_types.UninitialisedField(self, 'URLAdr', Max2048Text, False)
 
 	@URLAdr.deleter
 	def URLAdr(self):
 		del self._URLAdr
-		self._URLAdr = None
+		self._URLAdr = base_types.UninitialisedField(self, 'URLAdr', Max2048Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=PartyIdentification129Choice, min=1, max=1, mutex_group=None, array=False),

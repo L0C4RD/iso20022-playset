@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountIdentification4Choice import AccountIdentification4Choice
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._LimitType1Choice import LimitType1Choice
-from ._SystemIdentification2Choice import SystemIdentification2Choice
+from . import AccountIdentification4Choice
+from . import BranchAndFinancialInstitutionIdentification8
+from . import LimitType1Choice
+from . import SystemIdentification2Choice
 
 class LimitIdentification8(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class LimitIdentification8(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', AccountIdentification4Choice, False)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', AccountIdentification4Choice, False)
 
 	@property
 	def AcctOwnr(self):
@@ -29,12 +29,12 @@ class LimitIdentification8(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def BilLmtCtrPtyId(self):
@@ -42,12 +42,12 @@ class LimitIdentification8(base_types._BaseFieldType):
 
 	@BilLmtCtrPtyId.setter
 	def BilLmtCtrPtyId(self, value):
-		self._BilLmtCtrPtyId = value if type(value) != base_types.auto else self.make_default("BilLmtCtrPtyId")
+		self._BilLmtCtrPtyId = value if value is not None else base_types.UninitialisedField(self, 'BilLmtCtrPtyId', BranchAndFinancialInstitutionIdentification8, False)
 
 	@BilLmtCtrPtyId.deleter
 	def BilLmtCtrPtyId(self):
 		del self._BilLmtCtrPtyId
-		self._BilLmtCtrPtyId = None
+		self._BilLmtCtrPtyId = base_types.UninitialisedField(self, 'BilLmtCtrPtyId', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def SysId(self):
@@ -55,12 +55,12 @@ class LimitIdentification8(base_types._BaseFieldType):
 
 	@SysId.setter
 	def SysId(self, value):
-		self._SysId = value if type(value) != base_types.auto else self.make_default("SysId")
+		self._SysId = value if value is not None else base_types.UninitialisedField(self, 'SysId', SystemIdentification2Choice, False)
 
 	@SysId.deleter
 	def SysId(self):
 		del self._SysId
-		self._SysId = None
+		self._SysId = base_types.UninitialisedField(self, 'SysId', SystemIdentification2Choice, False)
 
 	@property
 	def Tp(self):
@@ -68,12 +68,12 @@ class LimitIdentification8(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', LimitType1Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', LimitType1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=AccountIdentification4Choice, min=0, max=1, mutex_group=None, array=False),

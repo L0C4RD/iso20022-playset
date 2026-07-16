@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ClearingAccount1 import ClearingAccount1
-from ._CreditQuality1Code import CreditQuality1Code
-from ._ISODate import ISODate
-from ._PartyIdentification118Choice import PartyIdentification118Choice
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ClearingAccount1
+from . import CreditQuality1Code
+from . import ISODate
+from . import PartyIdentification118Choice
+from . import TrueFalseIndicator
 
 class ClearingMember1(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class ClearingMember1(base_types._BaseFieldType):
 
 	@CdtQlty.setter
 	def CdtQlty(self, value):
-		self._CdtQlty = value if type(value) != base_types.auto else self.make_default("CdtQlty")
+		self._CdtQlty = value if value is not None else base_types.UninitialisedField(self, 'CdtQlty', CreditQuality1Code, False)
 
 	@CdtQlty.deleter
 	def CdtQlty(self):
 		del self._CdtQlty
-		self._CdtQlty = None
+		self._CdtQlty = base_types.UninitialisedField(self, 'CdtQlty', CreditQuality1Code, False)
 
 	@property
 	def ClrAcctOwnr(self):
@@ -30,12 +30,12 @@ class ClearingMember1(base_types._BaseFieldType):
 
 	@ClrAcctOwnr.setter
 	def ClrAcctOwnr(self, value):
-		self._ClrAcctOwnr = value if type(value) != base_types.auto else self.make_default("ClrAcctOwnr")
+		self._ClrAcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'ClrAcctOwnr', ClearingAccount1, True)
 
 	@ClrAcctOwnr.deleter
 	def ClrAcctOwnr(self):
 		del self._ClrAcctOwnr
-		self._ClrAcctOwnr = None
+		self._ClrAcctOwnr = base_types.UninitialisedField(self, 'ClrAcctOwnr', ClearingAccount1, True)
 
 	@property
 	def FutrsComssnMrchntInd(self):
@@ -43,12 +43,12 @@ class ClearingMember1(base_types._BaseFieldType):
 
 	@FutrsComssnMrchntInd.setter
 	def FutrsComssnMrchntInd(self, value):
-		self._FutrsComssnMrchntInd = value if type(value) != base_types.auto else self.make_default("FutrsComssnMrchntInd")
+		self._FutrsComssnMrchntInd = value if value is not None else base_types.UninitialisedField(self, 'FutrsComssnMrchntInd', TrueFalseIndicator, False)
 
 	@FutrsComssnMrchntInd.deleter
 	def FutrsComssnMrchntInd(self):
 		del self._FutrsComssnMrchntInd
-		self._FutrsComssnMrchntInd = None
+		self._FutrsComssnMrchntInd = base_types.UninitialisedField(self, 'FutrsComssnMrchntInd', TrueFalseIndicator, False)
 
 	@property
 	def Id(self):
@@ -56,12 +56,12 @@ class ClearingMember1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', PartyIdentification118Choice, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', PartyIdentification118Choice, False)
 
 	@property
 	def MmbshVldFr(self):
@@ -69,12 +69,12 @@ class ClearingMember1(base_types._BaseFieldType):
 
 	@MmbshVldFr.setter
 	def MmbshVldFr(self, value):
-		self._MmbshVldFr = value if type(value) != base_types.auto else self.make_default("MmbshVldFr")
+		self._MmbshVldFr = value if value is not None else base_types.UninitialisedField(self, 'MmbshVldFr', ISODate, False)
 
 	@MmbshVldFr.deleter
 	def MmbshVldFr(self):
 		del self._MmbshVldFr
-		self._MmbshVldFr = None
+		self._MmbshVldFr = base_types.UninitialisedField(self, 'MmbshVldFr', ISODate, False)
 
 	@property
 	def MmbshVldTo(self):
@@ -82,12 +82,12 @@ class ClearingMember1(base_types._BaseFieldType):
 
 	@MmbshVldTo.setter
 	def MmbshVldTo(self, value):
-		self._MmbshVldTo = value if type(value) != base_types.auto else self.make_default("MmbshVldTo")
+		self._MmbshVldTo = value if value is not None else base_types.UninitialisedField(self, 'MmbshVldTo', ISODate, False)
 
 	@MmbshVldTo.deleter
 	def MmbshVldTo(self):
 		del self._MmbshVldTo
-		self._MmbshVldTo = None
+		self._MmbshVldTo = base_types.UninitialisedField(self, 'MmbshVldTo', ISODate, False)
 
 	@property
 	def SpnsrgClrMmbId(self):
@@ -95,12 +95,12 @@ class ClearingMember1(base_types._BaseFieldType):
 
 	@SpnsrgClrMmbId.setter
 	def SpnsrgClrMmbId(self, value):
-		self._SpnsrgClrMmbId = value if type(value) != base_types.auto else self.make_default("SpnsrgClrMmbId")
+		self._SpnsrgClrMmbId = value if value is not None else base_types.UninitialisedField(self, 'SpnsrgClrMmbId', PartyIdentification118Choice, False)
 
 	@SpnsrgClrMmbId.deleter
 	def SpnsrgClrMmbId(self):
 		del self._SpnsrgClrMmbId
-		self._SpnsrgClrMmbId = None
+		self._SpnsrgClrMmbId = base_types.UninitialisedField(self, 'SpnsrgClrMmbId', PartyIdentification118Choice, False)
 
 	@property
 	def UltmtPrntId(self):
@@ -108,12 +108,12 @@ class ClearingMember1(base_types._BaseFieldType):
 
 	@UltmtPrntId.setter
 	def UltmtPrntId(self, value):
-		self._UltmtPrntId = value if type(value) != base_types.auto else self.make_default("UltmtPrntId")
+		self._UltmtPrntId = value if value is not None else base_types.UninitialisedField(self, 'UltmtPrntId', PartyIdentification118Choice, False)
 
 	@UltmtPrntId.deleter
 	def UltmtPrntId(self):
 		del self._UltmtPrntId
-		self._UltmtPrntId = None
+		self._UltmtPrntId = base_types.UninitialisedField(self, 'UltmtPrntId', PartyIdentification118Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtQlty', type=CreditQuality1Code, min=1, max=1, mutex_group=None, array=False),

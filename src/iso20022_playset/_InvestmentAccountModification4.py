@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Account23 import Account23
-from ._AdditionalReference13 import AdditionalReference13
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
+from . import Account23
+from . import AdditionalReference13
+from . import Max350Text
+from . import Max35Text
 
 class InvestmentAccountModification4(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class InvestmentAccountModification4(base_types._BaseFieldType):
 
 	@AcctApplId.setter
 	def AcctApplId(self, value):
-		self._AcctApplId = value if type(value) != base_types.auto else self.make_default("AcctApplId")
+		self._AcctApplId = value if value is not None else base_types.UninitialisedField(self, 'AcctApplId', Max35Text, False)
 
 	@AcctApplId.deleter
 	def AcctApplId(self):
 		del self._AcctApplId
-		self._AcctApplId = None
+		self._AcctApplId = base_types.UninitialisedField(self, 'AcctApplId', Max35Text, False)
 
 	@property
 	def ClntRef(self):
@@ -29,12 +29,12 @@ class InvestmentAccountModification4(base_types._BaseFieldType):
 
 	@ClntRef.setter
 	def ClntRef(self, value):
-		self._ClntRef = value if type(value) != base_types.auto else self.make_default("ClntRef")
+		self._ClntRef = value if value is not None else base_types.UninitialisedField(self, 'ClntRef', Max35Text, False)
 
 	@ClntRef.deleter
 	def ClntRef(self):
 		del self._ClntRef
-		self._ClntRef = None
+		self._ClntRef = base_types.UninitialisedField(self, 'ClntRef', Max35Text, False)
 
 	@property
 	def CtrPtyRef(self):
@@ -42,12 +42,12 @@ class InvestmentAccountModification4(base_types._BaseFieldType):
 
 	@CtrPtyRef.setter
 	def CtrPtyRef(self, value):
-		self._CtrPtyRef = value if type(value) != base_types.auto else self.make_default("CtrPtyRef")
+		self._CtrPtyRef = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyRef', AdditionalReference13, False)
 
 	@CtrPtyRef.deleter
 	def CtrPtyRef(self):
 		del self._CtrPtyRef
-		self._CtrPtyRef = None
+		self._CtrPtyRef = base_types.UninitialisedField(self, 'CtrPtyRef', AdditionalReference13, False)
 
 	@property
 	def ExstgAcctId(self):
@@ -55,12 +55,12 @@ class InvestmentAccountModification4(base_types._BaseFieldType):
 
 	@ExstgAcctId.setter
 	def ExstgAcctId(self, value):
-		self._ExstgAcctId = value if type(value) != base_types.auto else self.make_default("ExstgAcctId")
+		self._ExstgAcctId = value if value is not None else base_types.UninitialisedField(self, 'ExstgAcctId', Account23, True)
 
 	@ExstgAcctId.deleter
 	def ExstgAcctId(self):
 		del self._ExstgAcctId
-		self._ExstgAcctId = None
+		self._ExstgAcctId = base_types.UninitialisedField(self, 'ExstgAcctId', Account23, True)
 
 	@property
 	def ModRsn(self):
@@ -68,12 +68,12 @@ class InvestmentAccountModification4(base_types._BaseFieldType):
 
 	@ModRsn.setter
 	def ModRsn(self, value):
-		self._ModRsn = value if type(value) != base_types.auto else self.make_default("ModRsn")
+		self._ModRsn = value if value is not None else base_types.UninitialisedField(self, 'ModRsn', Max350Text, False)
 
 	@ModRsn.deleter
 	def ModRsn(self):
 		del self._ModRsn
-		self._ModRsn = None
+		self._ModRsn = base_types.UninitialisedField(self, 'ModRsn', Max350Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctApplId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

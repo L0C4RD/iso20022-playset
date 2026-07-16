@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CurrencyAndAmount import CurrencyAndAmount
-from ._ISODate import ISODate
-from ._Max70Text import Max70Text
-from ._PlusOrMinusIndicator import PlusOrMinusIndicator
+from . import CurrencyAndAmount
+from . import ISODate
+from . import Max70Text
+from . import PlusOrMinusIndicator
 
 class AmountAndDirection111(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class AmountAndDirection111(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', CurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', CurrencyAndAmount, False)
 
 	@property
 	def Dt(self):
@@ -29,12 +29,12 @@ class AmountAndDirection111(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@property
 	def Labl(self):
@@ -42,12 +42,12 @@ class AmountAndDirection111(base_types._BaseFieldType):
 
 	@Labl.setter
 	def Labl(self, value):
-		self._Labl = value if type(value) != base_types.auto else self.make_default("Labl")
+		self._Labl = value if value is not None else base_types.UninitialisedField(self, 'Labl', Max70Text, False)
 
 	@Labl.deleter
 	def Labl(self):
 		del self._Labl
-		self._Labl = None
+		self._Labl = base_types.UninitialisedField(self, 'Labl', Max70Text, False)
 
 	@property
 	def Sgn(self):
@@ -55,12 +55,12 @@ class AmountAndDirection111(base_types._BaseFieldType):
 
 	@Sgn.setter
 	def Sgn(self, value):
-		self._Sgn = value if type(value) != base_types.auto else self.make_default("Sgn")
+		self._Sgn = value if value is not None else base_types.UninitialisedField(self, 'Sgn', PlusOrMinusIndicator, False)
 
 	@Sgn.deleter
 	def Sgn(self):
 		del self._Sgn
-		self._Sgn = None
+		self._Sgn = base_types.UninitialisedField(self, 'Sgn', PlusOrMinusIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=CurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

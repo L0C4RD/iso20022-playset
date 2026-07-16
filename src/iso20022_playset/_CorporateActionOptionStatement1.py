@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BuyerProtectionInstructionDetails1 import BuyerProtectionInstructionDetails1
-from ._CorporateActionOption47Choice import CorporateActionOption47Choice
-from ._Exact3NumericText import Exact3NumericText
+from . import BuyerProtectionInstructionDetails1
+from . import CorporateActionOption47Choice
+from . import Exact3NumericText
 
 class CorporateActionOptionStatement1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CorporateActionOptionStatement1(base_types._BaseFieldType):
 
 	@BuyrPrtcnInstrDtls.setter
 	def BuyrPrtcnInstrDtls(self, value):
-		self._BuyrPrtcnInstrDtls = value if type(value) != base_types.auto else self.make_default("BuyrPrtcnInstrDtls")
+		self._BuyrPrtcnInstrDtls = value if value is not None else base_types.UninitialisedField(self, 'BuyrPrtcnInstrDtls', BuyerProtectionInstructionDetails1, True)
 
 	@BuyrPrtcnInstrDtls.deleter
 	def BuyrPrtcnInstrDtls(self):
 		del self._BuyrPrtcnInstrDtls
-		self._BuyrPrtcnInstrDtls = None
+		self._BuyrPrtcnInstrDtls = base_types.UninitialisedField(self, 'BuyrPrtcnInstrDtls', BuyerProtectionInstructionDetails1, True)
 
 	@property
 	def OptnNb(self):
@@ -28,12 +28,12 @@ class CorporateActionOptionStatement1(base_types._BaseFieldType):
 
 	@OptnNb.setter
 	def OptnNb(self, value):
-		self._OptnNb = value if type(value) != base_types.auto else self.make_default("OptnNb")
+		self._OptnNb = value if value is not None else base_types.UninitialisedField(self, 'OptnNb', Exact3NumericText, False)
 
 	@OptnNb.deleter
 	def OptnNb(self):
 		del self._OptnNb
-		self._OptnNb = None
+		self._OptnNb = base_types.UninitialisedField(self, 'OptnNb', Exact3NumericText, False)
 
 	@property
 	def OptnTp(self):
@@ -41,12 +41,12 @@ class CorporateActionOptionStatement1(base_types._BaseFieldType):
 
 	@OptnTp.setter
 	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != base_types.auto else self.make_default("OptnTp")
+		self._OptnTp = value if value is not None else base_types.UninitialisedField(self, 'OptnTp', CorporateActionOption47Choice, False)
 
 	@OptnTp.deleter
 	def OptnTp(self):
 		del self._OptnTp
-		self._OptnTp = None
+		self._OptnTp = base_types.UninitialisedField(self, 'OptnTp', CorporateActionOption47Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BuyrPrtcnInstrDtls', type=BuyerProtectionInstructionDetails1, min=1, max=None, mutex_group=None, array=True),

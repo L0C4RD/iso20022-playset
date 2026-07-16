@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LanguageSpecifiedNarrative1 import LanguageSpecifiedNarrative1
-from ._Max8000Text import Max8000Text
+from . import LanguageSpecifiedNarrative1
+from . import Max8000Text
 
 class CorporateEventNarrative4(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CorporateEventNarrative4(base_types._BaseFieldType):
 
 	@Dsclmr.setter
 	def Dsclmr(self, value):
-		self._Dsclmr = value if type(value) != base_types.auto else self.make_default("Dsclmr")
+		self._Dsclmr = value if value is not None else base_types.UninitialisedField(self, 'Dsclmr', LanguageSpecifiedNarrative1, True)
 
 	@Dsclmr.deleter
 	def Dsclmr(self):
 		del self._Dsclmr
-		self._Dsclmr = None
+		self._Dsclmr = base_types.UninitialisedField(self, 'Dsclmr', LanguageSpecifiedNarrative1, True)
 
 	@property
 	def PrcgTxtForNxtIntrmy(self):
@@ -27,12 +27,12 @@ class CorporateEventNarrative4(base_types._BaseFieldType):
 
 	@PrcgTxtForNxtIntrmy.setter
 	def PrcgTxtForNxtIntrmy(self, value):
-		self._PrcgTxtForNxtIntrmy = value if type(value) != base_types.auto else self.make_default("PrcgTxtForNxtIntrmy")
+		self._PrcgTxtForNxtIntrmy = value if value is not None else base_types.UninitialisedField(self, 'PrcgTxtForNxtIntrmy', Max8000Text, True)
 
 	@PrcgTxtForNxtIntrmy.deleter
 	def PrcgTxtForNxtIntrmy(self):
 		del self._PrcgTxtForNxtIntrmy
-		self._PrcgTxtForNxtIntrmy = None
+		self._PrcgTxtForNxtIntrmy = base_types.UninitialisedField(self, 'PrcgTxtForNxtIntrmy', Max8000Text, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dsclmr', type=LanguageSpecifiedNarrative1, min=0, max=None, mutex_group=None, array=True),

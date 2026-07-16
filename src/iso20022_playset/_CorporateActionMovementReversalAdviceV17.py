@@ -2,18 +2,18 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountAndBalance50 import AccountAndBalance50
-from ._CorporateAction93 import CorporateAction93
-from ._CorporateActionEventReference3 import CorporateActionEventReference3
-from ._CorporateActionGeneralInformation179 import CorporateActionGeneralInformation179
-from ._CorporateActionNarrative31 import CorporateActionNarrative31
-from ._CorporateActionOption240 import CorporateActionOption240
-from ._CorporateActionReversalReason8 import CorporateActionReversalReason8
-from ._DocumentIdentification31 import DocumentIdentification31
-from ._DocumentIdentification32 import DocumentIdentification32
-from ._PartyIdentification120Choice import PartyIdentification120Choice
-from ._SupplementaryData1 import SupplementaryData1
-from ._TransactionIdentification15 import TransactionIdentification15
+from . import AccountAndBalance50
+from . import CorporateAction93
+from . import CorporateActionEventReference3
+from . import CorporateActionGeneralInformation179
+from . import CorporateActionNarrative31
+from . import CorporateActionOption240
+from . import CorporateActionReversalReason8
+from . import DocumentIdentification31
+from . import DocumentIdentification32
+from . import PartyIdentification120Choice
+from . import SupplementaryData1
+from . import TransactionIdentification15
 
 class CorporateActionMovementReversalAdviceV17(base_types._BaseFieldType):
 
@@ -24,12 +24,12 @@ class CorporateActionMovementReversalAdviceV17(base_types._BaseFieldType):
 
 	@AcctDtls.setter
 	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != base_types.auto else self.make_default("AcctDtls")
+		self._AcctDtls = value if value is not None else base_types.UninitialisedField(self, 'AcctDtls', AccountAndBalance50, False)
 
 	@AcctDtls.deleter
 	def AcctDtls(self):
 		del self._AcctDtls
-		self._AcctDtls = None
+		self._AcctDtls = base_types.UninitialisedField(self, 'AcctDtls', AccountAndBalance50, False)
 
 	@property
 	def AddtlInf(self):
@@ -37,12 +37,12 @@ class CorporateActionMovementReversalAdviceV17(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', CorporateActionNarrative31, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', CorporateActionNarrative31, False)
 
 	@property
 	def CorpActnConfDtls(self):
@@ -50,12 +50,12 @@ class CorporateActionMovementReversalAdviceV17(base_types._BaseFieldType):
 
 	@CorpActnConfDtls.setter
 	def CorpActnConfDtls(self, value):
-		self._CorpActnConfDtls = value if type(value) != base_types.auto else self.make_default("CorpActnConfDtls")
+		self._CorpActnConfDtls = value if value is not None else base_types.UninitialisedField(self, 'CorpActnConfDtls', CorporateActionOption240, False)
 
 	@CorpActnConfDtls.deleter
 	def CorpActnConfDtls(self):
 		del self._CorpActnConfDtls
-		self._CorpActnConfDtls = None
+		self._CorpActnConfDtls = base_types.UninitialisedField(self, 'CorpActnConfDtls', CorporateActionOption240, False)
 
 	@property
 	def CorpActnDtls(self):
@@ -63,12 +63,12 @@ class CorporateActionMovementReversalAdviceV17(base_types._BaseFieldType):
 
 	@CorpActnDtls.setter
 	def CorpActnDtls(self, value):
-		self._CorpActnDtls = value if type(value) != base_types.auto else self.make_default("CorpActnDtls")
+		self._CorpActnDtls = value if value is not None else base_types.UninitialisedField(self, 'CorpActnDtls', CorporateAction93, False)
 
 	@CorpActnDtls.deleter
 	def CorpActnDtls(self):
 		del self._CorpActnDtls
-		self._CorpActnDtls = None
+		self._CorpActnDtls = base_types.UninitialisedField(self, 'CorpActnDtls', CorporateAction93, False)
 
 	@property
 	def CorpActnGnlInf(self):
@@ -76,12 +76,12 @@ class CorporateActionMovementReversalAdviceV17(base_types._BaseFieldType):
 
 	@CorpActnGnlInf.setter
 	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != base_types.auto else self.make_default("CorpActnGnlInf")
+		self._CorpActnGnlInf = value if value is not None else base_types.UninitialisedField(self, 'CorpActnGnlInf', CorporateActionGeneralInformation179, False)
 
 	@CorpActnGnlInf.deleter
 	def CorpActnGnlInf(self):
 		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
+		self._CorpActnGnlInf = base_types.UninitialisedField(self, 'CorpActnGnlInf', CorporateActionGeneralInformation179, False)
 
 	@property
 	def EvtsLkg(self):
@@ -89,12 +89,12 @@ class CorporateActionMovementReversalAdviceV17(base_types._BaseFieldType):
 
 	@EvtsLkg.setter
 	def EvtsLkg(self, value):
-		self._EvtsLkg = value if type(value) != base_types.auto else self.make_default("EvtsLkg")
+		self._EvtsLkg = value if value is not None else base_types.UninitialisedField(self, 'EvtsLkg', CorporateActionEventReference3, True)
 
 	@EvtsLkg.deleter
 	def EvtsLkg(self):
 		del self._EvtsLkg
-		self._EvtsLkg = None
+		self._EvtsLkg = base_types.UninitialisedField(self, 'EvtsLkg', CorporateActionEventReference3, True)
 
 	@property
 	def IssrAgt(self):
@@ -102,12 +102,12 @@ class CorporateActionMovementReversalAdviceV17(base_types._BaseFieldType):
 
 	@IssrAgt.setter
 	def IssrAgt(self, value):
-		self._IssrAgt = value if type(value) != base_types.auto else self.make_default("IssrAgt")
+		self._IssrAgt = value if value is not None else base_types.UninitialisedField(self, 'IssrAgt', PartyIdentification120Choice, True)
 
 	@IssrAgt.deleter
 	def IssrAgt(self):
 		del self._IssrAgt
-		self._IssrAgt = None
+		self._IssrAgt = base_types.UninitialisedField(self, 'IssrAgt', PartyIdentification120Choice, True)
 
 	@property
 	def MvmntConfId(self):
@@ -115,12 +115,12 @@ class CorporateActionMovementReversalAdviceV17(base_types._BaseFieldType):
 
 	@MvmntConfId.setter
 	def MvmntConfId(self, value):
-		self._MvmntConfId = value if type(value) != base_types.auto else self.make_default("MvmntConfId")
+		self._MvmntConfId = value if value is not None else base_types.UninitialisedField(self, 'MvmntConfId', DocumentIdentification31, False)
 
 	@MvmntConfId.deleter
 	def MvmntConfId(self):
 		del self._MvmntConfId
-		self._MvmntConfId = None
+		self._MvmntConfId = base_types.UninitialisedField(self, 'MvmntConfId', DocumentIdentification31, False)
 
 	@property
 	def OthrDocId(self):
@@ -128,12 +128,12 @@ class CorporateActionMovementReversalAdviceV17(base_types._BaseFieldType):
 
 	@OthrDocId.setter
 	def OthrDocId(self, value):
-		self._OthrDocId = value if type(value) != base_types.auto else self.make_default("OthrDocId")
+		self._OthrDocId = value if value is not None else base_types.UninitialisedField(self, 'OthrDocId', DocumentIdentification32, True)
 
 	@OthrDocId.deleter
 	def OthrDocId(self):
 		del self._OthrDocId
-		self._OthrDocId = None
+		self._OthrDocId = base_types.UninitialisedField(self, 'OthrDocId', DocumentIdentification32, True)
 
 	@property
 	def PngAgt(self):
@@ -141,12 +141,12 @@ class CorporateActionMovementReversalAdviceV17(base_types._BaseFieldType):
 
 	@PngAgt.setter
 	def PngAgt(self, value):
-		self._PngAgt = value if type(value) != base_types.auto else self.make_default("PngAgt")
+		self._PngAgt = value if value is not None else base_types.UninitialisedField(self, 'PngAgt', PartyIdentification120Choice, True)
 
 	@PngAgt.deleter
 	def PngAgt(self):
 		del self._PngAgt
-		self._PngAgt = None
+		self._PngAgt = base_types.UninitialisedField(self, 'PngAgt', PartyIdentification120Choice, True)
 
 	@property
 	def RvslRsn(self):
@@ -154,12 +154,12 @@ class CorporateActionMovementReversalAdviceV17(base_types._BaseFieldType):
 
 	@RvslRsn.setter
 	def RvslRsn(self, value):
-		self._RvslRsn = value if type(value) != base_types.auto else self.make_default("RvslRsn")
+		self._RvslRsn = value if value is not None else base_types.UninitialisedField(self, 'RvslRsn', CorporateActionReversalReason8, False)
 
 	@RvslRsn.deleter
 	def RvslRsn(self):
 		del self._RvslRsn
-		self._RvslRsn = None
+		self._RvslRsn = base_types.UninitialisedField(self, 'RvslRsn', CorporateActionReversalReason8, False)
 
 	@property
 	def SplmtryData(self):
@@ -167,12 +167,12 @@ class CorporateActionMovementReversalAdviceV17(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def SubPngAgt(self):
@@ -180,12 +180,12 @@ class CorporateActionMovementReversalAdviceV17(base_types._BaseFieldType):
 
 	@SubPngAgt.setter
 	def SubPngAgt(self, value):
-		self._SubPngAgt = value if type(value) != base_types.auto else self.make_default("SubPngAgt")
+		self._SubPngAgt = value if value is not None else base_types.UninitialisedField(self, 'SubPngAgt', PartyIdentification120Choice, True)
 
 	@SubPngAgt.deleter
 	def SubPngAgt(self):
 		del self._SubPngAgt
-		self._SubPngAgt = None
+		self._SubPngAgt = base_types.UninitialisedField(self, 'SubPngAgt', PartyIdentification120Choice, True)
 
 	@property
 	def TxId(self):
@@ -193,12 +193,12 @@ class CorporateActionMovementReversalAdviceV17(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', TransactionIdentification15, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', TransactionIdentification15, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctDtls', type=AccountAndBalance50, min=1, max=1, mutex_group=None, array=False),

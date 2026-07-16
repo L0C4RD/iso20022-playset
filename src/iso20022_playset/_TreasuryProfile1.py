@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._PartyRole5Choice import PartyRole5Choice
-from ._PercentageRate import PercentageRate
+from . import ISODate
+from . import PartyRole5Choice
+from . import PercentageRate
 
 class TreasuryProfile1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TreasuryProfile1(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@property
 	def Rate(self):
@@ -28,12 +28,12 @@ class TreasuryProfile1(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+		self._Rate = value if value is not None else base_types.UninitialisedField(self, 'Rate', PercentageRate, False)
 
 	@Rate.deleter
 	def Rate(self):
 		del self._Rate
-		self._Rate = None
+		self._Rate = base_types.UninitialisedField(self, 'Rate', PercentageRate, False)
 
 	@property
 	def TradrTp(self):
@@ -41,12 +41,12 @@ class TreasuryProfile1(base_types._BaseFieldType):
 
 	@TradrTp.setter
 	def TradrTp(self, value):
-		self._TradrTp = value if type(value) != base_types.auto else self.make_default("TradrTp")
+		self._TradrTp = value if value is not None else base_types.UninitialisedField(self, 'TradrTp', PartyRole5Choice, False)
 
 	@TradrTp.deleter
 	def TradrTp(self):
 		del self._TradrTp
-		self._TradrTp = None
+		self._TradrTp = base_types.UninitialisedField(self, 'TradrTp', PartyRole5Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dt', type=ISODate, min=1, max=1, mutex_group=None, array=False),

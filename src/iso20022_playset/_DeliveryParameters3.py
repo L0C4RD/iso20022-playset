@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._NameAndAddress4 import NameAndAddress4
+from . import Max35Text
+from . import NameAndAddress4
 
 class DeliveryParameters3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DeliveryParameters3(base_types._BaseFieldType):
 
 	@Adr.setter
 	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+		self._Adr = value if value is not None else base_types.UninitialisedField(self, 'Adr', NameAndAddress4, False)
 
 	@Adr.deleter
 	def Adr(self):
 		del self._Adr
-		self._Adr = None
+		self._Adr = base_types.UninitialisedField(self, 'Adr', NameAndAddress4, False)
 
 	@property
 	def IssdCertNb(self):
@@ -27,12 +27,12 @@ class DeliveryParameters3(base_types._BaseFieldType):
 
 	@IssdCertNb.setter
 	def IssdCertNb(self, value):
-		self._IssdCertNb = value if type(value) != base_types.auto else self.make_default("IssdCertNb")
+		self._IssdCertNb = value if value is not None else base_types.UninitialisedField(self, 'IssdCertNb', Max35Text, False)
 
 	@IssdCertNb.deleter
 	def IssdCertNb(self):
 		del self._IssdCertNb
-		self._IssdCertNb = None
+		self._IssdCertNb = base_types.UninitialisedField(self, 'IssdCertNb', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Adr', type=NameAndAddress4, min=1, max=1, mutex_group=None, array=False),

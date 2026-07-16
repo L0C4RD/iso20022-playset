@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Pagination1 import Pagination1
-from ._PartyIdentification253Choice import PartyIdentification253Choice
-from ._SecuritiesAccount18 import SecuritiesAccount18
-from ._Statement86 import Statement86
-from ._SupplementaryData1 import SupplementaryData1
-from ._TradeLegStatement4 import TradeLegStatement4
+from . import Pagination1
+from . import PartyIdentification253Choice
+from . import SecuritiesAccount18
+from . import Statement86
+from . import SupplementaryData1
+from . import TradeLegStatement4
 
 class TradeLegStatementV04(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class TradeLegStatementV04(base_types._BaseFieldType):
 
 	@ClrAcct.setter
 	def ClrAcct(self, value):
-		self._ClrAcct = value if type(value) != base_types.auto else self.make_default("ClrAcct")
+		self._ClrAcct = value if value is not None else base_types.UninitialisedField(self, 'ClrAcct', SecuritiesAccount18, False)
 
 	@ClrAcct.deleter
 	def ClrAcct(self):
 		del self._ClrAcct
-		self._ClrAcct = None
+		self._ClrAcct = base_types.UninitialisedField(self, 'ClrAcct', SecuritiesAccount18, False)
 
 	@property
 	def ClrMmb(self):
@@ -31,12 +31,12 @@ class TradeLegStatementV04(base_types._BaseFieldType):
 
 	@ClrMmb.setter
 	def ClrMmb(self, value):
-		self._ClrMmb = value if type(value) != base_types.auto else self.make_default("ClrMmb")
+		self._ClrMmb = value if value is not None else base_types.UninitialisedField(self, 'ClrMmb', PartyIdentification253Choice, False)
 
 	@ClrMmb.deleter
 	def ClrMmb(self):
 		del self._ClrMmb
-		self._ClrMmb = None
+		self._ClrMmb = base_types.UninitialisedField(self, 'ClrMmb', PartyIdentification253Choice, False)
 
 	@property
 	def Pgntn(self):
@@ -44,12 +44,12 @@ class TradeLegStatementV04(base_types._BaseFieldType):
 
 	@Pgntn.setter
 	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+		self._Pgntn = value if value is not None else base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@Pgntn.deleter
 	def Pgntn(self):
 		del self._Pgntn
-		self._Pgntn = None
+		self._Pgntn = base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@property
 	def SplmtryData(self):
@@ -57,12 +57,12 @@ class TradeLegStatementV04(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def StmtDtls(self):
@@ -70,12 +70,12 @@ class TradeLegStatementV04(base_types._BaseFieldType):
 
 	@StmtDtls.setter
 	def StmtDtls(self, value):
-		self._StmtDtls = value if type(value) != base_types.auto else self.make_default("StmtDtls")
+		self._StmtDtls = value if value is not None else base_types.UninitialisedField(self, 'StmtDtls', TradeLegStatement4, True)
 
 	@StmtDtls.deleter
 	def StmtDtls(self):
 		del self._StmtDtls
-		self._StmtDtls = None
+		self._StmtDtls = base_types.UninitialisedField(self, 'StmtDtls', TradeLegStatement4, True)
 
 	@property
 	def StmtParams(self):
@@ -83,12 +83,12 @@ class TradeLegStatementV04(base_types._BaseFieldType):
 
 	@StmtParams.setter
 	def StmtParams(self, value):
-		self._StmtParams = value if type(value) != base_types.auto else self.make_default("StmtParams")
+		self._StmtParams = value if value is not None else base_types.UninitialisedField(self, 'StmtParams', Statement86, False)
 
 	@StmtParams.deleter
 	def StmtParams(self):
 		del self._StmtParams
-		self._StmtParams = None
+		self._StmtParams = base_types.UninitialisedField(self, 'StmtParams', Statement86, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClrAcct', type=SecuritiesAccount18, min=0, max=1, mutex_group=None, array=False),

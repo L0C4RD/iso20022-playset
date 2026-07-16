@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISOTime import ISOTime
-from ._Max70Text import Max70Text
-from ._NetworkParameters7 import NetworkParameters7
+from . import ISOTime
+from . import Max70Text
+from . import NetworkParameters7
 
 class ClockSynchronisation3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ClockSynchronisation3(base_types._BaseFieldType):
 
 	@Dely.setter
 	def Dely(self, value):
-		self._Dely = value if type(value) != base_types.auto else self.make_default("Dely")
+		self._Dely = value if value is not None else base_types.UninitialisedField(self, 'Dely', ISOTime, False)
 
 	@Dely.deleter
 	def Dely(self):
 		del self._Dely
-		self._Dely = None
+		self._Dely = base_types.UninitialisedField(self, 'Dely', ISOTime, False)
 
 	@property
 	def POITmZone(self):
@@ -28,12 +28,12 @@ class ClockSynchronisation3(base_types._BaseFieldType):
 
 	@POITmZone.setter
 	def POITmZone(self, value):
-		self._POITmZone = value if type(value) != base_types.auto else self.make_default("POITmZone")
+		self._POITmZone = value if value is not None else base_types.UninitialisedField(self, 'POITmZone', Max70Text, False)
 
 	@POITmZone.deleter
 	def POITmZone(self):
 		del self._POITmZone
-		self._POITmZone = None
+		self._POITmZone = base_types.UninitialisedField(self, 'POITmZone', Max70Text, False)
 
 	@property
 	def SynctnSvr(self):
@@ -41,12 +41,12 @@ class ClockSynchronisation3(base_types._BaseFieldType):
 
 	@SynctnSvr.setter
 	def SynctnSvr(self, value):
-		self._SynctnSvr = value if type(value) != base_types.auto else self.make_default("SynctnSvr")
+		self._SynctnSvr = value if value is not None else base_types.UninitialisedField(self, 'SynctnSvr', NetworkParameters7, True)
 
 	@SynctnSvr.deleter
 	def SynctnSvr(self):
 		del self._SynctnSvr
-		self._SynctnSvr = None
+		self._SynctnSvr = base_types.UninitialisedField(self, 'SynctnSvr', NetworkParameters7, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dely', type=ISOTime, min=0, max=1, mutex_group=None, array=False),

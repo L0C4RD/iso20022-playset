@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._TradeAdditionalQueryCriteria9 import TradeAdditionalQueryCriteria9
-from ._TradeDateTimeQueryCriteria6 import TradeDateTimeQueryCriteria6
-from ._TradePartyQueryCriteria7 import TradePartyQueryCriteria7
-from ._TradeSecurityIdentificationQueryCriteria3 import TradeSecurityIdentificationQueryCriteria3
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import TradeAdditionalQueryCriteria9
+from . import TradeDateTimeQueryCriteria6
+from . import TradePartyQueryCriteria7
+from . import TradeSecurityIdentificationQueryCriteria3
+from . import TrueFalseIndicator
 
 class TradeQueryCriteria14(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class TradeQueryCriteria14(base_types._BaseFieldType):
 
 	@FinInstrmCrit.setter
 	def FinInstrmCrit(self, value):
-		self._FinInstrmCrit = value if type(value) != base_types.auto else self.make_default("FinInstrmCrit")
+		self._FinInstrmCrit = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmCrit', TradeSecurityIdentificationQueryCriteria3, False)
 
 	@FinInstrmCrit.deleter
 	def FinInstrmCrit(self):
 		del self._FinInstrmCrit
-		self._FinInstrmCrit = None
+		self._FinInstrmCrit = base_types.UninitialisedField(self, 'FinInstrmCrit', TradeSecurityIdentificationQueryCriteria3, False)
 
 	@property
 	def MrgnLifeCyclHstry(self):
@@ -30,12 +30,12 @@ class TradeQueryCriteria14(base_types._BaseFieldType):
 
 	@MrgnLifeCyclHstry.setter
 	def MrgnLifeCyclHstry(self, value):
-		self._MrgnLifeCyclHstry = value if type(value) != base_types.auto else self.make_default("MrgnLifeCyclHstry")
+		self._MrgnLifeCyclHstry = value if value is not None else base_types.UninitialisedField(self, 'MrgnLifeCyclHstry', TrueFalseIndicator, False)
 
 	@MrgnLifeCyclHstry.deleter
 	def MrgnLifeCyclHstry(self):
 		del self._MrgnLifeCyclHstry
-		self._MrgnLifeCyclHstry = None
+		self._MrgnLifeCyclHstry = base_types.UninitialisedField(self, 'MrgnLifeCyclHstry', TrueFalseIndicator, False)
 
 	@property
 	def OthrCrit(self):
@@ -43,12 +43,12 @@ class TradeQueryCriteria14(base_types._BaseFieldType):
 
 	@OthrCrit.setter
 	def OthrCrit(self, value):
-		self._OthrCrit = value if type(value) != base_types.auto else self.make_default("OthrCrit")
+		self._OthrCrit = value if value is not None else base_types.UninitialisedField(self, 'OthrCrit', TradeAdditionalQueryCriteria9, False)
 
 	@OthrCrit.deleter
 	def OthrCrit(self):
 		del self._OthrCrit
-		self._OthrCrit = None
+		self._OthrCrit = base_types.UninitialisedField(self, 'OthrCrit', TradeAdditionalQueryCriteria9, False)
 
 	@property
 	def OutsdngTradInd(self):
@@ -56,12 +56,12 @@ class TradeQueryCriteria14(base_types._BaseFieldType):
 
 	@OutsdngTradInd.setter
 	def OutsdngTradInd(self, value):
-		self._OutsdngTradInd = value if type(value) != base_types.auto else self.make_default("OutsdngTradInd")
+		self._OutsdngTradInd = value if value is not None else base_types.UninitialisedField(self, 'OutsdngTradInd', TrueFalseIndicator, False)
 
 	@OutsdngTradInd.deleter
 	def OutsdngTradInd(self):
 		del self._OutsdngTradInd
-		self._OutsdngTradInd = None
+		self._OutsdngTradInd = base_types.UninitialisedField(self, 'OutsdngTradInd', TrueFalseIndicator, False)
 
 	@property
 	def TmCrit(self):
@@ -69,12 +69,12 @@ class TradeQueryCriteria14(base_types._BaseFieldType):
 
 	@TmCrit.setter
 	def TmCrit(self, value):
-		self._TmCrit = value if type(value) != base_types.auto else self.make_default("TmCrit")
+		self._TmCrit = value if value is not None else base_types.UninitialisedField(self, 'TmCrit', TradeDateTimeQueryCriteria6, False)
 
 	@TmCrit.deleter
 	def TmCrit(self):
 		del self._TmCrit
-		self._TmCrit = None
+		self._TmCrit = base_types.UninitialisedField(self, 'TmCrit', TradeDateTimeQueryCriteria6, False)
 
 	@property
 	def TradLifeCyclHstry(self):
@@ -82,12 +82,12 @@ class TradeQueryCriteria14(base_types._BaseFieldType):
 
 	@TradLifeCyclHstry.setter
 	def TradLifeCyclHstry(self, value):
-		self._TradLifeCyclHstry = value if type(value) != base_types.auto else self.make_default("TradLifeCyclHstry")
+		self._TradLifeCyclHstry = value if value is not None else base_types.UninitialisedField(self, 'TradLifeCyclHstry', TrueFalseIndicator, False)
 
 	@TradLifeCyclHstry.deleter
 	def TradLifeCyclHstry(self):
 		del self._TradLifeCyclHstry
-		self._TradLifeCyclHstry = None
+		self._TradLifeCyclHstry = base_types.UninitialisedField(self, 'TradLifeCyclHstry', TrueFalseIndicator, False)
 
 	@property
 	def TradPtyCrit(self):
@@ -95,12 +95,12 @@ class TradeQueryCriteria14(base_types._BaseFieldType):
 
 	@TradPtyCrit.setter
 	def TradPtyCrit(self, value):
-		self._TradPtyCrit = value if type(value) != base_types.auto else self.make_default("TradPtyCrit")
+		self._TradPtyCrit = value if value is not None else base_types.UninitialisedField(self, 'TradPtyCrit', TradePartyQueryCriteria7, False)
 
 	@TradPtyCrit.deleter
 	def TradPtyCrit(self):
 		del self._TradPtyCrit
-		self._TradPtyCrit = None
+		self._TradPtyCrit = base_types.UninitialisedField(self, 'TradPtyCrit', TradePartyQueryCriteria7, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FinInstrmCrit', type=TradeSecurityIdentificationQueryCriteria3, min=0, max=1, mutex_group=None, array=False),

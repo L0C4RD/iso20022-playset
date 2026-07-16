@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DebtInstrument4 import DebtInstrument4
-from ._DerivativeInstrument6 import DerivativeInstrument6
-from ._SecurityInstrumentDescription23 import SecurityInstrumentDescription23
+from . import DebtInstrument4
+from . import DerivativeInstrument6
+from . import SecurityInstrumentDescription23
 
 class SecurityInstrumentDescription22(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SecurityInstrumentDescription22(base_types._BaseFieldType):
 
 	@DebtInstrmAttrbts.setter
 	def DebtInstrmAttrbts(self, value):
-		self._DebtInstrmAttrbts = value if type(value) != base_types.auto else self.make_default("DebtInstrmAttrbts")
+		self._DebtInstrmAttrbts = value if value is not None else base_types.UninitialisedField(self, 'DebtInstrmAttrbts', DebtInstrument4, False)
 
 	@DebtInstrmAttrbts.deleter
 	def DebtInstrmAttrbts(self):
 		del self._DebtInstrmAttrbts
-		self._DebtInstrmAttrbts = None
+		self._DebtInstrmAttrbts = base_types.UninitialisedField(self, 'DebtInstrmAttrbts', DebtInstrument4, False)
 
 	@property
 	def DerivInstrmAttrbts(self):
@@ -28,12 +28,12 @@ class SecurityInstrumentDescription22(base_types._BaseFieldType):
 
 	@DerivInstrmAttrbts.setter
 	def DerivInstrmAttrbts(self, value):
-		self._DerivInstrmAttrbts = value if type(value) != base_types.auto else self.make_default("DerivInstrmAttrbts")
+		self._DerivInstrmAttrbts = value if value is not None else base_types.UninitialisedField(self, 'DerivInstrmAttrbts', DerivativeInstrument6, False)
 
 	@DerivInstrmAttrbts.deleter
 	def DerivInstrmAttrbts(self):
 		del self._DerivInstrmAttrbts
-		self._DerivInstrmAttrbts = None
+		self._DerivInstrmAttrbts = base_types.UninitialisedField(self, 'DerivInstrmAttrbts', DerivativeInstrument6, False)
 
 	@property
 	def FinInstrmGnlAttrbts(self):
@@ -41,12 +41,12 @@ class SecurityInstrumentDescription22(base_types._BaseFieldType):
 
 	@FinInstrmGnlAttrbts.setter
 	def FinInstrmGnlAttrbts(self, value):
-		self._FinInstrmGnlAttrbts = value if type(value) != base_types.auto else self.make_default("FinInstrmGnlAttrbts")
+		self._FinInstrmGnlAttrbts = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmGnlAttrbts', SecurityInstrumentDescription23, False)
 
 	@FinInstrmGnlAttrbts.deleter
 	def FinInstrmGnlAttrbts(self):
 		del self._FinInstrmGnlAttrbts
-		self._FinInstrmGnlAttrbts = None
+		self._FinInstrmGnlAttrbts = base_types.UninitialisedField(self, 'FinInstrmGnlAttrbts', SecurityInstrumentDescription23, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DebtInstrmAttrbts', type=DebtInstrument4, min=0, max=1, mutex_group=None, array=False),

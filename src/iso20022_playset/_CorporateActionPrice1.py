@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountPrice1 import AmountPrice1
-from ._PriceFormat1Choice import PriceFormat1Choice
-from ._PriceFormat2Choice import PriceFormat2Choice
-from ._PriceFormat4Choice import PriceFormat4Choice
+from . import AmountPrice1
+from . import PriceFormat1Choice
+from . import PriceFormat2Choice
+from . import PriceFormat4Choice
 
 class CorporateActionPrice1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CorporateActionPrice1(base_types._BaseFieldType):
 
 	@CshInLieuOfShrPric.setter
 	def CshInLieuOfShrPric(self, value):
-		self._CshInLieuOfShrPric = value if type(value) != base_types.auto else self.make_default("CshInLieuOfShrPric")
+		self._CshInLieuOfShrPric = value if value is not None else base_types.UninitialisedField(self, 'CshInLieuOfShrPric', PriceFormat2Choice, False)
 
 	@CshInLieuOfShrPric.deleter
 	def CshInLieuOfShrPric(self):
 		del self._CshInLieuOfShrPric
-		self._CshInLieuOfShrPric = None
+		self._CshInLieuOfShrPric = base_types.UninitialisedField(self, 'CshInLieuOfShrPric', PriceFormat2Choice, False)
 
 	@property
 	def ExrcPric(self):
@@ -29,12 +29,12 @@ class CorporateActionPrice1(base_types._BaseFieldType):
 
 	@ExrcPric.setter
 	def ExrcPric(self, value):
-		self._ExrcPric = value if type(value) != base_types.auto else self.make_default("ExrcPric")
+		self._ExrcPric = value if value is not None else base_types.UninitialisedField(self, 'ExrcPric', PriceFormat4Choice, False)
 
 	@ExrcPric.deleter
 	def ExrcPric(self):
 		del self._ExrcPric
-		self._ExrcPric = None
+		self._ExrcPric = base_types.UninitialisedField(self, 'ExrcPric', PriceFormat4Choice, False)
 
 	@property
 	def GncCshPricPdPerPdct(self):
@@ -42,12 +42,12 @@ class CorporateActionPrice1(base_types._BaseFieldType):
 
 	@GncCshPricPdPerPdct.setter
 	def GncCshPricPdPerPdct(self, value):
-		self._GncCshPricPdPerPdct = value if type(value) != base_types.auto else self.make_default("GncCshPricPdPerPdct")
+		self._GncCshPricPdPerPdct = value if value is not None else base_types.UninitialisedField(self, 'GncCshPricPdPerPdct', PriceFormat2Choice, False)
 
 	@GncCshPricPdPerPdct.deleter
 	def GncCshPricPdPerPdct(self):
 		del self._GncCshPricPdPerPdct
-		self._GncCshPricPdPerPdct = None
+		self._GncCshPricPdPerPdct = base_types.UninitialisedField(self, 'GncCshPricPdPerPdct', PriceFormat2Choice, False)
 
 	@property
 	def GncCshPricRcvdPerPdct(self):
@@ -55,12 +55,12 @@ class CorporateActionPrice1(base_types._BaseFieldType):
 
 	@GncCshPricRcvdPerPdct.setter
 	def GncCshPricRcvdPerPdct(self, value):
-		self._GncCshPricRcvdPerPdct = value if type(value) != base_types.auto else self.make_default("GncCshPricRcvdPerPdct")
+		self._GncCshPricRcvdPerPdct = value if value is not None else base_types.UninitialisedField(self, 'GncCshPricRcvdPerPdct', PriceFormat1Choice, False)
 
 	@GncCshPricRcvdPerPdct.deleter
 	def GncCshPricRcvdPerPdct(self):
 		del self._GncCshPricRcvdPerPdct
-		self._GncCshPricRcvdPerPdct = None
+		self._GncCshPricRcvdPerPdct = base_types.UninitialisedField(self, 'GncCshPricRcvdPerPdct', PriceFormat1Choice, False)
 
 	@property
 	def IssePric(self):
@@ -68,12 +68,12 @@ class CorporateActionPrice1(base_types._BaseFieldType):
 
 	@IssePric.setter
 	def IssePric(self, value):
-		self._IssePric = value if type(value) != base_types.auto else self.make_default("IssePric")
+		self._IssePric = value if value is not None else base_types.UninitialisedField(self, 'IssePric', PriceFormat2Choice, False)
 
 	@IssePric.deleter
 	def IssePric(self):
 		del self._IssePric
-		self._IssePric = None
+		self._IssePric = base_types.UninitialisedField(self, 'IssePric', PriceFormat2Choice, False)
 
 	@property
 	def OverSbcptDpstPric(self):
@@ -81,12 +81,12 @@ class CorporateActionPrice1(base_types._BaseFieldType):
 
 	@OverSbcptDpstPric.setter
 	def OverSbcptDpstPric(self, value):
-		self._OverSbcptDpstPric = value if type(value) != base_types.auto else self.make_default("OverSbcptDpstPric")
+		self._OverSbcptDpstPric = value if value is not None else base_types.UninitialisedField(self, 'OverSbcptDpstPric', PriceFormat2Choice, False)
 
 	@OverSbcptDpstPric.deleter
 	def OverSbcptDpstPric(self):
 		del self._OverSbcptDpstPric
-		self._OverSbcptDpstPric = None
+		self._OverSbcptDpstPric = base_types.UninitialisedField(self, 'OverSbcptDpstPric', PriceFormat2Choice, False)
 
 	@property
 	def TaxblIncmPerDvddShr(self):
@@ -94,12 +94,12 @@ class CorporateActionPrice1(base_types._BaseFieldType):
 
 	@TaxblIncmPerDvddShr.setter
 	def TaxblIncmPerDvddShr(self, value):
-		self._TaxblIncmPerDvddShr = value if type(value) != base_types.auto else self.make_default("TaxblIncmPerDvddShr")
+		self._TaxblIncmPerDvddShr = value if value is not None else base_types.UninitialisedField(self, 'TaxblIncmPerDvddShr', AmountPrice1, False)
 
 	@TaxblIncmPerDvddShr.deleter
 	def TaxblIncmPerDvddShr(self):
 		del self._TaxblIncmPerDvddShr
-		self._TaxblIncmPerDvddShr = None
+		self._TaxblIncmPerDvddShr = base_types.UninitialisedField(self, 'TaxblIncmPerDvddShr', AmountPrice1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshInLieuOfShrPric', type=PriceFormat2Choice, min=0, max=1, mutex_group=None, array=False),

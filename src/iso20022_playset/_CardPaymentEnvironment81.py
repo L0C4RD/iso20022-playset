@@ -2,19 +2,19 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Acquirer10 import Acquirer10
-from ._Cardholder21 import Cardholder21
-from ._Check1 import Check1
-from ._ContentInformationType40 import ContentInformationType40
-from ._CustomerDevice3 import CustomerDevice3
-from ._LoyaltyAccount3 import LoyaltyAccount3
-from ._MerchantToken2 import MerchantToken2
-from ._Organisation41 import Organisation41
-from ._PaymentCard35 import PaymentCard35
-from ._PointOfInteraction15 import PointOfInteraction15
-from ._RetailerSaleEnvironment2 import RetailerSaleEnvironment2
-from ._StoredValueAccount2 import StoredValueAccount2
-from ._Token1 import Token1
+from . import Acquirer10
+from . import Cardholder21
+from . import Check1
+from . import ContentInformationType40
+from . import CustomerDevice3
+from . import LoyaltyAccount3
+from . import MerchantToken2
+from . import Organisation41
+from . import PaymentCard35
+from . import PointOfInteraction15
+from . import RetailerSaleEnvironment2
+from . import StoredValueAccount2
+from . import Token1
 
 class CardPaymentEnvironment81(base_types._BaseFieldType):
 
@@ -25,12 +25,12 @@ class CardPaymentEnvironment81(base_types._BaseFieldType):
 
 	@Acqrr.setter
 	def Acqrr(self, value):
-		self._Acqrr = value if type(value) != base_types.auto else self.make_default("Acqrr")
+		self._Acqrr = value if value is not None else base_types.UninitialisedField(self, 'Acqrr', Acquirer10, False)
 
 	@Acqrr.deleter
 	def Acqrr(self):
 		del self._Acqrr
-		self._Acqrr = None
+		self._Acqrr = base_types.UninitialisedField(self, 'Acqrr', Acquirer10, False)
 
 	@property
 	def Card(self):
@@ -38,12 +38,12 @@ class CardPaymentEnvironment81(base_types._BaseFieldType):
 
 	@Card.setter
 	def Card(self, value):
-		self._Card = value if type(value) != base_types.auto else self.make_default("Card")
+		self._Card = value if value is not None else base_types.UninitialisedField(self, 'Card', PaymentCard35, False)
 
 	@Card.deleter
 	def Card(self):
 		del self._Card
-		self._Card = None
+		self._Card = base_types.UninitialisedField(self, 'Card', PaymentCard35, False)
 
 	@property
 	def Chck(self):
@@ -51,12 +51,12 @@ class CardPaymentEnvironment81(base_types._BaseFieldType):
 
 	@Chck.setter
 	def Chck(self, value):
-		self._Chck = value if type(value) != base_types.auto else self.make_default("Chck")
+		self._Chck = value if value is not None else base_types.UninitialisedField(self, 'Chck', Check1, False)
 
 	@Chck.deleter
 	def Chck(self):
 		del self._Chck
-		self._Chck = None
+		self._Chck = base_types.UninitialisedField(self, 'Chck', Check1, False)
 
 	@property
 	def Crdhldr(self):
@@ -64,12 +64,12 @@ class CardPaymentEnvironment81(base_types._BaseFieldType):
 
 	@Crdhldr.setter
 	def Crdhldr(self, value):
-		self._Crdhldr = value if type(value) != base_types.auto else self.make_default("Crdhldr")
+		self._Crdhldr = value if value is not None else base_types.UninitialisedField(self, 'Crdhldr', Cardholder21, False)
 
 	@Crdhldr.deleter
 	def Crdhldr(self):
 		del self._Crdhldr
-		self._Crdhldr = None
+		self._Crdhldr = base_types.UninitialisedField(self, 'Crdhldr', Cardholder21, False)
 
 	@property
 	def CstmrDvc(self):
@@ -77,12 +77,12 @@ class CardPaymentEnvironment81(base_types._BaseFieldType):
 
 	@CstmrDvc.setter
 	def CstmrDvc(self, value):
-		self._CstmrDvc = value if type(value) != base_types.auto else self.make_default("CstmrDvc")
+		self._CstmrDvc = value if value is not None else base_types.UninitialisedField(self, 'CstmrDvc', CustomerDevice3, False)
 
 	@CstmrDvc.deleter
 	def CstmrDvc(self):
 		del self._CstmrDvc
-		self._CstmrDvc = None
+		self._CstmrDvc = base_types.UninitialisedField(self, 'CstmrDvc', CustomerDevice3, False)
 
 	@property
 	def LltyAcct(self):
@@ -90,12 +90,12 @@ class CardPaymentEnvironment81(base_types._BaseFieldType):
 
 	@LltyAcct.setter
 	def LltyAcct(self, value):
-		self._LltyAcct = value if type(value) != base_types.auto else self.make_default("LltyAcct")
+		self._LltyAcct = value if value is not None else base_types.UninitialisedField(self, 'LltyAcct', LoyaltyAccount3, True)
 
 	@LltyAcct.deleter
 	def LltyAcct(self):
 		del self._LltyAcct
-		self._LltyAcct = None
+		self._LltyAcct = base_types.UninitialisedField(self, 'LltyAcct', LoyaltyAccount3, True)
 
 	@property
 	def Mrchnt(self):
@@ -103,12 +103,12 @@ class CardPaymentEnvironment81(base_types._BaseFieldType):
 
 	@Mrchnt.setter
 	def Mrchnt(self, value):
-		self._Mrchnt = value if type(value) != base_types.auto else self.make_default("Mrchnt")
+		self._Mrchnt = value if value is not None else base_types.UninitialisedField(self, 'Mrchnt', Organisation41, False)
 
 	@Mrchnt.deleter
 	def Mrchnt(self):
 		del self._Mrchnt
-		self._Mrchnt = None
+		self._Mrchnt = base_types.UninitialisedField(self, 'Mrchnt', Organisation41, False)
 
 	@property
 	def MrchntTkn(self):
@@ -116,12 +116,12 @@ class CardPaymentEnvironment81(base_types._BaseFieldType):
 
 	@MrchntTkn.setter
 	def MrchntTkn(self, value):
-		self._MrchntTkn = value if type(value) != base_types.auto else self.make_default("MrchntTkn")
+		self._MrchntTkn = value if value is not None else base_types.UninitialisedField(self, 'MrchntTkn', MerchantToken2, False)
 
 	@MrchntTkn.deleter
 	def MrchntTkn(self):
 		del self._MrchntTkn
-		self._MrchntTkn = None
+		self._MrchntTkn = base_types.UninitialisedField(self, 'MrchntTkn', MerchantToken2, False)
 
 	@property
 	def POI(self):
@@ -129,12 +129,12 @@ class CardPaymentEnvironment81(base_types._BaseFieldType):
 
 	@POI.setter
 	def POI(self, value):
-		self._POI = value if type(value) != base_types.auto else self.make_default("POI")
+		self._POI = value if value is not None else base_types.UninitialisedField(self, 'POI', PointOfInteraction15, False)
 
 	@POI.deleter
 	def POI(self):
 		del self._POI
-		self._POI = None
+		self._POI = base_types.UninitialisedField(self, 'POI', PointOfInteraction15, False)
 
 	@property
 	def PmtTkn(self):
@@ -142,12 +142,12 @@ class CardPaymentEnvironment81(base_types._BaseFieldType):
 
 	@PmtTkn.setter
 	def PmtTkn(self, value):
-		self._PmtTkn = value if type(value) != base_types.auto else self.make_default("PmtTkn")
+		self._PmtTkn = value if value is not None else base_types.UninitialisedField(self, 'PmtTkn', Token1, False)
 
 	@PmtTkn.deleter
 	def PmtTkn(self):
 		del self._PmtTkn
-		self._PmtTkn = None
+		self._PmtTkn = base_types.UninitialisedField(self, 'PmtTkn', Token1, False)
 
 	@property
 	def PrtctdCrdhldrData(self):
@@ -155,12 +155,12 @@ class CardPaymentEnvironment81(base_types._BaseFieldType):
 
 	@PrtctdCrdhldrData.setter
 	def PrtctdCrdhldrData(self, value):
-		self._PrtctdCrdhldrData = value if type(value) != base_types.auto else self.make_default("PrtctdCrdhldrData")
+		self._PrtctdCrdhldrData = value if value is not None else base_types.UninitialisedField(self, 'PrtctdCrdhldrData', ContentInformationType40, False)
 
 	@PrtctdCrdhldrData.deleter
 	def PrtctdCrdhldrData(self):
 		del self._PrtctdCrdhldrData
-		self._PrtctdCrdhldrData = None
+		self._PrtctdCrdhldrData = base_types.UninitialisedField(self, 'PrtctdCrdhldrData', ContentInformationType40, False)
 
 	@property
 	def SaleEnvt(self):
@@ -168,12 +168,12 @@ class CardPaymentEnvironment81(base_types._BaseFieldType):
 
 	@SaleEnvt.setter
 	def SaleEnvt(self, value):
-		self._SaleEnvt = value if type(value) != base_types.auto else self.make_default("SaleEnvt")
+		self._SaleEnvt = value if value is not None else base_types.UninitialisedField(self, 'SaleEnvt', RetailerSaleEnvironment2, False)
 
 	@SaleEnvt.deleter
 	def SaleEnvt(self):
 		del self._SaleEnvt
-		self._SaleEnvt = None
+		self._SaleEnvt = base_types.UninitialisedField(self, 'SaleEnvt', RetailerSaleEnvironment2, False)
 
 	@property
 	def StordValAcct(self):
@@ -181,12 +181,12 @@ class CardPaymentEnvironment81(base_types._BaseFieldType):
 
 	@StordValAcct.setter
 	def StordValAcct(self, value):
-		self._StordValAcct = value if type(value) != base_types.auto else self.make_default("StordValAcct")
+		self._StordValAcct = value if value is not None else base_types.UninitialisedField(self, 'StordValAcct', StoredValueAccount2, True)
 
 	@StordValAcct.deleter
 	def StordValAcct(self):
 		del self._StordValAcct
-		self._StordValAcct = None
+		self._StordValAcct = base_types.UninitialisedField(self, 'StordValAcct', StoredValueAccount2, True)
 
 	@property
 	def SvcPrvdr(self):
@@ -194,12 +194,12 @@ class CardPaymentEnvironment81(base_types._BaseFieldType):
 
 	@SvcPrvdr.setter
 	def SvcPrvdr(self, value):
-		self._SvcPrvdr = value if type(value) != base_types.auto else self.make_default("SvcPrvdr")
+		self._SvcPrvdr = value if value is not None else base_types.UninitialisedField(self, 'SvcPrvdr', Acquirer10, False)
 
 	@SvcPrvdr.deleter
 	def SvcPrvdr(self):
 		del self._SvcPrvdr
-		self._SvcPrvdr = None
+		self._SvcPrvdr = base_types.UninitialisedField(self, 'SvcPrvdr', Acquirer10, False)
 
 	@property
 	def Wllt(self):
@@ -207,12 +207,12 @@ class CardPaymentEnvironment81(base_types._BaseFieldType):
 
 	@Wllt.setter
 	def Wllt(self, value):
-		self._Wllt = value if type(value) != base_types.auto else self.make_default("Wllt")
+		self._Wllt = value if value is not None else base_types.UninitialisedField(self, 'Wllt', CustomerDevice3, False)
 
 	@Wllt.deleter
 	def Wllt(self):
 		del self._Wllt
-		self._Wllt = None
+		self._Wllt = base_types.UninitialisedField(self, 'Wllt', CustomerDevice3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acqrr', type=Acquirer10, min=0, max=1, mutex_group=None, array=False),

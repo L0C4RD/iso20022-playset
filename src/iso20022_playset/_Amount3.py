@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from . import ActiveCurrencyAndAmount
 
 class Amount3(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class Amount3(base_types._BaseFieldType):
 
 	@OrgnlAmt.setter
 	def OrgnlAmt(self, value):
-		self._OrgnlAmt = value if type(value) != base_types.auto else self.make_default("OrgnlAmt")
+		self._OrgnlAmt = value if value is not None else base_types.UninitialisedField(self, 'OrgnlAmt', ActiveCurrencyAndAmount, False)
 
 	@OrgnlAmt.deleter
 	def OrgnlAmt(self):
 		del self._OrgnlAmt
-		self._OrgnlAmt = None
+		self._OrgnlAmt = base_types.UninitialisedField(self, 'OrgnlAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def RptgAmt(self):
@@ -26,12 +26,12 @@ class Amount3(base_types._BaseFieldType):
 
 	@RptgAmt.setter
 	def RptgAmt(self, value):
-		self._RptgAmt = value if type(value) != base_types.auto else self.make_default("RptgAmt")
+		self._RptgAmt = value if value is not None else base_types.UninitialisedField(self, 'RptgAmt', ActiveCurrencyAndAmount, False)
 
 	@RptgAmt.deleter
 	def RptgAmt(self):
 		del self._RptgAmt
-		self._RptgAmt = None
+		self._RptgAmt = base_types.UninitialisedField(self, 'RptgAmt', ActiveCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

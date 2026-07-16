@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._StoredValueData8 import StoredValueData8
-from ._TransactionIdentifier1 import TransactionIdentifier1
+from . import StoredValueData8
+from . import TransactionIdentifier1
 
 class StoredValueRequest8(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class StoredValueRequest8(base_types._BaseFieldType):
 
 	@Data.setter
 	def Data(self, value):
-		self._Data = value if type(value) != base_types.auto else self.make_default("Data")
+		self._Data = value if value is not None else base_types.UninitialisedField(self, 'Data', StoredValueData8, True)
 
 	@Data.deleter
 	def Data(self):
 		del self._Data
-		self._Data = None
+		self._Data = base_types.UninitialisedField(self, 'Data', StoredValueData8, True)
 
 	@property
 	def SaleTxId(self):
@@ -27,12 +27,12 @@ class StoredValueRequest8(base_types._BaseFieldType):
 
 	@SaleTxId.setter
 	def SaleTxId(self, value):
-		self._SaleTxId = value if type(value) != base_types.auto else self.make_default("SaleTxId")
+		self._SaleTxId = value if value is not None else base_types.UninitialisedField(self, 'SaleTxId', TransactionIdentifier1, False)
 
 	@SaleTxId.deleter
 	def SaleTxId(self):
 		del self._SaleTxId
-		self._SaleTxId = None
+		self._SaleTxId = base_types.UninitialisedField(self, 'SaleTxId', TransactionIdentifier1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Data', type=StoredValueData8, min=1, max=None, mutex_group=None, array=True),

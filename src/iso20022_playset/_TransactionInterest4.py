@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._InterestRecord2 import InterestRecord2
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import InterestRecord2
 
 class TransactionInterest4(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TransactionInterest4(base_types._BaseFieldType):
 
 	@Rcrd.setter
 	def Rcrd(self, value):
-		self._Rcrd = value if type(value) != base_types.auto else self.make_default("Rcrd")
+		self._Rcrd = value if value is not None else base_types.UninitialisedField(self, 'Rcrd', InterestRecord2, True)
 
 	@Rcrd.deleter
 	def Rcrd(self):
 		del self._Rcrd
-		self._Rcrd = None
+		self._Rcrd = base_types.UninitialisedField(self, 'Rcrd', InterestRecord2, True)
 
 	@property
 	def TtlIntrstAndTaxAmt(self):
@@ -27,12 +27,12 @@ class TransactionInterest4(base_types._BaseFieldType):
 
 	@TtlIntrstAndTaxAmt.setter
 	def TtlIntrstAndTaxAmt(self, value):
-		self._TtlIntrstAndTaxAmt = value if type(value) != base_types.auto else self.make_default("TtlIntrstAndTaxAmt")
+		self._TtlIntrstAndTaxAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlIntrstAndTaxAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@TtlIntrstAndTaxAmt.deleter
 	def TtlIntrstAndTaxAmt(self):
 		del self._TtlIntrstAndTaxAmt
-		self._TtlIntrstAndTaxAmt = None
+		self._TtlIntrstAndTaxAmt = base_types.UninitialisedField(self, 'TtlIntrstAndTaxAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Rcrd', type=InterestRecord2, min=0, max=None, mutex_group=None, array=True),

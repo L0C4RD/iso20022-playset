@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._PercentageRate import PercentageRate
+from . import Max35Text
+from . import PercentageRate
 
 class OwnershipBeneficiaryRate1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class OwnershipBeneficiaryRate1(base_types._BaseFieldType):
 
 	@Frctn.setter
 	def Frctn(self, value):
-		self._Frctn = value if type(value) != base_types.auto else self.make_default("Frctn")
+		self._Frctn = value if value is not None else base_types.UninitialisedField(self, 'Frctn', Max35Text, False)
 
 	@Frctn.deleter
 	def Frctn(self):
 		del self._Frctn
-		self._Frctn = None
+		self._Frctn = base_types.UninitialisedField(self, 'Frctn', Max35Text, False)
 
 	@property
 	def Rate(self):
@@ -27,12 +27,12 @@ class OwnershipBeneficiaryRate1(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+		self._Rate = value if value is not None else base_types.UninitialisedField(self, 'Rate', PercentageRate, False)
 
 	@Rate.deleter
 	def Rate(self):
 		del self._Rate
-		self._Rate = None
+		self._Rate = base_types.UninitialisedField(self, 'Rate', PercentageRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Frctn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

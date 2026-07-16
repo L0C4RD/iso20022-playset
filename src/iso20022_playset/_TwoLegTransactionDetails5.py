@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection29 import AmountAndDirection29
-from ._AmountAndDirection5 import AmountAndDirection5
-from ._ClosingDate4Choice import ClosingDate4Choice
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
-from ._OtherAmounts16 import OtherAmounts16
-from ._Price14 import Price14
-from ._TradeDate7Choice import TradeDate7Choice
-from ._TradeDate8Choice import TradeDate8Choice
-from ._TwoLegTransactionType4Choice import TwoLegTransactionType4Choice
+from . import AmountAndDirection29
+from . import AmountAndDirection5
+from . import ClosingDate4Choice
+from . import Max140Text
+from . import Max35Text
+from . import OtherAmounts16
+from . import Price14
+from . import TradeDate7Choice
+from . import TradeDate8Choice
+from . import TwoLegTransactionType4Choice
 
 class TwoLegTransactionDetails5(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class TwoLegTransactionDetails5(base_types._BaseFieldType):
 
 	@ClsgDt.setter
 	def ClsgDt(self, value):
-		self._ClsgDt = value if type(value) != base_types.auto else self.make_default("ClsgDt")
+		self._ClsgDt = value if value is not None else base_types.UninitialisedField(self, 'ClsgDt', ClosingDate4Choice, False)
 
 	@ClsgDt.deleter
 	def ClsgDt(self):
 		del self._ClsgDt
-		self._ClsgDt = None
+		self._ClsgDt = base_types.UninitialisedField(self, 'ClsgDt', ClosingDate4Choice, False)
 
 	@property
 	def ClsgLegId(self):
@@ -35,12 +35,12 @@ class TwoLegTransactionDetails5(base_types._BaseFieldType):
 
 	@ClsgLegId.setter
 	def ClsgLegId(self, value):
-		self._ClsgLegId = value if type(value) != base_types.auto else self.make_default("ClsgLegId")
+		self._ClsgLegId = value if value is not None else base_types.UninitialisedField(self, 'ClsgLegId', Max35Text, False)
 
 	@ClsgLegId.deleter
 	def ClsgLegId(self):
 		del self._ClsgLegId
-		self._ClsgLegId = None
+		self._ClsgLegId = base_types.UninitialisedField(self, 'ClsgLegId', Max35Text, False)
 
 	@property
 	def ClsgSttlmAmt(self):
@@ -48,12 +48,12 @@ class TwoLegTransactionDetails5(base_types._BaseFieldType):
 
 	@ClsgSttlmAmt.setter
 	def ClsgSttlmAmt(self, value):
-		self._ClsgSttlmAmt = value if type(value) != base_types.auto else self.make_default("ClsgSttlmAmt")
+		self._ClsgSttlmAmt = value if value is not None else base_types.UninitialisedField(self, 'ClsgSttlmAmt', AmountAndDirection5, False)
 
 	@ClsgSttlmAmt.deleter
 	def ClsgSttlmAmt(self):
 		del self._ClsgSttlmAmt
-		self._ClsgSttlmAmt = None
+		self._ClsgSttlmAmt = base_types.UninitialisedField(self, 'ClsgSttlmAmt', AmountAndDirection5, False)
 
 	@property
 	def EndPric(self):
@@ -61,12 +61,12 @@ class TwoLegTransactionDetails5(base_types._BaseFieldType):
 
 	@EndPric.setter
 	def EndPric(self, value):
-		self._EndPric = value if type(value) != base_types.auto else self.make_default("EndPric")
+		self._EndPric = value if value is not None else base_types.UninitialisedField(self, 'EndPric', Price14, False)
 
 	@EndPric.deleter
 	def EndPric(self):
 		del self._EndPric
-		self._EndPric = None
+		self._EndPric = base_types.UninitialisedField(self, 'EndPric', Price14, False)
 
 	@property
 	def GrssTradAmt(self):
@@ -74,12 +74,12 @@ class TwoLegTransactionDetails5(base_types._BaseFieldType):
 
 	@GrssTradAmt.setter
 	def GrssTradAmt(self, value):
-		self._GrssTradAmt = value if type(value) != base_types.auto else self.make_default("GrssTradAmt")
+		self._GrssTradAmt = value if value is not None else base_types.UninitialisedField(self, 'GrssTradAmt', AmountAndDirection29, False)
 
 	@GrssTradAmt.deleter
 	def GrssTradAmt(self):
 		del self._GrssTradAmt
-		self._GrssTradAmt = None
+		self._GrssTradAmt = base_types.UninitialisedField(self, 'GrssTradAmt', AmountAndDirection29, False)
 
 	@property
 	def OpngLegId(self):
@@ -87,12 +87,12 @@ class TwoLegTransactionDetails5(base_types._BaseFieldType):
 
 	@OpngLegId.setter
 	def OpngLegId(self, value):
-		self._OpngLegId = value if type(value) != base_types.auto else self.make_default("OpngLegId")
+		self._OpngLegId = value if value is not None else base_types.UninitialisedField(self, 'OpngLegId', Max35Text, False)
 
 	@OpngLegId.deleter
 	def OpngLegId(self):
 		del self._OpngLegId
-		self._OpngLegId = None
+		self._OpngLegId = base_types.UninitialisedField(self, 'OpngLegId', Max35Text, False)
 
 	@property
 	def OthrAmts(self):
@@ -100,12 +100,12 @@ class TwoLegTransactionDetails5(base_types._BaseFieldType):
 
 	@OthrAmts.setter
 	def OthrAmts(self, value):
-		self._OthrAmts = value if type(value) != base_types.auto else self.make_default("OthrAmts")
+		self._OthrAmts = value if value is not None else base_types.UninitialisedField(self, 'OthrAmts', OtherAmounts16, True)
 
 	@OthrAmts.deleter
 	def OthrAmts(self):
 		del self._OthrAmts
-		self._OthrAmts = None
+		self._OthrAmts = base_types.UninitialisedField(self, 'OthrAmts', OtherAmounts16, True)
 
 	@property
 	def PrcgDt(self):
@@ -113,12 +113,12 @@ class TwoLegTransactionDetails5(base_types._BaseFieldType):
 
 	@PrcgDt.setter
 	def PrcgDt(self, value):
-		self._PrcgDt = value if type(value) != base_types.auto else self.make_default("PrcgDt")
+		self._PrcgDt = value if value is not None else base_types.UninitialisedField(self, 'PrcgDt', TradeDate7Choice, False)
 
 	@PrcgDt.deleter
 	def PrcgDt(self):
 		del self._PrcgDt
-		self._PrcgDt = None
+		self._PrcgDt = base_types.UninitialisedField(self, 'PrcgDt', TradeDate7Choice, False)
 
 	@property
 	def ScndLegNrrtv(self):
@@ -126,12 +126,12 @@ class TwoLegTransactionDetails5(base_types._BaseFieldType):
 
 	@ScndLegNrrtv.setter
 	def ScndLegNrrtv(self, value):
-		self._ScndLegNrrtv = value if type(value) != base_types.auto else self.make_default("ScndLegNrrtv")
+		self._ScndLegNrrtv = value if value is not None else base_types.UninitialisedField(self, 'ScndLegNrrtv', Max140Text, False)
 
 	@ScndLegNrrtv.deleter
 	def ScndLegNrrtv(self):
 		del self._ScndLegNrrtv
-		self._ScndLegNrrtv = None
+		self._ScndLegNrrtv = base_types.UninitialisedField(self, 'ScndLegNrrtv', Max140Text, False)
 
 	@property
 	def TradDt(self):
@@ -139,12 +139,12 @@ class TwoLegTransactionDetails5(base_types._BaseFieldType):
 
 	@TradDt.setter
 	def TradDt(self, value):
-		self._TradDt = value if type(value) != base_types.auto else self.make_default("TradDt")
+		self._TradDt = value if value is not None else base_types.UninitialisedField(self, 'TradDt', TradeDate8Choice, False)
 
 	@TradDt.deleter
 	def TradDt(self):
 		del self._TradDt
-		self._TradDt = None
+		self._TradDt = base_types.UninitialisedField(self, 'TradDt', TradeDate8Choice, False)
 
 	@property
 	def TwoLegTxTp(self):
@@ -152,12 +152,12 @@ class TwoLegTransactionDetails5(base_types._BaseFieldType):
 
 	@TwoLegTxTp.setter
 	def TwoLegTxTp(self, value):
-		self._TwoLegTxTp = value if type(value) != base_types.auto else self.make_default("TwoLegTxTp")
+		self._TwoLegTxTp = value if value is not None else base_types.UninitialisedField(self, 'TwoLegTxTp', TwoLegTransactionType4Choice, False)
 
 	@TwoLegTxTp.deleter
 	def TwoLegTxTp(self):
 		del self._TwoLegTxTp
-		self._TwoLegTxTp = None
+		self._TwoLegTxTp = base_types.UninitialisedField(self, 'TwoLegTxTp', TwoLegTransactionType4Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClsgDt', type=ClosingDate4Choice, min=0, max=1, mutex_group=None, array=False),

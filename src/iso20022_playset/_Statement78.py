@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CollateralRole1Code import CollateralRole1Code
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._Frequency22Choice import Frequency22Choice
-from ._Max35Text import Max35Text
-from ._Number3Choice import Number3Choice
-from ._StatementBasis14Choice import StatementBasis14Choice
-from ._StatementStatusType1Code import StatementStatusType1Code
-from ._UpdateType15Choice import UpdateType15Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import CollateralRole1Code
+from . import DateAndDateTime2Choice
+from . import Frequency22Choice
+from . import Max35Text
+from . import Number3Choice
+from . import StatementBasis14Choice
+from . import StatementStatusType1Code
+from . import UpdateType15Choice
+from . import YesNoIndicator
 
 class Statement78(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class Statement78(base_types._BaseFieldType):
 
 	@ActvtyInd.setter
 	def ActvtyInd(self, value):
-		self._ActvtyInd = value if type(value) != base_types.auto else self.make_default("ActvtyInd")
+		self._ActvtyInd = value if value is not None else base_types.UninitialisedField(self, 'ActvtyInd', YesNoIndicator, False)
 
 	@ActvtyInd.deleter
 	def ActvtyInd(self):
 		del self._ActvtyInd
-		self._ActvtyInd = None
+		self._ActvtyInd = base_types.UninitialisedField(self, 'ActvtyInd', YesNoIndicator, False)
 
 	@property
 	def CollSd(self):
@@ -34,12 +34,12 @@ class Statement78(base_types._BaseFieldType):
 
 	@CollSd.setter
 	def CollSd(self, value):
-		self._CollSd = value if type(value) != base_types.auto else self.make_default("CollSd")
+		self._CollSd = value if value is not None else base_types.UninitialisedField(self, 'CollSd', CollateralRole1Code, False)
 
 	@CollSd.deleter
 	def CollSd(self):
 		del self._CollSd
-		self._CollSd = None
+		self._CollSd = base_types.UninitialisedField(self, 'CollSd', CollateralRole1Code, False)
 
 	@property
 	def Frqcy(self):
@@ -47,12 +47,12 @@ class Statement78(base_types._BaseFieldType):
 
 	@Frqcy.setter
 	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
+		self._Frqcy = value if value is not None else base_types.UninitialisedField(self, 'Frqcy', Frequency22Choice, False)
 
 	@Frqcy.deleter
 	def Frqcy(self):
 		del self._Frqcy
-		self._Frqcy = None
+		self._Frqcy = base_types.UninitialisedField(self, 'Frqcy', Frequency22Choice, False)
 
 	@property
 	def QryRef(self):
@@ -60,12 +60,12 @@ class Statement78(base_types._BaseFieldType):
 
 	@QryRef.setter
 	def QryRef(self, value):
-		self._QryRef = value if type(value) != base_types.auto else self.make_default("QryRef")
+		self._QryRef = value if value is not None else base_types.UninitialisedField(self, 'QryRef', Max35Text, False)
 
 	@QryRef.deleter
 	def QryRef(self):
 		del self._QryRef
-		self._QryRef = None
+		self._QryRef = base_types.UninitialisedField(self, 'QryRef', Max35Text, False)
 
 	@property
 	def RptNb(self):
@@ -73,12 +73,12 @@ class Statement78(base_types._BaseFieldType):
 
 	@RptNb.setter
 	def RptNb(self, value):
-		self._RptNb = value if type(value) != base_types.auto else self.make_default("RptNb")
+		self._RptNb = value if value is not None else base_types.UninitialisedField(self, 'RptNb', Number3Choice, False)
 
 	@RptNb.deleter
 	def RptNb(self):
 		del self._RptNb
-		self._RptNb = None
+		self._RptNb = base_types.UninitialisedField(self, 'RptNb', Number3Choice, False)
 
 	@property
 	def StmtBsis(self):
@@ -86,12 +86,12 @@ class Statement78(base_types._BaseFieldType):
 
 	@StmtBsis.setter
 	def StmtBsis(self, value):
-		self._StmtBsis = value if type(value) != base_types.auto else self.make_default("StmtBsis")
+		self._StmtBsis = value if value is not None else base_types.UninitialisedField(self, 'StmtBsis', StatementBasis14Choice, False)
 
 	@StmtBsis.deleter
 	def StmtBsis(self):
 		del self._StmtBsis
-		self._StmtBsis = None
+		self._StmtBsis = base_types.UninitialisedField(self, 'StmtBsis', StatementBasis14Choice, False)
 
 	@property
 	def StmtDtTm(self):
@@ -99,12 +99,12 @@ class Statement78(base_types._BaseFieldType):
 
 	@StmtDtTm.setter
 	def StmtDtTm(self, value):
-		self._StmtDtTm = value if type(value) != base_types.auto else self.make_default("StmtDtTm")
+		self._StmtDtTm = value if value is not None else base_types.UninitialisedField(self, 'StmtDtTm', DateAndDateTime2Choice, False)
 
 	@StmtDtTm.deleter
 	def StmtDtTm(self):
 		del self._StmtDtTm
-		self._StmtDtTm = None
+		self._StmtDtTm = base_types.UninitialisedField(self, 'StmtDtTm', DateAndDateTime2Choice, False)
 
 	@property
 	def StmtId(self):
@@ -112,12 +112,12 @@ class Statement78(base_types._BaseFieldType):
 
 	@StmtId.setter
 	def StmtId(self, value):
-		self._StmtId = value if type(value) != base_types.auto else self.make_default("StmtId")
+		self._StmtId = value if value is not None else base_types.UninitialisedField(self, 'StmtId', Max35Text, False)
 
 	@StmtId.deleter
 	def StmtId(self):
 		del self._StmtId
-		self._StmtId = None
+		self._StmtId = base_types.UninitialisedField(self, 'StmtId', Max35Text, False)
 
 	@property
 	def StsTp(self):
@@ -125,12 +125,12 @@ class Statement78(base_types._BaseFieldType):
 
 	@StsTp.setter
 	def StsTp(self, value):
-		self._StsTp = value if type(value) != base_types.auto else self.make_default("StsTp")
+		self._StsTp = value if value is not None else base_types.UninitialisedField(self, 'StsTp', StatementStatusType1Code, False)
 
 	@StsTp.deleter
 	def StsTp(self):
 		del self._StsTp
-		self._StsTp = None
+		self._StsTp = base_types.UninitialisedField(self, 'StsTp', StatementStatusType1Code, False)
 
 	@property
 	def SummryInd(self):
@@ -138,12 +138,12 @@ class Statement78(base_types._BaseFieldType):
 
 	@SummryInd.setter
 	def SummryInd(self, value):
-		self._SummryInd = value if type(value) != base_types.auto else self.make_default("SummryInd")
+		self._SummryInd = value if value is not None else base_types.UninitialisedField(self, 'SummryInd', YesNoIndicator, False)
 
 	@SummryInd.deleter
 	def SummryInd(self):
 		del self._SummryInd
-		self._SummryInd = None
+		self._SummryInd = base_types.UninitialisedField(self, 'SummryInd', YesNoIndicator, False)
 
 	@property
 	def UpdTp(self):
@@ -151,12 +151,12 @@ class Statement78(base_types._BaseFieldType):
 
 	@UpdTp.setter
 	def UpdTp(self, value):
-		self._UpdTp = value if type(value) != base_types.auto else self.make_default("UpdTp")
+		self._UpdTp = value if value is not None else base_types.UninitialisedField(self, 'UpdTp', UpdateType15Choice, False)
 
 	@UpdTp.deleter
 	def UpdTp(self):
 		del self._UpdTp
-		self._UpdTp = None
+		self._UpdTp = base_types.UninitialisedField(self, 'UpdTp', UpdateType15Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActvtyInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),

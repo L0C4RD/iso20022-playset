@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DataSetCategory10Code import DataSetCategory10Code
-from ._GenericIdentification176 import GenericIdentification176
-from ._Max1025Text import Max1025Text
-from ._Max256Text import Max256Text
-from ._Max35Text import Max35Text
-from ._Max8Text import Max8Text
-from ._MessageItemCondition2 import MessageItemCondition2
-from ._TerminalManagementAction3Code import TerminalManagementAction3Code
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import DataSetCategory10Code
+from . import GenericIdentification176
+from . import Max1025Text
+from . import Max256Text
+from . import Max35Text
+from . import Max8Text
+from . import MessageItemCondition2
+from . import TerminalManagementAction3Code
+from . import TrueFalseIndicator
 
 class TMSProtocolParameters7(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class TMSProtocolParameters7(base_types._BaseFieldType):
 
 	@ActnTp.setter
 	def ActnTp(self, value):
-		self._ActnTp = value if type(value) != base_types.auto else self.make_default("ActnTp")
+		self._ActnTp = value if value is not None else base_types.UninitialisedField(self, 'ActnTp', TerminalManagementAction3Code, False)
 
 	@ActnTp.deleter
 	def ActnTp(self):
 		del self._ActnTp
-		self._ActnTp = None
+		self._ActnTp = base_types.UninitialisedField(self, 'ActnTp', TerminalManagementAction3Code, False)
 
 	@property
 	def ApplId(self):
@@ -34,12 +34,12 @@ class TMSProtocolParameters7(base_types._BaseFieldType):
 
 	@ApplId.setter
 	def ApplId(self, value):
-		self._ApplId = value if type(value) != base_types.auto else self.make_default("ApplId")
+		self._ApplId = value if value is not None else base_types.UninitialisedField(self, 'ApplId', Max35Text, True)
 
 	@ApplId.deleter
 	def ApplId(self):
 		del self._ApplId
-		self._ApplId = None
+		self._ApplId = base_types.UninitialisedField(self, 'ApplId', Max35Text, True)
 
 	@property
 	def FileTrf(self):
@@ -47,12 +47,12 @@ class TMSProtocolParameters7(base_types._BaseFieldType):
 
 	@FileTrf.setter
 	def FileTrf(self, value):
-		self._FileTrf = value if type(value) != base_types.auto else self.make_default("FileTrf")
+		self._FileTrf = value if value is not None else base_types.UninitialisedField(self, 'FileTrf', TrueFalseIndicator, False)
 
 	@FileTrf.deleter
 	def FileTrf(self):
 		del self._FileTrf
-		self._FileTrf = None
+		self._FileTrf = base_types.UninitialisedField(self, 'FileTrf', TrueFalseIndicator, False)
 
 	@property
 	def HstId(self):
@@ -60,12 +60,12 @@ class TMSProtocolParameters7(base_types._BaseFieldType):
 
 	@HstId.setter
 	def HstId(self, value):
-		self._HstId = value if type(value) != base_types.auto else self.make_default("HstId")
+		self._HstId = value if value is not None else base_types.UninitialisedField(self, 'HstId', Max35Text, False)
 
 	@HstId.deleter
 	def HstId(self):
 		del self._HstId
-		self._HstId = None
+		self._HstId = base_types.UninitialisedField(self, 'HstId', Max35Text, False)
 
 	@property
 	def InitgPtyId(self):
@@ -73,12 +73,12 @@ class TMSProtocolParameters7(base_types._BaseFieldType):
 
 	@InitgPtyId.setter
 	def InitgPtyId(self, value):
-		self._InitgPtyId = value if type(value) != base_types.auto else self.make_default("InitgPtyId")
+		self._InitgPtyId = value if value is not None else base_types.UninitialisedField(self, 'InitgPtyId', Max35Text, False)
 
 	@InitgPtyId.deleter
 	def InitgPtyId(self):
 		del self._InitgPtyId
-		self._InitgPtyId = None
+		self._InitgPtyId = base_types.UninitialisedField(self, 'InitgPtyId', Max35Text, False)
 
 	@property
 	def MntncSvc(self):
@@ -86,12 +86,12 @@ class TMSProtocolParameters7(base_types._BaseFieldType):
 
 	@MntncSvc.setter
 	def MntncSvc(self, value):
-		self._MntncSvc = value if type(value) != base_types.auto else self.make_default("MntncSvc")
+		self._MntncSvc = value if value is not None else base_types.UninitialisedField(self, 'MntncSvc', DataSetCategory10Code, True)
 
 	@MntncSvc.deleter
 	def MntncSvc(self):
 		del self._MntncSvc
-		self._MntncSvc = None
+		self._MntncSvc = base_types.UninitialisedField(self, 'MntncSvc', DataSetCategory10Code, True)
 
 	@property
 	def MsgItm(self):
@@ -99,12 +99,12 @@ class TMSProtocolParameters7(base_types._BaseFieldType):
 
 	@MsgItm.setter
 	def MsgItm(self, value):
-		self._MsgItm = value if type(value) != base_types.auto else self.make_default("MsgItm")
+		self._MsgItm = value if value is not None else base_types.UninitialisedField(self, 'MsgItm', MessageItemCondition2, True)
 
 	@MsgItm.deleter
 	def MsgItm(self):
 		del self._MsgItm
-		self._MsgItm = None
+		self._MsgItm = base_types.UninitialisedField(self, 'MsgItm', MessageItemCondition2, True)
 
 	@property
 	def POIId(self):
@@ -112,12 +112,12 @@ class TMSProtocolParameters7(base_types._BaseFieldType):
 
 	@POIId.setter
 	def POIId(self, value):
-		self._POIId = value if type(value) != base_types.auto else self.make_default("POIId")
+		self._POIId = value if value is not None else base_types.UninitialisedField(self, 'POIId', Max35Text, False)
 
 	@POIId.deleter
 	def POIId(self):
 		del self._POIId
-		self._POIId = None
+		self._POIId = base_types.UninitialisedField(self, 'POIId', Max35Text, False)
 
 	@property
 	def PrtcolVrsn(self):
@@ -125,12 +125,12 @@ class TMSProtocolParameters7(base_types._BaseFieldType):
 
 	@PrtcolVrsn.setter
 	def PrtcolVrsn(self, value):
-		self._PrtcolVrsn = value if type(value) != base_types.auto else self.make_default("PrtcolVrsn")
+		self._PrtcolVrsn = value if value is not None else base_types.UninitialisedField(self, 'PrtcolVrsn', Max8Text, False)
 
 	@PrtcolVrsn.deleter
 	def PrtcolVrsn(self):
 		del self._PrtcolVrsn
-		self._PrtcolVrsn = None
+		self._PrtcolVrsn = base_types.UninitialisedField(self, 'PrtcolVrsn', Max8Text, False)
 
 	@property
 	def RcptPtyId(self):
@@ -138,12 +138,12 @@ class TMSProtocolParameters7(base_types._BaseFieldType):
 
 	@RcptPtyId.setter
 	def RcptPtyId(self, value):
-		self._RcptPtyId = value if type(value) != base_types.auto else self.make_default("RcptPtyId")
+		self._RcptPtyId = value if value is not None else base_types.UninitialisedField(self, 'RcptPtyId', Max35Text, False)
 
 	@RcptPtyId.deleter
 	def RcptPtyId(self):
 		del self._RcptPtyId
-		self._RcptPtyId = None
+		self._RcptPtyId = base_types.UninitialisedField(self, 'RcptPtyId', Max35Text, False)
 
 	@property
 	def TermnlMgrId(self):
@@ -151,12 +151,12 @@ class TMSProtocolParameters7(base_types._BaseFieldType):
 
 	@TermnlMgrId.setter
 	def TermnlMgrId(self, value):
-		self._TermnlMgrId = value if type(value) != base_types.auto else self.make_default("TermnlMgrId")
+		self._TermnlMgrId = value if value is not None else base_types.UninitialisedField(self, 'TermnlMgrId', GenericIdentification176, False)
 
 	@TermnlMgrId.deleter
 	def TermnlMgrId(self):
 		del self._TermnlMgrId
-		self._TermnlMgrId = None
+		self._TermnlMgrId = base_types.UninitialisedField(self, 'TermnlMgrId', GenericIdentification176, False)
 
 	@property
 	def Vrsn(self):
@@ -164,12 +164,12 @@ class TMSProtocolParameters7(base_types._BaseFieldType):
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+		self._Vrsn = value if value is not None else base_types.UninitialisedField(self, 'Vrsn', Max256Text, False)
 
 	@Vrsn.deleter
 	def Vrsn(self):
 		del self._Vrsn
-		self._Vrsn = None
+		self._Vrsn = base_types.UninitialisedField(self, 'Vrsn', Max256Text, False)
 
 	@property
 	def XtrnlyTpSpprtd(self):
@@ -177,12 +177,12 @@ class TMSProtocolParameters7(base_types._BaseFieldType):
 
 	@XtrnlyTpSpprtd.setter
 	def XtrnlyTpSpprtd(self, value):
-		self._XtrnlyTpSpprtd = value if type(value) != base_types.auto else self.make_default("XtrnlyTpSpprtd")
+		self._XtrnlyTpSpprtd = value if value is not None else base_types.UninitialisedField(self, 'XtrnlyTpSpprtd', Max1025Text, True)
 
 	@XtrnlyTpSpprtd.deleter
 	def XtrnlyTpSpprtd(self):
 		del self._XtrnlyTpSpprtd
-		self._XtrnlyTpSpprtd = None
+		self._XtrnlyTpSpprtd = base_types.UninitialisedField(self, 'XtrnlyTpSpprtd', Max1025Text, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActnTp', type=TerminalManagementAction3Code, min=1, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DocumentIdentification7 import DocumentIdentification7
-from ._Max35Text import Max35Text
-from ._YesNoIndicator import YesNoIndicator
+from . import DocumentIdentification7
+from . import Max35Text
+from . import YesNoIndicator
 
 class DataSetSubmissionReferences3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class DataSetSubmissionReferences3(base_types._BaseFieldType):
 
 	@ForcdMtch.setter
 	def ForcdMtch(self, value):
-		self._ForcdMtch = value if type(value) != base_types.auto else self.make_default("ForcdMtch")
+		self._ForcdMtch = value if value is not None else base_types.UninitialisedField(self, 'ForcdMtch', YesNoIndicator, False)
 
 	@ForcdMtch.deleter
 	def ForcdMtch(self):
 		del self._ForcdMtch
-		self._ForcdMtch = None
+		self._ForcdMtch = base_types.UninitialisedField(self, 'ForcdMtch', YesNoIndicator, False)
 
 	@property
 	def PurchsOrdrRef(self):
@@ -28,12 +28,12 @@ class DataSetSubmissionReferences3(base_types._BaseFieldType):
 
 	@PurchsOrdrRef.setter
 	def PurchsOrdrRef(self, value):
-		self._PurchsOrdrRef = value if type(value) != base_types.auto else self.make_default("PurchsOrdrRef")
+		self._PurchsOrdrRef = value if value is not None else base_types.UninitialisedField(self, 'PurchsOrdrRef', DocumentIdentification7, False)
 
 	@PurchsOrdrRef.deleter
 	def PurchsOrdrRef(self):
 		del self._PurchsOrdrRef
-		self._PurchsOrdrRef = None
+		self._PurchsOrdrRef = base_types.UninitialisedField(self, 'PurchsOrdrRef', DocumentIdentification7, False)
 
 	@property
 	def SubmitrTxRef(self):
@@ -41,12 +41,12 @@ class DataSetSubmissionReferences3(base_types._BaseFieldType):
 
 	@SubmitrTxRef.setter
 	def SubmitrTxRef(self, value):
-		self._SubmitrTxRef = value if type(value) != base_types.auto else self.make_default("SubmitrTxRef")
+		self._SubmitrTxRef = value if value is not None else base_types.UninitialisedField(self, 'SubmitrTxRef', Max35Text, False)
 
 	@SubmitrTxRef.deleter
 	def SubmitrTxRef(self):
 		del self._SubmitrTxRef
-		self._SubmitrTxRef = None
+		self._SubmitrTxRef = base_types.UninitialisedField(self, 'SubmitrTxRef', Max35Text, False)
 
 	@property
 	def TxId(self):
@@ -54,12 +54,12 @@ class DataSetSubmissionReferences3(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ForcdMtch', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),

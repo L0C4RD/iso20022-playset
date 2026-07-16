@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._PercentageRate import PercentageRate
+from . import ISODate
+from . import PercentageRate
 
 class RateAdjustment1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class RateAdjustment1(base_types._BaseFieldType):
 
 	@AdjstmntDt.setter
 	def AdjstmntDt(self, value):
-		self._AdjstmntDt = value if type(value) != base_types.auto else self.make_default("AdjstmntDt")
+		self._AdjstmntDt = value if value is not None else base_types.UninitialisedField(self, 'AdjstmntDt', ISODate, False)
 
 	@AdjstmntDt.deleter
 	def AdjstmntDt(self):
 		del self._AdjstmntDt
-		self._AdjstmntDt = None
+		self._AdjstmntDt = base_types.UninitialisedField(self, 'AdjstmntDt', ISODate, False)
 
 	@property
 	def Rate(self):
@@ -27,12 +27,12 @@ class RateAdjustment1(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+		self._Rate = value if value is not None else base_types.UninitialisedField(self, 'Rate', PercentageRate, False)
 
 	@Rate.deleter
 	def Rate(self):
 		del self._Rate
-		self._Rate = None
+		self._Rate = base_types.UninitialisedField(self, 'Rate', PercentageRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AdjstmntDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),

@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTime1Choice import DateAndDateTime1Choice
-from ._Max35Text import Max35Text
-from ._ModalityOfCounting1Choice import ModalityOfCounting1Choice
-from ._PartyIdentification231Choice import PartyIdentification231Choice
-from ._PartyIdentification232Choice import PartyIdentification232Choice
-from ._PartyIdentification246Choice import PartyIdentification246Choice
-from ._Vote19 import Vote19
-from ._YesNoIndicator import YesNoIndicator
+from . import DateAndDateTime1Choice
+from . import Max35Text
+from . import ModalityOfCounting1Choice
+from . import PartyIdentification231Choice
+from . import PartyIdentification232Choice
+from . import PartyIdentification246Choice
+from . import Vote19
+from . import YesNoIndicator
 
 class DetailedInstructionStatus19(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class DetailedInstructionStatus19(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', Max35Text, False)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', Max35Text, False)
 
 	@property
 	def AcctOwnr(self):
@@ -33,12 +33,12 @@ class DetailedInstructionStatus19(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification231Choice, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification231Choice, False)
 
 	@property
 	def ModltyOfCntg(self):
@@ -46,12 +46,12 @@ class DetailedInstructionStatus19(base_types._BaseFieldType):
 
 	@ModltyOfCntg.setter
 	def ModltyOfCntg(self, value):
-		self._ModltyOfCntg = value if type(value) != base_types.auto else self.make_default("ModltyOfCntg")
+		self._ModltyOfCntg = value if value is not None else base_types.UninitialisedField(self, 'ModltyOfCntg', ModalityOfCounting1Choice, False)
 
 	@ModltyOfCntg.deleter
 	def ModltyOfCntg(self):
 		del self._ModltyOfCntg
-		self._ModltyOfCntg = None
+		self._ModltyOfCntg = base_types.UninitialisedField(self, 'ModltyOfCntg', ModalityOfCounting1Choice, False)
 
 	@property
 	def Prxy(self):
@@ -59,12 +59,12 @@ class DetailedInstructionStatus19(base_types._BaseFieldType):
 
 	@Prxy.setter
 	def Prxy(self, value):
-		self._Prxy = value if type(value) != base_types.auto else self.make_default("Prxy")
+		self._Prxy = value if value is not None else base_types.UninitialisedField(self, 'Prxy', PartyIdentification232Choice, False)
 
 	@Prxy.deleter
 	def Prxy(self):
 		del self._Prxy
-		self._Prxy = None
+		self._Prxy = base_types.UninitialisedField(self, 'Prxy', PartyIdentification232Choice, False)
 
 	@property
 	def RghtsHldr(self):
@@ -72,12 +72,12 @@ class DetailedInstructionStatus19(base_types._BaseFieldType):
 
 	@RghtsHldr.setter
 	def RghtsHldr(self, value):
-		self._RghtsHldr = value if type(value) != base_types.auto else self.make_default("RghtsHldr")
+		self._RghtsHldr = value if value is not None else base_types.UninitialisedField(self, 'RghtsHldr', PartyIdentification246Choice, True)
 
 	@RghtsHldr.deleter
 	def RghtsHldr(self):
 		del self._RghtsHldr
-		self._RghtsHldr = None
+		self._RghtsHldr = base_types.UninitialisedField(self, 'RghtsHldr', PartyIdentification246Choice, True)
 
 	@property
 	def SnglInstrId(self):
@@ -85,12 +85,12 @@ class DetailedInstructionStatus19(base_types._BaseFieldType):
 
 	@SnglInstrId.setter
 	def SnglInstrId(self, value):
-		self._SnglInstrId = value if type(value) != base_types.auto else self.make_default("SnglInstrId")
+		self._SnglInstrId = value if value is not None else base_types.UninitialisedField(self, 'SnglInstrId', Max35Text, False)
 
 	@SnglInstrId.deleter
 	def SnglInstrId(self):
 		del self._SnglInstrId
-		self._SnglInstrId = None
+		self._SnglInstrId = base_types.UninitialisedField(self, 'SnglInstrId', Max35Text, False)
 
 	@property
 	def StgInstr(self):
@@ -98,12 +98,12 @@ class DetailedInstructionStatus19(base_types._BaseFieldType):
 
 	@StgInstr.setter
 	def StgInstr(self, value):
-		self._StgInstr = value if type(value) != base_types.auto else self.make_default("StgInstr")
+		self._StgInstr = value if value is not None else base_types.UninitialisedField(self, 'StgInstr', YesNoIndicator, False)
 
 	@StgInstr.deleter
 	def StgInstr(self):
 		del self._StgInstr
-		self._StgInstr = None
+		self._StgInstr = base_types.UninitialisedField(self, 'StgInstr', YesNoIndicator, False)
 
 	@property
 	def SubAcctId(self):
@@ -111,12 +111,12 @@ class DetailedInstructionStatus19(base_types._BaseFieldType):
 
 	@SubAcctId.setter
 	def SubAcctId(self, value):
-		self._SubAcctId = value if type(value) != base_types.auto else self.make_default("SubAcctId")
+		self._SubAcctId = value if value is not None else base_types.UninitialisedField(self, 'SubAcctId', Max35Text, False)
 
 	@SubAcctId.deleter
 	def SubAcctId(self):
 		del self._SubAcctId
-		self._SubAcctId = None
+		self._SubAcctId = base_types.UninitialisedField(self, 'SubAcctId', Max35Text, False)
 
 	@property
 	def VotePerRsltn(self):
@@ -124,12 +124,12 @@ class DetailedInstructionStatus19(base_types._BaseFieldType):
 
 	@VotePerRsltn.setter
 	def VotePerRsltn(self, value):
-		self._VotePerRsltn = value if type(value) != base_types.auto else self.make_default("VotePerRsltn")
+		self._VotePerRsltn = value if value is not None else base_types.UninitialisedField(self, 'VotePerRsltn', Vote19, True)
 
 	@VotePerRsltn.deleter
 	def VotePerRsltn(self):
 		del self._VotePerRsltn
-		self._VotePerRsltn = None
+		self._VotePerRsltn = base_types.UninitialisedField(self, 'VotePerRsltn', Vote19, True)
 
 	@property
 	def VoteRctDtTm(self):
@@ -137,12 +137,12 @@ class DetailedInstructionStatus19(base_types._BaseFieldType):
 
 	@VoteRctDtTm.setter
 	def VoteRctDtTm(self, value):
-		self._VoteRctDtTm = value if type(value) != base_types.auto else self.make_default("VoteRctDtTm")
+		self._VoteRctDtTm = value if value is not None else base_types.UninitialisedField(self, 'VoteRctDtTm', DateAndDateTime1Choice, False)
 
 	@VoteRctDtTm.deleter
 	def VoteRctDtTm(self):
 		del self._VoteRctDtTm
-		self._VoteRctDtTm = None
+		self._VoteRctDtTm = base_types.UninitialisedField(self, 'VoteRctDtTm', DateAndDateTime1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

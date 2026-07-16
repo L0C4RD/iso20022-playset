@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Product6 import Product6
+from . import Max35Text
+from . import Product6
 
 class SaleItemRebate1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SaleItemRebate1(base_types._BaseFieldType):
 
 	@RbtLabl.setter
 	def RbtLabl(self, value):
-		self._RbtLabl = value if type(value) != base_types.auto else self.make_default("RbtLabl")
+		self._RbtLabl = value if value is not None else base_types.UninitialisedField(self, 'RbtLabl', Max35Text, False)
 
 	@RbtLabl.deleter
 	def RbtLabl(self):
 		del self._RbtLabl
-		self._RbtLabl = None
+		self._RbtLabl = base_types.UninitialisedField(self, 'RbtLabl', Max35Text, False)
 
 	@property
 	def SaleItm(self):
@@ -27,12 +27,12 @@ class SaleItemRebate1(base_types._BaseFieldType):
 
 	@SaleItm.setter
 	def SaleItm(self, value):
-		self._SaleItm = value if type(value) != base_types.auto else self.make_default("SaleItm")
+		self._SaleItm = value if value is not None else base_types.UninitialisedField(self, 'SaleItm', Product6, False)
 
 	@SaleItm.deleter
 	def SaleItm(self):
 		del self._SaleItm
-		self._SaleItm = None
+		self._SaleItm = base_types.UninitialisedField(self, 'SaleItm', Product6, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RbtLabl', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

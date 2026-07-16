@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max35Text import Max35Text
+from . import ActiveOrHistoricCurrencyCode
+from . import ISINOct2015Identifier
+from . import ImpliedCurrencyAndAmount
+from . import Max35Text
 
 class VolumeCapReport2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class VolumeCapReport2(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveOrHistoricCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def Id(self):
@@ -29,12 +29,12 @@ class VolumeCapReport2(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', ISINOct2015Identifier, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', ISINOct2015Identifier, False)
 
 	@property
 	def TechRcrdId(self):
@@ -42,12 +42,12 @@ class VolumeCapReport2(base_types._BaseFieldType):
 
 	@TechRcrdId.setter
 	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
+		self._TechRcrdId = value if value is not None else base_types.UninitialisedField(self, 'TechRcrdId', Max35Text, False)
 
 	@TechRcrdId.deleter
 	def TechRcrdId(self):
 		del self._TechRcrdId
-		self._TechRcrdId = None
+		self._TechRcrdId = base_types.UninitialisedField(self, 'TechRcrdId', Max35Text, False)
 
 	@property
 	def TtlNgtdTxsTradgVol(self):
@@ -55,12 +55,12 @@ class VolumeCapReport2(base_types._BaseFieldType):
 
 	@TtlNgtdTxsTradgVol.setter
 	def TtlNgtdTxsTradgVol(self, value):
-		self._TtlNgtdTxsTradgVol = value if type(value) != base_types.auto else self.make_default("TtlNgtdTxsTradgVol")
+		self._TtlNgtdTxsTradgVol = value if value is not None else base_types.UninitialisedField(self, 'TtlNgtdTxsTradgVol', ImpliedCurrencyAndAmount, False)
 
 	@TtlNgtdTxsTradgVol.deleter
 	def TtlNgtdTxsTradgVol(self):
 		del self._TtlNgtdTxsTradgVol
-		self._TtlNgtdTxsTradgVol = None
+		self._TtlNgtdTxsTradgVol = base_types.UninitialisedField(self, 'TtlNgtdTxsTradgVol', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def TtlRefPricTradgVol(self):
@@ -68,12 +68,12 @@ class VolumeCapReport2(base_types._BaseFieldType):
 
 	@TtlRefPricTradgVol.setter
 	def TtlRefPricTradgVol(self, value):
-		self._TtlRefPricTradgVol = value if type(value) != base_types.auto else self.make_default("TtlRefPricTradgVol")
+		self._TtlRefPricTradgVol = value if value is not None else base_types.UninitialisedField(self, 'TtlRefPricTradgVol', ImpliedCurrencyAndAmount, False)
 
 	@TtlRefPricTradgVol.deleter
 	def TtlRefPricTradgVol(self):
 		del self._TtlRefPricTradgVol
-		self._TtlRefPricTradgVol = None
+		self._TtlRefPricTradgVol = base_types.UninitialisedField(self, 'TtlRefPricTradgVol', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def TtlTradgVol(self):
@@ -81,12 +81,12 @@ class VolumeCapReport2(base_types._BaseFieldType):
 
 	@TtlTradgVol.setter
 	def TtlTradgVol(self, value):
-		self._TtlTradgVol = value if type(value) != base_types.auto else self.make_default("TtlTradgVol")
+		self._TtlTradgVol = value if value is not None else base_types.UninitialisedField(self, 'TtlTradgVol', ImpliedCurrencyAndAmount, False)
 
 	@TtlTradgVol.deleter
 	def TtlTradgVol(self):
 		del self._TtlTradgVol
-		self._TtlTradgVol = None
+		self._TtlTradgVol = base_types.UninitialisedField(self, 'TtlTradgVol', ImpliedCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ccy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),

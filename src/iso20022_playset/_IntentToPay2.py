@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BreakDown1Choice import BreakDown1Choice
-from ._ISODate import ISODate
-from ._SettlementTerms3 import SettlementTerms3
+from . import BreakDown1Choice
+from . import ISODate
+from . import SettlementTerms3
 
 class IntentToPay2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class IntentToPay2(base_types._BaseFieldType):
 
 	@Brkdwn.setter
 	def Brkdwn(self, value):
-		self._Brkdwn = value if type(value) != base_types.auto else self.make_default("Brkdwn")
+		self._Brkdwn = value if value is not None else base_types.UninitialisedField(self, 'Brkdwn', BreakDown1Choice, False)
 
 	@Brkdwn.deleter
 	def Brkdwn(self):
 		del self._Brkdwn
-		self._Brkdwn = None
+		self._Brkdwn = base_types.UninitialisedField(self, 'Brkdwn', BreakDown1Choice, False)
 
 	@property
 	def SttlmTerms(self):
@@ -28,12 +28,12 @@ class IntentToPay2(base_types._BaseFieldType):
 
 	@SttlmTerms.setter
 	def SttlmTerms(self, value):
-		self._SttlmTerms = value if type(value) != base_types.auto else self.make_default("SttlmTerms")
+		self._SttlmTerms = value if value is not None else base_types.UninitialisedField(self, 'SttlmTerms', SettlementTerms3, False)
 
 	@SttlmTerms.deleter
 	def SttlmTerms(self):
 		del self._SttlmTerms
-		self._SttlmTerms = None
+		self._SttlmTerms = base_types.UninitialisedField(self, 'SttlmTerms', SettlementTerms3, False)
 
 	@property
 	def XpctdPmtDt(self):
@@ -41,12 +41,12 @@ class IntentToPay2(base_types._BaseFieldType):
 
 	@XpctdPmtDt.setter
 	def XpctdPmtDt(self, value):
-		self._XpctdPmtDt = value if type(value) != base_types.auto else self.make_default("XpctdPmtDt")
+		self._XpctdPmtDt = value if value is not None else base_types.UninitialisedField(self, 'XpctdPmtDt', ISODate, False)
 
 	@XpctdPmtDt.deleter
 	def XpctdPmtDt(self):
 		del self._XpctdPmtDt
-		self._XpctdPmtDt = None
+		self._XpctdPmtDt = base_types.UninitialisedField(self, 'XpctdPmtDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Brkdwn', type=BreakDown1Choice, min=1, max=1, mutex_group=None, array=False),

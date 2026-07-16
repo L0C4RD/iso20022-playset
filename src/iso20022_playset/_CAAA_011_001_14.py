@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcceptorBatchTransferV14 import AcceptorBatchTransferV14
+from . import AcceptorBatchTransferV14
 
 class CAAA_011_001_14():
 
@@ -18,12 +18,12 @@ class CAAA_011_001_14():
 
 		@AccptrBtchTrf.setter
 		def AccptrBtchTrf(self, value):
-			self._AccptrBtchTrf = value if type(value) != base_types.auto else self.make_default("AccptrBtchTrf")
+			self._AccptrBtchTrf = value if value is not None else base_types.UninitialisedField(self, 'AccptrBtchTrf', AcceptorBatchTransferV14, False)
 
 		@AccptrBtchTrf.deleter
 		def AccptrBtchTrf(self):
 			del self._AccptrBtchTrf
-			self._AccptrBtchTrf = None
+			self._AccptrBtchTrf = base_types.UninitialisedField(self, 'AccptrBtchTrf', AcceptorBatchTransferV14, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AccptrBtchTrf', type=AcceptorBatchTransferV14, min=1, max=1, mutex_group=None, array=False),

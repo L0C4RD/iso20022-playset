@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._QuantityRangeBoundary1 import QuantityRangeBoundary1
+from . import QuantityRangeBoundary1
 
 class FromToQuantityRange1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class FromToQuantityRange1(base_types._BaseFieldType):
 
 	@FrQty.setter
 	def FrQty(self, value):
-		self._FrQty = value if type(value) != base_types.auto else self.make_default("FrQty")
+		self._FrQty = value if value is not None else base_types.UninitialisedField(self, 'FrQty', QuantityRangeBoundary1, False)
 
 	@FrQty.deleter
 	def FrQty(self):
 		del self._FrQty
-		self._FrQty = None
+		self._FrQty = base_types.UninitialisedField(self, 'FrQty', QuantityRangeBoundary1, False)
 
 	@property
 	def ToQty(self):
@@ -26,12 +26,12 @@ class FromToQuantityRange1(base_types._BaseFieldType):
 
 	@ToQty.setter
 	def ToQty(self, value):
-		self._ToQty = value if type(value) != base_types.auto else self.make_default("ToQty")
+		self._ToQty = value if value is not None else base_types.UninitialisedField(self, 'ToQty', QuantityRangeBoundary1, False)
 
 	@ToQty.deleter
 	def ToQty(self):
 		del self._ToQty
-		self._ToQty = None
+		self._ToQty = base_types.UninitialisedField(self, 'ToQty', QuantityRangeBoundary1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FrQty', type=QuantityRangeBoundary1, min=1, max=1, mutex_group=None, array=False),

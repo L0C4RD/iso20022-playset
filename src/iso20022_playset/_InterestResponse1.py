@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
-from ._RejectionReason21FormatChoice import RejectionReason21FormatChoice
-from ._Status4Code import Status4Code
+from . import Max140Text
+from . import Max35Text
+from . import RejectionReason21FormatChoice
+from . import Status4Code
 
 class InterestResponse1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class InterestResponse1(base_types._BaseFieldType):
 
 	@IntrstPmtReqId.setter
 	def IntrstPmtReqId(self, value):
-		self._IntrstPmtReqId = value if type(value) != base_types.auto else self.make_default("IntrstPmtReqId")
+		self._IntrstPmtReqId = value if value is not None else base_types.UninitialisedField(self, 'IntrstPmtReqId', Max35Text, False)
 
 	@IntrstPmtReqId.deleter
 	def IntrstPmtReqId(self):
 		del self._IntrstPmtReqId
-		self._IntrstPmtReqId = None
+		self._IntrstPmtReqId = base_types.UninitialisedField(self, 'IntrstPmtReqId', Max35Text, False)
 
 	@property
 	def RjctnRsn(self):
@@ -29,12 +29,12 @@ class InterestResponse1(base_types._BaseFieldType):
 
 	@RjctnRsn.setter
 	def RjctnRsn(self, value):
-		self._RjctnRsn = value if type(value) != base_types.auto else self.make_default("RjctnRsn")
+		self._RjctnRsn = value if value is not None else base_types.UninitialisedField(self, 'RjctnRsn', RejectionReason21FormatChoice, False)
 
 	@RjctnRsn.deleter
 	def RjctnRsn(self):
 		del self._RjctnRsn
-		self._RjctnRsn = None
+		self._RjctnRsn = base_types.UninitialisedField(self, 'RjctnRsn', RejectionReason21FormatChoice, False)
 
 	@property
 	def RjctnRsnInf(self):
@@ -42,12 +42,12 @@ class InterestResponse1(base_types._BaseFieldType):
 
 	@RjctnRsnInf.setter
 	def RjctnRsnInf(self, value):
-		self._RjctnRsnInf = value if type(value) != base_types.auto else self.make_default("RjctnRsnInf")
+		self._RjctnRsnInf = value if value is not None else base_types.UninitialisedField(self, 'RjctnRsnInf', Max140Text, False)
 
 	@RjctnRsnInf.deleter
 	def RjctnRsnInf(self):
 		del self._RjctnRsnInf
-		self._RjctnRsnInf = None
+		self._RjctnRsnInf = base_types.UninitialisedField(self, 'RjctnRsnInf', Max140Text, False)
 
 	@property
 	def RspnTp(self):
@@ -55,12 +55,12 @@ class InterestResponse1(base_types._BaseFieldType):
 
 	@RspnTp.setter
 	def RspnTp(self, value):
-		self._RspnTp = value if type(value) != base_types.auto else self.make_default("RspnTp")
+		self._RspnTp = value if value is not None else base_types.UninitialisedField(self, 'RspnTp', Status4Code, False)
 
 	@RspnTp.deleter
 	def RspnTp(self):
 		del self._RspnTp
-		self._RspnTp = None
+		self._RspnTp = base_types.UninitialisedField(self, 'RspnTp', Status4Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IntrstPmtReqId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

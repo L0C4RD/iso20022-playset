@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PaymentIdentification8Choice import PaymentIdentification8Choice
-from ._TransactionOrError6Choice import TransactionOrError6Choice
+from . import PaymentIdentification8Choice
+from . import TransactionOrError6Choice
 
 class TransactionReport8(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TransactionReport8(base_types._BaseFieldType):
 
 	@PmtId.setter
 	def PmtId(self, value):
-		self._PmtId = value if type(value) != base_types.auto else self.make_default("PmtId")
+		self._PmtId = value if value is not None else base_types.UninitialisedField(self, 'PmtId', PaymentIdentification8Choice, False)
 
 	@PmtId.deleter
 	def PmtId(self):
 		del self._PmtId
-		self._PmtId = None
+		self._PmtId = base_types.UninitialisedField(self, 'PmtId', PaymentIdentification8Choice, False)
 
 	@property
 	def TxOrErr(self):
@@ -27,12 +27,12 @@ class TransactionReport8(base_types._BaseFieldType):
 
 	@TxOrErr.setter
 	def TxOrErr(self, value):
-		self._TxOrErr = value if type(value) != base_types.auto else self.make_default("TxOrErr")
+		self._TxOrErr = value if value is not None else base_types.UninitialisedField(self, 'TxOrErr', TransactionOrError6Choice, False)
 
 	@TxOrErr.deleter
 	def TxOrErr(self):
 		del self._TxOrErr
-		self._TxOrErr = None
+		self._TxOrErr = base_types.UninitialisedField(self, 'TxOrErr', TransactionOrError6Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PmtId', type=PaymentIdentification8Choice, min=1, max=1, mutex_group=None, array=False),

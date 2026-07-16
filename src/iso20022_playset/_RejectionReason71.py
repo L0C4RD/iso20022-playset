@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericValidationRuleIdentification1 import GenericValidationRuleIdentification1
-from ._ReportingMessageStatus2Code import ReportingMessageStatus2Code
-from ._TradeTransactionIdentification24 import TradeTransactionIdentification24
+from . import GenericValidationRuleIdentification1
+from . import ReportingMessageStatus2Code
+from . import TradeTransactionIdentification24
 
 class RejectionReason71(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class RejectionReason71(base_types._BaseFieldType):
 
 	@DtldVldtnRule.setter
 	def DtldVldtnRule(self, value):
-		self._DtldVldtnRule = value if type(value) != base_types.auto else self.make_default("DtldVldtnRule")
+		self._DtldVldtnRule = value if value is not None else base_types.UninitialisedField(self, 'DtldVldtnRule', GenericValidationRuleIdentification1, True)
 
 	@DtldVldtnRule.deleter
 	def DtldVldtnRule(self):
 		del self._DtldVldtnRule
-		self._DtldVldtnRule = None
+		self._DtldVldtnRule = base_types.UninitialisedField(self, 'DtldVldtnRule', GenericValidationRuleIdentification1, True)
 
 	@property
 	def Sts(self):
@@ -28,12 +28,12 @@ class RejectionReason71(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', ReportingMessageStatus2Code, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', ReportingMessageStatus2Code, False)
 
 	@property
 	def TxId(self):
@@ -41,12 +41,12 @@ class RejectionReason71(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', TradeTransactionIdentification24, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', TradeTransactionIdentification24, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DtldVldtnRule', type=GenericValidationRuleIdentification1, min=0, max=None, mutex_group=None, array=True),

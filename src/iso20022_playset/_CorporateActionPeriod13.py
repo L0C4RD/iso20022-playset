@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Period11 import Period11
+from . import Period11
 
 class CorporateActionPeriod13(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class CorporateActionPeriod13(base_types._BaseFieldType):
 
 	@ActnPrd.setter
 	def ActnPrd(self, value):
-		self._ActnPrd = value if type(value) != base_types.auto else self.make_default("ActnPrd")
+		self._ActnPrd = value if value is not None else base_types.UninitialisedField(self, 'ActnPrd', Period11, False)
 
 	@ActnPrd.deleter
 	def ActnPrd(self):
 		del self._ActnPrd
-		self._ActnPrd = None
+		self._ActnPrd = base_types.UninitialisedField(self, 'ActnPrd', Period11, False)
 
 	@property
 	def ParllTradgPrd(self):
@@ -26,12 +26,12 @@ class CorporateActionPeriod13(base_types._BaseFieldType):
 
 	@ParllTradgPrd.setter
 	def ParllTradgPrd(self, value):
-		self._ParllTradgPrd = value if type(value) != base_types.auto else self.make_default("ParllTradgPrd")
+		self._ParllTradgPrd = value if value is not None else base_types.UninitialisedField(self, 'ParllTradgPrd', Period11, False)
 
 	@ParllTradgPrd.deleter
 	def ParllTradgPrd(self):
 		del self._ParllTradgPrd
-		self._ParllTradgPrd = None
+		self._ParllTradgPrd = base_types.UninitialisedField(self, 'ParllTradgPrd', Period11, False)
 
 	@property
 	def PricClctnPrd(self):
@@ -39,12 +39,12 @@ class CorporateActionPeriod13(base_types._BaseFieldType):
 
 	@PricClctnPrd.setter
 	def PricClctnPrd(self, value):
-		self._PricClctnPrd = value if type(value) != base_types.auto else self.make_default("PricClctnPrd")
+		self._PricClctnPrd = value if value is not None else base_types.UninitialisedField(self, 'PricClctnPrd', Period11, False)
 
 	@PricClctnPrd.deleter
 	def PricClctnPrd(self):
 		del self._PricClctnPrd
-		self._PricClctnPrd = None
+		self._PricClctnPrd = base_types.UninitialisedField(self, 'PricClctnPrd', Period11, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActnPrd', type=Period11, min=0, max=1, mutex_group=None, array=False),

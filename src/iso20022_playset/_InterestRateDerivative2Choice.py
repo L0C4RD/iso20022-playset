@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SwapType1Code import SwapType1Code
-from ._UnderlyingInterestRateType3Code import UnderlyingInterestRateType3Code
+from . import SwapType1Code
+from . import UnderlyingInterestRateType3Code
 
 class InterestRateDerivative2Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class InterestRateDerivative2Choice(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', UnderlyingInterestRateType3Code, False)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', UnderlyingInterestRateType3Code, False)
 
 	@property
 	def SwpRltd(self):
@@ -27,12 +27,12 @@ class InterestRateDerivative2Choice(base_types._BaseFieldType):
 
 	@SwpRltd.setter
 	def SwpRltd(self, value):
-		self._SwpRltd = value if type(value) != base_types.auto else self.make_default("SwpRltd")
+		self._SwpRltd = value if value is not None else base_types.UninitialisedField(self, 'SwpRltd', SwapType1Code, False)
 
 	@SwpRltd.deleter
 	def SwpRltd(self):
 		del self._SwpRltd
-		self._SwpRltd = None
+		self._SwpRltd = base_types.UninitialisedField(self, 'SwpRltd', SwapType1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Othr', type=UnderlyingInterestRateType3Code, min=0, max=1, mutex_group=1, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialPartyClassification2Choice import FinancialPartyClassification2Choice
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import FinancialPartyClassification2Choice
+from . import TrueFalseIndicator
 
 class FinancialInstitutionSector1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class FinancialInstitutionSector1(base_types._BaseFieldType):
 
 	@ClrThrshld.setter
 	def ClrThrshld(self, value):
-		self._ClrThrshld = value if type(value) != base_types.auto else self.make_default("ClrThrshld")
+		self._ClrThrshld = value if value is not None else base_types.UninitialisedField(self, 'ClrThrshld', TrueFalseIndicator, False)
 
 	@ClrThrshld.deleter
 	def ClrThrshld(self):
 		del self._ClrThrshld
-		self._ClrThrshld = None
+		self._ClrThrshld = base_types.UninitialisedField(self, 'ClrThrshld', TrueFalseIndicator, False)
 
 	@property
 	def Sctr(self):
@@ -27,12 +27,12 @@ class FinancialInstitutionSector1(base_types._BaseFieldType):
 
 	@Sctr.setter
 	def Sctr(self, value):
-		self._Sctr = value if type(value) != base_types.auto else self.make_default("Sctr")
+		self._Sctr = value if value is not None else base_types.UninitialisedField(self, 'Sctr', FinancialPartyClassification2Choice, True)
 
 	@Sctr.deleter
 	def Sctr(self):
 		del self._Sctr
-		self._Sctr = None
+		self._Sctr = base_types.UninitialisedField(self, 'Sctr', FinancialPartyClassification2Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClrThrshld', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RateStatus1Code import RateStatus1Code
-from ._RestrictedFINActiveCurrencyAnd13DecimalAmount import RestrictedFINActiveCurrencyAnd13DecimalAmount
+from . import RateStatus1Code
+from . import RestrictedFINActiveCurrencyAnd13DecimalAmount
 
 class AmountAndRateStatus2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AmountAndRateStatus2(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', RestrictedFINActiveCurrencyAnd13DecimalAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', RestrictedFINActiveCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def RateSts(self):
@@ -27,12 +27,12 @@ class AmountAndRateStatus2(base_types._BaseFieldType):
 
 	@RateSts.setter
 	def RateSts(self, value):
-		self._RateSts = value if type(value) != base_types.auto else self.make_default("RateSts")
+		self._RateSts = value if value is not None else base_types.UninitialisedField(self, 'RateSts', RateStatus1Code, False)
 
 	@RateSts.deleter
 	def RateSts(self):
 		del self._RateSts
-		self._RateSts = None
+		self._RateSts = base_types.UninitialisedField(self, 'RateSts', RateStatus1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=RestrictedFINActiveCurrencyAnd13DecimalAmount, min=1, max=1, mutex_group=None, array=False),

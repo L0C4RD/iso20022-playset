@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesAccountCreationRequestV01 import SecuritiesAccountCreationRequestV01
+from . import SecuritiesAccountCreationRequestV01
 
 class REDA_018_001_01():
 
@@ -18,12 +18,12 @@ class REDA_018_001_01():
 
 		@SctiesAcctCreReq.setter
 		def SctiesAcctCreReq(self, value):
-			self._SctiesAcctCreReq = value if type(value) != base_types.auto else self.make_default("SctiesAcctCreReq")
+			self._SctiesAcctCreReq = value if value is not None else base_types.UninitialisedField(self, 'SctiesAcctCreReq', SecuritiesAccountCreationRequestV01, False)
 
 		@SctiesAcctCreReq.deleter
 		def SctiesAcctCreReq(self):
 			del self._SctiesAcctCreReq
-			self._SctiesAcctCreReq = None
+			self._SctiesAcctCreReq = base_types.UninitialisedField(self, 'SctiesAcctCreReq', SecuritiesAccountCreationRequestV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesAcctCreReq', type=SecuritiesAccountCreationRequestV01, min=1, max=1, mutex_group=None, array=False),

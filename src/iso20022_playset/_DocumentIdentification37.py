@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ProcessingPosition10Choice import ProcessingPosition10Choice
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from . import ProcessingPosition10Choice
+from . import RestrictedFINXMax16Text
 
 class DocumentIdentification37(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DocumentIdentification37(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', RestrictedFINXMax16Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', RestrictedFINXMax16Text, False)
 
 	@property
 	def LkgTp(self):
@@ -27,12 +27,12 @@ class DocumentIdentification37(base_types._BaseFieldType):
 
 	@LkgTp.setter
 	def LkgTp(self, value):
-		self._LkgTp = value if type(value) != base_types.auto else self.make_default("LkgTp")
+		self._LkgTp = value if value is not None else base_types.UninitialisedField(self, 'LkgTp', ProcessingPosition10Choice, False)
 
 	@LkgTp.deleter
 	def LkgTp(self):
 		del self._LkgTp
-		self._LkgTp = None
+		self._LkgTp = base_types.UninitialisedField(self, 'LkgTp', ProcessingPosition10Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=RestrictedFINXMax16Text, min=1, max=1, mutex_group=None, array=False),

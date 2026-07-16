@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CaseStatusReportRequestV05 import CaseStatusReportRequestV05
+from . import CaseStatusReportRequestV05
 
 class CAMT_038_001_05():
 
@@ -18,12 +18,12 @@ class CAMT_038_001_05():
 
 		@CaseStsRptReq.setter
 		def CaseStsRptReq(self, value):
-			self._CaseStsRptReq = value if type(value) != base_types.auto else self.make_default("CaseStsRptReq")
+			self._CaseStsRptReq = value if value is not None else base_types.UninitialisedField(self, 'CaseStsRptReq', CaseStatusReportRequestV05, False)
 
 		@CaseStsRptReq.deleter
 		def CaseStsRptReq(self):
 			del self._CaseStsRptReq
-			self._CaseStsRptReq = None
+			self._CaseStsRptReq = base_types.UninitialisedField(self, 'CaseStsRptReq', CaseStatusReportRequestV05, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CaseStsRptReq', type=CaseStatusReportRequestV05, min=1, max=1, mutex_group=None, array=False),

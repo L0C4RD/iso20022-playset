@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max2000Text import Max2000Text
-from ._PartyAndSignature2 import PartyAndSignature2
-from ._Undertaking3 import Undertaking3
+from . import Max2000Text
+from . import PartyAndSignature2
+from . import Undertaking3
 
 class UndertakingIssuanceV01(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class UndertakingIssuanceV01(base_types._BaseFieldType):
 
 	@BkToBkInf.setter
 	def BkToBkInf(self, value):
-		self._BkToBkInf = value if type(value) != base_types.auto else self.make_default("BkToBkInf")
+		self._BkToBkInf = value if value is not None else base_types.UninitialisedField(self, 'BkToBkInf', Max2000Text, True)
 
 	@BkToBkInf.deleter
 	def BkToBkInf(self):
 		del self._BkToBkInf
-		self._BkToBkInf = None
+		self._BkToBkInf = base_types.UninitialisedField(self, 'BkToBkInf', Max2000Text, True)
 
 	@property
 	def BkToBnfcryInf(self):
@@ -28,12 +28,12 @@ class UndertakingIssuanceV01(base_types._BaseFieldType):
 
 	@BkToBnfcryInf.setter
 	def BkToBnfcryInf(self, value):
-		self._BkToBnfcryInf = value if type(value) != base_types.auto else self.make_default("BkToBnfcryInf")
+		self._BkToBnfcryInf = value if value is not None else base_types.UninitialisedField(self, 'BkToBnfcryInf', Max2000Text, True)
 
 	@BkToBnfcryInf.deleter
 	def BkToBnfcryInf(self):
 		del self._BkToBnfcryInf
-		self._BkToBnfcryInf = None
+		self._BkToBnfcryInf = base_types.UninitialisedField(self, 'BkToBnfcryInf', Max2000Text, True)
 
 	@property
 	def DgtlSgntr(self):
@@ -41,12 +41,12 @@ class UndertakingIssuanceV01(base_types._BaseFieldType):
 
 	@DgtlSgntr.setter
 	def DgtlSgntr(self, value):
-		self._DgtlSgntr = value if type(value) != base_types.auto else self.make_default("DgtlSgntr")
+		self._DgtlSgntr = value if value is not None else base_types.UninitialisedField(self, 'DgtlSgntr', PartyAndSignature2, True)
 
 	@DgtlSgntr.deleter
 	def DgtlSgntr(self):
 		del self._DgtlSgntr
-		self._DgtlSgntr = None
+		self._DgtlSgntr = base_types.UninitialisedField(self, 'DgtlSgntr', PartyAndSignature2, True)
 
 	@property
 	def UdrtkgIssncDtls(self):
@@ -54,12 +54,12 @@ class UndertakingIssuanceV01(base_types._BaseFieldType):
 
 	@UdrtkgIssncDtls.setter
 	def UdrtkgIssncDtls(self, value):
-		self._UdrtkgIssncDtls = value if type(value) != base_types.auto else self.make_default("UdrtkgIssncDtls")
+		self._UdrtkgIssncDtls = value if value is not None else base_types.UninitialisedField(self, 'UdrtkgIssncDtls', Undertaking3, False)
 
 	@UdrtkgIssncDtls.deleter
 	def UdrtkgIssncDtls(self):
 		del self._UdrtkgIssncDtls
-		self._UdrtkgIssncDtls = None
+		self._UdrtkgIssncDtls = base_types.UninitialisedField(self, 'UdrtkgIssncDtls', Undertaking3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BkToBkInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),

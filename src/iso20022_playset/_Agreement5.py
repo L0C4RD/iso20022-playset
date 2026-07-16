@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ClosingType1Code import ClosingType1Code
-from ._DeliveryType2Code import DeliveryType2Code
-from ._ISODateTime import ISODateTime
-from ._Max350Text import Max350Text
-from ._PercentageRate import PercentageRate
+from . import ActiveCurrencyCode
+from . import ClosingType1Code
+from . import DeliveryType2Code
+from . import ISODateTime
+from . import Max350Text
+from . import PercentageRate
 
 class Agreement5(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class Agreement5(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@property
 	def ClsgTp(self):
@@ -31,12 +31,12 @@ class Agreement5(base_types._BaseFieldType):
 
 	@ClsgTp.setter
 	def ClsgTp(self, value):
-		self._ClsgTp = value if type(value) != base_types.auto else self.make_default("ClsgTp")
+		self._ClsgTp = value if value is not None else base_types.UninitialisedField(self, 'ClsgTp', ClosingType1Code, False)
 
 	@ClsgTp.deleter
 	def ClsgTp(self):
 		del self._ClsgTp
-		self._ClsgTp = None
+		self._ClsgTp = base_types.UninitialisedField(self, 'ClsgTp', ClosingType1Code, False)
 
 	@property
 	def Desc(self):
@@ -44,12 +44,12 @@ class Agreement5(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', Max350Text, False)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', Max350Text, False)
 
 	@property
 	def DlvryTp(self):
@@ -57,12 +57,12 @@ class Agreement5(base_types._BaseFieldType):
 
 	@DlvryTp.setter
 	def DlvryTp(self, value):
-		self._DlvryTp = value if type(value) != base_types.auto else self.make_default("DlvryTp")
+		self._DlvryTp = value if value is not None else base_types.UninitialisedField(self, 'DlvryTp', DeliveryType2Code, False)
 
 	@DlvryTp.deleter
 	def DlvryTp(self):
 		del self._DlvryTp
-		self._DlvryTp = None
+		self._DlvryTp = base_types.UninitialisedField(self, 'DlvryTp', DeliveryType2Code, False)
 
 	@property
 	def Dt(self):
@@ -70,12 +70,12 @@ class Agreement5(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODateTime, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODateTime, False)
 
 	@property
 	def MrgnRatio(self):
@@ -83,12 +83,12 @@ class Agreement5(base_types._BaseFieldType):
 
 	@MrgnRatio.setter
 	def MrgnRatio(self, value):
-		self._MrgnRatio = value if type(value) != base_types.auto else self.make_default("MrgnRatio")
+		self._MrgnRatio = value if value is not None else base_types.UninitialisedField(self, 'MrgnRatio', PercentageRate, False)
 
 	@MrgnRatio.deleter
 	def MrgnRatio(self):
 		del self._MrgnRatio
-		self._MrgnRatio = None
+		self._MrgnRatio = base_types.UninitialisedField(self, 'MrgnRatio', PercentageRate, False)
 
 	@property
 	def StartDt(self):
@@ -96,12 +96,12 @@ class Agreement5(base_types._BaseFieldType):
 
 	@StartDt.setter
 	def StartDt(self, value):
-		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
+		self._StartDt = value if value is not None else base_types.UninitialisedField(self, 'StartDt', ISODateTime, False)
 
 	@StartDt.deleter
 	def StartDt(self):
 		del self._StartDt
-		self._StartDt = None
+		self._StartDt = base_types.UninitialisedField(self, 'StartDt', ISODateTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),

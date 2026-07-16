@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection44 import AmountAndDirection44
+from . import AmountAndDirection44
 
 class CollateralAmount5(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class CollateralAmount5(base_types._BaseFieldType):
 
 	@Collsd.setter
 	def Collsd(self, value):
-		self._Collsd = value if type(value) != base_types.auto else self.make_default("Collsd")
+		self._Collsd = value if value is not None else base_types.UninitialisedField(self, 'Collsd', AmountAndDirection44, False)
 
 	@Collsd.deleter
 	def Collsd(self):
 		del self._Collsd
-		self._Collsd = None
+		self._Collsd = base_types.UninitialisedField(self, 'Collsd', AmountAndDirection44, False)
 
 	@property
 	def ReqrdMrgn(self):
@@ -26,12 +26,12 @@ class CollateralAmount5(base_types._BaseFieldType):
 
 	@ReqrdMrgn.setter
 	def ReqrdMrgn(self, value):
-		self._ReqrdMrgn = value if type(value) != base_types.auto else self.make_default("ReqrdMrgn")
+		self._ReqrdMrgn = value if value is not None else base_types.UninitialisedField(self, 'ReqrdMrgn', AmountAndDirection44, False)
 
 	@ReqrdMrgn.deleter
 	def ReqrdMrgn(self):
 		del self._ReqrdMrgn
-		self._ReqrdMrgn = None
+		self._ReqrdMrgn = base_types.UninitialisedField(self, 'ReqrdMrgn', AmountAndDirection44, False)
 
 	@property
 	def RmngCollsd(self):
@@ -39,12 +39,12 @@ class CollateralAmount5(base_types._BaseFieldType):
 
 	@RmngCollsd.setter
 	def RmngCollsd(self, value):
-		self._RmngCollsd = value if type(value) != base_types.auto else self.make_default("RmngCollsd")
+		self._RmngCollsd = value if value is not None else base_types.UninitialisedField(self, 'RmngCollsd', AmountAndDirection44, False)
 
 	@RmngCollsd.deleter
 	def RmngCollsd(self):
 		del self._RmngCollsd
-		self._RmngCollsd = None
+		self._RmngCollsd = base_types.UninitialisedField(self, 'RmngCollsd', AmountAndDirection44, False)
 
 	@property
 	def RmngSttlm(self):
@@ -52,12 +52,12 @@ class CollateralAmount5(base_types._BaseFieldType):
 
 	@RmngSttlm.setter
 	def RmngSttlm(self, value):
-		self._RmngSttlm = value if type(value) != base_types.auto else self.make_default("RmngSttlm")
+		self._RmngSttlm = value if value is not None else base_types.UninitialisedField(self, 'RmngSttlm', AmountAndDirection44, False)
 
 	@RmngSttlm.deleter
 	def RmngSttlm(self):
 		del self._RmngSttlm
-		self._RmngSttlm = None
+		self._RmngSttlm = base_types.UninitialisedField(self, 'RmngSttlm', AmountAndDirection44, False)
 
 	@property
 	def Sttld(self):
@@ -65,12 +65,12 @@ class CollateralAmount5(base_types._BaseFieldType):
 
 	@Sttld.setter
 	def Sttld(self, value):
-		self._Sttld = value if type(value) != base_types.auto else self.make_default("Sttld")
+		self._Sttld = value if value is not None else base_types.UninitialisedField(self, 'Sttld', AmountAndDirection44, False)
 
 	@Sttld.deleter
 	def Sttld(self):
 		del self._Sttld
-		self._Sttld = None
+		self._Sttld = base_types.UninitialisedField(self, 'Sttld', AmountAndDirection44, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Collsd', type=AmountAndDirection44, min=0, max=1, mutex_group=None, array=False),

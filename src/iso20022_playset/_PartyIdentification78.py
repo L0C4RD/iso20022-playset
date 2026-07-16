@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IdentificationType1Code import IdentificationType1Code
-from ._Max35Text import Max35Text
+from . import IdentificationType1Code
+from . import Max35Text
 
 class PartyIdentification78(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PartyIdentification78(base_types._BaseFieldType):
 
 	@PtySrc.setter
 	def PtySrc(self, value):
-		self._PtySrc = value if type(value) != base_types.auto else self.make_default("PtySrc")
+		self._PtySrc = value if value is not None else base_types.UninitialisedField(self, 'PtySrc', IdentificationType1Code, False)
 
 	@PtySrc.deleter
 	def PtySrc(self):
 		del self._PtySrc
-		self._PtySrc = None
+		self._PtySrc = base_types.UninitialisedField(self, 'PtySrc', IdentificationType1Code, False)
 
 	@property
 	def TradPtyId(self):
@@ -27,12 +27,12 @@ class PartyIdentification78(base_types._BaseFieldType):
 
 	@TradPtyId.setter
 	def TradPtyId(self, value):
-		self._TradPtyId = value if type(value) != base_types.auto else self.make_default("TradPtyId")
+		self._TradPtyId = value if value is not None else base_types.UninitialisedField(self, 'TradPtyId', Max35Text, False)
 
 	@TradPtyId.deleter
 	def TradPtyId(self):
 		del self._TradPtyId
-		self._TradPtyId = None
+		self._TradPtyId = base_types.UninitialisedField(self, 'TradPtyId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PtySrc', type=IdentificationType1Code, min=0, max=1, mutex_group=None, array=False),

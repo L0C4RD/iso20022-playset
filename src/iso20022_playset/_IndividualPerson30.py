@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenderCode import GenderCode
-from ._ISODate import ISODate
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
+from . import GenderCode
+from . import ISODate
+from . import Max350Text
+from . import Max35Text
 
 class IndividualPerson30(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class IndividualPerson30(base_types._BaseFieldType):
 
 	@BirthDt.setter
 	def BirthDt(self, value):
-		self._BirthDt = value if type(value) != base_types.auto else self.make_default("BirthDt")
+		self._BirthDt = value if value is not None else base_types.UninitialisedField(self, 'BirthDt', ISODate, False)
 
 	@BirthDt.deleter
 	def BirthDt(self):
 		del self._BirthDt
-		self._BirthDt = None
+		self._BirthDt = base_types.UninitialisedField(self, 'BirthDt', ISODate, False)
 
 	@property
 	def Gndr(self):
@@ -29,12 +29,12 @@ class IndividualPerson30(base_types._BaseFieldType):
 
 	@Gndr.setter
 	def Gndr(self, value):
-		self._Gndr = value if type(value) != base_types.auto else self.make_default("Gndr")
+		self._Gndr = value if value is not None else base_types.UninitialisedField(self, 'Gndr', GenderCode, False)
 
 	@Gndr.deleter
 	def Gndr(self):
 		del self._Gndr
-		self._Gndr = None
+		self._Gndr = base_types.UninitialisedField(self, 'Gndr', GenderCode, False)
 
 	@property
 	def GvnNm(self):
@@ -42,12 +42,12 @@ class IndividualPerson30(base_types._BaseFieldType):
 
 	@GvnNm.setter
 	def GvnNm(self, value):
-		self._GvnNm = value if type(value) != base_types.auto else self.make_default("GvnNm")
+		self._GvnNm = value if value is not None else base_types.UninitialisedField(self, 'GvnNm', Max35Text, False)
 
 	@GvnNm.deleter
 	def GvnNm(self):
 		del self._GvnNm
-		self._GvnNm = None
+		self._GvnNm = base_types.UninitialisedField(self, 'GvnNm', Max35Text, False)
 
 	@property
 	def MddlNm(self):
@@ -55,12 +55,12 @@ class IndividualPerson30(base_types._BaseFieldType):
 
 	@MddlNm.setter
 	def MddlNm(self, value):
-		self._MddlNm = value if type(value) != base_types.auto else self.make_default("MddlNm")
+		self._MddlNm = value if value is not None else base_types.UninitialisedField(self, 'MddlNm', Max35Text, False)
 
 	@MddlNm.deleter
 	def MddlNm(self):
 		del self._MddlNm
-		self._MddlNm = None
+		self._MddlNm = base_types.UninitialisedField(self, 'MddlNm', Max35Text, False)
 
 	@property
 	def Nm(self):
@@ -68,12 +68,12 @@ class IndividualPerson30(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max350Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max350Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BirthDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),

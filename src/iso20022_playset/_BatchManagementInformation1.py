@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max140Binary import Max140Binary
-from ._Max15NumericText import Max15NumericText
-from ._Max35Text import Max35Text
+from . import Max140Binary
+from . import Max15NumericText
+from . import Max35Text
 
 class BatchManagementInformation1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class BatchManagementInformation1(base_types._BaseFieldType):
 
 	@BtchId.setter
 	def BtchId(self, value):
-		self._BtchId = value if type(value) != base_types.auto else self.make_default("BtchId")
+		self._BtchId = value if value is not None else base_types.UninitialisedField(self, 'BtchId', Max35Text, False)
 
 	@BtchId.deleter
 	def BtchId(self):
 		del self._BtchId
-		self._BtchId = None
+		self._BtchId = base_types.UninitialisedField(self, 'BtchId', Max35Text, False)
 
 	@property
 	def ColltnId(self):
@@ -28,12 +28,12 @@ class BatchManagementInformation1(base_types._BaseFieldType):
 
 	@ColltnId.setter
 	def ColltnId(self, value):
-		self._ColltnId = value if type(value) != base_types.auto else self.make_default("ColltnId")
+		self._ColltnId = value if value is not None else base_types.UninitialisedField(self, 'ColltnId', Max35Text, False)
 
 	@ColltnId.deleter
 	def ColltnId(self):
 		del self._ColltnId
-		self._ColltnId = None
+		self._ColltnId = base_types.UninitialisedField(self, 'ColltnId', Max35Text, False)
 
 	@property
 	def MsgChcksmInptVal(self):
@@ -41,12 +41,12 @@ class BatchManagementInformation1(base_types._BaseFieldType):
 
 	@MsgChcksmInptVal.setter
 	def MsgChcksmInptVal(self, value):
-		self._MsgChcksmInptVal = value if type(value) != base_types.auto else self.make_default("MsgChcksmInptVal")
+		self._MsgChcksmInptVal = value if value is not None else base_types.UninitialisedField(self, 'MsgChcksmInptVal', Max140Binary, False)
 
 	@MsgChcksmInptVal.deleter
 	def MsgChcksmInptVal(self):
 		del self._MsgChcksmInptVal
-		self._MsgChcksmInptVal = None
+		self._MsgChcksmInptVal = base_types.UninitialisedField(self, 'MsgChcksmInptVal', Max140Binary, False)
 
 	@property
 	def MsgSeqNb(self):
@@ -54,12 +54,12 @@ class BatchManagementInformation1(base_types._BaseFieldType):
 
 	@MsgSeqNb.setter
 	def MsgSeqNb(self, value):
-		self._MsgSeqNb = value if type(value) != base_types.auto else self.make_default("MsgSeqNb")
+		self._MsgSeqNb = value if value is not None else base_types.UninitialisedField(self, 'MsgSeqNb', Max15NumericText, False)
 
 	@MsgSeqNb.deleter
 	def MsgSeqNb(self):
 		del self._MsgSeqNb
-		self._MsgSeqNb = None
+		self._MsgSeqNb = base_types.UninitialisedField(self, 'MsgSeqNb', Max15NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BtchId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

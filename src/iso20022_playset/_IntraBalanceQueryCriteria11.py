@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountIdentificationSearchCriteria2Choice import AccountIdentificationSearchCriteria2Choice
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._DateAndDateTimeSearch5Choice import DateAndDateTimeSearch5Choice
-from ._GenericIdentification37 import GenericIdentification37
-from ._ImpliedCurrencyAmountRange1Choice import ImpliedCurrencyAmountRange1Choice
-from ._IntraBalanceQueryStatus3 import IntraBalanceQueryStatus3
-from ._IntraBalanceType3 import IntraBalanceType3
-from ._PriorityNumeric4Choice import PriorityNumeric4Choice
-from ._References36Choice import References36Choice
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
+from . import AccountIdentificationSearchCriteria2Choice
+from . import ActiveOrHistoricCurrencyCode
+from . import BranchAndFinancialInstitutionIdentification8
+from . import DateAndDateTimeSearch5Choice
+from . import GenericIdentification37
+from . import ImpliedCurrencyAmountRange1Choice
+from . import IntraBalanceQueryStatus3
+from . import IntraBalanceType3
+from . import PriorityNumeric4Choice
+from . import References36Choice
+from . import SystemPartyIdentification8
 
 class IntraBalanceQueryCriteria11(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class IntraBalanceQueryCriteria11(base_types._BaseFieldType):
 
 	@BalTp.setter
 	def BalTp(self, value):
-		self._BalTp = value if type(value) != base_types.auto else self.make_default("BalTp")
+		self._BalTp = value if value is not None else base_types.UninitialisedField(self, 'BalTp', IntraBalanceType3, True)
 
 	@BalTp.deleter
 	def BalTp(self):
 		del self._BalTp
-		self._BalTp = None
+		self._BalTp = base_types.UninitialisedField(self, 'BalTp', IntraBalanceType3, True)
 
 	@property
 	def CreDtTm(self):
@@ -36,12 +36,12 @@ class IntraBalanceQueryCriteria11(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if value is not None else base_types.UninitialisedField(self, 'CreDtTm', DateAndDateTimeSearch5Choice, False)
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
 		del self._CreDtTm
-		self._CreDtTm = None
+		self._CreDtTm = base_types.UninitialisedField(self, 'CreDtTm', DateAndDateTimeSearch5Choice, False)
 
 	@property
 	def CshAcct(self):
@@ -49,12 +49,12 @@ class IntraBalanceQueryCriteria11(base_types._BaseFieldType):
 
 	@CshAcct.setter
 	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != base_types.auto else self.make_default("CshAcct")
+		self._CshAcct = value if value is not None else base_types.UninitialisedField(self, 'CshAcct', AccountIdentificationSearchCriteria2Choice, True)
 
 	@CshAcct.deleter
 	def CshAcct(self):
 		del self._CshAcct
-		self._CshAcct = None
+		self._CshAcct = base_types.UninitialisedField(self, 'CshAcct', AccountIdentificationSearchCriteria2Choice, True)
 
 	@property
 	def CshAcctOwnr(self):
@@ -62,12 +62,12 @@ class IntraBalanceQueryCriteria11(base_types._BaseFieldType):
 
 	@CshAcctOwnr.setter
 	def CshAcctOwnr(self, value):
-		self._CshAcctOwnr = value if type(value) != base_types.auto else self.make_default("CshAcctOwnr")
+		self._CshAcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'CshAcctOwnr', SystemPartyIdentification8, True)
 
 	@CshAcctOwnr.deleter
 	def CshAcctOwnr(self):
 		del self._CshAcctOwnr
-		self._CshAcctOwnr = None
+		self._CshAcctOwnr = base_types.UninitialisedField(self, 'CshAcctOwnr', SystemPartyIdentification8, True)
 
 	@property
 	def CshAcctSvcr(self):
@@ -75,12 +75,12 @@ class IntraBalanceQueryCriteria11(base_types._BaseFieldType):
 
 	@CshAcctSvcr.setter
 	def CshAcctSvcr(self, value):
-		self._CshAcctSvcr = value if type(value) != base_types.auto else self.make_default("CshAcctSvcr")
+		self._CshAcctSvcr = value if value is not None else base_types.UninitialisedField(self, 'CshAcctSvcr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@CshAcctSvcr.deleter
 	def CshAcctSvcr(self):
 		del self._CshAcctSvcr
-		self._CshAcctSvcr = None
+		self._CshAcctSvcr = base_types.UninitialisedField(self, 'CshAcctSvcr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def CshSubBalId(self):
@@ -88,12 +88,12 @@ class IntraBalanceQueryCriteria11(base_types._BaseFieldType):
 
 	@CshSubBalId.setter
 	def CshSubBalId(self, value):
-		self._CshSubBalId = value if type(value) != base_types.auto else self.make_default("CshSubBalId")
+		self._CshSubBalId = value if value is not None else base_types.UninitialisedField(self, 'CshSubBalId', GenericIdentification37, True)
 
 	@CshSubBalId.deleter
 	def CshSubBalId(self):
 		del self._CshSubBalId
-		self._CshSubBalId = None
+		self._CshSubBalId = base_types.UninitialisedField(self, 'CshSubBalId', GenericIdentification37, True)
 
 	@property
 	def FctvSttlmDt(self):
@@ -101,12 +101,12 @@ class IntraBalanceQueryCriteria11(base_types._BaseFieldType):
 
 	@FctvSttlmDt.setter
 	def FctvSttlmDt(self, value):
-		self._FctvSttlmDt = value if type(value) != base_types.auto else self.make_default("FctvSttlmDt")
+		self._FctvSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'FctvSttlmDt', DateAndDateTimeSearch5Choice, False)
 
 	@FctvSttlmDt.deleter
 	def FctvSttlmDt(self):
 		del self._FctvSttlmDt
-		self._FctvSttlmDt = None
+		self._FctvSttlmDt = base_types.UninitialisedField(self, 'FctvSttlmDt', DateAndDateTimeSearch5Choice, False)
 
 	@property
 	def IntnddSttlmDt(self):
@@ -114,12 +114,12 @@ class IntraBalanceQueryCriteria11(base_types._BaseFieldType):
 
 	@IntnddSttlmDt.setter
 	def IntnddSttlmDt(self, value):
-		self._IntnddSttlmDt = value if type(value) != base_types.auto else self.make_default("IntnddSttlmDt")
+		self._IntnddSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'IntnddSttlmDt', DateAndDateTimeSearch5Choice, False)
 
 	@IntnddSttlmDt.deleter
 	def IntnddSttlmDt(self):
 		del self._IntnddSttlmDt
-		self._IntnddSttlmDt = None
+		self._IntnddSttlmDt = base_types.UninitialisedField(self, 'IntnddSttlmDt', DateAndDateTimeSearch5Choice, False)
 
 	@property
 	def MsgOrgtr(self):
@@ -127,12 +127,12 @@ class IntraBalanceQueryCriteria11(base_types._BaseFieldType):
 
 	@MsgOrgtr.setter
 	def MsgOrgtr(self, value):
-		self._MsgOrgtr = value if type(value) != base_types.auto else self.make_default("MsgOrgtr")
+		self._MsgOrgtr = value if value is not None else base_types.UninitialisedField(self, 'MsgOrgtr', SystemPartyIdentification8, True)
 
 	@MsgOrgtr.deleter
 	def MsgOrgtr(self):
 		del self._MsgOrgtr
-		self._MsgOrgtr = None
+		self._MsgOrgtr = base_types.UninitialisedField(self, 'MsgOrgtr', SystemPartyIdentification8, True)
 
 	@property
 	def Prty(self):
@@ -140,12 +140,12 @@ class IntraBalanceQueryCriteria11(base_types._BaseFieldType):
 
 	@Prty.setter
 	def Prty(self, value):
-		self._Prty = value if type(value) != base_types.auto else self.make_default("Prty")
+		self._Prty = value if value is not None else base_types.UninitialisedField(self, 'Prty', PriorityNumeric4Choice, True)
 
 	@Prty.deleter
 	def Prty(self):
 		del self._Prty
-		self._Prty = None
+		self._Prty = base_types.UninitialisedField(self, 'Prty', PriorityNumeric4Choice, True)
 
 	@property
 	def Refs(self):
@@ -153,12 +153,12 @@ class IntraBalanceQueryCriteria11(base_types._BaseFieldType):
 
 	@Refs.setter
 	def Refs(self, value):
-		self._Refs = value if type(value) != base_types.auto else self.make_default("Refs")
+		self._Refs = value if value is not None else base_types.UninitialisedField(self, 'Refs', References36Choice, True)
 
 	@Refs.deleter
 	def Refs(self):
 		del self._Refs
-		self._Refs = None
+		self._Refs = base_types.UninitialisedField(self, 'Refs', References36Choice, True)
 
 	@property
 	def Sts(self):
@@ -166,12 +166,12 @@ class IntraBalanceQueryCriteria11(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', IntraBalanceQueryStatus3, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', IntraBalanceQueryStatus3, False)
 
 	@property
 	def SttldAmt(self):
@@ -179,12 +179,12 @@ class IntraBalanceQueryCriteria11(base_types._BaseFieldType):
 
 	@SttldAmt.setter
 	def SttldAmt(self, value):
-		self._SttldAmt = value if type(value) != base_types.auto else self.make_default("SttldAmt")
+		self._SttldAmt = value if value is not None else base_types.UninitialisedField(self, 'SttldAmt', ImpliedCurrencyAmountRange1Choice, False)
 
 	@SttldAmt.deleter
 	def SttldAmt(self):
 		del self._SttldAmt
-		self._SttldAmt = None
+		self._SttldAmt = base_types.UninitialisedField(self, 'SttldAmt', ImpliedCurrencyAmountRange1Choice, False)
 
 	@property
 	def SttlmAmt(self):
@@ -192,12 +192,12 @@ class IntraBalanceQueryCriteria11(base_types._BaseFieldType):
 
 	@SttlmAmt.setter
 	def SttlmAmt(self, value):
-		self._SttlmAmt = value if type(value) != base_types.auto else self.make_default("SttlmAmt")
+		self._SttlmAmt = value if value is not None else base_types.UninitialisedField(self, 'SttlmAmt', ImpliedCurrencyAmountRange1Choice, False)
 
 	@SttlmAmt.deleter
 	def SttlmAmt(self):
 		del self._SttlmAmt
-		self._SttlmAmt = None
+		self._SttlmAmt = base_types.UninitialisedField(self, 'SttlmAmt', ImpliedCurrencyAmountRange1Choice, False)
 
 	@property
 	def SttlmCcy(self):
@@ -205,12 +205,12 @@ class IntraBalanceQueryCriteria11(base_types._BaseFieldType):
 
 	@SttlmCcy.setter
 	def SttlmCcy(self, value):
-		self._SttlmCcy = value if type(value) != base_types.auto else self.make_default("SttlmCcy")
+		self._SttlmCcy = value if value is not None else base_types.UninitialisedField(self, 'SttlmCcy', ActiveOrHistoricCurrencyCode, True)
 
 	@SttlmCcy.deleter
 	def SttlmCcy(self):
 		del self._SttlmCcy
-		self._SttlmCcy = None
+		self._SttlmCcy = base_types.UninitialisedField(self, 'SttlmCcy', ActiveOrHistoricCurrencyCode, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BalTp', type=IntraBalanceType3, min=0, max=None, mutex_group=None, array=True),

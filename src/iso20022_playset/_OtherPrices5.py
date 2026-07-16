@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Price14 import Price14
-from ._PriceInformation28 import PriceInformation28
+from . import Price14
+from . import PriceInformation28
 
 class OtherPrices5(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class OtherPrices5(base_types._BaseFieldType):
 
 	@AllMktsWghtdAvrg.setter
 	def AllMktsWghtdAvrg(self, value):
-		self._AllMktsWghtdAvrg = value if type(value) != base_types.auto else self.make_default("AllMktsWghtdAvrg")
+		self._AllMktsWghtdAvrg = value if value is not None else base_types.UninitialisedField(self, 'AllMktsWghtdAvrg', Price14, False)
 
 	@AllMktsWghtdAvrg.deleter
 	def AllMktsWghtdAvrg(self):
 		del self._AllMktsWghtdAvrg
-		self._AllMktsWghtdAvrg = None
+		self._AllMktsWghtdAvrg = base_types.UninitialisedField(self, 'AllMktsWghtdAvrg', Price14, False)
 
 	@property
 	def Bchmk(self):
@@ -27,12 +27,12 @@ class OtherPrices5(base_types._BaseFieldType):
 
 	@Bchmk.setter
 	def Bchmk(self, value):
-		self._Bchmk = value if type(value) != base_types.auto else self.make_default("Bchmk")
+		self._Bchmk = value if value is not None else base_types.UninitialisedField(self, 'Bchmk', Price14, False)
 
 	@Bchmk.deleter
 	def Bchmk(self):
 		del self._Bchmk
-		self._Bchmk = None
+		self._Bchmk = base_types.UninitialisedField(self, 'Bchmk', Price14, False)
 
 	@property
 	def BchmkWghtdAvrg(self):
@@ -40,12 +40,12 @@ class OtherPrices5(base_types._BaseFieldType):
 
 	@BchmkWghtdAvrg.setter
 	def BchmkWghtdAvrg(self, value):
-		self._BchmkWghtdAvrg = value if type(value) != base_types.auto else self.make_default("BchmkWghtdAvrg")
+		self._BchmkWghtdAvrg = value if value is not None else base_types.UninitialisedField(self, 'BchmkWghtdAvrg', Price14, False)
 
 	@BchmkWghtdAvrg.deleter
 	def BchmkWghtdAvrg(self):
 		del self._BchmkWghtdAvrg
-		self._BchmkWghtdAvrg = None
+		self._BchmkWghtdAvrg = base_types.UninitialisedField(self, 'BchmkWghtdAvrg', Price14, False)
 
 	@property
 	def IndxPric(self):
@@ -53,12 +53,12 @@ class OtherPrices5(base_types._BaseFieldType):
 
 	@IndxPric.setter
 	def IndxPric(self, value):
-		self._IndxPric = value if type(value) != base_types.auto else self.make_default("IndxPric")
+		self._IndxPric = value if value is not None else base_types.UninitialisedField(self, 'IndxPric', Price14, False)
 
 	@IndxPric.deleter
 	def IndxPric(self):
 		del self._IndxPric
-		self._IndxPric = None
+		self._IndxPric = base_types.UninitialisedField(self, 'IndxPric', Price14, False)
 
 	@property
 	def Max(self):
@@ -66,12 +66,12 @@ class OtherPrices5(base_types._BaseFieldType):
 
 	@Max.setter
 	def Max(self, value):
-		self._Max = value if type(value) != base_types.auto else self.make_default("Max")
+		self._Max = value if value is not None else base_types.UninitialisedField(self, 'Max', Price14, False)
 
 	@Max.deleter
 	def Max(self):
 		del self._Max
-		self._Max = None
+		self._Max = base_types.UninitialisedField(self, 'Max', Price14, False)
 
 	@property
 	def MktBrkrComssn(self):
@@ -79,12 +79,12 @@ class OtherPrices5(base_types._BaseFieldType):
 
 	@MktBrkrComssn.setter
 	def MktBrkrComssn(self, value):
-		self._MktBrkrComssn = value if type(value) != base_types.auto else self.make_default("MktBrkrComssn")
+		self._MktBrkrComssn = value if value is not None else base_types.UninitialisedField(self, 'MktBrkrComssn', Price14, False)
 
 	@MktBrkrComssn.deleter
 	def MktBrkrComssn(self):
 		del self._MktBrkrComssn
-		self._MktBrkrComssn = None
+		self._MktBrkrComssn = base_types.UninitialisedField(self, 'MktBrkrComssn', Price14, False)
 
 	@property
 	def MrkdDwn(self):
@@ -92,12 +92,12 @@ class OtherPrices5(base_types._BaseFieldType):
 
 	@MrkdDwn.setter
 	def MrkdDwn(self, value):
-		self._MrkdDwn = value if type(value) != base_types.auto else self.make_default("MrkdDwn")
+		self._MrkdDwn = value if value is not None else base_types.UninitialisedField(self, 'MrkdDwn', Price14, False)
 
 	@MrkdDwn.deleter
 	def MrkdDwn(self):
 		del self._MrkdDwn
-		self._MrkdDwn = None
+		self._MrkdDwn = base_types.UninitialisedField(self, 'MrkdDwn', Price14, False)
 
 	@property
 	def MrkdUp(self):
@@ -105,12 +105,12 @@ class OtherPrices5(base_types._BaseFieldType):
 
 	@MrkdUp.setter
 	def MrkdUp(self, value):
-		self._MrkdUp = value if type(value) != base_types.auto else self.make_default("MrkdUp")
+		self._MrkdUp = value if value is not None else base_types.UninitialisedField(self, 'MrkdUp', Price14, False)
 
 	@MrkdUp.deleter
 	def MrkdUp(self):
 		del self._MrkdUp
-		self._MrkdUp = None
+		self._MrkdUp = base_types.UninitialisedField(self, 'MrkdUp', Price14, False)
 
 	@property
 	def NetDscld(self):
@@ -118,12 +118,12 @@ class OtherPrices5(base_types._BaseFieldType):
 
 	@NetDscld.setter
 	def NetDscld(self, value):
-		self._NetDscld = value if type(value) != base_types.auto else self.make_default("NetDscld")
+		self._NetDscld = value if value is not None else base_types.UninitialisedField(self, 'NetDscld', Price14, False)
 
 	@NetDscld.deleter
 	def NetDscld(self):
 		del self._NetDscld
-		self._NetDscld = None
+		self._NetDscld = base_types.UninitialisedField(self, 'NetDscld', Price14, False)
 
 	@property
 	def NetUdscld(self):
@@ -131,12 +131,12 @@ class OtherPrices5(base_types._BaseFieldType):
 
 	@NetUdscld.setter
 	def NetUdscld(self, value):
-		self._NetUdscld = value if type(value) != base_types.auto else self.make_default("NetUdscld")
+		self._NetUdscld = value if value is not None else base_types.UninitialisedField(self, 'NetUdscld', Price14, False)
 
 	@NetUdscld.deleter
 	def NetUdscld(self):
 		del self._NetUdscld
-		self._NetUdscld = None
+		self._NetUdscld = base_types.UninitialisedField(self, 'NetUdscld', Price14, False)
 
 	@property
 	def NtnlGrss(self):
@@ -144,12 +144,12 @@ class OtherPrices5(base_types._BaseFieldType):
 
 	@NtnlGrss.setter
 	def NtnlGrss(self, value):
-		self._NtnlGrss = value if type(value) != base_types.auto else self.make_default("NtnlGrss")
+		self._NtnlGrss = value if value is not None else base_types.UninitialisedField(self, 'NtnlGrss', Price14, False)
 
 	@NtnlGrss.deleter
 	def NtnlGrss(self):
 		del self._NtnlGrss
-		self._NtnlGrss = None
+		self._NtnlGrss = base_types.UninitialisedField(self, 'NtnlGrss', Price14, False)
 
 	@property
 	def OthrPric(self):
@@ -157,12 +157,12 @@ class OtherPrices5(base_types._BaseFieldType):
 
 	@OthrPric.setter
 	def OthrPric(self, value):
-		self._OthrPric = value if type(value) != base_types.auto else self.make_default("OthrPric")
+		self._OthrPric = value if value is not None else base_types.UninitialisedField(self, 'OthrPric', Price14, False)
 
 	@OthrPric.deleter
 	def OthrPric(self):
 		del self._OthrPric
-		self._OthrPric = None
+		self._OthrPric = base_types.UninitialisedField(self, 'OthrPric', Price14, False)
 
 	@property
 	def RefPric(self):
@@ -170,12 +170,12 @@ class OtherPrices5(base_types._BaseFieldType):
 
 	@RefPric.setter
 	def RefPric(self, value):
-		self._RefPric = value if type(value) != base_types.auto else self.make_default("RefPric")
+		self._RefPric = value if value is not None else base_types.UninitialisedField(self, 'RefPric', PriceInformation28, False)
 
 	@RefPric.deleter
 	def RefPric(self):
 		del self._RefPric
-		self._RefPric = None
+		self._RefPric = base_types.UninitialisedField(self, 'RefPric', PriceInformation28, False)
 
 	@property
 	def RptdPric(self):
@@ -183,12 +183,12 @@ class OtherPrices5(base_types._BaseFieldType):
 
 	@RptdPric.setter
 	def RptdPric(self, value):
-		self._RptdPric = value if type(value) != base_types.auto else self.make_default("RptdPric")
+		self._RptdPric = value if value is not None else base_types.UninitialisedField(self, 'RptdPric', Price14, False)
 
 	@RptdPric.deleter
 	def RptdPric(self):
 		del self._RptdPric
-		self._RptdPric = None
+		self._RptdPric = base_types.UninitialisedField(self, 'RptdPric', Price14, False)
 
 	@property
 	def Tx(self):
@@ -196,12 +196,12 @@ class OtherPrices5(base_types._BaseFieldType):
 
 	@Tx.setter
 	def Tx(self, value):
-		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
+		self._Tx = value if value is not None else base_types.UninitialisedField(self, 'Tx', Price14, False)
 
 	@Tx.deleter
 	def Tx(self):
 		del self._Tx
-		self._Tx = None
+		self._Tx = base_types.UninitialisedField(self, 'Tx', Price14, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AllMktsWghtdAvrg', type=Price14, min=0, max=1, mutex_group=None, array=False),

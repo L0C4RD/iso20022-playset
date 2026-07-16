@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NetPosition4 import NetPosition4
-from ._Pagination1 import Pagination1
-from ._PartyIdentification253Choice import PartyIdentification253Choice
-from ._ReportParameters7 import ReportParameters7
-from ._SupplementaryData1 import SupplementaryData1
+from . import NetPosition4
+from . import Pagination1
+from . import PartyIdentification253Choice
+from . import ReportParameters7
+from . import SupplementaryData1
 
 class NetPositionV04(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class NetPositionV04(base_types._BaseFieldType):
 
 	@ClrMmb.setter
 	def ClrMmb(self, value):
-		self._ClrMmb = value if type(value) != base_types.auto else self.make_default("ClrMmb")
+		self._ClrMmb = value if value is not None else base_types.UninitialisedField(self, 'ClrMmb', PartyIdentification253Choice, False)
 
 	@ClrMmb.deleter
 	def ClrMmb(self):
 		del self._ClrMmb
-		self._ClrMmb = None
+		self._ClrMmb = base_types.UninitialisedField(self, 'ClrMmb', PartyIdentification253Choice, False)
 
 	@property
 	def ClrSgmt(self):
@@ -30,12 +30,12 @@ class NetPositionV04(base_types._BaseFieldType):
 
 	@ClrSgmt.setter
 	def ClrSgmt(self, value):
-		self._ClrSgmt = value if type(value) != base_types.auto else self.make_default("ClrSgmt")
+		self._ClrSgmt = value if value is not None else base_types.UninitialisedField(self, 'ClrSgmt', PartyIdentification253Choice, False)
 
 	@ClrSgmt.deleter
 	def ClrSgmt(self):
 		del self._ClrSgmt
-		self._ClrSgmt = None
+		self._ClrSgmt = base_types.UninitialisedField(self, 'ClrSgmt', PartyIdentification253Choice, False)
 
 	@property
 	def NetPosRpt(self):
@@ -43,12 +43,12 @@ class NetPositionV04(base_types._BaseFieldType):
 
 	@NetPosRpt.setter
 	def NetPosRpt(self, value):
-		self._NetPosRpt = value if type(value) != base_types.auto else self.make_default("NetPosRpt")
+		self._NetPosRpt = value if value is not None else base_types.UninitialisedField(self, 'NetPosRpt', NetPosition4, True)
 
 	@NetPosRpt.deleter
 	def NetPosRpt(self):
 		del self._NetPosRpt
-		self._NetPosRpt = None
+		self._NetPosRpt = base_types.UninitialisedField(self, 'NetPosRpt', NetPosition4, True)
 
 	@property
 	def Pgntn(self):
@@ -56,12 +56,12 @@ class NetPositionV04(base_types._BaseFieldType):
 
 	@Pgntn.setter
 	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+		self._Pgntn = value if value is not None else base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@Pgntn.deleter
 	def Pgntn(self):
 		del self._Pgntn
-		self._Pgntn = None
+		self._Pgntn = base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@property
 	def RptParams(self):
@@ -69,12 +69,12 @@ class NetPositionV04(base_types._BaseFieldType):
 
 	@RptParams.setter
 	def RptParams(self, value):
-		self._RptParams = value if type(value) != base_types.auto else self.make_default("RptParams")
+		self._RptParams = value if value is not None else base_types.UninitialisedField(self, 'RptParams', ReportParameters7, False)
 
 	@RptParams.deleter
 	def RptParams(self):
 		del self._RptParams
-		self._RptParams = None
+		self._RptParams = base_types.UninitialisedField(self, 'RptParams', ReportParameters7, False)
 
 	@property
 	def SplmtryData(self):
@@ -82,12 +82,12 @@ class NetPositionV04(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClrMmb', type=PartyIdentification253Choice, min=1, max=1, mutex_group=None, array=False),

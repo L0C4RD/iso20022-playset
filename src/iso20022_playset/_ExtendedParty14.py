@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Extended350Code import Extended350Code
-from ._InvestmentAccountOwnershipInformation16 import InvestmentAccountOwnershipInformation16
+from . import Extended350Code
+from . import InvestmentAccountOwnershipInformation16
 
 class ExtendedParty14(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ExtendedParty14(base_types._BaseFieldType):
 
 	@OthrPtyDtls.setter
 	def OthrPtyDtls(self, value):
-		self._OthrPtyDtls = value if type(value) != base_types.auto else self.make_default("OthrPtyDtls")
+		self._OthrPtyDtls = value if value is not None else base_types.UninitialisedField(self, 'OthrPtyDtls', InvestmentAccountOwnershipInformation16, False)
 
 	@OthrPtyDtls.deleter
 	def OthrPtyDtls(self):
 		del self._OthrPtyDtls
-		self._OthrPtyDtls = None
+		self._OthrPtyDtls = base_types.UninitialisedField(self, 'OthrPtyDtls', InvestmentAccountOwnershipInformation16, False)
 
 	@property
 	def XtndedPtyRole(self):
@@ -27,12 +27,12 @@ class ExtendedParty14(base_types._BaseFieldType):
 
 	@XtndedPtyRole.setter
 	def XtndedPtyRole(self, value):
-		self._XtndedPtyRole = value if type(value) != base_types.auto else self.make_default("XtndedPtyRole")
+		self._XtndedPtyRole = value if value is not None else base_types.UninitialisedField(self, 'XtndedPtyRole', Extended350Code, False)
 
 	@XtndedPtyRole.deleter
 	def XtndedPtyRole(self):
 		del self._XtndedPtyRole
-		self._XtndedPtyRole = None
+		self._XtndedPtyRole = base_types.UninitialisedField(self, 'XtndedPtyRole', Extended350Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OthrPtyDtls', type=InvestmentAccountOwnershipInformation16, min=1, max=1, mutex_group=None, array=False),

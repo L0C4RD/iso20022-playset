@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._UTIIdentifier import UTIIdentifier
+from . import Max35Text
+from . import UTIIdentifier
 
 class IdentificationReference16Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class IdentificationReference16Choice(base_types._BaseFieldType):
 
 	@AllcnId.setter
 	def AllcnId(self, value):
-		self._AllcnId = value if type(value) != base_types.auto else self.make_default("AllcnId")
+		self._AllcnId = value if value is not None else base_types.UninitialisedField(self, 'AllcnId', Max35Text, False)
 
 	@AllcnId.deleter
 	def AllcnId(self):
 		del self._AllcnId
-		self._AllcnId = None
+		self._AllcnId = base_types.UninitialisedField(self, 'AllcnId', Max35Text, False)
 
 	@property
 	def BlckId(self):
@@ -27,12 +27,12 @@ class IdentificationReference16Choice(base_types._BaseFieldType):
 
 	@BlckId.setter
 	def BlckId(self, value):
-		self._BlckId = value if type(value) != base_types.auto else self.make_default("BlckId")
+		self._BlckId = value if value is not None else base_types.UninitialisedField(self, 'BlckId', Max35Text, False)
 
 	@BlckId.deleter
 	def BlckId(self):
 		del self._BlckId
-		self._BlckId = None
+		self._BlckId = base_types.UninitialisedField(self, 'BlckId', Max35Text, False)
 
 	@property
 	def ClntOrdrLkId(self):
@@ -40,12 +40,12 @@ class IdentificationReference16Choice(base_types._BaseFieldType):
 
 	@ClntOrdrLkId.setter
 	def ClntOrdrLkId(self, value):
-		self._ClntOrdrLkId = value if type(value) != base_types.auto else self.make_default("ClntOrdrLkId")
+		self._ClntOrdrLkId = value if value is not None else base_types.UninitialisedField(self, 'ClntOrdrLkId', Max35Text, False)
 
 	@ClntOrdrLkId.deleter
 	def ClntOrdrLkId(self):
 		del self._ClntOrdrLkId
-		self._ClntOrdrLkId = None
+		self._ClntOrdrLkId = base_types.UninitialisedField(self, 'ClntOrdrLkId', Max35Text, False)
 
 	@property
 	def CmonId(self):
@@ -53,12 +53,12 @@ class IdentificationReference16Choice(base_types._BaseFieldType):
 
 	@CmonId.setter
 	def CmonId(self, value):
-		self._CmonId = value if type(value) != base_types.auto else self.make_default("CmonId")
+		self._CmonId = value if value is not None else base_types.UninitialisedField(self, 'CmonId', Max35Text, False)
 
 	@CmonId.deleter
 	def CmonId(self):
 		del self._CmonId
-		self._CmonId = None
+		self._CmonId = base_types.UninitialisedField(self, 'CmonId', Max35Text, False)
 
 	@property
 	def CmplcId(self):
@@ -66,12 +66,12 @@ class IdentificationReference16Choice(base_types._BaseFieldType):
 
 	@CmplcId.setter
 	def CmplcId(self, value):
-		self._CmplcId = value if type(value) != base_types.auto else self.make_default("CmplcId")
+		self._CmplcId = value if value is not None else base_types.UninitialisedField(self, 'CmplcId', Max35Text, False)
 
 	@CmplcId.deleter
 	def CmplcId(self):
 		del self._CmplcId
-		self._CmplcId = None
+		self._CmplcId = base_types.UninitialisedField(self, 'CmplcId', Max35Text, False)
 
 	@property
 	def CollTxId(self):
@@ -79,12 +79,12 @@ class IdentificationReference16Choice(base_types._BaseFieldType):
 
 	@CollTxId.setter
 	def CollTxId(self, value):
-		self._CollTxId = value if type(value) != base_types.auto else self.make_default("CollTxId")
+		self._CollTxId = value if value is not None else base_types.UninitialisedField(self, 'CollTxId', Max35Text, False)
 
 	@CollTxId.deleter
 	def CollTxId(self):
 		del self._CollTxId
-		self._CollTxId = None
+		self._CollTxId = base_types.UninitialisedField(self, 'CollTxId', Max35Text, False)
 
 	@property
 	def CxlReqId(self):
@@ -92,12 +92,12 @@ class IdentificationReference16Choice(base_types._BaseFieldType):
 
 	@CxlReqId.setter
 	def CxlReqId(self, value):
-		self._CxlReqId = value if type(value) != base_types.auto else self.make_default("CxlReqId")
+		self._CxlReqId = value if value is not None else base_types.UninitialisedField(self, 'CxlReqId', Max35Text, False)
 
 	@CxlReqId.deleter
 	def CxlReqId(self):
 		del self._CxlReqId
-		self._CxlReqId = None
+		self._CxlReqId = base_types.UninitialisedField(self, 'CxlReqId', Max35Text, False)
 
 	@property
 	def ExctgPtyTxId(self):
@@ -105,12 +105,12 @@ class IdentificationReference16Choice(base_types._BaseFieldType):
 
 	@ExctgPtyTxId.setter
 	def ExctgPtyTxId(self, value):
-		self._ExctgPtyTxId = value if type(value) != base_types.auto else self.make_default("ExctgPtyTxId")
+		self._ExctgPtyTxId = value if value is not None else base_types.UninitialisedField(self, 'ExctgPtyTxId', Max35Text, False)
 
 	@ExctgPtyTxId.deleter
 	def ExctgPtyTxId(self):
 		del self._ExctgPtyTxId
-		self._ExctgPtyTxId = None
+		self._ExctgPtyTxId = base_types.UninitialisedField(self, 'ExctgPtyTxId', Max35Text, False)
 
 	@property
 	def IndvAllcnId(self):
@@ -118,12 +118,12 @@ class IdentificationReference16Choice(base_types._BaseFieldType):
 
 	@IndvAllcnId.setter
 	def IndvAllcnId(self, value):
-		self._IndvAllcnId = value if type(value) != base_types.auto else self.make_default("IndvAllcnId")
+		self._IndvAllcnId = value if value is not None else base_types.UninitialisedField(self, 'IndvAllcnId', Max35Text, False)
 
 	@IndvAllcnId.deleter
 	def IndvAllcnId(self):
 		del self._IndvAllcnId
-		self._IndvAllcnId = None
+		self._IndvAllcnId = base_types.UninitialisedField(self, 'IndvAllcnId', Max35Text, False)
 
 	@property
 	def IndxId(self):
@@ -131,12 +131,12 @@ class IdentificationReference16Choice(base_types._BaseFieldType):
 
 	@IndxId.setter
 	def IndxId(self, value):
-		self._IndxId = value if type(value) != base_types.auto else self.make_default("IndxId")
+		self._IndxId = value if value is not None else base_types.UninitialisedField(self, 'IndxId', Max35Text, False)
 
 	@IndxId.deleter
 	def IndxId(self):
 		del self._IndxId
-		self._IndxId = None
+		self._IndxId = base_types.UninitialisedField(self, 'IndxId', Max35Text, False)
 
 	@property
 	def InstgPtyTxId(self):
@@ -144,12 +144,12 @@ class IdentificationReference16Choice(base_types._BaseFieldType):
 
 	@InstgPtyTxId.setter
 	def InstgPtyTxId(self, value):
-		self._InstgPtyTxId = value if type(value) != base_types.auto else self.make_default("InstgPtyTxId")
+		self._InstgPtyTxId = value if value is not None else base_types.UninitialisedField(self, 'InstgPtyTxId', Max35Text, False)
 
 	@InstgPtyTxId.deleter
 	def InstgPtyTxId(self):
 		del self._InstgPtyTxId
-		self._InstgPtyTxId = None
+		self._InstgPtyTxId = base_types.UninitialisedField(self, 'InstgPtyTxId', Max35Text, False)
 
 	@property
 	def MktInfrstrctrTxId(self):
@@ -157,12 +157,12 @@ class IdentificationReference16Choice(base_types._BaseFieldType):
 
 	@MktInfrstrctrTxId.setter
 	def MktInfrstrctrTxId(self, value):
-		self._MktInfrstrctrTxId = value if type(value) != base_types.auto else self.make_default("MktInfrstrctrTxId")
+		self._MktInfrstrctrTxId = value if value is not None else base_types.UninitialisedField(self, 'MktInfrstrctrTxId', Max35Text, False)
 
 	@MktInfrstrctrTxId.deleter
 	def MktInfrstrctrTxId(self):
 		del self._MktInfrstrctrTxId
-		self._MktInfrstrctrTxId = None
+		self._MktInfrstrctrTxId = base_types.UninitialisedField(self, 'MktInfrstrctrTxId', Max35Text, False)
 
 	@property
 	def PoolId(self):
@@ -170,12 +170,12 @@ class IdentificationReference16Choice(base_types._BaseFieldType):
 
 	@PoolId.setter
 	def PoolId(self, value):
-		self._PoolId = value if type(value) != base_types.auto else self.make_default("PoolId")
+		self._PoolId = value if value is not None else base_types.UninitialisedField(self, 'PoolId', Max35Text, False)
 
 	@PoolId.deleter
 	def PoolId(self):
 		del self._PoolId
-		self._PoolId = None
+		self._PoolId = base_types.UninitialisedField(self, 'PoolId', Max35Text, False)
 
 	@property
 	def ScndryAllcnId(self):
@@ -183,12 +183,12 @@ class IdentificationReference16Choice(base_types._BaseFieldType):
 
 	@ScndryAllcnId.setter
 	def ScndryAllcnId(self, value):
-		self._ScndryAllcnId = value if type(value) != base_types.auto else self.make_default("ScndryAllcnId")
+		self._ScndryAllcnId = value if value is not None else base_types.UninitialisedField(self, 'ScndryAllcnId', Max35Text, False)
 
 	@ScndryAllcnId.deleter
 	def ScndryAllcnId(self):
 		del self._ScndryAllcnId
-		self._ScndryAllcnId = None
+		self._ScndryAllcnId = base_types.UninitialisedField(self, 'ScndryAllcnId', Max35Text, False)
 
 	@property
 	def UnqTxIdr(self):
@@ -196,12 +196,12 @@ class IdentificationReference16Choice(base_types._BaseFieldType):
 
 	@UnqTxIdr.setter
 	def UnqTxIdr(self, value):
-		self._UnqTxIdr = value if type(value) != base_types.auto else self.make_default("UnqTxIdr")
+		self._UnqTxIdr = value if value is not None else base_types.UninitialisedField(self, 'UnqTxIdr', UTIIdentifier, False)
 
 	@UnqTxIdr.deleter
 	def UnqTxIdr(self):
 		del self._UnqTxIdr
-		self._UnqTxIdr = None
+		self._UnqTxIdr = base_types.UninitialisedField(self, 'UnqTxIdr', UTIIdentifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AllcnId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),

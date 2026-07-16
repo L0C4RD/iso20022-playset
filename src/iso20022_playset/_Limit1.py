@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max3NumericText import Max3NumericText
+from . import Max3NumericText
 
 class Limit1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class Limit1(base_types._BaseFieldType):
 
 	@Cur.setter
 	def Cur(self, value):
-		self._Cur = value if type(value) != base_types.auto else self.make_default("Cur")
+		self._Cur = value if value is not None else base_types.UninitialisedField(self, 'Cur', Max3NumericText, False)
 
 	@Cur.deleter
 	def Cur(self):
 		del self._Cur
-		self._Cur = None
+		self._Cur = base_types.UninitialisedField(self, 'Cur', Max3NumericText, False)
 
 	@property
 	def Lmt(self):
@@ -26,12 +26,12 @@ class Limit1(base_types._BaseFieldType):
 
 	@Lmt.setter
 	def Lmt(self, value):
-		self._Lmt = value if type(value) != base_types.auto else self.make_default("Lmt")
+		self._Lmt = value if value is not None else base_types.UninitialisedField(self, 'Lmt', Max3NumericText, False)
 
 	@Lmt.deleter
 	def Lmt(self):
 		del self._Lmt
-		self._Lmt = None
+		self._Lmt = base_types.UninitialisedField(self, 'Lmt', Max3NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cur', type=Max3NumericText, min=1, max=1, mutex_group=None, array=False),

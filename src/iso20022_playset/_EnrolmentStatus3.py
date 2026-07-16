@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CreditorEnrolmentStatusReason3 import CreditorEnrolmentStatusReason3
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._OriginalBusinessInstruction1 import OriginalBusinessInstruction1
-from ._OriginalEnrolment3Choice import OriginalEnrolment3Choice
-from ._ServiceStatus1Choice import ServiceStatus1Choice
-from ._SupplementaryData1 import SupplementaryData1
+from . import CreditorEnrolmentStatusReason3
+from . import DateAndDateTime2Choice
+from . import OriginalBusinessInstruction1
+from . import OriginalEnrolment3Choice
+from . import ServiceStatus1Choice
+from . import SupplementaryData1
 
 class EnrolmentStatus3(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class EnrolmentStatus3(base_types._BaseFieldType):
 
 	@FctvEnrlmntDt.setter
 	def FctvEnrlmntDt(self, value):
-		self._FctvEnrlmntDt = value if type(value) != base_types.auto else self.make_default("FctvEnrlmntDt")
+		self._FctvEnrlmntDt = value if value is not None else base_types.UninitialisedField(self, 'FctvEnrlmntDt', DateAndDateTime2Choice, False)
 
 	@FctvEnrlmntDt.deleter
 	def FctvEnrlmntDt(self):
 		del self._FctvEnrlmntDt
-		self._FctvEnrlmntDt = None
+		self._FctvEnrlmntDt = base_types.UninitialisedField(self, 'FctvEnrlmntDt', DateAndDateTime2Choice, False)
 
 	@property
 	def OrgnlBizInstr(self):
@@ -31,12 +31,12 @@ class EnrolmentStatus3(base_types._BaseFieldType):
 
 	@OrgnlBizInstr.setter
 	def OrgnlBizInstr(self, value):
-		self._OrgnlBizInstr = value if type(value) != base_types.auto else self.make_default("OrgnlBizInstr")
+		self._OrgnlBizInstr = value if value is not None else base_types.UninitialisedField(self, 'OrgnlBizInstr', OriginalBusinessInstruction1, False)
 
 	@OrgnlBizInstr.deleter
 	def OrgnlBizInstr(self):
 		del self._OrgnlBizInstr
-		self._OrgnlBizInstr = None
+		self._OrgnlBizInstr = base_types.UninitialisedField(self, 'OrgnlBizInstr', OriginalBusinessInstruction1, False)
 
 	@property
 	def OrgnlEnrlmntRef(self):
@@ -44,12 +44,12 @@ class EnrolmentStatus3(base_types._BaseFieldType):
 
 	@OrgnlEnrlmntRef.setter
 	def OrgnlEnrlmntRef(self, value):
-		self._OrgnlEnrlmntRef = value if type(value) != base_types.auto else self.make_default("OrgnlEnrlmntRef")
+		self._OrgnlEnrlmntRef = value if value is not None else base_types.UninitialisedField(self, 'OrgnlEnrlmntRef', OriginalEnrolment3Choice, False)
 
 	@OrgnlEnrlmntRef.deleter
 	def OrgnlEnrlmntRef(self):
 		del self._OrgnlEnrlmntRef
-		self._OrgnlEnrlmntRef = None
+		self._OrgnlEnrlmntRef = base_types.UninitialisedField(self, 'OrgnlEnrlmntRef', OriginalEnrolment3Choice, False)
 
 	@property
 	def SplmtryData(self):
@@ -57,12 +57,12 @@ class EnrolmentStatus3(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def Sts(self):
@@ -70,12 +70,12 @@ class EnrolmentStatus3(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', ServiceStatus1Choice, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', ServiceStatus1Choice, False)
 
 	@property
 	def StsRsn(self):
@@ -83,12 +83,12 @@ class EnrolmentStatus3(base_types._BaseFieldType):
 
 	@StsRsn.setter
 	def StsRsn(self, value):
-		self._StsRsn = value if type(value) != base_types.auto else self.make_default("StsRsn")
+		self._StsRsn = value if value is not None else base_types.UninitialisedField(self, 'StsRsn', CreditorEnrolmentStatusReason3, False)
 
 	@StsRsn.deleter
 	def StsRsn(self):
 		del self._StsRsn
-		self._StsRsn = None
+		self._StsRsn = base_types.UninitialisedField(self, 'StsRsn', CreditorEnrolmentStatusReason3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FctvEnrlmntDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),

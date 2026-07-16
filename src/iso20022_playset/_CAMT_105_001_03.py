@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ChargesPaymentNotificationV03 import ChargesPaymentNotificationV03
+from . import ChargesPaymentNotificationV03
 
 class CAMT_105_001_03():
 
@@ -18,12 +18,12 @@ class CAMT_105_001_03():
 
 		@ChrgsPmtNtfctn.setter
 		def ChrgsPmtNtfctn(self, value):
-			self._ChrgsPmtNtfctn = value if type(value) != base_types.auto else self.make_default("ChrgsPmtNtfctn")
+			self._ChrgsPmtNtfctn = value if value is not None else base_types.UninitialisedField(self, 'ChrgsPmtNtfctn', ChargesPaymentNotificationV03, False)
 
 		@ChrgsPmtNtfctn.deleter
 		def ChrgsPmtNtfctn(self):
 			del self._ChrgsPmtNtfctn
-			self._ChrgsPmtNtfctn = None
+			self._ChrgsPmtNtfctn = base_types.UninitialisedField(self, 'ChrgsPmtNtfctn', ChargesPaymentNotificationV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ChrgsPmtNtfctn', type=ChargesPaymentNotificationV03, min=1, max=1, mutex_group=None, array=False),

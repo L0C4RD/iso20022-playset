@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BaseOne25Rate import BaseOne25Rate
-from ._Endpoint2Code import Endpoint2Code
-from ._ExchangeRateAgreementType2Code import ExchangeRateAgreementType2Code
-from ._ExchangeRateType3Code import ExchangeRateType3Code
-from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
-from ._ISODate import ISODate
-from ._ISOTime import ISOTime
-from ._Max70Text import Max70Text
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import BaseOne25Rate
+from . import Endpoint2Code
+from . import ExchangeRateAgreementType2Code
+from . import ExchangeRateType3Code
+from . import ISO3NumericCurrencyCode
+from . import ISODate
+from . import ISOTime
+from . import Max70Text
+from . import TrueFalseIndicator
 
 class CardExchangeRate1(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class CardExchangeRate1(base_types._BaseFieldType):
 
 	@AgrmtTp.setter
 	def AgrmtTp(self, value):
-		self._AgrmtTp = value if type(value) != base_types.auto else self.make_default("AgrmtTp")
+		self._AgrmtTp = value if value is not None else base_types.UninitialisedField(self, 'AgrmtTp', ExchangeRateAgreementType2Code, False)
 
 	@AgrmtTp.deleter
 	def AgrmtTp(self):
 		del self._AgrmtTp
-		self._AgrmtTp = None
+		self._AgrmtTp = base_types.UninitialisedField(self, 'AgrmtTp', ExchangeRateAgreementType2Code, False)
 
 	@property
 	def BaseCcyCd(self):
@@ -34,12 +34,12 @@ class CardExchangeRate1(base_types._BaseFieldType):
 
 	@BaseCcyCd.setter
 	def BaseCcyCd(self, value):
-		self._BaseCcyCd = value if type(value) != base_types.auto else self.make_default("BaseCcyCd")
+		self._BaseCcyCd = value if value is not None else base_types.UninitialisedField(self, 'BaseCcyCd', ISO3NumericCurrencyCode, False)
 
 	@BaseCcyCd.deleter
 	def BaseCcyCd(self):
 		del self._BaseCcyCd
-		self._BaseCcyCd = None
+		self._BaseCcyCd = base_types.UninitialisedField(self, 'BaseCcyCd', ISO3NumericCurrencyCode, False)
 
 	@property
 	def CntrCcyCd(self):
@@ -47,12 +47,12 @@ class CardExchangeRate1(base_types._BaseFieldType):
 
 	@CntrCcyCd.setter
 	def CntrCcyCd(self, value):
-		self._CntrCcyCd = value if type(value) != base_types.auto else self.make_default("CntrCcyCd")
+		self._CntrCcyCd = value if value is not None else base_types.UninitialisedField(self, 'CntrCcyCd', ISO3NumericCurrencyCode, False)
 
 	@CntrCcyCd.deleter
 	def CntrCcyCd(self):
 		del self._CntrCcyCd
-		self._CntrCcyCd = None
+		self._CntrCcyCd = base_types.UninitialisedField(self, 'CntrCcyCd', ISO3NumericCurrencyCode, False)
 
 	@property
 	def Dt(self):
@@ -60,12 +60,12 @@ class CardExchangeRate1(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@property
 	def EndPt(self):
@@ -73,12 +73,12 @@ class CardExchangeRate1(base_types._BaseFieldType):
 
 	@EndPt.setter
 	def EndPt(self, value):
-		self._EndPt = value if type(value) != base_types.auto else self.make_default("EndPt")
+		self._EndPt = value if value is not None else base_types.UninitialisedField(self, 'EndPt', Endpoint2Code, False)
 
 	@EndPt.deleter
 	def EndPt(self):
 		del self._EndPt
-		self._EndPt = None
+		self._EndPt = base_types.UninitialisedField(self, 'EndPt', Endpoint2Code, False)
 
 	@property
 	def Id(self):
@@ -86,12 +86,12 @@ class CardExchangeRate1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max70Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max70Text, False)
 
 	@property
 	def Prvdr(self):
@@ -99,12 +99,12 @@ class CardExchangeRate1(base_types._BaseFieldType):
 
 	@Prvdr.setter
 	def Prvdr(self, value):
-		self._Prvdr = value if type(value) != base_types.auto else self.make_default("Prvdr")
+		self._Prvdr = value if value is not None else base_types.UninitialisedField(self, 'Prvdr', Max70Text, False)
 
 	@Prvdr.deleter
 	def Prvdr(self):
 		del self._Prvdr
-		self._Prvdr = None
+		self._Prvdr = base_types.UninitialisedField(self, 'Prvdr', Max70Text, False)
 
 	@property
 	def Rate(self):
@@ -112,12 +112,12 @@ class CardExchangeRate1(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+		self._Rate = value if value is not None else base_types.UninitialisedField(self, 'Rate', BaseOne25Rate, False)
 
 	@Rate.deleter
 	def Rate(self):
 		del self._Rate
-		self._Rate = None
+		self._Rate = base_types.UninitialisedField(self, 'Rate', BaseOne25Rate, False)
 
 	@property
 	def RateLckApld(self):
@@ -125,12 +125,12 @@ class CardExchangeRate1(base_types._BaseFieldType):
 
 	@RateLckApld.setter
 	def RateLckApld(self, value):
-		self._RateLckApld = value if type(value) != base_types.auto else self.make_default("RateLckApld")
+		self._RateLckApld = value if value is not None else base_types.UninitialisedField(self, 'RateLckApld', TrueFalseIndicator, False)
 
 	@RateLckApld.deleter
 	def RateLckApld(self):
 		del self._RateLckApld
-		self._RateLckApld = None
+		self._RateLckApld = base_types.UninitialisedField(self, 'RateLckApld', TrueFalseIndicator, False)
 
 	@property
 	def RateLckElgbl(self):
@@ -138,12 +138,12 @@ class CardExchangeRate1(base_types._BaseFieldType):
 
 	@RateLckElgbl.setter
 	def RateLckElgbl(self, value):
-		self._RateLckElgbl = value if type(value) != base_types.auto else self.make_default("RateLckElgbl")
+		self._RateLckElgbl = value if value is not None else base_types.UninitialisedField(self, 'RateLckElgbl', TrueFalseIndicator, False)
 
 	@RateLckElgbl.deleter
 	def RateLckElgbl(self):
 		del self._RateLckElgbl
-		self._RateLckElgbl = None
+		self._RateLckElgbl = base_types.UninitialisedField(self, 'RateLckElgbl', TrueFalseIndicator, False)
 
 	@property
 	def RateLckReqd(self):
@@ -151,12 +151,12 @@ class CardExchangeRate1(base_types._BaseFieldType):
 
 	@RateLckReqd.setter
 	def RateLckReqd(self, value):
-		self._RateLckReqd = value if type(value) != base_types.auto else self.make_default("RateLckReqd")
+		self._RateLckReqd = value if value is not None else base_types.UninitialisedField(self, 'RateLckReqd', TrueFalseIndicator, False)
 
 	@RateLckReqd.deleter
 	def RateLckReqd(self):
 		del self._RateLckReqd
-		self._RateLckReqd = None
+		self._RateLckReqd = base_types.UninitialisedField(self, 'RateLckReqd', TrueFalseIndicator, False)
 
 	@property
 	def RateTp(self):
@@ -164,12 +164,12 @@ class CardExchangeRate1(base_types._BaseFieldType):
 
 	@RateTp.setter
 	def RateTp(self, value):
-		self._RateTp = value if type(value) != base_types.auto else self.make_default("RateTp")
+		self._RateTp = value if value is not None else base_types.UninitialisedField(self, 'RateTp', ExchangeRateType3Code, False)
 
 	@RateTp.deleter
 	def RateTp(self):
 		del self._RateTp
-		self._RateTp = None
+		self._RateTp = base_types.UninitialisedField(self, 'RateTp', ExchangeRateType3Code, False)
 
 	@property
 	def Tm(self):
@@ -177,12 +177,12 @@ class CardExchangeRate1(base_types._BaseFieldType):
 
 	@Tm.setter
 	def Tm(self, value):
-		self._Tm = value if type(value) != base_types.auto else self.make_default("Tm")
+		self._Tm = value if value is not None else base_types.UninitialisedField(self, 'Tm', ISOTime, False)
 
 	@Tm.deleter
 	def Tm(self):
 		del self._Tm
-		self._Tm = None
+		self._Tm = base_types.UninitialisedField(self, 'Tm', ISOTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AgrmtTp', type=ExchangeRateAgreementType2Code, min=0, max=1, mutex_group=None, array=False),

@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
-from ._Max35Text import Max35Text
-from ._Pagination1 import Pagination1
-from ._PartyIdentification144 import PartyIdentification144
-from ._SecuritiesAccount22 import SecuritiesAccount22
-from ._StatusTrail13 import StatusTrail13
-from ._TransactionIdentifications56 import TransactionIdentifications56
+from . import BlockChainAddressWallet3
+from . import Max35Text
+from . import Pagination1
+from . import PartyIdentification144
+from . import SecuritiesAccount22
+from . import StatusTrail13
+from . import TransactionIdentifications56
 
 class SecuritiesSettlementTransactionAuditTrailReportV07(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class SecuritiesSettlementTransactionAuditTrailReportV07(base_types._BaseFieldTy
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification144, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification144, False)
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -32,12 +32,12 @@ class SecuritiesSettlementTransactionAuditTrailReportV07(base_types._BaseFieldTy
 
 	@BlckChainAdrOrWllt.setter
 	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
+		self._BlckChainAdrOrWllt = value if value is not None else base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet3, False)
 
 	@BlckChainAdrOrWllt.deleter
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+		self._BlckChainAdrOrWllt = base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet3, False)
 
 	@property
 	def Pgntn(self):
@@ -45,12 +45,12 @@ class SecuritiesSettlementTransactionAuditTrailReportV07(base_types._BaseFieldTy
 
 	@Pgntn.setter
 	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+		self._Pgntn = value if value is not None else base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@Pgntn.deleter
 	def Pgntn(self):
 		del self._Pgntn
-		self._Pgntn = None
+		self._Pgntn = base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@property
 	def QryRef(self):
@@ -58,12 +58,12 @@ class SecuritiesSettlementTransactionAuditTrailReportV07(base_types._BaseFieldTy
 
 	@QryRef.setter
 	def QryRef(self, value):
-		self._QryRef = value if type(value) != base_types.auto else self.make_default("QryRef")
+		self._QryRef = value if value is not None else base_types.UninitialisedField(self, 'QryRef', Max35Text, False)
 
 	@QryRef.deleter
 	def QryRef(self):
 		del self._QryRef
-		self._QryRef = None
+		self._QryRef = base_types.UninitialisedField(self, 'QryRef', Max35Text, False)
 
 	@property
 	def SfkpgAcct(self):
@@ -71,12 +71,12 @@ class SecuritiesSettlementTransactionAuditTrailReportV07(base_types._BaseFieldTy
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount22, False)
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
-		self._SfkpgAcct = None
+		self._SfkpgAcct = base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount22, False)
 
 	@property
 	def StsTrl(self):
@@ -84,12 +84,12 @@ class SecuritiesSettlementTransactionAuditTrailReportV07(base_types._BaseFieldTy
 
 	@StsTrl.setter
 	def StsTrl(self, value):
-		self._StsTrl = value if type(value) != base_types.auto else self.make_default("StsTrl")
+		self._StsTrl = value if value is not None else base_types.UninitialisedField(self, 'StsTrl', StatusTrail13, True)
 
 	@StsTrl.deleter
 	def StsTrl(self):
 		del self._StsTrl
-		self._StsTrl = None
+		self._StsTrl = base_types.UninitialisedField(self, 'StsTrl', StatusTrail13, True)
 
 	@property
 	def TxId(self):
@@ -97,12 +97,12 @@ class SecuritiesSettlementTransactionAuditTrailReportV07(base_types._BaseFieldTy
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', TransactionIdentifications56, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', TransactionIdentifications56, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),

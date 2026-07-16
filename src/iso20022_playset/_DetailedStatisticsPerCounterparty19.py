@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._Max20PositiveNumber import Max20PositiveNumber
-from ._RejectionStatistics9 import RejectionStatistics9
+from . import ISODate
+from . import Max20PositiveNumber
+from . import RejectionStatistics9
 
 class DetailedStatisticsPerCounterparty19(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class DetailedStatisticsPerCounterparty19(base_types._BaseFieldType):
 
 	@RefDt.setter
 	def RefDt(self, value):
-		self._RefDt = value if type(value) != base_types.auto else self.make_default("RefDt")
+		self._RefDt = value if value is not None else base_types.UninitialisedField(self, 'RefDt', ISODate, False)
 
 	@RefDt.deleter
 	def RefDt(self):
 		del self._RefDt
-		self._RefDt = None
+		self._RefDt = base_types.UninitialisedField(self, 'RefDt', ISODate, False)
 
 	@property
 	def RjctnSttstcs(self):
@@ -28,12 +28,12 @@ class DetailedStatisticsPerCounterparty19(base_types._BaseFieldType):
 
 	@RjctnSttstcs.setter
 	def RjctnSttstcs(self, value):
-		self._RjctnSttstcs = value if type(value) != base_types.auto else self.make_default("RjctnSttstcs")
+		self._RjctnSttstcs = value if value is not None else base_types.UninitialisedField(self, 'RjctnSttstcs', RejectionStatistics9, True)
 
 	@RjctnSttstcs.deleter
 	def RjctnSttstcs(self):
 		del self._RjctnSttstcs
-		self._RjctnSttstcs = None
+		self._RjctnSttstcs = base_types.UninitialisedField(self, 'RjctnSttstcs', RejectionStatistics9, True)
 
 	@property
 	def TtlCrrctdRjctns(self):
@@ -41,12 +41,12 @@ class DetailedStatisticsPerCounterparty19(base_types._BaseFieldType):
 
 	@TtlCrrctdRjctns.setter
 	def TtlCrrctdRjctns(self, value):
-		self._TtlCrrctdRjctns = value if type(value) != base_types.auto else self.make_default("TtlCrrctdRjctns")
+		self._TtlCrrctdRjctns = value if value is not None else base_types.UninitialisedField(self, 'TtlCrrctdRjctns', Max20PositiveNumber, False)
 
 	@TtlCrrctdRjctns.deleter
 	def TtlCrrctdRjctns(self):
 		del self._TtlCrrctdRjctns
-		self._TtlCrrctdRjctns = None
+		self._TtlCrrctdRjctns = base_types.UninitialisedField(self, 'TtlCrrctdRjctns', Max20PositiveNumber, False)
 
 	@property
 	def TtlNbOfRpts(self):
@@ -54,12 +54,12 @@ class DetailedStatisticsPerCounterparty19(base_types._BaseFieldType):
 
 	@TtlNbOfRpts.setter
 	def TtlNbOfRpts(self, value):
-		self._TtlNbOfRpts = value if type(value) != base_types.auto else self.make_default("TtlNbOfRpts")
+		self._TtlNbOfRpts = value if value is not None else base_types.UninitialisedField(self, 'TtlNbOfRpts', Max20PositiveNumber, False)
 
 	@TtlNbOfRpts.deleter
 	def TtlNbOfRpts(self):
 		del self._TtlNbOfRpts
-		self._TtlNbOfRpts = None
+		self._TtlNbOfRpts = base_types.UninitialisedField(self, 'TtlNbOfRpts', Max20PositiveNumber, False)
 
 	@property
 	def TtlNbOfRptsAccptd(self):
@@ -67,12 +67,12 @@ class DetailedStatisticsPerCounterparty19(base_types._BaseFieldType):
 
 	@TtlNbOfRptsAccptd.setter
 	def TtlNbOfRptsAccptd(self, value):
-		self._TtlNbOfRptsAccptd = value if type(value) != base_types.auto else self.make_default("TtlNbOfRptsAccptd")
+		self._TtlNbOfRptsAccptd = value if value is not None else base_types.UninitialisedField(self, 'TtlNbOfRptsAccptd', Max20PositiveNumber, False)
 
 	@TtlNbOfRptsAccptd.deleter
 	def TtlNbOfRptsAccptd(self):
 		del self._TtlNbOfRptsAccptd
-		self._TtlNbOfRptsAccptd = None
+		self._TtlNbOfRptsAccptd = base_types.UninitialisedField(self, 'TtlNbOfRptsAccptd', Max20PositiveNumber, False)
 
 	@property
 	def TtlNbOfRptsRjctd(self):
@@ -80,12 +80,12 @@ class DetailedStatisticsPerCounterparty19(base_types._BaseFieldType):
 
 	@TtlNbOfRptsRjctd.setter
 	def TtlNbOfRptsRjctd(self, value):
-		self._TtlNbOfRptsRjctd = value if type(value) != base_types.auto else self.make_default("TtlNbOfRptsRjctd")
+		self._TtlNbOfRptsRjctd = value if value is not None else base_types.UninitialisedField(self, 'TtlNbOfRptsRjctd', Max20PositiveNumber, False)
 
 	@TtlNbOfRptsRjctd.deleter
 	def TtlNbOfRptsRjctd(self):
 		del self._TtlNbOfRptsRjctd
-		self._TtlNbOfRptsRjctd = None
+		self._TtlNbOfRptsRjctd = base_types.UninitialisedField(self, 'TtlNbOfRptsRjctd', Max20PositiveNumber, False)
 
 	@property
 	def TtlNbOfTxs(self):
@@ -93,12 +93,12 @@ class DetailedStatisticsPerCounterparty19(base_types._BaseFieldType):
 
 	@TtlNbOfTxs.setter
 	def TtlNbOfTxs(self, value):
-		self._TtlNbOfTxs = value if type(value) != base_types.auto else self.make_default("TtlNbOfTxs")
+		self._TtlNbOfTxs = value if value is not None else base_types.UninitialisedField(self, 'TtlNbOfTxs', Max20PositiveNumber, False)
 
 	@TtlNbOfTxs.deleter
 	def TtlNbOfTxs(self):
 		del self._TtlNbOfTxs
-		self._TtlNbOfTxs = None
+		self._TtlNbOfTxs = base_types.UninitialisedField(self, 'TtlNbOfTxs', Max20PositiveNumber, False)
 
 	@property
 	def TtlNbOfTxsAccptd(self):
@@ -106,12 +106,12 @@ class DetailedStatisticsPerCounterparty19(base_types._BaseFieldType):
 
 	@TtlNbOfTxsAccptd.setter
 	def TtlNbOfTxsAccptd(self, value):
-		self._TtlNbOfTxsAccptd = value if type(value) != base_types.auto else self.make_default("TtlNbOfTxsAccptd")
+		self._TtlNbOfTxsAccptd = value if value is not None else base_types.UninitialisedField(self, 'TtlNbOfTxsAccptd', Max20PositiveNumber, False)
 
 	@TtlNbOfTxsAccptd.deleter
 	def TtlNbOfTxsAccptd(self):
 		del self._TtlNbOfTxsAccptd
-		self._TtlNbOfTxsAccptd = None
+		self._TtlNbOfTxsAccptd = base_types.UninitialisedField(self, 'TtlNbOfTxsAccptd', Max20PositiveNumber, False)
 
 	@property
 	def TtlNbOfTxsRjctd(self):
@@ -119,12 +119,12 @@ class DetailedStatisticsPerCounterparty19(base_types._BaseFieldType):
 
 	@TtlNbOfTxsRjctd.setter
 	def TtlNbOfTxsRjctd(self, value):
-		self._TtlNbOfTxsRjctd = value if type(value) != base_types.auto else self.make_default("TtlNbOfTxsRjctd")
+		self._TtlNbOfTxsRjctd = value if value is not None else base_types.UninitialisedField(self, 'TtlNbOfTxsRjctd', Max20PositiveNumber, False)
 
 	@TtlNbOfTxsRjctd.deleter
 	def TtlNbOfTxsRjctd(self):
 		del self._TtlNbOfTxsRjctd
-		self._TtlNbOfTxsRjctd = None
+		self._TtlNbOfTxsRjctd = base_types.UninitialisedField(self, 'TtlNbOfTxsRjctd', Max20PositiveNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RefDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),

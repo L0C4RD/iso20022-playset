@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BarcodeType1Code import BarcodeType1Code
-from ._Max16Text import Max16Text
-from ._Max3000Binary import Max3000Binary
-from ._Max8000Text import Max8000Text
-from ._QRCodeEncodingMode1Code import QRCodeEncodingMode1Code
-from ._QRCodeErrorCorrection1Code import QRCodeErrorCorrection1Code
+from . import BarcodeType1Code
+from . import Max16Text
+from . import Max3000Binary
+from . import Max8000Text
+from . import QRCodeEncodingMode1Code
+from . import QRCodeErrorCorrection1Code
 
 class OutputBarcode2(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class OutputBarcode2(base_types._BaseFieldType):
 
 	@BrcdTp.setter
 	def BrcdTp(self, value):
-		self._BrcdTp = value if type(value) != base_types.auto else self.make_default("BrcdTp")
+		self._BrcdTp = value if value is not None else base_types.UninitialisedField(self, 'BrcdTp', BarcodeType1Code, False)
 
 	@BrcdTp.deleter
 	def BrcdTp(self):
 		del self._BrcdTp
-		self._BrcdTp = None
+		self._BrcdTp = base_types.UninitialisedField(self, 'BrcdTp', BarcodeType1Code, False)
 
 	@property
 	def BrcdVal(self):
@@ -31,12 +31,12 @@ class OutputBarcode2(base_types._BaseFieldType):
 
 	@BrcdVal.setter
 	def BrcdVal(self, value):
-		self._BrcdVal = value if type(value) != base_types.auto else self.make_default("BrcdVal")
+		self._BrcdVal = value if value is not None else base_types.UninitialisedField(self, 'BrcdVal', Max8000Text, False)
 
 	@BrcdVal.deleter
 	def BrcdVal(self):
 		del self._BrcdVal
-		self._BrcdVal = None
+		self._BrcdVal = base_types.UninitialisedField(self, 'BrcdVal', Max8000Text, False)
 
 	@property
 	def QRCdBinryVal(self):
@@ -44,12 +44,12 @@ class OutputBarcode2(base_types._BaseFieldType):
 
 	@QRCdBinryVal.setter
 	def QRCdBinryVal(self, value):
-		self._QRCdBinryVal = value if type(value) != base_types.auto else self.make_default("QRCdBinryVal")
+		self._QRCdBinryVal = value if value is not None else base_types.UninitialisedField(self, 'QRCdBinryVal', Max3000Binary, False)
 
 	@QRCdBinryVal.deleter
 	def QRCdBinryVal(self):
 		del self._QRCdBinryVal
-		self._QRCdBinryVal = None
+		self._QRCdBinryVal = base_types.UninitialisedField(self, 'QRCdBinryVal', Max3000Binary, False)
 
 	@property
 	def QRCdErrCrrctn(self):
@@ -57,12 +57,12 @@ class OutputBarcode2(base_types._BaseFieldType):
 
 	@QRCdErrCrrctn.setter
 	def QRCdErrCrrctn(self, value):
-		self._QRCdErrCrrctn = value if type(value) != base_types.auto else self.make_default("QRCdErrCrrctn")
+		self._QRCdErrCrrctn = value if value is not None else base_types.UninitialisedField(self, 'QRCdErrCrrctn', QRCodeErrorCorrection1Code, False)
 
 	@QRCdErrCrrctn.deleter
 	def QRCdErrCrrctn(self):
 		del self._QRCdErrCrrctn
-		self._QRCdErrCrrctn = None
+		self._QRCdErrCrrctn = base_types.UninitialisedField(self, 'QRCdErrCrrctn', QRCodeErrorCorrection1Code, False)
 
 	@property
 	def QRCdNcodgMd(self):
@@ -70,12 +70,12 @@ class OutputBarcode2(base_types._BaseFieldType):
 
 	@QRCdNcodgMd.setter
 	def QRCdNcodgMd(self, value):
-		self._QRCdNcodgMd = value if type(value) != base_types.auto else self.make_default("QRCdNcodgMd")
+		self._QRCdNcodgMd = value if value is not None else base_types.UninitialisedField(self, 'QRCdNcodgMd', QRCodeEncodingMode1Code, False)
 
 	@QRCdNcodgMd.deleter
 	def QRCdNcodgMd(self):
 		del self._QRCdNcodgMd
-		self._QRCdNcodgMd = None
+		self._QRCdNcodgMd = base_types.UninitialisedField(self, 'QRCdNcodgMd', QRCodeEncodingMode1Code, False)
 
 	@property
 	def QRCdVrsn(self):
@@ -83,12 +83,12 @@ class OutputBarcode2(base_types._BaseFieldType):
 
 	@QRCdVrsn.setter
 	def QRCdVrsn(self, value):
-		self._QRCdVrsn = value if type(value) != base_types.auto else self.make_default("QRCdVrsn")
+		self._QRCdVrsn = value if value is not None else base_types.UninitialisedField(self, 'QRCdVrsn', Max16Text, False)
 
 	@QRCdVrsn.deleter
 	def QRCdVrsn(self):
 		del self._QRCdVrsn
-		self._QRCdVrsn = None
+		self._QRCdVrsn = base_types.UninitialisedField(self, 'QRCdVrsn', Max16Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BrcdTp', type=BarcodeType1Code, min=1, max=1, mutex_group=None, array=False),

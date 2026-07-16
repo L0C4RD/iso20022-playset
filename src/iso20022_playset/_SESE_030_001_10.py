@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesSettlementConditionsModificationRequestV10 import SecuritiesSettlementConditionsModificationRequestV10
+from . import SecuritiesSettlementConditionsModificationRequestV10
 
 class SESE_030_001_10():
 
@@ -18,12 +18,12 @@ class SESE_030_001_10():
 
 		@SctiesSttlmCondsModReq.setter
 		def SctiesSttlmCondsModReq(self, value):
-			self._SctiesSttlmCondsModReq = value if type(value) != base_types.auto else self.make_default("SctiesSttlmCondsModReq")
+			self._SctiesSttlmCondsModReq = value if value is not None else base_types.UninitialisedField(self, 'SctiesSttlmCondsModReq', SecuritiesSettlementConditionsModificationRequestV10, False)
 
 		@SctiesSttlmCondsModReq.deleter
 		def SctiesSttlmCondsModReq(self):
 			del self._SctiesSttlmCondsModReq
-			self._SctiesSttlmCondsModReq = None
+			self._SctiesSttlmCondsModReq = base_types.UninitialisedField(self, 'SctiesSttlmCondsModReq', SecuritiesSettlementConditionsModificationRequestV10, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesSttlmCondsModReq', type=SecuritiesSettlementConditionsModificationRequestV10, min=1, max=1, mutex_group=None, array=False),

@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification48 import GenericIdentification48
-from ._Max35Binary import Max35Binary
-from ._Max70Text import Max70Text
-from ._POIComponentType7Code import POIComponentType7Code
-from ._PackageType5 import PackageType5
-from ._PointOfInteractionComponentAssessment1 import PointOfInteractionComponentAssessment1
-from ._PointOfInteractionComponentCharacteristics10 import PointOfInteractionComponentCharacteristics10
-from ._PointOfInteractionComponentIdentification2 import PointOfInteractionComponentIdentification2
-from ._PointOfInteractionComponentStatus3 import PointOfInteractionComponentStatus3
+from . import GenericIdentification48
+from . import Max35Binary
+from . import Max70Text
+from . import POIComponentType7Code
+from . import PackageType5
+from . import PointOfInteractionComponentAssessment1
+from . import PointOfInteractionComponentCharacteristics10
+from . import PointOfInteractionComponentIdentification2
+from . import PointOfInteractionComponentStatus3
 
 class PointOfInteractionComponent17(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class PointOfInteractionComponent17(base_types._BaseFieldType):
 
 	@Assmnt.setter
 	def Assmnt(self, value):
-		self._Assmnt = value if type(value) != base_types.auto else self.make_default("Assmnt")
+		self._Assmnt = value if value is not None else base_types.UninitialisedField(self, 'Assmnt', PointOfInteractionComponentAssessment1, True)
 
 	@Assmnt.deleter
 	def Assmnt(self):
 		del self._Assmnt
-		self._Assmnt = None
+		self._Assmnt = base_types.UninitialisedField(self, 'Assmnt', PointOfInteractionComponentAssessment1, True)
 
 	@property
 	def Chrtcs(self):
@@ -34,12 +34,12 @@ class PointOfInteractionComponent17(base_types._BaseFieldType):
 
 	@Chrtcs.setter
 	def Chrtcs(self, value):
-		self._Chrtcs = value if type(value) != base_types.auto else self.make_default("Chrtcs")
+		self._Chrtcs = value if value is not None else base_types.UninitialisedField(self, 'Chrtcs', PointOfInteractionComponentCharacteristics10, False)
 
 	@Chrtcs.deleter
 	def Chrtcs(self):
 		del self._Chrtcs
-		self._Chrtcs = None
+		self._Chrtcs = base_types.UninitialisedField(self, 'Chrtcs', PointOfInteractionComponentCharacteristics10, False)
 
 	@property
 	def Id(self):
@@ -47,12 +47,12 @@ class PointOfInteractionComponent17(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', PointOfInteractionComponentIdentification2, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', PointOfInteractionComponentIdentification2, False)
 
 	@property
 	def Packg(self):
@@ -60,12 +60,12 @@ class PointOfInteractionComponent17(base_types._BaseFieldType):
 
 	@Packg.setter
 	def Packg(self, value):
-		self._Packg = value if type(value) != base_types.auto else self.make_default("Packg")
+		self._Packg = value if value is not None else base_types.UninitialisedField(self, 'Packg', PackageType5, True)
 
 	@Packg.deleter
 	def Packg(self):
 		del self._Packg
-		self._Packg = None
+		self._Packg = base_types.UninitialisedField(self, 'Packg', PackageType5, True)
 
 	@property
 	def PrbVal(self):
@@ -73,12 +73,12 @@ class PointOfInteractionComponent17(base_types._BaseFieldType):
 
 	@PrbVal.setter
 	def PrbVal(self, value):
-		self._PrbVal = value if type(value) != base_types.auto else self.make_default("PrbVal")
+		self._PrbVal = value if value is not None else base_types.UninitialisedField(self, 'PrbVal', Max35Binary, False)
 
 	@PrbVal.deleter
 	def PrbVal(self):
 		del self._PrbVal
-		self._PrbVal = None
+		self._PrbVal = base_types.UninitialisedField(self, 'PrbVal', Max35Binary, False)
 
 	@property
 	def StdCmplc(self):
@@ -86,12 +86,12 @@ class PointOfInteractionComponent17(base_types._BaseFieldType):
 
 	@StdCmplc.setter
 	def StdCmplc(self, value):
-		self._StdCmplc = value if type(value) != base_types.auto else self.make_default("StdCmplc")
+		self._StdCmplc = value if value is not None else base_types.UninitialisedField(self, 'StdCmplc', GenericIdentification48, True)
 
 	@StdCmplc.deleter
 	def StdCmplc(self):
 		del self._StdCmplc
-		self._StdCmplc = None
+		self._StdCmplc = base_types.UninitialisedField(self, 'StdCmplc', GenericIdentification48, True)
 
 	@property
 	def Sts(self):
@@ -99,12 +99,12 @@ class PointOfInteractionComponent17(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', PointOfInteractionComponentStatus3, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', PointOfInteractionComponentStatus3, False)
 
 	@property
 	def SubTpInf(self):
@@ -112,12 +112,12 @@ class PointOfInteractionComponent17(base_types._BaseFieldType):
 
 	@SubTpInf.setter
 	def SubTpInf(self, value):
-		self._SubTpInf = value if type(value) != base_types.auto else self.make_default("SubTpInf")
+		self._SubTpInf = value if value is not None else base_types.UninitialisedField(self, 'SubTpInf', Max70Text, False)
 
 	@SubTpInf.deleter
 	def SubTpInf(self):
 		del self._SubTpInf
-		self._SubTpInf = None
+		self._SubTpInf = base_types.UninitialisedField(self, 'SubTpInf', Max70Text, False)
 
 	@property
 	def Tp(self):
@@ -125,12 +125,12 @@ class PointOfInteractionComponent17(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', POIComponentType7Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', POIComponentType7Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Assmnt', type=PointOfInteractionComponentAssessment1, min=0, max=None, mutex_group=None, array=True),

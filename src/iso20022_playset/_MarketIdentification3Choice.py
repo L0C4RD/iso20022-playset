@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MICIdentifier import MICIdentifier
-from ._Max35Text import Max35Text
+from . import MICIdentifier
+from . import Max35Text
 
 class MarketIdentification3Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class MarketIdentification3Choice(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', Max35Text, False)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', Max35Text, False)
 
 	@property
 	def MktIdrCd(self):
@@ -27,12 +27,12 @@ class MarketIdentification3Choice(base_types._BaseFieldType):
 
 	@MktIdrCd.setter
 	def MktIdrCd(self, value):
-		self._MktIdrCd = value if type(value) != base_types.auto else self.make_default("MktIdrCd")
+		self._MktIdrCd = value if value is not None else base_types.UninitialisedField(self, 'MktIdrCd', MICIdentifier, False)
 
 	@MktIdrCd.deleter
 	def MktIdrCd(self):
 		del self._MktIdrCd
-		self._MktIdrCd = None
+		self._MktIdrCd = base_types.UninitialisedField(self, 'MktIdrCd', MICIdentifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Desc', type=Max35Text, min=0, max=1, mutex_group=1, array=False),

@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._CFIOct2015Identifier import CFIOct2015Identifier
-from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._Max350Text import Max350Text
-from ._OtherIdentification1 import OtherIdentification1
+from . import ActiveOrHistoricCurrencyCode
+from . import CFIOct2015Identifier
+from . import ISINOct2015Identifier
+from . import Max350Text
+from . import OtherIdentification1
 
 class SecurityInstrumentDescription23(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class SecurityInstrumentDescription23(base_types._BaseFieldType):
 
 	@ClssfctnTp.setter
 	def ClssfctnTp(self, value):
-		self._ClssfctnTp = value if type(value) != base_types.auto else self.make_default("ClssfctnTp")
+		self._ClssfctnTp = value if value is not None else base_types.UninitialisedField(self, 'ClssfctnTp', CFIOct2015Identifier, False)
 
 	@ClssfctnTp.deleter
 	def ClssfctnTp(self):
 		del self._ClssfctnTp
-		self._ClssfctnTp = None
+		self._ClssfctnTp = base_types.UninitialisedField(self, 'ClssfctnTp', CFIOct2015Identifier, False)
 
 	@property
 	def FullNm(self):
@@ -30,12 +30,12 @@ class SecurityInstrumentDescription23(base_types._BaseFieldType):
 
 	@FullNm.setter
 	def FullNm(self, value):
-		self._FullNm = value if type(value) != base_types.auto else self.make_default("FullNm")
+		self._FullNm = value if value is not None else base_types.UninitialisedField(self, 'FullNm', Max350Text, False)
 
 	@FullNm.deleter
 	def FullNm(self):
 		del self._FullNm
-		self._FullNm = None
+		self._FullNm = base_types.UninitialisedField(self, 'FullNm', Max350Text, False)
 
 	@property
 	def Id(self):
@@ -43,12 +43,12 @@ class SecurityInstrumentDescription23(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', ISINOct2015Identifier, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', ISINOct2015Identifier, False)
 
 	@property
 	def NtnlCcy(self):
@@ -56,12 +56,12 @@ class SecurityInstrumentDescription23(base_types._BaseFieldType):
 
 	@NtnlCcy.setter
 	def NtnlCcy(self, value):
-		self._NtnlCcy = value if type(value) != base_types.auto else self.make_default("NtnlCcy")
+		self._NtnlCcy = value if value is not None else base_types.UninitialisedField(self, 'NtnlCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@NtnlCcy.deleter
 	def NtnlCcy(self):
 		del self._NtnlCcy
-		self._NtnlCcy = None
+		self._NtnlCcy = base_types.UninitialisedField(self, 'NtnlCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def OthrId(self):
@@ -69,12 +69,12 @@ class SecurityInstrumentDescription23(base_types._BaseFieldType):
 
 	@OthrId.setter
 	def OthrId(self, value):
-		self._OthrId = value if type(value) != base_types.auto else self.make_default("OthrId")
+		self._OthrId = value if value is not None else base_types.UninitialisedField(self, 'OthrId', OtherIdentification1, True)
 
 	@OthrId.deleter
 	def OthrId(self):
 		del self._OthrId
-		self._OthrId = None
+		self._OthrId = base_types.UninitialisedField(self, 'OthrId', OtherIdentification1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClssfctnTp', type=CFIOct2015Identifier, min=1, max=1, mutex_group=None, array=False),

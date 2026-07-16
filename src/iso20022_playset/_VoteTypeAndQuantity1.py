@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Number import Number
-from ._VoteInstructionType1Choice import VoteInstructionType1Choice
+from . import Number
+from . import VoteInstructionType1Choice
 
 class VoteTypeAndQuantity1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class VoteTypeAndQuantity1(base_types._BaseFieldType):
 
 	@VoteInstrTp.setter
 	def VoteInstrTp(self, value):
-		self._VoteInstrTp = value if type(value) != base_types.auto else self.make_default("VoteInstrTp")
+		self._VoteInstrTp = value if value is not None else base_types.UninitialisedField(self, 'VoteInstrTp', VoteInstructionType1Choice, False)
 
 	@VoteInstrTp.deleter
 	def VoteInstrTp(self):
 		del self._VoteInstrTp
-		self._VoteInstrTp = None
+		self._VoteInstrTp = base_types.UninitialisedField(self, 'VoteInstrTp', VoteInstructionType1Choice, False)
 
 	@property
 	def VoteQty(self):
@@ -27,12 +27,12 @@ class VoteTypeAndQuantity1(base_types._BaseFieldType):
 
 	@VoteQty.setter
 	def VoteQty(self, value):
-		self._VoteQty = value if type(value) != base_types.auto else self.make_default("VoteQty")
+		self._VoteQty = value if value is not None else base_types.UninitialisedField(self, 'VoteQty', Number, False)
 
 	@VoteQty.deleter
 	def VoteQty(self):
 		del self._VoteQty
-		self._VoteQty = None
+		self._VoteQty = base_types.UninitialisedField(self, 'VoteQty', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='VoteInstrTp', type=VoteInstructionType1Choice, min=1, max=1, mutex_group=None, array=False),

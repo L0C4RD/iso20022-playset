@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActionMessage4 import ActionMessage4
-from ._ActionType6Code import ActionType6Code
-from ._MessageFunction11Code import MessageFunction11Code
+from . import ActionMessage4
+from . import ActionType6Code
+from . import MessageFunction11Code
 
 class Action7(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Action7(base_types._BaseFieldType):
 
 	@ActnTp.setter
 	def ActnTp(self, value):
-		self._ActnTp = value if type(value) != base_types.auto else self.make_default("ActnTp")
+		self._ActnTp = value if value is not None else base_types.UninitialisedField(self, 'ActnTp', ActionType6Code, False)
 
 	@ActnTp.deleter
 	def ActnTp(self):
 		del self._ActnTp
-		self._ActnTp = None
+		self._ActnTp = base_types.UninitialisedField(self, 'ActnTp', ActionType6Code, False)
 
 	@property
 	def MsgToPres(self):
@@ -28,12 +28,12 @@ class Action7(base_types._BaseFieldType):
 
 	@MsgToPres.setter
 	def MsgToPres(self, value):
-		self._MsgToPres = value if type(value) != base_types.auto else self.make_default("MsgToPres")
+		self._MsgToPres = value if value is not None else base_types.UninitialisedField(self, 'MsgToPres', ActionMessage4, False)
 
 	@MsgToPres.deleter
 	def MsgToPres(self):
 		del self._MsgToPres
-		self._MsgToPres = None
+		self._MsgToPres = base_types.UninitialisedField(self, 'MsgToPres', ActionMessage4, False)
 
 	@property
 	def ReqToPrfrm(self):
@@ -41,12 +41,12 @@ class Action7(base_types._BaseFieldType):
 
 	@ReqToPrfrm.setter
 	def ReqToPrfrm(self, value):
-		self._ReqToPrfrm = value if type(value) != base_types.auto else self.make_default("ReqToPrfrm")
+		self._ReqToPrfrm = value if value is not None else base_types.UninitialisedField(self, 'ReqToPrfrm', MessageFunction11Code, False)
 
 	@ReqToPrfrm.deleter
 	def ReqToPrfrm(self):
 		del self._ReqToPrfrm
-		self._ReqToPrfrm = None
+		self._ReqToPrfrm = base_types.UninitialisedField(self, 'ReqToPrfrm', MessageFunction11Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActnTp', type=ActionType6Code, min=1, max=1, mutex_group=None, array=False),

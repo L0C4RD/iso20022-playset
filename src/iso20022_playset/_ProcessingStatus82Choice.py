@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CancellationStatus29Choice import CancellationStatus29Choice
-from ._PendingStatus56Choice import PendingStatus56Choice
-from ._ProprietaryReason4 import ProprietaryReason4
-from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
-from ._RejectionStatus33Choice import RejectionStatus33Choice
+from . import CancellationStatus29Choice
+from . import PendingStatus56Choice
+from . import ProprietaryReason4
+from . import ProprietaryStatusAndReason6
+from . import RejectionStatus33Choice
 
 class ProcessingStatus82Choice(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class ProcessingStatus82Choice(base_types._BaseFieldType):
 
 	@Canc.setter
 	def Canc(self, value):
-		self._Canc = value if type(value) != base_types.auto else self.make_default("Canc")
+		self._Canc = value if value is not None else base_types.UninitialisedField(self, 'Canc', CancellationStatus29Choice, False)
 
 	@Canc.deleter
 	def Canc(self):
 		del self._Canc
-		self._Canc = None
+		self._Canc = base_types.UninitialisedField(self, 'Canc', CancellationStatus29Choice, False)
 
 	@property
 	def CxlReq(self):
@@ -30,12 +30,12 @@ class ProcessingStatus82Choice(base_types._BaseFieldType):
 
 	@CxlReq.setter
 	def CxlReq(self, value):
-		self._CxlReq = value if type(value) != base_types.auto else self.make_default("CxlReq")
+		self._CxlReq = value if value is not None else base_types.UninitialisedField(self, 'CxlReq', ProprietaryReason4, False)
 
 	@CxlReq.deleter
 	def CxlReq(self):
 		del self._CxlReq
-		self._CxlReq = None
+		self._CxlReq = base_types.UninitialisedField(self, 'CxlReq', ProprietaryReason4, False)
 
 	@property
 	def Futr(self):
@@ -43,12 +43,12 @@ class ProcessingStatus82Choice(base_types._BaseFieldType):
 
 	@Futr.setter
 	def Futr(self, value):
-		self._Futr = value if type(value) != base_types.auto else self.make_default("Futr")
+		self._Futr = value if value is not None else base_types.UninitialisedField(self, 'Futr', ProprietaryReason4, False)
 
 	@Futr.deleter
 	def Futr(self):
 		del self._Futr
-		self._Futr = None
+		self._Futr = base_types.UninitialisedField(self, 'Futr', ProprietaryReason4, False)
 
 	@property
 	def PdgCxl(self):
@@ -56,12 +56,12 @@ class ProcessingStatus82Choice(base_types._BaseFieldType):
 
 	@PdgCxl.setter
 	def PdgCxl(self, value):
-		self._PdgCxl = value if type(value) != base_types.auto else self.make_default("PdgCxl")
+		self._PdgCxl = value if value is not None else base_types.UninitialisedField(self, 'PdgCxl', PendingStatus56Choice, False)
 
 	@PdgCxl.deleter
 	def PdgCxl(self):
 		del self._PdgCxl
-		self._PdgCxl = None
+		self._PdgCxl = base_types.UninitialisedField(self, 'PdgCxl', PendingStatus56Choice, False)
 
 	@property
 	def Prcd(self):
@@ -69,12 +69,12 @@ class ProcessingStatus82Choice(base_types._BaseFieldType):
 
 	@Prcd.setter
 	def Prcd(self, value):
-		self._Prcd = value if type(value) != base_types.auto else self.make_default("Prcd")
+		self._Prcd = value if value is not None else base_types.UninitialisedField(self, 'Prcd', ProprietaryReason4, False)
 
 	@Prcd.deleter
 	def Prcd(self):
 		del self._Prcd
-		self._Prcd = None
+		self._Prcd = base_types.UninitialisedField(self, 'Prcd', ProprietaryReason4, False)
 
 	@property
 	def Prtry(self):
@@ -82,12 +82,12 @@ class ProcessingStatus82Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+		self._Prtry = value if value is not None else base_types.UninitialisedField(self, 'Prtry', ProprietaryStatusAndReason6, False)
 
 	@Prtry.deleter
 	def Prtry(self):
 		del self._Prtry
-		self._Prtry = None
+		self._Prtry = base_types.UninitialisedField(self, 'Prtry', ProprietaryStatusAndReason6, False)
 
 	@property
 	def Rjctd(self):
@@ -95,12 +95,12 @@ class ProcessingStatus82Choice(base_types._BaseFieldType):
 
 	@Rjctd.setter
 	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
+		self._Rjctd = value if value is not None else base_types.UninitialisedField(self, 'Rjctd', RejectionStatus33Choice, False)
 
 	@Rjctd.deleter
 	def Rjctd(self):
 		del self._Rjctd
-		self._Rjctd = None
+		self._Rjctd = base_types.UninitialisedField(self, 'Rjctd', RejectionStatus33Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Canc', type=CancellationStatus29Choice, min=0, max=1, mutex_group=1, array=False),

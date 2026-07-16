@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActionMessage12 import ActionMessage12
-from ._InputData7 import InputData7
+from . import ActionMessage12
+from . import InputData7
 
 class DeviceInputRequest7(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DeviceInputRequest7(base_types._BaseFieldType):
 
 	@DispOutpt.setter
 	def DispOutpt(self, value):
-		self._DispOutpt = value if type(value) != base_types.auto else self.make_default("DispOutpt")
+		self._DispOutpt = value if value is not None else base_types.UninitialisedField(self, 'DispOutpt', ActionMessage12, False)
 
 	@DispOutpt.deleter
 	def DispOutpt(self):
 		del self._DispOutpt
-		self._DispOutpt = None
+		self._DispOutpt = base_types.UninitialisedField(self, 'DispOutpt', ActionMessage12, False)
 
 	@property
 	def InptData(self):
@@ -27,12 +27,12 @@ class DeviceInputRequest7(base_types._BaseFieldType):
 
 	@InptData.setter
 	def InptData(self, value):
-		self._InptData = value if type(value) != base_types.auto else self.make_default("InptData")
+		self._InptData = value if value is not None else base_types.UninitialisedField(self, 'InptData', InputData7, False)
 
 	@InptData.deleter
 	def InptData(self):
 		del self._InptData
-		self._InptData = None
+		self._InptData = base_types.UninitialisedField(self, 'InptData', InputData7, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DispOutpt', type=ActionMessage12, min=0, max=1, mutex_group=None, array=False),

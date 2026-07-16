@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from . import ImpliedCurrencyAndAmount
 
 class OriginalAmountDetails1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class OriginalAmountDetails1(base_types._BaseFieldType):
 
 	@ActlAmt.setter
 	def ActlAmt(self, value):
-		self._ActlAmt = value if type(value) != base_types.auto else self.make_default("ActlAmt")
+		self._ActlAmt = value if value is not None else base_types.UninitialisedField(self, 'ActlAmt', ImpliedCurrencyAndAmount, False)
 
 	@ActlAmt.deleter
 	def ActlAmt(self):
 		del self._ActlAmt
-		self._ActlAmt = None
+		self._ActlAmt = base_types.UninitialisedField(self, 'ActlAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def MaxAmt(self):
@@ -26,12 +26,12 @@ class OriginalAmountDetails1(base_types._BaseFieldType):
 
 	@MaxAmt.setter
 	def MaxAmt(self, value):
-		self._MaxAmt = value if type(value) != base_types.auto else self.make_default("MaxAmt")
+		self._MaxAmt = value if value is not None else base_types.UninitialisedField(self, 'MaxAmt', ImpliedCurrencyAndAmount, False)
 
 	@MaxAmt.deleter
 	def MaxAmt(self):
 		del self._MaxAmt
-		self._MaxAmt = None
+		self._MaxAmt = base_types.UninitialisedField(self, 'MaxAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def MinAmt(self):
@@ -39,12 +39,12 @@ class OriginalAmountDetails1(base_types._BaseFieldType):
 
 	@MinAmt.setter
 	def MinAmt(self, value):
-		self._MinAmt = value if type(value) != base_types.auto else self.make_default("MinAmt")
+		self._MinAmt = value if value is not None else base_types.UninitialisedField(self, 'MinAmt', ImpliedCurrencyAndAmount, False)
 
 	@MinAmt.deleter
 	def MinAmt(self):
 		del self._MinAmt
-		self._MinAmt = None
+		self._MinAmt = base_types.UninitialisedField(self, 'MinAmt', ImpliedCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActlAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

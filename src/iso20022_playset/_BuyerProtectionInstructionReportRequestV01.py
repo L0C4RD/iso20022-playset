@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BuyerProtectionSelectionCriteria1 import BuyerProtectionSelectionCriteria1
-from ._Max35Text import Max35Text
-from ._SupplementaryData1 import SupplementaryData1
+from . import BuyerProtectionSelectionCriteria1
+from . import Max35Text
+from . import SupplementaryData1
 
 class BuyerProtectionInstructionReportRequestV01(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class BuyerProtectionInstructionReportRequestV01(base_types._BaseFieldType):
 
 	@BuyrPrtcnSelctnCrit.setter
 	def BuyrPrtcnSelctnCrit(self, value):
-		self._BuyrPrtcnSelctnCrit = value if type(value) != base_types.auto else self.make_default("BuyrPrtcnSelctnCrit")
+		self._BuyrPrtcnSelctnCrit = value if value is not None else base_types.UninitialisedField(self, 'BuyrPrtcnSelctnCrit', BuyerProtectionSelectionCriteria1, False)
 
 	@BuyrPrtcnSelctnCrit.deleter
 	def BuyrPrtcnSelctnCrit(self):
 		del self._BuyrPrtcnSelctnCrit
-		self._BuyrPrtcnSelctnCrit = None
+		self._BuyrPrtcnSelctnCrit = base_types.UninitialisedField(self, 'BuyrPrtcnSelctnCrit', BuyerProtectionSelectionCriteria1, False)
 
 	@property
 	def QryRef(self):
@@ -28,12 +28,12 @@ class BuyerProtectionInstructionReportRequestV01(base_types._BaseFieldType):
 
 	@QryRef.setter
 	def QryRef(self, value):
-		self._QryRef = value if type(value) != base_types.auto else self.make_default("QryRef")
+		self._QryRef = value if value is not None else base_types.UninitialisedField(self, 'QryRef', Max35Text, False)
 
 	@QryRef.deleter
 	def QryRef(self):
 		del self._QryRef
-		self._QryRef = None
+		self._QryRef = base_types.UninitialisedField(self, 'QryRef', Max35Text, False)
 
 	@property
 	def SplmtryData(self):
@@ -41,12 +41,12 @@ class BuyerProtectionInstructionReportRequestV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BuyrPrtcnSelctnCrit', type=BuyerProtectionSelectionCriteria1, min=1, max=1, mutex_group=None, array=False),

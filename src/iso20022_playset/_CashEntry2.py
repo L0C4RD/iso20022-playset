@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._EntryStatus1Code import EntryStatus1Code
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
-from ._Number import Number
+from . import ActiveCurrencyAndAmount
+from . import DateAndDateTime2Choice
+from . import EntryStatus1Code
+from . import Max140Text
+from . import Max35Text
+from . import Number
 
 class CashEntry2(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class CashEntry2(base_types._BaseFieldType):
 
 	@AcctSvcrRef.setter
 	def AcctSvcrRef(self, value):
-		self._AcctSvcrRef = value if type(value) != base_types.auto else self.make_default("AcctSvcrRef")
+		self._AcctSvcrRef = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcrRef', Number, False)
 
 	@AcctSvcrRef.deleter
 	def AcctSvcrRef(self):
 		del self._AcctSvcrRef
-		self._AcctSvcrRef = None
+		self._AcctSvcrRef = base_types.UninitialisedField(self, 'AcctSvcrRef', Number, False)
 
 	@property
 	def AddtlNtryInf(self):
@@ -31,12 +31,12 @@ class CashEntry2(base_types._BaseFieldType):
 
 	@AddtlNtryInf.setter
 	def AddtlNtryInf(self, value):
-		self._AddtlNtryInf = value if type(value) != base_types.auto else self.make_default("AddtlNtryInf")
+		self._AddtlNtryInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlNtryInf', Max140Text, True)
 
 	@AddtlNtryInf.deleter
 	def AddtlNtryInf(self):
 		del self._AddtlNtryInf
-		self._AddtlNtryInf = None
+		self._AddtlNtryInf = base_types.UninitialisedField(self, 'AddtlNtryInf', Max140Text, True)
 
 	@property
 	def Amt(self):
@@ -44,12 +44,12 @@ class CashEntry2(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def Dt(self):
@@ -57,12 +57,12 @@ class CashEntry2(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', DateAndDateTime2Choice, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', DateAndDateTime2Choice, False)
 
 	@property
 	def Id(self):
@@ -70,12 +70,12 @@ class CashEntry2(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def StmtId(self):
@@ -83,12 +83,12 @@ class CashEntry2(base_types._BaseFieldType):
 
 	@StmtId.setter
 	def StmtId(self, value):
-		self._StmtId = value if type(value) != base_types.auto else self.make_default("StmtId")
+		self._StmtId = value if value is not None else base_types.UninitialisedField(self, 'StmtId', Max35Text, False)
 
 	@StmtId.deleter
 	def StmtId(self):
 		del self._StmtId
-		self._StmtId = None
+		self._StmtId = base_types.UninitialisedField(self, 'StmtId', Max35Text, False)
 
 	@property
 	def Sts(self):
@@ -96,12 +96,12 @@ class CashEntry2(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', EntryStatus1Code, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', EntryStatus1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctSvcrRef', type=Number, min=0, max=1, mutex_group=None, array=False),

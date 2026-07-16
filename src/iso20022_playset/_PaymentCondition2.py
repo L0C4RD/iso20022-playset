@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountOrRate1Choice import AmountOrRate1Choice
-from ._Max140Text import Max140Text
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import AmountOrRate1Choice
+from . import Max140Text
+from . import TrueFalseIndicator
 
 class PaymentCondition2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PaymentCondition2(base_types._BaseFieldType):
 
 	@AmtModAllwd.setter
 	def AmtModAllwd(self, value):
-		self._AmtModAllwd = value if type(value) != base_types.auto else self.make_default("AmtModAllwd")
+		self._AmtModAllwd = value if value is not None else base_types.UninitialisedField(self, 'AmtModAllwd', TrueFalseIndicator, False)
 
 	@AmtModAllwd.deleter
 	def AmtModAllwd(self):
 		del self._AmtModAllwd
-		self._AmtModAllwd = None
+		self._AmtModAllwd = base_types.UninitialisedField(self, 'AmtModAllwd', TrueFalseIndicator, False)
 
 	@property
 	def DelyPnlty(self):
@@ -28,12 +28,12 @@ class PaymentCondition2(base_types._BaseFieldType):
 
 	@DelyPnlty.setter
 	def DelyPnlty(self, value):
-		self._DelyPnlty = value if type(value) != base_types.auto else self.make_default("DelyPnlty")
+		self._DelyPnlty = value if value is not None else base_types.UninitialisedField(self, 'DelyPnlty', Max140Text, False)
 
 	@DelyPnlty.deleter
 	def DelyPnlty(self):
 		del self._DelyPnlty
-		self._DelyPnlty = None
+		self._DelyPnlty = base_types.UninitialisedField(self, 'DelyPnlty', Max140Text, False)
 
 	@property
 	def EarlyPmtAllwd(self):
@@ -41,12 +41,12 @@ class PaymentCondition2(base_types._BaseFieldType):
 
 	@EarlyPmtAllwd.setter
 	def EarlyPmtAllwd(self, value):
-		self._EarlyPmtAllwd = value if type(value) != base_types.auto else self.make_default("EarlyPmtAllwd")
+		self._EarlyPmtAllwd = value if value is not None else base_types.UninitialisedField(self, 'EarlyPmtAllwd', TrueFalseIndicator, False)
 
 	@EarlyPmtAllwd.deleter
 	def EarlyPmtAllwd(self):
 		del self._EarlyPmtAllwd
-		self._EarlyPmtAllwd = None
+		self._EarlyPmtAllwd = base_types.UninitialisedField(self, 'EarlyPmtAllwd', TrueFalseIndicator, False)
 
 	@property
 	def GrntedPmtReqd(self):
@@ -54,12 +54,12 @@ class PaymentCondition2(base_types._BaseFieldType):
 
 	@GrntedPmtReqd.setter
 	def GrntedPmtReqd(self, value):
-		self._GrntedPmtReqd = value if type(value) != base_types.auto else self.make_default("GrntedPmtReqd")
+		self._GrntedPmtReqd = value if value is not None else base_types.UninitialisedField(self, 'GrntedPmtReqd', TrueFalseIndicator, False)
 
 	@GrntedPmtReqd.deleter
 	def GrntedPmtReqd(self):
 		del self._GrntedPmtReqd
-		self._GrntedPmtReqd = None
+		self._GrntedPmtReqd = base_types.UninitialisedField(self, 'GrntedPmtReqd', TrueFalseIndicator, False)
 
 	@property
 	def ImdtPmtRbt(self):
@@ -67,12 +67,12 @@ class PaymentCondition2(base_types._BaseFieldType):
 
 	@ImdtPmtRbt.setter
 	def ImdtPmtRbt(self, value):
-		self._ImdtPmtRbt = value if type(value) != base_types.auto else self.make_default("ImdtPmtRbt")
+		self._ImdtPmtRbt = value if value is not None else base_types.UninitialisedField(self, 'ImdtPmtRbt', AmountOrRate1Choice, False)
 
 	@ImdtPmtRbt.deleter
 	def ImdtPmtRbt(self):
 		del self._ImdtPmtRbt
-		self._ImdtPmtRbt = None
+		self._ImdtPmtRbt = base_types.UninitialisedField(self, 'ImdtPmtRbt', AmountOrRate1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmtModAllwd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),

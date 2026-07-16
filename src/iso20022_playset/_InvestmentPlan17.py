@@ -2,20 +2,20 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashSettlement3 import CashSettlement3
-from ._Frequency20Choice import Frequency20Choice
-from ._ISODate import ISODate
-from ._IncomePreference2Code import IncomePreference2Code
-from ._InitialAmount1Choice import InitialAmount1Choice
-from ._InsuranceType2Choice import InsuranceType2Choice
-from ._Max35Text import Max35Text
-from ._Number import Number
-from ._PartyRole4Choice import PartyRole4Choice
-from ._PlanStatus2Choice import PlanStatus2Choice
-from ._Repartition6 import Repartition6
-from ._RoundingDirection1Code import RoundingDirection1Code
-from ._UnitsOrAmount1Choice import UnitsOrAmount1Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import CashSettlement3
+from . import Frequency20Choice
+from . import ISODate
+from . import IncomePreference2Code
+from . import InitialAmount1Choice
+from . import InsuranceType2Choice
+from . import Max35Text
+from . import Number
+from . import PartyRole4Choice
+from . import PlanStatus2Choice
+from . import Repartition6
+from . import RoundingDirection1Code
+from . import UnitsOrAmount1Choice
+from . import YesNoIndicator
 
 class InvestmentPlan17(base_types._BaseFieldType):
 
@@ -26,12 +26,12 @@ class InvestmentPlan17(base_types._BaseFieldType):
 
 	@CshSttlm.setter
 	def CshSttlm(self, value):
-		self._CshSttlm = value if type(value) != base_types.auto else self.make_default("CshSttlm")
+		self._CshSttlm = value if value is not None else base_types.UninitialisedField(self, 'CshSttlm', CashSettlement3, True)
 
 	@CshSttlm.deleter
 	def CshSttlm(self):
 		del self._CshSttlm
-		self._CshSttlm = None
+		self._CshSttlm = base_types.UninitialisedField(self, 'CshSttlm', CashSettlement3, True)
 
 	@property
 	def CtrctRef(self):
@@ -39,12 +39,12 @@ class InvestmentPlan17(base_types._BaseFieldType):
 
 	@CtrctRef.setter
 	def CtrctRef(self, value):
-		self._CtrctRef = value if type(value) != base_types.auto else self.make_default("CtrctRef")
+		self._CtrctRef = value if value is not None else base_types.UninitialisedField(self, 'CtrctRef', Max35Text, False)
 
 	@CtrctRef.deleter
 	def CtrctRef(self):
 		del self._CtrctRef
-		self._CtrctRef = None
+		self._CtrctRef = base_types.UninitialisedField(self, 'CtrctRef', Max35Text, False)
 
 	@property
 	def EndDt(self):
@@ -52,12 +52,12 @@ class InvestmentPlan17(base_types._BaseFieldType):
 
 	@EndDt.setter
 	def EndDt(self, value):
-		self._EndDt = value if type(value) != base_types.auto else self.make_default("EndDt")
+		self._EndDt = value if value is not None else base_types.UninitialisedField(self, 'EndDt', ISODate, False)
 
 	@EndDt.deleter
 	def EndDt(self):
 		del self._EndDt
-		self._EndDt = None
+		self._EndDt = base_types.UninitialisedField(self, 'EndDt', ISODate, False)
 
 	@property
 	def Frqcy(self):
@@ -65,12 +65,12 @@ class InvestmentPlan17(base_types._BaseFieldType):
 
 	@Frqcy.setter
 	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
+		self._Frqcy = value if value is not None else base_types.UninitialisedField(self, 'Frqcy', Frequency20Choice, False)
 
 	@Frqcy.deleter
 	def Frqcy(self):
 		del self._Frqcy
-		self._Frqcy = None
+		self._Frqcy = base_types.UninitialisedField(self, 'Frqcy', Frequency20Choice, False)
 
 	@property
 	def GrssAmtInd(self):
@@ -78,12 +78,12 @@ class InvestmentPlan17(base_types._BaseFieldType):
 
 	@GrssAmtInd.setter
 	def GrssAmtInd(self, value):
-		self._GrssAmtInd = value if type(value) != base_types.auto else self.make_default("GrssAmtInd")
+		self._GrssAmtInd = value if value is not None else base_types.UninitialisedField(self, 'GrssAmtInd', YesNoIndicator, False)
 
 	@GrssAmtInd.deleter
 	def GrssAmtInd(self):
 		del self._GrssAmtInd
-		self._GrssAmtInd = None
+		self._GrssAmtInd = base_types.UninitialisedField(self, 'GrssAmtInd', YesNoIndicator, False)
 
 	@property
 	def IncmPref(self):
@@ -91,12 +91,12 @@ class InvestmentPlan17(base_types._BaseFieldType):
 
 	@IncmPref.setter
 	def IncmPref(self, value):
-		self._IncmPref = value if type(value) != base_types.auto else self.make_default("IncmPref")
+		self._IncmPref = value if value is not None else base_types.UninitialisedField(self, 'IncmPref', IncomePreference2Code, False)
 
 	@IncmPref.deleter
 	def IncmPref(self):
 		del self._IncmPref
-		self._IncmPref = None
+		self._IncmPref = base_types.UninitialisedField(self, 'IncmPref', IncomePreference2Code, False)
 
 	@property
 	def InitlAmt(self):
@@ -104,12 +104,12 @@ class InvestmentPlan17(base_types._BaseFieldType):
 
 	@InitlAmt.setter
 	def InitlAmt(self, value):
-		self._InitlAmt = value if type(value) != base_types.auto else self.make_default("InitlAmt")
+		self._InitlAmt = value if value is not None else base_types.UninitialisedField(self, 'InitlAmt', InitialAmount1Choice, False)
 
 	@InitlAmt.deleter
 	def InitlAmt(self):
 		del self._InitlAmt
-		self._InitlAmt = None
+		self._InitlAmt = base_types.UninitialisedField(self, 'InitlAmt', InitialAmount1Choice, False)
 
 	@property
 	def InsrncCover(self):
@@ -117,12 +117,12 @@ class InvestmentPlan17(base_types._BaseFieldType):
 
 	@InsrncCover.setter
 	def InsrncCover(self, value):
-		self._InsrncCover = value if type(value) != base_types.auto else self.make_default("InsrncCover")
+		self._InsrncCover = value if value is not None else base_types.UninitialisedField(self, 'InsrncCover', InsuranceType2Choice, False)
 
 	@InsrncCover.deleter
 	def InsrncCover(self):
 		del self._InsrncCover
-		self._InsrncCover = None
+		self._InsrncCover = base_types.UninitialisedField(self, 'InsrncCover', InsuranceType2Choice, False)
 
 	@property
 	def InstlmtMgrRole(self):
@@ -130,12 +130,12 @@ class InvestmentPlan17(base_types._BaseFieldType):
 
 	@InstlmtMgrRole.setter
 	def InstlmtMgrRole(self, value):
-		self._InstlmtMgrRole = value if type(value) != base_types.auto else self.make_default("InstlmtMgrRole")
+		self._InstlmtMgrRole = value if value is not None else base_types.UninitialisedField(self, 'InstlmtMgrRole', PartyRole4Choice, False)
 
 	@InstlmtMgrRole.deleter
 	def InstlmtMgrRole(self):
 		del self._InstlmtMgrRole
-		self._InstlmtMgrRole = None
+		self._InstlmtMgrRole = base_types.UninitialisedField(self, 'InstlmtMgrRole', PartyRole4Choice, False)
 
 	@property
 	def PdctId(self):
@@ -143,12 +143,12 @@ class InvestmentPlan17(base_types._BaseFieldType):
 
 	@PdctId.setter
 	def PdctId(self, value):
-		self._PdctId = value if type(value) != base_types.auto else self.make_default("PdctId")
+		self._PdctId = value if value is not None else base_types.UninitialisedField(self, 'PdctId', Max35Text, False)
 
 	@PdctId.deleter
 	def PdctId(self):
 		del self._PdctId
-		self._PdctId = None
+		self._PdctId = base_types.UninitialisedField(self, 'PdctId', Max35Text, False)
 
 	@property
 	def PlanSts(self):
@@ -156,12 +156,12 @@ class InvestmentPlan17(base_types._BaseFieldType):
 
 	@PlanSts.setter
 	def PlanSts(self, value):
-		self._PlanSts = value if type(value) != base_types.auto else self.make_default("PlanSts")
+		self._PlanSts = value if value is not None else base_types.UninitialisedField(self, 'PlanSts', PlanStatus2Choice, False)
 
 	@PlanSts.deleter
 	def PlanSts(self):
 		del self._PlanSts
-		self._PlanSts = None
+		self._PlanSts = base_types.UninitialisedField(self, 'PlanSts', PlanStatus2Choice, False)
 
 	@property
 	def Qty(self):
@@ -169,12 +169,12 @@ class InvestmentPlan17(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+		self._Qty = value if value is not None else base_types.UninitialisedField(self, 'Qty', UnitsOrAmount1Choice, False)
 
 	@Qty.deleter
 	def Qty(self):
 		del self._Qty
-		self._Qty = None
+		self._Qty = base_types.UninitialisedField(self, 'Qty', UnitsOrAmount1Choice, False)
 
 	@property
 	def RltdCtrctRef(self):
@@ -182,12 +182,12 @@ class InvestmentPlan17(base_types._BaseFieldType):
 
 	@RltdCtrctRef.setter
 	def RltdCtrctRef(self, value):
-		self._RltdCtrctRef = value if type(value) != base_types.auto else self.make_default("RltdCtrctRef")
+		self._RltdCtrctRef = value if value is not None else base_types.UninitialisedField(self, 'RltdCtrctRef', Max35Text, False)
 
 	@RltdCtrctRef.deleter
 	def RltdCtrctRef(self):
 		del self._RltdCtrctRef
-		self._RltdCtrctRef = None
+		self._RltdCtrctRef = base_types.UninitialisedField(self, 'RltdCtrctRef', Max35Text, False)
 
 	@property
 	def RndgDrctn(self):
@@ -195,12 +195,12 @@ class InvestmentPlan17(base_types._BaseFieldType):
 
 	@RndgDrctn.setter
 	def RndgDrctn(self, value):
-		self._RndgDrctn = value if type(value) != base_types.auto else self.make_default("RndgDrctn")
+		self._RndgDrctn = value if value is not None else base_types.UninitialisedField(self, 'RndgDrctn', RoundingDirection1Code, False)
 
 	@RndgDrctn.deleter
 	def RndgDrctn(self):
 		del self._RndgDrctn
-		self._RndgDrctn = None
+		self._RndgDrctn = base_types.UninitialisedField(self, 'RndgDrctn', RoundingDirection1Code, False)
 
 	@property
 	def SLAChrgAndComssnRef(self):
@@ -208,12 +208,12 @@ class InvestmentPlan17(base_types._BaseFieldType):
 
 	@SLAChrgAndComssnRef.setter
 	def SLAChrgAndComssnRef(self, value):
-		self._SLAChrgAndComssnRef = value if type(value) != base_types.auto else self.make_default("SLAChrgAndComssnRef")
+		self._SLAChrgAndComssnRef = value if value is not None else base_types.UninitialisedField(self, 'SLAChrgAndComssnRef', Max35Text, False)
 
 	@SLAChrgAndComssnRef.deleter
 	def SLAChrgAndComssnRef(self):
 		del self._SLAChrgAndComssnRef
-		self._SLAChrgAndComssnRef = None
+		self._SLAChrgAndComssnRef = base_types.UninitialisedField(self, 'SLAChrgAndComssnRef', Max35Text, False)
 
 	@property
 	def SctyDtls(self):
@@ -221,12 +221,12 @@ class InvestmentPlan17(base_types._BaseFieldType):
 
 	@SctyDtls.setter
 	def SctyDtls(self, value):
-		self._SctyDtls = value if type(value) != base_types.auto else self.make_default("SctyDtls")
+		self._SctyDtls = value if value is not None else base_types.UninitialisedField(self, 'SctyDtls', Repartition6, True)
 
 	@SctyDtls.deleter
 	def SctyDtls(self):
 		del self._SctyDtls
-		self._SctyDtls = None
+		self._SctyDtls = base_types.UninitialisedField(self, 'SctyDtls', Repartition6, True)
 
 	@property
 	def StartDt(self):
@@ -234,12 +234,12 @@ class InvestmentPlan17(base_types._BaseFieldType):
 
 	@StartDt.setter
 	def StartDt(self, value):
-		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
+		self._StartDt = value if value is not None else base_types.UninitialisedField(self, 'StartDt', ISODate, False)
 
 	@StartDt.deleter
 	def StartDt(self):
 		del self._StartDt
-		self._StartDt = None
+		self._StartDt = base_types.UninitialisedField(self, 'StartDt', ISODate, False)
 
 	@property
 	def TtlNbOfInstlmts(self):
@@ -247,12 +247,12 @@ class InvestmentPlan17(base_types._BaseFieldType):
 
 	@TtlNbOfInstlmts.setter
 	def TtlNbOfInstlmts(self, value):
-		self._TtlNbOfInstlmts = value if type(value) != base_types.auto else self.make_default("TtlNbOfInstlmts")
+		self._TtlNbOfInstlmts = value if value is not None else base_types.UninitialisedField(self, 'TtlNbOfInstlmts', Number, False)
 
 	@TtlNbOfInstlmts.deleter
 	def TtlNbOfInstlmts(self):
 		del self._TtlNbOfInstlmts
-		self._TtlNbOfInstlmts = None
+		self._TtlNbOfInstlmts = base_types.UninitialisedField(self, 'TtlNbOfInstlmts', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshSttlm', type=CashSettlement3, min=0, max=8, mutex_group=None, array=True),

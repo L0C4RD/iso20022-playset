@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CertificateIssuer1 import CertificateIssuer1
-from ._Max500Binary import Max500Binary
+from . import CertificateIssuer1
+from . import Max500Binary
 
 class IssuerAndSerialNumber2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class IssuerAndSerialNumber2(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+		self._Issr = value if value is not None else base_types.UninitialisedField(self, 'Issr', CertificateIssuer1, False)
 
 	@Issr.deleter
 	def Issr(self):
 		del self._Issr
-		self._Issr = None
+		self._Issr = base_types.UninitialisedField(self, 'Issr', CertificateIssuer1, False)
 
 	@property
 	def SrlNb(self):
@@ -27,12 +27,12 @@ class IssuerAndSerialNumber2(base_types._BaseFieldType):
 
 	@SrlNb.setter
 	def SrlNb(self, value):
-		self._SrlNb = value if type(value) != base_types.auto else self.make_default("SrlNb")
+		self._SrlNb = value if value is not None else base_types.UninitialisedField(self, 'SrlNb', Max500Binary, False)
 
 	@SrlNb.deleter
 	def SrlNb(self):
 		del self._SrlNb
-		self._SrlNb = None
+		self._SrlNb = base_types.UninitialisedField(self, 'SrlNb', Max500Binary, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Issr', type=CertificateIssuer1, min=1, max=1, mutex_group=None, array=False),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IdentificationInformation5 import IdentificationInformation5
-from ._IdentificationVerificationIndicator import IdentificationVerificationIndicator
-from ._Max35Text import Max35Text
-from ._VerificationReason1Choice import VerificationReason1Choice
+from . import IdentificationInformation5
+from . import IdentificationVerificationIndicator
+from . import Max35Text
+from . import VerificationReason1Choice
 
 class VerificationReport5(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class VerificationReport5(base_types._BaseFieldType):
 
 	@OrgnlId.setter
 	def OrgnlId(self, value):
-		self._OrgnlId = value if type(value) != base_types.auto else self.make_default("OrgnlId")
+		self._OrgnlId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlId', Max35Text, False)
 
 	@OrgnlId.deleter
 	def OrgnlId(self):
 		del self._OrgnlId
-		self._OrgnlId = None
+		self._OrgnlId = base_types.UninitialisedField(self, 'OrgnlId', Max35Text, False)
 
 	@property
 	def OrgnlPtyAndAcctId(self):
@@ -29,12 +29,12 @@ class VerificationReport5(base_types._BaseFieldType):
 
 	@OrgnlPtyAndAcctId.setter
 	def OrgnlPtyAndAcctId(self, value):
-		self._OrgnlPtyAndAcctId = value if type(value) != base_types.auto else self.make_default("OrgnlPtyAndAcctId")
+		self._OrgnlPtyAndAcctId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlPtyAndAcctId', IdentificationInformation5, False)
 
 	@OrgnlPtyAndAcctId.deleter
 	def OrgnlPtyAndAcctId(self):
 		del self._OrgnlPtyAndAcctId
-		self._OrgnlPtyAndAcctId = None
+		self._OrgnlPtyAndAcctId = base_types.UninitialisedField(self, 'OrgnlPtyAndAcctId', IdentificationInformation5, False)
 
 	@property
 	def Rsn(self):
@@ -42,12 +42,12 @@ class VerificationReport5(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', VerificationReason1Choice, False)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', VerificationReason1Choice, False)
 
 	@property
 	def UpdtdPtyAndAcctId(self):
@@ -55,12 +55,12 @@ class VerificationReport5(base_types._BaseFieldType):
 
 	@UpdtdPtyAndAcctId.setter
 	def UpdtdPtyAndAcctId(self, value):
-		self._UpdtdPtyAndAcctId = value if type(value) != base_types.auto else self.make_default("UpdtdPtyAndAcctId")
+		self._UpdtdPtyAndAcctId = value if value is not None else base_types.UninitialisedField(self, 'UpdtdPtyAndAcctId', IdentificationInformation5, False)
 
 	@UpdtdPtyAndAcctId.deleter
 	def UpdtdPtyAndAcctId(self):
 		del self._UpdtdPtyAndAcctId
-		self._UpdtdPtyAndAcctId = None
+		self._UpdtdPtyAndAcctId = base_types.UninitialisedField(self, 'UpdtdPtyAndAcctId', IdentificationInformation5, False)
 
 	@property
 	def Vrfctn(self):
@@ -68,12 +68,12 @@ class VerificationReport5(base_types._BaseFieldType):
 
 	@Vrfctn.setter
 	def Vrfctn(self, value):
-		self._Vrfctn = value if type(value) != base_types.auto else self.make_default("Vrfctn")
+		self._Vrfctn = value if value is not None else base_types.UninitialisedField(self, 'Vrfctn', IdentificationVerificationIndicator, False)
 
 	@Vrfctn.deleter
 	def Vrfctn(self):
 		del self._Vrfctn
-		self._Vrfctn = None
+		self._Vrfctn = base_types.UninitialisedField(self, 'Vrfctn', IdentificationVerificationIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

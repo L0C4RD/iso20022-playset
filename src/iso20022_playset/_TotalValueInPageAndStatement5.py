@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from . import ActiveOrHistoricCurrencyAndAmount
 
 class TotalValueInPageAndStatement5(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class TotalValueInPageAndStatement5(base_types._BaseFieldType):
 
 	@TtlCollHeldValOfPg.setter
 	def TtlCollHeldValOfPg(self, value):
-		self._TtlCollHeldValOfPg = value if type(value) != base_types.auto else self.make_default("TtlCollHeldValOfPg")
+		self._TtlCollHeldValOfPg = value if value is not None else base_types.UninitialisedField(self, 'TtlCollHeldValOfPg', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@TtlCollHeldValOfPg.deleter
 	def TtlCollHeldValOfPg(self):
 		del self._TtlCollHeldValOfPg
-		self._TtlCollHeldValOfPg = None
+		self._TtlCollHeldValOfPg = base_types.UninitialisedField(self, 'TtlCollHeldValOfPg', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def TtlXpsrValOfPg(self):
@@ -26,12 +26,12 @@ class TotalValueInPageAndStatement5(base_types._BaseFieldType):
 
 	@TtlXpsrValOfPg.setter
 	def TtlXpsrValOfPg(self, value):
-		self._TtlXpsrValOfPg = value if type(value) != base_types.auto else self.make_default("TtlXpsrValOfPg")
+		self._TtlXpsrValOfPg = value if value is not None else base_types.UninitialisedField(self, 'TtlXpsrValOfPg', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@TtlXpsrValOfPg.deleter
 	def TtlXpsrValOfPg(self):
 		del self._TtlXpsrValOfPg
-		self._TtlXpsrValOfPg = None
+		self._TtlXpsrValOfPg = base_types.UninitialisedField(self, 'TtlXpsrValOfPg', ActiveOrHistoricCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TtlCollHeldValOfPg', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

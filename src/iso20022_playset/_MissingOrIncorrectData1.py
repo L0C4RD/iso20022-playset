@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AMLIndicator import AMLIndicator
-from ._UnableToApplyIncorrect2 import UnableToApplyIncorrect2
-from ._UnableToApplyMissing2 import UnableToApplyMissing2
+from . import AMLIndicator
+from . import UnableToApplyIncorrect2
+from . import UnableToApplyMissing2
 
 class MissingOrIncorrectData1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class MissingOrIncorrectData1(base_types._BaseFieldType):
 
 	@AMLReq.setter
 	def AMLReq(self, value):
-		self._AMLReq = value if type(value) != base_types.auto else self.make_default("AMLReq")
+		self._AMLReq = value if value is not None else base_types.UninitialisedField(self, 'AMLReq', AMLIndicator, False)
 
 	@AMLReq.deleter
 	def AMLReq(self):
 		del self._AMLReq
-		self._AMLReq = None
+		self._AMLReq = base_types.UninitialisedField(self, 'AMLReq', AMLIndicator, False)
 
 	@property
 	def IncrrctInf(self):
@@ -28,12 +28,12 @@ class MissingOrIncorrectData1(base_types._BaseFieldType):
 
 	@IncrrctInf.setter
 	def IncrrctInf(self, value):
-		self._IncrrctInf = value if type(value) != base_types.auto else self.make_default("IncrrctInf")
+		self._IncrrctInf = value if value is not None else base_types.UninitialisedField(self, 'IncrrctInf', UnableToApplyIncorrect2, True)
 
 	@IncrrctInf.deleter
 	def IncrrctInf(self):
 		del self._IncrrctInf
-		self._IncrrctInf = None
+		self._IncrrctInf = base_types.UninitialisedField(self, 'IncrrctInf', UnableToApplyIncorrect2, True)
 
 	@property
 	def MssngInf(self):
@@ -41,12 +41,12 @@ class MissingOrIncorrectData1(base_types._BaseFieldType):
 
 	@MssngInf.setter
 	def MssngInf(self, value):
-		self._MssngInf = value if type(value) != base_types.auto else self.make_default("MssngInf")
+		self._MssngInf = value if value is not None else base_types.UninitialisedField(self, 'MssngInf', UnableToApplyMissing2, True)
 
 	@MssngInf.deleter
 	def MssngInf(self):
 		del self._MssngInf
-		self._MssngInf = None
+		self._MssngInf = base_types.UninitialisedField(self, 'MssngInf', UnableToApplyMissing2, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AMLReq', type=AMLIndicator, min=0, max=1, mutex_group=None, array=False),

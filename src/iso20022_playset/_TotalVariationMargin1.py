@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Amount2 import Amount2
-from ._ShortLong1Code import ShortLong1Code
+from . import Amount2
+from . import ShortLong1Code
 
 class TotalVariationMargin1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TotalVariationMargin1(base_types._BaseFieldType):
 
 	@AmtDtls.setter
 	def AmtDtls(self, value):
-		self._AmtDtls = value if type(value) != base_types.auto else self.make_default("AmtDtls")
+		self._AmtDtls = value if value is not None else base_types.UninitialisedField(self, 'AmtDtls', Amount2, False)
 
 	@AmtDtls.deleter
 	def AmtDtls(self):
 		del self._AmtDtls
-		self._AmtDtls = None
+		self._AmtDtls = base_types.UninitialisedField(self, 'AmtDtls', Amount2, False)
 
 	@property
 	def ShrtLngInd(self):
@@ -27,12 +27,12 @@ class TotalVariationMargin1(base_types._BaseFieldType):
 
 	@ShrtLngInd.setter
 	def ShrtLngInd(self, value):
-		self._ShrtLngInd = value if type(value) != base_types.auto else self.make_default("ShrtLngInd")
+		self._ShrtLngInd = value if value is not None else base_types.UninitialisedField(self, 'ShrtLngInd', ShortLong1Code, False)
 
 	@ShrtLngInd.deleter
 	def ShrtLngInd(self):
 		del self._ShrtLngInd
-		self._ShrtLngInd = None
+		self._ShrtLngInd = base_types.UninitialisedField(self, 'ShrtLngInd', ShortLong1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmtDtls', type=Amount2, min=1, max=1, mutex_group=None, array=False),

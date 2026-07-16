@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._AdditionalInformation1 import AdditionalInformation1
-from ._AgreementClauses1 import AgreementClauses1
-from ._CurrencyCode import CurrencyCode
-from ._FinancialInstitutionIdentification6 import FinancialInstitutionIdentification6
-from ._ISODateTime import ISODateTime
-from ._Max128Text import Max128Text
-from ._Max15NumericText import Max15NumericText
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
-from ._PartyIdentificationAndAccount6 import PartyIdentificationAndAccount6
+from . import ActiveCurrencyAndAmount
+from . import AdditionalInformation1
+from . import AgreementClauses1
+from . import CurrencyCode
+from . import FinancialInstitutionIdentification6
+from . import ISODateTime
+from . import Max128Text
+from . import Max15NumericText
+from . import Max350Text
+from . import Max35Text
+from . import PartyIdentificationAndAccount6
 
 class RequestGroupInformation1(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class RequestGroupInformation1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation1, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation1, True)
 
 	@property
 	def AgrmtClauses(self):
@@ -36,12 +36,12 @@ class RequestGroupInformation1(base_types._BaseFieldType):
 
 	@AgrmtClauses.setter
 	def AgrmtClauses(self, value):
-		self._AgrmtClauses = value if type(value) != base_types.auto else self.make_default("AgrmtClauses")
+		self._AgrmtClauses = value if value is not None else base_types.UninitialisedField(self, 'AgrmtClauses', AgreementClauses1, True)
 
 	@AgrmtClauses.deleter
 	def AgrmtClauses(self):
 		del self._AgrmtClauses
-		self._AgrmtClauses = None
+		self._AgrmtClauses = base_types.UninitialisedField(self, 'AgrmtClauses', AgreementClauses1, True)
 
 	@property
 	def Authstn(self):
@@ -49,12 +49,12 @@ class RequestGroupInformation1(base_types._BaseFieldType):
 
 	@Authstn.setter
 	def Authstn(self, value):
-		self._Authstn = value if type(value) != base_types.auto else self.make_default("Authstn")
+		self._Authstn = value if value is not None else base_types.UninitialisedField(self, 'Authstn', Max128Text, True)
 
 	@Authstn.deleter
 	def Authstn(self):
 		del self._Authstn
-		self._Authstn = None
+		self._Authstn = base_types.UninitialisedField(self, 'Authstn', Max128Text, True)
 
 	@property
 	def Ccy(self):
@@ -62,12 +62,12 @@ class RequestGroupInformation1(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', CurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', CurrencyCode, False)
 
 	@property
 	def CreDtTm(self):
@@ -75,12 +75,12 @@ class RequestGroupInformation1(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if value is not None else base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
 		del self._CreDtTm
-		self._CreDtTm = None
+		self._CreDtTm = base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@property
 	def FincgAgrmt(self):
@@ -88,12 +88,12 @@ class RequestGroupInformation1(base_types._BaseFieldType):
 
 	@FincgAgrmt.setter
 	def FincgAgrmt(self, value):
-		self._FincgAgrmt = value if type(value) != base_types.auto else self.make_default("FincgAgrmt")
+		self._FincgAgrmt = value if value is not None else base_types.UninitialisedField(self, 'FincgAgrmt', Max350Text, False)
 
 	@FincgAgrmt.deleter
 	def FincgAgrmt(self):
 		del self._FincgAgrmt
-		self._FincgAgrmt = None
+		self._FincgAgrmt = base_types.UninitialisedField(self, 'FincgAgrmt', Max350Text, False)
 
 	@property
 	def FincgRqstr(self):
@@ -101,12 +101,12 @@ class RequestGroupInformation1(base_types._BaseFieldType):
 
 	@FincgRqstr.setter
 	def FincgRqstr(self, value):
-		self._FincgRqstr = value if type(value) != base_types.auto else self.make_default("FincgRqstr")
+		self._FincgRqstr = value if value is not None else base_types.UninitialisedField(self, 'FincgRqstr', PartyIdentificationAndAccount6, False)
 
 	@FincgRqstr.deleter
 	def FincgRqstr(self):
 		del self._FincgRqstr
-		self._FincgRqstr = None
+		self._FincgRqstr = base_types.UninitialisedField(self, 'FincgRqstr', PartyIdentificationAndAccount6, False)
 
 	@property
 	def FrstAgt(self):
@@ -114,12 +114,12 @@ class RequestGroupInformation1(base_types._BaseFieldType):
 
 	@FrstAgt.setter
 	def FrstAgt(self, value):
-		self._FrstAgt = value if type(value) != base_types.auto else self.make_default("FrstAgt")
+		self._FrstAgt = value if value is not None else base_types.UninitialisedField(self, 'FrstAgt', FinancialInstitutionIdentification6, False)
 
 	@FrstAgt.deleter
 	def FrstAgt(self):
 		del self._FrstAgt
-		self._FrstAgt = None
+		self._FrstAgt = base_types.UninitialisedField(self, 'FrstAgt', FinancialInstitutionIdentification6, False)
 
 	@property
 	def GrpId(self):
@@ -127,12 +127,12 @@ class RequestGroupInformation1(base_types._BaseFieldType):
 
 	@GrpId.setter
 	def GrpId(self, value):
-		self._GrpId = value if type(value) != base_types.auto else self.make_default("GrpId")
+		self._GrpId = value if value is not None else base_types.UninitialisedField(self, 'GrpId', Max35Text, False)
 
 	@GrpId.deleter
 	def GrpId(self):
 		del self._GrpId
-		self._GrpId = None
+		self._GrpId = base_types.UninitialisedField(self, 'GrpId', Max35Text, False)
 
 	@property
 	def IntrmyAgt(self):
@@ -140,12 +140,12 @@ class RequestGroupInformation1(base_types._BaseFieldType):
 
 	@IntrmyAgt.setter
 	def IntrmyAgt(self, value):
-		self._IntrmyAgt = value if type(value) != base_types.auto else self.make_default("IntrmyAgt")
+		self._IntrmyAgt = value if value is not None else base_types.UninitialisedField(self, 'IntrmyAgt', FinancialInstitutionIdentification6, False)
 
 	@IntrmyAgt.deleter
 	def IntrmyAgt(self):
 		del self._IntrmyAgt
-		self._IntrmyAgt = None
+		self._IntrmyAgt = base_types.UninitialisedField(self, 'IntrmyAgt', FinancialInstitutionIdentification6, False)
 
 	@property
 	def NbOfInvcReqs(self):
@@ -153,12 +153,12 @@ class RequestGroupInformation1(base_types._BaseFieldType):
 
 	@NbOfInvcReqs.setter
 	def NbOfInvcReqs(self, value):
-		self._NbOfInvcReqs = value if type(value) != base_types.auto else self.make_default("NbOfInvcReqs")
+		self._NbOfInvcReqs = value if value is not None else base_types.UninitialisedField(self, 'NbOfInvcReqs', Max15NumericText, False)
 
 	@NbOfInvcReqs.deleter
 	def NbOfInvcReqs(self):
 		del self._NbOfInvcReqs
-		self._NbOfInvcReqs = None
+		self._NbOfInvcReqs = base_types.UninitialisedField(self, 'NbOfInvcReqs', Max15NumericText, False)
 
 	@property
 	def TtlBlkInvcAmt(self):
@@ -166,12 +166,12 @@ class RequestGroupInformation1(base_types._BaseFieldType):
 
 	@TtlBlkInvcAmt.setter
 	def TtlBlkInvcAmt(self, value):
-		self._TtlBlkInvcAmt = value if type(value) != base_types.auto else self.make_default("TtlBlkInvcAmt")
+		self._TtlBlkInvcAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlBlkInvcAmt', ActiveCurrencyAndAmount, False)
 
 	@TtlBlkInvcAmt.deleter
 	def TtlBlkInvcAmt(self):
 		del self._TtlBlkInvcAmt
-		self._TtlBlkInvcAmt = None
+		self._TtlBlkInvcAmt = base_types.UninitialisedField(self, 'TtlBlkInvcAmt', ActiveCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation1, min=0, max=None, mutex_group=None, array=True),

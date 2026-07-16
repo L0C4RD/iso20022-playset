@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LoanData120 import LoanData120
+from . import LoanData120
 
 class TransactionLoanData26Choice(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class TransactionLoanData26Choice(base_types._BaseFieldType):
 
 	@BuySellBck.setter
 	def BuySellBck(self, value):
-		self._BuySellBck = value if type(value) != base_types.auto else self.make_default("BuySellBck")
+		self._BuySellBck = value if value is not None else base_types.UninitialisedField(self, 'BuySellBck', LoanData120, False)
 
 	@BuySellBck.deleter
 	def BuySellBck(self):
 		del self._BuySellBck
-		self._BuySellBck = None
+		self._BuySellBck = base_types.UninitialisedField(self, 'BuySellBck', LoanData120, False)
 
 	@property
 	def MrgnLndg(self):
@@ -26,12 +26,12 @@ class TransactionLoanData26Choice(base_types._BaseFieldType):
 
 	@MrgnLndg.setter
 	def MrgnLndg(self, value):
-		self._MrgnLndg = value if type(value) != base_types.auto else self.make_default("MrgnLndg")
+		self._MrgnLndg = value if value is not None else base_types.UninitialisedField(self, 'MrgnLndg', LoanData120, False)
 
 	@MrgnLndg.deleter
 	def MrgnLndg(self):
 		del self._MrgnLndg
-		self._MrgnLndg = None
+		self._MrgnLndg = base_types.UninitialisedField(self, 'MrgnLndg', LoanData120, False)
 
 	@property
 	def RpTrad(self):
@@ -39,12 +39,12 @@ class TransactionLoanData26Choice(base_types._BaseFieldType):
 
 	@RpTrad.setter
 	def RpTrad(self, value):
-		self._RpTrad = value if type(value) != base_types.auto else self.make_default("RpTrad")
+		self._RpTrad = value if value is not None else base_types.UninitialisedField(self, 'RpTrad', LoanData120, False)
 
 	@RpTrad.deleter
 	def RpTrad(self):
 		del self._RpTrad
-		self._RpTrad = None
+		self._RpTrad = base_types.UninitialisedField(self, 'RpTrad', LoanData120, False)
 
 	@property
 	def SctiesLndg(self):
@@ -52,12 +52,12 @@ class TransactionLoanData26Choice(base_types._BaseFieldType):
 
 	@SctiesLndg.setter
 	def SctiesLndg(self, value):
-		self._SctiesLndg = value if type(value) != base_types.auto else self.make_default("SctiesLndg")
+		self._SctiesLndg = value if value is not None else base_types.UninitialisedField(self, 'SctiesLndg', LoanData120, False)
 
 	@SctiesLndg.deleter
 	def SctiesLndg(self):
 		del self._SctiesLndg
-		self._SctiesLndg = None
+		self._SctiesLndg = base_types.UninitialisedField(self, 'SctiesLndg', LoanData120, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BuySellBck', type=LoanData120, min=0, max=1, mutex_group=1, array=False),

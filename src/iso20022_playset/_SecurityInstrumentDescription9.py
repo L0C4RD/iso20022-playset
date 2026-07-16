@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._CFIOct2015Identifier import CFIOct2015Identifier
-from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ActiveOrHistoricCurrencyCode
+from . import CFIOct2015Identifier
+from . import ISINOct2015Identifier
+from . import Max350Text
+from . import Max35Text
+from . import TrueFalseIndicator
 
 class SecurityInstrumentDescription9(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class SecurityInstrumentDescription9(base_types._BaseFieldType):
 
 	@ClssfctnTp.setter
 	def ClssfctnTp(self, value):
-		self._ClssfctnTp = value if type(value) != base_types.auto else self.make_default("ClssfctnTp")
+		self._ClssfctnTp = value if value is not None else base_types.UninitialisedField(self, 'ClssfctnTp', CFIOct2015Identifier, False)
 
 	@ClssfctnTp.deleter
 	def ClssfctnTp(self):
 		del self._ClssfctnTp
-		self._ClssfctnTp = None
+		self._ClssfctnTp = base_types.UninitialisedField(self, 'ClssfctnTp', CFIOct2015Identifier, False)
 
 	@property
 	def CmmdtyDerivInd(self):
@@ -31,12 +31,12 @@ class SecurityInstrumentDescription9(base_types._BaseFieldType):
 
 	@CmmdtyDerivInd.setter
 	def CmmdtyDerivInd(self, value):
-		self._CmmdtyDerivInd = value if type(value) != base_types.auto else self.make_default("CmmdtyDerivInd")
+		self._CmmdtyDerivInd = value if value is not None else base_types.UninitialisedField(self, 'CmmdtyDerivInd', TrueFalseIndicator, False)
 
 	@CmmdtyDerivInd.deleter
 	def CmmdtyDerivInd(self):
 		del self._CmmdtyDerivInd
-		self._CmmdtyDerivInd = None
+		self._CmmdtyDerivInd = base_types.UninitialisedField(self, 'CmmdtyDerivInd', TrueFalseIndicator, False)
 
 	@property
 	def FullNm(self):
@@ -44,12 +44,12 @@ class SecurityInstrumentDescription9(base_types._BaseFieldType):
 
 	@FullNm.setter
 	def FullNm(self, value):
-		self._FullNm = value if type(value) != base_types.auto else self.make_default("FullNm")
+		self._FullNm = value if value is not None else base_types.UninitialisedField(self, 'FullNm', Max350Text, False)
 
 	@FullNm.deleter
 	def FullNm(self):
 		del self._FullNm
-		self._FullNm = None
+		self._FullNm = base_types.UninitialisedField(self, 'FullNm', Max350Text, False)
 
 	@property
 	def Id(self):
@@ -57,12 +57,12 @@ class SecurityInstrumentDescription9(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', ISINOct2015Identifier, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', ISINOct2015Identifier, False)
 
 	@property
 	def NtnlCcy(self):
@@ -70,12 +70,12 @@ class SecurityInstrumentDescription9(base_types._BaseFieldType):
 
 	@NtnlCcy.setter
 	def NtnlCcy(self, value):
-		self._NtnlCcy = value if type(value) != base_types.auto else self.make_default("NtnlCcy")
+		self._NtnlCcy = value if value is not None else base_types.UninitialisedField(self, 'NtnlCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@NtnlCcy.deleter
 	def NtnlCcy(self):
 		del self._NtnlCcy
-		self._NtnlCcy = None
+		self._NtnlCcy = base_types.UninitialisedField(self, 'NtnlCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def ShrtNm(self):
@@ -83,12 +83,12 @@ class SecurityInstrumentDescription9(base_types._BaseFieldType):
 
 	@ShrtNm.setter
 	def ShrtNm(self, value):
-		self._ShrtNm = value if type(value) != base_types.auto else self.make_default("ShrtNm")
+		self._ShrtNm = value if value is not None else base_types.UninitialisedField(self, 'ShrtNm', Max35Text, False)
 
 	@ShrtNm.deleter
 	def ShrtNm(self):
 		del self._ShrtNm
-		self._ShrtNm = None
+		self._ShrtNm = base_types.UninitialisedField(self, 'ShrtNm', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClssfctnTp', type=CFIOct2015Identifier, min=1, max=1, mutex_group=None, array=False),

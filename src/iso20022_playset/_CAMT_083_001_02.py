@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IntraBalanceMovementCancellationReportV02 import IntraBalanceMovementCancellationReportV02
+from . import IntraBalanceMovementCancellationReportV02
 
 class CAMT_083_001_02():
 
@@ -18,12 +18,12 @@ class CAMT_083_001_02():
 
 		@IntraBalMvmntCxlRpt.setter
 		def IntraBalMvmntCxlRpt(self, value):
-			self._IntraBalMvmntCxlRpt = value if type(value) != base_types.auto else self.make_default("IntraBalMvmntCxlRpt")
+			self._IntraBalMvmntCxlRpt = value if value is not None else base_types.UninitialisedField(self, 'IntraBalMvmntCxlRpt', IntraBalanceMovementCancellationReportV02, False)
 
 		@IntraBalMvmntCxlRpt.deleter
 		def IntraBalMvmntCxlRpt(self):
 			del self._IntraBalMvmntCxlRpt
-			self._IntraBalMvmntCxlRpt = None
+			self._IntraBalMvmntCxlRpt = base_types.UninitialisedField(self, 'IntraBalMvmntCxlRpt', IntraBalanceMovementCancellationReportV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='IntraBalMvmntCxlRpt', type=IntraBalanceMovementCancellationReportV02, min=1, max=1, mutex_group=None, array=False),

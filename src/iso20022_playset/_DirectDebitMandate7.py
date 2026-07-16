@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountIdentificationAndName5 import AccountIdentificationAndName5
-from ._BranchData4 import BranchData4
-from ._FinancialInstitutionIdentification11Choice import FinancialInstitutionIdentification11Choice
-from ._Max35Text import Max35Text
-from ._PartyIdentification125Choice import PartyIdentification125Choice
+from . import AccountIdentificationAndName5
+from . import BranchData4
+from . import FinancialInstitutionIdentification11Choice
+from . import Max35Text
+from . import PartyIdentification125Choice
 
 class DirectDebitMandate7(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class DirectDebitMandate7(base_types._BaseFieldType):
 
 	@Cdtr.setter
 	def Cdtr(self, value):
-		self._Cdtr = value if type(value) != base_types.auto else self.make_default("Cdtr")
+		self._Cdtr = value if value is not None else base_types.UninitialisedField(self, 'Cdtr', PartyIdentification125Choice, False)
 
 	@Cdtr.deleter
 	def Cdtr(self):
 		del self._Cdtr
-		self._Cdtr = None
+		self._Cdtr = base_types.UninitialisedField(self, 'Cdtr', PartyIdentification125Choice, False)
 
 	@property
 	def CdtrAgt(self):
@@ -30,12 +30,12 @@ class DirectDebitMandate7(base_types._BaseFieldType):
 
 	@CdtrAgt.setter
 	def CdtrAgt(self, value):
-		self._CdtrAgt = value if type(value) != base_types.auto else self.make_default("CdtrAgt")
+		self._CdtrAgt = value if value is not None else base_types.UninitialisedField(self, 'CdtrAgt', FinancialInstitutionIdentification11Choice, False)
 
 	@CdtrAgt.deleter
 	def CdtrAgt(self):
 		del self._CdtrAgt
-		self._CdtrAgt = None
+		self._CdtrAgt = base_types.UninitialisedField(self, 'CdtrAgt', FinancialInstitutionIdentification11Choice, False)
 
 	@property
 	def CdtrAgtBrnch(self):
@@ -43,12 +43,12 @@ class DirectDebitMandate7(base_types._BaseFieldType):
 
 	@CdtrAgtBrnch.setter
 	def CdtrAgtBrnch(self, value):
-		self._CdtrAgtBrnch = value if type(value) != base_types.auto else self.make_default("CdtrAgtBrnch")
+		self._CdtrAgtBrnch = value if value is not None else base_types.UninitialisedField(self, 'CdtrAgtBrnch', BranchData4, False)
 
 	@CdtrAgtBrnch.deleter
 	def CdtrAgtBrnch(self):
 		del self._CdtrAgtBrnch
-		self._CdtrAgtBrnch = None
+		self._CdtrAgtBrnch = base_types.UninitialisedField(self, 'CdtrAgtBrnch', BranchData4, False)
 
 	@property
 	def Dbtr(self):
@@ -56,12 +56,12 @@ class DirectDebitMandate7(base_types._BaseFieldType):
 
 	@Dbtr.setter
 	def Dbtr(self, value):
-		self._Dbtr = value if type(value) != base_types.auto else self.make_default("Dbtr")
+		self._Dbtr = value if value is not None else base_types.UninitialisedField(self, 'Dbtr', PartyIdentification125Choice, False)
 
 	@Dbtr.deleter
 	def Dbtr(self):
 		del self._Dbtr
-		self._Dbtr = None
+		self._Dbtr = base_types.UninitialisedField(self, 'Dbtr', PartyIdentification125Choice, False)
 
 	@property
 	def DbtrAcct(self):
@@ -69,12 +69,12 @@ class DirectDebitMandate7(base_types._BaseFieldType):
 
 	@DbtrAcct.setter
 	def DbtrAcct(self, value):
-		self._DbtrAcct = value if type(value) != base_types.auto else self.make_default("DbtrAcct")
+		self._DbtrAcct = value if value is not None else base_types.UninitialisedField(self, 'DbtrAcct', AccountIdentificationAndName5, False)
 
 	@DbtrAcct.deleter
 	def DbtrAcct(self):
 		del self._DbtrAcct
-		self._DbtrAcct = None
+		self._DbtrAcct = base_types.UninitialisedField(self, 'DbtrAcct', AccountIdentificationAndName5, False)
 
 	@property
 	def DbtrAgt(self):
@@ -82,12 +82,12 @@ class DirectDebitMandate7(base_types._BaseFieldType):
 
 	@DbtrAgt.setter
 	def DbtrAgt(self, value):
-		self._DbtrAgt = value if type(value) != base_types.auto else self.make_default("DbtrAgt")
+		self._DbtrAgt = value if value is not None else base_types.UninitialisedField(self, 'DbtrAgt', FinancialInstitutionIdentification11Choice, False)
 
 	@DbtrAgt.deleter
 	def DbtrAgt(self):
 		del self._DbtrAgt
-		self._DbtrAgt = None
+		self._DbtrAgt = base_types.UninitialisedField(self, 'DbtrAgt', FinancialInstitutionIdentification11Choice, False)
 
 	@property
 	def DbtrAgtBrnch(self):
@@ -95,12 +95,12 @@ class DirectDebitMandate7(base_types._BaseFieldType):
 
 	@DbtrAgtBrnch.setter
 	def DbtrAgtBrnch(self, value):
-		self._DbtrAgtBrnch = value if type(value) != base_types.auto else self.make_default("DbtrAgtBrnch")
+		self._DbtrAgtBrnch = value if value is not None else base_types.UninitialisedField(self, 'DbtrAgtBrnch', BranchData4, False)
 
 	@DbtrAgtBrnch.deleter
 	def DbtrAgtBrnch(self):
 		del self._DbtrAgtBrnch
-		self._DbtrAgtBrnch = None
+		self._DbtrAgtBrnch = base_types.UninitialisedField(self, 'DbtrAgtBrnch', BranchData4, False)
 
 	@property
 	def DbtrNtlRegnNb(self):
@@ -108,12 +108,12 @@ class DirectDebitMandate7(base_types._BaseFieldType):
 
 	@DbtrNtlRegnNb.setter
 	def DbtrNtlRegnNb(self, value):
-		self._DbtrNtlRegnNb = value if type(value) != base_types.auto else self.make_default("DbtrNtlRegnNb")
+		self._DbtrNtlRegnNb = value if value is not None else base_types.UninitialisedField(self, 'DbtrNtlRegnNb', Max35Text, False)
 
 	@DbtrNtlRegnNb.deleter
 	def DbtrNtlRegnNb(self):
 		del self._DbtrNtlRegnNb
-		self._DbtrNtlRegnNb = None
+		self._DbtrNtlRegnNb = base_types.UninitialisedField(self, 'DbtrNtlRegnNb', Max35Text, False)
 
 	@property
 	def DbtrTaxIdNb(self):
@@ -121,12 +121,12 @@ class DirectDebitMandate7(base_types._BaseFieldType):
 
 	@DbtrTaxIdNb.setter
 	def DbtrTaxIdNb(self, value):
-		self._DbtrTaxIdNb = value if type(value) != base_types.auto else self.make_default("DbtrTaxIdNb")
+		self._DbtrTaxIdNb = value if value is not None else base_types.UninitialisedField(self, 'DbtrTaxIdNb', Max35Text, False)
 
 	@DbtrTaxIdNb.deleter
 	def DbtrTaxIdNb(self):
 		del self._DbtrTaxIdNb
-		self._DbtrTaxIdNb = None
+		self._DbtrTaxIdNb = base_types.UninitialisedField(self, 'DbtrTaxIdNb', Max35Text, False)
 
 	@property
 	def MndtId(self):
@@ -134,12 +134,12 @@ class DirectDebitMandate7(base_types._BaseFieldType):
 
 	@MndtId.setter
 	def MndtId(self, value):
-		self._MndtId = value if type(value) != base_types.auto else self.make_default("MndtId")
+		self._MndtId = value if value is not None else base_types.UninitialisedField(self, 'MndtId', Max35Text, False)
 
 	@MndtId.deleter
 	def MndtId(self):
 		del self._MndtId
-		self._MndtId = None
+		self._MndtId = base_types.UninitialisedField(self, 'MndtId', Max35Text, False)
 
 	@property
 	def RegnId(self):
@@ -147,12 +147,12 @@ class DirectDebitMandate7(base_types._BaseFieldType):
 
 	@RegnId.setter
 	def RegnId(self, value):
-		self._RegnId = value if type(value) != base_types.auto else self.make_default("RegnId")
+		self._RegnId = value if value is not None else base_types.UninitialisedField(self, 'RegnId', Max35Text, False)
 
 	@RegnId.deleter
 	def RegnId(self):
 		del self._RegnId
-		self._RegnId = None
+		self._RegnId = base_types.UninitialisedField(self, 'RegnId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cdtr', type=PartyIdentification125Choice, min=0, max=1, mutex_group=None, array=False),

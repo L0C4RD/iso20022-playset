@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Priority1Code import Priority1Code
-from ._YesNoIndicator import YesNoIndicator
+from . import Priority1Code
+from . import YesNoIndicator
 
 class InformationQualifierType1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class InformationQualifierType1(base_types._BaseFieldType):
 
 	@IsFrmtd.setter
 	def IsFrmtd(self, value):
-		self._IsFrmtd = value if type(value) != base_types.auto else self.make_default("IsFrmtd")
+		self._IsFrmtd = value if value is not None else base_types.UninitialisedField(self, 'IsFrmtd', YesNoIndicator, False)
 
 	@IsFrmtd.deleter
 	def IsFrmtd(self):
 		del self._IsFrmtd
-		self._IsFrmtd = None
+		self._IsFrmtd = base_types.UninitialisedField(self, 'IsFrmtd', YesNoIndicator, False)
 
 	@property
 	def Prty(self):
@@ -27,12 +27,12 @@ class InformationQualifierType1(base_types._BaseFieldType):
 
 	@Prty.setter
 	def Prty(self, value):
-		self._Prty = value if type(value) != base_types.auto else self.make_default("Prty")
+		self._Prty = value if value is not None else base_types.UninitialisedField(self, 'Prty', Priority1Code, False)
 
 	@Prty.deleter
 	def Prty(self):
 		del self._Prty
-		self._Prty = None
+		self._Prty = base_types.UninitialisedField(self, 'Prty', Priority1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IsFrmtd', type=YesNoIndicator, min=0, max=1, mutex_group=None, array=False),

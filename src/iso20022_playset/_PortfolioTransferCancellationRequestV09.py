@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalReference10 import AdditionalReference10
-from ._AdditionalReference11 import AdditionalReference11
-from ._MarketPracticeVersion1 import MarketPracticeVersion1
-from ._Max35Text import Max35Text
-from ._MessageIdentification1 import MessageIdentification1
-from ._TransferReference14 import TransferReference14
+from . import AdditionalReference10
+from . import AdditionalReference11
+from . import MarketPracticeVersion1
+from . import Max35Text
+from . import MessageIdentification1
+from . import TransferReference14
 
 class PortfolioTransferCancellationRequestV09(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class PortfolioTransferCancellationRequestV09(base_types._BaseFieldType):
 
 	@MktPrctcVrsn.setter
 	def MktPrctcVrsn(self, value):
-		self._MktPrctcVrsn = value if type(value) != base_types.auto else self.make_default("MktPrctcVrsn")
+		self._MktPrctcVrsn = value if value is not None else base_types.UninitialisedField(self, 'MktPrctcVrsn', MarketPracticeVersion1, False)
 
 	@MktPrctcVrsn.deleter
 	def MktPrctcVrsn(self):
 		del self._MktPrctcVrsn
-		self._MktPrctcVrsn = None
+		self._MktPrctcVrsn = base_types.UninitialisedField(self, 'MktPrctcVrsn', MarketPracticeVersion1, False)
 
 	@property
 	def MsgRef(self):
@@ -31,12 +31,12 @@ class PortfolioTransferCancellationRequestV09(base_types._BaseFieldType):
 
 	@MsgRef.setter
 	def MsgRef(self, value):
-		self._MsgRef = value if type(value) != base_types.auto else self.make_default("MsgRef")
+		self._MsgRef = value if value is not None else base_types.UninitialisedField(self, 'MsgRef', MessageIdentification1, False)
 
 	@MsgRef.deleter
 	def MsgRef(self):
 		del self._MsgRef
-		self._MsgRef = None
+		self._MsgRef = base_types.UninitialisedField(self, 'MsgRef', MessageIdentification1, False)
 
 	@property
 	def MstrRef(self):
@@ -44,12 +44,12 @@ class PortfolioTransferCancellationRequestV09(base_types._BaseFieldType):
 
 	@MstrRef.setter
 	def MstrRef(self, value):
-		self._MstrRef = value if type(value) != base_types.auto else self.make_default("MstrRef")
+		self._MstrRef = value if value is not None else base_types.UninitialisedField(self, 'MstrRef', Max35Text, False)
 
 	@MstrRef.deleter
 	def MstrRef(self):
 		del self._MstrRef
-		self._MstrRef = None
+		self._MstrRef = base_types.UninitialisedField(self, 'MstrRef', Max35Text, False)
 
 	@property
 	def PoolRef(self):
@@ -57,12 +57,12 @@ class PortfolioTransferCancellationRequestV09(base_types._BaseFieldType):
 
 	@PoolRef.setter
 	def PoolRef(self, value):
-		self._PoolRef = value if type(value) != base_types.auto else self.make_default("PoolRef")
+		self._PoolRef = value if value is not None else base_types.UninitialisedField(self, 'PoolRef', AdditionalReference11, False)
 
 	@PoolRef.deleter
 	def PoolRef(self):
 		del self._PoolRef
-		self._PoolRef = None
+		self._PoolRef = base_types.UninitialisedField(self, 'PoolRef', AdditionalReference11, False)
 
 	@property
 	def PrvsRef(self):
@@ -70,12 +70,12 @@ class PortfolioTransferCancellationRequestV09(base_types._BaseFieldType):
 
 	@PrvsRef.setter
 	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
+		self._PrvsRef = value if value is not None else base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference10, False)
 
 	@PrvsRef.deleter
 	def PrvsRef(self):
 		del self._PrvsRef
-		self._PrvsRef = None
+		self._PrvsRef = base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference10, False)
 
 	@property
 	def RltdRef(self):
@@ -83,12 +83,12 @@ class PortfolioTransferCancellationRequestV09(base_types._BaseFieldType):
 
 	@RltdRef.setter
 	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
+		self._RltdRef = value if value is not None else base_types.UninitialisedField(self, 'RltdRef', AdditionalReference10, False)
 
 	@RltdRef.deleter
 	def RltdRef(self):
 		del self._RltdRef
-		self._RltdRef = None
+		self._RltdRef = base_types.UninitialisedField(self, 'RltdRef', AdditionalReference10, False)
 
 	@property
 	def TrfRefs(self):
@@ -96,12 +96,12 @@ class PortfolioTransferCancellationRequestV09(base_types._BaseFieldType):
 
 	@TrfRefs.setter
 	def TrfRefs(self, value):
-		self._TrfRefs = value if type(value) != base_types.auto else self.make_default("TrfRefs")
+		self._TrfRefs = value if value is not None else base_types.UninitialisedField(self, 'TrfRefs', TransferReference14, False)
 
 	@TrfRefs.deleter
 	def TrfRefs(self):
 		del self._TrfRefs
-		self._TrfRefs = None
+		self._TrfRefs = base_types.UninitialisedField(self, 'TrfRefs', TransferReference14, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MktPrctcVrsn', type=MarketPracticeVersion1, min=0, max=1, mutex_group=None, array=False),

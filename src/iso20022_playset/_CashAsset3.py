@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._CashAssetType1Choice import CashAssetType1Choice
+from . import ActiveCurrencyCode
+from . import AdditionalInformation15
+from . import CashAssetType1Choice
 
 class CashAsset3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CashAsset3(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, False)
 
 	@property
 	def CshAsstTp(self):
@@ -28,12 +28,12 @@ class CashAsset3(base_types._BaseFieldType):
 
 	@CshAsstTp.setter
 	def CshAsstTp(self, value):
-		self._CshAsstTp = value if type(value) != base_types.auto else self.make_default("CshAsstTp")
+		self._CshAsstTp = value if value is not None else base_types.UninitialisedField(self, 'CshAsstTp', CashAssetType1Choice, False)
 
 	@CshAsstTp.deleter
 	def CshAsstTp(self):
 		del self._CshAsstTp
-		self._CshAsstTp = None
+		self._CshAsstTp = base_types.UninitialisedField(self, 'CshAsstTp', CashAssetType1Choice, False)
 
 	@property
 	def HldgCcy(self):
@@ -41,12 +41,12 @@ class CashAsset3(base_types._BaseFieldType):
 
 	@HldgCcy.setter
 	def HldgCcy(self, value):
-		self._HldgCcy = value if type(value) != base_types.auto else self.make_default("HldgCcy")
+		self._HldgCcy = value if value is not None else base_types.UninitialisedField(self, 'HldgCcy', ActiveCurrencyCode, False)
 
 	@HldgCcy.deleter
 	def HldgCcy(self):
 		del self._HldgCcy
-		self._HldgCcy = None
+		self._HldgCcy = base_types.UninitialisedField(self, 'HldgCcy', ActiveCurrencyCode, False)
 
 	@property
 	def TrfCcy(self):
@@ -54,12 +54,12 @@ class CashAsset3(base_types._BaseFieldType):
 
 	@TrfCcy.setter
 	def TrfCcy(self, value):
-		self._TrfCcy = value if type(value) != base_types.auto else self.make_default("TrfCcy")
+		self._TrfCcy = value if value is not None else base_types.UninitialisedField(self, 'TrfCcy', ActiveCurrencyCode, False)
 
 	@TrfCcy.deleter
 	def TrfCcy(self):
 		del self._TrfCcy
-		self._TrfCcy = None
+		self._TrfCcy = base_types.UninitialisedField(self, 'TrfCcy', ActiveCurrencyCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SettlementDailyFailureReason1Choice import SettlementDailyFailureReason1Choice
+from . import SettlementDailyFailureReason1Choice
 
 class SettlementFailsDailyInstructionType3(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class SettlementFailsDailyInstructionType3(base_types._BaseFieldType):
 
 	@DlvryVrssPmt.setter
 	def DlvryVrssPmt(self, value):
-		self._DlvryVrssPmt = value if type(value) != base_types.auto else self.make_default("DlvryVrssPmt")
+		self._DlvryVrssPmt = value if value is not None else base_types.UninitialisedField(self, 'DlvryVrssPmt', SettlementDailyFailureReason1Choice, False)
 
 	@DlvryVrssPmt.deleter
 	def DlvryVrssPmt(self):
 		del self._DlvryVrssPmt
-		self._DlvryVrssPmt = None
+		self._DlvryVrssPmt = base_types.UninitialisedField(self, 'DlvryVrssPmt', SettlementDailyFailureReason1Choice, False)
 
 	@property
 	def DlvryWthPmt(self):
@@ -26,12 +26,12 @@ class SettlementFailsDailyInstructionType3(base_types._BaseFieldType):
 
 	@DlvryWthPmt.setter
 	def DlvryWthPmt(self, value):
-		self._DlvryWthPmt = value if type(value) != base_types.auto else self.make_default("DlvryWthPmt")
+		self._DlvryWthPmt = value if value is not None else base_types.UninitialisedField(self, 'DlvryWthPmt', SettlementDailyFailureReason1Choice, False)
 
 	@DlvryWthPmt.deleter
 	def DlvryWthPmt(self):
 		del self._DlvryWthPmt
-		self._DlvryWthPmt = None
+		self._DlvryWthPmt = base_types.UninitialisedField(self, 'DlvryWthPmt', SettlementDailyFailureReason1Choice, False)
 
 	@property
 	def FreeOfPmt(self):
@@ -39,12 +39,12 @@ class SettlementFailsDailyInstructionType3(base_types._BaseFieldType):
 
 	@FreeOfPmt.setter
 	def FreeOfPmt(self, value):
-		self._FreeOfPmt = value if type(value) != base_types.auto else self.make_default("FreeOfPmt")
+		self._FreeOfPmt = value if value is not None else base_types.UninitialisedField(self, 'FreeOfPmt', SettlementDailyFailureReason1Choice, False)
 
 	@FreeOfPmt.deleter
 	def FreeOfPmt(self):
 		del self._FreeOfPmt
-		self._FreeOfPmt = None
+		self._FreeOfPmt = base_types.UninitialisedField(self, 'FreeOfPmt', SettlementDailyFailureReason1Choice, False)
 
 	@property
 	def PmtFreeOfDlvry(self):
@@ -52,12 +52,12 @@ class SettlementFailsDailyInstructionType3(base_types._BaseFieldType):
 
 	@PmtFreeOfDlvry.setter
 	def PmtFreeOfDlvry(self, value):
-		self._PmtFreeOfDlvry = value if type(value) != base_types.auto else self.make_default("PmtFreeOfDlvry")
+		self._PmtFreeOfDlvry = value if value is not None else base_types.UninitialisedField(self, 'PmtFreeOfDlvry', SettlementDailyFailureReason1Choice, False)
 
 	@PmtFreeOfDlvry.deleter
 	def PmtFreeOfDlvry(self):
 		del self._PmtFreeOfDlvry
-		self._PmtFreeOfDlvry = None
+		self._PmtFreeOfDlvry = base_types.UninitialisedField(self, 'PmtFreeOfDlvry', SettlementDailyFailureReason1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DlvryVrssPmt', type=SettlementDailyFailureReason1Choice, min=1, max=1, mutex_group=None, array=False),

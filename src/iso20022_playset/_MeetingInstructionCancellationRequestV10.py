@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CancelInstruction5 import CancelInstruction5
-from ._Max35Text import Max35Text
-from ._MeetingReference10 import MeetingReference10
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._SupplementaryData1 import SupplementaryData1
+from . import CancelInstruction5
+from . import Max35Text
+from . import MeetingReference10
+from . import SecurityIdentification19
+from . import SupplementaryData1
 
 class MeetingInstructionCancellationRequestV10(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class MeetingInstructionCancellationRequestV10(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
 		del self._FinInstrmId
-		self._FinInstrmId = None
+		self._FinInstrmId = base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@property
 	def MtgInstrId(self):
@@ -30,12 +30,12 @@ class MeetingInstructionCancellationRequestV10(base_types._BaseFieldType):
 
 	@MtgInstrId.setter
 	def MtgInstrId(self, value):
-		self._MtgInstrId = value if type(value) != base_types.auto else self.make_default("MtgInstrId")
+		self._MtgInstrId = value if value is not None else base_types.UninitialisedField(self, 'MtgInstrId', Max35Text, False)
 
 	@MtgInstrId.deleter
 	def MtgInstrId(self):
 		del self._MtgInstrId
-		self._MtgInstrId = None
+		self._MtgInstrId = base_types.UninitialisedField(self, 'MtgInstrId', Max35Text, False)
 
 	@property
 	def MtgRef(self):
@@ -43,12 +43,12 @@ class MeetingInstructionCancellationRequestV10(base_types._BaseFieldType):
 
 	@MtgRef.setter
 	def MtgRef(self, value):
-		self._MtgRef = value if type(value) != base_types.auto else self.make_default("MtgRef")
+		self._MtgRef = value if value is not None else base_types.UninitialisedField(self, 'MtgRef', MeetingReference10, False)
 
 	@MtgRef.deleter
 	def MtgRef(self):
 		del self._MtgRef
-		self._MtgRef = None
+		self._MtgRef = base_types.UninitialisedField(self, 'MtgRef', MeetingReference10, False)
 
 	@property
 	def SplmtryData(self):
@@ -56,12 +56,12 @@ class MeetingInstructionCancellationRequestV10(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def ToBeCancInstr(self):
@@ -69,12 +69,12 @@ class MeetingInstructionCancellationRequestV10(base_types._BaseFieldType):
 
 	@ToBeCancInstr.setter
 	def ToBeCancInstr(self, value):
-		self._ToBeCancInstr = value if type(value) != base_types.auto else self.make_default("ToBeCancInstr")
+		self._ToBeCancInstr = value if value is not None else base_types.UninitialisedField(self, 'ToBeCancInstr', CancelInstruction5, True)
 
 	@ToBeCancInstr.deleter
 	def ToBeCancInstr(self):
 		del self._ToBeCancInstr
-		self._ToBeCancInstr = None
+		self._ToBeCancInstr = base_types.UninitialisedField(self, 'ToBeCancInstr', CancelInstruction5, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Exact3NumericText import Exact3NumericText
-from ._TotalNumber1 import TotalNumber1
+from . import Exact3NumericText
+from . import TotalNumber1
 
 class NumberCount1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class NumberCount1Choice(base_types._BaseFieldType):
 
 	@CurInstrNb.setter
 	def CurInstrNb(self, value):
-		self._CurInstrNb = value if type(value) != base_types.auto else self.make_default("CurInstrNb")
+		self._CurInstrNb = value if value is not None else base_types.UninitialisedField(self, 'CurInstrNb', Exact3NumericText, False)
 
 	@CurInstrNb.deleter
 	def CurInstrNb(self):
 		del self._CurInstrNb
-		self._CurInstrNb = None
+		self._CurInstrNb = base_types.UninitialisedField(self, 'CurInstrNb', Exact3NumericText, False)
 
 	@property
 	def TtlNb(self):
@@ -27,12 +27,12 @@ class NumberCount1Choice(base_types._BaseFieldType):
 
 	@TtlNb.setter
 	def TtlNb(self, value):
-		self._TtlNb = value if type(value) != base_types.auto else self.make_default("TtlNb")
+		self._TtlNb = value if value is not None else base_types.UninitialisedField(self, 'TtlNb', TotalNumber1, False)
 
 	@TtlNb.deleter
 	def TtlNb(self):
 		del self._TtlNb
-		self._TtlNb = None
+		self._TtlNb = base_types.UninitialisedField(self, 'TtlNb', TotalNumber1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CurInstrNb', type=Exact3NumericText, min=0, max=1, mutex_group=1, array=False),

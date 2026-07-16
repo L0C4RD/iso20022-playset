@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AlternateIdentification1 import AlternateIdentification1
-from ._Bloomberg2Identifier import Bloomberg2Identifier
-from ._ConsolidatedTapeAssociationIdentifier import ConsolidatedTapeAssociationIdentifier
-from ._EuroclearClearstreamIdentifier import EuroclearClearstreamIdentifier
-from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._RICIdentifier import RICIdentifier
-from ._TickerIdentifier import TickerIdentifier
+from . import AlternateIdentification1
+from . import Bloomberg2Identifier
+from . import ConsolidatedTapeAssociationIdentifier
+from . import EuroclearClearstreamIdentifier
+from . import ISINOct2015Identifier
+from . import RICIdentifier
+from . import TickerIdentifier
 
 class SecurityIdentification38Choice(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class SecurityIdentification38Choice(base_types._BaseFieldType):
 
 	@AltrnId.setter
 	def AltrnId(self, value):
-		self._AltrnId = value if type(value) != base_types.auto else self.make_default("AltrnId")
+		self._AltrnId = value if value is not None else base_types.UninitialisedField(self, 'AltrnId', AlternateIdentification1, False)
 
 	@AltrnId.deleter
 	def AltrnId(self):
 		del self._AltrnId
-		self._AltrnId = None
+		self._AltrnId = base_types.UninitialisedField(self, 'AltrnId', AlternateIdentification1, False)
 
 	@property
 	def Blmbrg(self):
@@ -32,12 +32,12 @@ class SecurityIdentification38Choice(base_types._BaseFieldType):
 
 	@Blmbrg.setter
 	def Blmbrg(self, value):
-		self._Blmbrg = value if type(value) != base_types.auto else self.make_default("Blmbrg")
+		self._Blmbrg = value if value is not None else base_types.UninitialisedField(self, 'Blmbrg', Bloomberg2Identifier, False)
 
 	@Blmbrg.deleter
 	def Blmbrg(self):
 		del self._Blmbrg
-		self._Blmbrg = None
+		self._Blmbrg = base_types.UninitialisedField(self, 'Blmbrg', Bloomberg2Identifier, False)
 
 	@property
 	def CTA(self):
@@ -45,12 +45,12 @@ class SecurityIdentification38Choice(base_types._BaseFieldType):
 
 	@CTA.setter
 	def CTA(self, value):
-		self._CTA = value if type(value) != base_types.auto else self.make_default("CTA")
+		self._CTA = value if value is not None else base_types.UninitialisedField(self, 'CTA', ConsolidatedTapeAssociationIdentifier, False)
 
 	@CTA.deleter
 	def CTA(self):
 		del self._CTA
-		self._CTA = None
+		self._CTA = base_types.UninitialisedField(self, 'CTA', ConsolidatedTapeAssociationIdentifier, False)
 
 	@property
 	def Cmon(self):
@@ -58,12 +58,12 @@ class SecurityIdentification38Choice(base_types._BaseFieldType):
 
 	@Cmon.setter
 	def Cmon(self, value):
-		self._Cmon = value if type(value) != base_types.auto else self.make_default("Cmon")
+		self._Cmon = value if value is not None else base_types.UninitialisedField(self, 'Cmon', EuroclearClearstreamIdentifier, False)
 
 	@Cmon.deleter
 	def Cmon(self):
 		del self._Cmon
-		self._Cmon = None
+		self._Cmon = base_types.UninitialisedField(self, 'Cmon', EuroclearClearstreamIdentifier, False)
 
 	@property
 	def ISIN(self):
@@ -71,12 +71,12 @@ class SecurityIdentification38Choice(base_types._BaseFieldType):
 
 	@ISIN.setter
 	def ISIN(self, value):
-		self._ISIN = value if type(value) != base_types.auto else self.make_default("ISIN")
+		self._ISIN = value if value is not None else base_types.UninitialisedField(self, 'ISIN', ISINOct2015Identifier, False)
 
 	@ISIN.deleter
 	def ISIN(self):
 		del self._ISIN
-		self._ISIN = None
+		self._ISIN = base_types.UninitialisedField(self, 'ISIN', ISINOct2015Identifier, False)
 
 	@property
 	def RIC(self):
@@ -84,12 +84,12 @@ class SecurityIdentification38Choice(base_types._BaseFieldType):
 
 	@RIC.setter
 	def RIC(self, value):
-		self._RIC = value if type(value) != base_types.auto else self.make_default("RIC")
+		self._RIC = value if value is not None else base_types.UninitialisedField(self, 'RIC', RICIdentifier, False)
 
 	@RIC.deleter
 	def RIC(self):
 		del self._RIC
-		self._RIC = None
+		self._RIC = base_types.UninitialisedField(self, 'RIC', RICIdentifier, False)
 
 	@property
 	def TckrSymb(self):
@@ -97,12 +97,12 @@ class SecurityIdentification38Choice(base_types._BaseFieldType):
 
 	@TckrSymb.setter
 	def TckrSymb(self, value):
-		self._TckrSymb = value if type(value) != base_types.auto else self.make_default("TckrSymb")
+		self._TckrSymb = value if value is not None else base_types.UninitialisedField(self, 'TckrSymb', TickerIdentifier, False)
 
 	@TckrSymb.deleter
 	def TckrSymb(self):
 		del self._TckrSymb
-		self._TckrSymb = None
+		self._TckrSymb = base_types.UninitialisedField(self, 'TckrSymb', TickerIdentifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AltrnId', type=AlternateIdentification1, min=0, max=1, mutex_group=1, array=False),

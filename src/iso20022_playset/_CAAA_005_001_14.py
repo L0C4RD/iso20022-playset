@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcceptorCancellationRequestV14 import AcceptorCancellationRequestV14
+from . import AcceptorCancellationRequestV14
 
 class CAAA_005_001_14():
 
@@ -18,12 +18,12 @@ class CAAA_005_001_14():
 
 		@AccptrCxlReq.setter
 		def AccptrCxlReq(self, value):
-			self._AccptrCxlReq = value if type(value) != base_types.auto else self.make_default("AccptrCxlReq")
+			self._AccptrCxlReq = value if value is not None else base_types.UninitialisedField(self, 'AccptrCxlReq', AcceptorCancellationRequestV14, False)
 
 		@AccptrCxlReq.deleter
 		def AccptrCxlReq(self):
 			del self._AccptrCxlReq
-			self._AccptrCxlReq = None
+			self._AccptrCxlReq = base_types.UninitialisedField(self, 'AccptrCxlReq', AcceptorCancellationRequestV14, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AccptrCxlReq', type=AcceptorCancellationRequestV14, min=1, max=1, mutex_group=None, array=False),

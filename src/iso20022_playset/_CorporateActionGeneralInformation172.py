@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionEventProcessingType2Code import CorporateActionEventProcessingType2Code
-from ._CorporateActionEventType106Choice import CorporateActionEventType106Choice
-from ._CorporateActionMandatoryVoluntary3Choice import CorporateActionMandatoryVoluntary3Choice
-from ._DTCCSubEventType9Code import DTCCSubEventType9Code
-from ._FinancialInstrumentAttributes126 import FinancialInstrumentAttributes126
-from ._Max35Text import Max35Text
+from . import CorporateActionEventProcessingType2Code
+from . import CorporateActionEventType106Choice
+from . import CorporateActionMandatoryVoluntary3Choice
+from . import DTCCSubEventType9Code
+from . import FinancialInstrumentAttributes126
+from . import Max35Text
 
 class CorporateActionGeneralInformation172(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class CorporateActionGeneralInformation172(base_types._BaseFieldType):
 
 	@AgtCorpActnEvtId.setter
 	def AgtCorpActnEvtId(self, value):
-		self._AgtCorpActnEvtId = value if type(value) != base_types.auto else self.make_default("AgtCorpActnEvtId")
+		self._AgtCorpActnEvtId = value if value is not None else base_types.UninitialisedField(self, 'AgtCorpActnEvtId', Max35Text, False)
 
 	@AgtCorpActnEvtId.deleter
 	def AgtCorpActnEvtId(self):
 		del self._AgtCorpActnEvtId
-		self._AgtCorpActnEvtId = None
+		self._AgtCorpActnEvtId = base_types.UninitialisedField(self, 'AgtCorpActnEvtId', Max35Text, False)
 
 	@property
 	def CorpActnEvtId(self):
@@ -31,12 +31,12 @@ class CorporateActionGeneralInformation172(base_types._BaseFieldType):
 
 	@CorpActnEvtId.setter
 	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
+		self._CorpActnEvtId = value if value is not None else base_types.UninitialisedField(self, 'CorpActnEvtId', Max35Text, False)
 
 	@CorpActnEvtId.deleter
 	def CorpActnEvtId(self):
 		del self._CorpActnEvtId
-		self._CorpActnEvtId = None
+		self._CorpActnEvtId = base_types.UninitialisedField(self, 'CorpActnEvtId', Max35Text, False)
 
 	@property
 	def EvtPrcgTp(self):
@@ -44,12 +44,12 @@ class CorporateActionGeneralInformation172(base_types._BaseFieldType):
 
 	@EvtPrcgTp.setter
 	def EvtPrcgTp(self, value):
-		self._EvtPrcgTp = value if type(value) != base_types.auto else self.make_default("EvtPrcgTp")
+		self._EvtPrcgTp = value if value is not None else base_types.UninitialisedField(self, 'EvtPrcgTp', CorporateActionEventProcessingType2Code, False)
 
 	@EvtPrcgTp.deleter
 	def EvtPrcgTp(self):
 		del self._EvtPrcgTp
-		self._EvtPrcgTp = None
+		self._EvtPrcgTp = base_types.UninitialisedField(self, 'EvtPrcgTp', CorporateActionEventProcessingType2Code, False)
 
 	@property
 	def EvtTp(self):
@@ -57,12 +57,12 @@ class CorporateActionGeneralInformation172(base_types._BaseFieldType):
 
 	@EvtTp.setter
 	def EvtTp(self, value):
-		self._EvtTp = value if type(value) != base_types.auto else self.make_default("EvtTp")
+		self._EvtTp = value if value is not None else base_types.UninitialisedField(self, 'EvtTp', CorporateActionEventType106Choice, False)
 
 	@EvtTp.deleter
 	def EvtTp(self):
 		del self._EvtTp
-		self._EvtTp = None
+		self._EvtTp = base_types.UninitialisedField(self, 'EvtTp', CorporateActionEventType106Choice, False)
 
 	@property
 	def MndtryVlntryEvtTp(self):
@@ -70,12 +70,12 @@ class CorporateActionGeneralInformation172(base_types._BaseFieldType):
 
 	@MndtryVlntryEvtTp.setter
 	def MndtryVlntryEvtTp(self, value):
-		self._MndtryVlntryEvtTp = value if type(value) != base_types.auto else self.make_default("MndtryVlntryEvtTp")
+		self._MndtryVlntryEvtTp = value if value is not None else base_types.UninitialisedField(self, 'MndtryVlntryEvtTp', CorporateActionMandatoryVoluntary3Choice, False)
 
 	@MndtryVlntryEvtTp.deleter
 	def MndtryVlntryEvtTp(self):
 		del self._MndtryVlntryEvtTp
-		self._MndtryVlntryEvtTp = None
+		self._MndtryVlntryEvtTp = base_types.UninitialisedField(self, 'MndtryVlntryEvtTp', CorporateActionMandatoryVoluntary3Choice, False)
 
 	@property
 	def OffclCorpActnEvtId(self):
@@ -83,12 +83,12 @@ class CorporateActionGeneralInformation172(base_types._BaseFieldType):
 
 	@OffclCorpActnEvtId.setter
 	def OffclCorpActnEvtId(self, value):
-		self._OffclCorpActnEvtId = value if type(value) != base_types.auto else self.make_default("OffclCorpActnEvtId")
+		self._OffclCorpActnEvtId = value if value is not None else base_types.UninitialisedField(self, 'OffclCorpActnEvtId', Max35Text, False)
 
 	@OffclCorpActnEvtId.deleter
 	def OffclCorpActnEvtId(self):
 		del self._OffclCorpActnEvtId
-		self._OffclCorpActnEvtId = None
+		self._OffclCorpActnEvtId = base_types.UninitialisedField(self, 'OffclCorpActnEvtId', Max35Text, False)
 
 	@property
 	def SubEvtTp(self):
@@ -96,12 +96,12 @@ class CorporateActionGeneralInformation172(base_types._BaseFieldType):
 
 	@SubEvtTp.setter
 	def SubEvtTp(self, value):
-		self._SubEvtTp = value if type(value) != base_types.auto else self.make_default("SubEvtTp")
+		self._SubEvtTp = value if value is not None else base_types.UninitialisedField(self, 'SubEvtTp', DTCCSubEventType9Code, False)
 
 	@SubEvtTp.deleter
 	def SubEvtTp(self):
 		del self._SubEvtTp
-		self._SubEvtTp = None
+		self._SubEvtTp = base_types.UninitialisedField(self, 'SubEvtTp', DTCCSubEventType9Code, False)
 
 	@property
 	def UndrlygScty(self):
@@ -109,12 +109,12 @@ class CorporateActionGeneralInformation172(base_types._BaseFieldType):
 
 	@UndrlygScty.setter
 	def UndrlygScty(self, value):
-		self._UndrlygScty = value if type(value) != base_types.auto else self.make_default("UndrlygScty")
+		self._UndrlygScty = value if value is not None else base_types.UninitialisedField(self, 'UndrlygScty', FinancialInstrumentAttributes126, True)
 
 	@UndrlygScty.deleter
 	def UndrlygScty(self):
 		del self._UndrlygScty
-		self._UndrlygScty = None
+		self._UndrlygScty = base_types.UninitialisedField(self, 'UndrlygScty', FinancialInstrumentAttributes126, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AgtCorpActnEvtId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

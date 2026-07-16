@@ -2,19 +2,19 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._CreditDebit3Code import CreditDebit3Code
-from ._DecimalNumber import DecimalNumber
-from ._ISODate import ISODate
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max10Text import Max10Text
-from ._Max256Text import Max256Text
-from ._Max35Text import Max35Text
-from ._Max50Text import Max50Text
-from ._Max70Text import Max70Text
-from ._Tax44 import Tax44
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._UnitOfMeasure1Code import UnitOfMeasure1Code
+from . import ATICALaxProcessing
+from . import CreditDebit3Code
+from . import DecimalNumber
+from . import ISODate
+from . import ImpliedCurrencyAndAmount
+from . import Max10Text
+from . import Max256Text
+from . import Max35Text
+from . import Max50Text
+from . import Max70Text
+from . import Tax44
+from . import TrueFalseIndicator
+from . import UnitOfMeasure1Code
 
 class InvoiceLineItem4(base_types._BaseFieldType):
 
@@ -25,12 +25,12 @@ class InvoiceLineItem4(base_types._BaseFieldType):
 
 	@AdjstmntAmt.setter
 	def AdjstmntAmt(self, value):
-		self._AdjstmntAmt = value if type(value) != base_types.auto else self.make_default("AdjstmntAmt")
+		self._AdjstmntAmt = value if value is not None else base_types.UninitialisedField(self, 'AdjstmntAmt', ImpliedCurrencyAndAmount, False)
 
 	@AdjstmntAmt.deleter
 	def AdjstmntAmt(self):
 		del self._AdjstmntAmt
-		self._AdjstmntAmt = None
+		self._AdjstmntAmt = base_types.UninitialisedField(self, 'AdjstmntAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def AdjstmntCdtDbt(self):
@@ -38,12 +38,12 @@ class InvoiceLineItem4(base_types._BaseFieldType):
 
 	@AdjstmntCdtDbt.setter
 	def AdjstmntCdtDbt(self, value):
-		self._AdjstmntCdtDbt = value if type(value) != base_types.auto else self.make_default("AdjstmntCdtDbt")
+		self._AdjstmntCdtDbt = value if value is not None else base_types.UninitialisedField(self, 'AdjstmntCdtDbt', CreditDebit3Code, False)
 
 	@AdjstmntCdtDbt.deleter
 	def AdjstmntCdtDbt(self):
 		del self._AdjstmntCdtDbt
-		self._AdjstmntCdtDbt = None
+		self._AdjstmntCdtDbt = base_types.UninitialisedField(self, 'AdjstmntCdtDbt', CreditDebit3Code, False)
 
 	@property
 	def AdjstmntRsn(self):
@@ -51,12 +51,12 @@ class InvoiceLineItem4(base_types._BaseFieldType):
 
 	@AdjstmntRsn.setter
 	def AdjstmntRsn(self, value):
-		self._AdjstmntRsn = value if type(value) != base_types.auto else self.make_default("AdjstmntRsn")
+		self._AdjstmntRsn = value if value is not None else base_types.UninitialisedField(self, 'AdjstmntRsn', Max35Text, False)
 
 	@AdjstmntRsn.deleter
 	def AdjstmntRsn(self):
 		del self._AdjstmntRsn
-		self._AdjstmntRsn = None
+		self._AdjstmntRsn = base_types.UninitialisedField(self, 'AdjstmntRsn', Max35Text, False)
 
 	@property
 	def CdtDbt(self):
@@ -64,12 +64,12 @@ class InvoiceLineItem4(base_types._BaseFieldType):
 
 	@CdtDbt.setter
 	def CdtDbt(self, value):
-		self._CdtDbt = value if type(value) != base_types.auto else self.make_default("CdtDbt")
+		self._CdtDbt = value if value is not None else base_types.UninitialisedField(self, 'CdtDbt', CreditDebit3Code, False)
 
 	@CdtDbt.deleter
 	def CdtDbt(self):
 		del self._CdtDbt
-		self._CdtDbt = None
+		self._CdtDbt = base_types.UninitialisedField(self, 'CdtDbt', CreditDebit3Code, False)
 
 	@property
 	def CtrctNb(self):
@@ -77,12 +77,12 @@ class InvoiceLineItem4(base_types._BaseFieldType):
 
 	@CtrctNb.setter
 	def CtrctNb(self, value):
-		self._CtrctNb = value if type(value) != base_types.auto else self.make_default("CtrctNb")
+		self._CtrctNb = value if value is not None else base_types.UninitialisedField(self, 'CtrctNb', Max70Text, False)
 
 	@CtrctNb.deleter
 	def CtrctNb(self):
 		del self._CtrctNb
-		self._CtrctNb = None
+		self._CtrctNb = base_types.UninitialisedField(self, 'CtrctNb', Max70Text, False)
 
 	@property
 	def Desc(self):
@@ -90,12 +90,12 @@ class InvoiceLineItem4(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', Max256Text, False)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', Max256Text, False)
 
 	@property
 	def Dt(self):
@@ -103,12 +103,12 @@ class InvoiceLineItem4(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@property
 	def Insrnc(self):
@@ -116,12 +116,12 @@ class InvoiceLineItem4(base_types._BaseFieldType):
 
 	@Insrnc.setter
 	def Insrnc(self, value):
-		self._Insrnc = value if type(value) != base_types.auto else self.make_default("Insrnc")
+		self._Insrnc = value if value is not None else base_types.UninitialisedField(self, 'Insrnc', TrueFalseIndicator, False)
 
 	@Insrnc.deleter
 	def Insrnc(self):
 		del self._Insrnc
-		self._Insrnc = None
+		self._Insrnc = base_types.UninitialisedField(self, 'Insrnc', TrueFalseIndicator, False)
 
 	@property
 	def InsrncAmt(self):
@@ -129,12 +129,12 @@ class InvoiceLineItem4(base_types._BaseFieldType):
 
 	@InsrncAmt.setter
 	def InsrncAmt(self, value):
-		self._InsrncAmt = value if type(value) != base_types.auto else self.make_default("InsrncAmt")
+		self._InsrncAmt = value if value is not None else base_types.UninitialisedField(self, 'InsrncAmt', ImpliedCurrencyAndAmount, False)
 
 	@InsrncAmt.deleter
 	def InsrncAmt(self):
 		del self._InsrncAmt
-		self._InsrncAmt = None
+		self._InsrncAmt = base_types.UninitialisedField(self, 'InsrncAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def MdclSvcs(self):
@@ -142,12 +142,12 @@ class InvoiceLineItem4(base_types._BaseFieldType):
 
 	@MdclSvcs.setter
 	def MdclSvcs(self, value):
-		self._MdclSvcs = value if type(value) != base_types.auto else self.make_default("MdclSvcs")
+		self._MdclSvcs = value if value is not None else base_types.UninitialisedField(self, 'MdclSvcs', TrueFalseIndicator, False)
 
 	@MdclSvcs.deleter
 	def MdclSvcs(self):
 		del self._MdclSvcs
-		self._MdclSvcs = None
+		self._MdclSvcs = base_types.UninitialisedField(self, 'MdclSvcs', TrueFalseIndicator, False)
 
 	@property
 	def NtlData(self):
@@ -155,12 +155,12 @@ class InvoiceLineItem4(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def OrdrDt(self):
@@ -168,12 +168,12 @@ class InvoiceLineItem4(base_types._BaseFieldType):
 
 	@OrdrDt.setter
 	def OrdrDt(self, value):
-		self._OrdrDt = value if type(value) != base_types.auto else self.make_default("OrdrDt")
+		self._OrdrDt = value if value is not None else base_types.UninitialisedField(self, 'OrdrDt', ISODate, False)
 
 	@OrdrDt.deleter
 	def OrdrDt(self):
 		del self._OrdrDt
-		self._OrdrDt = None
+		self._OrdrDt = base_types.UninitialisedField(self, 'OrdrDt', ISODate, False)
 
 	@property
 	def OthrUnitOfMeasr(self):
@@ -181,12 +181,12 @@ class InvoiceLineItem4(base_types._BaseFieldType):
 
 	@OthrUnitOfMeasr.setter
 	def OthrUnitOfMeasr(self, value):
-		self._OthrUnitOfMeasr = value if type(value) != base_types.auto else self.make_default("OthrUnitOfMeasr")
+		self._OthrUnitOfMeasr = value if value is not None else base_types.UninitialisedField(self, 'OthrUnitOfMeasr', Max35Text, False)
 
 	@OthrUnitOfMeasr.deleter
 	def OthrUnitOfMeasr(self):
 		del self._OthrUnitOfMeasr
-		self._OthrUnitOfMeasr = None
+		self._OthrUnitOfMeasr = base_types.UninitialisedField(self, 'OthrUnitOfMeasr', Max35Text, False)
 
 	@property
 	def PdctCd(self):
@@ -194,12 +194,12 @@ class InvoiceLineItem4(base_types._BaseFieldType):
 
 	@PdctCd.setter
 	def PdctCd(self, value):
-		self._PdctCd = value if type(value) != base_types.auto else self.make_default("PdctCd")
+		self._PdctCd = value if value is not None else base_types.UninitialisedField(self, 'PdctCd', Max70Text, False)
 
 	@PdctCd.deleter
 	def PdctCd(self):
 		del self._PdctCd
-		self._PdctCd = None
+		self._PdctCd = base_types.UninitialisedField(self, 'PdctCd', Max70Text, False)
 
 	@property
 	def PdctQlfr(self):
@@ -207,12 +207,12 @@ class InvoiceLineItem4(base_types._BaseFieldType):
 
 	@PdctQlfr.setter
 	def PdctQlfr(self, value):
-		self._PdctQlfr = value if type(value) != base_types.auto else self.make_default("PdctQlfr")
+		self._PdctQlfr = value if value is not None else base_types.UninitialisedField(self, 'PdctQlfr', Max35Text, False)
 
 	@PdctQlfr.deleter
 	def PdctQlfr(self):
 		del self._PdctQlfr
-		self._PdctQlfr = None
+		self._PdctQlfr = base_types.UninitialisedField(self, 'PdctQlfr', Max35Text, False)
 
 	@property
 	def PdctQty(self):
@@ -220,12 +220,12 @@ class InvoiceLineItem4(base_types._BaseFieldType):
 
 	@PdctQty.setter
 	def PdctQty(self, value):
-		self._PdctQty = value if type(value) != base_types.auto else self.make_default("PdctQty")
+		self._PdctQty = value if value is not None else base_types.UninitialisedField(self, 'PdctQty', DecimalNumber, False)
 
 	@PdctQty.deleter
 	def PdctQty(self):
 		del self._PdctQty
-		self._PdctQty = None
+		self._PdctQty = base_types.UninitialisedField(self, 'PdctQty', DecimalNumber, False)
 
 	@property
 	def PrvtData(self):
@@ -233,12 +233,12 @@ class InvoiceLineItem4(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def Rbllg(self):
@@ -246,12 +246,12 @@ class InvoiceLineItem4(base_types._BaseFieldType):
 
 	@Rbllg.setter
 	def Rbllg(self, value):
-		self._Rbllg = value if type(value) != base_types.auto else self.make_default("Rbllg")
+		self._Rbllg = value if value is not None else base_types.UninitialisedField(self, 'Rbllg', TrueFalseIndicator, False)
 
 	@Rbllg.deleter
 	def Rbllg(self):
 		del self._Rbllg
-		self._Rbllg = None
+		self._Rbllg = base_types.UninitialisedField(self, 'Rbllg', TrueFalseIndicator, False)
 
 	@property
 	def ShipToIndstryCd(self):
@@ -259,12 +259,12 @@ class InvoiceLineItem4(base_types._BaseFieldType):
 
 	@ShipToIndstryCd.setter
 	def ShipToIndstryCd(self, value):
-		self._ShipToIndstryCd = value if type(value) != base_types.auto else self.make_default("ShipToIndstryCd")
+		self._ShipToIndstryCd = value if value is not None else base_types.UninitialisedField(self, 'ShipToIndstryCd', Max50Text, False)
 
 	@ShipToIndstryCd.deleter
 	def ShipToIndstryCd(self):
 		del self._ShipToIndstryCd
-		self._ShipToIndstryCd = None
+		self._ShipToIndstryCd = base_types.UninitialisedField(self, 'ShipToIndstryCd', Max50Text, False)
 
 	@property
 	def ShppgDt(self):
@@ -272,12 +272,12 @@ class InvoiceLineItem4(base_types._BaseFieldType):
 
 	@ShppgDt.setter
 	def ShppgDt(self, value):
-		self._ShppgDt = value if type(value) != base_types.auto else self.make_default("ShppgDt")
+		self._ShppgDt = value if value is not None else base_types.UninitialisedField(self, 'ShppgDt', ISODate, False)
 
 	@ShppgDt.deleter
 	def ShppgDt(self):
 		del self._ShppgDt
-		self._ShppgDt = None
+		self._ShppgDt = base_types.UninitialisedField(self, 'ShppgDt', ISODate, False)
 
 	@property
 	def Tax(self):
@@ -285,12 +285,12 @@ class InvoiceLineItem4(base_types._BaseFieldType):
 
 	@Tax.setter
 	def Tax(self, value):
-		self._Tax = value if type(value) != base_types.auto else self.make_default("Tax")
+		self._Tax = value if value is not None else base_types.UninitialisedField(self, 'Tax', Tax44, True)
 
 	@Tax.deleter
 	def Tax(self):
 		del self._Tax
-		self._Tax = None
+		self._Tax = base_types.UninitialisedField(self, 'Tax', Tax44, True)
 
 	@property
 	def TpOfSpply(self):
@@ -298,12 +298,12 @@ class InvoiceLineItem4(base_types._BaseFieldType):
 
 	@TpOfSpply.setter
 	def TpOfSpply(self, value):
-		self._TpOfSpply = value if type(value) != base_types.auto else self.make_default("TpOfSpply")
+		self._TpOfSpply = value if value is not None else base_types.UninitialisedField(self, 'TpOfSpply', Max10Text, False)
 
 	@TpOfSpply.deleter
 	def TpOfSpply(self):
 		del self._TpOfSpply
-		self._TpOfSpply = None
+		self._TpOfSpply = base_types.UninitialisedField(self, 'TpOfSpply', Max10Text, False)
 
 	@property
 	def TtlAmt(self):
@@ -311,12 +311,12 @@ class InvoiceLineItem4(base_types._BaseFieldType):
 
 	@TtlAmt.setter
 	def TtlAmt(self, value):
-		self._TtlAmt = value if type(value) != base_types.auto else self.make_default("TtlAmt")
+		self._TtlAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlAmt', ImpliedCurrencyAndAmount, False)
 
 	@TtlAmt.deleter
 	def TtlAmt(self):
 		del self._TtlAmt
-		self._TtlAmt = None
+		self._TtlAmt = base_types.UninitialisedField(self, 'TtlAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def UnitOfMeasr(self):
@@ -324,12 +324,12 @@ class InvoiceLineItem4(base_types._BaseFieldType):
 
 	@UnitOfMeasr.setter
 	def UnitOfMeasr(self, value):
-		self._UnitOfMeasr = value if type(value) != base_types.auto else self.make_default("UnitOfMeasr")
+		self._UnitOfMeasr = value if value is not None else base_types.UninitialisedField(self, 'UnitOfMeasr', UnitOfMeasure1Code, False)
 
 	@UnitOfMeasr.deleter
 	def UnitOfMeasr(self):
 		del self._UnitOfMeasr
-		self._UnitOfMeasr = None
+		self._UnitOfMeasr = base_types.UninitialisedField(self, 'UnitOfMeasr', UnitOfMeasure1Code, False)
 
 	@property
 	def UnitPric(self):
@@ -337,12 +337,12 @@ class InvoiceLineItem4(base_types._BaseFieldType):
 
 	@UnitPric.setter
 	def UnitPric(self, value):
-		self._UnitPric = value if type(value) != base_types.auto else self.make_default("UnitPric")
+		self._UnitPric = value if value is not None else base_types.UninitialisedField(self, 'UnitPric', ImpliedCurrencyAndAmount, False)
 
 	@UnitPric.deleter
 	def UnitPric(self):
 		del self._UnitPric
-		self._UnitPric = None
+		self._UnitPric = base_types.UninitialisedField(self, 'UnitPric', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def VATInvcRef(self):
@@ -350,12 +350,12 @@ class InvoiceLineItem4(base_types._BaseFieldType):
 
 	@VATInvcRef.setter
 	def VATInvcRef(self, value):
-		self._VATInvcRef = value if type(value) != base_types.auto else self.make_default("VATInvcRef")
+		self._VATInvcRef = value if value is not None else base_types.UninitialisedField(self, 'VATInvcRef', Max35Text, False)
 
 	@VATInvcRef.deleter
 	def VATInvcRef(self):
 		del self._VATInvcRef
-		self._VATInvcRef = None
+		self._VATInvcRef = base_types.UninitialisedField(self, 'VATInvcRef', Max35Text, False)
 
 	@property
 	def ZeroCostToCstmr(self):
@@ -363,12 +363,12 @@ class InvoiceLineItem4(base_types._BaseFieldType):
 
 	@ZeroCostToCstmr.setter
 	def ZeroCostToCstmr(self, value):
-		self._ZeroCostToCstmr = value if type(value) != base_types.auto else self.make_default("ZeroCostToCstmr")
+		self._ZeroCostToCstmr = value if value is not None else base_types.UninitialisedField(self, 'ZeroCostToCstmr', TrueFalseIndicator, False)
 
 	@ZeroCostToCstmr.deleter
 	def ZeroCostToCstmr(self):
 		del self._ZeroCostToCstmr
-		self._ZeroCostToCstmr = None
+		self._ZeroCostToCstmr = base_types.UninitialisedField(self, 'ZeroCostToCstmr', TrueFalseIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AdjstmntAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

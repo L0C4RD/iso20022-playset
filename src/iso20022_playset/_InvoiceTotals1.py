@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Adjustment5 import Adjustment5
-from ._ISODate import ISODate
+from . import ActiveCurrencyAndAmount
+from . import Adjustment5
+from . import ISODate
 
 class InvoiceTotals1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class InvoiceTotals1(base_types._BaseFieldType):
 
 	@Adjstmnt.setter
 	def Adjstmnt(self, value):
-		self._Adjstmnt = value if type(value) != base_types.auto else self.make_default("Adjstmnt")
+		self._Adjstmnt = value if value is not None else base_types.UninitialisedField(self, 'Adjstmnt', Adjustment5, False)
 
 	@Adjstmnt.deleter
 	def Adjstmnt(self):
 		del self._Adjstmnt
-		self._Adjstmnt = None
+		self._Adjstmnt = base_types.UninitialisedField(self, 'Adjstmnt', Adjustment5, False)
 
 	@property
 	def PmtDueDt(self):
@@ -28,12 +28,12 @@ class InvoiceTotals1(base_types._BaseFieldType):
 
 	@PmtDueDt.setter
 	def PmtDueDt(self, value):
-		self._PmtDueDt = value if type(value) != base_types.auto else self.make_default("PmtDueDt")
+		self._PmtDueDt = value if value is not None else base_types.UninitialisedField(self, 'PmtDueDt', ISODate, False)
 
 	@PmtDueDt.deleter
 	def PmtDueDt(self):
 		del self._PmtDueDt
-		self._PmtDueDt = None
+		self._PmtDueDt = base_types.UninitialisedField(self, 'PmtDueDt', ISODate, False)
 
 	@property
 	def TtlInvcAmt(self):
@@ -41,12 +41,12 @@ class InvoiceTotals1(base_types._BaseFieldType):
 
 	@TtlInvcAmt.setter
 	def TtlInvcAmt(self, value):
-		self._TtlInvcAmt = value if type(value) != base_types.auto else self.make_default("TtlInvcAmt")
+		self._TtlInvcAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlInvcAmt', ActiveCurrencyAndAmount, False)
 
 	@TtlInvcAmt.deleter
 	def TtlInvcAmt(self):
 		del self._TtlInvcAmt
-		self._TtlInvcAmt = None
+		self._TtlInvcAmt = base_types.UninitialisedField(self, 'TtlInvcAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def TtlTaxAmt(self):
@@ -54,12 +54,12 @@ class InvoiceTotals1(base_types._BaseFieldType):
 
 	@TtlTaxAmt.setter
 	def TtlTaxAmt(self, value):
-		self._TtlTaxAmt = value if type(value) != base_types.auto else self.make_default("TtlTaxAmt")
+		self._TtlTaxAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlTaxAmt', ActiveCurrencyAndAmount, False)
 
 	@TtlTaxAmt.deleter
 	def TtlTaxAmt(self):
 		del self._TtlTaxAmt
-		self._TtlTaxAmt = None
+		self._TtlTaxAmt = base_types.UninitialisedField(self, 'TtlTaxAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def TtlTaxblAmt(self):
@@ -67,12 +67,12 @@ class InvoiceTotals1(base_types._BaseFieldType):
 
 	@TtlTaxblAmt.setter
 	def TtlTaxblAmt(self, value):
-		self._TtlTaxblAmt = value if type(value) != base_types.auto else self.make_default("TtlTaxblAmt")
+		self._TtlTaxblAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlTaxblAmt', ActiveCurrencyAndAmount, False)
 
 	@TtlTaxblAmt.deleter
 	def TtlTaxblAmt(self):
 		del self._TtlTaxblAmt
-		self._TtlTaxblAmt = None
+		self._TtlTaxblAmt = base_types.UninitialisedField(self, 'TtlTaxblAmt', ActiveCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Adjstmnt', type=Adjustment5, min=0, max=1, mutex_group=None, array=False),

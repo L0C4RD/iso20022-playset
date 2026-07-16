@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DecimalNumber import DecimalNumber
-from ._ExternalPaymentGroupStatus1Code import ExternalPaymentGroupStatus1Code
-from ._Max15NumericText import Max15NumericText
-from ._Max35Text import Max35Text
-from ._NumberOfTransactionsPerStatus5 import NumberOfTransactionsPerStatus5
-from ._PaymentTransaction169 import PaymentTransaction169
-from ._StatusReasonInformation14 import StatusReasonInformation14
+from . import DecimalNumber
+from . import ExternalPaymentGroupStatus1Code
+from . import Max15NumericText
+from . import Max35Text
+from . import NumberOfTransactionsPerStatus5
+from . import PaymentTransaction169
+from . import StatusReasonInformation14
 
 class OriginalPaymentInstruction52(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class OriginalPaymentInstruction52(base_types._BaseFieldType):
 
 	@NbOfTxsPerSts.setter
 	def NbOfTxsPerSts(self, value):
-		self._NbOfTxsPerSts = value if type(value) != base_types.auto else self.make_default("NbOfTxsPerSts")
+		self._NbOfTxsPerSts = value if value is not None else base_types.UninitialisedField(self, 'NbOfTxsPerSts', NumberOfTransactionsPerStatus5, True)
 
 	@NbOfTxsPerSts.deleter
 	def NbOfTxsPerSts(self):
 		del self._NbOfTxsPerSts
-		self._NbOfTxsPerSts = None
+		self._NbOfTxsPerSts = base_types.UninitialisedField(self, 'NbOfTxsPerSts', NumberOfTransactionsPerStatus5, True)
 
 	@property
 	def OrgnlCtrlSum(self):
@@ -32,12 +32,12 @@ class OriginalPaymentInstruction52(base_types._BaseFieldType):
 
 	@OrgnlCtrlSum.setter
 	def OrgnlCtrlSum(self, value):
-		self._OrgnlCtrlSum = value if type(value) != base_types.auto else self.make_default("OrgnlCtrlSum")
+		self._OrgnlCtrlSum = value if value is not None else base_types.UninitialisedField(self, 'OrgnlCtrlSum', DecimalNumber, False)
 
 	@OrgnlCtrlSum.deleter
 	def OrgnlCtrlSum(self):
 		del self._OrgnlCtrlSum
-		self._OrgnlCtrlSum = None
+		self._OrgnlCtrlSum = base_types.UninitialisedField(self, 'OrgnlCtrlSum', DecimalNumber, False)
 
 	@property
 	def OrgnlNbOfTxs(self):
@@ -45,12 +45,12 @@ class OriginalPaymentInstruction52(base_types._BaseFieldType):
 
 	@OrgnlNbOfTxs.setter
 	def OrgnlNbOfTxs(self, value):
-		self._OrgnlNbOfTxs = value if type(value) != base_types.auto else self.make_default("OrgnlNbOfTxs")
+		self._OrgnlNbOfTxs = value if value is not None else base_types.UninitialisedField(self, 'OrgnlNbOfTxs', Max15NumericText, False)
 
 	@OrgnlNbOfTxs.deleter
 	def OrgnlNbOfTxs(self):
 		del self._OrgnlNbOfTxs
-		self._OrgnlNbOfTxs = None
+		self._OrgnlNbOfTxs = base_types.UninitialisedField(self, 'OrgnlNbOfTxs', Max15NumericText, False)
 
 	@property
 	def OrgnlPmtInfId(self):
@@ -58,12 +58,12 @@ class OriginalPaymentInstruction52(base_types._BaseFieldType):
 
 	@OrgnlPmtInfId.setter
 	def OrgnlPmtInfId(self, value):
-		self._OrgnlPmtInfId = value if type(value) != base_types.auto else self.make_default("OrgnlPmtInfId")
+		self._OrgnlPmtInfId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlPmtInfId', Max35Text, False)
 
 	@OrgnlPmtInfId.deleter
 	def OrgnlPmtInfId(self):
 		del self._OrgnlPmtInfId
-		self._OrgnlPmtInfId = None
+		self._OrgnlPmtInfId = base_types.UninitialisedField(self, 'OrgnlPmtInfId', Max35Text, False)
 
 	@property
 	def PmtInfSts(self):
@@ -71,12 +71,12 @@ class OriginalPaymentInstruction52(base_types._BaseFieldType):
 
 	@PmtInfSts.setter
 	def PmtInfSts(self, value):
-		self._PmtInfSts = value if type(value) != base_types.auto else self.make_default("PmtInfSts")
+		self._PmtInfSts = value if value is not None else base_types.UninitialisedField(self, 'PmtInfSts', ExternalPaymentGroupStatus1Code, False)
 
 	@PmtInfSts.deleter
 	def PmtInfSts(self):
 		del self._PmtInfSts
-		self._PmtInfSts = None
+		self._PmtInfSts = base_types.UninitialisedField(self, 'PmtInfSts', ExternalPaymentGroupStatus1Code, False)
 
 	@property
 	def StsRsnInf(self):
@@ -84,12 +84,12 @@ class OriginalPaymentInstruction52(base_types._BaseFieldType):
 
 	@StsRsnInf.setter
 	def StsRsnInf(self, value):
-		self._StsRsnInf = value if type(value) != base_types.auto else self.make_default("StsRsnInf")
+		self._StsRsnInf = value if value is not None else base_types.UninitialisedField(self, 'StsRsnInf', StatusReasonInformation14, True)
 
 	@StsRsnInf.deleter
 	def StsRsnInf(self):
 		del self._StsRsnInf
-		self._StsRsnInf = None
+		self._StsRsnInf = base_types.UninitialisedField(self, 'StsRsnInf', StatusReasonInformation14, True)
 
 	@property
 	def TxInfAndSts(self):
@@ -97,12 +97,12 @@ class OriginalPaymentInstruction52(base_types._BaseFieldType):
 
 	@TxInfAndSts.setter
 	def TxInfAndSts(self, value):
-		self._TxInfAndSts = value if type(value) != base_types.auto else self.make_default("TxInfAndSts")
+		self._TxInfAndSts = value if value is not None else base_types.UninitialisedField(self, 'TxInfAndSts', PaymentTransaction169, True)
 
 	@TxInfAndSts.deleter
 	def TxInfAndSts(self):
 		del self._TxInfAndSts
-		self._TxInfAndSts = None
+		self._TxInfAndSts = base_types.UninitialisedField(self, 'TxInfAndSts', PaymentTransaction169, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NbOfTxsPerSts', type=NumberOfTransactionsPerStatus5, min=0, max=None, mutex_group=None, array=True),

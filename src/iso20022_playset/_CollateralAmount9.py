@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
+from . import ActiveOrHistoricCurrencyAndAmount
 
 class CollateralAmount9(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class CollateralAmount9(base_types._BaseFieldType):
 
 	@ActlMktValBfrHrcut.setter
 	def ActlMktValBfrHrcut(self, value):
-		self._ActlMktValBfrHrcut = value if type(value) != base_types.auto else self.make_default("ActlMktValBfrHrcut")
+		self._ActlMktValBfrHrcut = value if value is not None else base_types.UninitialisedField(self, 'ActlMktValBfrHrcut', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@ActlMktValBfrHrcut.deleter
 	def ActlMktValBfrHrcut(self):
 		del self._ActlMktValBfrHrcut
-		self._ActlMktValBfrHrcut = None
+		self._ActlMktValBfrHrcut = base_types.UninitialisedField(self, 'ActlMktValBfrHrcut', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def ActlMktValPstHrcut(self):
@@ -26,12 +26,12 @@ class CollateralAmount9(base_types._BaseFieldType):
 
 	@ActlMktValPstHrcut.setter
 	def ActlMktValPstHrcut(self, value):
-		self._ActlMktValPstHrcut = value if type(value) != base_types.auto else self.make_default("ActlMktValPstHrcut")
+		self._ActlMktValPstHrcut = value if value is not None else base_types.UninitialisedField(self, 'ActlMktValPstHrcut', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@ActlMktValPstHrcut.deleter
 	def ActlMktValPstHrcut(self):
 		del self._ActlMktValPstHrcut
-		self._ActlMktValPstHrcut = None
+		self._ActlMktValPstHrcut = base_types.UninitialisedField(self, 'ActlMktValPstHrcut', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def MktValAmtBfrHrcut(self):
@@ -39,12 +39,12 @@ class CollateralAmount9(base_types._BaseFieldType):
 
 	@MktValAmtBfrHrcut.setter
 	def MktValAmtBfrHrcut(self, value):
-		self._MktValAmtBfrHrcut = value if type(value) != base_types.auto else self.make_default("MktValAmtBfrHrcut")
+		self._MktValAmtBfrHrcut = value if value is not None else base_types.UninitialisedField(self, 'MktValAmtBfrHrcut', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@MktValAmtBfrHrcut.deleter
 	def MktValAmtBfrHrcut(self):
 		del self._MktValAmtBfrHrcut
-		self._MktValAmtBfrHrcut = None
+		self._MktValAmtBfrHrcut = base_types.UninitialisedField(self, 'MktValAmtBfrHrcut', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def MktValAmtPstHrcut(self):
@@ -52,12 +52,12 @@ class CollateralAmount9(base_types._BaseFieldType):
 
 	@MktValAmtPstHrcut.setter
 	def MktValAmtPstHrcut(self, value):
-		self._MktValAmtPstHrcut = value if type(value) != base_types.auto else self.make_default("MktValAmtPstHrcut")
+		self._MktValAmtPstHrcut = value if value is not None else base_types.UninitialisedField(self, 'MktValAmtPstHrcut', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@MktValAmtPstHrcut.deleter
 	def MktValAmtPstHrcut(self):
 		del self._MktValAmtPstHrcut
-		self._MktValAmtPstHrcut = None
+		self._MktValAmtPstHrcut = base_types.UninitialisedField(self, 'MktValAmtPstHrcut', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def XpsrCollInRptgCcy(self):
@@ -65,12 +65,12 @@ class CollateralAmount9(base_types._BaseFieldType):
 
 	@XpsrCollInRptgCcy.setter
 	def XpsrCollInRptgCcy(self, value):
-		self._XpsrCollInRptgCcy = value if type(value) != base_types.auto else self.make_default("XpsrCollInRptgCcy")
+		self._XpsrCollInRptgCcy = value if value is not None else base_types.UninitialisedField(self, 'XpsrCollInRptgCcy', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@XpsrCollInRptgCcy.deleter
 	def XpsrCollInRptgCcy(self):
 		del self._XpsrCollInRptgCcy
-		self._XpsrCollInRptgCcy = None
+		self._XpsrCollInRptgCcy = base_types.UninitialisedField(self, 'XpsrCollInRptgCcy', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def XpsrCollInTxCcy(self):
@@ -78,12 +78,12 @@ class CollateralAmount9(base_types._BaseFieldType):
 
 	@XpsrCollInTxCcy.setter
 	def XpsrCollInTxCcy(self, value):
-		self._XpsrCollInTxCcy = value if type(value) != base_types.auto else self.make_default("XpsrCollInTxCcy")
+		self._XpsrCollInTxCcy = value if value is not None else base_types.UninitialisedField(self, 'XpsrCollInTxCcy', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@XpsrCollInTxCcy.deleter
 	def XpsrCollInTxCcy(self):
 		del self._XpsrCollInTxCcy
-		self._XpsrCollInTxCcy = None
+		self._XpsrCollInTxCcy = base_types.UninitialisedField(self, 'XpsrCollInTxCcy', ActiveOrHistoricCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActlMktValBfrHrcut', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

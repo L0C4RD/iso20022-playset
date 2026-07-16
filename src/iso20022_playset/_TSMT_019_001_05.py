@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InitialBaselineSubmissionV05 import InitialBaselineSubmissionV05
+from . import InitialBaselineSubmissionV05
 
 class TSMT_019_001_05():
 
@@ -18,12 +18,12 @@ class TSMT_019_001_05():
 
 		@InitlBaselnSubmissn.setter
 		def InitlBaselnSubmissn(self, value):
-			self._InitlBaselnSubmissn = value if type(value) != base_types.auto else self.make_default("InitlBaselnSubmissn")
+			self._InitlBaselnSubmissn = value if value is not None else base_types.UninitialisedField(self, 'InitlBaselnSubmissn', InitialBaselineSubmissionV05, False)
 
 		@InitlBaselnSubmissn.deleter
 		def InitlBaselnSubmissn(self):
 			del self._InitlBaselnSubmissn
-			self._InitlBaselnSubmissn = None
+			self._InitlBaselnSubmissn = base_types.UninitialisedField(self, 'InitlBaselnSubmissn', InitialBaselineSubmissionV05, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='InitlBaselnSubmissn', type=InitialBaselineSubmissionV05, min=1, max=1, mutex_group=None, array=False),

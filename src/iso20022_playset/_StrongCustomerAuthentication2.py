@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AttestationValue1Code import AttestationValue1Code
-from ._Exemption2 import Exemption2
-from ._Max4Text import Max4Text
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import AttestationValue1Code
+from . import Exemption2
+from . import Max4Text
+from . import TrueFalseIndicator
 
 class StrongCustomerAuthentication2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class StrongCustomerAuthentication2(base_types._BaseFieldType):
 
 	@DlgtdAuthrty.setter
 	def DlgtdAuthrty(self, value):
-		self._DlgtdAuthrty = value if type(value) != base_types.auto else self.make_default("DlgtdAuthrty")
+		self._DlgtdAuthrty = value if value is not None else base_types.UninitialisedField(self, 'DlgtdAuthrty', AttestationValue1Code, False)
 
 	@DlgtdAuthrty.deleter
 	def DlgtdAuthrty(self):
 		del self._DlgtdAuthrty
-		self._DlgtdAuthrty = None
+		self._DlgtdAuthrty = base_types.UninitialisedField(self, 'DlgtdAuthrty', AttestationValue1Code, False)
 
 	@property
 	def RsnAuthntcnNotPrfrmd(self):
@@ -29,12 +29,12 @@ class StrongCustomerAuthentication2(base_types._BaseFieldType):
 
 	@RsnAuthntcnNotPrfrmd.setter
 	def RsnAuthntcnNotPrfrmd(self, value):
-		self._RsnAuthntcnNotPrfrmd = value if type(value) != base_types.auto else self.make_default("RsnAuthntcnNotPrfrmd")
+		self._RsnAuthntcnNotPrfrmd = value if value is not None else base_types.UninitialisedField(self, 'RsnAuthntcnNotPrfrmd', Max4Text, False)
 
 	@RsnAuthntcnNotPrfrmd.deleter
 	def RsnAuthntcnNotPrfrmd(self):
 		del self._RsnAuthntcnNotPrfrmd
-		self._RsnAuthntcnNotPrfrmd = None
+		self._RsnAuthntcnNotPrfrmd = base_types.UninitialisedField(self, 'RsnAuthntcnNotPrfrmd', Max4Text, False)
 
 	@property
 	def SbjtToSCA(self):
@@ -42,12 +42,12 @@ class StrongCustomerAuthentication2(base_types._BaseFieldType):
 
 	@SbjtToSCA.setter
 	def SbjtToSCA(self, value):
-		self._SbjtToSCA = value if type(value) != base_types.auto else self.make_default("SbjtToSCA")
+		self._SbjtToSCA = value if value is not None else base_types.UninitialisedField(self, 'SbjtToSCA', TrueFalseIndicator, False)
 
 	@SbjtToSCA.deleter
 	def SbjtToSCA(self):
 		del self._SbjtToSCA
-		self._SbjtToSCA = None
+		self._SbjtToSCA = base_types.UninitialisedField(self, 'SbjtToSCA', TrueFalseIndicator, False)
 
 	@property
 	def Wvr(self):
@@ -55,12 +55,12 @@ class StrongCustomerAuthentication2(base_types._BaseFieldType):
 
 	@Wvr.setter
 	def Wvr(self, value):
-		self._Wvr = value if type(value) != base_types.auto else self.make_default("Wvr")
+		self._Wvr = value if value is not None else base_types.UninitialisedField(self, 'Wvr', AttestationValue1Code, False)
 
 	@Wvr.deleter
 	def Wvr(self):
 		del self._Wvr
-		self._Wvr = None
+		self._Wvr = base_types.UninitialisedField(self, 'Wvr', AttestationValue1Code, False)
 
 	@property
 	def Xmptn(self):
@@ -68,12 +68,12 @@ class StrongCustomerAuthentication2(base_types._BaseFieldType):
 
 	@Xmptn.setter
 	def Xmptn(self, value):
-		self._Xmptn = value if type(value) != base_types.auto else self.make_default("Xmptn")
+		self._Xmptn = value if value is not None else base_types.UninitialisedField(self, 'Xmptn', Exemption2, True)
 
 	@Xmptn.deleter
 	def Xmptn(self):
 		del self._Xmptn
-		self._Xmptn = None
+		self._Xmptn = base_types.UninitialisedField(self, 'Xmptn', Exemption2, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DlgtdAuthrty', type=AttestationValue1Code, min=0, max=1, mutex_group=None, array=False),

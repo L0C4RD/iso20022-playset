@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GroupHeader117 import GroupHeader117
-from ._NotificationCancellationReason2 import NotificationCancellationReason2
-from ._OriginalNotification18 import OriginalNotification18
-from ._SupplementaryData1 import SupplementaryData1
+from . import GroupHeader117
+from . import NotificationCancellationReason2
+from . import OriginalNotification18
+from . import SupplementaryData1
 
 class NotificationToReceiveCancellationAdviceV10(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class NotificationToReceiveCancellationAdviceV10(base_types._BaseFieldType):
 
 	@CxlRsn.setter
 	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != base_types.auto else self.make_default("CxlRsn")
+		self._CxlRsn = value if value is not None else base_types.UninitialisedField(self, 'CxlRsn', NotificationCancellationReason2, False)
 
 	@CxlRsn.deleter
 	def CxlRsn(self):
 		del self._CxlRsn
-		self._CxlRsn = None
+		self._CxlRsn = base_types.UninitialisedField(self, 'CxlRsn', NotificationCancellationReason2, False)
 
 	@property
 	def GrpHdr(self):
@@ -29,12 +29,12 @@ class NotificationToReceiveCancellationAdviceV10(base_types._BaseFieldType):
 
 	@GrpHdr.setter
 	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
+		self._GrpHdr = value if value is not None else base_types.UninitialisedField(self, 'GrpHdr', GroupHeader117, False)
 
 	@GrpHdr.deleter
 	def GrpHdr(self):
 		del self._GrpHdr
-		self._GrpHdr = None
+		self._GrpHdr = base_types.UninitialisedField(self, 'GrpHdr', GroupHeader117, False)
 
 	@property
 	def OrgnlNtfctn(self):
@@ -42,12 +42,12 @@ class NotificationToReceiveCancellationAdviceV10(base_types._BaseFieldType):
 
 	@OrgnlNtfctn.setter
 	def OrgnlNtfctn(self, value):
-		self._OrgnlNtfctn = value if type(value) != base_types.auto else self.make_default("OrgnlNtfctn")
+		self._OrgnlNtfctn = value if value is not None else base_types.UninitialisedField(self, 'OrgnlNtfctn', OriginalNotification18, False)
 
 	@OrgnlNtfctn.deleter
 	def OrgnlNtfctn(self):
 		del self._OrgnlNtfctn
-		self._OrgnlNtfctn = None
+		self._OrgnlNtfctn = base_types.UninitialisedField(self, 'OrgnlNtfctn', OriginalNotification18, False)
 
 	@property
 	def SplmtryData(self):
@@ -55,12 +55,12 @@ class NotificationToReceiveCancellationAdviceV10(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CxlRsn', type=NotificationCancellationReason2, min=0, max=1, mutex_group=None, array=False),

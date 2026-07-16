@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ResolutionOfInvestigationV14 import ResolutionOfInvestigationV14
+from . import ResolutionOfInvestigationV14
 
 class CAMT_029_001_14():
 
@@ -18,12 +18,12 @@ class CAMT_029_001_14():
 
 		@RsltnOfInvstgtn.setter
 		def RsltnOfInvstgtn(self, value):
-			self._RsltnOfInvstgtn = value if type(value) != base_types.auto else self.make_default("RsltnOfInvstgtn")
+			self._RsltnOfInvstgtn = value if value is not None else base_types.UninitialisedField(self, 'RsltnOfInvstgtn', ResolutionOfInvestigationV14, False)
 
 		@RsltnOfInvstgtn.deleter
 		def RsltnOfInvstgtn(self):
 			del self._RsltnOfInvstgtn
-			self._RsltnOfInvstgtn = None
+			self._RsltnOfInvstgtn = base_types.UninitialisedField(self, 'RsltnOfInvstgtn', ResolutionOfInvestigationV14, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='RsltnOfInvstgtn', type=ResolutionOfInvestigationV14, min=1, max=1, mutex_group=None, array=False),

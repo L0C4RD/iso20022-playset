@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCode import CountryCode
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
-from ._OtherIdentification3Choice import OtherIdentification3Choice
+from . import CountryCode
+from . import ISODate
+from . import Max35Text
+from . import Max70Text
+from . import OtherIdentification3Choice
 
 class GenericIdentification82(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class GenericIdentification82(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def IsseDt(self):
@@ -30,12 +30,12 @@ class GenericIdentification82(base_types._BaseFieldType):
 
 	@IsseDt.setter
 	def IsseDt(self, value):
-		self._IsseDt = value if type(value) != base_types.auto else self.make_default("IsseDt")
+		self._IsseDt = value if value is not None else base_types.UninitialisedField(self, 'IsseDt', ISODate, False)
 
 	@IsseDt.deleter
 	def IsseDt(self):
 		del self._IsseDt
-		self._IsseDt = None
+		self._IsseDt = base_types.UninitialisedField(self, 'IsseDt', ISODate, False)
 
 	@property
 	def Issr(self):
@@ -43,12 +43,12 @@ class GenericIdentification82(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+		self._Issr = value if value is not None else base_types.UninitialisedField(self, 'Issr', Max35Text, False)
 
 	@Issr.deleter
 	def Issr(self):
 		del self._Issr
-		self._Issr = None
+		self._Issr = base_types.UninitialisedField(self, 'Issr', Max35Text, False)
 
 	@property
 	def IssrCtry(self):
@@ -56,12 +56,12 @@ class GenericIdentification82(base_types._BaseFieldType):
 
 	@IssrCtry.setter
 	def IssrCtry(self, value):
-		self._IssrCtry = value if type(value) != base_types.auto else self.make_default("IssrCtry")
+		self._IssrCtry = value if value is not None else base_types.UninitialisedField(self, 'IssrCtry', CountryCode, False)
 
 	@IssrCtry.deleter
 	def IssrCtry(self):
 		del self._IssrCtry
-		self._IssrCtry = None
+		self._IssrCtry = base_types.UninitialisedField(self, 'IssrCtry', CountryCode, False)
 
 	@property
 	def Stat(self):
@@ -69,12 +69,12 @@ class GenericIdentification82(base_types._BaseFieldType):
 
 	@Stat.setter
 	def Stat(self, value):
-		self._Stat = value if type(value) != base_types.auto else self.make_default("Stat")
+		self._Stat = value if value is not None else base_types.UninitialisedField(self, 'Stat', Max70Text, False)
 
 	@Stat.deleter
 	def Stat(self):
 		del self._Stat
-		self._Stat = None
+		self._Stat = base_types.UninitialisedField(self, 'Stat', Max70Text, False)
 
 	@property
 	def Tp(self):
@@ -82,12 +82,12 @@ class GenericIdentification82(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', OtherIdentification3Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', OtherIdentification3Choice, False)
 
 	@property
 	def XpryDt(self):
@@ -95,12 +95,12 @@ class GenericIdentification82(base_types._BaseFieldType):
 
 	@XpryDt.setter
 	def XpryDt(self, value):
-		self._XpryDt = value if type(value) != base_types.auto else self.make_default("XpryDt")
+		self._XpryDt = value if value is not None else base_types.UninitialisedField(self, 'XpryDt', ISODate, False)
 
 	@XpryDt.deleter
 	def XpryDt(self):
 		del self._XpryDt
-		self._XpryDt = None
+		self._XpryDt = base_types.UninitialisedField(self, 'XpryDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

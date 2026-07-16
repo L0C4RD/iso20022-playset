@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAnd20DecimalAmount import ActiveOrHistoricCurrencyAnd20DecimalAmount
+from . import ActiveOrHistoricCurrencyAnd20DecimalAmount
 
 class PostedMarginOrCollateral6(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class PostedMarginOrCollateral6(base_types._BaseFieldType):
 
 	@InitlMrgnPstdPreHrcut.setter
 	def InitlMrgnPstdPreHrcut(self, value):
-		self._InitlMrgnPstdPreHrcut = value if type(value) != base_types.auto else self.make_default("InitlMrgnPstdPreHrcut")
+		self._InitlMrgnPstdPreHrcut = value if value is not None else base_types.UninitialisedField(self, 'InitlMrgnPstdPreHrcut', ActiveOrHistoricCurrencyAnd20DecimalAmount, False)
 
 	@InitlMrgnPstdPreHrcut.deleter
 	def InitlMrgnPstdPreHrcut(self):
 		del self._InitlMrgnPstdPreHrcut
-		self._InitlMrgnPstdPreHrcut = None
+		self._InitlMrgnPstdPreHrcut = base_types.UninitialisedField(self, 'InitlMrgnPstdPreHrcut', ActiveOrHistoricCurrencyAnd20DecimalAmount, False)
 
 	@property
 	def InitlMrgnPstdPstHrcut(self):
@@ -26,12 +26,12 @@ class PostedMarginOrCollateral6(base_types._BaseFieldType):
 
 	@InitlMrgnPstdPstHrcut.setter
 	def InitlMrgnPstdPstHrcut(self, value):
-		self._InitlMrgnPstdPstHrcut = value if type(value) != base_types.auto else self.make_default("InitlMrgnPstdPstHrcut")
+		self._InitlMrgnPstdPstHrcut = value if value is not None else base_types.UninitialisedField(self, 'InitlMrgnPstdPstHrcut', ActiveOrHistoricCurrencyAnd20DecimalAmount, False)
 
 	@InitlMrgnPstdPstHrcut.deleter
 	def InitlMrgnPstdPstHrcut(self):
 		del self._InitlMrgnPstdPstHrcut
-		self._InitlMrgnPstdPstHrcut = None
+		self._InitlMrgnPstdPstHrcut = base_types.UninitialisedField(self, 'InitlMrgnPstdPstHrcut', ActiveOrHistoricCurrencyAnd20DecimalAmount, False)
 
 	@property
 	def VartnMrgnPstdPreHrcut(self):
@@ -39,12 +39,12 @@ class PostedMarginOrCollateral6(base_types._BaseFieldType):
 
 	@VartnMrgnPstdPreHrcut.setter
 	def VartnMrgnPstdPreHrcut(self, value):
-		self._VartnMrgnPstdPreHrcut = value if type(value) != base_types.auto else self.make_default("VartnMrgnPstdPreHrcut")
+		self._VartnMrgnPstdPreHrcut = value if value is not None else base_types.UninitialisedField(self, 'VartnMrgnPstdPreHrcut', ActiveOrHistoricCurrencyAnd20DecimalAmount, False)
 
 	@VartnMrgnPstdPreHrcut.deleter
 	def VartnMrgnPstdPreHrcut(self):
 		del self._VartnMrgnPstdPreHrcut
-		self._VartnMrgnPstdPreHrcut = None
+		self._VartnMrgnPstdPreHrcut = base_types.UninitialisedField(self, 'VartnMrgnPstdPreHrcut', ActiveOrHistoricCurrencyAnd20DecimalAmount, False)
 
 	@property
 	def VartnMrgnPstdPstHrcut(self):
@@ -52,12 +52,12 @@ class PostedMarginOrCollateral6(base_types._BaseFieldType):
 
 	@VartnMrgnPstdPstHrcut.setter
 	def VartnMrgnPstdPstHrcut(self, value):
-		self._VartnMrgnPstdPstHrcut = value if type(value) != base_types.auto else self.make_default("VartnMrgnPstdPstHrcut")
+		self._VartnMrgnPstdPstHrcut = value if value is not None else base_types.UninitialisedField(self, 'VartnMrgnPstdPstHrcut', ActiveOrHistoricCurrencyAnd20DecimalAmount, False)
 
 	@VartnMrgnPstdPstHrcut.deleter
 	def VartnMrgnPstdPstHrcut(self):
 		del self._VartnMrgnPstdPstHrcut
-		self._VartnMrgnPstdPstHrcut = None
+		self._VartnMrgnPstdPstHrcut = base_types.UninitialisedField(self, 'VartnMrgnPstdPstHrcut', ActiveOrHistoricCurrencyAnd20DecimalAmount, False)
 
 	@property
 	def XcssCollPstd(self):
@@ -65,12 +65,12 @@ class PostedMarginOrCollateral6(base_types._BaseFieldType):
 
 	@XcssCollPstd.setter
 	def XcssCollPstd(self, value):
-		self._XcssCollPstd = value if type(value) != base_types.auto else self.make_default("XcssCollPstd")
+		self._XcssCollPstd = value if value is not None else base_types.UninitialisedField(self, 'XcssCollPstd', ActiveOrHistoricCurrencyAnd20DecimalAmount, False)
 
 	@XcssCollPstd.deleter
 	def XcssCollPstd(self):
 		del self._XcssCollPstd
-		self._XcssCollPstd = None
+		self._XcssCollPstd = base_types.UninitialisedField(self, 'XcssCollPstd', ActiveOrHistoricCurrencyAnd20DecimalAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InitlMrgnPstdPreHrcut', type=ActiveOrHistoricCurrencyAnd20DecimalAmount, min=0, max=1, mutex_group=None, array=False),

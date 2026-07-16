@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
-from ._Max2NumericText import Max2NumericText
-from ._SettlementTotalData1 import SettlementTotalData1
+from . import LEIIdentifier
+from . import Max2NumericText
+from . import SettlementTotalData1
 
 class SettlementFailsParticipant1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SettlementFailsParticipant1(base_types._BaseFieldType):
 
 	@Aggt.setter
 	def Aggt(self, value):
-		self._Aggt = value if type(value) != base_types.auto else self.make_default("Aggt")
+		self._Aggt = value if value is not None else base_types.UninitialisedField(self, 'Aggt', SettlementTotalData1, False)
 
 	@Aggt.deleter
 	def Aggt(self):
 		del self._Aggt
-		self._Aggt = None
+		self._Aggt = base_types.UninitialisedField(self, 'Aggt', SettlementTotalData1, False)
 
 	@property
 	def LEI(self):
@@ -28,12 +28,12 @@ class SettlementFailsParticipant1(base_types._BaseFieldType):
 
 	@LEI.setter
 	def LEI(self, value):
-		self._LEI = value if type(value) != base_types.auto else self.make_default("LEI")
+		self._LEI = value if value is not None else base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	@LEI.deleter
 	def LEI(self):
 		del self._LEI
-		self._LEI = None
+		self._LEI = base_types.UninitialisedField(self, 'LEI', LEIIdentifier, False)
 
 	@property
 	def Rank(self):
@@ -41,12 +41,12 @@ class SettlementFailsParticipant1(base_types._BaseFieldType):
 
 	@Rank.setter
 	def Rank(self, value):
-		self._Rank = value if type(value) != base_types.auto else self.make_default("Rank")
+		self._Rank = value if value is not None else base_types.UninitialisedField(self, 'Rank', Max2NumericText, False)
 
 	@Rank.deleter
 	def Rank(self):
 		del self._Rank
-		self._Rank = None
+		self._Rank = base_types.UninitialisedField(self, 'Rank', Max2NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Aggt', type=SettlementTotalData1, min=1, max=1, mutex_group=None, array=False),

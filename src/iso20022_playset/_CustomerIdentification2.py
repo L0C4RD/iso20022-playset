@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AuthorityInvestigation2 import AuthorityInvestigation2
-from ._PartyIdentification272 import PartyIdentification272
+from . import AuthorityInvestigation2
+from . import PartyIdentification272
 
 class CustomerIdentification2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CustomerIdentification2(base_types._BaseFieldType):
 
 	@AuthrtyReq.setter
 	def AuthrtyReq(self, value):
-		self._AuthrtyReq = value if type(value) != base_types.auto else self.make_default("AuthrtyReq")
+		self._AuthrtyReq = value if value is not None else base_types.UninitialisedField(self, 'AuthrtyReq', AuthorityInvestigation2, True)
 
 	@AuthrtyReq.deleter
 	def AuthrtyReq(self):
 		del self._AuthrtyReq
-		self._AuthrtyReq = None
+		self._AuthrtyReq = base_types.UninitialisedField(self, 'AuthrtyReq', AuthorityInvestigation2, True)
 
 	@property
 	def Pty(self):
@@ -27,12 +27,12 @@ class CustomerIdentification2(base_types._BaseFieldType):
 
 	@Pty.setter
 	def Pty(self, value):
-		self._Pty = value if type(value) != base_types.auto else self.make_default("Pty")
+		self._Pty = value if value is not None else base_types.UninitialisedField(self, 'Pty', PartyIdentification272, False)
 
 	@Pty.deleter
 	def Pty(self):
 		del self._Pty
-		self._Pty = None
+		self._Pty = base_types.UninitialisedField(self, 'Pty', PartyIdentification272, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AuthrtyReq', type=AuthorityInvestigation2, min=1, max=None, mutex_group=None, array=True),

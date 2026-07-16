@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._ExternalAuthenticationMethod1Code import ExternalAuthenticationMethod1Code
-from ._Max35Text import Max35Text
-from ._PINData1 import PINData1
-from ._Verification4Code import Verification4Code
-from ._VerificationEntity3Code import VerificationEntity3Code
-from ._VerificationValue1 import VerificationValue1
+from . import ATICALaxProcessing
+from . import ExternalAuthenticationMethod1Code
+from . import Max35Text
+from . import PINData1
+from . import Verification4Code
+from . import VerificationEntity3Code
+from . import VerificationValue1
 
 class Verification8(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class Verification8(base_types._BaseFieldType):
 
 	@Data.setter
 	def Data(self, value):
-		self._Data = value if type(value) != base_types.auto else self.make_default("Data")
+		self._Data = value if value is not None else base_types.UninitialisedField(self, 'Data', VerificationValue1, True)
 
 	@Data.deleter
 	def Data(self):
 		del self._Data
-		self._Data = None
+		self._Data = base_types.UninitialisedField(self, 'Data', VerificationValue1, True)
 
 	@property
 	def Ntty(self):
@@ -32,12 +32,12 @@ class Verification8(base_types._BaseFieldType):
 
 	@Ntty.setter
 	def Ntty(self, value):
-		self._Ntty = value if type(value) != base_types.auto else self.make_default("Ntty")
+		self._Ntty = value if value is not None else base_types.UninitialisedField(self, 'Ntty', VerificationEntity3Code, False)
 
 	@Ntty.deleter
 	def Ntty(self):
 		del self._Ntty
-		self._Ntty = None
+		self._Ntty = base_types.UninitialisedField(self, 'Ntty', VerificationEntity3Code, False)
 
 	@property
 	def PINData(self):
@@ -45,12 +45,12 @@ class Verification8(base_types._BaseFieldType):
 
 	@PINData.setter
 	def PINData(self, value):
-		self._PINData = value if type(value) != base_types.auto else self.make_default("PINData")
+		self._PINData = value if value is not None else base_types.UninitialisedField(self, 'PINData', PINData1, False)
 
 	@PINData.deleter
 	def PINData(self):
 		del self._PINData
-		self._PINData = None
+		self._PINData = base_types.UninitialisedField(self, 'PINData', PINData1, False)
 
 	@property
 	def Rslt(self):
@@ -58,12 +58,12 @@ class Verification8(base_types._BaseFieldType):
 
 	@Rslt.setter
 	def Rslt(self, value):
-		self._Rslt = value if type(value) != base_types.auto else self.make_default("Rslt")
+		self._Rslt = value if value is not None else base_types.UninitialisedField(self, 'Rslt', Verification4Code, False)
 
 	@Rslt.deleter
 	def Rslt(self):
 		del self._Rslt
-		self._Rslt = None
+		self._Rslt = base_types.UninitialisedField(self, 'Rslt', Verification4Code, False)
 
 	@property
 	def RsltDtls(self):
@@ -71,12 +71,12 @@ class Verification8(base_types._BaseFieldType):
 
 	@RsltDtls.setter
 	def RsltDtls(self, value):
-		self._RsltDtls = value if type(value) != base_types.auto else self.make_default("RsltDtls")
+		self._RsltDtls = value if value is not None else base_types.UninitialisedField(self, 'RsltDtls', ATICALaxProcessing, False)
 
 	@RsltDtls.deleter
 	def RsltDtls(self):
 		del self._RsltDtls
-		self._RsltDtls = None
+		self._RsltDtls = base_types.UninitialisedField(self, 'RsltDtls', ATICALaxProcessing, False)
 
 	@property
 	def SubTp(self):
@@ -84,12 +84,12 @@ class Verification8(base_types._BaseFieldType):
 
 	@SubTp.setter
 	def SubTp(self, value):
-		self._SubTp = value if type(value) != base_types.auto else self.make_default("SubTp")
+		self._SubTp = value if value is not None else base_types.UninitialisedField(self, 'SubTp', Max35Text, False)
 
 	@SubTp.deleter
 	def SubTp(self):
 		del self._SubTp
-		self._SubTp = None
+		self._SubTp = base_types.UninitialisedField(self, 'SubTp', Max35Text, False)
 
 	@property
 	def Tp(self):
@@ -97,12 +97,12 @@ class Verification8(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', ExternalAuthenticationMethod1Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', ExternalAuthenticationMethod1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Data', type=VerificationValue1, min=0, max=None, mutex_group=None, array=True),

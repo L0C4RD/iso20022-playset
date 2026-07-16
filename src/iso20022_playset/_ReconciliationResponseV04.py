@@ -2,29 +2,29 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalData2 import AdditionalData2
-from ._AdditionalFee3 import AdditionalFee3
-from ._CardServiceType4Code import CardServiceType4Code
-from ._ContentInformationType41 import ContentInformationType41
-from ._Exact12Text import Exact12Text
-from ._Exact15Text import Exact15Text
-from ._Exact3NumericText import Exact3NumericText
-from ._Header71 import Header71
-from ._ISO8583ResponseCode import ISO8583ResponseCode
-from ._ISODateTime import ISODateTime
-from ._Jurisdiction2 import Jurisdiction2
-from ._Max12NumericText import Max12NumericText
-from ._Max35Text import Max35Text
-from ._PartyIdentification286 import PartyIdentification286
-from ._ProcessingResult23 import ProcessingResult23
-from ._ProgrammeMode5 import ProgrammeMode5
-from ._ProtectedData2 import ProtectedData2
-from ._Reconciliation4 import Reconciliation4
-from ._ReconciliationActivityType1Code import ReconciliationActivityType1Code
-from ._ReconciliationFunction1Code import ReconciliationFunction1Code
-from ._SettlementService6 import SettlementService6
-from ._SupplementaryData1 import SupplementaryData1
-from ._TransactionTotals14 import TransactionTotals14
+from . import AdditionalData2
+from . import AdditionalFee3
+from . import CardServiceType4Code
+from . import ContentInformationType41
+from . import Exact12Text
+from . import Exact15Text
+from . import Exact3NumericText
+from . import Header71
+from . import ISO8583ResponseCode
+from . import ISODateTime
+from . import Jurisdiction2
+from . import Max12NumericText
+from . import Max35Text
+from . import PartyIdentification286
+from . import ProcessingResult23
+from . import ProgrammeMode5
+from . import ProtectedData2
+from . import Reconciliation4
+from . import ReconciliationActivityType1Code
+from . import ReconciliationFunction1Code
+from . import SettlementService6
+from . import SupplementaryData1
+from . import TransactionTotals14
 
 class ReconciliationResponseV04(base_types._BaseFieldType):
 
@@ -35,12 +35,12 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 
 	@AddtlData.setter
 	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+		self._AddtlData = value if value is not None else base_types.UninitialisedField(self, 'AddtlData', AdditionalData2, True)
 
 	@AddtlData.deleter
 	def AddtlData(self):
 		del self._AddtlData
-		self._AddtlData = None
+		self._AddtlData = base_types.UninitialisedField(self, 'AddtlData', AdditionalData2, True)
 
 	@property
 	def AddtlFee(self):
@@ -48,12 +48,12 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 
 	@AddtlFee.setter
 	def AddtlFee(self, value):
-		self._AddtlFee = value if type(value) != base_types.auto else self.make_default("AddtlFee")
+		self._AddtlFee = value if value is not None else base_types.UninitialisedField(self, 'AddtlFee', AdditionalFee3, True)
 
 	@AddtlFee.deleter
 	def AddtlFee(self):
 		del self._AddtlFee
-		self._AddtlFee = None
+		self._AddtlFee = base_types.UninitialisedField(self, 'AddtlFee', AdditionalFee3, True)
 
 	@property
 	def Dstn(self):
@@ -61,12 +61,12 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 
 	@Dstn.setter
 	def Dstn(self, value):
-		self._Dstn = value if type(value) != base_types.auto else self.make_default("Dstn")
+		self._Dstn = value if value is not None else base_types.UninitialisedField(self, 'Dstn', PartyIdentification286, False)
 
 	@Dstn.deleter
 	def Dstn(self):
 		del self._Dstn
-		self._Dstn = None
+		self._Dstn = base_types.UninitialisedField(self, 'Dstn', PartyIdentification286, False)
 
 	@property
 	def Hdr(self):
@@ -74,12 +74,12 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header71, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header71, False)
 
 	@property
 	def Jursdctn(self):
@@ -87,12 +87,12 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 
 	@Jursdctn.setter
 	def Jursdctn(self, value):
-		self._Jursdctn = value if type(value) != base_types.auto else self.make_default("Jursdctn")
+		self._Jursdctn = value if value is not None else base_types.UninitialisedField(self, 'Jursdctn', Jurisdiction2, False)
 
 	@Jursdctn.deleter
 	def Jursdctn(self):
 		del self._Jursdctn
-		self._Jursdctn = None
+		self._Jursdctn = base_types.UninitialisedField(self, 'Jursdctn', Jurisdiction2, False)
 
 	@property
 	def LifeCyclId(self):
@@ -100,12 +100,12 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 
 	@LifeCyclId.setter
 	def LifeCyclId(self, value):
-		self._LifeCyclId = value if type(value) != base_types.auto else self.make_default("LifeCyclId")
+		self._LifeCyclId = value if value is not None else base_types.UninitialisedField(self, 'LifeCyclId', Exact15Text, False)
 
 	@LifeCyclId.deleter
 	def LifeCyclId(self):
 		del self._LifeCyclId
-		self._LifeCyclId = None
+		self._LifeCyclId = base_types.UninitialisedField(self, 'LifeCyclId', Exact15Text, False)
 
 	@property
 	def OrgnlRspnCd(self):
@@ -113,12 +113,12 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 
 	@OrgnlRspnCd.setter
 	def OrgnlRspnCd(self, value):
-		self._OrgnlRspnCd = value if type(value) != base_types.auto else self.make_default("OrgnlRspnCd")
+		self._OrgnlRspnCd = value if value is not None else base_types.UninitialisedField(self, 'OrgnlRspnCd', ISO8583ResponseCode, False)
 
 	@OrgnlRspnCd.deleter
 	def OrgnlRspnCd(self):
 		del self._OrgnlRspnCd
-		self._OrgnlRspnCd = None
+		self._OrgnlRspnCd = base_types.UninitialisedField(self, 'OrgnlRspnCd', ISO8583ResponseCode, False)
 
 	@property
 	def Orgtr(self):
@@ -126,12 +126,12 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 
 	@Orgtr.setter
 	def Orgtr(self, value):
-		self._Orgtr = value if type(value) != base_types.auto else self.make_default("Orgtr")
+		self._Orgtr = value if value is not None else base_types.UninitialisedField(self, 'Orgtr', PartyIdentification286, False)
 
 	@Orgtr.deleter
 	def Orgtr(self):
 		del self._Orgtr
-		self._Orgtr = None
+		self._Orgtr = base_types.UninitialisedField(self, 'Orgtr', PartyIdentification286, False)
 
 	@property
 	def OthrRcncltnActvtyTp(self):
@@ -139,12 +139,12 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 
 	@OthrRcncltnActvtyTp.setter
 	def OthrRcncltnActvtyTp(self, value):
-		self._OthrRcncltnActvtyTp = value if type(value) != base_types.auto else self.make_default("OthrRcncltnActvtyTp")
+		self._OthrRcncltnActvtyTp = value if value is not None else base_types.UninitialisedField(self, 'OthrRcncltnActvtyTp', Max35Text, False)
 
 	@OthrRcncltnActvtyTp.deleter
 	def OthrRcncltnActvtyTp(self):
 		del self._OthrRcncltnActvtyTp
-		self._OthrRcncltnActvtyTp = None
+		self._OthrRcncltnActvtyTp = base_types.UninitialisedField(self, 'OthrRcncltnActvtyTp', Max35Text, False)
 
 	@property
 	def OthrRcncltnTp(self):
@@ -152,12 +152,12 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 
 	@OthrRcncltnTp.setter
 	def OthrRcncltnTp(self, value):
-		self._OthrRcncltnTp = value if type(value) != base_types.auto else self.make_default("OthrRcncltnTp")
+		self._OthrRcncltnTp = value if value is not None else base_types.UninitialisedField(self, 'OthrRcncltnTp', Max35Text, False)
 
 	@OthrRcncltnTp.deleter
 	def OthrRcncltnTp(self):
 		del self._OthrRcncltnTp
-		self._OthrRcncltnTp = None
+		self._OthrRcncltnTp = base_types.UninitialisedField(self, 'OthrRcncltnTp', Max35Text, False)
 
 	@property
 	def PrcgRslt(self):
@@ -165,12 +165,12 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 
 	@PrcgRslt.setter
 	def PrcgRslt(self, value):
-		self._PrcgRslt = value if type(value) != base_types.auto else self.make_default("PrcgRslt")
+		self._PrcgRslt = value if value is not None else base_types.UninitialisedField(self, 'PrcgRslt', ProcessingResult23, False)
 
 	@PrcgRslt.deleter
 	def PrcgRslt(self):
 		del self._PrcgRslt
-		self._PrcgRslt = None
+		self._PrcgRslt = base_types.UninitialisedField(self, 'PrcgRslt', ProcessingResult23, False)
 
 	@property
 	def Prgrmm(self):
@@ -178,12 +178,12 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 
 	@Prgrmm.setter
 	def Prgrmm(self, value):
-		self._Prgrmm = value if type(value) != base_types.auto else self.make_default("Prgrmm")
+		self._Prgrmm = value if value is not None else base_types.UninitialisedField(self, 'Prgrmm', ProgrammeMode5, True)
 
 	@Prgrmm.deleter
 	def Prgrmm(self):
 		del self._Prgrmm
-		self._Prgrmm = None
+		self._Prgrmm = base_types.UninitialisedField(self, 'Prgrmm', ProgrammeMode5, True)
 
 	@property
 	def PrtctdData(self):
@@ -191,12 +191,12 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 
 	@PrtctdData.setter
 	def PrtctdData(self, value):
-		self._PrtctdData = value if type(value) != base_types.auto else self.make_default("PrtctdData")
+		self._PrtctdData = value if value is not None else base_types.UninitialisedField(self, 'PrtctdData', ProtectedData2, True)
 
 	@PrtctdData.deleter
 	def PrtctdData(self):
 		del self._PrtctdData
-		self._PrtctdData = None
+		self._PrtctdData = base_types.UninitialisedField(self, 'PrtctdData', ProtectedData2, True)
 
 	@property
 	def Rcncltn(self):
@@ -204,12 +204,12 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 
 	@Rcncltn.setter
 	def Rcncltn(self, value):
-		self._Rcncltn = value if type(value) != base_types.auto else self.make_default("Rcncltn")
+		self._Rcncltn = value if value is not None else base_types.UninitialisedField(self, 'Rcncltn', Reconciliation4, False)
 
 	@Rcncltn.deleter
 	def Rcncltn(self):
 		del self._Rcncltn
-		self._Rcncltn = None
+		self._Rcncltn = base_types.UninitialisedField(self, 'Rcncltn', Reconciliation4, False)
 
 	@property
 	def RcncltnActvtyTp(self):
@@ -217,12 +217,12 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 
 	@RcncltnActvtyTp.setter
 	def RcncltnActvtyTp(self, value):
-		self._RcncltnActvtyTp = value if type(value) != base_types.auto else self.make_default("RcncltnActvtyTp")
+		self._RcncltnActvtyTp = value if value is not None else base_types.UninitialisedField(self, 'RcncltnActvtyTp', ReconciliationActivityType1Code, False)
 
 	@RcncltnActvtyTp.deleter
 	def RcncltnActvtyTp(self):
 		del self._RcncltnActvtyTp
-		self._RcncltnActvtyTp = None
+		self._RcncltnActvtyTp = base_types.UninitialisedField(self, 'RcncltnActvtyTp', ReconciliationActivityType1Code, False)
 
 	@property
 	def RcncltnFctn(self):
@@ -230,12 +230,12 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 
 	@RcncltnFctn.setter
 	def RcncltnFctn(self, value):
-		self._RcncltnFctn = value if type(value) != base_types.auto else self.make_default("RcncltnFctn")
+		self._RcncltnFctn = value if value is not None else base_types.UninitialisedField(self, 'RcncltnFctn', ReconciliationFunction1Code, False)
 
 	@RcncltnFctn.deleter
 	def RcncltnFctn(self):
 		del self._RcncltnFctn
-		self._RcncltnFctn = None
+		self._RcncltnFctn = base_types.UninitialisedField(self, 'RcncltnFctn', ReconciliationFunction1Code, False)
 
 	@property
 	def RcncltnTp(self):
@@ -243,12 +243,12 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 
 	@RcncltnTp.setter
 	def RcncltnTp(self, value):
-		self._RcncltnTp = value if type(value) != base_types.auto else self.make_default("RcncltnTp")
+		self._RcncltnTp = value if value is not None else base_types.UninitialisedField(self, 'RcncltnTp', CardServiceType4Code, False)
 
 	@RcncltnTp.deleter
 	def RcncltnTp(self):
 		del self._RcncltnTp
-		self._RcncltnTp = None
+		self._RcncltnTp = base_types.UninitialisedField(self, 'RcncltnTp', CardServiceType4Code, False)
 
 	@property
 	def RcncltnTtls(self):
@@ -256,12 +256,12 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 
 	@RcncltnTtls.setter
 	def RcncltnTtls(self, value):
-		self._RcncltnTtls = value if type(value) != base_types.auto else self.make_default("RcncltnTtls")
+		self._RcncltnTtls = value if value is not None else base_types.UninitialisedField(self, 'RcncltnTtls', TransactionTotals14, True)
 
 	@RcncltnTtls.deleter
 	def RcncltnTtls(self):
 		del self._RcncltnTtls
-		self._RcncltnTtls = None
+		self._RcncltnTtls = base_types.UninitialisedField(self, 'RcncltnTtls', TransactionTotals14, True)
 
 	@property
 	def Rcvr(self):
@@ -269,12 +269,12 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 
 	@Rcvr.setter
 	def Rcvr(self, value):
-		self._Rcvr = value if type(value) != base_types.auto else self.make_default("Rcvr")
+		self._Rcvr = value if value is not None else base_types.UninitialisedField(self, 'Rcvr', PartyIdentification286, False)
 
 	@Rcvr.deleter
 	def Rcvr(self):
 		del self._Rcvr
-		self._Rcvr = None
+		self._Rcvr = base_types.UninitialisedField(self, 'Rcvr', PartyIdentification286, False)
 
 	@property
 	def ReqdCcy(self):
@@ -282,12 +282,12 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 
 	@ReqdCcy.setter
 	def ReqdCcy(self, value):
-		self._ReqdCcy = value if type(value) != base_types.auto else self.make_default("ReqdCcy")
+		self._ReqdCcy = value if value is not None else base_types.UninitialisedField(self, 'ReqdCcy', Exact3NumericText, True)
 
 	@ReqdCcy.deleter
 	def ReqdCcy(self):
 		del self._ReqdCcy
-		self._ReqdCcy = None
+		self._ReqdCcy = base_types.UninitialisedField(self, 'ReqdCcy', Exact3NumericText, True)
 
 	@property
 	def RtrvlRefNb(self):
@@ -295,12 +295,12 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 
 	@RtrvlRefNb.setter
 	def RtrvlRefNb(self, value):
-		self._RtrvlRefNb = value if type(value) != base_types.auto else self.make_default("RtrvlRefNb")
+		self._RtrvlRefNb = value if value is not None else base_types.UninitialisedField(self, 'RtrvlRefNb', Exact12Text, False)
 
 	@RtrvlRefNb.deleter
 	def RtrvlRefNb(self):
 		del self._RtrvlRefNb
-		self._RtrvlRefNb = None
+		self._RtrvlRefNb = base_types.UninitialisedField(self, 'RtrvlRefNb', Exact12Text, False)
 
 	@property
 	def SctyTrlr(self):
@@ -308,12 +308,12 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType41, False)
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
 		del self._SctyTrlr
-		self._SctyTrlr = None
+		self._SctyTrlr = base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType41, False)
 
 	@property
 	def Sndr(self):
@@ -321,12 +321,12 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 
 	@Sndr.setter
 	def Sndr(self, value):
-		self._Sndr = value if type(value) != base_types.auto else self.make_default("Sndr")
+		self._Sndr = value if value is not None else base_types.UninitialisedField(self, 'Sndr', PartyIdentification286, False)
 
 	@Sndr.deleter
 	def Sndr(self):
 		del self._Sndr
-		self._Sndr = None
+		self._Sndr = base_types.UninitialisedField(self, 'Sndr', PartyIdentification286, False)
 
 	@property
 	def SplmtryData(self):
@@ -334,12 +334,12 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def SttlmSvc(self):
@@ -347,12 +347,12 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 
 	@SttlmSvc.setter
 	def SttlmSvc(self, value):
-		self._SttlmSvc = value if type(value) != base_types.auto else self.make_default("SttlmSvc")
+		self._SttlmSvc = value if value is not None else base_types.UninitialisedField(self, 'SttlmSvc', SettlementService6, False)
 
 	@SttlmSvc.deleter
 	def SttlmSvc(self):
 		del self._SttlmSvc
-		self._SttlmSvc = None
+		self._SttlmSvc = base_types.UninitialisedField(self, 'SttlmSvc', SettlementService6, False)
 
 	@property
 	def SysTracAudtNb(self):
@@ -360,12 +360,12 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 
 	@SysTracAudtNb.setter
 	def SysTracAudtNb(self, value):
-		self._SysTracAudtNb = value if type(value) != base_types.auto else self.make_default("SysTracAudtNb")
+		self._SysTracAudtNb = value if value is not None else base_types.UninitialisedField(self, 'SysTracAudtNb', Max12NumericText, False)
 
 	@SysTracAudtNb.deleter
 	def SysTracAudtNb(self):
 		del self._SysTracAudtNb
-		self._SysTracAudtNb = None
+		self._SysTracAudtNb = base_types.UninitialisedField(self, 'SysTracAudtNb', Max12NumericText, False)
 
 	@property
 	def TrnsmssnDtTm(self):
@@ -373,12 +373,12 @@ class ReconciliationResponseV04(base_types._BaseFieldType):
 
 	@TrnsmssnDtTm.setter
 	def TrnsmssnDtTm(self, value):
-		self._TrnsmssnDtTm = value if type(value) != base_types.auto else self.make_default("TrnsmssnDtTm")
+		self._TrnsmssnDtTm = value if value is not None else base_types.UninitialisedField(self, 'TrnsmssnDtTm', ISODateTime, False)
 
 	@TrnsmssnDtTm.deleter
 	def TrnsmssnDtTm(self):
 		del self._TrnsmssnDtTm
-		self._TrnsmssnDtTm = None
+		self._TrnsmssnDtTm = base_types.UninitialisedField(self, 'TrnsmssnDtTm', ISODateTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData2, min=0, max=None, mutex_group=None, array=True),

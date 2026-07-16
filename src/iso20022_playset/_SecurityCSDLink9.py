@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._IssuerOrInvestor2Choice import IssuerOrInvestor2Choice
-from ._SecurityIdentification19 import SecurityIdentification19
+from . import DateAndDateTime2Choice
+from . import IssuerOrInvestor2Choice
+from . import SecurityIdentification19
 
 class SecurityCSDLink9(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SecurityCSDLink9(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
 		del self._FinInstrmId
-		self._FinInstrmId = None
+		self._FinInstrmId = base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@property
 	def IssrInvstrCSD(self):
@@ -28,12 +28,12 @@ class SecurityCSDLink9(base_types._BaseFieldType):
 
 	@IssrInvstrCSD.setter
 	def IssrInvstrCSD(self, value):
-		self._IssrInvstrCSD = value if type(value) != base_types.auto else self.make_default("IssrInvstrCSD")
+		self._IssrInvstrCSD = value if value is not None else base_types.UninitialisedField(self, 'IssrInvstrCSD', IssuerOrInvestor2Choice, False)
 
 	@IssrInvstrCSD.deleter
 	def IssrInvstrCSD(self):
 		del self._IssrInvstrCSD
-		self._IssrInvstrCSD = None
+		self._IssrInvstrCSD = base_types.UninitialisedField(self, 'IssrInvstrCSD', IssuerOrInvestor2Choice, False)
 
 	@property
 	def VldFr(self):
@@ -41,12 +41,12 @@ class SecurityCSDLink9(base_types._BaseFieldType):
 
 	@VldFr.setter
 	def VldFr(self, value):
-		self._VldFr = value if type(value) != base_types.auto else self.make_default("VldFr")
+		self._VldFr = value if value is not None else base_types.UninitialisedField(self, 'VldFr', DateAndDateTime2Choice, False)
 
 	@VldFr.deleter
 	def VldFr(self):
 		del self._VldFr
-		self._VldFr = None
+		self._VldFr = base_types.UninitialisedField(self, 'VldFr', DateAndDateTime2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FinInstrmId', type=SecurityIdentification19, min=1, max=1, mutex_group=None, array=False),

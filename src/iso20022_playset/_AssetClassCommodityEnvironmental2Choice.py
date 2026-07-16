@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._EnvironmentCommodityOther1 import EnvironmentCommodityOther1
-from ._EnvironmentalCommodityCarbonRelated1 import EnvironmentalCommodityCarbonRelated1
-from ._EnvironmentalCommodityEmission2 import EnvironmentalCommodityEmission2
-from ._EnvironmentalCommodityWeather1 import EnvironmentalCommodityWeather1
+from . import EnvironmentCommodityOther1
+from . import EnvironmentalCommodityCarbonRelated1
+from . import EnvironmentalCommodityEmission2
+from . import EnvironmentalCommodityWeather1
 
 class AssetClassCommodityEnvironmental2Choice(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class AssetClassCommodityEnvironmental2Choice(base_types._BaseFieldType):
 
 	@CrbnRltd.setter
 	def CrbnRltd(self, value):
-		self._CrbnRltd = value if type(value) != base_types.auto else self.make_default("CrbnRltd")
+		self._CrbnRltd = value if value is not None else base_types.UninitialisedField(self, 'CrbnRltd', EnvironmentalCommodityCarbonRelated1, False)
 
 	@CrbnRltd.deleter
 	def CrbnRltd(self):
 		del self._CrbnRltd
-		self._CrbnRltd = None
+		self._CrbnRltd = base_types.UninitialisedField(self, 'CrbnRltd', EnvironmentalCommodityCarbonRelated1, False)
 
 	@property
 	def Emssns(self):
@@ -29,12 +29,12 @@ class AssetClassCommodityEnvironmental2Choice(base_types._BaseFieldType):
 
 	@Emssns.setter
 	def Emssns(self, value):
-		self._Emssns = value if type(value) != base_types.auto else self.make_default("Emssns")
+		self._Emssns = value if value is not None else base_types.UninitialisedField(self, 'Emssns', EnvironmentalCommodityEmission2, False)
 
 	@Emssns.deleter
 	def Emssns(self):
 		del self._Emssns
-		self._Emssns = None
+		self._Emssns = base_types.UninitialisedField(self, 'Emssns', EnvironmentalCommodityEmission2, False)
 
 	@property
 	def Othr(self):
@@ -42,12 +42,12 @@ class AssetClassCommodityEnvironmental2Choice(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', EnvironmentCommodityOther1, False)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', EnvironmentCommodityOther1, False)
 
 	@property
 	def Wthr(self):
@@ -55,12 +55,12 @@ class AssetClassCommodityEnvironmental2Choice(base_types._BaseFieldType):
 
 	@Wthr.setter
 	def Wthr(self, value):
-		self._Wthr = value if type(value) != base_types.auto else self.make_default("Wthr")
+		self._Wthr = value if value is not None else base_types.UninitialisedField(self, 'Wthr', EnvironmentalCommodityWeather1, False)
 
 	@Wthr.deleter
 	def Wthr(self):
 		del self._Wthr
-		self._Wthr = None
+		self._Wthr = base_types.UninitialisedField(self, 'Wthr', EnvironmentalCommodityWeather1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CrbnRltd', type=EnvironmentalCommodityCarbonRelated1, min=0, max=1, mutex_group=1, array=False),

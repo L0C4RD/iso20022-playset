@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AgentCAStandingInstructionRequestV01 import AgentCAStandingInstructionRequestV01
+from . import AgentCAStandingInstructionRequestV01
 
 class SEEV_025_001_01():
 
@@ -18,12 +18,12 @@ class SEEV_025_001_01():
 
 		@AgtCAStgInstrReq.setter
 		def AgtCAStgInstrReq(self, value):
-			self._AgtCAStgInstrReq = value if type(value) != base_types.auto else self.make_default("AgtCAStgInstrReq")
+			self._AgtCAStgInstrReq = value if value is not None else base_types.UninitialisedField(self, 'AgtCAStgInstrReq', AgentCAStandingInstructionRequestV01, False)
 
 		@AgtCAStgInstrReq.deleter
 		def AgtCAStgInstrReq(self):
 			del self._AgtCAStgInstrReq
-			self._AgtCAStgInstrReq = None
+			self._AgtCAStgInstrReq = base_types.UninitialisedField(self, 'AgtCAStgInstrReq', AgentCAStandingInstructionRequestV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AgtCAStgInstrReq', type=AgentCAStandingInstructionRequestV01, min=1, max=1, mutex_group=None, array=False),

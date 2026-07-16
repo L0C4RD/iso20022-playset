@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesSettlementTransactionGenerationNotification002V11 import SecuritiesSettlementTransactionGenerationNotification002V11
+from . import SecuritiesSettlementTransactionGenerationNotification002V11
 
 class SESE_032_002_11():
 
@@ -18,12 +18,12 @@ class SESE_032_002_11():
 
 		@SctiesSttlmTxGnrtnNtfctn.setter
 		def SctiesSttlmTxGnrtnNtfctn(self, value):
-			self._SctiesSttlmTxGnrtnNtfctn = value if type(value) != base_types.auto else self.make_default("SctiesSttlmTxGnrtnNtfctn")
+			self._SctiesSttlmTxGnrtnNtfctn = value if value is not None else base_types.UninitialisedField(self, 'SctiesSttlmTxGnrtnNtfctn', SecuritiesSettlementTransactionGenerationNotification002V11, False)
 
 		@SctiesSttlmTxGnrtnNtfctn.deleter
 		def SctiesSttlmTxGnrtnNtfctn(self):
 			del self._SctiesSttlmTxGnrtnNtfctn
-			self._SctiesSttlmTxGnrtnNtfctn = None
+			self._SctiesSttlmTxGnrtnNtfctn = base_types.UninitialisedField(self, 'SctiesSttlmTxGnrtnNtfctn', SecuritiesSettlementTransactionGenerationNotification002V11, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesSttlmTxGnrtnNtfctn', type=SecuritiesSettlementTransactionGenerationNotification002V11, min=1, max=1, mutex_group=None, array=False),

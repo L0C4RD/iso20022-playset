@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FATCASource1Choice import FATCASource1Choice
-from ._FATCAStatus2Choice import FATCAStatus2Choice
+from . import FATCASource1Choice
+from . import FATCAStatus2Choice
 
 class FATCAStatus2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class FATCAStatus2(base_types._BaseFieldType):
 
 	@Src.setter
 	def Src(self, value):
-		self._Src = value if type(value) != base_types.auto else self.make_default("Src")
+		self._Src = value if value is not None else base_types.UninitialisedField(self, 'Src', FATCASource1Choice, False)
 
 	@Src.deleter
 	def Src(self):
 		del self._Src
-		self._Src = None
+		self._Src = base_types.UninitialisedField(self, 'Src', FATCASource1Choice, False)
 
 	@property
 	def Tp(self):
@@ -27,12 +27,12 @@ class FATCAStatus2(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', FATCAStatus2Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', FATCAStatus2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Src', type=FATCASource1Choice, min=0, max=1, mutex_group=None, array=False),

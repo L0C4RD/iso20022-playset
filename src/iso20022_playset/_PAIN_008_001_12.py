@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CustomerDirectDebitInitiationV12 import CustomerDirectDebitInitiationV12
+from . import CustomerDirectDebitInitiationV12
 
 class PAIN_008_001_12():
 
@@ -18,12 +18,12 @@ class PAIN_008_001_12():
 
 		@CstmrDrctDbtInitn.setter
 		def CstmrDrctDbtInitn(self, value):
-			self._CstmrDrctDbtInitn = value if type(value) != base_types.auto else self.make_default("CstmrDrctDbtInitn")
+			self._CstmrDrctDbtInitn = value if value is not None else base_types.UninitialisedField(self, 'CstmrDrctDbtInitn', CustomerDirectDebitInitiationV12, False)
 
 		@CstmrDrctDbtInitn.deleter
 		def CstmrDrctDbtInitn(self):
 			del self._CstmrDrctDbtInitn
-			self._CstmrDrctDbtInitn = None
+			self._CstmrDrctDbtInitn = base_types.UninitialisedField(self, 'CstmrDrctDbtInitn', CustomerDirectDebitInitiationV12, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CstmrDrctDbtInitn', type=CustomerDirectDebitInitiationV12, min=1, max=1, mutex_group=None, array=False),

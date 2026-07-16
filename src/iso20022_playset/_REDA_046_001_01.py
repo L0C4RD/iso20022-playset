@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecurityCSDLinkMaintenanceRequestV01 import SecurityCSDLinkMaintenanceRequestV01
+from . import SecurityCSDLinkMaintenanceRequestV01
 
 class REDA_046_001_01():
 
@@ -18,12 +18,12 @@ class REDA_046_001_01():
 
 		@SctyCSDLkMntncReq.setter
 		def SctyCSDLkMntncReq(self, value):
-			self._SctyCSDLkMntncReq = value if type(value) != base_types.auto else self.make_default("SctyCSDLkMntncReq")
+			self._SctyCSDLkMntncReq = value if value is not None else base_types.UninitialisedField(self, 'SctyCSDLkMntncReq', SecurityCSDLinkMaintenanceRequestV01, False)
 
 		@SctyCSDLkMntncReq.deleter
 		def SctyCSDLkMntncReq(self):
 			del self._SctyCSDLkMntncReq
-			self._SctyCSDLkMntncReq = None
+			self._SctyCSDLkMntncReq = base_types.UninitialisedField(self, 'SctyCSDLkMntncReq', SecurityCSDLinkMaintenanceRequestV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctyCSDLkMntncReq', type=SecurityCSDLinkMaintenanceRequestV01, min=1, max=1, mutex_group=None, array=False),

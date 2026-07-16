@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
-from ._PaymentReceipt7 import PaymentReceipt7
-from ._RetailerReversalResult8 import RetailerReversalResult8
-from ._TransactionIdentifier1 import TransactionIdentifier1
+from . import ImpliedCurrencyAndAmount
+from . import Max140Text
+from . import Max35Text
+from . import PaymentReceipt7
+from . import RetailerReversalResult8
+from . import TransactionIdentifier1
 
 class ReversalResponse10(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class ReversalResponse10(base_types._BaseFieldType):
 
 	@IssrRefData.setter
 	def IssrRefData(self, value):
-		self._IssrRefData = value if type(value) != base_types.auto else self.make_default("IssrRefData")
+		self._IssrRefData = value if value is not None else base_types.UninitialisedField(self, 'IssrRefData', Max140Text, False)
 
 	@IssrRefData.deleter
 	def IssrRefData(self):
 		del self._IssrRefData
-		self._IssrRefData = None
+		self._IssrRefData = base_types.UninitialisedField(self, 'IssrRefData', Max140Text, False)
 
 	@property
 	def POIRcncltnId(self):
@@ -31,12 +31,12 @@ class ReversalResponse10(base_types._BaseFieldType):
 
 	@POIRcncltnId.setter
 	def POIRcncltnId(self, value):
-		self._POIRcncltnId = value if type(value) != base_types.auto else self.make_default("POIRcncltnId")
+		self._POIRcncltnId = value if value is not None else base_types.UninitialisedField(self, 'POIRcncltnId', Max35Text, False)
 
 	@POIRcncltnId.deleter
 	def POIRcncltnId(self):
 		del self._POIRcncltnId
-		self._POIRcncltnId = None
+		self._POIRcncltnId = base_types.UninitialisedField(self, 'POIRcncltnId', Max35Text, False)
 
 	@property
 	def POITxId(self):
@@ -44,12 +44,12 @@ class ReversalResponse10(base_types._BaseFieldType):
 
 	@POITxId.setter
 	def POITxId(self, value):
-		self._POITxId = value if type(value) != base_types.auto else self.make_default("POITxId")
+		self._POITxId = value if value is not None else base_types.UninitialisedField(self, 'POITxId', TransactionIdentifier1, False)
 
 	@POITxId.deleter
 	def POITxId(self):
 		del self._POITxId
-		self._POITxId = None
+		self._POITxId = base_types.UninitialisedField(self, 'POITxId', TransactionIdentifier1, False)
 
 	@property
 	def Rct(self):
@@ -57,12 +57,12 @@ class ReversalResponse10(base_types._BaseFieldType):
 
 	@Rct.setter
 	def Rct(self, value):
-		self._Rct = value if type(value) != base_types.auto else self.make_default("Rct")
+		self._Rct = value if value is not None else base_types.UninitialisedField(self, 'Rct', PaymentReceipt7, True)
 
 	@Rct.deleter
 	def Rct(self):
 		del self._Rct
-		self._Rct = None
+		self._Rct = base_types.UninitialisedField(self, 'Rct', PaymentReceipt7, True)
 
 	@property
 	def RvsdAmt(self):
@@ -70,12 +70,12 @@ class ReversalResponse10(base_types._BaseFieldType):
 
 	@RvsdAmt.setter
 	def RvsdAmt(self, value):
-		self._RvsdAmt = value if type(value) != base_types.auto else self.make_default("RvsdAmt")
+		self._RvsdAmt = value if value is not None else base_types.UninitialisedField(self, 'RvsdAmt', ImpliedCurrencyAndAmount, False)
 
 	@RvsdAmt.deleter
 	def RvsdAmt(self):
 		del self._RvsdAmt
-		self._RvsdAmt = None
+		self._RvsdAmt = base_types.UninitialisedField(self, 'RvsdAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def RvslTxRslt(self):
@@ -83,12 +83,12 @@ class ReversalResponse10(base_types._BaseFieldType):
 
 	@RvslTxRslt.setter
 	def RvslTxRslt(self, value):
-		self._RvslTxRslt = value if type(value) != base_types.auto else self.make_default("RvslTxRslt")
+		self._RvslTxRslt = value if value is not None else base_types.UninitialisedField(self, 'RvslTxRslt', RetailerReversalResult8, False)
 
 	@RvslTxRslt.deleter
 	def RvslTxRslt(self):
 		del self._RvslTxRslt
-		self._RvslTxRslt = None
+		self._RvslTxRslt = base_types.UninitialisedField(self, 'RvslTxRslt', RetailerReversalResult8, False)
 
 	@property
 	def SaleRefId(self):
@@ -96,12 +96,12 @@ class ReversalResponse10(base_types._BaseFieldType):
 
 	@SaleRefId.setter
 	def SaleRefId(self, value):
-		self._SaleRefId = value if type(value) != base_types.auto else self.make_default("SaleRefId")
+		self._SaleRefId = value if value is not None else base_types.UninitialisedField(self, 'SaleRefId', Max35Text, False)
 
 	@SaleRefId.deleter
 	def SaleRefId(self):
 		del self._SaleRefId
-		self._SaleRefId = None
+		self._SaleRefId = base_types.UninitialisedField(self, 'SaleRefId', Max35Text, False)
 
 	@property
 	def SaleTxId(self):
@@ -109,12 +109,12 @@ class ReversalResponse10(base_types._BaseFieldType):
 
 	@SaleTxId.setter
 	def SaleTxId(self, value):
-		self._SaleTxId = value if type(value) != base_types.auto else self.make_default("SaleTxId")
+		self._SaleTxId = value if value is not None else base_types.UninitialisedField(self, 'SaleTxId', TransactionIdentifier1, False)
 
 	@SaleTxId.deleter
 	def SaleTxId(self):
 		del self._SaleTxId
-		self._SaleTxId = None
+		self._SaleTxId = base_types.UninitialisedField(self, 'SaleTxId', TransactionIdentifier1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IssrRefData', type=Max140Text, min=0, max=1, mutex_group=None, array=False),

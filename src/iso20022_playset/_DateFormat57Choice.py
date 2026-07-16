@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateCode20Choice import DateCode20Choice
-from ._ISODate import ISODate
+from . import DateCode20Choice
+from . import ISODate
 
 class DateFormat57Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DateFormat57Choice(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@property
 	def DtCd(self):
@@ -27,12 +27,12 @@ class DateFormat57Choice(base_types._BaseFieldType):
 
 	@DtCd.setter
 	def DtCd(self, value):
-		self._DtCd = value if type(value) != base_types.auto else self.make_default("DtCd")
+		self._DtCd = value if value is not None else base_types.UninitialisedField(self, 'DtCd', DateCode20Choice, False)
 
 	@DtCd.deleter
 	def DtCd(self):
 		del self._DtCd
-		self._DtCd = None
+		self._DtCd = base_types.UninitialisedField(self, 'DtCd', DateCode20Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=1, array=False),

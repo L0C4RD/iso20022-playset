@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancingRateOrAmountChoice import FinancingRateOrAmountChoice
-from ._Max105Text import Max105Text
-from ._RequestStatus1Code import RequestStatus1Code
-from ._StatusReason4Choice import StatusReason4Choice
+from . import FinancingRateOrAmountChoice
+from . import Max105Text
+from . import RequestStatus1Code
+from . import StatusReason4Choice
 
 class FinancingResult1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class FinancingResult1(base_types._BaseFieldType):
 
 	@AddtlStsRsnInf.setter
 	def AddtlStsRsnInf(self, value):
-		self._AddtlStsRsnInf = value if type(value) != base_types.auto else self.make_default("AddtlStsRsnInf")
+		self._AddtlStsRsnInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlStsRsnInf', Max105Text, True)
 
 	@AddtlStsRsnInf.deleter
 	def AddtlStsRsnInf(self):
 		del self._AddtlStsRsnInf
-		self._AddtlStsRsnInf = None
+		self._AddtlStsRsnInf = base_types.UninitialisedField(self, 'AddtlStsRsnInf', Max105Text, True)
 
 	@property
 	def FincdAmt(self):
@@ -29,12 +29,12 @@ class FinancingResult1(base_types._BaseFieldType):
 
 	@FincdAmt.setter
 	def FincdAmt(self, value):
-		self._FincdAmt = value if type(value) != base_types.auto else self.make_default("FincdAmt")
+		self._FincdAmt = value if value is not None else base_types.UninitialisedField(self, 'FincdAmt', FinancingRateOrAmountChoice, False)
 
 	@FincdAmt.deleter
 	def FincdAmt(self):
 		del self._FincdAmt
-		self._FincdAmt = None
+		self._FincdAmt = base_types.UninitialisedField(self, 'FincdAmt', FinancingRateOrAmountChoice, False)
 
 	@property
 	def FincgReqSts(self):
@@ -42,12 +42,12 @@ class FinancingResult1(base_types._BaseFieldType):
 
 	@FincgReqSts.setter
 	def FincgReqSts(self, value):
-		self._FincgReqSts = value if type(value) != base_types.auto else self.make_default("FincgReqSts")
+		self._FincgReqSts = value if value is not None else base_types.UninitialisedField(self, 'FincgReqSts', RequestStatus1Code, False)
 
 	@FincgReqSts.deleter
 	def FincgReqSts(self):
 		del self._FincgReqSts
-		self._FincgReqSts = None
+		self._FincgReqSts = base_types.UninitialisedField(self, 'FincgReqSts', RequestStatus1Code, False)
 
 	@property
 	def StsRsn(self):
@@ -55,12 +55,12 @@ class FinancingResult1(base_types._BaseFieldType):
 
 	@StsRsn.setter
 	def StsRsn(self, value):
-		self._StsRsn = value if type(value) != base_types.auto else self.make_default("StsRsn")
+		self._StsRsn = value if value is not None else base_types.UninitialisedField(self, 'StsRsn', StatusReason4Choice, False)
 
 	@StsRsn.deleter
 	def StsRsn(self):
 		del self._StsRsn
-		self._StsRsn = None
+		self._StsRsn = base_types.UninitialisedField(self, 'StsRsn', StatusReason4Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlStsRsnInf', type=Max105Text, min=0, max=None, mutex_group=None, array=True),

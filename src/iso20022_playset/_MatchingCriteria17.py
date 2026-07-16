@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContractMatchingCriteria3 import ContractMatchingCriteria3
-from ._CounterpartyMatchingCriteria6 import CounterpartyMatchingCriteria6
-from ._TransactionMatchingCriteria7 import TransactionMatchingCriteria7
-from ._ValuationMatchingCriteria1 import ValuationMatchingCriteria1
+from . import ContractMatchingCriteria3
+from . import CounterpartyMatchingCriteria6
+from . import TransactionMatchingCriteria7
+from . import ValuationMatchingCriteria1
 
 class MatchingCriteria17(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class MatchingCriteria17(base_types._BaseFieldType):
 
 	@CtrPtyMtchgCrit.setter
 	def CtrPtyMtchgCrit(self, value):
-		self._CtrPtyMtchgCrit = value if type(value) != base_types.auto else self.make_default("CtrPtyMtchgCrit")
+		self._CtrPtyMtchgCrit = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyMtchgCrit', CounterpartyMatchingCriteria6, False)
 
 	@CtrPtyMtchgCrit.deleter
 	def CtrPtyMtchgCrit(self):
 		del self._CtrPtyMtchgCrit
-		self._CtrPtyMtchgCrit = None
+		self._CtrPtyMtchgCrit = base_types.UninitialisedField(self, 'CtrPtyMtchgCrit', CounterpartyMatchingCriteria6, False)
 
 	@property
 	def CtrctMtchgCrit(self):
@@ -29,12 +29,12 @@ class MatchingCriteria17(base_types._BaseFieldType):
 
 	@CtrctMtchgCrit.setter
 	def CtrctMtchgCrit(self, value):
-		self._CtrctMtchgCrit = value if type(value) != base_types.auto else self.make_default("CtrctMtchgCrit")
+		self._CtrctMtchgCrit = value if value is not None else base_types.UninitialisedField(self, 'CtrctMtchgCrit', ContractMatchingCriteria3, False)
 
 	@CtrctMtchgCrit.deleter
 	def CtrctMtchgCrit(self):
 		del self._CtrctMtchgCrit
-		self._CtrctMtchgCrit = None
+		self._CtrctMtchgCrit = base_types.UninitialisedField(self, 'CtrctMtchgCrit', ContractMatchingCriteria3, False)
 
 	@property
 	def TxMtchgCrit(self):
@@ -42,12 +42,12 @@ class MatchingCriteria17(base_types._BaseFieldType):
 
 	@TxMtchgCrit.setter
 	def TxMtchgCrit(self, value):
-		self._TxMtchgCrit = value if type(value) != base_types.auto else self.make_default("TxMtchgCrit")
+		self._TxMtchgCrit = value if value is not None else base_types.UninitialisedField(self, 'TxMtchgCrit', TransactionMatchingCriteria7, False)
 
 	@TxMtchgCrit.deleter
 	def TxMtchgCrit(self):
 		del self._TxMtchgCrit
-		self._TxMtchgCrit = None
+		self._TxMtchgCrit = base_types.UninitialisedField(self, 'TxMtchgCrit', TransactionMatchingCriteria7, False)
 
 	@property
 	def ValtnMtchgCrit(self):
@@ -55,12 +55,12 @@ class MatchingCriteria17(base_types._BaseFieldType):
 
 	@ValtnMtchgCrit.setter
 	def ValtnMtchgCrit(self, value):
-		self._ValtnMtchgCrit = value if type(value) != base_types.auto else self.make_default("ValtnMtchgCrit")
+		self._ValtnMtchgCrit = value if value is not None else base_types.UninitialisedField(self, 'ValtnMtchgCrit', ValuationMatchingCriteria1, False)
 
 	@ValtnMtchgCrit.deleter
 	def ValtnMtchgCrit(self):
 		del self._ValtnMtchgCrit
-		self._ValtnMtchgCrit = None
+		self._ValtnMtchgCrit = base_types.UninitialisedField(self, 'ValtnMtchgCrit', ValuationMatchingCriteria1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrPtyMtchgCrit', type=CounterpartyMatchingCriteria6, min=0, max=1, mutex_group=None, array=False),

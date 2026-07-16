@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LinkedMessage1Choice import LinkedMessage1Choice
-from ._Max140Text import Max140Text
-from ._MessageRejectedReason1Code import MessageRejectedReason1Code
+from . import LinkedMessage1Choice
+from . import Max140Text
+from . import MessageRejectedReason1Code
 
 class RejectionReason23(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class RejectionReason23(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max140Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max140Text, False)
 
 	@property
 	def LkdMsg(self):
@@ -28,12 +28,12 @@ class RejectionReason23(base_types._BaseFieldType):
 
 	@LkdMsg.setter
 	def LkdMsg(self, value):
-		self._LkdMsg = value if type(value) != base_types.auto else self.make_default("LkdMsg")
+		self._LkdMsg = value if value is not None else base_types.UninitialisedField(self, 'LkdMsg', LinkedMessage1Choice, False)
 
 	@LkdMsg.deleter
 	def LkdMsg(self):
 		del self._LkdMsg
-		self._LkdMsg = None
+		self._LkdMsg = base_types.UninitialisedField(self, 'LkdMsg', LinkedMessage1Choice, False)
 
 	@property
 	def Rsn(self):
@@ -41,12 +41,12 @@ class RejectionReason23(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', MessageRejectedReason1Code, False)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', MessageRejectedReason1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardPaymentDataSetTransaction54 import CardPaymentDataSetTransaction54
-from ._CardPaymentDataSetTransaction55 import CardPaymentDataSetTransaction55
-from ._CardPaymentDataSetTransaction56 import CardPaymentDataSetTransaction56
-from ._CardPaymentDataSetTransaction57 import CardPaymentDataSetTransaction57
-from ._TokenRequestComponent6 import TokenRequestComponent6
+from . import CardPaymentDataSetTransaction54
+from . import CardPaymentDataSetTransaction55
+from . import CardPaymentDataSetTransaction56
+from . import CardPaymentDataSetTransaction57
+from . import TokenRequestComponent6
 
 class CardPaymentDataSetTransaction14Choice(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class CardPaymentDataSetTransaction14Choice(base_types._BaseFieldType):
 
 	@AuthstnReq.setter
 	def AuthstnReq(self, value):
-		self._AuthstnReq = value if type(value) != base_types.auto else self.make_default("AuthstnReq")
+		self._AuthstnReq = value if value is not None else base_types.UninitialisedField(self, 'AuthstnReq', CardPaymentDataSetTransaction56, False)
 
 	@AuthstnReq.deleter
 	def AuthstnReq(self):
 		del self._AuthstnReq
-		self._AuthstnReq = None
+		self._AuthstnReq = base_types.UninitialisedField(self, 'AuthstnReq', CardPaymentDataSetTransaction56, False)
 
 	@property
 	def AuthstnRspn(self):
@@ -30,12 +30,12 @@ class CardPaymentDataSetTransaction14Choice(base_types._BaseFieldType):
 
 	@AuthstnRspn.setter
 	def AuthstnRspn(self, value):
-		self._AuthstnRspn = value if type(value) != base_types.auto else self.make_default("AuthstnRspn")
+		self._AuthstnRspn = value if value is not None else base_types.UninitialisedField(self, 'AuthstnRspn', CardPaymentDataSetTransaction57, False)
 
 	@AuthstnRspn.deleter
 	def AuthstnRspn(self):
 		del self._AuthstnRspn
-		self._AuthstnRspn = None
+		self._AuthstnRspn = base_types.UninitialisedField(self, 'AuthstnRspn', CardPaymentDataSetTransaction57, False)
 
 	@property
 	def Cmpltn(self):
@@ -43,12 +43,12 @@ class CardPaymentDataSetTransaction14Choice(base_types._BaseFieldType):
 
 	@Cmpltn.setter
 	def Cmpltn(self, value):
-		self._Cmpltn = value if type(value) != base_types.auto else self.make_default("Cmpltn")
+		self._Cmpltn = value if value is not None else base_types.UninitialisedField(self, 'Cmpltn', CardPaymentDataSetTransaction55, False)
 
 	@Cmpltn.deleter
 	def Cmpltn(self):
 		del self._Cmpltn
-		self._Cmpltn = None
+		self._Cmpltn = base_types.UninitialisedField(self, 'Cmpltn', CardPaymentDataSetTransaction55, False)
 
 	@property
 	def Cxl(self):
@@ -56,12 +56,12 @@ class CardPaymentDataSetTransaction14Choice(base_types._BaseFieldType):
 
 	@Cxl.setter
 	def Cxl(self, value):
-		self._Cxl = value if type(value) != base_types.auto else self.make_default("Cxl")
+		self._Cxl = value if value is not None else base_types.UninitialisedField(self, 'Cxl', CardPaymentDataSetTransaction54, False)
 
 	@Cxl.deleter
 	def Cxl(self):
 		del self._Cxl
-		self._Cxl = None
+		self._Cxl = base_types.UninitialisedField(self, 'Cxl', CardPaymentDataSetTransaction54, False)
 
 	@property
 	def TknReq(self):
@@ -69,12 +69,12 @@ class CardPaymentDataSetTransaction14Choice(base_types._BaseFieldType):
 
 	@TknReq.setter
 	def TknReq(self, value):
-		self._TknReq = value if type(value) != base_types.auto else self.make_default("TknReq")
+		self._TknReq = value if value is not None else base_types.UninitialisedField(self, 'TknReq', TokenRequestComponent6, False)
 
 	@TknReq.deleter
 	def TknReq(self):
 		del self._TknReq
-		self._TknReq = None
+		self._TknReq = base_types.UninitialisedField(self, 'TknReq', TokenRequestComponent6, False)
 
 	@property
 	def TknRspn(self):
@@ -82,12 +82,12 @@ class CardPaymentDataSetTransaction14Choice(base_types._BaseFieldType):
 
 	@TknRspn.setter
 	def TknRspn(self, value):
-		self._TknRspn = value if type(value) != base_types.auto else self.make_default("TknRspn")
+		self._TknRspn = value if value is not None else base_types.UninitialisedField(self, 'TknRspn', TokenRequestComponent6, False)
 
 	@TknRspn.deleter
 	def TknRspn(self):
 		del self._TknRspn
-		self._TknRspn = None
+		self._TknRspn = base_types.UninitialisedField(self, 'TknRspn', TokenRequestComponent6, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AuthstnReq', type=CardPaymentDataSetTransaction56, min=0, max=1, mutex_group=1, array=False),

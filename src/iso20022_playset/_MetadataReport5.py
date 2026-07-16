@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ClassificationType4 import ClassificationType4
-from ._Document28 import Document28
-from ._GenericIdentification175 import GenericIdentification175
-from ._PartyIdentification260Choice import PartyIdentification260Choice
-from ._SecurityIdentification49 import SecurityIdentification49
+from . import ClassificationType4
+from . import Document28
+from . import GenericIdentification175
+from . import PartyIdentification260Choice
+from . import SecurityIdentification49
 
 class MetadataReport5(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class MetadataReport5(base_types._BaseFieldType):
 
 	@ColltnBody.setter
 	def ColltnBody(self, value):
-		self._ColltnBody = value if type(value) != base_types.auto else self.make_default("ColltnBody")
+		self._ColltnBody = value if value is not None else base_types.UninitialisedField(self, 'ColltnBody', GenericIdentification175, False)
 
 	@ColltnBody.deleter
 	def ColltnBody(self):
 		del self._ColltnBody
-		self._ColltnBody = None
+		self._ColltnBody = base_types.UninitialisedField(self, 'ColltnBody', GenericIdentification175, False)
 
 	@property
 	def RgltryData(self):
@@ -30,12 +30,12 @@ class MetadataReport5(base_types._BaseFieldType):
 
 	@RgltryData.setter
 	def RgltryData(self, value):
-		self._RgltryData = value if type(value) != base_types.auto else self.make_default("RgltryData")
+		self._RgltryData = value if value is not None else base_types.UninitialisedField(self, 'RgltryData', Document28, True)
 
 	@RgltryData.deleter
 	def RgltryData(self):
 		del self._RgltryData
-		self._RgltryData = None
+		self._RgltryData = base_types.UninitialisedField(self, 'RgltryData', Document28, True)
 
 	@property
 	def RgltryDataTp(self):
@@ -43,12 +43,12 @@ class MetadataReport5(base_types._BaseFieldType):
 
 	@RgltryDataTp.setter
 	def RgltryDataTp(self, value):
-		self._RgltryDataTp = value if type(value) != base_types.auto else self.make_default("RgltryDataTp")
+		self._RgltryDataTp = value if value is not None else base_types.UninitialisedField(self, 'RgltryDataTp', ClassificationType4, True)
 
 	@RgltryDataTp.deleter
 	def RgltryDataTp(self):
 		del self._RgltryDataTp
-		self._RgltryDataTp = None
+		self._RgltryDataTp = base_types.UninitialisedField(self, 'RgltryDataTp', ClassificationType4, True)
 
 	@property
 	def RltdNtty(self):
@@ -56,12 +56,12 @@ class MetadataReport5(base_types._BaseFieldType):
 
 	@RltdNtty.setter
 	def RltdNtty(self, value):
-		self._RltdNtty = value if type(value) != base_types.auto else self.make_default("RltdNtty")
+		self._RltdNtty = value if value is not None else base_types.UninitialisedField(self, 'RltdNtty', PartyIdentification260Choice, True)
 
 	@RltdNtty.deleter
 	def RltdNtty(self):
 		del self._RltdNtty
-		self._RltdNtty = None
+		self._RltdNtty = base_types.UninitialisedField(self, 'RltdNtty', PartyIdentification260Choice, True)
 
 	@property
 	def RltdPdctIdr(self):
@@ -69,12 +69,12 @@ class MetadataReport5(base_types._BaseFieldType):
 
 	@RltdPdctIdr.setter
 	def RltdPdctIdr(self, value):
-		self._RltdPdctIdr = value if type(value) != base_types.auto else self.make_default("RltdPdctIdr")
+		self._RltdPdctIdr = value if value is not None else base_types.UninitialisedField(self, 'RltdPdctIdr', SecurityIdentification49, True)
 
 	@RltdPdctIdr.deleter
 	def RltdPdctIdr(self):
 		del self._RltdPdctIdr
-		self._RltdPdctIdr = None
+		self._RltdPdctIdr = base_types.UninitialisedField(self, 'RltdPdctIdr', SecurityIdentification49, True)
 
 	@property
 	def SubmitgNtty(self):
@@ -82,12 +82,12 @@ class MetadataReport5(base_types._BaseFieldType):
 
 	@SubmitgNtty.setter
 	def SubmitgNtty(self, value):
-		self._SubmitgNtty = value if type(value) != base_types.auto else self.make_default("SubmitgNtty")
+		self._SubmitgNtty = value if value is not None else base_types.UninitialisedField(self, 'SubmitgNtty', PartyIdentification260Choice, False)
 
 	@SubmitgNtty.deleter
 	def SubmitgNtty(self):
 		del self._SubmitgNtty
-		self._SubmitgNtty = None
+		self._SubmitgNtty = base_types.UninitialisedField(self, 'SubmitgNtty', PartyIdentification260Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ColltnBody', type=GenericIdentification175, min=0, max=1, mutex_group=None, array=False),

@@ -2,23 +2,23 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._AmountAndCurrencyExchange4 import AmountAndCurrencyExchange4
-from ._BankTransactionCodeStructure4 import BankTransactionCodeStructure4
-from ._CardEntry5 import CardEntry5
-from ._CashAvailability1 import CashAvailability1
-from ._Charges15 import Charges15
-from ._CreditDebitCode import CreditDebitCode
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._EntryDetails14 import EntryDetails14
-from ._EntryStatus1Choice import EntryStatus1Choice
-from ._Max35Text import Max35Text
-from ._Max500Text import Max500Text
-from ._MessageIdentification2 import MessageIdentification2
-from ._TechnicalInputChannel1Choice import TechnicalInputChannel1Choice
-from ._TransactionInterest4 import TransactionInterest4
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._YesNoIndicator import YesNoIndicator
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import AmountAndCurrencyExchange4
+from . import BankTransactionCodeStructure4
+from . import CardEntry5
+from . import CashAvailability1
+from . import Charges15
+from . import CreditDebitCode
+from . import DateAndDateTime2Choice
+from . import EntryDetails14
+from . import EntryStatus1Choice
+from . import Max35Text
+from . import Max500Text
+from . import MessageIdentification2
+from . import TechnicalInputChannel1Choice
+from . import TransactionInterest4
+from . import TrueFalseIndicator
+from . import YesNoIndicator
 
 class ReportEntry15(base_types._BaseFieldType):
 
@@ -29,12 +29,12 @@ class ReportEntry15(base_types._BaseFieldType):
 
 	@AcctSvcrRef.setter
 	def AcctSvcrRef(self, value):
-		self._AcctSvcrRef = value if type(value) != base_types.auto else self.make_default("AcctSvcrRef")
+		self._AcctSvcrRef = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcrRef', Max35Text, False)
 
 	@AcctSvcrRef.deleter
 	def AcctSvcrRef(self):
 		del self._AcctSvcrRef
-		self._AcctSvcrRef = None
+		self._AcctSvcrRef = base_types.UninitialisedField(self, 'AcctSvcrRef', Max35Text, False)
 
 	@property
 	def AddtlInfInd(self):
@@ -42,12 +42,12 @@ class ReportEntry15(base_types._BaseFieldType):
 
 	@AddtlInfInd.setter
 	def AddtlInfInd(self, value):
-		self._AddtlInfInd = value if type(value) != base_types.auto else self.make_default("AddtlInfInd")
+		self._AddtlInfInd = value if value is not None else base_types.UninitialisedField(self, 'AddtlInfInd', MessageIdentification2, False)
 
 	@AddtlInfInd.deleter
 	def AddtlInfInd(self):
 		del self._AddtlInfInd
-		self._AddtlInfInd = None
+		self._AddtlInfInd = base_types.UninitialisedField(self, 'AddtlInfInd', MessageIdentification2, False)
 
 	@property
 	def AddtlNtryInf(self):
@@ -55,12 +55,12 @@ class ReportEntry15(base_types._BaseFieldType):
 
 	@AddtlNtryInf.setter
 	def AddtlNtryInf(self, value):
-		self._AddtlNtryInf = value if type(value) != base_types.auto else self.make_default("AddtlNtryInf")
+		self._AddtlNtryInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlNtryInf', Max500Text, False)
 
 	@AddtlNtryInf.deleter
 	def AddtlNtryInf(self):
 		del self._AddtlNtryInf
-		self._AddtlNtryInf = None
+		self._AddtlNtryInf = base_types.UninitialisedField(self, 'AddtlNtryInf', Max500Text, False)
 
 	@property
 	def Amt(self):
@@ -68,12 +68,12 @@ class ReportEntry15(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def AmtDtls(self):
@@ -81,12 +81,12 @@ class ReportEntry15(base_types._BaseFieldType):
 
 	@AmtDtls.setter
 	def AmtDtls(self, value):
-		self._AmtDtls = value if type(value) != base_types.auto else self.make_default("AmtDtls")
+		self._AmtDtls = value if value is not None else base_types.UninitialisedField(self, 'AmtDtls', AmountAndCurrencyExchange4, False)
 
 	@AmtDtls.deleter
 	def AmtDtls(self):
 		del self._AmtDtls
-		self._AmtDtls = None
+		self._AmtDtls = base_types.UninitialisedField(self, 'AmtDtls', AmountAndCurrencyExchange4, False)
 
 	@property
 	def Avlbty(self):
@@ -94,12 +94,12 @@ class ReportEntry15(base_types._BaseFieldType):
 
 	@Avlbty.setter
 	def Avlbty(self, value):
-		self._Avlbty = value if type(value) != base_types.auto else self.make_default("Avlbty")
+		self._Avlbty = value if value is not None else base_types.UninitialisedField(self, 'Avlbty', CashAvailability1, True)
 
 	@Avlbty.deleter
 	def Avlbty(self):
 		del self._Avlbty
-		self._Avlbty = None
+		self._Avlbty = base_types.UninitialisedField(self, 'Avlbty', CashAvailability1, True)
 
 	@property
 	def BkTxCd(self):
@@ -107,12 +107,12 @@ class ReportEntry15(base_types._BaseFieldType):
 
 	@BkTxCd.setter
 	def BkTxCd(self, value):
-		self._BkTxCd = value if type(value) != base_types.auto else self.make_default("BkTxCd")
+		self._BkTxCd = value if value is not None else base_types.UninitialisedField(self, 'BkTxCd', BankTransactionCodeStructure4, False)
 
 	@BkTxCd.deleter
 	def BkTxCd(self):
 		del self._BkTxCd
-		self._BkTxCd = None
+		self._BkTxCd = base_types.UninitialisedField(self, 'BkTxCd', BankTransactionCodeStructure4, False)
 
 	@property
 	def BookgDt(self):
@@ -120,12 +120,12 @@ class ReportEntry15(base_types._BaseFieldType):
 
 	@BookgDt.setter
 	def BookgDt(self, value):
-		self._BookgDt = value if type(value) != base_types.auto else self.make_default("BookgDt")
+		self._BookgDt = value if value is not None else base_types.UninitialisedField(self, 'BookgDt', DateAndDateTime2Choice, False)
 
 	@BookgDt.deleter
 	def BookgDt(self):
 		del self._BookgDt
-		self._BookgDt = None
+		self._BookgDt = base_types.UninitialisedField(self, 'BookgDt', DateAndDateTime2Choice, False)
 
 	@property
 	def CardTx(self):
@@ -133,12 +133,12 @@ class ReportEntry15(base_types._BaseFieldType):
 
 	@CardTx.setter
 	def CardTx(self, value):
-		self._CardTx = value if type(value) != base_types.auto else self.make_default("CardTx")
+		self._CardTx = value if value is not None else base_types.UninitialisedField(self, 'CardTx', CardEntry5, False)
 
 	@CardTx.deleter
 	def CardTx(self):
 		del self._CardTx
-		self._CardTx = None
+		self._CardTx = base_types.UninitialisedField(self, 'CardTx', CardEntry5, False)
 
 	@property
 	def CdtDbtInd(self):
@@ -146,12 +146,12 @@ class ReportEntry15(base_types._BaseFieldType):
 
 	@CdtDbtInd.setter
 	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+		self._CdtDbtInd = value if value is not None else base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@CdtDbtInd.deleter
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
-		self._CdtDbtInd = None
+		self._CdtDbtInd = base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@property
 	def Chrgs(self):
@@ -159,12 +159,12 @@ class ReportEntry15(base_types._BaseFieldType):
 
 	@Chrgs.setter
 	def Chrgs(self, value):
-		self._Chrgs = value if type(value) != base_types.auto else self.make_default("Chrgs")
+		self._Chrgs = value if value is not None else base_types.UninitialisedField(self, 'Chrgs', Charges15, False)
 
 	@Chrgs.deleter
 	def Chrgs(self):
 		del self._Chrgs
-		self._Chrgs = None
+		self._Chrgs = base_types.UninitialisedField(self, 'Chrgs', Charges15, False)
 
 	@property
 	def ComssnWvrInd(self):
@@ -172,12 +172,12 @@ class ReportEntry15(base_types._BaseFieldType):
 
 	@ComssnWvrInd.setter
 	def ComssnWvrInd(self, value):
-		self._ComssnWvrInd = value if type(value) != base_types.auto else self.make_default("ComssnWvrInd")
+		self._ComssnWvrInd = value if value is not None else base_types.UninitialisedField(self, 'ComssnWvrInd', YesNoIndicator, False)
 
 	@ComssnWvrInd.deleter
 	def ComssnWvrInd(self):
 		del self._ComssnWvrInd
-		self._ComssnWvrInd = None
+		self._ComssnWvrInd = base_types.UninitialisedField(self, 'ComssnWvrInd', YesNoIndicator, False)
 
 	@property
 	def Intrst(self):
@@ -185,12 +185,12 @@ class ReportEntry15(base_types._BaseFieldType):
 
 	@Intrst.setter
 	def Intrst(self, value):
-		self._Intrst = value if type(value) != base_types.auto else self.make_default("Intrst")
+		self._Intrst = value if value is not None else base_types.UninitialisedField(self, 'Intrst', TransactionInterest4, False)
 
 	@Intrst.deleter
 	def Intrst(self):
 		del self._Intrst
-		self._Intrst = None
+		self._Intrst = base_types.UninitialisedField(self, 'Intrst', TransactionInterest4, False)
 
 	@property
 	def NtryDtls(self):
@@ -198,12 +198,12 @@ class ReportEntry15(base_types._BaseFieldType):
 
 	@NtryDtls.setter
 	def NtryDtls(self, value):
-		self._NtryDtls = value if type(value) != base_types.auto else self.make_default("NtryDtls")
+		self._NtryDtls = value if value is not None else base_types.UninitialisedField(self, 'NtryDtls', EntryDetails14, True)
 
 	@NtryDtls.deleter
 	def NtryDtls(self):
 		del self._NtryDtls
-		self._NtryDtls = None
+		self._NtryDtls = base_types.UninitialisedField(self, 'NtryDtls', EntryDetails14, True)
 
 	@property
 	def NtryRef(self):
@@ -211,12 +211,12 @@ class ReportEntry15(base_types._BaseFieldType):
 
 	@NtryRef.setter
 	def NtryRef(self, value):
-		self._NtryRef = value if type(value) != base_types.auto else self.make_default("NtryRef")
+		self._NtryRef = value if value is not None else base_types.UninitialisedField(self, 'NtryRef', Max35Text, False)
 
 	@NtryRef.deleter
 	def NtryRef(self):
 		del self._NtryRef
-		self._NtryRef = None
+		self._NtryRef = base_types.UninitialisedField(self, 'NtryRef', Max35Text, False)
 
 	@property
 	def RvslInd(self):
@@ -224,12 +224,12 @@ class ReportEntry15(base_types._BaseFieldType):
 
 	@RvslInd.setter
 	def RvslInd(self, value):
-		self._RvslInd = value if type(value) != base_types.auto else self.make_default("RvslInd")
+		self._RvslInd = value if value is not None else base_types.UninitialisedField(self, 'RvslInd', TrueFalseIndicator, False)
 
 	@RvslInd.deleter
 	def RvslInd(self):
 		del self._RvslInd
-		self._RvslInd = None
+		self._RvslInd = base_types.UninitialisedField(self, 'RvslInd', TrueFalseIndicator, False)
 
 	@property
 	def Sts(self):
@@ -237,12 +237,12 @@ class ReportEntry15(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', EntryStatus1Choice, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', EntryStatus1Choice, False)
 
 	@property
 	def TechInptChanl(self):
@@ -250,12 +250,12 @@ class ReportEntry15(base_types._BaseFieldType):
 
 	@TechInptChanl.setter
 	def TechInptChanl(self, value):
-		self._TechInptChanl = value if type(value) != base_types.auto else self.make_default("TechInptChanl")
+		self._TechInptChanl = value if value is not None else base_types.UninitialisedField(self, 'TechInptChanl', TechnicalInputChannel1Choice, False)
 
 	@TechInptChanl.deleter
 	def TechInptChanl(self):
 		del self._TechInptChanl
-		self._TechInptChanl = None
+		self._TechInptChanl = base_types.UninitialisedField(self, 'TechInptChanl', TechnicalInputChannel1Choice, False)
 
 	@property
 	def ValDt(self):
@@ -263,12 +263,12 @@ class ReportEntry15(base_types._BaseFieldType):
 
 	@ValDt.setter
 	def ValDt(self, value):
-		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
+		self._ValDt = value if value is not None else base_types.UninitialisedField(self, 'ValDt', DateAndDateTime2Choice, False)
 
 	@ValDt.deleter
 	def ValDt(self):
 		del self._ValDt
-		self._ValDt = None
+		self._ValDt = base_types.UninitialisedField(self, 'ValDt', DateAndDateTime2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctSvcrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

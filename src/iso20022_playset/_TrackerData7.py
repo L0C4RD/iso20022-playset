@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._TrackerRecord5 import TrackerRecord5
+from . import ActiveCurrencyAndAmount
+from . import DateAndDateTime2Choice
+from . import TrackerRecord5
 
 class TrackerData7(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TrackerData7(base_types._BaseFieldType):
 
 	@ConfdAmt.setter
 	def ConfdAmt(self, value):
-		self._ConfdAmt = value if type(value) != base_types.auto else self.make_default("ConfdAmt")
+		self._ConfdAmt = value if value is not None else base_types.UninitialisedField(self, 'ConfdAmt', ActiveCurrencyAndAmount, False)
 
 	@ConfdAmt.deleter
 	def ConfdAmt(self):
 		del self._ConfdAmt
-		self._ConfdAmt = None
+		self._ConfdAmt = base_types.UninitialisedField(self, 'ConfdAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def ConfdDt(self):
@@ -28,12 +28,12 @@ class TrackerData7(base_types._BaseFieldType):
 
 	@ConfdDt.setter
 	def ConfdDt(self, value):
-		self._ConfdDt = value if type(value) != base_types.auto else self.make_default("ConfdDt")
+		self._ConfdDt = value if value is not None else base_types.UninitialisedField(self, 'ConfdDt', DateAndDateTime2Choice, False)
 
 	@ConfdDt.deleter
 	def ConfdDt(self):
 		del self._ConfdDt
-		self._ConfdDt = None
+		self._ConfdDt = base_types.UninitialisedField(self, 'ConfdDt', DateAndDateTime2Choice, False)
 
 	@property
 	def TrckrRcrd(self):
@@ -41,12 +41,12 @@ class TrackerData7(base_types._BaseFieldType):
 
 	@TrckrRcrd.setter
 	def TrckrRcrd(self, value):
-		self._TrckrRcrd = value if type(value) != base_types.auto else self.make_default("TrckrRcrd")
+		self._TrckrRcrd = value if value is not None else base_types.UninitialisedField(self, 'TrckrRcrd', TrackerRecord5, True)
 
 	@TrckrRcrd.deleter
 	def TrckrRcrd(self):
 		del self._TrckrRcrd
-		self._TrckrRcrd = None
+		self._TrckrRcrd = base_types.UninitialisedField(self, 'TrckrRcrd', TrackerRecord5, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ConfdAmt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

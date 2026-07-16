@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
+from . import Max35Text
 
 class Linkages75(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class Linkages75(base_types._BaseFieldType):
 
 	@SctiesSttlmTxId.setter
 	def SctiesSttlmTxId(self, value):
-		self._SctiesSttlmTxId = value if type(value) != base_types.auto else self.make_default("SctiesSttlmTxId")
+		self._SctiesSttlmTxId = value if value is not None else base_types.UninitialisedField(self, 'SctiesSttlmTxId', Max35Text, False)
 
 	@SctiesSttlmTxId.deleter
 	def SctiesSttlmTxId(self):
 		del self._SctiesSttlmTxId
-		self._SctiesSttlmTxId = None
+		self._SctiesSttlmTxId = base_types.UninitialisedField(self, 'SctiesSttlmTxId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SctiesSttlmTxId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

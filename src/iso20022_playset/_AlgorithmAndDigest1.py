@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Algorithm5Code import Algorithm5Code
-from ._Max140Text import Max140Text
+from . import Algorithm5Code
+from . import Max140Text
 
 class AlgorithmAndDigest1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AlgorithmAndDigest1(base_types._BaseFieldType):
 
 	@Dgst.setter
 	def Dgst(self, value):
-		self._Dgst = value if type(value) != base_types.auto else self.make_default("Dgst")
+		self._Dgst = value if value is not None else base_types.UninitialisedField(self, 'Dgst', Max140Text, False)
 
 	@Dgst.deleter
 	def Dgst(self):
 		del self._Dgst
-		self._Dgst = None
+		self._Dgst = base_types.UninitialisedField(self, 'Dgst', Max140Text, False)
 
 	@property
 	def DgstAlgo(self):
@@ -27,12 +27,12 @@ class AlgorithmAndDigest1(base_types._BaseFieldType):
 
 	@DgstAlgo.setter
 	def DgstAlgo(self, value):
-		self._DgstAlgo = value if type(value) != base_types.auto else self.make_default("DgstAlgo")
+		self._DgstAlgo = value if value is not None else base_types.UninitialisedField(self, 'DgstAlgo', Algorithm5Code, False)
 
 	@DgstAlgo.deleter
 	def DgstAlgo(self):
 		del self._DgstAlgo
-		self._DgstAlgo = None
+		self._DgstAlgo = base_types.UninitialisedField(self, 'DgstAlgo', Algorithm5Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dgst', type=Max140Text, min=1, max=1, mutex_group=None, array=False),

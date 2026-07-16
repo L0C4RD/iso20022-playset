@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateOrDateTimePeriod1Choice import DateOrDateTimePeriod1Choice
-from ._DueDate1 import DueDate1
-from ._LegalMandate1 import LegalMandate1
-from ._Max35Text import Max35Text
-from ._SearchCriteria2Choice import SearchCriteria2Choice
-from ._SupplementaryData1 import SupplementaryData1
-from ._YesNoIndicator import YesNoIndicator
+from . import DateOrDateTimePeriod1Choice
+from . import DueDate1
+from . import LegalMandate1
+from . import Max35Text
+from . import SearchCriteria2Choice
+from . import SupplementaryData1
+from . import YesNoIndicator
 
 class InformationRequestOpeningV02(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class InformationRequestOpeningV02(base_types._BaseFieldType):
 
 	@CnfdtltySts.setter
 	def CnfdtltySts(self, value):
-		self._CnfdtltySts = value if type(value) != base_types.auto else self.make_default("CnfdtltySts")
+		self._CnfdtltySts = value if value is not None else base_types.UninitialisedField(self, 'CnfdtltySts', YesNoIndicator, False)
 
 	@CnfdtltySts.deleter
 	def CnfdtltySts(self):
 		del self._CnfdtltySts
-		self._CnfdtltySts = None
+		self._CnfdtltySts = base_types.UninitialisedField(self, 'CnfdtltySts', YesNoIndicator, False)
 
 	@property
 	def DueDt(self):
@@ -32,12 +32,12 @@ class InformationRequestOpeningV02(base_types._BaseFieldType):
 
 	@DueDt.setter
 	def DueDt(self, value):
-		self._DueDt = value if type(value) != base_types.auto else self.make_default("DueDt")
+		self._DueDt = value if value is not None else base_types.UninitialisedField(self, 'DueDt', DueDate1, False)
 
 	@DueDt.deleter
 	def DueDt(self):
 		del self._DueDt
-		self._DueDt = None
+		self._DueDt = base_types.UninitialisedField(self, 'DueDt', DueDate1, False)
 
 	@property
 	def InvstgtnId(self):
@@ -45,12 +45,12 @@ class InformationRequestOpeningV02(base_types._BaseFieldType):
 
 	@InvstgtnId.setter
 	def InvstgtnId(self, value):
-		self._InvstgtnId = value if type(value) != base_types.auto else self.make_default("InvstgtnId")
+		self._InvstgtnId = value if value is not None else base_types.UninitialisedField(self, 'InvstgtnId', Max35Text, False)
 
 	@InvstgtnId.deleter
 	def InvstgtnId(self):
 		del self._InvstgtnId
-		self._InvstgtnId = None
+		self._InvstgtnId = base_types.UninitialisedField(self, 'InvstgtnId', Max35Text, False)
 
 	@property
 	def InvstgtnPrd(self):
@@ -58,12 +58,12 @@ class InformationRequestOpeningV02(base_types._BaseFieldType):
 
 	@InvstgtnPrd.setter
 	def InvstgtnPrd(self, value):
-		self._InvstgtnPrd = value if type(value) != base_types.auto else self.make_default("InvstgtnPrd")
+		self._InvstgtnPrd = value if value is not None else base_types.UninitialisedField(self, 'InvstgtnPrd', DateOrDateTimePeriod1Choice, False)
 
 	@InvstgtnPrd.deleter
 	def InvstgtnPrd(self):
 		del self._InvstgtnPrd
-		self._InvstgtnPrd = None
+		self._InvstgtnPrd = base_types.UninitialisedField(self, 'InvstgtnPrd', DateOrDateTimePeriod1Choice, False)
 
 	@property
 	def LglMndtBsis(self):
@@ -71,12 +71,12 @@ class InformationRequestOpeningV02(base_types._BaseFieldType):
 
 	@LglMndtBsis.setter
 	def LglMndtBsis(self, value):
-		self._LglMndtBsis = value if type(value) != base_types.auto else self.make_default("LglMndtBsis")
+		self._LglMndtBsis = value if value is not None else base_types.UninitialisedField(self, 'LglMndtBsis', LegalMandate1, False)
 
 	@LglMndtBsis.deleter
 	def LglMndtBsis(self):
 		del self._LglMndtBsis
-		self._LglMndtBsis = None
+		self._LglMndtBsis = base_types.UninitialisedField(self, 'LglMndtBsis', LegalMandate1, False)
 
 	@property
 	def SchCrit(self):
@@ -84,12 +84,12 @@ class InformationRequestOpeningV02(base_types._BaseFieldType):
 
 	@SchCrit.setter
 	def SchCrit(self, value):
-		self._SchCrit = value if type(value) != base_types.auto else self.make_default("SchCrit")
+		self._SchCrit = value if value is not None else base_types.UninitialisedField(self, 'SchCrit', SearchCriteria2Choice, False)
 
 	@SchCrit.deleter
 	def SchCrit(self):
 		del self._SchCrit
-		self._SchCrit = None
+		self._SchCrit = base_types.UninitialisedField(self, 'SchCrit', SearchCriteria2Choice, False)
 
 	@property
 	def SplmtryData(self):
@@ -97,12 +97,12 @@ class InformationRequestOpeningV02(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CnfdtltySts', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RestrictedFINImpliedCurrencyAndAmount import RestrictedFINImpliedCurrencyAndAmount
+from . import RestrictedFINImpliedCurrencyAndAmount
 
 class CorporateActionAmounts80(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class CorporateActionAmounts80(base_types._BaseFieldType):
 
 	@DpstryClldAmt.setter
 	def DpstryClldAmt(self, value):
-		self._DpstryClldAmt = value if type(value) != base_types.auto else self.make_default("DpstryClldAmt")
+		self._DpstryClldAmt = value if value is not None else base_types.UninitialisedField(self, 'DpstryClldAmt', RestrictedFINImpliedCurrencyAndAmount, False)
 
 	@DpstryClldAmt.deleter
 	def DpstryClldAmt(self):
 		del self._DpstryClldAmt
-		self._DpstryClldAmt = None
+		self._DpstryClldAmt = base_types.UninitialisedField(self, 'DpstryClldAmt', RestrictedFINImpliedCurrencyAndAmount, False)
 
 	@property
 	def NonRfnddAmt(self):
@@ -26,12 +26,12 @@ class CorporateActionAmounts80(base_types._BaseFieldType):
 
 	@NonRfnddAmt.setter
 	def NonRfnddAmt(self, value):
-		self._NonRfnddAmt = value if type(value) != base_types.auto else self.make_default("NonRfnddAmt")
+		self._NonRfnddAmt = value if value is not None else base_types.UninitialisedField(self, 'NonRfnddAmt', RestrictedFINImpliedCurrencyAndAmount, False)
 
 	@NonRfnddAmt.deleter
 	def NonRfnddAmt(self):
 		del self._NonRfnddAmt
-		self._NonRfnddAmt = None
+		self._NonRfnddAmt = base_types.UninitialisedField(self, 'NonRfnddAmt', RestrictedFINImpliedCurrencyAndAmount, False)
 
 	@property
 	def RfnddAmt(self):
@@ -39,12 +39,12 @@ class CorporateActionAmounts80(base_types._BaseFieldType):
 
 	@RfnddAmt.setter
 	def RfnddAmt(self, value):
-		self._RfnddAmt = value if type(value) != base_types.auto else self.make_default("RfnddAmt")
+		self._RfnddAmt = value if value is not None else base_types.UninitialisedField(self, 'RfnddAmt', RestrictedFINImpliedCurrencyAndAmount, False)
 
 	@RfnddAmt.deleter
 	def RfnddAmt(self):
 		del self._RfnddAmt
-		self._RfnddAmt = None
+		self._RfnddAmt = base_types.UninitialisedField(self, 'RfnddAmt', RestrictedFINImpliedCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DpstryClldAmt', type=RestrictedFINImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SafekeepingPlaceFormat42Choice import SafekeepingPlaceFormat42Choice
-from ._SecuritiesEntryType2Code import SecuritiesEntryType2Code
-from ._SignedQuantityFormat15 import SignedQuantityFormat15
+from . import SafekeepingPlaceFormat42Choice
+from . import SecuritiesEntryType2Code
+from . import SignedQuantityFormat15
 
 class HoldingBalance15(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class HoldingBalance15(base_types._BaseFieldType):
 
 	@Bal.setter
 	def Bal(self, value):
-		self._Bal = value if type(value) != base_types.auto else self.make_default("Bal")
+		self._Bal = value if value is not None else base_types.UninitialisedField(self, 'Bal', SignedQuantityFormat15, False)
 
 	@Bal.deleter
 	def Bal(self):
 		del self._Bal
-		self._Bal = None
+		self._Bal = base_types.UninitialisedField(self, 'Bal', SignedQuantityFormat15, False)
 
 	@property
 	def BalTp(self):
@@ -28,12 +28,12 @@ class HoldingBalance15(base_types._BaseFieldType):
 
 	@BalTp.setter
 	def BalTp(self, value):
-		self._BalTp = value if type(value) != base_types.auto else self.make_default("BalTp")
+		self._BalTp = value if value is not None else base_types.UninitialisedField(self, 'BalTp', SecuritiesEntryType2Code, False)
 
 	@BalTp.deleter
 	def BalTp(self):
 		del self._BalTp
-		self._BalTp = None
+		self._BalTp = base_types.UninitialisedField(self, 'BalTp', SecuritiesEntryType2Code, False)
 
 	@property
 	def SfkpgPlc(self):
@@ -41,12 +41,12 @@ class HoldingBalance15(base_types._BaseFieldType):
 
 	@SfkpgPlc.setter
 	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
+		self._SfkpgPlc = value if value is not None else base_types.UninitialisedField(self, 'SfkpgPlc', SafekeepingPlaceFormat42Choice, False)
 
 	@SfkpgPlc.deleter
 	def SfkpgPlc(self):
 		del self._SfkpgPlc
-		self._SfkpgPlc = None
+		self._SfkpgPlc = base_types.UninitialisedField(self, 'SfkpgPlc', SafekeepingPlaceFormat42Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Bal', type=SignedQuantityFormat15, min=1, max=1, mutex_group=None, array=False),

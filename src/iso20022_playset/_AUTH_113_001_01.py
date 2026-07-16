@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._OrderBookReportV01 import OrderBookReportV01
+from . import OrderBookReportV01
 
 class AUTH_113_001_01():
 
@@ -18,12 +18,12 @@ class AUTH_113_001_01():
 
 		@OrdrBookRpt.setter
 		def OrdrBookRpt(self, value):
-			self._OrdrBookRpt = value if type(value) != base_types.auto else self.make_default("OrdrBookRpt")
+			self._OrdrBookRpt = value if value is not None else base_types.UninitialisedField(self, 'OrdrBookRpt', OrderBookReportV01, False)
 
 		@OrdrBookRpt.deleter
 		def OrdrBookRpt(self):
 			del self._OrdrBookRpt
-			self._OrdrBookRpt = None
+			self._OrdrBookRpt = base_types.UninitialisedField(self, 'OrdrBookRpt', OrderBookReportV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='OrdrBookRpt', type=OrderBookReportV01, min=1, max=1, mutex_group=None, array=False),

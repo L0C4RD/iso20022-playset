@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._HexBinaryText import HexBinaryText
-from ._SHA256SignatureText import SHA256SignatureText
+from . import HexBinaryText
+from . import SHA256SignatureText
 
 class CryptographicKey1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CryptographicKey1Choice(base_types._BaseFieldType):
 
 	@ILPV4.setter
 	def ILPV4(self, value):
-		self._ILPV4 = value if type(value) != base_types.auto else self.make_default("ILPV4")
+		self._ILPV4 = value if value is not None else base_types.UninitialisedField(self, 'ILPV4', HexBinaryText, False)
 
 	@ILPV4.deleter
 	def ILPV4(self):
 		del self._ILPV4
-		self._ILPV4 = None
+		self._ILPV4 = base_types.UninitialisedField(self, 'ILPV4', HexBinaryText, False)
 
 	@property
 	def Sgntr(self):
@@ -27,12 +27,12 @@ class CryptographicKey1Choice(base_types._BaseFieldType):
 
 	@Sgntr.setter
 	def Sgntr(self, value):
-		self._Sgntr = value if type(value) != base_types.auto else self.make_default("Sgntr")
+		self._Sgntr = value if value is not None else base_types.UninitialisedField(self, 'Sgntr', SHA256SignatureText, False)
 
 	@Sgntr.deleter
 	def Sgntr(self):
 		del self._Sgntr
-		self._Sgntr = None
+		self._Sgntr = base_types.UninitialisedField(self, 'Sgntr', SHA256SignatureText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ILPV4', type=HexBinaryText, min=0, max=1, mutex_group=1, array=False),

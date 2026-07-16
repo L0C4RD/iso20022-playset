@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalReference3 import AdditionalReference3
-from ._EstimatedFundCashForecast6 import EstimatedFundCashForecast6
-from ._Extension1 import Extension1
-from ._Fund1 import Fund1
-from ._MessageIdentification1 import MessageIdentification1
-from ._NetCashForecast3 import NetCashForecast3
-from ._Pagination import Pagination
+from . import AdditionalReference3
+from . import EstimatedFundCashForecast6
+from . import Extension1
+from . import Fund1
+from . import MessageIdentification1
+from . import NetCashForecast3
+from . import Pagination
 
 class FundEstimatedCashForecastReportV04(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class FundEstimatedCashForecastReportV04(base_types._BaseFieldType):
 
 	@CnsltdNetCshFcst.setter
 	def CnsltdNetCshFcst(self, value):
-		self._CnsltdNetCshFcst = value if type(value) != base_types.auto else self.make_default("CnsltdNetCshFcst")
+		self._CnsltdNetCshFcst = value if value is not None else base_types.UninitialisedField(self, 'CnsltdNetCshFcst', NetCashForecast3, False)
 
 	@CnsltdNetCshFcst.deleter
 	def CnsltdNetCshFcst(self):
 		del self._CnsltdNetCshFcst
-		self._CnsltdNetCshFcst = None
+		self._CnsltdNetCshFcst = base_types.UninitialisedField(self, 'CnsltdNetCshFcst', NetCashForecast3, False)
 
 	@property
 	def EstmtdFndCshFcstDtls(self):
@@ -32,12 +32,12 @@ class FundEstimatedCashForecastReportV04(base_types._BaseFieldType):
 
 	@EstmtdFndCshFcstDtls.setter
 	def EstmtdFndCshFcstDtls(self, value):
-		self._EstmtdFndCshFcstDtls = value if type(value) != base_types.auto else self.make_default("EstmtdFndCshFcstDtls")
+		self._EstmtdFndCshFcstDtls = value if value is not None else base_types.UninitialisedField(self, 'EstmtdFndCshFcstDtls', EstimatedFundCashForecast6, True)
 
 	@EstmtdFndCshFcstDtls.deleter
 	def EstmtdFndCshFcstDtls(self):
 		del self._EstmtdFndCshFcstDtls
-		self._EstmtdFndCshFcstDtls = None
+		self._EstmtdFndCshFcstDtls = base_types.UninitialisedField(self, 'EstmtdFndCshFcstDtls', EstimatedFundCashForecast6, True)
 
 	@property
 	def FndOrSubFndDtls(self):
@@ -45,12 +45,12 @@ class FundEstimatedCashForecastReportV04(base_types._BaseFieldType):
 
 	@FndOrSubFndDtls.setter
 	def FndOrSubFndDtls(self, value):
-		self._FndOrSubFndDtls = value if type(value) != base_types.auto else self.make_default("FndOrSubFndDtls")
+		self._FndOrSubFndDtls = value if value is not None else base_types.UninitialisedField(self, 'FndOrSubFndDtls', Fund1, True)
 
 	@FndOrSubFndDtls.deleter
 	def FndOrSubFndDtls(self):
 		del self._FndOrSubFndDtls
-		self._FndOrSubFndDtls = None
+		self._FndOrSubFndDtls = base_types.UninitialisedField(self, 'FndOrSubFndDtls', Fund1, True)
 
 	@property
 	def MsgId(self):
@@ -58,12 +58,12 @@ class FundEstimatedCashForecastReportV04(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@property
 	def MsgPgntn(self):
@@ -71,12 +71,12 @@ class FundEstimatedCashForecastReportV04(base_types._BaseFieldType):
 
 	@MsgPgntn.setter
 	def MsgPgntn(self, value):
-		self._MsgPgntn = value if type(value) != base_types.auto else self.make_default("MsgPgntn")
+		self._MsgPgntn = value if value is not None else base_types.UninitialisedField(self, 'MsgPgntn', Pagination, False)
 
 	@MsgPgntn.deleter
 	def MsgPgntn(self):
 		del self._MsgPgntn
-		self._MsgPgntn = None
+		self._MsgPgntn = base_types.UninitialisedField(self, 'MsgPgntn', Pagination, False)
 
 	@property
 	def PoolRef(self):
@@ -84,12 +84,12 @@ class FundEstimatedCashForecastReportV04(base_types._BaseFieldType):
 
 	@PoolRef.setter
 	def PoolRef(self, value):
-		self._PoolRef = value if type(value) != base_types.auto else self.make_default("PoolRef")
+		self._PoolRef = value if value is not None else base_types.UninitialisedField(self, 'PoolRef', AdditionalReference3, False)
 
 	@PoolRef.deleter
 	def PoolRef(self):
 		del self._PoolRef
-		self._PoolRef = None
+		self._PoolRef = base_types.UninitialisedField(self, 'PoolRef', AdditionalReference3, False)
 
 	@property
 	def PrvsRef(self):
@@ -97,12 +97,12 @@ class FundEstimatedCashForecastReportV04(base_types._BaseFieldType):
 
 	@PrvsRef.setter
 	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
+		self._PrvsRef = value if value is not None else base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference3, True)
 
 	@PrvsRef.deleter
 	def PrvsRef(self):
 		del self._PrvsRef
-		self._PrvsRef = None
+		self._PrvsRef = base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference3, True)
 
 	@property
 	def RltdRef(self):
@@ -110,12 +110,12 @@ class FundEstimatedCashForecastReportV04(base_types._BaseFieldType):
 
 	@RltdRef.setter
 	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
+		self._RltdRef = value if value is not None else base_types.UninitialisedField(self, 'RltdRef', AdditionalReference3, True)
 
 	@RltdRef.deleter
 	def RltdRef(self):
 		del self._RltdRef
-		self._RltdRef = None
+		self._RltdRef = base_types.UninitialisedField(self, 'RltdRef', AdditionalReference3, True)
 
 	@property
 	def Xtnsn(self):
@@ -123,12 +123,12 @@ class FundEstimatedCashForecastReportV04(base_types._BaseFieldType):
 
 	@Xtnsn.setter
 	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
+		self._Xtnsn = value if value is not None else base_types.UninitialisedField(self, 'Xtnsn', Extension1, True)
 
 	@Xtnsn.deleter
 	def Xtnsn(self):
 		del self._Xtnsn
-		self._Xtnsn = None
+		self._Xtnsn = base_types.UninitialisedField(self, 'Xtnsn', Extension1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CnsltdNetCshFcst', type=NetCashForecast3, min=0, max=1, mutex_group=None, array=False),

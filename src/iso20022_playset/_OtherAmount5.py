@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CreditDebit3Code import CreditDebit3Code
-from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Number import Number
+from . import CreditDebit3Code
+from . import ISO3NumericCurrencyCode
+from . import ImpliedCurrencyAndAmount
+from . import Number
 
 class OtherAmount5(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class OtherAmount5(base_types._BaseFieldType):
 
 	@AgtFeeAmt.setter
 	def AgtFeeAmt(self, value):
-		self._AgtFeeAmt = value if type(value) != base_types.auto else self.make_default("AgtFeeAmt")
+		self._AgtFeeAmt = value if value is not None else base_types.UninitialisedField(self, 'AgtFeeAmt', ImpliedCurrencyAndAmount, False)
 
 	@AgtFeeAmt.deleter
 	def AgtFeeAmt(self):
 		del self._AgtFeeAmt
-		self._AgtFeeAmt = None
+		self._AgtFeeAmt = base_types.UninitialisedField(self, 'AgtFeeAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def AgtFeeCcy(self):
@@ -29,12 +29,12 @@ class OtherAmount5(base_types._BaseFieldType):
 
 	@AgtFeeCcy.setter
 	def AgtFeeCcy(self, value):
-		self._AgtFeeCcy = value if type(value) != base_types.auto else self.make_default("AgtFeeCcy")
+		self._AgtFeeCcy = value if value is not None else base_types.UninitialisedField(self, 'AgtFeeCcy', ISO3NumericCurrencyCode, False)
 
 	@AgtFeeCcy.deleter
 	def AgtFeeCcy(self):
 		del self._AgtFeeCcy
-		self._AgtFeeCcy = None
+		self._AgtFeeCcy = base_types.UninitialisedField(self, 'AgtFeeCcy', ISO3NumericCurrencyCode, False)
 
 	@property
 	def AgtFeeCdtDbt(self):
@@ -42,12 +42,12 @@ class OtherAmount5(base_types._BaseFieldType):
 
 	@AgtFeeCdtDbt.setter
 	def AgtFeeCdtDbt(self, value):
-		self._AgtFeeCdtDbt = value if type(value) != base_types.auto else self.make_default("AgtFeeCdtDbt")
+		self._AgtFeeCdtDbt = value if value is not None else base_types.UninitialisedField(self, 'AgtFeeCdtDbt', CreditDebit3Code, False)
 
 	@AgtFeeCdtDbt.deleter
 	def AgtFeeCdtDbt(self):
 		del self._AgtFeeCdtDbt
-		self._AgtFeeCdtDbt = None
+		self._AgtFeeCdtDbt = base_types.UninitialisedField(self, 'AgtFeeCdtDbt', CreditDebit3Code, False)
 
 	@property
 	def ClrAmt(self):
@@ -55,12 +55,12 @@ class OtherAmount5(base_types._BaseFieldType):
 
 	@ClrAmt.setter
 	def ClrAmt(self, value):
-		self._ClrAmt = value if type(value) != base_types.auto else self.make_default("ClrAmt")
+		self._ClrAmt = value if value is not None else base_types.UninitialisedField(self, 'ClrAmt', ImpliedCurrencyAndAmount, False)
 
 	@ClrAmt.deleter
 	def ClrAmt(self):
 		del self._ClrAmt
-		self._ClrAmt = None
+		self._ClrAmt = base_types.UninitialisedField(self, 'ClrAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def ClrCcy(self):
@@ -68,12 +68,12 @@ class OtherAmount5(base_types._BaseFieldType):
 
 	@ClrCcy.setter
 	def ClrCcy(self, value):
-		self._ClrCcy = value if type(value) != base_types.auto else self.make_default("ClrCcy")
+		self._ClrCcy = value if value is not None else base_types.UninitialisedField(self, 'ClrCcy', ISO3NumericCurrencyCode, False)
 
 	@ClrCcy.deleter
 	def ClrCcy(self):
 		del self._ClrCcy
-		self._ClrCcy = None
+		self._ClrCcy = base_types.UninitialisedField(self, 'ClrCcy', ISO3NumericCurrencyCode, False)
 
 	@property
 	def ClrCdtDbt(self):
@@ -81,12 +81,12 @@ class OtherAmount5(base_types._BaseFieldType):
 
 	@ClrCdtDbt.setter
 	def ClrCdtDbt(self, value):
-		self._ClrCdtDbt = value if type(value) != base_types.auto else self.make_default("ClrCdtDbt")
+		self._ClrCdtDbt = value if value is not None else base_types.UninitialisedField(self, 'ClrCdtDbt', CreditDebit3Code, False)
 
 	@ClrCdtDbt.deleter
 	def ClrCdtDbt(self):
 		del self._ClrCdtDbt
-		self._ClrCdtDbt = None
+		self._ClrCdtDbt = base_types.UninitialisedField(self, 'ClrCdtDbt', CreditDebit3Code, False)
 
 	@property
 	def ClrCnt(self):
@@ -94,12 +94,12 @@ class OtherAmount5(base_types._BaseFieldType):
 
 	@ClrCnt.setter
 	def ClrCnt(self, value):
-		self._ClrCnt = value if type(value) != base_types.auto else self.make_default("ClrCnt")
+		self._ClrCnt = value if value is not None else base_types.UninitialisedField(self, 'ClrCnt', Number, False)
 
 	@ClrCnt.deleter
 	def ClrCnt(self):
 		del self._ClrCnt
-		self._ClrCnt = None
+		self._ClrCnt = base_types.UninitialisedField(self, 'ClrCnt', Number, False)
 
 	@property
 	def IntrchngFeeAmt(self):
@@ -107,12 +107,12 @@ class OtherAmount5(base_types._BaseFieldType):
 
 	@IntrchngFeeAmt.setter
 	def IntrchngFeeAmt(self, value):
-		self._IntrchngFeeAmt = value if type(value) != base_types.auto else self.make_default("IntrchngFeeAmt")
+		self._IntrchngFeeAmt = value if value is not None else base_types.UninitialisedField(self, 'IntrchngFeeAmt', ImpliedCurrencyAndAmount, False)
 
 	@IntrchngFeeAmt.deleter
 	def IntrchngFeeAmt(self):
 		del self._IntrchngFeeAmt
-		self._IntrchngFeeAmt = None
+		self._IntrchngFeeAmt = base_types.UninitialisedField(self, 'IntrchngFeeAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def IntrchngFeeCcy(self):
@@ -120,12 +120,12 @@ class OtherAmount5(base_types._BaseFieldType):
 
 	@IntrchngFeeCcy.setter
 	def IntrchngFeeCcy(self, value):
-		self._IntrchngFeeCcy = value if type(value) != base_types.auto else self.make_default("IntrchngFeeCcy")
+		self._IntrchngFeeCcy = value if value is not None else base_types.UninitialisedField(self, 'IntrchngFeeCcy', ISO3NumericCurrencyCode, False)
 
 	@IntrchngFeeCcy.deleter
 	def IntrchngFeeCcy(self):
 		del self._IntrchngFeeCcy
-		self._IntrchngFeeCcy = None
+		self._IntrchngFeeCcy = base_types.UninitialisedField(self, 'IntrchngFeeCcy', ISO3NumericCurrencyCode, False)
 
 	@property
 	def IntrchngFeeCdtDbt(self):
@@ -133,12 +133,12 @@ class OtherAmount5(base_types._BaseFieldType):
 
 	@IntrchngFeeCdtDbt.setter
 	def IntrchngFeeCdtDbt(self, value):
-		self._IntrchngFeeCdtDbt = value if type(value) != base_types.auto else self.make_default("IntrchngFeeCdtDbt")
+		self._IntrchngFeeCdtDbt = value if value is not None else base_types.UninitialisedField(self, 'IntrchngFeeCdtDbt', CreditDebit3Code, False)
 
 	@IntrchngFeeCdtDbt.deleter
 	def IntrchngFeeCdtDbt(self):
 		del self._IntrchngFeeCdtDbt
-		self._IntrchngFeeCdtDbt = None
+		self._IntrchngFeeCdtDbt = base_types.UninitialisedField(self, 'IntrchngFeeCdtDbt', CreditDebit3Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AgtFeeAmt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

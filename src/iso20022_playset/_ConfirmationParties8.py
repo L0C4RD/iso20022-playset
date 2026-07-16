@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ConfirmationPartyDetails12 import ConfirmationPartyDetails12
-from ._ConfirmationPartyDetails14 import ConfirmationPartyDetails14
-from ._ConfirmationPartyDetails15 import ConfirmationPartyDetails15
+from . import ConfirmationPartyDetails12
+from . import ConfirmationPartyDetails14
+from . import ConfirmationPartyDetails15
 
 class ConfirmationParties8(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ConfirmationParties8(base_types._BaseFieldType):
 
 	@AffrmgPty.setter
 	def AffrmgPty(self, value):
-		self._AffrmgPty = value if type(value) != base_types.auto else self.make_default("AffrmgPty")
+		self._AffrmgPty = value if value is not None else base_types.UninitialisedField(self, 'AffrmgPty', ConfirmationPartyDetails15, False)
 
 	@AffrmgPty.deleter
 	def AffrmgPty(self):
 		del self._AffrmgPty
-		self._AffrmgPty = None
+		self._AffrmgPty = base_types.UninitialisedField(self, 'AffrmgPty', ConfirmationPartyDetails15, False)
 
 	@property
 	def Brrwr(self):
@@ -28,12 +28,12 @@ class ConfirmationParties8(base_types._BaseFieldType):
 
 	@Brrwr.setter
 	def Brrwr(self, value):
-		self._Brrwr = value if type(value) != base_types.auto else self.make_default("Brrwr")
+		self._Brrwr = value if value is not None else base_types.UninitialisedField(self, 'Brrwr', ConfirmationPartyDetails12, False)
 
 	@Brrwr.deleter
 	def Brrwr(self):
 		del self._Brrwr
-		self._Brrwr = None
+		self._Brrwr = base_types.UninitialisedField(self, 'Brrwr', ConfirmationPartyDetails12, False)
 
 	@property
 	def Buyr(self):
@@ -41,12 +41,12 @@ class ConfirmationParties8(base_types._BaseFieldType):
 
 	@Buyr.setter
 	def Buyr(self, value):
-		self._Buyr = value if type(value) != base_types.auto else self.make_default("Buyr")
+		self._Buyr = value if value is not None else base_types.UninitialisedField(self, 'Buyr', ConfirmationPartyDetails12, False)
 
 	@Buyr.deleter
 	def Buyr(self):
 		del self._Buyr
-		self._Buyr = None
+		self._Buyr = base_types.UninitialisedField(self, 'Buyr', ConfirmationPartyDetails12, False)
 
 	@property
 	def Lndr(self):
@@ -54,12 +54,12 @@ class ConfirmationParties8(base_types._BaseFieldType):
 
 	@Lndr.setter
 	def Lndr(self, value):
-		self._Lndr = value if type(value) != base_types.auto else self.make_default("Lndr")
+		self._Lndr = value if value is not None else base_types.UninitialisedField(self, 'Lndr', ConfirmationPartyDetails12, False)
 
 	@Lndr.deleter
 	def Lndr(self):
 		del self._Lndr
-		self._Lndr = None
+		self._Lndr = base_types.UninitialisedField(self, 'Lndr', ConfirmationPartyDetails12, False)
 
 	@property
 	def Sellr(self):
@@ -67,12 +67,12 @@ class ConfirmationParties8(base_types._BaseFieldType):
 
 	@Sellr.setter
 	def Sellr(self, value):
-		self._Sellr = value if type(value) != base_types.auto else self.make_default("Sellr")
+		self._Sellr = value if value is not None else base_types.UninitialisedField(self, 'Sellr', ConfirmationPartyDetails12, False)
 
 	@Sellr.deleter
 	def Sellr(self):
 		del self._Sellr
-		self._Sellr = None
+		self._Sellr = base_types.UninitialisedField(self, 'Sellr', ConfirmationPartyDetails12, False)
 
 	@property
 	def TradBnfcryPty(self):
@@ -80,12 +80,12 @@ class ConfirmationParties8(base_types._BaseFieldType):
 
 	@TradBnfcryPty.setter
 	def TradBnfcryPty(self, value):
-		self._TradBnfcryPty = value if type(value) != base_types.auto else self.make_default("TradBnfcryPty")
+		self._TradBnfcryPty = value if value is not None else base_types.UninitialisedField(self, 'TradBnfcryPty', ConfirmationPartyDetails14, False)
 
 	@TradBnfcryPty.deleter
 	def TradBnfcryPty(self):
 		del self._TradBnfcryPty
-		self._TradBnfcryPty = None
+		self._TradBnfcryPty = base_types.UninitialisedField(self, 'TradBnfcryPty', ConfirmationPartyDetails14, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AffrmgPty', type=ConfirmationPartyDetails15, min=1, max=1, mutex_group=None, array=False),

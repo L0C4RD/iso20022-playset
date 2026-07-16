@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesMarketReportHeader1 import SecuritiesMarketReportHeader1
-from ._SecuritiesReferenceDeltaStatusReport5Choice import SecuritiesReferenceDeltaStatusReport5Choice
-from ._SupplementaryData1 import SupplementaryData1
+from . import SecuritiesMarketReportHeader1
+from . import SecuritiesReferenceDeltaStatusReport5Choice
+from . import SupplementaryData1
 
 class FinancialInstrumentReportingReferenceDataDeltaReportV03(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class FinancialInstrumentReportingReferenceDataDeltaReportV03(base_types._BaseFi
 
 	@FinInstrm.setter
 	def FinInstrm(self, value):
-		self._FinInstrm = value if type(value) != base_types.auto else self.make_default("FinInstrm")
+		self._FinInstrm = value if value is not None else base_types.UninitialisedField(self, 'FinInstrm', SecuritiesReferenceDeltaStatusReport5Choice, True)
 
 	@FinInstrm.deleter
 	def FinInstrm(self):
 		del self._FinInstrm
-		self._FinInstrm = None
+		self._FinInstrm = base_types.UninitialisedField(self, 'FinInstrm', SecuritiesReferenceDeltaStatusReport5Choice, True)
 
 	@property
 	def RptHdr(self):
@@ -28,12 +28,12 @@ class FinancialInstrumentReportingReferenceDataDeltaReportV03(base_types._BaseFi
 
 	@RptHdr.setter
 	def RptHdr(self, value):
-		self._RptHdr = value if type(value) != base_types.auto else self.make_default("RptHdr")
+		self._RptHdr = value if value is not None else base_types.UninitialisedField(self, 'RptHdr', SecuritiesMarketReportHeader1, False)
 
 	@RptHdr.deleter
 	def RptHdr(self):
 		del self._RptHdr
-		self._RptHdr = None
+		self._RptHdr = base_types.UninitialisedField(self, 'RptHdr', SecuritiesMarketReportHeader1, False)
 
 	@property
 	def SplmtryData(self):
@@ -41,12 +41,12 @@ class FinancialInstrumentReportingReferenceDataDeltaReportV03(base_types._BaseFi
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FinInstrm', type=SecuritiesReferenceDeltaStatusReport5Choice, min=0, max=None, mutex_group=None, array=True),

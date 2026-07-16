@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DataModification1Code import DataModification1Code
-from ._SystemPartyModification3Choice import SystemPartyModification3Choice
+from . import DataModification1Code
+from . import SystemPartyModification3Choice
 
 class SystemPartyModification3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SystemPartyModification3(base_types._BaseFieldType):
 
 	@ReqdMod.setter
 	def ReqdMod(self, value):
-		self._ReqdMod = value if type(value) != base_types.auto else self.make_default("ReqdMod")
+		self._ReqdMod = value if value is not None else base_types.UninitialisedField(self, 'ReqdMod', SystemPartyModification3Choice, False)
 
 	@ReqdMod.deleter
 	def ReqdMod(self):
 		del self._ReqdMod
-		self._ReqdMod = None
+		self._ReqdMod = base_types.UninitialisedField(self, 'ReqdMod', SystemPartyModification3Choice, False)
 
 	@property
 	def ScpIndctn(self):
@@ -27,12 +27,12 @@ class SystemPartyModification3(base_types._BaseFieldType):
 
 	@ScpIndctn.setter
 	def ScpIndctn(self, value):
-		self._ScpIndctn = value if type(value) != base_types.auto else self.make_default("ScpIndctn")
+		self._ScpIndctn = value if value is not None else base_types.UninitialisedField(self, 'ScpIndctn', DataModification1Code, False)
 
 	@ScpIndctn.deleter
 	def ScpIndctn(self):
 		del self._ScpIndctn
-		self._ScpIndctn = None
+		self._ScpIndctn = base_types.UninitialisedField(self, 'ScpIndctn', DataModification1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ReqdMod', type=SystemPartyModification3Choice, min=1, max=1, mutex_group=None, array=False),

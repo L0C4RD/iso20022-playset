@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LiquidResources1 import LiquidResources1
-from ._SettlementDate6Code import SettlementDate6Code
-from ._StressLiquidResourceRequirement1 import StressLiquidResourceRequirement1
+from . import LiquidResources1
+from . import SettlementDate6Code
+from . import StressLiquidResourceRequirement1
 
 class LiquidityRequiredAndAvailable1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class LiquidityRequiredAndAvailable1(base_types._BaseFieldType):
 
 	@LqdRsrcs.setter
 	def LqdRsrcs(self, value):
-		self._LqdRsrcs = value if type(value) != base_types.auto else self.make_default("LqdRsrcs")
+		self._LqdRsrcs = value if value is not None else base_types.UninitialisedField(self, 'LqdRsrcs', LiquidResources1, False)
 
 	@LqdRsrcs.deleter
 	def LqdRsrcs(self):
 		del self._LqdRsrcs
-		self._LqdRsrcs = None
+		self._LqdRsrcs = base_types.UninitialisedField(self, 'LqdRsrcs', LiquidResources1, False)
 
 	@property
 	def LqdtyHrzn(self):
@@ -28,12 +28,12 @@ class LiquidityRequiredAndAvailable1(base_types._BaseFieldType):
 
 	@LqdtyHrzn.setter
 	def LqdtyHrzn(self, value):
-		self._LqdtyHrzn = value if type(value) != base_types.auto else self.make_default("LqdtyHrzn")
+		self._LqdtyHrzn = value if value is not None else base_types.UninitialisedField(self, 'LqdtyHrzn', SettlementDate6Code, False)
 
 	@LqdtyHrzn.deleter
 	def LqdtyHrzn(self):
 		del self._LqdtyHrzn
-		self._LqdtyHrzn = None
+		self._LqdtyHrzn = base_types.UninitialisedField(self, 'LqdtyHrzn', SettlementDate6Code, False)
 
 	@property
 	def StrssLqdRsrcRqrmnt(self):
@@ -41,12 +41,12 @@ class LiquidityRequiredAndAvailable1(base_types._BaseFieldType):
 
 	@StrssLqdRsrcRqrmnt.setter
 	def StrssLqdRsrcRqrmnt(self, value):
-		self._StrssLqdRsrcRqrmnt = value if type(value) != base_types.auto else self.make_default("StrssLqdRsrcRqrmnt")
+		self._StrssLqdRsrcRqrmnt = value if value is not None else base_types.UninitialisedField(self, 'StrssLqdRsrcRqrmnt', StressLiquidResourceRequirement1, False)
 
 	@StrssLqdRsrcRqrmnt.deleter
 	def StrssLqdRsrcRqrmnt(self):
 		del self._StrssLqdRsrcRqrmnt
-		self._StrssLqdRsrcRqrmnt = None
+		self._StrssLqdRsrcRqrmnt = base_types.UninitialisedField(self, 'StrssLqdRsrcRqrmnt', StressLiquidResourceRequirement1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LqdRsrcs', type=LiquidResources1, min=1, max=1, mutex_group=None, array=False),

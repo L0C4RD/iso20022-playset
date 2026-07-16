@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._Exact1NumericText import Exact1NumericText
-from ._Exact2NumericText import Exact2NumericText
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max35Text import Max35Text
+from . import ATICALaxProcessing
+from . import Exact1NumericText
+from . import Exact2NumericText
+from . import ImpliedCurrencyAndAmount
+from . import Max35Text
 
 class RecurringPaymentData1(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class RecurringPaymentData1(base_types._BaseFieldType):
 
 	@Frqcy.setter
 	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
+		self._Frqcy = value if value is not None else base_types.UninitialisedField(self, 'Frqcy', Exact2NumericText, False)
 
 	@Frqcy.deleter
 	def Frqcy(self):
 		del self._Frqcy
-		self._Frqcy = None
+		self._Frqcy = base_types.UninitialisedField(self, 'Frqcy', Exact2NumericText, False)
 
 	@property
 	def MaxRcrngPmtAmt(self):
@@ -30,12 +30,12 @@ class RecurringPaymentData1(base_types._BaseFieldType):
 
 	@MaxRcrngPmtAmt.setter
 	def MaxRcrngPmtAmt(self, value):
-		self._MaxRcrngPmtAmt = value if type(value) != base_types.auto else self.make_default("MaxRcrngPmtAmt")
+		self._MaxRcrngPmtAmt = value if value is not None else base_types.UninitialisedField(self, 'MaxRcrngPmtAmt', ImpliedCurrencyAndAmount, False)
 
 	@MaxRcrngPmtAmt.deleter
 	def MaxRcrngPmtAmt(self):
 		del self._MaxRcrngPmtAmt
-		self._MaxRcrngPmtAmt = None
+		self._MaxRcrngPmtAmt = base_types.UninitialisedField(self, 'MaxRcrngPmtAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def NbOfRcrngPmt(self):
@@ -43,12 +43,12 @@ class RecurringPaymentData1(base_types._BaseFieldType):
 
 	@NbOfRcrngPmt.setter
 	def NbOfRcrngPmt(self, value):
-		self._NbOfRcrngPmt = value if type(value) != base_types.auto else self.make_default("NbOfRcrngPmt")
+		self._NbOfRcrngPmt = value if value is not None else base_types.UninitialisedField(self, 'NbOfRcrngPmt', Exact2NumericText, False)
 
 	@NbOfRcrngPmt.deleter
 	def NbOfRcrngPmt(self):
 		del self._NbOfRcrngPmt
-		self._NbOfRcrngPmt = None
+		self._NbOfRcrngPmt = base_types.UninitialisedField(self, 'NbOfRcrngPmt', Exact2NumericText, False)
 
 	@property
 	def NtlData(self):
@@ -56,12 +56,12 @@ class RecurringPaymentData1(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def PerTxAmtInd(self):
@@ -69,12 +69,12 @@ class RecurringPaymentData1(base_types._BaseFieldType):
 
 	@PerTxAmtInd.setter
 	def PerTxAmtInd(self, value):
-		self._PerTxAmtInd = value if type(value) != base_types.auto else self.make_default("PerTxAmtInd")
+		self._PerTxAmtInd = value if value is not None else base_types.UninitialisedField(self, 'PerTxAmtInd', Exact1NumericText, False)
 
 	@PerTxAmtInd.deleter
 	def PerTxAmtInd(self):
 		del self._PerTxAmtInd
-		self._PerTxAmtInd = None
+		self._PerTxAmtInd = base_types.UninitialisedField(self, 'PerTxAmtInd', Exact1NumericText, False)
 
 	@property
 	def PrvtData(self):
@@ -82,12 +82,12 @@ class RecurringPaymentData1(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def RegnRefNb(self):
@@ -95,12 +95,12 @@ class RecurringPaymentData1(base_types._BaseFieldType):
 
 	@RegnRefNb.setter
 	def RegnRefNb(self, value):
-		self._RegnRefNb = value if type(value) != base_types.auto else self.make_default("RegnRefNb")
+		self._RegnRefNb = value if value is not None else base_types.UninitialisedField(self, 'RegnRefNb', Max35Text, False)
 
 	@RegnRefNb.deleter
 	def RegnRefNb(self):
 		del self._RegnRefNb
-		self._RegnRefNb = None
+		self._RegnRefNb = base_types.UninitialisedField(self, 'RegnRefNb', Max35Text, False)
 
 	@property
 	def Tp(self):
@@ -108,12 +108,12 @@ class RecurringPaymentData1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', Exact1NumericText, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', Exact1NumericText, False)
 
 	@property
 	def VldtnInd(self):
@@ -121,12 +121,12 @@ class RecurringPaymentData1(base_types._BaseFieldType):
 
 	@VldtnInd.setter
 	def VldtnInd(self, value):
-		self._VldtnInd = value if type(value) != base_types.auto else self.make_default("VldtnInd")
+		self._VldtnInd = value if value is not None else base_types.UninitialisedField(self, 'VldtnInd', Exact1NumericText, False)
 
 	@VldtnInd.deleter
 	def VldtnInd(self):
 		del self._VldtnInd
-		self._VldtnInd = None
+		self._VldtnInd = base_types.UninitialisedField(self, 'VldtnInd', Exact1NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Frqcy', type=Exact2NumericText, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Max52Text import Max52Text
+from . import Max35Text
+from . import Max52Text
 
 class TransactionIdentifications46(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TransactionIdentifications46(base_types._BaseFieldType):
 
 	@ClntCollInstrId.setter
 	def ClntCollInstrId(self, value):
-		self._ClntCollInstrId = value if type(value) != base_types.auto else self.make_default("ClntCollInstrId")
+		self._ClntCollInstrId = value if value is not None else base_types.UninitialisedField(self, 'ClntCollInstrId', Max35Text, False)
 
 	@ClntCollInstrId.deleter
 	def ClntCollInstrId(self):
 		del self._ClntCollInstrId
-		self._ClntCollInstrId = None
+		self._ClntCollInstrId = base_types.UninitialisedField(self, 'ClntCollInstrId', Max35Text, False)
 
 	@property
 	def ClntCollTxId(self):
@@ -27,12 +27,12 @@ class TransactionIdentifications46(base_types._BaseFieldType):
 
 	@ClntCollTxId.setter
 	def ClntCollTxId(self, value):
-		self._ClntCollTxId = value if type(value) != base_types.auto else self.make_default("ClntCollTxId")
+		self._ClntCollTxId = value if value is not None else base_types.UninitialisedField(self, 'ClntCollTxId', Max35Text, False)
 
 	@ClntCollTxId.deleter
 	def ClntCollTxId(self):
 		del self._ClntCollTxId
-		self._ClntCollTxId = None
+		self._ClntCollTxId = base_types.UninitialisedField(self, 'ClntCollTxId', Max35Text, False)
 
 	@property
 	def CmonTxId(self):
@@ -40,12 +40,12 @@ class TransactionIdentifications46(base_types._BaseFieldType):
 
 	@CmonTxId.setter
 	def CmonTxId(self, value):
-		self._CmonTxId = value if type(value) != base_types.auto else self.make_default("CmonTxId")
+		self._CmonTxId = value if value is not None else base_types.UninitialisedField(self, 'CmonTxId', Max52Text, False)
 
 	@CmonTxId.deleter
 	def CmonTxId(self):
 		del self._CmonTxId
-		self._CmonTxId = None
+		self._CmonTxId = base_types.UninitialisedField(self, 'CmonTxId', Max52Text, False)
 
 	@property
 	def CtrPtyCollTxId(self):
@@ -53,12 +53,12 @@ class TransactionIdentifications46(base_types._BaseFieldType):
 
 	@CtrPtyCollTxId.setter
 	def CtrPtyCollTxId(self, value):
-		self._CtrPtyCollTxId = value if type(value) != base_types.auto else self.make_default("CtrPtyCollTxId")
+		self._CtrPtyCollTxId = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyCollTxId', Max35Text, False)
 
 	@CtrPtyCollTxId.deleter
 	def CtrPtyCollTxId(self):
 		del self._CtrPtyCollTxId
-		self._CtrPtyCollTxId = None
+		self._CtrPtyCollTxId = base_types.UninitialisedField(self, 'CtrPtyCollTxId', Max35Text, False)
 
 	@property
 	def TrptyAgtSvcPrvdrCollInstrId(self):
@@ -66,12 +66,12 @@ class TransactionIdentifications46(base_types._BaseFieldType):
 
 	@TrptyAgtSvcPrvdrCollInstrId.setter
 	def TrptyAgtSvcPrvdrCollInstrId(self, value):
-		self._TrptyAgtSvcPrvdrCollInstrId = value if type(value) != base_types.auto else self.make_default("TrptyAgtSvcPrvdrCollInstrId")
+		self._TrptyAgtSvcPrvdrCollInstrId = value if value is not None else base_types.UninitialisedField(self, 'TrptyAgtSvcPrvdrCollInstrId', Max35Text, False)
 
 	@TrptyAgtSvcPrvdrCollInstrId.deleter
 	def TrptyAgtSvcPrvdrCollInstrId(self):
 		del self._TrptyAgtSvcPrvdrCollInstrId
-		self._TrptyAgtSvcPrvdrCollInstrId = None
+		self._TrptyAgtSvcPrvdrCollInstrId = base_types.UninitialisedField(self, 'TrptyAgtSvcPrvdrCollInstrId', Max35Text, False)
 
 	@property
 	def TrptyAgtSvcPrvdrCollTxId(self):
@@ -79,12 +79,12 @@ class TransactionIdentifications46(base_types._BaseFieldType):
 
 	@TrptyAgtSvcPrvdrCollTxId.setter
 	def TrptyAgtSvcPrvdrCollTxId(self, value):
-		self._TrptyAgtSvcPrvdrCollTxId = value if type(value) != base_types.auto else self.make_default("TrptyAgtSvcPrvdrCollTxId")
+		self._TrptyAgtSvcPrvdrCollTxId = value if value is not None else base_types.UninitialisedField(self, 'TrptyAgtSvcPrvdrCollTxId', Max35Text, False)
 
 	@TrptyAgtSvcPrvdrCollTxId.deleter
 	def TrptyAgtSvcPrvdrCollTxId(self):
 		del self._TrptyAgtSvcPrvdrCollTxId
-		self._TrptyAgtSvcPrvdrCollTxId = None
+		self._TrptyAgtSvcPrvdrCollTxId = base_types.UninitialisedField(self, 'TrptyAgtSvcPrvdrCollTxId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClntCollInstrId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

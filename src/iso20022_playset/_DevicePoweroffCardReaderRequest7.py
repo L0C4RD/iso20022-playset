@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActionMessage12 import ActionMessage12
-from ._Number import Number
+from . import ActionMessage12
+from . import Number
 
 class DevicePoweroffCardReaderRequest7(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DevicePoweroffCardReaderRequest7(base_types._BaseFieldType):
 
 	@DispOutpt.setter
 	def DispOutpt(self, value):
-		self._DispOutpt = value if type(value) != base_types.auto else self.make_default("DispOutpt")
+		self._DispOutpt = value if value is not None else base_types.UninitialisedField(self, 'DispOutpt', ActionMessage12, False)
 
 	@DispOutpt.deleter
 	def DispOutpt(self):
 		del self._DispOutpt
-		self._DispOutpt = None
+		self._DispOutpt = base_types.UninitialisedField(self, 'DispOutpt', ActionMessage12, False)
 
 	@property
 	def PwrOffMaxWtgTm(self):
@@ -27,12 +27,12 @@ class DevicePoweroffCardReaderRequest7(base_types._BaseFieldType):
 
 	@PwrOffMaxWtgTm.setter
 	def PwrOffMaxWtgTm(self, value):
-		self._PwrOffMaxWtgTm = value if type(value) != base_types.auto else self.make_default("PwrOffMaxWtgTm")
+		self._PwrOffMaxWtgTm = value if value is not None else base_types.UninitialisedField(self, 'PwrOffMaxWtgTm', Number, False)
 
 	@PwrOffMaxWtgTm.deleter
 	def PwrOffMaxWtgTm(self):
 		del self._PwrOffMaxWtgTm
-		self._PwrOffMaxWtgTm = None
+		self._PwrOffMaxWtgTm = base_types.UninitialisedField(self, 'PwrOffMaxWtgTm', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DispOutpt', type=ActionMessage12, min=0, max=1, mutex_group=None, array=False),

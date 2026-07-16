@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Balance23 import Balance23
-from ._BalanceAmounts6 import BalanceAmounts6
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._GenericIdentification39 import GenericIdentification39
-from ._Price3 import Price3
-from ._TypeOfPrice32Choice import TypeOfPrice32Choice
+from . import Balance23
+from . import BalanceAmounts6
+from . import DateAndDateTime2Choice
+from . import GenericIdentification39
+from . import Price3
+from . import TypeOfPrice32Choice
 
 class QuantityBreakdown70(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class QuantityBreakdown70(base_types._BaseFieldType):
 
 	@AcctBaseCcyAmts.setter
 	def AcctBaseCcyAmts(self, value):
-		self._AcctBaseCcyAmts = value if type(value) != base_types.auto else self.make_default("AcctBaseCcyAmts")
+		self._AcctBaseCcyAmts = value if value is not None else base_types.UninitialisedField(self, 'AcctBaseCcyAmts', BalanceAmounts6, False)
 
 	@AcctBaseCcyAmts.deleter
 	def AcctBaseCcyAmts(self):
 		del self._AcctBaseCcyAmts
-		self._AcctBaseCcyAmts = None
+		self._AcctBaseCcyAmts = base_types.UninitialisedField(self, 'AcctBaseCcyAmts', BalanceAmounts6, False)
 
 	@property
 	def AltrnRptgCcyAmts(self):
@@ -31,12 +31,12 @@ class QuantityBreakdown70(base_types._BaseFieldType):
 
 	@AltrnRptgCcyAmts.setter
 	def AltrnRptgCcyAmts(self, value):
-		self._AltrnRptgCcyAmts = value if type(value) != base_types.auto else self.make_default("AltrnRptgCcyAmts")
+		self._AltrnRptgCcyAmts = value if value is not None else base_types.UninitialisedField(self, 'AltrnRptgCcyAmts', BalanceAmounts6, False)
 
 	@AltrnRptgCcyAmts.deleter
 	def AltrnRptgCcyAmts(self):
 		del self._AltrnRptgCcyAmts
-		self._AltrnRptgCcyAmts = None
+		self._AltrnRptgCcyAmts = base_types.UninitialisedField(self, 'AltrnRptgCcyAmts', BalanceAmounts6, False)
 
 	@property
 	def InstrmCcyAmts(self):
@@ -44,12 +44,12 @@ class QuantityBreakdown70(base_types._BaseFieldType):
 
 	@InstrmCcyAmts.setter
 	def InstrmCcyAmts(self, value):
-		self._InstrmCcyAmts = value if type(value) != base_types.auto else self.make_default("InstrmCcyAmts")
+		self._InstrmCcyAmts = value if value is not None else base_types.UninitialisedField(self, 'InstrmCcyAmts', BalanceAmounts6, False)
 
 	@InstrmCcyAmts.deleter
 	def InstrmCcyAmts(self):
 		del self._InstrmCcyAmts
-		self._InstrmCcyAmts = None
+		self._InstrmCcyAmts = base_types.UninitialisedField(self, 'InstrmCcyAmts', BalanceAmounts6, False)
 
 	@property
 	def LotDtTm(self):
@@ -57,12 +57,12 @@ class QuantityBreakdown70(base_types._BaseFieldType):
 
 	@LotDtTm.setter
 	def LotDtTm(self, value):
-		self._LotDtTm = value if type(value) != base_types.auto else self.make_default("LotDtTm")
+		self._LotDtTm = value if value is not None else base_types.UninitialisedField(self, 'LotDtTm', DateAndDateTime2Choice, False)
 
 	@LotDtTm.deleter
 	def LotDtTm(self):
 		del self._LotDtTm
-		self._LotDtTm = None
+		self._LotDtTm = base_types.UninitialisedField(self, 'LotDtTm', DateAndDateTime2Choice, False)
 
 	@property
 	def LotNb(self):
@@ -70,12 +70,12 @@ class QuantityBreakdown70(base_types._BaseFieldType):
 
 	@LotNb.setter
 	def LotNb(self, value):
-		self._LotNb = value if type(value) != base_types.auto else self.make_default("LotNb")
+		self._LotNb = value if value is not None else base_types.UninitialisedField(self, 'LotNb', GenericIdentification39, False)
 
 	@LotNb.deleter
 	def LotNb(self):
 		del self._LotNb
-		self._LotNb = None
+		self._LotNb = base_types.UninitialisedField(self, 'LotNb', GenericIdentification39, False)
 
 	@property
 	def LotPric(self):
@@ -83,12 +83,12 @@ class QuantityBreakdown70(base_types._BaseFieldType):
 
 	@LotPric.setter
 	def LotPric(self, value):
-		self._LotPric = value if type(value) != base_types.auto else self.make_default("LotPric")
+		self._LotPric = value if value is not None else base_types.UninitialisedField(self, 'LotPric', Price3, False)
 
 	@LotPric.deleter
 	def LotPric(self):
 		del self._LotPric
-		self._LotPric = None
+		self._LotPric = base_types.UninitialisedField(self, 'LotPric', Price3, False)
 
 	@property
 	def LotQty(self):
@@ -96,12 +96,12 @@ class QuantityBreakdown70(base_types._BaseFieldType):
 
 	@LotQty.setter
 	def LotQty(self, value):
-		self._LotQty = value if type(value) != base_types.auto else self.make_default("LotQty")
+		self._LotQty = value if value is not None else base_types.UninitialisedField(self, 'LotQty', Balance23, False)
 
 	@LotQty.deleter
 	def LotQty(self):
 		del self._LotQty
-		self._LotQty = None
+		self._LotQty = base_types.UninitialisedField(self, 'LotQty', Balance23, False)
 
 	@property
 	def TpOfPric(self):
@@ -109,12 +109,12 @@ class QuantityBreakdown70(base_types._BaseFieldType):
 
 	@TpOfPric.setter
 	def TpOfPric(self, value):
-		self._TpOfPric = value if type(value) != base_types.auto else self.make_default("TpOfPric")
+		self._TpOfPric = value if value is not None else base_types.UninitialisedField(self, 'TpOfPric', TypeOfPrice32Choice, False)
 
 	@TpOfPric.deleter
 	def TpOfPric(self):
 		del self._TpOfPric
-		self._TpOfPric = None
+		self._TpOfPric = base_types.UninitialisedField(self, 'TpOfPric', TypeOfPrice32Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctBaseCcyAmts', type=BalanceAmounts6, min=0, max=1, mutex_group=None, array=False),

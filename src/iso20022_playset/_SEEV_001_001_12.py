@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MeetingNotificationV12 import MeetingNotificationV12
+from . import MeetingNotificationV12
 
 class SEEV_001_001_12():
 
@@ -18,12 +18,12 @@ class SEEV_001_001_12():
 
 		@MtgNtfctn.setter
 		def MtgNtfctn(self, value):
-			self._MtgNtfctn = value if type(value) != base_types.auto else self.make_default("MtgNtfctn")
+			self._MtgNtfctn = value if value is not None else base_types.UninitialisedField(self, 'MtgNtfctn', MeetingNotificationV12, False)
 
 		@MtgNtfctn.deleter
 		def MtgNtfctn(self):
 			del self._MtgNtfctn
-			self._MtgNtfctn = None
+			self._MtgNtfctn = base_types.UninitialisedField(self, 'MtgNtfctn', MeetingNotificationV12, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='MtgNtfctn', type=MeetingNotificationV12, min=1, max=1, mutex_group=None, array=False),

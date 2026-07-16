@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardPaymentEnvironment82 import CardPaymentEnvironment82
-from ._CardPaymentTransaction152 import CardPaymentTransaction152
-from ._CardPaymentTransaction154 import CardPaymentTransaction154
-from ._Max9NumericText import Max9NumericText
-from ._Traceability8 import Traceability8
+from . import CardPaymentEnvironment82
+from . import CardPaymentTransaction152
+from . import CardPaymentTransaction154
+from . import Max9NumericText
+from . import Traceability8
 
 class CardPaymentDataSetTransaction57(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class CardPaymentDataSetTransaction57(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+		self._Envt = value if value is not None else base_types.UninitialisedField(self, 'Envt', CardPaymentEnvironment82, False)
 
 	@Envt.deleter
 	def Envt(self):
 		del self._Envt
-		self._Envt = None
+		self._Envt = base_types.UninitialisedField(self, 'Envt', CardPaymentEnvironment82, False)
 
 	@property
 	def Tracblt(self):
@@ -30,12 +30,12 @@ class CardPaymentDataSetTransaction57(base_types._BaseFieldType):
 
 	@Tracblt.setter
 	def Tracblt(self, value):
-		self._Tracblt = value if type(value) != base_types.auto else self.make_default("Tracblt")
+		self._Tracblt = value if value is not None else base_types.UninitialisedField(self, 'Tracblt', Traceability8, True)
 
 	@Tracblt.deleter
 	def Tracblt(self):
 		del self._Tracblt
-		self._Tracblt = None
+		self._Tracblt = base_types.UninitialisedField(self, 'Tracblt', Traceability8, True)
 
 	@property
 	def Tx(self):
@@ -43,12 +43,12 @@ class CardPaymentDataSetTransaction57(base_types._BaseFieldType):
 
 	@Tx.setter
 	def Tx(self, value):
-		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
+		self._Tx = value if value is not None else base_types.UninitialisedField(self, 'Tx', CardPaymentTransaction154, False)
 
 	@Tx.deleter
 	def Tx(self):
 		del self._Tx
-		self._Tx = None
+		self._Tx = base_types.UninitialisedField(self, 'Tx', CardPaymentTransaction154, False)
 
 	@property
 	def TxRspn(self):
@@ -56,12 +56,12 @@ class CardPaymentDataSetTransaction57(base_types._BaseFieldType):
 
 	@TxRspn.setter
 	def TxRspn(self, value):
-		self._TxRspn = value if type(value) != base_types.auto else self.make_default("TxRspn")
+		self._TxRspn = value if value is not None else base_types.UninitialisedField(self, 'TxRspn', CardPaymentTransaction152, False)
 
 	@TxRspn.deleter
 	def TxRspn(self):
 		del self._TxRspn
-		self._TxRspn = None
+		self._TxRspn = base_types.UninitialisedField(self, 'TxRspn', CardPaymentTransaction152, False)
 
 	@property
 	def TxSeqCntr(self):
@@ -69,12 +69,12 @@ class CardPaymentDataSetTransaction57(base_types._BaseFieldType):
 
 	@TxSeqCntr.setter
 	def TxSeqCntr(self, value):
-		self._TxSeqCntr = value if type(value) != base_types.auto else self.make_default("TxSeqCntr")
+		self._TxSeqCntr = value if value is not None else base_types.UninitialisedField(self, 'TxSeqCntr', Max9NumericText, False)
 
 	@TxSeqCntr.deleter
 	def TxSeqCntr(self):
 		del self._TxSeqCntr
-		self._TxSeqCntr = None
+		self._TxSeqCntr = base_types.UninitialisedField(self, 'TxSeqCntr', Max9NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Envt', type=CardPaymentEnvironment82, min=1, max=1, mutex_group=None, array=False),

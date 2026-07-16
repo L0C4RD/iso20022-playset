@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._GarnishmentType1 import GarnishmentType1
-from ._ISODate import ISODate
-from ._Max140Text import Max140Text
-from ._PartyIdentification272 import PartyIdentification272
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import GarnishmentType1
+from . import ISODate
+from . import Max140Text
+from . import PartyIdentification272
+from . import TrueFalseIndicator
 
 class Garnishment4(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class Garnishment4(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@property
 	def FmlyMdclInsrncInd(self):
@@ -31,12 +31,12 @@ class Garnishment4(base_types._BaseFieldType):
 
 	@FmlyMdclInsrncInd.setter
 	def FmlyMdclInsrncInd(self, value):
-		self._FmlyMdclInsrncInd = value if type(value) != base_types.auto else self.make_default("FmlyMdclInsrncInd")
+		self._FmlyMdclInsrncInd = value if value is not None else base_types.UninitialisedField(self, 'FmlyMdclInsrncInd', TrueFalseIndicator, False)
 
 	@FmlyMdclInsrncInd.deleter
 	def FmlyMdclInsrncInd(self):
 		del self._FmlyMdclInsrncInd
-		self._FmlyMdclInsrncInd = None
+		self._FmlyMdclInsrncInd = base_types.UninitialisedField(self, 'FmlyMdclInsrncInd', TrueFalseIndicator, False)
 
 	@property
 	def Grnshee(self):
@@ -44,12 +44,12 @@ class Garnishment4(base_types._BaseFieldType):
 
 	@Grnshee.setter
 	def Grnshee(self, value):
-		self._Grnshee = value if type(value) != base_types.auto else self.make_default("Grnshee")
+		self._Grnshee = value if value is not None else base_types.UninitialisedField(self, 'Grnshee', PartyIdentification272, False)
 
 	@Grnshee.deleter
 	def Grnshee(self):
 		del self._Grnshee
-		self._Grnshee = None
+		self._Grnshee = base_types.UninitialisedField(self, 'Grnshee', PartyIdentification272, False)
 
 	@property
 	def GrnshmtAdmstr(self):
@@ -57,12 +57,12 @@ class Garnishment4(base_types._BaseFieldType):
 
 	@GrnshmtAdmstr.setter
 	def GrnshmtAdmstr(self, value):
-		self._GrnshmtAdmstr = value if type(value) != base_types.auto else self.make_default("GrnshmtAdmstr")
+		self._GrnshmtAdmstr = value if value is not None else base_types.UninitialisedField(self, 'GrnshmtAdmstr', PartyIdentification272, False)
 
 	@GrnshmtAdmstr.deleter
 	def GrnshmtAdmstr(self):
 		del self._GrnshmtAdmstr
-		self._GrnshmtAdmstr = None
+		self._GrnshmtAdmstr = base_types.UninitialisedField(self, 'GrnshmtAdmstr', PartyIdentification272, False)
 
 	@property
 	def MplyeeTermntnInd(self):
@@ -70,12 +70,12 @@ class Garnishment4(base_types._BaseFieldType):
 
 	@MplyeeTermntnInd.setter
 	def MplyeeTermntnInd(self, value):
-		self._MplyeeTermntnInd = value if type(value) != base_types.auto else self.make_default("MplyeeTermntnInd")
+		self._MplyeeTermntnInd = value if value is not None else base_types.UninitialisedField(self, 'MplyeeTermntnInd', TrueFalseIndicator, False)
 
 	@MplyeeTermntnInd.deleter
 	def MplyeeTermntnInd(self):
 		del self._MplyeeTermntnInd
-		self._MplyeeTermntnInd = None
+		self._MplyeeTermntnInd = base_types.UninitialisedField(self, 'MplyeeTermntnInd', TrueFalseIndicator, False)
 
 	@property
 	def RefNb(self):
@@ -83,12 +83,12 @@ class Garnishment4(base_types._BaseFieldType):
 
 	@RefNb.setter
 	def RefNb(self, value):
-		self._RefNb = value if type(value) != base_types.auto else self.make_default("RefNb")
+		self._RefNb = value if value is not None else base_types.UninitialisedField(self, 'RefNb', Max140Text, False)
 
 	@RefNb.deleter
 	def RefNb(self):
 		del self._RefNb
-		self._RefNb = None
+		self._RefNb = base_types.UninitialisedField(self, 'RefNb', Max140Text, False)
 
 	@property
 	def RmtdAmt(self):
@@ -96,12 +96,12 @@ class Garnishment4(base_types._BaseFieldType):
 
 	@RmtdAmt.setter
 	def RmtdAmt(self, value):
-		self._RmtdAmt = value if type(value) != base_types.auto else self.make_default("RmtdAmt")
+		self._RmtdAmt = value if value is not None else base_types.UninitialisedField(self, 'RmtdAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@RmtdAmt.deleter
 	def RmtdAmt(self):
 		del self._RmtdAmt
-		self._RmtdAmt = None
+		self._RmtdAmt = base_types.UninitialisedField(self, 'RmtdAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def Tp(self):
@@ -109,12 +109,12 @@ class Garnishment4(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', GarnishmentType1, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', GarnishmentType1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=None, array=False),

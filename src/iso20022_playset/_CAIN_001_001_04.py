@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AuthorisationInitiationV04 import AuthorisationInitiationV04
+from . import AuthorisationInitiationV04
 
 class CAIN_001_001_04():
 
@@ -18,12 +18,12 @@ class CAIN_001_001_04():
 
 		@AuthstnInitn.setter
 		def AuthstnInitn(self, value):
-			self._AuthstnInitn = value if type(value) != base_types.auto else self.make_default("AuthstnInitn")
+			self._AuthstnInitn = value if value is not None else base_types.UninitialisedField(self, 'AuthstnInitn', AuthorisationInitiationV04, False)
 
 		@AuthstnInitn.deleter
 		def AuthstnInitn(self):
 			del self._AuthstnInitn
-			self._AuthstnInitn = None
+			self._AuthstnInitn = base_types.UninitialisedField(self, 'AuthstnInitn', AuthorisationInitiationV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AuthstnInitn', type=AuthorisationInitiationV04, min=1, max=1, mutex_group=None, array=False),

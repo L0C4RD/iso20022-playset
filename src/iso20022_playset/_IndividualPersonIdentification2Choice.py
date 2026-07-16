@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification81 import GenericIdentification81
-from ._IndividualPerson30 import IndividualPerson30
+from . import GenericIdentification81
+from . import IndividualPerson30
 
 class IndividualPersonIdentification2Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class IndividualPersonIdentification2Choice(base_types._BaseFieldType):
 
 	@IdNb.setter
 	def IdNb(self, value):
-		self._IdNb = value if type(value) != base_types.auto else self.make_default("IdNb")
+		self._IdNb = value if value is not None else base_types.UninitialisedField(self, 'IdNb', GenericIdentification81, False)
 
 	@IdNb.deleter
 	def IdNb(self):
 		del self._IdNb
-		self._IdNb = None
+		self._IdNb = base_types.UninitialisedField(self, 'IdNb', GenericIdentification81, False)
 
 	@property
 	def PrsnNm(self):
@@ -27,12 +27,12 @@ class IndividualPersonIdentification2Choice(base_types._BaseFieldType):
 
 	@PrsnNm.setter
 	def PrsnNm(self, value):
-		self._PrsnNm = value if type(value) != base_types.auto else self.make_default("PrsnNm")
+		self._PrsnNm = value if value is not None else base_types.UninitialisedField(self, 'PrsnNm', IndividualPerson30, False)
 
 	@PrsnNm.deleter
 	def PrsnNm(self):
 		del self._PrsnNm
-		self._PrsnNm = None
+		self._PrsnNm = base_types.UninitialisedField(self, 'PrsnNm', IndividualPerson30, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IdNb', type=GenericIdentification81, min=0, max=1, mutex_group=1, array=False),

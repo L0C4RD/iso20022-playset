@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._AnnualChargePaymentType1Code import AnnualChargePaymentType1Code
-from ._DistributionPolicy1Code import DistributionPolicy1Code
-from ._DividendPolicy1Code import DividendPolicy1Code
-from ._EUSavingsDirective1Code import EUSavingsDirective1Code
-from ._EventFrequency5Code import EventFrequency5Code
-from ._ISODate import ISODate
-from ._TargetMarket1Code import TargetMarket1Code
-from ._YesNoIndicator import YesNoIndicator
+from . import AdditionalInformation15
+from . import AnnualChargePaymentType1Code
+from . import DistributionPolicy1Code
+from . import DividendPolicy1Code
+from . import EUSavingsDirective1Code
+from . import EventFrequency5Code
+from . import ISODate
+from . import TargetMarket1Code
+from . import YesNoIndicator
 
 class FinancialInstrument96(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class FinancialInstrument96(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@property
 	def Authrsd(self):
@@ -34,12 +34,12 @@ class FinancialInstrument96(base_types._BaseFieldType):
 
 	@Authrsd.setter
 	def Authrsd(self, value):
-		self._Authrsd = value if type(value) != base_types.auto else self.make_default("Authrsd")
+		self._Authrsd = value if value is not None else base_types.UninitialisedField(self, 'Authrsd', YesNoIndicator, False)
 
 	@Authrsd.deleter
 	def Authrsd(self):
 		del self._Authrsd
-		self._Authrsd = None
+		self._Authrsd = base_types.UninitialisedField(self, 'Authrsd', YesNoIndicator, False)
 
 	@property
 	def BckEndLd(self):
@@ -47,12 +47,12 @@ class FinancialInstrument96(base_types._BaseFieldType):
 
 	@BckEndLd.setter
 	def BckEndLd(self, value):
-		self._BckEndLd = value if type(value) != base_types.auto else self.make_default("BckEndLd")
+		self._BckEndLd = value if value is not None else base_types.UninitialisedField(self, 'BckEndLd', YesNoIndicator, False)
 
 	@BckEndLd.deleter
 	def BckEndLd(self):
 		del self._BckEndLd
-		self._BckEndLd = None
+		self._BckEndLd = base_types.UninitialisedField(self, 'BckEndLd', YesNoIndicator, False)
 
 	@property
 	def ClsdEndFnd(self):
@@ -60,12 +60,12 @@ class FinancialInstrument96(base_types._BaseFieldType):
 
 	@ClsdEndFnd.setter
 	def ClsdEndFnd(self, value):
-		self._ClsdEndFnd = value if type(value) != base_types.auto else self.make_default("ClsdEndFnd")
+		self._ClsdEndFnd = value if value is not None else base_types.UninitialisedField(self, 'ClsdEndFnd', YesNoIndicator, False)
 
 	@ClsdEndFnd.deleter
 	def ClsdEndFnd(self):
 		del self._ClsdEndFnd
-		self._ClsdEndFnd = None
+		self._ClsdEndFnd = base_types.UninitialisedField(self, 'ClsdEndFnd', YesNoIndicator, False)
 
 	@property
 	def DmtrlsdBrScties(self):
@@ -73,12 +73,12 @@ class FinancialInstrument96(base_types._BaseFieldType):
 
 	@DmtrlsdBrScties.setter
 	def DmtrlsdBrScties(self, value):
-		self._DmtrlsdBrScties = value if type(value) != base_types.auto else self.make_default("DmtrlsdBrScties")
+		self._DmtrlsdBrScties = value if value is not None else base_types.UninitialisedField(self, 'DmtrlsdBrScties', YesNoIndicator, False)
 
 	@DmtrlsdBrScties.deleter
 	def DmtrlsdBrScties(self):
 		del self._DmtrlsdBrScties
-		self._DmtrlsdBrScties = None
+		self._DmtrlsdBrScties = base_types.UninitialisedField(self, 'DmtrlsdBrScties', YesNoIndicator, False)
 
 	@property
 	def DmtrlsdRegdScties(self):
@@ -86,12 +86,12 @@ class FinancialInstrument96(base_types._BaseFieldType):
 
 	@DmtrlsdRegdScties.setter
 	def DmtrlsdRegdScties(self, value):
-		self._DmtrlsdRegdScties = value if type(value) != base_types.auto else self.make_default("DmtrlsdRegdScties")
+		self._DmtrlsdRegdScties = value if value is not None else base_types.UninitialisedField(self, 'DmtrlsdRegdScties', YesNoIndicator, False)
 
 	@DmtrlsdRegdScties.deleter
 	def DmtrlsdRegdScties(self):
 		del self._DmtrlsdRegdScties
-		self._DmtrlsdRegdScties = None
+		self._DmtrlsdRegdScties = base_types.UninitialisedField(self, 'DmtrlsdRegdScties', YesNoIndicator, False)
 
 	@property
 	def DstrbtnPlcy(self):
@@ -99,12 +99,12 @@ class FinancialInstrument96(base_types._BaseFieldType):
 
 	@DstrbtnPlcy.setter
 	def DstrbtnPlcy(self, value):
-		self._DstrbtnPlcy = value if type(value) != base_types.auto else self.make_default("DstrbtnPlcy")
+		self._DstrbtnPlcy = value if value is not None else base_types.UninitialisedField(self, 'DstrbtnPlcy', DistributionPolicy1Code, False)
 
 	@DstrbtnPlcy.deleter
 	def DstrbtnPlcy(self):
 		del self._DstrbtnPlcy
-		self._DstrbtnPlcy = None
+		self._DstrbtnPlcy = base_types.UninitialisedField(self, 'DstrbtnPlcy', DistributionPolicy1Code, False)
 
 	@property
 	def DvddFrqcy(self):
@@ -112,12 +112,12 @@ class FinancialInstrument96(base_types._BaseFieldType):
 
 	@DvddFrqcy.setter
 	def DvddFrqcy(self, value):
-		self._DvddFrqcy = value if type(value) != base_types.auto else self.make_default("DvddFrqcy")
+		self._DvddFrqcy = value if value is not None else base_types.UninitialisedField(self, 'DvddFrqcy', EventFrequency5Code, False)
 
 	@DvddFrqcy.deleter
 	def DvddFrqcy(self):
 		del self._DvddFrqcy
-		self._DvddFrqcy = None
+		self._DvddFrqcy = base_types.UninitialisedField(self, 'DvddFrqcy', EventFrequency5Code, False)
 
 	@property
 	def DvddPlcy(self):
@@ -125,12 +125,12 @@ class FinancialInstrument96(base_types._BaseFieldType):
 
 	@DvddPlcy.setter
 	def DvddPlcy(self, value):
-		self._DvddPlcy = value if type(value) != base_types.auto else self.make_default("DvddPlcy")
+		self._DvddPlcy = value if value is not None else base_types.UninitialisedField(self, 'DvddPlcy', DividendPolicy1Code, False)
 
 	@DvddPlcy.deleter
 	def DvddPlcy(self):
 		del self._DvddPlcy
-		self._DvddPlcy = None
+		self._DvddPlcy = base_types.UninitialisedField(self, 'DvddPlcy', DividendPolicy1Code, False)
 
 	@property
 	def EUSvgsDrctv(self):
@@ -138,12 +138,12 @@ class FinancialInstrument96(base_types._BaseFieldType):
 
 	@EUSvgsDrctv.setter
 	def EUSvgsDrctv(self, value):
-		self._EUSvgsDrctv = value if type(value) != base_types.auto else self.make_default("EUSvgsDrctv")
+		self._EUSvgsDrctv = value if value is not None else base_types.UninitialisedField(self, 'EUSvgsDrctv', EUSavingsDirective1Code, False)
 
 	@EUSvgsDrctv.deleter
 	def EUSvgsDrctv(self):
 		del self._EUSvgsDrctv
-		self._EUSvgsDrctv = None
+		self._EUSvgsDrctv = base_types.UninitialisedField(self, 'EUSvgsDrctv', EUSavingsDirective1Code, False)
 
 	@property
 	def Equlstn(self):
@@ -151,12 +151,12 @@ class FinancialInstrument96(base_types._BaseFieldType):
 
 	@Equlstn.setter
 	def Equlstn(self, value):
-		self._Equlstn = value if type(value) != base_types.auto else self.make_default("Equlstn")
+		self._Equlstn = value if value is not None else base_types.UninitialisedField(self, 'Equlstn', YesNoIndicator, False)
 
 	@Equlstn.deleter
 	def Equlstn(self):
 		del self._Equlstn
-		self._Equlstn = None
+		self._Equlstn = base_types.UninitialisedField(self, 'Equlstn', YesNoIndicator, False)
 
 	@property
 	def FndEndDt(self):
@@ -164,12 +164,12 @@ class FinancialInstrument96(base_types._BaseFieldType):
 
 	@FndEndDt.setter
 	def FndEndDt(self, value):
-		self._FndEndDt = value if type(value) != base_types.auto else self.make_default("FndEndDt")
+		self._FndEndDt = value if value is not None else base_types.UninitialisedField(self, 'FndEndDt', ISODate, False)
 
 	@FndEndDt.deleter
 	def FndEndDt(self):
 		del self._FndEndDt
-		self._FndEndDt = None
+		self._FndEndDt = base_types.UninitialisedField(self, 'FndEndDt', ISODate, False)
 
 	@property
 	def FrntEndLd(self):
@@ -177,12 +177,12 @@ class FinancialInstrument96(base_types._BaseFieldType):
 
 	@FrntEndLd.setter
 	def FrntEndLd(self, value):
-		self._FrntEndLd = value if type(value) != base_types.auto else self.make_default("FrntEndLd")
+		self._FrntEndLd = value if value is not None else base_types.UninitialisedField(self, 'FrntEndLd', YesNoIndicator, False)
 
 	@FrntEndLd.deleter
 	def FrntEndLd(self):
 		del self._FrntEndLd
-		self._FrntEndLd = None
+		self._FrntEndLd = base_types.UninitialisedField(self, 'FrntEndLd', YesNoIndicator, False)
 
 	@property
 	def InitlOfferEndDt(self):
@@ -190,12 +190,12 @@ class FinancialInstrument96(base_types._BaseFieldType):
 
 	@InitlOfferEndDt.setter
 	def InitlOfferEndDt(self, value):
-		self._InitlOfferEndDt = value if type(value) != base_types.auto else self.make_default("InitlOfferEndDt")
+		self._InitlOfferEndDt = value if value is not None else base_types.UninitialisedField(self, 'InitlOfferEndDt', ISODate, False)
 
 	@InitlOfferEndDt.deleter
 	def InitlOfferEndDt(self):
 		del self._InitlOfferEndDt
-		self._InitlOfferEndDt = None
+		self._InitlOfferEndDt = base_types.UninitialisedField(self, 'InitlOfferEndDt', ISODate, False)
 
 	@property
 	def LnchDt(self):
@@ -203,12 +203,12 @@ class FinancialInstrument96(base_types._BaseFieldType):
 
 	@LnchDt.setter
 	def LnchDt(self, value):
-		self._LnchDt = value if type(value) != base_types.auto else self.make_default("LnchDt")
+		self._LnchDt = value if value is not None else base_types.UninitialisedField(self, 'LnchDt', ISODate, False)
 
 	@LnchDt.deleter
 	def LnchDt(self):
 		del self._LnchDt
-		self._LnchDt = None
+		self._LnchDt = base_types.UninitialisedField(self, 'LnchDt', ISODate, False)
 
 	@property
 	def MayBeTermntdEarly(self):
@@ -216,12 +216,12 @@ class FinancialInstrument96(base_types._BaseFieldType):
 
 	@MayBeTermntdEarly.setter
 	def MayBeTermntdEarly(self, value):
-		self._MayBeTermntdEarly = value if type(value) != base_types.auto else self.make_default("MayBeTermntdEarly")
+		self._MayBeTermntdEarly = value if value is not None else base_types.UninitialisedField(self, 'MayBeTermntdEarly', TargetMarket1Code, False)
 
 	@MayBeTermntdEarly.deleter
 	def MayBeTermntdEarly(self):
 		del self._MayBeTermntdEarly
-		self._MayBeTermntdEarly = None
+		self._MayBeTermntdEarly = base_types.UninitialisedField(self, 'MayBeTermntdEarly', TargetMarket1Code, False)
 
 	@property
 	def MgmtFeeSrc(self):
@@ -229,12 +229,12 @@ class FinancialInstrument96(base_types._BaseFieldType):
 
 	@MgmtFeeSrc.setter
 	def MgmtFeeSrc(self, value):
-		self._MgmtFeeSrc = value if type(value) != base_types.auto else self.make_default("MgmtFeeSrc")
+		self._MgmtFeeSrc = value if value is not None else base_types.UninitialisedField(self, 'MgmtFeeSrc', AnnualChargePaymentType1Code, False)
 
 	@MgmtFeeSrc.deleter
 	def MgmtFeeSrc(self):
 		del self._MgmtFeeSrc
-		self._MgmtFeeSrc = None
+		self._MgmtFeeSrc = base_types.UninitialisedField(self, 'MgmtFeeSrc', AnnualChargePaymentType1Code, False)
 
 	@property
 	def MtrtyDt(self):
@@ -242,12 +242,12 @@ class FinancialInstrument96(base_types._BaseFieldType):
 
 	@MtrtyDt.setter
 	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != base_types.auto else self.make_default("MtrtyDt")
+		self._MtrtyDt = value if value is not None else base_types.UninitialisedField(self, 'MtrtyDt', ISODate, False)
 
 	@MtrtyDt.deleter
 	def MtrtyDt(self):
 		del self._MtrtyDt
-		self._MtrtyDt = None
+		self._MtrtyDt = base_types.UninitialisedField(self, 'MtrtyDt', ISODate, False)
 
 	@property
 	def PhysBrScties(self):
@@ -255,12 +255,12 @@ class FinancialInstrument96(base_types._BaseFieldType):
 
 	@PhysBrScties.setter
 	def PhysBrScties(self, value):
-		self._PhysBrScties = value if type(value) != base_types.auto else self.make_default("PhysBrScties")
+		self._PhysBrScties = value if value is not None else base_types.UninitialisedField(self, 'PhysBrScties', YesNoIndicator, False)
 
 	@PhysBrScties.deleter
 	def PhysBrScties(self):
 		del self._PhysBrScties
-		self._PhysBrScties = None
+		self._PhysBrScties = base_types.UninitialisedField(self, 'PhysBrScties', YesNoIndicator, False)
 
 	@property
 	def PhysRegdScties(self):
@@ -268,12 +268,12 @@ class FinancialInstrument96(base_types._BaseFieldType):
 
 	@PhysRegdScties.setter
 	def PhysRegdScties(self, value):
-		self._PhysRegdScties = value if type(value) != base_types.auto else self.make_default("PhysRegdScties")
+		self._PhysRegdScties = value if value is not None else base_types.UninitialisedField(self, 'PhysRegdScties', YesNoIndicator, False)
 
 	@PhysRegdScties.deleter
 	def PhysRegdScties(self):
 		del self._PhysRegdScties
-		self._PhysRegdScties = None
+		self._PhysRegdScties = base_types.UninitialisedField(self, 'PhysRegdScties', YesNoIndicator, False)
 
 	@property
 	def PrfrmncFee(self):
@@ -281,12 +281,12 @@ class FinancialInstrument96(base_types._BaseFieldType):
 
 	@PrfrmncFee.setter
 	def PrfrmncFee(self, value):
-		self._PrfrmncFee = value if type(value) != base_types.auto else self.make_default("PrfrmncFee")
+		self._PrfrmncFee = value if value is not None else base_types.UninitialisedField(self, 'PrfrmncFee', YesNoIndicator, False)
 
 	@PrfrmncFee.deleter
 	def PrfrmncFee(self):
 		del self._PrfrmncFee
-		self._PrfrmncFee = None
+		self._PrfrmncFee = base_types.UninitialisedField(self, 'PrfrmncFee', YesNoIndicator, False)
 
 	@property
 	def RDRCmplnt(self):
@@ -294,12 +294,12 @@ class FinancialInstrument96(base_types._BaseFieldType):
 
 	@RDRCmplnt.setter
 	def RDRCmplnt(self, value):
-		self._RDRCmplnt = value if type(value) != base_types.auto else self.make_default("RDRCmplnt")
+		self._RDRCmplnt = value if value is not None else base_types.UninitialisedField(self, 'RDRCmplnt', YesNoIndicator, False)
 
 	@RDRCmplnt.deleter
 	def RDRCmplnt(self):
 		del self._RDRCmplnt
-		self._RDRCmplnt = None
+		self._RDRCmplnt = base_types.UninitialisedField(self, 'RDRCmplnt', YesNoIndicator, False)
 
 	@property
 	def RinvstmtFrqcy(self):
@@ -307,12 +307,12 @@ class FinancialInstrument96(base_types._BaseFieldType):
 
 	@RinvstmtFrqcy.setter
 	def RinvstmtFrqcy(self, value):
-		self._RinvstmtFrqcy = value if type(value) != base_types.auto else self.make_default("RinvstmtFrqcy")
+		self._RinvstmtFrqcy = value if value is not None else base_types.UninitialisedField(self, 'RinvstmtFrqcy', EventFrequency5Code, False)
 
 	@RinvstmtFrqcy.deleter
 	def RinvstmtFrqcy(self):
 		del self._RinvstmtFrqcy
-		self._RinvstmtFrqcy = None
+		self._RinvstmtFrqcy = base_types.UninitialisedField(self, 'RinvstmtFrqcy', EventFrequency5Code, False)
 
 	@property
 	def SspnsnEndDt(self):
@@ -320,12 +320,12 @@ class FinancialInstrument96(base_types._BaseFieldType):
 
 	@SspnsnEndDt.setter
 	def SspnsnEndDt(self, value):
-		self._SspnsnEndDt = value if type(value) != base_types.auto else self.make_default("SspnsnEndDt")
+		self._SspnsnEndDt = value if value is not None else base_types.UninitialisedField(self, 'SspnsnEndDt', ISODate, False)
 
 	@SspnsnEndDt.deleter
 	def SspnsnEndDt(self):
 		del self._SspnsnEndDt
-		self._SspnsnEndDt = None
+		self._SspnsnEndDt = base_types.UninitialisedField(self, 'SspnsnEndDt', ISODate, False)
 
 	@property
 	def SspnsnStartDt(self):
@@ -333,12 +333,12 @@ class FinancialInstrument96(base_types._BaseFieldType):
 
 	@SspnsnStartDt.setter
 	def SspnsnStartDt(self, value):
-		self._SspnsnStartDt = value if type(value) != base_types.auto else self.make_default("SspnsnStartDt")
+		self._SspnsnStartDt = value if value is not None else base_types.UninitialisedField(self, 'SspnsnStartDt', ISODate, False)
 
 	@SspnsnStartDt.deleter
 	def SspnsnStartDt(self):
 		del self._SspnsnStartDt
-		self._SspnsnStartDt = None
+		self._SspnsnStartDt = base_types.UninitialisedField(self, 'SspnsnStartDt', ISODate, False)
 
 	@property
 	def SwtchFee(self):
@@ -346,12 +346,12 @@ class FinancialInstrument96(base_types._BaseFieldType):
 
 	@SwtchFee.setter
 	def SwtchFee(self, value):
-		self._SwtchFee = value if type(value) != base_types.auto else self.make_default("SwtchFee")
+		self._SwtchFee = value if value is not None else base_types.UninitialisedField(self, 'SwtchFee', YesNoIndicator, False)
 
 	@SwtchFee.deleter
 	def SwtchFee(self):
 		del self._SwtchFee
-		self._SwtchFee = None
+		self._SwtchFee = base_types.UninitialisedField(self, 'SwtchFee', YesNoIndicator, False)
 
 	@property
 	def TaxEffcntPdctElgbl(self):
@@ -359,12 +359,12 @@ class FinancialInstrument96(base_types._BaseFieldType):
 
 	@TaxEffcntPdctElgbl.setter
 	def TaxEffcntPdctElgbl(self, value):
-		self._TaxEffcntPdctElgbl = value if type(value) != base_types.auto else self.make_default("TaxEffcntPdctElgbl")
+		self._TaxEffcntPdctElgbl = value if value is not None else base_types.UninitialisedField(self, 'TaxEffcntPdctElgbl', YesNoIndicator, False)
 
 	@TaxEffcntPdctElgbl.deleter
 	def TaxEffcntPdctElgbl(self):
 		del self._TaxEffcntPdctElgbl
-		self._TaxEffcntPdctElgbl = None
+		self._TaxEffcntPdctElgbl = base_types.UninitialisedField(self, 'TaxEffcntPdctElgbl', YesNoIndicator, False)
 
 	@property
 	def TermntnDt(self):
@@ -372,12 +372,12 @@ class FinancialInstrument96(base_types._BaseFieldType):
 
 	@TermntnDt.setter
 	def TermntnDt(self, value):
-		self._TermntnDt = value if type(value) != base_types.auto else self.make_default("TermntnDt")
+		self._TermntnDt = value if value is not None else base_types.UninitialisedField(self, 'TermntnDt', ISODate, False)
 
 	@TermntnDt.deleter
 	def TermntnDt(self):
 		del self._TermntnDt
-		self._TermntnDt = None
+		self._TermntnDt = base_types.UninitialisedField(self, 'TermntnDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),

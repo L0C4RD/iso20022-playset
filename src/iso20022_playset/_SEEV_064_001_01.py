@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BuyerProtectionInstructionAllegementNotificationV01 import BuyerProtectionInstructionAllegementNotificationV01
+from . import BuyerProtectionInstructionAllegementNotificationV01
 
 class SEEV_064_001_01():
 
@@ -18,12 +18,12 @@ class SEEV_064_001_01():
 
 		@BuyrPrtcnInstrAllgmtNtfctn.setter
 		def BuyrPrtcnInstrAllgmtNtfctn(self, value):
-			self._BuyrPrtcnInstrAllgmtNtfctn = value if type(value) != base_types.auto else self.make_default("BuyrPrtcnInstrAllgmtNtfctn")
+			self._BuyrPrtcnInstrAllgmtNtfctn = value if value is not None else base_types.UninitialisedField(self, 'BuyrPrtcnInstrAllgmtNtfctn', BuyerProtectionInstructionAllegementNotificationV01, False)
 
 		@BuyrPrtcnInstrAllgmtNtfctn.deleter
 		def BuyrPrtcnInstrAllgmtNtfctn(self):
 			del self._BuyrPrtcnInstrAllgmtNtfctn
-			self._BuyrPrtcnInstrAllgmtNtfctn = None
+			self._BuyrPrtcnInstrAllgmtNtfctn = base_types.UninitialisedField(self, 'BuyrPrtcnInstrAllgmtNtfctn', BuyerProtectionInstructionAllegementNotificationV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='BuyrPrtcnInstrAllgmtNtfctn', type=BuyerProtectionInstructionAllegementNotificationV01, min=1, max=1, mutex_group=None, array=False),

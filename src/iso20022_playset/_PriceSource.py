@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._PriceSource1Code import PriceSource1Code
+from . import Max35Text
+from . import PriceSource1Code
 
 class PriceSource(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PriceSource(base_types._BaseFieldType):
 
 	@Nrrtv.setter
 	def Nrrtv(self, value):
-		self._Nrrtv = value if type(value) != base_types.auto else self.make_default("Nrrtv")
+		self._Nrrtv = value if value is not None else base_types.UninitialisedField(self, 'Nrrtv', Max35Text, False)
 
 	@Nrrtv.deleter
 	def Nrrtv(self):
 		del self._Nrrtv
-		self._Nrrtv = None
+		self._Nrrtv = base_types.UninitialisedField(self, 'Nrrtv', Max35Text, False)
 
 	@property
 	def PricSrc(self):
@@ -27,12 +27,12 @@ class PriceSource(base_types._BaseFieldType):
 
 	@PricSrc.setter
 	def PricSrc(self, value):
-		self._PricSrc = value if type(value) != base_types.auto else self.make_default("PricSrc")
+		self._PricSrc = value if value is not None else base_types.UninitialisedField(self, 'PricSrc', PriceSource1Code, False)
 
 	@PricSrc.deleter
 	def PricSrc(self):
 		del self._PricSrc
-		self._PricSrc = None
+		self._PricSrc = base_types.UninitialisedField(self, 'PricSrc', PriceSource1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Nrrtv', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

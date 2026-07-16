@@ -2,20 +2,20 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._ContentInformationType41 import ContentInformationType41
-from ._CorrectionIdentification1 import CorrectionIdentification1
-from ._DestinationData1 import DestinationData1
-from ._Header72 import Header72
-from ._Jurisdiction2 import Jurisdiction2
-from ._OriginatorData2 import OriginatorData2
-from ._ProgrammeMode6 import ProgrammeMode6
-from ._ReceiverData1 import ReceiverData1
-from ._Reconciliation5 import Reconciliation5
-from ._ReportContent3 import ReportContent3
-from ._ReportData8 import ReportData8
-from ._SenderData1 import SenderData1
-from ._SettlementService7 import SettlementService7
+from . import ATICALaxProcessing
+from . import ContentInformationType41
+from . import CorrectionIdentification1
+from . import DestinationData1
+from . import Header72
+from . import Jurisdiction2
+from . import OriginatorData2
+from . import ProgrammeMode6
+from . import ReceiverData1
+from . import Reconciliation5
+from . import ReportContent3
+from . import ReportData8
+from . import SenderData1
+from . import SettlementService7
 
 class CustomReportV03(base_types._BaseFieldType):
 
@@ -26,12 +26,12 @@ class CustomReportV03(base_types._BaseFieldType):
 
 	@Crrctn.setter
 	def Crrctn(self, value):
-		self._Crrctn = value if type(value) != base_types.auto else self.make_default("Crrctn")
+		self._Crrctn = value if value is not None else base_types.UninitialisedField(self, 'Crrctn', CorrectionIdentification1, False)
 
 	@Crrctn.deleter
 	def Crrctn(self):
 		del self._Crrctn
-		self._Crrctn = None
+		self._Crrctn = base_types.UninitialisedField(self, 'Crrctn', CorrectionIdentification1, False)
 
 	@property
 	def Dstn(self):
@@ -39,12 +39,12 @@ class CustomReportV03(base_types._BaseFieldType):
 
 	@Dstn.setter
 	def Dstn(self, value):
-		self._Dstn = value if type(value) != base_types.auto else self.make_default("Dstn")
+		self._Dstn = value if value is not None else base_types.UninitialisedField(self, 'Dstn', DestinationData1, False)
 
 	@Dstn.deleter
 	def Dstn(self):
 		del self._Dstn
-		self._Dstn = None
+		self._Dstn = base_types.UninitialisedField(self, 'Dstn', DestinationData1, False)
 
 	@property
 	def Hdr(self):
@@ -52,12 +52,12 @@ class CustomReportV03(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header72, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header72, False)
 
 	@property
 	def Jursdctn(self):
@@ -65,12 +65,12 @@ class CustomReportV03(base_types._BaseFieldType):
 
 	@Jursdctn.setter
 	def Jursdctn(self, value):
-		self._Jursdctn = value if type(value) != base_types.auto else self.make_default("Jursdctn")
+		self._Jursdctn = value if value is not None else base_types.UninitialisedField(self, 'Jursdctn', Jurisdiction2, False)
 
 	@Jursdctn.deleter
 	def Jursdctn(self):
 		del self._Jursdctn
-		self._Jursdctn = None
+		self._Jursdctn = base_types.UninitialisedField(self, 'Jursdctn', Jurisdiction2, False)
 
 	@property
 	def NtlData(self):
@@ -78,12 +78,12 @@ class CustomReportV03(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def Orgtr(self):
@@ -91,12 +91,12 @@ class CustomReportV03(base_types._BaseFieldType):
 
 	@Orgtr.setter
 	def Orgtr(self, value):
-		self._Orgtr = value if type(value) != base_types.auto else self.make_default("Orgtr")
+		self._Orgtr = value if value is not None else base_types.UninitialisedField(self, 'Orgtr', OriginatorData2, False)
 
 	@Orgtr.deleter
 	def Orgtr(self):
 		del self._Orgtr
-		self._Orgtr = None
+		self._Orgtr = base_types.UninitialisedField(self, 'Orgtr', OriginatorData2, False)
 
 	@property
 	def Prgrmm(self):
@@ -104,12 +104,12 @@ class CustomReportV03(base_types._BaseFieldType):
 
 	@Prgrmm.setter
 	def Prgrmm(self, value):
-		self._Prgrmm = value if type(value) != base_types.auto else self.make_default("Prgrmm")
+		self._Prgrmm = value if value is not None else base_types.UninitialisedField(self, 'Prgrmm', ProgrammeMode6, True)
 
 	@Prgrmm.deleter
 	def Prgrmm(self):
 		del self._Prgrmm
-		self._Prgrmm = None
+		self._Prgrmm = base_types.UninitialisedField(self, 'Prgrmm', ProgrammeMode6, True)
 
 	@property
 	def PrvtData(self):
@@ -117,12 +117,12 @@ class CustomReportV03(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def Rcncltn(self):
@@ -130,12 +130,12 @@ class CustomReportV03(base_types._BaseFieldType):
 
 	@Rcncltn.setter
 	def Rcncltn(self, value):
-		self._Rcncltn = value if type(value) != base_types.auto else self.make_default("Rcncltn")
+		self._Rcncltn = value if value is not None else base_types.UninitialisedField(self, 'Rcncltn', Reconciliation5, False)
 
 	@Rcncltn.deleter
 	def Rcncltn(self):
 		del self._Rcncltn
-		self._Rcncltn = None
+		self._Rcncltn = base_types.UninitialisedField(self, 'Rcncltn', Reconciliation5, False)
 
 	@property
 	def Rcvr(self):
@@ -143,12 +143,12 @@ class CustomReportV03(base_types._BaseFieldType):
 
 	@Rcvr.setter
 	def Rcvr(self, value):
-		self._Rcvr = value if type(value) != base_types.auto else self.make_default("Rcvr")
+		self._Rcvr = value if value is not None else base_types.UninitialisedField(self, 'Rcvr', ReceiverData1, False)
 
 	@Rcvr.deleter
 	def Rcvr(self):
 		del self._Rcvr
-		self._Rcvr = None
+		self._Rcvr = base_types.UninitialisedField(self, 'Rcvr', ReceiverData1, False)
 
 	@property
 	def Rpt(self):
@@ -156,12 +156,12 @@ class CustomReportV03(base_types._BaseFieldType):
 
 	@Rpt.setter
 	def Rpt(self, value):
-		self._Rpt = value if type(value) != base_types.auto else self.make_default("Rpt")
+		self._Rpt = value if value is not None else base_types.UninitialisedField(self, 'Rpt', ReportData8, False)
 
 	@Rpt.deleter
 	def Rpt(self):
 		del self._Rpt
-		self._Rpt = None
+		self._Rpt = base_types.UninitialisedField(self, 'Rpt', ReportData8, False)
 
 	@property
 	def RptCntt(self):
@@ -169,12 +169,12 @@ class CustomReportV03(base_types._BaseFieldType):
 
 	@RptCntt.setter
 	def RptCntt(self, value):
-		self._RptCntt = value if type(value) != base_types.auto else self.make_default("RptCntt")
+		self._RptCntt = value if value is not None else base_types.UninitialisedField(self, 'RptCntt', ReportContent3, True)
 
 	@RptCntt.deleter
 	def RptCntt(self):
 		del self._RptCntt
-		self._RptCntt = None
+		self._RptCntt = base_types.UninitialisedField(self, 'RptCntt', ReportContent3, True)
 
 	@property
 	def SctyTrlr(self):
@@ -182,12 +182,12 @@ class CustomReportV03(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType41, False)
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
 		del self._SctyTrlr
-		self._SctyTrlr = None
+		self._SctyTrlr = base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType41, False)
 
 	@property
 	def Sndr(self):
@@ -195,12 +195,12 @@ class CustomReportV03(base_types._BaseFieldType):
 
 	@Sndr.setter
 	def Sndr(self, value):
-		self._Sndr = value if type(value) != base_types.auto else self.make_default("Sndr")
+		self._Sndr = value if value is not None else base_types.UninitialisedField(self, 'Sndr', SenderData1, False)
 
 	@Sndr.deleter
 	def Sndr(self):
 		del self._Sndr
-		self._Sndr = None
+		self._Sndr = base_types.UninitialisedField(self, 'Sndr', SenderData1, False)
 
 	@property
 	def SttlmSvc(self):
@@ -208,12 +208,12 @@ class CustomReportV03(base_types._BaseFieldType):
 
 	@SttlmSvc.setter
 	def SttlmSvc(self, value):
-		self._SttlmSvc = value if type(value) != base_types.auto else self.make_default("SttlmSvc")
+		self._SttlmSvc = value if value is not None else base_types.UninitialisedField(self, 'SttlmSvc', SettlementService7, False)
 
 	@SttlmSvc.deleter
 	def SttlmSvc(self):
 		del self._SttlmSvc
-		self._SttlmSvc = None
+		self._SttlmSvc = base_types.UninitialisedField(self, 'SttlmSvc', SettlementService7, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Crrctn', type=CorrectionIdentification1, min=0, max=1, mutex_group=None, array=False),

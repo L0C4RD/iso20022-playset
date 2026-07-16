@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesFinancingModificationInstructionV10 import SecuritiesFinancingModificationInstructionV10
+from . import SecuritiesFinancingModificationInstructionV10
 
 class SESE_036_001_10():
 
@@ -18,12 +18,12 @@ class SESE_036_001_10():
 
 		@SctiesFincgModInstr.setter
 		def SctiesFincgModInstr(self, value):
-			self._SctiesFincgModInstr = value if type(value) != base_types.auto else self.make_default("SctiesFincgModInstr")
+			self._SctiesFincgModInstr = value if value is not None else base_types.UninitialisedField(self, 'SctiesFincgModInstr', SecuritiesFinancingModificationInstructionV10, False)
 
 		@SctiesFincgModInstr.deleter
 		def SctiesFincgModInstr(self):
 			del self._SctiesFincgModInstr
-			self._SctiesFincgModInstr = None
+			self._SctiesFincgModInstr = base_types.UninitialisedField(self, 'SctiesFincgModInstr', SecuritiesFinancingModificationInstructionV10, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesFincgModInstr', type=SecuritiesFinancingModificationInstructionV10, min=1, max=1, mutex_group=None, array=False),

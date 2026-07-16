@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._BalanceType13 import BalanceType13
-from ._CashAvailability1 import CashAvailability1
-from ._CreditDebitCode import CreditDebitCode
-from ._CreditLine3 import CreditLine3
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import BalanceType13
+from . import CashAvailability1
+from . import CreditDebitCode
+from . import CreditLine3
+from . import DateAndDateTime2Choice
 
 class CashBalance8(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class CashBalance8(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def Avlbty(self):
@@ -31,12 +31,12 @@ class CashBalance8(base_types._BaseFieldType):
 
 	@Avlbty.setter
 	def Avlbty(self, value):
-		self._Avlbty = value if type(value) != base_types.auto else self.make_default("Avlbty")
+		self._Avlbty = value if value is not None else base_types.UninitialisedField(self, 'Avlbty', CashAvailability1, True)
 
 	@Avlbty.deleter
 	def Avlbty(self):
 		del self._Avlbty
-		self._Avlbty = None
+		self._Avlbty = base_types.UninitialisedField(self, 'Avlbty', CashAvailability1, True)
 
 	@property
 	def CdtDbtInd(self):
@@ -44,12 +44,12 @@ class CashBalance8(base_types._BaseFieldType):
 
 	@CdtDbtInd.setter
 	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+		self._CdtDbtInd = value if value is not None else base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@CdtDbtInd.deleter
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
-		self._CdtDbtInd = None
+		self._CdtDbtInd = base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@property
 	def CdtLine(self):
@@ -57,12 +57,12 @@ class CashBalance8(base_types._BaseFieldType):
 
 	@CdtLine.setter
 	def CdtLine(self, value):
-		self._CdtLine = value if type(value) != base_types.auto else self.make_default("CdtLine")
+		self._CdtLine = value if value is not None else base_types.UninitialisedField(self, 'CdtLine', CreditLine3, True)
 
 	@CdtLine.deleter
 	def CdtLine(self):
 		del self._CdtLine
-		self._CdtLine = None
+		self._CdtLine = base_types.UninitialisedField(self, 'CdtLine', CreditLine3, True)
 
 	@property
 	def Dt(self):
@@ -70,12 +70,12 @@ class CashBalance8(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', DateAndDateTime2Choice, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', DateAndDateTime2Choice, False)
 
 	@property
 	def Tp(self):
@@ -83,12 +83,12 @@ class CashBalance8(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', BalanceType13, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', BalanceType13, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

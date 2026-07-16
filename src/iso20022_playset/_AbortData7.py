@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActionMessage12 import ActionMessage12
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ActionMessage12
+from . import Max140Text
+from . import Max35Text
+from . import TrueFalseIndicator
 
 class AbortData7(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class AbortData7(base_types._BaseFieldType):
 
 	@AbrtRsn.setter
 	def AbrtRsn(self, value):
-		self._AbrtRsn = value if type(value) != base_types.auto else self.make_default("AbrtRsn")
+		self._AbrtRsn = value if value is not None else base_types.UninitialisedField(self, 'AbrtRsn', Max140Text, False)
 
 	@AbrtRsn.deleter
 	def AbrtRsn(self):
 		del self._AbrtRsn
-		self._AbrtRsn = None
+		self._AbrtRsn = base_types.UninitialisedField(self, 'AbrtRsn', Max140Text, False)
 
 	@property
 	def DispOutpt(self):
@@ -29,12 +29,12 @@ class AbortData7(base_types._BaseFieldType):
 
 	@DispOutpt.setter
 	def DispOutpt(self, value):
-		self._DispOutpt = value if type(value) != base_types.auto else self.make_default("DispOutpt")
+		self._DispOutpt = value if value is not None else base_types.UninitialisedField(self, 'DispOutpt', ActionMessage12, False)
 
 	@DispOutpt.deleter
 	def DispOutpt(self):
 		del self._DispOutpt
-		self._DispOutpt = None
+		self._DispOutpt = base_types.UninitialisedField(self, 'DispOutpt', ActionMessage12, False)
 
 	@property
 	def TxSucss(self):
@@ -42,12 +42,12 @@ class AbortData7(base_types._BaseFieldType):
 
 	@TxSucss.setter
 	def TxSucss(self, value):
-		self._TxSucss = value if type(value) != base_types.auto else self.make_default("TxSucss")
+		self._TxSucss = value if value is not None else base_types.UninitialisedField(self, 'TxSucss', TrueFalseIndicator, False)
 
 	@TxSucss.deleter
 	def TxSucss(self):
 		del self._TxSucss
-		self._TxSucss = None
+		self._TxSucss = base_types.UninitialisedField(self, 'TxSucss', TrueFalseIndicator, False)
 
 	@property
 	def XchgId(self):
@@ -55,12 +55,12 @@ class AbortData7(base_types._BaseFieldType):
 
 	@XchgId.setter
 	def XchgId(self, value):
-		self._XchgId = value if type(value) != base_types.auto else self.make_default("XchgId")
+		self._XchgId = value if value is not None else base_types.UninitialisedField(self, 'XchgId', Max35Text, False)
 
 	@XchgId.deleter
 	def XchgId(self):
 		del self._XchgId
-		self._XchgId = None
+		self._XchgId = base_types.UninitialisedField(self, 'XchgId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AbrtRsn', type=Max140Text, min=1, max=1, mutex_group=None, array=False),

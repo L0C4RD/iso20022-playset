@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ReversalInitiationV04 import ReversalInitiationV04
+from . import ReversalInitiationV04
 
 class CAIN_005_001_04():
 
@@ -18,12 +18,12 @@ class CAIN_005_001_04():
 
 		@RvslInitn.setter
 		def RvslInitn(self, value):
-			self._RvslInitn = value if type(value) != base_types.auto else self.make_default("RvslInitn")
+			self._RvslInitn = value if value is not None else base_types.UninitialisedField(self, 'RvslInitn', ReversalInitiationV04, False)
 
 		@RvslInitn.deleter
 		def RvslInitn(self):
 			del self._RvslInitn
-			self._RvslInitn = None
+			self._RvslInitn = base_types.UninitialisedField(self, 'RvslInitn', ReversalInitiationV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='RvslInitn', type=ReversalInitiationV04, min=1, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DecimalNumber import DecimalNumber
-from ._FromToQuantityRange1 import FromToQuantityRange1
-from ._QuantityRangeBoundary1 import QuantityRangeBoundary1
+from . import DecimalNumber
+from . import FromToQuantityRange1
+from . import QuantityRangeBoundary1
 
 class QuantityRange1Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class QuantityRange1Choice(base_types._BaseFieldType):
 
 	@EQQty.setter
 	def EQQty(self, value):
-		self._EQQty = value if type(value) != base_types.auto else self.make_default("EQQty")
+		self._EQQty = value if value is not None else base_types.UninitialisedField(self, 'EQQty', DecimalNumber, False)
 
 	@EQQty.deleter
 	def EQQty(self):
 		del self._EQQty
-		self._EQQty = None
+		self._EQQty = base_types.UninitialisedField(self, 'EQQty', DecimalNumber, False)
 
 	@property
 	def FrQty(self):
@@ -28,12 +28,12 @@ class QuantityRange1Choice(base_types._BaseFieldType):
 
 	@FrQty.setter
 	def FrQty(self, value):
-		self._FrQty = value if type(value) != base_types.auto else self.make_default("FrQty")
+		self._FrQty = value if value is not None else base_types.UninitialisedField(self, 'FrQty', QuantityRangeBoundary1, False)
 
 	@FrQty.deleter
 	def FrQty(self):
 		del self._FrQty
-		self._FrQty = None
+		self._FrQty = base_types.UninitialisedField(self, 'FrQty', QuantityRangeBoundary1, False)
 
 	@property
 	def FrToQty(self):
@@ -41,12 +41,12 @@ class QuantityRange1Choice(base_types._BaseFieldType):
 
 	@FrToQty.setter
 	def FrToQty(self, value):
-		self._FrToQty = value if type(value) != base_types.auto else self.make_default("FrToQty")
+		self._FrToQty = value if value is not None else base_types.UninitialisedField(self, 'FrToQty', FromToQuantityRange1, False)
 
 	@FrToQty.deleter
 	def FrToQty(self):
 		del self._FrToQty
-		self._FrToQty = None
+		self._FrToQty = base_types.UninitialisedField(self, 'FrToQty', FromToQuantityRange1, False)
 
 	@property
 	def NEQQty(self):
@@ -54,12 +54,12 @@ class QuantityRange1Choice(base_types._BaseFieldType):
 
 	@NEQQty.setter
 	def NEQQty(self, value):
-		self._NEQQty = value if type(value) != base_types.auto else self.make_default("NEQQty")
+		self._NEQQty = value if value is not None else base_types.UninitialisedField(self, 'NEQQty', DecimalNumber, False)
 
 	@NEQQty.deleter
 	def NEQQty(self):
 		del self._NEQQty
-		self._NEQQty = None
+		self._NEQQty = base_types.UninitialisedField(self, 'NEQQty', DecimalNumber, False)
 
 	@property
 	def ToQty(self):
@@ -67,12 +67,12 @@ class QuantityRange1Choice(base_types._BaseFieldType):
 
 	@ToQty.setter
 	def ToQty(self, value):
-		self._ToQty = value if type(value) != base_types.auto else self.make_default("ToQty")
+		self._ToQty = value if value is not None else base_types.UninitialisedField(self, 'ToQty', QuantityRangeBoundary1, False)
 
 	@ToQty.deleter
 	def ToQty(self):
 		del self._ToQty
-		self._ToQty = None
+		self._ToQty = base_types.UninitialisedField(self, 'ToQty', QuantityRangeBoundary1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EQQty', type=DecimalNumber, min=0, max=1, mutex_group=1, array=False),

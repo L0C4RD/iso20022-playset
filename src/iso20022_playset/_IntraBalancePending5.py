@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IntraBalancePending6 import IntraBalancePending6
-from ._PendingStatusAndReason2 import PendingStatusAndReason2
+from . import IntraBalancePending6
+from . import PendingStatusAndReason2
 
 class IntraBalancePending5(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class IntraBalancePending5(base_types._BaseFieldType):
 
 	@Mvmnt.setter
 	def Mvmnt(self, value):
-		self._Mvmnt = value if type(value) != base_types.auto else self.make_default("Mvmnt")
+		self._Mvmnt = value if value is not None else base_types.UninitialisedField(self, 'Mvmnt', IntraBalancePending6, True)
 
 	@Mvmnt.deleter
 	def Mvmnt(self):
 		del self._Mvmnt
-		self._Mvmnt = None
+		self._Mvmnt = base_types.UninitialisedField(self, 'Mvmnt', IntraBalancePending6, True)
 
 	@property
 	def StsAndRsn(self):
@@ -27,12 +27,12 @@ class IntraBalancePending5(base_types._BaseFieldType):
 
 	@StsAndRsn.setter
 	def StsAndRsn(self, value):
-		self._StsAndRsn = value if type(value) != base_types.auto else self.make_default("StsAndRsn")
+		self._StsAndRsn = value if value is not None else base_types.UninitialisedField(self, 'StsAndRsn', PendingStatusAndReason2, False)
 
 	@StsAndRsn.deleter
 	def StsAndRsn(self):
 		del self._StsAndRsn
-		self._StsAndRsn = None
+		self._StsAndRsn = base_types.UninitialisedField(self, 'StsAndRsn', PendingStatusAndReason2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Mvmnt', type=IntraBalancePending6, min=1, max=None, mutex_group=None, array=True),

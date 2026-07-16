@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._CashAccount40 import CashAccount40
-from ._CreditDebitCode import CreditDebitCode
-from ._Max35Text import Max35Text
-from ._Purpose2Choice import Purpose2Choice
-from ._References74Choice import References74Choice
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import CashAccount40
+from . import CreditDebitCode
+from . import Max35Text
+from . import Purpose2Choice
+from . import References74Choice
 
 class TransactionAllocation1(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class TransactionAllocation1(base_types._BaseFieldType):
 
 	@Acct.setter
 	def Acct(self, value):
-		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
+		self._Acct = value if value is not None else base_types.UninitialisedField(self, 'Acct', CashAccount40, False)
 
 	@Acct.deleter
 	def Acct(self):
 		del self._Acct
-		self._Acct = None
+		self._Acct = base_types.UninitialisedField(self, 'Acct', CashAccount40, False)
 
 	@property
 	def Amt(self):
@@ -31,12 +31,12 @@ class TransactionAllocation1(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def CdtDbtInd(self):
@@ -44,12 +44,12 @@ class TransactionAllocation1(base_types._BaseFieldType):
 
 	@CdtDbtInd.setter
 	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+		self._CdtDbtInd = value if value is not None else base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@CdtDbtInd.deleter
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
-		self._CdtDbtInd = None
+		self._CdtDbtInd = base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@property
 	def Purp(self):
@@ -57,12 +57,12 @@ class TransactionAllocation1(base_types._BaseFieldType):
 
 	@Purp.setter
 	def Purp(self, value):
-		self._Purp = value if type(value) != base_types.auto else self.make_default("Purp")
+		self._Purp = value if value is not None else base_types.UninitialisedField(self, 'Purp', Purpose2Choice, False)
 
 	@Purp.deleter
 	def Purp(self):
 		del self._Purp
-		self._Purp = None
+		self._Purp = base_types.UninitialisedField(self, 'Purp', Purpose2Choice, False)
 
 	@property
 	def Ref(self):
@@ -70,12 +70,12 @@ class TransactionAllocation1(base_types._BaseFieldType):
 
 	@Ref.setter
 	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+		self._Ref = value if value is not None else base_types.UninitialisedField(self, 'Ref', Max35Text, False)
 
 	@Ref.deleter
 	def Ref(self):
 		del self._Ref
-		self._Ref = None
+		self._Ref = base_types.UninitialisedField(self, 'Ref', Max35Text, False)
 
 	@property
 	def RltdRefs(self):
@@ -83,12 +83,12 @@ class TransactionAllocation1(base_types._BaseFieldType):
 
 	@RltdRefs.setter
 	def RltdRefs(self, value):
-		self._RltdRefs = value if type(value) != base_types.auto else self.make_default("RltdRefs")
+		self._RltdRefs = value if value is not None else base_types.UninitialisedField(self, 'RltdRefs', References74Choice, True)
 
 	@RltdRefs.deleter
 	def RltdRefs(self):
 		del self._RltdRefs
-		self._RltdRefs = None
+		self._RltdRefs = base_types.UninitialisedField(self, 'RltdRefs', References74Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acct', type=CashAccount40, min=1, max=1, mutex_group=None, array=False),

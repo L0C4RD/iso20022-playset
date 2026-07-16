@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountCriteria4Choice import AccountCriteria4Choice
-from ._QueryType2Code import QueryType2Code
+from . import AccountCriteria4Choice
+from . import QueryType2Code
 
 class AccountQuery4(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AccountQuery4(base_types._BaseFieldType):
 
 	@AcctCrit.setter
 	def AcctCrit(self, value):
-		self._AcctCrit = value if type(value) != base_types.auto else self.make_default("AcctCrit")
+		self._AcctCrit = value if value is not None else base_types.UninitialisedField(self, 'AcctCrit', AccountCriteria4Choice, False)
 
 	@AcctCrit.deleter
 	def AcctCrit(self):
 		del self._AcctCrit
-		self._AcctCrit = None
+		self._AcctCrit = base_types.UninitialisedField(self, 'AcctCrit', AccountCriteria4Choice, False)
 
 	@property
 	def QryTp(self):
@@ -27,12 +27,12 @@ class AccountQuery4(base_types._BaseFieldType):
 
 	@QryTp.setter
 	def QryTp(self, value):
-		self._QryTp = value if type(value) != base_types.auto else self.make_default("QryTp")
+		self._QryTp = value if value is not None else base_types.UninitialisedField(self, 'QryTp', QueryType2Code, False)
 
 	@QryTp.deleter
 	def QryTp(self):
 		del self._QryTp
-		self._QryTp = None
+		self._QryTp = base_types.UninitialisedField(self, 'QryTp', QueryType2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctCrit', type=AccountCriteria4Choice, min=0, max=1, mutex_group=None, array=False),

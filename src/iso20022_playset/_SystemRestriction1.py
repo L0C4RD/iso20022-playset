@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
+from . import ISODateTime
+from . import Max35Text
 
 class SystemRestriction1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SystemRestriction1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', Max35Text, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', Max35Text, False)
 
 	@property
 	def VldFr(self):
@@ -27,12 +27,12 @@ class SystemRestriction1(base_types._BaseFieldType):
 
 	@VldFr.setter
 	def VldFr(self, value):
-		self._VldFr = value if type(value) != base_types.auto else self.make_default("VldFr")
+		self._VldFr = value if value is not None else base_types.UninitialisedField(self, 'VldFr', ISODateTime, False)
 
 	@VldFr.deleter
 	def VldFr(self):
 		del self._VldFr
-		self._VldFr = None
+		self._VldFr = base_types.UninitialisedField(self, 'VldFr', ISODateTime, False)
 
 	@property
 	def VldTo(self):
@@ -40,12 +40,12 @@ class SystemRestriction1(base_types._BaseFieldType):
 
 	@VldTo.setter
 	def VldTo(self, value):
-		self._VldTo = value if type(value) != base_types.auto else self.make_default("VldTo")
+		self._VldTo = value if value is not None else base_types.UninitialisedField(self, 'VldTo', ISODateTime, False)
 
 	@VldTo.deleter
 	def VldTo(self):
 		del self._VldTo
-		self._VldTo = None
+		self._VldTo = base_types.UninitialisedField(self, 'VldTo', ISODateTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Tp', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

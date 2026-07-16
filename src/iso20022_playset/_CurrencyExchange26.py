@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._BaseOneRate import BaseOneRate
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._ISODateTime import ISODateTime
-from ._UUIDv4Identifier import UUIDv4Identifier
+from . import ActiveOrHistoricCurrencyCode
+from . import BaseOneRate
+from . import BranchAndFinancialInstitutionIdentification8
+from . import ISODateTime
+from . import UUIDv4Identifier
 
 class CurrencyExchange26(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class CurrencyExchange26(base_types._BaseFieldType):
 
 	@FXAgt.setter
 	def FXAgt(self, value):
-		self._FXAgt = value if type(value) != base_types.auto else self.make_default("FXAgt")
+		self._FXAgt = value if value is not None else base_types.UninitialisedField(self, 'FXAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@FXAgt.deleter
 	def FXAgt(self):
 		del self._FXAgt
-		self._FXAgt = None
+		self._FXAgt = base_types.UninitialisedField(self, 'FXAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def PreAgrdXchgRate(self):
@@ -30,12 +30,12 @@ class CurrencyExchange26(base_types._BaseFieldType):
 
 	@PreAgrdXchgRate.setter
 	def PreAgrdXchgRate(self, value):
-		self._PreAgrdXchgRate = value if type(value) != base_types.auto else self.make_default("PreAgrdXchgRate")
+		self._PreAgrdXchgRate = value if value is not None else base_types.UninitialisedField(self, 'PreAgrdXchgRate', BaseOneRate, False)
 
 	@PreAgrdXchgRate.deleter
 	def PreAgrdXchgRate(self):
 		del self._PreAgrdXchgRate
-		self._PreAgrdXchgRate = None
+		self._PreAgrdXchgRate = base_types.UninitialisedField(self, 'PreAgrdXchgRate', BaseOneRate, False)
 
 	@property
 	def QtId(self):
@@ -43,12 +43,12 @@ class CurrencyExchange26(base_types._BaseFieldType):
 
 	@QtId.setter
 	def QtId(self, value):
-		self._QtId = value if type(value) != base_types.auto else self.make_default("QtId")
+		self._QtId = value if value is not None else base_types.UninitialisedField(self, 'QtId', UUIDv4Identifier, False)
 
 	@QtId.deleter
 	def QtId(self):
 		del self._QtId
-		self._QtId = None
+		self._QtId = base_types.UninitialisedField(self, 'QtId', UUIDv4Identifier, False)
 
 	@property
 	def QtdCcy(self):
@@ -56,12 +56,12 @@ class CurrencyExchange26(base_types._BaseFieldType):
 
 	@QtdCcy.setter
 	def QtdCcy(self, value):
-		self._QtdCcy = value if type(value) != base_types.auto else self.make_default("QtdCcy")
+		self._QtdCcy = value if value is not None else base_types.UninitialisedField(self, 'QtdCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@QtdCcy.deleter
 	def QtdCcy(self):
 		del self._QtdCcy
-		self._QtdCcy = None
+		self._QtdCcy = base_types.UninitialisedField(self, 'QtdCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def QtnDtTm(self):
@@ -69,12 +69,12 @@ class CurrencyExchange26(base_types._BaseFieldType):
 
 	@QtnDtTm.setter
 	def QtnDtTm(self, value):
-		self._QtnDtTm = value if type(value) != base_types.auto else self.make_default("QtnDtTm")
+		self._QtnDtTm = value if value is not None else base_types.UninitialisedField(self, 'QtnDtTm', ISODateTime, False)
 
 	@QtnDtTm.deleter
 	def QtnDtTm(self):
 		del self._QtnDtTm
-		self._QtnDtTm = None
+		self._QtnDtTm = base_types.UninitialisedField(self, 'QtnDtTm', ISODateTime, False)
 
 	@property
 	def UnitCcy(self):
@@ -82,12 +82,12 @@ class CurrencyExchange26(base_types._BaseFieldType):
 
 	@UnitCcy.setter
 	def UnitCcy(self, value):
-		self._UnitCcy = value if type(value) != base_types.auto else self.make_default("UnitCcy")
+		self._UnitCcy = value if value is not None else base_types.UninitialisedField(self, 'UnitCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@UnitCcy.deleter
 	def UnitCcy(self):
 		del self._UnitCcy
-		self._UnitCcy = None
+		self._UnitCcy = base_types.UninitialisedField(self, 'UnitCcy', ActiveOrHistoricCurrencyCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FXAgt', type=BranchAndFinancialInstitutionIdentification8, min=0, max=1, mutex_group=None, array=False),

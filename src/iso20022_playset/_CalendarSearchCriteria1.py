@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISOMonth import ISOMonth
-from ._ISOYear import ISOYear
-from ._SystemAndCurrency1 import SystemAndCurrency1
+from . import ISOMonth
+from . import ISOYear
+from . import SystemAndCurrency1
 
 class CalendarSearchCriteria1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CalendarSearchCriteria1(base_types._BaseFieldType):
 
 	@Mnth.setter
 	def Mnth(self, value):
-		self._Mnth = value if type(value) != base_types.auto else self.make_default("Mnth")
+		self._Mnth = value if value is not None else base_types.UninitialisedField(self, 'Mnth', ISOMonth, False)
 
 	@Mnth.deleter
 	def Mnth(self):
 		del self._Mnth
-		self._Mnth = None
+		self._Mnth = base_types.UninitialisedField(self, 'Mnth', ISOMonth, False)
 
 	@property
 	def Svc(self):
@@ -28,12 +28,12 @@ class CalendarSearchCriteria1(base_types._BaseFieldType):
 
 	@Svc.setter
 	def Svc(self, value):
-		self._Svc = value if type(value) != base_types.auto else self.make_default("Svc")
+		self._Svc = value if value is not None else base_types.UninitialisedField(self, 'Svc', SystemAndCurrency1, False)
 
 	@Svc.deleter
 	def Svc(self):
 		del self._Svc
-		self._Svc = None
+		self._Svc = base_types.UninitialisedField(self, 'Svc', SystemAndCurrency1, False)
 
 	@property
 	def Yr(self):
@@ -41,12 +41,12 @@ class CalendarSearchCriteria1(base_types._BaseFieldType):
 
 	@Yr.setter
 	def Yr(self, value):
-		self._Yr = value if type(value) != base_types.auto else self.make_default("Yr")
+		self._Yr = value if value is not None else base_types.UninitialisedField(self, 'Yr', ISOYear, False)
 
 	@Yr.deleter
 	def Yr(self):
 		del self._Yr
-		self._Yr = None
+		self._Yr = base_types.UninitialisedField(self, 'Yr', ISOYear, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Mnth', type=ISOMonth, min=0, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
+from . import LEIIdentifier
 
 class CoverTwoDefaulters1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class CoverTwoDefaulters1(base_types._BaseFieldType):
 
 	@Cover1Id.setter
 	def Cover1Id(self, value):
-		self._Cover1Id = value if type(value) != base_types.auto else self.make_default("Cover1Id")
+		self._Cover1Id = value if value is not None else base_types.UninitialisedField(self, 'Cover1Id', LEIIdentifier, False)
 
 	@Cover1Id.deleter
 	def Cover1Id(self):
 		del self._Cover1Id
-		self._Cover1Id = None
+		self._Cover1Id = base_types.UninitialisedField(self, 'Cover1Id', LEIIdentifier, False)
 
 	@property
 	def Cover2Id(self):
@@ -26,12 +26,12 @@ class CoverTwoDefaulters1(base_types._BaseFieldType):
 
 	@Cover2Id.setter
 	def Cover2Id(self, value):
-		self._Cover2Id = value if type(value) != base_types.auto else self.make_default("Cover2Id")
+		self._Cover2Id = value if value is not None else base_types.UninitialisedField(self, 'Cover2Id', LEIIdentifier, False)
 
 	@Cover2Id.deleter
 	def Cover2Id(self):
 		del self._Cover2Id
-		self._Cover2Id = None
+		self._Cover2Id = base_types.UninitialisedField(self, 'Cover2Id', LEIIdentifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cover1Id', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentReportingInvalidReferenceDataReportV02 import FinancialInstrumentReportingInvalidReferenceDataReportV02
+from . import FinancialInstrumentReportingInvalidReferenceDataReportV02
 
 class AUTH_042_001_02():
 
@@ -18,12 +18,12 @@ class AUTH_042_001_02():
 
 		@FinInstrmRptgInvldRefDataRpt.setter
 		def FinInstrmRptgInvldRefDataRpt(self, value):
-			self._FinInstrmRptgInvldRefDataRpt = value if type(value) != base_types.auto else self.make_default("FinInstrmRptgInvldRefDataRpt")
+			self._FinInstrmRptgInvldRefDataRpt = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmRptgInvldRefDataRpt', FinancialInstrumentReportingInvalidReferenceDataReportV02, False)
 
 		@FinInstrmRptgInvldRefDataRpt.deleter
 		def FinInstrmRptgInvldRefDataRpt(self):
 			del self._FinInstrmRptgInvldRefDataRpt
-			self._FinInstrmRptgInvldRefDataRpt = None
+			self._FinInstrmRptgInvldRefDataRpt = base_types.UninitialisedField(self, 'FinInstrmRptgInvldRefDataRpt', FinancialInstrumentReportingInvalidReferenceDataReportV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='FinInstrmRptgInvldRefDataRpt', type=FinancialInstrumentReportingInvalidReferenceDataReportV02, min=1, max=1, mutex_group=None, array=False),

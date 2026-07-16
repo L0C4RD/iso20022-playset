@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CommonTradeDataReport71 import CommonTradeDataReport71
-from ._CounterpartySpecificData36 import CounterpartySpecificData36
-from ._DisseminationData1 import DisseminationData1
-from ._ModificationLevel1Code import ModificationLevel1Code
-from ._SupplementaryData1 import SupplementaryData1
-from ._TechnicalAttributes5 import TechnicalAttributes5
+from . import CommonTradeDataReport71
+from . import CounterpartySpecificData36
+from . import DisseminationData1
+from . import ModificationLevel1Code
+from . import SupplementaryData1
+from . import TechnicalAttributes5
 
 class TradeData43(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class TradeData43(base_types._BaseFieldType):
 
 	@CmonTradData.setter
 	def CmonTradData(self, value):
-		self._CmonTradData = value if type(value) != base_types.auto else self.make_default("CmonTradData")
+		self._CmonTradData = value if value is not None else base_types.UninitialisedField(self, 'CmonTradData', CommonTradeDataReport71, False)
 
 	@CmonTradData.deleter
 	def CmonTradData(self):
 		del self._CmonTradData
-		self._CmonTradData = None
+		self._CmonTradData = base_types.UninitialisedField(self, 'CmonTradData', CommonTradeDataReport71, False)
 
 	@property
 	def CtrPtySpcfcData(self):
@@ -31,12 +31,12 @@ class TradeData43(base_types._BaseFieldType):
 
 	@CtrPtySpcfcData.setter
 	def CtrPtySpcfcData(self, value):
-		self._CtrPtySpcfcData = value if type(value) != base_types.auto else self.make_default("CtrPtySpcfcData")
+		self._CtrPtySpcfcData = value if value is not None else base_types.UninitialisedField(self, 'CtrPtySpcfcData', CounterpartySpecificData36, False)
 
 	@CtrPtySpcfcData.deleter
 	def CtrPtySpcfcData(self):
 		del self._CtrPtySpcfcData
-		self._CtrPtySpcfcData = None
+		self._CtrPtySpcfcData = base_types.UninitialisedField(self, 'CtrPtySpcfcData', CounterpartySpecificData36, False)
 
 	@property
 	def Lvl(self):
@@ -44,12 +44,12 @@ class TradeData43(base_types._BaseFieldType):
 
 	@Lvl.setter
 	def Lvl(self, value):
-		self._Lvl = value if type(value) != base_types.auto else self.make_default("Lvl")
+		self._Lvl = value if value is not None else base_types.UninitialisedField(self, 'Lvl', ModificationLevel1Code, False)
 
 	@Lvl.deleter
 	def Lvl(self):
 		del self._Lvl
-		self._Lvl = None
+		self._Lvl = base_types.UninitialisedField(self, 'Lvl', ModificationLevel1Code, False)
 
 	@property
 	def PblcDssmntnData(self):
@@ -57,12 +57,12 @@ class TradeData43(base_types._BaseFieldType):
 
 	@PblcDssmntnData.setter
 	def PblcDssmntnData(self, value):
-		self._PblcDssmntnData = value if type(value) != base_types.auto else self.make_default("PblcDssmntnData")
+		self._PblcDssmntnData = value if value is not None else base_types.UninitialisedField(self, 'PblcDssmntnData', DisseminationData1, False)
 
 	@PblcDssmntnData.deleter
 	def PblcDssmntnData(self):
 		del self._PblcDssmntnData
-		self._PblcDssmntnData = None
+		self._PblcDssmntnData = base_types.UninitialisedField(self, 'PblcDssmntnData', DisseminationData1, False)
 
 	@property
 	def SplmtryData(self):
@@ -70,12 +70,12 @@ class TradeData43(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TechAttrbts(self):
@@ -83,12 +83,12 @@ class TradeData43(base_types._BaseFieldType):
 
 	@TechAttrbts.setter
 	def TechAttrbts(self, value):
-		self._TechAttrbts = value if type(value) != base_types.auto else self.make_default("TechAttrbts")
+		self._TechAttrbts = value if value is not None else base_types.UninitialisedField(self, 'TechAttrbts', TechnicalAttributes5, False)
 
 	@TechAttrbts.deleter
 	def TechAttrbts(self):
 		del self._TechAttrbts
-		self._TechAttrbts = None
+		self._TechAttrbts = base_types.UninitialisedField(self, 'TechAttrbts', TechnicalAttributes5, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CmonTradData', type=CommonTradeDataReport71, min=1, max=1, mutex_group=None, array=False),

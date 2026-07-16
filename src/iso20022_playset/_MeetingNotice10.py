@@ -2,24 +2,24 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalRights4 import AdditionalRights4
-from ._Attendance2 import Attendance2
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._DateFormat1 import DateFormat1
-from ._DateFormat3Choice import DateFormat3Choice
-from ._DateFormat58Choice import DateFormat58Choice
-from ._DateFormat60Choice import DateFormat60Choice
-from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
-from ._Max2048Text import Max2048Text
-from ._Max35Text import Max35Text
-from ._MeetingContactPerson3 import MeetingContactPerson3
-from ._MeetingType4Code import MeetingType4Code
-from ._MeetingTypeClassification2Choice import MeetingTypeClassification2Choice
-from ._Number import Number
-from ._ParticipationMethod3 import ParticipationMethod3
-from ._PostalAddress1 import PostalAddress1
-from ._Proxy5Choice import Proxy5Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import AdditionalRights4
+from . import Attendance2
+from . import DateAndDateTime2Choice
+from . import DateFormat1
+from . import DateFormat3Choice
+from . import DateFormat58Choice
+from . import DateFormat60Choice
+from . import FinancialInstrumentQuantity18Choice
+from . import Max2048Text
+from . import Max35Text
+from . import MeetingContactPerson3
+from . import MeetingType4Code
+from . import MeetingTypeClassification2Choice
+from . import Number
+from . import ParticipationMethod3
+from . import PostalAddress1
+from . import Proxy5Choice
+from . import YesNoIndicator
 
 class MeetingNotice10(base_types._BaseFieldType):
 
@@ -30,12 +30,12 @@ class MeetingNotice10(base_types._BaseFieldType):
 
 	@AddtlDcmnttnURLAdr.setter
 	def AddtlDcmnttnURLAdr(self, value):
-		self._AddtlDcmnttnURLAdr = value if type(value) != base_types.auto else self.make_default("AddtlDcmnttnURLAdr")
+		self._AddtlDcmnttnURLAdr = value if value is not None else base_types.UninitialisedField(self, 'AddtlDcmnttnURLAdr', Max2048Text, True)
 
 	@AddtlDcmnttnURLAdr.deleter
 	def AddtlDcmnttnURLAdr(self):
 		del self._AddtlDcmnttnURLAdr
-		self._AddtlDcmnttnURLAdr = None
+		self._AddtlDcmnttnURLAdr = base_types.UninitialisedField(self, 'AddtlDcmnttnURLAdr', Max2048Text, True)
 
 	@property
 	def AddtlPrcdrDtls(self):
@@ -43,12 +43,12 @@ class MeetingNotice10(base_types._BaseFieldType):
 
 	@AddtlPrcdrDtls.setter
 	def AddtlPrcdrDtls(self, value):
-		self._AddtlPrcdrDtls = value if type(value) != base_types.auto else self.make_default("AddtlPrcdrDtls")
+		self._AddtlPrcdrDtls = value if value is not None else base_types.UninitialisedField(self, 'AddtlPrcdrDtls', AdditionalRights4, True)
 
 	@AddtlPrcdrDtls.deleter
 	def AddtlPrcdrDtls(self):
 		del self._AddtlPrcdrDtls
-		self._AddtlPrcdrDtls = None
+		self._AddtlPrcdrDtls = base_types.UninitialisedField(self, 'AddtlPrcdrDtls', AdditionalRights4, True)
 
 	@property
 	def AnncmntDt(self):
@@ -56,12 +56,12 @@ class MeetingNotice10(base_types._BaseFieldType):
 
 	@AnncmntDt.setter
 	def AnncmntDt(self, value):
-		self._AnncmntDt = value if type(value) != base_types.auto else self.make_default("AnncmntDt")
+		self._AnncmntDt = value if value is not None else base_types.UninitialisedField(self, 'AnncmntDt', DateAndDateTime2Choice, False)
 
 	@AnncmntDt.deleter
 	def AnncmntDt(self):
 		del self._AnncmntDt
-		self._AnncmntDt = None
+		self._AnncmntDt = base_types.UninitialisedField(self, 'AnncmntDt', DateAndDateTime2Choice, False)
 
 	@property
 	def Attndnc(self):
@@ -69,12 +69,12 @@ class MeetingNotice10(base_types._BaseFieldType):
 
 	@Attndnc.setter
 	def Attndnc(self, value):
-		self._Attndnc = value if type(value) != base_types.auto else self.make_default("Attndnc")
+		self._Attndnc = value if value is not None else base_types.UninitialisedField(self, 'Attndnc', Attendance2, False)
 
 	@Attndnc.deleter
 	def Attndnc(self):
 		del self._Attndnc
-		self._Attndnc = None
+		self._Attndnc = base_types.UninitialisedField(self, 'Attndnc', Attendance2, False)
 
 	@property
 	def Clssfctn(self):
@@ -82,12 +82,12 @@ class MeetingNotice10(base_types._BaseFieldType):
 
 	@Clssfctn.setter
 	def Clssfctn(self, value):
-		self._Clssfctn = value if type(value) != base_types.auto else self.make_default("Clssfctn")
+		self._Clssfctn = value if value is not None else base_types.UninitialisedField(self, 'Clssfctn', MeetingTypeClassification2Choice, False)
 
 	@Clssfctn.deleter
 	def Clssfctn(self):
 		del self._Clssfctn
-		self._Clssfctn = None
+		self._Clssfctn = base_types.UninitialisedField(self, 'Clssfctn', MeetingTypeClassification2Choice, False)
 
 	@property
 	def CtctPrsnDtls(self):
@@ -95,12 +95,12 @@ class MeetingNotice10(base_types._BaseFieldType):
 
 	@CtctPrsnDtls.setter
 	def CtctPrsnDtls(self, value):
-		self._CtctPrsnDtls = value if type(value) != base_types.auto else self.make_default("CtctPrsnDtls")
+		self._CtctPrsnDtls = value if value is not None else base_types.UninitialisedField(self, 'CtctPrsnDtls', MeetingContactPerson3, True)
 
 	@CtctPrsnDtls.deleter
 	def CtctPrsnDtls(self):
 		del self._CtctPrsnDtls
-		self._CtctPrsnDtls = None
+		self._CtctPrsnDtls = base_types.UninitialisedField(self, 'CtctPrsnDtls', MeetingContactPerson3, True)
 
 	@property
 	def EnrlmntDdln(self):
@@ -108,12 +108,12 @@ class MeetingNotice10(base_types._BaseFieldType):
 
 	@EnrlmntDdln.setter
 	def EnrlmntDdln(self, value):
-		self._EnrlmntDdln = value if type(value) != base_types.auto else self.make_default("EnrlmntDdln")
+		self._EnrlmntDdln = value if value is not None else base_types.UninitialisedField(self, 'EnrlmntDdln', DateFormat58Choice, False)
 
 	@EnrlmntDdln.deleter
 	def EnrlmntDdln(self):
 		del self._EnrlmntDdln
-		self._EnrlmntDdln = None
+		self._EnrlmntDdln = base_types.UninitialisedField(self, 'EnrlmntDdln', DateFormat58Choice, False)
 
 	@property
 	def EnrlmntMktDdln(self):
@@ -121,12 +121,12 @@ class MeetingNotice10(base_types._BaseFieldType):
 
 	@EnrlmntMktDdln.setter
 	def EnrlmntMktDdln(self, value):
-		self._EnrlmntMktDdln = value if type(value) != base_types.auto else self.make_default("EnrlmntMktDdln")
+		self._EnrlmntMktDdln = value if value is not None else base_types.UninitialisedField(self, 'EnrlmntMktDdln', DateFormat58Choice, False)
 
 	@EnrlmntMktDdln.deleter
 	def EnrlmntMktDdln(self):
 		del self._EnrlmntMktDdln
-		self._EnrlmntMktDdln = None
+		self._EnrlmntMktDdln = base_types.UninitialisedField(self, 'EnrlmntMktDdln', DateFormat58Choice, False)
 
 	@property
 	def EntitlmntFxgDt(self):
@@ -134,12 +134,12 @@ class MeetingNotice10(base_types._BaseFieldType):
 
 	@EntitlmntFxgDt.setter
 	def EntitlmntFxgDt(self, value):
-		self._EntitlmntFxgDt = value if type(value) != base_types.auto else self.make_default("EntitlmntFxgDt")
+		self._EntitlmntFxgDt = value if value is not None else base_types.UninitialisedField(self, 'EntitlmntFxgDt', DateFormat1, False)
 
 	@EntitlmntFxgDt.deleter
 	def EntitlmntFxgDt(self):
 		del self._EntitlmntFxgDt
-		self._EntitlmntFxgDt = None
+		self._EntitlmntFxgDt = base_types.UninitialisedField(self, 'EntitlmntFxgDt', DateFormat1, False)
 
 	@property
 	def EvtPrcgWebSiteAdr(self):
@@ -147,12 +147,12 @@ class MeetingNotice10(base_types._BaseFieldType):
 
 	@EvtPrcgWebSiteAdr.setter
 	def EvtPrcgWebSiteAdr(self, value):
-		self._EvtPrcgWebSiteAdr = value if type(value) != base_types.auto else self.make_default("EvtPrcgWebSiteAdr")
+		self._EvtPrcgWebSiteAdr = value if value is not None else base_types.UninitialisedField(self, 'EvtPrcgWebSiteAdr', Max2048Text, False)
 
 	@EvtPrcgWebSiteAdr.deleter
 	def EvtPrcgWebSiteAdr(self):
 		del self._EvtPrcgWebSiteAdr
-		self._EvtPrcgWebSiteAdr = None
+		self._EvtPrcgWebSiteAdr = base_types.UninitialisedField(self, 'EvtPrcgWebSiteAdr', Max2048Text, False)
 
 	@property
 	def IssrMtgId(self):
@@ -160,12 +160,12 @@ class MeetingNotice10(base_types._BaseFieldType):
 
 	@IssrMtgId.setter
 	def IssrMtgId(self, value):
-		self._IssrMtgId = value if type(value) != base_types.auto else self.make_default("IssrMtgId")
+		self._IssrMtgId = value if value is not None else base_types.UninitialisedField(self, 'IssrMtgId', Max35Text, False)
 
 	@IssrMtgId.deleter
 	def IssrMtgId(self):
 		del self._IssrMtgId
-		self._IssrMtgId = None
+		self._IssrMtgId = base_types.UninitialisedField(self, 'IssrMtgId', Max35Text, False)
 
 	@property
 	def MtgId(self):
@@ -173,12 +173,12 @@ class MeetingNotice10(base_types._BaseFieldType):
 
 	@MtgId.setter
 	def MtgId(self, value):
-		self._MtgId = value if type(value) != base_types.auto else self.make_default("MtgId")
+		self._MtgId = value if value is not None else base_types.UninitialisedField(self, 'MtgId', Max35Text, False)
 
 	@MtgId.deleter
 	def MtgId(self):
 		del self._MtgId
-		self._MtgId = None
+		self._MtgId = base_types.UninitialisedField(self, 'MtgId', Max35Text, False)
 
 	@property
 	def OneManOneVoteInd(self):
@@ -186,12 +186,12 @@ class MeetingNotice10(base_types._BaseFieldType):
 
 	@OneManOneVoteInd.setter
 	def OneManOneVoteInd(self, value):
-		self._OneManOneVoteInd = value if type(value) != base_types.auto else self.make_default("OneManOneVoteInd")
+		self._OneManOneVoteInd = value if value is not None else base_types.UninitialisedField(self, 'OneManOneVoteInd', YesNoIndicator, False)
 
 	@OneManOneVoteInd.deleter
 	def OneManOneVoteInd(self):
 		del self._OneManOneVoteInd
-		self._OneManOneVoteInd = None
+		self._OneManOneVoteInd = base_types.UninitialisedField(self, 'OneManOneVoteInd', YesNoIndicator, False)
 
 	@property
 	def Prtcptn(self):
@@ -199,12 +199,12 @@ class MeetingNotice10(base_types._BaseFieldType):
 
 	@Prtcptn.setter
 	def Prtcptn(self, value):
-		self._Prtcptn = value if type(value) != base_types.auto else self.make_default("Prtcptn")
+		self._Prtcptn = value if value is not None else base_types.UninitialisedField(self, 'Prtcptn', ParticipationMethod3, True)
 
 	@Prtcptn.deleter
 	def Prtcptn(self):
 		del self._Prtcptn
-		self._Prtcptn = None
+		self._Prtcptn = base_types.UninitialisedField(self, 'Prtcptn', ParticipationMethod3, True)
 
 	@property
 	def PrxyAppntmntNtfctnAdr(self):
@@ -212,12 +212,12 @@ class MeetingNotice10(base_types._BaseFieldType):
 
 	@PrxyAppntmntNtfctnAdr.setter
 	def PrxyAppntmntNtfctnAdr(self, value):
-		self._PrxyAppntmntNtfctnAdr = value if type(value) != base_types.auto else self.make_default("PrxyAppntmntNtfctnAdr")
+		self._PrxyAppntmntNtfctnAdr = value if value is not None else base_types.UninitialisedField(self, 'PrxyAppntmntNtfctnAdr', PostalAddress1, False)
 
 	@PrxyAppntmntNtfctnAdr.deleter
 	def PrxyAppntmntNtfctnAdr(self):
 		del self._PrxyAppntmntNtfctnAdr
-		self._PrxyAppntmntNtfctnAdr = None
+		self._PrxyAppntmntNtfctnAdr = base_types.UninitialisedField(self, 'PrxyAppntmntNtfctnAdr', PostalAddress1, False)
 
 	@property
 	def PrxyChc(self):
@@ -225,12 +225,12 @@ class MeetingNotice10(base_types._BaseFieldType):
 
 	@PrxyChc.setter
 	def PrxyChc(self, value):
-		self._PrxyChc = value if type(value) != base_types.auto else self.make_default("PrxyChc")
+		self._PrxyChc = value if value is not None else base_types.UninitialisedField(self, 'PrxyChc', Proxy5Choice, False)
 
 	@PrxyChc.deleter
 	def PrxyChc(self):
 		del self._PrxyChc
-		self._PrxyChc = None
+		self._PrxyChc = base_types.UninitialisedField(self, 'PrxyChc', Proxy5Choice, False)
 
 	@property
 	def RegnSctiesDdln(self):
@@ -238,12 +238,12 @@ class MeetingNotice10(base_types._BaseFieldType):
 
 	@RegnSctiesDdln.setter
 	def RegnSctiesDdln(self, value):
-		self._RegnSctiesDdln = value if type(value) != base_types.auto else self.make_default("RegnSctiesDdln")
+		self._RegnSctiesDdln = value if value is not None else base_types.UninitialisedField(self, 'RegnSctiesDdln', DateFormat58Choice, False)
 
 	@RegnSctiesDdln.deleter
 	def RegnSctiesDdln(self):
 		del self._RegnSctiesDdln
-		self._RegnSctiesDdln = None
+		self._RegnSctiesDdln = base_types.UninitialisedField(self, 'RegnSctiesDdln', DateFormat58Choice, False)
 
 	@property
 	def RegnSctiesMktDdln(self):
@@ -251,12 +251,12 @@ class MeetingNotice10(base_types._BaseFieldType):
 
 	@RegnSctiesMktDdln.setter
 	def RegnSctiesMktDdln(self, value):
-		self._RegnSctiesMktDdln = value if type(value) != base_types.auto else self.make_default("RegnSctiesMktDdln")
+		self._RegnSctiesMktDdln = value if value is not None else base_types.UninitialisedField(self, 'RegnSctiesMktDdln', DateFormat58Choice, False)
 
 	@RegnSctiesMktDdln.deleter
 	def RegnSctiesMktDdln(self):
 		del self._RegnSctiesMktDdln
-		self._RegnSctiesMktDdln = None
+		self._RegnSctiesMktDdln = base_types.UninitialisedField(self, 'RegnSctiesMktDdln', DateFormat58Choice, False)
 
 	@property
 	def RsltPblctnDt(self):
@@ -264,12 +264,12 @@ class MeetingNotice10(base_types._BaseFieldType):
 
 	@RsltPblctnDt.setter
 	def RsltPblctnDt(self, value):
-		self._RsltPblctnDt = value if type(value) != base_types.auto else self.make_default("RsltPblctnDt")
+		self._RsltPblctnDt = value if value is not None else base_types.UninitialisedField(self, 'RsltPblctnDt', DateFormat3Choice, False)
 
 	@RsltPblctnDt.deleter
 	def RsltPblctnDt(self):
 		del self._RsltPblctnDt
-		self._RsltPblctnDt = None
+		self._RsltPblctnDt = base_types.UninitialisedField(self, 'RsltPblctnDt', DateFormat3Choice, False)
 
 	@property
 	def SctiesBlckgPrdEndDt(self):
@@ -277,12 +277,12 @@ class MeetingNotice10(base_types._BaseFieldType):
 
 	@SctiesBlckgPrdEndDt.setter
 	def SctiesBlckgPrdEndDt(self, value):
-		self._SctiesBlckgPrdEndDt = value if type(value) != base_types.auto else self.make_default("SctiesBlckgPrdEndDt")
+		self._SctiesBlckgPrdEndDt = value if value is not None else base_types.UninitialisedField(self, 'SctiesBlckgPrdEndDt', DateFormat60Choice, False)
 
 	@SctiesBlckgPrdEndDt.deleter
 	def SctiesBlckgPrdEndDt(self):
 		del self._SctiesBlckgPrdEndDt
-		self._SctiesBlckgPrdEndDt = None
+		self._SctiesBlckgPrdEndDt = base_types.UninitialisedField(self, 'SctiesBlckgPrdEndDt', DateFormat60Choice, False)
 
 	@property
 	def Tp(self):
@@ -290,12 +290,12 @@ class MeetingNotice10(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', MeetingType4Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', MeetingType4Code, False)
 
 	@property
 	def TtlNbOfSctiesOutsdng(self):
@@ -303,12 +303,12 @@ class MeetingNotice10(base_types._BaseFieldType):
 
 	@TtlNbOfSctiesOutsdng.setter
 	def TtlNbOfSctiesOutsdng(self, value):
-		self._TtlNbOfSctiesOutsdng = value if type(value) != base_types.auto else self.make_default("TtlNbOfSctiesOutsdng")
+		self._TtlNbOfSctiesOutsdng = value if value is not None else base_types.UninitialisedField(self, 'TtlNbOfSctiesOutsdng', FinancialInstrumentQuantity18Choice, False)
 
 	@TtlNbOfSctiesOutsdng.deleter
 	def TtlNbOfSctiesOutsdng(self):
 		del self._TtlNbOfSctiesOutsdng
-		self._TtlNbOfSctiesOutsdng = None
+		self._TtlNbOfSctiesOutsdng = base_types.UninitialisedField(self, 'TtlNbOfSctiesOutsdng', FinancialInstrumentQuantity18Choice, False)
 
 	@property
 	def TtlNbOfVtngRghts(self):
@@ -316,12 +316,12 @@ class MeetingNotice10(base_types._BaseFieldType):
 
 	@TtlNbOfVtngRghts.setter
 	def TtlNbOfVtngRghts(self, value):
-		self._TtlNbOfVtngRghts = value if type(value) != base_types.auto else self.make_default("TtlNbOfVtngRghts")
+		self._TtlNbOfVtngRghts = value if value is not None else base_types.UninitialisedField(self, 'TtlNbOfVtngRghts', Number, False)
 
 	@TtlNbOfVtngRghts.deleter
 	def TtlNbOfVtngRghts(self):
 		del self._TtlNbOfVtngRghts
-		self._TtlNbOfVtngRghts = None
+		self._TtlNbOfVtngRghts = base_types.UninitialisedField(self, 'TtlNbOfVtngRghts', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlDcmnttnURLAdr', type=Max2048Text, min=0, max=None, mutex_group=None, array=True),

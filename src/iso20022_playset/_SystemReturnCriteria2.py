@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RequestedIndicator import RequestedIndicator
+from . import RequestedIndicator
 
 class SystemReturnCriteria2(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class SystemReturnCriteria2(base_types._BaseFieldType):
 
 	@AcctIdInd.setter
 	def AcctIdInd(self, value):
-		self._AcctIdInd = value if type(value) != base_types.auto else self.make_default("AcctIdInd")
+		self._AcctIdInd = value if value is not None else base_types.UninitialisedField(self, 'AcctIdInd', RequestedIndicator, False)
 
 	@AcctIdInd.deleter
 	def AcctIdInd(self):
 		del self._AcctIdInd
-		self._AcctIdInd = None
+		self._AcctIdInd = base_types.UninitialisedField(self, 'AcctIdInd', RequestedIndicator, False)
 
 	@property
 	def CtryIdInd(self):
@@ -26,12 +26,12 @@ class SystemReturnCriteria2(base_types._BaseFieldType):
 
 	@CtryIdInd.setter
 	def CtryIdInd(self, value):
-		self._CtryIdInd = value if type(value) != base_types.auto else self.make_default("CtryIdInd")
+		self._CtryIdInd = value if value is not None else base_types.UninitialisedField(self, 'CtryIdInd', RequestedIndicator, False)
 
 	@CtryIdInd.deleter
 	def CtryIdInd(self):
 		del self._CtryIdInd
-		self._CtryIdInd = None
+		self._CtryIdInd = base_types.UninitialisedField(self, 'CtryIdInd', RequestedIndicator, False)
 
 	@property
 	def MmbIdInd(self):
@@ -39,12 +39,12 @@ class SystemReturnCriteria2(base_types._BaseFieldType):
 
 	@MmbIdInd.setter
 	def MmbIdInd(self, value):
-		self._MmbIdInd = value if type(value) != base_types.auto else self.make_default("MmbIdInd")
+		self._MmbIdInd = value if value is not None else base_types.UninitialisedField(self, 'MmbIdInd', RequestedIndicator, False)
 
 	@MmbIdInd.deleter
 	def MmbIdInd(self):
 		del self._MmbIdInd
-		self._MmbIdInd = None
+		self._MmbIdInd = base_types.UninitialisedField(self, 'MmbIdInd', RequestedIndicator, False)
 
 	@property
 	def SysIdInd(self):
@@ -52,12 +52,12 @@ class SystemReturnCriteria2(base_types._BaseFieldType):
 
 	@SysIdInd.setter
 	def SysIdInd(self, value):
-		self._SysIdInd = value if type(value) != base_types.auto else self.make_default("SysIdInd")
+		self._SysIdInd = value if value is not None else base_types.UninitialisedField(self, 'SysIdInd', RequestedIndicator, False)
 
 	@SysIdInd.deleter
 	def SysIdInd(self):
 		del self._SysIdInd
-		self._SysIdInd = None
+		self._SysIdInd = base_types.UninitialisedField(self, 'SysIdInd', RequestedIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctIdInd', type=RequestedIndicator, min=0, max=1, mutex_group=None, array=False),

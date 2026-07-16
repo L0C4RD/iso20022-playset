@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection109 import AmountAndDirection109
-from ._ISODateTime import ISODateTime
-from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
-from ._ValuationType1Code import ValuationType1Code
+from . import AmountAndDirection109
+from . import ISODateTime
+from . import LongFraction19DecimalNumber
+from . import ValuationType1Code
 
 class ContractValuationData8(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ContractValuationData8(base_types._BaseFieldType):
 
 	@CtrctVal.setter
 	def CtrctVal(self, value):
-		self._CtrctVal = value if type(value) != base_types.auto else self.make_default("CtrctVal")
+		self._CtrctVal = value if value is not None else base_types.UninitialisedField(self, 'CtrctVal', AmountAndDirection109, False)
 
 	@CtrctVal.deleter
 	def CtrctVal(self):
 		del self._CtrctVal
-		self._CtrctVal = None
+		self._CtrctVal = base_types.UninitialisedField(self, 'CtrctVal', AmountAndDirection109, False)
 
 	@property
 	def Dlta(self):
@@ -29,12 +29,12 @@ class ContractValuationData8(base_types._BaseFieldType):
 
 	@Dlta.setter
 	def Dlta(self, value):
-		self._Dlta = value if type(value) != base_types.auto else self.make_default("Dlta")
+		self._Dlta = value if value is not None else base_types.UninitialisedField(self, 'Dlta', LongFraction19DecimalNumber, False)
 
 	@Dlta.deleter
 	def Dlta(self):
 		del self._Dlta
-		self._Dlta = None
+		self._Dlta = base_types.UninitialisedField(self, 'Dlta', LongFraction19DecimalNumber, False)
 
 	@property
 	def TmStmp(self):
@@ -42,12 +42,12 @@ class ContractValuationData8(base_types._BaseFieldType):
 
 	@TmStmp.setter
 	def TmStmp(self, value):
-		self._TmStmp = value if type(value) != base_types.auto else self.make_default("TmStmp")
+		self._TmStmp = value if value is not None else base_types.UninitialisedField(self, 'TmStmp', ISODateTime, False)
 
 	@TmStmp.deleter
 	def TmStmp(self):
 		del self._TmStmp
-		self._TmStmp = None
+		self._TmStmp = base_types.UninitialisedField(self, 'TmStmp', ISODateTime, False)
 
 	@property
 	def Tp(self):
@@ -55,12 +55,12 @@ class ContractValuationData8(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', ValuationType1Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', ValuationType1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrctVal', type=AmountAndDirection109, min=0, max=1, mutex_group=None, array=False),

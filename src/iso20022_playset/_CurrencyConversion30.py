@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CurrencyConversion29 import CurrencyConversion29
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import CurrencyConversion29
+from . import TrueFalseIndicator
 
 class CurrencyConversion30(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CurrencyConversion30(base_types._BaseFieldType):
 
 	@AccptdByCrdhldr.setter
 	def AccptdByCrdhldr(self, value):
-		self._AccptdByCrdhldr = value if type(value) != base_types.auto else self.make_default("AccptdByCrdhldr")
+		self._AccptdByCrdhldr = value if value is not None else base_types.UninitialisedField(self, 'AccptdByCrdhldr', TrueFalseIndicator, False)
 
 	@AccptdByCrdhldr.deleter
 	def AccptdByCrdhldr(self):
 		del self._AccptdByCrdhldr
-		self._AccptdByCrdhldr = None
+		self._AccptdByCrdhldr = base_types.UninitialisedField(self, 'AccptdByCrdhldr', TrueFalseIndicator, False)
 
 	@property
 	def Convs(self):
@@ -27,12 +27,12 @@ class CurrencyConversion30(base_types._BaseFieldType):
 
 	@Convs.setter
 	def Convs(self, value):
-		self._Convs = value if type(value) != base_types.auto else self.make_default("Convs")
+		self._Convs = value if value is not None else base_types.UninitialisedField(self, 'Convs', CurrencyConversion29, False)
 
 	@Convs.deleter
 	def Convs(self):
 		del self._Convs
-		self._Convs = None
+		self._Convs = base_types.UninitialisedField(self, 'Convs', CurrencyConversion29, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AccptdByCrdhldr', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),

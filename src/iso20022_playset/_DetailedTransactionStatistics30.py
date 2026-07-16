@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max20PositiveNumber import Max20PositiveNumber
-from ._RejectionReason71 import RejectionReason71
+from . import Max20PositiveNumber
+from . import RejectionReason71
 
 class DetailedTransactionStatistics30(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DetailedTransactionStatistics30(base_types._BaseFieldType):
 
 	@TtlCrrctdRjctns.setter
 	def TtlCrrctdRjctns(self, value):
-		self._TtlCrrctdRjctns = value if type(value) != base_types.auto else self.make_default("TtlCrrctdRjctns")
+		self._TtlCrrctdRjctns = value if value is not None else base_types.UninitialisedField(self, 'TtlCrrctdRjctns', Max20PositiveNumber, False)
 
 	@TtlCrrctdRjctns.deleter
 	def TtlCrrctdRjctns(self):
 		del self._TtlCrrctdRjctns
-		self._TtlCrrctdRjctns = None
+		self._TtlCrrctdRjctns = base_types.UninitialisedField(self, 'TtlCrrctdRjctns', Max20PositiveNumber, False)
 
 	@property
 	def TtlNbOfTxs(self):
@@ -27,12 +27,12 @@ class DetailedTransactionStatistics30(base_types._BaseFieldType):
 
 	@TtlNbOfTxs.setter
 	def TtlNbOfTxs(self, value):
-		self._TtlNbOfTxs = value if type(value) != base_types.auto else self.make_default("TtlNbOfTxs")
+		self._TtlNbOfTxs = value if value is not None else base_types.UninitialisedField(self, 'TtlNbOfTxs', Max20PositiveNumber, False)
 
 	@TtlNbOfTxs.deleter
 	def TtlNbOfTxs(self):
 		del self._TtlNbOfTxs
-		self._TtlNbOfTxs = None
+		self._TtlNbOfTxs = base_types.UninitialisedField(self, 'TtlNbOfTxs', Max20PositiveNumber, False)
 
 	@property
 	def TtlNbOfTxsAccptd(self):
@@ -40,12 +40,12 @@ class DetailedTransactionStatistics30(base_types._BaseFieldType):
 
 	@TtlNbOfTxsAccptd.setter
 	def TtlNbOfTxsAccptd(self, value):
-		self._TtlNbOfTxsAccptd = value if type(value) != base_types.auto else self.make_default("TtlNbOfTxsAccptd")
+		self._TtlNbOfTxsAccptd = value if value is not None else base_types.UninitialisedField(self, 'TtlNbOfTxsAccptd', Max20PositiveNumber, False)
 
 	@TtlNbOfTxsAccptd.deleter
 	def TtlNbOfTxsAccptd(self):
 		del self._TtlNbOfTxsAccptd
-		self._TtlNbOfTxsAccptd = None
+		self._TtlNbOfTxsAccptd = base_types.UninitialisedField(self, 'TtlNbOfTxsAccptd', Max20PositiveNumber, False)
 
 	@property
 	def TtlNbOfTxsRjctd(self):
@@ -53,12 +53,12 @@ class DetailedTransactionStatistics30(base_types._BaseFieldType):
 
 	@TtlNbOfTxsRjctd.setter
 	def TtlNbOfTxsRjctd(self, value):
-		self._TtlNbOfTxsRjctd = value if type(value) != base_types.auto else self.make_default("TtlNbOfTxsRjctd")
+		self._TtlNbOfTxsRjctd = value if value is not None else base_types.UninitialisedField(self, 'TtlNbOfTxsRjctd', Max20PositiveNumber, False)
 
 	@TtlNbOfTxsRjctd.deleter
 	def TtlNbOfTxsRjctd(self):
 		del self._TtlNbOfTxsRjctd
-		self._TtlNbOfTxsRjctd = None
+		self._TtlNbOfTxsRjctd = base_types.UninitialisedField(self, 'TtlNbOfTxsRjctd', Max20PositiveNumber, False)
 
 	@property
 	def TxsRjctnsRsn(self):
@@ -66,12 +66,12 @@ class DetailedTransactionStatistics30(base_types._BaseFieldType):
 
 	@TxsRjctnsRsn.setter
 	def TxsRjctnsRsn(self, value):
-		self._TxsRjctnsRsn = value if type(value) != base_types.auto else self.make_default("TxsRjctnsRsn")
+		self._TxsRjctnsRsn = value if value is not None else base_types.UninitialisedField(self, 'TxsRjctnsRsn', RejectionReason71, True)
 
 	@TxsRjctnsRsn.deleter
 	def TxsRjctnsRsn(self):
 		del self._TxsRjctnsRsn
-		self._TxsRjctnsRsn = None
+		self._TxsRjctnsRsn = base_types.UninitialisedField(self, 'TxsRjctnsRsn', RejectionReason71, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TtlCrrctdRjctns', type=Max20PositiveNumber, min=0, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesSettlementTransactionAllegementReportV11 import SecuritiesSettlementTransactionAllegementReportV11
+from . import SecuritiesSettlementTransactionAllegementReportV11
 
 class SEMT_019_001_11():
 
@@ -18,12 +18,12 @@ class SEMT_019_001_11():
 
 		@SctiesSttlmTxAllgmtRpt.setter
 		def SctiesSttlmTxAllgmtRpt(self, value):
-			self._SctiesSttlmTxAllgmtRpt = value if type(value) != base_types.auto else self.make_default("SctiesSttlmTxAllgmtRpt")
+			self._SctiesSttlmTxAllgmtRpt = value if value is not None else base_types.UninitialisedField(self, 'SctiesSttlmTxAllgmtRpt', SecuritiesSettlementTransactionAllegementReportV11, False)
 
 		@SctiesSttlmTxAllgmtRpt.deleter
 		def SctiesSttlmTxAllgmtRpt(self):
 			del self._SctiesSttlmTxAllgmtRpt
-			self._SctiesSttlmTxAllgmtRpt = None
+			self._SctiesSttlmTxAllgmtRpt = base_types.UninitialisedField(self, 'SctiesSttlmTxAllgmtRpt', SecuritiesSettlementTransactionAllegementReportV11, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesSttlmTxAllgmtRpt', type=SecuritiesSettlementTransactionAllegementReportV11, min=1, max=1, mutex_group=None, array=False),

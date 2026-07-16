@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._Max350Text import Max350Text
+from . import AdditionalInformation15
+from . import Max350Text
 
 class OtherTargetMarket1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class OtherTargetMarket1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, False)
 
 	@property
 	def TrgtMktTp(self):
@@ -27,12 +27,12 @@ class OtherTargetMarket1(base_types._BaseFieldType):
 
 	@TrgtMktTp.setter
 	def TrgtMktTp(self, value):
-		self._TrgtMktTp = value if type(value) != base_types.auto else self.make_default("TrgtMktTp")
+		self._TrgtMktTp = value if value is not None else base_types.UninitialisedField(self, 'TrgtMktTp', Max350Text, False)
 
 	@TrgtMktTp.deleter
 	def TrgtMktTp(self):
 		del self._TrgtMktTp
-		self._TrgtMktTp = None
+		self._TrgtMktTp = base_types.UninitialisedField(self, 'TrgtMktTp', Max350Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),

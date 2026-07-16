@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISO2ALanguageCode import ISO2ALanguageCode
-from ._Max8000Text import Max8000Text
+from . import ISO2ALanguageCode
+from . import Max8000Text
 
 class LanguageSpecifiedNarrative1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class LanguageSpecifiedNarrative1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max8000Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max8000Text, False)
 
 	@property
 	def Lang(self):
@@ -27,12 +27,12 @@ class LanguageSpecifiedNarrative1(base_types._BaseFieldType):
 
 	@Lang.setter
 	def Lang(self, value):
-		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
+		self._Lang = value if value is not None else base_types.UninitialisedField(self, 'Lang', ISO2ALanguageCode, False)
 
 	@Lang.deleter
 	def Lang(self):
 		del self._Lang
-		self._Lang = None
+		self._Lang = base_types.UninitialisedField(self, 'Lang', ISO2ALanguageCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max8000Text, min=1, max=1, mutex_group=None, array=False),

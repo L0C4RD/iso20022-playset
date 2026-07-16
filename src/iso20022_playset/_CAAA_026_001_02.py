@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcceptorToAcquirerBatchFileExchangeV02 import AcceptorToAcquirerBatchFileExchangeV02
+from . import AcceptorToAcquirerBatchFileExchangeV02
 
 class CAAA_026_001_02():
 
@@ -18,12 +18,12 @@ class CAAA_026_001_02():
 
 		@AccptrToAcqrrBtchFileXchg.setter
 		def AccptrToAcqrrBtchFileXchg(self, value):
-			self._AccptrToAcqrrBtchFileXchg = value if type(value) != base_types.auto else self.make_default("AccptrToAcqrrBtchFileXchg")
+			self._AccptrToAcqrrBtchFileXchg = value if value is not None else base_types.UninitialisedField(self, 'AccptrToAcqrrBtchFileXchg', AcceptorToAcquirerBatchFileExchangeV02, False)
 
 		@AccptrToAcqrrBtchFileXchg.deleter
 		def AccptrToAcqrrBtchFileXchg(self):
 			del self._AccptrToAcqrrBtchFileXchg
-			self._AccptrToAcqrrBtchFileXchg = None
+			self._AccptrToAcqrrBtchFileXchg = base_types.UninitialisedField(self, 'AccptrToAcqrrBtchFileXchg', AcceptorToAcquirerBatchFileExchangeV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AccptrToAcqrrBtchFileXchg', type=AcceptorToAcquirerBatchFileExchangeV02, min=1, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MessageIdentification1 import MessageIdentification1
-from ._UTCOffset1 import UTCOffset1
+from . import MessageIdentification1
+from . import UTCOffset1
 
 class ActivityReportSetUpRequestV02(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ActivityReportSetUpRequestV02(base_types._BaseFieldType):
 
 	@ReqId.setter
 	def ReqId(self, value):
-		self._ReqId = value if type(value) != base_types.auto else self.make_default("ReqId")
+		self._ReqId = value if value is not None else base_types.UninitialisedField(self, 'ReqId', MessageIdentification1, False)
 
 	@ReqId.deleter
 	def ReqId(self):
 		del self._ReqId
-		self._ReqId = None
+		self._ReqId = base_types.UninitialisedField(self, 'ReqId', MessageIdentification1, False)
 
 	@property
 	def UTCOffset(self):
@@ -27,12 +27,12 @@ class ActivityReportSetUpRequestV02(base_types._BaseFieldType):
 
 	@UTCOffset.setter
 	def UTCOffset(self, value):
-		self._UTCOffset = value if type(value) != base_types.auto else self.make_default("UTCOffset")
+		self._UTCOffset = value if value is not None else base_types.UninitialisedField(self, 'UTCOffset', UTCOffset1, False)
 
 	@UTCOffset.deleter
 	def UTCOffset(self):
 		del self._UTCOffset
-		self._UTCOffset = None
+		self._UTCOffset = base_types.UninitialisedField(self, 'UTCOffset', UTCOffset1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ReqId', type=MessageIdentification1, min=1, max=1, mutex_group=None, array=False),

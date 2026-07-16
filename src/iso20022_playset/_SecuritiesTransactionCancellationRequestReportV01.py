@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Pagination1 import Pagination1
-from ._SecuritiesCancellation2 import SecuritiesCancellation2
-from ._SecuritiesTransactionReport5 import SecuritiesTransactionReport5
-from ._SupplementaryData1 import SupplementaryData1
+from . import Pagination1
+from . import SecuritiesCancellation2
+from . import SecuritiesTransactionReport5
+from . import SupplementaryData1
 
 class SecuritiesTransactionCancellationRequestReportV01(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class SecuritiesTransactionCancellationRequestReportV01(base_types._BaseFieldTyp
 
 	@Cxls.setter
 	def Cxls(self, value):
-		self._Cxls = value if type(value) != base_types.auto else self.make_default("Cxls")
+		self._Cxls = value if value is not None else base_types.UninitialisedField(self, 'Cxls', SecuritiesCancellation2, True)
 
 	@Cxls.deleter
 	def Cxls(self):
 		del self._Cxls
-		self._Cxls = None
+		self._Cxls = base_types.UninitialisedField(self, 'Cxls', SecuritiesCancellation2, True)
 
 	@property
 	def Pgntn(self):
@@ -29,12 +29,12 @@ class SecuritiesTransactionCancellationRequestReportV01(base_types._BaseFieldTyp
 
 	@Pgntn.setter
 	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+		self._Pgntn = value if value is not None else base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@Pgntn.deleter
 	def Pgntn(self):
 		del self._Pgntn
-		self._Pgntn = None
+		self._Pgntn = base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@property
 	def RptGnlDtls(self):
@@ -42,12 +42,12 @@ class SecuritiesTransactionCancellationRequestReportV01(base_types._BaseFieldTyp
 
 	@RptGnlDtls.setter
 	def RptGnlDtls(self, value):
-		self._RptGnlDtls = value if type(value) != base_types.auto else self.make_default("RptGnlDtls")
+		self._RptGnlDtls = value if value is not None else base_types.UninitialisedField(self, 'RptGnlDtls', SecuritiesTransactionReport5, False)
 
 	@RptGnlDtls.deleter
 	def RptGnlDtls(self):
 		del self._RptGnlDtls
-		self._RptGnlDtls = None
+		self._RptGnlDtls = base_types.UninitialisedField(self, 'RptGnlDtls', SecuritiesTransactionReport5, False)
 
 	@property
 	def SplmtryData(self):
@@ -55,12 +55,12 @@ class SecuritiesTransactionCancellationRequestReportV01(base_types._BaseFieldTyp
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cxls', type=SecuritiesCancellation2, min=0, max=None, mutex_group=None, array=True),

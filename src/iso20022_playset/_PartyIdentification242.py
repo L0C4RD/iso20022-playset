@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CCPMemberType1Code import CCPMemberType1Code
-from ._PartyIdentification178Choice import PartyIdentification178Choice
+from . import CCPMemberType1Code
+from . import PartyIdentification178Choice
 
 class PartyIdentification242(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PartyIdentification242(base_types._BaseFieldType):
 
 	@CCPMmbTp.setter
 	def CCPMmbTp(self, value):
-		self._CCPMmbTp = value if type(value) != base_types.auto else self.make_default("CCPMmbTp")
+		self._CCPMmbTp = value if value is not None else base_types.UninitialisedField(self, 'CCPMmbTp', CCPMemberType1Code, False)
 
 	@CCPMmbTp.deleter
 	def CCPMmbTp(self):
 		del self._CCPMmbTp
-		self._CCPMmbTp = None
+		self._CCPMmbTp = base_types.UninitialisedField(self, 'CCPMmbTp', CCPMemberType1Code, False)
 
 	@property
 	def Id(self):
@@ -27,12 +27,12 @@ class PartyIdentification242(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', PartyIdentification178Choice, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', PartyIdentification178Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CCPMmbTp', type=CCPMemberType1Code, min=0, max=1, mutex_group=None, array=False),

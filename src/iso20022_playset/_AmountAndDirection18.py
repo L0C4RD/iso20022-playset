@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CreditDebitCode import CreditDebitCode
-from ._RestrictedFINActiveOrHistoricCurrencyAndAmount import RestrictedFINActiveOrHistoricCurrencyAndAmount
+from . import CreditDebitCode
+from . import RestrictedFINActiveOrHistoricCurrencyAndAmount
 
 class AmountAndDirection18(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AmountAndDirection18(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', RestrictedFINActiveOrHistoricCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', RestrictedFINActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def CdtDbt(self):
@@ -27,12 +27,12 @@ class AmountAndDirection18(base_types._BaseFieldType):
 
 	@CdtDbt.setter
 	def CdtDbt(self, value):
-		self._CdtDbt = value if type(value) != base_types.auto else self.make_default("CdtDbt")
+		self._CdtDbt = value if value is not None else base_types.UninitialisedField(self, 'CdtDbt', CreditDebitCode, False)
 
 	@CdtDbt.deleter
 	def CdtDbt(self):
 		del self._CdtDbt
-		self._CdtDbt = None
+		self._CdtDbt = base_types.UninitialisedField(self, 'CdtDbt', CreditDebitCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=RestrictedFINActiveOrHistoricCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

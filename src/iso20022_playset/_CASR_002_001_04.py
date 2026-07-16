@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SettlementReportingResponseV04 import SettlementReportingResponseV04
+from . import SettlementReportingResponseV04
 
 class CASR_002_001_04():
 
@@ -18,12 +18,12 @@ class CASR_002_001_04():
 
 		@SttlmRptgRspn.setter
 		def SttlmRptgRspn(self, value):
-			self._SttlmRptgRspn = value if type(value) != base_types.auto else self.make_default("SttlmRptgRspn")
+			self._SttlmRptgRspn = value if value is not None else base_types.UninitialisedField(self, 'SttlmRptgRspn', SettlementReportingResponseV04, False)
 
 		@SttlmRptgRspn.deleter
 		def SttlmRptgRspn(self):
 			del self._SttlmRptgRspn
-			self._SttlmRptgRspn = None
+			self._SttlmRptgRspn = base_types.UninitialisedField(self, 'SttlmRptgRspn', SettlementReportingResponseV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SttlmRptgRspn', type=SettlementReportingResponseV04, min=1, max=1, mutex_group=None, array=False),

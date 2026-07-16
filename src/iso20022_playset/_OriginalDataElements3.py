@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalFee3 import AdditionalFee3
-from ._DateTime2 import DateTime2
-from ._Exact6AlphaNumericText import Exact6AlphaNumericText
-from ._ISO8583ResponseCode import ISO8583ResponseCode
-from ._ISO8583TransactionTypeCode import ISO8583TransactionTypeCode
-from ._Max11NumericText import Max11NumericText
-from ._MessageClass1Code import MessageClass1Code
-from ._MessageFunction16Code import MessageFunction16Code
-from ._OriginalTransactionAmounts3 import OriginalTransactionAmounts3
-from ._OriginalTransactionIdentification1 import OriginalTransactionIdentification1
+from . import AdditionalFee3
+from . import DateTime2
+from . import Exact6AlphaNumericText
+from . import ISO8583ResponseCode
+from . import ISO8583TransactionTypeCode
+from . import Max11NumericText
+from . import MessageClass1Code
+from . import MessageFunction16Code
+from . import OriginalTransactionAmounts3
+from . import OriginalTransactionIdentification1
 
 class OriginalDataElements3(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class OriginalDataElements3(base_types._BaseFieldType):
 
 	@AcqrrId.setter
 	def AcqrrId(self, value):
-		self._AcqrrId = value if type(value) != base_types.auto else self.make_default("AcqrrId")
+		self._AcqrrId = value if value is not None else base_types.UninitialisedField(self, 'AcqrrId', Max11NumericText, False)
 
 	@AcqrrId.deleter
 	def AcqrrId(self):
 		del self._AcqrrId
-		self._AcqrrId = None
+		self._AcqrrId = base_types.UninitialisedField(self, 'AcqrrId', Max11NumericText, False)
 
 	@property
 	def AddtlFee(self):
@@ -35,12 +35,12 @@ class OriginalDataElements3(base_types._BaseFieldType):
 
 	@AddtlFee.setter
 	def AddtlFee(self, value):
-		self._AddtlFee = value if type(value) != base_types.auto else self.make_default("AddtlFee")
+		self._AddtlFee = value if value is not None else base_types.UninitialisedField(self, 'AddtlFee', AdditionalFee3, True)
 
 	@AddtlFee.deleter
 	def AddtlFee(self):
 		del self._AddtlFee
-		self._AddtlFee = None
+		self._AddtlFee = base_types.UninitialisedField(self, 'AddtlFee', AdditionalFee3, True)
 
 	@property
 	def ApprvlCd(self):
@@ -48,12 +48,12 @@ class OriginalDataElements3(base_types._BaseFieldType):
 
 	@ApprvlCd.setter
 	def ApprvlCd(self, value):
-		self._ApprvlCd = value if type(value) != base_types.auto else self.make_default("ApprvlCd")
+		self._ApprvlCd = value if value is not None else base_types.UninitialisedField(self, 'ApprvlCd', Exact6AlphaNumericText, False)
 
 	@ApprvlCd.deleter
 	def ApprvlCd(self):
 		del self._ApprvlCd
-		self._ApprvlCd = None
+		self._ApprvlCd = base_types.UninitialisedField(self, 'ApprvlCd', Exact6AlphaNumericText, False)
 
 	@property
 	def ConvsDtTm(self):
@@ -61,12 +61,12 @@ class OriginalDataElements3(base_types._BaseFieldType):
 
 	@ConvsDtTm.setter
 	def ConvsDtTm(self, value):
-		self._ConvsDtTm = value if type(value) != base_types.auto else self.make_default("ConvsDtTm")
+		self._ConvsDtTm = value if value is not None else base_types.UninitialisedField(self, 'ConvsDtTm', DateTime2, False)
 
 	@ConvsDtTm.deleter
 	def ConvsDtTm(self):
 		del self._ConvsDtTm
-		self._ConvsDtTm = None
+		self._ConvsDtTm = base_types.UninitialisedField(self, 'ConvsDtTm', DateTime2, False)
 
 	@property
 	def MsgClss(self):
@@ -74,12 +74,12 @@ class OriginalDataElements3(base_types._BaseFieldType):
 
 	@MsgClss.setter
 	def MsgClss(self, value):
-		self._MsgClss = value if type(value) != base_types.auto else self.make_default("MsgClss")
+		self._MsgClss = value if value is not None else base_types.UninitialisedField(self, 'MsgClss', MessageClass1Code, False)
 
 	@MsgClss.deleter
 	def MsgClss(self):
 		del self._MsgClss
-		self._MsgClss = None
+		self._MsgClss = base_types.UninitialisedField(self, 'MsgClss', MessageClass1Code, False)
 
 	@property
 	def MsgFctn(self):
@@ -87,12 +87,12 @@ class OriginalDataElements3(base_types._BaseFieldType):
 
 	@MsgFctn.setter
 	def MsgFctn(self, value):
-		self._MsgFctn = value if type(value) != base_types.auto else self.make_default("MsgFctn")
+		self._MsgFctn = value if value is not None else base_types.UninitialisedField(self, 'MsgFctn', MessageFunction16Code, False)
 
 	@MsgFctn.deleter
 	def MsgFctn(self):
 		del self._MsgFctn
-		self._MsgFctn = None
+		self._MsgFctn = base_types.UninitialisedField(self, 'MsgFctn', MessageFunction16Code, False)
 
 	@property
 	def RspnCd(self):
@@ -100,12 +100,12 @@ class OriginalDataElements3(base_types._BaseFieldType):
 
 	@RspnCd.setter
 	def RspnCd(self, value):
-		self._RspnCd = value if type(value) != base_types.auto else self.make_default("RspnCd")
+		self._RspnCd = value if value is not None else base_types.UninitialisedField(self, 'RspnCd', ISO8583ResponseCode, False)
 
 	@RspnCd.deleter
 	def RspnCd(self):
 		del self._RspnCd
-		self._RspnCd = None
+		self._RspnCd = base_types.UninitialisedField(self, 'RspnCd', ISO8583ResponseCode, False)
 
 	@property
 	def SndrId(self):
@@ -113,12 +113,12 @@ class OriginalDataElements3(base_types._BaseFieldType):
 
 	@SndrId.setter
 	def SndrId(self, value):
-		self._SndrId = value if type(value) != base_types.auto else self.make_default("SndrId")
+		self._SndrId = value if value is not None else base_types.UninitialisedField(self, 'SndrId', Max11NumericText, False)
 
 	@SndrId.deleter
 	def SndrId(self):
 		del self._SndrId
-		self._SndrId = None
+		self._SndrId = base_types.UninitialisedField(self, 'SndrId', Max11NumericText, False)
 
 	@property
 	def TxAmts(self):
@@ -126,12 +126,12 @@ class OriginalDataElements3(base_types._BaseFieldType):
 
 	@TxAmts.setter
 	def TxAmts(self, value):
-		self._TxAmts = value if type(value) != base_types.auto else self.make_default("TxAmts")
+		self._TxAmts = value if value is not None else base_types.UninitialisedField(self, 'TxAmts', OriginalTransactionAmounts3, False)
 
 	@TxAmts.deleter
 	def TxAmts(self):
 		del self._TxAmts
-		self._TxAmts = None
+		self._TxAmts = base_types.UninitialisedField(self, 'TxAmts', OriginalTransactionAmounts3, False)
 
 	@property
 	def TxId(self):
@@ -139,12 +139,12 @@ class OriginalDataElements3(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', OriginalTransactionIdentification1, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', OriginalTransactionIdentification1, False)
 
 	@property
 	def TxTp(self):
@@ -152,12 +152,12 @@ class OriginalDataElements3(base_types._BaseFieldType):
 
 	@TxTp.setter
 	def TxTp(self, value):
-		self._TxTp = value if type(value) != base_types.auto else self.make_default("TxTp")
+		self._TxTp = value if value is not None else base_types.UninitialisedField(self, 'TxTp', ISO8583TransactionTypeCode, False)
 
 	@TxTp.deleter
 	def TxTp(self):
 		del self._TxTp
-		self._TxTp = None
+		self._TxTp = base_types.UninitialisedField(self, 'TxTp', ISO8583TransactionTypeCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcqrrId', type=Max11NumericText, min=0, max=1, mutex_group=None, array=False),

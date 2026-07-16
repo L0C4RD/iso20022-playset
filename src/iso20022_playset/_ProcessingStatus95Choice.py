@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcknowledgedAcceptedStatus31Choice import AcknowledgedAcceptedStatus31Choice
-from ._ProprietaryStatusAndReason7 import ProprietaryStatusAndReason7
-from ._RejectionOrRepairStatus49Choice import RejectionOrRepairStatus49Choice
+from . import AcknowledgedAcceptedStatus31Choice
+from . import ProprietaryStatusAndReason7
+from . import RejectionOrRepairStatus49Choice
 
 class ProcessingStatus95Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ProcessingStatus95Choice(base_types._BaseFieldType):
 
 	@AckdAccptd.setter
 	def AckdAccptd(self, value):
-		self._AckdAccptd = value if type(value) != base_types.auto else self.make_default("AckdAccptd")
+		self._AckdAccptd = value if value is not None else base_types.UninitialisedField(self, 'AckdAccptd', AcknowledgedAcceptedStatus31Choice, False)
 
 	@AckdAccptd.deleter
 	def AckdAccptd(self):
 		del self._AckdAccptd
-		self._AckdAccptd = None
+		self._AckdAccptd = base_types.UninitialisedField(self, 'AckdAccptd', AcknowledgedAcceptedStatus31Choice, False)
 
 	@property
 	def Prtry(self):
@@ -28,12 +28,12 @@ class ProcessingStatus95Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+		self._Prtry = value if value is not None else base_types.UninitialisedField(self, 'Prtry', ProprietaryStatusAndReason7, False)
 
 	@Prtry.deleter
 	def Prtry(self):
 		del self._Prtry
-		self._Prtry = None
+		self._Prtry = base_types.UninitialisedField(self, 'Prtry', ProprietaryStatusAndReason7, False)
 
 	@property
 	def Rjctd(self):
@@ -41,12 +41,12 @@ class ProcessingStatus95Choice(base_types._BaseFieldType):
 
 	@Rjctd.setter
 	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
+		self._Rjctd = value if value is not None else base_types.UninitialisedField(self, 'Rjctd', RejectionOrRepairStatus49Choice, False)
 
 	@Rjctd.deleter
 	def Rjctd(self):
 		del self._Rjctd
-		self._Rjctd = None
+		self._Rjctd = base_types.UninitialisedField(self, 'Rjctd', RejectionOrRepairStatus49Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus31Choice, min=0, max=1, mutex_group=1, array=False),

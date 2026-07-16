@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InvestigationRequestAction1 import InvestigationRequestAction1
-from ._InvestigationServiceLevel1Choice import InvestigationServiceLevel1Choice
-from ._InvestigationSubType1Choice import InvestigationSubType1Choice
-from ._InvestigationType1Choice import InvestigationType1Choice
-from ._Max35Text import Max35Text
-from ._Party40Choice import Party40Choice
-from ._UUIDv4Identifier import UUIDv4Identifier
-from ._UnderlyingData2Choice import UnderlyingData2Choice
-from ._UnderlyingInvestigationInstrument1Choice import UnderlyingInvestigationInstrument1Choice
+from . import InvestigationRequestAction1
+from . import InvestigationServiceLevel1Choice
+from . import InvestigationSubType1Choice
+from . import InvestigationType1Choice
+from . import Max35Text
+from . import Party40Choice
+from . import UUIDv4Identifier
+from . import UnderlyingData2Choice
+from . import UnderlyingInvestigationInstrument1Choice
 
 class InvestigationRequest2(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class InvestigationRequest2(base_types._BaseFieldType):
 
 	@EIR.setter
 	def EIR(self, value):
-		self._EIR = value if type(value) != base_types.auto else self.make_default("EIR")
+		self._EIR = value if value is not None else base_types.UninitialisedField(self, 'EIR', UUIDv4Identifier, False)
 
 	@EIR.deleter
 	def EIR(self):
 		del self._EIR
-		self._EIR = None
+		self._EIR = base_types.UninitialisedField(self, 'EIR', UUIDv4Identifier, False)
 
 	@property
 	def InvstgtnSubTp(self):
@@ -34,12 +34,12 @@ class InvestigationRequest2(base_types._BaseFieldType):
 
 	@InvstgtnSubTp.setter
 	def InvstgtnSubTp(self, value):
-		self._InvstgtnSubTp = value if type(value) != base_types.auto else self.make_default("InvstgtnSubTp")
+		self._InvstgtnSubTp = value if value is not None else base_types.UninitialisedField(self, 'InvstgtnSubTp', InvestigationSubType1Choice, False)
 
 	@InvstgtnSubTp.deleter
 	def InvstgtnSubTp(self):
 		del self._InvstgtnSubTp
-		self._InvstgtnSubTp = None
+		self._InvstgtnSubTp = base_types.UninitialisedField(self, 'InvstgtnSubTp', InvestigationSubType1Choice, False)
 
 	@property
 	def InvstgtnTp(self):
@@ -47,12 +47,12 @@ class InvestigationRequest2(base_types._BaseFieldType):
 
 	@InvstgtnTp.setter
 	def InvstgtnTp(self, value):
-		self._InvstgtnTp = value if type(value) != base_types.auto else self.make_default("InvstgtnTp")
+		self._InvstgtnTp = value if value is not None else base_types.UninitialisedField(self, 'InvstgtnTp', InvestigationType1Choice, False)
 
 	@InvstgtnTp.deleter
 	def InvstgtnTp(self):
 		del self._InvstgtnTp
-		self._InvstgtnTp = None
+		self._InvstgtnTp = base_types.UninitialisedField(self, 'InvstgtnTp', InvestigationType1Choice, False)
 
 	@property
 	def MsgId(self):
@@ -60,12 +60,12 @@ class InvestigationRequest2(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@property
 	def ReqActn(self):
@@ -73,12 +73,12 @@ class InvestigationRequest2(base_types._BaseFieldType):
 
 	@ReqActn.setter
 	def ReqActn(self, value):
-		self._ReqActn = value if type(value) != base_types.auto else self.make_default("ReqActn")
+		self._ReqActn = value if value is not None else base_types.UninitialisedField(self, 'ReqActn', InvestigationRequestAction1, False)
 
 	@ReqActn.deleter
 	def ReqActn(self):
 		del self._ReqActn
-		self._ReqActn = None
+		self._ReqActn = base_types.UninitialisedField(self, 'ReqActn', InvestigationRequestAction1, False)
 
 	@property
 	def ReqOrgtr(self):
@@ -86,12 +86,12 @@ class InvestigationRequest2(base_types._BaseFieldType):
 
 	@ReqOrgtr.setter
 	def ReqOrgtr(self, value):
-		self._ReqOrgtr = value if type(value) != base_types.auto else self.make_default("ReqOrgtr")
+		self._ReqOrgtr = value if value is not None else base_types.UninitialisedField(self, 'ReqOrgtr', Party40Choice, False)
 
 	@ReqOrgtr.deleter
 	def ReqOrgtr(self):
 		del self._ReqOrgtr
-		self._ReqOrgtr = None
+		self._ReqOrgtr = base_types.UninitialisedField(self, 'ReqOrgtr', Party40Choice, False)
 
 	@property
 	def Rqstr(self):
@@ -99,12 +99,12 @@ class InvestigationRequest2(base_types._BaseFieldType):
 
 	@Rqstr.setter
 	def Rqstr(self, value):
-		self._Rqstr = value if type(value) != base_types.auto else self.make_default("Rqstr")
+		self._Rqstr = value if value is not None else base_types.UninitialisedField(self, 'Rqstr', Party40Choice, False)
 
 	@Rqstr.deleter
 	def Rqstr(self):
 		del self._Rqstr
-		self._Rqstr = None
+		self._Rqstr = base_types.UninitialisedField(self, 'Rqstr', Party40Choice, False)
 
 	@property
 	def RqstrInvstgtnId(self):
@@ -112,12 +112,12 @@ class InvestigationRequest2(base_types._BaseFieldType):
 
 	@RqstrInvstgtnId.setter
 	def RqstrInvstgtnId(self, value):
-		self._RqstrInvstgtnId = value if type(value) != base_types.auto else self.make_default("RqstrInvstgtnId")
+		self._RqstrInvstgtnId = value if value is not None else base_types.UninitialisedField(self, 'RqstrInvstgtnId', Max35Text, False)
 
 	@RqstrInvstgtnId.deleter
 	def RqstrInvstgtnId(self):
 		del self._RqstrInvstgtnId
-		self._RqstrInvstgtnId = None
+		self._RqstrInvstgtnId = base_types.UninitialisedField(self, 'RqstrInvstgtnId', Max35Text, False)
 
 	@property
 	def Rspndr(self):
@@ -125,12 +125,12 @@ class InvestigationRequest2(base_types._BaseFieldType):
 
 	@Rspndr.setter
 	def Rspndr(self, value):
-		self._Rspndr = value if type(value) != base_types.auto else self.make_default("Rspndr")
+		self._Rspndr = value if value is not None else base_types.UninitialisedField(self, 'Rspndr', Party40Choice, False)
 
 	@Rspndr.deleter
 	def Rspndr(self):
 		del self._Rspndr
-		self._Rspndr = None
+		self._Rspndr = base_types.UninitialisedField(self, 'Rspndr', Party40Choice, False)
 
 	@property
 	def RspndrInvstgtnId(self):
@@ -138,12 +138,12 @@ class InvestigationRequest2(base_types._BaseFieldType):
 
 	@RspndrInvstgtnId.setter
 	def RspndrInvstgtnId(self, value):
-		self._RspndrInvstgtnId = value if type(value) != base_types.auto else self.make_default("RspndrInvstgtnId")
+		self._RspndrInvstgtnId = value if value is not None else base_types.UninitialisedField(self, 'RspndrInvstgtnId', Max35Text, False)
 
 	@RspndrInvstgtnId.deleter
 	def RspndrInvstgtnId(self):
 		del self._RspndrInvstgtnId
-		self._RspndrInvstgtnId = None
+		self._RspndrInvstgtnId = base_types.UninitialisedField(self, 'RspndrInvstgtnId', Max35Text, False)
 
 	@property
 	def SvcLvl(self):
@@ -151,12 +151,12 @@ class InvestigationRequest2(base_types._BaseFieldType):
 
 	@SvcLvl.setter
 	def SvcLvl(self, value):
-		self._SvcLvl = value if type(value) != base_types.auto else self.make_default("SvcLvl")
+		self._SvcLvl = value if value is not None else base_types.UninitialisedField(self, 'SvcLvl', InvestigationServiceLevel1Choice, True)
 
 	@SvcLvl.deleter
 	def SvcLvl(self):
 		del self._SvcLvl
-		self._SvcLvl = None
+		self._SvcLvl = base_types.UninitialisedField(self, 'SvcLvl', InvestigationServiceLevel1Choice, True)
 
 	@property
 	def Undrlyg(self):
@@ -164,12 +164,12 @@ class InvestigationRequest2(base_types._BaseFieldType):
 
 	@Undrlyg.setter
 	def Undrlyg(self, value):
-		self._Undrlyg = value if type(value) != base_types.auto else self.make_default("Undrlyg")
+		self._Undrlyg = value if value is not None else base_types.UninitialisedField(self, 'Undrlyg', UnderlyingData2Choice, False)
 
 	@Undrlyg.deleter
 	def Undrlyg(self):
 		del self._Undrlyg
-		self._Undrlyg = None
+		self._Undrlyg = base_types.UninitialisedField(self, 'Undrlyg', UnderlyingData2Choice, False)
 
 	@property
 	def UndrlygInstrm(self):
@@ -177,12 +177,12 @@ class InvestigationRequest2(base_types._BaseFieldType):
 
 	@UndrlygInstrm.setter
 	def UndrlygInstrm(self, value):
-		self._UndrlygInstrm = value if type(value) != base_types.auto else self.make_default("UndrlygInstrm")
+		self._UndrlygInstrm = value if value is not None else base_types.UninitialisedField(self, 'UndrlygInstrm', UnderlyingInvestigationInstrument1Choice, False)
 
 	@UndrlygInstrm.deleter
 	def UndrlygInstrm(self):
 		del self._UndrlygInstrm
-		self._UndrlygInstrm = None
+		self._UndrlygInstrm = base_types.UninitialisedField(self, 'UndrlygInstrm', UnderlyingInvestigationInstrument1Choice, False)
 
 	@property
 	def XpctdRspndr(self):
@@ -190,12 +190,12 @@ class InvestigationRequest2(base_types._BaseFieldType):
 
 	@XpctdRspndr.setter
 	def XpctdRspndr(self, value):
-		self._XpctdRspndr = value if type(value) != base_types.auto else self.make_default("XpctdRspndr")
+		self._XpctdRspndr = value if value is not None else base_types.UninitialisedField(self, 'XpctdRspndr', Party40Choice, False)
 
 	@XpctdRspndr.deleter
 	def XpctdRspndr(self):
 		del self._XpctdRspndr
-		self._XpctdRspndr = None
+		self._XpctdRspndr = base_types.UninitialisedField(self, 'XpctdRspndr', Party40Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EIR', type=UUIDv4Identifier, min=0, max=1, mutex_group=None, array=False),

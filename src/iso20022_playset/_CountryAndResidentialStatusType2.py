@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCode import CountryCode
-from ._ResidentialStatus1Code import ResidentialStatus1Code
+from . import CountryCode
+from . import ResidentialStatus1Code
 
 class CountryAndResidentialStatusType2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CountryAndResidentialStatusType2(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@property
 	def ResdtlSts(self):
@@ -27,12 +27,12 @@ class CountryAndResidentialStatusType2(base_types._BaseFieldType):
 
 	@ResdtlSts.setter
 	def ResdtlSts(self, value):
-		self._ResdtlSts = value if type(value) != base_types.auto else self.make_default("ResdtlSts")
+		self._ResdtlSts = value if value is not None else base_types.UninitialisedField(self, 'ResdtlSts', ResidentialStatus1Code, False)
 
 	@ResdtlSts.deleter
 	def ResdtlSts(self):
 		del self._ResdtlSts
-		self._ResdtlSts = None
+		self._ResdtlSts = base_types.UninitialisedField(self, 'ResdtlSts', ResidentialStatus1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),

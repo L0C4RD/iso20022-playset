@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ProxyAppointmentInformation6 import ProxyAppointmentInformation6
-from ._ProxyNotAllowed1Code import ProxyNotAllowed1Code
+from . import ProxyAppointmentInformation6
+from . import ProxyNotAllowed1Code
 
 class Proxy5Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Proxy5Choice(base_types._BaseFieldType):
 
 	@Prxy.setter
 	def Prxy(self, value):
-		self._Prxy = value if type(value) != base_types.auto else self.make_default("Prxy")
+		self._Prxy = value if value is not None else base_types.UninitialisedField(self, 'Prxy', ProxyAppointmentInformation6, False)
 
 	@Prxy.deleter
 	def Prxy(self):
 		del self._Prxy
-		self._Prxy = None
+		self._Prxy = base_types.UninitialisedField(self, 'Prxy', ProxyAppointmentInformation6, False)
 
 	@property
 	def PrxyNotAllwd(self):
@@ -27,12 +27,12 @@ class Proxy5Choice(base_types._BaseFieldType):
 
 	@PrxyNotAllwd.setter
 	def PrxyNotAllwd(self, value):
-		self._PrxyNotAllwd = value if type(value) != base_types.auto else self.make_default("PrxyNotAllwd")
+		self._PrxyNotAllwd = value if value is not None else base_types.UninitialisedField(self, 'PrxyNotAllwd', ProxyNotAllowed1Code, False)
 
 	@PrxyNotAllwd.deleter
 	def PrxyNotAllwd(self):
 		del self._PrxyNotAllwd
-		self._PrxyNotAllwd = None
+		self._PrxyNotAllwd = base_types.UninitialisedField(self, 'PrxyNotAllwd', ProxyNotAllowed1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Prxy', type=ProxyAppointmentInformation6, min=0, max=1, mutex_group=1, array=False),

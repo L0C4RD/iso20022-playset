@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max20PositiveNumber import Max20PositiveNumber
-from ._PostedMarginOrCollateral6 import PostedMarginOrCollateral6
-from ._ReceivedMarginOrCollateral6 import ReceivedMarginOrCollateral6
+from . import Max20PositiveNumber
+from . import PostedMarginOrCollateral6
+from . import ReceivedMarginOrCollateral6
 
 class PositionSetCollateralTotal2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PositionSetCollateralTotal2(base_types._BaseFieldType):
 
 	@NbOfRpts.setter
 	def NbOfRpts(self, value):
-		self._NbOfRpts = value if type(value) != base_types.auto else self.make_default("NbOfRpts")
+		self._NbOfRpts = value if value is not None else base_types.UninitialisedField(self, 'NbOfRpts', Max20PositiveNumber, False)
 
 	@NbOfRpts.deleter
 	def NbOfRpts(self):
 		del self._NbOfRpts
-		self._NbOfRpts = None
+		self._NbOfRpts = base_types.UninitialisedField(self, 'NbOfRpts', Max20PositiveNumber, False)
 
 	@property
 	def PstdMrgnOrColl(self):
@@ -28,12 +28,12 @@ class PositionSetCollateralTotal2(base_types._BaseFieldType):
 
 	@PstdMrgnOrColl.setter
 	def PstdMrgnOrColl(self, value):
-		self._PstdMrgnOrColl = value if type(value) != base_types.auto else self.make_default("PstdMrgnOrColl")
+		self._PstdMrgnOrColl = value if value is not None else base_types.UninitialisedField(self, 'PstdMrgnOrColl', PostedMarginOrCollateral6, False)
 
 	@PstdMrgnOrColl.deleter
 	def PstdMrgnOrColl(self):
 		del self._PstdMrgnOrColl
-		self._PstdMrgnOrColl = None
+		self._PstdMrgnOrColl = base_types.UninitialisedField(self, 'PstdMrgnOrColl', PostedMarginOrCollateral6, False)
 
 	@property
 	def RcvdMrgnOrColl(self):
@@ -41,12 +41,12 @@ class PositionSetCollateralTotal2(base_types._BaseFieldType):
 
 	@RcvdMrgnOrColl.setter
 	def RcvdMrgnOrColl(self, value):
-		self._RcvdMrgnOrColl = value if type(value) != base_types.auto else self.make_default("RcvdMrgnOrColl")
+		self._RcvdMrgnOrColl = value if value is not None else base_types.UninitialisedField(self, 'RcvdMrgnOrColl', ReceivedMarginOrCollateral6, False)
 
 	@RcvdMrgnOrColl.deleter
 	def RcvdMrgnOrColl(self):
 		del self._RcvdMrgnOrColl
-		self._RcvdMrgnOrColl = None
+		self._RcvdMrgnOrColl = base_types.UninitialisedField(self, 'RcvdMrgnOrColl', ReceivedMarginOrCollateral6, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NbOfRpts', type=Max20PositiveNumber, min=0, max=1, mutex_group=None, array=False),

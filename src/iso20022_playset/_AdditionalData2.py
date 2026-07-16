@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalData1 import AdditionalData1
-from ._Max35Text import Max35Text
+from . import AdditionalData1
+from . import Max35Text
 
 class AdditionalData2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AdditionalData2(base_types._BaseFieldType):
 
 	@Dtls.setter
 	def Dtls(self, value):
-		self._Dtls = value if type(value) != base_types.auto else self.make_default("Dtls")
+		self._Dtls = value if value is not None else base_types.UninitialisedField(self, 'Dtls', AdditionalData1, True)
 
 	@Dtls.deleter
 	def Dtls(self):
 		del self._Dtls
-		self._Dtls = None
+		self._Dtls = base_types.UninitialisedField(self, 'Dtls', AdditionalData1, True)
 
 	@property
 	def Tp(self):
@@ -27,12 +27,12 @@ class AdditionalData2(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', Max35Text, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dtls', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),

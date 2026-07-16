@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ClearingMethod2Code import ClearingMethod2Code
-from ._CreditDebit3Code import CreditDebit3Code
-from ._ISO3NumericCountryCode import ISO3NumericCountryCode
-from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
-from ._ISODate import ISODate
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max140Binary import Max140Binary
-from ._Max35Text import Max35Text
-from ._Number import Number
-from ._OtherAmount5 import OtherAmount5
-from ._RecordMessage1Choice import RecordMessage1Choice
+from . import ClearingMethod2Code
+from . import CreditDebit3Code
+from . import ISO3NumericCountryCode
+from . import ISO3NumericCurrencyCode
+from . import ISODate
+from . import ImpliedCurrencyAndAmount
+from . import Max140Binary
+from . import Max35Text
+from . import Number
+from . import OtherAmount5
+from . import RecordMessage1Choice
 
 class Record3(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class Record3(base_types._BaseFieldType):
 
 	@AgtFeeAmt.setter
 	def AgtFeeAmt(self, value):
-		self._AgtFeeAmt = value if type(value) != base_types.auto else self.make_default("AgtFeeAmt")
+		self._AgtFeeAmt = value if value is not None else base_types.UninitialisedField(self, 'AgtFeeAmt', ImpliedCurrencyAndAmount, False)
 
 	@AgtFeeAmt.deleter
 	def AgtFeeAmt(self):
 		del self._AgtFeeAmt
-		self._AgtFeeAmt = None
+		self._AgtFeeAmt = base_types.UninitialisedField(self, 'AgtFeeAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def AgtFeeCcy(self):
@@ -36,12 +36,12 @@ class Record3(base_types._BaseFieldType):
 
 	@AgtFeeCcy.setter
 	def AgtFeeCcy(self, value):
-		self._AgtFeeCcy = value if type(value) != base_types.auto else self.make_default("AgtFeeCcy")
+		self._AgtFeeCcy = value if value is not None else base_types.UninitialisedField(self, 'AgtFeeCcy', ISO3NumericCurrencyCode, False)
 
 	@AgtFeeCcy.deleter
 	def AgtFeeCcy(self):
 		del self._AgtFeeCcy
-		self._AgtFeeCcy = None
+		self._AgtFeeCcy = base_types.UninitialisedField(self, 'AgtFeeCcy', ISO3NumericCurrencyCode, False)
 
 	@property
 	def AgtFeeCdtDbt(self):
@@ -49,12 +49,12 @@ class Record3(base_types._BaseFieldType):
 
 	@AgtFeeCdtDbt.setter
 	def AgtFeeCdtDbt(self, value):
-		self._AgtFeeCdtDbt = value if type(value) != base_types.auto else self.make_default("AgtFeeCdtDbt")
+		self._AgtFeeCdtDbt = value if value is not None else base_types.UninitialisedField(self, 'AgtFeeCdtDbt', CreditDebit3Code, False)
 
 	@AgtFeeCdtDbt.deleter
 	def AgtFeeCdtDbt(self):
 		del self._AgtFeeCdtDbt
-		self._AgtFeeCdtDbt = None
+		self._AgtFeeCdtDbt = base_types.UninitialisedField(self, 'AgtFeeCdtDbt', CreditDebit3Code, False)
 
 	@property
 	def ClrAmt(self):
@@ -62,12 +62,12 @@ class Record3(base_types._BaseFieldType):
 
 	@ClrAmt.setter
 	def ClrAmt(self, value):
-		self._ClrAmt = value if type(value) != base_types.auto else self.make_default("ClrAmt")
+		self._ClrAmt = value if value is not None else base_types.UninitialisedField(self, 'ClrAmt', ImpliedCurrencyAndAmount, False)
 
 	@ClrAmt.deleter
 	def ClrAmt(self):
 		del self._ClrAmt
-		self._ClrAmt = None
+		self._ClrAmt = base_types.UninitialisedField(self, 'ClrAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def ClrCcy(self):
@@ -75,12 +75,12 @@ class Record3(base_types._BaseFieldType):
 
 	@ClrCcy.setter
 	def ClrCcy(self, value):
-		self._ClrCcy = value if type(value) != base_types.auto else self.make_default("ClrCcy")
+		self._ClrCcy = value if value is not None else base_types.UninitialisedField(self, 'ClrCcy', ISO3NumericCurrencyCode, False)
 
 	@ClrCcy.deleter
 	def ClrCcy(self):
 		del self._ClrCcy
-		self._ClrCcy = None
+		self._ClrCcy = base_types.UninitialisedField(self, 'ClrCcy', ISO3NumericCurrencyCode, False)
 
 	@property
 	def ClrCdtDbt(self):
@@ -88,12 +88,12 @@ class Record3(base_types._BaseFieldType):
 
 	@ClrCdtDbt.setter
 	def ClrCdtDbt(self, value):
-		self._ClrCdtDbt = value if type(value) != base_types.auto else self.make_default("ClrCdtDbt")
+		self._ClrCdtDbt = value if value is not None else base_types.UninitialisedField(self, 'ClrCdtDbt', CreditDebit3Code, False)
 
 	@ClrCdtDbt.deleter
 	def ClrCdtDbt(self):
 		del self._ClrCdtDbt
-		self._ClrCdtDbt = None
+		self._ClrCdtDbt = base_types.UninitialisedField(self, 'ClrCdtDbt', CreditDebit3Code, False)
 
 	@property
 	def ClrDt(self):
@@ -101,12 +101,12 @@ class Record3(base_types._BaseFieldType):
 
 	@ClrDt.setter
 	def ClrDt(self, value):
-		self._ClrDt = value if type(value) != base_types.auto else self.make_default("ClrDt")
+		self._ClrDt = value if value is not None else base_types.UninitialisedField(self, 'ClrDt', ISODate, False)
 
 	@ClrDt.deleter
 	def ClrDt(self):
 		del self._ClrDt
-		self._ClrDt = None
+		self._ClrDt = base_types.UninitialisedField(self, 'ClrDt', ISODate, False)
 
 	@property
 	def ClrMtd(self):
@@ -114,12 +114,12 @@ class Record3(base_types._BaseFieldType):
 
 	@ClrMtd.setter
 	def ClrMtd(self, value):
-		self._ClrMtd = value if type(value) != base_types.auto else self.make_default("ClrMtd")
+		self._ClrMtd = value if value is not None else base_types.UninitialisedField(self, 'ClrMtd', ClearingMethod2Code, False)
 
 	@ClrMtd.deleter
 	def ClrMtd(self):
 		del self._ClrMtd
-		self._ClrMtd = None
+		self._ClrMtd = base_types.UninitialisedField(self, 'ClrMtd', ClearingMethod2Code, False)
 
 	@property
 	def ClrPrty(self):
@@ -127,12 +127,12 @@ class Record3(base_types._BaseFieldType):
 
 	@ClrPrty.setter
 	def ClrPrty(self, value):
-		self._ClrPrty = value if type(value) != base_types.auto else self.make_default("ClrPrty")
+		self._ClrPrty = value if value is not None else base_types.UninitialisedField(self, 'ClrPrty', Max35Text, False)
 
 	@ClrPrty.deleter
 	def ClrPrty(self):
 		del self._ClrPrty
-		self._ClrPrty = None
+		self._ClrPrty = base_types.UninitialisedField(self, 'ClrPrty', Max35Text, False)
 
 	@property
 	def DstnAssgnr(self):
@@ -140,12 +140,12 @@ class Record3(base_types._BaseFieldType):
 
 	@DstnAssgnr.setter
 	def DstnAssgnr(self, value):
-		self._DstnAssgnr = value if type(value) != base_types.auto else self.make_default("DstnAssgnr")
+		self._DstnAssgnr = value if value is not None else base_types.UninitialisedField(self, 'DstnAssgnr', Max35Text, False)
 
 	@DstnAssgnr.deleter
 	def DstnAssgnr(self):
 		del self._DstnAssgnr
-		self._DstnAssgnr = None
+		self._DstnAssgnr = base_types.UninitialisedField(self, 'DstnAssgnr', Max35Text, False)
 
 	@property
 	def DstnCtry(self):
@@ -153,12 +153,12 @@ class Record3(base_types._BaseFieldType):
 
 	@DstnCtry.setter
 	def DstnCtry(self, value):
-		self._DstnCtry = value if type(value) != base_types.auto else self.make_default("DstnCtry")
+		self._DstnCtry = value if value is not None else base_types.UninitialisedField(self, 'DstnCtry', ISO3NumericCountryCode, False)
 
 	@DstnCtry.deleter
 	def DstnCtry(self):
 		del self._DstnCtry
-		self._DstnCtry = None
+		self._DstnCtry = base_types.UninitialisedField(self, 'DstnCtry', ISO3NumericCountryCode, False)
 
 	@property
 	def DstnId(self):
@@ -166,12 +166,12 @@ class Record3(base_types._BaseFieldType):
 
 	@DstnId.setter
 	def DstnId(self, value):
-		self._DstnId = value if type(value) != base_types.auto else self.make_default("DstnId")
+		self._DstnId = value if value is not None else base_types.UninitialisedField(self, 'DstnId', Max35Text, False)
 
 	@DstnId.deleter
 	def DstnId(self):
 		del self._DstnId
-		self._DstnId = None
+		self._DstnId = base_types.UninitialisedField(self, 'DstnId', Max35Text, False)
 
 	@property
 	def DstnShrtNm(self):
@@ -179,12 +179,12 @@ class Record3(base_types._BaseFieldType):
 
 	@DstnShrtNm.setter
 	def DstnShrtNm(self, value):
-		self._DstnShrtNm = value if type(value) != base_types.auto else self.make_default("DstnShrtNm")
+		self._DstnShrtNm = value if value is not None else base_types.UninitialisedField(self, 'DstnShrtNm', Max35Text, False)
 
 	@DstnShrtNm.deleter
 	def DstnShrtNm(self):
 		del self._DstnShrtNm
-		self._DstnShrtNm = None
+		self._DstnShrtNm = base_types.UninitialisedField(self, 'DstnShrtNm', Max35Text, False)
 
 	@property
 	def IntrchngFeeAmt(self):
@@ -192,12 +192,12 @@ class Record3(base_types._BaseFieldType):
 
 	@IntrchngFeeAmt.setter
 	def IntrchngFeeAmt(self, value):
-		self._IntrchngFeeAmt = value if type(value) != base_types.auto else self.make_default("IntrchngFeeAmt")
+		self._IntrchngFeeAmt = value if value is not None else base_types.UninitialisedField(self, 'IntrchngFeeAmt', ImpliedCurrencyAndAmount, False)
 
 	@IntrchngFeeAmt.deleter
 	def IntrchngFeeAmt(self):
 		del self._IntrchngFeeAmt
-		self._IntrchngFeeAmt = None
+		self._IntrchngFeeAmt = base_types.UninitialisedField(self, 'IntrchngFeeAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def IntrchngFeeCcy(self):
@@ -205,12 +205,12 @@ class Record3(base_types._BaseFieldType):
 
 	@IntrchngFeeCcy.setter
 	def IntrchngFeeCcy(self, value):
-		self._IntrchngFeeCcy = value if type(value) != base_types.auto else self.make_default("IntrchngFeeCcy")
+		self._IntrchngFeeCcy = value if value is not None else base_types.UninitialisedField(self, 'IntrchngFeeCcy', ISO3NumericCurrencyCode, False)
 
 	@IntrchngFeeCcy.deleter
 	def IntrchngFeeCcy(self):
 		del self._IntrchngFeeCcy
-		self._IntrchngFeeCcy = None
+		self._IntrchngFeeCcy = base_types.UninitialisedField(self, 'IntrchngFeeCcy', ISO3NumericCurrencyCode, False)
 
 	@property
 	def IntrchngFeeCdtDbt(self):
@@ -218,12 +218,12 @@ class Record3(base_types._BaseFieldType):
 
 	@IntrchngFeeCdtDbt.setter
 	def IntrchngFeeCdtDbt(self, value):
-		self._IntrchngFeeCdtDbt = value if type(value) != base_types.auto else self.make_default("IntrchngFeeCdtDbt")
+		self._IntrchngFeeCdtDbt = value if value is not None else base_types.UninitialisedField(self, 'IntrchngFeeCdtDbt', CreditDebit3Code, False)
 
 	@IntrchngFeeCdtDbt.deleter
 	def IntrchngFeeCdtDbt(self):
 		del self._IntrchngFeeCdtDbt
-		self._IntrchngFeeCdtDbt = None
+		self._IntrchngFeeCdtDbt = base_types.UninitialisedField(self, 'IntrchngFeeCdtDbt', CreditDebit3Code, False)
 
 	@property
 	def OrgtrAssgnr(self):
@@ -231,12 +231,12 @@ class Record3(base_types._BaseFieldType):
 
 	@OrgtrAssgnr.setter
 	def OrgtrAssgnr(self, value):
-		self._OrgtrAssgnr = value if type(value) != base_types.auto else self.make_default("OrgtrAssgnr")
+		self._OrgtrAssgnr = value if value is not None else base_types.UninitialisedField(self, 'OrgtrAssgnr', Max35Text, False)
 
 	@OrgtrAssgnr.deleter
 	def OrgtrAssgnr(self):
 		del self._OrgtrAssgnr
-		self._OrgtrAssgnr = None
+		self._OrgtrAssgnr = base_types.UninitialisedField(self, 'OrgtrAssgnr', Max35Text, False)
 
 	@property
 	def OrgtrCtry(self):
@@ -244,12 +244,12 @@ class Record3(base_types._BaseFieldType):
 
 	@OrgtrCtry.setter
 	def OrgtrCtry(self, value):
-		self._OrgtrCtry = value if type(value) != base_types.auto else self.make_default("OrgtrCtry")
+		self._OrgtrCtry = value if value is not None else base_types.UninitialisedField(self, 'OrgtrCtry', ISO3NumericCountryCode, False)
 
 	@OrgtrCtry.deleter
 	def OrgtrCtry(self):
 		del self._OrgtrCtry
-		self._OrgtrCtry = None
+		self._OrgtrCtry = base_types.UninitialisedField(self, 'OrgtrCtry', ISO3NumericCountryCode, False)
 
 	@property
 	def OrgtrId(self):
@@ -257,12 +257,12 @@ class Record3(base_types._BaseFieldType):
 
 	@OrgtrId.setter
 	def OrgtrId(self, value):
-		self._OrgtrId = value if type(value) != base_types.auto else self.make_default("OrgtrId")
+		self._OrgtrId = value if value is not None else base_types.UninitialisedField(self, 'OrgtrId', Max35Text, False)
 
 	@OrgtrId.deleter
 	def OrgtrId(self):
 		del self._OrgtrId
-		self._OrgtrId = None
+		self._OrgtrId = base_types.UninitialisedField(self, 'OrgtrId', Max35Text, False)
 
 	@property
 	def OrgtrShrtNm(self):
@@ -270,12 +270,12 @@ class Record3(base_types._BaseFieldType):
 
 	@OrgtrShrtNm.setter
 	def OrgtrShrtNm(self, value):
-		self._OrgtrShrtNm = value if type(value) != base_types.auto else self.make_default("OrgtrShrtNm")
+		self._OrgtrShrtNm = value if value is not None else base_types.UninitialisedField(self, 'OrgtrShrtNm', Max35Text, False)
 
 	@OrgtrShrtNm.deleter
 	def OrgtrShrtNm(self):
 		del self._OrgtrShrtNm
-		self._OrgtrShrtNm = None
+		self._OrgtrShrtNm = base_types.UninitialisedField(self, 'OrgtrShrtNm', Max35Text, False)
 
 	@property
 	def OthrAmt(self):
@@ -283,12 +283,12 @@ class Record3(base_types._BaseFieldType):
 
 	@OthrAmt.setter
 	def OthrAmt(self, value):
-		self._OthrAmt = value if type(value) != base_types.auto else self.make_default("OthrAmt")
+		self._OthrAmt = value if value is not None else base_types.UninitialisedField(self, 'OthrAmt', OtherAmount5, False)
 
 	@OthrAmt.deleter
 	def OthrAmt(self):
 		del self._OthrAmt
-		self._OthrAmt = None
+		self._OthrAmt = base_types.UninitialisedField(self, 'OthrAmt', OtherAmount5, False)
 
 	@property
 	def OthrClrMtd(self):
@@ -296,12 +296,12 @@ class Record3(base_types._BaseFieldType):
 
 	@OthrClrMtd.setter
 	def OthrClrMtd(self, value):
-		self._OthrClrMtd = value if type(value) != base_types.auto else self.make_default("OthrClrMtd")
+		self._OthrClrMtd = value if value is not None else base_types.UninitialisedField(self, 'OthrClrMtd', Max35Text, False)
 
 	@OthrClrMtd.deleter
 	def OthrClrMtd(self):
 		del self._OthrClrMtd
-		self._OthrClrMtd = None
+		self._OthrClrMtd = base_types.UninitialisedField(self, 'OthrClrMtd', Max35Text, False)
 
 	@property
 	def RcrdChcksmInptVal(self):
@@ -309,12 +309,12 @@ class Record3(base_types._BaseFieldType):
 
 	@RcrdChcksmInptVal.setter
 	def RcrdChcksmInptVal(self, value):
-		self._RcrdChcksmInptVal = value if type(value) != base_types.auto else self.make_default("RcrdChcksmInptVal")
+		self._RcrdChcksmInptVal = value if value is not None else base_types.UninitialisedField(self, 'RcrdChcksmInptVal', Max140Binary, False)
 
 	@RcrdChcksmInptVal.deleter
 	def RcrdChcksmInptVal(self):
 		del self._RcrdChcksmInptVal
-		self._RcrdChcksmInptVal = None
+		self._RcrdChcksmInptVal = base_types.UninitialisedField(self, 'RcrdChcksmInptVal', Max140Binary, False)
 
 	@property
 	def RcrdMsg(self):
@@ -322,12 +322,12 @@ class Record3(base_types._BaseFieldType):
 
 	@RcrdMsg.setter
 	def RcrdMsg(self, value):
-		self._RcrdMsg = value if type(value) != base_types.auto else self.make_default("RcrdMsg")
+		self._RcrdMsg = value if value is not None else base_types.UninitialisedField(self, 'RcrdMsg', RecordMessage1Choice, False)
 
 	@RcrdMsg.deleter
 	def RcrdMsg(self):
 		del self._RcrdMsg
-		self._RcrdMsg = None
+		self._RcrdMsg = base_types.UninitialisedField(self, 'RcrdMsg', RecordMessage1Choice, False)
 
 	@property
 	def SeqCntr(self):
@@ -335,12 +335,12 @@ class Record3(base_types._BaseFieldType):
 
 	@SeqCntr.setter
 	def SeqCntr(self, value):
-		self._SeqCntr = value if type(value) != base_types.auto else self.make_default("SeqCntr")
+		self._SeqCntr = value if value is not None else base_types.UninitialisedField(self, 'SeqCntr', Number, False)
 
 	@SeqCntr.deleter
 	def SeqCntr(self):
 		del self._SeqCntr
-		self._SeqCntr = None
+		self._SeqCntr = base_types.UninitialisedField(self, 'SeqCntr', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AgtFeeAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

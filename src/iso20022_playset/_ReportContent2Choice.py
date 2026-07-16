@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max10MbText import Max10MbText
-from ._Max20MbBinary import Max20MbBinary
-from ._ProtectedData2 import ProtectedData2
+from . import Max10MbText
+from . import Max20MbBinary
+from . import ProtectedData2
 
 class ReportContent2Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ReportContent2Choice(base_types._BaseFieldType):
 
 	@Binry.setter
 	def Binry(self, value):
-		self._Binry = value if type(value) != base_types.auto else self.make_default("Binry")
+		self._Binry = value if value is not None else base_types.UninitialisedField(self, 'Binry', Max20MbBinary, False)
 
 	@Binry.deleter
 	def Binry(self):
 		del self._Binry
-		self._Binry = None
+		self._Binry = base_types.UninitialisedField(self, 'Binry', Max20MbBinary, False)
 
 	@property
 	def PrtctdData(self):
@@ -28,12 +28,12 @@ class ReportContent2Choice(base_types._BaseFieldType):
 
 	@PrtctdData.setter
 	def PrtctdData(self, value):
-		self._PrtctdData = value if type(value) != base_types.auto else self.make_default("PrtctdData")
+		self._PrtctdData = value if value is not None else base_types.UninitialisedField(self, 'PrtctdData', ProtectedData2, False)
 
 	@PrtctdData.deleter
 	def PrtctdData(self):
 		del self._PrtctdData
-		self._PrtctdData = None
+		self._PrtctdData = base_types.UninitialisedField(self, 'PrtctdData', ProtectedData2, False)
 
 	@property
 	def Txt(self):
@@ -41,12 +41,12 @@ class ReportContent2Choice(base_types._BaseFieldType):
 
 	@Txt.setter
 	def Txt(self, value):
-		self._Txt = value if type(value) != base_types.auto else self.make_default("Txt")
+		self._Txt = value if value is not None else base_types.UninitialisedField(self, 'Txt', Max10MbText, False)
 
 	@Txt.deleter
 	def Txt(self):
 		del self._Txt
-		self._Txt = None
+		self._Txt = base_types.UninitialisedField(self, 'Txt', Max10MbText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Binry', type=Max20MbBinary, min=0, max=1, mutex_group=1, array=False),

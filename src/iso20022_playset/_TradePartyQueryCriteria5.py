@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Operation3Code import Operation3Code
-from ._TradePartyIdentificationQuery8 import TradePartyIdentificationQuery8
-from ._TradePartyIdentificationQuery9 import TradePartyIdentificationQuery9
+from . import Operation3Code
+from . import TradePartyIdentificationQuery8
+from . import TradePartyIdentificationQuery9
 
 class TradePartyQueryCriteria5(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TradePartyQueryCriteria5(base_types._BaseFieldType):
 
 	@AgtLndr.setter
 	def AgtLndr(self, value):
-		self._AgtLndr = value if type(value) != base_types.auto else self.make_default("AgtLndr")
+		self._AgtLndr = value if value is not None else base_types.UninitialisedField(self, 'AgtLndr', TradePartyIdentificationQuery8, False)
 
 	@AgtLndr.deleter
 	def AgtLndr(self):
 		del self._AgtLndr
-		self._AgtLndr = None
+		self._AgtLndr = base_types.UninitialisedField(self, 'AgtLndr', TradePartyIdentificationQuery8, False)
 
 	@property
 	def Bnfcry(self):
@@ -28,12 +28,12 @@ class TradePartyQueryCriteria5(base_types._BaseFieldType):
 
 	@Bnfcry.setter
 	def Bnfcry(self, value):
-		self._Bnfcry = value if type(value) != base_types.auto else self.make_default("Bnfcry")
+		self._Bnfcry = value if value is not None else base_types.UninitialisedField(self, 'Bnfcry', TradePartyIdentificationQuery8, False)
 
 	@Bnfcry.deleter
 	def Bnfcry(self):
 		del self._Bnfcry
-		self._Bnfcry = None
+		self._Bnfcry = base_types.UninitialisedField(self, 'Bnfcry', TradePartyIdentificationQuery8, False)
 
 	@property
 	def Brkr(self):
@@ -41,12 +41,12 @@ class TradePartyQueryCriteria5(base_types._BaseFieldType):
 
 	@Brkr.setter
 	def Brkr(self, value):
-		self._Brkr = value if type(value) != base_types.auto else self.make_default("Brkr")
+		self._Brkr = value if value is not None else base_types.UninitialisedField(self, 'Brkr', TradePartyIdentificationQuery8, False)
 
 	@Brkr.deleter
 	def Brkr(self):
 		del self._Brkr
-		self._Brkr = None
+		self._Brkr = base_types.UninitialisedField(self, 'Brkr', TradePartyIdentificationQuery8, False)
 
 	@property
 	def CCP(self):
@@ -54,12 +54,12 @@ class TradePartyQueryCriteria5(base_types._BaseFieldType):
 
 	@CCP.setter
 	def CCP(self, value):
-		self._CCP = value if type(value) != base_types.auto else self.make_default("CCP")
+		self._CCP = value if value is not None else base_types.UninitialisedField(self, 'CCP', TradePartyIdentificationQuery8, False)
 
 	@CCP.deleter
 	def CCP(self):
 		del self._CCP
-		self._CCP = None
+		self._CCP = base_types.UninitialisedField(self, 'CCP', TradePartyIdentificationQuery8, False)
 
 	@property
 	def Oprtr(self):
@@ -67,12 +67,12 @@ class TradePartyQueryCriteria5(base_types._BaseFieldType):
 
 	@Oprtr.setter
 	def Oprtr(self, value):
-		self._Oprtr = value if type(value) != base_types.auto else self.make_default("Oprtr")
+		self._Oprtr = value if value is not None else base_types.UninitialisedField(self, 'Oprtr', Operation3Code, False)
 
 	@Oprtr.deleter
 	def Oprtr(self):
 		del self._Oprtr
-		self._Oprtr = None
+		self._Oprtr = base_types.UninitialisedField(self, 'Oprtr', Operation3Code, False)
 
 	@property
 	def OthrCtrPty(self):
@@ -80,12 +80,12 @@ class TradePartyQueryCriteria5(base_types._BaseFieldType):
 
 	@OthrCtrPty.setter
 	def OthrCtrPty(self, value):
-		self._OthrCtrPty = value if type(value) != base_types.auto else self.make_default("OthrCtrPty")
+		self._OthrCtrPty = value if value is not None else base_types.UninitialisedField(self, 'OthrCtrPty', TradePartyIdentificationQuery8, False)
 
 	@OthrCtrPty.deleter
 	def OthrCtrPty(self):
 		del self._OthrCtrPty
-		self._OthrCtrPty = None
+		self._OthrCtrPty = base_types.UninitialisedField(self, 'OthrCtrPty', TradePartyIdentificationQuery8, False)
 
 	@property
 	def OthrCtrPtyBrnch(self):
@@ -93,12 +93,12 @@ class TradePartyQueryCriteria5(base_types._BaseFieldType):
 
 	@OthrCtrPtyBrnch.setter
 	def OthrCtrPtyBrnch(self, value):
-		self._OthrCtrPtyBrnch = value if type(value) != base_types.auto else self.make_default("OthrCtrPtyBrnch")
+		self._OthrCtrPtyBrnch = value if value is not None else base_types.UninitialisedField(self, 'OthrCtrPtyBrnch', TradePartyIdentificationQuery9, False)
 
 	@OthrCtrPtyBrnch.deleter
 	def OthrCtrPtyBrnch(self):
 		del self._OthrCtrPtyBrnch
-		self._OthrCtrPtyBrnch = None
+		self._OthrCtrPtyBrnch = base_types.UninitialisedField(self, 'OthrCtrPtyBrnch', TradePartyIdentificationQuery9, False)
 
 	@property
 	def RptgCtrPty(self):
@@ -106,12 +106,12 @@ class TradePartyQueryCriteria5(base_types._BaseFieldType):
 
 	@RptgCtrPty.setter
 	def RptgCtrPty(self, value):
-		self._RptgCtrPty = value if type(value) != base_types.auto else self.make_default("RptgCtrPty")
+		self._RptgCtrPty = value if value is not None else base_types.UninitialisedField(self, 'RptgCtrPty', TradePartyIdentificationQuery8, False)
 
 	@RptgCtrPty.deleter
 	def RptgCtrPty(self):
 		del self._RptgCtrPty
-		self._RptgCtrPty = None
+		self._RptgCtrPty = base_types.UninitialisedField(self, 'RptgCtrPty', TradePartyIdentificationQuery8, False)
 
 	@property
 	def RptgCtrPtyBrnch(self):
@@ -119,12 +119,12 @@ class TradePartyQueryCriteria5(base_types._BaseFieldType):
 
 	@RptgCtrPtyBrnch.setter
 	def RptgCtrPtyBrnch(self, value):
-		self._RptgCtrPtyBrnch = value if type(value) != base_types.auto else self.make_default("RptgCtrPtyBrnch")
+		self._RptgCtrPtyBrnch = value if value is not None else base_types.UninitialisedField(self, 'RptgCtrPtyBrnch', TradePartyIdentificationQuery9, False)
 
 	@RptgCtrPtyBrnch.deleter
 	def RptgCtrPtyBrnch(self):
 		del self._RptgCtrPtyBrnch
-		self._RptgCtrPtyBrnch = None
+		self._RptgCtrPtyBrnch = base_types.UninitialisedField(self, 'RptgCtrPtyBrnch', TradePartyIdentificationQuery9, False)
 
 	@property
 	def SubmitgAgt(self):
@@ -132,12 +132,12 @@ class TradePartyQueryCriteria5(base_types._BaseFieldType):
 
 	@SubmitgAgt.setter
 	def SubmitgAgt(self, value):
-		self._SubmitgAgt = value if type(value) != base_types.auto else self.make_default("SubmitgAgt")
+		self._SubmitgAgt = value if value is not None else base_types.UninitialisedField(self, 'SubmitgAgt', TradePartyIdentificationQuery8, False)
 
 	@SubmitgAgt.deleter
 	def SubmitgAgt(self):
 		del self._SubmitgAgt
-		self._SubmitgAgt = None
+		self._SubmitgAgt = base_types.UninitialisedField(self, 'SubmitgAgt', TradePartyIdentificationQuery8, False)
 
 	@property
 	def TrptyAgt(self):
@@ -145,12 +145,12 @@ class TradePartyQueryCriteria5(base_types._BaseFieldType):
 
 	@TrptyAgt.setter
 	def TrptyAgt(self, value):
-		self._TrptyAgt = value if type(value) != base_types.auto else self.make_default("TrptyAgt")
+		self._TrptyAgt = value if value is not None else base_types.UninitialisedField(self, 'TrptyAgt', TradePartyIdentificationQuery8, False)
 
 	@TrptyAgt.deleter
 	def TrptyAgt(self):
 		del self._TrptyAgt
-		self._TrptyAgt = None
+		self._TrptyAgt = base_types.UninitialisedField(self, 'TrptyAgt', TradePartyIdentificationQuery8, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AgtLndr', type=TradePartyIdentificationQuery8, min=0, max=1, mutex_group=None, array=False),

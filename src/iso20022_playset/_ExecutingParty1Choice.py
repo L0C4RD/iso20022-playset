@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max50Text import Max50Text
-from ._NoReasonCode import NoReasonCode
-from ._PersonIdentification12 import PersonIdentification12
+from . import Max50Text
+from . import NoReasonCode
+from . import PersonIdentification12
 
 class ExecutingParty1Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ExecutingParty1Choice(base_types._BaseFieldType):
 
 	@Algo.setter
 	def Algo(self, value):
-		self._Algo = value if type(value) != base_types.auto else self.make_default("Algo")
+		self._Algo = value if value is not None else base_types.UninitialisedField(self, 'Algo', Max50Text, False)
 
 	@Algo.deleter
 	def Algo(self):
 		del self._Algo
-		self._Algo = None
+		self._Algo = base_types.UninitialisedField(self, 'Algo', Max50Text, False)
 
 	@property
 	def Clnt(self):
@@ -28,12 +28,12 @@ class ExecutingParty1Choice(base_types._BaseFieldType):
 
 	@Clnt.setter
 	def Clnt(self, value):
-		self._Clnt = value if type(value) != base_types.auto else self.make_default("Clnt")
+		self._Clnt = value if value is not None else base_types.UninitialisedField(self, 'Clnt', NoReasonCode, False)
 
 	@Clnt.deleter
 	def Clnt(self):
 		del self._Clnt
-		self._Clnt = None
+		self._Clnt = base_types.UninitialisedField(self, 'Clnt', NoReasonCode, False)
 
 	@property
 	def Prsn(self):
@@ -41,12 +41,12 @@ class ExecutingParty1Choice(base_types._BaseFieldType):
 
 	@Prsn.setter
 	def Prsn(self, value):
-		self._Prsn = value if type(value) != base_types.auto else self.make_default("Prsn")
+		self._Prsn = value if value is not None else base_types.UninitialisedField(self, 'Prsn', PersonIdentification12, False)
 
 	@Prsn.deleter
 	def Prsn(self):
 		del self._Prsn
-		self._Prsn = None
+		self._Prsn = base_types.UninitialisedField(self, 'Prsn', PersonIdentification12, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Algo', type=Max50Text, min=0, max=1, mutex_group=1, array=False),

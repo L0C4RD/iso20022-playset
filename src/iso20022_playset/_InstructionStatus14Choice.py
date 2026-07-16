@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InstructionProcessingStatus6 import InstructionProcessingStatus6
-from ._PendingStatus84Choice import PendingStatus84Choice
-from ._RejectedStatus66Choice import RejectedStatus66Choice
+from . import InstructionProcessingStatus6
+from . import PendingStatus84Choice
+from . import RejectedStatus66Choice
 
 class InstructionStatus14Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class InstructionStatus14Choice(base_types._BaseFieldType):
 
 	@Pdg.setter
 	def Pdg(self, value):
-		self._Pdg = value if type(value) != base_types.auto else self.make_default("Pdg")
+		self._Pdg = value if value is not None else base_types.UninitialisedField(self, 'Pdg', PendingStatus84Choice, False)
 
 	@Pdg.deleter
 	def Pdg(self):
 		del self._Pdg
-		self._Pdg = None
+		self._Pdg = base_types.UninitialisedField(self, 'Pdg', PendingStatus84Choice, False)
 
 	@property
 	def PrcgSts(self):
@@ -28,12 +28,12 @@ class InstructionStatus14Choice(base_types._BaseFieldType):
 
 	@PrcgSts.setter
 	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != base_types.auto else self.make_default("PrcgSts")
+		self._PrcgSts = value if value is not None else base_types.UninitialisedField(self, 'PrcgSts', InstructionProcessingStatus6, False)
 
 	@PrcgSts.deleter
 	def PrcgSts(self):
 		del self._PrcgSts
-		self._PrcgSts = None
+		self._PrcgSts = base_types.UninitialisedField(self, 'PrcgSts', InstructionProcessingStatus6, False)
 
 	@property
 	def Rjctd(self):
@@ -41,12 +41,12 @@ class InstructionStatus14Choice(base_types._BaseFieldType):
 
 	@Rjctd.setter
 	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
+		self._Rjctd = value if value is not None else base_types.UninitialisedField(self, 'Rjctd', RejectedStatus66Choice, False)
 
 	@Rjctd.deleter
 	def Rjctd(self):
 		del self._Rjctd
-		self._Rjctd = None
+		self._Rjctd = base_types.UninitialisedField(self, 'Rjctd', RejectedStatus66Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Pdg', type=PendingStatus84Choice, min=0, max=1, mutex_group=1, array=False),

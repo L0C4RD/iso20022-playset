@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CancellationStatus33Choice import CancellationStatus33Choice
-from ._Max35Text import Max35Text
-from ._PartyIdentification139 import PartyIdentification139
+from . import CancellationStatus33Choice
+from . import Max35Text
+from . import PartyIdentification139
 
 class OrderStatusAndReason12(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class OrderStatusAndReason12(base_types._BaseFieldType):
 
 	@CxlSts.setter
 	def CxlSts(self, value):
-		self._CxlSts = value if type(value) != base_types.auto else self.make_default("CxlSts")
+		self._CxlSts = value if value is not None else base_types.UninitialisedField(self, 'CxlSts', CancellationStatus33Choice, False)
 
 	@CxlSts.deleter
 	def CxlSts(self):
 		del self._CxlSts
-		self._CxlSts = None
+		self._CxlSts = base_types.UninitialisedField(self, 'CxlSts', CancellationStatus33Choice, False)
 
 	@property
 	def MstrRef(self):
@@ -28,12 +28,12 @@ class OrderStatusAndReason12(base_types._BaseFieldType):
 
 	@MstrRef.setter
 	def MstrRef(self, value):
-		self._MstrRef = value if type(value) != base_types.auto else self.make_default("MstrRef")
+		self._MstrRef = value if value is not None else base_types.UninitialisedField(self, 'MstrRef', Max35Text, False)
 
 	@MstrRef.deleter
 	def MstrRef(self):
 		del self._MstrRef
-		self._MstrRef = None
+		self._MstrRef = base_types.UninitialisedField(self, 'MstrRef', Max35Text, False)
 
 	@property
 	def StsInitr(self):
@@ -41,12 +41,12 @@ class OrderStatusAndReason12(base_types._BaseFieldType):
 
 	@StsInitr.setter
 	def StsInitr(self, value):
-		self._StsInitr = value if type(value) != base_types.auto else self.make_default("StsInitr")
+		self._StsInitr = value if value is not None else base_types.UninitialisedField(self, 'StsInitr', PartyIdentification139, False)
 
 	@StsInitr.deleter
 	def StsInitr(self):
 		del self._StsInitr
-		self._StsInitr = None
+		self._StsInitr = base_types.UninitialisedField(self, 'StsInitr', PartyIdentification139, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CxlSts', type=CancellationStatus33Choice, min=1, max=1, mutex_group=None, array=False),

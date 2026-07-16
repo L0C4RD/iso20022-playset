@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AutoExtension1 import AutoExtension1
-from ._DateAndDateTimeChoice import DateAndDateTimeChoice
-from ._Max2000Text import Max2000Text
-from ._YesNoIndicator import YesNoIndicator
+from . import AutoExtension1
+from . import DateAndDateTimeChoice
+from . import Max2000Text
+from . import YesNoIndicator
 
 class ExpiryTerms1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ExpiryTerms1(base_types._BaseFieldType):
 
 	@AutoXtnsn.setter
 	def AutoXtnsn(self, value):
-		self._AutoXtnsn = value if type(value) != base_types.auto else self.make_default("AutoXtnsn")
+		self._AutoXtnsn = value if value is not None else base_types.UninitialisedField(self, 'AutoXtnsn', AutoExtension1, False)
 
 	@AutoXtnsn.deleter
 	def AutoXtnsn(self):
 		del self._AutoXtnsn
-		self._AutoXtnsn = None
+		self._AutoXtnsn = base_types.UninitialisedField(self, 'AutoXtnsn', AutoExtension1, False)
 
 	@property
 	def Cond(self):
@@ -29,12 +29,12 @@ class ExpiryTerms1(base_types._BaseFieldType):
 
 	@Cond.setter
 	def Cond(self, value):
-		self._Cond = value if type(value) != base_types.auto else self.make_default("Cond")
+		self._Cond = value if value is not None else base_types.UninitialisedField(self, 'Cond', Max2000Text, False)
 
 	@Cond.deleter
 	def Cond(self):
 		del self._Cond
-		self._Cond = None
+		self._Cond = base_types.UninitialisedField(self, 'Cond', Max2000Text, False)
 
 	@property
 	def DtTm(self):
@@ -42,12 +42,12 @@ class ExpiryTerms1(base_types._BaseFieldType):
 
 	@DtTm.setter
 	def DtTm(self, value):
-		self._DtTm = value if type(value) != base_types.auto else self.make_default("DtTm")
+		self._DtTm = value if value is not None else base_types.UninitialisedField(self, 'DtTm', DateAndDateTimeChoice, False)
 
 	@DtTm.deleter
 	def DtTm(self):
 		del self._DtTm
-		self._DtTm = None
+		self._DtTm = base_types.UninitialisedField(self, 'DtTm', DateAndDateTimeChoice, False)
 
 	@property
 	def OpnEnddInd(self):
@@ -55,12 +55,12 @@ class ExpiryTerms1(base_types._BaseFieldType):
 
 	@OpnEnddInd.setter
 	def OpnEnddInd(self, value):
-		self._OpnEnddInd = value if type(value) != base_types.auto else self.make_default("OpnEnddInd")
+		self._OpnEnddInd = value if value is not None else base_types.UninitialisedField(self, 'OpnEnddInd', YesNoIndicator, False)
 
 	@OpnEnddInd.deleter
 	def OpnEnddInd(self):
 		del self._OpnEnddInd
-		self._OpnEnddInd = None
+		self._OpnEnddInd = base_types.UninitialisedField(self, 'OpnEnddInd', YesNoIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AutoXtnsn', type=AutoExtension1, min=0, max=1, mutex_group=None, array=False),

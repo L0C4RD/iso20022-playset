@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountManagementStatus1Code import AccountManagementStatus1Code
-from ._RejectionReason31 import RejectionReason31
+from . import AccountManagementStatus1Code
+from . import RejectionReason31
 
 class Status25Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Status25Choice(base_types._BaseFieldType):
 
 	@Rjctd.setter
 	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
+		self._Rjctd = value if value is not None else base_types.UninitialisedField(self, 'Rjctd', RejectionReason31, True)
 
 	@Rjctd.deleter
 	def Rjctd(self):
 		del self._Rjctd
-		self._Rjctd = None
+		self._Rjctd = base_types.UninitialisedField(self, 'Rjctd', RejectionReason31, True)
 
 	@property
 	def Sts(self):
@@ -27,12 +27,12 @@ class Status25Choice(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', AccountManagementStatus1Code, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', AccountManagementStatus1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Rjctd', type=RejectionReason31, min=1, max=10, mutex_group=1, array=True),

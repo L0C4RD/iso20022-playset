@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InterestComputationMethodFormat7 import InterestComputationMethodFormat7
-from ._InterestRateFrequency3Choice import InterestRateFrequency3Choice
-from ._SecuritiesTransactionPrice14Choice import SecuritiesTransactionPrice14Choice
+from . import InterestComputationMethodFormat7
+from . import InterestRateFrequency3Choice
+from . import SecuritiesTransactionPrice14Choice
 
 class FixedRate10(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class FixedRate10(base_types._BaseFieldType):
 
 	@DayCnt.setter
 	def DayCnt(self, value):
-		self._DayCnt = value if type(value) != base_types.auto else self.make_default("DayCnt")
+		self._DayCnt = value if value is not None else base_types.UninitialisedField(self, 'DayCnt', InterestComputationMethodFormat7, False)
 
 	@DayCnt.deleter
 	def DayCnt(self):
 		del self._DayCnt
-		self._DayCnt = None
+		self._DayCnt = base_types.UninitialisedField(self, 'DayCnt', InterestComputationMethodFormat7, False)
 
 	@property
 	def PmtFrqcy(self):
@@ -28,12 +28,12 @@ class FixedRate10(base_types._BaseFieldType):
 
 	@PmtFrqcy.setter
 	def PmtFrqcy(self, value):
-		self._PmtFrqcy = value if type(value) != base_types.auto else self.make_default("PmtFrqcy")
+		self._PmtFrqcy = value if value is not None else base_types.UninitialisedField(self, 'PmtFrqcy', InterestRateFrequency3Choice, False)
 
 	@PmtFrqcy.deleter
 	def PmtFrqcy(self):
 		del self._PmtFrqcy
-		self._PmtFrqcy = None
+		self._PmtFrqcy = base_types.UninitialisedField(self, 'PmtFrqcy', InterestRateFrequency3Choice, False)
 
 	@property
 	def Rate(self):
@@ -41,12 +41,12 @@ class FixedRate10(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+		self._Rate = value if value is not None else base_types.UninitialisedField(self, 'Rate', SecuritiesTransactionPrice14Choice, False)
 
 	@Rate.deleter
 	def Rate(self):
 		del self._Rate
-		self._Rate = None
+		self._Rate = base_types.UninitialisedField(self, 'Rate', SecuritiesTransactionPrice14Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DayCnt', type=InterestComputationMethodFormat7, min=0, max=1, mutex_group=None, array=False),

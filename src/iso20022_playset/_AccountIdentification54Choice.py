@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BBANIdentifier import BBANIdentifier
-from ._IBAN2007Identifier import IBAN2007Identifier
-from ._Max16Text import Max16Text
-from ._Max256Text import Max256Text
-from ._Max35Text import Max35Text
-from ._Min8Max28NumericText import Min8Max28NumericText
-from ._UPICIdentifier import UPICIdentifier
+from . import BBANIdentifier
+from . import IBAN2007Identifier
+from . import Max16Text
+from . import Max256Text
+from . import Max35Text
+from . import Min8Max28NumericText
+from . import UPICIdentifier
 
 class AccountIdentification54Choice(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class AccountIdentification54Choice(base_types._BaseFieldType):
 
 	@BBAN.setter
 	def BBAN(self, value):
-		self._BBAN = value if type(value) != base_types.auto else self.make_default("BBAN")
+		self._BBAN = value if value is not None else base_types.UninitialisedField(self, 'BBAN', BBANIdentifier, False)
 
 	@BBAN.deleter
 	def BBAN(self):
 		del self._BBAN
-		self._BBAN = None
+		self._BBAN = base_types.UninitialisedField(self, 'BBAN', BBANIdentifier, False)
 
 	@property
 	def Card(self):
@@ -32,12 +32,12 @@ class AccountIdentification54Choice(base_types._BaseFieldType):
 
 	@Card.setter
 	def Card(self, value):
-		self._Card = value if type(value) != base_types.auto else self.make_default("Card")
+		self._Card = value if value is not None else base_types.UninitialisedField(self, 'Card', Min8Max28NumericText, False)
 
 	@Card.deleter
 	def Card(self):
 		del self._Card
-		self._Card = None
+		self._Card = base_types.UninitialisedField(self, 'Card', Min8Max28NumericText, False)
 
 	@property
 	def Dmst(self):
@@ -45,12 +45,12 @@ class AccountIdentification54Choice(base_types._BaseFieldType):
 
 	@Dmst.setter
 	def Dmst(self, value):
-		self._Dmst = value if type(value) != base_types.auto else self.make_default("Dmst")
+		self._Dmst = value if value is not None else base_types.UninitialisedField(self, 'Dmst', Max35Text, False)
 
 	@Dmst.deleter
 	def Dmst(self):
 		del self._Dmst
-		self._Dmst = None
+		self._Dmst = base_types.UninitialisedField(self, 'Dmst', Max35Text, False)
 
 	@property
 	def EMail(self):
@@ -58,12 +58,12 @@ class AccountIdentification54Choice(base_types._BaseFieldType):
 
 	@EMail.setter
 	def EMail(self, value):
-		self._EMail = value if type(value) != base_types.auto else self.make_default("EMail")
+		self._EMail = value if value is not None else base_types.UninitialisedField(self, 'EMail', Max256Text, False)
 
 	@EMail.deleter
 	def EMail(self):
 		del self._EMail
-		self._EMail = None
+		self._EMail = base_types.UninitialisedField(self, 'EMail', Max256Text, False)
 
 	@property
 	def IBAN(self):
@@ -71,12 +71,12 @@ class AccountIdentification54Choice(base_types._BaseFieldType):
 
 	@IBAN.setter
 	def IBAN(self, value):
-		self._IBAN = value if type(value) != base_types.auto else self.make_default("IBAN")
+		self._IBAN = value if value is not None else base_types.UninitialisedField(self, 'IBAN', IBAN2007Identifier, False)
 
 	@IBAN.deleter
 	def IBAN(self):
 		del self._IBAN
-		self._IBAN = None
+		self._IBAN = base_types.UninitialisedField(self, 'IBAN', IBAN2007Identifier, False)
 
 	@property
 	def MSISDN(self):
@@ -84,12 +84,12 @@ class AccountIdentification54Choice(base_types._BaseFieldType):
 
 	@MSISDN.setter
 	def MSISDN(self, value):
-		self._MSISDN = value if type(value) != base_types.auto else self.make_default("MSISDN")
+		self._MSISDN = value if value is not None else base_types.UninitialisedField(self, 'MSISDN', Max16Text, False)
 
 	@MSISDN.deleter
 	def MSISDN(self):
 		del self._MSISDN
-		self._MSISDN = None
+		self._MSISDN = base_types.UninitialisedField(self, 'MSISDN', Max16Text, False)
 
 	@property
 	def Othr(self):
@@ -97,12 +97,12 @@ class AccountIdentification54Choice(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', Max35Text, False)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', Max35Text, False)
 
 	@property
 	def UPIC(self):
@@ -110,12 +110,12 @@ class AccountIdentification54Choice(base_types._BaseFieldType):
 
 	@UPIC.setter
 	def UPIC(self, value):
-		self._UPIC = value if type(value) != base_types.auto else self.make_default("UPIC")
+		self._UPIC = value if value is not None else base_types.UninitialisedField(self, 'UPIC', UPICIdentifier, False)
 
 	@UPIC.deleter
 	def UPIC(self):
 		del self._UPIC
-		self._UPIC = None
+		self._UPIC = base_types.UninitialisedField(self, 'UPIC', UPICIdentifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BBAN', type=BBANIdentifier, min=0, max=1, mutex_group=1, array=False),

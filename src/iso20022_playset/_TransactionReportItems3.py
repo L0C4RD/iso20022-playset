@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BICIdentification1 import BICIdentification1
-from ._CountryCode import CountryCode
-from ._CurrencyAndAmount import CurrencyAndAmount
-from ._DocumentIdentification3 import DocumentIdentification3
-from ._DocumentIdentification5 import DocumentIdentification5
-from ._DocumentIdentification7 import DocumentIdentification7
-from ._Max35Text import Max35Text
-from ._PartyIdentification26 import PartyIdentification26
-from ._PendingActivity2 import PendingActivity2
-from ._TransactionStatus4 import TransactionStatus4
+from . import BICIdentification1
+from . import CountryCode
+from . import CurrencyAndAmount
+from . import DocumentIdentification3
+from . import DocumentIdentification5
+from . import DocumentIdentification7
+from . import Max35Text
+from . import PartyIdentification26
+from . import PendingActivity2
+from . import TransactionStatus4
 
 class TransactionReportItems3(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class TransactionReportItems3(base_types._BaseFieldType):
 
 	@Buyr.setter
 	def Buyr(self, value):
-		self._Buyr = value if type(value) != base_types.auto else self.make_default("Buyr")
+		self._Buyr = value if value is not None else base_types.UninitialisedField(self, 'Buyr', PartyIdentification26, False)
 
 	@Buyr.deleter
 	def Buyr(self):
 		del self._Buyr
-		self._Buyr = None
+		self._Buyr = base_types.UninitialisedField(self, 'Buyr', PartyIdentification26, False)
 
 	@property
 	def BuyrBk(self):
@@ -35,12 +35,12 @@ class TransactionReportItems3(base_types._BaseFieldType):
 
 	@BuyrBk.setter
 	def BuyrBk(self, value):
-		self._BuyrBk = value if type(value) != base_types.auto else self.make_default("BuyrBk")
+		self._BuyrBk = value if value is not None else base_types.UninitialisedField(self, 'BuyrBk', BICIdentification1, False)
 
 	@BuyrBk.deleter
 	def BuyrBk(self):
 		del self._BuyrBk
-		self._BuyrBk = None
+		self._BuyrBk = base_types.UninitialisedField(self, 'BuyrBk', BICIdentification1, False)
 
 	@property
 	def BuyrBkCtry(self):
@@ -48,12 +48,12 @@ class TransactionReportItems3(base_types._BaseFieldType):
 
 	@BuyrBkCtry.setter
 	def BuyrBkCtry(self, value):
-		self._BuyrBkCtry = value if type(value) != base_types.auto else self.make_default("BuyrBkCtry")
+		self._BuyrBkCtry = value if value is not None else base_types.UninitialisedField(self, 'BuyrBkCtry', CountryCode, False)
 
 	@BuyrBkCtry.deleter
 	def BuyrBkCtry(self):
 		del self._BuyrBkCtry
-		self._BuyrBkCtry = None
+		self._BuyrBkCtry = base_types.UninitialisedField(self, 'BuyrBkCtry', CountryCode, False)
 
 	@property
 	def EstblishdBaselnId(self):
@@ -61,12 +61,12 @@ class TransactionReportItems3(base_types._BaseFieldType):
 
 	@EstblishdBaselnId.setter
 	def EstblishdBaselnId(self, value):
-		self._EstblishdBaselnId = value if type(value) != base_types.auto else self.make_default("EstblishdBaselnId")
+		self._EstblishdBaselnId = value if value is not None else base_types.UninitialisedField(self, 'EstblishdBaselnId', DocumentIdentification3, False)
 
 	@EstblishdBaselnId.deleter
 	def EstblishdBaselnId(self):
 		del self._EstblishdBaselnId
-		self._EstblishdBaselnId = None
+		self._EstblishdBaselnId = base_types.UninitialisedField(self, 'EstblishdBaselnId', DocumentIdentification3, False)
 
 	@property
 	def OblgrBk(self):
@@ -74,12 +74,12 @@ class TransactionReportItems3(base_types._BaseFieldType):
 
 	@OblgrBk.setter
 	def OblgrBk(self, value):
-		self._OblgrBk = value if type(value) != base_types.auto else self.make_default("OblgrBk")
+		self._OblgrBk = value if value is not None else base_types.UninitialisedField(self, 'OblgrBk', BICIdentification1, True)
 
 	@OblgrBk.deleter
 	def OblgrBk(self):
 		del self._OblgrBk
-		self._OblgrBk = None
+		self._OblgrBk = base_types.UninitialisedField(self, 'OblgrBk', BICIdentification1, True)
 
 	@property
 	def OutsdngAmt(self):
@@ -87,12 +87,12 @@ class TransactionReportItems3(base_types._BaseFieldType):
 
 	@OutsdngAmt.setter
 	def OutsdngAmt(self, value):
-		self._OutsdngAmt = value if type(value) != base_types.auto else self.make_default("OutsdngAmt")
+		self._OutsdngAmt = value if value is not None else base_types.UninitialisedField(self, 'OutsdngAmt', CurrencyAndAmount, False)
 
 	@OutsdngAmt.deleter
 	def OutsdngAmt(self):
 		del self._OutsdngAmt
-		self._OutsdngAmt = None
+		self._OutsdngAmt = base_types.UninitialisedField(self, 'OutsdngAmt', CurrencyAndAmount, False)
 
 	@property
 	def PdgReqForActn(self):
@@ -100,12 +100,12 @@ class TransactionReportItems3(base_types._BaseFieldType):
 
 	@PdgReqForActn.setter
 	def PdgReqForActn(self, value):
-		self._PdgReqForActn = value if type(value) != base_types.auto else self.make_default("PdgReqForActn")
+		self._PdgReqForActn = value if value is not None else base_types.UninitialisedField(self, 'PdgReqForActn', PendingActivity2, True)
 
 	@PdgReqForActn.deleter
 	def PdgReqForActn(self):
 		del self._PdgReqForActn
-		self._PdgReqForActn = None
+		self._PdgReqForActn = base_types.UninitialisedField(self, 'PdgReqForActn', PendingActivity2, True)
 
 	@property
 	def PurchsOrdrRef(self):
@@ -113,12 +113,12 @@ class TransactionReportItems3(base_types._BaseFieldType):
 
 	@PurchsOrdrRef.setter
 	def PurchsOrdrRef(self, value):
-		self._PurchsOrdrRef = value if type(value) != base_types.auto else self.make_default("PurchsOrdrRef")
+		self._PurchsOrdrRef = value if value is not None else base_types.UninitialisedField(self, 'PurchsOrdrRef', DocumentIdentification7, False)
 
 	@PurchsOrdrRef.deleter
 	def PurchsOrdrRef(self):
 		del self._PurchsOrdrRef
-		self._PurchsOrdrRef = None
+		self._PurchsOrdrRef = base_types.UninitialisedField(self, 'PurchsOrdrRef', DocumentIdentification7, False)
 
 	@property
 	def Sellr(self):
@@ -126,12 +126,12 @@ class TransactionReportItems3(base_types._BaseFieldType):
 
 	@Sellr.setter
 	def Sellr(self, value):
-		self._Sellr = value if type(value) != base_types.auto else self.make_default("Sellr")
+		self._Sellr = value if value is not None else base_types.UninitialisedField(self, 'Sellr', PartyIdentification26, False)
 
 	@Sellr.deleter
 	def Sellr(self):
 		del self._Sellr
-		self._Sellr = None
+		self._Sellr = base_types.UninitialisedField(self, 'Sellr', PartyIdentification26, False)
 
 	@property
 	def SellrBk(self):
@@ -139,12 +139,12 @@ class TransactionReportItems3(base_types._BaseFieldType):
 
 	@SellrBk.setter
 	def SellrBk(self, value):
-		self._SellrBk = value if type(value) != base_types.auto else self.make_default("SellrBk")
+		self._SellrBk = value if value is not None else base_types.UninitialisedField(self, 'SellrBk', BICIdentification1, False)
 
 	@SellrBk.deleter
 	def SellrBk(self):
 		del self._SellrBk
-		self._SellrBk = None
+		self._SellrBk = base_types.UninitialisedField(self, 'SellrBk', BICIdentification1, False)
 
 	@property
 	def SellrBkCtry(self):
@@ -152,12 +152,12 @@ class TransactionReportItems3(base_types._BaseFieldType):
 
 	@SellrBkCtry.setter
 	def SellrBkCtry(self, value):
-		self._SellrBkCtry = value if type(value) != base_types.auto else self.make_default("SellrBkCtry")
+		self._SellrBkCtry = value if value is not None else base_types.UninitialisedField(self, 'SellrBkCtry', CountryCode, False)
 
 	@SellrBkCtry.deleter
 	def SellrBkCtry(self):
 		del self._SellrBkCtry
-		self._SellrBkCtry = None
+		self._SellrBkCtry = base_types.UninitialisedField(self, 'SellrBkCtry', CountryCode, False)
 
 	@property
 	def SubmitgBk(self):
@@ -165,12 +165,12 @@ class TransactionReportItems3(base_types._BaseFieldType):
 
 	@SubmitgBk.setter
 	def SubmitgBk(self, value):
-		self._SubmitgBk = value if type(value) != base_types.auto else self.make_default("SubmitgBk")
+		self._SubmitgBk = value if value is not None else base_types.UninitialisedField(self, 'SubmitgBk', BICIdentification1, True)
 
 	@SubmitgBk.deleter
 	def SubmitgBk(self):
 		del self._SubmitgBk
-		self._SubmitgBk = None
+		self._SubmitgBk = base_types.UninitialisedField(self, 'SubmitgBk', BICIdentification1, True)
 
 	@property
 	def TtlNetAmt(self):
@@ -178,12 +178,12 @@ class TransactionReportItems3(base_types._BaseFieldType):
 
 	@TtlNetAmt.setter
 	def TtlNetAmt(self, value):
-		self._TtlNetAmt = value if type(value) != base_types.auto else self.make_default("TtlNetAmt")
+		self._TtlNetAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlNetAmt', CurrencyAndAmount, False)
 
 	@TtlNetAmt.deleter
 	def TtlNetAmt(self):
 		del self._TtlNetAmt
-		self._TtlNetAmt = None
+		self._TtlNetAmt = base_types.UninitialisedField(self, 'TtlNetAmt', CurrencyAndAmount, False)
 
 	@property
 	def TxId(self):
@@ -191,12 +191,12 @@ class TransactionReportItems3(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	@property
 	def TxSts(self):
@@ -204,12 +204,12 @@ class TransactionReportItems3(base_types._BaseFieldType):
 
 	@TxSts.setter
 	def TxSts(self, value):
-		self._TxSts = value if type(value) != base_types.auto else self.make_default("TxSts")
+		self._TxSts = value if value is not None else base_types.UninitialisedField(self, 'TxSts', TransactionStatus4, False)
 
 	@TxSts.deleter
 	def TxSts(self):
 		del self._TxSts
-		self._TxSts = None
+		self._TxSts = base_types.UninitialisedField(self, 'TxSts', TransactionStatus4, False)
 
 	@property
 	def UsrTxRef(self):
@@ -217,12 +217,12 @@ class TransactionReportItems3(base_types._BaseFieldType):
 
 	@UsrTxRef.setter
 	def UsrTxRef(self, value):
-		self._UsrTxRef = value if type(value) != base_types.auto else self.make_default("UsrTxRef")
+		self._UsrTxRef = value if value is not None else base_types.UninitialisedField(self, 'UsrTxRef', DocumentIdentification5, True)
 
 	@UsrTxRef.deleter
 	def UsrTxRef(self):
 		del self._UsrTxRef
-		self._UsrTxRef = None
+		self._UsrTxRef = base_types.UninitialisedField(self, 'UsrTxRef', DocumentIdentification5, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Buyr', type=PartyIdentification26, min=1, max=1, mutex_group=None, array=False),

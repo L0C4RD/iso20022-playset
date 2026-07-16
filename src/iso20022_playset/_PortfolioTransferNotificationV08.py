@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
-from ._Pagination1 import Pagination1
-from ._PartyIdentification144 import PartyIdentification144
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._SecuritiesTradeDetails148 import SecuritiesTradeDetails148
-from ._Statement62 import Statement62
+from . import BlockChainAddressWallet3
+from . import Pagination1
+from . import PartyIdentification144
+from . import SecuritiesAccount19
+from . import SecuritiesTradeDetails148
+from . import Statement62
 
 class PortfolioTransferNotificationV08(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class PortfolioTransferNotificationV08(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification144, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification144, False)
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -31,12 +31,12 @@ class PortfolioTransferNotificationV08(base_types._BaseFieldType):
 
 	@BlckChainAdrOrWllt.setter
 	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
+		self._BlckChainAdrOrWllt = value if value is not None else base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet3, False)
 
 	@BlckChainAdrOrWllt.deleter
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+		self._BlckChainAdrOrWllt = base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet3, False)
 
 	@property
 	def Pgntn(self):
@@ -44,12 +44,12 @@ class PortfolioTransferNotificationV08(base_types._BaseFieldType):
 
 	@Pgntn.setter
 	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+		self._Pgntn = value if value is not None else base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@Pgntn.deleter
 	def Pgntn(self):
 		del self._Pgntn
-		self._Pgntn = None
+		self._Pgntn = base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@property
 	def SfkpgAcct(self):
@@ -57,12 +57,12 @@ class PortfolioTransferNotificationV08(base_types._BaseFieldType):
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
-		self._SfkpgAcct = None
+		self._SfkpgAcct = base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@property
 	def StmtGnlDtls(self):
@@ -70,12 +70,12 @@ class PortfolioTransferNotificationV08(base_types._BaseFieldType):
 
 	@StmtGnlDtls.setter
 	def StmtGnlDtls(self, value):
-		self._StmtGnlDtls = value if type(value) != base_types.auto else self.make_default("StmtGnlDtls")
+		self._StmtGnlDtls = value if value is not None else base_types.UninitialisedField(self, 'StmtGnlDtls', Statement62, False)
 
 	@StmtGnlDtls.deleter
 	def StmtGnlDtls(self):
 		del self._StmtGnlDtls
-		self._StmtGnlDtls = None
+		self._StmtGnlDtls = base_types.UninitialisedField(self, 'StmtGnlDtls', Statement62, False)
 
 	@property
 	def TrfNtfctnDtls(self):
@@ -83,12 +83,12 @@ class PortfolioTransferNotificationV08(base_types._BaseFieldType):
 
 	@TrfNtfctnDtls.setter
 	def TrfNtfctnDtls(self, value):
-		self._TrfNtfctnDtls = value if type(value) != base_types.auto else self.make_default("TrfNtfctnDtls")
+		self._TrfNtfctnDtls = value if value is not None else base_types.UninitialisedField(self, 'TrfNtfctnDtls', SecuritiesTradeDetails148, True)
 
 	@TrfNtfctnDtls.deleter
 	def TrfNtfctnDtls(self):
 		del self._TrfNtfctnDtls
-		self._TrfNtfctnDtls = None
+		self._TrfNtfctnDtls = base_types.UninitialisedField(self, 'TrfNtfctnDtls', SecuritiesTradeDetails148, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max256Text import Max256Text
-from ._Max35Text import Max35Text
-from ._NamePrefix1Code import NamePrefix1Code
-from ._PhoneNumber import PhoneNumber
+from . import Max256Text
+from . import Max35Text
+from . import NamePrefix1Code
+from . import PhoneNumber
 
 class ContactIdentification2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ContactIdentification2(base_types._BaseFieldType):
 
 	@EmailAdr.setter
 	def EmailAdr(self, value):
-		self._EmailAdr = value if type(value) != base_types.auto else self.make_default("EmailAdr")
+		self._EmailAdr = value if value is not None else base_types.UninitialisedField(self, 'EmailAdr', Max256Text, False)
 
 	@EmailAdr.deleter
 	def EmailAdr(self):
 		del self._EmailAdr
-		self._EmailAdr = None
+		self._EmailAdr = base_types.UninitialisedField(self, 'EmailAdr', Max256Text, False)
 
 	@property
 	def FaxNb(self):
@@ -29,12 +29,12 @@ class ContactIdentification2(base_types._BaseFieldType):
 
 	@FaxNb.setter
 	def FaxNb(self, value):
-		self._FaxNb = value if type(value) != base_types.auto else self.make_default("FaxNb")
+		self._FaxNb = value if value is not None else base_types.UninitialisedField(self, 'FaxNb', PhoneNumber, False)
 
 	@FaxNb.deleter
 	def FaxNb(self):
 		del self._FaxNb
-		self._FaxNb = None
+		self._FaxNb = base_types.UninitialisedField(self, 'FaxNb', PhoneNumber, False)
 
 	@property
 	def GvnNm(self):
@@ -42,12 +42,12 @@ class ContactIdentification2(base_types._BaseFieldType):
 
 	@GvnNm.setter
 	def GvnNm(self, value):
-		self._GvnNm = value if type(value) != base_types.auto else self.make_default("GvnNm")
+		self._GvnNm = value if value is not None else base_types.UninitialisedField(self, 'GvnNm', Max35Text, False)
 
 	@GvnNm.deleter
 	def GvnNm(self):
 		del self._GvnNm
-		self._GvnNm = None
+		self._GvnNm = base_types.UninitialisedField(self, 'GvnNm', Max35Text, False)
 
 	@property
 	def MobNb(self):
@@ -55,12 +55,12 @@ class ContactIdentification2(base_types._BaseFieldType):
 
 	@MobNb.setter
 	def MobNb(self, value):
-		self._MobNb = value if type(value) != base_types.auto else self.make_default("MobNb")
+		self._MobNb = value if value is not None else base_types.UninitialisedField(self, 'MobNb', PhoneNumber, False)
 
 	@MobNb.deleter
 	def MobNb(self):
 		del self._MobNb
-		self._MobNb = None
+		self._MobNb = base_types.UninitialisedField(self, 'MobNb', PhoneNumber, False)
 
 	@property
 	def Nm(self):
@@ -68,12 +68,12 @@ class ContactIdentification2(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max35Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max35Text, False)
 
 	@property
 	def NmPrfx(self):
@@ -81,12 +81,12 @@ class ContactIdentification2(base_types._BaseFieldType):
 
 	@NmPrfx.setter
 	def NmPrfx(self, value):
-		self._NmPrfx = value if type(value) != base_types.auto else self.make_default("NmPrfx")
+		self._NmPrfx = value if value is not None else base_types.UninitialisedField(self, 'NmPrfx', NamePrefix1Code, False)
 
 	@NmPrfx.deleter
 	def NmPrfx(self):
 		del self._NmPrfx
-		self._NmPrfx = None
+		self._NmPrfx = base_types.UninitialisedField(self, 'NmPrfx', NamePrefix1Code, False)
 
 	@property
 	def PhneNb(self):
@@ -94,12 +94,12 @@ class ContactIdentification2(base_types._BaseFieldType):
 
 	@PhneNb.setter
 	def PhneNb(self, value):
-		self._PhneNb = value if type(value) != base_types.auto else self.make_default("PhneNb")
+		self._PhneNb = value if value is not None else base_types.UninitialisedField(self, 'PhneNb', PhoneNumber, False)
 
 	@PhneNb.deleter
 	def PhneNb(self):
 		del self._PhneNb
-		self._PhneNb = None
+		self._PhneNb = base_types.UninitialisedField(self, 'PhneNb', PhoneNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EmailAdr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),

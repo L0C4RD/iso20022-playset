@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._DecimalNumber import DecimalNumber
-from ._FinancialInstrumentIdentification7 import FinancialInstrumentIdentification7
-from ._Unit15 import Unit15
+from . import AdditionalInformation15
+from . import DecimalNumber
+from . import FinancialInstrumentIdentification7
+from . import Unit15
 
 class Conversion4(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class Conversion4(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@property
 	def SrcScty(self):
@@ -29,12 +29,12 @@ class Conversion4(base_types._BaseFieldType):
 
 	@SrcScty.setter
 	def SrcScty(self, value):
-		self._SrcScty = value if type(value) != base_types.auto else self.make_default("SrcScty")
+		self._SrcScty = value if value is not None else base_types.UninitialisedField(self, 'SrcScty', FinancialInstrumentIdentification7, False)
 
 	@SrcScty.deleter
 	def SrcScty(self):
 		del self._SrcScty
-		self._SrcScty = None
+		self._SrcScty = base_types.UninitialisedField(self, 'SrcScty', FinancialInstrumentIdentification7, False)
 
 	@property
 	def TtlUnitsNb(self):
@@ -42,12 +42,12 @@ class Conversion4(base_types._BaseFieldType):
 
 	@TtlUnitsNb.setter
 	def TtlUnitsNb(self, value):
-		self._TtlUnitsNb = value if type(value) != base_types.auto else self.make_default("TtlUnitsNb")
+		self._TtlUnitsNb = value if value is not None else base_types.UninitialisedField(self, 'TtlUnitsNb', DecimalNumber, False)
 
 	@TtlUnitsNb.deleter
 	def TtlUnitsNb(self):
 		del self._TtlUnitsNb
-		self._TtlUnitsNb = None
+		self._TtlUnitsNb = base_types.UninitialisedField(self, 'TtlUnitsNb', DecimalNumber, False)
 
 	@property
 	def UnitsDtls(self):
@@ -55,12 +55,12 @@ class Conversion4(base_types._BaseFieldType):
 
 	@UnitsDtls.setter
 	def UnitsDtls(self, value):
-		self._UnitsDtls = value if type(value) != base_types.auto else self.make_default("UnitsDtls")
+		self._UnitsDtls = value if value is not None else base_types.UninitialisedField(self, 'UnitsDtls', Unit15, True)
 
 	@UnitsDtls.deleter
 	def UnitsDtls(self):
 		del self._UnitsDtls
-		self._UnitsDtls = None
+		self._UnitsDtls = base_types.UninitialisedField(self, 'UnitsDtls', Unit15, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),

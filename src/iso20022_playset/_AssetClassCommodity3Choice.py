@@ -2,20 +2,20 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AssetClassCommodityAgricultural1Choice import AssetClassCommodityAgricultural1Choice
-from ._AssetClassCommodityEnergy1Choice import AssetClassCommodityEnergy1Choice
-from ._AssetClassCommodityEnvironmental1Choice import AssetClassCommodityEnvironmental1Choice
-from ._AssetClassCommodityFertilizer1Choice import AssetClassCommodityFertilizer1Choice
-from ._AssetClassCommodityFreight1Choice import AssetClassCommodityFreight1Choice
-from ._AssetClassCommodityIndustrialProduct1Choice import AssetClassCommodityIndustrialProduct1Choice
-from ._AssetClassCommodityInflation1 import AssetClassCommodityInflation1
-from ._AssetClassCommodityMetal1Choice import AssetClassCommodityMetal1Choice
-from ._AssetClassCommodityMultiCommodityExotic1 import AssetClassCommodityMultiCommodityExotic1
-from ._AssetClassCommodityOfficialEconomicStatistics1 import AssetClassCommodityOfficialEconomicStatistics1
-from ._AssetClassCommodityOther1 import AssetClassCommodityOther1
-from ._AssetClassCommodityOtherC102Choice import AssetClassCommodityOtherC102Choice
-from ._AssetClassCommodityPaper1Choice import AssetClassCommodityPaper1Choice
-from ._AssetClassCommodityPolypropylene1Choice import AssetClassCommodityPolypropylene1Choice
+from . import AssetClassCommodityAgricultural1Choice
+from . import AssetClassCommodityEnergy1Choice
+from . import AssetClassCommodityEnvironmental1Choice
+from . import AssetClassCommodityFertilizer1Choice
+from . import AssetClassCommodityFreight1Choice
+from . import AssetClassCommodityIndustrialProduct1Choice
+from . import AssetClassCommodityInflation1
+from . import AssetClassCommodityMetal1Choice
+from . import AssetClassCommodityMultiCommodityExotic1
+from . import AssetClassCommodityOfficialEconomicStatistics1
+from . import AssetClassCommodityOther1
+from . import AssetClassCommodityOtherC102Choice
+from . import AssetClassCommodityPaper1Choice
+from . import AssetClassCommodityPolypropylene1Choice
 
 class AssetClassCommodity3Choice(base_types._BaseFieldType):
 
@@ -26,12 +26,12 @@ class AssetClassCommodity3Choice(base_types._BaseFieldType):
 
 	@Agrcltrl.setter
 	def Agrcltrl(self, value):
-		self._Agrcltrl = value if type(value) != base_types.auto else self.make_default("Agrcltrl")
+		self._Agrcltrl = value if value is not None else base_types.UninitialisedField(self, 'Agrcltrl', AssetClassCommodityAgricultural1Choice, False)
 
 	@Agrcltrl.deleter
 	def Agrcltrl(self):
 		del self._Agrcltrl
-		self._Agrcltrl = None
+		self._Agrcltrl = base_types.UninitialisedField(self, 'Agrcltrl', AssetClassCommodityAgricultural1Choice, False)
 
 	@property
 	def Envttl(self):
@@ -39,12 +39,12 @@ class AssetClassCommodity3Choice(base_types._BaseFieldType):
 
 	@Envttl.setter
 	def Envttl(self, value):
-		self._Envttl = value if type(value) != base_types.auto else self.make_default("Envttl")
+		self._Envttl = value if value is not None else base_types.UninitialisedField(self, 'Envttl', AssetClassCommodityEnvironmental1Choice, False)
 
 	@Envttl.deleter
 	def Envttl(self):
 		del self._Envttl
-		self._Envttl = None
+		self._Envttl = base_types.UninitialisedField(self, 'Envttl', AssetClassCommodityEnvironmental1Choice, False)
 
 	@property
 	def Frght(self):
@@ -52,12 +52,12 @@ class AssetClassCommodity3Choice(base_types._BaseFieldType):
 
 	@Frght.setter
 	def Frght(self, value):
-		self._Frght = value if type(value) != base_types.auto else self.make_default("Frght")
+		self._Frght = value if value is not None else base_types.UninitialisedField(self, 'Frght', AssetClassCommodityFreight1Choice, False)
 
 	@Frght.deleter
 	def Frght(self):
 		del self._Frght
-		self._Frght = None
+		self._Frght = base_types.UninitialisedField(self, 'Frght', AssetClassCommodityFreight1Choice, False)
 
 	@property
 	def Frtlzr(self):
@@ -65,12 +65,12 @@ class AssetClassCommodity3Choice(base_types._BaseFieldType):
 
 	@Frtlzr.setter
 	def Frtlzr(self, value):
-		self._Frtlzr = value if type(value) != base_types.auto else self.make_default("Frtlzr")
+		self._Frtlzr = value if value is not None else base_types.UninitialisedField(self, 'Frtlzr', AssetClassCommodityFertilizer1Choice, False)
 
 	@Frtlzr.deleter
 	def Frtlzr(self):
 		del self._Frtlzr
-		self._Frtlzr = None
+		self._Frtlzr = base_types.UninitialisedField(self, 'Frtlzr', AssetClassCommodityFertilizer1Choice, False)
 
 	@property
 	def IndstrlPdct(self):
@@ -78,12 +78,12 @@ class AssetClassCommodity3Choice(base_types._BaseFieldType):
 
 	@IndstrlPdct.setter
 	def IndstrlPdct(self, value):
-		self._IndstrlPdct = value if type(value) != base_types.auto else self.make_default("IndstrlPdct")
+		self._IndstrlPdct = value if value is not None else base_types.UninitialisedField(self, 'IndstrlPdct', AssetClassCommodityIndustrialProduct1Choice, False)
 
 	@IndstrlPdct.deleter
 	def IndstrlPdct(self):
 		del self._IndstrlPdct
-		self._IndstrlPdct = None
+		self._IndstrlPdct = base_types.UninitialisedField(self, 'IndstrlPdct', AssetClassCommodityIndustrialProduct1Choice, False)
 
 	@property
 	def Infltn(self):
@@ -91,12 +91,12 @@ class AssetClassCommodity3Choice(base_types._BaseFieldType):
 
 	@Infltn.setter
 	def Infltn(self, value):
-		self._Infltn = value if type(value) != base_types.auto else self.make_default("Infltn")
+		self._Infltn = value if value is not None else base_types.UninitialisedField(self, 'Infltn', AssetClassCommodityInflation1, False)
 
 	@Infltn.deleter
 	def Infltn(self):
 		del self._Infltn
-		self._Infltn = None
+		self._Infltn = base_types.UninitialisedField(self, 'Infltn', AssetClassCommodityInflation1, False)
 
 	@property
 	def Metl(self):
@@ -104,12 +104,12 @@ class AssetClassCommodity3Choice(base_types._BaseFieldType):
 
 	@Metl.setter
 	def Metl(self, value):
-		self._Metl = value if type(value) != base_types.auto else self.make_default("Metl")
+		self._Metl = value if value is not None else base_types.UninitialisedField(self, 'Metl', AssetClassCommodityMetal1Choice, False)
 
 	@Metl.deleter
 	def Metl(self):
 		del self._Metl
-		self._Metl = None
+		self._Metl = base_types.UninitialisedField(self, 'Metl', AssetClassCommodityMetal1Choice, False)
 
 	@property
 	def MultiCmmdtyExtc(self):
@@ -117,12 +117,12 @@ class AssetClassCommodity3Choice(base_types._BaseFieldType):
 
 	@MultiCmmdtyExtc.setter
 	def MultiCmmdtyExtc(self, value):
-		self._MultiCmmdtyExtc = value if type(value) != base_types.auto else self.make_default("MultiCmmdtyExtc")
+		self._MultiCmmdtyExtc = value if value is not None else base_types.UninitialisedField(self, 'MultiCmmdtyExtc', AssetClassCommodityMultiCommodityExotic1, False)
 
 	@MultiCmmdtyExtc.deleter
 	def MultiCmmdtyExtc(self):
 		del self._MultiCmmdtyExtc
-		self._MultiCmmdtyExtc = None
+		self._MultiCmmdtyExtc = base_types.UninitialisedField(self, 'MultiCmmdtyExtc', AssetClassCommodityMultiCommodityExotic1, False)
 
 	@property
 	def Nrgy(self):
@@ -130,12 +130,12 @@ class AssetClassCommodity3Choice(base_types._BaseFieldType):
 
 	@Nrgy.setter
 	def Nrgy(self, value):
-		self._Nrgy = value if type(value) != base_types.auto else self.make_default("Nrgy")
+		self._Nrgy = value if value is not None else base_types.UninitialisedField(self, 'Nrgy', AssetClassCommodityEnergy1Choice, False)
 
 	@Nrgy.deleter
 	def Nrgy(self):
 		del self._Nrgy
-		self._Nrgy = None
+		self._Nrgy = base_types.UninitialisedField(self, 'Nrgy', AssetClassCommodityEnergy1Choice, False)
 
 	@property
 	def OffclEcnmcSttstcs(self):
@@ -143,12 +143,12 @@ class AssetClassCommodity3Choice(base_types._BaseFieldType):
 
 	@OffclEcnmcSttstcs.setter
 	def OffclEcnmcSttstcs(self, value):
-		self._OffclEcnmcSttstcs = value if type(value) != base_types.auto else self.make_default("OffclEcnmcSttstcs")
+		self._OffclEcnmcSttstcs = value if value is not None else base_types.UninitialisedField(self, 'OffclEcnmcSttstcs', AssetClassCommodityOfficialEconomicStatistics1, False)
 
 	@OffclEcnmcSttstcs.deleter
 	def OffclEcnmcSttstcs(self):
 		del self._OffclEcnmcSttstcs
-		self._OffclEcnmcSttstcs = None
+		self._OffclEcnmcSttstcs = base_types.UninitialisedField(self, 'OffclEcnmcSttstcs', AssetClassCommodityOfficialEconomicStatistics1, False)
 
 	@property
 	def Othr(self):
@@ -156,12 +156,12 @@ class AssetClassCommodity3Choice(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', AssetClassCommodityOther1, False)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', AssetClassCommodityOther1, False)
 
 	@property
 	def OthrC10(self):
@@ -169,12 +169,12 @@ class AssetClassCommodity3Choice(base_types._BaseFieldType):
 
 	@OthrC10.setter
 	def OthrC10(self, value):
-		self._OthrC10 = value if type(value) != base_types.auto else self.make_default("OthrC10")
+		self._OthrC10 = value if value is not None else base_types.UninitialisedField(self, 'OthrC10', AssetClassCommodityOtherC102Choice, False)
 
 	@OthrC10.deleter
 	def OthrC10(self):
 		del self._OthrC10
-		self._OthrC10 = None
+		self._OthrC10 = base_types.UninitialisedField(self, 'OthrC10', AssetClassCommodityOtherC102Choice, False)
 
 	@property
 	def Plprpln(self):
@@ -182,12 +182,12 @@ class AssetClassCommodity3Choice(base_types._BaseFieldType):
 
 	@Plprpln.setter
 	def Plprpln(self, value):
-		self._Plprpln = value if type(value) != base_types.auto else self.make_default("Plprpln")
+		self._Plprpln = value if value is not None else base_types.UninitialisedField(self, 'Plprpln', AssetClassCommodityPolypropylene1Choice, False)
 
 	@Plprpln.deleter
 	def Plprpln(self):
 		del self._Plprpln
-		self._Plprpln = None
+		self._Plprpln = base_types.UninitialisedField(self, 'Plprpln', AssetClassCommodityPolypropylene1Choice, False)
 
 	@property
 	def Ppr(self):
@@ -195,12 +195,12 @@ class AssetClassCommodity3Choice(base_types._BaseFieldType):
 
 	@Ppr.setter
 	def Ppr(self, value):
-		self._Ppr = value if type(value) != base_types.auto else self.make_default("Ppr")
+		self._Ppr = value if value is not None else base_types.UninitialisedField(self, 'Ppr', AssetClassCommodityPaper1Choice, False)
 
 	@Ppr.deleter
 	def Ppr(self):
 		del self._Ppr
-		self._Ppr = None
+		self._Ppr = base_types.UninitialisedField(self, 'Ppr', AssetClassCommodityPaper1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Agrcltrl', type=AssetClassCommodityAgricultural1Choice, min=0, max=1, mutex_group=1, array=False),

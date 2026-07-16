@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PartyIdentification135 import PartyIdentification135
-from ._SkipPayload import SkipPayload
+from . import PartyIdentification135
+from . import SkipPayload
 
 class PartyAndSignature3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PartyAndSignature3(base_types._BaseFieldType):
 
 	@Pty.setter
 	def Pty(self, value):
-		self._Pty = value if type(value) != base_types.auto else self.make_default("Pty")
+		self._Pty = value if value is not None else base_types.UninitialisedField(self, 'Pty', PartyIdentification135, False)
 
 	@Pty.deleter
 	def Pty(self):
 		del self._Pty
-		self._Pty = None
+		self._Pty = base_types.UninitialisedField(self, 'Pty', PartyIdentification135, False)
 
 	@property
 	def Sgntr(self):
@@ -27,12 +27,12 @@ class PartyAndSignature3(base_types._BaseFieldType):
 
 	@Sgntr.setter
 	def Sgntr(self, value):
-		self._Sgntr = value if type(value) != base_types.auto else self.make_default("Sgntr")
+		self._Sgntr = value if value is not None else base_types.UninitialisedField(self, 'Sgntr', SkipPayload, False)
 
 	@Sgntr.deleter
 	def Sgntr(self):
 		del self._Sgntr
-		self._Sgntr = None
+		self._Sgntr = base_types.UninitialisedField(self, 'Sgntr', SkipPayload, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Pty', type=PartyIdentification135, min=1, max=1, mutex_group=None, array=False),

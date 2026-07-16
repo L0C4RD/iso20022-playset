@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ClearingExemptionException1Code import ClearingExemptionException1Code
-from ._Max350Text import Max350Text
+from . import ClearingExemptionException1Code
+from . import Max350Text
 
 class NonClearingReason2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class NonClearingReason2(base_types._BaseFieldType):
 
 	@ClrXmptnXcptn.setter
 	def ClrXmptnXcptn(self, value):
-		self._ClrXmptnXcptn = value if type(value) != base_types.auto else self.make_default("ClrXmptnXcptn")
+		self._ClrXmptnXcptn = value if value is not None else base_types.UninitialisedField(self, 'ClrXmptnXcptn', ClearingExemptionException1Code, True)
 
 	@ClrXmptnXcptn.deleter
 	def ClrXmptnXcptn(self):
 		del self._ClrXmptnXcptn
-		self._ClrXmptnXcptn = None
+		self._ClrXmptnXcptn = base_types.UninitialisedField(self, 'ClrXmptnXcptn', ClearingExemptionException1Code, True)
 
 	@property
 	def NonClrRsnInf(self):
@@ -27,12 +27,12 @@ class NonClearingReason2(base_types._BaseFieldType):
 
 	@NonClrRsnInf.setter
 	def NonClrRsnInf(self, value):
-		self._NonClrRsnInf = value if type(value) != base_types.auto else self.make_default("NonClrRsnInf")
+		self._NonClrRsnInf = value if value is not None else base_types.UninitialisedField(self, 'NonClrRsnInf', Max350Text, False)
 
 	@NonClrRsnInf.deleter
 	def NonClrRsnInf(self):
 		del self._NonClrRsnInf
-		self._NonClrRsnInf = None
+		self._NonClrRsnInf = base_types.UninitialisedField(self, 'NonClrRsnInf', Max350Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClrXmptnXcptn', type=ClearingExemptionException1Code, min=1, max=None, mutex_group=None, array=True),

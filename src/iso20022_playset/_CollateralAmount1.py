@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from . import ActiveCurrencyAndAmount
 
 class CollateralAmount1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class CollateralAmount1(base_types._BaseFieldType):
 
 	@AcrdIntrstAmt.setter
 	def AcrdIntrstAmt(self, value):
-		self._AcrdIntrstAmt = value if type(value) != base_types.auto else self.make_default("AcrdIntrstAmt")
+		self._AcrdIntrstAmt = value if value is not None else base_types.UninitialisedField(self, 'AcrdIntrstAmt', ActiveCurrencyAndAmount, False)
 
 	@AcrdIntrstAmt.deleter
 	def AcrdIntrstAmt(self):
 		del self._AcrdIntrstAmt
-		self._AcrdIntrstAmt = None
+		self._AcrdIntrstAmt = base_types.UninitialisedField(self, 'AcrdIntrstAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def CollAmt(self):
@@ -26,12 +26,12 @@ class CollateralAmount1(base_types._BaseFieldType):
 
 	@CollAmt.setter
 	def CollAmt(self, value):
-		self._CollAmt = value if type(value) != base_types.auto else self.make_default("CollAmt")
+		self._CollAmt = value if value is not None else base_types.UninitialisedField(self, 'CollAmt', ActiveCurrencyAndAmount, False)
 
 	@CollAmt.deleter
 	def CollAmt(self):
 		del self._CollAmt
-		self._CollAmt = None
+		self._CollAmt = base_types.UninitialisedField(self, 'CollAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def FeesAndComssns(self):
@@ -39,12 +39,12 @@ class CollateralAmount1(base_types._BaseFieldType):
 
 	@FeesAndComssns.setter
 	def FeesAndComssns(self, value):
-		self._FeesAndComssns = value if type(value) != base_types.auto else self.make_default("FeesAndComssns")
+		self._FeesAndComssns = value if value is not None else base_types.UninitialisedField(self, 'FeesAndComssns', ActiveCurrencyAndAmount, False)
 
 	@FeesAndComssns.deleter
 	def FeesAndComssns(self):
 		del self._FeesAndComssns
-		self._FeesAndComssns = None
+		self._FeesAndComssns = base_types.UninitialisedField(self, 'FeesAndComssns', ActiveCurrencyAndAmount, False)
 
 	@property
 	def MktValAmt(self):
@@ -52,12 +52,12 @@ class CollateralAmount1(base_types._BaseFieldType):
 
 	@MktValAmt.setter
 	def MktValAmt(self, value):
-		self._MktValAmt = value if type(value) != base_types.auto else self.make_default("MktValAmt")
+		self._MktValAmt = value if value is not None else base_types.UninitialisedField(self, 'MktValAmt', ActiveCurrencyAndAmount, False)
 
 	@MktValAmt.deleter
 	def MktValAmt(self):
 		del self._MktValAmt
-		self._MktValAmt = None
+		self._MktValAmt = base_types.UninitialisedField(self, 'MktValAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def RptdCcyAndAmt(self):
@@ -65,12 +65,12 @@ class CollateralAmount1(base_types._BaseFieldType):
 
 	@RptdCcyAndAmt.setter
 	def RptdCcyAndAmt(self, value):
-		self._RptdCcyAndAmt = value if type(value) != base_types.auto else self.make_default("RptdCcyAndAmt")
+		self._RptdCcyAndAmt = value if value is not None else base_types.UninitialisedField(self, 'RptdCcyAndAmt', ActiveCurrencyAndAmount, False)
 
 	@RptdCcyAndAmt.deleter
 	def RptdCcyAndAmt(self):
 		del self._RptdCcyAndAmt
-		self._RptdCcyAndAmt = None
+		self._RptdCcyAndAmt = base_types.UninitialisedField(self, 'RptdCcyAndAmt', ActiveCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcrdIntrstAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

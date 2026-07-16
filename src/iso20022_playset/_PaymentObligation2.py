@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountOrPercentage2Choice import AmountOrPercentage2Choice
-from ._BICIdentification1 import BICIdentification1
-from ._BPOApplicableRules1Choice import BPOApplicableRules1Choice
-from ._Charges5 import Charges5
-from ._CountryCode import CountryCode
-from ._ISODate import ISODate
-from ._Location2 import Location2
-from ._PaymentTerms4 import PaymentTerms4
-from ._SettlementTerms3 import SettlementTerms3
+from . import AmountOrPercentage2Choice
+from . import BICIdentification1
+from . import BPOApplicableRules1Choice
+from . import Charges5
+from . import CountryCode
+from . import ISODate
+from . import Location2
+from . import PaymentTerms4
+from . import SettlementTerms3
 
 class PaymentObligation2(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class PaymentObligation2(base_types._BaseFieldType):
 
 	@AplblLaw.setter
 	def AplblLaw(self, value):
-		self._AplblLaw = value if type(value) != base_types.auto else self.make_default("AplblLaw")
+		self._AplblLaw = value if value is not None else base_types.UninitialisedField(self, 'AplblLaw', CountryCode, False)
 
 	@AplblLaw.deleter
 	def AplblLaw(self):
 		del self._AplblLaw
-		self._AplblLaw = None
+		self._AplblLaw = base_types.UninitialisedField(self, 'AplblLaw', CountryCode, False)
 
 	@property
 	def AplblRules(self):
@@ -34,12 +34,12 @@ class PaymentObligation2(base_types._BaseFieldType):
 
 	@AplblRules.setter
 	def AplblRules(self, value):
-		self._AplblRules = value if type(value) != base_types.auto else self.make_default("AplblRules")
+		self._AplblRules = value if value is not None else base_types.UninitialisedField(self, 'AplblRules', BPOApplicableRules1Choice, False)
 
 	@AplblRules.deleter
 	def AplblRules(self):
 		del self._AplblRules
-		self._AplblRules = None
+		self._AplblRules = base_types.UninitialisedField(self, 'AplblRules', BPOApplicableRules1Choice, False)
 
 	@property
 	def Chrgs(self):
@@ -47,12 +47,12 @@ class PaymentObligation2(base_types._BaseFieldType):
 
 	@Chrgs.setter
 	def Chrgs(self, value):
-		self._Chrgs = value if type(value) != base_types.auto else self.make_default("Chrgs")
+		self._Chrgs = value if value is not None else base_types.UninitialisedField(self, 'Chrgs', Charges5, True)
 
 	@Chrgs.deleter
 	def Chrgs(self):
 		del self._Chrgs
-		self._Chrgs = None
+		self._Chrgs = base_types.UninitialisedField(self, 'Chrgs', Charges5, True)
 
 	@property
 	def OblgrBk(self):
@@ -60,12 +60,12 @@ class PaymentObligation2(base_types._BaseFieldType):
 
 	@OblgrBk.setter
 	def OblgrBk(self, value):
-		self._OblgrBk = value if type(value) != base_types.auto else self.make_default("OblgrBk")
+		self._OblgrBk = value if value is not None else base_types.UninitialisedField(self, 'OblgrBk', BICIdentification1, False)
 
 	@OblgrBk.deleter
 	def OblgrBk(self):
 		del self._OblgrBk
-		self._OblgrBk = None
+		self._OblgrBk = base_types.UninitialisedField(self, 'OblgrBk', BICIdentification1, False)
 
 	@property
 	def PlcOfJursdctn(self):
@@ -73,12 +73,12 @@ class PaymentObligation2(base_types._BaseFieldType):
 
 	@PlcOfJursdctn.setter
 	def PlcOfJursdctn(self, value):
-		self._PlcOfJursdctn = value if type(value) != base_types.auto else self.make_default("PlcOfJursdctn")
+		self._PlcOfJursdctn = value if value is not None else base_types.UninitialisedField(self, 'PlcOfJursdctn', Location2, False)
 
 	@PlcOfJursdctn.deleter
 	def PlcOfJursdctn(self):
 		del self._PlcOfJursdctn
-		self._PlcOfJursdctn = None
+		self._PlcOfJursdctn = base_types.UninitialisedField(self, 'PlcOfJursdctn', Location2, False)
 
 	@property
 	def PmtOblgtnAmt(self):
@@ -86,12 +86,12 @@ class PaymentObligation2(base_types._BaseFieldType):
 
 	@PmtOblgtnAmt.setter
 	def PmtOblgtnAmt(self, value):
-		self._PmtOblgtnAmt = value if type(value) != base_types.auto else self.make_default("PmtOblgtnAmt")
+		self._PmtOblgtnAmt = value if value is not None else base_types.UninitialisedField(self, 'PmtOblgtnAmt', AmountOrPercentage2Choice, False)
 
 	@PmtOblgtnAmt.deleter
 	def PmtOblgtnAmt(self):
 		del self._PmtOblgtnAmt
-		self._PmtOblgtnAmt = None
+		self._PmtOblgtnAmt = base_types.UninitialisedField(self, 'PmtOblgtnAmt', AmountOrPercentage2Choice, False)
 
 	@property
 	def PmtTerms(self):
@@ -99,12 +99,12 @@ class PaymentObligation2(base_types._BaseFieldType):
 
 	@PmtTerms.setter
 	def PmtTerms(self, value):
-		self._PmtTerms = value if type(value) != base_types.auto else self.make_default("PmtTerms")
+		self._PmtTerms = value if value is not None else base_types.UninitialisedField(self, 'PmtTerms', PaymentTerms4, True)
 
 	@PmtTerms.deleter
 	def PmtTerms(self):
 		del self._PmtTerms
-		self._PmtTerms = None
+		self._PmtTerms = base_types.UninitialisedField(self, 'PmtTerms', PaymentTerms4, True)
 
 	@property
 	def RcptBk(self):
@@ -112,12 +112,12 @@ class PaymentObligation2(base_types._BaseFieldType):
 
 	@RcptBk.setter
 	def RcptBk(self, value):
-		self._RcptBk = value if type(value) != base_types.auto else self.make_default("RcptBk")
+		self._RcptBk = value if value is not None else base_types.UninitialisedField(self, 'RcptBk', BICIdentification1, False)
 
 	@RcptBk.deleter
 	def RcptBk(self):
 		del self._RcptBk
-		self._RcptBk = None
+		self._RcptBk = base_types.UninitialisedField(self, 'RcptBk', BICIdentification1, False)
 
 	@property
 	def SttlmTerms(self):
@@ -125,12 +125,12 @@ class PaymentObligation2(base_types._BaseFieldType):
 
 	@SttlmTerms.setter
 	def SttlmTerms(self, value):
-		self._SttlmTerms = value if type(value) != base_types.auto else self.make_default("SttlmTerms")
+		self._SttlmTerms = value if value is not None else base_types.UninitialisedField(self, 'SttlmTerms', SettlementTerms3, False)
 
 	@SttlmTerms.deleter
 	def SttlmTerms(self):
 		del self._SttlmTerms
-		self._SttlmTerms = None
+		self._SttlmTerms = base_types.UninitialisedField(self, 'SttlmTerms', SettlementTerms3, False)
 
 	@property
 	def XpryDt(self):
@@ -138,12 +138,12 @@ class PaymentObligation2(base_types._BaseFieldType):
 
 	@XpryDt.setter
 	def XpryDt(self, value):
-		self._XpryDt = value if type(value) != base_types.auto else self.make_default("XpryDt")
+		self._XpryDt = value if value is not None else base_types.UninitialisedField(self, 'XpryDt', ISODate, False)
 
 	@XpryDt.deleter
 	def XpryDt(self):
 		del self._XpryDt
-		self._XpryDt = None
+		self._XpryDt = base_types.UninitialisedField(self, 'XpryDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AplblLaw', type=CountryCode, min=0, max=1, mutex_group=None, array=False),

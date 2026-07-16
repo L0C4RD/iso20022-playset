@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RestrictedFINImpliedCurrencyAndAmount import RestrictedFINImpliedCurrencyAndAmount
+from . import RestrictedFINImpliedCurrencyAndAmount
 
 class OriginalAndCurrentQuantities4(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class OriginalAndCurrentQuantities4(base_types._BaseFieldType):
 
 	@AmtsdVal.setter
 	def AmtsdVal(self, value):
-		self._AmtsdVal = value if type(value) != base_types.auto else self.make_default("AmtsdVal")
+		self._AmtsdVal = value if value is not None else base_types.UninitialisedField(self, 'AmtsdVal', RestrictedFINImpliedCurrencyAndAmount, False)
 
 	@AmtsdVal.deleter
 	def AmtsdVal(self):
 		del self._AmtsdVal
-		self._AmtsdVal = None
+		self._AmtsdVal = base_types.UninitialisedField(self, 'AmtsdVal', RestrictedFINImpliedCurrencyAndAmount, False)
 
 	@property
 	def FaceAmt(self):
@@ -26,12 +26,12 @@ class OriginalAndCurrentQuantities4(base_types._BaseFieldType):
 
 	@FaceAmt.setter
 	def FaceAmt(self, value):
-		self._FaceAmt = value if type(value) != base_types.auto else self.make_default("FaceAmt")
+		self._FaceAmt = value if value is not None else base_types.UninitialisedField(self, 'FaceAmt', RestrictedFINImpliedCurrencyAndAmount, False)
 
 	@FaceAmt.deleter
 	def FaceAmt(self):
 		del self._FaceAmt
-		self._FaceAmt = None
+		self._FaceAmt = base_types.UninitialisedField(self, 'FaceAmt', RestrictedFINImpliedCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmtsdVal', type=RestrictedFINImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

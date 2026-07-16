@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max2000Text import Max2000Text
-from ._Max35Text import Max35Text
-from ._UndertakingAmendmentMessage1 import UndertakingAmendmentMessage1
+from . import Max2000Text
+from . import Max35Text
+from . import UndertakingAmendmentMessage1
 
 class Amendment6(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Amendment6(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max2000Text, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max2000Text, True)
 
 	@property
 	def ApplcntRefNb(self):
@@ -28,12 +28,12 @@ class Amendment6(base_types._BaseFieldType):
 
 	@ApplcntRefNb.setter
 	def ApplcntRefNb(self, value):
-		self._ApplcntRefNb = value if type(value) != base_types.auto else self.make_default("ApplcntRefNb")
+		self._ApplcntRefNb = value if value is not None else base_types.UninitialisedField(self, 'ApplcntRefNb', Max35Text, False)
 
 	@ApplcntRefNb.deleter
 	def ApplcntRefNb(self):
 		del self._ApplcntRefNb
-		self._ApplcntRefNb = None
+		self._ApplcntRefNb = base_types.UninitialisedField(self, 'ApplcntRefNb', Max35Text, False)
 
 	@property
 	def UdrtkgAmdmntMsg(self):
@@ -41,12 +41,12 @@ class Amendment6(base_types._BaseFieldType):
 
 	@UdrtkgAmdmntMsg.setter
 	def UdrtkgAmdmntMsg(self, value):
-		self._UdrtkgAmdmntMsg = value if type(value) != base_types.auto else self.make_default("UdrtkgAmdmntMsg")
+		self._UdrtkgAmdmntMsg = value if value is not None else base_types.UninitialisedField(self, 'UdrtkgAmdmntMsg', UndertakingAmendmentMessage1, False)
 
 	@UdrtkgAmdmntMsg.deleter
 	def UdrtkgAmdmntMsg(self):
 		del self._UdrtkgAmdmntMsg
-		self._UdrtkgAmdmntMsg = None
+		self._UdrtkgAmdmntMsg = base_types.UninitialisedField(self, 'UdrtkgAmdmntMsg', UndertakingAmendmentMessage1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),

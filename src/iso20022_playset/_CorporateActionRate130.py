@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Percentage14Rate import Percentage14Rate
-from ._RateAndAmountFormat64Choice import RateAndAmountFormat64Choice
-from ._RateAndAmountFormat65Choice import RateAndAmountFormat65Choice
+from . import Percentage14Rate
+from . import RateAndAmountFormat64Choice
+from . import RateAndAmountFormat65Choice
 
 class CorporateActionRate130(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CorporateActionRate130(base_types._BaseFieldType):
 
 	@OvrsbcptRate.setter
 	def OvrsbcptRate(self, value):
-		self._OvrsbcptRate = value if type(value) != base_types.auto else self.make_default("OvrsbcptRate")
+		self._OvrsbcptRate = value if value is not None else base_types.UninitialisedField(self, 'OvrsbcptRate', RateAndAmountFormat64Choice, False)
 
 	@OvrsbcptRate.deleter
 	def OvrsbcptRate(self):
 		del self._OvrsbcptRate
-		self._OvrsbcptRate = None
+		self._OvrsbcptRate = base_types.UninitialisedField(self, 'OvrsbcptRate', RateAndAmountFormat64Choice, False)
 
 	@property
 	def PropsdRate(self):
@@ -28,12 +28,12 @@ class CorporateActionRate130(base_types._BaseFieldType):
 
 	@PropsdRate.setter
 	def PropsdRate(self, value):
-		self._PropsdRate = value if type(value) != base_types.auto else self.make_default("PropsdRate")
+		self._PropsdRate = value if value is not None else base_types.UninitialisedField(self, 'PropsdRate', Percentage14Rate, False)
 
 	@PropsdRate.deleter
 	def PropsdRate(self):
 		del self._PropsdRate
-		self._PropsdRate = None
+		self._PropsdRate = base_types.UninitialisedField(self, 'PropsdRate', Percentage14Rate, False)
 
 	@property
 	def ReqdScndLvlTaxRate(self):
@@ -41,12 +41,12 @@ class CorporateActionRate130(base_types._BaseFieldType):
 
 	@ReqdScndLvlTaxRate.setter
 	def ReqdScndLvlTaxRate(self, value):
-		self._ReqdScndLvlTaxRate = value if type(value) != base_types.auto else self.make_default("ReqdScndLvlTaxRate")
+		self._ReqdScndLvlTaxRate = value if value is not None else base_types.UninitialisedField(self, 'ReqdScndLvlTaxRate', RateAndAmountFormat65Choice, True)
 
 	@ReqdScndLvlTaxRate.deleter
 	def ReqdScndLvlTaxRate(self):
 		del self._ReqdScndLvlTaxRate
-		self._ReqdScndLvlTaxRate = None
+		self._ReqdScndLvlTaxRate = base_types.UninitialisedField(self, 'ReqdScndLvlTaxRate', RateAndAmountFormat65Choice, True)
 
 	@property
 	def ReqdWhldgTaxRate(self):
@@ -54,12 +54,12 @@ class CorporateActionRate130(base_types._BaseFieldType):
 
 	@ReqdWhldgTaxRate.setter
 	def ReqdWhldgTaxRate(self, value):
-		self._ReqdWhldgTaxRate = value if type(value) != base_types.auto else self.make_default("ReqdWhldgTaxRate")
+		self._ReqdWhldgTaxRate = value if value is not None else base_types.UninitialisedField(self, 'ReqdWhldgTaxRate', RateAndAmountFormat65Choice, True)
 
 	@ReqdWhldgTaxRate.deleter
 	def ReqdWhldgTaxRate(self):
 		del self._ReqdWhldgTaxRate
-		self._ReqdWhldgTaxRate = None
+		self._ReqdWhldgTaxRate = base_types.UninitialisedField(self, 'ReqdWhldgTaxRate', RateAndAmountFormat65Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OvrsbcptRate', type=RateAndAmountFormat64Choice, min=0, max=1, mutex_group=None, array=False),

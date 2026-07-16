@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Exact1HexBinaryText import Exact1HexBinaryText
-from ._Max16HexBinaryText import Max16HexBinaryText
-from ._Max2NumericText import Max2NumericText
-from ._Max32HexBinaryText import Max32HexBinaryText
-from ._Max4NumericText import Max4NumericText
-from ._Max5NumericText import Max5NumericText
-from ._Max8NumericText import Max8NumericText
+from . import Exact1HexBinaryText
+from . import Max16HexBinaryText
+from . import Max2NumericText
+from . import Max32HexBinaryText
+from . import Max4NumericText
+from . import Max5NumericText
+from . import Max8NumericText
 
 class PINData1(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class PINData1(base_types._BaseFieldType):
 
 	@Algo.setter
 	def Algo(self, value):
-		self._Algo = value if type(value) != base_types.auto else self.make_default("Algo")
+		self._Algo = value if value is not None else base_types.UninitialisedField(self, 'Algo', Max2NumericText, False)
 
 	@Algo.deleter
 	def Algo(self):
 		del self._Algo
-		self._Algo = None
+		self._Algo = base_types.UninitialisedField(self, 'Algo', Max2NumericText, False)
 
 	@property
 	def Ctrl(self):
@@ -32,12 +32,12 @@ class PINData1(base_types._BaseFieldType):
 
 	@Ctrl.setter
 	def Ctrl(self, value):
-		self._Ctrl = value if type(value) != base_types.auto else self.make_default("Ctrl")
+		self._Ctrl = value if value is not None else base_types.UninitialisedField(self, 'Ctrl', Exact1HexBinaryText, False)
 
 	@Ctrl.deleter
 	def Ctrl(self):
 		del self._Ctrl
-		self._Ctrl = None
+		self._Ctrl = base_types.UninitialisedField(self, 'Ctrl', Exact1HexBinaryText, False)
 
 	@property
 	def DrvdInf(self):
@@ -45,12 +45,12 @@ class PINData1(base_types._BaseFieldType):
 
 	@DrvdInf.setter
 	def DrvdInf(self, value):
-		self._DrvdInf = value if type(value) != base_types.auto else self.make_default("DrvdInf")
+		self._DrvdInf = value if value is not None else base_types.UninitialisedField(self, 'DrvdInf', Max32HexBinaryText, False)
 
 	@DrvdInf.deleter
 	def DrvdInf(self):
 		del self._DrvdInf
-		self._DrvdInf = None
+		self._DrvdInf = base_types.UninitialisedField(self, 'DrvdInf', Max32HexBinaryText, False)
 
 	@property
 	def KeyIndx(self):
@@ -58,12 +58,12 @@ class PINData1(base_types._BaseFieldType):
 
 	@KeyIndx.setter
 	def KeyIndx(self, value):
-		self._KeyIndx = value if type(value) != base_types.auto else self.make_default("KeyIndx")
+		self._KeyIndx = value if value is not None else base_types.UninitialisedField(self, 'KeyIndx', Max5NumericText, False)
 
 	@KeyIndx.deleter
 	def KeyIndx(self):
 		del self._KeyIndx
-		self._KeyIndx = None
+		self._KeyIndx = base_types.UninitialisedField(self, 'KeyIndx', Max5NumericText, False)
 
 	@property
 	def KeyLngth(self):
@@ -71,12 +71,12 @@ class PINData1(base_types._BaseFieldType):
 
 	@KeyLngth.setter
 	def KeyLngth(self, value):
-		self._KeyLngth = value if type(value) != base_types.auto else self.make_default("KeyLngth")
+		self._KeyLngth = value if value is not None else base_types.UninitialisedField(self, 'KeyLngth', Max4NumericText, False)
 
 	@KeyLngth.deleter
 	def KeyLngth(self):
 		del self._KeyLngth
-		self._KeyLngth = None
+		self._KeyLngth = base_types.UninitialisedField(self, 'KeyLngth', Max4NumericText, False)
 
 	@property
 	def KeyPrtcn(self):
@@ -84,12 +84,12 @@ class PINData1(base_types._BaseFieldType):
 
 	@KeyPrtcn.setter
 	def KeyPrtcn(self, value):
-		self._KeyPrtcn = value if type(value) != base_types.auto else self.make_default("KeyPrtcn")
+		self._KeyPrtcn = value if value is not None else base_types.UninitialisedField(self, 'KeyPrtcn', Max2NumericText, False)
 
 	@KeyPrtcn.deleter
 	def KeyPrtcn(self):
 		del self._KeyPrtcn
-		self._KeyPrtcn = None
+		self._KeyPrtcn = base_types.UninitialisedField(self, 'KeyPrtcn', Max2NumericText, False)
 
 	@property
 	def KeySetIdr(self):
@@ -97,12 +97,12 @@ class PINData1(base_types._BaseFieldType):
 
 	@KeySetIdr.setter
 	def KeySetIdr(self, value):
-		self._KeySetIdr = value if type(value) != base_types.auto else self.make_default("KeySetIdr")
+		self._KeySetIdr = value if value is not None else base_types.UninitialisedField(self, 'KeySetIdr', Max8NumericText, False)
 
 	@KeySetIdr.deleter
 	def KeySetIdr(self):
 		del self._KeySetIdr
-		self._KeySetIdr = None
+		self._KeySetIdr = base_types.UninitialisedField(self, 'KeySetIdr', Max8NumericText, False)
 
 	@property
 	def NcrptdPINBlck(self):
@@ -110,12 +110,12 @@ class PINData1(base_types._BaseFieldType):
 
 	@NcrptdPINBlck.setter
 	def NcrptdPINBlck(self, value):
-		self._NcrptdPINBlck = value if type(value) != base_types.auto else self.make_default("NcrptdPINBlck")
+		self._NcrptdPINBlck = value if value is not None else base_types.UninitialisedField(self, 'NcrptdPINBlck', Max16HexBinaryText, False)
 
 	@NcrptdPINBlck.deleter
 	def NcrptdPINBlck(self):
 		del self._NcrptdPINBlck
-		self._NcrptdPINBlck = None
+		self._NcrptdPINBlck = base_types.UninitialisedField(self, 'NcrptdPINBlck', Max16HexBinaryText, False)
 
 	@property
 	def PINBlckFrmt(self):
@@ -123,12 +123,12 @@ class PINData1(base_types._BaseFieldType):
 
 	@PINBlckFrmt.setter
 	def PINBlckFrmt(self, value):
-		self._PINBlckFrmt = value if type(value) != base_types.auto else self.make_default("PINBlckFrmt")
+		self._PINBlckFrmt = value if value is not None else base_types.UninitialisedField(self, 'PINBlckFrmt', Max2NumericText, False)
 
 	@PINBlckFrmt.deleter
 	def PINBlckFrmt(self):
 		del self._PINBlckFrmt
-		self._PINBlckFrmt = None
+		self._PINBlckFrmt = base_types.UninitialisedField(self, 'PINBlckFrmt', Max2NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Algo', type=Max2NumericText, min=0, max=1, mutex_group=None, array=False),

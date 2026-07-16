@@ -2,19 +2,19 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CashAccount40 import CashAccount40
-from ._MandateAdjustment1 import MandateAdjustment1
-from ._MandateAuthentication1 import MandateAuthentication1
-from ._MandateOccurrences5 import MandateOccurrences5
-from ._MandateSetupReason1Choice import MandateSetupReason1Choice
-from ._MandateTypeInformation2 import MandateTypeInformation2
-from ._Max35Text import Max35Text
-from ._PartyIdentification272 import PartyIdentification272
-from ._ReferredMandateDocument2 import ReferredMandateDocument2
-from ._SupplementaryData1 import SupplementaryData1
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ActiveCurrencyAndAmount
+from . import BranchAndFinancialInstitutionIdentification8
+from . import CashAccount40
+from . import MandateAdjustment1
+from . import MandateAuthentication1
+from . import MandateOccurrences5
+from . import MandateSetupReason1Choice
+from . import MandateTypeInformation2
+from . import Max35Text
+from . import PartyIdentification272
+from . import ReferredMandateDocument2
+from . import SupplementaryData1
+from . import TrueFalseIndicator
 
 class Mandate23(base_types._BaseFieldType):
 
@@ -25,12 +25,12 @@ class Mandate23(base_types._BaseFieldType):
 
 	@Adjstmnt.setter
 	def Adjstmnt(self, value):
-		self._Adjstmnt = value if type(value) != base_types.auto else self.make_default("Adjstmnt")
+		self._Adjstmnt = value if value is not None else base_types.UninitialisedField(self, 'Adjstmnt', MandateAdjustment1, False)
 
 	@Adjstmnt.deleter
 	def Adjstmnt(self):
 		del self._Adjstmnt
-		self._Adjstmnt = None
+		self._Adjstmnt = base_types.UninitialisedField(self, 'Adjstmnt', MandateAdjustment1, False)
 
 	@property
 	def Authntcn(self):
@@ -38,12 +38,12 @@ class Mandate23(base_types._BaseFieldType):
 
 	@Authntcn.setter
 	def Authntcn(self, value):
-		self._Authntcn = value if type(value) != base_types.auto else self.make_default("Authntcn")
+		self._Authntcn = value if value is not None else base_types.UninitialisedField(self, 'Authntcn', MandateAuthentication1, False)
 
 	@Authntcn.deleter
 	def Authntcn(self):
 		del self._Authntcn
-		self._Authntcn = None
+		self._Authntcn = base_types.UninitialisedField(self, 'Authntcn', MandateAuthentication1, False)
 
 	@property
 	def Cdtr(self):
@@ -51,12 +51,12 @@ class Mandate23(base_types._BaseFieldType):
 
 	@Cdtr.setter
 	def Cdtr(self, value):
-		self._Cdtr = value if type(value) != base_types.auto else self.make_default("Cdtr")
+		self._Cdtr = value if value is not None else base_types.UninitialisedField(self, 'Cdtr', PartyIdentification272, False)
 
 	@Cdtr.deleter
 	def Cdtr(self):
 		del self._Cdtr
-		self._Cdtr = None
+		self._Cdtr = base_types.UninitialisedField(self, 'Cdtr', PartyIdentification272, False)
 
 	@property
 	def CdtrAcct(self):
@@ -64,12 +64,12 @@ class Mandate23(base_types._BaseFieldType):
 
 	@CdtrAcct.setter
 	def CdtrAcct(self, value):
-		self._CdtrAcct = value if type(value) != base_types.auto else self.make_default("CdtrAcct")
+		self._CdtrAcct = value if value is not None else base_types.UninitialisedField(self, 'CdtrAcct', CashAccount40, False)
 
 	@CdtrAcct.deleter
 	def CdtrAcct(self):
 		del self._CdtrAcct
-		self._CdtrAcct = None
+		self._CdtrAcct = base_types.UninitialisedField(self, 'CdtrAcct', CashAccount40, False)
 
 	@property
 	def CdtrAgt(self):
@@ -77,12 +77,12 @@ class Mandate23(base_types._BaseFieldType):
 
 	@CdtrAgt.setter
 	def CdtrAgt(self, value):
-		self._CdtrAgt = value if type(value) != base_types.auto else self.make_default("CdtrAgt")
+		self._CdtrAgt = value if value is not None else base_types.UninitialisedField(self, 'CdtrAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@CdtrAgt.deleter
 	def CdtrAgt(self):
 		del self._CdtrAgt
-		self._CdtrAgt = None
+		self._CdtrAgt = base_types.UninitialisedField(self, 'CdtrAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def CdtrSchmeId(self):
@@ -90,12 +90,12 @@ class Mandate23(base_types._BaseFieldType):
 
 	@CdtrSchmeId.setter
 	def CdtrSchmeId(self, value):
-		self._CdtrSchmeId = value if type(value) != base_types.auto else self.make_default("CdtrSchmeId")
+		self._CdtrSchmeId = value if value is not None else base_types.UninitialisedField(self, 'CdtrSchmeId', PartyIdentification272, False)
 
 	@CdtrSchmeId.deleter
 	def CdtrSchmeId(self):
 		del self._CdtrSchmeId
-		self._CdtrSchmeId = None
+		self._CdtrSchmeId = base_types.UninitialisedField(self, 'CdtrSchmeId', PartyIdentification272, False)
 
 	@property
 	def ColltnAmt(self):
@@ -103,12 +103,12 @@ class Mandate23(base_types._BaseFieldType):
 
 	@ColltnAmt.setter
 	def ColltnAmt(self, value):
-		self._ColltnAmt = value if type(value) != base_types.auto else self.make_default("ColltnAmt")
+		self._ColltnAmt = value if value is not None else base_types.UninitialisedField(self, 'ColltnAmt', ActiveCurrencyAndAmount, False)
 
 	@ColltnAmt.deleter
 	def ColltnAmt(self):
 		del self._ColltnAmt
-		self._ColltnAmt = None
+		self._ColltnAmt = base_types.UninitialisedField(self, 'ColltnAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def Dbtr(self):
@@ -116,12 +116,12 @@ class Mandate23(base_types._BaseFieldType):
 
 	@Dbtr.setter
 	def Dbtr(self, value):
-		self._Dbtr = value if type(value) != base_types.auto else self.make_default("Dbtr")
+		self._Dbtr = value if value is not None else base_types.UninitialisedField(self, 'Dbtr', PartyIdentification272, False)
 
 	@Dbtr.deleter
 	def Dbtr(self):
 		del self._Dbtr
-		self._Dbtr = None
+		self._Dbtr = base_types.UninitialisedField(self, 'Dbtr', PartyIdentification272, False)
 
 	@property
 	def DbtrAcct(self):
@@ -129,12 +129,12 @@ class Mandate23(base_types._BaseFieldType):
 
 	@DbtrAcct.setter
 	def DbtrAcct(self, value):
-		self._DbtrAcct = value if type(value) != base_types.auto else self.make_default("DbtrAcct")
+		self._DbtrAcct = value if value is not None else base_types.UninitialisedField(self, 'DbtrAcct', CashAccount40, False)
 
 	@DbtrAcct.deleter
 	def DbtrAcct(self):
 		del self._DbtrAcct
-		self._DbtrAcct = None
+		self._DbtrAcct = base_types.UninitialisedField(self, 'DbtrAcct', CashAccount40, False)
 
 	@property
 	def DbtrAgt(self):
@@ -142,12 +142,12 @@ class Mandate23(base_types._BaseFieldType):
 
 	@DbtrAgt.setter
 	def DbtrAgt(self, value):
-		self._DbtrAgt = value if type(value) != base_types.auto else self.make_default("DbtrAgt")
+		self._DbtrAgt = value if value is not None else base_types.UninitialisedField(self, 'DbtrAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@DbtrAgt.deleter
 	def DbtrAgt(self):
 		del self._DbtrAgt
-		self._DbtrAgt = None
+		self._DbtrAgt = base_types.UninitialisedField(self, 'DbtrAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def FrstColltnAmt(self):
@@ -155,12 +155,12 @@ class Mandate23(base_types._BaseFieldType):
 
 	@FrstColltnAmt.setter
 	def FrstColltnAmt(self, value):
-		self._FrstColltnAmt = value if type(value) != base_types.auto else self.make_default("FrstColltnAmt")
+		self._FrstColltnAmt = value if value is not None else base_types.UninitialisedField(self, 'FrstColltnAmt', ActiveCurrencyAndAmount, False)
 
 	@FrstColltnAmt.deleter
 	def FrstColltnAmt(self):
 		del self._FrstColltnAmt
-		self._FrstColltnAmt = None
+		self._FrstColltnAmt = base_types.UninitialisedField(self, 'FrstColltnAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def MaxAmt(self):
@@ -168,12 +168,12 @@ class Mandate23(base_types._BaseFieldType):
 
 	@MaxAmt.setter
 	def MaxAmt(self, value):
-		self._MaxAmt = value if type(value) != base_types.auto else self.make_default("MaxAmt")
+		self._MaxAmt = value if value is not None else base_types.UninitialisedField(self, 'MaxAmt', ActiveCurrencyAndAmount, False)
 
 	@MaxAmt.deleter
 	def MaxAmt(self):
 		del self._MaxAmt
-		self._MaxAmt = None
+		self._MaxAmt = base_types.UninitialisedField(self, 'MaxAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def MndtId(self):
@@ -181,12 +181,12 @@ class Mandate23(base_types._BaseFieldType):
 
 	@MndtId.setter
 	def MndtId(self, value):
-		self._MndtId = value if type(value) != base_types.auto else self.make_default("MndtId")
+		self._MndtId = value if value is not None else base_types.UninitialisedField(self, 'MndtId', Max35Text, True)
 
 	@MndtId.deleter
 	def MndtId(self):
 		del self._MndtId
-		self._MndtId = None
+		self._MndtId = base_types.UninitialisedField(self, 'MndtId', Max35Text, True)
 
 	@property
 	def MndtRef(self):
@@ -194,12 +194,12 @@ class Mandate23(base_types._BaseFieldType):
 
 	@MndtRef.setter
 	def MndtRef(self, value):
-		self._MndtRef = value if type(value) != base_types.auto else self.make_default("MndtRef")
+		self._MndtRef = value if value is not None else base_types.UninitialisedField(self, 'MndtRef', Max35Text, False)
 
 	@MndtRef.deleter
 	def MndtRef(self):
 		del self._MndtRef
-		self._MndtRef = None
+		self._MndtRef = base_types.UninitialisedField(self, 'MndtRef', Max35Text, False)
 
 	@property
 	def MndtReqId(self):
@@ -207,12 +207,12 @@ class Mandate23(base_types._BaseFieldType):
 
 	@MndtReqId.setter
 	def MndtReqId(self, value):
-		self._MndtReqId = value if type(value) != base_types.auto else self.make_default("MndtReqId")
+		self._MndtReqId = value if value is not None else base_types.UninitialisedField(self, 'MndtReqId', Max35Text, False)
 
 	@MndtReqId.deleter
 	def MndtReqId(self):
 		del self._MndtReqId
-		self._MndtReqId = None
+		self._MndtReqId = base_types.UninitialisedField(self, 'MndtReqId', Max35Text, False)
 
 	@property
 	def Ocrncs(self):
@@ -220,12 +220,12 @@ class Mandate23(base_types._BaseFieldType):
 
 	@Ocrncs.setter
 	def Ocrncs(self, value):
-		self._Ocrncs = value if type(value) != base_types.auto else self.make_default("Ocrncs")
+		self._Ocrncs = value if value is not None else base_types.UninitialisedField(self, 'Ocrncs', MandateOccurrences5, False)
 
 	@Ocrncs.deleter
 	def Ocrncs(self):
 		del self._Ocrncs
-		self._Ocrncs = None
+		self._Ocrncs = base_types.UninitialisedField(self, 'Ocrncs', MandateOccurrences5, False)
 
 	@property
 	def RfrdDoc(self):
@@ -233,12 +233,12 @@ class Mandate23(base_types._BaseFieldType):
 
 	@RfrdDoc.setter
 	def RfrdDoc(self, value):
-		self._RfrdDoc = value if type(value) != base_types.auto else self.make_default("RfrdDoc")
+		self._RfrdDoc = value if value is not None else base_types.UninitialisedField(self, 'RfrdDoc', ReferredMandateDocument2, True)
 
 	@RfrdDoc.deleter
 	def RfrdDoc(self):
 		del self._RfrdDoc
-		self._RfrdDoc = None
+		self._RfrdDoc = base_types.UninitialisedField(self, 'RfrdDoc', ReferredMandateDocument2, True)
 
 	@property
 	def Rsn(self):
@@ -246,12 +246,12 @@ class Mandate23(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', MandateSetupReason1Choice, False)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', MandateSetupReason1Choice, False)
 
 	@property
 	def SplmtryData(self):
@@ -259,12 +259,12 @@ class Mandate23(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def Tp(self):
@@ -272,12 +272,12 @@ class Mandate23(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', MandateTypeInformation2, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', MandateTypeInformation2, False)
 
 	@property
 	def TrckgInd(self):
@@ -285,12 +285,12 @@ class Mandate23(base_types._BaseFieldType):
 
 	@TrckgInd.setter
 	def TrckgInd(self, value):
-		self._TrckgInd = value if type(value) != base_types.auto else self.make_default("TrckgInd")
+		self._TrckgInd = value if value is not None else base_types.UninitialisedField(self, 'TrckgInd', TrueFalseIndicator, False)
 
 	@TrckgInd.deleter
 	def TrckgInd(self):
 		del self._TrckgInd
-		self._TrckgInd = None
+		self._TrckgInd = base_types.UninitialisedField(self, 'TrckgInd', TrueFalseIndicator, False)
 
 	@property
 	def UltmtCdtr(self):
@@ -298,12 +298,12 @@ class Mandate23(base_types._BaseFieldType):
 
 	@UltmtCdtr.setter
 	def UltmtCdtr(self, value):
-		self._UltmtCdtr = value if type(value) != base_types.auto else self.make_default("UltmtCdtr")
+		self._UltmtCdtr = value if value is not None else base_types.UninitialisedField(self, 'UltmtCdtr', PartyIdentification272, False)
 
 	@UltmtCdtr.deleter
 	def UltmtCdtr(self):
 		del self._UltmtCdtr
-		self._UltmtCdtr = None
+		self._UltmtCdtr = base_types.UninitialisedField(self, 'UltmtCdtr', PartyIdentification272, False)
 
 	@property
 	def UltmtDbtr(self):
@@ -311,12 +311,12 @@ class Mandate23(base_types._BaseFieldType):
 
 	@UltmtDbtr.setter
 	def UltmtDbtr(self, value):
-		self._UltmtDbtr = value if type(value) != base_types.auto else self.make_default("UltmtDbtr")
+		self._UltmtDbtr = value if value is not None else base_types.UninitialisedField(self, 'UltmtDbtr', PartyIdentification272, False)
 
 	@UltmtDbtr.deleter
 	def UltmtDbtr(self):
 		del self._UltmtDbtr
-		self._UltmtDbtr = None
+		self._UltmtDbtr = base_types.UninitialisedField(self, 'UltmtDbtr', PartyIdentification272, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Adjstmnt', type=MandateAdjustment1, min=0, max=1, mutex_group=None, array=False),

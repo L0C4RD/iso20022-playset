@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AlgorithmIdentification32 import AlgorithmIdentification32
-from ._KEKIdentifier7 import KEKIdentifier7
-from ._Max500Binary import Max500Binary
-from ._Number import Number
+from . import AlgorithmIdentification32
+from . import KEKIdentifier7
+from . import Max500Binary
+from . import Number
 
 class KEK9(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class KEK9(base_types._BaseFieldType):
 
 	@KEKId.setter
 	def KEKId(self, value):
-		self._KEKId = value if type(value) != base_types.auto else self.make_default("KEKId")
+		self._KEKId = value if value is not None else base_types.UninitialisedField(self, 'KEKId', KEKIdentifier7, False)
 
 	@KEKId.deleter
 	def KEKId(self):
 		del self._KEKId
-		self._KEKId = None
+		self._KEKId = base_types.UninitialisedField(self, 'KEKId', KEKIdentifier7, False)
 
 	@property
 	def KeyNcrptnAlgo(self):
@@ -29,12 +29,12 @@ class KEK9(base_types._BaseFieldType):
 
 	@KeyNcrptnAlgo.setter
 	def KeyNcrptnAlgo(self, value):
-		self._KeyNcrptnAlgo = value if type(value) != base_types.auto else self.make_default("KeyNcrptnAlgo")
+		self._KeyNcrptnAlgo = value if value is not None else base_types.UninitialisedField(self, 'KeyNcrptnAlgo', AlgorithmIdentification32, False)
 
 	@KeyNcrptnAlgo.deleter
 	def KeyNcrptnAlgo(self):
 		del self._KeyNcrptnAlgo
-		self._KeyNcrptnAlgo = None
+		self._KeyNcrptnAlgo = base_types.UninitialisedField(self, 'KeyNcrptnAlgo', AlgorithmIdentification32, False)
 
 	@property
 	def NcrptdKey(self):
@@ -42,12 +42,12 @@ class KEK9(base_types._BaseFieldType):
 
 	@NcrptdKey.setter
 	def NcrptdKey(self, value):
-		self._NcrptdKey = value if type(value) != base_types.auto else self.make_default("NcrptdKey")
+		self._NcrptdKey = value if value is not None else base_types.UninitialisedField(self, 'NcrptdKey', Max500Binary, False)
 
 	@NcrptdKey.deleter
 	def NcrptdKey(self):
 		del self._NcrptdKey
-		self._NcrptdKey = None
+		self._NcrptdKey = base_types.UninitialisedField(self, 'NcrptdKey', Max500Binary, False)
 
 	@property
 	def Vrsn(self):
@@ -55,12 +55,12 @@ class KEK9(base_types._BaseFieldType):
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+		self._Vrsn = value if value is not None else base_types.UninitialisedField(self, 'Vrsn', Number, False)
 
 	@Vrsn.deleter
 	def Vrsn(self):
 		del self._Vrsn
-		self._Vrsn = None
+		self._Vrsn = base_types.UninitialisedField(self, 'Vrsn', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='KEKId', type=KEKIdentifier7, min=1, max=1, mutex_group=None, array=False),

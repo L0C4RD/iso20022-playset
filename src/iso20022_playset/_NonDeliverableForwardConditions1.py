@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NDFOpeningFixing1Choice import NDFOpeningFixing1Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import NDFOpeningFixing1Choice
+from . import YesNoIndicator
 
 class NonDeliverableForwardConditions1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class NonDeliverableForwardConditions1(base_types._BaseFieldType):
 
 	@OpngFxgConds.setter
 	def OpngFxgConds(self, value):
-		self._OpngFxgConds = value if type(value) != base_types.auto else self.make_default("OpngFxgConds")
+		self._OpngFxgConds = value if value is not None else base_types.UninitialisedField(self, 'OpngFxgConds', NDFOpeningFixing1Choice, False)
 
 	@OpngFxgConds.deleter
 	def OpngFxgConds(self):
 		del self._OpngFxgConds
-		self._OpngFxgConds = None
+		self._OpngFxgConds = base_types.UninitialisedField(self, 'OpngFxgConds', NDFOpeningFixing1Choice, False)
 
 	@property
 	def OpngInd(self):
@@ -27,12 +27,12 @@ class NonDeliverableForwardConditions1(base_types._BaseFieldType):
 
 	@OpngInd.setter
 	def OpngInd(self, value):
-		self._OpngInd = value if type(value) != base_types.auto else self.make_default("OpngInd")
+		self._OpngInd = value if value is not None else base_types.UninitialisedField(self, 'OpngInd', YesNoIndicator, False)
 
 	@OpngInd.deleter
 	def OpngInd(self):
 		del self._OpngInd
-		self._OpngInd = None
+		self._OpngInd = base_types.UninitialisedField(self, 'OpngInd', YesNoIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OpngFxgConds', type=NDFOpeningFixing1Choice, min=1, max=1, mutex_group=None, array=False),

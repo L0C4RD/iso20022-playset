@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._PartyIdentification132 import PartyIdentification132
+from . import Max35Text
+from . import PartyIdentification132
 
 class InvestmentAccount69(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class InvestmentAccount69(base_types._BaseFieldType):
 
 	@AcctNm.setter
 	def AcctNm(self, value):
-		self._AcctNm = value if type(value) != base_types.auto else self.make_default("AcctNm")
+		self._AcctNm = value if value is not None else base_types.UninitialisedField(self, 'AcctNm', Max35Text, False)
 
 	@AcctNm.deleter
 	def AcctNm(self):
 		del self._AcctNm
-		self._AcctNm = None
+		self._AcctNm = base_types.UninitialisedField(self, 'AcctNm', Max35Text, False)
 
 	@property
 	def Dsgnt(self):
@@ -27,12 +27,12 @@ class InvestmentAccount69(base_types._BaseFieldType):
 
 	@Dsgnt.setter
 	def Dsgnt(self, value):
-		self._Dsgnt = value if type(value) != base_types.auto else self.make_default("Dsgnt")
+		self._Dsgnt = value if value is not None else base_types.UninitialisedField(self, 'Dsgnt', Max35Text, False)
 
 	@Dsgnt.deleter
 	def Dsgnt(self):
 		del self._Dsgnt
-		self._Dsgnt = None
+		self._Dsgnt = base_types.UninitialisedField(self, 'Dsgnt', Max35Text, False)
 
 	@property
 	def Id(self):
@@ -40,12 +40,12 @@ class InvestmentAccount69(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def Svcr(self):
@@ -53,12 +53,12 @@ class InvestmentAccount69(base_types._BaseFieldType):
 
 	@Svcr.setter
 	def Svcr(self, value):
-		self._Svcr = value if type(value) != base_types.auto else self.make_default("Svcr")
+		self._Svcr = value if value is not None else base_types.UninitialisedField(self, 'Svcr', PartyIdentification132, False)
 
 	@Svcr.deleter
 	def Svcr(self):
 		del self._Svcr
-		self._Svcr = None
+		self._Svcr = base_types.UninitialisedField(self, 'Svcr', PartyIdentification132, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

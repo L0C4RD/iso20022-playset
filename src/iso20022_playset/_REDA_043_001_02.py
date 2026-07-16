@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PartyAuditTrailReportV02 import PartyAuditTrailReportV02
+from . import PartyAuditTrailReportV02
 
 class REDA_043_001_02():
 
@@ -18,12 +18,12 @@ class REDA_043_001_02():
 
 		@PtyAudtTrlRpt.setter
 		def PtyAudtTrlRpt(self, value):
-			self._PtyAudtTrlRpt = value if type(value) != base_types.auto else self.make_default("PtyAudtTrlRpt")
+			self._PtyAudtTrlRpt = value if value is not None else base_types.UninitialisedField(self, 'PtyAudtTrlRpt', PartyAuditTrailReportV02, False)
 
 		@PtyAudtTrlRpt.deleter
 		def PtyAudtTrlRpt(self):
 			del self._PtyAudtTrlRpt
-			self._PtyAudtTrlRpt = None
+			self._PtyAudtTrlRpt = base_types.UninitialisedField(self, 'PtyAudtTrlRpt', PartyAuditTrailReportV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='PtyAudtTrlRpt', type=PartyAuditTrailReportV02, min=1, max=1, mutex_group=None, array=False),

@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Disclosure3Choice import Disclosure3Choice
-from ._DisclosureRequestIdentification1 import DisclosureRequestIdentification1
-from ._Max35Text import Max35Text
-from ._Pagination1 import Pagination1
-from ._PartyIdentification219 import PartyIdentification219
-from ._SupplementaryData1 import SupplementaryData1
+from . import Disclosure3Choice
+from . import DisclosureRequestIdentification1
+from . import Max35Text
+from . import Pagination1
+from . import PartyIdentification219
+from . import SupplementaryData1
 
 class ShareholdersIdentificationDisclosureResponseV03(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class ShareholdersIdentificationDisclosureResponseV03(base_types._BaseFieldType)
 
 	@DsclsrInf.setter
 	def DsclsrInf(self, value):
-		self._DsclsrInf = value if type(value) != base_types.auto else self.make_default("DsclsrInf")
+		self._DsclsrInf = value if value is not None else base_types.UninitialisedField(self, 'DsclsrInf', Disclosure3Choice, False)
 
 	@DsclsrInf.deleter
 	def DsclsrInf(self):
 		del self._DsclsrInf
-		self._DsclsrInf = None
+		self._DsclsrInf = base_types.UninitialisedField(self, 'DsclsrInf', Disclosure3Choice, False)
 
 	@property
 	def DsclsrRspnId(self):
@@ -31,12 +31,12 @@ class ShareholdersIdentificationDisclosureResponseV03(base_types._BaseFieldType)
 
 	@DsclsrRspnId.setter
 	def DsclsrRspnId(self, value):
-		self._DsclsrRspnId = value if type(value) != base_types.auto else self.make_default("DsclsrRspnId")
+		self._DsclsrRspnId = value if value is not None else base_types.UninitialisedField(self, 'DsclsrRspnId', Max35Text, False)
 
 	@DsclsrRspnId.deleter
 	def DsclsrRspnId(self):
 		del self._DsclsrRspnId
-		self._DsclsrRspnId = None
+		self._DsclsrRspnId = base_types.UninitialisedField(self, 'DsclsrRspnId', Max35Text, False)
 
 	@property
 	def IssrDsclsrReqRef(self):
@@ -44,12 +44,12 @@ class ShareholdersIdentificationDisclosureResponseV03(base_types._BaseFieldType)
 
 	@IssrDsclsrReqRef.setter
 	def IssrDsclsrReqRef(self, value):
-		self._IssrDsclsrReqRef = value if type(value) != base_types.auto else self.make_default("IssrDsclsrReqRef")
+		self._IssrDsclsrReqRef = value if value is not None else base_types.UninitialisedField(self, 'IssrDsclsrReqRef', DisclosureRequestIdentification1, False)
 
 	@IssrDsclsrReqRef.deleter
 	def IssrDsclsrReqRef(self):
 		del self._IssrDsclsrReqRef
-		self._IssrDsclsrReqRef = None
+		self._IssrDsclsrReqRef = base_types.UninitialisedField(self, 'IssrDsclsrReqRef', DisclosureRequestIdentification1, False)
 
 	@property
 	def Pgntn(self):
@@ -57,12 +57,12 @@ class ShareholdersIdentificationDisclosureResponseV03(base_types._BaseFieldType)
 
 	@Pgntn.setter
 	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+		self._Pgntn = value if value is not None else base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@Pgntn.deleter
 	def Pgntn(self):
 		del self._Pgntn
-		self._Pgntn = None
+		self._Pgntn = base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@property
 	def RspndgIntrmy(self):
@@ -70,12 +70,12 @@ class ShareholdersIdentificationDisclosureResponseV03(base_types._BaseFieldType)
 
 	@RspndgIntrmy.setter
 	def RspndgIntrmy(self, value):
-		self._RspndgIntrmy = value if type(value) != base_types.auto else self.make_default("RspndgIntrmy")
+		self._RspndgIntrmy = value if value is not None else base_types.UninitialisedField(self, 'RspndgIntrmy', PartyIdentification219, False)
 
 	@RspndgIntrmy.deleter
 	def RspndgIntrmy(self):
 		del self._RspndgIntrmy
-		self._RspndgIntrmy = None
+		self._RspndgIntrmy = base_types.UninitialisedField(self, 'RspndgIntrmy', PartyIdentification219, False)
 
 	@property
 	def SplmtryData(self):
@@ -83,12 +83,12 @@ class ShareholdersIdentificationDisclosureResponseV03(base_types._BaseFieldType)
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DsclsrInf', type=Disclosure3Choice, min=1, max=1, mutex_group=None, array=False),

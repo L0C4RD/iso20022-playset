@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Max4AlphaNumericText import Max4AlphaNumericText
-from ._PartyIdentification43 import PartyIdentification43
+from . import Max35Text
+from . import Max4AlphaNumericText
+from . import PartyIdentification43
 
 class Amendment8(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Amendment8(base_types._BaseFieldType):
 
 	@BnfcryRefNb.setter
 	def BnfcryRefNb(self, value):
-		self._BnfcryRefNb = value if type(value) != base_types.auto else self.make_default("BnfcryRefNb")
+		self._BnfcryRefNb = value if value is not None else base_types.UninitialisedField(self, 'BnfcryRefNb', Max35Text, False)
 
 	@BnfcryRefNb.deleter
 	def BnfcryRefNb(self):
 		del self._BnfcryRefNb
-		self._BnfcryRefNb = None
+		self._BnfcryRefNb = base_types.UninitialisedField(self, 'BnfcryRefNb', Max35Text, False)
 
 	@property
 	def Id(self):
@@ -28,12 +28,12 @@ class Amendment8(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def Issr(self):
@@ -41,12 +41,12 @@ class Amendment8(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+		self._Issr = value if value is not None else base_types.UninitialisedField(self, 'Issr', PartyIdentification43, False)
 
 	@Issr.deleter
 	def Issr(self):
 		del self._Issr
-		self._Issr = None
+		self._Issr = base_types.UninitialisedField(self, 'Issr', PartyIdentification43, False)
 
 	@property
 	def SeqNb(self):
@@ -54,12 +54,12 @@ class Amendment8(base_types._BaseFieldType):
 
 	@SeqNb.setter
 	def SeqNb(self, value):
-		self._SeqNb = value if type(value) != base_types.auto else self.make_default("SeqNb")
+		self._SeqNb = value if value is not None else base_types.UninitialisedField(self, 'SeqNb', Max4AlphaNumericText, False)
 
 	@SeqNb.deleter
 	def SeqNb(self):
 		del self._SeqNb
-		self._SeqNb = None
+		self._SeqNb = base_types.UninitialisedField(self, 'SeqNb', Max4AlphaNumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BnfcryRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

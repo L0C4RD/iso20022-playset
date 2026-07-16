@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Case6 import Case6
-from ._DecimalNumber import DecimalNumber
-from ._GroupCancellationIndicator import GroupCancellationIndicator
-from ._Max15NumericText import Max15NumericText
-from ._Max35Text import Max35Text
-from ._OriginalGroupInformation29 import OriginalGroupInformation29
-from ._PaymentCancellationReason6 import PaymentCancellationReason6
-from ._PaymentTransaction154 import PaymentTransaction154
+from . import Case6
+from . import DecimalNumber
+from . import GroupCancellationIndicator
+from . import Max15NumericText
+from . import Max35Text
+from . import OriginalGroupInformation29
+from . import PaymentCancellationReason6
+from . import PaymentTransaction154
 
 class OriginalPaymentInstruction49(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class OriginalPaymentInstruction49(base_types._BaseFieldType):
 
 	@Case.setter
 	def Case(self, value):
-		self._Case = value if type(value) != base_types.auto else self.make_default("Case")
+		self._Case = value if value is not None else base_types.UninitialisedField(self, 'Case', Case6, False)
 
 	@Case.deleter
 	def Case(self):
 		del self._Case
-		self._Case = None
+		self._Case = base_types.UninitialisedField(self, 'Case', Case6, False)
 
 	@property
 	def CtrlSum(self):
@@ -33,12 +33,12 @@ class OriginalPaymentInstruction49(base_types._BaseFieldType):
 
 	@CtrlSum.setter
 	def CtrlSum(self, value):
-		self._CtrlSum = value if type(value) != base_types.auto else self.make_default("CtrlSum")
+		self._CtrlSum = value if value is not None else base_types.UninitialisedField(self, 'CtrlSum', DecimalNumber, False)
 
 	@CtrlSum.deleter
 	def CtrlSum(self):
 		del self._CtrlSum
-		self._CtrlSum = None
+		self._CtrlSum = base_types.UninitialisedField(self, 'CtrlSum', DecimalNumber, False)
 
 	@property
 	def CxlRsnInf(self):
@@ -46,12 +46,12 @@ class OriginalPaymentInstruction49(base_types._BaseFieldType):
 
 	@CxlRsnInf.setter
 	def CxlRsnInf(self, value):
-		self._CxlRsnInf = value if type(value) != base_types.auto else self.make_default("CxlRsnInf")
+		self._CxlRsnInf = value if value is not None else base_types.UninitialisedField(self, 'CxlRsnInf', PaymentCancellationReason6, True)
 
 	@CxlRsnInf.deleter
 	def CxlRsnInf(self):
 		del self._CxlRsnInf
-		self._CxlRsnInf = None
+		self._CxlRsnInf = base_types.UninitialisedField(self, 'CxlRsnInf', PaymentCancellationReason6, True)
 
 	@property
 	def NbOfTxs(self):
@@ -59,12 +59,12 @@ class OriginalPaymentInstruction49(base_types._BaseFieldType):
 
 	@NbOfTxs.setter
 	def NbOfTxs(self, value):
-		self._NbOfTxs = value if type(value) != base_types.auto else self.make_default("NbOfTxs")
+		self._NbOfTxs = value if value is not None else base_types.UninitialisedField(self, 'NbOfTxs', Max15NumericText, False)
 
 	@NbOfTxs.deleter
 	def NbOfTxs(self):
 		del self._NbOfTxs
-		self._NbOfTxs = None
+		self._NbOfTxs = base_types.UninitialisedField(self, 'NbOfTxs', Max15NumericText, False)
 
 	@property
 	def OrgnlGrpInf(self):
@@ -72,12 +72,12 @@ class OriginalPaymentInstruction49(base_types._BaseFieldType):
 
 	@OrgnlGrpInf.setter
 	def OrgnlGrpInf(self, value):
-		self._OrgnlGrpInf = value if type(value) != base_types.auto else self.make_default("OrgnlGrpInf")
+		self._OrgnlGrpInf = value if value is not None else base_types.UninitialisedField(self, 'OrgnlGrpInf', OriginalGroupInformation29, False)
 
 	@OrgnlGrpInf.deleter
 	def OrgnlGrpInf(self):
 		del self._OrgnlGrpInf
-		self._OrgnlGrpInf = None
+		self._OrgnlGrpInf = base_types.UninitialisedField(self, 'OrgnlGrpInf', OriginalGroupInformation29, False)
 
 	@property
 	def OrgnlPmtInfId(self):
@@ -85,12 +85,12 @@ class OriginalPaymentInstruction49(base_types._BaseFieldType):
 
 	@OrgnlPmtInfId.setter
 	def OrgnlPmtInfId(self, value):
-		self._OrgnlPmtInfId = value if type(value) != base_types.auto else self.make_default("OrgnlPmtInfId")
+		self._OrgnlPmtInfId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlPmtInfId', Max35Text, False)
 
 	@OrgnlPmtInfId.deleter
 	def OrgnlPmtInfId(self):
 		del self._OrgnlPmtInfId
-		self._OrgnlPmtInfId = None
+		self._OrgnlPmtInfId = base_types.UninitialisedField(self, 'OrgnlPmtInfId', Max35Text, False)
 
 	@property
 	def PmtCxlId(self):
@@ -98,12 +98,12 @@ class OriginalPaymentInstruction49(base_types._BaseFieldType):
 
 	@PmtCxlId.setter
 	def PmtCxlId(self, value):
-		self._PmtCxlId = value if type(value) != base_types.auto else self.make_default("PmtCxlId")
+		self._PmtCxlId = value if value is not None else base_types.UninitialisedField(self, 'PmtCxlId', Max35Text, False)
 
 	@PmtCxlId.deleter
 	def PmtCxlId(self):
 		del self._PmtCxlId
-		self._PmtCxlId = None
+		self._PmtCxlId = base_types.UninitialisedField(self, 'PmtCxlId', Max35Text, False)
 
 	@property
 	def PmtInfCxl(self):
@@ -111,12 +111,12 @@ class OriginalPaymentInstruction49(base_types._BaseFieldType):
 
 	@PmtInfCxl.setter
 	def PmtInfCxl(self, value):
-		self._PmtInfCxl = value if type(value) != base_types.auto else self.make_default("PmtInfCxl")
+		self._PmtInfCxl = value if value is not None else base_types.UninitialisedField(self, 'PmtInfCxl', GroupCancellationIndicator, False)
 
 	@PmtInfCxl.deleter
 	def PmtInfCxl(self):
 		del self._PmtInfCxl
-		self._PmtInfCxl = None
+		self._PmtInfCxl = base_types.UninitialisedField(self, 'PmtInfCxl', GroupCancellationIndicator, False)
 
 	@property
 	def TxInf(self):
@@ -124,12 +124,12 @@ class OriginalPaymentInstruction49(base_types._BaseFieldType):
 
 	@TxInf.setter
 	def TxInf(self, value):
-		self._TxInf = value if type(value) != base_types.auto else self.make_default("TxInf")
+		self._TxInf = value if value is not None else base_types.UninitialisedField(self, 'TxInf', PaymentTransaction154, True)
 
 	@TxInf.deleter
 	def TxInf(self):
 		del self._TxInf
-		self._TxInf = None
+		self._TxInf = base_types.UninitialisedField(self, 'TxInf', PaymentTransaction154, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Case', type=Case6, min=0, max=1, mutex_group=None, array=False),

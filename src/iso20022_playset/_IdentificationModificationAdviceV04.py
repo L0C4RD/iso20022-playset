@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IdentificationAssignment4 import IdentificationAssignment4
-from ._IdentificationModification5 import IdentificationModification5
-from ._OriginalTransactionReference43 import OriginalTransactionReference43
-from ._SupplementaryData1 import SupplementaryData1
+from . import IdentificationAssignment4
+from . import IdentificationModification5
+from . import OriginalTransactionReference43
+from . import SupplementaryData1
 
 class IdentificationModificationAdviceV04(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class IdentificationModificationAdviceV04(base_types._BaseFieldType):
 
 	@Assgnmt.setter
 	def Assgnmt(self, value):
-		self._Assgnmt = value if type(value) != base_types.auto else self.make_default("Assgnmt")
+		self._Assgnmt = value if value is not None else base_types.UninitialisedField(self, 'Assgnmt', IdentificationAssignment4, False)
 
 	@Assgnmt.deleter
 	def Assgnmt(self):
 		del self._Assgnmt
-		self._Assgnmt = None
+		self._Assgnmt = base_types.UninitialisedField(self, 'Assgnmt', IdentificationAssignment4, False)
 
 	@property
 	def Mod(self):
@@ -29,12 +29,12 @@ class IdentificationModificationAdviceV04(base_types._BaseFieldType):
 
 	@Mod.setter
 	def Mod(self, value):
-		self._Mod = value if type(value) != base_types.auto else self.make_default("Mod")
+		self._Mod = value if value is not None else base_types.UninitialisedField(self, 'Mod', IdentificationModification5, True)
 
 	@Mod.deleter
 	def Mod(self):
 		del self._Mod
-		self._Mod = None
+		self._Mod = base_types.UninitialisedField(self, 'Mod', IdentificationModification5, True)
 
 	@property
 	def OrgnlTxRef(self):
@@ -42,12 +42,12 @@ class IdentificationModificationAdviceV04(base_types._BaseFieldType):
 
 	@OrgnlTxRef.setter
 	def OrgnlTxRef(self, value):
-		self._OrgnlTxRef = value if type(value) != base_types.auto else self.make_default("OrgnlTxRef")
+		self._OrgnlTxRef = value if value is not None else base_types.UninitialisedField(self, 'OrgnlTxRef', OriginalTransactionReference43, False)
 
 	@OrgnlTxRef.deleter
 	def OrgnlTxRef(self):
 		del self._OrgnlTxRef
-		self._OrgnlTxRef = None
+		self._OrgnlTxRef = base_types.UninitialisedField(self, 'OrgnlTxRef', OriginalTransactionReference43, False)
 
 	@property
 	def SplmtryData(self):
@@ -55,12 +55,12 @@ class IdentificationModificationAdviceV04(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Assgnmt', type=IdentificationAssignment4, min=1, max=1, mutex_group=None, array=False),

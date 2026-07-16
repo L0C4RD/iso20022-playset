@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._CreditDebitCode import CreditDebitCode
-from ._FinancialItemParameters1 import FinancialItemParameters1
-from ._FinancingInformationAndStatus1 import FinancingInformationAndStatus1
-from ._Instalment2 import Instalment2
-from ._InvoiceTotals1 import InvoiceTotals1
-from ._Max2000Text import Max2000Text
-from ._SupplementaryData1 import SupplementaryData1
-from ._ValidationStatusInformation1 import ValidationStatusInformation1
-from ._xs:IDREF import xs:IDREF
+from . import ActiveCurrencyAndAmount
+from . import CreditDebitCode
+from . import FinancialItemParameters1
+from . import FinancingInformationAndStatus1
+from . import Instalment2
+from . import InvoiceTotals1
+from . import Max2000Text
+from . import SupplementaryData1
+from . import ValidationStatusInformation1
+from . import xs:IDREF
 
 class FinancialItem1(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class FinancialItem1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max2000Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max2000Text, False)
 
 	@property
 	def AssoctdDoc(self):
@@ -35,12 +35,12 @@ class FinancialItem1(base_types._BaseFieldType):
 
 	@AssoctdDoc.setter
 	def AssoctdDoc(self, value):
-		self._AssoctdDoc = value if type(value) != base_types.auto else self.make_default("AssoctdDoc")
+		self._AssoctdDoc = value if value is not None else base_types.UninitialisedField(self, 'AssoctdDoc', xs:IDREF, True)
 
 	@AssoctdDoc.deleter
 	def AssoctdDoc(self):
 		del self._AssoctdDoc
-		self._AssoctdDoc = None
+		self._AssoctdDoc = base_types.UninitialisedField(self, 'AssoctdDoc', xs:IDREF, True)
 
 	@property
 	def CdtDbtInd(self):
@@ -48,12 +48,12 @@ class FinancialItem1(base_types._BaseFieldType):
 
 	@CdtDbtInd.setter
 	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+		self._CdtDbtInd = value if value is not None else base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@CdtDbtInd.deleter
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
-		self._CdtDbtInd = None
+		self._CdtDbtInd = base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@property
 	def DueAmt(self):
@@ -61,12 +61,12 @@ class FinancialItem1(base_types._BaseFieldType):
 
 	@DueAmt.setter
 	def DueAmt(self, value):
-		self._DueAmt = value if type(value) != base_types.auto else self.make_default("DueAmt")
+		self._DueAmt = value if value is not None else base_types.UninitialisedField(self, 'DueAmt', ActiveCurrencyAndAmount, False)
 
 	@DueAmt.deleter
 	def DueAmt(self):
 		del self._DueAmt
-		self._DueAmt = None
+		self._DueAmt = base_types.UninitialisedField(self, 'DueAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def FinDocRef(self):
@@ -74,12 +74,12 @@ class FinancialItem1(base_types._BaseFieldType):
 
 	@FinDocRef.setter
 	def FinDocRef(self, value):
-		self._FinDocRef = value if type(value) != base_types.auto else self.make_default("FinDocRef")
+		self._FinDocRef = value if value is not None else base_types.UninitialisedField(self, 'FinDocRef', xs:IDREF, True)
 
 	@FinDocRef.deleter
 	def FinDocRef(self):
 		del self._FinDocRef
-		self._FinDocRef = None
+		self._FinDocRef = base_types.UninitialisedField(self, 'FinDocRef', xs:IDREF, True)
 
 	@property
 	def FincgSts(self):
@@ -87,12 +87,12 @@ class FinancialItem1(base_types._BaseFieldType):
 
 	@FincgSts.setter
 	def FincgSts(self, value):
-		self._FincgSts = value if type(value) != base_types.auto else self.make_default("FincgSts")
+		self._FincgSts = value if value is not None else base_types.UninitialisedField(self, 'FincgSts', FinancingInformationAndStatus1, False)
 
 	@FincgSts.deleter
 	def FincgSts(self):
 		del self._FincgSts
-		self._FincgSts = None
+		self._FincgSts = base_types.UninitialisedField(self, 'FincgSts', FinancingInformationAndStatus1, False)
 
 	@property
 	def InstlmtInf(self):
@@ -100,12 +100,12 @@ class FinancialItem1(base_types._BaseFieldType):
 
 	@InstlmtInf.setter
 	def InstlmtInf(self, value):
-		self._InstlmtInf = value if type(value) != base_types.auto else self.make_default("InstlmtInf")
+		self._InstlmtInf = value if value is not None else base_types.UninitialisedField(self, 'InstlmtInf', Instalment2, True)
 
 	@InstlmtInf.deleter
 	def InstlmtInf(self):
 		del self._InstlmtInf
-		self._InstlmtInf = None
+		self._InstlmtInf = base_types.UninitialisedField(self, 'InstlmtInf', Instalment2, True)
 
 	@property
 	def ItmCntxt(self):
@@ -113,12 +113,12 @@ class FinancialItem1(base_types._BaseFieldType):
 
 	@ItmCntxt.setter
 	def ItmCntxt(self, value):
-		self._ItmCntxt = value if type(value) != base_types.auto else self.make_default("ItmCntxt")
+		self._ItmCntxt = value if value is not None else base_types.UninitialisedField(self, 'ItmCntxt', FinancialItemParameters1, False)
 
 	@ItmCntxt.deleter
 	def ItmCntxt(self):
 		del self._ItmCntxt
-		self._ItmCntxt = None
+		self._ItmCntxt = base_types.UninitialisedField(self, 'ItmCntxt', FinancialItemParameters1, False)
 
 	@property
 	def PrtryDtls(self):
@@ -126,12 +126,12 @@ class FinancialItem1(base_types._BaseFieldType):
 
 	@PrtryDtls.setter
 	def PrtryDtls(self, value):
-		self._PrtryDtls = value if type(value) != base_types.auto else self.make_default("PrtryDtls")
+		self._PrtryDtls = value if value is not None else base_types.UninitialisedField(self, 'PrtryDtls', SupplementaryData1, False)
 
 	@PrtryDtls.deleter
 	def PrtryDtls(self):
 		del self._PrtryDtls
-		self._PrtryDtls = None
+		self._PrtryDtls = base_types.UninitialisedField(self, 'PrtryDtls', SupplementaryData1, False)
 
 	@property
 	def TtlAmt(self):
@@ -139,12 +139,12 @@ class FinancialItem1(base_types._BaseFieldType):
 
 	@TtlAmt.setter
 	def TtlAmt(self, value):
-		self._TtlAmt = value if type(value) != base_types.auto else self.make_default("TtlAmt")
+		self._TtlAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlAmt', InvoiceTotals1, False)
 
 	@TtlAmt.deleter
 	def TtlAmt(self):
 		del self._TtlAmt
-		self._TtlAmt = None
+		self._TtlAmt = base_types.UninitialisedField(self, 'TtlAmt', InvoiceTotals1, False)
 
 	@property
 	def VldtnStsInf(self):
@@ -152,12 +152,12 @@ class FinancialItem1(base_types._BaseFieldType):
 
 	@VldtnStsInf.setter
 	def VldtnStsInf(self, value):
-		self._VldtnStsInf = value if type(value) != base_types.auto else self.make_default("VldtnStsInf")
+		self._VldtnStsInf = value if value is not None else base_types.UninitialisedField(self, 'VldtnStsInf', ValidationStatusInformation1, False)
 
 	@VldtnStsInf.deleter
 	def VldtnStsInf(self):
 		del self._VldtnStsInf
-		self._VldtnStsInf = None
+		self._VldtnStsInf = base_types.UninitialisedField(self, 'VldtnStsInf', ValidationStatusInformation1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=1, mutex_group=None, array=False),

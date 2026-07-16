@@ -2,18 +2,18 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BalanceInquiryResponse6 import BalanceInquiryResponse6
-from ._BatchResponse7 import BatchResponse7
-from ._CardAcquisitionResponse3 import CardAcquisitionResponse3
-from ._CardPaymentEnvironment81 import CardPaymentEnvironment81
-from ._LoyaltyResponse3 import LoyaltyResponse3
-from ._PaymentContext30 import PaymentContext30
-from ._PaymentResponse7 import PaymentResponse7
-from ._ResponseType11 import ResponseType11
-from ._RetailerService3Code import RetailerService3Code
-from ._ReversalResponse9 import ReversalResponse9
-from ._StoredValueResponse8 import StoredValueResponse8
-from ._SupplementaryData1 import SupplementaryData1
+from . import BalanceInquiryResponse6
+from . import BatchResponse7
+from . import CardAcquisitionResponse3
+from . import CardPaymentEnvironment81
+from . import LoyaltyResponse3
+from . import PaymentContext30
+from . import PaymentResponse7
+from . import ResponseType11
+from . import RetailerService3Code
+from . import ReversalResponse9
+from . import StoredValueResponse8
+from . import SupplementaryData1
 
 class ServiceResponse9(base_types._BaseFieldType):
 
@@ -24,12 +24,12 @@ class ServiceResponse9(base_types._BaseFieldType):
 
 	@BalNqryRspn.setter
 	def BalNqryRspn(self, value):
-		self._BalNqryRspn = value if type(value) != base_types.auto else self.make_default("BalNqryRspn")
+		self._BalNqryRspn = value if value is not None else base_types.UninitialisedField(self, 'BalNqryRspn', BalanceInquiryResponse6, False)
 
 	@BalNqryRspn.deleter
 	def BalNqryRspn(self):
 		del self._BalNqryRspn
-		self._BalNqryRspn = None
+		self._BalNqryRspn = base_types.UninitialisedField(self, 'BalNqryRspn', BalanceInquiryResponse6, False)
 
 	@property
 	def BtchRspn(self):
@@ -37,12 +37,12 @@ class ServiceResponse9(base_types._BaseFieldType):
 
 	@BtchRspn.setter
 	def BtchRspn(self, value):
-		self._BtchRspn = value if type(value) != base_types.auto else self.make_default("BtchRspn")
+		self._BtchRspn = value if value is not None else base_types.UninitialisedField(self, 'BtchRspn', BatchResponse7, False)
 
 	@BtchRspn.deleter
 	def BtchRspn(self):
 		del self._BtchRspn
-		self._BtchRspn = None
+		self._BtchRspn = base_types.UninitialisedField(self, 'BtchRspn', BatchResponse7, False)
 
 	@property
 	def CardAcqstnRspn(self):
@@ -50,12 +50,12 @@ class ServiceResponse9(base_types._BaseFieldType):
 
 	@CardAcqstnRspn.setter
 	def CardAcqstnRspn(self, value):
-		self._CardAcqstnRspn = value if type(value) != base_types.auto else self.make_default("CardAcqstnRspn")
+		self._CardAcqstnRspn = value if value is not None else base_types.UninitialisedField(self, 'CardAcqstnRspn', CardAcquisitionResponse3, False)
 
 	@CardAcqstnRspn.deleter
 	def CardAcqstnRspn(self):
 		del self._CardAcqstnRspn
-		self._CardAcqstnRspn = None
+		self._CardAcqstnRspn = base_types.UninitialisedField(self, 'CardAcqstnRspn', CardAcquisitionResponse3, False)
 
 	@property
 	def Cntxt(self):
@@ -63,12 +63,12 @@ class ServiceResponse9(base_types._BaseFieldType):
 
 	@Cntxt.setter
 	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != base_types.auto else self.make_default("Cntxt")
+		self._Cntxt = value if value is not None else base_types.UninitialisedField(self, 'Cntxt', PaymentContext30, False)
 
 	@Cntxt.deleter
 	def Cntxt(self):
 		del self._Cntxt
-		self._Cntxt = None
+		self._Cntxt = base_types.UninitialisedField(self, 'Cntxt', PaymentContext30, False)
 
 	@property
 	def Envt(self):
@@ -76,12 +76,12 @@ class ServiceResponse9(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+		self._Envt = value if value is not None else base_types.UninitialisedField(self, 'Envt', CardPaymentEnvironment81, False)
 
 	@Envt.deleter
 	def Envt(self):
 		del self._Envt
-		self._Envt = None
+		self._Envt = base_types.UninitialisedField(self, 'Envt', CardPaymentEnvironment81, False)
 
 	@property
 	def LltyRspn(self):
@@ -89,12 +89,12 @@ class ServiceResponse9(base_types._BaseFieldType):
 
 	@LltyRspn.setter
 	def LltyRspn(self, value):
-		self._LltyRspn = value if type(value) != base_types.auto else self.make_default("LltyRspn")
+		self._LltyRspn = value if value is not None else base_types.UninitialisedField(self, 'LltyRspn', LoyaltyResponse3, False)
 
 	@LltyRspn.deleter
 	def LltyRspn(self):
 		del self._LltyRspn
-		self._LltyRspn = None
+		self._LltyRspn = base_types.UninitialisedField(self, 'LltyRspn', LoyaltyResponse3, False)
 
 	@property
 	def PmtRspn(self):
@@ -102,12 +102,12 @@ class ServiceResponse9(base_types._BaseFieldType):
 
 	@PmtRspn.setter
 	def PmtRspn(self, value):
-		self._PmtRspn = value if type(value) != base_types.auto else self.make_default("PmtRspn")
+		self._PmtRspn = value if value is not None else base_types.UninitialisedField(self, 'PmtRspn', PaymentResponse7, False)
 
 	@PmtRspn.deleter
 	def PmtRspn(self):
 		del self._PmtRspn
-		self._PmtRspn = None
+		self._PmtRspn = base_types.UninitialisedField(self, 'PmtRspn', PaymentResponse7, False)
 
 	@property
 	def Rspn(self):
@@ -115,12 +115,12 @@ class ServiceResponse9(base_types._BaseFieldType):
 
 	@Rspn.setter
 	def Rspn(self, value):
-		self._Rspn = value if type(value) != base_types.auto else self.make_default("Rspn")
+		self._Rspn = value if value is not None else base_types.UninitialisedField(self, 'Rspn', ResponseType11, False)
 
 	@Rspn.deleter
 	def Rspn(self):
 		del self._Rspn
-		self._Rspn = None
+		self._Rspn = base_types.UninitialisedField(self, 'Rspn', ResponseType11, False)
 
 	@property
 	def RvslRspn(self):
@@ -128,12 +128,12 @@ class ServiceResponse9(base_types._BaseFieldType):
 
 	@RvslRspn.setter
 	def RvslRspn(self, value):
-		self._RvslRspn = value if type(value) != base_types.auto else self.make_default("RvslRspn")
+		self._RvslRspn = value if value is not None else base_types.UninitialisedField(self, 'RvslRspn', ReversalResponse9, False)
 
 	@RvslRspn.deleter
 	def RvslRspn(self):
 		del self._RvslRspn
-		self._RvslRspn = None
+		self._RvslRspn = base_types.UninitialisedField(self, 'RvslRspn', ReversalResponse9, False)
 
 	@property
 	def SplmtryData(self):
@@ -141,12 +141,12 @@ class ServiceResponse9(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def StordValRspn(self):
@@ -154,12 +154,12 @@ class ServiceResponse9(base_types._BaseFieldType):
 
 	@StordValRspn.setter
 	def StordValRspn(self, value):
-		self._StordValRspn = value if type(value) != base_types.auto else self.make_default("StordValRspn")
+		self._StordValRspn = value if value is not None else base_types.UninitialisedField(self, 'StordValRspn', StoredValueResponse8, False)
 
 	@StordValRspn.deleter
 	def StordValRspn(self):
 		del self._StordValRspn
-		self._StordValRspn = None
+		self._StordValRspn = base_types.UninitialisedField(self, 'StordValRspn', StoredValueResponse8, False)
 
 	@property
 	def SvcCntt(self):
@@ -167,12 +167,12 @@ class ServiceResponse9(base_types._BaseFieldType):
 
 	@SvcCntt.setter
 	def SvcCntt(self, value):
-		self._SvcCntt = value if type(value) != base_types.auto else self.make_default("SvcCntt")
+		self._SvcCntt = value if value is not None else base_types.UninitialisedField(self, 'SvcCntt', RetailerService3Code, False)
 
 	@SvcCntt.deleter
 	def SvcCntt(self):
 		del self._SvcCntt
-		self._SvcCntt = None
+		self._SvcCntt = base_types.UninitialisedField(self, 'SvcCntt', RetailerService3Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BalNqryRspn', type=BalanceInquiryResponse6, min=0, max=1, mutex_group=None, array=False),

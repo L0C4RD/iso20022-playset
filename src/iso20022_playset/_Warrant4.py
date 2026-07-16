@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BaseOneRate import BaseOneRate
-from ._Organisation38 import Organisation38
-from ._Price8 import Price8
-from ._WarrantStyle3Choice import WarrantStyle3Choice
+from . import BaseOneRate
+from . import Organisation38
+from . import Price8
+from . import WarrantStyle3Choice
 
 class Warrant4(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class Warrant4(base_types._BaseFieldType):
 
 	@Mltplr.setter
 	def Mltplr(self, value):
-		self._Mltplr = value if type(value) != base_types.auto else self.make_default("Mltplr")
+		self._Mltplr = value if value is not None else base_types.UninitialisedField(self, 'Mltplr', BaseOneRate, False)
 
 	@Mltplr.deleter
 	def Mltplr(self):
 		del self._Mltplr
-		self._Mltplr = None
+		self._Mltplr = base_types.UninitialisedField(self, 'Mltplr', BaseOneRate, False)
 
 	@property
 	def SbcptPric(self):
@@ -29,12 +29,12 @@ class Warrant4(base_types._BaseFieldType):
 
 	@SbcptPric.setter
 	def SbcptPric(self, value):
-		self._SbcptPric = value if type(value) != base_types.auto else self.make_default("SbcptPric")
+		self._SbcptPric = value if value is not None else base_types.UninitialisedField(self, 'SbcptPric', Price8, False)
 
 	@SbcptPric.deleter
 	def SbcptPric(self):
 		del self._SbcptPric
-		self._SbcptPric = None
+		self._SbcptPric = base_types.UninitialisedField(self, 'SbcptPric', Price8, False)
 
 	@property
 	def Tp(self):
@@ -42,12 +42,12 @@ class Warrant4(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', WarrantStyle3Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', WarrantStyle3Choice, False)
 
 	@property
 	def WarrtAgt(self):
@@ -55,12 +55,12 @@ class Warrant4(base_types._BaseFieldType):
 
 	@WarrtAgt.setter
 	def WarrtAgt(self, value):
-		self._WarrtAgt = value if type(value) != base_types.auto else self.make_default("WarrtAgt")
+		self._WarrtAgt = value if value is not None else base_types.UninitialisedField(self, 'WarrtAgt', Organisation38, True)
 
 	@WarrtAgt.deleter
 	def WarrtAgt(self):
 		del self._WarrtAgt
-		self._WarrtAgt = None
+		self._WarrtAgt = base_types.UninitialisedField(self, 'WarrtAgt', Organisation38, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Mltplr', type=BaseOneRate, min=0, max=1, mutex_group=None, array=False),

@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CapturedSignature1 import CapturedSignature1
-from ._ContentInformationType39 import ContentInformationType39
-from ._InputCommand1Code import InputCommand1Code
-from ._Max20000Text import Max20000Text
-from ._Number import Number
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import CapturedSignature1
+from . import ContentInformationType39
+from . import InputCommand1Code
+from . import Max20000Text
+from . import Number
+from . import TrueFalseIndicator
 
 class InputResultData6(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class InputResultData6(base_types._BaseFieldType):
 
 	@ConfdFlg.setter
 	def ConfdFlg(self, value):
-		self._ConfdFlg = value if type(value) != base_types.auto else self.make_default("ConfdFlg")
+		self._ConfdFlg = value if value is not None else base_types.UninitialisedField(self, 'ConfdFlg', TrueFalseIndicator, False)
 
 	@ConfdFlg.deleter
 	def ConfdFlg(self):
 		del self._ConfdFlg
-		self._ConfdFlg = None
+		self._ConfdFlg = base_types.UninitialisedField(self, 'ConfdFlg', TrueFalseIndicator, False)
 
 	@property
 	def FctnKey(self):
@@ -31,12 +31,12 @@ class InputResultData6(base_types._BaseFieldType):
 
 	@FctnKey.setter
 	def FctnKey(self, value):
-		self._FctnKey = value if type(value) != base_types.auto else self.make_default("FctnKey")
+		self._FctnKey = value if value is not None else base_types.UninitialisedField(self, 'FctnKey', Number, False)
 
 	@FctnKey.deleter
 	def FctnKey(self):
 		del self._FctnKey
-		self._FctnKey = None
+		self._FctnKey = base_types.UninitialisedField(self, 'FctnKey', Number, False)
 
 	@property
 	def ImgCaptrdSgntr(self):
@@ -44,12 +44,12 @@ class InputResultData6(base_types._BaseFieldType):
 
 	@ImgCaptrdSgntr.setter
 	def ImgCaptrdSgntr(self, value):
-		self._ImgCaptrdSgntr = value if type(value) != base_types.auto else self.make_default("ImgCaptrdSgntr")
+		self._ImgCaptrdSgntr = value if value is not None else base_types.UninitialisedField(self, 'ImgCaptrdSgntr', CapturedSignature1, False)
 
 	@ImgCaptrdSgntr.deleter
 	def ImgCaptrdSgntr(self):
 		del self._ImgCaptrdSgntr
-		self._ImgCaptrdSgntr = None
+		self._ImgCaptrdSgntr = base_types.UninitialisedField(self, 'ImgCaptrdSgntr', CapturedSignature1, False)
 
 	@property
 	def InptCmd(self):
@@ -57,12 +57,12 @@ class InputResultData6(base_types._BaseFieldType):
 
 	@InptCmd.setter
 	def InptCmd(self, value):
-		self._InptCmd = value if type(value) != base_types.auto else self.make_default("InptCmd")
+		self._InptCmd = value if value is not None else base_types.UninitialisedField(self, 'InptCmd', InputCommand1Code, False)
 
 	@InptCmd.deleter
 	def InptCmd(self):
 		del self._InptCmd
-		self._InptCmd = None
+		self._InptCmd = base_types.UninitialisedField(self, 'InptCmd', InputCommand1Code, False)
 
 	@property
 	def InptMsg(self):
@@ -70,12 +70,12 @@ class InputResultData6(base_types._BaseFieldType):
 
 	@InptMsg.setter
 	def InptMsg(self, value):
-		self._InptMsg = value if type(value) != base_types.auto else self.make_default("InptMsg")
+		self._InptMsg = value if value is not None else base_types.UninitialisedField(self, 'InptMsg', Max20000Text, False)
 
 	@InptMsg.deleter
 	def InptMsg(self):
 		del self._InptMsg
-		self._InptMsg = None
+		self._InptMsg = base_types.UninitialisedField(self, 'InptMsg', Max20000Text, False)
 
 	@property
 	def Pwd(self):
@@ -83,12 +83,12 @@ class InputResultData6(base_types._BaseFieldType):
 
 	@Pwd.setter
 	def Pwd(self, value):
-		self._Pwd = value if type(value) != base_types.auto else self.make_default("Pwd")
+		self._Pwd = value if value is not None else base_types.UninitialisedField(self, 'Pwd', ContentInformationType39, False)
 
 	@Pwd.deleter
 	def Pwd(self):
 		del self._Pwd
-		self._Pwd = None
+		self._Pwd = base_types.UninitialisedField(self, 'Pwd', ContentInformationType39, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ConfdFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),

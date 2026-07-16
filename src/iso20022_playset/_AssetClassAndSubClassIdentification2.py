@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NonEquityAssetClass1Code import NonEquityAssetClass1Code
-from ._NonEquityInstrumentReportingClassification1Code import NonEquityInstrumentReportingClassification1Code
-from ._NonEquitySubClass1 import NonEquitySubClass1
+from . import NonEquityAssetClass1Code
+from . import NonEquityInstrumentReportingClassification1Code
+from . import NonEquitySubClass1
 
 class AssetClassAndSubClassIdentification2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AssetClassAndSubClassIdentification2(base_types._BaseFieldType):
 
 	@AsstClss.setter
 	def AsstClss(self, value):
-		self._AsstClss = value if type(value) != base_types.auto else self.make_default("AsstClss")
+		self._AsstClss = value if value is not None else base_types.UninitialisedField(self, 'AsstClss', NonEquityAssetClass1Code, False)
 
 	@AsstClss.deleter
 	def AsstClss(self):
 		del self._AsstClss
-		self._AsstClss = None
+		self._AsstClss = base_types.UninitialisedField(self, 'AsstClss', NonEquityAssetClass1Code, False)
 
 	@property
 	def DerivSubClss(self):
@@ -28,12 +28,12 @@ class AssetClassAndSubClassIdentification2(base_types._BaseFieldType):
 
 	@DerivSubClss.setter
 	def DerivSubClss(self, value):
-		self._DerivSubClss = value if type(value) != base_types.auto else self.make_default("DerivSubClss")
+		self._DerivSubClss = value if value is not None else base_types.UninitialisedField(self, 'DerivSubClss', NonEquitySubClass1, False)
 
 	@DerivSubClss.deleter
 	def DerivSubClss(self):
 		del self._DerivSubClss
-		self._DerivSubClss = None
+		self._DerivSubClss = base_types.UninitialisedField(self, 'DerivSubClss', NonEquitySubClass1, False)
 
 	@property
 	def FinInstrmClssfctn(self):
@@ -41,12 +41,12 @@ class AssetClassAndSubClassIdentification2(base_types._BaseFieldType):
 
 	@FinInstrmClssfctn.setter
 	def FinInstrmClssfctn(self, value):
-		self._FinInstrmClssfctn = value if type(value) != base_types.auto else self.make_default("FinInstrmClssfctn")
+		self._FinInstrmClssfctn = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmClssfctn', NonEquityInstrumentReportingClassification1Code, False)
 
 	@FinInstrmClssfctn.deleter
 	def FinInstrmClssfctn(self):
 		del self._FinInstrmClssfctn
-		self._FinInstrmClssfctn = None
+		self._FinInstrmClssfctn = base_types.UninitialisedField(self, 'FinInstrmClssfctn', NonEquityInstrumentReportingClassification1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AsstClss', type=NonEquityAssetClass1Code, min=1, max=1, mutex_group=None, array=False),

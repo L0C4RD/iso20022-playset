@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BeneficialOwnership5Choice import BeneficialOwnership5Choice
-from ._CashSettlementSystem5Choice import CashSettlementSystem5Choice
-from ._GenericIdentification47 import GenericIdentification47
-from ._MarketClientSide7Choice import MarketClientSide7Choice
-from ._Registration11Choice import Registration11Choice
-from ._RepurchaseType17Choice import RepurchaseType17Choice
-from ._SecuritiesRTGS5Choice import SecuritiesRTGS5Choice
-from ._SecuritiesTransactionType49Choice import SecuritiesTransactionType49Choice
-from ._SettlementTransactionCondition36Choice import SettlementTransactionCondition36Choice
-from ._SettlementTransactionCondition5Code import SettlementTransactionCondition5Code
-from ._YesNoIndicator import YesNoIndicator
+from . import BeneficialOwnership5Choice
+from . import CashSettlementSystem5Choice
+from . import GenericIdentification47
+from . import MarketClientSide7Choice
+from . import Registration11Choice
+from . import RepurchaseType17Choice
+from . import SecuritiesRTGS5Choice
+from . import SecuritiesTransactionType49Choice
+from . import SettlementTransactionCondition36Choice
+from . import SettlementTransactionCondition5Code
+from . import YesNoIndicator
 
 class SettlementDetails191(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class SettlementDetails191(base_types._BaseFieldType):
 
 	@BnfclOwnrsh.setter
 	def BnfclOwnrsh(self, value):
-		self._BnfclOwnrsh = value if type(value) != base_types.auto else self.make_default("BnfclOwnrsh")
+		self._BnfclOwnrsh = value if value is not None else base_types.UninitialisedField(self, 'BnfclOwnrsh', BeneficialOwnership5Choice, False)
 
 	@BnfclOwnrsh.deleter
 	def BnfclOwnrsh(self):
 		del self._BnfclOwnrsh
-		self._BnfclOwnrsh = None
+		self._BnfclOwnrsh = base_types.UninitialisedField(self, 'BnfclOwnrsh', BeneficialOwnership5Choice, False)
 
 	@property
 	def CshClrSys(self):
@@ -36,12 +36,12 @@ class SettlementDetails191(base_types._BaseFieldType):
 
 	@CshClrSys.setter
 	def CshClrSys(self, value):
-		self._CshClrSys = value if type(value) != base_types.auto else self.make_default("CshClrSys")
+		self._CshClrSys = value if value is not None else base_types.UninitialisedField(self, 'CshClrSys', CashSettlementSystem5Choice, False)
 
 	@CshClrSys.deleter
 	def CshClrSys(self):
 		del self._CshClrSys
-		self._CshClrSys = None
+		self._CshClrSys = base_types.UninitialisedField(self, 'CshClrSys', CashSettlementSystem5Choice, False)
 
 	@property
 	def HldInd(self):
@@ -49,12 +49,12 @@ class SettlementDetails191(base_types._BaseFieldType):
 
 	@HldInd.setter
 	def HldInd(self, value):
-		self._HldInd = value if type(value) != base_types.auto else self.make_default("HldInd")
+		self._HldInd = value if value is not None else base_types.UninitialisedField(self, 'HldInd', YesNoIndicator, False)
 
 	@HldInd.deleter
 	def HldInd(self):
 		del self._HldInd
-		self._HldInd = None
+		self._HldInd = base_types.UninitialisedField(self, 'HldInd', YesNoIndicator, False)
 
 	@property
 	def MktClntSd(self):
@@ -62,12 +62,12 @@ class SettlementDetails191(base_types._BaseFieldType):
 
 	@MktClntSd.setter
 	def MktClntSd(self, value):
-		self._MktClntSd = value if type(value) != base_types.auto else self.make_default("MktClntSd")
+		self._MktClntSd = value if value is not None else base_types.UninitialisedField(self, 'MktClntSd', MarketClientSide7Choice, False)
 
 	@MktClntSd.deleter
 	def MktClntSd(self):
 		del self._MktClntSd
-		self._MktClntSd = None
+		self._MktClntSd = base_types.UninitialisedField(self, 'MktClntSd', MarketClientSide7Choice, False)
 
 	@property
 	def PrtlSttlmInd(self):
@@ -75,12 +75,12 @@ class SettlementDetails191(base_types._BaseFieldType):
 
 	@PrtlSttlmInd.setter
 	def PrtlSttlmInd(self, value):
-		self._PrtlSttlmInd = value if type(value) != base_types.auto else self.make_default("PrtlSttlmInd")
+		self._PrtlSttlmInd = value if value is not None else base_types.UninitialisedField(self, 'PrtlSttlmInd', SettlementTransactionCondition5Code, False)
 
 	@PrtlSttlmInd.deleter
 	def PrtlSttlmInd(self):
 		del self._PrtlSttlmInd
-		self._PrtlSttlmInd = None
+		self._PrtlSttlmInd = base_types.UninitialisedField(self, 'PrtlSttlmInd', SettlementTransactionCondition5Code, False)
 
 	@property
 	def Regn(self):
@@ -88,12 +88,12 @@ class SettlementDetails191(base_types._BaseFieldType):
 
 	@Regn.setter
 	def Regn(self, value):
-		self._Regn = value if type(value) != base_types.auto else self.make_default("Regn")
+		self._Regn = value if value is not None else base_types.UninitialisedField(self, 'Regn', Registration11Choice, False)
 
 	@Regn.deleter
 	def Regn(self):
 		del self._Regn
-		self._Regn = None
+		self._Regn = base_types.UninitialisedField(self, 'Regn', Registration11Choice, False)
 
 	@property
 	def RpTp(self):
@@ -101,12 +101,12 @@ class SettlementDetails191(base_types._BaseFieldType):
 
 	@RpTp.setter
 	def RpTp(self, value):
-		self._RpTp = value if type(value) != base_types.auto else self.make_default("RpTp")
+		self._RpTp = value if value is not None else base_types.UninitialisedField(self, 'RpTp', RepurchaseType17Choice, False)
 
 	@RpTp.deleter
 	def RpTp(self):
 		del self._RpTp
-		self._RpTp = None
+		self._RpTp = base_types.UninitialisedField(self, 'RpTp', RepurchaseType17Choice, False)
 
 	@property
 	def SctiesRTGS(self):
@@ -114,12 +114,12 @@ class SettlementDetails191(base_types._BaseFieldType):
 
 	@SctiesRTGS.setter
 	def SctiesRTGS(self, value):
-		self._SctiesRTGS = value if type(value) != base_types.auto else self.make_default("SctiesRTGS")
+		self._SctiesRTGS = value if value is not None else base_types.UninitialisedField(self, 'SctiesRTGS', SecuritiesRTGS5Choice, False)
 
 	@SctiesRTGS.deleter
 	def SctiesRTGS(self):
 		del self._SctiesRTGS
-		self._SctiesRTGS = None
+		self._SctiesRTGS = base_types.UninitialisedField(self, 'SctiesRTGS', SecuritiesRTGS5Choice, False)
 
 	@property
 	def SctiesTxTp(self):
@@ -127,12 +127,12 @@ class SettlementDetails191(base_types._BaseFieldType):
 
 	@SctiesTxTp.setter
 	def SctiesTxTp(self, value):
-		self._SctiesTxTp = value if type(value) != base_types.auto else self.make_default("SctiesTxTp")
+		self._SctiesTxTp = value if value is not None else base_types.UninitialisedField(self, 'SctiesTxTp', SecuritiesTransactionType49Choice, False)
 
 	@SctiesTxTp.deleter
 	def SctiesTxTp(self):
 		del self._SctiesTxTp
-		self._SctiesTxTp = None
+		self._SctiesTxTp = base_types.UninitialisedField(self, 'SctiesTxTp', SecuritiesTransactionType49Choice, False)
 
 	@property
 	def StmpDtyTaxBsis(self):
@@ -140,12 +140,12 @@ class SettlementDetails191(base_types._BaseFieldType):
 
 	@StmpDtyTaxBsis.setter
 	def StmpDtyTaxBsis(self, value):
-		self._StmpDtyTaxBsis = value if type(value) != base_types.auto else self.make_default("StmpDtyTaxBsis")
+		self._StmpDtyTaxBsis = value if value is not None else base_types.UninitialisedField(self, 'StmpDtyTaxBsis', GenericIdentification47, False)
 
 	@StmpDtyTaxBsis.deleter
 	def StmpDtyTaxBsis(self):
 		del self._StmpDtyTaxBsis
-		self._StmpDtyTaxBsis = None
+		self._StmpDtyTaxBsis = base_types.UninitialisedField(self, 'StmpDtyTaxBsis', GenericIdentification47, False)
 
 	@property
 	def SttlmTxCond(self):
@@ -153,12 +153,12 @@ class SettlementDetails191(base_types._BaseFieldType):
 
 	@SttlmTxCond.setter
 	def SttlmTxCond(self, value):
-		self._SttlmTxCond = value if type(value) != base_types.auto else self.make_default("SttlmTxCond")
+		self._SttlmTxCond = value if value is not None else base_types.UninitialisedField(self, 'SttlmTxCond', SettlementTransactionCondition36Choice, True)
 
 	@SttlmTxCond.deleter
 	def SttlmTxCond(self):
 		del self._SttlmTxCond
-		self._SttlmTxCond = None
+		self._SttlmTxCond = base_types.UninitialisedField(self, 'SttlmTxCond', SettlementTransactionCondition36Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BnfclOwnrsh', type=BeneficialOwnership5Choice, min=0, max=1, mutex_group=None, array=False),

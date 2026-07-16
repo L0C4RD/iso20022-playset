@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._ProductCharacteristics1Code import ProductCharacteristics1Code
+from . import Max35Text
+from . import ProductCharacteristics1Code
 
 class ProductCharacteristics1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ProductCharacteristics1(base_types._BaseFieldType):
 
 	@Chrtcs.setter
 	def Chrtcs(self, value):
-		self._Chrtcs = value if type(value) != base_types.auto else self.make_default("Chrtcs")
+		self._Chrtcs = value if value is not None else base_types.UninitialisedField(self, 'Chrtcs', Max35Text, False)
 
 	@Chrtcs.deleter
 	def Chrtcs(self):
 		del self._Chrtcs
-		self._Chrtcs = None
+		self._Chrtcs = base_types.UninitialisedField(self, 'Chrtcs', Max35Text, False)
 
 	@property
 	def Tp(self):
@@ -27,12 +27,12 @@ class ProductCharacteristics1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', ProductCharacteristics1Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', ProductCharacteristics1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Chrtcs', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

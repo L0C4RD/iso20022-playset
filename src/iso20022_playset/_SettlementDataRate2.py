@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PercentageRate import PercentageRate
+from . import PercentageRate
 
 class SettlementDataRate2(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class SettlementDataRate2(base_types._BaseFieldType):
 
 	@Val.setter
 	def Val(self, value):
-		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
+		self._Val = value if value is not None else base_types.UninitialisedField(self, 'Val', PercentageRate, False)
 
 	@Val.deleter
 	def Val(self):
 		del self._Val
-		self._Val = None
+		self._Val = base_types.UninitialisedField(self, 'Val', PercentageRate, False)
 
 	@property
 	def Vol(self):
@@ -26,12 +26,12 @@ class SettlementDataRate2(base_types._BaseFieldType):
 
 	@Vol.setter
 	def Vol(self, value):
-		self._Vol = value if type(value) != base_types.auto else self.make_default("Vol")
+		self._Vol = value if value is not None else base_types.UninitialisedField(self, 'Vol', PercentageRate, False)
 
 	@Vol.deleter
 	def Vol(self):
 		del self._Vol
-		self._Vol = None
+		self._Vol = base_types.UninitialisedField(self, 'Vol', PercentageRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Val', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),

@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionElection4 import CorporateActionElection4
-from ._CorporateActionGeneralInformation195 import CorporateActionGeneralInformation195
-from ._RelatedSettlementInstruction3 import RelatedSettlementInstruction3
-from ._SecuritiesAccountIdentification1Choice import SecuritiesAccountIdentification1Choice
-from ._SupplementaryData1 import SupplementaryData1
+from . import CorporateActionElection4
+from . import CorporateActionGeneralInformation195
+from . import RelatedSettlementInstruction3
+from . import SecuritiesAccountIdentification1Choice
+from . import SupplementaryData1
 
 class BuyerProtectionInstructionV01(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class BuyerProtectionInstructionV01(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', SecuritiesAccountIdentification1Choice, False)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', SecuritiesAccountIdentification1Choice, False)
 
 	@property
 	def CorpActnElctn(self):
@@ -30,12 +30,12 @@ class BuyerProtectionInstructionV01(base_types._BaseFieldType):
 
 	@CorpActnElctn.setter
 	def CorpActnElctn(self, value):
-		self._CorpActnElctn = value if type(value) != base_types.auto else self.make_default("CorpActnElctn")
+		self._CorpActnElctn = value if value is not None else base_types.UninitialisedField(self, 'CorpActnElctn', CorporateActionElection4, False)
 
 	@CorpActnElctn.deleter
 	def CorpActnElctn(self):
 		del self._CorpActnElctn
-		self._CorpActnElctn = None
+		self._CorpActnElctn = base_types.UninitialisedField(self, 'CorpActnElctn', CorporateActionElection4, False)
 
 	@property
 	def CorpActnGnlInf(self):
@@ -43,12 +43,12 @@ class BuyerProtectionInstructionV01(base_types._BaseFieldType):
 
 	@CorpActnGnlInf.setter
 	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != base_types.auto else self.make_default("CorpActnGnlInf")
+		self._CorpActnGnlInf = value if value is not None else base_types.UninitialisedField(self, 'CorpActnGnlInf', CorporateActionGeneralInformation195, False)
 
 	@CorpActnGnlInf.deleter
 	def CorpActnGnlInf(self):
 		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
+		self._CorpActnGnlInf = base_types.UninitialisedField(self, 'CorpActnGnlInf', CorporateActionGeneralInformation195, False)
 
 	@property
 	def RltdSttlmInstr(self):
@@ -56,12 +56,12 @@ class BuyerProtectionInstructionV01(base_types._BaseFieldType):
 
 	@RltdSttlmInstr.setter
 	def RltdSttlmInstr(self, value):
-		self._RltdSttlmInstr = value if type(value) != base_types.auto else self.make_default("RltdSttlmInstr")
+		self._RltdSttlmInstr = value if value is not None else base_types.UninitialisedField(self, 'RltdSttlmInstr', RelatedSettlementInstruction3, False)
 
 	@RltdSttlmInstr.deleter
 	def RltdSttlmInstr(self):
 		del self._RltdSttlmInstr
-		self._RltdSttlmInstr = None
+		self._RltdSttlmInstr = base_types.UninitialisedField(self, 'RltdSttlmInstr', RelatedSettlementInstruction3, False)
 
 	@property
 	def SplmtryData(self):
@@ -69,12 +69,12 @@ class BuyerProtectionInstructionV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=SecuritiesAccountIdentification1Choice, min=0, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContactIdentification1 import ContactIdentification1
-from ._MICIdentifier import MICIdentifier
-from ._PartyIdentification129Choice import PartyIdentification129Choice
+from . import ContactIdentification1
+from . import MICIdentifier
+from . import PartyIdentification129Choice
 
 class MeetingContactPerson3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class MeetingContactPerson3(base_types._BaseFieldType):
 
 	@CtctPrsn.setter
 	def CtctPrsn(self, value):
-		self._CtctPrsn = value if type(value) != base_types.auto else self.make_default("CtctPrsn")
+		self._CtctPrsn = value if value is not None else base_types.UninitialisedField(self, 'CtctPrsn', ContactIdentification1, False)
 
 	@CtctPrsn.deleter
 	def CtctPrsn(self):
 		del self._CtctPrsn
-		self._CtctPrsn = None
+		self._CtctPrsn = base_types.UninitialisedField(self, 'CtctPrsn', ContactIdentification1, False)
 
 	@property
 	def EmplngPty(self):
@@ -28,12 +28,12 @@ class MeetingContactPerson3(base_types._BaseFieldType):
 
 	@EmplngPty.setter
 	def EmplngPty(self, value):
-		self._EmplngPty = value if type(value) != base_types.auto else self.make_default("EmplngPty")
+		self._EmplngPty = value if value is not None else base_types.UninitialisedField(self, 'EmplngPty', PartyIdentification129Choice, False)
 
 	@EmplngPty.deleter
 	def EmplngPty(self):
 		del self._EmplngPty
-		self._EmplngPty = None
+		self._EmplngPty = base_types.UninitialisedField(self, 'EmplngPty', PartyIdentification129Choice, False)
 
 	@property
 	def PlcOfListg(self):
@@ -41,12 +41,12 @@ class MeetingContactPerson3(base_types._BaseFieldType):
 
 	@PlcOfListg.setter
 	def PlcOfListg(self, value):
-		self._PlcOfListg = value if type(value) != base_types.auto else self.make_default("PlcOfListg")
+		self._PlcOfListg = value if value is not None else base_types.UninitialisedField(self, 'PlcOfListg', MICIdentifier, False)
 
 	@PlcOfListg.deleter
 	def PlcOfListg(self):
 		del self._PlcOfListg
-		self._PlcOfListg = None
+		self._PlcOfListg = base_types.UninitialisedField(self, 'PlcOfListg', MICIdentifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtctPrsn', type=ContactIdentification1, min=0, max=1, mutex_group=None, array=False),

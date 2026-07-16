@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashPaymentStatus2Code import CashPaymentStatus2Code
-from ._FinalStatusCode import FinalStatusCode
-from ._PendingStatus4Code import PendingStatus4Code
+from . import CashPaymentStatus2Code
+from . import FinalStatusCode
+from . import PendingStatus4Code
 
 class PaymentStatusCodeSearch2Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PaymentStatusCodeSearch2Choice(base_types._BaseFieldType):
 
 	@FnlSts.setter
 	def FnlSts(self, value):
-		self._FnlSts = value if type(value) != base_types.auto else self.make_default("FnlSts")
+		self._FnlSts = value if value is not None else base_types.UninitialisedField(self, 'FnlSts', FinalStatusCode, False)
 
 	@FnlSts.deleter
 	def FnlSts(self):
 		del self._FnlSts
-		self._FnlSts = None
+		self._FnlSts = base_types.UninitialisedField(self, 'FnlSts', FinalStatusCode, False)
 
 	@property
 	def PdgAndFnlSts(self):
@@ -28,12 +28,12 @@ class PaymentStatusCodeSearch2Choice(base_types._BaseFieldType):
 
 	@PdgAndFnlSts.setter
 	def PdgAndFnlSts(self, value):
-		self._PdgAndFnlSts = value if type(value) != base_types.auto else self.make_default("PdgAndFnlSts")
+		self._PdgAndFnlSts = value if value is not None else base_types.UninitialisedField(self, 'PdgAndFnlSts', CashPaymentStatus2Code, False)
 
 	@PdgAndFnlSts.deleter
 	def PdgAndFnlSts(self):
 		del self._PdgAndFnlSts
-		self._PdgAndFnlSts = None
+		self._PdgAndFnlSts = base_types.UninitialisedField(self, 'PdgAndFnlSts', CashPaymentStatus2Code, False)
 
 	@property
 	def PdgSts(self):
@@ -41,12 +41,12 @@ class PaymentStatusCodeSearch2Choice(base_types._BaseFieldType):
 
 	@PdgSts.setter
 	def PdgSts(self, value):
-		self._PdgSts = value if type(value) != base_types.auto else self.make_default("PdgSts")
+		self._PdgSts = value if value is not None else base_types.UninitialisedField(self, 'PdgSts', PendingStatus4Code, False)
 
 	@PdgSts.deleter
 	def PdgSts(self):
 		del self._PdgSts
-		self._PdgSts = None
+		self._PdgSts = base_types.UninitialisedField(self, 'PdgSts', PendingStatus4Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FnlSts', type=FinalStatusCode, min=0, max=1, mutex_group=1, array=False),

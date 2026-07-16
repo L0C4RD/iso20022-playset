@@ -2,41 +2,41 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountBalance3 import AccountBalance3
-from ._AccountDetails4 import AccountDetails4
-from ._AccountStatementData3 import AccountStatementData3
-from ._AdditionalAmounts4 import AdditionalAmounts4
-from ._AdditionalData2 import AdditionalData2
-from ._AdditionalFee3 import AdditionalFee3
-from ._AdditionalService2 import AdditionalService2
-from ._CardData12 import CardData12
-from ._Cardholder22 import Cardholder22
-from ._ContentInformationType41 import ContentInformationType41
-from ._Context20 import Context20
-from ._DateTime2 import DateTime2
-from ._Header71 import Header71
-from ._ISO8583ResponseCode import ISO8583ResponseCode
-from ._Instalment6 import Instalment6
-from ._Jurisdiction2 import Jurisdiction2
-from ._Max10KHexBinaryText import Max10KHexBinaryText
-from ._PartyIdentification285 import PartyIdentification285
-from ._PartyIdentification286 import PartyIdentification286
-from ._ProcessingResult22 import ProcessingResult22
-from ._ProgrammeMode5 import ProgrammeMode5
-from ._ProtectedData2 import ProtectedData2
-from ._Reconciliation4 import Reconciliation4
-from ._RiskContext3 import RiskContext3
-from ._SettlementService6 import SettlementService6
-from ._SpecialProgrammeQualification2 import SpecialProgrammeQualification2
-from ._StrongCustomerAuthentication2 import StrongCustomerAuthentication2
-from ._SupplementaryData1 import SupplementaryData1
-from ._Terminal8 import Terminal8
-from ._Token2 import Token2
-from ._TransactionAmounts4 import TransactionAmounts4
-from ._TransactionCharacteristics2 import TransactionCharacteristics2
-from ._TransactionIdentification54 import TransactionIdentification54
-from ._Verification7 import Verification7
-from ._Wallet3 import Wallet3
+from . import AccountBalance3
+from . import AccountDetails4
+from . import AccountStatementData3
+from . import AdditionalAmounts4
+from . import AdditionalData2
+from . import AdditionalFee3
+from . import AdditionalService2
+from . import CardData12
+from . import Cardholder22
+from . import ContentInformationType41
+from . import Context20
+from . import DateTime2
+from . import Header71
+from . import ISO8583ResponseCode
+from . import Instalment6
+from . import Jurisdiction2
+from . import Max10KHexBinaryText
+from . import PartyIdentification285
+from . import PartyIdentification286
+from . import ProcessingResult22
+from . import ProgrammeMode5
+from . import ProtectedData2
+from . import Reconciliation4
+from . import RiskContext3
+from . import SettlementService6
+from . import SpecialProgrammeQualification2
+from . import StrongCustomerAuthentication2
+from . import SupplementaryData1
+from . import Terminal8
+from . import Token2
+from . import TransactionAmounts4
+from . import TransactionCharacteristics2
+from . import TransactionIdentification54
+from . import Verification7
+from . import Wallet3
 
 class InquiryResponseV03(base_types._BaseFieldType):
 
@@ -47,12 +47,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@Accptr.setter
 	def Accptr(self, value):
-		self._Accptr = value if type(value) != base_types.auto else self.make_default("Accptr")
+		self._Accptr = value if value is not None else base_types.UninitialisedField(self, 'Accptr', PartyIdentification285, False)
 
 	@Accptr.deleter
 	def Accptr(self):
 		del self._Accptr
-		self._Accptr = None
+		self._Accptr = base_types.UninitialisedField(self, 'Accptr', PartyIdentification285, False)
 
 	@property
 	def AcctBal(self):
@@ -60,12 +60,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@AcctBal.setter
 	def AcctBal(self, value):
-		self._AcctBal = value if type(value) != base_types.auto else self.make_default("AcctBal")
+		self._AcctBal = value if value is not None else base_types.UninitialisedField(self, 'AcctBal', AccountBalance3, True)
 
 	@AcctBal.deleter
 	def AcctBal(self):
 		del self._AcctBal
-		self._AcctBal = None
+		self._AcctBal = base_types.UninitialisedField(self, 'AcctBal', AccountBalance3, True)
 
 	@property
 	def AcctFr(self):
@@ -73,12 +73,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@AcctFr.setter
 	def AcctFr(self, value):
-		self._AcctFr = value if type(value) != base_types.auto else self.make_default("AcctFr")
+		self._AcctFr = value if value is not None else base_types.UninitialisedField(self, 'AcctFr', AccountDetails4, False)
 
 	@AcctFr.deleter
 	def AcctFr(self):
 		del self._AcctFr
-		self._AcctFr = None
+		self._AcctFr = base_types.UninitialisedField(self, 'AcctFr', AccountDetails4, False)
 
 	@property
 	def AcctStmtData(self):
@@ -86,12 +86,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@AcctStmtData.setter
 	def AcctStmtData(self, value):
-		self._AcctStmtData = value if type(value) != base_types.auto else self.make_default("AcctStmtData")
+		self._AcctStmtData = value if value is not None else base_types.UninitialisedField(self, 'AcctStmtData', AccountStatementData3, True)
 
 	@AcctStmtData.deleter
 	def AcctStmtData(self):
 		del self._AcctStmtData
-		self._AcctStmtData = None
+		self._AcctStmtData = base_types.UninitialisedField(self, 'AcctStmtData', AccountStatementData3, True)
 
 	@property
 	def Acqrr(self):
@@ -99,12 +99,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@Acqrr.setter
 	def Acqrr(self, value):
-		self._Acqrr = value if type(value) != base_types.auto else self.make_default("Acqrr")
+		self._Acqrr = value if value is not None else base_types.UninitialisedField(self, 'Acqrr', PartyIdentification286, False)
 
 	@Acqrr.deleter
 	def Acqrr(self):
 		del self._Acqrr
-		self._Acqrr = None
+		self._Acqrr = base_types.UninitialisedField(self, 'Acqrr', PartyIdentification286, False)
 
 	@property
 	def AddtlAmt(self):
@@ -112,12 +112,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@AddtlAmt.setter
 	def AddtlAmt(self, value):
-		self._AddtlAmt = value if type(value) != base_types.auto else self.make_default("AddtlAmt")
+		self._AddtlAmt = value if value is not None else base_types.UninitialisedField(self, 'AddtlAmt', AdditionalAmounts4, True)
 
 	@AddtlAmt.deleter
 	def AddtlAmt(self):
 		del self._AddtlAmt
-		self._AddtlAmt = None
+		self._AddtlAmt = base_types.UninitialisedField(self, 'AddtlAmt', AdditionalAmounts4, True)
 
 	@property
 	def AddtlData(self):
@@ -125,12 +125,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@AddtlData.setter
 	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+		self._AddtlData = value if value is not None else base_types.UninitialisedField(self, 'AddtlData', AdditionalData2, True)
 
 	@AddtlData.deleter
 	def AddtlData(self):
 		del self._AddtlData
-		self._AddtlData = None
+		self._AddtlData = base_types.UninitialisedField(self, 'AddtlData', AdditionalData2, True)
 
 	@property
 	def AddtlFee(self):
@@ -138,12 +138,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@AddtlFee.setter
 	def AddtlFee(self, value):
-		self._AddtlFee = value if type(value) != base_types.auto else self.make_default("AddtlFee")
+		self._AddtlFee = value if value is not None else base_types.UninitialisedField(self, 'AddtlFee', AdditionalFee3, True)
 
 	@AddtlFee.deleter
 	def AddtlFee(self):
 		del self._AddtlFee
-		self._AddtlFee = None
+		self._AddtlFee = base_types.UninitialisedField(self, 'AddtlFee', AdditionalFee3, True)
 
 	@property
 	def AddtlSvc(self):
@@ -151,12 +151,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@AddtlSvc.setter
 	def AddtlSvc(self, value):
-		self._AddtlSvc = value if type(value) != base_types.auto else self.make_default("AddtlSvc")
+		self._AddtlSvc = value if value is not None else base_types.UninitialisedField(self, 'AddtlSvc', AdditionalService2, True)
 
 	@AddtlSvc.deleter
 	def AddtlSvc(self):
 		del self._AddtlSvc
-		self._AddtlSvc = None
+		self._AddtlSvc = base_types.UninitialisedField(self, 'AddtlSvc', AdditionalService2, True)
 
 	@property
 	def Card(self):
@@ -164,12 +164,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@Card.setter
 	def Card(self, value):
-		self._Card = value if type(value) != base_types.auto else self.make_default("Card")
+		self._Card = value if value is not None else base_types.UninitialisedField(self, 'Card', CardData12, False)
 
 	@Card.deleter
 	def Card(self):
 		del self._Card
-		self._Card = None
+		self._Card = base_types.UninitialisedField(self, 'Card', CardData12, False)
 
 	@property
 	def CardPrgrmm(self):
@@ -177,12 +177,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@CardPrgrmm.setter
 	def CardPrgrmm(self, value):
-		self._CardPrgrmm = value if type(value) != base_types.auto else self.make_default("CardPrgrmm")
+		self._CardPrgrmm = value if value is not None else base_types.UninitialisedField(self, 'CardPrgrmm', ProgrammeMode5, True)
 
 	@CardPrgrmm.deleter
 	def CardPrgrmm(self):
 		del self._CardPrgrmm
-		self._CardPrgrmm = None
+		self._CardPrgrmm = base_types.UninitialisedField(self, 'CardPrgrmm', ProgrammeMode5, True)
 
 	@property
 	def Cntxt(self):
@@ -190,12 +190,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@Cntxt.setter
 	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != base_types.auto else self.make_default("Cntxt")
+		self._Cntxt = value if value is not None else base_types.UninitialisedField(self, 'Cntxt', Context20, False)
 
 	@Cntxt.deleter
 	def Cntxt(self):
 		del self._Cntxt
-		self._Cntxt = None
+		self._Cntxt = base_types.UninitialisedField(self, 'Cntxt', Context20, False)
 
 	@property
 	def ConvsDtTm(self):
@@ -203,12 +203,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@ConvsDtTm.setter
 	def ConvsDtTm(self, value):
-		self._ConvsDtTm = value if type(value) != base_types.auto else self.make_default("ConvsDtTm")
+		self._ConvsDtTm = value if value is not None else base_types.UninitialisedField(self, 'ConvsDtTm', DateTime2, False)
 
 	@ConvsDtTm.deleter
 	def ConvsDtTm(self):
 		del self._ConvsDtTm
-		self._ConvsDtTm = None
+		self._ConvsDtTm = base_types.UninitialisedField(self, 'ConvsDtTm', DateTime2, False)
 
 	@property
 	def Crdhldr(self):
@@ -216,12 +216,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@Crdhldr.setter
 	def Crdhldr(self, value):
-		self._Crdhldr = value if type(value) != base_types.auto else self.make_default("Crdhldr")
+		self._Crdhldr = value if value is not None else base_types.UninitialisedField(self, 'Crdhldr', Cardholder22, False)
 
 	@Crdhldr.deleter
 	def Crdhldr(self):
 		del self._Crdhldr
-		self._Crdhldr = None
+		self._Crdhldr = base_types.UninitialisedField(self, 'Crdhldr', Cardholder22, False)
 
 	@property
 	def Dstn(self):
@@ -229,12 +229,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@Dstn.setter
 	def Dstn(self, value):
-		self._Dstn = value if type(value) != base_types.auto else self.make_default("Dstn")
+		self._Dstn = value if value is not None else base_types.UninitialisedField(self, 'Dstn', PartyIdentification286, False)
 
 	@Dstn.deleter
 	def Dstn(self):
 		del self._Dstn
-		self._Dstn = None
+		self._Dstn = base_types.UninitialisedField(self, 'Dstn', PartyIdentification286, False)
 
 	@property
 	def Hdr(self):
@@ -242,12 +242,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header71, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header71, False)
 
 	@property
 	def ICCRltdData(self):
@@ -255,12 +255,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@ICCRltdData.setter
 	def ICCRltdData(self, value):
-		self._ICCRltdData = value if type(value) != base_types.auto else self.make_default("ICCRltdData")
+		self._ICCRltdData = value if value is not None else base_types.UninitialisedField(self, 'ICCRltdData', Max10KHexBinaryText, False)
 
 	@ICCRltdData.deleter
 	def ICCRltdData(self):
 		del self._ICCRltdData
-		self._ICCRltdData = None
+		self._ICCRltdData = base_types.UninitialisedField(self, 'ICCRltdData', Max10KHexBinaryText, False)
 
 	@property
 	def Instlmt(self):
@@ -268,12 +268,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@Instlmt.setter
 	def Instlmt(self, value):
-		self._Instlmt = value if type(value) != base_types.auto else self.make_default("Instlmt")
+		self._Instlmt = value if value is not None else base_types.UninitialisedField(self, 'Instlmt', Instalment6, False)
 
 	@Instlmt.deleter
 	def Instlmt(self):
 		del self._Instlmt
-		self._Instlmt = None
+		self._Instlmt = base_types.UninitialisedField(self, 'Instlmt', Instalment6, False)
 
 	@property
 	def Issr(self):
@@ -281,12 +281,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+		self._Issr = value if value is not None else base_types.UninitialisedField(self, 'Issr', PartyIdentification286, False)
 
 	@Issr.deleter
 	def Issr(self):
 		del self._Issr
-		self._Issr = None
+		self._Issr = base_types.UninitialisedField(self, 'Issr', PartyIdentification286, False)
 
 	@property
 	def Jursdctn(self):
@@ -294,12 +294,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@Jursdctn.setter
 	def Jursdctn(self, value):
-		self._Jursdctn = value if type(value) != base_types.auto else self.make_default("Jursdctn")
+		self._Jursdctn = value if value is not None else base_types.UninitialisedField(self, 'Jursdctn', Jurisdiction2, False)
 
 	@Jursdctn.deleter
 	def Jursdctn(self):
 		del self._Jursdctn
-		self._Jursdctn = None
+		self._Jursdctn = base_types.UninitialisedField(self, 'Jursdctn', Jurisdiction2, False)
 
 	@property
 	def OrgnlRspnCd(self):
@@ -307,12 +307,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@OrgnlRspnCd.setter
 	def OrgnlRspnCd(self, value):
-		self._OrgnlRspnCd = value if type(value) != base_types.auto else self.make_default("OrgnlRspnCd")
+		self._OrgnlRspnCd = value if value is not None else base_types.UninitialisedField(self, 'OrgnlRspnCd', ISO8583ResponseCode, False)
 
 	@OrgnlRspnCd.deleter
 	def OrgnlRspnCd(self):
 		del self._OrgnlRspnCd
-		self._OrgnlRspnCd = None
+		self._OrgnlRspnCd = base_types.UninitialisedField(self, 'OrgnlRspnCd', ISO8583ResponseCode, False)
 
 	@property
 	def Orgtr(self):
@@ -320,12 +320,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@Orgtr.setter
 	def Orgtr(self, value):
-		self._Orgtr = value if type(value) != base_types.auto else self.make_default("Orgtr")
+		self._Orgtr = value if value is not None else base_types.UninitialisedField(self, 'Orgtr', PartyIdentification286, False)
 
 	@Orgtr.deleter
 	def Orgtr(self):
 		del self._Orgtr
-		self._Orgtr = None
+		self._Orgtr = base_types.UninitialisedField(self, 'Orgtr', PartyIdentification286, False)
 
 	@property
 	def PrcgRslt(self):
@@ -333,12 +333,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@PrcgRslt.setter
 	def PrcgRslt(self, value):
-		self._PrcgRslt = value if type(value) != base_types.auto else self.make_default("PrcgRslt")
+		self._PrcgRslt = value if value is not None else base_types.UninitialisedField(self, 'PrcgRslt', ProcessingResult22, False)
 
 	@PrcgRslt.deleter
 	def PrcgRslt(self):
 		del self._PrcgRslt
-		self._PrcgRslt = None
+		self._PrcgRslt = base_types.UninitialisedField(self, 'PrcgRslt', ProcessingResult22, False)
 
 	@property
 	def PrtctdData(self):
@@ -346,12 +346,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@PrtctdData.setter
 	def PrtctdData(self, value):
-		self._PrtctdData = value if type(value) != base_types.auto else self.make_default("PrtctdData")
+		self._PrtctdData = value if value is not None else base_types.UninitialisedField(self, 'PrtctdData', ProtectedData2, True)
 
 	@PrtctdData.deleter
 	def PrtctdData(self):
 		del self._PrtctdData
-		self._PrtctdData = None
+		self._PrtctdData = base_types.UninitialisedField(self, 'PrtctdData', ProtectedData2, True)
 
 	@property
 	def Rcncltn(self):
@@ -359,12 +359,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@Rcncltn.setter
 	def Rcncltn(self, value):
-		self._Rcncltn = value if type(value) != base_types.auto else self.make_default("Rcncltn")
+		self._Rcncltn = value if value is not None else base_types.UninitialisedField(self, 'Rcncltn', Reconciliation4, False)
 
 	@Rcncltn.deleter
 	def Rcncltn(self):
 		del self._Rcncltn
-		self._Rcncltn = None
+		self._Rcncltn = base_types.UninitialisedField(self, 'Rcncltn', Reconciliation4, False)
 
 	@property
 	def Rcvr(self):
@@ -372,12 +372,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@Rcvr.setter
 	def Rcvr(self, value):
-		self._Rcvr = value if type(value) != base_types.auto else self.make_default("Rcvr")
+		self._Rcvr = value if value is not None else base_types.UninitialisedField(self, 'Rcvr', PartyIdentification286, False)
 
 	@Rcvr.deleter
 	def Rcvr(self):
 		del self._Rcvr
-		self._Rcvr = None
+		self._Rcvr = base_types.UninitialisedField(self, 'Rcvr', PartyIdentification286, False)
 
 	@property
 	def Rsk(self):
@@ -385,12 +385,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@Rsk.setter
 	def Rsk(self, value):
-		self._Rsk = value if type(value) != base_types.auto else self.make_default("Rsk")
+		self._Rsk = value if value is not None else base_types.UninitialisedField(self, 'Rsk', RiskContext3, True)
 
 	@Rsk.deleter
 	def Rsk(self):
 		del self._Rsk
-		self._Rsk = None
+		self._Rsk = base_types.UninitialisedField(self, 'Rsk', RiskContext3, True)
 
 	@property
 	def SctyTrlr(self):
@@ -398,12 +398,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType41, False)
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
 		del self._SctyTrlr
-		self._SctyTrlr = None
+		self._SctyTrlr = base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType41, False)
 
 	@property
 	def Sndr(self):
@@ -411,12 +411,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@Sndr.setter
 	def Sndr(self, value):
-		self._Sndr = value if type(value) != base_types.auto else self.make_default("Sndr")
+		self._Sndr = value if value is not None else base_types.UninitialisedField(self, 'Sndr', PartyIdentification286, False)
 
 	@Sndr.deleter
 	def Sndr(self):
 		del self._Sndr
-		self._Sndr = None
+		self._Sndr = base_types.UninitialisedField(self, 'Sndr', PartyIdentification286, False)
 
 	@property
 	def SpclPrgrmmQlfctn(self):
@@ -424,12 +424,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@SpclPrgrmmQlfctn.setter
 	def SpclPrgrmmQlfctn(self, value):
-		self._SpclPrgrmmQlfctn = value if type(value) != base_types.auto else self.make_default("SpclPrgrmmQlfctn")
+		self._SpclPrgrmmQlfctn = value if value is not None else base_types.UninitialisedField(self, 'SpclPrgrmmQlfctn', SpecialProgrammeQualification2, True)
 
 	@SpclPrgrmmQlfctn.deleter
 	def SpclPrgrmmQlfctn(self):
 		del self._SpclPrgrmmQlfctn
-		self._SpclPrgrmmQlfctn = None
+		self._SpclPrgrmmQlfctn = base_types.UninitialisedField(self, 'SpclPrgrmmQlfctn', SpecialProgrammeQualification2, True)
 
 	@property
 	def SplmtryData(self):
@@ -437,12 +437,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def StrngCstmrAuthntcn(self):
@@ -450,12 +450,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@StrngCstmrAuthntcn.setter
 	def StrngCstmrAuthntcn(self, value):
-		self._StrngCstmrAuthntcn = value if type(value) != base_types.auto else self.make_default("StrngCstmrAuthntcn")
+		self._StrngCstmrAuthntcn = value if value is not None else base_types.UninitialisedField(self, 'StrngCstmrAuthntcn', StrongCustomerAuthentication2, False)
 
 	@StrngCstmrAuthntcn.deleter
 	def StrngCstmrAuthntcn(self):
 		del self._StrngCstmrAuthntcn
-		self._StrngCstmrAuthntcn = None
+		self._StrngCstmrAuthntcn = base_types.UninitialisedField(self, 'StrngCstmrAuthntcn', StrongCustomerAuthentication2, False)
 
 	@property
 	def SttlmSvc(self):
@@ -463,12 +463,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@SttlmSvc.setter
 	def SttlmSvc(self, value):
-		self._SttlmSvc = value if type(value) != base_types.auto else self.make_default("SttlmSvc")
+		self._SttlmSvc = value if value is not None else base_types.UninitialisedField(self, 'SttlmSvc', SettlementService6, False)
 
 	@SttlmSvc.deleter
 	def SttlmSvc(self):
 		del self._SttlmSvc
-		self._SttlmSvc = None
+		self._SttlmSvc = base_types.UninitialisedField(self, 'SttlmSvc', SettlementService6, False)
 
 	@property
 	def Termnl(self):
@@ -476,12 +476,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@Termnl.setter
 	def Termnl(self, value):
-		self._Termnl = value if type(value) != base_types.auto else self.make_default("Termnl")
+		self._Termnl = value if value is not None else base_types.UninitialisedField(self, 'Termnl', Terminal8, False)
 
 	@Termnl.deleter
 	def Termnl(self):
 		del self._Termnl
-		self._Termnl = None
+		self._Termnl = base_types.UninitialisedField(self, 'Termnl', Terminal8, False)
 
 	@property
 	def Tkn(self):
@@ -489,12 +489,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@Tkn.setter
 	def Tkn(self, value):
-		self._Tkn = value if type(value) != base_types.auto else self.make_default("Tkn")
+		self._Tkn = value if value is not None else base_types.UninitialisedField(self, 'Tkn', Token2, False)
 
 	@Tkn.deleter
 	def Tkn(self):
 		del self._Tkn
-		self._Tkn = None
+		self._Tkn = base_types.UninitialisedField(self, 'Tkn', Token2, False)
 
 	@property
 	def TxAmts(self):
@@ -502,12 +502,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@TxAmts.setter
 	def TxAmts(self, value):
-		self._TxAmts = value if type(value) != base_types.auto else self.make_default("TxAmts")
+		self._TxAmts = value if value is not None else base_types.UninitialisedField(self, 'TxAmts', TransactionAmounts4, False)
 
 	@TxAmts.deleter
 	def TxAmts(self):
 		del self._TxAmts
-		self._TxAmts = None
+		self._TxAmts = base_types.UninitialisedField(self, 'TxAmts', TransactionAmounts4, False)
 
 	@property
 	def TxChrtcs(self):
@@ -515,12 +515,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@TxChrtcs.setter
 	def TxChrtcs(self, value):
-		self._TxChrtcs = value if type(value) != base_types.auto else self.make_default("TxChrtcs")
+		self._TxChrtcs = value if value is not None else base_types.UninitialisedField(self, 'TxChrtcs', TransactionCharacteristics2, False)
 
 	@TxChrtcs.deleter
 	def TxChrtcs(self):
 		del self._TxChrtcs
-		self._TxChrtcs = None
+		self._TxChrtcs = base_types.UninitialisedField(self, 'TxChrtcs', TransactionCharacteristics2, False)
 
 	@property
 	def TxId(self):
@@ -528,12 +528,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', TransactionIdentification54, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', TransactionIdentification54, False)
 
 	@property
 	def Vrfctn(self):
@@ -541,12 +541,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@Vrfctn.setter
 	def Vrfctn(self, value):
-		self._Vrfctn = value if type(value) != base_types.auto else self.make_default("Vrfctn")
+		self._Vrfctn = value if value is not None else base_types.UninitialisedField(self, 'Vrfctn', Verification7, True)
 
 	@Vrfctn.deleter
 	def Vrfctn(self):
 		del self._Vrfctn
-		self._Vrfctn = None
+		self._Vrfctn = base_types.UninitialisedField(self, 'Vrfctn', Verification7, True)
 
 	@property
 	def Wllt(self):
@@ -554,12 +554,12 @@ class InquiryResponseV03(base_types._BaseFieldType):
 
 	@Wllt.setter
 	def Wllt(self, value):
-		self._Wllt = value if type(value) != base_types.auto else self.make_default("Wllt")
+		self._Wllt = value if value is not None else base_types.UninitialisedField(self, 'Wllt', Wallet3, False)
 
 	@Wllt.deleter
 	def Wllt(self):
 		del self._Wllt
-		self._Wllt = None
+		self._Wllt = base_types.UninitialisedField(self, 'Wllt', Wallet3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Accptr', type=PartyIdentification285, min=0, max=1, mutex_group=None, array=False),

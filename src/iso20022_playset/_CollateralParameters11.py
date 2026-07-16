@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CollateralRole1Code import CollateralRole1Code
-from ._CollateralTransactionType1Choice import CollateralTransactionType1Choice
-from ._ExposureType23Choice import ExposureType23Choice
-from ._GenericIdentification1 import GenericIdentification1
-from ._GenericIdentification30 import GenericIdentification30
-from ._RateOrType1Choice import RateOrType1Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import CollateralRole1Code
+from . import CollateralTransactionType1Choice
+from . import ExposureType23Choice
+from . import GenericIdentification1
+from . import GenericIdentification30
+from . import RateOrType1Choice
+from . import YesNoIndicator
 
 class CollateralParameters11(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class CollateralParameters11(base_types._BaseFieldType):
 
 	@CollInstrTp.setter
 	def CollInstrTp(self, value):
-		self._CollInstrTp = value if type(value) != base_types.auto else self.make_default("CollInstrTp")
+		self._CollInstrTp = value if value is not None else base_types.UninitialisedField(self, 'CollInstrTp', CollateralTransactionType1Choice, False)
 
 	@CollInstrTp.deleter
 	def CollInstrTp(self):
 		del self._CollInstrTp
-		self._CollInstrTp = None
+		self._CollInstrTp = base_types.UninitialisedField(self, 'CollInstrTp', CollateralTransactionType1Choice, False)
 
 	@property
 	def CollSd(self):
@@ -32,12 +32,12 @@ class CollateralParameters11(base_types._BaseFieldType):
 
 	@CollSd.setter
 	def CollSd(self, value):
-		self._CollSd = value if type(value) != base_types.auto else self.make_default("CollSd")
+		self._CollSd = value if value is not None else base_types.UninitialisedField(self, 'CollSd', CollateralRole1Code, False)
 
 	@CollSd.deleter
 	def CollSd(self):
 		del self._CollSd
-		self._CollSd = None
+		self._CollSd = base_types.UninitialisedField(self, 'CollSd', CollateralRole1Code, False)
 
 	@property
 	def ElgbltySetPrfl(self):
@@ -45,12 +45,12 @@ class CollateralParameters11(base_types._BaseFieldType):
 
 	@ElgbltySetPrfl.setter
 	def ElgbltySetPrfl(self, value):
-		self._ElgbltySetPrfl = value if type(value) != base_types.auto else self.make_default("ElgbltySetPrfl")
+		self._ElgbltySetPrfl = value if value is not None else base_types.UninitialisedField(self, 'ElgbltySetPrfl', GenericIdentification1, False)
 
 	@ElgbltySetPrfl.deleter
 	def ElgbltySetPrfl(self):
 		del self._ElgbltySetPrfl
-		self._ElgbltySetPrfl = None
+		self._ElgbltySetPrfl = base_types.UninitialisedField(self, 'ElgbltySetPrfl', GenericIdentification1, False)
 
 	@property
 	def SttlmPrc(self):
@@ -58,12 +58,12 @@ class CollateralParameters11(base_types._BaseFieldType):
 
 	@SttlmPrc.setter
 	def SttlmPrc(self, value):
-		self._SttlmPrc = value if type(value) != base_types.auto else self.make_default("SttlmPrc")
+		self._SttlmPrc = value if value is not None else base_types.UninitialisedField(self, 'SttlmPrc', GenericIdentification30, False)
 
 	@SttlmPrc.deleter
 	def SttlmPrc(self):
 		del self._SttlmPrc
-		self._SttlmPrc = None
+		self._SttlmPrc = base_types.UninitialisedField(self, 'SttlmPrc', GenericIdentification30, False)
 
 	@property
 	def TrfTitl(self):
@@ -71,12 +71,12 @@ class CollateralParameters11(base_types._BaseFieldType):
 
 	@TrfTitl.setter
 	def TrfTitl(self, value):
-		self._TrfTitl = value if type(value) != base_types.auto else self.make_default("TrfTitl")
+		self._TrfTitl = value if value is not None else base_types.UninitialisedField(self, 'TrfTitl', YesNoIndicator, False)
 
 	@TrfTitl.deleter
 	def TrfTitl(self):
 		del self._TrfTitl
-		self._TrfTitl = None
+		self._TrfTitl = base_types.UninitialisedField(self, 'TrfTitl', YesNoIndicator, False)
 
 	@property
 	def ValSghtMrgnRate(self):
@@ -84,12 +84,12 @@ class CollateralParameters11(base_types._BaseFieldType):
 
 	@ValSghtMrgnRate.setter
 	def ValSghtMrgnRate(self, value):
-		self._ValSghtMrgnRate = value if type(value) != base_types.auto else self.make_default("ValSghtMrgnRate")
+		self._ValSghtMrgnRate = value if value is not None else base_types.UninitialisedField(self, 'ValSghtMrgnRate', RateOrType1Choice, False)
 
 	@ValSghtMrgnRate.deleter
 	def ValSghtMrgnRate(self):
 		del self._ValSghtMrgnRate
-		self._ValSghtMrgnRate = None
+		self._ValSghtMrgnRate = base_types.UninitialisedField(self, 'ValSghtMrgnRate', RateOrType1Choice, False)
 
 	@property
 	def XpsrTp(self):
@@ -97,12 +97,12 @@ class CollateralParameters11(base_types._BaseFieldType):
 
 	@XpsrTp.setter
 	def XpsrTp(self, value):
-		self._XpsrTp = value if type(value) != base_types.auto else self.make_default("XpsrTp")
+		self._XpsrTp = value if value is not None else base_types.UninitialisedField(self, 'XpsrTp', ExposureType23Choice, False)
 
 	@XpsrTp.deleter
 	def XpsrTp(self):
 		del self._XpsrTp
-		self._XpsrTp = None
+		self._XpsrTp = base_types.UninitialisedField(self, 'XpsrTp', ExposureType23Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollInstrTp', type=CollateralTransactionType1Choice, min=1, max=1, mutex_group=None, array=False),

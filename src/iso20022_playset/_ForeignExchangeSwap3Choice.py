@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ForeignExchangeSwapTransaction3 import ForeignExchangeSwapTransaction3
-from ._ReportPeriodActivity3Code import ReportPeriodActivity3Code
+from . import ForeignExchangeSwapTransaction3
+from . import ReportPeriodActivity3Code
 
 class ForeignExchangeSwap3Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ForeignExchangeSwap3Choice(base_types._BaseFieldType):
 
 	@DataSetActn.setter
 	def DataSetActn(self, value):
-		self._DataSetActn = value if type(value) != base_types.auto else self.make_default("DataSetActn")
+		self._DataSetActn = value if value is not None else base_types.UninitialisedField(self, 'DataSetActn', ReportPeriodActivity3Code, False)
 
 	@DataSetActn.deleter
 	def DataSetActn(self):
 		del self._DataSetActn
-		self._DataSetActn = None
+		self._DataSetActn = base_types.UninitialisedField(self, 'DataSetActn', ReportPeriodActivity3Code, False)
 
 	@property
 	def Tx(self):
@@ -27,12 +27,12 @@ class ForeignExchangeSwap3Choice(base_types._BaseFieldType):
 
 	@Tx.setter
 	def Tx(self, value):
-		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
+		self._Tx = value if value is not None else base_types.UninitialisedField(self, 'Tx', ForeignExchangeSwapTransaction3, True)
 
 	@Tx.deleter
 	def Tx(self):
 		del self._Tx
-		self._Tx = None
+		self._Tx = base_types.UninitialisedField(self, 'Tx', ForeignExchangeSwapTransaction3, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DataSetActn', type=ReportPeriodActivity3Code, min=0, max=1, mutex_group=1, array=False),

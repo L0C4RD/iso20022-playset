@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MarketClaimCreationV04 import MarketClaimCreationV04
+from . import MarketClaimCreationV04
 
 class SEEV_050_001_04():
 
@@ -18,12 +18,12 @@ class SEEV_050_001_04():
 
 		@MktClmCre.setter
 		def MktClmCre(self, value):
-			self._MktClmCre = value if type(value) != base_types.auto else self.make_default("MktClmCre")
+			self._MktClmCre = value if value is not None else base_types.UninitialisedField(self, 'MktClmCre', MarketClaimCreationV04, False)
 
 		@MktClmCre.deleter
 		def MktClmCre(self):
 			del self._MktClmCre
-			self._MktClmCre = None
+			self._MktClmCre = base_types.UninitialisedField(self, 'MktClmCre', MarketClaimCreationV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='MktClmCre', type=MarketClaimCreationV04, min=1, max=1, mutex_group=None, array=False),

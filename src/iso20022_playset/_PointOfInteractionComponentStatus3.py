@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._Max256Text import Max256Text
-from ._POIComponentStatus1Code import POIComponentStatus1Code
+from . import ISODate
+from . import Max256Text
+from . import POIComponentStatus1Code
 
 class PointOfInteractionComponentStatus3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PointOfInteractionComponentStatus3(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', POIComponentStatus1Code, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', POIComponentStatus1Code, False)
 
 	@property
 	def VrsnNb(self):
@@ -28,12 +28,12 @@ class PointOfInteractionComponentStatus3(base_types._BaseFieldType):
 
 	@VrsnNb.setter
 	def VrsnNb(self, value):
-		self._VrsnNb = value if type(value) != base_types.auto else self.make_default("VrsnNb")
+		self._VrsnNb = value if value is not None else base_types.UninitialisedField(self, 'VrsnNb', Max256Text, False)
 
 	@VrsnNb.deleter
 	def VrsnNb(self):
 		del self._VrsnNb
-		self._VrsnNb = None
+		self._VrsnNb = base_types.UninitialisedField(self, 'VrsnNb', Max256Text, False)
 
 	@property
 	def XpryDt(self):
@@ -41,12 +41,12 @@ class PointOfInteractionComponentStatus3(base_types._BaseFieldType):
 
 	@XpryDt.setter
 	def XpryDt(self, value):
-		self._XpryDt = value if type(value) != base_types.auto else self.make_default("XpryDt")
+		self._XpryDt = value if value is not None else base_types.UninitialisedField(self, 'XpryDt', ISODate, False)
 
 	@XpryDt.deleter
 	def XpryDt(self):
 		del self._XpryDt
-		self._XpryDt = None
+		self._XpryDt = base_types.UninitialisedField(self, 'XpryDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Sts', type=POIComponentStatus1Code, min=0, max=1, mutex_group=None, array=False),

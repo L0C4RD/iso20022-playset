@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalReference10 import AdditionalReference10
-from ._Max35Text import Max35Text
-from ._PartyIdentification139 import PartyIdentification139
-from ._Status31Choice import Status31Choice
+from . import AdditionalReference10
+from . import Max35Text
+from . import PartyIdentification139
+from . import Status31Choice
 
 class CancellationStatusAndReason5(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CancellationStatusAndReason5(base_types._BaseFieldType):
 
 	@ClntRef.setter
 	def ClntRef(self, value):
-		self._ClntRef = value if type(value) != base_types.auto else self.make_default("ClntRef")
+		self._ClntRef = value if value is not None else base_types.UninitialisedField(self, 'ClntRef', AdditionalReference10, False)
 
 	@ClntRef.deleter
 	def ClntRef(self):
 		del self._ClntRef
-		self._ClntRef = None
+		self._ClntRef = base_types.UninitialisedField(self, 'ClntRef', AdditionalReference10, False)
 
 	@property
 	def CxlRef(self):
@@ -29,12 +29,12 @@ class CancellationStatusAndReason5(base_types._BaseFieldType):
 
 	@CxlRef.setter
 	def CxlRef(self, value):
-		self._CxlRef = value if type(value) != base_types.auto else self.make_default("CxlRef")
+		self._CxlRef = value if value is not None else base_types.UninitialisedField(self, 'CxlRef', Max35Text, False)
 
 	@CxlRef.deleter
 	def CxlRef(self):
 		del self._CxlRef
-		self._CxlRef = None
+		self._CxlRef = base_types.UninitialisedField(self, 'CxlRef', Max35Text, False)
 
 	@property
 	def MstrRef(self):
@@ -42,12 +42,12 @@ class CancellationStatusAndReason5(base_types._BaseFieldType):
 
 	@MstrRef.setter
 	def MstrRef(self, value):
-		self._MstrRef = value if type(value) != base_types.auto else self.make_default("MstrRef")
+		self._MstrRef = value if value is not None else base_types.UninitialisedField(self, 'MstrRef', Max35Text, False)
 
 	@MstrRef.deleter
 	def MstrRef(self):
 		del self._MstrRef
-		self._MstrRef = None
+		self._MstrRef = base_types.UninitialisedField(self, 'MstrRef', Max35Text, False)
 
 	@property
 	def Sts(self):
@@ -55,12 +55,12 @@ class CancellationStatusAndReason5(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', Status31Choice, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', Status31Choice, False)
 
 	@property
 	def StsInitr(self):
@@ -68,12 +68,12 @@ class CancellationStatusAndReason5(base_types._BaseFieldType):
 
 	@StsInitr.setter
 	def StsInitr(self, value):
-		self._StsInitr = value if type(value) != base_types.auto else self.make_default("StsInitr")
+		self._StsInitr = value if value is not None else base_types.UninitialisedField(self, 'StsInitr', PartyIdentification139, False)
 
 	@StsInitr.deleter
 	def StsInitr(self):
 		del self._StsInitr
-		self._StsInitr = None
+		self._StsInitr = base_types.UninitialisedField(self, 'StsInitr', PartyIdentification139, False)
 
 	@property
 	def TrfRef(self):
@@ -81,12 +81,12 @@ class CancellationStatusAndReason5(base_types._BaseFieldType):
 
 	@TrfRef.setter
 	def TrfRef(self, value):
-		self._TrfRef = value if type(value) != base_types.auto else self.make_default("TrfRef")
+		self._TrfRef = value if value is not None else base_types.UninitialisedField(self, 'TrfRef', Max35Text, False)
 
 	@TrfRef.deleter
 	def TrfRef(self):
 		del self._TrfRef
-		self._TrfRef = None
+		self._TrfRef = base_types.UninitialisedField(self, 'TrfRef', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClntRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InvestigationLocationData1 import InvestigationLocationData1
-from ._Max35Text import Max35Text
+from . import InvestigationLocationData1
+from . import Max35Text
 
 class RelatedInvestigationData1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class RelatedInvestigationData1(base_types._BaseFieldType):
 
 	@InvstgtnId.setter
 	def InvstgtnId(self, value):
-		self._InvstgtnId = value if type(value) != base_types.auto else self.make_default("InvstgtnId")
+		self._InvstgtnId = value if value is not None else base_types.UninitialisedField(self, 'InvstgtnId', Max35Text, False)
 
 	@InvstgtnId.deleter
 	def InvstgtnId(self):
 		del self._InvstgtnId
-		self._InvstgtnId = None
+		self._InvstgtnId = base_types.UninitialisedField(self, 'InvstgtnId', Max35Text, False)
 
 	@property
 	def Lctn(self):
@@ -27,12 +27,12 @@ class RelatedInvestigationData1(base_types._BaseFieldType):
 
 	@Lctn.setter
 	def Lctn(self, value):
-		self._Lctn = value if type(value) != base_types.auto else self.make_default("Lctn")
+		self._Lctn = value if value is not None else base_types.UninitialisedField(self, 'Lctn', InvestigationLocationData1, True)
 
 	@Lctn.deleter
 	def Lctn(self):
 		del self._Lctn
-		self._Lctn = None
+		self._Lctn = base_types.UninitialisedField(self, 'Lctn', InvestigationLocationData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InvstgtnId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCode import CountryCode
-from ._Max350Text import Max350Text
+from . import CountryCode
+from . import Max350Text
 
 class RegulatoryStipulations1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class RegulatoryStipulations1(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@property
 	def Stiptns(self):
@@ -27,12 +27,12 @@ class RegulatoryStipulations1(base_types._BaseFieldType):
 
 	@Stiptns.setter
 	def Stiptns(self, value):
-		self._Stiptns = value if type(value) != base_types.auto else self.make_default("Stiptns")
+		self._Stiptns = value if value is not None else base_types.UninitialisedField(self, 'Stiptns', Max350Text, True)
 
 	@Stiptns.deleter
 	def Stiptns(self):
 		del self._Stiptns
-		self._Stiptns = None
+		self._Stiptns = base_types.UninitialisedField(self, 'Stiptns', Max350Text, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ctry', type=CountryCode, min=1, max=1, mutex_group=None, array=False),

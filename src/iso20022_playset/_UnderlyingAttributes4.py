@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Max35Text import Max35Text
-from ._PercentageRate import PercentageRate
-from ._Price8 import Price8
-from ._SettlementType3Choice import SettlementType3Choice
-from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
+from . import ActiveCurrencyAndAmount
+from . import Max35Text
+from . import PercentageRate
+from . import Price8
+from . import SettlementType3Choice
+from . import UnitOrFaceAmount1Choice
 
 class UnderlyingAttributes4(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class UnderlyingAttributes4(base_types._BaseFieldType):
 
 	@AdjstdQty.setter
 	def AdjstdQty(self, value):
-		self._AdjstdQty = value if type(value) != base_types.auto else self.make_default("AdjstdQty")
+		self._AdjstdQty = value if value is not None else base_types.UninitialisedField(self, 'AdjstdQty', UnitOrFaceAmount1Choice, False)
 
 	@AdjstdQty.deleter
 	def AdjstdQty(self):
 		del self._AdjstdQty
-		self._AdjstdQty = None
+		self._AdjstdQty = base_types.UninitialisedField(self, 'AdjstdQty', UnitOrFaceAmount1Choice, False)
 
 	@property
 	def AllcnPctg(self):
@@ -31,12 +31,12 @@ class UnderlyingAttributes4(base_types._BaseFieldType):
 
 	@AllcnPctg.setter
 	def AllcnPctg(self, value):
-		self._AllcnPctg = value if type(value) != base_types.auto else self.make_default("AllcnPctg")
+		self._AllcnPctg = value if value is not None else base_types.UninitialisedField(self, 'AllcnPctg', PercentageRate, False)
 
 	@AllcnPctg.deleter
 	def AllcnPctg(self):
 		del self._AllcnPctg
-		self._AllcnPctg = None
+		self._AllcnPctg = base_types.UninitialisedField(self, 'AllcnPctg', PercentageRate, False)
 
 	@property
 	def CapVal(self):
@@ -44,12 +44,12 @@ class UnderlyingAttributes4(base_types._BaseFieldType):
 
 	@CapVal.setter
 	def CapVal(self, value):
-		self._CapVal = value if type(value) != base_types.auto else self.make_default("CapVal")
+		self._CapVal = value if value is not None else base_types.UninitialisedField(self, 'CapVal', ActiveCurrencyAndAmount, False)
 
 	@CapVal.deleter
 	def CapVal(self):
 		del self._CapVal
-		self._CapVal = None
+		self._CapVal = base_types.UninitialisedField(self, 'CapVal', ActiveCurrencyAndAmount, False)
 
 	@property
 	def CshAmt(self):
@@ -57,12 +57,12 @@ class UnderlyingAttributes4(base_types._BaseFieldType):
 
 	@CshAmt.setter
 	def CshAmt(self, value):
-		self._CshAmt = value if type(value) != base_types.auto else self.make_default("CshAmt")
+		self._CshAmt = value if value is not None else base_types.UninitialisedField(self, 'CshAmt', ActiveCurrencyAndAmount, False)
 
 	@CshAmt.deleter
 	def CshAmt(self):
 		del self._CshAmt
-		self._CshAmt = None
+		self._CshAmt = base_types.UninitialisedField(self, 'CshAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def CshTp(self):
@@ -70,12 +70,12 @@ class UnderlyingAttributes4(base_types._BaseFieldType):
 
 	@CshTp.setter
 	def CshTp(self, value):
-		self._CshTp = value if type(value) != base_types.auto else self.make_default("CshTp")
+		self._CshTp = value if value is not None else base_types.UninitialisedField(self, 'CshTp', Max35Text, False)
 
 	@CshTp.deleter
 	def CshTp(self):
 		del self._CshTp
-		self._CshTp = None
+		self._CshTp = base_types.UninitialisedField(self, 'CshTp', Max35Text, False)
 
 	@property
 	def CurVal(self):
@@ -83,12 +83,12 @@ class UnderlyingAttributes4(base_types._BaseFieldType):
 
 	@CurVal.setter
 	def CurVal(self, value):
-		self._CurVal = value if type(value) != base_types.auto else self.make_default("CurVal")
+		self._CurVal = value if value is not None else base_types.UninitialisedField(self, 'CurVal', ActiveCurrencyAndAmount, False)
 
 	@CurVal.deleter
 	def CurVal(self):
 		del self._CurVal
-		self._CurVal = None
+		self._CurVal = base_types.UninitialisedField(self, 'CurVal', ActiveCurrencyAndAmount, False)
 
 	@property
 	def DrtyPric(self):
@@ -96,12 +96,12 @@ class UnderlyingAttributes4(base_types._BaseFieldType):
 
 	@DrtyPric.setter
 	def DrtyPric(self, value):
-		self._DrtyPric = value if type(value) != base_types.auto else self.make_default("DrtyPric")
+		self._DrtyPric = value if value is not None else base_types.UninitialisedField(self, 'DrtyPric', Price8, False)
 
 	@DrtyPric.deleter
 	def DrtyPric(self):
 		del self._DrtyPric
-		self._DrtyPric = None
+		self._DrtyPric = base_types.UninitialisedField(self, 'DrtyPric', Price8, False)
 
 	@property
 	def EndPric(self):
@@ -109,12 +109,12 @@ class UnderlyingAttributes4(base_types._BaseFieldType):
 
 	@EndPric.setter
 	def EndPric(self, value):
-		self._EndPric = value if type(value) != base_types.auto else self.make_default("EndPric")
+		self._EndPric = value if value is not None else base_types.UninitialisedField(self, 'EndPric', Price8, False)
 
 	@EndPric.deleter
 	def EndPric(self):
 		del self._EndPric
-		self._EndPric = None
+		self._EndPric = base_types.UninitialisedField(self, 'EndPric', Price8, False)
 
 	@property
 	def EndVal(self):
@@ -122,12 +122,12 @@ class UnderlyingAttributes4(base_types._BaseFieldType):
 
 	@EndVal.setter
 	def EndVal(self, value):
-		self._EndVal = value if type(value) != base_types.auto else self.make_default("EndVal")
+		self._EndVal = value if value is not None else base_types.UninitialisedField(self, 'EndVal', ActiveCurrencyAndAmount, False)
 
 	@EndVal.deleter
 	def EndVal(self):
 		del self._EndVal
-		self._EndVal = None
+		self._EndVal = base_types.UninitialisedField(self, 'EndVal', ActiveCurrencyAndAmount, False)
 
 	@property
 	def Pric(self):
@@ -135,12 +135,12 @@ class UnderlyingAttributes4(base_types._BaseFieldType):
 
 	@Pric.setter
 	def Pric(self, value):
-		self._Pric = value if type(value) != base_types.auto else self.make_default("Pric")
+		self._Pric = value if value is not None else base_types.UninitialisedField(self, 'Pric', Price8, False)
 
 	@Pric.deleter
 	def Pric(self):
 		del self._Pric
-		self._Pric = None
+		self._Pric = base_types.UninitialisedField(self, 'Pric', Price8, False)
 
 	@property
 	def Qty(self):
@@ -148,12 +148,12 @@ class UnderlyingAttributes4(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+		self._Qty = value if value is not None else base_types.UninitialisedField(self, 'Qty', UnitOrFaceAmount1Choice, False)
 
 	@Qty.deleter
 	def Qty(self):
 		del self._Qty
-		self._Qty = None
+		self._Qty = base_types.UninitialisedField(self, 'Qty', UnitOrFaceAmount1Choice, False)
 
 	@property
 	def StartVal(self):
@@ -161,12 +161,12 @@ class UnderlyingAttributes4(base_types._BaseFieldType):
 
 	@StartVal.setter
 	def StartVal(self, value):
-		self._StartVal = value if type(value) != base_types.auto else self.make_default("StartVal")
+		self._StartVal = value if value is not None else base_types.UninitialisedField(self, 'StartVal', ActiveCurrencyAndAmount, False)
 
 	@StartVal.deleter
 	def StartVal(self):
 		del self._StartVal
-		self._StartVal = None
+		self._StartVal = base_types.UninitialisedField(self, 'StartVal', ActiveCurrencyAndAmount, False)
 
 	@property
 	def SttlmTp(self):
@@ -174,12 +174,12 @@ class UnderlyingAttributes4(base_types._BaseFieldType):
 
 	@SttlmTp.setter
 	def SttlmTp(self, value):
-		self._SttlmTp = value if type(value) != base_types.auto else self.make_default("SttlmTp")
+		self._SttlmTp = value if value is not None else base_types.UninitialisedField(self, 'SttlmTp', SettlementType3Choice, False)
 
 	@SttlmTp.deleter
 	def SttlmTp(self):
 		del self._SttlmTp
-		self._SttlmTp = None
+		self._SttlmTp = base_types.UninitialisedField(self, 'SttlmTp', SettlementType3Choice, False)
 
 	@property
 	def XchgRate(self):
@@ -187,12 +187,12 @@ class UnderlyingAttributes4(base_types._BaseFieldType):
 
 	@XchgRate.setter
 	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != base_types.auto else self.make_default("XchgRate")
+		self._XchgRate = value if value is not None else base_types.UninitialisedField(self, 'XchgRate', PercentageRate, False)
 
 	@XchgRate.deleter
 	def XchgRate(self):
 		del self._XchgRate
-		self._XchgRate = None
+		self._XchgRate = base_types.UninitialisedField(self, 'XchgRate', PercentageRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AdjstdQty', type=UnitOrFaceAmount1Choice, min=0, max=1, mutex_group=None, array=False),

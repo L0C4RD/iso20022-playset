@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._SystemAvailabilityAndEvents3 import SystemAvailabilityAndEvents3
-from ._SystemStatus3 import SystemStatus3
+from . import DateAndDateTime2Choice
+from . import SystemAvailabilityAndEvents3
+from . import SystemStatus3
 
 class BusinessDay9(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class BusinessDay9(base_types._BaseFieldType):
 
 	@SysDt.setter
 	def SysDt(self, value):
-		self._SysDt = value if type(value) != base_types.auto else self.make_default("SysDt")
+		self._SysDt = value if value is not None else base_types.UninitialisedField(self, 'SysDt', DateAndDateTime2Choice, False)
 
 	@SysDt.deleter
 	def SysDt(self):
 		del self._SysDt
-		self._SysDt = None
+		self._SysDt = base_types.UninitialisedField(self, 'SysDt', DateAndDateTime2Choice, False)
 
 	@property
 	def SysInfPerCcy(self):
@@ -28,12 +28,12 @@ class BusinessDay9(base_types._BaseFieldType):
 
 	@SysInfPerCcy.setter
 	def SysInfPerCcy(self, value):
-		self._SysInfPerCcy = value if type(value) != base_types.auto else self.make_default("SysInfPerCcy")
+		self._SysInfPerCcy = value if value is not None else base_types.UninitialisedField(self, 'SysInfPerCcy', SystemAvailabilityAndEvents3, True)
 
 	@SysInfPerCcy.deleter
 	def SysInfPerCcy(self):
 		del self._SysInfPerCcy
-		self._SysInfPerCcy = None
+		self._SysInfPerCcy = base_types.UninitialisedField(self, 'SysInfPerCcy', SystemAvailabilityAndEvents3, True)
 
 	@property
 	def SysSts(self):
@@ -41,12 +41,12 @@ class BusinessDay9(base_types._BaseFieldType):
 
 	@SysSts.setter
 	def SysSts(self, value):
-		self._SysSts = value if type(value) != base_types.auto else self.make_default("SysSts")
+		self._SysSts = value if value is not None else base_types.UninitialisedField(self, 'SysSts', SystemStatus3, False)
 
 	@SysSts.deleter
 	def SysSts(self):
 		del self._SysSts
-		self._SysSts = None
+		self._SysSts = base_types.UninitialisedField(self, 'SysSts', SystemStatus3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SysDt', type=DateAndDateTime2Choice, min=0, max=1, mutex_group=None, array=False),

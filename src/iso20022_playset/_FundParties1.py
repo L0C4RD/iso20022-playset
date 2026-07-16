@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContactAttributes5 import ContactAttributes5
-from ._ExtendedParty13 import ExtendedParty13
+from . import ContactAttributes5
+from . import ExtendedParty13
 
 class FundParties1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class FundParties1(base_types._BaseFieldType):
 
 	@Audtr.setter
 	def Audtr(self, value):
-		self._Audtr = value if type(value) != base_types.auto else self.make_default("Audtr")
+		self._Audtr = value if value is not None else base_types.UninitialisedField(self, 'Audtr', ContactAttributes5, False)
 
 	@Audtr.deleter
 	def Audtr(self):
 		del self._Audtr
-		self._Audtr = None
+		self._Audtr = base_types.UninitialisedField(self, 'Audtr', ContactAttributes5, False)
 
 	@property
 	def Guarntr(self):
@@ -27,12 +27,12 @@ class FundParties1(base_types._BaseFieldType):
 
 	@Guarntr.setter
 	def Guarntr(self, value):
-		self._Guarntr = value if type(value) != base_types.auto else self.make_default("Guarntr")
+		self._Guarntr = value if value is not None else base_types.UninitialisedField(self, 'Guarntr', ContactAttributes5, False)
 
 	@Guarntr.deleter
 	def Guarntr(self):
 		del self._Guarntr
-		self._Guarntr = None
+		self._Guarntr = base_types.UninitialisedField(self, 'Guarntr', ContactAttributes5, False)
 
 	@property
 	def OthrPty(self):
@@ -40,12 +40,12 @@ class FundParties1(base_types._BaseFieldType):
 
 	@OthrPty.setter
 	def OthrPty(self, value):
-		self._OthrPty = value if type(value) != base_types.auto else self.make_default("OthrPty")
+		self._OthrPty = value if value is not None else base_types.UninitialisedField(self, 'OthrPty', ExtendedParty13, True)
 
 	@OthrPty.deleter
 	def OthrPty(self):
 		del self._OthrPty
-		self._OthrPty = None
+		self._OthrPty = base_types.UninitialisedField(self, 'OthrPty', ExtendedParty13, True)
 
 	@property
 	def Trstee(self):
@@ -53,12 +53,12 @@ class FundParties1(base_types._BaseFieldType):
 
 	@Trstee.setter
 	def Trstee(self, value):
-		self._Trstee = value if type(value) != base_types.auto else self.make_default("Trstee")
+		self._Trstee = value if value is not None else base_types.UninitialisedField(self, 'Trstee', ContactAttributes5, False)
 
 	@Trstee.deleter
 	def Trstee(self):
 		del self._Trstee
-		self._Trstee = None
+		self._Trstee = base_types.UninitialisedField(self, 'Trstee', ContactAttributes5, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Audtr', type=ContactAttributes5, min=0, max=1, mutex_group=None, array=False),

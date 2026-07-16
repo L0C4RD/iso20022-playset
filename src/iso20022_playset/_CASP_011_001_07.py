@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SaleToPOIAbortV07 import SaleToPOIAbortV07
+from . import SaleToPOIAbortV07
 
 class CASP_011_001_07():
 
@@ -18,12 +18,12 @@ class CASP_011_001_07():
 
 		@SaleToPOIAbrt.setter
 		def SaleToPOIAbrt(self, value):
-			self._SaleToPOIAbrt = value if type(value) != base_types.auto else self.make_default("SaleToPOIAbrt")
+			self._SaleToPOIAbrt = value if value is not None else base_types.UninitialisedField(self, 'SaleToPOIAbrt', SaleToPOIAbortV07, False)
 
 		@SaleToPOIAbrt.deleter
 		def SaleToPOIAbrt(self):
 			del self._SaleToPOIAbrt
-			self._SaleToPOIAbrt = None
+			self._SaleToPOIAbrt = base_types.UninitialisedField(self, 'SaleToPOIAbrt', SaleToPOIAbortV07, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SaleToPOIAbrt', type=SaleToPOIAbortV07, min=1, max=1, mutex_group=None, array=False),

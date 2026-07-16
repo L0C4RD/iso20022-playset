@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ImpliedCurrencyAmountRange1Choice import ImpliedCurrencyAmountRange1Choice
-from ._QuantityRange1Choice import QuantityRange1Choice
+from . import ImpliedCurrencyAmountRange1Choice
+from . import QuantityRange1Choice
 
 class FinancialInstrumentQuantitySearch2Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class FinancialInstrumentQuantitySearch2Choice(base_types._BaseFieldType):
 
 	@AmtsdVal.setter
 	def AmtsdVal(self, value):
-		self._AmtsdVal = value if type(value) != base_types.auto else self.make_default("AmtsdVal")
+		self._AmtsdVal = value if value is not None else base_types.UninitialisedField(self, 'AmtsdVal', ImpliedCurrencyAmountRange1Choice, False)
 
 	@AmtsdVal.deleter
 	def AmtsdVal(self):
 		del self._AmtsdVal
-		self._AmtsdVal = None
+		self._AmtsdVal = base_types.UninitialisedField(self, 'AmtsdVal', ImpliedCurrencyAmountRange1Choice, False)
 
 	@property
 	def FaceAmt(self):
@@ -27,12 +27,12 @@ class FinancialInstrumentQuantitySearch2Choice(base_types._BaseFieldType):
 
 	@FaceAmt.setter
 	def FaceAmt(self, value):
-		self._FaceAmt = value if type(value) != base_types.auto else self.make_default("FaceAmt")
+		self._FaceAmt = value if value is not None else base_types.UninitialisedField(self, 'FaceAmt', ImpliedCurrencyAmountRange1Choice, False)
 
 	@FaceAmt.deleter
 	def FaceAmt(self):
 		del self._FaceAmt
-		self._FaceAmt = None
+		self._FaceAmt = base_types.UninitialisedField(self, 'FaceAmt', ImpliedCurrencyAmountRange1Choice, False)
 
 	@property
 	def Unit(self):
@@ -40,12 +40,12 @@ class FinancialInstrumentQuantitySearch2Choice(base_types._BaseFieldType):
 
 	@Unit.setter
 	def Unit(self, value):
-		self._Unit = value if type(value) != base_types.auto else self.make_default("Unit")
+		self._Unit = value if value is not None else base_types.UninitialisedField(self, 'Unit', QuantityRange1Choice, False)
 
 	@Unit.deleter
 	def Unit(self):
 		del self._Unit
-		self._Unit = None
+		self._Unit = base_types.UninitialisedField(self, 'Unit', QuantityRange1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmtsdVal', type=ImpliedCurrencyAmountRange1Choice, min=0, max=1, mutex_group=1, array=False),

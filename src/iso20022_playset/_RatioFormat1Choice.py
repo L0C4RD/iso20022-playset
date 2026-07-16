@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountToAmountRatio1 import AmountToAmountRatio1
-from ._QuantityToQuantityRatio1 import QuantityToQuantityRatio1
-from ._RateType12FormatChoice import RateType12FormatChoice
+from . import AmountToAmountRatio1
+from . import QuantityToQuantityRatio1
+from . import RateType12FormatChoice
 
 class RatioFormat1Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class RatioFormat1Choice(base_types._BaseFieldType):
 
 	@AmtToAmt.setter
 	def AmtToAmt(self, value):
-		self._AmtToAmt = value if type(value) != base_types.auto else self.make_default("AmtToAmt")
+		self._AmtToAmt = value if value is not None else base_types.UninitialisedField(self, 'AmtToAmt', AmountToAmountRatio1, False)
 
 	@AmtToAmt.deleter
 	def AmtToAmt(self):
 		del self._AmtToAmt
-		self._AmtToAmt = None
+		self._AmtToAmt = base_types.UninitialisedField(self, 'AmtToAmt', AmountToAmountRatio1, False)
 
 	@property
 	def NotSpcfdRate(self):
@@ -28,12 +28,12 @@ class RatioFormat1Choice(base_types._BaseFieldType):
 
 	@NotSpcfdRate.setter
 	def NotSpcfdRate(self, value):
-		self._NotSpcfdRate = value if type(value) != base_types.auto else self.make_default("NotSpcfdRate")
+		self._NotSpcfdRate = value if value is not None else base_types.UninitialisedField(self, 'NotSpcfdRate', RateType12FormatChoice, False)
 
 	@NotSpcfdRate.deleter
 	def NotSpcfdRate(self):
 		del self._NotSpcfdRate
-		self._NotSpcfdRate = None
+		self._NotSpcfdRate = base_types.UninitialisedField(self, 'NotSpcfdRate', RateType12FormatChoice, False)
 
 	@property
 	def QtyToQty(self):
@@ -41,12 +41,12 @@ class RatioFormat1Choice(base_types._BaseFieldType):
 
 	@QtyToQty.setter
 	def QtyToQty(self, value):
-		self._QtyToQty = value if type(value) != base_types.auto else self.make_default("QtyToQty")
+		self._QtyToQty = value if value is not None else base_types.UninitialisedField(self, 'QtyToQty', QuantityToQuantityRatio1, False)
 
 	@QtyToQty.deleter
 	def QtyToQty(self):
 		del self._QtyToQty
-		self._QtyToQty = None
+		self._QtyToQty = base_types.UninitialisedField(self, 'QtyToQty', QuantityToQuantityRatio1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmtToAmt', type=AmountToAmountRatio1, min=0, max=1, mutex_group=1, array=False),

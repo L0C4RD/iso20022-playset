@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Number import Number
+from . import Max35Text
+from . import Number
 
 class Absolute1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Absolute1(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+		self._Qty = value if value is not None else base_types.UninitialisedField(self, 'Qty', Number, False)
 
 	@Qty.deleter
 	def Qty(self):
 		del self._Qty
-		self._Qty = None
+		self._Qty = base_types.UninitialisedField(self, 'Qty', Number, False)
 
 	@property
 	def Unit(self):
@@ -27,12 +27,12 @@ class Absolute1(base_types._BaseFieldType):
 
 	@Unit.setter
 	def Unit(self, value):
-		self._Unit = value if type(value) != base_types.auto else self.make_default("Unit")
+		self._Unit = value if value is not None else base_types.UninitialisedField(self, 'Unit', Max35Text, False)
 
 	@Unit.deleter
 	def Unit(self):
 		del self._Unit
-		self._Unit = None
+		self._Unit = base_types.UninitialisedField(self, 'Unit', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Qty', type=Number, min=1, max=1, mutex_group=None, array=False),

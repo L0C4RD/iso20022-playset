@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CreditDebitCode import CreditDebitCode
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._PaymentOrigin1Choice import PaymentOrigin1Choice
-from ._PaymentStatus6 import PaymentStatus6
-from ._System3 import System3
+from . import CreditDebitCode
+from . import DateAndDateTime2Choice
+from . import PaymentOrigin1Choice
+from . import PaymentStatus6
+from . import System3
 
 class PaymentCommon6(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class PaymentCommon6(base_types._BaseFieldType):
 
 	@CdtDbtInd.setter
 	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+		self._CdtDbtInd = value if value is not None else base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@CdtDbtInd.deleter
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
-		self._CdtDbtInd = None
+		self._CdtDbtInd = base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@property
 	def CmonSts(self):
@@ -30,12 +30,12 @@ class PaymentCommon6(base_types._BaseFieldType):
 
 	@CmonSts.setter
 	def CmonSts(self, value):
-		self._CmonSts = value if type(value) != base_types.auto else self.make_default("CmonSts")
+		self._CmonSts = value if value is not None else base_types.UninitialisedField(self, 'CmonSts', PaymentStatus6, True)
 
 	@CmonSts.deleter
 	def CmonSts(self):
 		del self._CmonSts
-		self._CmonSts = None
+		self._CmonSts = base_types.UninitialisedField(self, 'CmonSts', PaymentStatus6, True)
 
 	@property
 	def NtryDt(self):
@@ -43,12 +43,12 @@ class PaymentCommon6(base_types._BaseFieldType):
 
 	@NtryDt.setter
 	def NtryDt(self, value):
-		self._NtryDt = value if type(value) != base_types.auto else self.make_default("NtryDt")
+		self._NtryDt = value if value is not None else base_types.UninitialisedField(self, 'NtryDt', DateAndDateTime2Choice, False)
 
 	@NtryDt.deleter
 	def NtryDt(self):
 		del self._NtryDt
-		self._NtryDt = None
+		self._NtryDt = base_types.UninitialisedField(self, 'NtryDt', DateAndDateTime2Choice, False)
 
 	@property
 	def PmtFr(self):
@@ -56,12 +56,12 @@ class PaymentCommon6(base_types._BaseFieldType):
 
 	@PmtFr.setter
 	def PmtFr(self, value):
-		self._PmtFr = value if type(value) != base_types.auto else self.make_default("PmtFr")
+		self._PmtFr = value if value is not None else base_types.UninitialisedField(self, 'PmtFr', System3, False)
 
 	@PmtFr.deleter
 	def PmtFr(self):
 		del self._PmtFr
-		self._PmtFr = None
+		self._PmtFr = base_types.UninitialisedField(self, 'PmtFr', System3, False)
 
 	@property
 	def PmtMtd(self):
@@ -69,12 +69,12 @@ class PaymentCommon6(base_types._BaseFieldType):
 
 	@PmtMtd.setter
 	def PmtMtd(self, value):
-		self._PmtMtd = value if type(value) != base_types.auto else self.make_default("PmtMtd")
+		self._PmtMtd = value if value is not None else base_types.UninitialisedField(self, 'PmtMtd', PaymentOrigin1Choice, False)
 
 	@PmtMtd.deleter
 	def PmtMtd(self):
 		del self._PmtMtd
-		self._PmtMtd = None
+		self._PmtMtd = base_types.UninitialisedField(self, 'PmtMtd', PaymentOrigin1Choice, False)
 
 	@property
 	def PmtTo(self):
@@ -82,12 +82,12 @@ class PaymentCommon6(base_types._BaseFieldType):
 
 	@PmtTo.setter
 	def PmtTo(self, value):
-		self._PmtTo = value if type(value) != base_types.auto else self.make_default("PmtTo")
+		self._PmtTo = value if value is not None else base_types.UninitialisedField(self, 'PmtTo', System3, False)
 
 	@PmtTo.deleter
 	def PmtTo(self):
 		del self._PmtTo
-		self._PmtTo = None
+		self._PmtTo = base_types.UninitialisedField(self, 'PmtTo', System3, False)
 
 	@property
 	def ReqdExctnDt(self):
@@ -95,12 +95,12 @@ class PaymentCommon6(base_types._BaseFieldType):
 
 	@ReqdExctnDt.setter
 	def ReqdExctnDt(self, value):
-		self._ReqdExctnDt = value if type(value) != base_types.auto else self.make_default("ReqdExctnDt")
+		self._ReqdExctnDt = value if value is not None else base_types.UninitialisedField(self, 'ReqdExctnDt', DateAndDateTime2Choice, False)
 
 	@ReqdExctnDt.deleter
 	def ReqdExctnDt(self):
 		del self._ReqdExctnDt
-		self._ReqdExctnDt = None
+		self._ReqdExctnDt = base_types.UninitialisedField(self, 'ReqdExctnDt', DateAndDateTime2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=0, max=1, mutex_group=None, array=False),

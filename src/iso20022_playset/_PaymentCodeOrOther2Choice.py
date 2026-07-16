@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._Max140Text import Max140Text
-from ._PaymentPeriod4 import PaymentPeriod4
+from . import ISODate
+from . import Max140Text
+from . import PaymentPeriod4
 
 class PaymentCodeOrOther2Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PaymentCodeOrOther2Choice(base_types._BaseFieldType):
 
 	@OthrPmtTerms.setter
 	def OthrPmtTerms(self, value):
-		self._OthrPmtTerms = value if type(value) != base_types.auto else self.make_default("OthrPmtTerms")
+		self._OthrPmtTerms = value if value is not None else base_types.UninitialisedField(self, 'OthrPmtTerms', Max140Text, False)
 
 	@OthrPmtTerms.deleter
 	def OthrPmtTerms(self):
 		del self._OthrPmtTerms
-		self._OthrPmtTerms = None
+		self._OthrPmtTerms = base_types.UninitialisedField(self, 'OthrPmtTerms', Max140Text, False)
 
 	@property
 	def PmtCd(self):
@@ -28,12 +28,12 @@ class PaymentCodeOrOther2Choice(base_types._BaseFieldType):
 
 	@PmtCd.setter
 	def PmtCd(self, value):
-		self._PmtCd = value if type(value) != base_types.auto else self.make_default("PmtCd")
+		self._PmtCd = value if value is not None else base_types.UninitialisedField(self, 'PmtCd', PaymentPeriod4, False)
 
 	@PmtCd.deleter
 	def PmtCd(self):
 		del self._PmtCd
-		self._PmtCd = None
+		self._PmtCd = base_types.UninitialisedField(self, 'PmtCd', PaymentPeriod4, False)
 
 	@property
 	def PmtDueDt(self):
@@ -41,12 +41,12 @@ class PaymentCodeOrOther2Choice(base_types._BaseFieldType):
 
 	@PmtDueDt.setter
 	def PmtDueDt(self, value):
-		self._PmtDueDt = value if type(value) != base_types.auto else self.make_default("PmtDueDt")
+		self._PmtDueDt = value if value is not None else base_types.UninitialisedField(self, 'PmtDueDt', ISODate, False)
 
 	@PmtDueDt.deleter
 	def PmtDueDt(self):
 		del self._PmtDueDt
-		self._PmtDueDt = None
+		self._PmtDueDt = base_types.UninitialisedField(self, 'PmtDueDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OthrPmtTerms', type=Max140Text, min=0, max=1, mutex_group=1, array=False),

@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ConfirmationRequest1Code import ConfirmationRequest1Code
-from ._ISODateTime import ISODateTime
-from ._Max35NumericText import Max35NumericText
-from ._MessageIdentification1 import MessageIdentification1
-from ._Number import Number
-from ._TradeConfirmationStatus1Code import TradeConfirmationStatus1Code
-from ._YesNoIndicator import YesNoIndicator
+from . import ConfirmationRequest1Code
+from . import ISODateTime
+from . import Max35NumericText
+from . import MessageIdentification1
+from . import Number
+from . import TradeConfirmationStatus1Code
+from . import YesNoIndicator
 
 class Confirmation1(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class Confirmation1(base_types._BaseFieldType):
 
 	@ConfSts.setter
 	def ConfSts(self, value):
-		self._ConfSts = value if type(value) != base_types.auto else self.make_default("ConfSts")
+		self._ConfSts = value if value is not None else base_types.UninitialisedField(self, 'ConfSts', TradeConfirmationStatus1Code, False)
 
 	@ConfSts.deleter
 	def ConfSts(self):
 		del self._ConfSts
-		self._ConfSts = None
+		self._ConfSts = base_types.UninitialisedField(self, 'ConfSts', TradeConfirmationStatus1Code, False)
 
 	@property
 	def ConfTm(self):
@@ -32,12 +32,12 @@ class Confirmation1(base_types._BaseFieldType):
 
 	@ConfTm.setter
 	def ConfTm(self, value):
-		self._ConfTm = value if type(value) != base_types.auto else self.make_default("ConfTm")
+		self._ConfTm = value if value is not None else base_types.UninitialisedField(self, 'ConfTm', ISODateTime, False)
 
 	@ConfTm.deleter
 	def ConfTm(self):
 		del self._ConfTm
-		self._ConfTm = None
+		self._ConfTm = base_types.UninitialisedField(self, 'ConfTm', ISODateTime, False)
 
 	@property
 	def ConfTp(self):
@@ -45,12 +45,12 @@ class Confirmation1(base_types._BaseFieldType):
 
 	@ConfTp.setter
 	def ConfTp(self, value):
-		self._ConfTp = value if type(value) != base_types.auto else self.make_default("ConfTp")
+		self._ConfTp = value if value is not None else base_types.UninitialisedField(self, 'ConfTp', ConfirmationRequest1Code, False)
 
 	@ConfTp.deleter
 	def ConfTp(self):
 		del self._ConfTp
-		self._ConfTp = None
+		self._ConfTp = base_types.UninitialisedField(self, 'ConfTp', ConfirmationRequest1Code, False)
 
 	@property
 	def InitgPtyConfTm(self):
@@ -58,12 +58,12 @@ class Confirmation1(base_types._BaseFieldType):
 
 	@InitgPtyConfTm.setter
 	def InitgPtyConfTm(self, value):
-		self._InitgPtyConfTm = value if type(value) != base_types.auto else self.make_default("InitgPtyConfTm")
+		self._InitgPtyConfTm = value if value is not None else base_types.UninitialisedField(self, 'InitgPtyConfTm', ISODateTime, False)
 
 	@InitgPtyConfTm.deleter
 	def InitgPtyConfTm(self):
 		del self._InitgPtyConfTm
-		self._InitgPtyConfTm = None
+		self._InitgPtyConfTm = base_types.UninitialisedField(self, 'InitgPtyConfTm', ISODateTime, False)
 
 	@property
 	def LastPgInd(self):
@@ -71,12 +71,12 @@ class Confirmation1(base_types._BaseFieldType):
 
 	@LastPgInd.setter
 	def LastPgInd(self, value):
-		self._LastPgInd = value if type(value) != base_types.auto else self.make_default("LastPgInd")
+		self._LastPgInd = value if value is not None else base_types.UninitialisedField(self, 'LastPgInd', YesNoIndicator, False)
 
 	@LastPgInd.deleter
 	def LastPgInd(self):
 		del self._LastPgInd
-		self._LastPgInd = None
+		self._LastPgInd = base_types.UninitialisedField(self, 'LastPgInd', YesNoIndicator, False)
 
 	@property
 	def LastRptReqd(self):
@@ -84,12 +84,12 @@ class Confirmation1(base_types._BaseFieldType):
 
 	@LastRptReqd.setter
 	def LastRptReqd(self, value):
-		self._LastRptReqd = value if type(value) != base_types.auto else self.make_default("LastRptReqd")
+		self._LastRptReqd = value if value is not None else base_types.UninitialisedField(self, 'LastRptReqd', YesNoIndicator, False)
 
 	@LastRptReqd.deleter
 	def LastRptReqd(self):
 		del self._LastRptReqd
-		self._LastRptReqd = None
+		self._LastRptReqd = base_types.UninitialisedField(self, 'LastRptReqd', YesNoIndicator, False)
 
 	@property
 	def ListOrdrNb(self):
@@ -97,12 +97,12 @@ class Confirmation1(base_types._BaseFieldType):
 
 	@ListOrdrNb.setter
 	def ListOrdrNb(self, value):
-		self._ListOrdrNb = value if type(value) != base_types.auto else self.make_default("ListOrdrNb")
+		self._ListOrdrNb = value if value is not None else base_types.UninitialisedField(self, 'ListOrdrNb', Number, False)
 
 	@ListOrdrNb.deleter
 	def ListOrdrNb(self):
 		del self._ListOrdrNb
-		self._ListOrdrNb = None
+		self._ListOrdrNb = base_types.UninitialisedField(self, 'ListOrdrNb', Number, False)
 
 	@property
 	def MsgNbOfCurPg(self):
@@ -110,12 +110,12 @@ class Confirmation1(base_types._BaseFieldType):
 
 	@MsgNbOfCurPg.setter
 	def MsgNbOfCurPg(self, value):
-		self._MsgNbOfCurPg = value if type(value) != base_types.auto else self.make_default("MsgNbOfCurPg")
+		self._MsgNbOfCurPg = value if value is not None else base_types.UninitialisedField(self, 'MsgNbOfCurPg', Number, False)
 
 	@MsgNbOfCurPg.deleter
 	def MsgNbOfCurPg(self):
 		del self._MsgNbOfCurPg
-		self._MsgNbOfCurPg = None
+		self._MsgNbOfCurPg = base_types.UninitialisedField(self, 'MsgNbOfCurPg', Number, False)
 
 	@property
 	def PgNb(self):
@@ -123,12 +123,12 @@ class Confirmation1(base_types._BaseFieldType):
 
 	@PgNb.setter
 	def PgNb(self, value):
-		self._PgNb = value if type(value) != base_types.auto else self.make_default("PgNb")
+		self._PgNb = value if value is not None else base_types.UninitialisedField(self, 'PgNb', Max35NumericText, False)
 
 	@PgNb.deleter
 	def PgNb(self):
 		del self._PgNb
-		self._PgNb = None
+		self._PgNb = base_types.UninitialisedField(self, 'PgNb', Max35NumericText, False)
 
 	@property
 	def QryPgNb(self):
@@ -136,12 +136,12 @@ class Confirmation1(base_types._BaseFieldType):
 
 	@QryPgNb.setter
 	def QryPgNb(self, value):
-		self._QryPgNb = value if type(value) != base_types.auto else self.make_default("QryPgNb")
+		self._QryPgNb = value if value is not None else base_types.UninitialisedField(self, 'QryPgNb', Max35NumericText, False)
 
 	@QryPgNb.deleter
 	def QryPgNb(self):
 		del self._QryPgNb
-		self._QryPgNb = None
+		self._QryPgNb = base_types.UninitialisedField(self, 'QryPgNb', Max35NumericText, False)
 
 	@property
 	def QryStartNb(self):
@@ -149,12 +149,12 @@ class Confirmation1(base_types._BaseFieldType):
 
 	@QryStartNb.setter
 	def QryStartNb(self, value):
-		self._QryStartNb = value if type(value) != base_types.auto else self.make_default("QryStartNb")
+		self._QryStartNb = value if value is not None else base_types.UninitialisedField(self, 'QryStartNb', Max35NumericText, False)
 
 	@QryStartNb.deleter
 	def QryStartNb(self):
 		del self._QryStartNb
-		self._QryStartNb = None
+		self._QryStartNb = base_types.UninitialisedField(self, 'QryStartNb', Max35NumericText, False)
 
 	@property
 	def ReqId(self):
@@ -162,12 +162,12 @@ class Confirmation1(base_types._BaseFieldType):
 
 	@ReqId.setter
 	def ReqId(self, value):
-		self._ReqId = value if type(value) != base_types.auto else self.make_default("ReqId")
+		self._ReqId = value if value is not None else base_types.UninitialisedField(self, 'ReqId', MessageIdentification1, False)
 
 	@ReqId.deleter
 	def ReqId(self):
 		del self._ReqId
-		self._ReqId = None
+		self._ReqId = base_types.UninitialisedField(self, 'ReqId', MessageIdentification1, False)
 
 	@property
 	def TradPtyConfTm(self):
@@ -175,12 +175,12 @@ class Confirmation1(base_types._BaseFieldType):
 
 	@TradPtyConfTm.setter
 	def TradPtyConfTm(self, value):
-		self._TradPtyConfTm = value if type(value) != base_types.auto else self.make_default("TradPtyConfTm")
+		self._TradPtyConfTm = value if value is not None else base_types.UninitialisedField(self, 'TradPtyConfTm', ISODateTime, False)
 
 	@TradPtyConfTm.deleter
 	def TradPtyConfTm(self):
 		del self._TradPtyConfTm
-		self._TradPtyConfTm = None
+		self._TradPtyConfTm = base_types.UninitialisedField(self, 'TradPtyConfTm', ISODateTime, False)
 
 	@property
 	def TtlNbOfRpts(self):
@@ -188,12 +188,12 @@ class Confirmation1(base_types._BaseFieldType):
 
 	@TtlNbOfRpts.setter
 	def TtlNbOfRpts(self, value):
-		self._TtlNbOfRpts = value if type(value) != base_types.auto else self.make_default("TtlNbOfRpts")
+		self._TtlNbOfRpts = value if value is not None else base_types.UninitialisedField(self, 'TtlNbOfRpts', Number, False)
 
 	@TtlNbOfRpts.deleter
 	def TtlNbOfRpts(self):
 		del self._TtlNbOfRpts
-		self._TtlNbOfRpts = None
+		self._TtlNbOfRpts = base_types.UninitialisedField(self, 'TtlNbOfRpts', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ConfSts', type=TradeConfirmationStatus1Code, min=1, max=1, mutex_group=None, array=False),

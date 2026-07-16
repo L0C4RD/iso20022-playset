@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentQuantity25Choice import FinancialInstrumentQuantity25Choice
-from ._Max50Text import Max50Text
-from ._MinimumExecutable1 import MinimumExecutable1
-from ._OrderStatus10Code import OrderStatus10Code
-from ._OrderStatus11Code import OrderStatus11Code
-from ._Side6Code import Side6Code
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import FinancialInstrumentQuantity25Choice
+from . import Max50Text
+from . import MinimumExecutable1
+from . import OrderStatus10Code
+from . import OrderStatus11Code
+from . import Side6Code
+from . import TrueFalseIndicator
 
 class OrderInstructionData2(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class OrderInstructionData2(base_types._BaseFieldType):
 
 	@BuySellInd.setter
 	def BuySellInd(self, value):
-		self._BuySellInd = value if type(value) != base_types.auto else self.make_default("BuySellInd")
+		self._BuySellInd = value if value is not None else base_types.UninitialisedField(self, 'BuySellInd', Side6Code, False)
 
 	@BuySellInd.deleter
 	def BuySellInd(self):
 		del self._BuySellInd
-		self._BuySellInd = None
+		self._BuySellInd = base_types.UninitialisedField(self, 'BuySellInd', Side6Code, False)
 
 	@property
 	def DispdQty(self):
@@ -32,12 +32,12 @@ class OrderInstructionData2(base_types._BaseFieldType):
 
 	@DispdQty.setter
 	def DispdQty(self, value):
-		self._DispdQty = value if type(value) != base_types.auto else self.make_default("DispdQty")
+		self._DispdQty = value if value is not None else base_types.UninitialisedField(self, 'DispdQty', FinancialInstrumentQuantity25Choice, False)
 
 	@DispdQty.deleter
 	def DispdQty(self):
 		del self._DispdQty
-		self._DispdQty = None
+		self._DispdQty = base_types.UninitialisedField(self, 'DispdQty', FinancialInstrumentQuantity25Choice, False)
 
 	@property
 	def InitlQty(self):
@@ -45,12 +45,12 @@ class OrderInstructionData2(base_types._BaseFieldType):
 
 	@InitlQty.setter
 	def InitlQty(self, value):
-		self._InitlQty = value if type(value) != base_types.auto else self.make_default("InitlQty")
+		self._InitlQty = value if value is not None else base_types.UninitialisedField(self, 'InitlQty', FinancialInstrumentQuantity25Choice, False)
 
 	@InitlQty.deleter
 	def InitlQty(self):
 		del self._InitlQty
-		self._InitlQty = None
+		self._InitlQty = base_types.UninitialisedField(self, 'InitlQty', FinancialInstrumentQuantity25Choice, False)
 
 	@property
 	def MinAccptblQty(self):
@@ -58,12 +58,12 @@ class OrderInstructionData2(base_types._BaseFieldType):
 
 	@MinAccptblQty.setter
 	def MinAccptblQty(self, value):
-		self._MinAccptblQty = value if type(value) != base_types.auto else self.make_default("MinAccptblQty")
+		self._MinAccptblQty = value if value is not None else base_types.UninitialisedField(self, 'MinAccptblQty', FinancialInstrumentQuantity25Choice, False)
 
 	@MinAccptblQty.deleter
 	def MinAccptblQty(self):
 		del self._MinAccptblQty
-		self._MinAccptblQty = None
+		self._MinAccptblQty = base_types.UninitialisedField(self, 'MinAccptblQty', FinancialInstrumentQuantity25Choice, False)
 
 	@property
 	def MinExctbl(self):
@@ -71,12 +71,12 @@ class OrderInstructionData2(base_types._BaseFieldType):
 
 	@MinExctbl.setter
 	def MinExctbl(self, value):
-		self._MinExctbl = value if type(value) != base_types.auto else self.make_default("MinExctbl")
+		self._MinExctbl = value if value is not None else base_types.UninitialisedField(self, 'MinExctbl', MinimumExecutable1, False)
 
 	@MinExctbl.deleter
 	def MinExctbl(self):
 		del self._MinExctbl
-		self._MinExctbl = None
+		self._MinExctbl = base_types.UninitialisedField(self, 'MinExctbl', MinimumExecutable1, False)
 
 	@property
 	def OrdrSts(self):
@@ -84,12 +84,12 @@ class OrderInstructionData2(base_types._BaseFieldType):
 
 	@OrdrSts.setter
 	def OrdrSts(self, value):
-		self._OrdrSts = value if type(value) != base_types.auto else self.make_default("OrdrSts")
+		self._OrdrSts = value if value is not None else base_types.UninitialisedField(self, 'OrdrSts', OrderStatus11Code, True)
 
 	@OrdrSts.deleter
 	def OrdrSts(self):
 		del self._OrdrSts
-		self._OrdrSts = None
+		self._OrdrSts = base_types.UninitialisedField(self, 'OrdrSts', OrderStatus11Code, True)
 
 	@property
 	def OrdrVldtySts(self):
@@ -97,12 +97,12 @@ class OrderInstructionData2(base_types._BaseFieldType):
 
 	@OrdrVldtySts.setter
 	def OrdrVldtySts(self, value):
-		self._OrdrVldtySts = value if type(value) != base_types.auto else self.make_default("OrdrVldtySts")
+		self._OrdrVldtySts = value if value is not None else base_types.UninitialisedField(self, 'OrdrVldtySts', OrderStatus10Code, False)
 
 	@OrdrVldtySts.deleter
 	def OrdrVldtySts(self):
 		del self._OrdrVldtySts
-		self._OrdrVldtySts = None
+		self._OrdrVldtySts = base_types.UninitialisedField(self, 'OrdrVldtySts', OrderStatus10Code, False)
 
 	@property
 	def PssvOnlyInd(self):
@@ -110,12 +110,12 @@ class OrderInstructionData2(base_types._BaseFieldType):
 
 	@PssvOnlyInd.setter
 	def PssvOnlyInd(self, value):
-		self._PssvOnlyInd = value if type(value) != base_types.auto else self.make_default("PssvOnlyInd")
+		self._PssvOnlyInd = value if value is not None else base_types.UninitialisedField(self, 'PssvOnlyInd', TrueFalseIndicator, False)
 
 	@PssvOnlyInd.deleter
 	def PssvOnlyInd(self):
 		del self._PssvOnlyInd
-		self._PssvOnlyInd = None
+		self._PssvOnlyInd = base_types.UninitialisedField(self, 'PssvOnlyInd', TrueFalseIndicator, False)
 
 	@property
 	def RmngQty(self):
@@ -123,12 +123,12 @@ class OrderInstructionData2(base_types._BaseFieldType):
 
 	@RmngQty.setter
 	def RmngQty(self, value):
-		self._RmngQty = value if type(value) != base_types.auto else self.make_default("RmngQty")
+		self._RmngQty = value if value is not None else base_types.UninitialisedField(self, 'RmngQty', FinancialInstrumentQuantity25Choice, False)
 
 	@RmngQty.deleter
 	def RmngQty(self):
 		del self._RmngQty
-		self._RmngQty = None
+		self._RmngQty = base_types.UninitialisedField(self, 'RmngQty', FinancialInstrumentQuantity25Choice, False)
 
 	@property
 	def RtgStrtgy(self):
@@ -136,12 +136,12 @@ class OrderInstructionData2(base_types._BaseFieldType):
 
 	@RtgStrtgy.setter
 	def RtgStrtgy(self, value):
-		self._RtgStrtgy = value if type(value) != base_types.auto else self.make_default("RtgStrtgy")
+		self._RtgStrtgy = value if value is not None else base_types.UninitialisedField(self, 'RtgStrtgy', Max50Text, False)
 
 	@RtgStrtgy.deleter
 	def RtgStrtgy(self):
 		del self._RtgStrtgy
-		self._RtgStrtgy = None
+		self._RtgStrtgy = base_types.UninitialisedField(self, 'RtgStrtgy', Max50Text, False)
 
 	@property
 	def SlfExctnPrvntn(self):
@@ -149,12 +149,12 @@ class OrderInstructionData2(base_types._BaseFieldType):
 
 	@SlfExctnPrvntn.setter
 	def SlfExctnPrvntn(self, value):
-		self._SlfExctnPrvntn = value if type(value) != base_types.auto else self.make_default("SlfExctnPrvntn")
+		self._SlfExctnPrvntn = value if value is not None else base_types.UninitialisedField(self, 'SlfExctnPrvntn', TrueFalseIndicator, False)
 
 	@SlfExctnPrvntn.deleter
 	def SlfExctnPrvntn(self):
 		del self._SlfExctnPrvntn
-		self._SlfExctnPrvntn = None
+		self._SlfExctnPrvntn = base_types.UninitialisedField(self, 'SlfExctnPrvntn', TrueFalseIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BuySellInd', type=Side6Code, min=0, max=1, mutex_group=None, array=False),

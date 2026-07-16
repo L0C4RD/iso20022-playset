@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashCompare3 import CashCompare3
-from ._Commodity42 import Commodity42
-from ._Security48 import Security48
+from . import CashCompare3
+from . import Commodity42
+from . import Security48
 
 class SecurityCommodityCash4(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SecurityCommodityCash4(base_types._BaseFieldType):
 
 	@Cmmdty.setter
 	def Cmmdty(self, value):
-		self._Cmmdty = value if type(value) != base_types.auto else self.make_default("Cmmdty")
+		self._Cmmdty = value if value is not None else base_types.UninitialisedField(self, 'Cmmdty', Commodity42, True)
 
 	@Cmmdty.deleter
 	def Cmmdty(self):
 		del self._Cmmdty
-		self._Cmmdty = None
+		self._Cmmdty = base_types.UninitialisedField(self, 'Cmmdty', Commodity42, True)
 
 	@property
 	def Csh(self):
@@ -28,12 +28,12 @@ class SecurityCommodityCash4(base_types._BaseFieldType):
 
 	@Csh.setter
 	def Csh(self, value):
-		self._Csh = value if type(value) != base_types.auto else self.make_default("Csh")
+		self._Csh = value if value is not None else base_types.UninitialisedField(self, 'Csh', CashCompare3, True)
 
 	@Csh.deleter
 	def Csh(self):
 		del self._Csh
-		self._Csh = None
+		self._Csh = base_types.UninitialisedField(self, 'Csh', CashCompare3, True)
 
 	@property
 	def Scty(self):
@@ -41,12 +41,12 @@ class SecurityCommodityCash4(base_types._BaseFieldType):
 
 	@Scty.setter
 	def Scty(self, value):
-		self._Scty = value if type(value) != base_types.auto else self.make_default("Scty")
+		self._Scty = value if value is not None else base_types.UninitialisedField(self, 'Scty', Security48, True)
 
 	@Scty.deleter
 	def Scty(self):
 		del self._Scty
-		self._Scty = None
+		self._Scty = base_types.UninitialisedField(self, 'Scty', Security48, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cmmdty', type=Commodity42, min=0, max=None, mutex_group=None, array=True),

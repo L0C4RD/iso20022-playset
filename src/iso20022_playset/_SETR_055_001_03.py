@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SwitchOrderConfirmationCancellationInstructionV03 import SwitchOrderConfirmationCancellationInstructionV03
+from . import SwitchOrderConfirmationCancellationInstructionV03
 
 class SETR_055_001_03():
 
@@ -18,12 +18,12 @@ class SETR_055_001_03():
 
 		@SwtchOrdrConfCxlInstr.setter
 		def SwtchOrdrConfCxlInstr(self, value):
-			self._SwtchOrdrConfCxlInstr = value if type(value) != base_types.auto else self.make_default("SwtchOrdrConfCxlInstr")
+			self._SwtchOrdrConfCxlInstr = value if value is not None else base_types.UninitialisedField(self, 'SwtchOrdrConfCxlInstr', SwitchOrderConfirmationCancellationInstructionV03, False)
 
 		@SwtchOrdrConfCxlInstr.deleter
 		def SwtchOrdrConfCxlInstr(self):
 			del self._SwtchOrdrConfCxlInstr
-			self._SwtchOrdrConfCxlInstr = None
+			self._SwtchOrdrConfCxlInstr = base_types.UninitialisedField(self, 'SwtchOrdrConfCxlInstr', SwitchOrderConfirmationCancellationInstructionV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SwtchOrdrConfCxlInstr', type=SwitchOrderConfirmationCancellationInstructionV03, min=1, max=1, mutex_group=None, array=False),

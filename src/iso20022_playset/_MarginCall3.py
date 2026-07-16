@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BlockChainAddressWallet5 import BlockChainAddressWallet5
-from ._CollateralAccount3 import CollateralAccount3
-from ._ExpectedCollateral2Choice import ExpectedCollateral2Choice
-from ._MarginCall1 import MarginCall1
-from ._MarginCallResult3 import MarginCallResult3
-from ._MarginRequirement1Choice import MarginRequirement1Choice
+from . import BlockChainAddressWallet5
+from . import CollateralAccount3
+from . import ExpectedCollateral2Choice
+from . import MarginCall1
+from . import MarginCallResult3
+from . import MarginRequirement1Choice
 
 class MarginCall3(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class MarginCall3(base_types._BaseFieldType):
 
 	@BlckChainAdrOrWllt.setter
 	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
+		self._BlckChainAdrOrWllt = value if value is not None else base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet5, False)
 
 	@BlckChainAdrOrWllt.deleter
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+		self._BlckChainAdrOrWllt = base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet5, False)
 
 	@property
 	def CollAcctId(self):
@@ -31,12 +31,12 @@ class MarginCall3(base_types._BaseFieldType):
 
 	@CollAcctId.setter
 	def CollAcctId(self, value):
-		self._CollAcctId = value if type(value) != base_types.auto else self.make_default("CollAcctId")
+		self._CollAcctId = value if value is not None else base_types.UninitialisedField(self, 'CollAcctId', CollateralAccount3, False)
 
 	@CollAcctId.deleter
 	def CollAcctId(self):
 		del self._CollAcctId
-		self._CollAcctId = None
+		self._CollAcctId = base_types.UninitialisedField(self, 'CollAcctId', CollateralAccount3, False)
 
 	@property
 	def MrgnCallRslt(self):
@@ -44,12 +44,12 @@ class MarginCall3(base_types._BaseFieldType):
 
 	@MrgnCallRslt.setter
 	def MrgnCallRslt(self, value):
-		self._MrgnCallRslt = value if type(value) != base_types.auto else self.make_default("MrgnCallRslt")
+		self._MrgnCallRslt = value if value is not None else base_types.UninitialisedField(self, 'MrgnCallRslt', MarginCallResult3, False)
 
 	@MrgnCallRslt.deleter
 	def MrgnCallRslt(self):
 		del self._MrgnCallRslt
-		self._MrgnCallRslt = None
+		self._MrgnCallRslt = base_types.UninitialisedField(self, 'MrgnCallRslt', MarginCallResult3, False)
 
 	@property
 	def MrgnDtlDueToA(self):
@@ -57,12 +57,12 @@ class MarginCall3(base_types._BaseFieldType):
 
 	@MrgnDtlDueToA.setter
 	def MrgnDtlDueToA(self, value):
-		self._MrgnDtlDueToA = value if type(value) != base_types.auto else self.make_default("MrgnDtlDueToA")
+		self._MrgnDtlDueToA = value if value is not None else base_types.UninitialisedField(self, 'MrgnDtlDueToA', MarginCall1, False)
 
 	@MrgnDtlDueToA.deleter
 	def MrgnDtlDueToA(self):
 		del self._MrgnDtlDueToA
-		self._MrgnDtlDueToA = None
+		self._MrgnDtlDueToA = base_types.UninitialisedField(self, 'MrgnDtlDueToA', MarginCall1, False)
 
 	@property
 	def MrgnDtlDueToB(self):
@@ -70,12 +70,12 @@ class MarginCall3(base_types._BaseFieldType):
 
 	@MrgnDtlDueToB.setter
 	def MrgnDtlDueToB(self, value):
-		self._MrgnDtlDueToB = value if type(value) != base_types.auto else self.make_default("MrgnDtlDueToB")
+		self._MrgnDtlDueToB = value if value is not None else base_types.UninitialisedField(self, 'MrgnDtlDueToB', MarginCall1, False)
 
 	@MrgnDtlDueToB.deleter
 	def MrgnDtlDueToB(self):
 		del self._MrgnDtlDueToB
-		self._MrgnDtlDueToB = None
+		self._MrgnDtlDueToB = base_types.UninitialisedField(self, 'MrgnDtlDueToB', MarginCall1, False)
 
 	@property
 	def RqrmntDtlsDueToA(self):
@@ -83,12 +83,12 @@ class MarginCall3(base_types._BaseFieldType):
 
 	@RqrmntDtlsDueToA.setter
 	def RqrmntDtlsDueToA(self, value):
-		self._RqrmntDtlsDueToA = value if type(value) != base_types.auto else self.make_default("RqrmntDtlsDueToA")
+		self._RqrmntDtlsDueToA = value if value is not None else base_types.UninitialisedField(self, 'RqrmntDtlsDueToA', MarginRequirement1Choice, False)
 
 	@RqrmntDtlsDueToA.deleter
 	def RqrmntDtlsDueToA(self):
 		del self._RqrmntDtlsDueToA
-		self._RqrmntDtlsDueToA = None
+		self._RqrmntDtlsDueToA = base_types.UninitialisedField(self, 'RqrmntDtlsDueToA', MarginRequirement1Choice, False)
 
 	@property
 	def RqrmntDtlsDueToB(self):
@@ -96,12 +96,12 @@ class MarginCall3(base_types._BaseFieldType):
 
 	@RqrmntDtlsDueToB.setter
 	def RqrmntDtlsDueToB(self, value):
-		self._RqrmntDtlsDueToB = value if type(value) != base_types.auto else self.make_default("RqrmntDtlsDueToB")
+		self._RqrmntDtlsDueToB = value if value is not None else base_types.UninitialisedField(self, 'RqrmntDtlsDueToB', MarginRequirement1Choice, False)
 
 	@RqrmntDtlsDueToB.deleter
 	def RqrmntDtlsDueToB(self):
 		del self._RqrmntDtlsDueToB
-		self._RqrmntDtlsDueToB = None
+		self._RqrmntDtlsDueToB = base_types.UninitialisedField(self, 'RqrmntDtlsDueToB', MarginRequirement1Choice, False)
 
 	@property
 	def XpctdCollDueToA(self):
@@ -109,12 +109,12 @@ class MarginCall3(base_types._BaseFieldType):
 
 	@XpctdCollDueToA.setter
 	def XpctdCollDueToA(self, value):
-		self._XpctdCollDueToA = value if type(value) != base_types.auto else self.make_default("XpctdCollDueToA")
+		self._XpctdCollDueToA = value if value is not None else base_types.UninitialisedField(self, 'XpctdCollDueToA', ExpectedCollateral2Choice, False)
 
 	@XpctdCollDueToA.deleter
 	def XpctdCollDueToA(self):
 		del self._XpctdCollDueToA
-		self._XpctdCollDueToA = None
+		self._XpctdCollDueToA = base_types.UninitialisedField(self, 'XpctdCollDueToA', ExpectedCollateral2Choice, False)
 
 	@property
 	def XpctdCollDueToB(self):
@@ -122,12 +122,12 @@ class MarginCall3(base_types._BaseFieldType):
 
 	@XpctdCollDueToB.setter
 	def XpctdCollDueToB(self, value):
-		self._XpctdCollDueToB = value if type(value) != base_types.auto else self.make_default("XpctdCollDueToB")
+		self._XpctdCollDueToB = value if value is not None else base_types.UninitialisedField(self, 'XpctdCollDueToB', ExpectedCollateral2Choice, False)
 
 	@XpctdCollDueToB.deleter
 	def XpctdCollDueToB(self):
 		del self._XpctdCollDueToB
-		self._XpctdCollDueToB = None
+		self._XpctdCollDueToB = base_types.UninitialisedField(self, 'XpctdCollDueToB', ExpectedCollateral2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=BlockChainAddressWallet5, min=0, max=1, mutex_group=None, array=False),

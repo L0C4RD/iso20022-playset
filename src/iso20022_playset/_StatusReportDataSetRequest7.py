@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DataSetIdentification11 import DataSetIdentification11
-from ._Max9NumericText import Max9NumericText
-from ._StatusReportContent15 import StatusReportContent15
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import DataSetIdentification11
+from . import Max9NumericText
+from . import StatusReportContent15
+from . import TrueFalseIndicator
 
 class StatusReportDataSetRequest7(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class StatusReportDataSetRequest7(base_types._BaseFieldType):
 
 	@Cntt.setter
 	def Cntt(self, value):
-		self._Cntt = value if type(value) != base_types.auto else self.make_default("Cntt")
+		self._Cntt = value if value is not None else base_types.UninitialisedField(self, 'Cntt', StatusReportContent15, False)
 
 	@Cntt.deleter
 	def Cntt(self):
 		del self._Cntt
-		self._Cntt = None
+		self._Cntt = base_types.UninitialisedField(self, 'Cntt', StatusReportContent15, False)
 
 	@property
 	def Id(self):
@@ -29,12 +29,12 @@ class StatusReportDataSetRequest7(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', DataSetIdentification11, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', DataSetIdentification11, False)
 
 	@property
 	def LastSeq(self):
@@ -42,12 +42,12 @@ class StatusReportDataSetRequest7(base_types._BaseFieldType):
 
 	@LastSeq.setter
 	def LastSeq(self, value):
-		self._LastSeq = value if type(value) != base_types.auto else self.make_default("LastSeq")
+		self._LastSeq = value if value is not None else base_types.UninitialisedField(self, 'LastSeq', TrueFalseIndicator, False)
 
 	@LastSeq.deleter
 	def LastSeq(self):
 		del self._LastSeq
-		self._LastSeq = None
+		self._LastSeq = base_types.UninitialisedField(self, 'LastSeq', TrueFalseIndicator, False)
 
 	@property
 	def SeqCntr(self):
@@ -55,12 +55,12 @@ class StatusReportDataSetRequest7(base_types._BaseFieldType):
 
 	@SeqCntr.setter
 	def SeqCntr(self, value):
-		self._SeqCntr = value if type(value) != base_types.auto else self.make_default("SeqCntr")
+		self._SeqCntr = value if value is not None else base_types.UninitialisedField(self, 'SeqCntr', Max9NumericText, False)
 
 	@SeqCntr.deleter
 	def SeqCntr(self):
 		del self._SeqCntr
-		self._SeqCntr = None
+		self._SeqCntr = base_types.UninitialisedField(self, 'SeqCntr', Max9NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cntt', type=StatusReportContent15, min=1, max=1, mutex_group=None, array=False),

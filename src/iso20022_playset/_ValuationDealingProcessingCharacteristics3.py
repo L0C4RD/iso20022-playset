@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._EventFrequency5Code import EventFrequency5Code
-from ._ISOTime import ISOTime
-from ._Max350Text import Max350Text
-from ._Number import Number
-from ._PriceMethod1Code import PriceMethod1Code
-from ._YesNoIndicator import YesNoIndicator
+from . import ActiveCurrencyCode
+from . import AdditionalInformation15
+from . import EventFrequency5Code
+from . import ISOTime
+from . import Max350Text
+from . import Number
+from . import PriceMethod1Code
+from . import YesNoIndicator
 
 class ValuationDealingProcessingCharacteristics3(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class ValuationDealingProcessingCharacteristics3(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@property
 	def DcmlstnPric(self):
@@ -33,12 +33,12 @@ class ValuationDealingProcessingCharacteristics3(base_types._BaseFieldType):
 
 	@DcmlstnPric.setter
 	def DcmlstnPric(self, value):
-		self._DcmlstnPric = value if type(value) != base_types.auto else self.make_default("DcmlstnPric")
+		self._DcmlstnPric = value if value is not None else base_types.UninitialisedField(self, 'DcmlstnPric', Number, False)
 
 	@DcmlstnPric.deleter
 	def DcmlstnPric(self):
 		del self._DcmlstnPric
-		self._DcmlstnPric = None
+		self._DcmlstnPric = base_types.UninitialisedField(self, 'DcmlstnPric', Number, False)
 
 	@property
 	def DcmlstnUnits(self):
@@ -46,12 +46,12 @@ class ValuationDealingProcessingCharacteristics3(base_types._BaseFieldType):
 
 	@DcmlstnUnits.setter
 	def DcmlstnUnits(self, value):
-		self._DcmlstnUnits = value if type(value) != base_types.auto else self.make_default("DcmlstnUnits")
+		self._DcmlstnUnits = value if value is not None else base_types.UninitialisedField(self, 'DcmlstnUnits', Number, False)
 
 	@DcmlstnUnits.deleter
 	def DcmlstnUnits(self):
 		del self._DcmlstnUnits
-		self._DcmlstnUnits = None
+		self._DcmlstnUnits = base_types.UninitialisedField(self, 'DcmlstnUnits', Number, False)
 
 	@property
 	def DualFndInd(self):
@@ -59,12 +59,12 @@ class ValuationDealingProcessingCharacteristics3(base_types._BaseFieldType):
 
 	@DualFndInd.setter
 	def DualFndInd(self, value):
-		self._DualFndInd = value if type(value) != base_types.auto else self.make_default("DualFndInd")
+		self._DualFndInd = value if value is not None else base_types.UninitialisedField(self, 'DualFndInd', YesNoIndicator, False)
 
 	@DualFndInd.deleter
 	def DualFndInd(self):
 		del self._DualFndInd
-		self._DualFndInd = None
+		self._DualFndInd = base_types.UninitialisedField(self, 'DualFndInd', YesNoIndicator, False)
 
 	@property
 	def PricCcy(self):
@@ -72,12 +72,12 @@ class ValuationDealingProcessingCharacteristics3(base_types._BaseFieldType):
 
 	@PricCcy.setter
 	def PricCcy(self, value):
-		self._PricCcy = value if type(value) != base_types.auto else self.make_default("PricCcy")
+		self._PricCcy = value if value is not None else base_types.UninitialisedField(self, 'PricCcy', ActiveCurrencyCode, True)
 
 	@PricCcy.deleter
 	def PricCcy(self):
 		del self._PricCcy
-		self._PricCcy = None
+		self._PricCcy = base_types.UninitialisedField(self, 'PricCcy', ActiveCurrencyCode, True)
 
 	@property
 	def PricMtd(self):
@@ -85,12 +85,12 @@ class ValuationDealingProcessingCharacteristics3(base_types._BaseFieldType):
 
 	@PricMtd.setter
 	def PricMtd(self, value):
-		self._PricMtd = value if type(value) != base_types.auto else self.make_default("PricMtd")
+		self._PricMtd = value if value is not None else base_types.UninitialisedField(self, 'PricMtd', PriceMethod1Code, False)
 
 	@PricMtd.deleter
 	def PricMtd(self):
 		del self._PricMtd
-		self._PricMtd = None
+		self._PricMtd = base_types.UninitialisedField(self, 'PricMtd', PriceMethod1Code, False)
 
 	@property
 	def ValtnFrqcy(self):
@@ -98,12 +98,12 @@ class ValuationDealingProcessingCharacteristics3(base_types._BaseFieldType):
 
 	@ValtnFrqcy.setter
 	def ValtnFrqcy(self, value):
-		self._ValtnFrqcy = value if type(value) != base_types.auto else self.make_default("ValtnFrqcy")
+		self._ValtnFrqcy = value if value is not None else base_types.UninitialisedField(self, 'ValtnFrqcy', EventFrequency5Code, False)
 
 	@ValtnFrqcy.deleter
 	def ValtnFrqcy(self):
 		del self._ValtnFrqcy
-		self._ValtnFrqcy = None
+		self._ValtnFrqcy = base_types.UninitialisedField(self, 'ValtnFrqcy', EventFrequency5Code, False)
 
 	@property
 	def ValtnFrqcyDesc(self):
@@ -111,12 +111,12 @@ class ValuationDealingProcessingCharacteristics3(base_types._BaseFieldType):
 
 	@ValtnFrqcyDesc.setter
 	def ValtnFrqcyDesc(self, value):
-		self._ValtnFrqcyDesc = value if type(value) != base_types.auto else self.make_default("ValtnFrqcyDesc")
+		self._ValtnFrqcyDesc = value if value is not None else base_types.UninitialisedField(self, 'ValtnFrqcyDesc', Max350Text, False)
 
 	@ValtnFrqcyDesc.deleter
 	def ValtnFrqcyDesc(self):
 		del self._ValtnFrqcyDesc
-		self._ValtnFrqcyDesc = None
+		self._ValtnFrqcyDesc = base_types.UninitialisedField(self, 'ValtnFrqcyDesc', Max350Text, False)
 
 	@property
 	def ValtnTm(self):
@@ -124,12 +124,12 @@ class ValuationDealingProcessingCharacteristics3(base_types._BaseFieldType):
 
 	@ValtnTm.setter
 	def ValtnTm(self, value):
-		self._ValtnTm = value if type(value) != base_types.auto else self.make_default("ValtnTm")
+		self._ValtnTm = value if value is not None else base_types.UninitialisedField(self, 'ValtnTm', ISOTime, False)
 
 	@ValtnTm.deleter
 	def ValtnTm(self):
 		del self._ValtnTm
-		self._ValtnTm = None
+		self._ValtnTm = base_types.UninitialisedField(self, 'ValtnTm', ISOTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),

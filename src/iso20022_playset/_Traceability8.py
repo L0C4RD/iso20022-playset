@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification177 import GenericIdentification177
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
-from ._Max6Text import Max6Text
+from . import GenericIdentification177
+from . import ISODateTime
+from . import Max35Text
+from . import Max6Text
 
 class Traceability8(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class Traceability8(base_types._BaseFieldType):
 
 	@PrtcolNm.setter
 	def PrtcolNm(self, value):
-		self._PrtcolNm = value if type(value) != base_types.auto else self.make_default("PrtcolNm")
+		self._PrtcolNm = value if value is not None else base_types.UninitialisedField(self, 'PrtcolNm', Max35Text, False)
 
 	@PrtcolNm.deleter
 	def PrtcolNm(self):
 		del self._PrtcolNm
-		self._PrtcolNm = None
+		self._PrtcolNm = base_types.UninitialisedField(self, 'PrtcolNm', Max35Text, False)
 
 	@property
 	def PrtcolVrsn(self):
@@ -29,12 +29,12 @@ class Traceability8(base_types._BaseFieldType):
 
 	@PrtcolVrsn.setter
 	def PrtcolVrsn(self, value):
-		self._PrtcolVrsn = value if type(value) != base_types.auto else self.make_default("PrtcolVrsn")
+		self._PrtcolVrsn = value if value is not None else base_types.UninitialisedField(self, 'PrtcolVrsn', Max6Text, False)
 
 	@PrtcolVrsn.deleter
 	def PrtcolVrsn(self):
 		del self._PrtcolVrsn
-		self._PrtcolVrsn = None
+		self._PrtcolVrsn = base_types.UninitialisedField(self, 'PrtcolVrsn', Max6Text, False)
 
 	@property
 	def RlayId(self):
@@ -42,12 +42,12 @@ class Traceability8(base_types._BaseFieldType):
 
 	@RlayId.setter
 	def RlayId(self, value):
-		self._RlayId = value if type(value) != base_types.auto else self.make_default("RlayId")
+		self._RlayId = value if value is not None else base_types.UninitialisedField(self, 'RlayId', GenericIdentification177, False)
 
 	@RlayId.deleter
 	def RlayId(self):
 		del self._RlayId
-		self._RlayId = None
+		self._RlayId = base_types.UninitialisedField(self, 'RlayId', GenericIdentification177, False)
 
 	@property
 	def TracDtTmIn(self):
@@ -55,12 +55,12 @@ class Traceability8(base_types._BaseFieldType):
 
 	@TracDtTmIn.setter
 	def TracDtTmIn(self, value):
-		self._TracDtTmIn = value if type(value) != base_types.auto else self.make_default("TracDtTmIn")
+		self._TracDtTmIn = value if value is not None else base_types.UninitialisedField(self, 'TracDtTmIn', ISODateTime, False)
 
 	@TracDtTmIn.deleter
 	def TracDtTmIn(self):
 		del self._TracDtTmIn
-		self._TracDtTmIn = None
+		self._TracDtTmIn = base_types.UninitialisedField(self, 'TracDtTmIn', ISODateTime, False)
 
 	@property
 	def TracDtTmOut(self):
@@ -68,12 +68,12 @@ class Traceability8(base_types._BaseFieldType):
 
 	@TracDtTmOut.setter
 	def TracDtTmOut(self, value):
-		self._TracDtTmOut = value if type(value) != base_types.auto else self.make_default("TracDtTmOut")
+		self._TracDtTmOut = value if value is not None else base_types.UninitialisedField(self, 'TracDtTmOut', ISODateTime, False)
 
 	@TracDtTmOut.deleter
 	def TracDtTmOut(self):
 		del self._TracDtTmOut
-		self._TracDtTmOut = None
+		self._TracDtTmOut = base_types.UninitialisedField(self, 'TracDtTmOut', ISODateTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrtcolNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

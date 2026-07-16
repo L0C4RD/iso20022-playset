@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ErrorHandling5 import ErrorHandling5
-from ._StandingOrder11 import StandingOrder11
+from . import ErrorHandling5
+from . import StandingOrder11
 
 class StandingOrderOrError10Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class StandingOrderOrError10Choice(base_types._BaseFieldType):
 
 	@BizErr.setter
 	def BizErr(self, value):
-		self._BizErr = value if type(value) != base_types.auto else self.make_default("BizErr")
+		self._BizErr = value if value is not None else base_types.UninitialisedField(self, 'BizErr', ErrorHandling5, True)
 
 	@BizErr.deleter
 	def BizErr(self):
 		del self._BizErr
-		self._BizErr = None
+		self._BizErr = base_types.UninitialisedField(self, 'BizErr', ErrorHandling5, True)
 
 	@property
 	def StgOrdr(self):
@@ -27,12 +27,12 @@ class StandingOrderOrError10Choice(base_types._BaseFieldType):
 
 	@StgOrdr.setter
 	def StgOrdr(self, value):
-		self._StgOrdr = value if type(value) != base_types.auto else self.make_default("StgOrdr")
+		self._StgOrdr = value if value is not None else base_types.UninitialisedField(self, 'StgOrdr', StandingOrder11, False)
 
 	@StgOrdr.deleter
 	def StgOrdr(self):
 		del self._StgOrdr
-		self._StgOrdr = None
+		self._StgOrdr = base_types.UninitialisedField(self, 'StgOrdr', StandingOrder11, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BizErr', type=ErrorHandling5, min=1, max=None, mutex_group=1, array=True),

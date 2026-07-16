@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DocumentIdentification3 import DocumentIdentification3
-from ._DocumentIdentification5 import DocumentIdentification5
-from ._MessageIdentification1 import MessageIdentification1
-from ._PendingActivity2 import PendingActivity2
-from ._SimpleIdentificationInformation import SimpleIdentificationInformation
-from ._TransactionStatus4 import TransactionStatus4
+from . import DocumentIdentification3
+from . import DocumentIdentification5
+from . import MessageIdentification1
+from . import PendingActivity2
+from . import SimpleIdentificationInformation
+from . import TransactionStatus4
 
 class ActionReminderV03(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class ActionReminderV03(base_types._BaseFieldType):
 
 	@EstblishdBaselnId.setter
 	def EstblishdBaselnId(self, value):
-		self._EstblishdBaselnId = value if type(value) != base_types.auto else self.make_default("EstblishdBaselnId")
+		self._EstblishdBaselnId = value if value is not None else base_types.UninitialisedField(self, 'EstblishdBaselnId', DocumentIdentification3, False)
 
 	@EstblishdBaselnId.deleter
 	def EstblishdBaselnId(self):
 		del self._EstblishdBaselnId
-		self._EstblishdBaselnId = None
+		self._EstblishdBaselnId = base_types.UninitialisedField(self, 'EstblishdBaselnId', DocumentIdentification3, False)
 
 	@property
 	def MsgReqrngActn(self):
@@ -31,12 +31,12 @@ class ActionReminderV03(base_types._BaseFieldType):
 
 	@MsgReqrngActn.setter
 	def MsgReqrngActn(self, value):
-		self._MsgReqrngActn = value if type(value) != base_types.auto else self.make_default("MsgReqrngActn")
+		self._MsgReqrngActn = value if value is not None else base_types.UninitialisedField(self, 'MsgReqrngActn', MessageIdentification1, False)
 
 	@MsgReqrngActn.deleter
 	def MsgReqrngActn(self):
 		del self._MsgReqrngActn
-		self._MsgReqrngActn = None
+		self._MsgReqrngActn = base_types.UninitialisedField(self, 'MsgReqrngActn', MessageIdentification1, False)
 
 	@property
 	def PdgReqForActn(self):
@@ -44,12 +44,12 @@ class ActionReminderV03(base_types._BaseFieldType):
 
 	@PdgReqForActn.setter
 	def PdgReqForActn(self, value):
-		self._PdgReqForActn = value if type(value) != base_types.auto else self.make_default("PdgReqForActn")
+		self._PdgReqForActn = value if value is not None else base_types.UninitialisedField(self, 'PdgReqForActn', PendingActivity2, False)
 
 	@PdgReqForActn.deleter
 	def PdgReqForActn(self):
 		del self._PdgReqForActn
-		self._PdgReqForActn = None
+		self._PdgReqForActn = base_types.UninitialisedField(self, 'PdgReqForActn', PendingActivity2, False)
 
 	@property
 	def RmndrId(self):
@@ -57,12 +57,12 @@ class ActionReminderV03(base_types._BaseFieldType):
 
 	@RmndrId.setter
 	def RmndrId(self, value):
-		self._RmndrId = value if type(value) != base_types.auto else self.make_default("RmndrId")
+		self._RmndrId = value if value is not None else base_types.UninitialisedField(self, 'RmndrId', MessageIdentification1, False)
 
 	@RmndrId.deleter
 	def RmndrId(self):
 		del self._RmndrId
-		self._RmndrId = None
+		self._RmndrId = base_types.UninitialisedField(self, 'RmndrId', MessageIdentification1, False)
 
 	@property
 	def TxId(self):
@@ -70,12 +70,12 @@ class ActionReminderV03(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', SimpleIdentificationInformation, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', SimpleIdentificationInformation, False)
 
 	@property
 	def TxSts(self):
@@ -83,12 +83,12 @@ class ActionReminderV03(base_types._BaseFieldType):
 
 	@TxSts.setter
 	def TxSts(self, value):
-		self._TxSts = value if type(value) != base_types.auto else self.make_default("TxSts")
+		self._TxSts = value if value is not None else base_types.UninitialisedField(self, 'TxSts', TransactionStatus4, False)
 
 	@TxSts.deleter
 	def TxSts(self):
 		del self._TxSts
-		self._TxSts = None
+		self._TxSts = base_types.UninitialisedField(self, 'TxSts', TransactionStatus4, False)
 
 	@property
 	def UsrTxRef(self):
@@ -96,12 +96,12 @@ class ActionReminderV03(base_types._BaseFieldType):
 
 	@UsrTxRef.setter
 	def UsrTxRef(self, value):
-		self._UsrTxRef = value if type(value) != base_types.auto else self.make_default("UsrTxRef")
+		self._UsrTxRef = value if value is not None else base_types.UninitialisedField(self, 'UsrTxRef', DocumentIdentification5, True)
 
 	@UsrTxRef.deleter
 	def UsrTxRef(self):
 		del self._UsrTxRef
-		self._UsrTxRef = None
+		self._UsrTxRef = base_types.UninitialisedField(self, 'UsrTxRef', DocumentIdentification5, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EstblishdBaselnId', type=DocumentIdentification3, min=0, max=1, mutex_group=None, array=False),

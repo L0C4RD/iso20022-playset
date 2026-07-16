@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountSwitchInformationResponseV05 import AccountSwitchInformationResponseV05
+from . import AccountSwitchInformationResponseV05
 
 class ACMT_028_001_05():
 
@@ -18,12 +18,12 @@ class ACMT_028_001_05():
 
 		@AcctSwtchInfRspn.setter
 		def AcctSwtchInfRspn(self, value):
-			self._AcctSwtchInfRspn = value if type(value) != base_types.auto else self.make_default("AcctSwtchInfRspn")
+			self._AcctSwtchInfRspn = value if value is not None else base_types.UninitialisedField(self, 'AcctSwtchInfRspn', AccountSwitchInformationResponseV05, False)
 
 		@AcctSwtchInfRspn.deleter
 		def AcctSwtchInfRspn(self):
 			del self._AcctSwtchInfRspn
-			self._AcctSwtchInfRspn = None
+			self._AcctSwtchInfRspn = base_types.UninitialisedField(self, 'AcctSwtchInfRspn', AccountSwitchInformationResponseV05, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AcctSwtchInfRspn', type=AccountSwitchInformationResponseV05, min=1, max=1, mutex_group=None, array=False),

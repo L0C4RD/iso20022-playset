@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max140Text import Max140Text
-from ._MessageItemCondition2Code import MessageItemCondition2Code
+from . import Max140Text
+from . import MessageItemCondition2Code
 
 class MessageItemCondition2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class MessageItemCondition2(base_types._BaseFieldType):
 
 	@Cond.setter
 	def Cond(self, value):
-		self._Cond = value if type(value) != base_types.auto else self.make_default("Cond")
+		self._Cond = value if value is not None else base_types.UninitialisedField(self, 'Cond', MessageItemCondition2Code, False)
 
 	@Cond.deleter
 	def Cond(self):
 		del self._Cond
-		self._Cond = None
+		self._Cond = base_types.UninitialisedField(self, 'Cond', MessageItemCondition2Code, False)
 
 	@property
 	def ItmId(self):
@@ -27,12 +27,12 @@ class MessageItemCondition2(base_types._BaseFieldType):
 
 	@ItmId.setter
 	def ItmId(self, value):
-		self._ItmId = value if type(value) != base_types.auto else self.make_default("ItmId")
+		self._ItmId = value if value is not None else base_types.UninitialisedField(self, 'ItmId', Max140Text, False)
 
 	@ItmId.deleter
 	def ItmId(self):
 		del self._ItmId
-		self._ItmId = None
+		self._ItmId = base_types.UninitialisedField(self, 'ItmId', Max140Text, False)
 
 	@property
 	def Val(self):
@@ -40,12 +40,12 @@ class MessageItemCondition2(base_types._BaseFieldType):
 
 	@Val.setter
 	def Val(self, value):
-		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
+		self._Val = value if value is not None else base_types.UninitialisedField(self, 'Val', Max140Text, True)
 
 	@Val.deleter
 	def Val(self):
 		del self._Val
-		self._Val = None
+		self._Val = base_types.UninitialisedField(self, 'Val', Max140Text, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cond', type=MessageItemCondition2Code, min=1, max=1, mutex_group=None, array=False),

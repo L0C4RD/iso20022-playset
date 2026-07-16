@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35NumericText import Max35NumericText
+from . import Max35NumericText
 
 class SensitiveMobileData1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class SensitiveMobileData1(base_types._BaseFieldType):
 
 	@IMEI.setter
 	def IMEI(self, value):
-		self._IMEI = value if type(value) != base_types.auto else self.make_default("IMEI")
+		self._IMEI = value if value is not None else base_types.UninitialisedField(self, 'IMEI', Max35NumericText, False)
 
 	@IMEI.deleter
 	def IMEI(self):
 		del self._IMEI
-		self._IMEI = None
+		self._IMEI = base_types.UninitialisedField(self, 'IMEI', Max35NumericText, False)
 
 	@property
 	def IMSI(self):
@@ -26,12 +26,12 @@ class SensitiveMobileData1(base_types._BaseFieldType):
 
 	@IMSI.setter
 	def IMSI(self, value):
-		self._IMSI = value if type(value) != base_types.auto else self.make_default("IMSI")
+		self._IMSI = value if value is not None else base_types.UninitialisedField(self, 'IMSI', Max35NumericText, False)
 
 	@IMSI.deleter
 	def IMSI(self):
 		del self._IMSI
-		self._IMSI = None
+		self._IMSI = base_types.UninitialisedField(self, 'IMSI', Max35NumericText, False)
 
 	@property
 	def MSISDN(self):
@@ -39,12 +39,12 @@ class SensitiveMobileData1(base_types._BaseFieldType):
 
 	@MSISDN.setter
 	def MSISDN(self, value):
-		self._MSISDN = value if type(value) != base_types.auto else self.make_default("MSISDN")
+		self._MSISDN = value if value is not None else base_types.UninitialisedField(self, 'MSISDN', Max35NumericText, False)
 
 	@MSISDN.deleter
 	def MSISDN(self):
 		del self._MSISDN
-		self._MSISDN = None
+		self._MSISDN = base_types.UninitialisedField(self, 'MSISDN', Max35NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IMEI', type=Max35NumericText, min=0, max=1, mutex_group=None, array=False),

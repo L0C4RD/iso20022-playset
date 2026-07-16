@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DebtInstrument2 import DebtInstrument2
-from ._DerivativeInstrument5 import DerivativeInstrument5
-from ._LEIIdentifier import LEIIdentifier
-from ._Max35Text import Max35Text
-from ._RecordTechnicalData4 import RecordTechnicalData4
-from ._SecurityInstrumentDescription9 import SecurityInstrumentDescription9
-from ._TradingVenueAttributes1 import TradingVenueAttributes1
+from . import DebtInstrument2
+from . import DerivativeInstrument5
+from . import LEIIdentifier
+from . import Max35Text
+from . import RecordTechnicalData4
+from . import SecurityInstrumentDescription9
+from . import TradingVenueAttributes1
 
 class SecuritiesReferenceDataReport6(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class SecuritiesReferenceDataReport6(base_types._BaseFieldType):
 
 	@DebtInstrmAttrbts.setter
 	def DebtInstrmAttrbts(self, value):
-		self._DebtInstrmAttrbts = value if type(value) != base_types.auto else self.make_default("DebtInstrmAttrbts")
+		self._DebtInstrmAttrbts = value if value is not None else base_types.UninitialisedField(self, 'DebtInstrmAttrbts', DebtInstrument2, False)
 
 	@DebtInstrmAttrbts.deleter
 	def DebtInstrmAttrbts(self):
 		del self._DebtInstrmAttrbts
-		self._DebtInstrmAttrbts = None
+		self._DebtInstrmAttrbts = base_types.UninitialisedField(self, 'DebtInstrmAttrbts', DebtInstrument2, False)
 
 	@property
 	def DerivInstrmAttrbts(self):
@@ -32,12 +32,12 @@ class SecuritiesReferenceDataReport6(base_types._BaseFieldType):
 
 	@DerivInstrmAttrbts.setter
 	def DerivInstrmAttrbts(self, value):
-		self._DerivInstrmAttrbts = value if type(value) != base_types.auto else self.make_default("DerivInstrmAttrbts")
+		self._DerivInstrmAttrbts = value if value is not None else base_types.UninitialisedField(self, 'DerivInstrmAttrbts', DerivativeInstrument5, False)
 
 	@DerivInstrmAttrbts.deleter
 	def DerivInstrmAttrbts(self):
 		del self._DerivInstrmAttrbts
-		self._DerivInstrmAttrbts = None
+		self._DerivInstrmAttrbts = base_types.UninitialisedField(self, 'DerivInstrmAttrbts', DerivativeInstrument5, False)
 
 	@property
 	def FinInstrmGnlAttrbts(self):
@@ -45,12 +45,12 @@ class SecuritiesReferenceDataReport6(base_types._BaseFieldType):
 
 	@FinInstrmGnlAttrbts.setter
 	def FinInstrmGnlAttrbts(self, value):
-		self._FinInstrmGnlAttrbts = value if type(value) != base_types.auto else self.make_default("FinInstrmGnlAttrbts")
+		self._FinInstrmGnlAttrbts = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmGnlAttrbts', SecurityInstrumentDescription9, False)
 
 	@FinInstrmGnlAttrbts.deleter
 	def FinInstrmGnlAttrbts(self):
 		del self._FinInstrmGnlAttrbts
-		self._FinInstrmGnlAttrbts = None
+		self._FinInstrmGnlAttrbts = base_types.UninitialisedField(self, 'FinInstrmGnlAttrbts', SecurityInstrumentDescription9, False)
 
 	@property
 	def Issr(self):
@@ -58,12 +58,12 @@ class SecuritiesReferenceDataReport6(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+		self._Issr = value if value is not None else base_types.UninitialisedField(self, 'Issr', LEIIdentifier, False)
 
 	@Issr.deleter
 	def Issr(self):
 		del self._Issr
-		self._Issr = None
+		self._Issr = base_types.UninitialisedField(self, 'Issr', LEIIdentifier, False)
 
 	@property
 	def TechAttrbts(self):
@@ -71,12 +71,12 @@ class SecuritiesReferenceDataReport6(base_types._BaseFieldType):
 
 	@TechAttrbts.setter
 	def TechAttrbts(self, value):
-		self._TechAttrbts = value if type(value) != base_types.auto else self.make_default("TechAttrbts")
+		self._TechAttrbts = value if value is not None else base_types.UninitialisedField(self, 'TechAttrbts', RecordTechnicalData4, False)
 
 	@TechAttrbts.deleter
 	def TechAttrbts(self):
 		del self._TechAttrbts
-		self._TechAttrbts = None
+		self._TechAttrbts = base_types.UninitialisedField(self, 'TechAttrbts', RecordTechnicalData4, False)
 
 	@property
 	def TechRcrdId(self):
@@ -84,12 +84,12 @@ class SecuritiesReferenceDataReport6(base_types._BaseFieldType):
 
 	@TechRcrdId.setter
 	def TechRcrdId(self, value):
-		self._TechRcrdId = value if type(value) != base_types.auto else self.make_default("TechRcrdId")
+		self._TechRcrdId = value if value is not None else base_types.UninitialisedField(self, 'TechRcrdId', Max35Text, False)
 
 	@TechRcrdId.deleter
 	def TechRcrdId(self):
 		del self._TechRcrdId
-		self._TechRcrdId = None
+		self._TechRcrdId = base_types.UninitialisedField(self, 'TechRcrdId', Max35Text, False)
 
 	@property
 	def TradgVnRltdAttrbts(self):
@@ -97,12 +97,12 @@ class SecuritiesReferenceDataReport6(base_types._BaseFieldType):
 
 	@TradgVnRltdAttrbts.setter
 	def TradgVnRltdAttrbts(self, value):
-		self._TradgVnRltdAttrbts = value if type(value) != base_types.auto else self.make_default("TradgVnRltdAttrbts")
+		self._TradgVnRltdAttrbts = value if value is not None else base_types.UninitialisedField(self, 'TradgVnRltdAttrbts', TradingVenueAttributes1, True)
 
 	@TradgVnRltdAttrbts.deleter
 	def TradgVnRltdAttrbts(self):
 		del self._TradgVnRltdAttrbts
-		self._TradgVnRltdAttrbts = None
+		self._TradgVnRltdAttrbts = base_types.UninitialisedField(self, 'TradgVnRltdAttrbts', TradingVenueAttributes1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DebtInstrmAttrbts', type=DebtInstrument2, min=0, max=1, mutex_group=None, array=False),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._DiscountAmountAndType1 import DiscountAmountAndType1
-from ._DocumentAdjustment1 import DocumentAdjustment1
-from ._TaxAmountAndType1 import TaxAmountAndType1
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import DiscountAmountAndType1
+from . import DocumentAdjustment1
+from . import TaxAmountAndType1
 
 class RemittanceAmount2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class RemittanceAmount2(base_types._BaseFieldType):
 
 	@AdjstmntAmtAndRsn.setter
 	def AdjstmntAmtAndRsn(self, value):
-		self._AdjstmntAmtAndRsn = value if type(value) != base_types.auto else self.make_default("AdjstmntAmtAndRsn")
+		self._AdjstmntAmtAndRsn = value if value is not None else base_types.UninitialisedField(self, 'AdjstmntAmtAndRsn', DocumentAdjustment1, True)
 
 	@AdjstmntAmtAndRsn.deleter
 	def AdjstmntAmtAndRsn(self):
 		del self._AdjstmntAmtAndRsn
-		self._AdjstmntAmtAndRsn = None
+		self._AdjstmntAmtAndRsn = base_types.UninitialisedField(self, 'AdjstmntAmtAndRsn', DocumentAdjustment1, True)
 
 	@property
 	def CdtNoteAmt(self):
@@ -29,12 +29,12 @@ class RemittanceAmount2(base_types._BaseFieldType):
 
 	@CdtNoteAmt.setter
 	def CdtNoteAmt(self, value):
-		self._CdtNoteAmt = value if type(value) != base_types.auto else self.make_default("CdtNoteAmt")
+		self._CdtNoteAmt = value if value is not None else base_types.UninitialisedField(self, 'CdtNoteAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@CdtNoteAmt.deleter
 	def CdtNoteAmt(self):
 		del self._CdtNoteAmt
-		self._CdtNoteAmt = None
+		self._CdtNoteAmt = base_types.UninitialisedField(self, 'CdtNoteAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def DscntApldAmt(self):
@@ -42,12 +42,12 @@ class RemittanceAmount2(base_types._BaseFieldType):
 
 	@DscntApldAmt.setter
 	def DscntApldAmt(self, value):
-		self._DscntApldAmt = value if type(value) != base_types.auto else self.make_default("DscntApldAmt")
+		self._DscntApldAmt = value if value is not None else base_types.UninitialisedField(self, 'DscntApldAmt', DiscountAmountAndType1, True)
 
 	@DscntApldAmt.deleter
 	def DscntApldAmt(self):
 		del self._DscntApldAmt
-		self._DscntApldAmt = None
+		self._DscntApldAmt = base_types.UninitialisedField(self, 'DscntApldAmt', DiscountAmountAndType1, True)
 
 	@property
 	def DuePyblAmt(self):
@@ -55,12 +55,12 @@ class RemittanceAmount2(base_types._BaseFieldType):
 
 	@DuePyblAmt.setter
 	def DuePyblAmt(self, value):
-		self._DuePyblAmt = value if type(value) != base_types.auto else self.make_default("DuePyblAmt")
+		self._DuePyblAmt = value if value is not None else base_types.UninitialisedField(self, 'DuePyblAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@DuePyblAmt.deleter
 	def DuePyblAmt(self):
 		del self._DuePyblAmt
-		self._DuePyblAmt = None
+		self._DuePyblAmt = base_types.UninitialisedField(self, 'DuePyblAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def RmtdAmt(self):
@@ -68,12 +68,12 @@ class RemittanceAmount2(base_types._BaseFieldType):
 
 	@RmtdAmt.setter
 	def RmtdAmt(self, value):
-		self._RmtdAmt = value if type(value) != base_types.auto else self.make_default("RmtdAmt")
+		self._RmtdAmt = value if value is not None else base_types.UninitialisedField(self, 'RmtdAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@RmtdAmt.deleter
 	def RmtdAmt(self):
 		del self._RmtdAmt
-		self._RmtdAmt = None
+		self._RmtdAmt = base_types.UninitialisedField(self, 'RmtdAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def TaxAmt(self):
@@ -81,12 +81,12 @@ class RemittanceAmount2(base_types._BaseFieldType):
 
 	@TaxAmt.setter
 	def TaxAmt(self, value):
-		self._TaxAmt = value if type(value) != base_types.auto else self.make_default("TaxAmt")
+		self._TaxAmt = value if value is not None else base_types.UninitialisedField(self, 'TaxAmt', TaxAmountAndType1, True)
 
 	@TaxAmt.deleter
 	def TaxAmt(self):
 		del self._TaxAmt
-		self._TaxAmt = None
+		self._TaxAmt = base_types.UninitialisedField(self, 'TaxAmt', TaxAmountAndType1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AdjstmntAmtAndRsn', type=DocumentAdjustment1, min=0, max=None, mutex_group=None, array=True),

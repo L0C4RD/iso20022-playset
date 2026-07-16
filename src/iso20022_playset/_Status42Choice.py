@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IndividualOrderStatusAndReason10 import IndividualOrderStatusAndReason10
-from ._OrderStatusAndReason12 import OrderStatusAndReason12
+from . import IndividualOrderStatusAndReason10
+from . import OrderStatusAndReason12
 
 class Status42Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Status42Choice(base_types._BaseFieldType):
 
 	@CxlStsRpt.setter
 	def CxlStsRpt(self, value):
-		self._CxlStsRpt = value if type(value) != base_types.auto else self.make_default("CxlStsRpt")
+		self._CxlStsRpt = value if value is not None else base_types.UninitialisedField(self, 'CxlStsRpt', OrderStatusAndReason12, False)
 
 	@CxlStsRpt.deleter
 	def CxlStsRpt(self):
 		del self._CxlStsRpt
-		self._CxlStsRpt = None
+		self._CxlStsRpt = base_types.UninitialisedField(self, 'CxlStsRpt', OrderStatusAndReason12, False)
 
 	@property
 	def IndvCxlStsRpt(self):
@@ -27,12 +27,12 @@ class Status42Choice(base_types._BaseFieldType):
 
 	@IndvCxlStsRpt.setter
 	def IndvCxlStsRpt(self, value):
-		self._IndvCxlStsRpt = value if type(value) != base_types.auto else self.make_default("IndvCxlStsRpt")
+		self._IndvCxlStsRpt = value if value is not None else base_types.UninitialisedField(self, 'IndvCxlStsRpt', IndividualOrderStatusAndReason10, True)
 
 	@IndvCxlStsRpt.deleter
 	def IndvCxlStsRpt(self):
 		del self._IndvCxlStsRpt
-		self._IndvCxlStsRpt = None
+		self._IndvCxlStsRpt = base_types.UninitialisedField(self, 'IndvCxlStsRpt', IndividualOrderStatusAndReason10, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CxlStsRpt', type=OrderStatusAndReason12, min=0, max=1, mutex_group=1, array=False),

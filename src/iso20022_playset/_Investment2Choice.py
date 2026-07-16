@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Deposit1 import Deposit1
-from ._OtherInvestment1 import OtherInvestment1
-from ._RepurchaseAgreement2 import RepurchaseAgreement2
-from ._SecurityIdentificationAndAmount2 import SecurityIdentificationAndAmount2
+from . import Deposit1
+from . import OtherInvestment1
+from . import RepurchaseAgreement2
+from . import SecurityIdentificationAndAmount2
 
 class Investment2Choice(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class Investment2Choice(base_types._BaseFieldType):
 
 	@CntrlBkDpst.setter
 	def CntrlBkDpst(self, value):
-		self._CntrlBkDpst = value if type(value) != base_types.auto else self.make_default("CntrlBkDpst")
+		self._CntrlBkDpst = value if value is not None else base_types.UninitialisedField(self, 'CntrlBkDpst', Deposit1, False)
 
 	@CntrlBkDpst.deleter
 	def CntrlBkDpst(self):
 		del self._CntrlBkDpst
-		self._CntrlBkDpst = None
+		self._CntrlBkDpst = base_types.UninitialisedField(self, 'CntrlBkDpst', Deposit1, False)
 
 	@property
 	def OthrInvstmts(self):
@@ -29,12 +29,12 @@ class Investment2Choice(base_types._BaseFieldType):
 
 	@OthrInvstmts.setter
 	def OthrInvstmts(self, value):
-		self._OthrInvstmts = value if type(value) != base_types.auto else self.make_default("OthrInvstmts")
+		self._OthrInvstmts = value if value is not None else base_types.UninitialisedField(self, 'OthrInvstmts', OtherInvestment1, False)
 
 	@OthrInvstmts.deleter
 	def OthrInvstmts(self):
 		del self._OthrInvstmts
-		self._OthrInvstmts = None
+		self._OthrInvstmts = base_types.UninitialisedField(self, 'OthrInvstmts', OtherInvestment1, False)
 
 	@property
 	def OutrghtInvstmt(self):
@@ -42,12 +42,12 @@ class Investment2Choice(base_types._BaseFieldType):
 
 	@OutrghtInvstmt.setter
 	def OutrghtInvstmt(self, value):
-		self._OutrghtInvstmt = value if type(value) != base_types.auto else self.make_default("OutrghtInvstmt")
+		self._OutrghtInvstmt = value if value is not None else base_types.UninitialisedField(self, 'OutrghtInvstmt', SecurityIdentificationAndAmount2, False)
 
 	@OutrghtInvstmt.deleter
 	def OutrghtInvstmt(self):
 		del self._OutrghtInvstmt
-		self._OutrghtInvstmt = None
+		self._OutrghtInvstmt = base_types.UninitialisedField(self, 'OutrghtInvstmt', SecurityIdentificationAndAmount2, False)
 
 	@property
 	def RpAgrmt(self):
@@ -55,12 +55,12 @@ class Investment2Choice(base_types._BaseFieldType):
 
 	@RpAgrmt.setter
 	def RpAgrmt(self, value):
-		self._RpAgrmt = value if type(value) != base_types.auto else self.make_default("RpAgrmt")
+		self._RpAgrmt = value if value is not None else base_types.UninitialisedField(self, 'RpAgrmt', RepurchaseAgreement2, False)
 
 	@RpAgrmt.deleter
 	def RpAgrmt(self):
 		del self._RpAgrmt
-		self._RpAgrmt = None
+		self._RpAgrmt = base_types.UninitialisedField(self, 'RpAgrmt', RepurchaseAgreement2, False)
 
 	@property
 	def UscrdCshDpst(self):
@@ -68,12 +68,12 @@ class Investment2Choice(base_types._BaseFieldType):
 
 	@UscrdCshDpst.setter
 	def UscrdCshDpst(self, value):
-		self._UscrdCshDpst = value if type(value) != base_types.auto else self.make_default("UscrdCshDpst")
+		self._UscrdCshDpst = value if value is not None else base_types.UninitialisedField(self, 'UscrdCshDpst', Deposit1, False)
 
 	@UscrdCshDpst.deleter
 	def UscrdCshDpst(self):
 		del self._UscrdCshDpst
-		self._UscrdCshDpst = None
+		self._UscrdCshDpst = base_types.UninitialisedField(self, 'UscrdCshDpst', Deposit1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CntrlBkDpst', type=Deposit1, min=0, max=1, mutex_group=1, array=False),

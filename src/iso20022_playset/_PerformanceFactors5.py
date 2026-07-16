@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DatePeriod2 import DatePeriod2
-from ._DecimalNumber import DecimalNumber
+from . import DatePeriod2
+from . import DecimalNumber
 
 class PerformanceFactors5(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PerformanceFactors5(base_types._BaseFieldType):
 
 	@AcmltnPrd.setter
 	def AcmltnPrd(self, value):
-		self._AcmltnPrd = value if type(value) != base_types.auto else self.make_default("AcmltnPrd")
+		self._AcmltnPrd = value if value is not None else base_types.UninitialisedField(self, 'AcmltnPrd', DatePeriod2, False)
 
 	@AcmltnPrd.deleter
 	def AcmltnPrd(self):
 		del self._AcmltnPrd
-		self._AcmltnPrd = None
+		self._AcmltnPrd = base_types.UninitialisedField(self, 'AcmltnPrd', DatePeriod2, False)
 
 	@property
 	def CmltvCorpActnFctr(self):
@@ -27,12 +27,12 @@ class PerformanceFactors5(base_types._BaseFieldType):
 
 	@CmltvCorpActnFctr.setter
 	def CmltvCorpActnFctr(self, value):
-		self._CmltvCorpActnFctr = value if type(value) != base_types.auto else self.make_default("CmltvCorpActnFctr")
+		self._CmltvCorpActnFctr = value if value is not None else base_types.UninitialisedField(self, 'CmltvCorpActnFctr', DecimalNumber, False)
 
 	@CmltvCorpActnFctr.deleter
 	def CmltvCorpActnFctr(self):
 		del self._CmltvCorpActnFctr
-		self._CmltvCorpActnFctr = None
+		self._CmltvCorpActnFctr = base_types.UninitialisedField(self, 'CmltvCorpActnFctr', DecimalNumber, False)
 
 	@property
 	def CorpActnFctr(self):
@@ -40,12 +40,12 @@ class PerformanceFactors5(base_types._BaseFieldType):
 
 	@CorpActnFctr.setter
 	def CorpActnFctr(self, value):
-		self._CorpActnFctr = value if type(value) != base_types.auto else self.make_default("CorpActnFctr")
+		self._CorpActnFctr = value if value is not None else base_types.UninitialisedField(self, 'CorpActnFctr', DecimalNumber, False)
 
 	@CorpActnFctr.deleter
 	def CorpActnFctr(self):
 		del self._CorpActnFctr
-		self._CorpActnFctr = None
+		self._CorpActnFctr = base_types.UninitialisedField(self, 'CorpActnFctr', DecimalNumber, False)
 
 	@property
 	def NrmlPrfrmnc(self):
@@ -53,12 +53,12 @@ class PerformanceFactors5(base_types._BaseFieldType):
 
 	@NrmlPrfrmnc.setter
 	def NrmlPrfrmnc(self, value):
-		self._NrmlPrfrmnc = value if type(value) != base_types.auto else self.make_default("NrmlPrfrmnc")
+		self._NrmlPrfrmnc = value if value is not None else base_types.UninitialisedField(self, 'NrmlPrfrmnc', DecimalNumber, False)
 
 	@NrmlPrfrmnc.deleter
 	def NrmlPrfrmnc(self):
 		del self._NrmlPrfrmnc
-		self._NrmlPrfrmnc = None
+		self._NrmlPrfrmnc = base_types.UninitialisedField(self, 'NrmlPrfrmnc', DecimalNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcmltnPrd', type=DatePeriod2, min=0, max=1, mutex_group=None, array=False),

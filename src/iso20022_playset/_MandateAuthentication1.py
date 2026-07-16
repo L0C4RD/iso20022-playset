@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AuthenticationChannel1Choice import AuthenticationChannel1Choice
-from ._ISODate import ISODate
-from ._Max16Text import Max16Text
+from . import AuthenticationChannel1Choice
+from . import ISODate
+from . import Max16Text
 
 class MandateAuthentication1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class MandateAuthentication1(base_types._BaseFieldType):
 
 	@Chanl.setter
 	def Chanl(self, value):
-		self._Chanl = value if type(value) != base_types.auto else self.make_default("Chanl")
+		self._Chanl = value if value is not None else base_types.UninitialisedField(self, 'Chanl', AuthenticationChannel1Choice, False)
 
 	@Chanl.deleter
 	def Chanl(self):
 		del self._Chanl
-		self._Chanl = None
+		self._Chanl = base_types.UninitialisedField(self, 'Chanl', AuthenticationChannel1Choice, False)
 
 	@property
 	def Dt(self):
@@ -28,12 +28,12 @@ class MandateAuthentication1(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@property
 	def MsgAuthntcnCd(self):
@@ -41,12 +41,12 @@ class MandateAuthentication1(base_types._BaseFieldType):
 
 	@MsgAuthntcnCd.setter
 	def MsgAuthntcnCd(self, value):
-		self._MsgAuthntcnCd = value if type(value) != base_types.auto else self.make_default("MsgAuthntcnCd")
+		self._MsgAuthntcnCd = value if value is not None else base_types.UninitialisedField(self, 'MsgAuthntcnCd', Max16Text, False)
 
 	@MsgAuthntcnCd.deleter
 	def MsgAuthntcnCd(self):
 		del self._MsgAuthntcnCd
-		self._MsgAuthntcnCd = None
+		self._MsgAuthntcnCd = base_types.UninitialisedField(self, 'MsgAuthntcnCd', Max16Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Chanl', type=AuthenticationChannel1Choice, min=0, max=1, mutex_group=None, array=False),

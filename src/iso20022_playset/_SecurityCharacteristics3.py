@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._AmountPricePerFinancialInstrumentQuantity9 import AmountPricePerFinancialInstrumentQuantity9
-from ._SecuritiesPosition1 import SecuritiesPosition1
-from ._SecurityIdentification19 import SecurityIdentification19
+from . import ActiveCurrencyAndAmount
+from . import AmountPricePerFinancialInstrumentQuantity9
+from . import SecuritiesPosition1
+from . import SecurityIdentification19
 
 class SecurityCharacteristics3(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class SecurityCharacteristics3(base_types._BaseFieldType):
 
 	@CollVal.setter
 	def CollVal(self, value):
-		self._CollVal = value if type(value) != base_types.auto else self.make_default("CollVal")
+		self._CollVal = value if value is not None else base_types.UninitialisedField(self, 'CollVal', ActiveCurrencyAndAmount, False)
 
 	@CollVal.deleter
 	def CollVal(self):
 		del self._CollVal
-		self._CollVal = None
+		self._CollVal = base_types.UninitialisedField(self, 'CollVal', ActiveCurrencyAndAmount, False)
 
 	@property
 	def Id(self):
@@ -29,12 +29,12 @@ class SecurityCharacteristics3(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', SecurityIdentification19, True)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', SecurityIdentification19, True)
 
 	@property
 	def Pos(self):
@@ -42,12 +42,12 @@ class SecurityCharacteristics3(base_types._BaseFieldType):
 
 	@Pos.setter
 	def Pos(self, value):
-		self._Pos = value if type(value) != base_types.auto else self.make_default("Pos")
+		self._Pos = value if value is not None else base_types.UninitialisedField(self, 'Pos', SecuritiesPosition1, True)
 
 	@Pos.deleter
 	def Pos(self):
 		del self._Pos
-		self._Pos = None
+		self._Pos = base_types.UninitialisedField(self, 'Pos', SecuritiesPosition1, True)
 
 	@property
 	def ValtnPric(self):
@@ -55,12 +55,12 @@ class SecurityCharacteristics3(base_types._BaseFieldType):
 
 	@ValtnPric.setter
 	def ValtnPric(self, value):
-		self._ValtnPric = value if type(value) != base_types.auto else self.make_default("ValtnPric")
+		self._ValtnPric = value if value is not None else base_types.UninitialisedField(self, 'ValtnPric', AmountPricePerFinancialInstrumentQuantity9, False)
 
 	@ValtnPric.deleter
 	def ValtnPric(self):
 		del self._ValtnPric
-		self._ValtnPric = None
+		self._ValtnPric = base_types.UninitialisedField(self, 'ValtnPric', AmountPricePerFinancialInstrumentQuantity9, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollVal', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

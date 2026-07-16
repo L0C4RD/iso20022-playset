@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionEventProcessingType1FormatChoice import CorporateActionEventProcessingType1FormatChoice
-from ._CorporateActionEventType2FormatChoice import CorporateActionEventType2FormatChoice
-from ._CorporateActionMandatoryVoluntary1FormatChoice import CorporateActionMandatoryVoluntary1FormatChoice
-from ._FinancialInstrumentDescription3 import FinancialInstrumentDescription3
-from ._Max35Text import Max35Text
-from ._PartyIdentification2Choice import PartyIdentification2Choice
+from . import CorporateActionEventProcessingType1FormatChoice
+from . import CorporateActionEventType2FormatChoice
+from . import CorporateActionMandatoryVoluntary1FormatChoice
+from . import FinancialInstrumentDescription3
+from . import Max35Text
+from . import PartyIdentification2Choice
 
 class CorporateActionInformation2(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class CorporateActionInformation2(base_types._BaseFieldType):
 
 	@AgtId.setter
 	def AgtId(self, value):
-		self._AgtId = value if type(value) != base_types.auto else self.make_default("AgtId")
+		self._AgtId = value if value is not None else base_types.UninitialisedField(self, 'AgtId', PartyIdentification2Choice, False)
 
 	@AgtId.deleter
 	def AgtId(self):
 		del self._AgtId
-		self._AgtId = None
+		self._AgtId = base_types.UninitialisedField(self, 'AgtId', PartyIdentification2Choice, False)
 
 	@property
 	def CorpActnPrcgId(self):
@@ -31,12 +31,12 @@ class CorporateActionInformation2(base_types._BaseFieldType):
 
 	@CorpActnPrcgId.setter
 	def CorpActnPrcgId(self, value):
-		self._CorpActnPrcgId = value if type(value) != base_types.auto else self.make_default("CorpActnPrcgId")
+		self._CorpActnPrcgId = value if value is not None else base_types.UninitialisedField(self, 'CorpActnPrcgId', Max35Text, False)
 
 	@CorpActnPrcgId.deleter
 	def CorpActnPrcgId(self):
 		del self._CorpActnPrcgId
-		self._CorpActnPrcgId = None
+		self._CorpActnPrcgId = base_types.UninitialisedField(self, 'CorpActnPrcgId', Max35Text, False)
 
 	@property
 	def EvtPrcgTp(self):
@@ -44,12 +44,12 @@ class CorporateActionInformation2(base_types._BaseFieldType):
 
 	@EvtPrcgTp.setter
 	def EvtPrcgTp(self, value):
-		self._EvtPrcgTp = value if type(value) != base_types.auto else self.make_default("EvtPrcgTp")
+		self._EvtPrcgTp = value if value is not None else base_types.UninitialisedField(self, 'EvtPrcgTp', CorporateActionEventProcessingType1FormatChoice, False)
 
 	@EvtPrcgTp.deleter
 	def EvtPrcgTp(self):
 		del self._EvtPrcgTp
-		self._EvtPrcgTp = None
+		self._EvtPrcgTp = base_types.UninitialisedField(self, 'EvtPrcgTp', CorporateActionEventProcessingType1FormatChoice, False)
 
 	@property
 	def EvtTp(self):
@@ -57,12 +57,12 @@ class CorporateActionInformation2(base_types._BaseFieldType):
 
 	@EvtTp.setter
 	def EvtTp(self, value):
-		self._EvtTp = value if type(value) != base_types.auto else self.make_default("EvtTp")
+		self._EvtTp = value if value is not None else base_types.UninitialisedField(self, 'EvtTp', CorporateActionEventType2FormatChoice, False)
 
 	@EvtTp.deleter
 	def EvtTp(self):
 		del self._EvtTp
-		self._EvtTp = None
+		self._EvtTp = base_types.UninitialisedField(self, 'EvtTp', CorporateActionEventType2FormatChoice, False)
 
 	@property
 	def IssrCorpActnId(self):
@@ -70,12 +70,12 @@ class CorporateActionInformation2(base_types._BaseFieldType):
 
 	@IssrCorpActnId.setter
 	def IssrCorpActnId(self, value):
-		self._IssrCorpActnId = value if type(value) != base_types.auto else self.make_default("IssrCorpActnId")
+		self._IssrCorpActnId = value if value is not None else base_types.UninitialisedField(self, 'IssrCorpActnId', Max35Text, False)
 
 	@IssrCorpActnId.deleter
 	def IssrCorpActnId(self):
 		del self._IssrCorpActnId
-		self._IssrCorpActnId = None
+		self._IssrCorpActnId = base_types.UninitialisedField(self, 'IssrCorpActnId', Max35Text, False)
 
 	@property
 	def MndtryVlntryEvtTp(self):
@@ -83,12 +83,12 @@ class CorporateActionInformation2(base_types._BaseFieldType):
 
 	@MndtryVlntryEvtTp.setter
 	def MndtryVlntryEvtTp(self, value):
-		self._MndtryVlntryEvtTp = value if type(value) != base_types.auto else self.make_default("MndtryVlntryEvtTp")
+		self._MndtryVlntryEvtTp = value if value is not None else base_types.UninitialisedField(self, 'MndtryVlntryEvtTp', CorporateActionMandatoryVoluntary1FormatChoice, False)
 
 	@MndtryVlntryEvtTp.deleter
 	def MndtryVlntryEvtTp(self):
 		del self._MndtryVlntryEvtTp
-		self._MndtryVlntryEvtTp = None
+		self._MndtryVlntryEvtTp = base_types.UninitialisedField(self, 'MndtryVlntryEvtTp', CorporateActionMandatoryVoluntary1FormatChoice, False)
 
 	@property
 	def OthrUndrlygScty(self):
@@ -96,12 +96,12 @@ class CorporateActionInformation2(base_types._BaseFieldType):
 
 	@OthrUndrlygScty.setter
 	def OthrUndrlygScty(self, value):
-		self._OthrUndrlygScty = value if type(value) != base_types.auto else self.make_default("OthrUndrlygScty")
+		self._OthrUndrlygScty = value if value is not None else base_types.UninitialisedField(self, 'OthrUndrlygScty', FinancialInstrumentDescription3, True)
 
 	@OthrUndrlygScty.deleter
 	def OthrUndrlygScty(self):
 		del self._OthrUndrlygScty
-		self._OthrUndrlygScty = None
+		self._OthrUndrlygScty = base_types.UninitialisedField(self, 'OthrUndrlygScty', FinancialInstrumentDescription3, True)
 
 	@property
 	def UndrlygScty(self):
@@ -109,12 +109,12 @@ class CorporateActionInformation2(base_types._BaseFieldType):
 
 	@UndrlygScty.setter
 	def UndrlygScty(self, value):
-		self._UndrlygScty = value if type(value) != base_types.auto else self.make_default("UndrlygScty")
+		self._UndrlygScty = value if value is not None else base_types.UninitialisedField(self, 'UndrlygScty', FinancialInstrumentDescription3, False)
 
 	@UndrlygScty.deleter
 	def UndrlygScty(self):
 		del self._UndrlygScty
-		self._UndrlygScty = None
+		self._UndrlygScty = base_types.UninitialisedField(self, 'UndrlygScty', FinancialInstrumentDescription3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AgtId', type=PartyIdentification2Choice, min=1, max=1, mutex_group=None, array=False),

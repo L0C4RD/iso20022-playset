@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SwitchOrderV04 import SwitchOrderV04
+from . import SwitchOrderV04
 
 class SETR_013_001_04():
 
@@ -18,12 +18,12 @@ class SETR_013_001_04():
 
 		@SwtchOrdr.setter
 		def SwtchOrdr(self, value):
-			self._SwtchOrdr = value if type(value) != base_types.auto else self.make_default("SwtchOrdr")
+			self._SwtchOrdr = value if value is not None else base_types.UninitialisedField(self, 'SwtchOrdr', SwitchOrderV04, False)
 
 		@SwtchOrdr.deleter
 		def SwtchOrdr(self):
 			del self._SwtchOrdr
-			self._SwtchOrdr = None
+			self._SwtchOrdr = base_types.UninitialisedField(self, 'SwtchOrdr', SwitchOrderV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SwtchOrdr', type=SwitchOrderV04, min=1, max=1, mutex_group=None, array=False),

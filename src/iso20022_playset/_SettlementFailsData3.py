@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SettlementDataVolume2 import SettlementDataVolume2
-from ._SettlementFailsCurrency2 import SettlementFailsCurrency2
-from ._SettlementFailsInstrument2 import SettlementFailsInstrument2
-from ._SettlementFailsParticipantRange1 import SettlementFailsParticipantRange1
-from ._SettlementFailsSecuritiesRange1 import SettlementFailsSecuritiesRange1
-from ._SettlementFailsTransactionType2 import SettlementFailsTransactionType2
-from ._SettlementFailureReason3 import SettlementFailureReason3
-from ._SettlementTotalData1 import SettlementTotalData1
+from . import SettlementDataVolume2
+from . import SettlementFailsCurrency2
+from . import SettlementFailsInstrument2
+from . import SettlementFailsParticipantRange1
+from . import SettlementFailsSecuritiesRange1
+from . import SettlementFailsTransactionType2
+from . import SettlementFailureReason3
+from . import SettlementTotalData1
 
 class SettlementFailsData3(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class SettlementFailsData3(base_types._BaseFieldType):
 
 	@FailrRsn.setter
 	def FailrRsn(self, value):
-		self._FailrRsn = value if type(value) != base_types.auto else self.make_default("FailrRsn")
+		self._FailrRsn = value if value is not None else base_types.UninitialisedField(self, 'FailrRsn', SettlementFailureReason3, False)
 
 	@FailrRsn.deleter
 	def FailrRsn(self):
 		del self._FailrRsn
-		self._FailrRsn = None
+		self._FailrRsn = base_types.UninitialisedField(self, 'FailrRsn', SettlementFailureReason3, False)
 
 	@property
 	def FlsPerCcy(self):
@@ -33,12 +33,12 @@ class SettlementFailsData3(base_types._BaseFieldType):
 
 	@FlsPerCcy.setter
 	def FlsPerCcy(self, value):
-		self._FlsPerCcy = value if type(value) != base_types.auto else self.make_default("FlsPerCcy")
+		self._FlsPerCcy = value if value is not None else base_types.UninitialisedField(self, 'FlsPerCcy', SettlementFailsCurrency2, True)
 
 	@FlsPerCcy.deleter
 	def FlsPerCcy(self):
 		del self._FlsPerCcy
-		self._FlsPerCcy = None
+		self._FlsPerCcy = base_types.UninitialisedField(self, 'FlsPerCcy', SettlementFailsCurrency2, True)
 
 	@property
 	def FlsPerFinInstrmTp(self):
@@ -46,12 +46,12 @@ class SettlementFailsData3(base_types._BaseFieldType):
 
 	@FlsPerFinInstrmTp.setter
 	def FlsPerFinInstrmTp(self, value):
-		self._FlsPerFinInstrmTp = value if type(value) != base_types.auto else self.make_default("FlsPerFinInstrmTp")
+		self._FlsPerFinInstrmTp = value if value is not None else base_types.UninitialisedField(self, 'FlsPerFinInstrmTp', SettlementFailsInstrument2, False)
 
 	@FlsPerFinInstrmTp.deleter
 	def FlsPerFinInstrmTp(self):
 		del self._FlsPerFinInstrmTp
-		self._FlsPerFinInstrmTp = None
+		self._FlsPerFinInstrmTp = base_types.UninitialisedField(self, 'FlsPerFinInstrmTp', SettlementFailsInstrument2, False)
 
 	@property
 	def FlsPerTxTp(self):
@@ -59,12 +59,12 @@ class SettlementFailsData3(base_types._BaseFieldType):
 
 	@FlsPerTxTp.setter
 	def FlsPerTxTp(self, value):
-		self._FlsPerTxTp = value if type(value) != base_types.auto else self.make_default("FlsPerTxTp")
+		self._FlsPerTxTp = value if value is not None else base_types.UninitialisedField(self, 'FlsPerTxTp', SettlementFailsTransactionType2, False)
 
 	@FlsPerTxTp.deleter
 	def FlsPerTxTp(self):
 		del self._FlsPerTxTp
-		self._FlsPerTxTp = None
+		self._FlsPerTxTp = base_types.UninitialisedField(self, 'FlsPerTxTp', SettlementFailsTransactionType2, False)
 
 	@property
 	def PtcptInFail(self):
@@ -72,12 +72,12 @@ class SettlementFailsData3(base_types._BaseFieldType):
 
 	@PtcptInFail.setter
 	def PtcptInFail(self, value):
-		self._PtcptInFail = value if type(value) != base_types.auto else self.make_default("PtcptInFail")
+		self._PtcptInFail = value if value is not None else base_types.UninitialisedField(self, 'PtcptInFail', SettlementFailsParticipantRange1, False)
 
 	@PtcptInFail.deleter
 	def PtcptInFail(self):
 		del self._PtcptInFail
-		self._PtcptInFail = None
+		self._PtcptInFail = base_types.UninitialisedField(self, 'PtcptInFail', SettlementFailsParticipantRange1, False)
 
 	@property
 	def SctiesInFail(self):
@@ -85,12 +85,12 @@ class SettlementFailsData3(base_types._BaseFieldType):
 
 	@SctiesInFail.setter
 	def SctiesInFail(self, value):
-		self._SctiesInFail = value if type(value) != base_types.auto else self.make_default("SctiesInFail")
+		self._SctiesInFail = value if value is not None else base_types.UninitialisedField(self, 'SctiesInFail', SettlementFailsSecuritiesRange1, False)
 
 	@SctiesInFail.deleter
 	def SctiesInFail(self):
 		del self._SctiesInFail
-		self._SctiesInFail = None
+		self._SctiesInFail = base_types.UninitialisedField(self, 'SctiesInFail', SettlementFailsSecuritiesRange1, False)
 
 	@property
 	def Ttl(self):
@@ -98,12 +98,12 @@ class SettlementFailsData3(base_types._BaseFieldType):
 
 	@Ttl.setter
 	def Ttl(self, value):
-		self._Ttl = value if type(value) != base_types.auto else self.make_default("Ttl")
+		self._Ttl = value if value is not None else base_types.UninitialisedField(self, 'Ttl', SettlementTotalData1, False)
 
 	@Ttl.deleter
 	def Ttl(self):
 		del self._Ttl
-		self._Ttl = None
+		self._Ttl = base_types.UninitialisedField(self, 'Ttl', SettlementTotalData1, False)
 
 	@property
 	def TtlSttlmPnlties(self):
@@ -111,12 +111,12 @@ class SettlementFailsData3(base_types._BaseFieldType):
 
 	@TtlSttlmPnlties.setter
 	def TtlSttlmPnlties(self, value):
-		self._TtlSttlmPnlties = value if type(value) != base_types.auto else self.make_default("TtlSttlmPnlties")
+		self._TtlSttlmPnlties = value if value is not None else base_types.UninitialisedField(self, 'TtlSttlmPnlties', SettlementDataVolume2, False)
 
 	@TtlSttlmPnlties.deleter
 	def TtlSttlmPnlties(self):
 		del self._TtlSttlmPnlties
-		self._TtlSttlmPnlties = None
+		self._TtlSttlmPnlties = base_types.UninitialisedField(self, 'TtlSttlmPnlties', SettlementDataVolume2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FailrRsn', type=SettlementFailureReason3, min=1, max=1, mutex_group=None, array=False),

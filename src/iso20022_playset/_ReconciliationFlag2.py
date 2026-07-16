@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._TradeRepositoryReportingType1Code import TradeRepositoryReportingType1Code
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import TradeRepositoryReportingType1Code
+from . import TrueFalseIndicator
 
 class ReconciliationFlag2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ReconciliationFlag2(base_types._BaseFieldType):
 
 	@BothCtrPtiesRptg.setter
 	def BothCtrPtiesRptg(self, value):
-		self._BothCtrPtiesRptg = value if type(value) != base_types.auto else self.make_default("BothCtrPtiesRptg")
+		self._BothCtrPtiesRptg = value if value is not None else base_types.UninitialisedField(self, 'BothCtrPtiesRptg', TrueFalseIndicator, False)
 
 	@BothCtrPtiesRptg.deleter
 	def BothCtrPtiesRptg(self):
 		del self._BothCtrPtiesRptg
-		self._BothCtrPtiesRptg = None
+		self._BothCtrPtiesRptg = base_types.UninitialisedField(self, 'BothCtrPtiesRptg', TrueFalseIndicator, False)
 
 	@property
 	def CollRcncltnSts(self):
@@ -27,12 +27,12 @@ class ReconciliationFlag2(base_types._BaseFieldType):
 
 	@CollRcncltnSts.setter
 	def CollRcncltnSts(self, value):
-		self._CollRcncltnSts = value if type(value) != base_types.auto else self.make_default("CollRcncltnSts")
+		self._CollRcncltnSts = value if value is not None else base_types.UninitialisedField(self, 'CollRcncltnSts', TrueFalseIndicator, False)
 
 	@CollRcncltnSts.deleter
 	def CollRcncltnSts(self):
 		del self._CollRcncltnSts
-		self._CollRcncltnSts = None
+		self._CollRcncltnSts = base_types.UninitialisedField(self, 'CollRcncltnSts', TrueFalseIndicator, False)
 
 	@property
 	def LnRcncltnSts(self):
@@ -40,12 +40,12 @@ class ReconciliationFlag2(base_types._BaseFieldType):
 
 	@LnRcncltnSts.setter
 	def LnRcncltnSts(self, value):
-		self._LnRcncltnSts = value if type(value) != base_types.auto else self.make_default("LnRcncltnSts")
+		self._LnRcncltnSts = value if value is not None else base_types.UninitialisedField(self, 'LnRcncltnSts', TrueFalseIndicator, False)
 
 	@LnRcncltnSts.deleter
 	def LnRcncltnSts(self):
 		del self._LnRcncltnSts
-		self._LnRcncltnSts = None
+		self._LnRcncltnSts = base_types.UninitialisedField(self, 'LnRcncltnSts', TrueFalseIndicator, False)
 
 	@property
 	def ModSts(self):
@@ -53,12 +53,12 @@ class ReconciliationFlag2(base_types._BaseFieldType):
 
 	@ModSts.setter
 	def ModSts(self, value):
-		self._ModSts = value if type(value) != base_types.auto else self.make_default("ModSts")
+		self._ModSts = value if value is not None else base_types.UninitialisedField(self, 'ModSts', TrueFalseIndicator, False)
 
 	@ModSts.deleter
 	def ModSts(self):
 		del self._ModSts
-		self._ModSts = None
+		self._ModSts = base_types.UninitialisedField(self, 'ModSts', TrueFalseIndicator, False)
 
 	@property
 	def PairdSts(self):
@@ -66,12 +66,12 @@ class ReconciliationFlag2(base_types._BaseFieldType):
 
 	@PairdSts.setter
 	def PairdSts(self, value):
-		self._PairdSts = value if type(value) != base_types.auto else self.make_default("PairdSts")
+		self._PairdSts = value if value is not None else base_types.UninitialisedField(self, 'PairdSts', TrueFalseIndicator, False)
 
 	@PairdSts.deleter
 	def PairdSts(self):
 		del self._PairdSts
-		self._PairdSts = None
+		self._PairdSts = base_types.UninitialisedField(self, 'PairdSts', TrueFalseIndicator, False)
 
 	@property
 	def RptTp(self):
@@ -79,12 +79,12 @@ class ReconciliationFlag2(base_types._BaseFieldType):
 
 	@RptTp.setter
 	def RptTp(self, value):
-		self._RptTp = value if type(value) != base_types.auto else self.make_default("RptTp")
+		self._RptTp = value if value is not None else base_types.UninitialisedField(self, 'RptTp', TradeRepositoryReportingType1Code, False)
 
 	@RptTp.deleter
 	def RptTp(self):
 		del self._RptTp
-		self._RptTp = None
+		self._RptTp = base_types.UninitialisedField(self, 'RptTp', TradeRepositoryReportingType1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BothCtrPtiesRptg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountHoldingInformationV09 import AccountHoldingInformationV09
+from . import AccountHoldingInformationV09
 
 class SESE_018_001_09():
 
@@ -18,12 +18,12 @@ class SESE_018_001_09():
 
 		@AcctHldgInf.setter
 		def AcctHldgInf(self, value):
-			self._AcctHldgInf = value if type(value) != base_types.auto else self.make_default("AcctHldgInf")
+			self._AcctHldgInf = value if value is not None else base_types.UninitialisedField(self, 'AcctHldgInf', AccountHoldingInformationV09, False)
 
 		@AcctHldgInf.deleter
 		def AcctHldgInf(self):
 			del self._AcctHldgInf
-			self._AcctHldgInf = None
+			self._AcctHldgInf = base_types.UninitialisedField(self, 'AcctHldgInf', AccountHoldingInformationV09, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AcctHldgInf', type=AccountHoldingInformationV09, min=1, max=1, mutex_group=None, array=False),

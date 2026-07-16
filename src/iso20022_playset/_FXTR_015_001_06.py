@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ForeignExchangeTradeInstructionAmendmentV06 import ForeignExchangeTradeInstructionAmendmentV06
+from . import ForeignExchangeTradeInstructionAmendmentV06
 
 class FXTR_015_001_06():
 
@@ -18,12 +18,12 @@ class FXTR_015_001_06():
 
 		@FXTradInstrAmdmnt.setter
 		def FXTradInstrAmdmnt(self, value):
-			self._FXTradInstrAmdmnt = value if type(value) != base_types.auto else self.make_default("FXTradInstrAmdmnt")
+			self._FXTradInstrAmdmnt = value if value is not None else base_types.UninitialisedField(self, 'FXTradInstrAmdmnt', ForeignExchangeTradeInstructionAmendmentV06, False)
 
 		@FXTradInstrAmdmnt.deleter
 		def FXTradInstrAmdmnt(self):
 			del self._FXTradInstrAmdmnt
-			self._FXTradInstrAmdmnt = None
+			self._FXTradInstrAmdmnt = base_types.UninitialisedField(self, 'FXTradInstrAmdmnt', ForeignExchangeTradeInstructionAmendmentV06, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='FXTradInstrAmdmnt', type=ForeignExchangeTradeInstructionAmendmentV06, min=1, max=1, mutex_group=None, array=False),

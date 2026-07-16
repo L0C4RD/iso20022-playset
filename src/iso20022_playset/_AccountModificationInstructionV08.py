@@ -2,21 +2,21 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountParties18 import AccountParties18
-from ._AccountSelection3Choice import AccountSelection3Choice
-from ._AdditionalReference13 import AdditionalReference13
-from ._CashSettlement4 import CashSettlement4
-from ._Extension1 import Extension1
-from ._InvestmentAccount75 import InvestmentAccount75
-from ._InvestmentAccountModification4 import InvestmentAccountModification4
-from ._MarketPracticeVersion1 import MarketPracticeVersion1
-from ._MessageIdentification1 import MessageIdentification1
-from ._ModificationScope21 import ModificationScope21
-from ._ModificationScope40 import ModificationScope40
-from ._ModificationScope41 import ModificationScope41
-from ._ModificationScope43 import ModificationScope43
-from ._ModificationScope44 import ModificationScope44
-from ._ModificationScope45 import ModificationScope45
+from . import AccountParties18
+from . import AccountSelection3Choice
+from . import AdditionalReference13
+from . import CashSettlement4
+from . import Extension1
+from . import InvestmentAccount75
+from . import InvestmentAccountModification4
+from . import MarketPracticeVersion1
+from . import MessageIdentification1
+from . import ModificationScope21
+from . import ModificationScope40
+from . import ModificationScope41
+from . import ModificationScope43
+from . import ModificationScope44
+from . import ModificationScope45
 
 class AccountModificationInstructionV08(base_types._BaseFieldType):
 
@@ -27,12 +27,12 @@ class AccountModificationInstructionV08(base_types._BaseFieldType):
 
 	@InstrDtls.setter
 	def InstrDtls(self, value):
-		self._InstrDtls = value if type(value) != base_types.auto else self.make_default("InstrDtls")
+		self._InstrDtls = value if value is not None else base_types.UninitialisedField(self, 'InstrDtls', InvestmentAccountModification4, False)
 
 	@InstrDtls.deleter
 	def InstrDtls(self):
 		del self._InstrDtls
-		self._InstrDtls = None
+		self._InstrDtls = base_types.UninitialisedField(self, 'InstrDtls', InvestmentAccountModification4, False)
 
 	@property
 	def InvstmtAcctSelctn(self):
@@ -40,12 +40,12 @@ class AccountModificationInstructionV08(base_types._BaseFieldType):
 
 	@InvstmtAcctSelctn.setter
 	def InvstmtAcctSelctn(self, value):
-		self._InvstmtAcctSelctn = value if type(value) != base_types.auto else self.make_default("InvstmtAcctSelctn")
+		self._InvstmtAcctSelctn = value if value is not None else base_types.UninitialisedField(self, 'InvstmtAcctSelctn', AccountSelection3Choice, False)
 
 	@InvstmtAcctSelctn.deleter
 	def InvstmtAcctSelctn(self):
 		del self._InvstmtAcctSelctn
-		self._InvstmtAcctSelctn = None
+		self._InvstmtAcctSelctn = base_types.UninitialisedField(self, 'InvstmtAcctSelctn', AccountSelection3Choice, False)
 
 	@property
 	def MktPrctcVrsn(self):
@@ -53,12 +53,12 @@ class AccountModificationInstructionV08(base_types._BaseFieldType):
 
 	@MktPrctcVrsn.setter
 	def MktPrctcVrsn(self, value):
-		self._MktPrctcVrsn = value if type(value) != base_types.auto else self.make_default("MktPrctcVrsn")
+		self._MktPrctcVrsn = value if value is not None else base_types.UninitialisedField(self, 'MktPrctcVrsn', MarketPracticeVersion1, False)
 
 	@MktPrctcVrsn.deleter
 	def MktPrctcVrsn(self):
 		del self._MktPrctcVrsn
-		self._MktPrctcVrsn = None
+		self._MktPrctcVrsn = base_types.UninitialisedField(self, 'MktPrctcVrsn', MarketPracticeVersion1, False)
 
 	@property
 	def ModfdAcctPties(self):
@@ -66,12 +66,12 @@ class AccountModificationInstructionV08(base_types._BaseFieldType):
 
 	@ModfdAcctPties.setter
 	def ModfdAcctPties(self, value):
-		self._ModfdAcctPties = value if type(value) != base_types.auto else self.make_default("ModfdAcctPties")
+		self._ModfdAcctPties = value if value is not None else base_types.UninitialisedField(self, 'ModfdAcctPties', AccountParties18, True)
 
 	@ModfdAcctPties.deleter
 	def ModfdAcctPties(self):
 		del self._ModfdAcctPties
-		self._ModfdAcctPties = None
+		self._ModfdAcctPties = base_types.UninitialisedField(self, 'ModfdAcctPties', AccountParties18, True)
 
 	@property
 	def ModfdAddtlInf(self):
@@ -79,12 +79,12 @@ class AccountModificationInstructionV08(base_types._BaseFieldType):
 
 	@ModfdAddtlInf.setter
 	def ModfdAddtlInf(self, value):
-		self._ModfdAddtlInf = value if type(value) != base_types.auto else self.make_default("ModfdAddtlInf")
+		self._ModfdAddtlInf = value if value is not None else base_types.UninitialisedField(self, 'ModfdAddtlInf', ModificationScope45, True)
 
 	@ModfdAddtlInf.deleter
 	def ModfdAddtlInf(self):
 		del self._ModfdAddtlInf
-		self._ModfdAddtlInf = None
+		self._ModfdAddtlInf = base_types.UninitialisedField(self, 'ModfdAddtlInf', ModificationScope45, True)
 
 	@property
 	def ModfdCshSttlm(self):
@@ -92,12 +92,12 @@ class AccountModificationInstructionV08(base_types._BaseFieldType):
 
 	@ModfdCshSttlm.setter
 	def ModfdCshSttlm(self, value):
-		self._ModfdCshSttlm = value if type(value) != base_types.auto else self.make_default("ModfdCshSttlm")
+		self._ModfdCshSttlm = value if value is not None else base_types.UninitialisedField(self, 'ModfdCshSttlm', CashSettlement4, True)
 
 	@ModfdCshSttlm.deleter
 	def ModfdCshSttlm(self):
 		del self._ModfdCshSttlm
-		self._ModfdCshSttlm = None
+		self._ModfdCshSttlm = base_types.UninitialisedField(self, 'ModfdCshSttlm', CashSettlement4, True)
 
 	@property
 	def ModfdIntrmies(self):
@@ -105,12 +105,12 @@ class AccountModificationInstructionV08(base_types._BaseFieldType):
 
 	@ModfdIntrmies.setter
 	def ModfdIntrmies(self, value):
-		self._ModfdIntrmies = value if type(value) != base_types.auto else self.make_default("ModfdIntrmies")
+		self._ModfdIntrmies = value if value is not None else base_types.UninitialisedField(self, 'ModfdIntrmies', ModificationScope40, True)
 
 	@ModfdIntrmies.deleter
 	def ModfdIntrmies(self):
 		del self._ModfdIntrmies
-		self._ModfdIntrmies = None
+		self._ModfdIntrmies = base_types.UninitialisedField(self, 'ModfdIntrmies', ModificationScope40, True)
 
 	@property
 	def ModfdInvstmtAcct(self):
@@ -118,12 +118,12 @@ class AccountModificationInstructionV08(base_types._BaseFieldType):
 
 	@ModfdInvstmtAcct.setter
 	def ModfdInvstmtAcct(self, value):
-		self._ModfdInvstmtAcct = value if type(value) != base_types.auto else self.make_default("ModfdInvstmtAcct")
+		self._ModfdInvstmtAcct = value if value is not None else base_types.UninitialisedField(self, 'ModfdInvstmtAcct', InvestmentAccount75, False)
 
 	@ModfdInvstmtAcct.deleter
 	def ModfdInvstmtAcct(self):
 		del self._ModfdInvstmtAcct
-		self._ModfdInvstmtAcct = None
+		self._ModfdInvstmtAcct = base_types.UninitialisedField(self, 'ModfdInvstmtAcct', InvestmentAccount75, False)
 
 	@property
 	def ModfdIsseAllcn(self):
@@ -131,12 +131,12 @@ class AccountModificationInstructionV08(base_types._BaseFieldType):
 
 	@ModfdIsseAllcn.setter
 	def ModfdIsseAllcn(self, value):
-		self._ModfdIsseAllcn = value if type(value) != base_types.auto else self.make_default("ModfdIsseAllcn")
+		self._ModfdIsseAllcn = value if value is not None else base_types.UninitialisedField(self, 'ModfdIsseAllcn', ModificationScope21, False)
 
 	@ModfdIsseAllcn.deleter
 	def ModfdIsseAllcn(self):
 		del self._ModfdIsseAllcn
-		self._ModfdIsseAllcn = None
+		self._ModfdIsseAllcn = base_types.UninitialisedField(self, 'ModfdIsseAllcn', ModificationScope21, False)
 
 	@property
 	def ModfdPlcmnt(self):
@@ -144,12 +144,12 @@ class AccountModificationInstructionV08(base_types._BaseFieldType):
 
 	@ModfdPlcmnt.setter
 	def ModfdPlcmnt(self, value):
-		self._ModfdPlcmnt = value if type(value) != base_types.auto else self.make_default("ModfdPlcmnt")
+		self._ModfdPlcmnt = value if value is not None else base_types.UninitialisedField(self, 'ModfdPlcmnt', ModificationScope43, False)
 
 	@ModfdPlcmnt.deleter
 	def ModfdPlcmnt(self):
 		del self._ModfdPlcmnt
-		self._ModfdPlcmnt = None
+		self._ModfdPlcmnt = base_types.UninitialisedField(self, 'ModfdPlcmnt', ModificationScope43, False)
 
 	@property
 	def ModfdSvcLvlAgrmt(self):
@@ -157,12 +157,12 @@ class AccountModificationInstructionV08(base_types._BaseFieldType):
 
 	@ModfdSvcLvlAgrmt.setter
 	def ModfdSvcLvlAgrmt(self, value):
-		self._ModfdSvcLvlAgrmt = value if type(value) != base_types.auto else self.make_default("ModfdSvcLvlAgrmt")
+		self._ModfdSvcLvlAgrmt = value if value is not None else base_types.UninitialisedField(self, 'ModfdSvcLvlAgrmt', ModificationScope44, True)
 
 	@ModfdSvcLvlAgrmt.deleter
 	def ModfdSvcLvlAgrmt(self):
 		del self._ModfdSvcLvlAgrmt
-		self._ModfdSvcLvlAgrmt = None
+		self._ModfdSvcLvlAgrmt = base_types.UninitialisedField(self, 'ModfdSvcLvlAgrmt', ModificationScope44, True)
 
 	@property
 	def ModfdSvgsInvstmtPlan(self):
@@ -170,12 +170,12 @@ class AccountModificationInstructionV08(base_types._BaseFieldType):
 
 	@ModfdSvgsInvstmtPlan.setter
 	def ModfdSvgsInvstmtPlan(self, value):
-		self._ModfdSvgsInvstmtPlan = value if type(value) != base_types.auto else self.make_default("ModfdSvgsInvstmtPlan")
+		self._ModfdSvgsInvstmtPlan = value if value is not None else base_types.UninitialisedField(self, 'ModfdSvgsInvstmtPlan', ModificationScope41, True)
 
 	@ModfdSvgsInvstmtPlan.deleter
 	def ModfdSvgsInvstmtPlan(self):
 		del self._ModfdSvgsInvstmtPlan
-		self._ModfdSvgsInvstmtPlan = None
+		self._ModfdSvgsInvstmtPlan = base_types.UninitialisedField(self, 'ModfdSvgsInvstmtPlan', ModificationScope41, True)
 
 	@property
 	def ModfdWdrwlInvstmtPlan(self):
@@ -183,12 +183,12 @@ class AccountModificationInstructionV08(base_types._BaseFieldType):
 
 	@ModfdWdrwlInvstmtPlan.setter
 	def ModfdWdrwlInvstmtPlan(self, value):
-		self._ModfdWdrwlInvstmtPlan = value if type(value) != base_types.auto else self.make_default("ModfdWdrwlInvstmtPlan")
+		self._ModfdWdrwlInvstmtPlan = value if value is not None else base_types.UninitialisedField(self, 'ModfdWdrwlInvstmtPlan', ModificationScope41, True)
 
 	@ModfdWdrwlInvstmtPlan.deleter
 	def ModfdWdrwlInvstmtPlan(self):
 		del self._ModfdWdrwlInvstmtPlan
-		self._ModfdWdrwlInvstmtPlan = None
+		self._ModfdWdrwlInvstmtPlan = base_types.UninitialisedField(self, 'ModfdWdrwlInvstmtPlan', ModificationScope41, True)
 
 	@property
 	def MsgId(self):
@@ -196,12 +196,12 @@ class AccountModificationInstructionV08(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@property
 	def PrvsRef(self):
@@ -209,12 +209,12 @@ class AccountModificationInstructionV08(base_types._BaseFieldType):
 
 	@PrvsRef.setter
 	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
+		self._PrvsRef = value if value is not None else base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference13, False)
 
 	@PrvsRef.deleter
 	def PrvsRef(self):
 		del self._PrvsRef
-		self._PrvsRef = None
+		self._PrvsRef = base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference13, False)
 
 	@property
 	def Xtnsn(self):
@@ -222,12 +222,12 @@ class AccountModificationInstructionV08(base_types._BaseFieldType):
 
 	@Xtnsn.setter
 	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
+		self._Xtnsn = value if value is not None else base_types.UninitialisedField(self, 'Xtnsn', Extension1, True)
 
 	@Xtnsn.deleter
 	def Xtnsn(self):
 		del self._Xtnsn
-		self._Xtnsn = None
+		self._Xtnsn = base_types.UninitialisedField(self, 'Xtnsn', Extension1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InstrDtls', type=InvestmentAccountModification4, min=0, max=1, mutex_group=None, array=False),

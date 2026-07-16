@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MandateInitiationRequestV08 import MandateInitiationRequestV08
+from . import MandateInitiationRequestV08
 
 class PAIN_009_001_08():
 
@@ -18,12 +18,12 @@ class PAIN_009_001_08():
 
 		@MndtInitnReq.setter
 		def MndtInitnReq(self, value):
-			self._MndtInitnReq = value if type(value) != base_types.auto else self.make_default("MndtInitnReq")
+			self._MndtInitnReq = value if value is not None else base_types.UninitialisedField(self, 'MndtInitnReq', MandateInitiationRequestV08, False)
 
 		@MndtInitnReq.deleter
 		def MndtInitnReq(self):
 			del self._MndtInitnReq
-			self._MndtInitnReq = None
+			self._MndtInitnReq = base_types.UninitialisedField(self, 'MndtInitnReq', MandateInitiationRequestV08, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='MndtInitnReq', type=MandateInitiationRequestV08, min=1, max=1, mutex_group=None, array=False),

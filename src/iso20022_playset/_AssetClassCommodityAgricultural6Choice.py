@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AgriculturalCommodityDairy2 import AgriculturalCommodityDairy2
-from ._AgriculturalCommodityForestry2 import AgriculturalCommodityForestry2
-from ._AgriculturalCommodityGrain3 import AgriculturalCommodityGrain3
-from ._AgriculturalCommodityLiveStock2 import AgriculturalCommodityLiveStock2
-from ._AgriculturalCommodityOilSeed2 import AgriculturalCommodityOilSeed2
-from ._AgriculturalCommodityOliveOil3 import AgriculturalCommodityOliveOil3
-from ._AgriculturalCommodityOther2 import AgriculturalCommodityOther2
-from ._AgriculturalCommodityPotato2 import AgriculturalCommodityPotato2
-from ._AgriculturalCommoditySeafood2 import AgriculturalCommoditySeafood2
-from ._AgriculturalCommoditySoft2 import AgriculturalCommoditySoft2
+from . import AgriculturalCommodityDairy2
+from . import AgriculturalCommodityForestry2
+from . import AgriculturalCommodityGrain3
+from . import AgriculturalCommodityLiveStock2
+from . import AgriculturalCommodityOilSeed2
+from . import AgriculturalCommodityOliveOil3
+from . import AgriculturalCommodityOther2
+from . import AgriculturalCommodityPotato2
+from . import AgriculturalCommoditySeafood2
+from . import AgriculturalCommoditySoft2
 
 class AssetClassCommodityAgricultural6Choice(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class AssetClassCommodityAgricultural6Choice(base_types._BaseFieldType):
 
 	@Dairy.setter
 	def Dairy(self, value):
-		self._Dairy = value if type(value) != base_types.auto else self.make_default("Dairy")
+		self._Dairy = value if value is not None else base_types.UninitialisedField(self, 'Dairy', AgriculturalCommodityDairy2, False)
 
 	@Dairy.deleter
 	def Dairy(self):
 		del self._Dairy
-		self._Dairy = None
+		self._Dairy = base_types.UninitialisedField(self, 'Dairy', AgriculturalCommodityDairy2, False)
 
 	@property
 	def Frstry(self):
@@ -35,12 +35,12 @@ class AssetClassCommodityAgricultural6Choice(base_types._BaseFieldType):
 
 	@Frstry.setter
 	def Frstry(self, value):
-		self._Frstry = value if type(value) != base_types.auto else self.make_default("Frstry")
+		self._Frstry = value if value is not None else base_types.UninitialisedField(self, 'Frstry', AgriculturalCommodityForestry2, False)
 
 	@Frstry.deleter
 	def Frstry(self):
 		del self._Frstry
-		self._Frstry = None
+		self._Frstry = base_types.UninitialisedField(self, 'Frstry', AgriculturalCommodityForestry2, False)
 
 	@property
 	def Grn(self):
@@ -48,12 +48,12 @@ class AssetClassCommodityAgricultural6Choice(base_types._BaseFieldType):
 
 	@Grn.setter
 	def Grn(self, value):
-		self._Grn = value if type(value) != base_types.auto else self.make_default("Grn")
+		self._Grn = value if value is not None else base_types.UninitialisedField(self, 'Grn', AgriculturalCommodityGrain3, False)
 
 	@Grn.deleter
 	def Grn(self):
 		del self._Grn
-		self._Grn = None
+		self._Grn = base_types.UninitialisedField(self, 'Grn', AgriculturalCommodityGrain3, False)
 
 	@property
 	def GrnOilSeed(self):
@@ -61,12 +61,12 @@ class AssetClassCommodityAgricultural6Choice(base_types._BaseFieldType):
 
 	@GrnOilSeed.setter
 	def GrnOilSeed(self, value):
-		self._GrnOilSeed = value if type(value) != base_types.auto else self.make_default("GrnOilSeed")
+		self._GrnOilSeed = value if value is not None else base_types.UninitialisedField(self, 'GrnOilSeed', AgriculturalCommodityOilSeed2, False)
 
 	@GrnOilSeed.deleter
 	def GrnOilSeed(self):
 		del self._GrnOilSeed
-		self._GrnOilSeed = None
+		self._GrnOilSeed = base_types.UninitialisedField(self, 'GrnOilSeed', AgriculturalCommodityOilSeed2, False)
 
 	@property
 	def LiveStock(self):
@@ -74,12 +74,12 @@ class AssetClassCommodityAgricultural6Choice(base_types._BaseFieldType):
 
 	@LiveStock.setter
 	def LiveStock(self, value):
-		self._LiveStock = value if type(value) != base_types.auto else self.make_default("LiveStock")
+		self._LiveStock = value if value is not None else base_types.UninitialisedField(self, 'LiveStock', AgriculturalCommodityLiveStock2, False)
 
 	@LiveStock.deleter
 	def LiveStock(self):
 		del self._LiveStock
-		self._LiveStock = None
+		self._LiveStock = base_types.UninitialisedField(self, 'LiveStock', AgriculturalCommodityLiveStock2, False)
 
 	@property
 	def OlvOil(self):
@@ -87,12 +87,12 @@ class AssetClassCommodityAgricultural6Choice(base_types._BaseFieldType):
 
 	@OlvOil.setter
 	def OlvOil(self, value):
-		self._OlvOil = value if type(value) != base_types.auto else self.make_default("OlvOil")
+		self._OlvOil = value if value is not None else base_types.UninitialisedField(self, 'OlvOil', AgriculturalCommodityOliveOil3, False)
 
 	@OlvOil.deleter
 	def OlvOil(self):
 		del self._OlvOil
-		self._OlvOil = None
+		self._OlvOil = base_types.UninitialisedField(self, 'OlvOil', AgriculturalCommodityOliveOil3, False)
 
 	@property
 	def Othr(self):
@@ -100,12 +100,12 @@ class AssetClassCommodityAgricultural6Choice(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', AgriculturalCommodityOther2, False)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', AgriculturalCommodityOther2, False)
 
 	@property
 	def Ptt(self):
@@ -113,12 +113,12 @@ class AssetClassCommodityAgricultural6Choice(base_types._BaseFieldType):
 
 	@Ptt.setter
 	def Ptt(self, value):
-		self._Ptt = value if type(value) != base_types.auto else self.make_default("Ptt")
+		self._Ptt = value if value is not None else base_types.UninitialisedField(self, 'Ptt', AgriculturalCommodityPotato2, False)
 
 	@Ptt.deleter
 	def Ptt(self):
 		del self._Ptt
-		self._Ptt = None
+		self._Ptt = base_types.UninitialisedField(self, 'Ptt', AgriculturalCommodityPotato2, False)
 
 	@property
 	def Sfd(self):
@@ -126,12 +126,12 @@ class AssetClassCommodityAgricultural6Choice(base_types._BaseFieldType):
 
 	@Sfd.setter
 	def Sfd(self, value):
-		self._Sfd = value if type(value) != base_types.auto else self.make_default("Sfd")
+		self._Sfd = value if value is not None else base_types.UninitialisedField(self, 'Sfd', AgriculturalCommoditySeafood2, False)
 
 	@Sfd.deleter
 	def Sfd(self):
 		del self._Sfd
-		self._Sfd = None
+		self._Sfd = base_types.UninitialisedField(self, 'Sfd', AgriculturalCommoditySeafood2, False)
 
 	@property
 	def Soft(self):
@@ -139,12 +139,12 @@ class AssetClassCommodityAgricultural6Choice(base_types._BaseFieldType):
 
 	@Soft.setter
 	def Soft(self, value):
-		self._Soft = value if type(value) != base_types.auto else self.make_default("Soft")
+		self._Soft = value if value is not None else base_types.UninitialisedField(self, 'Soft', AgriculturalCommoditySoft2, False)
 
 	@Soft.deleter
 	def Soft(self):
 		del self._Soft
-		self._Soft = None
+		self._Soft = base_types.UninitialisedField(self, 'Soft', AgriculturalCommoditySoft2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dairy', type=AgriculturalCommodityDairy2, min=0, max=1, mutex_group=1, array=False),

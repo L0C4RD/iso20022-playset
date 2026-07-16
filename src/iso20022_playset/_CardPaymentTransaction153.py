@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Action18 import Action18
-from ._AuthorisationResult19 import AuthorisationResult19
+from . import Action18
+from . import AuthorisationResult19
 
 class CardPaymentTransaction153(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CardPaymentTransaction153(base_types._BaseFieldType):
 
 	@Actn.setter
 	def Actn(self, value):
-		self._Actn = value if type(value) != base_types.auto else self.make_default("Actn")
+		self._Actn = value if value is not None else base_types.UninitialisedField(self, 'Actn', Action18, True)
 
 	@Actn.deleter
 	def Actn(self):
 		del self._Actn
-		self._Actn = None
+		self._Actn = base_types.UninitialisedField(self, 'Actn', Action18, True)
 
 	@property
 	def AuthstnRslt(self):
@@ -27,12 +27,12 @@ class CardPaymentTransaction153(base_types._BaseFieldType):
 
 	@AuthstnRslt.setter
 	def AuthstnRslt(self, value):
-		self._AuthstnRslt = value if type(value) != base_types.auto else self.make_default("AuthstnRslt")
+		self._AuthstnRslt = value if value is not None else base_types.UninitialisedField(self, 'AuthstnRslt', AuthorisationResult19, False)
 
 	@AuthstnRslt.deleter
 	def AuthstnRslt(self):
 		del self._AuthstnRslt
-		self._AuthstnRslt = None
+		self._AuthstnRslt = base_types.UninitialisedField(self, 'AuthstnRslt', AuthorisationResult19, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Actn', type=Action18, min=0, max=None, mutex_group=None, array=True),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PartyIdentification136 import PartyIdentification136
-from ._PartyIdentification149 import PartyIdentification149
+from . import PartyIdentification136
+from . import PartyIdentification149
 
 class OtherParties38(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class OtherParties38(base_types._BaseFieldType):
 
 	@Invstr.setter
 	def Invstr(self, value):
-		self._Invstr = value if type(value) != base_types.auto else self.make_default("Invstr")
+		self._Invstr = value if value is not None else base_types.UninitialisedField(self, 'Invstr', PartyIdentification149, True)
 
 	@Invstr.deleter
 	def Invstr(self):
 		del self._Invstr
-		self._Invstr = None
+		self._Invstr = base_types.UninitialisedField(self, 'Invstr', PartyIdentification149, True)
 
 	@property
 	def Issr(self):
@@ -27,12 +27,12 @@ class OtherParties38(base_types._BaseFieldType):
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+		self._Issr = value if value is not None else base_types.UninitialisedField(self, 'Issr', PartyIdentification136, False)
 
 	@Issr.deleter
 	def Issr(self):
 		del self._Issr
-		self._Issr = None
+		self._Issr = base_types.UninitialisedField(self, 'Issr', PartyIdentification136, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Invstr', type=PartyIdentification149, min=0, max=None, mutex_group=None, array=True),

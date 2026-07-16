@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._ISODate import ISODate
-from ._Max105Text import Max105Text
-from ._Max35Text import Max35Text
-from ._NotificationStatus3Code import NotificationStatus3Code
-from ._OriginalItemReference8 import OriginalItemReference8
-from ._UUIDv4Identifier import UUIDv4Identifier
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import ISODate
+from . import Max105Text
+from . import Max35Text
+from . import NotificationStatus3Code
+from . import OriginalItemReference8
+from . import UUIDv4Identifier
 
 class OriginalItemAndStatus9(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class OriginalItemAndStatus9(base_types._BaseFieldType):
 
 	@AddtlStsInf.setter
 	def AddtlStsInf(self, value):
-		self._AddtlStsInf = value if type(value) != base_types.auto else self.make_default("AddtlStsInf")
+		self._AddtlStsInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlStsInf', Max105Text, False)
 
 	@AddtlStsInf.deleter
 	def AddtlStsInf(self):
 		del self._AddtlStsInf
-		self._AddtlStsInf = None
+		self._AddtlStsInf = base_types.UninitialisedField(self, 'AddtlStsInf', Max105Text, False)
 
 	@property
 	def Amt(self):
@@ -32,12 +32,12 @@ class OriginalItemAndStatus9(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def ItmSts(self):
@@ -45,12 +45,12 @@ class OriginalItemAndStatus9(base_types._BaseFieldType):
 
 	@ItmSts.setter
 	def ItmSts(self, value):
-		self._ItmSts = value if type(value) != base_types.auto else self.make_default("ItmSts")
+		self._ItmSts = value if value is not None else base_types.UninitialisedField(self, 'ItmSts', NotificationStatus3Code, False)
 
 	@ItmSts.deleter
 	def ItmSts(self):
 		del self._ItmSts
-		self._ItmSts = None
+		self._ItmSts = base_types.UninitialisedField(self, 'ItmSts', NotificationStatus3Code, False)
 
 	@property
 	def OrgnlEndToEndId(self):
@@ -58,12 +58,12 @@ class OriginalItemAndStatus9(base_types._BaseFieldType):
 
 	@OrgnlEndToEndId.setter
 	def OrgnlEndToEndId(self, value):
-		self._OrgnlEndToEndId = value if type(value) != base_types.auto else self.make_default("OrgnlEndToEndId")
+		self._OrgnlEndToEndId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlEndToEndId', Max35Text, False)
 
 	@OrgnlEndToEndId.deleter
 	def OrgnlEndToEndId(self):
 		del self._OrgnlEndToEndId
-		self._OrgnlEndToEndId = None
+		self._OrgnlEndToEndId = base_types.UninitialisedField(self, 'OrgnlEndToEndId', Max35Text, False)
 
 	@property
 	def OrgnlItmId(self):
@@ -71,12 +71,12 @@ class OriginalItemAndStatus9(base_types._BaseFieldType):
 
 	@OrgnlItmId.setter
 	def OrgnlItmId(self, value):
-		self._OrgnlItmId = value if type(value) != base_types.auto else self.make_default("OrgnlItmId")
+		self._OrgnlItmId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlItmId', Max35Text, False)
 
 	@OrgnlItmId.deleter
 	def OrgnlItmId(self):
 		del self._OrgnlItmId
-		self._OrgnlItmId = None
+		self._OrgnlItmId = base_types.UninitialisedField(self, 'OrgnlItmId', Max35Text, False)
 
 	@property
 	def OrgnlItmRef(self):
@@ -84,12 +84,12 @@ class OriginalItemAndStatus9(base_types._BaseFieldType):
 
 	@OrgnlItmRef.setter
 	def OrgnlItmRef(self, value):
-		self._OrgnlItmRef = value if type(value) != base_types.auto else self.make_default("OrgnlItmRef")
+		self._OrgnlItmRef = value if value is not None else base_types.UninitialisedField(self, 'OrgnlItmRef', OriginalItemReference8, False)
 
 	@OrgnlItmRef.deleter
 	def OrgnlItmRef(self):
 		del self._OrgnlItmRef
-		self._OrgnlItmRef = None
+		self._OrgnlItmRef = base_types.UninitialisedField(self, 'OrgnlItmRef', OriginalItemReference8, False)
 
 	@property
 	def OrgnlUETR(self):
@@ -97,12 +97,12 @@ class OriginalItemAndStatus9(base_types._BaseFieldType):
 
 	@OrgnlUETR.setter
 	def OrgnlUETR(self, value):
-		self._OrgnlUETR = value if type(value) != base_types.auto else self.make_default("OrgnlUETR")
+		self._OrgnlUETR = value if value is not None else base_types.UninitialisedField(self, 'OrgnlUETR', UUIDv4Identifier, False)
 
 	@OrgnlUETR.deleter
 	def OrgnlUETR(self):
 		del self._OrgnlUETR
-		self._OrgnlUETR = None
+		self._OrgnlUETR = base_types.UninitialisedField(self, 'OrgnlUETR', UUIDv4Identifier, False)
 
 	@property
 	def XpctdValDt(self):
@@ -110,12 +110,12 @@ class OriginalItemAndStatus9(base_types._BaseFieldType):
 
 	@XpctdValDt.setter
 	def XpctdValDt(self, value):
-		self._XpctdValDt = value if type(value) != base_types.auto else self.make_default("XpctdValDt")
+		self._XpctdValDt = value if value is not None else base_types.UninitialisedField(self, 'XpctdValDt', ISODate, False)
 
 	@XpctdValDt.deleter
 	def XpctdValDt(self):
 		del self._XpctdValDt
-		self._XpctdValDt = None
+		self._XpctdValDt = base_types.UninitialisedField(self, 'XpctdValDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlStsInf', type=Max105Text, min=0, max=1, mutex_group=None, array=False),

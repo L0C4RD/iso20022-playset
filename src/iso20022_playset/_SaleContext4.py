@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardDataReading8Code import CardDataReading8Code
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._LanguageCode import LanguageCode
-from ._Max2NumericText import Max2NumericText
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
-from ._Organisation26 import Organisation26
-from ._SaleTokenScope1Code import SaleTokenScope1Code
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import CardDataReading8Code
+from . import ImpliedCurrencyAndAmount
+from . import LanguageCode
+from . import Max2NumericText
+from . import Max35Text
+from . import Max70Text
+from . import Organisation26
+from . import SaleTokenScope1Code
+from . import TrueFalseIndicator
 
 class SaleContext4(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class SaleContext4(base_types._BaseFieldType):
 
 	@AddtlSaleData.setter
 	def AddtlSaleData(self, value):
-		self._AddtlSaleData = value if type(value) != base_types.auto else self.make_default("AddtlSaleData")
+		self._AddtlSaleData = value if value is not None else base_types.UninitialisedField(self, 'AddtlSaleData', Max70Text, False)
 
 	@AddtlSaleData.deleter
 	def AddtlSaleData(self):
 		del self._AddtlSaleData
-		self._AddtlSaleData = None
+		self._AddtlSaleData = base_types.UninitialisedField(self, 'AddtlSaleData', Max70Text, False)
 
 	@property
 	def AllwdNtryMd(self):
@@ -34,12 +34,12 @@ class SaleContext4(base_types._BaseFieldType):
 
 	@AllwdNtryMd.setter
 	def AllwdNtryMd(self, value):
-		self._AllwdNtryMd = value if type(value) != base_types.auto else self.make_default("AllwdNtryMd")
+		self._AllwdNtryMd = value if value is not None else base_types.UninitialisedField(self, 'AllwdNtryMd', CardDataReading8Code, True)
 
 	@AllwdNtryMd.deleter
 	def AllwdNtryMd(self):
 		del self._AllwdNtryMd
-		self._AllwdNtryMd = None
+		self._AllwdNtryMd = base_types.UninitialisedField(self, 'AllwdNtryMd', CardDataReading8Code, True)
 
 	@property
 	def CshrId(self):
@@ -47,12 +47,12 @@ class SaleContext4(base_types._BaseFieldType):
 
 	@CshrId.setter
 	def CshrId(self, value):
-		self._CshrId = value if type(value) != base_types.auto else self.make_default("CshrId")
+		self._CshrId = value if value is not None else base_types.UninitialisedField(self, 'CshrId', Max35Text, False)
 
 	@CshrId.deleter
 	def CshrId(self):
 		del self._CshrId
-		self._CshrId = None
+		self._CshrId = base_types.UninitialisedField(self, 'CshrId', Max35Text, False)
 
 	@property
 	def CshrLang(self):
@@ -60,12 +60,12 @@ class SaleContext4(base_types._BaseFieldType):
 
 	@CshrLang.setter
 	def CshrLang(self, value):
-		self._CshrLang = value if type(value) != base_types.auto else self.make_default("CshrLang")
+		self._CshrLang = value if value is not None else base_types.UninitialisedField(self, 'CshrLang', LanguageCode, True)
 
 	@CshrLang.deleter
 	def CshrLang(self):
 		del self._CshrLang
-		self._CshrLang = None
+		self._CshrLang = base_types.UninitialisedField(self, 'CshrLang', LanguageCode, True)
 
 	@property
 	def CstmrOrdrReqFlg(self):
@@ -73,12 +73,12 @@ class SaleContext4(base_types._BaseFieldType):
 
 	@CstmrOrdrReqFlg.setter
 	def CstmrOrdrReqFlg(self, value):
-		self._CstmrOrdrReqFlg = value if type(value) != base_types.auto else self.make_default("CstmrOrdrReqFlg")
+		self._CstmrOrdrReqFlg = value if value is not None else base_types.UninitialisedField(self, 'CstmrOrdrReqFlg', TrueFalseIndicator, False)
 
 	@CstmrOrdrReqFlg.deleter
 	def CstmrOrdrReqFlg(self):
 		del self._CstmrOrdrReqFlg
-		self._CstmrOrdrReqFlg = None
+		self._CstmrOrdrReqFlg = base_types.UninitialisedField(self, 'CstmrOrdrReqFlg', TrueFalseIndicator, False)
 
 	@property
 	def DlvryNoteNb(self):
@@ -86,12 +86,12 @@ class SaleContext4(base_types._BaseFieldType):
 
 	@DlvryNoteNb.setter
 	def DlvryNoteNb(self, value):
-		self._DlvryNoteNb = value if type(value) != base_types.auto else self.make_default("DlvryNoteNb")
+		self._DlvryNoteNb = value if value is not None else base_types.UninitialisedField(self, 'DlvryNoteNb', Max35Text, False)
 
 	@DlvryNoteNb.deleter
 	def DlvryNoteNb(self):
 		del self._DlvryNoteNb
-		self._DlvryNoteNb = None
+		self._DlvryNoteNb = base_types.UninitialisedField(self, 'DlvryNoteNb', Max35Text, False)
 
 	@property
 	def ForceOnlnFlg(self):
@@ -99,12 +99,12 @@ class SaleContext4(base_types._BaseFieldType):
 
 	@ForceOnlnFlg.setter
 	def ForceOnlnFlg(self, value):
-		self._ForceOnlnFlg = value if type(value) != base_types.auto else self.make_default("ForceOnlnFlg")
+		self._ForceOnlnFlg = value if value is not None else base_types.UninitialisedField(self, 'ForceOnlnFlg', TrueFalseIndicator, False)
 
 	@ForceOnlnFlg.deleter
 	def ForceOnlnFlg(self):
 		del self._ForceOnlnFlg
-		self._ForceOnlnFlg = None
+		self._ForceOnlnFlg = base_types.UninitialisedField(self, 'ForceOnlnFlg', TrueFalseIndicator, False)
 
 	@property
 	def InvcNb(self):
@@ -112,12 +112,12 @@ class SaleContext4(base_types._BaseFieldType):
 
 	@InvcNb.setter
 	def InvcNb(self, value):
-		self._InvcNb = value if type(value) != base_types.auto else self.make_default("InvcNb")
+		self._InvcNb = value if value is not None else base_types.UninitialisedField(self, 'InvcNb', Max35Text, False)
 
 	@InvcNb.deleter
 	def InvcNb(self):
 		del self._InvcNb
-		self._InvcNb = None
+		self._InvcNb = base_types.UninitialisedField(self, 'InvcNb', Max35Text, False)
 
 	@property
 	def PurchsOrdrNb(self):
@@ -125,12 +125,12 @@ class SaleContext4(base_types._BaseFieldType):
 
 	@PurchsOrdrNb.setter
 	def PurchsOrdrNb(self, value):
-		self._PurchsOrdrNb = value if type(value) != base_types.auto else self.make_default("PurchsOrdrNb")
+		self._PurchsOrdrNb = value if value is not None else base_types.UninitialisedField(self, 'PurchsOrdrNb', Max35Text, False)
 
 	@PurchsOrdrNb.deleter
 	def PurchsOrdrNb(self):
 		del self._PurchsOrdrNb
-		self._PurchsOrdrNb = None
+		self._PurchsOrdrNb = base_types.UninitialisedField(self, 'PurchsOrdrNb', Max35Text, False)
 
 	@property
 	def ReuseCardDataFlg(self):
@@ -138,12 +138,12 @@ class SaleContext4(base_types._BaseFieldType):
 
 	@ReuseCardDataFlg.setter
 	def ReuseCardDataFlg(self, value):
-		self._ReuseCardDataFlg = value if type(value) != base_types.auto else self.make_default("ReuseCardDataFlg")
+		self._ReuseCardDataFlg = value if value is not None else base_types.UninitialisedField(self, 'ReuseCardDataFlg', TrueFalseIndicator, False)
 
 	@ReuseCardDataFlg.deleter
 	def ReuseCardDataFlg(self):
 		del self._ReuseCardDataFlg
-		self._ReuseCardDataFlg = None
+		self._ReuseCardDataFlg = base_types.UninitialisedField(self, 'ReuseCardDataFlg', TrueFalseIndicator, False)
 
 	@property
 	def RmngAmt(self):
@@ -151,12 +151,12 @@ class SaleContext4(base_types._BaseFieldType):
 
 	@RmngAmt.setter
 	def RmngAmt(self, value):
-		self._RmngAmt = value if type(value) != base_types.auto else self.make_default("RmngAmt")
+		self._RmngAmt = value if value is not None else base_types.UninitialisedField(self, 'RmngAmt', ImpliedCurrencyAndAmount, False)
 
 	@RmngAmt.deleter
 	def RmngAmt(self):
 		del self._RmngAmt
-		self._RmngAmt = None
+		self._RmngAmt = base_types.UninitialisedField(self, 'RmngAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def SaleId(self):
@@ -164,12 +164,12 @@ class SaleContext4(base_types._BaseFieldType):
 
 	@SaleId.setter
 	def SaleId(self, value):
-		self._SaleId = value if type(value) != base_types.auto else self.make_default("SaleId")
+		self._SaleId = value if value is not None else base_types.UninitialisedField(self, 'SaleId', Max35Text, False)
 
 	@SaleId.deleter
 	def SaleId(self):
 		del self._SaleId
-		self._SaleId = None
+		self._SaleId = base_types.UninitialisedField(self, 'SaleId', Max35Text, False)
 
 	@property
 	def SaleRcncltnId(self):
@@ -177,12 +177,12 @@ class SaleContext4(base_types._BaseFieldType):
 
 	@SaleRcncltnId.setter
 	def SaleRcncltnId(self, value):
-		self._SaleRcncltnId = value if type(value) != base_types.auto else self.make_default("SaleRcncltnId")
+		self._SaleRcncltnId = value if value is not None else base_types.UninitialisedField(self, 'SaleRcncltnId', Max35Text, False)
 
 	@SaleRcncltnId.deleter
 	def SaleRcncltnId(self):
 		del self._SaleRcncltnId
-		self._SaleRcncltnId = None
+		self._SaleRcncltnId = base_types.UninitialisedField(self, 'SaleRcncltnId', Max35Text, False)
 
 	@property
 	def SaleRefNb(self):
@@ -190,12 +190,12 @@ class SaleContext4(base_types._BaseFieldType):
 
 	@SaleRefNb.setter
 	def SaleRefNb(self, value):
-		self._SaleRefNb = value if type(value) != base_types.auto else self.make_default("SaleRefNb")
+		self._SaleRefNb = value if value is not None else base_types.UninitialisedField(self, 'SaleRefNb', Max35Text, False)
 
 	@SaleRefNb.deleter
 	def SaleRefNb(self):
 		del self._SaleRefNb
-		self._SaleRefNb = None
+		self._SaleRefNb = base_types.UninitialisedField(self, 'SaleRefNb', Max35Text, False)
 
 	@property
 	def SaleTknScp(self):
@@ -203,12 +203,12 @@ class SaleContext4(base_types._BaseFieldType):
 
 	@SaleTknScp.setter
 	def SaleTknScp(self, value):
-		self._SaleTknScp = value if type(value) != base_types.auto else self.make_default("SaleTknScp")
+		self._SaleTknScp = value if value is not None else base_types.UninitialisedField(self, 'SaleTknScp', SaleTokenScope1Code, False)
 
 	@SaleTknScp.deleter
 	def SaleTknScp(self):
 		del self._SaleTknScp
-		self._SaleTknScp = None
+		self._SaleTknScp = base_types.UninitialisedField(self, 'SaleTknScp', SaleTokenScope1Code, False)
 
 	@property
 	def ShftNb(self):
@@ -216,12 +216,12 @@ class SaleContext4(base_types._BaseFieldType):
 
 	@ShftNb.setter
 	def ShftNb(self, value):
-		self._ShftNb = value if type(value) != base_types.auto else self.make_default("ShftNb")
+		self._ShftNb = value if value is not None else base_types.UninitialisedField(self, 'ShftNb', Max2NumericText, False)
 
 	@ShftNb.deleter
 	def ShftNb(self):
 		del self._ShftNb
-		self._ShftNb = None
+		self._ShftNb = base_types.UninitialisedField(self, 'ShftNb', Max2NumericText, False)
 
 	@property
 	def SpltPmt(self):
@@ -229,12 +229,12 @@ class SaleContext4(base_types._BaseFieldType):
 
 	@SpltPmt.setter
 	def SpltPmt(self, value):
-		self._SpltPmt = value if type(value) != base_types.auto else self.make_default("SpltPmt")
+		self._SpltPmt = value if value is not None else base_types.UninitialisedField(self, 'SpltPmt', TrueFalseIndicator, False)
 
 	@SpltPmt.deleter
 	def SpltPmt(self):
 		del self._SpltPmt
-		self._SpltPmt = None
+		self._SpltPmt = base_types.UninitialisedField(self, 'SpltPmt', TrueFalseIndicator, False)
 
 	@property
 	def SpnsrdMrchnt(self):
@@ -242,12 +242,12 @@ class SaleContext4(base_types._BaseFieldType):
 
 	@SpnsrdMrchnt.setter
 	def SpnsrdMrchnt(self, value):
-		self._SpnsrdMrchnt = value if type(value) != base_types.auto else self.make_default("SpnsrdMrchnt")
+		self._SpnsrdMrchnt = value if value is not None else base_types.UninitialisedField(self, 'SpnsrdMrchnt', Organisation26, True)
 
 	@SpnsrdMrchnt.deleter
 	def SpnsrdMrchnt(self):
 		del self._SpnsrdMrchnt
-		self._SpnsrdMrchnt = None
+		self._SpnsrdMrchnt = base_types.UninitialisedField(self, 'SpnsrdMrchnt', Organisation26, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlSaleData', type=Max70Text, min=0, max=1, mutex_group=None, array=False),

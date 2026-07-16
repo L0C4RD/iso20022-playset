@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IntraBalanceMovementModificationRequestStatusAdviceV02 import IntraBalanceMovementModificationRequestStatusAdviceV02
+from . import IntraBalanceMovementModificationRequestStatusAdviceV02
 
 class CAMT_073_001_02():
 
@@ -18,12 +18,12 @@ class CAMT_073_001_02():
 
 		@IntraBalMvmntModReqStsAdvc.setter
 		def IntraBalMvmntModReqStsAdvc(self, value):
-			self._IntraBalMvmntModReqStsAdvc = value if type(value) != base_types.auto else self.make_default("IntraBalMvmntModReqStsAdvc")
+			self._IntraBalMvmntModReqStsAdvc = value if value is not None else base_types.UninitialisedField(self, 'IntraBalMvmntModReqStsAdvc', IntraBalanceMovementModificationRequestStatusAdviceV02, False)
 
 		@IntraBalMvmntModReqStsAdvc.deleter
 		def IntraBalMvmntModReqStsAdvc(self):
 			del self._IntraBalMvmntModReqStsAdvc
-			self._IntraBalMvmntModReqStsAdvc = None
+			self._IntraBalMvmntModReqStsAdvc = base_types.UninitialisedField(self, 'IntraBalMvmntModReqStsAdvc', IntraBalanceMovementModificationRequestStatusAdviceV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='IntraBalMvmntModReqStsAdvc', type=IntraBalanceMovementModificationRequestStatusAdviceV02, min=1, max=1, mutex_group=None, array=False),

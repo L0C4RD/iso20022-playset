@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CreditDebitCode import CreditDebitCode
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._Quantity54Choice import Quantity54Choice
-from ._SecurityIdentification20 import SecurityIdentification20
+from . import CreditDebitCode
+from . import DateAndDateTime2Choice
+from . import Quantity54Choice
+from . import SecurityIdentification20
 
 class SecuritiesOption86(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class SecuritiesOption86(base_types._BaseFieldType):
 
 	@CdtDbtInd.setter
 	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+		self._CdtDbtInd = value if value is not None else base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@CdtDbtInd.deleter
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
-		self._CdtDbtInd = None
+		self._CdtDbtInd = base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@property
 	def FinInstrmId(self):
@@ -29,12 +29,12 @@ class SecuritiesOption86(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification20, False)
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
 		del self._FinInstrmId
-		self._FinInstrmId = None
+		self._FinInstrmId = base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification20, False)
 
 	@property
 	def OrgnlPstngDt(self):
@@ -42,12 +42,12 @@ class SecuritiesOption86(base_types._BaseFieldType):
 
 	@OrgnlPstngDt.setter
 	def OrgnlPstngDt(self, value):
-		self._OrgnlPstngDt = value if type(value) != base_types.auto else self.make_default("OrgnlPstngDt")
+		self._OrgnlPstngDt = value if value is not None else base_types.UninitialisedField(self, 'OrgnlPstngDt', DateAndDateTime2Choice, False)
 
 	@OrgnlPstngDt.deleter
 	def OrgnlPstngDt(self):
 		del self._OrgnlPstngDt
-		self._OrgnlPstngDt = None
+		self._OrgnlPstngDt = base_types.UninitialisedField(self, 'OrgnlPstngDt', DateAndDateTime2Choice, False)
 
 	@property
 	def PstngDt(self):
@@ -55,12 +55,12 @@ class SecuritiesOption86(base_types._BaseFieldType):
 
 	@PstngDt.setter
 	def PstngDt(self, value):
-		self._PstngDt = value if type(value) != base_types.auto else self.make_default("PstngDt")
+		self._PstngDt = value if value is not None else base_types.UninitialisedField(self, 'PstngDt', DateAndDateTime2Choice, False)
 
 	@PstngDt.deleter
 	def PstngDt(self):
 		del self._PstngDt
-		self._PstngDt = None
+		self._PstngDt = base_types.UninitialisedField(self, 'PstngDt', DateAndDateTime2Choice, False)
 
 	@property
 	def PstngQty(self):
@@ -68,12 +68,12 @@ class SecuritiesOption86(base_types._BaseFieldType):
 
 	@PstngQty.setter
 	def PstngQty(self, value):
-		self._PstngQty = value if type(value) != base_types.auto else self.make_default("PstngQty")
+		self._PstngQty = value if value is not None else base_types.UninitialisedField(self, 'PstngQty', Quantity54Choice, False)
 
 	@PstngQty.deleter
 	def PstngQty(self):
 		del self._PstngQty
-		self._PstngQty = None
+		self._PstngQty = base_types.UninitialisedField(self, 'PstngQty', Quantity54Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CdtDbtInd', type=CreditDebitCode, min=1, max=1, mutex_group=None, array=False),

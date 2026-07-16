@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcceptedStatus8Choice import AcceptedStatus8Choice
-from ._Quantity51Choice import Quantity51Choice
+from . import AcceptedStatus8Choice
+from . import Quantity51Choice
 
 class AcceptedStatus2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AcceptedStatus2(base_types._BaseFieldType):
 
 	@AccptdQty.setter
 	def AccptdQty(self, value):
-		self._AccptdQty = value if type(value) != base_types.auto else self.make_default("AccptdQty")
+		self._AccptdQty = value if value is not None else base_types.UninitialisedField(self, 'AccptdQty', Quantity51Choice, False)
 
 	@AccptdQty.deleter
 	def AccptdQty(self):
 		del self._AccptdQty
-		self._AccptdQty = None
+		self._AccptdQty = base_types.UninitialisedField(self, 'AccptdQty', Quantity51Choice, False)
 
 	@property
 	def AccptdRsn(self):
@@ -27,12 +27,12 @@ class AcceptedStatus2(base_types._BaseFieldType):
 
 	@AccptdRsn.setter
 	def AccptdRsn(self, value):
-		self._AccptdRsn = value if type(value) != base_types.auto else self.make_default("AccptdRsn")
+		self._AccptdRsn = value if value is not None else base_types.UninitialisedField(self, 'AccptdRsn', AcceptedStatus8Choice, False)
 
 	@AccptdRsn.deleter
 	def AccptdRsn(self):
 		del self._AccptdRsn
-		self._AccptdRsn = None
+		self._AccptdRsn = base_types.UninitialisedField(self, 'AccptdRsn', AcceptedStatus8Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AccptdQty', type=Quantity51Choice, min=0, max=1, mutex_group=None, array=False),

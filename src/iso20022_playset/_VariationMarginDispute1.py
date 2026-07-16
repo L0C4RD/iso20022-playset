@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Dispute1 import Dispute1
-from ._DisputeResolutionType2Choice import DisputeResolutionType2Choice
+from . import Dispute1
+from . import DisputeResolutionType2Choice
 
 class VariationMarginDispute1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class VariationMarginDispute1(base_types._BaseFieldType):
 
 	@DsptDtls.setter
 	def DsptDtls(self, value):
-		self._DsptDtls = value if type(value) != base_types.auto else self.make_default("DsptDtls")
+		self._DsptDtls = value if value is not None else base_types.UninitialisedField(self, 'DsptDtls', Dispute1, False)
 
 	@DsptDtls.deleter
 	def DsptDtls(self):
 		del self._DsptDtls
-		self._DsptDtls = None
+		self._DsptDtls = base_types.UninitialisedField(self, 'DsptDtls', Dispute1, False)
 
 	@property
 	def RsltnTpDtls(self):
@@ -27,12 +27,12 @@ class VariationMarginDispute1(base_types._BaseFieldType):
 
 	@RsltnTpDtls.setter
 	def RsltnTpDtls(self, value):
-		self._RsltnTpDtls = value if type(value) != base_types.auto else self.make_default("RsltnTpDtls")
+		self._RsltnTpDtls = value if value is not None else base_types.UninitialisedField(self, 'RsltnTpDtls', DisputeResolutionType2Choice, True)
 
 	@RsltnTpDtls.deleter
 	def RsltnTpDtls(self):
 		del self._RsltnTpDtls
-		self._RsltnTpDtls = None
+		self._RsltnTpDtls = base_types.UninitialisedField(self, 'RsltnTpDtls', DisputeResolutionType2Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DsptDtls', type=Dispute1, min=1, max=1, mutex_group=None, array=False),

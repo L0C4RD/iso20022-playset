@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._AgreedRate3 import AgreedRate3
-from ._DecimalNumber import DecimalNumber
-from ._ISODate import ISODate
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
-from ._SecurityIdentification18 import SecurityIdentification18
-from ._SettlementDate8Code import SettlementDate8Code
-from ._Side1Code import Side1Code
+from . import ActiveCurrencyAnd13DecimalAmount
+from . import ActiveCurrencyAndAmount
+from . import ActiveCurrencyCode
+from . import AgreedRate3
+from . import DecimalNumber
+from . import ISODate
+from . import ISODateTime
+from . import Max35Text
+from . import SecurityIdentification18
+from . import SettlementDate8Code
+from . import Side1Code
 
 class InstrumentLeg7(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class InstrumentLeg7(base_types._BaseFieldType):
 
 	@LegCcy.setter
 	def LegCcy(self, value):
-		self._LegCcy = value if type(value) != base_types.auto else self.make_default("LegCcy")
+		self._LegCcy = value if value is not None else base_types.UninitialisedField(self, 'LegCcy', ActiveCurrencyCode, False)
 
 	@LegCcy.deleter
 	def LegCcy(self):
 		del self._LegCcy
-		self._LegCcy = None
+		self._LegCcy = base_types.UninitialisedField(self, 'LegCcy', ActiveCurrencyCode, False)
 
 	@property
 	def LegClctdCtrPtyCcyLastQty(self):
@@ -36,12 +36,12 @@ class InstrumentLeg7(base_types._BaseFieldType):
 
 	@LegClctdCtrPtyCcyLastQty.setter
 	def LegClctdCtrPtyCcyLastQty(self, value):
-		self._LegClctdCtrPtyCcyLastQty = value if type(value) != base_types.auto else self.make_default("LegClctdCtrPtyCcyLastQty")
+		self._LegClctdCtrPtyCcyLastQty = value if value is not None else base_types.UninitialisedField(self, 'LegClctdCtrPtyCcyLastQty', ActiveCurrencyAndAmount, False)
 
 	@LegClctdCtrPtyCcyLastQty.deleter
 	def LegClctdCtrPtyCcyLastQty(self):
 		del self._LegClctdCtrPtyCcyLastQty
-		self._LegClctdCtrPtyCcyLastQty = None
+		self._LegClctdCtrPtyCcyLastQty = base_types.UninitialisedField(self, 'LegClctdCtrPtyCcyLastQty', ActiveCurrencyAndAmount, False)
 
 	@property
 	def LegFwdPts(self):
@@ -49,12 +49,12 @@ class InstrumentLeg7(base_types._BaseFieldType):
 
 	@LegFwdPts.setter
 	def LegFwdPts(self, value):
-		self._LegFwdPts = value if type(value) != base_types.auto else self.make_default("LegFwdPts")
+		self._LegFwdPts = value if value is not None else base_types.UninitialisedField(self, 'LegFwdPts', DecimalNumber, False)
 
 	@LegFwdPts.deleter
 	def LegFwdPts(self):
 		del self._LegFwdPts
-		self._LegFwdPts = None
+		self._LegFwdPts = base_types.UninitialisedField(self, 'LegFwdPts', DecimalNumber, False)
 
 	@property
 	def LegLastPric(self):
@@ -62,12 +62,12 @@ class InstrumentLeg7(base_types._BaseFieldType):
 
 	@LegLastPric.setter
 	def LegLastPric(self, value):
-		self._LegLastPric = value if type(value) != base_types.auto else self.make_default("LegLastPric")
+		self._LegLastPric = value if value is not None else base_types.UninitialisedField(self, 'LegLastPric', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@LegLastPric.deleter
 	def LegLastPric(self):
 		del self._LegLastPric
-		self._LegLastPric = None
+		self._LegLastPric = base_types.UninitialisedField(self, 'LegLastPric', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def LegOrdrQty(self):
@@ -75,12 +75,12 @@ class InstrumentLeg7(base_types._BaseFieldType):
 
 	@LegOrdrQty.setter
 	def LegOrdrQty(self, value):
-		self._LegOrdrQty = value if type(value) != base_types.auto else self.make_default("LegOrdrQty")
+		self._LegOrdrQty = value if value is not None else base_types.UninitialisedField(self, 'LegOrdrQty', ActiveCurrencyAndAmount, False)
 
 	@LegOrdrQty.deleter
 	def LegOrdrQty(self):
 		del self._LegOrdrQty
-		self._LegOrdrQty = None
+		self._LegOrdrQty = base_types.UninitialisedField(self, 'LegOrdrQty', ActiveCurrencyAndAmount, False)
 
 	@property
 	def LegRskAmt(self):
@@ -88,12 +88,12 @@ class InstrumentLeg7(base_types._BaseFieldType):
 
 	@LegRskAmt.setter
 	def LegRskAmt(self, value):
-		self._LegRskAmt = value if type(value) != base_types.auto else self.make_default("LegRskAmt")
+		self._LegRskAmt = value if value is not None else base_types.UninitialisedField(self, 'LegRskAmt', ActiveCurrencyAndAmount, False)
 
 	@LegRskAmt.deleter
 	def LegRskAmt(self):
 		del self._LegRskAmt
-		self._LegRskAmt = None
+		self._LegRskAmt = base_types.UninitialisedField(self, 'LegRskAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def LegSctyId(self):
@@ -101,12 +101,12 @@ class InstrumentLeg7(base_types._BaseFieldType):
 
 	@LegSctyId.setter
 	def LegSctyId(self, value):
-		self._LegSctyId = value if type(value) != base_types.auto else self.make_default("LegSctyId")
+		self._LegSctyId = value if value is not None else base_types.UninitialisedField(self, 'LegSctyId', SecurityIdentification18, False)
 
 	@LegSctyId.deleter
 	def LegSctyId(self):
 		del self._LegSctyId
-		self._LegSctyId = None
+		self._LegSctyId = base_types.UninitialisedField(self, 'LegSctyId', SecurityIdentification18, False)
 
 	@property
 	def LegSd(self):
@@ -114,12 +114,12 @@ class InstrumentLeg7(base_types._BaseFieldType):
 
 	@LegSd.setter
 	def LegSd(self, value):
-		self._LegSd = value if type(value) != base_types.auto else self.make_default("LegSd")
+		self._LegSd = value if value is not None else base_types.UninitialisedField(self, 'LegSd', Side1Code, False)
 
 	@LegSd.deleter
 	def LegSd(self):
 		del self._LegSd
-		self._LegSd = None
+		self._LegSd = base_types.UninitialisedField(self, 'LegSd', Side1Code, False)
 
 	@property
 	def LegSttlmCcy(self):
@@ -127,12 +127,12 @@ class InstrumentLeg7(base_types._BaseFieldType):
 
 	@LegSttlmCcy.setter
 	def LegSttlmCcy(self, value):
-		self._LegSttlmCcy = value if type(value) != base_types.auto else self.make_default("LegSttlmCcy")
+		self._LegSttlmCcy = value if value is not None else base_types.UninitialisedField(self, 'LegSttlmCcy', ActiveCurrencyCode, False)
 
 	@LegSttlmCcy.deleter
 	def LegSttlmCcy(self):
 		del self._LegSttlmCcy
-		self._LegSttlmCcy = None
+		self._LegSttlmCcy = base_types.UninitialisedField(self, 'LegSttlmCcy', ActiveCurrencyCode, False)
 
 	@property
 	def LegSttlmDt(self):
@@ -140,12 +140,12 @@ class InstrumentLeg7(base_types._BaseFieldType):
 
 	@LegSttlmDt.setter
 	def LegSttlmDt(self, value):
-		self._LegSttlmDt = value if type(value) != base_types.auto else self.make_default("LegSttlmDt")
+		self._LegSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'LegSttlmDt', ISODateTime, False)
 
 	@LegSttlmDt.deleter
 	def LegSttlmDt(self):
 		del self._LegSttlmDt
-		self._LegSttlmDt = None
+		self._LegSttlmDt = base_types.UninitialisedField(self, 'LegSttlmDt', ISODateTime, False)
 
 	@property
 	def LegSttlmTp(self):
@@ -153,12 +153,12 @@ class InstrumentLeg7(base_types._BaseFieldType):
 
 	@LegSttlmTp.setter
 	def LegSttlmTp(self, value):
-		self._LegSttlmTp = value if type(value) != base_types.auto else self.make_default("LegSttlmTp")
+		self._LegSttlmTp = value if value is not None else base_types.UninitialisedField(self, 'LegSttlmTp', SettlementDate8Code, False)
 
 	@LegSttlmTp.deleter
 	def LegSttlmTp(self):
 		del self._LegSttlmTp
-		self._LegSttlmTp = None
+		self._LegSttlmTp = base_types.UninitialisedField(self, 'LegSttlmTp', SettlementDate8Code, False)
 
 	@property
 	def LegSymb(self):
@@ -166,12 +166,12 @@ class InstrumentLeg7(base_types._BaseFieldType):
 
 	@LegSymb.setter
 	def LegSymb(self, value):
-		self._LegSymb = value if type(value) != base_types.auto else self.make_default("LegSymb")
+		self._LegSymb = value if value is not None else base_types.UninitialisedField(self, 'LegSymb', Max35Text, False)
 
 	@LegSymb.deleter
 	def LegSymb(self):
 		del self._LegSymb
-		self._LegSymb = None
+		self._LegSymb = base_types.UninitialisedField(self, 'LegSymb', Max35Text, False)
 
 	@property
 	def LegValDt(self):
@@ -179,12 +179,12 @@ class InstrumentLeg7(base_types._BaseFieldType):
 
 	@LegValDt.setter
 	def LegValDt(self, value):
-		self._LegValDt = value if type(value) != base_types.auto else self.make_default("LegValDt")
+		self._LegValDt = value if value is not None else base_types.UninitialisedField(self, 'LegValDt', ISODate, False)
 
 	@LegValDt.deleter
 	def LegValDt(self):
 		del self._LegValDt
-		self._LegValDt = None
+		self._LegValDt = base_types.UninitialisedField(self, 'LegValDt', ISODate, False)
 
 	@property
 	def LegValtnRate(self):
@@ -192,12 +192,12 @@ class InstrumentLeg7(base_types._BaseFieldType):
 
 	@LegValtnRate.setter
 	def LegValtnRate(self, value):
-		self._LegValtnRate = value if type(value) != base_types.auto else self.make_default("LegValtnRate")
+		self._LegValtnRate = value if value is not None else base_types.UninitialisedField(self, 'LegValtnRate', AgreedRate3, False)
 
 	@LegValtnRate.deleter
 	def LegValtnRate(self):
 		del self._LegValtnRate
-		self._LegValtnRate = None
+		self._LegValtnRate = base_types.UninitialisedField(self, 'LegValtnRate', AgreedRate3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LegCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),

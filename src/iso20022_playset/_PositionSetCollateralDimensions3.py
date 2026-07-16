@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._MarginCollateralReport4 import MarginCollateralReport4
-from ._TradeCounterpartyReport20 import TradeCounterpartyReport20
+from . import ActiveOrHistoricCurrencyCode
+from . import MarginCollateralReport4
+from . import TradeCounterpartyReport20
 
 class PositionSetCollateralDimensions3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PositionSetCollateralDimensions3(base_types._BaseFieldType):
 
 	@Coll.setter
 	def Coll(self, value):
-		self._Coll = value if type(value) != base_types.auto else self.make_default("Coll")
+		self._Coll = value if value is not None else base_types.UninitialisedField(self, 'Coll', MarginCollateralReport4, False)
 
 	@Coll.deleter
 	def Coll(self):
 		del self._Coll
-		self._Coll = None
+		self._Coll = base_types.UninitialisedField(self, 'Coll', MarginCollateralReport4, False)
 
 	@property
 	def CtrPtyId(self):
@@ -28,12 +28,12 @@ class PositionSetCollateralDimensions3(base_types._BaseFieldType):
 
 	@CtrPtyId.setter
 	def CtrPtyId(self, value):
-		self._CtrPtyId = value if type(value) != base_types.auto else self.make_default("CtrPtyId")
+		self._CtrPtyId = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyId', TradeCounterpartyReport20, False)
 
 	@CtrPtyId.deleter
 	def CtrPtyId(self):
 		del self._CtrPtyId
-		self._CtrPtyId = None
+		self._CtrPtyId = base_types.UninitialisedField(self, 'CtrPtyId', TradeCounterpartyReport20, False)
 
 	@property
 	def InitlMrgnPstdCcy(self):
@@ -41,12 +41,12 @@ class PositionSetCollateralDimensions3(base_types._BaseFieldType):
 
 	@InitlMrgnPstdCcy.setter
 	def InitlMrgnPstdCcy(self, value):
-		self._InitlMrgnPstdCcy = value if type(value) != base_types.auto else self.make_default("InitlMrgnPstdCcy")
+		self._InitlMrgnPstdCcy = value if value is not None else base_types.UninitialisedField(self, 'InitlMrgnPstdCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@InitlMrgnPstdCcy.deleter
 	def InitlMrgnPstdCcy(self):
 		del self._InitlMrgnPstdCcy
-		self._InitlMrgnPstdCcy = None
+		self._InitlMrgnPstdCcy = base_types.UninitialisedField(self, 'InitlMrgnPstdCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def InitlMrgnRcvdCcy(self):
@@ -54,12 +54,12 @@ class PositionSetCollateralDimensions3(base_types._BaseFieldType):
 
 	@InitlMrgnRcvdCcy.setter
 	def InitlMrgnRcvdCcy(self, value):
-		self._InitlMrgnRcvdCcy = value if type(value) != base_types.auto else self.make_default("InitlMrgnRcvdCcy")
+		self._InitlMrgnRcvdCcy = value if value is not None else base_types.UninitialisedField(self, 'InitlMrgnRcvdCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@InitlMrgnRcvdCcy.deleter
 	def InitlMrgnRcvdCcy(self):
 		del self._InitlMrgnRcvdCcy
-		self._InitlMrgnRcvdCcy = None
+		self._InitlMrgnRcvdCcy = base_types.UninitialisedField(self, 'InitlMrgnRcvdCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def VartnMrgnPstdCcy(self):
@@ -67,12 +67,12 @@ class PositionSetCollateralDimensions3(base_types._BaseFieldType):
 
 	@VartnMrgnPstdCcy.setter
 	def VartnMrgnPstdCcy(self, value):
-		self._VartnMrgnPstdCcy = value if type(value) != base_types.auto else self.make_default("VartnMrgnPstdCcy")
+		self._VartnMrgnPstdCcy = value if value is not None else base_types.UninitialisedField(self, 'VartnMrgnPstdCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@VartnMrgnPstdCcy.deleter
 	def VartnMrgnPstdCcy(self):
 		del self._VartnMrgnPstdCcy
-		self._VartnMrgnPstdCcy = None
+		self._VartnMrgnPstdCcy = base_types.UninitialisedField(self, 'VartnMrgnPstdCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def VartnMrgnRcvdCcy(self):
@@ -80,12 +80,12 @@ class PositionSetCollateralDimensions3(base_types._BaseFieldType):
 
 	@VartnMrgnRcvdCcy.setter
 	def VartnMrgnRcvdCcy(self, value):
-		self._VartnMrgnRcvdCcy = value if type(value) != base_types.auto else self.make_default("VartnMrgnRcvdCcy")
+		self._VartnMrgnRcvdCcy = value if value is not None else base_types.UninitialisedField(self, 'VartnMrgnRcvdCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@VartnMrgnRcvdCcy.deleter
 	def VartnMrgnRcvdCcy(self):
 		del self._VartnMrgnRcvdCcy
-		self._VartnMrgnRcvdCcy = None
+		self._VartnMrgnRcvdCcy = base_types.UninitialisedField(self, 'VartnMrgnRcvdCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def XcssCollPstdCcy(self):
@@ -93,12 +93,12 @@ class PositionSetCollateralDimensions3(base_types._BaseFieldType):
 
 	@XcssCollPstdCcy.setter
 	def XcssCollPstdCcy(self, value):
-		self._XcssCollPstdCcy = value if type(value) != base_types.auto else self.make_default("XcssCollPstdCcy")
+		self._XcssCollPstdCcy = value if value is not None else base_types.UninitialisedField(self, 'XcssCollPstdCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@XcssCollPstdCcy.deleter
 	def XcssCollPstdCcy(self):
 		del self._XcssCollPstdCcy
-		self._XcssCollPstdCcy = None
+		self._XcssCollPstdCcy = base_types.UninitialisedField(self, 'XcssCollPstdCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def XcssCollRcvdCcy(self):
@@ -106,12 +106,12 @@ class PositionSetCollateralDimensions3(base_types._BaseFieldType):
 
 	@XcssCollRcvdCcy.setter
 	def XcssCollRcvdCcy(self, value):
-		self._XcssCollRcvdCcy = value if type(value) != base_types.auto else self.make_default("XcssCollRcvdCcy")
+		self._XcssCollRcvdCcy = value if value is not None else base_types.UninitialisedField(self, 'XcssCollRcvdCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@XcssCollRcvdCcy.deleter
 	def XcssCollRcvdCcy(self):
 		del self._XcssCollRcvdCcy
-		self._XcssCollRcvdCcy = None
+		self._XcssCollRcvdCcy = base_types.UninitialisedField(self, 'XcssCollRcvdCcy', ActiveOrHistoricCurrencyCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Coll', type=MarginCollateralReport4, min=0, max=1, mutex_group=None, array=False),

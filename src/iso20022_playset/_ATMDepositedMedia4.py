@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMDepositedMediaItem1 import ATMDepositedMediaItem1
-from ._ATMMediaType3Code import ATMMediaType3Code
-from ._ATMMediaType4Code import ATMMediaType4Code
-from ._Number import Number
+from . import ATMDepositedMediaItem1
+from . import ATMMediaType3Code
+from . import ATMMediaType4Code
+from . import Number
 
 class ATMDepositedMedia4(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ATMDepositedMedia4(base_types._BaseFieldType):
 
 	@AcctSeqNb.setter
 	def AcctSeqNb(self, value):
-		self._AcctSeqNb = value if type(value) != base_types.auto else self.make_default("AcctSeqNb")
+		self._AcctSeqNb = value if value is not None else base_types.UninitialisedField(self, 'AcctSeqNb', Number, False)
 
 	@AcctSeqNb.deleter
 	def AcctSeqNb(self):
 		del self._AcctSeqNb
-		self._AcctSeqNb = None
+		self._AcctSeqNb = base_types.UninitialisedField(self, 'AcctSeqNb', Number, False)
 
 	@property
 	def MdiaCtgy(self):
@@ -29,12 +29,12 @@ class ATMDepositedMedia4(base_types._BaseFieldType):
 
 	@MdiaCtgy.setter
 	def MdiaCtgy(self, value):
-		self._MdiaCtgy = value if type(value) != base_types.auto else self.make_default("MdiaCtgy")
+		self._MdiaCtgy = value if value is not None else base_types.UninitialisedField(self, 'MdiaCtgy', ATMMediaType3Code, False)
 
 	@MdiaCtgy.deleter
 	def MdiaCtgy(self):
 		del self._MdiaCtgy
-		self._MdiaCtgy = None
+		self._MdiaCtgy = base_types.UninitialisedField(self, 'MdiaCtgy', ATMMediaType3Code, False)
 
 	@property
 	def MdiaItm(self):
@@ -42,12 +42,12 @@ class ATMDepositedMedia4(base_types._BaseFieldType):
 
 	@MdiaItm.setter
 	def MdiaItm(self, value):
-		self._MdiaItm = value if type(value) != base_types.auto else self.make_default("MdiaItm")
+		self._MdiaItm = value if value is not None else base_types.UninitialisedField(self, 'MdiaItm', ATMDepositedMediaItem1, True)
 
 	@MdiaItm.deleter
 	def MdiaItm(self):
 		del self._MdiaItm
-		self._MdiaItm = None
+		self._MdiaItm = base_types.UninitialisedField(self, 'MdiaItm', ATMDepositedMediaItem1, True)
 
 	@property
 	def MdiaTp(self):
@@ -55,12 +55,12 @@ class ATMDepositedMedia4(base_types._BaseFieldType):
 
 	@MdiaTp.setter
 	def MdiaTp(self, value):
-		self._MdiaTp = value if type(value) != base_types.auto else self.make_default("MdiaTp")
+		self._MdiaTp = value if value is not None else base_types.UninitialisedField(self, 'MdiaTp', ATMMediaType4Code, False)
 
 	@MdiaTp.deleter
 	def MdiaTp(self):
 		del self._MdiaTp
-		self._MdiaTp = None
+		self._MdiaTp = base_types.UninitialisedField(self, 'MdiaTp', ATMMediaType4Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctSeqNb', type=Number, min=0, max=1, mutex_group=None, array=False),

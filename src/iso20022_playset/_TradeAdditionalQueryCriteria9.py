@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateSectorCriteria6 import CorporateSectorCriteria6
-from ._DerivativeEventType3Code import DerivativeEventType3Code
-from ._ModificationLevel1Code import ModificationLevel1Code
-from ._PartyNatureType1Code import PartyNatureType1Code
-from ._ProductClassificationCriteria1 import ProductClassificationCriteria1
-from ._ProductType4Code import ProductType4Code
-from ._SecuritiesTradeVenueCriteria1Choice import SecuritiesTradeVenueCriteria1Choice
-from ._TransactionOperationType8Code import TransactionOperationType8Code
+from . import CorporateSectorCriteria6
+from . import DerivativeEventType3Code
+from . import ModificationLevel1Code
+from . import PartyNatureType1Code
+from . import ProductClassificationCriteria1
+from . import ProductType4Code
+from . import SecuritiesTradeVenueCriteria1Choice
+from . import TransactionOperationType8Code
 
 class TradeAdditionalQueryCriteria9(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class TradeAdditionalQueryCriteria9(base_types._BaseFieldType):
 
 	@ActnTp.setter
 	def ActnTp(self, value):
-		self._ActnTp = value if type(value) != base_types.auto else self.make_default("ActnTp")
+		self._ActnTp = value if value is not None else base_types.UninitialisedField(self, 'ActnTp', TransactionOperationType8Code, True)
 
 	@ActnTp.deleter
 	def ActnTp(self):
 		del self._ActnTp
-		self._ActnTp = None
+		self._ActnTp = base_types.UninitialisedField(self, 'ActnTp', TransactionOperationType8Code, True)
 
 	@property
 	def AsstClss(self):
@@ -33,12 +33,12 @@ class TradeAdditionalQueryCriteria9(base_types._BaseFieldType):
 
 	@AsstClss.setter
 	def AsstClss(self, value):
-		self._AsstClss = value if type(value) != base_types.auto else self.make_default("AsstClss")
+		self._AsstClss = value if value is not None else base_types.UninitialisedField(self, 'AsstClss', ProductType4Code, True)
 
 	@AsstClss.deleter
 	def AsstClss(self):
 		del self._AsstClss
-		self._AsstClss = None
+		self._AsstClss = base_types.UninitialisedField(self, 'AsstClss', ProductType4Code, True)
 
 	@property
 	def CorpSctr(self):
@@ -46,12 +46,12 @@ class TradeAdditionalQueryCriteria9(base_types._BaseFieldType):
 
 	@CorpSctr.setter
 	def CorpSctr(self, value):
-		self._CorpSctr = value if type(value) != base_types.auto else self.make_default("CorpSctr")
+		self._CorpSctr = value if value is not None else base_types.UninitialisedField(self, 'CorpSctr', CorporateSectorCriteria6, False)
 
 	@CorpSctr.deleter
 	def CorpSctr(self):
 		del self._CorpSctr
-		self._CorpSctr = None
+		self._CorpSctr = base_types.UninitialisedField(self, 'CorpSctr', CorporateSectorCriteria6, False)
 
 	@property
 	def EvtTp(self):
@@ -59,12 +59,12 @@ class TradeAdditionalQueryCriteria9(base_types._BaseFieldType):
 
 	@EvtTp.setter
 	def EvtTp(self, value):
-		self._EvtTp = value if type(value) != base_types.auto else self.make_default("EvtTp")
+		self._EvtTp = value if value is not None else base_types.UninitialisedField(self, 'EvtTp', DerivativeEventType3Code, True)
 
 	@EvtTp.deleter
 	def EvtTp(self):
 		del self._EvtTp
-		self._EvtTp = None
+		self._EvtTp = base_types.UninitialisedField(self, 'EvtTp', DerivativeEventType3Code, True)
 
 	@property
 	def ExctnVn(self):
@@ -72,12 +72,12 @@ class TradeAdditionalQueryCriteria9(base_types._BaseFieldType):
 
 	@ExctnVn.setter
 	def ExctnVn(self, value):
-		self._ExctnVn = value if type(value) != base_types.auto else self.make_default("ExctnVn")
+		self._ExctnVn = value if value is not None else base_types.UninitialisedField(self, 'ExctnVn', SecuritiesTradeVenueCriteria1Choice, False)
 
 	@ExctnVn.deleter
 	def ExctnVn(self):
 		del self._ExctnVn
-		self._ExctnVn = None
+		self._ExctnVn = base_types.UninitialisedField(self, 'ExctnVn', SecuritiesTradeVenueCriteria1Choice, False)
 
 	@property
 	def Lvl(self):
@@ -85,12 +85,12 @@ class TradeAdditionalQueryCriteria9(base_types._BaseFieldType):
 
 	@Lvl.setter
 	def Lvl(self, value):
-		self._Lvl = value if type(value) != base_types.auto else self.make_default("Lvl")
+		self._Lvl = value if value is not None else base_types.UninitialisedField(self, 'Lvl', ModificationLevel1Code, False)
 
 	@Lvl.deleter
 	def Lvl(self):
 		del self._Lvl
-		self._Lvl = None
+		self._Lvl = base_types.UninitialisedField(self, 'Lvl', ModificationLevel1Code, False)
 
 	@property
 	def NtrOfCtrPty(self):
@@ -98,12 +98,12 @@ class TradeAdditionalQueryCriteria9(base_types._BaseFieldType):
 
 	@NtrOfCtrPty.setter
 	def NtrOfCtrPty(self, value):
-		self._NtrOfCtrPty = value if type(value) != base_types.auto else self.make_default("NtrOfCtrPty")
+		self._NtrOfCtrPty = value if value is not None else base_types.UninitialisedField(self, 'NtrOfCtrPty', PartyNatureType1Code, False)
 
 	@NtrOfCtrPty.deleter
 	def NtrOfCtrPty(self):
 		del self._NtrOfCtrPty
-		self._NtrOfCtrPty = None
+		self._NtrOfCtrPty = base_types.UninitialisedField(self, 'NtrOfCtrPty', PartyNatureType1Code, False)
 
 	@property
 	def PdctClssfctn(self):
@@ -111,12 +111,12 @@ class TradeAdditionalQueryCriteria9(base_types._BaseFieldType):
 
 	@PdctClssfctn.setter
 	def PdctClssfctn(self, value):
-		self._PdctClssfctn = value if type(value) != base_types.auto else self.make_default("PdctClssfctn")
+		self._PdctClssfctn = value if value is not None else base_types.UninitialisedField(self, 'PdctClssfctn', ProductClassificationCriteria1, False)
 
 	@PdctClssfctn.deleter
 	def PdctClssfctn(self):
 		del self._PdctClssfctn
-		self._PdctClssfctn = None
+		self._PdctClssfctn = base_types.UninitialisedField(self, 'PdctClssfctn', ProductClassificationCriteria1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActnTp', type=TransactionOperationType8Code, min=0, max=None, mutex_group=None, array=True),

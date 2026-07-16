@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IndividualOrderStatusAndReason7 import IndividualOrderStatusAndReason7
-from ._OrderStatusAndReason10 import OrderStatusAndReason10
-from ._SwitchOrderStatusAndReason2 import SwitchOrderStatusAndReason2
+from . import IndividualOrderStatusAndReason7
+from . import OrderStatusAndReason10
+from . import SwitchOrderStatusAndReason2
 
 class Status24Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Status24Choice(base_types._BaseFieldType):
 
 	@IndvOrdrDtlsRpt.setter
 	def IndvOrdrDtlsRpt(self, value):
-		self._IndvOrdrDtlsRpt = value if type(value) != base_types.auto else self.make_default("IndvOrdrDtlsRpt")
+		self._IndvOrdrDtlsRpt = value if value is not None else base_types.UninitialisedField(self, 'IndvOrdrDtlsRpt', IndividualOrderStatusAndReason7, True)
 
 	@IndvOrdrDtlsRpt.deleter
 	def IndvOrdrDtlsRpt(self):
 		del self._IndvOrdrDtlsRpt
-		self._IndvOrdrDtlsRpt = None
+		self._IndvOrdrDtlsRpt = base_types.UninitialisedField(self, 'IndvOrdrDtlsRpt', IndividualOrderStatusAndReason7, True)
 
 	@property
 	def OrdrDtlsRpt(self):
@@ -28,12 +28,12 @@ class Status24Choice(base_types._BaseFieldType):
 
 	@OrdrDtlsRpt.setter
 	def OrdrDtlsRpt(self, value):
-		self._OrdrDtlsRpt = value if type(value) != base_types.auto else self.make_default("OrdrDtlsRpt")
+		self._OrdrDtlsRpt = value if value is not None else base_types.UninitialisedField(self, 'OrdrDtlsRpt', OrderStatusAndReason10, False)
 
 	@OrdrDtlsRpt.deleter
 	def OrdrDtlsRpt(self):
 		del self._OrdrDtlsRpt
-		self._OrdrDtlsRpt = None
+		self._OrdrDtlsRpt = base_types.UninitialisedField(self, 'OrdrDtlsRpt', OrderStatusAndReason10, False)
 
 	@property
 	def SwtchOrdrDtlsRpt(self):
@@ -41,12 +41,12 @@ class Status24Choice(base_types._BaseFieldType):
 
 	@SwtchOrdrDtlsRpt.setter
 	def SwtchOrdrDtlsRpt(self, value):
-		self._SwtchOrdrDtlsRpt = value if type(value) != base_types.auto else self.make_default("SwtchOrdrDtlsRpt")
+		self._SwtchOrdrDtlsRpt = value if value is not None else base_types.UninitialisedField(self, 'SwtchOrdrDtlsRpt', SwitchOrderStatusAndReason2, True)
 
 	@SwtchOrdrDtlsRpt.deleter
 	def SwtchOrdrDtlsRpt(self):
 		del self._SwtchOrdrDtlsRpt
-		self._SwtchOrdrDtlsRpt = None
+		self._SwtchOrdrDtlsRpt = base_types.UninitialisedField(self, 'SwtchOrdrDtlsRpt', SwitchOrderStatusAndReason2, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IndvOrdrDtlsRpt', type=IndividualOrderStatusAndReason7, min=1, max=None, mutex_group=1, array=True),

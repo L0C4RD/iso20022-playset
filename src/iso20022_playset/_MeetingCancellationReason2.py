@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max140Text import Max140Text
-from ._MeetingCancellationReason1Choice import MeetingCancellationReason1Choice
+from . import Max140Text
+from . import MeetingCancellationReason1Choice
 
 class MeetingCancellationReason2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class MeetingCancellationReason2(base_types._BaseFieldType):
 
 	@CxlRsn.setter
 	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != base_types.auto else self.make_default("CxlRsn")
+		self._CxlRsn = value if value is not None else base_types.UninitialisedField(self, 'CxlRsn', Max140Text, False)
 
 	@CxlRsn.deleter
 	def CxlRsn(self):
 		del self._CxlRsn
-		self._CxlRsn = None
+		self._CxlRsn = base_types.UninitialisedField(self, 'CxlRsn', Max140Text, False)
 
 	@property
 	def CxlRsnCd(self):
@@ -27,12 +27,12 @@ class MeetingCancellationReason2(base_types._BaseFieldType):
 
 	@CxlRsnCd.setter
 	def CxlRsnCd(self, value):
-		self._CxlRsnCd = value if type(value) != base_types.auto else self.make_default("CxlRsnCd")
+		self._CxlRsnCd = value if value is not None else base_types.UninitialisedField(self, 'CxlRsnCd', MeetingCancellationReason1Choice, False)
 
 	@CxlRsnCd.deleter
 	def CxlRsnCd(self):
 		del self._CxlRsnCd
-		self._CxlRsnCd = None
+		self._CxlRsnCd = base_types.UninitialisedField(self, 'CxlRsnCd', MeetingCancellationReason1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CxlRsn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),

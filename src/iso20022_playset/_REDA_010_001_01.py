@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecurityQueryV01 import SecurityQueryV01
+from . import SecurityQueryV01
 
 class REDA_010_001_01():
 
@@ -18,12 +18,12 @@ class REDA_010_001_01():
 
 		@SctyQry.setter
 		def SctyQry(self, value):
-			self._SctyQry = value if type(value) != base_types.auto else self.make_default("SctyQry")
+			self._SctyQry = value if value is not None else base_types.UninitialisedField(self, 'SctyQry', SecurityQueryV01, False)
 
 		@SctyQry.deleter
 		def SctyQry(self):
 			del self._SctyQry
-			self._SctyQry = None
+			self._SctyQry = base_types.UninitialisedField(self, 'SctyQry', SecurityQueryV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctyQry', type=SecurityQueryV01, min=1, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountLinkCreationRequestV01 import AccountLinkCreationRequestV01
+from . import AccountLinkCreationRequestV01
 
 class REDA_049_001_01():
 
@@ -18,12 +18,12 @@ class REDA_049_001_01():
 
 		@AcctLkCreReq.setter
 		def AcctLkCreReq(self, value):
-			self._AcctLkCreReq = value if type(value) != base_types.auto else self.make_default("AcctLkCreReq")
+			self._AcctLkCreReq = value if value is not None else base_types.UninitialisedField(self, 'AcctLkCreReq', AccountLinkCreationRequestV01, False)
 
 		@AcctLkCreReq.deleter
 		def AcctLkCreReq(self):
 			del self._AcctLkCreReq
-			self._AcctLkCreReq = None
+			self._AcctLkCreReq = base_types.UninitialisedField(self, 'AcctLkCreReq', AccountLinkCreationRequestV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AcctLkCreReq', type=AccountLinkCreationRequestV01, min=1, max=1, mutex_group=None, array=False),

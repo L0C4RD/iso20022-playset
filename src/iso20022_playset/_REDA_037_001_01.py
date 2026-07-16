@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesAccountAuditTrailReportV01 import SecuritiesAccountAuditTrailReportV01
+from . import SecuritiesAccountAuditTrailReportV01
 
 class REDA_037_001_01():
 
@@ -18,12 +18,12 @@ class REDA_037_001_01():
 
 		@SctiesAcctAudtTrlRpt.setter
 		def SctiesAcctAudtTrlRpt(self, value):
-			self._SctiesAcctAudtTrlRpt = value if type(value) != base_types.auto else self.make_default("SctiesAcctAudtTrlRpt")
+			self._SctiesAcctAudtTrlRpt = value if value is not None else base_types.UninitialisedField(self, 'SctiesAcctAudtTrlRpt', SecuritiesAccountAuditTrailReportV01, False)
 
 		@SctiesAcctAudtTrlRpt.deleter
 		def SctiesAcctAudtTrlRpt(self):
 			del self._SctiesAcctAudtTrlRpt
-			self._SctiesAcctAudtTrlRpt = None
+			self._SctiesAcctAudtTrlRpt = base_types.UninitialisedField(self, 'SctiesAcctAudtTrlRpt', SecuritiesAccountAuditTrailReportV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesAcctAudtTrlRpt', type=SecuritiesAccountAuditTrailReportV01, min=1, max=1, mutex_group=None, array=False),

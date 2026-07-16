@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._Max15NumericText import Max15NumericText
-from ._Max35Text import Max35Text
+from . import ActiveCurrencyAndAmount
+from . import Max15NumericText
+from . import Max35Text
 
 class SplitObligationAttributes1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SplitObligationAttributes1(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def OblgtnId(self):
@@ -28,12 +28,12 @@ class SplitObligationAttributes1(base_types._BaseFieldType):
 
 	@OblgtnId.setter
 	def OblgtnId(self, value):
-		self._OblgtnId = value if type(value) != base_types.auto else self.make_default("OblgtnId")
+		self._OblgtnId = value if value is not None else base_types.UninitialisedField(self, 'OblgtnId', Max35Text, False)
 
 	@OblgtnId.deleter
 	def OblgtnId(self):
 		del self._OblgtnId
-		self._OblgtnId = None
+		self._OblgtnId = base_types.UninitialisedField(self, 'OblgtnId', Max35Text, False)
 
 	@property
 	def SpltSeqNb(self):
@@ -41,12 +41,12 @@ class SplitObligationAttributes1(base_types._BaseFieldType):
 
 	@SpltSeqNb.setter
 	def SpltSeqNb(self, value):
-		self._SpltSeqNb = value if type(value) != base_types.auto else self.make_default("SpltSeqNb")
+		self._SpltSeqNb = value if value is not None else base_types.UninitialisedField(self, 'SpltSeqNb', Max15NumericText, False)
 
 	@SpltSeqNb.deleter
 	def SpltSeqNb(self):
 		del self._SpltSeqNb
-		self._SpltSeqNb = None
+		self._SpltSeqNb = base_types.UninitialisedField(self, 'SpltSeqNb', Max15NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CollateralValueReportV02 import CollateralValueReportV02
+from . import CollateralValueReportV02
 
 class COLR_002_001_02():
 
@@ -18,12 +18,12 @@ class COLR_002_001_02():
 
 		@CollValRpt.setter
 		def CollValRpt(self, value):
-			self._CollValRpt = value if type(value) != base_types.auto else self.make_default("CollValRpt")
+			self._CollValRpt = value if value is not None else base_types.UninitialisedField(self, 'CollValRpt', CollateralValueReportV02, False)
 
 		@CollValRpt.deleter
 		def CollValRpt(self):
 			del self._CollValRpt
-			self._CollValRpt = None
+			self._CollValRpt = base_types.UninitialisedField(self, 'CollValRpt', CollateralValueReportV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CollValRpt', type=CollateralValueReportV02, min=1, max=1, mutex_group=None, array=False),

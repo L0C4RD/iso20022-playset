@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._BICIdentifier import BICIdentifier
-from ._CashAccountIdentification1Choice import CashAccountIdentification1Choice
-from ._PartyIdentification2Choice import PartyIdentification2Choice
+from . import ActiveCurrencyCode
+from . import BICIdentifier
+from . import CashAccountIdentification1Choice
+from . import PartyIdentification2Choice
 
 class CashAccount17(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CashAccount17(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', CashAccountIdentification1Choice, False)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', CashAccountIdentification1Choice, False)
 
 	@property
 	def AcctOwnrId(self):
@@ -29,12 +29,12 @@ class CashAccount17(base_types._BaseFieldType):
 
 	@AcctOwnrId.setter
 	def AcctOwnrId(self, value):
-		self._AcctOwnrId = value if type(value) != base_types.auto else self.make_default("AcctOwnrId")
+		self._AcctOwnrId = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnrId', PartyIdentification2Choice, False)
 
 	@AcctOwnrId.deleter
 	def AcctOwnrId(self):
 		del self._AcctOwnrId
-		self._AcctOwnrId = None
+		self._AcctOwnrId = base_types.UninitialisedField(self, 'AcctOwnrId', PartyIdentification2Choice, False)
 
 	@property
 	def CrspdtBkId(self):
@@ -42,12 +42,12 @@ class CashAccount17(base_types._BaseFieldType):
 
 	@CrspdtBkId.setter
 	def CrspdtBkId(self, value):
-		self._CrspdtBkId = value if type(value) != base_types.auto else self.make_default("CrspdtBkId")
+		self._CrspdtBkId = value if value is not None else base_types.UninitialisedField(self, 'CrspdtBkId', BICIdentifier, False)
 
 	@CrspdtBkId.deleter
 	def CrspdtBkId(self):
 		del self._CrspdtBkId
-		self._CrspdtBkId = None
+		self._CrspdtBkId = base_types.UninitialisedField(self, 'CrspdtBkId', BICIdentifier, False)
 
 	@property
 	def PmtCcy(self):
@@ -55,12 +55,12 @@ class CashAccount17(base_types._BaseFieldType):
 
 	@PmtCcy.setter
 	def PmtCcy(self, value):
-		self._PmtCcy = value if type(value) != base_types.auto else self.make_default("PmtCcy")
+		self._PmtCcy = value if value is not None else base_types.UninitialisedField(self, 'PmtCcy', ActiveCurrencyCode, False)
 
 	@PmtCcy.deleter
 	def PmtCcy(self):
 		del self._PmtCcy
-		self._PmtCcy = None
+		self._PmtCcy = base_types.UninitialisedField(self, 'PmtCcy', ActiveCurrencyCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=CashAccountIdentification1Choice, min=1, max=1, mutex_group=None, array=False),

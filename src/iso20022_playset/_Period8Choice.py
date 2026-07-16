@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateTimePeriod1 import DateTimePeriod1
-from ._ISODateTime import ISODateTime
+from . import DateTimePeriod1
+from . import ISODateTime
 
 class Period8Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Period8Choice(base_types._BaseFieldType):
 
 	@DtTm.setter
 	def DtTm(self, value):
-		self._DtTm = value if type(value) != base_types.auto else self.make_default("DtTm")
+		self._DtTm = value if value is not None else base_types.UninitialisedField(self, 'DtTm', ISODateTime, False)
 
 	@DtTm.deleter
 	def DtTm(self):
 		del self._DtTm
-		self._DtTm = None
+		self._DtTm = base_types.UninitialisedField(self, 'DtTm', ISODateTime, False)
 
 	@property
 	def FrDtTm(self):
@@ -27,12 +27,12 @@ class Period8Choice(base_types._BaseFieldType):
 
 	@FrDtTm.setter
 	def FrDtTm(self, value):
-		self._FrDtTm = value if type(value) != base_types.auto else self.make_default("FrDtTm")
+		self._FrDtTm = value if value is not None else base_types.UninitialisedField(self, 'FrDtTm', ISODateTime, False)
 
 	@FrDtTm.deleter
 	def FrDtTm(self):
 		del self._FrDtTm
-		self._FrDtTm = None
+		self._FrDtTm = base_types.UninitialisedField(self, 'FrDtTm', ISODateTime, False)
 
 	@property
 	def FrDtToDt(self):
@@ -40,12 +40,12 @@ class Period8Choice(base_types._BaseFieldType):
 
 	@FrDtToDt.setter
 	def FrDtToDt(self, value):
-		self._FrDtToDt = value if type(value) != base_types.auto else self.make_default("FrDtToDt")
+		self._FrDtToDt = value if value is not None else base_types.UninitialisedField(self, 'FrDtToDt', DateTimePeriod1, False)
 
 	@FrDtToDt.deleter
 	def FrDtToDt(self):
 		del self._FrDtToDt
-		self._FrDtToDt = None
+		self._FrDtToDt = base_types.UninitialisedField(self, 'FrDtToDt', DateTimePeriod1, False)
 
 	@property
 	def ToDtTm(self):
@@ -53,12 +53,12 @@ class Period8Choice(base_types._BaseFieldType):
 
 	@ToDtTm.setter
 	def ToDtTm(self, value):
-		self._ToDtTm = value if type(value) != base_types.auto else self.make_default("ToDtTm")
+		self._ToDtTm = value if value is not None else base_types.UninitialisedField(self, 'ToDtTm', ISODateTime, False)
 
 	@ToDtTm.deleter
 	def ToDtTm(self):
 		del self._ToDtTm
-		self._ToDtTm = None
+		self._ToDtTm = base_types.UninitialisedField(self, 'ToDtTm', ISODateTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DtTm', type=ISODateTime, min=0, max=1, mutex_group=1, array=False),

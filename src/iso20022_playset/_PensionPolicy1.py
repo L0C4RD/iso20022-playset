@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._Max35Text import Max35Text
+from . import AdditionalInformation15
+from . import Max35Text
 
 class PensionPolicy1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PensionPolicy1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, False)
 
 	@property
 	def Idr(self):
@@ -27,12 +27,12 @@ class PensionPolicy1(base_types._BaseFieldType):
 
 	@Idr.setter
 	def Idr(self, value):
-		self._Idr = value if type(value) != base_types.auto else self.make_default("Idr")
+		self._Idr = value if value is not None else base_types.UninitialisedField(self, 'Idr', Max35Text, False)
 
 	@Idr.deleter
 	def Idr(self):
 		del self._Idr
-		self._Idr = None
+		self._Idr = base_types.UninitialisedField(self, 'Idr', Max35Text, False)
 
 	@property
 	def SubIdr(self):
@@ -40,12 +40,12 @@ class PensionPolicy1(base_types._BaseFieldType):
 
 	@SubIdr.setter
 	def SubIdr(self, value):
-		self._SubIdr = value if type(value) != base_types.auto else self.make_default("SubIdr")
+		self._SubIdr = value if value is not None else base_types.UninitialisedField(self, 'SubIdr', Max35Text, False)
 
 	@SubIdr.deleter
 	def SubIdr(self):
 		del self._SubIdr
-		self._SubIdr = None
+		self._SubIdr = base_types.UninitialisedField(self, 'SubIdr', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),

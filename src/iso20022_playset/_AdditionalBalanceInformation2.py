@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Extended350Code import Extended350Code
-from ._SecuritiesBalanceType2Code import SecuritiesBalanceType2Code
-from ._SubBalanceQuantity1Choice import SubBalanceQuantity1Choice
+from . import Extended350Code
+from . import SecuritiesBalanceType2Code
+from . import SubBalanceQuantity1Choice
 
 class AdditionalBalanceInformation2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AdditionalBalanceInformation2(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+		self._Qty = value if value is not None else base_types.UninitialisedField(self, 'Qty', SubBalanceQuantity1Choice, False)
 
 	@Qty.deleter
 	def Qty(self):
 		del self._Qty
-		self._Qty = None
+		self._Qty = base_types.UninitialisedField(self, 'Qty', SubBalanceQuantity1Choice, False)
 
 	@property
 	def SubBalTp(self):
@@ -28,12 +28,12 @@ class AdditionalBalanceInformation2(base_types._BaseFieldType):
 
 	@SubBalTp.setter
 	def SubBalTp(self, value):
-		self._SubBalTp = value if type(value) != base_types.auto else self.make_default("SubBalTp")
+		self._SubBalTp = value if value is not None else base_types.UninitialisedField(self, 'SubBalTp', SecuritiesBalanceType2Code, False)
 
 	@SubBalTp.deleter
 	def SubBalTp(self):
 		del self._SubBalTp
-		self._SubBalTp = None
+		self._SubBalTp = base_types.UninitialisedField(self, 'SubBalTp', SecuritiesBalanceType2Code, False)
 
 	@property
 	def XtndedSubBalTp(self):
@@ -41,12 +41,12 @@ class AdditionalBalanceInformation2(base_types._BaseFieldType):
 
 	@XtndedSubBalTp.setter
 	def XtndedSubBalTp(self, value):
-		self._XtndedSubBalTp = value if type(value) != base_types.auto else self.make_default("XtndedSubBalTp")
+		self._XtndedSubBalTp = value if value is not None else base_types.UninitialisedField(self, 'XtndedSubBalTp', Extended350Code, False)
 
 	@XtndedSubBalTp.deleter
 	def XtndedSubBalTp(self):
 		del self._XtndedSubBalTp
-		self._XtndedSubBalTp = None
+		self._XtndedSubBalTp = base_types.UninitialisedField(self, 'XtndedSubBalTp', Extended350Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Qty', type=SubBalanceQuantity1Choice, min=1, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstitutionCreditTransferV12 import FinancialInstitutionCreditTransferV12
+from . import FinancialInstitutionCreditTransferV12
 
 class PACS_009_001_12():
 
@@ -18,12 +18,12 @@ class PACS_009_001_12():
 
 		@FICdtTrf.setter
 		def FICdtTrf(self, value):
-			self._FICdtTrf = value if type(value) != base_types.auto else self.make_default("FICdtTrf")
+			self._FICdtTrf = value if value is not None else base_types.UninitialisedField(self, 'FICdtTrf', FinancialInstitutionCreditTransferV12, False)
 
 		@FICdtTrf.deleter
 		def FICdtTrf(self):
 			del self._FICdtTrf
-			self._FICdtTrf = None
+			self._FICdtTrf = base_types.UninitialisedField(self, 'FICdtTrf', FinancialInstitutionCreditTransferV12, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='FICdtTrf', type=FinancialInstitutionCreditTransferV12, min=1, max=1, mutex_group=None, array=False),

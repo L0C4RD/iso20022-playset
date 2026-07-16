@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._CancellationReason33Choice import CancellationReason33Choice
-from ._CashAccount40 import CashAccount40
-from ._ISODate import ISODate
-from ._Max140Text import Max140Text
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import CancellationReason33Choice
+from . import CashAccount40
+from . import ISODate
+from . import Max140Text
 
 class DebitAuthorisation3(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class DebitAuthorisation3(base_types._BaseFieldType):
 
 	@Acct.setter
 	def Acct(self, value):
-		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
+		self._Acct = value if value is not None else base_types.UninitialisedField(self, 'Acct', CashAccount40, False)
 
 	@Acct.deleter
 	def Acct(self):
 		del self._Acct
-		self._Acct = None
+		self._Acct = base_types.UninitialisedField(self, 'Acct', CashAccount40, False)
 
 	@property
 	def AddtlCxlRsnInf(self):
@@ -30,12 +30,12 @@ class DebitAuthorisation3(base_types._BaseFieldType):
 
 	@AddtlCxlRsnInf.setter
 	def AddtlCxlRsnInf(self, value):
-		self._AddtlCxlRsnInf = value if type(value) != base_types.auto else self.make_default("AddtlCxlRsnInf")
+		self._AddtlCxlRsnInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlCxlRsnInf', Max140Text, True)
 
 	@AddtlCxlRsnInf.deleter
 	def AddtlCxlRsnInf(self):
 		del self._AddtlCxlRsnInf
-		self._AddtlCxlRsnInf = None
+		self._AddtlCxlRsnInf = base_types.UninitialisedField(self, 'AddtlCxlRsnInf', Max140Text, True)
 
 	@property
 	def AmtToDbt(self):
@@ -43,12 +43,12 @@ class DebitAuthorisation3(base_types._BaseFieldType):
 
 	@AmtToDbt.setter
 	def AmtToDbt(self, value):
-		self._AmtToDbt = value if type(value) != base_types.auto else self.make_default("AmtToDbt")
+		self._AmtToDbt = value if value is not None else base_types.UninitialisedField(self, 'AmtToDbt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@AmtToDbt.deleter
 	def AmtToDbt(self):
 		del self._AmtToDbt
-		self._AmtToDbt = None
+		self._AmtToDbt = base_types.UninitialisedField(self, 'AmtToDbt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def CxlRsn(self):
@@ -56,12 +56,12 @@ class DebitAuthorisation3(base_types._BaseFieldType):
 
 	@CxlRsn.setter
 	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != base_types.auto else self.make_default("CxlRsn")
+		self._CxlRsn = value if value is not None else base_types.UninitialisedField(self, 'CxlRsn', CancellationReason33Choice, False)
 
 	@CxlRsn.deleter
 	def CxlRsn(self):
 		del self._CxlRsn
-		self._CxlRsn = None
+		self._CxlRsn = base_types.UninitialisedField(self, 'CxlRsn', CancellationReason33Choice, False)
 
 	@property
 	def ValDtToDbt(self):
@@ -69,12 +69,12 @@ class DebitAuthorisation3(base_types._BaseFieldType):
 
 	@ValDtToDbt.setter
 	def ValDtToDbt(self, value):
-		self._ValDtToDbt = value if type(value) != base_types.auto else self.make_default("ValDtToDbt")
+		self._ValDtToDbt = value if value is not None else base_types.UninitialisedField(self, 'ValDtToDbt', ISODate, False)
 
 	@ValDtToDbt.deleter
 	def ValDtToDbt(self):
 		del self._ValDtToDbt
-		self._ValDtToDbt = None
+		self._ValDtToDbt = base_types.UninitialisedField(self, 'ValDtToDbt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),

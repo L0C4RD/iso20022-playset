@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecurityIdentification7 import SecurityIdentification7
-from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
+from . import SecurityIdentification7
+from . import UnitOrFaceAmount1Choice
 
 class SecuritiesEntitlement1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SecuritiesEntitlement1(base_types._BaseFieldType):
 
 	@EntitldSctiesQty.setter
 	def EntitldSctiesQty(self, value):
-		self._EntitldSctiesQty = value if type(value) != base_types.auto else self.make_default("EntitldSctiesQty")
+		self._EntitldSctiesQty = value if value is not None else base_types.UninitialisedField(self, 'EntitldSctiesQty', UnitOrFaceAmount1Choice, False)
 
 	@EntitldSctiesQty.deleter
 	def EntitldSctiesQty(self):
 		del self._EntitldSctiesQty
-		self._EntitldSctiesQty = None
+		self._EntitldSctiesQty = base_types.UninitialisedField(self, 'EntitldSctiesQty', UnitOrFaceAmount1Choice, False)
 
 	@property
 	def SctyId(self):
@@ -27,12 +27,12 @@ class SecuritiesEntitlement1(base_types._BaseFieldType):
 
 	@SctyId.setter
 	def SctyId(self, value):
-		self._SctyId = value if type(value) != base_types.auto else self.make_default("SctyId")
+		self._SctyId = value if value is not None else base_types.UninitialisedField(self, 'SctyId', SecurityIdentification7, False)
 
 	@SctyId.deleter
 	def SctyId(self):
 		del self._SctyId
-		self._SctyId = None
+		self._SctyId = base_types.UninitialisedField(self, 'SctyId', SecurityIdentification7, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EntitldSctiesQty', type=UnitOrFaceAmount1Choice, min=1, max=1, mutex_group=None, array=False),

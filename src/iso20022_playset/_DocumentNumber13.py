@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DocumentNumber5Choice import DocumentNumber5Choice
+from . import DocumentNumber5Choice
 
 class DocumentNumber13(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class DocumentNumber13(base_types._BaseFieldType):
 
 	@Nb.setter
 	def Nb(self, value):
-		self._Nb = value if type(value) != base_types.auto else self.make_default("Nb")
+		self._Nb = value if value is not None else base_types.UninitialisedField(self, 'Nb', DocumentNumber5Choice, False)
 
 	@Nb.deleter
 	def Nb(self):
 		del self._Nb
-		self._Nb = None
+		self._Nb = base_types.UninitialisedField(self, 'Nb', DocumentNumber5Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Nb', type=DocumentNumber5Choice, min=1, max=1, mutex_group=None, array=False),

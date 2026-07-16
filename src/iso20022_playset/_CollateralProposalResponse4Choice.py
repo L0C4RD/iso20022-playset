@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CollateralProposalResponse4 import CollateralProposalResponse4
-from ._CollateralProposalResponseType4 import CollateralProposalResponseType4
+from . import CollateralProposalResponse4
+from . import CollateralProposalResponseType4
 
 class CollateralProposalResponse4Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CollateralProposalResponse4Choice(base_types._BaseFieldType):
 
 	@CollPrpsl.setter
 	def CollPrpsl(self, value):
-		self._CollPrpsl = value if type(value) != base_types.auto else self.make_default("CollPrpsl")
+		self._CollPrpsl = value if value is not None else base_types.UninitialisedField(self, 'CollPrpsl', CollateralProposalResponse4, False)
 
 	@CollPrpsl.deleter
 	def CollPrpsl(self):
 		del self._CollPrpsl
-		self._CollPrpsl = None
+		self._CollPrpsl = base_types.UninitialisedField(self, 'CollPrpsl', CollateralProposalResponse4, False)
 
 	@property
 	def SgrtdIndpdntAmt(self):
@@ -27,12 +27,12 @@ class CollateralProposalResponse4Choice(base_types._BaseFieldType):
 
 	@SgrtdIndpdntAmt.setter
 	def SgrtdIndpdntAmt(self, value):
-		self._SgrtdIndpdntAmt = value if type(value) != base_types.auto else self.make_default("SgrtdIndpdntAmt")
+		self._SgrtdIndpdntAmt = value if value is not None else base_types.UninitialisedField(self, 'SgrtdIndpdntAmt', CollateralProposalResponseType4, False)
 
 	@SgrtdIndpdntAmt.deleter
 	def SgrtdIndpdntAmt(self):
 		del self._SgrtdIndpdntAmt
-		self._SgrtdIndpdntAmt = None
+		self._SgrtdIndpdntAmt = base_types.UninitialisedField(self, 'SgrtdIndpdntAmt', CollateralProposalResponseType4, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollPrpsl', type=CollateralProposalResponse4, min=0, max=1, mutex_group=1, array=False),

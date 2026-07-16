@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RedemptionOrderConfirmationV05 import RedemptionOrderConfirmationV05
+from . import RedemptionOrderConfirmationV05
 
 class SETR_006_001_05():
 
@@ -18,12 +18,12 @@ class SETR_006_001_05():
 
 		@RedOrdrConf.setter
 		def RedOrdrConf(self, value):
-			self._RedOrdrConf = value if type(value) != base_types.auto else self.make_default("RedOrdrConf")
+			self._RedOrdrConf = value if value is not None else base_types.UninitialisedField(self, 'RedOrdrConf', RedemptionOrderConfirmationV05, False)
 
 		@RedOrdrConf.deleter
 		def RedOrdrConf(self):
 			del self._RedOrdrConf
-			self._RedOrdrConf = None
+			self._RedOrdrConf = base_types.UninitialisedField(self, 'RedOrdrConf', RedemptionOrderConfirmationV05, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='RedOrdrConf', type=RedemptionOrderConfirmationV05, min=1, max=1, mutex_group=None, array=False),

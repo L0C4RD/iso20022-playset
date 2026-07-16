@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CurrencyCode import CurrencyCode
-from ._DateAndDateTimeChoice import DateAndDateTimeChoice
-from ._EventFrequency6Code import EventFrequency6Code
-from ._Exact5NumericText import Exact5NumericText
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
+from . import CurrencyCode
+from . import DateAndDateTimeChoice
+from . import EventFrequency6Code
+from . import Exact5NumericText
+from . import ISODateTime
+from . import Max35Text
 
 class ReportParameters3(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class ReportParameters3(base_types._BaseFieldType):
 
 	@ClctnDtAndTm.setter
 	def ClctnDtAndTm(self, value):
-		self._ClctnDtAndTm = value if type(value) != base_types.auto else self.make_default("ClctnDtAndTm")
+		self._ClctnDtAndTm = value if value is not None else base_types.UninitialisedField(self, 'ClctnDtAndTm', ISODateTime, False)
 
 	@ClctnDtAndTm.deleter
 	def ClctnDtAndTm(self):
 		del self._ClctnDtAndTm
-		self._ClctnDtAndTm = None
+		self._ClctnDtAndTm = base_types.UninitialisedField(self, 'ClctnDtAndTm', ISODateTime, False)
 
 	@property
 	def Frqcy(self):
@@ -31,12 +31,12 @@ class ReportParameters3(base_types._BaseFieldType):
 
 	@Frqcy.setter
 	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
+		self._Frqcy = value if value is not None else base_types.UninitialisedField(self, 'Frqcy', EventFrequency6Code, False)
 
 	@Frqcy.deleter
 	def Frqcy(self):
 		del self._Frqcy
-		self._Frqcy = None
+		self._Frqcy = base_types.UninitialisedField(self, 'Frqcy', EventFrequency6Code, False)
 
 	@property
 	def RptCcy(self):
@@ -44,12 +44,12 @@ class ReportParameters3(base_types._BaseFieldType):
 
 	@RptCcy.setter
 	def RptCcy(self, value):
-		self._RptCcy = value if type(value) != base_types.auto else self.make_default("RptCcy")
+		self._RptCcy = value if value is not None else base_types.UninitialisedField(self, 'RptCcy', CurrencyCode, False)
 
 	@RptCcy.deleter
 	def RptCcy(self):
 		del self._RptCcy
-		self._RptCcy = None
+		self._RptCcy = base_types.UninitialisedField(self, 'RptCcy', CurrencyCode, False)
 
 	@property
 	def RptDtAndTm(self):
@@ -57,12 +57,12 @@ class ReportParameters3(base_types._BaseFieldType):
 
 	@RptDtAndTm.setter
 	def RptDtAndTm(self, value):
-		self._RptDtAndTm = value if type(value) != base_types.auto else self.make_default("RptDtAndTm")
+		self._RptDtAndTm = value if value is not None else base_types.UninitialisedField(self, 'RptDtAndTm', DateAndDateTimeChoice, False)
 
 	@RptDtAndTm.deleter
 	def RptDtAndTm(self):
 		del self._RptDtAndTm
-		self._RptDtAndTm = None
+		self._RptDtAndTm = base_types.UninitialisedField(self, 'RptDtAndTm', DateAndDateTimeChoice, False)
 
 	@property
 	def RptId(self):
@@ -70,12 +70,12 @@ class ReportParameters3(base_types._BaseFieldType):
 
 	@RptId.setter
 	def RptId(self, value):
-		self._RptId = value if type(value) != base_types.auto else self.make_default("RptId")
+		self._RptId = value if value is not None else base_types.UninitialisedField(self, 'RptId', Max35Text, False)
 
 	@RptId.deleter
 	def RptId(self):
 		del self._RptId
-		self._RptId = None
+		self._RptId = base_types.UninitialisedField(self, 'RptId', Max35Text, False)
 
 	@property
 	def RptNb(self):
@@ -83,12 +83,12 @@ class ReportParameters3(base_types._BaseFieldType):
 
 	@RptNb.setter
 	def RptNb(self, value):
-		self._RptNb = value if type(value) != base_types.auto else self.make_default("RptNb")
+		self._RptNb = value if value is not None else base_types.UninitialisedField(self, 'RptNb', Exact5NumericText, False)
 
 	@RptNb.deleter
 	def RptNb(self):
 		del self._RptNb
-		self._RptNb = None
+		self._RptNb = base_types.UninitialisedField(self, 'RptNb', Exact5NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClctnDtAndTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),

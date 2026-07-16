@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DocumentGeneralInformation5 import DocumentGeneralInformation5
-from ._Exact1NumericText import Exact1NumericText
-from ._Max35Text import Max35Text
-from ._TransactionCertificate5 import TransactionCertificate5
-from ._TransactionCertificateContract2 import TransactionCertificateContract2
+from . import DocumentGeneralInformation5
+from . import Exact1NumericText
+from . import Max35Text
+from . import TransactionCertificate5
+from . import TransactionCertificateContract2
 
 class TransactionCertificateRecord2(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class TransactionCertificateRecord2(base_types._BaseFieldType):
 
 	@Attchmnt.setter
 	def Attchmnt(self, value):
-		self._Attchmnt = value if type(value) != base_types.auto else self.make_default("Attchmnt")
+		self._Attchmnt = value if value is not None else base_types.UninitialisedField(self, 'Attchmnt', DocumentGeneralInformation5, True)
 
 	@Attchmnt.deleter
 	def Attchmnt(self):
 		del self._Attchmnt
-		self._Attchmnt = None
+		self._Attchmnt = base_types.UninitialisedField(self, 'Attchmnt', DocumentGeneralInformation5, True)
 
 	@property
 	def CertRcrdId(self):
@@ -30,12 +30,12 @@ class TransactionCertificateRecord2(base_types._BaseFieldType):
 
 	@CertRcrdId.setter
 	def CertRcrdId(self, value):
-		self._CertRcrdId = value if type(value) != base_types.auto else self.make_default("CertRcrdId")
+		self._CertRcrdId = value if value is not None else base_types.UninitialisedField(self, 'CertRcrdId', Max35Text, False)
 
 	@CertRcrdId.deleter
 	def CertRcrdId(self):
 		del self._CertRcrdId
-		self._CertRcrdId = None
+		self._CertRcrdId = base_types.UninitialisedField(self, 'CertRcrdId', Max35Text, False)
 
 	@property
 	def Ctrct(self):
@@ -43,12 +43,12 @@ class TransactionCertificateRecord2(base_types._BaseFieldType):
 
 	@Ctrct.setter
 	def Ctrct(self, value):
-		self._Ctrct = value if type(value) != base_types.auto else self.make_default("Ctrct")
+		self._Ctrct = value if value is not None else base_types.UninitialisedField(self, 'Ctrct', TransactionCertificateContract2, False)
 
 	@Ctrct.deleter
 	def Ctrct(self):
 		del self._Ctrct
-		self._Ctrct = None
+		self._Ctrct = base_types.UninitialisedField(self, 'Ctrct', TransactionCertificateContract2, False)
 
 	@property
 	def DocSubmitgPrcdr(self):
@@ -56,12 +56,12 @@ class TransactionCertificateRecord2(base_types._BaseFieldType):
 
 	@DocSubmitgPrcdr.setter
 	def DocSubmitgPrcdr(self, value):
-		self._DocSubmitgPrcdr = value if type(value) != base_types.auto else self.make_default("DocSubmitgPrcdr")
+		self._DocSubmitgPrcdr = value if value is not None else base_types.UninitialisedField(self, 'DocSubmitgPrcdr', Exact1NumericText, False)
 
 	@DocSubmitgPrcdr.deleter
 	def DocSubmitgPrcdr(self):
 		del self._DocSubmitgPrcdr
-		self._DocSubmitgPrcdr = None
+		self._DocSubmitgPrcdr = base_types.UninitialisedField(self, 'DocSubmitgPrcdr', Exact1NumericText, False)
 
 	@property
 	def Tx(self):
@@ -69,12 +69,12 @@ class TransactionCertificateRecord2(base_types._BaseFieldType):
 
 	@Tx.setter
 	def Tx(self, value):
-		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
+		self._Tx = value if value is not None else base_types.UninitialisedField(self, 'Tx', TransactionCertificate5, False)
 
 	@Tx.deleter
 	def Tx(self):
 		del self._Tx
-		self._Tx = None
+		self._Tx = base_types.UninitialisedField(self, 'Tx', TransactionCertificate5, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Attchmnt', type=DocumentGeneralInformation5, min=0, max=None, mutex_group=None, array=True),

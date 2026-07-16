@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Number import Number
-from ._RateBasis1Code import RateBasis1Code
+from . import Number
+from . import RateBasis1Code
 
 class InterestRateContractTerm1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class InterestRateContractTerm1(base_types._BaseFieldType):
 
 	@Unit.setter
 	def Unit(self, value):
-		self._Unit = value if type(value) != base_types.auto else self.make_default("Unit")
+		self._Unit = value if value is not None else base_types.UninitialisedField(self, 'Unit', RateBasis1Code, False)
 
 	@Unit.deleter
 	def Unit(self):
 		del self._Unit
-		self._Unit = None
+		self._Unit = base_types.UninitialisedField(self, 'Unit', RateBasis1Code, False)
 
 	@property
 	def Val(self):
@@ -27,12 +27,12 @@ class InterestRateContractTerm1(base_types._BaseFieldType):
 
 	@Val.setter
 	def Val(self, value):
-		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
+		self._Val = value if value is not None else base_types.UninitialisedField(self, 'Val', Number, False)
 
 	@Val.deleter
 	def Val(self):
 		del self._Val
-		self._Val = None
+		self._Val = base_types.UninitialisedField(self, 'Val', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Unit', type=RateBasis1Code, min=1, max=1, mutex_group=None, array=False),

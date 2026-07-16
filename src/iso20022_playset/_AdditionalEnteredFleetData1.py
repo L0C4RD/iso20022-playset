@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._Max350Text import Max350Text
-from ._Max35NumericText import Max35NumericText
+from . import ATICALaxProcessing
+from . import Max350Text
+from . import Max35NumericText
 
 class AdditionalEnteredFleetData1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AdditionalEnteredFleetData1(base_types._BaseFieldType):
 
 	@AlphaNmrc.setter
 	def AlphaNmrc(self, value):
-		self._AlphaNmrc = value if type(value) != base_types.auto else self.make_default("AlphaNmrc")
+		self._AlphaNmrc = value if value is not None else base_types.UninitialisedField(self, 'AlphaNmrc', Max350Text, False)
 
 	@AlphaNmrc.deleter
 	def AlphaNmrc(self):
 		del self._AlphaNmrc
-		self._AlphaNmrc = None
+		self._AlphaNmrc = base_types.UninitialisedField(self, 'AlphaNmrc', Max350Text, False)
 
 	@property
 	def Nmrc(self):
@@ -28,12 +28,12 @@ class AdditionalEnteredFleetData1(base_types._BaseFieldType):
 
 	@Nmrc.setter
 	def Nmrc(self, value):
-		self._Nmrc = value if type(value) != base_types.auto else self.make_default("Nmrc")
+		self._Nmrc = value if value is not None else base_types.UninitialisedField(self, 'Nmrc', Max35NumericText, False)
 
 	@Nmrc.deleter
 	def Nmrc(self):
 		del self._Nmrc
-		self._Nmrc = None
+		self._Nmrc = base_types.UninitialisedField(self, 'Nmrc', Max35NumericText, False)
 
 	@property
 	def NtlData(self):
@@ -41,12 +41,12 @@ class AdditionalEnteredFleetData1(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def PrvtData(self):
@@ -54,12 +54,12 @@ class AdditionalEnteredFleetData1(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AlphaNmrc', type=Max350Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PostTradeRiskReductionIdentifier1 import PostTradeRiskReductionIdentifier1
-from ._UTIIdentifier import UTIIdentifier
+from . import PostTradeRiskReductionIdentifier1
+from . import UTIIdentifier
 
 class EventIdentifier1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class EventIdentifier1Choice(base_types._BaseFieldType):
 
 	@EvtIdr.setter
 	def EvtIdr(self, value):
-		self._EvtIdr = value if type(value) != base_types.auto else self.make_default("EvtIdr")
+		self._EvtIdr = value if value is not None else base_types.UninitialisedField(self, 'EvtIdr', UTIIdentifier, False)
 
 	@EvtIdr.deleter
 	def EvtIdr(self):
 		del self._EvtIdr
-		self._EvtIdr = None
+		self._EvtIdr = base_types.UninitialisedField(self, 'EvtIdr', UTIIdentifier, False)
 
 	@property
 	def PstTradRskRdctnIdr(self):
@@ -27,12 +27,12 @@ class EventIdentifier1Choice(base_types._BaseFieldType):
 
 	@PstTradRskRdctnIdr.setter
 	def PstTradRskRdctnIdr(self, value):
-		self._PstTradRskRdctnIdr = value if type(value) != base_types.auto else self.make_default("PstTradRskRdctnIdr")
+		self._PstTradRskRdctnIdr = value if value is not None else base_types.UninitialisedField(self, 'PstTradRskRdctnIdr', PostTradeRiskReductionIdentifier1, False)
 
 	@PstTradRskRdctnIdr.deleter
 	def PstTradRskRdctnIdr(self):
 		del self._PstTradRskRdctnIdr
-		self._PstTradRskRdctnIdr = None
+		self._PstTradRskRdctnIdr = base_types.UninitialisedField(self, 'PstTradRskRdctnIdr', PostTradeRiskReductionIdentifier1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EvtIdr', type=UTIIdentifier, min=0, max=1, mutex_group=1, array=False),

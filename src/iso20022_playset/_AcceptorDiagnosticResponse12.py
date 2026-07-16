@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardPaymentEnvironment82 import CardPaymentEnvironment82
-from ._TMSTrigger1 import TMSTrigger1
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import CardPaymentEnvironment82
+from . import TMSTrigger1
+from . import TrueFalseIndicator
 
 class AcceptorDiagnosticResponse12(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AcceptorDiagnosticResponse12(base_types._BaseFieldType):
 
 	@AcqrrAvlbl.setter
 	def AcqrrAvlbl(self, value):
-		self._AcqrrAvlbl = value if type(value) != base_types.auto else self.make_default("AcqrrAvlbl")
+		self._AcqrrAvlbl = value if value is not None else base_types.UninitialisedField(self, 'AcqrrAvlbl', TrueFalseIndicator, False)
 
 	@AcqrrAvlbl.deleter
 	def AcqrrAvlbl(self):
 		del self._AcqrrAvlbl
-		self._AcqrrAvlbl = None
+		self._AcqrrAvlbl = base_types.UninitialisedField(self, 'AcqrrAvlbl', TrueFalseIndicator, False)
 
 	@property
 	def Envt(self):
@@ -28,12 +28,12 @@ class AcceptorDiagnosticResponse12(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+		self._Envt = value if value is not None else base_types.UninitialisedField(self, 'Envt', CardPaymentEnvironment82, False)
 
 	@Envt.deleter
 	def Envt(self):
 		del self._Envt
-		self._Envt = None
+		self._Envt = base_types.UninitialisedField(self, 'Envt', CardPaymentEnvironment82, False)
 
 	@property
 	def TMSTrggr(self):
@@ -41,12 +41,12 @@ class AcceptorDiagnosticResponse12(base_types._BaseFieldType):
 
 	@TMSTrggr.setter
 	def TMSTrggr(self, value):
-		self._TMSTrggr = value if type(value) != base_types.auto else self.make_default("TMSTrggr")
+		self._TMSTrggr = value if value is not None else base_types.UninitialisedField(self, 'TMSTrggr', TMSTrigger1, False)
 
 	@TMSTrggr.deleter
 	def TMSTrggr(self):
 		del self._TMSTrggr
-		self._TMSTrggr = None
+		self._TMSTrggr = base_types.UninitialisedField(self, 'TMSTrggr', TMSTrigger1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcqrrAvlbl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),

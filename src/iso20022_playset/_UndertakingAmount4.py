@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
+from . import ActiveCurrencyAndAmount
 
 class UndertakingAmount4(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class UndertakingAmount4(base_types._BaseFieldType):
 
 	@BalAmt.setter
 	def BalAmt(self, value):
-		self._BalAmt = value if type(value) != base_types.auto else self.make_default("BalAmt")
+		self._BalAmt = value if value is not None else base_types.UninitialisedField(self, 'BalAmt', ActiveCurrencyAndAmount, False)
 
 	@BalAmt.deleter
 	def BalAmt(self):
 		del self._BalAmt
-		self._BalAmt = None
+		self._BalAmt = base_types.UninitialisedField(self, 'BalAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def VartnAmt(self):
@@ -26,12 +26,12 @@ class UndertakingAmount4(base_types._BaseFieldType):
 
 	@VartnAmt.setter
 	def VartnAmt(self, value):
-		self._VartnAmt = value if type(value) != base_types.auto else self.make_default("VartnAmt")
+		self._VartnAmt = value if value is not None else base_types.UninitialisedField(self, 'VartnAmt', ActiveCurrencyAndAmount, False)
 
 	@VartnAmt.deleter
 	def VartnAmt(self):
 		del self._VartnAmt
-		self._VartnAmt = None
+		self._VartnAmt = base_types.UninitialisedField(self, 'VartnAmt', ActiveCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BalAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

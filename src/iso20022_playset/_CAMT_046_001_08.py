@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GetReservationV08 import GetReservationV08
+from . import GetReservationV08
 
 class CAMT_046_001_08():
 
@@ -18,12 +18,12 @@ class CAMT_046_001_08():
 
 		@GetRsvatn.setter
 		def GetRsvatn(self, value):
-			self._GetRsvatn = value if type(value) != base_types.auto else self.make_default("GetRsvatn")
+			self._GetRsvatn = value if value is not None else base_types.UninitialisedField(self, 'GetRsvatn', GetReservationV08, False)
 
 		@GetRsvatn.deleter
 		def GetRsvatn(self):
 			del self._GetRsvatn
-			self._GetRsvatn = None
+			self._GetRsvatn = base_types.UninitialisedField(self, 'GetRsvatn', GetReservationV08, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='GetRsvatn', type=GetReservationV08, min=1, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountIdentification1 import AccountIdentification1
-from ._PartyIdentification2Choice import PartyIdentification2Choice
+from . import AccountIdentification1
+from . import PartyIdentification2Choice
 
 class InvestmentAccount42(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class InvestmentAccount42(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', AccountIdentification1, False)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', AccountIdentification1, False)
 
 	@property
 	def AcctSvcr(self):
@@ -27,12 +27,12 @@ class InvestmentAccount42(base_types._BaseFieldType):
 
 	@AcctSvcr.setter
 	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
+		self._AcctSvcr = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcr', PartyIdentification2Choice, False)
 
 	@AcctSvcr.deleter
 	def AcctSvcr(self):
 		del self._AcctSvcr
-		self._AcctSvcr = None
+		self._AcctSvcr = base_types.UninitialisedField(self, 'AcctSvcr', PartyIdentification2Choice, False)
 
 	@property
 	def OwnrId(self):
@@ -40,12 +40,12 @@ class InvestmentAccount42(base_types._BaseFieldType):
 
 	@OwnrId.setter
 	def OwnrId(self, value):
-		self._OwnrId = value if type(value) != base_types.auto else self.make_default("OwnrId")
+		self._OwnrId = value if value is not None else base_types.UninitialisedField(self, 'OwnrId', PartyIdentification2Choice, False)
 
 	@OwnrId.deleter
 	def OwnrId(self):
 		del self._OwnrId
-		self._OwnrId = None
+		self._OwnrId = base_types.UninitialisedField(self, 'OwnrId', PartyIdentification2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=AccountIdentification1, min=0, max=1, mutex_group=None, array=False),

@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Authority1 import Authority1
-from ._ExternalAuthenticationMethod1Code import ExternalAuthenticationMethod1Code
-from ._ISOYearMonth import ISOYearMonth
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
+from . import Authority1
+from . import ExternalAuthenticationMethod1Code
+from . import ISOYearMonth
+from . import Max35Text
+from . import Max70Text
 
 class Credentials3(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class Credentials3(base_types._BaseFieldType):
 
 	@Assgnr.setter
 	def Assgnr(self, value):
-		self._Assgnr = value if type(value) != base_types.auto else self.make_default("Assgnr")
+		self._Assgnr = value if value is not None else base_types.UninitialisedField(self, 'Assgnr', Authority1, False)
 
 	@Assgnr.deleter
 	def Assgnr(self):
 		del self._Assgnr
-		self._Assgnr = None
+		self._Assgnr = base_types.UninitialisedField(self, 'Assgnr', Authority1, False)
 
 	@property
 	def OthrTp(self):
@@ -30,12 +30,12 @@ class Credentials3(base_types._BaseFieldType):
 
 	@OthrTp.setter
 	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != base_types.auto else self.make_default("OthrTp")
+		self._OthrTp = value if value is not None else base_types.UninitialisedField(self, 'OthrTp', Max35Text, False)
 
 	@OthrTp.deleter
 	def OthrTp(self):
 		del self._OthrTp
-		self._OthrTp = None
+		self._OthrTp = base_types.UninitialisedField(self, 'OthrTp', Max35Text, False)
 
 	@property
 	def SubTp(self):
@@ -43,12 +43,12 @@ class Credentials3(base_types._BaseFieldType):
 
 	@SubTp.setter
 	def SubTp(self, value):
-		self._SubTp = value if type(value) != base_types.auto else self.make_default("SubTp")
+		self._SubTp = value if value is not None else base_types.UninitialisedField(self, 'SubTp', Max35Text, False)
 
 	@SubTp.deleter
 	def SubTp(self):
 		del self._SubTp
-		self._SubTp = None
+		self._SubTp = base_types.UninitialisedField(self, 'SubTp', Max35Text, False)
 
 	@property
 	def Tp(self):
@@ -56,12 +56,12 @@ class Credentials3(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', ExternalAuthenticationMethod1Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', ExternalAuthenticationMethod1Code, False)
 
 	@property
 	def Val(self):
@@ -69,12 +69,12 @@ class Credentials3(base_types._BaseFieldType):
 
 	@Val.setter
 	def Val(self, value):
-		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
+		self._Val = value if value is not None else base_types.UninitialisedField(self, 'Val', Max70Text, False)
 
 	@Val.deleter
 	def Val(self):
 		del self._Val
-		self._Val = None
+		self._Val = base_types.UninitialisedField(self, 'Val', Max70Text, False)
 
 	@property
 	def XpryDt(self):
@@ -82,12 +82,12 @@ class Credentials3(base_types._BaseFieldType):
 
 	@XpryDt.setter
 	def XpryDt(self, value):
-		self._XpryDt = value if type(value) != base_types.auto else self.make_default("XpryDt")
+		self._XpryDt = value if value is not None else base_types.UninitialisedField(self, 'XpryDt', ISOYearMonth, False)
 
 	@XpryDt.deleter
 	def XpryDt(self):
 		del self._XpryDt
-		self._XpryDt = None
+		self._XpryDt = base_types.UninitialisedField(self, 'XpryDt', ISOYearMonth, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Assgnr', type=Authority1, min=0, max=1, mutex_group=None, array=False),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ExternalChannel1Code import ExternalChannel1Code
-from ._Max140Text import Max140Text
-from ._PartyType1Choice import PartyType1Choice
-from ._PostalAddress6 import PostalAddress6
+from . import ExternalChannel1Code
+from . import Max140Text
+from . import PartyType1Choice
+from . import PostalAddress6
 
 class CommunicationChannel1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CommunicationChannel1(base_types._BaseFieldType):
 
 	@DlvrToAdr.setter
 	def DlvrToAdr(self, value):
-		self._DlvrToAdr = value if type(value) != base_types.auto else self.make_default("DlvrToAdr")
+		self._DlvrToAdr = value if value is not None else base_types.UninitialisedField(self, 'DlvrToAdr', PostalAddress6, False)
 
 	@DlvrToAdr.deleter
 	def DlvrToAdr(self):
 		del self._DlvrToAdr
-		self._DlvrToAdr = None
+		self._DlvrToAdr = base_types.UninitialisedField(self, 'DlvrToAdr', PostalAddress6, False)
 
 	@property
 	def DlvrToNm(self):
@@ -29,12 +29,12 @@ class CommunicationChannel1(base_types._BaseFieldType):
 
 	@DlvrToNm.setter
 	def DlvrToNm(self, value):
-		self._DlvrToNm = value if type(value) != base_types.auto else self.make_default("DlvrToNm")
+		self._DlvrToNm = value if value is not None else base_types.UninitialisedField(self, 'DlvrToNm', Max140Text, False)
 
 	@DlvrToNm.deleter
 	def DlvrToNm(self):
 		del self._DlvrToNm
-		self._DlvrToNm = None
+		self._DlvrToNm = base_types.UninitialisedField(self, 'DlvrToNm', Max140Text, False)
 
 	@property
 	def DlvrToPtyTp(self):
@@ -42,12 +42,12 @@ class CommunicationChannel1(base_types._BaseFieldType):
 
 	@DlvrToPtyTp.setter
 	def DlvrToPtyTp(self, value):
-		self._DlvrToPtyTp = value if type(value) != base_types.auto else self.make_default("DlvrToPtyTp")
+		self._DlvrToPtyTp = value if value is not None else base_types.UninitialisedField(self, 'DlvrToPtyTp', PartyType1Choice, False)
 
 	@DlvrToPtyTp.deleter
 	def DlvrToPtyTp(self):
 		del self._DlvrToPtyTp
-		self._DlvrToPtyTp = None
+		self._DlvrToPtyTp = base_types.UninitialisedField(self, 'DlvrToPtyTp', PartyType1Choice, False)
 
 	@property
 	def Mtd(self):
@@ -55,12 +55,12 @@ class CommunicationChannel1(base_types._BaseFieldType):
 
 	@Mtd.setter
 	def Mtd(self, value):
-		self._Mtd = value if type(value) != base_types.auto else self.make_default("Mtd")
+		self._Mtd = value if value is not None else base_types.UninitialisedField(self, 'Mtd', ExternalChannel1Code, False)
 
 	@Mtd.deleter
 	def Mtd(self):
 		del self._Mtd
-		self._Mtd = None
+		self._Mtd = base_types.UninitialisedField(self, 'Mtd', ExternalChannel1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DlvrToAdr', type=PostalAddress6, min=0, max=1, mutex_group=None, array=False),

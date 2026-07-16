@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._NotificationLocationData1 import NotificationLocationData1
+from . import Max35Text
+from . import NotificationLocationData1
 
 class RelatedNotificationData1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class RelatedNotificationData1(base_types._BaseFieldType):
 
 	@Lctn.setter
 	def Lctn(self, value):
-		self._Lctn = value if type(value) != base_types.auto else self.make_default("Lctn")
+		self._Lctn = value if value is not None else base_types.UninitialisedField(self, 'Lctn', NotificationLocationData1, True)
 
 	@Lctn.deleter
 	def Lctn(self):
 		del self._Lctn
-		self._Lctn = None
+		self._Lctn = base_types.UninitialisedField(self, 'Lctn', NotificationLocationData1, True)
 
 	@property
 	def NtfctnId(self):
@@ -27,12 +27,12 @@ class RelatedNotificationData1(base_types._BaseFieldType):
 
 	@NtfctnId.setter
 	def NtfctnId(self, value):
-		self._NtfctnId = value if type(value) != base_types.auto else self.make_default("NtfctnId")
+		self._NtfctnId = value if value is not None else base_types.UninitialisedField(self, 'NtfctnId', Max35Text, False)
 
 	@NtfctnId.deleter
 	def NtfctnId(self):
 		del self._NtfctnId
-		self._NtfctnId = None
+		self._NtfctnId = base_types.UninitialisedField(self, 'NtfctnId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Lctn', type=NotificationLocationData1, min=0, max=None, mutex_group=None, array=True),

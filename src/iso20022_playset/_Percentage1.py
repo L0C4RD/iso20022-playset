@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ExternalRelativeTo1Code import ExternalRelativeTo1Code
-from ._PercentageRate import PercentageRate
+from . import ExternalRelativeTo1Code
+from . import PercentageRate
 
 class Percentage1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Percentage1(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+		self._Rate = value if value is not None else base_types.UninitialisedField(self, 'Rate', PercentageRate, False)
 
 	@Rate.deleter
 	def Rate(self):
 		del self._Rate
-		self._Rate = None
+		self._Rate = base_types.UninitialisedField(self, 'Rate', PercentageRate, False)
 
 	@property
 	def RltvTo(self):
@@ -27,12 +27,12 @@ class Percentage1(base_types._BaseFieldType):
 
 	@RltvTo.setter
 	def RltvTo(self, value):
-		self._RltvTo = value if type(value) != base_types.auto else self.make_default("RltvTo")
+		self._RltvTo = value if value is not None else base_types.UninitialisedField(self, 'RltvTo', ExternalRelativeTo1Code, False)
 
 	@RltvTo.deleter
 	def RltvTo(self):
 		del self._RltvTo
-		self._RltvTo = None
+		self._RltvTo = base_types.UninitialisedField(self, 'RltvTo', ExternalRelativeTo1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Rate', type=PercentageRate, min=1, max=1, mutex_group=None, array=False),

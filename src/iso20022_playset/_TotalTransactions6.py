@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NumberAndSumOfTransactions1 import NumberAndSumOfTransactions1
-from ._NumberAndSumOfTransactions4 import NumberAndSumOfTransactions4
-from ._TotalsPerBankTransactionCode5 import TotalsPerBankTransactionCode5
+from . import NumberAndSumOfTransactions1
+from . import NumberAndSumOfTransactions4
+from . import TotalsPerBankTransactionCode5
 
 class TotalTransactions6(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TotalTransactions6(base_types._BaseFieldType):
 
 	@TtlCdtNtries.setter
 	def TtlCdtNtries(self, value):
-		self._TtlCdtNtries = value if type(value) != base_types.auto else self.make_default("TtlCdtNtries")
+		self._TtlCdtNtries = value if value is not None else base_types.UninitialisedField(self, 'TtlCdtNtries', NumberAndSumOfTransactions1, False)
 
 	@TtlCdtNtries.deleter
 	def TtlCdtNtries(self):
 		del self._TtlCdtNtries
-		self._TtlCdtNtries = None
+		self._TtlCdtNtries = base_types.UninitialisedField(self, 'TtlCdtNtries', NumberAndSumOfTransactions1, False)
 
 	@property
 	def TtlDbtNtries(self):
@@ -28,12 +28,12 @@ class TotalTransactions6(base_types._BaseFieldType):
 
 	@TtlDbtNtries.setter
 	def TtlDbtNtries(self, value):
-		self._TtlDbtNtries = value if type(value) != base_types.auto else self.make_default("TtlDbtNtries")
+		self._TtlDbtNtries = value if value is not None else base_types.UninitialisedField(self, 'TtlDbtNtries', NumberAndSumOfTransactions1, False)
 
 	@TtlDbtNtries.deleter
 	def TtlDbtNtries(self):
 		del self._TtlDbtNtries
-		self._TtlDbtNtries = None
+		self._TtlDbtNtries = base_types.UninitialisedField(self, 'TtlDbtNtries', NumberAndSumOfTransactions1, False)
 
 	@property
 	def TtlNtries(self):
@@ -41,12 +41,12 @@ class TotalTransactions6(base_types._BaseFieldType):
 
 	@TtlNtries.setter
 	def TtlNtries(self, value):
-		self._TtlNtries = value if type(value) != base_types.auto else self.make_default("TtlNtries")
+		self._TtlNtries = value if value is not None else base_types.UninitialisedField(self, 'TtlNtries', NumberAndSumOfTransactions4, False)
 
 	@TtlNtries.deleter
 	def TtlNtries(self):
 		del self._TtlNtries
-		self._TtlNtries = None
+		self._TtlNtries = base_types.UninitialisedField(self, 'TtlNtries', NumberAndSumOfTransactions4, False)
 
 	@property
 	def TtlNtriesPerBkTxCd(self):
@@ -54,12 +54,12 @@ class TotalTransactions6(base_types._BaseFieldType):
 
 	@TtlNtriesPerBkTxCd.setter
 	def TtlNtriesPerBkTxCd(self, value):
-		self._TtlNtriesPerBkTxCd = value if type(value) != base_types.auto else self.make_default("TtlNtriesPerBkTxCd")
+		self._TtlNtriesPerBkTxCd = value if value is not None else base_types.UninitialisedField(self, 'TtlNtriesPerBkTxCd', TotalsPerBankTransactionCode5, True)
 
 	@TtlNtriesPerBkTxCd.deleter
 	def TtlNtriesPerBkTxCd(self):
 		del self._TtlNtriesPerBkTxCd
-		self._TtlNtriesPerBkTxCd = None
+		self._TtlNtriesPerBkTxCd = base_types.UninitialisedField(self, 'TtlNtriesPerBkTxCd', TotalsPerBankTransactionCode5, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TtlCdtNtries', type=NumberAndSumOfTransactions1, min=0, max=1, mutex_group=None, array=False),

@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._Charges15 import Charges15
-from ._Max35Text import Max35Text
-from ._OriginalGroupInformation29 import OriginalGroupInformation29
-from ._Purpose2Choice import Purpose2Choice
-from ._UUIDv4Identifier import UUIDv4Identifier
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import Charges15
+from . import Max35Text
+from . import OriginalGroupInformation29
+from . import Purpose2Choice
+from . import UUIDv4Identifier
 
 class StatementResolutionEntry5(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class StatementResolutionEntry5(base_types._BaseFieldType):
 
 	@AcctSvcrRef.setter
 	def AcctSvcrRef(self, value):
-		self._AcctSvcrRef = value if type(value) != base_types.auto else self.make_default("AcctSvcrRef")
+		self._AcctSvcrRef = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcrRef', Max35Text, False)
 
 	@AcctSvcrRef.deleter
 	def AcctSvcrRef(self):
 		del self._AcctSvcrRef
-		self._AcctSvcrRef = None
+		self._AcctSvcrRef = base_types.UninitialisedField(self, 'AcctSvcrRef', Max35Text, False)
 
 	@property
 	def Chrgs(self):
@@ -31,12 +31,12 @@ class StatementResolutionEntry5(base_types._BaseFieldType):
 
 	@Chrgs.setter
 	def Chrgs(self, value):
-		self._Chrgs = value if type(value) != base_types.auto else self.make_default("Chrgs")
+		self._Chrgs = value if value is not None else base_types.UninitialisedField(self, 'Chrgs', Charges15, True)
 
 	@Chrgs.deleter
 	def Chrgs(self):
 		del self._Chrgs
-		self._Chrgs = None
+		self._Chrgs = base_types.UninitialisedField(self, 'Chrgs', Charges15, True)
 
 	@property
 	def CrrctdAmt(self):
@@ -44,12 +44,12 @@ class StatementResolutionEntry5(base_types._BaseFieldType):
 
 	@CrrctdAmt.setter
 	def CrrctdAmt(self, value):
-		self._CrrctdAmt = value if type(value) != base_types.auto else self.make_default("CrrctdAmt")
+		self._CrrctdAmt = value if value is not None else base_types.UninitialisedField(self, 'CrrctdAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@CrrctdAmt.deleter
 	def CrrctdAmt(self):
 		del self._CrrctdAmt
-		self._CrrctdAmt = None
+		self._CrrctdAmt = base_types.UninitialisedField(self, 'CrrctdAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def OrgnlGrpInf(self):
@@ -57,12 +57,12 @@ class StatementResolutionEntry5(base_types._BaseFieldType):
 
 	@OrgnlGrpInf.setter
 	def OrgnlGrpInf(self, value):
-		self._OrgnlGrpInf = value if type(value) != base_types.auto else self.make_default("OrgnlGrpInf")
+		self._OrgnlGrpInf = value if value is not None else base_types.UninitialisedField(self, 'OrgnlGrpInf', OriginalGroupInformation29, False)
 
 	@OrgnlGrpInf.deleter
 	def OrgnlGrpInf(self):
 		del self._OrgnlGrpInf
-		self._OrgnlGrpInf = None
+		self._OrgnlGrpInf = base_types.UninitialisedField(self, 'OrgnlGrpInf', OriginalGroupInformation29, False)
 
 	@property
 	def OrgnlStmtId(self):
@@ -70,12 +70,12 @@ class StatementResolutionEntry5(base_types._BaseFieldType):
 
 	@OrgnlStmtId.setter
 	def OrgnlStmtId(self, value):
-		self._OrgnlStmtId = value if type(value) != base_types.auto else self.make_default("OrgnlStmtId")
+		self._OrgnlStmtId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlStmtId', Max35Text, False)
 
 	@OrgnlStmtId.deleter
 	def OrgnlStmtId(self):
 		del self._OrgnlStmtId
-		self._OrgnlStmtId = None
+		self._OrgnlStmtId = base_types.UninitialisedField(self, 'OrgnlStmtId', Max35Text, False)
 
 	@property
 	def Purp(self):
@@ -83,12 +83,12 @@ class StatementResolutionEntry5(base_types._BaseFieldType):
 
 	@Purp.setter
 	def Purp(self, value):
-		self._Purp = value if type(value) != base_types.auto else self.make_default("Purp")
+		self._Purp = value if value is not None else base_types.UninitialisedField(self, 'Purp', Purpose2Choice, False)
 
 	@Purp.deleter
 	def Purp(self):
 		del self._Purp
-		self._Purp = None
+		self._Purp = base_types.UninitialisedField(self, 'Purp', Purpose2Choice, False)
 
 	@property
 	def UETR(self):
@@ -96,12 +96,12 @@ class StatementResolutionEntry5(base_types._BaseFieldType):
 
 	@UETR.setter
 	def UETR(self, value):
-		self._UETR = value if type(value) != base_types.auto else self.make_default("UETR")
+		self._UETR = value if value is not None else base_types.UninitialisedField(self, 'UETR', UUIDv4Identifier, False)
 
 	@UETR.deleter
 	def UETR(self):
 		del self._UETR
-		self._UETR = None
+		self._UETR = base_types.UninitialisedField(self, 'UETR', UUIDv4Identifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctSvcrRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

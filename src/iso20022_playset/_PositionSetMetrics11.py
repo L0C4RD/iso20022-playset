@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PercentageRate import PercentageRate
-from ._VolumeMetrics4 import VolumeMetrics4
+from . import PercentageRate
+from . import VolumeMetrics4
 
 class PositionSetMetrics11(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PositionSetMetrics11(base_types._BaseFieldType):
 
 	@CshRinvstmtRate.setter
 	def CshRinvstmtRate(self, value):
-		self._CshRinvstmtRate = value if type(value) != base_types.auto else self.make_default("CshRinvstmtRate")
+		self._CshRinvstmtRate = value if value is not None else base_types.UninitialisedField(self, 'CshRinvstmtRate', PercentageRate, False)
 
 	@CshRinvstmtRate.deleter
 	def CshRinvstmtRate(self):
 		del self._CshRinvstmtRate
-		self._CshRinvstmtRate = None
+		self._CshRinvstmtRate = base_types.UninitialisedField(self, 'CshRinvstmtRate', PercentageRate, False)
 
 	@property
 	def VolMtrcs(self):
@@ -27,12 +27,12 @@ class PositionSetMetrics11(base_types._BaseFieldType):
 
 	@VolMtrcs.setter
 	def VolMtrcs(self, value):
-		self._VolMtrcs = value if type(value) != base_types.auto else self.make_default("VolMtrcs")
+		self._VolMtrcs = value if value is not None else base_types.UninitialisedField(self, 'VolMtrcs', VolumeMetrics4, False)
 
 	@VolMtrcs.deleter
 	def VolMtrcs(self):
 		del self._VolMtrcs
-		self._VolMtrcs = None
+		self._VolMtrcs = base_types.UninitialisedField(self, 'VolMtrcs', VolumeMetrics4, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshRinvstmtRate', type=PercentageRate, min=0, max=1, mutex_group=None, array=False),

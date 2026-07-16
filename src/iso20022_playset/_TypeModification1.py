@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashAccountType2Choice import CashAccountType2Choice
-from ._Modification1Code import Modification1Code
+from . import CashAccountType2Choice
+from . import Modification1Code
 
 class TypeModification1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TypeModification1(base_types._BaseFieldType):
 
 	@ModCd.setter
 	def ModCd(self, value):
-		self._ModCd = value if type(value) != base_types.auto else self.make_default("ModCd")
+		self._ModCd = value if value is not None else base_types.UninitialisedField(self, 'ModCd', Modification1Code, False)
 
 	@ModCd.deleter
 	def ModCd(self):
 		del self._ModCd
-		self._ModCd = None
+		self._ModCd = base_types.UninitialisedField(self, 'ModCd', Modification1Code, False)
 
 	@property
 	def Tp(self):
@@ -27,12 +27,12 @@ class TypeModification1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', CashAccountType2Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', CashAccountType2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ModCd', type=Modification1Code, min=0, max=1, mutex_group=None, array=False),

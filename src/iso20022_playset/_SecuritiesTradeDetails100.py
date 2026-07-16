@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._Max350Text import Max350Text
-from ._Max3Number import Max3Number
+from . import DateAndDateTime2Choice
+from . import Max350Text
+from . import Max3Number
 
 class SecuritiesTradeDetails100(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SecuritiesTradeDetails100(base_types._BaseFieldType):
 
 	@InstrPrcgAddtlDtls.setter
 	def InstrPrcgAddtlDtls(self, value):
-		self._InstrPrcgAddtlDtls = value if type(value) != base_types.auto else self.make_default("InstrPrcgAddtlDtls")
+		self._InstrPrcgAddtlDtls = value if value is not None else base_types.UninitialisedField(self, 'InstrPrcgAddtlDtls', Max350Text, False)
 
 	@InstrPrcgAddtlDtls.deleter
 	def InstrPrcgAddtlDtls(self):
 		del self._InstrPrcgAddtlDtls
-		self._InstrPrcgAddtlDtls = None
+		self._InstrPrcgAddtlDtls = base_types.UninitialisedField(self, 'InstrPrcgAddtlDtls', Max350Text, False)
 
 	@property
 	def NbOfDaysAcrd(self):
@@ -28,12 +28,12 @@ class SecuritiesTradeDetails100(base_types._BaseFieldType):
 
 	@NbOfDaysAcrd.setter
 	def NbOfDaysAcrd(self, value):
-		self._NbOfDaysAcrd = value if type(value) != base_types.auto else self.make_default("NbOfDaysAcrd")
+		self._NbOfDaysAcrd = value if value is not None else base_types.UninitialisedField(self, 'NbOfDaysAcrd', Max3Number, False)
 
 	@NbOfDaysAcrd.deleter
 	def NbOfDaysAcrd(self):
 		del self._NbOfDaysAcrd
-		self._NbOfDaysAcrd = None
+		self._NbOfDaysAcrd = base_types.UninitialisedField(self, 'NbOfDaysAcrd', Max3Number, False)
 
 	@property
 	def OpngSttlmDt(self):
@@ -41,12 +41,12 @@ class SecuritiesTradeDetails100(base_types._BaseFieldType):
 
 	@OpngSttlmDt.setter
 	def OpngSttlmDt(self, value):
-		self._OpngSttlmDt = value if type(value) != base_types.auto else self.make_default("OpngSttlmDt")
+		self._OpngSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'OpngSttlmDt', DateAndDateTime2Choice, False)
 
 	@OpngSttlmDt.deleter
 	def OpngSttlmDt(self):
 		del self._OpngSttlmDt
-		self._OpngSttlmDt = None
+		self._OpngSttlmDt = base_types.UninitialisedField(self, 'OpngSttlmDt', DateAndDateTime2Choice, False)
 
 	@property
 	def TradDt(self):
@@ -54,12 +54,12 @@ class SecuritiesTradeDetails100(base_types._BaseFieldType):
 
 	@TradDt.setter
 	def TradDt(self, value):
-		self._TradDt = value if type(value) != base_types.auto else self.make_default("TradDt")
+		self._TradDt = value if value is not None else base_types.UninitialisedField(self, 'TradDt', DateAndDateTime2Choice, False)
 
 	@TradDt.deleter
 	def TradDt(self):
 		del self._TradDt
-		self._TradDt = None
+		self._TradDt = base_types.UninitialisedField(self, 'TradDt', DateAndDateTime2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InstrPrcgAddtlDtls', type=Max350Text, min=0, max=1, mutex_group=None, array=False),

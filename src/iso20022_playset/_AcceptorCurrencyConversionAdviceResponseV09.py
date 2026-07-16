@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcceptorCancellationAdviceResponse14 import AcceptorCancellationAdviceResponse14
-from ._ContentInformationType37 import ContentInformationType37
-from ._Header70 import Header70
+from . import AcceptorCancellationAdviceResponse14
+from . import ContentInformationType37
+from . import Header70
 
 class AcceptorCurrencyConversionAdviceResponseV09(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AcceptorCurrencyConversionAdviceResponseV09(base_types._BaseFieldType):
 
 	@CcyConvsAdvcRspn.setter
 	def CcyConvsAdvcRspn(self, value):
-		self._CcyConvsAdvcRspn = value if type(value) != base_types.auto else self.make_default("CcyConvsAdvcRspn")
+		self._CcyConvsAdvcRspn = value if value is not None else base_types.UninitialisedField(self, 'CcyConvsAdvcRspn', AcceptorCancellationAdviceResponse14, False)
 
 	@CcyConvsAdvcRspn.deleter
 	def CcyConvsAdvcRspn(self):
 		del self._CcyConvsAdvcRspn
-		self._CcyConvsAdvcRspn = None
+		self._CcyConvsAdvcRspn = base_types.UninitialisedField(self, 'CcyConvsAdvcRspn', AcceptorCancellationAdviceResponse14, False)
 
 	@property
 	def Hdr(self):
@@ -28,12 +28,12 @@ class AcceptorCurrencyConversionAdviceResponseV09(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header70, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header70, False)
 
 	@property
 	def SctyTrlr(self):
@@ -41,12 +41,12 @@ class AcceptorCurrencyConversionAdviceResponseV09(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType37, False)
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
 		del self._SctyTrlr
-		self._SctyTrlr = None
+		self._SctyTrlr = base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType37, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CcyConvsAdvcRspn', type=AcceptorCancellationAdviceResponse14, min=1, max=1, mutex_group=None, array=False),

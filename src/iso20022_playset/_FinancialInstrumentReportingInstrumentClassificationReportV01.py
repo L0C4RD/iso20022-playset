@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesInstrumentClassification2 import SecuritiesInstrumentClassification2
-from ._SupplementaryData1 import SupplementaryData1
+from . import SecuritiesInstrumentClassification2
+from . import SupplementaryData1
 
 class FinancialInstrumentReportingInstrumentClassificationReportV01(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class FinancialInstrumentReportingInstrumentClassificationReportV01(base_types._
 
 	@InstrmClssfctn.setter
 	def InstrmClssfctn(self, value):
-		self._InstrmClssfctn = value if type(value) != base_types.auto else self.make_default("InstrmClssfctn")
+		self._InstrmClssfctn = value if value is not None else base_types.UninitialisedField(self, 'InstrmClssfctn', SecuritiesInstrumentClassification2, True)
 
 	@InstrmClssfctn.deleter
 	def InstrmClssfctn(self):
 		del self._InstrmClssfctn
-		self._InstrmClssfctn = None
+		self._InstrmClssfctn = base_types.UninitialisedField(self, 'InstrmClssfctn', SecuritiesInstrumentClassification2, True)
 
 	@property
 	def SplmtryData(self):
@@ -27,12 +27,12 @@ class FinancialInstrumentReportingInstrumentClassificationReportV01(base_types._
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InstrmClssfctn', type=SecuritiesInstrumentClassification2, min=1, max=None, mutex_group=None, array=True),

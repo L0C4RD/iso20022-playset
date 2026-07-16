@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._OtherC10CommodityDeliverable2 import OtherC10CommodityDeliverable2
-from ._OtherC10CommodityNonDeliverable2 import OtherC10CommodityNonDeliverable2
+from . import OtherC10CommodityDeliverable2
+from . import OtherC10CommodityNonDeliverable2
 
 class AssetClassCommodityOtherC102Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AssetClassCommodityOtherC102Choice(base_types._BaseFieldType):
 
 	@Dlvrbl.setter
 	def Dlvrbl(self, value):
-		self._Dlvrbl = value if type(value) != base_types.auto else self.make_default("Dlvrbl")
+		self._Dlvrbl = value if value is not None else base_types.UninitialisedField(self, 'Dlvrbl', OtherC10CommodityDeliverable2, False)
 
 	@Dlvrbl.deleter
 	def Dlvrbl(self):
 		del self._Dlvrbl
-		self._Dlvrbl = None
+		self._Dlvrbl = base_types.UninitialisedField(self, 'Dlvrbl', OtherC10CommodityDeliverable2, False)
 
 	@property
 	def NonDlvrbl(self):
@@ -27,12 +27,12 @@ class AssetClassCommodityOtherC102Choice(base_types._BaseFieldType):
 
 	@NonDlvrbl.setter
 	def NonDlvrbl(self, value):
-		self._NonDlvrbl = value if type(value) != base_types.auto else self.make_default("NonDlvrbl")
+		self._NonDlvrbl = value if value is not None else base_types.UninitialisedField(self, 'NonDlvrbl', OtherC10CommodityNonDeliverable2, False)
 
 	@NonDlvrbl.deleter
 	def NonDlvrbl(self):
 		del self._NonDlvrbl
-		self._NonDlvrbl = None
+		self._NonDlvrbl = base_types.UninitialisedField(self, 'NonDlvrbl', OtherC10CommodityNonDeliverable2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dlvrbl', type=OtherC10CommodityDeliverable2, min=0, max=1, mutex_group=1, array=False),

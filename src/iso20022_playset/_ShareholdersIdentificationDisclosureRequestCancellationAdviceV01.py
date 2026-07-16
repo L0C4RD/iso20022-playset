@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DisclosureRequestCancellationReason1Code import DisclosureRequestCancellationReason1Code
-from ._DisclosureRequestIdentification1 import DisclosureRequestIdentification1
-from ._PartyIdentification129Choice import PartyIdentification129Choice
-from ._SupplementaryData1 import SupplementaryData1
+from . import DisclosureRequestCancellationReason1Code
+from . import DisclosureRequestIdentification1
+from . import PartyIdentification129Choice
+from . import SupplementaryData1
 
 class ShareholdersIdentificationDisclosureRequestCancellationAdviceV01(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ShareholdersIdentificationDisclosureRequestCancellationAdviceV01(base_type
 
 	@CxlRsn.setter
 	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != base_types.auto else self.make_default("CxlRsn")
+		self._CxlRsn = value if value is not None else base_types.UninitialisedField(self, 'CxlRsn', DisclosureRequestCancellationReason1Code, False)
 
 	@CxlRsn.deleter
 	def CxlRsn(self):
 		del self._CxlRsn
-		self._CxlRsn = None
+		self._CxlRsn = base_types.UninitialisedField(self, 'CxlRsn', DisclosureRequestCancellationReason1Code, False)
 
 	@property
 	def Issr(self):
@@ -29,12 +29,12 @@ class ShareholdersIdentificationDisclosureRequestCancellationAdviceV01(base_type
 
 	@Issr.setter
 	def Issr(self, value):
-		self._Issr = value if type(value) != base_types.auto else self.make_default("Issr")
+		self._Issr = value if value is not None else base_types.UninitialisedField(self, 'Issr', PartyIdentification129Choice, False)
 
 	@Issr.deleter
 	def Issr(self):
 		del self._Issr
-		self._Issr = None
+		self._Issr = base_types.UninitialisedField(self, 'Issr', PartyIdentification129Choice, False)
 
 	@property
 	def IssrDsclsrReqRef(self):
@@ -42,12 +42,12 @@ class ShareholdersIdentificationDisclosureRequestCancellationAdviceV01(base_type
 
 	@IssrDsclsrReqRef.setter
 	def IssrDsclsrReqRef(self, value):
-		self._IssrDsclsrReqRef = value if type(value) != base_types.auto else self.make_default("IssrDsclsrReqRef")
+		self._IssrDsclsrReqRef = value if value is not None else base_types.UninitialisedField(self, 'IssrDsclsrReqRef', DisclosureRequestIdentification1, False)
 
 	@IssrDsclsrReqRef.deleter
 	def IssrDsclsrReqRef(self):
 		del self._IssrDsclsrReqRef
-		self._IssrDsclsrReqRef = None
+		self._IssrDsclsrReqRef = base_types.UninitialisedField(self, 'IssrDsclsrReqRef', DisclosureRequestIdentification1, False)
 
 	@property
 	def SplmtryData(self):
@@ -55,12 +55,12 @@ class ShareholdersIdentificationDisclosureRequestCancellationAdviceV01(base_type
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CxlRsn', type=DisclosureRequestCancellationReason1Code, min=0, max=1, mutex_group=None, array=False),

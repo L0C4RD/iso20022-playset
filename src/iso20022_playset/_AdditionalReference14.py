@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DocumentNumber5Choice import DocumentNumber5Choice
-from ._Max35Text import Max35Text
-from ._PartyIdentification247Choice import PartyIdentification247Choice
+from . import DocumentNumber5Choice
+from . import Max35Text
+from . import PartyIdentification247Choice
 
 class AdditionalReference14(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AdditionalReference14(base_types._BaseFieldType):
 
 	@MsgNb.setter
 	def MsgNb(self, value):
-		self._MsgNb = value if type(value) != base_types.auto else self.make_default("MsgNb")
+		self._MsgNb = value if value is not None else base_types.UninitialisedField(self, 'MsgNb', DocumentNumber5Choice, False)
 
 	@MsgNb.deleter
 	def MsgNb(self):
 		del self._MsgNb
-		self._MsgNb = None
+		self._MsgNb = base_types.UninitialisedField(self, 'MsgNb', DocumentNumber5Choice, False)
 
 	@property
 	def MsgNm(self):
@@ -28,12 +28,12 @@ class AdditionalReference14(base_types._BaseFieldType):
 
 	@MsgNm.setter
 	def MsgNm(self, value):
-		self._MsgNm = value if type(value) != base_types.auto else self.make_default("MsgNm")
+		self._MsgNm = value if value is not None else base_types.UninitialisedField(self, 'MsgNm', Max35Text, False)
 
 	@MsgNm.deleter
 	def MsgNm(self):
 		del self._MsgNm
-		self._MsgNm = None
+		self._MsgNm = base_types.UninitialisedField(self, 'MsgNm', Max35Text, False)
 
 	@property
 	def Ref(self):
@@ -41,12 +41,12 @@ class AdditionalReference14(base_types._BaseFieldType):
 
 	@Ref.setter
 	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+		self._Ref = value if value is not None else base_types.UninitialisedField(self, 'Ref', Max35Text, False)
 
 	@Ref.deleter
 	def Ref(self):
 		del self._Ref
-		self._Ref = None
+		self._Ref = base_types.UninitialisedField(self, 'Ref', Max35Text, False)
 
 	@property
 	def RefIssr(self):
@@ -54,12 +54,12 @@ class AdditionalReference14(base_types._BaseFieldType):
 
 	@RefIssr.setter
 	def RefIssr(self, value):
-		self._RefIssr = value if type(value) != base_types.auto else self.make_default("RefIssr")
+		self._RefIssr = value if value is not None else base_types.UninitialisedField(self, 'RefIssr', PartyIdentification247Choice, False)
 
 	@RefIssr.deleter
 	def RefIssr(self):
 		del self._RefIssr
-		self._RefIssr = None
+		self._RefIssr = base_types.UninitialisedField(self, 'RefIssr', PartyIdentification247Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgNb', type=DocumentNumber5Choice, min=1, max=1, mutex_group=None, array=False),

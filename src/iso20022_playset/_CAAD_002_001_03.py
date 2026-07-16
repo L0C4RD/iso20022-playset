@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BatchManagementResponseV03 import BatchManagementResponseV03
+from . import BatchManagementResponseV03
 
 class CAAD_002_001_03():
 
@@ -18,12 +18,12 @@ class CAAD_002_001_03():
 
 		@BtchMgmtRspn.setter
 		def BtchMgmtRspn(self, value):
-			self._BtchMgmtRspn = value if type(value) != base_types.auto else self.make_default("BtchMgmtRspn")
+			self._BtchMgmtRspn = value if value is not None else base_types.UninitialisedField(self, 'BtchMgmtRspn', BatchManagementResponseV03, False)
 
 		@BtchMgmtRspn.deleter
 		def BtchMgmtRspn(self):
 			del self._BtchMgmtRspn
-			self._BtchMgmtRspn = None
+			self._BtchMgmtRspn = base_types.UninitialisedField(self, 'BtchMgmtRspn', BatchManagementResponseV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='BtchMgmtRspn', type=BatchManagementResponseV03, min=1, max=1, mutex_group=None, array=False),

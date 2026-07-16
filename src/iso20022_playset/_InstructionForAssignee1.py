@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ExternalAgentInstruction1Code import ExternalAgentInstruction1Code
-from ._Max140Text import Max140Text
+from . import ExternalAgentInstruction1Code
+from . import Max140Text
 
 class InstructionForAssignee1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class InstructionForAssignee1(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
+		self._Cd = value if value is not None else base_types.UninitialisedField(self, 'Cd', ExternalAgentInstruction1Code, False)
 
 	@Cd.deleter
 	def Cd(self):
 		del self._Cd
-		self._Cd = None
+		self._Cd = base_types.UninitialisedField(self, 'Cd', ExternalAgentInstruction1Code, False)
 
 	@property
 	def InstrInf(self):
@@ -27,12 +27,12 @@ class InstructionForAssignee1(base_types._BaseFieldType):
 
 	@InstrInf.setter
 	def InstrInf(self, value):
-		self._InstrInf = value if type(value) != base_types.auto else self.make_default("InstrInf")
+		self._InstrInf = value if value is not None else base_types.UninitialisedField(self, 'InstrInf', Max140Text, False)
 
 	@InstrInf.deleter
 	def InstrInf(self):
 		del self._InstrInf
-		self._InstrInf = None
+		self._InstrInf = base_types.UninitialisedField(self, 'InstrInf', Max140Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cd', type=ExternalAgentInstruction1Code, min=0, max=1, mutex_group=None, array=False),

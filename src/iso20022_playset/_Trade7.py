@@ -2,21 +2,21 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._AmountAndCurrency2 import AmountAndCurrency2
-from ._ClearingMethod1Code import ClearingMethod1Code
-from ._ISODate import ISODate
-from ._ISODateTime import ISODateTime
-from ._InstrumentLeg7 import InstrumentLeg7
-from ._Max30Text import Max30Text
-from ._Max35Text import Max35Text
-from ._Option16 import Option16
-from ._OrderStatus8Code import OrderStatus8Code
-from ._SecurityIdentification38Choice import SecurityIdentification38Choice
-from ._Trade10 import Trade10
-from ._TradingMethodType1Code import TradingMethodType1Code
-from ._TradingModeType1Code import TradingModeType1Code
-from ._UnderlyingProductIdentifier1Code import UnderlyingProductIdentifier1Code
+from . import ActiveCurrencyCode
+from . import AmountAndCurrency2
+from . import ClearingMethod1Code
+from . import ISODate
+from . import ISODateTime
+from . import InstrumentLeg7
+from . import Max30Text
+from . import Max35Text
+from . import Option16
+from . import OrderStatus8Code
+from . import SecurityIdentification38Choice
+from . import Trade10
+from . import TradingMethodType1Code
+from . import TradingModeType1Code
+from . import UnderlyingProductIdentifier1Code
 
 class Trade7(base_types._BaseFieldType):
 
@@ -27,12 +27,12 @@ class Trade7(base_types._BaseFieldType):
 
 	@BaseCcyOrAmt.setter
 	def BaseCcyOrAmt(self, value):
-		self._BaseCcyOrAmt = value if type(value) != base_types.auto else self.make_default("BaseCcyOrAmt")
+		self._BaseCcyOrAmt = value if value is not None else base_types.UninitialisedField(self, 'BaseCcyOrAmt', AmountAndCurrency2, False)
 
 	@BaseCcyOrAmt.deleter
 	def BaseCcyOrAmt(self):
 		del self._BaseCcyOrAmt
-		self._BaseCcyOrAmt = None
+		self._BaseCcyOrAmt = base_types.UninitialisedField(self, 'BaseCcyOrAmt', AmountAndCurrency2, False)
 
 	@property
 	def ClrMtd(self):
@@ -40,12 +40,12 @@ class Trade7(base_types._BaseFieldType):
 
 	@ClrMtd.setter
 	def ClrMtd(self, value):
-		self._ClrMtd = value if type(value) != base_types.auto else self.make_default("ClrMtd")
+		self._ClrMtd = value if value is not None else base_types.UninitialisedField(self, 'ClrMtd', ClearingMethod1Code, False)
 
 	@ClrMtd.deleter
 	def ClrMtd(self):
 		del self._ClrMtd
-		self._ClrMtd = None
+		self._ClrMtd = base_types.UninitialisedField(self, 'ClrMtd', ClearingMethod1Code, False)
 
 	@property
 	def CmbntnDealTcktId(self):
@@ -53,12 +53,12 @@ class Trade7(base_types._BaseFieldType):
 
 	@CmbntnDealTcktId.setter
 	def CmbntnDealTcktId(self, value):
-		self._CmbntnDealTcktId = value if type(value) != base_types.auto else self.make_default("CmbntnDealTcktId")
+		self._CmbntnDealTcktId = value if value is not None else base_types.UninitialisedField(self, 'CmbntnDealTcktId', Max35Text, False)
 
 	@CmbntnDealTcktId.deleter
 	def CmbntnDealTcktId(self):
 		del self._CmbntnDealTcktId
-		self._CmbntnDealTcktId = None
+		self._CmbntnDealTcktId = base_types.UninitialisedField(self, 'CmbntnDealTcktId', Max35Text, False)
 
 	@property
 	def ContraCcy(self):
@@ -66,12 +66,12 @@ class Trade7(base_types._BaseFieldType):
 
 	@ContraCcy.setter
 	def ContraCcy(self, value):
-		self._ContraCcy = value if type(value) != base_types.auto else self.make_default("ContraCcy")
+		self._ContraCcy = value if value is not None else base_types.UninitialisedField(self, 'ContraCcy', ActiveCurrencyCode, False)
 
 	@ContraCcy.deleter
 	def ContraCcy(self):
 		del self._ContraCcy
-		self._ContraCcy = None
+		self._ContraCcy = base_types.UninitialisedField(self, 'ContraCcy', ActiveCurrencyCode, False)
 
 	@property
 	def DealTcktId(self):
@@ -79,12 +79,12 @@ class Trade7(base_types._BaseFieldType):
 
 	@DealTcktId.setter
 	def DealTcktId(self, value):
-		self._DealTcktId = value if type(value) != base_types.auto else self.make_default("DealTcktId")
+		self._DealTcktId = value if value is not None else base_types.UninitialisedField(self, 'DealTcktId', Max30Text, False)
 
 	@DealTcktId.deleter
 	def DealTcktId(self):
 		del self._DealTcktId
-		self._DealTcktId = None
+		self._DealTcktId = base_types.UninitialisedField(self, 'DealTcktId', Max30Text, False)
 
 	@property
 	def DtAndTm(self):
@@ -92,12 +92,12 @@ class Trade7(base_types._BaseFieldType):
 
 	@DtAndTm.setter
 	def DtAndTm(self, value):
-		self._DtAndTm = value if type(value) != base_types.auto else self.make_default("DtAndTm")
+		self._DtAndTm = value if value is not None else base_types.UninitialisedField(self, 'DtAndTm', ISODateTime, False)
 
 	@DtAndTm.deleter
 	def DtAndTm(self):
 		del self._DtAndTm
-		self._DtAndTm = None
+		self._DtAndTm = base_types.UninitialisedField(self, 'DtAndTm', ISODateTime, False)
 
 	@property
 	def DtConfd(self):
@@ -105,12 +105,12 @@ class Trade7(base_types._BaseFieldType):
 
 	@DtConfd.setter
 	def DtConfd(self, value):
-		self._DtConfd = value if type(value) != base_types.auto else self.make_default("DtConfd")
+		self._DtConfd = value if value is not None else base_types.UninitialisedField(self, 'DtConfd', ISODate, False)
 
 	@DtConfd.deleter
 	def DtConfd(self):
 		del self._DtConfd
-		self._DtConfd = None
+		self._DtConfd = base_types.UninitialisedField(self, 'DtConfd', ISODate, False)
 
 	@property
 	def ExctnTp(self):
@@ -118,12 +118,12 @@ class Trade7(base_types._BaseFieldType):
 
 	@ExctnTp.setter
 	def ExctnTp(self, value):
-		self._ExctnTp = value if type(value) != base_types.auto else self.make_default("ExctnTp")
+		self._ExctnTp = value if value is not None else base_types.UninitialisedField(self, 'ExctnTp', OrderStatus8Code, False)
 
 	@ExctnTp.deleter
 	def ExctnTp(self):
 		del self._ExctnTp
-		self._ExctnTp = None
+		self._ExctnTp = base_types.UninitialisedField(self, 'ExctnTp', OrderStatus8Code, False)
 
 	@property
 	def FXDtls(self):
@@ -131,12 +131,12 @@ class Trade7(base_types._BaseFieldType):
 
 	@FXDtls.setter
 	def FXDtls(self, value):
-		self._FXDtls = value if type(value) != base_types.auto else self.make_default("FXDtls")
+		self._FXDtls = value if value is not None else base_types.UninitialisedField(self, 'FXDtls', Trade10, False)
 
 	@FXDtls.deleter
 	def FXDtls(self):
 		del self._FXDtls
-		self._FXDtls = None
+		self._FXDtls = base_types.UninitialisedField(self, 'FXDtls', Trade10, False)
 
 	@property
 	def FXTradPdct(self):
@@ -144,12 +144,12 @@ class Trade7(base_types._BaseFieldType):
 
 	@FXTradPdct.setter
 	def FXTradPdct(self, value):
-		self._FXTradPdct = value if type(value) != base_types.auto else self.make_default("FXTradPdct")
+		self._FXTradPdct = value if value is not None else base_types.UninitialisedField(self, 'FXTradPdct', UnderlyingProductIdentifier1Code, False)
 
 	@FXTradPdct.deleter
 	def FXTradPdct(self):
 		del self._FXTradPdct
-		self._FXTradPdct = None
+		self._FXTradPdct = base_types.UninitialisedField(self, 'FXTradPdct', UnderlyingProductIdentifier1Code, False)
 
 	@property
 	def Optn(self):
@@ -157,12 +157,12 @@ class Trade7(base_types._BaseFieldType):
 
 	@Optn.setter
 	def Optn(self, value):
-		self._Optn = value if type(value) != base_types.auto else self.make_default("Optn")
+		self._Optn = value if value is not None else base_types.UninitialisedField(self, 'Optn', Option16, False)
 
 	@Optn.deleter
 	def Optn(self):
 		del self._Optn
-		self._Optn = None
+		self._Optn = base_types.UninitialisedField(self, 'Optn', Option16, False)
 
 	@property
 	def PdctId(self):
@@ -170,12 +170,12 @@ class Trade7(base_types._BaseFieldType):
 
 	@PdctId.setter
 	def PdctId(self, value):
-		self._PdctId = value if type(value) != base_types.auto else self.make_default("PdctId")
+		self._PdctId = value if value is not None else base_types.UninitialisedField(self, 'PdctId', SecurityIdentification38Choice, False)
 
 	@PdctId.deleter
 	def PdctId(self):
 		del self._PdctId
-		self._PdctId = None
+		self._PdctId = base_types.UninitialisedField(self, 'PdctId', SecurityIdentification38Choice, False)
 
 	@property
 	def PlcOfConf(self):
@@ -183,12 +183,12 @@ class Trade7(base_types._BaseFieldType):
 
 	@PlcOfConf.setter
 	def PlcOfConf(self, value):
-		self._PlcOfConf = value if type(value) != base_types.auto else self.make_default("PlcOfConf")
+		self._PlcOfConf = value if value is not None else base_types.UninitialisedField(self, 'PlcOfConf', Max35Text, False)
 
 	@PlcOfConf.deleter
 	def PlcOfConf(self):
 		del self._PlcOfConf
-		self._PlcOfConf = None
+		self._PlcOfConf = base_types.UninitialisedField(self, 'PlcOfConf', Max35Text, False)
 
 	@property
 	def SttlmCcy(self):
@@ -196,12 +196,12 @@ class Trade7(base_types._BaseFieldType):
 
 	@SttlmCcy.setter
 	def SttlmCcy(self, value):
-		self._SttlmCcy = value if type(value) != base_types.auto else self.make_default("SttlmCcy")
+		self._SttlmCcy = value if value is not None else base_types.UninitialisedField(self, 'SttlmCcy', ActiveCurrencyCode, False)
 
 	@SttlmCcy.deleter
 	def SttlmCcy(self):
 		del self._SttlmCcy
-		self._SttlmCcy = None
+		self._SttlmCcy = base_types.UninitialisedField(self, 'SttlmCcy', ActiveCurrencyCode, False)
 
 	@property
 	def SwpLeg(self):
@@ -209,12 +209,12 @@ class Trade7(base_types._BaseFieldType):
 
 	@SwpLeg.setter
 	def SwpLeg(self, value):
-		self._SwpLeg = value if type(value) != base_types.auto else self.make_default("SwpLeg")
+		self._SwpLeg = value if value is not None else base_types.UninitialisedField(self, 'SwpLeg', InstrumentLeg7, True)
 
 	@SwpLeg.deleter
 	def SwpLeg(self):
 		del self._SwpLeg
-		self._SwpLeg = None
+		self._SwpLeg = base_types.UninitialisedField(self, 'SwpLeg', InstrumentLeg7, True)
 
 	@property
 	def Symb(self):
@@ -222,12 +222,12 @@ class Trade7(base_types._BaseFieldType):
 
 	@Symb.setter
 	def Symb(self, value):
-		self._Symb = value if type(value) != base_types.auto else self.make_default("Symb")
+		self._Symb = value if value is not None else base_types.UninitialisedField(self, 'Symb', Max35Text, False)
 
 	@Symb.deleter
 	def Symb(self):
 		del self._Symb
-		self._Symb = None
+		self._Symb = base_types.UninitialisedField(self, 'Symb', Max35Text, False)
 
 	@property
 	def TradId(self):
@@ -235,12 +235,12 @@ class Trade7(base_types._BaseFieldType):
 
 	@TradId.setter
 	def TradId(self, value):
-		self._TradId = value if type(value) != base_types.auto else self.make_default("TradId")
+		self._TradId = value if value is not None else base_types.UninitialisedField(self, 'TradId', Max35Text, False)
 
 	@TradId.deleter
 	def TradId(self):
 		del self._TradId
-		self._TradId = None
+		self._TradId = base_types.UninitialisedField(self, 'TradId', Max35Text, False)
 
 	@property
 	def TradgCcy(self):
@@ -248,12 +248,12 @@ class Trade7(base_types._BaseFieldType):
 
 	@TradgCcy.setter
 	def TradgCcy(self, value):
-		self._TradgCcy = value if type(value) != base_types.auto else self.make_default("TradgCcy")
+		self._TradgCcy = value if value is not None else base_types.UninitialisedField(self, 'TradgCcy', ActiveCurrencyCode, False)
 
 	@TradgCcy.deleter
 	def TradgCcy(self):
 		del self._TradgCcy
-		self._TradgCcy = None
+		self._TradgCcy = base_types.UninitialisedField(self, 'TradgCcy', ActiveCurrencyCode, False)
 
 	@property
 	def TradgMd(self):
@@ -261,12 +261,12 @@ class Trade7(base_types._BaseFieldType):
 
 	@TradgMd.setter
 	def TradgMd(self, value):
-		self._TradgMd = value if type(value) != base_types.auto else self.make_default("TradgMd")
+		self._TradgMd = value if value is not None else base_types.UninitialisedField(self, 'TradgMd', TradingModeType1Code, False)
 
 	@TradgMd.deleter
 	def TradgMd(self):
 		del self._TradgMd
-		self._TradgMd = None
+		self._TradgMd = base_types.UninitialisedField(self, 'TradgMd', TradingModeType1Code, False)
 
 	@property
 	def TradgMtd(self):
@@ -274,12 +274,12 @@ class Trade7(base_types._BaseFieldType):
 
 	@TradgMtd.setter
 	def TradgMtd(self, value):
-		self._TradgMtd = value if type(value) != base_types.auto else self.make_default("TradgMtd")
+		self._TradgMtd = value if value is not None else base_types.UninitialisedField(self, 'TradgMtd', TradingMethodType1Code, False)
 
 	@TradgMtd.deleter
 	def TradgMtd(self):
 		del self._TradgMtd
-		self._TradgMtd = None
+		self._TradgMtd = base_types.UninitialisedField(self, 'TradgMtd', TradingMethodType1Code, False)
 
 	@property
 	def TrgtCcyOrAmt(self):
@@ -287,12 +287,12 @@ class Trade7(base_types._BaseFieldType):
 
 	@TrgtCcyOrAmt.setter
 	def TrgtCcyOrAmt(self, value):
-		self._TrgtCcyOrAmt = value if type(value) != base_types.auto else self.make_default("TrgtCcyOrAmt")
+		self._TrgtCcyOrAmt = value if value is not None else base_types.UninitialisedField(self, 'TrgtCcyOrAmt', AmountAndCurrency2, False)
 
 	@TrgtCcyOrAmt.deleter
 	def TrgtCcyOrAmt(self):
 		del self._TrgtCcyOrAmt
-		self._TrgtCcyOrAmt = None
+		self._TrgtCcyOrAmt = base_types.UninitialisedField(self, 'TrgtCcyOrAmt', AmountAndCurrency2, False)
 
 	@property
 	def TxTm(self):
@@ -300,12 +300,12 @@ class Trade7(base_types._BaseFieldType):
 
 	@TxTm.setter
 	def TxTm(self, value):
-		self._TxTm = value if type(value) != base_types.auto else self.make_default("TxTm")
+		self._TxTm = value if value is not None else base_types.UninitialisedField(self, 'TxTm', ISODateTime, False)
 
 	@TxTm.deleter
 	def TxTm(self):
 		del self._TxTm
-		self._TxTm = None
+		self._TxTm = base_types.UninitialisedField(self, 'TxTm', ISODateTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BaseCcyOrAmt', type=AmountAndCurrency2, min=0, max=1, mutex_group=None, array=False),

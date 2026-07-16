@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DocumentIdentification51 import DocumentIdentification51
-from ._IntraBalanceOrOperationalError12Choice import IntraBalanceOrOperationalError12Choice
-from ._IntraBalanceReport5 import IntraBalanceReport5
-from ._Pagination1 import Pagination1
-from ._SupplementaryData1 import SupplementaryData1
+from . import DocumentIdentification51
+from . import IntraBalanceOrOperationalError12Choice
+from . import IntraBalanceReport5
+from . import Pagination1
+from . import SupplementaryData1
 
 class IntraBalanceMovementModificationReportV02(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class IntraBalanceMovementModificationReportV02(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', DocumentIdentification51, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', DocumentIdentification51, False)
 
 	@property
 	def Pgntn(self):
@@ -30,12 +30,12 @@ class IntraBalanceMovementModificationReportV02(base_types._BaseFieldType):
 
 	@Pgntn.setter
 	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+		self._Pgntn = value if value is not None else base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@Pgntn.deleter
 	def Pgntn(self):
 		del self._Pgntn
-		self._Pgntn = None
+		self._Pgntn = base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@property
 	def RptGnlDtls(self):
@@ -43,12 +43,12 @@ class IntraBalanceMovementModificationReportV02(base_types._BaseFieldType):
 
 	@RptGnlDtls.setter
 	def RptGnlDtls(self, value):
-		self._RptGnlDtls = value if type(value) != base_types.auto else self.make_default("RptGnlDtls")
+		self._RptGnlDtls = value if value is not None else base_types.UninitialisedField(self, 'RptGnlDtls', IntraBalanceReport5, False)
 
 	@RptGnlDtls.deleter
 	def RptGnlDtls(self):
 		del self._RptGnlDtls
-		self._RptGnlDtls = None
+		self._RptGnlDtls = base_types.UninitialisedField(self, 'RptGnlDtls', IntraBalanceReport5, False)
 
 	@property
 	def RptOrErr(self):
@@ -56,12 +56,12 @@ class IntraBalanceMovementModificationReportV02(base_types._BaseFieldType):
 
 	@RptOrErr.setter
 	def RptOrErr(self, value):
-		self._RptOrErr = value if type(value) != base_types.auto else self.make_default("RptOrErr")
+		self._RptOrErr = value if value is not None else base_types.UninitialisedField(self, 'RptOrErr', IntraBalanceOrOperationalError12Choice, False)
 
 	@RptOrErr.deleter
 	def RptOrErr(self):
 		del self._RptOrErr
-		self._RptOrErr = None
+		self._RptOrErr = base_types.UninitialisedField(self, 'RptOrErr', IntraBalanceOrOperationalError12Choice, False)
 
 	@property
 	def SplmtryData(self):
@@ -69,12 +69,12 @@ class IntraBalanceMovementModificationReportV02(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Id', type=DocumentIdentification51, min=0, max=1, mutex_group=None, array=False),

@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._BaseOneRate import BaseOneRate
-from ._DepositType1Code import DepositType1Code
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
-from ._PercentageRate import PercentageRate
+from . import ActiveCurrencyAndAmount
+from . import BaseOneRate
+from . import DepositType1Code
+from . import ISODate
+from . import Max35Text
+from . import PercentageRate
 
 class CashCollateral4(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class CashCollateral4(base_types._BaseFieldType):
 
 	@AsstNb.setter
 	def AsstNb(self, value):
-		self._AsstNb = value if type(value) != base_types.auto else self.make_default("AsstNb")
+		self._AsstNb = value if value is not None else base_types.UninitialisedField(self, 'AsstNb', Max35Text, False)
 
 	@AsstNb.deleter
 	def AsstNb(self):
 		del self._AsstNb
-		self._AsstNb = None
+		self._AsstNb = base_types.UninitialisedField(self, 'AsstNb', Max35Text, False)
 
 	@property
 	def BlckdAmt(self):
@@ -31,12 +31,12 @@ class CashCollateral4(base_types._BaseFieldType):
 
 	@BlckdAmt.setter
 	def BlckdAmt(self, value):
-		self._BlckdAmt = value if type(value) != base_types.auto else self.make_default("BlckdAmt")
+		self._BlckdAmt = value if value is not None else base_types.UninitialisedField(self, 'BlckdAmt', ActiveCurrencyAndAmount, False)
 
 	@BlckdAmt.deleter
 	def BlckdAmt(self):
 		del self._BlckdAmt
-		self._BlckdAmt = None
+		self._BlckdAmt = base_types.UninitialisedField(self, 'BlckdAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def CollVal(self):
@@ -44,12 +44,12 @@ class CashCollateral4(base_types._BaseFieldType):
 
 	@CollVal.setter
 	def CollVal(self, value):
-		self._CollVal = value if type(value) != base_types.auto else self.make_default("CollVal")
+		self._CollVal = value if value is not None else base_types.UninitialisedField(self, 'CollVal', ActiveCurrencyAndAmount, False)
 
 	@CollVal.deleter
 	def CollVal(self):
 		del self._CollVal
-		self._CollVal = None
+		self._CollVal = base_types.UninitialisedField(self, 'CollVal', ActiveCurrencyAndAmount, False)
 
 	@property
 	def DpstAmt(self):
@@ -57,12 +57,12 @@ class CashCollateral4(base_types._BaseFieldType):
 
 	@DpstAmt.setter
 	def DpstAmt(self, value):
-		self._DpstAmt = value if type(value) != base_types.auto else self.make_default("DpstAmt")
+		self._DpstAmt = value if value is not None else base_types.UninitialisedField(self, 'DpstAmt', ActiveCurrencyAndAmount, False)
 
 	@DpstAmt.deleter
 	def DpstAmt(self):
 		del self._DpstAmt
-		self._DpstAmt = None
+		self._DpstAmt = base_types.UninitialisedField(self, 'DpstAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def DpstTp(self):
@@ -70,12 +70,12 @@ class CashCollateral4(base_types._BaseFieldType):
 
 	@DpstTp.setter
 	def DpstTp(self, value):
-		self._DpstTp = value if type(value) != base_types.auto else self.make_default("DpstTp")
+		self._DpstTp = value if value is not None else base_types.UninitialisedField(self, 'DpstTp', DepositType1Code, False)
 
 	@DpstTp.deleter
 	def DpstTp(self):
 		del self._DpstTp
-		self._DpstTp = None
+		self._DpstTp = base_types.UninitialisedField(self, 'DpstTp', DepositType1Code, False)
 
 	@property
 	def Hrcut(self):
@@ -83,12 +83,12 @@ class CashCollateral4(base_types._BaseFieldType):
 
 	@Hrcut.setter
 	def Hrcut(self, value):
-		self._Hrcut = value if type(value) != base_types.auto else self.make_default("Hrcut")
+		self._Hrcut = value if value is not None else base_types.UninitialisedField(self, 'Hrcut', PercentageRate, False)
 
 	@Hrcut.deleter
 	def Hrcut(self):
 		del self._Hrcut
-		self._Hrcut = None
+		self._Hrcut = base_types.UninitialisedField(self, 'Hrcut', PercentageRate, False)
 
 	@property
 	def MtrtyDt(self):
@@ -96,12 +96,12 @@ class CashCollateral4(base_types._BaseFieldType):
 
 	@MtrtyDt.setter
 	def MtrtyDt(self, value):
-		self._MtrtyDt = value if type(value) != base_types.auto else self.make_default("MtrtyDt")
+		self._MtrtyDt = value if value is not None else base_types.UninitialisedField(self, 'MtrtyDt', ISODate, False)
 
 	@MtrtyDt.deleter
 	def MtrtyDt(self):
 		del self._MtrtyDt
-		self._MtrtyDt = None
+		self._MtrtyDt = base_types.UninitialisedField(self, 'MtrtyDt', ISODate, False)
 
 	@property
 	def ValDt(self):
@@ -109,12 +109,12 @@ class CashCollateral4(base_types._BaseFieldType):
 
 	@ValDt.setter
 	def ValDt(self, value):
-		self._ValDt = value if type(value) != base_types.auto else self.make_default("ValDt")
+		self._ValDt = value if value is not None else base_types.UninitialisedField(self, 'ValDt', ISODate, False)
 
 	@ValDt.deleter
 	def ValDt(self):
 		del self._ValDt
-		self._ValDt = None
+		self._ValDt = base_types.UninitialisedField(self, 'ValDt', ISODate, False)
 
 	@property
 	def XchgRate(self):
@@ -122,12 +122,12 @@ class CashCollateral4(base_types._BaseFieldType):
 
 	@XchgRate.setter
 	def XchgRate(self, value):
-		self._XchgRate = value if type(value) != base_types.auto else self.make_default("XchgRate")
+		self._XchgRate = value if value is not None else base_types.UninitialisedField(self, 'XchgRate', BaseOneRate, False)
 
 	@XchgRate.deleter
 	def XchgRate(self):
 		del self._XchgRate
-		self._XchgRate = None
+		self._XchgRate = base_types.UninitialisedField(self, 'XchgRate', BaseOneRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AsstNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActivityReportItems3 import ActivityReportItems3
-from ._MessageIdentification1 import MessageIdentification1
+from . import ActivityReportItems3
+from . import MessageIdentification1
 
 class ActivityReportV04(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ActivityReportV04(base_types._BaseFieldType):
 
 	@RltdMsgRef.setter
 	def RltdMsgRef(self, value):
-		self._RltdMsgRef = value if type(value) != base_types.auto else self.make_default("RltdMsgRef")
+		self._RltdMsgRef = value if value is not None else base_types.UninitialisedField(self, 'RltdMsgRef', MessageIdentification1, False)
 
 	@RltdMsgRef.deleter
 	def RltdMsgRef(self):
 		del self._RltdMsgRef
-		self._RltdMsgRef = None
+		self._RltdMsgRef = base_types.UninitialisedField(self, 'RltdMsgRef', MessageIdentification1, False)
 
 	@property
 	def Rpt(self):
@@ -27,12 +27,12 @@ class ActivityReportV04(base_types._BaseFieldType):
 
 	@Rpt.setter
 	def Rpt(self, value):
-		self._Rpt = value if type(value) != base_types.auto else self.make_default("Rpt")
+		self._Rpt = value if value is not None else base_types.UninitialisedField(self, 'Rpt', ActivityReportItems3, True)
 
 	@Rpt.deleter
 	def Rpt(self):
 		del self._Rpt
-		self._Rpt = None
+		self._Rpt = base_types.UninitialisedField(self, 'Rpt', ActivityReportItems3, True)
 
 	@property
 	def RptId(self):
@@ -40,12 +40,12 @@ class ActivityReportV04(base_types._BaseFieldType):
 
 	@RptId.setter
 	def RptId(self, value):
-		self._RptId = value if type(value) != base_types.auto else self.make_default("RptId")
+		self._RptId = value if value is not None else base_types.UninitialisedField(self, 'RptId', MessageIdentification1, False)
 
 	@RptId.deleter
 	def RptId(self):
 		del self._RptId
-		self._RptId = None
+		self._RptId = base_types.UninitialisedField(self, 'RptId', MessageIdentification1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RltdMsgRef', type=MessageIdentification1, min=0, max=1, mutex_group=None, array=False),

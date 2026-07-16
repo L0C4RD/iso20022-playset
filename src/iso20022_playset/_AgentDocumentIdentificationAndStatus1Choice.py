@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AgentNotificationCancellationIdentificationAndStatus1 import AgentNotificationCancellationIdentificationAndStatus1
-from ._AgentNotificationIdentificationAndStatus1 import AgentNotificationIdentificationAndStatus1
+from . import AgentNotificationCancellationIdentificationAndStatus1
+from . import AgentNotificationIdentificationAndStatus1
 
 class AgentDocumentIdentificationAndStatus1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AgentDocumentIdentificationAndStatus1Choice(base_types._BaseFieldType):
 
 	@AgtCANtfctnAdvcIdAndSts.setter
 	def AgtCANtfctnAdvcIdAndSts(self, value):
-		self._AgtCANtfctnAdvcIdAndSts = value if type(value) != base_types.auto else self.make_default("AgtCANtfctnAdvcIdAndSts")
+		self._AgtCANtfctnAdvcIdAndSts = value if value is not None else base_types.UninitialisedField(self, 'AgtCANtfctnAdvcIdAndSts', AgentNotificationIdentificationAndStatus1, False)
 
 	@AgtCANtfctnAdvcIdAndSts.deleter
 	def AgtCANtfctnAdvcIdAndSts(self):
 		del self._AgtCANtfctnAdvcIdAndSts
-		self._AgtCANtfctnAdvcIdAndSts = None
+		self._AgtCANtfctnAdvcIdAndSts = base_types.UninitialisedField(self, 'AgtCANtfctnAdvcIdAndSts', AgentNotificationIdentificationAndStatus1, False)
 
 	@property
 	def AgtCANtfctnCxlReqIdAndSts(self):
@@ -27,12 +27,12 @@ class AgentDocumentIdentificationAndStatus1Choice(base_types._BaseFieldType):
 
 	@AgtCANtfctnCxlReqIdAndSts.setter
 	def AgtCANtfctnCxlReqIdAndSts(self, value):
-		self._AgtCANtfctnCxlReqIdAndSts = value if type(value) != base_types.auto else self.make_default("AgtCANtfctnCxlReqIdAndSts")
+		self._AgtCANtfctnCxlReqIdAndSts = value if value is not None else base_types.UninitialisedField(self, 'AgtCANtfctnCxlReqIdAndSts', AgentNotificationCancellationIdentificationAndStatus1, False)
 
 	@AgtCANtfctnCxlReqIdAndSts.deleter
 	def AgtCANtfctnCxlReqIdAndSts(self):
 		del self._AgtCANtfctnCxlReqIdAndSts
-		self._AgtCANtfctnCxlReqIdAndSts = None
+		self._AgtCANtfctnCxlReqIdAndSts = base_types.UninitialisedField(self, 'AgtCANtfctnCxlReqIdAndSts', AgentNotificationCancellationIdentificationAndStatus1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AgtCANtfctnAdvcIdAndSts', type=AgentNotificationIdentificationAndStatus1, min=0, max=1, mutex_group=1, array=False),

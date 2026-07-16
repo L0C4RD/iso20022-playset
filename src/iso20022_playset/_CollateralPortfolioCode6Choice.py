@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MarginPortfolio4 import MarginPortfolio4
-from ._PortfolioCode3Choice import PortfolioCode3Choice
+from . import MarginPortfolio4
+from . import PortfolioCode3Choice
 
 class CollateralPortfolioCode6Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CollateralPortfolioCode6Choice(base_types._BaseFieldType):
 
 	@MrgnPrtflCd.setter
 	def MrgnPrtflCd(self, value):
-		self._MrgnPrtflCd = value if type(value) != base_types.auto else self.make_default("MrgnPrtflCd")
+		self._MrgnPrtflCd = value if value is not None else base_types.UninitialisedField(self, 'MrgnPrtflCd', MarginPortfolio4, False)
 
 	@MrgnPrtflCd.deleter
 	def MrgnPrtflCd(self):
 		del self._MrgnPrtflCd
-		self._MrgnPrtflCd = None
+		self._MrgnPrtflCd = base_types.UninitialisedField(self, 'MrgnPrtflCd', MarginPortfolio4, False)
 
 	@property
 	def Prtfl(self):
@@ -27,12 +27,12 @@ class CollateralPortfolioCode6Choice(base_types._BaseFieldType):
 
 	@Prtfl.setter
 	def Prtfl(self, value):
-		self._Prtfl = value if type(value) != base_types.auto else self.make_default("Prtfl")
+		self._Prtfl = value if value is not None else base_types.UninitialisedField(self, 'Prtfl', PortfolioCode3Choice, False)
 
 	@Prtfl.deleter
 	def Prtfl(self):
 		del self._Prtfl
-		self._Prtfl = None
+		self._Prtfl = base_types.UninitialisedField(self, 'Prtfl', PortfolioCode3Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MrgnPrtflCd', type=MarginPortfolio4, min=0, max=1, mutex_group=1, array=False),

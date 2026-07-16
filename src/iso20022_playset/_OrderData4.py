@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ExecutingParty2Choice import ExecutingParty2Choice
-from ._LEIIdentifier import LEIIdentifier
-from ._OrderClassification2 import OrderClassification2
-from ._OrderInstructionData2 import OrderInstructionData2
-from ._OrderPriceData2 import OrderPriceData2
-from ._PersonOrOrganisation4Choice import PersonOrOrganisation4Choice
-from ._RegulatoryTradingCapacity1Code import RegulatoryTradingCapacity1Code
-from ._TransactionData3 import TransactionData3
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ExecutingParty2Choice
+from . import LEIIdentifier
+from . import OrderClassification2
+from . import OrderInstructionData2
+from . import OrderPriceData2
+from . import PersonOrOrganisation4Choice
+from . import RegulatoryTradingCapacity1Code
+from . import TransactionData3
+from . import TrueFalseIndicator
 
 class OrderData4(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class OrderData4(base_types._BaseFieldType):
 
 	@ClntId.setter
 	def ClntId(self, value):
-		self._ClntId = value if type(value) != base_types.auto else self.make_default("ClntId")
+		self._ClntId = value if value is not None else base_types.UninitialisedField(self, 'ClntId', PersonOrOrganisation4Choice, False)
 
 	@ClntId.deleter
 	def ClntId(self):
 		del self._ClntId
-		self._ClntId = None
+		self._ClntId = base_types.UninitialisedField(self, 'ClntId', PersonOrOrganisation4Choice, False)
 
 	@property
 	def DrctElctrncAccs(self):
@@ -34,12 +34,12 @@ class OrderData4(base_types._BaseFieldType):
 
 	@DrctElctrncAccs.setter
 	def DrctElctrncAccs(self, value):
-		self._DrctElctrncAccs = value if type(value) != base_types.auto else self.make_default("DrctElctrncAccs")
+		self._DrctElctrncAccs = value if value is not None else base_types.UninitialisedField(self, 'DrctElctrncAccs', TrueFalseIndicator, False)
 
 	@DrctElctrncAccs.deleter
 	def DrctElctrncAccs(self):
 		del self._DrctElctrncAccs
-		self._DrctElctrncAccs = None
+		self._DrctElctrncAccs = base_types.UninitialisedField(self, 'DrctElctrncAccs', TrueFalseIndicator, False)
 
 	@property
 	def ExctgPrsn(self):
@@ -47,12 +47,12 @@ class OrderData4(base_types._BaseFieldType):
 
 	@ExctgPrsn.setter
 	def ExctgPrsn(self, value):
-		self._ExctgPrsn = value if type(value) != base_types.auto else self.make_default("ExctgPrsn")
+		self._ExctgPrsn = value if value is not None else base_types.UninitialisedField(self, 'ExctgPrsn', ExecutingParty2Choice, False)
 
 	@ExctgPrsn.deleter
 	def ExctgPrsn(self):
 		del self._ExctgPrsn
-		self._ExctgPrsn = None
+		self._ExctgPrsn = base_types.UninitialisedField(self, 'ExctgPrsn', ExecutingParty2Choice, False)
 
 	@property
 	def InstrData(self):
@@ -60,12 +60,12 @@ class OrderData4(base_types._BaseFieldType):
 
 	@InstrData.setter
 	def InstrData(self, value):
-		self._InstrData = value if type(value) != base_types.auto else self.make_default("InstrData")
+		self._InstrData = value if value is not None else base_types.UninitialisedField(self, 'InstrData', OrderInstructionData2, False)
 
 	@InstrData.deleter
 	def InstrData(self):
 		del self._InstrData
-		self._InstrData = None
+		self._InstrData = base_types.UninitialisedField(self, 'InstrData', OrderInstructionData2, False)
 
 	@property
 	def InvstmtDcsnPrsn(self):
@@ -73,12 +73,12 @@ class OrderData4(base_types._BaseFieldType):
 
 	@InvstmtDcsnPrsn.setter
 	def InvstmtDcsnPrsn(self, value):
-		self._InvstmtDcsnPrsn = value if type(value) != base_types.auto else self.make_default("InvstmtDcsnPrsn")
+		self._InvstmtDcsnPrsn = value if value is not None else base_types.UninitialisedField(self, 'InvstmtDcsnPrsn', ExecutingParty2Choice, False)
 
 	@InvstmtDcsnPrsn.deleter
 	def InvstmtDcsnPrsn(self):
 		del self._InvstmtDcsnPrsn
-		self._InvstmtDcsnPrsn = None
+		self._InvstmtDcsnPrsn = base_types.UninitialisedField(self, 'InvstmtDcsnPrsn', ExecutingParty2Choice, False)
 
 	@property
 	def LqdtyPrvsnActvty(self):
@@ -86,12 +86,12 @@ class OrderData4(base_types._BaseFieldType):
 
 	@LqdtyPrvsnActvty.setter
 	def LqdtyPrvsnActvty(self, value):
-		self._LqdtyPrvsnActvty = value if type(value) != base_types.auto else self.make_default("LqdtyPrvsnActvty")
+		self._LqdtyPrvsnActvty = value if value is not None else base_types.UninitialisedField(self, 'LqdtyPrvsnActvty', TrueFalseIndicator, False)
 
 	@LqdtyPrvsnActvty.deleter
 	def LqdtyPrvsnActvty(self):
 		del self._LqdtyPrvsnActvty
-		self._LqdtyPrvsnActvty = None
+		self._LqdtyPrvsnActvty = base_types.UninitialisedField(self, 'LqdtyPrvsnActvty', TrueFalseIndicator, False)
 
 	@property
 	def NonExctgBrkr(self):
@@ -99,12 +99,12 @@ class OrderData4(base_types._BaseFieldType):
 
 	@NonExctgBrkr.setter
 	def NonExctgBrkr(self, value):
-		self._NonExctgBrkr = value if type(value) != base_types.auto else self.make_default("NonExctgBrkr")
+		self._NonExctgBrkr = value if value is not None else base_types.UninitialisedField(self, 'NonExctgBrkr', LEIIdentifier, False)
 
 	@NonExctgBrkr.deleter
 	def NonExctgBrkr(self):
 		del self._NonExctgBrkr
-		self._NonExctgBrkr = None
+		self._NonExctgBrkr = base_types.UninitialisedField(self, 'NonExctgBrkr', LEIIdentifier, False)
 
 	@property
 	def OrdrClssfctn(self):
@@ -112,12 +112,12 @@ class OrderData4(base_types._BaseFieldType):
 
 	@OrdrClssfctn.setter
 	def OrdrClssfctn(self, value):
-		self._OrdrClssfctn = value if type(value) != base_types.auto else self.make_default("OrdrClssfctn")
+		self._OrdrClssfctn = value if value is not None else base_types.UninitialisedField(self, 'OrdrClssfctn', OrderClassification2, False)
 
 	@OrdrClssfctn.deleter
 	def OrdrClssfctn(self):
 		del self._OrdrClssfctn
-		self._OrdrClssfctn = None
+		self._OrdrClssfctn = base_types.UninitialisedField(self, 'OrdrClssfctn', OrderClassification2, False)
 
 	@property
 	def OrdrPrics(self):
@@ -125,12 +125,12 @@ class OrderData4(base_types._BaseFieldType):
 
 	@OrdrPrics.setter
 	def OrdrPrics(self, value):
-		self._OrdrPrics = value if type(value) != base_types.auto else self.make_default("OrdrPrics")
+		self._OrdrPrics = value if value is not None else base_types.UninitialisedField(self, 'OrdrPrics', OrderPriceData2, False)
 
 	@OrdrPrics.deleter
 	def OrdrPrics(self):
 		del self._OrdrPrics
-		self._OrdrPrics = None
+		self._OrdrPrics = base_types.UninitialisedField(self, 'OrdrPrics', OrderPriceData2, False)
 
 	@property
 	def SubmitgNtty(self):
@@ -138,12 +138,12 @@ class OrderData4(base_types._BaseFieldType):
 
 	@SubmitgNtty.setter
 	def SubmitgNtty(self, value):
-		self._SubmitgNtty = value if type(value) != base_types.auto else self.make_default("SubmitgNtty")
+		self._SubmitgNtty = value if value is not None else base_types.UninitialisedField(self, 'SubmitgNtty', LEIIdentifier, False)
 
 	@SubmitgNtty.deleter
 	def SubmitgNtty(self):
 		del self._SubmitgNtty
-		self._SubmitgNtty = None
+		self._SubmitgNtty = base_types.UninitialisedField(self, 'SubmitgNtty', LEIIdentifier, False)
 
 	@property
 	def TradgCpcty(self):
@@ -151,12 +151,12 @@ class OrderData4(base_types._BaseFieldType):
 
 	@TradgCpcty.setter
 	def TradgCpcty(self, value):
-		self._TradgCpcty = value if type(value) != base_types.auto else self.make_default("TradgCpcty")
+		self._TradgCpcty = value if value is not None else base_types.UninitialisedField(self, 'TradgCpcty', RegulatoryTradingCapacity1Code, False)
 
 	@TradgCpcty.deleter
 	def TradgCpcty(self):
 		del self._TradgCpcty
-		self._TradgCpcty = None
+		self._TradgCpcty = base_types.UninitialisedField(self, 'TradgCpcty', RegulatoryTradingCapacity1Code, False)
 
 	@property
 	def TxData(self):
@@ -164,12 +164,12 @@ class OrderData4(base_types._BaseFieldType):
 
 	@TxData.setter
 	def TxData(self, value):
-		self._TxData = value if type(value) != base_types.auto else self.make_default("TxData")
+		self._TxData = value if value is not None else base_types.UninitialisedField(self, 'TxData', TransactionData3, False)
 
 	@TxData.deleter
 	def TxData(self):
 		del self._TxData
-		self._TxData = None
+		self._TxData = base_types.UninitialisedField(self, 'TxData', TransactionData3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClntId', type=PersonOrOrganisation4Choice, min=0, max=1, mutex_group=None, array=False),

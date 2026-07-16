@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._DerivativePartyIdentification1Choice import DerivativePartyIdentification1Choice
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ActiveOrHistoricCurrencyCode
+from . import DerivativePartyIdentification1Choice
+from . import TrueFalseIndicator
 
 class CreditDefaultSwapSingleName2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CreditDefaultSwapSingleName2(base_types._BaseFieldType):
 
 	@NtnlCcy.setter
 	def NtnlCcy(self, value):
-		self._NtnlCcy = value if type(value) != base_types.auto else self.make_default("NtnlCcy")
+		self._NtnlCcy = value if value is not None else base_types.UninitialisedField(self, 'NtnlCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@NtnlCcy.deleter
 	def NtnlCcy(self):
 		del self._NtnlCcy
-		self._NtnlCcy = None
+		self._NtnlCcy = base_types.UninitialisedField(self, 'NtnlCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def RefPty(self):
@@ -28,12 +28,12 @@ class CreditDefaultSwapSingleName2(base_types._BaseFieldType):
 
 	@RefPty.setter
 	def RefPty(self, value):
-		self._RefPty = value if type(value) != base_types.auto else self.make_default("RefPty")
+		self._RefPty = value if value is not None else base_types.UninitialisedField(self, 'RefPty', DerivativePartyIdentification1Choice, False)
 
 	@RefPty.deleter
 	def RefPty(self):
 		del self._RefPty
-		self._RefPty = None
+		self._RefPty = base_types.UninitialisedField(self, 'RefPty', DerivativePartyIdentification1Choice, False)
 
 	@property
 	def SvrgnIssr(self):
@@ -41,12 +41,12 @@ class CreditDefaultSwapSingleName2(base_types._BaseFieldType):
 
 	@SvrgnIssr.setter
 	def SvrgnIssr(self, value):
-		self._SvrgnIssr = value if type(value) != base_types.auto else self.make_default("SvrgnIssr")
+		self._SvrgnIssr = value if value is not None else base_types.UninitialisedField(self, 'SvrgnIssr', TrueFalseIndicator, False)
 
 	@SvrgnIssr.deleter
 	def SvrgnIssr(self):
 		del self._SvrgnIssr
-		self._SvrgnIssr = None
+		self._SvrgnIssr = base_types.UninitialisedField(self, 'SvrgnIssr', TrueFalseIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NtnlCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),

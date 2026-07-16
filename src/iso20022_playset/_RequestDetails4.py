@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._ReportParameter1 import ReportParameter1
+from . import Max35Text
+from . import ReportParameter1
 
 class RequestDetails4(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class RequestDetails4(base_types._BaseFieldType):
 
 	@Key.setter
 	def Key(self, value):
-		self._Key = value if type(value) != base_types.auto else self.make_default("Key")
+		self._Key = value if value is not None else base_types.UninitialisedField(self, 'Key', Max35Text, False)
 
 	@Key.deleter
 	def Key(self):
 		del self._Key
-		self._Key = None
+		self._Key = base_types.UninitialisedField(self, 'Key', Max35Text, False)
 
 	@property
 	def RptData(self):
@@ -27,12 +27,12 @@ class RequestDetails4(base_types._BaseFieldType):
 
 	@RptData.setter
 	def RptData(self, value):
-		self._RptData = value if type(value) != base_types.auto else self.make_default("RptData")
+		self._RptData = value if value is not None else base_types.UninitialisedField(self, 'RptData', ReportParameter1, True)
 
 	@RptData.deleter
 	def RptData(self):
 		del self._RptData
-		self._RptData = None
+		self._RptData = base_types.UninitialisedField(self, 'RptData', ReportParameter1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Key', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

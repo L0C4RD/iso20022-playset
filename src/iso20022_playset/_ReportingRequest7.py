@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BalanceType13 import BalanceType13
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CashAccount40 import CashAccount40
-from ._Max35Text import Max35Text
-from ._Party50Choice import Party50Choice
-from ._ReportingPeriod5 import ReportingPeriod5
-from ._SequenceRange1Choice import SequenceRange1Choice
-from ._TransactionType2 import TransactionType2
+from . import BalanceType13
+from . import BranchAndFinancialInstitutionIdentification8
+from . import CashAccount40
+from . import Max35Text
+from . import Party50Choice
+from . import ReportingPeriod5
+from . import SequenceRange1Choice
+from . import TransactionType2
 
 class ReportingRequest7(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class ReportingRequest7(base_types._BaseFieldType):
 
 	@Acct.setter
 	def Acct(self, value):
-		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
+		self._Acct = value if value is not None else base_types.UninitialisedField(self, 'Acct', CashAccount40, False)
 
 	@Acct.deleter
 	def Acct(self):
 		del self._Acct
-		self._Acct = None
+		self._Acct = base_types.UninitialisedField(self, 'Acct', CashAccount40, False)
 
 	@property
 	def AcctOwnr(self):
@@ -33,12 +33,12 @@ class ReportingRequest7(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', Party50Choice, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', Party50Choice, False)
 
 	@property
 	def AcctSvcr(self):
@@ -46,12 +46,12 @@ class ReportingRequest7(base_types._BaseFieldType):
 
 	@AcctSvcr.setter
 	def AcctSvcr(self, value):
-		self._AcctSvcr = value if type(value) != base_types.auto else self.make_default("AcctSvcr")
+		self._AcctSvcr = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@AcctSvcr.deleter
 	def AcctSvcr(self):
 		del self._AcctSvcr
-		self._AcctSvcr = None
+		self._AcctSvcr = base_types.UninitialisedField(self, 'AcctSvcr', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def Id(self):
@@ -59,12 +59,12 @@ class ReportingRequest7(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def ReqdBalTp(self):
@@ -72,12 +72,12 @@ class ReportingRequest7(base_types._BaseFieldType):
 
 	@ReqdBalTp.setter
 	def ReqdBalTp(self, value):
-		self._ReqdBalTp = value if type(value) != base_types.auto else self.make_default("ReqdBalTp")
+		self._ReqdBalTp = value if value is not None else base_types.UninitialisedField(self, 'ReqdBalTp', BalanceType13, True)
 
 	@ReqdBalTp.deleter
 	def ReqdBalTp(self):
 		del self._ReqdBalTp
-		self._ReqdBalTp = None
+		self._ReqdBalTp = base_types.UninitialisedField(self, 'ReqdBalTp', BalanceType13, True)
 
 	@property
 	def ReqdMsgNmId(self):
@@ -85,12 +85,12 @@ class ReportingRequest7(base_types._BaseFieldType):
 
 	@ReqdMsgNmId.setter
 	def ReqdMsgNmId(self, value):
-		self._ReqdMsgNmId = value if type(value) != base_types.auto else self.make_default("ReqdMsgNmId")
+		self._ReqdMsgNmId = value if value is not None else base_types.UninitialisedField(self, 'ReqdMsgNmId', Max35Text, False)
 
 	@ReqdMsgNmId.deleter
 	def ReqdMsgNmId(self):
 		del self._ReqdMsgNmId
-		self._ReqdMsgNmId = None
+		self._ReqdMsgNmId = base_types.UninitialisedField(self, 'ReqdMsgNmId', Max35Text, False)
 
 	@property
 	def ReqdTxTp(self):
@@ -98,12 +98,12 @@ class ReportingRequest7(base_types._BaseFieldType):
 
 	@ReqdTxTp.setter
 	def ReqdTxTp(self, value):
-		self._ReqdTxTp = value if type(value) != base_types.auto else self.make_default("ReqdTxTp")
+		self._ReqdTxTp = value if value is not None else base_types.UninitialisedField(self, 'ReqdTxTp', TransactionType2, False)
 
 	@ReqdTxTp.deleter
 	def ReqdTxTp(self):
 		del self._ReqdTxTp
-		self._ReqdTxTp = None
+		self._ReqdTxTp = base_types.UninitialisedField(self, 'ReqdTxTp', TransactionType2, False)
 
 	@property
 	def RptgPrd(self):
@@ -111,12 +111,12 @@ class ReportingRequest7(base_types._BaseFieldType):
 
 	@RptgPrd.setter
 	def RptgPrd(self, value):
-		self._RptgPrd = value if type(value) != base_types.auto else self.make_default("RptgPrd")
+		self._RptgPrd = value if value is not None else base_types.UninitialisedField(self, 'RptgPrd', ReportingPeriod5, False)
 
 	@RptgPrd.deleter
 	def RptgPrd(self):
 		del self._RptgPrd
-		self._RptgPrd = None
+		self._RptgPrd = base_types.UninitialisedField(self, 'RptgPrd', ReportingPeriod5, False)
 
 	@property
 	def RptgSeq(self):
@@ -124,12 +124,12 @@ class ReportingRequest7(base_types._BaseFieldType):
 
 	@RptgSeq.setter
 	def RptgSeq(self, value):
-		self._RptgSeq = value if type(value) != base_types.auto else self.make_default("RptgSeq")
+		self._RptgSeq = value if value is not None else base_types.UninitialisedField(self, 'RptgSeq', SequenceRange1Choice, False)
 
 	@RptgSeq.deleter
 	def RptgSeq(self):
 		del self._RptgSeq
-		self._RptgSeq = None
+		self._RptgSeq = base_types.UninitialisedField(self, 'RptgSeq', SequenceRange1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),

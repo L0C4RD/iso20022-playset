@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._ISODate import ISODate
+from . import DateAndDateTime2Choice
+from . import ISODate
 
 class ExpectedExecution6(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ExpectedExecution6(base_types._BaseFieldType):
 
 	@XpctdCshSttlmDt.setter
 	def XpctdCshSttlmDt(self, value):
-		self._XpctdCshSttlmDt = value if type(value) != base_types.auto else self.make_default("XpctdCshSttlmDt")
+		self._XpctdCshSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'XpctdCshSttlmDt', ISODate, False)
 
 	@XpctdCshSttlmDt.deleter
 	def XpctdCshSttlmDt(self):
 		del self._XpctdCshSttlmDt
-		self._XpctdCshSttlmDt = None
+		self._XpctdCshSttlmDt = base_types.UninitialisedField(self, 'XpctdCshSttlmDt', ISODate, False)
 
 	@property
 	def XpctdTradDtTm(self):
@@ -27,12 +27,12 @@ class ExpectedExecution6(base_types._BaseFieldType):
 
 	@XpctdTradDtTm.setter
 	def XpctdTradDtTm(self, value):
-		self._XpctdTradDtTm = value if type(value) != base_types.auto else self.make_default("XpctdTradDtTm")
+		self._XpctdTradDtTm = value if value is not None else base_types.UninitialisedField(self, 'XpctdTradDtTm', DateAndDateTime2Choice, False)
 
 	@XpctdTradDtTm.deleter
 	def XpctdTradDtTm(self):
 		del self._XpctdTradDtTm
-		self._XpctdTradDtTm = None
+		self._XpctdTradDtTm = base_types.UninitialisedField(self, 'XpctdTradDtTm', DateAndDateTime2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='XpctdCshSttlmDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),

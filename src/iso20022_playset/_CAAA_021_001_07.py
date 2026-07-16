@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._TransactionAdviceResponseV07 import TransactionAdviceResponseV07
+from . import TransactionAdviceResponseV07
 
 class CAAA_021_001_07():
 
@@ -18,12 +18,12 @@ class CAAA_021_001_07():
 
 		@TxAdvcRspn.setter
 		def TxAdvcRspn(self, value):
-			self._TxAdvcRspn = value if type(value) != base_types.auto else self.make_default("TxAdvcRspn")
+			self._TxAdvcRspn = value if value is not None else base_types.UninitialisedField(self, 'TxAdvcRspn', TransactionAdviceResponseV07, False)
 
 		@TxAdvcRspn.deleter
 		def TxAdvcRspn(self):
 			del self._TxAdvcRspn
-			self._TxAdvcRspn = None
+			self._TxAdvcRspn = base_types.UninitialisedField(self, 'TxAdvcRspn', TransactionAdviceResponseV07, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='TxAdvcRspn', type=TransactionAdviceResponseV07, min=1, max=1, mutex_group=None, array=False),

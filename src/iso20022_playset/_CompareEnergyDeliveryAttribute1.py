@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CompareAmountAndDirection3 import CompareAmountAndDirection3
-from ._CompareDatePeriod2 import CompareDatePeriod2
-from ._CompareDurationType1 import CompareDurationType1
-from ._CompareEnergyQuantityUnit1 import CompareEnergyQuantityUnit1
-from ._CompareLongFraction19DecimalNumber1 import CompareLongFraction19DecimalNumber1
-from ._CompareTimePeriod2 import CompareTimePeriod2
-from ._CompareWeekDay1 import CompareWeekDay1
+from . import CompareAmountAndDirection3
+from . import CompareDatePeriod2
+from . import CompareDurationType1
+from . import CompareEnergyQuantityUnit1
+from . import CompareLongFraction19DecimalNumber1
+from . import CompareTimePeriod2
+from . import CompareWeekDay1
 
 class CompareEnergyDeliveryAttribute1(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class CompareEnergyDeliveryAttribute1(base_types._BaseFieldType):
 
 	@NrgyDlvryCpcty.setter
 	def NrgyDlvryCpcty(self, value):
-		self._NrgyDlvryCpcty = value if type(value) != base_types.auto else self.make_default("NrgyDlvryCpcty")
+		self._NrgyDlvryCpcty = value if value is not None else base_types.UninitialisedField(self, 'NrgyDlvryCpcty', CompareLongFraction19DecimalNumber1, False)
 
 	@NrgyDlvryCpcty.deleter
 	def NrgyDlvryCpcty(self):
 		del self._NrgyDlvryCpcty
-		self._NrgyDlvryCpcty = None
+		self._NrgyDlvryCpcty = base_types.UninitialisedField(self, 'NrgyDlvryCpcty', CompareLongFraction19DecimalNumber1, False)
 
 	@property
 	def NrgyDlvryIntrvl(self):
@@ -32,12 +32,12 @@ class CompareEnergyDeliveryAttribute1(base_types._BaseFieldType):
 
 	@NrgyDlvryIntrvl.setter
 	def NrgyDlvryIntrvl(self, value):
-		self._NrgyDlvryIntrvl = value if type(value) != base_types.auto else self.make_default("NrgyDlvryIntrvl")
+		self._NrgyDlvryIntrvl = value if value is not None else base_types.UninitialisedField(self, 'NrgyDlvryIntrvl', CompareTimePeriod2, True)
 
 	@NrgyDlvryIntrvl.deleter
 	def NrgyDlvryIntrvl(self):
 		del self._NrgyDlvryIntrvl
-		self._NrgyDlvryIntrvl = None
+		self._NrgyDlvryIntrvl = base_types.UninitialisedField(self, 'NrgyDlvryIntrvl', CompareTimePeriod2, True)
 
 	@property
 	def NrgyDrtn(self):
@@ -45,12 +45,12 @@ class CompareEnergyDeliveryAttribute1(base_types._BaseFieldType):
 
 	@NrgyDrtn.setter
 	def NrgyDrtn(self, value):
-		self._NrgyDrtn = value if type(value) != base_types.auto else self.make_default("NrgyDrtn")
+		self._NrgyDrtn = value if value is not None else base_types.UninitialisedField(self, 'NrgyDrtn', CompareDurationType1, False)
 
 	@NrgyDrtn.deleter
 	def NrgyDrtn(self):
 		del self._NrgyDrtn
-		self._NrgyDrtn = None
+		self._NrgyDrtn = base_types.UninitialisedField(self, 'NrgyDrtn', CompareDurationType1, False)
 
 	@property
 	def NrgyDt(self):
@@ -58,12 +58,12 @@ class CompareEnergyDeliveryAttribute1(base_types._BaseFieldType):
 
 	@NrgyDt.setter
 	def NrgyDt(self, value):
-		self._NrgyDt = value if type(value) != base_types.auto else self.make_default("NrgyDt")
+		self._NrgyDt = value if value is not None else base_types.UninitialisedField(self, 'NrgyDt', CompareDatePeriod2, False)
 
 	@NrgyDt.deleter
 	def NrgyDt(self):
 		del self._NrgyDt
-		self._NrgyDt = None
+		self._NrgyDt = base_types.UninitialisedField(self, 'NrgyDt', CompareDatePeriod2, False)
 
 	@property
 	def NrgyPricTmIntrvlQty(self):
@@ -71,12 +71,12 @@ class CompareEnergyDeliveryAttribute1(base_types._BaseFieldType):
 
 	@NrgyPricTmIntrvlQty.setter
 	def NrgyPricTmIntrvlQty(self, value):
-		self._NrgyPricTmIntrvlQty = value if type(value) != base_types.auto else self.make_default("NrgyPricTmIntrvlQty")
+		self._NrgyPricTmIntrvlQty = value if value is not None else base_types.UninitialisedField(self, 'NrgyPricTmIntrvlQty', CompareAmountAndDirection3, False)
 
 	@NrgyPricTmIntrvlQty.deleter
 	def NrgyPricTmIntrvlQty(self):
 		del self._NrgyPricTmIntrvlQty
-		self._NrgyPricTmIntrvlQty = None
+		self._NrgyPricTmIntrvlQty = base_types.UninitialisedField(self, 'NrgyPricTmIntrvlQty', CompareAmountAndDirection3, False)
 
 	@property
 	def NrgyQtyUnit(self):
@@ -84,12 +84,12 @@ class CompareEnergyDeliveryAttribute1(base_types._BaseFieldType):
 
 	@NrgyQtyUnit.setter
 	def NrgyQtyUnit(self, value):
-		self._NrgyQtyUnit = value if type(value) != base_types.auto else self.make_default("NrgyQtyUnit")
+		self._NrgyQtyUnit = value if value is not None else base_types.UninitialisedField(self, 'NrgyQtyUnit', CompareEnergyQuantityUnit1, False)
 
 	@NrgyQtyUnit.deleter
 	def NrgyQtyUnit(self):
 		del self._NrgyQtyUnit
-		self._NrgyQtyUnit = None
+		self._NrgyQtyUnit = base_types.UninitialisedField(self, 'NrgyQtyUnit', CompareEnergyQuantityUnit1, False)
 
 	@property
 	def NrgyWkDay(self):
@@ -97,12 +97,12 @@ class CompareEnergyDeliveryAttribute1(base_types._BaseFieldType):
 
 	@NrgyWkDay.setter
 	def NrgyWkDay(self, value):
-		self._NrgyWkDay = value if type(value) != base_types.auto else self.make_default("NrgyWkDay")
+		self._NrgyWkDay = value if value is not None else base_types.UninitialisedField(self, 'NrgyWkDay', CompareWeekDay1, True)
 
 	@NrgyWkDay.deleter
 	def NrgyWkDay(self):
 		del self._NrgyWkDay
-		self._NrgyWkDay = None
+		self._NrgyWkDay = base_types.UninitialisedField(self, 'NrgyWkDay', CompareWeekDay1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NrgyDlvryCpcty', type=CompareLongFraction19DecimalNumber1, min=0, max=1, mutex_group=None, array=False),

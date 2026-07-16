@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Max4000Text import Max4000Text
-from ._Max500Text import Max500Text
-from ._MessageError1Code import MessageError1Code
+from . import Max35Text
+from . import Max4000Text
+from . import Max500Text
+from . import MessageError1Code
 
 class ErrorDetails3(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ErrorDetails3(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
+		self._Cd = value if value is not None else base_types.UninitialisedField(self, 'Cd', Max35Text, False)
 
 	@Cd.deleter
 	def Cd(self):
 		del self._Cd
-		self._Cd = None
+		self._Cd = base_types.UninitialisedField(self, 'Cd', Max35Text, False)
 
 	@property
 	def DataElmtInErr(self):
@@ -29,12 +29,12 @@ class ErrorDetails3(base_types._BaseFieldType):
 
 	@DataElmtInErr.setter
 	def DataElmtInErr(self, value):
-		self._DataElmtInErr = value if type(value) != base_types.auto else self.make_default("DataElmtInErr")
+		self._DataElmtInErr = value if value is not None else base_types.UninitialisedField(self, 'DataElmtInErr', Max4000Text, True)
 
 	@DataElmtInErr.deleter
 	def DataElmtInErr(self):
 		del self._DataElmtInErr
-		self._DataElmtInErr = None
+		self._DataElmtInErr = base_types.UninitialisedField(self, 'DataElmtInErr', Max4000Text, True)
 
 	@property
 	def Desc(self):
@@ -42,12 +42,12 @@ class ErrorDetails3(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', Max500Text, False)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', Max500Text, False)
 
 	@property
 	def OthrTp(self):
@@ -55,12 +55,12 @@ class ErrorDetails3(base_types._BaseFieldType):
 
 	@OthrTp.setter
 	def OthrTp(self, value):
-		self._OthrTp = value if type(value) != base_types.auto else self.make_default("OthrTp")
+		self._OthrTp = value if value is not None else base_types.UninitialisedField(self, 'OthrTp', Max35Text, False)
 
 	@OthrTp.deleter
 	def OthrTp(self):
 		del self._OthrTp
-		self._OthrTp = None
+		self._OthrTp = base_types.UninitialisedField(self, 'OthrTp', Max35Text, False)
 
 	@property
 	def Tp(self):
@@ -68,12 +68,12 @@ class ErrorDetails3(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', MessageError1Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', MessageError1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cd', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

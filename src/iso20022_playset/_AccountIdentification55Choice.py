@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BBANIdentifier import BBANIdentifier
-from ._IBAN2007Identifier import IBAN2007Identifier
-from ._SimpleIdentificationInformation2 import SimpleIdentificationInformation2
-from ._UPICIdentifier import UPICIdentifier
+from . import BBANIdentifier
+from . import IBAN2007Identifier
+from . import SimpleIdentificationInformation2
+from . import UPICIdentifier
 
 class AccountIdentification55Choice(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class AccountIdentification55Choice(base_types._BaseFieldType):
 
 	@BBAN.setter
 	def BBAN(self, value):
-		self._BBAN = value if type(value) != base_types.auto else self.make_default("BBAN")
+		self._BBAN = value if value is not None else base_types.UninitialisedField(self, 'BBAN', BBANIdentifier, False)
 
 	@BBAN.deleter
 	def BBAN(self):
 		del self._BBAN
-		self._BBAN = None
+		self._BBAN = base_types.UninitialisedField(self, 'BBAN', BBANIdentifier, False)
 
 	@property
 	def IBAN(self):
@@ -29,12 +29,12 @@ class AccountIdentification55Choice(base_types._BaseFieldType):
 
 	@IBAN.setter
 	def IBAN(self, value):
-		self._IBAN = value if type(value) != base_types.auto else self.make_default("IBAN")
+		self._IBAN = value if value is not None else base_types.UninitialisedField(self, 'IBAN', IBAN2007Identifier, False)
 
 	@IBAN.deleter
 	def IBAN(self):
 		del self._IBAN
-		self._IBAN = None
+		self._IBAN = base_types.UninitialisedField(self, 'IBAN', IBAN2007Identifier, False)
 
 	@property
 	def PrtryAcct(self):
@@ -42,12 +42,12 @@ class AccountIdentification55Choice(base_types._BaseFieldType):
 
 	@PrtryAcct.setter
 	def PrtryAcct(self, value):
-		self._PrtryAcct = value if type(value) != base_types.auto else self.make_default("PrtryAcct")
+		self._PrtryAcct = value if value is not None else base_types.UninitialisedField(self, 'PrtryAcct', SimpleIdentificationInformation2, False)
 
 	@PrtryAcct.deleter
 	def PrtryAcct(self):
 		del self._PrtryAcct
-		self._PrtryAcct = None
+		self._PrtryAcct = base_types.UninitialisedField(self, 'PrtryAcct', SimpleIdentificationInformation2, False)
 
 	@property
 	def UPIC(self):
@@ -55,12 +55,12 @@ class AccountIdentification55Choice(base_types._BaseFieldType):
 
 	@UPIC.setter
 	def UPIC(self, value):
-		self._UPIC = value if type(value) != base_types.auto else self.make_default("UPIC")
+		self._UPIC = value if value is not None else base_types.UninitialisedField(self, 'UPIC', UPICIdentifier, False)
 
 	@UPIC.deleter
 	def UPIC(self):
 		del self._UPIC
-		self._UPIC = None
+		self._UPIC = base_types.UninitialisedField(self, 'UPIC', UPICIdentifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BBAN', type=BBANIdentifier, min=0, max=1, mutex_group=1, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MandateCopyRequestV04 import MandateCopyRequestV04
+from . import MandateCopyRequestV04
 
 class PAIN_017_001_04():
 
@@ -18,12 +18,12 @@ class PAIN_017_001_04():
 
 		@MndtCpyReq.setter
 		def MndtCpyReq(self, value):
-			self._MndtCpyReq = value if type(value) != base_types.auto else self.make_default("MndtCpyReq")
+			self._MndtCpyReq = value if value is not None else base_types.UninitialisedField(self, 'MndtCpyReq', MandateCopyRequestV04, False)
 
 		@MndtCpyReq.deleter
 		def MndtCpyReq(self):
 			del self._MndtCpyReq
-			self._MndtCpyReq = None
+			self._MndtCpyReq = base_types.UninitialisedField(self, 'MndtCpyReq', MandateCopyRequestV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='MndtCpyReq', type=MandateCopyRequestV04, min=1, max=1, mutex_group=None, array=False),

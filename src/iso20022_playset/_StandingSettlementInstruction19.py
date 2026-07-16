@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Counterparty16Choice import Counterparty16Choice
-from ._PartyIdentification157 import PartyIdentification157
-from ._SettlementParties105 import SettlementParties105
-from ._SettlementStandingInstructionDatabase5Choice import SettlementStandingInstructionDatabase5Choice
+from . import Counterparty16Choice
+from . import PartyIdentification157
+from . import SettlementParties105
+from . import SettlementStandingInstructionDatabase5Choice
 
 class StandingSettlementInstruction19(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class StandingSettlementInstruction19(base_types._BaseFieldType):
 
 	@CtrPty.setter
 	def CtrPty(self, value):
-		self._CtrPty = value if type(value) != base_types.auto else self.make_default("CtrPty")
+		self._CtrPty = value if value is not None else base_types.UninitialisedField(self, 'CtrPty', Counterparty16Choice, False)
 
 	@CtrPty.deleter
 	def CtrPty(self):
 		del self._CtrPty
-		self._CtrPty = None
+		self._CtrPty = base_types.UninitialisedField(self, 'CtrPty', Counterparty16Choice, False)
 
 	@property
 	def OthrDlvrgSttlmPties(self):
@@ -29,12 +29,12 @@ class StandingSettlementInstruction19(base_types._BaseFieldType):
 
 	@OthrDlvrgSttlmPties.setter
 	def OthrDlvrgSttlmPties(self, value):
-		self._OthrDlvrgSttlmPties = value if type(value) != base_types.auto else self.make_default("OthrDlvrgSttlmPties")
+		self._OthrDlvrgSttlmPties = value if value is not None else base_types.UninitialisedField(self, 'OthrDlvrgSttlmPties', SettlementParties105, False)
 
 	@OthrDlvrgSttlmPties.deleter
 	def OthrDlvrgSttlmPties(self):
 		del self._OthrDlvrgSttlmPties
-		self._OthrDlvrgSttlmPties = None
+		self._OthrDlvrgSttlmPties = base_types.UninitialisedField(self, 'OthrDlvrgSttlmPties', SettlementParties105, False)
 
 	@property
 	def OthrRcvgSttlmPties(self):
@@ -42,12 +42,12 @@ class StandingSettlementInstruction19(base_types._BaseFieldType):
 
 	@OthrRcvgSttlmPties.setter
 	def OthrRcvgSttlmPties(self, value):
-		self._OthrRcvgSttlmPties = value if type(value) != base_types.auto else self.make_default("OthrRcvgSttlmPties")
+		self._OthrRcvgSttlmPties = value if value is not None else base_types.UninitialisedField(self, 'OthrRcvgSttlmPties', SettlementParties105, False)
 
 	@OthrRcvgSttlmPties.deleter
 	def OthrRcvgSttlmPties(self):
 		del self._OthrRcvgSttlmPties
-		self._OthrRcvgSttlmPties = None
+		self._OthrRcvgSttlmPties = base_types.UninitialisedField(self, 'OthrRcvgSttlmPties', SettlementParties105, False)
 
 	@property
 	def SttlmStgInstrDB(self):
@@ -55,12 +55,12 @@ class StandingSettlementInstruction19(base_types._BaseFieldType):
 
 	@SttlmStgInstrDB.setter
 	def SttlmStgInstrDB(self, value):
-		self._SttlmStgInstrDB = value if type(value) != base_types.auto else self.make_default("SttlmStgInstrDB")
+		self._SttlmStgInstrDB = value if value is not None else base_types.UninitialisedField(self, 'SttlmStgInstrDB', SettlementStandingInstructionDatabase5Choice, False)
 
 	@SttlmStgInstrDB.deleter
 	def SttlmStgInstrDB(self):
 		del self._SttlmStgInstrDB
-		self._SttlmStgInstrDB = None
+		self._SttlmStgInstrDB = base_types.UninitialisedField(self, 'SttlmStgInstrDB', SettlementStandingInstructionDatabase5Choice, False)
 
 	@property
 	def Vndr(self):
@@ -68,12 +68,12 @@ class StandingSettlementInstruction19(base_types._BaseFieldType):
 
 	@Vndr.setter
 	def Vndr(self, value):
-		self._Vndr = value if type(value) != base_types.auto else self.make_default("Vndr")
+		self._Vndr = value if value is not None else base_types.UninitialisedField(self, 'Vndr', PartyIdentification157, False)
 
 	@Vndr.deleter
 	def Vndr(self):
 		del self._Vndr
-		self._Vndr = None
+		self._Vndr = base_types.UninitialisedField(self, 'Vndr', PartyIdentification157, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrPty', type=Counterparty16Choice, min=1, max=1, mutex_group=None, array=False),

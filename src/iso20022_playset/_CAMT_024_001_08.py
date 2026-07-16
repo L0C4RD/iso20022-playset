@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ModifyStandingOrderV08 import ModifyStandingOrderV08
+from . import ModifyStandingOrderV08
 
 class CAMT_024_001_08():
 
@@ -18,12 +18,12 @@ class CAMT_024_001_08():
 
 		@ModfyStgOrdr.setter
 		def ModfyStgOrdr(self, value):
-			self._ModfyStgOrdr = value if type(value) != base_types.auto else self.make_default("ModfyStgOrdr")
+			self._ModfyStgOrdr = value if value is not None else base_types.UninitialisedField(self, 'ModfyStgOrdr', ModifyStandingOrderV08, False)
 
 		@ModfyStgOrdr.deleter
 		def ModfyStgOrdr(self):
 			del self._ModfyStgOrdr
-			self._ModfyStgOrdr = None
+			self._ModfyStgOrdr = base_types.UninitialisedField(self, 'ModfyStgOrdr', ModifyStandingOrderV08, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ModfyStgOrdr', type=ModifyStandingOrderV08, min=1, max=1, mutex_group=None, array=False),

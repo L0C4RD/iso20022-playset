@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AgentRole1FormatChoice import AgentRole1FormatChoice
-from ._NameAndAddress5 import NameAndAddress5
-from ._PartyIdentification2Choice import PartyIdentification2Choice
+from . import AgentRole1FormatChoice
+from . import NameAndAddress5
+from . import PartyIdentification2Choice
 
 class CorporateActionAgent1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CorporateActionAgent1(base_types._BaseFieldType):
 
 	@AgtId.setter
 	def AgtId(self, value):
-		self._AgtId = value if type(value) != base_types.auto else self.make_default("AgtId")
+		self._AgtId = value if value is not None else base_types.UninitialisedField(self, 'AgtId', PartyIdentification2Choice, False)
 
 	@AgtId.deleter
 	def AgtId(self):
 		del self._AgtId
-		self._AgtId = None
+		self._AgtId = base_types.UninitialisedField(self, 'AgtId', PartyIdentification2Choice, False)
 
 	@property
 	def AgtRole(self):
@@ -28,12 +28,12 @@ class CorporateActionAgent1(base_types._BaseFieldType):
 
 	@AgtRole.setter
 	def AgtRole(self, value):
-		self._AgtRole = value if type(value) != base_types.auto else self.make_default("AgtRole")
+		self._AgtRole = value if value is not None else base_types.UninitialisedField(self, 'AgtRole', AgentRole1FormatChoice, False)
 
 	@AgtRole.deleter
 	def AgtRole(self):
 		del self._AgtRole
-		self._AgtRole = None
+		self._AgtRole = base_types.UninitialisedField(self, 'AgtRole', AgentRole1FormatChoice, False)
 
 	@property
 	def CtctPrsn(self):
@@ -41,12 +41,12 @@ class CorporateActionAgent1(base_types._BaseFieldType):
 
 	@CtctPrsn.setter
 	def CtctPrsn(self, value):
-		self._CtctPrsn = value if type(value) != base_types.auto else self.make_default("CtctPrsn")
+		self._CtctPrsn = value if value is not None else base_types.UninitialisedField(self, 'CtctPrsn', NameAndAddress5, False)
 
 	@CtctPrsn.deleter
 	def CtctPrsn(self):
 		del self._CtctPrsn
-		self._CtctPrsn = None
+		self._CtctPrsn = base_types.UninitialisedField(self, 'CtctPrsn', NameAndAddress5, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AgtId', type=PartyIdentification2Choice, min=1, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max100KBinary import Max100KBinary
-from ._Max35Text import Max35Text
+from . import Max100KBinary
+from . import Max35Text
 
 class BinaryFile1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class BinaryFile1(base_types._BaseFieldType):
 
 	@CharSet.setter
 	def CharSet(self, value):
-		self._CharSet = value if type(value) != base_types.auto else self.make_default("CharSet")
+		self._CharSet = value if value is not None else base_types.UninitialisedField(self, 'CharSet', Max35Text, False)
 
 	@CharSet.deleter
 	def CharSet(self):
 		del self._CharSet
-		self._CharSet = None
+		self._CharSet = base_types.UninitialisedField(self, 'CharSet', Max35Text, False)
 
 	@property
 	def InclBinryObjct(self):
@@ -27,12 +27,12 @@ class BinaryFile1(base_types._BaseFieldType):
 
 	@InclBinryObjct.setter
 	def InclBinryObjct(self, value):
-		self._InclBinryObjct = value if type(value) != base_types.auto else self.make_default("InclBinryObjct")
+		self._InclBinryObjct = value if value is not None else base_types.UninitialisedField(self, 'InclBinryObjct', Max100KBinary, False)
 
 	@InclBinryObjct.deleter
 	def InclBinryObjct(self):
 		del self._InclBinryObjct
-		self._InclBinryObjct = None
+		self._InclBinryObjct = base_types.UninitialisedField(self, 'InclBinryObjct', Max100KBinary, False)
 
 	@property
 	def MIMETp(self):
@@ -40,12 +40,12 @@ class BinaryFile1(base_types._BaseFieldType):
 
 	@MIMETp.setter
 	def MIMETp(self, value):
-		self._MIMETp = value if type(value) != base_types.auto else self.make_default("MIMETp")
+		self._MIMETp = value if value is not None else base_types.UninitialisedField(self, 'MIMETp', Max35Text, False)
 
 	@MIMETp.deleter
 	def MIMETp(self):
 		del self._MIMETp
-		self._MIMETp = None
+		self._MIMETp = base_types.UninitialisedField(self, 'MIMETp', Max35Text, False)
 
 	@property
 	def NcodgTp(self):
@@ -53,12 +53,12 @@ class BinaryFile1(base_types._BaseFieldType):
 
 	@NcodgTp.setter
 	def NcodgTp(self, value):
-		self._NcodgTp = value if type(value) != base_types.auto else self.make_default("NcodgTp")
+		self._NcodgTp = value if value is not None else base_types.UninitialisedField(self, 'NcodgTp', Max35Text, False)
 
 	@NcodgTp.deleter
 	def NcodgTp(self):
 		del self._NcodgTp
-		self._NcodgTp = None
+		self._NcodgTp = base_types.UninitialisedField(self, 'NcodgTp', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CharSet', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

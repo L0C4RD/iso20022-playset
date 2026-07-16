@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ExchangePolicy2Code import ExchangePolicy2Code
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Number import Number
-from ._ProcessRetry3 import ProcessRetry3
-from ._ProcessTiming6 import ProcessTiming6
+from . import ExchangePolicy2Code
+from . import ImpliedCurrencyAndAmount
+from . import Number
+from . import ProcessRetry3
+from . import ProcessTiming6
 
 class ExchangeConfiguration9(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class ExchangeConfiguration9(base_types._BaseFieldType):
 
 	@MaxAmt.setter
 	def MaxAmt(self, value):
-		self._MaxAmt = value if type(value) != base_types.auto else self.make_default("MaxAmt")
+		self._MaxAmt = value if value is not None else base_types.UninitialisedField(self, 'MaxAmt', ImpliedCurrencyAndAmount, False)
 
 	@MaxAmt.deleter
 	def MaxAmt(self):
 		del self._MaxAmt
-		self._MaxAmt = None
+		self._MaxAmt = base_types.UninitialisedField(self, 'MaxAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def MaxNb(self):
@@ -30,12 +30,12 @@ class ExchangeConfiguration9(base_types._BaseFieldType):
 
 	@MaxNb.setter
 	def MaxNb(self, value):
-		self._MaxNb = value if type(value) != base_types.auto else self.make_default("MaxNb")
+		self._MaxNb = value if value is not None else base_types.UninitialisedField(self, 'MaxNb', Number, False)
 
 	@MaxNb.deleter
 	def MaxNb(self):
 		del self._MaxNb
-		self._MaxNb = None
+		self._MaxNb = base_types.UninitialisedField(self, 'MaxNb', Number, False)
 
 	@property
 	def ReTry(self):
@@ -43,12 +43,12 @@ class ExchangeConfiguration9(base_types._BaseFieldType):
 
 	@ReTry.setter
 	def ReTry(self, value):
-		self._ReTry = value if type(value) != base_types.auto else self.make_default("ReTry")
+		self._ReTry = value if value is not None else base_types.UninitialisedField(self, 'ReTry', ProcessRetry3, False)
 
 	@ReTry.deleter
 	def ReTry(self):
 		del self._ReTry
-		self._ReTry = None
+		self._ReTry = base_types.UninitialisedField(self, 'ReTry', ProcessRetry3, False)
 
 	@property
 	def TmCond(self):
@@ -56,12 +56,12 @@ class ExchangeConfiguration9(base_types._BaseFieldType):
 
 	@TmCond.setter
 	def TmCond(self, value):
-		self._TmCond = value if type(value) != base_types.auto else self.make_default("TmCond")
+		self._TmCond = value if value is not None else base_types.UninitialisedField(self, 'TmCond', ProcessTiming6, False)
 
 	@TmCond.deleter
 	def TmCond(self):
 		del self._TmCond
-		self._TmCond = None
+		self._TmCond = base_types.UninitialisedField(self, 'TmCond', ProcessTiming6, False)
 
 	@property
 	def XchgPlcy(self):
@@ -69,12 +69,12 @@ class ExchangeConfiguration9(base_types._BaseFieldType):
 
 	@XchgPlcy.setter
 	def XchgPlcy(self, value):
-		self._XchgPlcy = value if type(value) != base_types.auto else self.make_default("XchgPlcy")
+		self._XchgPlcy = value if value is not None else base_types.UninitialisedField(self, 'XchgPlcy', ExchangePolicy2Code, True)
 
 	@XchgPlcy.deleter
 	def XchgPlcy(self):
 		del self._XchgPlcy
-		self._XchgPlcy = None
+		self._XchgPlcy = base_types.UninitialisedField(self, 'XchgPlcy', ExchangePolicy2Code, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MaxAmt', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

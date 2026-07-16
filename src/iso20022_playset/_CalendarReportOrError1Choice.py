@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CalendarReport1 import CalendarReport1
-from ._ErrorHandling4 import ErrorHandling4
+from . import CalendarReport1
+from . import ErrorHandling4
 
 class CalendarReportOrError1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CalendarReportOrError1Choice(base_types._BaseFieldType):
 
 	@CalRpt.setter
 	def CalRpt(self, value):
-		self._CalRpt = value if type(value) != base_types.auto else self.make_default("CalRpt")
+		self._CalRpt = value if value is not None else base_types.UninitialisedField(self, 'CalRpt', CalendarReport1, False)
 
 	@CalRpt.deleter
 	def CalRpt(self):
 		del self._CalRpt
-		self._CalRpt = None
+		self._CalRpt = base_types.UninitialisedField(self, 'CalRpt', CalendarReport1, False)
 
 	@property
 	def OprlErr(self):
@@ -27,12 +27,12 @@ class CalendarReportOrError1Choice(base_types._BaseFieldType):
 
 	@OprlErr.setter
 	def OprlErr(self, value):
-		self._OprlErr = value if type(value) != base_types.auto else self.make_default("OprlErr")
+		self._OprlErr = value if value is not None else base_types.UninitialisedField(self, 'OprlErr', ErrorHandling4, True)
 
 	@OprlErr.deleter
 	def OprlErr(self):
 		del self._OprlErr
-		self._OprlErr = None
+		self._OprlErr = base_types.UninitialisedField(self, 'OprlErr', ErrorHandling4, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CalRpt', type=CalendarReport1, min=0, max=1, mutex_group=1, array=False),

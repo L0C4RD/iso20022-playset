@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PartyIdentification318 import PartyIdentification318
-from ._PartyIdentificationAndAccount205 import PartyIdentificationAndAccount205
+from . import PartyIdentification318
+from . import PartyIdentificationAndAccount205
 
 class SettlementParties130(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SettlementParties130(base_types._BaseFieldType):
 
 	@Dpstry.setter
 	def Dpstry(self, value):
-		self._Dpstry = value if type(value) != base_types.auto else self.make_default("Dpstry")
+		self._Dpstry = value if value is not None else base_types.UninitialisedField(self, 'Dpstry', PartyIdentification318, False)
 
 	@Dpstry.deleter
 	def Dpstry(self):
 		del self._Dpstry
-		self._Dpstry = None
+		self._Dpstry = base_types.UninitialisedField(self, 'Dpstry', PartyIdentification318, False)
 
 	@property
 	def Pty1(self):
@@ -27,12 +27,12 @@ class SettlementParties130(base_types._BaseFieldType):
 
 	@Pty1.setter
 	def Pty1(self, value):
-		self._Pty1 = value if type(value) != base_types.auto else self.make_default("Pty1")
+		self._Pty1 = value if value is not None else base_types.UninitialisedField(self, 'Pty1', PartyIdentificationAndAccount205, False)
 
 	@Pty1.deleter
 	def Pty1(self):
 		del self._Pty1
-		self._Pty1 = None
+		self._Pty1 = base_types.UninitialisedField(self, 'Pty1', PartyIdentificationAndAccount205, False)
 
 	@property
 	def Pty2(self):
@@ -40,12 +40,12 @@ class SettlementParties130(base_types._BaseFieldType):
 
 	@Pty2.setter
 	def Pty2(self, value):
-		self._Pty2 = value if type(value) != base_types.auto else self.make_default("Pty2")
+		self._Pty2 = value if value is not None else base_types.UninitialisedField(self, 'Pty2', PartyIdentificationAndAccount205, False)
 
 	@Pty2.deleter
 	def Pty2(self):
 		del self._Pty2
-		self._Pty2 = None
+		self._Pty2 = base_types.UninitialisedField(self, 'Pty2', PartyIdentificationAndAccount205, False)
 
 	@property
 	def Pty3(self):
@@ -53,12 +53,12 @@ class SettlementParties130(base_types._BaseFieldType):
 
 	@Pty3.setter
 	def Pty3(self, value):
-		self._Pty3 = value if type(value) != base_types.auto else self.make_default("Pty3")
+		self._Pty3 = value if value is not None else base_types.UninitialisedField(self, 'Pty3', PartyIdentificationAndAccount205, False)
 
 	@Pty3.deleter
 	def Pty3(self):
 		del self._Pty3
-		self._Pty3 = None
+		self._Pty3 = base_types.UninitialisedField(self, 'Pty3', PartyIdentificationAndAccount205, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dpstry', type=PartyIdentification318, min=0, max=1, mutex_group=None, array=False),

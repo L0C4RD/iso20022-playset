@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesFinancingReportingTransactionQueryV02 import SecuritiesFinancingReportingTransactionQueryV02
+from . import SecuritiesFinancingReportingTransactionQueryV02
 
 class AUTH_094_001_02():
 
@@ -18,12 +18,12 @@ class AUTH_094_001_02():
 
 		@SctiesFincgRptgTxQry.setter
 		def SctiesFincgRptgTxQry(self, value):
-			self._SctiesFincgRptgTxQry = value if type(value) != base_types.auto else self.make_default("SctiesFincgRptgTxQry")
+			self._SctiesFincgRptgTxQry = value if value is not None else base_types.UninitialisedField(self, 'SctiesFincgRptgTxQry', SecuritiesFinancingReportingTransactionQueryV02, False)
 
 		@SctiesFincgRptgTxQry.deleter
 		def SctiesFincgRptgTxQry(self):
 			del self._SctiesFincgRptgTxQry
-			self._SctiesFincgRptgTxQry = None
+			self._SctiesFincgRptgTxQry = base_types.UninitialisedField(self, 'SctiesFincgRptgTxQry', SecuritiesFinancingReportingTransactionQueryV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesFincgRptgTxQry', type=SecuritiesFinancingReportingTransactionQueryV02, min=1, max=1, mutex_group=None, array=False),

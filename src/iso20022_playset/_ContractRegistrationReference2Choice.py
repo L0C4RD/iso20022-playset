@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DocumentIdentification35 import DocumentIdentification35
-from ._Max35Text import Max35Text
+from . import DocumentIdentification35
+from . import Max35Text
 
 class ContractRegistrationReference2Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ContractRegistrationReference2Choice(base_types._BaseFieldType):
 
 	@Ctrct.setter
 	def Ctrct(self, value):
-		self._Ctrct = value if type(value) != base_types.auto else self.make_default("Ctrct")
+		self._Ctrct = value if value is not None else base_types.UninitialisedField(self, 'Ctrct', DocumentIdentification35, False)
 
 	@Ctrct.deleter
 	def Ctrct(self):
 		del self._Ctrct
-		self._Ctrct = None
+		self._Ctrct = base_types.UninitialisedField(self, 'Ctrct', DocumentIdentification35, False)
 
 	@property
 	def RegdCtrctId(self):
@@ -27,12 +27,12 @@ class ContractRegistrationReference2Choice(base_types._BaseFieldType):
 
 	@RegdCtrctId.setter
 	def RegdCtrctId(self, value):
-		self._RegdCtrctId = value if type(value) != base_types.auto else self.make_default("RegdCtrctId")
+		self._RegdCtrctId = value if value is not None else base_types.UninitialisedField(self, 'RegdCtrctId', Max35Text, False)
 
 	@RegdCtrctId.deleter
 	def RegdCtrctId(self):
 		del self._RegdCtrctId
-		self._RegdCtrctId = None
+		self._RegdCtrctId = base_types.UninitialisedField(self, 'RegdCtrctId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ctrct', type=DocumentIdentification35, min=0, max=1, mutex_group=1, array=False),

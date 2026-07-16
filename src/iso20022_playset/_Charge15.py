@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from ._CalculationBasis2Code import CalculationBasis2Code
-from ._ChargeType9Code import ChargeType9Code
-from ._Extended350Code import Extended350Code
-from ._PercentageRate import PercentageRate
+from . import ActiveCurrencyAnd13DecimalAmount
+from . import CalculationBasis2Code
+from . import ChargeType9Code
+from . import Extended350Code
+from . import PercentageRate
 
 class Charge15(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class Charge15(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def ClctnBsis(self):
@@ -30,12 +30,12 @@ class Charge15(base_types._BaseFieldType):
 
 	@ClctnBsis.setter
 	def ClctnBsis(self, value):
-		self._ClctnBsis = value if type(value) != base_types.auto else self.make_default("ClctnBsis")
+		self._ClctnBsis = value if value is not None else base_types.UninitialisedField(self, 'ClctnBsis', CalculationBasis2Code, False)
 
 	@ClctnBsis.deleter
 	def ClctnBsis(self):
 		del self._ClctnBsis
-		self._ClctnBsis = None
+		self._ClctnBsis = base_types.UninitialisedField(self, 'ClctnBsis', CalculationBasis2Code, False)
 
 	@property
 	def Rate(self):
@@ -43,12 +43,12 @@ class Charge15(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+		self._Rate = value if value is not None else base_types.UninitialisedField(self, 'Rate', PercentageRate, False)
 
 	@Rate.deleter
 	def Rate(self):
 		del self._Rate
-		self._Rate = None
+		self._Rate = base_types.UninitialisedField(self, 'Rate', PercentageRate, False)
 
 	@property
 	def Tp(self):
@@ -56,12 +56,12 @@ class Charge15(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', ChargeType9Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', ChargeType9Code, False)
 
 	@property
 	def XtndedClctnBsis(self):
@@ -69,12 +69,12 @@ class Charge15(base_types._BaseFieldType):
 
 	@XtndedClctnBsis.setter
 	def XtndedClctnBsis(self, value):
-		self._XtndedClctnBsis = value if type(value) != base_types.auto else self.make_default("XtndedClctnBsis")
+		self._XtndedClctnBsis = value if value is not None else base_types.UninitialisedField(self, 'XtndedClctnBsis', Extended350Code, False)
 
 	@XtndedClctnBsis.deleter
 	def XtndedClctnBsis(self):
 		del self._XtndedClctnBsis
-		self._XtndedClctnBsis = None
+		self._XtndedClctnBsis = base_types.UninitialisedField(self, 'XtndedClctnBsis', Extended350Code, False)
 
 	@property
 	def XtndedTp(self):
@@ -82,12 +82,12 @@ class Charge15(base_types._BaseFieldType):
 
 	@XtndedTp.setter
 	def XtndedTp(self, value):
-		self._XtndedTp = value if type(value) != base_types.auto else self.make_default("XtndedTp")
+		self._XtndedTp = value if value is not None else base_types.UninitialisedField(self, 'XtndedTp', Extended350Code, False)
 
 	@XtndedTp.deleter
 	def XtndedTp(self):
 		del self._XtndedTp
-		self._XtndedTp = None
+		self._XtndedTp = base_types.UninitialisedField(self, 'XtndedTp', Extended350Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAnd13DecimalAmount, min=0, max=1, mutex_group=2, array=False),

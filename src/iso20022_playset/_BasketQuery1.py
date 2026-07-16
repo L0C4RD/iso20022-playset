@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._LEIIdentifier import LEIIdentifier
-from ._Max52Text import Max52Text
+from . import ISINOct2015Identifier
+from . import LEIIdentifier
+from . import Max52Text
 
 class BasketQuery1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class BasketQuery1(base_types._BaseFieldType):
 
 	@ISIN.setter
 	def ISIN(self, value):
-		self._ISIN = value if type(value) != base_types.auto else self.make_default("ISIN")
+		self._ISIN = value if value is not None else base_types.UninitialisedField(self, 'ISIN', ISINOct2015Identifier, False)
 
 	@ISIN.deleter
 	def ISIN(self):
 		del self._ISIN
-		self._ISIN = None
+		self._ISIN = base_types.UninitialisedField(self, 'ISIN', ISINOct2015Identifier, False)
 
 	@property
 	def Idr(self):
@@ -28,12 +28,12 @@ class BasketQuery1(base_types._BaseFieldType):
 
 	@Idr.setter
 	def Idr(self, value):
-		self._Idr = value if type(value) != base_types.auto else self.make_default("Idr")
+		self._Idr = value if value is not None else base_types.UninitialisedField(self, 'Idr', Max52Text, False)
 
 	@Idr.deleter
 	def Idr(self):
 		del self._Idr
-		self._Idr = None
+		self._Idr = base_types.UninitialisedField(self, 'Idr', Max52Text, False)
 
 	@property
 	def Strr(self):
@@ -41,12 +41,12 @@ class BasketQuery1(base_types._BaseFieldType):
 
 	@Strr.setter
 	def Strr(self, value):
-		self._Strr = value if type(value) != base_types.auto else self.make_default("Strr")
+		self._Strr = value if value is not None else base_types.UninitialisedField(self, 'Strr', LEIIdentifier, False)
 
 	@Strr.deleter
 	def Strr(self):
 		del self._Strr
-		self._Strr = None
+		self._Strr = base_types.UninitialisedField(self, 'Strr', LEIIdentifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=1, mutex_group=None, array=False),

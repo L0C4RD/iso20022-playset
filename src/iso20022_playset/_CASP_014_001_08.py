@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SaleToPOIMessageStatusRequestV08 import SaleToPOIMessageStatusRequestV08
+from . import SaleToPOIMessageStatusRequestV08
 
 class CASP_014_001_08():
 
@@ -18,12 +18,12 @@ class CASP_014_001_08():
 
 		@SaleToPOIMsgStsReq.setter
 		def SaleToPOIMsgStsReq(self, value):
-			self._SaleToPOIMsgStsReq = value if type(value) != base_types.auto else self.make_default("SaleToPOIMsgStsReq")
+			self._SaleToPOIMsgStsReq = value if value is not None else base_types.UninitialisedField(self, 'SaleToPOIMsgStsReq', SaleToPOIMessageStatusRequestV08, False)
 
 		@SaleToPOIMsgStsReq.deleter
 		def SaleToPOIMsgStsReq(self):
 			del self._SaleToPOIMsgStsReq
-			self._SaleToPOIMsgStsReq = None
+			self._SaleToPOIMsgStsReq = base_types.UninitialisedField(self, 'SaleToPOIMsgStsReq', SaleToPOIMessageStatusRequestV08, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SaleToPOIMsgStsReq', type=SaleToPOIMessageStatusRequestV08, min=1, max=1, mutex_group=None, array=False),

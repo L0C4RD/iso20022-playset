@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max10000Binary import Max10000Binary
-from ._Max256Text import Max256Text
-from ._Max35Text import Max35Text
-from ._Max8Text import Max8Text
-from ._NetworkParameters8 import NetworkParameters8
-from ._PositiveNumber import PositiveNumber
-from ._TerminalManagementAction3Code import TerminalManagementAction3Code
+from . import Max10000Binary
+from . import Max256Text
+from . import Max35Text
+from . import Max8Text
+from . import NetworkParameters8
+from . import PositiveNumber
+from . import TerminalManagementAction3Code
 
 class MerchantConfigurationParameters6(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class MerchantConfigurationParameters6(base_types._BaseFieldType):
 
 	@ActnTp.setter
 	def ActnTp(self, value):
-		self._ActnTp = value if type(value) != base_types.auto else self.make_default("ActnTp")
+		self._ActnTp = value if value is not None else base_types.UninitialisedField(self, 'ActnTp', TerminalManagementAction3Code, False)
 
 	@ActnTp.deleter
 	def ActnTp(self):
 		del self._ActnTp
-		self._ActnTp = None
+		self._ActnTp = base_types.UninitialisedField(self, 'ActnTp', TerminalManagementAction3Code, False)
 
 	@property
 	def MrchntId(self):
@@ -32,12 +32,12 @@ class MerchantConfigurationParameters6(base_types._BaseFieldType):
 
 	@MrchntId.setter
 	def MrchntId(self, value):
-		self._MrchntId = value if type(value) != base_types.auto else self.make_default("MrchntId")
+		self._MrchntId = value if value is not None else base_types.UninitialisedField(self, 'MrchntId', Max35Text, False)
 
 	@MrchntId.deleter
 	def MrchntId(self):
 		del self._MrchntId
-		self._MrchntId = None
+		self._MrchntId = base_types.UninitialisedField(self, 'MrchntId', Max35Text, False)
 
 	@property
 	def OffsetEnd(self):
@@ -45,12 +45,12 @@ class MerchantConfigurationParameters6(base_types._BaseFieldType):
 
 	@OffsetEnd.setter
 	def OffsetEnd(self, value):
-		self._OffsetEnd = value if type(value) != base_types.auto else self.make_default("OffsetEnd")
+		self._OffsetEnd = value if value is not None else base_types.UninitialisedField(self, 'OffsetEnd', PositiveNumber, False)
 
 	@OffsetEnd.deleter
 	def OffsetEnd(self):
 		del self._OffsetEnd
-		self._OffsetEnd = None
+		self._OffsetEnd = base_types.UninitialisedField(self, 'OffsetEnd', PositiveNumber, False)
 
 	@property
 	def OffsetStart(self):
@@ -58,12 +58,12 @@ class MerchantConfigurationParameters6(base_types._BaseFieldType):
 
 	@OffsetStart.setter
 	def OffsetStart(self, value):
-		self._OffsetStart = value if type(value) != base_types.auto else self.make_default("OffsetStart")
+		self._OffsetStart = value if value is not None else base_types.UninitialisedField(self, 'OffsetStart', PositiveNumber, False)
 
 	@OffsetStart.deleter
 	def OffsetStart(self):
 		del self._OffsetStart
-		self._OffsetStart = None
+		self._OffsetStart = base_types.UninitialisedField(self, 'OffsetStart', PositiveNumber, False)
 
 	@property
 	def OthrParams(self):
@@ -71,12 +71,12 @@ class MerchantConfigurationParameters6(base_types._BaseFieldType):
 
 	@OthrParams.setter
 	def OthrParams(self, value):
-		self._OthrParams = value if type(value) != base_types.auto else self.make_default("OthrParams")
+		self._OthrParams = value if value is not None else base_types.UninitialisedField(self, 'OthrParams', Max10000Binary, False)
 
 	@OthrParams.deleter
 	def OthrParams(self):
 		del self._OthrParams
-		self._OthrParams = None
+		self._OthrParams = base_types.UninitialisedField(self, 'OthrParams', Max10000Binary, False)
 
 	@property
 	def OthrParamsLngth(self):
@@ -84,12 +84,12 @@ class MerchantConfigurationParameters6(base_types._BaseFieldType):
 
 	@OthrParamsLngth.setter
 	def OthrParamsLngth(self, value):
-		self._OthrParamsLngth = value if type(value) != base_types.auto else self.make_default("OthrParamsLngth")
+		self._OthrParamsLngth = value if value is not None else base_types.UninitialisedField(self, 'OthrParamsLngth', PositiveNumber, False)
 
 	@OthrParamsLngth.deleter
 	def OthrParamsLngth(self):
 		del self._OthrParamsLngth
-		self._OthrParamsLngth = None
+		self._OthrParamsLngth = base_types.UninitialisedField(self, 'OthrParamsLngth', PositiveNumber, False)
 
 	@property
 	def ParamFrmtIdr(self):
@@ -97,12 +97,12 @@ class MerchantConfigurationParameters6(base_types._BaseFieldType):
 
 	@ParamFrmtIdr.setter
 	def ParamFrmtIdr(self, value):
-		self._ParamFrmtIdr = value if type(value) != base_types.auto else self.make_default("ParamFrmtIdr")
+		self._ParamFrmtIdr = value if value is not None else base_types.UninitialisedField(self, 'ParamFrmtIdr', Max8Text, False)
 
 	@ParamFrmtIdr.deleter
 	def ParamFrmtIdr(self):
 		del self._ParamFrmtIdr
-		self._ParamFrmtIdr = None
+		self._ParamFrmtIdr = base_types.UninitialisedField(self, 'ParamFrmtIdr', Max8Text, False)
 
 	@property
 	def Prxy(self):
@@ -110,12 +110,12 @@ class MerchantConfigurationParameters6(base_types._BaseFieldType):
 
 	@Prxy.setter
 	def Prxy(self, value):
-		self._Prxy = value if type(value) != base_types.auto else self.make_default("Prxy")
+		self._Prxy = value if value is not None else base_types.UninitialisedField(self, 'Prxy', NetworkParameters8, False)
 
 	@Prxy.deleter
 	def Prxy(self):
 		del self._Prxy
-		self._Prxy = None
+		self._Prxy = base_types.UninitialisedField(self, 'Prxy', NetworkParameters8, False)
 
 	@property
 	def Vrsn(self):
@@ -123,12 +123,12 @@ class MerchantConfigurationParameters6(base_types._BaseFieldType):
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+		self._Vrsn = value if value is not None else base_types.UninitialisedField(self, 'Vrsn', Max256Text, False)
 
 	@Vrsn.deleter
 	def Vrsn(self):
 		del self._Vrsn
-		self._Vrsn = None
+		self._Vrsn = base_types.UninitialisedField(self, 'Vrsn', Max256Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActnTp', type=TerminalManagementAction3Code, min=1, max=1, mutex_group=None, array=False),

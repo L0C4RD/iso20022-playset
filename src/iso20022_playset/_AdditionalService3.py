@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._AdditionalServiceType3Code import AdditionalServiceType3Code
-from ._ISO8583AdditionalServiceResultCode import ISO8583AdditionalServiceResultCode
-from ._Max10Text import Max10Text
+from . import ATICALaxProcessing
+from . import AdditionalServiceType3Code
+from . import ISO8583AdditionalServiceResultCode
+from . import Max10Text
 
 class AdditionalService3(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class AdditionalService3(base_types._BaseFieldType):
 
 	@Dtl.setter
 	def Dtl(self, value):
-		self._Dtl = value if type(value) != base_types.auto else self.make_default("Dtl")
+		self._Dtl = value if value is not None else base_types.UninitialisedField(self, 'Dtl', ATICALaxProcessing, False)
 
 	@Dtl.deleter
 	def Dtl(self):
 		del self._Dtl
-		self._Dtl = None
+		self._Dtl = base_types.UninitialisedField(self, 'Dtl', ATICALaxProcessing, False)
 
 	@property
 	def Rslt(self):
@@ -29,12 +29,12 @@ class AdditionalService3(base_types._BaseFieldType):
 
 	@Rslt.setter
 	def Rslt(self, value):
-		self._Rslt = value if type(value) != base_types.auto else self.make_default("Rslt")
+		self._Rslt = value if value is not None else base_types.UninitialisedField(self, 'Rslt', ISO8583AdditionalServiceResultCode, False)
 
 	@Rslt.deleter
 	def Rslt(self):
 		del self._Rslt
-		self._Rslt = None
+		self._Rslt = base_types.UninitialisedField(self, 'Rslt', ISO8583AdditionalServiceResultCode, False)
 
 	@property
 	def SubTp(self):
@@ -42,12 +42,12 @@ class AdditionalService3(base_types._BaseFieldType):
 
 	@SubTp.setter
 	def SubTp(self, value):
-		self._SubTp = value if type(value) != base_types.auto else self.make_default("SubTp")
+		self._SubTp = value if value is not None else base_types.UninitialisedField(self, 'SubTp', Max10Text, False)
 
 	@SubTp.deleter
 	def SubTp(self):
 		del self._SubTp
-		self._SubTp = None
+		self._SubTp = base_types.UninitialisedField(self, 'SubTp', Max10Text, False)
 
 	@property
 	def Tp(self):
@@ -55,12 +55,12 @@ class AdditionalService3(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', AdditionalServiceType3Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', AdditionalServiceType3Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dtl', type=ATICALaxProcessing, min=0, max=1, mutex_group=None, array=False),

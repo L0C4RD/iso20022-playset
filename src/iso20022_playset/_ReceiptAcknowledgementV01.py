@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MessageHeader10 import MessageHeader10
-from ._ReceiptAcknowledgementReport2 import ReceiptAcknowledgementReport2
-from ._SupplementaryData1 import SupplementaryData1
+from . import MessageHeader10
+from . import ReceiptAcknowledgementReport2
+from . import SupplementaryData1
 
 class ReceiptAcknowledgementV01(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ReceiptAcknowledgementV01(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', MessageHeader10, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', MessageHeader10, False)
 
 	@property
 	def Rpt(self):
@@ -28,12 +28,12 @@ class ReceiptAcknowledgementV01(base_types._BaseFieldType):
 
 	@Rpt.setter
 	def Rpt(self, value):
-		self._Rpt = value if type(value) != base_types.auto else self.make_default("Rpt")
+		self._Rpt = value if value is not None else base_types.UninitialisedField(self, 'Rpt', ReceiptAcknowledgementReport2, True)
 
 	@Rpt.deleter
 	def Rpt(self):
 		del self._Rpt
-		self._Rpt = None
+		self._Rpt = base_types.UninitialisedField(self, 'Rpt', ReceiptAcknowledgementReport2, True)
 
 	@property
 	def SplmtryData(self):
@@ -41,12 +41,12 @@ class ReceiptAcknowledgementV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgId', type=MessageHeader10, min=1, max=1, mutex_group=None, array=False),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CreditDebit3Code import CreditDebit3Code
-from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Number import Number
+from . import CreditDebit3Code
+from . import ISO3NumericCurrencyCode
+from . import ImpliedCurrencyAndAmount
+from . import Number
 
 class ClearingControlTotals3(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ClearingControlTotals3(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ImpliedCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def Ccy(self):
@@ -29,12 +29,12 @@ class ClearingControlTotals3(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ISO3NumericCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ISO3NumericCurrencyCode, False)
 
 	@property
 	def CdtDbt(self):
@@ -42,12 +42,12 @@ class ClearingControlTotals3(base_types._BaseFieldType):
 
 	@CdtDbt.setter
 	def CdtDbt(self, value):
-		self._CdtDbt = value if type(value) != base_types.auto else self.make_default("CdtDbt")
+		self._CdtDbt = value if value is not None else base_types.UninitialisedField(self, 'CdtDbt', CreditDebit3Code, False)
 
 	@CdtDbt.deleter
 	def CdtDbt(self):
 		del self._CdtDbt
-		self._CdtDbt = None
+		self._CdtDbt = base_types.UninitialisedField(self, 'CdtDbt', CreditDebit3Code, False)
 
 	@property
 	def Cnt(self):
@@ -55,12 +55,12 @@ class ClearingControlTotals3(base_types._BaseFieldType):
 
 	@Cnt.setter
 	def Cnt(self, value):
-		self._Cnt = value if type(value) != base_types.auto else self.make_default("Cnt")
+		self._Cnt = value if value is not None else base_types.UninitialisedField(self, 'Cnt', Number, False)
 
 	@Cnt.deleter
 	def Cnt(self):
 		del self._Cnt
-		self._Cnt = None
+		self._Cnt = base_types.UninitialisedField(self, 'Cnt', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ImpliedCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CollateralProposalResponse1Code import CollateralProposalResponse1Code
-from ._CollateralResponse3 import CollateralResponse3
-from ._Max35Text import Max35Text
+from . import CollateralProposalResponse1Code
+from . import CollateralResponse3
+from . import Max35Text
 
 class CollateralProposalResponseType4(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CollateralProposalResponseType4(base_types._BaseFieldType):
 
 	@CollPrpslId.setter
 	def CollPrpslId(self, value):
-		self._CollPrpslId = value if type(value) != base_types.auto else self.make_default("CollPrpslId")
+		self._CollPrpslId = value if value is not None else base_types.UninitialisedField(self, 'CollPrpslId', Max35Text, False)
 
 	@CollPrpslId.deleter
 	def CollPrpslId(self):
 		del self._CollPrpslId
-		self._CollPrpslId = None
+		self._CollPrpslId = base_types.UninitialisedField(self, 'CollPrpslId', Max35Text, False)
 
 	@property
 	def Rspn(self):
@@ -28,12 +28,12 @@ class CollateralProposalResponseType4(base_types._BaseFieldType):
 
 	@Rspn.setter
 	def Rspn(self, value):
-		self._Rspn = value if type(value) != base_types.auto else self.make_default("Rspn")
+		self._Rspn = value if value is not None else base_types.UninitialisedField(self, 'Rspn', CollateralResponse3, False)
 
 	@Rspn.deleter
 	def Rspn(self):
 		del self._Rspn
-		self._Rspn = None
+		self._Rspn = base_types.UninitialisedField(self, 'Rspn', CollateralResponse3, False)
 
 	@property
 	def Tp(self):
@@ -41,12 +41,12 @@ class CollateralProposalResponseType4(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', CollateralProposalResponse1Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', CollateralProposalResponse1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollPrpslId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

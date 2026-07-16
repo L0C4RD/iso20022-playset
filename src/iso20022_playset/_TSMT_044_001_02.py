@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IntentToPayNotificationV02 import IntentToPayNotificationV02
+from . import IntentToPayNotificationV02
 
 class TSMT_044_001_02():
 
@@ -18,12 +18,12 @@ class TSMT_044_001_02():
 
 		@InttToPayNtfctn.setter
 		def InttToPayNtfctn(self, value):
-			self._InttToPayNtfctn = value if type(value) != base_types.auto else self.make_default("InttToPayNtfctn")
+			self._InttToPayNtfctn = value if value is not None else base_types.UninitialisedField(self, 'InttToPayNtfctn', IntentToPayNotificationV02, False)
 
 		@InttToPayNtfctn.deleter
 		def InttToPayNtfctn(self):
 			del self._InttToPayNtfctn
-			self._InttToPayNtfctn = None
+			self._InttToPayNtfctn = base_types.UninitialisedField(self, 'InttToPayNtfctn', IntentToPayNotificationV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='InttToPayNtfctn', type=IntentToPayNotificationV02, min=1, max=1, mutex_group=None, array=False),

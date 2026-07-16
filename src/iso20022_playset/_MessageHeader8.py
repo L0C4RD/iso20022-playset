@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
-from ._OriginalBusinessQuery1 import OriginalBusinessQuery1
-from ._Pagination1 import Pagination1
-from ._RequestType4Choice import RequestType4Choice
+from . import ISODateTime
+from . import Max35Text
+from . import OriginalBusinessQuery1
+from . import Pagination1
+from . import RequestType4Choice
 
 class MessageHeader8(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class MessageHeader8(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if value is not None else base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
 		del self._CreDtTm
-		self._CreDtTm = None
+		self._CreDtTm = base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@property
 	def MsgId(self):
@@ -30,12 +30,12 @@ class MessageHeader8(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@property
 	def MsgPgntn(self):
@@ -43,12 +43,12 @@ class MessageHeader8(base_types._BaseFieldType):
 
 	@MsgPgntn.setter
 	def MsgPgntn(self, value):
-		self._MsgPgntn = value if type(value) != base_types.auto else self.make_default("MsgPgntn")
+		self._MsgPgntn = value if value is not None else base_types.UninitialisedField(self, 'MsgPgntn', Pagination1, False)
 
 	@MsgPgntn.deleter
 	def MsgPgntn(self):
 		del self._MsgPgntn
-		self._MsgPgntn = None
+		self._MsgPgntn = base_types.UninitialisedField(self, 'MsgPgntn', Pagination1, False)
 
 	@property
 	def OrgnlBizQry(self):
@@ -56,12 +56,12 @@ class MessageHeader8(base_types._BaseFieldType):
 
 	@OrgnlBizQry.setter
 	def OrgnlBizQry(self, value):
-		self._OrgnlBizQry = value if type(value) != base_types.auto else self.make_default("OrgnlBizQry")
+		self._OrgnlBizQry = value if value is not None else base_types.UninitialisedField(self, 'OrgnlBizQry', OriginalBusinessQuery1, False)
 
 	@OrgnlBizQry.deleter
 	def OrgnlBizQry(self):
 		del self._OrgnlBizQry
-		self._OrgnlBizQry = None
+		self._OrgnlBizQry = base_types.UninitialisedField(self, 'OrgnlBizQry', OriginalBusinessQuery1, False)
 
 	@property
 	def QryNm(self):
@@ -69,12 +69,12 @@ class MessageHeader8(base_types._BaseFieldType):
 
 	@QryNm.setter
 	def QryNm(self, value):
-		self._QryNm = value if type(value) != base_types.auto else self.make_default("QryNm")
+		self._QryNm = value if value is not None else base_types.UninitialisedField(self, 'QryNm', Max35Text, False)
 
 	@QryNm.deleter
 	def QryNm(self):
 		del self._QryNm
-		self._QryNm = None
+		self._QryNm = base_types.UninitialisedField(self, 'QryNm', Max35Text, False)
 
 	@property
 	def ReqTp(self):
@@ -82,12 +82,12 @@ class MessageHeader8(base_types._BaseFieldType):
 
 	@ReqTp.setter
 	def ReqTp(self, value):
-		self._ReqTp = value if type(value) != base_types.auto else self.make_default("ReqTp")
+		self._ReqTp = value if value is not None else base_types.UninitialisedField(self, 'ReqTp', RequestType4Choice, False)
 
 	@ReqTp.deleter
 	def ReqTp(self):
 		del self._ReqTp
-		self._ReqTp = None
+		self._ReqTp = base_types.UninitialisedField(self, 'ReqTp', RequestType4Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),

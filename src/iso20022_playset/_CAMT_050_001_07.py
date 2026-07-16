@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LiquidityCreditTransferV07 import LiquidityCreditTransferV07
+from . import LiquidityCreditTransferV07
 
 class CAMT_050_001_07():
 
@@ -18,12 +18,12 @@ class CAMT_050_001_07():
 
 		@LqdtyCdtTrf.setter
 		def LqdtyCdtTrf(self, value):
-			self._LqdtyCdtTrf = value if type(value) != base_types.auto else self.make_default("LqdtyCdtTrf")
+			self._LqdtyCdtTrf = value if value is not None else base_types.UninitialisedField(self, 'LqdtyCdtTrf', LiquidityCreditTransferV07, False)
 
 		@LqdtyCdtTrf.deleter
 		def LqdtyCdtTrf(self):
 			del self._LqdtyCdtTrf
-			self._LqdtyCdtTrf = None
+			self._LqdtyCdtTrf = base_types.UninitialisedField(self, 'LqdtyCdtTrf', LiquidityCreditTransferV07, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='LqdtyCdtTrf', type=LiquidityCreditTransferV07, min=1, max=1, mutex_group=None, array=False),

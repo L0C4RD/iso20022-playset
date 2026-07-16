@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContractReference1 import ContractReference1
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._DocumentFormat2Choice import DocumentFormat2Choice
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
-from ._Party53Choice import Party53Choice
-from ._RTPPartyIdentification2 import RTPPartyIdentification2
+from . import ContractReference1
+from . import DateAndDateTime2Choice
+from . import DocumentFormat2Choice
+from . import Max140Text
+from . import Max35Text
+from . import Party53Choice
+from . import RTPPartyIdentification2
 
 class DebtorActivation6(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class DebtorActivation6(base_types._BaseFieldType):
 
 	@ActvtnReqDlvryPty.setter
 	def ActvtnReqDlvryPty(self, value):
-		self._ActvtnReqDlvryPty = value if type(value) != base_types.auto else self.make_default("ActvtnReqDlvryPty")
+		self._ActvtnReqDlvryPty = value if value is not None else base_types.UninitialisedField(self, 'ActvtnReqDlvryPty', RTPPartyIdentification2, False)
 
 	@ActvtnReqDlvryPty.deleter
 	def ActvtnReqDlvryPty(self):
 		del self._ActvtnReqDlvryPty
-		self._ActvtnReqDlvryPty = None
+		self._ActvtnReqDlvryPty = base_types.UninitialisedField(self, 'ActvtnReqDlvryPty', RTPPartyIdentification2, False)
 
 	@property
 	def Cdtr(self):
@@ -32,12 +32,12 @@ class DebtorActivation6(base_types._BaseFieldType):
 
 	@Cdtr.setter
 	def Cdtr(self, value):
-		self._Cdtr = value if type(value) != base_types.auto else self.make_default("Cdtr")
+		self._Cdtr = value if value is not None else base_types.UninitialisedField(self, 'Cdtr', RTPPartyIdentification2, False)
 
 	@Cdtr.deleter
 	def Cdtr(self):
 		del self._Cdtr
-		self._Cdtr = None
+		self._Cdtr = base_types.UninitialisedField(self, 'Cdtr', RTPPartyIdentification2, False)
 
 	@property
 	def CstmrId(self):
@@ -45,12 +45,12 @@ class DebtorActivation6(base_types._BaseFieldType):
 
 	@CstmrId.setter
 	def CstmrId(self, value):
-		self._CstmrId = value if type(value) != base_types.auto else self.make_default("CstmrId")
+		self._CstmrId = value if value is not None else base_types.UninitialisedField(self, 'CstmrId', Party53Choice, True)
 
 	@CstmrId.deleter
 	def CstmrId(self):
 		del self._CstmrId
-		self._CstmrId = None
+		self._CstmrId = base_types.UninitialisedField(self, 'CstmrId', Party53Choice, True)
 
 	@property
 	def CtrctFrmtTp(self):
@@ -58,12 +58,12 @@ class DebtorActivation6(base_types._BaseFieldType):
 
 	@CtrctFrmtTp.setter
 	def CtrctFrmtTp(self, value):
-		self._CtrctFrmtTp = value if type(value) != base_types.auto else self.make_default("CtrctFrmtTp")
+		self._CtrctFrmtTp = value if value is not None else base_types.UninitialisedField(self, 'CtrctFrmtTp', DocumentFormat2Choice, True)
 
 	@CtrctFrmtTp.deleter
 	def CtrctFrmtTp(self):
 		del self._CtrctFrmtTp
-		self._CtrctFrmtTp = None
+		self._CtrctFrmtTp = base_types.UninitialisedField(self, 'CtrctFrmtTp', DocumentFormat2Choice, True)
 
 	@property
 	def CtrctRef(self):
@@ -71,12 +71,12 @@ class DebtorActivation6(base_types._BaseFieldType):
 
 	@CtrctRef.setter
 	def CtrctRef(self, value):
-		self._CtrctRef = value if type(value) != base_types.auto else self.make_default("CtrctRef")
+		self._CtrctRef = value if value is not None else base_types.UninitialisedField(self, 'CtrctRef', ContractReference1, True)
 
 	@CtrctRef.deleter
 	def CtrctRef(self):
 		del self._CtrctRef
-		self._CtrctRef = None
+		self._CtrctRef = base_types.UninitialisedField(self, 'CtrctRef', ContractReference1, True)
 
 	@property
 	def Dbtr(self):
@@ -84,12 +84,12 @@ class DebtorActivation6(base_types._BaseFieldType):
 
 	@Dbtr.setter
 	def Dbtr(self, value):
-		self._Dbtr = value if type(value) != base_types.auto else self.make_default("Dbtr")
+		self._Dbtr = value if value is not None else base_types.UninitialisedField(self, 'Dbtr', RTPPartyIdentification2, False)
 
 	@Dbtr.deleter
 	def Dbtr(self):
 		del self._Dbtr
-		self._Dbtr = None
+		self._Dbtr = base_types.UninitialisedField(self, 'Dbtr', RTPPartyIdentification2, False)
 
 	@property
 	def DbtrActvtnId(self):
@@ -97,12 +97,12 @@ class DebtorActivation6(base_types._BaseFieldType):
 
 	@DbtrActvtnId.setter
 	def DbtrActvtnId(self, value):
-		self._DbtrActvtnId = value if type(value) != base_types.auto else self.make_default("DbtrActvtnId")
+		self._DbtrActvtnId = value if value is not None else base_types.UninitialisedField(self, 'DbtrActvtnId', Max35Text, False)
 
 	@DbtrActvtnId.deleter
 	def DbtrActvtnId(self):
 		del self._DbtrActvtnId
-		self._DbtrActvtnId = None
+		self._DbtrActvtnId = base_types.UninitialisedField(self, 'DbtrActvtnId', Max35Text, False)
 
 	@property
 	def DbtrSolPrvdr(self):
@@ -110,12 +110,12 @@ class DebtorActivation6(base_types._BaseFieldType):
 
 	@DbtrSolPrvdr.setter
 	def DbtrSolPrvdr(self, value):
-		self._DbtrSolPrvdr = value if type(value) != base_types.auto else self.make_default("DbtrSolPrvdr")
+		self._DbtrSolPrvdr = value if value is not None else base_types.UninitialisedField(self, 'DbtrSolPrvdr', RTPPartyIdentification2, False)
 
 	@DbtrSolPrvdr.deleter
 	def DbtrSolPrvdr(self):
 		del self._DbtrSolPrvdr
-		self._DbtrSolPrvdr = None
+		self._DbtrSolPrvdr = base_types.UninitialisedField(self, 'DbtrSolPrvdr', RTPPartyIdentification2, False)
 
 	@property
 	def DdctdActvtnCd(self):
@@ -123,12 +123,12 @@ class DebtorActivation6(base_types._BaseFieldType):
 
 	@DdctdActvtnCd.setter
 	def DdctdActvtnCd(self, value):
-		self._DdctdActvtnCd = value if type(value) != base_types.auto else self.make_default("DdctdActvtnCd")
+		self._DdctdActvtnCd = value if value is not None else base_types.UninitialisedField(self, 'DdctdActvtnCd', Max35Text, False)
 
 	@DdctdActvtnCd.deleter
 	def DdctdActvtnCd(self):
 		del self._DdctdActvtnCd
-		self._DdctdActvtnCd = None
+		self._DdctdActvtnCd = base_types.UninitialisedField(self, 'DdctdActvtnCd', Max35Text, False)
 
 	@property
 	def DispNm(self):
@@ -136,12 +136,12 @@ class DebtorActivation6(base_types._BaseFieldType):
 
 	@DispNm.setter
 	def DispNm(self, value):
-		self._DispNm = value if type(value) != base_types.auto else self.make_default("DispNm")
+		self._DispNm = value if value is not None else base_types.UninitialisedField(self, 'DispNm', Max140Text, False)
 
 	@DispNm.deleter
 	def DispNm(self):
 		del self._DispNm
-		self._DispNm = None
+		self._DispNm = base_types.UninitialisedField(self, 'DispNm', Max140Text, False)
 
 	@property
 	def EndDt(self):
@@ -149,12 +149,12 @@ class DebtorActivation6(base_types._BaseFieldType):
 
 	@EndDt.setter
 	def EndDt(self, value):
-		self._EndDt = value if type(value) != base_types.auto else self.make_default("EndDt")
+		self._EndDt = value if value is not None else base_types.UninitialisedField(self, 'EndDt', DateAndDateTime2Choice, False)
 
 	@EndDt.deleter
 	def EndDt(self):
 		del self._EndDt
-		self._EndDt = None
+		self._EndDt = base_types.UninitialisedField(self, 'EndDt', DateAndDateTime2Choice, False)
 
 	@property
 	def StartDt(self):
@@ -162,12 +162,12 @@ class DebtorActivation6(base_types._BaseFieldType):
 
 	@StartDt.setter
 	def StartDt(self, value):
-		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
+		self._StartDt = value if value is not None else base_types.UninitialisedField(self, 'StartDt', DateAndDateTime2Choice, False)
 
 	@StartDt.deleter
 	def StartDt(self):
 		del self._StartDt
-		self._StartDt = None
+		self._StartDt = base_types.UninitialisedField(self, 'StartDt', DateAndDateTime2Choice, False)
 
 	@property
 	def UltmtCdtr(self):
@@ -175,12 +175,12 @@ class DebtorActivation6(base_types._BaseFieldType):
 
 	@UltmtCdtr.setter
 	def UltmtCdtr(self, value):
-		self._UltmtCdtr = value if type(value) != base_types.auto else self.make_default("UltmtCdtr")
+		self._UltmtCdtr = value if value is not None else base_types.UninitialisedField(self, 'UltmtCdtr', RTPPartyIdentification2, False)
 
 	@UltmtCdtr.deleter
 	def UltmtCdtr(self):
 		del self._UltmtCdtr
-		self._UltmtCdtr = None
+		self._UltmtCdtr = base_types.UninitialisedField(self, 'UltmtCdtr', RTPPartyIdentification2, False)
 
 	@property
 	def UltmtDbtr(self):
@@ -188,12 +188,12 @@ class DebtorActivation6(base_types._BaseFieldType):
 
 	@UltmtDbtr.setter
 	def UltmtDbtr(self, value):
-		self._UltmtDbtr = value if type(value) != base_types.auto else self.make_default("UltmtDbtr")
+		self._UltmtDbtr = value if value is not None else base_types.UninitialisedField(self, 'UltmtDbtr', RTPPartyIdentification2, False)
 
 	@UltmtDbtr.deleter
 	def UltmtDbtr(self):
 		del self._UltmtDbtr
-		self._UltmtDbtr = None
+		self._UltmtDbtr = base_types.UninitialisedField(self, 'UltmtDbtr', RTPPartyIdentification2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActvtnReqDlvryPty', type=RTPPartyIdentification2, min=0, max=1, mutex_group=None, array=False),

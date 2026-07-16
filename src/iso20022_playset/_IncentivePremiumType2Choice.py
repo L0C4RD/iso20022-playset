@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Number import Number
-from ._VoteTypeAndQuantity1 import VoteTypeAndQuantity1
-from ._YesNoIndicator import YesNoIndicator
+from . import Number
+from . import VoteTypeAndQuantity1
+from . import YesNoIndicator
 
 class IncentivePremiumType2Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class IncentivePremiumType2Choice(base_types._BaseFieldType):
 
 	@PerAttndee.setter
 	def PerAttndee(self, value):
-		self._PerAttndee = value if type(value) != base_types.auto else self.make_default("PerAttndee")
+		self._PerAttndee = value if value is not None else base_types.UninitialisedField(self, 'PerAttndee', YesNoIndicator, False)
 
 	@PerAttndee.deleter
 	def PerAttndee(self):
 		del self._PerAttndee
-		self._PerAttndee = None
+		self._PerAttndee = base_types.UninitialisedField(self, 'PerAttndee', YesNoIndicator, False)
 
 	@property
 	def PerScty(self):
@@ -28,12 +28,12 @@ class IncentivePremiumType2Choice(base_types._BaseFieldType):
 
 	@PerScty.setter
 	def PerScty(self, value):
-		self._PerScty = value if type(value) != base_types.auto else self.make_default("PerScty")
+		self._PerScty = value if value is not None else base_types.UninitialisedField(self, 'PerScty', Number, False)
 
 	@PerScty.deleter
 	def PerScty(self):
 		del self._PerScty
-		self._PerScty = None
+		self._PerScty = base_types.UninitialisedField(self, 'PerScty', Number, False)
 
 	@property
 	def PerVote(self):
@@ -41,12 +41,12 @@ class IncentivePremiumType2Choice(base_types._BaseFieldType):
 
 	@PerVote.setter
 	def PerVote(self, value):
-		self._PerVote = value if type(value) != base_types.auto else self.make_default("PerVote")
+		self._PerVote = value if value is not None else base_types.UninitialisedField(self, 'PerVote', VoteTypeAndQuantity1, True)
 
 	@PerVote.deleter
 	def PerVote(self):
 		del self._PerVote
-		self._PerVote = None
+		self._PerVote = base_types.UninitialisedField(self, 'PerVote', VoteTypeAndQuantity1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PerAttndee', type=YesNoIndicator, min=0, max=1, mutex_group=1, array=False),

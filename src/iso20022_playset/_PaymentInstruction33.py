@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateTimePeriod1Choice import DateTimePeriod1Choice
-from ._Instruction1Code import Instruction1Code
-from ._PaymentType4Choice import PaymentType4Choice
-from ._Priority1Choice import Priority1Choice
+from . import DateTimePeriod1Choice
+from . import Instruction1Code
+from . import PaymentType4Choice
+from . import Priority1Choice
 
 class PaymentInstruction33(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class PaymentInstruction33(base_types._BaseFieldType):
 
 	@Instr.setter
 	def Instr(self, value):
-		self._Instr = value if type(value) != base_types.auto else self.make_default("Instr")
+		self._Instr = value if value is not None else base_types.UninitialisedField(self, 'Instr', Instruction1Code, False)
 
 	@Instr.deleter
 	def Instr(self):
 		del self._Instr
-		self._Instr = None
+		self._Instr = base_types.UninitialisedField(self, 'Instr', Instruction1Code, False)
 
 	@property
 	def PrcgVldtyTm(self):
@@ -29,12 +29,12 @@ class PaymentInstruction33(base_types._BaseFieldType):
 
 	@PrcgVldtyTm.setter
 	def PrcgVldtyTm(self, value):
-		self._PrcgVldtyTm = value if type(value) != base_types.auto else self.make_default("PrcgVldtyTm")
+		self._PrcgVldtyTm = value if value is not None else base_types.UninitialisedField(self, 'PrcgVldtyTm', DateTimePeriod1Choice, False)
 
 	@PrcgVldtyTm.deleter
 	def PrcgVldtyTm(self):
 		del self._PrcgVldtyTm
-		self._PrcgVldtyTm = None
+		self._PrcgVldtyTm = base_types.UninitialisedField(self, 'PrcgVldtyTm', DateTimePeriod1Choice, False)
 
 	@property
 	def Prty(self):
@@ -42,12 +42,12 @@ class PaymentInstruction33(base_types._BaseFieldType):
 
 	@Prty.setter
 	def Prty(self, value):
-		self._Prty = value if type(value) != base_types.auto else self.make_default("Prty")
+		self._Prty = value if value is not None else base_types.UninitialisedField(self, 'Prty', Priority1Choice, False)
 
 	@Prty.deleter
 	def Prty(self):
 		del self._Prty
-		self._Prty = None
+		self._Prty = base_types.UninitialisedField(self, 'Prty', Priority1Choice, False)
 
 	@property
 	def Tp(self):
@@ -55,12 +55,12 @@ class PaymentInstruction33(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', PaymentType4Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', PaymentType4Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Instr', type=Instruction1Code, min=0, max=1, mutex_group=None, array=False),

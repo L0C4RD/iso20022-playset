@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification177 import GenericIdentification177
-from ._LocationCategory3Code import LocationCategory3Code
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
-from ._PointOfInteractionCapabilities9 import PointOfInteractionCapabilities9
-from ._PointOfInteractionComponent17 import PointOfInteractionComponent17
+from . import GenericIdentification177
+from . import LocationCategory3Code
+from . import Max35Text
+from . import Max70Text
+from . import PointOfInteractionCapabilities9
+from . import PointOfInteractionComponent17
 
 class PointOfInteraction15(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class PointOfInteraction15(base_types._BaseFieldType):
 
 	@Cmpnt.setter
 	def Cmpnt(self, value):
-		self._Cmpnt = value if type(value) != base_types.auto else self.make_default("Cmpnt")
+		self._Cmpnt = value if value is not None else base_types.UninitialisedField(self, 'Cmpnt', PointOfInteractionComponent17, True)
 
 	@Cmpnt.deleter
 	def Cmpnt(self):
 		del self._Cmpnt
-		self._Cmpnt = None
+		self._Cmpnt = base_types.UninitialisedField(self, 'Cmpnt', PointOfInteractionComponent17, True)
 
 	@property
 	def Cpblties(self):
@@ -31,12 +31,12 @@ class PointOfInteraction15(base_types._BaseFieldType):
 
 	@Cpblties.setter
 	def Cpblties(self, value):
-		self._Cpblties = value if type(value) != base_types.auto else self.make_default("Cpblties")
+		self._Cpblties = value if value is not None else base_types.UninitialisedField(self, 'Cpblties', PointOfInteractionCapabilities9, False)
 
 	@Cpblties.deleter
 	def Cpblties(self):
 		del self._Cpblties
-		self._Cpblties = None
+		self._Cpblties = base_types.UninitialisedField(self, 'Cpblties', PointOfInteractionCapabilities9, False)
 
 	@property
 	def GrpId(self):
@@ -44,12 +44,12 @@ class PointOfInteraction15(base_types._BaseFieldType):
 
 	@GrpId.setter
 	def GrpId(self, value):
-		self._GrpId = value if type(value) != base_types.auto else self.make_default("GrpId")
+		self._GrpId = value if value is not None else base_types.UninitialisedField(self, 'GrpId', Max35Text, False)
 
 	@GrpId.deleter
 	def GrpId(self):
 		del self._GrpId
-		self._GrpId = None
+		self._GrpId = base_types.UninitialisedField(self, 'GrpId', Max35Text, False)
 
 	@property
 	def Id(self):
@@ -57,12 +57,12 @@ class PointOfInteraction15(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', GenericIdentification177, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', GenericIdentification177, False)
 
 	@property
 	def SysNm(self):
@@ -70,12 +70,12 @@ class PointOfInteraction15(base_types._BaseFieldType):
 
 	@SysNm.setter
 	def SysNm(self, value):
-		self._SysNm = value if type(value) != base_types.auto else self.make_default("SysNm")
+		self._SysNm = value if value is not None else base_types.UninitialisedField(self, 'SysNm', Max70Text, False)
 
 	@SysNm.deleter
 	def SysNm(self):
 		del self._SysNm
-		self._SysNm = None
+		self._SysNm = base_types.UninitialisedField(self, 'SysNm', Max70Text, False)
 
 	@property
 	def TermnlIntgtn(self):
@@ -83,12 +83,12 @@ class PointOfInteraction15(base_types._BaseFieldType):
 
 	@TermnlIntgtn.setter
 	def TermnlIntgtn(self, value):
-		self._TermnlIntgtn = value if type(value) != base_types.auto else self.make_default("TermnlIntgtn")
+		self._TermnlIntgtn = value if value is not None else base_types.UninitialisedField(self, 'TermnlIntgtn', LocationCategory3Code, False)
 
 	@TermnlIntgtn.deleter
 	def TermnlIntgtn(self):
 		del self._TermnlIntgtn
-		self._TermnlIntgtn = None
+		self._TermnlIntgtn = base_types.UninitialisedField(self, 'TermnlIntgtn', LocationCategory3Code, False)
 
 	@property
 	def TmZone(self):
@@ -96,12 +96,12 @@ class PointOfInteraction15(base_types._BaseFieldType):
 
 	@TmZone.setter
 	def TmZone(self, value):
-		self._TmZone = value if type(value) != base_types.auto else self.make_default("TmZone")
+		self._TmZone = value if value is not None else base_types.UninitialisedField(self, 'TmZone', Max70Text, False)
 
 	@TmZone.deleter
 	def TmZone(self):
 		del self._TmZone
-		self._TmZone = None
+		self._TmZone = base_types.UninitialisedField(self, 'TmZone', Max70Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cmpnt', type=PointOfInteractionComponent17, min=0, max=None, mutex_group=None, array=True),

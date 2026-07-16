@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from . import ActiveCurrencyAndAmount
+from . import ImpliedCurrencyAndAmount
 
 class Amount2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Amount2(base_types._BaseFieldType):
 
 	@OrgnlCcyAmt.setter
 	def OrgnlCcyAmt(self, value):
-		self._OrgnlCcyAmt = value if type(value) != base_types.auto else self.make_default("OrgnlCcyAmt")
+		self._OrgnlCcyAmt = value if value is not None else base_types.UninitialisedField(self, 'OrgnlCcyAmt', ActiveCurrencyAndAmount, False)
 
 	@OrgnlCcyAmt.deleter
 	def OrgnlCcyAmt(self):
 		del self._OrgnlCcyAmt
-		self._OrgnlCcyAmt = None
+		self._OrgnlCcyAmt = base_types.UninitialisedField(self, 'OrgnlCcyAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def RptgAmt(self):
@@ -27,12 +27,12 @@ class Amount2(base_types._BaseFieldType):
 
 	@RptgAmt.setter
 	def RptgAmt(self, value):
-		self._RptgAmt = value if type(value) != base_types.auto else self.make_default("RptgAmt")
+		self._RptgAmt = value if value is not None else base_types.UninitialisedField(self, 'RptgAmt', ImpliedCurrencyAndAmount, False)
 
 	@RptgAmt.deleter
 	def RptgAmt(self):
 		del self._RptgAmt
-		self._RptgAmt = None
+		self._RptgAmt = base_types.UninitialisedField(self, 'RptgAmt', ImpliedCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlCcyAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

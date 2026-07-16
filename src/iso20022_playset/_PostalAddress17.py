@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCode import CountryCode
-from ._GeographicLocation1Choice import GeographicLocation1Choice
-from ._Max16Text import Max16Text
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
+from . import CountryCode
+from . import GeographicLocation1Choice
+from . import Max16Text
+from . import Max35Text
+from . import Max70Text
 
 class PostalAddress17(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class PostalAddress17(base_types._BaseFieldType):
 
 	@AdrLine.setter
 	def AdrLine(self, value):
-		self._AdrLine = value if type(value) != base_types.auto else self.make_default("AdrLine")
+		self._AdrLine = value if value is not None else base_types.UninitialisedField(self, 'AdrLine', Max70Text, True)
 
 	@AdrLine.deleter
 	def AdrLine(self):
 		del self._AdrLine
-		self._AdrLine = None
+		self._AdrLine = base_types.UninitialisedField(self, 'AdrLine', Max70Text, True)
 
 	@property
 	def BldgNb(self):
@@ -30,12 +30,12 @@ class PostalAddress17(base_types._BaseFieldType):
 
 	@BldgNb.setter
 	def BldgNb(self, value):
-		self._BldgNb = value if type(value) != base_types.auto else self.make_default("BldgNb")
+		self._BldgNb = value if value is not None else base_types.UninitialisedField(self, 'BldgNb', Max16Text, False)
 
 	@BldgNb.deleter
 	def BldgNb(self):
 		del self._BldgNb
-		self._BldgNb = None
+		self._BldgNb = base_types.UninitialisedField(self, 'BldgNb', Max16Text, False)
 
 	@property
 	def Ctry(self):
@@ -43,12 +43,12 @@ class PostalAddress17(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@property
 	def CtrySubDvsn(self):
@@ -56,12 +56,12 @@ class PostalAddress17(base_types._BaseFieldType):
 
 	@CtrySubDvsn.setter
 	def CtrySubDvsn(self, value):
-		self._CtrySubDvsn = value if type(value) != base_types.auto else self.make_default("CtrySubDvsn")
+		self._CtrySubDvsn = value if value is not None else base_types.UninitialisedField(self, 'CtrySubDvsn', Max35Text, True)
 
 	@CtrySubDvsn.deleter
 	def CtrySubDvsn(self):
 		del self._CtrySubDvsn
-		self._CtrySubDvsn = None
+		self._CtrySubDvsn = base_types.UninitialisedField(self, 'CtrySubDvsn', Max35Text, True)
 
 	@property
 	def GLctn(self):
@@ -69,12 +69,12 @@ class PostalAddress17(base_types._BaseFieldType):
 
 	@GLctn.setter
 	def GLctn(self, value):
-		self._GLctn = value if type(value) != base_types.auto else self.make_default("GLctn")
+		self._GLctn = value if value is not None else base_types.UninitialisedField(self, 'GLctn', GeographicLocation1Choice, False)
 
 	@GLctn.deleter
 	def GLctn(self):
 		del self._GLctn
-		self._GLctn = None
+		self._GLctn = base_types.UninitialisedField(self, 'GLctn', GeographicLocation1Choice, False)
 
 	@property
 	def PstCd(self):
@@ -82,12 +82,12 @@ class PostalAddress17(base_types._BaseFieldType):
 
 	@PstCd.setter
 	def PstCd(self, value):
-		self._PstCd = value if type(value) != base_types.auto else self.make_default("PstCd")
+		self._PstCd = value if value is not None else base_types.UninitialisedField(self, 'PstCd', Max16Text, False)
 
 	@PstCd.deleter
 	def PstCd(self):
 		del self._PstCd
-		self._PstCd = None
+		self._PstCd = base_types.UninitialisedField(self, 'PstCd', Max16Text, False)
 
 	@property
 	def StrtNm(self):
@@ -95,12 +95,12 @@ class PostalAddress17(base_types._BaseFieldType):
 
 	@StrtNm.setter
 	def StrtNm(self, value):
-		self._StrtNm = value if type(value) != base_types.auto else self.make_default("StrtNm")
+		self._StrtNm = value if value is not None else base_types.UninitialisedField(self, 'StrtNm', Max70Text, False)
 
 	@StrtNm.deleter
 	def StrtNm(self):
 		del self._StrtNm
-		self._StrtNm = None
+		self._StrtNm = base_types.UninitialisedField(self, 'StrtNm', Max70Text, False)
 
 	@property
 	def TwnNm(self):
@@ -108,12 +108,12 @@ class PostalAddress17(base_types._BaseFieldType):
 
 	@TwnNm.setter
 	def TwnNm(self, value):
-		self._TwnNm = value if type(value) != base_types.auto else self.make_default("TwnNm")
+		self._TwnNm = value if value is not None else base_types.UninitialisedField(self, 'TwnNm', Max35Text, False)
 
 	@TwnNm.deleter
 	def TwnNm(self):
 		del self._TwnNm
-		self._TwnNm = None
+		self._TwnNm = base_types.UninitialisedField(self, 'TwnNm', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AdrLine', type=Max70Text, min=0, max=2, mutex_group=None, array=True),

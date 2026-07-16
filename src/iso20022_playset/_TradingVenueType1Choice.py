@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NoReasonCode import NoReasonCode
-from ._TradeMarket2Code import TradeMarket2Code
+from . import NoReasonCode
+from . import TradeMarket2Code
 
 class TradingVenueType1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TradingVenueType1Choice(base_types._BaseFieldType):
 
 	@OffVn.setter
 	def OffVn(self, value):
-		self._OffVn = value if type(value) != base_types.auto else self.make_default("OffVn")
+		self._OffVn = value if value is not None else base_types.UninitialisedField(self, 'OffVn', NoReasonCode, False)
 
 	@OffVn.deleter
 	def OffVn(self):
 		del self._OffVn
-		self._OffVn = None
+		self._OffVn = base_types.UninitialisedField(self, 'OffVn', NoReasonCode, False)
 
 	@property
 	def OnVn(self):
@@ -27,12 +27,12 @@ class TradingVenueType1Choice(base_types._BaseFieldType):
 
 	@OnVn.setter
 	def OnVn(self, value):
-		self._OnVn = value if type(value) != base_types.auto else self.make_default("OnVn")
+		self._OnVn = value if value is not None else base_types.UninitialisedField(self, 'OnVn', TradeMarket2Code, False)
 
 	@OnVn.deleter
 	def OnVn(self):
 		del self._OnVn
-		self._OnVn = None
+		self._OnVn = base_types.UninitialisedField(self, 'OnVn', TradeMarket2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OffVn', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),

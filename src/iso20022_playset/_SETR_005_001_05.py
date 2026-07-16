@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RedemptionOrderCancellationRequestV05 import RedemptionOrderCancellationRequestV05
+from . import RedemptionOrderCancellationRequestV05
 
 class SETR_005_001_05():
 
@@ -18,12 +18,12 @@ class SETR_005_001_05():
 
 		@RedOrdrCxlReq.setter
 		def RedOrdrCxlReq(self, value):
-			self._RedOrdrCxlReq = value if type(value) != base_types.auto else self.make_default("RedOrdrCxlReq")
+			self._RedOrdrCxlReq = value if value is not None else base_types.UninitialisedField(self, 'RedOrdrCxlReq', RedemptionOrderCancellationRequestV05, False)
 
 		@RedOrdrCxlReq.deleter
 		def RedOrdrCxlReq(self):
 			del self._RedOrdrCxlReq
-			self._RedOrdrCxlReq = None
+			self._RedOrdrCxlReq = base_types.UninitialisedField(self, 'RedOrdrCxlReq', RedemptionOrderCancellationRequestV05, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='RedOrdrCxlReq', type=RedemptionOrderCancellationRequestV05, min=1, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._StatusReportRequestV03 import StatusReportRequestV03
+from . import StatusReportRequestV03
 
 class TSMT_038_001_03():
 
@@ -18,12 +18,12 @@ class TSMT_038_001_03():
 
 		@StsRptReq.setter
 		def StsRptReq(self, value):
-			self._StsRptReq = value if type(value) != base_types.auto else self.make_default("StsRptReq")
+			self._StsRptReq = value if value is not None else base_types.UninitialisedField(self, 'StsRptReq', StatusReportRequestV03, False)
 
 		@StsRptReq.deleter
 		def StsRptReq(self):
 			del self._StsRptReq
-			self._StsRptReq = None
+			self._StsRptReq = base_types.UninitialisedField(self, 'StsRptReq', StatusReportRequestV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='StsRptReq', type=StatusReportRequestV03, min=1, max=1, mutex_group=None, array=False),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._CollateralEntryType1Code import CollateralEntryType1Code
-from ._Max35Text import Max35Text
-from ._YesNoIndicator import YesNoIndicator
+from . import ActiveCurrencyAndAmount
+from . import CollateralEntryType1Code
+from . import Max35Text
+from . import YesNoIndicator
 
 class CashMovement5(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CashMovement5(base_types._BaseFieldType):
 
 	@ClntCshMvmntId.setter
 	def ClntCshMvmntId(self, value):
-		self._ClntCshMvmntId = value if type(value) != base_types.auto else self.make_default("ClntCshMvmntId")
+		self._ClntCshMvmntId = value if value is not None else base_types.UninitialisedField(self, 'ClntCshMvmntId', Max35Text, False)
 
 	@ClntCshMvmntId.deleter
 	def ClntCshMvmntId(self):
 		del self._ClntCshMvmntId
-		self._ClntCshMvmntId = None
+		self._ClntCshMvmntId = base_types.UninitialisedField(self, 'ClntCshMvmntId', Max35Text, False)
 
 	@property
 	def CollMvmnt(self):
@@ -29,12 +29,12 @@ class CashMovement5(base_types._BaseFieldType):
 
 	@CollMvmnt.setter
 	def CollMvmnt(self, value):
-		self._CollMvmnt = value if type(value) != base_types.auto else self.make_default("CollMvmnt")
+		self._CollMvmnt = value if value is not None else base_types.UninitialisedField(self, 'CollMvmnt', YesNoIndicator, False)
 
 	@CollMvmnt.deleter
 	def CollMvmnt(self):
 		del self._CollMvmnt
-		self._CollMvmnt = None
+		self._CollMvmnt = base_types.UninitialisedField(self, 'CollMvmnt', YesNoIndicator, False)
 
 	@property
 	def CshAmt(self):
@@ -42,12 +42,12 @@ class CashMovement5(base_types._BaseFieldType):
 
 	@CshAmt.setter
 	def CshAmt(self, value):
-		self._CshAmt = value if type(value) != base_types.auto else self.make_default("CshAmt")
+		self._CshAmt = value if value is not None else base_types.UninitialisedField(self, 'CshAmt', ActiveCurrencyAndAmount, False)
 
 	@CshAmt.deleter
 	def CshAmt(self):
 		del self._CshAmt
-		self._CshAmt = None
+		self._CshAmt = base_types.UninitialisedField(self, 'CshAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def CshMvmnt(self):
@@ -55,12 +55,12 @@ class CashMovement5(base_types._BaseFieldType):
 
 	@CshMvmnt.setter
 	def CshMvmnt(self, value):
-		self._CshMvmnt = value if type(value) != base_types.auto else self.make_default("CshMvmnt")
+		self._CshMvmnt = value if value is not None else base_types.UninitialisedField(self, 'CshMvmnt', CollateralEntryType1Code, False)
 
 	@CshMvmnt.deleter
 	def CshMvmnt(self):
 		del self._CshMvmnt
-		self._CshMvmnt = None
+		self._CshMvmnt = base_types.UninitialisedField(self, 'CshMvmnt', CollateralEntryType1Code, False)
 
 	@property
 	def TrptyAgtSvcPrvdrCshMvmntId(self):
@@ -68,12 +68,12 @@ class CashMovement5(base_types._BaseFieldType):
 
 	@TrptyAgtSvcPrvdrCshMvmntId.setter
 	def TrptyAgtSvcPrvdrCshMvmntId(self, value):
-		self._TrptyAgtSvcPrvdrCshMvmntId = value if type(value) != base_types.auto else self.make_default("TrptyAgtSvcPrvdrCshMvmntId")
+		self._TrptyAgtSvcPrvdrCshMvmntId = value if value is not None else base_types.UninitialisedField(self, 'TrptyAgtSvcPrvdrCshMvmntId', Max35Text, False)
 
 	@TrptyAgtSvcPrvdrCshMvmntId.deleter
 	def TrptyAgtSvcPrvdrCshMvmntId(self):
 		del self._TrptyAgtSvcPrvdrCshMvmntId
-		self._TrptyAgtSvcPrvdrCshMvmntId = None
+		self._TrptyAgtSvcPrvdrCshMvmntId = base_types.UninitialisedField(self, 'TrptyAgtSvcPrvdrCshMvmntId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClntCshMvmntId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

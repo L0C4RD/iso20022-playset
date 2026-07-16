@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._FinancialInstrumentQuantity36Choice import FinancialInstrumentQuantity36Choice
-from ._GenericIdentification39 import GenericIdentification39
-from ._PriorityNumeric5Choice import PriorityNumeric5Choice
-from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
-from ._SecuritiesSubBalanceTypeAndQuantityBreakdown6 import SecuritiesSubBalanceTypeAndQuantityBreakdown6
+from . import DateAndDateTime2Choice
+from . import FinancialInstrumentQuantity36Choice
+from . import GenericIdentification39
+from . import PriorityNumeric5Choice
+from . import RestrictedFINXMax350Text
+from . import SecuritiesSubBalanceTypeAndQuantityBreakdown6
 
 class IntraPositionDetails62(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class IntraPositionDetails62(base_types._BaseFieldType):
 
 	@BalFr.setter
 	def BalFr(self, value):
-		self._BalFr = value if type(value) != base_types.auto else self.make_default("BalFr")
+		self._BalFr = value if value is not None else base_types.UninitialisedField(self, 'BalFr', SecuritiesSubBalanceTypeAndQuantityBreakdown6, False)
 
 	@BalFr.deleter
 	def BalFr(self):
 		del self._BalFr
-		self._BalFr = None
+		self._BalFr = base_types.UninitialisedField(self, 'BalFr', SecuritiesSubBalanceTypeAndQuantityBreakdown6, False)
 
 	@property
 	def BalTo(self):
@@ -31,12 +31,12 @@ class IntraPositionDetails62(base_types._BaseFieldType):
 
 	@BalTo.setter
 	def BalTo(self, value):
-		self._BalTo = value if type(value) != base_types.auto else self.make_default("BalTo")
+		self._BalTo = value if value is not None else base_types.UninitialisedField(self, 'BalTo', SecuritiesSubBalanceTypeAndQuantityBreakdown6, False)
 
 	@BalTo.deleter
 	def BalTo(self):
 		del self._BalTo
-		self._BalTo = None
+		self._BalTo = base_types.UninitialisedField(self, 'BalTo', SecuritiesSubBalanceTypeAndQuantityBreakdown6, False)
 
 	@property
 	def InstrPrcgAddtlDtls(self):
@@ -44,12 +44,12 @@ class IntraPositionDetails62(base_types._BaseFieldType):
 
 	@InstrPrcgAddtlDtls.setter
 	def InstrPrcgAddtlDtls(self, value):
-		self._InstrPrcgAddtlDtls = value if type(value) != base_types.auto else self.make_default("InstrPrcgAddtlDtls")
+		self._InstrPrcgAddtlDtls = value if value is not None else base_types.UninitialisedField(self, 'InstrPrcgAddtlDtls', RestrictedFINXMax350Text, False)
 
 	@InstrPrcgAddtlDtls.deleter
 	def InstrPrcgAddtlDtls(self):
 		del self._InstrPrcgAddtlDtls
-		self._InstrPrcgAddtlDtls = None
+		self._InstrPrcgAddtlDtls = base_types.UninitialisedField(self, 'InstrPrcgAddtlDtls', RestrictedFINXMax350Text, False)
 
 	@property
 	def Prty(self):
@@ -57,12 +57,12 @@ class IntraPositionDetails62(base_types._BaseFieldType):
 
 	@Prty.setter
 	def Prty(self, value):
-		self._Prty = value if type(value) != base_types.auto else self.make_default("Prty")
+		self._Prty = value if value is not None else base_types.UninitialisedField(self, 'Prty', PriorityNumeric5Choice, False)
 
 	@Prty.deleter
 	def Prty(self):
 		del self._Prty
-		self._Prty = None
+		self._Prty = base_types.UninitialisedField(self, 'Prty', PriorityNumeric5Choice, False)
 
 	@property
 	def SctiesSubBalId(self):
@@ -70,12 +70,12 @@ class IntraPositionDetails62(base_types._BaseFieldType):
 
 	@SctiesSubBalId.setter
 	def SctiesSubBalId(self, value):
-		self._SctiesSubBalId = value if type(value) != base_types.auto else self.make_default("SctiesSubBalId")
+		self._SctiesSubBalId = value if value is not None else base_types.UninitialisedField(self, 'SctiesSubBalId', GenericIdentification39, False)
 
 	@SctiesSubBalId.deleter
 	def SctiesSubBalId(self):
 		del self._SctiesSubBalId
-		self._SctiesSubBalId = None
+		self._SctiesSubBalId = base_types.UninitialisedField(self, 'SctiesSubBalId', GenericIdentification39, False)
 
 	@property
 	def SttlmDt(self):
@@ -83,12 +83,12 @@ class IntraPositionDetails62(base_types._BaseFieldType):
 
 	@SttlmDt.setter
 	def SttlmDt(self, value):
-		self._SttlmDt = value if type(value) != base_types.auto else self.make_default("SttlmDt")
+		self._SttlmDt = value if value is not None else base_types.UninitialisedField(self, 'SttlmDt', DateAndDateTime2Choice, False)
 
 	@SttlmDt.deleter
 	def SttlmDt(self):
 		del self._SttlmDt
-		self._SttlmDt = None
+		self._SttlmDt = base_types.UninitialisedField(self, 'SttlmDt', DateAndDateTime2Choice, False)
 
 	@property
 	def SttlmQty(self):
@@ -96,12 +96,12 @@ class IntraPositionDetails62(base_types._BaseFieldType):
 
 	@SttlmQty.setter
 	def SttlmQty(self, value):
-		self._SttlmQty = value if type(value) != base_types.auto else self.make_default("SttlmQty")
+		self._SttlmQty = value if value is not None else base_types.UninitialisedField(self, 'SttlmQty', FinancialInstrumentQuantity36Choice, False)
 
 	@SttlmQty.deleter
 	def SttlmQty(self):
 		del self._SttlmQty
-		self._SttlmQty = None
+		self._SttlmQty = base_types.UninitialisedField(self, 'SttlmQty', FinancialInstrumentQuantity36Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BalFr', type=SecuritiesSubBalanceTypeAndQuantityBreakdown6, min=1, max=1, mutex_group=None, array=False),

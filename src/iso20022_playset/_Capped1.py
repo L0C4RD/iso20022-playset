@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAnd13DecimalAmount import ActiveCurrencyAnd13DecimalAmount
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._ISODate import ISODate
+from . import ActiveCurrencyAnd13DecimalAmount
+from . import AdditionalInformation15
+from . import ISODate
 
 class Capped1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Capped1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@property
 	def IncmCurPrd(self):
@@ -28,12 +28,12 @@ class Capped1(base_types._BaseFieldType):
 
 	@IncmCurPrd.setter
 	def IncmCurPrd(self, value):
-		self._IncmCurPrd = value if type(value) != base_types.auto else self.make_default("IncmCurPrd")
+		self._IncmCurPrd = value if value is not None else base_types.UninitialisedField(self, 'IncmCurPrd', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@IncmCurPrd.deleter
 	def IncmCurPrd(self):
 		del self._IncmCurPrd
-		self._IncmCurPrd = None
+		self._IncmCurPrd = base_types.UninitialisedField(self, 'IncmCurPrd', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def IncmLmtCurPrd(self):
@@ -41,12 +41,12 @@ class Capped1(base_types._BaseFieldType):
 
 	@IncmLmtCurPrd.setter
 	def IncmLmtCurPrd(self, value):
-		self._IncmLmtCurPrd = value if type(value) != base_types.auto else self.make_default("IncmLmtCurPrd")
+		self._IncmLmtCurPrd = value if value is not None else base_types.UninitialisedField(self, 'IncmLmtCurPrd', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@IncmLmtCurPrd.deleter
 	def IncmLmtCurPrd(self):
 		del self._IncmLmtCurPrd
-		self._IncmLmtCurPrd = None
+		self._IncmLmtCurPrd = base_types.UninitialisedField(self, 'IncmLmtCurPrd', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def IncmLmtNxtPrd(self):
@@ -54,12 +54,12 @@ class Capped1(base_types._BaseFieldType):
 
 	@IncmLmtNxtPrd.setter
 	def IncmLmtNxtPrd(self, value):
-		self._IncmLmtNxtPrd = value if type(value) != base_types.auto else self.make_default("IncmLmtNxtPrd")
+		self._IncmLmtNxtPrd = value if value is not None else base_types.UninitialisedField(self, 'IncmLmtNxtPrd', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@IncmLmtNxtPrd.deleter
 	def IncmLmtNxtPrd(self):
 		del self._IncmLmtNxtPrd
-		self._IncmLmtNxtPrd = None
+		self._IncmLmtNxtPrd = base_types.UninitialisedField(self, 'IncmLmtNxtPrd', ActiveCurrencyAnd13DecimalAmount, False)
 
 	@property
 	def StartDt(self):
@@ -67,12 +67,12 @@ class Capped1(base_types._BaseFieldType):
 
 	@StartDt.setter
 	def StartDt(self, value):
-		self._StartDt = value if type(value) != base_types.auto else self.make_default("StartDt")
+		self._StartDt = value if value is not None else base_types.UninitialisedField(self, 'StartDt', ISODate, False)
 
 	@StartDt.deleter
 	def StartDt(self):
 		del self._StartDt
-		self._StartDt = None
+		self._StartDt = base_types.UninitialisedField(self, 'StartDt', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Event1 import Event1
-from ._Exact4AlphaNumericText import Exact4AlphaNumericText
-from ._Max35Text import Max35Text
-from ._SupplementaryData1 import SupplementaryData1
+from . import Event1
+from . import Exact4AlphaNumericText
+from . import Max35Text
+from . import SupplementaryData1
 
 class SystemEventAcknowledgementV01(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class SystemEventAcknowledgementV01(base_types._BaseFieldType):
 
 	@AckDtls.setter
 	def AckDtls(self, value):
-		self._AckDtls = value if type(value) != base_types.auto else self.make_default("AckDtls")
+		self._AckDtls = value if value is not None else base_types.UninitialisedField(self, 'AckDtls', Event1, False)
 
 	@AckDtls.deleter
 	def AckDtls(self):
 		del self._AckDtls
-		self._AckDtls = None
+		self._AckDtls = base_types.UninitialisedField(self, 'AckDtls', Event1, False)
 
 	@property
 	def MsgId(self):
@@ -29,12 +29,12 @@ class SystemEventAcknowledgementV01(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@property
 	def OrgtrRef(self):
@@ -42,12 +42,12 @@ class SystemEventAcknowledgementV01(base_types._BaseFieldType):
 
 	@OrgtrRef.setter
 	def OrgtrRef(self, value):
-		self._OrgtrRef = value if type(value) != base_types.auto else self.make_default("OrgtrRef")
+		self._OrgtrRef = value if value is not None else base_types.UninitialisedField(self, 'OrgtrRef', Max35Text, False)
 
 	@OrgtrRef.deleter
 	def OrgtrRef(self):
 		del self._OrgtrRef
-		self._OrgtrRef = None
+		self._OrgtrRef = base_types.UninitialisedField(self, 'OrgtrRef', Max35Text, False)
 
 	@property
 	def SplmtryData(self):
@@ -55,12 +55,12 @@ class SystemEventAcknowledgementV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def SttlmSsnIdr(self):
@@ -68,12 +68,12 @@ class SystemEventAcknowledgementV01(base_types._BaseFieldType):
 
 	@SttlmSsnIdr.setter
 	def SttlmSsnIdr(self, value):
-		self._SttlmSsnIdr = value if type(value) != base_types.auto else self.make_default("SttlmSsnIdr")
+		self._SttlmSsnIdr = value if value is not None else base_types.UninitialisedField(self, 'SttlmSsnIdr', Exact4AlphaNumericText, False)
 
 	@SttlmSsnIdr.deleter
 	def SttlmSsnIdr(self):
 		del self._SttlmSsnIdr
-		self._SttlmSsnIdr = None
+		self._SttlmSsnIdr = base_types.UninitialisedField(self, 'SttlmSsnIdr', Exact4AlphaNumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AckDtls', type=Event1, min=0, max=1, mutex_group=None, array=False),

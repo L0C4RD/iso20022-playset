@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._SpecialProgrammeDetails2 import SpecialProgrammeDetails2
+from . import Max35Text
+from . import SpecialProgrammeDetails2
 
 class SpecialProgrammeQualification2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SpecialProgrammeQualification2(base_types._BaseFieldType):
 
 	@Dtl.setter
 	def Dtl(self, value):
-		self._Dtl = value if type(value) != base_types.auto else self.make_default("Dtl")
+		self._Dtl = value if value is not None else base_types.UninitialisedField(self, 'Dtl', SpecialProgrammeDetails2, True)
 
 	@Dtl.deleter
 	def Dtl(self):
 		del self._Dtl
-		self._Dtl = None
+		self._Dtl = base_types.UninitialisedField(self, 'Dtl', SpecialProgrammeDetails2, True)
 
 	@property
 	def Prgrmm(self):
@@ -27,12 +27,12 @@ class SpecialProgrammeQualification2(base_types._BaseFieldType):
 
 	@Prgrmm.setter
 	def Prgrmm(self, value):
-		self._Prgrmm = value if type(value) != base_types.auto else self.make_default("Prgrmm")
+		self._Prgrmm = value if value is not None else base_types.UninitialisedField(self, 'Prgrmm', Max35Text, False)
 
 	@Prgrmm.deleter
 	def Prgrmm(self):
 		del self._Prgrmm
-		self._Prgrmm = None
+		self._Prgrmm = base_types.UninitialisedField(self, 'Prgrmm', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dtl', type=SpecialProgrammeDetails2, min=0, max=None, mutex_group=None, array=True),

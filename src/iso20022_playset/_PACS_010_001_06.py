@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstitutionDirectDebitV06 import FinancialInstitutionDirectDebitV06
+from . import FinancialInstitutionDirectDebitV06
 
 class PACS_010_001_06():
 
@@ -18,12 +18,12 @@ class PACS_010_001_06():
 
 		@FIDrctDbt.setter
 		def FIDrctDbt(self, value):
-			self._FIDrctDbt = value if type(value) != base_types.auto else self.make_default("FIDrctDbt")
+			self._FIDrctDbt = value if value is not None else base_types.UninitialisedField(self, 'FIDrctDbt', FinancialInstitutionDirectDebitV06, False)
 
 		@FIDrctDbt.deleter
 		def FIDrctDbt(self):
 			del self._FIDrctDbt
-			self._FIDrctDbt = None
+			self._FIDrctDbt = base_types.UninitialisedField(self, 'FIDrctDbt', FinancialInstitutionDirectDebitV06, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='FIDrctDbt', type=FinancialInstitutionDirectDebitV06, min=1, max=1, mutex_group=None, array=False),

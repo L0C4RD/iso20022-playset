@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BaselineStatus3Code import BaselineStatus3Code
+from . import BaselineStatus3Code
 
 class TransactionStatus4(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class TransactionStatus4(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', BaselineStatus3Code, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', BaselineStatus3Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Sts', type=BaselineStatus3Code, min=1, max=1, mutex_group=None, array=False),

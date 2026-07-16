@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PercentageRate import PercentageRate
-from ._RateTypeAndLookback2 import RateTypeAndLookback2
+from . import PercentageRate
+from . import RateTypeAndLookback2
 
 class RateOrName4Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class RateOrName4Choice(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+		self._Rate = value if value is not None else base_types.UninitialisedField(self, 'Rate', PercentageRate, False)
 
 	@Rate.deleter
 	def Rate(self):
 		del self._Rate
-		self._Rate = None
+		self._Rate = base_types.UninitialisedField(self, 'Rate', PercentageRate, False)
 
 	@property
 	def RateIndxDtls(self):
@@ -27,12 +27,12 @@ class RateOrName4Choice(base_types._BaseFieldType):
 
 	@RateIndxDtls.setter
 	def RateIndxDtls(self, value):
-		self._RateIndxDtls = value if type(value) != base_types.auto else self.make_default("RateIndxDtls")
+		self._RateIndxDtls = value if value is not None else base_types.UninitialisedField(self, 'RateIndxDtls', RateTypeAndLookback2, False)
 
 	@RateIndxDtls.deleter
 	def RateIndxDtls(self):
 		del self._RateIndxDtls
-		self._RateIndxDtls = None
+		self._RateIndxDtls = base_types.UninitialisedField(self, 'RateIndxDtls', RateTypeAndLookback2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Rate', type=PercentageRate, min=0, max=1, mutex_group=1, array=False),

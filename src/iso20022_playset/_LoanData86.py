@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._Max52Text import Max52Text
+from . import ISODate
+from . import Max52Text
 
 class LoanData86(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class LoanData86(base_types._BaseFieldType):
 
 	@EvtDt.setter
 	def EvtDt(self, value):
-		self._EvtDt = value if type(value) != base_types.auto else self.make_default("EvtDt")
+		self._EvtDt = value if value is not None else base_types.UninitialisedField(self, 'EvtDt', ISODate, False)
 
 	@EvtDt.deleter
 	def EvtDt(self):
 		del self._EvtDt
-		self._EvtDt = None
+		self._EvtDt = base_types.UninitialisedField(self, 'EvtDt', ISODate, False)
 
 	@property
 	def TermntnDt(self):
@@ -27,12 +27,12 @@ class LoanData86(base_types._BaseFieldType):
 
 	@TermntnDt.setter
 	def TermntnDt(self, value):
-		self._TermntnDt = value if type(value) != base_types.auto else self.make_default("TermntnDt")
+		self._TermntnDt = value if value is not None else base_types.UninitialisedField(self, 'TermntnDt', ISODate, False)
 
 	@TermntnDt.deleter
 	def TermntnDt(self):
 		del self._TermntnDt
-		self._TermntnDt = None
+		self._TermntnDt = base_types.UninitialisedField(self, 'TermntnDt', ISODate, False)
 
 	@property
 	def UnqTradIdr(self):
@@ -40,12 +40,12 @@ class LoanData86(base_types._BaseFieldType):
 
 	@UnqTradIdr.setter
 	def UnqTradIdr(self, value):
-		self._UnqTradIdr = value if type(value) != base_types.auto else self.make_default("UnqTradIdr")
+		self._UnqTradIdr = value if value is not None else base_types.UninitialisedField(self, 'UnqTradIdr', Max52Text, False)
 
 	@UnqTradIdr.deleter
 	def UnqTradIdr(self):
 		del self._UnqTradIdr
-		self._UnqTradIdr = None
+		self._UnqTradIdr = base_types.UninitialisedField(self, 'UnqTradIdr', Max52Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EvtDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),

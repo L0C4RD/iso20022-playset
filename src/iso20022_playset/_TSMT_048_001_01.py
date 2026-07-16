@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SpecialNotificationV01 import SpecialNotificationV01
+from . import SpecialNotificationV01
 
 class TSMT_048_001_01():
 
@@ -18,12 +18,12 @@ class TSMT_048_001_01():
 
 		@SpclNtfctn.setter
 		def SpclNtfctn(self, value):
-			self._SpclNtfctn = value if type(value) != base_types.auto else self.make_default("SpclNtfctn")
+			self._SpclNtfctn = value if value is not None else base_types.UninitialisedField(self, 'SpclNtfctn', SpecialNotificationV01, False)
 
 		@SpclNtfctn.deleter
 		def SpclNtfctn(self):
 			del self._SpclNtfctn
-			self._SpclNtfctn = None
+			self._SpclNtfctn = base_types.UninitialisedField(self, 'SpclNtfctn', SpecialNotificationV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SpclNtfctn', type=SpecialNotificationV01, min=1, max=1, mutex_group=None, array=False),

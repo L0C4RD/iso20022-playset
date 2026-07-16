@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BillingCancellationReport3 import BillingCancellationReport3
-from ._BillingReport6 import BillingReport6
-from ._ErrorHandling5 import ErrorHandling5
+from . import BillingCancellationReport3
+from . import BillingReport6
+from . import ErrorHandling5
 
 class BillingReportOrError6Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class BillingReportOrError6Choice(base_types._BaseFieldType):
 
 	@BllgRpt.setter
 	def BllgRpt(self, value):
-		self._BllgRpt = value if type(value) != base_types.auto else self.make_default("BllgRpt")
+		self._BllgRpt = value if value is not None else base_types.UninitialisedField(self, 'BllgRpt', BillingReport6, False)
 
 	@BllgRpt.deleter
 	def BllgRpt(self):
 		del self._BllgRpt
-		self._BllgRpt = None
+		self._BllgRpt = base_types.UninitialisedField(self, 'BllgRpt', BillingReport6, False)
 
 	@property
 	def CxlRpt(self):
@@ -28,12 +28,12 @@ class BillingReportOrError6Choice(base_types._BaseFieldType):
 
 	@CxlRpt.setter
 	def CxlRpt(self, value):
-		self._CxlRpt = value if type(value) != base_types.auto else self.make_default("CxlRpt")
+		self._CxlRpt = value if value is not None else base_types.UninitialisedField(self, 'CxlRpt', BillingCancellationReport3, False)
 
 	@CxlRpt.deleter
 	def CxlRpt(self):
 		del self._CxlRpt
-		self._CxlRpt = None
+		self._CxlRpt = base_types.UninitialisedField(self, 'CxlRpt', BillingCancellationReport3, False)
 
 	@property
 	def OprlErr(self):
@@ -41,12 +41,12 @@ class BillingReportOrError6Choice(base_types._BaseFieldType):
 
 	@OprlErr.setter
 	def OprlErr(self, value):
-		self._OprlErr = value if type(value) != base_types.auto else self.make_default("OprlErr")
+		self._OprlErr = value if value is not None else base_types.UninitialisedField(self, 'OprlErr', ErrorHandling5, True)
 
 	@OprlErr.deleter
 	def OprlErr(self):
 		del self._OprlErr
-		self._OprlErr = None
+		self._OprlErr = base_types.UninitialisedField(self, 'OprlErr', ErrorHandling5, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BllgRpt', type=BillingReport6, min=0, max=1, mutex_group=1, array=False),

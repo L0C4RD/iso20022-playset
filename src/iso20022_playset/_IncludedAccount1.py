@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._YesNoIndicator import YesNoIndicator
+from . import Max35Text
+from . import YesNoIndicator
 
 class IncludedAccount1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class IncludedAccount1(base_types._BaseFieldType):
 
 	@InclInd.setter
 	def InclInd(self, value):
-		self._InclInd = value if type(value) != base_types.auto else self.make_default("InclInd")
+		self._InclInd = value if value is not None else base_types.UninitialisedField(self, 'InclInd', YesNoIndicator, False)
 
 	@InclInd.deleter
 	def InclInd(self):
 		del self._InclInd
-		self._InclInd = None
+		self._InclInd = base_types.UninitialisedField(self, 'InclInd', YesNoIndicator, False)
 
 	@property
 	def SctiesAcctId(self):
@@ -27,12 +27,12 @@ class IncludedAccount1(base_types._BaseFieldType):
 
 	@SctiesAcctId.setter
 	def SctiesAcctId(self, value):
-		self._SctiesAcctId = value if type(value) != base_types.auto else self.make_default("SctiesAcctId")
+		self._SctiesAcctId = value if value is not None else base_types.UninitialisedField(self, 'SctiesAcctId', Max35Text, False)
 
 	@SctiesAcctId.deleter
 	def SctiesAcctId(self):
 		del self._SctiesAcctId
-		self._SctiesAcctId = None
+		self._SctiesAcctId = base_types.UninitialisedField(self, 'SctiesAcctId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InclInd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),

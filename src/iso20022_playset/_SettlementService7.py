@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._ISODate import ISODate
-from ._ISODateTime import ISODateTime
-from ._ISOTime import ISOTime
-from ._Max35Text import Max35Text
+from . import ATICALaxProcessing
+from . import ISODate
+from . import ISODateTime
+from . import ISOTime
+from . import Max35Text
 
 class SettlementService7(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class SettlementService7(base_types._BaseFieldType):
 
 	@CutOffTm.setter
 	def CutOffTm(self, value):
-		self._CutOffTm = value if type(value) != base_types.auto else self.make_default("CutOffTm")
+		self._CutOffTm = value if value is not None else base_types.UninitialisedField(self, 'CutOffTm', ISODateTime, False)
 
 	@CutOffTm.deleter
 	def CutOffTm(self):
 		del self._CutOffTm
-		self._CutOffTm = None
+		self._CutOffTm = base_types.UninitialisedField(self, 'CutOffTm', ISODateTime, False)
 
 	@property
 	def DfrrdDt(self):
@@ -30,12 +30,12 @@ class SettlementService7(base_types._BaseFieldType):
 
 	@DfrrdDt.setter
 	def DfrrdDt(self, value):
-		self._DfrrdDt = value if type(value) != base_types.auto else self.make_default("DfrrdDt")
+		self._DfrrdDt = value if value is not None else base_types.UninitialisedField(self, 'DfrrdDt', ISODate, False)
 
 	@DfrrdDt.deleter
 	def DfrrdDt(self):
 		del self._DfrrdDt
-		self._DfrrdDt = None
+		self._DfrrdDt = base_types.UninitialisedField(self, 'DfrrdDt', ISODate, False)
 
 	@property
 	def Dt(self):
@@ -43,12 +43,12 @@ class SettlementService7(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@property
 	def Id(self):
@@ -56,12 +56,12 @@ class SettlementService7(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def NtlData(self):
@@ -69,12 +69,12 @@ class SettlementService7(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def Prd(self):
@@ -82,12 +82,12 @@ class SettlementService7(base_types._BaseFieldType):
 
 	@Prd.setter
 	def Prd(self, value):
-		self._Prd = value if type(value) != base_types.auto else self.make_default("Prd")
+		self._Prd = value if value is not None else base_types.UninitialisedField(self, 'Prd', Max35Text, False)
 
 	@Prd.deleter
 	def Prd(self):
 		del self._Prd
-		self._Prd = None
+		self._Prd = base_types.UninitialisedField(self, 'Prd', Max35Text, False)
 
 	@property
 	def PropsdId(self):
@@ -95,12 +95,12 @@ class SettlementService7(base_types._BaseFieldType):
 
 	@PropsdId.setter
 	def PropsdId(self, value):
-		self._PropsdId = value if type(value) != base_types.auto else self.make_default("PropsdId")
+		self._PropsdId = value if value is not None else base_types.UninitialisedField(self, 'PropsdId', Max35Text, False)
 
 	@PropsdId.deleter
 	def PropsdId(self):
 		del self._PropsdId
-		self._PropsdId = None
+		self._PropsdId = base_types.UninitialisedField(self, 'PropsdId', Max35Text, False)
 
 	@property
 	def PropsdTp(self):
@@ -108,12 +108,12 @@ class SettlementService7(base_types._BaseFieldType):
 
 	@PropsdTp.setter
 	def PropsdTp(self, value):
-		self._PropsdTp = value if type(value) != base_types.auto else self.make_default("PropsdTp")
+		self._PropsdTp = value if value is not None else base_types.UninitialisedField(self, 'PropsdTp', Max35Text, False)
 
 	@PropsdTp.deleter
 	def PropsdTp(self):
 		del self._PropsdTp
-		self._PropsdTp = None
+		self._PropsdTp = base_types.UninitialisedField(self, 'PropsdTp', Max35Text, False)
 
 	@property
 	def PrvtData(self):
@@ -121,12 +121,12 @@ class SettlementService7(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def RptgNttyId(self):
@@ -134,12 +134,12 @@ class SettlementService7(base_types._BaseFieldType):
 
 	@RptgNttyId.setter
 	def RptgNttyId(self, value):
-		self._RptgNttyId = value if type(value) != base_types.auto else self.make_default("RptgNttyId")
+		self._RptgNttyId = value if value is not None else base_types.UninitialisedField(self, 'RptgNttyId', Max35Text, False)
 
 	@RptgNttyId.deleter
 	def RptgNttyId(self):
 		del self._RptgNttyId
-		self._RptgNttyId = None
+		self._RptgNttyId = base_types.UninitialisedField(self, 'RptgNttyId', Max35Text, False)
 
 	@property
 	def RptgNttyTp(self):
@@ -147,12 +147,12 @@ class SettlementService7(base_types._BaseFieldType):
 
 	@RptgNttyTp.setter
 	def RptgNttyTp(self, value):
-		self._RptgNttyTp = value if type(value) != base_types.auto else self.make_default("RptgNttyTp")
+		self._RptgNttyTp = value if value is not None else base_types.UninitialisedField(self, 'RptgNttyTp', Max35Text, False)
 
 	@RptgNttyTp.deleter
 	def RptgNttyTp(self):
 		del self._RptgNttyTp
-		self._RptgNttyTp = None
+		self._RptgNttyTp = base_types.UninitialisedField(self, 'RptgNttyTp', Max35Text, False)
 
 	@property
 	def Tm(self):
@@ -160,12 +160,12 @@ class SettlementService7(base_types._BaseFieldType):
 
 	@Tm.setter
 	def Tm(self, value):
-		self._Tm = value if type(value) != base_types.auto else self.make_default("Tm")
+		self._Tm = value if value is not None else base_types.UninitialisedField(self, 'Tm', ISOTime, False)
 
 	@Tm.deleter
 	def Tm(self):
 		del self._Tm
-		self._Tm = None
+		self._Tm = base_types.UninitialisedField(self, 'Tm', ISOTime, False)
 
 	@property
 	def Tp(self):
@@ -173,12 +173,12 @@ class SettlementService7(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', Max35Text, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CutOffTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CollateralCancellationType1Choice import CollateralCancellationType1Choice
-from ._Max35Text import Max35Text
+from . import CollateralCancellationType1Choice
+from . import Max35Text
 
 class CollateralCancellationReason1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CollateralCancellationReason1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max35Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max35Text, False)
 
 	@property
 	def CxlRsnCd(self):
@@ -27,12 +27,12 @@ class CollateralCancellationReason1(base_types._BaseFieldType):
 
 	@CxlRsnCd.setter
 	def CxlRsnCd(self, value):
-		self._CxlRsnCd = value if type(value) != base_types.auto else self.make_default("CxlRsnCd")
+		self._CxlRsnCd = value if value is not None else base_types.UninitialisedField(self, 'CxlRsnCd', CollateralCancellationType1Choice, False)
 
 	@CxlRsnCd.deleter
 	def CxlRsnCd(self):
 		del self._CxlRsnCd
-		self._CxlRsnCd = None
+		self._CxlRsnCd = base_types.UninitialisedField(self, 'CxlRsnCd', CollateralCancellationType1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

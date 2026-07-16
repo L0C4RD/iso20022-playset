@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DisputeNotification2 import DisputeNotification2
-from ._SegregatedIndependentAmountDispute2 import SegregatedIndependentAmountDispute2
+from . import DisputeNotification2
+from . import SegregatedIndependentAmountDispute2
 
 class DisputeNotification2Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DisputeNotification2Choice(base_types._BaseFieldType):
 
 	@DsptNtfctnDtls.setter
 	def DsptNtfctnDtls(self, value):
-		self._DsptNtfctnDtls = value if type(value) != base_types.auto else self.make_default("DsptNtfctnDtls")
+		self._DsptNtfctnDtls = value if value is not None else base_types.UninitialisedField(self, 'DsptNtfctnDtls', DisputeNotification2, False)
 
 	@DsptNtfctnDtls.deleter
 	def DsptNtfctnDtls(self):
 		del self._DsptNtfctnDtls
-		self._DsptNtfctnDtls = None
+		self._DsptNtfctnDtls = base_types.UninitialisedField(self, 'DsptNtfctnDtls', DisputeNotification2, False)
 
 	@property
 	def SgrtdIndpdntAmtDsptDtls(self):
@@ -27,12 +27,12 @@ class DisputeNotification2Choice(base_types._BaseFieldType):
 
 	@SgrtdIndpdntAmtDsptDtls.setter
 	def SgrtdIndpdntAmtDsptDtls(self, value):
-		self._SgrtdIndpdntAmtDsptDtls = value if type(value) != base_types.auto else self.make_default("SgrtdIndpdntAmtDsptDtls")
+		self._SgrtdIndpdntAmtDsptDtls = value if value is not None else base_types.UninitialisedField(self, 'SgrtdIndpdntAmtDsptDtls', SegregatedIndependentAmountDispute2, False)
 
 	@SgrtdIndpdntAmtDsptDtls.deleter
 	def SgrtdIndpdntAmtDsptDtls(self):
 		del self._SgrtdIndpdntAmtDsptDtls
-		self._SgrtdIndpdntAmtDsptDtls = None
+		self._SgrtdIndpdntAmtDsptDtls = base_types.UninitialisedField(self, 'SgrtdIndpdntAmtDsptDtls', SegregatedIndependentAmountDispute2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DsptNtfctnDtls', type=DisputeNotification2, min=0, max=1, mutex_group=1, array=False),

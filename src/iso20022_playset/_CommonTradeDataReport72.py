@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContractModification9 import ContractModification9
-from ._ContractType15 import ContractType15
-from ._TradeTransaction50 import TradeTransaction50
+from . import ContractModification9
+from . import ContractType15
+from . import TradeTransaction50
 
 class CommonTradeDataReport72(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CommonTradeDataReport72(base_types._BaseFieldType):
 
 	@CtrctData.setter
 	def CtrctData(self, value):
-		self._CtrctData = value if type(value) != base_types.auto else self.make_default("CtrctData")
+		self._CtrctData = value if value is not None else base_types.UninitialisedField(self, 'CtrctData', ContractType15, False)
 
 	@CtrctData.deleter
 	def CtrctData(self):
 		del self._CtrctData
-		self._CtrctData = None
+		self._CtrctData = base_types.UninitialisedField(self, 'CtrctData', ContractType15, False)
 
 	@property
 	def CtrctMod(self):
@@ -28,12 +28,12 @@ class CommonTradeDataReport72(base_types._BaseFieldType):
 
 	@CtrctMod.setter
 	def CtrctMod(self, value):
-		self._CtrctMod = value if type(value) != base_types.auto else self.make_default("CtrctMod")
+		self._CtrctMod = value if value is not None else base_types.UninitialisedField(self, 'CtrctMod', ContractModification9, False)
 
 	@CtrctMod.deleter
 	def CtrctMod(self):
 		del self._CtrctMod
-		self._CtrctMod = None
+		self._CtrctMod = base_types.UninitialisedField(self, 'CtrctMod', ContractModification9, False)
 
 	@property
 	def TxData(self):
@@ -41,12 +41,12 @@ class CommonTradeDataReport72(base_types._BaseFieldType):
 
 	@TxData.setter
 	def TxData(self, value):
-		self._TxData = value if type(value) != base_types.auto else self.make_default("TxData")
+		self._TxData = value if value is not None else base_types.UninitialisedField(self, 'TxData', TradeTransaction50, False)
 
 	@TxData.deleter
 	def TxData(self):
 		del self._TxData
-		self._TxData = None
+		self._TxData = base_types.UninitialisedField(self, 'TxData', TradeTransaction50, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtrctData', type=ContractType15, min=0, max=1, mutex_group=None, array=False),

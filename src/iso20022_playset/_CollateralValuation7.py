@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._CFIOct2015Identifier import CFIOct2015Identifier
-from ._CollateralPool1Code import CollateralPool1Code
-from ._SNA2008SectorIdentifier import SNA2008SectorIdentifier
+from . import ActiveCurrencyAndAmount
+from . import CFIOct2015Identifier
+from . import CollateralPool1Code
+from . import SNA2008SectorIdentifier
 
 class CollateralValuation7(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CollateralValuation7(base_types._BaseFieldType):
 
 	@NmnlAmt.setter
 	def NmnlAmt(self, value):
-		self._NmnlAmt = value if type(value) != base_types.auto else self.make_default("NmnlAmt")
+		self._NmnlAmt = value if value is not None else base_types.UninitialisedField(self, 'NmnlAmt', ActiveCurrencyAndAmount, False)
 
 	@NmnlAmt.deleter
 	def NmnlAmt(self):
 		del self._NmnlAmt
-		self._NmnlAmt = None
+		self._NmnlAmt = base_types.UninitialisedField(self, 'NmnlAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def PoolSts(self):
@@ -29,12 +29,12 @@ class CollateralValuation7(base_types._BaseFieldType):
 
 	@PoolSts.setter
 	def PoolSts(self, value):
-		self._PoolSts = value if type(value) != base_types.auto else self.make_default("PoolSts")
+		self._PoolSts = value if value is not None else base_types.UninitialisedField(self, 'PoolSts', CollateralPool1Code, False)
 
 	@PoolSts.deleter
 	def PoolSts(self):
 		del self._PoolSts
-		self._PoolSts = None
+		self._PoolSts = base_types.UninitialisedField(self, 'PoolSts', CollateralPool1Code, False)
 
 	@property
 	def Sctr(self):
@@ -42,12 +42,12 @@ class CollateralValuation7(base_types._BaseFieldType):
 
 	@Sctr.setter
 	def Sctr(self, value):
-		self._Sctr = value if type(value) != base_types.auto else self.make_default("Sctr")
+		self._Sctr = value if value is not None else base_types.UninitialisedField(self, 'Sctr', SNA2008SectorIdentifier, False)
 
 	@Sctr.deleter
 	def Sctr(self):
 		del self._Sctr
-		self._Sctr = None
+		self._Sctr = base_types.UninitialisedField(self, 'Sctr', SNA2008SectorIdentifier, False)
 
 	@property
 	def Tp(self):
@@ -55,12 +55,12 @@ class CollateralValuation7(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', CFIOct2015Identifier, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', CFIOct2015Identifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NmnlAmt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

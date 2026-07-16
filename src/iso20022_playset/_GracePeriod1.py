@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GracePeriodUnitType1Code import GracePeriodUnitType1Code
-from ._Max35Text import Max35Text
-from ._Max3NumericText import Max3NumericText
+from . import GracePeriodUnitType1Code
+from . import Max35Text
+from . import Max3NumericText
 
 class GracePeriod1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class GracePeriod1(base_types._BaseFieldType):
 
 	@OthrUnitTp.setter
 	def OthrUnitTp(self, value):
-		self._OthrUnitTp = value if type(value) != base_types.auto else self.make_default("OthrUnitTp")
+		self._OthrUnitTp = value if value is not None else base_types.UninitialisedField(self, 'OthrUnitTp', Max35Text, False)
 
 	@OthrUnitTp.deleter
 	def OthrUnitTp(self):
 		del self._OthrUnitTp
-		self._OthrUnitTp = None
+		self._OthrUnitTp = base_types.UninitialisedField(self, 'OthrUnitTp', Max35Text, False)
 
 	@property
 	def Tm(self):
@@ -28,12 +28,12 @@ class GracePeriod1(base_types._BaseFieldType):
 
 	@Tm.setter
 	def Tm(self, value):
-		self._Tm = value if type(value) != base_types.auto else self.make_default("Tm")
+		self._Tm = value if value is not None else base_types.UninitialisedField(self, 'Tm', Max3NumericText, False)
 
 	@Tm.deleter
 	def Tm(self):
 		del self._Tm
-		self._Tm = None
+		self._Tm = base_types.UninitialisedField(self, 'Tm', Max3NumericText, False)
 
 	@property
 	def UnitTp(self):
@@ -41,12 +41,12 @@ class GracePeriod1(base_types._BaseFieldType):
 
 	@UnitTp.setter
 	def UnitTp(self, value):
-		self._UnitTp = value if type(value) != base_types.auto else self.make_default("UnitTp")
+		self._UnitTp = value if value is not None else base_types.UninitialisedField(self, 'UnitTp', GracePeriodUnitType1Code, False)
 
 	@UnitTp.deleter
 	def UnitTp(self):
 		del self._UnitTp
-		self._UnitTp = None
+		self._UnitTp = base_types.UninitialisedField(self, 'UnitTp', GracePeriodUnitType1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OthrUnitTp', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

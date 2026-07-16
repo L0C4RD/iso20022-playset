@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MarginRequirement1 import MarginRequirement1
+from . import MarginRequirement1
 
 class Requirement1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class Requirement1(base_types._BaseFieldType):
 
 	@SgrtdIndpdntAmtRqrmnt.setter
 	def SgrtdIndpdntAmtRqrmnt(self, value):
-		self._SgrtdIndpdntAmtRqrmnt = value if type(value) != base_types.auto else self.make_default("SgrtdIndpdntAmtRqrmnt")
+		self._SgrtdIndpdntAmtRqrmnt = value if value is not None else base_types.UninitialisedField(self, 'SgrtdIndpdntAmtRqrmnt', MarginRequirement1, False)
 
 	@SgrtdIndpdntAmtRqrmnt.deleter
 	def SgrtdIndpdntAmtRqrmnt(self):
 		del self._SgrtdIndpdntAmtRqrmnt
-		self._SgrtdIndpdntAmtRqrmnt = None
+		self._SgrtdIndpdntAmtRqrmnt = base_types.UninitialisedField(self, 'SgrtdIndpdntAmtRqrmnt', MarginRequirement1, False)
 
 	@property
 	def VartnMrgnRqrmnt(self):
@@ -26,12 +26,12 @@ class Requirement1(base_types._BaseFieldType):
 
 	@VartnMrgnRqrmnt.setter
 	def VartnMrgnRqrmnt(self, value):
-		self._VartnMrgnRqrmnt = value if type(value) != base_types.auto else self.make_default("VartnMrgnRqrmnt")
+		self._VartnMrgnRqrmnt = value if value is not None else base_types.UninitialisedField(self, 'VartnMrgnRqrmnt', MarginRequirement1, False)
 
 	@VartnMrgnRqrmnt.deleter
 	def VartnMrgnRqrmnt(self):
 		del self._VartnMrgnRqrmnt
-		self._VartnMrgnRqrmnt = None
+		self._VartnMrgnRqrmnt = base_types.UninitialisedField(self, 'VartnMrgnRqrmnt', MarginRequirement1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SgrtdIndpdntAmtRqrmnt', type=MarginRequirement1, min=0, max=1, mutex_group=None, array=False),

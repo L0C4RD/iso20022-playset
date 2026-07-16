@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._CashAccount40 import CashAccount40
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._Max35Text import Max35Text
-from ._OriginalGroupInformation29 import OriginalGroupInformation29
-from ._UUIDv4Identifier import UUIDv4Identifier
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import CashAccount40
+from . import DateAndDateTime2Choice
+from . import Max35Text
+from . import OriginalGroupInformation29
+from . import UUIDv4Identifier
 
 class UnderlyingStatementEntry5(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class UnderlyingStatementEntry5(base_types._BaseFieldType):
 
 	@OrgnlAcct.setter
 	def OrgnlAcct(self, value):
-		self._OrgnlAcct = value if type(value) != base_types.auto else self.make_default("OrgnlAcct")
+		self._OrgnlAcct = value if value is not None else base_types.UninitialisedField(self, 'OrgnlAcct', CashAccount40, False)
 
 	@OrgnlAcct.deleter
 	def OrgnlAcct(self):
 		del self._OrgnlAcct
-		self._OrgnlAcct = None
+		self._OrgnlAcct = base_types.UninitialisedField(self, 'OrgnlAcct', CashAccount40, False)
 
 	@property
 	def OrgnlGrpInf(self):
@@ -31,12 +31,12 @@ class UnderlyingStatementEntry5(base_types._BaseFieldType):
 
 	@OrgnlGrpInf.setter
 	def OrgnlGrpInf(self, value):
-		self._OrgnlGrpInf = value if type(value) != base_types.auto else self.make_default("OrgnlGrpInf")
+		self._OrgnlGrpInf = value if value is not None else base_types.UninitialisedField(self, 'OrgnlGrpInf', OriginalGroupInformation29, False)
 
 	@OrgnlGrpInf.deleter
 	def OrgnlGrpInf(self):
 		del self._OrgnlGrpInf
-		self._OrgnlGrpInf = None
+		self._OrgnlGrpInf = base_types.UninitialisedField(self, 'OrgnlGrpInf', OriginalGroupInformation29, False)
 
 	@property
 	def OrgnlNtryAmt(self):
@@ -44,12 +44,12 @@ class UnderlyingStatementEntry5(base_types._BaseFieldType):
 
 	@OrgnlNtryAmt.setter
 	def OrgnlNtryAmt(self, value):
-		self._OrgnlNtryAmt = value if type(value) != base_types.auto else self.make_default("OrgnlNtryAmt")
+		self._OrgnlNtryAmt = value if value is not None else base_types.UninitialisedField(self, 'OrgnlNtryAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@OrgnlNtryAmt.deleter
 	def OrgnlNtryAmt(self):
 		del self._OrgnlNtryAmt
-		self._OrgnlNtryAmt = None
+		self._OrgnlNtryAmt = base_types.UninitialisedField(self, 'OrgnlNtryAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def OrgnlNtryRef(self):
@@ -57,12 +57,12 @@ class UnderlyingStatementEntry5(base_types._BaseFieldType):
 
 	@OrgnlNtryRef.setter
 	def OrgnlNtryRef(self, value):
-		self._OrgnlNtryRef = value if type(value) != base_types.auto else self.make_default("OrgnlNtryRef")
+		self._OrgnlNtryRef = value if value is not None else base_types.UninitialisedField(self, 'OrgnlNtryRef', Max35Text, False)
 
 	@OrgnlNtryRef.deleter
 	def OrgnlNtryRef(self):
 		del self._OrgnlNtryRef
-		self._OrgnlNtryRef = None
+		self._OrgnlNtryRef = base_types.UninitialisedField(self, 'OrgnlNtryRef', Max35Text, False)
 
 	@property
 	def OrgnlNtryValDt(self):
@@ -70,12 +70,12 @@ class UnderlyingStatementEntry5(base_types._BaseFieldType):
 
 	@OrgnlNtryValDt.setter
 	def OrgnlNtryValDt(self, value):
-		self._OrgnlNtryValDt = value if type(value) != base_types.auto else self.make_default("OrgnlNtryValDt")
+		self._OrgnlNtryValDt = value if value is not None else base_types.UninitialisedField(self, 'OrgnlNtryValDt', DateAndDateTime2Choice, False)
 
 	@OrgnlNtryValDt.deleter
 	def OrgnlNtryValDt(self):
 		del self._OrgnlNtryValDt
-		self._OrgnlNtryValDt = None
+		self._OrgnlNtryValDt = base_types.UninitialisedField(self, 'OrgnlNtryValDt', DateAndDateTime2Choice, False)
 
 	@property
 	def OrgnlStmtId(self):
@@ -83,12 +83,12 @@ class UnderlyingStatementEntry5(base_types._BaseFieldType):
 
 	@OrgnlStmtId.setter
 	def OrgnlStmtId(self, value):
-		self._OrgnlStmtId = value if type(value) != base_types.auto else self.make_default("OrgnlStmtId")
+		self._OrgnlStmtId = value if value is not None else base_types.UninitialisedField(self, 'OrgnlStmtId', Max35Text, False)
 
 	@OrgnlStmtId.deleter
 	def OrgnlStmtId(self):
 		del self._OrgnlStmtId
-		self._OrgnlStmtId = None
+		self._OrgnlStmtId = base_types.UninitialisedField(self, 'OrgnlStmtId', Max35Text, False)
 
 	@property
 	def OrgnlUETR(self):
@@ -96,12 +96,12 @@ class UnderlyingStatementEntry5(base_types._BaseFieldType):
 
 	@OrgnlUETR.setter
 	def OrgnlUETR(self, value):
-		self._OrgnlUETR = value if type(value) != base_types.auto else self.make_default("OrgnlUETR")
+		self._OrgnlUETR = value if value is not None else base_types.UninitialisedField(self, 'OrgnlUETR', UUIDv4Identifier, False)
 
 	@OrgnlUETR.deleter
 	def OrgnlUETR(self):
 		del self._OrgnlUETR
-		self._OrgnlUETR = None
+		self._OrgnlUETR = base_types.UninitialisedField(self, 'OrgnlUETR', UUIDv4Identifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlAcct', type=CashAccount40, min=0, max=1, mutex_group=None, array=False),

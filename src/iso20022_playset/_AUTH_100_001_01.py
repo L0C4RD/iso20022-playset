@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SettlementFailsMonthlyReportV01 import SettlementFailsMonthlyReportV01
+from . import SettlementFailsMonthlyReportV01
 
 class AUTH_100_001_01():
 
@@ -18,12 +18,12 @@ class AUTH_100_001_01():
 
 		@SttlmFlsMnthlyRpt.setter
 		def SttlmFlsMnthlyRpt(self, value):
-			self._SttlmFlsMnthlyRpt = value if type(value) != base_types.auto else self.make_default("SttlmFlsMnthlyRpt")
+			self._SttlmFlsMnthlyRpt = value if value is not None else base_types.UninitialisedField(self, 'SttlmFlsMnthlyRpt', SettlementFailsMonthlyReportV01, False)
 
 		@SttlmFlsMnthlyRpt.deleter
 		def SttlmFlsMnthlyRpt(self):
 			del self._SttlmFlsMnthlyRpt
-			self._SttlmFlsMnthlyRpt = None
+			self._SttlmFlsMnthlyRpt = base_types.UninitialisedField(self, 'SttlmFlsMnthlyRpt', SettlementFailsMonthlyReportV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SttlmFlsMnthlyRpt', type=SettlementFailsMonthlyReportV01, min=1, max=1, mutex_group=None, array=False),

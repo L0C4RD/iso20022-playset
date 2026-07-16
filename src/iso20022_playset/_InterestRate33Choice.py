@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FixedRate10 import FixedRate10
-from ._FloatingRate13 import FloatingRate13
+from . import FixedRate10
+from . import FloatingRate13
 
 class InterestRate33Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class InterestRate33Choice(base_types._BaseFieldType):
 
 	@Fltg.setter
 	def Fltg(self, value):
-		self._Fltg = value if type(value) != base_types.auto else self.make_default("Fltg")
+		self._Fltg = value if value is not None else base_types.UninitialisedField(self, 'Fltg', FloatingRate13, False)
 
 	@Fltg.deleter
 	def Fltg(self):
 		del self._Fltg
-		self._Fltg = None
+		self._Fltg = base_types.UninitialisedField(self, 'Fltg', FloatingRate13, False)
 
 	@property
 	def Fxd(self):
@@ -27,12 +27,12 @@ class InterestRate33Choice(base_types._BaseFieldType):
 
 	@Fxd.setter
 	def Fxd(self, value):
-		self._Fxd = value if type(value) != base_types.auto else self.make_default("Fxd")
+		self._Fxd = value if value is not None else base_types.UninitialisedField(self, 'Fxd', FixedRate10, False)
 
 	@Fxd.deleter
 	def Fxd(self):
 		del self._Fxd
-		self._Fxd = None
+		self._Fxd = base_types.UninitialisedField(self, 'Fxd', FixedRate10, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Fltg', type=FloatingRate13, min=0, max=1, mutex_group=1, array=False),

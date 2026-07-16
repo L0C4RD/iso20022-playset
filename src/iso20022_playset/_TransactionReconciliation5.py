@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
-from ._TransactionIdentifier1 import TransactionIdentifier1
-from ._TransactionTotals12 import TransactionTotals12
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import Max35Text
+from . import Max70Text
+from . import TransactionIdentifier1
+from . import TransactionTotals12
+from . import TrueFalseIndicator
 
 class TransactionReconciliation5(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class TransactionReconciliation5(base_types._BaseFieldType):
 
 	@AddtlTxData.setter
 	def AddtlTxData(self, value):
-		self._AddtlTxData = value if type(value) != base_types.auto else self.make_default("AddtlTxData")
+		self._AddtlTxData = value if value is not None else base_types.UninitialisedField(self, 'AddtlTxData', Max70Text, False)
 
 	@AddtlTxData.deleter
 	def AddtlTxData(self):
 		del self._AddtlTxData
-		self._AddtlTxData = None
+		self._AddtlTxData = base_types.UninitialisedField(self, 'AddtlTxData', Max70Text, False)
 
 	@property
 	def ClsPrd(self):
@@ -30,12 +30,12 @@ class TransactionReconciliation5(base_types._BaseFieldType):
 
 	@ClsPrd.setter
 	def ClsPrd(self, value):
-		self._ClsPrd = value if type(value) != base_types.auto else self.make_default("ClsPrd")
+		self._ClsPrd = value if value is not None else base_types.UninitialisedField(self, 'ClsPrd', TrueFalseIndicator, False)
 
 	@ClsPrd.deleter
 	def ClsPrd(self):
 		del self._ClsPrd
-		self._ClsPrd = None
+		self._ClsPrd = base_types.UninitialisedField(self, 'ClsPrd', TrueFalseIndicator, False)
 
 	@property
 	def RcncltnId(self):
@@ -43,12 +43,12 @@ class TransactionReconciliation5(base_types._BaseFieldType):
 
 	@RcncltnId.setter
 	def RcncltnId(self, value):
-		self._RcncltnId = value if type(value) != base_types.auto else self.make_default("RcncltnId")
+		self._RcncltnId = value if value is not None else base_types.UninitialisedField(self, 'RcncltnId', Max35Text, False)
 
 	@RcncltnId.deleter
 	def RcncltnId(self):
 		del self._RcncltnId
-		self._RcncltnId = None
+		self._RcncltnId = base_types.UninitialisedField(self, 'RcncltnId', Max35Text, False)
 
 	@property
 	def RcncltnTxId(self):
@@ -56,12 +56,12 @@ class TransactionReconciliation5(base_types._BaseFieldType):
 
 	@RcncltnTxId.setter
 	def RcncltnTxId(self, value):
-		self._RcncltnTxId = value if type(value) != base_types.auto else self.make_default("RcncltnTxId")
+		self._RcncltnTxId = value if value is not None else base_types.UninitialisedField(self, 'RcncltnTxId', TransactionIdentifier1, False)
 
 	@RcncltnTxId.deleter
 	def RcncltnTxId(self):
 		del self._RcncltnTxId
-		self._RcncltnTxId = None
+		self._RcncltnTxId = base_types.UninitialisedField(self, 'RcncltnTxId', TransactionIdentifier1, False)
 
 	@property
 	def TxTtls(self):
@@ -69,12 +69,12 @@ class TransactionReconciliation5(base_types._BaseFieldType):
 
 	@TxTtls.setter
 	def TxTtls(self, value):
-		self._TxTtls = value if type(value) != base_types.auto else self.make_default("TxTtls")
+		self._TxTtls = value if value is not None else base_types.UninitialisedField(self, 'TxTtls', TransactionTotals12, True)
 
 	@TxTtls.deleter
 	def TxTtls(self):
 		del self._TxTtls
-		self._TxTtls = None
+		self._TxTtls = base_types.UninitialisedField(self, 'TxTtls', TransactionTotals12, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlTxData', type=Max70Text, min=0, max=1, mutex_group=None, array=False),

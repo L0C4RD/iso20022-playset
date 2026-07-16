@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max140Text import Max140Text
-from ._Max2MBBinary import Max2MBBinary
-from ._Max35Text import Max35Text
-from ._Max500Text import Max500Text
+from . import Max140Text
+from . import Max2MBBinary
+from . import Max35Text
+from . import Max500Text
 
 class CapturedSignature1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class CapturedSignature1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max140Text, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max140Text, False)
 
 	@property
 	def ImgData(self):
@@ -29,12 +29,12 @@ class CapturedSignature1(base_types._BaseFieldType):
 
 	@ImgData.setter
 	def ImgData(self, value):
-		self._ImgData = value if type(value) != base_types.auto else self.make_default("ImgData")
+		self._ImgData = value if value is not None else base_types.UninitialisedField(self, 'ImgData', Max2MBBinary, False)
 
 	@ImgData.deleter
 	def ImgData(self):
 		del self._ImgData
-		self._ImgData = None
+		self._ImgData = base_types.UninitialisedField(self, 'ImgData', Max2MBBinary, False)
 
 	@property
 	def ImgFrmt(self):
@@ -42,12 +42,12 @@ class CapturedSignature1(base_types._BaseFieldType):
 
 	@ImgFrmt.setter
 	def ImgFrmt(self, value):
-		self._ImgFrmt = value if type(value) != base_types.auto else self.make_default("ImgFrmt")
+		self._ImgFrmt = value if value is not None else base_types.UninitialisedField(self, 'ImgFrmt', Max35Text, False)
 
 	@ImgFrmt.deleter
 	def ImgFrmt(self):
 		del self._ImgFrmt
-		self._ImgFrmt = None
+		self._ImgFrmt = base_types.UninitialisedField(self, 'ImgFrmt', Max35Text, False)
 
 	@property
 	def ImgRef(self):
@@ -55,12 +55,12 @@ class CapturedSignature1(base_types._BaseFieldType):
 
 	@ImgRef.setter
 	def ImgRef(self, value):
-		self._ImgRef = value if type(value) != base_types.auto else self.make_default("ImgRef")
+		self._ImgRef = value if value is not None else base_types.UninitialisedField(self, 'ImgRef', Max500Text, False)
 
 	@ImgRef.deleter
 	def ImgRef(self):
 		del self._ImgRef
-		self._ImgRef = None
+		self._ImgRef = base_types.UninitialisedField(self, 'ImgRef', Max500Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max140Text, min=0, max=1, mutex_group=None, array=False),

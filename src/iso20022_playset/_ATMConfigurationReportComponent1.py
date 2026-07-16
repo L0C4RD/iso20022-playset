@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMEnvironment7 import ATMEnvironment7
-from ._ATMVersionReport1 import ATMVersionReport1
-from ._Max35Text import Max35Text
+from . import ATMEnvironment7
+from . import ATMVersionReport1
+from . import Max35Text
 
 class ATMConfigurationReportComponent1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ATMConfigurationReportComponent1(base_types._BaseFieldType):
 
 	@ActvVrsn.setter
 	def ActvVrsn(self, value):
-		self._ActvVrsn = value if type(value) != base_types.auto else self.make_default("ActvVrsn")
+		self._ActvVrsn = value if value is not None else base_types.UninitialisedField(self, 'ActvVrsn', Max35Text, False)
 
 	@ActvVrsn.deleter
 	def ActvVrsn(self):
 		del self._ActvVrsn
-		self._ActvVrsn = None
+		self._ActvVrsn = base_types.UninitialisedField(self, 'ActvVrsn', Max35Text, False)
 
 	@property
 	def Envt(self):
@@ -28,12 +28,12 @@ class ATMConfigurationReportComponent1(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+		self._Envt = value if value is not None else base_types.UninitialisedField(self, 'Envt', ATMEnvironment7, False)
 
 	@Envt.deleter
 	def Envt(self):
 		del self._Envt
-		self._Envt = None
+		self._Envt = base_types.UninitialisedField(self, 'Envt', ATMEnvironment7, False)
 
 	@property
 	def NonActvVrsn(self):
@@ -41,12 +41,12 @@ class ATMConfigurationReportComponent1(base_types._BaseFieldType):
 
 	@NonActvVrsn.setter
 	def NonActvVrsn(self, value):
-		self._NonActvVrsn = value if type(value) != base_types.auto else self.make_default("NonActvVrsn")
+		self._NonActvVrsn = value if value is not None else base_types.UninitialisedField(self, 'NonActvVrsn', ATMVersionReport1, True)
 
 	@NonActvVrsn.deleter
 	def NonActvVrsn(self):
 		del self._NonActvVrsn
-		self._NonActvVrsn = None
+		self._NonActvVrsn = base_types.UninitialisedField(self, 'NonActvVrsn', ATMVersionReport1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActvVrsn', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

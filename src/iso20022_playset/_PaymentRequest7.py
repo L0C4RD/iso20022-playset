@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LoyaltyRequestData3 import LoyaltyRequestData3
-from ._PaymentTransaction165 import PaymentTransaction165
+from . import LoyaltyRequestData3
+from . import PaymentTransaction165
 
 class PaymentRequest7(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PaymentRequest7(base_types._BaseFieldType):
 
 	@LltyData.setter
 	def LltyData(self, value):
-		self._LltyData = value if type(value) != base_types.auto else self.make_default("LltyData")
+		self._LltyData = value if value is not None else base_types.UninitialisedField(self, 'LltyData', LoyaltyRequestData3, True)
 
 	@LltyData.deleter
 	def LltyData(self):
 		del self._LltyData
-		self._LltyData = None
+		self._LltyData = base_types.UninitialisedField(self, 'LltyData', LoyaltyRequestData3, True)
 
 	@property
 	def PmtTx(self):
@@ -27,12 +27,12 @@ class PaymentRequest7(base_types._BaseFieldType):
 
 	@PmtTx.setter
 	def PmtTx(self, value):
-		self._PmtTx = value if type(value) != base_types.auto else self.make_default("PmtTx")
+		self._PmtTx = value if value is not None else base_types.UninitialisedField(self, 'PmtTx', PaymentTransaction165, False)
 
 	@PmtTx.deleter
 	def PmtTx(self):
 		del self._PmtTx
-		self._PmtTx = None
+		self._PmtTx = base_types.UninitialisedField(self, 'PmtTx', PaymentTransaction165, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LltyData', type=LoyaltyRequestData3, min=0, max=None, mutex_group=None, array=True),

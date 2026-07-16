@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMService14 import ATMService14
-from ._Max35Text import Max35Text
+from . import ATMService14
+from . import Max35Text
 
 class ATMContext13(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ATMContext13(base_types._BaseFieldType):
 
 	@SsnRef.setter
 	def SsnRef(self, value):
-		self._SsnRef = value if type(value) != base_types.auto else self.make_default("SsnRef")
+		self._SsnRef = value if value is not None else base_types.UninitialisedField(self, 'SsnRef', Max35Text, False)
 
 	@SsnRef.deleter
 	def SsnRef(self):
 		del self._SsnRef
-		self._SsnRef = None
+		self._SsnRef = base_types.UninitialisedField(self, 'SsnRef', Max35Text, False)
 
 	@property
 	def Svc(self):
@@ -27,12 +27,12 @@ class ATMContext13(base_types._BaseFieldType):
 
 	@Svc.setter
 	def Svc(self, value):
-		self._Svc = value if type(value) != base_types.auto else self.make_default("Svc")
+		self._Svc = value if value is not None else base_types.UninitialisedField(self, 'Svc', ATMService14, False)
 
 	@Svc.deleter
 	def Svc(self):
 		del self._Svc
-		self._Svc = None
+		self._Svc = base_types.UninitialisedField(self, 'Svc', ATMService14, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SsnRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActivationHeader3 import ActivationHeader3
-from ._DebtorActivationCancellation3 import DebtorActivationCancellation3
-from ._SupplementaryData1 import SupplementaryData1
+from . import ActivationHeader3
+from . import DebtorActivationCancellation3
+from . import SupplementaryData1
 
 class RequestToPayDebtorActivationCancellationRequestV02(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class RequestToPayDebtorActivationCancellationRequestV02(base_types._BaseFieldTy
 
 	@CxlData.setter
 	def CxlData(self, value):
-		self._CxlData = value if type(value) != base_types.auto else self.make_default("CxlData")
+		self._CxlData = value if value is not None else base_types.UninitialisedField(self, 'CxlData', DebtorActivationCancellation3, True)
 
 	@CxlData.deleter
 	def CxlData(self):
 		del self._CxlData
-		self._CxlData = None
+		self._CxlData = base_types.UninitialisedField(self, 'CxlData', DebtorActivationCancellation3, True)
 
 	@property
 	def Hdr(self):
@@ -28,12 +28,12 @@ class RequestToPayDebtorActivationCancellationRequestV02(base_types._BaseFieldTy
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', ActivationHeader3, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', ActivationHeader3, False)
 
 	@property
 	def SplmtryData(self):
@@ -41,12 +41,12 @@ class RequestToPayDebtorActivationCancellationRequestV02(base_types._BaseFieldTy
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CxlData', type=DebtorActivationCancellation3, min=1, max=None, mutex_group=None, array=True),

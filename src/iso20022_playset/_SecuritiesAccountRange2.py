@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
+from . import SecuritiesAccount19
 
 class SecuritiesAccountRange2(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class SecuritiesAccountRange2(base_types._BaseFieldType):
 
 	@Fr.setter
 	def Fr(self, value):
-		self._Fr = value if type(value) != base_types.auto else self.make_default("Fr")
+		self._Fr = value if value is not None else base_types.UninitialisedField(self, 'Fr', SecuritiesAccount19, False)
 
 	@Fr.deleter
 	def Fr(self):
 		del self._Fr
-		self._Fr = None
+		self._Fr = base_types.UninitialisedField(self, 'Fr', SecuritiesAccount19, False)
 
 	@property
 	def To(self):
@@ -26,12 +26,12 @@ class SecuritiesAccountRange2(base_types._BaseFieldType):
 
 	@To.setter
 	def To(self, value):
-		self._To = value if type(value) != base_types.auto else self.make_default("To")
+		self._To = value if value is not None else base_types.UninitialisedField(self, 'To', SecuritiesAccount19, False)
 
 	@To.deleter
 	def To(self):
 		del self._To
-		self._To = None
+		self._To = base_types.UninitialisedField(self, 'To', SecuritiesAccount19, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Fr', type=SecuritiesAccount19, min=1, max=1, mutex_group=None, array=False),

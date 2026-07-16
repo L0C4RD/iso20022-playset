@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
-from ._GenericIdentification36 import GenericIdentification36
-from ._NameAndAddress13 import NameAndAddress13
+from . import AnyBICDec2014Identifier
+from . import GenericIdentification36
+from . import NameAndAddress13
 
 class PartyIdentification267(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PartyIdentification267(base_types._BaseFieldType):
 
 	@BIC.setter
 	def BIC(self, value):
-		self._BIC = value if type(value) != base_types.auto else self.make_default("BIC")
+		self._BIC = value if value is not None else base_types.UninitialisedField(self, 'BIC', AnyBICDec2014Identifier, False)
 
 	@BIC.deleter
 	def BIC(self):
 		del self._BIC
-		self._BIC = None
+		self._BIC = base_types.UninitialisedField(self, 'BIC', AnyBICDec2014Identifier, False)
 
 	@property
 	def NmAndAdr(self):
@@ -28,12 +28,12 @@ class PartyIdentification267(base_types._BaseFieldType):
 
 	@NmAndAdr.setter
 	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
+		self._NmAndAdr = value if value is not None else base_types.UninitialisedField(self, 'NmAndAdr', NameAndAddress13, False)
 
 	@NmAndAdr.deleter
 	def NmAndAdr(self):
 		del self._NmAndAdr
-		self._NmAndAdr = None
+		self._NmAndAdr = base_types.UninitialisedField(self, 'NmAndAdr', NameAndAddress13, False)
 
 	@property
 	def PrtryId(self):
@@ -41,12 +41,12 @@ class PartyIdentification267(base_types._BaseFieldType):
 
 	@PrtryId.setter
 	def PrtryId(self, value):
-		self._PrtryId = value if type(value) != base_types.auto else self.make_default("PrtryId")
+		self._PrtryId = value if value is not None else base_types.UninitialisedField(self, 'PrtryId', GenericIdentification36, False)
 
 	@PrtryId.deleter
 	def PrtryId(self):
 		del self._PrtryId
-		self._PrtryId = None
+		self._PrtryId = base_types.UninitialisedField(self, 'PrtryId', GenericIdentification36, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BIC', type=AnyBICDec2014Identifier, min=1, max=1, mutex_group=None, array=False),

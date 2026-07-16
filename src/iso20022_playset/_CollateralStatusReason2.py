@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification1 import GenericIdentification1
-from ._Status10Code import Status10Code
-from ._StatusReasonInformation13 import StatusReasonInformation13
+from . import GenericIdentification1
+from . import Status10Code
+from . import StatusReasonInformation13
 
 class CollateralStatusReason2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CollateralStatusReason2(base_types._BaseFieldType):
 
 	@ElgbltySetPrfl.setter
 	def ElgbltySetPrfl(self, value):
-		self._ElgbltySetPrfl = value if type(value) != base_types.auto else self.make_default("ElgbltySetPrfl")
+		self._ElgbltySetPrfl = value if value is not None else base_types.UninitialisedField(self, 'ElgbltySetPrfl', GenericIdentification1, False)
 
 	@ElgbltySetPrfl.deleter
 	def ElgbltySetPrfl(self):
 		del self._ElgbltySetPrfl
-		self._ElgbltySetPrfl = None
+		self._ElgbltySetPrfl = base_types.UninitialisedField(self, 'ElgbltySetPrfl', GenericIdentification1, False)
 
 	@property
 	def Rsn(self):
@@ -28,12 +28,12 @@ class CollateralStatusReason2(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', StatusReasonInformation13, True)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', StatusReasonInformation13, True)
 
 	@property
 	def Sts(self):
@@ -41,12 +41,12 @@ class CollateralStatusReason2(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', Status10Code, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', Status10Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ElgbltySetPrfl', type=GenericIdentification1, min=0, max=1, mutex_group=None, array=False),

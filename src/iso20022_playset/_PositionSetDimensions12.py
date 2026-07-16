@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CollateralData33 import CollateralData33
-from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import CollateralData33
+from . import OrganisationIdentification15Choice
+from . import TrueFalseIndicator
 
 class PositionSetDimensions12(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PositionSetDimensions12(base_types._BaseFieldType):
 
 	@CollData.setter
 	def CollData(self, value):
-		self._CollData = value if type(value) != base_types.auto else self.make_default("CollData")
+		self._CollData = value if value is not None else base_types.UninitialisedField(self, 'CollData', CollateralData33, False)
 
 	@CollData.deleter
 	def CollData(self):
 		del self._CollData
-		self._CollData = None
+		self._CollData = base_types.UninitialisedField(self, 'CollData', CollateralData33, False)
 
 	@property
 	def OtlrsIncl(self):
@@ -28,12 +28,12 @@ class PositionSetDimensions12(base_types._BaseFieldType):
 
 	@OtlrsIncl.setter
 	def OtlrsIncl(self, value):
-		self._OtlrsIncl = value if type(value) != base_types.auto else self.make_default("OtlrsIncl")
+		self._OtlrsIncl = value if value is not None else base_types.UninitialisedField(self, 'OtlrsIncl', TrueFalseIndicator, False)
 
 	@OtlrsIncl.deleter
 	def OtlrsIncl(self):
 		del self._OtlrsIncl
-		self._OtlrsIncl = None
+		self._OtlrsIncl = base_types.UninitialisedField(self, 'OtlrsIncl', TrueFalseIndicator, False)
 
 	@property
 	def RptgCtrPty(self):
@@ -41,12 +41,12 @@ class PositionSetDimensions12(base_types._BaseFieldType):
 
 	@RptgCtrPty.setter
 	def RptgCtrPty(self, value):
-		self._RptgCtrPty = value if type(value) != base_types.auto else self.make_default("RptgCtrPty")
+		self._RptgCtrPty = value if value is not None else base_types.UninitialisedField(self, 'RptgCtrPty', OrganisationIdentification15Choice, False)
 
 	@RptgCtrPty.deleter
 	def RptgCtrPty(self):
 		del self._RptgCtrPty
-		self._RptgCtrPty = None
+		self._RptgCtrPty = base_types.UninitialisedField(self, 'RptgCtrPty', OrganisationIdentification15Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollData', type=CollateralData33, min=0, max=1, mutex_group=None, array=False),

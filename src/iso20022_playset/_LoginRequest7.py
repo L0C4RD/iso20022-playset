@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActionMessage11 import ActionMessage11
-from ._CustomerOrderRequest1Code import CustomerOrderRequest1Code
-from ._ISODateTime import ISODateTime
-from ._LanguageCode import LanguageCode
-from ._Max2NumericText import Max2NumericText
-from ._Max35Text import Max35Text
-from ._PointOfInteractionComponent17 import PointOfInteractionComponent17
-from ._PointOfInteractionComponentIdentification2 import PointOfInteractionComponentIdentification2
-from ._SaleTerminalData1 import SaleTerminalData1
-from ._SaleTokenScope1Code import SaleTokenScope1Code
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ActionMessage11
+from . import CustomerOrderRequest1Code
+from . import ISODateTime
+from . import LanguageCode
+from . import Max2NumericText
+from . import Max35Text
+from . import PointOfInteractionComponent17
+from . import PointOfInteractionComponentIdentification2
+from . import SaleTerminalData1
+from . import SaleTokenScope1Code
+from . import TrueFalseIndicator
 
 class LoginRequest7(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class LoginRequest7(base_types._BaseFieldType):
 
 	@CshrId.setter
 	def CshrId(self, value):
-		self._CshrId = value if type(value) != base_types.auto else self.make_default("CshrId")
+		self._CshrId = value if value is not None else base_types.UninitialisedField(self, 'CshrId', Max35Text, False)
 
 	@CshrId.deleter
 	def CshrId(self):
 		del self._CshrId
-		self._CshrId = None
+		self._CshrId = base_types.UninitialisedField(self, 'CshrId', Max35Text, False)
 
 	@property
 	def CshrLang(self):
@@ -36,12 +36,12 @@ class LoginRequest7(base_types._BaseFieldType):
 
 	@CshrLang.setter
 	def CshrLang(self, value):
-		self._CshrLang = value if type(value) != base_types.auto else self.make_default("CshrLang")
+		self._CshrLang = value if value is not None else base_types.UninitialisedField(self, 'CshrLang', LanguageCode, False)
 
 	@CshrLang.deleter
 	def CshrLang(self):
 		del self._CshrLang
-		self._CshrLang = None
+		self._CshrLang = base_types.UninitialisedField(self, 'CshrLang', LanguageCode, False)
 
 	@property
 	def CstmrOrdrReq(self):
@@ -49,12 +49,12 @@ class LoginRequest7(base_types._BaseFieldType):
 
 	@CstmrOrdrReq.setter
 	def CstmrOrdrReq(self, value):
-		self._CstmrOrdrReq = value if type(value) != base_types.auto else self.make_default("CstmrOrdrReq")
+		self._CstmrOrdrReq = value if value is not None else base_types.UninitialisedField(self, 'CstmrOrdrReq', CustomerOrderRequest1Code, False)
 
 	@CstmrOrdrReq.deleter
 	def CstmrOrdrReq(self):
 		del self._CstmrOrdrReq
-		self._CstmrOrdrReq = None
+		self._CstmrOrdrReq = base_types.UninitialisedField(self, 'CstmrOrdrReq', CustomerOrderRequest1Code, False)
 
 	@property
 	def LgnDtTm(self):
@@ -62,12 +62,12 @@ class LoginRequest7(base_types._BaseFieldType):
 
 	@LgnDtTm.setter
 	def LgnDtTm(self, value):
-		self._LgnDtTm = value if type(value) != base_types.auto else self.make_default("LgnDtTm")
+		self._LgnDtTm = value if value is not None else base_types.UninitialisedField(self, 'LgnDtTm', ISODateTime, False)
 
 	@LgnDtTm.deleter
 	def LgnDtTm(self):
 		del self._LgnDtTm
-		self._LgnDtTm = None
+		self._LgnDtTm = base_types.UninitialisedField(self, 'LgnDtTm', ISODateTime, False)
 
 	@property
 	def OutptDisp(self):
@@ -75,12 +75,12 @@ class LoginRequest7(base_types._BaseFieldType):
 
 	@OutptDisp.setter
 	def OutptDisp(self, value):
-		self._OutptDisp = value if type(value) != base_types.auto else self.make_default("OutptDisp")
+		self._OutptDisp = value if value is not None else base_types.UninitialisedField(self, 'OutptDisp', ActionMessage11, False)
 
 	@OutptDisp.deleter
 	def OutptDisp(self):
 		del self._OutptDisp
-		self._OutptDisp = None
+		self._OutptDisp = base_types.UninitialisedField(self, 'OutptDisp', ActionMessage11, False)
 
 	@property
 	def POIId(self):
@@ -88,12 +88,12 @@ class LoginRequest7(base_types._BaseFieldType):
 
 	@POIId.setter
 	def POIId(self, value):
-		self._POIId = value if type(value) != base_types.auto else self.make_default("POIId")
+		self._POIId = value if value is not None else base_types.UninitialisedField(self, 'POIId', PointOfInteractionComponentIdentification2, False)
 
 	@POIId.deleter
 	def POIId(self):
 		del self._POIId
-		self._POIId = None
+		self._POIId = base_types.UninitialisedField(self, 'POIId', PointOfInteractionComponentIdentification2, False)
 
 	@property
 	def SaleSftwr(self):
@@ -101,12 +101,12 @@ class LoginRequest7(base_types._BaseFieldType):
 
 	@SaleSftwr.setter
 	def SaleSftwr(self, value):
-		self._SaleSftwr = value if type(value) != base_types.auto else self.make_default("SaleSftwr")
+		self._SaleSftwr = value if value is not None else base_types.UninitialisedField(self, 'SaleSftwr', PointOfInteractionComponent17, True)
 
 	@SaleSftwr.deleter
 	def SaleSftwr(self):
 		del self._SaleSftwr
-		self._SaleSftwr = None
+		self._SaleSftwr = base_types.UninitialisedField(self, 'SaleSftwr', PointOfInteractionComponent17, True)
 
 	@property
 	def SaleTermnlData(self):
@@ -114,12 +114,12 @@ class LoginRequest7(base_types._BaseFieldType):
 
 	@SaleTermnlData.setter
 	def SaleTermnlData(self, value):
-		self._SaleTermnlData = value if type(value) != base_types.auto else self.make_default("SaleTermnlData")
+		self._SaleTermnlData = value if value is not None else base_types.UninitialisedField(self, 'SaleTermnlData', SaleTerminalData1, False)
 
 	@SaleTermnlData.deleter
 	def SaleTermnlData(self):
 		del self._SaleTermnlData
-		self._SaleTermnlData = None
+		self._SaleTermnlData = base_types.UninitialisedField(self, 'SaleTermnlData', SaleTerminalData1, False)
 
 	@property
 	def ShftNb(self):
@@ -127,12 +127,12 @@ class LoginRequest7(base_types._BaseFieldType):
 
 	@ShftNb.setter
 	def ShftNb(self, value):
-		self._ShftNb = value if type(value) != base_types.auto else self.make_default("ShftNb")
+		self._ShftNb = value if value is not None else base_types.UninitialisedField(self, 'ShftNb', Max2NumericText, False)
 
 	@ShftNb.deleter
 	def ShftNb(self):
 		del self._ShftNb
-		self._ShftNb = None
+		self._ShftNb = base_types.UninitialisedField(self, 'ShftNb', Max2NumericText, False)
 
 	@property
 	def TknReqdTp(self):
@@ -140,12 +140,12 @@ class LoginRequest7(base_types._BaseFieldType):
 
 	@TknReqdTp.setter
 	def TknReqdTp(self, value):
-		self._TknReqdTp = value if type(value) != base_types.auto else self.make_default("TknReqdTp")
+		self._TknReqdTp = value if value is not None else base_types.UninitialisedField(self, 'TknReqdTp', SaleTokenScope1Code, False)
 
 	@TknReqdTp.deleter
 	def TknReqdTp(self):
 		del self._TknReqdTp
-		self._TknReqdTp = None
+		self._TknReqdTp = base_types.UninitialisedField(self, 'TknReqdTp', SaleTokenScope1Code, False)
 
 	@property
 	def TrngMdFlg(self):
@@ -153,12 +153,12 @@ class LoginRequest7(base_types._BaseFieldType):
 
 	@TrngMdFlg.setter
 	def TrngMdFlg(self, value):
-		self._TrngMdFlg = value if type(value) != base_types.auto else self.make_default("TrngMdFlg")
+		self._TrngMdFlg = value if value is not None else base_types.UninitialisedField(self, 'TrngMdFlg', TrueFalseIndicator, False)
 
 	@TrngMdFlg.deleter
 	def TrngMdFlg(self):
 		del self._TrngMdFlg
-		self._TrngMdFlg = None
+		self._TrngMdFlg = base_types.UninitialisedField(self, 'TrngMdFlg', TrueFalseIndicator, False)
 
 	@property
 	def TtlsGrpId(self):
@@ -166,12 +166,12 @@ class LoginRequest7(base_types._BaseFieldType):
 
 	@TtlsGrpId.setter
 	def TtlsGrpId(self, value):
-		self._TtlsGrpId = value if type(value) != base_types.auto else self.make_default("TtlsGrpId")
+		self._TtlsGrpId = value if value is not None else base_types.UninitialisedField(self, 'TtlsGrpId', Max35Text, False)
 
 	@TtlsGrpId.deleter
 	def TtlsGrpId(self):
 		del self._TtlsGrpId
-		self._TtlsGrpId = None
+		self._TtlsGrpId = base_types.UninitialisedField(self, 'TtlsGrpId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CshrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesMarketReportHeader1 import SecuritiesMarketReportHeader1
-from ._SupplementaryData1 import SupplementaryData1
-from ._TransparencyDataReport17 import TransparencyDataReport17
+from . import SecuritiesMarketReportHeader1
+from . import SupplementaryData1
+from . import TransparencyDataReport17
 
 class FinancialInstrumentReportingEquityTradingActivityResultV02(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class FinancialInstrumentReportingEquityTradingActivityResultV02(base_types._Bas
 
 	@EqtyTrnsprncyData.setter
 	def EqtyTrnsprncyData(self, value):
-		self._EqtyTrnsprncyData = value if type(value) != base_types.auto else self.make_default("EqtyTrnsprncyData")
+		self._EqtyTrnsprncyData = value if value is not None else base_types.UninitialisedField(self, 'EqtyTrnsprncyData', TransparencyDataReport17, True)
 
 	@EqtyTrnsprncyData.deleter
 	def EqtyTrnsprncyData(self):
 		del self._EqtyTrnsprncyData
-		self._EqtyTrnsprncyData = None
+		self._EqtyTrnsprncyData = base_types.UninitialisedField(self, 'EqtyTrnsprncyData', TransparencyDataReport17, True)
 
 	@property
 	def RptHdr(self):
@@ -28,12 +28,12 @@ class FinancialInstrumentReportingEquityTradingActivityResultV02(base_types._Bas
 
 	@RptHdr.setter
 	def RptHdr(self, value):
-		self._RptHdr = value if type(value) != base_types.auto else self.make_default("RptHdr")
+		self._RptHdr = value if value is not None else base_types.UninitialisedField(self, 'RptHdr', SecuritiesMarketReportHeader1, False)
 
 	@RptHdr.deleter
 	def RptHdr(self):
 		del self._RptHdr
-		self._RptHdr = None
+		self._RptHdr = base_types.UninitialisedField(self, 'RptHdr', SecuritiesMarketReportHeader1, False)
 
 	@property
 	def SplmtryData(self):
@@ -41,12 +41,12 @@ class FinancialInstrumentReportingEquityTradingActivityResultV02(base_types._Bas
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EqtyTrnsprncyData', type=TransparencyDataReport17, min=1, max=None, mutex_group=None, array=True),

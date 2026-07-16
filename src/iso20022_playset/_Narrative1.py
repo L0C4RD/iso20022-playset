@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max20000Text import Max20000Text
-from ._NarrativeType1Choice import NarrativeType1Choice
+from . import Max20000Text
+from . import NarrativeType1Choice
 
 class Narrative1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Narrative1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', NarrativeType1Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', NarrativeType1Choice, False)
 
 	@property
 	def Txt(self):
@@ -27,12 +27,12 @@ class Narrative1(base_types._BaseFieldType):
 
 	@Txt.setter
 	def Txt(self, value):
-		self._Txt = value if type(value) != base_types.auto else self.make_default("Txt")
+		self._Txt = value if value is not None else base_types.UninitialisedField(self, 'Txt', Max20000Text, True)
 
 	@Txt.deleter
 	def Txt(self):
 		del self._Txt
-		self._Txt = None
+		self._Txt = base_types.UninitialisedField(self, 'Txt', Max20000Text, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Tp', type=NarrativeType1Choice, min=0, max=1, mutex_group=None, array=False),

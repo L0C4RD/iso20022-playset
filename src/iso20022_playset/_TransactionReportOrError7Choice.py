@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ErrorHandling5 import ErrorHandling5
-from ._Transactions11 import Transactions11
+from . import ErrorHandling5
+from . import Transactions11
 
 class TransactionReportOrError7Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TransactionReportOrError7Choice(base_types._BaseFieldType):
 
 	@BizRpt.setter
 	def BizRpt(self, value):
-		self._BizRpt = value if type(value) != base_types.auto else self.make_default("BizRpt")
+		self._BizRpt = value if value is not None else base_types.UninitialisedField(self, 'BizRpt', Transactions11, False)
 
 	@BizRpt.deleter
 	def BizRpt(self):
 		del self._BizRpt
-		self._BizRpt = None
+		self._BizRpt = base_types.UninitialisedField(self, 'BizRpt', Transactions11, False)
 
 	@property
 	def OprlErr(self):
@@ -27,12 +27,12 @@ class TransactionReportOrError7Choice(base_types._BaseFieldType):
 
 	@OprlErr.setter
 	def OprlErr(self, value):
-		self._OprlErr = value if type(value) != base_types.auto else self.make_default("OprlErr")
+		self._OprlErr = value if value is not None else base_types.UninitialisedField(self, 'OprlErr', ErrorHandling5, True)
 
 	@OprlErr.deleter
 	def OprlErr(self):
 		del self._OprlErr
-		self._OprlErr = None
+		self._OprlErr = base_types.UninitialisedField(self, 'OprlErr', ErrorHandling5, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BizRpt', type=Transactions11, min=0, max=1, mutex_group=1, array=False),

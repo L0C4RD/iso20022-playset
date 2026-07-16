@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcknowledgedAcceptedStatus21Choice import AcknowledgedAcceptedStatus21Choice
-from ._CancellationStatus24Choice import CancellationStatus24Choice
-from ._ProprietaryStatusAndReason6 import ProprietaryStatusAndReason6
-from ._RejectionOrRepairStatus41Choice import RejectionOrRepairStatus41Choice
+from . import AcknowledgedAcceptedStatus21Choice
+from . import CancellationStatus24Choice
+from . import ProprietaryStatusAndReason6
+from . import RejectionOrRepairStatus41Choice
 
 class IntraPositionProcessingStatus9Choice(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class IntraPositionProcessingStatus9Choice(base_types._BaseFieldType):
 
 	@AckdAccptd.setter
 	def AckdAccptd(self, value):
-		self._AckdAccptd = value if type(value) != base_types.auto else self.make_default("AckdAccptd")
+		self._AckdAccptd = value if value is not None else base_types.UninitialisedField(self, 'AckdAccptd', AcknowledgedAcceptedStatus21Choice, False)
 
 	@AckdAccptd.deleter
 	def AckdAccptd(self):
 		del self._AckdAccptd
-		self._AckdAccptd = None
+		self._AckdAccptd = base_types.UninitialisedField(self, 'AckdAccptd', AcknowledgedAcceptedStatus21Choice, False)
 
 	@property
 	def Canc(self):
@@ -29,12 +29,12 @@ class IntraPositionProcessingStatus9Choice(base_types._BaseFieldType):
 
 	@Canc.setter
 	def Canc(self, value):
-		self._Canc = value if type(value) != base_types.auto else self.make_default("Canc")
+		self._Canc = value if value is not None else base_types.UninitialisedField(self, 'Canc', CancellationStatus24Choice, False)
 
 	@Canc.deleter
 	def Canc(self):
 		del self._Canc
-		self._Canc = None
+		self._Canc = base_types.UninitialisedField(self, 'Canc', CancellationStatus24Choice, False)
 
 	@property
 	def Prtry(self):
@@ -42,12 +42,12 @@ class IntraPositionProcessingStatus9Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+		self._Prtry = value if value is not None else base_types.UninitialisedField(self, 'Prtry', ProprietaryStatusAndReason6, False)
 
 	@Prtry.deleter
 	def Prtry(self):
 		del self._Prtry
-		self._Prtry = None
+		self._Prtry = base_types.UninitialisedField(self, 'Prtry', ProprietaryStatusAndReason6, False)
 
 	@property
 	def Rjctd(self):
@@ -55,12 +55,12 @@ class IntraPositionProcessingStatus9Choice(base_types._BaseFieldType):
 
 	@Rjctd.setter
 	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
+		self._Rjctd = value if value is not None else base_types.UninitialisedField(self, 'Rjctd', RejectionOrRepairStatus41Choice, False)
 
 	@Rjctd.deleter
 	def Rjctd(self):
 		del self._Rjctd
-		self._Rjctd = None
+		self._Rjctd = base_types.UninitialisedField(self, 'Rjctd', RejectionOrRepairStatus41Choice, False)
 
 	@property
 	def Rpr(self):
@@ -68,12 +68,12 @@ class IntraPositionProcessingStatus9Choice(base_types._BaseFieldType):
 
 	@Rpr.setter
 	def Rpr(self, value):
-		self._Rpr = value if type(value) != base_types.auto else self.make_default("Rpr")
+		self._Rpr = value if value is not None else base_types.UninitialisedField(self, 'Rpr', RejectionOrRepairStatus41Choice, False)
 
 	@Rpr.deleter
 	def Rpr(self):
 		del self._Rpr
-		self._Rpr = None
+		self._Rpr = base_types.UninitialisedField(self, 'Rpr', RejectionOrRepairStatus41Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AckdAccptd', type=AcknowledgedAcceptedStatus21Choice, min=0, max=1, mutex_group=1, array=False),

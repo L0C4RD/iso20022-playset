@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BillingServiceIdentification3 import BillingServiceIdentification3
-from ._DecimalNumber import DecimalNumber
+from . import BillingServiceIdentification3
+from . import DecimalNumber
 
 class BillingServiceParameters3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class BillingServiceParameters3(base_types._BaseFieldType):
 
 	@BkSvc.setter
 	def BkSvc(self, value):
-		self._BkSvc = value if type(value) != base_types.auto else self.make_default("BkSvc")
+		self._BkSvc = value if value is not None else base_types.UninitialisedField(self, 'BkSvc', BillingServiceIdentification3, False)
 
 	@BkSvc.deleter
 	def BkSvc(self):
 		del self._BkSvc
-		self._BkSvc = None
+		self._BkSvc = base_types.UninitialisedField(self, 'BkSvc', BillingServiceIdentification3, False)
 
 	@property
 	def Vol(self):
@@ -27,12 +27,12 @@ class BillingServiceParameters3(base_types._BaseFieldType):
 
 	@Vol.setter
 	def Vol(self, value):
-		self._Vol = value if type(value) != base_types.auto else self.make_default("Vol")
+		self._Vol = value if value is not None else base_types.UninitialisedField(self, 'Vol', DecimalNumber, False)
 
 	@Vol.deleter
 	def Vol(self):
 		del self._Vol
-		self._Vol = None
+		self._Vol = base_types.UninitialisedField(self, 'Vol', DecimalNumber, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BkSvc', type=BillingServiceIdentification3, min=1, max=1, mutex_group=None, array=False),

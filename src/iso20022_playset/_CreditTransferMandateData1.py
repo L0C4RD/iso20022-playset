@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Frequency36Choice import Frequency36Choice
-from ._ISODate import ISODate
-from ._ISODateTime import ISODateTime
-from ._MandateSetupReason1Choice import MandateSetupReason1Choice
-from ._MandateTypeInformation2 import MandateTypeInformation2
-from ._Max10KBinary import Max10KBinary
-from ._Max35Text import Max35Text
+from . import Frequency36Choice
+from . import ISODate
+from . import ISODateTime
+from . import MandateSetupReason1Choice
+from . import MandateTypeInformation2
+from . import Max10KBinary
+from . import Max35Text
 
 class CreditTransferMandateData1(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class CreditTransferMandateData1(base_types._BaseFieldType):
 
 	@DtOfSgntr.setter
 	def DtOfSgntr(self, value):
-		self._DtOfSgntr = value if type(value) != base_types.auto else self.make_default("DtOfSgntr")
+		self._DtOfSgntr = value if value is not None else base_types.UninitialisedField(self, 'DtOfSgntr', ISODate, False)
 
 	@DtOfSgntr.deleter
 	def DtOfSgntr(self):
 		del self._DtOfSgntr
-		self._DtOfSgntr = None
+		self._DtOfSgntr = base_types.UninitialisedField(self, 'DtOfSgntr', ISODate, False)
 
 	@property
 	def DtOfVrfctn(self):
@@ -32,12 +32,12 @@ class CreditTransferMandateData1(base_types._BaseFieldType):
 
 	@DtOfVrfctn.setter
 	def DtOfVrfctn(self, value):
-		self._DtOfVrfctn = value if type(value) != base_types.auto else self.make_default("DtOfVrfctn")
+		self._DtOfVrfctn = value if value is not None else base_types.UninitialisedField(self, 'DtOfVrfctn', ISODateTime, False)
 
 	@DtOfVrfctn.deleter
 	def DtOfVrfctn(self):
 		del self._DtOfVrfctn
-		self._DtOfVrfctn = None
+		self._DtOfVrfctn = base_types.UninitialisedField(self, 'DtOfVrfctn', ISODateTime, False)
 
 	@property
 	def ElctrncSgntr(self):
@@ -45,12 +45,12 @@ class CreditTransferMandateData1(base_types._BaseFieldType):
 
 	@ElctrncSgntr.setter
 	def ElctrncSgntr(self, value):
-		self._ElctrncSgntr = value if type(value) != base_types.auto else self.make_default("ElctrncSgntr")
+		self._ElctrncSgntr = value if value is not None else base_types.UninitialisedField(self, 'ElctrncSgntr', Max10KBinary, False)
 
 	@ElctrncSgntr.deleter
 	def ElctrncSgntr(self):
 		del self._ElctrncSgntr
-		self._ElctrncSgntr = None
+		self._ElctrncSgntr = base_types.UninitialisedField(self, 'ElctrncSgntr', Max10KBinary, False)
 
 	@property
 	def FnlPmtDt(self):
@@ -58,12 +58,12 @@ class CreditTransferMandateData1(base_types._BaseFieldType):
 
 	@FnlPmtDt.setter
 	def FnlPmtDt(self, value):
-		self._FnlPmtDt = value if type(value) != base_types.auto else self.make_default("FnlPmtDt")
+		self._FnlPmtDt = value if value is not None else base_types.UninitialisedField(self, 'FnlPmtDt', ISODate, False)
 
 	@FnlPmtDt.deleter
 	def FnlPmtDt(self):
 		del self._FnlPmtDt
-		self._FnlPmtDt = None
+		self._FnlPmtDt = base_types.UninitialisedField(self, 'FnlPmtDt', ISODate, False)
 
 	@property
 	def Frqcy(self):
@@ -71,12 +71,12 @@ class CreditTransferMandateData1(base_types._BaseFieldType):
 
 	@Frqcy.setter
 	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
+		self._Frqcy = value if value is not None else base_types.UninitialisedField(self, 'Frqcy', Frequency36Choice, False)
 
 	@Frqcy.deleter
 	def Frqcy(self):
 		del self._Frqcy
-		self._Frqcy = None
+		self._Frqcy = base_types.UninitialisedField(self, 'Frqcy', Frequency36Choice, False)
 
 	@property
 	def FrstPmtDt(self):
@@ -84,12 +84,12 @@ class CreditTransferMandateData1(base_types._BaseFieldType):
 
 	@FrstPmtDt.setter
 	def FrstPmtDt(self, value):
-		self._FrstPmtDt = value if type(value) != base_types.auto else self.make_default("FrstPmtDt")
+		self._FrstPmtDt = value if value is not None else base_types.UninitialisedField(self, 'FrstPmtDt', ISODate, False)
 
 	@FrstPmtDt.deleter
 	def FrstPmtDt(self):
 		del self._FrstPmtDt
-		self._FrstPmtDt = None
+		self._FrstPmtDt = base_types.UninitialisedField(self, 'FrstPmtDt', ISODate, False)
 
 	@property
 	def MndtId(self):
@@ -97,12 +97,12 @@ class CreditTransferMandateData1(base_types._BaseFieldType):
 
 	@MndtId.setter
 	def MndtId(self, value):
-		self._MndtId = value if type(value) != base_types.auto else self.make_default("MndtId")
+		self._MndtId = value if value is not None else base_types.UninitialisedField(self, 'MndtId', Max35Text, False)
 
 	@MndtId.deleter
 	def MndtId(self):
 		del self._MndtId
-		self._MndtId = None
+		self._MndtId = base_types.UninitialisedField(self, 'MndtId', Max35Text, False)
 
 	@property
 	def Rsn(self):
@@ -110,12 +110,12 @@ class CreditTransferMandateData1(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', MandateSetupReason1Choice, False)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', MandateSetupReason1Choice, False)
 
 	@property
 	def Tp(self):
@@ -123,12 +123,12 @@ class CreditTransferMandateData1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', MandateTypeInformation2, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', MandateTypeInformation2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DtOfSgntr', type=ISODate, min=0, max=1, mutex_group=None, array=False),

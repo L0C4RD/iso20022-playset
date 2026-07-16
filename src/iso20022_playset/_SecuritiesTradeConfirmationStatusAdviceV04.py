@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AffirmationStatus11Choice import AffirmationStatus11Choice
-from ._CancellationProcessingStatus10Choice import CancellationProcessingStatus10Choice
-from ._ConfirmationParties9 import ConfirmationParties9
-from ._Linkages77 import Linkages77
-from ._MatchingStatus35Choice import MatchingStatus35Choice
-from ._Order23 import Order23
-from ._ProcessingStatus98Choice import ProcessingStatus98Choice
-from ._ReplacementProcessingStatus10Choice import ReplacementProcessingStatus10Choice
-from ._SettlementParties121 import SettlementParties121
-from ._SupplementaryData1 import SupplementaryData1
-from ._TransactiontIdentification4 import TransactiontIdentification4
+from . import AffirmationStatus11Choice
+from . import CancellationProcessingStatus10Choice
+from . import ConfirmationParties9
+from . import Linkages77
+from . import MatchingStatus35Choice
+from . import Order23
+from . import ProcessingStatus98Choice
+from . import ReplacementProcessingStatus10Choice
+from . import SettlementParties121
+from . import SupplementaryData1
+from . import TransactiontIdentification4
 
 class SecuritiesTradeConfirmationStatusAdviceV04(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class SecuritiesTradeConfirmationStatusAdviceV04(base_types._BaseFieldType):
 
 	@AffirmSts.setter
 	def AffirmSts(self, value):
-		self._AffirmSts = value if type(value) != base_types.auto else self.make_default("AffirmSts")
+		self._AffirmSts = value if value is not None else base_types.UninitialisedField(self, 'AffirmSts', AffirmationStatus11Choice, False)
 
 	@AffirmSts.deleter
 	def AffirmSts(self):
 		del self._AffirmSts
-		self._AffirmSts = None
+		self._AffirmSts = base_types.UninitialisedField(self, 'AffirmSts', AffirmationStatus11Choice, False)
 
 	@property
 	def ConfPties(self):
@@ -36,12 +36,12 @@ class SecuritiesTradeConfirmationStatusAdviceV04(base_types._BaseFieldType):
 
 	@ConfPties.setter
 	def ConfPties(self, value):
-		self._ConfPties = value if type(value) != base_types.auto else self.make_default("ConfPties")
+		self._ConfPties = value if value is not None else base_types.UninitialisedField(self, 'ConfPties', ConfirmationParties9, True)
 
 	@ConfPties.deleter
 	def ConfPties(self):
 		del self._ConfPties
-		self._ConfPties = None
+		self._ConfPties = base_types.UninitialisedField(self, 'ConfPties', ConfirmationParties9, True)
 
 	@property
 	def CtrPtyTradgDtls(self):
@@ -49,12 +49,12 @@ class SecuritiesTradeConfirmationStatusAdviceV04(base_types._BaseFieldType):
 
 	@CtrPtyTradgDtls.setter
 	def CtrPtyTradgDtls(self, value):
-		self._CtrPtyTradgDtls = value if type(value) != base_types.auto else self.make_default("CtrPtyTradgDtls")
+		self._CtrPtyTradgDtls = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyTradgDtls', Order23, False)
 
 	@CtrPtyTradgDtls.deleter
 	def CtrPtyTradgDtls(self):
 		del self._CtrPtyTradgDtls
-		self._CtrPtyTradgDtls = None
+		self._CtrPtyTradgDtls = base_types.UninitialisedField(self, 'CtrPtyTradgDtls', Order23, False)
 
 	@property
 	def CxlPrcgSts(self):
@@ -62,12 +62,12 @@ class SecuritiesTradeConfirmationStatusAdviceV04(base_types._BaseFieldType):
 
 	@CxlPrcgSts.setter
 	def CxlPrcgSts(self, value):
-		self._CxlPrcgSts = value if type(value) != base_types.auto else self.make_default("CxlPrcgSts")
+		self._CxlPrcgSts = value if value is not None else base_types.UninitialisedField(self, 'CxlPrcgSts', CancellationProcessingStatus10Choice, False)
 
 	@CxlPrcgSts.deleter
 	def CxlPrcgSts(self):
 		del self._CxlPrcgSts
-		self._CxlPrcgSts = None
+		self._CxlPrcgSts = base_types.UninitialisedField(self, 'CxlPrcgSts', CancellationProcessingStatus10Choice, False)
 
 	@property
 	def DlvrgSttlmPties(self):
@@ -75,12 +75,12 @@ class SecuritiesTradeConfirmationStatusAdviceV04(base_types._BaseFieldType):
 
 	@DlvrgSttlmPties.setter
 	def DlvrgSttlmPties(self, value):
-		self._DlvrgSttlmPties = value if type(value) != base_types.auto else self.make_default("DlvrgSttlmPties")
+		self._DlvrgSttlmPties = value if value is not None else base_types.UninitialisedField(self, 'DlvrgSttlmPties', SettlementParties121, False)
 
 	@DlvrgSttlmPties.deleter
 	def DlvrgSttlmPties(self):
 		del self._DlvrgSttlmPties
-		self._DlvrgSttlmPties = None
+		self._DlvrgSttlmPties = base_types.UninitialisedField(self, 'DlvrgSttlmPties', SettlementParties121, False)
 
 	@property
 	def Id(self):
@@ -88,12 +88,12 @@ class SecuritiesTradeConfirmationStatusAdviceV04(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', TransactiontIdentification4, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', TransactiontIdentification4, False)
 
 	@property
 	def MtchgSts(self):
@@ -101,12 +101,12 @@ class SecuritiesTradeConfirmationStatusAdviceV04(base_types._BaseFieldType):
 
 	@MtchgSts.setter
 	def MtchgSts(self, value):
-		self._MtchgSts = value if type(value) != base_types.auto else self.make_default("MtchgSts")
+		self._MtchgSts = value if value is not None else base_types.UninitialisedField(self, 'MtchgSts', MatchingStatus35Choice, False)
 
 	@MtchgSts.deleter
 	def MtchgSts(self):
 		del self._MtchgSts
-		self._MtchgSts = None
+		self._MtchgSts = base_types.UninitialisedField(self, 'MtchgSts', MatchingStatus35Choice, False)
 
 	@property
 	def PrcgSts(self):
@@ -114,12 +114,12 @@ class SecuritiesTradeConfirmationStatusAdviceV04(base_types._BaseFieldType):
 
 	@PrcgSts.setter
 	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != base_types.auto else self.make_default("PrcgSts")
+		self._PrcgSts = value if value is not None else base_types.UninitialisedField(self, 'PrcgSts', ProcessingStatus98Choice, False)
 
 	@PrcgSts.deleter
 	def PrcgSts(self):
 		del self._PrcgSts
-		self._PrcgSts = None
+		self._PrcgSts = base_types.UninitialisedField(self, 'PrcgSts', ProcessingStatus98Choice, False)
 
 	@property
 	def PtyTradgDtls(self):
@@ -127,12 +127,12 @@ class SecuritiesTradeConfirmationStatusAdviceV04(base_types._BaseFieldType):
 
 	@PtyTradgDtls.setter
 	def PtyTradgDtls(self, value):
-		self._PtyTradgDtls = value if type(value) != base_types.auto else self.make_default("PtyTradgDtls")
+		self._PtyTradgDtls = value if value is not None else base_types.UninitialisedField(self, 'PtyTradgDtls', Order23, False)
 
 	@PtyTradgDtls.deleter
 	def PtyTradgDtls(self):
 		del self._PtyTradgDtls
-		self._PtyTradgDtls = None
+		self._PtyTradgDtls = base_types.UninitialisedField(self, 'PtyTradgDtls', Order23, False)
 
 	@property
 	def RcvgSttlmPties(self):
@@ -140,12 +140,12 @@ class SecuritiesTradeConfirmationStatusAdviceV04(base_types._BaseFieldType):
 
 	@RcvgSttlmPties.setter
 	def RcvgSttlmPties(self, value):
-		self._RcvgSttlmPties = value if type(value) != base_types.auto else self.make_default("RcvgSttlmPties")
+		self._RcvgSttlmPties = value if value is not None else base_types.UninitialisedField(self, 'RcvgSttlmPties', SettlementParties121, False)
 
 	@RcvgSttlmPties.deleter
 	def RcvgSttlmPties(self):
 		del self._RcvgSttlmPties
-		self._RcvgSttlmPties = None
+		self._RcvgSttlmPties = base_types.UninitialisedField(self, 'RcvgSttlmPties', SettlementParties121, False)
 
 	@property
 	def Refs(self):
@@ -153,12 +153,12 @@ class SecuritiesTradeConfirmationStatusAdviceV04(base_types._BaseFieldType):
 
 	@Refs.setter
 	def Refs(self, value):
-		self._Refs = value if type(value) != base_types.auto else self.make_default("Refs")
+		self._Refs = value if value is not None else base_types.UninitialisedField(self, 'Refs', Linkages77, True)
 
 	@Refs.deleter
 	def Refs(self):
 		del self._Refs
-		self._Refs = None
+		self._Refs = base_types.UninitialisedField(self, 'Refs', Linkages77, True)
 
 	@property
 	def RplcmntPrcgSts(self):
@@ -166,12 +166,12 @@ class SecuritiesTradeConfirmationStatusAdviceV04(base_types._BaseFieldType):
 
 	@RplcmntPrcgSts.setter
 	def RplcmntPrcgSts(self, value):
-		self._RplcmntPrcgSts = value if type(value) != base_types.auto else self.make_default("RplcmntPrcgSts")
+		self._RplcmntPrcgSts = value if value is not None else base_types.UninitialisedField(self, 'RplcmntPrcgSts', ReplacementProcessingStatus10Choice, False)
 
 	@RplcmntPrcgSts.deleter
 	def RplcmntPrcgSts(self):
 		del self._RplcmntPrcgSts
-		self._RplcmntPrcgSts = None
+		self._RplcmntPrcgSts = base_types.UninitialisedField(self, 'RplcmntPrcgSts', ReplacementProcessingStatus10Choice, False)
 
 	@property
 	def SplmtryData(self):
@@ -179,12 +179,12 @@ class SecuritiesTradeConfirmationStatusAdviceV04(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AffirmSts', type=AffirmationStatus11Choice, min=0, max=1, mutex_group=None, array=False),

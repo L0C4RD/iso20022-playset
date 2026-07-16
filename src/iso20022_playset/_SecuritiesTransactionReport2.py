@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LEIIdentifier import LEIIdentifier
-from ._Max52Text import Max52Text
-from ._RecordTechnicalData2 import RecordTechnicalData2
-from ._SupplementaryData1 import SupplementaryData1
+from . import LEIIdentifier
+from . import Max52Text
+from . import RecordTechnicalData2
+from . import SupplementaryData1
 
 class SecuritiesTransactionReport2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class SecuritiesTransactionReport2(base_types._BaseFieldType):
 
 	@ExctgPty.setter
 	def ExctgPty(self, value):
-		self._ExctgPty = value if type(value) != base_types.auto else self.make_default("ExctgPty")
+		self._ExctgPty = value if value is not None else base_types.UninitialisedField(self, 'ExctgPty', LEIIdentifier, False)
 
 	@ExctgPty.deleter
 	def ExctgPty(self):
 		del self._ExctgPty
-		self._ExctgPty = None
+		self._ExctgPty = base_types.UninitialisedField(self, 'ExctgPty', LEIIdentifier, False)
 
 	@property
 	def SplmtryData(self):
@@ -29,12 +29,12 @@ class SecuritiesTransactionReport2(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def SubmitgPty(self):
@@ -42,12 +42,12 @@ class SecuritiesTransactionReport2(base_types._BaseFieldType):
 
 	@SubmitgPty.setter
 	def SubmitgPty(self, value):
-		self._SubmitgPty = value if type(value) != base_types.auto else self.make_default("SubmitgPty")
+		self._SubmitgPty = value if value is not None else base_types.UninitialisedField(self, 'SubmitgPty', LEIIdentifier, False)
 
 	@SubmitgPty.deleter
 	def SubmitgPty(self):
 		del self._SubmitgPty
-		self._SubmitgPty = None
+		self._SubmitgPty = base_types.UninitialisedField(self, 'SubmitgPty', LEIIdentifier, False)
 
 	@property
 	def TechAttrbts(self):
@@ -55,12 +55,12 @@ class SecuritiesTransactionReport2(base_types._BaseFieldType):
 
 	@TechAttrbts.setter
 	def TechAttrbts(self, value):
-		self._TechAttrbts = value if type(value) != base_types.auto else self.make_default("TechAttrbts")
+		self._TechAttrbts = value if value is not None else base_types.UninitialisedField(self, 'TechAttrbts', RecordTechnicalData2, False)
 
 	@TechAttrbts.deleter
 	def TechAttrbts(self):
 		del self._TechAttrbts
-		self._TechAttrbts = None
+		self._TechAttrbts = base_types.UninitialisedField(self, 'TechAttrbts', RecordTechnicalData2, False)
 
 	@property
 	def TxId(self):
@@ -68,12 +68,12 @@ class SecuritiesTransactionReport2(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', Max52Text, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', Max52Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ExctgPty', type=LEIIdentifier, min=1, max=1, mutex_group=None, array=False),

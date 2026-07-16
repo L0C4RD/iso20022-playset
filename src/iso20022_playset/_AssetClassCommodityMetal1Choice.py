@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MetalCommodityNonPrecious1 import MetalCommodityNonPrecious1
-from ._MetalCommodityPrecious1 import MetalCommodityPrecious1
+from . import MetalCommodityNonPrecious1
+from . import MetalCommodityPrecious1
 
 class AssetClassCommodityMetal1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AssetClassCommodityMetal1Choice(base_types._BaseFieldType):
 
 	@NonPrcs.setter
 	def NonPrcs(self, value):
-		self._NonPrcs = value if type(value) != base_types.auto else self.make_default("NonPrcs")
+		self._NonPrcs = value if value is not None else base_types.UninitialisedField(self, 'NonPrcs', MetalCommodityNonPrecious1, False)
 
 	@NonPrcs.deleter
 	def NonPrcs(self):
 		del self._NonPrcs
-		self._NonPrcs = None
+		self._NonPrcs = base_types.UninitialisedField(self, 'NonPrcs', MetalCommodityNonPrecious1, False)
 
 	@property
 	def Prcs(self):
@@ -27,12 +27,12 @@ class AssetClassCommodityMetal1Choice(base_types._BaseFieldType):
 
 	@Prcs.setter
 	def Prcs(self, value):
-		self._Prcs = value if type(value) != base_types.auto else self.make_default("Prcs")
+		self._Prcs = value if value is not None else base_types.UninitialisedField(self, 'Prcs', MetalCommodityPrecious1, False)
 
 	@Prcs.deleter
 	def Prcs(self):
 		del self._Prcs
-		self._Prcs = None
+		self._Prcs = base_types.UninitialisedField(self, 'Prcs', MetalCommodityPrecious1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NonPrcs', type=MetalCommodityNonPrecious1, min=0, max=1, mutex_group=1, array=False),

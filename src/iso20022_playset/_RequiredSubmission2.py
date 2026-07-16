@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BICIdentification1 import BICIdentification1
+from . import BICIdentification1
 
 class RequiredSubmission2(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class RequiredSubmission2(base_types._BaseFieldType):
 
 	@Submitr.setter
 	def Submitr(self, value):
-		self._Submitr = value if type(value) != base_types.auto else self.make_default("Submitr")
+		self._Submitr = value if value is not None else base_types.UninitialisedField(self, 'Submitr', BICIdentification1, True)
 
 	@Submitr.deleter
 	def Submitr(self):
 		del self._Submitr
-		self._Submitr = None
+		self._Submitr = base_types.UninitialisedField(self, 'Submitr', BICIdentification1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Submitr', type=BICIdentification1, min=1, max=None, mutex_group=None, array=True),

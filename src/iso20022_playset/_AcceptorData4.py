@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._Address4 import Address4
-from ._LocalData18 import LocalData18
-from ._Max15AlphaNumericText import Max15AlphaNumericText
-from ._Max256Text import Max256Text
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
-from ._Max99Text import Max99Text
+from . import ATICALaxProcessing
+from . import Address4
+from . import LocalData18
+from . import Max15AlphaNumericText
+from . import Max256Text
+from . import Max35Text
+from . import Max70Text
+from . import Max99Text
 
 class AcceptorData4(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class AcceptorData4(base_types._BaseFieldType):
 
 	@AddtlTxRefNb.setter
 	def AddtlTxRefNb(self, value):
-		self._AddtlTxRefNb = value if type(value) != base_types.auto else self.make_default("AddtlTxRefNb")
+		self._AddtlTxRefNb = value if value is not None else base_types.UninitialisedField(self, 'AddtlTxRefNb', Max70Text, False)
 
 	@AddtlTxRefNb.deleter
 	def AddtlTxRefNb(self):
 		del self._AddtlTxRefNb
-		self._AddtlTxRefNb = None
+		self._AddtlTxRefNb = base_types.UninitialisedField(self, 'AddtlTxRefNb', Max70Text, False)
 
 	@property
 	def ApldAdr(self):
@@ -33,12 +33,12 @@ class AcceptorData4(base_types._BaseFieldType):
 
 	@ApldAdr.setter
 	def ApldAdr(self, value):
-		self._ApldAdr = value if type(value) != base_types.auto else self.make_default("ApldAdr")
+		self._ApldAdr = value if value is not None else base_types.UninitialisedField(self, 'ApldAdr', Address4, False)
 
 	@ApldAdr.deleter
 	def ApldAdr(self):
 		del self._ApldAdr
-		self._ApldAdr = None
+		self._ApldAdr = base_types.UninitialisedField(self, 'ApldAdr', Address4, False)
 
 	@property
 	def BizNm(self):
@@ -46,12 +46,12 @@ class AcceptorData4(base_types._BaseFieldType):
 
 	@BizNm.setter
 	def BizNm(self, value):
-		self._BizNm = value if type(value) != base_types.auto else self.make_default("BizNm")
+		self._BizNm = value if value is not None else base_types.UninitialisedField(self, 'BizNm', Max35Text, False)
 
 	@BizNm.deleter
 	def BizNm(self):
 		del self._BizNm
-		self._BizNm = None
+		self._BizNm = base_types.UninitialisedField(self, 'BizNm', Max35Text, False)
 
 	@property
 	def BizRegnId(self):
@@ -59,12 +59,12 @@ class AcceptorData4(base_types._BaseFieldType):
 
 	@BizRegnId.setter
 	def BizRegnId(self, value):
-		self._BizRegnId = value if type(value) != base_types.auto else self.make_default("BizRegnId")
+		self._BizRegnId = value if value is not None else base_types.UninitialisedField(self, 'BizRegnId', Max35Text, False)
 
 	@BizRegnId.deleter
 	def BizRegnId(self):
 		del self._BizRegnId
-		self._BizRegnId = None
+		self._BizRegnId = base_types.UninitialisedField(self, 'BizRegnId', Max35Text, False)
 
 	@property
 	def BizRegnIdTp(self):
@@ -72,12 +72,12 @@ class AcceptorData4(base_types._BaseFieldType):
 
 	@BizRegnIdTp.setter
 	def BizRegnIdTp(self, value):
-		self._BizRegnIdTp = value if type(value) != base_types.auto else self.make_default("BizRegnIdTp")
+		self._BizRegnIdTp = value if value is not None else base_types.UninitialisedField(self, 'BizRegnIdTp', Max35Text, False)
 
 	@BizRegnIdTp.deleter
 	def BizRegnIdTp(self):
 		del self._BizRegnIdTp
-		self._BizRegnIdTp = None
+		self._BizRegnIdTp = base_types.UninitialisedField(self, 'BizRegnIdTp', Max35Text, False)
 
 	@property
 	def Id(self):
@@ -85,12 +85,12 @@ class AcceptorData4(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def LclData(self):
@@ -98,12 +98,12 @@ class AcceptorData4(base_types._BaseFieldType):
 
 	@LclData.setter
 	def LclData(self, value):
-		self._LclData = value if type(value) != base_types.auto else self.make_default("LclData")
+		self._LclData = value if value is not None else base_types.UninitialisedField(self, 'LclData', LocalData18, True)
 
 	@LclData.deleter
 	def LclData(self):
 		del self._LclData
-		self._LclData = None
+		self._LclData = base_types.UninitialisedField(self, 'LclData', LocalData18, True)
 
 	@property
 	def LglCorpNm(self):
@@ -111,12 +111,12 @@ class AcceptorData4(base_types._BaseFieldType):
 
 	@LglCorpNm.setter
 	def LglCorpNm(self, value):
-		self._LglCorpNm = value if type(value) != base_types.auto else self.make_default("LglCorpNm")
+		self._LglCorpNm = value if value is not None else base_types.UninitialisedField(self, 'LglCorpNm', Max99Text, False)
 
 	@LglCorpNm.deleter
 	def LglCorpNm(self):
 		del self._LglCorpNm
-		self._LglCorpNm = None
+		self._LglCorpNm = base_types.UninitialisedField(self, 'LglCorpNm', Max99Text, False)
 
 	@property
 	def NmAndLctn(self):
@@ -124,12 +124,12 @@ class AcceptorData4(base_types._BaseFieldType):
 
 	@NmAndLctn.setter
 	def NmAndLctn(self, value):
-		self._NmAndLctn = value if type(value) != base_types.auto else self.make_default("NmAndLctn")
+		self._NmAndLctn = value if value is not None else base_types.UninitialisedField(self, 'NmAndLctn', Max99Text, False)
 
 	@NmAndLctn.deleter
 	def NmAndLctn(self):
 		del self._NmAndLctn
-		self._NmAndLctn = None
+		self._NmAndLctn = base_types.UninitialisedField(self, 'NmAndLctn', Max99Text, False)
 
 	@property
 	def NtlData(self):
@@ -137,12 +137,12 @@ class AcceptorData4(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def PrtnrId(self):
@@ -150,12 +150,12 @@ class AcceptorData4(base_types._BaseFieldType):
 
 	@PrtnrId.setter
 	def PrtnrId(self, value):
-		self._PrtnrId = value if type(value) != base_types.auto else self.make_default("PrtnrId")
+		self._PrtnrId = value if value is not None else base_types.UninitialisedField(self, 'PrtnrId', Max35Text, False)
 
 	@PrtnrId.deleter
 	def PrtnrId(self):
 		del self._PrtnrId
-		self._PrtnrId = None
+		self._PrtnrId = base_types.UninitialisedField(self, 'PrtnrId', Max35Text, False)
 
 	@property
 	def PrvtData(self):
@@ -163,12 +163,12 @@ class AcceptorData4(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def SchmeAssgndId(self):
@@ -176,12 +176,12 @@ class AcceptorData4(base_types._BaseFieldType):
 
 	@SchmeAssgndId.setter
 	def SchmeAssgndId(self, value):
-		self._SchmeAssgndId = value if type(value) != base_types.auto else self.make_default("SchmeAssgndId")
+		self._SchmeAssgndId = value if value is not None else base_types.UninitialisedField(self, 'SchmeAssgndId', Max15AlphaNumericText, False)
 
 	@SchmeAssgndId.deleter
 	def SchmeAssgndId(self):
 		del self._SchmeAssgndId
-		self._SchmeAssgndId = None
+		self._SchmeAssgndId = base_types.UninitialisedField(self, 'SchmeAssgndId', Max15AlphaNumericText, False)
 
 	@property
 	def SubmittdAdr(self):
@@ -189,12 +189,12 @@ class AcceptorData4(base_types._BaseFieldType):
 
 	@SubmittdAdr.setter
 	def SubmittdAdr(self, value):
-		self._SubmittdAdr = value if type(value) != base_types.auto else self.make_default("SubmittdAdr")
+		self._SubmittdAdr = value if value is not None else base_types.UninitialisedField(self, 'SubmittdAdr', Address4, False)
 
 	@SubmittdAdr.deleter
 	def SubmittdAdr(self):
 		del self._SubmittdAdr
-		self._SubmittdAdr = None
+		self._SubmittdAdr = base_types.UninitialisedField(self, 'SubmittdAdr', Address4, False)
 
 	@property
 	def URLAdr(self):
@@ -202,12 +202,12 @@ class AcceptorData4(base_types._BaseFieldType):
 
 	@URLAdr.setter
 	def URLAdr(self, value):
-		self._URLAdr = value if type(value) != base_types.auto else self.make_default("URLAdr")
+		self._URLAdr = value if value is not None else base_types.UninitialisedField(self, 'URLAdr', Max256Text, False)
 
 	@URLAdr.deleter
 	def URLAdr(self):
 		del self._URLAdr
-		self._URLAdr = None
+		self._URLAdr = base_types.UninitialisedField(self, 'URLAdr', Max256Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlTxRefNb', type=Max70Text, min=0, max=1, mutex_group=None, array=False),

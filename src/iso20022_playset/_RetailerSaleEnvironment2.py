@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._LoyaltyHandling1Code import LoyaltyHandling1Code
-from ._SaleCapabilities1Code import SaleCapabilities1Code
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ActiveCurrencyCode
+from . import ImpliedCurrencyAndAmount
+from . import LoyaltyHandling1Code
+from . import SaleCapabilities1Code
+from . import TrueFalseIndicator
 
 class RetailerSaleEnvironment2(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class RetailerSaleEnvironment2(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@property
 	def DbtPrefrdFlg(self):
@@ -30,12 +30,12 @@ class RetailerSaleEnvironment2(base_types._BaseFieldType):
 
 	@DbtPrefrdFlg.setter
 	def DbtPrefrdFlg(self, value):
-		self._DbtPrefrdFlg = value if type(value) != base_types.auto else self.make_default("DbtPrefrdFlg")
+		self._DbtPrefrdFlg = value if value is not None else base_types.UninitialisedField(self, 'DbtPrefrdFlg', TrueFalseIndicator, False)
 
 	@DbtPrefrdFlg.deleter
 	def DbtPrefrdFlg(self):
 		del self._DbtPrefrdFlg
-		self._DbtPrefrdFlg = None
+		self._DbtPrefrdFlg = base_types.UninitialisedField(self, 'DbtPrefrdFlg', TrueFalseIndicator, False)
 
 	@property
 	def LltyHdlg(self):
@@ -43,12 +43,12 @@ class RetailerSaleEnvironment2(base_types._BaseFieldType):
 
 	@LltyHdlg.setter
 	def LltyHdlg(self, value):
-		self._LltyHdlg = value if type(value) != base_types.auto else self.make_default("LltyHdlg")
+		self._LltyHdlg = value if value is not None else base_types.UninitialisedField(self, 'LltyHdlg', LoyaltyHandling1Code, False)
 
 	@LltyHdlg.deleter
 	def LltyHdlg(self):
 		del self._LltyHdlg
-		self._LltyHdlg = None
+		self._LltyHdlg = base_types.UninitialisedField(self, 'LltyHdlg', LoyaltyHandling1Code, False)
 
 	@property
 	def MaxCshBckAmt(self):
@@ -56,12 +56,12 @@ class RetailerSaleEnvironment2(base_types._BaseFieldType):
 
 	@MaxCshBckAmt.setter
 	def MaxCshBckAmt(self, value):
-		self._MaxCshBckAmt = value if type(value) != base_types.auto else self.make_default("MaxCshBckAmt")
+		self._MaxCshBckAmt = value if value is not None else base_types.UninitialisedField(self, 'MaxCshBckAmt', ImpliedCurrencyAndAmount, False)
 
 	@MaxCshBckAmt.deleter
 	def MaxCshBckAmt(self):
 		del self._MaxCshBckAmt
-		self._MaxCshBckAmt = None
+		self._MaxCshBckAmt = base_types.UninitialisedField(self, 'MaxCshBckAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def MinAmtToDlvr(self):
@@ -69,12 +69,12 @@ class RetailerSaleEnvironment2(base_types._BaseFieldType):
 
 	@MinAmtToDlvr.setter
 	def MinAmtToDlvr(self, value):
-		self._MinAmtToDlvr = value if type(value) != base_types.auto else self.make_default("MinAmtToDlvr")
+		self._MinAmtToDlvr = value if value is not None else base_types.UninitialisedField(self, 'MinAmtToDlvr', ImpliedCurrencyAndAmount, False)
 
 	@MinAmtToDlvr.deleter
 	def MinAmtToDlvr(self):
 		del self._MinAmtToDlvr
-		self._MinAmtToDlvr = None
+		self._MinAmtToDlvr = base_types.UninitialisedField(self, 'MinAmtToDlvr', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def MinSpltAmt(self):
@@ -82,12 +82,12 @@ class RetailerSaleEnvironment2(base_types._BaseFieldType):
 
 	@MinSpltAmt.setter
 	def MinSpltAmt(self, value):
-		self._MinSpltAmt = value if type(value) != base_types.auto else self.make_default("MinSpltAmt")
+		self._MinSpltAmt = value if value is not None else base_types.UninitialisedField(self, 'MinSpltAmt', ImpliedCurrencyAndAmount, False)
 
 	@MinSpltAmt.deleter
 	def MinSpltAmt(self):
 		del self._MinSpltAmt
-		self._MinSpltAmt = None
+		self._MinSpltAmt = base_types.UninitialisedField(self, 'MinSpltAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def SaleCpblties(self):
@@ -95,12 +95,12 @@ class RetailerSaleEnvironment2(base_types._BaseFieldType):
 
 	@SaleCpblties.setter
 	def SaleCpblties(self, value):
-		self._SaleCpblties = value if type(value) != base_types.auto else self.make_default("SaleCpblties")
+		self._SaleCpblties = value if value is not None else base_types.UninitialisedField(self, 'SaleCpblties', SaleCapabilities1Code, True)
 
 	@SaleCpblties.deleter
 	def SaleCpblties(self):
 		del self._SaleCpblties
-		self._SaleCpblties = None
+		self._SaleCpblties = base_types.UninitialisedField(self, 'SaleCpblties', SaleCapabilities1Code, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),

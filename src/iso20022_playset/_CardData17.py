@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._ISO3NumericCountryCode import ISO3NumericCountryCode
-from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
-from ._ISOYearMonth import ISOYearMonth
-from ._Max104Text import Max104Text
-from ._Max10Text import Max10Text
-from ._Max19NumericText import Max19NumericText
-from ._Max35Text import Max35Text
-from ._Max4NumericText import Max4NumericText
-from ._Min2Max3NumericText import Min2Max3NumericText
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ATICALaxProcessing
+from . import ISO3NumericCountryCode
+from . import ISO3NumericCurrencyCode
+from . import ISOYearMonth
+from . import Max104Text
+from . import Max10Text
+from . import Max19NumericText
+from . import Max35Text
+from . import Max4NumericText
+from . import Min2Max3NumericText
+from . import TrueFalseIndicator
 
 class CardData17(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class CardData17(base_types._BaseFieldType):
 
 	@AcctFndgSrc.setter
 	def AcctFndgSrc(self, value):
-		self._AcctFndgSrc = value if type(value) != base_types.auto else self.make_default("AcctFndgSrc")
+		self._AcctFndgSrc = value if value is not None else base_types.UninitialisedField(self, 'AcctFndgSrc', Max10Text, False)
 
 	@AcctFndgSrc.deleter
 	def AcctFndgSrc(self):
 		del self._AcctFndgSrc
-		self._AcctFndgSrc = None
+		self._AcctFndgSrc = base_types.UninitialisedField(self, 'AcctFndgSrc', Max10Text, False)
 
 	@property
 	def Brnd(self):
@@ -36,12 +36,12 @@ class CardData17(base_types._BaseFieldType):
 
 	@Brnd.setter
 	def Brnd(self, value):
-		self._Brnd = value if type(value) != base_types.auto else self.make_default("Brnd")
+		self._Brnd = value if value is not None else base_types.UninitialisedField(self, 'Brnd', Max35Text, False)
 
 	@Brnd.deleter
 	def Brnd(self):
 		del self._Brnd
-		self._Brnd = None
+		self._Brnd = base_types.UninitialisedField(self, 'Brnd', Max35Text, False)
 
 	@property
 	def CardSeqNb(self):
@@ -49,12 +49,12 @@ class CardData17(base_types._BaseFieldType):
 
 	@CardSeqNb.setter
 	def CardSeqNb(self, value):
-		self._CardSeqNb = value if type(value) != base_types.auto else self.make_default("CardSeqNb")
+		self._CardSeqNb = value if value is not None else base_types.UninitialisedField(self, 'CardSeqNb', Min2Max3NumericText, False)
 
 	@CardSeqNb.deleter
 	def CardSeqNb(self):
 		del self._CardSeqNb
-		self._CardSeqNb = None
+		self._CardSeqNb = base_types.UninitialisedField(self, 'CardSeqNb', Min2Max3NumericText, False)
 
 	@property
 	def Ccy(self):
@@ -62,12 +62,12 @@ class CardData17(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ISO3NumericCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ISO3NumericCurrencyCode, False)
 
 	@property
 	def Ctry(self):
@@ -75,12 +75,12 @@ class CardData17(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', ISO3NumericCountryCode, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', ISO3NumericCountryCode, False)
 
 	@property
 	def FctvDt(self):
@@ -88,12 +88,12 @@ class CardData17(base_types._BaseFieldType):
 
 	@FctvDt.setter
 	def FctvDt(self, value):
-		self._FctvDt = value if type(value) != base_types.auto else self.make_default("FctvDt")
+		self._FctvDt = value if value is not None else base_types.UninitialisedField(self, 'FctvDt', ISOYearMonth, False)
 
 	@FctvDt.deleter
 	def FctvDt(self):
 		del self._FctvDt
-		self._FctvDt = None
+		self._FctvDt = base_types.UninitialisedField(self, 'FctvDt', ISOYearMonth, False)
 
 	@property
 	def IsseDt(self):
@@ -101,12 +101,12 @@ class CardData17(base_types._BaseFieldType):
 
 	@IsseDt.setter
 	def IsseDt(self, value):
-		self._IsseDt = value if type(value) != base_types.auto else self.make_default("IsseDt")
+		self._IsseDt = value if value is not None else base_types.UninitialisedField(self, 'IsseDt', ISOYearMonth, False)
 
 	@IsseDt.deleter
 	def IsseDt(self):
 		del self._IsseDt
-		self._IsseDt = None
+		self._IsseDt = base_types.UninitialisedField(self, 'IsseDt', ISOYearMonth, False)
 
 	@property
 	def NtlData(self):
@@ -114,12 +114,12 @@ class CardData17(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def PAN(self):
@@ -127,12 +127,12 @@ class CardData17(base_types._BaseFieldType):
 
 	@PAN.setter
 	def PAN(self, value):
-		self._PAN = value if type(value) != base_types.auto else self.make_default("PAN")
+		self._PAN = value if value is not None else base_types.UninitialisedField(self, 'PAN', Max19NumericText, False)
 
 	@PAN.deleter
 	def PAN(self):
 		del self._PAN
-		self._PAN = None
+		self._PAN = base_types.UninitialisedField(self, 'PAN', Max19NumericText, False)
 
 	@property
 	def PANAcctRg(self):
@@ -140,12 +140,12 @@ class CardData17(base_types._BaseFieldType):
 
 	@PANAcctRg.setter
 	def PANAcctRg(self, value):
-		self._PANAcctRg = value if type(value) != base_types.auto else self.make_default("PANAcctRg")
+		self._PANAcctRg = value if value is not None else base_types.UninitialisedField(self, 'PANAcctRg', Max19NumericText, False)
 
 	@PANAcctRg.deleter
 	def PANAcctRg(self):
 		del self._PANAcctRg
-		self._PANAcctRg = None
+		self._PANAcctRg = base_types.UninitialisedField(self, 'PANAcctRg', Max19NumericText, False)
 
 	@property
 	def PANFourLastDgts(self):
@@ -153,12 +153,12 @@ class CardData17(base_types._BaseFieldType):
 
 	@PANFourLastDgts.setter
 	def PANFourLastDgts(self, value):
-		self._PANFourLastDgts = value if type(value) != base_types.auto else self.make_default("PANFourLastDgts")
+		self._PANFourLastDgts = value if value is not None else base_types.UninitialisedField(self, 'PANFourLastDgts', Max4NumericText, False)
 
 	@PANFourLastDgts.deleter
 	def PANFourLastDgts(self):
 		del self._PANFourLastDgts
-		self._PANFourLastDgts = None
+		self._PANFourLastDgts = base_types.UninitialisedField(self, 'PANFourLastDgts', Max4NumericText, False)
 
 	@property
 	def PANRefIdr(self):
@@ -166,12 +166,12 @@ class CardData17(base_types._BaseFieldType):
 
 	@PANRefIdr.setter
 	def PANRefIdr(self, value):
-		self._PANRefIdr = value if type(value) != base_types.auto else self.make_default("PANRefIdr")
+		self._PANRefIdr = value if value is not None else base_types.UninitialisedField(self, 'PANRefIdr', Max35Text, False)
 
 	@PANRefIdr.deleter
 	def PANRefIdr(self):
 		del self._PANRefIdr
-		self._PANRefIdr = None
+		self._PANRefIdr = base_types.UninitialisedField(self, 'PANRefIdr', Max35Text, False)
 
 	@property
 	def PdctSubTp(self):
@@ -179,12 +179,12 @@ class CardData17(base_types._BaseFieldType):
 
 	@PdctSubTp.setter
 	def PdctSubTp(self, value):
-		self._PdctSubTp = value if type(value) != base_types.auto else self.make_default("PdctSubTp")
+		self._PdctSubTp = value if value is not None else base_types.UninitialisedField(self, 'PdctSubTp', Max35Text, False)
 
 	@PdctSubTp.deleter
 	def PdctSubTp(self):
 		del self._PdctSubTp
-		self._PdctSubTp = None
+		self._PdctSubTp = base_types.UninitialisedField(self, 'PdctSubTp', Max35Text, False)
 
 	@property
 	def PdctTp(self):
@@ -192,12 +192,12 @@ class CardData17(base_types._BaseFieldType):
 
 	@PdctTp.setter
 	def PdctTp(self, value):
-		self._PdctTp = value if type(value) != base_types.auto else self.make_default("PdctTp")
+		self._PdctTp = value if value is not None else base_types.UninitialisedField(self, 'PdctTp', Max35Text, False)
 
 	@PdctTp.deleter
 	def PdctTp(self):
 		del self._PdctTp
-		self._PdctTp = None
+		self._PdctTp = base_types.UninitialisedField(self, 'PdctTp', Max35Text, False)
 
 	@property
 	def PmtAcctRef(self):
@@ -205,12 +205,12 @@ class CardData17(base_types._BaseFieldType):
 
 	@PmtAcctRef.setter
 	def PmtAcctRef(self, value):
-		self._PmtAcctRef = value if type(value) != base_types.auto else self.make_default("PmtAcctRef")
+		self._PmtAcctRef = value if value is not None else base_types.UninitialisedField(self, 'PmtAcctRef', Max35Text, False)
 
 	@PmtAcctRef.deleter
 	def PmtAcctRef(self):
 		del self._PmtAcctRef
-		self._PmtAcctRef = None
+		self._PmtAcctRef = base_types.UninitialisedField(self, 'PmtAcctRef', Max35Text, False)
 
 	@property
 	def PrtctdPAN(self):
@@ -218,12 +218,12 @@ class CardData17(base_types._BaseFieldType):
 
 	@PrtctdPAN.setter
 	def PrtctdPAN(self, value):
-		self._PrtctdPAN = value if type(value) != base_types.auto else self.make_default("PrtctdPAN")
+		self._PrtctdPAN = value if value is not None else base_types.UninitialisedField(self, 'PrtctdPAN', TrueFalseIndicator, False)
 
 	@PrtctdPAN.deleter
 	def PrtctdPAN(self):
 		del self._PrtctdPAN
-		self._PrtctdPAN = None
+		self._PrtctdPAN = base_types.UninitialisedField(self, 'PrtctdPAN', TrueFalseIndicator, False)
 
 	@property
 	def PrtflIdr(self):
@@ -231,12 +231,12 @@ class CardData17(base_types._BaseFieldType):
 
 	@PrtflIdr.setter
 	def PrtflIdr(self, value):
-		self._PrtflIdr = value if type(value) != base_types.auto else self.make_default("PrtflIdr")
+		self._PrtflIdr = value if value is not None else base_types.UninitialisedField(self, 'PrtflIdr', Max35Text, False)
 
 	@PrtflIdr.deleter
 	def PrtflIdr(self):
 		del self._PrtflIdr
-		self._PrtflIdr = None
+		self._PrtflIdr = base_types.UninitialisedField(self, 'PrtflIdr', Max35Text, False)
 
 	@property
 	def PrvtData(self):
@@ -244,12 +244,12 @@ class CardData17(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def Schme(self):
@@ -257,12 +257,12 @@ class CardData17(base_types._BaseFieldType):
 
 	@Schme.setter
 	def Schme(self, value):
-		self._Schme = value if type(value) != base_types.auto else self.make_default("Schme")
+		self._Schme = value if value is not None else base_types.UninitialisedField(self, 'Schme', Max35Text, False)
 
 	@Schme.deleter
 	def Schme(self):
 		del self._Schme
-		self._Schme = None
+		self._Schme = base_types.UninitialisedField(self, 'Schme', Max35Text, False)
 
 	@property
 	def Sgmt(self):
@@ -270,12 +270,12 @@ class CardData17(base_types._BaseFieldType):
 
 	@Sgmt.setter
 	def Sgmt(self, value):
-		self._Sgmt = value if type(value) != base_types.auto else self.make_default("Sgmt")
+		self._Sgmt = value if value is not None else base_types.UninitialisedField(self, 'Sgmt', Max10Text, False)
 
 	@Sgmt.deleter
 	def Sgmt(self):
 		del self._Sgmt
-		self._Sgmt = None
+		self._Sgmt = base_types.UninitialisedField(self, 'Sgmt', Max10Text, False)
 
 	@property
 	def Trck3(self):
@@ -283,12 +283,12 @@ class CardData17(base_types._BaseFieldType):
 
 	@Trck3.setter
 	def Trck3(self, value):
-		self._Trck3 = value if type(value) != base_types.auto else self.make_default("Trck3")
+		self._Trck3 = value if value is not None else base_types.UninitialisedField(self, 'Trck3', Max104Text, False)
 
 	@Trck3.deleter
 	def Trck3(self):
 		del self._Trck3
-		self._Trck3 = None
+		self._Trck3 = base_types.UninitialisedField(self, 'Trck3', Max104Text, False)
 
 	@property
 	def XpryDt(self):
@@ -296,12 +296,12 @@ class CardData17(base_types._BaseFieldType):
 
 	@XpryDt.setter
 	def XpryDt(self, value):
-		self._XpryDt = value if type(value) != base_types.auto else self.make_default("XpryDt")
+		self._XpryDt = value if value is not None else base_types.UninitialisedField(self, 'XpryDt', ISOYearMonth, False)
 
 	@XpryDt.deleter
 	def XpryDt(self):
 		del self._XpryDt
-		self._XpryDt = None
+		self._XpryDt = base_types.UninitialisedField(self, 'XpryDt', ISOYearMonth, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctFndgSrc', type=Max10Text, min=0, max=1, mutex_group=None, array=False),

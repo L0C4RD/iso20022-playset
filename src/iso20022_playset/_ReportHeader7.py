@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
-from ._Party50Choice import Party50Choice
+from . import ISODateTime
+from . import Max35Text
+from . import Party50Choice
 
 class ReportHeader7(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ReportHeader7(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if value is not None else base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
 		del self._CreDtTm
-		self._CreDtTm = None
+		self._CreDtTm = base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@property
 	def Fr(self):
@@ -28,12 +28,12 @@ class ReportHeader7(base_types._BaseFieldType):
 
 	@Fr.setter
 	def Fr(self, value):
-		self._Fr = value if type(value) != base_types.auto else self.make_default("Fr")
+		self._Fr = value if value is not None else base_types.UninitialisedField(self, 'Fr', Party50Choice, False)
 
 	@Fr.deleter
 	def Fr(self):
 		del self._Fr
-		self._Fr = None
+		self._Fr = base_types.UninitialisedField(self, 'Fr', Party50Choice, False)
 
 	@property
 	def Id(self):
@@ -41,12 +41,12 @@ class ReportHeader7(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def To(self):
@@ -54,12 +54,12 @@ class ReportHeader7(base_types._BaseFieldType):
 
 	@To.setter
 	def To(self, value):
-		self._To = value if type(value) != base_types.auto else self.make_default("To")
+		self._To = value if value is not None else base_types.UninitialisedField(self, 'To', Party50Choice, False)
 
 	@To.deleter
 	def To(self):
 		del self._To
-		self._To = None
+		self._To = base_types.UninitialisedField(self, 'To', Party50Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ReportingTransactionType3Choice import ReportingTransactionType3Choice
-from ._SupplementaryData1 import SupplementaryData1
+from . import ReportingTransactionType3Choice
+from . import SupplementaryData1
 
 class FinancialInstrumentReportingTransactionReportV03(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class FinancialInstrumentReportingTransactionReportV03(base_types._BaseFieldType
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def Tx(self):
@@ -27,12 +27,12 @@ class FinancialInstrumentReportingTransactionReportV03(base_types._BaseFieldType
 
 	@Tx.setter
 	def Tx(self, value):
-		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
+		self._Tx = value if value is not None else base_types.UninitialisedField(self, 'Tx', ReportingTransactionType3Choice, True)
 
 	@Tx.deleter
 	def Tx(self):
 		del self._Tx
-		self._Tx = None
+		self._Tx = base_types.UninitialisedField(self, 'Tx', ReportingTransactionType3Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SplmtryData', type=SupplementaryData1, min=0, max=None, mutex_group=None, array=True),

@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CreditDebitCode import CreditDebitCode
-from ._FormOfSecurity1Code import FormOfSecurity1Code
-from ._Max35Text import Max35Text
-from ._NationalityCode import NationalityCode
-from ._PartyIdentification2Choice import PartyIdentification2Choice
-from ._SecuritiesBalanceType9FormatChoice import SecuritiesBalanceType9FormatChoice
+from . import CreditDebitCode
+from . import FormOfSecurity1Code
+from . import Max35Text
+from . import NationalityCode
+from . import PartyIdentification2Choice
+from . import SecuritiesBalanceType9FormatChoice
 
 class SecuritiesAccount10(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class SecuritiesAccount10(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', Max35Text, False)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', Max35Text, False)
 
 	@property
 	def AcctOwnrId(self):
@@ -31,12 +31,12 @@ class SecuritiesAccount10(base_types._BaseFieldType):
 
 	@AcctOwnrId.setter
 	def AcctOwnrId(self, value):
-		self._AcctOwnrId = value if type(value) != base_types.auto else self.make_default("AcctOwnrId")
+		self._AcctOwnrId = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnrId', PartyIdentification2Choice, False)
 
 	@AcctOwnrId.deleter
 	def AcctOwnrId(self):
 		del self._AcctOwnrId
-		self._AcctOwnrId = None
+		self._AcctOwnrId = base_types.UninitialisedField(self, 'AcctOwnrId', PartyIdentification2Choice, False)
 
 	@property
 	def AcctOwnrNtlty(self):
@@ -44,12 +44,12 @@ class SecuritiesAccount10(base_types._BaseFieldType):
 
 	@AcctOwnrNtlty.setter
 	def AcctOwnrNtlty(self, value):
-		self._AcctOwnrNtlty = value if type(value) != base_types.auto else self.make_default("AcctOwnrNtlty")
+		self._AcctOwnrNtlty = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnrNtlty', NationalityCode, False)
 
 	@AcctOwnrNtlty.deleter
 	def AcctOwnrNtlty(self):
 		del self._AcctOwnrNtlty
-		self._AcctOwnrNtlty = None
+		self._AcctOwnrNtlty = base_types.UninitialisedField(self, 'AcctOwnrNtlty', NationalityCode, False)
 
 	@property
 	def BalTp(self):
@@ -57,12 +57,12 @@ class SecuritiesAccount10(base_types._BaseFieldType):
 
 	@BalTp.setter
 	def BalTp(self, value):
-		self._BalTp = value if type(value) != base_types.auto else self.make_default("BalTp")
+		self._BalTp = value if value is not None else base_types.UninitialisedField(self, 'BalTp', SecuritiesBalanceType9FormatChoice, False)
 
 	@BalTp.deleter
 	def BalTp(self):
 		del self._BalTp
-		self._BalTp = None
+		self._BalTp = base_types.UninitialisedField(self, 'BalTp', SecuritiesBalanceType9FormatChoice, False)
 
 	@property
 	def CdtDbtInd(self):
@@ -70,12 +70,12 @@ class SecuritiesAccount10(base_types._BaseFieldType):
 
 	@CdtDbtInd.setter
 	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+		self._CdtDbtInd = value if value is not None else base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@CdtDbtInd.deleter
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
-		self._CdtDbtInd = None
+		self._CdtDbtInd = base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@property
 	def SctyHldgForm(self):
@@ -83,12 +83,12 @@ class SecuritiesAccount10(base_types._BaseFieldType):
 
 	@SctyHldgForm.setter
 	def SctyHldgForm(self, value):
-		self._SctyHldgForm = value if type(value) != base_types.auto else self.make_default("SctyHldgForm")
+		self._SctyHldgForm = value if value is not None else base_types.UninitialisedField(self, 'SctyHldgForm', FormOfSecurity1Code, False)
 
 	@SctyHldgForm.deleter
 	def SctyHldgForm(self):
 		del self._SctyHldgForm
-		self._SctyHldgForm = None
+		self._SctyHldgForm = base_types.UninitialisedField(self, 'SctyHldgForm', FormOfSecurity1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

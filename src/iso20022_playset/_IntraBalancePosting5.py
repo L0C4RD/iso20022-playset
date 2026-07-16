@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashSubBalanceTypeAndQuantityBreakdown3 import CashSubBalanceTypeAndQuantityBreakdown3
-from ._IntraBalancePosting6 import IntraBalancePosting6
+from . import CashSubBalanceTypeAndQuantityBreakdown3
+from . import IntraBalancePosting6
 
 class IntraBalancePosting5(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class IntraBalancePosting5(base_types._BaseFieldType):
 
 	@BalFr.setter
 	def BalFr(self, value):
-		self._BalFr = value if type(value) != base_types.auto else self.make_default("BalFr")
+		self._BalFr = value if value is not None else base_types.UninitialisedField(self, 'BalFr', CashSubBalanceTypeAndQuantityBreakdown3, False)
 
 	@BalFr.deleter
 	def BalFr(self):
 		del self._BalFr
-		self._BalFr = None
+		self._BalFr = base_types.UninitialisedField(self, 'BalFr', CashSubBalanceTypeAndQuantityBreakdown3, False)
 
 	@property
 	def Mvmnt(self):
@@ -27,12 +27,12 @@ class IntraBalancePosting5(base_types._BaseFieldType):
 
 	@Mvmnt.setter
 	def Mvmnt(self, value):
-		self._Mvmnt = value if type(value) != base_types.auto else self.make_default("Mvmnt")
+		self._Mvmnt = value if value is not None else base_types.UninitialisedField(self, 'Mvmnt', IntraBalancePosting6, True)
 
 	@Mvmnt.deleter
 	def Mvmnt(self):
 		del self._Mvmnt
-		self._Mvmnt = None
+		self._Mvmnt = base_types.UninitialisedField(self, 'Mvmnt', IntraBalancePosting6, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BalFr', type=CashSubBalanceTypeAndQuantityBreakdown3, min=1, max=1, mutex_group=None, array=False),

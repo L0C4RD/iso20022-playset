@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISO2ALanguageCode import ISO2ALanguageCode
-from ._Max500Text import Max500Text
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ISO2ALanguageCode
+from . import Max500Text
+from . import TrueFalseIndicator
 
 class PartyName5(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PartyName5(base_types._BaseFieldType):
 
 	@Intrnl.setter
 	def Intrnl(self, value):
-		self._Intrnl = value if type(value) != base_types.auto else self.make_default("Intrnl")
+		self._Intrnl = value if value is not None else base_types.UninitialisedField(self, 'Intrnl', TrueFalseIndicator, False)
 
 	@Intrnl.deleter
 	def Intrnl(self):
 		del self._Intrnl
-		self._Intrnl = None
+		self._Intrnl = base_types.UninitialisedField(self, 'Intrnl', TrueFalseIndicator, False)
 
 	@property
 	def Lang(self):
@@ -28,12 +28,12 @@ class PartyName5(base_types._BaseFieldType):
 
 	@Lang.setter
 	def Lang(self, value):
-		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
+		self._Lang = value if value is not None else base_types.UninitialisedField(self, 'Lang', ISO2ALanguageCode, False)
 
 	@Lang.deleter
 	def Lang(self):
 		del self._Lang
-		self._Lang = None
+		self._Lang = base_types.UninitialisedField(self, 'Lang', ISO2ALanguageCode, False)
 
 	@property
 	def Val(self):
@@ -41,12 +41,12 @@ class PartyName5(base_types._BaseFieldType):
 
 	@Val.setter
 	def Val(self, value):
-		self._Val = value if type(value) != base_types.auto else self.make_default("Val")
+		self._Val = value if value is not None else base_types.UninitialisedField(self, 'Val', Max500Text, False)
 
 	@Val.deleter
 	def Val(self):
 		del self._Val
-		self._Val = None
+		self._Val = base_types.UninitialisedField(self, 'Val', Max500Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Intrnl', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Quantity10 import Quantity10
+from . import Quantity10
 
 class Consignment3(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class Consignment3(base_types._BaseFieldType):
 
 	@TtlQty.setter
 	def TtlQty(self, value):
-		self._TtlQty = value if type(value) != base_types.auto else self.make_default("TtlQty")
+		self._TtlQty = value if value is not None else base_types.UninitialisedField(self, 'TtlQty', Quantity10, False)
 
 	@TtlQty.deleter
 	def TtlQty(self):
 		del self._TtlQty
-		self._TtlQty = None
+		self._TtlQty = base_types.UninitialisedField(self, 'TtlQty', Quantity10, False)
 
 	@property
 	def TtlVol(self):
@@ -26,12 +26,12 @@ class Consignment3(base_types._BaseFieldType):
 
 	@TtlVol.setter
 	def TtlVol(self, value):
-		self._TtlVol = value if type(value) != base_types.auto else self.make_default("TtlVol")
+		self._TtlVol = value if value is not None else base_types.UninitialisedField(self, 'TtlVol', Quantity10, False)
 
 	@TtlVol.deleter
 	def TtlVol(self):
 		del self._TtlVol
-		self._TtlVol = None
+		self._TtlVol = base_types.UninitialisedField(self, 'TtlVol', Quantity10, False)
 
 	@property
 	def TtlWght(self):
@@ -39,12 +39,12 @@ class Consignment3(base_types._BaseFieldType):
 
 	@TtlWght.setter
 	def TtlWght(self, value):
-		self._TtlWght = value if type(value) != base_types.auto else self.make_default("TtlWght")
+		self._TtlWght = value if value is not None else base_types.UninitialisedField(self, 'TtlWght', Quantity10, False)
 
 	@TtlWght.deleter
 	def TtlWght(self):
 		del self._TtlWght
-		self._TtlWght = None
+		self._TtlWght = base_types.UninitialisedField(self, 'TtlWght', Quantity10, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TtlQty', type=Quantity10, min=0, max=1, mutex_group=None, array=False),

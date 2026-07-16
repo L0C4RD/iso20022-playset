@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateFormat58Choice import DateFormat58Choice
-from ._LocationFormat1Choice import LocationFormat1Choice
-from ._Max2048Text import Max2048Text
-from ._MeetingDateStatus2Code import MeetingDateStatus2Code
-from ._QuorumQuantity2Choice import QuorumQuantity2Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import DateFormat58Choice
+from . import LocationFormat1Choice
+from . import Max2048Text
+from . import MeetingDateStatus2Code
+from . import QuorumQuantity2Choice
+from . import YesNoIndicator
 
 class Meeting7(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class Meeting7(base_types._BaseFieldType):
 
 	@DtAndTm.setter
 	def DtAndTm(self, value):
-		self._DtAndTm = value if type(value) != base_types.auto else self.make_default("DtAndTm")
+		self._DtAndTm = value if value is not None else base_types.UninitialisedField(self, 'DtAndTm', DateFormat58Choice, False)
 
 	@DtAndTm.deleter
 	def DtAndTm(self):
 		del self._DtAndTm
-		self._DtAndTm = None
+		self._DtAndTm = base_types.UninitialisedField(self, 'DtAndTm', DateFormat58Choice, False)
 
 	@property
 	def DtSts(self):
@@ -31,12 +31,12 @@ class Meeting7(base_types._BaseFieldType):
 
 	@DtSts.setter
 	def DtSts(self, value):
-		self._DtSts = value if type(value) != base_types.auto else self.make_default("DtSts")
+		self._DtSts = value if value is not None else base_types.UninitialisedField(self, 'DtSts', MeetingDateStatus2Code, False)
 
 	@DtSts.deleter
 	def DtSts(self):
 		del self._DtSts
-		self._DtSts = None
+		self._DtSts = base_types.UninitialisedField(self, 'DtSts', MeetingDateStatus2Code, False)
 
 	@property
 	def Lctn(self):
@@ -44,12 +44,12 @@ class Meeting7(base_types._BaseFieldType):
 
 	@Lctn.setter
 	def Lctn(self, value):
-		self._Lctn = value if type(value) != base_types.auto else self.make_default("Lctn")
+		self._Lctn = value if value is not None else base_types.UninitialisedField(self, 'Lctn', LocationFormat1Choice, True)
 
 	@Lctn.deleter
 	def Lctn(self):
 		del self._Lctn
-		self._Lctn = None
+		self._Lctn = base_types.UninitialisedField(self, 'Lctn', LocationFormat1Choice, True)
 
 	@property
 	def QrmQty(self):
@@ -57,12 +57,12 @@ class Meeting7(base_types._BaseFieldType):
 
 	@QrmQty.setter
 	def QrmQty(self, value):
-		self._QrmQty = value if type(value) != base_types.auto else self.make_default("QrmQty")
+		self._QrmQty = value if value is not None else base_types.UninitialisedField(self, 'QrmQty', QuorumQuantity2Choice, False)
 
 	@QrmQty.deleter
 	def QrmQty(self):
 		del self._QrmQty
-		self._QrmQty = None
+		self._QrmQty = base_types.UninitialisedField(self, 'QrmQty', QuorumQuantity2Choice, False)
 
 	@property
 	def QrmReqrd(self):
@@ -70,12 +70,12 @@ class Meeting7(base_types._BaseFieldType):
 
 	@QrmReqrd.setter
 	def QrmReqrd(self, value):
-		self._QrmReqrd = value if type(value) != base_types.auto else self.make_default("QrmReqrd")
+		self._QrmReqrd = value if value is not None else base_types.UninitialisedField(self, 'QrmReqrd', YesNoIndicator, False)
 
 	@QrmReqrd.deleter
 	def QrmReqrd(self):
 		del self._QrmReqrd
-		self._QrmReqrd = None
+		self._QrmReqrd = base_types.UninitialisedField(self, 'QrmReqrd', YesNoIndicator, False)
 
 	@property
 	def URLAdr(self):
@@ -83,12 +83,12 @@ class Meeting7(base_types._BaseFieldType):
 
 	@URLAdr.setter
 	def URLAdr(self, value):
-		self._URLAdr = value if type(value) != base_types.auto else self.make_default("URLAdr")
+		self._URLAdr = value if value is not None else base_types.UninitialisedField(self, 'URLAdr', Max2048Text, False)
 
 	@URLAdr.deleter
 	def URLAdr(self):
 		del self._URLAdr
-		self._URLAdr = None
+		self._URLAdr = base_types.UninitialisedField(self, 'URLAdr', Max2048Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DtAndTm', type=DateFormat58Choice, min=1, max=1, mutex_group=None, array=False),

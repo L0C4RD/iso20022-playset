@@ -2,19 +2,19 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AutomaticBorrowing11Choice import AutomaticBorrowing11Choice
-from ._GenericIdentification47 import GenericIdentification47
-from ._HoldIndicator7 import HoldIndicator7
-from ._LinkageType4Choice import LinkageType4Choice
-from ._Linkages66 import Linkages66
-from ._MatchingDenied4Choice import MatchingDenied4Choice
-from ._PriorityNumeric5Choice import PriorityNumeric5Choice
-from ._References28 import References28
-from ._RestrictionIdentification2 import RestrictionIdentification2
-from ._SecuritiesRTGS5Choice import SecuritiesRTGS5Choice
-from ._SettlementTransactionCondition5Code import SettlementTransactionCondition5Code
-from ._UnilateralSplit4Choice import UnilateralSplit4Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import AutomaticBorrowing11Choice
+from . import GenericIdentification47
+from . import HoldIndicator7
+from . import LinkageType4Choice
+from . import Linkages66
+from . import MatchingDenied4Choice
+from . import PriorityNumeric5Choice
+from . import References28
+from . import RestrictionIdentification2
+from . import SecuritiesRTGS5Choice
+from . import SettlementTransactionCondition5Code
+from . import UnilateralSplit4Choice
+from . import YesNoIndicator
 
 class RequestDetails29(base_types._BaseFieldType):
 
@@ -25,12 +25,12 @@ class RequestDetails29(base_types._BaseFieldType):
 
 	@AutomtcBrrwg.setter
 	def AutomtcBrrwg(self, value):
-		self._AutomtcBrrwg = value if type(value) != base_types.auto else self.make_default("AutomtcBrrwg")
+		self._AutomtcBrrwg = value if value is not None else base_types.UninitialisedField(self, 'AutomtcBrrwg', AutomaticBorrowing11Choice, False)
 
 	@AutomtcBrrwg.deleter
 	def AutomtcBrrwg(self):
 		del self._AutomtcBrrwg
-		self._AutomtcBrrwg = None
+		self._AutomtcBrrwg = base_types.UninitialisedField(self, 'AutomtcBrrwg', AutomaticBorrowing11Choice, False)
 
 	@property
 	def HldInd(self):
@@ -38,12 +38,12 @@ class RequestDetails29(base_types._BaseFieldType):
 
 	@HldInd.setter
 	def HldInd(self, value):
-		self._HldInd = value if type(value) != base_types.auto else self.make_default("HldInd")
+		self._HldInd = value if value is not None else base_types.UninitialisedField(self, 'HldInd', HoldIndicator7, False)
 
 	@HldInd.deleter
 	def HldInd(self):
 		del self._HldInd
-		self._HldInd = None
+		self._HldInd = base_types.UninitialisedField(self, 'HldInd', HoldIndicator7, False)
 
 	@property
 	def Lkg(self):
@@ -51,12 +51,12 @@ class RequestDetails29(base_types._BaseFieldType):
 
 	@Lkg.setter
 	def Lkg(self, value):
-		self._Lkg = value if type(value) != base_types.auto else self.make_default("Lkg")
+		self._Lkg = value if value is not None else base_types.UninitialisedField(self, 'Lkg', LinkageType4Choice, False)
 
 	@Lkg.deleter
 	def Lkg(self):
 		del self._Lkg
-		self._Lkg = None
+		self._Lkg = base_types.UninitialisedField(self, 'Lkg', LinkageType4Choice, False)
 
 	@property
 	def Lnkgs(self):
@@ -64,12 +64,12 @@ class RequestDetails29(base_types._BaseFieldType):
 
 	@Lnkgs.setter
 	def Lnkgs(self, value):
-		self._Lnkgs = value if type(value) != base_types.auto else self.make_default("Lnkgs")
+		self._Lnkgs = value if value is not None else base_types.UninitialisedField(self, 'Lnkgs', Linkages66, True)
 
 	@Lnkgs.deleter
 	def Lnkgs(self):
 		del self._Lnkgs
-		self._Lnkgs = None
+		self._Lnkgs = base_types.UninitialisedField(self, 'Lnkgs', Linkages66, True)
 
 	@property
 	def MtchgDnl(self):
@@ -77,12 +77,12 @@ class RequestDetails29(base_types._BaseFieldType):
 
 	@MtchgDnl.setter
 	def MtchgDnl(self, value):
-		self._MtchgDnl = value if type(value) != base_types.auto else self.make_default("MtchgDnl")
+		self._MtchgDnl = value if value is not None else base_types.UninitialisedField(self, 'MtchgDnl', MatchingDenied4Choice, False)
 
 	@MtchgDnl.deleter
 	def MtchgDnl(self):
 		del self._MtchgDnl
-		self._MtchgDnl = None
+		self._MtchgDnl = base_types.UninitialisedField(self, 'MtchgDnl', MatchingDenied4Choice, False)
 
 	@property
 	def OthrPrcg(self):
@@ -90,12 +90,12 @@ class RequestDetails29(base_types._BaseFieldType):
 
 	@OthrPrcg.setter
 	def OthrPrcg(self, value):
-		self._OthrPrcg = value if type(value) != base_types.auto else self.make_default("OthrPrcg")
+		self._OthrPrcg = value if value is not None else base_types.UninitialisedField(self, 'OthrPrcg', GenericIdentification47, True)
 
 	@OthrPrcg.deleter
 	def OthrPrcg(self):
 		del self._OthrPrcg
-		self._OthrPrcg = None
+		self._OthrPrcg = base_types.UninitialisedField(self, 'OthrPrcg', GenericIdentification47, True)
 
 	@property
 	def PrtlSttlmInd(self):
@@ -103,12 +103,12 @@ class RequestDetails29(base_types._BaseFieldType):
 
 	@PrtlSttlmInd.setter
 	def PrtlSttlmInd(self, value):
-		self._PrtlSttlmInd = value if type(value) != base_types.auto else self.make_default("PrtlSttlmInd")
+		self._PrtlSttlmInd = value if value is not None else base_types.UninitialisedField(self, 'PrtlSttlmInd', SettlementTransactionCondition5Code, False)
 
 	@PrtlSttlmInd.deleter
 	def PrtlSttlmInd(self):
 		del self._PrtlSttlmInd
-		self._PrtlSttlmInd = None
+		self._PrtlSttlmInd = base_types.UninitialisedField(self, 'PrtlSttlmInd', SettlementTransactionCondition5Code, False)
 
 	@property
 	def Prty(self):
@@ -116,12 +116,12 @@ class RequestDetails29(base_types._BaseFieldType):
 
 	@Prty.setter
 	def Prty(self, value):
-		self._Prty = value if type(value) != base_types.auto else self.make_default("Prty")
+		self._Prty = value if value is not None else base_types.UninitialisedField(self, 'Prty', PriorityNumeric5Choice, False)
 
 	@Prty.deleter
 	def Prty(self):
 		del self._Prty
-		self._Prty = None
+		self._Prty = base_types.UninitialisedField(self, 'Prty', PriorityNumeric5Choice, False)
 
 	@property
 	def Ref(self):
@@ -129,12 +129,12 @@ class RequestDetails29(base_types._BaseFieldType):
 
 	@Ref.setter
 	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+		self._Ref = value if value is not None else base_types.UninitialisedField(self, 'Ref', References28, False)
 
 	@Ref.deleter
 	def Ref(self):
 		del self._Ref
-		self._Ref = None
+		self._Ref = base_types.UninitialisedField(self, 'Ref', References28, False)
 
 	@property
 	def RstrctnRef(self):
@@ -142,12 +142,12 @@ class RequestDetails29(base_types._BaseFieldType):
 
 	@RstrctnRef.setter
 	def RstrctnRef(self, value):
-		self._RstrctnRef = value if type(value) != base_types.auto else self.make_default("RstrctnRef")
+		self._RstrctnRef = value if value is not None else base_types.UninitialisedField(self, 'RstrctnRef', RestrictionIdentification2, True)
 
 	@RstrctnRef.deleter
 	def RstrctnRef(self):
 		del self._RstrctnRef
-		self._RstrctnRef = None
+		self._RstrctnRef = base_types.UninitialisedField(self, 'RstrctnRef', RestrictionIdentification2, True)
 
 	@property
 	def RtnInd(self):
@@ -155,12 +155,12 @@ class RequestDetails29(base_types._BaseFieldType):
 
 	@RtnInd.setter
 	def RtnInd(self, value):
-		self._RtnInd = value if type(value) != base_types.auto else self.make_default("RtnInd")
+		self._RtnInd = value if value is not None else base_types.UninitialisedField(self, 'RtnInd', YesNoIndicator, False)
 
 	@RtnInd.deleter
 	def RtnInd(self):
 		del self._RtnInd
-		self._RtnInd = None
+		self._RtnInd = base_types.UninitialisedField(self, 'RtnInd', YesNoIndicator, False)
 
 	@property
 	def SctiesRTGS(self):
@@ -168,12 +168,12 @@ class RequestDetails29(base_types._BaseFieldType):
 
 	@SctiesRTGS.setter
 	def SctiesRTGS(self, value):
-		self._SctiesRTGS = value if type(value) != base_types.auto else self.make_default("SctiesRTGS")
+		self._SctiesRTGS = value if value is not None else base_types.UninitialisedField(self, 'SctiesRTGS', SecuritiesRTGS5Choice, False)
 
 	@SctiesRTGS.deleter
 	def SctiesRTGS(self):
 		del self._SctiesRTGS
-		self._SctiesRTGS = None
+		self._SctiesRTGS = base_types.UninitialisedField(self, 'SctiesRTGS', SecuritiesRTGS5Choice, False)
 
 	@property
 	def UnltrlSplt(self):
@@ -181,12 +181,12 @@ class RequestDetails29(base_types._BaseFieldType):
 
 	@UnltrlSplt.setter
 	def UnltrlSplt(self, value):
-		self._UnltrlSplt = value if type(value) != base_types.auto else self.make_default("UnltrlSplt")
+		self._UnltrlSplt = value if value is not None else base_types.UninitialisedField(self, 'UnltrlSplt', UnilateralSplit4Choice, False)
 
 	@UnltrlSplt.deleter
 	def UnltrlSplt(self):
 		del self._UnltrlSplt
-		self._UnltrlSplt = None
+		self._UnltrlSplt = base_types.UninitialisedField(self, 'UnltrlSplt', UnilateralSplit4Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AutomtcBrrwg', type=AutomaticBorrowing11Choice, min=0, max=1, mutex_group=None, array=False),

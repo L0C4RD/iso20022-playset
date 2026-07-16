@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CashAccountIdentification12Choice import CashAccountIdentification12Choice
-from ._CashAccountIdentification6Choice import CashAccountIdentification6Choice
+from . import CashAccountIdentification12Choice
+from . import CashAccountIdentification6Choice
 
 class Account11Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Account11Choice(base_types._BaseFieldType):
 
 	@ChrgsAcct.setter
 	def ChrgsAcct(self, value):
-		self._ChrgsAcct = value if type(value) != base_types.auto else self.make_default("ChrgsAcct")
+		self._ChrgsAcct = value if value is not None else base_types.UninitialisedField(self, 'ChrgsAcct', CashAccountIdentification6Choice, False)
 
 	@ChrgsAcct.deleter
 	def ChrgsAcct(self):
 		del self._ChrgsAcct
-		self._ChrgsAcct = None
+		self._ChrgsAcct = base_types.UninitialisedField(self, 'ChrgsAcct', CashAccountIdentification6Choice, False)
 
 	@property
 	def CshAcct(self):
@@ -27,12 +27,12 @@ class Account11Choice(base_types._BaseFieldType):
 
 	@CshAcct.setter
 	def CshAcct(self, value):
-		self._CshAcct = value if type(value) != base_types.auto else self.make_default("CshAcct")
+		self._CshAcct = value if value is not None else base_types.UninitialisedField(self, 'CshAcct', CashAccountIdentification12Choice, False)
 
 	@CshAcct.deleter
 	def CshAcct(self):
 		del self._CshAcct
-		self._CshAcct = None
+		self._CshAcct = base_types.UninitialisedField(self, 'CshAcct', CashAccountIdentification12Choice, False)
 
 	@property
 	def TaxAcct(self):
@@ -40,12 +40,12 @@ class Account11Choice(base_types._BaseFieldType):
 
 	@TaxAcct.setter
 	def TaxAcct(self, value):
-		self._TaxAcct = value if type(value) != base_types.auto else self.make_default("TaxAcct")
+		self._TaxAcct = value if value is not None else base_types.UninitialisedField(self, 'TaxAcct', CashAccountIdentification6Choice, False)
 
 	@TaxAcct.deleter
 	def TaxAcct(self):
 		del self._TaxAcct
-		self._TaxAcct = None
+		self._TaxAcct = base_types.UninitialisedField(self, 'TaxAcct', CashAccountIdentification6Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ChrgsAcct', type=CashAccountIdentification6Choice, min=0, max=1, mutex_group=1, array=False),

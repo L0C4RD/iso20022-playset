@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._Max35Text import Max35Text
-from ._TargetMarket1Choice import TargetMarket1Choice
+from . import AdditionalInformation15
+from . import Max35Text
+from . import TargetMarket1Choice
 
 class OtherTargetMarketRiskTolerance1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class OtherTargetMarketRiskTolerance1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, False)
 
 	@property
 	def RskTlrnceTp(self):
@@ -28,12 +28,12 @@ class OtherTargetMarketRiskTolerance1(base_types._BaseFieldType):
 
 	@RskTlrnceTp.setter
 	def RskTlrnceTp(self, value):
-		self._RskTlrnceTp = value if type(value) != base_types.auto else self.make_default("RskTlrnceTp")
+		self._RskTlrnceTp = value if value is not None else base_types.UninitialisedField(self, 'RskTlrnceTp', Max35Text, False)
 
 	@RskTlrnceTp.deleter
 	def RskTlrnceTp(self):
 		del self._RskTlrnceTp
-		self._RskTlrnceTp = None
+		self._RskTlrnceTp = base_types.UninitialisedField(self, 'RskTlrnceTp', Max35Text, False)
 
 	@property
 	def Trgt(self):
@@ -41,12 +41,12 @@ class OtherTargetMarketRiskTolerance1(base_types._BaseFieldType):
 
 	@Trgt.setter
 	def Trgt(self, value):
-		self._Trgt = value if type(value) != base_types.auto else self.make_default("Trgt")
+		self._Trgt = value if value is not None else base_types.UninitialisedField(self, 'Trgt', TargetMarket1Choice, False)
 
 	@Trgt.deleter
 	def Trgt(self):
 		del self._Trgt
-		self._Trgt = None
+		self._Trgt = base_types.UninitialisedField(self, 'Trgt', TargetMarket1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=1, mutex_group=None, array=False),

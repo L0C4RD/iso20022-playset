@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CopyDuplicate1Code import CopyDuplicate1Code
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._Max35Text import Max35Text
-from ._PartyIdentification136 import PartyIdentification136
+from . import CopyDuplicate1Code
+from . import DateAndDateTime2Choice
+from . import Max35Text
+from . import PartyIdentification136
 
 class DocumentIdentification51(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class DocumentIdentification51(base_types._BaseFieldType):
 
 	@CpyDplct.setter
 	def CpyDplct(self, value):
-		self._CpyDplct = value if type(value) != base_types.auto else self.make_default("CpyDplct")
+		self._CpyDplct = value if value is not None else base_types.UninitialisedField(self, 'CpyDplct', CopyDuplicate1Code, False)
 
 	@CpyDplct.deleter
 	def CpyDplct(self):
 		del self._CpyDplct
-		self._CpyDplct = None
+		self._CpyDplct = base_types.UninitialisedField(self, 'CpyDplct', CopyDuplicate1Code, False)
 
 	@property
 	def CreDtTm(self):
@@ -29,12 +29,12 @@ class DocumentIdentification51(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if value is not None else base_types.UninitialisedField(self, 'CreDtTm', DateAndDateTime2Choice, False)
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
 		del self._CreDtTm
-		self._CreDtTm = None
+		self._CreDtTm = base_types.UninitialisedField(self, 'CreDtTm', DateAndDateTime2Choice, False)
 
 	@property
 	def Id(self):
@@ -42,12 +42,12 @@ class DocumentIdentification51(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def MsgOrgtr(self):
@@ -55,12 +55,12 @@ class DocumentIdentification51(base_types._BaseFieldType):
 
 	@MsgOrgtr.setter
 	def MsgOrgtr(self, value):
-		self._MsgOrgtr = value if type(value) != base_types.auto else self.make_default("MsgOrgtr")
+		self._MsgOrgtr = value if value is not None else base_types.UninitialisedField(self, 'MsgOrgtr', PartyIdentification136, False)
 
 	@MsgOrgtr.deleter
 	def MsgOrgtr(self):
 		del self._MsgOrgtr
-		self._MsgOrgtr = None
+		self._MsgOrgtr = base_types.UninitialisedField(self, 'MsgOrgtr', PartyIdentification136, False)
 
 	@property
 	def MsgRcpt(self):
@@ -68,12 +68,12 @@ class DocumentIdentification51(base_types._BaseFieldType):
 
 	@MsgRcpt.setter
 	def MsgRcpt(self, value):
-		self._MsgRcpt = value if type(value) != base_types.auto else self.make_default("MsgRcpt")
+		self._MsgRcpt = value if value is not None else base_types.UninitialisedField(self, 'MsgRcpt', PartyIdentification136, False)
 
 	@MsgRcpt.deleter
 	def MsgRcpt(self):
 		del self._MsgRcpt
-		self._MsgRcpt = None
+		self._MsgRcpt = base_types.UninitialisedField(self, 'MsgRcpt', PartyIdentification136, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CpyDplct', type=CopyDuplicate1Code, min=0, max=1, mutex_group=None, array=False),

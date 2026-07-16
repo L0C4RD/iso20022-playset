@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification47 import GenericIdentification47
-from ._YesNoIndicator import YesNoIndicator
+from . import GenericIdentification47
+from . import YesNoIndicator
 
 class Tracking5Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Tracking5Choice(base_types._BaseFieldType):
 
 	@Ind.setter
 	def Ind(self, value):
-		self._Ind = value if type(value) != base_types.auto else self.make_default("Ind")
+		self._Ind = value if value is not None else base_types.UninitialisedField(self, 'Ind', YesNoIndicator, False)
 
 	@Ind.deleter
 	def Ind(self):
 		del self._Ind
-		self._Ind = None
+		self._Ind = base_types.UninitialisedField(self, 'Ind', YesNoIndicator, False)
 
 	@property
 	def Prtry(self):
@@ -27,12 +27,12 @@ class Tracking5Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+		self._Prtry = value if value is not None else base_types.UninitialisedField(self, 'Prtry', GenericIdentification47, False)
 
 	@Prtry.deleter
 	def Prtry(self):
 		del self._Prtry
-		self._Prtry = None
+		self._Prtry = base_types.UninitialisedField(self, 'Prtry', GenericIdentification47, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ind', type=YesNoIndicator, min=0, max=1, mutex_group=1, array=False),

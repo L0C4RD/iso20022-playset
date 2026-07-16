@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RequestForTransferStatusReportV08 import RequestForTransferStatusReportV08
+from . import RequestForTransferStatusReportV08
 
 class SESE_009_001_08():
 
@@ -18,12 +18,12 @@ class SESE_009_001_08():
 
 		@ReqForTrfStsRpt.setter
 		def ReqForTrfStsRpt(self, value):
-			self._ReqForTrfStsRpt = value if type(value) != base_types.auto else self.make_default("ReqForTrfStsRpt")
+			self._ReqForTrfStsRpt = value if value is not None else base_types.UninitialisedField(self, 'ReqForTrfStsRpt', RequestForTransferStatusReportV08, False)
 
 		@ReqForTrfStsRpt.deleter
 		def ReqForTrfStsRpt(self):
 			del self._ReqForTrfStsRpt
-			self._ReqForTrfStsRpt = None
+			self._ReqForTrfStsRpt = base_types.UninitialisedField(self, 'ReqForTrfStsRpt', RequestForTransferStatusReportV08, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ReqForTrfStsRpt', type=RequestForTransferStatusReportV08, min=1, max=1, mutex_group=None, array=False),

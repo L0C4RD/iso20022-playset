@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
+from . import ActiveOrHistoricCurrencyCode
 
 class DerivativeForeignExchange2(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class DerivativeForeignExchange2(base_types._BaseFieldType):
 
 	@OthrNtnlCcy.setter
 	def OthrNtnlCcy(self, value):
-		self._OthrNtnlCcy = value if type(value) != base_types.auto else self.make_default("OthrNtnlCcy")
+		self._OthrNtnlCcy = value if value is not None else base_types.UninitialisedField(self, 'OthrNtnlCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@OthrNtnlCcy.deleter
 	def OthrNtnlCcy(self):
 		del self._OthrNtnlCcy
-		self._OthrNtnlCcy = None
+		self._OthrNtnlCcy = base_types.UninitialisedField(self, 'OthrNtnlCcy', ActiveOrHistoricCurrencyCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OthrNtnlCcy', type=ActiveOrHistoricCurrencyCode, min=1, max=1, mutex_group=None, array=False),

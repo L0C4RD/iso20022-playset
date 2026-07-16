@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IntraPositionMovementInstruction002V06 import IntraPositionMovementInstruction002V06
+from . import IntraPositionMovementInstruction002V06
 
 class SEMT_013_002_06():
 
@@ -18,12 +18,12 @@ class SEMT_013_002_06():
 
 		@IntraPosMvmntInstr.setter
 		def IntraPosMvmntInstr(self, value):
-			self._IntraPosMvmntInstr = value if type(value) != base_types.auto else self.make_default("IntraPosMvmntInstr")
+			self._IntraPosMvmntInstr = value if value is not None else base_types.UninitialisedField(self, 'IntraPosMvmntInstr', IntraPositionMovementInstruction002V06, False)
 
 		@IntraPosMvmntInstr.deleter
 		def IntraPosMvmntInstr(self):
 			del self._IntraPosMvmntInstr
-			self._IntraPosMvmntInstr = None
+			self._IntraPosMvmntInstr = base_types.UninitialisedField(self, 'IntraPosMvmntInstr', IntraPositionMovementInstruction002V06, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='IntraPosMvmntInstr', type=IntraPositionMovementInstruction002V06, min=1, max=1, mutex_group=None, array=False),

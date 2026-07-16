@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcceptorTransactionLogReportRequestV06 import AcceptorTransactionLogReportRequestV06
+from . import AcceptorTransactionLogReportRequestV06
 
 class CAAA_024_001_06():
 
@@ -18,12 +18,12 @@ class CAAA_024_001_06():
 
 		@AccptrTxLgRptReq.setter
 		def AccptrTxLgRptReq(self, value):
-			self._AccptrTxLgRptReq = value if type(value) != base_types.auto else self.make_default("AccptrTxLgRptReq")
+			self._AccptrTxLgRptReq = value if value is not None else base_types.UninitialisedField(self, 'AccptrTxLgRptReq', AcceptorTransactionLogReportRequestV06, False)
 
 		@AccptrTxLgRptReq.deleter
 		def AccptrTxLgRptReq(self):
 			del self._AccptrTxLgRptReq
-			self._AccptrTxLgRptReq = None
+			self._AccptrTxLgRptReq = base_types.UninitialisedField(self, 'AccptrTxLgRptReq', AcceptorTransactionLogReportRequestV06, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AccptrTxLgRptReq', type=AcceptorTransactionLogReportRequestV06, min=1, max=1, mutex_group=None, array=False),

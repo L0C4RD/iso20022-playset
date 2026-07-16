@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._Max20000Text import Max20000Text
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
+from . import ISODateTime
+from . import Max20000Text
+from . import Max350Text
+from . import Max35Text
 
 class RejectionReason2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class RejectionReason2(base_types._BaseFieldType):
 
 	@AddtlData.setter
 	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+		self._AddtlData = value if value is not None else base_types.UninitialisedField(self, 'AddtlData', Max20000Text, False)
 
 	@AddtlData.deleter
 	def AddtlData(self):
 		del self._AddtlData
-		self._AddtlData = None
+		self._AddtlData = base_types.UninitialisedField(self, 'AddtlData', Max20000Text, False)
 
 	@property
 	def ErrLctn(self):
@@ -29,12 +29,12 @@ class RejectionReason2(base_types._BaseFieldType):
 
 	@ErrLctn.setter
 	def ErrLctn(self, value):
-		self._ErrLctn = value if type(value) != base_types.auto else self.make_default("ErrLctn")
+		self._ErrLctn = value if value is not None else base_types.UninitialisedField(self, 'ErrLctn', Max350Text, False)
 
 	@ErrLctn.deleter
 	def ErrLctn(self):
 		del self._ErrLctn
-		self._ErrLctn = None
+		self._ErrLctn = base_types.UninitialisedField(self, 'ErrLctn', Max350Text, False)
 
 	@property
 	def RjctgPtyRsn(self):
@@ -42,12 +42,12 @@ class RejectionReason2(base_types._BaseFieldType):
 
 	@RjctgPtyRsn.setter
 	def RjctgPtyRsn(self, value):
-		self._RjctgPtyRsn = value if type(value) != base_types.auto else self.make_default("RjctgPtyRsn")
+		self._RjctgPtyRsn = value if value is not None else base_types.UninitialisedField(self, 'RjctgPtyRsn', Max35Text, False)
 
 	@RjctgPtyRsn.deleter
 	def RjctgPtyRsn(self):
 		del self._RjctgPtyRsn
-		self._RjctgPtyRsn = None
+		self._RjctgPtyRsn = base_types.UninitialisedField(self, 'RjctgPtyRsn', Max35Text, False)
 
 	@property
 	def RjctnDtTm(self):
@@ -55,12 +55,12 @@ class RejectionReason2(base_types._BaseFieldType):
 
 	@RjctnDtTm.setter
 	def RjctnDtTm(self, value):
-		self._RjctnDtTm = value if type(value) != base_types.auto else self.make_default("RjctnDtTm")
+		self._RjctnDtTm = value if value is not None else base_types.UninitialisedField(self, 'RjctnDtTm', ISODateTime, False)
 
 	@RjctnDtTm.deleter
 	def RjctnDtTm(self):
 		del self._RjctnDtTm
-		self._RjctnDtTm = None
+		self._RjctnDtTm = base_types.UninitialisedField(self, 'RjctnDtTm', ISODateTime, False)
 
 	@property
 	def RsnDesc(self):
@@ -68,12 +68,12 @@ class RejectionReason2(base_types._BaseFieldType):
 
 	@RsnDesc.setter
 	def RsnDesc(self, value):
-		self._RsnDesc = value if type(value) != base_types.auto else self.make_default("RsnDesc")
+		self._RsnDesc = value if value is not None else base_types.UninitialisedField(self, 'RsnDesc', Max350Text, False)
 
 	@RsnDesc.deleter
 	def RsnDesc(self):
 		del self._RsnDesc
-		self._RsnDesc = None
+		self._RsnDesc = base_types.UninitialisedField(self, 'RsnDesc', Max350Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlData', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),

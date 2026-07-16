@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Fee1 import Fee1
-from ._Max35Text import Max35Text
-from ._Tax30 import Tax30
+from . import Fee1
+from . import Max35Text
+from . import Tax30
 
 class FeeAndTax1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class FeeAndTax1(base_types._BaseFieldType):
 
 	@ComrclAgrmtRef.setter
 	def ComrclAgrmtRef(self, value):
-		self._ComrclAgrmtRef = value if type(value) != base_types.auto else self.make_default("ComrclAgrmtRef")
+		self._ComrclAgrmtRef = value if value is not None else base_types.UninitialisedField(self, 'ComrclAgrmtRef', Max35Text, False)
 
 	@ComrclAgrmtRef.deleter
 	def ComrclAgrmtRef(self):
 		del self._ComrclAgrmtRef
-		self._ComrclAgrmtRef = None
+		self._ComrclAgrmtRef = base_types.UninitialisedField(self, 'ComrclAgrmtRef', Max35Text, False)
 
 	@property
 	def IndvFee(self):
@@ -28,12 +28,12 @@ class FeeAndTax1(base_types._BaseFieldType):
 
 	@IndvFee.setter
 	def IndvFee(self, value):
-		self._IndvFee = value if type(value) != base_types.auto else self.make_default("IndvFee")
+		self._IndvFee = value if value is not None else base_types.UninitialisedField(self, 'IndvFee', Fee1, True)
 
 	@IndvFee.deleter
 	def IndvFee(self):
 		del self._IndvFee
-		self._IndvFee = None
+		self._IndvFee = base_types.UninitialisedField(self, 'IndvFee', Fee1, True)
 
 	@property
 	def IndvTax(self):
@@ -41,12 +41,12 @@ class FeeAndTax1(base_types._BaseFieldType):
 
 	@IndvTax.setter
 	def IndvTax(self, value):
-		self._IndvTax = value if type(value) != base_types.auto else self.make_default("IndvTax")
+		self._IndvTax = value if value is not None else base_types.UninitialisedField(self, 'IndvTax', Tax30, True)
 
 	@IndvTax.deleter
 	def IndvTax(self):
 		del self._IndvTax
-		self._IndvTax = None
+		self._IndvTax = base_types.UninitialisedField(self, 'IndvTax', Tax30, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ComrclAgrmtRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

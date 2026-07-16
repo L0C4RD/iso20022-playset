@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LoyaltyAccount3 import LoyaltyAccount3
-from ._PaymentAccount3 import PaymentAccount3
-from ._PaymentReceipt7 import PaymentReceipt7
-from ._StoredValueAccount2 import StoredValueAccount2
-from ._TransactionIdentifier1 import TransactionIdentifier1
+from . import LoyaltyAccount3
+from . import PaymentAccount3
+from . import PaymentReceipt7
+from . import StoredValueAccount2
+from . import TransactionIdentifier1
 
 class BalanceInquiryResponse7(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class BalanceInquiryResponse7(base_types._BaseFieldType):
 
 	@LltyAcct.setter
 	def LltyAcct(self, value):
-		self._LltyAcct = value if type(value) != base_types.auto else self.make_default("LltyAcct")
+		self._LltyAcct = value if value is not None else base_types.UninitialisedField(self, 'LltyAcct', LoyaltyAccount3, False)
 
 	@LltyAcct.deleter
 	def LltyAcct(self):
 		del self._LltyAcct
-		self._LltyAcct = None
+		self._LltyAcct = base_types.UninitialisedField(self, 'LltyAcct', LoyaltyAccount3, False)
 
 	@property
 	def POITxId(self):
@@ -30,12 +30,12 @@ class BalanceInquiryResponse7(base_types._BaseFieldType):
 
 	@POITxId.setter
 	def POITxId(self, value):
-		self._POITxId = value if type(value) != base_types.auto else self.make_default("POITxId")
+		self._POITxId = value if value is not None else base_types.UninitialisedField(self, 'POITxId', TransactionIdentifier1, False)
 
 	@POITxId.deleter
 	def POITxId(self):
 		del self._POITxId
-		self._POITxId = None
+		self._POITxId = base_types.UninitialisedField(self, 'POITxId', TransactionIdentifier1, False)
 
 	@property
 	def PmtAcct(self):
@@ -43,12 +43,12 @@ class BalanceInquiryResponse7(base_types._BaseFieldType):
 
 	@PmtAcct.setter
 	def PmtAcct(self, value):
-		self._PmtAcct = value if type(value) != base_types.auto else self.make_default("PmtAcct")
+		self._PmtAcct = value if value is not None else base_types.UninitialisedField(self, 'PmtAcct', PaymentAccount3, False)
 
 	@PmtAcct.deleter
 	def PmtAcct(self):
 		del self._PmtAcct
-		self._PmtAcct = None
+		self._PmtAcct = base_types.UninitialisedField(self, 'PmtAcct', PaymentAccount3, False)
 
 	@property
 	def Rct(self):
@@ -56,12 +56,12 @@ class BalanceInquiryResponse7(base_types._BaseFieldType):
 
 	@Rct.setter
 	def Rct(self, value):
-		self._Rct = value if type(value) != base_types.auto else self.make_default("Rct")
+		self._Rct = value if value is not None else base_types.UninitialisedField(self, 'Rct', PaymentReceipt7, True)
 
 	@Rct.deleter
 	def Rct(self):
 		del self._Rct
-		self._Rct = None
+		self._Rct = base_types.UninitialisedField(self, 'Rct', PaymentReceipt7, True)
 
 	@property
 	def SaleTxId(self):
@@ -69,12 +69,12 @@ class BalanceInquiryResponse7(base_types._BaseFieldType):
 
 	@SaleTxId.setter
 	def SaleTxId(self, value):
-		self._SaleTxId = value if type(value) != base_types.auto else self.make_default("SaleTxId")
+		self._SaleTxId = value if value is not None else base_types.UninitialisedField(self, 'SaleTxId', TransactionIdentifier1, False)
 
 	@SaleTxId.deleter
 	def SaleTxId(self):
 		del self._SaleTxId
-		self._SaleTxId = None
+		self._SaleTxId = base_types.UninitialisedField(self, 'SaleTxId', TransactionIdentifier1, False)
 
 	@property
 	def StordValAcct(self):
@@ -82,12 +82,12 @@ class BalanceInquiryResponse7(base_types._BaseFieldType):
 
 	@StordValAcct.setter
 	def StordValAcct(self, value):
-		self._StordValAcct = value if type(value) != base_types.auto else self.make_default("StordValAcct")
+		self._StordValAcct = value if value is not None else base_types.UninitialisedField(self, 'StordValAcct', StoredValueAccount2, True)
 
 	@StordValAcct.deleter
 	def StordValAcct(self):
 		del self._StordValAcct
-		self._StordValAcct = None
+		self._StordValAcct = base_types.UninitialisedField(self, 'StordValAcct', StoredValueAccount2, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LltyAcct', type=LoyaltyAccount3, min=0, max=1, mutex_group=None, array=False),

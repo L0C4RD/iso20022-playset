@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._AllOtherCash1 import AllOtherCash1
-from ._CashAll1 import CashAll1
-from ._FinancialInstrument105 import FinancialInstrument105
-from ._FundPortfolio7Choice import FundPortfolio7Choice
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
-from ._PaymentInstrument20 import PaymentInstrument20
-from ._ResidualCash2 import ResidualCash2
+from . import AdditionalInformation15
+from . import AllOtherCash1
+from . import CashAll1
+from . import FinancialInstrument105
+from . import FundPortfolio7Choice
+from . import ISODate
+from . import Max35Text
+from . import PaymentInstrument20
+from . import ResidualCash2
 
 class PortfolioTransfer13(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class PortfolioTransfer13(base_types._BaseFieldType):
 
 	@ActlTrfDt.setter
 	def ActlTrfDt(self, value):
-		self._ActlTrfDt = value if type(value) != base_types.auto else self.make_default("ActlTrfDt")
+		self._ActlTrfDt = value if value is not None else base_types.UninitialisedField(self, 'ActlTrfDt', ISODate, False)
 
 	@ActlTrfDt.deleter
 	def ActlTrfDt(self):
 		del self._ActlTrfDt
-		self._ActlTrfDt = None
+		self._ActlTrfDt = base_types.UninitialisedField(self, 'ActlTrfDt', ISODate, False)
 
 	@property
 	def AddtlInf(self):
@@ -34,12 +34,12 @@ class PortfolioTransfer13(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@property
 	def AllOthrCsh(self):
@@ -47,12 +47,12 @@ class PortfolioTransfer13(base_types._BaseFieldType):
 
 	@AllOthrCsh.setter
 	def AllOthrCsh(self, value):
-		self._AllOthrCsh = value if type(value) != base_types.auto else self.make_default("AllOthrCsh")
+		self._AllOthrCsh = value if value is not None else base_types.UninitialisedField(self, 'AllOthrCsh', AllOtherCash1, True)
 
 	@AllOthrCsh.deleter
 	def AllOthrCsh(self):
 		del self._AllOthrCsh
-		self._AllOthrCsh = None
+		self._AllOthrCsh = base_types.UninitialisedField(self, 'AllOthrCsh', AllOtherCash1, True)
 
 	@property
 	def CshAll(self):
@@ -60,12 +60,12 @@ class PortfolioTransfer13(base_types._BaseFieldType):
 
 	@CshAll.setter
 	def CshAll(self, value):
-		self._CshAll = value if type(value) != base_types.auto else self.make_default("CshAll")
+		self._CshAll = value if value is not None else base_types.UninitialisedField(self, 'CshAll', CashAll1, True)
 
 	@CshAll.deleter
 	def CshAll(self):
 		del self._CshAll
-		self._CshAll = None
+		self._CshAll = base_types.UninitialisedField(self, 'CshAll', CashAll1, True)
 
 	@property
 	def FinInstrmAsstForTrf(self):
@@ -73,12 +73,12 @@ class PortfolioTransfer13(base_types._BaseFieldType):
 
 	@FinInstrmAsstForTrf.setter
 	def FinInstrmAsstForTrf(self, value):
-		self._FinInstrmAsstForTrf = value if type(value) != base_types.auto else self.make_default("FinInstrmAsstForTrf")
+		self._FinInstrmAsstForTrf = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmAsstForTrf', FinancialInstrument105, True)
 
 	@FinInstrmAsstForTrf.deleter
 	def FinInstrmAsstForTrf(self):
 		del self._FinInstrmAsstForTrf
-		self._FinInstrmAsstForTrf = None
+		self._FinInstrmAsstForTrf = base_types.UninitialisedField(self, 'FinInstrmAsstForTrf', FinancialInstrument105, True)
 
 	@property
 	def MstrRef(self):
@@ -86,12 +86,12 @@ class PortfolioTransfer13(base_types._BaseFieldType):
 
 	@MstrRef.setter
 	def MstrRef(self, value):
-		self._MstrRef = value if type(value) != base_types.auto else self.make_default("MstrRef")
+		self._MstrRef = value if value is not None else base_types.UninitialisedField(self, 'MstrRef', Max35Text, False)
 
 	@MstrRef.deleter
 	def MstrRef(self):
 		del self._MstrRef
-		self._MstrRef = None
+		self._MstrRef = base_types.UninitialisedField(self, 'MstrRef', Max35Text, False)
 
 	@property
 	def PmtDtls(self):
@@ -99,12 +99,12 @@ class PortfolioTransfer13(base_types._BaseFieldType):
 
 	@PmtDtls.setter
 	def PmtDtls(self, value):
-		self._PmtDtls = value if type(value) != base_types.auto else self.make_default("PmtDtls")
+		self._PmtDtls = value if value is not None else base_types.UninitialisedField(self, 'PmtDtls', PaymentInstrument20, False)
 
 	@PmtDtls.deleter
 	def PmtDtls(self):
 		del self._PmtDtls
-		self._PmtDtls = None
+		self._PmtDtls = base_types.UninitialisedField(self, 'PmtDtls', PaymentInstrument20, False)
 
 	@property
 	def Prtfl(self):
@@ -112,12 +112,12 @@ class PortfolioTransfer13(base_types._BaseFieldType):
 
 	@Prtfl.setter
 	def Prtfl(self, value):
-		self._Prtfl = value if type(value) != base_types.auto else self.make_default("Prtfl")
+		self._Prtfl = value if value is not None else base_types.UninitialisedField(self, 'Prtfl', FundPortfolio7Choice, False)
 
 	@Prtfl.deleter
 	def Prtfl(self):
 		del self._Prtfl
-		self._Prtfl = None
+		self._Prtfl = base_types.UninitialisedField(self, 'Prtfl', FundPortfolio7Choice, False)
 
 	@property
 	def RsdlCsh(self):
@@ -125,12 +125,12 @@ class PortfolioTransfer13(base_types._BaseFieldType):
 
 	@RsdlCsh.setter
 	def RsdlCsh(self, value):
-		self._RsdlCsh = value if type(value) != base_types.auto else self.make_default("RsdlCsh")
+		self._RsdlCsh = value if value is not None else base_types.UninitialisedField(self, 'RsdlCsh', ResidualCash2, True)
 
 	@RsdlCsh.deleter
 	def RsdlCsh(self):
 		del self._RsdlCsh
-		self._RsdlCsh = None
+		self._RsdlCsh = base_types.UninitialisedField(self, 'RsdlCsh', ResidualCash2, True)
 
 	@property
 	def TaxDt(self):
@@ -138,12 +138,12 @@ class PortfolioTransfer13(base_types._BaseFieldType):
 
 	@TaxDt.setter
 	def TaxDt(self, value):
-		self._TaxDt = value if type(value) != base_types.auto else self.make_default("TaxDt")
+		self._TaxDt = value if value is not None else base_types.UninitialisedField(self, 'TaxDt', ISODate, False)
 
 	@TaxDt.deleter
 	def TaxDt(self):
 		del self._TaxDt
-		self._TaxDt = None
+		self._TaxDt = base_types.UninitialisedField(self, 'TaxDt', ISODate, False)
 
 	@property
 	def TrfCmpltnId(self):
@@ -151,12 +151,12 @@ class PortfolioTransfer13(base_types._BaseFieldType):
 
 	@TrfCmpltnId.setter
 	def TrfCmpltnId(self, value):
-		self._TrfCmpltnId = value if type(value) != base_types.auto else self.make_default("TrfCmpltnId")
+		self._TrfCmpltnId = value if value is not None else base_types.UninitialisedField(self, 'TrfCmpltnId', Max35Text, False)
 
 	@TrfCmpltnId.deleter
 	def TrfCmpltnId(self):
 		del self._TrfCmpltnId
-		self._TrfCmpltnId = None
+		self._TrfCmpltnId = base_types.UninitialisedField(self, 'TrfCmpltnId', Max35Text, False)
 
 	@property
 	def TrfInstrRef(self):
@@ -164,12 +164,12 @@ class PortfolioTransfer13(base_types._BaseFieldType):
 
 	@TrfInstrRef.setter
 	def TrfInstrRef(self, value):
-		self._TrfInstrRef = value if type(value) != base_types.auto else self.make_default("TrfInstrRef")
+		self._TrfInstrRef = value if value is not None else base_types.UninitialisedField(self, 'TrfInstrRef', Max35Text, False)
 
 	@TrfInstrRef.deleter
 	def TrfInstrRef(self):
 		del self._TrfInstrRef
-		self._TrfInstrRef = None
+		self._TrfInstrRef = base_types.UninitialisedField(self, 'TrfInstrRef', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActlTrfDt', type=ISODate, min=0, max=1, mutex_group=None, array=False),

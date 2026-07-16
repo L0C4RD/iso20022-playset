@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max350Text import Max350Text
-from ._PostalAddress1 import PostalAddress1
+from . import Max350Text
+from . import PostalAddress1
 
 class NameAndAddress5(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class NameAndAddress5(base_types._BaseFieldType):
 
 	@Adr.setter
 	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+		self._Adr = value if value is not None else base_types.UninitialisedField(self, 'Adr', PostalAddress1, False)
 
 	@Adr.deleter
 	def Adr(self):
 		del self._Adr
-		self._Adr = None
+		self._Adr = base_types.UninitialisedField(self, 'Adr', PostalAddress1, False)
 
 	@property
 	def Nm(self):
@@ -27,12 +27,12 @@ class NameAndAddress5(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max350Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max350Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Adr', type=PostalAddress1, min=0, max=1, mutex_group=None, array=False),

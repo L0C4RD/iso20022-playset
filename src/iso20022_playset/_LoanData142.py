@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._CollateralDeliveryMethod1Code import CollateralDeliveryMethod1Code
-from ._ISODate import ISODate
-from ._ISODateTime import ISODateTime
-from ._InterestRate6 import InterestRate6
-from ._MICIdentifier import MICIdentifier
-from ._Max52Text import Max52Text
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import CollateralDeliveryMethod1Code
+from . import ISODate
+from . import ISODateTime
+from . import InterestRate6
+from . import MICIdentifier
+from . import Max52Text
 
 class LoanData142(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class LoanData142(base_types._BaseFieldType):
 
 	@CollDlvryMtd.setter
 	def CollDlvryMtd(self, value):
-		self._CollDlvryMtd = value if type(value) != base_types.auto else self.make_default("CollDlvryMtd")
+		self._CollDlvryMtd = value if value is not None else base_types.UninitialisedField(self, 'CollDlvryMtd', CollateralDeliveryMethod1Code, False)
 
 	@CollDlvryMtd.deleter
 	def CollDlvryMtd(self):
 		del self._CollDlvryMtd
-		self._CollDlvryMtd = None
+		self._CollDlvryMtd = base_types.UninitialisedField(self, 'CollDlvryMtd', CollateralDeliveryMethod1Code, False)
 
 	@property
 	def EvtDt(self):
@@ -32,12 +32,12 @@ class LoanData142(base_types._BaseFieldType):
 
 	@EvtDt.setter
 	def EvtDt(self, value):
-		self._EvtDt = value if type(value) != base_types.auto else self.make_default("EvtDt")
+		self._EvtDt = value if value is not None else base_types.UninitialisedField(self, 'EvtDt', ISODate, False)
 
 	@EvtDt.deleter
 	def EvtDt(self):
 		del self._EvtDt
-		self._EvtDt = None
+		self._EvtDt = base_types.UninitialisedField(self, 'EvtDt', ISODate, False)
 
 	@property
 	def ExctnDtTm(self):
@@ -45,12 +45,12 @@ class LoanData142(base_types._BaseFieldType):
 
 	@ExctnDtTm.setter
 	def ExctnDtTm(self, value):
-		self._ExctnDtTm = value if type(value) != base_types.auto else self.make_default("ExctnDtTm")
+		self._ExctnDtTm = value if value is not None else base_types.UninitialisedField(self, 'ExctnDtTm', ISODateTime, False)
 
 	@ExctnDtTm.deleter
 	def ExctnDtTm(self):
 		del self._ExctnDtTm
-		self._ExctnDtTm = None
+		self._ExctnDtTm = base_types.UninitialisedField(self, 'ExctnDtTm', ISODateTime, False)
 
 	@property
 	def MrgnLnAttr(self):
@@ -58,12 +58,12 @@ class LoanData142(base_types._BaseFieldType):
 
 	@MrgnLnAttr.setter
 	def MrgnLnAttr(self, value):
-		self._MrgnLnAttr = value if type(value) != base_types.auto else self.make_default("MrgnLnAttr")
+		self._MrgnLnAttr = value if value is not None else base_types.UninitialisedField(self, 'MrgnLnAttr', InterestRate6, True)
 
 	@MrgnLnAttr.deleter
 	def MrgnLnAttr(self):
 		del self._MrgnLnAttr
-		self._MrgnLnAttr = None
+		self._MrgnLnAttr = base_types.UninitialisedField(self, 'MrgnLnAttr', InterestRate6, True)
 
 	@property
 	def OutsdngMrgnLnAmt(self):
@@ -71,12 +71,12 @@ class LoanData142(base_types._BaseFieldType):
 
 	@OutsdngMrgnLnAmt.setter
 	def OutsdngMrgnLnAmt(self, value):
-		self._OutsdngMrgnLnAmt = value if type(value) != base_types.auto else self.make_default("OutsdngMrgnLnAmt")
+		self._OutsdngMrgnLnAmt = value if value is not None else base_types.UninitialisedField(self, 'OutsdngMrgnLnAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@OutsdngMrgnLnAmt.deleter
 	def OutsdngMrgnLnAmt(self):
 		del self._OutsdngMrgnLnAmt
-		self._OutsdngMrgnLnAmt = None
+		self._OutsdngMrgnLnAmt = base_types.UninitialisedField(self, 'OutsdngMrgnLnAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def ShrtMktValAmt(self):
@@ -84,12 +84,12 @@ class LoanData142(base_types._BaseFieldType):
 
 	@ShrtMktValAmt.setter
 	def ShrtMktValAmt(self, value):
-		self._ShrtMktValAmt = value if type(value) != base_types.auto else self.make_default("ShrtMktValAmt")
+		self._ShrtMktValAmt = value if value is not None else base_types.UninitialisedField(self, 'ShrtMktValAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@ShrtMktValAmt.deleter
 	def ShrtMktValAmt(self):
 		del self._ShrtMktValAmt
-		self._ShrtMktValAmt = None
+		self._ShrtMktValAmt = base_types.UninitialisedField(self, 'ShrtMktValAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def TermntnDt(self):
@@ -97,12 +97,12 @@ class LoanData142(base_types._BaseFieldType):
 
 	@TermntnDt.setter
 	def TermntnDt(self, value):
-		self._TermntnDt = value if type(value) != base_types.auto else self.make_default("TermntnDt")
+		self._TermntnDt = value if value is not None else base_types.UninitialisedField(self, 'TermntnDt', ISODate, False)
 
 	@TermntnDt.deleter
 	def TermntnDt(self):
 		del self._TermntnDt
-		self._TermntnDt = None
+		self._TermntnDt = base_types.UninitialisedField(self, 'TermntnDt', ISODate, False)
 
 	@property
 	def TradgVn(self):
@@ -110,12 +110,12 @@ class LoanData142(base_types._BaseFieldType):
 
 	@TradgVn.setter
 	def TradgVn(self, value):
-		self._TradgVn = value if type(value) != base_types.auto else self.make_default("TradgVn")
+		self._TradgVn = value if value is not None else base_types.UninitialisedField(self, 'TradgVn', MICIdentifier, False)
 
 	@TradgVn.deleter
 	def TradgVn(self):
 		del self._TradgVn
-		self._TradgVn = None
+		self._TradgVn = base_types.UninitialisedField(self, 'TradgVn', MICIdentifier, False)
 
 	@property
 	def UnqTradIdr(self):
@@ -123,12 +123,12 @@ class LoanData142(base_types._BaseFieldType):
 
 	@UnqTradIdr.setter
 	def UnqTradIdr(self, value):
-		self._UnqTradIdr = value if type(value) != base_types.auto else self.make_default("UnqTradIdr")
+		self._UnqTradIdr = value if value is not None else base_types.UninitialisedField(self, 'UnqTradIdr', Max52Text, False)
 
 	@UnqTradIdr.deleter
 	def UnqTradIdr(self):
 		del self._UnqTradIdr
-		self._UnqTradIdr = None
+		self._UnqTradIdr = base_types.UninitialisedField(self, 'UnqTradIdr', Max52Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollDlvryMtd', type=CollateralDeliveryMethod1Code, min=0, max=1, mutex_group=None, array=False),

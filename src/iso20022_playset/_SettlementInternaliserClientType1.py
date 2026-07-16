@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InternalisationData1 import InternalisationData1
+from . import InternalisationData1
 
 class SettlementInternaliserClientType1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class SettlementInternaliserClientType1(base_types._BaseFieldType):
 
 	@Prfssnl.setter
 	def Prfssnl(self, value):
-		self._Prfssnl = value if type(value) != base_types.auto else self.make_default("Prfssnl")
+		self._Prfssnl = value if value is not None else base_types.UninitialisedField(self, 'Prfssnl', InternalisationData1, False)
 
 	@Prfssnl.deleter
 	def Prfssnl(self):
 		del self._Prfssnl
-		self._Prfssnl = None
+		self._Prfssnl = base_types.UninitialisedField(self, 'Prfssnl', InternalisationData1, False)
 
 	@property
 	def Rtl(self):
@@ -26,12 +26,12 @@ class SettlementInternaliserClientType1(base_types._BaseFieldType):
 
 	@Rtl.setter
 	def Rtl(self, value):
-		self._Rtl = value if type(value) != base_types.auto else self.make_default("Rtl")
+		self._Rtl = value if value is not None else base_types.UninitialisedField(self, 'Rtl', InternalisationData1, False)
 
 	@Rtl.deleter
 	def Rtl(self):
 		del self._Rtl
-		self._Rtl = None
+		self._Rtl = base_types.UninitialisedField(self, 'Rtl', InternalisationData1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Prfssnl', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),

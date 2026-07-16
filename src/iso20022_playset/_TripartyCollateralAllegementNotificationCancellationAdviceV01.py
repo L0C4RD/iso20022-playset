@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection49 import AmountAndDirection49
-from ._CollateralParties8 import CollateralParties8
-from ._CollateralRole1Code import CollateralRole1Code
-from ._CollateralTransactionType1Choice import CollateralTransactionType1Choice
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._ExposureType23Choice import ExposureType23Choice
-from ._GenericIdentification1 import GenericIdentification1
-from ._SupplementaryData1 import SupplementaryData1
-from ._TransactionIdentifications44 import TransactionIdentifications44
+from . import AmountAndDirection49
+from . import CollateralParties8
+from . import CollateralRole1Code
+from . import CollateralTransactionType1Choice
+from . import DateAndDateTime2Choice
+from . import ExposureType23Choice
+from . import GenericIdentification1
+from . import SupplementaryData1
+from . import TransactionIdentifications44
 
 class TripartyCollateralAllegementNotificationCancellationAdviceV01(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class TripartyCollateralAllegementNotificationCancellationAdviceV01(base_types._
 
 	@CollPties.setter
 	def CollPties(self, value):
-		self._CollPties = value if type(value) != base_types.auto else self.make_default("CollPties")
+		self._CollPties = value if value is not None else base_types.UninitialisedField(self, 'CollPties', CollateralParties8, False)
 
 	@CollPties.deleter
 	def CollPties(self):
 		del self._CollPties
-		self._CollPties = None
+		self._CollPties = base_types.UninitialisedField(self, 'CollPties', CollateralParties8, False)
 
 	@property
 	def CollSd(self):
@@ -34,12 +34,12 @@ class TripartyCollateralAllegementNotificationCancellationAdviceV01(base_types._
 
 	@CollSd.setter
 	def CollSd(self, value):
-		self._CollSd = value if type(value) != base_types.auto else self.make_default("CollSd")
+		self._CollSd = value if value is not None else base_types.UninitialisedField(self, 'CollSd', CollateralRole1Code, False)
 
 	@CollSd.deleter
 	def CollSd(self):
 		del self._CollSd
-		self._CollSd = None
+		self._CollSd = base_types.UninitialisedField(self, 'CollSd', CollateralRole1Code, False)
 
 	@property
 	def CollTxTp(self):
@@ -47,12 +47,12 @@ class TripartyCollateralAllegementNotificationCancellationAdviceV01(base_types._
 
 	@CollTxTp.setter
 	def CollTxTp(self, value):
-		self._CollTxTp = value if type(value) != base_types.auto else self.make_default("CollTxTp")
+		self._CollTxTp = value if value is not None else base_types.UninitialisedField(self, 'CollTxTp', CollateralTransactionType1Choice, False)
 
 	@CollTxTp.deleter
 	def CollTxTp(self):
 		del self._CollTxTp
-		self._CollTxTp = None
+		self._CollTxTp = base_types.UninitialisedField(self, 'CollTxTp', CollateralTransactionType1Choice, False)
 
 	@property
 	def ElgbltySetPrfl(self):
@@ -60,12 +60,12 @@ class TripartyCollateralAllegementNotificationCancellationAdviceV01(base_types._
 
 	@ElgbltySetPrfl.setter
 	def ElgbltySetPrfl(self, value):
-		self._ElgbltySetPrfl = value if type(value) != base_types.auto else self.make_default("ElgbltySetPrfl")
+		self._ElgbltySetPrfl = value if value is not None else base_types.UninitialisedField(self, 'ElgbltySetPrfl', GenericIdentification1, False)
 
 	@ElgbltySetPrfl.deleter
 	def ElgbltySetPrfl(self):
 		del self._ElgbltySetPrfl
-		self._ElgbltySetPrfl = None
+		self._ElgbltySetPrfl = base_types.UninitialisedField(self, 'ElgbltySetPrfl', GenericIdentification1, False)
 
 	@property
 	def ReqdExctnDt(self):
@@ -73,12 +73,12 @@ class TripartyCollateralAllegementNotificationCancellationAdviceV01(base_types._
 
 	@ReqdExctnDt.setter
 	def ReqdExctnDt(self, value):
-		self._ReqdExctnDt = value if type(value) != base_types.auto else self.make_default("ReqdExctnDt")
+		self._ReqdExctnDt = value if value is not None else base_types.UninitialisedField(self, 'ReqdExctnDt', DateAndDateTime2Choice, False)
 
 	@ReqdExctnDt.deleter
 	def ReqdExctnDt(self):
 		del self._ReqdExctnDt
-		self._ReqdExctnDt = None
+		self._ReqdExctnDt = base_types.UninitialisedField(self, 'ReqdExctnDt', DateAndDateTime2Choice, False)
 
 	@property
 	def SplmtryData(self):
@@ -86,12 +86,12 @@ class TripartyCollateralAllegementNotificationCancellationAdviceV01(base_types._
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, False)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, False)
 
 	@property
 	def TxAmt(self):
@@ -99,12 +99,12 @@ class TripartyCollateralAllegementNotificationCancellationAdviceV01(base_types._
 
 	@TxAmt.setter
 	def TxAmt(self, value):
-		self._TxAmt = value if type(value) != base_types.auto else self.make_default("TxAmt")
+		self._TxAmt = value if value is not None else base_types.UninitialisedField(self, 'TxAmt', AmountAndDirection49, False)
 
 	@TxAmt.deleter
 	def TxAmt(self):
 		del self._TxAmt
-		self._TxAmt = None
+		self._TxAmt = base_types.UninitialisedField(self, 'TxAmt', AmountAndDirection49, False)
 
 	@property
 	def TxInstrId(self):
@@ -112,12 +112,12 @@ class TripartyCollateralAllegementNotificationCancellationAdviceV01(base_types._
 
 	@TxInstrId.setter
 	def TxInstrId(self, value):
-		self._TxInstrId = value if type(value) != base_types.auto else self.make_default("TxInstrId")
+		self._TxInstrId = value if value is not None else base_types.UninitialisedField(self, 'TxInstrId', TransactionIdentifications44, False)
 
 	@TxInstrId.deleter
 	def TxInstrId(self):
 		del self._TxInstrId
-		self._TxInstrId = None
+		self._TxInstrId = base_types.UninitialisedField(self, 'TxInstrId', TransactionIdentifications44, False)
 
 	@property
 	def XpsrTp(self):
@@ -125,12 +125,12 @@ class TripartyCollateralAllegementNotificationCancellationAdviceV01(base_types._
 
 	@XpsrTp.setter
 	def XpsrTp(self, value):
-		self._XpsrTp = value if type(value) != base_types.auto else self.make_default("XpsrTp")
+		self._XpsrTp = value if value is not None else base_types.UninitialisedField(self, 'XpsrTp', ExposureType23Choice, False)
 
 	@XpsrTp.deleter
 	def XpsrTp(self):
 		del self._XpsrTp
-		self._XpsrTp = None
+		self._XpsrTp = base_types.UninitialisedField(self, 'XpsrTp', ExposureType23Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollPties', type=CollateralParties8, min=1, max=1, mutex_group=None, array=False),

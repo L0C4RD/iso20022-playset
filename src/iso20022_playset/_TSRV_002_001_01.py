@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._UndertakingIssuanceAdviceV01 import UndertakingIssuanceAdviceV01
+from . import UndertakingIssuanceAdviceV01
 
 class TSRV_002_001_01():
 
@@ -18,12 +18,12 @@ class TSRV_002_001_01():
 
 		@UdrtkgIssncAdvc.setter
 		def UdrtkgIssncAdvc(self, value):
-			self._UdrtkgIssncAdvc = value if type(value) != base_types.auto else self.make_default("UdrtkgIssncAdvc")
+			self._UdrtkgIssncAdvc = value if value is not None else base_types.UninitialisedField(self, 'UdrtkgIssncAdvc', UndertakingIssuanceAdviceV01, False)
 
 		@UdrtkgIssncAdvc.deleter
 		def UdrtkgIssncAdvc(self):
 			del self._UdrtkgIssncAdvc
-			self._UdrtkgIssncAdvc = None
+			self._UdrtkgIssncAdvc = base_types.UninitialisedField(self, 'UdrtkgIssncAdvc', UndertakingIssuanceAdviceV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='UdrtkgIssncAdvc', type=UndertakingIssuanceAdviceV01, min=1, max=1, mutex_group=None, array=False),

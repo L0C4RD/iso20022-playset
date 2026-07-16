@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Acquirer10 import Acquirer10
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from . import Acquirer10
+from . import ActiveCurrencyCode
+from . import ImpliedCurrencyAndAmount
 
 class PaymentAccount3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PaymentAccount3(base_types._BaseFieldType):
 
 	@Ccy.setter
 	def Ccy(self, value):
-		self._Ccy = value if type(value) != base_types.auto else self.make_default("Ccy")
+		self._Ccy = value if value is not None else base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@Ccy.deleter
 	def Ccy(self):
 		del self._Ccy
-		self._Ccy = None
+		self._Ccy = base_types.UninitialisedField(self, 'Ccy', ActiveCurrencyCode, False)
 
 	@property
 	def CurBal(self):
@@ -28,12 +28,12 @@ class PaymentAccount3(base_types._BaseFieldType):
 
 	@CurBal.setter
 	def CurBal(self, value):
-		self._CurBal = value if type(value) != base_types.auto else self.make_default("CurBal")
+		self._CurBal = value if value is not None else base_types.UninitialisedField(self, 'CurBal', ImpliedCurrencyAndAmount, False)
 
 	@CurBal.deleter
 	def CurBal(self):
 		del self._CurBal
-		self._CurBal = None
+		self._CurBal = base_types.UninitialisedField(self, 'CurBal', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def PmtAcqrrData(self):
@@ -41,12 +41,12 @@ class PaymentAccount3(base_types._BaseFieldType):
 
 	@PmtAcqrrData.setter
 	def PmtAcqrrData(self, value):
-		self._PmtAcqrrData = value if type(value) != base_types.auto else self.make_default("PmtAcqrrData")
+		self._PmtAcqrrData = value if value is not None else base_types.UninitialisedField(self, 'PmtAcqrrData', Acquirer10, False)
 
 	@PmtAcqrrData.deleter
 	def PmtAcqrrData(self):
 		del self._PmtAcqrrData
-		self._PmtAcqrrData = None
+		self._PmtAcqrrData = base_types.UninitialisedField(self, 'PmtAcqrrData', Acquirer10, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ccy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=None, array=False),

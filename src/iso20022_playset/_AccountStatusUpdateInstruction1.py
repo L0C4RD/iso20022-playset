@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountStatusUpdateInstruction1Choice import AccountStatusUpdateInstruction1Choice
-from ._AccountStatusUpdateInstructionReason1Choice import AccountStatusUpdateInstructionReason1Choice
+from . import AccountStatusUpdateInstruction1Choice
+from . import AccountStatusUpdateInstructionReason1Choice
 
 class AccountStatusUpdateInstruction1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AccountStatusUpdateInstruction1(base_types._BaseFieldType):
 
 	@UpdInstr.setter
 	def UpdInstr(self, value):
-		self._UpdInstr = value if type(value) != base_types.auto else self.make_default("UpdInstr")
+		self._UpdInstr = value if value is not None else base_types.UninitialisedField(self, 'UpdInstr', AccountStatusUpdateInstruction1Choice, False)
 
 	@UpdInstr.deleter
 	def UpdInstr(self):
 		del self._UpdInstr
-		self._UpdInstr = None
+		self._UpdInstr = base_types.UninitialisedField(self, 'UpdInstr', AccountStatusUpdateInstruction1Choice, False)
 
 	@property
 	def UpdInstrRsn(self):
@@ -27,12 +27,12 @@ class AccountStatusUpdateInstruction1(base_types._BaseFieldType):
 
 	@UpdInstrRsn.setter
 	def UpdInstrRsn(self, value):
-		self._UpdInstrRsn = value if type(value) != base_types.auto else self.make_default("UpdInstrRsn")
+		self._UpdInstrRsn = value if value is not None else base_types.UninitialisedField(self, 'UpdInstrRsn', AccountStatusUpdateInstructionReason1Choice, False)
 
 	@UpdInstrRsn.deleter
 	def UpdInstrRsn(self):
 		del self._UpdInstrRsn
-		self._UpdInstrRsn = None
+		self._UpdInstrRsn = base_types.UninitialisedField(self, 'UpdInstrRsn', AccountStatusUpdateInstructionReason1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='UpdInstr', type=AccountStatusUpdateInstruction1Choice, min=1, max=1, mutex_group=None, array=False),

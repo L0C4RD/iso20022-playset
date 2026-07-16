@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DirectDebitTransactionInformation35 import DirectDebitTransactionInformation35
-from ._GroupHeader125 import GroupHeader125
-from ._SupplementaryData1 import SupplementaryData1
+from . import DirectDebitTransactionInformation35
+from . import GroupHeader125
+from . import SupplementaryData1
 
 class FIToFICustomerDirectDebitV12(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class FIToFICustomerDirectDebitV12(base_types._BaseFieldType):
 
 	@DrctDbtTxInf.setter
 	def DrctDbtTxInf(self, value):
-		self._DrctDbtTxInf = value if type(value) != base_types.auto else self.make_default("DrctDbtTxInf")
+		self._DrctDbtTxInf = value if value is not None else base_types.UninitialisedField(self, 'DrctDbtTxInf', DirectDebitTransactionInformation35, True)
 
 	@DrctDbtTxInf.deleter
 	def DrctDbtTxInf(self):
 		del self._DrctDbtTxInf
-		self._DrctDbtTxInf = None
+		self._DrctDbtTxInf = base_types.UninitialisedField(self, 'DrctDbtTxInf', DirectDebitTransactionInformation35, True)
 
 	@property
 	def GrpHdr(self):
@@ -28,12 +28,12 @@ class FIToFICustomerDirectDebitV12(base_types._BaseFieldType):
 
 	@GrpHdr.setter
 	def GrpHdr(self, value):
-		self._GrpHdr = value if type(value) != base_types.auto else self.make_default("GrpHdr")
+		self._GrpHdr = value if value is not None else base_types.UninitialisedField(self, 'GrpHdr', GroupHeader125, False)
 
 	@GrpHdr.deleter
 	def GrpHdr(self):
 		del self._GrpHdr
-		self._GrpHdr = None
+		self._GrpHdr = base_types.UninitialisedField(self, 'GrpHdr', GroupHeader125, False)
 
 	@property
 	def SplmtryData(self):
@@ -41,12 +41,12 @@ class FIToFICustomerDirectDebitV12(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DrctDbtTxInf', type=DirectDebitTransactionInformation35, min=1, max=None, mutex_group=None, array=True),

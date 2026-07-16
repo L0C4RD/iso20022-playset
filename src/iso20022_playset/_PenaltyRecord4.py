@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection5 import AmountAndDirection5
-from ._Number import Number
-from ._PenaltyCalculationMethod1Code import PenaltyCalculationMethod1Code
-from ._PenaltyCalculationRecord1 import PenaltyCalculationRecord1
-from ._PenaltyIdentification1 import PenaltyIdentification1
-from ._PenaltyStatus2 import PenaltyStatus2
-from ._PenaltyTransaction3 import PenaltyTransaction3
-from ._PenaltyType1Code import PenaltyType1Code
-from ._YesNoIndicator import YesNoIndicator
+from . import AmountAndDirection5
+from . import Number
+from . import PenaltyCalculationMethod1Code
+from . import PenaltyCalculationRecord1
+from . import PenaltyIdentification1
+from . import PenaltyStatus2
+from . import PenaltyTransaction3
+from . import PenaltyType1Code
+from . import YesNoIndicator
 
 class PenaltyRecord4(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class PenaltyRecord4(base_types._BaseFieldType):
 
 	@ClctnData.setter
 	def ClctnData(self, value):
-		self._ClctnData = value if type(value) != base_types.auto else self.make_default("ClctnData")
+		self._ClctnData = value if value is not None else base_types.UninitialisedField(self, 'ClctnData', PenaltyCalculationRecord1, True)
 
 	@ClctnData.deleter
 	def ClctnData(self):
 		del self._ClctnData
-		self._ClctnData = None
+		self._ClctnData = base_types.UninitialisedField(self, 'ClctnData', PenaltyCalculationRecord1, True)
 
 	@property
 	def ClctnMtd(self):
@@ -34,12 +34,12 @@ class PenaltyRecord4(base_types._BaseFieldType):
 
 	@ClctnMtd.setter
 	def ClctnMtd(self, value):
-		self._ClctnMtd = value if type(value) != base_types.auto else self.make_default("ClctnMtd")
+		self._ClctnMtd = value if value is not None else base_types.UninitialisedField(self, 'ClctnMtd', PenaltyCalculationMethod1Code, False)
 
 	@ClctnMtd.deleter
 	def ClctnMtd(self):
 		del self._ClctnMtd
-		self._ClctnMtd = None
+		self._ClctnMtd = base_types.UninitialisedField(self, 'ClctnMtd', PenaltyCalculationMethod1Code, False)
 
 	@property
 	def CmptdAmt(self):
@@ -47,12 +47,12 @@ class PenaltyRecord4(base_types._BaseFieldType):
 
 	@CmptdAmt.setter
 	def CmptdAmt(self, value):
-		self._CmptdAmt = value if type(value) != base_types.auto else self.make_default("CmptdAmt")
+		self._CmptdAmt = value if value is not None else base_types.UninitialisedField(self, 'CmptdAmt', AmountAndDirection5, False)
 
 	@CmptdAmt.deleter
 	def CmptdAmt(self):
 		del self._CmptdAmt
-		self._CmptdAmt = None
+		self._CmptdAmt = base_types.UninitialisedField(self, 'CmptdAmt', AmountAndDirection5, False)
 
 	@property
 	def Id(self):
@@ -60,12 +60,12 @@ class PenaltyRecord4(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', PenaltyIdentification1, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', PenaltyIdentification1, False)
 
 	@property
 	def Inslvncy(self):
@@ -73,12 +73,12 @@ class PenaltyRecord4(base_types._BaseFieldType):
 
 	@Inslvncy.setter
 	def Inslvncy(self, value):
-		self._Inslvncy = value if type(value) != base_types.auto else self.make_default("Inslvncy")
+		self._Inslvncy = value if value is not None else base_types.UninitialisedField(self, 'Inslvncy', YesNoIndicator, False)
 
 	@Inslvncy.deleter
 	def Inslvncy(self):
 		del self._Inslvncy
-		self._Inslvncy = None
+		self._Inslvncy = base_types.UninitialisedField(self, 'Inslvncy', YesNoIndicator, False)
 
 	@property
 	def NbOfDays(self):
@@ -86,12 +86,12 @@ class PenaltyRecord4(base_types._BaseFieldType):
 
 	@NbOfDays.setter
 	def NbOfDays(self, value):
-		self._NbOfDays = value if type(value) != base_types.auto else self.make_default("NbOfDays")
+		self._NbOfDays = value if value is not None else base_types.UninitialisedField(self, 'NbOfDays', Number, False)
 
 	@NbOfDays.deleter
 	def NbOfDays(self):
 		del self._NbOfDays
-		self._NbOfDays = None
+		self._NbOfDays = base_types.UninitialisedField(self, 'NbOfDays', Number, False)
 
 	@property
 	def RltdTx(self):
@@ -99,12 +99,12 @@ class PenaltyRecord4(base_types._BaseFieldType):
 
 	@RltdTx.setter
 	def RltdTx(self, value):
-		self._RltdTx = value if type(value) != base_types.auto else self.make_default("RltdTx")
+		self._RltdTx = value if value is not None else base_types.UninitialisedField(self, 'RltdTx', PenaltyTransaction3, False)
 
 	@RltdTx.deleter
 	def RltdTx(self):
 		del self._RltdTx
-		self._RltdTx = None
+		self._RltdTx = base_types.UninitialisedField(self, 'RltdTx', PenaltyTransaction3, False)
 
 	@property
 	def Sts(self):
@@ -112,12 +112,12 @@ class PenaltyRecord4(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', PenaltyStatus2, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', PenaltyStatus2, False)
 
 	@property
 	def Tp(self):
@@ -125,12 +125,12 @@ class PenaltyRecord4(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', PenaltyType1Code, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', PenaltyType1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClctnData', type=PenaltyCalculationRecord1, min=0, max=None, mutex_group=None, array=True),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ReturnAccountV10 import ReturnAccountV10
+from . import ReturnAccountV10
 
 class CAMT_004_001_10():
 
@@ -18,12 +18,12 @@ class CAMT_004_001_10():
 
 		@RtrAcct.setter
 		def RtrAcct(self, value):
-			self._RtrAcct = value if type(value) != base_types.auto else self.make_default("RtrAcct")
+			self._RtrAcct = value if value is not None else base_types.UninitialisedField(self, 'RtrAcct', ReturnAccountV10, False)
 
 		@RtrAcct.deleter
 		def RtrAcct(self):
 			del self._RtrAcct
-			self._RtrAcct = None
+			self._RtrAcct = base_types.UninitialisedField(self, 'RtrAcct', ReturnAccountV10, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='RtrAcct', type=ReturnAccountV10, min=1, max=1, mutex_group=None, array=False),

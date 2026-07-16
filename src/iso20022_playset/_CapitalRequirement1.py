@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._BaseOneRate import BaseOneRate
+from . import ActiveCurrencyAndAmount
+from . import BaseOneRate
 
 class CapitalRequirement1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CapitalRequirement1(base_types._BaseFieldType):
 
 	@BizRsk.setter
 	def BizRsk(self, value):
-		self._BizRsk = value if type(value) != base_types.auto else self.make_default("BizRsk")
+		self._BizRsk = value if value is not None else base_types.UninitialisedField(self, 'BizRsk', ActiveCurrencyAndAmount, False)
 
 	@BizRsk.deleter
 	def BizRsk(self):
 		del self._BizRsk
-		self._BizRsk = None
+		self._BizRsk = base_types.UninitialisedField(self, 'BizRsk', ActiveCurrencyAndAmount, False)
 
 	@property
 	def CdtRsk(self):
@@ -27,12 +27,12 @@ class CapitalRequirement1(base_types._BaseFieldType):
 
 	@CdtRsk.setter
 	def CdtRsk(self, value):
-		self._CdtRsk = value if type(value) != base_types.auto else self.make_default("CdtRsk")
+		self._CdtRsk = value if value is not None else base_types.UninitialisedField(self, 'CdtRsk', ActiveCurrencyAndAmount, False)
 
 	@CdtRsk.deleter
 	def CdtRsk(self):
 		del self._CdtRsk
-		self._CdtRsk = None
+		self._CdtRsk = base_types.UninitialisedField(self, 'CdtRsk', ActiveCurrencyAndAmount, False)
 
 	@property
 	def CntrPtyRsk(self):
@@ -40,12 +40,12 @@ class CapitalRequirement1(base_types._BaseFieldType):
 
 	@CntrPtyRsk.setter
 	def CntrPtyRsk(self, value):
-		self._CntrPtyRsk = value if type(value) != base_types.auto else self.make_default("CntrPtyRsk")
+		self._CntrPtyRsk = value if value is not None else base_types.UninitialisedField(self, 'CntrPtyRsk', ActiveCurrencyAndAmount, False)
 
 	@CntrPtyRsk.deleter
 	def CntrPtyRsk(self):
 		del self._CntrPtyRsk
-		self._CntrPtyRsk = None
+		self._CntrPtyRsk = base_types.UninitialisedField(self, 'CntrPtyRsk', ActiveCurrencyAndAmount, False)
 
 	@property
 	def MktRsk(self):
@@ -53,12 +53,12 @@ class CapitalRequirement1(base_types._BaseFieldType):
 
 	@MktRsk.setter
 	def MktRsk(self, value):
-		self._MktRsk = value if type(value) != base_types.auto else self.make_default("MktRsk")
+		self._MktRsk = value if value is not None else base_types.UninitialisedField(self, 'MktRsk', ActiveCurrencyAndAmount, False)
 
 	@MktRsk.deleter
 	def MktRsk(self):
 		del self._MktRsk
-		self._MktRsk = None
+		self._MktRsk = base_types.UninitialisedField(self, 'MktRsk', ActiveCurrencyAndAmount, False)
 
 	@property
 	def NtfctnBffr(self):
@@ -66,12 +66,12 @@ class CapitalRequirement1(base_types._BaseFieldType):
 
 	@NtfctnBffr.setter
 	def NtfctnBffr(self, value):
-		self._NtfctnBffr = value if type(value) != base_types.auto else self.make_default("NtfctnBffr")
+		self._NtfctnBffr = value if value is not None else base_types.UninitialisedField(self, 'NtfctnBffr', BaseOneRate, False)
 
 	@NtfctnBffr.deleter
 	def NtfctnBffr(self):
 		del self._NtfctnBffr
-		self._NtfctnBffr = None
+		self._NtfctnBffr = base_types.UninitialisedField(self, 'NtfctnBffr', BaseOneRate, False)
 
 	@property
 	def OprlAndLglRsk(self):
@@ -79,12 +79,12 @@ class CapitalRequirement1(base_types._BaseFieldType):
 
 	@OprlAndLglRsk.setter
 	def OprlAndLglRsk(self, value):
-		self._OprlAndLglRsk = value if type(value) != base_types.auto else self.make_default("OprlAndLglRsk")
+		self._OprlAndLglRsk = value if value is not None else base_types.UninitialisedField(self, 'OprlAndLglRsk', ActiveCurrencyAndAmount, False)
 
 	@OprlAndLglRsk.deleter
 	def OprlAndLglRsk(self):
 		del self._OprlAndLglRsk
-		self._OprlAndLglRsk = None
+		self._OprlAndLglRsk = base_types.UninitialisedField(self, 'OprlAndLglRsk', ActiveCurrencyAndAmount, False)
 
 	@property
 	def WndgDwnOrRstrgRsk(self):
@@ -92,12 +92,12 @@ class CapitalRequirement1(base_types._BaseFieldType):
 
 	@WndgDwnOrRstrgRsk.setter
 	def WndgDwnOrRstrgRsk(self, value):
-		self._WndgDwnOrRstrgRsk = value if type(value) != base_types.auto else self.make_default("WndgDwnOrRstrgRsk")
+		self._WndgDwnOrRstrgRsk = value if value is not None else base_types.UninitialisedField(self, 'WndgDwnOrRstrgRsk', ActiveCurrencyAndAmount, False)
 
 	@WndgDwnOrRstrgRsk.deleter
 	def WndgDwnOrRstrgRsk(self):
 		del self._WndgDwnOrRstrgRsk
-		self._WndgDwnOrRstrgRsk = None
+		self._WndgDwnOrRstrgRsk = base_types.UninitialisedField(self, 'WndgDwnOrRstrgRsk', ActiveCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BizRsk', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

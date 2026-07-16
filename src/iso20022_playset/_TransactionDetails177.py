@@ -2,29 +2,29 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection51 import AmountAndDirection51
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
-from ._DigitalPaymentSettlement2 import DigitalPaymentSettlement2
-from ._ISODateTime import ISODateTime
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
-from ._PartyIdentification136 import PartyIdentification136
-from ._PartyIdentification144 import PartyIdentification144
-from ._PartyIdentification149 import PartyIdentification149
-from ._PlaceOfClearingIdentification2 import PlaceOfClearingIdentification2
-from ._PlaceOfTradeIdentification1 import PlaceOfTradeIdentification1
-from ._Quantity51Choice import Quantity51Choice
-from ._ReceiveDelivery1Code import ReceiveDelivery1Code
-from ._SafeKeepingPlace5 import SafeKeepingPlace5
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._SettlementDate19Choice import SettlementDate19Choice
-from ._SettlementDetails222 import SettlementDetails222
-from ._SettlementParties125 import SettlementParties125
-from ._TradeDate8Choice import TradeDate8Choice
-from ._UTIIdentifier import UTIIdentifier
+from . import AmountAndDirection51
+from . import BlockChainAddressWallet3
+from . import DateAndDateTime2Choice
+from . import DeliveryReceiptType2Code
+from . import DigitalPaymentSettlement2
+from . import ISODateTime
+from . import Max350Text
+from . import Max35Text
+from . import PartyIdentification136
+from . import PartyIdentification144
+from . import PartyIdentification149
+from . import PlaceOfClearingIdentification2
+from . import PlaceOfTradeIdentification1
+from . import Quantity51Choice
+from . import ReceiveDelivery1Code
+from . import SafeKeepingPlace5
+from . import SecuritiesAccount19
+from . import SecurityIdentification19
+from . import SettlementDate19Choice
+from . import SettlementDetails222
+from . import SettlementParties125
+from . import TradeDate8Choice
+from . import UTIIdentifier
 
 class TransactionDetails177(base_types._BaseFieldType):
 
@@ -35,12 +35,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification144, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification144, False)
 
 	@property
 	def AckdStsTmStmp(self):
@@ -48,12 +48,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@AckdStsTmStmp.setter
 	def AckdStsTmStmp(self, value):
-		self._AckdStsTmStmp = value if type(value) != base_types.auto else self.make_default("AckdStsTmStmp")
+		self._AckdStsTmStmp = value if value is not None else base_types.UninitialisedField(self, 'AckdStsTmStmp', ISODateTime, False)
 
 	@AckdStsTmStmp.deleter
 	def AckdStsTmStmp(self):
 		del self._AckdStsTmStmp
-		self._AckdStsTmStmp = None
+		self._AckdStsTmStmp = base_types.UninitialisedField(self, 'AckdStsTmStmp', ISODateTime, False)
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -61,12 +61,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@BlckChainAdrOrWllt.setter
 	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
+		self._BlckChainAdrOrWllt = value if value is not None else base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet3, False)
 
 	@BlckChainAdrOrWllt.deleter
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+		self._BlckChainAdrOrWllt = base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet3, False)
 
 	@property
 	def ClntCollInstrId(self):
@@ -74,12 +74,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@ClntCollInstrId.setter
 	def ClntCollInstrId(self, value):
-		self._ClntCollInstrId = value if type(value) != base_types.auto else self.make_default("ClntCollInstrId")
+		self._ClntCollInstrId = value if value is not None else base_types.UninitialisedField(self, 'ClntCollInstrId', Max35Text, False)
 
 	@ClntCollInstrId.deleter
 	def ClntCollInstrId(self):
 		del self._ClntCollInstrId
-		self._ClntCollInstrId = None
+		self._ClntCollInstrId = base_types.UninitialisedField(self, 'ClntCollInstrId', Max35Text, False)
 
 	@property
 	def ClntTrptyCollTxId(self):
@@ -87,12 +87,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@ClntTrptyCollTxId.setter
 	def ClntTrptyCollTxId(self, value):
-		self._ClntTrptyCollTxId = value if type(value) != base_types.auto else self.make_default("ClntTrptyCollTxId")
+		self._ClntTrptyCollTxId = value if value is not None else base_types.UninitialisedField(self, 'ClntTrptyCollTxId', Max35Text, False)
 
 	@ClntTrptyCollTxId.deleter
 	def ClntTrptyCollTxId(self):
 		del self._ClntTrptyCollTxId
-		self._ClntTrptyCollTxId = None
+		self._ClntTrptyCollTxId = base_types.UninitialisedField(self, 'ClntTrptyCollTxId', Max35Text, False)
 
 	@property
 	def CorpActnEvtId(self):
@@ -100,12 +100,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@CorpActnEvtId.setter
 	def CorpActnEvtId(self, value):
-		self._CorpActnEvtId = value if type(value) != base_types.auto else self.make_default("CorpActnEvtId")
+		self._CorpActnEvtId = value if value is not None else base_types.UninitialisedField(self, 'CorpActnEvtId', Max35Text, False)
 
 	@CorpActnEvtId.deleter
 	def CorpActnEvtId(self):
 		del self._CorpActnEvtId
-		self._CorpActnEvtId = None
+		self._CorpActnEvtId = base_types.UninitialisedField(self, 'CorpActnEvtId', Max35Text, False)
 
 	@property
 	def DgtlPmtSttlm(self):
@@ -113,12 +113,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@DgtlPmtSttlm.setter
 	def DgtlPmtSttlm(self, value):
-		self._DgtlPmtSttlm = value if type(value) != base_types.auto else self.make_default("DgtlPmtSttlm")
+		self._DgtlPmtSttlm = value if value is not None else base_types.UninitialisedField(self, 'DgtlPmtSttlm', DigitalPaymentSettlement2, False)
 
 	@DgtlPmtSttlm.deleter
 	def DgtlPmtSttlm(self):
 		del self._DgtlPmtSttlm
-		self._DgtlPmtSttlm = None
+		self._DgtlPmtSttlm = base_types.UninitialisedField(self, 'DgtlPmtSttlm', DigitalPaymentSettlement2, False)
 
 	@property
 	def DlvrgSttlmPties(self):
@@ -126,12 +126,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@DlvrgSttlmPties.setter
 	def DlvrgSttlmPties(self, value):
-		self._DlvrgSttlmPties = value if type(value) != base_types.auto else self.make_default("DlvrgSttlmPties")
+		self._DlvrgSttlmPties = value if value is not None else base_types.UninitialisedField(self, 'DlvrgSttlmPties', SettlementParties125, False)
 
 	@DlvrgSttlmPties.deleter
 	def DlvrgSttlmPties(self):
 		del self._DlvrgSttlmPties
-		self._DlvrgSttlmPties = None
+		self._DlvrgSttlmPties = base_types.UninitialisedField(self, 'DlvrgSttlmPties', SettlementParties125, False)
 
 	@property
 	def FinInstrmId(self):
@@ -139,12 +139,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
 		del self._FinInstrmId
-		self._FinInstrmId = None
+		self._FinInstrmId = base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@property
 	def Invstr(self):
@@ -152,12 +152,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@Invstr.setter
 	def Invstr(self, value):
-		self._Invstr = value if type(value) != base_types.auto else self.make_default("Invstr")
+		self._Invstr = value if value is not None else base_types.UninitialisedField(self, 'Invstr', PartyIdentification149, False)
 
 	@Invstr.deleter
 	def Invstr(self):
 		del self._Invstr
-		self._Invstr = None
+		self._Invstr = base_types.UninitialisedField(self, 'Invstr', PartyIdentification149, False)
 
 	@property
 	def LateDlvryDt(self):
@@ -165,12 +165,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@LateDlvryDt.setter
 	def LateDlvryDt(self, value):
-		self._LateDlvryDt = value if type(value) != base_types.auto else self.make_default("LateDlvryDt")
+		self._LateDlvryDt = value if value is not None else base_types.UninitialisedField(self, 'LateDlvryDt', DateAndDateTime2Choice, False)
 
 	@LateDlvryDt.deleter
 	def LateDlvryDt(self):
 		del self._LateDlvryDt
-		self._LateDlvryDt = None
+		self._LateDlvryDt = base_types.UninitialisedField(self, 'LateDlvryDt', DateAndDateTime2Choice, False)
 
 	@property
 	def MtchdStsTmStmp(self):
@@ -178,12 +178,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@MtchdStsTmStmp.setter
 	def MtchdStsTmStmp(self, value):
-		self._MtchdStsTmStmp = value if type(value) != base_types.auto else self.make_default("MtchdStsTmStmp")
+		self._MtchdStsTmStmp = value if value is not None else base_types.UninitialisedField(self, 'MtchdStsTmStmp', ISODateTime, False)
 
 	@MtchdStsTmStmp.deleter
 	def MtchdStsTmStmp(self):
 		del self._MtchdStsTmStmp
-		self._MtchdStsTmStmp = None
+		self._MtchdStsTmStmp = base_types.UninitialisedField(self, 'MtchdStsTmStmp', ISODateTime, False)
 
 	@property
 	def NonceId(self):
@@ -191,12 +191,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@NonceId.setter
 	def NonceId(self, value):
-		self._NonceId = value if type(value) != base_types.auto else self.make_default("NonceId")
+		self._NonceId = value if value is not None else base_types.UninitialisedField(self, 'NonceId', Max35Text, False)
 
 	@NonceId.deleter
 	def NonceId(self):
 		del self._NonceId
-		self._NonceId = None
+		self._NonceId = base_types.UninitialisedField(self, 'NonceId', Max35Text, False)
 
 	@property
 	def PlcOfClr(self):
@@ -204,12 +204,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@PlcOfClr.setter
 	def PlcOfClr(self, value):
-		self._PlcOfClr = value if type(value) != base_types.auto else self.make_default("PlcOfClr")
+		self._PlcOfClr = value if value is not None else base_types.UninitialisedField(self, 'PlcOfClr', PlaceOfClearingIdentification2, False)
 
 	@PlcOfClr.deleter
 	def PlcOfClr(self):
 		del self._PlcOfClr
-		self._PlcOfClr = None
+		self._PlcOfClr = base_types.UninitialisedField(self, 'PlcOfClr', PlaceOfClearingIdentification2, False)
 
 	@property
 	def PlcOfTrad(self):
@@ -217,12 +217,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@PlcOfTrad.setter
 	def PlcOfTrad(self, value):
-		self._PlcOfTrad = value if type(value) != base_types.auto else self.make_default("PlcOfTrad")
+		self._PlcOfTrad = value if value is not None else base_types.UninitialisedField(self, 'PlcOfTrad', PlaceOfTradeIdentification1, False)
 
 	@PlcOfTrad.deleter
 	def PlcOfTrad(self):
 		del self._PlcOfTrad
-		self._PlcOfTrad = None
+		self._PlcOfTrad = base_types.UninitialisedField(self, 'PlcOfTrad', PlaceOfTradeIdentification1, False)
 
 	@property
 	def Pmt(self):
@@ -230,12 +230,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@Pmt.setter
 	def Pmt(self, value):
-		self._Pmt = value if type(value) != base_types.auto else self.make_default("Pmt")
+		self._Pmt = value if value is not None else base_types.UninitialisedField(self, 'Pmt', DeliveryReceiptType2Code, False)
 
 	@Pmt.deleter
 	def Pmt(self):
 		del self._Pmt
-		self._Pmt = None
+		self._Pmt = base_types.UninitialisedField(self, 'Pmt', DeliveryReceiptType2Code, False)
 
 	@property
 	def PoolId(self):
@@ -243,12 +243,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@PoolId.setter
 	def PoolId(self, value):
-		self._PoolId = value if type(value) != base_types.auto else self.make_default("PoolId")
+		self._PoolId = value if value is not None else base_types.UninitialisedField(self, 'PoolId', Max35Text, False)
 
 	@PoolId.deleter
 	def PoolId(self):
 		del self._PoolId
-		self._PoolId = None
+		self._PoolId = base_types.UninitialisedField(self, 'PoolId', Max35Text, False)
 
 	@property
 	def PrtlyRlsdQty(self):
@@ -256,12 +256,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@PrtlyRlsdQty.setter
 	def PrtlyRlsdQty(self, value):
-		self._PrtlyRlsdQty = value if type(value) != base_types.auto else self.make_default("PrtlyRlsdQty")
+		self._PrtlyRlsdQty = value if value is not None else base_types.UninitialisedField(self, 'PrtlyRlsdQty', Quantity51Choice, False)
 
 	@PrtlyRlsdQty.deleter
 	def PrtlyRlsdQty(self):
 		del self._PrtlyRlsdQty
-		self._PrtlyRlsdQty = None
+		self._PrtlyRlsdQty = base_types.UninitialisedField(self, 'PrtlyRlsdQty', Quantity51Choice, False)
 
 	@property
 	def QlfdFrgnIntrmy(self):
@@ -269,12 +269,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@QlfdFrgnIntrmy.setter
 	def QlfdFrgnIntrmy(self, value):
-		self._QlfdFrgnIntrmy = value if type(value) != base_types.auto else self.make_default("QlfdFrgnIntrmy")
+		self._QlfdFrgnIntrmy = value if value is not None else base_types.UninitialisedField(self, 'QlfdFrgnIntrmy', PartyIdentification136, False)
 
 	@QlfdFrgnIntrmy.deleter
 	def QlfdFrgnIntrmy(self):
 		del self._QlfdFrgnIntrmy
-		self._QlfdFrgnIntrmy = None
+		self._QlfdFrgnIntrmy = base_types.UninitialisedField(self, 'QlfdFrgnIntrmy', PartyIdentification136, False)
 
 	@property
 	def RcvgSttlmPties(self):
@@ -282,12 +282,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@RcvgSttlmPties.setter
 	def RcvgSttlmPties(self, value):
-		self._RcvgSttlmPties = value if type(value) != base_types.auto else self.make_default("RcvgSttlmPties")
+		self._RcvgSttlmPties = value if value is not None else base_types.UninitialisedField(self, 'RcvgSttlmPties', SettlementParties125, False)
 
 	@RcvgSttlmPties.deleter
 	def RcvgSttlmPties(self):
 		del self._RcvgSttlmPties
-		self._RcvgSttlmPties = None
+		self._RcvgSttlmPties = base_types.UninitialisedField(self, 'RcvgSttlmPties', SettlementParties125, False)
 
 	@property
 	def SctiesMvmntTp(self):
@@ -295,12 +295,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@SctiesMvmntTp.setter
 	def SctiesMvmntTp(self, value):
-		self._SctiesMvmntTp = value if type(value) != base_types.auto else self.make_default("SctiesMvmntTp")
+		self._SctiesMvmntTp = value if value is not None else base_types.UninitialisedField(self, 'SctiesMvmntTp', ReceiveDelivery1Code, False)
 
 	@SctiesMvmntTp.deleter
 	def SctiesMvmntTp(self):
 		del self._SctiesMvmntTp
-		self._SctiesMvmntTp = None
+		self._SctiesMvmntTp = base_types.UninitialisedField(self, 'SctiesMvmntTp', ReceiveDelivery1Code, False)
 
 	@property
 	def SfkpgAcct(self):
@@ -308,12 +308,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
-		self._SfkpgAcct = None
+		self._SfkpgAcct = base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@property
 	def SfkpgPlc(self):
@@ -321,12 +321,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@SfkpgPlc.setter
 	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
+		self._SfkpgPlc = value if value is not None else base_types.UninitialisedField(self, 'SfkpgPlc', SafeKeepingPlace5, False)
 
 	@SfkpgPlc.deleter
 	def SfkpgPlc(self):
 		del self._SfkpgPlc
-		self._SfkpgPlc = None
+		self._SfkpgPlc = base_types.UninitialisedField(self, 'SfkpgPlc', SafeKeepingPlace5, False)
 
 	@property
 	def SttlmAmt(self):
@@ -334,12 +334,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@SttlmAmt.setter
 	def SttlmAmt(self, value):
-		self._SttlmAmt = value if type(value) != base_types.auto else self.make_default("SttlmAmt")
+		self._SttlmAmt = value if value is not None else base_types.UninitialisedField(self, 'SttlmAmt', AmountAndDirection51, False)
 
 	@SttlmAmt.deleter
 	def SttlmAmt(self):
 		del self._SttlmAmt
-		self._SttlmAmt = None
+		self._SttlmAmt = base_types.UninitialisedField(self, 'SttlmAmt', AmountAndDirection51, False)
 
 	@property
 	def SttlmDt(self):
@@ -347,12 +347,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@SttlmDt.setter
 	def SttlmDt(self, value):
-		self._SttlmDt = value if type(value) != base_types.auto else self.make_default("SttlmDt")
+		self._SttlmDt = value if value is not None else base_types.UninitialisedField(self, 'SttlmDt', SettlementDate19Choice, False)
 
 	@SttlmDt.deleter
 	def SttlmDt(self):
 		del self._SttlmDt
-		self._SttlmDt = None
+		self._SttlmDt = base_types.UninitialisedField(self, 'SttlmDt', SettlementDate19Choice, False)
 
 	@property
 	def SttlmInstrPrcgAddtlDtls(self):
@@ -360,12 +360,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@SttlmInstrPrcgAddtlDtls.setter
 	def SttlmInstrPrcgAddtlDtls(self, value):
-		self._SttlmInstrPrcgAddtlDtls = value if type(value) != base_types.auto else self.make_default("SttlmInstrPrcgAddtlDtls")
+		self._SttlmInstrPrcgAddtlDtls = value if value is not None else base_types.UninitialisedField(self, 'SttlmInstrPrcgAddtlDtls', Max350Text, False)
 
 	@SttlmInstrPrcgAddtlDtls.deleter
 	def SttlmInstrPrcgAddtlDtls(self):
 		del self._SttlmInstrPrcgAddtlDtls
-		self._SttlmInstrPrcgAddtlDtls = None
+		self._SttlmInstrPrcgAddtlDtls = base_types.UninitialisedField(self, 'SttlmInstrPrcgAddtlDtls', Max350Text, False)
 
 	@property
 	def SttlmParams(self):
@@ -373,12 +373,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@SttlmParams.setter
 	def SttlmParams(self, value):
-		self._SttlmParams = value if type(value) != base_types.auto else self.make_default("SttlmParams")
+		self._SttlmParams = value if value is not None else base_types.UninitialisedField(self, 'SttlmParams', SettlementDetails222, False)
 
 	@SttlmParams.deleter
 	def SttlmParams(self):
 		del self._SttlmParams
-		self._SttlmParams = None
+		self._SttlmParams = base_types.UninitialisedField(self, 'SttlmParams', SettlementDetails222, False)
 
 	@property
 	def SttlmQty(self):
@@ -386,12 +386,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@SttlmQty.setter
 	def SttlmQty(self, value):
-		self._SttlmQty = value if type(value) != base_types.auto else self.make_default("SttlmQty")
+		self._SttlmQty = value if value is not None else base_types.UninitialisedField(self, 'SttlmQty', Quantity51Choice, False)
 
 	@SttlmQty.deleter
 	def SttlmQty(self):
 		del self._SttlmQty
-		self._SttlmQty = None
+		self._SttlmQty = base_types.UninitialisedField(self, 'SttlmQty', Quantity51Choice, False)
 
 	@property
 	def TradDt(self):
@@ -399,12 +399,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@TradDt.setter
 	def TradDt(self, value):
-		self._TradDt = value if type(value) != base_types.auto else self.make_default("TradDt")
+		self._TradDt = value if value is not None else base_types.UninitialisedField(self, 'TradDt', TradeDate8Choice, False)
 
 	@TradDt.deleter
 	def TradDt(self):
 		del self._TradDt
-		self._TradDt = None
+		self._TradDt = base_types.UninitialisedField(self, 'TradDt', TradeDate8Choice, False)
 
 	@property
 	def TradId(self):
@@ -412,12 +412,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@TradId.setter
 	def TradId(self, value):
-		self._TradId = value if type(value) != base_types.auto else self.make_default("TradId")
+		self._TradId = value if value is not None else base_types.UninitialisedField(self, 'TradId', Max35Text, True)
 
 	@TradId.deleter
 	def TradId(self):
 		del self._TradId
-		self._TradId = None
+		self._TradId = base_types.UninitialisedField(self, 'TradId', Max35Text, True)
 
 	@property
 	def TrptyAgtSvcPrvdrCollInstrId(self):
@@ -425,12 +425,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@TrptyAgtSvcPrvdrCollInstrId.setter
 	def TrptyAgtSvcPrvdrCollInstrId(self, value):
-		self._TrptyAgtSvcPrvdrCollInstrId = value if type(value) != base_types.auto else self.make_default("TrptyAgtSvcPrvdrCollInstrId")
+		self._TrptyAgtSvcPrvdrCollInstrId = value if value is not None else base_types.UninitialisedField(self, 'TrptyAgtSvcPrvdrCollInstrId', Max35Text, False)
 
 	@TrptyAgtSvcPrvdrCollInstrId.deleter
 	def TrptyAgtSvcPrvdrCollInstrId(self):
 		del self._TrptyAgtSvcPrvdrCollInstrId
-		self._TrptyAgtSvcPrvdrCollInstrId = None
+		self._TrptyAgtSvcPrvdrCollInstrId = base_types.UninitialisedField(self, 'TrptyAgtSvcPrvdrCollInstrId', Max35Text, False)
 
 	@property
 	def TrptyAgtSvcPrvdrCollTxId(self):
@@ -438,12 +438,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@TrptyAgtSvcPrvdrCollTxId.setter
 	def TrptyAgtSvcPrvdrCollTxId(self, value):
-		self._TrptyAgtSvcPrvdrCollTxId = value if type(value) != base_types.auto else self.make_default("TrptyAgtSvcPrvdrCollTxId")
+		self._TrptyAgtSvcPrvdrCollTxId = value if value is not None else base_types.UninitialisedField(self, 'TrptyAgtSvcPrvdrCollTxId', Max35Text, False)
 
 	@TrptyAgtSvcPrvdrCollTxId.deleter
 	def TrptyAgtSvcPrvdrCollTxId(self):
 		del self._TrptyAgtSvcPrvdrCollTxId
-		self._TrptyAgtSvcPrvdrCollTxId = None
+		self._TrptyAgtSvcPrvdrCollTxId = base_types.UninitialisedField(self, 'TrptyAgtSvcPrvdrCollTxId', Max35Text, False)
 
 	@property
 	def UnqTxIdr(self):
@@ -451,12 +451,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@UnqTxIdr.setter
 	def UnqTxIdr(self, value):
-		self._UnqTxIdr = value if type(value) != base_types.auto else self.make_default("UnqTxIdr")
+		self._UnqTxIdr = value if value is not None else base_types.UninitialisedField(self, 'UnqTxIdr', UTIIdentifier, False)
 
 	@UnqTxIdr.deleter
 	def UnqTxIdr(self):
 		del self._UnqTxIdr
-		self._UnqTxIdr = None
+		self._UnqTxIdr = base_types.UninitialisedField(self, 'UnqTxIdr', UTIIdentifier, False)
 
 	@property
 	def XpctdSttlmDt(self):
@@ -464,12 +464,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@XpctdSttlmDt.setter
 	def XpctdSttlmDt(self, value):
-		self._XpctdSttlmDt = value if type(value) != base_types.auto else self.make_default("XpctdSttlmDt")
+		self._XpctdSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'XpctdSttlmDt', DateAndDateTime2Choice, False)
 
 	@XpctdSttlmDt.deleter
 	def XpctdSttlmDt(self):
 		del self._XpctdSttlmDt
-		self._XpctdSttlmDt = None
+		self._XpctdSttlmDt = base_types.UninitialisedField(self, 'XpctdSttlmDt', DateAndDateTime2Choice, False)
 
 	@property
 	def XpctdValDt(self):
@@ -477,12 +477,12 @@ class TransactionDetails177(base_types._BaseFieldType):
 
 	@XpctdValDt.setter
 	def XpctdValDt(self, value):
-		self._XpctdValDt = value if type(value) != base_types.auto else self.make_default("XpctdValDt")
+		self._XpctdValDt = value if value is not None else base_types.UninitialisedField(self, 'XpctdValDt', DateAndDateTime2Choice, False)
 
 	@XpctdValDt.deleter
 	def XpctdValDt(self):
 		del self._XpctdValDt
-		self._XpctdValDt = None
+		self._XpctdValDt = base_types.UninitialisedField(self, 'XpctdValDt', DateAndDateTime2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification144, min=0, max=1, mutex_group=None, array=False),

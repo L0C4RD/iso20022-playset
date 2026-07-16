@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCode import CountryCode
-from ._Exact2AlphaNumericText import Exact2AlphaNumericText
-from ._Exact4NumericText import Exact4NumericText
-from ._RateSourceText import RateSourceText
+from . import CountryCode
+from . import Exact2AlphaNumericText
+from . import Exact4NumericText
+from . import RateSourceText
 
 class SettlementRateSource1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class SettlementRateSource1(base_types._BaseFieldType):
 
 	@CtryCd.setter
 	def CtryCd(self, value):
-		self._CtryCd = value if type(value) != base_types.auto else self.make_default("CtryCd")
+		self._CtryCd = value if value is not None else base_types.UninitialisedField(self, 'CtryCd', CountryCode, False)
 
 	@CtryCd.deleter
 	def CtryCd(self):
 		del self._CtryCd
-		self._CtryCd = None
+		self._CtryCd = base_types.UninitialisedField(self, 'CtryCd', CountryCode, False)
 
 	@property
 	def LctnCd(self):
@@ -29,12 +29,12 @@ class SettlementRateSource1(base_types._BaseFieldType):
 
 	@LctnCd.setter
 	def LctnCd(self, value):
-		self._LctnCd = value if type(value) != base_types.auto else self.make_default("LctnCd")
+		self._LctnCd = value if value is not None else base_types.UninitialisedField(self, 'LctnCd', Exact2AlphaNumericText, False)
 
 	@LctnCd.deleter
 	def LctnCd(self):
 		del self._LctnCd
-		self._LctnCd = None
+		self._LctnCd = base_types.UninitialisedField(self, 'LctnCd', Exact2AlphaNumericText, False)
 
 	@property
 	def RateSrc(self):
@@ -42,12 +42,12 @@ class SettlementRateSource1(base_types._BaseFieldType):
 
 	@RateSrc.setter
 	def RateSrc(self, value):
-		self._RateSrc = value if type(value) != base_types.auto else self.make_default("RateSrc")
+		self._RateSrc = value if value is not None else base_types.UninitialisedField(self, 'RateSrc', RateSourceText, False)
 
 	@RateSrc.deleter
 	def RateSrc(self):
 		del self._RateSrc
-		self._RateSrc = None
+		self._RateSrc = base_types.UninitialisedField(self, 'RateSrc', RateSourceText, False)
 
 	@property
 	def Tm(self):
@@ -55,12 +55,12 @@ class SettlementRateSource1(base_types._BaseFieldType):
 
 	@Tm.setter
 	def Tm(self, value):
-		self._Tm = value if type(value) != base_types.auto else self.make_default("Tm")
+		self._Tm = value if value is not None else base_types.UninitialisedField(self, 'Tm', Exact4NumericText, False)
 
 	@Tm.deleter
 	def Tm(self):
 		del self._Tm
-		self._Tm = None
+		self._Tm = base_types.UninitialisedField(self, 'Tm', Exact4NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CtryCd', type=CountryCode, min=0, max=1, mutex_group=None, array=False),

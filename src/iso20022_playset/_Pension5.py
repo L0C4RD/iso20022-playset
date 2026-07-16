@@ -2,21 +2,21 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._DateAndAmount2 import DateAndAmount2
-from ._DecimalNumber import DecimalNumber
-from ._DrawdownStatus1Choice import DrawdownStatus1Choice
-from ._DrawdownType2Choice import DrawdownType2Choice
-from ._LumpSumType1Choice import LumpSumType1Choice
-from ._Max35Text import Max35Text
-from ._MoneyPurchaseAnnualAllowance1 import MoneyPurchaseAnnualAllowance1
-from ._Number import Number
-from ._PensionOrder1 import PensionOrder1
-from ._PensionPolicy1 import PensionPolicy1
-from ._PensionSchemeType3Choice import PensionSchemeType3Choice
-from ._PensionTransferScope1Choice import PensionTransferScope1Choice
-from ._TaxReference1 import TaxReference1
-from ._YesNoIndicator import YesNoIndicator
+from . import AdditionalInformation15
+from . import DateAndAmount2
+from . import DecimalNumber
+from . import DrawdownStatus1Choice
+from . import DrawdownType2Choice
+from . import LumpSumType1Choice
+from . import Max35Text
+from . import MoneyPurchaseAnnualAllowance1
+from . import Number
+from . import PensionOrder1
+from . import PensionPolicy1
+from . import PensionSchemeType3Choice
+from . import PensionTransferScope1Choice
+from . import TaxReference1
+from . import YesNoIndicator
 
 class Pension5(base_types._BaseFieldType):
 
@@ -27,12 +27,12 @@ class Pension5(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@property
 	def BlckTrf(self):
@@ -40,12 +40,12 @@ class Pension5(base_types._BaseFieldType):
 
 	@BlckTrf.setter
 	def BlckTrf(self, value):
-		self._BlckTrf = value if type(value) != base_types.auto else self.make_default("BlckTrf")
+		self._BlckTrf = value if value is not None else base_types.UninitialisedField(self, 'BlckTrf', YesNoIndicator, False)
 
 	@BlckTrf.deleter
 	def BlckTrf(self):
 		del self._BlckTrf
-		self._BlckTrf = None
+		self._BlckTrf = base_types.UninitialisedField(self, 'BlckTrf', YesNoIndicator, False)
 
 	@property
 	def BlckTrfRef(self):
@@ -53,12 +53,12 @@ class Pension5(base_types._BaseFieldType):
 
 	@BlckTrfRef.setter
 	def BlckTrfRef(self, value):
-		self._BlckTrfRef = value if type(value) != base_types.auto else self.make_default("BlckTrfRef")
+		self._BlckTrfRef = value if value is not None else base_types.UninitialisedField(self, 'BlckTrfRef', Max35Text, False)
 
 	@BlckTrfRef.deleter
 	def BlckTrfRef(self):
 		del self._BlckTrfRef
-		self._BlckTrfRef = None
+		self._BlckTrfRef = base_types.UninitialisedField(self, 'BlckTrfRef', Max35Text, False)
 
 	@property
 	def BnftCrstllstnEvtOcrd(self):
@@ -66,12 +66,12 @@ class Pension5(base_types._BaseFieldType):
 
 	@BnftCrstllstnEvtOcrd.setter
 	def BnftCrstllstnEvtOcrd(self, value):
-		self._BnftCrstllstnEvtOcrd = value if type(value) != base_types.auto else self.make_default("BnftCrstllstnEvtOcrd")
+		self._BnftCrstllstnEvtOcrd = value if value is not None else base_types.UninitialisedField(self, 'BnftCrstllstnEvtOcrd', YesNoIndicator, False)
 
 	@BnftCrstllstnEvtOcrd.deleter
 	def BnftCrstllstnEvtOcrd(self):
 		del self._BnftCrstllstnEvtOcrd
-		self._BnftCrstllstnEvtOcrd = None
+		self._BnftCrstllstnEvtOcrd = base_types.UninitialisedField(self, 'BnftCrstllstnEvtOcrd', YesNoIndicator, False)
 
 	@property
 	def ClntLftmAllwncPrtcn(self):
@@ -79,12 +79,12 @@ class Pension5(base_types._BaseFieldType):
 
 	@ClntLftmAllwncPrtcn.setter
 	def ClntLftmAllwncPrtcn(self, value):
-		self._ClntLftmAllwncPrtcn = value if type(value) != base_types.auto else self.make_default("ClntLftmAllwncPrtcn")
+		self._ClntLftmAllwncPrtcn = value if value is not None else base_types.UninitialisedField(self, 'ClntLftmAllwncPrtcn', YesNoIndicator, False)
 
 	@ClntLftmAllwncPrtcn.deleter
 	def ClntLftmAllwncPrtcn(self):
 		del self._ClntLftmAllwncPrtcn
-		self._ClntLftmAllwncPrtcn = None
+		self._ClntLftmAllwncPrtcn = base_types.UninitialisedField(self, 'ClntLftmAllwncPrtcn', YesNoIndicator, False)
 
 	@property
 	def DrwdwnSts(self):
@@ -92,12 +92,12 @@ class Pension5(base_types._BaseFieldType):
 
 	@DrwdwnSts.setter
 	def DrwdwnSts(self, value):
-		self._DrwdwnSts = value if type(value) != base_types.auto else self.make_default("DrwdwnSts")
+		self._DrwdwnSts = value if value is not None else base_types.UninitialisedField(self, 'DrwdwnSts', DrawdownStatus1Choice, False)
 
 	@DrwdwnSts.deleter
 	def DrwdwnSts(self):
 		del self._DrwdwnSts
-		self._DrwdwnSts = None
+		self._DrwdwnSts = base_types.UninitialisedField(self, 'DrwdwnSts', DrawdownStatus1Choice, False)
 
 	@property
 	def DrwdwnTp(self):
@@ -105,12 +105,12 @@ class Pension5(base_types._BaseFieldType):
 
 	@DrwdwnTp.setter
 	def DrwdwnTp(self, value):
-		self._DrwdwnTp = value if type(value) != base_types.auto else self.make_default("DrwdwnTp")
+		self._DrwdwnTp = value if value is not None else base_types.UninitialisedField(self, 'DrwdwnTp', DrawdownType2Choice, False)
 
 	@DrwdwnTp.deleter
 	def DrwdwnTp(self):
 		del self._DrwdwnTp
-		self._DrwdwnTp = None
+		self._DrwdwnTp = base_types.UninitialisedField(self, 'DrwdwnTp', DrawdownType2Choice, False)
 
 	@property
 	def DrwdwnTrchId(self):
@@ -118,12 +118,12 @@ class Pension5(base_types._BaseFieldType):
 
 	@DrwdwnTrchId.setter
 	def DrwdwnTrchId(self, value):
-		self._DrwdwnTrchId = value if type(value) != base_types.auto else self.make_default("DrwdwnTrchId")
+		self._DrwdwnTrchId = value if value is not None else base_types.UninitialisedField(self, 'DrwdwnTrchId', Max35Text, False)
 
 	@DrwdwnTrchId.deleter
 	def DrwdwnTrchId(self):
 		del self._DrwdwnTrchId
-		self._DrwdwnTrchId = None
+		self._DrwdwnTrchId = base_types.UninitialisedField(self, 'DrwdwnTrchId', Max35Text, False)
 
 	@property
 	def EstmtdVal(self):
@@ -131,12 +131,12 @@ class Pension5(base_types._BaseFieldType):
 
 	@EstmtdVal.setter
 	def EstmtdVal(self, value):
-		self._EstmtdVal = value if type(value) != base_types.auto else self.make_default("EstmtdVal")
+		self._EstmtdVal = value if value is not None else base_types.UninitialisedField(self, 'EstmtdVal', DateAndAmount2, False)
 
 	@EstmtdVal.deleter
 	def EstmtdVal(self):
 		del self._EstmtdVal
-		self._EstmtdVal = None
+		self._EstmtdVal = base_types.UninitialisedField(self, 'EstmtdVal', DateAndAmount2, False)
 
 	@property
 	def Id(self):
@@ -144,12 +144,12 @@ class Pension5(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', PensionPolicy1, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', PensionPolicy1, False)
 
 	@property
 	def LftmAllwncPrtcn(self):
@@ -157,12 +157,12 @@ class Pension5(base_types._BaseFieldType):
 
 	@LftmAllwncPrtcn.setter
 	def LftmAllwncPrtcn(self, value):
-		self._LftmAllwncPrtcn = value if type(value) != base_types.auto else self.make_default("LftmAllwncPrtcn")
+		self._LftmAllwncPrtcn = value if value is not None else base_types.UninitialisedField(self, 'LftmAllwncPrtcn', YesNoIndicator, False)
 
 	@LftmAllwncPrtcn.deleter
 	def LftmAllwncPrtcn(self):
 		del self._LftmAllwncPrtcn
-		self._LftmAllwncPrtcn = None
+		self._LftmAllwncPrtcn = base_types.UninitialisedField(self, 'LftmAllwncPrtcn', YesNoIndicator, False)
 
 	@property
 	def LumpSumTp(self):
@@ -170,12 +170,12 @@ class Pension5(base_types._BaseFieldType):
 
 	@LumpSumTp.setter
 	def LumpSumTp(self, value):
-		self._LumpSumTp = value if type(value) != base_types.auto else self.make_default("LumpSumTp")
+		self._LumpSumTp = value if value is not None else base_types.UninitialisedField(self, 'LumpSumTp', LumpSumType1Choice, True)
 
 	@LumpSumTp.deleter
 	def LumpSumTp(self):
 		del self._LumpSumTp
-		self._LumpSumTp = None
+		self._LumpSumTp = base_types.UninitialisedField(self, 'LumpSumTp', LumpSumType1Choice, True)
 
 	@property
 	def MnyPurchsAnlAllwnc(self):
@@ -183,12 +183,12 @@ class Pension5(base_types._BaseFieldType):
 
 	@MnyPurchsAnlAllwnc.setter
 	def MnyPurchsAnlAllwnc(self, value):
-		self._MnyPurchsAnlAllwnc = value if type(value) != base_types.auto else self.make_default("MnyPurchsAnlAllwnc")
+		self._MnyPurchsAnlAllwnc = value if value is not None else base_types.UninitialisedField(self, 'MnyPurchsAnlAllwnc', MoneyPurchaseAnnualAllowance1, False)
 
 	@MnyPurchsAnlAllwnc.deleter
 	def MnyPurchsAnlAllwnc(self):
 		del self._MnyPurchsAnlAllwnc
-		self._MnyPurchsAnlAllwnc = None
+		self._MnyPurchsAnlAllwnc = base_types.UninitialisedField(self, 'MnyPurchsAnlAllwnc', MoneyPurchaseAnnualAllowance1, False)
 
 	@property
 	def NbOfDrwdwnTrnchs(self):
@@ -196,12 +196,12 @@ class Pension5(base_types._BaseFieldType):
 
 	@NbOfDrwdwnTrnchs.setter
 	def NbOfDrwdwnTrnchs(self, value):
-		self._NbOfDrwdwnTrnchs = value if type(value) != base_types.auto else self.make_default("NbOfDrwdwnTrnchs")
+		self._NbOfDrwdwnTrnchs = value if value is not None else base_types.UninitialisedField(self, 'NbOfDrwdwnTrnchs', Number, False)
 
 	@NbOfDrwdwnTrnchs.deleter
 	def NbOfDrwdwnTrnchs(self):
 		del self._NbOfDrwdwnTrnchs
-		self._NbOfDrwdwnTrnchs = None
+		self._NbOfDrwdwnTrnchs = base_types.UninitialisedField(self, 'NbOfDrwdwnTrnchs', Number, False)
 
 	@property
 	def NonSfgrddGrntedBnfts(self):
@@ -209,12 +209,12 @@ class Pension5(base_types._BaseFieldType):
 
 	@NonSfgrddGrntedBnfts.setter
 	def NonSfgrddGrntedBnfts(self, value):
-		self._NonSfgrddGrntedBnfts = value if type(value) != base_types.auto else self.make_default("NonSfgrddGrntedBnfts")
+		self._NonSfgrddGrntedBnfts = value if value is not None else base_types.UninitialisedField(self, 'NonSfgrddGrntedBnfts', YesNoIndicator, False)
 
 	@NonSfgrddGrntedBnfts.deleter
 	def NonSfgrddGrntedBnfts(self):
 		del self._NonSfgrddGrntedBnfts
-		self._NonSfgrddGrntedBnfts = None
+		self._NonSfgrddGrntedBnfts = base_types.UninitialisedField(self, 'NonSfgrddGrntedBnfts', YesNoIndicator, False)
 
 	@property
 	def NonWrpprTrf(self):
@@ -222,12 +222,12 @@ class Pension5(base_types._BaseFieldType):
 
 	@NonWrpprTrf.setter
 	def NonWrpprTrf(self, value):
-		self._NonWrpprTrf = value if type(value) != base_types.auto else self.make_default("NonWrpprTrf")
+		self._NonWrpprTrf = value if value is not None else base_types.UninitialisedField(self, 'NonWrpprTrf', YesNoIndicator, False)
 
 	@NonWrpprTrf.deleter
 	def NonWrpprTrf(self):
 		del self._NonWrpprTrf
-		self._NonWrpprTrf = None
+		self._NonWrpprTrf = base_types.UninitialisedField(self, 'NonWrpprTrf', YesNoIndicator, False)
 
 	@property
 	def PnsnOrdr(self):
@@ -235,12 +235,12 @@ class Pension5(base_types._BaseFieldType):
 
 	@PnsnOrdr.setter
 	def PnsnOrdr(self, value):
-		self._PnsnOrdr = value if type(value) != base_types.auto else self.make_default("PnsnOrdr")
+		self._PnsnOrdr = value if value is not None else base_types.UninitialisedField(self, 'PnsnOrdr', PensionOrder1, True)
 
 	@PnsnOrdr.deleter
 	def PnsnOrdr(self):
 		del self._PnsnOrdr
-		self._PnsnOrdr = None
+		self._PnsnOrdr = base_types.UninitialisedField(self, 'PnsnOrdr', PensionOrder1, True)
 
 	@property
 	def RingFncdDrwdwnAssts(self):
@@ -248,12 +248,12 @@ class Pension5(base_types._BaseFieldType):
 
 	@RingFncdDrwdwnAssts.setter
 	def RingFncdDrwdwnAssts(self, value):
-		self._RingFncdDrwdwnAssts = value if type(value) != base_types.auto else self.make_default("RingFncdDrwdwnAssts")
+		self._RingFncdDrwdwnAssts = value if value is not None else base_types.UninitialisedField(self, 'RingFncdDrwdwnAssts', YesNoIndicator, False)
 
 	@RingFncdDrwdwnAssts.deleter
 	def RingFncdDrwdwnAssts(self):
 		del self._RingFncdDrwdwnAssts
-		self._RingFncdDrwdwnAssts = None
+		self._RingFncdDrwdwnAssts = base_types.UninitialisedField(self, 'RingFncdDrwdwnAssts', YesNoIndicator, False)
 
 	@property
 	def RtrmntAge(self):
@@ -261,12 +261,12 @@ class Pension5(base_types._BaseFieldType):
 
 	@RtrmntAge.setter
 	def RtrmntAge(self, value):
-		self._RtrmntAge = value if type(value) != base_types.auto else self.make_default("RtrmntAge")
+		self._RtrmntAge = value if value is not None else base_types.UninitialisedField(self, 'RtrmntAge', DecimalNumber, False)
 
 	@RtrmntAge.deleter
 	def RtrmntAge(self):
 		del self._RtrmntAge
-		self._RtrmntAge = None
+		self._RtrmntAge = base_types.UninitialisedField(self, 'RtrmntAge', DecimalNumber, False)
 
 	@property
 	def RtrmntAgePrtcn(self):
@@ -274,12 +274,12 @@ class Pension5(base_types._BaseFieldType):
 
 	@RtrmntAgePrtcn.setter
 	def RtrmntAgePrtcn(self, value):
-		self._RtrmntAgePrtcn = value if type(value) != base_types.auto else self.make_default("RtrmntAgePrtcn")
+		self._RtrmntAgePrtcn = value if value is not None else base_types.UninitialisedField(self, 'RtrmntAgePrtcn', YesNoIndicator, False)
 
 	@RtrmntAgePrtcn.deleter
 	def RtrmntAgePrtcn(self):
 		del self._RtrmntAgePrtcn
-		self._RtrmntAgePrtcn = None
+		self._RtrmntAgePrtcn = base_types.UninitialisedField(self, 'RtrmntAgePrtcn', YesNoIndicator, False)
 
 	@property
 	def SfgrdBnft(self):
@@ -287,12 +287,12 @@ class Pension5(base_types._BaseFieldType):
 
 	@SfgrdBnft.setter
 	def SfgrdBnft(self, value):
-		self._SfgrdBnft = value if type(value) != base_types.auto else self.make_default("SfgrdBnft")
+		self._SfgrdBnft = value if value is not None else base_types.UninitialisedField(self, 'SfgrdBnft', YesNoIndicator, False)
 
 	@SfgrdBnft.deleter
 	def SfgrdBnft(self):
 		del self._SfgrdBnft
-		self._SfgrdBnft = None
+		self._SfgrdBnft = base_types.UninitialisedField(self, 'SfgrdBnft', YesNoIndicator, False)
 
 	@property
 	def Shrg(self):
@@ -300,12 +300,12 @@ class Pension5(base_types._BaseFieldType):
 
 	@Shrg.setter
 	def Shrg(self, value):
-		self._Shrg = value if type(value) != base_types.auto else self.make_default("Shrg")
+		self._Shrg = value if value is not None else base_types.UninitialisedField(self, 'Shrg', YesNoIndicator, False)
 
 	@Shrg.deleter
 	def Shrg(self):
 		del self._Shrg
-		self._Shrg = None
+		self._Shrg = base_types.UninitialisedField(self, 'Shrg', YesNoIndicator, False)
 
 	@property
 	def TaxFreeCshAmt(self):
@@ -313,12 +313,12 @@ class Pension5(base_types._BaseFieldType):
 
 	@TaxFreeCshAmt.setter
 	def TaxFreeCshAmt(self, value):
-		self._TaxFreeCshAmt = value if type(value) != base_types.auto else self.make_default("TaxFreeCshAmt")
+		self._TaxFreeCshAmt = value if value is not None else base_types.UninitialisedField(self, 'TaxFreeCshAmt', DateAndAmount2, False)
 
 	@TaxFreeCshAmt.deleter
 	def TaxFreeCshAmt(self):
 		del self._TaxFreeCshAmt
-		self._TaxFreeCshAmt = None
+		self._TaxFreeCshAmt = base_types.UninitialisedField(self, 'TaxFreeCshAmt', DateAndAmount2, False)
 
 	@property
 	def TaxFreeCshPrtcn(self):
@@ -326,12 +326,12 @@ class Pension5(base_types._BaseFieldType):
 
 	@TaxFreeCshPrtcn.setter
 	def TaxFreeCshPrtcn(self, value):
-		self._TaxFreeCshPrtcn = value if type(value) != base_types.auto else self.make_default("TaxFreeCshPrtcn")
+		self._TaxFreeCshPrtcn = value if value is not None else base_types.UninitialisedField(self, 'TaxFreeCshPrtcn', YesNoIndicator, False)
 
 	@TaxFreeCshPrtcn.deleter
 	def TaxFreeCshPrtcn(self):
 		del self._TaxFreeCshPrtcn
-		self._TaxFreeCshPrtcn = None
+		self._TaxFreeCshPrtcn = base_types.UninitialisedField(self, 'TaxFreeCshPrtcn', YesNoIndicator, False)
 
 	@property
 	def TaxRef(self):
@@ -339,12 +339,12 @@ class Pension5(base_types._BaseFieldType):
 
 	@TaxRef.setter
 	def TaxRef(self, value):
-		self._TaxRef = value if type(value) != base_types.auto else self.make_default("TaxRef")
+		self._TaxRef = value if value is not None else base_types.UninitialisedField(self, 'TaxRef', TaxReference1, True)
 
 	@TaxRef.deleter
 	def TaxRef(self):
 		del self._TaxRef
-		self._TaxRef = None
+		self._TaxRef = base_types.UninitialisedField(self, 'TaxRef', TaxReference1, True)
 
 	@property
 	def Tp(self):
@@ -352,12 +352,12 @@ class Pension5(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', PensionSchemeType3Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', PensionSchemeType3Choice, False)
 
 	@property
 	def TrfScp(self):
@@ -365,12 +365,12 @@ class Pension5(base_types._BaseFieldType):
 
 	@TrfScp.setter
 	def TrfScp(self, value):
-		self._TrfScp = value if type(value) != base_types.auto else self.make_default("TrfScp")
+		self._TrfScp = value if value is not None else base_types.UninitialisedField(self, 'TrfScp', PensionTransferScope1Choice, False)
 
 	@TrfScp.deleter
 	def TrfScp(self):
 		del self._TrfScp
-		self._TrfScp = None
+		self._TrfScp = base_types.UninitialisedField(self, 'TrfScp', PensionTransferScope1Choice, False)
 
 	@property
 	def ValOfPnsnPlcyOrPlanOrSchme(self):
@@ -378,12 +378,12 @@ class Pension5(base_types._BaseFieldType):
 
 	@ValOfPnsnPlcyOrPlanOrSchme.setter
 	def ValOfPnsnPlcyOrPlanOrSchme(self, value):
-		self._ValOfPnsnPlcyOrPlanOrSchme = value if type(value) != base_types.auto else self.make_default("ValOfPnsnPlcyOrPlanOrSchme")
+		self._ValOfPnsnPlcyOrPlanOrSchme = value if value is not None else base_types.UninitialisedField(self, 'ValOfPnsnPlcyOrPlanOrSchme', DateAndAmount2, False)
 
 	@ValOfPnsnPlcyOrPlanOrSchme.deleter
 	def ValOfPnsnPlcyOrPlanOrSchme(self):
 		del self._ValOfPnsnPlcyOrPlanOrSchme
-		self._ValOfPnsnPlcyOrPlanOrSchme = None
+		self._ValOfPnsnPlcyOrPlanOrSchme = base_types.UninitialisedField(self, 'ValOfPnsnPlcyOrPlanOrSchme', DateAndAmount2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),

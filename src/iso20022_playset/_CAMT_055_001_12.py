@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CustomerPaymentCancellationRequestV12 import CustomerPaymentCancellationRequestV12
+from . import CustomerPaymentCancellationRequestV12
 
 class CAMT_055_001_12():
 
@@ -18,12 +18,12 @@ class CAMT_055_001_12():
 
 		@CstmrPmtCxlReq.setter
 		def CstmrPmtCxlReq(self, value):
-			self._CstmrPmtCxlReq = value if type(value) != base_types.auto else self.make_default("CstmrPmtCxlReq")
+			self._CstmrPmtCxlReq = value if value is not None else base_types.UninitialisedField(self, 'CstmrPmtCxlReq', CustomerPaymentCancellationRequestV12, False)
 
 		@CstmrPmtCxlReq.deleter
 		def CstmrPmtCxlReq(self):
 			del self._CstmrPmtCxlReq
-			self._CstmrPmtCxlReq = None
+			self._CstmrPmtCxlReq = base_types.UninitialisedField(self, 'CstmrPmtCxlReq', CustomerPaymentCancellationRequestV12, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CstmrPmtCxlReq', type=CustomerPaymentCancellationRequestV12, min=1, max=1, mutex_group=None, array=False),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Member6 import Member6
-from ._MemberIdentification3Choice import MemberIdentification3Choice
-from ._MessageHeader1 import MessageHeader1
-from ._SupplementaryData1 import SupplementaryData1
+from . import Member6
+from . import MemberIdentification3Choice
+from . import MessageHeader1
+from . import SupplementaryData1
 
 class ModifyMemberV04(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ModifyMemberV04(base_types._BaseFieldType):
 
 	@MmbId.setter
 	def MmbId(self, value):
-		self._MmbId = value if type(value) != base_types.auto else self.make_default("MmbId")
+		self._MmbId = value if value is not None else base_types.UninitialisedField(self, 'MmbId', MemberIdentification3Choice, False)
 
 	@MmbId.deleter
 	def MmbId(self):
 		del self._MmbId
-		self._MmbId = None
+		self._MmbId = base_types.UninitialisedField(self, 'MmbId', MemberIdentification3Choice, False)
 
 	@property
 	def MsgHdr(self):
@@ -29,12 +29,12 @@ class ModifyMemberV04(base_types._BaseFieldType):
 
 	@MsgHdr.setter
 	def MsgHdr(self, value):
-		self._MsgHdr = value if type(value) != base_types.auto else self.make_default("MsgHdr")
+		self._MsgHdr = value if value is not None else base_types.UninitialisedField(self, 'MsgHdr', MessageHeader1, False)
 
 	@MsgHdr.deleter
 	def MsgHdr(self):
 		del self._MsgHdr
-		self._MsgHdr = None
+		self._MsgHdr = base_types.UninitialisedField(self, 'MsgHdr', MessageHeader1, False)
 
 	@property
 	def NewMmbValSet(self):
@@ -42,12 +42,12 @@ class ModifyMemberV04(base_types._BaseFieldType):
 
 	@NewMmbValSet.setter
 	def NewMmbValSet(self, value):
-		self._NewMmbValSet = value if type(value) != base_types.auto else self.make_default("NewMmbValSet")
+		self._NewMmbValSet = value if value is not None else base_types.UninitialisedField(self, 'NewMmbValSet', Member6, False)
 
 	@NewMmbValSet.deleter
 	def NewMmbValSet(self):
 		del self._NewMmbValSet
-		self._NewMmbValSet = None
+		self._NewMmbValSet = base_types.UninitialisedField(self, 'NewMmbValSet', Member6, False)
 
 	@property
 	def SplmtryData(self):
@@ -55,12 +55,12 @@ class ModifyMemberV04(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MmbId', type=MemberIdentification3Choice, min=1, max=1, mutex_group=None, array=False),

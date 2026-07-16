@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._PartyIdentification3 import PartyIdentification3
-from ._SafekeepingPlace1Code import SafekeepingPlace1Code
+from . import Max35Text
+from . import PartyIdentification3
+from . import SafekeepingPlace1Code
 
 class SafekeepingPlaceAsCodeAndPartyIdentification(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SafekeepingPlaceAsCodeAndPartyIdentification(base_types._BaseFieldType):
 
 	@Nrrtv.setter
 	def Nrrtv(self, value):
-		self._Nrrtv = value if type(value) != base_types.auto else self.make_default("Nrrtv")
+		self._Nrrtv = value if value is not None else base_types.UninitialisedField(self, 'Nrrtv', Max35Text, False)
 
 	@Nrrtv.deleter
 	def Nrrtv(self):
 		del self._Nrrtv
-		self._Nrrtv = None
+		self._Nrrtv = base_types.UninitialisedField(self, 'Nrrtv', Max35Text, False)
 
 	@property
 	def PlcSfkpg(self):
@@ -28,12 +28,12 @@ class SafekeepingPlaceAsCodeAndPartyIdentification(base_types._BaseFieldType):
 
 	@PlcSfkpg.setter
 	def PlcSfkpg(self, value):
-		self._PlcSfkpg = value if type(value) != base_types.auto else self.make_default("PlcSfkpg")
+		self._PlcSfkpg = value if value is not None else base_types.UninitialisedField(self, 'PlcSfkpg', SafekeepingPlace1Code, False)
 
 	@PlcSfkpg.deleter
 	def PlcSfkpg(self):
 		del self._PlcSfkpg
-		self._PlcSfkpg = None
+		self._PlcSfkpg = base_types.UninitialisedField(self, 'PlcSfkpg', SafekeepingPlace1Code, False)
 
 	@property
 	def Pty(self):
@@ -41,12 +41,12 @@ class SafekeepingPlaceAsCodeAndPartyIdentification(base_types._BaseFieldType):
 
 	@Pty.setter
 	def Pty(self, value):
-		self._Pty = value if type(value) != base_types.auto else self.make_default("Pty")
+		self._Pty = value if value is not None else base_types.UninitialisedField(self, 'Pty', PartyIdentification3, False)
 
 	@Pty.deleter
 	def Pty(self):
 		del self._Pty
-		self._Pty = None
+		self._Pty = base_types.UninitialisedField(self, 'Pty', PartyIdentification3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Nrrtv', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Exact4NumericText import Exact4NumericText
-from ._ISODate import ISODate
-from ._Max6AlphaText import Max6AlphaText
+from . import Exact4NumericText
+from . import ISODate
+from . import Max6AlphaText
 
 class AgreementConditions1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AgreementConditions1(base_types._BaseFieldType):
 
 	@AgrmtCd.setter
 	def AgrmtCd(self, value):
-		self._AgrmtCd = value if type(value) != base_types.auto else self.make_default("AgrmtCd")
+		self._AgrmtCd = value if value is not None else base_types.UninitialisedField(self, 'AgrmtCd', Max6AlphaText, False)
 
 	@AgrmtCd.deleter
 	def AgrmtCd(self):
 		del self._AgrmtCd
-		self._AgrmtCd = None
+		self._AgrmtCd = base_types.UninitialisedField(self, 'AgrmtCd', Max6AlphaText, False)
 
 	@property
 	def Dt(self):
@@ -28,12 +28,12 @@ class AgreementConditions1(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@property
 	def Vrsn(self):
@@ -41,12 +41,12 @@ class AgreementConditions1(base_types._BaseFieldType):
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+		self._Vrsn = value if value is not None else base_types.UninitialisedField(self, 'Vrsn', Exact4NumericText, False)
 
 	@Vrsn.deleter
 	def Vrsn(self):
 		del self._Vrsn
-		self._Vrsn = None
+		self._Vrsn = base_types.UninitialisedField(self, 'Vrsn', Exact4NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AgrmtCd', type=Max6AlphaText, min=1, max=1, mutex_group=None, array=False),

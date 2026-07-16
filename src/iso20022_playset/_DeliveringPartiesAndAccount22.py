@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._PartyIdentification255Choice import PartyIdentification255Choice
-from ._PartyIdentificationAndAccount229 import PartyIdentificationAndAccount229
+from . import Max35Text
+from . import PartyIdentification255Choice
+from . import PartyIdentificationAndAccount229
 
 class DeliveringPartiesAndAccount22(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class DeliveringPartiesAndAccount22(base_types._BaseFieldType):
 
 	@Dpstry.setter
 	def Dpstry(self, value):
-		self._Dpstry = value if type(value) != base_types.auto else self.make_default("Dpstry")
+		self._Dpstry = value if value is not None else base_types.UninitialisedField(self, 'Dpstry', PartyIdentification255Choice, False)
 
 	@Dpstry.deleter
 	def Dpstry(self):
 		del self._Dpstry
-		self._Dpstry = None
+		self._Dpstry = base_types.UninitialisedField(self, 'Dpstry', PartyIdentification255Choice, False)
 
 	@property
 	def Pty1(self):
@@ -28,12 +28,12 @@ class DeliveringPartiesAndAccount22(base_types._BaseFieldType):
 
 	@Pty1.setter
 	def Pty1(self, value):
-		self._Pty1 = value if type(value) != base_types.auto else self.make_default("Pty1")
+		self._Pty1 = value if value is not None else base_types.UninitialisedField(self, 'Pty1', PartyIdentificationAndAccount229, False)
 
 	@Pty1.deleter
 	def Pty1(self):
 		del self._Pty1
-		self._Pty1 = None
+		self._Pty1 = base_types.UninitialisedField(self, 'Pty1', PartyIdentificationAndAccount229, False)
 
 	@property
 	def Pty2(self):
@@ -41,12 +41,12 @@ class DeliveringPartiesAndAccount22(base_types._BaseFieldType):
 
 	@Pty2.setter
 	def Pty2(self, value):
-		self._Pty2 = value if type(value) != base_types.auto else self.make_default("Pty2")
+		self._Pty2 = value if value is not None else base_types.UninitialisedField(self, 'Pty2', PartyIdentificationAndAccount229, False)
 
 	@Pty2.deleter
 	def Pty2(self):
 		del self._Pty2
-		self._Pty2 = None
+		self._Pty2 = base_types.UninitialisedField(self, 'Pty2', PartyIdentificationAndAccount229, False)
 
 	@property
 	def SctiesSttlmSys(self):
@@ -54,12 +54,12 @@ class DeliveringPartiesAndAccount22(base_types._BaseFieldType):
 
 	@SctiesSttlmSys.setter
 	def SctiesSttlmSys(self, value):
-		self._SctiesSttlmSys = value if type(value) != base_types.auto else self.make_default("SctiesSttlmSys")
+		self._SctiesSttlmSys = value if value is not None else base_types.UninitialisedField(self, 'SctiesSttlmSys', Max35Text, False)
 
 	@SctiesSttlmSys.deleter
 	def SctiesSttlmSys(self):
 		del self._SctiesSttlmSys
-		self._SctiesSttlmSys = None
+		self._SctiesSttlmSys = base_types.UninitialisedField(self, 'SctiesSttlmSys', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dpstry', type=PartyIdentification255Choice, min=1, max=1, mutex_group=None, array=False),

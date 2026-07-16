@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._SecuritiesAccountRange2 import SecuritiesAccountRange2
+from . import SecuritiesAccount19
+from . import SecuritiesAccountRange2
 
 class SecuritiesAccount2Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SecuritiesAccount2Choice(base_types._BaseFieldType):
 
 	@Acct.setter
 	def Acct(self, value):
-		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
+		self._Acct = value if value is not None else base_types.UninitialisedField(self, 'Acct', SecuritiesAccount19, True)
 
 	@Acct.deleter
 	def Acct(self):
 		del self._Acct
-		self._Acct = None
+		self._Acct = base_types.UninitialisedField(self, 'Acct', SecuritiesAccount19, True)
 
 	@property
 	def Rg(self):
@@ -27,12 +27,12 @@ class SecuritiesAccount2Choice(base_types._BaseFieldType):
 
 	@Rg.setter
 	def Rg(self, value):
-		self._Rg = value if type(value) != base_types.auto else self.make_default("Rg")
+		self._Rg = value if value is not None else base_types.UninitialisedField(self, 'Rg', SecuritiesAccountRange2, False)
 
 	@Rg.deleter
 	def Rg(self):
 		del self._Rg
-		self._Rg = None
+		self._Rg = base_types.UninitialisedField(self, 'Rg', SecuritiesAccountRange2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acct', type=SecuritiesAccount19, min=1, max=None, mutex_group=1, array=True),

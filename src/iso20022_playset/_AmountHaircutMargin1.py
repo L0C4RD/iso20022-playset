@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountAndDirection53 import AmountAndDirection53
-from ._PercentageRate import PercentageRate
+from . import AmountAndDirection53
+from . import PercentageRate
 
 class AmountHaircutMargin1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AmountHaircutMargin1(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', AmountAndDirection53, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', AmountAndDirection53, False)
 
 	@property
 	def HrcutOrMrgn(self):
@@ -27,12 +27,12 @@ class AmountHaircutMargin1(base_types._BaseFieldType):
 
 	@HrcutOrMrgn.setter
 	def HrcutOrMrgn(self, value):
-		self._HrcutOrMrgn = value if type(value) != base_types.auto else self.make_default("HrcutOrMrgn")
+		self._HrcutOrMrgn = value if value is not None else base_types.UninitialisedField(self, 'HrcutOrMrgn', PercentageRate, False)
 
 	@HrcutOrMrgn.deleter
 	def HrcutOrMrgn(self):
 		del self._HrcutOrMrgn
-		self._HrcutOrMrgn = None
+		self._HrcutOrMrgn = base_types.UninitialisedField(self, 'HrcutOrMrgn', PercentageRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=AmountAndDirection53, min=1, max=1, mutex_group=None, array=False),

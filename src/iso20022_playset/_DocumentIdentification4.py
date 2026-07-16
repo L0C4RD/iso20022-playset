@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BICIdentification1 import BICIdentification1
-from ._Max35Text import Max35Text
-from ._Max3NumericText import Max3NumericText
-from ._Number import Number
+from . import BICIdentification1
+from . import Max35Text
+from . import Max3NumericText
+from . import Number
 
 class DocumentIdentification4(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class DocumentIdentification4(base_types._BaseFieldType):
 
 	@DocIndx.setter
 	def DocIndx(self, value):
-		self._DocIndx = value if type(value) != base_types.auto else self.make_default("DocIndx")
+		self._DocIndx = value if value is not None else base_types.UninitialisedField(self, 'DocIndx', Max3NumericText, False)
 
 	@DocIndx.deleter
 	def DocIndx(self):
 		del self._DocIndx
-		self._DocIndx = None
+		self._DocIndx = base_types.UninitialisedField(self, 'DocIndx', Max3NumericText, False)
 
 	@property
 	def Id(self):
@@ -29,12 +29,12 @@ class DocumentIdentification4(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def Submitr(self):
@@ -42,12 +42,12 @@ class DocumentIdentification4(base_types._BaseFieldType):
 
 	@Submitr.setter
 	def Submitr(self, value):
-		self._Submitr = value if type(value) != base_types.auto else self.make_default("Submitr")
+		self._Submitr = value if value is not None else base_types.UninitialisedField(self, 'Submitr', BICIdentification1, False)
 
 	@Submitr.deleter
 	def Submitr(self):
 		del self._Submitr
-		self._Submitr = None
+		self._Submitr = base_types.UninitialisedField(self, 'Submitr', BICIdentification1, False)
 
 	@property
 	def Vrsn(self):
@@ -55,12 +55,12 @@ class DocumentIdentification4(base_types._BaseFieldType):
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+		self._Vrsn = value if value is not None else base_types.UninitialisedField(self, 'Vrsn', Number, False)
 
 	@Vrsn.deleter
 	def Vrsn(self):
 		del self._Vrsn
-		self._Vrsn = None
+		self._Vrsn = base_types.UninitialisedField(self, 'Vrsn', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DocIndx', type=Max3NumericText, min=1, max=1, mutex_group=None, array=False),

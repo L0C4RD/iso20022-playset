@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcceptorCompletionAdviceV15 import AcceptorCompletionAdviceV15
+from . import AcceptorCompletionAdviceV15
 
 class CAAA_003_001_15():
 
@@ -18,12 +18,12 @@ class CAAA_003_001_15():
 
 		@AccptrCmpltnAdvc.setter
 		def AccptrCmpltnAdvc(self, value):
-			self._AccptrCmpltnAdvc = value if type(value) != base_types.auto else self.make_default("AccptrCmpltnAdvc")
+			self._AccptrCmpltnAdvc = value if value is not None else base_types.UninitialisedField(self, 'AccptrCmpltnAdvc', AcceptorCompletionAdviceV15, False)
 
 		@AccptrCmpltnAdvc.deleter
 		def AccptrCmpltnAdvc(self):
 			del self._AccptrCmpltnAdvc
-			self._AccptrCmpltnAdvc = None
+			self._AccptrCmpltnAdvc = base_types.UninitialisedField(self, 'AccptrCmpltnAdvc', AcceptorCompletionAdviceV15, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='AccptrCmpltnAdvc', type=AcceptorCompletionAdviceV15, min=1, max=1, mutex_group=None, array=False),

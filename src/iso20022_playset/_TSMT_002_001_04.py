@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActivityReportV04 import ActivityReportV04
+from . import ActivityReportV04
 
 class TSMT_002_001_04():
 
@@ -18,12 +18,12 @@ class TSMT_002_001_04():
 
 		@ActvtyRpt.setter
 		def ActvtyRpt(self, value):
-			self._ActvtyRpt = value if type(value) != base_types.auto else self.make_default("ActvtyRpt")
+			self._ActvtyRpt = value if value is not None else base_types.UninitialisedField(self, 'ActvtyRpt', ActivityReportV04, False)
 
 		@ActvtyRpt.deleter
 		def ActvtyRpt(self):
 			del self._ActvtyRpt
-			self._ActvtyRpt = None
+			self._ActvtyRpt = base_types.UninitialisedField(self, 'ActvtyRpt', ActivityReportV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ActvtyRpt', type=ActivityReportV04, min=1, max=1, mutex_group=None, array=False),

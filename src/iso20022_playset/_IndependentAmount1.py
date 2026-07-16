@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._IndependentAmountConventionType1Code import IndependentAmountConventionType1Code
+from . import ActiveCurrencyAndAmount
+from . import IndependentAmountConventionType1Code
 
 class IndependentAmount1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class IndependentAmount1(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def Cnvntn(self):
@@ -27,12 +27,12 @@ class IndependentAmount1(base_types._BaseFieldType):
 
 	@Cnvntn.setter
 	def Cnvntn(self, value):
-		self._Cnvntn = value if type(value) != base_types.auto else self.make_default("Cnvntn")
+		self._Cnvntn = value if value is not None else base_types.UninitialisedField(self, 'Cnvntn', IndependentAmountConventionType1Code, False)
 
 	@Cnvntn.deleter
 	def Cnvntn(self):
 		del self._Cnvntn
-		self._Cnvntn = None
+		self._Cnvntn = base_types.UninitialisedField(self, 'Cnvntn', IndependentAmountConventionType1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

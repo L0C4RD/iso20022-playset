@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from . import ActiveCurrencyAndAmount
+from . import ImpliedCurrencyAndAmount
 
 class Amount2Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Amount2Choice(base_types._BaseFieldType):
 
 	@AmtWthCcy.setter
 	def AmtWthCcy(self, value):
-		self._AmtWthCcy = value if type(value) != base_types.auto else self.make_default("AmtWthCcy")
+		self._AmtWthCcy = value if value is not None else base_types.UninitialisedField(self, 'AmtWthCcy', ActiveCurrencyAndAmount, False)
 
 	@AmtWthCcy.deleter
 	def AmtWthCcy(self):
 		del self._AmtWthCcy
-		self._AmtWthCcy = None
+		self._AmtWthCcy = base_types.UninitialisedField(self, 'AmtWthCcy', ActiveCurrencyAndAmount, False)
 
 	@property
 	def AmtWthtCcy(self):
@@ -27,12 +27,12 @@ class Amount2Choice(base_types._BaseFieldType):
 
 	@AmtWthtCcy.setter
 	def AmtWthtCcy(self, value):
-		self._AmtWthtCcy = value if type(value) != base_types.auto else self.make_default("AmtWthtCcy")
+		self._AmtWthtCcy = value if value is not None else base_types.UninitialisedField(self, 'AmtWthtCcy', ImpliedCurrencyAndAmount, False)
 
 	@AmtWthtCcy.deleter
 	def AmtWthtCcy(self):
 		del self._AmtWthtCcy
-		self._AmtWthtCcy = None
+		self._AmtWthtCcy = base_types.UninitialisedField(self, 'AmtWthtCcy', ImpliedCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmtWthCcy', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=1, array=False),

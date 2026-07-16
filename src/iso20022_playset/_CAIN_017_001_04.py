@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InquiryVerificationResponseV04 import InquiryVerificationResponseV04
+from . import InquiryVerificationResponseV04
 
 class CAIN_017_001_04():
 
@@ -18,12 +18,12 @@ class CAIN_017_001_04():
 
 		@NqryVrfctnRspn.setter
 		def NqryVrfctnRspn(self, value):
-			self._NqryVrfctnRspn = value if type(value) != base_types.auto else self.make_default("NqryVrfctnRspn")
+			self._NqryVrfctnRspn = value if value is not None else base_types.UninitialisedField(self, 'NqryVrfctnRspn', InquiryVerificationResponseV04, False)
 
 		@NqryVrfctnRspn.deleter
 		def NqryVrfctnRspn(self):
 			del self._NqryVrfctnRspn
-			self._NqryVrfctnRspn = None
+			self._NqryVrfctnRspn = base_types.UninitialisedField(self, 'NqryVrfctnRspn', InquiryVerificationResponseV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='NqryVrfctnRspn', type=InquiryVerificationResponseV04, min=1, max=1, mutex_group=None, array=False),

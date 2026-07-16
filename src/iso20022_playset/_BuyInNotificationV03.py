@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BuyIn4 import BuyIn4
-from ._Max35Text import Max35Text
-from ._PartyIdentification35Choice import PartyIdentification35Choice
-from ._SettlementObligation7 import SettlementObligation7
-from ._SupplementaryData1 import SupplementaryData1
+from . import BuyIn4
+from . import Max35Text
+from . import PartyIdentification35Choice
+from . import SettlementObligation7
+from . import SupplementaryData1
 
 class BuyInNotificationV03(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class BuyInNotificationV03(base_types._BaseFieldType):
 
 	@ClrMmb.setter
 	def ClrMmb(self, value):
-		self._ClrMmb = value if type(value) != base_types.auto else self.make_default("ClrMmb")
+		self._ClrMmb = value if value is not None else base_types.UninitialisedField(self, 'ClrMmb', PartyIdentification35Choice, False)
 
 	@ClrMmb.deleter
 	def ClrMmb(self):
 		del self._ClrMmb
-		self._ClrMmb = None
+		self._ClrMmb = base_types.UninitialisedField(self, 'ClrMmb', PartyIdentification35Choice, False)
 
 	@property
 	def NtfctnDtls(self):
@@ -30,12 +30,12 @@ class BuyInNotificationV03(base_types._BaseFieldType):
 
 	@NtfctnDtls.setter
 	def NtfctnDtls(self, value):
-		self._NtfctnDtls = value if type(value) != base_types.auto else self.make_default("NtfctnDtls")
+		self._NtfctnDtls = value if value is not None else base_types.UninitialisedField(self, 'NtfctnDtls', BuyIn4, False)
 
 	@NtfctnDtls.deleter
 	def NtfctnDtls(self):
 		del self._NtfctnDtls
-		self._NtfctnDtls = None
+		self._NtfctnDtls = base_types.UninitialisedField(self, 'NtfctnDtls', BuyIn4, False)
 
 	@property
 	def OrgnlSttlmOblgtn(self):
@@ -43,12 +43,12 @@ class BuyInNotificationV03(base_types._BaseFieldType):
 
 	@OrgnlSttlmOblgtn.setter
 	def OrgnlSttlmOblgtn(self, value):
-		self._OrgnlSttlmOblgtn = value if type(value) != base_types.auto else self.make_default("OrgnlSttlmOblgtn")
+		self._OrgnlSttlmOblgtn = value if value is not None else base_types.UninitialisedField(self, 'OrgnlSttlmOblgtn', SettlementObligation7, False)
 
 	@OrgnlSttlmOblgtn.deleter
 	def OrgnlSttlmOblgtn(self):
 		del self._OrgnlSttlmOblgtn
-		self._OrgnlSttlmOblgtn = None
+		self._OrgnlSttlmOblgtn = base_types.UninitialisedField(self, 'OrgnlSttlmOblgtn', SettlementObligation7, False)
 
 	@property
 	def SplmtryData(self):
@@ -56,12 +56,12 @@ class BuyInNotificationV03(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TxId(self):
@@ -69,12 +69,12 @@ class BuyInNotificationV03(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClrMmb', type=PartyIdentification35Choice, min=1, max=1, mutex_group=None, array=False),

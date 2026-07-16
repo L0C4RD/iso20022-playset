@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BICIdentification1 import BICIdentification1
-from ._Exact4AlphaNumericText import Exact4AlphaNumericText
-from ._Max140Text import Max140Text
+from . import BICIdentification1
+from . import Exact4AlphaNumericText
+from . import Max140Text
 
 class RequiredSubmission6(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class RequiredSubmission6(base_types._BaseFieldType):
 
 	@CertTp.setter
 	def CertTp(self, value):
-		self._CertTp = value if type(value) != base_types.auto else self.make_default("CertTp")
+		self._CertTp = value if value is not None else base_types.UninitialisedField(self, 'CertTp', Exact4AlphaNumericText, False)
 
 	@CertTp.deleter
 	def CertTp(self):
 		del self._CertTp
-		self._CertTp = None
+		self._CertTp = base_types.UninitialisedField(self, 'CertTp', Exact4AlphaNumericText, False)
 
 	@property
 	def CertTpDesc(self):
@@ -28,12 +28,12 @@ class RequiredSubmission6(base_types._BaseFieldType):
 
 	@CertTpDesc.setter
 	def CertTpDesc(self, value):
-		self._CertTpDesc = value if type(value) != base_types.auto else self.make_default("CertTpDesc")
+		self._CertTpDesc = value if value is not None else base_types.UninitialisedField(self, 'CertTpDesc', Max140Text, False)
 
 	@CertTpDesc.deleter
 	def CertTpDesc(self):
 		del self._CertTpDesc
-		self._CertTpDesc = None
+		self._CertTpDesc = base_types.UninitialisedField(self, 'CertTpDesc', Max140Text, False)
 
 	@property
 	def Submitr(self):
@@ -41,12 +41,12 @@ class RequiredSubmission6(base_types._BaseFieldType):
 
 	@Submitr.setter
 	def Submitr(self, value):
-		self._Submitr = value if type(value) != base_types.auto else self.make_default("Submitr")
+		self._Submitr = value if value is not None else base_types.UninitialisedField(self, 'Submitr', BICIdentification1, True)
 
 	@Submitr.deleter
 	def Submitr(self):
 		del self._Submitr
-		self._Submitr = None
+		self._Submitr = base_types.UninitialisedField(self, 'Submitr', BICIdentification1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CertTp', type=Exact4AlphaNumericText, min=1, max=1, mutex_group=None, array=False),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMCommand8 import ATMCommand8
-from ._ATMCommand9 import ATMCommand9
-from ._ATMEnvironment22 import ATMEnvironment22
-from ._ATMTransaction36 import ATMTransaction36
+from . import ATMCommand8
+from . import ATMCommand9
+from . import ATMEnvironment22
+from . import ATMTransaction36
 
 class ATMReconciliationAdvice3(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ATMReconciliationAdvice3(base_types._BaseFieldType):
 
 	@CmdCntxt.setter
 	def CmdCntxt(self, value):
-		self._CmdCntxt = value if type(value) != base_types.auto else self.make_default("CmdCntxt")
+		self._CmdCntxt = value if value is not None else base_types.UninitialisedField(self, 'CmdCntxt', ATMCommand9, False)
 
 	@CmdCntxt.deleter
 	def CmdCntxt(self):
 		del self._CmdCntxt
-		self._CmdCntxt = None
+		self._CmdCntxt = base_types.UninitialisedField(self, 'CmdCntxt', ATMCommand9, False)
 
 	@property
 	def CmdRslt(self):
@@ -29,12 +29,12 @@ class ATMReconciliationAdvice3(base_types._BaseFieldType):
 
 	@CmdRslt.setter
 	def CmdRslt(self, value):
-		self._CmdRslt = value if type(value) != base_types.auto else self.make_default("CmdRslt")
+		self._CmdRslt = value if value is not None else base_types.UninitialisedField(self, 'CmdRslt', ATMCommand8, True)
 
 	@CmdRslt.deleter
 	def CmdRslt(self):
 		del self._CmdRslt
-		self._CmdRslt = None
+		self._CmdRslt = base_types.UninitialisedField(self, 'CmdRslt', ATMCommand8, True)
 
 	@property
 	def Envt(self):
@@ -42,12 +42,12 @@ class ATMReconciliationAdvice3(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+		self._Envt = value if value is not None else base_types.UninitialisedField(self, 'Envt', ATMEnvironment22, False)
 
 	@Envt.deleter
 	def Envt(self):
 		del self._Envt
-		self._Envt = None
+		self._Envt = base_types.UninitialisedField(self, 'Envt', ATMEnvironment22, False)
 
 	@property
 	def Tx(self):
@@ -55,12 +55,12 @@ class ATMReconciliationAdvice3(base_types._BaseFieldType):
 
 	@Tx.setter
 	def Tx(self, value):
-		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
+		self._Tx = value if value is not None else base_types.UninitialisedField(self, 'Tx', ATMTransaction36, False)
 
 	@Tx.deleter
 	def Tx(self):
 		del self._Tx
-		self._Tx = None
+		self._Tx = base_types.UninitialisedField(self, 'Tx', ATMTransaction36, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CmdCntxt', type=ATMCommand9, min=0, max=1, mutex_group=None, array=False),

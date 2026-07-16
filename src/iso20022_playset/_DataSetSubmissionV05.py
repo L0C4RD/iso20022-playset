@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BICIdentification1 import BICIdentification1
-from ._CertificateDataSet2 import CertificateDataSet2
-from ._CommercialDataSet5 import CommercialDataSet5
-from ._DataSetSubmissionReferences3 import DataSetSubmissionReferences3
-from ._InstructionType3 import InstructionType3
-from ._InsuranceDataSet1 import InsuranceDataSet1
-from ._MessageIdentification1 import MessageIdentification1
-from ._OtherCertificateDataSet2 import OtherCertificateDataSet2
-from ._SimpleIdentificationInformation import SimpleIdentificationInformation
-from ._TransportDataSet5 import TransportDataSet5
+from . import BICIdentification1
+from . import CertificateDataSet2
+from . import CommercialDataSet5
+from . import DataSetSubmissionReferences3
+from . import InstructionType3
+from . import InsuranceDataSet1
+from . import MessageIdentification1
+from . import OtherCertificateDataSet2
+from . import SimpleIdentificationInformation
+from . import TransportDataSet5
 
 class DataSetSubmissionV05(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class DataSetSubmissionV05(base_types._BaseFieldType):
 
 	@BuyrBk.setter
 	def BuyrBk(self, value):
-		self._BuyrBk = value if type(value) != base_types.auto else self.make_default("BuyrBk")
+		self._BuyrBk = value if value is not None else base_types.UninitialisedField(self, 'BuyrBk', BICIdentification1, False)
 
 	@BuyrBk.deleter
 	def BuyrBk(self):
 		del self._BuyrBk
-		self._BuyrBk = None
+		self._BuyrBk = base_types.UninitialisedField(self, 'BuyrBk', BICIdentification1, False)
 
 	@property
 	def CertDataSet(self):
@@ -35,12 +35,12 @@ class DataSetSubmissionV05(base_types._BaseFieldType):
 
 	@CertDataSet.setter
 	def CertDataSet(self, value):
-		self._CertDataSet = value if type(value) != base_types.auto else self.make_default("CertDataSet")
+		self._CertDataSet = value if value is not None else base_types.UninitialisedField(self, 'CertDataSet', CertificateDataSet2, True)
 
 	@CertDataSet.deleter
 	def CertDataSet(self):
 		del self._CertDataSet
-		self._CertDataSet = None
+		self._CertDataSet = base_types.UninitialisedField(self, 'CertDataSet', CertificateDataSet2, True)
 
 	@property
 	def CmonSubmissnRef(self):
@@ -48,12 +48,12 @@ class DataSetSubmissionV05(base_types._BaseFieldType):
 
 	@CmonSubmissnRef.setter
 	def CmonSubmissnRef(self, value):
-		self._CmonSubmissnRef = value if type(value) != base_types.auto else self.make_default("CmonSubmissnRef")
+		self._CmonSubmissnRef = value if value is not None else base_types.UninitialisedField(self, 'CmonSubmissnRef', SimpleIdentificationInformation, False)
 
 	@CmonSubmissnRef.deleter
 	def CmonSubmissnRef(self):
 		del self._CmonSubmissnRef
-		self._CmonSubmissnRef = None
+		self._CmonSubmissnRef = base_types.UninitialisedField(self, 'CmonSubmissnRef', SimpleIdentificationInformation, False)
 
 	@property
 	def ComrclDataSet(self):
@@ -61,12 +61,12 @@ class DataSetSubmissionV05(base_types._BaseFieldType):
 
 	@ComrclDataSet.setter
 	def ComrclDataSet(self, value):
-		self._ComrclDataSet = value if type(value) != base_types.auto else self.make_default("ComrclDataSet")
+		self._ComrclDataSet = value if value is not None else base_types.UninitialisedField(self, 'ComrclDataSet', CommercialDataSet5, False)
 
 	@ComrclDataSet.deleter
 	def ComrclDataSet(self):
 		del self._ComrclDataSet
-		self._ComrclDataSet = None
+		self._ComrclDataSet = base_types.UninitialisedField(self, 'ComrclDataSet', CommercialDataSet5, False)
 
 	@property
 	def InsrncDataSet(self):
@@ -74,12 +74,12 @@ class DataSetSubmissionV05(base_types._BaseFieldType):
 
 	@InsrncDataSet.setter
 	def InsrncDataSet(self, value):
-		self._InsrncDataSet = value if type(value) != base_types.auto else self.make_default("InsrncDataSet")
+		self._InsrncDataSet = value if value is not None else base_types.UninitialisedField(self, 'InsrncDataSet', InsuranceDataSet1, False)
 
 	@InsrncDataSet.deleter
 	def InsrncDataSet(self):
 		del self._InsrncDataSet
-		self._InsrncDataSet = None
+		self._InsrncDataSet = base_types.UninitialisedField(self, 'InsrncDataSet', InsuranceDataSet1, False)
 
 	@property
 	def Instr(self):
@@ -87,12 +87,12 @@ class DataSetSubmissionV05(base_types._BaseFieldType):
 
 	@Instr.setter
 	def Instr(self, value):
-		self._Instr = value if type(value) != base_types.auto else self.make_default("Instr")
+		self._Instr = value if value is not None else base_types.UninitialisedField(self, 'Instr', InstructionType3, False)
 
 	@Instr.deleter
 	def Instr(self):
 		del self._Instr
-		self._Instr = None
+		self._Instr = base_types.UninitialisedField(self, 'Instr', InstructionType3, False)
 
 	@property
 	def OthrCertDataSet(self):
@@ -100,12 +100,12 @@ class DataSetSubmissionV05(base_types._BaseFieldType):
 
 	@OthrCertDataSet.setter
 	def OthrCertDataSet(self, value):
-		self._OthrCertDataSet = value if type(value) != base_types.auto else self.make_default("OthrCertDataSet")
+		self._OthrCertDataSet = value if value is not None else base_types.UninitialisedField(self, 'OthrCertDataSet', OtherCertificateDataSet2, True)
 
 	@OthrCertDataSet.deleter
 	def OthrCertDataSet(self):
 		del self._OthrCertDataSet
-		self._OthrCertDataSet = None
+		self._OthrCertDataSet = base_types.UninitialisedField(self, 'OthrCertDataSet', OtherCertificateDataSet2, True)
 
 	@property
 	def RltdTxRefs(self):
@@ -113,12 +113,12 @@ class DataSetSubmissionV05(base_types._BaseFieldType):
 
 	@RltdTxRefs.setter
 	def RltdTxRefs(self, value):
-		self._RltdTxRefs = value if type(value) != base_types.auto else self.make_default("RltdTxRefs")
+		self._RltdTxRefs = value if value is not None else base_types.UninitialisedField(self, 'RltdTxRefs', DataSetSubmissionReferences3, True)
 
 	@RltdTxRefs.deleter
 	def RltdTxRefs(self):
 		del self._RltdTxRefs
-		self._RltdTxRefs = None
+		self._RltdTxRefs = base_types.UninitialisedField(self, 'RltdTxRefs', DataSetSubmissionReferences3, True)
 
 	@property
 	def SellrBk(self):
@@ -126,12 +126,12 @@ class DataSetSubmissionV05(base_types._BaseFieldType):
 
 	@SellrBk.setter
 	def SellrBk(self, value):
-		self._SellrBk = value if type(value) != base_types.auto else self.make_default("SellrBk")
+		self._SellrBk = value if value is not None else base_types.UninitialisedField(self, 'SellrBk', BICIdentification1, False)
 
 	@SellrBk.deleter
 	def SellrBk(self):
 		del self._SellrBk
-		self._SellrBk = None
+		self._SellrBk = base_types.UninitialisedField(self, 'SellrBk', BICIdentification1, False)
 
 	@property
 	def SubmissnId(self):
@@ -139,12 +139,12 @@ class DataSetSubmissionV05(base_types._BaseFieldType):
 
 	@SubmissnId.setter
 	def SubmissnId(self, value):
-		self._SubmissnId = value if type(value) != base_types.auto else self.make_default("SubmissnId")
+		self._SubmissnId = value if value is not None else base_types.UninitialisedField(self, 'SubmissnId', MessageIdentification1, False)
 
 	@SubmissnId.deleter
 	def SubmissnId(self):
 		del self._SubmissnId
-		self._SubmissnId = None
+		self._SubmissnId = base_types.UninitialisedField(self, 'SubmissnId', MessageIdentification1, False)
 
 	@property
 	def TrnsprtDataSet(self):
@@ -152,12 +152,12 @@ class DataSetSubmissionV05(base_types._BaseFieldType):
 
 	@TrnsprtDataSet.setter
 	def TrnsprtDataSet(self, value):
-		self._TrnsprtDataSet = value if type(value) != base_types.auto else self.make_default("TrnsprtDataSet")
+		self._TrnsprtDataSet = value if value is not None else base_types.UninitialisedField(self, 'TrnsprtDataSet', TransportDataSet5, False)
 
 	@TrnsprtDataSet.deleter
 	def TrnsprtDataSet(self):
 		del self._TrnsprtDataSet
-		self._TrnsprtDataSet = None
+		self._TrnsprtDataSet = base_types.UninitialisedField(self, 'TrnsprtDataSet', TransportDataSet5, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BuyrBk', type=BICIdentification1, min=1, max=1, mutex_group=None, array=False),

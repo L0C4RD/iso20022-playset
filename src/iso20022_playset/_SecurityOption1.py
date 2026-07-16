@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionDate3 import CorporateActionDate3
-from ._CorporateActionPrice4 import CorporateActionPrice4
-from ._CreditDebitCode import CreditDebitCode
-from ._FinancialInstrumentDescription3 import FinancialInstrumentDescription3
-from ._FractionDispositionType1FormatChoice import FractionDispositionType1FormatChoice
-from ._Period1 import Period1
-from ._QuantityToQuantityRatio1 import QuantityToQuantityRatio1
-from ._ShareRanking1FormatChoice import ShareRanking1FormatChoice
-from ._UnitOrFaceAmount1Choice import UnitOrFaceAmount1Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import CorporateActionDate3
+from . import CorporateActionPrice4
+from . import CreditDebitCode
+from . import FinancialInstrumentDescription3
+from . import FractionDispositionType1FormatChoice
+from . import Period1
+from . import QuantityToQuantityRatio1
+from . import ShareRanking1FormatChoice
+from . import UnitOrFaceAmount1Choice
+from . import YesNoIndicator
 
 class SecurityOption1(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class SecurityOption1(base_types._BaseFieldType):
 
 	@AddtlQtyForExstgScties.setter
 	def AddtlQtyForExstgScties(self, value):
-		self._AddtlQtyForExstgScties = value if type(value) != base_types.auto else self.make_default("AddtlQtyForExstgScties")
+		self._AddtlQtyForExstgScties = value if value is not None else base_types.UninitialisedField(self, 'AddtlQtyForExstgScties', QuantityToQuantityRatio1, False)
 
 	@AddtlQtyForExstgScties.deleter
 	def AddtlQtyForExstgScties(self):
 		del self._AddtlQtyForExstgScties
-		self._AddtlQtyForExstgScties = None
+		self._AddtlQtyForExstgScties = base_types.UninitialisedField(self, 'AddtlQtyForExstgScties', QuantityToQuantityRatio1, False)
 
 	@property
 	def AddtlQtyForSbcbdRsltntScties(self):
@@ -35,12 +35,12 @@ class SecurityOption1(base_types._BaseFieldType):
 
 	@AddtlQtyForSbcbdRsltntScties.setter
 	def AddtlQtyForSbcbdRsltntScties(self, value):
-		self._AddtlQtyForSbcbdRsltntScties = value if type(value) != base_types.auto else self.make_default("AddtlQtyForSbcbdRsltntScties")
+		self._AddtlQtyForSbcbdRsltntScties = value if value is not None else base_types.UninitialisedField(self, 'AddtlQtyForSbcbdRsltntScties', QuantityToQuantityRatio1, False)
 
 	@AddtlQtyForSbcbdRsltntScties.deleter
 	def AddtlQtyForSbcbdRsltntScties(self):
 		del self._AddtlQtyForSbcbdRsltntScties
-		self._AddtlQtyForSbcbdRsltntScties = None
+		self._AddtlQtyForSbcbdRsltntScties = base_types.UninitialisedField(self, 'AddtlQtyForSbcbdRsltntScties', QuantityToQuantityRatio1, False)
 
 	@property
 	def CdtDbtInd(self):
@@ -48,12 +48,12 @@ class SecurityOption1(base_types._BaseFieldType):
 
 	@CdtDbtInd.setter
 	def CdtDbtInd(self, value):
-		self._CdtDbtInd = value if type(value) != base_types.auto else self.make_default("CdtDbtInd")
+		self._CdtDbtInd = value if value is not None else base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@CdtDbtInd.deleter
 	def CdtDbtInd(self):
 		del self._CdtDbtInd
-		self._CdtDbtInd = None
+		self._CdtDbtInd = base_types.UninitialisedField(self, 'CdtDbtInd', CreditDebitCode, False)
 
 	@property
 	def DtDtls(self):
@@ -61,12 +61,12 @@ class SecurityOption1(base_types._BaseFieldType):
 
 	@DtDtls.setter
 	def DtDtls(self, value):
-		self._DtDtls = value if type(value) != base_types.auto else self.make_default("DtDtls")
+		self._DtDtls = value if value is not None else base_types.UninitialisedField(self, 'DtDtls', CorporateActionDate3, False)
 
 	@DtDtls.deleter
 	def DtDtls(self):
 		del self._DtDtls
-		self._DtDtls = None
+		self._DtDtls = base_types.UninitialisedField(self, 'DtDtls', CorporateActionDate3, False)
 
 	@property
 	def FrctnDspstn(self):
@@ -74,12 +74,12 @@ class SecurityOption1(base_types._BaseFieldType):
 
 	@FrctnDspstn.setter
 	def FrctnDspstn(self, value):
-		self._FrctnDspstn = value if type(value) != base_types.auto else self.make_default("FrctnDspstn")
+		self._FrctnDspstn = value if value is not None else base_types.UninitialisedField(self, 'FrctnDspstn', FractionDispositionType1FormatChoice, False)
 
 	@FrctnDspstn.deleter
 	def FrctnDspstn(self):
 		del self._FrctnDspstn
-		self._FrctnDspstn = None
+		self._FrctnDspstn = base_types.UninitialisedField(self, 'FrctnDspstn', FractionDispositionType1FormatChoice, False)
 
 	@property
 	def MinExrcblMltplSctiesQty(self):
@@ -87,12 +87,12 @@ class SecurityOption1(base_types._BaseFieldType):
 
 	@MinExrcblMltplSctiesQty.setter
 	def MinExrcblMltplSctiesQty(self, value):
-		self._MinExrcblMltplSctiesQty = value if type(value) != base_types.auto else self.make_default("MinExrcblMltplSctiesQty")
+		self._MinExrcblMltplSctiesQty = value if value is not None else base_types.UninitialisedField(self, 'MinExrcblMltplSctiesQty', UnitOrFaceAmount1Choice, False)
 
 	@MinExrcblMltplSctiesQty.deleter
 	def MinExrcblMltplSctiesQty(self):
 		del self._MinExrcblMltplSctiesQty
-		self._MinExrcblMltplSctiesQty = None
+		self._MinExrcblMltplSctiesQty = base_types.UninitialisedField(self, 'MinExrcblMltplSctiesQty', UnitOrFaceAmount1Choice, False)
 
 	@property
 	def MinExrcblSctiesQty(self):
@@ -100,12 +100,12 @@ class SecurityOption1(base_types._BaseFieldType):
 
 	@MinExrcblSctiesQty.setter
 	def MinExrcblSctiesQty(self, value):
-		self._MinExrcblSctiesQty = value if type(value) != base_types.auto else self.make_default("MinExrcblSctiesQty")
+		self._MinExrcblSctiesQty = value if value is not None else base_types.UninitialisedField(self, 'MinExrcblSctiesQty', UnitOrFaceAmount1Choice, False)
 
 	@MinExrcblSctiesQty.deleter
 	def MinExrcblSctiesQty(self):
 		del self._MinExrcblSctiesQty
-		self._MinExrcblSctiesQty = None
+		self._MinExrcblSctiesQty = base_types.UninitialisedField(self, 'MinExrcblSctiesQty', UnitOrFaceAmount1Choice, False)
 
 	@property
 	def NewBrdLotSctiesQty(self):
@@ -113,12 +113,12 @@ class SecurityOption1(base_types._BaseFieldType):
 
 	@NewBrdLotSctiesQty.setter
 	def NewBrdLotSctiesQty(self, value):
-		self._NewBrdLotSctiesQty = value if type(value) != base_types.auto else self.make_default("NewBrdLotSctiesQty")
+		self._NewBrdLotSctiesQty = value if value is not None else base_types.UninitialisedField(self, 'NewBrdLotSctiesQty', UnitOrFaceAmount1Choice, False)
 
 	@NewBrdLotSctiesQty.deleter
 	def NewBrdLotSctiesQty(self):
 		del self._NewBrdLotSctiesQty
-		self._NewBrdLotSctiesQty = None
+		self._NewBrdLotSctiesQty = base_types.UninitialisedField(self, 'NewBrdLotSctiesQty', UnitOrFaceAmount1Choice, False)
 
 	@property
 	def NewDnmtnSctiesQty(self):
@@ -126,12 +126,12 @@ class SecurityOption1(base_types._BaseFieldType):
 
 	@NewDnmtnSctiesQty.setter
 	def NewDnmtnSctiesQty(self, value):
-		self._NewDnmtnSctiesQty = value if type(value) != base_types.auto else self.make_default("NewDnmtnSctiesQty")
+		self._NewDnmtnSctiesQty = value if value is not None else base_types.UninitialisedField(self, 'NewDnmtnSctiesQty', UnitOrFaceAmount1Choice, False)
 
 	@NewDnmtnSctiesQty.deleter
 	def NewDnmtnSctiesQty(self):
 		del self._NewDnmtnSctiesQty
-		self._NewDnmtnSctiesQty = None
+		self._NewDnmtnSctiesQty = base_types.UninitialisedField(self, 'NewDnmtnSctiesQty', UnitOrFaceAmount1Choice, False)
 
 	@property
 	def PricDtls(self):
@@ -139,12 +139,12 @@ class SecurityOption1(base_types._BaseFieldType):
 
 	@PricDtls.setter
 	def PricDtls(self, value):
-		self._PricDtls = value if type(value) != base_types.auto else self.make_default("PricDtls")
+		self._PricDtls = value if value is not None else base_types.UninitialisedField(self, 'PricDtls', CorporateActionPrice4, False)
 
 	@PricDtls.deleter
 	def PricDtls(self):
 		del self._PricDtls
-		self._PricDtls = None
+		self._PricDtls = base_types.UninitialisedField(self, 'PricDtls', CorporateActionPrice4, False)
 
 	@property
 	def SctiesQty(self):
@@ -152,12 +152,12 @@ class SecurityOption1(base_types._BaseFieldType):
 
 	@SctiesQty.setter
 	def SctiesQty(self, value):
-		self._SctiesQty = value if type(value) != base_types.auto else self.make_default("SctiesQty")
+		self._SctiesQty = value if value is not None else base_types.UninitialisedField(self, 'SctiesQty', UnitOrFaceAmount1Choice, False)
 
 	@SctiesQty.deleter
 	def SctiesQty(self):
 		del self._SctiesQty
-		self._SctiesQty = None
+		self._SctiesQty = base_types.UninitialisedField(self, 'SctiesQty', UnitOrFaceAmount1Choice, False)
 
 	@property
 	def SctyId(self):
@@ -165,12 +165,12 @@ class SecurityOption1(base_types._BaseFieldType):
 
 	@SctyId.setter
 	def SctyId(self, value):
-		self._SctyId = value if type(value) != base_types.auto else self.make_default("SctyId")
+		self._SctyId = value if value is not None else base_types.UninitialisedField(self, 'SctyId', FinancialInstrumentDescription3, False)
 
 	@SctyId.deleter
 	def SctyId(self):
 		del self._SctyId
-		self._SctyId = None
+		self._SctyId = base_types.UninitialisedField(self, 'SctyId', FinancialInstrumentDescription3, False)
 
 	@property
 	def ShrRnkg(self):
@@ -178,12 +178,12 @@ class SecurityOption1(base_types._BaseFieldType):
 
 	@ShrRnkg.setter
 	def ShrRnkg(self, value):
-		self._ShrRnkg = value if type(value) != base_types.auto else self.make_default("ShrRnkg")
+		self._ShrRnkg = value if value is not None else base_types.UninitialisedField(self, 'ShrRnkg', ShareRanking1FormatChoice, False)
 
 	@ShrRnkg.deleter
 	def ShrRnkg(self):
 		del self._ShrRnkg
-		self._ShrRnkg = None
+		self._ShrRnkg = base_types.UninitialisedField(self, 'ShrRnkg', ShareRanking1FormatChoice, False)
 
 	@property
 	def TempFinInstrmInd(self):
@@ -191,12 +191,12 @@ class SecurityOption1(base_types._BaseFieldType):
 
 	@TempFinInstrmInd.setter
 	def TempFinInstrmInd(self, value):
-		self._TempFinInstrmInd = value if type(value) != base_types.auto else self.make_default("TempFinInstrmInd")
+		self._TempFinInstrmInd = value if value is not None else base_types.UninitialisedField(self, 'TempFinInstrmInd', YesNoIndicator, False)
 
 	@TempFinInstrmInd.deleter
 	def TempFinInstrmInd(self):
 		del self._TempFinInstrmInd
-		self._TempFinInstrmInd = None
+		self._TempFinInstrmInd = base_types.UninitialisedField(self, 'TempFinInstrmInd', YesNoIndicator, False)
 
 	@property
 	def TradgPrd(self):
@@ -204,12 +204,12 @@ class SecurityOption1(base_types._BaseFieldType):
 
 	@TradgPrd.setter
 	def TradgPrd(self, value):
-		self._TradgPrd = value if type(value) != base_types.auto else self.make_default("TradgPrd")
+		self._TradgPrd = value if value is not None else base_types.UninitialisedField(self, 'TradgPrd', Period1, False)
 
 	@TradgPrd.deleter
 	def TradgPrd(self):
 		del self._TradgPrd
-		self._TradgPrd = None
+		self._TradgPrd = base_types.UninitialisedField(self, 'TradgPrd', Period1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlQtyForExstgScties', type=QuantityToQuantityRatio1, min=0, max=1, mutex_group=None, array=False),

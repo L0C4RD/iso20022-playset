@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Account33 import Account33
-from ._AdditionalInformation25 import AdditionalInformation25
-from ._AdditionalReference10 import AdditionalReference10
-from ._FinancialInstrument63Choice import FinancialInstrument63Choice
-from ._Intermediary48 import Intermediary48
-from ._Max35Text import Max35Text
-from ._PartyIdentification139 import PartyIdentification139
-from ._References68Choice import References68Choice
-from ._TypeOfRequest1Choice import TypeOfRequest1Choice
+from . import Account33
+from . import AdditionalInformation25
+from . import AdditionalReference10
+from . import FinancialInstrument63Choice
+from . import Intermediary48
+from . import Max35Text
+from . import PartyIdentification139
+from . import References68Choice
+from . import TypeOfRequest1Choice
 
 class MessageAndBusinessReference13(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class MessageAndBusinessReference13(base_types._BaseFieldType):
 
 	@ClntRef.setter
 	def ClntRef(self, value):
-		self._ClntRef = value if type(value) != base_types.auto else self.make_default("ClntRef")
+		self._ClntRef = value if value is not None else base_types.UninitialisedField(self, 'ClntRef', AdditionalReference10, False)
 
 	@ClntRef.deleter
 	def ClntRef(self):
 		del self._ClntRef
-		self._ClntRef = None
+		self._ClntRef = base_types.UninitialisedField(self, 'ClntRef', AdditionalReference10, False)
 
 	@property
 	def CxlRef(self):
@@ -34,12 +34,12 @@ class MessageAndBusinessReference13(base_types._BaseFieldType):
 
 	@CxlRef.setter
 	def CxlRef(self, value):
-		self._CxlRef = value if type(value) != base_types.auto else self.make_default("CxlRef")
+		self._CxlRef = value if value is not None else base_types.UninitialisedField(self, 'CxlRef', Max35Text, False)
 
 	@CxlRef.deleter
 	def CxlRef(self):
 		del self._CxlRef
-		self._CxlRef = None
+		self._CxlRef = base_types.UninitialisedField(self, 'CxlRef', Max35Text, False)
 
 	@property
 	def Instrm(self):
@@ -47,12 +47,12 @@ class MessageAndBusinessReference13(base_types._BaseFieldType):
 
 	@Instrm.setter
 	def Instrm(self, value):
-		self._Instrm = value if type(value) != base_types.auto else self.make_default("Instrm")
+		self._Instrm = value if value is not None else base_types.UninitialisedField(self, 'Instrm', FinancialInstrument63Choice, False)
 
 	@Instrm.deleter
 	def Instrm(self):
 		del self._Instrm
-		self._Instrm = None
+		self._Instrm = base_types.UninitialisedField(self, 'Instrm', FinancialInstrument63Choice, False)
 
 	@property
 	def IntrmyInf(self):
@@ -60,12 +60,12 @@ class MessageAndBusinessReference13(base_types._BaseFieldType):
 
 	@IntrmyInf.setter
 	def IntrmyInf(self, value):
-		self._IntrmyInf = value if type(value) != base_types.auto else self.make_default("IntrmyInf")
+		self._IntrmyInf = value if value is not None else base_types.UninitialisedField(self, 'IntrmyInf', Intermediary48, True)
 
 	@IntrmyInf.deleter
 	def IntrmyInf(self):
 		del self._IntrmyInf
-		self._IntrmyInf = None
+		self._IntrmyInf = base_types.UninitialisedField(self, 'IntrmyInf', Intermediary48, True)
 
 	@property
 	def InvstmtAcctDtls(self):
@@ -73,12 +73,12 @@ class MessageAndBusinessReference13(base_types._BaseFieldType):
 
 	@InvstmtAcctDtls.setter
 	def InvstmtAcctDtls(self, value):
-		self._InvstmtAcctDtls = value if type(value) != base_types.auto else self.make_default("InvstmtAcctDtls")
+		self._InvstmtAcctDtls = value if value is not None else base_types.UninitialisedField(self, 'InvstmtAcctDtls', Account33, False)
 
 	@InvstmtAcctDtls.deleter
 	def InvstmtAcctDtls(self):
 		del self._InvstmtAcctDtls
-		self._InvstmtAcctDtls = None
+		self._InvstmtAcctDtls = base_types.UninitialisedField(self, 'InvstmtAcctDtls', Account33, False)
 
 	@property
 	def MstrRef(self):
@@ -86,12 +86,12 @@ class MessageAndBusinessReference13(base_types._BaseFieldType):
 
 	@MstrRef.setter
 	def MstrRef(self, value):
-		self._MstrRef = value if type(value) != base_types.auto else self.make_default("MstrRef")
+		self._MstrRef = value if value is not None else base_types.UninitialisedField(self, 'MstrRef', Max35Text, False)
 
 	@MstrRef.deleter
 	def MstrRef(self):
 		del self._MstrRef
-		self._MstrRef = None
+		self._MstrRef = base_types.UninitialisedField(self, 'MstrRef', Max35Text, False)
 
 	@property
 	def QryInf(self):
@@ -99,12 +99,12 @@ class MessageAndBusinessReference13(base_types._BaseFieldType):
 
 	@QryInf.setter
 	def QryInf(self, value):
-		self._QryInf = value if type(value) != base_types.auto else self.make_default("QryInf")
+		self._QryInf = value if value is not None else base_types.UninitialisedField(self, 'QryInf', AdditionalInformation25, True)
 
 	@QryInf.deleter
 	def QryInf(self):
 		del self._QryInf
-		self._QryInf = None
+		self._QryInf = base_types.UninitialisedField(self, 'QryInf', AdditionalInformation25, True)
 
 	@property
 	def Ref(self):
@@ -112,12 +112,12 @@ class MessageAndBusinessReference13(base_types._BaseFieldType):
 
 	@Ref.setter
 	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+		self._Ref = value if value is not None else base_types.UninitialisedField(self, 'Ref', References68Choice, False)
 
 	@Ref.deleter
 	def Ref(self):
 		del self._Ref
-		self._Ref = None
+		self._Ref = base_types.UninitialisedField(self, 'Ref', References68Choice, False)
 
 	@property
 	def ReqIssr(self):
@@ -125,12 +125,12 @@ class MessageAndBusinessReference13(base_types._BaseFieldType):
 
 	@ReqIssr.setter
 	def ReqIssr(self, value):
-		self._ReqIssr = value if type(value) != base_types.auto else self.make_default("ReqIssr")
+		self._ReqIssr = value if value is not None else base_types.UninitialisedField(self, 'ReqIssr', PartyIdentification139, False)
 
 	@ReqIssr.deleter
 	def ReqIssr(self):
 		del self._ReqIssr
-		self._ReqIssr = None
+		self._ReqIssr = base_types.UninitialisedField(self, 'ReqIssr', PartyIdentification139, False)
 
 	@property
 	def ReqRcpt(self):
@@ -138,12 +138,12 @@ class MessageAndBusinessReference13(base_types._BaseFieldType):
 
 	@ReqRcpt.setter
 	def ReqRcpt(self, value):
-		self._ReqRcpt = value if type(value) != base_types.auto else self.make_default("ReqRcpt")
+		self._ReqRcpt = value if value is not None else base_types.UninitialisedField(self, 'ReqRcpt', PartyIdentification139, False)
 
 	@ReqRcpt.deleter
 	def ReqRcpt(self):
 		del self._ReqRcpt
-		self._ReqRcpt = None
+		self._ReqRcpt = base_types.UninitialisedField(self, 'ReqRcpt', PartyIdentification139, False)
 
 	@property
 	def TpOfReq(self):
@@ -151,12 +151,12 @@ class MessageAndBusinessReference13(base_types._BaseFieldType):
 
 	@TpOfReq.setter
 	def TpOfReq(self, value):
-		self._TpOfReq = value if type(value) != base_types.auto else self.make_default("TpOfReq")
+		self._TpOfReq = value if value is not None else base_types.UninitialisedField(self, 'TpOfReq', TypeOfRequest1Choice, False)
 
 	@TpOfReq.deleter
 	def TpOfReq(self):
 		del self._TpOfReq
-		self._TpOfReq = None
+		self._TpOfReq = base_types.UninitialisedField(self, 'TpOfReq', TypeOfRequest1Choice, False)
 
 	@property
 	def TrfRef(self):
@@ -164,12 +164,12 @@ class MessageAndBusinessReference13(base_types._BaseFieldType):
 
 	@TrfRef.setter
 	def TrfRef(self, value):
-		self._TrfRef = value if type(value) != base_types.auto else self.make_default("TrfRef")
+		self._TrfRef = value if value is not None else base_types.UninitialisedField(self, 'TrfRef', Max35Text, False)
 
 	@TrfRef.deleter
 	def TrfRef(self):
 		del self._TrfRef
-		self._TrfRef = None
+		self._TrfRef = base_types.UninitialisedField(self, 'TrfRef', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClntRef', type=AdditionalReference10, min=0, max=1, mutex_group=None, array=False),

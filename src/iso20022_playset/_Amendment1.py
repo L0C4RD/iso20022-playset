@@ -2,19 +2,19 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CommunicationChannel1 import CommunicationChannel1
-from ._Document9 import Document9
-from ._ExpiryDetails1 import ExpiryDetails1
-from ._ISODate import ISODate
-from ._Max2000Text import Max2000Text
-from ._Max4AlphaNumericText import Max4AlphaNumericText
-from ._Narrative1 import Narrative1
-from ._PartyIdentification43 import PartyIdentification43
-from ._Undertaking11 import Undertaking11
-from ._Undertaking7 import Undertaking7
-from ._UndertakingAmount2 import UndertakingAmount2
-from ._UndertakingTermination3 import UndertakingTermination3
-from ._YesNoIndicator import YesNoIndicator
+from . import CommunicationChannel1
+from . import Document9
+from . import ExpiryDetails1
+from . import ISODate
+from . import Max2000Text
+from . import Max4AlphaNumericText
+from . import Narrative1
+from . import PartyIdentification43
+from . import Undertaking11
+from . import Undertaking7
+from . import UndertakingAmount2
+from . import UndertakingTermination3
+from . import YesNoIndicator
 
 class Amendment1(base_types._BaseFieldType):
 
@@ -25,12 +25,12 @@ class Amendment1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max2000Text, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max2000Text, True)
 
 	@property
 	def AdvsgPty(self):
@@ -38,12 +38,12 @@ class Amendment1(base_types._BaseFieldType):
 
 	@AdvsgPty.setter
 	def AdvsgPty(self, value):
-		self._AdvsgPty = value if type(value) != base_types.auto else self.make_default("AdvsgPty")
+		self._AdvsgPty = value if value is not None else base_types.UninitialisedField(self, 'AdvsgPty', PartyIdentification43, False)
 
 	@AdvsgPty.deleter
 	def AdvsgPty(self):
 		del self._AdvsgPty
-		self._AdvsgPty = None
+		self._AdvsgPty = base_types.UninitialisedField(self, 'AdvsgPty', PartyIdentification43, False)
 
 	@property
 	def BnfcryCnsntReqInd(self):
@@ -51,12 +51,12 @@ class Amendment1(base_types._BaseFieldType):
 
 	@BnfcryCnsntReqInd.setter
 	def BnfcryCnsntReqInd(self, value):
-		self._BnfcryCnsntReqInd = value if type(value) != base_types.auto else self.make_default("BnfcryCnsntReqInd")
+		self._BnfcryCnsntReqInd = value if value is not None else base_types.UninitialisedField(self, 'BnfcryCnsntReqInd', YesNoIndicator, False)
 
 	@BnfcryCnsntReqInd.deleter
 	def BnfcryCnsntReqInd(self):
 		del self._BnfcryCnsntReqInd
-		self._BnfcryCnsntReqInd = None
+		self._BnfcryCnsntReqInd = base_types.UninitialisedField(self, 'BnfcryCnsntReqInd', YesNoIndicator, False)
 
 	@property
 	def DlvryChanl(self):
@@ -64,12 +64,12 @@ class Amendment1(base_types._BaseFieldType):
 
 	@DlvryChanl.setter
 	def DlvryChanl(self, value):
-		self._DlvryChanl = value if type(value) != base_types.auto else self.make_default("DlvryChanl")
+		self._DlvryChanl = value if value is not None else base_types.UninitialisedField(self, 'DlvryChanl', CommunicationChannel1, False)
 
 	@DlvryChanl.deleter
 	def DlvryChanl(self):
 		del self._DlvryChanl
-		self._DlvryChanl = None
+		self._DlvryChanl = base_types.UninitialisedField(self, 'DlvryChanl', CommunicationChannel1, False)
 
 	@property
 	def DtOfIssnc(self):
@@ -77,12 +77,12 @@ class Amendment1(base_types._BaseFieldType):
 
 	@DtOfIssnc.setter
 	def DtOfIssnc(self, value):
-		self._DtOfIssnc = value if type(value) != base_types.auto else self.make_default("DtOfIssnc")
+		self._DtOfIssnc = value if value is not None else base_types.UninitialisedField(self, 'DtOfIssnc', ISODate, False)
 
 	@DtOfIssnc.deleter
 	def DtOfIssnc(self):
 		del self._DtOfIssnc
-		self._DtOfIssnc = None
+		self._DtOfIssnc = base_types.UninitialisedField(self, 'DtOfIssnc', ISODate, False)
 
 	@property
 	def LclUdrtkg(self):
@@ -90,12 +90,12 @@ class Amendment1(base_types._BaseFieldType):
 
 	@LclUdrtkg.setter
 	def LclUdrtkg(self, value):
-		self._LclUdrtkg = value if type(value) != base_types.auto else self.make_default("LclUdrtkg")
+		self._LclUdrtkg = value if value is not None else base_types.UninitialisedField(self, 'LclUdrtkg', Undertaking11, False)
 
 	@LclUdrtkg.deleter
 	def LclUdrtkg(self):
 		del self._LclUdrtkg
-		self._LclUdrtkg = None
+		self._LclUdrtkg = base_types.UninitialisedField(self, 'LclUdrtkg', Undertaking11, False)
 
 	@property
 	def NclsdFile(self):
@@ -103,12 +103,12 @@ class Amendment1(base_types._BaseFieldType):
 
 	@NclsdFile.setter
 	def NclsdFile(self, value):
-		self._NclsdFile = value if type(value) != base_types.auto else self.make_default("NclsdFile")
+		self._NclsdFile = value if value is not None else base_types.UninitialisedField(self, 'NclsdFile', Document9, True)
 
 	@NclsdFile.deleter
 	def NclsdFile(self):
 		del self._NclsdFile
-		self._NclsdFile = None
+		self._NclsdFile = base_types.UninitialisedField(self, 'NclsdFile', Document9, True)
 
 	@property
 	def NewBnfcry(self):
@@ -116,12 +116,12 @@ class Amendment1(base_types._BaseFieldType):
 
 	@NewBnfcry.setter
 	def NewBnfcry(self, value):
-		self._NewBnfcry = value if type(value) != base_types.auto else self.make_default("NewBnfcry")
+		self._NewBnfcry = value if value is not None else base_types.UninitialisedField(self, 'NewBnfcry', PartyIdentification43, False)
 
 	@NewBnfcry.deleter
 	def NewBnfcry(self):
 		del self._NewBnfcry
-		self._NewBnfcry = None
+		self._NewBnfcry = base_types.UninitialisedField(self, 'NewBnfcry', PartyIdentification43, False)
 
 	@property
 	def NewUdrtkgTermsAndConds(self):
@@ -129,12 +129,12 @@ class Amendment1(base_types._BaseFieldType):
 
 	@NewUdrtkgTermsAndConds.setter
 	def NewUdrtkgTermsAndConds(self, value):
-		self._NewUdrtkgTermsAndConds = value if type(value) != base_types.auto else self.make_default("NewUdrtkgTermsAndConds")
+		self._NewUdrtkgTermsAndConds = value if value is not None else base_types.UninitialisedField(self, 'NewUdrtkgTermsAndConds', Narrative1, True)
 
 	@NewUdrtkgTermsAndConds.deleter
 	def NewUdrtkgTermsAndConds(self):
 		del self._NewUdrtkgTermsAndConds
-		self._NewUdrtkgTermsAndConds = None
+		self._NewUdrtkgTermsAndConds = base_types.UninitialisedField(self, 'NewUdrtkgTermsAndConds', Narrative1, True)
 
 	@property
 	def NewXpryDtls(self):
@@ -142,12 +142,12 @@ class Amendment1(base_types._BaseFieldType):
 
 	@NewXpryDtls.setter
 	def NewXpryDtls(self, value):
-		self._NewXpryDtls = value if type(value) != base_types.auto else self.make_default("NewXpryDtls")
+		self._NewXpryDtls = value if value is not None else base_types.UninitialisedField(self, 'NewXpryDtls', ExpiryDetails1, False)
 
 	@NewXpryDtls.deleter
 	def NewXpryDtls(self):
 		del self._NewXpryDtls
-		self._NewXpryDtls = None
+		self._NewXpryDtls = base_types.UninitialisedField(self, 'NewXpryDtls', ExpiryDetails1, False)
 
 	@property
 	def ScndAdvsgPty(self):
@@ -155,12 +155,12 @@ class Amendment1(base_types._BaseFieldType):
 
 	@ScndAdvsgPty.setter
 	def ScndAdvsgPty(self, value):
-		self._ScndAdvsgPty = value if type(value) != base_types.auto else self.make_default("ScndAdvsgPty")
+		self._ScndAdvsgPty = value if value is not None else base_types.UninitialisedField(self, 'ScndAdvsgPty', PartyIdentification43, False)
 
 	@ScndAdvsgPty.deleter
 	def ScndAdvsgPty(self):
 		del self._ScndAdvsgPty
-		self._ScndAdvsgPty = None
+		self._ScndAdvsgPty = base_types.UninitialisedField(self, 'ScndAdvsgPty', PartyIdentification43, False)
 
 	@property
 	def SeqNb(self):
@@ -168,12 +168,12 @@ class Amendment1(base_types._BaseFieldType):
 
 	@SeqNb.setter
 	def SeqNb(self, value):
-		self._SeqNb = value if type(value) != base_types.auto else self.make_default("SeqNb")
+		self._SeqNb = value if value is not None else base_types.UninitialisedField(self, 'SeqNb', Max4AlphaNumericText, False)
 
 	@SeqNb.deleter
 	def SeqNb(self):
 		del self._SeqNb
-		self._SeqNb = None
+		self._SeqNb = base_types.UninitialisedField(self, 'SeqNb', Max4AlphaNumericText, False)
 
 	@property
 	def TermntnDtls(self):
@@ -181,12 +181,12 @@ class Amendment1(base_types._BaseFieldType):
 
 	@TermntnDtls.setter
 	def TermntnDtls(self, value):
-		self._TermntnDtls = value if type(value) != base_types.auto else self.make_default("TermntnDtls")
+		self._TermntnDtls = value if value is not None else base_types.UninitialisedField(self, 'TermntnDtls', UndertakingTermination3, False)
 
 	@TermntnDtls.deleter
 	def TermntnDtls(self):
 		del self._TermntnDtls
-		self._TermntnDtls = None
+		self._TermntnDtls = base_types.UninitialisedField(self, 'TermntnDtls', UndertakingTermination3, False)
 
 	@property
 	def UdrtkgAmtAdjstmnt(self):
@@ -194,12 +194,12 @@ class Amendment1(base_types._BaseFieldType):
 
 	@UdrtkgAmtAdjstmnt.setter
 	def UdrtkgAmtAdjstmnt(self, value):
-		self._UdrtkgAmtAdjstmnt = value if type(value) != base_types.auto else self.make_default("UdrtkgAmtAdjstmnt")
+		self._UdrtkgAmtAdjstmnt = value if value is not None else base_types.UninitialisedField(self, 'UdrtkgAmtAdjstmnt', UndertakingAmount2, False)
 
 	@UdrtkgAmtAdjstmnt.deleter
 	def UdrtkgAmtAdjstmnt(self):
 		del self._UdrtkgAmtAdjstmnt
-		self._UdrtkgAmtAdjstmnt = None
+		self._UdrtkgAmtAdjstmnt = base_types.UninitialisedField(self, 'UdrtkgAmtAdjstmnt', UndertakingAmount2, False)
 
 	@property
 	def UdrtkgId(self):
@@ -207,12 +207,12 @@ class Amendment1(base_types._BaseFieldType):
 
 	@UdrtkgId.setter
 	def UdrtkgId(self, value):
-		self._UdrtkgId = value if type(value) != base_types.auto else self.make_default("UdrtkgId")
+		self._UdrtkgId = value if value is not None else base_types.UninitialisedField(self, 'UdrtkgId', Undertaking7, False)
 
 	@UdrtkgId.deleter
 	def UdrtkgId(self):
 		del self._UdrtkgId
-		self._UdrtkgId = None
+		self._UdrtkgId = base_types.UninitialisedField(self, 'UdrtkgId', Undertaking7, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),

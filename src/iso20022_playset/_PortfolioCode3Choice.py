@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max52Text import Max52Text
-from ._NotApplicable1Code import NotApplicable1Code
+from . import Max52Text
+from . import NotApplicable1Code
 
 class PortfolioCode3Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PortfolioCode3Choice(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
+		self._Cd = value if value is not None else base_types.UninitialisedField(self, 'Cd', Max52Text, False)
 
 	@Cd.deleter
 	def Cd(self):
 		del self._Cd
-		self._Cd = None
+		self._Cd = base_types.UninitialisedField(self, 'Cd', Max52Text, False)
 
 	@property
 	def NoPrtfl(self):
@@ -27,12 +27,12 @@ class PortfolioCode3Choice(base_types._BaseFieldType):
 
 	@NoPrtfl.setter
 	def NoPrtfl(self, value):
-		self._NoPrtfl = value if type(value) != base_types.auto else self.make_default("NoPrtfl")
+		self._NoPrtfl = value if value is not None else base_types.UninitialisedField(self, 'NoPrtfl', NotApplicable1Code, False)
 
 	@NoPrtfl.deleter
 	def NoPrtfl(self):
 		del self._NoPrtfl
-		self._NoPrtfl = None
+		self._NoPrtfl = base_types.UninitialisedField(self, 'NoPrtfl', NotApplicable1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cd', type=Max52Text, min=0, max=1, mutex_group=1, array=False),

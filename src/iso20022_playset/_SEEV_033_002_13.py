@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionInstruction002V13 import CorporateActionInstruction002V13
+from . import CorporateActionInstruction002V13
 
 class SEEV_033_002_13():
 
@@ -18,12 +18,12 @@ class SEEV_033_002_13():
 
 		@CorpActnInstr.setter
 		def CorpActnInstr(self, value):
-			self._CorpActnInstr = value if type(value) != base_types.auto else self.make_default("CorpActnInstr")
+			self._CorpActnInstr = value if value is not None else base_types.UninitialisedField(self, 'CorpActnInstr', CorporateActionInstruction002V13, False)
 
 		@CorpActnInstr.deleter
 		def CorpActnInstr(self):
 			del self._CorpActnInstr
-			self._CorpActnInstr = None
+			self._CorpActnInstr = base_types.UninitialisedField(self, 'CorpActnInstr', CorporateActionInstruction002V13, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CorpActnInstr', type=CorporateActionInstruction002V13, min=1, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._StandingSettlementInstructionCancellationV01 import StandingSettlementInstructionCancellationV01
+from . import StandingSettlementInstructionCancellationV01
 
 class REDA_059_001_01():
 
@@ -18,12 +18,12 @@ class REDA_059_001_01():
 
 		@StgSttlmInstrCxl.setter
 		def StgSttlmInstrCxl(self, value):
-			self._StgSttlmInstrCxl = value if type(value) != base_types.auto else self.make_default("StgSttlmInstrCxl")
+			self._StgSttlmInstrCxl = value if value is not None else base_types.UninitialisedField(self, 'StgSttlmInstrCxl', StandingSettlementInstructionCancellationV01, False)
 
 		@StgSttlmInstrCxl.deleter
 		def StgSttlmInstrCxl(self):
 			del self._StgSttlmInstrCxl
-			self._StgSttlmInstrCxl = None
+			self._StgSttlmInstrCxl = base_types.UninitialisedField(self, 'StgSttlmInstrCxl', StandingSettlementInstructionCancellationV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='StgSttlmInstrCxl', type=StandingSettlementInstructionCancellationV01, min=1, max=1, mutex_group=None, array=False),

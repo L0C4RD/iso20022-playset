@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PersonIdentificationSchemeName1Choice import PersonIdentificationSchemeName1Choice
-from ._RequestedIndicator import RequestedIndicator
+from . import PersonIdentificationSchemeName1Choice
+from . import RequestedIndicator
 
 class GenericPersonType1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class GenericPersonType1(base_types._BaseFieldType):
 
 	@Reqd.setter
 	def Reqd(self, value):
-		self._Reqd = value if type(value) != base_types.auto else self.make_default("Reqd")
+		self._Reqd = value if value is not None else base_types.UninitialisedField(self, 'Reqd', RequestedIndicator, False)
 
 	@Reqd.deleter
 	def Reqd(self):
 		del self._Reqd
-		self._Reqd = None
+		self._Reqd = base_types.UninitialisedField(self, 'Reqd', RequestedIndicator, False)
 
 	@property
 	def SchmeNm(self):
@@ -27,12 +27,12 @@ class GenericPersonType1(base_types._BaseFieldType):
 
 	@SchmeNm.setter
 	def SchmeNm(self, value):
-		self._SchmeNm = value if type(value) != base_types.auto else self.make_default("SchmeNm")
+		self._SchmeNm = value if value is not None else base_types.UninitialisedField(self, 'SchmeNm', PersonIdentificationSchemeName1Choice, False)
 
 	@SchmeNm.deleter
 	def SchmeNm(self):
 		del self._SchmeNm
-		self._SchmeNm = None
+		self._SchmeNm = base_types.UninitialisedField(self, 'SchmeNm', PersonIdentificationSchemeName1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Reqd', type=RequestedIndicator, min=1, max=1, mutex_group=None, array=False),

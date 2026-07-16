@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IntraPositionPending11 import IntraPositionPending11
-from ._IntraPositionReport7 import IntraPositionReport7
-from ._Pagination1 import Pagination1
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
+from . import IntraPositionPending11
+from . import IntraPositionReport7
+from . import Pagination1
+from . import SecuritiesAccount19
+from . import SystemPartyIdentification8
 
 class IntraPositionMovementPendingReportV01(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class IntraPositionMovementPendingReportV01(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', SystemPartyIdentification8, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', SystemPartyIdentification8, False)
 
 	@property
 	def Mvmnts(self):
@@ -30,12 +30,12 @@ class IntraPositionMovementPendingReportV01(base_types._BaseFieldType):
 
 	@Mvmnts.setter
 	def Mvmnts(self, value):
-		self._Mvmnts = value if type(value) != base_types.auto else self.make_default("Mvmnts")
+		self._Mvmnts = value if value is not None else base_types.UninitialisedField(self, 'Mvmnts', IntraPositionPending11, True)
 
 	@Mvmnts.deleter
 	def Mvmnts(self):
 		del self._Mvmnts
-		self._Mvmnts = None
+		self._Mvmnts = base_types.UninitialisedField(self, 'Mvmnts', IntraPositionPending11, True)
 
 	@property
 	def Pgntn(self):
@@ -43,12 +43,12 @@ class IntraPositionMovementPendingReportV01(base_types._BaseFieldType):
 
 	@Pgntn.setter
 	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+		self._Pgntn = value if value is not None else base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@Pgntn.deleter
 	def Pgntn(self):
 		del self._Pgntn
-		self._Pgntn = None
+		self._Pgntn = base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@property
 	def RptGnlDtls(self):
@@ -56,12 +56,12 @@ class IntraPositionMovementPendingReportV01(base_types._BaseFieldType):
 
 	@RptGnlDtls.setter
 	def RptGnlDtls(self, value):
-		self._RptGnlDtls = value if type(value) != base_types.auto else self.make_default("RptGnlDtls")
+		self._RptGnlDtls = value if value is not None else base_types.UninitialisedField(self, 'RptGnlDtls', IntraPositionReport7, False)
 
 	@RptGnlDtls.deleter
 	def RptGnlDtls(self):
 		del self._RptGnlDtls
-		self._RptGnlDtls = None
+		self._RptGnlDtls = base_types.UninitialisedField(self, 'RptGnlDtls', IntraPositionReport7, False)
 
 	@property
 	def SfkpgAcct(self):
@@ -69,12 +69,12 @@ class IntraPositionMovementPendingReportV01(base_types._BaseFieldType):
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
-		self._SfkpgAcct = None
+		self._SfkpgAcct = base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnr', type=SystemPartyIdentification8, min=0, max=1, mutex_group=None, array=False),

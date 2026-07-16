@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActionMessage11 import ActionMessage11
-from ._InformationQualify1Code import InformationQualify1Code
-from ._InputCommand1Code import InputCommand1Code
-from ._Number import Number
-from ._SaleCapabilities2Code import SaleCapabilities2Code
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ActionMessage11
+from . import InformationQualify1Code
+from . import InputCommand1Code
+from . import Number
+from . import SaleCapabilities2Code
+from . import TrueFalseIndicator
 
 class InputData6(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class InputData6(base_types._BaseFieldType):
 
 	@BeepKeyFlg.setter
 	def BeepKeyFlg(self, value):
-		self._BeepKeyFlg = value if type(value) != base_types.auto else self.make_default("BeepKeyFlg")
+		self._BeepKeyFlg = value if value is not None else base_types.UninitialisedField(self, 'BeepKeyFlg', TrueFalseIndicator, False)
 
 	@BeepKeyFlg.deleter
 	def BeepKeyFlg(self):
 		del self._BeepKeyFlg
-		self._BeepKeyFlg = None
+		self._BeepKeyFlg = base_types.UninitialisedField(self, 'BeepKeyFlg', TrueFalseIndicator, False)
 
 	@property
 	def DsblCclFlg(self):
@@ -31,12 +31,12 @@ class InputData6(base_types._BaseFieldType):
 
 	@DsblCclFlg.setter
 	def DsblCclFlg(self, value):
-		self._DsblCclFlg = value if type(value) != base_types.auto else self.make_default("DsblCclFlg")
+		self._DsblCclFlg = value if value is not None else base_types.UninitialisedField(self, 'DsblCclFlg', TrueFalseIndicator, False)
 
 	@DsblCclFlg.deleter
 	def DsblCclFlg(self):
 		del self._DsblCclFlg
-		self._DsblCclFlg = None
+		self._DsblCclFlg = base_types.UninitialisedField(self, 'DsblCclFlg', TrueFalseIndicator, False)
 
 	@property
 	def DsblCrrctFlg(self):
@@ -44,12 +44,12 @@ class InputData6(base_types._BaseFieldType):
 
 	@DsblCrrctFlg.setter
 	def DsblCrrctFlg(self, value):
-		self._DsblCrrctFlg = value if type(value) != base_types.auto else self.make_default("DsblCrrctFlg")
+		self._DsblCrrctFlg = value if value is not None else base_types.UninitialisedField(self, 'DsblCrrctFlg', TrueFalseIndicator, False)
 
 	@DsblCrrctFlg.deleter
 	def DsblCrrctFlg(self):
 		del self._DsblCrrctFlg
-		self._DsblCrrctFlg = None
+		self._DsblCrrctFlg = base_types.UninitialisedField(self, 'DsblCrrctFlg', TrueFalseIndicator, False)
 
 	@property
 	def DsblVldFlg(self):
@@ -57,12 +57,12 @@ class InputData6(base_types._BaseFieldType):
 
 	@DsblVldFlg.setter
 	def DsblVldFlg(self, value):
-		self._DsblVldFlg = value if type(value) != base_types.auto else self.make_default("DsblVldFlg")
+		self._DsblVldFlg = value if value is not None else base_types.UninitialisedField(self, 'DsblVldFlg', TrueFalseIndicator, False)
 
 	@DsblVldFlg.deleter
 	def DsblVldFlg(self):
 		del self._DsblVldFlg
-		self._DsblVldFlg = None
+		self._DsblVldFlg = base_types.UninitialisedField(self, 'DsblVldFlg', TrueFalseIndicator, False)
 
 	@property
 	def DvcTp(self):
@@ -70,12 +70,12 @@ class InputData6(base_types._BaseFieldType):
 
 	@DvcTp.setter
 	def DvcTp(self, value):
-		self._DvcTp = value if type(value) != base_types.auto else self.make_default("DvcTp")
+		self._DvcTp = value if value is not None else base_types.UninitialisedField(self, 'DvcTp', SaleCapabilities2Code, False)
 
 	@DvcTp.deleter
 	def DvcTp(self):
 		del self._DvcTp
-		self._DvcTp = None
+		self._DvcTp = base_types.UninitialisedField(self, 'DvcTp', SaleCapabilities2Code, False)
 
 	@property
 	def GblCrrctnFlg(self):
@@ -83,12 +83,12 @@ class InputData6(base_types._BaseFieldType):
 
 	@GblCrrctnFlg.setter
 	def GblCrrctnFlg(self, value):
-		self._GblCrrctnFlg = value if type(value) != base_types.auto else self.make_default("GblCrrctnFlg")
+		self._GblCrrctnFlg = value if value is not None else base_types.UninitialisedField(self, 'GblCrrctnFlg', TrueFalseIndicator, False)
 
 	@GblCrrctnFlg.deleter
 	def GblCrrctnFlg(self):
 		del self._GblCrrctnFlg
-		self._GblCrrctnFlg = None
+		self._GblCrrctnFlg = base_types.UninitialisedField(self, 'GblCrrctnFlg', TrueFalseIndicator, False)
 
 	@property
 	def ImdtRspnFlg(self):
@@ -96,12 +96,12 @@ class InputData6(base_types._BaseFieldType):
 
 	@ImdtRspnFlg.setter
 	def ImdtRspnFlg(self, value):
-		self._ImdtRspnFlg = value if type(value) != base_types.auto else self.make_default("ImdtRspnFlg")
+		self._ImdtRspnFlg = value if value is not None else base_types.UninitialisedField(self, 'ImdtRspnFlg', TrueFalseIndicator, False)
 
 	@ImdtRspnFlg.deleter
 	def ImdtRspnFlg(self):
 		del self._ImdtRspnFlg
-		self._ImdtRspnFlg = None
+		self._ImdtRspnFlg = base_types.UninitialisedField(self, 'ImdtRspnFlg', TrueFalseIndicator, False)
 
 	@property
 	def InfQlfr(self):
@@ -109,12 +109,12 @@ class InputData6(base_types._BaseFieldType):
 
 	@InfQlfr.setter
 	def InfQlfr(self, value):
-		self._InfQlfr = value if type(value) != base_types.auto else self.make_default("InfQlfr")
+		self._InfQlfr = value if value is not None else base_types.UninitialisedField(self, 'InfQlfr', InformationQualify1Code, False)
 
 	@InfQlfr.deleter
 	def InfQlfr(self):
 		del self._InfQlfr
-		self._InfQlfr = None
+		self._InfQlfr = base_types.UninitialisedField(self, 'InfQlfr', InformationQualify1Code, False)
 
 	@property
 	def InptCmd(self):
@@ -122,12 +122,12 @@ class InputData6(base_types._BaseFieldType):
 
 	@InptCmd.setter
 	def InptCmd(self, value):
-		self._InptCmd = value if type(value) != base_types.auto else self.make_default("InptCmd")
+		self._InptCmd = value if value is not None else base_types.UninitialisedField(self, 'InptCmd', InputCommand1Code, False)
 
 	@InptCmd.deleter
 	def InptCmd(self):
 		del self._InptCmd
-		self._InptCmd = None
+		self._InptCmd = base_types.UninitialisedField(self, 'InptCmd', InputCommand1Code, False)
 
 	@property
 	def InptTxt(self):
@@ -135,12 +135,12 @@ class InputData6(base_types._BaseFieldType):
 
 	@InptTxt.setter
 	def InptTxt(self, value):
-		self._InptTxt = value if type(value) != base_types.auto else self.make_default("InptTxt")
+		self._InptTxt = value if value is not None else base_types.UninitialisedField(self, 'InptTxt', ActionMessage11, False)
 
 	@InptTxt.deleter
 	def InptTxt(self):
 		del self._InptTxt
-		self._InptTxt = None
+		self._InptTxt = base_types.UninitialisedField(self, 'InptTxt', ActionMessage11, False)
 
 	@property
 	def MaxInptTm(self):
@@ -148,12 +148,12 @@ class InputData6(base_types._BaseFieldType):
 
 	@MaxInptTm.setter
 	def MaxInptTm(self, value):
-		self._MaxInptTm = value if type(value) != base_types.auto else self.make_default("MaxInptTm")
+		self._MaxInptTm = value if value is not None else base_types.UninitialisedField(self, 'MaxInptTm', Number, False)
 
 	@MaxInptTm.deleter
 	def MaxInptTm(self):
 		del self._MaxInptTm
-		self._MaxInptTm = None
+		self._MaxInptTm = base_types.UninitialisedField(self, 'MaxInptTm', Number, False)
 
 	@property
 	def MenuBckFlg(self):
@@ -161,12 +161,12 @@ class InputData6(base_types._BaseFieldType):
 
 	@MenuBckFlg.setter
 	def MenuBckFlg(self, value):
-		self._MenuBckFlg = value if type(value) != base_types.auto else self.make_default("MenuBckFlg")
+		self._MenuBckFlg = value if value is not None else base_types.UninitialisedField(self, 'MenuBckFlg', TrueFalseIndicator, False)
 
 	@MenuBckFlg.deleter
 	def MenuBckFlg(self):
 		del self._MenuBckFlg
-		self._MenuBckFlg = None
+		self._MenuBckFlg = base_types.UninitialisedField(self, 'MenuBckFlg', TrueFalseIndicator, False)
 
 	@property
 	def NtfyCardInptFlg(self):
@@ -174,12 +174,12 @@ class InputData6(base_types._BaseFieldType):
 
 	@NtfyCardInptFlg.setter
 	def NtfyCardInptFlg(self, value):
-		self._NtfyCardInptFlg = value if type(value) != base_types.auto else self.make_default("NtfyCardInptFlg")
+		self._NtfyCardInptFlg = value if value is not None else base_types.UninitialisedField(self, 'NtfyCardInptFlg', TrueFalseIndicator, False)
 
 	@NtfyCardInptFlg.deleter
 	def NtfyCardInptFlg(self):
 		del self._NtfyCardInptFlg
-		self._NtfyCardInptFlg = None
+		self._NtfyCardInptFlg = base_types.UninitialisedField(self, 'NtfyCardInptFlg', TrueFalseIndicator, False)
 
 	@property
 	def WaitUsrVldtnFlg(self):
@@ -187,12 +187,12 @@ class InputData6(base_types._BaseFieldType):
 
 	@WaitUsrVldtnFlg.setter
 	def WaitUsrVldtnFlg(self, value):
-		self._WaitUsrVldtnFlg = value if type(value) != base_types.auto else self.make_default("WaitUsrVldtnFlg")
+		self._WaitUsrVldtnFlg = value if value is not None else base_types.UninitialisedField(self, 'WaitUsrVldtnFlg', TrueFalseIndicator, False)
 
 	@WaitUsrVldtnFlg.deleter
 	def WaitUsrVldtnFlg(self):
 		del self._WaitUsrVldtnFlg
-		self._WaitUsrVldtnFlg = None
+		self._WaitUsrVldtnFlg = base_types.UninitialisedField(self, 'WaitUsrVldtnFlg', TrueFalseIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BeepKeyFlg', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DetailedAmount4 import DetailedAmount4
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
+from . import DetailedAmount4
+from . import ImpliedCurrencyAndAmount
 
 class DetailedAmount15(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DetailedAmount15(base_types._BaseFieldType):
 
 	@AmtGoodsAndSvcs.setter
 	def AmtGoodsAndSvcs(self, value):
-		self._AmtGoodsAndSvcs = value if type(value) != base_types.auto else self.make_default("AmtGoodsAndSvcs")
+		self._AmtGoodsAndSvcs = value if value is not None else base_types.UninitialisedField(self, 'AmtGoodsAndSvcs', ImpliedCurrencyAndAmount, False)
 
 	@AmtGoodsAndSvcs.deleter
 	def AmtGoodsAndSvcs(self):
 		del self._AmtGoodsAndSvcs
-		self._AmtGoodsAndSvcs = None
+		self._AmtGoodsAndSvcs = base_types.UninitialisedField(self, 'AmtGoodsAndSvcs', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def CshBck(self):
@@ -27,12 +27,12 @@ class DetailedAmount15(base_types._BaseFieldType):
 
 	@CshBck.setter
 	def CshBck(self, value):
-		self._CshBck = value if type(value) != base_types.auto else self.make_default("CshBck")
+		self._CshBck = value if value is not None else base_types.UninitialisedField(self, 'CshBck', ImpliedCurrencyAndAmount, False)
 
 	@CshBck.deleter
 	def CshBck(self):
 		del self._CshBck
-		self._CshBck = None
+		self._CshBck = base_types.UninitialisedField(self, 'CshBck', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def Fees(self):
@@ -40,12 +40,12 @@ class DetailedAmount15(base_types._BaseFieldType):
 
 	@Fees.setter
 	def Fees(self, value):
-		self._Fees = value if type(value) != base_types.auto else self.make_default("Fees")
+		self._Fees = value if value is not None else base_types.UninitialisedField(self, 'Fees', DetailedAmount4, True)
 
 	@Fees.deleter
 	def Fees(self):
 		del self._Fees
-		self._Fees = None
+		self._Fees = base_types.UninitialisedField(self, 'Fees', DetailedAmount4, True)
 
 	@property
 	def Grtty(self):
@@ -53,12 +53,12 @@ class DetailedAmount15(base_types._BaseFieldType):
 
 	@Grtty.setter
 	def Grtty(self, value):
-		self._Grtty = value if type(value) != base_types.auto else self.make_default("Grtty")
+		self._Grtty = value if value is not None else base_types.UninitialisedField(self, 'Grtty', ImpliedCurrencyAndAmount, False)
 
 	@Grtty.deleter
 	def Grtty(self):
 		del self._Grtty
-		self._Grtty = None
+		self._Grtty = base_types.UninitialisedField(self, 'Grtty', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def Rbt(self):
@@ -66,12 +66,12 @@ class DetailedAmount15(base_types._BaseFieldType):
 
 	@Rbt.setter
 	def Rbt(self, value):
-		self._Rbt = value if type(value) != base_types.auto else self.make_default("Rbt")
+		self._Rbt = value if value is not None else base_types.UninitialisedField(self, 'Rbt', DetailedAmount4, True)
 
 	@Rbt.deleter
 	def Rbt(self):
 		del self._Rbt
-		self._Rbt = None
+		self._Rbt = base_types.UninitialisedField(self, 'Rbt', DetailedAmount4, True)
 
 	@property
 	def Srchrg(self):
@@ -79,12 +79,12 @@ class DetailedAmount15(base_types._BaseFieldType):
 
 	@Srchrg.setter
 	def Srchrg(self, value):
-		self._Srchrg = value if type(value) != base_types.auto else self.make_default("Srchrg")
+		self._Srchrg = value if value is not None else base_types.UninitialisedField(self, 'Srchrg', DetailedAmount4, True)
 
 	@Srchrg.deleter
 	def Srchrg(self):
 		del self._Srchrg
-		self._Srchrg = None
+		self._Srchrg = base_types.UninitialisedField(self, 'Srchrg', DetailedAmount4, True)
 
 	@property
 	def ValAddedTax(self):
@@ -92,12 +92,12 @@ class DetailedAmount15(base_types._BaseFieldType):
 
 	@ValAddedTax.setter
 	def ValAddedTax(self, value):
-		self._ValAddedTax = value if type(value) != base_types.auto else self.make_default("ValAddedTax")
+		self._ValAddedTax = value if value is not None else base_types.UninitialisedField(self, 'ValAddedTax', DetailedAmount4, True)
 
 	@ValAddedTax.deleter
 	def ValAddedTax(self):
 		del self._ValAddedTax
-		self._ValAddedTax = None
+		self._ValAddedTax = base_types.UninitialisedField(self, 'ValAddedTax', DetailedAmount4, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AmtGoodsAndSvcs', type=ImpliedCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

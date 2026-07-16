@@ -2,19 +2,19 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalData2 import AdditionalData2
-from ._ContentInformationType41 import ContentInformationType41
-from ._DetailedError1 import DetailedError1
-from ._Header71 import Header71
-from ._Jurisdiction2 import Jurisdiction2
-from ._Max100KBinary import Max100KBinary
-from ._PartyIdentification286 import PartyIdentification286
-from ._ProgrammeMode5 import ProgrammeMode5
-from ._ProtectedData2 import ProtectedData2
-from ._Reconciliation4 import Reconciliation4
-from ._SettlementService6 import SettlementService6
-from ._SupplementaryData1 import SupplementaryData1
-from ._TransactionIdentification55 import TransactionIdentification55
+from . import AdditionalData2
+from . import ContentInformationType41
+from . import DetailedError1
+from . import Header71
+from . import Jurisdiction2
+from . import Max100KBinary
+from . import PartyIdentification286
+from . import ProgrammeMode5
+from . import ProtectedData2
+from . import Reconciliation4
+from . import SettlementService6
+from . import SupplementaryData1
+from . import TransactionIdentification55
 
 class AmendmentV03(base_types._BaseFieldType):
 
@@ -25,12 +25,12 @@ class AmendmentV03(base_types._BaseFieldType):
 
 	@AddtlData.setter
 	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+		self._AddtlData = value if value is not None else base_types.UninitialisedField(self, 'AddtlData', AdditionalData2, True)
 
 	@AddtlData.deleter
 	def AddtlData(self):
 		del self._AddtlData
-		self._AddtlData = None
+		self._AddtlData = base_types.UninitialisedField(self, 'AddtlData', AdditionalData2, True)
 
 	@property
 	def AmddData(self):
@@ -38,12 +38,12 @@ class AmendmentV03(base_types._BaseFieldType):
 
 	@AmddData.setter
 	def AmddData(self, value):
-		self._AmddData = value if type(value) != base_types.auto else self.make_default("AmddData")
+		self._AmddData = value if value is not None else base_types.UninitialisedField(self, 'AmddData', DetailedError1, True)
 
 	@AmddData.deleter
 	def AmddData(self):
 		del self._AmddData
-		self._AmddData = None
+		self._AmddData = base_types.UninitialisedField(self, 'AmddData', DetailedError1, True)
 
 	@property
 	def Dstn(self):
@@ -51,12 +51,12 @@ class AmendmentV03(base_types._BaseFieldType):
 
 	@Dstn.setter
 	def Dstn(self, value):
-		self._Dstn = value if type(value) != base_types.auto else self.make_default("Dstn")
+		self._Dstn = value if value is not None else base_types.UninitialisedField(self, 'Dstn', PartyIdentification286, False)
 
 	@Dstn.deleter
 	def Dstn(self):
 		del self._Dstn
-		self._Dstn = None
+		self._Dstn = base_types.UninitialisedField(self, 'Dstn', PartyIdentification286, False)
 
 	@property
 	def Hdr(self):
@@ -64,12 +64,12 @@ class AmendmentV03(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header71, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header71, False)
 
 	@property
 	def Jursdctn(self):
@@ -77,12 +77,12 @@ class AmendmentV03(base_types._BaseFieldType):
 
 	@Jursdctn.setter
 	def Jursdctn(self, value):
-		self._Jursdctn = value if type(value) != base_types.auto else self.make_default("Jursdctn")
+		self._Jursdctn = value if value is not None else base_types.UninitialisedField(self, 'Jursdctn', Jurisdiction2, False)
 
 	@Jursdctn.deleter
 	def Jursdctn(self):
 		del self._Jursdctn
-		self._Jursdctn = None
+		self._Jursdctn = base_types.UninitialisedField(self, 'Jursdctn', Jurisdiction2, False)
 
 	@property
 	def MsgAmdd(self):
@@ -90,12 +90,12 @@ class AmendmentV03(base_types._BaseFieldType):
 
 	@MsgAmdd.setter
 	def MsgAmdd(self, value):
-		self._MsgAmdd = value if type(value) != base_types.auto else self.make_default("MsgAmdd")
+		self._MsgAmdd = value if value is not None else base_types.UninitialisedField(self, 'MsgAmdd', Max100KBinary, False)
 
 	@MsgAmdd.deleter
 	def MsgAmdd(self):
 		del self._MsgAmdd
-		self._MsgAmdd = None
+		self._MsgAmdd = base_types.UninitialisedField(self, 'MsgAmdd', Max100KBinary, False)
 
 	@property
 	def OrgnlMsg(self):
@@ -103,12 +103,12 @@ class AmendmentV03(base_types._BaseFieldType):
 
 	@OrgnlMsg.setter
 	def OrgnlMsg(self, value):
-		self._OrgnlMsg = value if type(value) != base_types.auto else self.make_default("OrgnlMsg")
+		self._OrgnlMsg = value if value is not None else base_types.UninitialisedField(self, 'OrgnlMsg', Max100KBinary, False)
 
 	@OrgnlMsg.deleter
 	def OrgnlMsg(self):
 		del self._OrgnlMsg
-		self._OrgnlMsg = None
+		self._OrgnlMsg = base_types.UninitialisedField(self, 'OrgnlMsg', Max100KBinary, False)
 
 	@property
 	def Orgtr(self):
@@ -116,12 +116,12 @@ class AmendmentV03(base_types._BaseFieldType):
 
 	@Orgtr.setter
 	def Orgtr(self, value):
-		self._Orgtr = value if type(value) != base_types.auto else self.make_default("Orgtr")
+		self._Orgtr = value if value is not None else base_types.UninitialisedField(self, 'Orgtr', PartyIdentification286, False)
 
 	@Orgtr.deleter
 	def Orgtr(self):
 		del self._Orgtr
-		self._Orgtr = None
+		self._Orgtr = base_types.UninitialisedField(self, 'Orgtr', PartyIdentification286, False)
 
 	@property
 	def Prgrmm(self):
@@ -129,12 +129,12 @@ class AmendmentV03(base_types._BaseFieldType):
 
 	@Prgrmm.setter
 	def Prgrmm(self, value):
-		self._Prgrmm = value if type(value) != base_types.auto else self.make_default("Prgrmm")
+		self._Prgrmm = value if value is not None else base_types.UninitialisedField(self, 'Prgrmm', ProgrammeMode5, True)
 
 	@Prgrmm.deleter
 	def Prgrmm(self):
 		del self._Prgrmm
-		self._Prgrmm = None
+		self._Prgrmm = base_types.UninitialisedField(self, 'Prgrmm', ProgrammeMode5, True)
 
 	@property
 	def PrtctdData(self):
@@ -142,12 +142,12 @@ class AmendmentV03(base_types._BaseFieldType):
 
 	@PrtctdData.setter
 	def PrtctdData(self, value):
-		self._PrtctdData = value if type(value) != base_types.auto else self.make_default("PrtctdData")
+		self._PrtctdData = value if value is not None else base_types.UninitialisedField(self, 'PrtctdData', ProtectedData2, True)
 
 	@PrtctdData.deleter
 	def PrtctdData(self):
 		del self._PrtctdData
-		self._PrtctdData = None
+		self._PrtctdData = base_types.UninitialisedField(self, 'PrtctdData', ProtectedData2, True)
 
 	@property
 	def Rcncltn(self):
@@ -155,12 +155,12 @@ class AmendmentV03(base_types._BaseFieldType):
 
 	@Rcncltn.setter
 	def Rcncltn(self, value):
-		self._Rcncltn = value if type(value) != base_types.auto else self.make_default("Rcncltn")
+		self._Rcncltn = value if value is not None else base_types.UninitialisedField(self, 'Rcncltn', Reconciliation4, False)
 
 	@Rcncltn.deleter
 	def Rcncltn(self):
 		del self._Rcncltn
-		self._Rcncltn = None
+		self._Rcncltn = base_types.UninitialisedField(self, 'Rcncltn', Reconciliation4, False)
 
 	@property
 	def Rcvr(self):
@@ -168,12 +168,12 @@ class AmendmentV03(base_types._BaseFieldType):
 
 	@Rcvr.setter
 	def Rcvr(self, value):
-		self._Rcvr = value if type(value) != base_types.auto else self.make_default("Rcvr")
+		self._Rcvr = value if value is not None else base_types.UninitialisedField(self, 'Rcvr', PartyIdentification286, False)
 
 	@Rcvr.deleter
 	def Rcvr(self):
 		del self._Rcvr
-		self._Rcvr = None
+		self._Rcvr = base_types.UninitialisedField(self, 'Rcvr', PartyIdentification286, False)
 
 	@property
 	def SctyTrlr(self):
@@ -181,12 +181,12 @@ class AmendmentV03(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType41, False)
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
 		del self._SctyTrlr
-		self._SctyTrlr = None
+		self._SctyTrlr = base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType41, False)
 
 	@property
 	def Sndr(self):
@@ -194,12 +194,12 @@ class AmendmentV03(base_types._BaseFieldType):
 
 	@Sndr.setter
 	def Sndr(self, value):
-		self._Sndr = value if type(value) != base_types.auto else self.make_default("Sndr")
+		self._Sndr = value if value is not None else base_types.UninitialisedField(self, 'Sndr', PartyIdentification286, False)
 
 	@Sndr.deleter
 	def Sndr(self):
 		del self._Sndr
-		self._Sndr = None
+		self._Sndr = base_types.UninitialisedField(self, 'Sndr', PartyIdentification286, False)
 
 	@property
 	def SplmtryData(self):
@@ -207,12 +207,12 @@ class AmendmentV03(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def SttlmSvc(self):
@@ -220,12 +220,12 @@ class AmendmentV03(base_types._BaseFieldType):
 
 	@SttlmSvc.setter
 	def SttlmSvc(self, value):
-		self._SttlmSvc = value if type(value) != base_types.auto else self.make_default("SttlmSvc")
+		self._SttlmSvc = value if value is not None else base_types.UninitialisedField(self, 'SttlmSvc', SettlementService6, False)
 
 	@SttlmSvc.deleter
 	def SttlmSvc(self):
 		del self._SttlmSvc
-		self._SttlmSvc = None
+		self._SttlmSvc = base_types.UninitialisedField(self, 'SttlmSvc', SettlementService6, False)
 
 	@property
 	def TxId(self):
@@ -233,12 +233,12 @@ class AmendmentV03(base_types._BaseFieldType):
 
 	@TxId.setter
 	def TxId(self, value):
-		self._TxId = value if type(value) != base_types.auto else self.make_default("TxId")
+		self._TxId = value if value is not None else base_types.UninitialisedField(self, 'TxId', TransactionIdentification55, False)
 
 	@TxId.deleter
 	def TxId(self):
 		del self._TxId
-		self._TxId = None
+		self._TxId = base_types.UninitialisedField(self, 'TxId', TransactionIdentification55, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData2, min=0, max=None, mutex_group=None, array=True),

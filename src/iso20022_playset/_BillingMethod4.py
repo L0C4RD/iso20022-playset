@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BillingServiceParameters2 import BillingServiceParameters2
-from ._TaxCalculation1 import TaxCalculation1
+from . import BillingServiceParameters2
+from . import TaxCalculation1
 
 class BillingMethod4(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class BillingMethod4(base_types._BaseFieldType):
 
 	@SvcDtl.setter
 	def SvcDtl(self, value):
-		self._SvcDtl = value if type(value) != base_types.auto else self.make_default("SvcDtl")
+		self._SvcDtl = value if value is not None else base_types.UninitialisedField(self, 'SvcDtl', BillingServiceParameters2, True)
 
 	@SvcDtl.deleter
 	def SvcDtl(self):
 		del self._SvcDtl
-		self._SvcDtl = None
+		self._SvcDtl = base_types.UninitialisedField(self, 'SvcDtl', BillingServiceParameters2, True)
 
 	@property
 	def TaxClctn(self):
@@ -27,12 +27,12 @@ class BillingMethod4(base_types._BaseFieldType):
 
 	@TaxClctn.setter
 	def TaxClctn(self, value):
-		self._TaxClctn = value if type(value) != base_types.auto else self.make_default("TaxClctn")
+		self._TaxClctn = value if value is not None else base_types.UninitialisedField(self, 'TaxClctn', TaxCalculation1, False)
 
 	@TaxClctn.deleter
 	def TaxClctn(self):
 		del self._TaxClctn
-		self._TaxClctn = None
+		self._TaxClctn = base_types.UninitialisedField(self, 'TaxClctn', TaxCalculation1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SvcDtl', type=BillingServiceParameters2, min=1, max=None, mutex_group=None, array=True),

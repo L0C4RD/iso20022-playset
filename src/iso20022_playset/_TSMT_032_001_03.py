@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._StatusExtensionNotificationV03 import StatusExtensionNotificationV03
+from . import StatusExtensionNotificationV03
 
 class TSMT_032_001_03():
 
@@ -18,12 +18,12 @@ class TSMT_032_001_03():
 
 		@StsXtnsnNtfctn.setter
 		def StsXtnsnNtfctn(self, value):
-			self._StsXtnsnNtfctn = value if type(value) != base_types.auto else self.make_default("StsXtnsnNtfctn")
+			self._StsXtnsnNtfctn = value if value is not None else base_types.UninitialisedField(self, 'StsXtnsnNtfctn', StatusExtensionNotificationV03, False)
 
 		@StsXtnsnNtfctn.deleter
 		def StsXtnsnNtfctn(self):
 			del self._StsXtnsnNtfctn
-			self._StsXtnsnNtfctn = None
+			self._StsXtnsnNtfctn = base_types.UninitialisedField(self, 'StsXtnsnNtfctn', StatusExtensionNotificationV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='StsXtnsnNtfctn', type=StatusExtensionNotificationV03, min=1, max=1, mutex_group=None, array=False),

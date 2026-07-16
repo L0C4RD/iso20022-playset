@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from . import RestrictedFINXMax16Text
 
 class DocumentIdentification4Choice(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class DocumentIdentification4Choice(base_types._BaseFieldType):
 
 	@AcctOwnrDocId.setter
 	def AcctOwnrDocId(self, value):
-		self._AcctOwnrDocId = value if type(value) != base_types.auto else self.make_default("AcctOwnrDocId")
+		self._AcctOwnrDocId = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnrDocId', RestrictedFINXMax16Text, False)
 
 	@AcctOwnrDocId.deleter
 	def AcctOwnrDocId(self):
 		del self._AcctOwnrDocId
-		self._AcctOwnrDocId = None
+		self._AcctOwnrDocId = base_types.UninitialisedField(self, 'AcctOwnrDocId', RestrictedFINXMax16Text, False)
 
 	@property
 	def AcctSvcrDocId(self):
@@ -26,12 +26,12 @@ class DocumentIdentification4Choice(base_types._BaseFieldType):
 
 	@AcctSvcrDocId.setter
 	def AcctSvcrDocId(self, value):
-		self._AcctSvcrDocId = value if type(value) != base_types.auto else self.make_default("AcctSvcrDocId")
+		self._AcctSvcrDocId = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcrDocId', RestrictedFINXMax16Text, False)
 
 	@AcctSvcrDocId.deleter
 	def AcctSvcrDocId(self):
 		del self._AcctSvcrDocId
-		self._AcctSvcrDocId = None
+		self._AcctSvcrDocId = base_types.UninitialisedField(self, 'AcctSvcrDocId', RestrictedFINXMax16Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnrDocId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),

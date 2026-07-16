@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._TerminalManagementActionResult5Code import TerminalManagementActionResult5Code
-from ._TerminalManagementErrorAction2Code import TerminalManagementErrorAction2Code
+from . import TerminalManagementActionResult5Code
+from . import TerminalManagementErrorAction2Code
 
 class ErrorAction5(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ErrorAction5(base_types._BaseFieldType):
 
 	@ActnRslt.setter
 	def ActnRslt(self, value):
-		self._ActnRslt = value if type(value) != base_types.auto else self.make_default("ActnRslt")
+		self._ActnRslt = value if value is not None else base_types.UninitialisedField(self, 'ActnRslt', TerminalManagementActionResult5Code, True)
 
 	@ActnRslt.deleter
 	def ActnRslt(self):
 		del self._ActnRslt
-		self._ActnRslt = None
+		self._ActnRslt = base_types.UninitialisedField(self, 'ActnRslt', TerminalManagementActionResult5Code, True)
 
 	@property
 	def ActnToPrc(self):
@@ -27,12 +27,12 @@ class ErrorAction5(base_types._BaseFieldType):
 
 	@ActnToPrc.setter
 	def ActnToPrc(self, value):
-		self._ActnToPrc = value if type(value) != base_types.auto else self.make_default("ActnToPrc")
+		self._ActnToPrc = value if value is not None else base_types.UninitialisedField(self, 'ActnToPrc', TerminalManagementErrorAction2Code, False)
 
 	@ActnToPrc.deleter
 	def ActnToPrc(self):
 		del self._ActnToPrc
-		self._ActnToPrc = None
+		self._ActnToPrc = base_types.UninitialisedField(self, 'ActnToPrc', TerminalManagementErrorAction2Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActnRslt', type=TerminalManagementActionResult5Code, min=1, max=None, mutex_group=None, array=True),

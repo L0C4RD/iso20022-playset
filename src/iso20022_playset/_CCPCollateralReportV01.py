@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CollateralAccount4 import CollateralAccount4
-from ._SupplementaryData1 import SupplementaryData1
+from . import CollateralAccount4
+from . import SupplementaryData1
 
 class CCPCollateralReportV01(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CCPCollateralReportV01(base_types._BaseFieldType):
 
 	@CollAcctOwnr.setter
 	def CollAcctOwnr(self, value):
-		self._CollAcctOwnr = value if type(value) != base_types.auto else self.make_default("CollAcctOwnr")
+		self._CollAcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'CollAcctOwnr', CollateralAccount4, True)
 
 	@CollAcctOwnr.deleter
 	def CollAcctOwnr(self):
 		del self._CollAcctOwnr
-		self._CollAcctOwnr = None
+		self._CollAcctOwnr = base_types.UninitialisedField(self, 'CollAcctOwnr', CollateralAccount4, True)
 
 	@property
 	def SplmtryData(self):
@@ -27,12 +27,12 @@ class CCPCollateralReportV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollAcctOwnr', type=CollateralAccount4, min=1, max=None, mutex_group=None, array=True),

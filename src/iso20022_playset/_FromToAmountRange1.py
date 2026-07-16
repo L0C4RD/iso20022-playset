@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AmountRangeBoundary1 import AmountRangeBoundary1
+from . import AmountRangeBoundary1
 
 class FromToAmountRange1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class FromToAmountRange1(base_types._BaseFieldType):
 
 	@FrAmt.setter
 	def FrAmt(self, value):
-		self._FrAmt = value if type(value) != base_types.auto else self.make_default("FrAmt")
+		self._FrAmt = value if value is not None else base_types.UninitialisedField(self, 'FrAmt', AmountRangeBoundary1, False)
 
 	@FrAmt.deleter
 	def FrAmt(self):
 		del self._FrAmt
-		self._FrAmt = None
+		self._FrAmt = base_types.UninitialisedField(self, 'FrAmt', AmountRangeBoundary1, False)
 
 	@property
 	def ToAmt(self):
@@ -26,12 +26,12 @@ class FromToAmountRange1(base_types._BaseFieldType):
 
 	@ToAmt.setter
 	def ToAmt(self, value):
-		self._ToAmt = value if type(value) != base_types.auto else self.make_default("ToAmt")
+		self._ToAmt = value if value is not None else base_types.UninitialisedField(self, 'ToAmt', AmountRangeBoundary1, False)
 
 	@ToAmt.deleter
 	def ToAmt(self):
 		del self._ToAmt
-		self._ToAmt = None
+		self._ToAmt = base_types.UninitialisedField(self, 'ToAmt', AmountRangeBoundary1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FrAmt', type=AmountRangeBoundary1, min=1, max=1, mutex_group=None, array=False),

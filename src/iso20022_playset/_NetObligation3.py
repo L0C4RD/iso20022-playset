@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._CountryCode import CountryCode
-from ._Max10NumericText import Max10NumericText
-from ._Max35Text import Max35Text
-from ._NettingIdentification2Choice import NettingIdentification2Choice
-from ._PartyIdentification242Choice import PartyIdentification242Choice
-from ._PaymentReceipt1Code import PaymentReceipt1Code
-from ._SettlementParties120 import SettlementParties120
+from . import ActiveCurrencyAndAmount
+from . import CountryCode
+from . import Max10NumericText
+from . import Max35Text
+from . import NettingIdentification2Choice
+from . import PartyIdentification242Choice
+from . import PaymentReceipt1Code
+from . import SettlementParties120
 
 class NetObligation3(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class NetObligation3(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def CtrPtyNetgId(self):
@@ -33,12 +33,12 @@ class NetObligation3(base_types._BaseFieldType):
 
 	@CtrPtyNetgId.setter
 	def CtrPtyNetgId(self, value):
-		self._CtrPtyNetgId = value if type(value) != base_types.auto else self.make_default("CtrPtyNetgId")
+		self._CtrPtyNetgId = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyNetgId', NettingIdentification2Choice, False)
 
 	@CtrPtyNetgId.deleter
 	def CtrPtyNetgId(self):
 		del self._CtrPtyNetgId
-		self._CtrPtyNetgId = None
+		self._CtrPtyNetgId = base_types.UninitialisedField(self, 'CtrPtyNetgId', NettingIdentification2Choice, False)
 
 	@property
 	def CtrPtySttlmInstrs(self):
@@ -46,12 +46,12 @@ class NetObligation3(base_types._BaseFieldType):
 
 	@CtrPtySttlmInstrs.setter
 	def CtrPtySttlmInstrs(self, value):
-		self._CtrPtySttlmInstrs = value if type(value) != base_types.auto else self.make_default("CtrPtySttlmInstrs")
+		self._CtrPtySttlmInstrs = value if value is not None else base_types.UninitialisedField(self, 'CtrPtySttlmInstrs', SettlementParties120, False)
 
 	@CtrPtySttlmInstrs.deleter
 	def CtrPtySttlmInstrs(self):
 		del self._CtrPtySttlmInstrs
-		self._CtrPtySttlmInstrs = None
+		self._CtrPtySttlmInstrs = base_types.UninitialisedField(self, 'CtrPtySttlmInstrs', SettlementParties120, False)
 
 	@property
 	def NetSvcCtrPtyId(self):
@@ -59,12 +59,12 @@ class NetObligation3(base_types._BaseFieldType):
 
 	@NetSvcCtrPtyId.setter
 	def NetSvcCtrPtyId(self, value):
-		self._NetSvcCtrPtyId = value if type(value) != base_types.auto else self.make_default("NetSvcCtrPtyId")
+		self._NetSvcCtrPtyId = value if value is not None else base_types.UninitialisedField(self, 'NetSvcCtrPtyId', PartyIdentification242Choice, False)
 
 	@NetSvcCtrPtyId.deleter
 	def NetSvcCtrPtyId(self):
 		del self._NetSvcCtrPtyId
-		self._NetSvcCtrPtyId = None
+		self._NetSvcCtrPtyId = base_types.UninitialisedField(self, 'NetSvcCtrPtyId', PartyIdentification242Choice, False)
 
 	@property
 	def OblgtnDrctn(self):
@@ -72,12 +72,12 @@ class NetObligation3(base_types._BaseFieldType):
 
 	@OblgtnDrctn.setter
 	def OblgtnDrctn(self, value):
-		self._OblgtnDrctn = value if type(value) != base_types.auto else self.make_default("OblgtnDrctn")
+		self._OblgtnDrctn = value if value is not None else base_types.UninitialisedField(self, 'OblgtnDrctn', PaymentReceipt1Code, False)
 
 	@OblgtnDrctn.deleter
 	def OblgtnDrctn(self):
 		del self._OblgtnDrctn
-		self._OblgtnDrctn = None
+		self._OblgtnDrctn = base_types.UninitialisedField(self, 'OblgtnDrctn', PaymentReceipt1Code, False)
 
 	@property
 	def OblgtnId(self):
@@ -85,12 +85,12 @@ class NetObligation3(base_types._BaseFieldType):
 
 	@OblgtnId.setter
 	def OblgtnId(self, value):
-		self._OblgtnId = value if type(value) != base_types.auto else self.make_default("OblgtnId")
+		self._OblgtnId = value if value is not None else base_types.UninitialisedField(self, 'OblgtnId', Max35Text, False)
 
 	@OblgtnId.deleter
 	def OblgtnId(self):
 		del self._OblgtnId
-		self._OblgtnId = None
+		self._OblgtnId = base_types.UninitialisedField(self, 'OblgtnId', Max35Text, False)
 
 	@property
 	def PmtClrCentr(self):
@@ -98,12 +98,12 @@ class NetObligation3(base_types._BaseFieldType):
 
 	@PmtClrCentr.setter
 	def PmtClrCentr(self, value):
-		self._PmtClrCentr = value if type(value) != base_types.auto else self.make_default("PmtClrCentr")
+		self._PmtClrCentr = value if value is not None else base_types.UninitialisedField(self, 'PmtClrCentr', CountryCode, False)
 
 	@PmtClrCentr.deleter
 	def PmtClrCentr(self):
 		del self._PmtClrCentr
-		self._PmtClrCentr = None
+		self._PmtClrCentr = base_types.UninitialisedField(self, 'PmtClrCentr', CountryCode, False)
 
 	@property
 	def PtcptNetgId(self):
@@ -111,12 +111,12 @@ class NetObligation3(base_types._BaseFieldType):
 
 	@PtcptNetgId.setter
 	def PtcptNetgId(self, value):
-		self._PtcptNetgId = value if type(value) != base_types.auto else self.make_default("PtcptNetgId")
+		self._PtcptNetgId = value if value is not None else base_types.UninitialisedField(self, 'PtcptNetgId', NettingIdentification2Choice, False)
 
 	@PtcptNetgId.deleter
 	def PtcptNetgId(self):
 		del self._PtcptNetgId
-		self._PtcptNetgId = None
+		self._PtcptNetgId = base_types.UninitialisedField(self, 'PtcptNetgId', NettingIdentification2Choice, False)
 
 	@property
 	def TxsNb(self):
@@ -124,12 +124,12 @@ class NetObligation3(base_types._BaseFieldType):
 
 	@TxsNb.setter
 	def TxsNb(self, value):
-		self._TxsNb = value if type(value) != base_types.auto else self.make_default("TxsNb")
+		self._TxsNb = value if value is not None else base_types.UninitialisedField(self, 'TxsNb', Max10NumericText, False)
 
 	@TxsNb.deleter
 	def TxsNb(self):
 		del self._TxsNb
-		self._TxsNb = None
+		self._TxsNb = base_types.UninitialisedField(self, 'TxsNb', Max10NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveCurrencyAndAmount, min=1, max=1, mutex_group=None, array=False),

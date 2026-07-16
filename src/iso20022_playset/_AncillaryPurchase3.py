@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalData1 import AdditionalData1
-from ._CreditDebit3Code import CreditDebit3Code
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max15Text import Max15Text
-from ._Max35Text import Max35Text
-from ._Max4Text import Max4Text
-from ._Tax41 import Tax41
+from . import AdditionalData1
+from . import CreditDebit3Code
+from . import ImpliedCurrencyAndAmount
+from . import Max15Text
+from . import Max35Text
+from . import Max4Text
+from . import Tax41
 
 class AncillaryPurchase3(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class AncillaryPurchase3(base_types._BaseFieldType):
 
 	@AddtlData.setter
 	def AddtlData(self, value):
-		self._AddtlData = value if type(value) != base_types.auto else self.make_default("AddtlData")
+		self._AddtlData = value if value is not None else base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@AddtlData.deleter
 	def AddtlData(self):
 		del self._AddtlData
-		self._AddtlData = None
+		self._AddtlData = base_types.UninitialisedField(self, 'AddtlData', AdditionalData1, True)
 
 	@property
 	def Amt(self):
@@ -32,12 +32,12 @@ class AncillaryPurchase3(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ImpliedCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def CdtDbt(self):
@@ -45,12 +45,12 @@ class AncillaryPurchase3(base_types._BaseFieldType):
 
 	@CdtDbt.setter
 	def CdtDbt(self, value):
-		self._CdtDbt = value if type(value) != base_types.auto else self.make_default("CdtDbt")
+		self._CdtDbt = value if value is not None else base_types.UninitialisedField(self, 'CdtDbt', CreditDebit3Code, False)
 
 	@CdtDbt.deleter
 	def CdtDbt(self):
 		del self._CdtDbt
-		self._CdtDbt = None
+		self._CdtDbt = base_types.UninitialisedField(self, 'CdtDbt', CreditDebit3Code, False)
 
 	@property
 	def CdtRsnCd(self):
@@ -58,12 +58,12 @@ class AncillaryPurchase3(base_types._BaseFieldType):
 
 	@CdtRsnCd.setter
 	def CdtRsnCd(self, value):
-		self._CdtRsnCd = value if type(value) != base_types.auto else self.make_default("CdtRsnCd")
+		self._CdtRsnCd = value if value is not None else base_types.UninitialisedField(self, 'CdtRsnCd', Max35Text, False)
 
 	@CdtRsnCd.deleter
 	def CdtRsnCd(self):
 		del self._CdtRsnCd
-		self._CdtRsnCd = None
+		self._CdtRsnCd = base_types.UninitialisedField(self, 'CdtRsnCd', Max35Text, False)
 
 	@property
 	def DocNb(self):
@@ -71,12 +71,12 @@ class AncillaryPurchase3(base_types._BaseFieldType):
 
 	@DocNb.setter
 	def DocNb(self, value):
-		self._DocNb = value if type(value) != base_types.auto else self.make_default("DocNb")
+		self._DocNb = value if value is not None else base_types.UninitialisedField(self, 'DocNb', Max15Text, False)
 
 	@DocNb.deleter
 	def DocNb(self):
 		del self._DocNb
-		self._DocNb = None
+		self._DocNb = base_types.UninitialisedField(self, 'DocNb', Max15Text, False)
 
 	@property
 	def Fee(self):
@@ -84,12 +84,12 @@ class AncillaryPurchase3(base_types._BaseFieldType):
 
 	@Fee.setter
 	def Fee(self, value):
-		self._Fee = value if type(value) != base_types.auto else self.make_default("Fee")
+		self._Fee = value if value is not None else base_types.UninitialisedField(self, 'Fee', ImpliedCurrencyAndAmount, False)
 
 	@Fee.deleter
 	def Fee(self):
 		del self._Fee
-		self._Fee = None
+		self._Fee = base_types.UninitialisedField(self, 'Fee', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def RltdDocNb(self):
@@ -97,12 +97,12 @@ class AncillaryPurchase3(base_types._BaseFieldType):
 
 	@RltdDocNb.setter
 	def RltdDocNb(self, value):
-		self._RltdDocNb = value if type(value) != base_types.auto else self.make_default("RltdDocNb")
+		self._RltdDocNb = value if value is not None else base_types.UninitialisedField(self, 'RltdDocNb', Max15Text, False)
 
 	@RltdDocNb.deleter
 	def RltdDocNb(self):
 		del self._RltdDocNb
-		self._RltdDocNb = None
+		self._RltdDocNb = base_types.UninitialisedField(self, 'RltdDocNb', Max15Text, False)
 
 	@property
 	def SummryCmmdtyId(self):
@@ -110,12 +110,12 @@ class AncillaryPurchase3(base_types._BaseFieldType):
 
 	@SummryCmmdtyId.setter
 	def SummryCmmdtyId(self, value):
-		self._SummryCmmdtyId = value if type(value) != base_types.auto else self.make_default("SummryCmmdtyId")
+		self._SummryCmmdtyId = value if value is not None else base_types.UninitialisedField(self, 'SummryCmmdtyId', Max35Text, False)
 
 	@SummryCmmdtyId.deleter
 	def SummryCmmdtyId(self):
 		del self._SummryCmmdtyId
-		self._SummryCmmdtyId = None
+		self._SummryCmmdtyId = base_types.UninitialisedField(self, 'SummryCmmdtyId', Max35Text, False)
 
 	@property
 	def SvcCtgyCd(self):
@@ -123,12 +123,12 @@ class AncillaryPurchase3(base_types._BaseFieldType):
 
 	@SvcCtgyCd.setter
 	def SvcCtgyCd(self, value):
-		self._SvcCtgyCd = value if type(value) != base_types.auto else self.make_default("SvcCtgyCd")
+		self._SvcCtgyCd = value if value is not None else base_types.UninitialisedField(self, 'SvcCtgyCd', Max4Text, False)
 
 	@SvcCtgyCd.deleter
 	def SvcCtgyCd(self):
 		del self._SvcCtgyCd
-		self._SvcCtgyCd = None
+		self._SvcCtgyCd = base_types.UninitialisedField(self, 'SvcCtgyCd', Max4Text, False)
 
 	@property
 	def SvcPrvdrSvcTp(self):
@@ -136,12 +136,12 @@ class AncillaryPurchase3(base_types._BaseFieldType):
 
 	@SvcPrvdrSvcTp.setter
 	def SvcPrvdrSvcTp(self, value):
-		self._SvcPrvdrSvcTp = value if type(value) != base_types.auto else self.make_default("SvcPrvdrSvcTp")
+		self._SvcPrvdrSvcTp = value if value is not None else base_types.UninitialisedField(self, 'SvcPrvdrSvcTp', Max35Text, False)
 
 	@SvcPrvdrSvcTp.deleter
 	def SvcPrvdrSvcTp(self):
 		del self._SvcPrvdrSvcTp
-		self._SvcPrvdrSvcTp = None
+		self._SvcPrvdrSvcTp = base_types.UninitialisedField(self, 'SvcPrvdrSvcTp', Max35Text, False)
 
 	@property
 	def SvcSubCtgyCd(self):
@@ -149,12 +149,12 @@ class AncillaryPurchase3(base_types._BaseFieldType):
 
 	@SvcSubCtgyCd.setter
 	def SvcSubCtgyCd(self, value):
-		self._SvcSubCtgyCd = value if type(value) != base_types.auto else self.make_default("SvcSubCtgyCd")
+		self._SvcSubCtgyCd = value if value is not None else base_types.UninitialisedField(self, 'SvcSubCtgyCd', Max4Text, False)
 
 	@SvcSubCtgyCd.deleter
 	def SvcSubCtgyCd(self):
 		del self._SvcSubCtgyCd
-		self._SvcSubCtgyCd = None
+		self._SvcSubCtgyCd = base_types.UninitialisedField(self, 'SvcSubCtgyCd', Max4Text, False)
 
 	@property
 	def Tax(self):
@@ -162,12 +162,12 @@ class AncillaryPurchase3(base_types._BaseFieldType):
 
 	@Tax.setter
 	def Tax(self, value):
-		self._Tax = value if type(value) != base_types.auto else self.make_default("Tax")
+		self._Tax = value if value is not None else base_types.UninitialisedField(self, 'Tax', Tax41, True)
 
 	@Tax.deleter
 	def Tax(self):
 		del self._Tax
-		self._Tax = None
+		self._Tax = base_types.UninitialisedField(self, 'Tax', Tax41, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlData', type=AdditionalData1, min=0, max=None, mutex_group=None, array=True),

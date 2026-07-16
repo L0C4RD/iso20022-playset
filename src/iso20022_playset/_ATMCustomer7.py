@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMCustomerProfile6 import ATMCustomerProfile6
-from ._LanguageCode import LanguageCode
-from ._TransactionVerificationResult5 import TransactionVerificationResult5
+from . import ATMCustomerProfile6
+from . import LanguageCode
+from . import TransactionVerificationResult5
 
 class ATMCustomer7(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ATMCustomer7(base_types._BaseFieldType):
 
 	@AuthntcnRslt.setter
 	def AuthntcnRslt(self, value):
-		self._AuthntcnRslt = value if type(value) != base_types.auto else self.make_default("AuthntcnRslt")
+		self._AuthntcnRslt = value if value is not None else base_types.UninitialisedField(self, 'AuthntcnRslt', TransactionVerificationResult5, True)
 
 	@AuthntcnRslt.deleter
 	def AuthntcnRslt(self):
 		del self._AuthntcnRslt
-		self._AuthntcnRslt = None
+		self._AuthntcnRslt = base_types.UninitialisedField(self, 'AuthntcnRslt', TransactionVerificationResult5, True)
 
 	@property
 	def Prfl(self):
@@ -28,12 +28,12 @@ class ATMCustomer7(base_types._BaseFieldType):
 
 	@Prfl.setter
 	def Prfl(self, value):
-		self._Prfl = value if type(value) != base_types.auto else self.make_default("Prfl")
+		self._Prfl = value if value is not None else base_types.UninitialisedField(self, 'Prfl', ATMCustomerProfile6, False)
 
 	@Prfl.deleter
 	def Prfl(self):
 		del self._Prfl
-		self._Prfl = None
+		self._Prfl = base_types.UninitialisedField(self, 'Prfl', ATMCustomerProfile6, False)
 
 	@property
 	def SelctdLang(self):
@@ -41,12 +41,12 @@ class ATMCustomer7(base_types._BaseFieldType):
 
 	@SelctdLang.setter
 	def SelctdLang(self, value):
-		self._SelctdLang = value if type(value) != base_types.auto else self.make_default("SelctdLang")
+		self._SelctdLang = value if value is not None else base_types.UninitialisedField(self, 'SelctdLang', LanguageCode, False)
 
 	@SelctdLang.deleter
 	def SelctdLang(self):
 		del self._SelctdLang
-		self._SelctdLang = None
+		self._SelctdLang = base_types.UninitialisedField(self, 'SelctdLang', LanguageCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AuthntcnRslt', type=TransactionVerificationResult5, min=1, max=None, mutex_group=None, array=True),

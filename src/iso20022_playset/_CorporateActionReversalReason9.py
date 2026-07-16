@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionReversalReason11Choice import CorporateActionReversalReason11Choice
-from ._RestrictedFINXMax256Text import RestrictedFINXMax256Text
+from . import CorporateActionReversalReason11Choice
+from . import RestrictedFINXMax256Text
 
 class CorporateActionReversalReason9(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CorporateActionReversalReason9(base_types._BaseFieldType):
 
 	@AddtlRsnInf.setter
 	def AddtlRsnInf(self, value):
-		self._AddtlRsnInf = value if type(value) != base_types.auto else self.make_default("AddtlRsnInf")
+		self._AddtlRsnInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlRsnInf', RestrictedFINXMax256Text, False)
 
 	@AddtlRsnInf.deleter
 	def AddtlRsnInf(self):
 		del self._AddtlRsnInf
-		self._AddtlRsnInf = None
+		self._AddtlRsnInf = base_types.UninitialisedField(self, 'AddtlRsnInf', RestrictedFINXMax256Text, False)
 
 	@property
 	def Rsn(self):
@@ -27,12 +27,12 @@ class CorporateActionReversalReason9(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', CorporateActionReversalReason11Choice, False)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', CorporateActionReversalReason11Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlRsnInf', type=RestrictedFINXMax256Text, min=0, max=1, mutex_group=None, array=False),

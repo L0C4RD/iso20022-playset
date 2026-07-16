@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DisclosureRequestIdentification1 import DisclosureRequestIdentification1
-from ._Max35Text import Max35Text
-from ._PartyIdentification215 import PartyIdentification215
-from ._SupplementaryData1 import SupplementaryData1
+from . import DisclosureRequestIdentification1
+from . import Max35Text
+from . import PartyIdentification215
+from . import SupplementaryData1
 
 class ShareholderIdentificationDisclosureResponseCancellationAdviceV01(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ShareholderIdentificationDisclosureResponseCancellationAdviceV01(base_type
 
 	@DsclsrRspnId.setter
 	def DsclsrRspnId(self, value):
-		self._DsclsrRspnId = value if type(value) != base_types.auto else self.make_default("DsclsrRspnId")
+		self._DsclsrRspnId = value if value is not None else base_types.UninitialisedField(self, 'DsclsrRspnId', Max35Text, False)
 
 	@DsclsrRspnId.deleter
 	def DsclsrRspnId(self):
 		del self._DsclsrRspnId
-		self._DsclsrRspnId = None
+		self._DsclsrRspnId = base_types.UninitialisedField(self, 'DsclsrRspnId', Max35Text, False)
 
 	@property
 	def IssrDsclsrReqRef(self):
@@ -29,12 +29,12 @@ class ShareholderIdentificationDisclosureResponseCancellationAdviceV01(base_type
 
 	@IssrDsclsrReqRef.setter
 	def IssrDsclsrReqRef(self, value):
-		self._IssrDsclsrReqRef = value if type(value) != base_types.auto else self.make_default("IssrDsclsrReqRef")
+		self._IssrDsclsrReqRef = value if value is not None else base_types.UninitialisedField(self, 'IssrDsclsrReqRef', DisclosureRequestIdentification1, False)
 
 	@IssrDsclsrReqRef.deleter
 	def IssrDsclsrReqRef(self):
 		del self._IssrDsclsrReqRef
-		self._IssrDsclsrReqRef = None
+		self._IssrDsclsrReqRef = base_types.UninitialisedField(self, 'IssrDsclsrReqRef', DisclosureRequestIdentification1, False)
 
 	@property
 	def RspndgIntrmy(self):
@@ -42,12 +42,12 @@ class ShareholderIdentificationDisclosureResponseCancellationAdviceV01(base_type
 
 	@RspndgIntrmy.setter
 	def RspndgIntrmy(self, value):
-		self._RspndgIntrmy = value if type(value) != base_types.auto else self.make_default("RspndgIntrmy")
+		self._RspndgIntrmy = value if value is not None else base_types.UninitialisedField(self, 'RspndgIntrmy', PartyIdentification215, False)
 
 	@RspndgIntrmy.deleter
 	def RspndgIntrmy(self):
 		del self._RspndgIntrmy
-		self._RspndgIntrmy = None
+		self._RspndgIntrmy = base_types.UninitialisedField(self, 'RspndgIntrmy', PartyIdentification215, False)
 
 	@property
 	def SplmtryData(self):
@@ -55,12 +55,12 @@ class ShareholderIdentificationDisclosureResponseCancellationAdviceV01(base_type
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DsclsrRspnId', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

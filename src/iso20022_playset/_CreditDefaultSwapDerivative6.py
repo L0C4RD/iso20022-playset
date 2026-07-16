@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CreditDefaultSwapSingleName2 import CreditDefaultSwapSingleName2
-from ._ISINOct2015Identifier import ISINOct2015Identifier
+from . import CreditDefaultSwapSingleName2
+from . import ISINOct2015Identifier
 
 class CreditDefaultSwapDerivative6(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CreditDefaultSwapDerivative6(base_types._BaseFieldType):
 
 	@OblgtnId.setter
 	def OblgtnId(self, value):
-		self._OblgtnId = value if type(value) != base_types.auto else self.make_default("OblgtnId")
+		self._OblgtnId = value if value is not None else base_types.UninitialisedField(self, 'OblgtnId', ISINOct2015Identifier, False)
 
 	@OblgtnId.deleter
 	def OblgtnId(self):
 		del self._OblgtnId
-		self._OblgtnId = None
+		self._OblgtnId = base_types.UninitialisedField(self, 'OblgtnId', ISINOct2015Identifier, False)
 
 	@property
 	def SnglNm(self):
@@ -27,12 +27,12 @@ class CreditDefaultSwapDerivative6(base_types._BaseFieldType):
 
 	@SnglNm.setter
 	def SnglNm(self, value):
-		self._SnglNm = value if type(value) != base_types.auto else self.make_default("SnglNm")
+		self._SnglNm = value if value is not None else base_types.UninitialisedField(self, 'SnglNm', CreditDefaultSwapSingleName2, False)
 
 	@SnglNm.deleter
 	def SnglNm(self):
 		del self._SnglNm
-		self._SnglNm = None
+		self._SnglNm = base_types.UninitialisedField(self, 'SnglNm', CreditDefaultSwapSingleName2, False)
 
 	@property
 	def UndrlygCdtDfltSwpId(self):
@@ -40,12 +40,12 @@ class CreditDefaultSwapDerivative6(base_types._BaseFieldType):
 
 	@UndrlygCdtDfltSwpId.setter
 	def UndrlygCdtDfltSwpId(self, value):
-		self._UndrlygCdtDfltSwpId = value if type(value) != base_types.auto else self.make_default("UndrlygCdtDfltSwpId")
+		self._UndrlygCdtDfltSwpId = value if value is not None else base_types.UninitialisedField(self, 'UndrlygCdtDfltSwpId', ISINOct2015Identifier, False)
 
 	@UndrlygCdtDfltSwpId.deleter
 	def UndrlygCdtDfltSwpId(self):
 		del self._UndrlygCdtDfltSwpId
-		self._UndrlygCdtDfltSwpId = None
+		self._UndrlygCdtDfltSwpId = base_types.UninitialisedField(self, 'UndrlygCdtDfltSwpId', ISINOct2015Identifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OblgtnId', type=ISINOct2015Identifier, min=1, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ConsentStatus4Choice import ConsentStatus4Choice
-from ._PendingStatus20Choice import PendingStatus20Choice
-from ._RejectionStatus20Choice import RejectionStatus20Choice
+from . import ConsentStatus4Choice
+from . import PendingStatus20Choice
+from . import RejectionStatus20Choice
 
 class ResponseStatus6Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ResponseStatus6Choice(base_types._BaseFieldType):
 
 	@Cnsntd.setter
 	def Cnsntd(self, value):
-		self._Cnsntd = value if type(value) != base_types.auto else self.make_default("Cnsntd")
+		self._Cnsntd = value if value is not None else base_types.UninitialisedField(self, 'Cnsntd', ConsentStatus4Choice, False)
 
 	@Cnsntd.deleter
 	def Cnsntd(self):
 		del self._Cnsntd
-		self._Cnsntd = None
+		self._Cnsntd = base_types.UninitialisedField(self, 'Cnsntd', ConsentStatus4Choice, False)
 
 	@property
 	def Pdg(self):
@@ -28,12 +28,12 @@ class ResponseStatus6Choice(base_types._BaseFieldType):
 
 	@Pdg.setter
 	def Pdg(self, value):
-		self._Pdg = value if type(value) != base_types.auto else self.make_default("Pdg")
+		self._Pdg = value if value is not None else base_types.UninitialisedField(self, 'Pdg', PendingStatus20Choice, False)
 
 	@Pdg.deleter
 	def Pdg(self):
 		del self._Pdg
-		self._Pdg = None
+		self._Pdg = base_types.UninitialisedField(self, 'Pdg', PendingStatus20Choice, False)
 
 	@property
 	def Rjctd(self):
@@ -41,12 +41,12 @@ class ResponseStatus6Choice(base_types._BaseFieldType):
 
 	@Rjctd.setter
 	def Rjctd(self, value):
-		self._Rjctd = value if type(value) != base_types.auto else self.make_default("Rjctd")
+		self._Rjctd = value if value is not None else base_types.UninitialisedField(self, 'Rjctd', RejectionStatus20Choice, False)
 
 	@Rjctd.deleter
 	def Rjctd(self):
 		del self._Rjctd
-		self._Rjctd = None
+		self._Rjctd = base_types.UninitialisedField(self, 'Rjctd', RejectionStatus20Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cnsntd', type=ConsentStatus4Choice, min=0, max=1, mutex_group=1, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Investment2Choice import Investment2Choice
-from ._SupplementaryData1 import SupplementaryData1
+from . import Investment2Choice
+from . import SupplementaryData1
 
 class CCPInvestmentsReportV02(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CCPInvestmentsReportV02(base_types._BaseFieldType):
 
 	@Invstmt.setter
 	def Invstmt(self, value):
-		self._Invstmt = value if type(value) != base_types.auto else self.make_default("Invstmt")
+		self._Invstmt = value if value is not None else base_types.UninitialisedField(self, 'Invstmt', Investment2Choice, True)
 
 	@Invstmt.deleter
 	def Invstmt(self):
 		del self._Invstmt
-		self._Invstmt = None
+		self._Invstmt = base_types.UninitialisedField(self, 'Invstmt', Investment2Choice, True)
 
 	@property
 	def SplmtryData(self):
@@ -27,12 +27,12 @@ class CCPInvestmentsReportV02(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Invstmt', type=Investment2Choice, min=1, max=None, mutex_group=None, array=True),

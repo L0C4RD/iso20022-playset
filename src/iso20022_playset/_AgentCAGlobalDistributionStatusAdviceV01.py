@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionInformation1 import CorporateActionInformation1
-from ._DocumentIdentification8 import DocumentIdentification8
-from ._GlobalDistributionStatus1 import GlobalDistributionStatus1
-from ._IndividualMovementStatus1 import IndividualMovementStatus1
+from . import CorporateActionInformation1
+from . import DocumentIdentification8
+from . import GlobalDistributionStatus1
+from . import IndividualMovementStatus1
 
 class AgentCAGlobalDistributionStatusAdviceV01(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class AgentCAGlobalDistributionStatusAdviceV01(base_types._BaseFieldType):
 
 	@AgtCAGblDstrbtnAuthstnReqId.setter
 	def AgtCAGblDstrbtnAuthstnReqId(self, value):
-		self._AgtCAGblDstrbtnAuthstnReqId = value if type(value) != base_types.auto else self.make_default("AgtCAGblDstrbtnAuthstnReqId")
+		self._AgtCAGblDstrbtnAuthstnReqId = value if value is not None else base_types.UninitialisedField(self, 'AgtCAGblDstrbtnAuthstnReqId', DocumentIdentification8, False)
 
 	@AgtCAGblDstrbtnAuthstnReqId.deleter
 	def AgtCAGblDstrbtnAuthstnReqId(self):
 		del self._AgtCAGblDstrbtnAuthstnReqId
-		self._AgtCAGblDstrbtnAuthstnReqId = None
+		self._AgtCAGblDstrbtnAuthstnReqId = base_types.UninitialisedField(self, 'AgtCAGblDstrbtnAuthstnReqId', DocumentIdentification8, False)
 
 	@property
 	def CorpActnGnlInf(self):
@@ -29,12 +29,12 @@ class AgentCAGlobalDistributionStatusAdviceV01(base_types._BaseFieldType):
 
 	@CorpActnGnlInf.setter
 	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != base_types.auto else self.make_default("CorpActnGnlInf")
+		self._CorpActnGnlInf = value if value is not None else base_types.UninitialisedField(self, 'CorpActnGnlInf', CorporateActionInformation1, False)
 
 	@CorpActnGnlInf.deleter
 	def CorpActnGnlInf(self):
 		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
+		self._CorpActnGnlInf = base_types.UninitialisedField(self, 'CorpActnGnlInf', CorporateActionInformation1, False)
 
 	@property
 	def GblMvmntSts(self):
@@ -42,12 +42,12 @@ class AgentCAGlobalDistributionStatusAdviceV01(base_types._BaseFieldType):
 
 	@GblMvmntSts.setter
 	def GblMvmntSts(self, value):
-		self._GblMvmntSts = value if type(value) != base_types.auto else self.make_default("GblMvmntSts")
+		self._GblMvmntSts = value if value is not None else base_types.UninitialisedField(self, 'GblMvmntSts', GlobalDistributionStatus1, False)
 
 	@GblMvmntSts.deleter
 	def GblMvmntSts(self):
 		del self._GblMvmntSts
-		self._GblMvmntSts = None
+		self._GblMvmntSts = base_types.UninitialisedField(self, 'GblMvmntSts', GlobalDistributionStatus1, False)
 
 	@property
 	def Id(self):
@@ -55,12 +55,12 @@ class AgentCAGlobalDistributionStatusAdviceV01(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', DocumentIdentification8, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', DocumentIdentification8, False)
 
 	@property
 	def IndvMvmntSts(self):
@@ -68,12 +68,12 @@ class AgentCAGlobalDistributionStatusAdviceV01(base_types._BaseFieldType):
 
 	@IndvMvmntSts.setter
 	def IndvMvmntSts(self, value):
-		self._IndvMvmntSts = value if type(value) != base_types.auto else self.make_default("IndvMvmntSts")
+		self._IndvMvmntSts = value if value is not None else base_types.UninitialisedField(self, 'IndvMvmntSts', IndividualMovementStatus1, True)
 
 	@IndvMvmntSts.deleter
 	def IndvMvmntSts(self):
 		del self._IndvMvmntSts
-		self._IndvMvmntSts = None
+		self._IndvMvmntSts = base_types.UninitialisedField(self, 'IndvMvmntSts', IndividualMovementStatus1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AgtCAGblDstrbtnAuthstnReqId', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),

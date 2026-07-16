@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AbortData7 import AbortData7
-from ._CardPaymentEnvironment82 import CardPaymentEnvironment82
-from ._PaymentContext30 import PaymentContext30
-from ._SupplementaryData1 import SupplementaryData1
+from . import AbortData7
+from . import CardPaymentEnvironment82
+from . import PaymentContext30
+from . import SupplementaryData1
 
 class SystemAbort9(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class SystemAbort9(base_types._BaseFieldType):
 
 	@Cntxt.setter
 	def Cntxt(self, value):
-		self._Cntxt = value if type(value) != base_types.auto else self.make_default("Cntxt")
+		self._Cntxt = value if value is not None else base_types.UninitialisedField(self, 'Cntxt', PaymentContext30, False)
 
 	@Cntxt.deleter
 	def Cntxt(self):
 		del self._Cntxt
-		self._Cntxt = None
+		self._Cntxt = base_types.UninitialisedField(self, 'Cntxt', PaymentContext30, False)
 
 	@property
 	def Envt(self):
@@ -29,12 +29,12 @@ class SystemAbort9(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+		self._Envt = value if value is not None else base_types.UninitialisedField(self, 'Envt', CardPaymentEnvironment82, False)
 
 	@Envt.deleter
 	def Envt(self):
 		del self._Envt
-		self._Envt = None
+		self._Envt = base_types.UninitialisedField(self, 'Envt', CardPaymentEnvironment82, False)
 
 	@property
 	def SplmtryData(self):
@@ -42,12 +42,12 @@ class SystemAbort9(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def SysAbrt(self):
@@ -55,12 +55,12 @@ class SystemAbort9(base_types._BaseFieldType):
 
 	@SysAbrt.setter
 	def SysAbrt(self, value):
-		self._SysAbrt = value if type(value) != base_types.auto else self.make_default("SysAbrt")
+		self._SysAbrt = value if value is not None else base_types.UninitialisedField(self, 'SysAbrt', AbortData7, False)
 
 	@SysAbrt.deleter
 	def SysAbrt(self):
 		del self._SysAbrt
-		self._SysAbrt = None
+		self._SysAbrt = base_types.UninitialisedField(self, 'SysAbrt', AbortData7, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cntxt', type=PaymentContext30, min=1, max=1, mutex_group=None, array=False),

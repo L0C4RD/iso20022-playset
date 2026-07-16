@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BalanceFormat11Choice import BalanceFormat11Choice
-from ._InstructedBalance20 import InstructedBalance20
-from ._PendingBalance7 import PendingBalance7
-from ._Quantity49Choice import Quantity49Choice
-from ._SignedQuantityFormat10 import SignedQuantityFormat10
+from . import BalanceFormat11Choice
+from . import InstructedBalance20
+from . import PendingBalance7
+from . import Quantity49Choice
+from . import SignedQuantityFormat10
 
 class CorporateActionBalance50(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class CorporateActionBalance50(base_types._BaseFieldType):
 
 	@BlckdBal.setter
 	def BlckdBal(self, value):
-		self._BlckdBal = value if type(value) != base_types.auto else self.make_default("BlckdBal")
+		self._BlckdBal = value if value is not None else base_types.UninitialisedField(self, 'BlckdBal', SignedQuantityFormat10, False)
 
 	@BlckdBal.deleter
 	def BlckdBal(self):
 		del self._BlckdBal
-		self._BlckdBal = None
+		self._BlckdBal = base_types.UninitialisedField(self, 'BlckdBal', SignedQuantityFormat10, False)
 
 	@property
 	def BrrwdBal(self):
@@ -30,12 +30,12 @@ class CorporateActionBalance50(base_types._BaseFieldType):
 
 	@BrrwdBal.setter
 	def BrrwdBal(self, value):
-		self._BrrwdBal = value if type(value) != base_types.auto else self.make_default("BrrwdBal")
+		self._BrrwdBal = value if value is not None else base_types.UninitialisedField(self, 'BrrwdBal', SignedQuantityFormat10, False)
 
 	@BrrwdBal.deleter
 	def BrrwdBal(self):
 		del self._BrrwdBal
-		self._BrrwdBal = None
+		self._BrrwdBal = base_types.UninitialisedField(self, 'BrrwdBal', SignedQuantityFormat10, False)
 
 	@property
 	def CollInBal(self):
@@ -43,12 +43,12 @@ class CorporateActionBalance50(base_types._BaseFieldType):
 
 	@CollInBal.setter
 	def CollInBal(self, value):
-		self._CollInBal = value if type(value) != base_types.auto else self.make_default("CollInBal")
+		self._CollInBal = value if value is not None else base_types.UninitialisedField(self, 'CollInBal', SignedQuantityFormat10, False)
 
 	@CollInBal.deleter
 	def CollInBal(self):
 		del self._CollInBal
-		self._CollInBal = None
+		self._CollInBal = base_types.UninitialisedField(self, 'CollInBal', SignedQuantityFormat10, False)
 
 	@property
 	def CollOutBal(self):
@@ -56,12 +56,12 @@ class CorporateActionBalance50(base_types._BaseFieldType):
 
 	@CollOutBal.setter
 	def CollOutBal(self, value):
-		self._CollOutBal = value if type(value) != base_types.auto else self.make_default("CollOutBal")
+		self._CollOutBal = value if value is not None else base_types.UninitialisedField(self, 'CollOutBal', SignedQuantityFormat10, False)
 
 	@CollOutBal.deleter
 	def CollOutBal(self):
 		del self._CollOutBal
-		self._CollOutBal = None
+		self._CollOutBal = base_types.UninitialisedField(self, 'CollOutBal', SignedQuantityFormat10, False)
 
 	@property
 	def InTrnsShipmntBal(self):
@@ -69,12 +69,12 @@ class CorporateActionBalance50(base_types._BaseFieldType):
 
 	@InTrnsShipmntBal.setter
 	def InTrnsShipmntBal(self, value):
-		self._InTrnsShipmntBal = value if type(value) != base_types.auto else self.make_default("InTrnsShipmntBal")
+		self._InTrnsShipmntBal = value if value is not None else base_types.UninitialisedField(self, 'InTrnsShipmntBal', SignedQuantityFormat10, False)
 
 	@InTrnsShipmntBal.deleter
 	def InTrnsShipmntBal(self):
 		del self._InTrnsShipmntBal
-		self._InTrnsShipmntBal = None
+		self._InTrnsShipmntBal = base_types.UninitialisedField(self, 'InTrnsShipmntBal', SignedQuantityFormat10, False)
 
 	@property
 	def OblgtdBal(self):
@@ -82,12 +82,12 @@ class CorporateActionBalance50(base_types._BaseFieldType):
 
 	@OblgtdBal.setter
 	def OblgtdBal(self, value):
-		self._OblgtdBal = value if type(value) != base_types.auto else self.make_default("OblgtdBal")
+		self._OblgtdBal = value if value is not None else base_types.UninitialisedField(self, 'OblgtdBal', SignedQuantityFormat10, False)
 
 	@OblgtdBal.deleter
 	def OblgtdBal(self):
 		del self._OblgtdBal
-		self._OblgtdBal = None
+		self._OblgtdBal = base_types.UninitialisedField(self, 'OblgtdBal', SignedQuantityFormat10, False)
 
 	@property
 	def OnLnBal(self):
@@ -95,12 +95,12 @@ class CorporateActionBalance50(base_types._BaseFieldType):
 
 	@OnLnBal.setter
 	def OnLnBal(self, value):
-		self._OnLnBal = value if type(value) != base_types.auto else self.make_default("OnLnBal")
+		self._OnLnBal = value if value is not None else base_types.UninitialisedField(self, 'OnLnBal', SignedQuantityFormat10, False)
 
 	@OnLnBal.deleter
 	def OnLnBal(self):
 		del self._OnLnBal
-		self._OnLnBal = None
+		self._OnLnBal = base_types.UninitialisedField(self, 'OnLnBal', SignedQuantityFormat10, False)
 
 	@property
 	def OutForRegnBal(self):
@@ -108,12 +108,12 @@ class CorporateActionBalance50(base_types._BaseFieldType):
 
 	@OutForRegnBal.setter
 	def OutForRegnBal(self, value):
-		self._OutForRegnBal = value if type(value) != base_types.auto else self.make_default("OutForRegnBal")
+		self._OutForRegnBal = value if value is not None else base_types.UninitialisedField(self, 'OutForRegnBal', SignedQuantityFormat10, False)
 
 	@OutForRegnBal.deleter
 	def OutForRegnBal(self):
 		del self._OutForRegnBal
-		self._OutForRegnBal = None
+		self._OutForRegnBal = base_types.UninitialisedField(self, 'OutForRegnBal', SignedQuantityFormat10, False)
 
 	@property
 	def PdgDlvryBal(self):
@@ -121,12 +121,12 @@ class CorporateActionBalance50(base_types._BaseFieldType):
 
 	@PdgDlvryBal.setter
 	def PdgDlvryBal(self, value):
-		self._PdgDlvryBal = value if type(value) != base_types.auto else self.make_default("PdgDlvryBal")
+		self._PdgDlvryBal = value if value is not None else base_types.UninitialisedField(self, 'PdgDlvryBal', PendingBalance7, True)
 
 	@PdgDlvryBal.deleter
 	def PdgDlvryBal(self):
 		del self._PdgDlvryBal
-		self._PdgDlvryBal = None
+		self._PdgDlvryBal = base_types.UninitialisedField(self, 'PdgDlvryBal', PendingBalance7, True)
 
 	@property
 	def PdgRctBal(self):
@@ -134,12 +134,12 @@ class CorporateActionBalance50(base_types._BaseFieldType):
 
 	@PdgRctBal.setter
 	def PdgRctBal(self, value):
-		self._PdgRctBal = value if type(value) != base_types.auto else self.make_default("PdgRctBal")
+		self._PdgRctBal = value if value is not None else base_types.UninitialisedField(self, 'PdgRctBal', PendingBalance7, True)
 
 	@PdgRctBal.deleter
 	def PdgRctBal(self):
 		del self._PdgRctBal
-		self._PdgRctBal = None
+		self._PdgRctBal = base_types.UninitialisedField(self, 'PdgRctBal', PendingBalance7, True)
 
 	@property
 	def RegdBal(self):
@@ -147,12 +147,12 @@ class CorporateActionBalance50(base_types._BaseFieldType):
 
 	@RegdBal.setter
 	def RegdBal(self, value):
-		self._RegdBal = value if type(value) != base_types.auto else self.make_default("RegdBal")
+		self._RegdBal = value if value is not None else base_types.UninitialisedField(self, 'RegdBal', SignedQuantityFormat10, False)
 
 	@RegdBal.deleter
 	def RegdBal(self):
 		del self._RegdBal
-		self._RegdBal = None
+		self._RegdBal = base_types.UninitialisedField(self, 'RegdBal', SignedQuantityFormat10, False)
 
 	@property
 	def StrtPosBal(self):
@@ -160,12 +160,12 @@ class CorporateActionBalance50(base_types._BaseFieldType):
 
 	@StrtPosBal.setter
 	def StrtPosBal(self, value):
-		self._StrtPosBal = value if type(value) != base_types.auto else self.make_default("StrtPosBal")
+		self._StrtPosBal = value if value is not None else base_types.UninitialisedField(self, 'StrtPosBal', SignedQuantityFormat10, False)
 
 	@StrtPosBal.deleter
 	def StrtPosBal(self):
 		del self._StrtPosBal
-		self._StrtPosBal = None
+		self._StrtPosBal = base_types.UninitialisedField(self, 'StrtPosBal', SignedQuantityFormat10, False)
 
 	@property
 	def SttlmPosBal(self):
@@ -173,12 +173,12 @@ class CorporateActionBalance50(base_types._BaseFieldType):
 
 	@SttlmPosBal.setter
 	def SttlmPosBal(self, value):
-		self._SttlmPosBal = value if type(value) != base_types.auto else self.make_default("SttlmPosBal")
+		self._SttlmPosBal = value if value is not None else base_types.UninitialisedField(self, 'SttlmPosBal', SignedQuantityFormat10, False)
 
 	@SttlmPosBal.deleter
 	def SttlmPosBal(self):
 		del self._SttlmPosBal
-		self._SttlmPosBal = None
+		self._SttlmPosBal = base_types.UninitialisedField(self, 'SttlmPosBal', SignedQuantityFormat10, False)
 
 	@property
 	def TradDtPosBal(self):
@@ -186,12 +186,12 @@ class CorporateActionBalance50(base_types._BaseFieldType):
 
 	@TradDtPosBal.setter
 	def TradDtPosBal(self, value):
-		self._TradDtPosBal = value if type(value) != base_types.auto else self.make_default("TradDtPosBal")
+		self._TradDtPosBal = value if value is not None else base_types.UninitialisedField(self, 'TradDtPosBal', SignedQuantityFormat10, False)
 
 	@TradDtPosBal.deleter
 	def TradDtPosBal(self):
 		del self._TradDtPosBal
-		self._TradDtPosBal = None
+		self._TradDtPosBal = base_types.UninitialisedField(self, 'TradDtPosBal', SignedQuantityFormat10, False)
 
 	@property
 	def TtlElgblBal(self):
@@ -199,12 +199,12 @@ class CorporateActionBalance50(base_types._BaseFieldType):
 
 	@TtlElgblBal.setter
 	def TtlElgblBal(self, value):
-		self._TtlElgblBal = value if type(value) != base_types.auto else self.make_default("TtlElgblBal")
+		self._TtlElgblBal = value if value is not None else base_types.UninitialisedField(self, 'TtlElgblBal', Quantity49Choice, False)
 
 	@TtlElgblBal.deleter
 	def TtlElgblBal(self):
 		del self._TtlElgblBal
-		self._TtlElgblBal = None
+		self._TtlElgblBal = base_types.UninitialisedField(self, 'TtlElgblBal', Quantity49Choice, False)
 
 	@property
 	def TtlInstdBalDtls(self):
@@ -212,12 +212,12 @@ class CorporateActionBalance50(base_types._BaseFieldType):
 
 	@TtlInstdBalDtls.setter
 	def TtlInstdBalDtls(self, value):
-		self._TtlInstdBalDtls = value if type(value) != base_types.auto else self.make_default("TtlInstdBalDtls")
+		self._TtlInstdBalDtls = value if value is not None else base_types.UninitialisedField(self, 'TtlInstdBalDtls', InstructedBalance20, False)
 
 	@TtlInstdBalDtls.deleter
 	def TtlInstdBalDtls(self):
 		del self._TtlInstdBalDtls
-		self._TtlInstdBalDtls = None
+		self._TtlInstdBalDtls = base_types.UninitialisedField(self, 'TtlInstdBalDtls', InstructedBalance20, False)
 
 	@property
 	def UinstdBal(self):
@@ -225,12 +225,12 @@ class CorporateActionBalance50(base_types._BaseFieldType):
 
 	@UinstdBal.setter
 	def UinstdBal(self, value):
-		self._UinstdBal = value if type(value) != base_types.auto else self.make_default("UinstdBal")
+		self._UinstdBal = value if value is not None else base_types.UninitialisedField(self, 'UinstdBal', BalanceFormat11Choice, False)
 
 	@UinstdBal.deleter
 	def UinstdBal(self):
 		del self._UinstdBal
-		self._UinstdBal = None
+		self._UinstdBal = base_types.UninitialisedField(self, 'UinstdBal', BalanceFormat11Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BlckdBal', type=SignedQuantityFormat10, min=0, max=1, mutex_group=None, array=False),

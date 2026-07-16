@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalReference10 import AdditionalReference10
-from ._AdditionalReference11 import AdditionalReference11
-from ._Extension1 import Extension1
-from ._IndividualPerson8 import IndividualPerson8
-from ._InvestmentAccount69 import InvestmentAccount69
-from ._MarketPracticeVersion1 import MarketPracticeVersion1
-from ._MessageIdentification1 import MessageIdentification1
-from ._Organisation36 import Organisation36
-from ._PartyIdentification132 import PartyIdentification132
-from ._PortfolioTransfer10 import PortfolioTransfer10
+from . import AdditionalReference10
+from . import AdditionalReference11
+from . import Extension1
+from . import IndividualPerson8
+from . import InvestmentAccount69
+from . import MarketPracticeVersion1
+from . import MessageIdentification1
+from . import Organisation36
+from . import PartyIdentification132
+from . import PortfolioTransfer10
 
 class PortfolioTransferConfirmationV11(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class PortfolioTransferConfirmationV11(base_types._BaseFieldType):
 
 	@MktPrctcVrsn.setter
 	def MktPrctcVrsn(self, value):
-		self._MktPrctcVrsn = value if type(value) != base_types.auto else self.make_default("MktPrctcVrsn")
+		self._MktPrctcVrsn = value if value is not None else base_types.UninitialisedField(self, 'MktPrctcVrsn', MarketPracticeVersion1, False)
 
 	@MktPrctcVrsn.deleter
 	def MktPrctcVrsn(self):
 		del self._MktPrctcVrsn
-		self._MktPrctcVrsn = None
+		self._MktPrctcVrsn = base_types.UninitialisedField(self, 'MktPrctcVrsn', MarketPracticeVersion1, False)
 
 	@property
 	def MsgRef(self):
@@ -35,12 +35,12 @@ class PortfolioTransferConfirmationV11(base_types._BaseFieldType):
 
 	@MsgRef.setter
 	def MsgRef(self, value):
-		self._MsgRef = value if type(value) != base_types.auto else self.make_default("MsgRef")
+		self._MsgRef = value if value is not None else base_types.UninitialisedField(self, 'MsgRef', MessageIdentification1, False)
 
 	@MsgRef.deleter
 	def MsgRef(self):
 		del self._MsgRef
-		self._MsgRef = None
+		self._MsgRef = base_types.UninitialisedField(self, 'MsgRef', MessageIdentification1, False)
 
 	@property
 	def NmneeAcct(self):
@@ -48,12 +48,12 @@ class PortfolioTransferConfirmationV11(base_types._BaseFieldType):
 
 	@NmneeAcct.setter
 	def NmneeAcct(self, value):
-		self._NmneeAcct = value if type(value) != base_types.auto else self.make_default("NmneeAcct")
+		self._NmneeAcct = value if value is not None else base_types.UninitialisedField(self, 'NmneeAcct', InvestmentAccount69, False)
 
 	@NmneeAcct.deleter
 	def NmneeAcct(self):
 		del self._NmneeAcct
-		self._NmneeAcct = None
+		self._NmneeAcct = base_types.UninitialisedField(self, 'NmneeAcct', InvestmentAccount69, False)
 
 	@property
 	def OthrCorpInvstr(self):
@@ -61,12 +61,12 @@ class PortfolioTransferConfirmationV11(base_types._BaseFieldType):
 
 	@OthrCorpInvstr.setter
 	def OthrCorpInvstr(self, value):
-		self._OthrCorpInvstr = value if type(value) != base_types.auto else self.make_default("OthrCorpInvstr")
+		self._OthrCorpInvstr = value if value is not None else base_types.UninitialisedField(self, 'OthrCorpInvstr', Organisation36, True)
 
 	@OthrCorpInvstr.deleter
 	def OthrCorpInvstr(self):
 		del self._OthrCorpInvstr
-		self._OthrCorpInvstr = None
+		self._OthrCorpInvstr = base_types.UninitialisedField(self, 'OthrCorpInvstr', Organisation36, True)
 
 	@property
 	def OthrIndvInvstr(self):
@@ -74,12 +74,12 @@ class PortfolioTransferConfirmationV11(base_types._BaseFieldType):
 
 	@OthrIndvInvstr.setter
 	def OthrIndvInvstr(self, value):
-		self._OthrIndvInvstr = value if type(value) != base_types.auto else self.make_default("OthrIndvInvstr")
+		self._OthrIndvInvstr = value if value is not None else base_types.UninitialisedField(self, 'OthrIndvInvstr', IndividualPerson8, True)
 
 	@OthrIndvInvstr.deleter
 	def OthrIndvInvstr(self):
 		del self._OthrIndvInvstr
-		self._OthrIndvInvstr = None
+		self._OthrIndvInvstr = base_types.UninitialisedField(self, 'OthrIndvInvstr', IndividualPerson8, True)
 
 	@property
 	def PdctTrf(self):
@@ -87,12 +87,12 @@ class PortfolioTransferConfirmationV11(base_types._BaseFieldType):
 
 	@PdctTrf.setter
 	def PdctTrf(self, value):
-		self._PdctTrf = value if type(value) != base_types.auto else self.make_default("PdctTrf")
+		self._PdctTrf = value if value is not None else base_types.UninitialisedField(self, 'PdctTrf', PortfolioTransfer10, True)
 
 	@PdctTrf.deleter
 	def PdctTrf(self):
 		del self._PdctTrf
-		self._PdctTrf = None
+		self._PdctTrf = base_types.UninitialisedField(self, 'PdctTrf', PortfolioTransfer10, True)
 
 	@property
 	def PmryCorpInvstr(self):
@@ -100,12 +100,12 @@ class PortfolioTransferConfirmationV11(base_types._BaseFieldType):
 
 	@PmryCorpInvstr.setter
 	def PmryCorpInvstr(self, value):
-		self._PmryCorpInvstr = value if type(value) != base_types.auto else self.make_default("PmryCorpInvstr")
+		self._PmryCorpInvstr = value if value is not None else base_types.UninitialisedField(self, 'PmryCorpInvstr', Organisation36, False)
 
 	@PmryCorpInvstr.deleter
 	def PmryCorpInvstr(self):
 		del self._PmryCorpInvstr
-		self._PmryCorpInvstr = None
+		self._PmryCorpInvstr = base_types.UninitialisedField(self, 'PmryCorpInvstr', Organisation36, False)
 
 	@property
 	def PmryIndvInvstr(self):
@@ -113,12 +113,12 @@ class PortfolioTransferConfirmationV11(base_types._BaseFieldType):
 
 	@PmryIndvInvstr.setter
 	def PmryIndvInvstr(self, value):
-		self._PmryIndvInvstr = value if type(value) != base_types.auto else self.make_default("PmryIndvInvstr")
+		self._PmryIndvInvstr = value if value is not None else base_types.UninitialisedField(self, 'PmryIndvInvstr', IndividualPerson8, False)
 
 	@PmryIndvInvstr.deleter
 	def PmryIndvInvstr(self):
 		del self._PmryIndvInvstr
-		self._PmryIndvInvstr = None
+		self._PmryIndvInvstr = base_types.UninitialisedField(self, 'PmryIndvInvstr', IndividualPerson8, False)
 
 	@property
 	def PoolRef(self):
@@ -126,12 +126,12 @@ class PortfolioTransferConfirmationV11(base_types._BaseFieldType):
 
 	@PoolRef.setter
 	def PoolRef(self, value):
-		self._PoolRef = value if type(value) != base_types.auto else self.make_default("PoolRef")
+		self._PoolRef = value if value is not None else base_types.UninitialisedField(self, 'PoolRef', AdditionalReference11, False)
 
 	@PoolRef.deleter
 	def PoolRef(self):
 		del self._PoolRef
-		self._PoolRef = None
+		self._PoolRef = base_types.UninitialisedField(self, 'PoolRef', AdditionalReference11, False)
 
 	@property
 	def PrvsRef(self):
@@ -139,12 +139,12 @@ class PortfolioTransferConfirmationV11(base_types._BaseFieldType):
 
 	@PrvsRef.setter
 	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
+		self._PrvsRef = value if value is not None else base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference10, False)
 
 	@PrvsRef.deleter
 	def PrvsRef(self):
 		del self._PrvsRef
-		self._PrvsRef = None
+		self._PrvsRef = base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference10, False)
 
 	@property
 	def RegdHldr(self):
@@ -152,12 +152,12 @@ class PortfolioTransferConfirmationV11(base_types._BaseFieldType):
 
 	@RegdHldr.setter
 	def RegdHldr(self, value):
-		self._RegdHldr = value if type(value) != base_types.auto else self.make_default("RegdHldr")
+		self._RegdHldr = value if value is not None else base_types.UninitialisedField(self, 'RegdHldr', IndividualPerson8, False)
 
 	@RegdHldr.deleter
 	def RegdHldr(self):
 		del self._RegdHldr
-		self._RegdHldr = None
+		self._RegdHldr = base_types.UninitialisedField(self, 'RegdHldr', IndividualPerson8, False)
 
 	@property
 	def RltdRef(self):
@@ -165,12 +165,12 @@ class PortfolioTransferConfirmationV11(base_types._BaseFieldType):
 
 	@RltdRef.setter
 	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
+		self._RltdRef = value if value is not None else base_types.UninitialisedField(self, 'RltdRef', AdditionalReference10, False)
 
 	@RltdRef.deleter
 	def RltdRef(self):
 		del self._RltdRef
-		self._RltdRef = None
+		self._RltdRef = base_types.UninitialisedField(self, 'RltdRef', AdditionalReference10, False)
 
 	@property
 	def ScndryCorpInvstr(self):
@@ -178,12 +178,12 @@ class PortfolioTransferConfirmationV11(base_types._BaseFieldType):
 
 	@ScndryCorpInvstr.setter
 	def ScndryCorpInvstr(self, value):
-		self._ScndryCorpInvstr = value if type(value) != base_types.auto else self.make_default("ScndryCorpInvstr")
+		self._ScndryCorpInvstr = value if value is not None else base_types.UninitialisedField(self, 'ScndryCorpInvstr', Organisation36, False)
 
 	@ScndryCorpInvstr.deleter
 	def ScndryCorpInvstr(self):
 		del self._ScndryCorpInvstr
-		self._ScndryCorpInvstr = None
+		self._ScndryCorpInvstr = base_types.UninitialisedField(self, 'ScndryCorpInvstr', Organisation36, False)
 
 	@property
 	def ScndryIndvInvstr(self):
@@ -191,12 +191,12 @@ class PortfolioTransferConfirmationV11(base_types._BaseFieldType):
 
 	@ScndryIndvInvstr.setter
 	def ScndryIndvInvstr(self, value):
-		self._ScndryIndvInvstr = value if type(value) != base_types.auto else self.make_default("ScndryIndvInvstr")
+		self._ScndryIndvInvstr = value if value is not None else base_types.UninitialisedField(self, 'ScndryIndvInvstr', IndividualPerson8, False)
 
 	@ScndryIndvInvstr.deleter
 	def ScndryIndvInvstr(self):
 		del self._ScndryIndvInvstr
-		self._ScndryIndvInvstr = None
+		self._ScndryIndvInvstr = base_types.UninitialisedField(self, 'ScndryIndvInvstr', IndividualPerson8, False)
 
 	@property
 	def Trfee(self):
@@ -204,12 +204,12 @@ class PortfolioTransferConfirmationV11(base_types._BaseFieldType):
 
 	@Trfee.setter
 	def Trfee(self, value):
-		self._Trfee = value if type(value) != base_types.auto else self.make_default("Trfee")
+		self._Trfee = value if value is not None else base_types.UninitialisedField(self, 'Trfee', PartyIdentification132, False)
 
 	@Trfee.deleter
 	def Trfee(self):
 		del self._Trfee
-		self._Trfee = None
+		self._Trfee = base_types.UninitialisedField(self, 'Trfee', PartyIdentification132, False)
 
 	@property
 	def TrfrAcct(self):
@@ -217,12 +217,12 @@ class PortfolioTransferConfirmationV11(base_types._BaseFieldType):
 
 	@TrfrAcct.setter
 	def TrfrAcct(self, value):
-		self._TrfrAcct = value if type(value) != base_types.auto else self.make_default("TrfrAcct")
+		self._TrfrAcct = value if value is not None else base_types.UninitialisedField(self, 'TrfrAcct', InvestmentAccount69, False)
 
 	@TrfrAcct.deleter
 	def TrfrAcct(self):
 		del self._TrfrAcct
-		self._TrfrAcct = None
+		self._TrfrAcct = base_types.UninitialisedField(self, 'TrfrAcct', InvestmentAccount69, False)
 
 	@property
 	def Xtnsn(self):
@@ -230,12 +230,12 @@ class PortfolioTransferConfirmationV11(base_types._BaseFieldType):
 
 	@Xtnsn.setter
 	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
+		self._Xtnsn = value if value is not None else base_types.UninitialisedField(self, 'Xtnsn', Extension1, True)
 
 	@Xtnsn.deleter
 	def Xtnsn(self):
 		del self._Xtnsn
-		self._Xtnsn = None
+		self._Xtnsn = base_types.UninitialisedField(self, 'Xtnsn', Extension1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MktPrctcVrsn', type=MarketPracticeVersion1, min=0, max=1, mutex_group=None, array=False),

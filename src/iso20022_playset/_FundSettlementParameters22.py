@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DeliveringPartiesAndAccount24 import DeliveringPartiesAndAccount24
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
-from ._PartyIdentification339 import PartyIdentification339
-from ._ReceivingPartiesAndAccount24 import ReceivingPartiesAndAccount24
-from ._SafekeepingPlaceFormat42Choice import SafekeepingPlaceFormat42Choice
-from ._SettlementTransactionCondition30Choice import SettlementTransactionCondition30Choice
-from ._TradeTransactionCondition8Choice import TradeTransactionCondition8Choice
+from . import DeliveringPartiesAndAccount24
+from . import ISODate
+from . import Max35Text
+from . import PartyIdentification339
+from . import ReceivingPartiesAndAccount24
+from . import SafekeepingPlaceFormat42Choice
+from . import SettlementTransactionCondition30Choice
+from . import TradeTransactionCondition8Choice
 
 class FundSettlementParameters22(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class FundSettlementParameters22(base_types._BaseFieldType):
 
 	@DlvrgSdDtls.setter
 	def DlvrgSdDtls(self, value):
-		self._DlvrgSdDtls = value if type(value) != base_types.auto else self.make_default("DlvrgSdDtls")
+		self._DlvrgSdDtls = value if value is not None else base_types.UninitialisedField(self, 'DlvrgSdDtls', DeliveringPartiesAndAccount24, False)
 
 	@DlvrgSdDtls.deleter
 	def DlvrgSdDtls(self):
 		del self._DlvrgSdDtls
-		self._DlvrgSdDtls = None
+		self._DlvrgSdDtls = base_types.UninitialisedField(self, 'DlvrgSdDtls', DeliveringPartiesAndAccount24, False)
 
 	@property
 	def RcvgSdDtls(self):
@@ -33,12 +33,12 @@ class FundSettlementParameters22(base_types._BaseFieldType):
 
 	@RcvgSdDtls.setter
 	def RcvgSdDtls(self, value):
-		self._RcvgSdDtls = value if type(value) != base_types.auto else self.make_default("RcvgSdDtls")
+		self._RcvgSdDtls = value if value is not None else base_types.UninitialisedField(self, 'RcvgSdDtls', ReceivingPartiesAndAccount24, False)
 
 	@RcvgSdDtls.deleter
 	def RcvgSdDtls(self):
 		del self._RcvgSdDtls
-		self._RcvgSdDtls = None
+		self._RcvgSdDtls = base_types.UninitialisedField(self, 'RcvgSdDtls', ReceivingPartiesAndAccount24, False)
 
 	@property
 	def SctiesSttlmSysId(self):
@@ -46,12 +46,12 @@ class FundSettlementParameters22(base_types._BaseFieldType):
 
 	@SctiesSttlmSysId.setter
 	def SctiesSttlmSysId(self, value):
-		self._SctiesSttlmSysId = value if type(value) != base_types.auto else self.make_default("SctiesSttlmSysId")
+		self._SctiesSttlmSysId = value if value is not None else base_types.UninitialisedField(self, 'SctiesSttlmSysId', Max35Text, False)
 
 	@SctiesSttlmSysId.deleter
 	def SctiesSttlmSysId(self):
 		del self._SctiesSttlmSysId
-		self._SctiesSttlmSysId = None
+		self._SctiesSttlmSysId = base_types.UninitialisedField(self, 'SctiesSttlmSysId', Max35Text, False)
 
 	@property
 	def SfkpgPlc(self):
@@ -59,12 +59,12 @@ class FundSettlementParameters22(base_types._BaseFieldType):
 
 	@SfkpgPlc.setter
 	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
+		self._SfkpgPlc = value if value is not None else base_types.UninitialisedField(self, 'SfkpgPlc', SafekeepingPlaceFormat42Choice, False)
 
 	@SfkpgPlc.deleter
 	def SfkpgPlc(self):
 		del self._SfkpgPlc
-		self._SfkpgPlc = None
+		self._SfkpgPlc = base_types.UninitialisedField(self, 'SfkpgPlc', SafekeepingPlaceFormat42Choice, False)
 
 	@property
 	def SttlmDt(self):
@@ -72,12 +72,12 @@ class FundSettlementParameters22(base_types._BaseFieldType):
 
 	@SttlmDt.setter
 	def SttlmDt(self, value):
-		self._SttlmDt = value if type(value) != base_types.auto else self.make_default("SttlmDt")
+		self._SttlmDt = value if value is not None else base_types.UninitialisedField(self, 'SttlmDt', ISODate, False)
 
 	@SttlmDt.deleter
 	def SttlmDt(self):
 		del self._SttlmDt
-		self._SttlmDt = None
+		self._SttlmDt = base_types.UninitialisedField(self, 'SttlmDt', ISODate, False)
 
 	@property
 	def SttlmPlc(self):
@@ -85,12 +85,12 @@ class FundSettlementParameters22(base_types._BaseFieldType):
 
 	@SttlmPlc.setter
 	def SttlmPlc(self, value):
-		self._SttlmPlc = value if type(value) != base_types.auto else self.make_default("SttlmPlc")
+		self._SttlmPlc = value if value is not None else base_types.UninitialisedField(self, 'SttlmPlc', PartyIdentification339, False)
 
 	@SttlmPlc.deleter
 	def SttlmPlc(self):
 		del self._SttlmPlc
-		self._SttlmPlc = None
+		self._SttlmPlc = base_types.UninitialisedField(self, 'SttlmPlc', PartyIdentification339, False)
 
 	@property
 	def SttlmTxCond(self):
@@ -98,12 +98,12 @@ class FundSettlementParameters22(base_types._BaseFieldType):
 
 	@SttlmTxCond.setter
 	def SttlmTxCond(self, value):
-		self._SttlmTxCond = value if type(value) != base_types.auto else self.make_default("SttlmTxCond")
+		self._SttlmTxCond = value if value is not None else base_types.UninitialisedField(self, 'SttlmTxCond', SettlementTransactionCondition30Choice, True)
 
 	@SttlmTxCond.deleter
 	def SttlmTxCond(self):
 		del self._SttlmTxCond
-		self._SttlmTxCond = None
+		self._SttlmTxCond = base_types.UninitialisedField(self, 'SttlmTxCond', SettlementTransactionCondition30Choice, True)
 
 	@property
 	def TradTxCond(self):
@@ -111,12 +111,12 @@ class FundSettlementParameters22(base_types._BaseFieldType):
 
 	@TradTxCond.setter
 	def TradTxCond(self, value):
-		self._TradTxCond = value if type(value) != base_types.auto else self.make_default("TradTxCond")
+		self._TradTxCond = value if value is not None else base_types.UninitialisedField(self, 'TradTxCond', TradeTransactionCondition8Choice, True)
 
 	@TradTxCond.deleter
 	def TradTxCond(self):
 		del self._TradTxCond
-		self._TradTxCond = None
+		self._TradTxCond = base_types.UninitialisedField(self, 'TradTxCond', TradeTransactionCondition8Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DlvrgSdDtls', type=DeliveringPartiesAndAccount24, min=0, max=1, mutex_group=None, array=False),

@@ -2,18 +2,18 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._ISOCountrySubDivisionCode import ISOCountrySubDivisionCode
-from ._ISODate import ISODate
-from ._ISOMax3ACountryCode import ISOMax3ACountryCode
-from ._ISOTime import ISOTime
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._Max256Text import Max256Text
-from ._Max35Text import Max35Text
-from ._PhoneNumber import PhoneNumber
-from ._Tax44 import Tax44
-from ._TelecomLineItemAmount1 import TelecomLineItemAmount1
-from ._TelephonyCallType2Code import TelephonyCallType2Code
+from . import ATICALaxProcessing
+from . import ISOCountrySubDivisionCode
+from . import ISODate
+from . import ISOMax3ACountryCode
+from . import ISOTime
+from . import ImpliedCurrencyAndAmount
+from . import Max256Text
+from . import Max35Text
+from . import PhoneNumber
+from . import Tax44
+from . import TelecomLineItemAmount1
+from . import TelephonyCallType2Code
 
 class TelecomServicesLineItem4(base_types._BaseFieldType):
 
@@ -24,12 +24,12 @@ class TelecomServicesLineItem4(base_types._BaseFieldType):
 
 	@CallFrCity.setter
 	def CallFrCity(self, value):
-		self._CallFrCity = value if type(value) != base_types.auto else self.make_default("CallFrCity")
+		self._CallFrCity = value if value is not None else base_types.UninitialisedField(self, 'CallFrCity', Max35Text, False)
 
 	@CallFrCity.deleter
 	def CallFrCity(self):
 		del self._CallFrCity
-		self._CallFrCity = None
+		self._CallFrCity = base_types.UninitialisedField(self, 'CallFrCity', Max35Text, False)
 
 	@property
 	def CallFrCtry(self):
@@ -37,12 +37,12 @@ class TelecomServicesLineItem4(base_types._BaseFieldType):
 
 	@CallFrCtry.setter
 	def CallFrCtry(self, value):
-		self._CallFrCtry = value if type(value) != base_types.auto else self.make_default("CallFrCtry")
+		self._CallFrCtry = value if value is not None else base_types.UninitialisedField(self, 'CallFrCtry', ISOMax3ACountryCode, False)
 
 	@CallFrCtry.deleter
 	def CallFrCtry(self):
 		del self._CallFrCtry
-		self._CallFrCtry = None
+		self._CallFrCtry = base_types.UninitialisedField(self, 'CallFrCtry', ISOMax3ACountryCode, False)
 
 	@property
 	def CallFrCtrySubDvsnMjr(self):
@@ -50,12 +50,12 @@ class TelecomServicesLineItem4(base_types._BaseFieldType):
 
 	@CallFrCtrySubDvsnMjr.setter
 	def CallFrCtrySubDvsnMjr(self, value):
-		self._CallFrCtrySubDvsnMjr = value if type(value) != base_types.auto else self.make_default("CallFrCtrySubDvsnMjr")
+		self._CallFrCtrySubDvsnMjr = value if value is not None else base_types.UninitialisedField(self, 'CallFrCtrySubDvsnMjr', ISOCountrySubDivisionCode, False)
 
 	@CallFrCtrySubDvsnMjr.deleter
 	def CallFrCtrySubDvsnMjr(self):
 		del self._CallFrCtrySubDvsnMjr
-		self._CallFrCtrySubDvsnMjr = None
+		self._CallFrCtrySubDvsnMjr = base_types.UninitialisedField(self, 'CallFrCtrySubDvsnMjr', ISOCountrySubDivisionCode, False)
 
 	@property
 	def CallFrCtrySubDvsnMnr(self):
@@ -63,12 +63,12 @@ class TelecomServicesLineItem4(base_types._BaseFieldType):
 
 	@CallFrCtrySubDvsnMnr.setter
 	def CallFrCtrySubDvsnMnr(self, value):
-		self._CallFrCtrySubDvsnMnr = value if type(value) != base_types.auto else self.make_default("CallFrCtrySubDvsnMnr")
+		self._CallFrCtrySubDvsnMnr = value if value is not None else base_types.UninitialisedField(self, 'CallFrCtrySubDvsnMnr', ISOCountrySubDivisionCode, False)
 
 	@CallFrCtrySubDvsnMnr.deleter
 	def CallFrCtrySubDvsnMnr(self):
 		del self._CallFrCtrySubDvsnMnr
-		self._CallFrCtrySubDvsnMnr = None
+		self._CallFrCtrySubDvsnMnr = base_types.UninitialisedField(self, 'CallFrCtrySubDvsnMnr', ISOCountrySubDivisionCode, False)
 
 	@property
 	def CallFrPhne(self):
@@ -76,12 +76,12 @@ class TelecomServicesLineItem4(base_types._BaseFieldType):
 
 	@CallFrPhne.setter
 	def CallFrPhne(self, value):
-		self._CallFrPhne = value if type(value) != base_types.auto else self.make_default("CallFrPhne")
+		self._CallFrPhne = value if value is not None else base_types.UninitialisedField(self, 'CallFrPhne', PhoneNumber, False)
 
 	@CallFrPhne.deleter
 	def CallFrPhne(self):
 		del self._CallFrPhne
-		self._CallFrPhne = None
+		self._CallFrPhne = base_types.UninitialisedField(self, 'CallFrPhne', PhoneNumber, False)
 
 	@property
 	def CallFrTp(self):
@@ -89,12 +89,12 @@ class TelecomServicesLineItem4(base_types._BaseFieldType):
 
 	@CallFrTp.setter
 	def CallFrTp(self, value):
-		self._CallFrTp = value if type(value) != base_types.auto else self.make_default("CallFrTp")
+		self._CallFrTp = value if value is not None else base_types.UninitialisedField(self, 'CallFrTp', TelephonyCallType2Code, False)
 
 	@CallFrTp.deleter
 	def CallFrTp(self):
 		del self._CallFrTp
-		self._CallFrTp = None
+		self._CallFrTp = base_types.UninitialisedField(self, 'CallFrTp', TelephonyCallType2Code, False)
 
 	@property
 	def CallToCity(self):
@@ -102,12 +102,12 @@ class TelecomServicesLineItem4(base_types._BaseFieldType):
 
 	@CallToCity.setter
 	def CallToCity(self, value):
-		self._CallToCity = value if type(value) != base_types.auto else self.make_default("CallToCity")
+		self._CallToCity = value if value is not None else base_types.UninitialisedField(self, 'CallToCity', Max35Text, False)
 
 	@CallToCity.deleter
 	def CallToCity(self):
 		del self._CallToCity
-		self._CallToCity = None
+		self._CallToCity = base_types.UninitialisedField(self, 'CallToCity', Max35Text, False)
 
 	@property
 	def CallToCtry(self):
@@ -115,12 +115,12 @@ class TelecomServicesLineItem4(base_types._BaseFieldType):
 
 	@CallToCtry.setter
 	def CallToCtry(self, value):
-		self._CallToCtry = value if type(value) != base_types.auto else self.make_default("CallToCtry")
+		self._CallToCtry = value if value is not None else base_types.UninitialisedField(self, 'CallToCtry', ISOMax3ACountryCode, False)
 
 	@CallToCtry.deleter
 	def CallToCtry(self):
 		del self._CallToCtry
-		self._CallToCtry = None
+		self._CallToCtry = base_types.UninitialisedField(self, 'CallToCtry', ISOMax3ACountryCode, False)
 
 	@property
 	def CallToCtrySubDvsnMjr(self):
@@ -128,12 +128,12 @@ class TelecomServicesLineItem4(base_types._BaseFieldType):
 
 	@CallToCtrySubDvsnMjr.setter
 	def CallToCtrySubDvsnMjr(self, value):
-		self._CallToCtrySubDvsnMjr = value if type(value) != base_types.auto else self.make_default("CallToCtrySubDvsnMjr")
+		self._CallToCtrySubDvsnMjr = value if value is not None else base_types.UninitialisedField(self, 'CallToCtrySubDvsnMjr', ISOCountrySubDivisionCode, False)
 
 	@CallToCtrySubDvsnMjr.deleter
 	def CallToCtrySubDvsnMjr(self):
 		del self._CallToCtrySubDvsnMjr
-		self._CallToCtrySubDvsnMjr = None
+		self._CallToCtrySubDvsnMjr = base_types.UninitialisedField(self, 'CallToCtrySubDvsnMjr', ISOCountrySubDivisionCode, False)
 
 	@property
 	def CallToCtrySubDvsnMnr(self):
@@ -141,12 +141,12 @@ class TelecomServicesLineItem4(base_types._BaseFieldType):
 
 	@CallToCtrySubDvsnMnr.setter
 	def CallToCtrySubDvsnMnr(self, value):
-		self._CallToCtrySubDvsnMnr = value if type(value) != base_types.auto else self.make_default("CallToCtrySubDvsnMnr")
+		self._CallToCtrySubDvsnMnr = value if value is not None else base_types.UninitialisedField(self, 'CallToCtrySubDvsnMnr', ISOCountrySubDivisionCode, False)
 
 	@CallToCtrySubDvsnMnr.deleter
 	def CallToCtrySubDvsnMnr(self):
 		del self._CallToCtrySubDvsnMnr
-		self._CallToCtrySubDvsnMnr = None
+		self._CallToCtrySubDvsnMnr = base_types.UninitialisedField(self, 'CallToCtrySubDvsnMnr', ISOCountrySubDivisionCode, False)
 
 	@property
 	def CallToPhne(self):
@@ -154,12 +154,12 @@ class TelecomServicesLineItem4(base_types._BaseFieldType):
 
 	@CallToPhne.setter
 	def CallToPhne(self, value):
-		self._CallToPhne = value if type(value) != base_types.auto else self.make_default("CallToPhne")
+		self._CallToPhne = value if value is not None else base_types.UninitialisedField(self, 'CallToPhne', PhoneNumber, False)
 
 	@CallToPhne.deleter
 	def CallToPhne(self):
 		del self._CallToPhne
-		self._CallToPhne = None
+		self._CallToPhne = base_types.UninitialisedField(self, 'CallToPhne', PhoneNumber, False)
 
 	@property
 	def CallToTp(self):
@@ -167,12 +167,12 @@ class TelecomServicesLineItem4(base_types._BaseFieldType):
 
 	@CallToTp.setter
 	def CallToTp(self, value):
-		self._CallToTp = value if type(value) != base_types.auto else self.make_default("CallToTp")
+		self._CallToTp = value if value is not None else base_types.UninitialisedField(self, 'CallToTp', TelephonyCallType2Code, False)
 
 	@CallToTp.deleter
 	def CallToTp(self):
 		del self._CallToTp
-		self._CallToTp = None
+		self._CallToTp = base_types.UninitialisedField(self, 'CallToTp', TelephonyCallType2Code, False)
 
 	@property
 	def Chrg(self):
@@ -180,12 +180,12 @@ class TelecomServicesLineItem4(base_types._BaseFieldType):
 
 	@Chrg.setter
 	def Chrg(self, value):
-		self._Chrg = value if type(value) != base_types.auto else self.make_default("Chrg")
+		self._Chrg = value if value is not None else base_types.UninitialisedField(self, 'Chrg', TelecomLineItemAmount1, True)
 
 	@Chrg.deleter
 	def Chrg(self):
 		del self._Chrg
-		self._Chrg = None
+		self._Chrg = base_types.UninitialisedField(self, 'Chrg', TelecomLineItemAmount1, True)
 
 	@property
 	def Desc(self):
@@ -193,12 +193,12 @@ class TelecomServicesLineItem4(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', Max256Text, False)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', Max256Text, False)
 
 	@property
 	def Drtn(self):
@@ -206,12 +206,12 @@ class TelecomServicesLineItem4(base_types._BaseFieldType):
 
 	@Drtn.setter
 	def Drtn(self, value):
-		self._Drtn = value if type(value) != base_types.auto else self.make_default("Drtn")
+		self._Drtn = value if value is not None else base_types.UninitialisedField(self, 'Drtn', ISOTime, False)
 
 	@Drtn.deleter
 	def Drtn(self):
 		del self._Drtn
-		self._Drtn = None
+		self._Drtn = base_types.UninitialisedField(self, 'Drtn', ISOTime, False)
 
 	@property
 	def NtlData(self):
@@ -219,12 +219,12 @@ class TelecomServicesLineItem4(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def PrvtData(self):
@@ -232,12 +232,12 @@ class TelecomServicesLineItem4(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def StartDtTm(self):
@@ -245,12 +245,12 @@ class TelecomServicesLineItem4(base_types._BaseFieldType):
 
 	@StartDtTm.setter
 	def StartDtTm(self, value):
-		self._StartDtTm = value if type(value) != base_types.auto else self.make_default("StartDtTm")
+		self._StartDtTm = value if value is not None else base_types.UninitialisedField(self, 'StartDtTm', ISODate, False)
 
 	@StartDtTm.deleter
 	def StartDtTm(self):
 		del self._StartDtTm
-		self._StartDtTm = None
+		self._StartDtTm = base_types.UninitialisedField(self, 'StartDtTm', ISODate, False)
 
 	@property
 	def Tax(self):
@@ -258,12 +258,12 @@ class TelecomServicesLineItem4(base_types._BaseFieldType):
 
 	@Tax.setter
 	def Tax(self, value):
-		self._Tax = value if type(value) != base_types.auto else self.make_default("Tax")
+		self._Tax = value if value is not None else base_types.UninitialisedField(self, 'Tax', Tax44, True)
 
 	@Tax.deleter
 	def Tax(self):
 		del self._Tax
-		self._Tax = None
+		self._Tax = base_types.UninitialisedField(self, 'Tax', Tax44, True)
 
 	@property
 	def TmPrd(self):
@@ -271,12 +271,12 @@ class TelecomServicesLineItem4(base_types._BaseFieldType):
 
 	@TmPrd.setter
 	def TmPrd(self, value):
-		self._TmPrd = value if type(value) != base_types.auto else self.make_default("TmPrd")
+		self._TmPrd = value if value is not None else base_types.UninitialisedField(self, 'TmPrd', Max35Text, False)
 
 	@TmPrd.deleter
 	def TmPrd(self):
 		del self._TmPrd
-		self._TmPrd = None
+		self._TmPrd = base_types.UninitialisedField(self, 'TmPrd', Max35Text, False)
 
 	@property
 	def TtlAmt(self):
@@ -284,12 +284,12 @@ class TelecomServicesLineItem4(base_types._BaseFieldType):
 
 	@TtlAmt.setter
 	def TtlAmt(self, value):
-		self._TtlAmt = value if type(value) != base_types.auto else self.make_default("TtlAmt")
+		self._TtlAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlAmt', ImpliedCurrencyAndAmount, False)
 
 	@TtlAmt.deleter
 	def TtlAmt(self):
 		del self._TtlAmt
-		self._TtlAmt = None
+		self._TtlAmt = base_types.UninitialisedField(self, 'TtlAmt', ImpliedCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CallFrCity', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

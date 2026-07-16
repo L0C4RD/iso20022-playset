@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionCancellationReason1Code import CorporateActionCancellationReason1Code
-from ._CorporateActionEventStatus1 import CorporateActionEventStatus1
-from ._Max140Text import Max140Text
+from . import CorporateActionCancellationReason1Code
+from . import CorporateActionEventStatus1
+from . import Max140Text
 
 class CorporateActionCancellation3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CorporateActionCancellation3(base_types._BaseFieldType):
 
 	@CxlRsn.setter
 	def CxlRsn(self, value):
-		self._CxlRsn = value if type(value) != base_types.auto else self.make_default("CxlRsn")
+		self._CxlRsn = value if value is not None else base_types.UninitialisedField(self, 'CxlRsn', Max140Text, False)
 
 	@CxlRsn.deleter
 	def CxlRsn(self):
 		del self._CxlRsn
-		self._CxlRsn = None
+		self._CxlRsn = base_types.UninitialisedField(self, 'CxlRsn', Max140Text, False)
 
 	@property
 	def CxlRsnCd(self):
@@ -28,12 +28,12 @@ class CorporateActionCancellation3(base_types._BaseFieldType):
 
 	@CxlRsnCd.setter
 	def CxlRsnCd(self, value):
-		self._CxlRsnCd = value if type(value) != base_types.auto else self.make_default("CxlRsnCd")
+		self._CxlRsnCd = value if value is not None else base_types.UninitialisedField(self, 'CxlRsnCd', CorporateActionCancellationReason1Code, False)
 
 	@CxlRsnCd.deleter
 	def CxlRsnCd(self):
 		del self._CxlRsnCd
-		self._CxlRsnCd = None
+		self._CxlRsnCd = base_types.UninitialisedField(self, 'CxlRsnCd', CorporateActionCancellationReason1Code, False)
 
 	@property
 	def PrcgSts(self):
@@ -41,12 +41,12 @@ class CorporateActionCancellation3(base_types._BaseFieldType):
 
 	@PrcgSts.setter
 	def PrcgSts(self, value):
-		self._PrcgSts = value if type(value) != base_types.auto else self.make_default("PrcgSts")
+		self._PrcgSts = value if value is not None else base_types.UninitialisedField(self, 'PrcgSts', CorporateActionEventStatus1, False)
 
 	@PrcgSts.deleter
 	def PrcgSts(self):
 		del self._PrcgSts
-		self._PrcgSts = None
+		self._PrcgSts = base_types.UninitialisedField(self, 'PrcgSts', CorporateActionEventStatus1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CxlRsn', type=Max140Text, min=0, max=1, mutex_group=None, array=False),

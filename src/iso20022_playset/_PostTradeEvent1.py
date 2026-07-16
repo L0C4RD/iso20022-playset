@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
-from ._PostTradeEventType2Choice import PostTradeEventType2Choice
-from ._ProfitAndLossAmount2 import ProfitAndLossAmount2
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import ISODate
+from . import Max35Text
+from . import PostTradeEventType2Choice
+from . import ProfitAndLossAmount2
 
 class PostTradeEvent1(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class PostTradeEvent1(base_types._BaseFieldType):
 
 	@OrgnlRef.setter
 	def OrgnlRef(self, value):
-		self._OrgnlRef = value if type(value) != base_types.auto else self.make_default("OrgnlRef")
+		self._OrgnlRef = value if value is not None else base_types.UninitialisedField(self, 'OrgnlRef', Max35Text, False)
 
 	@OrgnlRef.deleter
 	def OrgnlRef(self):
 		del self._OrgnlRef
-		self._OrgnlRef = None
+		self._OrgnlRef = base_types.UninitialisedField(self, 'OrgnlRef', Max35Text, False)
 
 	@property
 	def OutsdngSttlmAmt(self):
@@ -30,12 +30,12 @@ class PostTradeEvent1(base_types._BaseFieldType):
 
 	@OutsdngSttlmAmt.setter
 	def OutsdngSttlmAmt(self, value):
-		self._OutsdngSttlmAmt = value if type(value) != base_types.auto else self.make_default("OutsdngSttlmAmt")
+		self._OutsdngSttlmAmt = value if value is not None else base_types.UninitialisedField(self, 'OutsdngSttlmAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@OutsdngSttlmAmt.deleter
 	def OutsdngSttlmAmt(self):
 		del self._OutsdngSttlmAmt
-		self._OutsdngSttlmAmt = None
+		self._OutsdngSttlmAmt = base_types.UninitialisedField(self, 'OutsdngSttlmAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def PrftOrLoss(self):
@@ -43,12 +43,12 @@ class PostTradeEvent1(base_types._BaseFieldType):
 
 	@PrftOrLoss.setter
 	def PrftOrLoss(self, value):
-		self._PrftOrLoss = value if type(value) != base_types.auto else self.make_default("PrftOrLoss")
+		self._PrftOrLoss = value if value is not None else base_types.UninitialisedField(self, 'PrftOrLoss', ProfitAndLossAmount2, False)
 
 	@PrftOrLoss.deleter
 	def PrftOrLoss(self):
 		del self._PrftOrLoss
-		self._PrftOrLoss = None
+		self._PrftOrLoss = base_types.UninitialisedField(self, 'PrftOrLoss', ProfitAndLossAmount2, False)
 
 	@property
 	def PrftOrLossSttlmDt(self):
@@ -56,12 +56,12 @@ class PostTradeEvent1(base_types._BaseFieldType):
 
 	@PrftOrLossSttlmDt.setter
 	def PrftOrLossSttlmDt(self, value):
-		self._PrftOrLossSttlmDt = value if type(value) != base_types.auto else self.make_default("PrftOrLossSttlmDt")
+		self._PrftOrLossSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'PrftOrLossSttlmDt', ISODate, False)
 
 	@PrftOrLossSttlmDt.deleter
 	def PrftOrLossSttlmDt(self):
 		del self._PrftOrLossSttlmDt
-		self._PrftOrLossSttlmDt = None
+		self._PrftOrLossSttlmDt = base_types.UninitialisedField(self, 'PrftOrLossSttlmDt', ISODate, False)
 
 	@property
 	def Tp(self):
@@ -69,12 +69,12 @@ class PostTradeEvent1(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', PostTradeEventType2Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', PostTradeEventType2Choice, False)
 
 	@property
 	def UndrlygLbltyRef(self):
@@ -82,12 +82,12 @@ class PostTradeEvent1(base_types._BaseFieldType):
 
 	@UndrlygLbltyRef.setter
 	def UndrlygLbltyRef(self, value):
-		self._UndrlygLbltyRef = value if type(value) != base_types.auto else self.make_default("UndrlygLbltyRef")
+		self._UndrlygLbltyRef = value if value is not None else base_types.UninitialisedField(self, 'UndrlygLbltyRef', Max35Text, False)
 
 	@UndrlygLbltyRef.deleter
 	def UndrlygLbltyRef(self):
 		del self._UndrlygLbltyRef
-		self._UndrlygLbltyRef = None
+		self._UndrlygLbltyRef = base_types.UninitialisedField(self, 'UndrlygLbltyRef', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgnlRef', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

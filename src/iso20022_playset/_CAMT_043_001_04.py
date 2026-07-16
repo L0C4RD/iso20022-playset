@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FundDetailedConfirmedCashForecastReportV04 import FundDetailedConfirmedCashForecastReportV04
+from . import FundDetailedConfirmedCashForecastReportV04
 
 class CAMT_043_001_04():
 
@@ -18,12 +18,12 @@ class CAMT_043_001_04():
 
 		@FndDtldConfdCshFcstRpt.setter
 		def FndDtldConfdCshFcstRpt(self, value):
-			self._FndDtldConfdCshFcstRpt = value if type(value) != base_types.auto else self.make_default("FndDtldConfdCshFcstRpt")
+			self._FndDtldConfdCshFcstRpt = value if value is not None else base_types.UninitialisedField(self, 'FndDtldConfdCshFcstRpt', FundDetailedConfirmedCashForecastReportV04, False)
 
 		@FndDtldConfdCshFcstRpt.deleter
 		def FndDtldConfdCshFcstRpt(self):
 			del self._FndDtldConfdCshFcstRpt
-			self._FndDtldConfdCshFcstRpt = None
+			self._FndDtldConfdCshFcstRpt = base_types.UninitialisedField(self, 'FndDtldConfdCshFcstRpt', FundDetailedConfirmedCashForecastReportV04, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='FndDtldConfdCshFcstRpt', type=FundDetailedConfirmedCashForecastReportV04, min=1, max=1, mutex_group=None, array=False),

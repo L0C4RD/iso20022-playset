@@ -2,18 +2,18 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcquirerHostConfiguration10 import AcquirerHostConfiguration10
-from ._AcquirerProtocolExchangeBehavior2 import AcquirerProtocolExchangeBehavior2
-from ._BatchTransactionType1Code import BatchTransactionType1Code
-from ._ExchangeConfiguration9 import ExchangeConfiguration9
-from ._GenericIdentification176 import GenericIdentification176
-from ._Max256Text import Max256Text
-from ._Max35Text import Max35Text
-from ._MessageItemCondition2 import MessageItemCondition2
-from ._ReconciliationCriteria1Code import ReconciliationCriteria1Code
-from ._TerminalManagementAction3Code import TerminalManagementAction3Code
-from ._TrueFalseIndicator import TrueFalseIndicator
-from ._TypeOfAmount8Code import TypeOfAmount8Code
+from . import AcquirerHostConfiguration10
+from . import AcquirerProtocolExchangeBehavior2
+from . import BatchTransactionType1Code
+from . import ExchangeConfiguration9
+from . import GenericIdentification176
+from . import Max256Text
+from . import Max35Text
+from . import MessageItemCondition2
+from . import ReconciliationCriteria1Code
+from . import TerminalManagementAction3Code
+from . import TrueFalseIndicator
+from . import TypeOfAmount8Code
 
 class AcquirerProtocolParameters17(base_types._BaseFieldType):
 
@@ -24,12 +24,12 @@ class AcquirerProtocolParameters17(base_types._BaseFieldType):
 
 	@AcqrrId.setter
 	def AcqrrId(self, value):
-		self._AcqrrId = value if type(value) != base_types.auto else self.make_default("AcqrrId")
+		self._AcqrrId = value if value is not None else base_types.UninitialisedField(self, 'AcqrrId', GenericIdentification176, True)
 
 	@AcqrrId.deleter
 	def AcqrrId(self):
 		del self._AcqrrId
-		self._AcqrrId = None
+		self._AcqrrId = base_types.UninitialisedField(self, 'AcqrrId', GenericIdentification176, True)
 
 	@property
 	def ActnTp(self):
@@ -37,12 +37,12 @@ class AcquirerProtocolParameters17(base_types._BaseFieldType):
 
 	@ActnTp.setter
 	def ActnTp(self, value):
-		self._ActnTp = value if type(value) != base_types.auto else self.make_default("ActnTp")
+		self._ActnTp = value if value is not None else base_types.UninitialisedField(self, 'ActnTp', TerminalManagementAction3Code, False)
 
 	@ActnTp.deleter
 	def ActnTp(self):
 		del self._ActnTp
-		self._ActnTp = None
+		self._ActnTp = base_types.UninitialisedField(self, 'ActnTp', TerminalManagementAction3Code, False)
 
 	@property
 	def AmtQlfrForRsvatn(self):
@@ -50,12 +50,12 @@ class AcquirerProtocolParameters17(base_types._BaseFieldType):
 
 	@AmtQlfrForRsvatn.setter
 	def AmtQlfrForRsvatn(self, value):
-		self._AmtQlfrForRsvatn = value if type(value) != base_types.auto else self.make_default("AmtQlfrForRsvatn")
+		self._AmtQlfrForRsvatn = value if value is not None else base_types.UninitialisedField(self, 'AmtQlfrForRsvatn', TypeOfAmount8Code, True)
 
 	@AmtQlfrForRsvatn.deleter
 	def AmtQlfrForRsvatn(self):
 		del self._AmtQlfrForRsvatn
-		self._AmtQlfrForRsvatn = None
+		self._AmtQlfrForRsvatn = base_types.UninitialisedField(self, 'AmtQlfrForRsvatn', TypeOfAmount8Code, True)
 
 	@property
 	def ApplId(self):
@@ -63,12 +63,12 @@ class AcquirerProtocolParameters17(base_types._BaseFieldType):
 
 	@ApplId.setter
 	def ApplId(self, value):
-		self._ApplId = value if type(value) != base_types.auto else self.make_default("ApplId")
+		self._ApplId = value if value is not None else base_types.UninitialisedField(self, 'ApplId', Max35Text, True)
 
 	@ApplId.deleter
 	def ApplId(self):
 		del self._ApplId
-		self._ApplId = None
+		self._ApplId = base_types.UninitialisedField(self, 'ApplId', Max35Text, True)
 
 	@property
 	def BtchDgtlSgntr(self):
@@ -76,12 +76,12 @@ class AcquirerProtocolParameters17(base_types._BaseFieldType):
 
 	@BtchDgtlSgntr.setter
 	def BtchDgtlSgntr(self, value):
-		self._BtchDgtlSgntr = value if type(value) != base_types.auto else self.make_default("BtchDgtlSgntr")
+		self._BtchDgtlSgntr = value if value is not None else base_types.UninitialisedField(self, 'BtchDgtlSgntr', TrueFalseIndicator, False)
 
 	@BtchDgtlSgntr.deleter
 	def BtchDgtlSgntr(self):
 		del self._BtchDgtlSgntr
-		self._BtchDgtlSgntr = None
+		self._BtchDgtlSgntr = base_types.UninitialisedField(self, 'BtchDgtlSgntr', TrueFalseIndicator, False)
 
 	@property
 	def BtchTrfCntt(self):
@@ -89,12 +89,12 @@ class AcquirerProtocolParameters17(base_types._BaseFieldType):
 
 	@BtchTrfCntt.setter
 	def BtchTrfCntt(self, value):
-		self._BtchTrfCntt = value if type(value) != base_types.auto else self.make_default("BtchTrfCntt")
+		self._BtchTrfCntt = value if value is not None else base_types.UninitialisedField(self, 'BtchTrfCntt', BatchTransactionType1Code, True)
 
 	@BtchTrfCntt.deleter
 	def BtchTrfCntt(self):
 		del self._BtchTrfCntt
-		self._BtchTrfCntt = None
+		self._BtchTrfCntt = base_types.UninitialisedField(self, 'BtchTrfCntt', BatchTransactionType1Code, True)
 
 	@property
 	def CardDataVrfctn(self):
@@ -102,12 +102,12 @@ class AcquirerProtocolParameters17(base_types._BaseFieldType):
 
 	@CardDataVrfctn.setter
 	def CardDataVrfctn(self, value):
-		self._CardDataVrfctn = value if type(value) != base_types.auto else self.make_default("CardDataVrfctn")
+		self._CardDataVrfctn = value if value is not None else base_types.UninitialisedField(self, 'CardDataVrfctn', TrueFalseIndicator, False)
 
 	@CardDataVrfctn.deleter
 	def CardDataVrfctn(self):
 		del self._CardDataVrfctn
-		self._CardDataVrfctn = None
+		self._CardDataVrfctn = base_types.UninitialisedField(self, 'CardDataVrfctn', TrueFalseIndicator, False)
 
 	@property
 	def CmpltnAdvcMndtd(self):
@@ -115,12 +115,12 @@ class AcquirerProtocolParameters17(base_types._BaseFieldType):
 
 	@CmpltnAdvcMndtd.setter
 	def CmpltnAdvcMndtd(self, value):
-		self._CmpltnAdvcMndtd = value if type(value) != base_types.auto else self.make_default("CmpltnAdvcMndtd")
+		self._CmpltnAdvcMndtd = value if value is not None else base_types.UninitialisedField(self, 'CmpltnAdvcMndtd', TrueFalseIndicator, False)
 
 	@CmpltnAdvcMndtd.deleter
 	def CmpltnAdvcMndtd(self):
 		del self._CmpltnAdvcMndtd
-		self._CmpltnAdvcMndtd = None
+		self._CmpltnAdvcMndtd = base_types.UninitialisedField(self, 'CmpltnAdvcMndtd', TrueFalseIndicator, False)
 
 	@property
 	def FileTrfBtch(self):
@@ -128,12 +128,12 @@ class AcquirerProtocolParameters17(base_types._BaseFieldType):
 
 	@FileTrfBtch.setter
 	def FileTrfBtch(self, value):
-		self._FileTrfBtch = value if type(value) != base_types.auto else self.make_default("FileTrfBtch")
+		self._FileTrfBtch = value if value is not None else base_types.UninitialisedField(self, 'FileTrfBtch', TrueFalseIndicator, False)
 
 	@FileTrfBtch.deleter
 	def FileTrfBtch(self):
 		del self._FileTrfBtch
-		self._FileTrfBtch = None
+		self._FileTrfBtch = base_types.UninitialisedField(self, 'FileTrfBtch', TrueFalseIndicator, False)
 
 	@property
 	def Hst(self):
@@ -141,12 +141,12 @@ class AcquirerProtocolParameters17(base_types._BaseFieldType):
 
 	@Hst.setter
 	def Hst(self, value):
-		self._Hst = value if type(value) != base_types.auto else self.make_default("Hst")
+		self._Hst = value if value is not None else base_types.UninitialisedField(self, 'Hst', AcquirerHostConfiguration10, True)
 
 	@Hst.deleter
 	def Hst(self):
 		del self._Hst
-		self._Hst = None
+		self._Hst = base_types.UninitialisedField(self, 'Hst', AcquirerHostConfiguration10, True)
 
 	@property
 	def MndtrySctyTrlr(self):
@@ -154,12 +154,12 @@ class AcquirerProtocolParameters17(base_types._BaseFieldType):
 
 	@MndtrySctyTrlr.setter
 	def MndtrySctyTrlr(self, value):
-		self._MndtrySctyTrlr = value if type(value) != base_types.auto else self.make_default("MndtrySctyTrlr")
+		self._MndtrySctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'MndtrySctyTrlr', TrueFalseIndicator, False)
 
 	@MndtrySctyTrlr.deleter
 	def MndtrySctyTrlr(self):
 		del self._MndtrySctyTrlr
-		self._MndtrySctyTrlr = None
+		self._MndtrySctyTrlr = base_types.UninitialisedField(self, 'MndtrySctyTrlr', TrueFalseIndicator, False)
 
 	@property
 	def MsgItm(self):
@@ -167,12 +167,12 @@ class AcquirerProtocolParameters17(base_types._BaseFieldType):
 
 	@MsgItm.setter
 	def MsgItm(self, value):
-		self._MsgItm = value if type(value) != base_types.auto else self.make_default("MsgItm")
+		self._MsgItm = value if value is not None else base_types.UninitialisedField(self, 'MsgItm', MessageItemCondition2, True)
 
 	@MsgItm.deleter
 	def MsgItm(self):
 		del self._MsgItm
-		self._MsgItm = None
+		self._MsgItm = base_types.UninitialisedField(self, 'MsgItm', MessageItemCondition2, True)
 
 	@property
 	def NtfyOffLineCxl(self):
@@ -180,12 +180,12 @@ class AcquirerProtocolParameters17(base_types._BaseFieldType):
 
 	@NtfyOffLineCxl.setter
 	def NtfyOffLineCxl(self, value):
-		self._NtfyOffLineCxl = value if type(value) != base_types.auto else self.make_default("NtfyOffLineCxl")
+		self._NtfyOffLineCxl = value if value is not None else base_types.UninitialisedField(self, 'NtfyOffLineCxl', TrueFalseIndicator, False)
 
 	@NtfyOffLineCxl.deleter
 	def NtfyOffLineCxl(self):
 		del self._NtfyOffLineCxl
-		self._NtfyOffLineCxl = None
+		self._NtfyOffLineCxl = base_types.UninitialisedField(self, 'NtfyOffLineCxl', TrueFalseIndicator, False)
 
 	@property
 	def OffLineTx(self):
@@ -193,12 +193,12 @@ class AcquirerProtocolParameters17(base_types._BaseFieldType):
 
 	@OffLineTx.setter
 	def OffLineTx(self, value):
-		self._OffLineTx = value if type(value) != base_types.auto else self.make_default("OffLineTx")
+		self._OffLineTx = value if value is not None else base_types.UninitialisedField(self, 'OffLineTx', AcquirerProtocolExchangeBehavior2, False)
 
 	@OffLineTx.deleter
 	def OffLineTx(self):
 		del self._OffLineTx
-		self._OffLineTx = None
+		self._OffLineTx = base_types.UninitialisedField(self, 'OffLineTx', AcquirerProtocolExchangeBehavior2, False)
 
 	@property
 	def OnLineTx(self):
@@ -206,12 +206,12 @@ class AcquirerProtocolParameters17(base_types._BaseFieldType):
 
 	@OnLineTx.setter
 	def OnLineTx(self, value):
-		self._OnLineTx = value if type(value) != base_types.auto else self.make_default("OnLineTx")
+		self._OnLineTx = value if value is not None else base_types.UninitialisedField(self, 'OnLineTx', AcquirerProtocolExchangeBehavior2, False)
 
 	@OnLineTx.deleter
 	def OnLineTx(self):
 		del self._OnLineTx
-		self._OnLineTx = None
+		self._OnLineTx = base_types.UninitialisedField(self, 'OnLineTx', AcquirerProtocolExchangeBehavior2, False)
 
 	@property
 	def PrtctCardData(self):
@@ -219,12 +219,12 @@ class AcquirerProtocolParameters17(base_types._BaseFieldType):
 
 	@PrtctCardData.setter
 	def PrtctCardData(self, value):
-		self._PrtctCardData = value if type(value) != base_types.auto else self.make_default("PrtctCardData")
+		self._PrtctCardData = value if value is not None else base_types.UninitialisedField(self, 'PrtctCardData', TrueFalseIndicator, False)
 
 	@PrtctCardData.deleter
 	def PrtctCardData(self):
 		del self._PrtctCardData
-		self._PrtctCardData = None
+		self._PrtctCardData = base_types.UninitialisedField(self, 'PrtctCardData', TrueFalseIndicator, False)
 
 	@property
 	def PrvtCardData(self):
@@ -232,12 +232,12 @@ class AcquirerProtocolParameters17(base_types._BaseFieldType):
 
 	@PrvtCardData.setter
 	def PrvtCardData(self, value):
-		self._PrvtCardData = value if type(value) != base_types.auto else self.make_default("PrvtCardData")
+		self._PrvtCardData = value if value is not None else base_types.UninitialisedField(self, 'PrvtCardData', TrueFalseIndicator, False)
 
 	@PrvtCardData.deleter
 	def PrvtCardData(self):
 		del self._PrvtCardData
-		self._PrvtCardData = None
+		self._PrvtCardData = base_types.UninitialisedField(self, 'PrvtCardData', TrueFalseIndicator, False)
 
 	@property
 	def RcncltnByAcqrr(self):
@@ -245,12 +245,12 @@ class AcquirerProtocolParameters17(base_types._BaseFieldType):
 
 	@RcncltnByAcqrr.setter
 	def RcncltnByAcqrr(self, value):
-		self._RcncltnByAcqrr = value if type(value) != base_types.auto else self.make_default("RcncltnByAcqrr")
+		self._RcncltnByAcqrr = value if value is not None else base_types.UninitialisedField(self, 'RcncltnByAcqrr', TrueFalseIndicator, False)
 
 	@RcncltnByAcqrr.deleter
 	def RcncltnByAcqrr(self):
 		del self._RcncltnByAcqrr
-		self._RcncltnByAcqrr = None
+		self._RcncltnByAcqrr = base_types.UninitialisedField(self, 'RcncltnByAcqrr', TrueFalseIndicator, False)
 
 	@property
 	def RcncltnErr(self):
@@ -258,12 +258,12 @@ class AcquirerProtocolParameters17(base_types._BaseFieldType):
 
 	@RcncltnErr.setter
 	def RcncltnErr(self, value):
-		self._RcncltnErr = value if type(value) != base_types.auto else self.make_default("RcncltnErr")
+		self._RcncltnErr = value if value is not None else base_types.UninitialisedField(self, 'RcncltnErr', TrueFalseIndicator, False)
 
 	@RcncltnErr.deleter
 	def RcncltnErr(self):
 		del self._RcncltnErr
-		self._RcncltnErr = None
+		self._RcncltnErr = base_types.UninitialisedField(self, 'RcncltnErr', TrueFalseIndicator, False)
 
 	@property
 	def RcncltnXchg(self):
@@ -271,12 +271,12 @@ class AcquirerProtocolParameters17(base_types._BaseFieldType):
 
 	@RcncltnXchg.setter
 	def RcncltnXchg(self, value):
-		self._RcncltnXchg = value if type(value) != base_types.auto else self.make_default("RcncltnXchg")
+		self._RcncltnXchg = value if value is not None else base_types.UninitialisedField(self, 'RcncltnXchg', ExchangeConfiguration9, False)
 
 	@RcncltnXchg.deleter
 	def RcncltnXchg(self):
 		del self._RcncltnXchg
-		self._RcncltnXchg = None
+		self._RcncltnXchg = base_types.UninitialisedField(self, 'RcncltnXchg', ExchangeConfiguration9, False)
 
 	@property
 	def SpltTtlCrit(self):
@@ -284,12 +284,12 @@ class AcquirerProtocolParameters17(base_types._BaseFieldType):
 
 	@SpltTtlCrit.setter
 	def SpltTtlCrit(self, value):
-		self._SpltTtlCrit = value if type(value) != base_types.auto else self.make_default("SpltTtlCrit")
+		self._SpltTtlCrit = value if value is not None else base_types.UninitialisedField(self, 'SpltTtlCrit', ReconciliationCriteria1Code, True)
 
 	@SpltTtlCrit.deleter
 	def SpltTtlCrit(self):
 		del self._SpltTtlCrit
-		self._SpltTtlCrit = None
+		self._SpltTtlCrit = base_types.UninitialisedField(self, 'SpltTtlCrit', ReconciliationCriteria1Code, True)
 
 	@property
 	def SpltTtls(self):
@@ -297,12 +297,12 @@ class AcquirerProtocolParameters17(base_types._BaseFieldType):
 
 	@SpltTtls.setter
 	def SpltTtls(self, value):
-		self._SpltTtls = value if type(value) != base_types.auto else self.make_default("SpltTtls")
+		self._SpltTtls = value if value is not None else base_types.UninitialisedField(self, 'SpltTtls', TrueFalseIndicator, False)
 
 	@SpltTtls.deleter
 	def SpltTtls(self):
 		del self._SpltTtls
-		self._SpltTtls = None
+		self._SpltTtls = base_types.UninitialisedField(self, 'SpltTtls', TrueFalseIndicator, False)
 
 	@property
 	def TtlsPerCcy(self):
@@ -310,12 +310,12 @@ class AcquirerProtocolParameters17(base_types._BaseFieldType):
 
 	@TtlsPerCcy.setter
 	def TtlsPerCcy(self, value):
-		self._TtlsPerCcy = value if type(value) != base_types.auto else self.make_default("TtlsPerCcy")
+		self._TtlsPerCcy = value if value is not None else base_types.UninitialisedField(self, 'TtlsPerCcy', TrueFalseIndicator, False)
 
 	@TtlsPerCcy.deleter
 	def TtlsPerCcy(self):
 		del self._TtlsPerCcy
-		self._TtlsPerCcy = None
+		self._TtlsPerCcy = base_types.UninitialisedField(self, 'TtlsPerCcy', TrueFalseIndicator, False)
 
 	@property
 	def Vrsn(self):
@@ -323,12 +323,12 @@ class AcquirerProtocolParameters17(base_types._BaseFieldType):
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+		self._Vrsn = value if value is not None else base_types.UninitialisedField(self, 'Vrsn', Max256Text, False)
 
 	@Vrsn.deleter
 	def Vrsn(self):
 		del self._Vrsn
-		self._Vrsn = None
+		self._Vrsn = base_types.UninitialisedField(self, 'Vrsn', Max256Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcqrrId', type=GenericIdentification176, min=1, max=None, mutex_group=None, array=True),

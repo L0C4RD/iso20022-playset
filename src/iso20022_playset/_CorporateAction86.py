@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalBusinessProcessFormat24Choice import AdditionalBusinessProcessFormat24Choice
-from ._CorporateActionDate89 import CorporateActionDate89
-from ._CorporateActionEventStageFormat15Choice import CorporateActionEventStageFormat15Choice
-from ._IntermediateSecuritiesDistributionTypeFormat18Choice import IntermediateSecuritiesDistributionTypeFormat18Choice
-from ._LotteryTypeFormat5Choice import LotteryTypeFormat5Choice
+from . import AdditionalBusinessProcessFormat24Choice
+from . import CorporateActionDate89
+from . import CorporateActionEventStageFormat15Choice
+from . import IntermediateSecuritiesDistributionTypeFormat18Choice
+from . import LotteryTypeFormat5Choice
 
 class CorporateAction86(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class CorporateAction86(base_types._BaseFieldType):
 
 	@AddtlBizPrcInd.setter
 	def AddtlBizPrcInd(self, value):
-		self._AddtlBizPrcInd = value if type(value) != base_types.auto else self.make_default("AddtlBizPrcInd")
+		self._AddtlBizPrcInd = value if value is not None else base_types.UninitialisedField(self, 'AddtlBizPrcInd', AdditionalBusinessProcessFormat24Choice, True)
 
 	@AddtlBizPrcInd.deleter
 	def AddtlBizPrcInd(self):
 		del self._AddtlBizPrcInd
-		self._AddtlBizPrcInd = None
+		self._AddtlBizPrcInd = base_types.UninitialisedField(self, 'AddtlBizPrcInd', AdditionalBusinessProcessFormat24Choice, True)
 
 	@property
 	def DtDtls(self):
@@ -30,12 +30,12 @@ class CorporateAction86(base_types._BaseFieldType):
 
 	@DtDtls.setter
 	def DtDtls(self, value):
-		self._DtDtls = value if type(value) != base_types.auto else self.make_default("DtDtls")
+		self._DtDtls = value if value is not None else base_types.UninitialisedField(self, 'DtDtls', CorporateActionDate89, False)
 
 	@DtDtls.deleter
 	def DtDtls(self):
 		del self._DtDtls
-		self._DtDtls = None
+		self._DtDtls = base_types.UninitialisedField(self, 'DtDtls', CorporateActionDate89, False)
 
 	@property
 	def EvtStag(self):
@@ -43,12 +43,12 @@ class CorporateAction86(base_types._BaseFieldType):
 
 	@EvtStag.setter
 	def EvtStag(self, value):
-		self._EvtStag = value if type(value) != base_types.auto else self.make_default("EvtStag")
+		self._EvtStag = value if value is not None else base_types.UninitialisedField(self, 'EvtStag', CorporateActionEventStageFormat15Choice, False)
 
 	@EvtStag.deleter
 	def EvtStag(self):
 		del self._EvtStag
-		self._EvtStag = None
+		self._EvtStag = base_types.UninitialisedField(self, 'EvtStag', CorporateActionEventStageFormat15Choice, False)
 
 	@property
 	def IntrmdtSctiesDstrbtnTp(self):
@@ -56,12 +56,12 @@ class CorporateAction86(base_types._BaseFieldType):
 
 	@IntrmdtSctiesDstrbtnTp.setter
 	def IntrmdtSctiesDstrbtnTp(self, value):
-		self._IntrmdtSctiesDstrbtnTp = value if type(value) != base_types.auto else self.make_default("IntrmdtSctiesDstrbtnTp")
+		self._IntrmdtSctiesDstrbtnTp = value if value is not None else base_types.UninitialisedField(self, 'IntrmdtSctiesDstrbtnTp', IntermediateSecuritiesDistributionTypeFormat18Choice, False)
 
 	@IntrmdtSctiesDstrbtnTp.deleter
 	def IntrmdtSctiesDstrbtnTp(self):
 		del self._IntrmdtSctiesDstrbtnTp
-		self._IntrmdtSctiesDstrbtnTp = None
+		self._IntrmdtSctiesDstrbtnTp = base_types.UninitialisedField(self, 'IntrmdtSctiesDstrbtnTp', IntermediateSecuritiesDistributionTypeFormat18Choice, False)
 
 	@property
 	def LtryTp(self):
@@ -69,12 +69,12 @@ class CorporateAction86(base_types._BaseFieldType):
 
 	@LtryTp.setter
 	def LtryTp(self, value):
-		self._LtryTp = value if type(value) != base_types.auto else self.make_default("LtryTp")
+		self._LtryTp = value if value is not None else base_types.UninitialisedField(self, 'LtryTp', LotteryTypeFormat5Choice, False)
 
 	@LtryTp.deleter
 	def LtryTp(self):
 		del self._LtryTp
-		self._LtryTp = None
+		self._LtryTp = base_types.UninitialisedField(self, 'LtryTp', LotteryTypeFormat5Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlBizPrcInd', type=AdditionalBusinessProcessFormat24Choice, min=0, max=None, mutex_group=None, array=True),

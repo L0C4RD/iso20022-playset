@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LegalPersonIdentification1 import LegalPersonIdentification1
-from ._NaturalPersonIdentification3 import NaturalPersonIdentification3
+from . import LegalPersonIdentification1
+from . import NaturalPersonIdentification3
 
 class PartyIdentification248Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PartyIdentification248Choice(base_types._BaseFieldType):
 
 	@Lgl.setter
 	def Lgl(self, value):
-		self._Lgl = value if type(value) != base_types.auto else self.make_default("Lgl")
+		self._Lgl = value if value is not None else base_types.UninitialisedField(self, 'Lgl', LegalPersonIdentification1, False)
 
 	@Lgl.deleter
 	def Lgl(self):
 		del self._Lgl
-		self._Lgl = None
+		self._Lgl = base_types.UninitialisedField(self, 'Lgl', LegalPersonIdentification1, False)
 
 	@property
 	def Ntrl(self):
@@ -27,12 +27,12 @@ class PartyIdentification248Choice(base_types._BaseFieldType):
 
 	@Ntrl.setter
 	def Ntrl(self, value):
-		self._Ntrl = value if type(value) != base_types.auto else self.make_default("Ntrl")
+		self._Ntrl = value if value is not None else base_types.UninitialisedField(self, 'Ntrl', NaturalPersonIdentification3, False)
 
 	@Ntrl.deleter
 	def Ntrl(self):
 		del self._Ntrl
-		self._Ntrl = None
+		self._Ntrl = base_types.UninitialisedField(self, 'Ntrl', NaturalPersonIdentification3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Lgl', type=LegalPersonIdentification1, min=0, max=1, mutex_group=1, array=False),

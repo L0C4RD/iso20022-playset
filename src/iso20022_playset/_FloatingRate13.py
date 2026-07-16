@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FloatingRateIdentification8Choice import FloatingRateIdentification8Choice
-from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._InterestComputationMethodFormat7 import InterestComputationMethodFormat7
-from ._InterestRateContractTerm4 import InterestRateContractTerm4
-from ._InterestRateFrequency3Choice import InterestRateFrequency3Choice
-from ._Max350Text import Max350Text
-from ._ResetDateAndValue1 import ResetDateAndValue1
-from ._SecuritiesTransactionPrice20Choice import SecuritiesTransactionPrice20Choice
+from . import FloatingRateIdentification8Choice
+from . import ISINOct2015Identifier
+from . import InterestComputationMethodFormat7
+from . import InterestRateContractTerm4
+from . import InterestRateFrequency3Choice
+from . import Max350Text
+from . import ResetDateAndValue1
+from . import SecuritiesTransactionPrice20Choice
 
 class FloatingRate13(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class FloatingRate13(base_types._BaseFieldType):
 
 	@DayCnt.setter
 	def DayCnt(self, value):
-		self._DayCnt = value if type(value) != base_types.auto else self.make_default("DayCnt")
+		self._DayCnt = value if value is not None else base_types.UninitialisedField(self, 'DayCnt', InterestComputationMethodFormat7, False)
 
 	@DayCnt.deleter
 	def DayCnt(self):
 		del self._DayCnt
-		self._DayCnt = None
+		self._DayCnt = base_types.UninitialisedField(self, 'DayCnt', InterestComputationMethodFormat7, False)
 
 	@property
 	def Id(self):
@@ -33,12 +33,12 @@ class FloatingRate13(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', ISINOct2015Identifier, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', ISINOct2015Identifier, False)
 
 	@property
 	def LastFltgRst(self):
@@ -46,12 +46,12 @@ class FloatingRate13(base_types._BaseFieldType):
 
 	@LastFltgRst.setter
 	def LastFltgRst(self, value):
-		self._LastFltgRst = value if type(value) != base_types.auto else self.make_default("LastFltgRst")
+		self._LastFltgRst = value if value is not None else base_types.UninitialisedField(self, 'LastFltgRst', ResetDateAndValue1, False)
 
 	@LastFltgRst.deleter
 	def LastFltgRst(self):
 		del self._LastFltgRst
-		self._LastFltgRst = None
+		self._LastFltgRst = base_types.UninitialisedField(self, 'LastFltgRst', ResetDateAndValue1, False)
 
 	@property
 	def Nm(self):
@@ -59,12 +59,12 @@ class FloatingRate13(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max350Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max350Text, False)
 
 	@property
 	def NxtFltgRst(self):
@@ -72,12 +72,12 @@ class FloatingRate13(base_types._BaseFieldType):
 
 	@NxtFltgRst.setter
 	def NxtFltgRst(self, value):
-		self._NxtFltgRst = value if type(value) != base_types.auto else self.make_default("NxtFltgRst")
+		self._NxtFltgRst = value if value is not None else base_types.UninitialisedField(self, 'NxtFltgRst', ResetDateAndValue1, False)
 
 	@NxtFltgRst.deleter
 	def NxtFltgRst(self):
 		del self._NxtFltgRst
-		self._NxtFltgRst = None
+		self._NxtFltgRst = base_types.UninitialisedField(self, 'NxtFltgRst', ResetDateAndValue1, False)
 
 	@property
 	def PmtFrqcy(self):
@@ -85,12 +85,12 @@ class FloatingRate13(base_types._BaseFieldType):
 
 	@PmtFrqcy.setter
 	def PmtFrqcy(self, value):
-		self._PmtFrqcy = value if type(value) != base_types.auto else self.make_default("PmtFrqcy")
+		self._PmtFrqcy = value if value is not None else base_types.UninitialisedField(self, 'PmtFrqcy', InterestRateFrequency3Choice, False)
 
 	@PmtFrqcy.deleter
 	def PmtFrqcy(self):
 		del self._PmtFrqcy
-		self._PmtFrqcy = None
+		self._PmtFrqcy = base_types.UninitialisedField(self, 'PmtFrqcy', InterestRateFrequency3Choice, False)
 
 	@property
 	def Rate(self):
@@ -98,12 +98,12 @@ class FloatingRate13(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+		self._Rate = value if value is not None else base_types.UninitialisedField(self, 'Rate', FloatingRateIdentification8Choice, False)
 
 	@Rate.deleter
 	def Rate(self):
 		del self._Rate
-		self._Rate = None
+		self._Rate = base_types.UninitialisedField(self, 'Rate', FloatingRateIdentification8Choice, False)
 
 	@property
 	def RefPrd(self):
@@ -111,12 +111,12 @@ class FloatingRate13(base_types._BaseFieldType):
 
 	@RefPrd.setter
 	def RefPrd(self, value):
-		self._RefPrd = value if type(value) != base_types.auto else self.make_default("RefPrd")
+		self._RefPrd = value if value is not None else base_types.UninitialisedField(self, 'RefPrd', InterestRateContractTerm4, False)
 
 	@RefPrd.deleter
 	def RefPrd(self):
 		del self._RefPrd
-		self._RefPrd = None
+		self._RefPrd = base_types.UninitialisedField(self, 'RefPrd', InterestRateContractTerm4, False)
 
 	@property
 	def RstFrqcy(self):
@@ -124,12 +124,12 @@ class FloatingRate13(base_types._BaseFieldType):
 
 	@RstFrqcy.setter
 	def RstFrqcy(self, value):
-		self._RstFrqcy = value if type(value) != base_types.auto else self.make_default("RstFrqcy")
+		self._RstFrqcy = value if value is not None else base_types.UninitialisedField(self, 'RstFrqcy', InterestRateFrequency3Choice, False)
 
 	@RstFrqcy.deleter
 	def RstFrqcy(self):
 		del self._RstFrqcy
-		self._RstFrqcy = None
+		self._RstFrqcy = base_types.UninitialisedField(self, 'RstFrqcy', InterestRateFrequency3Choice, False)
 
 	@property
 	def Sprd(self):
@@ -137,12 +137,12 @@ class FloatingRate13(base_types._BaseFieldType):
 
 	@Sprd.setter
 	def Sprd(self, value):
-		self._Sprd = value if type(value) != base_types.auto else self.make_default("Sprd")
+		self._Sprd = value if value is not None else base_types.UninitialisedField(self, 'Sprd', SecuritiesTransactionPrice20Choice, False)
 
 	@Sprd.deleter
 	def Sprd(self):
 		del self._Sprd
-		self._Sprd = None
+		self._Sprd = base_types.UninitialisedField(self, 'Sprd', SecuritiesTransactionPrice20Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DayCnt', type=InterestComputationMethodFormat7, min=0, max=1, mutex_group=None, array=False),

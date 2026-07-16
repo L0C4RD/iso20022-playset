@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._IndividualPerson41 import IndividualPerson41
-from ._Max35Text import Max35Text
-from ._Proxy12 import Proxy12
-from ._SafekeepingAccount19 import SafekeepingAccount19
-from ._SpecificInstructionRequest4 import SpecificInstructionRequest4
-from ._VoteDetails6 import VoteDetails6
-from ._YesNoIndicator import YesNoIndicator
+from . import ISODateTime
+from . import IndividualPerson41
+from . import Max35Text
+from . import Proxy12
+from . import SafekeepingAccount19
+from . import SpecificInstructionRequest4
+from . import VoteDetails6
+from . import YesNoIndicator
 
 class Instruction8(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class Instruction8(base_types._BaseFieldType):
 
 	@AcctDtls.setter
 	def AcctDtls(self, value):
-		self._AcctDtls = value if type(value) != base_types.auto else self.make_default("AcctDtls")
+		self._AcctDtls = value if value is not None else base_types.UninitialisedField(self, 'AcctDtls', SafekeepingAccount19, False)
 
 	@AcctDtls.deleter
 	def AcctDtls(self):
 		del self._AcctDtls
-		self._AcctDtls = None
+		self._AcctDtls = base_types.UninitialisedField(self, 'AcctDtls', SafekeepingAccount19, False)
 
 	@property
 	def MtgAttndee(self):
@@ -33,12 +33,12 @@ class Instruction8(base_types._BaseFieldType):
 
 	@MtgAttndee.setter
 	def MtgAttndee(self, value):
-		self._MtgAttndee = value if type(value) != base_types.auto else self.make_default("MtgAttndee")
+		self._MtgAttndee = value if value is not None else base_types.UninitialisedField(self, 'MtgAttndee', IndividualPerson41, True)
 
 	@MtgAttndee.deleter
 	def MtgAttndee(self):
 		del self._MtgAttndee
-		self._MtgAttndee = None
+		self._MtgAttndee = base_types.UninitialisedField(self, 'MtgAttndee', IndividualPerson41, True)
 
 	@property
 	def Prxy(self):
@@ -46,12 +46,12 @@ class Instruction8(base_types._BaseFieldType):
 
 	@Prxy.setter
 	def Prxy(self, value):
-		self._Prxy = value if type(value) != base_types.auto else self.make_default("Prxy")
+		self._Prxy = value if value is not None else base_types.UninitialisedField(self, 'Prxy', Proxy12, False)
 
 	@Prxy.deleter
 	def Prxy(self):
 		del self._Prxy
-		self._Prxy = None
+		self._Prxy = base_types.UninitialisedField(self, 'Prxy', Proxy12, False)
 
 	@property
 	def ReqdExctnDt(self):
@@ -59,12 +59,12 @@ class Instruction8(base_types._BaseFieldType):
 
 	@ReqdExctnDt.setter
 	def ReqdExctnDt(self, value):
-		self._ReqdExctnDt = value if type(value) != base_types.auto else self.make_default("ReqdExctnDt")
+		self._ReqdExctnDt = value if value is not None else base_types.UninitialisedField(self, 'ReqdExctnDt', ISODateTime, False)
 
 	@ReqdExctnDt.deleter
 	def ReqdExctnDt(self):
 		del self._ReqdExctnDt
-		self._ReqdExctnDt = None
+		self._ReqdExctnDt = base_types.UninitialisedField(self, 'ReqdExctnDt', ISODateTime, False)
 
 	@property
 	def SnglInstrId(self):
@@ -72,12 +72,12 @@ class Instruction8(base_types._BaseFieldType):
 
 	@SnglInstrId.setter
 	def SnglInstrId(self, value):
-		self._SnglInstrId = value if type(value) != base_types.auto else self.make_default("SnglInstrId")
+		self._SnglInstrId = value if value is not None else base_types.UninitialisedField(self, 'SnglInstrId', Max35Text, False)
 
 	@SnglInstrId.deleter
 	def SnglInstrId(self):
 		del self._SnglInstrId
-		self._SnglInstrId = None
+		self._SnglInstrId = base_types.UninitialisedField(self, 'SnglInstrId', Max35Text, False)
 
 	@property
 	def SpcfcInstrReq(self):
@@ -85,12 +85,12 @@ class Instruction8(base_types._BaseFieldType):
 
 	@SpcfcInstrReq.setter
 	def SpcfcInstrReq(self, value):
-		self._SpcfcInstrReq = value if type(value) != base_types.auto else self.make_default("SpcfcInstrReq")
+		self._SpcfcInstrReq = value if value is not None else base_types.UninitialisedField(self, 'SpcfcInstrReq', SpecificInstructionRequest4, False)
 
 	@SpcfcInstrReq.deleter
 	def SpcfcInstrReq(self):
 		del self._SpcfcInstrReq
-		self._SpcfcInstrReq = None
+		self._SpcfcInstrReq = base_types.UninitialisedField(self, 'SpcfcInstrReq', SpecificInstructionRequest4, False)
 
 	@property
 	def VoteDtls(self):
@@ -98,12 +98,12 @@ class Instruction8(base_types._BaseFieldType):
 
 	@VoteDtls.setter
 	def VoteDtls(self, value):
-		self._VoteDtls = value if type(value) != base_types.auto else self.make_default("VoteDtls")
+		self._VoteDtls = value if value is not None else base_types.UninitialisedField(self, 'VoteDtls', VoteDetails6, False)
 
 	@VoteDtls.deleter
 	def VoteDtls(self):
 		del self._VoteDtls
-		self._VoteDtls = None
+		self._VoteDtls = base_types.UninitialisedField(self, 'VoteDtls', VoteDetails6, False)
 
 	@property
 	def VoteExctnConf(self):
@@ -111,12 +111,12 @@ class Instruction8(base_types._BaseFieldType):
 
 	@VoteExctnConf.setter
 	def VoteExctnConf(self, value):
-		self._VoteExctnConf = value if type(value) != base_types.auto else self.make_default("VoteExctnConf")
+		self._VoteExctnConf = value if value is not None else base_types.UninitialisedField(self, 'VoteExctnConf', YesNoIndicator, False)
 
 	@VoteExctnConf.deleter
 	def VoteExctnConf(self):
 		del self._VoteExctnConf
-		self._VoteExctnConf = None
+		self._VoteExctnConf = base_types.UninitialisedField(self, 'VoteExctnConf', YesNoIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctDtls', type=SafekeepingAccount19, min=1, max=1, mutex_group=None, array=False),

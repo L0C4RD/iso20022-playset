@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActionMessage11 import ActionMessage11
-from ._RetailerService2Code import RetailerService2Code
-from ._TransactionAction1Code import TransactionAction1Code
+from . import ActionMessage11
+from . import RetailerService2Code
+from . import TransactionAction1Code
 
 class EnableServiceRequest6(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class EnableServiceRequest6(base_types._BaseFieldType):
 
 	@DispOutpt.setter
 	def DispOutpt(self, value):
-		self._DispOutpt = value if type(value) != base_types.auto else self.make_default("DispOutpt")
+		self._DispOutpt = value if value is not None else base_types.UninitialisedField(self, 'DispOutpt', ActionMessage11, False)
 
 	@DispOutpt.deleter
 	def DispOutpt(self):
 		del self._DispOutpt
-		self._DispOutpt = None
+		self._DispOutpt = base_types.UninitialisedField(self, 'DispOutpt', ActionMessage11, False)
 
 	@property
 	def SvcsNbld(self):
@@ -28,12 +28,12 @@ class EnableServiceRequest6(base_types._BaseFieldType):
 
 	@SvcsNbld.setter
 	def SvcsNbld(self, value):
-		self._SvcsNbld = value if type(value) != base_types.auto else self.make_default("SvcsNbld")
+		self._SvcsNbld = value if value is not None else base_types.UninitialisedField(self, 'SvcsNbld', RetailerService2Code, False)
 
 	@SvcsNbld.deleter
 	def SvcsNbld(self):
 		del self._SvcsNbld
-		self._SvcsNbld = None
+		self._SvcsNbld = base_types.UninitialisedField(self, 'SvcsNbld', RetailerService2Code, False)
 
 	@property
 	def TxActn(self):
@@ -41,12 +41,12 @@ class EnableServiceRequest6(base_types._BaseFieldType):
 
 	@TxActn.setter
 	def TxActn(self, value):
-		self._TxActn = value if type(value) != base_types.auto else self.make_default("TxActn")
+		self._TxActn = value if value is not None else base_types.UninitialisedField(self, 'TxActn', TransactionAction1Code, False)
 
 	@TxActn.deleter
 	def TxActn(self):
 		del self._TxActn
-		self._TxActn = None
+		self._TxActn = base_types.UninitialisedField(self, 'TxActn', TransactionAction1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DispOutpt', type=ActionMessage11, min=0, max=1, mutex_group=None, array=False),

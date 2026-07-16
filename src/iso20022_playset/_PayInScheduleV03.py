@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BalanceStatus2 import BalanceStatus2
-from ._PartyIdentification73Choice import PartyIdentification73Choice
-from ._PayInFactors1 import PayInFactors1
-from ._PayInScheduleItems1 import PayInScheduleItems1
-from ._ReportData4 import ReportData4
-from ._SupplementaryData1 import SupplementaryData1
+from . import BalanceStatus2
+from . import PartyIdentification73Choice
+from . import PayInFactors1
+from . import PayInScheduleItems1
+from . import ReportData4
+from . import SupplementaryData1
 
 class PayInScheduleV03(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class PayInScheduleV03(base_types._BaseFieldType):
 
 	@PayInFctrs.setter
 	def PayInFctrs(self, value):
-		self._PayInFctrs = value if type(value) != base_types.auto else self.make_default("PayInFctrs")
+		self._PayInFctrs = value if value is not None else base_types.UninitialisedField(self, 'PayInFctrs', PayInFactors1, False)
 
 	@PayInFctrs.deleter
 	def PayInFctrs(self):
 		del self._PayInFctrs
-		self._PayInFctrs = None
+		self._PayInFctrs = base_types.UninitialisedField(self, 'PayInFctrs', PayInFactors1, False)
 
 	@property
 	def PayInSchdlItm(self):
@@ -31,12 +31,12 @@ class PayInScheduleV03(base_types._BaseFieldType):
 
 	@PayInSchdlItm.setter
 	def PayInSchdlItm(self, value):
-		self._PayInSchdlItm = value if type(value) != base_types.auto else self.make_default("PayInSchdlItm")
+		self._PayInSchdlItm = value if value is not None else base_types.UninitialisedField(self, 'PayInSchdlItm', PayInScheduleItems1, True)
 
 	@PayInSchdlItm.deleter
 	def PayInSchdlItm(self):
 		del self._PayInSchdlItm
-		self._PayInSchdlItm = None
+		self._PayInSchdlItm = base_types.UninitialisedField(self, 'PayInSchdlItm', PayInScheduleItems1, True)
 
 	@property
 	def PayInSchdlLngBal(self):
@@ -44,12 +44,12 @@ class PayInScheduleV03(base_types._BaseFieldType):
 
 	@PayInSchdlLngBal.setter
 	def PayInSchdlLngBal(self, value):
-		self._PayInSchdlLngBal = value if type(value) != base_types.auto else self.make_default("PayInSchdlLngBal")
+		self._PayInSchdlLngBal = value if value is not None else base_types.UninitialisedField(self, 'PayInSchdlLngBal', BalanceStatus2, True)
 
 	@PayInSchdlLngBal.deleter
 	def PayInSchdlLngBal(self):
 		del self._PayInSchdlLngBal
-		self._PayInSchdlLngBal = None
+		self._PayInSchdlLngBal = base_types.UninitialisedField(self, 'PayInSchdlLngBal', BalanceStatus2, True)
 
 	@property
 	def PtyId(self):
@@ -57,12 +57,12 @@ class PayInScheduleV03(base_types._BaseFieldType):
 
 	@PtyId.setter
 	def PtyId(self, value):
-		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
+		self._PtyId = value if value is not None else base_types.UninitialisedField(self, 'PtyId', PartyIdentification73Choice, False)
 
 	@PtyId.deleter
 	def PtyId(self):
 		del self._PtyId
-		self._PtyId = None
+		self._PtyId = base_types.UninitialisedField(self, 'PtyId', PartyIdentification73Choice, False)
 
 	@property
 	def RptData(self):
@@ -70,12 +70,12 @@ class PayInScheduleV03(base_types._BaseFieldType):
 
 	@RptData.setter
 	def RptData(self, value):
-		self._RptData = value if type(value) != base_types.auto else self.make_default("RptData")
+		self._RptData = value if value is not None else base_types.UninitialisedField(self, 'RptData', ReportData4, False)
 
 	@RptData.deleter
 	def RptData(self):
 		del self._RptData
-		self._RptData = None
+		self._RptData = base_types.UninitialisedField(self, 'RptData', ReportData4, False)
 
 	@property
 	def SplmtryData(self):
@@ -83,12 +83,12 @@ class PayInScheduleV03(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PayInFctrs', type=PayInFactors1, min=0, max=1, mutex_group=None, array=False),

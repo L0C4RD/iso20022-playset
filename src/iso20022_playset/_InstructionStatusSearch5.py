@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateTimePeriod1Choice import DateTimePeriod1Choice
-from ._Max4AlphaNumericText import Max4AlphaNumericText
-from ._PaymentStatusCodeSearch2Choice import PaymentStatusCodeSearch2Choice
+from . import DateTimePeriod1Choice
+from . import Max4AlphaNumericText
+from . import PaymentStatusCodeSearch2Choice
 
 class InstructionStatusSearch5(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class InstructionStatusSearch5(base_types._BaseFieldType):
 
 	@PmtInstrSts.setter
 	def PmtInstrSts(self, value):
-		self._PmtInstrSts = value if type(value) != base_types.auto else self.make_default("PmtInstrSts")
+		self._PmtInstrSts = value if value is not None else base_types.UninitialisedField(self, 'PmtInstrSts', PaymentStatusCodeSearch2Choice, False)
 
 	@PmtInstrSts.deleter
 	def PmtInstrSts(self):
 		del self._PmtInstrSts
-		self._PmtInstrSts = None
+		self._PmtInstrSts = base_types.UninitialisedField(self, 'PmtInstrSts', PaymentStatusCodeSearch2Choice, False)
 
 	@property
 	def PmtInstrStsDtTm(self):
@@ -28,12 +28,12 @@ class InstructionStatusSearch5(base_types._BaseFieldType):
 
 	@PmtInstrStsDtTm.setter
 	def PmtInstrStsDtTm(self, value):
-		self._PmtInstrStsDtTm = value if type(value) != base_types.auto else self.make_default("PmtInstrStsDtTm")
+		self._PmtInstrStsDtTm = value if value is not None else base_types.UninitialisedField(self, 'PmtInstrStsDtTm', DateTimePeriod1Choice, False)
 
 	@PmtInstrStsDtTm.deleter
 	def PmtInstrStsDtTm(self):
 		del self._PmtInstrStsDtTm
-		self._PmtInstrStsDtTm = None
+		self._PmtInstrStsDtTm = base_types.UninitialisedField(self, 'PmtInstrStsDtTm', DateTimePeriod1Choice, False)
 
 	@property
 	def PrtryStsRsn(self):
@@ -41,12 +41,12 @@ class InstructionStatusSearch5(base_types._BaseFieldType):
 
 	@PrtryStsRsn.setter
 	def PrtryStsRsn(self, value):
-		self._PrtryStsRsn = value if type(value) != base_types.auto else self.make_default("PrtryStsRsn")
+		self._PrtryStsRsn = value if value is not None else base_types.UninitialisedField(self, 'PrtryStsRsn', Max4AlphaNumericText, False)
 
 	@PrtryStsRsn.deleter
 	def PrtryStsRsn(self):
 		del self._PrtryStsRsn
-		self._PrtryStsRsn = None
+		self._PrtryStsRsn = base_types.UninitialisedField(self, 'PrtryStsRsn', Max4AlphaNumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PmtInstrSts', type=PaymentStatusCodeSearch2Choice, min=0, max=1, mutex_group=None, array=False),

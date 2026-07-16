@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AnyBICDec2014Identifier import AnyBICDec2014Identifier
-from ._DTI2024Identifier import DTI2024Identifier
-from ._GenericIdentification1 import GenericIdentification1
-from ._NameAndAddress5 import NameAndAddress5
+from . import AnyBICDec2014Identifier
+from . import DTI2024Identifier
+from . import GenericIdentification1
+from . import NameAndAddress5
 
 class PartyIdentification262Choice(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class PartyIdentification262Choice(base_types._BaseFieldType):
 
 	@AnyBIC.setter
 	def AnyBIC(self, value):
-		self._AnyBIC = value if type(value) != base_types.auto else self.make_default("AnyBIC")
+		self._AnyBIC = value if value is not None else base_types.UninitialisedField(self, 'AnyBIC', AnyBICDec2014Identifier, False)
 
 	@AnyBIC.deleter
 	def AnyBIC(self):
 		del self._AnyBIC
-		self._AnyBIC = None
+		self._AnyBIC = base_types.UninitialisedField(self, 'AnyBIC', AnyBICDec2014Identifier, False)
 
 	@property
 	def DgtlLdgrId(self):
@@ -29,12 +29,12 @@ class PartyIdentification262Choice(base_types._BaseFieldType):
 
 	@DgtlLdgrId.setter
 	def DgtlLdgrId(self, value):
-		self._DgtlLdgrId = value if type(value) != base_types.auto else self.make_default("DgtlLdgrId")
+		self._DgtlLdgrId = value if value is not None else base_types.UninitialisedField(self, 'DgtlLdgrId', DTI2024Identifier, False)
 
 	@DgtlLdgrId.deleter
 	def DgtlLdgrId(self):
 		del self._DgtlLdgrId
-		self._DgtlLdgrId = None
+		self._DgtlLdgrId = base_types.UninitialisedField(self, 'DgtlLdgrId', DTI2024Identifier, False)
 
 	@property
 	def NmAndAdr(self):
@@ -42,12 +42,12 @@ class PartyIdentification262Choice(base_types._BaseFieldType):
 
 	@NmAndAdr.setter
 	def NmAndAdr(self, value):
-		self._NmAndAdr = value if type(value) != base_types.auto else self.make_default("NmAndAdr")
+		self._NmAndAdr = value if value is not None else base_types.UninitialisedField(self, 'NmAndAdr', NameAndAddress5, False)
 
 	@NmAndAdr.deleter
 	def NmAndAdr(self):
 		del self._NmAndAdr
-		self._NmAndAdr = None
+		self._NmAndAdr = base_types.UninitialisedField(self, 'NmAndAdr', NameAndAddress5, False)
 
 	@property
 	def PrtryId(self):
@@ -55,12 +55,12 @@ class PartyIdentification262Choice(base_types._BaseFieldType):
 
 	@PrtryId.setter
 	def PrtryId(self, value):
-		self._PrtryId = value if type(value) != base_types.auto else self.make_default("PrtryId")
+		self._PrtryId = value if value is not None else base_types.UninitialisedField(self, 'PrtryId', GenericIdentification1, False)
 
 	@PrtryId.deleter
 	def PrtryId(self):
 		del self._PrtryId
-		self._PrtryId = None
+		self._PrtryId = base_types.UninitialisedField(self, 'PrtryId', GenericIdentification1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AnyBIC', type=AnyBICDec2014Identifier, min=0, max=1, mutex_group=1, array=False),

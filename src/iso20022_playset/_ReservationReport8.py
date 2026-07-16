@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ReservationIdentification4 import ReservationIdentification4
-from ._ReservationOrError9Choice import ReservationOrError9Choice
+from . import ReservationIdentification4
+from . import ReservationOrError9Choice
 
 class ReservationReport8(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ReservationReport8(base_types._BaseFieldType):
 
 	@RsvatnId.setter
 	def RsvatnId(self, value):
-		self._RsvatnId = value if type(value) != base_types.auto else self.make_default("RsvatnId")
+		self._RsvatnId = value if value is not None else base_types.UninitialisedField(self, 'RsvatnId', ReservationIdentification4, False)
 
 	@RsvatnId.deleter
 	def RsvatnId(self):
 		del self._RsvatnId
-		self._RsvatnId = None
+		self._RsvatnId = base_types.UninitialisedField(self, 'RsvatnId', ReservationIdentification4, False)
 
 	@property
 	def RsvatnOrErr(self):
@@ -27,12 +27,12 @@ class ReservationReport8(base_types._BaseFieldType):
 
 	@RsvatnOrErr.setter
 	def RsvatnOrErr(self, value):
-		self._RsvatnOrErr = value if type(value) != base_types.auto else self.make_default("RsvatnOrErr")
+		self._RsvatnOrErr = value if value is not None else base_types.UninitialisedField(self, 'RsvatnOrErr', ReservationOrError9Choice, False)
 
 	@RsvatnOrErr.deleter
 	def RsvatnOrErr(self):
 		del self._RsvatnOrErr
-		self._RsvatnOrErr = None
+		self._RsvatnOrErr = base_types.UninitialisedField(self, 'RsvatnOrErr', ReservationOrError9Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RsvatnId', type=ReservationIdentification4, min=1, max=1, mutex_group=None, array=False),

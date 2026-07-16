@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountIdentification38Choice import AccountIdentification38Choice
-from ._AmountAndForeignExchange1 import AmountAndForeignExchange1
-from ._BillingTaxRecord2 import BillingTaxRecord2
-from ._PartyIdentification136 import PartyIdentification136
-from ._ServiceCategory1Choice import ServiceCategory1Choice
-from ._ServiceItemTotals12 import ServiceItemTotals12
-from ._ServiceItemTotals13 import ServiceItemTotals13
+from . import AccountIdentification38Choice
+from . import AmountAndForeignExchange1
+from . import BillingTaxRecord2
+from . import PartyIdentification136
+from . import ServiceCategory1Choice
+from . import ServiceItemTotals12
+from . import ServiceItemTotals13
 
 class ServiceCategoryTotals8(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class ServiceCategoryTotals8(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', AccountIdentification38Choice, False)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', AccountIdentification38Choice, False)
 
 	@property
 	def BlldCstmrId(self):
@@ -32,12 +32,12 @@ class ServiceCategoryTotals8(base_types._BaseFieldType):
 
 	@BlldCstmrId.setter
 	def BlldCstmrId(self, value):
-		self._BlldCstmrId = value if type(value) != base_types.auto else self.make_default("BlldCstmrId")
+		self._BlldCstmrId = value if value is not None else base_types.UninitialisedField(self, 'BlldCstmrId', PartyIdentification136, False)
 
 	@BlldCstmrId.deleter
 	def BlldCstmrId(self):
 		del self._BlldCstmrId
-		self._BlldCstmrId = None
+		self._BlldCstmrId = base_types.UninitialisedField(self, 'BlldCstmrId', PartyIdentification136, False)
 
 	@property
 	def PrntAcctId(self):
@@ -45,12 +45,12 @@ class ServiceCategoryTotals8(base_types._BaseFieldType):
 
 	@PrntAcctId.setter
 	def PrntAcctId(self, value):
-		self._PrntAcctId = value if type(value) != base_types.auto else self.make_default("PrntAcctId")
+		self._PrntAcctId = value if value is not None else base_types.UninitialisedField(self, 'PrntAcctId', AccountIdentification38Choice, False)
 
 	@PrntAcctId.deleter
 	def PrntAcctId(self):
 		del self._PrntAcctId
-		self._PrntAcctId = None
+		self._PrntAcctId = base_types.UninitialisedField(self, 'PrntAcctId', AccountIdentification38Choice, False)
 
 	@property
 	def SvcCtgy(self):
@@ -58,12 +58,12 @@ class ServiceCategoryTotals8(base_types._BaseFieldType):
 
 	@SvcCtgy.setter
 	def SvcCtgy(self, value):
-		self._SvcCtgy = value if type(value) != base_types.auto else self.make_default("SvcCtgy")
+		self._SvcCtgy = value if value is not None else base_types.UninitialisedField(self, 'SvcCtgy', ServiceCategory1Choice, False)
 
 	@SvcCtgy.deleter
 	def SvcCtgy(self):
 		del self._SvcCtgy
-		self._SvcCtgy = None
+		self._SvcCtgy = base_types.UninitialisedField(self, 'SvcCtgy', ServiceCategory1Choice, False)
 
 	@property
 	def SvcItmCrrctn(self):
@@ -71,12 +71,12 @@ class ServiceCategoryTotals8(base_types._BaseFieldType):
 
 	@SvcItmCrrctn.setter
 	def SvcItmCrrctn(self, value):
-		self._SvcItmCrrctn = value if type(value) != base_types.auto else self.make_default("SvcItmCrrctn")
+		self._SvcItmCrrctn = value if value is not None else base_types.UninitialisedField(self, 'SvcItmCrrctn', ServiceItemTotals13, True)
 
 	@SvcItmCrrctn.deleter
 	def SvcItmCrrctn(self):
 		del self._SvcItmCrrctn
-		self._SvcItmCrrctn = None
+		self._SvcItmCrrctn = base_types.UninitialisedField(self, 'SvcItmCrrctn', ServiceItemTotals13, True)
 
 	@property
 	def SvcItmTtls(self):
@@ -84,12 +84,12 @@ class ServiceCategoryTotals8(base_types._BaseFieldType):
 
 	@SvcItmTtls.setter
 	def SvcItmTtls(self, value):
-		self._SvcItmTtls = value if type(value) != base_types.auto else self.make_default("SvcItmTtls")
+		self._SvcItmTtls = value if value is not None else base_types.UninitialisedField(self, 'SvcItmTtls', ServiceItemTotals12, True)
 
 	@SvcItmTtls.deleter
 	def SvcItmTtls(self):
 		del self._SvcItmTtls
-		self._SvcItmTtls = None
+		self._SvcItmTtls = base_types.UninitialisedField(self, 'SvcItmTtls', ServiceItemTotals12, True)
 
 	@property
 	def Tax(self):
@@ -97,12 +97,12 @@ class ServiceCategoryTotals8(base_types._BaseFieldType):
 
 	@Tax.setter
 	def Tax(self, value):
-		self._Tax = value if type(value) != base_types.auto else self.make_default("Tax")
+		self._Tax = value if value is not None else base_types.UninitialisedField(self, 'Tax', BillingTaxRecord2, True)
 
 	@Tax.deleter
 	def Tax(self):
 		del self._Tax
-		self._Tax = None
+		self._Tax = base_types.UninitialisedField(self, 'Tax', BillingTaxRecord2, True)
 
 	@property
 	def TtlInvcAmt(self):
@@ -110,12 +110,12 @@ class ServiceCategoryTotals8(base_types._BaseFieldType):
 
 	@TtlInvcAmt.setter
 	def TtlInvcAmt(self, value):
-		self._TtlInvcAmt = value if type(value) != base_types.auto else self.make_default("TtlInvcAmt")
+		self._TtlInvcAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlInvcAmt', AmountAndForeignExchange1, False)
 
 	@TtlInvcAmt.deleter
 	def TtlInvcAmt(self):
 		del self._TtlInvcAmt
-		self._TtlInvcAmt = None
+		self._TtlInvcAmt = base_types.UninitialisedField(self, 'TtlInvcAmt', AmountAndForeignExchange1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctId', type=AccountIdentification38Choice, min=0, max=1, mutex_group=None, array=False),

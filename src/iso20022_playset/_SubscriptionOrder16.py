@@ -2,34 +2,34 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._CustomerConductClassification1Choice import CustomerConductClassification1Choice
-from ._DeliveryReceiptType2Code import DeliveryReceiptType2Code
-from ._DigitalPaymentSettlement3 import DigitalPaymentSettlement3
-from ._Equalisation1 import Equalisation1
-from ._FeeAndTax2 import FeeAndTax2
-from ._FinancialAdvice1Code import FinancialAdvice1Code
-from ._FinancialInstrumentQuantity49Choice import FinancialInstrumentQuantity49Choice
-from ._ForeignExchangeTerms44 import ForeignExchangeTerms44
-from ._FundOrderType4Choice import FundOrderType4Choice
-from ._FundSettlementParameters22 import FundSettlementParameters22
-from ._ISODate import ISODate
-from ._IncomePreference1Code import IncomePreference1Code
-from ._IndividualPerson31 import IndividualPerson31
-from ._Intermediary49 import Intermediary49
-from ._InvestmentAccount81 import InvestmentAccount81
-from ._InvestmentFundsOrderBreakdown2 import InvestmentFundsOrderBreakdown2
-from ._Max350Text import Max350Text
-from ._Max35Text import Max35Text
-from ._NameAndAddress4 import NameAndAddress4
-from ._NegotiatedTrade1Code import NegotiatedTrade1Code
-from ._OrderWaiver1 import OrderWaiver1
-from ._PaymentTransaction180 import PaymentTransaction180
-from ._RoundingDirection2Code import RoundingDirection2Code
-from ._SignatureType1Choice import SignatureType1Choice
-from ._SourceOfCash1Choice import SourceOfCash1Choice
-from ._TransactionChannelType1Choice import TransactionChannelType1Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import ActiveCurrencyAndAmount
+from . import CustomerConductClassification1Choice
+from . import DeliveryReceiptType2Code
+from . import DigitalPaymentSettlement3
+from . import Equalisation1
+from . import FeeAndTax2
+from . import FinancialAdvice1Code
+from . import FinancialInstrumentQuantity49Choice
+from . import ForeignExchangeTerms44
+from . import FundOrderType4Choice
+from . import FundSettlementParameters22
+from . import ISODate
+from . import IncomePreference1Code
+from . import IndividualPerson31
+from . import Intermediary49
+from . import InvestmentAccount81
+from . import InvestmentFundsOrderBreakdown2
+from . import Max350Text
+from . import Max35Text
+from . import NameAndAddress4
+from . import NegotiatedTrade1Code
+from . import OrderWaiver1
+from . import PaymentTransaction180
+from . import RoundingDirection2Code
+from . import SignatureType1Choice
+from . import SourceOfCash1Choice
+from . import TransactionChannelType1Choice
+from . import YesNoIndicator
 
 class SubscriptionOrder16(base_types._BaseFieldType):
 
@@ -40,12 +40,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@AcmltnRghtRef.setter
 	def AcmltnRghtRef(self, value):
-		self._AcmltnRghtRef = value if type(value) != base_types.auto else self.make_default("AcmltnRghtRef")
+		self._AcmltnRghtRef = value if value is not None else base_types.UninitialisedField(self, 'AcmltnRghtRef', Max35Text, False)
 
 	@AcmltnRghtRef.deleter
 	def AcmltnRghtRef(self):
 		del self._AcmltnRghtRef
-		self._AcmltnRghtRef = None
+		self._AcmltnRghtRef = base_types.UninitialisedField(self, 'AcmltnRghtRef', Max35Text, False)
 
 	@property
 	def AmtOrUnits(self):
@@ -53,12 +53,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@AmtOrUnits.setter
 	def AmtOrUnits(self, value):
-		self._AmtOrUnits = value if type(value) != base_types.auto else self.make_default("AmtOrUnits")
+		self._AmtOrUnits = value if value is not None else base_types.UninitialisedField(self, 'AmtOrUnits', FinancialInstrumentQuantity49Choice, False)
 
 	@AmtOrUnits.deleter
 	def AmtOrUnits(self):
 		del self._AmtOrUnits
-		self._AmtOrUnits = None
+		self._AmtOrUnits = base_types.UninitialisedField(self, 'AmtOrUnits', FinancialInstrumentQuantity49Choice, False)
 
 	@property
 	def BnfcryDtls(self):
@@ -66,12 +66,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@BnfcryDtls.setter
 	def BnfcryDtls(self, value):
-		self._BnfcryDtls = value if type(value) != base_types.auto else self.make_default("BnfcryDtls")
+		self._BnfcryDtls = value if value is not None else base_types.UninitialisedField(self, 'BnfcryDtls', IndividualPerson31, True)
 
 	@BnfcryDtls.deleter
 	def BnfcryDtls(self):
 		del self._BnfcryDtls
-		self._BnfcryDtls = None
+		self._BnfcryDtls = base_types.UninitialisedField(self, 'BnfcryDtls', IndividualPerson31, True)
 
 	@property
 	def ClntRef(self):
@@ -79,12 +79,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@ClntRef.setter
 	def ClntRef(self, value):
-		self._ClntRef = value if type(value) != base_types.auto else self.make_default("ClntRef")
+		self._ClntRef = value if value is not None else base_types.UninitialisedField(self, 'ClntRef', Max35Text, False)
 
 	@ClntRef.deleter
 	def ClntRef(self):
 		del self._ClntRef
-		self._ClntRef = None
+		self._ClntRef = base_types.UninitialisedField(self, 'ClntRef', Max35Text, False)
 
 	@property
 	def CshSttlmDt(self):
@@ -92,12 +92,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@CshSttlmDt.setter
 	def CshSttlmDt(self, value):
-		self._CshSttlmDt = value if type(value) != base_types.auto else self.make_default("CshSttlmDt")
+		self._CshSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'CshSttlmDt', ISODate, False)
 
 	@CshSttlmDt.deleter
 	def CshSttlmDt(self):
 		del self._CshSttlmDt
-		self._CshSttlmDt = None
+		self._CshSttlmDt = base_types.UninitialisedField(self, 'CshSttlmDt', ISODate, False)
 
 	@property
 	def CshSttlmDtls(self):
@@ -105,12 +105,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@CshSttlmDtls.setter
 	def CshSttlmDtls(self, value):
-		self._CshSttlmDtls = value if type(value) != base_types.auto else self.make_default("CshSttlmDtls")
+		self._CshSttlmDtls = value if value is not None else base_types.UninitialisedField(self, 'CshSttlmDtls', PaymentTransaction180, False)
 
 	@CshSttlmDtls.deleter
 	def CshSttlmDtls(self):
 		del self._CshSttlmDtls
-		self._CshSttlmDtls = None
+		self._CshSttlmDtls = base_types.UninitialisedField(self, 'CshSttlmDtls', PaymentTransaction180, False)
 
 	@property
 	def CstmrCndctClssfctn(self):
@@ -118,12 +118,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@CstmrCndctClssfctn.setter
 	def CstmrCndctClssfctn(self, value):
-		self._CstmrCndctClssfctn = value if type(value) != base_types.auto else self.make_default("CstmrCndctClssfctn")
+		self._CstmrCndctClssfctn = value if value is not None else base_types.UninitialisedField(self, 'CstmrCndctClssfctn', CustomerConductClassification1Choice, False)
 
 	@CstmrCndctClssfctn.deleter
 	def CstmrCndctClssfctn(self):
 		del self._CstmrCndctClssfctn
-		self._CstmrCndctClssfctn = None
+		self._CstmrCndctClssfctn = base_types.UninitialisedField(self, 'CstmrCndctClssfctn', CustomerConductClassification1Choice, False)
 
 	@property
 	def DgtlAsstSttlm(self):
@@ -131,12 +131,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@DgtlAsstSttlm.setter
 	def DgtlAsstSttlm(self, value):
-		self._DgtlAsstSttlm = value if type(value) != base_types.auto else self.make_default("DgtlAsstSttlm")
+		self._DgtlAsstSttlm = value if value is not None else base_types.UninitialisedField(self, 'DgtlAsstSttlm', DigitalPaymentSettlement3, False)
 
 	@DgtlAsstSttlm.deleter
 	def DgtlAsstSttlm(self):
 		del self._DgtlAsstSttlm
-		self._DgtlAsstSttlm = None
+		self._DgtlAsstSttlm = base_types.UninitialisedField(self, 'DgtlAsstSttlm', DigitalPaymentSettlement3, False)
 
 	@property
 	def Equlstn(self):
@@ -144,12 +144,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@Equlstn.setter
 	def Equlstn(self, value):
-		self._Equlstn = value if type(value) != base_types.auto else self.make_default("Equlstn")
+		self._Equlstn = value if value is not None else base_types.UninitialisedField(self, 'Equlstn', Equalisation1, False)
 
 	@Equlstn.deleter
 	def Equlstn(self):
 		del self._Equlstn
-		self._Equlstn = None
+		self._Equlstn = base_types.UninitialisedField(self, 'Equlstn', Equalisation1, False)
 
 	@property
 	def FXDtls(self):
@@ -157,12 +157,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@FXDtls.setter
 	def FXDtls(self, value):
-		self._FXDtls = value if type(value) != base_types.auto else self.make_default("FXDtls")
+		self._FXDtls = value if value is not None else base_types.UninitialisedField(self, 'FXDtls', ForeignExchangeTerms44, False)
 
 	@FXDtls.deleter
 	def FXDtls(self):
 		del self._FXDtls
-		self._FXDtls = None
+		self._FXDtls = base_types.UninitialisedField(self, 'FXDtls', ForeignExchangeTerms44, False)
 
 	@property
 	def FinAdvc(self):
@@ -170,12 +170,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@FinAdvc.setter
 	def FinAdvc(self, value):
-		self._FinAdvc = value if type(value) != base_types.auto else self.make_default("FinAdvc")
+		self._FinAdvc = value if value is not None else base_types.UninitialisedField(self, 'FinAdvc', FinancialAdvice1Code, False)
 
 	@FinAdvc.deleter
 	def FinAdvc(self):
 		del self._FinAdvc
-		self._FinAdvc = None
+		self._FinAdvc = base_types.UninitialisedField(self, 'FinAdvc', FinancialAdvice1Code, False)
 
 	@property
 	def IncmPref(self):
@@ -183,12 +183,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@IncmPref.setter
 	def IncmPref(self, value):
-		self._IncmPref = value if type(value) != base_types.auto else self.make_default("IncmPref")
+		self._IncmPref = value if value is not None else base_types.UninitialisedField(self, 'IncmPref', IncomePreference1Code, False)
 
 	@IncmPref.deleter
 	def IncmPref(self):
 		del self._IncmPref
-		self._IncmPref = None
+		self._IncmPref = base_types.UninitialisedField(self, 'IncmPref', IncomePreference1Code, False)
 
 	@property
 	def InvstmtAcctDtls(self):
@@ -196,12 +196,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@InvstmtAcctDtls.setter
 	def InvstmtAcctDtls(self, value):
-		self._InvstmtAcctDtls = value if type(value) != base_types.auto else self.make_default("InvstmtAcctDtls")
+		self._InvstmtAcctDtls = value if value is not None else base_types.UninitialisedField(self, 'InvstmtAcctDtls', InvestmentAccount81, False)
 
 	@InvstmtAcctDtls.deleter
 	def InvstmtAcctDtls(self):
 		del self._InvstmtAcctDtls
-		self._InvstmtAcctDtls = None
+		self._InvstmtAcctDtls = base_types.UninitialisedField(self, 'InvstmtAcctDtls', InvestmentAccount81, False)
 
 	@property
 	def LttrInttRef(self):
@@ -209,12 +209,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@LttrInttRef.setter
 	def LttrInttRef(self, value):
-		self._LttrInttRef = value if type(value) != base_types.auto else self.make_default("LttrInttRef")
+		self._LttrInttRef = value if value is not None else base_types.UninitialisedField(self, 'LttrInttRef', Max35Text, False)
 
 	@LttrInttRef.deleter
 	def LttrInttRef(self):
 		del self._LttrInttRef
-		self._LttrInttRef = None
+		self._LttrInttRef = base_types.UninitialisedField(self, 'LttrInttRef', Max35Text, False)
 
 	@property
 	def NgtdTrad(self):
@@ -222,12 +222,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@NgtdTrad.setter
 	def NgtdTrad(self, value):
-		self._NgtdTrad = value if type(value) != base_types.auto else self.make_default("NgtdTrad")
+		self._NgtdTrad = value if value is not None else base_types.UninitialisedField(self, 'NgtdTrad', NegotiatedTrade1Code, False)
 
 	@NgtdTrad.deleter
 	def NgtdTrad(self):
 		del self._NgtdTrad
-		self._NgtdTrad = None
+		self._NgtdTrad = base_types.UninitialisedField(self, 'NgtdTrad', NegotiatedTrade1Code, False)
 
 	@property
 	def NonStdSttlmInf(self):
@@ -235,12 +235,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@NonStdSttlmInf.setter
 	def NonStdSttlmInf(self, value):
-		self._NonStdSttlmInf = value if type(value) != base_types.auto else self.make_default("NonStdSttlmInf")
+		self._NonStdSttlmInf = value if value is not None else base_types.UninitialisedField(self, 'NonStdSttlmInf', Max350Text, False)
 
 	@NonStdSttlmInf.deleter
 	def NonStdSttlmInf(self):
 		del self._NonStdSttlmInf
-		self._NonStdSttlmInf = None
+		self._NonStdSttlmInf = base_types.UninitialisedField(self, 'NonStdSttlmInf', Max350Text, False)
 
 	@property
 	def NonceId(self):
@@ -248,12 +248,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@NonceId.setter
 	def NonceId(self, value):
-		self._NonceId = value if type(value) != base_types.auto else self.make_default("NonceId")
+		self._NonceId = value if value is not None else base_types.UninitialisedField(self, 'NonceId', Max35Text, False)
 
 	@NonceId.deleter
 	def NonceId(self):
 		del self._NonceId
-		self._NonceId = None
+		self._NonceId = base_types.UninitialisedField(self, 'NonceId', Max35Text, False)
 
 	@property
 	def OrdrRef(self):
@@ -261,12 +261,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@OrdrRef.setter
 	def OrdrRef(self, value):
-		self._OrdrRef = value if type(value) != base_types.auto else self.make_default("OrdrRef")
+		self._OrdrRef = value if value is not None else base_types.UninitialisedField(self, 'OrdrRef', Max35Text, False)
 
 	@OrdrRef.deleter
 	def OrdrRef(self):
 		del self._OrdrRef
-		self._OrdrRef = None
+		self._OrdrRef = base_types.UninitialisedField(self, 'OrdrRef', Max35Text, False)
 
 	@property
 	def OrdrTp(self):
@@ -274,12 +274,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@OrdrTp.setter
 	def OrdrTp(self, value):
-		self._OrdrTp = value if type(value) != base_types.auto else self.make_default("OrdrTp")
+		self._OrdrTp = value if value is not None else base_types.UninitialisedField(self, 'OrdrTp', FundOrderType4Choice, True)
 
 	@OrdrTp.deleter
 	def OrdrTp(self):
 		del self._OrdrTp
-		self._OrdrTp = None
+		self._OrdrTp = base_types.UninitialisedField(self, 'OrdrTp', FundOrderType4Choice, True)
 
 	@property
 	def OrdrWvrDtls(self):
@@ -287,12 +287,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@OrdrWvrDtls.setter
 	def OrdrWvrDtls(self, value):
-		self._OrdrWvrDtls = value if type(value) != base_types.auto else self.make_default("OrdrWvrDtls")
+		self._OrdrWvrDtls = value if value is not None else base_types.UninitialisedField(self, 'OrdrWvrDtls', OrderWaiver1, False)
 
 	@OrdrWvrDtls.deleter
 	def OrdrWvrDtls(self):
 		del self._OrdrWvrDtls
-		self._OrdrWvrDtls = None
+		self._OrdrWvrDtls = base_types.UninitialisedField(self, 'OrdrWvrDtls', OrderWaiver1, False)
 
 	@property
 	def PhysDlvryDtls(self):
@@ -300,12 +300,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@PhysDlvryDtls.setter
 	def PhysDlvryDtls(self, value):
-		self._PhysDlvryDtls = value if type(value) != base_types.auto else self.make_default("PhysDlvryDtls")
+		self._PhysDlvryDtls = value if value is not None else base_types.UninitialisedField(self, 'PhysDlvryDtls', NameAndAddress4, False)
 
 	@PhysDlvryDtls.deleter
 	def PhysDlvryDtls(self):
 		del self._PhysDlvryDtls
-		self._PhysDlvryDtls = None
+		self._PhysDlvryDtls = base_types.UninitialisedField(self, 'PhysDlvryDtls', NameAndAddress4, False)
 
 	@property
 	def PhysDlvryInd(self):
@@ -313,12 +313,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@PhysDlvryInd.setter
 	def PhysDlvryInd(self, value):
-		self._PhysDlvryInd = value if type(value) != base_types.auto else self.make_default("PhysDlvryInd")
+		self._PhysDlvryInd = value if value is not None else base_types.UninitialisedField(self, 'PhysDlvryInd', YesNoIndicator, False)
 
 	@PhysDlvryInd.deleter
 	def PhysDlvryInd(self):
 		del self._PhysDlvryInd
-		self._PhysDlvryInd = None
+		self._PhysDlvryInd = base_types.UninitialisedField(self, 'PhysDlvryInd', YesNoIndicator, False)
 
 	@property
 	def RltdPtyDtls(self):
@@ -326,12 +326,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@RltdPtyDtls.setter
 	def RltdPtyDtls(self, value):
-		self._RltdPtyDtls = value if type(value) != base_types.auto else self.make_default("RltdPtyDtls")
+		self._RltdPtyDtls = value if value is not None else base_types.UninitialisedField(self, 'RltdPtyDtls', Intermediary49, True)
 
 	@RltdPtyDtls.deleter
 	def RltdPtyDtls(self):
 		del self._RltdPtyDtls
-		self._RltdPtyDtls = None
+		self._RltdPtyDtls = base_types.UninitialisedField(self, 'RltdPtyDtls', Intermediary49, True)
 
 	@property
 	def Rndg(self):
@@ -339,12 +339,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@Rndg.setter
 	def Rndg(self, value):
-		self._Rndg = value if type(value) != base_types.auto else self.make_default("Rndg")
+		self._Rndg = value if value is not None else base_types.UninitialisedField(self, 'Rndg', RoundingDirection2Code, False)
 
 	@Rndg.deleter
 	def Rndg(self):
 		del self._Rndg
-		self._Rndg = None
+		self._Rndg = base_types.UninitialisedField(self, 'Rndg', RoundingDirection2Code, False)
 
 	@property
 	def SgntrTp(self):
@@ -352,12 +352,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@SgntrTp.setter
 	def SgntrTp(self, value):
-		self._SgntrTp = value if type(value) != base_types.auto else self.make_default("SgntrTp")
+		self._SgntrTp = value if value is not None else base_types.UninitialisedField(self, 'SgntrTp', SignatureType1Choice, False)
 
 	@SgntrTp.deleter
 	def SgntrTp(self):
 		del self._SgntrTp
-		self._SgntrTp = None
+		self._SgntrTp = base_types.UninitialisedField(self, 'SgntrTp', SignatureType1Choice, False)
 
 	@property
 	def SrcOfCsh(self):
@@ -365,12 +365,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@SrcOfCsh.setter
 	def SrcOfCsh(self, value):
-		self._SrcOfCsh = value if type(value) != base_types.auto else self.make_default("SrcOfCsh")
+		self._SrcOfCsh = value if value is not None else base_types.UninitialisedField(self, 'SrcOfCsh', SourceOfCash1Choice, True)
 
 	@SrcOfCsh.deleter
 	def SrcOfCsh(self):
 		del self._SrcOfCsh
-		self._SrcOfCsh = None
+		self._SrcOfCsh = base_types.UninitialisedField(self, 'SrcOfCsh', SourceOfCash1Choice, True)
 
 	@property
 	def StffClntBrkdwn(self):
@@ -378,12 +378,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@StffClntBrkdwn.setter
 	def StffClntBrkdwn(self, value):
-		self._StffClntBrkdwn = value if type(value) != base_types.auto else self.make_default("StffClntBrkdwn")
+		self._StffClntBrkdwn = value if value is not None else base_types.UninitialisedField(self, 'StffClntBrkdwn', InvestmentFundsOrderBreakdown2, True)
 
 	@StffClntBrkdwn.deleter
 	def StffClntBrkdwn(self):
 		del self._StffClntBrkdwn
-		self._StffClntBrkdwn = None
+		self._StffClntBrkdwn = base_types.UninitialisedField(self, 'StffClntBrkdwn', InvestmentFundsOrderBreakdown2, True)
 
 	@property
 	def SttlmAmt(self):
@@ -391,12 +391,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@SttlmAmt.setter
 	def SttlmAmt(self, value):
-		self._SttlmAmt = value if type(value) != base_types.auto else self.make_default("SttlmAmt")
+		self._SttlmAmt = value if value is not None else base_types.UninitialisedField(self, 'SttlmAmt', ActiveCurrencyAndAmount, False)
 
 	@SttlmAmt.deleter
 	def SttlmAmt(self):
 		del self._SttlmAmt
-		self._SttlmAmt = None
+		self._SttlmAmt = base_types.UninitialisedField(self, 'SttlmAmt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def SttlmAndCtdyDtls(self):
@@ -404,12 +404,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@SttlmAndCtdyDtls.setter
 	def SttlmAndCtdyDtls(self, value):
-		self._SttlmAndCtdyDtls = value if type(value) != base_types.auto else self.make_default("SttlmAndCtdyDtls")
+		self._SttlmAndCtdyDtls = value if value is not None else base_types.UninitialisedField(self, 'SttlmAndCtdyDtls', FundSettlementParameters22, False)
 
 	@SttlmAndCtdyDtls.deleter
 	def SttlmAndCtdyDtls(self):
 		del self._SttlmAndCtdyDtls
-		self._SttlmAndCtdyDtls = None
+		self._SttlmAndCtdyDtls = base_types.UninitialisedField(self, 'SttlmAndCtdyDtls', FundSettlementParameters22, False)
 
 	@property
 	def SttlmMtd(self):
@@ -417,12 +417,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@SttlmMtd.setter
 	def SttlmMtd(self, value):
-		self._SttlmMtd = value if type(value) != base_types.auto else self.make_default("SttlmMtd")
+		self._SttlmMtd = value if value is not None else base_types.UninitialisedField(self, 'SttlmMtd', DeliveryReceiptType2Code, False)
 
 	@SttlmMtd.deleter
 	def SttlmMtd(self):
 		del self._SttlmMtd
-		self._SttlmMtd = None
+		self._SttlmMtd = base_types.UninitialisedField(self, 'SttlmMtd', DeliveryReceiptType2Code, False)
 
 	@property
 	def TxChanlTp(self):
@@ -430,12 +430,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@TxChanlTp.setter
 	def TxChanlTp(self, value):
-		self._TxChanlTp = value if type(value) != base_types.auto else self.make_default("TxChanlTp")
+		self._TxChanlTp = value if value is not None else base_types.UninitialisedField(self, 'TxChanlTp', TransactionChannelType1Choice, False)
 
 	@TxChanlTp.deleter
 	def TxChanlTp(self):
 		del self._TxChanlTp
-		self._TxChanlTp = None
+		self._TxChanlTp = base_types.UninitialisedField(self, 'TxChanlTp', TransactionChannelType1Choice, False)
 
 	@property
 	def TxOvrhd(self):
@@ -443,12 +443,12 @@ class SubscriptionOrder16(base_types._BaseFieldType):
 
 	@TxOvrhd.setter
 	def TxOvrhd(self, value):
-		self._TxOvrhd = value if type(value) != base_types.auto else self.make_default("TxOvrhd")
+		self._TxOvrhd = value if value is not None else base_types.UninitialisedField(self, 'TxOvrhd', FeeAndTax2, False)
 
 	@TxOvrhd.deleter
 	def TxOvrhd(self):
 		del self._TxOvrhd
-		self._TxOvrhd = None
+		self._TxOvrhd = base_types.UninitialisedField(self, 'TxOvrhd', FeeAndTax2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcmltnRghtRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

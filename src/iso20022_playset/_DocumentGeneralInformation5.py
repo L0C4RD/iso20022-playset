@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BinaryFile1 import BinaryFile1
-from ._ExternalDocumentType1Code import ExternalDocumentType1Code
-from ._ISODate import ISODate
-from ._Max140Text import Max140Text
-from ._Max256Text import Max256Text
-from ._Max35Text import Max35Text
-from ._SignatureEnvelopeReference import SignatureEnvelopeReference
+from . import BinaryFile1
+from . import ExternalDocumentType1Code
+from . import ISODate
+from . import Max140Text
+from . import Max256Text
+from . import Max35Text
+from . import SignatureEnvelopeReference
 
 class DocumentGeneralInformation5(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class DocumentGeneralInformation5(base_types._BaseFieldType):
 
 	@AttchdBinryFile.setter
 	def AttchdBinryFile(self, value):
-		self._AttchdBinryFile = value if type(value) != base_types.auto else self.make_default("AttchdBinryFile")
+		self._AttchdBinryFile = value if value is not None else base_types.UninitialisedField(self, 'AttchdBinryFile', BinaryFile1, False)
 
 	@AttchdBinryFile.deleter
 	def AttchdBinryFile(self):
 		del self._AttchdBinryFile
-		self._AttchdBinryFile = None
+		self._AttchdBinryFile = base_types.UninitialisedField(self, 'AttchdBinryFile', BinaryFile1, False)
 
 	@property
 	def DocNb(self):
@@ -32,12 +32,12 @@ class DocumentGeneralInformation5(base_types._BaseFieldType):
 
 	@DocNb.setter
 	def DocNb(self, value):
-		self._DocNb = value if type(value) != base_types.auto else self.make_default("DocNb")
+		self._DocNb = value if value is not None else base_types.UninitialisedField(self, 'DocNb', Max35Text, False)
 
 	@DocNb.deleter
 	def DocNb(self):
 		del self._DocNb
-		self._DocNb = None
+		self._DocNb = base_types.UninitialisedField(self, 'DocNb', Max35Text, False)
 
 	@property
 	def DocNm(self):
@@ -45,12 +45,12 @@ class DocumentGeneralInformation5(base_types._BaseFieldType):
 
 	@DocNm.setter
 	def DocNm(self, value):
-		self._DocNm = value if type(value) != base_types.auto else self.make_default("DocNm")
+		self._DocNm = value if value is not None else base_types.UninitialisedField(self, 'DocNm', Max140Text, False)
 
 	@DocNm.deleter
 	def DocNm(self):
 		del self._DocNm
-		self._DocNm = None
+		self._DocNm = base_types.UninitialisedField(self, 'DocNm', Max140Text, False)
 
 	@property
 	def DocTp(self):
@@ -58,12 +58,12 @@ class DocumentGeneralInformation5(base_types._BaseFieldType):
 
 	@DocTp.setter
 	def DocTp(self, value):
-		self._DocTp = value if type(value) != base_types.auto else self.make_default("DocTp")
+		self._DocTp = value if value is not None else base_types.UninitialisedField(self, 'DocTp', ExternalDocumentType1Code, False)
 
 	@DocTp.deleter
 	def DocTp(self):
 		del self._DocTp
-		self._DocTp = None
+		self._DocTp = base_types.UninitialisedField(self, 'DocTp', ExternalDocumentType1Code, False)
 
 	@property
 	def IsseDt(self):
@@ -71,12 +71,12 @@ class DocumentGeneralInformation5(base_types._BaseFieldType):
 
 	@IsseDt.setter
 	def IsseDt(self, value):
-		self._IsseDt = value if type(value) != base_types.auto else self.make_default("IsseDt")
+		self._IsseDt = value if value is not None else base_types.UninitialisedField(self, 'IsseDt', ISODate, False)
 
 	@IsseDt.deleter
 	def IsseDt(self):
 		del self._IsseDt
-		self._IsseDt = None
+		self._IsseDt = base_types.UninitialisedField(self, 'IsseDt', ISODate, False)
 
 	@property
 	def LkFileHash(self):
@@ -84,12 +84,12 @@ class DocumentGeneralInformation5(base_types._BaseFieldType):
 
 	@LkFileHash.setter
 	def LkFileHash(self, value):
-		self._LkFileHash = value if type(value) != base_types.auto else self.make_default("LkFileHash")
+		self._LkFileHash = value if value is not None else base_types.UninitialisedField(self, 'LkFileHash', SignatureEnvelopeReference, False)
 
 	@LkFileHash.deleter
 	def LkFileHash(self):
 		del self._LkFileHash
-		self._LkFileHash = None
+		self._LkFileHash = base_types.UninitialisedField(self, 'LkFileHash', SignatureEnvelopeReference, False)
 
 	@property
 	def SndrRcvrSeqId(self):
@@ -97,12 +97,12 @@ class DocumentGeneralInformation5(base_types._BaseFieldType):
 
 	@SndrRcvrSeqId.setter
 	def SndrRcvrSeqId(self, value):
-		self._SndrRcvrSeqId = value if type(value) != base_types.auto else self.make_default("SndrRcvrSeqId")
+		self._SndrRcvrSeqId = value if value is not None else base_types.UninitialisedField(self, 'SndrRcvrSeqId', Max140Text, False)
 
 	@SndrRcvrSeqId.deleter
 	def SndrRcvrSeqId(self):
 		del self._SndrRcvrSeqId
-		self._SndrRcvrSeqId = None
+		self._SndrRcvrSeqId = base_types.UninitialisedField(self, 'SndrRcvrSeqId', Max140Text, False)
 
 	@property
 	def URL(self):
@@ -110,12 +110,12 @@ class DocumentGeneralInformation5(base_types._BaseFieldType):
 
 	@URL.setter
 	def URL(self, value):
-		self._URL = value if type(value) != base_types.auto else self.make_default("URL")
+		self._URL = value if value is not None else base_types.UninitialisedField(self, 'URL', Max256Text, False)
 
 	@URL.deleter
 	def URL(self):
 		del self._URL
-		self._URL = None
+		self._URL = base_types.UninitialisedField(self, 'URL', Max256Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AttchdBinryFile', type=BinaryFile1, min=1, max=1, mutex_group=None, array=False),

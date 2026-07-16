@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DocumentIdentification1 import DocumentIdentification1
-from ._InvoiceIdentification1 import InvoiceIdentification1
-from ._LineItem15 import LineItem15
-from ._PartyIdentification26 import PartyIdentification26
-from ._PaymentTerms4 import PaymentTerms4
-from ._SettlementTerms3 import SettlementTerms3
+from . import DocumentIdentification1
+from . import InvoiceIdentification1
+from . import LineItem15
+from . import PartyIdentification26
+from . import PaymentTerms4
+from . import SettlementTerms3
 
 class CommercialDataSet5(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class CommercialDataSet5(base_types._BaseFieldType):
 
 	@BllTo.setter
 	def BllTo(self, value):
-		self._BllTo = value if type(value) != base_types.auto else self.make_default("BllTo")
+		self._BllTo = value if value is not None else base_types.UninitialisedField(self, 'BllTo', PartyIdentification26, False)
 
 	@BllTo.deleter
 	def BllTo(self):
 		del self._BllTo
-		self._BllTo = None
+		self._BllTo = base_types.UninitialisedField(self, 'BllTo', PartyIdentification26, False)
 
 	@property
 	def Buyr(self):
@@ -31,12 +31,12 @@ class CommercialDataSet5(base_types._BaseFieldType):
 
 	@Buyr.setter
 	def Buyr(self, value):
-		self._Buyr = value if type(value) != base_types.auto else self.make_default("Buyr")
+		self._Buyr = value if value is not None else base_types.UninitialisedField(self, 'Buyr', PartyIdentification26, False)
 
 	@Buyr.deleter
 	def Buyr(self):
 		del self._Buyr
-		self._Buyr = None
+		self._Buyr = base_types.UninitialisedField(self, 'Buyr', PartyIdentification26, False)
 
 	@property
 	def ComrclDocRef(self):
@@ -44,12 +44,12 @@ class CommercialDataSet5(base_types._BaseFieldType):
 
 	@ComrclDocRef.setter
 	def ComrclDocRef(self, value):
-		self._ComrclDocRef = value if type(value) != base_types.auto else self.make_default("ComrclDocRef")
+		self._ComrclDocRef = value if value is not None else base_types.UninitialisedField(self, 'ComrclDocRef', InvoiceIdentification1, False)
 
 	@ComrclDocRef.deleter
 	def ComrclDocRef(self):
 		del self._ComrclDocRef
-		self._ComrclDocRef = None
+		self._ComrclDocRef = base_types.UninitialisedField(self, 'ComrclDocRef', InvoiceIdentification1, False)
 
 	@property
 	def DataSetId(self):
@@ -57,12 +57,12 @@ class CommercialDataSet5(base_types._BaseFieldType):
 
 	@DataSetId.setter
 	def DataSetId(self, value):
-		self._DataSetId = value if type(value) != base_types.auto else self.make_default("DataSetId")
+		self._DataSetId = value if value is not None else base_types.UninitialisedField(self, 'DataSetId', DocumentIdentification1, False)
 
 	@DataSetId.deleter
 	def DataSetId(self):
 		del self._DataSetId
-		self._DataSetId = None
+		self._DataSetId = base_types.UninitialisedField(self, 'DataSetId', DocumentIdentification1, False)
 
 	@property
 	def Goods(self):
@@ -70,12 +70,12 @@ class CommercialDataSet5(base_types._BaseFieldType):
 
 	@Goods.setter
 	def Goods(self, value):
-		self._Goods = value if type(value) != base_types.auto else self.make_default("Goods")
+		self._Goods = value if value is not None else base_types.UninitialisedField(self, 'Goods', LineItem15, True)
 
 	@Goods.deleter
 	def Goods(self):
 		del self._Goods
-		self._Goods = None
+		self._Goods = base_types.UninitialisedField(self, 'Goods', LineItem15, True)
 
 	@property
 	def PmtTerms(self):
@@ -83,12 +83,12 @@ class CommercialDataSet5(base_types._BaseFieldType):
 
 	@PmtTerms.setter
 	def PmtTerms(self, value):
-		self._PmtTerms = value if type(value) != base_types.auto else self.make_default("PmtTerms")
+		self._PmtTerms = value if value is not None else base_types.UninitialisedField(self, 'PmtTerms', PaymentTerms4, True)
 
 	@PmtTerms.deleter
 	def PmtTerms(self):
 		del self._PmtTerms
-		self._PmtTerms = None
+		self._PmtTerms = base_types.UninitialisedField(self, 'PmtTerms', PaymentTerms4, True)
 
 	@property
 	def Sellr(self):
@@ -96,12 +96,12 @@ class CommercialDataSet5(base_types._BaseFieldType):
 
 	@Sellr.setter
 	def Sellr(self, value):
-		self._Sellr = value if type(value) != base_types.auto else self.make_default("Sellr")
+		self._Sellr = value if value is not None else base_types.UninitialisedField(self, 'Sellr', PartyIdentification26, False)
 
 	@Sellr.deleter
 	def Sellr(self):
 		del self._Sellr
-		self._Sellr = None
+		self._Sellr = base_types.UninitialisedField(self, 'Sellr', PartyIdentification26, False)
 
 	@property
 	def SttlmTerms(self):
@@ -109,12 +109,12 @@ class CommercialDataSet5(base_types._BaseFieldType):
 
 	@SttlmTerms.setter
 	def SttlmTerms(self, value):
-		self._SttlmTerms = value if type(value) != base_types.auto else self.make_default("SttlmTerms")
+		self._SttlmTerms = value if value is not None else base_types.UninitialisedField(self, 'SttlmTerms', SettlementTerms3, False)
 
 	@SttlmTerms.deleter
 	def SttlmTerms(self):
 		del self._SttlmTerms
-		self._SttlmTerms = None
+		self._SttlmTerms = base_types.UninitialisedField(self, 'SttlmTerms', SettlementTerms3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BllTo', type=PartyIdentification26, min=0, max=1, mutex_group=None, array=False),

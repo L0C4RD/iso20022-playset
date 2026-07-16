@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
+from . import Max35Text
 
 class PersonalInformation1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class PersonalInformation1(base_types._BaseFieldType):
 
 	@MdnNmOfMthr.setter
 	def MdnNmOfMthr(self, value):
-		self._MdnNmOfMthr = value if type(value) != base_types.auto else self.make_default("MdnNmOfMthr")
+		self._MdnNmOfMthr = value if value is not None else base_types.UninitialisedField(self, 'MdnNmOfMthr', Max35Text, False)
 
 	@MdnNmOfMthr.deleter
 	def MdnNmOfMthr(self):
 		del self._MdnNmOfMthr
-		self._MdnNmOfMthr = None
+		self._MdnNmOfMthr = base_types.UninitialisedField(self, 'MdnNmOfMthr', Max35Text, False)
 
 	@property
 	def NmOfFthr(self):
@@ -26,12 +26,12 @@ class PersonalInformation1(base_types._BaseFieldType):
 
 	@NmOfFthr.setter
 	def NmOfFthr(self, value):
-		self._NmOfFthr = value if type(value) != base_types.auto else self.make_default("NmOfFthr")
+		self._NmOfFthr = value if value is not None else base_types.UninitialisedField(self, 'NmOfFthr', Max35Text, False)
 
 	@NmOfFthr.deleter
 	def NmOfFthr(self):
 		del self._NmOfFthr
-		self._NmOfFthr = None
+		self._NmOfFthr = base_types.UninitialisedField(self, 'NmOfFthr', Max35Text, False)
 
 	@property
 	def NmOfPrtnr(self):
@@ -39,12 +39,12 @@ class PersonalInformation1(base_types._BaseFieldType):
 
 	@NmOfPrtnr.setter
 	def NmOfPrtnr(self, value):
-		self._NmOfPrtnr = value if type(value) != base_types.auto else self.make_default("NmOfPrtnr")
+		self._NmOfPrtnr = value if value is not None else base_types.UninitialisedField(self, 'NmOfPrtnr', Max35Text, False)
 
 	@NmOfPrtnr.deleter
 	def NmOfPrtnr(self):
 		del self._NmOfPrtnr
-		self._NmOfPrtnr = None
+		self._NmOfPrtnr = base_types.UninitialisedField(self, 'NmOfPrtnr', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MdnNmOfMthr', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

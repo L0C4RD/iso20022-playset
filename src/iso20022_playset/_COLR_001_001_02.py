@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CollateralValueQueryV02 import CollateralValueQueryV02
+from . import CollateralValueQueryV02
 
 class COLR_001_001_02():
 
@@ -18,12 +18,12 @@ class COLR_001_001_02():
 
 		@CollValQry.setter
 		def CollValQry(self, value):
-			self._CollValQry = value if type(value) != base_types.auto else self.make_default("CollValQry")
+			self._CollValQry = value if value is not None else base_types.UninitialisedField(self, 'CollValQry', CollateralValueQueryV02, False)
 
 		@CollValQry.deleter
 		def CollValQry(self):
 			del self._CollValQry
-			self._CollValQry = None
+			self._CollValQry = base_types.UninitialisedField(self, 'CollValQry', CollateralValueQueryV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CollValQry', type=CollateralValueQueryV02, min=1, max=1, mutex_group=None, array=False),

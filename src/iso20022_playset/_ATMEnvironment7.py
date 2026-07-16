@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Acquirer7 import Acquirer7
-from ._Acquirer8 import Acquirer8
-from ._AutomatedTellerMachine3 import AutomatedTellerMachine3
-from ._TerminalHosting1 import TerminalHosting1
+from . import Acquirer7
+from . import Acquirer8
+from . import AutomatedTellerMachine3
+from . import TerminalHosting1
 
 class ATMEnvironment7(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ATMEnvironment7(base_types._BaseFieldType):
 
 	@ATM.setter
 	def ATM(self, value):
-		self._ATM = value if type(value) != base_types.auto else self.make_default("ATM")
+		self._ATM = value if value is not None else base_types.UninitialisedField(self, 'ATM', AutomatedTellerMachine3, False)
 
 	@ATM.deleter
 	def ATM(self):
 		del self._ATM
-		self._ATM = None
+		self._ATM = base_types.UninitialisedField(self, 'ATM', AutomatedTellerMachine3, False)
 
 	@property
 	def ATMMgr(self):
@@ -29,12 +29,12 @@ class ATMEnvironment7(base_types._BaseFieldType):
 
 	@ATMMgr.setter
 	def ATMMgr(self, value):
-		self._ATMMgr = value if type(value) != base_types.auto else self.make_default("ATMMgr")
+		self._ATMMgr = value if value is not None else base_types.UninitialisedField(self, 'ATMMgr', Acquirer8, False)
 
 	@ATMMgr.deleter
 	def ATMMgr(self):
 		del self._ATMMgr
-		self._ATMMgr = None
+		self._ATMMgr = base_types.UninitialisedField(self, 'ATMMgr', Acquirer8, False)
 
 	@property
 	def Acqrr(self):
@@ -42,12 +42,12 @@ class ATMEnvironment7(base_types._BaseFieldType):
 
 	@Acqrr.setter
 	def Acqrr(self, value):
-		self._Acqrr = value if type(value) != base_types.auto else self.make_default("Acqrr")
+		self._Acqrr = value if value is not None else base_types.UninitialisedField(self, 'Acqrr', Acquirer7, False)
 
 	@Acqrr.deleter
 	def Acqrr(self):
 		del self._Acqrr
-		self._Acqrr = None
+		self._Acqrr = base_types.UninitialisedField(self, 'Acqrr', Acquirer7, False)
 
 	@property
 	def HstgNtty(self):
@@ -55,12 +55,12 @@ class ATMEnvironment7(base_types._BaseFieldType):
 
 	@HstgNtty.setter
 	def HstgNtty(self, value):
-		self._HstgNtty = value if type(value) != base_types.auto else self.make_default("HstgNtty")
+		self._HstgNtty = value if value is not None else base_types.UninitialisedField(self, 'HstgNtty', TerminalHosting1, False)
 
 	@HstgNtty.deleter
 	def HstgNtty(self):
 		del self._HstgNtty
-		self._HstgNtty = None
+		self._HstgNtty = base_types.UninitialisedField(self, 'HstgNtty', TerminalHosting1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ATM', type=AutomatedTellerMachine3, min=1, max=1, mutex_group=None, array=False),

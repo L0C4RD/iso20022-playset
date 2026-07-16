@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification1 import GenericIdentification1
-from ._OtherAmountType1Code import OtherAmountType1Code
+from . import GenericIdentification1
+from . import OtherAmountType1Code
 
 class OtherAmountType1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class OtherAmountType1Choice(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
+		self._Cd = value if value is not None else base_types.UninitialisedField(self, 'Cd', OtherAmountType1Code, False)
 
 	@Cd.deleter
 	def Cd(self):
 		del self._Cd
-		self._Cd = None
+		self._Cd = base_types.UninitialisedField(self, 'Cd', OtherAmountType1Code, False)
 
 	@property
 	def PrtryCd(self):
@@ -27,12 +27,12 @@ class OtherAmountType1Choice(base_types._BaseFieldType):
 
 	@PrtryCd.setter
 	def PrtryCd(self, value):
-		self._PrtryCd = value if type(value) != base_types.auto else self.make_default("PrtryCd")
+		self._PrtryCd = value if value is not None else base_types.UninitialisedField(self, 'PrtryCd', GenericIdentification1, False)
 
 	@PrtryCd.deleter
 	def PrtryCd(self):
 		del self._PrtryCd
-		self._PrtryCd = None
+		self._PrtryCd = base_types.UninitialisedField(self, 'PrtryCd', GenericIdentification1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cd', type=OtherAmountType1Code, min=0, max=1, mutex_group=1, array=False),

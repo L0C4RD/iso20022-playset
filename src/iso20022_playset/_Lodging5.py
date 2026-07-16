@@ -2,26 +2,26 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._Address4 import Address4
-from ._AuthorisedAmount2 import AuthorisedAmount2
-from ._ContactBusiness1 import ContactBusiness1
-from ._Customer10 import Customer10
-from ._DepartureOrArrival1 import DepartureOrArrival1
-from ._DepartureOrArrival2 import DepartureOrArrival2
-from ._ISO3NumericCurrencyCode import ISO3NumericCurrencyCode
-from ._ImpliedCurrencyAndAmount import ImpliedCurrencyAndAmount
-from ._LocalData20 import LocalData20
-from ._LodgingActivity2Code import LodgingActivity2Code
-from ._LodgingLineItem4 import LodgingLineItem4
-from ._LodgingRoom2 import LodgingRoom2
-from ._LoyaltyProgramme4 import LoyaltyProgramme4
-from ._Max35Text import Max35Text
-from ._Max4NumericText import Max4NumericText
-from ._Max70Text import Max70Text
-from ._Max99Text import Max99Text
-from ._Tax44 import Tax44
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ATICALaxProcessing
+from . import Address4
+from . import AuthorisedAmount2
+from . import ContactBusiness1
+from . import Customer10
+from . import DepartureOrArrival1
+from . import DepartureOrArrival2
+from . import ISO3NumericCurrencyCode
+from . import ImpliedCurrencyAndAmount
+from . import LocalData20
+from . import LodgingActivity2Code
+from . import LodgingLineItem4
+from . import LodgingRoom2
+from . import LoyaltyProgramme4
+from . import Max35Text
+from . import Max4NumericText
+from . import Max70Text
+from . import Max99Text
+from . import Tax44
+from . import TrueFalseIndicator
 
 class Lodging5(base_types._BaseFieldType):
 
@@ -32,12 +32,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@Arrvl.setter
 	def Arrvl(self, value):
-		self._Arrvl = value if type(value) != base_types.auto else self.make_default("Arrvl")
+		self._Arrvl = value if value is not None else base_types.UninitialisedField(self, 'Arrvl', DepartureOrArrival2, False)
 
 	@Arrvl.deleter
 	def Arrvl(self):
 		del self._Arrvl
-		self._Arrvl = None
+		self._Arrvl = base_types.UninitialisedField(self, 'Arrvl', DepartureOrArrival2, False)
 
 	@property
 	def AuthrsdAmt(self):
@@ -45,12 +45,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@AuthrsdAmt.setter
 	def AuthrsdAmt(self, value):
-		self._AuthrsdAmt = value if type(value) != base_types.auto else self.make_default("AuthrsdAmt")
+		self._AuthrsdAmt = value if value is not None else base_types.UninitialisedField(self, 'AuthrsdAmt', AuthorisedAmount2, True)
 
 	@AuthrsdAmt.deleter
 	def AuthrsdAmt(self):
 		del self._AuthrsdAmt
-		self._AuthrsdAmt = None
+		self._AuthrsdAmt = base_types.UninitialisedField(self, 'AuthrsdAmt', AuthorisedAmount2, True)
 
 	@property
 	def Cstmr(self):
@@ -58,12 +58,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@Cstmr.setter
 	def Cstmr(self, value):
-		self._Cstmr = value if type(value) != base_types.auto else self.make_default("Cstmr")
+		self._Cstmr = value if value is not None else base_types.UninitialisedField(self, 'Cstmr', Customer10, True)
 
 	@Cstmr.deleter
 	def Cstmr(self):
 		del self._Cstmr
-		self._Cstmr = None
+		self._Cstmr = base_types.UninitialisedField(self, 'Cstmr', Customer10, True)
 
 	@property
 	def Dprture(self):
@@ -71,12 +71,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@Dprture.setter
 	def Dprture(self, value):
-		self._Dprture = value if type(value) != base_types.auto else self.make_default("Dprture")
+		self._Dprture = value if value is not None else base_types.UninitialisedField(self, 'Dprture', DepartureOrArrival1, False)
 
 	@Dprture.deleter
 	def Dprture(self):
 		del self._Dprture
-		self._Dprture = None
+		self._Dprture = base_types.UninitialisedField(self, 'Dprture', DepartureOrArrival1, False)
 
 	@property
 	def Drtn(self):
@@ -84,12 +84,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@Drtn.setter
 	def Drtn(self, value):
-		self._Drtn = value if type(value) != base_types.auto else self.make_default("Drtn")
+		self._Drtn = value if value is not None else base_types.UninitialisedField(self, 'Drtn', Max4NumericText, False)
 
 	@Drtn.deleter
 	def Drtn(self):
 		del self._Drtn
-		self._Drtn = None
+		self._Drtn = base_types.UninitialisedField(self, 'Drtn', Max4NumericText, False)
 
 	@property
 	def FolioNb(self):
@@ -97,12 +97,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@FolioNb.setter
 	def FolioNb(self, value):
-		self._FolioNb = value if type(value) != base_types.auto else self.make_default("FolioNb")
+		self._FolioNb = value if value is not None else base_types.UninitialisedField(self, 'FolioNb', Max35Text, False)
 
 	@FolioNb.deleter
 	def FolioNb(self):
 		del self._FolioNb
-		self._FolioNb = None
+		self._FolioNb = base_types.UninitialisedField(self, 'FolioNb', Max35Text, False)
 
 	@property
 	def Insrnc(self):
@@ -110,12 +110,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@Insrnc.setter
 	def Insrnc(self, value):
-		self._Insrnc = value if type(value) != base_types.auto else self.make_default("Insrnc")
+		self._Insrnc = value if value is not None else base_types.UninitialisedField(self, 'Insrnc', TrueFalseIndicator, False)
 
 	@Insrnc.deleter
 	def Insrnc(self):
 		del self._Insrnc
-		self._Insrnc = None
+		self._Insrnc = base_types.UninitialisedField(self, 'Insrnc', TrueFalseIndicator, False)
 
 	@property
 	def InsrncAmt(self):
@@ -123,12 +123,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@InsrncAmt.setter
 	def InsrncAmt(self, value):
-		self._InsrncAmt = value if type(value) != base_types.auto else self.make_default("InsrncAmt")
+		self._InsrncAmt = value if value is not None else base_types.UninitialisedField(self, 'InsrncAmt', ImpliedCurrencyAndAmount, False)
 
 	@InsrncAmt.deleter
 	def InsrncAmt(self):
 		del self._InsrncAmt
-		self._InsrncAmt = None
+		self._InsrncAmt = base_types.UninitialisedField(self, 'InsrncAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def LineItm(self):
@@ -136,12 +136,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@LineItm.setter
 	def LineItm(self, value):
-		self._LineItm = value if type(value) != base_types.auto else self.make_default("LineItm")
+		self._LineItm = value if value is not None else base_types.UninitialisedField(self, 'LineItm', LodgingLineItem4, True)
 
 	@LineItm.deleter
 	def LineItm(self):
 		del self._LineItm
-		self._LineItm = None
+		self._LineItm = base_types.UninitialisedField(self, 'LineItm', LodgingLineItem4, True)
 
 	@property
 	def LltyPrgrmm(self):
@@ -149,12 +149,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@LltyPrgrmm.setter
 	def LltyPrgrmm(self, value):
-		self._LltyPrgrmm = value if type(value) != base_types.auto else self.make_default("LltyPrgrmm")
+		self._LltyPrgrmm = value if value is not None else base_types.UninitialisedField(self, 'LltyPrgrmm', LoyaltyProgramme4, True)
 
 	@LltyPrgrmm.deleter
 	def LltyPrgrmm(self):
 		del self._LltyPrgrmm
-		self._LltyPrgrmm = None
+		self._LltyPrgrmm = base_types.UninitialisedField(self, 'LltyPrgrmm', LoyaltyProgramme4, True)
 
 	@property
 	def NbOfRooms(self):
@@ -162,12 +162,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@NbOfRooms.setter
 	def NbOfRooms(self, value):
-		self._NbOfRooms = value if type(value) != base_types.auto else self.make_default("NbOfRooms")
+		self._NbOfRooms = value if value is not None else base_types.UninitialisedField(self, 'NbOfRooms', Max4NumericText, False)
 
 	@NbOfRooms.deleter
 	def NbOfRooms(self):
 		del self._NbOfRooms
-		self._NbOfRooms = None
+		self._NbOfRooms = base_types.UninitialisedField(self, 'NbOfRooms', Max4NumericText, False)
 
 	@property
 	def NoShow(self):
@@ -175,12 +175,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@NoShow.setter
 	def NoShow(self, value):
-		self._NoShow = value if type(value) != base_types.auto else self.make_default("NoShow")
+		self._NoShow = value if value is not None else base_types.UninitialisedField(self, 'NoShow', TrueFalseIndicator, False)
 
 	@NoShow.deleter
 	def NoShow(self):
 		del self._NoShow
-		self._NoShow = None
+		self._NoShow = base_types.UninitialisedField(self, 'NoShow', TrueFalseIndicator, False)
 
 	@property
 	def NtlData(self):
@@ -188,12 +188,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def PrprtyAdr(self):
@@ -201,12 +201,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@PrprtyAdr.setter
 	def PrprtyAdr(self, value):
-		self._PrprtyAdr = value if type(value) != base_types.auto else self.make_default("PrprtyAdr")
+		self._PrprtyAdr = value if value is not None else base_types.UninitialisedField(self, 'PrprtyAdr', Address4, False)
 
 	@PrprtyAdr.deleter
 	def PrprtyAdr(self):
 		del self._PrprtyAdr
-		self._PrprtyAdr = None
+		self._PrprtyAdr = base_types.UninitialisedField(self, 'PrprtyAdr', Address4, False)
 
 	@property
 	def PrprtyBizNm(self):
@@ -214,12 +214,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@PrprtyBizNm.setter
 	def PrprtyBizNm(self, value):
-		self._PrprtyBizNm = value if type(value) != base_types.auto else self.make_default("PrprtyBizNm")
+		self._PrprtyBizNm = value if value is not None else base_types.UninitialisedField(self, 'PrprtyBizNm', Max35Text, False)
 
 	@PrprtyBizNm.deleter
 	def PrprtyBizNm(self):
 		del self._PrprtyBizNm
-		self._PrprtyBizNm = None
+		self._PrprtyBizNm = base_types.UninitialisedField(self, 'PrprtyBizNm', Max35Text, False)
 
 	@property
 	def PrprtyCtct(self):
@@ -227,12 +227,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@PrprtyCtct.setter
 	def PrprtyCtct(self, value):
-		self._PrprtyCtct = value if type(value) != base_types.auto else self.make_default("PrprtyCtct")
+		self._PrprtyCtct = value if value is not None else base_types.UninitialisedField(self, 'PrprtyCtct', ContactBusiness1, False)
 
 	@PrprtyCtct.deleter
 	def PrprtyCtct(self):
 		del self._PrprtyCtct
-		self._PrprtyCtct = None
+		self._PrprtyCtct = base_types.UninitialisedField(self, 'PrprtyCtct', ContactBusiness1, False)
 
 	@property
 	def PrprtyFireSftyAct(self):
@@ -240,12 +240,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@PrprtyFireSftyAct.setter
 	def PrprtyFireSftyAct(self, value):
-		self._PrprtyFireSftyAct = value if type(value) != base_types.auto else self.make_default("PrprtyFireSftyAct")
+		self._PrprtyFireSftyAct = value if value is not None else base_types.UninitialisedField(self, 'PrprtyFireSftyAct', TrueFalseIndicator, False)
 
 	@PrprtyFireSftyAct.deleter
 	def PrprtyFireSftyAct(self):
 		del self._PrprtyFireSftyAct
-		self._PrprtyFireSftyAct = None
+		self._PrprtyFireSftyAct = base_types.UninitialisedField(self, 'PrprtyFireSftyAct', TrueFalseIndicator, False)
 
 	@property
 	def PrprtyId(self):
@@ -253,12 +253,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@PrprtyId.setter
 	def PrprtyId(self, value):
-		self._PrprtyId = value if type(value) != base_types.auto else self.make_default("PrprtyId")
+		self._PrprtyId = value if value is not None else base_types.UninitialisedField(self, 'PrprtyId', Max35Text, False)
 
 	@PrprtyId.deleter
 	def PrprtyId(self):
 		del self._PrprtyId
-		self._PrprtyId = None
+		self._PrprtyId = base_types.UninitialisedField(self, 'PrprtyId', Max35Text, False)
 
 	@property
 	def PrprtyLclCcy(self):
@@ -266,12 +266,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@PrprtyLclCcy.setter
 	def PrprtyLclCcy(self, value):
-		self._PrprtyLclCcy = value if type(value) != base_types.auto else self.make_default("PrprtyLclCcy")
+		self._PrprtyLclCcy = value if value is not None else base_types.UninitialisedField(self, 'PrprtyLclCcy', ISO3NumericCurrencyCode, False)
 
 	@PrprtyLclCcy.deleter
 	def PrprtyLclCcy(self):
 		del self._PrprtyLclCcy
-		self._PrprtyLclCcy = None
+		self._PrprtyLclCcy = base_types.UninitialisedField(self, 'PrprtyLclCcy', ISO3NumericCurrencyCode, False)
 
 	@property
 	def PrprtyLclData(self):
@@ -279,12 +279,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@PrprtyLclData.setter
 	def PrprtyLclData(self, value):
-		self._PrprtyLclData = value if type(value) != base_types.auto else self.make_default("PrprtyLclData")
+		self._PrprtyLclData = value if value is not None else base_types.UninitialisedField(self, 'PrprtyLclData', LocalData20, True)
 
 	@PrprtyLclData.deleter
 	def PrprtyLclData(self):
 		del self._PrprtyLclData
-		self._PrprtyLclData = None
+		self._PrprtyLclData = base_types.UninitialisedField(self, 'PrprtyLclData', LocalData20, True)
 
 	@property
 	def PrprtyLclTmZone(self):
@@ -292,12 +292,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@PrprtyLclTmZone.setter
 	def PrprtyLclTmZone(self, value):
-		self._PrprtyLclTmZone = value if type(value) != base_types.auto else self.make_default("PrprtyLclTmZone")
+		self._PrprtyLclTmZone = value if value is not None else base_types.UninitialisedField(self, 'PrprtyLclTmZone', Max70Text, False)
 
 	@PrprtyLclTmZone.deleter
 	def PrprtyLclTmZone(self):
 		del self._PrprtyLclTmZone
-		self._PrprtyLclTmZone = None
+		self._PrprtyLclTmZone = base_types.UninitialisedField(self, 'PrprtyLclTmZone', Max70Text, False)
 
 	@property
 	def PrprtyLctnCd(self):
@@ -305,12 +305,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@PrprtyLctnCd.setter
 	def PrprtyLctnCd(self, value):
-		self._PrprtyLctnCd = value if type(value) != base_types.auto else self.make_default("PrprtyLctnCd")
+		self._PrprtyLctnCd = value if value is not None else base_types.UninitialisedField(self, 'PrprtyLctnCd', Max35Text, False)
 
 	@PrprtyLctnCd.deleter
 	def PrprtyLctnCd(self):
 		del self._PrprtyLctnCd
-		self._PrprtyLctnCd = None
+		self._PrprtyLctnCd = base_types.UninitialisedField(self, 'PrprtyLctnCd', Max35Text, False)
 
 	@property
 	def PrprtyLglCorpNm(self):
@@ -318,12 +318,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@PrprtyLglCorpNm.setter
 	def PrprtyLglCorpNm(self, value):
-		self._PrprtyLglCorpNm = value if type(value) != base_types.auto else self.make_default("PrprtyLglCorpNm")
+		self._PrprtyLglCorpNm = value if value is not None else base_types.UninitialisedField(self, 'PrprtyLglCorpNm', Max99Text, False)
 
 	@PrprtyLglCorpNm.deleter
 	def PrprtyLglCorpNm(self):
 		del self._PrprtyLglCorpNm
-		self._PrprtyLglCorpNm = None
+		self._PrprtyLglCorpNm = base_types.UninitialisedField(self, 'PrprtyLglCorpNm', Max99Text, False)
 
 	@property
 	def PrprtyNm(self):
@@ -331,12 +331,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@PrprtyNm.setter
 	def PrprtyNm(self, value):
-		self._PrprtyNm = value if type(value) != base_types.auto else self.make_default("PrprtyNm")
+		self._PrprtyNm = value if value is not None else base_types.UninitialisedField(self, 'PrprtyNm', Max35Text, False)
 
 	@PrprtyNm.deleter
 	def PrprtyNm(self):
 		del self._PrprtyNm
-		self._PrprtyNm = None
+		self._PrprtyNm = base_types.UninitialisedField(self, 'PrprtyNm', Max35Text, False)
 
 	@property
 	def PrprtyTp(self):
@@ -344,12 +344,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@PrprtyTp.setter
 	def PrprtyTp(self, value):
-		self._PrprtyTp = value if type(value) != base_types.auto else self.make_default("PrprtyTp")
+		self._PrprtyTp = value if value is not None else base_types.UninitialisedField(self, 'PrprtyTp', LodgingActivity2Code, False)
 
 	@PrprtyTp.deleter
 	def PrprtyTp(self):
 		del self._PrprtyTp
-		self._PrprtyTp = None
+		self._PrprtyTp = base_types.UninitialisedField(self, 'PrprtyTp', LodgingActivity2Code, False)
 
 	@property
 	def PrstgsPrprty(self):
@@ -357,12 +357,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@PrstgsPrprty.setter
 	def PrstgsPrprty(self, value):
-		self._PrstgsPrprty = value if type(value) != base_types.auto else self.make_default("PrstgsPrprty")
+		self._PrstgsPrprty = value if value is not None else base_types.UninitialisedField(self, 'PrstgsPrprty', Max35Text, False)
 
 	@PrstgsPrprty.deleter
 	def PrstgsPrprty(self):
 		del self._PrstgsPrprty
-		self._PrstgsPrprty = None
+		self._PrstgsPrprty = base_types.UninitialisedField(self, 'PrstgsPrprty', Max35Text, False)
 
 	@property
 	def PrvtData(self):
@@ -370,12 +370,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def Room(self):
@@ -383,12 +383,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@Room.setter
 	def Room(self, value):
-		self._Room = value if type(value) != base_types.auto else self.make_default("Room")
+		self._Room = value if value is not None else base_types.UninitialisedField(self, 'Room', LodgingRoom2, True)
 
 	@Room.deleter
 	def Room(self):
 		del self._Room
-		self._Room = None
+		self._Room = base_types.UninitialisedField(self, 'Room', LodgingRoom2, True)
 
 	@property
 	def SummryCmmdtyId(self):
@@ -396,12 +396,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@SummryCmmdtyId.setter
 	def SummryCmmdtyId(self, value):
-		self._SummryCmmdtyId = value if type(value) != base_types.auto else self.make_default("SummryCmmdtyId")
+		self._SummryCmmdtyId = value if value is not None else base_types.UninitialisedField(self, 'SummryCmmdtyId', Max35Text, False)
 
 	@SummryCmmdtyId.deleter
 	def SummryCmmdtyId(self):
 		del self._SummryCmmdtyId
-		self._SummryCmmdtyId = None
+		self._SummryCmmdtyId = base_types.UninitialisedField(self, 'SummryCmmdtyId', Max35Text, False)
 
 	@property
 	def TtlAmt(self):
@@ -409,12 +409,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@TtlAmt.setter
 	def TtlAmt(self, value):
-		self._TtlAmt = value if type(value) != base_types.auto else self.make_default("TtlAmt")
+		self._TtlAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlAmt', ImpliedCurrencyAndAmount, False)
 
 	@TtlAmt.deleter
 	def TtlAmt(self):
 		del self._TtlAmt
-		self._TtlAmt = None
+		self._TtlAmt = base_types.UninitialisedField(self, 'TtlAmt', ImpliedCurrencyAndAmount, False)
 
 	@property
 	def TtlTax(self):
@@ -422,12 +422,12 @@ class Lodging5(base_types._BaseFieldType):
 
 	@TtlTax.setter
 	def TtlTax(self, value):
-		self._TtlTax = value if type(value) != base_types.auto else self.make_default("TtlTax")
+		self._TtlTax = value if value is not None else base_types.UninitialisedField(self, 'TtlTax', Tax44, True)
 
 	@TtlTax.deleter
 	def TtlTax(self):
 		del self._TtlTax
-		self._TtlTax = None
+		self._TtlTax = base_types.UninitialisedField(self, 'TtlTax', Tax44, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Arrvl', type=DepartureOrArrival2, min=0, max=1, mutex_group=None, array=False),

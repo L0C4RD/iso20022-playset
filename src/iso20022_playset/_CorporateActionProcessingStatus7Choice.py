@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionProcessingStatus5Choice import CorporateActionProcessingStatus5Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import CorporateActionProcessingStatus5Choice
+from . import YesNoIndicator
 
 class CorporateActionProcessingStatus7Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CorporateActionProcessingStatus7Choice(base_types._BaseFieldType):
 
 	@EvtInfSts.setter
 	def EvtInfSts(self, value):
-		self._EvtInfSts = value if type(value) != base_types.auto else self.make_default("EvtInfSts")
+		self._EvtInfSts = value if value is not None else base_types.UninitialisedField(self, 'EvtInfSts', CorporateActionProcessingStatus5Choice, False)
 
 	@EvtInfSts.deleter
 	def EvtInfSts(self):
 		del self._EvtInfSts
-		self._EvtInfSts = None
+		self._EvtInfSts = base_types.UninitialisedField(self, 'EvtInfSts', CorporateActionProcessingStatus5Choice, False)
 
 	@property
 	def ForInfOnly(self):
@@ -27,12 +27,12 @@ class CorporateActionProcessingStatus7Choice(base_types._BaseFieldType):
 
 	@ForInfOnly.setter
 	def ForInfOnly(self, value):
-		self._ForInfOnly = value if type(value) != base_types.auto else self.make_default("ForInfOnly")
+		self._ForInfOnly = value if value is not None else base_types.UninitialisedField(self, 'ForInfOnly', YesNoIndicator, False)
 
 	@ForInfOnly.deleter
 	def ForInfOnly(self):
 		del self._ForInfOnly
-		self._ForInfOnly = None
+		self._ForInfOnly = base_types.UninitialisedField(self, 'ForInfOnly', YesNoIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EvtInfSts', type=CorporateActionProcessingStatus5Choice, min=0, max=1, mutex_group=1, array=False),

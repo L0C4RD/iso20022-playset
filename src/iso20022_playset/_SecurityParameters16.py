@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CryptographicKey18 import CryptographicKey18
-from ._Max140Binary import Max140Binary
-from ._Max256Text import Max256Text
-from ._TerminalManagementAction3Code import TerminalManagementAction3Code
+from . import CryptographicKey18
+from . import Max140Binary
+from . import Max256Text
+from . import TerminalManagementAction3Code
 
 class SecurityParameters16(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class SecurityParameters16(base_types._BaseFieldType):
 
 	@ActnTp.setter
 	def ActnTp(self, value):
-		self._ActnTp = value if type(value) != base_types.auto else self.make_default("ActnTp")
+		self._ActnTp = value if value is not None else base_types.UninitialisedField(self, 'ActnTp', TerminalManagementAction3Code, False)
 
 	@ActnTp.deleter
 	def ActnTp(self):
 		del self._ActnTp
-		self._ActnTp = None
+		self._ActnTp = base_types.UninitialisedField(self, 'ActnTp', TerminalManagementAction3Code, False)
 
 	@property
 	def POIChllng(self):
@@ -29,12 +29,12 @@ class SecurityParameters16(base_types._BaseFieldType):
 
 	@POIChllng.setter
 	def POIChllng(self, value):
-		self._POIChllng = value if type(value) != base_types.auto else self.make_default("POIChllng")
+		self._POIChllng = value if value is not None else base_types.UninitialisedField(self, 'POIChllng', Max140Binary, False)
 
 	@POIChllng.deleter
 	def POIChllng(self):
 		del self._POIChllng
-		self._POIChllng = None
+		self._POIChllng = base_types.UninitialisedField(self, 'POIChllng', Max140Binary, False)
 
 	@property
 	def SctyElmt(self):
@@ -42,12 +42,12 @@ class SecurityParameters16(base_types._BaseFieldType):
 
 	@SctyElmt.setter
 	def SctyElmt(self, value):
-		self._SctyElmt = value if type(value) != base_types.auto else self.make_default("SctyElmt")
+		self._SctyElmt = value if value is not None else base_types.UninitialisedField(self, 'SctyElmt', CryptographicKey18, True)
 
 	@SctyElmt.deleter
 	def SctyElmt(self):
 		del self._SctyElmt
-		self._SctyElmt = None
+		self._SctyElmt = base_types.UninitialisedField(self, 'SctyElmt', CryptographicKey18, True)
 
 	@property
 	def TMChllng(self):
@@ -55,12 +55,12 @@ class SecurityParameters16(base_types._BaseFieldType):
 
 	@TMChllng.setter
 	def TMChllng(self, value):
-		self._TMChllng = value if type(value) != base_types.auto else self.make_default("TMChllng")
+		self._TMChllng = value if value is not None else base_types.UninitialisedField(self, 'TMChllng', Max140Binary, False)
 
 	@TMChllng.deleter
 	def TMChllng(self):
 		del self._TMChllng
-		self._TMChllng = None
+		self._TMChllng = base_types.UninitialisedField(self, 'TMChllng', Max140Binary, False)
 
 	@property
 	def Vrsn(self):
@@ -68,12 +68,12 @@ class SecurityParameters16(base_types._BaseFieldType):
 
 	@Vrsn.setter
 	def Vrsn(self, value):
-		self._Vrsn = value if type(value) != base_types.auto else self.make_default("Vrsn")
+		self._Vrsn = value if value is not None else base_types.UninitialisedField(self, 'Vrsn', Max256Text, False)
 
 	@Vrsn.deleter
 	def Vrsn(self):
 		del self._Vrsn
-		self._Vrsn = None
+		self._Vrsn = base_types.UninitialisedField(self, 'Vrsn', Max256Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ActnTp', type=TerminalManagementAction3Code, min=1, max=1, mutex_group=None, array=False),

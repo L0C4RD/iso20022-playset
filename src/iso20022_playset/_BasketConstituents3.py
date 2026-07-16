@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InstrumentIdentification6Choice import InstrumentIdentification6Choice
-from ._LongFraction19DecimalNumber import LongFraction19DecimalNumber
-from ._UnitOfMeasure8Choice import UnitOfMeasure8Choice
+from . import InstrumentIdentification6Choice
+from . import LongFraction19DecimalNumber
+from . import UnitOfMeasure8Choice
 
 class BasketConstituents3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class BasketConstituents3(base_types._BaseFieldType):
 
 	@InstrmId.setter
 	def InstrmId(self, value):
-		self._InstrmId = value if type(value) != base_types.auto else self.make_default("InstrmId")
+		self._InstrmId = value if value is not None else base_types.UninitialisedField(self, 'InstrmId', InstrumentIdentification6Choice, False)
 
 	@InstrmId.deleter
 	def InstrmId(self):
 		del self._InstrmId
-		self._InstrmId = None
+		self._InstrmId = base_types.UninitialisedField(self, 'InstrmId', InstrumentIdentification6Choice, False)
 
 	@property
 	def Qty(self):
@@ -28,12 +28,12 @@ class BasketConstituents3(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+		self._Qty = value if value is not None else base_types.UninitialisedField(self, 'Qty', LongFraction19DecimalNumber, False)
 
 	@Qty.deleter
 	def Qty(self):
 		del self._Qty
-		self._Qty = None
+		self._Qty = base_types.UninitialisedField(self, 'Qty', LongFraction19DecimalNumber, False)
 
 	@property
 	def UnitOfMeasr(self):
@@ -41,12 +41,12 @@ class BasketConstituents3(base_types._BaseFieldType):
 
 	@UnitOfMeasr.setter
 	def UnitOfMeasr(self, value):
-		self._UnitOfMeasr = value if type(value) != base_types.auto else self.make_default("UnitOfMeasr")
+		self._UnitOfMeasr = value if value is not None else base_types.UninitialisedField(self, 'UnitOfMeasr', UnitOfMeasure8Choice, False)
 
 	@UnitOfMeasr.deleter
 	def UnitOfMeasr(self):
 		del self._UnitOfMeasr
-		self._UnitOfMeasr = None
+		self._UnitOfMeasr = base_types.UninitialisedField(self, 'UnitOfMeasr', UnitOfMeasure8Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InstrmId', type=InstrumentIdentification6Choice, min=1, max=1, mutex_group=None, array=False),

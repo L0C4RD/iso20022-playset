@@ -2,25 +2,25 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._AdditionalFee4 import AdditionalFee4
-from ._ContentInformationType41 import ContentInformationType41
-from ._DestinationData1 import DestinationData1
-from ._EncryptedData2 import EncryptedData2
-from ._ErrorDetails4 import ErrorDetails4
-from ._Exact12Text import Exact12Text
-from ._Exact15Text import Exact15Text
-from ._Header72 import Header72
-from ._ISODateTime import ISODateTime
-from ._Jurisdiction2 import Jurisdiction2
-from ._Max100KBinary import Max100KBinary
-from ._Max12NumericText import Max12NumericText
-from ._OriginatorData2 import OriginatorData2
-from ._ProgrammeMode7 import ProgrammeMode7
-from ._ReceiverData1 import ReceiverData1
-from ._Reconciliation5 import Reconciliation5
-from ._SenderData1 import SenderData1
-from ._SettlementService7 import SettlementService7
+from . import ATICALaxProcessing
+from . import AdditionalFee4
+from . import ContentInformationType41
+from . import DestinationData1
+from . import EncryptedData2
+from . import ErrorDetails4
+from . import Exact12Text
+from . import Exact15Text
+from . import Header72
+from . import ISODateTime
+from . import Jurisdiction2
+from . import Max100KBinary
+from . import Max12NumericText
+from . import OriginatorData2
+from . import ProgrammeMode7
+from . import ReceiverData1
+from . import Reconciliation5
+from . import SenderData1
+from . import SettlementService7
 
 class ErrorV05(base_types._BaseFieldType):
 
@@ -31,12 +31,12 @@ class ErrorV05(base_types._BaseFieldType):
 
 	@AddtlFee.setter
 	def AddtlFee(self, value):
-		self._AddtlFee = value if type(value) != base_types.auto else self.make_default("AddtlFee")
+		self._AddtlFee = value if value is not None else base_types.UninitialisedField(self, 'AddtlFee', AdditionalFee4, True)
 
 	@AddtlFee.deleter
 	def AddtlFee(self):
 		del self._AddtlFee
-		self._AddtlFee = None
+		self._AddtlFee = base_types.UninitialisedField(self, 'AddtlFee', AdditionalFee4, True)
 
 	@property
 	def Dstn(self):
@@ -44,12 +44,12 @@ class ErrorV05(base_types._BaseFieldType):
 
 	@Dstn.setter
 	def Dstn(self, value):
-		self._Dstn = value if type(value) != base_types.auto else self.make_default("Dstn")
+		self._Dstn = value if value is not None else base_types.UninitialisedField(self, 'Dstn', DestinationData1, False)
 
 	@Dstn.deleter
 	def Dstn(self):
 		del self._Dstn
-		self._Dstn = None
+		self._Dstn = base_types.UninitialisedField(self, 'Dstn', DestinationData1, False)
 
 	@property
 	def ErrDtl(self):
@@ -57,12 +57,12 @@ class ErrorV05(base_types._BaseFieldType):
 
 	@ErrDtl.setter
 	def ErrDtl(self, value):
-		self._ErrDtl = value if type(value) != base_types.auto else self.make_default("ErrDtl")
+		self._ErrDtl = value if value is not None else base_types.UninitialisedField(self, 'ErrDtl', ErrorDetails4, True)
 
 	@ErrDtl.deleter
 	def ErrDtl(self):
 		del self._ErrDtl
-		self._ErrDtl = None
+		self._ErrDtl = base_types.UninitialisedField(self, 'ErrDtl', ErrorDetails4, True)
 
 	@property
 	def Hdr(self):
@@ -70,12 +70,12 @@ class ErrorV05(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header72, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header72, False)
 
 	@property
 	def Jursdctn(self):
@@ -83,12 +83,12 @@ class ErrorV05(base_types._BaseFieldType):
 
 	@Jursdctn.setter
 	def Jursdctn(self, value):
-		self._Jursdctn = value if type(value) != base_types.auto else self.make_default("Jursdctn")
+		self._Jursdctn = value if value is not None else base_types.UninitialisedField(self, 'Jursdctn', Jurisdiction2, False)
 
 	@Jursdctn.deleter
 	def Jursdctn(self):
 		del self._Jursdctn
-		self._Jursdctn = None
+		self._Jursdctn = base_types.UninitialisedField(self, 'Jursdctn', Jurisdiction2, False)
 
 	@property
 	def LifeCyclId(self):
@@ -96,12 +96,12 @@ class ErrorV05(base_types._BaseFieldType):
 
 	@LifeCyclId.setter
 	def LifeCyclId(self, value):
-		self._LifeCyclId = value if type(value) != base_types.auto else self.make_default("LifeCyclId")
+		self._LifeCyclId = value if value is not None else base_types.UninitialisedField(self, 'LifeCyclId', Exact15Text, False)
 
 	@LifeCyclId.deleter
 	def LifeCyclId(self):
 		del self._LifeCyclId
-		self._LifeCyclId = None
+		self._LifeCyclId = base_types.UninitialisedField(self, 'LifeCyclId', Exact15Text, False)
 
 	@property
 	def NtlData(self):
@@ -109,12 +109,12 @@ class ErrorV05(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def OrgnlMsg(self):
@@ -122,12 +122,12 @@ class ErrorV05(base_types._BaseFieldType):
 
 	@OrgnlMsg.setter
 	def OrgnlMsg(self, value):
-		self._OrgnlMsg = value if type(value) != base_types.auto else self.make_default("OrgnlMsg")
+		self._OrgnlMsg = value if value is not None else base_types.UninitialisedField(self, 'OrgnlMsg', Max100KBinary, False)
 
 	@OrgnlMsg.deleter
 	def OrgnlMsg(self):
 		del self._OrgnlMsg
-		self._OrgnlMsg = None
+		self._OrgnlMsg = base_types.UninitialisedField(self, 'OrgnlMsg', Max100KBinary, False)
 
 	@property
 	def Orgtr(self):
@@ -135,12 +135,12 @@ class ErrorV05(base_types._BaseFieldType):
 
 	@Orgtr.setter
 	def Orgtr(self, value):
-		self._Orgtr = value if type(value) != base_types.auto else self.make_default("Orgtr")
+		self._Orgtr = value if value is not None else base_types.UninitialisedField(self, 'Orgtr', OriginatorData2, False)
 
 	@Orgtr.deleter
 	def Orgtr(self):
 		del self._Orgtr
-		self._Orgtr = None
+		self._Orgtr = base_types.UninitialisedField(self, 'Orgtr', OriginatorData2, False)
 
 	@property
 	def Prgrmm(self):
@@ -148,12 +148,12 @@ class ErrorV05(base_types._BaseFieldType):
 
 	@Prgrmm.setter
 	def Prgrmm(self, value):
-		self._Prgrmm = value if type(value) != base_types.auto else self.make_default("Prgrmm")
+		self._Prgrmm = value if value is not None else base_types.UninitialisedField(self, 'Prgrmm', ProgrammeMode7, False)
 
 	@Prgrmm.deleter
 	def Prgrmm(self):
 		del self._Prgrmm
-		self._Prgrmm = None
+		self._Prgrmm = base_types.UninitialisedField(self, 'Prgrmm', ProgrammeMode7, False)
 
 	@property
 	def PrtctdData(self):
@@ -161,12 +161,12 @@ class ErrorV05(base_types._BaseFieldType):
 
 	@PrtctdData.setter
 	def PrtctdData(self, value):
-		self._PrtctdData = value if type(value) != base_types.auto else self.make_default("PrtctdData")
+		self._PrtctdData = value if value is not None else base_types.UninitialisedField(self, 'PrtctdData', EncryptedData2, True)
 
 	@PrtctdData.deleter
 	def PrtctdData(self):
 		del self._PrtctdData
-		self._PrtctdData = None
+		self._PrtctdData = base_types.UninitialisedField(self, 'PrtctdData', EncryptedData2, True)
 
 	@property
 	def PrvtData(self):
@@ -174,12 +174,12 @@ class ErrorV05(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def Rcncltn(self):
@@ -187,12 +187,12 @@ class ErrorV05(base_types._BaseFieldType):
 
 	@Rcncltn.setter
 	def Rcncltn(self, value):
-		self._Rcncltn = value if type(value) != base_types.auto else self.make_default("Rcncltn")
+		self._Rcncltn = value if value is not None else base_types.UninitialisedField(self, 'Rcncltn', Reconciliation5, False)
 
 	@Rcncltn.deleter
 	def Rcncltn(self):
 		del self._Rcncltn
-		self._Rcncltn = None
+		self._Rcncltn = base_types.UninitialisedField(self, 'Rcncltn', Reconciliation5, False)
 
 	@property
 	def Rcvr(self):
@@ -200,12 +200,12 @@ class ErrorV05(base_types._BaseFieldType):
 
 	@Rcvr.setter
 	def Rcvr(self, value):
-		self._Rcvr = value if type(value) != base_types.auto else self.make_default("Rcvr")
+		self._Rcvr = value if value is not None else base_types.UninitialisedField(self, 'Rcvr', ReceiverData1, False)
 
 	@Rcvr.deleter
 	def Rcvr(self):
 		del self._Rcvr
-		self._Rcvr = None
+		self._Rcvr = base_types.UninitialisedField(self, 'Rcvr', ReceiverData1, False)
 
 	@property
 	def RtrvlRefNb(self):
@@ -213,12 +213,12 @@ class ErrorV05(base_types._BaseFieldType):
 
 	@RtrvlRefNb.setter
 	def RtrvlRefNb(self, value):
-		self._RtrvlRefNb = value if type(value) != base_types.auto else self.make_default("RtrvlRefNb")
+		self._RtrvlRefNb = value if value is not None else base_types.UninitialisedField(self, 'RtrvlRefNb', Exact12Text, False)
 
 	@RtrvlRefNb.deleter
 	def RtrvlRefNb(self):
 		del self._RtrvlRefNb
-		self._RtrvlRefNb = None
+		self._RtrvlRefNb = base_types.UninitialisedField(self, 'RtrvlRefNb', Exact12Text, False)
 
 	@property
 	def SctyTrlr(self):
@@ -226,12 +226,12 @@ class ErrorV05(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType41, False)
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
 		del self._SctyTrlr
-		self._SctyTrlr = None
+		self._SctyTrlr = base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType41, False)
 
 	@property
 	def Sndr(self):
@@ -239,12 +239,12 @@ class ErrorV05(base_types._BaseFieldType):
 
 	@Sndr.setter
 	def Sndr(self, value):
-		self._Sndr = value if type(value) != base_types.auto else self.make_default("Sndr")
+		self._Sndr = value if value is not None else base_types.UninitialisedField(self, 'Sndr', SenderData1, False)
 
 	@Sndr.deleter
 	def Sndr(self):
 		del self._Sndr
-		self._Sndr = None
+		self._Sndr = base_types.UninitialisedField(self, 'Sndr', SenderData1, False)
 
 	@property
 	def SttlmSvc(self):
@@ -252,12 +252,12 @@ class ErrorV05(base_types._BaseFieldType):
 
 	@SttlmSvc.setter
 	def SttlmSvc(self, value):
-		self._SttlmSvc = value if type(value) != base_types.auto else self.make_default("SttlmSvc")
+		self._SttlmSvc = value if value is not None else base_types.UninitialisedField(self, 'SttlmSvc', SettlementService7, False)
 
 	@SttlmSvc.deleter
 	def SttlmSvc(self):
 		del self._SttlmSvc
-		self._SttlmSvc = None
+		self._SttlmSvc = base_types.UninitialisedField(self, 'SttlmSvc', SettlementService7, False)
 
 	@property
 	def SysTracAudtNb(self):
@@ -265,12 +265,12 @@ class ErrorV05(base_types._BaseFieldType):
 
 	@SysTracAudtNb.setter
 	def SysTracAudtNb(self, value):
-		self._SysTracAudtNb = value if type(value) != base_types.auto else self.make_default("SysTracAudtNb")
+		self._SysTracAudtNb = value if value is not None else base_types.UninitialisedField(self, 'SysTracAudtNb', Max12NumericText, False)
 
 	@SysTracAudtNb.deleter
 	def SysTracAudtNb(self):
 		del self._SysTracAudtNb
-		self._SysTracAudtNb = None
+		self._SysTracAudtNb = base_types.UninitialisedField(self, 'SysTracAudtNb', Max12NumericText, False)
 
 	@property
 	def TrnsmssnDtTm(self):
@@ -278,12 +278,12 @@ class ErrorV05(base_types._BaseFieldType):
 
 	@TrnsmssnDtTm.setter
 	def TrnsmssnDtTm(self, value):
-		self._TrnsmssnDtTm = value if type(value) != base_types.auto else self.make_default("TrnsmssnDtTm")
+		self._TrnsmssnDtTm = value if value is not None else base_types.UninitialisedField(self, 'TrnsmssnDtTm', ISODateTime, False)
 
 	@TrnsmssnDtTm.deleter
 	def TrnsmssnDtTm(self):
 		del self._TrnsmssnDtTm
-		self._TrnsmssnDtTm = None
+		self._TrnsmssnDtTm = base_types.UninitialisedField(self, 'TrnsmssnDtTm', ISODateTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlFee', type=AdditionalFee4, min=0, max=None, mutex_group=None, array=True),

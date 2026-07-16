@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
+from . import ActiveCurrencyCode
 
 class CurrencyToBuyOrSell1Choice(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class CurrencyToBuyOrSell1Choice(base_types._BaseFieldType):
 
 	@CcyToBuy.setter
 	def CcyToBuy(self, value):
-		self._CcyToBuy = value if type(value) != base_types.auto else self.make_default("CcyToBuy")
+		self._CcyToBuy = value if value is not None else base_types.UninitialisedField(self, 'CcyToBuy', ActiveCurrencyCode, False)
 
 	@CcyToBuy.deleter
 	def CcyToBuy(self):
 		del self._CcyToBuy
-		self._CcyToBuy = None
+		self._CcyToBuy = base_types.UninitialisedField(self, 'CcyToBuy', ActiveCurrencyCode, False)
 
 	@property
 	def CcyToSell(self):
@@ -26,12 +26,12 @@ class CurrencyToBuyOrSell1Choice(base_types._BaseFieldType):
 
 	@CcyToSell.setter
 	def CcyToSell(self, value):
-		self._CcyToSell = value if type(value) != base_types.auto else self.make_default("CcyToSell")
+		self._CcyToSell = value if value is not None else base_types.UninitialisedField(self, 'CcyToSell', ActiveCurrencyCode, False)
 
 	@CcyToSell.deleter
 	def CcyToSell(self):
 		del self._CcyToSell
-		self._CcyToSell = None
+		self._CcyToSell = base_types.UninitialisedField(self, 'CcyToSell', ActiveCurrencyCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CcyToBuy', type=ActiveCurrencyCode, min=0, max=1, mutex_group=1, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SystemEventNotificationV02 import SystemEventNotificationV02
+from . import SystemEventNotificationV02
 
 class ADMI_004_001_02():
 
@@ -18,12 +18,12 @@ class ADMI_004_001_02():
 
 		@SysEvtNtfctn.setter
 		def SysEvtNtfctn(self, value):
-			self._SysEvtNtfctn = value if type(value) != base_types.auto else self.make_default("SysEvtNtfctn")
+			self._SysEvtNtfctn = value if value is not None else base_types.UninitialisedField(self, 'SysEvtNtfctn', SystemEventNotificationV02, False)
 
 		@SysEvtNtfctn.deleter
 		def SysEvtNtfctn(self):
 			del self._SysEvtNtfctn
-			self._SysEvtNtfctn = None
+			self._SysEvtNtfctn = base_types.UninitialisedField(self, 'SysEvtNtfctn', SystemEventNotificationV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SysEvtNtfctn', type=SystemEventNotificationV02, min=1, max=1, mutex_group=None, array=False),

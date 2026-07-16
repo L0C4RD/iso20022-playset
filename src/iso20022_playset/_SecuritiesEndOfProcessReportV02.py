@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ConfirmationParties7 import ConfirmationParties7
-from ._Pagination1 import Pagination1
-from ._PartyIdentificationAndAccount220 import PartyIdentificationAndAccount220
-from ._Report6 import Report6
-from ._SupplementaryData1 import SupplementaryData1
+from . import ConfirmationParties7
+from . import Pagination1
+from . import PartyIdentificationAndAccount220
+from . import Report6
+from . import SupplementaryData1
 
 class SecuritiesEndOfProcessReportV02(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class SecuritiesEndOfProcessReportV02(base_types._BaseFieldType):
 
 	@ConfPties.setter
 	def ConfPties(self, value):
-		self._ConfPties = value if type(value) != base_types.auto else self.make_default("ConfPties")
+		self._ConfPties = value if value is not None else base_types.UninitialisedField(self, 'ConfPties', ConfirmationParties7, True)
 
 	@ConfPties.deleter
 	def ConfPties(self):
 		del self._ConfPties
-		self._ConfPties = None
+		self._ConfPties = base_types.UninitialisedField(self, 'ConfPties', ConfirmationParties7, True)
 
 	@property
 	def Invstr(self):
@@ -30,12 +30,12 @@ class SecuritiesEndOfProcessReportV02(base_types._BaseFieldType):
 
 	@Invstr.setter
 	def Invstr(self, value):
-		self._Invstr = value if type(value) != base_types.auto else self.make_default("Invstr")
+		self._Invstr = value if value is not None else base_types.UninitialisedField(self, 'Invstr', PartyIdentificationAndAccount220, True)
 
 	@Invstr.deleter
 	def Invstr(self):
 		del self._Invstr
-		self._Invstr = None
+		self._Invstr = base_types.UninitialisedField(self, 'Invstr', PartyIdentificationAndAccount220, True)
 
 	@property
 	def Pgntn(self):
@@ -43,12 +43,12 @@ class SecuritiesEndOfProcessReportV02(base_types._BaseFieldType):
 
 	@Pgntn.setter
 	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+		self._Pgntn = value if value is not None else base_types.UninitialisedField(self, 'Pgntn', Pagination1, True)
 
 	@Pgntn.deleter
 	def Pgntn(self):
 		del self._Pgntn
-		self._Pgntn = None
+		self._Pgntn = base_types.UninitialisedField(self, 'Pgntn', Pagination1, True)
 
 	@property
 	def RptGnlDtls(self):
@@ -56,12 +56,12 @@ class SecuritiesEndOfProcessReportV02(base_types._BaseFieldType):
 
 	@RptGnlDtls.setter
 	def RptGnlDtls(self, value):
-		self._RptGnlDtls = value if type(value) != base_types.auto else self.make_default("RptGnlDtls")
+		self._RptGnlDtls = value if value is not None else base_types.UninitialisedField(self, 'RptGnlDtls', Report6, False)
 
 	@RptGnlDtls.deleter
 	def RptGnlDtls(self):
 		del self._RptGnlDtls
-		self._RptGnlDtls = None
+		self._RptGnlDtls = base_types.UninitialisedField(self, 'RptGnlDtls', Report6, False)
 
 	@property
 	def SplmtryData(self):
@@ -69,12 +69,12 @@ class SecuritiesEndOfProcessReportV02(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ConfPties', type=ConfirmationParties7, min=0, max=None, mutex_group=None, array=True),

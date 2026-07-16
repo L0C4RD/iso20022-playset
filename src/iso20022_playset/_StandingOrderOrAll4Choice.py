@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._StandingOrderIdentification8 import StandingOrderIdentification8
-from ._StandingOrderIdentification9 import StandingOrderIdentification9
+from . import StandingOrderIdentification8
+from . import StandingOrderIdentification9
 
 class StandingOrderOrAll4Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class StandingOrderOrAll4Choice(base_types._BaseFieldType):
 
 	@AllStgOrdrs.setter
 	def AllStgOrdrs(self, value):
-		self._AllStgOrdrs = value if type(value) != base_types.auto else self.make_default("AllStgOrdrs")
+		self._AllStgOrdrs = value if value is not None else base_types.UninitialisedField(self, 'AllStgOrdrs', StandingOrderIdentification9, True)
 
 	@AllStgOrdrs.deleter
 	def AllStgOrdrs(self):
 		del self._AllStgOrdrs
-		self._AllStgOrdrs = None
+		self._AllStgOrdrs = base_types.UninitialisedField(self, 'AllStgOrdrs', StandingOrderIdentification9, True)
 
 	@property
 	def StgOrdr(self):
@@ -27,12 +27,12 @@ class StandingOrderOrAll4Choice(base_types._BaseFieldType):
 
 	@StgOrdr.setter
 	def StgOrdr(self, value):
-		self._StgOrdr = value if type(value) != base_types.auto else self.make_default("StgOrdr")
+		self._StgOrdr = value if value is not None else base_types.UninitialisedField(self, 'StgOrdr', StandingOrderIdentification8, True)
 
 	@StgOrdr.deleter
 	def StgOrdr(self):
 		del self._StgOrdr
-		self._StgOrdr = None
+		self._StgOrdr = base_types.UninitialisedField(self, 'StgOrdr', StandingOrderIdentification8, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AllStgOrdrs', type=StandingOrderIdentification9, min=1, max=None, mutex_group=1, array=True),

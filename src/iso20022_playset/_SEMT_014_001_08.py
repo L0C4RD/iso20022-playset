@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IntraPositionMovementStatusAdviceV08 import IntraPositionMovementStatusAdviceV08
+from . import IntraPositionMovementStatusAdviceV08
 
 class SEMT_014_001_08():
 
@@ -18,12 +18,12 @@ class SEMT_014_001_08():
 
 		@IntraPosMvmntStsAdvc.setter
 		def IntraPosMvmntStsAdvc(self, value):
-			self._IntraPosMvmntStsAdvc = value if type(value) != base_types.auto else self.make_default("IntraPosMvmntStsAdvc")
+			self._IntraPosMvmntStsAdvc = value if value is not None else base_types.UninitialisedField(self, 'IntraPosMvmntStsAdvc', IntraPositionMovementStatusAdviceV08, False)
 
 		@IntraPosMvmntStsAdvc.deleter
 		def IntraPosMvmntStsAdvc(self):
 			del self._IntraPosMvmntStsAdvc
-			self._IntraPosMvmntStsAdvc = None
+			self._IntraPosMvmntStsAdvc = base_types.UninitialisedField(self, 'IntraPosMvmntStsAdvc', IntraPositionMovementStatusAdviceV08, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='IntraPosMvmntStsAdvc', type=IntraPositionMovementStatusAdviceV08, min=1, max=1, mutex_group=None, array=False),

@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ExpiryDetails2 import ExpiryDetails2
-from ._ExternalTypeOfParty1Code import ExternalTypeOfParty1Code
-from ._GovernanceRules1 import GovernanceRules1
-from ._Max2000Text import Max2000Text
-from ._PartyIdentification43 import PartyIdentification43
-from ._UndertakingAmount1 import UndertakingAmount1
-from ._UndertakingName1Code import UndertakingName1Code
-from ._YesNoIndicator import YesNoIndicator
+from . import ExpiryDetails2
+from . import ExternalTypeOfParty1Code
+from . import GovernanceRules1
+from . import Max2000Text
+from . import PartyIdentification43
+from . import UndertakingAmount1
+from . import UndertakingName1Code
+from . import YesNoIndicator
 
 class Undertaking2(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class Undertaking2(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', Max2000Text, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', Max2000Text, True)
 
 	@property
 	def Bnfcry(self):
@@ -33,12 +33,12 @@ class Undertaking2(base_types._BaseFieldType):
 
 	@Bnfcry.setter
 	def Bnfcry(self, value):
-		self._Bnfcry = value if type(value) != base_types.auto else self.make_default("Bnfcry")
+		self._Bnfcry = value if value is not None else base_types.UninitialisedField(self, 'Bnfcry', PartyIdentification43, False)
 
 	@Bnfcry.deleter
 	def Bnfcry(self):
 		del self._Bnfcry
-		self._Bnfcry = None
+		self._Bnfcry = base_types.UninitialisedField(self, 'Bnfcry', PartyIdentification43, False)
 
 	@property
 	def CntrUdrtkgAmt(self):
@@ -46,12 +46,12 @@ class Undertaking2(base_types._BaseFieldType):
 
 	@CntrUdrtkgAmt.setter
 	def CntrUdrtkgAmt(self, value):
-		self._CntrUdrtkgAmt = value if type(value) != base_types.auto else self.make_default("CntrUdrtkgAmt")
+		self._CntrUdrtkgAmt = value if value is not None else base_types.UninitialisedField(self, 'CntrUdrtkgAmt', UndertakingAmount1, False)
 
 	@CntrUdrtkgAmt.deleter
 	def CntrUdrtkgAmt(self):
 		del self._CntrUdrtkgAmt
-		self._CntrUdrtkgAmt = None
+		self._CntrUdrtkgAmt = base_types.UninitialisedField(self, 'CntrUdrtkgAmt', UndertakingAmount1, False)
 
 	@property
 	def ConfChrgsPyblBy(self):
@@ -59,12 +59,12 @@ class Undertaking2(base_types._BaseFieldType):
 
 	@ConfChrgsPyblBy.setter
 	def ConfChrgsPyblBy(self, value):
-		self._ConfChrgsPyblBy = value if type(value) != base_types.auto else self.make_default("ConfChrgsPyblBy")
+		self._ConfChrgsPyblBy = value if value is not None else base_types.UninitialisedField(self, 'ConfChrgsPyblBy', ExternalTypeOfParty1Code, False)
 
 	@ConfChrgsPyblBy.deleter
 	def ConfChrgsPyblBy(self):
 		del self._ConfChrgsPyblBy
-		self._ConfChrgsPyblBy = None
+		self._ConfChrgsPyblBy = base_types.UninitialisedField(self, 'ConfChrgsPyblBy', ExternalTypeOfParty1Code, False)
 
 	@property
 	def GovncRulesAndLaw(self):
@@ -72,12 +72,12 @@ class Undertaking2(base_types._BaseFieldType):
 
 	@GovncRulesAndLaw.setter
 	def GovncRulesAndLaw(self, value):
-		self._GovncRulesAndLaw = value if type(value) != base_types.auto else self.make_default("GovncRulesAndLaw")
+		self._GovncRulesAndLaw = value if value is not None else base_types.UninitialisedField(self, 'GovncRulesAndLaw', GovernanceRules1, False)
 
 	@GovncRulesAndLaw.deleter
 	def GovncRulesAndLaw(self):
 		del self._GovncRulesAndLaw
-		self._GovncRulesAndLaw = None
+		self._GovncRulesAndLaw = base_types.UninitialisedField(self, 'GovncRulesAndLaw', GovernanceRules1, False)
 
 	@property
 	def Nm(self):
@@ -85,12 +85,12 @@ class Undertaking2(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', UndertakingName1Code, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', UndertakingName1Code, False)
 
 	@property
 	def StdClmDocInd(self):
@@ -98,12 +98,12 @@ class Undertaking2(base_types._BaseFieldType):
 
 	@StdClmDocInd.setter
 	def StdClmDocInd(self, value):
-		self._StdClmDocInd = value if type(value) != base_types.auto else self.make_default("StdClmDocInd")
+		self._StdClmDocInd = value if value is not None else base_types.UninitialisedField(self, 'StdClmDocInd', YesNoIndicator, False)
 
 	@StdClmDocInd.deleter
 	def StdClmDocInd(self):
 		del self._StdClmDocInd
-		self._StdClmDocInd = None
+		self._StdClmDocInd = base_types.UninitialisedField(self, 'StdClmDocInd', YesNoIndicator, False)
 
 	@property
 	def XpryDtls(self):
@@ -111,12 +111,12 @@ class Undertaking2(base_types._BaseFieldType):
 
 	@XpryDtls.setter
 	def XpryDtls(self, value):
-		self._XpryDtls = value if type(value) != base_types.auto else self.make_default("XpryDtls")
+		self._XpryDtls = value if value is not None else base_types.UninitialisedField(self, 'XpryDtls', ExpiryDetails2, False)
 
 	@XpryDtls.deleter
 	def XpryDtls(self):
 		del self._XpryDtls
-		self._XpryDtls = None
+		self._XpryDtls = base_types.UninitialisedField(self, 'XpryDtls', ExpiryDetails2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=Max2000Text, min=0, max=5, mutex_group=None, array=True),

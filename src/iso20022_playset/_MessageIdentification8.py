@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
+from . import BranchAndFinancialInstitutionIdentification8
+from . import ISODateTime
+from . import Max35Text
 
 class MessageIdentification8(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class MessageIdentification8(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if value is not None else base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
 		del self._CreDtTm
-		self._CreDtTm = None
+		self._CreDtTm = base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@property
 	def FrstAgt(self):
@@ -28,12 +28,12 @@ class MessageIdentification8(base_types._BaseFieldType):
 
 	@FrstAgt.setter
 	def FrstAgt(self, value):
-		self._FrstAgt = value if type(value) != base_types.auto else self.make_default("FrstAgt")
+		self._FrstAgt = value if value is not None else base_types.UninitialisedField(self, 'FrstAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@FrstAgt.deleter
 	def FrstAgt(self):
 		del self._FrstAgt
-		self._FrstAgt = None
+		self._FrstAgt = base_types.UninitialisedField(self, 'FrstAgt', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def MsgId(self):
@@ -41,12 +41,12 @@ class MessageIdentification8(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),

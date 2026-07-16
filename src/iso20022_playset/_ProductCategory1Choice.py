@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification4 import GenericIdentification4
-from ._ProductCategory1 import ProductCategory1
+from . import GenericIdentification4
+from . import ProductCategory1
 
 class ProductCategory1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ProductCategory1Choice(base_types._BaseFieldType):
 
 	@OthrPdctCtgy.setter
 	def OthrPdctCtgy(self, value):
-		self._OthrPdctCtgy = value if type(value) != base_types.auto else self.make_default("OthrPdctCtgy")
+		self._OthrPdctCtgy = value if value is not None else base_types.UninitialisedField(self, 'OthrPdctCtgy', GenericIdentification4, False)
 
 	@OthrPdctCtgy.deleter
 	def OthrPdctCtgy(self):
 		del self._OthrPdctCtgy
-		self._OthrPdctCtgy = None
+		self._OthrPdctCtgy = base_types.UninitialisedField(self, 'OthrPdctCtgy', GenericIdentification4, False)
 
 	@property
 	def StrdPdctCtgy(self):
@@ -27,12 +27,12 @@ class ProductCategory1Choice(base_types._BaseFieldType):
 
 	@StrdPdctCtgy.setter
 	def StrdPdctCtgy(self, value):
-		self._StrdPdctCtgy = value if type(value) != base_types.auto else self.make_default("StrdPdctCtgy")
+		self._StrdPdctCtgy = value if value is not None else base_types.UninitialisedField(self, 'StrdPdctCtgy', ProductCategory1, False)
 
 	@StrdPdctCtgy.deleter
 	def StrdPdctCtgy(self):
 		del self._StrdPdctCtgy
-		self._StrdPdctCtgy = None
+		self._StrdPdctCtgy = base_types.UninitialisedField(self, 'StrdPdctCtgy', ProductCategory1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OthrPdctCtgy', type=GenericIdentification4, min=0, max=1, mutex_group=1, array=False),

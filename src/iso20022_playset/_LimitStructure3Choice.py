@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LimitIdentification8 import LimitIdentification8
-from ._LimitIdentification9 import LimitIdentification9
+from . import LimitIdentification8
+from . import LimitIdentification9
 
 class LimitStructure3Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class LimitStructure3Choice(base_types._BaseFieldType):
 
 	@AllCurLmts.setter
 	def AllCurLmts(self, value):
-		self._AllCurLmts = value if type(value) != base_types.auto else self.make_default("AllCurLmts")
+		self._AllCurLmts = value if value is not None else base_types.UninitialisedField(self, 'AllCurLmts', LimitIdentification9, False)
 
 	@AllCurLmts.deleter
 	def AllCurLmts(self):
 		del self._AllCurLmts
-		self._AllCurLmts = None
+		self._AllCurLmts = base_types.UninitialisedField(self, 'AllCurLmts', LimitIdentification9, False)
 
 	@property
 	def CurLmtId(self):
@@ -27,12 +27,12 @@ class LimitStructure3Choice(base_types._BaseFieldType):
 
 	@CurLmtId.setter
 	def CurLmtId(self, value):
-		self._CurLmtId = value if type(value) != base_types.auto else self.make_default("CurLmtId")
+		self._CurLmtId = value if value is not None else base_types.UninitialisedField(self, 'CurLmtId', LimitIdentification8, False)
 
 	@CurLmtId.deleter
 	def CurLmtId(self):
 		del self._CurLmtId
-		self._CurLmtId = None
+		self._CurLmtId = base_types.UninitialisedField(self, 'CurLmtId', LimitIdentification8, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AllCurLmts', type=LimitIdentification9, min=0, max=1, mutex_group=1, array=False),

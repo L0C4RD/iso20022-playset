@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification90 import GenericIdentification90
-from ._Max8Text import Max8Text
-from ._ResponseType10 import ResponseType10
+from . import GenericIdentification90
+from . import Max8Text
+from . import ResponseType10
 
 class AuthorisationResult18(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AuthorisationResult18(base_types._BaseFieldType):
 
 	@AuthstnCd.setter
 	def AuthstnCd(self, value):
-		self._AuthstnCd = value if type(value) != base_types.auto else self.make_default("AuthstnCd")
+		self._AuthstnCd = value if value is not None else base_types.UninitialisedField(self, 'AuthstnCd', Max8Text, False)
 
 	@AuthstnCd.deleter
 	def AuthstnCd(self):
 		del self._AuthstnCd
-		self._AuthstnCd = None
+		self._AuthstnCd = base_types.UninitialisedField(self, 'AuthstnCd', Max8Text, False)
 
 	@property
 	def AuthstnNtty(self):
@@ -28,12 +28,12 @@ class AuthorisationResult18(base_types._BaseFieldType):
 
 	@AuthstnNtty.setter
 	def AuthstnNtty(self, value):
-		self._AuthstnNtty = value if type(value) != base_types.auto else self.make_default("AuthstnNtty")
+		self._AuthstnNtty = value if value is not None else base_types.UninitialisedField(self, 'AuthstnNtty', GenericIdentification90, False)
 
 	@AuthstnNtty.deleter
 	def AuthstnNtty(self):
 		del self._AuthstnNtty
-		self._AuthstnNtty = None
+		self._AuthstnNtty = base_types.UninitialisedField(self, 'AuthstnNtty', GenericIdentification90, False)
 
 	@property
 	def RspnToAuthstn(self):
@@ -41,12 +41,12 @@ class AuthorisationResult18(base_types._BaseFieldType):
 
 	@RspnToAuthstn.setter
 	def RspnToAuthstn(self, value):
-		self._RspnToAuthstn = value if type(value) != base_types.auto else self.make_default("RspnToAuthstn")
+		self._RspnToAuthstn = value if value is not None else base_types.UninitialisedField(self, 'RspnToAuthstn', ResponseType10, False)
 
 	@RspnToAuthstn.deleter
 	def RspnToAuthstn(self):
 		del self._RspnToAuthstn
-		self._RspnToAuthstn = None
+		self._RspnToAuthstn = base_types.UninitialisedField(self, 'RspnToAuthstn', ResponseType10, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AuthstnCd', type=Max8Text, min=0, max=1, mutex_group=None, array=False),

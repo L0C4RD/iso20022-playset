@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMExceptionAdvice2 import ATMExceptionAdvice2
-from ._ContentInformationType10 import ContentInformationType10
-from ._ContentInformationType15 import ContentInformationType15
-from ._Header32 import Header32
+from . import ATMExceptionAdvice2
+from . import ContentInformationType10
+from . import ContentInformationType15
+from . import Header32
 
 class ATMExceptionAdviceV02(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ATMExceptionAdviceV02(base_types._BaseFieldType):
 
 	@ATMXcptnAdvc.setter
 	def ATMXcptnAdvc(self, value):
-		self._ATMXcptnAdvc = value if type(value) != base_types.auto else self.make_default("ATMXcptnAdvc")
+		self._ATMXcptnAdvc = value if value is not None else base_types.UninitialisedField(self, 'ATMXcptnAdvc', ATMExceptionAdvice2, False)
 
 	@ATMXcptnAdvc.deleter
 	def ATMXcptnAdvc(self):
 		del self._ATMXcptnAdvc
-		self._ATMXcptnAdvc = None
+		self._ATMXcptnAdvc = base_types.UninitialisedField(self, 'ATMXcptnAdvc', ATMExceptionAdvice2, False)
 
 	@property
 	def Hdr(self):
@@ -29,12 +29,12 @@ class ATMExceptionAdviceV02(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header32, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header32, False)
 
 	@property
 	def PrtctdATMXcptnAdvc(self):
@@ -42,12 +42,12 @@ class ATMExceptionAdviceV02(base_types._BaseFieldType):
 
 	@PrtctdATMXcptnAdvc.setter
 	def PrtctdATMXcptnAdvc(self, value):
-		self._PrtctdATMXcptnAdvc = value if type(value) != base_types.auto else self.make_default("PrtctdATMXcptnAdvc")
+		self._PrtctdATMXcptnAdvc = value if value is not None else base_types.UninitialisedField(self, 'PrtctdATMXcptnAdvc', ContentInformationType10, False)
 
 	@PrtctdATMXcptnAdvc.deleter
 	def PrtctdATMXcptnAdvc(self):
 		del self._PrtctdATMXcptnAdvc
-		self._PrtctdATMXcptnAdvc = None
+		self._PrtctdATMXcptnAdvc = base_types.UninitialisedField(self, 'PrtctdATMXcptnAdvc', ContentInformationType10, False)
 
 	@property
 	def SctyTrlr(self):
@@ -55,12 +55,12 @@ class ATMExceptionAdviceV02(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType15, False)
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
 		del self._SctyTrlr
-		self._SctyTrlr = None
+		self._SctyTrlr = base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType15, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ATMXcptnAdvc', type=ATMExceptionAdvice2, min=0, max=1, mutex_group=None, array=False),

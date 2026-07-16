@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._Frequency17Code import Frequency17Code
-from ._ISODate import ISODate
-from ._ISOTime import ISOTime
-from ._Max140Text import Max140Text
-from ._Max5NumericText import Max5NumericText
-from ._Max70Text import Max70Text
-from ._OutputFormat7Code import OutputFormat7Code
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ATICALaxProcessing
+from . import Frequency17Code
+from . import ISODate
+from . import ISOTime
+from . import Max140Text
+from . import Max5NumericText
+from . import Max70Text
+from . import OutputFormat7Code
+from . import TrueFalseIndicator
 
 class ReportData8(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class ReportData8(base_types._BaseFieldType):
 
 	@ConttnInd.setter
 	def ConttnInd(self, value):
-		self._ConttnInd = value if type(value) != base_types.auto else self.make_default("ConttnInd")
+		self._ConttnInd = value if value is not None else base_types.UninitialisedField(self, 'ConttnInd', TrueFalseIndicator, False)
 
 	@ConttnInd.deleter
 	def ConttnInd(self):
 		del self._ConttnInd
-		self._ConttnInd = None
+		self._ConttnInd = base_types.UninitialisedField(self, 'ConttnInd', TrueFalseIndicator, False)
 
 	@property
 	def Dt(self):
@@ -34,12 +34,12 @@ class ReportData8(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@property
 	def Frmt(self):
@@ -47,12 +47,12 @@ class ReportData8(base_types._BaseFieldType):
 
 	@Frmt.setter
 	def Frmt(self, value):
-		self._Frmt = value if type(value) != base_types.auto else self.make_default("Frmt")
+		self._Frmt = value if value is not None else base_types.UninitialisedField(self, 'Frmt', OutputFormat7Code, False)
 
 	@Frmt.deleter
 	def Frmt(self):
 		del self._Frmt
-		self._Frmt = None
+		self._Frmt = base_types.UninitialisedField(self, 'Frmt', OutputFormat7Code, False)
 
 	@property
 	def Frqcy(self):
@@ -60,12 +60,12 @@ class ReportData8(base_types._BaseFieldType):
 
 	@Frqcy.setter
 	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
+		self._Frqcy = value if value is not None else base_types.UninitialisedField(self, 'Frqcy', Frequency17Code, False)
 
 	@Frqcy.deleter
 	def Frqcy(self):
 		del self._Frqcy
-		self._Frqcy = None
+		self._Frqcy = base_types.UninitialisedField(self, 'Frqcy', Frequency17Code, False)
 
 	@property
 	def Id(self):
@@ -73,12 +73,12 @@ class ReportData8(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max140Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max140Text, False)
 
 	@property
 	def Nm(self):
@@ -86,12 +86,12 @@ class ReportData8(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max140Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max140Text, False)
 
 	@property
 	def NtlData(self):
@@ -99,12 +99,12 @@ class ReportData8(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def PrvtData(self):
@@ -112,12 +112,12 @@ class ReportData8(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def Qlfr(self):
@@ -125,12 +125,12 @@ class ReportData8(base_types._BaseFieldType):
 
 	@Qlfr.setter
 	def Qlfr(self, value):
-		self._Qlfr = value if type(value) != base_types.auto else self.make_default("Qlfr")
+		self._Qlfr = value if value is not None else base_types.UninitialisedField(self, 'Qlfr', Max70Text, False)
 
 	@Qlfr.deleter
 	def Qlfr(self):
 		del self._Qlfr
-		self._Qlfr = None
+		self._Qlfr = base_types.UninitialisedField(self, 'Qlfr', Max70Text, False)
 
 	@property
 	def Seq(self):
@@ -138,12 +138,12 @@ class ReportData8(base_types._BaseFieldType):
 
 	@Seq.setter
 	def Seq(self, value):
-		self._Seq = value if type(value) != base_types.auto else self.make_default("Seq")
+		self._Seq = value if value is not None else base_types.UninitialisedField(self, 'Seq', Max5NumericText, False)
 
 	@Seq.deleter
 	def Seq(self):
 		del self._Seq
-		self._Seq = None
+		self._Seq = base_types.UninitialisedField(self, 'Seq', Max5NumericText, False)
 
 	@property
 	def Tm(self):
@@ -151,12 +151,12 @@ class ReportData8(base_types._BaseFieldType):
 
 	@Tm.setter
 	def Tm(self, value):
-		self._Tm = value if type(value) != base_types.auto else self.make_default("Tm")
+		self._Tm = value if value is not None else base_types.UninitialisedField(self, 'Tm', ISOTime, False)
 
 	@Tm.deleter
 	def Tm(self):
 		del self._Tm
-		self._Tm = None
+		self._Tm = base_types.UninitialisedField(self, 'Tm', ISOTime, False)
 
 	@property
 	def TtlOcrncs(self):
@@ -164,12 +164,12 @@ class ReportData8(base_types._BaseFieldType):
 
 	@TtlOcrncs.setter
 	def TtlOcrncs(self, value):
-		self._TtlOcrncs = value if type(value) != base_types.auto else self.make_default("TtlOcrncs")
+		self._TtlOcrncs = value if value is not None else base_types.UninitialisedField(self, 'TtlOcrncs', Max5NumericText, False)
 
 	@TtlOcrncs.deleter
 	def TtlOcrncs(self):
 		del self._TtlOcrncs
-		self._TtlOcrncs = None
+		self._TtlOcrncs = base_types.UninitialisedField(self, 'TtlOcrncs', Max5NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ConttnInd', type=TrueFalseIndicator, min=0, max=1, mutex_group=None, array=False),

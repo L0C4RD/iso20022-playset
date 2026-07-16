@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._VoteInstructionType2Choice import VoteInstructionType2Choice
+from . import Max35Text
+from . import VoteInstructionType2Choice
 
 class Vote15(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Vote15(base_types._BaseFieldType):
 
 	@IssrLabl.setter
 	def IssrLabl(self, value):
-		self._IssrLabl = value if type(value) != base_types.auto else self.make_default("IssrLabl")
+		self._IssrLabl = value if value is not None else base_types.UninitialisedField(self, 'IssrLabl', Max35Text, False)
 
 	@IssrLabl.deleter
 	def IssrLabl(self):
 		del self._IssrLabl
-		self._IssrLabl = None
+		self._IssrLabl = base_types.UninitialisedField(self, 'IssrLabl', Max35Text, False)
 
 	@property
 	def VoteOptn(self):
@@ -27,12 +27,12 @@ class Vote15(base_types._BaseFieldType):
 
 	@VoteOptn.setter
 	def VoteOptn(self, value):
-		self._VoteOptn = value if type(value) != base_types.auto else self.make_default("VoteOptn")
+		self._VoteOptn = value if value is not None else base_types.UninitialisedField(self, 'VoteOptn', VoteInstructionType2Choice, False)
 
 	@VoteOptn.deleter
 	def VoteOptn(self):
 		del self._VoteOptn
-		self._VoteOptn = None
+		self._VoteOptn = base_types.UninitialisedField(self, 'VoteOptn', VoteInstructionType2Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='IssrLabl', type=Max35Text, min=1, max=1, mutex_group=None, array=False),

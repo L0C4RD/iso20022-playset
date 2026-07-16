@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateTimePeriod1 import DateTimePeriod1
-from ._InterestType1Choice import InterestType1Choice
-from ._Max35Text import Max35Text
-from ._Rate4 import Rate4
-from ._TaxCharges2 import TaxCharges2
+from . import DateTimePeriod1
+from . import InterestType1Choice
+from . import Max35Text
+from . import Rate4
+from . import TaxCharges2
 
 class AccountInterest4(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class AccountInterest4(base_types._BaseFieldType):
 
 	@FrToDt.setter
 	def FrToDt(self, value):
-		self._FrToDt = value if type(value) != base_types.auto else self.make_default("FrToDt")
+		self._FrToDt = value if value is not None else base_types.UninitialisedField(self, 'FrToDt', DateTimePeriod1, False)
 
 	@FrToDt.deleter
 	def FrToDt(self):
 		del self._FrToDt
-		self._FrToDt = None
+		self._FrToDt = base_types.UninitialisedField(self, 'FrToDt', DateTimePeriod1, False)
 
 	@property
 	def Rate(self):
@@ -30,12 +30,12 @@ class AccountInterest4(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+		self._Rate = value if value is not None else base_types.UninitialisedField(self, 'Rate', Rate4, True)
 
 	@Rate.deleter
 	def Rate(self):
 		del self._Rate
-		self._Rate = None
+		self._Rate = base_types.UninitialisedField(self, 'Rate', Rate4, True)
 
 	@property
 	def Rsn(self):
@@ -43,12 +43,12 @@ class AccountInterest4(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', Max35Text, False)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', Max35Text, False)
 
 	@property
 	def Tax(self):
@@ -56,12 +56,12 @@ class AccountInterest4(base_types._BaseFieldType):
 
 	@Tax.setter
 	def Tax(self, value):
-		self._Tax = value if type(value) != base_types.auto else self.make_default("Tax")
+		self._Tax = value if value is not None else base_types.UninitialisedField(self, 'Tax', TaxCharges2, False)
 
 	@Tax.deleter
 	def Tax(self):
 		del self._Tax
-		self._Tax = None
+		self._Tax = base_types.UninitialisedField(self, 'Tax', TaxCharges2, False)
 
 	@property
 	def Tp(self):
@@ -69,12 +69,12 @@ class AccountInterest4(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', InterestType1Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', InterestType1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FrToDt', type=DateTimePeriod1, min=0, max=1, mutex_group=None, array=False),

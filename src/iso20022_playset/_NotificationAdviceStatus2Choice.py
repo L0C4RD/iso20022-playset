@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NotificationProcessingStatus2 import NotificationProcessingStatus2
-from ._NotificationRejectionReason2 import NotificationRejectionReason2
+from . import NotificationProcessingStatus2
+from . import NotificationRejectionReason2
 
 class NotificationAdviceStatus2Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class NotificationAdviceStatus2Choice(base_types._BaseFieldType):
 
 	@PrcdSts.setter
 	def PrcdSts(self, value):
-		self._PrcdSts = value if type(value) != base_types.auto else self.make_default("PrcdSts")
+		self._PrcdSts = value if value is not None else base_types.UninitialisedField(self, 'PrcdSts', NotificationProcessingStatus2, False)
 
 	@PrcdSts.deleter
 	def PrcdSts(self):
 		del self._PrcdSts
-		self._PrcdSts = None
+		self._PrcdSts = base_types.UninitialisedField(self, 'PrcdSts', NotificationProcessingStatus2, False)
 
 	@property
 	def RjctdSts(self):
@@ -27,12 +27,12 @@ class NotificationAdviceStatus2Choice(base_types._BaseFieldType):
 
 	@RjctdSts.setter
 	def RjctdSts(self, value):
-		self._RjctdSts = value if type(value) != base_types.auto else self.make_default("RjctdSts")
+		self._RjctdSts = value if value is not None else base_types.UninitialisedField(self, 'RjctdSts', NotificationRejectionReason2, False)
 
 	@RjctdSts.deleter
 	def RjctdSts(self):
 		del self._RjctdSts
-		self._RjctdSts = None
+		self._RjctdSts = base_types.UninitialisedField(self, 'RjctdSts', NotificationRejectionReason2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PrcdSts', type=NotificationProcessingStatus2, min=0, max=1, mutex_group=1, array=False),

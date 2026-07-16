@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CancelCaseAssignmentV05 import CancelCaseAssignmentV05
+from . import CancelCaseAssignmentV05
 
 class CAMT_032_001_05():
 
@@ -18,12 +18,12 @@ class CAMT_032_001_05():
 
 		@CclCaseAssgnmt.setter
 		def CclCaseAssgnmt(self, value):
-			self._CclCaseAssgnmt = value if type(value) != base_types.auto else self.make_default("CclCaseAssgnmt")
+			self._CclCaseAssgnmt = value if value is not None else base_types.UninitialisedField(self, 'CclCaseAssgnmt', CancelCaseAssignmentV05, False)
 
 		@CclCaseAssgnmt.deleter
 		def CclCaseAssgnmt(self):
 			del self._CclCaseAssgnmt
-			self._CclCaseAssgnmt = None
+			self._CclCaseAssgnmt = base_types.UninitialisedField(self, 'CclCaseAssgnmt', CancelCaseAssignmentV05, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CclCaseAssgnmt', type=CancelCaseAssignmentV05, min=1, max=1, mutex_group=None, array=False),

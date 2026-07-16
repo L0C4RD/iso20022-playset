@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountIdentification5 import AccountIdentification5
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._BaseOneRate import BaseOneRate
+from . import AccountIdentification5
+from . import ActiveOrHistoricCurrencyCode
+from . import BaseOneRate
 
 class SecuritiesAccount21(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SecuritiesAccount21(base_types._BaseFieldType):
 
 	@Acct.setter
 	def Acct(self, value):
-		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
+		self._Acct = value if value is not None else base_types.UninitialisedField(self, 'Acct', AccountIdentification5, False)
 
 	@Acct.deleter
 	def Acct(self):
 		del self._Acct
-		self._Acct = None
+		self._Acct = base_types.UninitialisedField(self, 'Acct', AccountIdentification5, False)
 
 	@property
 	def BaseCcy(self):
@@ -28,12 +28,12 @@ class SecuritiesAccount21(base_types._BaseFieldType):
 
 	@BaseCcy.setter
 	def BaseCcy(self, value):
-		self._BaseCcy = value if type(value) != base_types.auto else self.make_default("BaseCcy")
+		self._BaseCcy = value if value is not None else base_types.UninitialisedField(self, 'BaseCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@BaseCcy.deleter
 	def BaseCcy(self):
 		del self._BaseCcy
-		self._BaseCcy = None
+		self._BaseCcy = base_types.UninitialisedField(self, 'BaseCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def FXRate(self):
@@ -41,12 +41,12 @@ class SecuritiesAccount21(base_types._BaseFieldType):
 
 	@FXRate.setter
 	def FXRate(self, value):
-		self._FXRate = value if type(value) != base_types.auto else self.make_default("FXRate")
+		self._FXRate = value if value is not None else base_types.UninitialisedField(self, 'FXRate', BaseOneRate, False)
 
 	@FXRate.deleter
 	def FXRate(self):
 		del self._FXRate
-		self._FXRate = None
+		self._FXRate = base_types.UninitialisedField(self, 'FXRate', BaseOneRate, False)
 
 	@property
 	def RptgCcy(self):
@@ -54,12 +54,12 @@ class SecuritiesAccount21(base_types._BaseFieldType):
 
 	@RptgCcy.setter
 	def RptgCcy(self, value):
-		self._RptgCcy = value if type(value) != base_types.auto else self.make_default("RptgCcy")
+		self._RptgCcy = value if value is not None else base_types.UninitialisedField(self, 'RptgCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@RptgCcy.deleter
 	def RptgCcy(self):
 		del self._RptgCcy
-		self._RptgCcy = None
+		self._RptgCcy = base_types.UninitialisedField(self, 'RptgCcy', ActiveOrHistoricCurrencyCode, False)
 
 	@property
 	def SubAcct(self):
@@ -67,12 +67,12 @@ class SecuritiesAccount21(base_types._BaseFieldType):
 
 	@SubAcct.setter
 	def SubAcct(self, value):
-		self._SubAcct = value if type(value) != base_types.auto else self.make_default("SubAcct")
+		self._SubAcct = value if value is not None else base_types.UninitialisedField(self, 'SubAcct', AccountIdentification5, False)
 
 	@SubAcct.deleter
 	def SubAcct(self):
 		del self._SubAcct
-		self._SubAcct = None
+		self._SubAcct = base_types.UninitialisedField(self, 'SubAcct', AccountIdentification5, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acct', type=AccountIdentification5, min=1, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CollateralPortfolioCode5Choice import CollateralPortfolioCode5Choice
-from ._CollateralisationType3Code import CollateralisationType3Code
-from ._ISODateTime import ISODateTime
+from . import CollateralPortfolioCode5Choice
+from . import CollateralisationType3Code
+from . import ISODateTime
 
 class MarginCollateralReport4(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class MarginCollateralReport4(base_types._BaseFieldType):
 
 	@CollPrtflCd.setter
 	def CollPrtflCd(self, value):
-		self._CollPrtflCd = value if type(value) != base_types.auto else self.make_default("CollPrtflCd")
+		self._CollPrtflCd = value if value is not None else base_types.UninitialisedField(self, 'CollPrtflCd', CollateralPortfolioCode5Choice, False)
 
 	@CollPrtflCd.deleter
 	def CollPrtflCd(self):
 		del self._CollPrtflCd
-		self._CollPrtflCd = None
+		self._CollPrtflCd = base_types.UninitialisedField(self, 'CollPrtflCd', CollateralPortfolioCode5Choice, False)
 
 	@property
 	def CollstnCtgy(self):
@@ -28,12 +28,12 @@ class MarginCollateralReport4(base_types._BaseFieldType):
 
 	@CollstnCtgy.setter
 	def CollstnCtgy(self, value):
-		self._CollstnCtgy = value if type(value) != base_types.auto else self.make_default("CollstnCtgy")
+		self._CollstnCtgy = value if value is not None else base_types.UninitialisedField(self, 'CollstnCtgy', CollateralisationType3Code, False)
 
 	@CollstnCtgy.deleter
 	def CollstnCtgy(self):
 		del self._CollstnCtgy
-		self._CollstnCtgy = None
+		self._CollstnCtgy = base_types.UninitialisedField(self, 'CollstnCtgy', CollateralisationType3Code, False)
 
 	@property
 	def TmStmp(self):
@@ -41,12 +41,12 @@ class MarginCollateralReport4(base_types._BaseFieldType):
 
 	@TmStmp.setter
 	def TmStmp(self, value):
-		self._TmStmp = value if type(value) != base_types.auto else self.make_default("TmStmp")
+		self._TmStmp = value if value is not None else base_types.UninitialisedField(self, 'TmStmp', ISODateTime, False)
 
 	@TmStmp.deleter
 	def TmStmp(self):
 		del self._TmStmp
-		self._TmStmp = None
+		self._TmStmp = base_types.UninitialisedField(self, 'TmStmp', ISODateTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollPrtflCd', type=CollateralPortfolioCode5Choice, min=1, max=1, mutex_group=None, array=False),

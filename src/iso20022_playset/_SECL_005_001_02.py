@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MarginReportV02 import MarginReportV02
+from . import MarginReportV02
 
 class SECL_005_001_02():
 
@@ -18,12 +18,12 @@ class SECL_005_001_02():
 
 		@MrgnRpt.setter
 		def MrgnRpt(self, value):
-			self._MrgnRpt = value if type(value) != base_types.auto else self.make_default("MrgnRpt")
+			self._MrgnRpt = value if value is not None else base_types.UninitialisedField(self, 'MrgnRpt', MarginReportV02, False)
 
 		@MrgnRpt.deleter
 		def MrgnRpt(self):
 			del self._MrgnRpt
-			self._MrgnRpt = None
+			self._MrgnRpt = base_types.UninitialisedField(self, 'MrgnRpt', MarginReportV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='MrgnRpt', type=MarginReportV02, min=1, max=1, mutex_group=None, array=False),

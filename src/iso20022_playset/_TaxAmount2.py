@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._PercentageRate import PercentageRate
-from ._TaxRecordDetails2 import TaxRecordDetails2
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import PercentageRate
+from . import TaxRecordDetails2
 
 class TaxAmount2(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TaxAmount2(base_types._BaseFieldType):
 
 	@Dtls.setter
 	def Dtls(self, value):
-		self._Dtls = value if type(value) != base_types.auto else self.make_default("Dtls")
+		self._Dtls = value if value is not None else base_types.UninitialisedField(self, 'Dtls', TaxRecordDetails2, True)
 
 	@Dtls.deleter
 	def Dtls(self):
 		del self._Dtls
-		self._Dtls = None
+		self._Dtls = base_types.UninitialisedField(self, 'Dtls', TaxRecordDetails2, True)
 
 	@property
 	def Rate(self):
@@ -28,12 +28,12 @@ class TaxAmount2(base_types._BaseFieldType):
 
 	@Rate.setter
 	def Rate(self, value):
-		self._Rate = value if type(value) != base_types.auto else self.make_default("Rate")
+		self._Rate = value if value is not None else base_types.UninitialisedField(self, 'Rate', PercentageRate, False)
 
 	@Rate.deleter
 	def Rate(self):
 		del self._Rate
-		self._Rate = None
+		self._Rate = base_types.UninitialisedField(self, 'Rate', PercentageRate, False)
 
 	@property
 	def TaxblBaseAmt(self):
@@ -41,12 +41,12 @@ class TaxAmount2(base_types._BaseFieldType):
 
 	@TaxblBaseAmt.setter
 	def TaxblBaseAmt(self, value):
-		self._TaxblBaseAmt = value if type(value) != base_types.auto else self.make_default("TaxblBaseAmt")
+		self._TaxblBaseAmt = value if value is not None else base_types.UninitialisedField(self, 'TaxblBaseAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@TaxblBaseAmt.deleter
 	def TaxblBaseAmt(self):
 		del self._TaxblBaseAmt
-		self._TaxblBaseAmt = None
+		self._TaxblBaseAmt = base_types.UninitialisedField(self, 'TaxblBaseAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def TtlAmt(self):
@@ -54,12 +54,12 @@ class TaxAmount2(base_types._BaseFieldType):
 
 	@TtlAmt.setter
 	def TtlAmt(self, value):
-		self._TtlAmt = value if type(value) != base_types.auto else self.make_default("TtlAmt")
+		self._TtlAmt = value if value is not None else base_types.UninitialisedField(self, 'TtlAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@TtlAmt.deleter
 	def TtlAmt(self):
 		del self._TtlAmt
-		self._TtlAmt = None
+		self._TtlAmt = base_types.UninitialisedField(self, 'TtlAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dtls', type=TaxRecordDetails2, min=0, max=None, mutex_group=None, array=True),

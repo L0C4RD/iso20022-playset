@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Channel1Choice import Channel1Choice
-from ._DocumentFormat1Choice import DocumentFormat1Choice
-from ._Max256Text import Max256Text
+from . import Channel1Choice
+from . import DocumentFormat1Choice
+from . import Max256Text
 
 class Presentation3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Presentation3(base_types._BaseFieldType):
 
 	@Adr.setter
 	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+		self._Adr = value if value is not None else base_types.UninitialisedField(self, 'Adr', Max256Text, False)
 
 	@Adr.deleter
 	def Adr(self):
 		del self._Adr
-		self._Adr = None
+		self._Adr = base_types.UninitialisedField(self, 'Adr', Max256Text, False)
 
 	@property
 	def Chanl(self):
@@ -28,12 +28,12 @@ class Presentation3(base_types._BaseFieldType):
 
 	@Chanl.setter
 	def Chanl(self, value):
-		self._Chanl = value if type(value) != base_types.auto else self.make_default("Chanl")
+		self._Chanl = value if value is not None else base_types.UninitialisedField(self, 'Chanl', Channel1Choice, False)
 
 	@Chanl.deleter
 	def Chanl(self):
 		del self._Chanl
-		self._Chanl = None
+		self._Chanl = base_types.UninitialisedField(self, 'Chanl', Channel1Choice, False)
 
 	@property
 	def Frmt(self):
@@ -41,12 +41,12 @@ class Presentation3(base_types._BaseFieldType):
 
 	@Frmt.setter
 	def Frmt(self, value):
-		self._Frmt = value if type(value) != base_types.auto else self.make_default("Frmt")
+		self._Frmt = value if value is not None else base_types.UninitialisedField(self, 'Frmt', DocumentFormat1Choice, False)
 
 	@Frmt.deleter
 	def Frmt(self):
 		del self._Frmt
-		self._Frmt = None
+		self._Frmt = base_types.UninitialisedField(self, 'Frmt', DocumentFormat1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Adr', type=Max256Text, min=0, max=1, mutex_group=None, array=False),

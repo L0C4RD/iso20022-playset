@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateFormat58Choice import DateFormat58Choice
-from ._Max350Text import Max350Text
-from ._PowerOfAttorneyLegalisation1Code import PowerOfAttorneyLegalisation1Code
+from . import DateFormat58Choice
+from . import Max350Text
+from . import PowerOfAttorneyLegalisation1Code
 
 class PowerOfAttorneyRequirements4(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PowerOfAttorneyRequirements4(base_types._BaseFieldType):
 
 	@DocSubmissnDdln.setter
 	def DocSubmissnDdln(self, value):
-		self._DocSubmissnDdln = value if type(value) != base_types.auto else self.make_default("DocSubmissnDdln")
+		self._DocSubmissnDdln = value if value is not None else base_types.UninitialisedField(self, 'DocSubmissnDdln', DateFormat58Choice, False)
 
 	@DocSubmissnDdln.deleter
 	def DocSubmissnDdln(self):
 		del self._DocSubmissnDdln
-		self._DocSubmissnDdln = None
+		self._DocSubmissnDdln = base_types.UninitialisedField(self, 'DocSubmissnDdln', DateFormat58Choice, False)
 
 	@property
 	def LglRqrmnt(self):
@@ -28,12 +28,12 @@ class PowerOfAttorneyRequirements4(base_types._BaseFieldType):
 
 	@LglRqrmnt.setter
 	def LglRqrmnt(self, value):
-		self._LglRqrmnt = value if type(value) != base_types.auto else self.make_default("LglRqrmnt")
+		self._LglRqrmnt = value if value is not None else base_types.UninitialisedField(self, 'LglRqrmnt', PowerOfAttorneyLegalisation1Code, True)
 
 	@LglRqrmnt.deleter
 	def LglRqrmnt(self):
 		del self._LglRqrmnt
-		self._LglRqrmnt = None
+		self._LglRqrmnt = base_types.UninitialisedField(self, 'LglRqrmnt', PowerOfAttorneyLegalisation1Code, True)
 
 	@property
 	def OthrDcmnttn(self):
@@ -41,12 +41,12 @@ class PowerOfAttorneyRequirements4(base_types._BaseFieldType):
 
 	@OthrDcmnttn.setter
 	def OthrDcmnttn(self, value):
-		self._OthrDcmnttn = value if type(value) != base_types.auto else self.make_default("OthrDcmnttn")
+		self._OthrDcmnttn = value if value is not None else base_types.UninitialisedField(self, 'OthrDcmnttn', Max350Text, False)
 
 	@OthrDcmnttn.deleter
 	def OthrDcmnttn(self):
 		del self._OthrDcmnttn
-		self._OthrDcmnttn = None
+		self._OthrDcmnttn = base_types.UninitialisedField(self, 'OthrDcmnttn', Max350Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DocSubmissnDdln', type=DateFormat58Choice, min=0, max=1, mutex_group=None, array=False),

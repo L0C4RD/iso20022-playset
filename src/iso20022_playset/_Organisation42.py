@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCode import CountryCode
-from ._ISODate import ISODate
-from ._Max350Text import Max350Text
-from ._OrganisationIdentification39 import OrganisationIdentification39
-from ._PartyIdentification274 import PartyIdentification274
-from ._PostalAddress27 import PostalAddress27
+from . import CountryCode
+from . import ISODate
+from . import Max350Text
+from . import OrganisationIdentification39
+from . import PartyIdentification274
+from . import PostalAddress27
 
 class Organisation42(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class Organisation42(base_types._BaseFieldType):
 
 	@BizAdr.setter
 	def BizAdr(self, value):
-		self._BizAdr = value if type(value) != base_types.auto else self.make_default("BizAdr")
+		self._BizAdr = value if value is not None else base_types.UninitialisedField(self, 'BizAdr', PostalAddress27, False)
 
 	@BizAdr.deleter
 	def BizAdr(self):
 		del self._BizAdr
-		self._BizAdr = None
+		self._BizAdr = base_types.UninitialisedField(self, 'BizAdr', PostalAddress27, False)
 
 	@property
 	def BllgAdr(self):
@@ -31,12 +31,12 @@ class Organisation42(base_types._BaseFieldType):
 
 	@BllgAdr.setter
 	def BllgAdr(self, value):
-		self._BllgAdr = value if type(value) != base_types.auto else self.make_default("BllgAdr")
+		self._BllgAdr = value if value is not None else base_types.UninitialisedField(self, 'BllgAdr', PostalAddress27, False)
 
 	@BllgAdr.deleter
 	def BllgAdr(self):
 		del self._BllgAdr
-		self._BllgAdr = None
+		self._BllgAdr = base_types.UninitialisedField(self, 'BllgAdr', PostalAddress27, False)
 
 	@property
 	def CtryOfOpr(self):
@@ -44,12 +44,12 @@ class Organisation42(base_types._BaseFieldType):
 
 	@CtryOfOpr.setter
 	def CtryOfOpr(self, value):
-		self._CtryOfOpr = value if type(value) != base_types.auto else self.make_default("CtryOfOpr")
+		self._CtryOfOpr = value if value is not None else base_types.UninitialisedField(self, 'CtryOfOpr', CountryCode, False)
 
 	@CtryOfOpr.deleter
 	def CtryOfOpr(self):
 		del self._CtryOfOpr
-		self._CtryOfOpr = None
+		self._CtryOfOpr = base_types.UninitialisedField(self, 'CtryOfOpr', CountryCode, False)
 
 	@property
 	def FullLglNm(self):
@@ -57,12 +57,12 @@ class Organisation42(base_types._BaseFieldType):
 
 	@FullLglNm.setter
 	def FullLglNm(self, value):
-		self._FullLglNm = value if type(value) != base_types.auto else self.make_default("FullLglNm")
+		self._FullLglNm = value if value is not None else base_types.UninitialisedField(self, 'FullLglNm', Max350Text, False)
 
 	@FullLglNm.deleter
 	def FullLglNm(self):
 		del self._FullLglNm
-		self._FullLglNm = None
+		self._FullLglNm = base_types.UninitialisedField(self, 'FullLglNm', Max350Text, False)
 
 	@property
 	def LglAdr(self):
@@ -70,12 +70,12 @@ class Organisation42(base_types._BaseFieldType):
 
 	@LglAdr.setter
 	def LglAdr(self, value):
-		self._LglAdr = value if type(value) != base_types.auto else self.make_default("LglAdr")
+		self._LglAdr = value if value is not None else base_types.UninitialisedField(self, 'LglAdr', PostalAddress27, False)
 
 	@LglAdr.deleter
 	def LglAdr(self):
 		del self._LglAdr
-		self._LglAdr = None
+		self._LglAdr = base_types.UninitialisedField(self, 'LglAdr', PostalAddress27, False)
 
 	@property
 	def LglRprtv(self):
@@ -83,12 +83,12 @@ class Organisation42(base_types._BaseFieldType):
 
 	@LglRprtv.setter
 	def LglRprtv(self, value):
-		self._LglRprtv = value if type(value) != base_types.auto else self.make_default("LglRprtv")
+		self._LglRprtv = value if value is not None else base_types.UninitialisedField(self, 'LglRprtv', PartyIdentification274, True)
 
 	@LglRprtv.deleter
 	def LglRprtv(self):
 		del self._LglRprtv
-		self._LglRprtv = None
+		self._LglRprtv = base_types.UninitialisedField(self, 'LglRprtv', PartyIdentification274, True)
 
 	@property
 	def MainMndtHldr(self):
@@ -96,12 +96,12 @@ class Organisation42(base_types._BaseFieldType):
 
 	@MainMndtHldr.setter
 	def MainMndtHldr(self, value):
-		self._MainMndtHldr = value if type(value) != base_types.auto else self.make_default("MainMndtHldr")
+		self._MainMndtHldr = value if value is not None else base_types.UninitialisedField(self, 'MainMndtHldr', PartyIdentification274, True)
 
 	@MainMndtHldr.deleter
 	def MainMndtHldr(self):
 		del self._MainMndtHldr
-		self._MainMndtHldr = None
+		self._MainMndtHldr = base_types.UninitialisedField(self, 'MainMndtHldr', PartyIdentification274, True)
 
 	@property
 	def OprlAdr(self):
@@ -109,12 +109,12 @@ class Organisation42(base_types._BaseFieldType):
 
 	@OprlAdr.setter
 	def OprlAdr(self, value):
-		self._OprlAdr = value if type(value) != base_types.auto else self.make_default("OprlAdr")
+		self._OprlAdr = value if value is not None else base_types.UninitialisedField(self, 'OprlAdr', PostalAddress27, False)
 
 	@OprlAdr.deleter
 	def OprlAdr(self):
 		del self._OprlAdr
-		self._OprlAdr = None
+		self._OprlAdr = base_types.UninitialisedField(self, 'OprlAdr', PostalAddress27, False)
 
 	@property
 	def OrgId(self):
@@ -122,12 +122,12 @@ class Organisation42(base_types._BaseFieldType):
 
 	@OrgId.setter
 	def OrgId(self, value):
-		self._OrgId = value if type(value) != base_types.auto else self.make_default("OrgId")
+		self._OrgId = value if value is not None else base_types.UninitialisedField(self, 'OrgId', OrganisationIdentification39, False)
 
 	@OrgId.deleter
 	def OrgId(self):
 		del self._OrgId
-		self._OrgId = None
+		self._OrgId = base_types.UninitialisedField(self, 'OrgId', OrganisationIdentification39, False)
 
 	@property
 	def RegnDt(self):
@@ -135,12 +135,12 @@ class Organisation42(base_types._BaseFieldType):
 
 	@RegnDt.setter
 	def RegnDt(self, value):
-		self._RegnDt = value if type(value) != base_types.auto else self.make_default("RegnDt")
+		self._RegnDt = value if value is not None else base_types.UninitialisedField(self, 'RegnDt', ISODate, False)
 
 	@RegnDt.deleter
 	def RegnDt(self):
 		del self._RegnDt
-		self._RegnDt = None
+		self._RegnDt = base_types.UninitialisedField(self, 'RegnDt', ISODate, False)
 
 	@property
 	def RprtvOffcr(self):
@@ -148,12 +148,12 @@ class Organisation42(base_types._BaseFieldType):
 
 	@RprtvOffcr.setter
 	def RprtvOffcr(self, value):
-		self._RprtvOffcr = value if type(value) != base_types.auto else self.make_default("RprtvOffcr")
+		self._RprtvOffcr = value if value is not None else base_types.UninitialisedField(self, 'RprtvOffcr', PartyIdentification274, True)
 
 	@RprtvOffcr.deleter
 	def RprtvOffcr(self):
 		del self._RprtvOffcr
-		self._RprtvOffcr = None
+		self._RprtvOffcr = base_types.UninitialisedField(self, 'RprtvOffcr', PartyIdentification274, True)
 
 	@property
 	def Sndr(self):
@@ -161,12 +161,12 @@ class Organisation42(base_types._BaseFieldType):
 
 	@Sndr.setter
 	def Sndr(self, value):
-		self._Sndr = value if type(value) != base_types.auto else self.make_default("Sndr")
+		self._Sndr = value if value is not None else base_types.UninitialisedField(self, 'Sndr', PartyIdentification274, True)
 
 	@Sndr.deleter
 	def Sndr(self):
 		del self._Sndr
-		self._Sndr = None
+		self._Sndr = base_types.UninitialisedField(self, 'Sndr', PartyIdentification274, True)
 
 	@property
 	def TradgNm(self):
@@ -174,12 +174,12 @@ class Organisation42(base_types._BaseFieldType):
 
 	@TradgNm.setter
 	def TradgNm(self, value):
-		self._TradgNm = value if type(value) != base_types.auto else self.make_default("TradgNm")
+		self._TradgNm = value if value is not None else base_types.UninitialisedField(self, 'TradgNm', Max350Text, False)
 
 	@TradgNm.deleter
 	def TradgNm(self):
 		del self._TradgNm
-		self._TradgNm = None
+		self._TradgNm = base_types.UninitialisedField(self, 'TradgNm', Max350Text, False)
 
 	@property
 	def TrsrMgr(self):
@@ -187,12 +187,12 @@ class Organisation42(base_types._BaseFieldType):
 
 	@TrsrMgr.setter
 	def TrsrMgr(self, value):
-		self._TrsrMgr = value if type(value) != base_types.auto else self.make_default("TrsrMgr")
+		self._TrsrMgr = value if value is not None else base_types.UninitialisedField(self, 'TrsrMgr', PartyIdentification274, False)
 
 	@TrsrMgr.deleter
 	def TrsrMgr(self):
 		del self._TrsrMgr
-		self._TrsrMgr = None
+		self._TrsrMgr = base_types.UninitialisedField(self, 'TrsrMgr', PartyIdentification274, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BizAdr', type=PostalAddress27, min=0, max=1, mutex_group=None, array=False),

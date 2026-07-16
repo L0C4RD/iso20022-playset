@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
-from ._PartyIdentification242Choice import PartyIdentification242Choice
+from . import Max35Text
+from . import PartyIdentification242Choice
 
 class NettingIdentification2Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class NettingIdentification2Choice(base_types._BaseFieldType):
 
 	@NetgGrpId.setter
 	def NetgGrpId(self, value):
-		self._NetgGrpId = value if type(value) != base_types.auto else self.make_default("NetgGrpId")
+		self._NetgGrpId = value if value is not None else base_types.UninitialisedField(self, 'NetgGrpId', Max35Text, False)
 
 	@NetgGrpId.deleter
 	def NetgGrpId(self):
 		del self._NetgGrpId
-		self._NetgGrpId = None
+		self._NetgGrpId = base_types.UninitialisedField(self, 'NetgGrpId', Max35Text, False)
 
 	@property
 	def TradPty(self):
@@ -27,12 +27,12 @@ class NettingIdentification2Choice(base_types._BaseFieldType):
 
 	@TradPty.setter
 	def TradPty(self, value):
-		self._TradPty = value if type(value) != base_types.auto else self.make_default("TradPty")
+		self._TradPty = value if value is not None else base_types.UninitialisedField(self, 'TradPty', PartyIdentification242Choice, False)
 
 	@TradPty.deleter
 	def TradPty(self):
 		del self._TradPty
-		self._TradPty = None
+		self._TradPty = base_types.UninitialisedField(self, 'TradPty', PartyIdentification242Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NetgGrpId', type=Max35Text, min=0, max=1, mutex_group=1, array=False),

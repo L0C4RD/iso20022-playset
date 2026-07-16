@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification47 import GenericIdentification47
-from ._InvestmentFundRole2Code import InvestmentFundRole2Code
-from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
+from . import GenericIdentification47
+from . import InvestmentFundRole2Code
+from . import RestrictedFINXMax350Text
 
 class Role7Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Role7Choice(base_types._BaseFieldType):
 
 	@Cd.setter
 	def Cd(self, value):
-		self._Cd = value if type(value) != base_types.auto else self.make_default("Cd")
+		self._Cd = value if value is not None else base_types.UninitialisedField(self, 'Cd', InvestmentFundRole2Code, False)
 
 	@Cd.deleter
 	def Cd(self):
 		del self._Cd
-		self._Cd = None
+		self._Cd = base_types.UninitialisedField(self, 'Cd', InvestmentFundRole2Code, False)
 
 	@property
 	def Prtry(self):
@@ -28,12 +28,12 @@ class Role7Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+		self._Prtry = value if value is not None else base_types.UninitialisedField(self, 'Prtry', GenericIdentification47, False)
 
 	@Prtry.deleter
 	def Prtry(self):
 		del self._Prtry
-		self._Prtry = None
+		self._Prtry = base_types.UninitialisedField(self, 'Prtry', GenericIdentification47, False)
 
 	@property
 	def Txt(self):
@@ -41,12 +41,12 @@ class Role7Choice(base_types._BaseFieldType):
 
 	@Txt.setter
 	def Txt(self, value):
-		self._Txt = value if type(value) != base_types.auto else self.make_default("Txt")
+		self._Txt = value if value is not None else base_types.UninitialisedField(self, 'Txt', RestrictedFINXMax350Text, False)
 
 	@Txt.deleter
 	def Txt(self):
 		del self._Txt
-		self._Txt = None
+		self._Txt = base_types.UninitialisedField(self, 'Txt', RestrictedFINXMax350Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cd', type=InvestmentFundRole2Code, min=0, max=1, mutex_group=1, array=False),

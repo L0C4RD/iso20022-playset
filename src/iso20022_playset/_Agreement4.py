@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._AgreementFramework1Choice import AgreementFramework1Choice
-from ._ISODate import ISODate
-from ._Max140Text import Max140Text
+from . import ActiveCurrencyCode
+from . import AgreementFramework1Choice
+from . import ISODate
+from . import Max140Text
 
 class Agreement4(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class Agreement4(base_types._BaseFieldType):
 
 	@AgrmtDt.setter
 	def AgrmtDt(self, value):
-		self._AgrmtDt = value if type(value) != base_types.auto else self.make_default("AgrmtDt")
+		self._AgrmtDt = value if value is not None else base_types.UninitialisedField(self, 'AgrmtDt', ISODate, False)
 
 	@AgrmtDt.deleter
 	def AgrmtDt(self):
 		del self._AgrmtDt
-		self._AgrmtDt = None
+		self._AgrmtDt = base_types.UninitialisedField(self, 'AgrmtDt', ISODate, False)
 
 	@property
 	def AgrmtDtls(self):
@@ -29,12 +29,12 @@ class Agreement4(base_types._BaseFieldType):
 
 	@AgrmtDtls.setter
 	def AgrmtDtls(self, value):
-		self._AgrmtDtls = value if type(value) != base_types.auto else self.make_default("AgrmtDtls")
+		self._AgrmtDtls = value if value is not None else base_types.UninitialisedField(self, 'AgrmtDtls', Max140Text, False)
 
 	@AgrmtDtls.deleter
 	def AgrmtDtls(self):
 		del self._AgrmtDtls
-		self._AgrmtDtls = None
+		self._AgrmtDtls = base_types.UninitialisedField(self, 'AgrmtDtls', Max140Text, False)
 
 	@property
 	def AgrmtFrmwk(self):
@@ -42,12 +42,12 @@ class Agreement4(base_types._BaseFieldType):
 
 	@AgrmtFrmwk.setter
 	def AgrmtFrmwk(self, value):
-		self._AgrmtFrmwk = value if type(value) != base_types.auto else self.make_default("AgrmtFrmwk")
+		self._AgrmtFrmwk = value if value is not None else base_types.UninitialisedField(self, 'AgrmtFrmwk', AgreementFramework1Choice, False)
 
 	@AgrmtFrmwk.deleter
 	def AgrmtFrmwk(self):
 		del self._AgrmtFrmwk
-		self._AgrmtFrmwk = None
+		self._AgrmtFrmwk = base_types.UninitialisedField(self, 'AgrmtFrmwk', AgreementFramework1Choice, False)
 
 	@property
 	def AgrmtId(self):
@@ -55,12 +55,12 @@ class Agreement4(base_types._BaseFieldType):
 
 	@AgrmtId.setter
 	def AgrmtId(self, value):
-		self._AgrmtId = value if type(value) != base_types.auto else self.make_default("AgrmtId")
+		self._AgrmtId = value if value is not None else base_types.UninitialisedField(self, 'AgrmtId', Max140Text, False)
 
 	@AgrmtId.deleter
 	def AgrmtId(self):
 		del self._AgrmtId
-		self._AgrmtId = None
+		self._AgrmtId = base_types.UninitialisedField(self, 'AgrmtId', Max140Text, False)
 
 	@property
 	def BaseCcy(self):
@@ -68,12 +68,12 @@ class Agreement4(base_types._BaseFieldType):
 
 	@BaseCcy.setter
 	def BaseCcy(self, value):
-		self._BaseCcy = value if type(value) != base_types.auto else self.make_default("BaseCcy")
+		self._BaseCcy = value if value is not None else base_types.UninitialisedField(self, 'BaseCcy', ActiveCurrencyCode, False)
 
 	@BaseCcy.deleter
 	def BaseCcy(self):
 		del self._BaseCcy
-		self._BaseCcy = None
+		self._BaseCcy = base_types.UninitialisedField(self, 'BaseCcy', ActiveCurrencyCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AgrmtDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),

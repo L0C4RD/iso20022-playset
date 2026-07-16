@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActionType8Code import ActionType8Code
-from ._Max256Text import Max256Text
-from ._Max35Text import Max35Text
+from . import ActionType8Code
+from . import Max256Text
+from . import Max35Text
 
 class RecommendationAction1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class RecommendationAction1(base_types._BaseFieldType):
 
 	@Actn.setter
 	def Actn(self, value):
-		self._Actn = value if type(value) != base_types.auto else self.make_default("Actn")
+		self._Actn = value if value is not None else base_types.UninitialisedField(self, 'Actn', ActionType8Code, False)
 
 	@Actn.deleter
 	def Actn(self):
 		del self._Actn
-		self._Actn = None
+		self._Actn = base_types.UninitialisedField(self, 'Actn', ActionType8Code, False)
 
 	@property
 	def Dtls(self):
@@ -28,12 +28,12 @@ class RecommendationAction1(base_types._BaseFieldType):
 
 	@Dtls.setter
 	def Dtls(self, value):
-		self._Dtls = value if type(value) != base_types.auto else self.make_default("Dtls")
+		self._Dtls = value if value is not None else base_types.UninitialisedField(self, 'Dtls', Max256Text, True)
 
 	@Dtls.deleter
 	def Dtls(self):
 		del self._Dtls
-		self._Dtls = None
+		self._Dtls = base_types.UninitialisedField(self, 'Dtls', Max256Text, True)
 
 	@property
 	def OthrActn(self):
@@ -41,12 +41,12 @@ class RecommendationAction1(base_types._BaseFieldType):
 
 	@OthrActn.setter
 	def OthrActn(self, value):
-		self._OthrActn = value if type(value) != base_types.auto else self.make_default("OthrActn")
+		self._OthrActn = value if value is not None else base_types.UninitialisedField(self, 'OthrActn', Max35Text, False)
 
 	@OthrActn.deleter
 	def OthrActn(self):
 		del self._OthrActn
-		self._OthrActn = None
+		self._OthrActn = base_types.UninitialisedField(self, 'OthrActn', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Actn', type=ActionType8Code, min=0, max=1, mutex_group=None, array=False),

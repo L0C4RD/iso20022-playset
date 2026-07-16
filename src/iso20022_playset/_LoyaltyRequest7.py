@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CustomerOrder1 import CustomerOrder1
-from ._LoyaltyRequestData3 import LoyaltyRequestData3
-from ._LoyaltyTransaction7 import LoyaltyTransaction7
+from . import CustomerOrder1
+from . import LoyaltyRequestData3
+from . import LoyaltyTransaction7
 
 class LoyaltyRequest7(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class LoyaltyRequest7(base_types._BaseFieldType):
 
 	@CstmrOrdr.setter
 	def CstmrOrdr(self, value):
-		self._CstmrOrdr = value if type(value) != base_types.auto else self.make_default("CstmrOrdr")
+		self._CstmrOrdr = value if value is not None else base_types.UninitialisedField(self, 'CstmrOrdr', CustomerOrder1, False)
 
 	@CstmrOrdr.deleter
 	def CstmrOrdr(self):
 		del self._CstmrOrdr
-		self._CstmrOrdr = None
+		self._CstmrOrdr = base_types.UninitialisedField(self, 'CstmrOrdr', CustomerOrder1, False)
 
 	@property
 	def Data(self):
@@ -28,12 +28,12 @@ class LoyaltyRequest7(base_types._BaseFieldType):
 
 	@Data.setter
 	def Data(self, value):
-		self._Data = value if type(value) != base_types.auto else self.make_default("Data")
+		self._Data = value if value is not None else base_types.UninitialisedField(self, 'Data', LoyaltyRequestData3, True)
 
 	@Data.deleter
 	def Data(self):
 		del self._Data
-		self._Data = None
+		self._Data = base_types.UninitialisedField(self, 'Data', LoyaltyRequestData3, True)
 
 	@property
 	def Tx(self):
@@ -41,12 +41,12 @@ class LoyaltyRequest7(base_types._BaseFieldType):
 
 	@Tx.setter
 	def Tx(self, value):
-		self._Tx = value if type(value) != base_types.auto else self.make_default("Tx")
+		self._Tx = value if value is not None else base_types.UninitialisedField(self, 'Tx', LoyaltyTransaction7, False)
 
 	@Tx.deleter
 	def Tx(self):
 		del self._Tx
-		self._Tx = None
+		self._Tx = base_types.UninitialisedField(self, 'Tx', LoyaltyTransaction7, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CstmrOrdr', type=CustomerOrder1, min=0, max=1, mutex_group=None, array=False),

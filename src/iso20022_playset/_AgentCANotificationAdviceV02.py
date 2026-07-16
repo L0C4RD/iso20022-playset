@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateAction83 import CorporateAction83
-from ._CorporateActionAgent2 import CorporateActionAgent2
-from ._CorporateActionGeneralInformation172 import CorporateActionGeneralInformation172
-from ._CorporateActionNarrative2 import CorporateActionNarrative2
-from ._CorporateActionNotification12 import CorporateActionNotification12
-from ._CorporateActionOption235 import CorporateActionOption235
-from ._DocumentIdentification31 import DocumentIdentification31
-from ._Pagination1 import Pagination1
+from . import CorporateAction83
+from . import CorporateActionAgent2
+from . import CorporateActionGeneralInformation172
+from . import CorporateActionNarrative2
+from . import CorporateActionNotification12
+from . import CorporateActionOption235
+from . import DocumentIdentification31
+from . import Pagination1
 
 class AgentCANotificationAdviceV02(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class AgentCANotificationAdviceV02(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', CorporateActionNarrative2, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', CorporateActionNarrative2, False)
 
 	@property
 	def AgtInf(self):
@@ -33,12 +33,12 @@ class AgentCANotificationAdviceV02(base_types._BaseFieldType):
 
 	@AgtInf.setter
 	def AgtInf(self, value):
-		self._AgtInf = value if type(value) != base_types.auto else self.make_default("AgtInf")
+		self._AgtInf = value if value is not None else base_types.UninitialisedField(self, 'AgtInf', CorporateActionAgent2, True)
 
 	@AgtInf.deleter
 	def AgtInf(self):
 		del self._AgtInf
-		self._AgtInf = None
+		self._AgtInf = base_types.UninitialisedField(self, 'AgtInf', CorporateActionAgent2, True)
 
 	@property
 	def CorpActnDtls(self):
@@ -46,12 +46,12 @@ class AgentCANotificationAdviceV02(base_types._BaseFieldType):
 
 	@CorpActnDtls.setter
 	def CorpActnDtls(self, value):
-		self._CorpActnDtls = value if type(value) != base_types.auto else self.make_default("CorpActnDtls")
+		self._CorpActnDtls = value if value is not None else base_types.UninitialisedField(self, 'CorpActnDtls', CorporateAction83, False)
 
 	@CorpActnDtls.deleter
 	def CorpActnDtls(self):
 		del self._CorpActnDtls
-		self._CorpActnDtls = None
+		self._CorpActnDtls = base_types.UninitialisedField(self, 'CorpActnDtls', CorporateAction83, False)
 
 	@property
 	def CorpActnGnlInf(self):
@@ -59,12 +59,12 @@ class AgentCANotificationAdviceV02(base_types._BaseFieldType):
 
 	@CorpActnGnlInf.setter
 	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != base_types.auto else self.make_default("CorpActnGnlInf")
+		self._CorpActnGnlInf = value if value is not None else base_types.UninitialisedField(self, 'CorpActnGnlInf', CorporateActionGeneralInformation172, False)
 
 	@CorpActnGnlInf.deleter
 	def CorpActnGnlInf(self):
 		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
+		self._CorpActnGnlInf = base_types.UninitialisedField(self, 'CorpActnGnlInf', CorporateActionGeneralInformation172, False)
 
 	@property
 	def CorpActnOptnDtls(self):
@@ -72,12 +72,12 @@ class AgentCANotificationAdviceV02(base_types._BaseFieldType):
 
 	@CorpActnOptnDtls.setter
 	def CorpActnOptnDtls(self, value):
-		self._CorpActnOptnDtls = value if type(value) != base_types.auto else self.make_default("CorpActnOptnDtls")
+		self._CorpActnOptnDtls = value if value is not None else base_types.UninitialisedField(self, 'CorpActnOptnDtls', CorporateActionOption235, True)
 
 	@CorpActnOptnDtls.deleter
 	def CorpActnOptnDtls(self):
 		del self._CorpActnOptnDtls
-		self._CorpActnOptnDtls = None
+		self._CorpActnOptnDtls = base_types.UninitialisedField(self, 'CorpActnOptnDtls', CorporateActionOption235, True)
 
 	@property
 	def NtfctnGnlInf(self):
@@ -85,12 +85,12 @@ class AgentCANotificationAdviceV02(base_types._BaseFieldType):
 
 	@NtfctnGnlInf.setter
 	def NtfctnGnlInf(self, value):
-		self._NtfctnGnlInf = value if type(value) != base_types.auto else self.make_default("NtfctnGnlInf")
+		self._NtfctnGnlInf = value if value is not None else base_types.UninitialisedField(self, 'NtfctnGnlInf', CorporateActionNotification12, False)
 
 	@NtfctnGnlInf.deleter
 	def NtfctnGnlInf(self):
 		del self._NtfctnGnlInf
-		self._NtfctnGnlInf = None
+		self._NtfctnGnlInf = base_types.UninitialisedField(self, 'NtfctnGnlInf', CorporateActionNotification12, False)
 
 	@property
 	def Pgntn(self):
@@ -98,12 +98,12 @@ class AgentCANotificationAdviceV02(base_types._BaseFieldType):
 
 	@Pgntn.setter
 	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+		self._Pgntn = value if value is not None else base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@Pgntn.deleter
 	def Pgntn(self):
 		del self._Pgntn
-		self._Pgntn = None
+		self._Pgntn = base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@property
 	def PrvsNtfctnId(self):
@@ -111,12 +111,12 @@ class AgentCANotificationAdviceV02(base_types._BaseFieldType):
 
 	@PrvsNtfctnId.setter
 	def PrvsNtfctnId(self, value):
-		self._PrvsNtfctnId = value if type(value) != base_types.auto else self.make_default("PrvsNtfctnId")
+		self._PrvsNtfctnId = value if value is not None else base_types.UninitialisedField(self, 'PrvsNtfctnId', DocumentIdentification31, False)
 
 	@PrvsNtfctnId.deleter
 	def PrvsNtfctnId(self):
 		del self._PrvsNtfctnId
-		self._PrvsNtfctnId = None
+		self._PrvsNtfctnId = base_types.UninitialisedField(self, 'PrvsNtfctnId', DocumentIdentification31, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=CorporateActionNarrative2, min=0, max=1, mutex_group=None, array=False),

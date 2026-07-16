@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Quantity80Choice import Quantity80Choice
-from ._SignedQuantityFormat13 import SignedQuantityFormat13
+from . import Quantity80Choice
+from . import SignedQuantityFormat13
 
 class TotalEligibleBalanceFormat11(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TotalEligibleBalanceFormat11(base_types._BaseFieldType):
 
 	@Bal.setter
 	def Bal(self, value):
-		self._Bal = value if type(value) != base_types.auto else self.make_default("Bal")
+		self._Bal = value if value is not None else base_types.UninitialisedField(self, 'Bal', Quantity80Choice, False)
 
 	@Bal.deleter
 	def Bal(self):
 		del self._Bal
-		self._Bal = None
+		self._Bal = base_types.UninitialisedField(self, 'Bal', Quantity80Choice, False)
 
 	@property
 	def FullPrdUnits(self):
@@ -27,12 +27,12 @@ class TotalEligibleBalanceFormat11(base_types._BaseFieldType):
 
 	@FullPrdUnits.setter
 	def FullPrdUnits(self, value):
-		self._FullPrdUnits = value if type(value) != base_types.auto else self.make_default("FullPrdUnits")
+		self._FullPrdUnits = value if value is not None else base_types.UninitialisedField(self, 'FullPrdUnits', SignedQuantityFormat13, False)
 
 	@FullPrdUnits.deleter
 	def FullPrdUnits(self):
 		del self._FullPrdUnits
-		self._FullPrdUnits = None
+		self._FullPrdUnits = base_types.UninitialisedField(self, 'FullPrdUnits', SignedQuantityFormat13, False)
 
 	@property
 	def PartWayPrdUnits(self):
@@ -40,12 +40,12 @@ class TotalEligibleBalanceFormat11(base_types._BaseFieldType):
 
 	@PartWayPrdUnits.setter
 	def PartWayPrdUnits(self, value):
-		self._PartWayPrdUnits = value if type(value) != base_types.auto else self.make_default("PartWayPrdUnits")
+		self._PartWayPrdUnits = value if value is not None else base_types.UninitialisedField(self, 'PartWayPrdUnits', SignedQuantityFormat13, False)
 
 	@PartWayPrdUnits.deleter
 	def PartWayPrdUnits(self):
 		del self._PartWayPrdUnits
-		self._PartWayPrdUnits = None
+		self._PartWayPrdUnits = base_types.UninitialisedField(self, 'PartWayPrdUnits', SignedQuantityFormat13, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Bal', type=Quantity80Choice, min=0, max=1, mutex_group=None, array=False),

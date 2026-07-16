@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DecimalNumber import DecimalNumber
-from ._Max35Text import Max35Text
-from ._MemoryUnit1Code import MemoryUnit1Code
+from . import DecimalNumber
+from . import Max35Text
+from . import MemoryUnit1Code
 
 class MemoryCharacteristics1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class MemoryCharacteristics1(base_types._BaseFieldType):
 
 	@FreeSz.setter
 	def FreeSz(self, value):
-		self._FreeSz = value if type(value) != base_types.auto else self.make_default("FreeSz")
+		self._FreeSz = value if value is not None else base_types.UninitialisedField(self, 'FreeSz', DecimalNumber, False)
 
 	@FreeSz.deleter
 	def FreeSz(self):
 		del self._FreeSz
-		self._FreeSz = None
+		self._FreeSz = base_types.UninitialisedField(self, 'FreeSz', DecimalNumber, False)
 
 	@property
 	def Id(self):
@@ -28,12 +28,12 @@ class MemoryCharacteristics1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def TtlSz(self):
@@ -41,12 +41,12 @@ class MemoryCharacteristics1(base_types._BaseFieldType):
 
 	@TtlSz.setter
 	def TtlSz(self, value):
-		self._TtlSz = value if type(value) != base_types.auto else self.make_default("TtlSz")
+		self._TtlSz = value if value is not None else base_types.UninitialisedField(self, 'TtlSz', DecimalNumber, False)
 
 	@TtlSz.deleter
 	def TtlSz(self):
 		del self._TtlSz
-		self._TtlSz = None
+		self._TtlSz = base_types.UninitialisedField(self, 'TtlSz', DecimalNumber, False)
 
 	@property
 	def Unit(self):
@@ -54,12 +54,12 @@ class MemoryCharacteristics1(base_types._BaseFieldType):
 
 	@Unit.setter
 	def Unit(self, value):
-		self._Unit = value if type(value) != base_types.auto else self.make_default("Unit")
+		self._Unit = value if value is not None else base_types.UninitialisedField(self, 'Unit', MemoryUnit1Code, False)
 
 	@Unit.deleter
 	def Unit(self):
 		del self._Unit
-		self._Unit = None
+		self._Unit = base_types.UninitialisedField(self, 'Unit', MemoryUnit1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FreeSz', type=DecimalNumber, min=1, max=1, mutex_group=None, array=False),

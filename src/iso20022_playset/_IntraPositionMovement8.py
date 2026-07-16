@@ -2,19 +2,19 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionEventType56Choice import CorporateActionEventType56Choice
-from ._DateAndDateTime2Choice import DateAndDateTime2Choice
-from ._FinancialInstrumentAttributes92 import FinancialInstrumentAttributes92
-from ._FinancialInstrumentQuantity1Choice import FinancialInstrumentQuantity1Choice
-from ._GenericIdentification37 import GenericIdentification37
-from ._ISODateTime import ISODateTime
-from ._Linkages57 import Linkages57
-from ._Max350Text import Max350Text
-from ._PriorityNumeric4Choice import PriorityNumeric4Choice
-from ._SecuritiesSubBalanceTypeAndQuantityBreakdown3 import SecuritiesSubBalanceTypeAndQuantityBreakdown3
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._SupplementaryData1 import SupplementaryData1
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
+from . import CorporateActionEventType56Choice
+from . import DateAndDateTime2Choice
+from . import FinancialInstrumentAttributes92
+from . import FinancialInstrumentQuantity1Choice
+from . import GenericIdentification37
+from . import ISODateTime
+from . import Linkages57
+from . import Max350Text
+from . import PriorityNumeric4Choice
+from . import SecuritiesSubBalanceTypeAndQuantityBreakdown3
+from . import SecurityIdentification19
+from . import SupplementaryData1
+from . import SystemPartyIdentification8
 
 class IntraPositionMovement8(base_types._BaseFieldType):
 
@@ -25,12 +25,12 @@ class IntraPositionMovement8(base_types._BaseFieldType):
 
 	@AckdStsTmStmp.setter
 	def AckdStsTmStmp(self, value):
-		self._AckdStsTmStmp = value if type(value) != base_types.auto else self.make_default("AckdStsTmStmp")
+		self._AckdStsTmStmp = value if value is not None else base_types.UninitialisedField(self, 'AckdStsTmStmp', ISODateTime, False)
 
 	@AckdStsTmStmp.deleter
 	def AckdStsTmStmp(self):
 		del self._AckdStsTmStmp
-		self._AckdStsTmStmp = None
+		self._AckdStsTmStmp = base_types.UninitialisedField(self, 'AckdStsTmStmp', ISODateTime, False)
 
 	@property
 	def BalFr(self):
@@ -38,12 +38,12 @@ class IntraPositionMovement8(base_types._BaseFieldType):
 
 	@BalFr.setter
 	def BalFr(self, value):
-		self._BalFr = value if type(value) != base_types.auto else self.make_default("BalFr")
+		self._BalFr = value if value is not None else base_types.UninitialisedField(self, 'BalFr', SecuritiesSubBalanceTypeAndQuantityBreakdown3, False)
 
 	@BalFr.deleter
 	def BalFr(self):
 		del self._BalFr
-		self._BalFr = None
+		self._BalFr = base_types.UninitialisedField(self, 'BalFr', SecuritiesSubBalanceTypeAndQuantityBreakdown3, False)
 
 	@property
 	def BalTo(self):
@@ -51,12 +51,12 @@ class IntraPositionMovement8(base_types._BaseFieldType):
 
 	@BalTo.setter
 	def BalTo(self, value):
-		self._BalTo = value if type(value) != base_types.auto else self.make_default("BalTo")
+		self._BalTo = value if value is not None else base_types.UninitialisedField(self, 'BalTo', SecuritiesSubBalanceTypeAndQuantityBreakdown3, False)
 
 	@BalTo.deleter
 	def BalTo(self):
 		del self._BalTo
-		self._BalTo = None
+		self._BalTo = base_types.UninitialisedField(self, 'BalTo', SecuritiesSubBalanceTypeAndQuantityBreakdown3, False)
 
 	@property
 	def CorpActnEvtTp(self):
@@ -64,12 +64,12 @@ class IntraPositionMovement8(base_types._BaseFieldType):
 
 	@CorpActnEvtTp.setter
 	def CorpActnEvtTp(self, value):
-		self._CorpActnEvtTp = value if type(value) != base_types.auto else self.make_default("CorpActnEvtTp")
+		self._CorpActnEvtTp = value if value is not None else base_types.UninitialisedField(self, 'CorpActnEvtTp', CorporateActionEventType56Choice, False)
 
 	@CorpActnEvtTp.deleter
 	def CorpActnEvtTp(self):
 		del self._CorpActnEvtTp
-		self._CorpActnEvtTp = None
+		self._CorpActnEvtTp = base_types.UninitialisedField(self, 'CorpActnEvtTp', CorporateActionEventType56Choice, False)
 
 	@property
 	def CreDtTm(self):
@@ -77,12 +77,12 @@ class IntraPositionMovement8(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if value is not None else base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
 		del self._CreDtTm
-		self._CreDtTm = None
+		self._CreDtTm = base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@property
 	def FctvSttlmDt(self):
@@ -90,12 +90,12 @@ class IntraPositionMovement8(base_types._BaseFieldType):
 
 	@FctvSttlmDt.setter
 	def FctvSttlmDt(self, value):
-		self._FctvSttlmDt = value if type(value) != base_types.auto else self.make_default("FctvSttlmDt")
+		self._FctvSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'FctvSttlmDt', DateAndDateTime2Choice, False)
 
 	@FctvSttlmDt.deleter
 	def FctvSttlmDt(self):
 		del self._FctvSttlmDt
-		self._FctvSttlmDt = None
+		self._FctvSttlmDt = base_types.UninitialisedField(self, 'FctvSttlmDt', DateAndDateTime2Choice, False)
 
 	@property
 	def FinInstrmAttrbts(self):
@@ -103,12 +103,12 @@ class IntraPositionMovement8(base_types._BaseFieldType):
 
 	@FinInstrmAttrbts.setter
 	def FinInstrmAttrbts(self, value):
-		self._FinInstrmAttrbts = value if type(value) != base_types.auto else self.make_default("FinInstrmAttrbts")
+		self._FinInstrmAttrbts = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmAttrbts', FinancialInstrumentAttributes92, False)
 
 	@FinInstrmAttrbts.deleter
 	def FinInstrmAttrbts(self):
 		del self._FinInstrmAttrbts
-		self._FinInstrmAttrbts = None
+		self._FinInstrmAttrbts = base_types.UninitialisedField(self, 'FinInstrmAttrbts', FinancialInstrumentAttributes92, False)
 
 	@property
 	def FinInstrmId(self):
@@ -116,12 +116,12 @@ class IntraPositionMovement8(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
 		del self._FinInstrmId
-		self._FinInstrmId = None
+		self._FinInstrmId = base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@property
 	def InstrPrcgAddtlDtls(self):
@@ -129,12 +129,12 @@ class IntraPositionMovement8(base_types._BaseFieldType):
 
 	@InstrPrcgAddtlDtls.setter
 	def InstrPrcgAddtlDtls(self, value):
-		self._InstrPrcgAddtlDtls = value if type(value) != base_types.auto else self.make_default("InstrPrcgAddtlDtls")
+		self._InstrPrcgAddtlDtls = value if value is not None else base_types.UninitialisedField(self, 'InstrPrcgAddtlDtls', Max350Text, False)
 
 	@InstrPrcgAddtlDtls.deleter
 	def InstrPrcgAddtlDtls(self):
 		del self._InstrPrcgAddtlDtls
-		self._InstrPrcgAddtlDtls = None
+		self._InstrPrcgAddtlDtls = base_types.UninitialisedField(self, 'InstrPrcgAddtlDtls', Max350Text, False)
 
 	@property
 	def IntnddSttlmDt(self):
@@ -142,12 +142,12 @@ class IntraPositionMovement8(base_types._BaseFieldType):
 
 	@IntnddSttlmDt.setter
 	def IntnddSttlmDt(self, value):
-		self._IntnddSttlmDt = value if type(value) != base_types.auto else self.make_default("IntnddSttlmDt")
+		self._IntnddSttlmDt = value if value is not None else base_types.UninitialisedField(self, 'IntnddSttlmDt', DateAndDateTime2Choice, False)
 
 	@IntnddSttlmDt.deleter
 	def IntnddSttlmDt(self):
 		del self._IntnddSttlmDt
-		self._IntnddSttlmDt = None
+		self._IntnddSttlmDt = base_types.UninitialisedField(self, 'IntnddSttlmDt', DateAndDateTime2Choice, False)
 
 	@property
 	def Lnkgs(self):
@@ -155,12 +155,12 @@ class IntraPositionMovement8(base_types._BaseFieldType):
 
 	@Lnkgs.setter
 	def Lnkgs(self, value):
-		self._Lnkgs = value if type(value) != base_types.auto else self.make_default("Lnkgs")
+		self._Lnkgs = value if value is not None else base_types.UninitialisedField(self, 'Lnkgs', Linkages57, True)
 
 	@Lnkgs.deleter
 	def Lnkgs(self):
 		del self._Lnkgs
-		self._Lnkgs = None
+		self._Lnkgs = base_types.UninitialisedField(self, 'Lnkgs', Linkages57, True)
 
 	@property
 	def MsgOrgtr(self):
@@ -168,12 +168,12 @@ class IntraPositionMovement8(base_types._BaseFieldType):
 
 	@MsgOrgtr.setter
 	def MsgOrgtr(self, value):
-		self._MsgOrgtr = value if type(value) != base_types.auto else self.make_default("MsgOrgtr")
+		self._MsgOrgtr = value if value is not None else base_types.UninitialisedField(self, 'MsgOrgtr', SystemPartyIdentification8, False)
 
 	@MsgOrgtr.deleter
 	def MsgOrgtr(self):
 		del self._MsgOrgtr
-		self._MsgOrgtr = None
+		self._MsgOrgtr = base_types.UninitialisedField(self, 'MsgOrgtr', SystemPartyIdentification8, False)
 
 	@property
 	def PrevslySttldQty(self):
@@ -181,12 +181,12 @@ class IntraPositionMovement8(base_types._BaseFieldType):
 
 	@PrevslySttldQty.setter
 	def PrevslySttldQty(self, value):
-		self._PrevslySttldQty = value if type(value) != base_types.auto else self.make_default("PrevslySttldQty")
+		self._PrevslySttldQty = value if value is not None else base_types.UninitialisedField(self, 'PrevslySttldQty', FinancialInstrumentQuantity1Choice, False)
 
 	@PrevslySttldQty.deleter
 	def PrevslySttldQty(self):
 		del self._PrevslySttldQty
-		self._PrevslySttldQty = None
+		self._PrevslySttldQty = base_types.UninitialisedField(self, 'PrevslySttldQty', FinancialInstrumentQuantity1Choice, False)
 
 	@property
 	def Prty(self):
@@ -194,12 +194,12 @@ class IntraPositionMovement8(base_types._BaseFieldType):
 
 	@Prty.setter
 	def Prty(self, value):
-		self._Prty = value if type(value) != base_types.auto else self.make_default("Prty")
+		self._Prty = value if value is not None else base_types.UninitialisedField(self, 'Prty', PriorityNumeric4Choice, False)
 
 	@Prty.deleter
 	def Prty(self):
 		del self._Prty
-		self._Prty = None
+		self._Prty = base_types.UninitialisedField(self, 'Prty', PriorityNumeric4Choice, False)
 
 	@property
 	def RmngToBeSttldQty(self):
@@ -207,12 +207,12 @@ class IntraPositionMovement8(base_types._BaseFieldType):
 
 	@RmngToBeSttldQty.setter
 	def RmngToBeSttldQty(self, value):
-		self._RmngToBeSttldQty = value if type(value) != base_types.auto else self.make_default("RmngToBeSttldQty")
+		self._RmngToBeSttldQty = value if value is not None else base_types.UninitialisedField(self, 'RmngToBeSttldQty', FinancialInstrumentQuantity1Choice, False)
 
 	@RmngToBeSttldQty.deleter
 	def RmngToBeSttldQty(self):
 		del self._RmngToBeSttldQty
-		self._RmngToBeSttldQty = None
+		self._RmngToBeSttldQty = base_types.UninitialisedField(self, 'RmngToBeSttldQty', FinancialInstrumentQuantity1Choice, False)
 
 	@property
 	def SctiesSubBalId(self):
@@ -220,12 +220,12 @@ class IntraPositionMovement8(base_types._BaseFieldType):
 
 	@SctiesSubBalId.setter
 	def SctiesSubBalId(self, value):
-		self._SctiesSubBalId = value if type(value) != base_types.auto else self.make_default("SctiesSubBalId")
+		self._SctiesSubBalId = value if value is not None else base_types.UninitialisedField(self, 'SctiesSubBalId', GenericIdentification37, False)
 
 	@SctiesSubBalId.deleter
 	def SctiesSubBalId(self):
 		del self._SctiesSubBalId
-		self._SctiesSubBalId = None
+		self._SctiesSubBalId = base_types.UninitialisedField(self, 'SctiesSubBalId', GenericIdentification37, False)
 
 	@property
 	def SplmtryData(self):
@@ -233,12 +233,12 @@ class IntraPositionMovement8(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def StsDt(self):
@@ -246,12 +246,12 @@ class IntraPositionMovement8(base_types._BaseFieldType):
 
 	@StsDt.setter
 	def StsDt(self, value):
-		self._StsDt = value if type(value) != base_types.auto else self.make_default("StsDt")
+		self._StsDt = value if value is not None else base_types.UninitialisedField(self, 'StsDt', ISODateTime, False)
 
 	@StsDt.deleter
 	def StsDt(self):
 		del self._StsDt
-		self._StsDt = None
+		self._StsDt = base_types.UninitialisedField(self, 'StsDt', ISODateTime, False)
 
 	@property
 	def SttldQty(self):
@@ -259,12 +259,12 @@ class IntraPositionMovement8(base_types._BaseFieldType):
 
 	@SttldQty.setter
 	def SttldQty(self, value):
-		self._SttldQty = value if type(value) != base_types.auto else self.make_default("SttldQty")
+		self._SttldQty = value if value is not None else base_types.UninitialisedField(self, 'SttldQty', FinancialInstrumentQuantity1Choice, False)
 
 	@SttldQty.deleter
 	def SttldQty(self):
 		del self._SttldQty
-		self._SttldQty = None
+		self._SttldQty = base_types.UninitialisedField(self, 'SttldQty', FinancialInstrumentQuantity1Choice, False)
 
 	@property
 	def SttlmQty(self):
@@ -272,12 +272,12 @@ class IntraPositionMovement8(base_types._BaseFieldType):
 
 	@SttlmQty.setter
 	def SttlmQty(self, value):
-		self._SttlmQty = value if type(value) != base_types.auto else self.make_default("SttlmQty")
+		self._SttlmQty = value if value is not None else base_types.UninitialisedField(self, 'SttlmQty', FinancialInstrumentQuantity1Choice, False)
 
 	@SttlmQty.deleter
 	def SttlmQty(self):
 		del self._SttlmQty
-		self._SttlmQty = None
+		self._SttlmQty = base_types.UninitialisedField(self, 'SttlmQty', FinancialInstrumentQuantity1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AckdStsTmStmp', type=ISODateTime, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
+from . import ISODateTime
+from . import Max35Text
 
 class TransactionIdentifier1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class TransactionIdentifier1(base_types._BaseFieldType):
 
 	@TxDtTm.setter
 	def TxDtTm(self, value):
-		self._TxDtTm = value if type(value) != base_types.auto else self.make_default("TxDtTm")
+		self._TxDtTm = value if value is not None else base_types.UninitialisedField(self, 'TxDtTm', ISODateTime, False)
 
 	@TxDtTm.deleter
 	def TxDtTm(self):
 		del self._TxDtTm
-		self._TxDtTm = None
+		self._TxDtTm = base_types.UninitialisedField(self, 'TxDtTm', ISODateTime, False)
 
 	@property
 	def TxRef(self):
@@ -27,12 +27,12 @@ class TransactionIdentifier1(base_types._BaseFieldType):
 
 	@TxRef.setter
 	def TxRef(self, value):
-		self._TxRef = value if type(value) != base_types.auto else self.make_default("TxRef")
+		self._TxRef = value if value is not None else base_types.UninitialisedField(self, 'TxRef', Max35Text, False)
 
 	@TxRef.deleter
 	def TxRef(self):
 		del self._TxRef
-		self._TxRef = None
+		self._TxRef = base_types.UninitialisedField(self, 'TxRef', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='TxDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstitutionSector1 import FinancialInstitutionSector1
-from ._NoReasonCode import NoReasonCode
-from ._NonFinancialInstitutionSector10 import NonFinancialInstitutionSector10
+from . import FinancialInstitutionSector1
+from . import NoReasonCode
+from . import NonFinancialInstitutionSector10
 
 class CounterpartyTradeNature15Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CounterpartyTradeNature15Choice(base_types._BaseFieldType):
 
 	@CntrlCntrPty.setter
 	def CntrlCntrPty(self, value):
-		self._CntrlCntrPty = value if type(value) != base_types.auto else self.make_default("CntrlCntrPty")
+		self._CntrlCntrPty = value if value is not None else base_types.UninitialisedField(self, 'CntrlCntrPty', NoReasonCode, False)
 
 	@CntrlCntrPty.deleter
 	def CntrlCntrPty(self):
 		del self._CntrlCntrPty
-		self._CntrlCntrPty = None
+		self._CntrlCntrPty = base_types.UninitialisedField(self, 'CntrlCntrPty', NoReasonCode, False)
 
 	@property
 	def FI(self):
@@ -28,12 +28,12 @@ class CounterpartyTradeNature15Choice(base_types._BaseFieldType):
 
 	@FI.setter
 	def FI(self, value):
-		self._FI = value if type(value) != base_types.auto else self.make_default("FI")
+		self._FI = value if value is not None else base_types.UninitialisedField(self, 'FI', FinancialInstitutionSector1, False)
 
 	@FI.deleter
 	def FI(self):
 		del self._FI
-		self._FI = None
+		self._FI = base_types.UninitialisedField(self, 'FI', FinancialInstitutionSector1, False)
 
 	@property
 	def NFI(self):
@@ -41,12 +41,12 @@ class CounterpartyTradeNature15Choice(base_types._BaseFieldType):
 
 	@NFI.setter
 	def NFI(self, value):
-		self._NFI = value if type(value) != base_types.auto else self.make_default("NFI")
+		self._NFI = value if value is not None else base_types.UninitialisedField(self, 'NFI', NonFinancialInstitutionSector10, False)
 
 	@NFI.deleter
 	def NFI(self):
 		del self._NFI
-		self._NFI = None
+		self._NFI = base_types.UninitialisedField(self, 'NFI', NonFinancialInstitutionSector10, False)
 
 	@property
 	def Othr(self):
@@ -54,12 +54,12 @@ class CounterpartyTradeNature15Choice(base_types._BaseFieldType):
 
 	@Othr.setter
 	def Othr(self, value):
-		self._Othr = value if type(value) != base_types.auto else self.make_default("Othr")
+		self._Othr = value if value is not None else base_types.UninitialisedField(self, 'Othr', NoReasonCode, False)
 
 	@Othr.deleter
 	def Othr(self):
 		del self._Othr
-		self._Othr = None
+		self._Othr = base_types.UninitialisedField(self, 'Othr', NoReasonCode, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CntrlCntrPty', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),

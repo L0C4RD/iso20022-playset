@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CalendarOrBusinessError1Choice import CalendarOrBusinessError1Choice
-from ._SystemAndCurrency1 import SystemAndCurrency1
+from . import CalendarOrBusinessError1Choice
+from . import SystemAndCurrency1
 
 class CalendarReport1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CalendarReport1(base_types._BaseFieldType):
 
 	@CalOrErr.setter
 	def CalOrErr(self, value):
-		self._CalOrErr = value if type(value) != base_types.auto else self.make_default("CalOrErr")
+		self._CalOrErr = value if value is not None else base_types.UninitialisedField(self, 'CalOrErr', CalendarOrBusinessError1Choice, False)
 
 	@CalOrErr.deleter
 	def CalOrErr(self):
 		del self._CalOrErr
-		self._CalOrErr = None
+		self._CalOrErr = base_types.UninitialisedField(self, 'CalOrErr', CalendarOrBusinessError1Choice, False)
 
 	@property
 	def Svc(self):
@@ -27,12 +27,12 @@ class CalendarReport1(base_types._BaseFieldType):
 
 	@Svc.setter
 	def Svc(self, value):
-		self._Svc = value if type(value) != base_types.auto else self.make_default("Svc")
+		self._Svc = value if value is not None else base_types.UninitialisedField(self, 'Svc', SystemAndCurrency1, False)
 
 	@Svc.deleter
 	def Svc(self):
 		del self._Svc
-		self._Svc = None
+		self._Svc = base_types.UninitialisedField(self, 'Svc', SystemAndCurrency1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CalOrErr', type=CalendarOrBusinessError1Choice, min=1, max=1, mutex_group=None, array=False),

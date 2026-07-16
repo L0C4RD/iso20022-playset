@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BusinessDayConvention1Code import BusinessDayConvention1Code
-from ._Max350Text import Max350Text
-from ._Number import Number
-from ._ReferToFundOrderDesk1Code import ReferToFundOrderDesk1Code
+from . import BusinessDayConvention1Code
+from . import Max350Text
+from . import Number
+from . import ReferToFundOrderDesk1Code
 
 class TimeFrame11(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class TimeFrame11(base_types._BaseFieldType):
 
 	@NonWorkgDayAdjstmnt.setter
 	def NonWorkgDayAdjstmnt(self, value):
-		self._NonWorkgDayAdjstmnt = value if type(value) != base_types.auto else self.make_default("NonWorkgDayAdjstmnt")
+		self._NonWorkgDayAdjstmnt = value if value is not None else base_types.UninitialisedField(self, 'NonWorkgDayAdjstmnt', BusinessDayConvention1Code, False)
 
 	@NonWorkgDayAdjstmnt.deleter
 	def NonWorkgDayAdjstmnt(self):
 		del self._NonWorkgDayAdjstmnt
-		self._NonWorkgDayAdjstmnt = None
+		self._NonWorkgDayAdjstmnt = base_types.UninitialisedField(self, 'NonWorkgDayAdjstmnt', BusinessDayConvention1Code, False)
 
 	@property
 	def OthrTmFrameDesc(self):
@@ -29,12 +29,12 @@ class TimeFrame11(base_types._BaseFieldType):
 
 	@OthrTmFrameDesc.setter
 	def OthrTmFrameDesc(self, value):
-		self._OthrTmFrameDesc = value if type(value) != base_types.auto else self.make_default("OthrTmFrameDesc")
+		self._OthrTmFrameDesc = value if value is not None else base_types.UninitialisedField(self, 'OthrTmFrameDesc', Max350Text, False)
 
 	@OthrTmFrameDesc.deleter
 	def OthrTmFrameDesc(self):
 		del self._OthrTmFrameDesc
-		self._OthrTmFrameDesc = None
+		self._OthrTmFrameDesc = base_types.UninitialisedField(self, 'OthrTmFrameDesc', Max350Text, False)
 
 	@property
 	def RefrToOrdrDsk(self):
@@ -42,12 +42,12 @@ class TimeFrame11(base_types._BaseFieldType):
 
 	@RefrToOrdrDsk.setter
 	def RefrToOrdrDsk(self, value):
-		self._RefrToOrdrDsk = value if type(value) != base_types.auto else self.make_default("RefrToOrdrDsk")
+		self._RefrToOrdrDsk = value if value is not None else base_types.UninitialisedField(self, 'RefrToOrdrDsk', ReferToFundOrderDesk1Code, False)
 
 	@RefrToOrdrDsk.deleter
 	def RefrToOrdrDsk(self):
 		del self._RefrToOrdrDsk
-		self._RefrToOrdrDsk = None
+		self._RefrToOrdrDsk = base_types.UninitialisedField(self, 'RefrToOrdrDsk', ReferToFundOrderDesk1Code, False)
 
 	@property
 	def TPlus(self):
@@ -55,12 +55,12 @@ class TimeFrame11(base_types._BaseFieldType):
 
 	@TPlus.setter
 	def TPlus(self, value):
-		self._TPlus = value if type(value) != base_types.auto else self.make_default("TPlus")
+		self._TPlus = value if value is not None else base_types.UninitialisedField(self, 'TPlus', Number, False)
 
 	@TPlus.deleter
 	def TPlus(self):
 		del self._TPlus
-		self._TPlus = None
+		self._TPlus = base_types.UninitialisedField(self, 'TPlus', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NonWorkgDayAdjstmnt', type=BusinessDayConvention1Code, min=0, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification36 import GenericIdentification36
-from ._Max350Text import Max350Text
-from ._RejectedReason33Choice import RejectedReason33Choice
+from . import GenericIdentification36
+from . import Max350Text
+from . import RejectedReason33Choice
 
 class AdditionalInformation25(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AdditionalInformation25(base_types._BaseFieldType):
 
 	@Qry.setter
 	def Qry(self, value):
-		self._Qry = value if type(value) != base_types.auto else self.make_default("Qry")
+		self._Qry = value if value is not None else base_types.UninitialisedField(self, 'Qry', Max350Text, False)
 
 	@Qry.deleter
 	def Qry(self):
 		del self._Qry
-		self._Qry = None
+		self._Qry = base_types.UninitialisedField(self, 'Qry', Max350Text, False)
 
 	@property
 	def QryRsn(self):
@@ -28,12 +28,12 @@ class AdditionalInformation25(base_types._BaseFieldType):
 
 	@QryRsn.setter
 	def QryRsn(self, value):
-		self._QryRsn = value if type(value) != base_types.auto else self.make_default("QryRsn")
+		self._QryRsn = value if value is not None else base_types.UninitialisedField(self, 'QryRsn', Max350Text, False)
 
 	@QryRsn.deleter
 	def QryRsn(self):
 		del self._QryRsn
-		self._QryRsn = None
+		self._QryRsn = base_types.UninitialisedField(self, 'QryRsn', Max350Text, False)
 
 	@property
 	def QryTp(self):
@@ -41,12 +41,12 @@ class AdditionalInformation25(base_types._BaseFieldType):
 
 	@QryTp.setter
 	def QryTp(self, value):
-		self._QryTp = value if type(value) != base_types.auto else self.make_default("QryTp")
+		self._QryTp = value if value is not None else base_types.UninitialisedField(self, 'QryTp', GenericIdentification36, False)
 
 	@QryTp.deleter
 	def QryTp(self):
 		del self._QryTp
-		self._QryTp = None
+		self._QryTp = base_types.UninitialisedField(self, 'QryTp', GenericIdentification36, False)
 
 	@property
 	def RjctnRsn(self):
@@ -54,12 +54,12 @@ class AdditionalInformation25(base_types._BaseFieldType):
 
 	@RjctnRsn.setter
 	def RjctnRsn(self, value):
-		self._RjctnRsn = value if type(value) != base_types.auto else self.make_default("RjctnRsn")
+		self._RjctnRsn = value if value is not None else base_types.UninitialisedField(self, 'RjctnRsn', RejectedReason33Choice, False)
 
 	@RjctnRsn.deleter
 	def RjctnRsn(self):
 		del self._RjctnRsn
-		self._RjctnRsn = None
+		self._RjctnRsn = base_types.UninitialisedField(self, 'RjctnRsn', RejectedReason33Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Qry', type=Max350Text, min=1, max=1, mutex_group=None, array=False),

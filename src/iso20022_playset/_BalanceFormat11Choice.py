@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SignedQuantityFormat10 import SignedQuantityFormat10
-from ._SignedQuantityFormat11 import SignedQuantityFormat11
+from . import SignedQuantityFormat10
+from . import SignedQuantityFormat11
 
 class BalanceFormat11Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class BalanceFormat11Choice(base_types._BaseFieldType):
 
 	@Bal.setter
 	def Bal(self, value):
-		self._Bal = value if type(value) != base_types.auto else self.make_default("Bal")
+		self._Bal = value if value is not None else base_types.UninitialisedField(self, 'Bal', SignedQuantityFormat11, False)
 
 	@Bal.deleter
 	def Bal(self):
 		del self._Bal
-		self._Bal = None
+		self._Bal = base_types.UninitialisedField(self, 'Bal', SignedQuantityFormat11, False)
 
 	@property
 	def ElgblBal(self):
@@ -27,12 +27,12 @@ class BalanceFormat11Choice(base_types._BaseFieldType):
 
 	@ElgblBal.setter
 	def ElgblBal(self, value):
-		self._ElgblBal = value if type(value) != base_types.auto else self.make_default("ElgblBal")
+		self._ElgblBal = value if value is not None else base_types.UninitialisedField(self, 'ElgblBal', SignedQuantityFormat10, False)
 
 	@ElgblBal.deleter
 	def ElgblBal(self):
 		del self._ElgblBal
-		self._ElgblBal = None
+		self._ElgblBal = base_types.UninitialisedField(self, 'ElgblBal', SignedQuantityFormat10, False)
 
 	@property
 	def NotElgblBal(self):
@@ -40,12 +40,12 @@ class BalanceFormat11Choice(base_types._BaseFieldType):
 
 	@NotElgblBal.setter
 	def NotElgblBal(self, value):
-		self._NotElgblBal = value if type(value) != base_types.auto else self.make_default("NotElgblBal")
+		self._NotElgblBal = value if value is not None else base_types.UninitialisedField(self, 'NotElgblBal', SignedQuantityFormat10, False)
 
 	@NotElgblBal.deleter
 	def NotElgblBal(self):
 		del self._NotElgblBal
-		self._NotElgblBal = None
+		self._NotElgblBal = base_types.UninitialisedField(self, 'NotElgblBal', SignedQuantityFormat10, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Bal', type=SignedQuantityFormat11, min=0, max=1, mutex_group=1, array=False),

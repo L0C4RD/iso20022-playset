@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._ISOYearMonth import ISOYearMonth
-from ._Period2 import Period2
+from . import ISODate
+from . import ISOYearMonth
+from . import Period2
 
 class DatePeriod1Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class DatePeriod1Choice(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@property
 	def DtMnth(self):
@@ -28,12 +28,12 @@ class DatePeriod1Choice(base_types._BaseFieldType):
 
 	@DtMnth.setter
 	def DtMnth(self, value):
-		self._DtMnth = value if type(value) != base_types.auto else self.make_default("DtMnth")
+		self._DtMnth = value if value is not None else base_types.UninitialisedField(self, 'DtMnth', ISOYearMonth, False)
 
 	@DtMnth.deleter
 	def DtMnth(self):
 		del self._DtMnth
-		self._DtMnth = None
+		self._DtMnth = base_types.UninitialisedField(self, 'DtMnth', ISOYearMonth, False)
 
 	@property
 	def FrDtToDt(self):
@@ -41,12 +41,12 @@ class DatePeriod1Choice(base_types._BaseFieldType):
 
 	@FrDtToDt.setter
 	def FrDtToDt(self, value):
-		self._FrDtToDt = value if type(value) != base_types.auto else self.make_default("FrDtToDt")
+		self._FrDtToDt = value if value is not None else base_types.UninitialisedField(self, 'FrDtToDt', Period2, False)
 
 	@FrDtToDt.deleter
 	def FrDtToDt(self):
 		del self._FrDtToDt
-		self._FrDtToDt = None
+		self._FrDtToDt = base_types.UninitialisedField(self, 'FrDtToDt', Period2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dt', type=ISODate, min=0, max=1, mutex_group=1, array=False),

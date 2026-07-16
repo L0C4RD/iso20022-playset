@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InternalisationData1 import InternalisationData1
+from . import InternalisationData1
 
 class SettlementInternaliserTransactionType1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class SettlementInternaliserTransactionType1(base_types._BaseFieldType):
 
 	@CollMgmtOpr.setter
 	def CollMgmtOpr(self, value):
-		self._CollMgmtOpr = value if type(value) != base_types.auto else self.make_default("CollMgmtOpr")
+		self._CollMgmtOpr = value if value is not None else base_types.UninitialisedField(self, 'CollMgmtOpr', InternalisationData1, False)
 
 	@CollMgmtOpr.deleter
 	def CollMgmtOpr(self):
 		del self._CollMgmtOpr
-		self._CollMgmtOpr = None
+		self._CollMgmtOpr = base_types.UninitialisedField(self, 'CollMgmtOpr', InternalisationData1, False)
 
 	@property
 	def OthrTxs(self):
@@ -26,12 +26,12 @@ class SettlementInternaliserTransactionType1(base_types._BaseFieldType):
 
 	@OthrTxs.setter
 	def OthrTxs(self, value):
-		self._OthrTxs = value if type(value) != base_types.auto else self.make_default("OthrTxs")
+		self._OthrTxs = value if value is not None else base_types.UninitialisedField(self, 'OthrTxs', InternalisationData1, False)
 
 	@OthrTxs.deleter
 	def OthrTxs(self):
 		del self._OthrTxs
-		self._OthrTxs = None
+		self._OthrTxs = base_types.UninitialisedField(self, 'OthrTxs', InternalisationData1, False)
 
 	@property
 	def RpAgrmt(self):
@@ -39,12 +39,12 @@ class SettlementInternaliserTransactionType1(base_types._BaseFieldType):
 
 	@RpAgrmt.setter
 	def RpAgrmt(self, value):
-		self._RpAgrmt = value if type(value) != base_types.auto else self.make_default("RpAgrmt")
+		self._RpAgrmt = value if value is not None else base_types.UninitialisedField(self, 'RpAgrmt', InternalisationData1, False)
 
 	@RpAgrmt.deleter
 	def RpAgrmt(self):
 		del self._RpAgrmt
-		self._RpAgrmt = None
+		self._RpAgrmt = base_types.UninitialisedField(self, 'RpAgrmt', InternalisationData1, False)
 
 	@property
 	def SctiesBuyOrSell(self):
@@ -52,12 +52,12 @@ class SettlementInternaliserTransactionType1(base_types._BaseFieldType):
 
 	@SctiesBuyOrSell.setter
 	def SctiesBuyOrSell(self, value):
-		self._SctiesBuyOrSell = value if type(value) != base_types.auto else self.make_default("SctiesBuyOrSell")
+		self._SctiesBuyOrSell = value if value is not None else base_types.UninitialisedField(self, 'SctiesBuyOrSell', InternalisationData1, False)
 
 	@SctiesBuyOrSell.deleter
 	def SctiesBuyOrSell(self):
 		del self._SctiesBuyOrSell
-		self._SctiesBuyOrSell = None
+		self._SctiesBuyOrSell = base_types.UninitialisedField(self, 'SctiesBuyOrSell', InternalisationData1, False)
 
 	@property
 	def SctiesLndgOrBrrwg(self):
@@ -65,12 +65,12 @@ class SettlementInternaliserTransactionType1(base_types._BaseFieldType):
 
 	@SctiesLndgOrBrrwg.setter
 	def SctiesLndgOrBrrwg(self, value):
-		self._SctiesLndgOrBrrwg = value if type(value) != base_types.auto else self.make_default("SctiesLndgOrBrrwg")
+		self._SctiesLndgOrBrrwg = value if value is not None else base_types.UninitialisedField(self, 'SctiesLndgOrBrrwg', InternalisationData1, False)
 
 	@SctiesLndgOrBrrwg.deleter
 	def SctiesLndgOrBrrwg(self):
 		del self._SctiesLndgOrBrrwg
-		self._SctiesLndgOrBrrwg = None
+		self._SctiesLndgOrBrrwg = base_types.UninitialisedField(self, 'SctiesLndgOrBrrwg', InternalisationData1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollMgmtOpr', type=InternalisationData1, min=1, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._TimeToMaturity2Choice import TimeToMaturity2Choice
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import TimeToMaturity2Choice
+from . import TrueFalseIndicator
 
 class ContractTerm6Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class ContractTerm6Choice(base_types._BaseFieldType):
 
 	@Fxd.setter
 	def Fxd(self, value):
-		self._Fxd = value if type(value) != base_types.auto else self.make_default("Fxd")
+		self._Fxd = value if value is not None else base_types.UninitialisedField(self, 'Fxd', TimeToMaturity2Choice, False)
 
 	@Fxd.deleter
 	def Fxd(self):
 		del self._Fxd
-		self._Fxd = None
+		self._Fxd = base_types.UninitialisedField(self, 'Fxd', TimeToMaturity2Choice, False)
 
 	@property
 	def Opn(self):
@@ -27,12 +27,12 @@ class ContractTerm6Choice(base_types._BaseFieldType):
 
 	@Opn.setter
 	def Opn(self, value):
-		self._Opn = value if type(value) != base_types.auto else self.make_default("Opn")
+		self._Opn = value if value is not None else base_types.UninitialisedField(self, 'Opn', TrueFalseIndicator, False)
 
 	@Opn.deleter
 	def Opn(self):
 		del self._Opn
-		self._Opn = None
+		self._Opn = base_types.UninitialisedField(self, 'Opn', TrueFalseIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Fxd', type=TimeToMaturity2Choice, min=0, max=1, mutex_group=1, array=False),

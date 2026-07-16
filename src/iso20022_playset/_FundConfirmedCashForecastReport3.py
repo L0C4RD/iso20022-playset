@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Extension1 import Extension1
-from ._Fund2 import Fund2
-from ._FundCashForecast7 import FundCashForecast7
-from ._NetCashForecast3 import NetCashForecast3
+from . import Extension1
+from . import Fund2
+from . import FundCashForecast7
+from . import NetCashForecast3
 
 class FundConfirmedCashForecastReport3(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class FundConfirmedCashForecastReport3(base_types._BaseFieldType):
 
 	@CnsltdNetCshFcst.setter
 	def CnsltdNetCshFcst(self, value):
-		self._CnsltdNetCshFcst = value if type(value) != base_types.auto else self.make_default("CnsltdNetCshFcst")
+		self._CnsltdNetCshFcst = value if value is not None else base_types.UninitialisedField(self, 'CnsltdNetCshFcst', NetCashForecast3, False)
 
 	@CnsltdNetCshFcst.deleter
 	def CnsltdNetCshFcst(self):
 		del self._CnsltdNetCshFcst
-		self._CnsltdNetCshFcst = None
+		self._CnsltdNetCshFcst = base_types.UninitialisedField(self, 'CnsltdNetCshFcst', NetCashForecast3, False)
 
 	@property
 	def FndCshFcstDtls(self):
@@ -29,12 +29,12 @@ class FundConfirmedCashForecastReport3(base_types._BaseFieldType):
 
 	@FndCshFcstDtls.setter
 	def FndCshFcstDtls(self, value):
-		self._FndCshFcstDtls = value if type(value) != base_types.auto else self.make_default("FndCshFcstDtls")
+		self._FndCshFcstDtls = value if value is not None else base_types.UninitialisedField(self, 'FndCshFcstDtls', FundCashForecast7, True)
 
 	@FndCshFcstDtls.deleter
 	def FndCshFcstDtls(self):
 		del self._FndCshFcstDtls
-		self._FndCshFcstDtls = None
+		self._FndCshFcstDtls = base_types.UninitialisedField(self, 'FndCshFcstDtls', FundCashForecast7, True)
 
 	@property
 	def FndOrSubFndDtls(self):
@@ -42,12 +42,12 @@ class FundConfirmedCashForecastReport3(base_types._BaseFieldType):
 
 	@FndOrSubFndDtls.setter
 	def FndOrSubFndDtls(self, value):
-		self._FndOrSubFndDtls = value if type(value) != base_types.auto else self.make_default("FndOrSubFndDtls")
+		self._FndOrSubFndDtls = value if value is not None else base_types.UninitialisedField(self, 'FndOrSubFndDtls', Fund2, True)
 
 	@FndOrSubFndDtls.deleter
 	def FndOrSubFndDtls(self):
 		del self._FndOrSubFndDtls
-		self._FndOrSubFndDtls = None
+		self._FndOrSubFndDtls = base_types.UninitialisedField(self, 'FndOrSubFndDtls', Fund2, True)
 
 	@property
 	def Xtnsn(self):
@@ -55,12 +55,12 @@ class FundConfirmedCashForecastReport3(base_types._BaseFieldType):
 
 	@Xtnsn.setter
 	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
+		self._Xtnsn = value if value is not None else base_types.UninitialisedField(self, 'Xtnsn', Extension1, True)
 
 	@Xtnsn.deleter
 	def Xtnsn(self):
 		del self._Xtnsn
-		self._Xtnsn = None
+		self._Xtnsn = base_types.UninitialisedField(self, 'Xtnsn', Extension1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CnsltdNetCshFcst', type=NetCashForecast3, min=0, max=1, mutex_group=None, array=False),

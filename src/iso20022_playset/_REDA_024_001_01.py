@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CollateralValueCreationRequestV01 import CollateralValueCreationRequestV01
+from . import CollateralValueCreationRequestV01
 
 class REDA_024_001_01():
 
@@ -18,12 +18,12 @@ class REDA_024_001_01():
 
 		@CollValCreReq.setter
 		def CollValCreReq(self, value):
-			self._CollValCreReq = value if type(value) != base_types.auto else self.make_default("CollValCreReq")
+			self._CollValCreReq = value if value is not None else base_types.UninitialisedField(self, 'CollValCreReq', CollateralValueCreationRequestV01, False)
 
 		@CollValCreReq.deleter
 		def CollValCreReq(self):
 			del self._CollValCreReq
-			self._CollValCreReq = None
+			self._CollValCreReq = base_types.UninitialisedField(self, 'CollValCreReq', CollateralValueCreationRequestV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='CollValCreReq', type=CollateralValueCreationRequestV01, min=1, max=1, mutex_group=None, array=False),

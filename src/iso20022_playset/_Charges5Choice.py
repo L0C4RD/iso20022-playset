@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ChargesPerTransaction5 import ChargesPerTransaction5
-from ._ChargesPerType5 import ChargesPerType5
-from ._ChargesRecord11 import ChargesRecord11
+from . import ChargesPerTransaction5
+from . import ChargesPerType5
+from . import ChargesRecord11
 
 class Charges5Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class Charges5Choice(base_types._BaseFieldType):
 
 	@PerTp.setter
 	def PerTp(self, value):
-		self._PerTp = value if type(value) != base_types.auto else self.make_default("PerTp")
+		self._PerTp = value if value is not None else base_types.UninitialisedField(self, 'PerTp', ChargesPerType5, True)
 
 	@PerTp.deleter
 	def PerTp(self):
 		del self._PerTp
-		self._PerTp = None
+		self._PerTp = base_types.UninitialisedField(self, 'PerTp', ChargesPerType5, True)
 
 	@property
 	def PerTx(self):
@@ -28,12 +28,12 @@ class Charges5Choice(base_types._BaseFieldType):
 
 	@PerTx.setter
 	def PerTx(self, value):
-		self._PerTx = value if type(value) != base_types.auto else self.make_default("PerTx")
+		self._PerTx = value if value is not None else base_types.UninitialisedField(self, 'PerTx', ChargesPerTransaction5, False)
 
 	@PerTx.deleter
 	def PerTx(self):
 		del self._PerTx
-		self._PerTx = None
+		self._PerTx = base_types.UninitialisedField(self, 'PerTx', ChargesPerTransaction5, False)
 
 	@property
 	def Sngl(self):
@@ -41,12 +41,12 @@ class Charges5Choice(base_types._BaseFieldType):
 
 	@Sngl.setter
 	def Sngl(self, value):
-		self._Sngl = value if type(value) != base_types.auto else self.make_default("Sngl")
+		self._Sngl = value if value is not None else base_types.UninitialisedField(self, 'Sngl', ChargesRecord11, False)
 
 	@Sngl.deleter
 	def Sngl(self):
 		del self._Sngl
-		self._Sngl = None
+		self._Sngl = base_types.UninitialisedField(self, 'Sngl', ChargesRecord11, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PerTp', type=ChargesPerType5, min=1, max=None, mutex_group=1, array=True),

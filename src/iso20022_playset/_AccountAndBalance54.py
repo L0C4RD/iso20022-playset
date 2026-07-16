@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BalanceFormat14Choice import BalanceFormat14Choice
-from ._RestrictedFINXMax140Text import RestrictedFINXMax140Text
-from ._RestrictedFINXMax35Text import RestrictedFINXMax35Text
+from . import BalanceFormat14Choice
+from . import RestrictedFINXMax140Text
+from . import RestrictedFINXMax35Text
 
 class AccountAndBalance54(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AccountAndBalance54(base_types._BaseFieldType):
 
 	@BlckChainAdrOrWllt.setter
 	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
+		self._BlckChainAdrOrWllt = value if value is not None else base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', RestrictedFINXMax140Text, False)
 
 	@BlckChainAdrOrWllt.deleter
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+		self._BlckChainAdrOrWllt = base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', RestrictedFINXMax140Text, False)
 
 	@property
 	def ConfdBal(self):
@@ -28,12 +28,12 @@ class AccountAndBalance54(base_types._BaseFieldType):
 
 	@ConfdBal.setter
 	def ConfdBal(self, value):
-		self._ConfdBal = value if type(value) != base_types.auto else self.make_default("ConfdBal")
+		self._ConfdBal = value if value is not None else base_types.UninitialisedField(self, 'ConfdBal', BalanceFormat14Choice, False)
 
 	@ConfdBal.deleter
 	def ConfdBal(self):
 		del self._ConfdBal
-		self._ConfdBal = None
+		self._ConfdBal = base_types.UninitialisedField(self, 'ConfdBal', BalanceFormat14Choice, False)
 
 	@property
 	def SfkpgAcct(self):
@@ -41,12 +41,12 @@ class AccountAndBalance54(base_types._BaseFieldType):
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcct', RestrictedFINXMax35Text, False)
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
-		self._SfkpgAcct = None
+		self._SfkpgAcct = base_types.UninitialisedField(self, 'SfkpgAcct', RestrictedFINXMax35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BlckChainAdrOrWllt', type=RestrictedFINXMax140Text, min=0, max=1, mutex_group=None, array=False),

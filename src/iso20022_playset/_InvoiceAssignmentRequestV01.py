@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BusinessLetter1 import BusinessLetter1
-from ._DecimalNumber import DecimalNumber
-from ._EncapsulatedBusinessMessage1 import EncapsulatedBusinessMessage1
-from ._FinancingItemList1 import FinancingItemList1
-from ._Max15NumericText import Max15NumericText
+from . import BusinessLetter1
+from . import DecimalNumber
+from . import EncapsulatedBusinessMessage1
+from . import FinancingItemList1
+from . import Max15NumericText
 
 class InvoiceAssignmentRequestV01(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class InvoiceAssignmentRequestV01(base_types._BaseFieldType):
 
 	@AssgnmtCnt.setter
 	def AssgnmtCnt(self, value):
-		self._AssgnmtCnt = value if type(value) != base_types.auto else self.make_default("AssgnmtCnt")
+		self._AssgnmtCnt = value if value is not None else base_types.UninitialisedField(self, 'AssgnmtCnt', Max15NumericText, False)
 
 	@AssgnmtCnt.deleter
 	def AssgnmtCnt(self):
 		del self._AssgnmtCnt
-		self._AssgnmtCnt = None
+		self._AssgnmtCnt = base_types.UninitialisedField(self, 'AssgnmtCnt', Max15NumericText, False)
 
 	@property
 	def AssgnmtList(self):
@@ -30,12 +30,12 @@ class InvoiceAssignmentRequestV01(base_types._BaseFieldType):
 
 	@AssgnmtList.setter
 	def AssgnmtList(self, value):
-		self._AssgnmtList = value if type(value) != base_types.auto else self.make_default("AssgnmtList")
+		self._AssgnmtList = value if value is not None else base_types.UninitialisedField(self, 'AssgnmtList', FinancingItemList1, True)
 
 	@AssgnmtList.deleter
 	def AssgnmtList(self):
 		del self._AssgnmtList
-		self._AssgnmtList = None
+		self._AssgnmtList = base_types.UninitialisedField(self, 'AssgnmtList', FinancingItemList1, True)
 
 	@property
 	def AttchdMsg(self):
@@ -43,12 +43,12 @@ class InvoiceAssignmentRequestV01(base_types._BaseFieldType):
 
 	@AttchdMsg.setter
 	def AttchdMsg(self, value):
-		self._AttchdMsg = value if type(value) != base_types.auto else self.make_default("AttchdMsg")
+		self._AttchdMsg = value if value is not None else base_types.UninitialisedField(self, 'AttchdMsg', EncapsulatedBusinessMessage1, True)
 
 	@AttchdMsg.deleter
 	def AttchdMsg(self):
 		del self._AttchdMsg
-		self._AttchdMsg = None
+		self._AttchdMsg = base_types.UninitialisedField(self, 'AttchdMsg', EncapsulatedBusinessMessage1, True)
 
 	@property
 	def CtrlSum(self):
@@ -56,12 +56,12 @@ class InvoiceAssignmentRequestV01(base_types._BaseFieldType):
 
 	@CtrlSum.setter
 	def CtrlSum(self, value):
-		self._CtrlSum = value if type(value) != base_types.auto else self.make_default("CtrlSum")
+		self._CtrlSum = value if value is not None else base_types.UninitialisedField(self, 'CtrlSum', DecimalNumber, False)
 
 	@CtrlSum.deleter
 	def CtrlSum(self):
 		del self._CtrlSum
-		self._CtrlSum = None
+		self._CtrlSum = base_types.UninitialisedField(self, 'CtrlSum', DecimalNumber, False)
 
 	@property
 	def Hdr(self):
@@ -69,12 +69,12 @@ class InvoiceAssignmentRequestV01(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', BusinessLetter1, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', BusinessLetter1, False)
 
 	@property
 	def ItmCnt(self):
@@ -82,12 +82,12 @@ class InvoiceAssignmentRequestV01(base_types._BaseFieldType):
 
 	@ItmCnt.setter
 	def ItmCnt(self, value):
-		self._ItmCnt = value if type(value) != base_types.auto else self.make_default("ItmCnt")
+		self._ItmCnt = value if value is not None else base_types.UninitialisedField(self, 'ItmCnt', Max15NumericText, False)
 
 	@ItmCnt.deleter
 	def ItmCnt(self):
 		del self._ItmCnt
-		self._ItmCnt = None
+		self._ItmCnt = base_types.UninitialisedField(self, 'ItmCnt', Max15NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AssgnmtCnt', type=Max15NumericText, min=0, max=1, mutex_group=None, array=False),

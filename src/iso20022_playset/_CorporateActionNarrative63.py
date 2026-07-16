@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RestrictedFINXMax350Text import RestrictedFINXMax350Text
-from ._RestrictedFINZMax2048Text import RestrictedFINZMax2048Text
-from ._UpdatedURLlnformation7 import UpdatedURLlnformation7
+from . import RestrictedFINXMax350Text
+from . import RestrictedFINZMax2048Text
+from . import UpdatedURLlnformation7
 
 class CorporateActionNarrative63(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class CorporateActionNarrative63(base_types._BaseFieldType):
 
 	@EvtPrcgWebSiteAdr.setter
 	def EvtPrcgWebSiteAdr(self, value):
-		self._EvtPrcgWebSiteAdr = value if type(value) != base_types.auto else self.make_default("EvtPrcgWebSiteAdr")
+		self._EvtPrcgWebSiteAdr = value if value is not None else base_types.UninitialisedField(self, 'EvtPrcgWebSiteAdr', RestrictedFINZMax2048Text, False)
 
 	@EvtPrcgWebSiteAdr.deleter
 	def EvtPrcgWebSiteAdr(self):
 		del self._EvtPrcgWebSiteAdr
-		self._EvtPrcgWebSiteAdr = None
+		self._EvtPrcgWebSiteAdr = base_types.UninitialisedField(self, 'EvtPrcgWebSiteAdr', RestrictedFINZMax2048Text, False)
 
 	@property
 	def NewCpnyNm(self):
@@ -28,12 +28,12 @@ class CorporateActionNarrative63(base_types._BaseFieldType):
 
 	@NewCpnyNm.setter
 	def NewCpnyNm(self, value):
-		self._NewCpnyNm = value if type(value) != base_types.auto else self.make_default("NewCpnyNm")
+		self._NewCpnyNm = value if value is not None else base_types.UninitialisedField(self, 'NewCpnyNm', RestrictedFINXMax350Text, False)
 
 	@NewCpnyNm.deleter
 	def NewCpnyNm(self):
 		del self._NewCpnyNm
-		self._NewCpnyNm = None
+		self._NewCpnyNm = base_types.UninitialisedField(self, 'NewCpnyNm', RestrictedFINXMax350Text, False)
 
 	@property
 	def Offerr(self):
@@ -41,12 +41,12 @@ class CorporateActionNarrative63(base_types._BaseFieldType):
 
 	@Offerr.setter
 	def Offerr(self, value):
-		self._Offerr = value if type(value) != base_types.auto else self.make_default("Offerr")
+		self._Offerr = value if value is not None else base_types.UninitialisedField(self, 'Offerr', RestrictedFINXMax350Text, True)
 
 	@Offerr.deleter
 	def Offerr(self):
 		del self._Offerr
-		self._Offerr = None
+		self._Offerr = base_types.UninitialisedField(self, 'Offerr', RestrictedFINXMax350Text, True)
 
 	@property
 	def URLAdr(self):
@@ -54,12 +54,12 @@ class CorporateActionNarrative63(base_types._BaseFieldType):
 
 	@URLAdr.setter
 	def URLAdr(self, value):
-		self._URLAdr = value if type(value) != base_types.auto else self.make_default("URLAdr")
+		self._URLAdr = value if value is not None else base_types.UninitialisedField(self, 'URLAdr', UpdatedURLlnformation7, True)
 
 	@URLAdr.deleter
 	def URLAdr(self):
 		del self._URLAdr
-		self._URLAdr = None
+		self._URLAdr = base_types.UninitialisedField(self, 'URLAdr', UpdatedURLlnformation7, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EvtPrcgWebSiteAdr', type=RestrictedFINZMax2048Text, min=0, max=1, mutex_group=None, array=False),

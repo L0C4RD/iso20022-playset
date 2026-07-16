@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CardSecurityInformation1 import CardSecurityInformation1
-from ._Exact3NumericText import Exact3NumericText
-from ._ISOYearMonth import ISOYearMonth
-from ._Min2Max3NumericText import Min2Max3NumericText
-from ._Min8Max28NumericText import Min8Max28NumericText
-from ._TrackData1 import TrackData1
+from . import CardSecurityInformation1
+from . import Exact3NumericText
+from . import ISOYearMonth
+from . import Min2Max3NumericText
+from . import Min8Max28NumericText
+from . import TrackData1
 
 class PlainCardData1(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class PlainCardData1(base_types._BaseFieldType):
 
 	@CardSctyCd.setter
 	def CardSctyCd(self, value):
-		self._CardSctyCd = value if type(value) != base_types.auto else self.make_default("CardSctyCd")
+		self._CardSctyCd = value if value is not None else base_types.UninitialisedField(self, 'CardSctyCd', CardSecurityInformation1, False)
 
 	@CardSctyCd.deleter
 	def CardSctyCd(self):
 		del self._CardSctyCd
-		self._CardSctyCd = None
+		self._CardSctyCd = base_types.UninitialisedField(self, 'CardSctyCd', CardSecurityInformation1, False)
 
 	@property
 	def CardSeqNb(self):
@@ -31,12 +31,12 @@ class PlainCardData1(base_types._BaseFieldType):
 
 	@CardSeqNb.setter
 	def CardSeqNb(self, value):
-		self._CardSeqNb = value if type(value) != base_types.auto else self.make_default("CardSeqNb")
+		self._CardSeqNb = value if value is not None else base_types.UninitialisedField(self, 'CardSeqNb', Min2Max3NumericText, False)
 
 	@CardSeqNb.deleter
 	def CardSeqNb(self):
 		del self._CardSeqNb
-		self._CardSeqNb = None
+		self._CardSeqNb = base_types.UninitialisedField(self, 'CardSeqNb', Min2Max3NumericText, False)
 
 	@property
 	def FctvDt(self):
@@ -44,12 +44,12 @@ class PlainCardData1(base_types._BaseFieldType):
 
 	@FctvDt.setter
 	def FctvDt(self, value):
-		self._FctvDt = value if type(value) != base_types.auto else self.make_default("FctvDt")
+		self._FctvDt = value if value is not None else base_types.UninitialisedField(self, 'FctvDt', ISOYearMonth, False)
 
 	@FctvDt.deleter
 	def FctvDt(self):
 		del self._FctvDt
-		self._FctvDt = None
+		self._FctvDt = base_types.UninitialisedField(self, 'FctvDt', ISOYearMonth, False)
 
 	@property
 	def PAN(self):
@@ -57,12 +57,12 @@ class PlainCardData1(base_types._BaseFieldType):
 
 	@PAN.setter
 	def PAN(self, value):
-		self._PAN = value if type(value) != base_types.auto else self.make_default("PAN")
+		self._PAN = value if value is not None else base_types.UninitialisedField(self, 'PAN', Min8Max28NumericText, False)
 
 	@PAN.deleter
 	def PAN(self):
 		del self._PAN
-		self._PAN = None
+		self._PAN = base_types.UninitialisedField(self, 'PAN', Min8Max28NumericText, False)
 
 	@property
 	def SvcCd(self):
@@ -70,12 +70,12 @@ class PlainCardData1(base_types._BaseFieldType):
 
 	@SvcCd.setter
 	def SvcCd(self, value):
-		self._SvcCd = value if type(value) != base_types.auto else self.make_default("SvcCd")
+		self._SvcCd = value if value is not None else base_types.UninitialisedField(self, 'SvcCd', Exact3NumericText, False)
 
 	@SvcCd.deleter
 	def SvcCd(self):
 		del self._SvcCd
-		self._SvcCd = None
+		self._SvcCd = base_types.UninitialisedField(self, 'SvcCd', Exact3NumericText, False)
 
 	@property
 	def TrckData(self):
@@ -83,12 +83,12 @@ class PlainCardData1(base_types._BaseFieldType):
 
 	@TrckData.setter
 	def TrckData(self, value):
-		self._TrckData = value if type(value) != base_types.auto else self.make_default("TrckData")
+		self._TrckData = value if value is not None else base_types.UninitialisedField(self, 'TrckData', TrackData1, True)
 
 	@TrckData.deleter
 	def TrckData(self):
 		del self._TrckData
-		self._TrckData = None
+		self._TrckData = base_types.UninitialisedField(self, 'TrckData', TrackData1, True)
 
 	@property
 	def XpryDt(self):
@@ -96,12 +96,12 @@ class PlainCardData1(base_types._BaseFieldType):
 
 	@XpryDt.setter
 	def XpryDt(self, value):
-		self._XpryDt = value if type(value) != base_types.auto else self.make_default("XpryDt")
+		self._XpryDt = value if value is not None else base_types.UninitialisedField(self, 'XpryDt', ISOYearMonth, False)
 
 	@XpryDt.deleter
 	def XpryDt(self):
 		del self._XpryDt
-		self._XpryDt = None
+		self._XpryDt = base_types.UninitialisedField(self, 'XpryDt', ISOYearMonth, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CardSctyCd', type=CardSecurityInformation1, min=0, max=1, mutex_group=None, array=False),

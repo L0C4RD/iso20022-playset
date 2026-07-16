@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MandateReason1Choice import MandateReason1Choice
-from ._Max105Text import Max105Text
-from ._YesNoIndicator import YesNoIndicator
+from . import MandateReason1Choice
+from . import Max105Text
+from . import YesNoIndicator
 
 class AcceptanceResult6(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AcceptanceResult6(base_types._BaseFieldType):
 
 	@Accptd.setter
 	def Accptd(self, value):
-		self._Accptd = value if type(value) != base_types.auto else self.make_default("Accptd")
+		self._Accptd = value if value is not None else base_types.UninitialisedField(self, 'Accptd', YesNoIndicator, False)
 
 	@Accptd.deleter
 	def Accptd(self):
 		del self._Accptd
-		self._Accptd = None
+		self._Accptd = base_types.UninitialisedField(self, 'Accptd', YesNoIndicator, False)
 
 	@property
 	def AddtlRjctRsnInf(self):
@@ -28,12 +28,12 @@ class AcceptanceResult6(base_types._BaseFieldType):
 
 	@AddtlRjctRsnInf.setter
 	def AddtlRjctRsnInf(self, value):
-		self._AddtlRjctRsnInf = value if type(value) != base_types.auto else self.make_default("AddtlRjctRsnInf")
+		self._AddtlRjctRsnInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlRjctRsnInf', Max105Text, True)
 
 	@AddtlRjctRsnInf.deleter
 	def AddtlRjctRsnInf(self):
 		del self._AddtlRjctRsnInf
-		self._AddtlRjctRsnInf = None
+		self._AddtlRjctRsnInf = base_types.UninitialisedField(self, 'AddtlRjctRsnInf', Max105Text, True)
 
 	@property
 	def RjctRsn(self):
@@ -41,12 +41,12 @@ class AcceptanceResult6(base_types._BaseFieldType):
 
 	@RjctRsn.setter
 	def RjctRsn(self, value):
-		self._RjctRsn = value if type(value) != base_types.auto else self.make_default("RjctRsn")
+		self._RjctRsn = value if value is not None else base_types.UninitialisedField(self, 'RjctRsn', MandateReason1Choice, False)
 
 	@RjctRsn.deleter
 	def RjctRsn(self):
 		del self._RjctRsn
-		self._RjctRsn = None
+		self._RjctRsn = base_types.UninitialisedField(self, 'RjctRsn', MandateReason1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Accptd', type=YesNoIndicator, min=1, max=1, mutex_group=None, array=False),

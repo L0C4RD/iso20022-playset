@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PositiveNumber import PositiveNumber
-from ._SearchCriteria1 import SearchCriteria1
-from ._SearchOutputOrder1 import SearchOutputOrder1
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import PositiveNumber
+from . import SearchCriteria1
+from . import SearchOutputOrder1
+from . import TrueFalseIndicator
 
 class ReportTransactionRequest1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ReportTransactionRequest1(base_types._BaseFieldType):
 
 	@BlckStart.setter
 	def BlckStart(self, value):
-		self._BlckStart = value if type(value) != base_types.auto else self.make_default("BlckStart")
+		self._BlckStart = value if value is not None else base_types.UninitialisedField(self, 'BlckStart', PositiveNumber, False)
 
 	@BlckStart.deleter
 	def BlckStart(self):
 		del self._BlckStart
-		self._BlckStart = None
+		self._BlckStart = base_types.UninitialisedField(self, 'BlckStart', PositiveNumber, False)
 
 	@property
 	def BlckStop(self):
@@ -29,12 +29,12 @@ class ReportTransactionRequest1(base_types._BaseFieldType):
 
 	@BlckStop.setter
 	def BlckStop(self, value):
-		self._BlckStop = value if type(value) != base_types.auto else self.make_default("BlckStop")
+		self._BlckStop = value if value is not None else base_types.UninitialisedField(self, 'BlckStop', PositiveNumber, False)
 
 	@BlckStop.deleter
 	def BlckStop(self):
 		del self._BlckStop
-		self._BlckStop = None
+		self._BlckStop = base_types.UninitialisedField(self, 'BlckStop', PositiveNumber, False)
 
 	@property
 	def DscndgOrdr(self):
@@ -42,12 +42,12 @@ class ReportTransactionRequest1(base_types._BaseFieldType):
 
 	@DscndgOrdr.setter
 	def DscndgOrdr(self, value):
-		self._DscndgOrdr = value if type(value) != base_types.auto else self.make_default("DscndgOrdr")
+		self._DscndgOrdr = value if value is not None else base_types.UninitialisedField(self, 'DscndgOrdr', TrueFalseIndicator, False)
 
 	@DscndgOrdr.deleter
 	def DscndgOrdr(self):
 		del self._DscndgOrdr
-		self._DscndgOrdr = None
+		self._DscndgOrdr = base_types.UninitialisedField(self, 'DscndgOrdr', TrueFalseIndicator, False)
 
 	@property
 	def SchCrit(self):
@@ -55,12 +55,12 @@ class ReportTransactionRequest1(base_types._BaseFieldType):
 
 	@SchCrit.setter
 	def SchCrit(self, value):
-		self._SchCrit = value if type(value) != base_types.auto else self.make_default("SchCrit")
+		self._SchCrit = value if value is not None else base_types.UninitialisedField(self, 'SchCrit', SearchCriteria1, True)
 
 	@SchCrit.deleter
 	def SchCrit(self):
 		del self._SchCrit
-		self._SchCrit = None
+		self._SchCrit = base_types.UninitialisedField(self, 'SchCrit', SearchCriteria1, True)
 
 	@property
 	def SchOutptOrdr(self):
@@ -68,12 +68,12 @@ class ReportTransactionRequest1(base_types._BaseFieldType):
 
 	@SchOutptOrdr.setter
 	def SchOutptOrdr(self, value):
-		self._SchOutptOrdr = value if type(value) != base_types.auto else self.make_default("SchOutptOrdr")
+		self._SchOutptOrdr = value if value is not None else base_types.UninitialisedField(self, 'SchOutptOrdr', SearchOutputOrder1, False)
 
 	@SchOutptOrdr.deleter
 	def SchOutptOrdr(self):
 		del self._SchOutptOrdr
-		self._SchOutptOrdr = None
+		self._SchOutptOrdr = base_types.UninitialisedField(self, 'SchOutptOrdr', SearchOutputOrder1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BlckStart', type=PositiveNumber, min=0, max=1, mutex_group=None, array=False),

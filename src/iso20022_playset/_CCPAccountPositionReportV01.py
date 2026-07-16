@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PositionAccount2 import PositionAccount2
-from ._SupplementaryData1 import SupplementaryData1
+from . import PositionAccount2
+from . import SupplementaryData1
 
 class CCPAccountPositionReportV01(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CCPAccountPositionReportV01(base_types._BaseFieldType):
 
 	@Prtfl.setter
 	def Prtfl(self, value):
-		self._Prtfl = value if type(value) != base_types.auto else self.make_default("Prtfl")
+		self._Prtfl = value if value is not None else base_types.UninitialisedField(self, 'Prtfl', PositionAccount2, True)
 
 	@Prtfl.deleter
 	def Prtfl(self):
 		del self._Prtfl
-		self._Prtfl = None
+		self._Prtfl = base_types.UninitialisedField(self, 'Prtfl', PositionAccount2, True)
 
 	@property
 	def SplmtryData(self):
@@ -27,12 +27,12 @@ class CCPAccountPositionReportV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Prtfl', type=PositionAccount2, min=1, max=None, mutex_group=None, array=True),

@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LanguageCode import LanguageCode
-from ._Max1025Text import Max1025Text
-from ._ResourceType1Code import ResourceType1Code
-from ._SoundFormat1Code import SoundFormat1Code
+from . import LanguageCode
+from . import Max1025Text
+from . import ResourceType1Code
+from . import SoundFormat1Code
 
 class ResourceContent1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ResourceContent1(base_types._BaseFieldType):
 
 	@Lang.setter
 	def Lang(self, value):
-		self._Lang = value if type(value) != base_types.auto else self.make_default("Lang")
+		self._Lang = value if value is not None else base_types.UninitialisedField(self, 'Lang', LanguageCode, False)
 
 	@Lang.deleter
 	def Lang(self):
 		del self._Lang
-		self._Lang = None
+		self._Lang = base_types.UninitialisedField(self, 'Lang', LanguageCode, False)
 
 	@property
 	def RsrcFrmt(self):
@@ -29,12 +29,12 @@ class ResourceContent1(base_types._BaseFieldType):
 
 	@RsrcFrmt.setter
 	def RsrcFrmt(self, value):
-		self._RsrcFrmt = value if type(value) != base_types.auto else self.make_default("RsrcFrmt")
+		self._RsrcFrmt = value if value is not None else base_types.UninitialisedField(self, 'RsrcFrmt', SoundFormat1Code, False)
 
 	@RsrcFrmt.deleter
 	def RsrcFrmt(self):
 		del self._RsrcFrmt
-		self._RsrcFrmt = None
+		self._RsrcFrmt = base_types.UninitialisedField(self, 'RsrcFrmt', SoundFormat1Code, False)
 
 	@property
 	def RsrcRef(self):
@@ -42,12 +42,12 @@ class ResourceContent1(base_types._BaseFieldType):
 
 	@RsrcRef.setter
 	def RsrcRef(self, value):
-		self._RsrcRef = value if type(value) != base_types.auto else self.make_default("RsrcRef")
+		self._RsrcRef = value if value is not None else base_types.UninitialisedField(self, 'RsrcRef', Max1025Text, False)
 
 	@RsrcRef.deleter
 	def RsrcRef(self):
 		del self._RsrcRef
-		self._RsrcRef = None
+		self._RsrcRef = base_types.UninitialisedField(self, 'RsrcRef', Max1025Text, False)
 
 	@property
 	def RsrcTp(self):
@@ -55,12 +55,12 @@ class ResourceContent1(base_types._BaseFieldType):
 
 	@RsrcTp.setter
 	def RsrcTp(self, value):
-		self._RsrcTp = value if type(value) != base_types.auto else self.make_default("RsrcTp")
+		self._RsrcTp = value if value is not None else base_types.UninitialisedField(self, 'RsrcTp', ResourceType1Code, False)
 
 	@RsrcTp.deleter
 	def RsrcTp(self):
 		del self._RsrcTp
-		self._RsrcTp = None
+		self._RsrcTp = base_types.UninitialisedField(self, 'RsrcTp', ResourceType1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Lang', type=LanguageCode, min=0, max=1, mutex_group=None, array=False),

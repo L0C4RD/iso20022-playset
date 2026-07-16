@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._DateQuarter1Choice import DateQuarter1Choice
+from . import AdditionalInformation15
+from . import DateQuarter1Choice
 
 class Tax36(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Tax36(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@property
 	def DtOrPrd(self):
@@ -27,12 +27,12 @@ class Tax36(base_types._BaseFieldType):
 
 	@DtOrPrd.setter
 	def DtOrPrd(self, value):
-		self._DtOrPrd = value if type(value) != base_types.auto else self.make_default("DtOrPrd")
+		self._DtOrPrd = value if value is not None else base_types.UninitialisedField(self, 'DtOrPrd', DateQuarter1Choice, False)
 
 	@DtOrPrd.deleter
 	def DtOrPrd(self):
 		del self._DtOrPrd
-		self._DtOrPrd = None
+		self._DtOrPrd = base_types.UninitialisedField(self, 'DtOrPrd', DateQuarter1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),

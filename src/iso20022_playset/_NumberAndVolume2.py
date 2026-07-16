@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._DecimalNumberFraction5 import DecimalNumberFraction5
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import DecimalNumberFraction5
 
 class NumberAndVolume2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class NumberAndVolume2(base_types._BaseFieldType):
 
 	@Nb.setter
 	def Nb(self, value):
-		self._Nb = value if type(value) != base_types.auto else self.make_default("Nb")
+		self._Nb = value if value is not None else base_types.UninitialisedField(self, 'Nb', DecimalNumberFraction5, False)
 
 	@Nb.deleter
 	def Nb(self):
 		del self._Nb
-		self._Nb = None
+		self._Nb = base_types.UninitialisedField(self, 'Nb', DecimalNumberFraction5, False)
 
 	@property
 	def Vol(self):
@@ -27,12 +27,12 @@ class NumberAndVolume2(base_types._BaseFieldType):
 
 	@Vol.setter
 	def Vol(self, value):
-		self._Vol = value if type(value) != base_types.auto else self.make_default("Vol")
+		self._Vol = value if value is not None else base_types.UninitialisedField(self, 'Vol', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@Vol.deleter
 	def Vol(self):
 		del self._Vol
-		self._Vol = None
+		self._Vol = base_types.UninitialisedField(self, 'Vol', ActiveOrHistoricCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Nb', type=DecimalNumberFraction5, min=1, max=1, mutex_group=None, array=False),

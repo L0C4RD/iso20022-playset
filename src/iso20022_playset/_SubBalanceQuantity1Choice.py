@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentQuantityChoice import FinancialInstrumentQuantityChoice
-from ._GenericIdentification6 import GenericIdentification6
-from ._QuantityAndAvailability import QuantityAndAvailability
+from . import FinancialInstrumentQuantityChoice
+from . import GenericIdentification6
+from . import QuantityAndAvailability
 
 class SubBalanceQuantity1Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class SubBalanceQuantity1Choice(base_types._BaseFieldType):
 
 	@Qty.setter
 	def Qty(self, value):
-		self._Qty = value if type(value) != base_types.auto else self.make_default("Qty")
+		self._Qty = value if value is not None else base_types.UninitialisedField(self, 'Qty', FinancialInstrumentQuantityChoice, False)
 
 	@Qty.deleter
 	def Qty(self):
 		del self._Qty
-		self._Qty = None
+		self._Qty = base_types.UninitialisedField(self, 'Qty', FinancialInstrumentQuantityChoice, False)
 
 	@property
 	def QtyAndAvlbty(self):
@@ -28,12 +28,12 @@ class SubBalanceQuantity1Choice(base_types._BaseFieldType):
 
 	@QtyAndAvlbty.setter
 	def QtyAndAvlbty(self, value):
-		self._QtyAndAvlbty = value if type(value) != base_types.auto else self.make_default("QtyAndAvlbty")
+		self._QtyAndAvlbty = value if value is not None else base_types.UninitialisedField(self, 'QtyAndAvlbty', QuantityAndAvailability, False)
 
 	@QtyAndAvlbty.deleter
 	def QtyAndAvlbty(self):
 		del self._QtyAndAvlbty
-		self._QtyAndAvlbty = None
+		self._QtyAndAvlbty = base_types.UninitialisedField(self, 'QtyAndAvlbty', QuantityAndAvailability, False)
 
 	@property
 	def QtyAsDSS(self):
@@ -41,12 +41,12 @@ class SubBalanceQuantity1Choice(base_types._BaseFieldType):
 
 	@QtyAsDSS.setter
 	def QtyAsDSS(self, value):
-		self._QtyAsDSS = value if type(value) != base_types.auto else self.make_default("QtyAsDSS")
+		self._QtyAsDSS = value if value is not None else base_types.UninitialisedField(self, 'QtyAsDSS', GenericIdentification6, False)
 
 	@QtyAsDSS.deleter
 	def QtyAsDSS(self):
 		del self._QtyAsDSS
-		self._QtyAsDSS = None
+		self._QtyAsDSS = base_types.UninitialisedField(self, 'QtyAsDSS', GenericIdentification6, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Qty', type=FinancialInstrumentQuantityChoice, min=0, max=1, mutex_group=1, array=False),

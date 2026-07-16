@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._CountryCode import CountryCode
-from ._ISODate import ISODate
-from ._Max10Text import Max10Text
-from ._Max35Text import Max35Text
-from ._RegulatoryReportingType1Choice import RegulatoryReportingType1Choice
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import CountryCode
+from . import ISODate
+from . import Max10Text
+from . import Max35Text
+from . import RegulatoryReportingType1Choice
 
 class StructuredRegulatoryReporting5(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class StructuredRegulatoryReporting5(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def Ctry(self):
@@ -31,12 +31,12 @@ class StructuredRegulatoryReporting5(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@property
 	def Dt(self):
@@ -44,12 +44,12 @@ class StructuredRegulatoryReporting5(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', ISODate, False)
 
 	@property
 	def Inf(self):
@@ -57,12 +57,12 @@ class StructuredRegulatoryReporting5(base_types._BaseFieldType):
 
 	@Inf.setter
 	def Inf(self, value):
-		self._Inf = value if type(value) != base_types.auto else self.make_default("Inf")
+		self._Inf = value if value is not None else base_types.UninitialisedField(self, 'Inf', Max35Text, True)
 
 	@Inf.deleter
 	def Inf(self):
 		del self._Inf
-		self._Inf = None
+		self._Inf = base_types.UninitialisedField(self, 'Inf', Max35Text, True)
 
 	@property
 	def RptgCd(self):
@@ -70,12 +70,12 @@ class StructuredRegulatoryReporting5(base_types._BaseFieldType):
 
 	@RptgCd.setter
 	def RptgCd(self, value):
-		self._RptgCd = value if type(value) != base_types.auto else self.make_default("RptgCd")
+		self._RptgCd = value if value is not None else base_types.UninitialisedField(self, 'RptgCd', Max10Text, False)
 
 	@RptgCd.deleter
 	def RptgCd(self):
 		del self._RptgCd
-		self._RptgCd = None
+		self._RptgCd = base_types.UninitialisedField(self, 'RptgCd', Max10Text, False)
 
 	@property
 	def Tp(self):
@@ -83,12 +83,12 @@ class StructuredRegulatoryReporting5(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', RegulatoryReportingType1Choice, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', RegulatoryReportingType1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Amt', type=ActiveOrHistoricCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

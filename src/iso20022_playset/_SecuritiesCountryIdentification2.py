@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CountryCodeAndName3 import CountryCodeAndName3
-from ._ISODate import ISODate
-from ._Modification1Code import Modification1Code
-from ._Period4Choice import Period4Choice
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import CountryCodeAndName3
+from . import ISODate
+from . import Modification1Code
+from . import Period4Choice
+from . import TrueFalseIndicator
 
 class SecuritiesCountryIdentification2(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class SecuritiesCountryIdentification2(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', CountryCodeAndName3, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', CountryCodeAndName3, False)
 
 	@property
 	def EEACtry(self):
@@ -30,12 +30,12 @@ class SecuritiesCountryIdentification2(base_types._BaseFieldType):
 
 	@EEACtry.setter
 	def EEACtry(self, value):
-		self._EEACtry = value if type(value) != base_types.auto else self.make_default("EEACtry")
+		self._EEACtry = value if value is not None else base_types.UninitialisedField(self, 'EEACtry', TrueFalseIndicator, False)
 
 	@EEACtry.deleter
 	def EEACtry(self):
 		del self._EEACtry
-		self._EEACtry = None
+		self._EEACtry = base_types.UninitialisedField(self, 'EEACtry', TrueFalseIndicator, False)
 
 	@property
 	def LastUpdtd(self):
@@ -43,12 +43,12 @@ class SecuritiesCountryIdentification2(base_types._BaseFieldType):
 
 	@LastUpdtd.setter
 	def LastUpdtd(self, value):
-		self._LastUpdtd = value if type(value) != base_types.auto else self.make_default("LastUpdtd")
+		self._LastUpdtd = value if value is not None else base_types.UninitialisedField(self, 'LastUpdtd', ISODate, False)
 
 	@LastUpdtd.deleter
 	def LastUpdtd(self):
 		del self._LastUpdtd
-		self._LastUpdtd = None
+		self._LastUpdtd = base_types.UninitialisedField(self, 'LastUpdtd', ISODate, False)
 
 	@property
 	def Mod(self):
@@ -56,12 +56,12 @@ class SecuritiesCountryIdentification2(base_types._BaseFieldType):
 
 	@Mod.setter
 	def Mod(self, value):
-		self._Mod = value if type(value) != base_types.auto else self.make_default("Mod")
+		self._Mod = value if value is not None else base_types.UninitialisedField(self, 'Mod', Modification1Code, False)
 
 	@Mod.deleter
 	def Mod(self):
 		del self._Mod
-		self._Mod = None
+		self._Mod = base_types.UninitialisedField(self, 'Mod', Modification1Code, False)
 
 	@property
 	def VldtyPrd(self):
@@ -69,12 +69,12 @@ class SecuritiesCountryIdentification2(base_types._BaseFieldType):
 
 	@VldtyPrd.setter
 	def VldtyPrd(self, value):
-		self._VldtyPrd = value if type(value) != base_types.auto else self.make_default("VldtyPrd")
+		self._VldtyPrd = value if value is not None else base_types.UninitialisedField(self, 'VldtyPrd', Period4Choice, False)
 
 	@VldtyPrd.deleter
 	def VldtyPrd(self):
 		del self._VldtyPrd
-		self._VldtyPrd = None
+		self._VldtyPrd = base_types.UninitialisedField(self, 'VldtyPrd', Period4Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Ctry', type=CountryCodeAndName3, min=1, max=1, mutex_group=None, array=False),

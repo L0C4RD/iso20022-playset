@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CustomerOrder1 import CustomerOrder1
-from ._LoyaltyAccount3 import LoyaltyAccount3
-from ._LoyaltyAmount1 import LoyaltyAmount1
+from . import CustomerOrder1
+from . import LoyaltyAccount3
+from . import LoyaltyAmount1
 
 class LoyaltyRequestData3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class LoyaltyRequestData3(base_types._BaseFieldType):
 
 	@Acct.setter
 	def Acct(self, value):
-		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
+		self._Acct = value if value is not None else base_types.UninitialisedField(self, 'Acct', LoyaltyAccount3, False)
 
 	@Acct.deleter
 	def Acct(self):
 		del self._Acct
-		self._Acct = None
+		self._Acct = base_types.UninitialisedField(self, 'Acct', LoyaltyAccount3, False)
 
 	@property
 	def Amt(self):
@@ -28,12 +28,12 @@ class LoyaltyRequestData3(base_types._BaseFieldType):
 
 	@Amt.setter
 	def Amt(self, value):
-		self._Amt = value if type(value) != base_types.auto else self.make_default("Amt")
+		self._Amt = value if value is not None else base_types.UninitialisedField(self, 'Amt', LoyaltyAmount1, False)
 
 	@Amt.deleter
 	def Amt(self):
 		del self._Amt
-		self._Amt = None
+		self._Amt = base_types.UninitialisedField(self, 'Amt', LoyaltyAmount1, False)
 
 	@property
 	def CstmrOrdr(self):
@@ -41,12 +41,12 @@ class LoyaltyRequestData3(base_types._BaseFieldType):
 
 	@CstmrOrdr.setter
 	def CstmrOrdr(self, value):
-		self._CstmrOrdr = value if type(value) != base_types.auto else self.make_default("CstmrOrdr")
+		self._CstmrOrdr = value if value is not None else base_types.UninitialisedField(self, 'CstmrOrdr', CustomerOrder1, False)
 
 	@CstmrOrdr.deleter
 	def CstmrOrdr(self):
 		del self._CstmrOrdr
-		self._CstmrOrdr = None
+		self._CstmrOrdr = base_types.UninitialisedField(self, 'CstmrOrdr', CustomerOrder1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acct', type=LoyaltyAccount3, min=0, max=1, mutex_group=None, array=False),

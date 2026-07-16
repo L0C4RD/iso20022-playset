@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ShareholdersIdentificationDisclosureRequestCancellationAdviceV01 import ShareholdersIdentificationDisclosureRequestCancellationAdviceV01
+from . import ShareholdersIdentificationDisclosureRequestCancellationAdviceV01
 
 class SEEV_046_001_01():
 
@@ -18,12 +18,12 @@ class SEEV_046_001_01():
 
 		@ShrhldrsIdDsclsrReqCxlAdvc.setter
 		def ShrhldrsIdDsclsrReqCxlAdvc(self, value):
-			self._ShrhldrsIdDsclsrReqCxlAdvc = value if type(value) != base_types.auto else self.make_default("ShrhldrsIdDsclsrReqCxlAdvc")
+			self._ShrhldrsIdDsclsrReqCxlAdvc = value if value is not None else base_types.UninitialisedField(self, 'ShrhldrsIdDsclsrReqCxlAdvc', ShareholdersIdentificationDisclosureRequestCancellationAdviceV01, False)
 
 		@ShrhldrsIdDsclsrReqCxlAdvc.deleter
 		def ShrhldrsIdDsclsrReqCxlAdvc(self):
 			del self._ShrhldrsIdDsclsrReqCxlAdvc
-			self._ShrhldrsIdDsclsrReqCxlAdvc = None
+			self._ShrhldrsIdDsclsrReqCxlAdvc = base_types.UninitialisedField(self, 'ShrhldrsIdDsclsrReqCxlAdvc', ShareholdersIdentificationDisclosureRequestCancellationAdviceV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='ShrhldrsIdDsclsrReqCxlAdvc', type=ShareholdersIdentificationDisclosureRequestCancellationAdviceV01, min=1, max=1, mutex_group=None, array=False),

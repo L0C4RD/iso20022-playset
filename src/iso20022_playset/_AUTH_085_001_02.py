@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SecuritiesFinancingReportingMarginDataTransactionStateReportV02 import SecuritiesFinancingReportingMarginDataTransactionStateReportV02
+from . import SecuritiesFinancingReportingMarginDataTransactionStateReportV02
 
 class AUTH_085_001_02():
 
@@ -18,12 +18,12 @@ class AUTH_085_001_02():
 
 		@SctiesFincgRptgMrgnDataTxStatRpt.setter
 		def SctiesFincgRptgMrgnDataTxStatRpt(self, value):
-			self._SctiesFincgRptgMrgnDataTxStatRpt = value if type(value) != base_types.auto else self.make_default("SctiesFincgRptgMrgnDataTxStatRpt")
+			self._SctiesFincgRptgMrgnDataTxStatRpt = value if value is not None else base_types.UninitialisedField(self, 'SctiesFincgRptgMrgnDataTxStatRpt', SecuritiesFinancingReportingMarginDataTransactionStateReportV02, False)
 
 		@SctiesFincgRptgMrgnDataTxStatRpt.deleter
 		def SctiesFincgRptgMrgnDataTxStatRpt(self):
 			del self._SctiesFincgRptgMrgnDataTxStatRpt
-			self._SctiesFincgRptgMrgnDataTxStatRpt = None
+			self._SctiesFincgRptgMrgnDataTxStatRpt = base_types.UninitialisedField(self, 'SctiesFincgRptgMrgnDataTxStatRpt', SecuritiesFinancingReportingMarginDataTransactionStateReportV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='SctiesFincgRptgMrgnDataTxStatRpt', type=SecuritiesFinancingReportingMarginDataTransactionStateReportV02, min=1, max=1, mutex_group=None, array=False),

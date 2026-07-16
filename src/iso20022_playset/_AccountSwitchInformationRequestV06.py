@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountSwitchDetails1 import AccountSwitchDetails1
-from ._BalanceTransfer7 import BalanceTransfer7
-from ._CashAccount43 import CashAccount43
-from ._MessageIdentification1 import MessageIdentification1
-from ._NewAccount4 import NewAccount4
-from ._SupplementaryData1 import SupplementaryData1
+from . import AccountSwitchDetails1
+from . import BalanceTransfer7
+from . import CashAccount43
+from . import MessageIdentification1
+from . import NewAccount4
+from . import SupplementaryData1
 
 class AccountSwitchInformationRequestV06(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class AccountSwitchInformationRequestV06(base_types._BaseFieldType):
 
 	@AcctSwtchDtls.setter
 	def AcctSwtchDtls(self, value):
-		self._AcctSwtchDtls = value if type(value) != base_types.auto else self.make_default("AcctSwtchDtls")
+		self._AcctSwtchDtls = value if value is not None else base_types.UninitialisedField(self, 'AcctSwtchDtls', AccountSwitchDetails1, False)
 
 	@AcctSwtchDtls.deleter
 	def AcctSwtchDtls(self):
 		del self._AcctSwtchDtls
-		self._AcctSwtchDtls = None
+		self._AcctSwtchDtls = base_types.UninitialisedField(self, 'AcctSwtchDtls', AccountSwitchDetails1, False)
 
 	@property
 	def BalTrf(self):
@@ -31,12 +31,12 @@ class AccountSwitchInformationRequestV06(base_types._BaseFieldType):
 
 	@BalTrf.setter
 	def BalTrf(self, value):
-		self._BalTrf = value if type(value) != base_types.auto else self.make_default("BalTrf")
+		self._BalTrf = value if value is not None else base_types.UninitialisedField(self, 'BalTrf', BalanceTransfer7, True)
 
 	@BalTrf.deleter
 	def BalTrf(self):
 		del self._BalTrf
-		self._BalTrf = None
+		self._BalTrf = base_types.UninitialisedField(self, 'BalTrf', BalanceTransfer7, True)
 
 	@property
 	def MsgId(self):
@@ -44,12 +44,12 @@ class AccountSwitchInformationRequestV06(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@property
 	def NewAcct(self):
@@ -57,12 +57,12 @@ class AccountSwitchInformationRequestV06(base_types._BaseFieldType):
 
 	@NewAcct.setter
 	def NewAcct(self, value):
-		self._NewAcct = value if type(value) != base_types.auto else self.make_default("NewAcct")
+		self._NewAcct = value if value is not None else base_types.UninitialisedField(self, 'NewAcct', NewAccount4, False)
 
 	@NewAcct.deleter
 	def NewAcct(self):
 		del self._NewAcct
-		self._NewAcct = None
+		self._NewAcct = base_types.UninitialisedField(self, 'NewAcct', NewAccount4, False)
 
 	@property
 	def OdAcct(self):
@@ -70,12 +70,12 @@ class AccountSwitchInformationRequestV06(base_types._BaseFieldType):
 
 	@OdAcct.setter
 	def OdAcct(self, value):
-		self._OdAcct = value if type(value) != base_types.auto else self.make_default("OdAcct")
+		self._OdAcct = value if value is not None else base_types.UninitialisedField(self, 'OdAcct', CashAccount43, False)
 
 	@OdAcct.deleter
 	def OdAcct(self):
 		del self._OdAcct
-		self._OdAcct = None
+		self._OdAcct = base_types.UninitialisedField(self, 'OdAcct', CashAccount43, False)
 
 	@property
 	def SplmtryData(self):
@@ -83,12 +83,12 @@ class AccountSwitchInformationRequestV06(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctSwtchDtls', type=AccountSwitchDetails1, min=1, max=1, mutex_group=None, array=False),

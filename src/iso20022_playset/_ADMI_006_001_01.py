@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ResendRequestV01 import ResendRequestV01
+from . import ResendRequestV01
 
 class ADMI_006_001_01():
 
@@ -18,12 +18,12 @@ class ADMI_006_001_01():
 
 		@RsndReq.setter
 		def RsndReq(self, value):
-			self._RsndReq = value if type(value) != base_types.auto else self.make_default("RsndReq")
+			self._RsndReq = value if value is not None else base_types.UninitialisedField(self, 'RsndReq', ResendRequestV01, False)
 
 		@RsndReq.deleter
 		def RsndReq(self):
 			del self._RsndReq
-			self._RsndReq = None
+			self._RsndReq = base_types.UninitialisedField(self, 'RsndReq', ResendRequestV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='RsndReq', type=ResendRequestV01, min=1, max=1, mutex_group=None, array=False),

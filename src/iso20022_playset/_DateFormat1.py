@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DateFormat3Choice import DateFormat3Choice
-from ._DateMode1Code import DateMode1Code
+from . import DateFormat3Choice
+from . import DateMode1Code
 
 class DateFormat1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DateFormat1(base_types._BaseFieldType):
 
 	@Dt.setter
 	def Dt(self, value):
-		self._Dt = value if type(value) != base_types.auto else self.make_default("Dt")
+		self._Dt = value if value is not None else base_types.UninitialisedField(self, 'Dt', DateFormat3Choice, False)
 
 	@Dt.deleter
 	def Dt(self):
 		del self._Dt
-		self._Dt = None
+		self._Dt = base_types.UninitialisedField(self, 'Dt', DateFormat3Choice, False)
 
 	@property
 	def DtMd(self):
@@ -27,12 +27,12 @@ class DateFormat1(base_types._BaseFieldType):
 
 	@DtMd.setter
 	def DtMd(self, value):
-		self._DtMd = value if type(value) != base_types.auto else self.make_default("DtMd")
+		self._DtMd = value if value is not None else base_types.UninitialisedField(self, 'DtMd', DateMode1Code, False)
 
 	@DtMd.deleter
 	def DtMd(self):
 		del self._DtMd
-		self._DtMd = None
+		self._DtMd = base_types.UninitialisedField(self, 'DtMd', DateMode1Code, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dt', type=DateFormat3Choice, min=1, max=1, mutex_group=None, array=False),

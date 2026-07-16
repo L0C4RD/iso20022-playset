@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification1 import GenericIdentification1
-from ._Max140Text import Max140Text
+from . import GenericIdentification1
+from . import Max140Text
 
 class DataFormat2Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DataFormat2Choice(base_types._BaseFieldType):
 
 	@Strd.setter
 	def Strd(self, value):
-		self._Strd = value if type(value) != base_types.auto else self.make_default("Strd")
+		self._Strd = value if value is not None else base_types.UninitialisedField(self, 'Strd', GenericIdentification1, False)
 
 	@Strd.deleter
 	def Strd(self):
 		del self._Strd
-		self._Strd = None
+		self._Strd = base_types.UninitialisedField(self, 'Strd', GenericIdentification1, False)
 
 	@property
 	def Ustrd(self):
@@ -27,12 +27,12 @@ class DataFormat2Choice(base_types._BaseFieldType):
 
 	@Ustrd.setter
 	def Ustrd(self, value):
-		self._Ustrd = value if type(value) != base_types.auto else self.make_default("Ustrd")
+		self._Ustrd = value if value is not None else base_types.UninitialisedField(self, 'Ustrd', Max140Text, False)
 
 	@Ustrd.deleter
 	def Ustrd(self):
 		del self._Ustrd
-		self._Ustrd = None
+		self._Ustrd = base_types.UninitialisedField(self, 'Ustrd', Max140Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Strd', type=GenericIdentification1, min=0, max=1, mutex_group=1, array=False),

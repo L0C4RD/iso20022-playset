@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._CapitalRequirement1 import CapitalRequirement1
-from ._HypotheticalCapitalMeasure1 import HypotheticalCapitalMeasure1
-from ._IncomeStatement2 import IncomeStatement2
-from ._SupplementaryData1 import SupplementaryData1
+from . import ActiveCurrencyAndAmount
+from . import CapitalRequirement1
+from . import HypotheticalCapitalMeasure1
+from . import IncomeStatement2
+from . import SupplementaryData1
 
 class CCPIncomeStatementAndCapitalAdequacyReportV02(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class CCPIncomeStatementAndCapitalAdequacyReportV02(base_types._BaseFieldType):
 
 	@CptlRqrmnts.setter
 	def CptlRqrmnts(self, value):
-		self._CptlRqrmnts = value if type(value) != base_types.auto else self.make_default("CptlRqrmnts")
+		self._CptlRqrmnts = value if value is not None else base_types.UninitialisedField(self, 'CptlRqrmnts', CapitalRequirement1, False)
 
 	@CptlRqrmnts.deleter
 	def CptlRqrmnts(self):
 		del self._CptlRqrmnts
-		self._CptlRqrmnts = None
+		self._CptlRqrmnts = base_types.UninitialisedField(self, 'CptlRqrmnts', CapitalRequirement1, False)
 
 	@property
 	def HpthtclCptlMeasr(self):
@@ -30,12 +30,12 @@ class CCPIncomeStatementAndCapitalAdequacyReportV02(base_types._BaseFieldType):
 
 	@HpthtclCptlMeasr.setter
 	def HpthtclCptlMeasr(self, value):
-		self._HpthtclCptlMeasr = value if type(value) != base_types.auto else self.make_default("HpthtclCptlMeasr")
+		self._HpthtclCptlMeasr = value if value is not None else base_types.UninitialisedField(self, 'HpthtclCptlMeasr', HypotheticalCapitalMeasure1, True)
 
 	@HpthtclCptlMeasr.deleter
 	def HpthtclCptlMeasr(self):
 		del self._HpthtclCptlMeasr
-		self._HpthtclCptlMeasr = None
+		self._HpthtclCptlMeasr = base_types.UninitialisedField(self, 'HpthtclCptlMeasr', HypotheticalCapitalMeasure1, True)
 
 	@property
 	def IncmStmt(self):
@@ -43,12 +43,12 @@ class CCPIncomeStatementAndCapitalAdequacyReportV02(base_types._BaseFieldType):
 
 	@IncmStmt.setter
 	def IncmStmt(self, value):
-		self._IncmStmt = value if type(value) != base_types.auto else self.make_default("IncmStmt")
+		self._IncmStmt = value if value is not None else base_types.UninitialisedField(self, 'IncmStmt', IncomeStatement2, False)
 
 	@IncmStmt.deleter
 	def IncmStmt(self):
 		del self._IncmStmt
-		self._IncmStmt = None
+		self._IncmStmt = base_types.UninitialisedField(self, 'IncmStmt', IncomeStatement2, False)
 
 	@property
 	def LqdFinRsrcs(self):
@@ -56,12 +56,12 @@ class CCPIncomeStatementAndCapitalAdequacyReportV02(base_types._BaseFieldType):
 
 	@LqdFinRsrcs.setter
 	def LqdFinRsrcs(self, value):
-		self._LqdFinRsrcs = value if type(value) != base_types.auto else self.make_default("LqdFinRsrcs")
+		self._LqdFinRsrcs = value if value is not None else base_types.UninitialisedField(self, 'LqdFinRsrcs', ActiveCurrencyAndAmount, False)
 
 	@LqdFinRsrcs.deleter
 	def LqdFinRsrcs(self):
 		del self._LqdFinRsrcs
-		self._LqdFinRsrcs = None
+		self._LqdFinRsrcs = base_types.UninitialisedField(self, 'LqdFinRsrcs', ActiveCurrencyAndAmount, False)
 
 	@property
 	def SplmtryData(self):
@@ -69,12 +69,12 @@ class CCPIncomeStatementAndCapitalAdequacyReportV02(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def TtlCptl(self):
@@ -82,12 +82,12 @@ class CCPIncomeStatementAndCapitalAdequacyReportV02(base_types._BaseFieldType):
 
 	@TtlCptl.setter
 	def TtlCptl(self, value):
-		self._TtlCptl = value if type(value) != base_types.auto else self.make_default("TtlCptl")
+		self._TtlCptl = value if value is not None else base_types.UninitialisedField(self, 'TtlCptl', ActiveCurrencyAndAmount, False)
 
 	@TtlCptl.deleter
 	def TtlCptl(self):
 		del self._TtlCptl
-		self._TtlCptl = None
+		self._TtlCptl = base_types.UninitialisedField(self, 'TtlCptl', ActiveCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CptlRqrmnts', type=CapitalRequirement1, min=1, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MarketClaimCancellationRequestV02 import MarketClaimCancellationRequestV02
+from . import MarketClaimCancellationRequestV02
 
 class SEEV_051_001_02():
 
@@ -18,12 +18,12 @@ class SEEV_051_001_02():
 
 		@MktClmCxlReq.setter
 		def MktClmCxlReq(self, value):
-			self._MktClmCxlReq = value if type(value) != base_types.auto else self.make_default("MktClmCxlReq")
+			self._MktClmCxlReq = value if value is not None else base_types.UninitialisedField(self, 'MktClmCxlReq', MarketClaimCancellationRequestV02, False)
 
 		@MktClmCxlReq.deleter
 		def MktClmCxlReq(self):
 			del self._MktClmCxlReq
-			self._MktClmCxlReq = None
+			self._MktClmCxlReq = base_types.UninitialisedField(self, 'MktClmCxlReq', MarketClaimCancellationRequestV02, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='MktClmCxlReq', type=MarketClaimCancellationRequestV02, min=1, max=1, mutex_group=None, array=False),

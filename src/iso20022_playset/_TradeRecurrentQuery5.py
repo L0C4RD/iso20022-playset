@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._Max1000Text import Max1000Text
-from ._TradeQueryExecutionFrequency3 import TradeQueryExecutionFrequency3
+from . import ISODate
+from . import Max1000Text
+from . import TradeQueryExecutionFrequency3
 
 class TradeRecurrentQuery5(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TradeRecurrentQuery5(base_types._BaseFieldType):
 
 	@Frqcy.setter
 	def Frqcy(self, value):
-		self._Frqcy = value if type(value) != base_types.auto else self.make_default("Frqcy")
+		self._Frqcy = value if value is not None else base_types.UninitialisedField(self, 'Frqcy', TradeQueryExecutionFrequency3, False)
 
 	@Frqcy.deleter
 	def Frqcy(self):
 		del self._Frqcy
-		self._Frqcy = None
+		self._Frqcy = base_types.UninitialisedField(self, 'Frqcy', TradeQueryExecutionFrequency3, False)
 
 	@property
 	def QryTp(self):
@@ -28,12 +28,12 @@ class TradeRecurrentQuery5(base_types._BaseFieldType):
 
 	@QryTp.setter
 	def QryTp(self, value):
-		self._QryTp = value if type(value) != base_types.auto else self.make_default("QryTp")
+		self._QryTp = value if value is not None else base_types.UninitialisedField(self, 'QryTp', Max1000Text, False)
 
 	@QryTp.deleter
 	def QryTp(self):
 		del self._QryTp
-		self._QryTp = None
+		self._QryTp = base_types.UninitialisedField(self, 'QryTp', Max1000Text, False)
 
 	@property
 	def VldUntil(self):
@@ -41,12 +41,12 @@ class TradeRecurrentQuery5(base_types._BaseFieldType):
 
 	@VldUntil.setter
 	def VldUntil(self, value):
-		self._VldUntil = value if type(value) != base_types.auto else self.make_default("VldUntil")
+		self._VldUntil = value if value is not None else base_types.UninitialisedField(self, 'VldUntil', ISODate, False)
 
 	@VldUntil.deleter
 	def VldUntil(self):
 		del self._VldUntil
-		self._VldUntil = None
+		self._VldUntil = base_types.UninitialisedField(self, 'VldUntil', ISODate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Frqcy', type=TradeQueryExecutionFrequency3, min=1, max=1, mutex_group=None, array=False),

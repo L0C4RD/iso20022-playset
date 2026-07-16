@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionAdditionalInformation1 import CorporateActionAdditionalInformation1
-from ._CorporateActionInformationStatus1Choice import CorporateActionInformationStatus1Choice
-from ._DocumentIdentification8 import DocumentIdentification8
+from . import CorporateActionAdditionalInformation1
+from . import CorporateActionInformationStatus1Choice
+from . import DocumentIdentification8
 
 class AgentCAInformationStatusAdviceV01(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class AgentCAInformationStatusAdviceV01(base_types._BaseFieldType):
 
 	@AgtCAInfAdvcId.setter
 	def AgtCAInfAdvcId(self, value):
-		self._AgtCAInfAdvcId = value if type(value) != base_types.auto else self.make_default("AgtCAInfAdvcId")
+		self._AgtCAInfAdvcId = value if value is not None else base_types.UninitialisedField(self, 'AgtCAInfAdvcId', DocumentIdentification8, False)
 
 	@AgtCAInfAdvcId.deleter
 	def AgtCAInfAdvcId(self):
 		del self._AgtCAInfAdvcId
-		self._AgtCAInfAdvcId = None
+		self._AgtCAInfAdvcId = base_types.UninitialisedField(self, 'AgtCAInfAdvcId', DocumentIdentification8, False)
 
 	@property
 	def CorpActnAddtlInf(self):
@@ -28,12 +28,12 @@ class AgentCAInformationStatusAdviceV01(base_types._BaseFieldType):
 
 	@CorpActnAddtlInf.setter
 	def CorpActnAddtlInf(self, value):
-		self._CorpActnAddtlInf = value if type(value) != base_types.auto else self.make_default("CorpActnAddtlInf")
+		self._CorpActnAddtlInf = value if value is not None else base_types.UninitialisedField(self, 'CorpActnAddtlInf', CorporateActionAdditionalInformation1, False)
 
 	@CorpActnAddtlInf.deleter
 	def CorpActnAddtlInf(self):
 		del self._CorpActnAddtlInf
-		self._CorpActnAddtlInf = None
+		self._CorpActnAddtlInf = base_types.UninitialisedField(self, 'CorpActnAddtlInf', CorporateActionAdditionalInformation1, False)
 
 	@property
 	def Id(self):
@@ -41,12 +41,12 @@ class AgentCAInformationStatusAdviceV01(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', DocumentIdentification8, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', DocumentIdentification8, False)
 
 	@property
 	def InfStsDtls(self):
@@ -54,12 +54,12 @@ class AgentCAInformationStatusAdviceV01(base_types._BaseFieldType):
 
 	@InfStsDtls.setter
 	def InfStsDtls(self, value):
-		self._InfStsDtls = value if type(value) != base_types.auto else self.make_default("InfStsDtls")
+		self._InfStsDtls = value if value is not None else base_types.UninitialisedField(self, 'InfStsDtls', CorporateActionInformationStatus1Choice, False)
 
 	@InfStsDtls.deleter
 	def InfStsDtls(self):
 		del self._InfStsDtls
-		self._InfStsDtls = None
+		self._InfStsDtls = base_types.UninitialisedField(self, 'InfStsDtls', CorporateActionInformationStatus1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AgtCAInfAdvcId', type=DocumentIdentification8, min=1, max=1, mutex_group=None, array=False),

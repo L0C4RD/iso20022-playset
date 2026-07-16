@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FinancialInstrumentAttributes89 import FinancialInstrumentAttributes89
-from ._FinancialInstrumentAttributes90 import FinancialInstrumentAttributes90
+from . import FinancialInstrumentAttributes89
+from . import FinancialInstrumentAttributes90
 
 class DefinedAttributes1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class DefinedAttributes1Choice(base_types._BaseFieldType):
 
 	@QtyDfndAttrbts.setter
 	def QtyDfndAttrbts(self, value):
-		self._QtyDfndAttrbts = value if type(value) != base_types.auto else self.make_default("QtyDfndAttrbts")
+		self._QtyDfndAttrbts = value if value is not None else base_types.UninitialisedField(self, 'QtyDfndAttrbts', FinancialInstrumentAttributes89, False)
 
 	@QtyDfndAttrbts.deleter
 	def QtyDfndAttrbts(self):
 		del self._QtyDfndAttrbts
-		self._QtyDfndAttrbts = None
+		self._QtyDfndAttrbts = base_types.UninitialisedField(self, 'QtyDfndAttrbts', FinancialInstrumentAttributes89, False)
 
 	@property
 	def ValDfndAttrbts(self):
@@ -27,12 +27,12 @@ class DefinedAttributes1Choice(base_types._BaseFieldType):
 
 	@ValDfndAttrbts.setter
 	def ValDfndAttrbts(self, value):
-		self._ValDfndAttrbts = value if type(value) != base_types.auto else self.make_default("ValDfndAttrbts")
+		self._ValDfndAttrbts = value if value is not None else base_types.UninitialisedField(self, 'ValDfndAttrbts', FinancialInstrumentAttributes90, False)
 
 	@ValDfndAttrbts.deleter
 	def ValDfndAttrbts(self):
 		del self._ValDfndAttrbts
-		self._ValDfndAttrbts = None
+		self._ValDfndAttrbts = base_types.UninitialisedField(self, 'ValDfndAttrbts', FinancialInstrumentAttributes90, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='QtyDfndAttrbts', type=FinancialInstrumentAttributes89, min=0, max=1, mutex_group=1, array=False),

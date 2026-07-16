@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionOption1FormatChoice import CorporateActionOption1FormatChoice
-from ._DateFormat4Choice import DateFormat4Choice
-from ._Entitlement1 import Entitlement1
-from ._Exact3NumericText import Exact3NumericText
+from . import CorporateActionOption1FormatChoice
+from . import DateFormat4Choice
+from . import Entitlement1
+from . import Exact3NumericText
 
 class EntitlementAdvice1(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class EntitlementAdvice1(base_types._BaseFieldType):
 
 	@AcctAndDstrbtnDtls.setter
 	def AcctAndDstrbtnDtls(self, value):
-		self._AcctAndDstrbtnDtls = value if type(value) != base_types.auto else self.make_default("AcctAndDstrbtnDtls")
+		self._AcctAndDstrbtnDtls = value if value is not None else base_types.UninitialisedField(self, 'AcctAndDstrbtnDtls', Entitlement1, True)
 
 	@AcctAndDstrbtnDtls.deleter
 	def AcctAndDstrbtnDtls(self):
 		del self._AcctAndDstrbtnDtls
-		self._AcctAndDstrbtnDtls = None
+		self._AcctAndDstrbtnDtls = base_types.UninitialisedField(self, 'AcctAndDstrbtnDtls', Entitlement1, True)
 
 	@property
 	def OptnNb(self):
@@ -29,12 +29,12 @@ class EntitlementAdvice1(base_types._BaseFieldType):
 
 	@OptnNb.setter
 	def OptnNb(self, value):
-		self._OptnNb = value if type(value) != base_types.auto else self.make_default("OptnNb")
+		self._OptnNb = value if value is not None else base_types.UninitialisedField(self, 'OptnNb', Exact3NumericText, False)
 
 	@OptnNb.deleter
 	def OptnNb(self):
 		del self._OptnNb
-		self._OptnNb = None
+		self._OptnNb = base_types.UninitialisedField(self, 'OptnNb', Exact3NumericText, False)
 
 	@property
 	def OptnTp(self):
@@ -42,12 +42,12 @@ class EntitlementAdvice1(base_types._BaseFieldType):
 
 	@OptnTp.setter
 	def OptnTp(self, value):
-		self._OptnTp = value if type(value) != base_types.auto else self.make_default("OptnTp")
+		self._OptnTp = value if value is not None else base_types.UninitialisedField(self, 'OptnTp', CorporateActionOption1FormatChoice, False)
 
 	@OptnTp.deleter
 	def OptnTp(self):
 		del self._OptnTp
-		self._OptnTp = None
+		self._OptnTp = base_types.UninitialisedField(self, 'OptnTp', CorporateActionOption1FormatChoice, False)
 
 	@property
 	def PmtDt(self):
@@ -55,12 +55,12 @@ class EntitlementAdvice1(base_types._BaseFieldType):
 
 	@PmtDt.setter
 	def PmtDt(self, value):
-		self._PmtDt = value if type(value) != base_types.auto else self.make_default("PmtDt")
+		self._PmtDt = value if value is not None else base_types.UninitialisedField(self, 'PmtDt', DateFormat4Choice, False)
 
 	@PmtDt.deleter
 	def PmtDt(self):
 		del self._PmtDt
-		self._PmtDt = None
+		self._PmtDt = base_types.UninitialisedField(self, 'PmtDt', DateFormat4Choice, False)
 
 	@property
 	def RcrdDt(self):
@@ -68,12 +68,12 @@ class EntitlementAdvice1(base_types._BaseFieldType):
 
 	@RcrdDt.setter
 	def RcrdDt(self, value):
-		self._RcrdDt = value if type(value) != base_types.auto else self.make_default("RcrdDt")
+		self._RcrdDt = value if value is not None else base_types.UninitialisedField(self, 'RcrdDt', DateFormat4Choice, False)
 
 	@RcrdDt.deleter
 	def RcrdDt(self):
 		del self._RcrdDt
-		self._RcrdDt = None
+		self._RcrdDt = base_types.UninitialisedField(self, 'RcrdDt', DateFormat4Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctAndDstrbtnDtls', type=Entitlement1, min=1, max=None, mutex_group=None, array=True),

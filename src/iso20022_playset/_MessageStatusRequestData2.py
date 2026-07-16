@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._DocumentType7Code import DocumentType7Code
-from ._GenericIdentification177 import GenericIdentification177
-from ._Max35Text import Max35Text
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import DocumentType7Code
+from . import GenericIdentification177
+from . import Max35Text
+from . import TrueFalseIndicator
 
 class MessageStatusRequestData2(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class MessageStatusRequestData2(base_types._BaseFieldType):
 
 	@DocQlfr.setter
 	def DocQlfr(self, value):
-		self._DocQlfr = value if type(value) != base_types.auto else self.make_default("DocQlfr")
+		self._DocQlfr = value if value is not None else base_types.UninitialisedField(self, 'DocQlfr', DocumentType7Code, True)
 
 	@DocQlfr.deleter
 	def DocQlfr(self):
 		del self._DocQlfr
-		self._DocQlfr = None
+		self._DocQlfr = base_types.UninitialisedField(self, 'DocQlfr', DocumentType7Code, True)
 
 	@property
 	def InitgPty(self):
@@ -29,12 +29,12 @@ class MessageStatusRequestData2(base_types._BaseFieldType):
 
 	@InitgPty.setter
 	def InitgPty(self, value):
-		self._InitgPty = value if type(value) != base_types.auto else self.make_default("InitgPty")
+		self._InitgPty = value if value is not None else base_types.UninitialisedField(self, 'InitgPty', GenericIdentification177, False)
 
 	@InitgPty.deleter
 	def InitgPty(self):
 		del self._InitgPty
-		self._InitgPty = None
+		self._InitgPty = base_types.UninitialisedField(self, 'InitgPty', GenericIdentification177, False)
 
 	@property
 	def RctRprntFlg(self):
@@ -42,12 +42,12 @@ class MessageStatusRequestData2(base_types._BaseFieldType):
 
 	@RctRprntFlg.setter
 	def RctRprntFlg(self, value):
-		self._RctRprntFlg = value if type(value) != base_types.auto else self.make_default("RctRprntFlg")
+		self._RctRprntFlg = value if value is not None else base_types.UninitialisedField(self, 'RctRprntFlg', TrueFalseIndicator, False)
 
 	@RctRprntFlg.deleter
 	def RctRprntFlg(self):
 		del self._RctRprntFlg
-		self._RctRprntFlg = None
+		self._RctRprntFlg = base_types.UninitialisedField(self, 'RctRprntFlg', TrueFalseIndicator, False)
 
 	@property
 	def XchgId(self):
@@ -55,12 +55,12 @@ class MessageStatusRequestData2(base_types._BaseFieldType):
 
 	@XchgId.setter
 	def XchgId(self, value):
-		self._XchgId = value if type(value) != base_types.auto else self.make_default("XchgId")
+		self._XchgId = value if value is not None else base_types.UninitialisedField(self, 'XchgId', Max35Text, False)
 
 	@XchgId.deleter
 	def XchgId(self):
 		del self._XchgId
-		self._XchgId = None
+		self._XchgId = base_types.UninitialisedField(self, 'XchgId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DocQlfr', type=DocumentType7Code, min=0, max=2, mutex_group=None, array=True),

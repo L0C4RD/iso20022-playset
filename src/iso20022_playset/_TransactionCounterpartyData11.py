@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
-from ._PartyIdentification236Choice import PartyIdentification236Choice
-from ._SettlementParties34Choice import SettlementParties34Choice
+from . import OrganisationIdentification15Choice
+from . import PartyIdentification236Choice
+from . import SettlementParties34Choice
 
 class TransactionCounterpartyData11(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TransactionCounterpartyData11(base_types._BaseFieldType):
 
 	@AgtLndr.setter
 	def AgtLndr(self, value):
-		self._AgtLndr = value if type(value) != base_types.auto else self.make_default("AgtLndr")
+		self._AgtLndr = value if value is not None else base_types.UninitialisedField(self, 'AgtLndr', OrganisationIdentification15Choice, False)
 
 	@AgtLndr.deleter
 	def AgtLndr(self):
 		del self._AgtLndr
-		self._AgtLndr = None
+		self._AgtLndr = base_types.UninitialisedField(self, 'AgtLndr', OrganisationIdentification15Choice, False)
 
 	@property
 	def Bnfcry(self):
@@ -28,12 +28,12 @@ class TransactionCounterpartyData11(base_types._BaseFieldType):
 
 	@Bnfcry.setter
 	def Bnfcry(self, value):
-		self._Bnfcry = value if type(value) != base_types.auto else self.make_default("Bnfcry")
+		self._Bnfcry = value if value is not None else base_types.UninitialisedField(self, 'Bnfcry', PartyIdentification236Choice, False)
 
 	@Bnfcry.deleter
 	def Bnfcry(self):
 		del self._Bnfcry
-		self._Bnfcry = None
+		self._Bnfcry = base_types.UninitialisedField(self, 'Bnfcry', PartyIdentification236Choice, False)
 
 	@property
 	def Brkr(self):
@@ -41,12 +41,12 @@ class TransactionCounterpartyData11(base_types._BaseFieldType):
 
 	@Brkr.setter
 	def Brkr(self, value):
-		self._Brkr = value if type(value) != base_types.auto else self.make_default("Brkr")
+		self._Brkr = value if value is not None else base_types.UninitialisedField(self, 'Brkr', OrganisationIdentification15Choice, False)
 
 	@Brkr.deleter
 	def Brkr(self):
 		del self._Brkr
-		self._Brkr = None
+		self._Brkr = base_types.UninitialisedField(self, 'Brkr', OrganisationIdentification15Choice, False)
 
 	@property
 	def ClrMmb(self):
@@ -54,12 +54,12 @@ class TransactionCounterpartyData11(base_types._BaseFieldType):
 
 	@ClrMmb.setter
 	def ClrMmb(self, value):
-		self._ClrMmb = value if type(value) != base_types.auto else self.make_default("ClrMmb")
+		self._ClrMmb = value if value is not None else base_types.UninitialisedField(self, 'ClrMmb', OrganisationIdentification15Choice, False)
 
 	@ClrMmb.deleter
 	def ClrMmb(self):
 		del self._ClrMmb
-		self._ClrMmb = None
+		self._ClrMmb = base_types.UninitialisedField(self, 'ClrMmb', OrganisationIdentification15Choice, False)
 
 	@property
 	def SttlmPties(self):
@@ -67,12 +67,12 @@ class TransactionCounterpartyData11(base_types._BaseFieldType):
 
 	@SttlmPties.setter
 	def SttlmPties(self, value):
-		self._SttlmPties = value if type(value) != base_types.auto else self.make_default("SttlmPties")
+		self._SttlmPties = value if value is not None else base_types.UninitialisedField(self, 'SttlmPties', SettlementParties34Choice, False)
 
 	@SttlmPties.deleter
 	def SttlmPties(self):
 		del self._SttlmPties
-		self._SttlmPties = None
+		self._SttlmPties = base_types.UninitialisedField(self, 'SttlmPties', SettlementParties34Choice, False)
 
 	@property
 	def TrptyAgt(self):
@@ -80,12 +80,12 @@ class TransactionCounterpartyData11(base_types._BaseFieldType):
 
 	@TrptyAgt.setter
 	def TrptyAgt(self, value):
-		self._TrptyAgt = value if type(value) != base_types.auto else self.make_default("TrptyAgt")
+		self._TrptyAgt = value if value is not None else base_types.UninitialisedField(self, 'TrptyAgt', OrganisationIdentification15Choice, False)
 
 	@TrptyAgt.deleter
 	def TrptyAgt(self):
 		del self._TrptyAgt
-		self._TrptyAgt = None
+		self._TrptyAgt = base_types.UninitialisedField(self, 'TrptyAgt', OrganisationIdentification15Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AgtLndr', type=OrganisationIdentification15Choice, min=0, max=1, mutex_group=None, array=False),

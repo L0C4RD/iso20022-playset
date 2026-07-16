@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalReference14 import AdditionalReference14
-from ._RejectionReason69 import RejectionReason69
+from . import AdditionalReference14
+from . import RejectionReason69
 
 class SecuritiesMessageRejectionV04(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class SecuritiesMessageRejectionV04(base_types._BaseFieldType):
 
 	@RltdRef.setter
 	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
+		self._RltdRef = value if value is not None else base_types.UninitialisedField(self, 'RltdRef', AdditionalReference14, False)
 
 	@RltdRef.deleter
 	def RltdRef(self):
 		del self._RltdRef
-		self._RltdRef = None
+		self._RltdRef = base_types.UninitialisedField(self, 'RltdRef', AdditionalReference14, False)
 
 	@property
 	def Rsn(self):
@@ -27,12 +27,12 @@ class SecuritiesMessageRejectionV04(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', RejectionReason69, False)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', RejectionReason69, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='RltdRef', type=AdditionalReference14, min=1, max=1, mutex_group=None, array=False),

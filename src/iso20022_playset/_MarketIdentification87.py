@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ClassificationType1Choice import ClassificationType1Choice
-from ._CountryCode import CountryCode
-from ._Purpose3Choice import Purpose3Choice
+from . import ClassificationType1Choice
+from . import CountryCode
+from . import Purpose3Choice
 
 class MarketIdentification87(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class MarketIdentification87(base_types._BaseFieldType):
 
 	@ClssfctnTp.setter
 	def ClssfctnTp(self, value):
-		self._ClssfctnTp = value if type(value) != base_types.auto else self.make_default("ClssfctnTp")
+		self._ClssfctnTp = value if value is not None else base_types.UninitialisedField(self, 'ClssfctnTp', ClassificationType1Choice, False)
 
 	@ClssfctnTp.deleter
 	def ClssfctnTp(self):
 		del self._ClssfctnTp
-		self._ClssfctnTp = None
+		self._ClssfctnTp = base_types.UninitialisedField(self, 'ClssfctnTp', ClassificationType1Choice, False)
 
 	@property
 	def Ctry(self):
@@ -28,12 +28,12 @@ class MarketIdentification87(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@property
 	def SttlmPurp(self):
@@ -41,12 +41,12 @@ class MarketIdentification87(base_types._BaseFieldType):
 
 	@SttlmPurp.setter
 	def SttlmPurp(self, value):
-		self._SttlmPurp = value if type(value) != base_types.auto else self.make_default("SttlmPurp")
+		self._SttlmPurp = value if value is not None else base_types.UninitialisedField(self, 'SttlmPurp', Purpose3Choice, False)
 
 	@SttlmPurp.deleter
 	def SttlmPurp(self):
 		del self._SttlmPurp
-		self._SttlmPurp = None
+		self._SttlmPurp = base_types.UninitialisedField(self, 'SttlmPurp', Purpose3Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClssfctnTp', type=ClassificationType1Choice, min=1, max=1, mutex_group=None, array=False),

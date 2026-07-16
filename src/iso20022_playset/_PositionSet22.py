@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PositionSetCollateralDimensions3 import PositionSetCollateralDimensions3
-from ._PositionSetCollateralMetrics2 import PositionSetCollateralMetrics2
+from . import PositionSetCollateralDimensions3
+from . import PositionSetCollateralMetrics2
 
 class PositionSet22(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PositionSet22(base_types._BaseFieldType):
 
 	@Dmnsns.setter
 	def Dmnsns(self, value):
-		self._Dmnsns = value if type(value) != base_types.auto else self.make_default("Dmnsns")
+		self._Dmnsns = value if value is not None else base_types.UninitialisedField(self, 'Dmnsns', PositionSetCollateralDimensions3, False)
 
 	@Dmnsns.deleter
 	def Dmnsns(self):
 		del self._Dmnsns
-		self._Dmnsns = None
+		self._Dmnsns = base_types.UninitialisedField(self, 'Dmnsns', PositionSetCollateralDimensions3, False)
 
 	@property
 	def Mtrcs(self):
@@ -27,12 +27,12 @@ class PositionSet22(base_types._BaseFieldType):
 
 	@Mtrcs.setter
 	def Mtrcs(self, value):
-		self._Mtrcs = value if type(value) != base_types.auto else self.make_default("Mtrcs")
+		self._Mtrcs = value if value is not None else base_types.UninitialisedField(self, 'Mtrcs', PositionSetCollateralMetrics2, False)
 
 	@Mtrcs.deleter
 	def Mtrcs(self):
 		del self._Mtrcs
-		self._Mtrcs = None
+		self._Mtrcs = base_types.UninitialisedField(self, 'Mtrcs', PositionSetCollateralMetrics2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dmnsns', type=PositionSetCollateralDimensions3, min=1, max=1, mutex_group=None, array=False),

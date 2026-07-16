@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IndustrialProductCommodityConstruction1 import IndustrialProductCommodityConstruction1
-from ._IndustrialProductCommodityManufacturing1 import IndustrialProductCommodityManufacturing1
+from . import IndustrialProductCommodityConstruction1
+from . import IndustrialProductCommodityManufacturing1
 
 class AssetClassCommodityIndustrialProduct1Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AssetClassCommodityIndustrialProduct1Choice(base_types._BaseFieldType):
 
 	@Cnstrctn.setter
 	def Cnstrctn(self, value):
-		self._Cnstrctn = value if type(value) != base_types.auto else self.make_default("Cnstrctn")
+		self._Cnstrctn = value if value is not None else base_types.UninitialisedField(self, 'Cnstrctn', IndustrialProductCommodityConstruction1, False)
 
 	@Cnstrctn.deleter
 	def Cnstrctn(self):
 		del self._Cnstrctn
-		self._Cnstrctn = None
+		self._Cnstrctn = base_types.UninitialisedField(self, 'Cnstrctn', IndustrialProductCommodityConstruction1, False)
 
 	@property
 	def Manfctg(self):
@@ -27,12 +27,12 @@ class AssetClassCommodityIndustrialProduct1Choice(base_types._BaseFieldType):
 
 	@Manfctg.setter
 	def Manfctg(self, value):
-		self._Manfctg = value if type(value) != base_types.auto else self.make_default("Manfctg")
+		self._Manfctg = value if value is not None else base_types.UninitialisedField(self, 'Manfctg', IndustrialProductCommodityManufacturing1, False)
 
 	@Manfctg.deleter
 	def Manfctg(self):
 		del self._Manfctg
-		self._Manfctg = None
+		self._Manfctg = base_types.UninitialisedField(self, 'Manfctg', IndustrialProductCommodityManufacturing1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cnstrctn', type=IndustrialProductCommodityConstruction1, min=0, max=1, mutex_group=1, array=False),

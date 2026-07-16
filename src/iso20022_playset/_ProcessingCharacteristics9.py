@@ -2,18 +2,18 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._EventFrequency5Code import EventFrequency5Code
-from ._Forms1 import Forms1
-from ._ISOTime import ISOTime
-from ._MainFundOrderDeskLocation1 import MainFundOrderDeskLocation1
-from ._Max350Text import Max350Text
-from ._RoundingDirection2Code import RoundingDirection2Code
-from ._TimeFrame8 import TimeFrame8
-from ._TimeFrame8Choice import TimeFrame8Choice
-from ._TimeFrame9 import TimeFrame9
-from ._YesNoIndicator import YesNoIndicator
+from . import ActiveCurrencyCode
+from . import AdditionalInformation15
+from . import EventFrequency5Code
+from . import Forms1
+from . import ISOTime
+from . import MainFundOrderDeskLocation1
+from . import Max350Text
+from . import RoundingDirection2Code
+from . import TimeFrame8
+from . import TimeFrame8Choice
+from . import TimeFrame9
+from . import YesNoIndicator
 
 class ProcessingCharacteristics9(base_types._BaseFieldType):
 
@@ -24,12 +24,12 @@ class ProcessingCharacteristics9(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@property
 	def AmtInd(self):
@@ -37,12 +37,12 @@ class ProcessingCharacteristics9(base_types._BaseFieldType):
 
 	@AmtInd.setter
 	def AmtInd(self, value):
-		self._AmtInd = value if type(value) != base_types.auto else self.make_default("AmtInd")
+		self._AmtInd = value if value is not None else base_types.UninitialisedField(self, 'AmtInd', YesNoIndicator, False)
 
 	@AmtInd.deleter
 	def AmtInd(self):
 		del self._AmtInd
-		self._AmtInd = None
+		self._AmtInd = base_types.UninitialisedField(self, 'AmtInd', YesNoIndicator, False)
 
 	@property
 	def DealConfTm(self):
@@ -50,12 +50,12 @@ class ProcessingCharacteristics9(base_types._BaseFieldType):
 
 	@DealConfTm.setter
 	def DealConfTm(self, value):
-		self._DealConfTm = value if type(value) != base_types.auto else self.make_default("DealConfTm")
+		self._DealConfTm = value if value is not None else base_types.UninitialisedField(self, 'DealConfTm', ISOTime, False)
 
 	@DealConfTm.deleter
 	def DealConfTm(self):
 		del self._DealConfTm
-		self._DealConfTm = None
+		self._DealConfTm = base_types.UninitialisedField(self, 'DealConfTm', ISOTime, False)
 
 	@property
 	def DealConfTmFrame(self):
@@ -63,12 +63,12 @@ class ProcessingCharacteristics9(base_types._BaseFieldType):
 
 	@DealConfTmFrame.setter
 	def DealConfTmFrame(self, value):
-		self._DealConfTmFrame = value if type(value) != base_types.auto else self.make_default("DealConfTmFrame")
+		self._DealConfTmFrame = value if value is not None else base_types.UninitialisedField(self, 'DealConfTmFrame', TimeFrame8, False)
 
 	@DealConfTmFrame.deleter
 	def DealConfTmFrame(self):
 		del self._DealConfTmFrame
-		self._DealConfTmFrame = None
+		self._DealConfTmFrame = base_types.UninitialisedField(self, 'DealConfTmFrame', TimeFrame8, False)
 
 	@property
 	def DealgCcyAccptd(self):
@@ -76,12 +76,12 @@ class ProcessingCharacteristics9(base_types._BaseFieldType):
 
 	@DealgCcyAccptd.setter
 	def DealgCcyAccptd(self, value):
-		self._DealgCcyAccptd = value if type(value) != base_types.auto else self.make_default("DealgCcyAccptd")
+		self._DealgCcyAccptd = value if value is not None else base_types.UninitialisedField(self, 'DealgCcyAccptd', ActiveCurrencyCode, True)
 
 	@DealgCcyAccptd.deleter
 	def DealgCcyAccptd(self):
 		del self._DealgCcyAccptd
-		self._DealgCcyAccptd = None
+		self._DealgCcyAccptd = base_types.UninitialisedField(self, 'DealgCcyAccptd', ActiveCurrencyCode, True)
 
 	@property
 	def DealgCutOffTm(self):
@@ -89,12 +89,12 @@ class ProcessingCharacteristics9(base_types._BaseFieldType):
 
 	@DealgCutOffTm.setter
 	def DealgCutOffTm(self, value):
-		self._DealgCutOffTm = value if type(value) != base_types.auto else self.make_default("DealgCutOffTm")
+		self._DealgCutOffTm = value if value is not None else base_types.UninitialisedField(self, 'DealgCutOffTm', ISOTime, False)
 
 	@DealgCutOffTm.deleter
 	def DealgCutOffTm(self):
 		del self._DealgCutOffTm
-		self._DealgCutOffTm = None
+		self._DealgCutOffTm = base_types.UninitialisedField(self, 'DealgCutOffTm', ISOTime, False)
 
 	@property
 	def DealgCutOffTmFrame(self):
@@ -102,12 +102,12 @@ class ProcessingCharacteristics9(base_types._BaseFieldType):
 
 	@DealgCutOffTmFrame.setter
 	def DealgCutOffTmFrame(self, value):
-		self._DealgCutOffTmFrame = value if type(value) != base_types.auto else self.make_default("DealgCutOffTmFrame")
+		self._DealgCutOffTmFrame = value if value is not None else base_types.UninitialisedField(self, 'DealgCutOffTmFrame', TimeFrame9, False)
 
 	@DealgCutOffTmFrame.deleter
 	def DealgCutOffTmFrame(self):
 		del self._DealgCutOffTmFrame
-		self._DealgCutOffTmFrame = None
+		self._DealgCutOffTmFrame = base_types.UninitialisedField(self, 'DealgCutOffTmFrame', TimeFrame9, False)
 
 	@property
 	def DealgFrqcy(self):
@@ -115,12 +115,12 @@ class ProcessingCharacteristics9(base_types._BaseFieldType):
 
 	@DealgFrqcy.setter
 	def DealgFrqcy(self, value):
-		self._DealgFrqcy = value if type(value) != base_types.auto else self.make_default("DealgFrqcy")
+		self._DealgFrqcy = value if value is not None else base_types.UninitialisedField(self, 'DealgFrqcy', EventFrequency5Code, False)
 
 	@DealgFrqcy.deleter
 	def DealgFrqcy(self):
 		del self._DealgFrqcy
-		self._DealgFrqcy = None
+		self._DealgFrqcy = base_types.UninitialisedField(self, 'DealgFrqcy', EventFrequency5Code, False)
 
 	@property
 	def DealgFrqcyDesc(self):
@@ -128,12 +128,12 @@ class ProcessingCharacteristics9(base_types._BaseFieldType):
 
 	@DealgFrqcyDesc.setter
 	def DealgFrqcyDesc(self, value):
-		self._DealgFrqcyDesc = value if type(value) != base_types.auto else self.make_default("DealgFrqcyDesc")
+		self._DealgFrqcyDesc = value if value is not None else base_types.UninitialisedField(self, 'DealgFrqcyDesc', Max350Text, False)
 
 	@DealgFrqcyDesc.deleter
 	def DealgFrqcyDesc(self):
 		del self._DealgFrqcyDesc
-		self._DealgFrqcyDesc = None
+		self._DealgFrqcyDesc = base_types.UninitialisedField(self, 'DealgFrqcyDesc', Max350Text, False)
 
 	@property
 	def LtdPrd(self):
@@ -141,12 +141,12 @@ class ProcessingCharacteristics9(base_types._BaseFieldType):
 
 	@LtdPrd.setter
 	def LtdPrd(self, value):
-		self._LtdPrd = value if type(value) != base_types.auto else self.make_default("LtdPrd")
+		self._LtdPrd = value if value is not None else base_types.UninitialisedField(self, 'LtdPrd', Max350Text, False)
 
 	@LtdPrd.deleter
 	def LtdPrd(self):
 		del self._LtdPrd
-		self._LtdPrd = None
+		self._LtdPrd = base_types.UninitialisedField(self, 'LtdPrd', Max350Text, False)
 
 	@property
 	def MainFndOrdrDskLctn(self):
@@ -154,12 +154,12 @@ class ProcessingCharacteristics9(base_types._BaseFieldType):
 
 	@MainFndOrdrDskLctn.setter
 	def MainFndOrdrDskLctn(self, value):
-		self._MainFndOrdrDskLctn = value if type(value) != base_types.auto else self.make_default("MainFndOrdrDskLctn")
+		self._MainFndOrdrDskLctn = value if value is not None else base_types.UninitialisedField(self, 'MainFndOrdrDskLctn', MainFundOrderDeskLocation1, False)
 
 	@MainFndOrdrDskLctn.deleter
 	def MainFndOrdrDskLctn(self):
 		del self._MainFndOrdrDskLctn
-		self._MainFndOrdrDskLctn = None
+		self._MainFndOrdrDskLctn = base_types.UninitialisedField(self, 'MainFndOrdrDskLctn', MainFundOrderDeskLocation1, False)
 
 	@property
 	def Rndg(self):
@@ -167,12 +167,12 @@ class ProcessingCharacteristics9(base_types._BaseFieldType):
 
 	@Rndg.setter
 	def Rndg(self, value):
-		self._Rndg = value if type(value) != base_types.auto else self.make_default("Rndg")
+		self._Rndg = value if value is not None else base_types.UninitialisedField(self, 'Rndg', RoundingDirection2Code, False)
 
 	@Rndg.deleter
 	def Rndg(self):
 		del self._Rndg
-		self._Rndg = None
+		self._Rndg = base_types.UninitialisedField(self, 'Rndg', RoundingDirection2Code, False)
 
 	@property
 	def SttlmCycl(self):
@@ -180,12 +180,12 @@ class ProcessingCharacteristics9(base_types._BaseFieldType):
 
 	@SttlmCycl.setter
 	def SttlmCycl(self, value):
-		self._SttlmCycl = value if type(value) != base_types.auto else self.make_default("SttlmCycl")
+		self._SttlmCycl = value if value is not None else base_types.UninitialisedField(self, 'SttlmCycl', TimeFrame8Choice, False)
 
 	@SttlmCycl.deleter
 	def SttlmCycl(self):
 		del self._SttlmCycl
-		self._SttlmCycl = None
+		self._SttlmCycl = base_types.UninitialisedField(self, 'SttlmCycl', TimeFrame8Choice, False)
 
 	@property
 	def SwtchAuthstn(self):
@@ -193,12 +193,12 @@ class ProcessingCharacteristics9(base_types._BaseFieldType):
 
 	@SwtchAuthstn.setter
 	def SwtchAuthstn(self, value):
-		self._SwtchAuthstn = value if type(value) != base_types.auto else self.make_default("SwtchAuthstn")
+		self._SwtchAuthstn = value if value is not None else base_types.UninitialisedField(self, 'SwtchAuthstn', Forms1, False)
 
 	@SwtchAuthstn.deleter
 	def SwtchAuthstn(self):
 		del self._SwtchAuthstn
-		self._SwtchAuthstn = None
+		self._SwtchAuthstn = base_types.UninitialisedField(self, 'SwtchAuthstn', Forms1, False)
 
 	@property
 	def UnitsInd(self):
@@ -206,12 +206,12 @@ class ProcessingCharacteristics9(base_types._BaseFieldType):
 
 	@UnitsInd.setter
 	def UnitsInd(self, value):
-		self._UnitsInd = value if type(value) != base_types.auto else self.make_default("UnitsInd")
+		self._UnitsInd = value if value is not None else base_types.UninitialisedField(self, 'UnitsInd', YesNoIndicator, False)
 
 	@UnitsInd.deleter
 	def UnitsInd(self):
 		del self._UnitsInd
-		self._UnitsInd = None
+		self._UnitsInd = base_types.UninitialisedField(self, 'UnitsInd', YesNoIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),

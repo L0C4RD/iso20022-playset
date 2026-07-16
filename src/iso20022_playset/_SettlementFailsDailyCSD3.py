@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._SettlementFailsDailyInstructionType1Choice import SettlementFailsDailyInstructionType1Choice
+from . import SettlementFailsDailyInstructionType1Choice
 
 class SettlementFailsDailyCSD3(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class SettlementFailsDailyCSD3(base_types._BaseFieldType):
 
 	@CrossCSD.setter
 	def CrossCSD(self, value):
-		self._CrossCSD = value if type(value) != base_types.auto else self.make_default("CrossCSD")
+		self._CrossCSD = value if value is not None else base_types.UninitialisedField(self, 'CrossCSD', SettlementFailsDailyInstructionType1Choice, False)
 
 	@CrossCSD.deleter
 	def CrossCSD(self):
 		del self._CrossCSD
-		self._CrossCSD = None
+		self._CrossCSD = base_types.UninitialisedField(self, 'CrossCSD', SettlementFailsDailyInstructionType1Choice, False)
 
 	@property
 	def IntraCSD(self):
@@ -26,12 +26,12 @@ class SettlementFailsDailyCSD3(base_types._BaseFieldType):
 
 	@IntraCSD.setter
 	def IntraCSD(self, value):
-		self._IntraCSD = value if type(value) != base_types.auto else self.make_default("IntraCSD")
+		self._IntraCSD = value if value is not None else base_types.UninitialisedField(self, 'IntraCSD', SettlementFailsDailyInstructionType1Choice, False)
 
 	@IntraCSD.deleter
 	def IntraCSD(self):
 		del self._IntraCSD
-		self._IntraCSD = None
+		self._IntraCSD = base_types.UninitialisedField(self, 'IntraCSD', SettlementFailsDailyInstructionType1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CrossCSD', type=SettlementFailsDailyInstructionType1Choice, min=1, max=1, mutex_group=None, array=False),

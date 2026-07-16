@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._EqualisationMethodologyType1Code import EqualisationMethodologyType1Code
-from ._RelatedSubscription1 import RelatedSubscription1
+from . import EqualisationMethodologyType1Code
+from . import RelatedSubscription1
 
 class EqualisationMethodologyType2(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class EqualisationMethodologyType2(base_types._BaseFieldType):
 
 	@EqulstnMthdlgyTpCd.setter
 	def EqulstnMthdlgyTpCd(self, value):
-		self._EqulstnMthdlgyTpCd = value if type(value) != base_types.auto else self.make_default("EqulstnMthdlgyTpCd")
+		self._EqulstnMthdlgyTpCd = value if value is not None else base_types.UninitialisedField(self, 'EqulstnMthdlgyTpCd', EqualisationMethodologyType1Code, False)
 
 	@EqulstnMthdlgyTpCd.deleter
 	def EqulstnMthdlgyTpCd(self):
 		del self._EqulstnMthdlgyTpCd
-		self._EqulstnMthdlgyTpCd = None
+		self._EqulstnMthdlgyTpCd = base_types.UninitialisedField(self, 'EqulstnMthdlgyTpCd', EqualisationMethodologyType1Code, False)
 
 	@property
 	def RltdSbcpt(self):
@@ -27,12 +27,12 @@ class EqualisationMethodologyType2(base_types._BaseFieldType):
 
 	@RltdSbcpt.setter
 	def RltdSbcpt(self, value):
-		self._RltdSbcpt = value if type(value) != base_types.auto else self.make_default("RltdSbcpt")
+		self._RltdSbcpt = value if value is not None else base_types.UninitialisedField(self, 'RltdSbcpt', RelatedSubscription1, True)
 
 	@RltdSbcpt.deleter
 	def RltdSbcpt(self):
 		del self._RltdSbcpt
-		self._RltdSbcpt = None
+		self._RltdSbcpt = base_types.UninitialisedField(self, 'RltdSbcpt', RelatedSubscription1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='EqulstnMthdlgyTpCd', type=EqualisationMethodologyType1Code, min=1, max=1, mutex_group=None, array=False),

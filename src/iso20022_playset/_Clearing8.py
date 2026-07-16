@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NettingEligible1Code import NettingEligible1Code
-from ._NonGuaranteedTrade4 import NonGuaranteedTrade4
-from ._PartyIdentification253Choice import PartyIdentification253Choice
-from ._YesNoIndicator import YesNoIndicator
+from . import NettingEligible1Code
+from . import NonGuaranteedTrade4
+from . import PartyIdentification253Choice
+from . import YesNoIndicator
 
 class Clearing8(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class Clearing8(base_types._BaseFieldType):
 
 	@ClrSgmt.setter
 	def ClrSgmt(self, value):
-		self._ClrSgmt = value if type(value) != base_types.auto else self.make_default("ClrSgmt")
+		self._ClrSgmt = value if value is not None else base_types.UninitialisedField(self, 'ClrSgmt', PartyIdentification253Choice, False)
 
 	@ClrSgmt.deleter
 	def ClrSgmt(self):
 		del self._ClrSgmt
-		self._ClrSgmt = None
+		self._ClrSgmt = base_types.UninitialisedField(self, 'ClrSgmt', PartyIdentification253Choice, False)
 
 	@property
 	def GrntedTrad(self):
@@ -29,12 +29,12 @@ class Clearing8(base_types._BaseFieldType):
 
 	@GrntedTrad.setter
 	def GrntedTrad(self, value):
-		self._GrntedTrad = value if type(value) != base_types.auto else self.make_default("GrntedTrad")
+		self._GrntedTrad = value if value is not None else base_types.UninitialisedField(self, 'GrntedTrad', YesNoIndicator, False)
 
 	@GrntedTrad.deleter
 	def GrntedTrad(self):
 		del self._GrntedTrad
-		self._GrntedTrad = None
+		self._GrntedTrad = base_types.UninitialisedField(self, 'GrntedTrad', YesNoIndicator, False)
 
 	@property
 	def SttlmNetgElgblCd(self):
@@ -42,12 +42,12 @@ class Clearing8(base_types._BaseFieldType):
 
 	@SttlmNetgElgblCd.setter
 	def SttlmNetgElgblCd(self, value):
-		self._SttlmNetgElgblCd = value if type(value) != base_types.auto else self.make_default("SttlmNetgElgblCd")
+		self._SttlmNetgElgblCd = value if value is not None else base_types.UninitialisedField(self, 'SttlmNetgElgblCd', NettingEligible1Code, False)
 
 	@SttlmNetgElgblCd.deleter
 	def SttlmNetgElgblCd(self):
 		del self._SttlmNetgElgblCd
-		self._SttlmNetgElgblCd = None
+		self._SttlmNetgElgblCd = base_types.UninitialisedField(self, 'SttlmNetgElgblCd', NettingEligible1Code, False)
 
 	@property
 	def TradCtrPtyId(self):
@@ -55,12 +55,12 @@ class Clearing8(base_types._BaseFieldType):
 
 	@TradCtrPtyId.setter
 	def TradCtrPtyId(self, value):
-		self._TradCtrPtyId = value if type(value) != base_types.auto else self.make_default("TradCtrPtyId")
+		self._TradCtrPtyId = value if value is not None else base_types.UninitialisedField(self, 'TradCtrPtyId', NonGuaranteedTrade4, False)
 
 	@TradCtrPtyId.deleter
 	def TradCtrPtyId(self):
 		del self._TradCtrPtyId
-		self._TradCtrPtyId = None
+		self._TradCtrPtyId = base_types.UninitialisedField(self, 'TradCtrPtyId', NonGuaranteedTrade4, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ClrSgmt', type=PartyIdentification253Choice, min=0, max=1, mutex_group=None, array=False),

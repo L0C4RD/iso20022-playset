@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AcceptedStatusReason1Choice import AcceptedStatusReason1Choice
-from ._Account23 import Account23
-from ._AccountStatus2 import AccountStatus2
-from ._BlockedStatusReason2Choice import BlockedStatusReason2Choice
-from ._ISODate import ISODate
-from ._Max35Text import Max35Text
-from ._Status25Choice import Status25Choice
+from . import AcceptedStatusReason1Choice
+from . import Account23
+from . import AccountStatus2
+from . import BlockedStatusReason2Choice
+from . import ISODate
+from . import Max35Text
+from . import Status25Choice
 
 class AccountManagementStatusAndReason5(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class AccountManagementStatusAndReason5(base_types._BaseFieldType):
 
 	@AcctApplId.setter
 	def AcctApplId(self, value):
-		self._AcctApplId = value if type(value) != base_types.auto else self.make_default("AcctApplId")
+		self._AcctApplId = value if value is not None else base_types.UninitialisedField(self, 'AcctApplId', Max35Text, False)
 
 	@AcctApplId.deleter
 	def AcctApplId(self):
 		del self._AcctApplId
-		self._AcctApplId = None
+		self._AcctApplId = base_types.UninitialisedField(self, 'AcctApplId', Max35Text, False)
 
 	@property
 	def AcctId(self):
@@ -32,12 +32,12 @@ class AccountManagementStatusAndReason5(base_types._BaseFieldType):
 
 	@AcctId.setter
 	def AcctId(self, value):
-		self._AcctId = value if type(value) != base_types.auto else self.make_default("AcctId")
+		self._AcctId = value if value is not None else base_types.UninitialisedField(self, 'AcctId', Max35Text, False)
 
 	@AcctId.deleter
 	def AcctId(self):
 		del self._AcctId
-		self._AcctId = None
+		self._AcctId = base_types.UninitialisedField(self, 'AcctId', Max35Text, False)
 
 	@property
 	def AcctSts(self):
@@ -45,12 +45,12 @@ class AccountManagementStatusAndReason5(base_types._BaseFieldType):
 
 	@AcctSts.setter
 	def AcctSts(self, value):
-		self._AcctSts = value if type(value) != base_types.auto else self.make_default("AcctSts")
+		self._AcctSts = value if value is not None else base_types.UninitialisedField(self, 'AcctSts', AccountStatus2, False)
 
 	@AcctSts.deleter
 	def AcctSts(self):
 		del self._AcctSts
-		self._AcctSts = None
+		self._AcctSts = base_types.UninitialisedField(self, 'AcctSts', AccountStatus2, False)
 
 	@property
 	def BlckdSts(self):
@@ -58,12 +58,12 @@ class AccountManagementStatusAndReason5(base_types._BaseFieldType):
 
 	@BlckdSts.setter
 	def BlckdSts(self, value):
-		self._BlckdSts = value if type(value) != base_types.auto else self.make_default("BlckdSts")
+		self._BlckdSts = value if value is not None else base_types.UninitialisedField(self, 'BlckdSts', BlockedStatusReason2Choice, False)
 
 	@BlckdSts.deleter
 	def BlckdSts(self):
 		del self._BlckdSts
-		self._BlckdSts = None
+		self._BlckdSts = base_types.UninitialisedField(self, 'BlckdSts', BlockedStatusReason2Choice, False)
 
 	@property
 	def CRSRptgDt(self):
@@ -71,12 +71,12 @@ class AccountManagementStatusAndReason5(base_types._BaseFieldType):
 
 	@CRSRptgDt.setter
 	def CRSRptgDt(self, value):
-		self._CRSRptgDt = value if type(value) != base_types.auto else self.make_default("CRSRptgDt")
+		self._CRSRptgDt = value if value is not None else base_types.UninitialisedField(self, 'CRSRptgDt', ISODate, False)
 
 	@CRSRptgDt.deleter
 	def CRSRptgDt(self):
 		del self._CRSRptgDt
-		self._CRSRptgDt = None
+		self._CRSRptgDt = base_types.UninitialisedField(self, 'CRSRptgDt', ISODate, False)
 
 	@property
 	def ExstgAcctId(self):
@@ -84,12 +84,12 @@ class AccountManagementStatusAndReason5(base_types._BaseFieldType):
 
 	@ExstgAcctId.setter
 	def ExstgAcctId(self, value):
-		self._ExstgAcctId = value if type(value) != base_types.auto else self.make_default("ExstgAcctId")
+		self._ExstgAcctId = value if value is not None else base_types.UninitialisedField(self, 'ExstgAcctId', Account23, True)
 
 	@ExstgAcctId.deleter
 	def ExstgAcctId(self):
 		del self._ExstgAcctId
-		self._ExstgAcctId = None
+		self._ExstgAcctId = base_types.UninitialisedField(self, 'ExstgAcctId', Account23, True)
 
 	@property
 	def FATCARptgDt(self):
@@ -97,12 +97,12 @@ class AccountManagementStatusAndReason5(base_types._BaseFieldType):
 
 	@FATCARptgDt.setter
 	def FATCARptgDt(self, value):
-		self._FATCARptgDt = value if type(value) != base_types.auto else self.make_default("FATCARptgDt")
+		self._FATCARptgDt = value if value is not None else base_types.UninitialisedField(self, 'FATCARptgDt', ISODate, False)
 
 	@FATCARptgDt.deleter
 	def FATCARptgDt(self):
 		del self._FATCARptgDt
-		self._FATCARptgDt = None
+		self._FATCARptgDt = base_types.UninitialisedField(self, 'FATCARptgDt', ISODate, False)
 
 	@property
 	def Sts(self):
@@ -110,12 +110,12 @@ class AccountManagementStatusAndReason5(base_types._BaseFieldType):
 
 	@Sts.setter
 	def Sts(self, value):
-		self._Sts = value if type(value) != base_types.auto else self.make_default("Sts")
+		self._Sts = value if value is not None else base_types.UninitialisedField(self, 'Sts', Status25Choice, False)
 
 	@Sts.deleter
 	def Sts(self):
 		del self._Sts
-		self._Sts = None
+		self._Sts = base_types.UninitialisedField(self, 'Sts', Status25Choice, False)
 
 	@property
 	def StsRsn(self):
@@ -123,12 +123,12 @@ class AccountManagementStatusAndReason5(base_types._BaseFieldType):
 
 	@StsRsn.setter
 	def StsRsn(self, value):
-		self._StsRsn = value if type(value) != base_types.auto else self.make_default("StsRsn")
+		self._StsRsn = value if value is not None else base_types.UninitialisedField(self, 'StsRsn', AcceptedStatusReason1Choice, True)
 
 	@StsRsn.deleter
 	def StsRsn(self):
 		del self._StsRsn
-		self._StsRsn = None
+		self._StsRsn = base_types.UninitialisedField(self, 'StsRsn', AcceptedStatusReason1Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctApplId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._AmountAndDirection53 import AmountAndDirection53
-from ._PrincipalAmount3 import PrincipalAmount3
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import AmountAndDirection53
+from . import PrincipalAmount3
 
 class ExposureMetrics4(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ExposureMetrics4(base_types._BaseFieldType):
 
 	@CollMktVal.setter
 	def CollMktVal(self, value):
-		self._CollMktVal = value if type(value) != base_types.auto else self.make_default("CollMktVal")
+		self._CollMktVal = value if value is not None else base_types.UninitialisedField(self, 'CollMktVal', AmountAndDirection53, False)
 
 	@CollMktVal.deleter
 	def CollMktVal(self):
 		del self._CollMktVal
-		self._CollMktVal = None
+		self._CollMktVal = base_types.UninitialisedField(self, 'CollMktVal', AmountAndDirection53, False)
 
 	@property
 	def CshCollAmt(self):
@@ -28,12 +28,12 @@ class ExposureMetrics4(base_types._BaseFieldType):
 
 	@CshCollAmt.setter
 	def CshCollAmt(self, value):
-		self._CshCollAmt = value if type(value) != base_types.auto else self.make_default("CshCollAmt")
+		self._CshCollAmt = value if value is not None else base_types.UninitialisedField(self, 'CshCollAmt', AmountAndDirection53, False)
 
 	@CshCollAmt.deleter
 	def CshCollAmt(self):
 		del self._CshCollAmt
-		self._CshCollAmt = None
+		self._CshCollAmt = base_types.UninitialisedField(self, 'CshCollAmt', AmountAndDirection53, False)
 
 	@property
 	def LnVal(self):
@@ -41,12 +41,12 @@ class ExposureMetrics4(base_types._BaseFieldType):
 
 	@LnVal.setter
 	def LnVal(self, value):
-		self._LnVal = value if type(value) != base_types.auto else self.make_default("LnVal")
+		self._LnVal = value if value is not None else base_types.UninitialisedField(self, 'LnVal', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@LnVal.deleter
 	def LnVal(self):
 		del self._LnVal
-		self._LnVal = None
+		self._LnVal = base_types.UninitialisedField(self, 'LnVal', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def MktVal(self):
@@ -54,12 +54,12 @@ class ExposureMetrics4(base_types._BaseFieldType):
 
 	@MktVal.setter
 	def MktVal(self, value):
-		self._MktVal = value if type(value) != base_types.auto else self.make_default("MktVal")
+		self._MktVal = value if value is not None else base_types.UninitialisedField(self, 'MktVal', AmountAndDirection53, False)
 
 	@MktVal.deleter
 	def MktVal(self):
 		del self._MktVal
-		self._MktVal = None
+		self._MktVal = base_types.UninitialisedField(self, 'MktVal', AmountAndDirection53, False)
 
 	@property
 	def MrgnLn(self):
@@ -67,12 +67,12 @@ class ExposureMetrics4(base_types._BaseFieldType):
 
 	@MrgnLn.setter
 	def MrgnLn(self, value):
-		self._MrgnLn = value if type(value) != base_types.auto else self.make_default("MrgnLn")
+		self._MrgnLn = value if value is not None else base_types.UninitialisedField(self, 'MrgnLn', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@MrgnLn.deleter
 	def MrgnLn(self):
 		del self._MrgnLn
-		self._MrgnLn = None
+		self._MrgnLn = base_types.UninitialisedField(self, 'MrgnLn', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def OutsdngMrgnLnAmt(self):
@@ -80,12 +80,12 @@ class ExposureMetrics4(base_types._BaseFieldType):
 
 	@OutsdngMrgnLnAmt.setter
 	def OutsdngMrgnLnAmt(self, value):
-		self._OutsdngMrgnLnAmt = value if type(value) != base_types.auto else self.make_default("OutsdngMrgnLnAmt")
+		self._OutsdngMrgnLnAmt = value if value is not None else base_types.UninitialisedField(self, 'OutsdngMrgnLnAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@OutsdngMrgnLnAmt.deleter
 	def OutsdngMrgnLnAmt(self):
 		del self._OutsdngMrgnLnAmt
-		self._OutsdngMrgnLnAmt = None
+		self._OutsdngMrgnLnAmt = base_types.UninitialisedField(self, 'OutsdngMrgnLnAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@property
 	def PrncplAmt(self):
@@ -93,12 +93,12 @@ class ExposureMetrics4(base_types._BaseFieldType):
 
 	@PrncplAmt.setter
 	def PrncplAmt(self, value):
-		self._PrncplAmt = value if type(value) != base_types.auto else self.make_default("PrncplAmt")
+		self._PrncplAmt = value if value is not None else base_types.UninitialisedField(self, 'PrncplAmt', PrincipalAmount3, False)
 
 	@PrncplAmt.deleter
 	def PrncplAmt(self):
 		del self._PrncplAmt
-		self._PrncplAmt = None
+		self._PrncplAmt = base_types.UninitialisedField(self, 'PrncplAmt', PrincipalAmount3, False)
 
 	@property
 	def ShrtMktValAmt(self):
@@ -106,12 +106,12 @@ class ExposureMetrics4(base_types._BaseFieldType):
 
 	@ShrtMktValAmt.setter
 	def ShrtMktValAmt(self, value):
-		self._ShrtMktValAmt = value if type(value) != base_types.auto else self.make_default("ShrtMktValAmt")
+		self._ShrtMktValAmt = value if value is not None else base_types.UninitialisedField(self, 'ShrtMktValAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	@ShrtMktValAmt.deleter
 	def ShrtMktValAmt(self):
 		del self._ShrtMktValAmt
-		self._ShrtMktValAmt = None
+		self._ShrtMktValAmt = base_types.UninitialisedField(self, 'ShrtMktValAmt', ActiveOrHistoricCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CollMktVal', type=AmountAndDirection53, min=0, max=1, mutex_group=None, array=False),

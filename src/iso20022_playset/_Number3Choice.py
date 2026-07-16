@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Exact3NumericText import Exact3NumericText
-from ._Exact5NumericText import Exact5NumericText
+from . import Exact3NumericText
+from . import Exact5NumericText
 
 class Number3Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Number3Choice(base_types._BaseFieldType):
 
 	@Lng.setter
 	def Lng(self, value):
-		self._Lng = value if type(value) != base_types.auto else self.make_default("Lng")
+		self._Lng = value if value is not None else base_types.UninitialisedField(self, 'Lng', Exact5NumericText, False)
 
 	@Lng.deleter
 	def Lng(self):
 		del self._Lng
-		self._Lng = None
+		self._Lng = base_types.UninitialisedField(self, 'Lng', Exact5NumericText, False)
 
 	@property
 	def Shrt(self):
@@ -27,12 +27,12 @@ class Number3Choice(base_types._BaseFieldType):
 
 	@Shrt.setter
 	def Shrt(self, value):
-		self._Shrt = value if type(value) != base_types.auto else self.make_default("Shrt")
+		self._Shrt = value if value is not None else base_types.UninitialisedField(self, 'Shrt', Exact3NumericText, False)
 
 	@Shrt.deleter
 	def Shrt(self):
 		del self._Shrt
-		self._Shrt = None
+		self._Shrt = base_types.UninitialisedField(self, 'Shrt', Exact3NumericText, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Lng', type=Exact5NumericText, min=0, max=1, mutex_group=1, array=False),

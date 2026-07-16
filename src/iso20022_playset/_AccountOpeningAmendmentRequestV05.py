@@ -2,18 +2,18 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AccountContract2 import AccountContract2
-from ._BranchAndFinancialInstitutionIdentification8 import BranchAndFinancialInstitutionIdentification8
-from ._CashAccount40 import CashAccount40
-from ._ContractDocument1 import ContractDocument1
-from ._CustomerAccount4 import CustomerAccount4
-from ._Group6 import Group6
-from ._OperationMandate7 import OperationMandate7
-from ._Organisation42 import Organisation42
-from ._OrganisationIdentification39 import OrganisationIdentification39
-from ._PartyAndSignature4 import PartyAndSignature4
-from ._References4 import References4
-from ._SupplementaryData1 import SupplementaryData1
+from . import AccountContract2
+from . import BranchAndFinancialInstitutionIdentification8
+from . import CashAccount40
+from . import ContractDocument1
+from . import CustomerAccount4
+from . import Group6
+from . import OperationMandate7
+from . import Organisation42
+from . import OrganisationIdentification39
+from . import PartyAndSignature4
+from . import References4
+from . import SupplementaryData1
 
 class AccountOpeningAmendmentRequestV05(base_types._BaseFieldType):
 
@@ -24,12 +24,12 @@ class AccountOpeningAmendmentRequestV05(base_types._BaseFieldType):
 
 	@Acct.setter
 	def Acct(self, value):
-		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
+		self._Acct = value if value is not None else base_types.UninitialisedField(self, 'Acct', CustomerAccount4, False)
 
 	@Acct.deleter
 	def Acct(self):
 		del self._Acct
-		self._Acct = None
+		self._Acct = base_types.UninitialisedField(self, 'Acct', CustomerAccount4, False)
 
 	@property
 	def AcctSvcrId(self):
@@ -37,12 +37,12 @@ class AccountOpeningAmendmentRequestV05(base_types._BaseFieldType):
 
 	@AcctSvcrId.setter
 	def AcctSvcrId(self, value):
-		self._AcctSvcrId = value if type(value) != base_types.auto else self.make_default("AcctSvcrId")
+		self._AcctSvcrId = value if value is not None else base_types.UninitialisedField(self, 'AcctSvcrId', BranchAndFinancialInstitutionIdentification8, False)
 
 	@AcctSvcrId.deleter
 	def AcctSvcrId(self):
 		del self._AcctSvcrId
-		self._AcctSvcrId = None
+		self._AcctSvcrId = base_types.UninitialisedField(self, 'AcctSvcrId', BranchAndFinancialInstitutionIdentification8, False)
 
 	@property
 	def CtrctDts(self):
@@ -50,12 +50,12 @@ class AccountOpeningAmendmentRequestV05(base_types._BaseFieldType):
 
 	@CtrctDts.setter
 	def CtrctDts(self, value):
-		self._CtrctDts = value if type(value) != base_types.auto else self.make_default("CtrctDts")
+		self._CtrctDts = value if value is not None else base_types.UninitialisedField(self, 'CtrctDts', AccountContract2, False)
 
 	@CtrctDts.deleter
 	def CtrctDts(self):
 		del self._CtrctDts
-		self._CtrctDts = None
+		self._CtrctDts = base_types.UninitialisedField(self, 'CtrctDts', AccountContract2, False)
 
 	@property
 	def DgtlSgntr(self):
@@ -63,12 +63,12 @@ class AccountOpeningAmendmentRequestV05(base_types._BaseFieldType):
 
 	@DgtlSgntr.setter
 	def DgtlSgntr(self, value):
-		self._DgtlSgntr = value if type(value) != base_types.auto else self.make_default("DgtlSgntr")
+		self._DgtlSgntr = value if value is not None else base_types.UninitialisedField(self, 'DgtlSgntr', PartyAndSignature4, True)
 
 	@DgtlSgntr.deleter
 	def DgtlSgntr(self):
 		del self._DgtlSgntr
-		self._DgtlSgntr = None
+		self._DgtlSgntr = base_types.UninitialisedField(self, 'DgtlSgntr', PartyAndSignature4, True)
 
 	@property
 	def Fr(self):
@@ -76,12 +76,12 @@ class AccountOpeningAmendmentRequestV05(base_types._BaseFieldType):
 
 	@Fr.setter
 	def Fr(self, value):
-		self._Fr = value if type(value) != base_types.auto else self.make_default("Fr")
+		self._Fr = value if value is not None else base_types.UninitialisedField(self, 'Fr', OrganisationIdentification39, False)
 
 	@Fr.deleter
 	def Fr(self):
 		del self._Fr
-		self._Fr = None
+		self._Fr = base_types.UninitialisedField(self, 'Fr', OrganisationIdentification39, False)
 
 	@property
 	def Grp(self):
@@ -89,12 +89,12 @@ class AccountOpeningAmendmentRequestV05(base_types._BaseFieldType):
 
 	@Grp.setter
 	def Grp(self, value):
-		self._Grp = value if type(value) != base_types.auto else self.make_default("Grp")
+		self._Grp = value if value is not None else base_types.UninitialisedField(self, 'Grp', Group6, True)
 
 	@Grp.deleter
 	def Grp(self):
 		del self._Grp
-		self._Grp = None
+		self._Grp = base_types.UninitialisedField(self, 'Grp', Group6, True)
 
 	@property
 	def Mndt(self):
@@ -102,12 +102,12 @@ class AccountOpeningAmendmentRequestV05(base_types._BaseFieldType):
 
 	@Mndt.setter
 	def Mndt(self, value):
-		self._Mndt = value if type(value) != base_types.auto else self.make_default("Mndt")
+		self._Mndt = value if value is not None else base_types.UninitialisedField(self, 'Mndt', OperationMandate7, True)
 
 	@Mndt.deleter
 	def Mndt(self):
 		del self._Mndt
-		self._Mndt = None
+		self._Mndt = base_types.UninitialisedField(self, 'Mndt', OperationMandate7, True)
 
 	@property
 	def Org(self):
@@ -115,12 +115,12 @@ class AccountOpeningAmendmentRequestV05(base_types._BaseFieldType):
 
 	@Org.setter
 	def Org(self, value):
-		self._Org = value if type(value) != base_types.auto else self.make_default("Org")
+		self._Org = value if value is not None else base_types.UninitialisedField(self, 'Org', Organisation42, False)
 
 	@Org.deleter
 	def Org(self):
 		del self._Org
-		self._Org = None
+		self._Org = base_types.UninitialisedField(self, 'Org', Organisation42, False)
 
 	@property
 	def RefAcct(self):
@@ -128,12 +128,12 @@ class AccountOpeningAmendmentRequestV05(base_types._BaseFieldType):
 
 	@RefAcct.setter
 	def RefAcct(self, value):
-		self._RefAcct = value if type(value) != base_types.auto else self.make_default("RefAcct")
+		self._RefAcct = value if value is not None else base_types.UninitialisedField(self, 'RefAcct', CashAccount40, False)
 
 	@RefAcct.deleter
 	def RefAcct(self):
 		del self._RefAcct
-		self._RefAcct = None
+		self._RefAcct = base_types.UninitialisedField(self, 'RefAcct', CashAccount40, False)
 
 	@property
 	def Refs(self):
@@ -141,12 +141,12 @@ class AccountOpeningAmendmentRequestV05(base_types._BaseFieldType):
 
 	@Refs.setter
 	def Refs(self, value):
-		self._Refs = value if type(value) != base_types.auto else self.make_default("Refs")
+		self._Refs = value if value is not None else base_types.UninitialisedField(self, 'Refs', References4, False)
 
 	@Refs.deleter
 	def Refs(self):
 		del self._Refs
-		self._Refs = None
+		self._Refs = base_types.UninitialisedField(self, 'Refs', References4, False)
 
 	@property
 	def SplmtryData(self):
@@ -154,12 +154,12 @@ class AccountOpeningAmendmentRequestV05(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def UndrlygMstrAgrmt(self):
@@ -167,12 +167,12 @@ class AccountOpeningAmendmentRequestV05(base_types._BaseFieldType):
 
 	@UndrlygMstrAgrmt.setter
 	def UndrlygMstrAgrmt(self, value):
-		self._UndrlygMstrAgrmt = value if type(value) != base_types.auto else self.make_default("UndrlygMstrAgrmt")
+		self._UndrlygMstrAgrmt = value if value is not None else base_types.UninitialisedField(self, 'UndrlygMstrAgrmt', ContractDocument1, False)
 
 	@UndrlygMstrAgrmt.deleter
 	def UndrlygMstrAgrmt(self):
 		del self._UndrlygMstrAgrmt
-		self._UndrlygMstrAgrmt = None
+		self._UndrlygMstrAgrmt = base_types.UninitialisedField(self, 'UndrlygMstrAgrmt', ContractDocument1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acct', type=CustomerAccount4, min=1, max=1, mutex_group=None, array=False),

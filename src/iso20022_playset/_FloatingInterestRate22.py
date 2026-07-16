@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BenchmarkCurveName10Choice import BenchmarkCurveName10Choice
-from ._InterestComputationMethodFormat6Choice import InterestComputationMethodFormat6Choice
-from ._InterestRateContractTerm2 import InterestRateContractTerm2
-from ._RateAdjustment1 import RateAdjustment1
-from ._SecuritiesTransactionPrice18Choice import SecuritiesTransactionPrice18Choice
+from . import BenchmarkCurveName10Choice
+from . import InterestComputationMethodFormat6Choice
+from . import InterestRateContractTerm2
+from . import RateAdjustment1
+from . import SecuritiesTransactionPrice18Choice
 
 class FloatingInterestRate22(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class FloatingInterestRate22(base_types._BaseFieldType):
 
 	@DayCntBsis.setter
 	def DayCntBsis(self, value):
-		self._DayCntBsis = value if type(value) != base_types.auto else self.make_default("DayCntBsis")
+		self._DayCntBsis = value if value is not None else base_types.UninitialisedField(self, 'DayCntBsis', InterestComputationMethodFormat6Choice, False)
 
 	@DayCntBsis.deleter
 	def DayCntBsis(self):
 		del self._DayCntBsis
-		self._DayCntBsis = None
+		self._DayCntBsis = base_types.UninitialisedField(self, 'DayCntBsis', InterestComputationMethodFormat6Choice, False)
 
 	@property
 	def PmtFrqcy(self):
@@ -30,12 +30,12 @@ class FloatingInterestRate22(base_types._BaseFieldType):
 
 	@PmtFrqcy.setter
 	def PmtFrqcy(self, value):
-		self._PmtFrqcy = value if type(value) != base_types.auto else self.make_default("PmtFrqcy")
+		self._PmtFrqcy = value if value is not None else base_types.UninitialisedField(self, 'PmtFrqcy', InterestRateContractTerm2, False)
 
 	@PmtFrqcy.deleter
 	def PmtFrqcy(self):
 		del self._PmtFrqcy
-		self._PmtFrqcy = None
+		self._PmtFrqcy = base_types.UninitialisedField(self, 'PmtFrqcy', InterestRateContractTerm2, False)
 
 	@property
 	def RateAdjstmnt(self):
@@ -43,12 +43,12 @@ class FloatingInterestRate22(base_types._BaseFieldType):
 
 	@RateAdjstmnt.setter
 	def RateAdjstmnt(self, value):
-		self._RateAdjstmnt = value if type(value) != base_types.auto else self.make_default("RateAdjstmnt")
+		self._RateAdjstmnt = value if value is not None else base_types.UninitialisedField(self, 'RateAdjstmnt', RateAdjustment1, True)
 
 	@RateAdjstmnt.deleter
 	def RateAdjstmnt(self):
 		del self._RateAdjstmnt
-		self._RateAdjstmnt = None
+		self._RateAdjstmnt = base_types.UninitialisedField(self, 'RateAdjstmnt', RateAdjustment1, True)
 
 	@property
 	def RefRate(self):
@@ -56,12 +56,12 @@ class FloatingInterestRate22(base_types._BaseFieldType):
 
 	@RefRate.setter
 	def RefRate(self, value):
-		self._RefRate = value if type(value) != base_types.auto else self.make_default("RefRate")
+		self._RefRate = value if value is not None else base_types.UninitialisedField(self, 'RefRate', BenchmarkCurveName10Choice, False)
 
 	@RefRate.deleter
 	def RefRate(self):
 		del self._RefRate
-		self._RefRate = None
+		self._RefRate = base_types.UninitialisedField(self, 'RefRate', BenchmarkCurveName10Choice, False)
 
 	@property
 	def RstFrqcy(self):
@@ -69,12 +69,12 @@ class FloatingInterestRate22(base_types._BaseFieldType):
 
 	@RstFrqcy.setter
 	def RstFrqcy(self, value):
-		self._RstFrqcy = value if type(value) != base_types.auto else self.make_default("RstFrqcy")
+		self._RstFrqcy = value if value is not None else base_types.UninitialisedField(self, 'RstFrqcy', InterestRateContractTerm2, False)
 
 	@RstFrqcy.deleter
 	def RstFrqcy(self):
 		del self._RstFrqcy
-		self._RstFrqcy = None
+		self._RstFrqcy = base_types.UninitialisedField(self, 'RstFrqcy', InterestRateContractTerm2, False)
 
 	@property
 	def Sprd(self):
@@ -82,12 +82,12 @@ class FloatingInterestRate22(base_types._BaseFieldType):
 
 	@Sprd.setter
 	def Sprd(self, value):
-		self._Sprd = value if type(value) != base_types.auto else self.make_default("Sprd")
+		self._Sprd = value if value is not None else base_types.UninitialisedField(self, 'Sprd', SecuritiesTransactionPrice18Choice, False)
 
 	@Sprd.deleter
 	def Sprd(self):
 		del self._Sprd
-		self._Sprd = None
+		self._Sprd = base_types.UninitialisedField(self, 'Sprd', SecuritiesTransactionPrice18Choice, False)
 
 	@property
 	def Term(self):
@@ -95,12 +95,12 @@ class FloatingInterestRate22(base_types._BaseFieldType):
 
 	@Term.setter
 	def Term(self, value):
-		self._Term = value if type(value) != base_types.auto else self.make_default("Term")
+		self._Term = value if value is not None else base_types.UninitialisedField(self, 'Term', InterestRateContractTerm2, False)
 
 	@Term.deleter
 	def Term(self):
 		del self._Term
-		self._Term = None
+		self._Term = base_types.UninitialisedField(self, 'Term', InterestRateContractTerm2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DayCntBsis', type=InterestComputationMethodFormat6Choice, min=0, max=1, mutex_group=None, array=False),

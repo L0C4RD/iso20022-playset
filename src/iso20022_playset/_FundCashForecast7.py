@@ -2,20 +2,20 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveOrHistoricCurrencyAndAmount import ActiveOrHistoricCurrencyAndAmount
-from ._ActiveOrHistoricCurrencyCode import ActiveOrHistoricCurrencyCode
-from ._CashInForecast6 import CashInForecast6
-from ._CashOutForecast6 import CashOutForecast6
-from ._CurrencyDesignation1 import CurrencyDesignation1
-from ._DateAndDateTimeChoice import DateAndDateTimeChoice
-from ._FinancialInstrument9 import FinancialInstrument9
-from ._FinancialInstrumentQuantity1 import FinancialInstrumentQuantity1
-from ._ForeignExchangeTerms19 import ForeignExchangeTerms19
-from ._Max35Text import Max35Text
-from ._NetCashForecast4 import NetCashForecast4
-from ._PercentageRate import PercentageRate
-from ._UnitPrice19 import UnitPrice19
-from ._YesNoIndicator import YesNoIndicator
+from . import ActiveOrHistoricCurrencyAndAmount
+from . import ActiveOrHistoricCurrencyCode
+from . import CashInForecast6
+from . import CashOutForecast6
+from . import CurrencyDesignation1
+from . import DateAndDateTimeChoice
+from . import FinancialInstrument9
+from . import FinancialInstrumentQuantity1
+from . import ForeignExchangeTerms19
+from . import Max35Text
+from . import NetCashForecast4
+from . import PercentageRate
+from . import UnitPrice19
+from . import YesNoIndicator
 
 class FundCashForecast7(base_types._BaseFieldType):
 
@@ -26,12 +26,12 @@ class FundCashForecast7(base_types._BaseFieldType):
 
 	@CcySts.setter
 	def CcySts(self, value):
-		self._CcySts = value if type(value) != base_types.auto else self.make_default("CcySts")
+		self._CcySts = value if value is not None else base_types.UninitialisedField(self, 'CcySts', CurrencyDesignation1, False)
 
 	@CcySts.deleter
 	def CcySts(self):
 		del self._CcySts
-		self._CcySts = None
+		self._CcySts = base_types.UninitialisedField(self, 'CcySts', CurrencyDesignation1, False)
 
 	@property
 	def CshInFcstDtls(self):
@@ -39,12 +39,12 @@ class FundCashForecast7(base_types._BaseFieldType):
 
 	@CshInFcstDtls.setter
 	def CshInFcstDtls(self, value):
-		self._CshInFcstDtls = value if type(value) != base_types.auto else self.make_default("CshInFcstDtls")
+		self._CshInFcstDtls = value if value is not None else base_types.UninitialisedField(self, 'CshInFcstDtls', CashInForecast6, True)
 
 	@CshInFcstDtls.deleter
 	def CshInFcstDtls(self):
 		del self._CshInFcstDtls
-		self._CshInFcstDtls = None
+		self._CshInFcstDtls = base_types.UninitialisedField(self, 'CshInFcstDtls', CashInForecast6, True)
 
 	@property
 	def CshOutFcstDtls(self):
@@ -52,12 +52,12 @@ class FundCashForecast7(base_types._BaseFieldType):
 
 	@CshOutFcstDtls.setter
 	def CshOutFcstDtls(self, value):
-		self._CshOutFcstDtls = value if type(value) != base_types.auto else self.make_default("CshOutFcstDtls")
+		self._CshOutFcstDtls = value if value is not None else base_types.UninitialisedField(self, 'CshOutFcstDtls', CashOutForecast6, True)
 
 	@CshOutFcstDtls.deleter
 	def CshOutFcstDtls(self):
 		del self._CshOutFcstDtls
-		self._CshOutFcstDtls = None
+		self._CshOutFcstDtls = base_types.UninitialisedField(self, 'CshOutFcstDtls', CashOutForecast6, True)
 
 	@property
 	def FXRate(self):
@@ -65,12 +65,12 @@ class FundCashForecast7(base_types._BaseFieldType):
 
 	@FXRate.setter
 	def FXRate(self, value):
-		self._FXRate = value if type(value) != base_types.auto else self.make_default("FXRate")
+		self._FXRate = value if value is not None else base_types.UninitialisedField(self, 'FXRate', ForeignExchangeTerms19, False)
 
 	@FXRate.deleter
 	def FXRate(self):
 		del self._FXRate
-		self._FXRate = None
+		self._FXRate = base_types.UninitialisedField(self, 'FXRate', ForeignExchangeTerms19, False)
 
 	@property
 	def FinInstrmDtls(self):
@@ -78,12 +78,12 @@ class FundCashForecast7(base_types._BaseFieldType):
 
 	@FinInstrmDtls.setter
 	def FinInstrmDtls(self, value):
-		self._FinInstrmDtls = value if type(value) != base_types.auto else self.make_default("FinInstrmDtls")
+		self._FinInstrmDtls = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmDtls', FinancialInstrument9, False)
 
 	@FinInstrmDtls.deleter
 	def FinInstrmDtls(self):
 		del self._FinInstrmDtls
-		self._FinInstrmDtls = None
+		self._FinInstrmDtls = base_types.UninitialisedField(self, 'FinInstrmDtls', FinancialInstrument9, False)
 
 	@property
 	def Id(self):
@@ -91,12 +91,12 @@ class FundCashForecast7(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Max35Text, False)
 
 	@property
 	def InvstmtCcy(self):
@@ -104,12 +104,12 @@ class FundCashForecast7(base_types._BaseFieldType):
 
 	@InvstmtCcy.setter
 	def InvstmtCcy(self, value):
-		self._InvstmtCcy = value if type(value) != base_types.auto else self.make_default("InvstmtCcy")
+		self._InvstmtCcy = value if value is not None else base_types.UninitialisedField(self, 'InvstmtCcy', ActiveOrHistoricCurrencyCode, True)
 
 	@InvstmtCcy.deleter
 	def InvstmtCcy(self):
 		del self._InvstmtCcy
-		self._InvstmtCcy = None
+		self._InvstmtCcy = base_types.UninitialisedField(self, 'InvstmtCcy', ActiveOrHistoricCurrencyCode, True)
 
 	@property
 	def NetCshFcstDtls(self):
@@ -117,12 +117,12 @@ class FundCashForecast7(base_types._BaseFieldType):
 
 	@NetCshFcstDtls.setter
 	def NetCshFcstDtls(self, value):
-		self._NetCshFcstDtls = value if type(value) != base_types.auto else self.make_default("NetCshFcstDtls")
+		self._NetCshFcstDtls = value if value is not None else base_types.UninitialisedField(self, 'NetCshFcstDtls', NetCashForecast4, True)
 
 	@NetCshFcstDtls.deleter
 	def NetCshFcstDtls(self):
 		del self._NetCshFcstDtls
-		self._NetCshFcstDtls = None
+		self._NetCshFcstDtls = base_types.UninitialisedField(self, 'NetCshFcstDtls', NetCashForecast4, True)
 
 	@property
 	def PctgOfShrClssTtlNAV(self):
@@ -130,12 +130,12 @@ class FundCashForecast7(base_types._BaseFieldType):
 
 	@PctgOfShrClssTtlNAV.setter
 	def PctgOfShrClssTtlNAV(self, value):
-		self._PctgOfShrClssTtlNAV = value if type(value) != base_types.auto else self.make_default("PctgOfShrClssTtlNAV")
+		self._PctgOfShrClssTtlNAV = value if value is not None else base_types.UninitialisedField(self, 'PctgOfShrClssTtlNAV', PercentageRate, False)
 
 	@PctgOfShrClssTtlNAV.deleter
 	def PctgOfShrClssTtlNAV(self):
 		del self._PctgOfShrClssTtlNAV
-		self._PctgOfShrClssTtlNAV = None
+		self._PctgOfShrClssTtlNAV = base_types.UninitialisedField(self, 'PctgOfShrClssTtlNAV', PercentageRate, False)
 
 	@property
 	def Pric(self):
@@ -143,12 +143,12 @@ class FundCashForecast7(base_types._BaseFieldType):
 
 	@Pric.setter
 	def Pric(self, value):
-		self._Pric = value if type(value) != base_types.auto else self.make_default("Pric")
+		self._Pric = value if value is not None else base_types.UninitialisedField(self, 'Pric', UnitPrice19, False)
 
 	@Pric.deleter
 	def Pric(self):
 		del self._Pric
-		self._Pric = None
+		self._Pric = base_types.UninitialisedField(self, 'Pric', UnitPrice19, False)
 
 	@property
 	def PrvsTradDtTm(self):
@@ -156,12 +156,12 @@ class FundCashForecast7(base_types._BaseFieldType):
 
 	@PrvsTradDtTm.setter
 	def PrvsTradDtTm(self, value):
-		self._PrvsTradDtTm = value if type(value) != base_types.auto else self.make_default("PrvsTradDtTm")
+		self._PrvsTradDtTm = value if value is not None else base_types.UninitialisedField(self, 'PrvsTradDtTm', DateAndDateTimeChoice, False)
 
 	@PrvsTradDtTm.deleter
 	def PrvsTradDtTm(self):
 		del self._PrvsTradDtTm
-		self._PrvsTradDtTm = None
+		self._PrvsTradDtTm = base_types.UninitialisedField(self, 'PrvsTradDtTm', DateAndDateTimeChoice, False)
 
 	@property
 	def PrvsTtlNAV(self):
@@ -169,12 +169,12 @@ class FundCashForecast7(base_types._BaseFieldType):
 
 	@PrvsTtlNAV.setter
 	def PrvsTtlNAV(self, value):
-		self._PrvsTtlNAV = value if type(value) != base_types.auto else self.make_default("PrvsTtlNAV")
+		self._PrvsTtlNAV = value if value is not None else base_types.UninitialisedField(self, 'PrvsTtlNAV', ActiveOrHistoricCurrencyAndAmount, True)
 
 	@PrvsTtlNAV.deleter
 	def PrvsTtlNAV(self):
 		del self._PrvsTtlNAV
-		self._PrvsTtlNAV = None
+		self._PrvsTtlNAV = base_types.UninitialisedField(self, 'PrvsTtlNAV', ActiveOrHistoricCurrencyAndAmount, True)
 
 	@property
 	def PrvsTtlUnitsNb(self):
@@ -182,12 +182,12 @@ class FundCashForecast7(base_types._BaseFieldType):
 
 	@PrvsTtlUnitsNb.setter
 	def PrvsTtlUnitsNb(self, value):
-		self._PrvsTtlUnitsNb = value if type(value) != base_types.auto else self.make_default("PrvsTtlUnitsNb")
+		self._PrvsTtlUnitsNb = value if value is not None else base_types.UninitialisedField(self, 'PrvsTtlUnitsNb', FinancialInstrumentQuantity1, False)
 
 	@PrvsTtlUnitsNb.deleter
 	def PrvsTtlUnitsNb(self):
 		del self._PrvsTtlUnitsNb
-		self._PrvsTtlUnitsNb = None
+		self._PrvsTtlUnitsNb = base_types.UninitialisedField(self, 'PrvsTtlUnitsNb', FinancialInstrumentQuantity1, False)
 
 	@property
 	def TradDtTm(self):
@@ -195,12 +195,12 @@ class FundCashForecast7(base_types._BaseFieldType):
 
 	@TradDtTm.setter
 	def TradDtTm(self, value):
-		self._TradDtTm = value if type(value) != base_types.auto else self.make_default("TradDtTm")
+		self._TradDtTm = value if value is not None else base_types.UninitialisedField(self, 'TradDtTm', DateAndDateTimeChoice, False)
 
 	@TradDtTm.deleter
 	def TradDtTm(self):
 		del self._TradDtTm
-		self._TradDtTm = None
+		self._TradDtTm = base_types.UninitialisedField(self, 'TradDtTm', DateAndDateTimeChoice, False)
 
 	@property
 	def TtlNAV(self):
@@ -208,12 +208,12 @@ class FundCashForecast7(base_types._BaseFieldType):
 
 	@TtlNAV.setter
 	def TtlNAV(self, value):
-		self._TtlNAV = value if type(value) != base_types.auto else self.make_default("TtlNAV")
+		self._TtlNAV = value if value is not None else base_types.UninitialisedField(self, 'TtlNAV', ActiveOrHistoricCurrencyAndAmount, True)
 
 	@TtlNAV.deleter
 	def TtlNAV(self):
 		del self._TtlNAV
-		self._TtlNAV = None
+		self._TtlNAV = base_types.UninitialisedField(self, 'TtlNAV', ActiveOrHistoricCurrencyAndAmount, True)
 
 	@property
 	def TtlNAVChngRate(self):
@@ -221,12 +221,12 @@ class FundCashForecast7(base_types._BaseFieldType):
 
 	@TtlNAVChngRate.setter
 	def TtlNAVChngRate(self, value):
-		self._TtlNAVChngRate = value if type(value) != base_types.auto else self.make_default("TtlNAVChngRate")
+		self._TtlNAVChngRate = value if value is not None else base_types.UninitialisedField(self, 'TtlNAVChngRate', PercentageRate, False)
 
 	@TtlNAVChngRate.deleter
 	def TtlNAVChngRate(self):
 		del self._TtlNAVChngRate
-		self._TtlNAVChngRate = None
+		self._TtlNAVChngRate = base_types.UninitialisedField(self, 'TtlNAVChngRate', PercentageRate, False)
 
 	@property
 	def TtlUnitsNb(self):
@@ -234,12 +234,12 @@ class FundCashForecast7(base_types._BaseFieldType):
 
 	@TtlUnitsNb.setter
 	def TtlUnitsNb(self, value):
-		self._TtlUnitsNb = value if type(value) != base_types.auto else self.make_default("TtlUnitsNb")
+		self._TtlUnitsNb = value if value is not None else base_types.UninitialisedField(self, 'TtlUnitsNb', FinancialInstrumentQuantity1, False)
 
 	@TtlUnitsNb.deleter
 	def TtlUnitsNb(self):
 		del self._TtlUnitsNb
-		self._TtlUnitsNb = None
+		self._TtlUnitsNb = base_types.UninitialisedField(self, 'TtlUnitsNb', FinancialInstrumentQuantity1, False)
 
 	@property
 	def XcptnlNetCshFlowInd(self):
@@ -247,12 +247,12 @@ class FundCashForecast7(base_types._BaseFieldType):
 
 	@XcptnlNetCshFlowInd.setter
 	def XcptnlNetCshFlowInd(self, value):
-		self._XcptnlNetCshFlowInd = value if type(value) != base_types.auto else self.make_default("XcptnlNetCshFlowInd")
+		self._XcptnlNetCshFlowInd = value if value is not None else base_types.UninitialisedField(self, 'XcptnlNetCshFlowInd', YesNoIndicator, False)
 
 	@XcptnlNetCshFlowInd.deleter
 	def XcptnlNetCshFlowInd(self):
 		del self._XcptnlNetCshFlowInd
-		self._XcptnlNetCshFlowInd = None
+		self._XcptnlNetCshFlowInd = base_types.UninitialisedField(self, 'XcptnlNetCshFlowInd', YesNoIndicator, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CcySts', type=CurrencyDesignation1, min=0, max=1, mutex_group=None, array=False),

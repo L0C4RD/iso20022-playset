@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._AmountAndDirection102 import AmountAndDirection102
+from . import ActiveCurrencyAndAmount
+from . import AmountAndDirection102
 
 class EndOfDayRequirement1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class EndOfDayRequirement1(base_types._BaseFieldType):
 
 	@InitlMrgnRqrmnt.setter
 	def InitlMrgnRqrmnt(self, value):
-		self._InitlMrgnRqrmnt = value if type(value) != base_types.auto else self.make_default("InitlMrgnRqrmnt")
+		self._InitlMrgnRqrmnt = value if value is not None else base_types.UninitialisedField(self, 'InitlMrgnRqrmnt', ActiveCurrencyAndAmount, False)
 
 	@InitlMrgnRqrmnt.deleter
 	def InitlMrgnRqrmnt(self):
 		del self._InitlMrgnRqrmnt
-		self._InitlMrgnRqrmnt = None
+		self._InitlMrgnRqrmnt = base_types.UninitialisedField(self, 'InitlMrgnRqrmnt', ActiveCurrencyAndAmount, False)
 
 	@property
 	def VartnMrgnRqrmnt(self):
@@ -27,12 +27,12 @@ class EndOfDayRequirement1(base_types._BaseFieldType):
 
 	@VartnMrgnRqrmnt.setter
 	def VartnMrgnRqrmnt(self, value):
-		self._VartnMrgnRqrmnt = value if type(value) != base_types.auto else self.make_default("VartnMrgnRqrmnt")
+		self._VartnMrgnRqrmnt = value if value is not None else base_types.UninitialisedField(self, 'VartnMrgnRqrmnt', AmountAndDirection102, False)
 
 	@VartnMrgnRqrmnt.deleter
 	def VartnMrgnRqrmnt(self):
 		del self._VartnMrgnRqrmnt
-		self._VartnMrgnRqrmnt = None
+		self._VartnMrgnRqrmnt = base_types.UninitialisedField(self, 'VartnMrgnRqrmnt', AmountAndDirection102, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InitlMrgnRqrmnt', type=ActiveCurrencyAndAmount, min=0, max=1, mutex_group=None, array=False),

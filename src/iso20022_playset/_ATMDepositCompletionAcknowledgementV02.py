@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMDepositCompletionAcknowledgement2 import ATMDepositCompletionAcknowledgement2
-from ._ContentInformationType10 import ContentInformationType10
-from ._ContentInformationType15 import ContentInformationType15
-from ._Header32 import Header32
+from . import ATMDepositCompletionAcknowledgement2
+from . import ContentInformationType10
+from . import ContentInformationType15
+from . import Header32
 
 class ATMDepositCompletionAcknowledgementV02(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class ATMDepositCompletionAcknowledgementV02(base_types._BaseFieldType):
 
 	@ATMDpstCmpltnAck.setter
 	def ATMDpstCmpltnAck(self, value):
-		self._ATMDpstCmpltnAck = value if type(value) != base_types.auto else self.make_default("ATMDpstCmpltnAck")
+		self._ATMDpstCmpltnAck = value if value is not None else base_types.UninitialisedField(self, 'ATMDpstCmpltnAck', ATMDepositCompletionAcknowledgement2, False)
 
 	@ATMDpstCmpltnAck.deleter
 	def ATMDpstCmpltnAck(self):
 		del self._ATMDpstCmpltnAck
-		self._ATMDpstCmpltnAck = None
+		self._ATMDpstCmpltnAck = base_types.UninitialisedField(self, 'ATMDpstCmpltnAck', ATMDepositCompletionAcknowledgement2, False)
 
 	@property
 	def Hdr(self):
@@ -29,12 +29,12 @@ class ATMDepositCompletionAcknowledgementV02(base_types._BaseFieldType):
 
 	@Hdr.setter
 	def Hdr(self, value):
-		self._Hdr = value if type(value) != base_types.auto else self.make_default("Hdr")
+		self._Hdr = value if value is not None else base_types.UninitialisedField(self, 'Hdr', Header32, False)
 
 	@Hdr.deleter
 	def Hdr(self):
 		del self._Hdr
-		self._Hdr = None
+		self._Hdr = base_types.UninitialisedField(self, 'Hdr', Header32, False)
 
 	@property
 	def PrtctdATMDpstCmpltnAck(self):
@@ -42,12 +42,12 @@ class ATMDepositCompletionAcknowledgementV02(base_types._BaseFieldType):
 
 	@PrtctdATMDpstCmpltnAck.setter
 	def PrtctdATMDpstCmpltnAck(self, value):
-		self._PrtctdATMDpstCmpltnAck = value if type(value) != base_types.auto else self.make_default("PrtctdATMDpstCmpltnAck")
+		self._PrtctdATMDpstCmpltnAck = value if value is not None else base_types.UninitialisedField(self, 'PrtctdATMDpstCmpltnAck', ContentInformationType10, False)
 
 	@PrtctdATMDpstCmpltnAck.deleter
 	def PrtctdATMDpstCmpltnAck(self):
 		del self._PrtctdATMDpstCmpltnAck
-		self._PrtctdATMDpstCmpltnAck = None
+		self._PrtctdATMDpstCmpltnAck = base_types.UninitialisedField(self, 'PrtctdATMDpstCmpltnAck', ContentInformationType10, False)
 
 	@property
 	def SctyTrlr(self):
@@ -55,12 +55,12 @@ class ATMDepositCompletionAcknowledgementV02(base_types._BaseFieldType):
 
 	@SctyTrlr.setter
 	def SctyTrlr(self, value):
-		self._SctyTrlr = value if type(value) != base_types.auto else self.make_default("SctyTrlr")
+		self._SctyTrlr = value if value is not None else base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType15, False)
 
 	@SctyTrlr.deleter
 	def SctyTrlr(self):
 		del self._SctyTrlr
-		self._SctyTrlr = None
+		self._SctyTrlr = base_types.UninitialisedField(self, 'SctyTrlr', ContentInformationType15, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ATMDpstCmpltnAck', type=ATMDepositCompletionAcknowledgement2, min=0, max=1, mutex_group=None, array=False),

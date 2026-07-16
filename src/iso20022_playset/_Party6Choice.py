@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._OrganisationIdentification4 import OrganisationIdentification4
-from ._PersonIdentification5 import PersonIdentification5
+from . import OrganisationIdentification4
+from . import PersonIdentification5
 
 class Party6Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Party6Choice(base_types._BaseFieldType):
 
 	@OrgId.setter
 	def OrgId(self, value):
-		self._OrgId = value if type(value) != base_types.auto else self.make_default("OrgId")
+		self._OrgId = value if value is not None else base_types.UninitialisedField(self, 'OrgId', OrganisationIdentification4, False)
 
 	@OrgId.deleter
 	def OrgId(self):
 		del self._OrgId
-		self._OrgId = None
+		self._OrgId = base_types.UninitialisedField(self, 'OrgId', OrganisationIdentification4, False)
 
 	@property
 	def PrvtId(self):
@@ -27,12 +27,12 @@ class Party6Choice(base_types._BaseFieldType):
 
 	@PrvtId.setter
 	def PrvtId(self, value):
-		self._PrvtId = value if type(value) != base_types.auto else self.make_default("PrvtId")
+		self._PrvtId = value if value is not None else base_types.UninitialisedField(self, 'PrvtId', PersonIdentification5, False)
 
 	@PrvtId.deleter
 	def PrvtId(self):
 		del self._PrvtId
-		self._PrvtId = None
+		self._PrvtId = base_types.UninitialisedField(self, 'PrvtId', PersonIdentification5, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OrgId', type=OrganisationIdentification4, min=0, max=1, mutex_group=1, array=False),

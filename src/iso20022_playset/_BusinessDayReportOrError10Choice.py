@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BusinessDay9 import BusinessDay9
-from ._ErrorHandling5 import ErrorHandling5
+from . import BusinessDay9
+from . import ErrorHandling5
 
 class BusinessDayReportOrError10Choice(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class BusinessDayReportOrError10Choice(base_types._BaseFieldType):
 
 	@BizDayInf.setter
 	def BizDayInf(self, value):
-		self._BizDayInf = value if type(value) != base_types.auto else self.make_default("BizDayInf")
+		self._BizDayInf = value if value is not None else base_types.UninitialisedField(self, 'BizDayInf', BusinessDay9, False)
 
 	@BizDayInf.deleter
 	def BizDayInf(self):
 		del self._BizDayInf
-		self._BizDayInf = None
+		self._BizDayInf = base_types.UninitialisedField(self, 'BizDayInf', BusinessDay9, False)
 
 	@property
 	def BizErr(self):
@@ -27,12 +27,12 @@ class BusinessDayReportOrError10Choice(base_types._BaseFieldType):
 
 	@BizErr.setter
 	def BizErr(self, value):
-		self._BizErr = value if type(value) != base_types.auto else self.make_default("BizErr")
+		self._BizErr = value if value is not None else base_types.UninitialisedField(self, 'BizErr', ErrorHandling5, True)
 
 	@BizErr.deleter
 	def BizErr(self):
 		del self._BizErr
-		self._BizErr = None
+		self._BizErr = base_types.UninitialisedField(self, 'BizErr', ErrorHandling5, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BizDayInf', type=BusinessDay9, min=0, max=1, mutex_group=1, array=False),

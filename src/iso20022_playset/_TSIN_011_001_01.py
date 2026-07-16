@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PartyRegistrationAndGuaranteeNotificationV01 import PartyRegistrationAndGuaranteeNotificationV01
+from . import PartyRegistrationAndGuaranteeNotificationV01
 
 class TSIN_011_001_01():
 
@@ -18,12 +18,12 @@ class TSIN_011_001_01():
 
 		@PtyRegnAndGrntNtfctn.setter
 		def PtyRegnAndGrntNtfctn(self, value):
-			self._PtyRegnAndGrntNtfctn = value if type(value) != base_types.auto else self.make_default("PtyRegnAndGrntNtfctn")
+			self._PtyRegnAndGrntNtfctn = value if value is not None else base_types.UninitialisedField(self, 'PtyRegnAndGrntNtfctn', PartyRegistrationAndGuaranteeNotificationV01, False)
 
 		@PtyRegnAndGrntNtfctn.deleter
 		def PtyRegnAndGrntNtfctn(self):
 			del self._PtyRegnAndGrntNtfctn
-			self._PtyRegnAndGrntNtfctn = None
+			self._PtyRegnAndGrntNtfctn = base_types.UninitialisedField(self, 'PtyRegnAndGrntNtfctn', PartyRegistrationAndGuaranteeNotificationV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='PtyRegnAndGrntNtfctn', type=PartyRegistrationAndGuaranteeNotificationV01, min=1, max=1, mutex_group=None, array=False),

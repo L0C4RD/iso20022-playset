@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RedemptionBulkOrderConfirmationCancellationInstructionV03 import RedemptionBulkOrderConfirmationCancellationInstructionV03
+from . import RedemptionBulkOrderConfirmationCancellationInstructionV03
 
 class SETR_053_001_03():
 
@@ -18,12 +18,12 @@ class SETR_053_001_03():
 
 		@RedBlkOrdrConfCxlInstr.setter
 		def RedBlkOrdrConfCxlInstr(self, value):
-			self._RedBlkOrdrConfCxlInstr = value if type(value) != base_types.auto else self.make_default("RedBlkOrdrConfCxlInstr")
+			self._RedBlkOrdrConfCxlInstr = value if value is not None else base_types.UninitialisedField(self, 'RedBlkOrdrConfCxlInstr', RedemptionBulkOrderConfirmationCancellationInstructionV03, False)
 
 		@RedBlkOrdrConfCxlInstr.deleter
 		def RedBlkOrdrConfCxlInstr(self):
 			del self._RedBlkOrdrConfCxlInstr
-			self._RedBlkOrdrConfCxlInstr = None
+			self._RedBlkOrdrConfCxlInstr = base_types.UninitialisedField(self, 'RedBlkOrdrConfCxlInstr', RedemptionBulkOrderConfirmationCancellationInstructionV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='RedBlkOrdrConfCxlInstr', type=RedemptionBulkOrderConfirmationCancellationInstructionV03, min=1, max=1, mutex_group=None, array=False),

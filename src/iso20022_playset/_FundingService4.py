@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._FundingSource5 import FundingSource5
-from ._ISODateTime import ISODateTime
-from ._Max256Text import Max256Text
-from ._Max35Text import Max35Text
-from ._Max3Text import Max3Text
-from ._Max500Text import Max500Text
+from . import FundingSource5
+from . import ISODateTime
+from . import Max256Text
+from . import Max35Text
+from . import Max3Text
+from . import Max500Text
 
 class FundingService4(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class FundingService4(base_types._BaseFieldType):
 
 	@BizPurp.setter
 	def BizPurp(self, value):
-		self._BizPurp = value if type(value) != base_types.auto else self.make_default("BizPurp")
+		self._BizPurp = value if value is not None else base_types.UninitialisedField(self, 'BizPurp', Max500Text, False)
 
 	@BizPurp.deleter
 	def BizPurp(self):
 		del self._BizPurp
-		self._BizPurp = None
+		self._BizPurp = base_types.UninitialisedField(self, 'BizPurp', Max500Text, False)
 
 	@property
 	def ClmAssgnr(self):
@@ -31,12 +31,12 @@ class FundingService4(base_types._BaseFieldType):
 
 	@ClmAssgnr.setter
 	def ClmAssgnr(self, value):
-		self._ClmAssgnr = value if type(value) != base_types.auto else self.make_default("ClmAssgnr")
+		self._ClmAssgnr = value if value is not None else base_types.UninitialisedField(self, 'ClmAssgnr', Max35Text, False)
 
 	@ClmAssgnr.deleter
 	def ClmAssgnr(self):
 		del self._ClmAssgnr
-		self._ClmAssgnr = None
+		self._ClmAssgnr = base_types.UninitialisedField(self, 'ClmAssgnr', Max35Text, False)
 
 	@property
 	def ClmCrdntls(self):
@@ -44,12 +44,12 @@ class FundingService4(base_types._BaseFieldType):
 
 	@ClmCrdntls.setter
 	def ClmCrdntls(self, value):
-		self._ClmCrdntls = value if type(value) != base_types.auto else self.make_default("ClmCrdntls")
+		self._ClmCrdntls = value if value is not None else base_types.UninitialisedField(self, 'ClmCrdntls', Max500Text, False)
 
 	@ClmCrdntls.deleter
 	def ClmCrdntls(self):
 		del self._ClmCrdntls
-		self._ClmCrdntls = None
+		self._ClmCrdntls = base_types.UninitialisedField(self, 'ClmCrdntls', Max500Text, False)
 
 	@property
 	def Desc(self):
@@ -57,12 +57,12 @@ class FundingService4(base_types._BaseFieldType):
 
 	@Desc.setter
 	def Desc(self, value):
-		self._Desc = value if type(value) != base_types.auto else self.make_default("Desc")
+		self._Desc = value if value is not None else base_types.UninitialisedField(self, 'Desc', Max256Text, False)
 
 	@Desc.deleter
 	def Desc(self):
 		del self._Desc
-		self._Desc = None
+		self._Desc = base_types.UninitialisedField(self, 'Desc', Max256Text, False)
 
 	@property
 	def DfrrdDtTm(self):
@@ -70,12 +70,12 @@ class FundingService4(base_types._BaseFieldType):
 
 	@DfrrdDtTm.setter
 	def DfrrdDtTm(self, value):
-		self._DfrrdDtTm = value if type(value) != base_types.auto else self.make_default("DfrrdDtTm")
+		self._DfrrdDtTm = value if value is not None else base_types.UninitialisedField(self, 'DfrrdDtTm', ISODateTime, False)
 
 	@DfrrdDtTm.deleter
 	def DfrrdDtTm(self):
 		del self._DfrrdDtTm
-		self._DfrrdDtTm = None
+		self._DfrrdDtTm = base_types.UninitialisedField(self, 'DfrrdDtTm', ISODateTime, False)
 
 	@property
 	def FndgSrc(self):
@@ -83,12 +83,12 @@ class FundingService4(base_types._BaseFieldType):
 
 	@FndgSrc.setter
 	def FndgSrc(self, value):
-		self._FndgSrc = value if type(value) != base_types.auto else self.make_default("FndgSrc")
+		self._FndgSrc = value if value is not None else base_types.UninitialisedField(self, 'FndgSrc', FundingSource5, True)
 
 	@FndgSrc.deleter
 	def FndgSrc(self):
 		del self._FndgSrc
-		self._FndgSrc = None
+		self._FndgSrc = base_types.UninitialisedField(self, 'FndgSrc', FundingSource5, True)
 
 	@property
 	def Nm(self):
@@ -96,12 +96,12 @@ class FundingService4(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max35Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max35Text, False)
 
 	@property
 	def Prvdr(self):
@@ -109,12 +109,12 @@ class FundingService4(base_types._BaseFieldType):
 
 	@Prvdr.setter
 	def Prvdr(self, value):
-		self._Prvdr = value if type(value) != base_types.auto else self.make_default("Prvdr")
+		self._Prvdr = value if value is not None else base_types.UninitialisedField(self, 'Prvdr', Max35Text, False)
 
 	@Prvdr.deleter
 	def Prvdr(self):
 		del self._Prvdr
-		self._Prvdr = None
+		self._Prvdr = base_types.UninitialisedField(self, 'Prvdr', Max35Text, False)
 
 	@property
 	def Ref(self):
@@ -122,12 +122,12 @@ class FundingService4(base_types._BaseFieldType):
 
 	@Ref.setter
 	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+		self._Ref = value if value is not None else base_types.UninitialisedField(self, 'Ref', Max35Text, False)
 
 	@Ref.deleter
 	def Ref(self):
 		del self._Ref
-		self._Ref = None
+		self._Ref = base_types.UninitialisedField(self, 'Ref', Max35Text, False)
 
 	@property
 	def SvcPrcgTp(self):
@@ -135,12 +135,12 @@ class FundingService4(base_types._BaseFieldType):
 
 	@SvcPrcgTp.setter
 	def SvcPrcgTp(self, value):
-		self._SvcPrcgTp = value if type(value) != base_types.auto else self.make_default("SvcPrcgTp")
+		self._SvcPrcgTp = value if value is not None else base_types.UninitialisedField(self, 'SvcPrcgTp', Max3Text, False)
 
 	@SvcPrcgTp.deleter
 	def SvcPrcgTp(self):
 		del self._SvcPrcgTp
-		self._SvcPrcgTp = None
+		self._SvcPrcgTp = base_types.UninitialisedField(self, 'SvcPrcgTp', Max3Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BizPurp', type=Max500Text, min=0, max=1, mutex_group=None, array=False),

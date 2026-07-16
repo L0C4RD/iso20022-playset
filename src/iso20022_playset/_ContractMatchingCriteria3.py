@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CompareActiveOrHistoricCurrencyCode1 import CompareActiveOrHistoricCurrencyCode1
-from ._CompareAssetClass1 import CompareAssetClass1
-from ._CompareCFIIdentifier3 import CompareCFIIdentifier3
-from ._CompareFinancialInstrumentContractType1 import CompareFinancialInstrumentContractType1
-from ._CompareISINIdentifier2 import CompareISINIdentifier2
-from ._CompareText1 import CompareText1
-from ._CompareTrueFalseIndicator3 import CompareTrueFalseIndicator3
-from ._CompareUnderlyingInstrument3 import CompareUnderlyingInstrument3
-from ._CompareUniqueProductIdentifier2 import CompareUniqueProductIdentifier2
+from . import CompareActiveOrHistoricCurrencyCode1
+from . import CompareAssetClass1
+from . import CompareCFIIdentifier3
+from . import CompareFinancialInstrumentContractType1
+from . import CompareISINIdentifier2
+from . import CompareText1
+from . import CompareTrueFalseIndicator3
+from . import CompareUnderlyingInstrument3
+from . import CompareUniqueProductIdentifier2
 
 class ContractMatchingCriteria3(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class ContractMatchingCriteria3(base_types._BaseFieldType):
 
 	@AltrntvInstrmId.setter
 	def AltrntvInstrmId(self, value):
-		self._AltrntvInstrmId = value if type(value) != base_types.auto else self.make_default("AltrntvInstrmId")
+		self._AltrntvInstrmId = value if value is not None else base_types.UninitialisedField(self, 'AltrntvInstrmId', CompareText1, False)
 
 	@AltrntvInstrmId.deleter
 	def AltrntvInstrmId(self):
 		del self._AltrntvInstrmId
-		self._AltrntvInstrmId = None
+		self._AltrntvInstrmId = base_types.UninitialisedField(self, 'AltrntvInstrmId', CompareText1, False)
 
 	@property
 	def AsstClss(self):
@@ -34,12 +34,12 @@ class ContractMatchingCriteria3(base_types._BaseFieldType):
 
 	@AsstClss.setter
 	def AsstClss(self, value):
-		self._AsstClss = value if type(value) != base_types.auto else self.make_default("AsstClss")
+		self._AsstClss = value if value is not None else base_types.UninitialisedField(self, 'AsstClss', CompareAssetClass1, False)
 
 	@AsstClss.deleter
 	def AsstClss(self):
 		del self._AsstClss
-		self._AsstClss = None
+		self._AsstClss = base_types.UninitialisedField(self, 'AsstClss', CompareAssetClass1, False)
 
 	@property
 	def CtrctTp(self):
@@ -47,12 +47,12 @@ class ContractMatchingCriteria3(base_types._BaseFieldType):
 
 	@CtrctTp.setter
 	def CtrctTp(self, value):
-		self._CtrctTp = value if type(value) != base_types.auto else self.make_default("CtrctTp")
+		self._CtrctTp = value if value is not None else base_types.UninitialisedField(self, 'CtrctTp', CompareFinancialInstrumentContractType1, False)
 
 	@CtrctTp.deleter
 	def CtrctTp(self):
 		del self._CtrctTp
-		self._CtrctTp = None
+		self._CtrctTp = base_types.UninitialisedField(self, 'CtrctTp', CompareFinancialInstrumentContractType1, False)
 
 	@property
 	def DerivBasedOnCrptAsst(self):
@@ -60,12 +60,12 @@ class ContractMatchingCriteria3(base_types._BaseFieldType):
 
 	@DerivBasedOnCrptAsst.setter
 	def DerivBasedOnCrptAsst(self, value):
-		self._DerivBasedOnCrptAsst = value if type(value) != base_types.auto else self.make_default("DerivBasedOnCrptAsst")
+		self._DerivBasedOnCrptAsst = value if value is not None else base_types.UninitialisedField(self, 'DerivBasedOnCrptAsst', CompareTrueFalseIndicator3, False)
 
 	@DerivBasedOnCrptAsst.deleter
 	def DerivBasedOnCrptAsst(self):
 		del self._DerivBasedOnCrptAsst
-		self._DerivBasedOnCrptAsst = None
+		self._DerivBasedOnCrptAsst = base_types.UninitialisedField(self, 'DerivBasedOnCrptAsst', CompareTrueFalseIndicator3, False)
 
 	@property
 	def ISIN(self):
@@ -73,12 +73,12 @@ class ContractMatchingCriteria3(base_types._BaseFieldType):
 
 	@ISIN.setter
 	def ISIN(self, value):
-		self._ISIN = value if type(value) != base_types.auto else self.make_default("ISIN")
+		self._ISIN = value if value is not None else base_types.UninitialisedField(self, 'ISIN', CompareISINIdentifier2, False)
 
 	@ISIN.deleter
 	def ISIN(self):
 		del self._ISIN
-		self._ISIN = None
+		self._ISIN = base_types.UninitialisedField(self, 'ISIN', CompareISINIdentifier2, False)
 
 	@property
 	def PdctClssfctn(self):
@@ -86,12 +86,12 @@ class ContractMatchingCriteria3(base_types._BaseFieldType):
 
 	@PdctClssfctn.setter
 	def PdctClssfctn(self, value):
-		self._PdctClssfctn = value if type(value) != base_types.auto else self.make_default("PdctClssfctn")
+		self._PdctClssfctn = value if value is not None else base_types.UninitialisedField(self, 'PdctClssfctn', CompareCFIIdentifier3, False)
 
 	@PdctClssfctn.deleter
 	def PdctClssfctn(self):
 		del self._PdctClssfctn
-		self._PdctClssfctn = None
+		self._PdctClssfctn = base_types.UninitialisedField(self, 'PdctClssfctn', CompareCFIIdentifier3, False)
 
 	@property
 	def SttlmCcy(self):
@@ -99,12 +99,12 @@ class ContractMatchingCriteria3(base_types._BaseFieldType):
 
 	@SttlmCcy.setter
 	def SttlmCcy(self, value):
-		self._SttlmCcy = value if type(value) != base_types.auto else self.make_default("SttlmCcy")
+		self._SttlmCcy = value if value is not None else base_types.UninitialisedField(self, 'SttlmCcy', CompareActiveOrHistoricCurrencyCode1, False)
 
 	@SttlmCcy.deleter
 	def SttlmCcy(self):
 		del self._SttlmCcy
-		self._SttlmCcy = None
+		self._SttlmCcy = base_types.UninitialisedField(self, 'SttlmCcy', CompareActiveOrHistoricCurrencyCode1, False)
 
 	@property
 	def SttlmCcyScndLeg(self):
@@ -112,12 +112,12 @@ class ContractMatchingCriteria3(base_types._BaseFieldType):
 
 	@SttlmCcyScndLeg.setter
 	def SttlmCcyScndLeg(self, value):
-		self._SttlmCcyScndLeg = value if type(value) != base_types.auto else self.make_default("SttlmCcyScndLeg")
+		self._SttlmCcyScndLeg = value if value is not None else base_types.UninitialisedField(self, 'SttlmCcyScndLeg', CompareActiveOrHistoricCurrencyCode1, False)
 
 	@SttlmCcyScndLeg.deleter
 	def SttlmCcyScndLeg(self):
 		del self._SttlmCcyScndLeg
-		self._SttlmCcyScndLeg = None
+		self._SttlmCcyScndLeg = base_types.UninitialisedField(self, 'SttlmCcyScndLeg', CompareActiveOrHistoricCurrencyCode1, False)
 
 	@property
 	def UndrlygInstrm(self):
@@ -125,12 +125,12 @@ class ContractMatchingCriteria3(base_types._BaseFieldType):
 
 	@UndrlygInstrm.setter
 	def UndrlygInstrm(self, value):
-		self._UndrlygInstrm = value if type(value) != base_types.auto else self.make_default("UndrlygInstrm")
+		self._UndrlygInstrm = value if value is not None else base_types.UninitialisedField(self, 'UndrlygInstrm', CompareUnderlyingInstrument3, False)
 
 	@UndrlygInstrm.deleter
 	def UndrlygInstrm(self):
 		del self._UndrlygInstrm
-		self._UndrlygInstrm = None
+		self._UndrlygInstrm = base_types.UninitialisedField(self, 'UndrlygInstrm', CompareUnderlyingInstrument3, False)
 
 	@property
 	def UnqPdctIdr(self):
@@ -138,12 +138,12 @@ class ContractMatchingCriteria3(base_types._BaseFieldType):
 
 	@UnqPdctIdr.setter
 	def UnqPdctIdr(self, value):
-		self._UnqPdctIdr = value if type(value) != base_types.auto else self.make_default("UnqPdctIdr")
+		self._UnqPdctIdr = value if value is not None else base_types.UninitialisedField(self, 'UnqPdctIdr', CompareUniqueProductIdentifier2, False)
 
 	@UnqPdctIdr.deleter
 	def UnqPdctIdr(self):
 		del self._UnqPdctIdr
-		self._UnqPdctIdr = None
+		self._UnqPdctIdr = base_types.UninitialisedField(self, 'UnqPdctIdr', CompareUniqueProductIdentifier2, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AltrntvInstrmId', type=CompareText1, min=0, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BillingMethod1 import BillingMethod1
-from ._BillingMethod2 import BillingMethod2
-from ._BillingMethod3 import BillingMethod3
+from . import BillingMethod1
+from . import BillingMethod2
+from . import BillingMethod3
 
 class BillingMethod1Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class BillingMethod1Choice(base_types._BaseFieldType):
 
 	@MtdA.setter
 	def MtdA(self, value):
-		self._MtdA = value if type(value) != base_types.auto else self.make_default("MtdA")
+		self._MtdA = value if value is not None else base_types.UninitialisedField(self, 'MtdA', BillingMethod1, False)
 
 	@MtdA.deleter
 	def MtdA(self):
 		del self._MtdA
-		self._MtdA = None
+		self._MtdA = base_types.UninitialisedField(self, 'MtdA', BillingMethod1, False)
 
 	@property
 	def MtdB(self):
@@ -28,12 +28,12 @@ class BillingMethod1Choice(base_types._BaseFieldType):
 
 	@MtdB.setter
 	def MtdB(self, value):
-		self._MtdB = value if type(value) != base_types.auto else self.make_default("MtdB")
+		self._MtdB = value if value is not None else base_types.UninitialisedField(self, 'MtdB', BillingMethod2, False)
 
 	@MtdB.deleter
 	def MtdB(self):
 		del self._MtdB
-		self._MtdB = None
+		self._MtdB = base_types.UninitialisedField(self, 'MtdB', BillingMethod2, False)
 
 	@property
 	def MtdD(self):
@@ -41,12 +41,12 @@ class BillingMethod1Choice(base_types._BaseFieldType):
 
 	@MtdD.setter
 	def MtdD(self, value):
-		self._MtdD = value if type(value) != base_types.auto else self.make_default("MtdD")
+		self._MtdD = value if value is not None else base_types.UninitialisedField(self, 'MtdD', BillingMethod3, False)
 
 	@MtdD.deleter
 	def MtdD(self):
 		del self._MtdD
-		self._MtdD = None
+		self._MtdD = base_types.UninitialisedField(self, 'MtdD', BillingMethod3, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MtdA', type=BillingMethod1, min=0, max=1, mutex_group=1, array=False),

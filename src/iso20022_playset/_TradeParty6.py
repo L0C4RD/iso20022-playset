@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LegalOrganisation2 import LegalOrganisation2
-from ._PartyIdentification272 import PartyIdentification272
-from ._TaxParty4 import TaxParty4
+from . import LegalOrganisation2
+from . import PartyIdentification272
+from . import TaxParty4
 
 class TradeParty6(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class TradeParty6(base_types._BaseFieldType):
 
 	@LglOrg.setter
 	def LglOrg(self, value):
-		self._LglOrg = value if type(value) != base_types.auto else self.make_default("LglOrg")
+		self._LglOrg = value if value is not None else base_types.UninitialisedField(self, 'LglOrg', LegalOrganisation2, False)
 
 	@LglOrg.deleter
 	def LglOrg(self):
 		del self._LglOrg
-		self._LglOrg = None
+		self._LglOrg = base_types.UninitialisedField(self, 'LglOrg', LegalOrganisation2, False)
 
 	@property
 	def PtyId(self):
@@ -28,12 +28,12 @@ class TradeParty6(base_types._BaseFieldType):
 
 	@PtyId.setter
 	def PtyId(self, value):
-		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
+		self._PtyId = value if value is not None else base_types.UninitialisedField(self, 'PtyId', PartyIdentification272, False)
 
 	@PtyId.deleter
 	def PtyId(self):
 		del self._PtyId
-		self._PtyId = None
+		self._PtyId = base_types.UninitialisedField(self, 'PtyId', PartyIdentification272, False)
 
 	@property
 	def TaxPty(self):
@@ -41,12 +41,12 @@ class TradeParty6(base_types._BaseFieldType):
 
 	@TaxPty.setter
 	def TaxPty(self, value):
-		self._TaxPty = value if type(value) != base_types.auto else self.make_default("TaxPty")
+		self._TaxPty = value if value is not None else base_types.UninitialisedField(self, 'TaxPty', TaxParty4, True)
 
 	@TaxPty.deleter
 	def TaxPty(self):
 		del self._TaxPty
-		self._TaxPty = None
+		self._TaxPty = base_types.UninitialisedField(self, 'TaxPty', TaxParty4, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LglOrg', type=LegalOrganisation2, min=0, max=1, mutex_group=None, array=False),

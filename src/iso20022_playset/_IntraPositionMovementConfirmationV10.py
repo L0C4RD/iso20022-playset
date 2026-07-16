@@ -2,16 +2,16 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalParameters33 import AdditionalParameters33
-from ._BlockChainAddressWallet3 import BlockChainAddressWallet3
-from ._FinancialInstrumentAttributes112 import FinancialInstrumentAttributes112
-from ._IntraPositionDetails65 import IntraPositionDetails65
-from ._Linkages75 import Linkages75
-from ._PartyIdentification127Choice import PartyIdentification127Choice
-from ._SafekeepingPlaceFormat41Choice import SafekeepingPlaceFormat41Choice
-from ._SecuritiesAccount19 import SecuritiesAccount19
-from ._SecurityIdentification19 import SecurityIdentification19
-from ._SupplementaryData1 import SupplementaryData1
+from . import AdditionalParameters33
+from . import BlockChainAddressWallet3
+from . import FinancialInstrumentAttributes112
+from . import IntraPositionDetails65
+from . import Linkages75
+from . import PartyIdentification127Choice
+from . import SafekeepingPlaceFormat41Choice
+from . import SecuritiesAccount19
+from . import SecurityIdentification19
+from . import SupplementaryData1
 
 class IntraPositionMovementConfirmationV10(base_types._BaseFieldType):
 
@@ -22,12 +22,12 @@ class IntraPositionMovementConfirmationV10(base_types._BaseFieldType):
 
 	@AcctOwnr.setter
 	def AcctOwnr(self, value):
-		self._AcctOwnr = value if type(value) != base_types.auto else self.make_default("AcctOwnr")
+		self._AcctOwnr = value if value is not None else base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification127Choice, False)
 
 	@AcctOwnr.deleter
 	def AcctOwnr(self):
 		del self._AcctOwnr
-		self._AcctOwnr = None
+		self._AcctOwnr = base_types.UninitialisedField(self, 'AcctOwnr', PartyIdentification127Choice, False)
 
 	@property
 	def AddtlParams(self):
@@ -35,12 +35,12 @@ class IntraPositionMovementConfirmationV10(base_types._BaseFieldType):
 
 	@AddtlParams.setter
 	def AddtlParams(self, value):
-		self._AddtlParams = value if type(value) != base_types.auto else self.make_default("AddtlParams")
+		self._AddtlParams = value if value is not None else base_types.UninitialisedField(self, 'AddtlParams', AdditionalParameters33, False)
 
 	@AddtlParams.deleter
 	def AddtlParams(self):
 		del self._AddtlParams
-		self._AddtlParams = None
+		self._AddtlParams = base_types.UninitialisedField(self, 'AddtlParams', AdditionalParameters33, False)
 
 	@property
 	def BlckChainAdrOrWllt(self):
@@ -48,12 +48,12 @@ class IntraPositionMovementConfirmationV10(base_types._BaseFieldType):
 
 	@BlckChainAdrOrWllt.setter
 	def BlckChainAdrOrWllt(self, value):
-		self._BlckChainAdrOrWllt = value if type(value) != base_types.auto else self.make_default("BlckChainAdrOrWllt")
+		self._BlckChainAdrOrWllt = value if value is not None else base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet3, False)
 
 	@BlckChainAdrOrWllt.deleter
 	def BlckChainAdrOrWllt(self):
 		del self._BlckChainAdrOrWllt
-		self._BlckChainAdrOrWllt = None
+		self._BlckChainAdrOrWllt = base_types.UninitialisedField(self, 'BlckChainAdrOrWllt', BlockChainAddressWallet3, False)
 
 	@property
 	def FinInstrmAttrbts(self):
@@ -61,12 +61,12 @@ class IntraPositionMovementConfirmationV10(base_types._BaseFieldType):
 
 	@FinInstrmAttrbts.setter
 	def FinInstrmAttrbts(self, value):
-		self._FinInstrmAttrbts = value if type(value) != base_types.auto else self.make_default("FinInstrmAttrbts")
+		self._FinInstrmAttrbts = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmAttrbts', FinancialInstrumentAttributes112, False)
 
 	@FinInstrmAttrbts.deleter
 	def FinInstrmAttrbts(self):
 		del self._FinInstrmAttrbts
-		self._FinInstrmAttrbts = None
+		self._FinInstrmAttrbts = base_types.UninitialisedField(self, 'FinInstrmAttrbts', FinancialInstrumentAttributes112, False)
 
 	@property
 	def FinInstrmId(self):
@@ -74,12 +74,12 @@ class IntraPositionMovementConfirmationV10(base_types._BaseFieldType):
 
 	@FinInstrmId.setter
 	def FinInstrmId(self, value):
-		self._FinInstrmId = value if type(value) != base_types.auto else self.make_default("FinInstrmId")
+		self._FinInstrmId = value if value is not None else base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@FinInstrmId.deleter
 	def FinInstrmId(self):
 		del self._FinInstrmId
-		self._FinInstrmId = None
+		self._FinInstrmId = base_types.UninitialisedField(self, 'FinInstrmId', SecurityIdentification19, False)
 
 	@property
 	def IntraPosDtls(self):
@@ -87,12 +87,12 @@ class IntraPositionMovementConfirmationV10(base_types._BaseFieldType):
 
 	@IntraPosDtls.setter
 	def IntraPosDtls(self, value):
-		self._IntraPosDtls = value if type(value) != base_types.auto else self.make_default("IntraPosDtls")
+		self._IntraPosDtls = value if value is not None else base_types.UninitialisedField(self, 'IntraPosDtls', IntraPositionDetails65, False)
 
 	@IntraPosDtls.deleter
 	def IntraPosDtls(self):
 		del self._IntraPosDtls
-		self._IntraPosDtls = None
+		self._IntraPosDtls = base_types.UninitialisedField(self, 'IntraPosDtls', IntraPositionDetails65, False)
 
 	@property
 	def Lkg(self):
@@ -100,12 +100,12 @@ class IntraPositionMovementConfirmationV10(base_types._BaseFieldType):
 
 	@Lkg.setter
 	def Lkg(self, value):
-		self._Lkg = value if type(value) != base_types.auto else self.make_default("Lkg")
+		self._Lkg = value if value is not None else base_types.UninitialisedField(self, 'Lkg', Linkages75, False)
 
 	@Lkg.deleter
 	def Lkg(self):
 		del self._Lkg
-		self._Lkg = None
+		self._Lkg = base_types.UninitialisedField(self, 'Lkg', Linkages75, False)
 
 	@property
 	def SfkpgAcct(self):
@@ -113,12 +113,12 @@ class IntraPositionMovementConfirmationV10(base_types._BaseFieldType):
 
 	@SfkpgAcct.setter
 	def SfkpgAcct(self, value):
-		self._SfkpgAcct = value if type(value) != base_types.auto else self.make_default("SfkpgAcct")
+		self._SfkpgAcct = value if value is not None else base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@SfkpgAcct.deleter
 	def SfkpgAcct(self):
 		del self._SfkpgAcct
-		self._SfkpgAcct = None
+		self._SfkpgAcct = base_types.UninitialisedField(self, 'SfkpgAcct', SecuritiesAccount19, False)
 
 	@property
 	def SfkpgPlc(self):
@@ -126,12 +126,12 @@ class IntraPositionMovementConfirmationV10(base_types._BaseFieldType):
 
 	@SfkpgPlc.setter
 	def SfkpgPlc(self, value):
-		self._SfkpgPlc = value if type(value) != base_types.auto else self.make_default("SfkpgPlc")
+		self._SfkpgPlc = value if value is not None else base_types.UninitialisedField(self, 'SfkpgPlc', SafekeepingPlaceFormat41Choice, False)
 
 	@SfkpgPlc.deleter
 	def SfkpgPlc(self):
 		del self._SfkpgPlc
-		self._SfkpgPlc = None
+		self._SfkpgPlc = base_types.UninitialisedField(self, 'SfkpgPlc', SafekeepingPlaceFormat41Choice, False)
 
 	@property
 	def SplmtryData(self):
@@ -139,12 +139,12 @@ class IntraPositionMovementConfirmationV10(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctOwnr', type=PartyIdentification127Choice, min=0, max=1, mutex_group=None, array=False),

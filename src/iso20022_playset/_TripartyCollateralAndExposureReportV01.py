@@ -2,15 +2,15 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CollateralParties9 import CollateralParties9
-from ._CounterpartyAggregation3 import CounterpartyAggregation3
-from ._ExposureTypeAggregation3 import ExposureTypeAggregation3
-from ._OverallCollateralDetails2 import OverallCollateralDetails2
-from ._Pagination1 import Pagination1
-from ._Statement78 import Statement78
-from ._SupplementaryData1 import SupplementaryData1
-from ._TotalValueInPageAndStatement5 import TotalValueInPageAndStatement5
-from ._Transaction124 import Transaction124
+from . import CollateralParties9
+from . import CounterpartyAggregation3
+from . import ExposureTypeAggregation3
+from . import OverallCollateralDetails2
+from . import Pagination1
+from . import Statement78
+from . import SupplementaryData1
+from . import TotalValueInPageAndStatement5
+from . import Transaction124
 
 class TripartyCollateralAndExposureReportV01(base_types._BaseFieldType):
 
@@ -21,12 +21,12 @@ class TripartyCollateralAndExposureReportV01(base_types._BaseFieldType):
 
 	@AcctBaseCcyTtlAmts.setter
 	def AcctBaseCcyTtlAmts(self, value):
-		self._AcctBaseCcyTtlAmts = value if type(value) != base_types.auto else self.make_default("AcctBaseCcyTtlAmts")
+		self._AcctBaseCcyTtlAmts = value if value is not None else base_types.UninitialisedField(self, 'AcctBaseCcyTtlAmts', TotalValueInPageAndStatement5, False)
 
 	@AcctBaseCcyTtlAmts.deleter
 	def AcctBaseCcyTtlAmts(self):
 		del self._AcctBaseCcyTtlAmts
-		self._AcctBaseCcyTtlAmts = None
+		self._AcctBaseCcyTtlAmts = base_types.UninitialisedField(self, 'AcctBaseCcyTtlAmts', TotalValueInPageAndStatement5, False)
 
 	@property
 	def CollPties(self):
@@ -34,12 +34,12 @@ class TripartyCollateralAndExposureReportV01(base_types._BaseFieldType):
 
 	@CollPties.setter
 	def CollPties(self, value):
-		self._CollPties = value if type(value) != base_types.auto else self.make_default("CollPties")
+		self._CollPties = value if value is not None else base_types.UninitialisedField(self, 'CollPties', CollateralParties9, False)
 
 	@CollPties.deleter
 	def CollPties(self):
 		del self._CollPties
-		self._CollPties = None
+		self._CollPties = base_types.UninitialisedField(self, 'CollPties', CollateralParties9, False)
 
 	@property
 	def CtrPtyAggtn(self):
@@ -47,12 +47,12 @@ class TripartyCollateralAndExposureReportV01(base_types._BaseFieldType):
 
 	@CtrPtyAggtn.setter
 	def CtrPtyAggtn(self, value):
-		self._CtrPtyAggtn = value if type(value) != base_types.auto else self.make_default("CtrPtyAggtn")
+		self._CtrPtyAggtn = value if value is not None else base_types.UninitialisedField(self, 'CtrPtyAggtn', CounterpartyAggregation3, True)
 
 	@CtrPtyAggtn.deleter
 	def CtrPtyAggtn(self):
 		del self._CtrPtyAggtn
-		self._CtrPtyAggtn = None
+		self._CtrPtyAggtn = base_types.UninitialisedField(self, 'CtrPtyAggtn', CounterpartyAggregation3, True)
 
 	@property
 	def OvrllCollAggtn(self):
@@ -60,12 +60,12 @@ class TripartyCollateralAndExposureReportV01(base_types._BaseFieldType):
 
 	@OvrllCollAggtn.setter
 	def OvrllCollAggtn(self, value):
-		self._OvrllCollAggtn = value if type(value) != base_types.auto else self.make_default("OvrllCollAggtn")
+		self._OvrllCollAggtn = value if value is not None else base_types.UninitialisedField(self, 'OvrllCollAggtn', OverallCollateralDetails2, False)
 
 	@OvrllCollAggtn.deleter
 	def OvrllCollAggtn(self):
 		del self._OvrllCollAggtn
-		self._OvrllCollAggtn = None
+		self._OvrllCollAggtn = base_types.UninitialisedField(self, 'OvrllCollAggtn', OverallCollateralDetails2, False)
 
 	@property
 	def Pgntn(self):
@@ -73,12 +73,12 @@ class TripartyCollateralAndExposureReportV01(base_types._BaseFieldType):
 
 	@Pgntn.setter
 	def Pgntn(self, value):
-		self._Pgntn = value if type(value) != base_types.auto else self.make_default("Pgntn")
+		self._Pgntn = value if value is not None else base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@Pgntn.deleter
 	def Pgntn(self):
 		del self._Pgntn
-		self._Pgntn = None
+		self._Pgntn = base_types.UninitialisedField(self, 'Pgntn', Pagination1, False)
 
 	@property
 	def SplmtryData(self):
@@ -86,12 +86,12 @@ class TripartyCollateralAndExposureReportV01(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@property
 	def StmtGnlDtls(self):
@@ -99,12 +99,12 @@ class TripartyCollateralAndExposureReportV01(base_types._BaseFieldType):
 
 	@StmtGnlDtls.setter
 	def StmtGnlDtls(self, value):
-		self._StmtGnlDtls = value if type(value) != base_types.auto else self.make_default("StmtGnlDtls")
+		self._StmtGnlDtls = value if value is not None else base_types.UninitialisedField(self, 'StmtGnlDtls', Statement78, False)
 
 	@StmtGnlDtls.deleter
 	def StmtGnlDtls(self):
 		del self._StmtGnlDtls
-		self._StmtGnlDtls = None
+		self._StmtGnlDtls = base_types.UninitialisedField(self, 'StmtGnlDtls', Statement78, False)
 
 	@property
 	def Txs(self):
@@ -112,12 +112,12 @@ class TripartyCollateralAndExposureReportV01(base_types._BaseFieldType):
 
 	@Txs.setter
 	def Txs(self, value):
-		self._Txs = value if type(value) != base_types.auto else self.make_default("Txs")
+		self._Txs = value if value is not None else base_types.UninitialisedField(self, 'Txs', Transaction124, True)
 
 	@Txs.deleter
 	def Txs(self):
 		del self._Txs
-		self._Txs = None
+		self._Txs = base_types.UninitialisedField(self, 'Txs', Transaction124, True)
 
 	@property
 	def XpsrTpAggtn(self):
@@ -125,12 +125,12 @@ class TripartyCollateralAndExposureReportV01(base_types._BaseFieldType):
 
 	@XpsrTpAggtn.setter
 	def XpsrTpAggtn(self, value):
-		self._XpsrTpAggtn = value if type(value) != base_types.auto else self.make_default("XpsrTpAggtn")
+		self._XpsrTpAggtn = value if value is not None else base_types.UninitialisedField(self, 'XpsrTpAggtn', ExposureTypeAggregation3, True)
 
 	@XpsrTpAggtn.deleter
 	def XpsrTpAggtn(self):
 		del self._XpsrTpAggtn
-		self._XpsrTpAggtn = None
+		self._XpsrTpAggtn = base_types.UninitialisedField(self, 'XpsrTpAggtn', ExposureTypeAggregation3, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AcctBaseCcyTtlAmts', type=TotalValueInPageAndStatement5, min=0, max=1, mutex_group=None, array=False),

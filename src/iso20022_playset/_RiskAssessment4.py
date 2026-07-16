@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._ATICAPartyType1Code import ATICAPartyType1Code
-from ._ISO3NumericCountryCode import ISO3NumericCountryCode
-from ._Max35Text import Max35Text
-from ._RecommendationAction2 import RecommendationAction2
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ATICALaxProcessing
+from . import ATICAPartyType1Code
+from . import ISO3NumericCountryCode
+from . import Max35Text
+from . import RecommendationAction2
+from . import TrueFalseIndicator
 
 class RiskAssessment4(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class RiskAssessment4(base_types._BaseFieldType):
 
 	@Cond.setter
 	def Cond(self, value):
-		self._Cond = value if type(value) != base_types.auto else self.make_default("Cond")
+		self._Cond = value if value is not None else base_types.UninitialisedField(self, 'Cond', ATICALaxProcessing, False)
 
 	@Cond.deleter
 	def Cond(self):
 		del self._Cond
-		self._Cond = None
+		self._Cond = base_types.UninitialisedField(self, 'Cond', ATICALaxProcessing, False)
 
 	@property
 	def HghRskTx(self):
@@ -31,12 +31,12 @@ class RiskAssessment4(base_types._BaseFieldType):
 
 	@HghRskTx.setter
 	def HghRskTx(self, value):
-		self._HghRskTx = value if type(value) != base_types.auto else self.make_default("HghRskTx")
+		self._HghRskTx = value if value is not None else base_types.UninitialisedField(self, 'HghRskTx', TrueFalseIndicator, False)
 
 	@HghRskTx.deleter
 	def HghRskTx(self):
 		del self._HghRskTx
-		self._HghRskTx = None
+		self._HghRskTx = base_types.UninitialisedField(self, 'HghRskTx', TrueFalseIndicator, False)
 
 	@property
 	def NtlData(self):
@@ -44,12 +44,12 @@ class RiskAssessment4(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def NttyCtry(self):
@@ -57,12 +57,12 @@ class RiskAssessment4(base_types._BaseFieldType):
 
 	@NttyCtry.setter
 	def NttyCtry(self, value):
-		self._NttyCtry = value if type(value) != base_types.auto else self.make_default("NttyCtry")
+		self._NttyCtry = value if value is not None else base_types.UninitialisedField(self, 'NttyCtry', ISO3NumericCountryCode, False)
 
 	@NttyCtry.deleter
 	def NttyCtry(self):
 		del self._NttyCtry
-		self._NttyCtry = None
+		self._NttyCtry = base_types.UninitialisedField(self, 'NttyCtry', ISO3NumericCountryCode, False)
 
 	@property
 	def NttyId(self):
@@ -70,12 +70,12 @@ class RiskAssessment4(base_types._BaseFieldType):
 
 	@NttyId.setter
 	def NttyId(self, value):
-		self._NttyId = value if type(value) != base_types.auto else self.make_default("NttyId")
+		self._NttyId = value if value is not None else base_types.UninitialisedField(self, 'NttyId', Max35Text, False)
 
 	@NttyId.deleter
 	def NttyId(self):
 		del self._NttyId
-		self._NttyId = None
+		self._NttyId = base_types.UninitialisedField(self, 'NttyId', Max35Text, False)
 
 	@property
 	def NttyTp(self):
@@ -83,12 +83,12 @@ class RiskAssessment4(base_types._BaseFieldType):
 
 	@NttyTp.setter
 	def NttyTp(self, value):
-		self._NttyTp = value if type(value) != base_types.auto else self.make_default("NttyTp")
+		self._NttyTp = value if value is not None else base_types.UninitialisedField(self, 'NttyTp', ATICAPartyType1Code, False)
 
 	@NttyTp.deleter
 	def NttyTp(self):
 		del self._NttyTp
-		self._NttyTp = None
+		self._NttyTp = base_types.UninitialisedField(self, 'NttyTp', ATICAPartyType1Code, False)
 
 	@property
 	def PrvtData(self):
@@ -96,12 +96,12 @@ class RiskAssessment4(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def Rcmmndtn(self):
@@ -109,12 +109,12 @@ class RiskAssessment4(base_types._BaseFieldType):
 
 	@Rcmmndtn.setter
 	def Rcmmndtn(self, value):
-		self._Rcmmndtn = value if type(value) != base_types.auto else self.make_default("Rcmmndtn")
+		self._Rcmmndtn = value if value is not None else base_types.UninitialisedField(self, 'Rcmmndtn', RecommendationAction2, True)
 
 	@Rcmmndtn.deleter
 	def Rcmmndtn(self):
 		del self._Rcmmndtn
-		self._Rcmmndtn = None
+		self._Rcmmndtn = base_types.UninitialisedField(self, 'Rcmmndtn', RecommendationAction2, True)
 
 	@property
 	def Rslt(self):
@@ -122,12 +122,12 @@ class RiskAssessment4(base_types._BaseFieldType):
 
 	@Rslt.setter
 	def Rslt(self, value):
-		self._Rslt = value if type(value) != base_types.auto else self.make_default("Rslt")
+		self._Rslt = value if value is not None else base_types.UninitialisedField(self, 'Rslt', Max35Text, False)
 
 	@Rslt.deleter
 	def Rslt(self):
 		del self._Rslt
-		self._Rslt = None
+		self._Rslt = base_types.UninitialisedField(self, 'Rslt', Max35Text, False)
 
 	@property
 	def Rsn(self):
@@ -135,12 +135,12 @@ class RiskAssessment4(base_types._BaseFieldType):
 
 	@Rsn.setter
 	def Rsn(self, value):
-		self._Rsn = value if type(value) != base_types.auto else self.make_default("Rsn")
+		self._Rsn = value if value is not None else base_types.UninitialisedField(self, 'Rsn', Max35Text, True)
 
 	@Rsn.deleter
 	def Rsn(self):
 		del self._Rsn
-		self._Rsn = None
+		self._Rsn = base_types.UninitialisedField(self, 'Rsn', Max35Text, True)
 
 	@property
 	def Tp(self):
@@ -148,12 +148,12 @@ class RiskAssessment4(base_types._BaseFieldType):
 
 	@Tp.setter
 	def Tp(self, value):
-		self._Tp = value if type(value) != base_types.auto else self.make_default("Tp")
+		self._Tp = value if value is not None else base_types.UninitialisedField(self, 'Tp', Max35Text, False)
 
 	@Tp.deleter
 	def Tp(self):
 		del self._Tp
-		self._Tp = None
+		self._Tp = base_types.UninitialisedField(self, 'Tp', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cond', type=ATICALaxProcessing, min=0, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Demand3 import Demand3
-from ._Max35Text import Max35Text
-from ._Undertaking6 import Undertaking6
+from . import Demand3
+from . import Max35Text
+from . import Undertaking6
 
 class UndertakingDemandWithdrawal1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class UndertakingDemandWithdrawal1(base_types._BaseFieldType):
 
 	@AdvsgPtyRefNb.setter
 	def AdvsgPtyRefNb(self, value):
-		self._AdvsgPtyRefNb = value if type(value) != base_types.auto else self.make_default("AdvsgPtyRefNb")
+		self._AdvsgPtyRefNb = value if value is not None else base_types.UninitialisedField(self, 'AdvsgPtyRefNb', Max35Text, False)
 
 	@AdvsgPtyRefNb.deleter
 	def AdvsgPtyRefNb(self):
 		del self._AdvsgPtyRefNb
-		self._AdvsgPtyRefNb = None
+		self._AdvsgPtyRefNb = base_types.UninitialisedField(self, 'AdvsgPtyRefNb', Max35Text, False)
 
 	@property
 	def CnfrmrRefNb(self):
@@ -28,12 +28,12 @@ class UndertakingDemandWithdrawal1(base_types._BaseFieldType):
 
 	@CnfrmrRefNb.setter
 	def CnfrmrRefNb(self, value):
-		self._CnfrmrRefNb = value if type(value) != base_types.auto else self.make_default("CnfrmrRefNb")
+		self._CnfrmrRefNb = value if value is not None else base_types.UninitialisedField(self, 'CnfrmrRefNb', Max35Text, False)
 
 	@CnfrmrRefNb.deleter
 	def CnfrmrRefNb(self):
 		del self._CnfrmrRefNb
-		self._CnfrmrRefNb = None
+		self._CnfrmrRefNb = base_types.UninitialisedField(self, 'CnfrmrRefNb', Max35Text, False)
 
 	@property
 	def DmndDtls(self):
@@ -41,12 +41,12 @@ class UndertakingDemandWithdrawal1(base_types._BaseFieldType):
 
 	@DmndDtls.setter
 	def DmndDtls(self, value):
-		self._DmndDtls = value if type(value) != base_types.auto else self.make_default("DmndDtls")
+		self._DmndDtls = value if value is not None else base_types.UninitialisedField(self, 'DmndDtls', Demand3, False)
 
 	@DmndDtls.deleter
 	def DmndDtls(self):
 		del self._DmndDtls
-		self._DmndDtls = None
+		self._DmndDtls = base_types.UninitialisedField(self, 'DmndDtls', Demand3, False)
 
 	@property
 	def UdrtkgId(self):
@@ -54,12 +54,12 @@ class UndertakingDemandWithdrawal1(base_types._BaseFieldType):
 
 	@UdrtkgId.setter
 	def UdrtkgId(self, value):
-		self._UdrtkgId = value if type(value) != base_types.auto else self.make_default("UdrtkgId")
+		self._UdrtkgId = value if value is not None else base_types.UninitialisedField(self, 'UdrtkgId', Undertaking6, False)
 
 	@UdrtkgId.deleter
 	def UdrtkgId(self):
 		del self._UdrtkgId
-		self._UdrtkgId = None
+		self._UdrtkgId = base_types.UninitialisedField(self, 'UdrtkgId', Undertaking6, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AdvsgPtyRefNb', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max350Text import Max350Text
-from ._PostalAddress26 import PostalAddress26
+from . import Max350Text
+from . import PostalAddress26
 
 class PersonName1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class PersonName1(base_types._BaseFieldType):
 
 	@Adr.setter
 	def Adr(self, value):
-		self._Adr = value if type(value) != base_types.auto else self.make_default("Adr")
+		self._Adr = value if value is not None else base_types.UninitialisedField(self, 'Adr', PostalAddress26, False)
 
 	@Adr.deleter
 	def Adr(self):
 		del self._Adr
-		self._Adr = None
+		self._Adr = base_types.UninitialisedField(self, 'Adr', PostalAddress26, False)
 
 	@property
 	def FrstNm(self):
@@ -27,12 +27,12 @@ class PersonName1(base_types._BaseFieldType):
 
 	@FrstNm.setter
 	def FrstNm(self, value):
-		self._FrstNm = value if type(value) != base_types.auto else self.make_default("FrstNm")
+		self._FrstNm = value if value is not None else base_types.UninitialisedField(self, 'FrstNm', Max350Text, False)
 
 	@FrstNm.deleter
 	def FrstNm(self):
 		del self._FrstNm
-		self._FrstNm = None
+		self._FrstNm = base_types.UninitialisedField(self, 'FrstNm', Max350Text, False)
 
 	@property
 	def Srnm(self):
@@ -40,12 +40,12 @@ class PersonName1(base_types._BaseFieldType):
 
 	@Srnm.setter
 	def Srnm(self, value):
-		self._Srnm = value if type(value) != base_types.auto else self.make_default("Srnm")
+		self._Srnm = value if value is not None else base_types.UninitialisedField(self, 'Srnm', Max350Text, False)
 
 	@Srnm.deleter
 	def Srnm(self):
 		del self._Srnm
-		self._Srnm = None
+		self._Srnm = base_types.UninitialisedField(self, 'Srnm', Max350Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Adr', type=PostalAddress26, min=0, max=1, mutex_group=None, array=False),

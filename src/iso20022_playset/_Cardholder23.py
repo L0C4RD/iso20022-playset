@@ -2,17 +2,17 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATICALaxProcessing import ATICALaxProcessing
-from ._Address4 import Address4
-from ._ContactPersonal2 import ContactPersonal2
-from ._Credentials3 import Credentials3
-from ._ISODate import ISODate
-from ._LocalData24 import LocalData24
-from ._Max105Text import Max105Text
-from ._Max2NumericText import Max2NumericText
-from ._Max35Text import Max35Text
-from ._Max70Text import Max70Text
-from ._TrueFalseIndicator import TrueFalseIndicator
+from . import ATICALaxProcessing
+from . import Address4
+from . import ContactPersonal2
+from . import Credentials3
+from . import ISODate
+from . import LocalData24
+from . import Max105Text
+from . import Max2NumericText
+from . import Max35Text
+from . import Max70Text
+from . import TrueFalseIndicator
 
 class Cardholder23(base_types._BaseFieldType):
 
@@ -23,12 +23,12 @@ class Cardholder23(base_types._BaseFieldType):
 
 	@AliasNm.setter
 	def AliasNm(self, value):
-		self._AliasNm = value if type(value) != base_types.auto else self.make_default("AliasNm")
+		self._AliasNm = value if value is not None else base_types.UninitialisedField(self, 'AliasNm', Max70Text, False)
 
 	@AliasNm.deleter
 	def AliasNm(self):
 		del self._AliasNm
-		self._AliasNm = None
+		self._AliasNm = base_types.UninitialisedField(self, 'AliasNm', Max70Text, False)
 
 	@property
 	def BllgAdr(self):
@@ -36,12 +36,12 @@ class Cardholder23(base_types._BaseFieldType):
 
 	@BllgAdr.setter
 	def BllgAdr(self, value):
-		self._BllgAdr = value if type(value) != base_types.auto else self.make_default("BllgAdr")
+		self._BllgAdr = value if value is not None else base_types.UninitialisedField(self, 'BllgAdr', Address4, False)
 
 	@BllgAdr.deleter
 	def BllgAdr(self):
 		del self._BllgAdr
-		self._BllgAdr = None
+		self._BllgAdr = base_types.UninitialisedField(self, 'BllgAdr', Address4, False)
 
 	@property
 	def CmprssdAdr(self):
@@ -49,12 +49,12 @@ class Cardholder23(base_types._BaseFieldType):
 
 	@CmprssdAdr.setter
 	def CmprssdAdr(self, value):
-		self._CmprssdAdr = value if type(value) != base_types.auto else self.make_default("CmprssdAdr")
+		self._CmprssdAdr = value if value is not None else base_types.UninitialisedField(self, 'CmprssdAdr', Max35Text, False)
 
 	@CmprssdAdr.deleter
 	def CmprssdAdr(self):
 		del self._CmprssdAdr
-		self._CmprssdAdr = None
+		self._CmprssdAdr = base_types.UninitialisedField(self, 'CmprssdAdr', Max35Text, False)
 
 	@property
 	def CtctInf(self):
@@ -62,12 +62,12 @@ class Cardholder23(base_types._BaseFieldType):
 
 	@CtctInf.setter
 	def CtctInf(self, value):
-		self._CtctInf = value if type(value) != base_types.auto else self.make_default("CtctInf")
+		self._CtctInf = value if value is not None else base_types.UninitialisedField(self, 'CtctInf', ContactPersonal2, False)
 
 	@CtctInf.deleter
 	def CtctInf(self):
 		del self._CtctInf
-		self._CtctInf = None
+		self._CtctInf = base_types.UninitialisedField(self, 'CtctInf', ContactPersonal2, False)
 
 	@property
 	def Dsgnt(self):
@@ -75,12 +75,12 @@ class Cardholder23(base_types._BaseFieldType):
 
 	@Dsgnt.setter
 	def Dsgnt(self, value):
-		self._Dsgnt = value if type(value) != base_types.auto else self.make_default("Dsgnt")
+		self._Dsgnt = value if value is not None else base_types.UninitialisedField(self, 'Dsgnt', Max2NumericText, False)
 
 	@Dsgnt.deleter
 	def Dsgnt(self):
 		del self._Dsgnt
-		self._Dsgnt = None
+		self._Dsgnt = base_types.UninitialisedField(self, 'Dsgnt', Max2NumericText, False)
 
 	@property
 	def DtOfBirth(self):
@@ -88,12 +88,12 @@ class Cardholder23(base_types._BaseFieldType):
 
 	@DtOfBirth.setter
 	def DtOfBirth(self, value):
-		self._DtOfBirth = value if type(value) != base_types.auto else self.make_default("DtOfBirth")
+		self._DtOfBirth = value if value is not None else base_types.UninitialisedField(self, 'DtOfBirth', ISODate, False)
 
 	@DtOfBirth.deleter
 	def DtOfBirth(self):
 		del self._DtOfBirth
-		self._DtOfBirth = None
+		self._DtOfBirth = base_types.UninitialisedField(self, 'DtOfBirth', ISODate, False)
 
 	@property
 	def GvnNm(self):
@@ -101,12 +101,12 @@ class Cardholder23(base_types._BaseFieldType):
 
 	@GvnNm.setter
 	def GvnNm(self, value):
-		self._GvnNm = value if type(value) != base_types.auto else self.make_default("GvnNm")
+		self._GvnNm = value if value is not None else base_types.UninitialisedField(self, 'GvnNm', Max35Text, False)
 
 	@GvnNm.deleter
 	def GvnNm(self):
 		del self._GvnNm
-		self._GvnNm = None
+		self._GvnNm = base_types.UninitialisedField(self, 'GvnNm', Max35Text, False)
 
 	@property
 	def HghVal(self):
@@ -114,12 +114,12 @@ class Cardholder23(base_types._BaseFieldType):
 
 	@HghVal.setter
 	def HghVal(self, value):
-		self._HghVal = value if type(value) != base_types.auto else self.make_default("HghVal")
+		self._HghVal = value if value is not None else base_types.UninitialisedField(self, 'HghVal', TrueFalseIndicator, False)
 
 	@HghVal.deleter
 	def HghVal(self):
 		del self._HghVal
-		self._HghVal = None
+		self._HghVal = base_types.UninitialisedField(self, 'HghVal', TrueFalseIndicator, False)
 
 	@property
 	def Id(self):
@@ -127,12 +127,12 @@ class Cardholder23(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', Credentials3, True)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', Credentials3, True)
 
 	@property
 	def LastNm(self):
@@ -140,12 +140,12 @@ class Cardholder23(base_types._BaseFieldType):
 
 	@LastNm.setter
 	def LastNm(self, value):
-		self._LastNm = value if type(value) != base_types.auto else self.make_default("LastNm")
+		self._LastNm = value if value is not None else base_types.UninitialisedField(self, 'LastNm', Max35Text, False)
 
 	@LastNm.deleter
 	def LastNm(self):
 		del self._LastNm
-		self._LastNm = None
+		self._LastNm = base_types.UninitialisedField(self, 'LastNm', Max35Text, False)
 
 	@property
 	def LclData(self):
@@ -153,12 +153,12 @@ class Cardholder23(base_types._BaseFieldType):
 
 	@LclData.setter
 	def LclData(self, value):
-		self._LclData = value if type(value) != base_types.auto else self.make_default("LclData")
+		self._LclData = value if value is not None else base_types.UninitialisedField(self, 'LclData', LocalData24, False)
 
 	@LclData.deleter
 	def LclData(self):
 		del self._LclData
-		self._LclData = None
+		self._LclData = base_types.UninitialisedField(self, 'LclData', LocalData24, False)
 
 	@property
 	def MddlNm(self):
@@ -166,12 +166,12 @@ class Cardholder23(base_types._BaseFieldType):
 
 	@MddlNm.setter
 	def MddlNm(self, value):
-		self._MddlNm = value if type(value) != base_types.auto else self.make_default("MddlNm")
+		self._MddlNm = value if value is not None else base_types.UninitialisedField(self, 'MddlNm', Max35Text, False)
 
 	@MddlNm.deleter
 	def MddlNm(self):
 		del self._MddlNm
-		self._MddlNm = None
+		self._MddlNm = base_types.UninitialisedField(self, 'MddlNm', Max35Text, False)
 
 	@property
 	def Nm(self):
@@ -179,12 +179,12 @@ class Cardholder23(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max105Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max105Text, False)
 
 	@property
 	def NtlData(self):
@@ -192,12 +192,12 @@ class Cardholder23(base_types._BaseFieldType):
 
 	@NtlData.setter
 	def NtlData(self, value):
-		self._NtlData = value if type(value) != base_types.auto else self.make_default("NtlData")
+		self._NtlData = value if value is not None else base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@NtlData.deleter
 	def NtlData(self):
 		del self._NtlData
-		self._NtlData = None
+		self._NtlData = base_types.UninitialisedField(self, 'NtlData', ATICALaxProcessing, True)
 
 	@property
 	def Ocptn(self):
@@ -205,12 +205,12 @@ class Cardholder23(base_types._BaseFieldType):
 
 	@Ocptn.setter
 	def Ocptn(self, value):
-		self._Ocptn = value if type(value) != base_types.auto else self.make_default("Ocptn")
+		self._Ocptn = value if value is not None else base_types.UninitialisedField(self, 'Ocptn', Max35Text, False)
 
 	@Ocptn.deleter
 	def Ocptn(self):
 		del self._Ocptn
-		self._Ocptn = None
+		self._Ocptn = base_types.UninitialisedField(self, 'Ocptn', Max35Text, False)
 
 	@property
 	def PrvtData(self):
@@ -218,12 +218,12 @@ class Cardholder23(base_types._BaseFieldType):
 
 	@PrvtData.setter
 	def PrvtData(self, value):
-		self._PrvtData = value if type(value) != base_types.auto else self.make_default("PrvtData")
+		self._PrvtData = value if value is not None else base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@PrvtData.deleter
 	def PrvtData(self):
 		del self._PrvtData
-		self._PrvtData = None
+		self._PrvtData = base_types.UninitialisedField(self, 'PrvtData', ATICALaxProcessing, True)
 
 	@property
 	def ShppgAdr(self):
@@ -231,12 +231,12 @@ class Cardholder23(base_types._BaseFieldType):
 
 	@ShppgAdr.setter
 	def ShppgAdr(self, value):
-		self._ShppgAdr = value if type(value) != base_types.auto else self.make_default("ShppgAdr")
+		self._ShppgAdr = value if value is not None else base_types.UninitialisedField(self, 'ShppgAdr', Address4, True)
 
 	@ShppgAdr.deleter
 	def ShppgAdr(self):
 		del self._ShppgAdr
-		self._ShppgAdr = None
+		self._ShppgAdr = base_types.UninitialisedField(self, 'ShppgAdr', Address4, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AliasNm', type=Max70Text, min=0, max=1, mutex_group=None, array=False),

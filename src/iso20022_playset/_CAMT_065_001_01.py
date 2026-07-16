@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._LimitUtilisationJournalReportV01 import LimitUtilisationJournalReportV01
+from . import LimitUtilisationJournalReportV01
 
 class CAMT_065_001_01():
 
@@ -18,12 +18,12 @@ class CAMT_065_001_01():
 
 		@LmtUtlstnJrnlRpt.setter
 		def LmtUtlstnJrnlRpt(self, value):
-			self._LmtUtlstnJrnlRpt = value if type(value) != base_types.auto else self.make_default("LmtUtlstnJrnlRpt")
+			self._LmtUtlstnJrnlRpt = value if value is not None else base_types.UninitialisedField(self, 'LmtUtlstnJrnlRpt', LimitUtilisationJournalReportV01, False)
 
 		@LmtUtlstnJrnlRpt.deleter
 		def LmtUtlstnJrnlRpt(self):
 			del self._LmtUtlstnJrnlRpt
-			self._LmtUtlstnJrnlRpt = None
+			self._LmtUtlstnJrnlRpt = base_types.UninitialisedField(self, 'LmtUtlstnJrnlRpt', LimitUtilisationJournalReportV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='LmtUtlstnJrnlRpt', type=LimitUtilisationJournalReportV01, min=1, max=1, mutex_group=None, array=False),

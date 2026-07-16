@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CorporateActionGeneralInformation186 import CorporateActionGeneralInformation186
-from ._CorporateActionNarrative19 import CorporateActionNarrative19
-from ._CorporateActionOption241 import CorporateActionOption241
-from ._DocumentIdentification17 import DocumentIdentification17
-from ._DocumentIdentification34 import DocumentIdentification34
-from ._InstructionCancellationRequestStatus18Choice import InstructionCancellationRequestStatus18Choice
-from ._ProtectInstruction8 import ProtectInstruction8
-from ._SupplementaryData1 import SupplementaryData1
+from . import CorporateActionGeneralInformation186
+from . import CorporateActionNarrative19
+from . import CorporateActionOption241
+from . import DocumentIdentification17
+from . import DocumentIdentification34
+from . import InstructionCancellationRequestStatus18Choice
+from . import ProtectInstruction8
+from . import SupplementaryData1
 
 class CorporateActionInstructionCancellationRequestStatusAdvice002V14(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class CorporateActionInstructionCancellationRequestStatusAdvice002V14(base_types
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', CorporateActionNarrative19, False)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', CorporateActionNarrative19, False)
 
 	@property
 	def CorpActnGnlInf(self):
@@ -33,12 +33,12 @@ class CorporateActionInstructionCancellationRequestStatusAdvice002V14(base_types
 
 	@CorpActnGnlInf.setter
 	def CorpActnGnlInf(self, value):
-		self._CorpActnGnlInf = value if type(value) != base_types.auto else self.make_default("CorpActnGnlInf")
+		self._CorpActnGnlInf = value if value is not None else base_types.UninitialisedField(self, 'CorpActnGnlInf', CorporateActionGeneralInformation186, False)
 
 	@CorpActnGnlInf.deleter
 	def CorpActnGnlInf(self):
 		del self._CorpActnGnlInf
-		self._CorpActnGnlInf = None
+		self._CorpActnGnlInf = base_types.UninitialisedField(self, 'CorpActnGnlInf', CorporateActionGeneralInformation186, False)
 
 	@property
 	def CorpActnInstr(self):
@@ -46,12 +46,12 @@ class CorporateActionInstructionCancellationRequestStatusAdvice002V14(base_types
 
 	@CorpActnInstr.setter
 	def CorpActnInstr(self, value):
-		self._CorpActnInstr = value if type(value) != base_types.auto else self.make_default("CorpActnInstr")
+		self._CorpActnInstr = value if value is not None else base_types.UninitialisedField(self, 'CorpActnInstr', CorporateActionOption241, False)
 
 	@CorpActnInstr.deleter
 	def CorpActnInstr(self):
 		del self._CorpActnInstr
-		self._CorpActnInstr = None
+		self._CorpActnInstr = base_types.UninitialisedField(self, 'CorpActnInstr', CorporateActionOption241, False)
 
 	@property
 	def InstrCxlReqId(self):
@@ -59,12 +59,12 @@ class CorporateActionInstructionCancellationRequestStatusAdvice002V14(base_types
 
 	@InstrCxlReqId.setter
 	def InstrCxlReqId(self, value):
-		self._InstrCxlReqId = value if type(value) != base_types.auto else self.make_default("InstrCxlReqId")
+		self._InstrCxlReqId = value if value is not None else base_types.UninitialisedField(self, 'InstrCxlReqId', DocumentIdentification17, False)
 
 	@InstrCxlReqId.deleter
 	def InstrCxlReqId(self):
 		del self._InstrCxlReqId
-		self._InstrCxlReqId = None
+		self._InstrCxlReqId = base_types.UninitialisedField(self, 'InstrCxlReqId', DocumentIdentification17, False)
 
 	@property
 	def InstrCxlReqSts(self):
@@ -72,12 +72,12 @@ class CorporateActionInstructionCancellationRequestStatusAdvice002V14(base_types
 
 	@InstrCxlReqSts.setter
 	def InstrCxlReqSts(self, value):
-		self._InstrCxlReqSts = value if type(value) != base_types.auto else self.make_default("InstrCxlReqSts")
+		self._InstrCxlReqSts = value if value is not None else base_types.UninitialisedField(self, 'InstrCxlReqSts', InstructionCancellationRequestStatus18Choice, True)
 
 	@InstrCxlReqSts.deleter
 	def InstrCxlReqSts(self):
 		del self._InstrCxlReqSts
-		self._InstrCxlReqSts = None
+		self._InstrCxlReqSts = base_types.UninitialisedField(self, 'InstrCxlReqSts', InstructionCancellationRequestStatus18Choice, True)
 
 	@property
 	def OthrDocId(self):
@@ -85,12 +85,12 @@ class CorporateActionInstructionCancellationRequestStatusAdvice002V14(base_types
 
 	@OthrDocId.setter
 	def OthrDocId(self, value):
-		self._OthrDocId = value if type(value) != base_types.auto else self.make_default("OthrDocId")
+		self._OthrDocId = value if value is not None else base_types.UninitialisedField(self, 'OthrDocId', DocumentIdentification34, True)
 
 	@OthrDocId.deleter
 	def OthrDocId(self):
 		del self._OthrDocId
-		self._OthrDocId = None
+		self._OthrDocId = base_types.UninitialisedField(self, 'OthrDocId', DocumentIdentification34, True)
 
 	@property
 	def PrtctInstr(self):
@@ -98,12 +98,12 @@ class CorporateActionInstructionCancellationRequestStatusAdvice002V14(base_types
 
 	@PrtctInstr.setter
 	def PrtctInstr(self, value):
-		self._PrtctInstr = value if type(value) != base_types.auto else self.make_default("PrtctInstr")
+		self._PrtctInstr = value if value is not None else base_types.UninitialisedField(self, 'PrtctInstr', ProtectInstruction8, False)
 
 	@PrtctInstr.deleter
 	def PrtctInstr(self):
 		del self._PrtctInstr
-		self._PrtctInstr = None
+		self._PrtctInstr = base_types.UninitialisedField(self, 'PrtctInstr', ProtectInstruction8, False)
 
 	@property
 	def SplmtryData(self):
@@ -111,12 +111,12 @@ class CorporateActionInstructionCancellationRequestStatusAdvice002V14(base_types
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=CorporateActionNarrative19, min=0, max=1, mutex_group=None, array=False),

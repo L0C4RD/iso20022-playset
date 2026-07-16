@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CommunicationAddress7 import CommunicationAddress7
-from ._CountryCode import CountryCode
-from ._Max10Text import Max10Text
-from ._Max20000Text import Max20000Text
-from ._Max350Text import Max350Text
-from ._PostalAddress6 import PostalAddress6
-from ._SupervisingAuthorityIdentification1Choice import SupervisingAuthorityIdentification1Choice
+from . import CommunicationAddress7
+from . import CountryCode
+from . import Max10Text
+from . import Max20000Text
+from . import Max350Text
+from . import PostalAddress6
+from . import SupervisingAuthorityIdentification1Choice
 
 class PartyDetail1(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class PartyDetail1(base_types._BaseFieldType):
 
 	@Cmnt.setter
 	def Cmnt(self, value):
-		self._Cmnt = value if type(value) != base_types.auto else self.make_default("Cmnt")
+		self._Cmnt = value if value is not None else base_types.UninitialisedField(self, 'Cmnt', Max20000Text, False)
 
 	@Cmnt.deleter
 	def Cmnt(self):
 		del self._Cmnt
-		self._Cmnt = None
+		self._Cmnt = base_types.UninitialisedField(self, 'Cmnt', Max20000Text, False)
 
 	@property
 	def Ctct(self):
@@ -32,12 +32,12 @@ class PartyDetail1(base_types._BaseFieldType):
 
 	@Ctct.setter
 	def Ctct(self, value):
-		self._Ctct = value if type(value) != base_types.auto else self.make_default("Ctct")
+		self._Ctct = value if value is not None else base_types.UninitialisedField(self, 'Ctct', CommunicationAddress7, False)
 
 	@Ctct.deleter
 	def Ctct(self):
 		del self._Ctct
-		self._Ctct = None
+		self._Ctct = base_types.UninitialisedField(self, 'Ctct', CommunicationAddress7, False)
 
 	@property
 	def Ctry(self):
@@ -45,12 +45,12 @@ class PartyDetail1(base_types._BaseFieldType):
 
 	@Ctry.setter
 	def Ctry(self, value):
-		self._Ctry = value if type(value) != base_types.auto else self.make_default("Ctry")
+		self._Ctry = value if value is not None else base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@Ctry.deleter
 	def Ctry(self):
 		del self._Ctry
-		self._Ctry = None
+		self._Ctry = base_types.UninitialisedField(self, 'Ctry', CountryCode, False)
 
 	@property
 	def FullNm(self):
@@ -58,12 +58,12 @@ class PartyDetail1(base_types._BaseFieldType):
 
 	@FullNm.setter
 	def FullNm(self, value):
-		self._FullNm = value if type(value) != base_types.auto else self.make_default("FullNm")
+		self._FullNm = value if value is not None else base_types.UninitialisedField(self, 'FullNm', Max350Text, False)
 
 	@FullNm.deleter
 	def FullNm(self):
 		del self._FullNm
-		self._FullNm = None
+		self._FullNm = base_types.UninitialisedField(self, 'FullNm', Max350Text, False)
 
 	@property
 	def PstlAdr(self):
@@ -71,12 +71,12 @@ class PartyDetail1(base_types._BaseFieldType):
 
 	@PstlAdr.setter
 	def PstlAdr(self, value):
-		self._PstlAdr = value if type(value) != base_types.auto else self.make_default("PstlAdr")
+		self._PstlAdr = value if value is not None else base_types.UninitialisedField(self, 'PstlAdr', PostalAddress6, False)
 
 	@PstlAdr.deleter
 	def PstlAdr(self):
 		del self._PstlAdr
-		self._PstlAdr = None
+		self._PstlAdr = base_types.UninitialisedField(self, 'PstlAdr', PostalAddress6, False)
 
 	@property
 	def PtyTp(self):
@@ -84,12 +84,12 @@ class PartyDetail1(base_types._BaseFieldType):
 
 	@PtyTp.setter
 	def PtyTp(self, value):
-		self._PtyTp = value if type(value) != base_types.auto else self.make_default("PtyTp")
+		self._PtyTp = value if value is not None else base_types.UninitialisedField(self, 'PtyTp', Max10Text, False)
 
 	@PtyTp.deleter
 	def PtyTp(self):
 		del self._PtyTp
-		self._PtyTp = None
+		self._PtyTp = base_types.UninitialisedField(self, 'PtyTp', Max10Text, False)
 
 	@property
 	def SprvsgAuthrty(self):
@@ -97,12 +97,12 @@ class PartyDetail1(base_types._BaseFieldType):
 
 	@SprvsgAuthrty.setter
 	def SprvsgAuthrty(self, value):
-		self._SprvsgAuthrty = value if type(value) != base_types.auto else self.make_default("SprvsgAuthrty")
+		self._SprvsgAuthrty = value if value is not None else base_types.UninitialisedField(self, 'SprvsgAuthrty', SupervisingAuthorityIdentification1Choice, False)
 
 	@SprvsgAuthrty.deleter
 	def SprvsgAuthrty(self):
 		del self._SprvsgAuthrty
-		self._SprvsgAuthrty = None
+		self._SprvsgAuthrty = base_types.UninitialisedField(self, 'SprvsgAuthrty', SupervisingAuthorityIdentification1Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Cmnt', type=Max20000Text, min=0, max=1, mutex_group=None, array=False),

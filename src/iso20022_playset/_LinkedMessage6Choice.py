@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalReference14 import AdditionalReference14
+from . import AdditionalReference14
 
 class LinkedMessage6Choice(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class LinkedMessage6Choice(base_types._BaseFieldType):
 
 	@OthrRef.setter
 	def OthrRef(self, value):
-		self._OthrRef = value if type(value) != base_types.auto else self.make_default("OthrRef")
+		self._OthrRef = value if value is not None else base_types.UninitialisedField(self, 'OthrRef', AdditionalReference14, False)
 
 	@OthrRef.deleter
 	def OthrRef(self):
 		del self._OthrRef
-		self._OthrRef = None
+		self._OthrRef = base_types.UninitialisedField(self, 'OthrRef', AdditionalReference14, False)
 
 	@property
 	def PrvsRef(self):
@@ -26,12 +26,12 @@ class LinkedMessage6Choice(base_types._BaseFieldType):
 
 	@PrvsRef.setter
 	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
+		self._PrvsRef = value if value is not None else base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference14, False)
 
 	@PrvsRef.deleter
 	def PrvsRef(self):
 		del self._PrvsRef
-		self._PrvsRef = None
+		self._PrvsRef = base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference14, False)
 
 	@property
 	def RltdRef(self):
@@ -39,12 +39,12 @@ class LinkedMessage6Choice(base_types._BaseFieldType):
 
 	@RltdRef.setter
 	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
+		self._RltdRef = value if value is not None else base_types.UninitialisedField(self, 'RltdRef', AdditionalReference14, False)
 
 	@RltdRef.deleter
 	def RltdRef(self):
 		del self._RltdRef
-		self._RltdRef = None
+		self._RltdRef = base_types.UninitialisedField(self, 'RltdRef', AdditionalReference14, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OthrRef', type=AdditionalReference14, min=0, max=1, mutex_group=1, array=False),

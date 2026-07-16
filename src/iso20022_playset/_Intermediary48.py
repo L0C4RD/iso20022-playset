@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Account34 import Account34
-from ._ContactIdentification2 import ContactIdentification2
-from ._PartyIdentification132 import PartyIdentification132
-from ._Role8Choice import Role8Choice
+from . import Account34
+from . import ContactIdentification2
+from . import PartyIdentification132
+from . import Role8Choice
 
 class Intermediary48(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class Intermediary48(base_types._BaseFieldType):
 
 	@Acct.setter
 	def Acct(self, value):
-		self._Acct = value if type(value) != base_types.auto else self.make_default("Acct")
+		self._Acct = value if value is not None else base_types.UninitialisedField(self, 'Acct', Account34, False)
 
 	@Acct.deleter
 	def Acct(self):
 		del self._Acct
-		self._Acct = None
+		self._Acct = base_types.UninitialisedField(self, 'Acct', Account34, False)
 
 	@property
 	def CtctPrsn(self):
@@ -29,12 +29,12 @@ class Intermediary48(base_types._BaseFieldType):
 
 	@CtctPrsn.setter
 	def CtctPrsn(self, value):
-		self._CtctPrsn = value if type(value) != base_types.auto else self.make_default("CtctPrsn")
+		self._CtctPrsn = value if value is not None else base_types.UninitialisedField(self, 'CtctPrsn', ContactIdentification2, False)
 
 	@CtctPrsn.deleter
 	def CtctPrsn(self):
 		del self._CtctPrsn
-		self._CtctPrsn = None
+		self._CtctPrsn = base_types.UninitialisedField(self, 'CtctPrsn', ContactIdentification2, False)
 
 	@property
 	def Id(self):
@@ -42,12 +42,12 @@ class Intermediary48(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', PartyIdentification132, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', PartyIdentification132, False)
 
 	@property
 	def Role(self):
@@ -55,12 +55,12 @@ class Intermediary48(base_types._BaseFieldType):
 
 	@Role.setter
 	def Role(self, value):
-		self._Role = value if type(value) != base_types.auto else self.make_default("Role")
+		self._Role = value if value is not None else base_types.UninitialisedField(self, 'Role', Role8Choice, False)
 
 	@Role.deleter
 	def Role(self):
 		del self._Role
-		self._Role = None
+		self._Role = base_types.UninitialisedField(self, 'Role', Role8Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Acct', type=Account34, min=0, max=1, mutex_group=None, array=False),

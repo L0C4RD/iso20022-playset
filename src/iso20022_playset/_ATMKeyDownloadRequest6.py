@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMCommand15 import ATMCommand15
-from ._ATMCommand16 import ATMCommand16
-from ._ATMEnvironment15 import ATMEnvironment15
-from ._ATMSecurityContext3 import ATMSecurityContext3
-from ._Max140Binary import Max140Binary
-from ._SecurityParameters18 import SecurityParameters18
+from . import ATMCommand15
+from . import ATMCommand16
+from . import ATMEnvironment15
+from . import ATMSecurityContext3
+from . import Max140Binary
+from . import SecurityParameters18
 
 class ATMKeyDownloadRequest6(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class ATMKeyDownloadRequest6(base_types._BaseFieldType):
 
 	@ATMSctyCntxt.setter
 	def ATMSctyCntxt(self, value):
-		self._ATMSctyCntxt = value if type(value) != base_types.auto else self.make_default("ATMSctyCntxt")
+		self._ATMSctyCntxt = value if value is not None else base_types.UninitialisedField(self, 'ATMSctyCntxt', ATMSecurityContext3, False)
 
 	@ATMSctyCntxt.deleter
 	def ATMSctyCntxt(self):
 		del self._ATMSctyCntxt
-		self._ATMSctyCntxt = None
+		self._ATMSctyCntxt = base_types.UninitialisedField(self, 'ATMSctyCntxt', ATMSecurityContext3, False)
 
 	@property
 	def ATMSctyParams(self):
@@ -31,12 +31,12 @@ class ATMKeyDownloadRequest6(base_types._BaseFieldType):
 
 	@ATMSctyParams.setter
 	def ATMSctyParams(self, value):
-		self._ATMSctyParams = value if type(value) != base_types.auto else self.make_default("ATMSctyParams")
+		self._ATMSctyParams = value if value is not None else base_types.UninitialisedField(self, 'ATMSctyParams', SecurityParameters18, False)
 
 	@ATMSctyParams.deleter
 	def ATMSctyParams(self):
 		del self._ATMSctyParams
-		self._ATMSctyParams = None
+		self._ATMSctyParams = base_types.UninitialisedField(self, 'ATMSctyParams', SecurityParameters18, False)
 
 	@property
 	def CmdCntxt(self):
@@ -44,12 +44,12 @@ class ATMKeyDownloadRequest6(base_types._BaseFieldType):
 
 	@CmdCntxt.setter
 	def CmdCntxt(self, value):
-		self._CmdCntxt = value if type(value) != base_types.auto else self.make_default("CmdCntxt")
+		self._CmdCntxt = value if value is not None else base_types.UninitialisedField(self, 'CmdCntxt', ATMCommand16, False)
 
 	@CmdCntxt.deleter
 	def CmdCntxt(self):
 		del self._CmdCntxt
-		self._CmdCntxt = None
+		self._CmdCntxt = base_types.UninitialisedField(self, 'CmdCntxt', ATMCommand16, False)
 
 	@property
 	def CmdRslt(self):
@@ -57,12 +57,12 @@ class ATMKeyDownloadRequest6(base_types._BaseFieldType):
 
 	@CmdRslt.setter
 	def CmdRslt(self, value):
-		self._CmdRslt = value if type(value) != base_types.auto else self.make_default("CmdRslt")
+		self._CmdRslt = value if value is not None else base_types.UninitialisedField(self, 'CmdRslt', ATMCommand15, True)
 
 	@CmdRslt.deleter
 	def CmdRslt(self):
 		del self._CmdRslt
-		self._CmdRslt = None
+		self._CmdRslt = base_types.UninitialisedField(self, 'CmdRslt', ATMCommand15, True)
 
 	@property
 	def Envt(self):
@@ -70,12 +70,12 @@ class ATMKeyDownloadRequest6(base_types._BaseFieldType):
 
 	@Envt.setter
 	def Envt(self, value):
-		self._Envt = value if type(value) != base_types.auto else self.make_default("Envt")
+		self._Envt = value if value is not None else base_types.UninitialisedField(self, 'Envt', ATMEnvironment15, False)
 
 	@Envt.deleter
 	def Envt(self):
 		del self._Envt
-		self._Envt = None
+		self._Envt = base_types.UninitialisedField(self, 'Envt', ATMEnvironment15, False)
 
 	@property
 	def HstChllng(self):
@@ -83,12 +83,12 @@ class ATMKeyDownloadRequest6(base_types._BaseFieldType):
 
 	@HstChllng.setter
 	def HstChllng(self, value):
-		self._HstChllng = value if type(value) != base_types.auto else self.make_default("HstChllng")
+		self._HstChllng = value if value is not None else base_types.UninitialisedField(self, 'HstChllng', Max140Binary, False)
 
 	@HstChllng.deleter
 	def HstChllng(self):
 		del self._HstChllng
-		self._HstChllng = None
+		self._HstChllng = base_types.UninitialisedField(self, 'HstChllng', Max140Binary, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ATMSctyCntxt', type=ATMSecurityContext3, min=1, max=1, mutex_group=None, array=False),

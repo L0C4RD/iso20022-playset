@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PostedMarginOrCollateral4 import PostedMarginOrCollateral4
+from . import PostedMarginOrCollateral4
 
 class ExposureMetrics6(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class ExposureMetrics6(base_types._BaseFieldType):
 
 	@PstdMrgnOrColl.setter
 	def PstdMrgnOrColl(self, value):
-		self._PstdMrgnOrColl = value if type(value) != base_types.auto else self.make_default("PstdMrgnOrColl")
+		self._PstdMrgnOrColl = value if value is not None else base_types.UninitialisedField(self, 'PstdMrgnOrColl', PostedMarginOrCollateral4, False)
 
 	@PstdMrgnOrColl.deleter
 	def PstdMrgnOrColl(self):
 		del self._PstdMrgnOrColl
-		self._PstdMrgnOrColl = None
+		self._PstdMrgnOrColl = base_types.UninitialisedField(self, 'PstdMrgnOrColl', PostedMarginOrCollateral4, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='PstdMrgnOrColl', type=PostedMarginOrCollateral4, min=0, max=1, mutex_group=None, array=False),

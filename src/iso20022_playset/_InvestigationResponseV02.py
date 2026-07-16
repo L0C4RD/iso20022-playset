@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InvestigationRequest3 import InvestigationRequest3
-from ._InvestigationResponse9 import InvestigationResponse9
-from ._SupplementaryData1 import SupplementaryData1
+from . import InvestigationRequest3
+from . import InvestigationResponse9
+from . import SupplementaryData1
 
 class InvestigationResponseV02(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class InvestigationResponseV02(base_types._BaseFieldType):
 
 	@InvstgtnRspn.setter
 	def InvstgtnRspn(self, value):
-		self._InvstgtnRspn = value if type(value) != base_types.auto else self.make_default("InvstgtnRspn")
+		self._InvstgtnRspn = value if value is not None else base_types.UninitialisedField(self, 'InvstgtnRspn', InvestigationResponse9, False)
 
 	@InvstgtnRspn.deleter
 	def InvstgtnRspn(self):
 		del self._InvstgtnRspn
-		self._InvstgtnRspn = None
+		self._InvstgtnRspn = base_types.UninitialisedField(self, 'InvstgtnRspn', InvestigationResponse9, False)
 
 	@property
 	def OrgnlInvstgtnReq(self):
@@ -28,12 +28,12 @@ class InvestigationResponseV02(base_types._BaseFieldType):
 
 	@OrgnlInvstgtnReq.setter
 	def OrgnlInvstgtnReq(self, value):
-		self._OrgnlInvstgtnReq = value if type(value) != base_types.auto else self.make_default("OrgnlInvstgtnReq")
+		self._OrgnlInvstgtnReq = value if value is not None else base_types.UninitialisedField(self, 'OrgnlInvstgtnReq', InvestigationRequest3, False)
 
 	@OrgnlInvstgtnReq.deleter
 	def OrgnlInvstgtnReq(self):
 		del self._OrgnlInvstgtnReq
-		self._OrgnlInvstgtnReq = None
+		self._OrgnlInvstgtnReq = base_types.UninitialisedField(self, 'OrgnlInvstgtnReq', InvestigationRequest3, False)
 
 	@property
 	def SplmtryData(self):
@@ -41,12 +41,12 @@ class InvestigationResponseV02(base_types._BaseFieldType):
 
 	@SplmtryData.setter
 	def SplmtryData(self, value):
-		self._SplmtryData = value if type(value) != base_types.auto else self.make_default("SplmtryData")
+		self._SplmtryData = value if value is not None else base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	@SplmtryData.deleter
 	def SplmtryData(self):
 		del self._SplmtryData
-		self._SplmtryData = None
+		self._SplmtryData = base_types.UninitialisedField(self, 'SplmtryData', SupplementaryData1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='InvstgtnRspn', type=InvestigationResponse9, min=1, max=1, mutex_group=None, array=False),

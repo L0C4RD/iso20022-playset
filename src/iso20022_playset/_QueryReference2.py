@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
+from . import Max35Text
 
 class QueryReference2(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class QueryReference2(base_types._BaseFieldType):
 
 	@QryNm.setter
 	def QryNm(self, value):
-		self._QryNm = value if type(value) != base_types.auto else self.make_default("QryNm")
+		self._QryNm = value if value is not None else base_types.UninitialisedField(self, 'QryNm', Max35Text, False)
 
 	@QryNm.deleter
 	def QryNm(self):
 		del self._QryNm
-		self._QryNm = None
+		self._QryNm = base_types.UninitialisedField(self, 'QryNm', Max35Text, False)
 
 	@property
 	def QryRef(self):
@@ -26,12 +26,12 @@ class QueryReference2(base_types._BaseFieldType):
 
 	@QryRef.setter
 	def QryRef(self, value):
-		self._QryRef = value if type(value) != base_types.auto else self.make_default("QryRef")
+		self._QryRef = value if value is not None else base_types.UninitialisedField(self, 'QryRef', Max35Text, False)
 
 	@QryRef.deleter
 	def QryRef(self):
 		del self._QryRef
-		self._QryRef = None
+		self._QryRef = base_types.UninitialisedField(self, 'QryRef', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='QryNm', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

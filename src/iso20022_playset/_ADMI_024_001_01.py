@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._NotificationOfCorrespondenceV01 import NotificationOfCorrespondenceV01
+from . import NotificationOfCorrespondenceV01
 
 class ADMI_024_001_01():
 
@@ -18,12 +18,12 @@ class ADMI_024_001_01():
 
 		@NtfctnOfCrspdc.setter
 		def NtfctnOfCrspdc(self, value):
-			self._NtfctnOfCrspdc = value if type(value) != base_types.auto else self.make_default("NtfctnOfCrspdc")
+			self._NtfctnOfCrspdc = value if value is not None else base_types.UninitialisedField(self, 'NtfctnOfCrspdc', NotificationOfCorrespondenceV01, False)
 
 		@NtfctnOfCrspdc.deleter
 		def NtfctnOfCrspdc(self):
 			del self._NtfctnOfCrspdc
-			self._NtfctnOfCrspdc = None
+			self._NtfctnOfCrspdc = base_types.UninitialisedField(self, 'NtfctnOfCrspdc', NotificationOfCorrespondenceV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='NtfctnOfCrspdc', type=NotificationOfCorrespondenceV01, min=1, max=1, mutex_group=None, array=False),

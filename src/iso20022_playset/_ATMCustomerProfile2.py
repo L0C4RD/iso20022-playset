@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max35Text import Max35Text
+from . import Max35Text
 
 class ATMCustomerProfile2(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class ATMCustomerProfile2(base_types._BaseFieldType):
 
 	@CstmrId.setter
 	def CstmrId(self, value):
-		self._CstmrId = value if type(value) != base_types.auto else self.make_default("CstmrId")
+		self._CstmrId = value if value is not None else base_types.UninitialisedField(self, 'CstmrId', Max35Text, False)
 
 	@CstmrId.deleter
 	def CstmrId(self):
 		del self._CstmrId
-		self._CstmrId = None
+		self._CstmrId = base_types.UninitialisedField(self, 'CstmrId', Max35Text, False)
 
 	@property
 	def PrflRef(self):
@@ -26,12 +26,12 @@ class ATMCustomerProfile2(base_types._BaseFieldType):
 
 	@PrflRef.setter
 	def PrflRef(self, value):
-		self._PrflRef = value if type(value) != base_types.auto else self.make_default("PrflRef")
+		self._PrflRef = value if value is not None else base_types.UninitialisedField(self, 'PrflRef', Max35Text, False)
 
 	@PrflRef.deleter
 	def PrflRef(self):
 		del self._PrflRef
-		self._PrflRef = None
+		self._PrflRef = base_types.UninitialisedField(self, 'PrflRef', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CstmrId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._InvoicePaymentReconciliationAdviceV01 import InvoicePaymentReconciliationAdviceV01
+from . import InvoicePaymentReconciliationAdviceV01
 
 class TSMT_053_001_01():
 
@@ -18,12 +18,12 @@ class TSMT_053_001_01():
 
 		@InvcPmtRcncltnAdvc.setter
 		def InvcPmtRcncltnAdvc(self, value):
-			self._InvcPmtRcncltnAdvc = value if type(value) != base_types.auto else self.make_default("InvcPmtRcncltnAdvc")
+			self._InvcPmtRcncltnAdvc = value if value is not None else base_types.UninitialisedField(self, 'InvcPmtRcncltnAdvc', InvoicePaymentReconciliationAdviceV01, False)
 
 		@InvcPmtRcncltnAdvc.deleter
 		def InvcPmtRcncltnAdvc(self):
 			del self._InvcPmtRcncltnAdvc
-			self._InvcPmtRcncltnAdvc = None
+			self._InvcPmtRcncltnAdvc = base_types.UninitialisedField(self, 'InvcPmtRcncltnAdvc', InvoicePaymentReconciliationAdviceV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='InvcPmtRcncltnAdvc', type=InvoicePaymentReconciliationAdviceV01, min=1, max=1, mutex_group=None, array=False),

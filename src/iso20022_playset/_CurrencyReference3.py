@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyCode import ActiveCurrencyCode
-from ._ExchangeRateInformation1 import ExchangeRateInformation1
+from . import ActiveCurrencyCode
+from . import ExchangeRateInformation1
 
 class CurrencyReference3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CurrencyReference3(base_types._BaseFieldType):
 
 	@SrcCcy.setter
 	def SrcCcy(self, value):
-		self._SrcCcy = value if type(value) != base_types.auto else self.make_default("SrcCcy")
+		self._SrcCcy = value if value is not None else base_types.UninitialisedField(self, 'SrcCcy', ActiveCurrencyCode, False)
 
 	@SrcCcy.deleter
 	def SrcCcy(self):
 		del self._SrcCcy
-		self._SrcCcy = None
+		self._SrcCcy = base_types.UninitialisedField(self, 'SrcCcy', ActiveCurrencyCode, False)
 
 	@property
 	def TrgtCcy(self):
@@ -27,12 +27,12 @@ class CurrencyReference3(base_types._BaseFieldType):
 
 	@TrgtCcy.setter
 	def TrgtCcy(self, value):
-		self._TrgtCcy = value if type(value) != base_types.auto else self.make_default("TrgtCcy")
+		self._TrgtCcy = value if value is not None else base_types.UninitialisedField(self, 'TrgtCcy', ActiveCurrencyCode, False)
 
 	@TrgtCcy.deleter
 	def TrgtCcy(self):
 		del self._TrgtCcy
-		self._TrgtCcy = None
+		self._TrgtCcy = base_types.UninitialisedField(self, 'TrgtCcy', ActiveCurrencyCode, False)
 
 	@property
 	def XchgRateInf(self):
@@ -40,12 +40,12 @@ class CurrencyReference3(base_types._BaseFieldType):
 
 	@XchgRateInf.setter
 	def XchgRateInf(self, value):
-		self._XchgRateInf = value if type(value) != base_types.auto else self.make_default("XchgRateInf")
+		self._XchgRateInf = value if value is not None else base_types.UninitialisedField(self, 'XchgRateInf', ExchangeRateInformation1, True)
 
 	@XchgRateInf.deleter
 	def XchgRateInf(self):
 		del self._XchgRateInf
-		self._XchgRateInf = None
+		self._XchgRateInf = base_types.UninitialisedField(self, 'XchgRateInf', ExchangeRateInformation1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SrcCcy', type=ActiveCurrencyCode, min=1, max=1, mutex_group=None, array=False),

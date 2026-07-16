@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._IntraPositionMovementQueryResponseV01 import IntraPositionMovementQueryResponseV01
+from . import IntraPositionMovementQueryResponseV01
 
 class SEMT_029_001_01():
 
@@ -18,12 +18,12 @@ class SEMT_029_001_01():
 
 		@IntraPosMvmntQryRspn.setter
 		def IntraPosMvmntQryRspn(self, value):
-			self._IntraPosMvmntQryRspn = value if type(value) != base_types.auto else self.make_default("IntraPosMvmntQryRspn")
+			self._IntraPosMvmntQryRspn = value if value is not None else base_types.UninitialisedField(self, 'IntraPosMvmntQryRspn', IntraPositionMovementQueryResponseV01, False)
 
 		@IntraPosMvmntQryRspn.deleter
 		def IntraPosMvmntQryRspn(self):
 			del self._IntraPosMvmntQryRspn
-			self._IntraPosMvmntQryRspn = None
+			self._IntraPosMvmntQryRspn = base_types.UninitialisedField(self, 'IntraPosMvmntQryRspn', IntraPositionMovementQueryResponseV01, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='IntraPosMvmntQryRspn', type=IntraPositionMovementQueryResponseV01, min=1, max=1, mutex_group=None, array=False),

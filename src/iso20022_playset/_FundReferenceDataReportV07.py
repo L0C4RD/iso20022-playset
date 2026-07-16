@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalReference10 import AdditionalReference10
-from ._FundReferenceDataReport5 import FundReferenceDataReport5
-from ._Max35Text import Max35Text
-from ._MessageIdentification1 import MessageIdentification1
+from . import AdditionalReference10
+from . import FundReferenceDataReport5
+from . import Max35Text
+from . import MessageIdentification1
 
 class FundReferenceDataReportV07(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class FundReferenceDataReportV07(base_types._BaseFieldType):
 
 	@FndRefDataRptId.setter
 	def FndRefDataRptId(self, value):
-		self._FndRefDataRptId = value if type(value) != base_types.auto else self.make_default("FndRefDataRptId")
+		self._FndRefDataRptId = value if value is not None else base_types.UninitialisedField(self, 'FndRefDataRptId', Max35Text, False)
 
 	@FndRefDataRptId.deleter
 	def FndRefDataRptId(self):
 		del self._FndRefDataRptId
-		self._FndRefDataRptId = None
+		self._FndRefDataRptId = base_types.UninitialisedField(self, 'FndRefDataRptId', Max35Text, False)
 
 	@property
 	def MsgId(self):
@@ -29,12 +29,12 @@ class FundReferenceDataReportV07(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@property
 	def PrvsRef(self):
@@ -42,12 +42,12 @@ class FundReferenceDataReportV07(base_types._BaseFieldType):
 
 	@PrvsRef.setter
 	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
+		self._PrvsRef = value if value is not None else base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference10, True)
 
 	@PrvsRef.deleter
 	def PrvsRef(self):
 		del self._PrvsRef
-		self._PrvsRef = None
+		self._PrvsRef = base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference10, True)
 
 	@property
 	def RltdRef(self):
@@ -55,12 +55,12 @@ class FundReferenceDataReportV07(base_types._BaseFieldType):
 
 	@RltdRef.setter
 	def RltdRef(self, value):
-		self._RltdRef = value if type(value) != base_types.auto else self.make_default("RltdRef")
+		self._RltdRef = value if value is not None else base_types.UninitialisedField(self, 'RltdRef', AdditionalReference10, False)
 
 	@RltdRef.deleter
 	def RltdRef(self):
 		del self._RltdRef
-		self._RltdRef = None
+		self._RltdRef = base_types.UninitialisedField(self, 'RltdRef', AdditionalReference10, False)
 
 	@property
 	def Rpt(self):
@@ -68,12 +68,12 @@ class FundReferenceDataReportV07(base_types._BaseFieldType):
 
 	@Rpt.setter
 	def Rpt(self, value):
-		self._Rpt = value if type(value) != base_types.auto else self.make_default("Rpt")
+		self._Rpt = value if value is not None else base_types.UninitialisedField(self, 'Rpt', FundReferenceDataReport5, True)
 
 	@Rpt.deleter
 	def Rpt(self):
 		del self._Rpt
-		self._Rpt = None
+		self._Rpt = base_types.UninitialisedField(self, 'Rpt', FundReferenceDataReport5, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='FndRefDataRptId', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

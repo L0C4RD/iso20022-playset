@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max140Text import Max140Text
-from ._Number import Number
-from ._SignatureEnvelope import SignatureEnvelope
+from . import Max140Text
+from . import Number
+from . import SignatureEnvelope
 
 class ApplicationSpecifics1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class ApplicationSpecifics1(base_types._BaseFieldType):
 
 	@Sgntr.setter
 	def Sgntr(self, value):
-		self._Sgntr = value if type(value) != base_types.auto else self.make_default("Sgntr")
+		self._Sgntr = value if value is not None else base_types.UninitialisedField(self, 'Sgntr', SignatureEnvelope, False)
 
 	@Sgntr.deleter
 	def Sgntr(self):
 		del self._Sgntr
-		self._Sgntr = None
+		self._Sgntr = base_types.UninitialisedField(self, 'Sgntr', SignatureEnvelope, False)
 
 	@property
 	def SysUsr(self):
@@ -28,12 +28,12 @@ class ApplicationSpecifics1(base_types._BaseFieldType):
 
 	@SysUsr.setter
 	def SysUsr(self, value):
-		self._SysUsr = value if type(value) != base_types.auto else self.make_default("SysUsr")
+		self._SysUsr = value if value is not None else base_types.UninitialisedField(self, 'SysUsr', Max140Text, False)
 
 	@SysUsr.deleter
 	def SysUsr(self):
 		del self._SysUsr
-		self._SysUsr = None
+		self._SysUsr = base_types.UninitialisedField(self, 'SysUsr', Max140Text, False)
 
 	@property
 	def TtlNbOfDocs(self):
@@ -41,12 +41,12 @@ class ApplicationSpecifics1(base_types._BaseFieldType):
 
 	@TtlNbOfDocs.setter
 	def TtlNbOfDocs(self, value):
-		self._TtlNbOfDocs = value if type(value) != base_types.auto else self.make_default("TtlNbOfDocs")
+		self._TtlNbOfDocs = value if value is not None else base_types.UninitialisedField(self, 'TtlNbOfDocs', Number, False)
 
 	@TtlNbOfDocs.deleter
 	def TtlNbOfDocs(self):
 		del self._TtlNbOfDocs
-		self._TtlNbOfDocs = None
+		self._TtlNbOfDocs = base_types.UninitialisedField(self, 'TtlNbOfDocs', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Sgntr', type=SignatureEnvelope, min=0, max=1, mutex_group=None, array=False),

@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._SystemStatus3Choice import SystemStatus3Choice
+from . import ISODate
+from . import SystemStatus3Choice
 
 class CalendarData1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class CalendarData1(base_types._BaseFieldType):
 
 	@SysDt.setter
 	def SysDt(self, value):
-		self._SysDt = value if type(value) != base_types.auto else self.make_default("SysDt")
+		self._SysDt = value if value is not None else base_types.UninitialisedField(self, 'SysDt', ISODate, False)
 
 	@SysDt.deleter
 	def SysDt(self):
 		del self._SysDt
-		self._SysDt = None
+		self._SysDt = base_types.UninitialisedField(self, 'SysDt', ISODate, False)
 
 	@property
 	def SysSts(self):
@@ -27,12 +27,12 @@ class CalendarData1(base_types._BaseFieldType):
 
 	@SysSts.setter
 	def SysSts(self, value):
-		self._SysSts = value if type(value) != base_types.auto else self.make_default("SysSts")
+		self._SysSts = value if value is not None else base_types.UninitialisedField(self, 'SysSts', SystemStatus3Choice, False)
 
 	@SysSts.deleter
 	def SysSts(self):
 		del self._SysSts
-		self._SysSts = None
+		self._SysSts = base_types.UninitialisedField(self, 'SysSts', SystemStatus3Choice, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SysDt', type=ISODate, min=1, max=1, mutex_group=None, array=False),

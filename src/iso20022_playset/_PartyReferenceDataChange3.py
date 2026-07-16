@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODateTime import ISODateTime
-from ._SystemPartyIdentification8 import SystemPartyIdentification8
-from ._UpdateLogPartyRecord2Choice import UpdateLogPartyRecord2Choice
+from . import ISODateTime
+from . import SystemPartyIdentification8
+from . import UpdateLogPartyRecord2Choice
 
 class PartyReferenceDataChange3(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PartyReferenceDataChange3(base_types._BaseFieldType):
 
 	@OprTmStmp.setter
 	def OprTmStmp(self, value):
-		self._OprTmStmp = value if type(value) != base_types.auto else self.make_default("OprTmStmp")
+		self._OprTmStmp = value if value is not None else base_types.UninitialisedField(self, 'OprTmStmp', ISODateTime, False)
 
 	@OprTmStmp.deleter
 	def OprTmStmp(self):
 		del self._OprTmStmp
-		self._OprTmStmp = None
+		self._OprTmStmp = base_types.UninitialisedField(self, 'OprTmStmp', ISODateTime, False)
 
 	@property
 	def PtyId(self):
@@ -28,12 +28,12 @@ class PartyReferenceDataChange3(base_types._BaseFieldType):
 
 	@PtyId.setter
 	def PtyId(self, value):
-		self._PtyId = value if type(value) != base_types.auto else self.make_default("PtyId")
+		self._PtyId = value if value is not None else base_types.UninitialisedField(self, 'PtyId', SystemPartyIdentification8, False)
 
 	@PtyId.deleter
 	def PtyId(self):
 		del self._PtyId
-		self._PtyId = None
+		self._PtyId = base_types.UninitialisedField(self, 'PtyId', SystemPartyIdentification8, False)
 
 	@property
 	def Rcrd(self):
@@ -41,12 +41,12 @@ class PartyReferenceDataChange3(base_types._BaseFieldType):
 
 	@Rcrd.setter
 	def Rcrd(self, value):
-		self._Rcrd = value if type(value) != base_types.auto else self.make_default("Rcrd")
+		self._Rcrd = value if value is not None else base_types.UninitialisedField(self, 'Rcrd', UpdateLogPartyRecord2Choice, True)
 
 	@Rcrd.deleter
 	def Rcrd(self):
 		del self._Rcrd
-		self._Rcrd = None
+		self._Rcrd = base_types.UninitialisedField(self, 'Rcrd', UpdateLogPartyRecord2Choice, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='OprTmStmp', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),

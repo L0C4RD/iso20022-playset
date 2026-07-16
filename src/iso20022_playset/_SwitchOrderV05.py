@@ -2,13 +2,13 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalReference10 import AdditionalReference10
-from ._AdditionalReference11 import AdditionalReference11
-from ._CopyInformation5 import CopyInformation5
-from ._Extension1 import Extension1
-from ._MessageIdentification1 import MessageIdentification1
-from ._Pagination1 import Pagination1
-from ._SwitchOrder8 import SwitchOrder8
+from . import AdditionalReference10
+from . import AdditionalReference11
+from . import CopyInformation5
+from . import Extension1
+from . import MessageIdentification1
+from . import Pagination1
+from . import SwitchOrder8
 
 class SwitchOrderV05(base_types._BaseFieldType):
 
@@ -19,12 +19,12 @@ class SwitchOrderV05(base_types._BaseFieldType):
 
 	@CpyDtls.setter
 	def CpyDtls(self, value):
-		self._CpyDtls = value if type(value) != base_types.auto else self.make_default("CpyDtls")
+		self._CpyDtls = value if value is not None else base_types.UninitialisedField(self, 'CpyDtls', CopyInformation5, False)
 
 	@CpyDtls.deleter
 	def CpyDtls(self):
 		del self._CpyDtls
-		self._CpyDtls = None
+		self._CpyDtls = base_types.UninitialisedField(self, 'CpyDtls', CopyInformation5, False)
 
 	@property
 	def MsgId(self):
@@ -32,12 +32,12 @@ class SwitchOrderV05(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', MessageIdentification1, False)
 
 	@property
 	def MsgPgntn(self):
@@ -45,12 +45,12 @@ class SwitchOrderV05(base_types._BaseFieldType):
 
 	@MsgPgntn.setter
 	def MsgPgntn(self, value):
-		self._MsgPgntn = value if type(value) != base_types.auto else self.make_default("MsgPgntn")
+		self._MsgPgntn = value if value is not None else base_types.UninitialisedField(self, 'MsgPgntn', Pagination1, False)
 
 	@MsgPgntn.deleter
 	def MsgPgntn(self):
 		del self._MsgPgntn
-		self._MsgPgntn = None
+		self._MsgPgntn = base_types.UninitialisedField(self, 'MsgPgntn', Pagination1, False)
 
 	@property
 	def PoolRef(self):
@@ -58,12 +58,12 @@ class SwitchOrderV05(base_types._BaseFieldType):
 
 	@PoolRef.setter
 	def PoolRef(self, value):
-		self._PoolRef = value if type(value) != base_types.auto else self.make_default("PoolRef")
+		self._PoolRef = value if value is not None else base_types.UninitialisedField(self, 'PoolRef', AdditionalReference11, False)
 
 	@PoolRef.deleter
 	def PoolRef(self):
 		del self._PoolRef
-		self._PoolRef = None
+		self._PoolRef = base_types.UninitialisedField(self, 'PoolRef', AdditionalReference11, False)
 
 	@property
 	def PrvsRef(self):
@@ -71,12 +71,12 @@ class SwitchOrderV05(base_types._BaseFieldType):
 
 	@PrvsRef.setter
 	def PrvsRef(self, value):
-		self._PrvsRef = value if type(value) != base_types.auto else self.make_default("PrvsRef")
+		self._PrvsRef = value if value is not None else base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference10, True)
 
 	@PrvsRef.deleter
 	def PrvsRef(self):
 		del self._PrvsRef
-		self._PrvsRef = None
+		self._PrvsRef = base_types.UninitialisedField(self, 'PrvsRef', AdditionalReference10, True)
 
 	@property
 	def SwtchOrdrDtls(self):
@@ -84,12 +84,12 @@ class SwitchOrderV05(base_types._BaseFieldType):
 
 	@SwtchOrdrDtls.setter
 	def SwtchOrdrDtls(self, value):
-		self._SwtchOrdrDtls = value if type(value) != base_types.auto else self.make_default("SwtchOrdrDtls")
+		self._SwtchOrdrDtls = value if value is not None else base_types.UninitialisedField(self, 'SwtchOrdrDtls', SwitchOrder8, True)
 
 	@SwtchOrdrDtls.deleter
 	def SwtchOrdrDtls(self):
 		del self._SwtchOrdrDtls
-		self._SwtchOrdrDtls = None
+		self._SwtchOrdrDtls = base_types.UninitialisedField(self, 'SwtchOrdrDtls', SwitchOrder8, True)
 
 	@property
 	def Xtnsn(self):
@@ -97,12 +97,12 @@ class SwitchOrderV05(base_types._BaseFieldType):
 
 	@Xtnsn.setter
 	def Xtnsn(self, value):
-		self._Xtnsn = value if type(value) != base_types.auto else self.make_default("Xtnsn")
+		self._Xtnsn = value if value is not None else base_types.UninitialisedField(self, 'Xtnsn', Extension1, True)
 
 	@Xtnsn.deleter
 	def Xtnsn(self):
 		del self._Xtnsn
-		self._Xtnsn = None
+		self._Xtnsn = base_types.UninitialisedField(self, 'Xtnsn', Extension1, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CpyDtls', type=CopyInformation5, min=0, max=1, mutex_group=None, array=False),

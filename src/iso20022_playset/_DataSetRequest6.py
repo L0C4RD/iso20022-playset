@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContentInformationType39 import ContentInformationType39
-from ._CryptographicKey18 import CryptographicKey18
-from ._DataSetIdentification11 import DataSetIdentification11
-from ._Max140Binary import Max140Binary
-from ._Max5000Binary import Max5000Binary
+from . import ContentInformationType39
+from . import CryptographicKey18
+from . import DataSetIdentification11
+from . import Max140Binary
+from . import Max5000Binary
 
 class DataSetRequest6(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class DataSetRequest6(base_types._BaseFieldType):
 
 	@DlgtnProof.setter
 	def DlgtnProof(self, value):
-		self._DlgtnProof = value if type(value) != base_types.auto else self.make_default("DlgtnProof")
+		self._DlgtnProof = value if value is not None else base_types.UninitialisedField(self, 'DlgtnProof', Max5000Binary, False)
 
 	@DlgtnProof.deleter
 	def DlgtnProof(self):
 		del self._DlgtnProof
-		self._DlgtnProof = None
+		self._DlgtnProof = base_types.UninitialisedField(self, 'DlgtnProof', Max5000Binary, False)
 
 	@property
 	def Id(self):
@@ -30,12 +30,12 @@ class DataSetRequest6(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', DataSetIdentification11, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', DataSetIdentification11, False)
 
 	@property
 	def POIChllng(self):
@@ -43,12 +43,12 @@ class DataSetRequest6(base_types._BaseFieldType):
 
 	@POIChllng.setter
 	def POIChllng(self, value):
-		self._POIChllng = value if type(value) != base_types.auto else self.make_default("POIChllng")
+		self._POIChllng = value if value is not None else base_types.UninitialisedField(self, 'POIChllng', Max140Binary, False)
 
 	@POIChllng.deleter
 	def POIChllng(self):
 		del self._POIChllng
-		self._POIChllng = None
+		self._POIChllng = base_types.UninitialisedField(self, 'POIChllng', Max140Binary, False)
 
 	@property
 	def PrtctdDlgtnProof(self):
@@ -56,12 +56,12 @@ class DataSetRequest6(base_types._BaseFieldType):
 
 	@PrtctdDlgtnProof.setter
 	def PrtctdDlgtnProof(self, value):
-		self._PrtctdDlgtnProof = value if type(value) != base_types.auto else self.make_default("PrtctdDlgtnProof")
+		self._PrtctdDlgtnProof = value if value is not None else base_types.UninitialisedField(self, 'PrtctdDlgtnProof', ContentInformationType39, False)
 
 	@PrtctdDlgtnProof.deleter
 	def PrtctdDlgtnProof(self):
 		del self._PrtctdDlgtnProof
-		self._PrtctdDlgtnProof = None
+		self._PrtctdDlgtnProof = base_types.UninitialisedField(self, 'PrtctdDlgtnProof', ContentInformationType39, False)
 
 	@property
 	def SsnKey(self):
@@ -69,12 +69,12 @@ class DataSetRequest6(base_types._BaseFieldType):
 
 	@SsnKey.setter
 	def SsnKey(self, value):
-		self._SsnKey = value if type(value) != base_types.auto else self.make_default("SsnKey")
+		self._SsnKey = value if value is not None else base_types.UninitialisedField(self, 'SsnKey', CryptographicKey18, False)
 
 	@SsnKey.deleter
 	def SsnKey(self):
 		del self._SsnKey
-		self._SsnKey = None
+		self._SsnKey = base_types.UninitialisedField(self, 'SsnKey', CryptographicKey18, False)
 
 	@property
 	def TMChllng(self):
@@ -82,12 +82,12 @@ class DataSetRequest6(base_types._BaseFieldType):
 
 	@TMChllng.setter
 	def TMChllng(self, value):
-		self._TMChllng = value if type(value) != base_types.auto else self.make_default("TMChllng")
+		self._TMChllng = value if value is not None else base_types.UninitialisedField(self, 'TMChllng', Max140Binary, False)
 
 	@TMChllng.deleter
 	def TMChllng(self):
 		del self._TMChllng
-		self._TMChllng = None
+		self._TMChllng = base_types.UninitialisedField(self, 'TMChllng', Max140Binary, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='DlgtnProof', type=Max5000Binary, min=0, max=1, mutex_group=None, array=False),

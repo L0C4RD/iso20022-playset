@@ -2,10 +2,10 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BranchAndFinancialInstitutionIdentification6 import BranchAndFinancialInstitutionIdentification6
-from ._ISODateTime import ISODateTime
-from ._Max35Text import Max35Text
-from ._OriginalBusinessQuery1 import OriginalBusinessQuery1
+from . import BranchAndFinancialInstitutionIdentification6
+from . import ISODateTime
+from . import Max35Text
+from . import OriginalBusinessQuery1
 
 class GroupHeader101(base_types._BaseFieldType):
 
@@ -16,12 +16,12 @@ class GroupHeader101(base_types._BaseFieldType):
 
 	@CreDtTm.setter
 	def CreDtTm(self, value):
-		self._CreDtTm = value if type(value) != base_types.auto else self.make_default("CreDtTm")
+		self._CreDtTm = value if value is not None else base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@CreDtTm.deleter
 	def CreDtTm(self):
 		del self._CreDtTm
-		self._CreDtTm = None
+		self._CreDtTm = base_types.UninitialisedField(self, 'CreDtTm', ISODateTime, False)
 
 	@property
 	def InstdAgt(self):
@@ -29,12 +29,12 @@ class GroupHeader101(base_types._BaseFieldType):
 
 	@InstdAgt.setter
 	def InstdAgt(self, value):
-		self._InstdAgt = value if type(value) != base_types.auto else self.make_default("InstdAgt")
+		self._InstdAgt = value if value is not None else base_types.UninitialisedField(self, 'InstdAgt', BranchAndFinancialInstitutionIdentification6, False)
 
 	@InstdAgt.deleter
 	def InstdAgt(self):
 		del self._InstdAgt
-		self._InstdAgt = None
+		self._InstdAgt = base_types.UninitialisedField(self, 'InstdAgt', BranchAndFinancialInstitutionIdentification6, False)
 
 	@property
 	def InstgAgt(self):
@@ -42,12 +42,12 @@ class GroupHeader101(base_types._BaseFieldType):
 
 	@InstgAgt.setter
 	def InstgAgt(self, value):
-		self._InstgAgt = value if type(value) != base_types.auto else self.make_default("InstgAgt")
+		self._InstgAgt = value if value is not None else base_types.UninitialisedField(self, 'InstgAgt', BranchAndFinancialInstitutionIdentification6, False)
 
 	@InstgAgt.deleter
 	def InstgAgt(self):
 		del self._InstgAgt
-		self._InstgAgt = None
+		self._InstgAgt = base_types.UninitialisedField(self, 'InstgAgt', BranchAndFinancialInstitutionIdentification6, False)
 
 	@property
 	def MsgId(self):
@@ -55,12 +55,12 @@ class GroupHeader101(base_types._BaseFieldType):
 
 	@MsgId.setter
 	def MsgId(self, value):
-		self._MsgId = value if type(value) != base_types.auto else self.make_default("MsgId")
+		self._MsgId = value if value is not None else base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@MsgId.deleter
 	def MsgId(self):
 		del self._MsgId
-		self._MsgId = None
+		self._MsgId = base_types.UninitialisedField(self, 'MsgId', Max35Text, False)
 
 	@property
 	def OrgnlBizQry(self):
@@ -68,12 +68,12 @@ class GroupHeader101(base_types._BaseFieldType):
 
 	@OrgnlBizQry.setter
 	def OrgnlBizQry(self, value):
-		self._OrgnlBizQry = value if type(value) != base_types.auto else self.make_default("OrgnlBizQry")
+		self._OrgnlBizQry = value if value is not None else base_types.UninitialisedField(self, 'OrgnlBizQry', OriginalBusinessQuery1, False)
 
 	@OrgnlBizQry.deleter
 	def OrgnlBizQry(self):
 		del self._OrgnlBizQry
-		self._OrgnlBizQry = None
+		self._OrgnlBizQry = base_types.UninitialisedField(self, 'OrgnlBizQry', OriginalBusinessQuery1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CreDtTm', type=ISODateTime, min=1, max=1, mutex_group=None, array=False),

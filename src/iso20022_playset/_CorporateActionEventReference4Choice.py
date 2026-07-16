@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._RestrictedFINXMax16Text import RestrictedFINXMax16Text
+from . import RestrictedFINXMax16Text
 
 class CorporateActionEventReference4Choice(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class CorporateActionEventReference4Choice(base_types._BaseFieldType):
 
 	@LkdCorpActnId.setter
 	def LkdCorpActnId(self, value):
-		self._LkdCorpActnId = value if type(value) != base_types.auto else self.make_default("LkdCorpActnId")
+		self._LkdCorpActnId = value if value is not None else base_types.UninitialisedField(self, 'LkdCorpActnId', RestrictedFINXMax16Text, False)
 
 	@LkdCorpActnId.deleter
 	def LkdCorpActnId(self):
 		del self._LkdCorpActnId
-		self._LkdCorpActnId = None
+		self._LkdCorpActnId = base_types.UninitialisedField(self, 'LkdCorpActnId', RestrictedFINXMax16Text, False)
 
 	@property
 	def LkdOffclCorpActnEvtId(self):
@@ -26,12 +26,12 @@ class CorporateActionEventReference4Choice(base_types._BaseFieldType):
 
 	@LkdOffclCorpActnEvtId.setter
 	def LkdOffclCorpActnEvtId(self, value):
-		self._LkdOffclCorpActnEvtId = value if type(value) != base_types.auto else self.make_default("LkdOffclCorpActnEvtId")
+		self._LkdOffclCorpActnEvtId = value if value is not None else base_types.UninitialisedField(self, 'LkdOffclCorpActnEvtId', RestrictedFINXMax16Text, False)
 
 	@LkdOffclCorpActnEvtId.deleter
 	def LkdOffclCorpActnEvtId(self):
 		del self._LkdOffclCorpActnEvtId
-		self._LkdOffclCorpActnEvtId = None
+		self._LkdOffclCorpActnEvtId = base_types.UninitialisedField(self, 'LkdOffclCorpActnEvtId', RestrictedFINXMax16Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='LkdCorpActnId', type=RestrictedFINXMax16Text, min=0, max=1, mutex_group=1, array=False),

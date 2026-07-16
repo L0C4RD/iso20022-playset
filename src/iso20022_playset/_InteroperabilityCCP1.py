@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAnd24Amount import ActiveCurrencyAnd24Amount
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._AssetHolding3 import AssetHolding3
-from ._GenericIdentification168 import GenericIdentification168
-from ._NonNegativeNumber import NonNegativeNumber
+from . import ActiveCurrencyAnd24Amount
+from . import ActiveCurrencyAndAmount
+from . import AssetHolding3
+from . import GenericIdentification168
+from . import NonNegativeNumber
 
 class InteroperabilityCCP1(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class InteroperabilityCCP1(base_types._BaseFieldType):
 
 	@AsstHldg.setter
 	def AsstHldg(self, value):
-		self._AsstHldg = value if type(value) != base_types.auto else self.make_default("AsstHldg")
+		self._AsstHldg = value if value is not None else base_types.UninitialisedField(self, 'AsstHldg', AssetHolding3, True)
 
 	@AsstHldg.deleter
 	def AsstHldg(self):
 		del self._AsstHldg
-		self._AsstHldg = None
+		self._AsstHldg = base_types.UninitialisedField(self, 'AsstHldg', AssetHolding3, True)
 
 	@property
 	def GrssNtnlAmt(self):
@@ -30,12 +30,12 @@ class InteroperabilityCCP1(base_types._BaseFieldType):
 
 	@GrssNtnlAmt.setter
 	def GrssNtnlAmt(self, value):
-		self._GrssNtnlAmt = value if type(value) != base_types.auto else self.make_default("GrssNtnlAmt")
+		self._GrssNtnlAmt = value if value is not None else base_types.UninitialisedField(self, 'GrssNtnlAmt', ActiveCurrencyAnd24Amount, True)
 
 	@GrssNtnlAmt.deleter
 	def GrssNtnlAmt(self):
 		del self._GrssNtnlAmt
-		self._GrssNtnlAmt = None
+		self._GrssNtnlAmt = base_types.UninitialisedField(self, 'GrssNtnlAmt', ActiveCurrencyAnd24Amount, True)
 
 	@property
 	def Id(self):
@@ -43,12 +43,12 @@ class InteroperabilityCCP1(base_types._BaseFieldType):
 
 	@Id.setter
 	def Id(self, value):
-		self._Id = value if type(value) != base_types.auto else self.make_default("Id")
+		self._Id = value if value is not None else base_types.UninitialisedField(self, 'Id', GenericIdentification168, False)
 
 	@Id.deleter
 	def Id(self):
 		del self._Id
-		self._Id = None
+		self._Id = base_types.UninitialisedField(self, 'Id', GenericIdentification168, False)
 
 	@property
 	def TrdsClrd(self):
@@ -56,12 +56,12 @@ class InteroperabilityCCP1(base_types._BaseFieldType):
 
 	@TrdsClrd.setter
 	def TrdsClrd(self, value):
-		self._TrdsClrd = value if type(value) != base_types.auto else self.make_default("TrdsClrd")
+		self._TrdsClrd = value if value is not None else base_types.UninitialisedField(self, 'TrdsClrd', NonNegativeNumber, False)
 
 	@TrdsClrd.deleter
 	def TrdsClrd(self):
 		del self._TrdsClrd
-		self._TrdsClrd = None
+		self._TrdsClrd = base_types.UninitialisedField(self, 'TrdsClrd', NonNegativeNumber, False)
 
 	@property
 	def TtlInitlMrgn(self):
@@ -69,12 +69,12 @@ class InteroperabilityCCP1(base_types._BaseFieldType):
 
 	@TtlInitlMrgn.setter
 	def TtlInitlMrgn(self, value):
-		self._TtlInitlMrgn = value if type(value) != base_types.auto else self.make_default("TtlInitlMrgn")
+		self._TtlInitlMrgn = value if value is not None else base_types.UninitialisedField(self, 'TtlInitlMrgn', ActiveCurrencyAndAmount, True)
 
 	@TtlInitlMrgn.deleter
 	def TtlInitlMrgn(self):
 		del self._TtlInitlMrgn
-		self._TtlInitlMrgn = None
+		self._TtlInitlMrgn = base_types.UninitialisedField(self, 'TtlInitlMrgn', ActiveCurrencyAndAmount, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AsstHldg', type=AssetHolding3, min=1, max=None, mutex_group=None, array=True),

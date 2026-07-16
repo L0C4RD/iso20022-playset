@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Max140Text import Max140Text
-from ._Max35Text import Max35Text
+from . import Max140Text
+from . import Max35Text
 
 class AuthorityRequestType1(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class AuthorityRequestType1(base_types._BaseFieldType):
 
 	@MsgNm.setter
 	def MsgNm(self, value):
-		self._MsgNm = value if type(value) != base_types.auto else self.make_default("MsgNm")
+		self._MsgNm = value if value is not None else base_types.UninitialisedField(self, 'MsgNm', Max140Text, False)
 
 	@MsgNm.deleter
 	def MsgNm(self):
 		del self._MsgNm
-		self._MsgNm = None
+		self._MsgNm = base_types.UninitialisedField(self, 'MsgNm', Max140Text, False)
 
 	@property
 	def MsgNmId(self):
@@ -27,12 +27,12 @@ class AuthorityRequestType1(base_types._BaseFieldType):
 
 	@MsgNmId.setter
 	def MsgNmId(self, value):
-		self._MsgNmId = value if type(value) != base_types.auto else self.make_default("MsgNmId")
+		self._MsgNmId = value if value is not None else base_types.UninitialisedField(self, 'MsgNmId', Max35Text, False)
 
 	@MsgNmId.deleter
 	def MsgNmId(self):
 		del self._MsgNmId
-		self._MsgNmId = None
+		self._MsgNmId = base_types.UninitialisedField(self, 'MsgNmId', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='MsgNm', type=Max140Text, min=0, max=1, mutex_group=None, array=False),

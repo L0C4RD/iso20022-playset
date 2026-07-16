@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ATMDevice1Code import ATMDevice1Code
-from ._Max20000Text import Max20000Text
-from ._Max35Binary import Max35Binary
-from ._Max35Text import Max35Text
-from ._OutputFormat2Code import OutputFormat2Code
+from . import ATMDevice1Code
+from . import Max20000Text
+from . import Max35Binary
+from . import Max35Text
+from . import OutputFormat2Code
 
 class ActionMessage4(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class ActionMessage4(base_types._BaseFieldType):
 
 	@Dvc.setter
 	def Dvc(self, value):
-		self._Dvc = value if type(value) != base_types.auto else self.make_default("Dvc")
+		self._Dvc = value if value is not None else base_types.UninitialisedField(self, 'Dvc', ATMDevice1Code, False)
 
 	@Dvc.deleter
 	def Dvc(self):
 		del self._Dvc
-		self._Dvc = None
+		self._Dvc = base_types.UninitialisedField(self, 'Dvc', ATMDevice1Code, False)
 
 	@property
 	def Frmt(self):
@@ -30,12 +30,12 @@ class ActionMessage4(base_types._BaseFieldType):
 
 	@Frmt.setter
 	def Frmt(self, value):
-		self._Frmt = value if type(value) != base_types.auto else self.make_default("Frmt")
+		self._Frmt = value if value is not None else base_types.UninitialisedField(self, 'Frmt', OutputFormat2Code, False)
 
 	@Frmt.deleter
 	def Frmt(self):
 		del self._Frmt
-		self._Frmt = None
+		self._Frmt = base_types.UninitialisedField(self, 'Frmt', OutputFormat2Code, False)
 
 	@property
 	def Msg(self):
@@ -43,12 +43,12 @@ class ActionMessage4(base_types._BaseFieldType):
 
 	@Msg.setter
 	def Msg(self, value):
-		self._Msg = value if type(value) != base_types.auto else self.make_default("Msg")
+		self._Msg = value if value is not None else base_types.UninitialisedField(self, 'Msg', Max20000Text, False)
 
 	@Msg.deleter
 	def Msg(self):
 		del self._Msg
-		self._Msg = None
+		self._Msg = base_types.UninitialisedField(self, 'Msg', Max20000Text, False)
 
 	@property
 	def MsgCnttSgntr(self):
@@ -56,12 +56,12 @@ class ActionMessage4(base_types._BaseFieldType):
 
 	@MsgCnttSgntr.setter
 	def MsgCnttSgntr(self, value):
-		self._MsgCnttSgntr = value if type(value) != base_types.auto else self.make_default("MsgCnttSgntr")
+		self._MsgCnttSgntr = value if value is not None else base_types.UninitialisedField(self, 'MsgCnttSgntr', Max35Binary, False)
 
 	@MsgCnttSgntr.deleter
 	def MsgCnttSgntr(self):
 		del self._MsgCnttSgntr
-		self._MsgCnttSgntr = None
+		self._MsgCnttSgntr = base_types.UninitialisedField(self, 'MsgCnttSgntr', Max35Binary, False)
 
 	@property
 	def Ref(self):
@@ -69,12 +69,12 @@ class ActionMessage4(base_types._BaseFieldType):
 
 	@Ref.setter
 	def Ref(self, value):
-		self._Ref = value if type(value) != base_types.auto else self.make_default("Ref")
+		self._Ref = value if value is not None else base_types.UninitialisedField(self, 'Ref', Max35Text, False)
 
 	@Ref.deleter
 	def Ref(self):
 		del self._Ref
-		self._Ref = None
+		self._Ref = base_types.UninitialisedField(self, 'Ref', Max35Text, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Dvc', type=ATMDevice1Code, min=0, max=1, mutex_group=None, array=False),

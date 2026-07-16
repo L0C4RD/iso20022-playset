@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._Number import Number
-from ._Plan3 import Plan3
+from . import Number
+from . import Plan3
 
 class Instalment6(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Instalment6(base_types._BaseFieldType):
 
 	@Plan.setter
 	def Plan(self, value):
-		self._Plan = value if type(value) != base_types.auto else self.make_default("Plan")
+		self._Plan = value if value is not None else base_types.UninitialisedField(self, 'Plan', Plan3, True)
 
 	@Plan.deleter
 	def Plan(self):
 		del self._Plan
-		self._Plan = None
+		self._Plan = base_types.UninitialisedField(self, 'Plan', Plan3, True)
 
 	@property
 	def PmtSeqNb(self):
@@ -27,12 +27,12 @@ class Instalment6(base_types._BaseFieldType):
 
 	@PmtSeqNb.setter
 	def PmtSeqNb(self, value):
-		self._PmtSeqNb = value if type(value) != base_types.auto else self.make_default("PmtSeqNb")
+		self._PmtSeqNb = value if value is not None else base_types.UninitialisedField(self, 'PmtSeqNb', Number, False)
 
 	@PmtSeqNb.deleter
 	def PmtSeqNb(self):
 		del self._PmtSeqNb
-		self._PmtSeqNb = None
+		self._PmtSeqNb = base_types.UninitialisedField(self, 'PmtSeqNb', Number, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Plan', type=Plan3, min=0, max=None, mutex_group=None, array=True),

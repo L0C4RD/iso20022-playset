@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._AdditionalInformation15 import AdditionalInformation15
-from ._ContactAttributes5 import ContactAttributes5
-from ._ISODate import ISODate
+from . import AdditionalInformation15
+from . import ContactAttributes5
+from . import ISODate
 
 class OrderDesk1(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class OrderDesk1(base_types._BaseFieldType):
 
 	@AddtlInf.setter
 	def AddtlInf(self, value):
-		self._AddtlInf = value if type(value) != base_types.auto else self.make_default("AddtlInf")
+		self._AddtlInf = value if value is not None else base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@AddtlInf.deleter
 	def AddtlInf(self):
 		del self._AddtlInf
-		self._AddtlInf = None
+		self._AddtlInf = base_types.UninitialisedField(self, 'AddtlInf', AdditionalInformation15, True)
 
 	@property
 	def ClsrDts(self):
@@ -28,12 +28,12 @@ class OrderDesk1(base_types._BaseFieldType):
 
 	@ClsrDts.setter
 	def ClsrDts(self, value):
-		self._ClsrDts = value if type(value) != base_types.auto else self.make_default("ClsrDts")
+		self._ClsrDts = value if value is not None else base_types.UninitialisedField(self, 'ClsrDts', ISODate, True)
 
 	@ClsrDts.deleter
 	def ClsrDts(self):
 		del self._ClsrDts
-		self._ClsrDts = None
+		self._ClsrDts = base_types.UninitialisedField(self, 'ClsrDts', ISODate, True)
 
 	@property
 	def OrdrDsk(self):
@@ -41,12 +41,12 @@ class OrderDesk1(base_types._BaseFieldType):
 
 	@OrdrDsk.setter
 	def OrdrDsk(self, value):
-		self._OrdrDsk = value if type(value) != base_types.auto else self.make_default("OrdrDsk")
+		self._OrdrDsk = value if value is not None else base_types.UninitialisedField(self, 'OrdrDsk', ContactAttributes5, False)
 
 	@OrdrDsk.deleter
 	def OrdrDsk(self):
 		del self._OrdrDsk
-		self._OrdrDsk = None
+		self._OrdrDsk = base_types.UninitialisedField(self, 'OrdrDsk', ContactAttributes5, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlInf', type=AdditionalInformation15, min=0, max=None, mutex_group=None, array=True),

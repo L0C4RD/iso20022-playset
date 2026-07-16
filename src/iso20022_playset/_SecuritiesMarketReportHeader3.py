@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISINOct2015Identifier import ISINOct2015Identifier
-from ._ISODateTime import ISODateTime
-from ._Number import Number
-from ._Pagination1 import Pagination1
-from ._Period11Choice import Period11Choice
-from ._TradingVenueIdentification1Choice import TradingVenueIdentification1Choice
+from . import ISINOct2015Identifier
+from . import ISODateTime
+from . import Number
+from . import Pagination1
+from . import Period11Choice
+from . import TradingVenueIdentification1Choice
 
 class SecuritiesMarketReportHeader3(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class SecuritiesMarketReportHeader3(base_types._BaseFieldType):
 
 	@ISIN.setter
 	def ISIN(self, value):
-		self._ISIN = value if type(value) != base_types.auto else self.make_default("ISIN")
+		self._ISIN = value if value is not None else base_types.UninitialisedField(self, 'ISIN', ISINOct2015Identifier, True)
 
 	@ISIN.deleter
 	def ISIN(self):
 		del self._ISIN
-		self._ISIN = None
+		self._ISIN = base_types.UninitialisedField(self, 'ISIN', ISINOct2015Identifier, True)
 
 	@property
 	def MsgPgntn(self):
@@ -31,12 +31,12 @@ class SecuritiesMarketReportHeader3(base_types._BaseFieldType):
 
 	@MsgPgntn.setter
 	def MsgPgntn(self, value):
-		self._MsgPgntn = value if type(value) != base_types.auto else self.make_default("MsgPgntn")
+		self._MsgPgntn = value if value is not None else base_types.UninitialisedField(self, 'MsgPgntn', Pagination1, False)
 
 	@MsgPgntn.deleter
 	def MsgPgntn(self):
 		del self._MsgPgntn
-		self._MsgPgntn = None
+		self._MsgPgntn = base_types.UninitialisedField(self, 'MsgPgntn', Pagination1, False)
 
 	@property
 	def NbRcrds(self):
@@ -44,12 +44,12 @@ class SecuritiesMarketReportHeader3(base_types._BaseFieldType):
 
 	@NbRcrds.setter
 	def NbRcrds(self, value):
-		self._NbRcrds = value if type(value) != base_types.auto else self.make_default("NbRcrds")
+		self._NbRcrds = value if value is not None else base_types.UninitialisedField(self, 'NbRcrds', Number, False)
 
 	@NbRcrds.deleter
 	def NbRcrds(self):
 		del self._NbRcrds
-		self._NbRcrds = None
+		self._NbRcrds = base_types.UninitialisedField(self, 'NbRcrds', Number, False)
 
 	@property
 	def RptgNtty(self):
@@ -57,12 +57,12 @@ class SecuritiesMarketReportHeader3(base_types._BaseFieldType):
 
 	@RptgNtty.setter
 	def RptgNtty(self, value):
-		self._RptgNtty = value if type(value) != base_types.auto else self.make_default("RptgNtty")
+		self._RptgNtty = value if value is not None else base_types.UninitialisedField(self, 'RptgNtty', TradingVenueIdentification1Choice, False)
 
 	@RptgNtty.deleter
 	def RptgNtty(self):
 		del self._RptgNtty
-		self._RptgNtty = None
+		self._RptgNtty = base_types.UninitialisedField(self, 'RptgNtty', TradingVenueIdentification1Choice, False)
 
 	@property
 	def RptgPrd(self):
@@ -70,12 +70,12 @@ class SecuritiesMarketReportHeader3(base_types._BaseFieldType):
 
 	@RptgPrd.setter
 	def RptgPrd(self, value):
-		self._RptgPrd = value if type(value) != base_types.auto else self.make_default("RptgPrd")
+		self._RptgPrd = value if value is not None else base_types.UninitialisedField(self, 'RptgPrd', Period11Choice, False)
 
 	@RptgPrd.deleter
 	def RptgPrd(self):
 		del self._RptgPrd
-		self._RptgPrd = None
+		self._RptgPrd = base_types.UninitialisedField(self, 'RptgPrd', Period11Choice, False)
 
 	@property
 	def SubmissnDtTm(self):
@@ -83,12 +83,12 @@ class SecuritiesMarketReportHeader3(base_types._BaseFieldType):
 
 	@SubmissnDtTm.setter
 	def SubmissnDtTm(self, value):
-		self._SubmissnDtTm = value if type(value) != base_types.auto else self.make_default("SubmissnDtTm")
+		self._SubmissnDtTm = value if value is not None else base_types.UninitialisedField(self, 'SubmissnDtTm', ISODateTime, False)
 
 	@SubmissnDtTm.deleter
 	def SubmissnDtTm(self):
 		del self._SubmissnDtTm
-		self._SubmissnDtTm = None
+		self._SubmissnDtTm = base_types.UninitialisedField(self, 'SubmissnDtTm', ISODateTime, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ISIN', type=ISINOct2015Identifier, min=0, max=None, mutex_group=None, array=True),

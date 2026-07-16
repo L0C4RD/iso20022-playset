@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ISODate import ISODate
-from ._Max100Text import Max100Text
-from ._Number import Number
-from ._OrganisationIdentification15Choice import OrganisationIdentification15Choice
-from ._Pagination1 import Pagination1
+from . import ISODate
+from . import Max100Text
+from . import Number
+from . import OrganisationIdentification15Choice
+from . import Pagination1
 
 class TradeReportHeader4(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class TradeReportHeader4(base_types._BaseFieldType):
 
 	@CmptntAuthrty.setter
 	def CmptntAuthrty(self, value):
-		self._CmptntAuthrty = value if type(value) != base_types.auto else self.make_default("CmptntAuthrty")
+		self._CmptntAuthrty = value if value is not None else base_types.UninitialisedField(self, 'CmptntAuthrty', Max100Text, True)
 
 	@CmptntAuthrty.deleter
 	def CmptntAuthrty(self):
 		del self._CmptntAuthrty
-		self._CmptntAuthrty = None
+		self._CmptntAuthrty = base_types.UninitialisedField(self, 'CmptntAuthrty', Max100Text, True)
 
 	@property
 	def MsgPgntn(self):
@@ -30,12 +30,12 @@ class TradeReportHeader4(base_types._BaseFieldType):
 
 	@MsgPgntn.setter
 	def MsgPgntn(self, value):
-		self._MsgPgntn = value if type(value) != base_types.auto else self.make_default("MsgPgntn")
+		self._MsgPgntn = value if value is not None else base_types.UninitialisedField(self, 'MsgPgntn', Pagination1, False)
 
 	@MsgPgntn.deleter
 	def MsgPgntn(self):
 		del self._MsgPgntn
-		self._MsgPgntn = None
+		self._MsgPgntn = base_types.UninitialisedField(self, 'MsgPgntn', Pagination1, False)
 
 	@property
 	def NbRcrds(self):
@@ -43,12 +43,12 @@ class TradeReportHeader4(base_types._BaseFieldType):
 
 	@NbRcrds.setter
 	def NbRcrds(self, value):
-		self._NbRcrds = value if type(value) != base_types.auto else self.make_default("NbRcrds")
+		self._NbRcrds = value if value is not None else base_types.UninitialisedField(self, 'NbRcrds', Number, False)
 
 	@NbRcrds.deleter
 	def NbRcrds(self):
 		del self._NbRcrds
-		self._NbRcrds = None
+		self._NbRcrds = base_types.UninitialisedField(self, 'NbRcrds', Number, False)
 
 	@property
 	def NewTradRpstryIdr(self):
@@ -56,12 +56,12 @@ class TradeReportHeader4(base_types._BaseFieldType):
 
 	@NewTradRpstryIdr.setter
 	def NewTradRpstryIdr(self, value):
-		self._NewTradRpstryIdr = value if type(value) != base_types.auto else self.make_default("NewTradRpstryIdr")
+		self._NewTradRpstryIdr = value if value is not None else base_types.UninitialisedField(self, 'NewTradRpstryIdr', OrganisationIdentification15Choice, False)
 
 	@NewTradRpstryIdr.deleter
 	def NewTradRpstryIdr(self):
 		del self._NewTradRpstryIdr
-		self._NewTradRpstryIdr = None
+		self._NewTradRpstryIdr = base_types.UninitialisedField(self, 'NewTradRpstryIdr', OrganisationIdentification15Choice, False)
 
 	@property
 	def RptExctnDt(self):
@@ -69,12 +69,12 @@ class TradeReportHeader4(base_types._BaseFieldType):
 
 	@RptExctnDt.setter
 	def RptExctnDt(self, value):
-		self._RptExctnDt = value if type(value) != base_types.auto else self.make_default("RptExctnDt")
+		self._RptExctnDt = value if value is not None else base_types.UninitialisedField(self, 'RptExctnDt', ISODate, False)
 
 	@RptExctnDt.deleter
 	def RptExctnDt(self):
 		del self._RptExctnDt
-		self._RptExctnDt = None
+		self._RptExctnDt = base_types.UninitialisedField(self, 'RptExctnDt', ISODate, False)
 
 	@property
 	def RptgPurp(self):
@@ -82,12 +82,12 @@ class TradeReportHeader4(base_types._BaseFieldType):
 
 	@RptgPurp.setter
 	def RptgPurp(self, value):
-		self._RptgPurp = value if type(value) != base_types.auto else self.make_default("RptgPurp")
+		self._RptgPurp = value if value is not None else base_types.UninitialisedField(self, 'RptgPurp', Max100Text, True)
 
 	@RptgPurp.deleter
 	def RptgPurp(self):
 		del self._RptgPurp
-		self._RptgPurp = None
+		self._RptgPurp = base_types.UninitialisedField(self, 'RptgPurp', Max100Text, True)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='CmptntAuthrty', type=Max100Text, min=0, max=None, mutex_group=None, array=True),

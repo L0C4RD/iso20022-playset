@@ -2,8 +2,8 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._PercentageRate import PercentageRate
-from ._SecuritiesTransactionPrice18Choice import SecuritiesTransactionPrice18Choice
+from . import PercentageRate
+from . import SecuritiesTransactionPrice18Choice
 
 class Rates3(base_types._BaseFieldType):
 
@@ -14,12 +14,12 @@ class Rates3(base_types._BaseFieldType):
 
 	@BuySellBck.setter
 	def BuySellBck(self, value):
-		self._BuySellBck = value if type(value) != base_types.auto else self.make_default("BuySellBck")
+		self._BuySellBck = value if value is not None else base_types.UninitialisedField(self, 'BuySellBck', SecuritiesTransactionPrice18Choice, False)
 
 	@BuySellBck.deleter
 	def BuySellBck(self):
 		del self._BuySellBck
-		self._BuySellBck = None
+		self._BuySellBck = base_types.UninitialisedField(self, 'BuySellBck', SecuritiesTransactionPrice18Choice, False)
 
 	@property
 	def Fltg(self):
@@ -27,12 +27,12 @@ class Rates3(base_types._BaseFieldType):
 
 	@Fltg.setter
 	def Fltg(self, value):
-		self._Fltg = value if type(value) != base_types.auto else self.make_default("Fltg")
+		self._Fltg = value if value is not None else base_types.UninitialisedField(self, 'Fltg', PercentageRate, False)
 
 	@Fltg.deleter
 	def Fltg(self):
 		del self._Fltg
-		self._Fltg = None
+		self._Fltg = base_types.UninitialisedField(self, 'Fltg', PercentageRate, False)
 
 	@property
 	def Fxd(self):
@@ -40,12 +40,12 @@ class Rates3(base_types._BaseFieldType):
 
 	@Fxd.setter
 	def Fxd(self, value):
-		self._Fxd = value if type(value) != base_types.auto else self.make_default("Fxd")
+		self._Fxd = value if value is not None else base_types.UninitialisedField(self, 'Fxd', PercentageRate, False)
 
 	@Fxd.deleter
 	def Fxd(self):
 		del self._Fxd
-		self._Fxd = None
+		self._Fxd = base_types.UninitialisedField(self, 'Fxd', PercentageRate, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BuySellBck', type=SecuritiesTransactionPrice18Choice, min=0, max=1, mutex_group=None, array=False),

@@ -2,14 +2,14 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._CommunicationAddress11 import CommunicationAddress11
-from ._DateFormat58Choice import DateFormat58Choice
-from ._FinancialInstrumentQuantity18Choice import FinancialInstrumentQuantity18Choice
-from ._IncentivePremium6 import IncentivePremium6
-from ._Max350Text import Max350Text
-from ._PostalAddress1 import PostalAddress1
-from ._VoteMethods5 import VoteMethods5
-from ._YesNoIndicator import YesNoIndicator
+from . import CommunicationAddress11
+from . import DateFormat58Choice
+from . import FinancialInstrumentQuantity18Choice
+from . import IncentivePremium6
+from . import Max350Text
+from . import PostalAddress1
+from . import VoteMethods5
+from . import YesNoIndicator
 
 class VoteParameters9(base_types._BaseFieldType):
 
@@ -20,12 +20,12 @@ class VoteParameters9(base_types._BaseFieldType):
 
 	@AddtlVtngRqrmnts.setter
 	def AddtlVtngRqrmnts(self, value):
-		self._AddtlVtngRqrmnts = value if type(value) != base_types.auto else self.make_default("AddtlVtngRqrmnts")
+		self._AddtlVtngRqrmnts = value if value is not None else base_types.UninitialisedField(self, 'AddtlVtngRqrmnts', Max350Text, False)
 
 	@AddtlVtngRqrmnts.deleter
 	def AddtlVtngRqrmnts(self):
 		del self._AddtlVtngRqrmnts
-		self._AddtlVtngRqrmnts = None
+		self._AddtlVtngRqrmnts = base_types.UninitialisedField(self, 'AddtlVtngRqrmnts', Max350Text, False)
 
 	@property
 	def BnfclOwnrDsclsr(self):
@@ -33,12 +33,12 @@ class VoteParameters9(base_types._BaseFieldType):
 
 	@BnfclOwnrDsclsr.setter
 	def BnfclOwnrDsclsr(self, value):
-		self._BnfclOwnrDsclsr = value if type(value) != base_types.auto else self.make_default("BnfclOwnrDsclsr")
+		self._BnfclOwnrDsclsr = value if value is not None else base_types.UninitialisedField(self, 'BnfclOwnrDsclsr', YesNoIndicator, False)
 
 	@BnfclOwnrDsclsr.deleter
 	def BnfclOwnrDsclsr(self):
 		del self._BnfclOwnrDsclsr
-		self._BnfclOwnrDsclsr = None
+		self._BnfclOwnrDsclsr = base_types.UninitialisedField(self, 'BnfclOwnrDsclsr', YesNoIndicator, False)
 
 	@property
 	def EarlyIncntivPrm(self):
@@ -46,12 +46,12 @@ class VoteParameters9(base_types._BaseFieldType):
 
 	@EarlyIncntivPrm.setter
 	def EarlyIncntivPrm(self, value):
-		self._EarlyIncntivPrm = value if type(value) != base_types.auto else self.make_default("EarlyIncntivPrm")
+		self._EarlyIncntivPrm = value if value is not None else base_types.UninitialisedField(self, 'EarlyIncntivPrm', IncentivePremium6, False)
 
 	@EarlyIncntivPrm.deleter
 	def EarlyIncntivPrm(self):
 		del self._EarlyIncntivPrm
-		self._EarlyIncntivPrm = None
+		self._EarlyIncntivPrm = base_types.UninitialisedField(self, 'EarlyIncntivPrm', IncentivePremium6, False)
 
 	@property
 	def EarlyVoteWthPrmDdln(self):
@@ -59,12 +59,12 @@ class VoteParameters9(base_types._BaseFieldType):
 
 	@EarlyVoteWthPrmDdln.setter
 	def EarlyVoteWthPrmDdln(self, value):
-		self._EarlyVoteWthPrmDdln = value if type(value) != base_types.auto else self.make_default("EarlyVoteWthPrmDdln")
+		self._EarlyVoteWthPrmDdln = value if value is not None else base_types.UninitialisedField(self, 'EarlyVoteWthPrmDdln', DateFormat58Choice, False)
 
 	@EarlyVoteWthPrmDdln.deleter
 	def EarlyVoteWthPrmDdln(self):
 		del self._EarlyVoteWthPrmDdln
-		self._EarlyVoteWthPrmDdln = None
+		self._EarlyVoteWthPrmDdln = base_types.UninitialisedField(self, 'EarlyVoteWthPrmDdln', DateFormat58Choice, False)
 
 	@property
 	def IncntivPrm(self):
@@ -72,12 +72,12 @@ class VoteParameters9(base_types._BaseFieldType):
 
 	@IncntivPrm.setter
 	def IncntivPrm(self, value):
-		self._IncntivPrm = value if type(value) != base_types.auto else self.make_default("IncntivPrm")
+		self._IncntivPrm = value if value is not None else base_types.UninitialisedField(self, 'IncntivPrm', IncentivePremium6, False)
 
 	@IncntivPrm.deleter
 	def IncntivPrm(self):
 		del self._IncntivPrm
-		self._IncntivPrm = None
+		self._IncntivPrm = base_types.UninitialisedField(self, 'IncntivPrm', IncentivePremium6, False)
 
 	@property
 	def PrtlVoteAllwd(self):
@@ -85,12 +85,12 @@ class VoteParameters9(base_types._BaseFieldType):
 
 	@PrtlVoteAllwd.setter
 	def PrtlVoteAllwd(self, value):
-		self._PrtlVoteAllwd = value if type(value) != base_types.auto else self.make_default("PrtlVoteAllwd")
+		self._PrtlVoteAllwd = value if value is not None else base_types.UninitialisedField(self, 'PrtlVoteAllwd', YesNoIndicator, False)
 
 	@PrtlVoteAllwd.deleter
 	def PrtlVoteAllwd(self):
 		del self._PrtlVoteAllwd
-		self._PrtlVoteAllwd = None
+		self._PrtlVoteAllwd = base_types.UninitialisedField(self, 'PrtlVoteAllwd', YesNoIndicator, False)
 
 	@property
 	def PrvsInstrInvldtyInd(self):
@@ -98,12 +98,12 @@ class VoteParameters9(base_types._BaseFieldType):
 
 	@PrvsInstrInvldtyInd.setter
 	def PrvsInstrInvldtyInd(self, value):
-		self._PrvsInstrInvldtyInd = value if type(value) != base_types.auto else self.make_default("PrvsInstrInvldtyInd")
+		self._PrvsInstrInvldtyInd = value if value is not None else base_types.UninitialisedField(self, 'PrvsInstrInvldtyInd', YesNoIndicator, False)
 
 	@PrvsInstrInvldtyInd.deleter
 	def PrvsInstrInvldtyInd(self):
 		del self._PrvsInstrInvldtyInd
-		self._PrvsInstrInvldtyInd = None
+		self._PrvsInstrInvldtyInd = base_types.UninitialisedField(self, 'PrvsInstrInvldtyInd', YesNoIndicator, False)
 
 	@property
 	def RvcbltyDdln(self):
@@ -111,12 +111,12 @@ class VoteParameters9(base_types._BaseFieldType):
 
 	@RvcbltyDdln.setter
 	def RvcbltyDdln(self, value):
-		self._RvcbltyDdln = value if type(value) != base_types.auto else self.make_default("RvcbltyDdln")
+		self._RvcbltyDdln = value if value is not None else base_types.UninitialisedField(self, 'RvcbltyDdln', DateFormat58Choice, False)
 
 	@RvcbltyDdln.deleter
 	def RvcbltyDdln(self):
 		del self._RvcbltyDdln
-		self._RvcbltyDdln = None
+		self._RvcbltyDdln = base_types.UninitialisedField(self, 'RvcbltyDdln', DateFormat58Choice, False)
 
 	@property
 	def RvcbltyMktDdln(self):
@@ -124,12 +124,12 @@ class VoteParameters9(base_types._BaseFieldType):
 
 	@RvcbltyMktDdln.setter
 	def RvcbltyMktDdln(self, value):
-		self._RvcbltyMktDdln = value if type(value) != base_types.auto else self.make_default("RvcbltyMktDdln")
+		self._RvcbltyMktDdln = value if value is not None else base_types.UninitialisedField(self, 'RvcbltyMktDdln', DateFormat58Choice, False)
 
 	@RvcbltyMktDdln.deleter
 	def RvcbltyMktDdln(self):
 		del self._RvcbltyMktDdln
-		self._RvcbltyMktDdln = None
+		self._RvcbltyMktDdln = base_types.UninitialisedField(self, 'RvcbltyMktDdln', DateFormat58Choice, False)
 
 	@property
 	def SctiesQtyReqrdToVote(self):
@@ -137,12 +137,12 @@ class VoteParameters9(base_types._BaseFieldType):
 
 	@SctiesQtyReqrdToVote.setter
 	def SctiesQtyReqrdToVote(self, value):
-		self._SctiesQtyReqrdToVote = value if type(value) != base_types.auto else self.make_default("SctiesQtyReqrdToVote")
+		self._SctiesQtyReqrdToVote = value if value is not None else base_types.UninitialisedField(self, 'SctiesQtyReqrdToVote', FinancialInstrumentQuantity18Choice, False)
 
 	@SctiesQtyReqrdToVote.deleter
 	def SctiesQtyReqrdToVote(self):
 		del self._SctiesQtyReqrdToVote
-		self._SctiesQtyReqrdToVote = None
+		self._SctiesQtyReqrdToVote = base_types.UninitialisedField(self, 'SctiesQtyReqrdToVote', FinancialInstrumentQuantity18Choice, False)
 
 	@property
 	def SpltVoteAllwd(self):
@@ -150,12 +150,12 @@ class VoteParameters9(base_types._BaseFieldType):
 
 	@SpltVoteAllwd.setter
 	def SpltVoteAllwd(self, value):
-		self._SpltVoteAllwd = value if type(value) != base_types.auto else self.make_default("SpltVoteAllwd")
+		self._SpltVoteAllwd = value if value is not None else base_types.UninitialisedField(self, 'SpltVoteAllwd', YesNoIndicator, False)
 
 	@SpltVoteAllwd.deleter
 	def SpltVoteAllwd(self):
 		del self._SpltVoteAllwd
-		self._SpltVoteAllwd = None
+		self._SpltVoteAllwd = base_types.UninitialisedField(self, 'SpltVoteAllwd', YesNoIndicator, False)
 
 	@property
 	def VoteDdln(self):
@@ -163,12 +163,12 @@ class VoteParameters9(base_types._BaseFieldType):
 
 	@VoteDdln.setter
 	def VoteDdln(self, value):
-		self._VoteDdln = value if type(value) != base_types.auto else self.make_default("VoteDdln")
+		self._VoteDdln = value if value is not None else base_types.UninitialisedField(self, 'VoteDdln', DateFormat58Choice, False)
 
 	@VoteDdln.deleter
 	def VoteDdln(self):
 		del self._VoteDdln
-		self._VoteDdln = None
+		self._VoteDdln = base_types.UninitialisedField(self, 'VoteDdln', DateFormat58Choice, False)
 
 	@property
 	def VoteMktDdln(self):
@@ -176,12 +176,12 @@ class VoteParameters9(base_types._BaseFieldType):
 
 	@VoteMktDdln.setter
 	def VoteMktDdln(self, value):
-		self._VoteMktDdln = value if type(value) != base_types.auto else self.make_default("VoteMktDdln")
+		self._VoteMktDdln = value if value is not None else base_types.UninitialisedField(self, 'VoteMktDdln', DateFormat58Choice, False)
 
 	@VoteMktDdln.deleter
 	def VoteMktDdln(self):
 		del self._VoteMktDdln
-		self._VoteMktDdln = None
+		self._VoteMktDdln = base_types.UninitialisedField(self, 'VoteMktDdln', DateFormat58Choice, False)
 
 	@property
 	def VoteMthds(self):
@@ -189,12 +189,12 @@ class VoteParameters9(base_types._BaseFieldType):
 
 	@VoteMthds.setter
 	def VoteMthds(self, value):
-		self._VoteMthds = value if type(value) != base_types.auto else self.make_default("VoteMthds")
+		self._VoteMthds = value if value is not None else base_types.UninitialisedField(self, 'VoteMthds', VoteMethods5, False)
 
 	@VoteMthds.deleter
 	def VoteMthds(self):
 		del self._VoteMthds
-		self._VoteMthds = None
+		self._VoteMthds = base_types.UninitialisedField(self, 'VoteMthds', VoteMethods5, False)
 
 	@property
 	def VoteWthPrmDdln(self):
@@ -202,12 +202,12 @@ class VoteParameters9(base_types._BaseFieldType):
 
 	@VoteWthPrmDdln.setter
 	def VoteWthPrmDdln(self, value):
-		self._VoteWthPrmDdln = value if type(value) != base_types.auto else self.make_default("VoteWthPrmDdln")
+		self._VoteWthPrmDdln = value if value is not None else base_types.UninitialisedField(self, 'VoteWthPrmDdln', DateFormat58Choice, False)
 
 	@VoteWthPrmDdln.deleter
 	def VoteWthPrmDdln(self):
 		del self._VoteWthPrmDdln
-		self._VoteWthPrmDdln = None
+		self._VoteWthPrmDdln = base_types.UninitialisedField(self, 'VoteWthPrmDdln', DateFormat58Choice, False)
 
 	@property
 	def VoteWthPrmMktDdln(self):
@@ -215,12 +215,12 @@ class VoteParameters9(base_types._BaseFieldType):
 
 	@VoteWthPrmMktDdln.setter
 	def VoteWthPrmMktDdln(self, value):
-		self._VoteWthPrmMktDdln = value if type(value) != base_types.auto else self.make_default("VoteWthPrmMktDdln")
+		self._VoteWthPrmMktDdln = value if value is not None else base_types.UninitialisedField(self, 'VoteWthPrmMktDdln', DateFormat58Choice, False)
 
 	@VoteWthPrmMktDdln.deleter
 	def VoteWthPrmMktDdln(self):
 		del self._VoteWthPrmMktDdln
-		self._VoteWthPrmMktDdln = None
+		self._VoteWthPrmMktDdln = base_types.UninitialisedField(self, 'VoteWthPrmMktDdln', DateFormat58Choice, False)
 
 	@property
 	def VtngBlltElctrncAdr(self):
@@ -228,12 +228,12 @@ class VoteParameters9(base_types._BaseFieldType):
 
 	@VtngBlltElctrncAdr.setter
 	def VtngBlltElctrncAdr(self, value):
-		self._VtngBlltElctrncAdr = value if type(value) != base_types.auto else self.make_default("VtngBlltElctrncAdr")
+		self._VtngBlltElctrncAdr = value if value is not None else base_types.UninitialisedField(self, 'VtngBlltElctrncAdr', CommunicationAddress11, False)
 
 	@VtngBlltElctrncAdr.deleter
 	def VtngBlltElctrncAdr(self):
 		del self._VtngBlltElctrncAdr
-		self._VtngBlltElctrncAdr = None
+		self._VtngBlltElctrncAdr = base_types.UninitialisedField(self, 'VtngBlltElctrncAdr', CommunicationAddress11, False)
 
 	@property
 	def VtngBlltReqAdr(self):
@@ -241,12 +241,12 @@ class VoteParameters9(base_types._BaseFieldType):
 
 	@VtngBlltReqAdr.setter
 	def VtngBlltReqAdr(self, value):
-		self._VtngBlltReqAdr = value if type(value) != base_types.auto else self.make_default("VtngBlltReqAdr")
+		self._VtngBlltReqAdr = value if value is not None else base_types.UninitialisedField(self, 'VtngBlltReqAdr', PostalAddress1, False)
 
 	@VtngBlltReqAdr.deleter
 	def VtngBlltReqAdr(self):
 		del self._VtngBlltReqAdr
-		self._VtngBlltReqAdr = None
+		self._VtngBlltReqAdr = base_types.UninitialisedField(self, 'VtngBlltReqAdr', PostalAddress1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='AddtlVtngRqrmnts', type=Max350Text, min=0, max=1, mutex_group=None, array=False),

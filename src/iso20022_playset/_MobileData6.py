@@ -2,12 +2,12 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ContentInformationType40 import ContentInformationType40
-from ._Geolocation1 import Geolocation1
-from ._Max35Text import Max35Text
-from ._Min2Max3AlphaText import Min2Max3AlphaText
-from ._Min2Max3NumericText import Min2Max3NumericText
-from ._SensitiveMobileData1 import SensitiveMobileData1
+from . import ContentInformationType40
+from . import Geolocation1
+from . import Max35Text
+from . import Min2Max3AlphaText
+from . import Min2Max3NumericText
+from . import SensitiveMobileData1
 
 class MobileData6(base_types._BaseFieldType):
 
@@ -18,12 +18,12 @@ class MobileData6(base_types._BaseFieldType):
 
 	@Glctn.setter
 	def Glctn(self, value):
-		self._Glctn = value if type(value) != base_types.auto else self.make_default("Glctn")
+		self._Glctn = value if value is not None else base_types.UninitialisedField(self, 'Glctn', Geolocation1, False)
 
 	@Glctn.deleter
 	def Glctn(self):
 		del self._Glctn
-		self._Glctn = None
+		self._Glctn = base_types.UninitialisedField(self, 'Glctn', Geolocation1, False)
 
 	@property
 	def MobCtryCd(self):
@@ -31,12 +31,12 @@ class MobileData6(base_types._BaseFieldType):
 
 	@MobCtryCd.setter
 	def MobCtryCd(self, value):
-		self._MobCtryCd = value if type(value) != base_types.auto else self.make_default("MobCtryCd")
+		self._MobCtryCd = value if value is not None else base_types.UninitialisedField(self, 'MobCtryCd', Min2Max3AlphaText, False)
 
 	@MobCtryCd.deleter
 	def MobCtryCd(self):
 		del self._MobCtryCd
-		self._MobCtryCd = None
+		self._MobCtryCd = base_types.UninitialisedField(self, 'MobCtryCd', Min2Max3AlphaText, False)
 
 	@property
 	def MobMskdMSISDN(self):
@@ -44,12 +44,12 @@ class MobileData6(base_types._BaseFieldType):
 
 	@MobMskdMSISDN.setter
 	def MobMskdMSISDN(self, value):
-		self._MobMskdMSISDN = value if type(value) != base_types.auto else self.make_default("MobMskdMSISDN")
+		self._MobMskdMSISDN = value if value is not None else base_types.UninitialisedField(self, 'MobMskdMSISDN', Max35Text, False)
 
 	@MobMskdMSISDN.deleter
 	def MobMskdMSISDN(self):
 		del self._MobMskdMSISDN
-		self._MobMskdMSISDN = None
+		self._MobMskdMSISDN = base_types.UninitialisedField(self, 'MobMskdMSISDN', Max35Text, False)
 
 	@property
 	def MobNtwkCd(self):
@@ -57,12 +57,12 @@ class MobileData6(base_types._BaseFieldType):
 
 	@MobNtwkCd.setter
 	def MobNtwkCd(self, value):
-		self._MobNtwkCd = value if type(value) != base_types.auto else self.make_default("MobNtwkCd")
+		self._MobNtwkCd = value if value is not None else base_types.UninitialisedField(self, 'MobNtwkCd', Min2Max3NumericText, False)
 
 	@MobNtwkCd.deleter
 	def MobNtwkCd(self):
 		del self._MobNtwkCd
-		self._MobNtwkCd = None
+		self._MobNtwkCd = base_types.UninitialisedField(self, 'MobNtwkCd', Min2Max3NumericText, False)
 
 	@property
 	def PrtctdMobData(self):
@@ -70,12 +70,12 @@ class MobileData6(base_types._BaseFieldType):
 
 	@PrtctdMobData.setter
 	def PrtctdMobData(self, value):
-		self._PrtctdMobData = value if type(value) != base_types.auto else self.make_default("PrtctdMobData")
+		self._PrtctdMobData = value if value is not None else base_types.UninitialisedField(self, 'PrtctdMobData', ContentInformationType40, False)
 
 	@PrtctdMobData.deleter
 	def PrtctdMobData(self):
 		del self._PrtctdMobData
-		self._PrtctdMobData = None
+		self._PrtctdMobData = base_types.UninitialisedField(self, 'PrtctdMobData', ContentInformationType40, False)
 
 	@property
 	def SnstvMobData(self):
@@ -83,12 +83,12 @@ class MobileData6(base_types._BaseFieldType):
 
 	@SnstvMobData.setter
 	def SnstvMobData(self, value):
-		self._SnstvMobData = value if type(value) != base_types.auto else self.make_default("SnstvMobData")
+		self._SnstvMobData = value if value is not None else base_types.UninitialisedField(self, 'SnstvMobData', SensitiveMobileData1, False)
 
 	@SnstvMobData.deleter
 	def SnstvMobData(self):
 		del self._SnstvMobData
-		self._SnstvMobData = None
+		self._SnstvMobData = base_types.UninitialisedField(self, 'SnstvMobData', SensitiveMobileData1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='Glctn', type=Geolocation1, min=0, max=1, mutex_group=None, array=False),

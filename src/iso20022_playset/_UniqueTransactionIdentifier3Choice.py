@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._GenericIdentification175 import GenericIdentification175
-from ._NoReasonCode import NoReasonCode
-from ._UTIIdentifier import UTIIdentifier
+from . import GenericIdentification175
+from . import NoReasonCode
+from . import UTIIdentifier
 
 class UniqueTransactionIdentifier3Choice(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class UniqueTransactionIdentifier3Choice(base_types._BaseFieldType):
 
 	@NotAvlbl.setter
 	def NotAvlbl(self, value):
-		self._NotAvlbl = value if type(value) != base_types.auto else self.make_default("NotAvlbl")
+		self._NotAvlbl = value if value is not None else base_types.UninitialisedField(self, 'NotAvlbl', NoReasonCode, False)
 
 	@NotAvlbl.deleter
 	def NotAvlbl(self):
 		del self._NotAvlbl
-		self._NotAvlbl = None
+		self._NotAvlbl = base_types.UninitialisedField(self, 'NotAvlbl', NoReasonCode, False)
 
 	@property
 	def Prtry(self):
@@ -28,12 +28,12 @@ class UniqueTransactionIdentifier3Choice(base_types._BaseFieldType):
 
 	@Prtry.setter
 	def Prtry(self, value):
-		self._Prtry = value if type(value) != base_types.auto else self.make_default("Prtry")
+		self._Prtry = value if value is not None else base_types.UninitialisedField(self, 'Prtry', GenericIdentification175, False)
 
 	@Prtry.deleter
 	def Prtry(self):
 		del self._Prtry
-		self._Prtry = None
+		self._Prtry = base_types.UninitialisedField(self, 'Prtry', GenericIdentification175, False)
 
 	@property
 	def UnqTxIdr(self):
@@ -41,12 +41,12 @@ class UniqueTransactionIdentifier3Choice(base_types._BaseFieldType):
 
 	@UnqTxIdr.setter
 	def UnqTxIdr(self, value):
-		self._UnqTxIdr = value if type(value) != base_types.auto else self.make_default("UnqTxIdr")
+		self._UnqTxIdr = value if value is not None else base_types.UninitialisedField(self, 'UnqTxIdr', UTIIdentifier, False)
 
 	@UnqTxIdr.deleter
 	def UnqTxIdr(self):
 		del self._UnqTxIdr
-		self._UnqTxIdr = None
+		self._UnqTxIdr = base_types.UninitialisedField(self, 'UnqTxIdr', UTIIdentifier, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='NotAvlbl', type=NoReasonCode, min=0, max=1, mutex_group=1, array=False),

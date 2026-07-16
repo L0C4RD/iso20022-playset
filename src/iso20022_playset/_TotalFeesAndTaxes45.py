@@ -2,11 +2,11 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._ActiveCurrencyAndAmount import ActiveCurrencyAndAmount
-from ._DigitalPaymentSettlement3 import DigitalPaymentSettlement3
-from ._Fee11 import Fee11
-from ._Max35Text import Max35Text
-from ._Tax35 import Tax35
+from . import ActiveCurrencyAndAmount
+from . import DigitalPaymentSettlement3
+from . import Fee11
+from . import Max35Text
+from . import Tax35
 
 class TotalFeesAndTaxes45(base_types._BaseFieldType):
 
@@ -17,12 +17,12 @@ class TotalFeesAndTaxes45(base_types._BaseFieldType):
 
 	@ComrclAgrmtRef.setter
 	def ComrclAgrmtRef(self, value):
-		self._ComrclAgrmtRef = value if type(value) != base_types.auto else self.make_default("ComrclAgrmtRef")
+		self._ComrclAgrmtRef = value if value is not None else base_types.UninitialisedField(self, 'ComrclAgrmtRef', Max35Text, False)
 
 	@ComrclAgrmtRef.deleter
 	def ComrclAgrmtRef(self):
 		del self._ComrclAgrmtRef
-		self._ComrclAgrmtRef = None
+		self._ComrclAgrmtRef = base_types.UninitialisedField(self, 'ComrclAgrmtRef', Max35Text, False)
 
 	@property
 	def DgtlNtwkFee(self):
@@ -30,12 +30,12 @@ class TotalFeesAndTaxes45(base_types._BaseFieldType):
 
 	@DgtlNtwkFee.setter
 	def DgtlNtwkFee(self, value):
-		self._DgtlNtwkFee = value if type(value) != base_types.auto else self.make_default("DgtlNtwkFee")
+		self._DgtlNtwkFee = value if value is not None else base_types.UninitialisedField(self, 'DgtlNtwkFee', DigitalPaymentSettlement3, True)
 
 	@DgtlNtwkFee.deleter
 	def DgtlNtwkFee(self):
 		del self._DgtlNtwkFee
-		self._DgtlNtwkFee = None
+		self._DgtlNtwkFee = base_types.UninitialisedField(self, 'DgtlNtwkFee', DigitalPaymentSettlement3, True)
 
 	@property
 	def IndvFee(self):
@@ -43,12 +43,12 @@ class TotalFeesAndTaxes45(base_types._BaseFieldType):
 
 	@IndvFee.setter
 	def IndvFee(self, value):
-		self._IndvFee = value if type(value) != base_types.auto else self.make_default("IndvFee")
+		self._IndvFee = value if value is not None else base_types.UninitialisedField(self, 'IndvFee', Fee11, True)
 
 	@IndvFee.deleter
 	def IndvFee(self):
 		del self._IndvFee
-		self._IndvFee = None
+		self._IndvFee = base_types.UninitialisedField(self, 'IndvFee', Fee11, True)
 
 	@property
 	def IndvTax(self):
@@ -56,12 +56,12 @@ class TotalFeesAndTaxes45(base_types._BaseFieldType):
 
 	@IndvTax.setter
 	def IndvTax(self, value):
-		self._IndvTax = value if type(value) != base_types.auto else self.make_default("IndvTax")
+		self._IndvTax = value if value is not None else base_types.UninitialisedField(self, 'IndvTax', Tax35, True)
 
 	@IndvTax.deleter
 	def IndvTax(self):
 		del self._IndvTax
-		self._IndvTax = None
+		self._IndvTax = base_types.UninitialisedField(self, 'IndvTax', Tax35, True)
 
 	@property
 	def TtlFees(self):
@@ -69,12 +69,12 @@ class TotalFeesAndTaxes45(base_types._BaseFieldType):
 
 	@TtlFees.setter
 	def TtlFees(self, value):
-		self._TtlFees = value if type(value) != base_types.auto else self.make_default("TtlFees")
+		self._TtlFees = value if value is not None else base_types.UninitialisedField(self, 'TtlFees', ActiveCurrencyAndAmount, False)
 
 	@TtlFees.deleter
 	def TtlFees(self):
 		del self._TtlFees
-		self._TtlFees = None
+		self._TtlFees = base_types.UninitialisedField(self, 'TtlFees', ActiveCurrencyAndAmount, False)
 
 	@property
 	def TtlOvrhdApld(self):
@@ -82,12 +82,12 @@ class TotalFeesAndTaxes45(base_types._BaseFieldType):
 
 	@TtlOvrhdApld.setter
 	def TtlOvrhdApld(self, value):
-		self._TtlOvrhdApld = value if type(value) != base_types.auto else self.make_default("TtlOvrhdApld")
+		self._TtlOvrhdApld = value if value is not None else base_types.UninitialisedField(self, 'TtlOvrhdApld', ActiveCurrencyAndAmount, False)
 
 	@TtlOvrhdApld.deleter
 	def TtlOvrhdApld(self):
 		del self._TtlOvrhdApld
-		self._TtlOvrhdApld = None
+		self._TtlOvrhdApld = base_types.UninitialisedField(self, 'TtlOvrhdApld', ActiveCurrencyAndAmount, False)
 
 	@property
 	def TtlTaxs(self):
@@ -95,12 +95,12 @@ class TotalFeesAndTaxes45(base_types._BaseFieldType):
 
 	@TtlTaxs.setter
 	def TtlTaxs(self, value):
-		self._TtlTaxs = value if type(value) != base_types.auto else self.make_default("TtlTaxs")
+		self._TtlTaxs = value if value is not None else base_types.UninitialisedField(self, 'TtlTaxs', ActiveCurrencyAndAmount, False)
 
 	@TtlTaxs.deleter
 	def TtlTaxs(self):
 		del self._TtlTaxs
-		self._TtlTaxs = None
+		self._TtlTaxs = base_types.UninitialisedField(self, 'TtlTaxs', ActiveCurrencyAndAmount, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='ComrclAgrmtRef', type=Max35Text, min=0, max=1, mutex_group=None, array=False),

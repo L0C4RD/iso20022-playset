@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._StatusExtensionRequestAcceptanceV03 import StatusExtensionRequestAcceptanceV03
+from . import StatusExtensionRequestAcceptanceV03
 
 class TSMT_031_001_03():
 
@@ -18,12 +18,12 @@ class TSMT_031_001_03():
 
 		@StsXtnsnReqAccptnc.setter
 		def StsXtnsnReqAccptnc(self, value):
-			self._StsXtnsnReqAccptnc = value if type(value) != base_types.auto else self.make_default("StsXtnsnReqAccptnc")
+			self._StsXtnsnReqAccptnc = value if value is not None else base_types.UninitialisedField(self, 'StsXtnsnReqAccptnc', StatusExtensionRequestAcceptanceV03, False)
 
 		@StsXtnsnReqAccptnc.deleter
 		def StsXtnsnReqAccptnc(self):
 			del self._StsXtnsnReqAccptnc
-			self._StsXtnsnReqAccptnc = None
+			self._StsXtnsnReqAccptnc = base_types.UninitialisedField(self, 'StsXtnsnReqAccptnc', StatusExtensionRequestAcceptanceV03, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='StsXtnsnReqAccptnc', type=StatusExtensionRequestAcceptanceV03, min=1, max=1, mutex_group=None, array=False),

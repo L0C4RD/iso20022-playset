@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MarginCollateral1 import MarginCollateral1
+from . import MarginCollateral1
 
 class Collateral1(base_types._BaseFieldType):
 
@@ -13,12 +13,12 @@ class Collateral1(base_types._BaseFieldType):
 
 	@SgrtdIndpdntAmt.setter
 	def SgrtdIndpdntAmt(self, value):
-		self._SgrtdIndpdntAmt = value if type(value) != base_types.auto else self.make_default("SgrtdIndpdntAmt")
+		self._SgrtdIndpdntAmt = value if value is not None else base_types.UninitialisedField(self, 'SgrtdIndpdntAmt', MarginCollateral1, False)
 
 	@SgrtdIndpdntAmt.deleter
 	def SgrtdIndpdntAmt(self):
 		del self._SgrtdIndpdntAmt
-		self._SgrtdIndpdntAmt = None
+		self._SgrtdIndpdntAmt = base_types.UninitialisedField(self, 'SgrtdIndpdntAmt', MarginCollateral1, False)
 
 	@property
 	def VartnMrgn(self):
@@ -26,12 +26,12 @@ class Collateral1(base_types._BaseFieldType):
 
 	@VartnMrgn.setter
 	def VartnMrgn(self, value):
-		self._VartnMrgn = value if type(value) != base_types.auto else self.make_default("VartnMrgn")
+		self._VartnMrgn = value if value is not None else base_types.UninitialisedField(self, 'VartnMrgn', MarginCollateral1, False)
 
 	@VartnMrgn.deleter
 	def VartnMrgn(self):
 		del self._VartnMrgn
-		self._VartnMrgn = None
+		self._VartnMrgn = base_types.UninitialisedField(self, 'VartnMrgn', MarginCollateral1, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='SgrtdIndpdntAmt', type=MarginCollateral1, min=0, max=1, mutex_group=None, array=False),

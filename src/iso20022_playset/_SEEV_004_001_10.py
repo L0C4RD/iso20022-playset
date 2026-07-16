@@ -2,7 +2,7 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._MeetingInstructionV10 import MeetingInstructionV10
+from . import MeetingInstructionV10
 
 class SEEV_004_001_10():
 
@@ -18,12 +18,12 @@ class SEEV_004_001_10():
 
 		@MtgInstr.setter
 		def MtgInstr(self, value):
-			self._MtgInstr = value if type(value) != base_types.auto else self.make_default("MtgInstr")
+			self._MtgInstr = value if value is not None else base_types.UninitialisedField(self, 'MtgInstr', MeetingInstructionV10, False)
 
 		@MtgInstr.deleter
 		def MtgInstr(self):
 			del self._MtgInstr
-			self._MtgInstr = None
+			self._MtgInstr = base_types.UninitialisedField(self, 'MtgInstr', MeetingInstructionV10, False)
 
 		_field_defs = frozenset((
 			base_types.FieldEntry(name='MtgInstr', type=MeetingInstructionV10, min=1, max=1, mutex_group=None, array=False),

@@ -2,9 +2,9 @@
 # See LICENSE.md file in the project root for full license information.
 
 from . import base_types
-from ._BEIIdentifier import BEIIdentifier
-from ._GenericIdentification4 import GenericIdentification4
-from ._Max70Text import Max70Text
+from . import BEIIdentifier
+from . import GenericIdentification4
+from . import Max70Text
 
 class PartyIdentification25(base_types._BaseFieldType):
 
@@ -15,12 +15,12 @@ class PartyIdentification25(base_types._BaseFieldType):
 
 	@BEI.setter
 	def BEI(self, value):
-		self._BEI = value if type(value) != base_types.auto else self.make_default("BEI")
+		self._BEI = value if value is not None else base_types.UninitialisedField(self, 'BEI', BEIIdentifier, False)
 
 	@BEI.deleter
 	def BEI(self):
 		del self._BEI
-		self._BEI = None
+		self._BEI = base_types.UninitialisedField(self, 'BEI', BEIIdentifier, False)
 
 	@property
 	def Nm(self):
@@ -28,12 +28,12 @@ class PartyIdentification25(base_types._BaseFieldType):
 
 	@Nm.setter
 	def Nm(self, value):
-		self._Nm = value if type(value) != base_types.auto else self.make_default("Nm")
+		self._Nm = value if value is not None else base_types.UninitialisedField(self, 'Nm', Max70Text, False)
 
 	@Nm.deleter
 	def Nm(self):
 		del self._Nm
-		self._Nm = None
+		self._Nm = base_types.UninitialisedField(self, 'Nm', Max70Text, False)
 
 	@property
 	def PrtryId(self):
@@ -41,12 +41,12 @@ class PartyIdentification25(base_types._BaseFieldType):
 
 	@PrtryId.setter
 	def PrtryId(self, value):
-		self._PrtryId = value if type(value) != base_types.auto else self.make_default("PrtryId")
+		self._PrtryId = value if value is not None else base_types.UninitialisedField(self, 'PrtryId', GenericIdentification4, False)
 
 	@PrtryId.deleter
 	def PrtryId(self):
 		del self._PrtryId
-		self._PrtryId = None
+		self._PrtryId = base_types.UninitialisedField(self, 'PrtryId', GenericIdentification4, False)
 
 	_field_defs = frozenset((
 		base_types.FieldEntry(name='BEI', type=BEIIdentifier, min=0, max=1, mutex_group=None, array=False),
