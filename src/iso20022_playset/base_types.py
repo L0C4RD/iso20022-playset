@@ -135,10 +135,13 @@ class _BaseElemType(object):
 		else:
 			return True
 
-	def to_xml(self, indentlevel=0, indent="\t"):
+	def to_xml_pretty(self, indent="\t", newline="\n"):
+		return self.to_xml(indentlevel=0, indent=indent, newline=newline)
+
+	def to_xml(self, indentlevel=0, indent="", newline=""):
 
 		try:
-			contents = self._do_xml(indentlevel=indentlevel+1, indent=indent)
+			contents = self._do_xml(indentlevel=indentlevel+1, indent=indent, newline=newline)
 		except Exception as e:
 			raise XMLError(f"{self._whoami()} : Could not create XML")
 
@@ -162,10 +165,6 @@ class _BaseElemType(object):
 					
 					attr_pairs.append(f'{ad.name}="{xml_attr_repr}"')
 
-		#if self._attrib_defs is not None:
-		#	attr_pairs = [ f'{ad.name}="{self.attrib.get(ad.name)}"' for ad in self._attrib_defs if self.attrib.get(ad.name, None) is not None ]
-		#else:
-		#	attr_pairs = []
 
 		# Get the namespace if we have one.
 		if hasattr(self, "_xmlns") and self._xmlns is not None:
@@ -176,8 +175,8 @@ class _BaseElemType(object):
 		xml = (indent * indentlevel) + "<" + " ".join(xml_toks)
 
 		if contents is not None:
-			end_bit = '\n' if contents else ''
-			xml += ">\n" + contents + f"{end_bit}{(indent * indentlevel)}</{self.tag()}>"
+			end_bit = newline if contents else ''
+			xml += ">" + newline + contents + f"{end_bit}{(indent * indentlevel)}</{self.tag()}>"
 		else:
 			xml += "/>"
 
@@ -211,7 +210,7 @@ class _BaseElemType(object):
 
 		raise NotImplementedError("Base class cannot do parsing.")
 
-	def _do_xml(self, indentlevel=0, indent="\t"):
+	def _do_xml(self, indentlevel=0, indent="", newline=""):
 
 		raise NotImplementedError("Base class cannot create XML.")
 
@@ -240,7 +239,7 @@ class _BaseDataType(_BaseElemType):
 	def get(self):
 		return self.data
 
-	def _do_xml(self, indentlevel=0, indent="\t"):
+	def _do_xml(self, indentlevel=0, indent="", newline=""):
 
 		if not self.data:
 			return None
@@ -389,7 +388,7 @@ class _BaseFieldType(_BaseElemType):
 			else:
 				setattr(self, field_def.name, new_item)
 
-	def _do_xml(self, indentlevel=0, indent="\t"):
+	def _do_xml(self, indentlevel=0, indent="", newline=""):
 
 		if not self._field_defs:
 			return None
@@ -402,11 +401,11 @@ class _BaseFieldType(_BaseElemType):
 			if not isinstance(field, UninitialisedField):
 				if field_def.array:
 					for f in field:
-						content.append(f.to_xml(indentlevel=indentlevel, indent=indent))
+						content.append(f.to_xml(indentlevel=indentlevel, indent=indent, newline=newline))
 				else:
-					content.append(field.to_xml(indentlevel=indentlevel, indent=indent))
+					content.append(field.to_xml(indentlevel=indentlevel, indent=indent, newline=newline))
 		
-		return "\n".join(content)
+		return newline.join(content)
 
 	def _do_generate(self):
 

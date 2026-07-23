@@ -107,12 +107,19 @@ isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgId.set("Example original msgid")
 isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgNmId.auto()
 isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgNmId.set("pain.001.001.02")
 
+# Compact output
 print(isomsg.to_xml())
+
+# Human-readable output
+print(isomsg.to_xml_pretty())
 ```
 
 ##### Output
 
 ```xml
+<Document><CstmrPmtStsRpt><OrgnlGrpInfAndSts><OrgnlMsgId>Example original msgid</OrgnlMsgId><OrgnlMsgNmId>pain.001.001.02</OrgnlMsgNmId></OrgnlGrpInfAndSts><GrpHdr><CreDtTm>1970-01-01T12:00:00</CreDtTm><MsgId>Example header msgid</MsgId></GrpHdr></CstmrPmtStsRpt></Document>
+
+
 <Document>
 	<CstmrPmtStsRpt>
 		<OrgnlGrpInfAndSts>
@@ -160,7 +167,7 @@ isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgId.set("Example original msgid")
 isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgNmId = iso20022_playset.Max35Text("OrgnlMsgNmId")
 isomsg.CstmrPmtStsRpt.OrgnlGrpInfAndSts.OrgnlMsgNmId.set("pain.001.001.02")
 
-print(isomsg.to_xml())
+print(isomsg.to_xml_pretty())
 ```
 
 ##### Output
@@ -222,7 +229,7 @@ xml_string = """
 """
 isomsg = iso20022_playset.parse_xml(xml_string)
 isomsg.RsltnOfInvstgtn.Sts.RjctdMod[0].Prtry.set("Some other string")
-print(isomsg.to_xml())
+print(isomsg.to_xml_pretty())
 ```
 
 ##### Output
@@ -312,7 +319,7 @@ import iso20022_playset
 isomsg = iso20022_playset.TSMT_049_001_01.Document("Document")
 for _ in range(3):
     isomsg.generate()
-    print(isomsg.to_xml())
+    print(isomsg.to_xml_pretty())
 
 ```
 
