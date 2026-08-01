@@ -36,6 +36,7 @@ class UninitialisedField(object):
 		if self.is_array:
 			replacement = [replacement,]
 		setattr(self.parent, self.relative_name, replacement)
+		return replacement
 
 
 class _BaseElemType(object):

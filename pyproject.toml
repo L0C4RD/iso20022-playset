@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "iso20022-playset"
-version = "1.1.19"
+version = "1.1.20"
 authors = [
   { name="Ed Wilson-Shah", email="L0C4RD@users.noreply.github.com" },
 ]
